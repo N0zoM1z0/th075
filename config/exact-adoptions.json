@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "7a82c07c672b87c8e04aa133855f88691dfaee8dcafbed51c6fcc0b1fa09b754"
+      "current_sha256": "73f0a2f1afcfba1f7dca3d27e21bba1b74b929b1c3186bd40424e14c41392ab0"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "09bc6e071ec2351b3822a41714e2b1f6fe29a76c23c26e89a796d2eea39d64c7"
+      "current_sha256": "ae1273b24d3c168cfdc901c5f118a460c95ab37d12257386f9fd26b5840a760f"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "16a0502cc5df36c6de44ee09ed083c42af5588c2e2e0d333cbec1529ca3f58ff"
+      "current_sha256": "32e99173b3a21470a615c54a3455d37dab9ccc031a3aef858569f47a32b6111a"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "634c68afea6f50c1ed666f3745cc9e3805ee7e2e485da3f8ef8a1e2d99f4dd75"
+      "current_sha256": "917b407a97f4fdd98a12459cea693450edfd6ed000cd56a6753b596aad989e56"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "5dd895883fc3e01263e2d0a6b97c95f6e8abc00bec4c15ffec942e9298d5bb61"
+      "current_sha256": "33b5cace87a17de0ee2580b727c163da341efefd006912000493fd34fbe59939"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -18432,6 +18432,490 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R040"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00449EC0",
+        "size": "26",
+        "span_end": "0x00449ED9",
+        "current_name": "FUN_00449ec0",
+        "proposed_name": "BackgroundStage::AdvanceAnimationCounterAt00449EC0",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R220; config/background-counter-origin-evidence.json; scripts/repo-python scripts/verify-background-counter-origins.py",
+        "owner": "authored",
+        "notes": "Whole ordinary virtual callback increments the animation counter at observed offset0x68. Independently complete background asset constructor installs its six-slot callback table and clears the same field; complete render policy consumes it. Generic reference-count increment has the same shape, so byte shape alone grants no origin. Names/layouts/ABI remain provisional; no source/exact credit."
+      },
+      "after": {
+        "address": "0x00449EC0",
+        "size": "26",
+        "span_end": "0x00449ED9",
+        "current_name": "FUN_00449ec0",
+        "proposed_name": "BackgroundStage::AdvanceAnimationCounterAt00449EC0",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void BackgroundCountersF180::AdvanceAt00449EC0()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundCountersF180.cpp",
+        "evidence": "R220; config/background-counter-origin-evidence.json; scripts/repo-python scripts/verify-background-counter-origins.py; F180; scripts/repo-python scripts/replay-exact-units.py --unit background-counter-00449ec0",
+        "owner": "authored",
+        "notes": "Whole ordinary virtual callback increments the animation counter at observed offset0x68. Independently complete background asset constructor installs its six-slot callback table and clears the same field; complete render policy consumes it. Generic reference-count increment has the same shape, so byte shape alone grants no origin. Names/layouts/ABI remain provisional; no source/exact credit.; F180: Eleven complete R220/R230/R232 callbacks/463 CODE bytes/all2 actual DIR32 fields, each independently checked against its own full JSON origin record/bodyhash/CFG/plain RET/INT3 alignment/no owned tables. Four ordinary counter increments, three signed360 wrap tests, one signed reverse3840 wrap, two integer-to-double2500 strict/15360 inclusive thresholds and one separate72-frame counter. All natural source, no unused locals/partial owner instances/full nominal class claim. Both complete8-byte double readonly sections/all definitions match; no data/helper credit. No masks, crops, aliases, rebasing, conditional bodies, assembly, padding or ABI tricks. R231 unread camera stores remain unresolved and receive no source/exact credit. All478 prior units/162 objects/260 inputs/14 active drafts/97 unknown origins/full pending denominator preserved; only these11 new units receive canonical cold acceptance."
+      },
+      "origin": {
+        "address": "0x00449EC0",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "whole-background-counter-callback-and-independent-asset-vtable-render-context",
+        "evidence_id": "R220"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044DA70",
+        "size": "26",
+        "span_end": "0x0044DA89",
+        "current_name": "FUN_0044da70",
+        "proposed_name": "BackgroundStage::AdvanceAnimationCounterAt0044DA70",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R220; config/background-counter-origin-evidence.json; scripts/repo-python scripts/verify-background-counter-origins.py",
+        "owner": "authored",
+        "notes": "Whole ordinary virtual callback increments the animation counter at observed offset0x68. Independently complete background asset constructor installs its six-slot callback table and clears the same field; complete render policy consumes it. Generic reference-count increment has the same shape, so byte shape alone grants no origin. Names/layouts/ABI remain provisional; no source/exact credit."
+      },
+      "after": {
+        "address": "0x0044DA70",
+        "size": "26",
+        "span_end": "0x0044DA89",
+        "current_name": "FUN_0044da70",
+        "proposed_name": "BackgroundStage::AdvanceAnimationCounterAt0044DA70",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void BackgroundCountersF180::AdvanceAt0044DA70()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundCountersF180.cpp",
+        "evidence": "R220; config/background-counter-origin-evidence.json; scripts/repo-python scripts/verify-background-counter-origins.py; F180; scripts/repo-python scripts/replay-exact-units.py --unit background-counter-0044da70",
+        "owner": "authored",
+        "notes": "Whole ordinary virtual callback increments the animation counter at observed offset0x68. Independently complete background asset constructor installs its six-slot callback table and clears the same field; complete render policy consumes it. Generic reference-count increment has the same shape, so byte shape alone grants no origin. Names/layouts/ABI remain provisional; no source/exact credit.; F180: Eleven complete R220/R230/R232 callbacks/463 CODE bytes/all2 actual DIR32 fields, each independently checked against its own full JSON origin record/bodyhash/CFG/plain RET/INT3 alignment/no owned tables. Four ordinary counter increments, three signed360 wrap tests, one signed reverse3840 wrap, two integer-to-double2500 strict/15360 inclusive thresholds and one separate72-frame counter. All natural source, no unused locals/partial owner instances/full nominal class claim. Both complete8-byte double readonly sections/all definitions match; no data/helper credit. No masks, crops, aliases, rebasing, conditional bodies, assembly, padding or ABI tricks. R231 unread camera stores remain unresolved and receive no source/exact credit. All478 prior units/162 objects/260 inputs/14 active drafts/97 unknown origins/full pending denominator preserved; only these11 new units receive canonical cold acceptance."
+      },
+      "origin": {
+        "address": "0x0044DA70",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "whole-background-counter-callback-and-independent-asset-vtable-render-context",
+        "evidence_id": "R220"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044F830",
+        "size": "26",
+        "span_end": "0x0044F849",
+        "current_name": "FUN_0044f830",
+        "proposed_name": "BackgroundStage::AdvanceAnimationCounterAt0044F830",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R220; config/background-counter-origin-evidence.json; scripts/repo-python scripts/verify-background-counter-origins.py",
+        "owner": "authored",
+        "notes": "Whole ordinary virtual callback increments the animation counter at observed offset0x68. Independently complete background asset constructor installs its six-slot callback table and clears the same field; complete render policy consumes it. Generic reference-count increment has the same shape, so byte shape alone grants no origin. Names/layouts/ABI remain provisional; no source/exact credit."
+      },
+      "after": {
+        "address": "0x0044F830",
+        "size": "26",
+        "span_end": "0x0044F849",
+        "current_name": "FUN_0044f830",
+        "proposed_name": "BackgroundStage::AdvanceAnimationCounterAt0044F830",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void BackgroundCountersF180::AdvanceAt0044F830()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundCountersF180.cpp",
+        "evidence": "R220; config/background-counter-origin-evidence.json; scripts/repo-python scripts/verify-background-counter-origins.py; F180; scripts/repo-python scripts/replay-exact-units.py --unit background-counter-0044f830",
+        "owner": "authored",
+        "notes": "Whole ordinary virtual callback increments the animation counter at observed offset0x68. Independently complete background asset constructor installs its six-slot callback table and clears the same field; complete render policy consumes it. Generic reference-count increment has the same shape, so byte shape alone grants no origin. Names/layouts/ABI remain provisional; no source/exact credit.; F180: Eleven complete R220/R230/R232 callbacks/463 CODE bytes/all2 actual DIR32 fields, each independently checked against its own full JSON origin record/bodyhash/CFG/plain RET/INT3 alignment/no owned tables. Four ordinary counter increments, three signed360 wrap tests, one signed reverse3840 wrap, two integer-to-double2500 strict/15360 inclusive thresholds and one separate72-frame counter. All natural source, no unused locals/partial owner instances/full nominal class claim. Both complete8-byte double readonly sections/all definitions match; no data/helper credit. No masks, crops, aliases, rebasing, conditional bodies, assembly, padding or ABI tricks. R231 unread camera stores remain unresolved and receive no source/exact credit. All478 prior units/162 objects/260 inputs/14 active drafts/97 unknown origins/full pending denominator preserved; only these11 new units receive canonical cold acceptance."
+      },
+      "origin": {
+        "address": "0x0044F830",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "whole-background-counter-callback-and-independent-asset-vtable-render-context",
+        "evidence_id": "R220"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00451420",
+        "size": "26",
+        "span_end": "0x00451439",
+        "current_name": "FUN_00451420",
+        "proposed_name": "BackgroundStage::AdvanceAnimationCounterAt00451420",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R220; config/background-counter-origin-evidence.json; scripts/repo-python scripts/verify-background-counter-origins.py",
+        "owner": "authored",
+        "notes": "Whole ordinary virtual callback increments the animation counter at observed offset0x68. Independently complete background asset constructor installs its six-slot callback table and clears the same field; complete render policy consumes it. Generic reference-count increment has the same shape, so byte shape alone grants no origin. Names/layouts/ABI remain provisional; no source/exact credit."
+      },
+      "after": {
+        "address": "0x00451420",
+        "size": "26",
+        "span_end": "0x00451439",
+        "current_name": "FUN_00451420",
+        "proposed_name": "BackgroundStage::AdvanceAnimationCounterAt00451420",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void BackgroundCountersF180::AdvanceAt00451420()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundCountersF180.cpp",
+        "evidence": "R220; config/background-counter-origin-evidence.json; scripts/repo-python scripts/verify-background-counter-origins.py; F180; scripts/repo-python scripts/replay-exact-units.py --unit background-counter-00451420",
+        "owner": "authored",
+        "notes": "Whole ordinary virtual callback increments the animation counter at observed offset0x68. Independently complete background asset constructor installs its six-slot callback table and clears the same field; complete render policy consumes it. Generic reference-count increment has the same shape, so byte shape alone grants no origin. Names/layouts/ABI remain provisional; no source/exact credit.; F180: Eleven complete R220/R230/R232 callbacks/463 CODE bytes/all2 actual DIR32 fields, each independently checked against its own full JSON origin record/bodyhash/CFG/plain RET/INT3 alignment/no owned tables. Four ordinary counter increments, three signed360 wrap tests, one signed reverse3840 wrap, two integer-to-double2500 strict/15360 inclusive thresholds and one separate72-frame counter. All natural source, no unused locals/partial owner instances/full nominal class claim. Both complete8-byte double readonly sections/all definitions match; no data/helper credit. No masks, crops, aliases, rebasing, conditional bodies, assembly, padding or ABI tricks. R231 unread camera stores remain unresolved and receive no source/exact credit. All478 prior units/162 objects/260 inputs/14 active drafts/97 unknown origins/full pending denominator preserved; only these11 new units receive canonical cold acceptance."
+      },
+      "origin": {
+        "address": "0x00451420",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "whole-background-counter-callback-and-independent-asset-vtable-render-context",
+        "evidence_id": "R220"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044B600",
+        "size": "48",
+        "span_end": "0x0044B62F",
+        "current_name": "FUN_0044b600",
+        "proposed_name": "BackgroundStage::AdvanceBG02aCycleAt0044B600",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R230; config/background-cycle-origin-evidence.json; scripts/repo-python scripts/verify-background-cycle-origins.py",
+        "owner": "authored",
+        "notes": "Complete regular callback increments and conditionally resets constructor-cleared, renderer-consumed game background counters. Independent asset path and installed six callback words establish game runtime context; whole natural ordinary and implicit-copy alternatives preserve source uncertainty. Observed fields and provisional roles do not establish a complete private owner/layout/ABI; no source/exact credit."
+      },
+      "after": {
+        "address": "0x0044B600",
+        "size": "48",
+        "span_end": "0x0044B62F",
+        "current_name": "FUN_0044b600",
+        "proposed_name": "BackgroundStage::AdvanceBG02aCycleAt0044B600",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void BackgroundCountersF180::AdvanceAt0044B600()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundCountersF180.cpp",
+        "evidence": "R230; config/background-cycle-origin-evidence.json; scripts/repo-python scripts/verify-background-cycle-origins.py; F180; scripts/repo-python scripts/replay-exact-units.py --unit background-counter-0044b600",
+        "owner": "authored",
+        "notes": "Complete regular callback increments and conditionally resets constructor-cleared, renderer-consumed game background counters. Independent asset path and installed six callback words establish game runtime context; whole natural ordinary and implicit-copy alternatives preserve source uncertainty. Observed fields and provisional roles do not establish a complete private owner/layout/ABI; no source/exact credit.; F180: Eleven complete R220/R230/R232 callbacks/463 CODE bytes/all2 actual DIR32 fields, each independently checked against its own full JSON origin record/bodyhash/CFG/plain RET/INT3 alignment/no owned tables. Four ordinary counter increments, three signed360 wrap tests, one signed reverse3840 wrap, two integer-to-double2500 strict/15360 inclusive thresholds and one separate72-frame counter. All natural source, no unused locals/partial owner instances/full nominal class claim. Both complete8-byte double readonly sections/all definitions match; no data/helper credit. No masks, crops, aliases, rebasing, conditional bodies, assembly, padding or ABI tricks. R231 unread camera stores remain unresolved and receive no source/exact credit. All478 prior units/162 objects/260 inputs/14 active drafts/97 unknown origins/full pending denominator preserved; only these11 new units receive canonical cold acceptance."
+      },
+      "origin": {
+        "address": "0x0044B600",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "whole-background-cycle-policy-and-independent-asset-callback-render-provenance",
+        "evidence_id": "R230"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044BB20",
+        "size": "48",
+        "span_end": "0x0044BB4F",
+        "current_name": "FUN_0044bb20",
+        "proposed_name": "BackgroundStage::AdvanceBG02bCycleAt0044BB20",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R230; config/background-cycle-origin-evidence.json; scripts/repo-python scripts/verify-background-cycle-origins.py",
+        "owner": "authored",
+        "notes": "Complete regular callback increments and conditionally resets constructor-cleared, renderer-consumed game background counters. Independent asset path and installed six callback words establish game runtime context; whole natural ordinary and implicit-copy alternatives preserve source uncertainty. Observed fields and provisional roles do not establish a complete private owner/layout/ABI; no source/exact credit."
+      },
+      "after": {
+        "address": "0x0044BB20",
+        "size": "48",
+        "span_end": "0x0044BB4F",
+        "current_name": "FUN_0044bb20",
+        "proposed_name": "BackgroundStage::AdvanceBG02bCycleAt0044BB20",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void BackgroundCountersF180::AdvanceAt0044BB20()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundCountersF180.cpp",
+        "evidence": "R230; config/background-cycle-origin-evidence.json; scripts/repo-python scripts/verify-background-cycle-origins.py; F180; scripts/repo-python scripts/replay-exact-units.py --unit background-counter-0044bb20",
+        "owner": "authored",
+        "notes": "Complete regular callback increments and conditionally resets constructor-cleared, renderer-consumed game background counters. Independent asset path and installed six callback words establish game runtime context; whole natural ordinary and implicit-copy alternatives preserve source uncertainty. Observed fields and provisional roles do not establish a complete private owner/layout/ABI; no source/exact credit.; F180: Eleven complete R220/R230/R232 callbacks/463 CODE bytes/all2 actual DIR32 fields, each independently checked against its own full JSON origin record/bodyhash/CFG/plain RET/INT3 alignment/no owned tables. Four ordinary counter increments, three signed360 wrap tests, one signed reverse3840 wrap, two integer-to-double2500 strict/15360 inclusive thresholds and one separate72-frame counter. All natural source, no unused locals/partial owner instances/full nominal class claim. Both complete8-byte double readonly sections/all definitions match; no data/helper credit. No masks, crops, aliases, rebasing, conditional bodies, assembly, padding or ABI tricks. R231 unread camera stores remain unresolved and receive no source/exact credit. All478 prior units/162 objects/260 inputs/14 active drafts/97 unknown origins/full pending denominator preserved; only these11 new units receive canonical cold acceptance."
+      },
+      "origin": {
+        "address": "0x0044BB20",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "whole-background-cycle-policy-and-independent-asset-callback-render-provenance",
+        "evidence_id": "R230"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044C040",
+        "size": "48",
+        "span_end": "0x0044C06F",
+        "current_name": "FUN_0044c040",
+        "proposed_name": "BackgroundStage::AdvanceBG02cCycleAt0044C040",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R230; config/background-cycle-origin-evidence.json; scripts/repo-python scripts/verify-background-cycle-origins.py",
+        "owner": "authored",
+        "notes": "Complete regular callback increments and conditionally resets constructor-cleared, renderer-consumed game background counters. Independent asset path and installed six callback words establish game runtime context; whole natural ordinary and implicit-copy alternatives preserve source uncertainty. Observed fields and provisional roles do not establish a complete private owner/layout/ABI; no source/exact credit."
+      },
+      "after": {
+        "address": "0x0044C040",
+        "size": "48",
+        "span_end": "0x0044C06F",
+        "current_name": "FUN_0044c040",
+        "proposed_name": "BackgroundStage::AdvanceBG02cCycleAt0044C040",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void BackgroundCountersF180::AdvanceAt0044C040()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundCountersF180.cpp",
+        "evidence": "R230; config/background-cycle-origin-evidence.json; scripts/repo-python scripts/verify-background-cycle-origins.py; F180; scripts/repo-python scripts/replay-exact-units.py --unit background-counter-0044c040",
+        "owner": "authored",
+        "notes": "Complete regular callback increments and conditionally resets constructor-cleared, renderer-consumed game background counters. Independent asset path and installed six callback words establish game runtime context; whole natural ordinary and implicit-copy alternatives preserve source uncertainty. Observed fields and provisional roles do not establish a complete private owner/layout/ABI; no source/exact credit.; F180: Eleven complete R220/R230/R232 callbacks/463 CODE bytes/all2 actual DIR32 fields, each independently checked against its own full JSON origin record/bodyhash/CFG/plain RET/INT3 alignment/no owned tables. Four ordinary counter increments, three signed360 wrap tests, one signed reverse3840 wrap, two integer-to-double2500 strict/15360 inclusive thresholds and one separate72-frame counter. All natural source, no unused locals/partial owner instances/full nominal class claim. Both complete8-byte double readonly sections/all definitions match; no data/helper credit. No masks, crops, aliases, rebasing, conditional bodies, assembly, padding or ABI tricks. R231 unread camera stores remain unresolved and receive no source/exact credit. All478 prior units/162 objects/260 inputs/14 active drafts/97 unknown origins/full pending denominator preserved; only these11 new units receive canonical cold acceptance."
+      },
+      "origin": {
+        "address": "0x0044C040",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "whole-background-cycle-policy-and-independent-asset-callback-render-provenance",
+        "evidence_id": "R230"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044D5E0",
+        "size": "55",
+        "span_end": "0x0044D616",
+        "current_name": "FUN_0044d5e0",
+        "proposed_name": "BackgroundStage::AdvanceBG04aCycleAt0044D5E0",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R230; config/background-cycle-origin-evidence.json; scripts/repo-python scripts/verify-background-cycle-origins.py",
+        "owner": "authored",
+        "notes": "Complete regular callback increments and conditionally resets constructor-cleared, renderer-consumed game background counters. Independent asset path and installed six callback words establish game runtime context; whole natural ordinary and implicit-copy alternatives preserve source uncertainty. Observed fields and provisional roles do not establish a complete private owner/layout/ABI; no source/exact credit."
+      },
+      "after": {
+        "address": "0x0044D5E0",
+        "size": "55",
+        "span_end": "0x0044D616",
+        "current_name": "FUN_0044d5e0",
+        "proposed_name": "BackgroundStage::AdvanceBG04aCycleAt0044D5E0",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void BackgroundCountersF180::AdvanceAt0044D5E0()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundCountersF180.cpp",
+        "evidence": "R230; config/background-cycle-origin-evidence.json; scripts/repo-python scripts/verify-background-cycle-origins.py; F180; scripts/repo-python scripts/replay-exact-units.py --unit background-counter-0044d5e0",
+        "owner": "authored",
+        "notes": "Complete regular callback increments and conditionally resets constructor-cleared, renderer-consumed game background counters. Independent asset path and installed six callback words establish game runtime context; whole natural ordinary and implicit-copy alternatives preserve source uncertainty. Observed fields and provisional roles do not establish a complete private owner/layout/ABI; no source/exact credit.; F180: Eleven complete R220/R230/R232 callbacks/463 CODE bytes/all2 actual DIR32 fields, each independently checked against its own full JSON origin record/bodyhash/CFG/plain RET/INT3 alignment/no owned tables. Four ordinary counter increments, three signed360 wrap tests, one signed reverse3840 wrap, two integer-to-double2500 strict/15360 inclusive thresholds and one separate72-frame counter. All natural source, no unused locals/partial owner instances/full nominal class claim. Both complete8-byte double readonly sections/all definitions match; no data/helper credit. No masks, crops, aliases, rebasing, conditional bodies, assembly, padding or ABI tricks. R231 unread camera stores remain unresolved and receive no source/exact credit. All478 prior units/162 objects/260 inputs/14 active drafts/97 unknown origins/full pending denominator preserved; only these11 new units receive canonical cold acceptance."
+      },
+      "origin": {
+        "address": "0x0044D5E0",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "whole-background-cycle-policy-and-independent-asset-callback-render-provenance",
+        "evidence_id": "R230"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004503E0",
+        "size": "55",
+        "span_end": "0x00450416",
+        "current_name": "FUN_004503e0",
+        "proposed_name": "BackgroundStage::AdvanceBG07aCycleAt004503E0",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R230; config/background-cycle-origin-evidence.json; scripts/repo-python scripts/verify-background-cycle-origins.py",
+        "owner": "authored",
+        "notes": "Complete regular callback increments and conditionally resets constructor-cleared, renderer-consumed game background counters. Independent asset path and installed six callback words establish game runtime context; whole natural ordinary and implicit-copy alternatives preserve source uncertainty. Observed fields and provisional roles do not establish a complete private owner/layout/ABI; no source/exact credit."
+      },
+      "after": {
+        "address": "0x004503E0",
+        "size": "55",
+        "span_end": "0x00450416",
+        "current_name": "FUN_004503e0",
+        "proposed_name": "BackgroundStage::AdvanceBG07aCycleAt004503E0",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void BackgroundCountersF180::AdvanceAt004503E0()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundCountersF180.cpp",
+        "evidence": "R230; config/background-cycle-origin-evidence.json; scripts/repo-python scripts/verify-background-cycle-origins.py; F180; scripts/repo-python scripts/replay-exact-units.py --unit background-counter-004503e0",
+        "owner": "authored",
+        "notes": "Complete regular callback increments and conditionally resets constructor-cleared, renderer-consumed game background counters. Independent asset path and installed six callback words establish game runtime context; whole natural ordinary and implicit-copy alternatives preserve source uncertainty. Observed fields and provisional roles do not establish a complete private owner/layout/ABI; no source/exact credit.; F180: Eleven complete R220/R230/R232 callbacks/463 CODE bytes/all2 actual DIR32 fields, each independently checked against its own full JSON origin record/bodyhash/CFG/plain RET/INT3 alignment/no owned tables. Four ordinary counter increments, three signed360 wrap tests, one signed reverse3840 wrap, two integer-to-double2500 strict/15360 inclusive thresholds and one separate72-frame counter. All natural source, no unused locals/partial owner instances/full nominal class claim. Both complete8-byte double readonly sections/all definitions match; no data/helper credit. No masks, crops, aliases, rebasing, conditional bodies, assembly, padding or ABI tricks. R231 unread camera stores remain unresolved and receive no source/exact credit. All478 prior units/162 objects/260 inputs/14 active drafts/97 unknown origins/full pending denominator preserved; only these11 new units receive canonical cold acceptance."
+      },
+      "origin": {
+        "address": "0x004503E0",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "whole-background-cycle-policy-and-independent-asset-callback-render-provenance",
+        "evidence_id": "R230"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00450BD0",
+        "size": "60",
+        "span_end": "0x00450C0B",
+        "current_name": "FUN_00450bd0",
+        "proposed_name": "BackgroundStage::AdvanceBG08aCycleAt00450BD0",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R230; config/background-cycle-origin-evidence.json; scripts/repo-python scripts/verify-background-cycle-origins.py",
+        "owner": "authored",
+        "notes": "Complete regular callback increments and conditionally resets constructor-cleared, renderer-consumed game background counters. Independent asset path and installed six callback words establish game runtime context; whole natural ordinary and implicit-copy alternatives preserve source uncertainty. Observed fields and provisional roles do not establish a complete private owner/layout/ABI; no source/exact credit."
+      },
+      "after": {
+        "address": "0x00450BD0",
+        "size": "60",
+        "span_end": "0x00450C0B",
+        "current_name": "FUN_00450bd0",
+        "proposed_name": "BackgroundStage::AdvanceBG08aCycleAt00450BD0",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void BackgroundCountersF180::AdvanceAt00450BD0()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundCountersF180.cpp",
+        "evidence": "R230; config/background-cycle-origin-evidence.json; scripts/repo-python scripts/verify-background-cycle-origins.py; F180; scripts/repo-python scripts/replay-exact-units.py --unit background-counter-00450bd0",
+        "owner": "authored",
+        "notes": "Complete regular callback increments and conditionally resets constructor-cleared, renderer-consumed game background counters. Independent asset path and installed six callback words establish game runtime context; whole natural ordinary and implicit-copy alternatives preserve source uncertainty. Observed fields and provisional roles do not establish a complete private owner/layout/ABI; no source/exact credit.; F180: Eleven complete R220/R230/R232 callbacks/463 CODE bytes/all2 actual DIR32 fields, each independently checked against its own full JSON origin record/bodyhash/CFG/plain RET/INT3 alignment/no owned tables. Four ordinary counter increments, three signed360 wrap tests, one signed reverse3840 wrap, two integer-to-double2500 strict/15360 inclusive thresholds and one separate72-frame counter. All natural source, no unused locals/partial owner instances/full nominal class claim. Both complete8-byte double readonly sections/all definitions match; no data/helper credit. No masks, crops, aliases, rebasing, conditional bodies, assembly, padding or ABI tricks. R231 unread camera stores remain unresolved and receive no source/exact credit. All478 prior units/162 objects/260 inputs/14 active drafts/97 unknown origins/full pending denominator preserved; only these11 new units receive canonical cold acceptance."
+      },
+      "origin": {
+        "address": "0x00450BD0",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "whole-background-cycle-policy-and-independent-asset-callback-render-provenance",
+        "evidence_id": "R230"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044E3A0",
+        "size": "45",
+        "span_end": "0x0044E3CC",
+        "current_name": "FUN_0044e3a0",
+        "proposed_name": "BackgroundStage::AdvanceBG05aReverseCycleAt0044E3A0",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R232; config/background-reverse-cycle-origin-evidence.json; scripts/repo-python scripts/verify-background-reverse-cycle-origins.py",
+        "owner": "authored",
+        "notes": "Complete regular callback decrements constructor-cleared and renderer-consumed counter at observed offset0x68, resetting signed-negative results to3840. Actual BG05a asset/table/renderer context supports authored inference; compact ordinary and implicit-copy controls do not recover original names/type/layout/ABI or source, no exact credit."
+      },
+      "after": {
+        "address": "0x0044E3A0",
+        "size": "45",
+        "span_end": "0x0044E3CC",
+        "current_name": "FUN_0044e3a0",
+        "proposed_name": "BackgroundStage::AdvanceBG05aReverseCycleAt0044E3A0",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void BackgroundCountersF180::AdvanceAt0044E3A0()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundCountersF180.cpp",
+        "evidence": "R232; config/background-reverse-cycle-origin-evidence.json; scripts/repo-python scripts/verify-background-reverse-cycle-origins.py; F180; scripts/repo-python scripts/replay-exact-units.py --unit background-counter-0044e3a0",
+        "owner": "authored",
+        "notes": "Complete regular callback decrements constructor-cleared and renderer-consumed counter at observed offset0x68, resetting signed-negative results to3840. Actual BG05a asset/table/renderer context supports authored inference; compact ordinary and implicit-copy controls do not recover original names/type/layout/ABI or source, no exact credit.; F180: Eleven complete R220/R230/R232 callbacks/463 CODE bytes/all2 actual DIR32 fields, each independently checked against its own full JSON origin record/bodyhash/CFG/plain RET/INT3 alignment/no owned tables. Four ordinary counter increments, three signed360 wrap tests, one signed reverse3840 wrap, two integer-to-double2500 strict/15360 inclusive thresholds and one separate72-frame counter. All natural source, no unused locals/partial owner instances/full nominal class claim. Both complete8-byte double readonly sections/all definitions match; no data/helper credit. No masks, crops, aliases, rebasing, conditional bodies, assembly, padding or ABI tricks. R231 unread camera stores remain unresolved and receive no source/exact credit. All478 prior units/162 objects/260 inputs/14 active drafts/97 unknown origins/full pending denominator preserved; only these11 new units receive canonical cold acceptance."
+      },
+      "origin": {
+        "address": "0x0044E3A0",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "whole-background-cycle-policy-and-independent-asset-callback-render-provenance",
+        "evidence_id": "R232"
       }
     }
   ],
@@ -154329,6 +154813,240 @@
           "target": 4204496
         }
       ]
+    },
+    "background-counter-00449ec0": {
+      "source": "src/BackgroundCountersF180.cpp",
+      "object": "build/matching/BackgroundCountersF180.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi"
+      ],
+      "functions": [
+        "BackgroundStage::AdvanceAnimationCounterAt00449EC0"
+      ],
+      "symbol": "?AdvanceAt00449EC0@BackgroundCountersF180@@QAEXXZ",
+      "target_address": 4497088,
+      "size": 26,
+      "relocations": []
+    },
+    "background-counter-0044da70": {
+      "source": "src/BackgroundCountersF180.cpp",
+      "object": "build/matching/BackgroundCountersF180.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi"
+      ],
+      "functions": [
+        "BackgroundStage::AdvanceAnimationCounterAt0044DA70"
+      ],
+      "symbol": "?AdvanceAt0044DA70@BackgroundCountersF180@@QAEXXZ",
+      "target_address": 4512368,
+      "size": 26,
+      "relocations": []
+    },
+    "background-counter-0044f830": {
+      "source": "src/BackgroundCountersF180.cpp",
+      "object": "build/matching/BackgroundCountersF180.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi"
+      ],
+      "functions": [
+        "BackgroundStage::AdvanceAnimationCounterAt0044F830"
+      ],
+      "symbol": "?AdvanceAt0044F830@BackgroundCountersF180@@QAEXXZ",
+      "target_address": 4519984,
+      "size": 26,
+      "relocations": []
+    },
+    "background-counter-00451420": {
+      "source": "src/BackgroundCountersF180.cpp",
+      "object": "build/matching/BackgroundCountersF180.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi"
+      ],
+      "functions": [
+        "BackgroundStage::AdvanceAnimationCounterAt00451420"
+      ],
+      "symbol": "?AdvanceAt00451420@BackgroundCountersF180@@QAEXXZ",
+      "target_address": 4527136,
+      "size": 26,
+      "relocations": []
+    },
+    "background-counter-0044b600": {
+      "source": "src/BackgroundCountersF180.cpp",
+      "object": "build/matching/BackgroundCountersF180.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi"
+      ],
+      "functions": [
+        "BackgroundStage::AdvanceBG02aCycleAt0044B600"
+      ],
+      "symbol": "?AdvanceAt0044B600@BackgroundCountersF180@@QAEXXZ",
+      "target_address": 4503040,
+      "size": 48,
+      "relocations": []
+    },
+    "background-counter-0044bb20": {
+      "source": "src/BackgroundCountersF180.cpp",
+      "object": "build/matching/BackgroundCountersF180.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi"
+      ],
+      "functions": [
+        "BackgroundStage::AdvanceBG02bCycleAt0044BB20"
+      ],
+      "symbol": "?AdvanceAt0044BB20@BackgroundCountersF180@@QAEXXZ",
+      "target_address": 4504352,
+      "size": 48,
+      "relocations": []
+    },
+    "background-counter-0044c040": {
+      "source": "src/BackgroundCountersF180.cpp",
+      "object": "build/matching/BackgroundCountersF180.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi"
+      ],
+      "functions": [
+        "BackgroundStage::AdvanceBG02cCycleAt0044C040"
+      ],
+      "symbol": "?AdvanceAt0044C040@BackgroundCountersF180@@QAEXXZ",
+      "target_address": 4505664,
+      "size": 48,
+      "relocations": []
+    },
+    "background-counter-0044d5e0": {
+      "source": "src/BackgroundCountersF180.cpp",
+      "object": "build/matching/BackgroundCountersF180.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi"
+      ],
+      "functions": [
+        "BackgroundStage::AdvanceBG04aCycleAt0044D5E0"
+      ],
+      "symbol": "?AdvanceAt0044D5E0@BackgroundCountersF180@@QAEXXZ",
+      "target_address": 4511200,
+      "size": 55,
+      "relocations": [
+        {
+          "offset": 30,
+          "type": "DIR32",
+          "symbol": "__real@40a3880000000000",
+          "target": 6654304
+        }
+      ]
+    },
+    "background-counter-004503e0": {
+      "source": "src/BackgroundCountersF180.cpp",
+      "object": "build/matching/BackgroundCountersF180.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi"
+      ],
+      "functions": [
+        "BackgroundStage::AdvanceBG07aCycleAt004503E0"
+      ],
+      "symbol": "?AdvanceAt004503E0@BackgroundCountersF180@@QAEXXZ",
+      "target_address": 4522976,
+      "size": 55,
+      "relocations": [
+        {
+          "offset": 30,
+          "type": "DIR32",
+          "symbol": "__real@40ce000000000000",
+          "target": 6655144
+        }
+      ]
+    },
+    "background-counter-00450bd0": {
+      "source": "src/BackgroundCountersF180.cpp",
+      "object": "build/matching/BackgroundCountersF180.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi"
+      ],
+      "functions": [
+        "BackgroundStage::AdvanceBG08aCycleAt00450BD0"
+      ],
+      "symbol": "?AdvanceAt00450BD0@BackgroundCountersF180@@QAEXXZ",
+      "target_address": 4525008,
+      "size": 60,
+      "relocations": []
+    },
+    "background-counter-0044e3a0": {
+      "source": "src/BackgroundCountersF180.cpp",
+      "object": "build/matching/BackgroundCountersF180.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi"
+      ],
+      "functions": [
+        "BackgroundStage::AdvanceBG05aReverseCycleAt0044E3A0"
+      ],
+      "symbol": "?AdvanceAt0044E3A0@BackgroundCountersF180@@QAEXXZ",
+      "target_address": 4514720,
+      "size": 45,
+      "relocations": []
     }
   },
   "source_sha256": {
@@ -154591,6 +155309,8 @@
     "src/BackgroundPoliciesF178.cpp": "42b312511f30275f3a9ea042816f0376408e793a6b8f1f73cfa84b20dc89934a",
     "src/BackgroundPoliciesF178.hpp": "faa84f217d7c6a96b58484b7afe58ae2c4b278bc8dd2da5f82a699294f530746",
     "src/RenderBackgroundF179.cpp": "1c56d74e4e69c07fbdf91ab0d77e159a330a36cc874aec756c8382d5f20d8bad",
-    "src/RenderBackgroundF179.hpp": "c8555b5ba8ec256188bc286d5def36885ffc672b09bd48df22ff7fdab5a5ea33"
+    "src/RenderBackgroundF179.hpp": "c8555b5ba8ec256188bc286d5def36885ffc672b09bd48df22ff7fdab5a5ea33",
+    "src/BackgroundCountersF180.cpp": "5a7e31712872aa7cf308283eeffaac689b7a75cf71bcd4ce459b94120e1c1580",
+    "src/BackgroundCountersF180.hpp": "0a23a71a99de83b69fcb444e930a1c66c42ecbe9464e4b484aaccdbbc7913bf4"
   }
 }

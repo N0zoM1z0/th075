@@ -7,6 +7,33 @@ earlier cleared-goal instructions are superseded. Continue the pending work in
 [RE_HANDOFF.md](RE_HANDOFF.md). F178 accepts54 complete background
 policies; all complete large drafts, including0055AC80, remain unaccepted.
 
+## F180: background counters and cycles
+
+Eleven complete R220/R230/R232 callbacks now pass one canonical cold build:
+463 CODE bytes/all2 DIR32 fields, with nine explicitly empty field lists. Their
+own full JSON origin records/hashes, complete CFGs, plain returns, following
+INT3 alignment and absence of owned tables were independently checked before
+source adoption. All first previews were exact. Four ordinary26-byte increments,
+three signed48-byte360 cycles, two55-byte integer-to-double threshold cycles,
+one60-byte dual counter and one45-byte reverse cycle keep natural operations.
+
+Threshold2500.0 is strict;15360.0 is inclusive. Both whole eight-byte double
+sections and every definition match fresh canonical output. Reverse wrap is
+3840; the separate frame counter wraps after71. No complete owner, shared
+original nominal class, unread source local, padding, ABI trick or data/helper
+credit is claimed. R231 unread camera-result stores remain unresolved.
+All478 prior units/162 objects/260 inputs/14 active drafts and97 unknown origins
+remain unchanged. Totals:489 units/746,417 CODE bytes,163 canonical objects/
+262 inputs,37.75% conservatively including pending bytes.
+
+Next revisit only the complete451A00 timed-sprite draft through a new private
+copy, preserving frozen F176 inputs. Native frameB4/this-A8/x-A4 versus emitted
+frameB0/this-A4/x-18 can be explained by the real horizontal camera local's
+allocation bucket. The historical x-to-cameraX control used the same bucket9
+and is closed; existing cameraHorizontal bucket12 is distinct and meaningful.
+Inspect actual CodeView allocation and whole446-byte comparison/all18 fields
+before any acceptance. Do not add storage, padding or alternate bodies.
+
 ## F179: complete background rendering
 
 R040435A70 is now canonical cold-exact across its full6,404-byte extent and

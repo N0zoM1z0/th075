@@ -459,3 +459,14 @@ address,name,module,confidence,evidence
 0x00451D20,BackgroundStage::DrawSidePairAt00451D20,BackgroundStage,inferred,F178; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x00451E00,BackgroundStage::ApplyTransformAt00451E00,BackgroundStage,inferred,F178; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x00435A70,BattleScene::RenderBackground,BattleScene,inferred,F179; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x00449EC0,BackgroundStage::AdvanceAnimationCounterAt00449EC0,BackgroundStage,inferred,F180; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x0044DA70,BackgroundStage::AdvanceAnimationCounterAt0044DA70,BackgroundStage,inferred,F180; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x0044F830,BackgroundStage::AdvanceAnimationCounterAt0044F830,BackgroundStage,inferred,F180; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x00451420,BackgroundStage::AdvanceAnimationCounterAt00451420,BackgroundStage,inferred,F180; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x0044B600,BackgroundStage::AdvanceBG02aCycleAt0044B600,BackgroundStage,inferred,F180; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x0044BB20,BackgroundStage::AdvanceBG02bCycleAt0044BB20,BackgroundStage,inferred,F180; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x0044C040,BackgroundStage::AdvanceBG02cCycleAt0044C040,BackgroundStage,inferred,F180; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x0044D5E0,BackgroundStage::AdvanceBG04aCycleAt0044D5E0,BackgroundStage,inferred,F180; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x004503E0,BackgroundStage::AdvanceBG07aCycleAt004503E0,BackgroundStage,inferred,F180; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x00450BD0,BackgroundStage::AdvanceBG08aCycleAt00450BD0,BackgroundStage,inferred,F180; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x0044E3A0,BackgroundStage::AdvanceBG05aReverseCycleAt0044E3A0,BackgroundStage,inferred,F180; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained

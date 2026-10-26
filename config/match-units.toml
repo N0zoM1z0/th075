@@ -30172,3 +30172,121 @@ offset = 6395
 type = "REL32"
 symbol = "?EndFrame@Graphics@@YAXXZ"
 target = 0x004027D0
+
+[units.background-counter-00449ec0]
+source = "src/BackgroundCountersF180.cpp"
+object = "build/matching/BackgroundCountersF180.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi"]
+functions = ["BackgroundStage::AdvanceAnimationCounterAt00449EC0"]
+symbol = "?AdvanceAt00449EC0@BackgroundCountersF180@@QAEXXZ"
+target_address = 0x00449EC0
+size = 26
+relocations = []
+
+[units.background-counter-0044da70]
+source = "src/BackgroundCountersF180.cpp"
+object = "build/matching/BackgroundCountersF180.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi"]
+functions = ["BackgroundStage::AdvanceAnimationCounterAt0044DA70"]
+symbol = "?AdvanceAt0044DA70@BackgroundCountersF180@@QAEXXZ"
+target_address = 0x0044DA70
+size = 26
+relocations = []
+
+[units.background-counter-0044f830]
+source = "src/BackgroundCountersF180.cpp"
+object = "build/matching/BackgroundCountersF180.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi"]
+functions = ["BackgroundStage::AdvanceAnimationCounterAt0044F830"]
+symbol = "?AdvanceAt0044F830@BackgroundCountersF180@@QAEXXZ"
+target_address = 0x0044F830
+size = 26
+relocations = []
+
+[units.background-counter-00451420]
+source = "src/BackgroundCountersF180.cpp"
+object = "build/matching/BackgroundCountersF180.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi"]
+functions = ["BackgroundStage::AdvanceAnimationCounterAt00451420"]
+symbol = "?AdvanceAt00451420@BackgroundCountersF180@@QAEXXZ"
+target_address = 0x00451420
+size = 26
+relocations = []
+
+[units.background-counter-0044b600]
+source = "src/BackgroundCountersF180.cpp"
+object = "build/matching/BackgroundCountersF180.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi"]
+functions = ["BackgroundStage::AdvanceBG02aCycleAt0044B600"]
+symbol = "?AdvanceAt0044B600@BackgroundCountersF180@@QAEXXZ"
+target_address = 0x0044B600
+size = 48
+relocations = []
+
+[units.background-counter-0044bb20]
+source = "src/BackgroundCountersF180.cpp"
+object = "build/matching/BackgroundCountersF180.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi"]
+functions = ["BackgroundStage::AdvanceBG02bCycleAt0044BB20"]
+symbol = "?AdvanceAt0044BB20@BackgroundCountersF180@@QAEXXZ"
+target_address = 0x0044BB20
+size = 48
+relocations = []
+
+[units.background-counter-0044c040]
+source = "src/BackgroundCountersF180.cpp"
+object = "build/matching/BackgroundCountersF180.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi"]
+functions = ["BackgroundStage::AdvanceBG02cCycleAt0044C040"]
+symbol = "?AdvanceAt0044C040@BackgroundCountersF180@@QAEXXZ"
+target_address = 0x0044C040
+size = 48
+relocations = []
+
+[units.background-counter-0044d5e0]
+source = "src/BackgroundCountersF180.cpp"
+object = "build/matching/BackgroundCountersF180.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi"]
+functions = ["BackgroundStage::AdvanceBG04aCycleAt0044D5E0"]
+symbol = "?AdvanceAt0044D5E0@BackgroundCountersF180@@QAEXXZ"
+target_address = 0x0044D5E0
+size = 55
+[[units.background-counter-0044d5e0.relocations]]
+offset = 30
+type = "DIR32"
+symbol = "__real@40a3880000000000"
+target = 0x00658960
+
+[units.background-counter-004503e0]
+source = "src/BackgroundCountersF180.cpp"
+object = "build/matching/BackgroundCountersF180.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi"]
+functions = ["BackgroundStage::AdvanceBG07aCycleAt004503E0"]
+symbol = "?AdvanceAt004503E0@BackgroundCountersF180@@QAEXXZ"
+target_address = 0x004503E0
+size = 55
+[[units.background-counter-004503e0.relocations]]
+offset = 30
+type = "DIR32"
+symbol = "__real@40ce000000000000"
+target = 0x00658CA8
+
+[units.background-counter-00450bd0]
+source = "src/BackgroundCountersF180.cpp"
+object = "build/matching/BackgroundCountersF180.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi"]
+functions = ["BackgroundStage::AdvanceBG08aCycleAt00450BD0"]
+symbol = "?AdvanceAt00450BD0@BackgroundCountersF180@@QAEXXZ"
+target_address = 0x00450BD0
+size = 60
+relocations = []
+
+[units.background-counter-0044e3a0]
+source = "src/BackgroundCountersF180.cpp"
+object = "build/matching/BackgroundCountersF180.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi"]
+functions = ["BackgroundStage::AdvanceBG05aReverseCycleAt0044E3A0"]
+symbol = "?AdvanceAt0044E3A0@BackgroundCountersF180@@QAEXXZ"
+target_address = 0x0044E3A0
+size = 45
+relocations = []
