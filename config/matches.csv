@@ -491,3 +491,4 @@ address,name,size,status,match_percent,unit,evidence
 0x00451A00,FighterState::RenderTimedSprite,446,matching,100.00,fighter-render-timed-sprite-00451a00,F181; scripts/repo-python scripts/replay-exact-units.py --unit fighter-render-timed-sprite-00451a00; complete function/all actual fields
 0x0042AB90,NameEntryScene::PollPlayerInput,722,matching,100.00,name-entry-poll-player-0042ab90,F182; scripts/repo-python scripts/replay-exact-units.py --unit name-entry-poll-player-0042ab90; complete function/all actual fields
 0x0042BCD0,NameEntryScene::PollSharedInput,764,matching,100.00,name-entry-poll-shared-0042bcd0,F182; scripts/repo-python scripts/replay-exact-units.py --unit name-entry-poll-shared-0042bcd0; complete function/all actual fields
+0x0043A7A0,TitleScene::RenderMenu,1089,matching,100.00,title-render-menu-0043a7a0,F183; scripts/repo-python scripts/replay-exact-units.py --unit title-render-menu-0043a7a0; complete function/all actual fields

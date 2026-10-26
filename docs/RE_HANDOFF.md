@@ -1,18 +1,19 @@
 # TH075 function reconstruction handoff
 
-Updated 2026-10-26 for continued reconstruction, F182.
+Updated 2026-10-26 for continued reconstruction, F183.
 **The 98% authored-byte goal is active and incomplete. Do not pause it.**
 The user explicitly confirmed continuation and prohibited pausing. The earlier
 pause was an agent error caused by treating stale handoff instructions as a
 current stop request. Cleanup, documentation, verification and commits do not
 suspend reconstruction or require another resume request. Subsequent project
-phases remain deferred. F182 accepts both complete name-entry input policies.
+phases remain deferred. F183 accepts the complete title-menu renderer.
+F182 accepted both complete name-entry input policies.
 F181 accepted the complete timed-sprite renderer.
 F180 accepted11 complete background callbacks.
 F179 accepted the complete background renderer.
 F178 accepted54 complete background policies.
 F170 accepted the R045 opponent gauge policy; the full0055AC80 draft is unaccepted.
-The complete large drafts remain unaccepted. Current F182 outcomes supersede historical
+The complete large drafts remain unaccepted. Current F183 outcomes supersede historical
 pending-work instructions.
 
 ## Continuation command
@@ -48,14 +49,14 @@ it as part of this active goal. A successor must resume that action directly.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97 / 3,608 code bytes |
-| Source-present / exact functions / exact units | 492 / 492 / 492 |
-| Exact code bytes | 748,349 |
-| Reviewed authored coverage | 748,349 / 1,973,516 (37.92%) |
-| Conservative coverage, including pending bytes | 748,349 / 1,977,124 (37.85%) |
-| Canonical objects / accepted source-header inputs | 165 / 266 |
+| Source-present / exact functions / exact units | 493 / 493 / 493 |
+| Exact code bytes | 749,438 |
+| Reviewed authored coverage | 749,438 / 1,973,516 (37.97%) |
+| Conservative coverage, including pending bytes | 749,438 / 1,977,124 (37.91%) |
+| Canonical objects / accepted source-header inputs | 166 / 268 |
 
 The ledgers and status script are authoritative. The adoption manifest retains
-F009 plus 432 additions / 738,466 code bytes / 266 inputs. Origin evidence through
+F009 plus 433 additions / 739,555 code bytes / 268 inputs. Origin evidence through
 R268 is intact. Every pending code byte remains in the conservative denominator.
 CODE `size` determines credit; full `compare_size` also includes owned tables.
 
@@ -64,7 +65,8 @@ Only use the supplied Japanese th075.exe 1.11, SHA-256
 Identity is pinned to the user's archive, without independent official
 provenance corroboration. Never substitute th075c.exe or patch target bytes.
 
-The preceding reconstruction checkpoint is **d13a8e9 (F181)**, preceded by
+The preceding reconstruction checkpoint is **9d128c4 (F182)**, preceded by
+**d13a8e9 (F181)** and
 **4ecb7fb (F180)** and
 **2a697d8 (F179)** and
 **d865998 (F178)** and
@@ -118,7 +120,72 @@ replay, 72/72 bytes with zero differences, across one new object. Both have no
 actual relocations. Names and complete owner layout remain provisional.
 F146's 51-byte motion helper remains accepted. The large drafts earn no credit.
 
-## Current F182 outcomes and continuation
+## Current F183 outcomes and continuation
+
+One new canonical object accepts the complete R041 title-menu renderer in
+`src/TitleMenuRenderF183.cpp` and its call-only header. Unit
+`title-render-menu-0043a7a0` compares all1,089 CODE bytes and26 actual fields.
+The full native extent has one plain RET/four internal branches/no owned tables/
+15 following INT3 bytes. Its frozen R041 hash, complete decoded CFG, every
+physical field and emitted COMDAT were independently checked before the new
+canonical cold build. The first natural preview was exact. Only this unit was
+cold-replayed.
+
+The source constructs the known complete132-byte packet and SDK RECT16 and
+uses one real int menuIndex for ten items/stripes. Measured meaningful names
+place spriteQuad-88/region-98/menuIndex-9C/this-A0; actual CodeView confirms
+native frameB4 and the natural compiler float-conversion temporaries. Every
+rectangle, coordinate, rotation, byte slide offset and repeated alpha/highlight
+channel is retained. D3DCOLOR_ARGB expresses the actual native color masks and
+boolean-to-int highlight arithmetic; these are color semantics, not comparison
+masks. All drawing receivers are loaded from this8. Canonical frame/quad helpers,
+SetRect import and the established40C860 int/RET4 filter call view are reused;
+no helper or readonly literal/data credit is added.
+
+No complete scene/drawing owner is instantiated or embedded; no original shared
+nominal identity is asserted. No extra local, padding, assembly, conditional
+body, ABI/precision/volatile trick, crop, alias or local-label rebasing. All492
+prior units/165 objects/266 inputs,14 frozen active drafts, all fourteen F157
+probes/both F159 traces, forty protected groups and97 unknown origins remain
+unchanged; every pending byte stays in the conservative denominator.
+
+Immediately continue R04343ABF0/228 title input and R053429DC0/310 shared/replay
+input,538 CODE bytes. Their full native/decompile evidence is retained in
+`.analysis/f184-menu-input.c`, `-ghidra.log`, `-native-proof.json` and
+`-native.asm`; extents have one RET each,9/16 internal branches and no owned
+tables. All18 calls target canonical input/window helpers. Preserve dword
+versus byte stores, independent direction checks, confirm/cancel bytes, Escape
+counter and actual chord placement. Reuse existing mappings/held-count views,
+write natural separate bodies and compare full extents/all fields before cold
+acceptance. Both source drafts are prepared privately under
+`.analysis/f184-menu-input/`. Separate options switches/EH constructor remain
+unaccepted and require their own full evidence, tables/layout/EH treatment.
+Execute this input action immediately after checkpoint/cleanup/commit/push;
+no pause or additional resume request.
+
+Receipts: `.analysis/f183-title-menu-unit-proof.json`,
+`.analysis/f183-title-menu-canonical-replay.json`, full native evidence and the
+natural source/profile/CodeView/full comparison under `.analysis/f183-title-menu/`.
+
+Public CI passed **3,612 tests in 185.303 seconds**. Target,
+tracking, progress and diff checks pass. One new unit/one fresh canonical object
+was cold-replayed:1,089 full CODE bytes/all26 actual fields. All492 prior units,
+165 canonical objects/266 inputs, old headers/origins/verifiers, forty protected
+groups and14 frozen active drafts/all14 F157 probes/both F159 traces were
+hash-verified unchanged. Two compiler invocations ran serially and explicitly
+headless: one complete natural preview and one new canonical cold build.
+No old accepted unit or large-function control was rebuilt. Cleanup removed one
+obsolete preview (11,260 bytes),0 PDBs
+(0 bytes) and377 bytecode files
+(8,312,399 bytes), retaining complete sections/symbols/
+fields/source/header/profile evidence. Receipts: `.analysis/f183-object-retention.json`,
+`.analysis/f183-cleanup.json`, `.analysis/f183-preservation-final.json` and
+`.analysis/f183-source-checkpoint.json`. Both next input policies already have
+full native CFG/callee proofs, attested headless decompiles and private natural
+source drafts. Execute their complete preview/field comparison immediately
+after commit/push. The98% goal stays active and incomplete, without pause.
+
+## Retained F182 outcomes and continuation
 
 One new canonical object accepts both complete R040 input policies in
 `src/NameEntryInputF182.cpp` and its call-only header:

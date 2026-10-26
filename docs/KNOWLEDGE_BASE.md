@@ -7,6 +7,29 @@ earlier cleared-goal instructions are superseded. Continue the pending work in
 [RE_HANDOFF.md](RE_HANDOFF.md). F178 accepts54 complete background
 policies; all complete large drafts, including0055AC80, remain unaccepted.
 
+## F183: complete title-menu rendering
+
+Full R04143A7A0 now passes canonical cold replay:1,089 CODE bytes/all26 real
+fields, one RET/four branches/no tables/15 excluded INT3 bytes. The first
+natural preview was exact. Only this new unit was cold-replayed. Source uses
+one complete132-byte packet, SDK RECT16 and actual int menuIndex; meaningful
+measured names yield native frameB4/this-A0/packet-88/RECT-98/index-9C, confirmed
+by actual CodeView. Float conversion slots are compiler temporaries, not added
+source locals. Ten stripes/items retain every rectangle, transform, byte slide,
+alpha and repeated highlighted-channel expression. D3DCOLOR masks are genuine
+color-format operations. All drawing receivers load this8. Canonical quad/frame
+helpers, SetRect import and40C860 int/RET4 call view are unchanged; no helper,
+readonly or data credit. No partial owner instance or full nominal class claim.
+
+All492 old units/165 objects/266 inputs/14 frozen active drafts and97 unknown
+origins remain unchanged. Totals:493 units/749,438 CODE bytes,166 canonical
+objects/268 inputs,37.91% conservatively including pending bytes. Continue
+R04343ABF0/228 andR053429DC0/310 input policies immediately. Their own full
+native extents each have one RET,9/16 branches/no tables; all18 calls already
+target canonical input/window helpers. Preserve actual dword/byte stores,
+independent direction tests, Escape counter and chord placement. Options
+switches and the separate EH constructor remain unaccepted.
+
 ## F182: name-entry input policies
 
 Both complete R04042AB90/722 and42BCD0/764 policies pass one canonical cold

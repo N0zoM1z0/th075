@@ -490,3 +490,4 @@ BackgroundStage::AdvanceBG05aReverseCycleAt0044E3A0
 FighterState::RenderTimedSprite
 NameEntryScene::PollPlayerInput
 NameEntryScene::PollSharedInput
+TitleScene::RenderMenu

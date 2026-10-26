@@ -473,3 +473,4 @@ address,name,module,confidence,evidence
 0x00451A00,FighterState::RenderTimedSprite,FighterState,inferred,F181; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x0042AB90,NameEntryScene::PollPlayerInput,NameEntryScene,inferred,F182; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x0042BCD0,NameEntryScene::PollSharedInput,NameEntryScene,inferred,F182; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x0043A7A0,TitleScene::RenderMenu,TitleScene,inferred,F183; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained

@@ -30787,3 +30787,142 @@ offset = 596
 type = "DIR32"
 symbol = "?g_HeldInputAt006716AC@@3UHeldInputBlock4388D0@@A"
 target = 0x006716AC
+
+[units.title-render-menu-0043a7a0]
+source = "src/TitleMenuRenderF183.cpp"
+object = "build/matching/TitleMenuRenderF183.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["TitleScene::RenderMenu"]
+symbol = "?RenderMenu@TitleMenuRenderF183@@QAEXXZ"
+target_address = 0x0043A7A0
+size = 1089
+[[units.title-render-menu-0043a7a0.relocations]]
+offset = 16
+type = "REL32"
+symbol = "?BeginFrameValueAt00402660@Graphics@@YA_NXZ"
+target = 0x00402660
+[[units.title-render-menu-0043a7a0.relocations]]
+offset = 38
+type = "REL32"
+symbol = "??0SpriteQuad40CA80@@QAE@XZ"
+target = 0x0040D990
+[[units.title-render-menu-0043a7a0.relocations]]
+offset = 54
+type = "REL32"
+symbol = "?SetDepthMode@TitleMenuDrawingF183@@QAEXH@Z"
+target = 0x0040C840
+[[units.title-render-menu-0043a7a0.relocations]]
+offset = 70
+type = "REL32"
+symbol = "?SetBlendMode@TitleMenuDrawingF183@@QAEXH@Z"
+target = 0x0040C7F0
+[[units.title-render-menu-0043a7a0.relocations]]
+offset = 97
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.title-render-menu-0043a7a0.relocations]]
+offset = 115
+type = "REL32"
+symbol = "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z"
+target = 0x00411400
+[[units.title-render-menu-0043a7a0.relocations]]
+offset = 179
+type = "REL32"
+symbol = "?DrawQuad@TitleMenuDrawingF183@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z"
+target = 0x0040C9A0
+[[units.title-render-menu-0043a7a0.relocations]]
+offset = 206
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.title-render-menu-0043a7a0.relocations]]
+offset = 237
+type = "REL32"
+symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z"
+target = 0x00427500
+[[units.title-render-menu-0043a7a0.relocations]]
+offset = 301
+type = "REL32"
+symbol = "?DrawQuad@TitleMenuDrawingF183@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z"
+target = 0x0040C9A0
+[[units.title-render-menu-0043a7a0.relocations]]
+offset = 325
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.title-render-menu-0043a7a0.relocations]]
+offset = 356
+type = "REL32"
+symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z"
+target = 0x00427500
+[[units.title-render-menu-0043a7a0.relocations]]
+offset = 420
+type = "REL32"
+symbol = "?DrawQuad@TitleMenuDrawingF183@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z"
+target = 0x0040C9A0
+[[units.title-render-menu-0043a7a0.relocations]]
+offset = 436
+type = "REL32"
+symbol = "?SetTextureFilter@TitleMenuDrawingF183@@QAEXH@Z"
+target = 0x0040C860
+[[units.title-render-menu-0043a7a0.relocations]]
+offset = 500
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.title-render-menu-0043a7a0.relocations]]
+offset = 518
+type = "REL32"
+symbol = "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z"
+target = 0x00411400
+[[units.title-render-menu-0043a7a0.relocations]]
+offset = 547
+type = "REL32"
+symbol = "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004116F0
+[[units.title-render-menu-0043a7a0.relocations]]
+offset = 596
+type = "REL32"
+symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z"
+target = 0x00411500
+[[units.title-render-menu-0043a7a0.relocations]]
+offset = 643
+type = "REL32"
+symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z"
+target = 0x00411500
+[[units.title-render-menu-0043a7a0.relocations]]
+offset = 713
+type = "REL32"
+symbol = "?DrawQuad@TitleMenuDrawingF183@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z"
+target = 0x0040C9A0
+[[units.title-render-menu-0043a7a0.relocations]]
+offset = 756
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.title-render-menu-0043a7a0.relocations]]
+offset = 839
+type = "REL32"
+symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z"
+target = 0x00427500
+[[units.title-render-menu-0043a7a0.relocations]]
+offset = 886
+type = "REL32"
+symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z"
+target = 0x00411500
+[[units.title-render-menu-0043a7a0.relocations]]
+offset = 1055
+type = "REL32"
+symbol = "?DrawQuad@TitleMenuDrawingF183@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z"
+target = 0x0040C9A0
+[[units.title-render-menu-0043a7a0.relocations]]
+offset = 1076
+type = "REL32"
+symbol = "?SetTextureFilter@TitleMenuDrawingF183@@QAEXH@Z"
+target = 0x0040C860
+[[units.title-render-menu-0043a7a0.relocations]]
+offset = 1081
+type = "REL32"
+symbol = "?EndFrame@Graphics@@YAXXZ"
+target = 0x004027D0
