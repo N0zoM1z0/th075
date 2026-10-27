@@ -487,3 +487,4 @@ address,name,module,confidence,evidence
 0x004192F0,GameConfig::LoadIni,GameConfig,inferred,F194; complete 339-byte Win32 settings read cold exact; original global-data ownership unknown
 0x00417430,GameGlobals::Release,GameGlobals,inferred,F195; full 358-byte global cleanup policy cold exact; original owner classes unknown
 0x0043AD10,BattleScene::Initialize,BattleScene,inferred,F196; complete 922 native CODE cold exact with five-stage EH; original scene/container class identity remains provisional
+0x0043A020,TitleScene::Initialize,TitleScene,inferred,F197; complete two-state EH 435-byte title initializer cold exact; original nominal class and R108 base origin unknown

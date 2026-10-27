@@ -504,3 +504,4 @@ GameGlobals::Initialize
 GameConfig::LoadIni
 GameGlobals::Release
 BattleScene::Initialize
+TitleScene::Initialize

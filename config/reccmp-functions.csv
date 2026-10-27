@@ -505,3 +505,4 @@ GameGlobals::Initialize,0x00417210,function
 GameConfig::LoadIni,0x004192F0,function
 GameGlobals::Release,0x00417430,function
 BattleScene::Initialize,0x0043AD10,function
+TitleScene::Initialize,0x0043A020,function

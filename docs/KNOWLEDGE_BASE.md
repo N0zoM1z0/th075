@@ -24,6 +24,8 @@ all 18 fields, using only borrowed destructor receiver interfaces.
 F196 cold-replays the previously pending 922-byte battle-scene constructor
 with the native five-state EH flow and all 40 relocation fields exact.
 The F189 'unaccepted' status is historical.
+F197 independently cross-verifies the same base8/texture80 physical
+contract in the 435-byte title constructor (two EH states, 18 fields), exact.
 F189 separately inspected but did not accept the 922-byte EH battle initializer.
 The original H184 handoff was historical and is superseded by the current
 request. Earlier experiments and names remain hypotheses until tested.
@@ -34,9 +36,9 @@ See the current [handoff](RE_HANDOFF.md) for current status.
 - Supplied Japanese th075.exe 1.11, SHA-256
   `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
   Archive identity is pinned; official distribution provenance is uncorroborated.
-- **506 exact functions/units, 756,747 CODE bytes, 178 canonical objects,
-  283 accepted source-header inputs.** Reviewed coverage is 38.35%; conservative
-  coverage is 38.28%, including all 97 unknown origins/3,608 pending bytes.
+- **507 exact functions/units, 757,182 CODE bytes, 179 canonical objects,
+  284 accepted source-header inputs.** Reviewed coverage is 38.37%; conservative
+  coverage is 38.30%, including all 97 unknown origins/3,608 pending bytes.
 - Ownership, source presence, names, Ghidra types, compilation and reproducible
   exactness remain distinct. Read ledgers and relevant origin evidence before
   relying on any classification or provisional boundary.
@@ -377,6 +379,28 @@ addresses without adopting them. R108 `004251C0` base ctor stays
 unknown-origin and no exact credit despite its structurally exact
 private source. F189's original native-only investigation is now
 superseded for this function by a complete accepted unit, not deleted.
+
+## F197: complete title initialization with independent EH comparison
+
+Target `TitleScene::Initialize` at 0x0043A020 is 435 native CODE bytes,
+116 whole instructions, one RET and 18 actual COFF fields. Native SHA256:
+`e4c04d16c30c718c2504e389a945d902b5766e687aa45e40123f3e5c8fb5b573`.
+A natural /GX source built in a fresh standalone object cold-replays
+every byte and field. The original EH handler `0x00655B23` carries
+two states with native cleanup addresses 655B10/18, independently
+reviewed under immutable R020. Physical source-compatible subobjects
+match the separate F196 battle construction: base size8, shared
+texture owner size80. The title path has one new(80), rather than
+battle's four new's, and reproduces its two timeGetTime calls,
+four-slot texture allocation, title asset load, ten menu alpha
+stores, user selection and initial shared player state.
+
+The emitted derived constructor is a *call-only receiver view*, never
+allocated as a complete TitleScene; original full nominal class layout
+and STL container element types are unproved. No compiler EH helper,
+vtable, CRT, data or borrowed source receives exact byte credit.
+R108 base ctor retains unknown origin; its exact relocation in
+these callers cannot be used to reclassify it.
 
 ## Retained failures and method boundaries
 

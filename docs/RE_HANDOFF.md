@@ -1,4 +1,4 @@
-# TH075 active reconstruction status — F196
+# TH075 active reconstruction status — F197
 
 Updated 2026-10-27. The user explicitly resumed reconstruction and requires
 serious treatment of both large/core and small/leaf functions; all historical
@@ -295,9 +295,31 @@ masked relocation bytes, EH code grafts or cropped extent were used.
 The earlier unaccepted F189 disassembly remains historical negative
 evidence; do not read its old 'unaccepted' statement as current status.
 
-Current ledger: **506 exact functions, 756,747 CODE bytes / 1,973,516 reviewed
-authored bytes = 38.35%**, conservative 38.28% with 3,608 unknown-origin bytes
-retained. F184..F196 added thirteen accepted units, twelve objects and fifteen new
+F197 independently cross-tested those scene-base/texture physical
+contracts on another complete constructor: `TitleScene::Initialize` at
+`0x0043A020`, **435 native CODE bytes**, 116 native x86 instructions,
+**18 actual COFF relocation fields**, normal RET at 43A1D2 and INT3
+alignment. Native SHA256:
+`e4c04d16c30c718c2504e389a945d902b5766e687aa45e40123f3e5c8fb5b573`.
+It independently cold-replays **435/435 exact** from natural /GX C++.
+The original independent R020 `00655B23` EH handler reports exactly
+**two cleanup states** (base and one temporary allocation, native
+unwinds `00655B10/18`) rather than the battle constructor's five.
+The source reproduces the actual base ctor dependency `4251C0`, the
+title vtable anchor `658308`, both timeGetTime imports, new(80)
+TextureManager `40AD80`, slot allocation count4, original
+`data\system\title.dat` pack load, all menu alpha/selection
+byte stores, two selected-player bytes and sequence-state clear.
+No full nominal TitleScene object size or original container element
+types have been asserted or used to allocate a TitleScene. The
+paired R108 base constructor remains origin-unknown and uncredited.
+Matching the 8/80-byte physical contracts independently in F196 and
+F197 strengthens their byte/layout evidence, not proof of original C++
+names or independent acceptance of borrowed constructors.
+
+Current ledger: **507 exact functions, 757,182 CODE bytes / 1,973,516 reviewed
+authored bytes = 38.37%**, conservative 38.30% with 3,608 unknown-origin bytes
+retained. F184..F197 added fourteen accepted units, thirteen objects and sixteen new
 source/header inputs.
 Keep R268 origin evidence, all 97 unknown candidates, 493 pre-F184
 accepted units and protected private F184/F185 preview/drafts intact.
