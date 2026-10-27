@@ -1,4 +1,4 @@
-# TH075 active reconstruction status — F186
+# TH075 active reconstruction status — F187
 
 Updated 2026-10-27. The user explicitly resumed reconstruction and requires
 serious treatment of both large/core and small/leaf functions; all historical
@@ -75,15 +75,32 @@ was counted as exact. Both call-only scene interfaces and the separate
 configuration-saving callee remain provisional: this unit earns only its
 own 951 CODE bytes, not helper/table ownership credit.
 
-Current ledger: **497 exact functions, 752,200 CODE bytes / 1,973,516 reviewed
-authored bytes = 38.11%**, conservative 38.05% with 3,608 unknown-origin bytes
-retained. F184..F186 added four accepted units, three objects and six new
+F187 cold-reconstructed **`GameConfig::SaveIni`** at 00419450: 339 native
+CODE bytes / 116 complete instructions, one plain RET at 004195A2 and
+following INT3. The full 339 bytes and **27 actual DIR32 relocation fields**
+(including the verified native filename anchor 00657A70 and four Win32
+imports) pass canonical cold replay with zero differences. Its real C++
+source calls `CreateFileA("config.ini",...)`, `SetFilePointer`, exactly
+eleven `WriteFile` operations of 80-byte config storage and observed individual
+bytes, and `CloseHandle`. The third write precedes a real byte store of 1;
+no invented struct layout, ignored return check, Win32 shortcuts or data-byte
+credit. The original source's namespace and full storage ownership remain
+unknown. The first ordinary /Od source (same 339 bytes) used a different
+HANDLE/DWORD stack order, giving 26 nonrelocation byte differences; declaring
+the real `DWORD written` ahead of `HANDLE file` reproduced the native local
+slot assignments and complete compiler output. F187 implements the *same*
+`OptionsSettingsF186::SaveConfiguration` COFF name already called by F186;
+the accepted F186 body/source/relocations were not modified.
+
+Current ledger: **498 exact functions, 752,539 CODE bytes / 1,973,516 reviewed
+authored bytes = 38.13%**, conservative 38.06% with 3,608 unknown-origin bytes
+retained. F184..F187 added five accepted units, four objects and seven new
 source/header inputs.
 Keep R268 origin evidence, all 97 unknown candidates, 493 pre-F184
 accepted units and protected private F184/F185 preview/drafts intact.
 
 Next: attack other large scene/battle functions (e.g. 00429F00 options
-selection or 0043AD10 battle initialization) with full CFG, branches, call graph,
+selection / EH resource allocation or 0043AD10 battle initialization) with full CFG, branches, call graph,
 target writes, lifetime and switch ownership before adopting any source.
 Do not claim exact credit for incomplete probes. Record failed approaches and
 commit separately when they yield durable discoveries.

@@ -496,3 +496,4 @@ address,name,size,status,match_percent,unit,evidence
 0x00429DC0,ReplayScene::PollInput,310,matching,100.00,replay-poll-input-00429dc0,F184; cold exact replay of full function/all 27 actual fields
 0x0043A270,TitleScene::Advance,1273,matching,100.00,title-scene-advance-0043a270,F185; canonical cold exact; complete 1273 code + 40 switch table + 76 relocations
 0x00428F00,OptionsScene::AdvanceAt00428F00,951,matching,100.00,options-scene-advance-00428f00,F186; scripts/repo-python scripts/replay-exact-units.py --unit options-scene-advance-00428f00; all 979 compared bytes/70 actual relocation fields
+0x00419450,GameConfig::SaveIni,339,matching,100.00,game-config-save-00419450,F187; scripts/repo-python scripts/replay-exact-units.py --unit game-config-save-00419450; complete target body/27 actual relocations

@@ -495,3 +495,4 @@ TitleScene::PollMenuInput
 ReplayScene::PollInput
 TitleScene::Advance
 OptionsScene::AdvanceAt00428F00
+GameConfig::SaveIni

@@ -6,6 +6,8 @@ F185 added the 1,273-byte title core state machine plus an owned 40-byte
 switch table and 76 relocation fields, all cold exact.
 F186 added a separate 951-byte options scene controller, seven-case owned
 28-byte switch table and 70 relocations, also fully cold exact.
+F187 added the 339-byte Win32 config writer and its 27 actual fields with
+independent canonical cold comparison.
 The original H184 handoff was historical and is superseded by the current
 request. Earlier experiments and names remain hypotheses until tested.
 See the current [handoff](RE_HANDOFF.md) for current status.
@@ -15,9 +17,9 @@ See the current [handoff](RE_HANDOFF.md) for current status.
 - Supplied Japanese th075.exe 1.11, SHA-256
   `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
   Archive identity is pinned; official distribution provenance is uncorroborated.
-- **497 exact functions/units, 752,200 CODE bytes, 169 canonical objects,
-  274 accepted source-header inputs.** Reviewed coverage is 38.11%; conservative
-  coverage is 38.05%, including all 97 unknown origins/3,608 pending bytes.
+- **498 exact functions/units, 752,539 CODE bytes, 170 canonical objects,
+  275 accepted source-header inputs.** Reviewed coverage is 38.13%; conservative
+  coverage is 38.06%, including all 97 unknown origins/3,608 pending bytes.
 - Ownership, source presence, names, Ghidra types, compilation and reproducible
   exactness remain distinct. Read ledgers and relevant origin evidence before
   relying on any classification or provisional boundary.
@@ -128,6 +130,27 @@ explicit audio/stream refreshes, options materialization dependency
 were preserved. The referenced callee 00429F00 has independent complexity and
 no source/exact credit yet. No owner layout, source class identity, data
 ownership or ABI beyond this method is inferred.
+
+## F187: Win32 configuration writer with authentic stack slots
+
+R052 00419450's full 339-byte native body has 116 Capstone-decoded
+instructions and plain RET followed by alignment. The natural Win32
+`CreateFileA("config.ini")`/`SetFilePointer`/eleven `WriteFile`/
+`CloseHandle` sequence cold-compiles exact after all 27 physical DIR32
+relocations. The filename literal at 00657A70 in the pinned target is the
+exact ASCII `config.ini\0`; it is a source string, not newly credited target
+data. All 80-byte bulk settings and ten 1-byte fields are written in the
+original observed order, including the single setting explicitly set to 1
+*after* writing its persisted value. Original full storage owner is unknown.
+
+The first 339-byte probe with `HANDLE file` declared before `DWORD written`
+failed 26 nonrelocation comparisons, entirely due to swapped real EBP slots.
+The reversed natural declaration order keeps 339 bytes and matches all
+register/stack references. The final namespace shares the already canonical
+F186 `OptionsSettingsF186::SaveConfiguration` call target 00419450; F186
+was neither edited nor unnecessarily rebuilt. No IAT, literal, or global data
+bytes were added to authored-code credit. The native CODE SHA256 is
+`4d1027f88999c9085d95ab8c24338439ad7fb2eaf122ac8b6c9f60065fa2d940`.
 
 ## Retained failures and method boundaries
 
