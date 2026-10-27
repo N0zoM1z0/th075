@@ -38,6 +38,8 @@ F202 cold-accepts the reciprocal 880-byte snapshot restoration and its
 and never counted twice.
 F203 cold-accepts the 671-byte progress selection with two owned 20-byte
 switch tables and all 56 relocations exact (711 compared bytes).
+F204 cold-accepts the 318-byte wave track selector (22 fields); F205
+cold-accepts the 27-byte transition fade call wrapper (one field).
 F189 was an earlier noncredit investigation superseded by F196 exact.
 The original H184 handoff was historical and is superseded by the current
 request. Earlier experiments and names remain hypotheses until tested.
@@ -48,9 +50,9 @@ See the current [handoff](RE_HANDOFF.md) for current status.
 - Supplied Japanese th075.exe 1.11, SHA-256
   `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
   Archive identity is pinned; official distribution provenance is uncorroborated.
-- **513 exact functions/units, 760,376 CODE bytes, 185 canonical objects,
-  290 accepted source-header inputs.** Reviewed coverage is 38.53%; conservative
-  coverage is 38.46%, including all 97 unknown origins/3,608 pending bytes.
+- **515 exact functions/units, 760,721 CODE bytes, 187 canonical objects,
+  292 accepted source-header inputs.** Reviewed coverage is 38.55%; conservative
+  coverage is 38.48%, including all 97 unknown origins/3,608 pending bytes.
 - Ownership, source presence, names, Ghidra types, compilation and reproducible
   exactness remain distinct. Read ledgers and relevant origin evidence before
   relying on any classification or provisional boundary.
@@ -523,6 +525,33 @@ Explicit ordinary accumulator expressions load the old flag before
 evaluating query calls and reproduce the exact EBX/ESI/EDX sequence.
 No fake results, padding, shortened switch table or borrowed helper/data
 credit were introduced.
+
+## F204/F205: exact music track selection and fade policy
+
+The authored `Music::PlayTrackByIndex` at 0x00419CB0 is exactly 318
+CODE bytes, 94 original instructions and 22 actual DIR32/REL32 fields.
+Native SHA256
+`9ac546b2bca59fe1e3e3d807574400f6bb324c14e0db8e758390a0316d174d88`.
+The source handles negative indices, the three ordinary groups of
+ten WAV filenames, the two special opening/ending cases, default
+format, archive stream category and progress recording only in
+permitted clock modes. The first compiler probe's nominal 132-byte
+buffer produced nine stack-offset byte differences. Natural 124/128
+byte controls emitted the target 0x88 stack frame and each matched
+all 230 non-relocation bytes; the 128-byte source was adopted but
+the original nominal declaration length remains uncertain.
+Pinned /GX- cold replay independently verified all 318 bytes and
+22 actual COFF fields; no SDK/data/audio helper or compiled static
+literal is credited.
+
+The 27-byte authored `AudioStream::ScheduleTransitionFadeAt00419DF0`
+with native SHA256
+`43997ef22f85341a11655d92ecc54de7a78a3c916e3f3503e1555c6d15076fd0`
+simply forwards the actually observed -6000, -200, 1, 1 fade arguments
+to target 0x00407E60. It separately cold-replays 27/27 exact with
+one actual call relocation and no owner-layout claim. Both F204
+and F205 were rebuilt together and the existing 97 unknown origins
+remain uncredited.
 
 ## Retained failures and method boundaries
 

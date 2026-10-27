@@ -35400,3 +35400,137 @@ offset = 707
 type = "DIR32"
 symbol = "$L310"
 target = 0x0041A0A2
+
+[units.music-play-track-by-index-00419cb0]
+source = "src/MusicPlayF204.cpp"
+object = "build/matching/MusicPlayF204.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["Music::PlayTrackByIndex"]
+symbol = "?PlayTrackByIndex@MusicF204@@YAXH@Z"
+target_address = 0x00419CB0
+size = 318
+[[units.music-play-track-by-index-00419cb0.relocations]]
+offset = 10
+type = "DIR32"
+symbol = "___security_cookie"
+target = 0x0066FE30
+[[units.music-play-track-by-index-00419cb0.relocations]]
+offset = 39
+type = "DIR32"
+symbol = "?g_WaveFormatAAt00657A7C@@3QBDB"
+target = 0x00657A7C
+[[units.music-play-track-by-index-00419cb0.relocations]]
+offset = 51
+type = "REL32"
+symbol = "_sprintf"
+target = 0x006404F0
+[[units.music-play-track-by-index-00419cb0.relocations]]
+offset = 77
+type = "DIR32"
+symbol = "?g_WaveFormatBAt00657A90@@3QBDB"
+target = 0x00657A90
+[[units.music-play-track-by-index-00419cb0.relocations]]
+offset = 89
+type = "REL32"
+symbol = "_sprintf"
+target = 0x006404F0
+[[units.music-play-track-by-index-00419cb0.relocations]]
+offset = 112
+type = "DIR32"
+symbol = "?g_WaveFormatCAt00657AA4@@3QBDB"
+target = 0x00657AA4
+[[units.music-play-track-by-index-00419cb0.relocations]]
+offset = 124
+type = "REL32"
+symbol = "_sprintf"
+target = 0x006404F0
+[[units.music-play-track-by-index-00419cb0.relocations]]
+offset = 140
+type = "DIR32"
+symbol = "?g_WaveOpeningAt00657AB8@@3QBDB"
+target = 0x00657AB8
+[[units.music-play-track-by-index-00419cb0.relocations]]
+offset = 152
+type = "REL32"
+symbol = "_sprintf"
+target = 0x006404F0
+[[units.music-play-track-by-index-00419cb0.relocations]]
+offset = 168
+type = "DIR32"
+symbol = "?g_WaveEndingAt00657AD0@@3QBDB"
+target = 0x00657AD0
+[[units.music-play-track-by-index-00419cb0.relocations]]
+offset = 180
+type = "REL32"
+symbol = "_sprintf"
+target = 0x006404F0
+[[units.music-play-track-by-index-00419cb0.relocations]]
+offset = 194
+type = "DIR32"
+symbol = "?g_WaveFormatDefaultAt00657AE8@@3QBDB"
+target = 0x00657AE8
+[[units.music-play-track-by-index-00419cb0.relocations]]
+offset = 206
+type = "REL32"
+symbol = "_sprintf"
+target = 0x006404F0
+[[units.music-play-track-by-index-00419cb0.relocations]]
+offset = 220
+type = "DIR32"
+symbol = "?g_NormalSoundFolderAt00657AFC@@3QBDB"
+target = 0x00657AFC
+[[units.music-play-track-by-index-00419cb0.relocations]]
+offset = 234
+type = "REL32"
+symbol = "?QueueArchiveEntry@AudioStreamF204@@YAXPBDH0@Z"
+target = 0x00407B80
+[[units.music-play-track-by-index-00419cb0.relocations]]
+offset = 244
+type = "DIR32"
+symbol = "?g_EndingSoundFolderAt00657B04@@3QBDB"
+target = 0x00657B04
+[[units.music-play-track-by-index-00419cb0.relocations]]
+offset = 258
+type = "REL32"
+symbol = "?QueueArchiveEntry@AudioStreamF204@@YAXPBDH0@Z"
+target = 0x00407B80
+[[units.music-play-track-by-index-00419cb0.relocations]]
+offset = 268
+type = "DIR32"
+symbol = "?g_FrameClockModeAt0066C238@@3CA"
+target = 0x0066C238
+[[units.music-play-track-by-index-00419cb0.relocations]]
+offset = 280
+type = "DIR32"
+symbol = "?g_FrameClockModeAt0066C238@@3CA"
+target = 0x0066C238
+[[units.music-play-track-by-index-00419cb0.relocations]]
+offset = 297
+type = "DIR32"
+symbol = "?g_MusicProgressAt006718F8@@3VMusicProgressArchiveF204@@A"
+target = 0x006718F8
+[[units.music-play-track-by-index-00419cb0.relocations]]
+offset = 302
+type = "REL32"
+symbol = "?MarkPlayed@MusicProgressArchiveF204@@QAEXH@Z"
+target = 0x00416CE0
+[[units.music-play-track-by-index-00419cb0.relocations]]
+offset = 310
+type = "REL32"
+symbol = "@__security_check_cookie@4"
+target = 0x00640611
+
+
+[units.audio-stream-schedule-transition-fade-00419df0]
+source = "src/MusicFadeF205.cpp"
+object = "build/matching/MusicFadeF205.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["AudioStream::ScheduleTransitionFadeAt00419DF0"]
+symbol = "?ScheduleTransitionFade@MusicF205@@YAXXZ"
+target_address = 0x00419DF0
+size = 27
+[[units.audio-stream-schedule-transition-fade-00419df0.relocations]]
+offset = 18
+type = "REL32"
+symbol = "?ScheduleFade@AudioFadeF205@@YAXJJEE@Z"
+target = 0x00407E60

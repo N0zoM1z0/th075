@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "d77f82be525a46c48d16b1f2368a149f45a30c8e0067c7dc1645c0bb6321c6af"
+      "current_sha256": "3ec35c121dbd8f796783c0a394f4e4b1db88b0d7bb1b4f68691079afb6b21ea6"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "685c2729de76567175d1e17ed0d702182f8bae1c828ce207ca0023258ad0783f"
+      "current_sha256": "39d2e4cfc97c441f6de8ba499afa46d1bda1a3b5d8ded5dc43b846b622b77ad9"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "369f5a0a49cb9872f438f25bf8aac3ad368e2d3534e98a19acaa5b2635559d99"
+      "current_sha256": "4f49067d2624575ce2d72e0c13faa433f23b4f2a625ba918ad33bf98514d1633"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "74f54a53aa8a939d0bd542552d0b54e10dda9159fbd72419c0e00fbb17816388"
+      "current_sha256": "131f7c99d6941b6c0c35c75f65cb681e72e96b261d9e65735ff846e5a45d5889"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "6e150e8866ffba9cc3f7cf5897a907a31ec30918cf03fdc4cc51a205e770f21a"
+      "current_sha256": "29dc4826be38efb6f820bf978e67b2bf547161453787d73a8246b30e436afbc6"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -19972,6 +19972,94 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R066"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00419CB0",
+        "size": "318",
+        "span_end": "0x00419DED",
+        "current_name": "FUN_00419cb0",
+        "proposed_name": "Music::PlayTrackByIndex",
+        "module": "Music",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R052; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00419CB0",
+        "size": "318",
+        "span_end": "0x00419DED",
+        "current_name": "FUN_00419cb0",
+        "proposed_name": "Music::PlayTrackByIndex",
+        "module": "Music",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "cdecl",
+        "signature": "void MusicF204::PlayTrackByIndex(int)",
+        "is_thunk": "false",
+        "source_file": "src/MusicPlayF204.cpp",
+        "evidence": "R052; full body hash, complete decoded CFG and local game-specific behavior reviewed; F204/F205; scripts/repo-python scripts/replay-exact-units.py --unit music-play-track-by-index-00419cb0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F204: complete 318 native CODE bytes, 94 decoded x86 instructions, 22 genuine COFF fields and actual /GS security-cookie path, SHA256 9ac546b2bca59fe1e3e3d807574400f6bb324c14e0db8e758390a0316d174d88, canonical /GX- cold exact. Native track routing cases 0..9,10..19,20..29,40,41/other use six distinct observed source string addresses and sprintf argument forms. Native streaming helper 407B80 with normal/ending sound root and distinct flags 2/0; progress record at receiver 6718F8 updates only when signed global frame-clock mode is not 2/4 using real 416CE0. Physical 0x88 frame, path at EBP-0x88 and saved /GS cookie at -4; meaningful char[124] and char[128] produce identical exact bytes, char[132]/[136] differ by 9 native stack offsets; original nominal buffer size remains unknown. Original names, source string provenance and borrowed global owner layouts unproven; no helper/data/CRT byte credit or masked/cropped extent; all 513 prior exact units and unknown origins preserved."
+      },
+      "origin": {
+        "address": "0x00419CB0",
+        "origin": "authored",
+        "subsystem": "Music",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R052"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00419DF0",
+        "size": "27",
+        "span_end": "0x00419E0A",
+        "current_name": "FUN_00419df0",
+        "proposed_name": "AudioStream::ScheduleTransitionFadeAt00419DF0",
+        "module": "AudioStream",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R102; scripts/repo-python scripts/verify-short-game-origins.py --cohort R102",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game policy; complete fields, call/context witnesses and unchanged RET cleanup; inferred names/layouts, no source or exact credit"
+      },
+      "after": {
+        "address": "0x00419DF0",
+        "size": "27",
+        "span_end": "0x00419E0A",
+        "current_name": "FUN_00419df0",
+        "proposed_name": "AudioStream::ScheduleTransitionFadeAt00419DF0",
+        "module": "AudioStream",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "cdecl",
+        "signature": "void MusicF205::ScheduleTransitionFade()",
+        "is_thunk": "false",
+        "source_file": "src/MusicFadeF205.cpp",
+        "evidence": "R102; scripts/repo-python scripts/verify-short-game-origins.py --cohort R102; F204/F205; scripts/repo-python scripts/replay-exact-units.py --unit audio-stream-schedule-transition-fade-00419df0",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game policy; complete fields, call/context witnesses and unchanged RET cleanup; inferred names/layouts, no source or exact credit; F205: full 27 native CODE bytes, 10 decoded instructions, one genuine REL32 field to canonical 407E60 stream-fade schedule, SHA256 43997ef22f85341a11655d92ecc54de7a78a3c916e3f3503e1555c6d15076fd0, exact cold replay of all bytes. Cdecl four literal parameters -6000,-200,1,1 and ordinary return preserve actual call and stack cleanup; no extra audio queue/layout/callee credit. Original names, source string provenance and borrowed global owner layouts unproven; no helper/data/CRT byte credit or masked/cropped extent; all 513 prior exact units and unknown origins preserved."
+      },
+      "origin": {
+        "address": "0x00419DF0",
+        "origin": "authored",
+        "subsystem": "AudioStream",
+        "disposition": "authored",
+        "confidence": "complete-game-policy-with-batch-context",
+        "evidence_id": "R102"
       }
     }
   ],
@@ -162527,6 +162615,190 @@
           "target": 4300962
         }
       ]
+    },
+    "music-play-track-by-index-00419cb0": {
+      "source": "src/MusicPlayF204.cpp",
+      "object": "build/matching/MusicPlayF204.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "Music::PlayTrackByIndex"
+      ],
+      "symbol": "?PlayTrackByIndex@MusicF204@@YAXH@Z",
+      "target_address": 4299952,
+      "size": 318,
+      "relocations": [
+        {
+          "offset": 10,
+          "type": "DIR32",
+          "symbol": "___security_cookie",
+          "target": 6749744
+        },
+        {
+          "offset": 39,
+          "type": "DIR32",
+          "symbol": "?g_WaveFormatAAt00657A7C@@3QBDB",
+          "target": 6650492
+        },
+        {
+          "offset": 51,
+          "type": "REL32",
+          "symbol": "_sprintf",
+          "target": 6554864
+        },
+        {
+          "offset": 77,
+          "type": "DIR32",
+          "symbol": "?g_WaveFormatBAt00657A90@@3QBDB",
+          "target": 6650512
+        },
+        {
+          "offset": 89,
+          "type": "REL32",
+          "symbol": "_sprintf",
+          "target": 6554864
+        },
+        {
+          "offset": 112,
+          "type": "DIR32",
+          "symbol": "?g_WaveFormatCAt00657AA4@@3QBDB",
+          "target": 6650532
+        },
+        {
+          "offset": 124,
+          "type": "REL32",
+          "symbol": "_sprintf",
+          "target": 6554864
+        },
+        {
+          "offset": 140,
+          "type": "DIR32",
+          "symbol": "?g_WaveOpeningAt00657AB8@@3QBDB",
+          "target": 6650552
+        },
+        {
+          "offset": 152,
+          "type": "REL32",
+          "symbol": "_sprintf",
+          "target": 6554864
+        },
+        {
+          "offset": 168,
+          "type": "DIR32",
+          "symbol": "?g_WaveEndingAt00657AD0@@3QBDB",
+          "target": 6650576
+        },
+        {
+          "offset": 180,
+          "type": "REL32",
+          "symbol": "_sprintf",
+          "target": 6554864
+        },
+        {
+          "offset": 194,
+          "type": "DIR32",
+          "symbol": "?g_WaveFormatDefaultAt00657AE8@@3QBDB",
+          "target": 6650600
+        },
+        {
+          "offset": 206,
+          "type": "REL32",
+          "symbol": "_sprintf",
+          "target": 6554864
+        },
+        {
+          "offset": 220,
+          "type": "DIR32",
+          "symbol": "?g_NormalSoundFolderAt00657AFC@@3QBDB",
+          "target": 6650620
+        },
+        {
+          "offset": 234,
+          "type": "REL32",
+          "symbol": "?QueueArchiveEntry@AudioStreamF204@@YAXPBDH0@Z",
+          "target": 4225920
+        },
+        {
+          "offset": 244,
+          "type": "DIR32",
+          "symbol": "?g_EndingSoundFolderAt00657B04@@3QBDB",
+          "target": 6650628
+        },
+        {
+          "offset": 258,
+          "type": "REL32",
+          "symbol": "?QueueArchiveEntry@AudioStreamF204@@YAXPBDH0@Z",
+          "target": 4225920
+        },
+        {
+          "offset": 268,
+          "type": "DIR32",
+          "symbol": "?g_FrameClockModeAt0066C238@@3CA",
+          "target": 6734392
+        },
+        {
+          "offset": 280,
+          "type": "DIR32",
+          "symbol": "?g_FrameClockModeAt0066C238@@3CA",
+          "target": 6734392
+        },
+        {
+          "offset": 297,
+          "type": "DIR32",
+          "symbol": "?g_MusicProgressAt006718F8@@3VMusicProgressArchiveF204@@A",
+          "target": 6756600
+        },
+        {
+          "offset": 302,
+          "type": "REL32",
+          "symbol": "?MarkPlayed@MusicProgressArchiveF204@@QAEXH@Z",
+          "target": 4287712
+        },
+        {
+          "offset": 310,
+          "type": "REL32",
+          "symbol": "@__security_check_cookie@4",
+          "target": 6555153
+        }
+      ]
+    },
+    "audio-stream-schedule-transition-fade-00419df0": {
+      "source": "src/MusicFadeF205.cpp",
+      "object": "build/matching/MusicFadeF205.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "AudioStream::ScheduleTransitionFadeAt00419DF0"
+      ],
+      "symbol": "?ScheduleTransitionFade@MusicF205@@YAXXZ",
+      "target_address": 4300272,
+      "size": 27,
+      "relocations": [
+        {
+          "offset": 18,
+          "type": "REL32",
+          "symbol": "?ScheduleFade@AudioFadeF205@@YAXJJEE@Z",
+          "target": 4226656
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -162819,6 +163091,8 @@
     "src/TextureManagerDtorF199.cpp": "3706d62c639b6a07cdd410650b2da2053a4f9e5700b22ff7d336366b7d06cc18",
     "src/GameSnapshotF201.cpp": "4ee247382d3531889b7c74fc933cfb86b912469fdd7745d73d2be1092902014a",
     "src/GameStateRestoreF202.cpp": "912672914ecd95390aecd06a8f8db9ddf80af74f5c4f591805f36888cdfccecc",
-    "src/ProgressSelectionF203.cpp": "9bdc49a6a6680308336c90966e8a03713a8cd5746850c59fb2ffd514ab2c5c01"
+    "src/ProgressSelectionF203.cpp": "9bdc49a6a6680308336c90966e8a03713a8cd5746850c59fb2ffd514ab2c5c01",
+    "src/MusicPlayF204.cpp": "bbceb74c7cb2378dd3d571c18206cdc3244e3b9b4c3340ac1719d0705e6e754b",
+    "src/MusicFadeF205.cpp": "2b25f9eaa6b232bc859f6892c99ca38d0d95cb3b54dd7d6091d1acd1405a82c4"
   }
 }

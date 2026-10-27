@@ -1,4 +1,4 @@
-# TH075 active reconstruction status — F203
+# TH075 active reconstruction status — F205
 
 Updated 2026-10-27. The user explicitly resumed reconstruction and requires
 serious treatment of both large/core and small/leaf functions; all historical
@@ -454,10 +454,35 @@ independent exact credit is claimed for SDK/code helpers, source data,
 jump-table bytes, or the unproven original record class layout.
 Private rejected probes are preserved at `.analysis/f203-progress-selection/`.
 
-Current ledger: **513 exact functions, 760,376 CODE bytes / 1,973,516 reviewed
-authored bytes = 38.53%**, conservative 38.46% with 3,608 unknown-origin bytes
-retained. F184..F203 (excluding exploratory-only numbers) added twenty accepted units,
-nineteen objects and twenty-two new source/header inputs.
+F204 cold-reconstructed authored `Music::PlayTrackByIndex` at
+`0x00419CB0`, **318 native CODE bytes / 94 x86 instructions**, normal RET,
+**22 COFF relocation fields** and exact 318/318 cold replay. The
+native SHA256 is
+`9ac546b2bca59fe1e3e3d807574400f6bb324c14e0db8e758390a0316d174d88`.
+All six original wave filename formats, original formatting arguments,
+negative-index early exit, special ending-track archive category,
+progress recording and two restricted clock modes are preserved in
+normal C++. The actual 0x88 stack allocation supports a 128-byte
+meaningful wave-path buffer; 132/136 emit the wrong 0x90 stack-frame
+offset, while the original nominal buffer declaration remains unknown.
+Actual CRT sprintf, import/security cookie and original audio/progress
+callee relocations were compared but receive no independent code credit.
+
+F205 cold-reconstructed the independently reviewed authored 27-byte
+`AudioStream::ScheduleTransitionFadeAt00419DF0` at `0x00419DF0`
+(normal RET, native SHA256
+`43997ef22f85341a11655d92ecc54de7a78a3c916e3f3503e1555c6d15076fd0`).
+The natural call-only wrapper with exact parameters -6000/-200/1/1
+freshly cold-replays all 27 bytes and the single real REL32 call to
+`0x00407E60`. No guessed audio manager class or imported fade
+callee ownership is asserted. Both new units were rebuilt together:
+**345 exact authored CODE bytes / 23 actual fields, 2/2 cold exact**.
+All previous accepted units and 97 pending origins remain untouched.
+
+Current ledger: **515 exact functions, 760,721 CODE bytes / 1,973,516 reviewed
+authored bytes = 38.55%**, conservative 38.48% with 3,608 unknown-origin bytes
+retained. F184..F205 (excluding exploratory-only numbers) added twenty-two accepted units,
+twenty-one objects and twenty-four new source/header inputs.
 Keep R268 origin evidence, all 97 unknown candidates, 493 pre-F184
 accepted units and protected private F184/F185 preview/drafts intact.
 
