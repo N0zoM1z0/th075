@@ -32616,3 +32616,22 @@ offset = 850
 type = "REL32"
 symbol = "@__security_check_cookie@4"
 target = 0x00640611
+
+[units.scene-base-release-00431f40]
+source = "src/SceneBaseReleaseF192.cpp"
+object = "build/matching/SceneBaseReleaseF192.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["SceneBase::ReleaseGameGlobalsAt00431F40"]
+symbol = "??1SceneBaseReleaseF192@@QAE@XZ"
+target_address = 0x00431F40
+size = 31
+[[units.scene-base-release-00431f40.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "?g_SceneBaseVirtualTableAt00657B88@@3PAPBXA"
+target = 0x00657B88
+[[units.scene-base-release-00431f40.relocations]]
+offset = 23
+type = "REL32"
+symbol = "?ReleaseDefaults@SceneDefaultConfigF192@@QAEXXZ"
+target = 0x00417430

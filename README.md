@@ -26,9 +26,9 @@ This pins the supplied sample; its official distribution provenance has not
 been independently corroborated. The localized `th075c.exe` has a different
 identity and cannot substitute for the target.
 
-The current checkpoint has **501 exact functions / 754,566 code bytes** from
-4,351 provisional candidates. Reviewed authored coverage is 38.23%; conservative
-coverage, including all 3,608 pending bytes, is **38.16%**. The objective of
+The current checkpoint has **502 exact functions / 754,597 code bytes** from
+4,351 provisional candidates. Reviewed authored coverage is 38.24%; conservative
+coverage, including all 3,608 pending bytes, is **38.17%**. The objective of
 98% authored bytes exact remains incomplete. At R268, 1,002 authored, 2,671
 library and 581 compiler-generated candidates are classified; 97 remain unknown.
 Unknown origins receive no exact credit. Candidate count does not establish
@@ -57,6 +57,11 @@ complete VC7.1 exception-aware new/delete path (563 CODE bytes, 28-byte
 owned switch table, 34 actual relocations). The font instance is represented
 by an observed 56-byte ephemeral allocation carrier: complete source-level
 member semantics and original class identity are **not** established.
+F192 additionally cold-accepted only the independently authored 31-byte
+scene-base cleanup destructor. The matching 34-byte paired constructor is
+kept **uncredited** because its authored-versus-generated origin remains
+unresolved (R108); a structural compiler preview alone does not prove
+authorship.
 F190 cold-reconstructed the 604-byte graphics default-state controller and
 all 45 COFF relocation fields, including the original SDK D3D8 render/texture
 state sequence, D3DX shader assembly and pixel shader constant setup. An

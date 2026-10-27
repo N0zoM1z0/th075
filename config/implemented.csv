@@ -499,3 +499,4 @@ GameConfig::SaveIni
 OptionsScene::ApplySelectionAt00429F00
 Graphics::SetDefaultStates
 MusicRoomScene::RenderSelectedDetails
+SceneBase::ReleaseGameGlobalsAt00431F40

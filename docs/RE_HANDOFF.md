@@ -1,4 +1,4 @@
-# TH075 active reconstruction status — F191
+# TH075 active reconstruction status — F192
 
 Updated 2026-10-27. The user explicitly resumed reconstruction and requires
 serious treatment of both large/core and small/leaf functions; all historical
@@ -183,9 +183,29 @@ additional byte credit for the GDI helpers, SDK, game-data strings or EH
 helper. Private cold evidence and rejected probes are preserved under
 `.analysis/f191-music-details/`.
 
-Current ledger: **501 exact functions, 754,566 CODE bytes / 1,973,516 reviewed
-authored bytes = 38.23%**, conservative 38.16% with 3,608 unknown-origin bytes
-retained. F184..F191 added eight accepted units, seven objects and ten new
+F192 followed the actual base-scene lifecycle into a small but independently
+reviewed destructor. The complete 31-byte `SceneBase::ReleaseGameGlobalsAt00431F40`
+has 13 decoded native instructions and two COFF fields: the observed vtable
+anchor `0x00657B88` and the true `0x00417430` config cleanup callee.
+Its native body hash is
+`f0fdc9015cffb6b7194ee2641a8018c52eb7a984d6a68d1f9e8c809b77698cf9`.
+A standalone call-only `SceneBaseReleaseF192::~SceneBaseReleaseF192`
+cold-builds to **31/31 exact** with both relocation fields fully replayed.
+
+The paired scene base constructor `0x004251C0` was independently decoded
+(34 bytes, 13 instructions, native hash
+`9ff723978ea0aa946f4147ff70aef987da9b3dbd431196873a7dc4fa331eb85f`)
+and a **private full 34-byte structural-exact compiler probe** was built,
+including its vtable anchor and separate `0x00417210` defaults initializer.
+However R108's original explicit-vs-compiler-generated ownership ambiguity
+cannot be resolved just by that match. It remains **unknown origin, no source
+mapping, no match unit, no exact byte credit**, and is still counted in the
+conservative pending denominator. This was deliberately not hidden or
+force-reclassified to inflate the count.
+
+Current ledger: **502 exact functions, 754,597 CODE bytes / 1,973,516 reviewed
+authored bytes = 38.24%**, conservative 38.17% with 3,608 unknown-origin bytes
+retained. F184..F192 added nine accepted units, eight objects and eleven new
 source/header inputs.
 Keep R268 origin evidence, all 97 unknown candidates, 493 pre-F184
 accepted units and protected private F184/F185 preview/drafts intact.

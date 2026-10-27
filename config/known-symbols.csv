@@ -482,3 +482,4 @@ address,name,module,confidence,evidence
 0x00429F00,OptionsScene::ApplySelectionAt00429F00,OptionsScene,inferred,F188; whole 591-byte cold exact including EH and 7-case switch; glyph layout/original owner unproven
 0x00401540,Graphics::SetDefaultStates,Graphics,inferred,F190; complete 604-byte graphics default-state function cold-exact; native names/SDK globals provisional
 0x00426A70,MusicRoomScene::RenderSelectedDetails,MusicRoomScene,inferred,F191; complete 860-byte two-texture music details renderer cold exact; glyph/scene class identities provisional
+0x00431F40,SceneBase::ReleaseGameGlobalsAt00431F40,SceneBase,inferred,F192; exact 31-byte destructor/2 fields; 004251C0 related constructor remains origin-unknown R108

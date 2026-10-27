@@ -13,6 +13,8 @@ owned table, 34 fields, and natural EH/new/delete path, all cold exact.
 F190 adds 604 exact graphics default-state bytes and all 45 relocations.
 F191 adds the complete 860-byte music-detail font/texture workflow, all 25
 actual relocation fields cold-exact.
+F192 accepts the 31-byte authored scene-base cleanup; the 34-byte
+source-indistinguishable paired constructor remains R108 unknown/uncredited.
 F189 separately inspected but did not accept the 922-byte EH battle initializer.
 The original H184 handoff was historical and is superseded by the current
 request. Earlier experiments and names remain hypotheses until tested.
@@ -23,9 +25,9 @@ See the current [handoff](RE_HANDOFF.md) for current status.
 - Supplied Japanese th075.exe 1.11, SHA-256
   `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
   Archive identity is pinned; official distribution provenance is uncorroborated.
-- **501 exact functions/units, 754,566 CODE bytes, 173 canonical objects,
-  278 accepted source-header inputs.** Reviewed coverage is 38.23%; conservative
-  coverage is 38.16%, including all 97 unknown origins/3,608 pending bytes.
+- **502 exact functions/units, 754,597 CODE bytes, 174 canonical objects,
+  279 accepted source-header inputs.** Reviewed coverage is 38.24%; conservative
+  coverage is 38.17%, including all 97 unknown origins/3,608 pending bytes.
 - Ownership, source presence, names, Ghidra types, compilation and reproducible
   exactness remain distinct. Read ledgers and relevant origin evidence before
   relying on any classification or provisional boundary.
@@ -247,6 +249,30 @@ the original nominal size is not inferred. Borrowed glyph class identity,
 +0x18 allocation word semantics, music room's full layout, EH helper
 ownership and data literals remain unproven. The complete function is
 accepted, not its dependencies or source-level class identity.
+
+## F192: separate authored scene cleanup from origin-unknown constructor
+
+The 31-byte R062 `0x00431F40` is independently authored game-scene cleanup:
+the pointer-only destructor source stores the real base vtable anchor
+`0x00657B88`, then invokes `0x00417430` on the existing this+4 defaults
+receiver. Both relocation fields and the entire native extent cold-replay
+exact. Native SHA256
+`f0fdc9015cffb6b7194ee2641a8018c52eb7a984d6a68d1f9e8c809b77698cf9`.
+No complete original scene/config-owner declaration or instantiation is
+introduced.
+
+The adjacent 34-byte R108 `0x004251C0` base constructor was independently
+decoded and compiled in a separate private complete probe (two actual fields,
+zero non-relocation differences). Its native SHA256 is
+`9ff723978ea0aa946f4147ff70aef987da9b3dbd431196873a7dc4fa331eb85f`.
+But that evidence cannot distinguish authored source from an implicit
+compiler constructor. Both source routes generate the same bytes, and the
+original reviewed origin is `unknown`. It therefore stays wholly uncredited
+without editing the origin ledger, adding an implemented row or claiming an
+exact unit. The private probe and evidence remain under
+`.analysis/f192-scene-base/`, and the function remains within all 97 pending
+origins and their 3,608 code bytes. This demonstrates the difference between
+byte reproduction and proof of original ownership.
 
 ## Retained failures and method boundaries
 

@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "ef63c7e43af1551b304bb7393868dcf09a344cfd932d6cd7e33c002a0e8520b0"
+      "current_sha256": "509320365f976f0ec249ea411cf94012a33bd93c0711bdff6458b6ca23fff242"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "db52e6be54cba8f3ed10b126462dc3fc92fbf2408f81da2b4d2783b194b07d0f"
+      "current_sha256": "31abb33cd799bac62cae7ba19bfc7a8596ce746a7da2ce36e9abfeee4f28cf31"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "d505a26d77e9d4365bd2bb3bad78e0a08e506b1e73044e762757aac1c0aae508"
+      "current_sha256": "88fffd96dc488014eac7b46c5e7b19b14f10cde21b612aadacf331df11a86b22"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "834c2ca4c77cf4d66278045206133d7e4c61876dc866f44cc1c1970411983d99"
+      "current_sha256": "05bef282277871aa75d7564cdea8edd74dc1d3d7af7c0e27fe64bb0f29564790"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "7268fdc79c8fa707419ba50ecf3bf76ba90f63033b1fb1c67ecf80239346206f"
+      "current_sha256": "80e8bd9abb75fb74bae90f2eeb7b2faea974387c76828e442c0fe8817f481e88"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -19444,6 +19444,50 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R040"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00431F40",
+        "size": "31",
+        "span_end": "0x00431F5E",
+        "current_name": "FUN_00431f40",
+        "proposed_name": "SceneBase::ReleaseGameGlobalsAt00431F40",
+        "module": "SceneBase",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R062; complete target body and CFG with reviewed game-specific scene lifecycle calls",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x00431F40",
+        "size": "31",
+        "span_end": "0x00431F5E",
+        "current_name": "FUN_00431f40",
+        "proposed_name": "SceneBase::ReleaseGameGlobalsAt00431F40",
+        "module": "SceneBase",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "SceneBaseReleaseF192::~SceneBaseReleaseF192()",
+        "is_thunk": "false",
+        "source_file": "src/SceneBaseReleaseF192.cpp",
+        "evidence": "R062; complete target body and CFG with reviewed game-specific scene lifecycle calls; F192; scripts/repo-python scripts/replay-exact-units.py --unit scene-base-release-00431f40",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state independent; F192: whole authored R062 31-byte SceneBase destructor path (13 instructions, plain RET at 431F5E/INT3 follow), two actual relocations and complete canonical cold exact. Source explicitly installs observed base-vtable anchor 00657B88 and invokes real 417430 defaults release on this+4; pointer-only scene/config receivers, no source-level full class layout or vtable identity claim. The paired 004251C0 34-byte scene base constructor also structurally replays fully from a separate private probe but MUST remain unknown-origin R108: authored versus implicit compiler generation cannot be independently discriminated. Its origin, function, source/matches/adoption ledgers and 34 CODE bytes are unchanged/uncredited. No guessed complete owner, duplicate object alias, artificial padding/inert state, masks or asm. All previous 501 exact units and remaining 97 unknown origins preserved."
+      },
+      "origin": {
+        "address": "0x00431F40",
+        "origin": "authored",
+        "subsystem": "SceneBase",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R062"
       }
     }
   ],
@@ -158512,6 +158556,41 @@
           "target": 6555153
         }
       ]
+    },
+    "scene-base-release-00431f40": {
+      "source": "src/SceneBaseReleaseF192.cpp",
+      "object": "build/matching/SceneBaseReleaseF192.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "SceneBase::ReleaseGameGlobalsAt00431F40"
+      ],
+      "symbol": "??1SceneBaseReleaseF192@@QAE@XZ",
+      "target_address": 4398912,
+      "size": 31,
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "?g_SceneBaseVirtualTableAt00657B88@@3PAPBXA",
+          "target": 6650760
+        },
+        {
+          "offset": 23,
+          "type": "REL32",
+          "symbol": "?ReleaseDefaults@SceneDefaultConfigF192@@QAEXXZ",
+          "target": 4289584
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -158792,6 +158871,7 @@
     "src/ConfigSaveF187.cpp": "4a98e08b1cfba81e9c1d935e70e1c65c0f622a5b83b1c2f78437332168d69085",
     "src/OptionsSelectionF188.cpp": "2976178827277443d729c734f35d17aa53600d4e1c22c1e1e64ef39ce8a20afa",
     "src/GraphicsDefaultsF190.cpp": "c0b814852b3c3ad43e5fd7b0a49af350a95c9254444a829f52ce0701b103cd01",
-    "src/MusicDetailF191.cpp": "55202668e812e7d26098a351095d78e81b8ef12be73982ac0fc4af24600de61f"
+    "src/MusicDetailF191.cpp": "55202668e812e7d26098a351095d78e81b8ef12be73982ac0fc4af24600de61f",
+    "src/SceneBaseReleaseF192.cpp": "d2fe94064f4e493991f690d528a2fd54e4abf88cfc0c0129a25864ab27d60397"
   }
 }
