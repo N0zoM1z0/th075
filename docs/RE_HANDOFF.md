@@ -1,4 +1,4 @@
-# TH075 active reconstruction status — F213
+# TH075 active reconstruction status — F214
 
 Updated 2026-10-27. The user explicitly resumed reconstruction and requires
 serious treatment of both large/core and small/leaf functions; all historical
@@ -624,10 +624,46 @@ Likewise the 248-byte battle-scene destructor at 0043B0B0 and
 texture slot/resource allocation probes remain in private analysis
 until all byte differences are resolved.
 
-Current ledger: **521 exact functions, 762,861 CODE bytes / 1,973,516 reviewed
-authored bytes = 38.65%**, conservative 38.58% with 3,608 unknown-origin bytes
-retained. F184..F213 (excluding exploratory-only numbers) added twenty-eight accepted units,
-twenty-six objects and twenty-nine new source/header inputs.
+F214 completes the previously unaccepted large, authored
+`ProgressRecords::InitializeDefaults` at `0x00416640`: **910
+complete CODE bytes / 223 native x86 instructions**, one ordinary
+RET with subsequent INT3, SHA256
+`6038d21f8518f49a355159fde8bd343c224e01c61ddc2ffcd3630cc1a6d3df14`.
+Fresh pinned VC7.1 /GX- cold replay proves **910/910 bytes exact** and
+**34/34 actual DIR32/REL32 relocation fields**. The function calls
+two real memset routines for separate full-sized data regions,
+physically initializes ten local NUL-terminated 9-byte fish names
+observed verbatim in the original code, fills the true 15 x 4 x 10
+record scores/default fields, the 15 x 15 DWORD counter matrix at
+owner+0x16710 and eight final 100-valued bytes. The fish-name
+array is retained because the native code genuinely initializes it,
+although its original higher-level semantic purpose is unknown.
+
+The historical correct-sized first probe differed in 250 of 774
+nonrelocation bytes due to compiler local stack-slot allocation and
+expression evaluation. Using meaningful block-scoped `for` counters
+reproduced the target EBP-0x6c/-0x70/-0x74/-0x78 slots and the
+90-byte fish-name local. Rewriting the record address as ordered
+pointer additions `this + outerStride + subgroupStride +
+recordStride` reproduced the native register calculations and left
+**one x86 SIB byte** different. Using the physically supported
+15-column record-counter matrix subscript, rather than a flat
+offset expression, recreated the precise base/index encoding.
+No padding, fabricated locals, inline ASM, copied binary bytes,
+hidden masked fields or truncated comparison range was used.
+
+No full original ProgressRecords class is instantiated or claimed:
+the constructor is an observed call-only receiver with borrowed
+offsets. The real CRT, original string literals and archived
+global data have no independent CODE credit. This completes the
+separate 910-byte large function, with the two 109/90-byte F213
+leaves already preserved and unchanged; all 97 unknown origins
+remain unclassified.
+
+Current ledger: **522 exact functions, 763,771 CODE bytes / 1,973,516 reviewed
+authored bytes = 38.70%**, conservative 38.63% with 3,608 unknown-origin bytes
+retained. F184..F214 (excluding exploratory-only numbers) added twenty-nine accepted units,
+twenty-seven objects and thirty new source/header inputs.
 Keep R268 origin evidence, all 97 unknown candidates, 493 pre-F184
 accepted units and protected private F184/F185 preview/drafts intact.
 

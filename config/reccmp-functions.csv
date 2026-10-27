@@ -520,3 +520,4 @@ SpriteGeometry::InitializeRectangleFromRect,0x0040DB50,function
 GameGlobals::InitializeSound,0x004175A0,function
 ProgressRecords::RaiseSelectedValue,0x0041A1D0,function
 ProgressRecords::IncrementSelectedRecordCount,0x0041A270,function
+ProgressRecords::InitializeDefaults,0x00416640,function

@@ -36040,3 +36040,182 @@ symbol = "?IncrementSelectedRecordCount@ProgressRecordLeavesF213@@QAEXXZ"
 target_address = 0x0041A270
 size = 90
 relocations = []
+
+[units.progress-records-initialize-defaults-00416640]
+source = "src/ProgressDefaultsF214.cpp"
+object = "build/matching/ProgressDefaultsF214.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["ProgressRecords::InitializeDefaults"]
+symbol = "??0ProgressDefaultsF214@@QAE@XZ"
+target_address = 0x00416640
+size = 910
+[[units.progress-records-initialize-defaults-00416640.relocations]]
+offset = 7
+type = "DIR32"
+symbol = "___security_cookie"
+target = 0x0066FE30
+[[units.progress-records-initialize-defaults-00416640.relocations]]
+offset = 29
+type = "REL32"
+symbol = "_memset"
+target = 0x00640490
+[[units.progress-records-initialize-defaults-00416640.relocations]]
+offset = 51
+type = "REL32"
+symbol = "_memset"
+target = 0x00640490
+[[units.progress-records-initialize-defaults-00416640.relocations]]
+offset = 60
+type = "DIR32"
+symbol = "$SG549"
+target = 0x00657930
+[[units.progress-records-initialize-defaults-00416640.relocations]]
+offset = 68
+type = "DIR32"
+symbol = "$SG549"
+target = 0x00657930
+[[units.progress-records-initialize-defaults-00416640.relocations]]
+offset = 77
+type = "DIR32"
+symbol = "$SG549"
+target = 0x00657930
+[[units.progress-records-initialize-defaults-00416640.relocations]]
+offset = 86
+type = "DIR32"
+symbol = "$SG550"
+target = 0x0065793C
+[[units.progress-records-initialize-defaults-00416640.relocations]]
+offset = 94
+type = "DIR32"
+symbol = "$SG550"
+target = 0x0065793C
+[[units.progress-records-initialize-defaults-00416640.relocations]]
+offset = 103
+type = "DIR32"
+symbol = "$SG550"
+target = 0x0065793C
+[[units.progress-records-initialize-defaults-00416640.relocations]]
+offset = 112
+type = "DIR32"
+symbol = "$SG551"
+target = 0x00657948
+[[units.progress-records-initialize-defaults-00416640.relocations]]
+offset = 120
+type = "DIR32"
+symbol = "$SG551"
+target = 0x00657948
+[[units.progress-records-initialize-defaults-00416640.relocations]]
+offset = 129
+type = "DIR32"
+symbol = "$SG551"
+target = 0x00657948
+[[units.progress-records-initialize-defaults-00416640.relocations]]
+offset = 138
+type = "DIR32"
+symbol = "$SG552"
+target = 0x00657954
+[[units.progress-records-initialize-defaults-00416640.relocations]]
+offset = 146
+type = "DIR32"
+symbol = "$SG552"
+target = 0x00657954
+[[units.progress-records-initialize-defaults-00416640.relocations]]
+offset = 155
+type = "DIR32"
+symbol = "$SG552"
+target = 0x00657954
+[[units.progress-records-initialize-defaults-00416640.relocations]]
+offset = 164
+type = "DIR32"
+symbol = "$SG553"
+target = 0x00657960
+[[units.progress-records-initialize-defaults-00416640.relocations]]
+offset = 172
+type = "DIR32"
+symbol = "$SG553"
+target = 0x00657960
+[[units.progress-records-initialize-defaults-00416640.relocations]]
+offset = 181
+type = "DIR32"
+symbol = "$SG553"
+target = 0x00657960
+[[units.progress-records-initialize-defaults-00416640.relocations]]
+offset = 190
+type = "DIR32"
+symbol = "$SG554"
+target = 0x0065796C
+[[units.progress-records-initialize-defaults-00416640.relocations]]
+offset = 198
+type = "DIR32"
+symbol = "$SG554"
+target = 0x0065796C
+[[units.progress-records-initialize-defaults-00416640.relocations]]
+offset = 207
+type = "DIR32"
+symbol = "$SG554"
+target = 0x0065796C
+[[units.progress-records-initialize-defaults-00416640.relocations]]
+offset = 216
+type = "DIR32"
+symbol = "$SG555"
+target = 0x00657978
+[[units.progress-records-initialize-defaults-00416640.relocations]]
+offset = 224
+type = "DIR32"
+symbol = "$SG555"
+target = 0x00657978
+[[units.progress-records-initialize-defaults-00416640.relocations]]
+offset = 233
+type = "DIR32"
+symbol = "$SG555"
+target = 0x00657978
+[[units.progress-records-initialize-defaults-00416640.relocations]]
+offset = 242
+type = "DIR32"
+symbol = "$SG556"
+target = 0x00657984
+[[units.progress-records-initialize-defaults-00416640.relocations]]
+offset = 250
+type = "DIR32"
+symbol = "$SG556"
+target = 0x00657984
+[[units.progress-records-initialize-defaults-00416640.relocations]]
+offset = 259
+type = "DIR32"
+symbol = "$SG556"
+target = 0x00657984
+[[units.progress-records-initialize-defaults-00416640.relocations]]
+offset = 268
+type = "DIR32"
+symbol = "$SG557"
+target = 0x00657990
+[[units.progress-records-initialize-defaults-00416640.relocations]]
+offset = 276
+type = "DIR32"
+symbol = "$SG557"
+target = 0x00657990
+[[units.progress-records-initialize-defaults-00416640.relocations]]
+offset = 285
+type = "DIR32"
+symbol = "$SG557"
+target = 0x00657990
+[[units.progress-records-initialize-defaults-00416640.relocations]]
+offset = 294
+type = "DIR32"
+symbol = "$SG558"
+target = 0x0065799C
+[[units.progress-records-initialize-defaults-00416640.relocations]]
+offset = 302
+type = "DIR32"
+symbol = "$SG558"
+target = 0x0065799C
+[[units.progress-records-initialize-defaults-00416640.relocations]]
+offset = 311
+type = "DIR32"
+symbol = "$SG558"
+target = 0x0065799C
+[[units.progress-records-initialize-defaults-00416640.relocations]]
+offset = 902
+type = "REL32"
+symbol = "@__security_check_cookie@4"
+target = 0x00640611

@@ -519,3 +519,4 @@ SpriteGeometry::InitializeRectangleFromRect
 GameGlobals::InitializeSound
 ProgressRecords::RaiseSelectedValue
 ProgressRecords::IncrementSelectedRecordCount
+ProgressRecords::InitializeDefaults

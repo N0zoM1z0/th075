@@ -26,9 +26,9 @@ This pins the supplied sample; its official distribution provenance has not
 been independently corroborated. The localized `th075c.exe` has a different
 identity and cannot substitute for the target.
 
-The current checkpoint has **521 exact functions / 762,861 code bytes** from
-4,351 provisional candidates. Reviewed authored coverage is 38.65%; conservative
-coverage, including all 3,608 pending bytes, is **38.58%**. The objective of
+The current checkpoint has **522 exact functions / 763,771 code bytes** from
+4,351 provisional candidates. Reviewed authored coverage is 38.70%; conservative
+coverage, including all 3,608 pending bytes, is **38.63%**. The objective of
 98% authored bytes exact remains incomplete. At R268, 1,002 authored, 2,671
 library and 581 compiler-generated candidates are classified; 97 remain unknown.
 Unknown origins receive no exact credit. Candidate count does not establish
@@ -161,6 +161,13 @@ was rejected because it generated the wrong VC7.1 evaluation order.
 The larger 910-byte progress-default initializer remains under active
 noncredit analysis of its genuine ten fish-name strings and four index
 locals; no bytes from that incomplete probe are counted.
+F214 cold-reconstructed the complete 910-byte progress record defaults
+initializer, including its 15 x 4 x 10 score/option records, 15 x 15
+record counters, local original ten-fish-name initialization and all
+34 COFF relocations. Real block-scoped loop variables restored the
+native stack slots; the authentic 15-wide rank matrix indexing
+reproduced the final x86 effective-address encoding. No nominal
+archive owner, unrelated static data or generated helper is claimed.
 The 98% target is still incomplete.
 See the [current reconstruction handoff](docs/RE_HANDOFF.md); the preceding H184
 handoff is preserved there as historical context.

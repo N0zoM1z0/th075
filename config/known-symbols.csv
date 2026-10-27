@@ -502,3 +502,4 @@ address,name,module,confidence,evidence
 0x004175A0,GameGlobals::InitializeSound,GameGlobals,inferred,F212; exact 334-byte sound initialization with three-stage EH; original allocation class identities provisional
 0x0041A1D0,ProgressRecords::RaiseSelectedValue,ProgressRecords,inferred,F213; complete 109-byte natural source cold exact; original full record layout unproven
 0x0041A270,ProgressRecords::IncrementSelectedRecordCount,ProgressRecords,inferred,F213; complete 90-byte natural source cold exact; original full record layout unproven
+0x00416640,ProgressRecords::InitializeDefaults,ProgressRecords,inferred,F214; whole 910-byte nested record defaults cold exact with 34 physical relocations; original owner layout unknown
