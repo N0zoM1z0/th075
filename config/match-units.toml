@@ -35688,3 +35688,181 @@ offset = 717
 type = "REL32"
 symbol = "@__security_check_cookie@4"
 target = 0x00640611
+
+[units.texture-load-bitmap-directory-format-0040b560]
+source = "src/BitmapDirectoryFormatF207.cpp"
+object = "build/matching/BitmapDirectoryFormatF207.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["TextureManager::LoadBitmapDirectoryWithFormat"]
+symbol = "?LoadBitmapDirectoryWithFormat@TextureManagerF207@@QAEXPBD@Z"
+target_address = 0x0040B560
+size = 575
+[[units.texture-load-bitmap-directory-format-0040b560.relocations]]
+offset = 10
+type = "DIR32"
+symbol = "___security_cookie"
+target = 0x0066FE30
+[[units.texture-load-bitmap-directory-format-0040b560.relocations]]
+offset = 33
+type = "REL32"
+symbol = "?Size@BitmapEntriesF207@@QAEHXZ"
+target = 0x0040DD20
+[[units.texture-load-bitmap-directory-format-0040b560.relocations]]
+offset = 105
+type = "REL32"
+symbol = "?At@BitmapEntriesF207@@QAEPAEH@Z"
+target = 0x0040DD60
+[[units.texture-load-bitmap-directory-format-0040b560.relocations]]
+offset = 137
+type = "REL32"
+symbol = "?At@BitmapEntriesF207@@QAEPAEH@Z"
+target = 0x0040DD60
+[[units.texture-load-bitmap-directory-format-0040b560.relocations]]
+offset = 165
+type = "DIR32"
+symbol = "?g_BitmapFormatAt00657800@@3QBDB"
+target = 0x00657800
+[[units.texture-load-bitmap-directory-format-0040b560.relocations]]
+offset = 177
+type = "REL32"
+symbol = "_sprintf"
+target = 0x006404F0
+[[units.texture-load-bitmap-directory-format-0040b560.relocations]]
+offset = 208
+type = "REL32"
+symbol = "?At@BitmapEntriesF207@@QAEPAEH@Z"
+target = 0x0040DD60
+[[units.texture-load-bitmap-directory-format-0040b560.relocations]]
+offset = 215
+type = "REL32"
+symbol = "?LoadFile@BitmapEntryF207@@QAE_NPBD@Z"
+target = 0x0041A3D0
+[[units.texture-load-bitmap-directory-format-0040b560.relocations]]
+offset = 247
+type = "REL32"
+symbol = "?At@BitmapEntriesF207@@QAEPAEH@Z"
+target = 0x0040DD60
+[[units.texture-load-bitmap-directory-format-0040b560.relocations]]
+offset = 272
+type = "REL32"
+symbol = "?At@BitmapEntriesF207@@QAEPAEH@Z"
+target = 0x0040DD60
+[[units.texture-load-bitmap-directory-format-0040b560.relocations]]
+offset = 296
+type = "REL32"
+symbol = "?At@BitmapHandlesF207@@QAEPAPAUIDirect3DTexture8@@H@Z"
+target = 0x0040DEE0
+[[units.texture-load-bitmap-directory-format-0040b560.relocations]]
+offset = 318
+type = "REL32"
+symbol = "?At@BitmapEntriesF207@@QAEPAEH@Z"
+target = 0x0040DD60
+[[units.texture-load-bitmap-directory-format-0040b560.relocations]]
+offset = 344
+type = "REL32"
+symbol = "?At@BitmapEntriesF207@@QAEPAEH@Z"
+target = 0x0040DD60
+[[units.texture-load-bitmap-directory-format-0040b560.relocations]]
+offset = 354
+type = "REL32"
+symbol = "?CreateTexture@Graphics@@YA_NGGPAPAUIDirect3DTexture8@@E@Z"
+target = 0x00401C20
+[[units.texture-load-bitmap-directory-format-0040b560.relocations]]
+offset = 375
+type = "REL32"
+symbol = "?Refresh@TextureManagerF207@@QAEXH@Z"
+target = 0x0040C590
+[[units.texture-load-bitmap-directory-format-0040b560.relocations]]
+offset = 396
+type = "REL32"
+symbol = "?At@BitmapEntriesF207@@QAEPAEH@Z"
+target = 0x0040DD60
+[[units.texture-load-bitmap-directory-format-0040b560.relocations]]
+offset = 417
+type = "REL32"
+symbol = "_free"
+target = 0x0064169D
+[[units.texture-load-bitmap-directory-format-0040b560.relocations]]
+offset = 441
+type = "REL32"
+symbol = "?At@BitmapEntriesF207@@QAEPAEH@Z"
+target = 0x0040DD60
+[[units.texture-load-bitmap-directory-format-0040b560.relocations]]
+offset = 471
+type = "REL32"
+symbol = "?End@BitmapEntriesF207@@QAE?AVBitmapIteratorF207@@XZ"
+target = 0x0040DD00
+[[units.texture-load-bitmap-directory-format-0040b560.relocations]]
+offset = 509
+type = "REL32"
+symbol = "?Begin@BitmapEntriesF207@@QAE?AVBitmapIteratorF207@@XZ"
+target = 0x0040DCE0
+[[units.texture-load-bitmap-directory-format-0040b560.relocations]]
+offset = 516
+type = "REL32"
+symbol = "??HBitmapIteratorF207@@QBE?AV0@H@Z"
+target = 0x0040DFD0
+[[units.texture-load-bitmap-directory-format-0040b560.relocations]]
+offset = 540
+type = "REL32"
+symbol = "?Erase@BitmapEntriesF207@@QAE?AVBitmapIteratorF207@@V2@0@Z"
+target = 0x0040DDC0
+[[units.texture-load-bitmap-directory-format-0040b560.relocations]]
+offset = 565
+type = "REL32"
+symbol = "@__security_check_cookie@4"
+target = 0x00640611
+
+[units.sprite-geometry-initialize-rectangle-0040db50]
+source = "src/SpriteGeometryF211.cpp"
+object = "build/matching/SpriteGeometryF211.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["SpriteGeometry::InitializeRectangleFromRect"]
+symbol = "??0SpriteRectF211@@QAE@PBUtagRECT@@@Z"
+target_address = 0x0040DB50
+size = 305
+[[units.sprite-geometry-initialize-rectangle-0040db50.relocations]]
+offset = 13
+type = "REL32"
+symbol = "??0SpriteVertexF211@@QAE@XZ"
+target = 0x0040D980
+[[units.sprite-geometry-initialize-rectangle-0040db50.relocations]]
+offset = 24
+type = "REL32"
+symbol = "??0SpriteVertexF211@@QAE@XZ"
+target = 0x0040D980
+[[units.sprite-geometry-initialize-rectangle-0040db50.relocations]]
+offset = 35
+type = "REL32"
+symbol = "??0SpriteVertexF211@@QAE@XZ"
+target = 0x0040D980
+[[units.sprite-geometry-initialize-rectangle-0040db50.relocations]]
+offset = 46
+type = "REL32"
+symbol = "??0SpriteVertexF211@@QAE@XZ"
+target = 0x0040D980
+[[units.sprite-geometry-initialize-rectangle-0040db50.relocations]]
+offset = 57
+type = "REL32"
+symbol = "??0SpriteExtraF211@@QAE@XZ"
+target = 0x0040D9F0
+[[units.sprite-geometry-initialize-rectangle-0040db50.relocations]]
+offset = 88
+type = "REL32"
+symbol = "??0SpriteVertexF211@@QAE@MMMM@Z"
+target = 0x0040DB10
+[[units.sprite-geometry-initialize-rectangle-0040db50.relocations]]
+offset = 145
+type = "REL32"
+symbol = "??0SpriteVertexF211@@QAE@MMMM@Z"
+target = 0x0040DB10
+[[units.sprite-geometry-initialize-rectangle-0040db50.relocations]]
+offset = 205
+type = "REL32"
+symbol = "??0SpriteVertexF211@@QAE@MMMM@Z"
+target = 0x0040DB10
+[[units.sprite-geometry-initialize-rectangle-0040db50.relocations]]
+offset = 264
+type = "REL32"
+symbol = "??0SpriteVertexF211@@QAE@MMMM@Z"
+target = 0x0040DB10

@@ -1,4 +1,4 @@
-# TH075 active reconstruction status — F206
+# TH075 active reconstruction status — F207
 
 Updated 2026-10-27. The user explicitly resumed reconstruction and requires
 serious treatment of both large/core and small/leaf functions; all historical
@@ -512,10 +512,38 @@ are preserved under .analysis/f206-bitmap-directory/. Original
 C++ vector element types, iterator and texture owner class names,
 and data/helper/library authorship are not claimed.
 
-Current ledger: **516 exact functions, 761,448 CODE bytes / 1,973,516 reviewed
-authored bytes = 38.58%**, conservative 38.51% with 3,608 unknown-origin bytes
-retained. F184..F206 (excluding exploratory-only numbers) added twenty-three accepted units,
-twenty-two objects and twenty-five new source/header inputs.
+F207 separately validates the *companion* authored bitmap loader
+TextureManager::LoadBitmapDirectoryWithFormat at address 0040B560.
+Its complete native body is **575 CODE bytes / 145 decoded instructions**
+with one RET4 followed by CC alignment; original SHA256
+bdf51c229e4af4379d9bc45b5e816374a5653d5f239b0f97f8a2276e53c092cc.
+The first independent natural VC7.1 /GX- probe emitted exactly
+575 native bytes and all **23 original DIR32/REL32 fields**
+structurally. A fresh cold replay together with the full 727-byte
+F206 source yielded **2/2 exact units** and 1,302 matching authored
+CODE bytes. No owned inline table or masked field is involved.
+
+This companion copies the observed record fields, uses the distinct
+target bitmap path string at 00657800, loads a bitmap through the real
+0041A3D0 decoder and always selects the four-argument
+Graphics::CreateTexture at 00401C20 (including the actual bitmap
+depth byte). It refreshes the texture, frees and nulls decoded data,
+then on failure performs the same original VC7 STL begin()+index,
+end(), erase(begin()+index,end()) chain and updates total=index.
+The complete natural 0x130 stack frame and meaningful contiguous
+index/total/path storage independently reappear in the different
+575-byte native function. Neither the physical allocation width
+nor matching code proves original nominal STL element and class
+names or uniquely identifies the original filename array length;
+260 and 264 bytes remain indistinguishable compiler controls.
+All STL library functions, bitmap loaders, graphics APIs, imported
+data and EH/GS helpers earn no new exact CODE credit. All previous
+516 accepted functions and 97 pending origin candidates are intact.
+
+Current ledger: **517 exact functions, 762,023 CODE bytes / 1,973,516 reviewed
+authored bytes = 38.61%**, conservative 38.54% with 3,608 unknown-origin bytes
+retained. F184..F207 (excluding exploratory-only numbers) added twenty-four accepted units,
+twenty-three objects and twenty-six new source/header inputs.
 Keep R268 origin evidence, all 97 unknown candidates, 493 pre-F184
 accepted units and protected private F184/F185 preview/drafts intact.
 

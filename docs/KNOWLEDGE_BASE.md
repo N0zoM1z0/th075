@@ -42,6 +42,8 @@ F204 cold-accepts the 318-byte wave track selector (22 fields); F205
 cold-accepts the 27-byte transition fade call wrapper (one field).
 F206 cold-accepts the complete 727-byte bitmap directory loader with
 29 fields and original STL iterator erase on the failed-load path.
+F207 independently cold-accepts the 575-byte alternate-format bitmap
+directory loader with all 23 fields and the same native iterator lifetime.
 F189 was an earlier noncredit investigation superseded by F196 exact.
 The original H184 handoff was historical and is superseded by the current
 request. Earlier experiments and names remain hypotheses until tested.
@@ -52,9 +54,9 @@ See the current [handoff](RE_HANDOFF.md) for current status.
 - Supplied Japanese th075.exe 1.11, SHA-256
   `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
   Archive identity is pinned; official distribution provenance is uncorroborated.
-- **516 exact functions/units, 761,448 CODE bytes, 188 canonical objects,
-  293 accepted source-header inputs.** Reviewed coverage is 38.58%; conservative
-  coverage is 38.51%, including all 97 unknown origins/3,608 pending bytes.
+- **517 exact functions/units, 762,023 CODE bytes, 189 canonical objects,
+  294 accepted source-header inputs.** Reviewed coverage is 38.61%; conservative
+  coverage is 38.54%, including all 97 unknown origins/3,608 pending bytes.
 - Ownership, source presence, names, Ghidra types, compilation and reproducible
   exactness remain distinct. Read ledgers and relevant origin evidence before
   relying on any classification or provisional boundary.
@@ -580,6 +582,28 @@ width-check correction was introduced. STL/CRT helpers and external
 data do not earn extra byte credit, and original owner class
 identities remain provisional. Rejected probes and native disassembly
 are preserved in .analysis/f206-bitmap-directory/.
+
+## F207: independent exact formatted bitmap directory loading
+
+The native TextureManager::LoadBitmapDirectoryWithFormat at 0040B560
+contains 575 CODE bytes, 145 decoded instructions, ordinary RET4
+and 23 actual COFF relocations. SHA256:
+bdf51c229e4af4379d9bc45b5e816374a5653d5f239b0f97f8a2276e53c092cc.
+A fresh source probe using only independently grounded native
+entry fields, four-argument CreateTexture, real bitmap loading,
+refresh and free/null matched its entire 575-byte extent and all
+23 fields on the first complete build. After preserving all
+iterator control-flow and data offsets, canonical cold replay
+with F206 yielded both full bitmap loaders exact: 575+727=1,302
+authored CODE bytes and 23+29=52 actual relocation fields.
+
+The companion uses the native four-byte iterator begin/end/erase
+failure protocol and actual local work record, with the same
+native stack frame and index/total/name offsets as the separate
+F206 routine. The physical evidence supports these call windows
+but does not prove original nominal vector/element/source naming.
+All SDK, image decoding, STL helper, global data, compiler cookie
+and original owner-layout credits remain independent/unclaimed.
 
 ## Retained failures and method boundaries
 

@@ -497,3 +497,4 @@ address,name,module,confidence,evidence
 0x00419CB0,Music::PlayTrackByIndex,Music,inferred,F204/F205; full 318-byte cold exact; original names/borrowed owner identities provisional
 0x00419DF0,AudioStream::ScheduleTransitionFadeAt00419DF0,AudioStream,inferred,F204/F205; full 27-byte cold exact; original names/borrowed owner identities provisional
 0x0040B280,TextureManager::LoadBitmapDirectory,TextureManager,inferred,F206; whole 727-byte texture bitmap directory loading cold exact; native STL iterator failure erase fully retained; complete original class identity unproven
+0x0040B560,TextureManager::LoadBitmapDirectoryWithFormat,TextureManager,inferred,F207; full 575 byte bitmap directory variant cold exact including native STL iterator erase and 23 real fields; original nominal class and element types provisional

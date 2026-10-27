@@ -515,3 +515,4 @@ GameProgress::CheckSelectionAt00419E10,0x00419E10,function
 Music::PlayTrackByIndex,0x00419CB0,function
 AudioStream::ScheduleTransitionFadeAt00419DF0,0x00419DF0,function
 TextureManager::LoadBitmapDirectory,0x0040B280,function
+TextureManager::LoadBitmapDirectoryWithFormat,0x0040B560,function
