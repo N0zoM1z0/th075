@@ -26,9 +26,9 @@ This pins the supplied sample; its official distribution provenance has not
 been independently corroborated. The localized `th075c.exe` has a different
 identity and cannot substitute for the target.
 
-The current checkpoint has **502 exact functions / 754,597 code bytes** from
-4,351 provisional candidates. Reviewed authored coverage is 38.24%; conservative
-coverage, including all 3,608 pending bytes, is **38.17%**. The objective of
+The current checkpoint has **503 exact functions / 755,128 code bytes** from
+4,351 provisional candidates. Reviewed authored coverage is 38.26%; conservative
+coverage, including all 3,608 pending bytes, is **38.19%**. The objective of
 98% authored bytes exact remains incomplete. At R268, 1,002 authored, 2,671
 library and 581 compiler-generated candidates are classified; 97 remain unknown.
 Unknown origins receive no exact credit. Candidate count does not establish
@@ -73,6 +73,10 @@ detail renderer, including its two texture updates, GDI glyph lifetimes,
 signed-index bounds and 25 COFF fields. Only the function earns new authored
 byte credit; the original complete music-scene/glyph object layouts and text
 buffer declaration remain unproven.
+F193 independently cold-reconstructed the complete 531-byte game-global
+defaults initializer, including 71 actual relocation fields, 11 character
+name copies, initial option/key mappings and the existing config.ini loader.
+The paired scene-base constructor remains origin-unknown and uncredited.
 The 98% target is still incomplete.
 See the [current reconstruction handoff](docs/RE_HANDOFF.md); the preceding H184
 handoff is preserved there as historical context.

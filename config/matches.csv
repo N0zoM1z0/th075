@@ -501,3 +501,4 @@ address,name,size,status,match_percent,unit,evidence
 0x00401540,Graphics::SetDefaultStates,604,matching,100.00,graphics-set-default-states-00401540,F190; scripts/repo-python scripts/replay-exact-units.py --unit graphics-set-default-states-00401540; whole 604 bytes/45 fields
 0x00426A70,MusicRoomScene::RenderSelectedDetails,860,matching,100.00,music-room-render-selected-details-00426a70,F191; scripts/repo-python scripts/replay-exact-units.py --unit music-room-render-selected-details-00426a70; complete 860 byte/25 COFF fields
 0x00431F40,SceneBase::ReleaseGameGlobalsAt00431F40,31,matching,100.00,scene-base-release-00431f40,F192; scripts/repo-python scripts/replay-exact-units.py --unit scene-base-release-00431f40; full 31 code/2 real relocations
+0x00417210,GameGlobals::Initialize,531,matching,100.00,game-globals-initialize-00417210,F193; scripts/repo-python scripts/replay-exact-units.py --unit game-globals-initialize-00417210; all 531 bytes/71 actual COFF fields

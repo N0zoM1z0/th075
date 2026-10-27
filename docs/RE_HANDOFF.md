@@ -1,4 +1,4 @@
-# TH075 active reconstruction status — F192
+# TH075 active reconstruction status — F193
 
 Updated 2026-10-27. The user explicitly resumed reconstruction and requires
 serious treatment of both large/core and small/leaf functions; all historical
@@ -203,9 +203,26 @@ mapping, no match unit, no exact byte credit**, and is still counted in the
 conservative pending denominator. This was deliberately not hidden or
 force-reclassified to inflate the count.
 
-Current ledger: **502 exact functions, 754,597 CODE bytes / 1,973,516 reviewed
-authored bytes = 38.24%**, conservative 38.17% with 3,608 unknown-origin bytes
-retained. F184..F192 added nine accepted units, eight objects and eleven new
+F193 follows the previously identified scene-base global-configuration
+constructor dependency. The authored `GameGlobals::Initialize` body at
+`0x00417210` contains **531 CODE bytes / 92 native x86 instructions** and
+**71 actual COFF relocation fields**. Target SHA256:
+`45043cd59354a3a3d1d5525d2c44233786e44e3cbfded0b2c45cd5dbc3a4f7b3`.
+Natural VC7.1 `/GX-` source cold-replayed all **531/531** bytes, including
+every field. The source preserves first-use gating at 00671614, each observed
+byte/DWORD keymap/default store, two player selections, eleven string copies
+to physically 20-byte-spaced character-name slots, mode flags, and the
+`0x004192F0` Win32 configuration-load dependency. It preserves the
+two native stores to one setting byte at 00671438; that byte's original
+source-level variable grouping remains uncertain. The source declares
+only borrowed global anchors; it allocates no settings storage, imports
+no helper/data credit and does not assert the original globals' nominal
+array extents. The `0x004251C0` constructor that calls it remains
+**origin unknown** and is not added to exact coverage.
+
+Current ledger: **503 exact functions, 755,128 CODE bytes / 1,973,516 reviewed
+authored bytes = 38.26%**, conservative 38.19% with 3,608 unknown-origin bytes
+retained. F184..F193 added ten accepted units, nine objects and twelve new
 source/header inputs.
 Keep R268 origin evidence, all 97 unknown candidates, 493 pre-F184
 accepted units and protected private F184/F185 preview/drafts intact.

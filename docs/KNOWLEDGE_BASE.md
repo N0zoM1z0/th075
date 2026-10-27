@@ -15,6 +15,8 @@ F191 adds the complete 860-byte music-detail font/texture workflow, all 25
 actual relocation fields cold-exact.
 F192 accepts the 31-byte authored scene-base cleanup; the 34-byte
 source-indistinguishable paired constructor remains R108 unknown/uncredited.
+F193 cold-accepts the 531-byte shared game-defaults initializer with all
+71 actual relocations and eleven character-name copies.
 F189 separately inspected but did not accept the 922-byte EH battle initializer.
 The original H184 handoff was historical and is superseded by the current
 request. Earlier experiments and names remain hypotheses until tested.
@@ -25,9 +27,9 @@ See the current [handoff](RE_HANDOFF.md) for current status.
 - Supplied Japanese th075.exe 1.11, SHA-256
   `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
   Archive identity is pinned; official distribution provenance is uncorroborated.
-- **502 exact functions/units, 754,597 CODE bytes, 174 canonical objects,
-  279 accepted source-header inputs.** Reviewed coverage is 38.24%; conservative
-  coverage is 38.17%, including all 97 unknown origins/3,608 pending bytes.
+- **503 exact functions/units, 755,128 CODE bytes, 175 canonical objects,
+  280 accepted source-header inputs.** Reviewed coverage is 38.26%; conservative
+  coverage is 38.19%, including all 97 unknown origins/3,608 pending bytes.
 - Ownership, source presence, names, Ghidra types, compilation and reproducible
   exactness remain distinct. Read ledgers and relevant origin evidence before
   relying on any classification or provisional boundary.
@@ -273,6 +275,25 @@ exact unit. The private probe and evidence remain under
 `.analysis/f192-scene-base/`, and the function remains within all 97 pending
 origins and their 3,608 code bytes. This demonstrates the difference between
 byte reproduction and proof of original ownership.
+
+## F193: game-global constructor and default settings
+
+`GameGlobals::Initialize` at `0x00417210` is 531 CODE bytes, 92 decoded
+instructions, an ordinary return and INT3 alignment. Body SHA256:
+`45043cd59354a3a3d1d5525d2c44233786e44e3cbfded0b2c45cd5dbc3a4f7b3`.
+Pinned VC7.1 `/Od /Ob0 /Gy /GR- /GX- /GS /Zi` compiled the entire
+body byte-for-byte on the first complete natural constructor probe.
+All 71 actual DIR32/REL32 fields were registered and cold-replayed.
+The source stores the observed keymap words and bytes, initializes
+two player slots, copies all eleven original character IDs through
+CRT `strcpy` to 20-byte-spaced destinations, sets options and byte
+defaults, then invokes the config.ini read helper and increments the
+first-use counter. Its double assignment at 00671438 reflects two
+observed native stores, not proof of original variable names.
+External anchors are borrowed and unsized; no data allocations, SDK
+or helper byte credit are introduced. The R108 base constructor
+`0x004251C0` that invokes this function remains unknown-origin and
+uncredited regardless of its independent structural matching probe.
 
 ## Retained failures and method boundaries
 
