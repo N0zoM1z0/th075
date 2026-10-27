@@ -1,4 +1,4 @@
-# TH075 active reconstruction status — F214
+# TH075 active reconstruction status — F217
 
 Updated 2026-10-27. The user explicitly resumed reconstruction and requires
 serious treatment of both large/core and small/leaf functions; all historical
@@ -660,10 +660,55 @@ separate 910-byte large function, with the two 109/90-byte F213
 leaves already preserved and unchanged; all 97 unknown origins
 remain unclassified.
 
-Current ledger: **522 exact functions, 763,771 CODE bytes / 1,973,516 reviewed
-authored bytes = 38.70%**, conservative 38.63% with 3,608 unknown-origin bytes
-retained. F184..F214 (excluding exploratory-only numbers) added twenty-nine accepted units,
-twenty-seven objects and thirty new source/header inputs.
+F217 cold-reconstructed the two original archive lookup dependencies
+reached from the 916-byte music-room catalog parser and the 792-byte
+replay record loader. `ResourceLookup::FindByNameAt0041CF00` has
+**113 complete authored CODE bytes / 40 native instructions**, native
+SHA256
+`6391a9bbd25ec4b140e9fd14203dda8247ef25cd77891930f15a1ab7067586a1`,
+and **nine actual DIR32/REL32 relocation fields**. The source traverses
+the original archive name deque at 0068BE1C via size/accessor callees
+0041DD50 and 0041DD70, compares the physical char* entry with the
+requested name using CRT strcmp 006416B0, and returns the paired
+archive deque's 0068BE08 entry through 0041DAF0 or null. The first
+natural probe was correctly sized but inverted the final branch;
+expressing the real early null return yields **113/113 cold exact**.
+
+`DataArchive::SeekNamedEntryWithSize` has **180 complete authored
+CODE bytes / 66 native instructions**, original SHA256
+`72ce55c493128e07f8bce2445b2409fc9f041064408f1166d5befd0a45849979`,
+normal `RET 8`, and **ten actual COFF relocation fields**. The first
+natural source produced all bytes exactly. It uses true four-byte
+VC7.1 list iterator begin/end, postfix increment returning a
+temporary, equality/inequality, string lookup and entry field offsets
++0x64 (size) and +0x68 (file offset); the successful path performs
+the original SetFilePointer and returns the existing archive handle.
+Both source files are uninstantiated, borrowed caller/interface views:
+no original complete deque/list owner layouts, iterator element types,
+CRT/SDK helper bytes or static data bytes are adopted. These two units
+independently cold replayed **293/293 CODE bytes and 19/19 fields**
+across two objects. All previous 522 exact units and the 97 unresolved
+origin classifications remain intact.
+
+The paired larger `ReplayRecords::LoadRecord` at 00413AC0 remains
+an independent **792-byte nonexact** natural source investigation.
+It emits the correct full code length and has 29 observed relocation
+fields; reusing the genuine four loop indices/byte temporary
+improved 580/676 to 618/676 nonrelocation bytes; distinct meaningful
+local-name probes improved to **639/676**. Remaining differences
+are original EBP local slot allocation and have not been masked.
+The 916-byte `MusicRoom::LoadCatalogAt00426DD0` still has a
+source-size/control-flow mismatch (actual body plus separate
+16-byte switch table), despite preserving archive, XOR and
+quoted-field parse behavior. Private negative evidence remains under
+`.analysis/f216-archive-record/`, `.analysis/f215-music-catalog/`
+and `.analysis/f217-resource-lookup/`. No exact credit was
+assigned to these incomplete bosses.
+
+Current ledger: **524 exact functions, 764,064 CODE bytes / 1,973,516 reviewed
+authored bytes = 38.72%**, conservative 38.65% with 3,608 unknown-origin bytes
+retained. F184..F217 (excluding exploratory-only numbers) added thirty-one accepted units,
+twenty-nine objects and thirty-two new source/header inputs.
 Keep R268 origin evidence, all 97 unknown candidates, 493 pre-F184
 accepted units and protected private F184/F185 preview/drafts intact.
 

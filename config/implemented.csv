@@ -520,3 +520,5 @@ GameGlobals::InitializeSound
 ProgressRecords::RaiseSelectedValue
 ProgressRecords::IncrementSelectedRecordCount
 ProgressRecords::InitializeDefaults
+ResourceLookup::FindByNameAt0041CF00
+DataArchive::SeekNamedEntryWithSize

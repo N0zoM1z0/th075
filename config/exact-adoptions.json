@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "bbc626a65395a45d81fc0adc11176dfa814d3c4da518504ef939270407ab76aa"
+      "current_sha256": "61238cd4bbe8c68e73c00b78863e84b4ff9c92aeef70ec024a7020d45d96d8de"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "c71b983d71f917ecfc12f9fd8f67208f71ba4f276e1d528b38e4fcf9b81d4518"
+      "current_sha256": "611624e053e3f301e056d68eebd297c006b7b6b4f885354e2b2b3a52d9da859f"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "f51733c868ecb2f5d98217c74276884df19c7071c42e9b47441043dd103ec3f4"
+      "current_sha256": "791d7d0efea3b57cd05c4b7799e4863249392a5362eda9ea6a0823b03c2a7366"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "9566723221dcab60dcdb00e3c60122fa9500629682866e6db1e68e9a02b6150e"
+      "current_sha256": "d9e0eadfcd565a2febfde5a310dacea18d2a7294ba9c6cf14ad3ff4d3eda6bb7"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "b3252f2274df91179fece2f24633c41420304a4fd54c9bf9f63947a21913af2c"
+      "current_sha256": "6789829ccf90802ec7a932df04e1fee84436e3663f8b6cd34ca40a1d222ab074"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -20368,6 +20368,94 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R052"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0041CF00",
+        "size": "113",
+        "span_end": "0x0041CF70",
+        "current_name": "FUN_0041cf00",
+        "proposed_name": "ResourceLookup::FindByNameAt0041CF00",
+        "module": "ResourceLookup",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R109; scripts/repo-python scripts/verify-game-context-origins.py",
+        "owner": "authored",
+        "notes": "Complete explicit game policy, frozen mixed-origin callees and independent game parent/virtual context; names/layouts inferred; origin only, no source or exact credit"
+      },
+      "after": {
+        "address": "0x0041CF00",
+        "size": "113",
+        "span_end": "0x0041CF70",
+        "current_name": "FUN_0041cf00",
+        "proposed_name": "ResourceLookup::FindByNameAt0041CF00",
+        "module": "ResourceLookup",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "cdecl",
+        "signature": "void* ResourceLookupF217::FindByName(const char*)",
+        "is_thunk": "false",
+        "source_file": "src/ArchiveLookupF217.cpp",
+        "evidence": "R109; scripts/repo-python scripts/verify-game-context-origins.py; F217; scripts/repo-python scripts/replay-exact-units.py --unit resource-lookup-find-by-name-0041cf00",
+        "owner": "authored",
+        "notes": "Complete explicit game policy, frozen mixed-origin callees and independent game parent/virtual context; names/layouts inferred; origin only, no source or exact credit; F217: complete 113 CODE bytes/40 decoded instructions, native SHA256 6391a9bbd25ec4b140e9fd14203dda8247ef25cd77891930f15a1ab7067586a1, all nine real DIR32/REL32 COFF fields exact under fresh canonical VC7.1 /GX- cold replay. The normal source uses original 0068BE1C names deque with 0041DD50 Size and 0041DD70 At, strcmp 006416B0 and corresponding 0068BE08 archive owner with 0041DAF0 At, carrying a single meaningful unsigned index. First source naturally emitted correct 113 bytes but swapped the final branch (63/77 comparable); explicit early return on missing name reproduces target unsigned JB and full 77/77 bytes. Original nominal deque element and registry classes remain unknown; library helper/global data bytes uncredited. No masks/assembly/padding/cropped functions or unproved identity; all previous 522 exact units and all 97 unknown origins preserved."
+      },
+      "origin": {
+        "address": "0x0041CF00",
+        "origin": "authored",
+        "subsystem": "ResourceLookup",
+        "disposition": "authored",
+        "confidence": "complete-game-policy-with-mixed-context",
+        "evidence_id": "R109"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0041D800",
+        "size": "180",
+        "span_end": "0x0041D8B3",
+        "current_name": "FUN_0041d800",
+        "proposed_name": "DataArchive::SeekNamedEntryWithSize",
+        "module": "DataArchive",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R053; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x0041D800",
+        "size": "180",
+        "span_end": "0x0041D8B3",
+        "current_name": "FUN_0041d800",
+        "proposed_name": "DataArchive::SeekNamedEntryWithSize",
+        "module": "DataArchive",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "HANDLE ArchiveSeekF217::SeekNamedEntryWithSize(const char*, DWORD*)",
+        "is_thunk": "false",
+        "source_file": "src/ArchiveSeekF217.cpp",
+        "evidence": "R053; full body hash, complete decoded CFG and local game-specific behavior reviewed; F217; scripts/repo-python scripts/replay-exact-units.py --unit data-archive-seek-named-entry-0041d800",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F217: complete 180 CODE bytes/66 instructions ending RET8, native SHA256 72ce55c493128e07f8bce2445b2409fc9f041064408f1166d5befd0a45849979, ten actual COFF fields matched in full first normal source and fresh cold replay. Native physically four-byte iterators with authentic STL list begin/end (0041D950/0041D980), comparator 0041E0D0/0041E0B0, named entry 0041E060, postincrement-by-value 0041E080, strcmp 006416B0, SetFilePointer import 00657128, offsets +0x64/+0x68 in archived entry. Source uses physically sized, borrowed iterator and actual this+4 list reference, no complete owner instance, no fabricated storage or class layout; library helpers and archive data uncredited. No masks/assembly/padding/cropped functions or unproved identity; all previous 522 exact units and all 97 unknown origins preserved."
+      },
+      "origin": {
+        "address": "0x0041D800",
+        "origin": "authored",
+        "subsystem": "DataArchive",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R053"
       }
     }
   ],
@@ -164010,6 +164098,166 @@
           "target": 6555153
         }
       ]
+    },
+    "resource-lookup-find-by-name-0041cf00": {
+      "source": "src/ArchiveLookupF217.cpp",
+      "object": "build/matching/ArchiveLookupF217.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "ResourceLookup::FindByNameAt0041CF00"
+      ],
+      "symbol": "?FindByName@ResourceLookupF217@@YAPAXPBD@Z",
+      "target_address": 4312832,
+      "size": 113,
+      "relocations": [
+        {
+          "offset": 23,
+          "type": "DIR32",
+          "symbol": "?g_ArchiveNamesAt0068BE1C@@3VArchiveNameRegistryF217@@A",
+          "target": 6864412
+        },
+        {
+          "offset": 28,
+          "type": "REL32",
+          "symbol": "?Size@ArchiveNameRegistryF217@@QAEIXZ",
+          "target": 4316496
+        },
+        {
+          "offset": 46,
+          "type": "DIR32",
+          "symbol": "?g_ArchiveNamesAt0068BE1C@@3VArchiveNameRegistryF217@@A",
+          "target": 6864412
+        },
+        {
+          "offset": 51,
+          "type": "REL32",
+          "symbol": "?At@ArchiveNameRegistryF217@@QAEPAPBDI@Z",
+          "target": 4316528
+        },
+        {
+          "offset": 59,
+          "type": "REL32",
+          "symbol": "_strcmp",
+          "target": 6559408
+        },
+        {
+          "offset": 75,
+          "type": "DIR32",
+          "symbol": "?g_ArchiveNamesAt0068BE1C@@3VArchiveNameRegistryF217@@A",
+          "target": 6864412
+        },
+        {
+          "offset": 80,
+          "type": "REL32",
+          "symbol": "?Size@ArchiveNameRegistryF217@@QAEIXZ",
+          "target": 4316496
+        },
+        {
+          "offset": 98,
+          "type": "DIR32",
+          "symbol": "?g_ArchiveObjectsAt0068BE08@@3VArchiveObjectRegistryF217@@A",
+          "target": 6864392
+        },
+        {
+          "offset": 103,
+          "type": "REL32",
+          "symbol": "?At@ArchiveObjectRegistryF217@@QAEPAPAXI@Z",
+          "target": 4315888
+        }
+      ]
+    },
+    "data-archive-seek-named-entry-0041d800": {
+      "source": "src/ArchiveSeekF217.cpp",
+      "object": "build/matching/ArchiveSeekF217.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "DataArchive::SeekNamedEntryWithSize"
+      ],
+      "symbol": "?SeekNamedEntryWithSize@ArchiveSeekF217@@QAEPAXPBDPAK@Z",
+      "target_address": 4315136,
+      "size": 180,
+      "relocations": [
+        {
+          "offset": 20,
+          "type": "REL32",
+          "symbol": "?Begin@ArchiveEntryListF217@@QAE?AVArchiveIteratorF217@@XZ",
+          "target": 4315472
+        },
+        {
+          "offset": 35,
+          "type": "REL32",
+          "symbol": "?End@ArchiveEntryListF217@@QAE?AVArchiveIteratorF217@@XZ",
+          "target": 4315520
+        },
+        {
+          "offset": 47,
+          "type": "REL32",
+          "symbol": "??9ArchiveIteratorF217@@QBE_NABV0@@Z",
+          "target": 4317392
+        },
+        {
+          "offset": 66,
+          "type": "REL32",
+          "symbol": "?Entry@ArchiveIteratorF217@@QAEPADXZ",
+          "target": 4317280
+        },
+        {
+          "offset": 72,
+          "type": "REL32",
+          "symbol": "_strcmp",
+          "target": 6559408
+        },
+        {
+          "offset": 95,
+          "type": "REL32",
+          "symbol": "??EArchiveIteratorF217@@QAE?AV0@H@Z",
+          "target": 4317312
+        },
+        {
+          "offset": 109,
+          "type": "REL32",
+          "symbol": "??8ArchiveIteratorF217@@QBE_NABV0@@Z",
+          "target": 4317360
+        },
+        {
+          "offset": 133,
+          "type": "REL32",
+          "symbol": "?Entry@ArchiveIteratorF217@@QAEPADXZ",
+          "target": 4317280
+        },
+        {
+          "offset": 149,
+          "type": "DIR32",
+          "symbol": "__imp__SetFilePointer@16",
+          "target": 6648104
+        },
+        {
+          "offset": 157,
+          "type": "REL32",
+          "symbol": "?Entry@ArchiveIteratorF217@@QAEPADXZ",
+          "target": 4317280
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -164310,6 +164558,8 @@
     "src/SpriteGeometryF211.cpp": "96eb5c00de88988ec801e345acaff291e5d1051ee5061286199d563a44e28249",
     "src/GameGlobalsSoundF212.cpp": "b46abe80b7e64f50690bc2b790dcff489fe2164059f7f16a26c98b4e52333b7a",
     "src/ProgressRecordLeavesF213.cpp": "ceda7159d3227e09dc78868026f5437ee89c509574c53617a8d61d68252f1b1e",
-    "src/ProgressDefaultsF214.cpp": "8f2c97420d9a47c2000b7ab5632a47cfeb8b165dac57135aa51521c3f50ebdca"
+    "src/ProgressDefaultsF214.cpp": "8f2c97420d9a47c2000b7ab5632a47cfeb8b165dac57135aa51521c3f50ebdca",
+    "src/ArchiveLookupF217.cpp": "5de3a9f7b2fe6d42ce6be9f1e3e9e1b8b249d6d132d6d939836e015df8832aad",
+    "src/ArchiveSeekF217.cpp": "9d94b169c93b9f5ba08dc2bfe7d44b96b7e61df9ce9dc690f47d97f2bbd09e5c"
   }
 }

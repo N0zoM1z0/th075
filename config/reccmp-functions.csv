@@ -521,3 +521,5 @@ GameGlobals::InitializeSound,0x004175A0,function
 ProgressRecords::RaiseSelectedValue,0x0041A1D0,function
 ProgressRecords::IncrementSelectedRecordCount,0x0041A270,function
 ProgressRecords::InitializeDefaults,0x00416640,function
+ResourceLookup::FindByNameAt0041CF00,0x0041CF00,function
+DataArchive::SeekNamedEntryWithSize,0x0041D800,function
