@@ -8,6 +8,8 @@ F186 added a separate 951-byte options scene controller, seven-case owned
 28-byte switch table and 70 relocations, also fully cold exact.
 F187 added the 339-byte Win32 config writer and its 27 actual fields with
 independent canonical cold comparison.
+F188 adds the options text-resource update with 563 CODE bytes, seven-case
+owned table, 34 fields, and natural EH/new/delete path, all cold exact.
 The original H184 handoff was historical and is superseded by the current
 request. Earlier experiments and names remain hypotheses until tested.
 See the current [handoff](RE_HANDOFF.md) for current status.
@@ -17,9 +19,9 @@ See the current [handoff](RE_HANDOFF.md) for current status.
 - Supplied Japanese th075.exe 1.11, SHA-256
   `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
   Archive identity is pinned; official distribution provenance is uncorroborated.
-- **498 exact functions/units, 752,539 CODE bytes, 170 canonical objects,
-  275 accepted source-header inputs.** Reviewed coverage is 38.13%; conservative
-  coverage is 38.06%, including all 97 unknown origins/3,608 pending bytes.
+- **499 exact functions/units, 753,102 CODE bytes, 171 canonical objects,
+  276 accepted source-header inputs.** Reviewed coverage is 38.16%; conservative
+  coverage is 38.09%, including all 97 unknown origins/3,608 pending bytes.
 - Ownership, source presence, names, Ghidra types, compilation and reproducible
   exactness remain distinct. Read ledgers and relevant origin evidence before
   relying on any classification or provisional boundary.
@@ -151,6 +153,39 @@ F186 `OptionsSettingsF186::SaveConfiguration` call target 00419450; F186
 was neither edited nor unnecessarily rebuilt. No IAT, literal, or global data
 bytes were added to authored-code credit. The native CODE SHA256 is
 `4d1027f88999c9085d95ab8c24338439ad7fb2eaf122ac8b6c9f60065fa2d940`.
+
+## F188: EH-backed options font/texture pipeline
+
+The independent native `0x00429F00` body is 563 CODE bytes (137 complete
+x86 instructions) and its immediately following switch table is 28 bytes.
+Source `src/OptionsSelectionF188.cpp` cold-replays **all 591 bytes** and all
+34 COFF fields, including one same-section table pointer plus seven local
+case labels. Code SHA256:
+`65e7c664f6846ac95a8085eeb2bba5eab32f5ad2c272cb3d2dfa049ad8e2d759`.
+Table SHA256:
+`3bab5fa7d3230c10ba3afdd6140cc4ddd35837b701713cbff1d0156ffe9a64b2`.
+
+Pinned VC7.1 `/GX` (not `/GX-`) reproduces the native EH frame, cookie and
+original allocation/cleanup shape. Native evidence independently anchors
+`operator new(0x38)`, the constructor and destructor targets, a
+D3D8 `IDirect3DTexture8::LockRect`/UnlockRect pair, a font setup/rasterizer
+pair, and the original seven message strings. All 34 actual relocations were
+replayed. The EH handler at `0x006558BD` and cleanup code at `0x006558AF`
+were inspected as dependencies but earn no separate exact byte credit.
+
+Controls show the 512-byte nominal buffer variant displaces meaningful
+stack slots by eight bytes; natural 500/504-byte variants both recreate the
+same stack shape, so the precise original declaration length is unknown.
+The original function sign-extends the option index; an explicit signed
+comparison changes MOVZX to the observed MOVSX without changing the F186
+caller ABI. The offset-check typedef control changes VC7 local-label symbol
+numbers without changing body semantics; it was not promoted. The ephemeral
+56-byte glyph object has physically reviewed total size and supported access
+offsets, but one +0x18 word is unobserved and the original class layout and
+semantics remain provisional. Do not reuse that allocation carrier elsewhere
+or claim a complete original font owner. No manual EH bytes, assembly,
+comparison masks, fabricated returns, cropped tables, or other code/data
+credits were introduced.
 
 ## Retained failures and method boundaries
 

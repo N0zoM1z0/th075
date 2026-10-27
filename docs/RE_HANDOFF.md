@@ -1,4 +1,4 @@
-# TH075 active reconstruction status — F187
+# TH075 active reconstruction status — F188
 
 Updated 2026-10-27. The user explicitly resumed reconstruction and requires
 serious treatment of both large/core and small/leaf functions; all historical
@@ -92,15 +92,48 @@ slot assignments and complete compiler output. F187 implements the *same*
 `OptionsSettingsF186::SaveConfiguration` COFF name already called by F186;
 the accepted F186 body/source/relocations were not modified.
 
-Current ledger: **498 exact functions, 752,539 CODE bytes / 1,973,516 reviewed
-authored bytes = 38.13%**, conservative 38.06% with 3,608 unknown-origin bytes
-retained. F184..F187 added five accepted units, four objects and seven new
+F188 independently cold-reconstructed `OptionsScene::ApplySelectionAt00429F00`:
+**563 CODE bytes** plus the following owned **28-byte seven-entry switch
+jump table**, 591/591 full comparison bytes and **34 actual COFF relocation
+fields**, of which eight are local to this COMDAT. The native body is 137
+x86 instructions ending in RET 4 at 0042A130; the native code SHA256 is
+`65e7c664f6846ac95a8085eeb2bba5eab32f5ad2c272cb3d2dfa049ad8e2d759`,
+and the following table SHA256 is
+`3bab5fa7d3230c10ba3afdd6140cc4ddd35837b701713cbff1d0156ffe9a64b2`.
+The complete owned 591-byte comparison, including all relocations, passed
+fresh /GX cold replay. Ghidra/dependency inspection independently confirmed
+Direct3D8 LockRect/UnlockRect slots, the 56-byte `operator new` size,
+FontSurface constructor, CreateFont, Rasterize, generated scalar deleting
+destructor and EH/cookie recovery. Native handler 006558BD and its
+006558AF cleanup remain external compiler-generated dependencies; they are
+**not** independently counted as matching source or data. The source
+uses exactly the existing F186 caller COFF method symbol, with signed
+menu-index comparison reflecting native MOVSX.
+
+The unoptimized /GX- probe gave a different non-EH 534-byte body; /GX
+reconstructed the EH prologue and typed allocation. A nominal 512-byte text
+buffer caused an 8-byte stack-window displacement. Natural 500- and
+504-byte text buffers both gave the same native frame; the original nominal
+buffer size remains unknown. The original unsigned switch expression
+emitted MOVZX, and a signed comparison restored native MOVSX. A later
+source-only offset-check experiment renumbered compiler-local jump labels;
+that control was rejected and the original field/target mapping cold-replayed
+again. All experiments remain private under
+`.analysis/f188-options-selection/`. The 56-byte temporary rasterizer
+allocation is physically anchored to native constructor/method offsets and
+allocation size, but member +0x18 and complete original class semantics are
+unproven. Do not transplant that type or infer other owners. There is no
+claim of exactness for borrowed text rendering, D3D or EH helpers.
+
+Current ledger: **499 exact functions, 753,102 CODE bytes / 1,973,516 reviewed
+authored bytes = 38.16%**, conservative 38.09% with 3,608 unknown-origin bytes
+retained. F184..F188 added six accepted units, five objects and eight new
 source/header inputs.
 Keep R268 origin evidence, all 97 unknown candidates, 493 pre-F184
 accepted units and protected private F184/F185 preview/drafts intact.
 
-Next: attack other large scene/battle functions (e.g. 00429F00 options
-selection / EH resource allocation or 0043AD10 battle initialization) with full CFG, branches, call graph,
+Next: attack other large scene/battle functions (e.g. 0043AD10 battle
+initialization or 00426A70 music-room text) with full CFG, branches, call graph,
 target writes, lifetime and switch ownership before adopting any source.
 Do not claim exact credit for incomplete probes. Record failed approaches and
 commit separately when they yield durable discoveries.

@@ -26,9 +26,9 @@ This pins the supplied sample; its official distribution provenance has not
 been independently corroborated. The localized `th075c.exe` has a different
 identity and cannot substitute for the target.
 
-The current checkpoint has **498 exact functions / 752,539 code bytes** from
-4,351 provisional candidates. Reviewed authored coverage is 38.13%; conservative
-coverage, including all 3,608 pending bytes, is **38.06%**. The objective of
+The current checkpoint has **499 exact functions / 753,102 code bytes** from
+4,351 provisional candidates. Reviewed authored coverage is 38.16%; conservative
+coverage, including all 3,608 pending bytes, is **38.09%**. The objective of
 98% authored bytes exact remains incomplete. At R268, 1,002 authored, 2,671
 library and 581 compiler-generated candidates are classified; 97 remain unknown.
 Unknown origins receive no exact credit. Candidate count does not establish
@@ -52,6 +52,11 @@ F187 added 339 exact bytes for `GameConfig::SaveIni`, the configuration
 file-writer reached from the options menu. The Win32 file operations, all
 eleven writes, literal filename and 27 relocation fields were independently
 checked, with a separate canonical cold-build.
+F188 cold-reconstructed the options scene's text-resource update and its
+complete VC7.1 exception-aware new/delete path (563 CODE bytes, 28-byte
+owned switch table, 34 actual relocations). The font instance is represented
+by an observed 56-byte ephemeral allocation carrier: complete source-level
+member semantics and original class identity are **not** established.
 The 98% target is still incomplete.
 See the [current reconstruction handoff](docs/RE_HANDOFF.md); the preceding H184
 handoff is preserved there as historical context.

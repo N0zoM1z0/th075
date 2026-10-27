@@ -496,3 +496,4 @@ ReplayScene::PollInput
 TitleScene::Advance
 OptionsScene::AdvanceAt00428F00
 GameConfig::SaveIni
+OptionsScene::ApplySelectionAt00429F00

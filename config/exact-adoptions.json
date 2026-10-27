@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "5b6f5ab3cba5721d99f8dbf2aa529c02294940519fea225204e332dc8fb332f5"
+      "current_sha256": "5cf23196faef37e7526df07cacec597129b5139186948af10689207a59850fb0"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "5fa3a301386af55ca76ef4c7032a74055fb9f62c74733810811047ca0e99fbd7"
+      "current_sha256": "23913613d4a30aee717315e1718335974b509195891075e2a1f175ca6d12defd"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "e83c83edba67d5d56a600baf069a0e09ce2192951d7dbf0b3425c580e8e84e32"
+      "current_sha256": "dc39f56f25da71b9f0136819962d967a65d7f5d75474124684f8d456f70cebe7"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "ffca339c424a784f93a641bc50ec46dec61a1e6531d67585c54ffe3027998d7f"
+      "current_sha256": "b566fefb71d443a8ffa094eeefe48e4432f024267aeecde43f155f3a746bd1e6"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "d6444a00a0f56087f890de5d7a6adeebb6d3ba3ee22950dbca306ad3a286408b"
+      "current_sha256": "b317a0ab97c59c29dd7c9019659d109e2e974de2d0919e86062a8f9fa7060b61"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -19312,6 +19312,50 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R052"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00429F00",
+        "size": "563",
+        "span_end": "0x0042A132",
+        "current_name": "FUN_00429f00",
+        "proposed_name": "OptionsScene::ApplySelectionAt00429F00",
+        "module": "OptionsScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R066; complete target body, guarded switch tables, CFG and game-specific policy",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x00429F00",
+        "size": "563",
+        "span_end": "0x0042A132",
+        "current_name": "FUN_00429f00",
+        "proposed_name": "OptionsScene::ApplySelectionAt00429F00",
+        "module": "OptionsScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void OptionsSelectF186::Apply(unsigned char)",
+        "is_thunk": "false",
+        "source_file": "src/OptionsSelectionF188.cpp",
+        "evidence": "R066; complete target body, guarded switch tables, CFG and game-specific policy; F188; scripts/repo-python scripts/replay-exact-units.py --unit options-select-apply-00429f00",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state independent; F188: complete 563 CODE bytes plus the following owned 28-byte seven-case table (591 compared bytes), 34 actual relocation fields including eight local same-section destinations, native ret4 and 137 decoded instructions; target body 65e7c664f6846ac95a8085eeb2bba5eab32f5ad2c272cb3d2dfa049ad8e2d759, table 3bab5fa7d3230c10ba3afdd6140cc4ddd35837b701713cbff1d0156ffe9a64b2. Native EH handler 006558BD and cleanup state R020 retained; /GX required to reproduce exception frame and cookie, /GX- generated only 534 bytes. 500 and 504 byte source message buffers both compile to same measured 0x22C frame; 512 adds eight bytes and mismatches. Signed switch discriminant preserves actual MOVSX with unsigned char ABI compatible with F186 caller. SDK IDirect3DTexture8 LockRect/UnlockRect, rasterization, ephemeral 56-byte new/font/delete chain matched. The 56-byte glyph allocation carrier is physically sized by target allocation and observed method fields; +0x18 member semantics and original type remain unproven and must not be reused as a complete owner. Neither EH helper, static literals, borrowed font methods nor glyph allocation receives extra exact credit. No ASM, fake returns or masks/cropped extents; all prior 498 exact units and 97 unknown origins unchanged."
+      },
+      "origin": {
+        "address": "0x00429F00",
+        "origin": "authored",
+        "subsystem": "OptionsScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R066"
       }
     }
   ],
@@ -157686,6 +157730,234 @@
           "target": 6648120
         }
       ]
+    },
+    "options-select-apply-00429f00": {
+      "source": "src/OptionsSelectionF188.cpp",
+      "object": "build/matching/OptionsSelectionF188.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "OptionsScene::ApplySelectionAt00429F00"
+      ],
+      "symbol": "?Apply@OptionsSelectF186@@QAEXE@Z",
+      "target_address": 4366080,
+      "size": 563,
+      "compare_size": 591,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$?Apply@OptionsSelectF186@@QAEXE@Z",
+          "target": 6641853
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 31,
+          "type": "DIR32",
+          "symbol": "___security_cookie",
+          "target": 6749744
+        },
+        {
+          "offset": 76,
+          "type": "DIR32",
+          "symbol": "$L57643",
+          "target": 4366643
+        },
+        {
+          "offset": 81,
+          "type": "DIR32",
+          "symbol": "?g_OptionsMessage0@@3QBDB",
+          "target": 6651288
+        },
+        {
+          "offset": 93,
+          "type": "REL32",
+          "symbol": "_sprintf",
+          "target": 6554864
+        },
+        {
+          "offset": 106,
+          "type": "DIR32",
+          "symbol": "?g_OptionsMessage1@@3QBDB",
+          "target": 6651364
+        },
+        {
+          "offset": 118,
+          "type": "REL32",
+          "symbol": "_sprintf",
+          "target": 6554864
+        },
+        {
+          "offset": 128,
+          "type": "DIR32",
+          "symbol": "?g_OptionsMessage2@@3QBDB",
+          "target": 6651416
+        },
+        {
+          "offset": 140,
+          "type": "REL32",
+          "symbol": "_sprintf",
+          "target": 6554864
+        },
+        {
+          "offset": 150,
+          "type": "DIR32",
+          "symbol": "?g_OptionsMessage3@@3QBDB",
+          "target": 6651504
+        },
+        {
+          "offset": 162,
+          "type": "REL32",
+          "symbol": "_sprintf",
+          "target": 6554864
+        },
+        {
+          "offset": 172,
+          "type": "DIR32",
+          "symbol": "?g_OptionsMessage4@@3QBDB",
+          "target": 6651580
+        },
+        {
+          "offset": 184,
+          "type": "REL32",
+          "symbol": "_sprintf",
+          "target": 6554864
+        },
+        {
+          "offset": 194,
+          "type": "DIR32",
+          "symbol": "?g_OptionsMessage5@@3QBDB",
+          "target": 6651612
+        },
+        {
+          "offset": 206,
+          "type": "REL32",
+          "symbol": "_sprintf",
+          "target": 6554864
+        },
+        {
+          "offset": 216,
+          "type": "DIR32",
+          "symbol": "?g_OptionsMessage6@@3QBDB",
+          "target": 6651644
+        },
+        {
+          "offset": 228,
+          "type": "REL32",
+          "symbol": "_sprintf",
+          "target": 6554864
+        },
+        {
+          "offset": 280,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 318,
+          "type": "REL32",
+          "symbol": "??0GlyphSurfaceF188@@QAE@PAUHWND__@@@Z",
+          "target": 4308880
+        },
+        {
+          "offset": 389,
+          "type": "DIR32",
+          "symbol": "?g_OptionsFontFamily@@3QBDB",
+          "target": 6651688
+        },
+        {
+          "offset": 400,
+          "type": "REL32",
+          "symbol": "?ConfigureFont@GlyphSurfaceF188@@QAEXPBDHEEE@Z",
+          "target": 4309088
+        },
+        {
+          "offset": 445,
+          "type": "REL32",
+          "symbol": "?Rasterize@GlyphSurfaceF188@@QAEXPBDPAXHHHHHED@Z",
+          "target": 4309728
+        },
+        {
+          "offset": 491,
+          "type": "REL32",
+          "symbol": "??_GGlyphSurfaceF188@@QAEPAXI@Z",
+          "target": 4273696
+        },
+        {
+          "offset": 545,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 553,
+          "type": "REL32",
+          "symbol": "@__security_check_cookie@4",
+          "target": 6555153
+        },
+        {
+          "offset": 563,
+          "type": "DIR32",
+          "symbol": "$L57587",
+          "target": 4366160
+        },
+        {
+          "offset": 567,
+          "type": "DIR32",
+          "symbol": "$L57588",
+          "target": 4366185
+        },
+        {
+          "offset": 571,
+          "type": "DIR32",
+          "symbol": "$L57589",
+          "target": 4366207
+        },
+        {
+          "offset": 575,
+          "type": "DIR32",
+          "symbol": "$L57590",
+          "target": 4366229
+        },
+        {
+          "offset": 579,
+          "type": "DIR32",
+          "symbol": "$L57591",
+          "target": 4366251
+        },
+        {
+          "offset": 583,
+          "type": "DIR32",
+          "symbol": "$L57592",
+          "target": 4366273
+        },
+        {
+          "offset": 587,
+          "type": "DIR32",
+          "symbol": "$L57593",
+          "target": 4366295
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -157963,6 +158235,7 @@
     "src/TitleAdvanceF185.hpp": "aab66863d10b2f115c3b7fec4a5f3f775e78968a46a932693c378b05a4789373",
     "src/OptionsAdvanceF186.cpp": "73fe415db48e908235cb45934773860086fd76a2de989f1102ffd864515bb2da",
     "src/OptionsAdvanceF186.hpp": "586b3ed20d0643f83734bfe9e63bac30233026411ea2aff8a95902a8e18baf5b",
-    "src/ConfigSaveF187.cpp": "4a98e08b1cfba81e9c1d935e70e1c65c0f622a5b83b1c2f78437332168d69085"
+    "src/ConfigSaveF187.cpp": "4a98e08b1cfba81e9c1d935e70e1c65c0f622a5b83b1c2f78437332168d69085",
+    "src/OptionsSelectionF188.cpp": "2976178827277443d729c734f35d17aa53600d4e1c22c1e1e64ef39ce8a20afa"
   }
 }
