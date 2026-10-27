@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "e0ac8c059169fadbfefe1b5655f339f3d2224a32341acb3cd82221643a162749"
+      "current_sha256": "4ec8e4f7689fe60854362a42d39f017eec7b64c9834c7a05de6c709807750df9"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "7afc3d2ae3fcc7f89cc2fa54b23db991be00531355195c0a0737ba259e84a09e"
+      "current_sha256": "84ef3d26b2e8099e3ee865105717d8eb288a268c815ed69f3586aa30594d1de9"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "298354280688ce44e99a785017bcb9ac60332510ff6773d6e1b081fd7c4d7997"
+      "current_sha256": "58a0383b6f59d1710e21cc22a7b51c981fcf1a0e240c2d955622d65a5cb081ab"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "b333083f2089df50b0ec090b5c2adca0dbc3b0d77be9428cf942c2cf9f1fc69b"
+      "current_sha256": "6513e7972b8bfc0171413bf8b7664b6d1ca77b494e7edc8d7d9e7c3bf2e0a1d0"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "d380807195234ecbd26842341bb42c81dac668840f9cb06c81307165392c258e"
+      "current_sha256": "d0f7159c0a9cb7379ee816e58a4ba9663e2cf516849af24ee4feb7123c3c1644"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -19180,6 +19180,50 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R053"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0043A270",
+        "size": "1273",
+        "span_end": "0x0043A768",
+        "current_name": "FUN_0043a270",
+        "proposed_name": "TitleScene::Advance",
+        "module": "TitleScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R044; full body hash, complete guarded jump table and local CFG reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x0043A270",
+        "size": "1273",
+        "span_end": "0x0043A768",
+        "current_name": "FUN_0043a270",
+        "proposed_name": "TitleScene::Advance",
+        "module": "TitleScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "unsigned short TitleAdvanceF185::Advance()",
+        "is_thunk": "false",
+        "source_file": "src/TitleAdvanceF185.cpp",
+        "evidence": "R044; full body hash, complete guarded jump table and local CFG reviewed; F185; scripts/repo-python scripts/replay-exact-units.py --unit title-scene-advance-0043a270",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F185: Complete 1273-byte code body plus following owned 40-byte ten-case jump table (1313 total comparison), 76 real relocations including 11 in same COMDAT cold-replayed exact. Independent native Capstone and Ghidra observed the 342 instructions, all returns/branches, ownership table and INT3 alignment; native body SHA256 f528f379b927bad808eaa0703fa48c798fb8998bbae44ca9a2c96264215928a7, table SHA256 01b9780b16a3176977d6c14d930d0eb42e860439a880b82435248b8459770254. Preserved two-player confirm/cancel, menu dispatch modes/return codes, alpha decay and delayed fade, signed attract flag, RNG indices/random unique fighters, sound fades and timer branch. Distinct incomplete call-only receiver and virtual slot view, no complete scene layout or original original names proved. No source/byte credit for borrowed callees, globals, helpers or excluded table padding; no mask, cropped extent, ASM, artificial storage or conditional match body. All 495 previous units and unknown origins preserved."
+      },
+      "origin": {
+        "address": "0x0043A270",
+        "origin": "authored",
+        "subsystem": "TitleScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R044"
       }
     }
   ],
@@ -156445,6 +156489,486 @@
           "target": 4200608
         }
       ]
+    },
+    "title-scene-advance-0043a270": {
+      "source": "src/TitleAdvanceF185.cpp",
+      "object": "build/matching/TitleAdvanceF185.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "TitleScene::Advance"
+      ],
+      "symbol": "?Advance@TitleAdvanceF185@@QAEGXZ",
+      "target_address": 4432496,
+      "size": 1273,
+      "compare_size": 1313,
+      "relocations": [
+        {
+          "offset": 14,
+          "type": "REL32",
+          "symbol": "?PollMenuInput@TitleMenuInputF184@@QAEXXZ",
+          "target": 4434928
+        },
+        {
+          "offset": 30,
+          "type": "REL32",
+          "symbol": "?Present@Graphics@@YAXXZ",
+          "target": 4204784
+        },
+        {
+          "offset": 70,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A",
+          "target": 6755940
+        },
+        {
+          "offset": 101,
+          "type": "DIR32",
+          "symbol": "?g_SelectActiveSideAt006714B8@@3CA",
+          "target": 6755512
+        },
+        {
+          "offset": 131,
+          "type": "DIR32",
+          "symbol": "$L58129",
+          "target": 4433769
+        },
+        {
+          "offset": 145,
+          "type": "DIR32",
+          "symbol": "?g_SoundBank@@3PAVSoundBank@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 150,
+          "type": "REL32",
+          "symbol": "?Play@SoundBank@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 156,
+          "type": "DIR32",
+          "symbol": "?g_CombatMode@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 185,
+          "type": "DIR32",
+          "symbol": "?g_SoundBank@@3PAVSoundBank@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 190,
+          "type": "REL32",
+          "symbol": "?Play@SoundBank@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 196,
+          "type": "DIR32",
+          "symbol": "?g_CombatMode@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 219,
+          "type": "DIR32",
+          "symbol": "?g_SoundBank@@3PAVSoundBank@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 224,
+          "type": "REL32",
+          "symbol": "?Play@SoundBank@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 230,
+          "type": "DIR32",
+          "symbol": "?g_CombatMode@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 248,
+          "type": "DIR32",
+          "symbol": "?g_SoundBank@@3PAVSoundBank@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 253,
+          "type": "REL32",
+          "symbol": "?Play@SoundBank@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 259,
+          "type": "DIR32",
+          "symbol": "?g_CombatMode@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 283,
+          "type": "DIR32",
+          "symbol": "?g_SoundBank@@3PAVSoundBank@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 288,
+          "type": "REL32",
+          "symbol": "?Play@SoundBank@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 294,
+          "type": "DIR32",
+          "symbol": "?g_CombatMode@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 314,
+          "type": "DIR32",
+          "symbol": "?g_SoundBank@@3PAVSoundBank@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 319,
+          "type": "REL32",
+          "symbol": "?Play@SoundBank@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 325,
+          "type": "DIR32",
+          "symbol": "?g_SelectActiveSideAt006714B8@@3CA",
+          "target": 6755512
+        },
+        {
+          "offset": 343,
+          "type": "DIR32",
+          "symbol": "?g_SoundBank@@3PAVSoundBank@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 348,
+          "type": "REL32",
+          "symbol": "?Play@SoundBank@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 365,
+          "type": "DIR32",
+          "symbol": "?g_SoundBank@@3PAVSoundBank@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 370,
+          "type": "REL32",
+          "symbol": "?Play@SoundBank@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 387,
+          "type": "DIR32",
+          "symbol": "?g_SoundBank@@3PAVSoundBank@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 392,
+          "type": "REL32",
+          "symbol": "?Play@SoundBank@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 407,
+          "type": "DIR32",
+          "symbol": "?g_TitleWindowAt00671608@@3PAUHWND__@@A",
+          "target": 6755848
+        },
+        {
+          "offset": 414,
+          "type": "DIR32",
+          "symbol": "__imp__DestroyWindow@4",
+          "target": 6648348
+        },
+        {
+          "offset": 435,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A",
+          "target": 6755940
+        },
+        {
+          "offset": 456,
+          "type": "DIR32",
+          "symbol": "?g_TitleWindowAt00671608@@3PAUHWND__@@A",
+          "target": 6755848
+        },
+        {
+          "offset": 463,
+          "type": "DIR32",
+          "symbol": "__imp__DestroyWindow@4",
+          "target": 6648348
+        },
+        {
+          "offset": 480,
+          "type": "DIR32",
+          "symbol": "?g_SoundBank@@3PAVSoundBank@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 485,
+          "type": "REL32",
+          "symbol": "?Play@SoundBank@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 524,
+          "type": "DIR32",
+          "symbol": "?g_TitleWindowAt00671608@@3PAUHWND__@@A",
+          "target": 6755848
+        },
+        {
+          "offset": 531,
+          "type": "DIR32",
+          "symbol": "__imp__DestroyWindow@4",
+          "target": 6648348
+        },
+        {
+          "offset": 548,
+          "type": "DIR32",
+          "symbol": "?g_SoundBank@@3PAVSoundBank@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 553,
+          "type": "REL32",
+          "symbol": "?Play@SoundBank@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 577,
+          "type": "DIR32",
+          "symbol": "?g_SoundBank@@3PAVSoundBank@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 582,
+          "type": "REL32",
+          "symbol": "?Play@SoundBank@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 635,
+          "type": "DIR32",
+          "symbol": "?g_SoundBank@@3PAVSoundBank@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 640,
+          "type": "REL32",
+          "symbol": "?Play@SoundBank@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 965,
+          "type": "DIR32",
+          "symbol": "?g_TitleAttractSwitchAt00671633@@3CA",
+          "target": 6755891
+        },
+        {
+          "offset": 1002,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 1019,
+          "type": "DIR32",
+          "symbol": "?g_StatePlayerIds@@3PACA",
+          "target": 6755528
+        },
+        {
+          "offset": 1028,
+          "type": "DIR32",
+          "symbol": "?g_TitleRoundOptionAt006714AC@@3PACA",
+          "target": 6755500
+        },
+        {
+          "offset": 1034,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 1051,
+          "type": "DIR32",
+          "symbol": "?g_TitleMiscOptionAt00671610@@3PACA",
+          "target": 6755856
+        },
+        {
+          "offset": 1056,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 1073,
+          "type": "DIR32",
+          "symbol": "?g_TitleOtherOptionAt006714CC@@3PACA",
+          "target": 6755532
+        },
+        {
+          "offset": 1082,
+          "type": "DIR32",
+          "symbol": "?g_StatePlayerIds@@3PACA",
+          "target": 6755528
+        },
+        {
+          "offset": 1089,
+          "type": "DIR32",
+          "symbol": "?g_StatePlayerIds@@3PACA",
+          "target": 6755528
+        },
+        {
+          "offset": 1100,
+          "type": "DIR32",
+          "symbol": "?g_StatePlayerIds@@3PACA",
+          "target": 6755528
+        },
+        {
+          "offset": 1117,
+          "type": "DIR32",
+          "symbol": "?g_StatePlayerIds@@3PACA",
+          "target": 6755528
+        },
+        {
+          "offset": 1122,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 1137,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 1160,
+          "type": "DIR32",
+          "symbol": "?g_SequenceStageAt0067161D@@3EA",
+          "target": 6755869
+        },
+        {
+          "offset": 1166,
+          "type": "DIR32",
+          "symbol": "?g_CombatMode@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 1173,
+          "type": "DIR32",
+          "symbol": "?g_TitleAttractSwitchAt00671633@@3CA",
+          "target": 6755891
+        },
+        {
+          "offset": 1182,
+          "type": "DIR32",
+          "symbol": "?g_TitleAttractSwitchAt00671633@@3CA",
+          "target": 6755891
+        },
+        {
+          "offset": 1201,
+          "type": "REL32",
+          "symbol": "?ScheduleFade@AudioControlF185@@YAXJJEE@Z",
+          "target": 4226656
+        },
+        {
+          "offset": 1216,
+          "type": "DIR32",
+          "symbol": "?g_TitleAttractSwitchAt00671633@@3CA",
+          "target": 6755891
+        },
+        {
+          "offset": 1233,
+          "type": "REL32",
+          "symbol": "?ScheduleFade@AudioControlF185@@YAXJJEE@Z",
+          "target": 4226656
+        },
+        {
+          "offset": 1248,
+          "type": "DIR32",
+          "symbol": "__imp__timeGetTime@0",
+          "target": 6648420
+        },
+        {
+          "offset": 1273,
+          "type": "DIR32",
+          "symbol": "$L58003",
+          "target": 4432631
+        },
+        {
+          "offset": 1277,
+          "type": "DIR32",
+          "symbol": "$L58005",
+          "target": 4432671
+        },
+        {
+          "offset": 1281,
+          "type": "DIR32",
+          "symbol": "$L58007",
+          "target": 4432711
+        },
+        {
+          "offset": 1285,
+          "type": "DIR32",
+          "symbol": "$L58008",
+          "target": 4432740
+        },
+        {
+          "offset": 1289,
+          "type": "DIR32",
+          "symbol": "$L58009",
+          "target": 4432769
+        },
+        {
+          "offset": 1293,
+          "type": "DIR32",
+          "symbol": "$L58011",
+          "target": 4432806
+        },
+        {
+          "offset": 1297,
+          "type": "DIR32",
+          "symbol": "$L58012",
+          "target": 4432835
+        },
+        {
+          "offset": 1301,
+          "type": "DIR32",
+          "symbol": "$L58013",
+          "target": 4432857
+        },
+        {
+          "offset": 1305,
+          "type": "DIR32",
+          "symbol": "$L58014",
+          "target": 4432879
+        },
+        {
+          "offset": 1309,
+          "type": "DIR32",
+          "symbol": "$L58015",
+          "target": 4432901
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -156717,6 +157241,8 @@
     "src/TitleMenuRenderF183.cpp": "23536f7034acab49f261f2e36fc6dd0f61d88680a7a5de29de30a838a3097485",
     "src/TitleMenuRenderF183.hpp": "9cdbeeeb465fbfba936c35f6107bdd129f6d39b40f1302230b505dc3812d3891",
     "src/MenuInputF184.cpp": "dd803c589c621764e72125624c304c9be810856450d4f5c5a2d87f39fb478245",
-    "src/MenuInputF184.hpp": "d3242ffc92f7f96ee4a8218b30e7a96cc09dde89178ed87632696bb67ab50394"
+    "src/MenuInputF184.hpp": "d3242ffc92f7f96ee4a8218b30e7a96cc09dde89178ed87632696bb67ab50394",
+    "src/TitleAdvanceF185.cpp": "e9d88f71494177b67be962482a2957266ee884ef7c14aa0621591d466b64f951",
+    "src/TitleAdvanceF185.hpp": "aab66863d10b2f115c3b7fec4a5f3f775e78968a46a932693c378b05a4789373"
   }
 }

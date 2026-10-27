@@ -493,3 +493,4 @@ NameEntryScene::PollSharedInput
 TitleScene::RenderMenu
 TitleScene::PollMenuInput
 ReplayScene::PollInput
+TitleScene::Advance

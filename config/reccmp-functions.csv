@@ -494,3 +494,4 @@ NameEntryScene::PollSharedInput,0x0042BCD0,function
 TitleScene::RenderMenu,0x0043A7A0,function
 TitleScene::PollMenuInput,0x0043ABF0,function
 ReplayScene::PollInput,0x00429DC0,function
+TitleScene::Advance,0x0043A270,function

@@ -31174,3 +31174,393 @@ offset = 302
 type = "REL32"
 symbol = "?ToggleWindowMode@Graphics@@YAXXZ"
 target = 0x004018A0
+
+[units.title-scene-advance-0043a270]
+source = "src/TitleAdvanceF185.cpp"
+object = "build/matching/TitleAdvanceF185.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["TitleScene::Advance"]
+symbol = "?Advance@TitleAdvanceF185@@QAEGXZ"
+target_address = 0x0043A270
+size = 1273
+compare_size = 1313
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 14
+type = "REL32"
+symbol = "?PollMenuInput@TitleMenuInputF184@@QAEXXZ"
+target = 0x0043ABF0
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 30
+type = "REL32"
+symbol = "?Present@Graphics@@YAXXZ"
+target = 0x004028F0
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 70
+type = "DIR32"
+symbol = "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A"
+target = 0x00671664
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 101
+type = "DIR32"
+symbol = "?g_SelectActiveSideAt006714B8@@3CA"
+target = 0x006714B8
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 131
+type = "DIR32"
+symbol = "$L58129"
+target = 0x0043A769
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 145
+type = "DIR32"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
+target = 0x00671618
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 150
+type = "REL32"
+symbol = "?Play@SoundBank@@QAEXH@Z"
+target = 0x004079C0
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 156
+type = "DIR32"
+symbol = "?g_CombatMode@@3CA"
+target = 0x006714B4
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 185
+type = "DIR32"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
+target = 0x00671618
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 190
+type = "REL32"
+symbol = "?Play@SoundBank@@QAEXH@Z"
+target = 0x004079C0
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 196
+type = "DIR32"
+symbol = "?g_CombatMode@@3CA"
+target = 0x006714B4
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 219
+type = "DIR32"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
+target = 0x00671618
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 224
+type = "REL32"
+symbol = "?Play@SoundBank@@QAEXH@Z"
+target = 0x004079C0
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 230
+type = "DIR32"
+symbol = "?g_CombatMode@@3CA"
+target = 0x006714B4
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 248
+type = "DIR32"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
+target = 0x00671618
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 253
+type = "REL32"
+symbol = "?Play@SoundBank@@QAEXH@Z"
+target = 0x004079C0
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 259
+type = "DIR32"
+symbol = "?g_CombatMode@@3CA"
+target = 0x006714B4
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 283
+type = "DIR32"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
+target = 0x00671618
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 288
+type = "REL32"
+symbol = "?Play@SoundBank@@QAEXH@Z"
+target = 0x004079C0
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 294
+type = "DIR32"
+symbol = "?g_CombatMode@@3CA"
+target = 0x006714B4
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 314
+type = "DIR32"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
+target = 0x00671618
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 319
+type = "REL32"
+symbol = "?Play@SoundBank@@QAEXH@Z"
+target = 0x004079C0
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 325
+type = "DIR32"
+symbol = "?g_SelectActiveSideAt006714B8@@3CA"
+target = 0x006714B8
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 343
+type = "DIR32"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
+target = 0x00671618
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 348
+type = "REL32"
+symbol = "?Play@SoundBank@@QAEXH@Z"
+target = 0x004079C0
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 365
+type = "DIR32"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
+target = 0x00671618
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 370
+type = "REL32"
+symbol = "?Play@SoundBank@@QAEXH@Z"
+target = 0x004079C0
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 387
+type = "DIR32"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
+target = 0x00671618
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 392
+type = "REL32"
+symbol = "?Play@SoundBank@@QAEXH@Z"
+target = 0x004079C0
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 407
+type = "DIR32"
+symbol = "?g_TitleWindowAt00671608@@3PAUHWND__@@A"
+target = 0x00671608
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 414
+type = "DIR32"
+symbol = "__imp__DestroyWindow@4"
+target = 0x0065721C
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 435
+type = "DIR32"
+symbol = "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A"
+target = 0x00671664
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 456
+type = "DIR32"
+symbol = "?g_TitleWindowAt00671608@@3PAUHWND__@@A"
+target = 0x00671608
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 463
+type = "DIR32"
+symbol = "__imp__DestroyWindow@4"
+target = 0x0065721C
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 480
+type = "DIR32"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
+target = 0x00671618
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 485
+type = "REL32"
+symbol = "?Play@SoundBank@@QAEXH@Z"
+target = 0x004079C0
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 524
+type = "DIR32"
+symbol = "?g_TitleWindowAt00671608@@3PAUHWND__@@A"
+target = 0x00671608
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 531
+type = "DIR32"
+symbol = "__imp__DestroyWindow@4"
+target = 0x0065721C
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 548
+type = "DIR32"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
+target = 0x00671618
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 553
+type = "REL32"
+symbol = "?Play@SoundBank@@QAEXH@Z"
+target = 0x004079C0
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 577
+type = "DIR32"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
+target = 0x00671618
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 582
+type = "REL32"
+symbol = "?Play@SoundBank@@QAEXH@Z"
+target = 0x004079C0
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 635
+type = "DIR32"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
+target = 0x00671618
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 640
+type = "REL32"
+symbol = "?Play@SoundBank@@QAEXH@Z"
+target = 0x004079C0
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 965
+type = "DIR32"
+symbol = "?g_TitleAttractSwitchAt00671633@@3CA"
+target = 0x00671633
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 1002
+type = "REL32"
+symbol = "_rand"
+target = 0x006418AB
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 1019
+type = "DIR32"
+symbol = "?g_StatePlayerIds@@3PACA"
+target = 0x006714C8
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 1028
+type = "DIR32"
+symbol = "?g_TitleRoundOptionAt006714AC@@3PACA"
+target = 0x006714AC
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 1034
+type = "REL32"
+symbol = "_rand"
+target = 0x006418AB
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 1051
+type = "DIR32"
+symbol = "?g_TitleMiscOptionAt00671610@@3PACA"
+target = 0x00671610
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 1056
+type = "REL32"
+symbol = "_rand"
+target = 0x006418AB
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 1073
+type = "DIR32"
+symbol = "?g_TitleOtherOptionAt006714CC@@3PACA"
+target = 0x006714CC
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 1082
+type = "DIR32"
+symbol = "?g_StatePlayerIds@@3PACA"
+target = 0x006714C8
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 1089
+type = "DIR32"
+symbol = "?g_StatePlayerIds@@3PACA"
+target = 0x006714C8
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 1100
+type = "DIR32"
+symbol = "?g_StatePlayerIds@@3PACA"
+target = 0x006714C8
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 1117
+type = "DIR32"
+symbol = "?g_StatePlayerIds@@3PACA"
+target = 0x006714C8
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 1122
+type = "REL32"
+symbol = "_rand"
+target = 0x006418AB
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 1137
+type = "REL32"
+symbol = "_rand"
+target = 0x006418AB
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 1160
+type = "DIR32"
+symbol = "?g_SequenceStageAt0067161D@@3EA"
+target = 0x0067161D
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 1166
+type = "DIR32"
+symbol = "?g_CombatMode@@3CA"
+target = 0x006714B4
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 1173
+type = "DIR32"
+symbol = "?g_TitleAttractSwitchAt00671633@@3CA"
+target = 0x00671633
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 1182
+type = "DIR32"
+symbol = "?g_TitleAttractSwitchAt00671633@@3CA"
+target = 0x00671633
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 1201
+type = "REL32"
+symbol = "?ScheduleFade@AudioControlF185@@YAXJJEE@Z"
+target = 0x00407E60
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 1216
+type = "DIR32"
+symbol = "?g_TitleAttractSwitchAt00671633@@3CA"
+target = 0x00671633
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 1233
+type = "REL32"
+symbol = "?ScheduleFade@AudioControlF185@@YAXJJEE@Z"
+target = 0x00407E60
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 1248
+type = "DIR32"
+symbol = "__imp__timeGetTime@0"
+target = 0x00657264
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 1273
+type = "DIR32"
+symbol = "$L58003"
+target = 0x0043A2F7
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 1277
+type = "DIR32"
+symbol = "$L58005"
+target = 0x0043A31F
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 1281
+type = "DIR32"
+symbol = "$L58007"
+target = 0x0043A347
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 1285
+type = "DIR32"
+symbol = "$L58008"
+target = 0x0043A364
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 1289
+type = "DIR32"
+symbol = "$L58009"
+target = 0x0043A381
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 1293
+type = "DIR32"
+symbol = "$L58011"
+target = 0x0043A3A6
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 1297
+type = "DIR32"
+symbol = "$L58012"
+target = 0x0043A3C3
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 1301
+type = "DIR32"
+symbol = "$L58013"
+target = 0x0043A3D9
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 1305
+type = "DIR32"
+symbol = "$L58014"
+target = 0x0043A3EF
+[[units.title-scene-advance-0043a270.relocations]]
+offset = 1309
+type = "DIR32"
+symbol = "$L58015"
+target = 0x0043A405

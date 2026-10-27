@@ -54,9 +54,25 @@ class ExactCheckpointTests(unittest.TestCase):
         row = {"address": "0x00401020", "calling_convention": "unapproved"}
         self.assertEqual(E.historical_functions([row]), [row])
 
+    def test_no_unregistered_or_duplicate_function_units(self):
+        import csv
+        import tomllib
+
+        with (E.ROOT / "config/match-units.toml").open("rb") as stream:
+            units = tomllib.load(stream)["units"]
+        with (E.ROOT / "config/matches.csv").open(newline="") as stream:
+            rows = list(csv.DictReader(stream))
+        mapped = [row["unit"] for row in rows]
+        self.assertEqual(len(set(mapped)), len(mapped))
+        self.assertEqual(set(mapped), set(units))
+        extents = [(int(item["target_address"]), int(item["size"]),
+                    int(item.get("compare_size", item["size"])))
+                   for item in units.values()]
+        self.assertEqual(len(set(extents)), len(extents))
+
     def test_unknown_origins_receive_no_adoption_credit(self):
         plan = E.plan()
-        self.assertEqual(len(plan["functions"]), 435)
+        self.assertEqual(len(plan["functions"]), 436)
         self.assertTrue(all(item["origin"]["disposition"] == "authored"
                             for item in plan["functions"]))
-        self.assertEqual(sum(unit["size"] for unit in plan["added_units"].values()), 740093)
+        self.assertEqual(sum(unit["size"] for unit in plan["added_units"].values()), 741366)

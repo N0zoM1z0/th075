@@ -494,3 +494,4 @@ address,name,size,status,match_percent,unit,evidence
 0x0043A7A0,TitleScene::RenderMenu,1089,matching,100.00,title-render-menu-0043a7a0,F183; scripts/repo-python scripts/replay-exact-units.py --unit title-render-menu-0043a7a0; complete function/all actual fields
 0x0043ABF0,TitleScene::PollMenuInput,228,matching,100.00,title-poll-menu-input-0043abf0,F184; cold exact replay of full function/all 19 actual fields
 0x00429DC0,ReplayScene::PollInput,310,matching,100.00,replay-poll-input-00429dc0,F184; cold exact replay of full function/all 27 actual fields
+0x0043A270,TitleScene::Advance,1273,matching,100.00,title-scene-advance-0043a270,F185; canonical cold exact; complete 1273 code + 40 switch table + 76 relocations

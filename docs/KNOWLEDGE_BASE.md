@@ -1,7 +1,9 @@
 # TH075 reconstruction knowledge index
 
 Updated 2026-10-27: the user resumed reconstruction. F184 added two
-canonical cold-exact input policies (+538 CODE bytes / 46 relocation fields).
+canonical cold-exact input policies (+538 CODE bytes / 46 relocation fields);
+F185 added the 1,273-byte title core state machine plus an owned 40-byte
+switch table and 76 relocation fields, all cold exact.
 The original H184 handoff was historical and is superseded by the current
 request. Earlier experiments and names remain hypotheses until tested.
 See the current [handoff](RE_HANDOFF.md) for current status.
@@ -11,9 +13,9 @@ See the current [handoff](RE_HANDOFF.md) for current status.
 - Supplied Japanese th075.exe 1.11, SHA-256
   `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
   Archive identity is pinned; official distribution provenance is uncorroborated.
-- **495 exact functions/units, 749,976 CODE bytes, 167 canonical objects,
-  270 accepted source-header inputs.** Reviewed coverage is 38.00%; conservative
-  coverage is 37.93%, including all 97 unknown origins/3,608 pending bytes.
+- **496 exact functions/units, 751,249 CODE bytes, 168 canonical objects,
+  272 accepted source-header inputs.** Reviewed coverage is 38.07%; conservative
+  coverage is 38.00%, including all 97 unknown origins/3,608 pending bytes.
 - Ownership, source presence, names, Ghidra types, compilation and reproducible
   exactness remain distinct. Read ledgers and relevant origin evidence before
   relying on any classification or provisional boundary.
@@ -68,6 +70,32 @@ The frozen original H184 preview source/object and resumption seed remain
 historical evidence and were not reclassified as cold-built canonical objects.
 The distinct F184 public source and one fresh canonical object are accepted;
 full layouts/names remain unknown.
+
+## F185: title-scene state-machine exactness
+
+The independently measured target 0043A270 has 1,273 CODE bytes and an
+immediately following 40-byte owned ten-case switch table. The entire
+1,313-byte extent (76 relocation fields, including 11 local jump-table
+references) cold-replays byte-for-byte from natural VC7.1 C++, using a genuine
+single shared loop-local index and signed attract-mode state. Complete loop,
+dispatch, exit and timed attract branches were retained; no cropped table,
+comparison mask, padding, fabricated returns, assembly, or fake owner
+instantiation was introduced. Native code SHA256:
+`f528f379b927bad808eaa0703fa48c798fb8998bbae44ca9a2c96264215928a7`.
+Owned table SHA256:
+`01b9780b16a3176977d6c14d930d0eb42e860439a880b82435248b8459770254`.
+
+Before success, the natural first probe was 1,312 bytes total (1272 CODE +
+40 data) and mismatched the signed flag and time-branch layout. Its retained
+variants record the alternative and allow independent replication. Inverting
+the terminal time condition into a true attract-mode block reproduced the
+native long `jbe` to the tail; changing the attribute to signed matched native
+`movsx`. Reversing the ten-item alpha conditional matched the target's
+separate highlighted-item store and decay/clear branches. A private duplicate
+unit alias was identified and removed after verifying exact equivalence to
+the registered unit, restoring exact unit↔ledger 1:1 correspondence and a
+new automated check. Full owner layout, names and some global semantic roles
+remain conjectural.
 
 ## Retained failures and method boundaries
 

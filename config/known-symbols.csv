@@ -476,3 +476,4 @@ address,name,module,confidence,evidence
 0x0043A7A0,TitleScene::RenderMenu,TitleScene,inferred,F183; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x0043ABF0,TitleScene::PollMenuInput,TitleScene,inferred,F184; full cold replay exact; scene identity/layout not proved
 0x00429DC0,ReplayScene::PollInput,ReplayScene,inferred,F184; full cold replay exact; scene identity/layout not proved
+0x0043A270,TitleScene::Advance,TitleScene,inferred,F185; complete canonical cold exact; synthetic call-only scene/virtual slot views; original layout/name unknown

@@ -1,4 +1,4 @@
-# TH075 active reconstruction status — F184
+# TH075 active reconstruction status — F185
 
 Updated 2026-10-27. The user explicitly resumed reconstruction and requires
 serious treatment of both large/core and small/leaf functions; all historical
@@ -6,7 +6,7 @@ assumptions are provisional. Do not avoid or discard dirty work. Use commit
 subjects `gpt-web: ...`. The H184 *no-active-goal* handoff below is historical
 and superseded by this active request.
 
-F184 was independently reconstructed from the supplied target and accepted
+F184 input functions were independently reconstructed from the supplied target and accepted
 by complete canonical cold replay:
 
 | Function | Extent | Code bytes | Actual relocation fields | Cold replay |
@@ -31,15 +31,37 @@ replay controls, independent signs, ESC behavior and window-toggle key chord
 remain separate. Native C++ class names, owner layouts and runtime integration
 are still unknown; no imported credit was granted for helpers or data.
 
-Current ledger: **495 exact functions, 749,976 CODE bytes / 1,973,516 reviewed
-authored bytes = 38.00%**, conservative 37.93% with 3,608 unknown-origin bytes
-retained. Two new canonical units, one new object, two new source/header inputs.
-Keep prior R268 origin evidence, all 97 unknown candidates, all 493 earlier
-accepted units and protected private F184 preview/drafts intact.
+F185 added a substantial core state machine, **`TitleScene::Advance` at
+`0x0043A270`: 1,273 CODE bytes plus the full 40-byte owned ten-entry switch
+table immediately after RET**. Target body and table were independently read
+from the pinned executable; native code hash
+`f528f379b927bad808eaa0703fa48c798fb8998bbae44ca9a2c96264215928a7`,
+table hash `01b9780b16a3176977d6c14d930d0eb42e860439a880b82435248b8459770254`.
+All 342 native instructions, table entries, 65 external and 11 local
+relocation fields were checked. Cold source replay of the full 1,313-byte
+extent returned exact. The code implements two-player menu mode dispatch,
+exit/cancel/navigation, per-item fade progress, timed transition and
+randomized attract mode with audio fade. The source is a pointer-only borrowed
+scene/virtual-slot view: owner layout, original return type/name and broader
+runtime identity remain unproven; source/byte credit is only for the 1,273
+function CODE bytes. The jump table is compared but adds no CODE credit.
 
-Next: address a substantially larger scene/battle function (e.g. 0043A270
-TitleScene::Advance, 1,273 bytes; or 00428F00 options) with full CFG, branches,
-call graph, target writes and loop/switch ownership before adopting any source.
+A redundant identical candidate unit alias was independently detected after
+registration and reconciled, leaving **one uniquely mapped unit for each
+matching function** (496/496). Its private reconciliation receipt is preserved;
+new automated coverage rejects unmatched or duplicate extents. No unrelated
+source, original object layouts or origin classifications were changed.
+
+Current ledger: **496 exact functions, 751,249 CODE bytes / 1,973,516 reviewed
+authored bytes = 38.07%**, conservative 38.00% with 3,608 unknown-origin bytes
+retained. F184+F185 added three accepted units, two objects and four new
+source/header inputs.
+Keep R268 origin evidence, all 97 unknown candidates, 493 pre-F184
+accepted units and protected private F184/F185 preview/drafts intact.
+
+Next: attack other large scene/battle functions (e.g. 00428F00 options
+or 0043AD10 battle initialization) with full CFG, branches, call graph,
+target writes, lifetime and switch ownership before adopting any source.
 Do not claim exact credit for incomplete probes. Record failed approaches and
 commit separately when they yield durable discoveries.
 
