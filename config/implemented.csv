@@ -517,3 +517,5 @@ TextureManager::LoadBitmapDirectory
 TextureManager::LoadBitmapDirectoryWithFormat
 SpriteGeometry::InitializeRectangleFromRect
 GameGlobals::InitializeSound
+ProgressRecords::RaiseSelectedValue
+ProgressRecords::IncrementSelectedRecordCount

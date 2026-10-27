@@ -36020,3 +36020,23 @@ offset = 326
 type = "DIR32"
 symbol = "__except_list"
 target = 0x00000000
+
+[units.progress-record-raise-selected-value-0041a1d0]
+source = "src/ProgressRecordLeavesF213.cpp"
+object = "build/matching/ProgressRecordLeavesF213.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["ProgressRecords::RaiseSelectedValue"]
+symbol = "?RaiseSelectedValue@ProgressRecordLeavesF213@@QAEXC@Z"
+target_address = 0x0041A1D0
+size = 109
+relocations = []
+
+[units.progress-record-increment-selected-count-0041a270]
+source = "src/ProgressRecordLeavesF213.cpp"
+object = "build/matching/ProgressRecordLeavesF213.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["ProgressRecords::IncrementSelectedRecordCount"]
+symbol = "?IncrementSelectedRecordCount@ProgressRecordLeavesF213@@QAEXXZ"
+target_address = 0x0041A270
+size = 90
+relocations = []

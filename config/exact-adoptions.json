@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "49f30a6d21f88d2d2e06b42e5b025ae314767c6e67ad48f2cf85dcfa8036c49e"
+      "current_sha256": "17b250a0b2333a4b413569196413956b298c8ef39b44adf8d01332b31b27866a"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "7f60d2cc13a68ba544122a23609c9a5eec0797c95ce84355ea4828399f056674"
+      "current_sha256": "8e31d30c6fb0a088c25e025e781fb3aae535389a2b86a1b39084b48201098a9c"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "4edc3f297862af17dbe56c088eed0d0bd602088db289be297bcf0fe137fa74b2"
+      "current_sha256": "6a06181d7fe0244cdba473e04646649de1ad270fd30ba2714d27b510e241c236"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "508b3e7d7ad7160a78a37ecb14203593bd3ceada581e061b54481cdafd5b6f89"
+      "current_sha256": "e846cf0a79230063c759ed66c208d2df7eb676e402c18138746fa29332b3965f"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "0d71e8ae689fc1fd286339f75b3fffd91b6943a9f68916c230c0f01bf9832349"
+      "current_sha256": "20ccf3b44d27defe89aa3b7e8eb387791c90ede50b89122769228a769dcdb006"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -20236,6 +20236,94 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R052"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0041A1D0",
+        "size": "109",
+        "span_end": "0x0041A23C",
+        "current_name": "FUN_0041a1d0",
+        "proposed_name": "ProgressRecords::RaiseSelectedValue",
+        "module": "ProgressRecords",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R021",
+        "owner": "",
+        "notes": "R021; custom record-selection or bitmap/palette/run-length/upload policy; complete target CFG including all bounded switches; original ABI/name and complete owner layout unresolved; origin only, no source or exact credit."
+      },
+      "after": {
+        "address": "0x0041A1D0",
+        "size": "109",
+        "span_end": "0x0041A23C",
+        "current_name": "FUN_0041a1d0",
+        "proposed_name": "ProgressRecords::RaiseSelectedValue",
+        "module": "ProgressRecords",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void ProgressRecordLeavesF213::RaiseSelectedValue(signed char)",
+        "is_thunk": "false",
+        "source_file": "src/ProgressRecordLeavesF213.cpp",
+        "evidence": "R021; F213; scripts/repo-python scripts/replay-exact-units.py --unit progress-record-raise-selected-value-0041a1d0",
+        "owner": "authored",
+        "notes": "R021; custom record-selection or bitmap/palette/run-length/upload policy; complete target CFG including all bounded switches; original ABI/name and complete owner layout unresolved; origin only, no source or exact credit.; F213: Complete 109 native authored CODE bytes, no COFF relocation fields, entire VC7.1 /GX- cold replay exact from real signed record-index arithmetic. The original compares signed proposed score against a signed record byte at borrowed this+0x556+signed level*0x17f0+signed mode*0x5fc; conditional maximum update. The real two-phase pointer arithmetic adds this to the primary selection displacement *before* the secondary displacement; equivalent but differently grouped source produced correct length but 32 wrong bytes. No complete original record class/instance claim, no padding/inert locals/ABI trick/masks and no imported code/data credit; existing 519 exact and all 97 unknown origins unchanged."
+      },
+      "origin": {
+        "address": "0x0041A1D0",
+        "origin": "authored",
+        "subsystem": "ProgressRecords",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R021"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0041A270",
+        "size": "90",
+        "span_end": "0x0041A2C9",
+        "current_name": "FUN_0041a270",
+        "proposed_name": "ProgressRecords::IncrementSelectedRecordCount",
+        "module": "ProgressRecords",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R021",
+        "owner": "",
+        "notes": "R021; custom record-selection or bitmap/palette/run-length/upload policy; complete target CFG including all bounded switches; original ABI/name and complete owner layout unresolved; origin only, no source or exact credit."
+      },
+      "after": {
+        "address": "0x0041A270",
+        "size": "90",
+        "span_end": "0x0041A2C9",
+        "current_name": "FUN_0041a270",
+        "proposed_name": "ProgressRecords::IncrementSelectedRecordCount",
+        "module": "ProgressRecords",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void ProgressRecordLeavesF213::IncrementSelectedRecordCount()",
+        "is_thunk": "false",
+        "source_file": "src/ProgressRecordLeavesF213.cpp",
+        "evidence": "R021; F213; scripts/repo-python scripts/replay-exact-units.py --unit progress-record-increment-selected-count-0041a270",
+        "owner": "authored",
+        "notes": "R021; custom record-selection or bitmap/palette/run-length/upload policy; complete target CFG including all bounded switches; original ABI/name and complete owner layout unresolved; origin only, no source or exact credit.; F213: Complete 90 native authored CODE bytes, no COFF relocation fields, entire VC7.1 /GX- cold replay exact from real signed record-index arithmetic. The real record-count DWORD at borrowed this+signed level*0x17f0+signed mode*0x5fc increments one. The natural field=field+1 spelling preserves native register evaluation order; the equivalent ++field spelling emitted eight wrong bytes although size matched. No complete original record class/instance claim, no padding/inert locals/ABI trick/masks and no imported code/data credit; existing 519 exact and all 97 unknown origins unchanged."
+      },
+      "origin": {
+        "address": "0x0041A270",
+        "origin": "authored",
+        "subsystem": "ProgressRecords",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R021"
       }
     }
   ],
@@ -163607,6 +163695,50 @@
           "target": 0
         }
       ]
+    },
+    "progress-record-raise-selected-value-0041a1d0": {
+      "source": "src/ProgressRecordLeavesF213.cpp",
+      "object": "build/matching/ProgressRecordLeavesF213.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "ProgressRecords::RaiseSelectedValue"
+      ],
+      "symbol": "?RaiseSelectedValue@ProgressRecordLeavesF213@@QAEXC@Z",
+      "target_address": 4301264,
+      "size": 109,
+      "relocations": []
+    },
+    "progress-record-increment-selected-count-0041a270": {
+      "source": "src/ProgressRecordLeavesF213.cpp",
+      "object": "build/matching/ProgressRecordLeavesF213.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "ProgressRecords::IncrementSelectedRecordCount"
+      ],
+      "symbol": "?IncrementSelectedRecordCount@ProgressRecordLeavesF213@@QAEXXZ",
+      "target_address": 4301424,
+      "size": 90,
+      "relocations": []
     }
   },
   "source_sha256": {
@@ -163905,6 +164037,7 @@
     "src/BitmapDirectoryF206.cpp": "bf178a70ac1d275432811d9ee72ea1ddf45e91fced8cfd77015632101625c9f6",
     "src/BitmapDirectoryFormatF207.cpp": "e2771d4a3f4bac7020450606ddb662df5117a38a6f86fd232c89d1e2f651306e",
     "src/SpriteGeometryF211.cpp": "96eb5c00de88988ec801e345acaff291e5d1051ee5061286199d563a44e28249",
-    "src/GameGlobalsSoundF212.cpp": "b46abe80b7e64f50690bc2b790dcff489fe2164059f7f16a26c98b4e52333b7a"
+    "src/GameGlobalsSoundF212.cpp": "b46abe80b7e64f50690bc2b790dcff489fe2164059f7f16a26c98b4e52333b7a",
+    "src/ProgressRecordLeavesF213.cpp": "ceda7159d3227e09dc78868026f5437ee89c509574c53617a8d61d68252f1b1e"
   }
 }

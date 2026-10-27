@@ -1,4 +1,4 @@
-# TH075 active reconstruction status — F212
+# TH075 active reconstruction status — F213
 
 Updated 2026-10-27. The user explicitly resumed reconstruction and requires
 serious treatment of both large/core and small/leaf functions; all historical
@@ -583,10 +583,51 @@ matched all bytes; the separate canonical cold build replayed all
 29 relocation fields without masks, inert locals or cropped
 extents. No origin or previously accepted match changed.
 
-Current ledger: **519 exact functions, 762,662 CODE bytes / 1,973,516 reviewed
-authored bytes = 38.64%**, conservative 38.57% with 3,608 unknown-origin bytes
-retained. F184..F212 (excluding exploratory-only numbers) added twenty-six accepted units,
-twenty-five objects and twenty-eight new source/header inputs.
+F213 completes two independently reviewed authored progress-record
+update leaves from the same caller chain. `ProgressRecords::
+RaiseSelectedValue` at `0x0041A1D0` is **109 CODE bytes / 27 x86
+instructions**, native SHA256
+`058bec1db1ab03bceefd7b1ba7ae8e2182083c40b85d591e596a14e50d16511d`.
+`ProgressRecords::IncrementSelectedRecordCount` at `0x0041A270`
+is **90 CODE bytes / 24 instructions**, SHA256
+`64aea15dd4f38fa7a1281c4ec0e01c129cc015f4fd79c682181c73dd5742cac0`.
+Each entire function ends in the original return sequence with
+INT3 alignment. Neither has a COFF relocation; both have an
+explicit `relocations = []` in the source profile and exact unit.
+Cold compiling their common C++ file regenerated both complete
+bodies **2/2 exact** with no masked bytes.
+
+Both source methods use only a borrowed `this` pointer and
+the original signed indices at +0x16AC4/+0x16AC5 with strides
+0x17F0/0x5FC; they do not construct a complete progress-data owner.
+The first source `if (field < value)` produced incorrect operand
+load order; the equivalent `if (value > field)` loads the signed
+candidate first. Grouping `this + primary*0x17F0` *before*
+the secondary displacement preserves the native pointer arithmetic
+and register choices. The second function's `++field` compiled
+the correct byte count but eight incorrect operand-order bytes.
+Its genuine count update written as `field = field + 1`
+matches the original two independent read/write address
+calculations. No fake locals, extra storage, padding, or
+ABI/layout casts to another complete owner were introduced.
+
+The independently explored larger
+`ProgressRecords::InitializeDefaults` at `0x00416640`
+(910 native CODE bytes) remains **unaccepted**. Target evidence
+confirms a genuine 10x9 stack array containing ten fish-name strings,
+three nested record loops and a fourth counters loop, plus a GS
+cookie. Multiple meaningful array/struct and loop-index controls
+produce 910 bytes but still differ in local stack slots and
+expression evaluation; they remain in
+`.analysis/f209-progress-defaults/` without exact credit.
+Likewise the 248-byte battle-scene destructor at 0043B0B0 and
+texture slot/resource allocation probes remain in private analysis
+until all byte differences are resolved.
+
+Current ledger: **521 exact functions, 762,861 CODE bytes / 1,973,516 reviewed
+authored bytes = 38.65%**, conservative 38.58% with 3,608 unknown-origin bytes
+retained. F184..F213 (excluding exploratory-only numbers) added twenty-eight accepted units,
+twenty-six objects and twenty-nine new source/header inputs.
 Keep R268 origin evidence, all 97 unknown candidates, 493 pre-F184
 accepted units and protected private F184/F185 preview/drafts intact.
 
