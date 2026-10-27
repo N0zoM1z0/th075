@@ -509,3 +509,4 @@ TextureManager::Initialize
 TextureManager::AllocateUnformattedSlots
 TextureManager::ReleaseResources
 GameState::SaveSnapshot
+GameState::RestoreFromSnapshot

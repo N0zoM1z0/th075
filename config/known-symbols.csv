@@ -492,3 +492,4 @@ address,name,module,confidence,evidence
 0x0040B1D0,TextureManager::AllocateUnformattedSlots,TextureManager,inferred,F198; whole natural source 128-byte cold exact with 8 fields; original C++ owner/container semantics provisional
 0x0040AE40,TextureManager::ReleaseResources,TextureManager,inferred,F199; complete 434-byte five-state EH cleanup cold exact; original owner/element types provisional
 0x00419920,GameState::SaveSnapshot,GameState,inferred,F201; whole 904-byte game snapshot builder cold exact; original data-owner type/layout names provisional
+0x004195B0,GameState::RestoreFromSnapshot,GameState,inferred,F202; full 880-byte snapshot restoration cold exact; original record/storage classes provisional

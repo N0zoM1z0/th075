@@ -33,6 +33,9 @@ F199 cold-accepts the complete 434-byte texture-manager destructor after
 preserving the native COM Release result store; 23 fields verified.
 F201 cold-accepts the separately reviewed 904-byte game-mode snapshot
 writer, preserving all 131 actual relocations and four game-mode branches.
+F202 cold-accepts the reciprocal 880-byte snapshot restoration and its
+129 actual fields; an extra unregistered dirty source is preserved privately
+and never counted twice.
 F189 was an earlier noncredit investigation superseded by F196 exact.
 The original H184 handoff was historical and is superseded by the current
 request. Earlier experiments and names remain hypotheses until tested.
@@ -43,9 +46,9 @@ See the current [handoff](RE_HANDOFF.md) for current status.
 - Supplied Japanese th075.exe 1.11, SHA-256
   `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
   Archive identity is pinned; official distribution provenance is uncorroborated.
-- **511 exact functions/units, 758,825 CODE bytes, 183 canonical objects,
-  288 accepted source-header inputs.** Reviewed coverage is 38.45%; conservative
-  coverage is 38.38%, including all 97 unknown origins/3,608 pending bytes.
+- **512 exact functions/units, 759,705 CODE bytes, 184 canonical objects,
+  289 accepted source-header inputs.** Reviewed coverage is 38.50%; conservative
+  coverage is 38.42%, including all 97 unknown origins/3,608 pending bytes.
 - Ownership, source presence, names, Ghidra types, compilation and reproducible
   exactness remain distinct. Read ledgers and relevant origin evidence before
   relying on any classification or provisional boundary.
@@ -468,6 +471,32 @@ offsets. Destination/source declarations are borrowed byte and DWORD
 address views; they do not assert a complete original savegame structure,
 buffer extent, type identity or independent global data code credits.
 Only the 904 reviewed authored bytes receive new exact credit.
+
+## F202: exact complete snapshot restore, independently replayed
+
+`GameState::RestoreFromSnapshot` at `0x004195B0`: 880 authored
+CODE bytes, 163 x86 instructions and 129 actual DIR32/REL32 fields,
+original SHA256
+`20b5cc4a2deae989f5c72cee1bd0fd27eea7c9be6abdc020b7a82d0156981c17`.
+The first full natural VC7.1 /GX- C++ source emitted every byte and
+relocation, verified by independent cold replay. Native saved-mode
+checks, player and opposing-player updates, record count increments
+and genuine archive helper calls are reproduced in their observed
+order. No complete source record class or data-owner extent claimed.
+Combined with F201 save, this pair now accounts for 1,784 exact
+CODE bytes and 260 native relocation fields.
+
+A second, unregistered public source file appeared in the worktree
+during registration. It was examined, byte-compared to an identical
+older ignored source and preserved byte-for-byte at
+`.analysis/f202-snapshot-restore/UnadoptedAlternative-GameRestoreF202.cpp`
+(SHA256
+`280a70998f702d7529a9879d8a0083e68b488f2d7fa833c594f7bce7d0fd47c1`),
+rather than accepted as another function. The canonical source
+`src/GameStateRestoreF202.cpp` (SHA256
+`912672914ecd95390aecd06a8f8db9ddf80af74f5c4f591805f36888cdfccecc`)
+remains the only new source for this unit. Original names, source
+ownership and R108 base constructor classification remain provisional.
 
 ## Retained failures and method boundaries
 

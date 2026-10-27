@@ -1,4 +1,4 @@
-# TH075 active reconstruction status — F201
+# TH075 active reconstruction status — F202
 
 Updated 2026-10-27. The user explicitly resumed reconstruction and requires
 serious treatment of both large/core and small/leaf functions; all historical
@@ -394,17 +394,50 @@ F199 and F201 together add **1,338 authored CODE bytes** and
 154 actual relocations; all previous accepted units and 97 pending
 origins remain intact.
 
-Current ledger: **511 exact functions, 758,825 CODE bytes / 1,973,516 reviewed
-authored bytes = 38.45%**, conservative 38.38% with 3,608 unknown-origin bytes
-retained. F184..F201 (excluding exploratory-only numbers) added eighteen accepted units,
-seventeen objects and twenty new source/header inputs.
+F202 independently completed the corresponding snapshot *restore*
+function `GameState::RestoreFromSnapshot`, `0x004195B0`: the **full
+880 native CODE bytes**, **163 decoded instructions** with normal RET,
+and **129 physical COFF relocation fields** were cold-replayed
+**880/880 exact**. Target body SHA256:
+`20b5cc4a2deae989f5c72cee1bd0fd27eea7c9be6abdc020b7a82d0156981c17`.
+This natural C++ reproduces the real caller-compatible borrowed archive
+at `0x00671750`: record-header read (callee `0x00413A60`), independent
+`LoadRecord(int)` call (`0x00413AC0`), signed saved-mode checks and
+different combat-mode branches, 16-bit record counter update at
+`0x006714A4`, signed player and opposing side indexing `1 - side`,
+and all one-byte player/stage settings in native order. No original
+complete archive or snapshot storage type and no separately credited
+callee/global data are implied. F201 + F202 form a source-matched
+authored save/restore pair: **1,784 CODE bytes, 260 real relocation
+fields**, with both complete native extents cold-replayed.
+
+Dirty-worktree handling: an additional untracked
+`src/GameRestoreF202.cpp` appeared after initial F202 registration.
+It was **not discarded or bypassed**. Its bytes matched preexisting
+private `.analysis/f202-game-snapshot-restore/GameRestoreF202.cpp`
+(SHA256 `280a70998f702d7529a9879d8a0083e68b488f2d7fa833c594f7bce7d0fd47c1`);
+it used alternate C++ identifiers, not an independently adjudicated
+second target function. It was retained byte-for-byte as
+`.analysis/f202-snapshot-restore/UnadoptedAlternative-GameRestoreF202.cpp`
+rather than promoting an unregistered duplicate public source.
+The canonical exact source remains `src/GameStateRestoreF202.cpp`
+with source SHA256
+`912672914ecd95390aecd06a8f8db9ddf80af74f5c4f591805f36888cdfccecc`.
+All 97 pending origins (including R108 at `0x004251C0`) remain intact.
+
+Current ledger: **512 exact functions, 759,705 CODE bytes / 1,973,516 reviewed
+authored bytes = 38.50%**, conservative 38.42% with 3,608 unknown-origin bytes
+retained. F184..F202 (excluding exploratory-only numbers) added nineteen accepted units,
+eighteen objects and twenty-one new source/header inputs.
 Keep R268 origin evidence, all 97 unknown candidates, 493 pre-F184
 accepted units and protected private F184/F185 preview/drafts intact.
 
-Next: revisit the 248-byte 0x0043B0B0 battle-scene destructor (native
-local-slot assignment remains unproven) and additional large authored
-scene/texture functions, plus small helpers. Retain R108 origin ambiguity. with full CFG, branches, call graph,
-target writes, lifetime and switch ownership before adopting any source.
+Next: revisit the full 248-byte `0x0043B0B0` battle-scene destructor
+(the native local-stack slot assignment remains unproven), alongside
+`0x0040B000` shared texture allocation (261 bytes) and substantial
+scene/graphics functions. Inspect native CFG, table ownership, calldata
+and lifetime before further exact-source adoption. Retain R108 origin
+uncertainty.
 Do not claim exact credit for incomplete probes. Record failed approaches and
 commit separately when they yield durable discoveries.
 

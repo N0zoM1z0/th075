@@ -34456,3 +34456,657 @@ offset = 898
 type = "DIR32"
 symbol = "?g_SnapshotAt00671862@@3PAEA"
 target = 0x00671862
+
+[units.game-state-restore-snapshot-004195b0]
+source = "src/GameStateRestoreF202.cpp"
+object = "build/matching/GameStateRestoreF202.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["GameState::RestoreFromSnapshot"]
+symbol = "?RestoreFromSnapshot@GameStateF202@@YAXXZ"
+target_address = 0x004195B0
+size = 880
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 4
+type = "DIR32"
+symbol = "?g_SnapshotArchiveAt00671750@@3VSnapshotArchiveF202@@A"
+target = 0x00671750
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 9
+type = "REL32"
+symbol = "?ReadSnapshotHeader@SnapshotArchiveF202@@QAEXXZ"
+target = 0x00413A60
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 16
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 31
+type = "DIR32"
+symbol = "?g_SnapshotArchiveAt00671750@@3VSnapshotArchiveF202@@A"
+target = 0x00671750
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 36
+type = "REL32"
+symbol = "?LoadRecord@SnapshotArchiveF202@@QAEXH@Z"
+target = 0x00413AC0
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 43
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 57
+type = "DIR32"
+symbol = "?g_CombatModeAt006714B4@@3CA"
+target = 0x006714B4
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 64
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 70
+type = "DIR32"
+symbol = "?g_SelectedSideAt006714B8@@3CA"
+target = 0x006714B8
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 77
+type = "DIR32"
+symbol = "?g_SelectedSideAt006714B8@@3CA"
+target = 0x006714B8
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 83
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 89
+type = "DIR32"
+symbol = "?g_PlayerIdAt006714C8@@3PAEA"
+target = 0x006714C8
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 96
+type = "DIR32"
+symbol = "?g_SelectedSideAt006714B8@@3CA"
+target = 0x006714B8
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 101
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 107
+type = "DIR32"
+symbol = "?g_PlayerAltAt00671610@@3PAEA"
+target = 0x00671610
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 114
+type = "DIR32"
+symbol = "?g_SelectedSideAt006714B8@@3CA"
+target = 0x006714B8
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 120
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 126
+type = "DIR32"
+symbol = "?g_PlayerOtherAt006714CC@@3PAEA"
+target = 0x006714CC
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 133
+type = "DIR32"
+symbol = "?g_SelectedSideAt006714B8@@3CA"
+target = 0x006714B8
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 139
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 145
+type = "DIR32"
+symbol = "?g_PlayerRoundAt006714AC@@3PAEA"
+target = 0x006714AC
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 152
+type = "DIR32"
+symbol = "?g_SelectedSideAt006714B8@@3CA"
+target = 0x006714B8
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 157
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 163
+type = "DIR32"
+symbol = "?g_PlayerDifficultyAt00671438@@3PAEA"
+target = 0x00671438
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 170
+type = "DIR32"
+symbol = "?g_SelectedSideAt006714B8@@3CA"
+target = 0x006714B8
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 176
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 182
+type = "DIR32"
+symbol = "?g_PlayerSettingsAt00671434@@3PAEA"
+target = 0x00671434
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 189
+type = "DIR32"
+symbol = "?g_SelectedSideAt006714B8@@3CA"
+target = 0x006714B8
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 202
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 208
+type = "DIR32"
+symbol = "?g_PlayerIdAt006714C8@@3PAEA"
+target = 0x006714C8
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 215
+type = "DIR32"
+symbol = "?g_SelectedSideAt006714B8@@3CA"
+target = 0x006714B8
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 228
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 234
+type = "DIR32"
+symbol = "?g_PlayerAltAt00671610@@3PAEA"
+target = 0x00671610
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 241
+type = "DIR32"
+symbol = "?g_SelectedSideAt006714B8@@3CA"
+target = 0x006714B8
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 254
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 260
+type = "DIR32"
+symbol = "?g_PlayerOtherAt006714CC@@3PAEA"
+target = 0x006714CC
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 267
+type = "DIR32"
+symbol = "?g_SelectedSideAt006714B8@@3CA"
+target = 0x006714B8
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 280
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 286
+type = "DIR32"
+symbol = "?g_PlayerRoundAt006714AC@@3PAEA"
+target = 0x006714AC
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 293
+type = "DIR32"
+symbol = "?g_SelectedSideAt006714B8@@3CA"
+target = 0x006714B8
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 306
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 312
+type = "DIR32"
+symbol = "?g_PlayerDifficultyAt00671438@@3PAEA"
+target = 0x00671438
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 319
+type = "DIR32"
+symbol = "?g_SelectedSideAt006714B8@@3CA"
+target = 0x006714B8
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 332
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 338
+type = "DIR32"
+symbol = "?g_PlayerSettingsAt00671434@@3PAEA"
+target = 0x00671434
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 349
+type = "DIR32"
+symbol = "?g_CombatModeAt006714B4@@3CA"
+target = 0x006714B4
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 355
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 360
+type = "DIR32"
+symbol = "?g_PlayerIdAt006714C8@@3PAEA"
+target = 0x006714C8
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 366
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 372
+type = "DIR32"
+symbol = "?g_PlayerAltAt00671610@@3PAEA"
+target = 0x00671610
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 378
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 384
+type = "DIR32"
+symbol = "?g_PlayerOtherAt006714CC@@3PAEA"
+target = 0x006714CC
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 389
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 394
+type = "DIR32"
+symbol = "?g_PlayerRoundAt006714AC@@3PAEA"
+target = 0x006714AC
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 400
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 406
+type = "DIR32"
+symbol = "?g_PlayerDifficultyAt00671438@@3PAEA"
+target = 0x00671438
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 412
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 418
+type = "DIR32"
+symbol = "?g_PlayerSettingsAt00671434@@3PAEA"
+target = 0x00671434
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 423
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 428
+type = "DIR32"
+symbol = "?g_PlayerIdAt006714C8@@3PAEA"
+target = 0x006714C8
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 434
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 440
+type = "DIR32"
+symbol = "?g_PlayerAltAt00671610@@3PAEA"
+target = 0x00671610
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 446
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 452
+type = "DIR32"
+symbol = "?g_PlayerOtherAt006714CC@@3PAEA"
+target = 0x006714CC
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 457
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 462
+type = "DIR32"
+symbol = "?g_PlayerRoundAt006714AC@@3PAEA"
+target = 0x006714AC
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 468
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 474
+type = "DIR32"
+symbol = "?g_PlayerDifficultyAt00671438@@3PAEA"
+target = 0x00671438
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 480
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 486
+type = "DIR32"
+symbol = "?g_PlayerSettingsAt00671434@@3PAEA"
+target = 0x00671434
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 491
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 496
+type = "DIR32"
+symbol = "?g_StageAt0067161D@@3EA"
+target = 0x0067161D
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 508
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 524
+type = "DIR32"
+symbol = "?g_RecordSequenceAt006714A4@@3FA"
+target = 0x006714A4
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 533
+type = "DIR32"
+symbol = "?g_SnapshotArchiveAt00671750@@3VSnapshotArchiveF202@@A"
+target = 0x00671750
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 538
+type = "REL32"
+symbol = "?LoadRecord@SnapshotArchiveF202@@QAEXH@Z"
+target = 0x00413AC0
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 544
+type = "DIR32"
+symbol = "?g_RecordSequenceAt006714A4@@3FA"
+target = 0x006714A4
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 554
+type = "DIR32"
+symbol = "?g_RecordSequenceAt006714A4@@3FA"
+target = 0x006714A4
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 561
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 570
+type = "DIR32"
+symbol = "?g_OptionsModeAt006714D0@@3CA"
+target = 0x006714D0
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 576
+type = "DIR32"
+symbol = "?g_CombatModeAt006714B4@@3CA"
+target = 0x006714B4
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 583
+type = "DIR32"
+symbol = "?g_SelectedSideAt006714B8@@3CA"
+target = 0x006714B8
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 590
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 596
+type = "DIR32"
+symbol = "?g_PlayerIdAt006714C8@@3PAEA"
+target = 0x006714C8
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 601
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 606
+type = "DIR32"
+symbol = "?g_PlayerAltAt00671610@@3PAEA"
+target = 0x00671610
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 612
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 618
+type = "DIR32"
+symbol = "?g_PlayerOtherAt006714CC@@3PAEA"
+target = 0x006714CC
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 624
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 630
+type = "DIR32"
+symbol = "?g_PlayerRoundAt006714AC@@3PAEA"
+target = 0x006714AC
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 635
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 640
+type = "DIR32"
+symbol = "?g_PlayerDifficultyAt00671438@@3PAEA"
+target = 0x00671438
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 646
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 652
+type = "DIR32"
+symbol = "?g_PlayerSettingsAt00671434@@3PAEA"
+target = 0x00671434
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 658
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 664
+type = "DIR32"
+symbol = "?g_PlayerIdAt006714C8@@3PAEA"
+target = 0x006714C8
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 669
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 674
+type = "DIR32"
+symbol = "?g_PlayerAltAt00671610@@3PAEA"
+target = 0x00671610
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 680
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 686
+type = "DIR32"
+symbol = "?g_PlayerOtherAt006714CC@@3PAEA"
+target = 0x006714CC
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 692
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 698
+type = "DIR32"
+symbol = "?g_PlayerRoundAt006714AC@@3PAEA"
+target = 0x006714AC
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 703
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 708
+type = "DIR32"
+symbol = "?g_PlayerDifficultyAt00671438@@3PAEA"
+target = 0x00671438
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 714
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 720
+type = "DIR32"
+symbol = "?g_PlayerSettingsAt00671434@@3PAEA"
+target = 0x00671434
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 726
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 732
+type = "DIR32"
+symbol = "?g_StageAt0067161D@@3EA"
+target = 0x0067161D
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 743
+type = "DIR32"
+symbol = "?g_SelectedSideAt006714B8@@3CA"
+target = 0x006714B8
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 751
+type = "DIR32"
+symbol = "?g_RecordSequenceAt006714A4@@3FA"
+target = 0x006714A4
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 760
+type = "DIR32"
+symbol = "?g_SnapshotArchiveAt00671750@@3VSnapshotArchiveF202@@A"
+target = 0x00671750
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 765
+type = "REL32"
+symbol = "?LoadRecord@SnapshotArchiveF202@@QAEXH@Z"
+target = 0x00413AC0
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 772
+type = "DIR32"
+symbol = "?g_RecordSequenceAt006714A4@@3FA"
+target = 0x006714A4
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 783
+type = "DIR32"
+symbol = "?g_RecordSequenceAt006714A4@@3FA"
+target = 0x006714A4
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 789
+type = "DIR32"
+symbol = "?g_CombatModeAt006714B4@@3CA"
+target = 0x006714B4
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 797
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 806
+type = "DIR32"
+symbol = "?g_OptionsModeAt006714D0@@3CA"
+target = 0x006714D0
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 811
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 816
+type = "DIR32"
+symbol = "?g_PlayerIdAt006714C8@@3PAEA"
+target = 0x006714C8
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 822
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 828
+type = "DIR32"
+symbol = "?g_PlayerAltAt00671610@@3PAEA"
+target = 0x00671610
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 834
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 840
+type = "DIR32"
+symbol = "?g_PlayerOtherAt006714CC@@3PAEA"
+target = 0x006714CC
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 845
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 850
+type = "DIR32"
+symbol = "?g_PlayerRoundAt006714AC@@3PAEA"
+target = 0x006714AC
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 856
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 862
+type = "DIR32"
+symbol = "?g_ExtraStageAt0067161E@@3EA"
+target = 0x0067161E
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 868
+type = "DIR32"
+symbol = "?g_SnapshotAt00671862@@3PAEA"
+target = 0x00671862
+[[units.game-state-restore-snapshot-004195b0.relocations]]
+offset = 874
+type = "DIR32"
+symbol = "?g_StageFlagAt00671622@@3EA"
+target = 0x00671622

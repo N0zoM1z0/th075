@@ -510,3 +510,4 @@ TextureManager::Initialize,0x0040AD80,function
 TextureManager::AllocateUnformattedSlots,0x0040B1D0,function
 TextureManager::ReleaseResources,0x0040AE40,function
 GameState::SaveSnapshot,0x00419920,function
+GameState::RestoreFromSnapshot,0x004195B0,function
