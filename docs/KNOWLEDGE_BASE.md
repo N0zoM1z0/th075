@@ -10,6 +10,8 @@ F187 added the 339-byte Win32 config writer and its 27 actual fields with
 independent canonical cold comparison.
 F188 adds the options text-resource update with 563 CODE bytes, seven-case
 owned table, 34 fields, and natural EH/new/delete path, all cold exact.
+F190 adds 604 exact graphics default-state bytes and all 45 relocations.
+F189 separately inspected but did not accept the 922-byte EH battle initializer.
 The original H184 handoff was historical and is superseded by the current
 request. Earlier experiments and names remain hypotheses until tested.
 See the current [handoff](RE_HANDOFF.md) for current status.
@@ -19,9 +21,9 @@ See the current [handoff](RE_HANDOFF.md) for current status.
 - Supplied Japanese th075.exe 1.11, SHA-256
   `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
   Archive identity is pinned; official distribution provenance is uncorroborated.
-- **499 exact functions/units, 753,102 CODE bytes, 171 canonical objects,
-  276 accepted source-header inputs.** Reviewed coverage is 38.16%; conservative
-  coverage is 38.09%, including all 97 unknown origins/3,608 pending bytes.
+- **500 exact functions/units, 753,706 CODE bytes, 172 canonical objects,
+  277 accepted source-header inputs.** Reviewed coverage is 38.19%; conservative
+  coverage is 38.12%, including all 97 unknown origins/3,608 pending bytes.
 - Ownership, source presence, names, Ghidra types, compilation and reproducible
   exactness remain distinct. Read ledgers and relevant origin evidence before
   relying on any classification or provisional boundary.
@@ -186,6 +188,38 @@ semantics remain provisional. Do not reuse that allocation carrier elsewhere
 or claim a complete original font owner. No manual EH bytes, assembly,
 comparison masks, fabricated returns, cropped tables, or other code/data
 credits were introduced.
+
+## F190: graphics device default-state initialization
+
+The 604-byte native `Graphics::SetDefaultStates` at 00401540 (178 full x86
+instructions, ordinary RET and four following INT3) has SHA256
+`d5cff4b102acaa874856d80ff21fd09dcd624731c4775e81d6ea00f4c3d74bac`.
+Native Ghidra read-back and independently decoded vtable slots agree with
+pinned D3D8/Direct3D8 SDK calls. Natural VC7.1 /GX- source reconstructs the
+**whole 604 bytes** with **45 actual DIR32/REL32 fields** after a cold build.
+
+The source uses the actual IDirect3DDevice8 methods to set render/texture
+stage states, FVF 0x144, and an optional pixel shader. D3DXAssembleShader
+uses the measured source anchor (and `strlen`) and returns a D3DXBUFFER
+used to create a pixel shader. Float constants 0.3f, 0.59f, 0.11f and 1.0f
+are stored at the target stack offsets before `SetPixelShaderConstant`.
+No source, data or exact credit is asserted for the linked D3DX assembler.
+The first probe emitted 603 vs 604 bytes: the native device-null check
+uses a short conditional to skip an unconditional branch. A semantically
+equivalent explicit early return produced this exact layout without fake
+locals or padding, then passed full cold replay.
+
+## F189: independently reviewed but unaccepted battle initializer
+
+The complete `BattleScene::Initialize` at `0x0043AD10` is 922 code bytes,
+230 decoded instructions and one RET. It creates multiple owned subobjects
+through four distinct allocation sizes (0x50, 1, 0x14, 0x14) and uses
+exception-state transitions. The original full class layouts, nested
+ownership, EH unwind and constructor semantics are not established merely by
+a Ghidra decompilation or the observed allocation sizes. Preserve the
+noncredit native proof in `.analysis/f189-battle-init/`; do not construct
+fabricated complete owners or grant exact coverage until a complete natural
+source and all relocations cold-replay.
 
 ## Retained failures and method boundaries
 

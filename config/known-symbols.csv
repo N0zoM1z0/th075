@@ -480,3 +480,4 @@ address,name,module,confidence,evidence
 0x00428F00,OptionsScene::AdvanceAt00428F00,OptionsScene,inferred,F186; complete 979-byte cold exact with seven-branch switch table; original name and scene object layout unproven
 0x00419450,GameConfig::SaveIni,GameConfig,inferred,F187; whole cold exact and config.ini import/literal validated; original name/owner layout unknown
 0x00429F00,OptionsScene::ApplySelectionAt00429F00,OptionsScene,inferred,F188; whole 591-byte cold exact including EH and 7-case switch; glyph layout/original owner unproven
+0x00401540,Graphics::SetDefaultStates,Graphics,inferred,F190; complete 604-byte graphics default-state function cold-exact; native names/SDK globals provisional

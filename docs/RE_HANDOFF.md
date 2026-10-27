@@ -1,4 +1,4 @@
-# TH075 active reconstruction status — F188
+# TH075 active reconstruction status — F190
 
 Updated 2026-10-27. The user explicitly resumed reconstruction and requires
 serious treatment of both large/core and small/leaf functions; all historical
@@ -125,15 +125,43 @@ allocation size, but member +0x18 and complete original class semantics are
 unproven. Do not transplant that type or infer other owners. There is no
 claim of exactness for borrowed text rendering, D3D or EH helpers.
 
-Current ledger: **499 exact functions, 753,102 CODE bytes / 1,973,516 reviewed
-authored bytes = 38.16%**, conservative 38.09% with 3,608 unknown-origin bytes
-retained. F184..F188 added six accepted units, five objects and eight new
+F190 independently cold-reconstructed `Graphics::SetDefaultStates`
+`0x00401540`: **604 CODE bytes / 178 native x86 instructions**, with
+**45 genuine COFF relocations** and no owned switch table. The entire 604
+bytes were recreated by pinned VC7.1 /GX- from natural D3D8 API calls.
+Native code SHA256:
+`d5cff4b102acaa874856d80ff21fd09dcd624731c4775e81d6ea00f4c3d74bac`.
+The source preserves all four initial render-state changes, three accepted
+blend/depth/filter helper calls, eight texture-stage states, later cull/lighting
+states, FVF `0x144`, feature-gated D3DXAssembleShader of the observed shader
+source at 0066C090, pixel shader creation and buffer release, the four real
+floating-point grayscale weights, SetPixelShaderConstant, and the accepted
+pixel-mode state setter. No data, D3DX SDK/library helper or global bytes
+receive separate credit. Initial ordinary `if (g_Device)` generated a
+603-byte structurally mismatching body: it used one long conditional jump.
+Writing the equivalent but native-observed `if (g_Device == 0) return;`
+restored the short conditional plus long unconditional branch and all
+604 bytes matched, with 45 fields replayed. Private negative controls are
+under `.analysis/f190-graphics-defaults/`.
+
+F189 separately investigated the large `BattleScene::Initialize`
+`0x0043AD10`: its complete 922 bytes decode into 230 instructions, one
+RET and original EH constructor frame. The native contains four nested
+allocation extents (0x50, 1, 0x14, 0x14 bytes) and dependencies that lack a
+proven complete source-level owner layout. Its native disassembly is retained
+in `.analysis/f189-battle-init/native.asm`, **without accepting or crediting
+unconstructed objects**. That large function remains a live target, not a
+reason to ignore the worktree or to fabricate layouts.
+
+Current ledger: **500 exact functions, 753,706 CODE bytes / 1,973,516 reviewed
+authored bytes = 38.19%**, conservative 38.12% with 3,608 unknown-origin bytes
+retained. F184..F190 added seven accepted units, six objects and nine new
 source/header inputs.
 Keep R268 origin evidence, all 97 unknown candidates, 493 pre-F184
 accepted units and protected private F184/F185 preview/drafts intact.
 
-Next: attack other large scene/battle functions (e.g. 0043AD10 battle
-initialization or 00426A70 music-room text) with full CFG, branches, call graph,
+Next: continue large scene/battle functions (0043AD10 EH initialization
+or 00426A70 music-room text), plus honest small helper cohorts with full CFG, branches, call graph,
 target writes, lifetime and switch ownership before adopting any source.
 Do not claim exact credit for incomplete probes. Record failed approaches and
 commit separately when they yield durable discoveries.
