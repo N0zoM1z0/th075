@@ -4,6 +4,8 @@ Updated 2026-10-27: the user resumed reconstruction. F184 added two
 canonical cold-exact input policies (+538 CODE bytes / 46 relocation fields);
 F185 added the 1,273-byte title core state machine plus an owned 40-byte
 switch table and 76 relocation fields, all cold exact.
+F186 added a separate 951-byte options scene controller, seven-case owned
+28-byte switch table and 70 relocations, also fully cold exact.
 The original H184 handoff was historical and is superseded by the current
 request. Earlier experiments and names remain hypotheses until tested.
 See the current [handoff](RE_HANDOFF.md) for current status.
@@ -13,9 +15,9 @@ See the current [handoff](RE_HANDOFF.md) for current status.
 - Supplied Japanese th075.exe 1.11, SHA-256
   `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
   Archive identity is pinned; official distribution provenance is uncorroborated.
-- **496 exact functions/units, 751,249 CODE bytes, 168 canonical objects,
-  272 accepted source-header inputs.** Reviewed coverage is 38.07%; conservative
-  coverage is 38.00%, including all 97 unknown origins/3,608 pending bytes.
+- **497 exact functions/units, 752,200 CODE bytes, 169 canonical objects,
+  274 accepted source-header inputs.** Reviewed coverage is 38.11%; conservative
+  coverage is 38.05%, including all 97 unknown origins/3,608 pending bytes.
 - Ownership, source presence, names, Ghidra types, compilation and reproducible
   exactness remain distinct. Read ledgers and relevant origin evidence before
   relying on any classification or provisional boundary.
@@ -96,6 +98,36 @@ unit alias was identified and removed after verifying exact equivalence to
 the registered unit, restoring exact unit↔ledger 1:1 correspondence and a
 new automated check. Full owner layout, names and some global semantic roles
 remain conjectural.
+
+## F186: options-scene control-flow and volume policy
+
+R066 00428F00 is 951 CODE bytes with the exact following 28-byte owned switch
+table. Native body SHA256
+`21e698c0f26cbca4c23286883c7de9a04cf91b1825c1090dfa320b09956f75fa`;
+switch table SHA256
+`f84e9f643843fc0db5c9ce2278848b8224a99bb915d32538e7d99646afd4f124`.
+Independent x86 decoding yielded 269 complete instructions and one plain
+RET. VC7.1 cold-compiles the full 979-byte comparison extent, zero byte
+differences after all 70 actual relocations (eight local switch labels) are
+replayed and verified.
+
+The first valid source probe using `!g_Flag` generated a 982-byte comparison
+block and three 8-bit SBB/INC pairs; the target used 32-bit SBB/INC.
+`flag = 1 - (flag != 0)` generated 1001 bytes, while both
+`static_cast<unsigned int>(flag == 0)` and the natural
+`flag = flag ? 0 : 1` yielded zero structural differences across their
+complete 979-byte blocks. The last expression was adopted because it retains
+simple semantics without a cast chosen to force codegen. Full relocation
+replay and canonical cold build then yielded exact, not merely a masked
+structural match.
+
+The signed two-axis input, signed-short menu index and sample timer,
+modulo-four display selection, three toggles, signed volume adjustments,
+explicit audio/stream refreshes, options materialization dependency
+00429F00, configuration write helper 00419450, fade and 0x2202/9 returns
+were preserved. The referenced callee 00429F00 has independent complexity and
+no source/exact credit yet. No owner layout, source class identity, data
+ownership or ABI beyond this method is inferred.
 
 ## Retained failures and method boundaries
 

@@ -494,3 +494,4 @@ TitleScene::RenderMenu
 TitleScene::PollMenuInput
 ReplayScene::PollInput
 TitleScene::Advance
+OptionsScene::AdvanceAt00428F00

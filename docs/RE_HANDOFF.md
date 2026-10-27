@@ -1,4 +1,4 @@
-# TH075 active reconstruction status — F185
+# TH075 active reconstruction status — F186
 
 Updated 2026-10-27. The user explicitly resumed reconstruction and requires
 serious treatment of both large/core and small/leaf functions; all historical
@@ -52,15 +52,38 @@ matching function** (496/496). Its private reconciliation receipt is preserved;
 new automated coverage rejects unmatched or duplicate extents. No unrelated
 source, original object layouts or origin classifications were changed.
 
-Current ledger: **496 exact functions, 751,249 CODE bytes / 1,973,516 reviewed
-authored bytes = 38.07%**, conservative 38.00% with 3,608 unknown-origin bytes
-retained. F184+F185 added three accepted units, two objects and four new
+
+F186 additionally cold-reconstructed **`OptionsScene::AdvanceAt00428F00`**,
+a 951-byte scene state-machine with an adjacent owned 28-byte / seven-entry
+switch table. The complete 979-byte extent, **70 COFF relocations including
+eight same-COMDAT local-target fields**, is cold-exact. Independent Capstone
+decoding consumed all 269 native code instructions, ending at plain RET
+004292B6; the table occupies 004292B7..004292D2 and is followed by INT3.
+Native CODE SHA256
+`21e698c0f26cbca4c23286883c7de9a04cf91b1825c1090dfa320b09956f75fa`;
+table SHA256
+`f84e9f643843fc0db5c9ce2278848b8224a99bb915d32538e7d99646afd4f124`.
+The reconstruction retains seven menu choices, signed two-axis navigation,
+three option toggles, signed wrap/modulo policy, sound/stream volume bounds,
+audio-offset application, delayed sample sound, configuration saving and
+two early transition exits. The initial ordinary `!flag` source generated
+a 982-byte comparison block; a later `1 - (flag != 0)` control gave 1001;
+natural `flag ? 0 : 1` reproduced native 32-bit NEG/SBB/INC and all
+remaining instruction/branch locations. Failed control objects and proofs
+remain under `.analysis/f186-options-advance/`; no structural-only result
+was counted as exact. Both call-only scene interfaces and the separate
+configuration-saving callee remain provisional: this unit earns only its
+own 951 CODE bytes, not helper/table ownership credit.
+
+Current ledger: **497 exact functions, 752,200 CODE bytes / 1,973,516 reviewed
+authored bytes = 38.11%**, conservative 38.05% with 3,608 unknown-origin bytes
+retained. F184..F186 added four accepted units, three objects and six new
 source/header inputs.
 Keep R268 origin evidence, all 97 unknown candidates, 493 pre-F184
 accepted units and protected private F184/F185 preview/drafts intact.
 
-Next: attack other large scene/battle functions (e.g. 00428F00 options
-or 0043AD10 battle initialization) with full CFG, branches, call graph,
+Next: attack other large scene/battle functions (e.g. 00429F00 options
+selection or 0043AD10 battle initialization) with full CFG, branches, call graph,
 target writes, lifetime and switch ownership before adopting any source.
 Do not claim exact credit for incomplete probes. Record failed approaches and
 commit separately when they yield durable discoveries.

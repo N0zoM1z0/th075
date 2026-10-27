@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "4ec8e4f7689fe60854362a42d39f017eec7b64c9834c7a05de6c709807750df9"
+      "current_sha256": "daf1a3071e7887bc98df4fe5494c1dd0c62fb39cdb6a1c7e11e3ce9713f227c4"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "84ef3d26b2e8099e3ee865105717d8eb288a268c815ed69f3586aa30594d1de9"
+      "current_sha256": "122fede82e578fb3833cbc95e588d28003d6423516284d71ce1fe50e67ee40db"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "58a0383b6f59d1710e21cc22a7b51c981fcf1a0e240c2d955622d65a5cb081ab"
+      "current_sha256": "7a1d236f4b0af07639e07476bbdb64b30092565ab811144eff0e95d1876923da"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "6513e7972b8bfc0171413bf8b7664b6d1ca77b494e7edc8d7d9e7c3bf2e0a1d0"
+      "current_sha256": "3a6616e547525d0877dcb4474aaab2d9d006ad2859ddb8ede0af33187cb2f8b4"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "d0f7159c0a9cb7379ee816e58a4ba9663e2cf516849af24ee4feb7123c3c1644"
+      "current_sha256": "8870c91543526482415cfeff44d5148d64154ba8b1c67488901c84d318e42914"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -19224,6 +19224,50 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R044"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00428F00",
+        "size": "951",
+        "span_end": "0x004292B6",
+        "current_name": "FUN_00428f00",
+        "proposed_name": "OptionsScene::AdvanceAt00428F00",
+        "module": "OptionsScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R066; complete target body, guarded switch tables, CFG and game-specific policy",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x00428F00",
+        "size": "951",
+        "span_end": "0x004292B6",
+        "current_name": "FUN_00428f00",
+        "proposed_name": "OptionsScene::AdvanceAt00428F00",
+        "module": "OptionsScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "unsigned short OptionsAdvanceF186::Advance()",
+        "is_thunk": "false",
+        "source_file": "src/OptionsAdvanceF186.cpp",
+        "evidence": "R066; complete target body, guarded switch tables, CFG and game-specific policy; F186; scripts/repo-python scripts/replay-exact-units.py --unit options-scene-advance-00428f00",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state independent; F186: 951 CODE bytes plus 28-byte owned seven-case jump table, 979 complete compared bytes, 70 exact actual relocations (8 local target label fields); full native 269 instructions end in plain RET at 4292B6, following switch 4292B7..4292D2 then INT3 padding. Body SHA256 21e698c0f26cbca4c23286883c7de9a04cf91b1825c1090dfa320b09956f75fa; owned table SHA256 f84e9f643843fc0db5c9ce2278848b8224a99bb915d32538e7d99646afd4f124. Signed byte axis/confirm/cancel, signed short menu and sound delay, independently bounded audio volumes, three toggle flags, signed modulo4 display mode, accepted AudioVolume/AudioControl calls, settings save and scene return codes retained. Initial natural byte-size alternative was 982 vs 979; semantic ternary toggles reproduced 32-bit NEG/SBB/INC and canonical cold exact. Two borrowed pointer-only scene and virtual-slot method views; owner/layout/original function names unproved. No ASM, padding, masks, artificial locals/returns, cropped switch tables or data/helper credit; prior 496 canonical units and all 97 unknown origins intact."
+      },
+      "origin": {
+        "address": "0x00428F00",
+        "origin": "authored",
+        "subsystem": "OptionsScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R066"
       }
     }
   ],
@@ -156969,6 +157013,450 @@
           "target": 4432901
         }
       ]
+    },
+    "options-scene-advance-00428f00": {
+      "source": "src/OptionsAdvanceF186.cpp",
+      "object": "build/matching/OptionsAdvanceF186.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "OptionsScene::AdvanceAt00428F00"
+      ],
+      "symbol": "?Advance@OptionsAdvanceF186@@QAEGXZ",
+      "target_address": 4361984,
+      "size": 951,
+      "compare_size": 979,
+      "relocations": [
+        {
+          "offset": 13,
+          "type": "REL32",
+          "symbol": "?PollInput@ReplayMenuInputF184@@QAEXXZ",
+          "target": 4365760
+        },
+        {
+          "offset": 29,
+          "type": "REL32",
+          "symbol": "?Present@Graphics@@YAXXZ",
+          "target": 4204784
+        },
+        {
+          "offset": 48,
+          "type": "DIR32",
+          "symbol": "?g_SoundBank@@3PAVSoundBank@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 53,
+          "type": "REL32",
+          "symbol": "?Play@SoundBank@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 106,
+          "type": "REL32",
+          "symbol": "?Apply@OptionsSelectF186@@QAEXE@Z",
+          "target": 4366080
+        },
+        {
+          "offset": 125,
+          "type": "DIR32",
+          "symbol": "?g_SoundBank@@3PAVSoundBank@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 130,
+          "type": "REL32",
+          "symbol": "?Play@SoundBank@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 184,
+          "type": "REL32",
+          "symbol": "?Apply@OptionsSelectF186@@QAEXE@Z",
+          "target": 4366080
+        },
+        {
+          "offset": 214,
+          "type": "DIR32",
+          "symbol": "$L635",
+          "target": 4362935
+        },
+        {
+          "offset": 244,
+          "type": "DIR32",
+          "symbol": "?g_SoundBank@@3PAVSoundBank@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 249,
+          "type": "REL32",
+          "symbol": "?Play@SoundBank@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 256,
+          "type": "DIR32",
+          "symbol": "?g_OptionsModeAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 293,
+          "type": "DIR32",
+          "symbol": "?g_OptionsModeAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 328,
+          "type": "DIR32",
+          "symbol": "?g_SoundBank@@3PAVSoundBank@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 333,
+          "type": "REL32",
+          "symbol": "?Play@SoundBank@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 340,
+          "type": "DIR32",
+          "symbol": "?g_OptionsFlagAt00671604@@3EA",
+          "target": 6755844
+        },
+        {
+          "offset": 351,
+          "type": "DIR32",
+          "symbol": "?g_OptionsFlagAt00671604@@3EA",
+          "target": 6755844
+        },
+        {
+          "offset": 386,
+          "type": "DIR32",
+          "symbol": "?g_SoundBank@@3PAVSoundBank@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 391,
+          "type": "REL32",
+          "symbol": "?Play@SoundBank@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 398,
+          "type": "DIR32",
+          "symbol": "?g_OptionsFlagAt00671430@@3EA",
+          "target": 6755376
+        },
+        {
+          "offset": 409,
+          "type": "DIR32",
+          "symbol": "?g_OptionsFlagAt00671430@@3EA",
+          "target": 6755376
+        },
+        {
+          "offset": 444,
+          "type": "DIR32",
+          "symbol": "?g_SoundBank@@3PAVSoundBank@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 449,
+          "type": "REL32",
+          "symbol": "?Play@SoundBank@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 456,
+          "type": "DIR32",
+          "symbol": "?g_OptionsFlagAt00671428@@3EA",
+          "target": 6755368
+        },
+        {
+          "offset": 466,
+          "type": "DIR32",
+          "symbol": "?g_OptionsFlagAt00671428@@3EA",
+          "target": 6755368
+        },
+        {
+          "offset": 489,
+          "type": "DIR32",
+          "symbol": "?g_StreamVolumeAt006714B7@@3CA",
+          "target": 6755511
+        },
+        {
+          "offset": 497,
+          "type": "DIR32",
+          "symbol": "?g_StreamVolumeAt006714B7@@3CA",
+          "target": 6755511
+        },
+        {
+          "offset": 504,
+          "type": "DIR32",
+          "symbol": "?g_StreamVolumeAt006714B7@@3CA",
+          "target": 6755511
+        },
+        {
+          "offset": 515,
+          "type": "DIR32",
+          "symbol": "?g_StreamVolumeAt006714B7@@3CA",
+          "target": 6755511
+        },
+        {
+          "offset": 522,
+          "type": "DIR32",
+          "symbol": "?g_StreamVolumeAt006714B7@@3CA",
+          "target": 6755511
+        },
+        {
+          "offset": 528,
+          "type": "REL32",
+          "symbol": "?SetStreamVolume@AudioVolume4073B0@@YAXC@Z",
+          "target": 4223936
+        },
+        {
+          "offset": 538,
+          "type": "REL32",
+          "symbol": "?ApplyVolumeOffset@AudioControl407CA0@@YAXJ@Z",
+          "target": 4226512
+        },
+        {
+          "offset": 559,
+          "type": "DIR32",
+          "symbol": "?g_StreamVolumeAt006714B7@@3CA",
+          "target": 6755511
+        },
+        {
+          "offset": 568,
+          "type": "DIR32",
+          "symbol": "?g_StreamVolumeAt006714B7@@3CA",
+          "target": 6755511
+        },
+        {
+          "offset": 575,
+          "type": "DIR32",
+          "symbol": "?g_StreamVolumeAt006714B7@@3CA",
+          "target": 6755511
+        },
+        {
+          "offset": 585,
+          "type": "DIR32",
+          "symbol": "?g_StreamVolumeAt006714B7@@3CA",
+          "target": 6755511
+        },
+        {
+          "offset": 592,
+          "type": "DIR32",
+          "symbol": "?g_StreamVolumeAt006714B7@@3CA",
+          "target": 6755511
+        },
+        {
+          "offset": 598,
+          "type": "REL32",
+          "symbol": "?SetStreamVolume@AudioVolume4073B0@@YAXC@Z",
+          "target": 4223936
+        },
+        {
+          "offset": 608,
+          "type": "REL32",
+          "symbol": "?ApplyVolumeOffset@AudioControl407CA0@@YAXJ@Z",
+          "target": 4226512
+        },
+        {
+          "offset": 630,
+          "type": "DIR32",
+          "symbol": "?g_SoundBank@@3PAVSoundBank@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 635,
+          "type": "REL32",
+          "symbol": "?Play@SoundBank@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 659,
+          "type": "DIR32",
+          "symbol": "?g_SoundBank@@3PAVSoundBank@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 664,
+          "type": "REL32",
+          "symbol": "?Play@SoundBank@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 709,
+          "type": "DIR32",
+          "symbol": "?g_SoundVolumeAt006714B6@@3CA",
+          "target": 6755510
+        },
+        {
+          "offset": 717,
+          "type": "DIR32",
+          "symbol": "?g_SoundVolumeAt006714B6@@3CA",
+          "target": 6755510
+        },
+        {
+          "offset": 724,
+          "type": "DIR32",
+          "symbol": "?g_SoundVolumeAt006714B6@@3CA",
+          "target": 6755510
+        },
+        {
+          "offset": 735,
+          "type": "DIR32",
+          "symbol": "?g_SoundVolumeAt006714B6@@3CA",
+          "target": 6755510
+        },
+        {
+          "offset": 742,
+          "type": "DIR32",
+          "symbol": "?g_SoundVolumeAt006714B6@@3CA",
+          "target": 6755510
+        },
+        {
+          "offset": 748,
+          "type": "REL32",
+          "symbol": "?SetSoundBankVolume@AudioVolume4073B0@@YAXC@Z",
+          "target": 4223920
+        },
+        {
+          "offset": 769,
+          "type": "DIR32",
+          "symbol": "?g_SoundVolumeAt006714B6@@3CA",
+          "target": 6755510
+        },
+        {
+          "offset": 778,
+          "type": "DIR32",
+          "symbol": "?g_SoundVolumeAt006714B6@@3CA",
+          "target": 6755510
+        },
+        {
+          "offset": 785,
+          "type": "DIR32",
+          "symbol": "?g_SoundVolumeAt006714B6@@3CA",
+          "target": 6755510
+        },
+        {
+          "offset": 795,
+          "type": "DIR32",
+          "symbol": "?g_SoundVolumeAt006714B6@@3CA",
+          "target": 6755510
+        },
+        {
+          "offset": 802,
+          "type": "DIR32",
+          "symbol": "?g_SoundVolumeAt006714B6@@3CA",
+          "target": 6755510
+        },
+        {
+          "offset": 808,
+          "type": "REL32",
+          "symbol": "?SetSoundBankVolume@AudioVolume4073B0@@YAXC@Z",
+          "target": 4223920
+        },
+        {
+          "offset": 830,
+          "type": "DIR32",
+          "symbol": "?g_SoundBank@@3PAVSoundBank@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 835,
+          "type": "REL32",
+          "symbol": "?Play@SoundBank@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 856,
+          "type": "DIR32",
+          "symbol": "?g_SoundBank@@3PAVSoundBank@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 861,
+          "type": "REL32",
+          "symbol": "?Play@SoundBank@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 866,
+          "type": "REL32",
+          "symbol": "?SaveConfiguration@OptionsSettingsF186@@YAXXZ",
+          "target": 4297808
+        },
+        {
+          "offset": 923,
+          "type": "DIR32",
+          "symbol": "?g_SoundBank@@3PAVSoundBank@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 928,
+          "type": "REL32",
+          "symbol": "?Play@SoundBank@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 933,
+          "type": "REL32",
+          "symbol": "?SaveConfiguration@OptionsSettingsF186@@YAXXZ",
+          "target": 4297808
+        },
+        {
+          "offset": 951,
+          "type": "DIR32",
+          "symbol": "$L551",
+          "target": 4362202
+        },
+        {
+          "offset": 955,
+          "type": "DIR32",
+          "symbol": "$L563",
+          "target": 4362286
+        },
+        {
+          "offset": 959,
+          "type": "DIR32",
+          "symbol": "$L570",
+          "target": 4362344
+        },
+        {
+          "offset": 963,
+          "type": "DIR32",
+          "symbol": "$L577",
+          "target": 4362402
+        },
+        {
+          "offset": 967,
+          "type": "DIR32",
+          "symbol": "$L584",
+          "target": 4362459
+        },
+        {
+          "offset": 971,
+          "type": "DIR32",
+          "symbol": "$L596",
+          "target": 4362628
+        },
+        {
+          "offset": 975,
+          "type": "DIR32",
+          "symbol": "$L615",
+          "target": 4362825
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -157243,6 +157731,8 @@
     "src/MenuInputF184.cpp": "dd803c589c621764e72125624c304c9be810856450d4f5c5a2d87f39fb478245",
     "src/MenuInputF184.hpp": "d3242ffc92f7f96ee4a8218b30e7a96cc09dde89178ed87632696bb67ab50394",
     "src/TitleAdvanceF185.cpp": "e9d88f71494177b67be962482a2957266ee884ef7c14aa0621591d466b64f951",
-    "src/TitleAdvanceF185.hpp": "aab66863d10b2f115c3b7fec4a5f3f775e78968a46a932693c378b05a4789373"
+    "src/TitleAdvanceF185.hpp": "aab66863d10b2f115c3b7fec4a5f3f775e78968a46a932693c378b05a4789373",
+    "src/OptionsAdvanceF186.cpp": "73fe415db48e908235cb45934773860086fd76a2de989f1102ffd864515bb2da",
+    "src/OptionsAdvanceF186.hpp": "586b3ed20d0643f83734bfe9e63bac30233026411ea2aff8a95902a8e18baf5b"
   }
 }
