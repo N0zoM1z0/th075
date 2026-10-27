@@ -1,4 +1,4 @@
-# TH075 active reconstruction status — F211
+# TH075 active reconstruction status — F212
 
 Updated 2026-10-27. The user explicitly resumed reconstruction and requires
 serious treatment of both large/core and small/leaf functions; all historical
@@ -561,10 +561,32 @@ original nominal Sprite class, source member names, imported constructor
 bodies and data ownership are still unknown. No hand-crafted assembly,
 false padding or cropped extent is counted.
 
-Current ledger: **518 exact functions, 762,328 CODE bytes / 1,973,516 reviewed
-authored bytes = 38.63%**, conservative 38.56% with 3,608 unknown-origin bytes
-retained. F184..F211 (excluding exploratory-only numbers) added twenty-five accepted units,
-twenty-four objects and twenty-seven new source/header inputs.
+F212 completes the authored shared sound startup policy
+`GameGlobals::InitializeSound` at `0x004175A0`. The pinned target
+contains **334 CODE bytes / 84 decoded native instructions**, ordinary
+RET with INT3 alignment; original body SHA256
+`edabd3cf233ed6befa5b4761245e68d43f798d87ccd4580c60580a8c35c78fa8`.
+Pinned VC7.1 /GX natural C++ produces **334/334 cold exact bytes** and
+**all 29 actual relocation fields**. The original R020 EH handler
+`0x006551C1` has exactly three new/construction states. Both keyboard
+binding setups use the true +0/0x28 global binding anchors, followed
+by independently observed `new(120)`, `new(8)`, `new(20)`
+constructors at 412DD0, 417000 and 4071C0. The source exactly
+preserves two volume inputs (4073B0 and 4073C0), the wave bank load
+via 4076A0 with original path strings and worker init 5F70E0.
+Compiler EH helpers, audio bank/decode routines, static data and
+the source-level class identities for those physically sized
+allocations are not separately accepted. The allocation carriers
+are used only at native-observed `new` sites and do not claim any
+complete original owner layout. The first complete source already
+matched all bytes; the separate canonical cold build replayed all
+29 relocation fields without masks, inert locals or cropped
+extents. No origin or previously accepted match changed.
+
+Current ledger: **519 exact functions, 762,662 CODE bytes / 1,973,516 reviewed
+authored bytes = 38.64%**, conservative 38.57% with 3,608 unknown-origin bytes
+retained. F184..F212 (excluding exploratory-only numbers) added twenty-six accepted units,
+twenty-five objects and twenty-eight new source/header inputs.
 Keep R268 origin evidence, all 97 unknown candidates, 493 pre-F184
 accepted units and protected private F184/F185 preview/drafts intact.
 

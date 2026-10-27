@@ -47,6 +47,9 @@ directory loader with all 23 fields and the same native iterator lifetime.
 F211 cold-accepts the 305-byte sprite rectangle-to-quad constructor
 with all nine fields: four distinct 16-byte vertex members recreate
 the native compiler call sequence, unlike an array.
+F212 cold-accepts the 334-byte global audio/input startup policy
+with three-stage EH, all 29 physical relocation fields and real
+120/8/20-byte allocations.
 F189 was an earlier noncredit investigation superseded by F196 exact.
 The original H184 handoff was historical and is superseded by the current
 request. Earlier experiments and names remain hypotheses until tested.
@@ -57,9 +60,9 @@ See the current [handoff](RE_HANDOFF.md) for current status.
 - Supplied Japanese th075.exe 1.11, SHA-256
   `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
   Archive identity is pinned; official distribution provenance is uncorroborated.
-- **518 exact functions/units, 762,328 CODE bytes, 190 canonical objects,
-  295 accepted source-header inputs.** Reviewed coverage is 38.63%; conservative
-  coverage is 38.56%, including all 97 unknown origins/3,608 pending bytes.
+- **519 exact functions/units, 762,662 CODE bytes, 191 canonical objects,
+  296 accepted source-header inputs.** Reviewed coverage is 38.64%; conservative
+  coverage is 38.57%, including all 97 unknown origins/3,608 pending bytes.
 - Ownership, source presence, names, Ghidra types, compilation and reproducible
   exactness remain distinct. Read ledgers and relevant origin evidence before
   relying on any classification or provisional boundary.
@@ -630,6 +633,28 @@ the original nominal class identity, unrelated members, compiler
 helper source and original field names are not asserted. F207 and
 F211 were re-cold-replayed together with zero differences. Neither
 owned data nor external helper bytes receive new code credit.
+
+## F212: exact three-stage EH sound startup
+
+The independently authored `GameGlobals::InitializeSound` at
+004175A0 is 334 native CODE bytes with 84 decoded instructions,
+one ordinary RET and 29 actual COFF relocations; SHA256
+`edabd3cf233ed6befa5b4761245e68d43f798d87ccd4580c60580a8c35c78fa8`.
+The original R020 EH handler `006551C1` records three transient
+allocations; pinned VC7.1 /GX natural C++ recreates all 334 bytes
+and 29 fields in a fresh cold build. The two input binding stores,
+three actual `new` allocation sizes 120, 8 and 20, respective
+constructor calls and globals, volume forwarding, wave loading and
+worker startup match the independently decoded complete function.
+
+Physically sized allocation carriers supply real `sizeof` values
+to new and real borrowed ctor methods. They are not invented
+reusable original scene/audio class definitions: complete members,
+source names, nested owners and ABI outside the observed calls
+remain unproven. Compiler EH cleanup code, constructors, wave bank,
+SDK calls and static globals receive no additional exact code credit.
+The first complete source compiled structural exact; independent
+canonical cold replay confirmed full code and every field.
 
 ## Retained failures and method boundaries
 

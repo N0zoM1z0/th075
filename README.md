@@ -26,9 +26,9 @@ This pins the supplied sample; its official distribution provenance has not
 been independently corroborated. The localized `th075c.exe` has a different
 identity and cannot substitute for the target.
 
-The current checkpoint has **518 exact functions / 762,328 code bytes** from
-4,351 provisional candidates. Reviewed authored coverage is 38.63%; conservative
-coverage, including all 3,608 pending bytes, is **38.56%**. The objective of
+The current checkpoint has **519 exact functions / 762,662 code bytes** from
+4,351 provisional candidates. Reviewed authored coverage is 38.64%; conservative
+coverage, including all 3,608 pending bytes, is **38.57%**. The objective of
 98% authored bytes exact remains incomplete. At R268, 1,002 authored, 2,671
 library and 581 compiler-generated candidates are classified; 97 remain unknown.
 Unknown origins receive no exact credit. Candidate count does not establish
@@ -146,6 +146,13 @@ geometry constructor (nine real relocation fields). Its four independent
 copies; a single four-element C++ array instead generated a compiler array
 construction helper and was rejected. Physical vertex offsets are supported,
 but the original nominal class and source-level type identities are unproved.
+F212 cold-reconstructed the shared 334-byte game sound setup,
+including all 29 real relocation fields, three native C++ EH
+allocation states, two input bindings, measured 120/8/20-byte
+object allocations, sound volume setup, wave loading and thread
+initialization. Original nominal class names and full object
+members remain unproven; imported constructors/helpers earn no
+separate byte credit.
 The 98% target is still incomplete.
 See the [current reconstruction handoff](docs/RE_HANDOFF.md); the preceding H184
 handoff is preserved there as historical context.
