@@ -26,7 +26,10 @@ with the native five-state EH flow and all 40 relocation fields exact.
 The F189 'unaccepted' status is historical.
 F197 independently cross-verifies the same base8/texture80 physical
 contract in the 435-byte title constructor (two EH states, 18 fields), exact.
-F189 separately inspected but did not accept the 922-byte EH battle initializer.
+F198 cold-accepts the 177-byte texture manager constructor and 128-byte
+resource-slot initializer, all 20 actual fields; natural five- and one-state
+EH policies preserved.
+F189 was an earlier noncredit investigation superseded by F196 exact.
 The original H184 handoff was historical and is superseded by the current
 request. Earlier experiments and names remain hypotheses until tested.
 See the current [handoff](RE_HANDOFF.md) for current status.
@@ -36,9 +39,9 @@ See the current [handoff](RE_HANDOFF.md) for current status.
 - Supplied Japanese th075.exe 1.11, SHA-256
   `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
   Archive identity is pinned; official distribution provenance is uncorroborated.
-- **507 exact functions/units, 757,182 CODE bytes, 179 canonical objects,
-  284 accepted source-header inputs.** Reviewed coverage is 38.37%; conservative
-  coverage is 38.30%, including all 97 unknown origins/3,608 pending bytes.
+- **509 exact functions/units, 757,487 CODE bytes, 181 canonical objects,
+  286 accepted source-header inputs.** Reviewed coverage is 38.38%; conservative
+  coverage is 38.31%, including all 97 unknown origins/3,608 pending bytes.
 - Ownership, source presence, names, Ghidra types, compilation and reproducible
   exactness remain distinct. Read ledgers and relevant origin evidence before
   relying on any classification or provisional boundary.
@@ -401,6 +404,32 @@ and STL container element types are unproved. No compiler EH helper,
 vtable, CRT, data or borrowed source receives exact byte credit.
 R108 base ctor retains unknown origin; its exact relocation in
 these callers cannot be used to reclassify it.
+
+## F198: exact texture-manager constructor and resource slots
+
+The authored TextureManager ctor at 0x0040AD80 contains 177 native CODE
+bytes (48 full instructions) and 12 real COFF fields; SHA256
+`e0ce84473c5b407a441c88fc5c7485a47547ad48e39abadf4beedd1d41cbf37a`.
+Its complete five-state EH frame is independently in the original
+R020 metadata, handler 00654ED4. A natural C++ constructor with
+nontrivial member ctors at offsets 0/8/24/40/56 reproduces the exact
+emitted stack, EH transitions, real reset call order and byte/state
+stores. The physical size80 receiver agrees with independent
+F196/F197 new(80) callers. Complete native cold replay is exact.
+
+TextureManager::AllocateUnformattedSlots at 0x0040B1D0 is 128 bytes,
+37 instructions and eight actual COFF fields, SHA256
+`570580110f4777092fba3bb6ca93d760abb364c5dea46998a42e07ad0ed6cac4`.
+A true 44-byte automatic temporary with VC7.1 ctor/dtor naturally
+produces the one-state EH lifetime and 0x34 stack frame, and two
+resource vector operations pass the original count/entry and local
+zero value. It also cold-replays exact. Neither source allocates
+an original TextureManager via unknown complete class size elsewhere;
+this is a source-compatible physical lifetime model only.
+Full original class names, component element types and some root
+member semantics are unproven. No STL/template, helper, EH data or
+other dependency byte credit was granted. The bigger manager
+release at 0040AE40 and scene destruction remain open.
 
 ## Retained failures and method boundaries
 

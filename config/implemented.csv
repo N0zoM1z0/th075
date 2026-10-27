@@ -505,3 +505,5 @@ GameConfig::LoadIni
 GameGlobals::Release
 BattleScene::Initialize
 TitleScene::Initialize
+TextureManager::Initialize
+TextureManager::AllocateUnformattedSlots

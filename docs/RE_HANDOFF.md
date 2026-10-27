@@ -1,4 +1,4 @@
-# TH075 active reconstruction status — F197
+# TH075 active reconstruction status — F198
 
 Updated 2026-10-27. The user explicitly resumed reconstruction and requires
 serious treatment of both large/core and small/leaf functions; all historical
@@ -317,16 +317,51 @@ Matching the 8/80-byte physical contracts independently in F196 and
 F197 strengthens their byte/layout evidence, not proof of original C++
 names or independent acceptance of borrowed constructors.
 
-Current ledger: **507 exact functions, 757,182 CODE bytes / 1,973,516 reviewed
-authored bytes = 38.37%**, conservative 38.30% with 3,608 unknown-origin bytes
-retained. F184..F197 added fourteen accepted units, thirteen objects and sixteen new
+F198 independently follows the shared texture-manager dependency called
+from the complete F196/F197 battle/title constructors. **TextureManager::
+Initialize at 0x0040AD80** consists of **177 native CODE bytes**, 48
+whole x86 instructions, 12 real DIR32/REL32 relocation fields and a
+five-state original VC7.1 EH frame. Native body SHA256
+`e0ce84473c5b407a441c88fc5c7485a47547ad48e39abadf4beedd1d41cbf37a`.
+A source-compatible natural constructor using the observed physical
+80-byte receiver, reference-count base, three 16-byte sequence-storage
+regions at offsets 8/24/40 and one 20-byte queue at 56 compiled exact
+on the first full ordinary probe; the native member constructor and
+reset order, offset+4 state and offset+76 byte are preserved. The
+original R020 handler `00654ED4` has the expected five cleanup states,
+which are target evidence, not separate new exact helper credits.
+
+**TextureManager::AllocateUnformattedSlots at 0x0040B1D0** is
+**128 native CODE bytes**, 37 complete x86 instructions, eight
+actual relocation fields and the independent original one-state EH
+handler `00654F48`; SHA256
+`570580110f4777092fba3bb6ca93d760abb364c5dea46998a42e07ad0ed6cac4`.
+A meaningful 44-byte local entry object with real ctor 0040D8C0
+and destructor 0040D8E0 naturally reproduces the exact 0x34 stack
+frame. The two slot initialization calls target receivers at
+this+8 and this+24 and consume the real count, entry and initialized
+zero value. The first natural probe also matched every byte.
+Both methods passed the pinned canonical cold compiler/replay as
+**2/2 exact, 305 new CODE bytes and 20 real fields**.
+
+Member storage widths derive from independent F196/F197 native allocation
+sizes, actual ctor/dtor call offsets, original EH transitions and whole
+byte comparisons. Source-compatible names and container *element*
+types remain provisional, as does the nominal original class identity;
+neither source file defines external data or claims other helper, SDK
+or generated EH byte credits. The related larger 0x0040AE40 texture
+manager release remains to reconstruct.
+
+Current ledger: **509 exact functions, 757,487 CODE bytes / 1,973,516 reviewed
+authored bytes = 38.38%**, conservative 38.31% with 3,608 unknown-origin bytes
+retained. F184..F198 added sixteen accepted units, fifteen objects and eighteen new
 source/header inputs.
 Keep R268 origin evidence, all 97 unknown candidates, 493 pre-F184
 accepted units and protected private F184/F185 preview/drafts intact.
 
-Next: attack additional large scene/battle or texture-constructor functions
-(0043A020 title initialization, 0040AD80 texture manager, 0040B1D0 slot manager),
-plus genuine small leaves; retain R108 origin ambiguity with full CFG, branches, call graph,
+Next: attack the full 0x0040AE40 texture-manager release function
+and the 0x0043B0B0 battle-scene destructor, alongside small helpers;
+retain R108 origin ambiguity and the original EH metadata. with full CFG, branches, call graph,
 target writes, lifetime and switch ownership before adopting any source.
 Do not claim exact credit for incomplete probes. Record failed approaches and
 commit separately when they yield durable discoveries.

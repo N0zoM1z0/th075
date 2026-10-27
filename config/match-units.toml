@@ -33550,3 +33550,121 @@ offset = 427
 type = "DIR32"
 symbol = "__except_list"
 target = 0x00000000
+
+[units.texture-manager-construct-0040ad80]
+source = "src/TextureManagerCtorF198.cpp"
+object = "build/matching/TextureManagerCtorF198.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["TextureManager::Initialize"]
+symbol = "??0TextureManagerF198@@QAE@XZ"
+target_address = 0x0040AD80
+size = 177
+[[units.texture-manager-construct-0040ad80.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0TextureManagerF198@@QAE@XZ"
+target = 0x00654ED4
+[[units.texture-manager-construct-0040ad80.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.texture-manager-construct-0040ad80.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.texture-manager-construct-0040ad80.relocations]]
+offset = 32
+type = "REL32"
+symbol = "??0TextureRefCountF198@@QAE@XZ"
+target = 0x00401000
+[[units.texture-manager-construct-0040ad80.relocations]]
+offset = 50
+type = "REL32"
+symbol = "??0TextureNameVectorF198@@QAE@XZ"
+target = 0x0040DC90
+[[units.texture-manager-construct-0040ad80.relocations]]
+offset = 65
+type = "REL32"
+symbol = "??0TextureSlotVectorF198@@QAE@XZ"
+target = 0x0040DE50
+[[units.texture-manager-construct-0040ad80.relocations]]
+offset = 80
+type = "REL32"
+symbol = "??0TextureSlotVectorF198@@QAE@XZ"
+target = 0x0040DE50
+[[units.texture-manager-construct-0040ad80.relocations]]
+offset = 95
+type = "REL32"
+symbol = "??0TextureQueueF198@@QAE@XZ"
+target = 0x0040DF60
+[[units.texture-manager-construct-0040ad80.relocations]]
+offset = 110
+type = "REL32"
+symbol = "?ClearCachedEntries@TextureSlotVectorF198@@QAEXXZ"
+target = 0x0040DF40
+[[units.texture-manager-construct-0040ad80.relocations]]
+offset = 121
+type = "REL32"
+symbol = "?ClearCachedEntries@TextureSlotVectorF198@@QAEXXZ"
+target = 0x0040DF40
+[[units.texture-manager-construct-0040ad80.relocations]]
+offset = 132
+type = "REL32"
+symbol = "?ClearCachedEntries@TextureNameVectorF198@@QAEXXZ"
+target = 0x0040DE30
+[[units.texture-manager-construct-0040ad80.relocations]]
+offset = 169
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+[units.texture-manager-allocate-unformatted-slots-0040b1d0]
+source = "src/TextureSlotsF198.cpp"
+object = "build/matching/TextureSlotsF198.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["TextureManager::AllocateUnformattedSlots"]
+symbol = "?AllocateUnformattedSlots@TextureSlotAllocatorF198@@QAEXH@Z"
+target_address = 0x0040B1D0
+size = 128
+[[units.texture-manager-allocate-unformatted-slots-0040b1d0.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$?AllocateUnformattedSlots@TextureSlotAllocatorF198@@QAEXH@Z"
+target = 0x00654F48
+[[units.texture-manager-allocate-unformatted-slots-0040b1d0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.texture-manager-allocate-unformatted-slots-0040b1d0.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.texture-manager-allocate-unformatted-slots-0040b1d0.relocations]]
+offset = 34
+type = "REL32"
+symbol = "??0TemporaryTextureSlotF198@@QAE@XZ"
+target = 0x0040D8C0
+[[units.texture-manager-allocate-unformatted-slots-0040b1d0.relocations]]
+offset = 67
+type = "REL32"
+symbol = "?InitializeSlots@TextureNameSlotsF198@@QAEXHABVTemporaryTextureSlotF198@@@Z"
+target = 0x0040DDA0
+[[units.texture-manager-allocate-unformatted-slots-0040b1d0.relocations]]
+offset = 93
+type = "REL32"
+symbol = "?InitializeSlots@TexturePayloadSlotsF198@@QAEXHPAI@Z"
+target = 0x0040DF20
+[[units.texture-manager-allocate-unformatted-slots-0040b1d0.relocations]]
+offset = 108
+type = "REL32"
+symbol = "??1TemporaryTextureSlotF198@@QAE@XZ"
+target = 0x0040D8E0
+[[units.texture-manager-allocate-unformatted-slots-0040b1d0.relocations]]
+offset = 118
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
