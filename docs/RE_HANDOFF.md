@@ -1,4 +1,4 @@
-# TH075 active reconstruction status — F193
+# TH075 active reconstruction status — F194
 
 Updated 2026-10-27. The user explicitly resumed reconstruction and requires
 serious treatment of both large/core and small/leaf functions; all historical
@@ -220,9 +220,28 @@ no helper/data credit and does not assert the original globals' nominal
 array extents. The `0x004251C0` constructor that calls it remains
 **origin unknown** and is not added to exact coverage.
 
-Current ledger: **503 exact functions, 755,128 CODE bytes / 1,973,516 reviewed
-authored bytes = 38.26%**, conservative 38.19% with 3,608 unknown-origin bytes
-retained. F184..F193 added ten accepted units, nine objects and twelve new
+F194 closes the actual F193 config.ini *read* dependency at
+`0x004192F0`: **339 native CODE bytes**, **116 fully decoded x86
+instructions**, **27 actual Win32/data relocations**, whole
+canonical /GX- cold replay **339/339 exact**. Target native body SHA256:
+`5a76d9c05e369ba111429f3160678f7cd068acbf2942f27f85afcf258dbab4df`.
+The Win32 sequence is CreateFileA("config.ini", GENERIC_READ,
+OPEN_EXISTING), SetFilePointer, one 80-byte + ten single-byte ReadFile
+calls, one observed flag normalization after its own read, CloseHandle
+and normal RET. The original HANDLE and meaningful DWORD read-count
+locals occupy EBP-8 / EBP-4, unlike the already accepted save policy.
+Initial natural 339-byte controls mismatched 26 nonrelocation bytes
+despite equal size; independent local-name and declaration controls
+showed the compiler's physical local slot allocation depends on
+meaningful symbol identities. The adopted `readSize` is a genuine
+bytes-transferred output. Original source-level variable spelling
+remains unproved. Readonly filename/data storage and imported APIs
+earn no extra byte credit, and the separately accepted F193 caller
+is unchanged.
+
+Current ledger: **504 exact functions, 755,467 CODE bytes / 1,973,516 reviewed
+authored bytes = 38.28%**, conservative 38.21% with 3,608 unknown-origin bytes
+retained. F184..F194 added eleven accepted units, ten objects and thirteen new
 source/header inputs.
 Keep R268 origin evidence, all 97 unknown candidates, 493 pre-F184
 accepted units and protected private F184/F185 preview/drafts intact.

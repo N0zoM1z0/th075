@@ -17,6 +17,8 @@ F192 accepts the 31-byte authored scene-base cleanup; the 34-byte
 source-indistinguishable paired constructor remains R108 unknown/uncredited.
 F193 cold-accepts the 531-byte shared game-defaults initializer with all
 71 actual relocations and eleven character-name copies.
+F194 cold-accepts its 339-byte config.ini reader with all 27 import/global
+fields, without granting borrowed storage or generated-source credit.
 F189 separately inspected but did not accept the 922-byte EH battle initializer.
 The original H184 handoff was historical and is superseded by the current
 request. Earlier experiments and names remain hypotheses until tested.
@@ -27,9 +29,9 @@ See the current [handoff](RE_HANDOFF.md) for current status.
 - Supplied Japanese th075.exe 1.11, SHA-256
   `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
   Archive identity is pinned; official distribution provenance is uncorroborated.
-- **503 exact functions/units, 755,128 CODE bytes, 175 canonical objects,
-  280 accepted source-header inputs.** Reviewed coverage is 38.26%; conservative
-  coverage is 38.19%, including all 97 unknown origins/3,608 pending bytes.
+- **504 exact functions/units, 755,467 CODE bytes, 176 canonical objects,
+  281 accepted source-header inputs.** Reviewed coverage is 38.28%; conservative
+  coverage is 38.21%, including all 97 unknown origins/3,608 pending bytes.
 - Ownership, source presence, names, Ghidra types, compilation and reproducible
   exactness remain distinct. Read ledgers and relevant origin evidence before
   relying on any classification or provisional boundary.
@@ -294,6 +296,28 @@ External anchors are borrowed and unsized; no data allocations, SDK
 or helper byte credit are introduced. The R108 base constructor
 `0x004251C0` that invokes this function remains unknown-origin and
 uncredited regardless of its independent structural matching probe.
+
+## F194: exact Win32 config.ini load
+
+The authored reader `GameConfig::LoadIni` at `0x004192F0` contains
+339 native bytes, 116 complete x86 instructions, one ordinary RET,
+and 27 actual DIR32 relocations. Native SHA256:
+`5a76d9c05e369ba111429f3160678f7cd068acbf2942f27f85afcf258dbab4df`.
+VC7.1 cold replay reproduces all 339 bytes. It opens the observed
+config.ini literal for read, seeks to the beginning, reads the
+80-byte config region then ten separate byte settings via ReadFile,
+normalizes one byte after its read and closes the handle. This is the
+actual source-compatible callee bound from F193.
+
+A correct-length first candidate nevertheless differed in 26 local stack
+references: HANDLE at EBP-4 instead of EBP-8, and DWORD byte count in
+the other slot. Simply swapping declaration order did not fix it.
+Experimenting with meaningful local identifiers changed VC7.1's slot
+assignment without adding an artificial local, forced casts or code.
+The final normal `readSize` declaration reproduces the original
+EBP-8/EBP-4 frame. Exact emitted stack byte layout does not establish
+the original identifiers. No Win32 import, source data or static filename
+credits accompany this authored function.
 
 ## Retained failures and method boundaries
 
