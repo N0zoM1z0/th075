@@ -523,3 +523,6 @@ ProgressRecords::IncrementSelectedRecordCount,0x0041A270,function
 ProgressRecords::InitializeDefaults,0x00416640,function
 ResourceLookup::FindByNameAt0041CF00,0x0041CF00,function
 DataArchive::SeekNamedEntryWithSize,0x0041D800,function
+ReplayRecords::BeginCapture,0x00413790,function
+GameState::ReadSnapshotHeaderAt00413A60,0x00413A60,function
+ReplayRecords::FindAvailablePath,0x00414300,function

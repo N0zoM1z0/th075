@@ -522,3 +522,6 @@ ProgressRecords::IncrementSelectedRecordCount
 ProgressRecords::InitializeDefaults
 ResourceLookup::FindByNameAt0041CF00
 DataArchive::SeekNamedEntryWithSize
+ReplayRecords::BeginCapture
+GameState::ReadSnapshotHeaderAt00413A60
+ReplayRecords::FindAvailablePath

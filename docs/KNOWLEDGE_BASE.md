@@ -50,6 +50,15 @@ the native compiler call sequence, unlike an array.
 F212 cold-accepts the 334-byte global audio/input startup policy
 with three-stage EH, all 29 physical relocation fields and real
 120/8/20-byte allocations.
+F213 cold-accepts two progress record policies, 109 and 90 bytes,
+both relocation-free; F214 cold-accepts the complete 910-byte progress
+defaults and all 34 actual relocations.
+F217 cold-accepts two authentic archive lookup/seek functions (113
+and 180 bytes; 19 actual fields), while the paired 792-byte record
+loader and 916-byte music catalog remain nonexact private probes.
+F218 cold-accepts the 225-byte replay capture, 85-byte snapshot
+header read and 89-byte available-path search, 15 real relocations.
+The 375-byte replay file finalizer remains a nonexact research target.
 F189 was an earlier noncredit investigation superseded by F196 exact.
 The original H184 handoff was historical and is superseded by the current
 request. Earlier experiments and names remain hypotheses until tested.
@@ -60,9 +69,9 @@ See the current [handoff](RE_HANDOFF.md) for current status.
 - Supplied Japanese th075.exe 1.11, SHA-256
   `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
   Archive identity is pinned; official distribution provenance is uncorroborated.
-- **519 exact functions/units, 762,662 CODE bytes, 191 canonical objects,
-  296 accepted source-header inputs.** Reviewed coverage is 38.64%; conservative
-  coverage is 38.57%, including all 97 unknown origins/3,608 pending bytes.
+- **527 exact functions/units, 764,463 CODE bytes, 198 canonical objects,
+  303 accepted source-header inputs.** Reviewed coverage is 38.74%; conservative
+  coverage is 38.67%, including all 97 unknown origins/3,608 pending bytes.
 - Ownership, source presence, names, Ghidra types, compilation and reproducible
   exactness remain distinct. Read ledgers and relevant origin evidence before
   relying on any classification or provisional boundary.
@@ -655,6 +664,66 @@ remain unproven. Compiler EH cleanup code, constructors, wave bank,
 SDK calls and static globals receive no additional exact code credit.
 The first complete source compiled structural exact; independent
 canonical cold replay confirmed full code and every field.
+
+## F213/F214: progress-record leaves and large defaults
+
+Two authored record leaves at 0041A1D0 (109 bytes) and
+0041A270 (90 bytes) match completely with zero external relocation
+fields; both retain signed selection indices and native record
+strides. The adjacent 910-byte `ProgressRecords::InitializeDefaults`
+at 00416640, target SHA256
+`6038d21f8518f49a355159fde8bd343c224e01c61ddc2ffcd3630cc1a6d3df14`,
+also cold-replays exact with 34 native relocation fields.
+The natural C++ reconstructs two complete memset clears, ten
+genuinely initialized nine-byte fish-name locals, a 15x4x10
+record grid, 15x15 counter matrix and eight mode bytes. Block-scoped
+loop variables and a true two-dimensional matrix subscript resolve
+the native VC7.1 local frame and final x86 SIB byte. These sources
+do not assert original complete owner layouts.
+
+## F217: archive registry lookup and named entry seek
+
+`ResourceLookup::FindByNameAt0041CF00` (113 bytes / 9 COFF fields,
+body SHA256
+`6391a9bbd25ec4b140e9fd14203dda8247ef25cd77891930f15a1ab7067586a1`)
+follows the original archive deque Size/At functions, strcmp and
+a second paired object deque. An early null return restores native
+JB branch placement where an initial ordinary if/else did not.
+`DataArchive::SeekNamedEntryWithSize` (180 bytes / 10 COFF fields,
+body SHA256
+`72ce55c493128e07f8bce2445b2409fc9f041064408f1166d5befd0a45849979`)
+naturally reproduces four-byte list iterator begin/end, postfix
+increment returning an iterator copy, comparison, entry offsets
++0x64/+0x68 and native SetFilePointer, `RET 8`.
+Both independently cold-replayed exact, without importing STL
+or external data byte credits.
+
+## F218: replay capture, snapshot header and path search
+
+`ReplayRecords::BeginCapture` at 00413790 is 225 CODE bytes
+(67 complete instructions), target SHA256
+`8cb535b033a5a3b624a94d83f3e55aeebf6999223c29f50feed7282f8c66b65d`,
+and all nine COFF fields exact. `GameState::ReadSnapshotHeaderAt00413A60`
+at 00413A60 is 85 bytes, SHA256
+`a64e819aca08d030fa6326f31e0ada81334e475ace8089f6cf49f5b6a7468a84`,
+and three actual fields exact. Its HANDLE and meaningful DWORD
+bytesRead locals reproduce the native EBP slots, unlike earlier
+correct-length but mismatching local-name controls.
+`ReplayRecords::FindAvailablePath` at 00414300 is 89 bytes,
+SHA256 `2d65ab5258cc61702673ad78e3c645fba70d58a6f296ec92559ad868b57a9466`,
+and three fields exact. It preserves the original bounded
+path formatting and `_access` search. All three separate
+functions cold-replayed exact together, adding 399 authored
+CODE bytes and 15 true fields.
+
+The adjacent 375-byte `ReplayRecords::FinalizeFile` remains
+unaccepted. Natural sources retain the Win32 replay copy,
+record header write, original 264-byte path and GS cookie;
+full-body probes emit 342, 372, 384 or 396 bytes against 375.
+No cropped body, fake stack padding or masked relocations are
+counted. The 792-byte ReplayRecords load and 916-byte musicroom
+catalog parse also remain nonexact under complete native checks.
+Their failed full-body controls are preserved privately.
 
 ## Retained failures and method boundaries
 

@@ -1,4 +1,4 @@
-# TH075 active reconstruction status — F217
+# TH075 active reconstruction status — F218
 
 Updated 2026-10-27. The user explicitly resumed reconstruction and requires
 serious treatment of both large/core and small/leaf functions; all historical
@@ -705,10 +705,62 @@ quoted-field parse behavior. Private negative evidence remains under
 and `.analysis/f217-resource-lookup/`. No exact credit was
 assigned to these incomplete bosses.
 
-Current ledger: **524 exact functions, 764,064 CODE bytes / 1,973,516 reviewed
-authored bytes = 38.72%**, conservative 38.65% with 3,608 unknown-origin bytes
-retained. F184..F217 (excluding exploratory-only numbers) added thirty-one accepted units,
-twenty-nine objects and thirty-two new source/header inputs.
+F218 follows the same authentic replay file-record dependency chain
+with three source-compatible authored policies. `ReplayRecords::BeginCapture`
+at `0x00413790` is **225 whole CODE bytes / 67 instructions**,
+SHA256
+`8cb535b033a5a3b624a94d83f3e55aeebf6999223c29f50feed7282f8c66b65d`,
+with **nine actual COFF fields**. It preserves native `_time32`
+and `localtime`, day/month values, replay header reset, eight
+100-valued bytes, actual queue clearing, conditional previous handle
+close, original CreateFileA flags and the MessageBoxA error/caption.
+The initial ordinary C++ compiled structurally exact.
+
+`GameState::ReadSnapshotHeaderAt00413A60` at `0x00413A60`
+is **85 bytes / 31 instructions**, SHA256
+`a64e819aca08d030fa6326f31e0ada81334e475ace8089f6cf49f5b6a7468a84`,
+with **three Win32 import fields**. Its complete byte-accurate
+source uses target-observed existing filepath `this+4`,
+`ReadFile(this+0x108,0x3c)` and `CloseHandle`. The first
+correct-length compiler probe had four real HANDLE/read-count
+stack slot bytes swapped. A meaningful local `HANDLE file` and
+`DWORD bytesRead` combination restores native EBP-4/EBP-8
+storage without arbitrary padding.
+
+`ReplayRecords::FindAvailablePath` at `0x00414300` contains
+**89 bytes / 31 instructions**, SHA256
+`2d65ab5258cc61702673ad78e3c645fba70d58a6f296ec92559ad868b57a9466`,
+with **three actual fields**. Its original bound search
+0..999 formats `replay\replay%03d.rep` via the real
+target format anchor and CRT sprintf, then uses the real
+`_access(filename,0)` and returns either the first available
+index or 1000. The first source probe matched structurally exact.
+
+All three new units were rebuilt together from source and passed
+**3/3 canonical cold exact**, **399/399 CODE bytes**, and
+**15/15 real COFF relocations**. The original replay container,
+Win32/CRT implementations, data strings and generated helpers
+receive no separate credit.
+
+The adjacent 375-byte `ReplayRecords::FinalizeFile` at
+004138E0 remains a substantive unaccepted large-function study:
+the actual Win32 read/write/close flow and 264-byte output
+filename are reproduced; one natural source emits 342 bytes,
+a meaningful filename/transferred-byte working record emits
+372 bytes, and controls capturing a real allocation/free
+pointer pair emit 384 or 396 bytes. Differences in native
+0x12c stack-frame storage and temporary ownership remain
+unresolved. All private controls are preserved under
+`.analysis/f218-replay-file/`, and no partial-byte exact
+credit was taken. `ReplayRecords::AppendRecord` at
+00413DE0 (1252 bytes) is also an independently observed,
+unaccepted large replay writer target. No origin ledger
+classification or old accepted match was modified.
+
+Current ledger: **527 exact functions, 764,463 CODE bytes / 1,973,516 reviewed
+authored bytes = 38.74%**, conservative 38.67% with 3,608 unknown-origin bytes
+retained. F184..F218 (excluding exploratory-only numbers) added thirty-four accepted units,
+thirty-two objects and thirty-five new source/header inputs.
 Keep R268 origin evidence, all 97 unknown candidates, 493 pre-F184
 accepted units and protected private F184/F185 preview/drafts intact.
 

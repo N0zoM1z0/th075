@@ -26,9 +26,9 @@ This pins the supplied sample; its official distribution provenance has not
 been independently corroborated. The localized `th075c.exe` has a different
 identity and cannot substitute for the target.
 
-The current checkpoint has **524 exact functions / 764,064 code bytes** from
-4,351 provisional candidates. Reviewed authored coverage is 38.72%; conservative
-coverage, including all 3,608 pending bytes, is **38.65%**. The objective of
+The current checkpoint has **527 exact functions / 764,463 code bytes** from
+4,351 provisional candidates. Reviewed authored coverage is 38.74%; conservative
+coverage, including all 3,608 pending bytes, is **38.67%**. The objective of
 98% authored bytes exact remains incomplete. At R268, 1,002 authored, 2,671
 library and 581 compiler-generated candidates are classified; 97 remain unknown.
 Unknown origins receive no exact credit. Candidate count does not establish
@@ -174,6 +174,12 @@ F217 cold-reconstructed the complete archive directory name lookup
 contracts and native name-match/early return paths were preserved.
 The companion 792-byte record loader and 916-byte music catalog
 parser remain noncredit private probes until whole-function exactness.
+F218 cold-reconstructed three complete replay/file policies: 225-byte
+replay capture startup, 85-byte snapshot header read, and 89-byte
+next-available replay pathname selection, all 15 actual COFF relocation
+fields. The 375-byte replay file finalizer remains nonexact research
+despite full Win32 call-flow reconstruction, with original stack
+allocation and temporary pointer placements still unresolved.
 The 98% target is still incomplete.
 See the [current reconstruction handoff](docs/RE_HANDOFF.md); the preceding H184
 handoff is preserved there as historical context.

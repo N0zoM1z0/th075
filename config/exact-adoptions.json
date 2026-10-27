@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "61238cd4bbe8c68e73c00b78863e84b4ff9c92aeef70ec024a7020d45d96d8de"
+      "current_sha256": "118fa26b791322d63ab29958c97877f1e91a347b0f13d2a710f9fb0b7d25cfb7"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "611624e053e3f301e056d68eebd297c006b7b6b4f885354e2b2b3a52d9da859f"
+      "current_sha256": "b5e09529a491ae4d6d26bcb566b4db2896ffc4eb46df019e7defef561df95e0d"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "791d7d0efea3b57cd05c4b7799e4863249392a5362eda9ea6a0823b03c2a7366"
+      "current_sha256": "4fddcc1ddb64af8b03cefdac57804e6fec0e04834a696e9a745b0f229fd78ebc"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "d9e0eadfcd565a2febfde5a310dacea18d2a7294ba9c6cf14ad3ff4d3eda6bb7"
+      "current_sha256": "1c04eaef7bd2ae46de6162fc7f60ad465ddd57fdf0fb21631077833e2bbbdf61"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "6789829ccf90802ec7a932df04e1fee84436e3663f8b6cd34ca40a1d222ab074"
+      "current_sha256": "cd954782f8271aa13938f323780b1beadbbee20b559138655ad31e19f10a6139"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -20456,6 +20456,138 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R053"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00413790",
+        "size": "225",
+        "span_end": "0x00413870",
+        "current_name": "FUN_00413790",
+        "proposed_name": "ReplayRecords::BeginCapture",
+        "module": "ReplayRecords",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R035; full body hash, complete decoded CFG and game-specific policy reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00413790",
+        "size": "225",
+        "span_end": "0x00413870",
+        "current_name": "FUN_00413790",
+        "proposed_name": "ReplayRecords::BeginCapture",
+        "module": "ReplayRecords",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void ReplayCaptureF218::BeginCapture()",
+        "is_thunk": "false",
+        "source_file": "src/ReplayCaptureF218.cpp",
+        "evidence": "R035; full body hash, complete decoded CFG and game-specific policy reviewed; F218; scripts/repo-python scripts/replay-exact-units.py --unit replay-capture-begin-00413790",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F218: complete 225 CODE bytes/67 native instructions, SHA256 8cb535b033a5a3b624a94d83f3e55aeebf6999223c29f50feed7282f8c66b65d. Entire pinned VC7.1 /GX- cold replay exact including nine real COFF relocations. Original time32 and localtime calls, first day/month bytes, 0x116/0x11c replay state resets, loop of eight 100-valued header bytes, existing 413880 queue release, conditional file CloseHandle, CreateFileA at native replay\\replay.tmp path anchor and original MessageBoxA error strings preserved in order; original full replay owner/global data/compiler/CRT helpers not adopted. All prior 524 exact units and 97 pending origin candidates preserved. No assembly, comparison masks, artificial returns or source split."
+      },
+      "origin": {
+        "address": "0x00413790",
+        "origin": "authored",
+        "subsystem": "ReplayRecords",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R035"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00413A60",
+        "size": "85",
+        "span_end": "0x00413AB4",
+        "current_name": "FUN_00413a60",
+        "proposed_name": "GameState::ReadSnapshotHeaderAt00413A60",
+        "module": "GameState",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit"
+      },
+      "after": {
+        "address": "0x00413A60",
+        "size": "85",
+        "span_end": "0x00413AB4",
+        "current_name": "FUN_00413a60",
+        "proposed_name": "GameState::ReadSnapshotHeaderAt00413A60",
+        "module": "GameState",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void SnapshotHeaderF218::ReadSnapshotHeader()",
+        "is_thunk": "false",
+        "source_file": "src/SnapshotHeaderF218.cpp",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103; F218; scripts/repo-python scripts/replay-exact-units.py --unit snapshot-header-read-00413a60",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit; F218: complete 85 CODE bytes/31 decoded x86 instructions SHA256 a64e819aca08d030fa6326f31e0ada81334e475ace8089f6cf49f5b6a7468a84; cold exact all 85 bytes and three Win32 import relocations. Physical source uses original this+4 replay filename, 0x3c-byte this+0x108 snapshot header and genuine HANDLE file plus DWORD bytesRead locals. Initial normal probe had correct size but four local-slot bytes differed; meaningful handle and byte-count naming restored EBP-4/Ebp-8 offsets without padding or fake locals. All prior 524 exact units and 97 pending origin candidates preserved. No assembly, comparison masks, artificial returns or source split."
+      },
+      "origin": {
+        "address": "0x00413A60",
+        "origin": "authored",
+        "subsystem": "GameState",
+        "disposition": "authored",
+        "confidence": "complete-game-policy-with-batch-context",
+        "evidence_id": "R103"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00414300",
+        "size": "89",
+        "span_end": "0x00414358",
+        "current_name": "FUN_00414300",
+        "proposed_name": "ReplayRecords::FindAvailablePath",
+        "module": "ReplayRecords",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R035; full body hash, complete decoded CFG and game-specific policy reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00414300",
+        "size": "89",
+        "span_end": "0x00414358",
+        "current_name": "FUN_00414300",
+        "proposed_name": "ReplayRecords::FindAvailablePath",
+        "module": "ReplayRecords",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "int ReplayPathF218::FindAvailablePath(char*)",
+        "is_thunk": "false",
+        "source_file": "src/ReplayPathF218.cpp",
+        "evidence": "R035; full body hash, complete decoded CFG and game-specific policy reviewed; F218; scripts/repo-python scripts/replay-exact-units.py --unit replay-find-available-path-00414300",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F218: complete 89 CODE bytes/31 native x86 instructions SHA256 2d65ab5258cc61702673ad78e3c645fba70d58a6f296ec92559ad868b57a9466, 3 actual relocations cold exact. Natural bounded search from 0 to 999 with original replay\\replay%03d.rep formatter at 00657918, sprintf 006404F0 and _access 00641B37; return of 1000 or first missing filename index exactly preserved. No original path/data/deque/helper source credit. All prior 524 exact units and 97 pending origin candidates preserved. No assembly, comparison masks, artificial returns or source split."
+      },
+      "origin": {
+        "address": "0x00414300",
+        "origin": "authored",
+        "subsystem": "ReplayRecords",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R035"
       }
     }
   ],
@@ -164258,6 +164390,165 @@
           "target": 4317280
         }
       ]
+    },
+    "replay-capture-begin-00413790": {
+      "source": "src/ReplayCaptureF218.cpp",
+      "object": "build/matching/ReplayCaptureF218.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "ReplayRecords::BeginCapture"
+      ],
+      "symbol": "?BeginCapture@ReplayCaptureF218@@QAEXXZ",
+      "target_address": 4274064,
+      "size": 225,
+      "relocations": [
+        {
+          "offset": 14,
+          "type": "REL32",
+          "symbol": "_time",
+          "target": 6560510
+        },
+        {
+          "offset": 26,
+          "type": "REL32",
+          "symbol": "_localtime",
+          "target": 6560126
+        },
+        {
+          "offset": 135,
+          "type": "REL32",
+          "symbol": "?ClearQueues@ReplayCaptureF218@@QAEXXZ",
+          "target": 4274304
+        },
+        {
+          "offset": 155,
+          "type": "DIR32",
+          "symbol": "__imp__CloseHandle@4",
+          "target": 6648120
+        },
+        {
+          "offset": 178,
+          "type": "DIR32",
+          "symbol": "?g_ReplayTempAt006578C4@@3QBDB",
+          "target": 6650052
+        },
+        {
+          "offset": 184,
+          "type": "DIR32",
+          "symbol": "__imp__CreateFileA@28",
+          "target": 6648112
+        },
+        {
+          "offset": 204,
+          "type": "DIR32",
+          "symbol": "?g_ReplayErrorCaptionAt006578D8@@3QBDB",
+          "target": 6650072
+        },
+        {
+          "offset": 209,
+          "type": "DIR32",
+          "symbol": "?g_ReplayErrorTextAt006578E0@@3QBDB",
+          "target": 6650080
+        },
+        {
+          "offset": 217,
+          "type": "DIR32",
+          "symbol": "__imp__MessageBoxA@16",
+          "target": 6648332
+        }
+      ]
+    },
+    "snapshot-header-read-00413a60": {
+      "source": "src/SnapshotHeaderF218.cpp",
+      "object": "build/matching/SnapshotHeaderF218.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "GameState::ReadSnapshotHeaderAt00413A60"
+      ],
+      "symbol": "?ReadSnapshotHeader@SnapshotHeaderF218@@QAEXXZ",
+      "target_address": 4274784,
+      "size": 85,
+      "relocations": [
+        {
+          "offset": 36,
+          "type": "DIR32",
+          "symbol": "__imp__CreateFileA@28",
+          "target": 6648112
+        },
+        {
+          "offset": 67,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 77,
+          "type": "DIR32",
+          "symbol": "__imp__CloseHandle@4",
+          "target": 6648120
+        }
+      ]
+    },
+    "replay-find-available-path-00414300": {
+      "source": "src/ReplayPathF218.cpp",
+      "object": "build/matching/ReplayPathF218.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "ReplayRecords::FindAvailablePath"
+      ],
+      "symbol": "?FindAvailablePath@ReplayPathF218@@QAEHPAD@Z",
+      "target_address": 4276992,
+      "size": 89,
+      "relocations": [
+        {
+          "offset": 41,
+          "type": "DIR32",
+          "symbol": "?g_ReplayPathFormatAt00657918@@3QBDB",
+          "target": 6650136
+        },
+        {
+          "offset": 50,
+          "type": "REL32",
+          "symbol": "_sprintf",
+          "target": 6554864
+        },
+        {
+          "offset": 64,
+          "type": "REL32",
+          "symbol": "__access",
+          "target": 6560567
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -164560,6 +164851,9 @@
     "src/ProgressRecordLeavesF213.cpp": "ceda7159d3227e09dc78868026f5437ee89c509574c53617a8d61d68252f1b1e",
     "src/ProgressDefaultsF214.cpp": "8f2c97420d9a47c2000b7ab5632a47cfeb8b165dac57135aa51521c3f50ebdca",
     "src/ArchiveLookupF217.cpp": "5de3a9f7b2fe6d42ce6be9f1e3e9e1b8b249d6d132d6d939836e015df8832aad",
-    "src/ArchiveSeekF217.cpp": "9d94b169c93b9f5ba08dc2bfe7d44b96b7e61df9ce9dc690f47d97f2bbd09e5c"
+    "src/ArchiveSeekF217.cpp": "9d94b169c93b9f5ba08dc2bfe7d44b96b7e61df9ce9dc690f47d97f2bbd09e5c",
+    "src/ReplayCaptureF218.cpp": "e191fd022f5066d8afdc4f1589f764e6c93fab0766bb201419f24cf08443771e",
+    "src/SnapshotHeaderF218.cpp": "c4df4859047457aa50ec4b729d5e0935ef3d37cd8e9279b1a1854cad8ec56a42",
+    "src/ReplayPathF218.cpp": "f73615bb149067efcd5312c607790a78ca880b4694a5bd64f56774ad4e3572d6"
   }
 }
