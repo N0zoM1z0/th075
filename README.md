@@ -26,9 +26,9 @@ This pins the supplied sample; its official distribution provenance has not
 been independently corroborated. The localized `th075c.exe` has a different
 identity and cannot substitute for the target.
 
-The current checkpoint has **500 exact functions / 753,706 code bytes** from
-4,351 provisional candidates. Reviewed authored coverage is 38.19%; conservative
-coverage, including all 3,608 pending bytes, is **38.12%**. The objective of
+The current checkpoint has **501 exact functions / 754,566 code bytes** from
+4,351 provisional candidates. Reviewed authored coverage is 38.23%; conservative
+coverage, including all 3,608 pending bytes, is **38.16%**. The objective of
 98% authored bytes exact remains incomplete. At R268, 1,002 authored, 2,671
 library and 581 compiler-generated candidates are classified; 97 remain unknown.
 Unknown origins receive no exact credit. Candidate count does not establish
@@ -63,6 +63,11 @@ state sequence, D3DX shader assembly and pixel shader constant setup. An
 initial 603-byte variant was rejected before the native early-return branch
 was restored. F189 separately records native investigation of the 922-byte
 battle initializer; no exact credit is granted for its unproven nested owners.
+F191 independently cold-replayed the complete 860-byte music-room selected
+detail renderer, including its two texture updates, GDI glyph lifetimes,
+signed-index bounds and 25 COFF fields. Only the function earns new authored
+byte credit; the original complete music-scene/glyph object layouts and text
+buffer declaration remain unproven.
 The 98% target is still incomplete.
 See the [current reconstruction handoff](docs/RE_HANDOFF.md); the preceding H184
 handoff is preserved there as historical context.

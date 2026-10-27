@@ -1,4 +1,4 @@
-# TH075 active reconstruction status — F190
+# TH075 active reconstruction status — F191
 
 Updated 2026-10-27. The user explicitly resumed reconstruction and requires
 serious treatment of both large/core and small/leaf functions; all historical
@@ -153,15 +153,45 @@ in `.analysis/f189-battle-init/native.asm`, **without accepting or crediting
 unconstructed objects**. That large function remains a live target, not a
 reason to ignore the worktree or to fabricate layouts.
 
-Current ledger: **500 exact functions, 753,706 CODE bytes / 1,973,516 reviewed
-authored bytes = 38.19%**, conservative 38.12% with 3,608 unknown-origin bytes
-retained. F184..F190 added seven accepted units, six objects and nine new
+F191 cold-reconstructed the other major music-room text routine
+`MusicRoomScene::RenderSelectedDetails`, `0x00426A70`. Its full native
+**860 CODE bytes** decode into **217 complete x86 instructions**, ending in
+`RET 4` at 00426DC9 with following INT3 alignment. Target body SHA256:
+`ea9d870e0edd790fe014a723f6a6466ff5867dec44fda5dee483ea856452b7ae`.
+The full function and **25 actual COFF DIR32/REL32 fields** pass fresh
+canonical VC7.1 `/GX` cold replay with zero differences. No owned jump
+table is attached to this extent. It performs two independent
+`IDirect3DTexture8::LockRect/UnlockRect` passes, each with native
+`new(56)`, rasterizer constructor/font setup, render and generated deleting
+destructor, and has original EH/GS cookie handling. The first pass copies the
+selected or fallback track description through the original CRT `_strcpy`
+callee; the second formats the track number, title and artist through
+`_sprintf`. The target uses *signed* track bounds and a real 16-byte
+per-record stride.
+
+Independent compiler controls caught a meaningful order distinction:
+`selected >= trackCount` emitted an alternate register/branch sequence
+(matching 722/760 non-relocation bytes), whereas
+`trackCount <= selected` produced the target's count-first comparison and
+all 760 nonrelocation bytes. Literal 1,996- and 2,000-byte text buffers both
+reproduced the same measured code, whereas 2,004 and 2,008 displaced
+stack slots by eight bytes; the precise original buffer declaration remains
+unknown. The physically 56-byte glyph allocation carrier is observed from
+the native allocation and actual constructor/method accesses, not proof of a
+complete reusable original font owner; +0x18 remains unresolved. No
+additional byte credit for the GDI helpers, SDK, game-data strings or EH
+helper. Private cold evidence and rejected probes are preserved under
+`.analysis/f191-music-details/`.
+
+Current ledger: **501 exact functions, 754,566 CODE bytes / 1,973,516 reviewed
+authored bytes = 38.23%**, conservative 38.16% with 3,608 unknown-origin bytes
+retained. F184..F191 added eight accepted units, seven objects and ten new
 source/header inputs.
 Keep R268 origin evidence, all 97 unknown candidates, 493 pre-F184
 accepted units and protected private F184/F185 preview/drafts intact.
 
 Next: continue large scene/battle functions (0043AD10 EH initialization
-or 00426A70 music-room text), plus honest small helper cohorts with full CFG, branches, call graph,
+or 00401540-linked GPU initialization dependencies) and small leaf cohorts with full CFG, branches, call graph,
 target writes, lifetime and switch ownership before adopting any source.
 Do not claim exact credit for incomplete probes. Record failed approaches and
 commit separately when they yield durable discoveries.

@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "e3fec2ca177d65cda8c6bdcc34b25315ab778e428964bff4ee38a60e2f02c601"
+      "current_sha256": "ef63c7e43af1551b304bb7393868dcf09a344cfd932d6cd7e33c002a0e8520b0"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "c32af20dc7d3804358404a38aad0a1ec60e99b8dad9b701a082f92dd0e9a7ed8"
+      "current_sha256": "db52e6be54cba8f3ed10b126462dc3fc92fbf2408f81da2b4d2783b194b07d0f"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "c66f9824ad8f89d72bc8f30f61221e94e24a343bd178841bf80b46c3c3d124cd"
+      "current_sha256": "d505a26d77e9d4365bd2bb3bad78e0a08e506b1e73044e762757aac1c0aae508"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "93d9974675dfb0169b407d921cd92b06e6429abf7431a1602a17c7d27409cc7c"
+      "current_sha256": "834c2ca4c77cf4d66278045206133d7e4c61876dc866f44cc1c1970411983d99"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "b252cefb3ffbade3a0eeef967cb05f41a81d3707e8177a2a777d34cab07bc03a"
+      "current_sha256": "7268fdc79c8fa707419ba50ecf3bf76ba90f63033b1fb1c67ecf80239346206f"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -19400,6 +19400,50 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R001; docs/ORIGIN_REVIEW.md; shared D3D8 state and custom policy, complete branches/exit reviewed"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00426A70",
+        "size": "860",
+        "span_end": "0x00426DCB",
+        "current_name": "FUN_00426a70",
+        "proposed_name": "MusicRoomScene::RenderSelectedDetails",
+        "module": "MusicRoomScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R040; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00426A70",
+        "size": "860",
+        "span_end": "0x00426DCB",
+        "current_name": "FUN_00426a70",
+        "proposed_name": "MusicRoomScene::RenderSelectedDetails",
+        "module": "MusicRoomScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void MusicDetailsF191::RenderSelectedDetails(signed char)",
+        "is_thunk": "false",
+        "source_file": "src/MusicDetailF191.cpp",
+        "evidence": "R040; full body hash, complete decoded CFG and local game-specific behavior reviewed; F191; scripts/repo-python scripts/replay-exact-units.py --unit music-room-render-selected-details-00426a70",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F191: Whole 860-byte signed-track music-detail renderer (217 x86 instructions, RET4 at 426DC9, four following INT3), 25 actual COFF relocations cold exact. Target code SHA256 ea9d870e0edd790fe014a723f6a6466ff5867dec44fda5dee483ea856452b7ae. Both 0x0C/0x18 actual IDirect3DTexture8 LockRect/UnlockRect sequences, accepted GDI glyph construction/font setup/rasterization/scalar deletion and original /GX EH/GS stack-cookie state retained. Source uses two independent signed track-bound checks, native indexed 16-byte record stride, _strcpy fallback/track description and sprintf title/artist with actual argument order; no switch table. Independent target-vs-compiler controls establish bound-first signed comparison needed for native register/order (semantically equivalent selected-first probe matched only 722/760 non-field bytes). Meaningful char[1996] and char[2000] source buffers emit identical native 860-byte bodies; 2004/2008 displace the stack by 8 and mismatch; original nominal source length remains unproven. Glyph allocation is the physically measured 56-byte transient borrowed view with +0x18 unknown member; no original class/owner identity, no unrelated helper/literal/EH exact credit or other incomplete owners. No masks, ABI tricks, inert padding, false extent, assembly or conditional matching. Prior 500 exact units and 97 unknown origins unchanged."
+      },
+      "origin": {
+        "address": "0x00426A70",
+        "origin": "authored",
+        "subsystem": "MusicRoomScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R040"
       }
     }
   ],
@@ -158295,6 +158339,179 @@
           "target": 4204016
         }
       ]
+    },
+    "music-room-render-selected-details-00426a70": {
+      "source": "src/MusicDetailF191.cpp",
+      "object": "build/matching/MusicDetailF191.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "MusicRoomScene::RenderSelectedDetails"
+      ],
+      "symbol": "?RenderSelectedDetails@MusicDetailsF191@@QAEXC@Z",
+      "target_address": 4352624,
+      "size": 860,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$?RenderSelectedDetails@MusicDetailsF191@@QAEXC@Z",
+          "target": 6641719
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 31,
+          "type": "DIR32",
+          "symbol": "___security_cookie",
+          "target": 6749744
+        },
+        {
+          "offset": 74,
+          "type": "DIR32",
+          "symbol": "?g_MusicUnknownTrackAt00657C46@@3QBDB",
+          "target": 6650950
+        },
+        {
+          "offset": 86,
+          "type": "REL32",
+          "symbol": "_strcpy",
+          "target": 6560640
+        },
+        {
+          "offset": 121,
+          "type": "REL32",
+          "symbol": "_strcpy",
+          "target": 6560640
+        },
+        {
+          "offset": 173,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 211,
+          "type": "REL32",
+          "symbol": "??0GlyphSurfaceF188@@QAE@PAUHWND__@@@Z",
+          "target": 4308880
+        },
+        {
+          "offset": 276,
+          "type": "DIR32",
+          "symbol": "?g_MusicSelectedFontAt00657C48@@3QBDB",
+          "target": 6650952
+        },
+        {
+          "offset": 287,
+          "type": "REL32",
+          "symbol": "?ConfigureFont@GlyphSurfaceF188@@QAEXPBDHEEE@Z",
+          "target": 4309088
+        },
+        {
+          "offset": 332,
+          "type": "REL32",
+          "symbol": "?Rasterize@GlyphSurfaceF188@@QAEXPBDPAXHHHHHED@Z",
+          "target": 4309728
+        },
+        {
+          "offset": 378,
+          "type": "REL32",
+          "symbol": "??_GGlyphSurfaceF188@@QAEPAXI@Z",
+          "target": 4273696
+        },
+        {
+          "offset": 456,
+          "type": "DIR32",
+          "symbol": "?g_MusicUnknownTitleAt00657C56@@3QBDB",
+          "target": 6650966
+        },
+        {
+          "offset": 468,
+          "type": "REL32",
+          "symbol": "_strcpy",
+          "target": 6560640
+        },
+        {
+          "offset": 522,
+          "type": "DIR32",
+          "symbol": "?g_MusicNumberedDetailsAt00657C58@@3QBDB",
+          "target": 6650968
+        },
+        {
+          "offset": 534,
+          "type": "REL32",
+          "symbol": "_sprintf",
+          "target": 6554864
+        },
+        {
+          "offset": 586,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 624,
+          "type": "REL32",
+          "symbol": "??0GlyphSurfaceF188@@QAE@PAUHWND__@@@Z",
+          "target": 4308880
+        },
+        {
+          "offset": 689,
+          "type": "DIR32",
+          "symbol": "?g_MusicNumberedFontAt00657C68@@3QBDB",
+          "target": 6650984
+        },
+        {
+          "offset": 700,
+          "type": "REL32",
+          "symbol": "?ConfigureFont@GlyphSurfaceF188@@QAEXPBDHEEE@Z",
+          "target": 4309088
+        },
+        {
+          "offset": 742,
+          "type": "REL32",
+          "symbol": "?Rasterize@GlyphSurfaceF188@@QAEXPBDPAXHHHHHED@Z",
+          "target": 4309728
+        },
+        {
+          "offset": 788,
+          "type": "REL32",
+          "symbol": "??_GGlyphSurfaceF188@@QAEPAXI@Z",
+          "target": 4273696
+        },
+        {
+          "offset": 842,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 850,
+          "type": "REL32",
+          "symbol": "@__security_check_cookie@4",
+          "target": 6555153
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -158574,6 +158791,7 @@
     "src/OptionsAdvanceF186.hpp": "586b3ed20d0643f83734bfe9e63bac30233026411ea2aff8a95902a8e18baf5b",
     "src/ConfigSaveF187.cpp": "4a98e08b1cfba81e9c1d935e70e1c65c0f622a5b83b1c2f78437332168d69085",
     "src/OptionsSelectionF188.cpp": "2976178827277443d729c734f35d17aa53600d4e1c22c1e1e64ef39ce8a20afa",
-    "src/GraphicsDefaultsF190.cpp": "c0b814852b3c3ad43e5fd7b0a49af350a95c9254444a829f52ce0701b103cd01"
+    "src/GraphicsDefaultsF190.cpp": "c0b814852b3c3ad43e5fd7b0a49af350a95c9254444a829f52ce0701b103cd01",
+    "src/MusicDetailF191.cpp": "55202668e812e7d26098a351095d78e81b8ef12be73982ac0fc4af24600de61f"
   }
 }

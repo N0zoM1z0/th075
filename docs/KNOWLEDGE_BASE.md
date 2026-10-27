@@ -11,6 +11,8 @@ independent canonical cold comparison.
 F188 adds the options text-resource update with 563 CODE bytes, seven-case
 owned table, 34 fields, and natural EH/new/delete path, all cold exact.
 F190 adds 604 exact graphics default-state bytes and all 45 relocations.
+F191 adds the complete 860-byte music-detail font/texture workflow, all 25
+actual relocation fields cold-exact.
 F189 separately inspected but did not accept the 922-byte EH battle initializer.
 The original H184 handoff was historical and is superseded by the current
 request. Earlier experiments and names remain hypotheses until tested.
@@ -21,9 +23,9 @@ See the current [handoff](RE_HANDOFF.md) for current status.
 - Supplied Japanese th075.exe 1.11, SHA-256
   `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
   Archive identity is pinned; official distribution provenance is uncorroborated.
-- **500 exact functions/units, 753,706 CODE bytes, 172 canonical objects,
-  277 accepted source-header inputs.** Reviewed coverage is 38.19%; conservative
-  coverage is 38.12%, including all 97 unknown origins/3,608 pending bytes.
+- **501 exact functions/units, 754,566 CODE bytes, 173 canonical objects,
+  278 accepted source-header inputs.** Reviewed coverage is 38.23%; conservative
+  coverage is 38.16%, including all 97 unknown origins/3,608 pending bytes.
 - Ownership, source presence, names, Ghidra types, compilation and reproducible
   exactness remain distinct. Read ledgers and relevant origin evidence before
   relying on any classification or provisional boundary.
@@ -220,6 +222,31 @@ a Ghidra decompilation or the observed allocation sizes. Preserve the
 noncredit native proof in `.analysis/f189-battle-init/`; do not construct
 fabricated complete owners or grant exact coverage until a complete natural
 source and all relocations cold-replay.
+
+## F191: exact large music-room text and rasterizer pipeline
+
+`MusicRoomScene::RenderSelectedDetails` at 00426A70 has **860 native CODE
+bytes, 217 decoded instructions and a RET 4**. The body SHA256 is
+`ea9d870e0edd790fe014a723f6a6466ff5867dec44fda5dee483ea856452b7ae`.
+Pinned VC7.1 `/GX` cold replay emitted every byte and all **25 actual COFF
+relocations** exactly. The two target D3D8 texture lock cycles each construct,
+configure, render with and destroy a transient 56-byte GDI font resource.
+The real typed 16-byte stride is shared by the selected track's description,
+title and artist references; fallbacks and format strings point to original
+target data but do not receive source/data exact credit.
+
+Early natural-source prototypes already emitted the correct 860-byte function
+size but differed in the two signed track-bound checks. In the emitted x86,
+placing the bound on the left of the comparison selects the target's
+count-first MOVSX/CMP and JG control flow; using `selected >= count` shifts
+register allocation/branch order despite semantic equivalence. Buffer sizes
+1996 and 2000 yield identical structural-exact native output, while 2004
+and 2008 shift stack offsets and lose equality. The chosen source uses
+`char message[2000]` solely as a reproducing, meaningful text buffer;
+the original nominal size is not inferred. Borrowed glyph class identity,
++0x18 allocation word semantics, music room's full layout, EH helper
+ownership and data literals remain unproven. The complete function is
+accepted, not its dependencies or source-level class identity.
 
 ## Retained failures and method boundaries
 

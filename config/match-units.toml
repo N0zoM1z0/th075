@@ -32482,3 +32482,137 @@ offset = 593
 type = "REL32"
 symbol = "?SetPixelShaderMode@Graphics@@YAXC@Z"
 target = 0x004025F0
+
+[units.music-room-render-selected-details-00426a70]
+source = "src/MusicDetailF191.cpp"
+object = "build/matching/MusicDetailF191.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["MusicRoomScene::RenderSelectedDetails"]
+symbol = "?RenderSelectedDetails@MusicDetailsF191@@QAEXC@Z"
+target_address = 0x00426A70
+size = 860
+[[units.music-room-render-selected-details-00426a70.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$?RenderSelectedDetails@MusicDetailsF191@@QAEXC@Z"
+target = 0x00655837
+[[units.music-room-render-selected-details-00426a70.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.music-room-render-selected-details-00426a70.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.music-room-render-selected-details-00426a70.relocations]]
+offset = 31
+type = "DIR32"
+symbol = "___security_cookie"
+target = 0x0066FE30
+[[units.music-room-render-selected-details-00426a70.relocations]]
+offset = 74
+type = "DIR32"
+symbol = "?g_MusicUnknownTrackAt00657C46@@3QBDB"
+target = 0x00657C46
+[[units.music-room-render-selected-details-00426a70.relocations]]
+offset = 86
+type = "REL32"
+symbol = "_strcpy"
+target = 0x00641B80
+[[units.music-room-render-selected-details-00426a70.relocations]]
+offset = 121
+type = "REL32"
+symbol = "_strcpy"
+target = 0x00641B80
+[[units.music-room-render-selected-details-00426a70.relocations]]
+offset = 173
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.music-room-render-selected-details-00426a70.relocations]]
+offset = 211
+type = "REL32"
+symbol = "??0GlyphSurfaceF188@@QAE@PAUHWND__@@@Z"
+target = 0x0041BF90
+[[units.music-room-render-selected-details-00426a70.relocations]]
+offset = 276
+type = "DIR32"
+symbol = "?g_MusicSelectedFontAt00657C48@@3QBDB"
+target = 0x00657C48
+[[units.music-room-render-selected-details-00426a70.relocations]]
+offset = 287
+type = "REL32"
+symbol = "?ConfigureFont@GlyphSurfaceF188@@QAEXPBDHEEE@Z"
+target = 0x0041C060
+[[units.music-room-render-selected-details-00426a70.relocations]]
+offset = 332
+type = "REL32"
+symbol = "?Rasterize@GlyphSurfaceF188@@QAEXPBDPAXHHHHHED@Z"
+target = 0x0041C2E0
+[[units.music-room-render-selected-details-00426a70.relocations]]
+offset = 378
+type = "REL32"
+symbol = "??_GGlyphSurfaceF188@@QAEPAXI@Z"
+target = 0x00413620
+[[units.music-room-render-selected-details-00426a70.relocations]]
+offset = 456
+type = "DIR32"
+symbol = "?g_MusicUnknownTitleAt00657C56@@3QBDB"
+target = 0x00657C56
+[[units.music-room-render-selected-details-00426a70.relocations]]
+offset = 468
+type = "REL32"
+symbol = "_strcpy"
+target = 0x00641B80
+[[units.music-room-render-selected-details-00426a70.relocations]]
+offset = 522
+type = "DIR32"
+symbol = "?g_MusicNumberedDetailsAt00657C58@@3QBDB"
+target = 0x00657C58
+[[units.music-room-render-selected-details-00426a70.relocations]]
+offset = 534
+type = "REL32"
+symbol = "_sprintf"
+target = 0x006404F0
+[[units.music-room-render-selected-details-00426a70.relocations]]
+offset = 586
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.music-room-render-selected-details-00426a70.relocations]]
+offset = 624
+type = "REL32"
+symbol = "??0GlyphSurfaceF188@@QAE@PAUHWND__@@@Z"
+target = 0x0041BF90
+[[units.music-room-render-selected-details-00426a70.relocations]]
+offset = 689
+type = "DIR32"
+symbol = "?g_MusicNumberedFontAt00657C68@@3QBDB"
+target = 0x00657C68
+[[units.music-room-render-selected-details-00426a70.relocations]]
+offset = 700
+type = "REL32"
+symbol = "?ConfigureFont@GlyphSurfaceF188@@QAEXPBDHEEE@Z"
+target = 0x0041C060
+[[units.music-room-render-selected-details-00426a70.relocations]]
+offset = 742
+type = "REL32"
+symbol = "?Rasterize@GlyphSurfaceF188@@QAEXPBDPAXHHHHHED@Z"
+target = 0x0041C2E0
+[[units.music-room-render-selected-details-00426a70.relocations]]
+offset = 788
+type = "REL32"
+symbol = "??_GGlyphSurfaceF188@@QAEPAXI@Z"
+target = 0x00413620
+[[units.music-room-render-selected-details-00426a70.relocations]]
+offset = 842
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.music-room-render-selected-details-00426a70.relocations]]
+offset = 850
+type = "REL32"
+symbol = "@__security_check_cookie@4"
+target = 0x00640611

@@ -499,3 +499,4 @@ OptionsScene::AdvanceAt00428F00,0x00428F00,function
 GameConfig::SaveIni,0x00419450,function
 OptionsScene::ApplySelectionAt00429F00,0x00429F00,function
 Graphics::SetDefaultStates,0x00401540,function
+MusicRoomScene::RenderSelectedDetails,0x00426A70,function
