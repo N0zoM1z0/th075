@@ -493,3 +493,4 @@ address,name,module,confidence,evidence
 0x0040AE40,TextureManager::ReleaseResources,TextureManager,inferred,F199; complete 434-byte five-state EH cleanup cold exact; original owner/element types provisional
 0x00419920,GameState::SaveSnapshot,GameState,inferred,F201; whole 904-byte game snapshot builder cold exact; original data-owner type/layout names provisional
 0x004195B0,GameState::RestoreFromSnapshot,GameState,inferred,F202; full 880-byte snapshot restoration cold exact; original record/storage classes provisional
+0x00419E10,GameProgress::CheckSelectionAt00419E10,GameProgress,inferred,F203; whole 671 CODE and owned 40-byte switch tables cold exact including 56 fields; original class/record layout unproven

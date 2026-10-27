@@ -1,4 +1,4 @@
-# TH075 active reconstruction status — F202
+# TH075 active reconstruction status — F203
 
 Updated 2026-10-27. The user explicitly resumed reconstruction and requires
 serious treatment of both large/core and small/leaf functions; all historical
@@ -425,10 +425,39 @@ with source SHA256
 `912672914ecd95390aecd06a8f8db9ddf80af74f5c4f591805f36888cdfccecc`.
 All 97 pending origins (including R108 at `0x004251C0`) remain intact.
 
-Current ledger: **512 exact functions, 759,705 CODE bytes / 1,973,516 reviewed
-authored bytes = 38.50%**, conservative 38.42% with 3,608 unknown-origin bytes
-retained. F184..F202 (excluding exploratory-only numbers) added nineteen accepted units,
-eighteen objects and twenty-one new source/header inputs.
+F203 cold-reconstructed the substantial `GameProgress::
+CheckSelectionAt00419E10` progress-combination policy at `0x00419E10`.
+Independent Capstone decoding consumes **671 native CODE bytes / 202
+instructions**; the ordinary RET is followed by **two owned five-entry
+switch tables totaling 40 bytes**. Native code SHA256
+`997d651510426c6dbac11ce4a66f06e2ab20505bcdcf71c3808f026295031b3d`;
+table SHA256
+`519277b311148216fcb966bd52b680855633a07c101494aa1a2a88fa31588d55`.
+All ten table words resolve to the actual 00419E4C..0041A0A2
+native case targets, including intentional repeated labels. The
+complete canonical VC7.1 /GX- cold replay matches **711/711 comparison
+bytes**, with **56 real COFF fields**, including all ten local table
+relocations; only **671 CODE bytes** enter coverage.
+
+The source keeps the actual unsigned byte result, signed char arguments,
+two distinct switch regimes, queries to `0x00416DC0` through the borrowed
+`0x006718F8` record receiver, nonshortcircuit bitwise OR aggregation and
+bitwise AND of the tested progress states, and the native six-entry loops.
+The initial natural compound assignments `matches |= rhs` and
+`matches &= rhs` produced the correct 711-byte length but only
+250/487 non-relocation bytes, because VC7.1 deferred loading the prior
+accumulator until after its query calls. Equivalent meaningful
+`matches = matches | (rhs)` / `matches = matches & (rhs)` source
+emits the observed early EBX load, correct ESI/EDX accumulation and
+exact branch/order, without masked bytes, pad locals or ASM. No
+independent exact credit is claimed for SDK/code helpers, source data,
+jump-table bytes, or the unproven original record class layout.
+Private rejected probes are preserved at `.analysis/f203-progress-selection/`.
+
+Current ledger: **513 exact functions, 760,376 CODE bytes / 1,973,516 reviewed
+authored bytes = 38.53%**, conservative 38.46% with 3,608 unknown-origin bytes
+retained. F184..F203 (excluding exploratory-only numbers) added twenty accepted units,
+nineteen objects and twenty-two new source/header inputs.
 Keep R268 origin evidence, all 97 unknown candidates, 493 pre-F184
 accepted units and protected private F184/F185 preview/drafts intact.
 

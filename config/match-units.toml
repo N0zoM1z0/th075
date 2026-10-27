@@ -35110,3 +35110,293 @@ offset = 874
 type = "DIR32"
 symbol = "?g_StageFlagAt00671622@@3EA"
 target = 0x00671622
+
+[units.game-progress-check-selection-00419e10]
+source = "src/ProgressSelectionF203.cpp"
+object = "build/matching/ProgressSelectionF203.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["GameProgress::CheckSelectionAt00419E10"]
+symbol = "?CheckSelection@GameProgressF203@@YAECC@Z"
+target_address = 0x00419E10
+size = 671
+compare_size = 711
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 56
+type = "DIR32"
+symbol = "$L318"
+target = 0x0041A0AF
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 71
+type = "DIR32"
+symbol = "?g_ProgressArchiveAt006718F8@@3VProgressArchiveF203@@A"
+target = 0x006718F8
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 76
+type = "REL32"
+symbol = "?QueryEntry@ProgressArchiveF203@@QAEEH@Z"
+target = 0x00416DC0
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 86
+type = "DIR32"
+symbol = "?g_ProgressArchiveAt006718F8@@3VProgressArchiveF203@@A"
+target = 0x006718F8
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 91
+type = "REL32"
+symbol = "?QueryEntry@ProgressArchiveF203@@QAEEH@Z"
+target = 0x00416DC0
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 103
+type = "DIR32"
+symbol = "?g_ProgressArchiveAt006718F8@@3VProgressArchiveF203@@A"
+target = 0x006718F8
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 108
+type = "REL32"
+symbol = "?QueryEntry@ProgressArchiveF203@@QAEEH@Z"
+target = 0x00416DC0
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 129
+type = "DIR32"
+symbol = "?g_ProgressArchiveAt006718F8@@3VProgressArchiveF203@@A"
+target = 0x006718F8
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 134
+type = "REL32"
+symbol = "?QueryEntry@ProgressArchiveF203@@QAEEH@Z"
+target = 0x00416DC0
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 144
+type = "DIR32"
+symbol = "?g_ProgressArchiveAt006718F8@@3VProgressArchiveF203@@A"
+target = 0x006718F8
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 149
+type = "REL32"
+symbol = "?QueryEntry@ProgressArchiveF203@@QAEEH@Z"
+target = 0x00416DC0
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 161
+type = "DIR32"
+symbol = "?g_ProgressArchiveAt006718F8@@3VProgressArchiveF203@@A"
+target = 0x006718F8
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 166
+type = "REL32"
+symbol = "?QueryEntry@ProgressArchiveF203@@QAEEH@Z"
+target = 0x00416DC0
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 187
+type = "DIR32"
+symbol = "?g_ProgressArchiveAt006718F8@@3VProgressArchiveF203@@A"
+target = 0x006718F8
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 192
+type = "REL32"
+symbol = "?QueryEntry@ProgressArchiveF203@@QAEEH@Z"
+target = 0x00416DC0
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 202
+type = "DIR32"
+symbol = "?g_ProgressArchiveAt006718F8@@3VProgressArchiveF203@@A"
+target = 0x006718F8
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 207
+type = "REL32"
+symbol = "?QueryEntry@ProgressArchiveF203@@QAEEH@Z"
+target = 0x00416DC0
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 219
+type = "DIR32"
+symbol = "?g_ProgressArchiveAt006718F8@@3VProgressArchiveF203@@A"
+target = 0x006718F8
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 224
+type = "REL32"
+symbol = "?QueryEntry@ProgressArchiveF203@@QAEEH@Z"
+target = 0x00416DC0
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 254
+type = "DIR32"
+symbol = "?g_ProgressArchiveAt006718F8@@3VProgressArchiveF203@@A"
+target = 0x006718F8
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 259
+type = "REL32"
+symbol = "?QueryEntry@ProgressArchiveF203@@QAEEH@Z"
+target = 0x00416DC0
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 269
+type = "DIR32"
+symbol = "?g_ProgressArchiveAt006718F8@@3VProgressArchiveF203@@A"
+target = 0x006718F8
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 274
+type = "REL32"
+symbol = "?QueryEntry@ProgressArchiveF203@@QAEEH@Z"
+target = 0x00416DC0
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 286
+type = "DIR32"
+symbol = "?g_ProgressArchiveAt006718F8@@3VProgressArchiveF203@@A"
+target = 0x006718F8
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 291
+type = "REL32"
+symbol = "?QueryEntry@ProgressArchiveF203@@QAEEH@Z"
+target = 0x00416DC0
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 312
+type = "DIR32"
+symbol = "?g_ProgressArchiveAt006718F8@@3VProgressArchiveF203@@A"
+target = 0x006718F8
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 317
+type = "REL32"
+symbol = "?QueryEntry@ProgressArchiveF203@@QAEEH@Z"
+target = 0x00416DC0
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 327
+type = "DIR32"
+symbol = "?g_ProgressArchiveAt006718F8@@3VProgressArchiveF203@@A"
+target = 0x006718F8
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 332
+type = "REL32"
+symbol = "?QueryEntry@ProgressArchiveF203@@QAEEH@Z"
+target = 0x00416DC0
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 344
+type = "DIR32"
+symbol = "?g_ProgressArchiveAt006718F8@@3VProgressArchiveF203@@A"
+target = 0x006718F8
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 349
+type = "REL32"
+symbol = "?QueryEntry@ProgressArchiveF203@@QAEEH@Z"
+target = 0x00416DC0
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 408
+type = "DIR32"
+symbol = "?g_ProgressArchiveAt006718F8@@3VProgressArchiveF203@@A"
+target = 0x006718F8
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 413
+type = "REL32"
+symbol = "?QueryEntry@ProgressArchiveF203@@QAEEH@Z"
+target = 0x00416DC0
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 428
+type = "DIR32"
+symbol = "?g_ProgressArchiveAt006718F8@@3VProgressArchiveF203@@A"
+target = 0x006718F8
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 433
+type = "REL32"
+symbol = "?QueryEntry@ProgressArchiveF203@@QAEEH@Z"
+target = 0x00416DC0
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 491
+type = "DIR32"
+symbol = "?g_ProgressArchiveAt006718F8@@3VProgressArchiveF203@@A"
+target = 0x006718F8
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 496
+type = "REL32"
+symbol = "?QueryEntry@ProgressArchiveF203@@QAEEH@Z"
+target = 0x00416DC0
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 543
+type = "DIR32"
+symbol = "$L319"
+target = 0x0041A0C3
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 583
+type = "DIR32"
+symbol = "?g_ProgressArchiveAt006718F8@@3VProgressArchiveF203@@A"
+target = 0x006718F8
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 588
+type = "REL32"
+symbol = "?QueryEntry@ProgressArchiveF203@@QAEEH@Z"
+target = 0x00416DC0
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 607
+type = "DIR32"
+symbol = "?g_ProgressArchiveAt006718F8@@3VProgressArchiveF203@@A"
+target = 0x006718F8
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 612
+type = "REL32"
+symbol = "?QueryEntry@ProgressArchiveF203@@QAEEH@Z"
+target = 0x00416DC0
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 622
+type = "DIR32"
+symbol = "?g_ProgressArchiveAt006718F8@@3VProgressArchiveF203@@A"
+target = 0x006718F8
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 627
+type = "REL32"
+symbol = "?QueryEntry@ProgressArchiveF203@@QAEEH@Z"
+target = 0x00416DC0
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 644
+type = "DIR32"
+symbol = "?g_ProgressArchiveAt006718F8@@3VProgressArchiveF203@@A"
+target = 0x006718F8
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 649
+type = "REL32"
+symbol = "?QueryEntry@ProgressArchiveF203@@QAEEH@Z"
+target = 0x00416DC0
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 671
+type = "DIR32"
+symbol = "$L289"
+target = 0x00419E4C
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 675
+type = "DIR32"
+symbol = "$L290"
+target = 0x00419F03
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 679
+type = "DIR32"
+symbol = "$L291"
+target = 0x00419F80
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 683
+type = "DIR32"
+symbol = "$L295"
+target = 0x00419FD3
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 687
+type = "DIR32"
+symbol = "$L295"
+target = 0x00419FD3
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 691
+type = "DIR32"
+symbol = "$L304"
+target = 0x0041A033
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 695
+type = "DIR32"
+symbol = "$L304"
+target = 0x0041A033
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 699
+type = "DIR32"
+symbol = "$L308"
+target = 0x0041A06C
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 703
+type = "DIR32"
+symbol = "$L309"
+target = 0x0041A091
+[[units.game-progress-check-selection-00419e10.relocations]]
+offset = 707
+type = "DIR32"
+symbol = "$L310"
+target = 0x0041A0A2

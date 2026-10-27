@@ -510,3 +510,4 @@ TextureManager::AllocateUnformattedSlots
 TextureManager::ReleaseResources
 GameState::SaveSnapshot
 GameState::RestoreFromSnapshot
+GameProgress::CheckSelectionAt00419E10

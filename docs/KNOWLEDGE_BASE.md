@@ -36,6 +36,8 @@ writer, preserving all 131 actual relocations and four game-mode branches.
 F202 cold-accepts the reciprocal 880-byte snapshot restoration and its
 129 actual fields; an extra unregistered dirty source is preserved privately
 and never counted twice.
+F203 cold-accepts the 671-byte progress selection with two owned 20-byte
+switch tables and all 56 relocations exact (711 compared bytes).
 F189 was an earlier noncredit investigation superseded by F196 exact.
 The original H184 handoff was historical and is superseded by the current
 request. Earlier experiments and names remain hypotheses until tested.
@@ -46,9 +48,9 @@ See the current [handoff](RE_HANDOFF.md) for current status.
 - Supplied Japanese th075.exe 1.11, SHA-256
   `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
   Archive identity is pinned; official distribution provenance is uncorroborated.
-- **512 exact functions/units, 759,705 CODE bytes, 184 canonical objects,
-  289 accepted source-header inputs.** Reviewed coverage is 38.50%; conservative
-  coverage is 38.42%, including all 97 unknown origins/3,608 pending bytes.
+- **513 exact functions/units, 760,376 CODE bytes, 185 canonical objects,
+  290 accepted source-header inputs.** Reviewed coverage is 38.53%; conservative
+  coverage is 38.46%, including all 97 unknown origins/3,608 pending bytes.
 - Ownership, source presence, names, Ghidra types, compilation and reproducible
   exactness remain distinct. Read ledgers and relevant origin evidence before
   relying on any classification or provisional boundary.
@@ -497,6 +499,30 @@ rather than accepted as another function. The canonical source
 `912672914ecd95390aecd06a8f8db9ddf80af74f5c4f591805f36888cdfccecc`)
 remains the only new source for this unit. Original names, source
 ownership and R108 base constructor classification remain provisional.
+
+## F203: exact switch-backed progress completion policy
+
+The authored `GameProgress::CheckSelectionAt00419E10` has 671 native CODE
+bytes and two contiguous original five-entry jump tables totaling 40 bytes.
+The pinned target contains 202 decoded native instructions with body SHA256
+`997d651510426c6dbac11ce4a66f06e2ab20505bcdcf71c3808f026295031b3d`,
+and the owned 40-byte table SHA256
+`519277b311148216fcb966bd52b680855633a07c101494aa1a2a88fa31588d55`.
+Fresh VC7.1 /GX- source cold-replays **711/711 compared bytes** with all
+**56 actual COFF relocations** (46 inside code, ten owned table label
+words). CODE credit is limited to 671 bytes.
+
+The natural source has signed char selector inputs, unsigned byte result,
+two separate switch policies, nonshortcircuit bitwise OR/AND combinations
+of the original progress archive queries and two six-element loops.
+The target queries progress records through an *uninstantiated borrowed*
+`0x006718F8` receiver with callee `0x00416DC0`, not a guessed complete
+game record owner. Initial compound assignment source gave correct size
+but wrong intermediate register evaluation order, 250/487 comparable bytes.
+Explicit ordinary accumulator expressions load the old flag before
+evaluating query calls and reproduce the exact EBX/ESI/EDX sequence.
+No fake results, padding, shortened switch table or borrowed helper/data
+credit were introduced.
 
 ## Retained failures and method boundaries
 

@@ -26,9 +26,9 @@ This pins the supplied sample; its official distribution provenance has not
 been independently corroborated. The localized `th075c.exe` has a different
 identity and cannot substitute for the target.
 
-The current checkpoint has **512 exact functions / 759,705 code bytes** from
-4,351 provisional candidates. Reviewed authored coverage is 38.50%; conservative
-coverage, including all 3,608 pending bytes, is **38.42%**. The objective of
+The current checkpoint has **513 exact functions / 760,376 code bytes** from
+4,351 provisional candidates. Reviewed authored coverage is 38.53%; conservative
+coverage, including all 3,608 pending bytes, is **38.46%**. The objective of
 98% authored bytes exact remains incomplete. At R268, 1,002 authored, 2,671
 library and 581 compiler-generated candidates are classified; 97 remain unknown.
 Unknown origins receive no exact credit. Candidate count does not establish
@@ -118,6 +118,11 @@ against the original 904-byte F201 save path. The original complete record
 class/storage layout is still unknown. An extra untracked alternative source
 was investigated and preserved byte-for-byte privately without granting
 duplicate credit.
+F203 cold-reconstructed the whole 671-byte game progress selection
+policy and both adjacent native five-entry switch tables (40 bytes).
+All 711 compared bytes and 56 actual fields, including ten local
+jump-table targets, matched. The original bitwise accumulator evaluation
+order was established through rejected compound-assignment controls.
 The 98% target is still incomplete.
 See the [current reconstruction handoff](docs/RE_HANDOFF.md); the preceding H184
 handoff is preserved there as historical context.
