@@ -513,3 +513,4 @@ GameState::RestoreFromSnapshot
 GameProgress::CheckSelectionAt00419E10
 Music::PlayTrackByIndex
 AudioStream::ScheduleTransitionFadeAt00419DF0
+TextureManager::LoadBitmapDirectory

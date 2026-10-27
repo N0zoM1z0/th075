@@ -35534,3 +35534,157 @@ offset = 18
 type = "REL32"
 symbol = "?ScheduleFade@AudioFadeF205@@YAXJJEE@Z"
 target = 0x00407E60
+
+[units.texture-load-bitmap-directory-0040b280]
+source = "src/BitmapDirectoryF206.cpp"
+object = "build/matching/BitmapDirectoryF206.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["TextureManager::LoadBitmapDirectory"]
+symbol = "?LoadBitmapDirectory@TextureManagerF206@@QAEXPBD@Z"
+target_address = 0x0040B280
+size = 727
+[[units.texture-load-bitmap-directory-0040b280.relocations]]
+offset = 10
+type = "DIR32"
+symbol = "___security_cookie"
+target = 0x0066FE30
+[[units.texture-load-bitmap-directory-0040b280.relocations]]
+offset = 33
+type = "REL32"
+symbol = "?Size@BitmapEntriesF206@@QAEHXZ"
+target = 0x0040DD20
+[[units.texture-load-bitmap-directory-0040b280.relocations]]
+offset = 105
+type = "REL32"
+symbol = "?At@BitmapEntriesF206@@QAEPAEH@Z"
+target = 0x0040DD60
+[[units.texture-load-bitmap-directory-0040b280.relocations]]
+offset = 137
+type = "REL32"
+symbol = "?At@BitmapEntriesF206@@QAEPAEH@Z"
+target = 0x0040DD60
+[[units.texture-load-bitmap-directory-0040b280.relocations]]
+offset = 165
+type = "DIR32"
+symbol = "?g_BitmapFormatAt006577F4@@3QBDB"
+target = 0x006577F4
+[[units.texture-load-bitmap-directory-0040b280.relocations]]
+offset = 177
+type = "REL32"
+symbol = "_sprintf"
+target = 0x006404F0
+[[units.texture-load-bitmap-directory-0040b280.relocations]]
+offset = 208
+type = "REL32"
+symbol = "?At@BitmapEntriesF206@@QAEPAEH@Z"
+target = 0x0040DD60
+[[units.texture-load-bitmap-directory-0040b280.relocations]]
+offset = 215
+type = "REL32"
+symbol = "?LoadFile@BitmapEntryF206@@QAE_NPBD@Z"
+target = 0x0041A3D0
+[[units.texture-load-bitmap-directory-0040b280.relocations]]
+offset = 247
+type = "REL32"
+symbol = "?At@BitmapEntriesF206@@QAEPAEH@Z"
+target = 0x0040DD60
+[[units.texture-load-bitmap-directory-0040b280.relocations]]
+offset = 281
+type = "REL32"
+symbol = "?At@BitmapEntriesF206@@QAEPAEH@Z"
+target = 0x0040DD60
+[[units.texture-load-bitmap-directory-0040b280.relocations]]
+offset = 311
+type = "REL32"
+symbol = "?At@BitmapEntriesF206@@QAEPAEH@Z"
+target = 0x0040DD60
+[[units.texture-load-bitmap-directory-0040b280.relocations]]
+offset = 338
+type = "REL32"
+symbol = "?At@BitmapEntriesF206@@QAEPAEH@Z"
+target = 0x0040DD60
+[[units.texture-load-bitmap-directory-0040b280.relocations]]
+offset = 365
+type = "REL32"
+symbol = "?At@BitmapEntriesF206@@QAEPAEH@Z"
+target = 0x0040DD60
+[[units.texture-load-bitmap-directory-0040b280.relocations]]
+offset = 390
+type = "REL32"
+symbol = "?At@BitmapEntriesF206@@QAEPAEH@Z"
+target = 0x0040DD60
+[[units.texture-load-bitmap-directory-0040b280.relocations]]
+offset = 397
+type = "REL32"
+symbol = "?EncodeIndexedPalette@BitmapEntryF206@@QAEXXZ"
+target = 0x0041B400
+[[units.texture-load-bitmap-directory-0040b280.relocations]]
+offset = 423
+type = "REL32"
+symbol = "?At@BitmapEntriesF206@@QAEPAEH@Z"
+target = 0x0040DD60
+[[units.texture-load-bitmap-directory-0040b280.relocations]]
+offset = 448
+type = "REL32"
+symbol = "?At@BitmapHandlesF206@@QAEPAPAUIDirect3DTexture8@@H@Z"
+target = 0x0040DEE0
+[[units.texture-load-bitmap-directory-0040b280.relocations]]
+offset = 470
+type = "REL32"
+symbol = "?At@BitmapEntriesF206@@QAEPAEH@Z"
+target = 0x0040DD60
+[[units.texture-load-bitmap-directory-0040b280.relocations]]
+offset = 496
+type = "REL32"
+symbol = "?At@BitmapEntriesF206@@QAEPAEH@Z"
+target = 0x0040DD60
+[[units.texture-load-bitmap-directory-0040b280.relocations]]
+offset = 506
+type = "REL32"
+symbol = "?Create16BitTexture@Graphics@@YA_NGGPAPAUIDirect3DTexture8@@@Z"
+target = 0x00401B20
+[[units.texture-load-bitmap-directory-0040b280.relocations]]
+offset = 527
+type = "REL32"
+symbol = "?Refresh@TextureManagerF206@@QAEXH@Z"
+target = 0x0040C590
+[[units.texture-load-bitmap-directory-0040b280.relocations]]
+offset = 548
+type = "REL32"
+symbol = "?At@BitmapEntriesF206@@QAEPAEH@Z"
+target = 0x0040DD60
+[[units.texture-load-bitmap-directory-0040b280.relocations]]
+offset = 569
+type = "REL32"
+symbol = "_free"
+target = 0x0064169D
+[[units.texture-load-bitmap-directory-0040b280.relocations]]
+offset = 593
+type = "REL32"
+symbol = "?At@BitmapEntriesF206@@QAEPAEH@Z"
+target = 0x0040DD60
+[[units.texture-load-bitmap-directory-0040b280.relocations]]
+offset = 623
+type = "REL32"
+symbol = "?End@BitmapEntriesF206@@QAE?AVBitmapIteratorF206@@XZ"
+target = 0x0040DD00
+[[units.texture-load-bitmap-directory-0040b280.relocations]]
+offset = 661
+type = "REL32"
+symbol = "?Begin@BitmapEntriesF206@@QAE?AVBitmapIteratorF206@@XZ"
+target = 0x0040DCE0
+[[units.texture-load-bitmap-directory-0040b280.relocations]]
+offset = 668
+type = "REL32"
+symbol = "??HBitmapIteratorF206@@QBE?AV0@H@Z"
+target = 0x0040DFD0
+[[units.texture-load-bitmap-directory-0040b280.relocations]]
+offset = 692
+type = "REL32"
+symbol = "?Erase@BitmapEntriesF206@@QAE?AVBitmapIteratorF206@@V2@0@Z"
+target = 0x0040DDC0
+[[units.texture-load-bitmap-directory-0040b280.relocations]]
+offset = 717
+type = "REL32"
+symbol = "@__security_check_cookie@4"
+target = 0x00640611

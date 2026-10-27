@@ -40,6 +40,8 @@ F203 cold-accepts the 671-byte progress selection with two owned 20-byte
 switch tables and all 56 relocations exact (711 compared bytes).
 F204 cold-accepts the 318-byte wave track selector (22 fields); F205
 cold-accepts the 27-byte transition fade call wrapper (one field).
+F206 cold-accepts the complete 727-byte bitmap directory loader with
+29 fields and original STL iterator erase on the failed-load path.
 F189 was an earlier noncredit investigation superseded by F196 exact.
 The original H184 handoff was historical and is superseded by the current
 request. Earlier experiments and names remain hypotheses until tested.
@@ -50,9 +52,9 @@ See the current [handoff](RE_HANDOFF.md) for current status.
 - Supplied Japanese th075.exe 1.11, SHA-256
   `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
   Archive identity is pinned; official distribution provenance is uncorroborated.
-- **515 exact functions/units, 760,721 CODE bytes, 187 canonical objects,
-  292 accepted source-header inputs.** Reviewed coverage is 38.55%; conservative
-  coverage is 38.48%, including all 97 unknown origins/3,608 pending bytes.
+- **516 exact functions/units, 761,448 CODE bytes, 188 canonical objects,
+  293 accepted source-header inputs.** Reviewed coverage is 38.58%; conservative
+  coverage is 38.51%, including all 97 unknown origins/3,608 pending bytes.
 - Ownership, source presence, names, Ghidra types, compilation and reproducible
   exactness remain distinct. Read ledgers and relevant origin evidence before
   relying on any classification or provisional boundary.
@@ -552,6 +554,32 @@ to target 0x00407E60. It separately cold-replays 27/27 exact with
 one actual call relocation and no owner-layout claim. Both F204
 and F205 were rebuilt together and the existing 97 unknown origins
 remain uncredited.
+
+## F206: exact 727-byte texture bitmap-directory loading
+
+The complete authored TextureManager::LoadBitmapDirectory at 0040B280
+is 727 native CODE bytes, 180 whole x86 instructions, native RET4 and
+29 real COFF fields. The body SHA256 is
+10539410fb282c0cc58270dc9360a7a11a87d748e519631a2b62c41848b374cc.
+An independent pinned VC7.1 /GX- cold build compares all 727 bytes
+and all 29 actual relocations exactly.
+
+The source preserves the real bitmap file naming, loaded bitmap
+texture sizing, optional indexed palette encoding, sixteen-bit
+texture allocation, refresh and memory release. Unlike an earlier
+576-byte probe, the failure branch uses native STL vector iterator
+objects and end, begin plus index, and erase calls. A 645-byte
+natural iterator probe already matched the entire instruction count
+but used shorter EBP displacements for two meaningful scalar locals.
+Organizing the genuine filename buffer, index and total in a local
+working record yielded the native 0x130 stack frame and full match.
+Both 260 and 264 byte buffers produce identical exact native output,
+so original source array length is not asserted. The native program
+compares the same height field against 64 twice; no unproven
+width-check correction was introduced. STL/CRT helpers and external
+data do not earn extra byte credit, and original owner class
+identities remain provisional. Rejected probes and native disassembly
+are preserved in .analysis/f206-bitmap-directory/.
 
 ## Retained failures and method boundaries
 

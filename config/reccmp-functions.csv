@@ -514,3 +514,4 @@ GameState::RestoreFromSnapshot,0x004195B0,function
 GameProgress::CheckSelectionAt00419E10,0x00419E10,function
 Music::PlayTrackByIndex,0x00419CB0,function
 AudioStream::ScheduleTransitionFadeAt00419DF0,0x00419DF0,function
+TextureManager::LoadBitmapDirectory,0x0040B280,function

@@ -1,4 +1,4 @@
-# TH075 active reconstruction status — F205
+# TH075 active reconstruction status — F206
 
 Updated 2026-10-27. The user explicitly resumed reconstruction and requires
 serious treatment of both large/core and small/leaf functions; all historical
@@ -479,10 +479,43 @@ callee ownership is asserted. Both new units were rebuilt together:
 **345 exact authored CODE bytes / 23 actual fields, 2/2 cold exact**.
 All previous accepted units and 97 pending origins remain untouched.
 
-Current ledger: **515 exact functions, 760,721 CODE bytes / 1,973,516 reviewed
-authored bytes = 38.55%**, conservative 38.48% with 3,608 unknown-origin bytes
-retained. F184..F205 (excluding exploratory-only numbers) added twenty-two accepted units,
-twenty-one objects and twenty-four new source/header inputs.
+F206 independently cold-reconstructed the formerly difficult large
+TextureManager::LoadBitmapDirectory at address 0040B280: full
+727 native CODE bytes, 180 x86 instructions, 29 actual DIR32/REL32
+relocations, one RET4 and following INT3 alignment. Native SHA256:
+10539410fb282c0cc58270dc9360a7a11a87d748e519631a2b62c41848b374cc.
+Fresh /GX- cold replay matches all 727 bytes and every physical field;
+no target bytes or relocation fields were masked/cropped.
+
+Native game-authored control flow constructs the bitmap filename,
+initializes actual indexed records at this+8, loads bitmaps,
+chooses palette encode or creates/refreshes/frees 16-bit textures,
+and on failed load calls the real VC7 STL end(), begin()+index,
+and erase(begin()+index,end()) helpers before setting total=index.
+The target repeats the height>64 check in both OR arms; this
+was preserved exactly, not silently corrected to guessed intent.
+All STL helper methods remain imported library dependencies with
+no independent authored exact-byte credit.
+
+A private initial ordinary source returned only 576 bytes by
+replacing the STL iterator protocol with a guessed RemoveAt().
+Restoring the natural four-byte iterator protocol produced exactly
+180 instructions but just 645 bytes because the meaningful index
+and total scalar locals were placed near EBP and encoded with short
+displacements. A real local work record containing int index,
+int total and char filename[260] reproduces the native stack
+allocation 0x130 and true variable offsets EBP-0x118/-0x114/-0x110.
+A 264-byte buffer also emits the same exact native machine code:
+the precise original nominal declaration remains unknown.
+Private compiler variant diagnostics and full native disassembly
+are preserved under .analysis/f206-bitmap-directory/. Original
+C++ vector element types, iterator and texture owner class names,
+and data/helper/library authorship are not claimed.
+
+Current ledger: **516 exact functions, 761,448 CODE bytes / 1,973,516 reviewed
+authored bytes = 38.58%**, conservative 38.51% with 3,608 unknown-origin bytes
+retained. F184..F206 (excluding exploratory-only numbers) added twenty-three accepted units,
+twenty-two objects and twenty-five new source/header inputs.
 Keep R268 origin evidence, all 97 unknown candidates, 493 pre-F184
 accepted units and protected private F184/F185 preview/drafts intact.
 

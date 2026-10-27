@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "3ec35c121dbd8f796783c0a394f4e4b1db88b0d7bb1b4f68691079afb6b21ea6"
+      "current_sha256": "4ea2b50423e40cb358c9b38d11738f32db30836abc881b10b984d2a0c08f19d4"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "39d2e4cfc97c441f6de8ba499afa46d1bda1a3b5d8ded5dc43b846b622b77ad9"
+      "current_sha256": "b240137b3c53dcddc1c835567afabda86ddf59320cc922896fad628da6ab881f"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "4f49067d2624575ce2d72e0c13faa433f23b4f2a625ba918ad33bf98514d1633"
+      "current_sha256": "d8a00362f3b94c7fc3ef076ed442dd888709b173a6c681f3b0aca7e706e8877d"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "131f7c99d6941b6c0c35c75f65cb681e72e96b261d9e65735ff846e5a45d5889"
+      "current_sha256": "6c5e68ef347eb7cc76603799102dbe64f736d50a5144b0249e306db5d4044560"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "29dc4826be38efb6f820bf978e67b2bf547161453787d73a8246b30e436afbc6"
+      "current_sha256": "ea3dc68a10bd2443cb2fe93fdd80478ab7676d1651f6ccdb46f618db4d810c3b"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -20060,6 +20060,50 @@
         "disposition": "authored",
         "confidence": "complete-game-policy-with-batch-context",
         "evidence_id": "R102"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0040B280",
+        "size": "727",
+        "span_end": "0x0040B556",
+        "current_name": "FUN_0040b280",
+        "proposed_name": "TextureManager::LoadBitmapDirectory",
+        "module": "TextureManager",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R019",
+        "owner": "",
+        "notes": "R019; custom texture directory/pack/palette serialization and upload policy; complete target CFG; original ABI/name and owner layout unresolved; origin only, no source or exact credit."
+      },
+      "after": {
+        "address": "0x0040B280",
+        "size": "727",
+        "span_end": "0x0040B556",
+        "current_name": "FUN_0040b280",
+        "proposed_name": "TextureManager::LoadBitmapDirectory",
+        "module": "TextureManager",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void TextureManagerF206::LoadBitmapDirectory(const char*)",
+        "is_thunk": "false",
+        "source_file": "src/BitmapDirectoryF206.cpp",
+        "evidence": "R019; F206; scripts/repo-python scripts/replay-exact-units.py --unit texture-load-bitmap-directory-0040b280",
+        "owner": "authored",
+        "notes": "R019; custom texture directory/pack/palette serialization and upload policy; complete target CFG; original ABI/name and owner layout unresolved; origin only, no source or exact credit.; F206: complete authored native 727 CODE bytes /180 x86 instructions, plain RET4 at 0040B554 with INT3 alignment, original SHA256 10539410fb282c0cc58270dc9360a7a11a87d748e519631a2b62c41848b374cc. Fresh pinned VC7.1 /GX- cold replay exact all 727 actual CODE bytes and 29 COFF DIR32/REL32 fields, real /GS stack cookie and native 0x130 frame. Full loop includes physical +8 texture-entry vector Size/At, +0x4C depth/+4 state initialization, original %s\\%04d.bmp filename format, actual loaded bitmap branch with 0x100 size checks and two repeated 0x40 dimension checks, indexed-color encode vs real Graphics::Create16BitTexture / palette refresh / buffer free/null; failed file path uses original VC7 std::vector::end(), begin()+index, erase(begin+index,end()) iterator return and changes total=index exactly. Native vector temporary/copy/erase calls are preserved as meaningful 4-byte iterator and 260-byte actual pathname/counters work-record storage; different 260/264 source buffer sizes both produce identical byte code and original nominal buffer size remains unproved. Earlier 576-byte initial pointer-only erase guess omitted genuine iterator machinery; 645-byte iterator attempt had scalars allocated near EBP and emitted shorter displacement opcodes. A meaningful local struct [int index,int total,char filename[260]] restores native EBP-0x118/-0x114/-0x110 storage and exact 727 bytes, avoiding fabricated dummy locals/ASM/padding/masks. Original vector element/iterator types and complete owner naming remain provisional, no extra helper/STL/bitmap/graphics/CRT bytes or data credit; all 515 previously accepted units/97 unresolved origins preserved."
+      },
+      "origin": {
+        "address": "0x0040B280",
+        "origin": "authored",
+        "subsystem": "TextureManager",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R019"
       }
     }
   ],
@@ -162799,6 +162843,203 @@
           "target": 4226656
         }
       ]
+    },
+    "texture-load-bitmap-directory-0040b280": {
+      "source": "src/BitmapDirectoryF206.cpp",
+      "object": "build/matching/BitmapDirectoryF206.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "TextureManager::LoadBitmapDirectory"
+      ],
+      "symbol": "?LoadBitmapDirectory@TextureManagerF206@@QAEXPBD@Z",
+      "target_address": 4240000,
+      "size": 727,
+      "relocations": [
+        {
+          "offset": 10,
+          "type": "DIR32",
+          "symbol": "___security_cookie",
+          "target": 6749744
+        },
+        {
+          "offset": 33,
+          "type": "REL32",
+          "symbol": "?Size@BitmapEntriesF206@@QAEHXZ",
+          "target": 4250912
+        },
+        {
+          "offset": 105,
+          "type": "REL32",
+          "symbol": "?At@BitmapEntriesF206@@QAEPAEH@Z",
+          "target": 4250976
+        },
+        {
+          "offset": 137,
+          "type": "REL32",
+          "symbol": "?At@BitmapEntriesF206@@QAEPAEH@Z",
+          "target": 4250976
+        },
+        {
+          "offset": 165,
+          "type": "DIR32",
+          "symbol": "?g_BitmapFormatAt006577F4@@3QBDB",
+          "target": 6649844
+        },
+        {
+          "offset": 177,
+          "type": "REL32",
+          "symbol": "_sprintf",
+          "target": 6554864
+        },
+        {
+          "offset": 208,
+          "type": "REL32",
+          "symbol": "?At@BitmapEntriesF206@@QAEPAEH@Z",
+          "target": 4250976
+        },
+        {
+          "offset": 215,
+          "type": "REL32",
+          "symbol": "?LoadFile@BitmapEntryF206@@QAE_NPBD@Z",
+          "target": 4301776
+        },
+        {
+          "offset": 247,
+          "type": "REL32",
+          "symbol": "?At@BitmapEntriesF206@@QAEPAEH@Z",
+          "target": 4250976
+        },
+        {
+          "offset": 281,
+          "type": "REL32",
+          "symbol": "?At@BitmapEntriesF206@@QAEPAEH@Z",
+          "target": 4250976
+        },
+        {
+          "offset": 311,
+          "type": "REL32",
+          "symbol": "?At@BitmapEntriesF206@@QAEPAEH@Z",
+          "target": 4250976
+        },
+        {
+          "offset": 338,
+          "type": "REL32",
+          "symbol": "?At@BitmapEntriesF206@@QAEPAEH@Z",
+          "target": 4250976
+        },
+        {
+          "offset": 365,
+          "type": "REL32",
+          "symbol": "?At@BitmapEntriesF206@@QAEPAEH@Z",
+          "target": 4250976
+        },
+        {
+          "offset": 390,
+          "type": "REL32",
+          "symbol": "?At@BitmapEntriesF206@@QAEPAEH@Z",
+          "target": 4250976
+        },
+        {
+          "offset": 397,
+          "type": "REL32",
+          "symbol": "?EncodeIndexedPalette@BitmapEntryF206@@QAEXXZ",
+          "target": 4305920
+        },
+        {
+          "offset": 423,
+          "type": "REL32",
+          "symbol": "?At@BitmapEntriesF206@@QAEPAEH@Z",
+          "target": 4250976
+        },
+        {
+          "offset": 448,
+          "type": "REL32",
+          "symbol": "?At@BitmapHandlesF206@@QAEPAPAUIDirect3DTexture8@@H@Z",
+          "target": 4251360
+        },
+        {
+          "offset": 470,
+          "type": "REL32",
+          "symbol": "?At@BitmapEntriesF206@@QAEPAEH@Z",
+          "target": 4250976
+        },
+        {
+          "offset": 496,
+          "type": "REL32",
+          "symbol": "?At@BitmapEntriesF206@@QAEPAEH@Z",
+          "target": 4250976
+        },
+        {
+          "offset": 506,
+          "type": "REL32",
+          "symbol": "?Create16BitTexture@Graphics@@YA_NGGPAPAUIDirect3DTexture8@@@Z",
+          "target": 4201248
+        },
+        {
+          "offset": 527,
+          "type": "REL32",
+          "symbol": "?Refresh@TextureManagerF206@@QAEXH@Z",
+          "target": 4244880
+        },
+        {
+          "offset": 548,
+          "type": "REL32",
+          "symbol": "?At@BitmapEntriesF206@@QAEPAEH@Z",
+          "target": 4250976
+        },
+        {
+          "offset": 569,
+          "type": "REL32",
+          "symbol": "_free",
+          "target": 6559389
+        },
+        {
+          "offset": 593,
+          "type": "REL32",
+          "symbol": "?At@BitmapEntriesF206@@QAEPAEH@Z",
+          "target": 4250976
+        },
+        {
+          "offset": 623,
+          "type": "REL32",
+          "symbol": "?End@BitmapEntriesF206@@QAE?AVBitmapIteratorF206@@XZ",
+          "target": 4250880
+        },
+        {
+          "offset": 661,
+          "type": "REL32",
+          "symbol": "?Begin@BitmapEntriesF206@@QAE?AVBitmapIteratorF206@@XZ",
+          "target": 4250848
+        },
+        {
+          "offset": 668,
+          "type": "REL32",
+          "symbol": "??HBitmapIteratorF206@@QBE?AV0@H@Z",
+          "target": 4251600
+        },
+        {
+          "offset": 692,
+          "type": "REL32",
+          "symbol": "?Erase@BitmapEntriesF206@@QAE?AVBitmapIteratorF206@@V2@0@Z",
+          "target": 4251072
+        },
+        {
+          "offset": 717,
+          "type": "REL32",
+          "symbol": "@__security_check_cookie@4",
+          "target": 6555153
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -163093,6 +163334,7 @@
     "src/GameStateRestoreF202.cpp": "912672914ecd95390aecd06a8f8db9ddf80af74f5c4f591805f36888cdfccecc",
     "src/ProgressSelectionF203.cpp": "9bdc49a6a6680308336c90966e8a03713a8cd5746850c59fb2ffd514ab2c5c01",
     "src/MusicPlayF204.cpp": "bbceb74c7cb2378dd3d571c18206cdc3244e3b9b4c3340ac1719d0705e6e754b",
-    "src/MusicFadeF205.cpp": "2b25f9eaa6b232bc859f6892c99ca38d0d95cb3b54dd7d6091d1acd1405a82c4"
+    "src/MusicFadeF205.cpp": "2b25f9eaa6b232bc859f6892c99ca38d0d95cb3b54dd7d6091d1acd1405a82c4",
+    "src/BitmapDirectoryF206.cpp": "bf178a70ac1d275432811d9ee72ea1ddf45e91fced8cfd77015632101625c9f6"
   }
 }

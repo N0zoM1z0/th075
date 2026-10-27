@@ -496,3 +496,4 @@ address,name,module,confidence,evidence
 0x00419E10,GameProgress::CheckSelectionAt00419E10,GameProgress,inferred,F203; whole 671 CODE and owned 40-byte switch tables cold exact including 56 fields; original class/record layout unproven
 0x00419CB0,Music::PlayTrackByIndex,Music,inferred,F204/F205; full 318-byte cold exact; original names/borrowed owner identities provisional
 0x00419DF0,AudioStream::ScheduleTransitionFadeAt00419DF0,AudioStream,inferred,F204/F205; full 27-byte cold exact; original names/borrowed owner identities provisional
+0x0040B280,TextureManager::LoadBitmapDirectory,TextureManager,inferred,F206; whole 727-byte texture bitmap directory loading cold exact; native STL iterator failure erase fully retained; complete original class identity unproven
