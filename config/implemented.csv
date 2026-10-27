@@ -502,3 +502,4 @@ MusicRoomScene::RenderSelectedDetails
 SceneBase::ReleaseGameGlobalsAt00431F40
 GameGlobals::Initialize
 GameConfig::LoadIni
+GameGlobals::Release

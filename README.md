@@ -26,9 +26,9 @@ This pins the supplied sample; its official distribution provenance has not
 been independently corroborated. The localized `th075c.exe` has a different
 identity and cannot substitute for the target.
 
-The current checkpoint has **504 exact functions / 755,467 code bytes** from
-4,351 provisional candidates. Reviewed authored coverage is 38.28%; conservative
-coverage, including all 3,608 pending bytes, is **38.21%**. The objective of
+The current checkpoint has **505 exact functions / 755,825 code bytes** from
+4,351 provisional candidates. Reviewed authored coverage is 38.30%; conservative
+coverage, including all 3,608 pending bytes, is **38.23%**. The objective of
 98% authored bytes exact remains incomplete. At R268, 1,002 authored, 2,671
 library and 581 compiler-generated candidates are classified; 97 remain unknown.
 Unknown origins receive no exact credit. Candidate count does not establish
@@ -82,6 +82,10 @@ by F193 with all 27 import/data fields. Multiple genuine local-name/order
 controls proved that correct code size alone does not ensure correct stack
 references; the adopted natural-source read counter restores native EBP
 assignments. No credits were granted for borrowed settings storage.
+F195 cold-reconstructed the entire 358-byte global cleanup, retaining
+virtual destruction of three borrowed game objects, three generated scalar
+deleting destructor call targets, audio playback clearing and reference-count
+gating without fabricating complete original owner layouts.
 The 98% target is still incomplete.
 See the [current reconstruction handoff](docs/RE_HANDOFF.md); the preceding H184
 handoff is preserved there as historical context.

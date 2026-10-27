@@ -485,3 +485,4 @@ address,name,module,confidence,evidence
 0x00431F40,SceneBase::ReleaseGameGlobalsAt00431F40,SceneBase,inferred,F192; exact 31-byte destructor/2 fields; 004251C0 related constructor remains origin-unknown R108
 0x00417210,GameGlobals::Initialize,GameGlobals,inferred,F193; whole 531-byte globals defaults cold exact; original global layout and class identity unproven
 0x004192F0,GameConfig::LoadIni,GameConfig,inferred,F194; complete 339-byte Win32 settings read cold exact; original global-data ownership unknown
+0x00417430,GameGlobals::Release,GameGlobals,inferred,F195; full 358-byte global cleanup policy cold exact; original owner classes unknown

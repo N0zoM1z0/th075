@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "3d25457bd9f61a5011ff10b000ff5335c7c2ec9550e07ebf315349d25c2bb48a"
+      "current_sha256": "b410ad276825959135620644af15051f8f5cd7010e0dc56d039901aa6f1f1119"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "ffc10ead436dc7e8e4827165e9e67842ad67e394b7705bae92314c9feb6df29e"
+      "current_sha256": "60d3021c525c67a3c131744de29997e4967f8a27407c6e8f8be22dfd8bfecc0b"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "6cfb95fd384f8fe64c635d15c5565ecedf3f6e74ba32095fc495acecdfdde62d"
+      "current_sha256": "9040fe77e1e669ad6daa26e8072ed223985087c912eac2f9b174ac3da41e97cb"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "861e9a77361548b47b330a7cc327202e3115613da866549f09c6f58feade5f0f"
+      "current_sha256": "2624d8e9b70c9678c5934bc206b8cc0d3adb1c53c834949fe3f4036f2d607120"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "d5ba286248644c1167ff95663e6598b089727bf8f21ec6ff20f5ce507156c9c0"
+      "current_sha256": "2ebf586eeb3692f71e6e762e4043a869f1b5450a63b81a5c68f958ea2c156657"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -19573,6 +19573,50 @@
         "address": "0x004192F0",
         "origin": "authored",
         "subsystem": "GameConfig",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R052"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00417430",
+        "size": "358",
+        "span_end": "0x00417595",
+        "current_name": "FUN_00417430",
+        "proposed_name": "GameGlobals::Release",
+        "module": "GameGlobals",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R052; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00417430",
+        "size": "358",
+        "span_end": "0x00417595",
+        "current_name": "FUN_00417430",
+        "proposed_name": "GameGlobals::Release",
+        "module": "GameGlobals",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void GameGlobalsReleaseF195::Release()",
+        "is_thunk": "false",
+        "source_file": "src/GameGlobalsReleaseF195.cpp",
+        "evidence": "R052; full body hash, complete decoded CFG and local game-specific behavior reviewed; F195; scripts/repo-python scripts/replay-exact-units.py --unit game-globals-release-00417430",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F195: Complete 358 native CODE bytes/99 decoded instructions ending RET, target SHA256 238163545e5867e5869753fed589643a52634d8107f9fe11486a58a42bd6016b; 18 real DIR32/REL32 relocation fields canonical VC7.1 cold-exact. Native reference counter--, cleanup conditional only at zero, three borrowed vtable dispatch deletes including slot20 for two actors and slot0 for third, null stores after actual deletion, canonical stream ClearPlayback, and three separate scalar-deleting destructor references 41A110/41A140/41A170. Explicit pointer-only destructor contracts naturally emit all native return/null paths and stack scratch without defining or instantiating any complete heap owner, fake locals, masks, padding, ABI overrides or assembly. GameDefaults 417210 constructor remains separately accepted; R108 4251C0 implicit-vs-authored constructor still unknown/uncredited. No compiler destructor/helper or global-data byte credit. All prior 504 functions and 97 unknown origin records untouched."
+      },
+      "origin": {
+        "address": "0x00417430",
+        "origin": "authored",
+        "subsystem": "GameGlobals",
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R052"
@@ -159313,6 +159357,137 @@
           "target": 6648120
         }
       ]
+    },
+    "game-globals-release-00417430": {
+      "source": "src/GameGlobalsReleaseF195.cpp",
+      "object": "build/matching/GameGlobalsReleaseF195.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "GameGlobals::Release"
+      ],
+      "symbol": "?Release@GameGlobalsReleaseF195@@QAEXXZ",
+      "target_address": 4289584,
+      "size": 358,
+      "relocations": [
+        {
+          "offset": 10,
+          "type": "DIR32",
+          "symbol": "?g_GameDefaultsUseCountAt00671614@@3IA",
+          "target": 6755860
+        },
+        {
+          "offset": 18,
+          "type": "DIR32",
+          "symbol": "?g_GameDefaultsUseCountAt00671614@@3IA",
+          "target": 6755860
+        },
+        {
+          "offset": 30,
+          "type": "DIR32",
+          "symbol": "?g_CombatActorAAt00671418@@3PAVSceneCombatActorF195@@A",
+          "target": 6755352
+        },
+        {
+          "offset": 39,
+          "type": "DIR32",
+          "symbol": "?g_CombatActorAAt00671418@@3PAVSceneCombatActorF195@@A",
+          "target": 6755352
+        },
+        {
+          "offset": 85,
+          "type": "DIR32",
+          "symbol": "?g_CombatActorBAt0067141C@@3PAVSceneCombatActorF195@@A",
+          "target": 6755356
+        },
+        {
+          "offset": 93,
+          "type": "DIR32",
+          "symbol": "?g_CombatActorBAt0067141C@@3PAVSceneCombatActorF195@@A",
+          "target": 6755356
+        },
+        {
+          "offset": 139,
+          "type": "DIR32",
+          "symbol": "?g_SceneOwnerAt00671424@@3PAVSceneThirdOwnerF195@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 148,
+          "type": "DIR32",
+          "symbol": "?g_SceneOwnerAt00671424@@3PAVSceneThirdOwnerF195@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 193,
+          "type": "DIR32",
+          "symbol": "?g_CombatActorAAt00671418@@3PAVSceneCombatActorF195@@A",
+          "target": 6755352
+        },
+        {
+          "offset": 203,
+          "type": "DIR32",
+          "symbol": "?g_CombatActorBAt0067141C@@3PAVSceneCombatActorF195@@A",
+          "target": 6755356
+        },
+        {
+          "offset": 213,
+          "type": "DIR32",
+          "symbol": "?g_SceneOwnerAt00671424@@3PAVSceneThirdOwnerF195@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 222,
+          "type": "REL32",
+          "symbol": "?ClearPlayback@AudioControl407CA0@@YAXXZ",
+          "target": 4226208
+        },
+        {
+          "offset": 227,
+          "type": "DIR32",
+          "symbol": "?g_ResourceOwnerAAt0067143C@@3PAVSceneResourceOwnerAF195@@A",
+          "target": 6755388
+        },
+        {
+          "offset": 252,
+          "type": "REL32",
+          "symbol": "??_GSceneResourceOwnerAF195@@QAEPAXI@Z",
+          "target": 4301072
+        },
+        {
+          "offset": 270,
+          "type": "DIR32",
+          "symbol": "?g_ResourceOwnerBAt006714C4@@3PAVSceneResourceOwnerBF195@@A",
+          "target": 6755524
+        },
+        {
+          "offset": 295,
+          "type": "REL32",
+          "symbol": "??_GSceneResourceOwnerBF195@@QAEPAXI@Z",
+          "target": 4301120
+        },
+        {
+          "offset": 313,
+          "type": "DIR32",
+          "symbol": "?g_ResourceOwnerCAt00671618@@3PAVSceneResourceOwnerCF195@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 338,
+          "type": "REL32",
+          "symbol": "??_GSceneResourceOwnerCF195@@QAEPAXI@Z",
+          "target": 4301168
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -159596,6 +159771,7 @@
     "src/MusicDetailF191.cpp": "55202668e812e7d26098a351095d78e81b8ef12be73982ac0fc4af24600de61f",
     "src/SceneBaseReleaseF192.cpp": "d2fe94064f4e493991f690d528a2fd54e4abf88cfc0c0129a25864ab27d60397",
     "src/GameDefaultsF193.cpp": "6b5012f0e781131d2b2eb7171295fbe314cbf396528c9915b5bc9e912408879c",
-    "src/ConfigLoadF194.cpp": "ea2ee0149dd942c8f02fa27dec0c1d4fb25e2d7fe4fe0c472d6c2e80e283a269"
+    "src/ConfigLoadF194.cpp": "ea2ee0149dd942c8f02fa27dec0c1d4fb25e2d7fe4fe0c472d6c2e80e283a269",
+    "src/GameGlobalsReleaseF195.cpp": "5b20d45bf7539bc550fc1d9483c147a1911824b8bac86869d168935d93e86d30"
   }
 }

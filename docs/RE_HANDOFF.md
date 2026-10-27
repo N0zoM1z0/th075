@@ -1,4 +1,4 @@
-# TH075 active reconstruction status — F194
+# TH075 active reconstruction status — F195
 
 Updated 2026-10-27. The user explicitly resumed reconstruction and requires
 serious treatment of both large/core and small/leaf functions; all historical
@@ -239,9 +239,27 @@ remains unproved. Readonly filename/data storage and imported APIs
 earn no extra byte credit, and the separately accepted F193 caller
 is unchanged.
 
-Current ledger: **504 exact functions, 755,467 CODE bytes / 1,973,516 reviewed
-authored bytes = 38.28%**, conservative 38.21% with 3,608 unknown-origin bytes
-retained. F184..F194 added eleven accepted units, ten objects and thirteen new
+F195 follows the other end of the shared scene/global lifetime:
+the **358-byte `GameGlobals::Release` at `0x00417430`**, 99 native
+instructions and 18 actual relocations, complete canonical /GX- cold replay
+**358/358 exact**. Native target SHA256:
+`238163545e5867e5869753fed589643a52634d8107f9fe11486a58a42bd6016b`.
+Natural source retains the reference-count decrement and zero gate;
+three different borrowed virtual-destructor paths (slot +0x14 for two
+combat actors, slot0 for a third), three real pointer null stores,
+streaming audio shutdown through accepted `ClearPlayback`, and three
+distinct scalar-deleting-destructor call targets 0041A110/41A140/41A170
+for separate heap-owned resources. The body was full byte-exact on the
+first normal source probe, using only call-only pointer views; no
+complete unknown heap classes were instantiated, no code/data credit
+was given for the generated destructor thunks or audio helper, and
+no ownership classification was changed. The authored F193 initializer
+and F194 read helper are separate accepted functions. Base constructor
+`004251C0` remains unknown-origin and uncredited.
+
+Current ledger: **505 exact functions, 755,825 CODE bytes / 1,973,516 reviewed
+authored bytes = 38.30%**, conservative 38.23% with 3,608 unknown-origin bytes
+retained. F184..F195 added twelve accepted units, eleven objects and fourteen new
 source/header inputs.
 Keep R268 origin evidence, all 97 unknown candidates, 493 pre-F184
 accepted units and protected private F184/F185 preview/drafts intact.

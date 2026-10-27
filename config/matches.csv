@@ -503,3 +503,4 @@ address,name,size,status,match_percent,unit,evidence
 0x00431F40,SceneBase::ReleaseGameGlobalsAt00431F40,31,matching,100.00,scene-base-release-00431f40,F192; scripts/repo-python scripts/replay-exact-units.py --unit scene-base-release-00431f40; full 31 code/2 real relocations
 0x00417210,GameGlobals::Initialize,531,matching,100.00,game-globals-initialize-00417210,F193; scripts/repo-python scripts/replay-exact-units.py --unit game-globals-initialize-00417210; all 531 bytes/71 actual COFF fields
 0x004192F0,GameConfig::LoadIni,339,matching,100.00,game-config-load-004192f0,F194; scripts/repo-python scripts/replay-exact-units.py --unit game-config-load-004192f0; full 339 code/27 actual relocations
+0x00417430,GameGlobals::Release,358,matching,100.00,game-globals-release-00417430,F195; scripts/repo-python scripts/replay-exact-units.py --unit game-globals-release-00417430; whole 358 bytes/18 actual fields

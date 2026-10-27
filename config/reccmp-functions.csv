@@ -503,3 +503,4 @@ MusicRoomScene::RenderSelectedDetails,0x00426A70,function
 SceneBase::ReleaseGameGlobalsAt00431F40,0x00431F40,function
 GameGlobals::Initialize,0x00417210,function
 GameConfig::LoadIni,0x004192F0,function
+GameGlobals::Release,0x00417430,function

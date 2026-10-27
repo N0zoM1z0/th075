@@ -19,6 +19,8 @@ F193 cold-accepts the 531-byte shared game-defaults initializer with all
 71 actual relocations and eleven character-name copies.
 F194 cold-accepts its 339-byte config.ini reader with all 27 import/global
 fields, without granting borrowed storage or generated-source credit.
+F195 closes the shared global lifetime with 358 exact authored bytes and
+all 18 fields, using only borrowed destructor receiver interfaces.
 F189 separately inspected but did not accept the 922-byte EH battle initializer.
 The original H184 handoff was historical and is superseded by the current
 request. Earlier experiments and names remain hypotheses until tested.
@@ -29,9 +31,9 @@ See the current [handoff](RE_HANDOFF.md) for current status.
 - Supplied Japanese th075.exe 1.11, SHA-256
   `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
   Archive identity is pinned; official distribution provenance is uncorroborated.
-- **504 exact functions/units, 755,467 CODE bytes, 176 canonical objects,
-  281 accepted source-header inputs.** Reviewed coverage is 38.28%; conservative
-  coverage is 38.21%, including all 97 unknown origins/3,608 pending bytes.
+- **505 exact functions/units, 755,825 CODE bytes, 177 canonical objects,
+  282 accepted source-header inputs.** Reviewed coverage is 38.30%; conservative
+  coverage is 38.23%, including all 97 unknown origins/3,608 pending bytes.
 - Ownership, source presence, names, Ghidra types, compilation and reproducible
   exactness remain distinct. Read ledgers and relevant origin evidence before
   relying on any classification or provisional boundary.
@@ -318,6 +320,24 @@ The final normal `readSize` declaration reproduces the original
 EBP-8/EBP-4 frame. Exact emitted stack byte layout does not establish
 the original identifiers. No Win32 import, source data or static filename
 credits accompany this authored function.
+
+## F195: complete shared global shutdown
+
+The reviewed authored `GameGlobals::Release` at 0x00417430 is 358 native
+CODE bytes, 99 complete x86 instructions, one normal RET and 18 actual
+COFF relocation fields. Native SHA256:
+`238163545e5867e5869753fed589643a52634d8107f9fe11486a58a42bd6016b`.
+The first normal pointer-only VC7.1 /GX- source compiled to 358 bytes
+with all 286 non-relocation bytes identical; fresh cold replay confirmed
+all 358 bytes and 18 fields exact. The function retains its native shared
+use-count guard, two virtual slot-5 destructor calls and one virtual
+slot-0 destructor, three null stores, streaming audio clear, and
+three physically distinct compiler scalar-deleting destructor calls.
+None of the emitted destructor receiver interfaces is constructed or
+embedded; they are only borrowed pointer declarations. The compiler
+helper bodies, global data and named class identities receive no
+independent credit. This completes the authored release policy, not the
+origin-unknown base constructor or the full scene object layouts.
 
 ## Retained failures and method boundaries
 
