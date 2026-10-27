@@ -503,3 +503,4 @@ SceneBase::ReleaseGameGlobalsAt00431F40
 GameGlobals::Initialize
 GameConfig::LoadIni
 GameGlobals::Release
+BattleScene::Initialize

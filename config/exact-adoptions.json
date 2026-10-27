@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "b410ad276825959135620644af15051f8f5cd7010e0dc56d039901aa6f1f1119"
+      "current_sha256": "d4c5683f3e6e00237f51a50d6ae026f189fb5e86ae7234417d14fc8269d13ca6"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "60d3021c525c67a3c131744de29997e4967f8a27407c6e8f8be22dfd8bfecc0b"
+      "current_sha256": "edfeb8ebaebf335ac007c9e00cf39ca24398c8f82f2d3e95e2a5462085f73e07"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "9040fe77e1e669ad6daa26e8072ed223985087c912eac2f9b174ac3da41e97cb"
+      "current_sha256": "a885bc3b4ec867683d77feaadfc3953907be255d0157c76467d4a3ffacb3a55d"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "2624d8e9b70c9678c5934bc206b8cc0d3adb1c53c834949fe3f4036f2d607120"
+      "current_sha256": "1aeaf2b635ca2492f06bf5287ae4b23376e127dfc4c975c754d8435a6b40c906"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "2ebf586eeb3692f71e6e762e4043a869f1b5450a63b81a5c68f958ea2c156657"
+      "current_sha256": "ff626bc5c13201ea73559e95c36e0443eed90e6ba1b8c01c854028ee58031fd1"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -19620,6 +19620,50 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R052"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0043AD10",
+        "size": "922",
+        "span_end": "0x0043B0A9",
+        "current_name": "FUN_0043ad10",
+        "proposed_name": "BattleScene::Initialize",
+        "module": "BattleScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R041; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x0043AD10",
+        "size": "922",
+        "span_end": "0x0043B0A9",
+        "current_name": "FUN_0043ad10",
+        "proposed_name": "BattleScene::Initialize",
+        "module": "BattleScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BattleSceneF196::BattleSceneF196()",
+        "is_thunk": "false",
+        "source_file": "src/BattleConstructorF196.cpp",
+        "evidence": "R041; full body hash, complete decoded CFG and local game-specific behavior reviewed; F196; scripts/repo-python scripts/replay-exact-units.py --unit battle-scene-initialize-0043ad10",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F196: Complete native 922 CODE bytes /230 x86 instructions, plain RET and following INT3; SHA256 10d1747c1b0b512f21e4b2cef06c1d00a291e05f0181d19261563e785959d75e. Ordinary VC7.1 /GX natural constructor source freshly cold-replayed exact with all 40 real DIR32/REL32 relocations and no masks/crops. R020 independently verifies original 5-state EH handler 00655B74 and compiler unwind addresses 655B40/48/53/5E/69; borrowed external/generated EH bytes do not earn extra code credit. Base ctor 4251C0 remains R108 origin-unknown and uncredited even though used as an external base callee. Exactly four native allocations 80/1/20/20 reproduced with observed true constructor methods 40AD80/446590/43D490, texture resolver 40C8C0, 40B1D0 slot setup, 40BB80 pack load and native /GX exception states. Source-compatible physical allocation carriers reflect the observed 8-byte base, 80-byte texture-container offsets (8+three 16-byte vector subregions+20-byte deque+tail byte), single-byte no-member digit-atlas object, and 20-byte combo counter accessed by already accepted F173. Names, vector element types, unknown manager word at0, nominal BattleScene class size and full original class identities remain unproven; the partial derived receiver is never new/sizeof/embedded as a complete BattleScene owner. Original HUD globals, actor fields, timing, audio and mode-dependent float/byte writes preserved; helpers, data, SDK imports, vtables and compiler EH records uncredited. No inert locals, inserted padding, ASM or fake returns, no origin changes. All prior 505 exact units/97 pending origins preserved."
+      },
+      "origin": {
+        "address": "0x0043AD10",
+        "origin": "authored",
+        "subsystem": "BattleScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R041"
       }
     }
   ],
@@ -159488,6 +159532,269 @@
           "target": 4301168
         }
       ]
+    },
+    "battle-scene-initialize-0043ad10": {
+      "source": "src/BattleConstructorF196.cpp",
+      "object": "build/matching/BattleConstructorF196.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattleScene::Initialize"
+      ],
+      "symbol": "??0BattleSceneF196@@QAE@XZ",
+      "target_address": 4435216,
+      "size": 922,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??0BattleSceneF196@@QAE@XZ",
+          "target": 6642548
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 34,
+          "type": "REL32",
+          "symbol": "??0SceneBaseF196@@QAE@XZ",
+          "target": 4346304
+        },
+        {
+          "offset": 50,
+          "type": "DIR32",
+          "symbol": "??_7BattleSceneF196@@6B@",
+          "target": 6652724
+        },
+        {
+          "offset": 56,
+          "type": "DIR32",
+          "symbol": "__imp__timeGetTime@0",
+          "target": 6648420
+        },
+        {
+          "offset": 109,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 133,
+          "type": "REL32",
+          "symbol": "??0TextureManagerAllocF196@@QAE@XZ",
+          "target": 4238720
+        },
+        {
+          "offset": 177,
+          "type": "REL32",
+          "symbol": "?AllocateUnformattedSlots@TextureManagerAllocF196@@QAEXH@Z",
+          "target": 4239824
+        },
+        {
+          "offset": 182,
+          "type": "DIR32",
+          "symbol": "?g_BattleTextureRootAt00658314@@3QBDB",
+          "target": 6652692
+        },
+        {
+          "offset": 187,
+          "type": "DIR32",
+          "symbol": "?g_BattleTextureDataAt0065831C@@3QBDB",
+          "target": 6652700
+        },
+        {
+          "offset": 198,
+          "type": "REL32",
+          "symbol": "?LoadDefault@TextureManagerAllocF196@@QAEXPBD0@Z",
+          "target": 4242304
+        },
+        {
+          "offset": 205,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 234,
+          "type": "REL32",
+          "symbol": "?GetTexture@TextureManagerAllocF196@@QAEPAUIDirect3DTexture8@@H@Z",
+          "target": 4245696
+        },
+        {
+          "offset": 248,
+          "type": "REL32",
+          "symbol": "?GetTexture@TextureManagerAllocF196@@QAEPAUIDirect3DTexture8@@H@Z",
+          "target": 4245696
+        },
+        {
+          "offset": 262,
+          "type": "REL32",
+          "symbol": "?GetTexture@TextureManagerAllocF196@@QAEPAUIDirect3DTexture8@@H@Z",
+          "target": 4245696
+        },
+        {
+          "offset": 271,
+          "type": "REL32",
+          "symbol": "??0DigitAtlasAllocF196@@QAE@PAUIDirect3DTexture8@@00@Z",
+          "target": 4482448
+        },
+        {
+          "offset": 309,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 340,
+          "type": "REL32",
+          "symbol": "?GetTexture@TextureManagerAllocF196@@QAEPAUIDirect3DTexture8@@H@Z",
+          "target": 4245696
+        },
+        {
+          "offset": 349,
+          "type": "REL32",
+          "symbol": "??0ComboCounterAllocF196@@QAE@PAXC@Z",
+          "target": 4445328
+        },
+        {
+          "offset": 387,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 418,
+          "type": "REL32",
+          "symbol": "?GetTexture@TextureManagerAllocF196@@QAEPAUIDirect3DTexture8@@H@Z",
+          "target": 4245696
+        },
+        {
+          "offset": 427,
+          "type": "REL32",
+          "symbol": "??0ComboCounterAllocF196@@QAE@PAXC@Z",
+          "target": 4445328
+        },
+        {
+          "offset": 467,
+          "type": "DIR32",
+          "symbol": "?g_CombatActorAAt00671418@@3PAXA",
+          "target": 6755352
+        },
+        {
+          "offset": 479,
+          "type": "DIR32",
+          "symbol": "?g_CombatActorBAt0067141C@@3PAXA",
+          "target": 6755356
+        },
+        {
+          "offset": 589,
+          "type": "DIR32",
+          "symbol": "?g_FramePresentToggleAt0066C237@@3EA",
+          "target": 6734391
+        },
+        {
+          "offset": 623,
+          "type": "DIR32",
+          "symbol": "__imp__timeGetTime@0",
+          "target": 6648420
+        },
+        {
+          "offset": 642,
+          "type": "DIR32",
+          "symbol": "?g_SequenceStageAt00671632@@3EA",
+          "target": 6755890
+        },
+        {
+          "offset": 650,
+          "type": "DIR32",
+          "symbol": "?g_CombatModeAt006714B4@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 673,
+          "type": "DIR32",
+          "symbol": "?g_CombatTextAt0067143C@@3PAVCombatTextConfiguratorF196@@A",
+          "target": 6755388
+        },
+        {
+          "offset": 678,
+          "type": "REL32",
+          "symbol": "?Configure@CombatTextConfiguratorF196@@QAEXMMH@Z",
+          "target": 4273184
+        },
+        {
+          "offset": 718,
+          "type": "DIR32",
+          "symbol": "?g_FrameClockModeAt0066C238@@3CA",
+          "target": 6734392
+        },
+        {
+          "offset": 729,
+          "type": "DIR32",
+          "symbol": "?g_FrameClockModeAt0066C238@@3CA",
+          "target": 6734392
+        },
+        {
+          "offset": 736,
+          "type": "DIR32",
+          "symbol": "?g_SequenceStageAt00671632@@3EA",
+          "target": 6755890
+        },
+        {
+          "offset": 744,
+          "type": "DIR32",
+          "symbol": "?g_FrameClockModeAt0066C238@@3CA",
+          "target": 6734392
+        },
+        {
+          "offset": 755,
+          "type": "DIR32",
+          "symbol": "?g_FrameClockModeAt0066C238@@3CA",
+          "target": 6734392
+        },
+        {
+          "offset": 771,
+          "type": "REL32",
+          "symbol": "?ResetScene@StateAudioF196@@YAXHHHH@Z",
+          "target": 4271296
+        },
+        {
+          "offset": 853,
+          "type": "DIR32",
+          "symbol": "?g_SequenceByteAt0066C239@@3EA",
+          "target": 6734393
+        },
+        {
+          "offset": 860,
+          "type": "DIR32",
+          "symbol": "?g_SequenceByteAt0066C23A@@3EA",
+          "target": 6734394
+        },
+        {
+          "offset": 914,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -159772,6 +160079,7 @@
     "src/SceneBaseReleaseF192.cpp": "d2fe94064f4e493991f690d528a2fd54e4abf88cfc0c0129a25864ab27d60397",
     "src/GameDefaultsF193.cpp": "6b5012f0e781131d2b2eb7171295fbe314cbf396528c9915b5bc9e912408879c",
     "src/ConfigLoadF194.cpp": "ea2ee0149dd942c8f02fa27dec0c1d4fb25e2d7fe4fe0c472d6c2e80e283a269",
-    "src/GameGlobalsReleaseF195.cpp": "5b20d45bf7539bc550fc1d9483c147a1911824b8bac86869d168935d93e86d30"
+    "src/GameGlobalsReleaseF195.cpp": "5b20d45bf7539bc550fc1d9483c147a1911824b8bac86869d168935d93e86d30",
+    "src/BattleConstructorF196.cpp": "14aa8f89d7c56d1d42707cf528dda2da398e4c4907db11508eab3eb91f403233"
   }
 }

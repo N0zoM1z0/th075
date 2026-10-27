@@ -486,3 +486,4 @@ address,name,module,confidence,evidence
 0x00417210,GameGlobals::Initialize,GameGlobals,inferred,F193; whole 531-byte globals defaults cold exact; original global layout and class identity unproven
 0x004192F0,GameConfig::LoadIni,GameConfig,inferred,F194; complete 339-byte Win32 settings read cold exact; original global-data ownership unknown
 0x00417430,GameGlobals::Release,GameGlobals,inferred,F195; full 358-byte global cleanup policy cold exact; original owner classes unknown
+0x0043AD10,BattleScene::Initialize,BattleScene,inferred,F196; complete 922 native CODE cold exact with five-stage EH; original scene/container class identity remains provisional

@@ -1,4 +1,4 @@
-# TH075 active reconstruction status — F195
+# TH075 active reconstruction status — F196
 
 Updated 2026-10-27. The user explicitly resumed reconstruction and requires
 serious treatment of both large/core and small/leaf functions; all historical
@@ -257,15 +257,54 @@ no ownership classification was changed. The authored F193 initializer
 and F194 read helper are separate accepted functions. Base constructor
 `004251C0` remains unknown-origin and uncredited.
 
-Current ledger: **505 exact functions, 755,825 CODE bytes / 1,973,516 reviewed
-authored bytes = 38.30%**, conservative 38.23% with 3,608 unknown-origin bytes
-retained. F184..F195 added twelve accepted units, eleven objects and fourteen new
+F196 is the first complete exact reconstruction of the previously
+unaccepted `BattleScene::Initialize` at `0x0043AD10`. Independent
+target decoding gives **922 CODE bytes, 230 original x86 instructions,
+no owned jump table, a normal RET, followed by INT3 alignment**;
+native SHA256:
+`10d1747c1b0b512f21e4b2cef06c1d00a291e05f0181d19261563e785959d75e`.
+A natural C++ derived constructor compiled with pinned VC7.1 `/GX`
+**cold-replays all 922/922 bytes and 40/40 actual relocation fields**,
+including the external base ctor call, exact native derived vtable
+pointer at 00658334, imported timeGetTime, real texture pack and two
+HUD constructor chains, sound/graphics state, actor addresses,
+float/byte initialization, and EH frame references. The recorded R020
+original EH metadata independently confirms **five cleanup states**
+for native handler 00655B74 and four transient allocation states
+following the base. Generated EH helper, vtable bytes, SDK/CRT and
+all borrowed subconstructor bodies receive **no independent byte credit**.
+
+The source-compatible allocation carriers were built from independent
+physical evidence: base vtable at offset0 and one-byte globals
+subobject at +4 yield the observed eight-byte base boundary;
+TextureManager's real ctor `0x0040AD80` calls nested vector
+constructors at +8,+0x18,+0x28 (three 16-byte regions), deque at
++0x38 (20 bytes), and sets byte +0x4C. Together with its observed
+root storage this physically accounts for exactly **80 bytes**.
+The `new(1)` digit atlas constructor `0x00446590` has no object
+fields and the actual `new(20)` combo-counter constructors
+`0x0043D490` use the offsets independently accepted in F173.
+Original vector element types, the texture root word at +0, original
+class identities/nominal full scene layout and whether R108 base
+constructor `0x004251C0` was authored or generated remain unknown.
+The latter gets no new source or exact credit. These carriers are
+local to the observed new/ctor call sites; the derived scene is not
+instantiated, embedded or measured as a complete original type.
+No false padding fields/locals, inline assembly, conditional acceptance,
+masked relocation bytes, EH code grafts or cropped extent were used.
+The earlier unaccepted F189 disassembly remains historical negative
+evidence; do not read its old 'unaccepted' statement as current status.
+
+Current ledger: **506 exact functions, 756,747 CODE bytes / 1,973,516 reviewed
+authored bytes = 38.35%**, conservative 38.28% with 3,608 unknown-origin bytes
+retained. F184..F196 added thirteen accepted units, twelve objects and fifteen new
 source/header inputs.
 Keep R268 origin evidence, all 97 unknown candidates, 493 pre-F184
 accepted units and protected private F184/F185 preview/drafts intact.
 
-Next: continue large scene/battle functions (0043AD10 EH initialization
-or 00401540-linked GPU initialization dependencies) and small leaf cohorts with full CFG, branches, call graph,
+Next: attack additional large scene/battle or texture-constructor functions
+(0043A020 title initialization, 0040AD80 texture manager, 0040B1D0 slot manager),
+plus genuine small leaves; retain R108 origin ambiguity with full CFG, branches, call graph,
 target writes, lifetime and switch ownership before adopting any source.
 Do not claim exact credit for incomplete probes. Record failed approaches and
 commit separately when they yield durable discoveries.

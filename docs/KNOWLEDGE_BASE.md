@@ -21,6 +21,9 @@ F194 cold-accepts its 339-byte config.ini reader with all 27 import/global
 fields, without granting borrowed storage or generated-source credit.
 F195 closes the shared global lifetime with 358 exact authored bytes and
 all 18 fields, using only borrowed destructor receiver interfaces.
+F196 cold-replays the previously pending 922-byte battle-scene constructor
+with the native five-state EH flow and all 40 relocation fields exact.
+The F189 'unaccepted' status is historical.
 F189 separately inspected but did not accept the 922-byte EH battle initializer.
 The original H184 handoff was historical and is superseded by the current
 request. Earlier experiments and names remain hypotheses until tested.
@@ -31,9 +34,9 @@ See the current [handoff](RE_HANDOFF.md) for current status.
 - Supplied Japanese th075.exe 1.11, SHA-256
   `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
   Archive identity is pinned; official distribution provenance is uncorroborated.
-- **505 exact functions/units, 755,825 CODE bytes, 177 canonical objects,
-  282 accepted source-header inputs.** Reviewed coverage is 38.30%; conservative
-  coverage is 38.23%, including all 97 unknown origins/3,608 pending bytes.
+- **506 exact functions/units, 756,747 CODE bytes, 178 canonical objects,
+  283 accepted source-header inputs.** Reviewed coverage is 38.35%; conservative
+  coverage is 38.28%, including all 97 unknown origins/3,608 pending bytes.
 - Ownership, source presence, names, Ghidra types, compilation and reproducible
   exactness remain distinct. Read ledgers and relevant origin evidence before
   relying on any classification or provisional boundary.
@@ -221,7 +224,8 @@ locals or padding, then passed full cold replay.
 
 ## F189: independently reviewed but unaccepted battle initializer
 
-The complete `BattleScene::Initialize` at `0x0043AD10` is 922 code bytes,
+Historical (superseded by F196 cold exact): the complete
+`BattleScene::Initialize` at `0x0043AD10` is 922 code bytes,
 230 decoded instructions and one RET. It creates multiple owned subobjects
 through four distinct allocation sizes (0x50, 1, 0x14, 0x14) and uses
 exception-state transitions. The original full class layouts, nested
@@ -338,6 +342,41 @@ embedded; they are only borrowed pointer declarations. The compiler
 helper bodies, global data and named class identities receive no
 independent credit. This completes the authored release policy, not the
 origin-unknown base constructor or the full scene object layouts.
+
+## F196: complete EH-backed battle-scene constructor
+
+The complete reviewed R041 battle-scene constructor `0x0043AD10`
+was independently decoded: 922 native CODE bytes, 230 instructions,
+RET and INT3, target SHA256
+`10d1747c1b0b512f21e4b2cef06c1d00a291e05f0181d19261563e785959d75e`.
+A fresh, natural VC7.1 `/GX` constructor source matches the entire
+922-byte function and all 40 actual COFF DIR32/REL32 relocations.
+The observed EH handler is `00655B74`. Unmodified R020 original
+EH metadata proves five states (base + four transient allocations)
+and native unwinds `00655B40/48/53/5E/69`. The generated helper
+sections remain independent library/compiler evidence without
+source or exact-byte credit.
+
+The original source-level complete scene class cannot be inferred from
+this isolated constructor. Its source-compatible derived receiver
+models only a physically observed base boundary, and is not allocated
+or used as a complete owner. The four **native and reproduced allocation
+sizes** are 80, 1, 20 and 20 bytes. The texture manager's 80-byte
+allocation is supported by its actual constructor: eight-byte
+root, three 16-byte vector components at offsets 8/24/40,
+a 20-byte deque at 56 and byte at 76, rounded by native alignment.
+The empty digit-atlas object has a natural size of one byte and its
+known global-only F177 constructor. The two 20-byte combo counter
+carriers cover physically observed F173 constructor/member fields.
+All their constructor calls, texture resolution and parameter evaluation
+order are byte-exact. Original container element types, texture
+root word at +0, field names and complete nominal object identities
+remain uncertain. The source intentionally credits only the 922
+authored bytes; its 40 relocs bind real existing callee/data/SDK
+addresses without adopting them. R108 `004251C0` base ctor stays
+unknown-origin and no exact credit despite its structurally exact
+private source. F189's original native-only investigation is now
+superseded for this function by a complete accepted unit, not deleted.
 
 ## Retained failures and method boundaries
 

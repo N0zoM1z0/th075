@@ -33242,3 +33242,212 @@ offset = 338
 type = "REL32"
 symbol = "??_GSceneResourceOwnerCF195@@QAEPAXI@Z"
 target = 0x0041A170
+
+[units.battle-scene-initialize-0043ad10]
+source = "src/BattleConstructorF196.cpp"
+object = "build/matching/BattleConstructorF196.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["BattleScene::Initialize"]
+symbol = "??0BattleSceneF196@@QAE@XZ"
+target_address = 0x0043AD10
+size = 922
+[[units.battle-scene-initialize-0043ad10.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0BattleSceneF196@@QAE@XZ"
+target = 0x00655B74
+[[units.battle-scene-initialize-0043ad10.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.battle-scene-initialize-0043ad10.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.battle-scene-initialize-0043ad10.relocations]]
+offset = 34
+type = "REL32"
+symbol = "??0SceneBaseF196@@QAE@XZ"
+target = 0x004251C0
+[[units.battle-scene-initialize-0043ad10.relocations]]
+offset = 50
+type = "DIR32"
+symbol = "??_7BattleSceneF196@@6B@"
+target = 0x00658334
+[[units.battle-scene-initialize-0043ad10.relocations]]
+offset = 56
+type = "DIR32"
+symbol = "__imp__timeGetTime@0"
+target = 0x00657264
+[[units.battle-scene-initialize-0043ad10.relocations]]
+offset = 109
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-scene-initialize-0043ad10.relocations]]
+offset = 133
+type = "REL32"
+symbol = "??0TextureManagerAllocF196@@QAE@XZ"
+target = 0x0040AD80
+[[units.battle-scene-initialize-0043ad10.relocations]]
+offset = 177
+type = "REL32"
+symbol = "?AllocateUnformattedSlots@TextureManagerAllocF196@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.battle-scene-initialize-0043ad10.relocations]]
+offset = 182
+type = "DIR32"
+symbol = "?g_BattleTextureRootAt00658314@@3QBDB"
+target = 0x00658314
+[[units.battle-scene-initialize-0043ad10.relocations]]
+offset = 187
+type = "DIR32"
+symbol = "?g_BattleTextureDataAt0065831C@@3QBDB"
+target = 0x0065831C
+[[units.battle-scene-initialize-0043ad10.relocations]]
+offset = 198
+type = "REL32"
+symbol = "?LoadDefault@TextureManagerAllocF196@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.battle-scene-initialize-0043ad10.relocations]]
+offset = 205
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-scene-initialize-0043ad10.relocations]]
+offset = 234
+type = "REL32"
+symbol = "?GetTexture@TextureManagerAllocF196@@QAEPAUIDirect3DTexture8@@H@Z"
+target = 0x0040C8C0
+[[units.battle-scene-initialize-0043ad10.relocations]]
+offset = 248
+type = "REL32"
+symbol = "?GetTexture@TextureManagerAllocF196@@QAEPAUIDirect3DTexture8@@H@Z"
+target = 0x0040C8C0
+[[units.battle-scene-initialize-0043ad10.relocations]]
+offset = 262
+type = "REL32"
+symbol = "?GetTexture@TextureManagerAllocF196@@QAEPAUIDirect3DTexture8@@H@Z"
+target = 0x0040C8C0
+[[units.battle-scene-initialize-0043ad10.relocations]]
+offset = 271
+type = "REL32"
+symbol = "??0DigitAtlasAllocF196@@QAE@PAUIDirect3DTexture8@@00@Z"
+target = 0x00446590
+[[units.battle-scene-initialize-0043ad10.relocations]]
+offset = 309
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-scene-initialize-0043ad10.relocations]]
+offset = 340
+type = "REL32"
+symbol = "?GetTexture@TextureManagerAllocF196@@QAEPAUIDirect3DTexture8@@H@Z"
+target = 0x0040C8C0
+[[units.battle-scene-initialize-0043ad10.relocations]]
+offset = 349
+type = "REL32"
+symbol = "??0ComboCounterAllocF196@@QAE@PAXC@Z"
+target = 0x0043D490
+[[units.battle-scene-initialize-0043ad10.relocations]]
+offset = 387
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-scene-initialize-0043ad10.relocations]]
+offset = 418
+type = "REL32"
+symbol = "?GetTexture@TextureManagerAllocF196@@QAEPAUIDirect3DTexture8@@H@Z"
+target = 0x0040C8C0
+[[units.battle-scene-initialize-0043ad10.relocations]]
+offset = 427
+type = "REL32"
+symbol = "??0ComboCounterAllocF196@@QAE@PAXC@Z"
+target = 0x0043D490
+[[units.battle-scene-initialize-0043ad10.relocations]]
+offset = 467
+type = "DIR32"
+symbol = "?g_CombatActorAAt00671418@@3PAXA"
+target = 0x00671418
+[[units.battle-scene-initialize-0043ad10.relocations]]
+offset = 479
+type = "DIR32"
+symbol = "?g_CombatActorBAt0067141C@@3PAXA"
+target = 0x0067141C
+[[units.battle-scene-initialize-0043ad10.relocations]]
+offset = 589
+type = "DIR32"
+symbol = "?g_FramePresentToggleAt0066C237@@3EA"
+target = 0x0066C237
+[[units.battle-scene-initialize-0043ad10.relocations]]
+offset = 623
+type = "DIR32"
+symbol = "__imp__timeGetTime@0"
+target = 0x00657264
+[[units.battle-scene-initialize-0043ad10.relocations]]
+offset = 642
+type = "DIR32"
+symbol = "?g_SequenceStageAt00671632@@3EA"
+target = 0x00671632
+[[units.battle-scene-initialize-0043ad10.relocations]]
+offset = 650
+type = "DIR32"
+symbol = "?g_CombatModeAt006714B4@@3CA"
+target = 0x006714B4
+[[units.battle-scene-initialize-0043ad10.relocations]]
+offset = 673
+type = "DIR32"
+symbol = "?g_CombatTextAt0067143C@@3PAVCombatTextConfiguratorF196@@A"
+target = 0x0067143C
+[[units.battle-scene-initialize-0043ad10.relocations]]
+offset = 678
+type = "REL32"
+symbol = "?Configure@CombatTextConfiguratorF196@@QAEXMMH@Z"
+target = 0x00413420
+[[units.battle-scene-initialize-0043ad10.relocations]]
+offset = 718
+type = "DIR32"
+symbol = "?g_FrameClockModeAt0066C238@@3CA"
+target = 0x0066C238
+[[units.battle-scene-initialize-0043ad10.relocations]]
+offset = 729
+type = "DIR32"
+symbol = "?g_FrameClockModeAt0066C238@@3CA"
+target = 0x0066C238
+[[units.battle-scene-initialize-0043ad10.relocations]]
+offset = 736
+type = "DIR32"
+symbol = "?g_SequenceStageAt00671632@@3EA"
+target = 0x00671632
+[[units.battle-scene-initialize-0043ad10.relocations]]
+offset = 744
+type = "DIR32"
+symbol = "?g_FrameClockModeAt0066C238@@3CA"
+target = 0x0066C238
+[[units.battle-scene-initialize-0043ad10.relocations]]
+offset = 755
+type = "DIR32"
+symbol = "?g_FrameClockModeAt0066C238@@3CA"
+target = 0x0066C238
+[[units.battle-scene-initialize-0043ad10.relocations]]
+offset = 771
+type = "REL32"
+symbol = "?ResetScene@StateAudioF196@@YAXHHHH@Z"
+target = 0x00412CC0
+[[units.battle-scene-initialize-0043ad10.relocations]]
+offset = 853
+type = "DIR32"
+symbol = "?g_SequenceByteAt0066C239@@3EA"
+target = 0x0066C239
+[[units.battle-scene-initialize-0043ad10.relocations]]
+offset = 860
+type = "DIR32"
+symbol = "?g_SequenceByteAt0066C23A@@3EA"
+target = 0x0066C23A
+[[units.battle-scene-initialize-0043ad10.relocations]]
+offset = 914
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
