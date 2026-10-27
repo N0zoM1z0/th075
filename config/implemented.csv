@@ -515,3 +515,4 @@ Music::PlayTrackByIndex
 AudioStream::ScheduleTransitionFadeAt00419DF0
 TextureManager::LoadBitmapDirectory
 TextureManager::LoadBitmapDirectoryWithFormat
+SpriteGeometry::InitializeRectangleFromRect

@@ -26,9 +26,9 @@ This pins the supplied sample; its official distribution provenance has not
 been independently corroborated. The localized `th075c.exe` has a different
 identity and cannot substitute for the target.
 
-The current checkpoint has **517 exact functions / 762,023 code bytes** from
-4,351 provisional candidates. Reviewed authored coverage is 38.61%; conservative
-coverage, including all 3,608 pending bytes, is **38.54%**. The objective of
+The current checkpoint has **518 exact functions / 762,328 code bytes** from
+4,351 provisional candidates. Reviewed authored coverage is 38.63%; conservative
+coverage, including all 3,608 pending bytes, is **38.56%**. The objective of
 98% authored bytes exact remains incomplete. At R268, 1,002 authored, 2,671
 library and 581 compiler-generated candidates are classified; 97 remain unknown.
 Unknown origins receive no exact credit. Candidate count does not establish
@@ -140,6 +140,12 @@ work-record lifetime on the related 575-byte formatted bitmap-directory
 loader. Its different CreateTexture upload path and all 23 actual
 relocations cold-replayed byte-exact without altering F206. This pair
 now contributes 1,302 reviewed native CODE bytes from two large routines.
+F211 cold-reconstructed the full 305-byte rectangle-to-quad sprite
+geometry constructor (nine real relocation fields). Its four independent
+16-byte vertex members recreate the four native ctor calls and temporary
+copies; a single four-element C++ array instead generated a compiler array
+construction helper and was rejected. Physical vertex offsets are supported,
+but the original nominal class and source-level type identities are unproved.
 The 98% target is still incomplete.
 See the [current reconstruction handoff](docs/RE_HANDOFF.md); the preceding H184
 handoff is preserved there as historical context.

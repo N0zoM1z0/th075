@@ -1,4 +1,4 @@
-# TH075 active reconstruction status — F207
+# TH075 active reconstruction status — F211
 
 Updated 2026-10-27. The user explicitly resumed reconstruction and requires
 serious treatment of both large/core and small/leaf functions; all historical
@@ -540,10 +540,31 @@ All STL library functions, bitmap loaders, graphics APIs, imported
 data and EH/GS helpers earn no new exact CODE credit. All previous
 516 accepted functions and 97 pending origin candidates are intact.
 
-Current ledger: **517 exact functions, 762,023 CODE bytes / 1,973,516 reviewed
-authored bytes = 38.61%**, conservative 38.54% with 3,608 unknown-origin bytes
-retained. F184..F207 (excluding exploratory-only numbers) added twenty-four accepted units,
-twenty-three objects and twenty-six new source/header inputs.
+F211 independently cold-reconstructed reviewed authored
+`SpriteGeometry::InitializeRectangleFromRect` at `0x0040DB50`:
+**305 complete native CODE bytes / 109 x86 instructions**, ordinary
+`RET 4`, and **nine actual COFF call relocations**. Original CODE SHA256
+`044430cb8da9082f9bac7b8d3a7d0eaa1e908e15cd9e1fff5c90877153897ff0`.
+The source implements the original four-corner rectangle conversion,
+integer-to-float FILD/FSTP x/y values, four 16-byte xyzw temporary
+vertices and four complete four-word assignments to the target scene
+member slots, with the distinct +64 component initialization. The first
+natural four-element array formulation triggered a VC7.1 array
+construction helper and emitted only 282 bytes. Four independently
+declared vertex members compile into the target's four ordinary
+constructor calls and complete **305/305-byte** cold-exact body, with
+**9/9 real fields**. The separate F207 575-byte texture directory
+loader and this F211 source were independently rebuilt and cold-replayed
+together, **2/2 exact**, without modifying any previously accepted units.
+The component declarations are local, physically sized views; the
+original nominal Sprite class, source member names, imported constructor
+bodies and data ownership are still unknown. No hand-crafted assembly,
+false padding or cropped extent is counted.
+
+Current ledger: **518 exact functions, 762,328 CODE bytes / 1,973,516 reviewed
+authored bytes = 38.63%**, conservative 38.56% with 3,608 unknown-origin bytes
+retained. F184..F211 (excluding exploratory-only numbers) added twenty-five accepted units,
+twenty-four objects and twenty-seven new source/header inputs.
 Keep R268 origin evidence, all 97 unknown candidates, 493 pre-F184
 accepted units and protected private F184/F185 preview/drafts intact.
 

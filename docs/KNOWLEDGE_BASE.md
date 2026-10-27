@@ -44,6 +44,9 @@ F206 cold-accepts the complete 727-byte bitmap directory loader with
 29 fields and original STL iterator erase on the failed-load path.
 F207 independently cold-accepts the 575-byte alternate-format bitmap
 directory loader with all 23 fields and the same native iterator lifetime.
+F211 cold-accepts the 305-byte sprite rectangle-to-quad constructor
+with all nine fields: four distinct 16-byte vertex members recreate
+the native compiler call sequence, unlike an array.
 F189 was an earlier noncredit investigation superseded by F196 exact.
 The original H184 handoff was historical and is superseded by the current
 request. Earlier experiments and names remain hypotheses until tested.
@@ -54,9 +57,9 @@ See the current [handoff](RE_HANDOFF.md) for current status.
 - Supplied Japanese th075.exe 1.11, SHA-256
   `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
   Archive identity is pinned; official distribution provenance is uncorroborated.
-- **517 exact functions/units, 762,023 CODE bytes, 189 canonical objects,
-  294 accepted source-header inputs.** Reviewed coverage is 38.61%; conservative
-  coverage is 38.54%, including all 97 unknown origins/3,608 pending bytes.
+- **518 exact functions/units, 762,328 CODE bytes, 190 canonical objects,
+  295 accepted source-header inputs.** Reviewed coverage is 38.63%; conservative
+  coverage is 38.56%, including all 97 unknown origins/3,608 pending bytes.
 - Ownership, source presence, names, Ghidra types, compilation and reproducible
   exactness remain distinct. Read ledgers and relevant origin evidence before
   relying on any classification or provisional boundary.
@@ -604,6 +607,29 @@ F206 routine. The physical evidence supports these call windows
 but does not prove original nominal vector/element/source naming.
 All SDK, image decoding, STL helper, global data, compiler cookie
 and original owner-layout credits remain independent/unclaimed.
+
+## F211: exact four-vertex rectangle geometry
+
+At `0x0040DB50`, the authored
+`SpriteGeometry::InitializeRectangleFromRect` contains 305 CODE bytes
+and 109 decoded instructions, ending with `RET 4`. Native body SHA256:
+`044430cb8da9082f9bac7b8d3a7d0eaa1e908e15cd9e1fff5c90877153897ff0`.
+Independent standalone VC7.1 `/GX-` cold replay reproduces the complete
+305 bytes and all nine physical call relocations.
+
+The source-compatible receiver declares four independent physical
+16-byte vertex members at offsets 0, 16, 32 and 48 and a separate
+member ctor call at +64, and passes the original RECT integer coordinates
+through the same float construction and four temporary-copy paths.
+A first source using `SpriteVertex corners[4]` generated a different
+C++ array-construction helper, yielding only 282 bytes and an
+unapproved extra runtime helper. Changing the representation to four
+independent source members yielded a complete match without hand
+written assembly or padding. Actual vertex math/call order is confirmed;
+the original nominal class identity, unrelated members, compiler
+helper source and original field names are not asserted. F207 and
+F211 were re-cold-replayed together with zero differences. Neither
+owned data nor external helper bytes receive new code credit.
 
 ## Retained failures and method boundaries
 
