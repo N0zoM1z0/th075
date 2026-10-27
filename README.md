@@ -26,9 +26,9 @@ This pins the supplied sample; its official distribution provenance has not
 been independently corroborated. The localized `th075c.exe` has a different
 identity and cannot substitute for the target.
 
-The current checkpoint has **509 exact functions / 757,487 code bytes** from
-4,351 provisional candidates. Reviewed authored coverage is 38.38%; conservative
-coverage, including all 3,608 pending bytes, is **38.31%**. The objective of
+The current checkpoint has **511 exact functions / 758,825 code bytes** from
+4,351 provisional candidates. Reviewed authored coverage is 38.45%; conservative
+coverage, including all 3,608 pending bytes, is **38.38%**. The objective of
 98% authored bytes exact remains incomplete. At R268, 1,002 authored, 2,671
 library and 581 compiler-generated candidates are classified; 97 remain unknown.
 Unknown origins receive no exact credit. Candidate count does not establish
@@ -104,6 +104,14 @@ F198 cold-reconstructed both authored TextureManager initialization
 one-state EH). The real 80-byte member-construction order and 44-byte
 meaningful temporary slot reproduced native VC7.1 code; all 20 actual
 fields cold-replayed without masks or guessed external ownership.
+F199 cold-reconstructed the full 434-byte texture-manager destructor,
+including both resource vectors, repeated COM Release and all 23 native
+relocation fields. The original code stores one COM reference count, and
+capturing that real API return restores the exact native stack frame.
+F201 additionally cold-reconstructed 904 bytes of the original game-state
+snapshot writer, with all 131 relocations and four mode-specific paths,
+after independently auditing and preserving its pending worktree edits.
+Both routines were separately cold-replayed before adoption.
 The 98% target is still incomplete.
 See the [current reconstruction handoff](docs/RE_HANDOFF.md); the preceding H184
 handoff is preserved there as historical context.

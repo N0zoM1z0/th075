@@ -507,3 +507,5 @@ BattleScene::Initialize
 TitleScene::Initialize
 TextureManager::Initialize
 TextureManager::AllocateUnformattedSlots
+TextureManager::ReleaseResources
+GameState::SaveSnapshot

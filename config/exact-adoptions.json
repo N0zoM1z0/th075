@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "b6dacff65c74fa8305d276aa98ecfecdb0133f6f493ff6c99a0ff0387b41991f"
+      "current_sha256": "b1b9f51ff1c5ad1c6de5ebb7e12a3c2ed93abf47cb02e92b6beeaaa7029b1095"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "16dd454009ddaa1a65fa5871689f929fff67377737d120cd09ebbef9a5eb63e3"
+      "current_sha256": "6caa22b2f169629ae4ad9cad2b82f450b10188187127255463d634a32e823460"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "d5309a8d0e57af9bd90d42f520ada98a2683bb5d50dc9096cdbede452fdbb8d0"
+      "current_sha256": "9d260ce8fcecaa483c7fce40cefa184ea43f5de74e7854077f5f6bd494c65bc2"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "0040610ee914d5a8ba41030382d15047fdc5a347c6ca78c097eb7e1f47bb5e48"
+      "current_sha256": "379c204cc65fbdb4155362561d8d4dca25bc08546a8a1a78ec8cab25d38f9d6e"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "3b15c3cfd975f8d423ab6bb833656c654446befcfc3cbe633569826a5d28afe4"
+      "current_sha256": "b081e1cb3902322abc862f7c863100d1d1ac3d89bf1942e6931430b56c523e8d"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -19796,6 +19796,94 @@
         "disposition": "authored",
         "confidence": "custom-policy-backed",
         "evidence_id": "R017"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0040AE40",
+        "size": "434",
+        "span_end": "0x0040AFF1",
+        "current_name": "FUN_0040ae40",
+        "proposed_name": "TextureManager::ReleaseResources",
+        "module": "TextureManager",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R017",
+        "owner": "",
+        "notes": "R017; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit."
+      },
+      "after": {
+        "address": "0x0040AE40",
+        "size": "434",
+        "span_end": "0x0040AFF1",
+        "current_name": "FUN_0040ae40",
+        "proposed_name": "TextureManager::ReleaseResources",
+        "module": "TextureManager",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "TextureManagerF199::~TextureManagerF199()",
+        "is_thunk": "false",
+        "source_file": "src/TextureManagerDtorF199.cpp",
+        "evidence": "R017; F199; scripts/repo-python scripts/replay-exact-units.py --unit texture-manager-release-resources-0040ae40",
+        "owner": "authored",
+        "notes": "R017; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit.; F199: full 434 target CODE bytes, 135 decoded x86 instructions and 23 actual COFF relocation fields cold-exact; SHA256 ae20b89ac58429797e1de78f18c5419a216567af8fc3ca11da18c837a14cc3f8. Native five-state EH record 654F12 and real 80-byte physical destructor carrier with base, three 16-byte vector components and 20-byte queue. The destructor frees actual +4 raw storage through operator delete[], traverses both texture pointer vectors at +24/+40 with native repeated Count/At calls and COM Release virtual slot +8, sets first vector slot to null, clears each nonempty vector, conditionally clears name entries, and then relies on actual reverse-order C++ member destruction. The native COM Release return is physically stored at EBP-0x14 (instruction 40AEE8); meaningful ULONG remainingReferenceCount capture reproduces its actual API-result storage, not fake padding. Dropping returned reference count generated 431 bytes, wrong 0x18 stack and one missing 3-byte instruction; capturing yields native 434-byte/0x1C layout. All 23 actual relocation bytes and the complete extents are cold-replayed, no masks/cropped functions/assembly/fabricated returns or unrelated helpers/data/EH byte credit. Original C++ element types and full nominal class identity remain provisional; 509 prior exact units and 97 unknown origins preserved."
+      },
+      "origin": {
+        "address": "0x0040AE40",
+        "origin": "authored",
+        "subsystem": "TextureManager",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R017"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00419920",
+        "size": "904",
+        "span_end": "0x00419CA7",
+        "current_name": "FUN_00419920",
+        "proposed_name": "GameState::SaveSnapshot",
+        "module": "GameState",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R052; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00419920",
+        "size": "904",
+        "span_end": "0x00419CA7",
+        "current_name": "FUN_00419920",
+        "proposed_name": "GameState::SaveSnapshot",
+        "module": "GameState",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "cdecl",
+        "signature": "void GameStateF201::SaveSnapshot()",
+        "is_thunk": "false",
+        "source_file": "src/GameSnapshotF201.cpp",
+        "evidence": "R052; full body hash, complete decoded CFG and local game-specific behavior reviewed; F201; scripts/repo-python scripts/replay-exact-units.py --unit game-state-save-snapshot-00419920",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F201: All 904 native CODE bytes, 163 native x86 instructions, SHA256 23b03c8ccd1fd456027c2536ec3842fdc31cdc7dcb18d140d3ba808f19ad53ad, 131 real DIR32 relocations fully VC7.1 /GX- cold-replayed exact. Four explicit game-mode branches (1/2/4/3) independently store observed selected/alternate actor ID, option/round/settings bytes, selectedSide signed alternate index 1-side, stage and mode-specific live actor scalar fields, in original order with unmodified branch exits. Borrowed byte/DWORD pointers to proven source/snapshot global addresses only: no source-global definitions or claim to complete serialized snapshot layout. No fake locals, ABI overrides, copied machine code, padded fields, masks or cropped extent; no extra data/SDK/callee credit. All prior 509 exact units and pending origin 97 unchanged."
+      },
+      "origin": {
+        "address": "0x00419920",
+        "origin": "authored",
+        "subsystem": "GameState",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R052"
       }
     }
   ],
@@ -160224,6 +160312,976 @@
           "target": 0
         }
       ]
+    },
+    "texture-manager-release-resources-0040ae40": {
+      "source": "src/TextureManagerDtorF199.cpp",
+      "object": "build/matching/TextureManagerDtorF199.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "TextureManager::ReleaseResources"
+      ],
+      "symbol": "??1TextureManagerF199@@QAE@XZ",
+      "target_address": 4238912,
+      "size": 434,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??1TextureManagerF199@@QAE@XZ",
+          "target": 6639378
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 60,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "target": 6559389
+        },
+        {
+          "offset": 74,
+          "type": "REL32",
+          "symbol": "?Count@TexturePointerVectorF199@@QAEIXZ",
+          "target": 4251296
+        },
+        {
+          "offset": 107,
+          "type": "REL32",
+          "symbol": "?Count@TexturePointerVectorF199@@QAEIXZ",
+          "target": 4251296
+        },
+        {
+          "offset": 127,
+          "type": "REL32",
+          "symbol": "?At@TexturePointerVectorF199@@QAEAAPAUIDirect3DTexture8@@I@Z",
+          "target": 4251360
+        },
+        {
+          "offset": 147,
+          "type": "REL32",
+          "symbol": "?At@TexturePointerVectorF199@@QAEAAPAUIDirect3DTexture8@@I@Z",
+          "target": 4251360
+        },
+        {
+          "offset": 182,
+          "type": "REL32",
+          "symbol": "?At@TexturePointerVectorF199@@QAEAAPAUIDirect3DTexture8@@I@Z",
+          "target": 4251360
+        },
+        {
+          "offset": 201,
+          "type": "REL32",
+          "symbol": "?ClearStorage@TexturePointerVectorF199@@QAEXXZ",
+          "target": 4251456
+        },
+        {
+          "offset": 212,
+          "type": "REL32",
+          "symbol": "?Count@TexturePointerVectorF199@@QAEIXZ",
+          "target": 4251296
+        },
+        {
+          "offset": 245,
+          "type": "REL32",
+          "symbol": "?Count@TexturePointerVectorF199@@QAEIXZ",
+          "target": 4251296
+        },
+        {
+          "offset": 265,
+          "type": "REL32",
+          "symbol": "?At@TexturePointerVectorF199@@QAEAAPAUIDirect3DTexture8@@I@Z",
+          "target": 4251360
+        },
+        {
+          "offset": 285,
+          "type": "REL32",
+          "symbol": "?At@TexturePointerVectorF199@@QAEAAPAUIDirect3DTexture8@@I@Z",
+          "target": 4251360
+        },
+        {
+          "offset": 315,
+          "type": "REL32",
+          "symbol": "?ClearStorage@TexturePointerVectorF199@@QAEXXZ",
+          "target": 4251456
+        },
+        {
+          "offset": 326,
+          "type": "REL32",
+          "symbol": "?Count@TextureNameVectorF199@@QAEIXZ",
+          "target": 4250912
+        },
+        {
+          "offset": 341,
+          "type": "REL32",
+          "symbol": "?ClearStorage@TextureNameVectorF199@@QAEXXZ",
+          "target": 4251184
+        },
+        {
+          "offset": 356,
+          "type": "REL32",
+          "symbol": "??1TextureQueueF199@@QAE@XZ",
+          "target": 4251568
+        },
+        {
+          "offset": 371,
+          "type": "REL32",
+          "symbol": "??1TexturePointerVectorF199@@QAE@XZ",
+          "target": 4251264
+        },
+        {
+          "offset": 386,
+          "type": "REL32",
+          "symbol": "??1TexturePointerVectorF199@@QAE@XZ",
+          "target": 4251264
+        },
+        {
+          "offset": 401,
+          "type": "REL32",
+          "symbol": "??1TextureNameVectorF199@@QAE@XZ",
+          "target": 4250816
+        },
+        {
+          "offset": 416,
+          "type": "REL32",
+          "symbol": "??1TextureCountBaseF199@@QAE@XZ",
+          "target": 4198432
+        },
+        {
+          "offset": 426,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "game-state-save-snapshot-00419920": {
+      "source": "src/GameSnapshotF201.cpp",
+      "object": "build/matching/GameSnapshotF201.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "GameState::SaveSnapshot"
+      ],
+      "symbol": "?SaveSnapshot@GameStateF201@@YAXXZ",
+      "target_address": 4299040,
+      "size": 904,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "?g_CombatModeAt006714B4@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 21,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 28,
+          "type": "DIR32",
+          "symbol": "?g_SelectedSideAt006714B8@@3CA",
+          "target": 6755512
+        },
+        {
+          "offset": 34,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 41,
+          "type": "DIR32",
+          "symbol": "?g_SelectedSideAt006714B8@@3CA",
+          "target": 6755512
+        },
+        {
+          "offset": 47,
+          "type": "DIR32",
+          "symbol": "?g_PlayerIdAt006714C8@@3PAEA",
+          "target": 6755528
+        },
+        {
+          "offset": 52,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 59,
+          "type": "DIR32",
+          "symbol": "?g_SelectedSideAt006714B8@@3CA",
+          "target": 6755512
+        },
+        {
+          "offset": 65,
+          "type": "DIR32",
+          "symbol": "?g_PlayerAltAt00671610@@3PAEA",
+          "target": 6755856
+        },
+        {
+          "offset": 71,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 78,
+          "type": "DIR32",
+          "symbol": "?g_SelectedSideAt006714B8@@3CA",
+          "target": 6755512
+        },
+        {
+          "offset": 84,
+          "type": "DIR32",
+          "symbol": "?g_PlayerOtherAt006714CC@@3PAEA",
+          "target": 6755532
+        },
+        {
+          "offset": 90,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 97,
+          "type": "DIR32",
+          "symbol": "?g_SelectedSideAt006714B8@@3CA",
+          "target": 6755512
+        },
+        {
+          "offset": 103,
+          "type": "DIR32",
+          "symbol": "?g_PlayerRoundAt006714AC@@3PAEA",
+          "target": 6755500
+        },
+        {
+          "offset": 108,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 115,
+          "type": "DIR32",
+          "symbol": "?g_SelectedSideAt006714B8@@3CA",
+          "target": 6755512
+        },
+        {
+          "offset": 121,
+          "type": "DIR32",
+          "symbol": "?g_PlayerDifficultyAt00671438@@3PAEA",
+          "target": 6755384
+        },
+        {
+          "offset": 127,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 134,
+          "type": "DIR32",
+          "symbol": "?g_SelectedSideAt006714B8@@3CA",
+          "target": 6755512
+        },
+        {
+          "offset": 140,
+          "type": "DIR32",
+          "symbol": "?g_PlayerSettingsAt00671434@@3PAEA",
+          "target": 6755380
+        },
+        {
+          "offset": 146,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 153,
+          "type": "DIR32",
+          "symbol": "?g_SelectedSideAt006714B8@@3CA",
+          "target": 6755512
+        },
+        {
+          "offset": 166,
+          "type": "DIR32",
+          "symbol": "?g_PlayerIdAt006714C8@@3PAEA",
+          "target": 6755528
+        },
+        {
+          "offset": 172,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 179,
+          "type": "DIR32",
+          "symbol": "?g_SelectedSideAt006714B8@@3CA",
+          "target": 6755512
+        },
+        {
+          "offset": 192,
+          "type": "DIR32",
+          "symbol": "?g_PlayerAltAt00671610@@3PAEA",
+          "target": 6755856
+        },
+        {
+          "offset": 198,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 205,
+          "type": "DIR32",
+          "symbol": "?g_SelectedSideAt006714B8@@3CA",
+          "target": 6755512
+        },
+        {
+          "offset": 218,
+          "type": "DIR32",
+          "symbol": "?g_PlayerOtherAt006714CC@@3PAEA",
+          "target": 6755532
+        },
+        {
+          "offset": 224,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 231,
+          "type": "DIR32",
+          "symbol": "?g_SelectedSideAt006714B8@@3CA",
+          "target": 6755512
+        },
+        {
+          "offset": 244,
+          "type": "DIR32",
+          "symbol": "?g_PlayerRoundAt006714AC@@3PAEA",
+          "target": 6755500
+        },
+        {
+          "offset": 250,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 257,
+          "type": "DIR32",
+          "symbol": "?g_SelectedSideAt006714B8@@3CA",
+          "target": 6755512
+        },
+        {
+          "offset": 270,
+          "type": "DIR32",
+          "symbol": "?g_PlayerDifficultyAt00671438@@3PAEA",
+          "target": 6755384
+        },
+        {
+          "offset": 276,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 283,
+          "type": "DIR32",
+          "symbol": "?g_SelectedSideAt006714B8@@3CA",
+          "target": 6755512
+        },
+        {
+          "offset": 296,
+          "type": "DIR32",
+          "symbol": "?g_PlayerSettingsAt00671434@@3PAEA",
+          "target": 6755380
+        },
+        {
+          "offset": 302,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 308,
+          "type": "DIR32",
+          "symbol": "?g_StageAt0067161D@@3EA",
+          "target": 6755869
+        },
+        {
+          "offset": 314,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 326,
+          "type": "DIR32",
+          "symbol": "?g_CombatModeAt006714B4@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 341,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 348,
+          "type": "DIR32",
+          "symbol": "?g_PlayerIdAt006714C8@@3PAEA",
+          "target": 6755528
+        },
+        {
+          "offset": 354,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 360,
+          "type": "DIR32",
+          "symbol": "?g_PlayerAltAt00671610@@3PAEA",
+          "target": 6755856
+        },
+        {
+          "offset": 366,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 371,
+          "type": "DIR32",
+          "symbol": "?g_PlayerOtherAt006714CC@@3PAEA",
+          "target": 6755532
+        },
+        {
+          "offset": 376,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 382,
+          "type": "DIR32",
+          "symbol": "?g_PlayerRoundAt006714AC@@3PAEA",
+          "target": 6755500
+        },
+        {
+          "offset": 388,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 394,
+          "type": "DIR32",
+          "symbol": "?g_PlayerDifficultyAt00671438@@3PAEA",
+          "target": 6755384
+        },
+        {
+          "offset": 400,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 405,
+          "type": "DIR32",
+          "symbol": "?g_PlayerSettingsAt00671434@@3PAEA",
+          "target": 6755380
+        },
+        {
+          "offset": 410,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 416,
+          "type": "DIR32",
+          "symbol": "?g_PlayerIdAt006714C8@@3PAEA",
+          "target": 6755528
+        },
+        {
+          "offset": 422,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 428,
+          "type": "DIR32",
+          "symbol": "?g_PlayerAltAt00671610@@3PAEA",
+          "target": 6755856
+        },
+        {
+          "offset": 434,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 439,
+          "type": "DIR32",
+          "symbol": "?g_PlayerOtherAt006714CC@@3PAEA",
+          "target": 6755532
+        },
+        {
+          "offset": 444,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 450,
+          "type": "DIR32",
+          "symbol": "?g_PlayerRoundAt006714AC@@3PAEA",
+          "target": 6755500
+        },
+        {
+          "offset": 456,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 462,
+          "type": "DIR32",
+          "symbol": "?g_PlayerDifficultyAt00671438@@3PAEA",
+          "target": 6755384
+        },
+        {
+          "offset": 468,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 473,
+          "type": "DIR32",
+          "symbol": "?g_PlayerSettingsAt00671434@@3PAEA",
+          "target": 6755380
+        },
+        {
+          "offset": 478,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 484,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 491,
+          "type": "DIR32",
+          "symbol": "?g_StageAt0067161D@@3EA",
+          "target": 6755869
+        },
+        {
+          "offset": 497,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 509,
+          "type": "DIR32",
+          "symbol": "?g_CombatModeAt006714B4@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 525,
+          "type": "DIR32",
+          "symbol": "?g_OptionsModeAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 533,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 539,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 546,
+          "type": "DIR32",
+          "symbol": "?g_PlayerIdAt006714C8@@3PAEA",
+          "target": 6755528
+        },
+        {
+          "offset": 552,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 558,
+          "type": "DIR32",
+          "symbol": "?g_PlayerAltAt00671610@@3PAEA",
+          "target": 6755856
+        },
+        {
+          "offset": 564,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 569,
+          "type": "DIR32",
+          "symbol": "?g_PlayerOtherAt006714CC@@3PAEA",
+          "target": 6755532
+        },
+        {
+          "offset": 574,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 580,
+          "type": "DIR32",
+          "symbol": "?g_PlayerRoundAt006714AC@@3PAEA",
+          "target": 6755500
+        },
+        {
+          "offset": 586,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 592,
+          "type": "DIR32",
+          "symbol": "?g_PlayerDifficultyAt00671438@@3PAEA",
+          "target": 6755384
+        },
+        {
+          "offset": 598,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 603,
+          "type": "DIR32",
+          "symbol": "?g_PlayerSettingsAt00671434@@3PAEA",
+          "target": 6755380
+        },
+        {
+          "offset": 608,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 614,
+          "type": "DIR32",
+          "symbol": "?g_PlayerIdAt006714C8@@3PAEA",
+          "target": 6755528
+        },
+        {
+          "offset": 620,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 626,
+          "type": "DIR32",
+          "symbol": "?g_PlayerAltAt00671610@@3PAEA",
+          "target": 6755856
+        },
+        {
+          "offset": 632,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 637,
+          "type": "DIR32",
+          "symbol": "?g_PlayerOtherAt006714CC@@3PAEA",
+          "target": 6755532
+        },
+        {
+          "offset": 642,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 648,
+          "type": "DIR32",
+          "symbol": "?g_PlayerRoundAt006714AC@@3PAEA",
+          "target": 6755500
+        },
+        {
+          "offset": 654,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 660,
+          "type": "DIR32",
+          "symbol": "?g_PlayerDifficultyAt00671438@@3PAEA",
+          "target": 6755384
+        },
+        {
+          "offset": 666,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 671,
+          "type": "DIR32",
+          "symbol": "?g_PlayerSettingsAt00671434@@3PAEA",
+          "target": 6755380
+        },
+        {
+          "offset": 676,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 682,
+          "type": "DIR32",
+          "symbol": "?g_ActorAt00671418@@3PAEA",
+          "target": 6755352
+        },
+        {
+          "offset": 694,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 699,
+          "type": "DIR32",
+          "symbol": "?g_StageAt0067161D@@3EA",
+          "target": 6755869
+        },
+        {
+          "offset": 704,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 716,
+          "type": "DIR32",
+          "symbol": "?g_CombatModeAt006714B4@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 732,
+          "type": "DIR32",
+          "symbol": "?g_OptionsModeAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 741,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 746,
+          "type": "DIR32",
+          "symbol": "?g_PlayerIdAt006714C8@@3PAEA",
+          "target": 6755528
+        },
+        {
+          "offset": 751,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 757,
+          "type": "DIR32",
+          "symbol": "?g_PlayerAltAt00671610@@3PAEA",
+          "target": 6755856
+        },
+        {
+          "offset": 763,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 769,
+          "type": "DIR32",
+          "symbol": "?g_PlayerOtherAt006714CC@@3PAEA",
+          "target": 6755532
+        },
+        {
+          "offset": 775,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 780,
+          "type": "DIR32",
+          "symbol": "?g_PlayerRoundAt006714AC@@3PAEA",
+          "target": 6755500
+        },
+        {
+          "offset": 785,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 791,
+          "type": "DIR32",
+          "symbol": "?g_PlayerIdAt006714C8@@3PAEA",
+          "target": 6755528
+        },
+        {
+          "offset": 797,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 803,
+          "type": "DIR32",
+          "symbol": "?g_PlayerAltAt00671610@@3PAEA",
+          "target": 6755856
+        },
+        {
+          "offset": 809,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 814,
+          "type": "DIR32",
+          "symbol": "?g_PlayerOtherAt006714CC@@3PAEA",
+          "target": 6755532
+        },
+        {
+          "offset": 819,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 825,
+          "type": "DIR32",
+          "symbol": "?g_PlayerRoundAt006714AC@@3PAEA",
+          "target": 6755500
+        },
+        {
+          "offset": 831,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 837,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 844,
+          "type": "DIR32",
+          "symbol": "?g_ActorAt00671418@@3PAEA",
+          "target": 6755352
+        },
+        {
+          "offset": 857,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 863,
+          "type": "DIR32",
+          "symbol": "?g_StageFlagAt00671622@@3EA",
+          "target": 6755874
+        },
+        {
+          "offset": 869,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 875,
+          "type": "DIR32",
+          "symbol": "?g_ActorAt00671418@@3PAEA",
+          "target": 6755352
+        },
+        {
+          "offset": 886,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        },
+        {
+          "offset": 892,
+          "type": "DIR32",
+          "symbol": "?g_ExtraStageAt0067161E@@3EA",
+          "target": 6755870
+        },
+        {
+          "offset": 898,
+          "type": "DIR32",
+          "symbol": "?g_SnapshotAt00671862@@3PAEA",
+          "target": 6756450
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -160512,6 +161570,8 @@
     "src/BattleConstructorF196.cpp": "14aa8f89d7c56d1d42707cf528dda2da398e4c4907db11508eab3eb91f403233",
     "src/TitleConstructorF197.cpp": "57654c746398e96ace95527d9f35d508ef3c27cea71ddf98157a4f99cb625251",
     "src/TextureManagerCtorF198.cpp": "bc4231e5e90b9a09d70f0f991cbb56b166e89c605a90714976200bb63be843b3",
-    "src/TextureSlotsF198.cpp": "07c9844215f7d64339a36b89732f9806e21d34e4a84e8384f4d3fa53ae7435fc"
+    "src/TextureSlotsF198.cpp": "07c9844215f7d64339a36b89732f9806e21d34e4a84e8384f4d3fa53ae7435fc",
+    "src/TextureManagerDtorF199.cpp": "3706d62c639b6a07cdd410650b2da2053a4f9e5700b22ff7d336366b7d06cc18",
+    "src/GameSnapshotF201.cpp": "4ee247382d3531889b7c74fc933cfb86b912469fdd7745d73d2be1092902014a"
   }
 }

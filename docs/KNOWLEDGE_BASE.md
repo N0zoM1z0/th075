@@ -29,6 +29,10 @@ contract in the 435-byte title constructor (two EH states, 18 fields), exact.
 F198 cold-accepts the 177-byte texture manager constructor and 128-byte
 resource-slot initializer, all 20 actual fields; natural five- and one-state
 EH policies preserved.
+F199 cold-accepts the complete 434-byte texture-manager destructor after
+preserving the native COM Release result store; 23 fields verified.
+F201 cold-accepts the separately reviewed 904-byte game-mode snapshot
+writer, preserving all 131 actual relocations and four game-mode branches.
 F189 was an earlier noncredit investigation superseded by F196 exact.
 The original H184 handoff was historical and is superseded by the current
 request. Earlier experiments and names remain hypotheses until tested.
@@ -39,9 +43,9 @@ See the current [handoff](RE_HANDOFF.md) for current status.
 - Supplied Japanese th075.exe 1.11, SHA-256
   `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
   Archive identity is pinned; official distribution provenance is uncorroborated.
-- **509 exact functions/units, 757,487 CODE bytes, 181 canonical objects,
-  286 accepted source-header inputs.** Reviewed coverage is 38.38%; conservative
-  coverage is 38.31%, including all 97 unknown origins/3,608 pending bytes.
+- **511 exact functions/units, 758,825 CODE bytes, 183 canonical objects,
+  288 accepted source-header inputs.** Reviewed coverage is 38.45%; conservative
+  coverage is 38.38%, including all 97 unknown origins/3,608 pending bytes.
 - Ownership, source presence, names, Ghidra types, compilation and reproducible
   exactness remain distinct. Read ledgers and relevant origin evidence before
   relying on any classification or provisional boundary.
@@ -430,6 +434,40 @@ Full original class names, component element types and some root
 member semantics are unproven. No STL/template, helper, EH data or
 other dependency byte credit was granted. The bigger manager
 release at 0040AE40 and scene destruction remain open.
+
+## F199: complete destructor and original COM result semantics
+
+The independently authored texture-manager destructor 0x0040AE40 consists
+of 434 native CODE bytes, 135 decoded instructions and 23 real relocation
+fields; SHA256
+`ae20b89ac58429797e1de78f18c5419a216567af8fc3ca11da18c837a14cc3f8`.
+A natural /GX source using the physically observed 80-byte allocator carrier
+recreates five native EH cleanup states, two pointer-vector traversal loops,
+COM resource release, nulling/clearing, and reverse member destruction.
+An earlier 431-byte probe dropped the COM Release() result, unlike
+the target instruction that stores its `ULONG` return to a stack-local
+reference count. Capturing that actual reference count yields the native
+0x1C stack allocation and 434-byte body without padding or fabricated
+control flow. Fresh cold replay proves all 434 bytes and 23 actual COFF
+fields. The source does not establish original STL element types, nominal
+original class name, SDK or EH helper authorship, or complete data ownership.
+
+## F201: complete mode-aware game-state snapshot persistence
+
+The reviewed authored native `GameState::SaveSnapshot` at 0x00419920 is
+904 CODE bytes, 163 whole instructions, ordinary RET/INT3 and 131 actual
+DIR32 relocation fields. Body SHA256:
+`23b03c8ccd1fd456027c2536ec3842fdc31cdc7dcb18d140d3ba808f19ad53ad`.
+Its legitimate source and unit had been left as uncommitted worktree edits;
+they were explicitly read, audited and independently cold-replayed with
+F199, not discarded or accepted on historical notes alone. All 904/904
+bytes and 131 fields matched again. Four original game modes (1, 2,
+4 and 3) copy the real source player, opponent, settings, side/stage
+bytes and branch-specific live actor fields to their observed destination
+offsets. Destination/source declarations are borrowed byte and DWORD
+address views; they do not assert a complete original savegame structure,
+buffer extent, type identity or independent global data code credits.
+Only the 904 reviewed authored bytes receive new exact credit.
 
 ## Retained failures and method boundaries
 

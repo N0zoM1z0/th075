@@ -490,3 +490,5 @@ address,name,module,confidence,evidence
 0x0043A020,TitleScene::Initialize,TitleScene,inferred,F197; complete two-state EH 435-byte title initializer cold exact; original nominal class and R108 base origin unknown
 0x0040AD80,TextureManager::Initialize,TextureManager,inferred,F198; whole natural source 177-byte cold exact with 12 fields; original C++ owner/container semantics provisional
 0x0040B1D0,TextureManager::AllocateUnformattedSlots,TextureManager,inferred,F198; whole natural source 128-byte cold exact with 8 fields; original C++ owner/container semantics provisional
+0x0040AE40,TextureManager::ReleaseResources,TextureManager,inferred,F199; complete 434-byte five-state EH cleanup cold exact; original owner/element types provisional
+0x00419920,GameState::SaveSnapshot,GameState,inferred,F201; whole 904-byte game snapshot builder cold exact; original data-owner type/layout names provisional

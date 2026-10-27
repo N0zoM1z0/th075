@@ -1,4 +1,4 @@
-# TH075 active reconstruction status — F198
+# TH075 active reconstruction status — F201
 
 Updated 2026-10-27. The user explicitly resumed reconstruction and requires
 serious treatment of both large/core and small/leaf functions; all historical
@@ -352,16 +352,58 @@ neither source file defines external data or claims other helper, SDK
 or generated EH byte credits. The related larger 0x0040AE40 texture
 manager release remains to reconstruct.
 
-Current ledger: **509 exact functions, 757,487 CODE bytes / 1,973,516 reviewed
-authored bytes = 38.38%**, conservative 38.31% with 3,608 unknown-origin bytes
-retained. F184..F198 added sixteen accepted units, fifteen objects and eighteen new
-source/header inputs.
+F199 completes the *release* half of the texture manager constructor
+accepted as F198. `TextureManager::ReleaseResources` at `0x0040AE40`
+is **434 native CODE bytes / 135 instructions** with **23 real COFF
+relocation fields**; SHA256
+`ae20b89ac58429797e1de78f18c5419a216567af8fc3ca11da18c837a14cc3f8`.
+The exact original `/GX` EH constructor/destructor unwinding record is
+`0x00654F12` (five states). The source-compatible borrowed 80-byte
+manager holds the previously observed base, vectors and queue. Its
+natural destructor frees the +4 raw memory, traverses two pointer
+vectors at +24 and +40 using the true count/accessor methods, dispatches
+COM Release via slot8, nulls first-vector released slots, clears the
+appropriate vectors, then invokes the native reverse-order automatic
+member destructors. The first full probe produced 431 bytes: it
+discarded the SDK `ULONG Release()` result that the *target itself*
+physically stores at `0x0040AEE8` / stack EBP-0x14. Capturing that
+observed post-release reference count (not fabricating padding or
+an extraneous result) restores the native 0x1C stack frame, exact
+434 bytes and **all 23 relocations** under new canonical cold replay.
+Original STL element types, class/field names, global data and
+SDK/compiler helper bodies remain provisional/uncredited.
+
+F201 was an already present, *uncommitted* candidate discovered during
+the real worktree inspection and investigated rather than skipped.
+`GameState::SaveSnapshot` at `0x00419920` is **904 native CODE
+bytes / 163 decoded instructions**, ordinary RET and following INT3,
+native SHA256
+`23b03c8ccd1fd456027c2536ec3842fdc31cdc7dcb18d140d3ba808f19ad53ad`.
+Independent comparison of the source to the original target verified
+**131 physical DIR32 relocation fields** and its full original
+four-way branching on battle modes **1, 2, 4 and 3**. Native byte,
+word and DWORD writes preserve the chosen player's identity, opposing
+character settings, signed side index, stage and battle-dependent
+live actor fields, in their original ordering. No original complete
+serialization structure or buffer extent is inferred: source uses
+borrowed source/snapshot globals only. Its previously pending unit
+was independently rebuilt *again* with the F199 unit and passed
+**904/904 cold exact**, rather than inheriting unreviewed labels from
+the dirty worktree. No data/import/helper/unknown-origin credit.
+F199 and F201 together add **1,338 authored CODE bytes** and
+154 actual relocations; all previous accepted units and 97 pending
+origins remain intact.
+
+Current ledger: **511 exact functions, 758,825 CODE bytes / 1,973,516 reviewed
+authored bytes = 38.45%**, conservative 38.38% with 3,608 unknown-origin bytes
+retained. F184..F201 (excluding exploratory-only numbers) added eighteen accepted units,
+seventeen objects and twenty new source/header inputs.
 Keep R268 origin evidence, all 97 unknown candidates, 493 pre-F184
 accepted units and protected private F184/F185 preview/drafts intact.
 
-Next: attack the full 0x0040AE40 texture-manager release function
-and the 0x0043B0B0 battle-scene destructor, alongside small helpers;
-retain R108 origin ambiguity and the original EH metadata. with full CFG, branches, call graph,
+Next: revisit the 248-byte 0x0043B0B0 battle-scene destructor (native
+local-slot assignment remains unproven) and additional large authored
+scene/texture functions, plus small helpers. Retain R108 origin ambiguity. with full CFG, branches, call graph,
 target writes, lifetime and switch ownership before adopting any source.
 Do not claim exact credit for incomplete probes. Record failed approaches and
 commit separately when they yield durable discoveries.
