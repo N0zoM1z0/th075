@@ -528,3 +528,4 @@ GameState::ReadSnapshotHeaderAt00413A60,0x00413A60,function
 ReplayRecords::FindAvailablePath,0x00414300,function
 StaticResourceQueues::ClearFourQueuesAt00413880,0x00413880,function
 ReplayRecords::IsPrimaryInputQueueEmptyAt004142D0,0x004142D0,function
+CharacterSelectScene::ResetSelection,0x00433230,function

@@ -26,10 +26,17 @@ This pins the supplied sample; its official distribution provenance has not
 been independently corroborated. The localized `th075c.exe` has a different
 identity and cannot substitute for the target.
 
-The current checkpoint has **529 exact functions / 764,565 code bytes** from
-4,351 provisional candidates. Reviewed authored coverage is 38.74%; conservative
-coverage, including all 3,608 pending bytes, is **38.67%**. The objective of
+The current checkpoint has **530 exact functions / 765,134 code bytes** from
+4,351 provisional candidates. Reviewed authored coverage is 38.77%; conservative
+coverage, including all 3,608 pending bytes, is **38.70%**. The objective of
 98% authored bytes exact remains incomplete.
+F221 independently cold-reconstructed the 569-byte complete character
+selection reset state machine, with all eleven real COFF fields. An
+initial natural source differed in one byte of the 4.712389f float
+literal: native field +0xDC is 0x4096CBE2 and the meaningful
+4.712388f spelling reproduces it exactly. The branch/order, signed
+player/stage arithmetic, visual state stores and borrowed progress
+callee also match; no complete scene-owner layout is claimed.
 F220 cold-reconstructed the exact 67-byte replay four-queue clearing
 policy and 35-byte primary input-queue empty check (all five real
 call fields), without adopting any vendor STL implementation.

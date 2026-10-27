@@ -36481,3 +36481,67 @@ offset = 17
 type = "REL32"
 symbol = "?Size@ByteQueueF220@@QAEIXZ"
 target = 0x00414430
+
+[units.character-select-reset-selection-00433230]
+source = "src/SelectionResetF221.cpp"
+object = "build/matching/SelectionResetF221.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["CharacterSelectScene::ResetSelection"]
+symbol = "?ResetSelection@CharacterSelectionF221@@QAEXXZ"
+target_address = 0x00433230
+size = 569
+[[units.character-select-reset-selection-00433230.relocations]]
+offset = 363
+type = "DIR32"
+symbol = "?g_PlayerSelectionAt006714C8@@3CA"
+target = 0x006714C8
+[[units.character-select-reset-selection-00433230.relocations]]
+offset = 377
+type = "DIR32"
+symbol = "?g_SecondPlayerAt006714C9@@3EA"
+target = 0x006714C9
+[[units.character-select-reset-selection-00433230.relocations]]
+offset = 390
+type = "DIR32"
+symbol = "?g_PlayerSelectionAt006714C8@@3CA"
+target = 0x006714C8
+[[units.character-select-reset-selection-00433230.relocations]]
+offset = 417
+type = "DIR32"
+symbol = "?g_PlayerSelectionAt006714C8@@3CA"
+target = 0x006714C8
+[[units.character-select-reset-selection-00433230.relocations]]
+offset = 464
+type = "DIR32"
+symbol = "?g_StageSelectionAt0067161D@@3CA"
+target = 0x0067161D
+[[units.character-select-reset-selection-00433230.relocations]]
+offset = 498
+type = "DIR32"
+symbol = "?g_StageSelectionAt0067161D@@3CA"
+target = 0x0067161D
+[[units.character-select-reset-selection-00433230.relocations]]
+offset = 522
+type = "DIR32"
+symbol = "?g_StageSelectionAt0067161D@@3CA"
+target = 0x0067161D
+[[units.character-select-reset-selection-00433230.relocations]]
+offset = 543
+type = "DIR32"
+symbol = "?g_OptionModeAt006714D0@@3EA"
+target = 0x006714D0
+[[units.character-select-reset-selection-00433230.relocations]]
+offset = 550
+type = "DIR32"
+symbol = "?g_PlayerSelectionAt006714C8@@3CA"
+target = 0x006714C8
+[[units.character-select-reset-selection-00433230.relocations]]
+offset = 556
+type = "DIR32"
+symbol = "?g_ProgressSelectionAt006718F8@@3VProgressSelectionF221@@A"
+target = 0x006718F8
+[[units.character-select-reset-selection-00433230.relocations]]
+offset = 561
+type = "REL32"
+symbol = "?RegisterSelection@ProgressSelectionF221@@QAEXEE@Z"
+target = 0x0041A1A0

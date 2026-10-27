@@ -510,3 +510,4 @@ address,name,module,confidence,evidence
 0x00414300,ReplayRecords::FindAvailablePath,ReplayRecords,inferred,F218; complete 89-byte native policy cold exact with 3 fields; original owner/storage identity unproven
 0x00413880,StaticResourceQueues::ClearFourQueuesAt00413880,ReplayRecords,inferred,F220; complete 67 native authored bytes and 4 real fields exact; original owner STL type provisional
 0x004142D0,ReplayRecords::IsPrimaryInputQueueEmptyAt004142D0,ReplayRecords,inferred,F220; complete 35 native authored bytes and 1 real fields exact; original owner STL type provisional
+0x00433230,CharacterSelectScene::ResetSelection,CharacterSelectScene,inferred,F221; complete authored 569-byte selection reset and all 11 true COFF fields cold exact; nominal scene owner layout unproven

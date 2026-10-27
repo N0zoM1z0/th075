@@ -1,4 +1,4 @@
-# TH075 active reconstruction status — F220
+# TH075 active reconstruction status — F221
 
 Updated 2026-10-27. The user explicitly resumed reconstruction and requires
 serious treatment of both large/core and small/leaf functions; all historical
@@ -799,10 +799,46 @@ disassembly and failed controls remain private in
 genuine iterator lifetime/layout evidence rather than force-fitting
 padding or faking source ABIs.
 
-Current ledger: **529 exact functions, 764,565 CODE bytes / 1,973,516 reviewed
-authored bytes = 38.74%**, conservative 38.67% with 3,608 unknown-origin bytes
-retained. F184..F220 (excluding exploratory-only numbers) added thirty-six accepted units,
-thirty-three objects and thirty-six new source/header inputs.
+F221 independently cold-reconstructed the substantial character
+selection reset policy `CharacterSelectScene::ResetSelection` at
+`0x00433230`: **569 whole authored CODE bytes / 116 complete x86
+instructions**, one normal RET and following INT3, target SHA256
+`82fce94494f4ec78e593bd11ad74807f538a4a7ff3fdef463584aeb68ac16623`.
+Fresh pinned VC7.1 /GX- source cold-replays **569/569 bytes** and
+**all eleven actual COFF relocation fields** without differences.
+The source follows the original visible menu flags, alpha/position/
+float state stores, signed character index `(selection+1)%10` twice
+with native CDQ/IDIV, special stage 20 handling or signed stage
+modulo/comparison, and the final progress registration call
+`0x0041A1A0` via the authentic borrowed `0x006718F8` receiver.
+The only initial structural mismatch was a physical float constant:
+`4.712389f` emits IEEE-754 `0x4096CBE4`, whereas the native
+write at scene+0xDC is `0x4096CBE2`; `4.712388f` rounds to
+the genuine target field and restores the **entire function**.
+No binary-byte graft, fake local, ASM, reordered effect or shortened
+branch was needed. The nominal full CharacterSelectScene class
+and the concrete progress owner type remain unproved and uncredited.
+
+In parallel, bounded large-function tests on the full
+`ReplayRecords::AppendRecord` source at 00413DE0
+reconfirmed the exact 1252-byte length and 50 external
+relocation positions with four real C++ `for` iterator updates.
+Seventy-two additional meaningful name-based stack slot controls
+improved the nonrelocation result to **1025/1052**, but the
+original physical allocation of six 8-byte iterator objects,
+output byte count and queue size is not yet exact. The complete
+function remains unaccepted; all controls stay in
+`.analysis/f219-append-record/`.
+A further 57 meaningful single-local probes on the 792-byte
+ReplayRecords reader did not surpass **639/676** non-field bytes;
+that function also remains pending and is fully preserved
+privately. These experiments provide native ABI evidence, not
+partial code credit.
+
+Current ledger: **530 exact functions, 765,134 CODE bytes / 1,973,516 reviewed
+authored bytes = 38.77%**, conservative 38.70% with 3,608 unknown-origin bytes
+retained. F184..F221 (excluding exploratory-only numbers) added thirty-seven accepted units,
+thirty-four objects and thirty-seven new source/header inputs.
 Keep R268 origin evidence, all 97 unknown candidates, 493 pre-F184
 accepted units and protected private F184/F185 preview/drafts intact.
 
