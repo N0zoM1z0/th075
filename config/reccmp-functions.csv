@@ -492,3 +492,5 @@ FighterState::RenderTimedSprite,0x00451A00,function
 NameEntryScene::PollPlayerInput,0x0042AB90,function
 NameEntryScene::PollSharedInput,0x0042BCD0,function
 TitleScene::RenderMenu,0x0043A7A0,function
+TitleScene::PollMenuInput,0x0043ABF0,function
+ReplayScene::PollInput,0x00429DC0,function

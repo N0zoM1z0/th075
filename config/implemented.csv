@@ -491,3 +491,5 @@ FighterState::RenderTimedSprite
 NameEntryScene::PollPlayerInput
 NameEntryScene::PollSharedInput
 TitleScene::RenderMenu
+TitleScene::PollMenuInput
+ReplayScene::PollInput

@@ -1,18 +1,19 @@
 # TH075 reconstruction knowledge index
 
-Updated 2026-10-26 for the user-requested H184 cleanup and handoff. The user
-cleared the active goal; no goal is active and no pause action was taken.
-The 98% authored-byte objective remains incomplete. Use the current
-[handoff](RE_HANDOFF.md) for authoritative state and future resumption steps.
+Updated 2026-10-27: the user resumed reconstruction. F184 added two
+canonical cold-exact input policies (+538 CODE bytes / 46 relocation fields).
+The original H184 handoff was historical and is superseded by the current
+request. Earlier experiments and names remain hypotheses until tested.
+See the current [handoff](RE_HANDOFF.md) for current status.
 
 ## Authoritative state
 
 - Supplied Japanese th075.exe 1.11, SHA-256
   `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
   Archive identity is pinned; official distribution provenance is uncorroborated.
-- **493 exact functions/units, 749,438 CODE bytes, 166 canonical objects,
-  268 accepted source-header inputs.** Reviewed coverage is 37.97%; conservative
-  coverage is 37.91%, including all 97 unknown origins/3,608 pending bytes.
+- **495 exact functions/units, 749,976 CODE bytes, 167 canonical objects,
+  270 accepted source-header inputs.** Reviewed coverage is 38.00%; conservative
+  coverage is 37.93%, including all 97 unknown origins/3,608 pending bytes.
 - Ownership, source presence, names, Ghidra types, compilation and reproducible
   exactness remain distinct. Read ledgers and relevant origin evidence before
   relying on any classification or provisional boundary.
@@ -49,7 +50,7 @@ No helper/data credit was added. D3DCOLOR masks express actual color semantics;
 they are never comparison masks. Source patterns or mapped names alone prove
 neither ownership nor exactness.
 
-## Prepared F184: no acceptance credit
+## F184: cold-accepted input policies
 
 | Function | Native/emitted bytes | Returns / branches | Fields | Differences |
 | --- | --- | --- | --- | --- |
@@ -57,15 +58,16 @@ neither ownership nor exactness.
 | R053 429DC0 replay/shared input | 310 / 310 | 1 / 16 | 27 | 0 |
 
 Both full extents have plain RET, no tables and verified alignment; all 18 calls
-reuse canonical input/window helpers. These are diagnostic previews only: no
-public source, registered unit, canonical cold build, source or exact credit.
+reuse canonical input/window helpers. Two separate pointer-only synthetic scene
+views were compiled anew and registered with all 46 real relocation fields.
+The canonical cold replay of both complete extents passed with zero differences.
 Keep DWORD versus byte stores, independent direction checks, confirm/cancel,
 Escape counter and actual chord placement. Reuse the existing mappings/counts.
 
-On a future reconstruction request, use the H184 resumption seed and a new
-mutable working directory, then register and cold-replay only these new units.
-Do not edit the old preview seed or label an old object as cold evidence.
-Private source/profile/native/decompile/46-field comparisons and object remain.
+The frozen original H184 preview source/object and resumption seed remain
+historical evidence and were not reclassified as cold-built canonical objects.
+The distinct F184 public source and one fresh canonical object are accepted;
+full layouts/names remain unknown.
 
 ## Retained failures and method boundaries
 

@@ -1,17 +1,14 @@
 # TH075 function reconstruction rules
 
-Current scope is function reconstruction and reproducible function-level byte
-comparison. The user explicitly deferred subsequent project phases.
-The latest 2026-10-26 instruction cleared the active goal and requested cleanup,
-documentation and handoff. No goal is active at this checkpoint; the assistant
-did not pause it. The 98% authored-byte exact objective remains incomplete.
-Do not start another reconstruction batch during this requested handoff.
-A successor asked to resume reconstruction should use the prepared F184 cohort
-in `docs/RE_HANDOFF.md` and the private H184 resumption seed. Historical active-
-goal commands are superseded by this explicit cleared-goal checkpoint.
-Do not automatically pause a future active goal: cleanup, verification, commits
-and context handoff alone are not pause requests. Follow the user's current
-instruction and goal state. Frequent commits and pushes remain authorized.
+Current scope is TH075 function reconstruction, restarted by the user on
+2026-10-27. Address both large/core functions and small helpers. Treat prior
+documents, working hypotheses, and historical exact labels as testable leads,
+not proof. Preserve and investigate any dirty edits; there is no other agent.
+Commit substantial verified progress promptly, with subjects `gpt-web: ...`.
+The former H184 handoff's no-active-goal instruction is historical and is
+superseded by the current request. The earlier 98% authored-byte objective
+remains incomplete; do not declare completion without a verified build.
+
 Use the existing Ghidra wrapper and local tools; do not use REA.
 Preserve all accepted exact units and origin evidence through R268. The 97
 unresolved origins remain unknown; they do not block reconstruction of
@@ -22,8 +19,7 @@ compiler builds serial and periodically remove only obsolete reproducible
 outputs, preserving evidence, manifests, sources, inputs and shared tools.
 Write repository documentation, comments, and handoffs in English. Preserve
 original titles, filenames, and target strings where they are evidence.
-Use the user-required commit subject format `gpt-6.1-sol: ...`
-(updated by the user on 2026-10-23).
+Use the latest user-required commit subject format `gpt-web: ...` (2026-10-27).
 Use `scripts/repo-python` for repository Python commands, including public
 MCP Bash requests. It checks the private environment and hash-pinned decoder;
 do not replace it with a shell-dependent Python or silent fallback.

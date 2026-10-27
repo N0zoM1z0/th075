@@ -23,17 +23,15 @@ compiler-generated, and library code separately. Consult `function-origins.csv`
 and `ORIGIN_REVIEW.md` for the current reviewed set; an imported name is not
 origin evidence. Record a durable origin batch before attempting exact credit.
 
-The latest 2026-10-26 instruction cleared the active goal and requested cleanup
-and handoff. This checkpoint has no active goal; no pause action was taken.
-The 98% objective remains incomplete. During this requested handoff, preserve
-and verify the current state without starting another reconstruction batch.
-When reconstruction is requested again, use the current cohort and private
-resumption seed in `RE_HANDOFF.md`. Older active-goal continuation commands
-are historical. Do not automatically pause a future active goal merely because
-cleanup, verification, a commit or a context handoff is complete.
+The 2026-10-26 H184 cleanup was a historical handoff, not a current
+stop condition. On 2026-10-27 reconstruction was explicitly resumed, and
+the latest user requires tackling large functions alongside leaves, verifying
+old assumptions, inspecting any dirty changes, and committing substantial
+progress as `gpt-web: ...`. Preserve validated inputs and cold-replay all
+new or affected units. Do not stop merely for cleanup or handoff.
 Preserve all 97 pending origins and count every pending byte in the
 conservative denominator. Use existing Ghidra/local tools without REA and
-commit subjects `gpt-6.1-sol: ...`. Cold-build only new or affected units;
+commit subjects `gpt-web: ...`. Cold-build only new or affected units;
 shared header changes require replay of their dependent units. Keep compiler
 builds serial and remove only obsolete reproducible outputs while preserving
 source/control inputs, manifests, evidence, active drafts and shared tools.

@@ -1,4 +1,50 @@
-# TH075 function reconstruction handoff
+# TH075 active reconstruction status — F184
+
+Updated 2026-10-27. The user explicitly resumed reconstruction and requires
+serious treatment of both large/core and small/leaf functions; all historical
+assumptions are provisional. Do not avoid or discard dirty work. Use commit
+subjects `gpt-web: ...`. The H184 *no-active-goal* handoff below is historical
+and superseded by this active request.
+
+F184 was independently reconstructed from the supplied target and accepted
+by complete canonical cold replay:
+
+| Function | Extent | Code bytes | Actual relocation fields | Cold replay |
+| --- | --- | ---: | ---: | --- |
+| TitleScene::PollMenuInput | 0043ABF0..0043ACD3 | 228 | 19 | exact |
+| ReplayScene::PollInput | 00429DC0..00429EF5 | 310 | 27 | exact |
+
+Both original extents end in plain RET and are followed by INT3 alignment.
+Independent Capstone decoding consumed all 538 native bytes. Ghidra read-back
+agrees on boundaries and direct callees; VC7.1 source code independently
+recompiled into two complete matching COMDAT bodies in one object. All 46
+relocation offsets, types, symbols and resolved native targets are retained in
+`config/match-units.toml`. The replay command used:
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit title-poll-menu-input-0043abf0 --unit replay-poll-input-00429dc0
+```
+
+Distinct synthetic pointer-only receiver interfaces avoid asserting the title
+and replay scenes share a complete class layout. DWORD title controls and byte
+replay controls, independent signs, ESC behavior and window-toggle key chord
+remain separate. Native C++ class names, owner layouts and runtime integration
+are still unknown; no imported credit was granted for helpers or data.
+
+Current ledger: **495 exact functions, 749,976 CODE bytes / 1,973,516 reviewed
+authored bytes = 38.00%**, conservative 37.93% with 3,608 unknown-origin bytes
+retained. Two new canonical units, one new object, two new source/header inputs.
+Keep prior R268 origin evidence, all 97 unknown candidates, all 493 earlier
+accepted units and protected private F184 preview/drafts intact.
+
+Next: address a substantially larger scene/battle function (e.g. 0043A270
+TitleScene::Advance, 1,273 bytes; or 00428F00 options) with full CFG, branches,
+call graph, target writes and loop/switch ownership before adopting any source.
+Do not claim exact credit for incomplete probes. Record failed approaches and
+commit separately when they yield durable discoveries.
+
+## Historical H184 handoff (superseded active-goal and F184 preview statements)
+
 
 Updated 2026-10-26 for the user-requested cleanup and handoff, H184.
 
