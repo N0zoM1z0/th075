@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "118fa26b791322d63ab29958c97877f1e91a347b0f13d2a710f9fb0b7d25cfb7"
+      "current_sha256": "76d85feacd4257f40188632aa91fe71c238324cebeca6a6f4fe29f1a2f8bab97"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "b5e09529a491ae4d6d26bcb566b4db2896ffc4eb46df019e7defef561df95e0d"
+      "current_sha256": "8ef5cfe7f3d20c7d9a518ef08553174df10c6a6c4f5c41417e960a890238d9cd"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "4fddcc1ddb64af8b03cefdac57804e6fec0e04834a696e9a745b0f229fd78ebc"
+      "current_sha256": "c4babc6fcff5a4777b292d364379cd31fc8e72416b713f98e59d37bc3f5a6a07"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "1c04eaef7bd2ae46de6162fc7f60ad465ddd57fdf0fb21631077833e2bbbdf61"
+      "current_sha256": "5d5073535673f47a7199d44f0c1380c665a2185d3d139032fd77a4c39280f4d5"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "cd954782f8271aa13938f323780b1beadbbee20b559138655ad31e19f10a6139"
+      "current_sha256": "9c4c6ff02ba3ba401832d3bb1a04f6caddacef44817421a00ba60b21f598861f"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -20588,6 +20588,94 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R035"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00413880",
+        "size": "67",
+        "span_end": "0x004138C2",
+        "current_name": "FUN_00413880",
+        "proposed_name": "StaticResourceQueues::ClearFourQueuesAt00413880",
+        "module": "StaticResourcePolicy",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R177; config/static-resource-policy-origin-evidence.json; scripts/repo-python scripts/verify-static-resource-policy-origins.py",
+        "owner": "authored",
+        "notes": "Complete explicit post-construction handle initialization, ascending four-queue clear, guarded CloseHandle-and-zero, or pointer deletion loop before automatic reverse destruction. Whole small-layout source controls preserve operation/order differences from generated lifetime code under both exception profiles; no source-byte match is claimed for these four custom target bodies. Complete SDK pointer-vector index/clear/destructor graph is compared through full original R017/R166 and R024/R037/R073/R077 context. Ordinary complete49/31/19/19-byte alternatives are byte-equal; original names/types/private owner layouts remain unknown. Short const getter and 72-byte lifetime child stay unknown. No reconstructed source/private ABI/mapping/exact credit."
+      },
+      "after": {
+        "address": "0x00413880",
+        "size": "67",
+        "span_end": "0x004138C2",
+        "current_name": "FUN_00413880",
+        "proposed_name": "StaticResourceQueues::ClearFourQueuesAt00413880",
+        "module": "StaticResourcePolicy",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void ReplayQueuePolicyF220::ClearFourQueues()",
+        "is_thunk": "false",
+        "source_file": "src/ReplayQueuePoliciesF220.cpp",
+        "evidence": "R177; config/static-resource-policy-origin-evidence.json; scripts/repo-python scripts/verify-static-resource-policy-origins.py; F220; scripts/repo-python scripts/replay-exact-units.py --unit replay-queues-clear-four-00413880",
+        "owner": "authored",
+        "notes": "Complete explicit post-construction handle initialization, ascending four-queue clear, guarded CloseHandle-and-zero, or pointer deletion loop before automatic reverse destruction. Whole small-layout source controls preserve operation/order differences from generated lifetime code under both exception profiles; no source-byte match is claimed for these four custom target bodies. Complete SDK pointer-vector index/clear/destructor graph is compared through full original R017/R166 and R024/R037/R073/R077 context. Ordinary complete49/31/19/19-byte alternatives are byte-equal; original names/types/private owner layouts remain unknown. Short const getter and 72-byte lifetime child stay unknown. No reconstructed source/private ABI/mapping/exact credit.; F220: full native 67 CODE bytes, 19 complete x86 instructions, body SHA256 bf53ffaf4b4506f435935937e2e5961e7cfd1965918d7cce285e3bf8ccb3547d, 4 real REL32 fields / cold replay 67/67 bytes exact. Four borrowed STL queue Clear calls at original this+0x154 (00414530), +0x168 (00414720), +0x17c (00414530), +0x190 (00414910) in the native call order. No complete owner definition, reused library method code or data credit. Neither synthetic padding, cropped extent, fabricated returns, masked relocations nor original STL class identity is asserted. Previous 527 exact units and 97 pending origin identities preserved."
+      },
+      "origin": {
+        "address": "0x00413880",
+        "origin": "authored",
+        "subsystem": "StaticResourcePolicy",
+        "disposition": "authored",
+        "confidence": "complete-explicit-static-resource-policy-and-whole-source-order-controls",
+        "evidence_id": "R177"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004142D0",
+        "size": "35",
+        "span_end": "0x004142F2",
+        "current_name": "FUN_004142d0",
+        "proposed_name": "ReplayRecords::IsPrimaryInputQueueEmptyAt004142D0",
+        "module": "ReplayRecords",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R240; config/replay-queue-empty-origin-evidence.json; scripts/repo-python scripts/verify-replay-queue-empty-origins.py",
+        "owner": "authored",
+        "notes": "Whole35-byte query calls original public deque size on receiver+0x154 and returns a Boolean in AL. Independent complete replay-file byte loading, serialized queue writing, same-global live input consumption and battle-completion policy establish custom source-family ownership. Full original size17/empty25 providers and entire compact32/borrowed23/deque25/queue19 alternatives retained; no filler reproduces the incomplete original offset/layout. Original type/spelling/ABI/compiler profile remain unknown. No source/mapping/exact credit."
+      },
+      "after": {
+        "address": "0x004142D0",
+        "size": "35",
+        "span_end": "0x004142F2",
+        "current_name": "FUN_004142d0",
+        "proposed_name": "ReplayRecords::IsPrimaryInputQueueEmptyAt004142D0",
+        "module": "ReplayRecords",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "unsigned char ReplayQueuePolicyF220::IsPrimaryInputQueueEmpty()",
+        "is_thunk": "false",
+        "source_file": "src/ReplayQueuePoliciesF220.cpp",
+        "evidence": "R240; config/replay-queue-empty-origin-evidence.json; scripts/repo-python scripts/verify-replay-queue-empty-origins.py; F220; scripts/repo-python scripts/replay-exact-units.py --unit replay-primary-queue-empty-004142d0",
+        "owner": "authored",
+        "notes": "Whole35-byte query calls original public deque size on receiver+0x154 and returns a Boolean in AL. Independent complete replay-file byte loading, serialized queue writing, same-global live input consumption and battle-completion policy establish custom source-family ownership. Full original size17/empty25 providers and entire compact32/borrowed23/deque25/queue19 alternatives retained; no filler reproduces the incomplete original offset/layout. Original type/spelling/ABI/compiler profile remain unknown. No source/mapping/exact credit.; F220: full native 35 CODE bytes, 15 x86 instructions, body SHA256 72b5bfc6c414a06ad751cb62e2bb8bcf1c40264911c97728d7e22b74ccb339e3, one actual REL32 field / cold replay 35/35 exact. Genuine unsigned Size()>0 condition through original this+0x154 queue and target 00414430; byte false/true returns match native jbe layout, library routine not counted. Neither synthetic padding, cropped extent, fabricated returns, masked relocations nor original STL class identity is asserted. Previous 527 exact units and 97 pending origin identities preserved."
+      },
+      "origin": {
+        "address": "0x004142D0",
+        "origin": "authored",
+        "subsystem": "ReplayRecords",
+        "disposition": "authored",
+        "confidence": "whole-primary-replay-input-queue-exhaustion-with-independent-serialized-byte-load-live-consumption-and-battle-completion-context",
+        "evidence_id": "R240"
       }
     }
   ],
@@ -164549,6 +164637,82 @@
           "target": 6560567
         }
       ]
+    },
+    "replay-queues-clear-four-00413880": {
+      "source": "src/ReplayQueuePoliciesF220.cpp",
+      "object": "build/matching/ReplayQueuePoliciesF220.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "StaticResourceQueues::ClearFourQueuesAt00413880"
+      ],
+      "symbol": "?ClearFourQueues@ReplayQueuePolicyF220@@QAEXXZ",
+      "target_address": 4274304,
+      "size": 67,
+      "relocations": [
+        {
+          "offset": 17,
+          "type": "REL32",
+          "symbol": "?Clear@ByteQueueF220@@QAEXXZ",
+          "target": 4277552
+        },
+        {
+          "offset": 31,
+          "type": "REL32",
+          "symbol": "?Clear@WordQueueF220@@QAEXXZ",
+          "target": 4278048
+        },
+        {
+          "offset": 45,
+          "type": "REL32",
+          "symbol": "?Clear@ByteQueueF220@@QAEXXZ",
+          "target": 4277552
+        },
+        {
+          "offset": 59,
+          "type": "REL32",
+          "symbol": "?Clear@DwordQueueF220@@QAEXXZ",
+          "target": 4278544
+        }
+      ]
+    },
+    "replay-primary-queue-empty-004142d0": {
+      "source": "src/ReplayQueuePoliciesF220.cpp",
+      "object": "build/matching/ReplayQueuePoliciesF220.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "ReplayRecords::IsPrimaryInputQueueEmptyAt004142D0"
+      ],
+      "symbol": "?IsPrimaryInputQueueEmpty@ReplayQueuePolicyF220@@QAEEXZ",
+      "target_address": 4276944,
+      "size": 35,
+      "relocations": [
+        {
+          "offset": 17,
+          "type": "REL32",
+          "symbol": "?Size@ByteQueueF220@@QAEIXZ",
+          "target": 4277296
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -164854,6 +165018,7 @@
     "src/ArchiveSeekF217.cpp": "9d94b169c93b9f5ba08dc2bfe7d44b96b7e61df9ce9dc690f47d97f2bbd09e5c",
     "src/ReplayCaptureF218.cpp": "e191fd022f5066d8afdc4f1589f764e6c93fab0766bb201419f24cf08443771e",
     "src/SnapshotHeaderF218.cpp": "c4df4859047457aa50ec4b729d5e0935ef3d37cd8e9279b1a1854cad8ec56a42",
-    "src/ReplayPathF218.cpp": "f73615bb149067efcd5312c607790a78ca880b4694a5bd64f56774ad4e3572d6"
+    "src/ReplayPathF218.cpp": "f73615bb149067efcd5312c607790a78ca880b4694a5bd64f56774ad4e3572d6",
+    "src/ReplayQueuePoliciesF220.cpp": "5a16185a7ca74fab1d8e4bb3279a0dece2b9322a84fb3daad8df9e61f4d28b5b"
   }
 }

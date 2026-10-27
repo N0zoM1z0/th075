@@ -526,3 +526,5 @@ DataArchive::SeekNamedEntryWithSize,0x0041D800,function
 ReplayRecords::BeginCapture,0x00413790,function
 GameState::ReadSnapshotHeaderAt00413A60,0x00413A60,function
 ReplayRecords::FindAvailablePath,0x00414300,function
+StaticResourceQueues::ClearFourQueuesAt00413880,0x00413880,function
+ReplayRecords::IsPrimaryInputQueueEmptyAt004142D0,0x004142D0,function

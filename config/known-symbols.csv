@@ -508,3 +508,5 @@ address,name,module,confidence,evidence
 0x00413790,ReplayRecords::BeginCapture,ReplayRecords,inferred,F218; complete 225-byte native policy cold exact with 9 fields; original owner/storage identity unproven
 0x00413A60,GameState::ReadSnapshotHeaderAt00413A60,ReplayRecords,inferred,F218; complete 85-byte native policy cold exact with 3 fields; original owner/storage identity unproven
 0x00414300,ReplayRecords::FindAvailablePath,ReplayRecords,inferred,F218; complete 89-byte native policy cold exact with 3 fields; original owner/storage identity unproven
+0x00413880,StaticResourceQueues::ClearFourQueuesAt00413880,ReplayRecords,inferred,F220; complete 67 native authored bytes and 4 real fields exact; original owner STL type provisional
+0x004142D0,ReplayRecords::IsPrimaryInputQueueEmptyAt004142D0,ReplayRecords,inferred,F220; complete 35 native authored bytes and 1 real fields exact; original owner STL type provisional

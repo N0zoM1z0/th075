@@ -26,10 +26,17 @@ This pins the supplied sample; its official distribution provenance has not
 been independently corroborated. The localized `th075c.exe` has a different
 identity and cannot substitute for the target.
 
-The current checkpoint has **527 exact functions / 764,463 code bytes** from
+The current checkpoint has **529 exact functions / 764,565 code bytes** from
 4,351 provisional candidates. Reviewed authored coverage is 38.74%; conservative
 coverage, including all 3,608 pending bytes, is **38.67%**. The objective of
-98% authored bytes exact remains incomplete. At R268, 1,002 authored, 2,671
+98% authored bytes exact remains incomplete.
+F220 cold-reconstructed the exact 67-byte replay four-queue clearing
+policy and 35-byte primary input-queue empty check (all five real
+call fields), without adopting any vendor STL implementation.
+The full 1,252-byte replay append routine has been investigated
+independently: natural for-loop postincrements recreate its exact
+body length and full external call pattern, but iterator/local
+stack slots do not yet byte-match, so it is not credited. At R268, 1,002 authored, 2,671
 library and 581 compiler-generated candidates are classified; 97 remain unknown.
 Unknown origins receive no exact credit. Candidate count does not establish
 ownership, and original names and complete object layouts remain provisional.

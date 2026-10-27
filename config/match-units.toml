@@ -36437,3 +36437,47 @@ offset = 64
 type = "REL32"
 symbol = "__access"
 target = 0x00641B37
+
+[units.replay-queues-clear-four-00413880]
+source = "src/ReplayQueuePoliciesF220.cpp"
+object = "build/matching/ReplayQueuePoliciesF220.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["StaticResourceQueues::ClearFourQueuesAt00413880"]
+symbol = "?ClearFourQueues@ReplayQueuePolicyF220@@QAEXXZ"
+target_address = 0x00413880
+size = 67
+[[units.replay-queues-clear-four-00413880.relocations]]
+offset = 17
+type = "REL32"
+symbol = "?Clear@ByteQueueF220@@QAEXXZ"
+target = 0x00414530
+[[units.replay-queues-clear-four-00413880.relocations]]
+offset = 31
+type = "REL32"
+symbol = "?Clear@WordQueueF220@@QAEXXZ"
+target = 0x00414720
+[[units.replay-queues-clear-four-00413880.relocations]]
+offset = 45
+type = "REL32"
+symbol = "?Clear@ByteQueueF220@@QAEXXZ"
+target = 0x00414530
+[[units.replay-queues-clear-four-00413880.relocations]]
+offset = 59
+type = "REL32"
+symbol = "?Clear@DwordQueueF220@@QAEXXZ"
+target = 0x00414910
+
+
+[units.replay-primary-queue-empty-004142d0]
+source = "src/ReplayQueuePoliciesF220.cpp"
+object = "build/matching/ReplayQueuePoliciesF220.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["ReplayRecords::IsPrimaryInputQueueEmptyAt004142D0"]
+symbol = "?IsPrimaryInputQueueEmpty@ReplayQueuePolicyF220@@QAEEXZ"
+target_address = 0x004142D0
+size = 35
+[[units.replay-primary-queue-empty-004142d0.relocations]]
+offset = 17
+type = "REL32"
+symbol = "?Size@ByteQueueF220@@QAEIXZ"
+target = 0x00414430

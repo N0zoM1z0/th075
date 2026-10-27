@@ -1,4 +1,4 @@
-# TH075 active reconstruction status — F218
+# TH075 active reconstruction status — F220
 
 Updated 2026-10-27. The user explicitly resumed reconstruction and requires
 serious treatment of both large/core and small/leaf functions; all historical
@@ -757,10 +757,52 @@ credit was taken. `ReplayRecords::AppendRecord` at
 unaccepted large replay writer target. No origin ledger
 classification or old accepted match was modified.
 
-Current ledger: **527 exact functions, 764,463 CODE bytes / 1,973,516 reviewed
+F220 independently cold-reconstructed two whole reviewed authored
+policies in the replay queue system from one normal C++ source.
+`StaticResourceQueues::ClearFourQueuesAt00413880` at `0x00413880`
+has **67 native CODE bytes / 19 complete x86 instructions**, body SHA256
+`bf53ffaf4b4506f435935937e2e5961e7cfd1965918d7cce285e3bf8ccb3547d`.
+The natural source calls exactly the observed deque Clear methods at
+the physical this+0x154, +0x168, +0x17C and +0x190 offsets, targeting
+the original 414530/414720/414530/414910 helpers. The entire 67
+bytes and **all four actual REL32 relocation fields** are cold-exact.
+
+`ReplayRecords::IsPrimaryInputQueueEmptyAt004142D0` at `0x004142D0`
+has **35 native CODE bytes / 15 instructions**, body SHA256
+`72b5bfc6c414a06ad751cb62e2bb8bcf1c40264911c97728d7e22b74ccb339e3`.
+It checks the actual unsigned Size() at this+0x154 through native
+00414430 and returns the target's 0/1 byte without short-cutting
+or changing the JBE conditional. All 35 bytes and its **sole REL32
+field** are independently cold-exact. The two units were cold-built
+together: **102/102 authored CODE bytes, 5/5 physical call fields,
+2/2 exact**, one object, no owned data. Source uses borrowed queue
+interfaces only; vendor deque code, guessed full archive owner/element
+types and generated runtime are not credited. All 97 pending origins
+remain unaltered.
+
+The **1,252-byte authored `ReplayRecords::AppendRecord` at
+`0x00413DE0`** was also freshly investigated as a *complete*
+function. The original has six distinct 8-byte VC7.1 iterator
+objects with default ctors, four real queue Size/Begin/End/dereference/
+postincrement lifetimes and SetFilePointer/WriteFile calls. A first
+natural source compiled to 1,244 bytes: its `while` loop placed
+postincrement after the body. Moving each real `iterator++` into a
+natural `for (; first!=last; first++)` update reproduced the full
+**1,252-byte emitted extent**, all 50 physical external relocation
+positions and native branch graph. Unmatched bytes now arise from
+meaningful iterator/record count/output buffer stack slots, not
+absent code; a bounded compiler naming/slot experiment reached
+**1,017/1,052 nonrelocation bytes**. No byte credit, unit or source
+mapping was taken for the incomplete boss. All probes, native
+disassembly and failed controls remain private in
+`.analysis/f219-append-record/`. This must be revisited with
+genuine iterator lifetime/layout evidence rather than force-fitting
+padding or faking source ABIs.
+
+Current ledger: **529 exact functions, 764,565 CODE bytes / 1,973,516 reviewed
 authored bytes = 38.74%**, conservative 38.67% with 3,608 unknown-origin bytes
-retained. F184..F218 (excluding exploratory-only numbers) added thirty-four accepted units,
-thirty-two objects and thirty-five new source/header inputs.
+retained. F184..F220 (excluding exploratory-only numbers) added thirty-six accepted units,
+thirty-three objects and thirty-six new source/header inputs.
 Keep R268 origin evidence, all 97 unknown candidates, 493 pre-F184
 accepted units and protected private F184/F185 preview/drafts intact.
 

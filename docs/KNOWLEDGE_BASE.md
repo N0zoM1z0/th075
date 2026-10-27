@@ -59,6 +59,10 @@ loader and 916-byte music catalog remain nonexact private probes.
 F218 cold-accepts the 225-byte replay capture, 85-byte snapshot
 header read and 89-byte available-path search, 15 real relocations.
 The 375-byte replay file finalizer remains a nonexact research target.
+F220 cold-accepts two replay queue policies: 67 bytes of four-queue
+clearing (four relocations) and 35 bytes of primary queue emptiness
+(one relocation). The 1,252-byte appended record writer remains
+unaccepted after fully sized natural for-loop compiler controls.
 F189 was an earlier noncredit investigation superseded by F196 exact.
 The original H184 handoff was historical and is superseded by the current
 request. Earlier experiments and names remain hypotheses until tested.
@@ -69,8 +73,8 @@ See the current [handoff](RE_HANDOFF.md) for current status.
 - Supplied Japanese th075.exe 1.11, SHA-256
   `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
   Archive identity is pinned; official distribution provenance is uncorroborated.
-- **527 exact functions/units, 764,463 CODE bytes, 198 canonical objects,
-  303 accepted source-header inputs.** Reviewed coverage is 38.74%; conservative
+- **529 exact functions/units, 764,565 CODE bytes, 199 canonical objects,
+  304 accepted source-header inputs.** Reviewed coverage is 38.74%; conservative
   coverage is 38.67%, including all 97 unknown origins/3,608 pending bytes.
 - Ownership, source presence, names, Ghidra types, compilation and reproducible
   exactness remain distinct. Read ledgers and relevant origin evidence before
@@ -724,6 +728,38 @@ No cropped body, fake stack padding or masked relocations are
 counted. The 792-byte ReplayRecords load and 916-byte musicroom
 catalog parse also remain nonexact under complete native checks.
 Their failed full-body controls are preserved privately.
+
+## F220: two exact replay queue policies; native large writer pending
+
+The authored `StaticResourceQueues::ClearFourQueuesAt00413880`
+contains 67 CODE bytes/19 decoded instructions and four genuine
+relocations. Its native SHA256 is
+`bf53ffaf4b4506f435935937e2e5961e7cfd1965918d7cce285e3bf8ccb3547d`.
+The source uses the four physically confirmed 20-byte queue
+receiver offsets and matching Clear helper calls; all bytes/fields
+were cold replayed exact. The authored
+`ReplayRecords::IsPrimaryInputQueueEmptyAt004142D0` contains
+35 CODE bytes/15 instructions, SHA256
+`72b5bfc6c414a06ad751cb62e2bb8bcf1c40264911c97728d7e22b74ccb339e3`.
+The entire code and only relocation to the actual deque Size
+callee cold-replay exact. No underlying STL implementation,
+archive storage, unknown original owner class or helper body
+receives separate exact credit.
+
+The adjacent 1252-byte `ReplayRecords::AppendRecord` at
+00413DE0 has 379 independent native decoded instructions.
+Complete C++ source reproduces the original six physical 8-byte
+iterators, four queue traversals, full four-set WriteFile calls,
+queue clearing and record index advance. Natural `for` updates
+rather than `while` loops recreate the complete 1252-byte
+code size, all 50 external field positions and native loop
+control-flow shapes, but compiler local stack assignments
+remain different: the best tested meaningful local naming
+matches 1017/1052 non-field bytes. This is explicitly
+**not accepted**; private research in `.analysis/f219-append-record/`
+is retained without masked fields, fabricated stack padding,
+ABI lies or partial code credit. The 792-byte record reader
+and 375-byte finalizer remain separate large-function targets.
 
 ## Retained failures and method boundaries
 
