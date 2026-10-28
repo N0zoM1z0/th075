@@ -2293,3 +2293,45 @@ and uncredited. The authored-byte count is now **789,436/1,973,516
 **39.93%**. The 98% goal is unfinished; no library/base/CRT extra bytes,
 all-unit cold replay, truncated code, fake locals, assembly, relocation
 masks or external Oracle receipts are claimed.
+
+
+## F265: complete exact 229-byte ResultList scene destructor
+
+The original R053-authored `ResultListScene::Release` at
+`0042F880..0042F964` is **229 full PE-backed CODE bytes** with 68
+independently decoded native instructions and a genuine plain RET at
+`0042F964`. Original complete CODE SHA256 is
+`18e1a2f05e860b1a87e7404f7ac454e867a31f74b60018e1f59f063c6e6ef998`.
+Read-only Ghidra function/decompile and original physical assembly
+remain under `.analysis/f265-result-list-release/`.
+
+The real EH-backed scene destructor installs native vtable `006581D0`,
+uses handler `00655A3B`, invokes original ClearEntries `00431940`,
+conditionally deletes scene pointers +0xC and +0x8 through native
+nonvirtual scalar deleting destructor `00425460`, and conditionally
+performs a proper D3D8 COM slot-two Release for surface at +0x10.
+Automatic VC7.1 member destruction emits the original **20-byte deque**
+destructor at `00420420` for the physically observed member at +0x18,
+then calls the previously independently accepted base scene destructor
+`00431F40`. All original EH cleanup-state transitions are preserved.
+
+The first complete native-faithful C++ source
+`src/ResultListReleaseF265.cpp` (borrowed scene/texture interfaces, real
+20-byte deque size, no copied target bytes) compiled into the **entire
+229 bytes**, **189/189 comparable nonrelocation bytes**, and **10/10
+authentic physical COFF relocation offsets/types/native destinations**
+under pinned VC7.1 `/Od /GX`. The canonical unit
+`result-list-scene-release-0042f880` was then independently rebuilt cold
+without any full-set replay and reported `exact; 229 coverage bytes`.
+Its paired F264 constructor is independently accepted, but this does
+not establish complete original private scene, deque or texture source
+layouts. The library deque destructor, game ClearEntries implementation,
+CRT and origin-unknown R108 base constructor are **not separately**
+credited. All 97 unresolved origins remain excluded; source uses no
+masks, arbitrary padding, assembly, target grafts or truncated bodies.
+
+The cumulative tracked whole-function exact state is **579 functions,
+789,665 authored CODE bytes (40.01% of 1,973,516 reviewed)**, with
+39.94% conservative pending-inclusive coverage. The 98% objective is
+far from complete and local cold replay is not an external Oracle
+verification receipt.

@@ -1,4 +1,4 @@
-# TH075 — active reconstruction handoff (F264)
+# TH075 — active reconstruction handoff (F265)
 
 **Updated 2026-10-28. Read this document before new experiments.**
 
@@ -22,17 +22,17 @@ not acceptance requirements.
 
 | Item | Current evidence |
 | --- | --- |
-| Local branch / last exact-code commit | `main` / F264 whole 366-byte ResultList scene constructor; prior F263 destructor `421a6e0` |
+| Local branch / last exact-code commit | `main` / F265 full 229-byte ResultList destructor; F264 ctor checkpoint `0d38eda` |
 | Upstream | `origin/main` tracked locally; verify current ahead/behind and dirty state before further work |
-| Working tree | Clean after F264 checkpoint if successful; continue rather than avoid every existing dirty edit |
+| Working tree | Clean after F265 checkpoint if successful; continue rather than avoid every existing dirty edit |
 | Native binary | `resources/th075.exe`, SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98` |
 | Candidate count | 4,351; origin review: 1,002 authored, 2,671 library, 581 compiler, 97 unknown |
-| Accepted functions / units | **578 / 578** |
-| Accepted authored CODE | **789,436 bytes** |
-| Reviewed authored coverage | 789,436 / 1,973,516 = **40.00%** |
-| Conservative coverage | **39.93%** counting 3,608 origin-pending bytes |
+| Accepted functions / units | **579 / 579** |
+| Accepted authored CODE | **789,665 bytes** |
+| Reviewed authored coverage | 789,665 / 1,973,516 = **40.01%** |
+| Conservative coverage | **39.94%** counting 3,608 origin-pending bytes |
 | Goal | **98% not reached** |
-| Verification | F264 366-byte complete ResultListScene constructor independently cold-exact, 298/298 comparable nonrelocation bytes and 17 authentic COFF fields. Signed 10-entry progress loop restored original JGE branch. F261-F263 scene/record lifetimes preserved. Only F264 cold replayed; no all-unit cold replay or external Oracle acceptance |
+| Verification | F265 entire 229-byte ResultListScene destructor independently cold-exact, 189/189 comparable bytes and 10 true fields, after F264 constructor checkpoint `0d38eda`. Only F265 new unit cold-replayed, no all-unit cold replay or external Oracle acceptance |
 
 **Recheck the actual live status immediately**. Local commits are checkpoints,
 not evidence of a remote push or external Oracle acceptance. Earlier Git
@@ -105,6 +105,7 @@ inert variable or arbitrary padding may earn exact credit.
 | F262: MusicRoomScene::Initialize | `00425750` | 372 | 23 |
 | F263: MusicRoomScene::ReleaseTexturesRecordsAndAudio | `004258D0` | 244 | 12 |
 | F264: ResultListScene::Initialize | `0042F710` | 366 | 17 |
+| F265: ResultListScene::Release | `0042F880` | 229 | 10 |
 
 F222 proved signed 32-bit x87 `FILD` divided by the target's 36.0f
 (`00659308`), 74 physical animation records and a final call into the
@@ -183,7 +184,9 @@ F262 **cold-accepts the whole 372-byte native `MusicRoomScene::Initialize`** sce
 
 F263 **cold-accepts all 244 CODE bytes of the complete `MusicRoomScene::ReleaseTexturesRecordsAndAudio`** destructor at `004258D0`: 77 original x86 instructions, 196/196 nonrelocation bytes, 12 real COFF fields. A first complete ordinary C++ source generated the identical native EH state, 4 original D3D8 COM `Release` virtual-slot-2 calls, nonvirtual scalar deleting texture manager at `00425460`, three real game-audio calls, and compiler-generated 60-element `MusicCatalogRecordF261` array destruction through native `_eh_vector_destructor_iterator_` (00641D4A), followed by separately authored/exact base destructor `00431F40`. The constructor F262 and both F261 record helpers remain independently accepted; no code credit is duplicated. Only `--unit music-room-scene-release-004258d0` cold-replayed exact. Preserve private `.analysis/f263-music-release/` and prior MusicRoom research. The 97 unknown origins remain uncredited and full nominal scene/texture class layouts are still provisional.
 
-F264 **cold-accepts all 366 bytes of `ResultListScene::Initialize`** at `0042F710`, 96 original x86 instructions, 298/298 nonrelocation bytes, 17/17 native COFF fields and real EH state. Native `004251C0` base ctor (R108 still origin-unknown) and 20-byte physical VC7 deque default constructor `00420320` (library excluded) were preserved without assigning their bytes to authored coverage. The original new(80) texture manager and four-slot texture load, 1024x512 image buffer, signed mode flags, original ten-progress-record loop, separately F256-accepted character loader and F238-accepted result page builder all match. The first whole C++ source emitted the correct 366 length/17 fields but had exactly one byte difference: guessed unsigned index produced `JAE` at offset +0x128 versus native `JGE`; real `int` index restores exact. Only `--unit result-list-scene-initialize-0042f710` independently cold replayed. Preserve `.analysis/f264-result-list-init/` and examine adjacent 229-byte `ResultListScene::Release` at `0042F880` next. This pushes reviewed authored-byte coverage to **40.00%**, still far below the 98% goal; conservative coverage stays 39.93%, and 97 unknown origins are not credited.
+F264 **cold-accepts all 366 bytes of `ResultListScene::Initialize`** at `0042F710`, 96 original x86 instructions, 298/298 nonrelocation bytes, 17/17 native COFF fields and real EH state. Native `004251C0` base ctor (R108 still origin-unknown) and 20-byte physical VC7 deque default constructor `00420320` (library excluded) were preserved without assigning their bytes to authored coverage. The original new(80) texture manager and four-slot texture load, 1024x512 image buffer, signed mode flags, original ten-progress-record loop, separately F256-accepted character loader and F238-accepted result page builder all match. The first whole C++ source emitted the correct 366 length/17 fields but had exactly one byte difference: guessed unsigned index produced `JAE` at offset +0x128 versus native `JGE`; real `int` index restores exact. Only `--unit result-list-scene-initialize-0042f710` independently cold replayed. Preserve `.analysis/f264-result-list-init/` and adjacent 229-byte `ResultListScene::Release` at `0042F880` is now also exact (F265), with no double-counted bytes. This pushes reviewed authored-byte coverage to **40.00%**, still far below the 98% goal; conservative coverage stays 39.93%, and 97 unknown origins are not credited.
+
+F265 **cold-accepts the paired 229-byte `ResultListScene::Release`** at `0042F880`, full 68 decoded instructions, 189/189 comparable bytes and all 10 physical COFF relocations. The first natural C++ translation generated the exact complete native EH destructor, with original ClearEntries `00431940`, two conditional nonvirtual texture deletes on `this+0xC/+0x8`, native D3D8 COM slot-two Release at `this+0x10`, the automatically emitted 20-byte VC7 deque destructor at `this+0x18` through library-only `00420420`, and already accepted base destructor `00431F40`. Only F265 was cold replayed exact; no additional credit for library/CRT, external ClearEntries or origin-unknown R108 base constructor. Preserve `.analysis/f265-result-list-release/`. The matching F264 constructor is independently accepted.
 
 Relevant full native proofs: `config/match-units.toml`,
 `config/exact-adoptions.json`, sources `src/*F222.cpp`/`src/*F223.cpp`,

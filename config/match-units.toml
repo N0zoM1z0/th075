@@ -41666,3 +41666,62 @@ offset = 358
 type = "DIR32"
 symbol = "__except_list"
 target = 0x00000000
+
+[units.result-list-scene-release-0042f880]
+source = "src/ResultListReleaseF265.cpp"
+object = "build/matching/ResultListReleaseF265.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["ResultListScene::Release"]
+symbol = "??1ResultListReleaseF265@@UAE@XZ"
+target_address = 0x0042F880
+size = 229
+[[units.result-list-scene-release-0042f880.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??1ResultListReleaseF265@@UAE@XZ"
+target = 0x00655A3B
+[[units.result-list-scene-release-0042f880.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.result-list-scene-release-0042f880.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.result-list-scene-release-0042f880.relocations]]
+offset = 35
+type = "DIR32"
+symbol = "??_7ResultListReleaseF265@@6B@"
+target = 0x006581D0
+[[units.result-list-scene-release-0042f880.relocations]]
+offset = 50
+type = "REL32"
+symbol = "?ClearEntries@ResultListReleaseF265@@QAEXXZ"
+target = 0x00431940
+[[units.result-list-scene-release-0042f880.relocations]]
+offset = 90
+type = "REL32"
+symbol = "??_GResultTextureF265@@QAEPAXI@Z"
+target = 0x00425460
+[[units.result-list-scene-release-0042f880.relocations]]
+offset = 142
+type = "REL32"
+symbol = "??_GResultTextureF265@@QAEPAXI@Z"
+target = 0x00425460
+[[units.result-list-scene-release-0042f880.relocations]]
+offset = 196
+type = "REL32"
+symbol = "??1ResultRecordsDequeF265@@QAE@XZ"
+target = 0x00420420
+[[units.result-list-scene-release-0042f880.relocations]]
+offset = 211
+type = "REL32"
+symbol = "??1ResultSceneBaseF265@@UAE@XZ"
+target = 0x00431F40
+[[units.result-list-scene-release-0042f880.relocations]]
+offset = 221
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000

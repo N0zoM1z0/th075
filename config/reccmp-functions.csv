@@ -577,3 +577,4 @@ MusicRoomRecord::ReleaseBuffersAt00427470,0x00427470,function
 MusicRoomScene::Initialize,0x00425750,function
 MusicRoomScene::ReleaseTexturesRecordsAndAudioAt004258D0,0x004258D0,function
 ResultListScene::Initialize,0x0042F710,function
+ResultListScene::Release,0x0042F880,function

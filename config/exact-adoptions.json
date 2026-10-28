@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "bd5de34adafcea0ea6b05626e0a3836ad189fbeeaf1cab079e7a2d04b4c438b8"
+      "current_sha256": "0dc3c39f7d2a0f7cd3faf56b51513c033616c6c2e6df6f15369c1e43c2be0560"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "82884a7bedce1b5a094d910ad23637a4609d3d3fbb873720dd90cebb0f1e43f0"
+      "current_sha256": "43f0c3a0cbc730478c010299791ff8695315c7ba5cadbdd65621cc94abac1138"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "ea75b659f5f55a09ef76c3d09cc72b4919da3c792127dba62eb95ceb025d1d67"
+      "current_sha256": "a320949dd2b14b6ada8436929f81225c99cbfd333b1416d27101f21a019d4c29"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "f6912207c9f666ec5b21955a9b50cc11ffed4eca9dccc4041d52f2dd3406a19b"
+      "current_sha256": "5553df567ba2054d122d6c4e69733ed82725cfaa7e22750beba32893e637a1bb"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "a07709915ee6d19ac76dddb65dcf8de29b5dca6b9cee4e90f7157bf280759ed9"
+      "current_sha256": "6c376c55ace5844640f0e17d6a7b7102ab07a08df57c4c188934a9ab0ff5e49f"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -22832,6 +22832,50 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R052"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0042F880",
+        "size": "229",
+        "span_end": "0x0042F964",
+        "current_name": "FUN_0042f880",
+        "proposed_name": "ResultListScene::Release",
+        "module": "ResultListScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R053; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x0042F880",
+        "size": "229",
+        "span_end": "0x0042F964",
+        "current_name": "FUN_0042f880",
+        "proposed_name": "ResultListScene::Release",
+        "module": "ResultListScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "ResultListReleaseF265::~ResultListReleaseF265()",
+        "is_thunk": "false",
+        "source_file": "src/ResultListReleaseF265.cpp",
+        "evidence": "R053; full body hash, complete decoded CFG and local game-specific behavior reviewed; F265; scripts/repo-python scripts/replay-exact-units.py --unit result-list-scene-release-0042f880",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F265: full 229 authored original native CODE bytes /68 decoded x86 instructions, complete PE SHA256 18e1a2f05e860b1a87e7404f7ac454e867a31f74b60018e1f59f063c6e6ef998, terminal RET 0042F964. Pinned VC7.1 /Od /GX independent cold replay exact on 189/189 comparable nonrelocation bytes with all 10 actual physical COFF fields including genuine EH handler 00655A3B and vtable at 006581D0. Natural scene dtor clears entries through 00431940, conditionally calls the true nonvirtual scalar deleting dtor at 00425460 on both separate texture pointers scene+0C and +08 in native order, then D3D8 COM Release slot two on scene+10 if present, naturally destroys the physically observed 20-byte VC7 deque scene+18 via 00420420 and invokes already accepted base destructor 00431F40, retaining original native EH states and conditional cleanup. Complementary 366-byte ResultList ctor F264 is independently accepted; the unknown R108 base ctor and deque/library code remain uncredited. Entire first natural source compiled exact without source-level artificial padding, fake locals, assembly, byte graft, code cropping or masked fields. Original complete scene, deque, texture owner names and layouts still provisional; all 97 unresolved origins remain outside authored byte credit. Only this affected unit cold-replayed, no remote Oracle receipt."
+      },
+      "origin": {
+        "address": "0x0042F880",
+        "origin": "authored",
+        "subsystem": "ResultListScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R053"
       }
     }
   ],
@@ -173644,6 +173688,89 @@
           "target": 0
         }
       ]
+    },
+    "result-list-scene-release-0042f880": {
+      "source": "src/ResultListReleaseF265.cpp",
+      "object": "build/matching/ResultListReleaseF265.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "ResultListScene::Release"
+      ],
+      "symbol": "??1ResultListReleaseF265@@UAE@XZ",
+      "target_address": 4388992,
+      "size": 229,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??1ResultListReleaseF265@@UAE@XZ",
+          "target": 6642235
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 35,
+          "type": "DIR32",
+          "symbol": "??_7ResultListReleaseF265@@6B@",
+          "target": 6652368
+        },
+        {
+          "offset": 50,
+          "type": "REL32",
+          "symbol": "?ClearEntries@ResultListReleaseF265@@QAEXXZ",
+          "target": 4397376
+        },
+        {
+          "offset": 90,
+          "type": "REL32",
+          "symbol": "??_GResultTextureF265@@QAEPAXI@Z",
+          "target": 4346976
+        },
+        {
+          "offset": 142,
+          "type": "REL32",
+          "symbol": "??_GResultTextureF265@@QAEPAXI@Z",
+          "target": 4346976
+        },
+        {
+          "offset": 196,
+          "type": "REL32",
+          "symbol": "??1ResultRecordsDequeF265@@QAE@XZ",
+          "target": 4326432
+        },
+        {
+          "offset": 211,
+          "type": "REL32",
+          "symbol": "??1ResultSceneBaseF265@@UAE@XZ",
+          "target": 4398912
+        },
+        {
+          "offset": 221,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -173999,6 +174126,7 @@
     "src/MusicCatalogRecordF261.cpp": "1dc5b4b1b0b4309c34221c50767a787e55af244afa859ef7c26b7ab24bf59b36",
     "src/MusicRoomInitF262.cpp": "47b51e6c329c085d07ea4e6f7ab036ca1fc5d69ff8e0ac7a25b3c7e3c8b7677e",
     "src/MusicRoomReleaseF263.cpp": "4f42f5bb13ad4b9659bbe2ab4b42fceb02132af3fe440e243cb1443bc9f4245d",
-    "src/ResultListInitF264.cpp": "fc21a3209f58e96416667406447cc01156e8f7808bb6239b7beac3f5f66cf48d"
+    "src/ResultListInitF264.cpp": "fc21a3209f58e96416667406447cc01156e8f7808bb6239b7beac3f5f66cf48d",
+    "src/ResultListReleaseF265.cpp": "020380623f282b40430b272d86b926fee00319ad22dcbf9748847d9b955f7785"
   }
 }
