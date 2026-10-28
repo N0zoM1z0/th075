@@ -1,6 +1,6 @@
 # TH075 — current reconstruction handoff
 
-**Maintained: 2026-10-28, after F379.** Read this document, then check the **live repository**. The current user explicitly wants both large/core bosses and small leaves tackled seriously, tangible progress committed immediately with subject `gpt-web: ...`, and **only changed/new units cold-replayed**. The user reports no other sessions: inspect and finish all dirty work; never skip, reset, overwrite or silently discard it.
+**Maintained: 2026-10-28, after F386.** Read this document, then check the **live repository**. The current user explicitly wants both large/core bosses and small leaves tackled seriously, tangible progress committed immediately with subject `gpt-web: ...`, and **only changed/new units cold-replayed**. The user reports no other sessions: inspect and finish all dirty work; never skip, reset, overwrite or silently discard it.
 
 ## 1. Trusted state and first commands
 
@@ -8,11 +8,11 @@ Canonical evidence is the pinned original PE, `config/function-origins.csv`, `co
 
 | Item | Verified snapshot |
 | --- | --- |
-| Git | `main`; pre-F379 reconstruction commit **`4c8c776`** (F378), preceded by `c10a1a0` (F377), `dea32ae` (F376); F379 commit follows this handoff update |
+| Git | `main`; pre-F386 reconstruction commit **`2d17417`** (F379), preceded by `4c8c776` (F378), `c10a1a0` (F377); F386 commit follows this handoff update |
 | Pinned target | user-supplied Japanese `resources/th075.exe` v1.11; SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`; **never** `th075c.exe` |
-| Exact and source-present | **714 functions / 714 exact units** |
-| Accepted authored CODE | **835,618 bytes / 1,973,516 reviewed bytes = 42.34%** |
-| Conservative | **42.26%**, including 3,608 bytes with unresolved origin |
+| Exact and source-present | **715 functions / 715 exact units** |
+| Accepted authored CODE | **837,576 bytes / 1,973,516 reviewed bytes = 42.44%** |
+| Conservative | **42.36%**, including 3,608 bytes with unresolved origin |
 | Origin review | 1,002 authored, 2,671 library, 581 compiler, **97 pending** across 4,351 provisional candidates |
 | Goal | **98% not reached**; Git and local cold results are not external Oracle receipts |
 
@@ -29,7 +29,7 @@ If **any** dirty source, unit, or manifest is present, first inspect its exact e
 
 ## 2. Newly closed chains — **not** the backlog
 
-The full register of **all 714** accepted functions is in `config/functions.csv` and `config/match-units.toml`; this table intentionally highlights only the newest, important independent CODE extents. No called function, imported CRT/Win32 code, or owned jump-table bytes are counted twice.
+The full register of **all 715** accepted functions is in `config/functions.csv` and `config/match-units.toml`; this table intentionally highlights only the newest, important independent CODE extents. No called function, imported CRT/Win32 code, or owned jump-table bytes are counted twice.
 
 | Unit / accepted address | Whole CODE | Authentic fields | Evidence |
 | --- | ---: | ---: | --- |
@@ -64,6 +64,7 @@ The full register of **all 714** accepted functions is in `config/functions.csv`
 | F377 remaining 34 `BackgroundStage::LoadBG*` native constructor functions `0044A230..00451C70` | **5,219** total | **369** | `src/BackgroundLoadFamilyF377.cpp`, `.analysis/f377-bg-family/` |
 | F378 `CharacterAux::RunAt005301B0` `005301B0` | **1,008** | **18** | `src/CharacterAux005301B0F378.cpp`, `.analysis/f378-youmu-aux/` |
 | F379 `CharacterProjectile::AdvanceAt004F4170` `004F4170` | **855** | **22** | `src/CharacterProjectileAdvanceF379.cpp`, `.analysis/f380-projectile-float-order/` |
+| F386 `BattleState::ApplySequenceAt00445A00` `00445A00` | **1,958 CODE + 28 table** | **120** | `src/BattleStateApplySequenceF386.cpp`, `.analysis/f387-battle-apply-final/` |
 
 **F340:** the companion archive entry seek at `0041D750` is independently cold exact for its whole 164-byte function including every one of its nine external references. It uses genuine iterator and `strcmp` semantics, returns the archive handle after `SetFilePointer` or `INVALID_HANDLE_VALUE` if not found. The original private archive list remains borrowed, not instantiated.
 
@@ -112,6 +113,8 @@ The full register of **all 714** accepted functions is in `config/functions.csv`
 **F378:** the independent native **1,008-byte / 266-instruction** R049 character auxiliary queue and special-mode controller at `005301B0` is cold exact, **936/936** native nonfield bytes and **18/18** original physical COFF references. The real 16-byte command input record is first copied into the original -0x10 stack layout; queue at +0xFEC then appends, counts and prunes snapshots via three original game calls, followed by signed timer countdown, grounded state and mode-specific effects. A naive C++ `else` removed a genuine second signed global `mode==3` check and was only 992 bytes; writing the observed `else if(mode==3)` restores 16 native CODE bytes and all the original branches. It also reproduces four actual effect 810 spawns plus +F14 opponent-distance policy. Only the affected F378 unit was cold replayed **1/1 exact**.
 
 **F379:** complete **855-byte / 243-instruction** original R067 game-specific projectile lifecycle controller at `004F4170` is exact. It implements the native shooter-owner action-range abort, conditional 996/995 projectile launches and EFA state reset, real two float-to-short conversions, native motion reset/1.5f scaling and color, angle and polar velocity, normal movement/scale decay, boundary/collision cleanup. The initial natural whole C++ was 873 bytes because treating native by-value 32-bit float bits as `float` callee parameters wrongly inserted x87 loads; using actual borrowed DWORD parameter representations gives the original code size. Real one direct float lvalue expression for `Y=Y-velocityY` restores original EDX/EAX load order. The final whole body matches **767/767** original nonrelocated bytes and **22/22** physical COFF refs; affected-only cold replay **1/1 exact**.
+
+**F386:** battle input/replay **1,958 native CODE-byte boss** at `00445A00` is now complete exact, with all **504** original instructions, **1506/1506** original nonfield bytes across its genuine 1,986-byte comparison span, **120** true physical relocations including **7** genuine switch-table entries. The 28-byte owned post-RET table is compared, not counted as CODE. Native keypad receiver is genuine object `00671638` with `thiscall` unsigned-byte read at `00407170`, not guessed cdecl. The replay queue count is unsigned, its native continuation is `ja`, and final key-cancel input guard has true unsigned `g_InputGateAt00671678 >5` branch with the original side-effect layout. The entire replay queue switch, left/right character rules, and keyboard record/restore actions are preserved and cold replay only F386 yielded **1/1 exact**; unknown game class sizes are not inferred.
 
 **Corrections to old notes:** The 686-byte writer and 429-byte reader are both **exact** (F339/F338), not pending F249/F250. The full 1,252-byte replay writer and 375-byte finalizer are both **exact** (F326/F328), not pending F219/F218/F289. The 1,766-byte font rasterizer is **exact** (F319), not pending F299/F302. The 301-byte glyph loader is **exact** (F318), not pending F291. The 916-byte MusicRoom catalog + separately compared 16-byte jump table is **exact in F258** (916 CODE credit only). Other accepted 1,000+ byte bosses include F271 projected quad (1,185), F278 pattern chooser (1,264), F282 resource loader (1,186), F292 overlay text box (1,385), F294 effects catalog (1,722), and F244 scene advance (1,529 CODE). Earlier failures remain useful *historical controls*, but must never be presented as current unaccepted work.
 

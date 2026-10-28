@@ -712,3 +712,4 @@ BackgroundStage::LoadBG09a
 BackgroundStage::LoadBG09x
 CharacterAux::RunAt005301B0
 CharacterProjectile::AdvanceAt004F4170
+BattleState::ApplySequenceAt00445A00

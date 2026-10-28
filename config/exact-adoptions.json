@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377; F378; F379",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377; F378; F379; F386",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "e4726831eafd5e6e20b5fc3b4b9be1673a55f413fbb5d6995ee97c28aa2414ec"
+      "current_sha256": "6c6839ccbdbafbf1ded8cd87e60fcdad4600e03a49ab0f937047126fae377801"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "60b2fa4985a789492deb370066990b75368950be38ca12de4528ebade881f8b3"
+      "current_sha256": "6ce75595b3f01c181eb7b0419fdccffb1de69dadfc5e116716015db03e7d6cae"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "3d4b24235e788218e2918bb2bc1cede33a2d701d8f7abd1204aea9f7abc177bf"
+      "current_sha256": "2af91981d3f29a2d08816ba795d2af3c455f38a0f33fd1c23bee8932c0e11cea"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "1c133e2cc3f1aaa924b14fcd5c92655a03961699c8cb67b05a026b0b4005cdc9"
+      "current_sha256": "adc9fc14ed299970cfa3510a986aac3a2f27767c500872f7b8def099f7c29956"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "0802bccde3a682ab82c6ab6a81f330e7e180fd599d7ae817288bf30d7e80e453"
+      "current_sha256": "627c0da82091927d0d07d7d54a79f6753e54999607ce83ab3c93a11584f29afb"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -28816,6 +28816,50 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R067"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00445A00",
+        "size": "1958",
+        "span_end": "0x004461A5",
+        "current_name": "FUN_00445a00",
+        "proposed_name": "BattleState::ApplySequenceAt00445A00",
+        "module": "BattleState",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R065; complete target body, guarded switch table, CFG and game-specific behavior",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x00445A00",
+        "size": "1958",
+        "span_end": "0x004461A5",
+        "current_name": "FUN_00445a00",
+        "proposed_name": "BattleState::ApplySequenceAt00445A00",
+        "module": "BattleState",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void BattleStateF385::ApplySequence()",
+        "is_thunk": "false",
+        "source_file": "src/BattleStateApplySequenceF386.cpp",
+        "evidence": "R065; complete target body, guarded switch table, CFG and game-specific behavior; F386; scripts/repo-python scripts/replay-exact-units.py --unit battle-state-apply-sequence-00445a00",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state independent; F386 complete independent R065 1958-byte authored BattleState input/replay boss at 00445A00..004461A5, 504 original x86 instructions, native PE SHA256 7481c0bf597fa2ae5d9f36047fd145e539f51ad697f11af0e54f2291573e1ab2. Original mode-five delegated game action, replay queue at 006718E0 Count/Peek/Pop, seven-case control switch with full 28-byte absolute native jump table after RET compared (1986 bytes physical span, only 1958 CODE counted); actual two fighter side +44/+48 updates, short/char mode and scaling policies, input polling through genuine thiscall keyboard object 00671638 to 00407170, 7 distinct recorded replay actions and genuine recording at 00414830, conditional direction button replay at 00423C60, signed game mode and unsigned gate +671678 handling and +671632 flag. Natural source restores original unsigned Count() loop (>0 vs ==0), original signed-char predecrement, real thiscall unsigned char scanner, last active flag positive branch and unsigned gate >5. Compiler emits all 1958 original instructions and 7 table references; all 1506/1506 comparable bytes over full 1986 physical range and 120 true DIR32/REL32 physical references/destinations, including seven table entries, match. Affected-only cold 1/1 exact. Original private battle/keyboard/queue class layouts remain borrowed, no native jump data CODE credit, external callee code, fake locals/byte graft/asm, masked or cropped comparison, full cold replay or remote Oracle receipt."
+      },
+      "origin": {
+        "address": "0x00445A00",
+        "origin": "authored",
+        "subsystem": "BattleState",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R065"
       }
     }
   ],
@@ -193088,6 +193132,749 @@
           "target": 4569136
         }
       ]
+    },
+    "battle-state-apply-sequence-00445a00": {
+      "source": "src/BattleStateApplySequenceF386.cpp",
+      "object": "build/matching/BattleStateApplySequenceF386.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattleState::ApplySequenceAt00445A00"
+      ],
+      "symbol": "?ApplySequence@BattleStateF385@@QAEXXZ",
+      "target_address": 4479488,
+      "size": 1958,
+      "compare_size": 1986,
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "?g_BattleModeAt006714B4@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 25,
+          "type": "REL32",
+          "symbol": "?OnCameraModeFive@BattleStateF385@@QAEXXZ",
+          "target": 4489424
+        },
+        {
+          "offset": 37,
+          "type": "DIR32",
+          "symbol": "?g_ReplayModeAt0066C238@@3CA",
+          "target": 6734392
+        },
+        {
+          "offset": 51,
+          "type": "DIR32",
+          "symbol": "?g_ReplayEventsAt006718E0@@3VReplayQueueF385@@A",
+          "target": 6756576
+        },
+        {
+          "offset": 56,
+          "type": "REL32",
+          "symbol": "?Count@ReplayQueueF385@@QAEIXZ",
+          "target": 4278288
+        },
+        {
+          "offset": 69,
+          "type": "DIR32",
+          "symbol": "?g_ReplayEventsAt006718E0@@3VReplayQueueF385@@A",
+          "target": 6756576
+        },
+        {
+          "offset": 74,
+          "type": "REL32",
+          "symbol": "?Peek@ReplayQueueF385@@QAEPAHXZ",
+          "target": 4482240
+        },
+        {
+          "offset": 84,
+          "type": "DIR32",
+          "symbol": "?g_ReplayEventsAt006718E0@@3VReplayQueueF385@@A",
+          "target": 6756576
+        },
+        {
+          "offset": 89,
+          "type": "REL32",
+          "symbol": "?Peek@ReplayQueueF385@@QAEPAHXZ",
+          "target": 4482240
+        },
+        {
+          "offset": 108,
+          "type": "DIR32",
+          "symbol": "?g_ReplayEventsAt006718E0@@3VReplayQueueF385@@A",
+          "target": 6756576
+        },
+        {
+          "offset": 113,
+          "type": "REL32",
+          "symbol": "?Pop@ReplayQueueF385@@QAEXXZ",
+          "target": 4482272
+        },
+        {
+          "offset": 118,
+          "type": "DIR32",
+          "symbol": "?g_ReplayEventsAt006718E0@@3VReplayQueueF385@@A",
+          "target": 6756576
+        },
+        {
+          "offset": 123,
+          "type": "REL32",
+          "symbol": "?Peek@ReplayQueueF385@@QAEPAHXZ",
+          "target": 4482240
+        },
+        {
+          "offset": 133,
+          "type": "DIR32",
+          "symbol": "?g_ReplayEventsAt006718E0@@3VReplayQueueF385@@A",
+          "target": 6756576
+        },
+        {
+          "offset": 138,
+          "type": "REL32",
+          "symbol": "?Pop@ReplayQueueF385@@QAEXXZ",
+          "target": 4482272
+        },
+        {
+          "offset": 173,
+          "type": "DIR32",
+          "symbol": "$L604",
+          "target": 4481446
+        },
+        {
+          "offset": 360,
+          "type": "DIR32",
+          "symbol": "?g_LevelStepAt00657850@@3MB",
+          "target": 6649936
+        },
+        {
+          "offset": 390,
+          "type": "DIR32",
+          "symbol": "?g_LevelStepAt00657850@@3MB",
+          "target": 6649936
+        },
+        {
+          "offset": 420,
+          "type": "DIR32",
+          "symbol": "?g_LevelMaxAt00657B28@@3MB",
+          "target": 6650664
+        },
+        {
+          "offset": 461,
+          "type": "DIR32",
+          "symbol": "?g_LevelMaxAt00657B28@@3MB",
+          "target": 6650664
+        },
+        {
+          "offset": 507,
+          "type": "DIR32",
+          "symbol": "?g_LevelStepAt00657850@@3MB",
+          "target": 6649936
+        },
+        {
+          "offset": 537,
+          "type": "DIR32",
+          "symbol": "?g_LevelStepAt00657850@@3MB",
+          "target": 6649936
+        },
+        {
+          "offset": 567,
+          "type": "DIR32",
+          "symbol": "?g_LevelZeroAt0065782C@@3MB",
+          "target": 6649900
+        },
+        {
+          "offset": 608,
+          "type": "DIR32",
+          "symbol": "?g_LevelZeroAt0065782C@@3MB",
+          "target": 6649900
+        },
+        {
+          "offset": 636,
+          "type": "DIR32",
+          "symbol": "?g_ReplayEventsAt006718E0@@3VReplayQueueF385@@A",
+          "target": 6756576
+        },
+        {
+          "offset": 641,
+          "type": "REL32",
+          "symbol": "?Count@ReplayQueueF385@@QAEIXZ",
+          "target": 4278288
+        },
+        {
+          "offset": 664,
+          "type": "DIR32",
+          "symbol": "?g_KeyScannerAt00671638@@3VNativeKeyScannerF386@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 669,
+          "type": "REL32",
+          "symbol": "?CheckKey@NativeKeyScannerF386@@QAEEH@Z",
+          "target": 4223344
+        },
+        {
+          "offset": 696,
+          "type": "DIR32",
+          "symbol": "?g_BattleModeAt006714B4@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 712,
+          "type": "DIR32",
+          "symbol": "?g_BattleModeAt006714B4@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 728,
+          "type": "DIR32",
+          "symbol": "?g_KeyScannerAt00671638@@3VNativeKeyScannerF386@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 733,
+          "type": "REL32",
+          "symbol": "?CheckKey@NativeKeyScannerF386@@QAEEH@Z",
+          "target": 4223344
+        },
+        {
+          "offset": 747,
+          "type": "DIR32",
+          "symbol": "?g_ReplayModeAt0066C238@@3CA",
+          "target": 6734392
+        },
+        {
+          "offset": 764,
+          "type": "DIR32",
+          "symbol": "?g_ReplayEventsAt006718E0@@3VReplayQueueF385@@A",
+          "target": 6756576
+        },
+        {
+          "offset": 769,
+          "type": "REL32",
+          "symbol": "?Append@ReplayQueueF385@@QAEXPBH@Z",
+          "target": 4278320
+        },
+        {
+          "offset": 785,
+          "type": "DIR32",
+          "symbol": "?g_ReplayEventsAt006718E0@@3VReplayQueueF385@@A",
+          "target": 6756576
+        },
+        {
+          "offset": 790,
+          "type": "REL32",
+          "symbol": "?Append@ReplayQueueF385@@QAEXPBH@Z",
+          "target": 4278320
+        },
+        {
+          "offset": 823,
+          "type": "DIR32",
+          "symbol": "?g_KeyScannerAt00671638@@3VNativeKeyScannerF386@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 828,
+          "type": "REL32",
+          "symbol": "?CheckKey@NativeKeyScannerF386@@QAEEH@Z",
+          "target": 4223344
+        },
+        {
+          "offset": 862,
+          "type": "DIR32",
+          "symbol": "?g_ReplayModeAt0066C238@@3CA",
+          "target": 6734392
+        },
+        {
+          "offset": 879,
+          "type": "DIR32",
+          "symbol": "?g_ReplayEventsAt006718E0@@3VReplayQueueF385@@A",
+          "target": 6756576
+        },
+        {
+          "offset": 884,
+          "type": "REL32",
+          "symbol": "?Append@ReplayQueueF385@@QAEXPBH@Z",
+          "target": 4278320
+        },
+        {
+          "offset": 900,
+          "type": "DIR32",
+          "symbol": "?g_ReplayEventsAt006718E0@@3VReplayQueueF385@@A",
+          "target": 6756576
+        },
+        {
+          "offset": 905,
+          "type": "REL32",
+          "symbol": "?Append@ReplayQueueF385@@QAEXPBH@Z",
+          "target": 4278320
+        },
+        {
+          "offset": 1022,
+          "type": "DIR32",
+          "symbol": "?g_KeyScannerAt00671638@@3VNativeKeyScannerF386@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 1027,
+          "type": "REL32",
+          "symbol": "?CheckKey@NativeKeyScannerF386@@QAEEH@Z",
+          "target": 4223344
+        },
+        {
+          "offset": 1041,
+          "type": "DIR32",
+          "symbol": "?g_ReplayModeAt0066C238@@3CA",
+          "target": 6734392
+        },
+        {
+          "offset": 1058,
+          "type": "DIR32",
+          "symbol": "?g_ReplayEventsAt006718E0@@3VReplayQueueF385@@A",
+          "target": 6756576
+        },
+        {
+          "offset": 1063,
+          "type": "REL32",
+          "symbol": "?Append@ReplayQueueF385@@QAEXPBH@Z",
+          "target": 4278320
+        },
+        {
+          "offset": 1079,
+          "type": "DIR32",
+          "symbol": "?g_ReplayEventsAt006718E0@@3VReplayQueueF385@@A",
+          "target": 6756576
+        },
+        {
+          "offset": 1084,
+          "type": "REL32",
+          "symbol": "?Append@ReplayQueueF385@@QAEXPBH@Z",
+          "target": 4278320
+        },
+        {
+          "offset": 1098,
+          "type": "DIR32",
+          "symbol": "?g_KeyScannerAt00671638@@3VNativeKeyScannerF386@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 1103,
+          "type": "REL32",
+          "symbol": "?CheckKey@NativeKeyScannerF386@@QAEEH@Z",
+          "target": 4223344
+        },
+        {
+          "offset": 1117,
+          "type": "DIR32",
+          "symbol": "?g_ReplayModeAt0066C238@@3CA",
+          "target": 6734392
+        },
+        {
+          "offset": 1134,
+          "type": "DIR32",
+          "symbol": "?g_ReplayEventsAt006718E0@@3VReplayQueueF385@@A",
+          "target": 6756576
+        },
+        {
+          "offset": 1139,
+          "type": "REL32",
+          "symbol": "?Append@ReplayQueueF385@@QAEXPBH@Z",
+          "target": 4278320
+        },
+        {
+          "offset": 1155,
+          "type": "DIR32",
+          "symbol": "?g_ReplayEventsAt006718E0@@3VReplayQueueF385@@A",
+          "target": 6756576
+        },
+        {
+          "offset": 1160,
+          "type": "REL32",
+          "symbol": "?Append@ReplayQueueF385@@QAEXPBH@Z",
+          "target": 4278320
+        },
+        {
+          "offset": 1174,
+          "type": "DIR32",
+          "symbol": "?g_KeyScannerAt00671638@@3VNativeKeyScannerF386@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 1179,
+          "type": "REL32",
+          "symbol": "?CheckKey@NativeKeyScannerF386@@QAEEH@Z",
+          "target": 4223344
+        },
+        {
+          "offset": 1197,
+          "type": "DIR32",
+          "symbol": "?g_ReplayModeAt0066C238@@3CA",
+          "target": 6734392
+        },
+        {
+          "offset": 1214,
+          "type": "DIR32",
+          "symbol": "?g_ReplayEventsAt006718E0@@3VReplayQueueF385@@A",
+          "target": 6756576
+        },
+        {
+          "offset": 1219,
+          "type": "REL32",
+          "symbol": "?Append@ReplayQueueF385@@QAEXPBH@Z",
+          "target": 4278320
+        },
+        {
+          "offset": 1235,
+          "type": "DIR32",
+          "symbol": "?g_ReplayEventsAt006718E0@@3VReplayQueueF385@@A",
+          "target": 6756576
+        },
+        {
+          "offset": 1240,
+          "type": "REL32",
+          "symbol": "?Append@ReplayQueueF385@@QAEXPBH@Z",
+          "target": 4278320
+        },
+        {
+          "offset": 1258,
+          "type": "DIR32",
+          "symbol": "?g_LevelStepAt00657850@@3MB",
+          "target": 6649936
+        },
+        {
+          "offset": 1288,
+          "type": "DIR32",
+          "symbol": "?g_LevelStepAt00657850@@3MB",
+          "target": 6649936
+        },
+        {
+          "offset": 1318,
+          "type": "DIR32",
+          "symbol": "?g_LevelMaxAt00657B28@@3MB",
+          "target": 6650664
+        },
+        {
+          "offset": 1359,
+          "type": "DIR32",
+          "symbol": "?g_LevelMaxAt00657B28@@3MB",
+          "target": 6650664
+        },
+        {
+          "offset": 1389,
+          "type": "DIR32",
+          "symbol": "?g_KeyScannerAt00671638@@3VNativeKeyScannerF386@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 1394,
+          "type": "REL32",
+          "symbol": "?CheckKey@NativeKeyScannerF386@@QAEEH@Z",
+          "target": 4223344
+        },
+        {
+          "offset": 1412,
+          "type": "DIR32",
+          "symbol": "?g_ReplayModeAt0066C238@@3CA",
+          "target": 6734392
+        },
+        {
+          "offset": 1429,
+          "type": "DIR32",
+          "symbol": "?g_ReplayEventsAt006718E0@@3VReplayQueueF385@@A",
+          "target": 6756576
+        },
+        {
+          "offset": 1434,
+          "type": "REL32",
+          "symbol": "?Append@ReplayQueueF385@@QAEXPBH@Z",
+          "target": 4278320
+        },
+        {
+          "offset": 1450,
+          "type": "DIR32",
+          "symbol": "?g_ReplayEventsAt006718E0@@3VReplayQueueF385@@A",
+          "target": 6756576
+        },
+        {
+          "offset": 1455,
+          "type": "REL32",
+          "symbol": "?Append@ReplayQueueF385@@QAEXPBH@Z",
+          "target": 4278320
+        },
+        {
+          "offset": 1473,
+          "type": "DIR32",
+          "symbol": "?g_LevelStepAt00657850@@3MB",
+          "target": 6649936
+        },
+        {
+          "offset": 1503,
+          "type": "DIR32",
+          "symbol": "?g_LevelStepAt00657850@@3MB",
+          "target": 6649936
+        },
+        {
+          "offset": 1533,
+          "type": "DIR32",
+          "symbol": "?g_LevelZeroAt0065782C@@3MB",
+          "target": 6649900
+        },
+        {
+          "offset": 1574,
+          "type": "DIR32",
+          "symbol": "?g_LevelZeroAt0065782C@@3MB",
+          "target": 6649900
+        },
+        {
+          "offset": 1604,
+          "type": "DIR32",
+          "symbol": "?g_ReplayModeAt0066C238@@3CA",
+          "target": 6734392
+        },
+        {
+          "offset": 1620,
+          "type": "DIR32",
+          "symbol": "?g_KeyScannerAt00671638@@3VNativeKeyScannerF386@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 1625,
+          "type": "REL32",
+          "symbol": "?CheckKey@NativeKeyScannerF386@@QAEEH@Z",
+          "target": 4223344
+        },
+        {
+          "offset": 1642,
+          "type": "DIR32",
+          "symbol": "?g_KeyScannerAt00671638@@3VNativeKeyScannerF386@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 1647,
+          "type": "REL32",
+          "symbol": "?CheckKey@NativeKeyScannerF386@@QAEEH@Z",
+          "target": 4223344
+        },
+        {
+          "offset": 1665,
+          "type": "DIR32",
+          "symbol": "?g_KeyScannerAt00671638@@3VNativeKeyScannerF386@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 1670,
+          "type": "REL32",
+          "symbol": "?CheckKey@NativeKeyScannerF386@@QAEEH@Z",
+          "target": 4223344
+        },
+        {
+          "offset": 1684,
+          "type": "REL32",
+          "symbol": "?NativeActionAt00423C60@@YAXH@Z",
+          "target": 4340832
+        },
+        {
+          "offset": 1699,
+          "type": "DIR32",
+          "symbol": "?g_KeyScannerAt00671638@@3VNativeKeyScannerF386@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 1704,
+          "type": "REL32",
+          "symbol": "?CheckKey@NativeKeyScannerF386@@QAEEH@Z",
+          "target": 4223344
+        },
+        {
+          "offset": 1718,
+          "type": "REL32",
+          "symbol": "?NativeActionAt00423C60@@YAXH@Z",
+          "target": 4340832
+        },
+        {
+          "offset": 1733,
+          "type": "DIR32",
+          "symbol": "?g_KeyScannerAt00671638@@3VNativeKeyScannerF386@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 1738,
+          "type": "REL32",
+          "symbol": "?CheckKey@NativeKeyScannerF386@@QAEEH@Z",
+          "target": 4223344
+        },
+        {
+          "offset": 1752,
+          "type": "REL32",
+          "symbol": "?NativeActionAt00423C60@@YAXH@Z",
+          "target": 4340832
+        },
+        {
+          "offset": 1764,
+          "type": "DIR32",
+          "symbol": "?g_KeyScannerAt00671638@@3VNativeKeyScannerF386@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 1769,
+          "type": "REL32",
+          "symbol": "?CheckKey@NativeKeyScannerF386@@QAEEH@Z",
+          "target": 4223344
+        },
+        {
+          "offset": 1783,
+          "type": "REL32",
+          "symbol": "?NativeActionAt00423C60@@YAXH@Z",
+          "target": 4340832
+        },
+        {
+          "offset": 1795,
+          "type": "DIR32",
+          "symbol": "?g_KeyScannerAt00671638@@3VNativeKeyScannerF386@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 1800,
+          "type": "REL32",
+          "symbol": "?CheckKey@NativeKeyScannerF386@@QAEEH@Z",
+          "target": 4223344
+        },
+        {
+          "offset": 1814,
+          "type": "REL32",
+          "symbol": "?NativeActionAt00423C60@@YAXH@Z",
+          "target": 4340832
+        },
+        {
+          "offset": 1826,
+          "type": "DIR32",
+          "symbol": "?g_KeyScannerAt00671638@@3VNativeKeyScannerF386@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 1831,
+          "type": "REL32",
+          "symbol": "?CheckKey@NativeKeyScannerF386@@QAEEH@Z",
+          "target": 4223344
+        },
+        {
+          "offset": 1845,
+          "type": "REL32",
+          "symbol": "?NativeActionAt00423C60@@YAXH@Z",
+          "target": 4340832
+        },
+        {
+          "offset": 1857,
+          "type": "REL32",
+          "symbol": "?NativeActionAt00423C60@@YAXH@Z",
+          "target": 4340832
+        },
+        {
+          "offset": 1867,
+          "type": "DIR32",
+          "symbol": "?g_ReplayModeAt0066C238@@3CA",
+          "target": 6734392
+        },
+        {
+          "offset": 1879,
+          "type": "DIR32",
+          "symbol": "?g_ReplayModeAt0066C238@@3CA",
+          "target": 6734392
+        },
+        {
+          "offset": 1891,
+          "type": "DIR32",
+          "symbol": "?g_KeyScannerAt00671638@@3VNativeKeyScannerF386@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 1896,
+          "type": "REL32",
+          "symbol": "?CheckKey@NativeKeyScannerF386@@QAEEH@Z",
+          "target": 4223344
+        },
+        {
+          "offset": 1913,
+          "type": "DIR32",
+          "symbol": "?g_KeyScannerAt00671638@@3VNativeKeyScannerF386@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 1918,
+          "type": "REL32",
+          "symbol": "?CheckKey@NativeKeyScannerF386@@QAEEH@Z",
+          "target": 4223344
+        },
+        {
+          "offset": 1931,
+          "type": "DIR32",
+          "symbol": "?g_InputGateAt00671678@@3IA",
+          "target": 6755960
+        },
+        {
+          "offset": 1940,
+          "type": "DIR32",
+          "symbol": "?g_InputCanCancelAt00671632@@3EA",
+          "target": 6755890
+        },
+        {
+          "offset": 1949,
+          "type": "DIR32",
+          "symbol": "?g_InputCanCancelAt00671632@@3EA",
+          "target": 6755890
+        },
+        {
+          "offset": 1958,
+          "type": "DIR32",
+          "symbol": "$L328",
+          "target": 4479665
+        },
+        {
+          "offset": 1962,
+          "type": "DIR32",
+          "symbol": "$L333",
+          "target": 4479685
+        },
+        {
+          "offset": 1966,
+          "type": "DIR32",
+          "symbol": "$L342",
+          "target": 4479716
+        },
+        {
+          "offset": 1970,
+          "type": "DIR32",
+          "symbol": "$L361",
+          "target": 4479810
+        },
+        {
+          "offset": 1974,
+          "type": "DIR32",
+          "symbol": "$L364",
+          "target": 4479822
+        },
+        {
+          "offset": 1978,
+          "type": "DIR32",
+          "symbol": "$L367",
+          "target": 4479834
+        },
+        {
+          "offset": 1982,
+          "type": "DIR32",
+          "symbol": "$L402",
+          "target": 4479981
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -193529,6 +194316,7 @@
     "src/BackgroundLoadPairF376.cpp": "50bff1fe99326d234edcfe6669fa2152ff8b1ddfae58c69077c3a8779c86ba78",
     "src/BackgroundLoadFamilyF377.cpp": "a805a521ba3c0dab860094d89b4c0d3b4863a928c19da6c03767a940ab2d490c",
     "src/CharacterAux005301B0F378.cpp": "ddd6bbe7ee7bc941070700e913c964b6ce922dd3b20b9fb1eaec75e11bbd2bd3",
-    "src/CharacterProjectileAdvanceF379.cpp": "2131d50467472c69717c8aa4def9aa0cc778f6664905a85cc0e2000b70a10787"
+    "src/CharacterProjectileAdvanceF379.cpp": "2131d50467472c69717c8aa4def9aa0cc778f6664905a85cc0e2000b70a10787",
+    "src/BattleStateApplySequenceF386.cpp": "81aa09bcda53ef6c4c434b3325733dc020c88466ba8d8eba2da38188cb1e580e"
   }
 }

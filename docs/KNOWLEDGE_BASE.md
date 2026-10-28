@@ -5828,3 +5828,62 @@ VC7.1 `/Od /Ob0 /Gy /GR- /GX- /Zi` cold replayed only affected
 construction, external callee credit, unused fabricated locals, masks,
 assembly, pasted native code, cropped function, whole cold replay or
 remote Oracle certification.
+
+
+## F386: full 1,958-byte battle input/replay state boss and its physical jump table
+
+The R065-authored original `BattleState::ApplySequenceAt00445A00` occupies
+**1,958 complete original CODE bytes** at `00445A00..004461A5`, with **504
+fully decoded original x86 instructions**, original PE-backed SHA256
+`7481c0bf597fa2ae5d9f36047fd145e539f51ad697f11af0e54f2291573e1ab2`.
+Immediately following its complete RET lies a **separately owned 28-byte
+original absolute jump table** for the seven cases of the replay switch,
+`004461A6..004461C1`; the canonical `compare_size = 1986` covers **all
+seven original physical table references**, and `size = 1958` correctly
+credits **zero CODE** for its DATA table.
+
+This is a genuinely large original game-specific input dispatcher, not
+a generic CRT or compiler template. It handles battle mode 5 via native
+`004480D0`; otherwise it consults the real replay queue object at
+`006718E0` (Count `00414810`, Peek `004464C0`, Pop `004464E0`, Append
+`00414830`). In replay mode 2 it sequentially consumes events, checks the
+recorded frame and dispatches seven original control actions through the
+real native `switch`: it updates the two distinct fighter states at
+`this+0x44/+0x48` (character +0x324/+0x39D), local +0x1C mode,
+positive/negative changes to both fighter +0x36C with native float
+thresholds and boundary clamps. Outside replay it polls the genuine
+key-scanner object at `00671638` through *thiscall* `00407170`, records
+the original 2..7 actions when game mode requests it, updates native
++0x110 hold counter, two fighter +0x39D modes and both +0x36C levels.
+The final direction-key branch invokes original `00423C60` with exact
+physical priority actions and updates game input-enabled flag at
+`00671632` using the true original unsigned DWORD gate `00671678`.
+The Ghidra symbol names, full private battle/fighter/keyboard/queue layouts
+and inferred roles remain provisional and are not embedded in source.
+
+First fresh whole C++ source emitted 1,984 bytes **including** its generated
+28-byte switch table, but had a 4-byte extra key local, an incorrect
+`cdecl` signed-char scanner, and a signed gate comparison; those errors
+produced extra stack allocation and repeated `add esp,4`/`movsx` sequences.
+The original call ABI is a borrowed scanner method `CheckKey(int)` with
+real `thiscall` object `00671638` and unsigned-byte result, eliminating
+that local and restoring the genuine -0x28 frame. The native record
+switch's character mode decrements are actual char predecrements.
+A native `while(frame==Peek())` with real unsigned `Count()<=0` exit
+reproduces both branches and the 1,986-byte full comparison extent; a
+plain `Count()==0` was just 7 nonfield bytes away because it selected
+`jne` instead of original `ja`. The last action-allowed control checks
+key 0x1D/0x9D **or** unsigned input gate >5, writing one on true and
+zero on false, preserving the native `cmp 5; jbe` and two branch targets.
+
+The resulting `src/BattleStateApplySequenceF386.cpp` under pinned VC7.1
+`/Od /Ob0 /Gy /GR- /GX- /Zi` structurally matches **1506/1506 original
+nonrelocation bytes** and all **120 genuine original physical COFF DIR32/REL32
+fields** in the *full 1,986-byte comparison extent*, including every
+input/replay native callee, original game global, and all seven original
+post-RET table targets. Native instruction limits, caller ABIs and all
+physical relocations were reviewed independently. Affected-only canonical
+`--unit battle-state-apply-sequence-00445a00` cold replay produced
+**1/1 exact**, crediting **1,958 authored CODE bytes** only. No unknown
+class allocations, borrowed helper/CRT/table data bytes, fake locals,
+assembly, masks, cropped comparison, all-unit replay or remote Oracle receipt.
