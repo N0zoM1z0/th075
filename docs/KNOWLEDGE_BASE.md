@@ -7837,3 +7837,50 @@ borrowed list/actor/COM/Win32/CRT destructor or base callee code is
 credited twice, no source assembler/target code bytes, fake stack locals,
 masked COFF fields, cropped native bodies, all-unit cold replay or
 external Oracle receipt.
+
+
+## F493: full original 60,999-byte Reimu action-boss dispatch structure and 1,090 post-RET DATA (research, NOT exact)
+
+Independent Ghidra decompilation and original pinned-PE x86 decoding
+confirms the R063 `ReimuFighter::AdvanceActionStatesAt0045DD70` is
+**60,999 authored CODE bytes** at `0045DD70..0046CBB6`, with **16,837
+original x86 instructions and 1,026 actual call instructions**. Its
+original code SHA256 is
+`b78fa89a709b1cbbafdf4310c6fd81dd68369a9fa528a1852a64bb105ee93bc2`.
+The original `this` stack is EBP-0x34, native stack reservation 0x380,
+and the action ID is a signed short at owner+0x60 loaded to EBP-0x38,
+with two independent real signed-short early guards at owner+0x82 and
+`(*(this+0x2E8))+0x3BA`. Five special original action IDs 0x32,
+0x8C, 0x12C, 0x186 and 0x25B bypass the six indexed spans.
+
+The **six native indexed-JMP instructions** are at 0045DDCB, 0045DE05,
+0045DE42, 0045DE78, 0045DEB8 and 0045DEE2; their tables are contiguous
+immediately after the full function RET at `0046CBB7`. The original
+dense DWORD slot counts are **11, 26, 32, 10, 32, 31** (142 physical
+DIR32-style jump entries, **568 DATA bytes**), and four sparse byte maps
+are **49, 68, 212, 193 bytes** (522 additional DATA bytes). The final
+map ends at 0046CFF8; original PE then has 7 CC bytes before next
+function 0046D000. The **1,090 complete original post-RET DATA bytes**
+hash as `12ff143bc7e1263db16b4c6629827a16e70973f339e7cc787c2aed9ee57d98eb`.
+All 142 original physical table DWORDs resolve to verified original
+instruction boundaries within this one native CODE body, yielding 139
+unique targets; all sparse byte map indexes lie in their actual dense
+target ranges. The full original Ghidra output has six separate state
+`switch(iVar5)` constructs and **138 explicit case labels** (11+25+31+
+10+31+30). Dense slots, unique native entry labels and explicit Ghidra
+case clauses are distinct quantities and must not be conflated.
+
+A new read-only deterministic script
+`scripts/repo-python scripts/verify-reimu-action-dispatch.py` reproduces
+all these checks directly from the **pinned original PE**, including
+full CODE/data hashes, decoded instruction/RET boundary, six original
+indirect x86 jump operands, continuous table/sparse layout and seven
+int3 alignment bytes. The complete original evidence and exact per-span
+table addresses are recorded at `docs/REIMU_ACTION_BOSS_DISPATCH.md`
+and Ghidra output `.analysis/f493-reimu-megaboss/original-native.c`.
+These results provide a precise action dispatch contract for a future
+whole-function native C++ reconstruction but are **not an exact or
+structural match of any reconstructed source**. No CODE coverage is
+credited for the 60,999 bytes or any of the 1,090 DATA bytes, no jump
+table is pasted into source, no fake stubs, and no all-unit cold replay
+was run.
