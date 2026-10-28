@@ -7,9 +7,10 @@ Historical documents and tentative Ghidra labels are **not proof**.
 
 ## 1. Start safely
 
-Inspect Git, verify and continue all pre-existing dirty edits. The user
-explicitly says no other session is active; never avoid or discard unfinished
-work. Keep compiler builds serial and reuse the existing private environments.
+Inspect Git and continue pre-existing dirty work within the assigned scope.
+Preserve edits from concurrent sessions reported by the user; commit only this
+session's reviewed changes. Keep compiler builds serial and reuse the existing
+private environments.
 
 ```bash
 git status --short --branch
@@ -116,7 +117,6 @@ CRT/SDK code, EH helpers, or functions with uncertain ownership.
 scripts/repo-python scripts/validate-tracking.py --require-target
 scripts/repo-python scripts/report-reconstruction-status.py --summary
 scripts/repo-python scripts/update-progress.py
-scripts/repo-python scripts/ci.py
 git diff --check
 git status --short --branch
 git add <reviewed-files>
@@ -124,12 +124,13 @@ git commit -m 'gpt-web: <specific verified work>'
 ```
 
 Cold-replay only new or affected units, including dependents of changed shared
-inputs. `scripts/ci.py` runs the small exact-comparison, checkpoint, and
-byte-accounting suite without compiler builds. Run it at handoff or after
-changing that infrastructure; ordinary probes need only their direct comparison.
+inputs. Run `scripts/ci.py` when changing exact-comparison, checkpoint,
+byte-accounting, or test infrastructure. It needs no compiler builds. Routine
+function acceptance and handoff need no additional suite; ordinary probes need
+only their direct comparison.
 Run a historical origin test only when its evidence or verifier is affected.
-There is no requirement to run the full historical suite, add a Python test per
-accepted function, or duplicate native bytes and source text in assertions.
+Do not add a Python test per accepted function or duplicate native bytes and
+source text in assertions; the canonical manifests and cold replay cover these.
 Do not add allocation-failure, null-pointer, fault-injection or general robustness
 tests during exact reconstruction. Reproduce original failure branches when
 present, without adding new defensive behavior. Documentation-only edits need

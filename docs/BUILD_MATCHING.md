@@ -123,7 +123,8 @@ The Ghidra bridge's private environment sets `GHIDRA_COMMAND` to the absolute
 path of `scripts/repo-python`. Bash commands must explicitly use the wrapper;
 the generic shell tool remains available for other authorized repository work.
 
-Final gates are `scripts/repo-python scripts/ci.py`,
-`scripts/repo-python scripts/update-progress.py --check`, and
-`git diff --check`. These public checks need neither the game nor private tools
-beyond the repository Python environment.
+Function acceptance needs target/tracking checks, cold replay of new or affected
+units, the current progress card, and `git diff --check`. Run
+`scripts/repo-python scripts/ci.py` only when changing exact-comparison,
+checkpoint, byte-accounting, or test infrastructure. Its public checks need
+neither the game nor private tools beyond the repository Python environment.

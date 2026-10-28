@@ -3,9 +3,10 @@
 Current scope is TH075 exact function reconstruction, including both
 large/core functions and small helpers. Treat prior
 documents, working hypotheses, and historical exact labels as testable leads,
-not proof. Inspect and continue every dirty edit, including unfinished investigations;
-the user explicitly states there is no other reconstruction session.
-Commit substantial verified progress promptly with `gpt-web: ...` subjects.
+not proof. Inspect dirty edits and continue unfinished investigations within the
+assigned scope. Preserve concurrent work reported by the user and commit only
+reviewed changes from this session.
+Commit substantial verified progress promptly with the session's requested prefix.
 The 98% authored-byte objective remains incomplete; do not declare completion
 without a verified build.
 
@@ -19,7 +20,7 @@ never all units. Keep compiler builds serial. Remove only obsolete reproducible
 outputs, preserving evidence, manifests, sources, inputs and shared tools.
 Write repository documentation, comments, and handoffs in English. Preserve
 original titles, filenames, and target strings where they are evidence.
-Use `gpt-web: ...` for all local reconstruction commits.
+Use `gpt-web: ...` for reconstruction commits unless the user specifies another prefix.
 Use `scripts/repo-python` for repository Python commands, including public
 MCP Bash requests. It checks the private environment and hash-pinned decoder;
 do not replace it with a shell-dependent Python or silent fallback.
@@ -79,14 +80,13 @@ null-pointer, fault-injection, or general robustness tests for each function.
 Preserve any such branches actually present in the target; do not add defensive
 behavior absent from the original.
 
-Acceptance needs the target/tracking checks and cold replay of only new or
-affected units. A new function does not need a separate Python test, duplicate
-native-byte assertions, source-text assertions, or hard-coded progress counts.
-`scripts/ci.py` runs the small exact-comparison, checkpoint, and byte-accounting
-suite. Run it when changing that infrastructure or at handoff, not after every
-probe. Historical origin tests are available for changes to their evidence or
-verifiers; the full historical suite is not a routine acceptance requirement.
-Documentation-only changes need `git diff --check`.
+Acceptance needs target/tracking checks and cold replay of only new or affected
+units. Do not add per-function Python tests, duplicate native-byte or source-text
+assertions, or hard-coded progress counts; use the canonical manifests and replay.
+Run `scripts/ci.py` when changing exact-comparison, checkpoint, byte-accounting,
+or test infrastructure. Routine function acceptance and handoff do not require
+that suite or historical origin tests. Run an origin test only when its evidence
+or verifier changes. Documentation-only changes need `git diff --check`.
 
 ## Tools and working state
 

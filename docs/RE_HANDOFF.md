@@ -4,14 +4,17 @@
 
 The latest user instruction is to **continue actually reconstructing TH075**,
 tackle both large/core functions and small leaves, distrust historical
-hypotheses until checked, actively continue all dirty work (the user confirms no other active session),
-and save substantial verified progress with `gpt-web: ...` commits.
+hypotheses until checked, and continue unfinished work within the assigned scope.
+Preserve concurrent work reported by the user and use the session's requested
+commit prefix (otherwise `gpt-web: ...`).
 Earlier H184 advice to stop is historical and **does not apply**.
 
 Validation policy (2026-10-28): focus on exact reconstruction. No per-function
 robustness/fault-injection tests or full historical test run is required.
-`scripts/ci.py` runs the small exact/checkpoint/accounting suite; canonical
-acceptance still cold-replays only new or affected units. See AGENTS.md and
+`scripts/ci.py` is for exact/checkpoint/accounting or test infrastructure changes,
+not routine acceptance or handoff. Canonical acceptance cold-replays only new
+or affected units. Per-function duplicate hash/source-text tests are removed;
+keep their data in the canonical manifests. See AGENTS.md and
 RE_WORKFLOW.md for the current scope. Historical test counts are observations,
 not acceptance requirements.
 
@@ -178,8 +181,8 @@ bytes outside accepted authored coverage.
 
 ## 4. Acceptance and commit checklist
 
-1. Inspect dirty state and retain meaningful experiments. Continue all
-   existing work rather than avoiding or discarding it; the user reports no concurrent session.
+1. Inspect dirty state and retain meaningful experiments. Continue work within
+   the assigned scope and preserve concurrent edits reported by the user.
 2. Independently verify native target SHA, full function boundary,
    decoded instructions, all exits, C++ EH, and owned jump tables.
 3. Test natural C++ with exact pinned VC7.1 flags; diagnostic
@@ -193,9 +196,9 @@ bytes outside accepted authored coverage.
    `implemented.csv`, `matches.csv`, `reccmp-functions.csv`,
    `known-symbols.csv`, `exact-adoptions.json` and its checkpoint hash.
    Update progress from live ledgers, not remembered counts.
-6. Run tracking, affected cold units, the small `scripts/ci.py` suite at handoff,
-   and `git diff --check`. Commit material progress with
-   the commit subject prefix requested for that session.
+6. Run tracking, affected cold units, and `git diff --check`. Run `scripts/ci.py`
+   only for exact/checkpoint/accounting or test infrastructure changes. Commit
+   material progress with the commit subject prefix requested for that session.
 7. Keep nominal class identities, original layout ownership, unresolved
    origins and Oracle receipts separate from local byte equality.
 

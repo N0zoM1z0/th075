@@ -72,7 +72,6 @@ pinned-compiler cold replay:
 ```bash
 scripts/repo-python scripts/replay-exact-units.py --unit UNIT_NAME
 scripts/repo-python scripts/validate-tracking.py --require-target
-scripts/repo-python scripts/ci.py
 git diff --check
 ```
 
@@ -84,9 +83,11 @@ Keep the 97 unresolved origin candidates uncredited.
 
 Keep validation focused on exact reconstruction: `scripts/ci.py` runs the small
 comparison/checkpoint/byte-accounting suite without compiling accepted units.
-Cold-replay only new or affected units. No new test file per function, duplicate
-source-text assertions, allocation-failure/null-pointer tests, or full historical
-test run is required. Historical origin tests remain available for changes to
+Run it when that infrastructure or its tests change. Cold-replay only new or
+affected units; routine acceptance and handoff need no additional suite.
+Do not add a test file per function, duplicate source-text assertions, or
+allocation-failure/null-pointer tests. Do not run the full historical suite.
+Historical origin tests remain available for changes to
 their evidence or verifiers. See [the workflow](docs/RE_WORKFLOW.md).
 
 ## Finding information
