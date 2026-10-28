@@ -591,3 +591,4 @@ address,name,module,confidence,evidence
 0x0041C9D0,FontSurface::DecodePackedTextUnitAt0041C9D0,FontSurface,inferred,"F293; entire native 85-byte game-specific routine, 1 real COFF relocations cold-exact; private owner identity not independently proven"
 0x0041C130,FontSurface::ReleaseRasterResourcesAt0041C130,FontSurface,inferred,"F293; entire native 119-byte game-specific routine, 4 real COFF relocations cold-exact; private owner identity not independently proven"
 0x005F71F0,Effects::LoadPatternCatalogAt005F71F0,Effects,inferred,F294; entire native 1722-byte effect pattern catalog archive loader with 582 authentic x86 instructions and all 91 physical COFF fields cold exact; original private subobject class names unproven
+0x0045B760,BattleObject::InitializeDefaultsAt0045B760,GameContextPolicy,inferred,"F300; entire native 203-byte polymorphic game default constructor, exact base/vtable relocation and 15 real original zero stores; private layout unproven"

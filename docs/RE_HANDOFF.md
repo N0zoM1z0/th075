@@ -1,4 +1,4 @@
-# TH075 — active reconstruction handoff (F294)
+# TH075 — active reconstruction handoff (F300)
 
 **Updated 2026-10-28. Read this document before new experiments.**
 
@@ -22,17 +22,17 @@ not acceptance requirements.
 
 | Item | Current evidence |
 | --- | --- |
-| Local branch / last exact-code commit | `main` / F294 full 1,722-byte Effects pattern catalog boss; F293 four leaf checkpoint `8f49862` |
+| Local branch / last exact-code commit | `main` / F300 203-byte BattleObject native default constructor; previous F294 1,722-byte effects catalog boss checkpoint `34a452e` |
 | Upstream | `origin/main` tracked locally; verify current ahead/behind and dirty state before further work |
-| Working tree | Clean after F294 checkpoint if successful; continue rather than avoid every existing dirty edit |
+| Working tree | Clean after F300 checkpoint if successful; continue rather than avoid every existing dirty edit |
 | Native binary | `resources/th075.exe`, SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98` |
 | Candidate count | 4,351; origin review: 1,002 authored, 2,671 library, 581 compiler, 97 unknown |
-| Accepted functions / units | **610 / 610** |
-| Accepted authored CODE | **802,322 bytes** |
-| Reviewed authored coverage | 802,322 / 1,973,516 = **40.65%** |
-| Conservative coverage | **40.58%** counting 3,608 origin-pending bytes |
+| Accepted functions / units | **611 / 611** |
+| Accepted authored CODE | **802,525 bytes** |
+| Reviewed authored coverage | 802,525 / 1,973,516 = **40.66%** |
+| Conservative coverage | **40.59%** counting 3,608 origin-pending bytes |
 | Goal | **98% not reached** |
-| Verification | F294 complete 1,722-byte Effects::LoadPatternCatalog boss independently 1/1 cold-exact (1,358/1,358 nonfield bytes, 91 real native COFF relocations). F293 four font/effect leaves previously checkpointed at `8f49862`. Only new F294 boss cold-replayed; no all-unit cold replay or external Oracle receipt |
+| Verification | F300 complete 203-byte BattleObject::InitializeDefaults cold-exact (195/195 nonfield bytes, two authentic relocations), following independently F294-accepted 1,722-byte Effects::LoadPatternCatalog boss checkpoint `34a452e`. Only new F300 unit cold-replayed, no all-unit cold replay or external Oracle receipt |
 
 **Recheck the actual live status immediately**. Local commits are checkpoints,
 not evidence of a remote push or external Oracle acceptance. Earlier Git
@@ -137,6 +137,7 @@ inert variable or arbitrary padding may earn exact credit.
 | F293: FontSurface::DecodePackedTextUnit | `0041C9D0` | 85 | 1 |
 | F293: FontSurface::ReleaseRasterResources | `0041C130` | 119 | 4 |
 | F294: Effects::LoadPatternCatalog | `005F71F0` | 1,722 | 91 |
+| F300: BattleObject::InitializeDefaults | `0045B760` | 203 | 2 |
 
 F222 proved signed 32-bit x87 `FILD` divided by the target's 36.0f
 (`00659308`), 74 physical animation records and a final call into the
@@ -270,6 +271,10 @@ F293 independently **cold-accepts four entire R103/R100/R183/R109-authored font 
 F294 **cold-accepts the ENTIRE 1,722-byte Effects::LoadPatternCatalog boss** at `005F71F0..005F78A9` after independent complete native instruction and per-field COFF validation (**582 x86 instructions, 1,358/1,358 comparable nonrelocation bytes, 91/91 authentic physical relocations**). Source `src/EffectsLoadPatternCatalogF294.cpp`, canonical unit `effects-load-pattern-catalog-005f71f0`, original full PE-backed CODE SHA256 `6fc11b0e9aec650d60b8e4d00bca85e26a026d4dce9bed0d3a5a46bd6adb526d`. The native `effect.pat` archive lookup/open uses actual `0041CF00`/`0041D750` and file path string `0065A0C0`, constructs a true 16-byte temporary scratch through `00458880`/`004588B0` and real `/GX` EH handler `00656679`; deletes prior effect sequences with their actual vector/deque methods, reads per-sequence records, invokes native EH-backed 16-byte sequence allocation, then reads all original shorts/flags/texture data and stores three identical fixed-point-scaled float values followed by three signed-short-to-float values. All nested loops, full native `ReadFile` calls, original 0/1/2 record-kind dispatch, original function return/EH order, **full** original 1,722-byte extent and 91 relocations are present in natural C++.
 
 The first complete physical source compiled 1,722 bytes and all 582 x86 instruction forms, but only 1,244/1,358 nonfield bytes because actual parser value lifetimes were assigned different EBP stack positions. Regrouping ONLY the nine genuinely used file/index/count/read variables into one physically observed C++ state record restored 1,347/1,358. Calling `Resize` with the real typed `nullptr` rvalue bound to its `const T&` rather than a named, separately allocated fake null pointer naturally restored seven genuine `delete` temporary/result stack slots, yielding 1,354/1,358. The remaining original flag is a signed **one-byte read at EBP-0x25**, physically inside the 4-byte record-tag storage EBP-0x28..-0x25; represent that same real 4-byte file input slot as a `DWORD kindStorage` and access exactly its observed final byte via existing native offset/type semantics. That restores the last four original signed-byte loads with **no extra stack bytes or dummy member/read/side effects**. The final full compile is **1,722 bytes, 582 x86 instructions, 1,358/1,358 comparable bytes, and all 91/91 physical COFF fields**, independently verified by **`--unit effects-load-pattern-catalog-005f71f0` alone** in serial headless VC7.1. Raw original full disassembly, Ghidra decomp, first negative 1,244 probe, dozens of meaningful grouping/null/scope/typed-byte negatives and final exact object/cold receipt are retained under `.analysis/f274-effects-catalog/` and `.analysis/f294-effects-catalog/`. The separately F293-accepted 84-byte `Effects::LoadResources` caller and F281/F285 effect spawners receive **zero duplicate CODE**. All 97 origin-pending functions remain excluded; unobserved game private class names/layouts remain provisional; no byte grafts, assembly, irrelevant filler, relocations masking, truncated extent, full all-unit replay, or external Oracle acceptance.
+
+F300 **cold-accepts the full 203-byte R166-authored `BattleObject::InitializeDefaults`** at `0045B760..0045B82A`, 42 independently decoded original native x86 instructions, all **195/195** comparable bytes and both real physical relocations (game base ctor `00458650`, derived vtable `00659064`). A first genuine natural C++ derived polymorphic constructor reproduced the whole native class-default zero initialization in the exact original source order: short words at +0x80,+0x82,+0x84,+0x86,+0x88; DWORDs at +0x7C,+0x8C,+0x90,+0x94,+0x98,+0x50,+0x54,+0x58,+0x5C,+0x4C. Full original PE CODE SHA256 `be111ce8814061e291a70639e4ffd1bf9dff77a6f14385c16882f2594c704550`; canonical unit `battle-object-initialize-defaults-0045b760`, accepted source `src/BattleDefaultsF300.cpp`, original Ghidra/probe/COFF/cold receipt `.analysis/f300-battle-leaves/` and `.analysis/f300-battle-probes/`. Only F300 cold replayed; original base implementation and unproven private object interior receive no credit.
+
+F297-F299 large and adjacent work is retained privately rather than falsely accepted: `AuxEffectManager::AdvanceAndPruneTwoLists` at `005F7D80` (276 CODE, ten real COFF fields) has a first complete native semantic source exactly 276 bytes and progressed from **222/236** to **233/236** nonrelocation matches when the actual count/index lifetimes were scoped. The last three real stack slot differences are End iterator destination and the used released-object pointer; genuine nested source/typed iterator/aggregate/for-condition variants under `.analysis/f297-aux-prune/` and `.analysis/f298-aux-lifetimes/` are negative, **zero CODE credit**. A separate **1,766-byte** `FontSurface::RasterizeText` boss was independently re-reviewed using its full native original and two 32-bit/16-bit framebuffer paths; real shared decoded-unit/pixel iterator lifetimes restore the native 0x38 frame, and an independently grounded native switch and signed length branch source reduces whole emission to 1,712 bytes but is not exact. Private complete source, raw x86 and disassembly-shape negatives at `.analysis/f297-font-boss/` and `.analysis/f299-font-raster/`, **zero code credit**. The historic 1,252-byte `ReplayRecords::AppendRecord` boss remains 1,033/1,052 nonfield best, 50 fields; its further genuine six-iterator/count/written declaration interleaving and typed iterator pair probes under `.analysis/f296-append-interleave/` did not restore the 19 original stack slots. Continue tackling true bosses and related leaves, but never claim these as accepted without full original-byte/relocation and affected cold replay.
 
 Relevant full native proofs: `config/match-units.toml`,
 `config/exact-adoptions.json`, sources `src/*F222.cpp`/`src/*F223.cpp`,

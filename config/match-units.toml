@@ -44778,3 +44778,22 @@ offset = 1714
 type = "DIR32"
 symbol = "__except_list"
 target = 0x00000000
+
+[units.battle-object-initialize-defaults-0045b760]
+source = "src/BattleDefaultsF300.cpp"
+object = "build/matching/BattleDefaultsF300.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BattleObject::InitializeDefaultsAt0045B760"]
+symbol = "??0BattleObjectDefaultsF300@@QAE@XZ"
+target_address = 0x0045B760
+size = 203
+[[units.battle-object-initialize-defaults-0045b760.relocations]]
+offset = 11
+type = "REL32"
+symbol = "??0NativeFighterBaseF300@@QAE@XZ"
+target = 0x00458650
+[[units.battle-object-initialize-defaults-0045b760.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "??_7BattleObjectDefaultsF300@@6B@"
+target = 0x00659064

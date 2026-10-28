@@ -3680,3 +3680,68 @@ implementations remain separately unproven, and all 97 origin-pending
 functions remain excluded. No all-unit cold replay, byte grafts,
 manual assembly, artificial padding, cropped original function or
 remote Oracle acceptance was claimed.
+
+
+## F300: 203-byte BattleObject default native constructor cold exact
+
+The R166-authored game-specific `BattleObject::InitializeDefaultsAt0045B760`
+occupies **all 203 original PE-backed CODE bytes** at `0045B760..0045B82A`,
+with **42 independently decoded x86 instructions** and actual native plain
+RET `0045B82A`. Full pinned Japanese PE body SHA256 is
+`be111ce8814061e291a70639e4ffd1bf9dff77a6f14385c16882f2594c704550`.
+The original physical disassembly, 1/1 native structural-exact first natural
+source, canonical physical COFF comparison and affected-unit cold receipt
+are preserved in `.analysis/f300-battle-leaves/` and
+`.analysis/f300-battle-probes/`. Authored whole source is
+`src/BattleDefaultsF300.cpp`, using a borrowed polymorphic game-base call ABI
+rather than an invented complete hidden BattleObject class layout.
+
+The native constructor calls exactly the true game base constructor
+`00458650`, then installs the real derived virtual table `00659064`.
+It sets 15 real fields to zero in the original native source order: short
++0x80, DWORD +0x7C, short +0x82, DWORDs +0x8C/+0x90/+0x94/+0x98,
+DWORDs +0x50/+0x54/+0x58/+0x5C/+0x4C, and shorts +0x84/+0x86/+0x88.
+The compiler naturally generates the exact original ordinary `thiscall`
+register return and no unnecessary EH frame. The **first full natural C++
+probe** in pinned VC7.1 `/Od /Ob0 /Gy /GR- /GX- /GS /Zi` emitted **all
+203 original machine bytes**, **195/195** comparable nonrelocation byte
+positions and **both** authentic physical COFF fields: one REL32 for base
+constructor at source offset +0xB and one DIR32 for the actual derived vtable
+at source offset +0x14. No guessed game member layout, copied target bytes,
+manual assembly or padding was necessary.
+
+Only canonical matching unit `battle-object-initialize-defaults-0045b760`
+was built **cold by itself**, reporting `exact; 203 coverage bytes`. The
+underlying real base constructor and 97 still-unresolved origin candidates
+receive no additional authorship/CODE coverage. Local Git source checkpoint
+is not external Oracle verification; no all-unit replay, truncated extent or
+relocation masks were used.
+
+### F297-F299 retained evidence for unresolved bosses and two-list pruning
+
+The full original 1,766-byte `FontSurface::RasterizeText` core at
+`0041C2E0` (551 complete original x86 instructions) was independently
+re-reviewed. The first source models native 4-byte/2-byte raster output,
+inline text `\c`, `\e`, `\n` controls, glyph spacing, per-scanline
+RGB gradients and signed glyph/bitmap addressing; real shared output
+codepoint/advance/index lifetimes restore the native `0x38` frame.
+Grounded switch/case ordering and signed branch operands narrowed original
+source emission from 1,717 to 1,712 bytes but **not exact**; control-flow
+and integer signed division differ. Retain `.analysis/f297-font-boss/` and
+`.analysis/f299-font-raster/`, zero CODE credit.
+
+The game-specific 276-byte two-side effect queue manager at `005F7D80`
+reproduces entire control instruction shapes and all 10 native COFF fields,
+but native iterator End return temporary and real freed object pointer
+occupy different physical EBP slots. Scoped real index/count lifetimes
+raise comparison from **222/236 to 233/236** nonrelocation bytes.
+Genuine alternative loop-source, iterator receiver, used-free-pointer scope
+and typed aggregate controls remain negative in `.analysis/f297-aux-prune/`
+and `.analysis/f298-aux-lifetimes/`, zero coverage credit.
+
+The full 1,252-byte `ReplayRecords::AppendRecord` still has authentic
+complete control flow and all 50 COFF fields in its best retained C++
+source, but **19 actual stack slot byte operands** remain nonmatching
+(1,033/1,052). Further real typed iterator/count/written declaration
+interleavings and pair-owner probes under `.analysis/f296-append-interleave/`
+were negative, and cannot be credited or solved with fake padding.
