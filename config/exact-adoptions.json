@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "02aa21845998a84e028e8f5bb844cf84a2a386ea0891038ac25314d5e864dbaf"
+      "current_sha256": "de105e02e1b417ac15ff9f9bef5aa683f7e0990e18d0dc8964bf0f9a49339ca1"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "0281dab0cb3855fdb0d156cac5b0ff7b87ef992434e0a2bb073f30ae6cbc0ac5"
+      "current_sha256": "c8896870cdd5bb3858c73cc8f6d3eac06bd824ebdb37dcfca2df0bd91e83a330"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "51ffbe9d1d08c3ab6889f5355df5b0a06de995f9b6d211551ae1577bc15d1c35"
+      "current_sha256": "6439a0074080bd878af8ec211be34cc8f3f91df0e2d649c617f4a5b5282e343d"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "55ebf3019484bb07c0fb8f1f4e6d17ea5e88c38163a1f3f8cd96455598497971"
+      "current_sha256": "ae2440e69c66ed49f1c996a2812c026b4c8ed6d11d0a7d18dde82885e973f15d"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "79727aa2659de1014e5758ea684a712992bfb69bda1be64e7feba2ee18b5db67"
+      "current_sha256": "d12e3c02e3e0e64fa8fc75dc4e545330147ac69c567f45aa3f41ab585790f107"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -23360,6 +23360,182 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R045"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0045DD00",
+        "size": "66",
+        "span_end": "0x0045DD41",
+        "current_name": "FUN_0045dd00",
+        "proposed_name": "FighterScript::CountPatternEntries",
+        "module": "FighterScript",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R152; config/script-count-origin-evidence.json; complete signed script-map policy with independent whole producer and eleven actual game consumers",
+        "owner": "authored",
+        "notes": "Complete 66-byte body, all branches/exits and following alignment remain intact. Signed-short input selects the observed 1000-slot map, a negative mapped entry returns zero, and the real owner +0x7D0 outer-at return becomes the inner-size receiver. Six independently authored full owners / 5729 bytes retain original hashes, CFG and whole switch records. Actual initializer writes -1; the parser accumulates decimal labels and stores outer size minus one; eleven game calls use owner +0x714 and consume AX as a signed short loop bound. These independent domain-specific producers/consumers establish authored policy beyond a library child or matching wrapper shape. Full retained R150 cold SDK code/data/EH and complete synthetic count model replay. Original declarations, class layout, type/folding and malformed input/overflow behavior remain unknown; no local index bounds guard is observed. No prior owner or extent changes; no game source/private ABI/mapping/exact credit."
+      },
+      "after": {
+        "address": "0x0045DD00",
+        "size": "66",
+        "span_end": "0x0045DD41",
+        "current_name": "FUN_0045dd00",
+        "proposed_name": "FighterScript::CountPatternEntries",
+        "module": "FighterScript",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "short PatternCountF279::CountPatternEntries(short)",
+        "is_thunk": "false",
+        "source_file": "src/PatternCountF279.cpp",
+        "evidence": "R152; config/script-count-origin-evidence.json; complete signed script-map policy with independent whole producer and eleven actual game consumers; F279; scripts/repo-python scripts/replay-exact-units.py --unit fighter-script-count-pattern-entries-0045dd00",
+        "owner": "authored",
+        "notes": "Complete 66-byte body, all branches/exits and following alignment remain intact. Signed-short input selects the observed 1000-slot map, a negative mapped entry returns zero, and the real owner +0x7D0 outer-at return becomes the inner-size receiver. Six independently authored full owners / 5729 bytes retain original hashes, CFG and whole switch records. Actual initializer writes -1; the parser accumulates decimal labels and stores outer size minus one; eleven game calls use owner +0x714 and consume AX as a signed short loop bound. These independent domain-specific producers/consumers establish authored policy beyond a library child or matching wrapper shape. Full retained R150 cold SDK code/data/EH and complete synthetic count model replay. Original declarations, class layout, type/folding and malformed input/overflow behavior remain unknown; no local index bounds guard is observed. No prior owner or extent changes; no game source/private ABI/mapping/exact credit.; F279: independently complete original R076/R152 authored 66 CODE bytes /23 native x86 instructions, full PE body SHA256 e6f1e1b8184a86b0f8cd69748c64d476a20c96d4c775c26de855a6755b42373d. Pinned VC7.1 /Od /GX- natural source cold exact for all 58/58 nonfield bytes and 2/2 real native COFF relocation fields. Native short pattern row selector at this+2*index; returns 0 if signed row is negative, otherwise uses native VC7 deque At 00421570 on this+0x7D0 and native deque size 0045DD50. No library CODE credited. The original private FighterScript, row, and nested deque class identities are provisional; the actual VC7 library deque At/Size bodies and parent caller F278 are NOT recredited. No invented owner state, manual asm, filler, target patch, truncated compare, masked relocations, all-unit cold replay or external Oracle receipt. All 97 pending origin unknown cases remain excluded."
+      },
+      "origin": {
+        "address": "0x0045DD00",
+        "origin": "authored",
+        "subsystem": "FighterScript",
+        "disposition": "authored",
+        "confidence": "complete-script-map-producer-and-game-consumer-policy",
+        "evidence_id": "R152"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00420530",
+        "size": "53",
+        "span_end": "0x00420564",
+        "current_name": "FUN_00420530",
+        "proposed_name": "FighterScript::GetByteFieldAt00420530",
+        "module": "FighterScript",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R076; complete target body, 1,000-slot script policy or field-width accessor and reviewed fighter calls",
+        "owner": "authored",
+        "notes": "Origin reviewed; owner name and complete layout provisional; source and exact state independent"
+      },
+      "after": {
+        "address": "0x00420530",
+        "size": "53",
+        "span_end": "0x00420564",
+        "current_name": "FUN_00420530",
+        "proposed_name": "FighterScript::GetByteFieldAt00420530",
+        "module": "FighterScript",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "signed char PatternAccessorsF279::GetByteField(short,short)",
+        "is_thunk": "false",
+        "source_file": "src/PatternAccessorsF279.cpp",
+        "evidence": "R076; complete target body, 1,000-slot script policy or field-width accessor and reviewed fighter calls; F279; scripts/repo-python scripts/replay-exact-units.py --unit fighter-script-get-byte-field-00420530",
+        "owner": "authored",
+        "notes": "Origin reviewed; owner name and complete layout provisional; source and exact state independent; F279: independently complete original R076/R152 authored 53 CODE bytes /19 native x86 instructions, full PE body SHA256 e6f22dad1a3f05bb485a4955bfe4e38aa127c813611a7a09b623c75dd7514348. Pinned VC7.1 /Od /GX- natural source cold exact for all 45/45 nonfield bytes and 2/2 real native COFF relocation fields. Two signed short stack row and column selectors; native row mapping at this+2*sequence and VC7 deque At 00421570 then nested At 00421360, extracts first signed byte. The original private FighterScript, row, and nested deque class identities are provisional; the actual VC7 library deque At/Size bodies and parent caller F278 are NOT recredited. No invented owner state, manual asm, filler, target patch, truncated compare, masked relocations, all-unit cold replay or external Oracle receipt. All 97 pending origin unknown cases remain excluded."
+      },
+      "origin": {
+        "address": "0x00420530",
+        "origin": "authored",
+        "subsystem": "FighterScript",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R076"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00420570",
+        "size": "55",
+        "span_end": "0x004205A6",
+        "current_name": "FUN_00420570",
+        "proposed_name": "FighterScript::GetWordFieldAt00420570",
+        "module": "FighterScript",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R076; complete target body, 1,000-slot script policy or field-width accessor and reviewed fighter calls",
+        "owner": "authored",
+        "notes": "Origin reviewed; owner name and complete layout provisional; source and exact state independent"
+      },
+      "after": {
+        "address": "0x00420570",
+        "size": "55",
+        "span_end": "0x004205A6",
+        "current_name": "FUN_00420570",
+        "proposed_name": "FighterScript::GetWordFieldAt00420570",
+        "module": "FighterScript",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "short PatternAccessorsF279::GetWordField(short,short)",
+        "is_thunk": "false",
+        "source_file": "src/PatternAccessorsF279.cpp",
+        "evidence": "R076; complete target body, 1,000-slot script policy or field-width accessor and reviewed fighter calls; F279; scripts/repo-python scripts/replay-exact-units.py --unit fighter-script-get-word-field-00420570",
+        "owner": "authored",
+        "notes": "Origin reviewed; owner name and complete layout provisional; source and exact state independent; F279: independently complete original R076/R152 authored 55 CODE bytes /19 native x86 instructions, full PE body SHA256 5eaf1f97f52a513b12be919cef877afa523dcfba8c712a884b8b738f575556bb. Pinned VC7.1 /Od /GX- natural source cold exact for all 47/47 nonfield bytes and 2/2 real native COFF relocation fields. Two signed short stack selectors, native two VC7 deque At operations at 00421570/00421360, returns signed 16-bit word at item+2. The original private FighterScript, row, and nested deque class identities are provisional; the actual VC7 library deque At/Size bodies and parent caller F278 are NOT recredited. No invented owner state, manual asm, filler, target patch, truncated compare, masked relocations, all-unit cold replay or external Oracle receipt. All 97 pending origin unknown cases remain excluded."
+      },
+      "origin": {
+        "address": "0x00420570",
+        "origin": "authored",
+        "subsystem": "FighterScript",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R076"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004205B0",
+        "size": "54",
+        "span_end": "0x004205E5",
+        "current_name": "FUN_004205b0",
+        "proposed_name": "FighterScript::GetDwordFieldAt004205B0",
+        "module": "FighterScript",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R076; complete target body, 1,000-slot script policy or field-width accessor and reviewed fighter calls",
+        "owner": "authored",
+        "notes": "Origin reviewed; owner name and complete layout provisional; source and exact state independent"
+      },
+      "after": {
+        "address": "0x004205B0",
+        "size": "54",
+        "span_end": "0x004205E5",
+        "current_name": "FUN_004205b0",
+        "proposed_name": "FighterScript::GetDwordFieldAt004205B0",
+        "module": "FighterScript",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void* PatternAccessorsF279::GetDwordField(short,short)",
+        "is_thunk": "false",
+        "source_file": "src/PatternAccessorsF279.cpp",
+        "evidence": "R076; complete target body, 1,000-slot script policy or field-width accessor and reviewed fighter calls; F279; scripts/repo-python scripts/replay-exact-units.py --unit fighter-script-get-dword-field-004205b0",
+        "owner": "authored",
+        "notes": "Origin reviewed; owner name and complete layout provisional; source and exact state independent; F279: independently complete original R076/R152 authored 54 CODE bytes /19 native x86 instructions, full PE body SHA256 bb0395642b31cb755ce373801aa94b9dda9582ed801cbb37e1981c519788c7a1. Pinned VC7.1 /Od /GX- natural source cold exact for all 46/46 nonfield bytes and 2/2 real native COFF relocation fields. Two signed short stack selectors, original row indexing and authentic two VC7 deque At calls, returning 32-bit pointer at item+4. The original private FighterScript, row, and nested deque class identities are provisional; the actual VC7 library deque At/Size bodies and parent caller F278 are NOT recredited. No invented owner state, manual asm, filler, target patch, truncated compare, masked relocations, all-unit cold replay or external Oracle receipt. All 97 pending origin unknown cases remain excluded."
+      },
+      "origin": {
+        "address": "0x004205B0",
+        "origin": "authored",
+        "subsystem": "FighterScript",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R076"
       }
     }
   ],
@@ -175646,6 +175822,146 @@
           "target": 6560640
         }
       ]
+    },
+    "fighter-script-count-pattern-entries-0045dd00": {
+      "source": "src/PatternCountF279.cpp",
+      "object": "build/matching/PatternCountF279.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FighterScript::CountPatternEntries"
+      ],
+      "symbol": "?CountPatternEntries@PatternCountF279@@QAEFF@Z",
+      "target_address": 4578560,
+      "size": 66,
+      "relocations": [
+        {
+          "offset": 49,
+          "type": "REL32",
+          "symbol": "?At@PatternRowTableF279@@QAEPAVPatternEntryQueueF279@@H@Z",
+          "target": 4330864
+        },
+        {
+          "offset": 56,
+          "type": "REL32",
+          "symbol": "?Size@PatternEntryQueueF279@@QAEFXZ",
+          "target": 4578640
+        }
+      ]
+    },
+    "fighter-script-get-byte-field-00420530": {
+      "source": "src/PatternAccessorsF279.cpp",
+      "object": "build/matching/PatternAccessorsF279.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FighterScript::GetByteFieldAt00420530"
+      ],
+      "symbol": "?GetByteField@PatternAccessorsF279@@QAECFF@Z",
+      "target_address": 4326704,
+      "size": 53,
+      "relocations": [
+        {
+          "offset": 34,
+          "type": "REL32",
+          "symbol": "?At@PatternSequenceTableF279@@QAEPAVPatternEntryVectorF279@@H@Z",
+          "target": 4330864
+        },
+        {
+          "offset": 41,
+          "type": "REL32",
+          "symbol": "?At@PatternEntryVectorF279@@QAEPAEH@Z",
+          "target": 4330336
+        }
+      ]
+    },
+    "fighter-script-get-word-field-00420570": {
+      "source": "src/PatternAccessorsF279.cpp",
+      "object": "build/matching/PatternAccessorsF279.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FighterScript::GetWordFieldAt00420570"
+      ],
+      "symbol": "?GetWordField@PatternAccessorsF279@@QAEFFF@Z",
+      "target_address": 4326768,
+      "size": 55,
+      "relocations": [
+        {
+          "offset": 34,
+          "type": "REL32",
+          "symbol": "?At@PatternSequenceTableF279@@QAEPAVPatternEntryVectorF279@@H@Z",
+          "target": 4330864
+        },
+        {
+          "offset": 41,
+          "type": "REL32",
+          "symbol": "?At@PatternEntryVectorF279@@QAEPAEH@Z",
+          "target": 4330336
+        }
+      ]
+    },
+    "fighter-script-get-dword-field-004205b0": {
+      "source": "src/PatternAccessorsF279.cpp",
+      "object": "build/matching/PatternAccessorsF279.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FighterScript::GetDwordFieldAt004205B0"
+      ],
+      "symbol": "?GetDwordField@PatternAccessorsF279@@QAEPAXFF@Z",
+      "target_address": 4326832,
+      "size": 54,
+      "relocations": [
+        {
+          "offset": 34,
+          "type": "REL32",
+          "symbol": "?At@PatternSequenceTableF279@@QAEPAVPatternEntryVectorF279@@H@Z",
+          "target": 4330864
+        },
+        {
+          "offset": 41,
+          "type": "REL32",
+          "symbol": "?At@PatternEntryVectorF279@@QAEPAEH@Z",
+          "target": 4330336
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -176011,6 +176327,8 @@
     "src/CardLoadEncodedF272.cpp": "cc95f850ddf87c0f2bae5ac8d93fdca014fa3bab1f01979324ec5e72c4ce7f70",
     "src/CardLoadPlainF273.cpp": "2e452d54afe8778c944e6179788db61765c31be6372ad922fce3ea97655b5544",
     "src/ProgressSelectionF274.cpp": "e7413da91314a425e0dead117f844dc66607bcefad8846c9b378302832da8814",
-    "src/FighterPatternChoiceF278.cpp": "17681212fe7a15b23f4133b5b18996abd868b092b4872e694e72066e98453320"
+    "src/FighterPatternChoiceF278.cpp": "17681212fe7a15b23f4133b5b18996abd868b092b4872e694e72066e98453320",
+    "src/PatternCountF279.cpp": "469cc3b3a62aa907c8142a8b46469fb848ea7d5503dbfbce4fac91e1c5b2d2b0",
+    "src/PatternAccessorsF279.cpp": "1ccfde755df5f90ab455c28bec906e0ea1204b792477ee6174e03d413130ef52"
   }
 }

@@ -2909,3 +2909,58 @@ provisional, and all 97 unresolved origins remain uncredited.
 No target-byte grafting, truncated function, manual assembly, masked
 fields, artificial stack padding, full-set cold replay or remote
 Oracle acceptance is claimed.
+
+
+## F279: independently cold-exact four FighterScript pattern-deque field/size helpers
+
+Four complete R076/R152-authored game-specific pattern helper functions
+called by the now accepted F278 1,264-byte fighter selection boss are
+independently accepted as entire machine-code functions, not grafted
+from the caller. Their full original native CODE boundaries and SHA256
+values were checked against the pinned Japanese PE and their instruction
+counts verified using independent read-only decoding:
+
+| Address / inferred role | Full CODE | X86 instructions | Nonrelocation bytes | Authentic COFF fields | Original full SHA256 |
+| --- | ---: | ---: | ---: | ---: | --- |
+| `0045DD00` CountPatternEntries | 66 | 23 | 58/58 | 2 | `e6f1e1b8184a86b0f8cd69748c64d476a20c96d4c775c26de855a6755b42373d` |
+| `00420530` GetByteField | 53 | 19 | 45/45 | 2 | `e6f22dad1a3f05bb485a4955bfe4e38aa127c813611a7a09b623c75dd7514348` |
+| `00420570` GetWordField | 55 | 19 | 47/47 | 2 | `5eaf1f97f52a513b12be919cef877afa523dcfba8c712a884b8b738f575556bb` |
+| `004205B0` GetDwordField | 54 | 19 | 46/46 | 2 | `bb0395642b31cb755ce373801aa94b9dda9582ed801cbb37e1981c519788c7a1` |
+
+The original catalogue indexing uses an actually **signed 16-bit
+sequence index** to read a `short` row mapping at `this+2*sequence`.
+The row collection is physically addressed at `this+0x7D0`, and
+all these game-specific helpers dispatch to the *native VC7 library*
+row access routine at `00421570`. `CountPatternEntries` returns a
+short zero (original `XOR AX,AX`) for a negative row value; otherwise
+it calls the existing native library row `Size` at `0045DD50`. The
+three field readers obtain a row via the same native deque `At`,
+then call the second existing VC7 container `At` at `00421360` with
+a signed 16-bit item index. They extract respectively the original
+8-bit signed flag at entry+0, 16-bit word at entry+2, and 32-bit
+name pointer at entry+4. No original private enclosing class object
+layout is claimed beyond these specific real member offsets; the
+container implementation and its SDK/CRT bodies are **not authored
+credit**. The originating R076/R152 classifications and all 97
+unknown origins remain unchanged.
+
+The complete natural C++ source was independently constructed as
+`src/PatternCountF279.cpp` and `src/PatternAccessorsF279.cpp`; the
+first pinned VC7.1 `/Od /Ob0 /Gy /GR- /GX- /GS /Zi` probes matched
+all four original x86 extents structurally, all **196/196 combined
+comparable bytes** (58+45+47+46), and **8/8 actual COFF
+relocation fields** (two in each game method). The four canonical
+units `fighter-script-count-pattern-entries-0045dd00`,
+`fighter-script-get-byte-field-00420530`,
+`fighter-script-get-word-field-00420570`, and
+`fighter-script-get-dword-field-004205b0` were freshly rebuilt cold
+**only as those four affected units**, from exactly two compiled
+objects, and reported `4/4 exact`. Raw read-only Ghidra function and
+native assembly evidence and full probe/cold receipts are retained
+at `.analysis/f279-pattern-counter/` and
+`.analysis/f279-pattern-accessors/`. No real native source code or
+assembly was pasted into the authored files. All 228 combined CODE
+bytes are separately credited once, not duplicated from the
+previously accepted F278 caller or library deque callees. No full
+all-unit cold replay, artificial offsets/padding, relocation masks,
+uncertified input or remote Oracle verification is claimed.

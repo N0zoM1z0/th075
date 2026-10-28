@@ -588,3 +588,7 @@ ProgressRecords::SetSelection
 ProgressRecords::GetSelectedRecordAddress
 ProfileSelection::StoreWorkingEightBytesAt00416E20
 FighterState::ChoosePatternSequence
+FighterScript::CountPatternEntries
+FighterScript::GetByteFieldAt00420530
+FighterScript::GetWordFieldAt00420570
+FighterScript::GetDwordFieldAt004205B0

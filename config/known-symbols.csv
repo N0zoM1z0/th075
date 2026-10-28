@@ -571,3 +571,7 @@ address,name,module,confidence,evidence
 0x0041A240,ProgressRecords::GetSelectedRecordAddress,ProgressRecords,inferred,"F274; whole native 48-byte score selector/copy, 0 actual relocations cold-exact; complete private owner ABI unknown"
 0x00416E20,ProfileSelection::StoreWorkingEightBytesAt00416E20,ProfileSelection,inferred,"F274; whole native 84-byte score selector/copy, 1 actual relocations cold-exact; complete private owner ABI unknown"
 0x0045D810,FighterState::ChoosePatternSequence,FighterState,inferred,F278; complete 1264-byte native fighter weighted pattern chooser with original two-phase scan/342 instructions/31 genuine relocations cold exact; full original PatternCatalog owner naming unproven
+0x0045DD00,FighterScript::CountPatternEntries,FighterScript,inferred,F279; complete 66-byte authored fighter pattern field/size helper; 2 true relocations cold exact; underlying deque bodies library
+0x00420530,FighterScript::GetByteFieldAt00420530,FighterScript,inferred,F279; complete 53-byte authored fighter pattern field/size helper; 2 true relocations cold exact; underlying deque bodies library
+0x00420570,FighterScript::GetWordFieldAt00420570,FighterScript,inferred,F279; complete 55-byte authored fighter pattern field/size helper; 2 true relocations cold exact; underlying deque bodies library
+0x004205B0,FighterScript::GetDwordFieldAt004205B0,FighterScript,inferred,F279; complete 54-byte authored fighter pattern field/size helper; 2 true relocations cold exact; underlying deque bodies library

@@ -42776,3 +42776,79 @@ offset = 1253
 type = "REL32"
 symbol = "_strcpy"
 target = 0x00641B80
+
+[units.fighter-script-count-pattern-entries-0045dd00]
+source = "src/PatternCountF279.cpp"
+object = "build/matching/PatternCountF279.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["FighterScript::CountPatternEntries"]
+symbol = "?CountPatternEntries@PatternCountF279@@QAEFF@Z"
+target_address = 0x0045DD00
+size = 66
+[[units.fighter-script-count-pattern-entries-0045dd00.relocations]]
+offset = 49
+type = "REL32"
+symbol = "?At@PatternRowTableF279@@QAEPAVPatternEntryQueueF279@@H@Z"
+target = 0x00421570
+[[units.fighter-script-count-pattern-entries-0045dd00.relocations]]
+offset = 56
+type = "REL32"
+symbol = "?Size@PatternEntryQueueF279@@QAEFXZ"
+target = 0x0045DD50
+
+[units.fighter-script-get-byte-field-00420530]
+source = "src/PatternAccessorsF279.cpp"
+object = "build/matching/PatternAccessorsF279.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["FighterScript::GetByteFieldAt00420530"]
+symbol = "?GetByteField@PatternAccessorsF279@@QAECFF@Z"
+target_address = 0x00420530
+size = 53
+[[units.fighter-script-get-byte-field-00420530.relocations]]
+offset = 34
+type = "REL32"
+symbol = "?At@PatternSequenceTableF279@@QAEPAVPatternEntryVectorF279@@H@Z"
+target = 0x00421570
+[[units.fighter-script-get-byte-field-00420530.relocations]]
+offset = 41
+type = "REL32"
+symbol = "?At@PatternEntryVectorF279@@QAEPAEH@Z"
+target = 0x00421360
+
+[units.fighter-script-get-word-field-00420570]
+source = "src/PatternAccessorsF279.cpp"
+object = "build/matching/PatternAccessorsF279.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["FighterScript::GetWordFieldAt00420570"]
+symbol = "?GetWordField@PatternAccessorsF279@@QAEFFF@Z"
+target_address = 0x00420570
+size = 55
+[[units.fighter-script-get-word-field-00420570.relocations]]
+offset = 34
+type = "REL32"
+symbol = "?At@PatternSequenceTableF279@@QAEPAVPatternEntryVectorF279@@H@Z"
+target = 0x00421570
+[[units.fighter-script-get-word-field-00420570.relocations]]
+offset = 41
+type = "REL32"
+symbol = "?At@PatternEntryVectorF279@@QAEPAEH@Z"
+target = 0x00421360
+
+[units.fighter-script-get-dword-field-004205b0]
+source = "src/PatternAccessorsF279.cpp"
+object = "build/matching/PatternAccessorsF279.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["FighterScript::GetDwordFieldAt004205B0"]
+symbol = "?GetDwordField@PatternAccessorsF279@@QAEPAXFF@Z"
+target_address = 0x004205B0
+size = 54
+[[units.fighter-script-get-dword-field-004205b0.relocations]]
+offset = 34
+type = "REL32"
+symbol = "?At@PatternSequenceTableF279@@QAEPAVPatternEntryVectorF279@@H@Z"
+target = 0x00421570
+[[units.fighter-script-get-dword-field-004205b0.relocations]]
+offset = 41
+type = "REL32"
+symbol = "?At@PatternEntryVectorF279@@QAEPAEH@Z"
+target = 0x00421360

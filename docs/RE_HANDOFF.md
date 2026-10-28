@@ -1,4 +1,4 @@
-# TH075 — active reconstruction handoff (F278)
+# TH075 — active reconstruction handoff (F279)
 
 **Updated 2026-10-28. Read this document before new experiments.**
 
@@ -22,17 +22,17 @@ not acceptance requirements.
 
 | Item | Current evidence |
 | --- | --- |
-| Local branch / last exact-code commit | `main` / F278 full 1,264-byte fighter pattern boss; F274 selection/score checkpoint `dde1c40` |
+| Local branch / last exact-code commit | `main` / F279 four whole fighter pattern field/size helpers; F278 1,264-byte boss checkpoint `1bccb41` |
 | Upstream | `origin/main` tracked locally; verify current ahead/behind and dirty state before further work |
-| Working tree | Clean after F278 checkpoint if successful; continue rather than avoid every existing dirty edit |
+| Working tree | Clean after F279 checkpoint if successful; continue rather than avoid every existing dirty edit |
 | Native binary | `resources/th075.exe`, SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98` |
 | Candidate count | 4,351; origin review: 1,002 authored, 2,671 library, 581 compiler, 97 unknown |
-| Accepted functions / units | **590 / 590** |
-| Accepted authored CODE | **794,500 bytes** |
-| Reviewed authored coverage | 794,500 / 1,973,516 = **40.26%** |
-| Conservative coverage | **40.18%** counting 3,608 origin-pending bytes |
+| Accepted functions / units | **594 / 594** |
+| Accepted authored CODE | **794,728 bytes** |
+| Reviewed authored coverage | 794,728 / 1,973,516 = **40.27%** |
+| Conservative coverage | **40.20%** counting 3,608 origin-pending bytes |
 | Goal | **98% not reached** |
-| Verification | F278 complete 1,264-byte FighterState::ChoosePatternSequence cold-exact (1,140/1,140 nonrelocation bytes and all 31 authentic COFF fields); F274 three selection/score leaves previously checkpointed at `dde1c40`. Only new F278 boss cold-replayed, no all-unit cold replay or external Oracle receipt |
+| Verification | F279 four complete FighterScript helper functions cold-exact (66/53/55/54 bytes, 2 relocations per function) called by F278 1,264-byte boss, previously checkpointed `1bccb41`. Only the four affected F279 units cold-replayed; no all-unit cold replay or external Oracle receipt |
 
 **Recheck the actual live status immediately**. Local commits are checkpoints,
 not evidence of a remote push or external Oracle acceptance. Earlier Git
@@ -117,6 +117,10 @@ inert variable or arbitrary padding may earn exact credit.
 | F274: ProgressRecords::GetSelectedRecordAddress | `0041A240` | 48 | 0 |
 | F274: ProfileSelection::StoreWorkingEightBytes | `00416E20` | 84 | 1 |
 | F278: FighterState::ChoosePatternSequence | `0045D810` | 1,264 | 31 |
+| F279: FighterScript::CountPatternEntries | `0045DD00` | 66 | 2 |
+| F279: FighterScript::GetByteField | `00420530` | 53 | 2 |
+| F279: FighterScript::GetWordField | `00420570` | 55 | 2 |
+| F279: FighterScript::GetDwordField | `004205B0` | 54 | 2 |
 
 F222 proved signed 32-bit x87 `FILD` divided by the target's 36.0f
 (`00659308`), 74 physical animation records and a final call into the
@@ -222,6 +226,8 @@ F274 **cold-accepts three complete native score-selection leaves** using one phy
 The **1,252-byte `ReplayRecords::AppendRecord`** big boss at `00413DE0` remains nonexact with preserved 1,033/1,052 comparable-byte best, 50 real relocations and full function length. F272 additionally tried ten physically grounded iterator constructor declaration/scope reorder controls; all retained whole code/fields but failed to correct all 19 native EBP slot differences (no authored CODE credit). The **746-byte `SpriteSequence::RenderElements`** remains 734-byte emitted with correct 198 instruction forms/0xBC frame and unresolved 12-byte stack-slot locality. F274 added eight nested real Quad/RECT/tint lifetimes, all negative, archived in `.analysis/f274-sprite-scope/`. The **1,722-byte R067-authored `Effects::LoadPatternCatalog`** boss was rechecked independently by Ghidra under `.analysis/f274-effects-catalog/`, revealing the actual native effect.pat archive, custom container, EH lifetime and nested per-entry parsing calls; no full C++ candidate was yet accepted and no credit is claimed. Preserve all these genuine boss investigations; continue exploring whole functions rather than farming tiny leaves alone.
 
 F278 **cold-accepts the COMPLETE 1,264-byte `FighterState::ChoosePatternSequence` boss** at `0045D810..0045DCFF` (342 independently decoded native x86 instructions, all 1,140/1,140 comparable nonrelocation bytes and 31/31 physical COFF relocations). This R045-authored fighter action controller performs native random-weighted selection with a selected opponent character's sequence, incrementally accumulating signed short weights; it writes actual 200-byte-stride fighter action names with `strcpy`, stores signed-kind bytes, checks native Flag/Count/Weight/Name helpers, searches CR-separated entries, and falls back to sequence 300 before a default action name. All original early exits and full fallback scan are preserved, not truncated. A first natural C++ whole probe generated 1,311 bytes; correcting the genuine second cursor advance, native positive early-exit guard, first phase CR-scanning loop and fallback `while` shape restored the full original 1,264-byte instruction extent with 1,104/1,140 matching nonfield bytes. Distinct **real variable lifetimes**, with unsigned `cursor` and signed short accumulated weight in the outer scope, while signed short random threshold and sequence belong inside a nested scope, recovered native EBP slots (-4, -8, -10, -C respectively) and exact 1,140/1,140 bytes. Both natural source lifetime candidates `finish-accum-before-target-inner` and `finish-accum-first-then-cursor` match, but only one natural source is adopted. Native CODE SHA256 `f3038d921b723ed8d71379d697003141faba9653a6017da1eb83002f9a948e5c`; complete source `src/FighterPatternChoiceF278.cpp`, private read-only original function/decompiler, historical failed compiler probes and final cold receipt under `.analysis/f277-fighter-pattern/` and `.analysis/f278-pattern-lifetime/`. **Only** `--unit fighter-state-choose-pattern-sequence-0045d810` cold-replayed exact; no CRT `rand`/`strcpy`, library, helper, pending-origin or already accepted fighter base bytes double-counted. Original private type/name layout is still inferred, not independently proven; no byte grafts, fake locals, masks, hand-assembly or cropped body.
+
+F279 **cold-accepts four complete native FighterScript helpers** independently called by the accepted F278 1,264-byte fighter boss: `CountPatternEntries` at `0045DD00` (66 bytes, 23 original instructions, 58/58 comparable bytes, 2 true fields) with R152 authored origin; `GetByteFieldAt00420530` (53 bytes, 19 instructions, 45/45 nonrelocation bytes, two native fields), `GetWordFieldAt00420570` (55 bytes, 19 instructions, 47/47 bytes, two fields), and `GetDwordFieldAt004205B0` (54 bytes, 19 instructions, 46/46 bytes, two fields), all independently R076 authored. Native record indexing uses signed short sequence at `this+2*index`, real row deque at `this+0x7D0`, native VC7 `At` `00421570` and per-row `At` `00421360`; Count uses library-only deque `Size` `0045DD50` after rejecting negative sequence indexes, and three fields read signed byte +0, word +2 or pointer +4. All four naturally reconstructed into two real C++ sources, exact 228 CODE bytes combined and 8/8 physical relocations, independently cold-replayed as **4/4 exact across 2 objects**; underlying VC7 deque and F278 caller instructions receive **zero additional authored credit**. Private native read-only decompiles, full probe/COFF, cold receipt at `.analysis/f279-pattern-counter/` and `.analysis/f279-pattern-accessors/`; sources `src/PatternCountF279.cpp`, `src/PatternAccessorsF279.cpp`. Distinct original class identities remain unproven.
 
 Relevant full native proofs: `config/match-units.toml`,
 `config/exact-adoptions.json`, sources `src/*F222.cpp`/`src/*F223.cpp`,
