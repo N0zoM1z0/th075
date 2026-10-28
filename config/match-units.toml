@@ -46869,3 +46869,78 @@ offset = 600
 type = "DIR32"
 symbol = "__real@c3a00000"
 target = 0x00657880
+
+
+[units.character-select-update-cancel-animation-00435870]
+source = "src/CharacterSelectCancelF346.cpp"
+object = "build/matching/CharacterSelectCancelF346.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["CharacterSelectScene::UpdateCancelAnimation"]
+symbol = "?UpdateCancelAnimation@CharacterSelectCancelF270@@QAEXC@Z"
+target_address = 0x00435870
+size = 497
+[[units.character-select-update-cancel-animation-00435870.relocations]]
+offset = 23
+type = "DIR32"
+symbol = "?g_ChoiceCancelHorizontalLimitAt00658268@@3MB"
+target = 0x00658268
+[[units.character-select-update-cancel-animation-00435870.relocations]]
+offset = 50
+type = "DIR32"
+symbol = "?g_ChoiceCancelHorizontalStepAt00657D14@@3MB"
+target = 0x00657D14
+[[units.character-select-update-cancel-animation-00435870.relocations]]
+offset = 84
+type = "DIR32"
+symbol = "?g_ChoiceCancelVerticalLimitAt00657858@@3MB"
+target = 0x00657858
+[[units.character-select-update-cancel-animation-00435870.relocations]]
+offset = 111
+type = "DIR32"
+symbol = "?g_ChoiceCancelVerticalStepAt00657480@@3MB"
+target = 0x00657480
+[[units.character-select-update-cancel-animation-00435870.relocations]]
+offset = 145
+type = "DIR32"
+symbol = "?g_ChoiceCancelHorizontalLimitAt00658268@@3MB"
+target = 0x00658268
+[[units.character-select-update-cancel-animation-00435870.relocations]]
+offset = 172
+type = "DIR32"
+symbol = "?g_ChoiceCancelHorizontalStepAt00657D14@@3MB"
+target = 0x00657D14
+[[units.character-select-update-cancel-animation-00435870.relocations]]
+offset = 206
+type = "DIR32"
+symbol = "?g_ChoiceCancelVerticalLimitAt00657858@@3MB"
+target = 0x00657858
+[[units.character-select-update-cancel-animation-00435870.relocations]]
+offset = 233
+type = "DIR32"
+symbol = "?g_ChoiceCancelVerticalStepAt00657480@@3MB"
+target = 0x00657480
+[[units.character-select-update-cancel-animation-00435870.relocations]]
+offset = 267
+type = "DIR32"
+symbol = "?g_ChoiceZeroAt0065782C@@3MB"
+target = 0x0065782C
+[[units.character-select-update-cancel-animation-00435870.relocations]]
+offset = 294
+type = "DIR32"
+symbol = "?g_ChoiceCancelReturnStepAt0065747C@@3MB"
+target = 0x0065747C
+[[units.character-select-update-cancel-animation-00435870.relocations]]
+offset = 321
+type = "DIR32"
+symbol = "?g_ChoiceCancelStopAt00658264@@3MB"
+target = 0x00658264
+[[units.character-select-update-cancel-animation-00435870.relocations]]
+offset = 380
+type = "DIR32"
+symbol = "?g_ChoiceSoundAt00671618@@3PAVSceneSelectionSoundF270@@A"
+target = 0x00671618
+[[units.character-select-update-cancel-animation-00435870.relocations]]
+offset = 385
+type = "REL32"
+symbol = "?Play@SceneSelectionSoundF270@@QAEXH@Z"
+target = 0x004079C0

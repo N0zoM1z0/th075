@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "8747d75bb6e9e02ab37915853730520f7556751b7df85efc1feab665b3706e2b"
+      "current_sha256": "526c03708a09e9fc079a8bb7d22ad03c874a34a8d77de8846649ad9b619746e9"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "bd60b8614bfe6a082db45f4f497b8ca6c5000cfabdd08db2b9b0775c706ad907"
+      "current_sha256": "9d56a1776cece09217b63cf645c5688053e182b2bcc712883137ac9cf3307ef3"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "4dfa3796e7f33aad4c422c7e1884fd318b118669cc7656ae51d7953b3ab180de"
+      "current_sha256": "a562209dc046fdf9ddd3857bf7b6064c060bece4660c72830e78851fe38fc969"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "1b2af2faa7d18f6edb10f01e94605625b293f3657fc5c8799cc33b87d0355b05"
+      "current_sha256": "38e28290dd2498ea0f33ffb8e8635e611eb135d4242d14805c34d0e11e2b4ee5"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "a5d0f254a014165b3606dc050a3bbdab51db0f3ccfc0ea31040a29147b84a136"
+      "current_sha256": "0af9321b8cd1d5ddd2368400f07d972f55a820f46b3fbf8552fea0b6699ecd18"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -25956,6 +25956,50 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R067"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00435870",
+        "size": "497",
+        "span_end": "0x00435A60",
+        "current_name": "FUN_00435870",
+        "proposed_name": "CharacterSelectScene::UpdateCancelAnimation",
+        "module": "CharacterSelectScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R041; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00435870",
+        "size": "497",
+        "span_end": "0x00435A60",
+        "current_name": "FUN_00435870",
+        "proposed_name": "CharacterSelectScene::UpdateCancelAnimation",
+        "module": "CharacterSelectScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void CharacterSelectCancelF270::UpdateCancelAnimation(signed char)",
+        "is_thunk": "false",
+        "source_file": "src/CharacterSelectCancelF346.cpp",
+        "evidence": "R041; full body hash, complete decoded CFG and local game-specific behavior reviewed; F346; scripts/repo-python scripts/replay-exact-units.py --unit character-select-update-cancel-animation-00435870",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F346: original complete 497-byte CharacterSelectCancel scene handler at 00435870..00435A60, 114 original x86 instructions, SHA256 914eacb92c8142897df62d92a9a403daafeeeaae3264ff6724f1474b06d6ba9c. Observed signed selector, four per-player horizontal and vertical float steps, final return progress step and exact global stop-at-equality, actual sound Play(40), reset of four original scene floats, flags and mode; preserved exact authentic native FGx x87 FLD constant before indexed float at last equality by using one natural unparenthesized lvalue macro distinct from earlier float inequalities, not by fake bytes. All 445 native non-field bytes and all 13 physical COFF DIR32/REL32 references match. Affected single unit cold 1/1 exact, external sound callee and private scene owner not credited; no assembly, padding, partial extent or Oracle certification."
+      },
+      "origin": {
+        "address": "0x00435870",
+        "origin": "authored",
+        "subsystem": "CharacterSelectScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R041"
       }
     }
   ],
@@ -183862,6 +183906,107 @@
           "target": 6649984
         }
       ]
+    },
+    "character-select-update-cancel-animation-00435870": {
+      "source": "src/CharacterSelectCancelF346.cpp",
+      "object": "build/matching/CharacterSelectCancelF346.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "CharacterSelectScene::UpdateCancelAnimation"
+      ],
+      "symbol": "?UpdateCancelAnimation@CharacterSelectCancelF270@@QAEXC@Z",
+      "target_address": 4413552,
+      "size": 497,
+      "relocations": [
+        {
+          "offset": 23,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceCancelHorizontalLimitAt00658268@@3MB",
+          "target": 6652520
+        },
+        {
+          "offset": 50,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceCancelHorizontalStepAt00657D14@@3MB",
+          "target": 6651156
+        },
+        {
+          "offset": 84,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceCancelVerticalLimitAt00657858@@3MB",
+          "target": 6649944
+        },
+        {
+          "offset": 111,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceCancelVerticalStepAt00657480@@3MB",
+          "target": 6648960
+        },
+        {
+          "offset": 145,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceCancelHorizontalLimitAt00658268@@3MB",
+          "target": 6652520
+        },
+        {
+          "offset": 172,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceCancelHorizontalStepAt00657D14@@3MB",
+          "target": 6651156
+        },
+        {
+          "offset": 206,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceCancelVerticalLimitAt00657858@@3MB",
+          "target": 6649944
+        },
+        {
+          "offset": 233,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceCancelVerticalStepAt00657480@@3MB",
+          "target": 6648960
+        },
+        {
+          "offset": 267,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceZeroAt0065782C@@3MB",
+          "target": 6649900
+        },
+        {
+          "offset": 294,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceCancelReturnStepAt0065747C@@3MB",
+          "target": 6648956
+        },
+        {
+          "offset": 321,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceCancelStopAt00658264@@3MB",
+          "target": 6652516
+        },
+        {
+          "offset": 380,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceSoundAt00671618@@3PAVSceneSelectionSoundF270@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 385,
+          "type": "REL32",
+          "symbol": "?Play@SceneSelectionSoundF270@@QAEXH@Z",
+          "target": 4225472
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -184284,6 +184429,7 @@
     "src/ArchiveSeekF340.cpp": "89119e3b6f1a9a48b24e1af7faa24820c6af21e7ae3c0a7931124a2a84616604",
     "src/ArchiveCatalogCloseF341.cpp": "0dc6b6924512d380e3678e5db308d80b1a3da8a0d2d3ce65dbe4dc8e91c893a1",
     "src/ArchiveAppendFileF342.cpp": "ed2c5da2520350066a290d6edb588f10e207d2ed1be3b0a11a67f15f02b7324b",
-    "src/YukariSpecialStateF345.cpp": "0b05778ecf2e1227bdbef2518fc7f7d078cf163c863130f652c207299f13fe85"
+    "src/YukariSpecialStateF345.cpp": "0b05778ecf2e1227bdbef2518fc7f7d078cf163c863130f652c207299f13fe85",
+    "src/CharacterSelectCancelF346.cpp": "70fa2a01ff96b85567ef2cf13d450fd82ad26a7dc1a9e1a41a8776461f2ad7a3"
   }
 }

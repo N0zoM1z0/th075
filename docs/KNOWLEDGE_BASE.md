@@ -5081,3 +5081,39 @@ the native scalar deletion/filename temporaries. Experiments with variable
 declaration order, lexical scopes, direct vs named pointer, and meaningful
 filename aggregates did not match. Diagnostic sources/results are retained
 in `.analysis/f343-archive-release/`; this function is **NOT accepted**.
+
+
+## F346: 497-byte character-select cancel animation, select-only x87 lvalue macro
+
+The full R089-authored `00435870..00435A60` function,
+`CharacterSelectScene::UpdateCancelAnimation`, has **497 original CODE
+bytes**, **114 native x86 instructions**, and PE SHA256
+`914eacb92c8142897df62d92a9a403daafeeeaae3264ff6724f1474b06d6ba9c`.
+Native thiscall receives a signed-char player index at +8, steps four
+position floats (+A0/+A8/+B0/+B8), subtracts from the progress at +C0,
+compares that value with original +00658264 stop constant, and upon the
+observed mode (+18 +1C*player) plays sound 40 and resets four screen floats
+and independent flags. Every actual signed byte extension, field offset,
+float constant, sound receiver, and native return extent was inspected.
+
+Historical F270 complete probes emitted the correct 497-byte length and
+13 genuine reference fields but **438/445** nonrelocation bytes; at offset
+`0x140` the compiler loaded the indexed float before stop constant, whereas
+native loads the constant first. Broadly removing outer parentheses from
+*every* float lvalue macro worsens the result (only 408/445 comparable).
+After F345 demonstrated the concrete VC7.1 expression-form sensitivity, a
+more precise hypothesis proved correct: retain the earlier `FLOAT(off,i)`
+for the four movement comparisons, but use exactly one unparenthesized
+`STOP_FLOAT(i)` lvalue for the final +C0 equality. With `STOP_FLOAT(player)
+== g_ChoiceCancelStopAt00658264` (not its operand-reversed equivalent),
+the compiler naturally emits the original global-first x87 comparison.
+The 497-byte native original then matches **445/445 nonfield bytes** and
+**13/13 independently decoded, physical original relocation fields**.
+
+`src/CharacterSelectCancelF346.cpp` is complete natural C++ (no original
+byte copying, assembly, fake locals, or truncation). Targeted cold replay of
+**only** `character-select-update-cancel-animation-00435870` returned
+**1/1 exact**. Private scene owner and original sound routine remain borrowed
+only; neither target extent is double credited. The old F270 "one x87
+comparison pending" is now obsolete, though all negative controls remain in
+`.analysis/f270-character-cancel/` and `.analysis/f346-cancel-macro/`.

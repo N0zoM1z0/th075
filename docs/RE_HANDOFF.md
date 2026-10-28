@@ -1,6 +1,6 @@
 # TH075 — current reconstruction handoff
 
-**Maintained: 2026-10-28, after F345.** Read this document, then check the **live repository**. The current user explicitly wants both large/core bosses and small leaves tackled seriously, tangible progress committed immediately with subject `gpt-web: ...`, and **only changed/new units cold-replayed**. The user reports no other sessions: inspect and finish all dirty work; never skip, reset, overwrite or silently discard it.
+**Maintained: 2026-10-28, after F346.** Read this document, then check the **live repository**. The current user explicitly wants both large/core bosses and small leaves tackled seriously, tangible progress committed immediately with subject `gpt-web: ...`, and **only changed/new units cold-replayed**. The user reports no other sessions: inspect and finish all dirty work; never skip, reset, overwrite or silently discard it.
 
 ## 1. Trusted state and first commands
 
@@ -10,9 +10,9 @@ Canonical evidence is the pinned original PE, `config/function-origins.csv`, `co
 | --- | --- |
 | Git | `main`; latest reconstruction commit **`26ac6fd`** (F339), preceded by `a8a4496` (F338), `3a16048` (F337), `18f19d6` (F335), `c9e0a1f` (F334) |
 | Pinned target | user-supplied Japanese `resources/th075.exe` v1.11; SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`; **never** `th075c.exe` |
-| Exact and source-present | **649 functions / 649 exact units** |
-| Accepted authored CODE | **815,099 bytes / 1,973,516 reviewed bytes = 41.30%** |
-| Conservative | **41.23%**, including 3,608 bytes with unresolved origin |
+| Exact and source-present | **650 functions / 650 exact units** |
+| Accepted authored CODE | **815,596 bytes / 1,973,516 reviewed bytes = 41.33%** |
+| Conservative | **41.25%**, including 3,608 bytes with unresolved origin |
 | Origin review | 1,002 authored, 2,671 library, 581 compiler, **97 pending** across 4,351 provisional candidates |
 | Goal | **98% not reached**; Git and local cold results are not external Oracle receipts |
 
@@ -29,7 +29,7 @@ If **any** dirty source, unit, or manifest is present, first inspect its exact e
 
 ## 2. Newly closed chains — **not** the backlog
 
-The full register of **all 649** accepted functions is in `config/functions.csv` and `config/match-units.toml`; this table intentionally highlights only the newest, important independent CODE extents. No called function, imported CRT/Win32 code, or owned jump-table bytes are counted twice.
+The full register of **all 650** accepted functions is in `config/functions.csv` and `config/match-units.toml`; this table intentionally highlights only the newest, important independent CODE extents. No called function, imported CRT/Win32 code, or owned jump-table bytes are counted twice.
 
 | Unit / accepted address | Whole CODE | Authentic fields | Evidence |
 | --- | ---: | ---: | --- |
@@ -45,6 +45,7 @@ The full register of **all 649** accepted functions is in `config/functions.csv`
 | F341 `ArchiveCatalog::CloseNamed` `0041D080` | 264 | 19 | `src/ArchiveCatalogCloseF341.cpp`, `.analysis/f341-archive-close/` |
 | F342 `DataArchive::AppendReadableFile` `0041D6C0` | 133 | 7 | `src/ArchiveAppendFileF342.cpp`, `.analysis/f342-archive-file-add/` |
 | F345 `YukariFighter::UpdateSpecialState` `0059B490` | **679** | **11** | `src/YukariSpecialStateF345.cpp`, `.analysis/f345-yukari-boss/` |
+| F346 `CharacterSelectScene::UpdateCancelAnimation` `00435870` | **497** | **13** | `src/CharacterSelectCancelF346.cpp`, `.analysis/f346-cancel-macro/` |
 
 **F340:** the companion archive entry seek at `0041D750` is independently cold exact for its whole 164-byte function including every one of its nine external references. It uses genuine iterator and `strcmp` semantics, returns the archive handle after `SetFilePointer` or `INVALID_HANDLE_VALUE` if not found. The original private archive list remains borrowed, not instantiated.
 
@@ -53,6 +54,8 @@ The full register of **all 649** accepted functions is in `config/functions.csv`
 **F342:** full 133-byte archive input file registration reconstructed: native `CreateFileA`, `GetFileSize`, original 100-byte filename/size/offset wire record, `strcpy`, `CloseHandle` and original linked-list `AddEntry`. The original `/GS` security cookie is preserved, all seven actual fields cold exact. The earlier 130-byte negative small-owner control is superseded by this complete original 133-byte result.
 
 **F345:** a real **679-byte boss** is now complete: the entire Yukari-specific special-state handler at `0059B490`, 191 original x86 instructions and all 11 true physical COFF fields, 635/635 non-field bytes, independently cold 1/1 exact. Used accepted F062 character-aux as a **testable expression/codegen control**, but recovered different Yukari-only short timers, effect ID 830, strict action windows, and opponent-relative bounds from the actual target. First trial matched 581/635, fixing a genuine signed 16-bit wrap threshold and retaining the precise original F062 `FLOAT`/`OPPONENT_FLOAT` macro *lexical form* restored native x87 evaluation and every last byte. No old F062 bytes are re-credited.
+
+**F346:** completed the previously pending 497-byte character-select cancel scene update: every native 497 CODE byte (114 instructions) and all 13 actual relocation targets cold exact, 445/445 non-field byte matches. Building on F345, an *unparenthesized lvalue macro only for the final +C0 float equality* naturally reproduces `FLD [global stop]; FLD [indexed field]` while the four earlier animation comparisons retain their original forms. Earlier blanket macro removal was a negative control, not success. Original scene layout and sound callee remain borrowed and are not credited.
 
 **F343 (still open):** `ArchiveCatalog::Release` at `0041CE50` was independently redecoded and whole 171-byte C++ codegen achieved **108/115** comparable bytes with all 14 real relocation locations recognized. Seven stack displacements for delete temporaries/name storage differ; exactness remains **unclaimed**, and attempts/probes are retained in `.analysis/f343-archive-release/`. Do not patch arbitrary inert locals to turn this diagnostic into false credit.
 
@@ -67,7 +70,6 @@ These remain **unclassified/nonexact** in `config/functions.csv`, despite promis
 | `SpriteSequence::RenderElements` `00411110` | **746** | Full 746-byte / 33-field C++ probe **599/614** comparable. Only three x87 `FLD` comparisons remain, 15 mismatched bytes. Different const/volatile/ref/inequality operands did not fix native load order. | `.analysis/f261-sprite-sequence/`, `.analysis/f331-sprite-nativeframe/`, `.analysis/f332-sequence-x87/`, `.analysis/f336-sprite-accessor/` |
 | `SpriteScene::RenderMirroredNode` `00410A00` | **1,268** | 324 original instructions; natural 1,279-byte shape still wrong in x87/quad lifetimes. | `.analysis/f254-sprite-boss/`, `.analysis/f289-mirrored/` |
 | `SuikaFighter::UpdateSpecialState` `005C3FB0` | **874** | Full original length, 20 fields, **742/794** comparable; native x87 comparison/actor-relative evaluation differs. | `.analysis/f313-suika-boss/`, `.analysis/f314-suika-shots/` |
-| `CharacterSelectScene::UpdateCancelAnimation` `00435870` | **497** | Full original length, 13 fields, **438/445** comparable; one seven-byte x87 operand order. | `.analysis/f270-character-cancel/` |
 | `AuxEffectManager::AdvanceAndPruneTwoLists` `005F7D80` | **276** | Full original length, ten fields, **233/236** comparable; freed pointer/end-iterator stack placement. | `.analysis/f298-aux-lifetimes/`, `.analysis/f327-aux-end-freed/` |
 | `SceneObject::ReleaseAt0043B0B0` `0043B0B0` | **248** | Full natural control but nine or more real EBP-slot differences. Name and owner provisional. | `.analysis/f215-battle-release/`, `.analysis/f260-battle-lifetimes/` |
 | `ReplayScene::DrawSaveFilename` `0042C270` | **303** | Natural output 341–342 bytes; actual 14-byte prefix, 8-byte glyph bytes and quad scope. | `.analysis/f323-replay-filename/`, `.analysis/f290-replay-filename/` |
