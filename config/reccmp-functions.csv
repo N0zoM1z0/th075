@@ -580,3 +580,4 @@ ResultListScene::Initialize,0x0042F710,function
 ResultListScene::Release,0x0042F880,function
 ReplayPlaybackScene::Initialize,0x0042C3D0,function
 ReplayBrowserScene::DestroyOwnedReplayFilesAt0042C560,0x0042C560,function
+ReplayScene::PollPlaybackInput,0x0042D330,function

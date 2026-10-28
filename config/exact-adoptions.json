@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "ffb02ee8b3c5c9d6116b30ad3ea895dbb9c880cfeed75ee84f60c3521e496931"
+      "current_sha256": "dbc4f491759097f1c282851a1dc8248675f611670e0ac64c92190e5e6a491bf8"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "d410048aa3d12d5205aac4e8097cdf700beeb24a82c40c73dcaac6b790d928a1"
+      "current_sha256": "c716a8bf0ff70109b9436e094a50e7dba7a097913010a22adcc94ee7bd286e51"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "7ab1288295032b9943400384ce2826d5dddfa76fb6da2a820e92f607684a2a26"
+      "current_sha256": "443b9046f3d12fb419d670642ec19dd08a62c1a0b6db20d3be01eb66f7dae97b"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "c363469c42d00a63816f395b14f9856e3714bf309ba7ac3924da4c770ddc4578"
+      "current_sha256": "ad53a57bb184304d01cca2cc69724869b3bcec51c6b1f74b9632d582a0999910"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "dd99aa5a5ee6fd4be659675aa61d24a6dd4f1c5a678fe5d656c6c9b4c6714f1f"
+      "current_sha256": "2b1151ec4fa0315b1abe6cc4601612d4dce591ee34c2c75f1b788d79cb56cee7"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -22964,6 +22964,50 @@
         "disposition": "authored",
         "confidence": "whole-replay-browser-selection-persistence-owned-array-and-child-cleanup-with-independent-filename-producer-and-registered-lifetime",
         "evidence_id": "R245"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0042D330",
+        "size": "310",
+        "span_end": "0x0042D465",
+        "current_name": "FUN_0042d330",
+        "proposed_name": "ReplayScene::PollPlaybackInput",
+        "module": "ReplayScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R053; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x0042D330",
+        "size": "310",
+        "span_end": "0x0042D465",
+        "current_name": "FUN_0042d330",
+        "proposed_name": "ReplayScene::PollPlaybackInput",
+        "module": "ReplayScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void ReplayInputPollF268::PollInput()",
+        "is_thunk": "false",
+        "source_file": "src/ReplayInputF268.cpp",
+        "evidence": "R053; full body hash, complete decoded CFG and local game-specific behavior reviewed; F268; scripts/repo-python scripts/replay-exact-units.py --unit replay-scene-poll-playback-input-0042d330",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F268: original whole 310 authored CODE bytes /84 independently decoded x86 instructions and genuine RET at 0042D465, PE-backed SHA256 1765a941c4f230bfe3b8627e5c0c9b84e9444d45fe7710e32ccade7f210ec2d6. Natural pinned VC7.1 /Od /GX- complete replay input controller independently cold exact for all 202/202 comparable nonfield bytes and 27/27 real physical COFF DIR32/REL32 relocation fields. Same original shared input services 00403E50, 00403F40, two 00406E80 Poll calls on global physical objects 00671638/00671680, original 6 signed positive and negative 32-bit paired axis/action checks 00671664/68/6C/70,006716AC/B0/B4/B8, and four authentic 00407170 key calls on 1,1C,38,B8, guarded window mode switch 004018A0 as related F260 scene controller, but original replay target has independently reviewed short scene outputs +4D/+4E/+4F/+50 rather than F260 +1BF..1C2. A complete C++ reconstruction with these correctly observed separate scene fields produces all 310 target bytes, preserving signed direction -1, native short-circuit branch order, no new fault checks or guessed full input-frame layout. Only this new unit cold replayed; previously accepted F260 authored CODE and external common helpers not double counted. Unknown class identity, 97 origins and unproven input owners uncredited; no asm, arbitrary padding, byte grafts, masks, truncation, full cold replay or external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x0042D330",
+        "origin": "authored",
+        "subsystem": "ReplayScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R053"
       }
     }
   ],
@@ -174139,6 +174183,191 @@
           "target": 0
         }
       ]
+    },
+    "replay-scene-poll-playback-input-0042d330": {
+      "source": "src/ReplayInputF268.cpp",
+      "object": "build/matching/ReplayInputF268.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "ReplayScene::PollPlaybackInput"
+      ],
+      "symbol": "?PollInput@ReplayInputPollF268@@QAEXXZ",
+      "target_address": 4379440,
+      "size": 310,
+      "relocations": [
+        {
+          "offset": 8,
+          "type": "REL32",
+          "symbol": "?BeginFrame@ReplayInputServiceF268@@YAXXZ",
+          "target": 4210256
+        },
+        {
+          "offset": 13,
+          "type": "REL32",
+          "symbol": "?EndFrame@ReplayInputServiceF268@@YAXXZ",
+          "target": 4210496
+        },
+        {
+          "offset": 46,
+          "type": "DIR32",
+          "symbol": "?g_ReplayInputPrimaryAt00671638@@3VReplayInputFrameF268@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 51,
+          "type": "REL32",
+          "symbol": "?Poll@ReplayInputFrameF268@@QAEXXZ",
+          "target": 4222592
+        },
+        {
+          "offset": 56,
+          "type": "DIR32",
+          "symbol": "?g_ReplayInputSecondaryAt00671680@@3VReplayInputFrameF268@@A",
+          "target": 6755968
+        },
+        {
+          "offset": 61,
+          "type": "REL32",
+          "symbol": "?Poll@ReplayInputFrameF268@@QAEXXZ",
+          "target": 4222592
+        },
+        {
+          "offset": 67,
+          "type": "DIR32",
+          "symbol": "?g_ReplayPrimaryVerticalAt00671668@@3HA",
+          "target": 6755944
+        },
+        {
+          "offset": 76,
+          "type": "DIR32",
+          "symbol": "?g_ReplaySecondaryVerticalAt006716B0@@3HA",
+          "target": 6756016
+        },
+        {
+          "offset": 92,
+          "type": "DIR32",
+          "symbol": "?g_ReplayPrimaryVerticalAt00671668@@3HA",
+          "target": 6755944
+        },
+        {
+          "offset": 101,
+          "type": "DIR32",
+          "symbol": "?g_ReplaySecondaryVerticalAt006716B0@@3HA",
+          "target": 6756016
+        },
+        {
+          "offset": 117,
+          "type": "DIR32",
+          "symbol": "?g_ReplayPrimaryHorizontalAt00671664@@3HA",
+          "target": 6755940
+        },
+        {
+          "offset": 126,
+          "type": "DIR32",
+          "symbol": "?g_ReplaySecondaryHorizontalAt006716AC@@3HA",
+          "target": 6756012
+        },
+        {
+          "offset": 142,
+          "type": "DIR32",
+          "symbol": "?g_ReplayPrimaryHorizontalAt00671664@@3HA",
+          "target": 6755940
+        },
+        {
+          "offset": 151,
+          "type": "DIR32",
+          "symbol": "?g_ReplaySecondaryHorizontalAt006716AC@@3HA",
+          "target": 6756012
+        },
+        {
+          "offset": 167,
+          "type": "DIR32",
+          "symbol": "?g_ReplayPrimaryConfirmAt0067166C@@3HA",
+          "target": 6755948
+        },
+        {
+          "offset": 176,
+          "type": "DIR32",
+          "symbol": "?g_ReplaySecondaryConfirmAt006716B4@@3HA",
+          "target": 6756020
+        },
+        {
+          "offset": 192,
+          "type": "DIR32",
+          "symbol": "?g_ReplayPrimaryCancelAt00671670@@3HA",
+          "target": 6755952
+        },
+        {
+          "offset": 201,
+          "type": "DIR32",
+          "symbol": "?g_ReplaySecondaryCancelAt006716B8@@3HA",
+          "target": 6756024
+        },
+        {
+          "offset": 218,
+          "type": "DIR32",
+          "symbol": "?g_ReplayInputPrimaryAt00671638@@3VReplayInputFrameF268@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 223,
+          "type": "REL32",
+          "symbol": "?IsHeld@ReplayInputFrameF268@@QAE_NH@Z",
+          "target": 4223344
+        },
+        {
+          "offset": 244,
+          "type": "DIR32",
+          "symbol": "?g_ReplayInputPrimaryAt00671638@@3VReplayInputFrameF268@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 249,
+          "type": "REL32",
+          "symbol": "?IsHeld@ReplayInputFrameF268@@QAE_NH@Z",
+          "target": 4223344
+        },
+        {
+          "offset": 263,
+          "type": "DIR32",
+          "symbol": "?g_ReplayInputPrimaryAt00671638@@3VReplayInputFrameF268@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 268,
+          "type": "REL32",
+          "symbol": "?IsHeld@ReplayInputFrameF268@@QAE_NH@Z",
+          "target": 4223344
+        },
+        {
+          "offset": 285,
+          "type": "DIR32",
+          "symbol": "?g_ReplayInputPrimaryAt00671638@@3VReplayInputFrameF268@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 290,
+          "type": "REL32",
+          "symbol": "?IsHeld@ReplayInputFrameF268@@QAE_NH@Z",
+          "target": 4223344
+        },
+        {
+          "offset": 302,
+          "type": "REL32",
+          "symbol": "?ToggleWindowMode@ReplayInputServiceF268@@YAXXZ",
+          "target": 4200608
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -174497,6 +174726,7 @@
     "src/ResultListInitF264.cpp": "fc21a3209f58e96416667406447cc01156e8f7808bb6239b7beac3f5f66cf48d",
     "src/ResultListReleaseF265.cpp": "020380623f282b40430b272d86b926fee00319ad22dcbf9748847d9b955f7785",
     "src/ReplayPlaybackInitF266.cpp": "d1feb3f989ba4f073bb9391231fd04c6a309e74a469d8a5929b95fa8a75d66cf",
-    "src/ReplayPlaybackReleaseF267.cpp": "1454470944d5b58ddc45c1ef372f4bb1d30aaeb0b0b9e116a8d49ddd4b2290bc"
+    "src/ReplayPlaybackReleaseF267.cpp": "1454470944d5b58ddc45c1ef372f4bb1d30aaeb0b0b9e116a8d49ddd4b2290bc",
+    "src/ReplayInputF268.cpp": "82e65ec2b6142aa3f8321322365707e0f5aaee36ad1efd196f59a9af99d62535"
   }
 }

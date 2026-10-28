@@ -1,4 +1,4 @@
-# TH075 — active reconstruction handoff (F267)
+# TH075 — active reconstruction handoff (F268)
 
 **Updated 2026-10-28. Read this document before new experiments.**
 
@@ -22,17 +22,17 @@ not acceptance requirements.
 
 | Item | Current evidence |
 | --- | --- |
-| Local branch / last exact-code commit | `main` / F267 entire 265-byte replay scene destructor; F266 constructor checkpoint `f658d03` |
+| Local branch / last exact-code commit | `main` / F268 whole 310-byte replay input polling controller; F267 destructor checkpoint `99e699e` |
 | Upstream | `origin/main` tracked locally; verify current ahead/behind and dirty state before further work |
-| Working tree | Clean after F267 checkpoint if successful; continue rather than avoid every existing dirty edit |
+| Working tree | Clean after F268 checkpoint if successful; continue rather than avoid every existing dirty edit |
 | Native binary | `resources/th075.exe`, SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98` |
 | Candidate count | 4,351; origin review: 1,002 authored, 2,671 library, 581 compiler, 97 unknown |
-| Accepted functions / units | **581 / 581** |
-| Accepted authored CODE | **790,325 bytes** |
-| Reviewed authored coverage | 790,325 / 1,973,516 = **40.05%** |
-| Conservative coverage | **39.97%** counting 3,608 origin-pending bytes |
+| Accepted functions / units | **582 / 582** |
+| Accepted authored CODE | **790,635 bytes** |
+| Reviewed authored coverage | 790,635 / 1,973,516 = **40.06%** |
+| Conservative coverage | **39.99%** counting 3,608 origin-pending bytes |
 | Goal | **98% not reached** |
-| Verification | F267 entire 265-byte replay-browser cleanup destructor cold-exact, 205/205 comparable bytes and all 15 COFF relocation fields, following F266 constructor checkpoint `f658d03`. Only F267 cold-replayed, no full cold replay or external Oracle receipt |
+| Verification | F268 full 310-byte replay polling controller cold-exact (202/202 comparable, 27 physical fields) after F267 replay destructor checkpoint `99e699e`. Only F268 cold-replayed, no full cold replay or external Oracle receipt |
 
 **Recheck the actual live status immediately**. Local commits are checkpoints,
 not evidence of a remote push or external Oracle acceptance. Earlier Git
@@ -108,6 +108,7 @@ inert variable or arbitrary padding may earn exact credit.
 | F265: ResultListScene::Release | `0042F880` | 229 | 10 |
 | F266: ReplayPlaybackScene::Initialize | `0042C3D0` | 395 | 24 |
 | F267: ReplayBrowserScene::DestroyOwnedReplayFiles | `0042C560` | 265 | 15 |
+| F268: ReplayScene::PollPlaybackInput | `0042D330` | 310 | 27 |
 
 F222 proved signed 32-bit x87 `FILD` divided by the target's 36.0f
 (`00659308`), 74 physical animation records and a final call into the
@@ -193,6 +194,10 @@ F265 **cold-accepts the paired 229-byte `ResultListScene::Release`** at `0042F88
 F266 **cold-accepts the complete 395-byte ReplayPlaybackScene::Initialize** scene constructor at `0042C3D0` (106 original instructions, 299/299 nonrelocation bytes, all 24 true COFF fields). Full natural C++ exactly reproduces three separately verified native 20-byte deque constructor calls at scene+0C/+20/+34, an explicit queue Clear at +0C, EH-backed 80-byte texture creation/load from replay.dat, two genuine global actor virtual deleting destructors and null stores, independently F231 accepted replay directory scanner, and original two control/state fields. Its scene base ctor R108 remains unknown-origin and library deque implementations are uncredited. Only `--unit replay-playback-scene-initialize-0042c3d0` cold replayed exact; save the entire native/COFF and source proof at `.analysis/f266-replay-playback-init/`. The original 265-byte `ReplayBrowserScene::DestroyOwnedReplayFiles` at `0042C560` was subsequently cold-exact accepted at F267; do not double-credit it.
 
 F267 **cold-accepts the complete 265-byte `ReplayBrowserScene::DestroyOwnedReplayFiles`** destructor at `0042C560`, 76 native x86 instructions, all 205/205 nonrelocation bytes and 15 genuine physical COFF fields. First native-faithful C++ source reproduces original saved controller word, full unsigned indexed deque size/At loop and actual `free` of each owned replay filename, queue Clear and nonvirtual texture cleanup, then automatic three-member deque destruction in reverse order with native EH states and accepted base scene destructor. All three 20-byte members and their library calls were independently grounded against F266 constructor, not invented. Only `--unit replay-browser-destroy-owned-files-0042c560` cold-replayed exact. Preserve `.analysis/f267-replay-release/`. The independent F231 filename producer/scanner and F266 constructor are accepted but not double-counted; all 97 origin-unknown cases remain pending.
+
+F268 **cold-accepts the full 310-byte native `ReplayScene::PollPlaybackInput`** controller at `0042D330`, 84 original x86 instructions, 202/202 comparable nonrelocation bytes and 27/27 physical COFF fields. The original global input operators, signed 32-bit direction guards, four key-state calls and window-mode shortcut are independently reviewed and also appear in accepted F260. Crucially, the actual replay scene outputs are at +0x4D/+0x4E/+0x4F/+0x50 (not F260's +0x1BF..1C2). Its entire native CFG and all real relocation targets were verified separately before one-unit cold replay exact. Neither other controllers nor common input helper code is double-credited. Preserve `.analysis/f268-replay-input/`.
+
+F268 separately reanalyzed the **full 746-byte `SpriteSequence::RenderElements` boss** at `00411110` (R035 authored). Correcting actual early exit control flow to two native `JNZ/JMP` paths, native floating-point `!=` branch order and nesting the genuine counter gives a **734-byte** complete natural C++ probe with **198/198 decoded x86 instructions** matching the native instruction-sequence shapes; the original is 746 bytes. The remaining 12 bytes are attributable to four observed short versus long EBP local-offset instructions: two uses of the real `end` iterator (native -0x9C, object -0x10), and two uses of the real `x` coordinate (native -0x98, object -0x0C). Correct full frame is now 0xBC and genuine original `this` stack position is recovered. Several meaningful scope, real RECT/tint placement, declaration ordering and signed/float branch controls remain negative; no truncation, masks or fabricated padding. **Do not credit any of these 746 CODE bytes yet**. Best full-size native evidence, all source experiments and operand-shape diff at `.analysis/f261-sprite-sequence/`; focus next on real local lifetime allocation rather than repeating superficial names.
 
 Relevant full native proofs: `config/match-units.toml`,
 `config/exact-adoptions.json`, sources `src/*F222.cpp`/`src/*F223.cpp`,

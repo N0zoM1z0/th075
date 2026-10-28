@@ -2419,3 +2419,64 @@ and unproven original game class layouts are not authored credit;
 all 97 origin-pending cases remain excluded. No byte masking, assembly,
 artificial padding, target grafts, cropped extents or all-unit replay.
 Local Git commits are checkpoints rather than external Oracle receipts.
+
+
+## F268: exact complete replay input controller and native sprite boss scope research
+
+R053-authored `ReplayScene::PollPlaybackInput` at
+`0042D330..0042D465` is **310 complete CODE bytes**, 84 original
+x86 instructions ending plain RET, original SHA256
+`1765a941c4f230bfe3b8627e5c0c9b84e9444d45fe7710e32ccade7f210ec2d6`.
+Its actual observed four signed scene outputs live at +0x4D..+0x50.
+It calls frame services `00403E50` and `00403F40`, original paired
+input Poll `00406E80` for `00671638` and `00671680`, and six original
+signed comparison groups on globals 00671664/68/6C/70 and
+006716AC/B0/B4/B8. It uses four native `00407170` key-state polls
+with arguments 1, 0x1C, 0x38, 0xB8, and only then the conditional
+`004018A0` window-mode callback. All native short circuit branches,
+negative-one bytes and original exception-free RET remain intact.
+The shared underlying input behavior resembles separately F260-accepted
+`ResultScene::PollInput`, but **its scene field offsets and native full
+extent are independently distinct**; no blind duplicate label or code
+credit was made. Source `src/ReplayInputF268.cpp`, canonical unit
+`replay-scene-poll-playback-input-0042d330`. First full natural VC7.1
+`/Od /GX-` source matches **202/202** nonrelocation bytes and **27/27**
+original physical COFF fields. Only this affected unit was cold-replayed
+and returned `exact; 310 coverage bytes`; all other already accepted
+units and CRT/input helper implementations were not rebuilt or credited.
+R053 origin evidence remains independently authored, with all 97 pending
+origins excluded and no external Oracle receipt claimed. Private original
+native, decompile, source and cold proof under `.analysis/f268-replay-input/`.
+
+### F268 complete SpriteSequence boss: exact opcode flow but wrong locals
+
+The R035-authored original `SpriteSequence::RenderElements` at
+`00411110` is **746 complete native CODE bytes** and 198 instructions,
+including a 132-byte SpriteQuad, 16-byte RECT, genuine 0xBC stack frame,
+list traversal, blend switch, float translate, signed cycling counter,
+three guarded x87 floating-point comparisons and scale/tint draw paths.
+F261's earliest complete C++ probe emitted only 717 bytes and a 0xC0
+frame. The separately reviewed native paths begin with two positive
+condition checks followed by their own early `JNZ; JMP` returns; the
+three scale tests are naturally expressed as short-circuit inequality
+with original x87 global-left comparisons and a final JNP for the
+unscaled draw. Explicitly scoping the **genuine iteration counter**
+recovers native frame 0xBC. Combined, a subsequent full native-guided
+source `.analysis/f261-sprite-sequence/Variant-GuardFloatReversed.cpp`
+now emits **734 bytes, with 198/198 native-shaped instructions**.
+No cropped body, target-byte insertion, fake locals or assembly was used.
+The exact remaining 12-byte *size deficit* occurs at four original
+6-byte EBP operand accesses which VC7 currently emits as 3-byte
+short locals: native `end` iterator at EBP-0x9C versus current -0x10,
+and native `x` coordinate at EBP-0x98 versus current -0x0C, each used
+twice. The object already reproduces native `this` at EBP-0xB8, frame
+0xBC, original iterator `it` at EBP-4 and real postfix iterator temp
+at EBP-0xB4. Further meaningful lifetime scopes for end, x, y, quad,
+counter, RECT and tint, including early declarations with unchanged
+operation order, either retained 734 or worsened to 725/719/716/710
+bytes. These negative controls and full instruction-shape report are
+retained under `.analysis/f261-sprite-sequence/`. No source match unit
+was registered and **zero additional authored CODE bytes** are credited
+for this still-unaccepted large function. Next approach should reproduce
+the true original end/x lifetimes through natural VC7 source structure
+rather than masking four EBP offsets or inventing padding.
