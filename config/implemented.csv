@@ -566,3 +566,5 @@ ReplayScene::DrawNumber
 ReplayScene::DrawSlotNumber
 ResultScene::DrawCounter
 CardList::EncodeCharacterFile
+ResultScene::LoadSelectedCharacterResources
+MusicRoom::EncodeCatalogFileAt00427300

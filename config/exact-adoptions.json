@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "3a0c156d1c1680ba1eddcb5de327ca5fd3dbb7142d78312e2d08055c6f67ed90"
+      "current_sha256": "8f566928b81ace87d08c723b5a5ceaba7331cfbdb4b0540013b56dd383b718e3"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "982bb22b93a77f0a44a9e50877fd084f42cbb6fe102dde921f6066560b28e12c"
+      "current_sha256": "e234d780828f712a76cd697e1285acf544f5055630eaba9eed18925bb2d35992"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "bda094564597d2f5b902ee13c650472329314a02502148f1545cb52af858150a"
+      "current_sha256": "cf0124aa3c9ef7ed3e7088d3a8147332306113ae8424931864151112a401356e"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "2b221dce405919a082256438259de11f387bffab3167d20caa0d1f12a1391007"
+      "current_sha256": "00283d8c40a6431cf8eaf99d70ae5e9b7098f46afc71b10b6b6f0db308cc2a3d"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "8957e7eeb461c782db38d6e9a41991f529a088a88da63bb82f6575f7ff9daf41"
+      "current_sha256": "4a2863badf04ba0f428ea43263e2b4739899f0b57088bd6e18eba1119f1e457b"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -22392,6 +22392,94 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R041"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00430EE0",
+        "size": "398",
+        "span_end": "0x0043106D",
+        "current_name": "FUN_00430ee0",
+        "proposed_name": "ResultScene::LoadSelectedCharacterResources",
+        "module": "ResultScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00430EE0",
+        "size": "398",
+        "span_end": "0x0043106D",
+        "current_name": "FUN_00430ee0",
+        "proposed_name": "ResultScene::LoadSelectedCharacterResources",
+        "module": "ResultScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void ResultSceneResourceF256::LoadSelectedCharacterResources()",
+        "is_thunk": "false",
+        "source_file": "src/ResultResourceF256.cpp",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed; F256; scripts/repo-python scripts/replay-exact-units.py --unit result-scene-load-selected-character-resources-00430ee0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F256: complete 398 native authored CODE bytes /91 decoded x86 instructions ending RET, SHA256 5e335e9c40caebccc9c80d2b15cceda1691bda2981fdeec78302ad2992627836. First borrowed C++ candidate was 388 bytes because it incorrectly declared the old texture as a virtual destructor and cached the card list selector before branching. Independently rechecking native REL32 target 00425460 proved a direct nonvirtual scalar deleting destructor, while native branch code separately computes signed character slot times 20 for each different card path. Replacing the original incorrect ABI assumption and preserving the genuine per-branch expressions exactly reproduces full 398 CODE bytes, all 318/318 comparable nonrelocation bytes and all 20 actual COFF DIR32/REL32 relocation fields including real EH handler 00655A53, GS cookie/check, actual 80-byte texture-manager allocation and constructor 0040AD80, allocate single slot 0040B1D0, load formatted per-character texture file 0040BB80 using original filename/root address 00658080/0065809C, special card key 006580A4 versus regular 006580AC, and physical global card-list array 006714D8. The encoded-card load callee 00431B60 remains independently authored but unmatched, and the base deleting destructor receives no new independent CODE credit. Source borrows incomplete texture and scene interfaces only. Independently targeted pinned VC7.1 /Od /GX cold replay exact; no byte patching, fake locals, masks, invented owner, truncated branches, all-unit cold replay or external Oracle. All 97 pending origins stay uncredited."
+      },
+      "origin": {
+        "address": "0x00430EE0",
+        "origin": "authored",
+        "subsystem": "ResultScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R043"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00427300",
+        "size": "298",
+        "span_end": "0x00427429",
+        "current_name": "FUN_00427300",
+        "proposed_name": "MusicRoom::EncodeCatalogFileAt00427300",
+        "module": "MusicRoom",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R179; config/file-resource-policy-origin-evidence.json; scripts/repo-python scripts/verify-file-resource-policy-origins.py",
+        "owner": "authored",
+        "notes": "Whole custom musicroom.csv-to-musicroom.dat file conversion with rolling byte XOR, or readable-file name insertion into the independently reviewed archive list. Full guarded control flow, real imports/strings and R066/R053/R052 authored context retained. Complete natural source-operation controls have no target-byte-positive claim: full298-byte music negative retains all11 real fields and33 differences; the133-byte file insertion target contrasts with a130-byte small-owner source control. Original owner layouts and exact names remain unknown. No reconstructed source/private ABI/mapping/exact credit."
+      },
+      "after": {
+        "address": "0x00427300",
+        "size": "298",
+        "span_end": "0x00427429",
+        "current_name": "FUN_00427300",
+        "proposed_name": "MusicRoom::EncodeCatalogFileAt00427300",
+        "module": "MusicRoom",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void MusicCatalogEncoderF257::EncodeCatalogFile()",
+        "is_thunk": "false",
+        "source_file": "src/MusicCatalogEncodeF257.cpp",
+        "evidence": "R179; config/file-resource-policy-origin-evidence.json; scripts/repo-python scripts/verify-file-resource-policy-origins.py; F257; scripts/repo-python scripts/replay-exact-units.py --unit music-room-encode-catalog-file-00427300",
+        "owner": "authored",
+        "notes": "Whole custom musicroom.csv-to-musicroom.dat file conversion with rolling byte XOR, or readable-file name insertion into the independently reviewed archive list. Full guarded control flow, real imports/strings and R066/R053/R052 authored context retained. Complete natural source-operation controls have no target-byte-positive claim: full298-byte music negative retains all11 real fields and33 differences; the133-byte file insertion target contrasts with a130-byte small-owner source control. Original owner layouts and exact names remain unknown. No reconstructed source/private ABI/mapping/exact credit.; F257 supersedes R179 nonexact probe: full 298 authored CODE bytes /100 native instructions / original body SHA256 6416b879c7408c9c4fa5e165efc6323dec408f61cf939fa50936bc2daa93aff1, original RET 00427429, no owned tables or truncation. Pinned VC7.1 /Od /GX- whole source cold-exact: all 298 bytes, 254/254 comparable bytes and all 11 physical COFF DIR32/REL32 destinations. Native CreateFileA musicroom.csv/read/GetFileSize/new(allocated raw char bytes)/CloseHandle then musicroom.dat writer, signed-char XOR rolling key 0x5C, delta 0x5A updated by 0x3D, native WriteFile/CloseHandle, original free and original invalid-handle exits retained. Compiler stack lifetimes from file/bytes/size/content/key/index/alloc alias/free alias nested meaningful scopes reproduce all native observed local offsets; explicit operator new gives the same physical native 006416A2 call and the real allocated pointer transfer. R179 earlier complete-policy probe was byte-different; inferred complete MusicRoom layout and source-level original spelling remain unknown. No copied target bytes, assembly, masks, dummy locals, fake ABI, incomplete-function matching, all-unit replay or external Oracle; 97 unresolved origins unchanged."
+      },
+      "origin": {
+        "address": "0x00427300",
+        "origin": "authored",
+        "subsystem": "MusicRoom",
+        "disposition": "authored",
+        "confidence": "complete-custom-file-policy-with-independent-game-resource-context",
+        "evidence_id": "R179"
       }
     }
   ],
@@ -172014,6 +172102,238 @@
           "target": 6555153
         }
       ]
+    },
+    "result-scene-load-selected-character-resources-00430ee0": {
+      "source": "src/ResultResourceF256.cpp",
+      "object": "build/matching/ResultResourceF256.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "ResultScene::LoadSelectedCharacterResources"
+      ],
+      "symbol": "?LoadSelectedCharacterResources@ResultSceneResourceF256@@QAEXXZ",
+      "target_address": 4394720,
+      "size": 398,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$?LoadSelectedCharacterResources@ResultSceneResourceF256@@QAEXXZ",
+          "target": 6642259
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 31,
+          "type": "DIR32",
+          "symbol": "___security_cookie",
+          "target": 6749744
+        },
+        {
+          "offset": 92,
+          "type": "REL32",
+          "symbol": "??_GResultOldTextureF256@@QAEPAXI@Z",
+          "target": 4346976
+        },
+        {
+          "offset": 129,
+          "type": "DIR32",
+          "symbol": "?g_ResultCharacterTexturePatternAt00658080@@3QBDB",
+          "target": 6652032
+        },
+        {
+          "offset": 138,
+          "type": "REL32",
+          "symbol": "_sprintf",
+          "target": 6554864
+        },
+        {
+          "offset": 148,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 184,
+          "type": "REL32",
+          "symbol": "??0ResultTextureManagerF256@@QAE@XZ",
+          "target": 4238720
+        },
+        {
+          "offset": 252,
+          "type": "REL32",
+          "symbol": "?AllocateUnformattedSlots@ResultTextureManagerF256@@QAEXH@Z",
+          "target": 4239824
+        },
+        {
+          "offset": 257,
+          "type": "DIR32",
+          "symbol": "?g_ResultTextureRootAt0065809C@@3QBDB",
+          "target": 6652060
+        },
+        {
+          "offset": 275,
+          "type": "REL32",
+          "symbol": "?LoadDefault@ResultTextureManagerF256@@QAEXPBD0@Z",
+          "target": 4242304
+        },
+        {
+          "offset": 298,
+          "type": "DIR32",
+          "symbol": "?g_CardSpecialAt006580A4@@3QBDB",
+          "target": 6652068
+        },
+        {
+          "offset": 320,
+          "type": "DIR32",
+          "symbol": "?g_CharacterCardListsAt006714D8@@3PAEA",
+          "target": 6755544
+        },
+        {
+          "offset": 332,
+          "type": "REL32",
+          "symbol": "?LoadEncodedCards@ResultSceneResourceF256@@QAEXPAXPBD@Z",
+          "target": 4397920
+        },
+        {
+          "offset": 339,
+          "type": "DIR32",
+          "symbol": "?g_CardNormalAt006580AC@@3QBDB",
+          "target": 6652076
+        },
+        {
+          "offset": 360,
+          "type": "DIR32",
+          "symbol": "?g_CharacterCardListsAt006714D8@@3PAEA",
+          "target": 6755544
+        },
+        {
+          "offset": 372,
+          "type": "REL32",
+          "symbol": "?LoadEncodedCards@ResultSceneResourceF256@@QAEXPAXPBD@Z",
+          "target": 4397920
+        },
+        {
+          "offset": 382,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 390,
+          "type": "REL32",
+          "symbol": "@__security_check_cookie@4",
+          "target": 6555153
+        }
+      ]
+    },
+    "music-room-encode-catalog-file-00427300": {
+      "source": "src/MusicCatalogEncodeF257.cpp",
+      "object": "build/matching/MusicCatalogEncodeF257.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "MusicRoom::EncodeCatalogFileAt00427300"
+      ],
+      "symbol": "?EncodeCatalogFile@MusicCatalogEncoderF257@@QAEXXZ",
+      "target_address": 4354816,
+      "size": 298,
+      "relocations": [
+        {
+          "offset": 28,
+          "type": "DIR32",
+          "symbol": "?g_MusicCatalogPlainAt00657C90@@3QBDB",
+          "target": 6651024
+        },
+        {
+          "offset": 34,
+          "type": "DIR32",
+          "symbol": "__imp__CreateFileA@28",
+          "target": 6648112
+        },
+        {
+          "offset": 60,
+          "type": "DIR32",
+          "symbol": "__imp__GetFileSize@8",
+          "target": 6647896
+        },
+        {
+          "offset": 72,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559394
+        },
+        {
+          "offset": 108,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 118,
+          "type": "DIR32",
+          "symbol": "__imp__CloseHandle@4",
+          "target": 6648120
+        },
+        {
+          "offset": 141,
+          "type": "DIR32",
+          "symbol": "?g_MusicCatalogEncodedAt00657CA0@@3QBDB",
+          "target": 6651040
+        },
+        {
+          "offset": 147,
+          "type": "DIR32",
+          "symbol": "__imp__CreateFileA@28",
+          "target": 6648112
+        },
+        {
+          "offset": 262,
+          "type": "DIR32",
+          "symbol": "__imp__WriteFile@20",
+          "target": 6648100
+        },
+        {
+          "offset": 272,
+          "type": "DIR32",
+          "symbol": "__imp__CloseHandle@4",
+          "target": 6648120
+        },
+        {
+          "offset": 287,
+          "type": "REL32",
+          "symbol": "_free",
+          "target": 6559389
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -172359,6 +172679,8 @@
     "src/ReplayNumberF253.cpp": "1999125c2d333239462abb24c1376f3548a78c8179d8e323c37f7e78eb0010a2",
     "src/ReplaySlotNumberF253.cpp": "1a7f8b5437d3f392af720e98a53ad60bcb280eeedec0269d4201b29624ad6232",
     "src/ResultNumberF253.cpp": "1242310c630c2c77dc93ffd349b8d14e0b331a9e656a0dc6519679a53e122c74",
-    "src/CardEncodeF252.cpp": "b8a479d0d58f869d50f5206e902862f58ca0ab25961b450921c7f94d3e4d8086"
+    "src/CardEncodeF252.cpp": "b8a479d0d58f869d50f5206e902862f58ca0ab25961b450921c7f94d3e4d8086",
+    "src/ResultResourceF256.cpp": "5200e10fbc5a54bd970796dd01593ed88d289a0abce2b76112fdafb38ea13e41",
+    "src/MusicCatalogEncodeF257.cpp": "039989c795af1520430ae8a2bfd88ebb0caa6ad9c249bd3e1addfc3a450ef7e3"
   }
 }

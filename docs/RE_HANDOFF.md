@@ -1,4 +1,4 @@
-# TH075 — active reconstruction handoff (F253)
+# TH075 — active reconstruction handoff (F257)
 
 **Updated 2026-10-28. Read this document before new experiments.**
 
@@ -22,17 +22,17 @@ not acceptance requirements.
 
 | Item | Current evidence |
 | --- | --- |
-| Local branch / last exact-code commit | `main` / F253 local acceptance; prior F251 `ea6bd4e`, workflow follow-up `f3071c2` |
+| Local branch / last exact-code commit | `main` / F256 and F257 independent local acceptance; prior F252/F253 `184e923` |
 | Upstream | `origin/main` tracked locally; verify current ahead/behind and dirty state before further work |
-| Working tree | Clean after F253 commit if successful; continue rather than avoid every existing dirty edit |
+| Working tree | Clean after F256/F257 checkpoint if successful; continue rather than avoid every existing dirty edit |
 | Native binary | `resources/th075.exe`, SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98` |
 | Candidate count | 4,351; origin review: 1,002 authored, 2,671 library, 581 compiler, 97 unknown |
-| Accepted functions / units | **568 / 568** |
-| Accepted authored CODE | **785,575 bytes** |
-| Reviewed authored coverage | 785,575 / 1,973,516 = **39.81%** |
-| Conservative coverage | **39.73%** counting 3,608 origin-pending bytes |
+| Accepted functions / units | **570 / 570** |
+| Accepted authored CODE | **786,271 bytes** |
+| Reviewed authored coverage | 786,271 / 1,973,516 = **39.84%** |
+| Conservative coverage | **39.77%** counting 3,608 origin-pending bytes |
 | Goal | **98% not reached** |
-| Verification | F252 432-byte encoded character-file writer plus four F253 377-byte decimal drawing functions separately cold-exact, 1,940 new CODE bytes and 51 actual COFF fields. Only these five newly affected units replayed; no all-unit cold replay or external Oracle acceptance |
+| Verification | F256 398-byte result resource loader cold-exact with 20 fields and F257 298-byte music catalog encoder cold-exact with 11 fields; only two affected units replayed, no all-unit cold replay or external Oracle acceptance |
 
 **Recheck the actual live status immediately**. Local commits are checkpoints,
 not evidence of a remote push or external Oracle acceptance. Earlier Git
@@ -95,6 +95,8 @@ inert variable or arbitrary padding may earn exact credit.
 | F253: ReplayScene::DrawNumber | `0042AE70` | 377 | 9 |
 | F253: ReplayScene::DrawSlotNumber | `0042BFD0` | 377 | 9 |
 | F253: ResultScene::DrawCounter | `004315F0` | 377 | 9 |
+| F256: ResultScene::LoadSelectedCharacterResources | `00430EE0` | 398 | 20 |
+| F257: MusicRoom::EncodeCatalogFile | `00427300` | 298 | 11 |
 
 F222 proved signed 32-bit x87 `FILD` divided by the target's 36.0f
 (`00659308`), 74 physical animation records and a final call into the
@@ -102,7 +104,7 @@ F222 proved signed 32-bit x87 `FILD` divided by the target's 36.0f
 `i <= 36`, not the byte-different `i < 37`. Its three relocations all
 match. F223 adds two complete borrowed constructors and a real EH-backed
 232-byte `new`; Youmu additionally calls the observed +0xFEC child init.
-All thirty-eight units were independently cold-exact. F224 used a complete, native-EH-backed `new(0xE8)` with the real Youmu constructor at `00536360`, then ordered 16 halfword resets, the accepted base reset `00457010`, and the observed +0xFEC subcomponent reset `00531CE0`. Their nominal C++ classes and
+All thirty-nine units were independently cold-exact. F224 used a complete, native-EH-backed `new(0xE8)` with the real Youmu constructor at `00536360`, then ordered 16 halfword resets, the accepted base reset `00457010`, and the observed +0xFEC subcomponent reset `00531CE0`. Their nominal C++ classes and
 external helper implementations are **not** established by code equality.
 
 F225 additionally accepts an entire 668-byte character-selection constructor (185 native instructions) with actual vtable, three separately allocated texture managers, two deleting destructors, two real configuration loops, and 38 relocation fields. Its first full probe used mistaken pointer-indirect indexing and emitted 677 bytes; the verified this-relative byte arrays restore exact native 668 bytes. The base-scene constructor remains R108 origin-unknown and uncredited.
@@ -152,6 +154,12 @@ F249 and F250 independently reconstructed full native **686-byte `DataArchive::W
 F251 cold-accepts the complete **494-byte `NameEntryScene::UpdateShared`**, 143 instructions, all 16 physical fields and 430/430 non-field bytes. Initial natural source had all correct code except a 2-byte discrepancy in the last branch; positive edit-if with else return exactly reconstructs native JNZ/JMP layout. Only `--unit name-entry-scene-update-shared-0042b380` cold replayed. Full native and source probes in `.analysis/f251-name-shared/`.
 
 F252/F253 independently cold-accepted five complete authored functions. `CardList::EncodeCharacterFile` is the full 432-byte native file converter with 15 authentic relocations, real `cardlist.txt`/`.dat` paths, byte stream XOR and Win32 read/write/close. Four 377-byte decimal painters use the same verified VC7.1 `SpriteQuad`/`RECT` lifetimes but genuinely different original text atlas widths: **15×16** for music and **19×20** for three replay/result routines, matching all 341/341 non-field bytes and 9/9 relocations apiece. The pre-existing dirty source and unit definitions were retained and independently cold-replayed one by one. Native SHA files/diagnostics: `.analysis/f253-digit-family/` and `.analysis/f252-cardfile/`. **F249 686-byte writer and F250 429-byte archive index remain unaccepted**, despite full-function source and repeated physical stack investigations. Do not credit either before cold exact.
+
+F254 investigated the full **1,268-byte `SpriteScene::RenderMirroredNode`**: whole source and original 324 native instructions reconstructed, but natural probes still differ in the two genuine SpriteQuad stack-slot allocations and some x87 expression lowering. Twenty-four explicit real-variable lifetime permutations did not restore the original 1,268-byte extent; **no exact credit**. F255 independently reproduced all 118 native control-flow instructions of the 429-byte `CardList::LoadCharacterFile`, including real deque pointer temporaries and file data, but it still emits 447 bytes. Twenty-two real declaration-order probes failed, so **no byte credit**. Private records live under `.analysis/f254-sprite-boss/` and `.analysis/f255-card-plain/`.
+
+F256 cold-accepted the entire **398-byte `ResultScene::LoadSelectedCharacterResources`**, 91 original x86 instructions, 318/318 comparable non-field bytes and all 20 physical COFF fields. Original destruction is **nonvirtual** at `00425460`, not a vtable dispatch as initially guessed. The native selector is evaluated independently in both special/normal card-list branches; the texture manager genuinely allocates 80 bytes with EH cleanup and loads the original character asset. Only F256 was cold-replayed exact; its encoded-card loading callee at `00431B60` is still unaccepted and uncredited.
+
+F257 independently cold-accepted the complete **298-byte `MusicRoom::EncodeCatalogFile`** at `00427300`, all 100 native instructions, all 254/254 non-relocation bytes and 11/11 real COFF fields. A first full C++ probe had 222/254 comparable bytes due solely to observed stack variable placements. Genuine nested HANDLE, transfer count, file size, buffer, rolling XOR key/delta, index and allocation/free pointer lifetimes restore original local slots, including the native operator new and free transfers. Both `musicroom.csv` read and `musicroom.dat` create/write paths, all real failure branches and original 0x5C/0x5A rolling byte-XOR are preserved. Only `--unit music-room-encode-catalog-file-00427300` was cold-replayed. The separately reviewed 916+16-byte `MusicRoom::LoadCatalog` boss remains nonexact; no bytes from it are credited. Preserve `.analysis/f254-music-file/` (F257 investigation).
 
 Relevant full native proofs: `config/match-units.toml`,
 `config/exact-adoptions.json`, sources `src/*F222.cpp`/`src/*F223.cpp`,

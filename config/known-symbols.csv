@@ -549,3 +549,5 @@ address,name,module,confidence,evidence
 0x0042BFD0,ReplayScene::DrawSlotNumber,ReplayScene,inferred,F253; independently whole 377-byte cold exact with 9 real COFF relocation fields; nominal parent layout unproven
 0x004315F0,ResultScene::DrawCounter,ResultScene,inferred,F253; independently whole 377-byte cold exact with 9 real COFF relocation fields; nominal parent layout unproven
 0x00431D60,CardList::EncodeCharacterFile,CardList,inferred,F252; independently whole 432-byte cold exact with 15 real COFF relocation fields; nominal parent layout unproven
+0x00430EE0,ResultScene::LoadSelectedCharacterResources,ResultScene,inferred,"F256; whole 398-byte native resource loader, all 20 COFF fields cold exact; original complete scene and texture class ownership unknown"
+0x00427300,MusicRoom::EncodeCatalogFileAt00427300,MusicRoom,inferred,F257; entire 298-byte native catalog CSV encoder and all 11 authentic COFF fields cold exact; full original scene/owner layout unknown

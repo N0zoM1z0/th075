@@ -1856,3 +1856,92 @@ are **not** exact or credited; all original negative controls remain.
 No hand-authored instruction bytes, masks, dummy locals, truncated CODE
 extents, additional original class ABI claims, or remote Oracle acceptance.
 The 97 pending origins remain unchanged and uncredited.
+
+
+## F254-F256: exact nonvirtual result-scene resource loader; large sprite negatives
+
+F254 re-opened `SpriteScene::RenderMirroredNode` at `00410A00`, an R035
+authored **1,268-byte boss** with 324 complete x86 instructions, two
+physical 132-byte SpriteQuad values, RECT, true x87 mirror/rotate/scale,
+tinted sprite dispatch and camera offsets. A fresh whole-function C++
+source matched its decoded instruction count but initially emitted 1,208
+bytes; faithful float-bit call façades and inline coordinate expressions
+generated 1,279 bytes, still not exact. Twenty-four permutations of
+real SpriteQuad, camera offset, color and tint lifetimes did not restore
+the original physical quad stack allocations. All negative sources and
+original native listing remain in `.analysis/f254-sprite-boss/`; zero
+CODE credit was assigned. F255 independently reproduced the original
+429-byte `CardList::LoadCharacterFile` whole 118-instruction control flow
+using authentic file APIs, pointer deque operations and line splitting;
+real while-style loop lowered 476 to 447 bytes, still not exact. Multiple
+real lifetime/decl-position probes stayed 447 bytes, retained in
+`.analysis/f255-card-plain/`, also without credit.
+
+F256 accepts the R043-author-authored whole
+`ResultScene::LoadSelectedCharacterResources` at `00430EE0..0043106D`:
+**398 original CODE bytes / 91 x86 instructions**, full PE SHA256
+`5e335e9c40caebccc9c80d2b15cceda1691bda2981fdeec78302ad2992627836`.
+The first natural source incorrectly declared the old resource destructor
+`virtual`, generating an indirect vtable dispatch, and hoisted the card-list
+index into a local ahead of its two branches. Native disassembly showed
+**direct nonvirtual scalar deleting destructor `00425460`**, and the two
+branches independently form the original signed selected-character index
+multiplied by 20 and added to `006714D8`. Reverting to a native
+nonvirtual destructor and expressing both actual index calculations
+restores **398/398 CODE bytes, 318/318 non-relocation bytes and 20/20
+real COFF relocation fields**. It preserves real `/GX` handler `00655A53`,
+GS cookie/check, `new(80)` texture carrier/constructor `0040AD80`,
+AllocateUnformattedSlots(1) `0040B1D0`, actual `0040BB80` archive load
+with original character filename and data root, and both special and
+normal encoded-card source paths. A separately pinned cold replay of only
+`result-scene-load-selected-character-resources-00430ee0` reports
+**exact: 398**. The complete original game class layouts remain
+unproven; the called encoded-card reader `00431B60` has no independent
+CODE credit yet. One-off original-PE/source guard research was archived privately under
+`.analysis/f256-resource-exact/one-off-source-guard-test.py`; canonical unit
+replay and manifests now carry acceptance, and the native listing and F256 cold evidence
+are retained in `.analysis/f256-scene-lifecycle/` and
+`.analysis/f256-resource-exact/`. No masks, fake locals, byte grafts,
+truncated function, whole-unit replay or external Oracle receipt.
+
+
+## F257: exact whole music-catalog file encoder and shared big-loader implications
+
+The R179-authored `MusicRoom::EncodeCatalogFileAt00427300` spans the **complete
+298 native CODE bytes** `00427300..00427429`, with **100 independently
+decoded original x86 instructions** and the final original RET. Original
+SHA256 is `6416b879c7408c9c4fa5e165efc6323dec408f61cf939fa50936bc2daa93aff1`.
+No jump table or separate data is owned. This function performs the original
+`musicroom.csv` CreateFileA/GetFileSize/read path, closes the source handle,
+creates `musicroom.dat`, applies its byte-XOR stream with initial key 0x5C,
+delta 0x5A and subsequent delta increment 0x3D, then writes, closes and
+frees the allocated buffer. Both original INVALID_HANDLE_VALUE exits remain.
+The observed native allocation call is ordinary operator new at `006416A2`,
+with a genuine stored allocation pointer at EBP-0x1C and the separately
+transferred stored content pointer at EBP-0x10; the observed cleanup is free
+at `0064169D` with a distinct native temporary at EBP-0x20.
+
+A first whole natural C++ probe compiled into 298 bytes and all 11 true
+relocation locations/targets but matched only **222/254** non-relocated
+bytes. Native-guided nested lexical scopes restored `HANDLE` EBP-4, transfer
+count EBP-8, file size EBP-0xC, content EBP-0x10, key EBP-0x12, delta
+EBP-0x11 and index EBP-0x18. Explicit physical allocation and cleanup
+pointer transfers, both actually used, restore the final two original slots
+without fake locals. The complete pinned VC7.1 `/Od /GX-` source now
+compares **254/254** bytes with all **11** genuine DIR32/REL32 fields and
+independently cold-replays **exact: 298** with only
+`--unit music-room-encode-catalog-file-00427300`. Source is
+`src/MusicCatalogEncodeF257.cpp`, original negative probes and comparisons
+remain at `.analysis/f254-music-file/`. Original complete MusicRoom scene
+layout and original C++ spellings are still unproven; no allocator or CRT
+callee bodies gain authored CODE credit. Local replay is not an external
+Oracle acceptance.
+
+The adjacent `MusicRoom::LoadCatalog` boss (`00426DD0`, 916 CODE plus 16
+switch-table bytes) also calls operator new and free and has previously been
+blocked by significant incorrect local stack slot allocation, even with
+a correct total code size and 18 relocations. The F257 observation is an
+independently demonstrated compiler scope/temporary-pointer mechanism, **not**
+proof of a corresponding original large-loader declaration layout. Revisit
+that hypothesis against its full original native disassembly, rather than
+transplanting F257's exact source scopes or crediting any of its 916 bytes.
