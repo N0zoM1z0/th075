@@ -38262,3 +38262,168 @@ offset = 235
 type = "REL32"
 symbol = "?Play@ChoiceSoundF230@@QAEXH@Z"
 target = 0x004079C0
+
+
+[units.replay-browser-scan-files-0042d470]
+source = "src/ReplayScanF231.cpp"
+object = "build/matching/ReplayScanF231.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["ReplayBrowserScene::ScanFiles"]
+symbol = "?ScanFiles@ReplayBrowserScanF231@@QAEXXZ"
+target_address = 0x0042D470
+size = 613
+[[units.replay-browser-scan-files-0042d470.relocations]]
+offset = 10
+type = "DIR32"
+symbol = "___security_cookie"
+target = 0x0066FE30
+[[units.replay-browser-scan-files-0042d470.relocations]]
+offset = 31
+type = "DIR32"
+symbol = "?g_ReplayFindPatternAt00657FD8@@3QBDB"
+target = 0x00657FD8
+[[units.replay-browser-scan-files-0042d470.relocations]]
+offset = 37
+type = "DIR32"
+symbol = "__imp__FindFirstFileA@8"
+target = 0x00657068
+[[units.replay-browser-scan-files-0042d470.relocations]]
+offset = 81
+type = "REL32"
+symbol = "?push_back@ReplayFilenameDequeF231@@QAEXABQAD@Z"
+target = 0x0041DE30
+[[units.replay-browser-scan-files-0042d470.relocations]]
+offset = 91
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x006416A2
+[[units.replay-browser-scan-files-0042d470.relocations]]
+offset = 114
+type = "REL32"
+symbol = "?back@ReplayFilenameDequeF231@@QAEPAPADXZ"
+target = 0x0041DE00
+[[units.replay-browser-scan-files-0042d470.relocations]]
+offset = 127
+type = "DIR32"
+symbol = "?g_ReplayFirstRootAt00657FE8@@3QBDB"
+target = 0x00657FE8
+[[units.replay-browser-scan-files-0042d470.relocations]]
+offset = 141
+type = "REL32"
+symbol = "?back@ReplayFilenameDequeF231@@QAEPAPADXZ"
+target = 0x0041DE00
+[[units.replay-browser-scan-files-0042d470.relocations]]
+offset = 149
+type = "REL32"
+symbol = "_strcpy"
+target = 0x00641B80
+[[units.replay-browser-scan-files-0042d470.relocations]]
+offset = 173
+type = "REL32"
+symbol = "?back@ReplayFilenameDequeF231@@QAEPAPADXZ"
+target = 0x0041DE00
+[[units.replay-browser-scan-files-0042d470.relocations]]
+offset = 181
+type = "REL32"
+symbol = "_strcat"
+target = 0x00641B90
+[[units.replay-browser-scan-files-0042d470.relocations]]
+offset = 201
+type = "DIR32"
+symbol = "__imp__FindNextFileA@8"
+target = 0x00657064
+[[units.replay-browser-scan-files-0042d470.relocations]]
+offset = 240
+type = "REL32"
+symbol = "?push_back@ReplayFilenameDequeF231@@QAEXABQAD@Z"
+target = 0x0041DE30
+[[units.replay-browser-scan-files-0042d470.relocations]]
+offset = 250
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x006416A2
+[[units.replay-browser-scan-files-0042d470.relocations]]
+offset = 273
+type = "REL32"
+symbol = "?back@ReplayFilenameDequeF231@@QAEPAPADXZ"
+target = 0x0041DE00
+[[units.replay-browser-scan-files-0042d470.relocations]]
+offset = 286
+type = "DIR32"
+symbol = "?g_ReplayNextRootAt00657FF0@@3QBDB"
+target = 0x00657FF0
+[[units.replay-browser-scan-files-0042d470.relocations]]
+offset = 300
+type = "REL32"
+symbol = "?back@ReplayFilenameDequeF231@@QAEPAPADXZ"
+target = 0x0041DE00
+[[units.replay-browser-scan-files-0042d470.relocations]]
+offset = 308
+type = "REL32"
+symbol = "_strcpy"
+target = 0x00641B80
+[[units.replay-browser-scan-files-0042d470.relocations]]
+offset = 332
+type = "REL32"
+symbol = "?back@ReplayFilenameDequeF231@@QAEPAPADXZ"
+target = 0x0041DE00
+[[units.replay-browser-scan-files-0042d470.relocations]]
+offset = 340
+type = "REL32"
+symbol = "_strcat"
+target = 0x00641B90
+[[units.replay-browser-scan-files-0042d470.relocations]]
+offset = 358
+type = "DIR32"
+symbol = "__imp__FindClose@4"
+target = 0x00657060
+[[units.replay-browser-scan-files-0042d470.relocations]]
+offset = 372
+type = "REL32"
+symbol = "?size@ReplayFilenameDequeF231@@QBEIXZ"
+target = 0x0041DD50
+[[units.replay-browser-scan-files-0042d470.relocations]]
+offset = 421
+type = "REL32"
+symbol = "?size@ReplayFilenameDequeF231@@QBEIXZ"
+target = 0x0041DD50
+[[units.replay-browser-scan-files-0042d470.relocations]]
+offset = 472
+type = "REL32"
+symbol = "??AReplayFilenameDequeF231@@QAEPAPADI@Z"
+target = 0x0041DDC0
+[[units.replay-browser-scan-files-0042d470.relocations]]
+offset = 481
+type = "DIR32"
+symbol = "__imp__CreateFileA@28"
+target = 0x00657130
+[[units.replay-browser-scan-files-0042d470.relocations]]
+offset = 512
+type = "DIR32"
+symbol = "__imp__ReadFile@20"
+target = 0x0065712C
+[[units.replay-browser-scan-files-0042d470.relocations]]
+offset = 533
+type = "REL32"
+symbol = "?push_back@ReplayHeaderDequeF231@@QAEXPBX@Z"
+target = 0x0042DBE0
+[[units.replay-browser-scan-files-0042d470.relocations]]
+offset = 561
+type = "DIR32"
+symbol = "__imp__ReadFile@20"
+target = 0x0065712C
+[[units.replay-browser-scan-files-0042d470.relocations]]
+offset = 582
+type = "REL32"
+symbol = "?push_back@ReplayFlagsDequeF231@@QAEXABE@Z"
+target = 0x00414450
+[[units.replay-browser-scan-files-0042d470.relocations]]
+offset = 592
+type = "DIR32"
+symbol = "__imp__CloseHandle@4"
+target = 0x00657138
+[[units.replay-browser-scan-files-0042d470.relocations]]
+offset = 605
+type = "REL32"
+symbol = "@__security_check_cookie@4"
+target = 0x00640611

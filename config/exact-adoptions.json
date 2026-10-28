@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "89082d6262be8b7fc82cd8af76bc09a670177f97ac4f7f650f904842d48af9c2"
+      "current_sha256": "690e21f0c97aa81ba767de5bf4d274f1783387205344eba7fd450470c57d3cf6"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "8a4e941e7b27492cc3f3bfce79b3340393f2fe274299860c3ea2e57e026f82ea"
+      "current_sha256": "d04092d3140efc6e3b3535e6fde5eb3bbc6d33f80fc12b555f3a10914d0b46e7"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "e88eaa8e8f016e783cf492aa7bc9c9a1589d0f0c3766097dc2044ab5164a8181"
+      "current_sha256": "890c9e5a32a057b015bea490cf65c62a70e06512dd8e8c844042d9bbcedfb05f"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "ebebefe805d5a1c4513b8e41563e8ba27f86a49555fe32ec409ffc9cfbce0857"
+      "current_sha256": "8595500d845b904c5df346e64dec98fd2fbdeb207ffb4ad40785344663894b39"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "95e96fc4203029f65a980cd5bc8e58144146c741a652da82f7ef1143e21f4038"
+      "current_sha256": "47b7df4f2dbd316568350cc9d673da685dff4e3752dac0e3dc838a9f9dad46db"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -21468,6 +21468,50 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R043"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0042D470",
+        "size": "613",
+        "span_end": "0x0042D6D4",
+        "current_name": "FUN_0042d470",
+        "proposed_name": "ReplayBrowserScene::ScanFiles",
+        "module": "ReplayBrowserScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R040; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x0042D470",
+        "size": "613",
+        "span_end": "0x0042D6D4",
+        "current_name": "FUN_0042d470",
+        "proposed_name": "ReplayBrowserScene::ScanFiles",
+        "module": "ReplayBrowserScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void ReplayBrowserScanF231::ScanFiles()",
+        "is_thunk": "false",
+        "source_file": "src/ReplayScanF231.cpp",
+        "evidence": "R040; full body hash, complete decoded CFG and local game-specific behavior reviewed; F231; scripts/repo-python scripts/replay-exact-units.py --unit replay-browser-scan-files-0042d470",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F231: complete 613 authored CODE bytes / 155 decoded original x86 instructions and unique final RET, target SHA256 5ffba6a61250b27ffe1656bd74db2b75c19b1caf44a278df087cca7ea6177362. Pinned VC7.1 /Od /GX- /GS cold exact including all 31 true physical DIR32 and REL32 fields, Win32 FindFirst/Next/Close, separate two identical-value but distinct original replay-root strings 00657FE8/00657FF0, actual 260-byte array-new calls 006416A2, five deque methods, two CRT string operations and final GS cookie. Native browser file enumeration, filename ownership producer, queue.size > 0 unsigned branch, CreateFile/ReadFile of 60-byte header then one byte status, original header/status deque push-backs and CloseHandle all retained. Earlier full first natural source emitted the exact 613-byte extent with 471/489 nonfield matches; observing native stack slots and moving only actual header/count/flag/index lifetimes into nested scopes achieved 485/489, and using genuine VC7.1 temporary char* const& from push_back(static_cast<char*>(0)) at both inserts restores the four remaining native stack slots. Full function now has 489/489 comparable bytes with 31/31 resolved target fields and complete 613/613 cold-exact. Physical deque interfaces are call-only; no original complete deque/scene layout or external helper code bytes are claimed. Not a gameplay runtime check or an external Oracle receipt; 97 origin-pending functions remain unknown. No source-byte grafts, masks, dummy storage, asm, shortened function or whole-unit replay."
+      },
+      "origin": {
+        "address": "0x0042D470",
+        "origin": "authored",
+        "subsystem": "ReplayBrowserScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R040"
       }
     }
   ],
@@ -167846,6 +167890,215 @@
           "target": 4225472
         }
       ]
+    },
+    "replay-browser-scan-files-0042d470": {
+      "source": "src/ReplayScanF231.cpp",
+      "object": "build/matching/ReplayScanF231.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "ReplayBrowserScene::ScanFiles"
+      ],
+      "symbol": "?ScanFiles@ReplayBrowserScanF231@@QAEXXZ",
+      "target_address": 4379760,
+      "size": 613,
+      "relocations": [
+        {
+          "offset": 10,
+          "type": "DIR32",
+          "symbol": "___security_cookie",
+          "target": 6749744
+        },
+        {
+          "offset": 31,
+          "type": "DIR32",
+          "symbol": "?g_ReplayFindPatternAt00657FD8@@3QBDB",
+          "target": 6651864
+        },
+        {
+          "offset": 37,
+          "type": "DIR32",
+          "symbol": "__imp__FindFirstFileA@8",
+          "target": 6647912
+        },
+        {
+          "offset": 81,
+          "type": "REL32",
+          "symbol": "?push_back@ReplayFilenameDequeF231@@QAEXABQAD@Z",
+          "target": 4316720
+        },
+        {
+          "offset": 91,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559394
+        },
+        {
+          "offset": 114,
+          "type": "REL32",
+          "symbol": "?back@ReplayFilenameDequeF231@@QAEPAPADXZ",
+          "target": 4316672
+        },
+        {
+          "offset": 127,
+          "type": "DIR32",
+          "symbol": "?g_ReplayFirstRootAt00657FE8@@3QBDB",
+          "target": 6651880
+        },
+        {
+          "offset": 141,
+          "type": "REL32",
+          "symbol": "?back@ReplayFilenameDequeF231@@QAEPAPADXZ",
+          "target": 4316672
+        },
+        {
+          "offset": 149,
+          "type": "REL32",
+          "symbol": "_strcpy",
+          "target": 6560640
+        },
+        {
+          "offset": 173,
+          "type": "REL32",
+          "symbol": "?back@ReplayFilenameDequeF231@@QAEPAPADXZ",
+          "target": 4316672
+        },
+        {
+          "offset": 181,
+          "type": "REL32",
+          "symbol": "_strcat",
+          "target": 6560656
+        },
+        {
+          "offset": 201,
+          "type": "DIR32",
+          "symbol": "__imp__FindNextFileA@8",
+          "target": 6647908
+        },
+        {
+          "offset": 240,
+          "type": "REL32",
+          "symbol": "?push_back@ReplayFilenameDequeF231@@QAEXABQAD@Z",
+          "target": 4316720
+        },
+        {
+          "offset": 250,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559394
+        },
+        {
+          "offset": 273,
+          "type": "REL32",
+          "symbol": "?back@ReplayFilenameDequeF231@@QAEPAPADXZ",
+          "target": 4316672
+        },
+        {
+          "offset": 286,
+          "type": "DIR32",
+          "symbol": "?g_ReplayNextRootAt00657FF0@@3QBDB",
+          "target": 6651888
+        },
+        {
+          "offset": 300,
+          "type": "REL32",
+          "symbol": "?back@ReplayFilenameDequeF231@@QAEPAPADXZ",
+          "target": 4316672
+        },
+        {
+          "offset": 308,
+          "type": "REL32",
+          "symbol": "_strcpy",
+          "target": 6560640
+        },
+        {
+          "offset": 332,
+          "type": "REL32",
+          "symbol": "?back@ReplayFilenameDequeF231@@QAEPAPADXZ",
+          "target": 4316672
+        },
+        {
+          "offset": 340,
+          "type": "REL32",
+          "symbol": "_strcat",
+          "target": 6560656
+        },
+        {
+          "offset": 358,
+          "type": "DIR32",
+          "symbol": "__imp__FindClose@4",
+          "target": 6647904
+        },
+        {
+          "offset": 372,
+          "type": "REL32",
+          "symbol": "?size@ReplayFilenameDequeF231@@QBEIXZ",
+          "target": 4316496
+        },
+        {
+          "offset": 421,
+          "type": "REL32",
+          "symbol": "?size@ReplayFilenameDequeF231@@QBEIXZ",
+          "target": 4316496
+        },
+        {
+          "offset": 472,
+          "type": "REL32",
+          "symbol": "??AReplayFilenameDequeF231@@QAEPAPADI@Z",
+          "target": 4316608
+        },
+        {
+          "offset": 481,
+          "type": "DIR32",
+          "symbol": "__imp__CreateFileA@28",
+          "target": 6648112
+        },
+        {
+          "offset": 512,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 533,
+          "type": "REL32",
+          "symbol": "?push_back@ReplayHeaderDequeF231@@QAEXPBX@Z",
+          "target": 4381664
+        },
+        {
+          "offset": 561,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 582,
+          "type": "REL32",
+          "symbol": "?push_back@ReplayFlagsDequeF231@@QAEXABE@Z",
+          "target": 4277328
+        },
+        {
+          "offset": 592,
+          "type": "DIR32",
+          "symbol": "__imp__CloseHandle@4",
+          "target": 6648120
+        },
+        {
+          "offset": 605,
+          "type": "REL32",
+          "symbol": "@__security_check_cookie@4",
+          "target": 6555153
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -168170,6 +168423,7 @@
     "src/CharacterSelectConfirmF228.cpp": "27033f3f8d02d11e291df37f21a69199077a59003640dc88f1f84df14b394a92",
     "src/CharacterSelectAdvanceF229.cpp": "ce6f896d5b2d521691cae92be6bed32bb465e5cfe01a15c3316134ece4e2d841",
     "src/CharacterSelectOptionsF230.cpp": "73a55269ccba05c3db1b91ef040f1e062d31977eb1ba4a27f770050dceaff740",
-    "src/CharacterSelectSubselectionF230.cpp": "06961f5d996f82659d3234e55ff1e8387490272bf1c7b982691b4e760f7e6f8e"
+    "src/CharacterSelectSubselectionF230.cpp": "06961f5d996f82659d3234e55ff1e8387490272bf1c7b982691b4e760f7e6f8e",
+    "src/ReplayScanF231.cpp": "be41f8c94abdfb4a776d85c64c7e762837c06bcc46eff65df1be80400b2d363f"
   }
 }

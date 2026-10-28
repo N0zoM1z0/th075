@@ -1096,3 +1096,54 @@ Private first/negative and final sources plus disassemblies remain at
 `src/CharacterSelectSubselectionF230.cpp`. Both are local exact receipts,
 not externally verified Oracle submissions; all 97 unknown origins and
 unrelated accepted units are preserved.
+
+
+## F231: whole replay-browser file enumeration, 613-byte cold-exact source
+
+R040 independently reviews `ReplayBrowserScene::ScanFiles` at
+`0042D470..0042D6D4` as authored. The complete native function has 613
+CODE bytes / 155 decoded instructions ending in RET, SHA256
+`5ffba6a61250b27ffe1656bd74db2b75c19b1caf44a278df087cca7ea6177362`.
+The original `/GS` cookie and final check are genuine fields, not extra
+function credit. The natural `src/ReplayScanF231.cpp` borrowed receiver
+keeps the true `this+0x0C` filename deque, `this+0x20` header deque and
+`this+0x34` flag deque. It neither instantiates nor asserts a complete
+original STL/game class.
+
+Native File API operations are genuinely Win32 FindFirstFileA with
+`"replay\\*.rep"` at `00657FD8`, looped FindNextFileA, guarded FindClose,
+then CreateFileA/ReadFile/CloseHandle. Two **distinct original string
+addresses** `00657FE8` and `00657FF0` contain the same `"replay\\"`
+prefix but are retained as separate true relocations. Each matching filename
+slot receives a genuine 0x104-byte array new, followed by original strcpy
+and strcat. The file decoder reads one physical 60-byte header into the
+second deque and a trailing one-byte status into the third; size/count
+checks preserve original unsigned branches and the original no-validation
+behavior. Callee bodies, SDK imports, CRT, deque implementations, strings
+and library bytes receive **no independent authored CODE credit**.
+
+First ordinary C++ source already emitted 613 bytes with 31 fields but only
+471/489 non-field bytes matched; all differences except one unsigned
+condition were MSVC local-stack slot placements. The native frame shows
+WIN32_FIND_DATAA at EBP-0x148, file handle -4, /GS guard -8, file read count
+at -0x14c, 60-byte header at -0x188, flag at -0x189, index at -0x190,
+first pointer at -0x194, first new[] temporary at -0x198, next pointer at
+-0x19c and second new[] temporary at -0x1a0. Rather than inventing padding
+or unrelated locals, genuine nested block lifetimes for count/header, flag
+and index restore these addresses. Finally, both nullable deque insertions
+use normal VC7.1 C++ `push_back(static_cast<char*>(0))`: their genuine
+temporary `char* const&` bindings restore the last four different slot
+operands. `size()>0` emits the native unsigned JBE.
+
+The complete 613-byte object then compares **489/489 non-field bytes**
+with every one of the **31 original COFF relocations** solved. Independent
+pinned-toolchain `replay-exact-units.py --unit replay-browser-scan-files-0042d470`
+cold built this *only affected unit* and returned **exact: 613**, not just
+`structural-exact`. `tests/test_replay_scan_f231.py` independently pins the
+full native SHA, original three string extents, all 31 manifest fields and
+source hash without rebuilding unrelated objects. All negative and positive
+probes, original disassembly, constructor/stack variants, native SHA and cold
+log are retained under `.analysis/f231-replay-scan/`. No source body split,
+assembly, fake locals, masks, partial extents, external Oracle acceptance
+or unproved nominal class layouts. The 97 unknown-origin candidates remain
+uncredited, including the separate `00438A60` previously unresolved call.

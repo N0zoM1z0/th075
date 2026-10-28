@@ -546,3 +546,4 @@ CharacterSelectScene::UpdatePlayerConfirmation,0x00434CF0,function
 CharacterSelectScene::Advance,0x00433470,function
 CharacterSelectScene::ProcessPlayerOptions,0x00433A40,function
 CharacterSelectScene::ProcessSubselection,0x00433BE0,function
+ReplayBrowserScene::ScanFiles,0x0042D470,function

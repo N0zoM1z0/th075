@@ -545,3 +545,4 @@ CharacterSelectScene::UpdatePlayerConfirmation
 CharacterSelectScene::Advance
 CharacterSelectScene::ProcessPlayerOptions
 CharacterSelectScene::ProcessSubselection
+ReplayBrowserScene::ScanFiles
