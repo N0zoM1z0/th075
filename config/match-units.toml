@@ -56983,3 +56983,28 @@ offset = 98
 type = "REL32"
 symbol = "?ToggleFullscreenAt004018A0@@YAXXZ"
 target = 0x004018A0
+
+
+[units.game-application-window-callback-00603650]
+source = "src/GameApplicationWindowCallbackF468.cpp"
+object = "build/matching/GameApplicationWindowCallbackF468.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["GameApplication::WindowCallbackAt00603650"]
+symbol = "?AppWindowProcF468@@YGJPAUHWND__@@IIJ@Z"
+target_address = 0x00603650
+size = 83
+[[units.game-application-window-callback-00603650.relocations]]
+offset = 32
+type = "DIR32"
+symbol = "?g_AppInitializedAt0068D674@@3EA"
+target = 0x0068D674
+[[units.game-application-window-callback-00603650.relocations]]
+offset = 43
+type = "DIR32"
+symbol = "__imp__PostQuitMessage@4"
+target = 0x0065723C
+[[units.game-application-window-callback-00603650.relocations]]
+offset = 69
+type = "DIR32"
+symbol = "__imp__DefWindowProcA@16"
+target = 0x00657240

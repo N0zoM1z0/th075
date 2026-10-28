@@ -748,3 +748,4 @@ address,name,module,confidence,evidence
 0x004250C0,BattleEndScene::PollInputAt004250C0,BattleEndScene,inferred,"F467; whole original 107 CODE, true 0x38 OR 0xB8 fullscreen key condition, 13 physical original COFF refs; targeted cold exact"
 0x00426600,SceneInput::PollTwoMappingsAt00426600,SceneInput,inferred,"F467; whole original 106 CODE, true 0x38 OR 0xB8 fullscreen key condition, 13 physical original COFF refs; targeted cold exact"
 0x00428C80,OpeningScene::ProcessInputAt00428C80,OpeningScene,inferred,"F467; whole original 106 CODE, true 0x38 OR 0xB8 fullscreen key condition, 13 physical original COFF refs; targeted cold exact"
+0x00603650,GameApplication::WindowCallbackAt00603650,GameApplication,inferred,"F468; complete 83 native CODE original WM_CREATE/WM_DESTROY/WM_QUIT WinMain WndProc callback, PostQuitMessage & DefWindowProcA IAT, 3 actual COFF DIR32 refs cold exact"

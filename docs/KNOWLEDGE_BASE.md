@@ -7239,3 +7239,37 @@ external; no duplicate callee CODE, invented private class identities,
 source ASM, fake locals, partial-native matching, all-unit replay or
 external Oracle receipt. The old F466 AND-conditional version remains
 an independent private negative control.
+
+
+## F468: entire 83-byte original WinMain WindowCallback, true four-argument stdcall WndProc
+
+The independently original R114-authored native
+`GameApplication::WindowCallbackAt00603650` at
+`00603650..006036A2` consists of **83 complete authored CODE bytes,
+32 original x86 instructions**, original PE SHA256
+`112890c5c708ce986d72173b6509b3ee782430d10677f7b67c32eb44a79a06a0`.
+It is the actual Win32 WndProc registered by the original whole main
+loop `GameApplication::RunAt00602A60`, with truthful
+`LRESULT CALLBACK(HWND,UINT,WPARAM,LPARAM)` and actual **stdcall
+RET 16**, no hidden game owner receiver. Native C++ switch first
+materializes the real message UINT at EBP-4. `WM_CREATE (1)` sets the
+original application initialized byte at `0068D674` to 1;
+`WM_DESTROY (2)` calls the actual imported Win32
+`PostQuitMessage(0)` at original IAT `0065723C`; `WM_QUIT (0x12)`
+is a no-op; all three switch cases return zero. Other events are
+forwarded in original HWND/msg/WPARAM/LPARAM argument order to
+`DefWindowProcA` at IAT `00657240`. These exact native branches,
+conditional destinations, stack slots and returns are compiler-produced
+by natural Win32 C++ source rather than copied bytes.
+
+Pinned VC7.1 `/Od /Ob0 /Gy /GR- /GX- /Zi` compilation of
+`src/GameApplicationWindowCallbackF468.cpp` matches the **whole 83
+original CODE bytes**, **71/71 original nonrelocation bytes**, and
+all **3/3 authentic original physical COFF DIR32** fields/destinations
+(the real app initialized byte and both imported Win32 APIs). Only
+`--unit game-application-window-callback-00603650` was cold replayed,
+**1/1 exact**. The linked 2,987-byte original GameApplication main
+loop is **still unclassified**, with no accidental callee/WinMain or
+Win32 implementation CODE credit. No invented game class layout, fake
+locals, masking, assembly/pasted original bytes, cropped comparison,
+full-repository cold replay or external Oracle receipt.

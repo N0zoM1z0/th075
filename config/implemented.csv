@@ -765,3 +765,4 @@ BattleEndScene::DrawAt00425000
 BattleEndScene::PollInputAt004250C0
 SceneInput::PollTwoMappingsAt00426600
 OpeningScene::ProcessInputAt00428C80
+GameApplication::WindowCallbackAt00603650

@@ -1,6 +1,6 @@
 # TH075 — current reconstruction handoff
 
-**Maintained: 2026-10-29, after F467.** Read this document, then check the **live repository**. The current user explicitly wants both large/core bosses and small leaves tackled seriously, tangible progress committed immediately with subject `gpt-web: ...`, and **only changed/new units cold-replayed**. The user reports no other sessions: inspect and finish all dirty work; never skip, reset, overwrite or silently discard it.
+**Maintained: 2026-10-29, after F468.** Read this document, then check the **live repository**. The current user explicitly wants both large/core bosses and small leaves tackled seriously, tangible progress committed immediately with subject `gpt-web: ...`, and **only changed/new units cold-replayed**. The user reports no other sessions: inspect and finish all dirty work; never skip, reset, overwrite or silently discard it.
 
 ## 1. Trusted state and first commands
 
@@ -8,11 +8,11 @@ Canonical evidence is the pinned original PE, `config/function-origins.csv`, `co
 
 | Item | Verified snapshot |
 | --- | --- |
-| Git | `main`; pre-F467 reconstruction commit **`e67fcf7`** (F465), preceded by `07ae0cf` (F463) and `ec2fc75` (F461); F467 commit follows this update |
+| Git | `main`; pre-F468 reconstruction commit **`fea9a89`** (F467), preceded by `e67fcf7` (F465) and `07ae0cf` (F463); F468 commit follows this update |
 | Pinned target | user-supplied Japanese `resources/th075.exe` v1.11; SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`; **never** `th075c.exe` |
-| Exact and source-present | **767 functions / 767 exact units** |
-| Accepted authored CODE | **855,742 bytes / 1,973,516 reviewed bytes = 43.36%** |
-| Conservative | **43.28%**, including 3,608 bytes with unresolved origin |
+| Exact and source-present | **768 functions / 768 exact units** |
+| Accepted authored CODE | **855,825 bytes / 1,973,516 reviewed bytes = 43.37%** |
+| Conservative | **43.29%**, including 3,608 bytes with unresolved origin |
 | Origin review | 1,002 authored, 2,671 library, 581 compiler, **97 pending** across 4,351 provisional candidates |
 | Goal | **98% not reached**; Git and local cold results are not external Oracle receipts |
 
@@ -29,7 +29,7 @@ If **any** dirty source, unit, or manifest is present, first inspect its exact e
 
 ## 2. Newly closed chains — **not** the backlog
 
-The full register of **all 767** accepted functions is in `config/functions.csv` and `config/match-units.toml`; this table intentionally highlights only the newest, important independent CODE extents. No called function, imported CRT/Win32 code, or owned jump-table bytes are counted twice.
+The full register of **all 768** accepted functions is in `config/functions.csv` and `config/match-units.toml`; this table intentionally highlights only the newest, important independent CODE extents. No called function, imported CRT/Win32 code, or owned jump-table bytes are counted twice.
 
 | Unit / accepted address | Whole CODE | Authentic fields | Evidence |
 | --- | ---: | ---: | --- |
@@ -99,6 +99,7 @@ The full register of **all 767** accepted functions is in `config/functions.csv`
 | F463 `BattleEndScene::UpdateAt00424F60` `00424F60` | **152** | **10** | `src/BattleEndSceneUpdateF463.cpp`, `.analysis/f463-battle-end-update/` |
 | F465 `BattleEndScene::DrawAt00425000` `00425000` | **180** | **17** | `src/BattleEndSceneDrawF465.cpp`, `.analysis/f465-battle-end-overlayer/` |
 | F467 `BattleEndScene::PollInputAt004250C0`, `SceneInput::PollTwoMappingsAt00426600`, `OpeningScene::ProcessInputAt00428C80` | **107 + 106 + 106** | **13 each** | `src/SceneInputPollingFamilyF467.cpp`, `.analysis/f467-scene-input-or/` |
+| F468 `GameApplication::WindowCallbackAt00603650` `00603650` | **83** | **3** | `src/GameApplicationWindowCallbackF468.cpp`, `.analysis/f468-winmain-callback/` |
 
 **F340:** the companion archive entry seek at `0041D750` is independently cold exact for its whole 164-byte function including every one of its nine external references. It uses genuine iterator and `strcmp` semantics, returns the archive handle after `SetFilePointer` or `INVALID_HANDLE_VALUE` if not found. The original private archive list remains borrowed, not instantiated.
 
@@ -221,6 +222,8 @@ The full register of **all 767** accepted functions is in `config/functions.csv`
 **F465:** complete original R053 `BattleEndScene::DrawAt00425000` is **180 authored CODE bytes / 50 original x86 instructions**, **112/112 original nonrelocation bytes, 17/17 physically verified real COFF references**, and affected-only cold **1/1 exact**. Genuine original graphics begin `00402660` gates the full scene draw; fighter actor `00671418` owns original drawer +4 depth/alpha mode setters `0040C840/0040C7F0`, virtual character draw at original vtable+0x44 with original global character byte `0067161E`, optional overlayer for fighter +0x6EE via true **zero-argument** method `00412EB0` on global `0067143C`, and original alpha +0x6714D1 / color +0x67149C filled 640×480 RECT through native `SetRect` and `00403910`, completed by `004027D0`. Early draft invented a `SetDepthMode(1)` borrowed overlayer argument, producing 182 bytes and one extra PUSH; native method takes no args, its corrected borrowed ABI is independently corroborated by original assembly. F463 state update and F465 draw are separately full-code exact.
 
 **F467:** three independently R102/R036-authored complete native game input policies are **3/3 affected-only cold exact across one compiled object**: BattleEnd PollInput `004250C0` **107 CODE bytes, 55/55 nonfield, 13 COFF refs**; SceneInput PollTwoMappings `00426600` **106 bytes, 54/54 nonfield, 13 refs**; Opening ProcessInput `00428C80` **106 bytes, 54/54 nonfield, 13 refs**. All preserve full joystick `00403E50`, keyboard `00403F40`, original primary global queue `00671638` advance `00406E80`, genuine second mapping queue `00671680` for SceneInput/Opening (BattleEnd instead calls the true fighter action-input callback `00452F10`), and exact native `CheckPressed` `00407170` scan-code order. Original native control flow **requires `Pressed(0x1C) && (Pressed(0x38) || Pressed(0xB8))`** before mode toggle `004018A0`; an earlier `!0x38 && 0xB8` guess was one branch-displacement byte wrong per function and semantically incorrect. Correct OR and full 32-instruction native extents were independently checked, including all **39 physical COFF fields**. Only 319 new original CODE bytes credited; all queue/actor/input callees borrowed.
+
+**F468:** the actual original native WinMain registered WndProc `GameApplication::WindowCallbackAt00603650` is now **83 complete native CODE bytes / 32 x86 instructions**, **71/71 original nonrelocation bytes**, with **all 3/3 authentic original physical COFF DIR32 refs** and **1/1 affected-only cold exact**. Natural true Win32 `LRESULT CALLBACK(HWND,UINT,WPARAM,LPARAM)` has actual stdcall RET 16; its original message switch handles WM_CREATE(1) by setting real initialized-byte global `0068D674`, WM_DESTROY(2) with imported `PostQuitMessage(0)` at IAT `0065723C`, WM_QUIT(0x12) as a no-op, and all others through real imported `DefWindowProcA` at IAT `00657240`. All special cases return zero. It is a separately exact actual dependency of still-unaccepted **2,987-byte** `GameApplication::RunAt00602A60`; no 2,987 WinMain CODE is credited by the callback match, and no Win32 implementation is recredited.
 
 **Corrections to old notes:** The 686-byte writer and 429-byte reader are both **exact** (F339/F338), not pending F249/F250. The full 1,252-byte replay writer and 375-byte finalizer are both **exact** (F326/F328), not pending F219/F218/F289. The 1,766-byte font rasterizer is **exact** (F319), not pending F299/F302. The 301-byte glyph loader is **exact** (F318), not pending F291. The 916-byte MusicRoom catalog + separately compared 16-byte jump table is **exact in F258** (916 CODE credit only). Other accepted 1,000+ byte bosses include F271 projected quad (1,185), F278 pattern chooser (1,264), F282 resource loader (1,186), F292 overlay text box (1,385), F294 effects catalog (1,722), and F244 scene advance (1,529 CODE). Earlier failures remain useful *historical controls*, but must never be presented as current unaccepted work.
 
