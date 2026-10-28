@@ -46654,3 +46654,108 @@ offset = 149
 type = "DIR32"
 symbol = "__imp__SetFilePointer@16"
 target = 0x00657128
+
+
+[units.archive-catalog-close-named-0041d080]
+source = "src/ArchiveCatalogCloseF341.cpp"
+object = "build/matching/ArchiveCatalogCloseF341.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["ArchiveCatalog::CloseNamed"]
+symbol = "?CloseNamed@ArchiveCatalogF341@@YAXPBD@Z"
+target_address = 0x0041D080
+size = 264
+[[units.archive-catalog-close-named-0041d080.relocations]]
+offset = 11
+type = "DIR32"
+symbol = "?g_ArchiveNamesF341@@3UNameDequeF341@@A"
+target = 0x0068BE1C
+[[units.archive-catalog-close-named-0041d080.relocations]]
+offset = 16
+type = "REL32"
+symbol = "?BeginInto@NameDequeF341@@QAEXPAUNameIteratorF341@@@Z"
+target = 0x0041DCF0
+[[units.archive-catalog-close-named-0041d080.relocations]]
+offset = 25
+type = "DIR32"
+symbol = "?g_ArchiveNamesF341@@3UNameDequeF341@@A"
+target = 0x0068BE1C
+[[units.archive-catalog-close-named-0041d080.relocations]]
+offset = 30
+type = "REL32"
+symbol = "?EndInto@NameDequeF341@@QAEXPAUNameIteratorF341@@@Z"
+target = 0x0041DD20
+[[units.archive-catalog-close-named-0041d080.relocations]]
+offset = 39
+type = "DIR32"
+symbol = "?g_ArchiveResourcesF341@@3UResourceDequeF341@@A"
+target = 0x0068BE08
+[[units.archive-catalog-close-named-0041d080.relocations]]
+offset = 44
+type = "REL32"
+symbol = "?BeginInto@ResourceDequeF341@@QAEXPAUResourceIteratorF341@@@Z"
+target = 0x0041DA90
+[[units.archive-catalog-close-named-0041d080.relocations]]
+offset = 53
+type = "DIR32"
+symbol = "?g_ArchiveResourcesF341@@3UResourceDequeF341@@A"
+target = 0x0068BE08
+[[units.archive-catalog-close-named-0041d080.relocations]]
+offset = 58
+type = "REL32"
+symbol = "?EndInto@ResourceDequeF341@@QAEXPAUResourceIteratorF341@@@Z"
+target = 0x0041DAC0
+[[units.archive-catalog-close-named-0041d080.relocations]]
+offset = 70
+type = "REL32"
+symbol = "??9NameIteratorF341@@QBE_NABU0@@Z"
+target = 0x0041DFD0
+[[units.archive-catalog-close-named-0041d080.relocations]]
+offset = 93
+type = "REL32"
+symbol = "??DNameIteratorF341@@QBEAAPADXZ"
+target = 0x0041DF70
+[[units.archive-catalog-close-named-0041d080.relocations]]
+offset = 101
+type = "REL32"
+symbol = "_strcmp"
+target = 0x006416B0
+[[units.archive-catalog-close-named-0041d080.relocations]]
+offset = 116
+type = "REL32"
+symbol = "??DResourceIteratorF341@@QBEAAPAVArchiveResourceF341@@XZ"
+target = 0x0041E000
+[[units.archive-catalog-close-named-0041d080.relocations]]
+offset = 143
+type = "REL32"
+symbol = "??_GArchiveResourceF341@@QAEPAXI@Z"
+target = 0x0041D8C0
+[[units.archive-catalog-close-named-0041d080.relocations]]
+offset = 172
+type = "DIR32"
+symbol = "?g_ArchiveResourcesF341@@3UResourceDequeF341@@A"
+target = 0x0068BE08
+[[units.archive-catalog-close-named-0041d080.relocations]]
+offset = 177
+type = "REL32"
+symbol = "?Erase@ResourceDequeF341@@QAE?AUResourceIteratorF341@@U2@@Z"
+target = 0x0041DC90
+[[units.archive-catalog-close-named-0041d080.relocations]]
+offset = 205
+type = "DIR32"
+symbol = "?g_ArchiveNamesF341@@3UNameDequeF341@@A"
+target = 0x0068BE1C
+[[units.archive-catalog-close-named-0041d080.relocations]]
+offset = 210
+type = "REL32"
+symbol = "?Erase@NameDequeF341@@QAE?AUNameIteratorF341@@U2@@Z"
+target = 0x0041DF10
+[[units.archive-catalog-close-named-0041d080.relocations]]
+offset = 237
+type = "REL32"
+symbol = "??ENameIteratorF341@@QAE?AU0@H@Z"
+target = 0x0041DF90
+[[units.archive-catalog-close-named-0041d080.relocations]]
+offset = 251
+type = "REL32"
+symbol = "??EResourceIteratorF341@@QAE?AU0@H@Z"
+target = 0x0041E020

@@ -645,3 +645,4 @@ BattlePointerQueues::ReleaseEntriesAt005F7140,0x005F7140,function
 DataArchive::OpenAndReadIndex,0x0041D510,function
 DataArchive::Write,0x0041D260,function
 DataArchive::SeekNamedEntry,0x0041D750,function
+ArchiveCatalog::CloseNamed,0x0041D080,function

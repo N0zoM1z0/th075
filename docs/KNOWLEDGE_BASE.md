@@ -4963,3 +4963,35 @@ Canonical cold replay of only
 with no unrelated existing unit replayed. This is original CODE credit only,
 not compiler-generated iterator, CRT or Win32 callee credit, and not a public
 Factory Oracle acceptance.
+
+
+## F341: native archive catalog dual deque erase/close, cdecl and full 264-byte function
+
+The original R053-authored `0041D080..0041D187` body is a **264-byte**
+function with 89 complete independently decoded native instructions, original
+PE SHA256 `94e34263881bb6cf3867513ce1c6e64a0b79a775b944e52c7fbf2f4ec39b461d`.
+The `RET` is plain `C3`, not a member-function `RET 4`; the name
+`ArchiveCatalog::CloseNamed` remains provisional and is represented as a
+namespace-scoped cdecl entry. The real native source creates both name and
+object deque begin/end iterators. Its only loop condition compares the name
+iterators. It compares each name through `strcmp` and either erases the
+matching name and resource elements in lockstep (after genuine C++ `delete` of
+the resource), or postfix increments both live cursors. The genuine original
+scalar-deleting destructor `0041D8C0` is compiler-origin and remains excluded
+from authored coverage; this function merely calls it.
+
+A simple natural source showed the correct 264-byte whole body and all
+19 relocations but differed at 16 EBP displacements. The original local stack
+slots are **name begin -0x20**, **resource end -0x18**, **name end -0x10** and
+**resource begin -0x08**. These form one meaningful 32-byte live cursor
+record, not artificial padding. Modeling the natural record and using
+borrowed `BeginInto`/`EndInto` caller-side hidden-sret equivalents to the
+original 0041DCF0/0041DD20 and 0041DA90/0041DAC0 addresses recovered every
+original stack displacement without inventing locals. The final source is
+`src/ArchiveCatalogCloseF341.cpp`; VC7.1 exact unit
+`archive-catalog-close-named-0041d080` matches all **188/188 nonrelocation
+bytes**, all **19** physical original COFF relocation fields/destinations,
+and the full exact **264-byte** native function in a single-unit cold replay.
+External deque/CRT calls and compiler thunk bytes are not duplicated.
+Original private class/record names and complete layouts remain open. No
+assembly, masks, byte grafts, disassembly pasted as source, or full cold replay.
