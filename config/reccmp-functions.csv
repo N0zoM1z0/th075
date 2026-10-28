@@ -613,3 +613,8 @@ BattleObject::InitializeDefaultsAt0045B760,0x0045B760,function
 FighterState::AdvanceNoticeLevelsAt0045D710,0x0045D710,function
 BattleInput::PackDirectionBits,0x00455B30,function
 StaticBattleResources::ReleaseOwnedEntriesAt005F6FF0,0x005F6FF0,function
+SakuyaFighter::Initialize,0x004C0820,function
+AliceFighter::Initialize,0x004E2C90,function
+PatchouliFighter::Initialize,0x005021C0,function
+YukariFighter::Initialize,0x00597380,function
+SuikaFighter::Initialize,0x005C0AB0,function

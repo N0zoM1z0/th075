@@ -3886,3 +3886,55 @@ loader and original F293 wrapper or effect-child code receive no
 additional CODE credit from a call; 97 origin-pending functions and
 VC7 runtime helpers remain uncredited. Original private class names
 remain provisional, and local Git is not remote Oracle verification.
+
+
+## F309: five complete 243-byte fighter initialization constructors cold-exact
+
+Five separate R050-authored native game-specific constructors were audited
+as whole functions, then modeled in **five distinct natural C++ files**
+using pinned VC7.1 `/Od /Ob0 /Gy /GR- /GX- /GS /Zi`. Their boundaries,
+bytes and genuine COFF refs are separately compared, not credited merely
+because they share a common recognizable initialization pattern:
+
+| Constructor / PE start | Whole native CODE | Original instructions | Nonfield bytes | Authentic COFF fields | Full original CODE SHA256 |
+| --- | ---: | ---: | ---: | ---: | --- |
+| Sakuya `004C0820` | 243 | 56 | 219/219 | 6 | `77f91bdb5bbf1353961e5b9c43dc7ff28d4a6ba335291356c3decb39caf4c4a9` |
+| Alice `004E2C90` | 243 | 56 | 219/219 | 6 | `e46aa70683e81564fed1706a02d9f39ecd3b5cdd061ef0b5cf94514d57c1daf2` |
+| Patchouli `005021C0` | 243 | 56 | 219/219 | 6 | `0b9d6066a0d350a47f1f85e36f2bf9f3e0ff57a52674a6894f1eb4ea7edf1835` |
+| Yukari `00597380` | 243 | 56 | 219/219 | 6 | `5b20eb04a0ec250846f6f9ba325daff1cb10fcfc30e6a55bebfc5d80aed24e76` |
+| Suika `005C0AB0` | 243 | 56 | 219/219 | 6 | `daedd072f8948e057332e71073670494103d9f48958dd0b7c18449ef952b9611` |
+
+All five truly call the independently F287-accepted native fighter base
+constructor `004567B0`, install their **different** game vtables, and
+zero real game-specific short counters (Sakuya, Alice, Patchouli, Yukari
+at +0xEFC/+0xEFE; Suika at +0xF28/+0xF2A). They set original byte
++0x713=1, write unique native character resource names and tags to
+this+0xC4 and this+0x1C8 through actual native `strcpy` `00641B80`,
+set real stage/pattern +0x478 (respectively `0x27D`, `0x2AD`, `0x32C`,
+`0x25E`, `0x2A6`), texture slot count at +0x532 (Yukari **12**,
+others 10), original `-10.0f` at +0x6C and all ten exact native
+image/page flag bytes +0x705..+0x70E in unchanged original order.
+The already F223-accepted native Marisa constructor was used only as
+a first C++ hypothesis template, not as proof that any of the five
+other functions matched. Each independently emits the complete 243
+original native bytes, 56 original x86 instructions, all 219/219
+nonrelocation bytes, plus six authentic physical COFF relocation
+offsets/types/solved native destinations. The full five-unit affected
+**cold replay returned 5/5 exact**.
+
+Direct pinned PE relocation and string extraction also corrected a
+misleading prior Patchouli name estimate: the actual target
+`00659754` contains `patchouli`, while `00659758` contains only its
+suffix `houli`; the new independently built source correctly references
+`g_PatchouliNameAt00659754`. The five files are
+`src/SakuyaInitF309.cpp`, `src/AliceInitF309.cpp`,
+`src/PatchouliInitF309.cpp`, `src/YukariInitF309.cpp`,
+`src/SuikaInitF309.cpp`. Private target Ghidra/decompile, independent
+COFF previews, corrected string checks, and cold replay receipt are in
+`.analysis/f309-fighter-inits/`. These are five **different full game
+functions** and earn 1,215 newly authored CODE bytes, with no credit
+for already accepted F223/F287 base implementations, imported CRT or
+any of the 97 origin-pending candidates. Private complete class layouts
+are not asserted by their borrowed inherited constructor interfaces;
+there was no machine byte graft, asm, fake locals, arbitrary filler,
+relocation mask, full-set replay or external Oracle receipt.

@@ -44905,3 +44905,198 @@ offset = 227
 type = "DIR32"
 symbol = "__except_list"
 target = 0x00000000
+
+[units.sakuya-fighter-initialize-004c0820]
+source = "src/SakuyaInitF309.cpp"
+object = "build/matching/SakuyaInitF309.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["SakuyaFighter::Initialize"]
+symbol = "??0SakuyaCtorF309@@QAE@XZ"
+target_address = 0x004C0820
+size = 243
+[[units.sakuya-fighter-initialize-004c0820.relocations]]
+offset = 11
+type = "REL32"
+symbol = "??0BaseFighterCtorF309@@QAE@XZ"
+target = 0x004567B0
+[[units.sakuya-fighter-initialize-004c0820.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "??_7SakuyaCtorF309@@6B@"
+target = 0x006594A8
+[[units.sakuya-fighter-initialize-004c0820.relocations]]
+offset = 59
+type = "DIR32"
+symbol = "?g_SakuyaNameAt0065949C@@3QBDB"
+target = 0x0065949C
+[[units.sakuya-fighter-initialize-004c0820.relocations]]
+offset = 74
+type = "REL32"
+symbol = "_strcpy"
+target = 0x00641B80
+[[units.sakuya-fighter-initialize-004c0820.relocations]]
+offset = 82
+type = "DIR32"
+symbol = "?g_SakuyaTagAt006594A4@@3QBDB"
+target = 0x006594A4
+[[units.sakuya-fighter-initialize-004c0820.relocations]]
+offset = 97
+type = "REL32"
+symbol = "_strcpy"
+target = 0x00641B80
+
+[units.alice-fighter-initialize-004e2c90]
+source = "src/AliceInitF309.cpp"
+object = "build/matching/AliceInitF309.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["AliceFighter::Initialize"]
+symbol = "??0AliceCtorF309@@QAE@XZ"
+target_address = 0x004E2C90
+size = 243
+[[units.alice-fighter-initialize-004e2c90.relocations]]
+offset = 11
+type = "REL32"
+symbol = "??0BaseFighterCtorF309@@QAE@XZ"
+target = 0x004567B0
+[[units.alice-fighter-initialize-004e2c90.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "??_7AliceCtorF309@@6B@"
+target = 0x00659608
+[[units.alice-fighter-initialize-004e2c90.relocations]]
+offset = 59
+type = "DIR32"
+symbol = "?g_AliceNameAt006595F8@@3QBDB"
+target = 0x006595F8
+[[units.alice-fighter-initialize-004e2c90.relocations]]
+offset = 74
+type = "REL32"
+symbol = "_strcpy"
+target = 0x00641B80
+[[units.alice-fighter-initialize-004e2c90.relocations]]
+offset = 82
+type = "DIR32"
+symbol = "?g_AliceTagAt00659600@@3QBDB"
+target = 0x00659600
+[[units.alice-fighter-initialize-004e2c90.relocations]]
+offset = 97
+type = "REL32"
+symbol = "_strcpy"
+target = 0x00641B80
+
+[units.patchouli-fighter-initialize-005021c0]
+source = "src/PatchouliInitF309.cpp"
+object = "build/matching/PatchouliInitF309.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["PatchouliFighter::Initialize"]
+symbol = "??0PatchouliCtorF309@@QAE@XZ"
+target_address = 0x005021C0
+size = 243
+[[units.patchouli-fighter-initialize-005021c0.relocations]]
+offset = 11
+type = "REL32"
+symbol = "??0BaseFighterCtorF309@@QAE@XZ"
+target = 0x004567B0
+[[units.patchouli-fighter-initialize-005021c0.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "??_7PatchouliCtorF309@@6B@"
+target = 0x00659768
+[[units.patchouli-fighter-initialize-005021c0.relocations]]
+offset = 59
+type = "DIR32"
+symbol = "?g_PatchouliNameAt00659754@@3QBDB"
+target = 0x00659754
+[[units.patchouli-fighter-initialize-005021c0.relocations]]
+offset = 74
+type = "REL32"
+symbol = "_strcpy"
+target = 0x00641B80
+[[units.patchouli-fighter-initialize-005021c0.relocations]]
+offset = 82
+type = "DIR32"
+symbol = "?g_PatchouliTagAt00659760@@3QBDB"
+target = 0x00659760
+[[units.patchouli-fighter-initialize-005021c0.relocations]]
+offset = 97
+type = "REL32"
+symbol = "_strcpy"
+target = 0x00641B80
+
+[units.yukari-fighter-initialize-00597380]
+source = "src/YukariInitF309.cpp"
+object = "build/matching/YukariInitF309.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["YukariFighter::Initialize"]
+symbol = "??0YukariCtorF309@@QAE@XZ"
+target_address = 0x00597380
+size = 243
+[[units.yukari-fighter-initialize-00597380.relocations]]
+offset = 11
+type = "REL32"
+symbol = "??0BaseFighterCtorF309@@QAE@XZ"
+target = 0x004567B0
+[[units.yukari-fighter-initialize-00597380.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "??_7YukariCtorF309@@6B@"
+target = 0x00659CC0
+[[units.yukari-fighter-initialize-00597380.relocations]]
+offset = 59
+type = "DIR32"
+symbol = "?g_YukariNameAt00659CB0@@3QBDB"
+target = 0x00659CB0
+[[units.yukari-fighter-initialize-00597380.relocations]]
+offset = 74
+type = "REL32"
+symbol = "_strcpy"
+target = 0x00641B80
+[[units.yukari-fighter-initialize-00597380.relocations]]
+offset = 82
+type = "DIR32"
+symbol = "?g_YukariTagAt00659CB8@@3QBDB"
+target = 0x00659CB8
+[[units.yukari-fighter-initialize-00597380.relocations]]
+offset = 97
+type = "REL32"
+symbol = "_strcpy"
+target = 0x00641B80
+
+[units.suika-fighter-initialize-005c0ab0]
+source = "src/SuikaInitF309.cpp"
+object = "build/matching/SuikaInitF309.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["SuikaFighter::Initialize"]
+symbol = "??0SuikaCtorF309@@QAE@XZ"
+target_address = 0x005C0AB0
+size = 243
+[[units.suika-fighter-initialize-005c0ab0.relocations]]
+offset = 11
+type = "REL32"
+symbol = "??0BaseFighterCtorF309@@QAE@XZ"
+target = 0x004567B0
+[[units.suika-fighter-initialize-005c0ab0.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "??_7SuikaCtorF309@@6B@"
+target = 0x00659E30
+[[units.suika-fighter-initialize-005c0ab0.relocations]]
+offset = 59
+type = "DIR32"
+symbol = "?g_SuikaNameAt00659E24@@3QBDB"
+target = 0x00659E24
+[[units.suika-fighter-initialize-005c0ab0.relocations]]
+offset = 74
+type = "REL32"
+symbol = "_strcpy"
+target = 0x00641B80
+[[units.suika-fighter-initialize-005c0ab0.relocations]]
+offset = 82
+type = "DIR32"
+symbol = "?g_SuikaTagAt00659E2C@@3QBDB"
+target = 0x00659E2C
+[[units.suika-fighter-initialize-005c0ab0.relocations]]
+offset = 97
+type = "REL32"
+symbol = "_strcpy"
+target = 0x00641B80

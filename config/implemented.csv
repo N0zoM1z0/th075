@@ -612,3 +612,8 @@ BattleObject::InitializeDefaultsAt0045B760
 FighterState::AdvanceNoticeLevelsAt0045D710
 BattleInput::PackDirectionBits
 StaticBattleResources::ReleaseOwnedEntriesAt005F6FF0
+SakuyaFighter::Initialize
+AliceFighter::Initialize
+PatchouliFighter::Initialize
+YukariFighter::Initialize
+SuikaFighter::Initialize

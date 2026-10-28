@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "644a89af8657af32cc06fd6d6a5560a55be1b0a53cc868df7bba3b32d508fb8e"
+      "current_sha256": "d06dd6334fe47542645092397c3c6d8cb87b1ed534b14cab0cd43b736c09e964"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "17d2d860e5f0b5d6bb79c821995307da40f05e58eced8faf2d1bd14b588c69db"
+      "current_sha256": "628ee7601319cd8fd181bfbf5a81b3dad91f91b3da7316e520470b4ab7630da5"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "e9f7ce54637fb6f8c336b37d54c3b3e0ed303b78b91e2d66c1c8266f92fd56b2"
+      "current_sha256": "879643008ff9536e68c47b2565f52e3afa9bda95d63be0b98665accf201e6b3b"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "dd7e6a4d8f3a807b75bad139ce4ac26b57e0bd716fbdb63a694e0b4cabe10efd"
+      "current_sha256": "06f72af2aa601a67ac26bb0511ecb1eb1f302f3d4970e62e3aa1aac8ce297a61"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "d05733fc292b0cd0e68161ea5f1114f861920c812483f689b7f239533510fedd"
+      "current_sha256": "afc333857f89488b4d384a1c3b1631d74f5a7ab7e3858348dc444b68fcb37052"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -24416,6 +24416,226 @@
         "disposition": "authored",
         "confidence": "complete-explicit-static-resource-policy-and-whole-source-order-controls",
         "evidence_id": "R177"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004C0820",
+        "size": "243",
+        "span_end": "0x004C0912",
+        "current_name": "FUN_004c0820",
+        "proposed_name": "SakuyaFighter::Initialize",
+        "module": "SakuyaFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R050; whole body hash, complete CFG, character constructor/factory chain and local behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; method name and complete class layout inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x004C0820",
+        "size": "243",
+        "span_end": "0x004C0912",
+        "current_name": "FUN_004c0820",
+        "proposed_name": "SakuyaFighter::Initialize",
+        "module": "SakuyaFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "SakuyaCtorF309::SakuyaCtorF309()",
+        "is_thunk": "false",
+        "source_file": "src/SakuyaInitF309.cpp",
+        "evidence": "R050; whole body hash, complete CFG, character constructor/factory chain and local behavior reviewed; F309; scripts/repo-python scripts/replay-exact-units.py --unit sakuya-fighter-initialize-004c0820",
+        "owner": "authored",
+        "notes": "Origin reviewed; method name and complete class layout inferred; source and exact state remain independent; F309: entire R050-authored originally native 243 CODE bytes /56 independently decoded original x86 instructions at 0x004C0820..0x004C0912, native RET, full PE SHA256 77f91bdb5bbf1353961e5b9c43dc7ff28d4a6ba335291356c3decb39caf4c4a9. Complete first natural VC7.1 /Od /GX- /GS derived character ctor independently emitted exact 243 CODE and 219/219 nonrelocation bytes, with all six genuine physical COFF fields: full base FighterState constructor 004567B0 (previously F287 accepted), authentic derived game vtable, actual two native Japanese/ASCII character name/data resources, and two original strcpy calls at 00641B80. Native actual two short game field clears at +0xEFC/+0xEFE (Suika special +0xF28/+0xF2A), stage byte +0x713=1, true character-specific source name/tag at +0xC4/+0x1C8, pattern index +0x478=637, texture slot count +0x532=10, original -10.0f at +0x6C, and ten native image/page flag bytes +0x705..+0x70E all in exact source order. Independently audited all 6 native offset/type/destination relocations rather than trusting decompiler or previously accepted Marisa name; Patchouli physical name string starts at 00659754, not 00659758. Each affected source built cold independently in five-unit group, 5/5 exact, no all-unit cold replay. Borrowed full base class with virtual destructor models only native inherited polymorphic call ABI; original complete private fighter layouts and original library helper internals not claimed. No source byte graft, fake pads/locals, masked fields, cropped function, duplicate credit for F223 Marisa or F287 fighter base, origin unknown or CRT/VC7 bodies, or remote Oracle certification."
+      },
+      "origin": {
+        "address": "0x004C0820",
+        "origin": "authored",
+        "subsystem": "SakuyaFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R050"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004E2C90",
+        "size": "243",
+        "span_end": "0x004E2D82",
+        "current_name": "FUN_004e2c90",
+        "proposed_name": "AliceFighter::Initialize",
+        "module": "AliceFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R050; whole body hash, complete CFG, character constructor/factory chain and local behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; method name and complete class layout inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x004E2C90",
+        "size": "243",
+        "span_end": "0x004E2D82",
+        "current_name": "FUN_004e2c90",
+        "proposed_name": "AliceFighter::Initialize",
+        "module": "AliceFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "AliceCtorF309::AliceCtorF309()",
+        "is_thunk": "false",
+        "source_file": "src/AliceInitF309.cpp",
+        "evidence": "R050; whole body hash, complete CFG, character constructor/factory chain and local behavior reviewed; F309; scripts/repo-python scripts/replay-exact-units.py --unit alice-fighter-initialize-004e2c90",
+        "owner": "authored",
+        "notes": "Origin reviewed; method name and complete class layout inferred; source and exact state remain independent; F309: entire R050-authored originally native 243 CODE bytes /56 independently decoded original x86 instructions at 0x004E2C90..0x004E2D82, native RET, full PE SHA256 e46aa70683e81564fed1706a02d9f39ecd3b5cdd061ef0b5cf94514d57c1daf2. Complete first natural VC7.1 /Od /GX- /GS derived character ctor independently emitted exact 243 CODE and 219/219 nonrelocation bytes, with all six genuine physical COFF fields: full base FighterState constructor 004567B0 (previously F287 accepted), authentic derived game vtable, actual two native Japanese/ASCII character name/data resources, and two original strcpy calls at 00641B80. Native actual two short game field clears at +0xEFC/+0xEFE (Suika special +0xF28/+0xF2A), stage byte +0x713=1, true character-specific source name/tag at +0xC4/+0x1C8, pattern index +0x478=685, texture slot count +0x532=10, original -10.0f at +0x6C, and ten native image/page flag bytes +0x705..+0x70E all in exact source order. Independently audited all 6 native offset/type/destination relocations rather than trusting decompiler or previously accepted Marisa name; Patchouli physical name string starts at 00659754, not 00659758. Each affected source built cold independently in five-unit group, 5/5 exact, no all-unit cold replay. Borrowed full base class with virtual destructor models only native inherited polymorphic call ABI; original complete private fighter layouts and original library helper internals not claimed. No source byte graft, fake pads/locals, masked fields, cropped function, duplicate credit for F223 Marisa or F287 fighter base, origin unknown or CRT/VC7 bodies, or remote Oracle certification."
+      },
+      "origin": {
+        "address": "0x004E2C90",
+        "origin": "authored",
+        "subsystem": "AliceFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R050"
+      }
+    },
+    {
+      "before": {
+        "address": "0x005021C0",
+        "size": "243",
+        "span_end": "0x005022B2",
+        "current_name": "FUN_005021c0",
+        "proposed_name": "PatchouliFighter::Initialize",
+        "module": "PatchouliFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R050; whole body hash, complete CFG, character constructor/factory chain and local behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; method name and complete class layout inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x005021C0",
+        "size": "243",
+        "span_end": "0x005022B2",
+        "current_name": "FUN_005021c0",
+        "proposed_name": "PatchouliFighter::Initialize",
+        "module": "PatchouliFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "PatchouliCtorF309::PatchouliCtorF309()",
+        "is_thunk": "false",
+        "source_file": "src/PatchouliInitF309.cpp",
+        "evidence": "R050; whole body hash, complete CFG, character constructor/factory chain and local behavior reviewed; F309; scripts/repo-python scripts/replay-exact-units.py --unit patchouli-fighter-initialize-005021c0",
+        "owner": "authored",
+        "notes": "Origin reviewed; method name and complete class layout inferred; source and exact state remain independent; F309: entire R050-authored originally native 243 CODE bytes /56 independently decoded original x86 instructions at 0x005021C0..0x005022B2, native RET, full PE SHA256 0b9d6066a0d350a47f1f85e36f2bf9f3e0ff57a52674a6894f1eb4ea7edf1835. Complete first natural VC7.1 /Od /GX- /GS derived character ctor independently emitted exact 243 CODE and 219/219 nonrelocation bytes, with all six genuine physical COFF fields: full base FighterState constructor 004567B0 (previously F287 accepted), authentic derived game vtable, actual two native Japanese/ASCII character name/data resources, and two original strcpy calls at 00641B80. Native actual two short game field clears at +0xEFC/+0xEFE (Suika special +0xF28/+0xF2A), stage byte +0x713=1, true character-specific source name/tag at +0xC4/+0x1C8, pattern index +0x478=812, texture slot count +0x532=10, original -10.0f at +0x6C, and ten native image/page flag bytes +0x705..+0x70E all in exact source order. Independently audited all 6 native offset/type/destination relocations rather than trusting decompiler or previously accepted Marisa name; Patchouli physical name string starts at 00659754, not 00659758. Each affected source built cold independently in five-unit group, 5/5 exact, no all-unit cold replay. Borrowed full base class with virtual destructor models only native inherited polymorphic call ABI; original complete private fighter layouts and original library helper internals not claimed. No source byte graft, fake pads/locals, masked fields, cropped function, duplicate credit for F223 Marisa or F287 fighter base, origin unknown or CRT/VC7 bodies, or remote Oracle certification."
+      },
+      "origin": {
+        "address": "0x005021C0",
+        "origin": "authored",
+        "subsystem": "PatchouliFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R050"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00597380",
+        "size": "243",
+        "span_end": "0x00597472",
+        "current_name": "FUN_00597380",
+        "proposed_name": "YukariFighter::Initialize",
+        "module": "YukariFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R050; whole body hash, complete CFG, character constructor/factory chain and local behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; method name and complete class layout inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00597380",
+        "size": "243",
+        "span_end": "0x00597472",
+        "current_name": "FUN_00597380",
+        "proposed_name": "YukariFighter::Initialize",
+        "module": "YukariFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "YukariCtorF309::YukariCtorF309()",
+        "is_thunk": "false",
+        "source_file": "src/YukariInitF309.cpp",
+        "evidence": "R050; whole body hash, complete CFG, character constructor/factory chain and local behavior reviewed; F309; scripts/repo-python scripts/replay-exact-units.py --unit yukari-fighter-initialize-00597380",
+        "owner": "authored",
+        "notes": "Origin reviewed; method name and complete class layout inferred; source and exact state remain independent; F309: entire R050-authored originally native 243 CODE bytes /56 independently decoded original x86 instructions at 0x00597380..0x00597472, native RET, full PE SHA256 5b20eb04a0ec250846f6f9ba325daff1cb10fcfc30e6a55bebfc5d80aed24e76. Complete first natural VC7.1 /Od /GX- /GS derived character ctor independently emitted exact 243 CODE and 219/219 nonrelocation bytes, with all six genuine physical COFF fields: full base FighterState constructor 004567B0 (previously F287 accepted), authentic derived game vtable, actual two native Japanese/ASCII character name/data resources, and two original strcpy calls at 00641B80. Native actual two short game field clears at +0xEFC/+0xEFE (Suika special +0xF28/+0xF2A), stage byte +0x713=1, true character-specific source name/tag at +0xC4/+0x1C8, pattern index +0x478=606, texture slot count +0x532=12, original -10.0f at +0x6C, and ten native image/page flag bytes +0x705..+0x70E all in exact source order. Independently audited all 6 native offset/type/destination relocations rather than trusting decompiler or previously accepted Marisa name; Patchouli physical name string starts at 00659754, not 00659758. Each affected source built cold independently in five-unit group, 5/5 exact, no all-unit cold replay. Borrowed full base class with virtual destructor models only native inherited polymorphic call ABI; original complete private fighter layouts and original library helper internals not claimed. No source byte graft, fake pads/locals, masked fields, cropped function, duplicate credit for F223 Marisa or F287 fighter base, origin unknown or CRT/VC7 bodies, or remote Oracle certification."
+      },
+      "origin": {
+        "address": "0x00597380",
+        "origin": "authored",
+        "subsystem": "YukariFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R050"
+      }
+    },
+    {
+      "before": {
+        "address": "0x005C0AB0",
+        "size": "243",
+        "span_end": "0x005C0BA2",
+        "current_name": "FUN_005c0ab0",
+        "proposed_name": "SuikaFighter::Initialize",
+        "module": "SuikaFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R050; whole body hash, complete CFG, character constructor/factory chain and local behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; method name and complete class layout inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x005C0AB0",
+        "size": "243",
+        "span_end": "0x005C0BA2",
+        "current_name": "FUN_005c0ab0",
+        "proposed_name": "SuikaFighter::Initialize",
+        "module": "SuikaFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "SuikaCtorF309::SuikaCtorF309()",
+        "is_thunk": "false",
+        "source_file": "src/SuikaInitF309.cpp",
+        "evidence": "R050; whole body hash, complete CFG, character constructor/factory chain and local behavior reviewed; F309; scripts/repo-python scripts/replay-exact-units.py --unit suika-fighter-initialize-005c0ab0",
+        "owner": "authored",
+        "notes": "Origin reviewed; method name and complete class layout inferred; source and exact state remain independent; F309: entire R050-authored originally native 243 CODE bytes /56 independently decoded original x86 instructions at 0x005C0AB0..0x005C0BA2, native RET, full PE SHA256 daedd072f8948e057332e71073670494103d9f48958dd0b7c18449ef952b9611. Complete first natural VC7.1 /Od /GX- /GS derived character ctor independently emitted exact 243 CODE and 219/219 nonrelocation bytes, with all six genuine physical COFF fields: full base FighterState constructor 004567B0 (previously F287 accepted), authentic derived game vtable, actual two native Japanese/ASCII character name/data resources, and two original strcpy calls at 00641B80. Native actual two short game field clears at +0xEFC/+0xEFE (Suika special +0xF28/+0xF2A), stage byte +0x713=1, true character-specific source name/tag at +0xC4/+0x1C8, pattern index +0x478=678, texture slot count +0x532=10, original -10.0f at +0x6C, and ten native image/page flag bytes +0x705..+0x70E all in exact source order. Independently audited all 6 native offset/type/destination relocations rather than trusting decompiler or previously accepted Marisa name; Patchouli physical name string starts at 00659754, not 00659758. Each affected source built cold independently in five-unit group, 5/5 exact, no all-unit cold replay. Borrowed full base class with virtual destructor models only native inherited polymorphic call ABI; original complete private fighter layouts and original library helper internals not claimed. No source byte graft, fake pads/locals, masked fields, cropped function, duplicate credit for F223 Marisa or F287 fighter base, origin unknown or CRT/VC7 bodies, or remote Oracle certification."
+      },
+      "origin": {
+        "address": "0x005C0AB0",
+        "origin": "authored",
+        "subsystem": "SuikaFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R050"
       }
     }
   ],
@@ -179543,6 +179763,301 @@
           "target": 0
         }
       ]
+    },
+    "sakuya-fighter-initialize-004c0820": {
+      "source": "src/SakuyaInitF309.cpp",
+      "object": "build/matching/SakuyaInitF309.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "SakuyaFighter::Initialize"
+      ],
+      "symbol": "??0SakuyaCtorF309@@QAE@XZ",
+      "target_address": 4982816,
+      "size": 243,
+      "relocations": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": "??0BaseFighterCtorF309@@QAE@XZ",
+          "target": 4548528
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "??_7SakuyaCtorF309@@6B@",
+          "target": 6657192
+        },
+        {
+          "offset": 59,
+          "type": "DIR32",
+          "symbol": "?g_SakuyaNameAt0065949C@@3QBDB",
+          "target": 6657180
+        },
+        {
+          "offset": 74,
+          "type": "REL32",
+          "symbol": "_strcpy",
+          "target": 6560640
+        },
+        {
+          "offset": 82,
+          "type": "DIR32",
+          "symbol": "?g_SakuyaTagAt006594A4@@3QBDB",
+          "target": 6657188
+        },
+        {
+          "offset": 97,
+          "type": "REL32",
+          "symbol": "_strcpy",
+          "target": 6560640
+        }
+      ]
+    },
+    "alice-fighter-initialize-004e2c90": {
+      "source": "src/AliceInitF309.cpp",
+      "object": "build/matching/AliceInitF309.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "AliceFighter::Initialize"
+      ],
+      "symbol": "??0AliceCtorF309@@QAE@XZ",
+      "target_address": 5123216,
+      "size": 243,
+      "relocations": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": "??0BaseFighterCtorF309@@QAE@XZ",
+          "target": 4548528
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "??_7AliceCtorF309@@6B@",
+          "target": 6657544
+        },
+        {
+          "offset": 59,
+          "type": "DIR32",
+          "symbol": "?g_AliceNameAt006595F8@@3QBDB",
+          "target": 6657528
+        },
+        {
+          "offset": 74,
+          "type": "REL32",
+          "symbol": "_strcpy",
+          "target": 6560640
+        },
+        {
+          "offset": 82,
+          "type": "DIR32",
+          "symbol": "?g_AliceTagAt00659600@@3QBDB",
+          "target": 6657536
+        },
+        {
+          "offset": 97,
+          "type": "REL32",
+          "symbol": "_strcpy",
+          "target": 6560640
+        }
+      ]
+    },
+    "patchouli-fighter-initialize-005021c0": {
+      "source": "src/PatchouliInitF309.cpp",
+      "object": "build/matching/PatchouliInitF309.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "PatchouliFighter::Initialize"
+      ],
+      "symbol": "??0PatchouliCtorF309@@QAE@XZ",
+      "target_address": 5251520,
+      "size": 243,
+      "relocations": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": "??0BaseFighterCtorF309@@QAE@XZ",
+          "target": 4548528
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "??_7PatchouliCtorF309@@6B@",
+          "target": 6657896
+        },
+        {
+          "offset": 59,
+          "type": "DIR32",
+          "symbol": "?g_PatchouliNameAt00659754@@3QBDB",
+          "target": 6657876
+        },
+        {
+          "offset": 74,
+          "type": "REL32",
+          "symbol": "_strcpy",
+          "target": 6560640
+        },
+        {
+          "offset": 82,
+          "type": "DIR32",
+          "symbol": "?g_PatchouliTagAt00659760@@3QBDB",
+          "target": 6657888
+        },
+        {
+          "offset": 97,
+          "type": "REL32",
+          "symbol": "_strcpy",
+          "target": 6560640
+        }
+      ]
+    },
+    "yukari-fighter-initialize-00597380": {
+      "source": "src/YukariInitF309.cpp",
+      "object": "build/matching/YukariInitF309.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "YukariFighter::Initialize"
+      ],
+      "symbol": "??0YukariCtorF309@@QAE@XZ",
+      "target_address": 5862272,
+      "size": 243,
+      "relocations": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": "??0BaseFighterCtorF309@@QAE@XZ",
+          "target": 4548528
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "??_7YukariCtorF309@@6B@",
+          "target": 6659264
+        },
+        {
+          "offset": 59,
+          "type": "DIR32",
+          "symbol": "?g_YukariNameAt00659CB0@@3QBDB",
+          "target": 6659248
+        },
+        {
+          "offset": 74,
+          "type": "REL32",
+          "symbol": "_strcpy",
+          "target": 6560640
+        },
+        {
+          "offset": 82,
+          "type": "DIR32",
+          "symbol": "?g_YukariTagAt00659CB8@@3QBDB",
+          "target": 6659256
+        },
+        {
+          "offset": 97,
+          "type": "REL32",
+          "symbol": "_strcpy",
+          "target": 6560640
+        }
+      ]
+    },
+    "suika-fighter-initialize-005c0ab0": {
+      "source": "src/SuikaInitF309.cpp",
+      "object": "build/matching/SuikaInitF309.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "SuikaFighter::Initialize"
+      ],
+      "symbol": "??0SuikaCtorF309@@QAE@XZ",
+      "target_address": 6032048,
+      "size": 243,
+      "relocations": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": "??0BaseFighterCtorF309@@QAE@XZ",
+          "target": 4548528
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "??_7SuikaCtorF309@@6B@",
+          "target": 6659632
+        },
+        {
+          "offset": 59,
+          "type": "DIR32",
+          "symbol": "?g_SuikaNameAt00659E24@@3QBDB",
+          "target": 6659620
+        },
+        {
+          "offset": 74,
+          "type": "REL32",
+          "symbol": "_strcpy",
+          "target": 6560640
+        },
+        {
+          "offset": 82,
+          "type": "DIR32",
+          "symbol": "?g_SuikaTagAt00659E2C@@3QBDB",
+          "target": 6659628
+        },
+        {
+          "offset": 97,
+          "type": "REL32",
+          "symbol": "_strcpy",
+          "target": 6560640
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -179930,6 +180445,11 @@
     "src/BattleDefaultsF300.cpp": "229d5ced877ed7fb5abf447c86983bf5164073411b20d013fdf34a880acff887",
     "src/FighterNoticeLevelsF301.cpp": "b11973afc56745c6ee0d68ffaa4593518e5e8496353a142a243319b282650037",
     "src/BattleInputPackDirectionF303.cpp": "2519ed193b50acd82de339b29cf33458d205ffc9f38b445925a232b7b6d37f09",
-    "src/StaticEffectReleaseF304.cpp": "b1e00f04e929c50fa1601c3d0d1f4275ced2c49d1b4d8f41bdd22aa122c25eac"
+    "src/StaticEffectReleaseF304.cpp": "b1e00f04e929c50fa1601c3d0d1f4275ced2c49d1b4d8f41bdd22aa122c25eac",
+    "src/SakuyaInitF309.cpp": "c07b5ef9b01de53ecf47de6dfa0da22de88a6116373ba1566b6e9d3ab29fc92e",
+    "src/AliceInitF309.cpp": "b44e5d13ad85c6100bc2b5284b8296b4a3ce7fe6c2ad5cba8c5726d29f356808",
+    "src/PatchouliInitF309.cpp": "327160e5767b3fc9546d444943592d4dd37cb49c06415c7b1ba0ed22e7f4c1ff",
+    "src/YukariInitF309.cpp": "d5950949401044afa8adc4d046c771a1c98ed176463c73318e8b876481d5cf49",
+    "src/SuikaInitF309.cpp": "bf7ac7577ec72d3f1a32bba678410c459e5c109b1ec79e7866cb9b7a25dd6bd3"
   }
 }
