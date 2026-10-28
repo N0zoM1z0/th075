@@ -6584,3 +6584,73 @@ The complete unknown original private class members, external scene
 constructor, texture manager, archive and selection callee CODE remain
 borrowed and uncredited. No fake padding, ASM, raw original bytes,
 masked/cropped comparison, full cold replay or Oracle receipt.
+
+
+## F437: full 1,268-byte mirrored sprite-node rendering boss, real 140-byte stack quad carriers and x87 FSUBR
+
+The long-unaccepted R035-authored original
+`SpriteScene::RenderMirroredNode` at `00410A00..00410EF3` is now **1,268
+complete original authored CODE bytes / 324 native x86 instructions**,
+original PE SHA256
+`ef138dbc6864e3a1803c2d1828b83c73e3c6feb8c4a27fc2e7d6ad0fedb2edf2`.
+It implements the entire game-specific mirrored sprite rendering path:
+actual camera X/Y origins, native camera offset constants, borrowed native
+texture rectangle lookup, whole constructed quad/RECT geometry, optional
+node scale/rotation/pose, signed-character horizontal facing reflection,
+original x87 position arithmetic, camera tint sampling, actual textured
+quad combination and both conditional tinted (`0040CA20`) and ordinary
+(`0040C9A0`) draw paths bracketed by original filter changes (`0040C860`).
+Every branch and original return are included, without masking or
+crediting any original geometry or draw callee bytes.
+
+Earlier F254/F289/F355/F381-F383/F433-F434 C++ prototypes matched many
+original instruction shapes but not the original stack or exact x87
+operations. Independent original x86 disassembly proved actual native
+EBP frame size **0x180**, with physical RECT at EBP-0x140, composed quad
+at EBP-0x130, sampled tint at EBP-0xA4, X shift at EBP-0x98, color at
+EBP-0x94, transformed quad at EBP-0x90 and Y origin at EBP-4. The two
+quad *stack carrier footprints* are independently **140 bytes apart
+from subsequent native frame fields**: the first 132 bytes of each are
+the already established drawable SpriteQuad packet; the last eight
+bytes are untyped physically allocated tail slots with no proven original
+private field identities or independent code. Correctly grouping the
+existing observed 132-byte quad payload with its *observed physical*
+140-byte storage carrier, RECT, tint[3] and genuine camera locals
+recovers every meaningful EBP address and the exact original 0x180
+frame without inventing arbitrary standalone dummy stack locals.
+
+At this stage the entire native source matched 1,268 original CODE bytes
+but differed in **39 nonrelocation bytes** inside one mathematical
+expression at native offset 0x379. The original evaluates the integer
+`facing * nodeX`, writes its real 32-bit x87 conversion temporary at
+EBP-0x180, executes `FILD`, loads the original owner address and then
+executes **`FSUBR [owner+0x44]`**. The initially plausible C++ expression
+`FIELD(float,0x44)-float(intFacing*intNodeX)` (parenthesized FLOAT macro)
+instead generated `FLD [owner+0x44]`, integer multiply and `FISUB`.
+Rather than hand-authoring x87 instructions, F437 searched **existing
+independently cold-exact game renderers** for original native
+`FILD; MOV; FSUBR` sequences and found the identical case in accepted
+SpriteNode F129 (`00410350`) and FighterRender F126 (`00453F70`).
+Their natural unparenthesized float dereference macro is exactly the
+missing source-level evaluation distinction. Writing
+`FLOAT(0x44)-FIELD(signed char,0x66)*NODE(short,0)` with
+`#define FLOAT(off) *reinterpret_cast<float*>(RAW+(off))` (without
+extra parentheses around the lvalue) causes pinned VC7.1 to emit the
+original `FILD; MOV; FSUBR`, removing all 39 differing bytes, while
+C++ results and the rest of the source remain meaningful. A
+parenthesized variant remains a negative codegen control.
+
+The complete `src/SpriteMirroredNodeRenderF437.cpp` under pinned VC7.1
+`/Od /Ob0 /Gy /GR- /GX- /GS /Zi` matches the full original **1,268 CODE
+bytes**, **1164/1164 actual nonrelocation bytes**, and all **26 genuine
+native physical COFF DIR32/REL32 relocation fields, targets and original
+addends**. This includes both native quad constructors at `0040D990`,
+original ScaleQuad/RotateQuad/TranslateQuad references, camera, sprite
+filter and both draw methods. Only affected new unit
+`sprite-scene-render-mirrored-node-00410a00` was compiled and cold
+replayed, **1/1 exact**. The private full scene/sprite types, untyped
+quad trailing bytes and callee implementations remain unproved; no
+helper/CRT data/CODE double credit, asm or native byte grafts, fabricated
+unused local temporaries, masks, cropped extent, full cold replay or
+external Oracle acceptance. All historical probes are retained as
+private falsifiable controls, not duplicate accepted functions.

@@ -746,3 +746,4 @@ FighterScript::InitializeAt00420440,0x00420440,function
 StaticBattleResources::ConstructAndClearContainersAt005F6F60,0x005F6F60,function
 OptionsScene::ReleaseSceneTextureAndResourceAt00428E60,0x00428E60,function
 NameEntryScene::InitializeAt0042B1F0,0x0042B1F0,function
+SpriteScene::RenderMirroredNode,0x00410A00,function
