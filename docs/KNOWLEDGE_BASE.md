@@ -3938,3 +3938,53 @@ any of the 97 origin-pending candidates. Private complete class layouts
 are not asserted by their borrowed inherited constructor interfaces;
 there was no machine byte graft, asm, fake locals, arbitrary filler,
 relocation mask, full-set replay or external Oracle receipt.
+
+
+## F311: four additional entire fighter constructors with independent native proof
+
+Reimu, Meiling, Remilia, and Yuyuko each contain their own original
+authored and newly cold-exact game-specific fighter initialization
+function. Unlike assuming a single shared library clone, each entire
+native PE extent, control instruction count, relocation field and unique
+character-specific data was independently verified before acceptance:
+
+| Game fighter / start | Reviewed origin | Original CODE | Native x86 instructions | Exact nonfield bytes | Native COFF fields | Full original CODE SHA256 |
+| --- | --- | ---: | ---: | ---: | ---: | --- |
+| Reimu `0046D080` | R046 authored | 218 | 52 | 194/194 | 6 | `d4b174f2bd88e27b24d50bcad45c3c14f47e1ec0209c38cacc83502187da8376` |
+| Meiling `005E2090` | R050 authored | 218 | 52 | 194/194 | 6 | `d6ef52ad4c4830182c8e3ad563eab5b4e31ef1cb1b1fb77f369932744ed0fd81` |
+| Remilia `00551980` | R050 authored | 277 | 62 | 253/253 | 6 | `150d9c7c5277eac1ef6de663d531e70ed1e37134569913c217c6616c1fcca214` |
+| Yuyuko `00574100` | R050 authored | 266 | 60 | 242/242 | 6 | `0742421646749819f30609107921e3da0db7e0b3999841de2a155661d56eb149` |
+
+All four call true native fighter base `004567B0`, install their
+separate original vtables and load original character name/data strings
+through exactly two actual native `strcpy` targets `00641B80`, into
+this+0xC4/+0x1C8. They initialize real byte stage flag +0x713=1,
+pattern counters at +0x478 (Reimu `0x287`, Meiling `0x264`, Remilia
+`0x2A0`, Yuyuko `0x21C`), slots byte +0x532 (Remilia **11**,
+others 10), float `-10.0f` at +0x6C and all ten observed page-byte
+flags +0x705..+0x70E. Reimu and Meiling deliberately do **not**
+initialize the two high-offset short counters present in F309, matching
+their full 218-byte native code instead of grafting the template.
+Remilia additionally clears two exact shorts at +0x6FA/+0x6FC, then
+byte +0x6F8; Yuyuko clears two shorts at +0xEFA/+0xF10, preserving
+each true native write width and order.
+
+The direct PE/COFF evidence corrected an initial Remilia resource
+string hypothesis from `00659A30` to the true native `00659A34`, the
+start of `remilia`. This correction was made **before** acceptance
+and the four individual whole source files were rebuilt and compared:
+`src/ReimuInitF311.cpp`, `src/MeilingInitF311.cpp`,
+`src/RemiliaInitF311.cpp`, `src/YuyukoInitF311.cpp`. The five F309
+243-byte constructor sources were a first natural-code reference only,
+not proof of these four different 218/266/277-byte complete functions.
+Each pinned VC7.1 `/Od /Ob0 /Gy /GR- /GX- /GS /Zi` object matches
+its **entire native CODE span**, all nonfield bytes and all six
+relocations. The affected four-unit-only serial cold replay reports
+**4/4 exact**, adding 979 new authored CODE bytes without double credit
+for prior F287/F309/Marisa/F223 sources. Full Ghidra original evidence,
+PE resource strings, positive COFF and local cold receipt are retained
+at `.analysis/f311-fighter-variants/`. All 97 unknown-origin functions,
+CRT and other helper implementation bytes remain uncredited; no
+assembly, copying target machine bytes, inert padding, masked COFF
+fields or all-unit replay was used. This local checkpoint is not a
+remote Oracle acceptance receipt.

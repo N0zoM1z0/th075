@@ -617,3 +617,7 @@ AliceFighter::Initialize
 PatchouliFighter::Initialize
 YukariFighter::Initialize
 SuikaFighter::Initialize
+ReimuFighter::Initialize
+MeilingFighter::Initialize
+RemiliaFighter::Initialize
+YuyukoFighter::Initialize

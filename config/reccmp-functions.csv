@@ -618,3 +618,7 @@ AliceFighter::Initialize,0x004E2C90,function
 PatchouliFighter::Initialize,0x005021C0,function
 YukariFighter::Initialize,0x00597380,function
 SuikaFighter::Initialize,0x005C0AB0,function
+ReimuFighter::Initialize,0x0046D080,function
+MeilingFighter::Initialize,0x005E2090,function
+RemiliaFighter::Initialize,0x00551980,function
+YuyukoFighter::Initialize,0x00574100,function

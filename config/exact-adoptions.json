@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "d06dd6334fe47542645092397c3c6d8cb87b1ed534b14cab0cd43b736c09e964"
+      "current_sha256": "3d7e2923502a18e3cef936af41cb04f337332af816c4aef0cd968741f34cb030"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "628ee7601319cd8fd181bfbf5a81b3dad91f91b3da7316e520470b4ab7630da5"
+      "current_sha256": "cf6374d87b840aad92b46387561ce149a64968fd6e27a74de768172ab2a324d4"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "879643008ff9536e68c47b2565f52e3afa9bda95d63be0b98665accf201e6b3b"
+      "current_sha256": "5221252122c4eedb223b73aeee2df6b229c8a67cda5b25005bc51e69cffde57e"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "06f72af2aa601a67ac26bb0511ecb1eb1f302f3d4970e62e3aa1aac8ce297a61"
+      "current_sha256": "235fa4709a2f13846fb30ae43603e5c748fb2e77fbdc8ea4b775b98cc244503c"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "afc333857f89488b4d384a1c3b1631d74f5a7ab7e3858348dc444b68fcb37052"
+      "current_sha256": "1b07bb860badfc3693d895db63986a1f9657b0cfcc0b5e585e968df51ea7d687"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -24633,6 +24633,182 @@
         "address": "0x005C0AB0",
         "origin": "authored",
         "subsystem": "SuikaFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R050"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0046D080",
+        "size": "218",
+        "span_end": "0x0046D159",
+        "current_name": "FUN_0046d080",
+        "proposed_name": "ReimuFighter::Initialize",
+        "module": "ReimuFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R046; full body hash, complete decoded CFG and Reimu-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x0046D080",
+        "size": "218",
+        "span_end": "0x0046D159",
+        "current_name": "FUN_0046d080",
+        "proposed_name": "ReimuFighter::Initialize",
+        "module": "ReimuFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "ReimuCtorF311::ReimuCtorF311()",
+        "is_thunk": "false",
+        "source_file": "src/ReimuInitF311.cpp",
+        "evidence": "R046; full body hash, complete decoded CFG and Reimu-specific behavior reviewed; F311; scripts/repo-python scripts/replay-exact-units.py --unit reimu-fighter-initialize-0046d080",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F311: complete original R046/R050 authored 218 CODE bytes and 52 independently decoded native x86 instructions at 0x0046D080..0x0046D159, original PE SHA256 d4b174f2bd88e27b24d50bcad45c3c14f47e1ec0209c38cacc83502187da8376. A new independently compiled VC7.1 /Od /GX- /GS full C++ routine used F223 accepted Marisa source only as a falsifiable first hypothesis, with no fighter-specific short counter preclears, unlike F309 243-byte variants; actual base fighter constructor 004567B0 separately F287 accepted, authentic different fighter vtable, two exact original resource name/tag pointers, actual two native strcpy calls 00641B80, pattern +0x478=647, native texture slot byte +0x532=10, float -10.0 at +0x6C, stage byte +0x713=1 and ten native bytes +0x705..+0x70E. First whole function source emits exact all 218 original CODE bytes, all 194/194 comparable bytes, all six physical native COFF relocation offsets/types/native solved addresses and actual original thiscall return. Original Remilia name string begins 00659A34; guess 00659A30 was a pointer to empty/preceding region and was corrected against actual full target relocation/string BEFORE cold replay, no arbitrary naming or miscredited bytes. All four new units compiled cold 4/4 exact without all-unit replay. Borrowed nominal C++ classes preserve observed game polymorphic base ABI only, original private complete fighter layouts not asserted. No invented original behavior, source padding, machine byte graft, asm, cropped function, masked relocations, double counting of already accepted F223/F287/F309 source, or extra CRT/VC7/pending origin 97 CODE credit; no remote Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0046D080",
+        "origin": "authored",
+        "subsystem": "ReimuFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R046"
+      }
+    },
+    {
+      "before": {
+        "address": "0x005E2090",
+        "size": "218",
+        "span_end": "0x005E2169",
+        "current_name": "FUN_005e2090",
+        "proposed_name": "MeilingFighter::Initialize",
+        "module": "MeilingFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R050; whole body hash, complete CFG, character constructor/factory chain and local behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; method name and complete class layout inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x005E2090",
+        "size": "218",
+        "span_end": "0x005E2169",
+        "current_name": "FUN_005e2090",
+        "proposed_name": "MeilingFighter::Initialize",
+        "module": "MeilingFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "MeilingCtorF311::MeilingCtorF311()",
+        "is_thunk": "false",
+        "source_file": "src/MeilingInitF311.cpp",
+        "evidence": "R050; whole body hash, complete CFG, character constructor/factory chain and local behavior reviewed; F311; scripts/repo-python scripts/replay-exact-units.py --unit meiling-fighter-initialize-005e2090",
+        "owner": "authored",
+        "notes": "Origin reviewed; method name and complete class layout inferred; source and exact state remain independent; F311: complete original R046/R050 authored 218 CODE bytes and 52 independently decoded native x86 instructions at 0x005E2090..0x005E2169, original PE SHA256 d6ef52ad4c4830182c8e3ad563eab5b4e31ef1cb1b1fb77f369932744ed0fd81. A new independently compiled VC7.1 /Od /GX- /GS full C++ routine used F223 accepted Marisa source only as a falsifiable first hypothesis, with no fighter-specific short counter preclears, unlike F309 243-byte variants; actual base fighter constructor 004567B0 separately F287 accepted, authentic different fighter vtable, two exact original resource name/tag pointers, actual two native strcpy calls 00641B80, pattern +0x478=612, native texture slot byte +0x532=10, float -10.0 at +0x6C, stage byte +0x713=1 and ten native bytes +0x705..+0x70E. First whole function source emits exact all 218 original CODE bytes, all 194/194 comparable bytes, all six physical native COFF relocation offsets/types/native solved addresses and actual original thiscall return. Original Remilia name string begins 00659A34; guess 00659A30 was a pointer to empty/preceding region and was corrected against actual full target relocation/string BEFORE cold replay, no arbitrary naming or miscredited bytes. All four new units compiled cold 4/4 exact without all-unit replay. Borrowed nominal C++ classes preserve observed game polymorphic base ABI only, original private complete fighter layouts not asserted. No invented original behavior, source padding, machine byte graft, asm, cropped function, masked relocations, double counting of already accepted F223/F287/F309 source, or extra CRT/VC7/pending origin 97 CODE credit; no remote Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x005E2090",
+        "origin": "authored",
+        "subsystem": "MeilingFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R050"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00551980",
+        "size": "277",
+        "span_end": "0x00551A94",
+        "current_name": "FUN_00551980",
+        "proposed_name": "RemiliaFighter::Initialize",
+        "module": "RemiliaFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R050; whole body hash, complete CFG, character constructor/factory chain and local behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; method name and complete class layout inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00551980",
+        "size": "277",
+        "span_end": "0x00551A94",
+        "current_name": "FUN_00551980",
+        "proposed_name": "RemiliaFighter::Initialize",
+        "module": "RemiliaFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "RemiliaCtorF311::RemiliaCtorF311()",
+        "is_thunk": "false",
+        "source_file": "src/RemiliaInitF311.cpp",
+        "evidence": "R050; whole body hash, complete CFG, character constructor/factory chain and local behavior reviewed; F311; scripts/repo-python scripts/replay-exact-units.py --unit remilia-fighter-initialize-00551980",
+        "owner": "authored",
+        "notes": "Origin reviewed; method name and complete class layout inferred; source and exact state remain independent; F311: complete original R046/R050 authored 277 CODE bytes and 62 independently decoded native x86 instructions at 0x00551980..0x00551A94, original PE SHA256 150d9c7c5277eac1ef6de663d531e70ed1e37134569913c217c6616c1fcca214. A new independently compiled VC7.1 /Od /GX- /GS full C++ routine used F223 accepted Marisa source only as a falsifiable first hypothesis, with three observed counter clears (shorts +0x6FA/+0x6FC and byte +0x6F8) in native source order; actual base fighter constructor 004567B0 separately F287 accepted, authentic different fighter vtable, two exact original resource name/tag pointers, actual two native strcpy calls 00641B80, pattern +0x478=672, native texture slot byte +0x532=11, float -10.0 at +0x6C, stage byte +0x713=1 and ten native bytes +0x705..+0x70E. First whole function source emits exact all 277 original CODE bytes, all 253/253 comparable bytes, all six physical native COFF relocation offsets/types/native solved addresses and actual original thiscall return. Original Remilia name string begins 00659A34; guess 00659A30 was a pointer to empty/preceding region and was corrected against actual full target relocation/string BEFORE cold replay, no arbitrary naming or miscredited bytes. All four new units compiled cold 4/4 exact without all-unit replay. Borrowed nominal C++ classes preserve observed game polymorphic base ABI only, original private complete fighter layouts not asserted. No invented original behavior, source padding, machine byte graft, asm, cropped function, masked relocations, double counting of already accepted F223/F287/F309 source, or extra CRT/VC7/pending origin 97 CODE credit; no remote Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x00551980",
+        "origin": "authored",
+        "subsystem": "RemiliaFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R050"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00574100",
+        "size": "266",
+        "span_end": "0x00574209",
+        "current_name": "FUN_00574100",
+        "proposed_name": "YuyukoFighter::Initialize",
+        "module": "YuyukoFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R050; whole body hash, complete CFG, character constructor/factory chain and local behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; method name and complete class layout inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00574100",
+        "size": "266",
+        "span_end": "0x00574209",
+        "current_name": "FUN_00574100",
+        "proposed_name": "YuyukoFighter::Initialize",
+        "module": "YuyukoFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "YuyukoCtorF311::YuyukoCtorF311()",
+        "is_thunk": "false",
+        "source_file": "src/YuyukoInitF311.cpp",
+        "evidence": "R050; whole body hash, complete CFG, character constructor/factory chain and local behavior reviewed; F311; scripts/repo-python scripts/replay-exact-units.py --unit yuyuko-fighter-initialize-00574100",
+        "owner": "authored",
+        "notes": "Origin reviewed; method name and complete class layout inferred; source and exact state remain independent; F311: complete original R046/R050 authored 266 CODE bytes and 60 independently decoded native x86 instructions at 0x00574100..0x00574209, original PE SHA256 0742421646749819f30609107921e3da0db7e0b3999841de2a155661d56eb149. A new independently compiled VC7.1 /Od /GX- /GS full C++ routine used F223 accepted Marisa source only as a falsifiable first hypothesis, with two independently observed short counter clears +0xEFA/+0xF10 in original source order; actual base fighter constructor 004567B0 separately F287 accepted, authentic different fighter vtable, two exact original resource name/tag pointers, actual two native strcpy calls 00641B80, pattern +0x478=540, native texture slot byte +0x532=10, float -10.0 at +0x6C, stage byte +0x713=1 and ten native bytes +0x705..+0x70E. First whole function source emits exact all 266 original CODE bytes, all 242/242 comparable bytes, all six physical native COFF relocation offsets/types/native solved addresses and actual original thiscall return. Original Remilia name string begins 00659A34; guess 00659A30 was a pointer to empty/preceding region and was corrected against actual full target relocation/string BEFORE cold replay, no arbitrary naming or miscredited bytes. All four new units compiled cold 4/4 exact without all-unit replay. Borrowed nominal C++ classes preserve observed game polymorphic base ABI only, original private complete fighter layouts not asserted. No invented original behavior, source padding, machine byte graft, asm, cropped function, masked relocations, double counting of already accepted F223/F287/F309 source, or extra CRT/VC7/pending origin 97 CODE credit; no remote Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x00574100",
+        "origin": "authored",
+        "subsystem": "YuyukoFighter",
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R050"
@@ -180058,6 +180234,242 @@
           "target": 6560640
         }
       ]
+    },
+    "reimu-fighter-initialize-0046d080": {
+      "source": "src/ReimuInitF311.cpp",
+      "object": "build/matching/ReimuInitF311.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "ReimuFighter::Initialize"
+      ],
+      "symbol": "??0ReimuCtorF311@@QAE@XZ",
+      "target_address": 4640896,
+      "size": 218,
+      "relocations": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": "??0BaseFighterCtorF311@@QAE@XZ",
+          "target": 4548528
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "??_7ReimuCtorF311@@6B@",
+          "target": 6656216
+        },
+        {
+          "offset": 35,
+          "type": "DIR32",
+          "symbol": "?g_ReimuNameAt006590C8@@3QBDB",
+          "target": 6656200
+        },
+        {
+          "offset": 50,
+          "type": "REL32",
+          "symbol": "_strcpy",
+          "target": 6560640
+        },
+        {
+          "offset": 58,
+          "type": "DIR32",
+          "symbol": "?g_ReimuTagAt006590D0@@3QBDB",
+          "target": 6656208
+        },
+        {
+          "offset": 72,
+          "type": "REL32",
+          "symbol": "_strcpy",
+          "target": 6560640
+        }
+      ]
+    },
+    "meiling-fighter-initialize-005e2090": {
+      "source": "src/MeilingInitF311.cpp",
+      "object": "build/matching/MeilingInitF311.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "MeilingFighter::Initialize"
+      ],
+      "symbol": "??0MeilingCtorF311@@QAE@XZ",
+      "target_address": 6168720,
+      "size": 218,
+      "relocations": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": "??0BaseFighterCtorF311@@QAE@XZ",
+          "target": 4548528
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "??_7MeilingCtorF311@@6B@",
+          "target": 6659920
+        },
+        {
+          "offset": 35,
+          "type": "DIR32",
+          "symbol": "?g_MeilingNameAt00659F40@@3QBDB",
+          "target": 6659904
+        },
+        {
+          "offset": 50,
+          "type": "REL32",
+          "symbol": "_strcpy",
+          "target": 6560640
+        },
+        {
+          "offset": 58,
+          "type": "DIR32",
+          "symbol": "?g_MeilingTagAt00659F48@@3QBDB",
+          "target": 6659912
+        },
+        {
+          "offset": 72,
+          "type": "REL32",
+          "symbol": "_strcpy",
+          "target": 6560640
+        }
+      ]
+    },
+    "remilia-fighter-initialize-00551980": {
+      "source": "src/RemiliaInitF311.cpp",
+      "object": "build/matching/RemiliaInitF311.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "RemiliaFighter::Initialize"
+      ],
+      "symbol": "??0RemiliaCtorF311@@QAE@XZ",
+      "target_address": 5577088,
+      "size": 277,
+      "relocations": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": "??0BaseFighterCtorF311@@QAE@XZ",
+          "target": 4548528
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "??_7RemiliaCtorF311@@6B@",
+          "target": 6658624
+        },
+        {
+          "offset": 93,
+          "type": "DIR32",
+          "symbol": "?g_RemiliaNameAt00659A34@@3QBDB",
+          "target": 6658612
+        },
+        {
+          "offset": 108,
+          "type": "REL32",
+          "symbol": "_strcpy",
+          "target": 6560640
+        },
+        {
+          "offset": 116,
+          "type": "DIR32",
+          "symbol": "?g_RemiliaTagAt00659A3C@@3QBDB",
+          "target": 6658620
+        },
+        {
+          "offset": 131,
+          "type": "REL32",
+          "symbol": "_strcpy",
+          "target": 6560640
+        }
+      ]
+    },
+    "yuyuko-fighter-initialize-00574100": {
+      "source": "src/YuyukoInitF311.cpp",
+      "object": "build/matching/YuyukoInitF311.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "YuyukoFighter::Initialize"
+      ],
+      "symbol": "??0YuyukoCtorF311@@QAE@XZ",
+      "target_address": 5718272,
+      "size": 266,
+      "relocations": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": "??0BaseFighterCtorF311@@QAE@XZ",
+          "target": 4548528
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "??_7YuyukoCtorF311@@6B@",
+          "target": 6658944
+        },
+        {
+          "offset": 83,
+          "type": "DIR32",
+          "symbol": "?g_YuyukoNameAt00659B74@@3QBDB",
+          "target": 6658932
+        },
+        {
+          "offset": 97,
+          "type": "REL32",
+          "symbol": "_strcpy",
+          "target": 6560640
+        },
+        {
+          "offset": 105,
+          "type": "DIR32",
+          "symbol": "?g_YuyukoTagAt00659B7C@@3QBDB",
+          "target": 6658940
+        },
+        {
+          "offset": 120,
+          "type": "REL32",
+          "symbol": "_strcpy",
+          "target": 6560640
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -180450,6 +180862,10 @@
     "src/AliceInitF309.cpp": "b44e5d13ad85c6100bc2b5284b8296b4a3ce7fe6c2ad5cba8c5726d29f356808",
     "src/PatchouliInitF309.cpp": "327160e5767b3fc9546d444943592d4dd37cb49c06415c7b1ba0ed22e7f4c1ff",
     "src/YukariInitF309.cpp": "d5950949401044afa8adc4d046c771a1c98ed176463c73318e8b876481d5cf49",
-    "src/SuikaInitF309.cpp": "bf7ac7577ec72d3f1a32bba678410c459e5c109b1ec79e7866cb9b7a25dd6bd3"
+    "src/SuikaInitF309.cpp": "bf7ac7577ec72d3f1a32bba678410c459e5c109b1ec79e7866cb9b7a25dd6bd3",
+    "src/ReimuInitF311.cpp": "61a17ed10fe608662de701d7685c3a5f61cc39f61ec587f76c5a85b578484562",
+    "src/MeilingInitF311.cpp": "b5797a3b5c110452bae9be6720a8c4eb7fa4eacbc7107f6063123baaca94cf0c",
+    "src/RemiliaInitF311.cpp": "83b98a0fb8630b3af7f5c9574fca057fdd1898e958330ecb0213001c5f6c0d30",
+    "src/YuyukoInitF311.cpp": "d47862160d537edced6be8a9decac46816a3846cbcc69b440a239ff21de6c193"
   }
 }

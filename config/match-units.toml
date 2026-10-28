@@ -45100,3 +45100,159 @@ offset = 97
 type = "REL32"
 symbol = "_strcpy"
 target = 0x00641B80
+
+[units.reimu-fighter-initialize-0046d080]
+source = "src/ReimuInitF311.cpp"
+object = "build/matching/ReimuInitF311.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["ReimuFighter::Initialize"]
+symbol = "??0ReimuCtorF311@@QAE@XZ"
+target_address = 0x0046D080
+size = 218
+[[units.reimu-fighter-initialize-0046d080.relocations]]
+offset = 11
+type = "REL32"
+symbol = "??0BaseFighterCtorF311@@QAE@XZ"
+target = 0x004567B0
+[[units.reimu-fighter-initialize-0046d080.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "??_7ReimuCtorF311@@6B@"
+target = 0x006590D8
+[[units.reimu-fighter-initialize-0046d080.relocations]]
+offset = 35
+type = "DIR32"
+symbol = "?g_ReimuNameAt006590C8@@3QBDB"
+target = 0x006590C8
+[[units.reimu-fighter-initialize-0046d080.relocations]]
+offset = 50
+type = "REL32"
+symbol = "_strcpy"
+target = 0x00641B80
+[[units.reimu-fighter-initialize-0046d080.relocations]]
+offset = 58
+type = "DIR32"
+symbol = "?g_ReimuTagAt006590D0@@3QBDB"
+target = 0x006590D0
+[[units.reimu-fighter-initialize-0046d080.relocations]]
+offset = 72
+type = "REL32"
+symbol = "_strcpy"
+target = 0x00641B80
+
+[units.meiling-fighter-initialize-005e2090]
+source = "src/MeilingInitF311.cpp"
+object = "build/matching/MeilingInitF311.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["MeilingFighter::Initialize"]
+symbol = "??0MeilingCtorF311@@QAE@XZ"
+target_address = 0x005E2090
+size = 218
+[[units.meiling-fighter-initialize-005e2090.relocations]]
+offset = 11
+type = "REL32"
+symbol = "??0BaseFighterCtorF311@@QAE@XZ"
+target = 0x004567B0
+[[units.meiling-fighter-initialize-005e2090.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "??_7MeilingCtorF311@@6B@"
+target = 0x00659F50
+[[units.meiling-fighter-initialize-005e2090.relocations]]
+offset = 35
+type = "DIR32"
+symbol = "?g_MeilingNameAt00659F40@@3QBDB"
+target = 0x00659F40
+[[units.meiling-fighter-initialize-005e2090.relocations]]
+offset = 50
+type = "REL32"
+symbol = "_strcpy"
+target = 0x00641B80
+[[units.meiling-fighter-initialize-005e2090.relocations]]
+offset = 58
+type = "DIR32"
+symbol = "?g_MeilingTagAt00659F48@@3QBDB"
+target = 0x00659F48
+[[units.meiling-fighter-initialize-005e2090.relocations]]
+offset = 72
+type = "REL32"
+symbol = "_strcpy"
+target = 0x00641B80
+
+[units.remilia-fighter-initialize-00551980]
+source = "src/RemiliaInitF311.cpp"
+object = "build/matching/RemiliaInitF311.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["RemiliaFighter::Initialize"]
+symbol = "??0RemiliaCtorF311@@QAE@XZ"
+target_address = 0x00551980
+size = 277
+[[units.remilia-fighter-initialize-00551980.relocations]]
+offset = 11
+type = "REL32"
+symbol = "??0BaseFighterCtorF311@@QAE@XZ"
+target = 0x004567B0
+[[units.remilia-fighter-initialize-00551980.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "??_7RemiliaCtorF311@@6B@"
+target = 0x00659A40
+[[units.remilia-fighter-initialize-00551980.relocations]]
+offset = 93
+type = "DIR32"
+symbol = "?g_RemiliaNameAt00659A34@@3QBDB"
+target = 0x00659A34
+[[units.remilia-fighter-initialize-00551980.relocations]]
+offset = 108
+type = "REL32"
+symbol = "_strcpy"
+target = 0x00641B80
+[[units.remilia-fighter-initialize-00551980.relocations]]
+offset = 116
+type = "DIR32"
+symbol = "?g_RemiliaTagAt00659A3C@@3QBDB"
+target = 0x00659A3C
+[[units.remilia-fighter-initialize-00551980.relocations]]
+offset = 131
+type = "REL32"
+symbol = "_strcpy"
+target = 0x00641B80
+
+[units.yuyuko-fighter-initialize-00574100]
+source = "src/YuyukoInitF311.cpp"
+object = "build/matching/YuyukoInitF311.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["YuyukoFighter::Initialize"]
+symbol = "??0YuyukoCtorF311@@QAE@XZ"
+target_address = 0x00574100
+size = 266
+[[units.yuyuko-fighter-initialize-00574100.relocations]]
+offset = 11
+type = "REL32"
+symbol = "??0BaseFighterCtorF311@@QAE@XZ"
+target = 0x004567B0
+[[units.yuyuko-fighter-initialize-00574100.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "??_7YuyukoCtorF311@@6B@"
+target = 0x00659B80
+[[units.yuyuko-fighter-initialize-00574100.relocations]]
+offset = 83
+type = "DIR32"
+symbol = "?g_YuyukoNameAt00659B74@@3QBDB"
+target = 0x00659B74
+[[units.yuyuko-fighter-initialize-00574100.relocations]]
+offset = 97
+type = "REL32"
+symbol = "_strcpy"
+target = 0x00641B80
+[[units.yuyuko-fighter-initialize-00574100.relocations]]
+offset = 105
+type = "DIR32"
+symbol = "?g_YuyukoTagAt00659B7C@@3QBDB"
+target = 0x00659B7C
+[[units.yuyuko-fighter-initialize-00574100.relocations]]
+offset = 120
+type = "REL32"
+symbol = "_strcpy"
+target = 0x00641B80

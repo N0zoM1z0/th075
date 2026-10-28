@@ -1,4 +1,4 @@
-# TH075 — active reconstruction handoff (F309)
+# TH075 — active reconstruction handoff (F311)
 
 **Updated 2026-10-28. Read this document before new experiments.**
 
@@ -22,17 +22,17 @@ not acceptance requirements.
 
 | Item | Current evidence |
 | --- | --- |
-| Local branch / last exact-code commit | `main` / F309 five 243-byte fighter initialization constructors; F303/F304 input/effects resource checkpoint `9d3d90c` |
+| Local branch / last exact-code commit | `main` / F311 four complete Reimu/Meiling/Remilia/Yuyuko initializers; F309 five other fighter initialization checkpoint `afe5454` |
 | Upstream | `origin/main` tracked locally; verify current ahead/behind and dirty state before further work |
-| Working tree | Clean after F309 checkpoint if successful; continue rather than avoid every existing dirty edit |
+| Working tree | Clean after F311 checkpoint if successful; continue rather than avoid every existing dirty edit |
 | Native binary | `resources/th075.exe`, SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98` |
 | Candidate count | 4,351; origin review: 1,002 authored, 2,671 library, 581 compiler, 97 unknown |
-| Accepted functions / units | **619 / 619** |
-| Accepted authored CODE | **804,482 bytes** |
-| Reviewed authored coverage | 804,482 / 1,973,516 = **40.76%** |
-| Conservative coverage | **40.69%** counting 3,608 origin-pending bytes |
+| Accepted functions / units | **623 / 623** |
+| Accepted authored CODE | **805,461 bytes** |
+| Reviewed authored coverage | 805,461 / 1,973,516 = **40.81%** |
+| Conservative coverage | **40.74%** counting 3,608 origin-pending bytes |
 | Goal | **98% not reached** |
-| Verification | F309 five independently authored Fighter::Initialize functions (Sakuya/Alice/Patchouli/Yukari/Suika) all whole 243 CODE bytes with 219/219 nonfield bytes and 6 authentic native COFF fields each, affected **5/5 cold-exact**. F303/F304 complete input/resource lifetime pair previously checkpointed `9d3d90c`. No all-unit cold replay or external Oracle receipt. |
+| Verification | F311 four whole Reimu (218), Meiling (218), Remilia (277), Yuyuko (266) fighter initializers cold-exact (all 6 physical COFF refs per function and 194/194,194/194,253/253,242/242 nonfield bytes), after F309 five 243-byte fighter constructors `afe5454`. Only F311 new four units cold-replayed 4/4; no all-unit replay or external Oracle receipt. |
 
 **Recheck the actual live status immediately**. Local commits are checkpoints,
 not evidence of a remote push or external Oracle acceptance. Earlier Git
@@ -146,6 +146,10 @@ inert variable or arbitrary padding may earn exact credit.
 | F309: PatchouliFighter::Initialize | `005021C0` | 243 | 6 |
 | F309: YukariFighter::Initialize | `00597380` | 243 | 6 |
 | F309: SuikaFighter::Initialize | `005C0AB0` | 243 | 6 |
+| F311: ReimuFighter::Initialize | `0046D080` | 218 | 6 |
+| F311: MeilingFighter::Initialize | `005E2090` | 218 | 6 |
+| F311: RemiliaFighter::Initialize | `00551980` | 277 | 6 |
+| F311: YuyukoFighter::Initialize | `00574100` | 266 | 6 |
 
 F222 proved signed 32-bit x87 `FILD` divided by the target's 36.0f
 (`00659308`), 74 physical animation records and a final call into the
@@ -291,6 +295,8 @@ F303 **cold-accepts all 260 native CODE bytes of BattleInput::PackDirectionBits*
 F304 **cold-accepts the entire 235-byte R177-authored `StaticBattleResources::ReleaseOwnedEntries`** at `005F6FF0..005F70DA`, **70 independently decoded original x86 instructions, 179/179 comparable nonrelocation bytes, and 14/14 genuine COFF offset/type/native-destination fields** including actual EH handler 0065665C. Full original PE CODE SHA256 `1f53e7d10f210480c80997e41e95e0e5a4d2e34c6bdc86684da27fcb1857a17c`. It first calls real native graphics cleanup `005F7140`; iterates unsigned index over original effect record collection +0x78 with genuine `Size` `005F8340` and repeated `At` `005F8380`, conditionally scalar-deletes owned entries through original `005F7EA0`, and clears collection through `005F83E0`. Natural VC7.1 `/GX` automatic member destruction then reproduces original EH states **2→1→0→−1** and reverse lifetime order: record-list destructor `005F8320` at owner+0x78, native texture destructor `0040AE40` at +0x28, and actual two-member **20-byte-stride** side-list array through native vector destructor iterator `00641D4A`/callback `005F8090` starting at owner+0. The sole authored 235-byte function is separate from F294 1,722-byte catalog loader and F293 84-byte caller; none of these CODE ranges are double-counted. Source `src/StaticEffectReleaseF304.cpp`, independent original disassembly/preview/cold proof `.analysis/f304-static-resources/`. The initially dirty F304 unit and manifest were **not discarded or avoided**; they were independently checked and included with F303 in two-unit `2/2 exact` cold replay. No inferred complete game private member interior, extra CRT/VC7 code credit, target byte graft, masked relocations, all-unit replay or remote Oracle receipt.
 
 F309 **cold-accepts five complete, independently verified 243-byte R050-authored fighter initialization functions**: Sakuya `004C0820`, Alice `004E2C90`, Patchouli `005021C0`, Yukari `00597380`, Suika `005C0AB0`, each **56 independently decoded original x86 instructions**, **219/219** original nonrelocation bytes, and **6/6 true physical COFF relocations** covering F287 already-cold-exact FighterState base constructor `004567B0`, each character's real vtable, two distinct authentic file/resource strings and two native `strcpy` calls to `00641B80`. A complete independent first natural C++ source for each was adapted from the already proved F223 Marisa initialization only as a hypothesis; each individual target's full original physical assembly and target symbol relocations was independently verified, rather than blindly mapping a library-style code template. Native Sakuya/Patchouli/Alice/Yukari/Suika unique +0x478 pattern IDs (`0x27D`, `0x32C`, `0x2AD`, `0x25E`, `0x2A6`), Yukari's 12 rather than 10 texture slots, Suika's special two short fields +0xF28/+0xF2A instead of others +0xEFC/+0xEFE, and original actual full vtables and strings are all preserved. One historical decompiler guess put Patchouli's first string at `00659758` (the middle of `patchouli`); direct original PE-backed relocation/string inspection proved the correct base `00659754`, which is now in authored source and independently cold-replayed. All five emit **whole 243 CODE bytes** under pinned VC7.1 `/Od /GX-`, with **5/5 local cold-exact** results across only the five new units. Adopted source files `src/SakuyaInitF309.cpp`, `src/AliceInitF309.cpp`, `src/PatchouliInitF309.cpp`, `src/YukariInitF309.cpp`, `src/SuikaInitF309.cpp`; native Ghidra/raw strings/probe/COFF/cold evidence `.analysis/f309-fighter-inits/`. Earlier F223 Marisa/F287 fighter base code is not re-counted; unknown private fighter source class layouts, separately owned CRT and 97 pending origins remain excluded. No bytes masked, padded, truncated or copied; no all-unit cold replay/remote Oracle claim.
+
+F311 independently **cold-accepts four complete game fighter init functions** at native Reimu `0046D080` (218 bytes, 52 original instructions, R046), Meiling `005E2090` (218, 52 instructions, R050), Remilia `00551980` (277, 62 instructions, R050), Yuyuko `00574100` (266, 60 instructions, R050). Nonrelocation comparison is 194/194, 194/194, 253/253 and 242/242 respectively; all **6 genuine physical COFF offsets/types/solved targets per function** (24 total) match the true fighter base constructor `004567B0`, distinct original character vtables, actual native names/tags and two original `strcpy` calls. The two 218-byte simple constructors lack the early two short-counter clears present in F309's 243-byte family; Remilia has exactly three additional actual clears +0x6FA/+0x6FC shorts and +0x6F8 byte, pattern `0x2A0`, 11 texture slots; Yuyuko has two extra original shorts +0xEFA/+0xF10, pattern `0x21C`, 10 slots. Reimu/Meiling use original patterns `0x287`/`0x264` and 10 slots. A separate older string estimate for Remilia incorrectly identified `00659A30`; original PE and physical COFF relocation prove the name `remilia` starts at `00659A34`, which was corrected in the final standalone source. Four new full C++ sources `src/ReimuInitF311.cpp`, `src/MeilingInitF311.cpp`, `src/RemiliaInitF311.cpp`, `src/YuyukoInitF311.cpp` independently compiled with pinned VC7.1 and cold replay **4/4 exact on only these four units**, not re-crediting original F287 fighter base or F309 siblings. Original native/decomp/relocations and negative name proof `.analysis/f311-fighter-variants/`. No imported CRT/VC7 or origin-pending CODE, byte grafting, fake stack locals, masked fields, cropped source, all-unit cold replay or external Oracle claim.
 
 Relevant full native proofs: `config/match-units.toml`,
 `config/exact-adoptions.json`, sources `src/*F222.cpp`/`src/*F223.cpp`,
