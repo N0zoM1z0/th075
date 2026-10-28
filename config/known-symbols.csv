@@ -727,3 +727,4 @@ address,name,module,confidence,evidence
 0x00420440,FighterScript::InitializeAt00420440,FighterScript,inferred,"F430; full native 130 CODE, 6 physical original COFF refs, 1/1 affected exact; true borrowed owner layout"
 0x005F6F60,StaticBattleResources::ConstructAndClearContainersAt005F6F60,StaticResourcePolicy,inferred,"F431; entire original 142-byte native static two-element effects resource constructor with genuine VC7.1 vector constructor/EH, 12 real COFF refs and local cold exact"
 0x00428E60,OptionsScene::ReleaseSceneTextureAndResourceAt00428E60,OptionsScene,inferred,"F432; complete native 154-byte R235 OptionsScene derived dtor; vtbl, texture delete, D3D Release and base virtual dtor with 7 physical original COFF refs; cold exact"
+0x0042B1F0,NameEntryScene::InitializeAt0042B1F0,NameEntryScene,inferred,"F435; full R109 260-byte /GX derived scene ctor; 15 native COFF refs, original replay archive and independent record selection cold exact"

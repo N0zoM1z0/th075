@@ -55453,3 +55453,88 @@ offset = 146
 type = "DIR32"
 symbol = "__except_list"
 target = 0x00000000
+
+
+[units.name-entry-scene-initialize-0042b1f0]
+source = "src/NameEntrySceneInitializeF435.cpp"
+object = "build/matching/NameEntrySceneInitializeF435.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["NameEntryScene::InitializeAt0042B1F0"]
+symbol = "??0NameEntryInitF435@@QAE@XZ"
+target_address = 0x0042B1F0
+size = 260
+[[units.name-entry-scene-initialize-0042b1f0.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0NameEntryInitF435@@QAE@XZ"
+target = 0x00655913
+[[units.name-entry-scene-initialize-0042b1f0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.name-entry-scene-initialize-0042b1f0.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.name-entry-scene-initialize-0042b1f0.relocations]]
+offset = 34
+type = "REL32"
+symbol = "??0SceneBaseF435@@QAE@XZ"
+target = 0x004251C0
+[[units.name-entry-scene-initialize-0042b1f0.relocations]]
+offset = 50
+type = "DIR32"
+symbol = "??_7NameEntryInitF435@@6B@"
+target = 0x00657FAC
+[[units.name-entry-scene-initialize-0042b1f0.relocations]]
+offset = 57
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.name-entry-scene-initialize-0042b1f0.relocations]]
+offset = 81
+type = "REL32"
+symbol = "??0NameEntryTextureF435@@QAE@XZ"
+target = 0x0040AD80
+[[units.name-entry-scene-initialize-0042b1f0.relocations]]
+offset = 125
+type = "REL32"
+symbol = "?AllocateSlots@NameEntryTextureF435@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.name-entry-scene-initialize-0042b1f0.relocations]]
+offset = 130
+type = "DIR32"
+symbol = "?g_ReplayArchiveRootAt00657F7C@@3PADA"
+target = 0x00657F7C
+[[units.name-entry-scene-initialize-0042b1f0.relocations]]
+offset = 135
+type = "DIR32"
+symbol = "?g_ReplayDataPathAt00657F84@@3PADA"
+target = 0x00657F84
+[[units.name-entry-scene-initialize-0042b1f0.relocations]]
+offset = 146
+type = "REL32"
+symbol = "?LoadArchive@NameEntryTextureF435@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.name-entry-scene-initialize-0042b1f0.relocations]]
+offset = 189
+type = "DIR32"
+symbol = "?g_ReplayNameModeAt006714CE@@3CA"
+target = 0x006714CE
+[[units.name-entry-scene-initialize-0042b1f0.relocations]]
+offset = 221
+type = "DIR32"
+symbol = "?g_ReplayDataReaderAt00671750@@3VReplayDataReaderF435@@A"
+target = 0x00671750
+[[units.name-entry-scene-initialize-0042b1f0.relocations]]
+offset = 226
+type = "REL32"
+symbol = "?GetSelection@ReplayDataReaderF435@@QAEPAXPAX@Z"
+target = 0x00414300
+[[units.name-entry-scene-initialize-0042b1f0.relocations]]
+offset = 252
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000

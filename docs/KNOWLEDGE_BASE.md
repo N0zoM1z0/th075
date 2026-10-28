@@ -6552,3 +6552,35 @@ texture deleter and base destructor references. Pinned VC7.1
 No imported D3D resources, texture/scene callee CODE, fake local padding,
 masked/cropped comparison, assembly, byte grafts, full replay or remote
 Oracle acceptance credited.
+
+
+## F435: complete 260-byte native NameEntry scene and replay archive constructor
+
+R109-authored original `NameEntryScene::InitializeAt0042B1F0` occupies
+**260 original authored CODE bytes / 71 native x86 instructions** at
+`0042B1F0..0042B2F3`, native PE SHA256
+`0e8571ffc4d9d443fe4dee4449d9640c406dc8b8b8aa097dcf0a697c52c71877`.
+A true derived scene C++ constructor invokes native base `004251C0`,
+installs its original vtable at `00657FAC`, creates an actual 80-byte
+resource manager (`operator new` at `0064159D`, manager ctor `0040AD80`)
+and allocates 3 archive slots via `0040B1D0`. Original `0040BB80` archive
+load reads the physical path `data\system\replay.dat` from `00657F84`
+and root `datab` from `00657F7C` (independently verified original bytes).
+The source initializes all four genuine short scene selection states at
++0xE/+0x10/+0x12/+0x14 to zero, derives its +0xC byte from signed global
+`006714CE`, and stores the original returned selection reader object from
+`00414300`, receiver global `00671750` with output +0x1C, at +0x18.
+The original VC7.1 `/GX` SEH handler, transaction states and all return
+paths are compiler produced, not pasted.
+
+Natural `src/NameEntrySceneInitializeF435.cpp` reproduces the *whole*
+original **260-byte CODE extent, 200/200 nonrelocation bytes and all
+15/15 genuine native COFF relocation fields/destinations**, including
+original handler `00655913`, scene vtable, exact archive strings and
+all native callees. Pinned VC7.1 `/Od /Ob0 /Gy /GR- /GX /GS /Zi` cold
+replay targeted only the affected
+`name-entry-scene-initialize-0042b1f0` unit and returned **1/1 exact**.
+The complete unknown original private class members, external scene
+constructor, texture manager, archive and selection callee CODE remain
+borrowed and uncredited. No fake padding, ASM, raw original bytes,
+masked/cropped comparison, full cold replay or Oracle receipt.
