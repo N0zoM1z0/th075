@@ -638,3 +638,4 @@ address,name,module,confidence,evidence
 0x00496C60,CharacterAux::RunAt00496C60,CharacterAux,inferred,"F361; complete 1027 native authored CODE, real effect 817/unlinked/scale1.0 variant, eleven physical COFF fields, cold exact; private owner unknown"
 0x00470A40,CharacterAux::RunAt00470A40,CharacterAux,inferred,"F362; entire separately owned 1027-byte auxiliary controller, 240 native instructions, 11 genuine physical COFF references; cold exact, receiver nominal identity unknown"
 0x00555530,CharacterAux::RunAt00555530,CharacterAux,inferred,"F363; independently original complete 1028-byte native distance-first controller, effect 850/scale1.0, 11 physical COFF fields cold exact; complete original class unknown"
+0x00577750,CharacterAux::RunAt00577750,CharacterAux,inferred,"F364; entire original 1121-byte R049 game-specific timed auxiliary controller with signed F0E +/-360 wrap, true 11 physical refs cold exact; borrowed fighter class"

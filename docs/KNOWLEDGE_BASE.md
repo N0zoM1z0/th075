@@ -5398,3 +5398,35 @@ Only affected unit `character-aux-effect-distance-first-00555530` was
 cold-built and returned **1/1 exact**, including the entire original body.
 No F062 call/helper bytes are counted, no fabricated padding/locals, asm,
 masking, cropped comparison, external Oracle claim or all-unit cold replay.
+
+
+## F364: full 1,121-byte timed character auxiliary special policy at 00577750
+
+The R049-authored original `CharacterAux::RunAt00577750`,
+`00577750..00577BB0`, is **1,121 complete original CODE bytes** and
+**261 independently decoded native x86 instructions**, original PE SHA256
+`01c37dade91b7b7c9d0b9a5ba90c5f1efc092304af2473cd305dd34fe834ea2e`.
+It first clears grounded/inactive state at +0x50/+0x3AC. The separately
+observed signed-short +0xF0E state advances by two when +0x3B8 is zero,
+resets if negative, and wraps when it reaches **360**. It then has the
+three distinct +0xF0A one-shot action-state effect-spawn windows using
+original inherited `00453AC0`, effect 899 (0x383), signed facing
+multiplied by 57, original Y offsets 94/60/100, 1.0f scale and linked
+flag 1. Final signed short +0xF10 tracks opponent-relative distance
+540/320 clamps. Names/owner layouts remain provisional, not asserted.
+
+The F364 natural source began with experimentally validated shared
+F062/F361 field/compiler shapes, but used only target-observed distinct
+fields/values and added the three genuine timer guards from original
+Ghidra and native x86. First complete 1,121-byte probe matched
+**1075/1077** comparable original bytes, all 11 physical relocation
+positions, but emitted `CMP 359; JLE` where native uses `CMP 360; JL`.
+Expressing the exact native condition as `FIELD(short,0xF0E)>=360`
+reproduces both byte positions: **1077/1077** comparable code and all
+**11** genuine DIR32/REL32 physical relocation destinations, with three
+real calls to `00453AC0`. Independent affected-only cold replay of unit
+`character-aux-timed-special-00577750` under pinned VC7.1
+`/Od /Ob0 /Gy /GR- /GX- /Zi` returned **1/1 exact** across all original
+1,121 CODE bytes. This credits no generated/library/callee bytes or
+unknown class layouts, uses no masked/patched bytes, fake locals, assembly,
+cropped function, all-unit replay or external Oracle claim.

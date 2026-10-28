@@ -47604,3 +47604,68 @@ offset = 1008
 type = "REL32"
 symbol = "?SpawnTrackedEffect@CharacterAux00555530F363@@QAEXFMMCCE@Z"
 target = 0x00453AC0
+
+
+[units.character-aux-timed-special-00577750]
+source = "src/CharacterAux00577750F364.cpp"
+object = "build/matching/CharacterAux00577750F364.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["CharacterAux::RunAt00577750"]
+symbol = "?AdvanceAuxiliary@CharacterAux00577750F364@@QAEXXZ"
+target_address = 0x00577750
+size = 1121
+[[units.character-aux-timed-special-00577750.relocations]]
+offset = 14
+type = "DIR32"
+symbol = "__real@00000000"
+target = 0x0065782C
+[[units.character-aux-timed-special-00577750.relocations]]
+offset = 363
+type = "DIR32"
+symbol = "__real@42bc0000"
+target = 0x00659138
+[[units.character-aux-timed-special-00577750.relocations]]
+offset = 406
+type = "REL32"
+symbol = "?SpawnTrackedEffect@CharacterAux00577750F364@@QAEXFMMCCE@Z"
+target = 0x00453AC0
+[[units.character-aux-timed-special-00577750.relocations]]
+offset = 620
+type = "DIR32"
+symbol = "__real@42700000"
+target = 0x00658264
+[[units.character-aux-timed-special-00577750.relocations]]
+offset = 663
+type = "REL32"
+symbol = "?SpawnTrackedEffect@CharacterAux00577750F364@@QAEXFMMCCE@Z"
+target = 0x00453AC0
+[[units.character-aux-timed-special-00577750.relocations]]
+offset = 858
+type = "DIR32"
+symbol = "__real@42c80000"
+target = 0x00657888
+[[units.character-aux-timed-special-00577750.relocations]]
+offset = 901
+type = "REL32"
+symbol = "?SpawnTrackedEffect@CharacterAux00577750F364@@QAEXFMMCCE@Z"
+target = 0x00453AC0
+[[units.character-aux-timed-special-00577750.relocations]]
+offset = 937
+type = "DIR32"
+symbol = "__real@44070000"
+target = 0x00659134
+[[units.character-aux-timed-special-00577750.relocations]]
+offset = 968
+type = "DIR32"
+symbol = "__real@c4070000"
+target = 0x00659130
+[[units.character-aux-timed-special-00577750.relocations]]
+offset = 1011
+type = "DIR32"
+symbol = "__real@43a00000"
+target = 0x0065787C
+[[units.character-aux-timed-special-00577750.relocations]]
+offset = 1042
+type = "DIR32"
+symbol = "__real@c3a00000"
+target = 0x00657880
