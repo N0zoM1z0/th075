@@ -1808,3 +1808,51 @@ and independent single-unit cold replay
 relocations and accepted source digest without broad cold builds. Source
 names and complete original parent layouts are inferred and no external
 callee bytes, unknown-origin code or Oracle verification are claimed.
+
+
+## F252/F253: native cardfile encoder and four decimal painters cold exact
+
+Five independently reviewed authored functions were cold-replayed **one at a
+time** against the pinned TH075 PE. All original function extents are whole,
+nonoverlapping and retain their own physical COFF relocation fields:
+
+* `CardList::EncodeCharacterFile` (`00431D60`): 432 CODE bytes / 15 COFF
+  fields, native SHA256
+  `7260a159f1b3d592a52ace497f27a83264ac4b44321806b2681494bff65ea2ab`.
+  A previous natural 450-byte source was incorrect; the retained
+  `src/CardEncodeF252.cpp` uses the observed 260-byte filename buffer and
+  meaningful local scopes. The exact body preserves original pathname
+  formatting, Win32 read/write/close, conditional failure branches, the
+  full native cumulative 8-bit XOR key/step loop, and the GS cookie check.
+  All 432 bytes and 15 relocation destinations cold replay exact.
+* `MusicRoomScene::DrawNumber` (`00427180`): 377 bytes / 9 fields, original
+  SHA256 `8063f13302db50d2849318f67155f3e7b4a49e5af78a46312814af2c461659c5`.
+* `ReplayScene::DrawNumber` (`0042AE70`): 377 bytes / 9 fields, original
+  SHA256 `d0861536a0d25c2ad32eeca09c0de0a2d2d0177f0c6702c90309d27b4acb5295`.
+* `ReplayScene::DrawSlotNumber` (`0042BFD0`): 377 bytes / 9 fields, original
+  SHA256 `d69ae88f62db4d39274c7289cc25a5b9460aca29e7b276272cfc380e15835d04`.
+* `ResultScene::DrawCounter` (`004315F0`): 377 bytes / 9 fields, original
+  SHA256 `382a5bed703c2eb0ef616aeb08a96edfd4b90c92b8caa4bd768e094d9c4270f6`.
+
+The four digit painters build the real 132-byte SpriteQuad and 16-byte RECT,
+have actual 5-argument `thiscall` stack cleanup, preserve both fixed-digit
+and variable-digit signed divide-by-ten loops, and retain the original
+DrawQuad/TranslateQuad/Win32 SetRect calls. The atlas glyph width is **15 px
+for music and 19 px for replay/result**, while the physical region heights
+are respectively 16 px and 20 px. The initial independent probes used
+heights as width and had six non-field differences each. Correcting these
+actual native atlas widths yielded **341/341** comparable nonrelocation
+bytes and **9/9** real fields per complete 377-byte function.
+
+All five untracked sources and pre-existing match-unit candidates were
+inspected, kept and independently cold-replayed exact, then promoted to
+protected ledgers with original authored origin IDs R041/R043/R052.
+`tests/test_digit_family_card_f253.py` checks the original full-PE SHA256
+and actual relocation positions and source hashes with no all-unit replay.
+The exact build logs are in `.analysis/f253-digit-family/`, previous
+negative experiments for the encoder in `.analysis/f252-cardfile/`.
+Separate larger `DataArchive::Write` (686) and `OpenAndReadIndex` (429)
+are **not** exact or credited; all original negative controls remain.
+No hand-authored instruction bytes, masks, dummy locals, truncated CODE
+extents, additional original class ABI claims, or remote Oracle acceptance.
+The 97 pending origins remain unchanged and uncredited.

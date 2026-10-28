@@ -4,8 +4,8 @@ Current scope is TH075 exact function reconstruction, including both
 large/core functions and small helpers. Treat prior
 documents, working hypotheses, and historical exact labels as testable leads,
 not proof. Inspect dirty edits and continue unfinished investigations within the
-assigned scope. Preserve concurrent work reported by the user and commit only
-reviewed changes from this session.
+assigned scope. The user reports there are no other active sessions: inspect, preserve and
+continue all unfinished dirty work; commit verified progress promptly.
 Commit substantial verified progress promptly with the session's requested prefix.
 The 98% authored-byte objective remains incomplete; do not declare completion
 without a verified build.

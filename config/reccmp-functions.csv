@@ -562,3 +562,8 @@ NameEntryScene::UpdatePlayer,0x0042A340,function
 ProgressRecords::SaveScoreFile,0x004169E0,function
 ProgressRecords::LoadScoreFile,0x00416B10,function
 NameEntryScene::UpdateShared,0x0042B380,function
+MusicRoomScene::DrawNumber,0x00427180,function
+ReplayScene::DrawNumber,0x0042AE70,function
+ReplayScene::DrawSlotNumber,0x0042BFD0,function
+ResultScene::DrawCounter,0x004315F0,function
+CardList::EncodeCharacterFile,0x00431D60,function

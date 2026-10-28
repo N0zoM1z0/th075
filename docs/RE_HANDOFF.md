@@ -1,4 +1,4 @@
-# TH075 — active reconstruction handoff (F251)
+# TH075 — active reconstruction handoff (F253)
 
 **Updated 2026-10-28. Read this document before new experiments.**
 
@@ -22,17 +22,17 @@ not acceptance requirements.
 
 | Item | Current evidence |
 | --- | --- |
-| Local branch / last exact-code commit | `main` / F251 local acceptance; prior F248 commit `0c4d1f4` |
+| Local branch / last exact-code commit | `main` / F253 local acceptance; prior F251 `ea6bd4e`, workflow follow-up `f3071c2` |
 | Upstream | `origin/main` tracked locally; verify current ahead/behind and dirty state before further work |
-| Working tree | Clean after F251 commit if successful; preserve and inspect all dirty edits |
+| Working tree | Clean after F253 commit if successful; continue rather than avoid every existing dirty edit |
 | Native binary | `resources/th075.exe`, SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98` |
 | Candidate count | 4,351; origin review: 1,002 authored, 2,671 library, 581 compiler, 97 unknown |
-| Accepted functions / units | **563 / 563** |
-| Accepted authored CODE | **783,635 bytes** |
-| Reviewed authored coverage | 783,635 / 1,973,516 = **39.71%** |
-| Conservative coverage | **39.64%** counting 3,608 origin-pending bytes |
+| Accepted functions / units | **568 / 568** |
+| Accepted authored CODE | **785,575 bytes** |
+| Reviewed authored coverage | 785,575 / 1,973,516 = **39.81%** |
+| Conservative coverage | **39.73%** counting 3,608 origin-pending bytes |
 | Goal | **98% not reached** |
-| Verification | F251 complete 494-byte shared name editor with all 16 genuine COFF fields cold exact; F248 456-byte score reader previously cold exact. Only newly affected units replayed; no full cold replay or external Oracle acceptance |
+| Verification | F252 432-byte encoded character-file writer plus four F253 377-byte decimal drawing functions separately cold-exact, 1,940 new CODE bytes and 51 actual COFF fields. Only these five newly affected units replayed; no all-unit cold replay or external Oracle acceptance |
 
 **Recheck the actual live status immediately**. Local commits are checkpoints,
 not evidence of a remote push or external Oracle acceptance. Earlier Git
@@ -90,6 +90,11 @@ inert variable or arbitrary padding may earn exact credit.
 | F247 `00f2f6d`: ProgressRecords::SaveScoreFile | `004169E0` | 297 | 11 |
 | F248 `0c4d1f4`: ProgressRecords::LoadScoreFile | `00416B10` | 456 | 15 |
 | F251: NameEntryScene::UpdateShared | `0042B380` | 494 | 16 |
+| F252: CardList::EncodeCharacterFile | `00431D60` | 432 | 15 |
+| F253: MusicRoomScene::DrawNumber | `00427180` | 377 | 9 |
+| F253: ReplayScene::DrawNumber | `0042AE70` | 377 | 9 |
+| F253: ReplayScene::DrawSlotNumber | `0042BFD0` | 377 | 9 |
+| F253: ResultScene::DrawCounter | `004315F0` | 377 | 9 |
 
 F222 proved signed 32-bit x87 `FILD` divided by the target's 36.0f
 (`00659308`), 74 physical animation records and a final call into the
@@ -97,7 +102,7 @@ F222 proved signed 32-bit x87 `FILD` divided by the target's 36.0f
 `i <= 36`, not the byte-different `i < 37`. Its three relocations all
 match. F223 adds two complete borrowed constructors and a real EH-backed
 232-byte `new`; Youmu additionally calls the observed +0xFEC child init.
-All thirty-three units were independently cold-exact. F224 used a complete, native-EH-backed `new(0xE8)` with the real Youmu constructor at `00536360`, then ordered 16 halfword resets, the accepted base reset `00457010`, and the observed +0xFEC subcomponent reset `00531CE0`. Their nominal C++ classes and
+All thirty-eight units were independently cold-exact. F224 used a complete, native-EH-backed `new(0xE8)` with the real Youmu constructor at `00536360`, then ordered 16 halfword resets, the accepted base reset `00457010`, and the observed +0xFEC subcomponent reset `00531CE0`. Their nominal C++ classes and
 external helper implementations are **not** established by code equality.
 
 F225 additionally accepts an entire 668-byte character-selection constructor (185 native instructions) with actual vtable, three separately allocated texture managers, two deleting destructors, two real configuration loops, and 38 relocation fields. Its first full probe used mistaken pointer-indirect indexing and emitted 677 bytes; the verified this-relative byte arrays restore exact native 668 bytes. The base-scene constructor remains R108 origin-unknown and uncredited.
@@ -145,6 +150,8 @@ F248 cold-accepts the entire **456-byte `ProgressRecords::LoadScoreFile`** (154 
 F249 and F250 independently reconstructed full native **686-byte `DataArchive::Write`** and **429-byte `DataArchive::OpenAndReadIndex`** skeletons with 28/10 actual relocation fields and true file/archive loop semantics, but neither is cold-exact due to VC7.1 stack-scope and local alias alignment. F249 best non-field comparison improves 482/574 -> 495/574 via true read-XOR-write semantics; F250 improved to 366/389 by sharing real loop index and explicitly assigning original XOR expression, while 12 declaration reorderings and nested scope experiments remain negatives. No source/exact credit; complete experiments are in `.analysis/f249-archive-writer/` and `.analysis/f248-archive-write/`, `.analysis/f249-archive-writer/` and `.analysis/f251-name-shared/`. Keep pursuing these authentic large functions.
 
 F251 cold-accepts the complete **494-byte `NameEntryScene::UpdateShared`**, 143 instructions, all 16 physical fields and 430/430 non-field bytes. Initial natural source had all correct code except a 2-byte discrepancy in the last branch; positive edit-if with else return exactly reconstructs native JNZ/JMP layout. Only `--unit name-entry-scene-update-shared-0042b380` cold replayed. Full native and source probes in `.analysis/f251-name-shared/`.
+
+F252/F253 independently cold-accepted five complete authored functions. `CardList::EncodeCharacterFile` is the full 432-byte native file converter with 15 authentic relocations, real `cardlist.txt`/`.dat` paths, byte stream XOR and Win32 read/write/close. Four 377-byte decimal painters use the same verified VC7.1 `SpriteQuad`/`RECT` lifetimes but genuinely different original text atlas widths: **15×16** for music and **19×20** for three replay/result routines, matching all 341/341 non-field bytes and 9/9 relocations apiece. The pre-existing dirty source and unit definitions were retained and independently cold-replayed one by one. Native SHA files/diagnostics: `.analysis/f253-digit-family/` and `.analysis/f252-cardfile/`. **F249 686-byte writer and F250 429-byte archive index remain unaccepted**, despite full-function source and repeated physical stack investigations. Do not credit either before cold exact.
 
 Relevant full native proofs: `config/match-units.toml`,
 `config/exact-adoptions.json`, sources `src/*F222.cpp`/`src/*F223.cpp`,

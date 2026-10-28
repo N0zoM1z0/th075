@@ -544,3 +544,8 @@ address,name,module,confidence,evidence
 0x004169E0,ProgressRecords::SaveScoreFile,ProgressRecords,inferred,F247; native whole 297-byte save file and 11 real fields exact; original progress record full owner layout unknown
 0x00416B10,ProgressRecords::LoadScoreFile,ProgressRecords,inferred,"F248; whole 456 native score file reader, original short/long file formats and 15 original fields cold exact; full owner layout unknown"
 0x0042B380,NameEntryScene::UpdateShared,NameEntryScene,inferred,F251; complete 494-byte shared name entry controller and 16 native relocation fields cold exact; complete scene and progress types provisional
+0x00427180,MusicRoomScene::DrawNumber,MusicRoomScene,inferred,F253; independently whole 377-byte cold exact with 9 real COFF relocation fields; nominal parent layout unproven
+0x0042AE70,ReplayScene::DrawNumber,ReplayScene,inferred,F253; independently whole 377-byte cold exact with 9 real COFF relocation fields; nominal parent layout unproven
+0x0042BFD0,ReplayScene::DrawSlotNumber,ReplayScene,inferred,F253; independently whole 377-byte cold exact with 9 real COFF relocation fields; nominal parent layout unproven
+0x004315F0,ResultScene::DrawCounter,ResultScene,inferred,F253; independently whole 377-byte cold exact with 9 real COFF relocation fields; nominal parent layout unproven
+0x00431D60,CardList::EncodeCharacterFile,CardList,inferred,F252; independently whole 432-byte cold exact with 15 real COFF relocation fields; nominal parent layout unproven

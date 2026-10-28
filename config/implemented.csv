@@ -561,3 +561,8 @@ NameEntryScene::UpdatePlayer
 ProgressRecords::SaveScoreFile
 ProgressRecords::LoadScoreFile
 NameEntryScene::UpdateShared
+MusicRoomScene::DrawNumber
+ReplayScene::DrawNumber
+ReplayScene::DrawSlotNumber
+ResultScene::DrawCounter
+CardList::EncodeCharacterFile
