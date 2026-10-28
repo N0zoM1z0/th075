@@ -45707,3 +45707,262 @@ offset = 171
 type = "REL32"
 symbol = "?RemoveFront@SpriteHistoryListF325@@QAEXXZ"
 target = 0x00411D00
+
+[units.replay-records-append-record-00413de0]
+source = "src/ReplayAppendRecordF326.cpp"
+object = "build/matching/ReplayAppendRecordF326.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["ReplayRecords::AppendRecord"]
+symbol = "?AppendRecord@ReplayAppendF219@@QAEXXZ"
+target_address = 0x00413DE0
+size = 1252
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 35
+type = "REL32"
+symbol = "?Initialize@ByteIteratorF219@@QAEXXZ"
+target = 0x00414930
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 43
+type = "REL32"
+symbol = "?Initialize@ByteIteratorF219@@QAEXXZ"
+target = 0x00414930
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 51
+type = "REL32"
+symbol = "?Initialize@WordIteratorF219@@QAEXXZ"
+target = 0x004149E0
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 59
+type = "REL32"
+symbol = "?Initialize@WordIteratorF219@@QAEXXZ"
+target = 0x004149E0
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 67
+type = "REL32"
+symbol = "?Initialize@DwordIteratorF219@@QAEXXZ"
+target = 0x00414A90
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 75
+type = "REL32"
+symbol = "?Initialize@DwordIteratorF219@@QAEXXZ"
+target = 0x00414A90
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 96
+type = "DIR32"
+symbol = "__imp__SetFilePointer@16"
+target = 0x00657128
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 157
+type = "DIR32"
+symbol = "__imp__WriteFile@20"
+target = 0x00657124
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 193
+type = "DIR32"
+symbol = "__imp__WriteFile@20"
+target = 0x00657124
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 229
+type = "DIR32"
+symbol = "__imp__WriteFile@20"
+target = 0x00657124
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 264
+type = "DIR32"
+symbol = "__imp__WriteFile@20"
+target = 0x00657124
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 300
+type = "DIR32"
+symbol = "__imp__WriteFile@20"
+target = 0x00657124
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 336
+type = "DIR32"
+symbol = "__imp__WriteFile@20"
+target = 0x00657124
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 371
+type = "DIR32"
+symbol = "__imp__WriteFile@20"
+target = 0x00657124
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 407
+type = "DIR32"
+symbol = "__imp__WriteFile@20"
+target = 0x00657124
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 443
+type = "DIR32"
+symbol = "__imp__WriteFile@20"
+target = 0x00657124
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 478
+type = "DIR32"
+symbol = "__imp__WriteFile@20"
+target = 0x00657124
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 499
+type = "REL32"
+symbol = "?Begin@ByteQueueF219@@QAE?AVByteIteratorF219@@XZ"
+target = 0x004143D0
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 531
+type = "REL32"
+symbol = "?End@ByteQueueF219@@QAE?AVByteIteratorF219@@XZ"
+target = 0x00414400
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 559
+type = "REL32"
+symbol = "?Size@ByteQueueF219@@QAEIXZ"
+target = 0x00414430
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 589
+type = "DIR32"
+symbol = "__imp__WriteFile@20"
+target = 0x00657124
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 605
+type = "REL32"
+symbol = "??EByteIteratorF219@@QAE?AV0@H@Z"
+target = 0x00414970
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 617
+type = "REL32"
+symbol = "??9ByteIteratorF219@@QBE_NABV0@@Z"
+target = 0x004149B0
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 640
+type = "REL32"
+symbol = "??DByteIteratorF219@@QBEAADXZ"
+target = 0x00414950
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 656
+type = "DIR32"
+symbol = "__imp__WriteFile@20"
+target = 0x00657124
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 679
+type = "REL32"
+symbol = "?Begin@WordQueueF219@@QAE?AVWordIteratorF219@@XZ"
+target = 0x004145C0
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 711
+type = "REL32"
+symbol = "?End@WordQueueF219@@QAE?AVWordIteratorF219@@XZ"
+target = 0x004145F0
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 739
+type = "REL32"
+symbol = "?Size@WordQueueF219@@QAEIXZ"
+target = 0x00414620
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 769
+type = "DIR32"
+symbol = "__imp__WriteFile@20"
+target = 0x00657124
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 785
+type = "REL32"
+symbol = "??EWordIteratorF219@@QAE?AV0@H@Z"
+target = 0x00414A20
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 797
+type = "REL32"
+symbol = "??9WordIteratorF219@@QBE_NABV0@@Z"
+target = 0x00414A60
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 820
+type = "REL32"
+symbol = "??DWordIteratorF219@@QBEAAFXZ"
+target = 0x00414A00
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 836
+type = "DIR32"
+symbol = "__imp__WriteFile@20"
+target = 0x00657124
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 859
+type = "REL32"
+symbol = "?Begin@ByteQueueF219@@QAE?AVByteIteratorF219@@XZ"
+target = 0x004143D0
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 891
+type = "REL32"
+symbol = "?End@ByteQueueF219@@QAE?AVByteIteratorF219@@XZ"
+target = 0x00414400
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 919
+type = "REL32"
+symbol = "?Size@ByteQueueF219@@QAEIXZ"
+target = 0x00414430
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 949
+type = "DIR32"
+symbol = "__imp__WriteFile@20"
+target = 0x00657124
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 965
+type = "REL32"
+symbol = "??EByteIteratorF219@@QAE?AV0@H@Z"
+target = 0x00414970
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 977
+type = "REL32"
+symbol = "??9ByteIteratorF219@@QBE_NABV0@@Z"
+target = 0x004149B0
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 1000
+type = "REL32"
+symbol = "??DByteIteratorF219@@QBEAADXZ"
+target = 0x00414950
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 1016
+type = "DIR32"
+symbol = "__imp__WriteFile@20"
+target = 0x00657124
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 1042
+type = "REL32"
+symbol = "?Begin@DwordQueueF219@@QAE?AVDwordIteratorF219@@XZ"
+target = 0x004147B0
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 1077
+type = "REL32"
+symbol = "?End@DwordQueueF219@@QAE?AVDwordIteratorF219@@XZ"
+target = 0x004147E0
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 1105
+type = "REL32"
+symbol = "?Size@DwordQueueF219@@QAEIXZ"
+target = 0x00414810
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 1135
+type = "DIR32"
+symbol = "__imp__WriteFile@20"
+target = 0x00657124
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 1154
+type = "REL32"
+symbol = "??EDwordIteratorF219@@QAE?AV0@H@Z"
+target = 0x00414AD0
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 1166
+type = "REL32"
+symbol = "??9DwordIteratorF219@@QBE_NABV0@@Z"
+target = 0x00414B10
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 1189
+type = "REL32"
+symbol = "??DDwordIteratorF219@@QBEAAIXZ"
+target = 0x00414AB0
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 1205
+type = "DIR32"
+symbol = "__imp__WriteFile@20"
+target = 0x00657124
+[[units.replay-records-append-record-00413de0.relocations]]
+offset = 1218
+type = "REL32"
+symbol = "?ClearQueues@ReplayAppendF219@@QAEXXZ"
+target = 0x00413880

@@ -3739,12 +3739,12 @@ Genuine alternative loop-source, iterator receiver, used-free-pointer scope
 and typed aggregate controls remain negative in `.analysis/f297-aux-prune/`
 and `.analysis/f298-aux-lifetimes/`, zero coverage credit.
 
-The full 1,252-byte `ReplayRecords::AppendRecord` still has authentic
-complete control flow and all 50 COFF fields in its best retained C++
-source, but **19 actual stack slot byte operands** remain nonmatching
-(1,033/1,052). Further real typed iterator/count/written declaration
-interleavings and pair-owner probes under `.analysis/f296-append-interleave/`
-were negative, and cannot be credited or solved with fake padding.
+The full 1,252-byte `ReplayRecords::AppendRecord` had 19 unresolved
+stack slot bytes (1,033/1,052) **at the F296 stage**; the later
+**F326 entire-function cold-exact proof below** resolves them via
+true observed 56-byte iterator/record storage and constructor order.
+Retain the genuine failed typed iterator/count/written controls under
+`.analysis/f296-append-interleave/` as historical evidence.
 
 
 ## F301: cold-exact 247-byte FighterState notice state machine
@@ -4513,3 +4513,95 @@ or changed native iterator ABI. None is credited as complete. No
 artificial stack alignment filler, machine-byte patch, manual x86,
 truncated function, masked original relocations, or remote Oracle
 acceptance is claimed.
+
+
+## F326: exact full 1,252-byte ReplayRecords::AppendRecord writing boss
+
+`ReplayRecords::AppendRecord` is independently confirmed as one
+complete original R035-authored `00413DE0..004142C3` PE CODE
+function of **1,252 bytes**, **379 decoded original x86 instructions**
+and real plain `RET` under a native `0x9C` unoptimized stack frame.
+Pinned Japanese PE full code SHA256 is
+`f39de667fe840de794dcfc5fc2862e6cdefad400df8654206cad736561dc361c`.
+Its native original disassembly/Ghidra and older negative hypotheses
+are retained in `.analysis/f218-replay-file/`,
+`.analysis/f219-append-record/`, `.analysis/f225-big-functions/`,
+`.analysis/f232-append-scope/`, `.analysis/f272-append-investigation/`,
+`.analysis/f296-append-interleave/` and `.analysis/f312-append-scopes/`;
+the final real-layout C++ source/positive COFF/full cold acceptance
+are `src/ReplayAppendRecordF326.cpp` and
+`.analysis/f326-append-physical/`.
+
+This game-specific controller verifies the true file handle, saves
+its current native position at a per-record file-offset DWORD
+`this+0x11C+4*(signed char(this+0x116))`, and writes the original
+ten header fields with exact one/two/four-byte widths via imported
+`WriteFile` and real `SetFilePointer` IAT targets. It traverses
+four native queue receivers of actual 20-byte stride at this+
+`0x154`, `0x168`, `0x17C`, `0x190` and writes their true 32-bit
+count and each element's native width (byte, short, byte, DWORD),
+using actual six 8-byte iterator objects, real Begin/End/Size,
+`operator!=`, dereference and postfix increment calls, and
+original cleanup `ClearQueues` and record index advance. All
+Win32/game C++ call behavior and original 50 physical COFF fields
+are retained without borrowed implementation credit, invented file
+operations or altering native error handling.
+
+The real complete original stack has a **56-byte contiguous state
+region** occupied by exactly **six actually used 8-byte iterator
+instances plus DWORD `written` and count**. Their original native
+physical address order, independently observed from constructor
+receivers *and all later uses*, is:
+
+| Native EBP location | Actually used original field |
+| --- | --- |
+| −0x38 .. −0x31 | byte iterator begin (8 bytes) |
+| −0x30 | `written` DWORD output count |
+| −0x2C .. −0x25 | byte iterator end (8 bytes) |
+| −0x24 .. −0x1D | word iterator end (8 bytes) |
+| −0x1C .. −0x15 | word iterator begin (8 bytes) |
+| −0x14 | record `count` DWORD |
+| −0x10 .. −0x09 | DWORD iterator end (8 bytes) |
+| −0x08 .. −0x01 | DWORD iterator head (8 bytes) |
+
+Importantly, actual constructor calls happen **in a different order
+from physical member order**: byteBegin at −0x38, byteEnd at −0x2C,
+wordBegin at −0x1C, wordEnd at −0x24, DWORD head at −0x08, DWORD end
+at −0x10. The original C++ type and allocator member names cannot
+be inferred solely from codegen. We therefore model the *actual*
+complete used state as one ordinary, layout-checked
+`NativeAppendFrameF326` struct, and use direct borrowed native
+iterator-constructor **ABI entry calls** at `00414930` (byte),
+`004149E0` (word), `00414A90` (DWORD), in the actual native order.
+In the source these direct C++ thiscall entrypoints are named
+`.Initialize()` solely as a caller-side ABI alias for the real
+constructor entry (not evidence that the original had separately
+named Initialize methods). The contents remain the same real eight
+used values, no hidden pad, no synthesized extra code or pretense of
+reconstructing the constructor *bodies*.
+
+The longstanding complete 1,252-byte natural source compiled 50
+correct COFF relocation fields but only **1,033/1,052** original
+nonrelocation bytes (19 real mismatched EBP slots). Many genuine
+lexical declaration, nested iterator scope, typed pair and source
+variable interleaving variants failed. The F326 physical used-state
+layout with direct genuine constructor ABI entry calls recovers
+**1,044/1,052**; ordering the DWORD data members correctly while
+checking all six construction targets yields **1,050/1,052**. The
+final two bytes are the fifth and sixth **real DWORD constructor
+call receiver positions**: the native initializes the *head at
+EBP−0x08* then *end at EBP−0x10*, not vice versa. Calling these
+actual ctor entries in that exact observed order yields **the entire
+1,252/1,252 original CODE bytes**, **1,052/1,052 comparable bytes**
+and all **50/50 genuine COFF relocation offsets/types/solved native
+destinations** under pinned VC7.1 `/Od /Ob0 /Gy /GR- /GX- /GS /Zi`.
+
+Only canonical `replay-records-append-record-00413de0` was cold built
+independently (`1/1 exact; 1252 coverage bytes`) and its whole source
+SHA tracked in the adoption manifest. All earlier source probes
+remain available as **negative evidence**, not accepted code, and
+no full all-unit replay, byte graft, manual assembly, fake stack
+padding, masked relocation or truncated function was used. Existing
+ReplayRecords read functions, Win32/CRT implementation, and all 97
+origin-pending functions are not double counted. Local exact
+checkpoint is **not** a remote Oracle acceptance receipt.

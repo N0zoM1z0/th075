@@ -635,3 +635,4 @@ SceneText::DrawNameGlyphsAt0042AFF0
 SceneText::DrawNameGlyphsAt0042C150
 ResultScene::DrawNameGlyphs
 SpriteSequence::AppendElement
+ReplayRecords::AppendRecord
