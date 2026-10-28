@@ -745,3 +745,6 @@ address,name,module,confidence,evidence
 0x00417160,FrameCapture::PresentPrimaryAt00417160,FrameCapture,inferred,"F461; full original 98-byte D3D8 present 16-byte RECT+136-byte native quad stack, 4 genuine COFF physical relocations; single-unit cold exact"
 0x00424F60,BattleEndScene::UpdateAt00424F60,BattleEndScene,inferred,"F463: complete native 152-byte battle end advance/score state, 45 original x86 instructions and 10 physical native COFF refs targeted cold exact"
 0x00425000,BattleEndScene::DrawAt00425000,BattleEndScene,inferred,"F465; complete native 180-byte battle-end rendering, 17 actual native COFF refs, original actor vtable +0x44 and zero-argument overlayer; local cold exact"
+0x004250C0,BattleEndScene::PollInputAt004250C0,BattleEndScene,inferred,"F467; whole original 107 CODE, true 0x38 OR 0xB8 fullscreen key condition, 13 physical original COFF refs; targeted cold exact"
+0x00426600,SceneInput::PollTwoMappingsAt00426600,SceneInput,inferred,"F467; whole original 106 CODE, true 0x38 OR 0xB8 fullscreen key condition, 13 physical original COFF refs; targeted cold exact"
+0x00428C80,OpeningScene::ProcessInputAt00428C80,OpeningScene,inferred,"F467; whole original 106 CODE, true 0x38 OR 0xB8 fullscreen key condition, 13 physical original COFF refs; targeted cold exact"

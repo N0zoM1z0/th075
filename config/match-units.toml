@@ -56758,3 +56758,228 @@ offset = 172
 type = "REL32"
 symbol = "?GraphicsAdvanceAt004027D0@@YAXXZ"
 target = 0x004027D0
+
+
+[units.battle-end-scene-poll-input-004250c0]
+source = "src/SceneInputPollingFamilyF467.cpp"
+object = "build/matching/SceneInputPollingFamilyF467.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["BattleEndScene::PollInputAt004250C0"]
+symbol = "?PollInput@BattleEndInputF466@@QAEXXZ"
+target_address = 0x004250C0
+size = 107
+[[units.battle-end-scene-poll-input-004250c0.relocations]]
+offset = 8
+type = "REL32"
+symbol = "?JoystickTickAt00403E50@@YAXXZ"
+target = 0x00403E50
+[[units.battle-end-scene-poll-input-004250c0.relocations]]
+offset = 13
+type = "REL32"
+symbol = "?KeyboardTickAt00403F40@@YAXXZ"
+target = 0x00403F40
+[[units.battle-end-scene-poll-input-004250c0.relocations]]
+offset = 18
+type = "DIR32"
+symbol = "?g_MainKeyInputAt00671638@@3VKeyInputF466@@A"
+target = 0x00671638
+[[units.battle-end-scene-poll-input-004250c0.relocations]]
+offset = 23
+type = "REL32"
+symbol = "?Advance@KeyInputF466@@QAEXXZ"
+target = 0x00406E80
+[[units.battle-end-scene-poll-input-004250c0.relocations]]
+offset = 29
+type = "DIR32"
+symbol = "?g_ActiveFighterAt00671418@@3PAVFighterInputF466@@A"
+target = 0x00671418
+[[units.battle-end-scene-poll-input-004250c0.relocations]]
+offset = 34
+type = "REL32"
+symbol = "?AdvanceActorInput@FighterInputF466@@QAEXXZ"
+target = 0x00452F10
+[[units.battle-end-scene-poll-input-004250c0.relocations]]
+offset = 41
+type = "DIR32"
+symbol = "?g_MainKeyInputAt00671638@@3VKeyInputF466@@A"
+target = 0x00671638
+[[units.battle-end-scene-poll-input-004250c0.relocations]]
+offset = 46
+type = "REL32"
+symbol = "?CheckPressed@KeyInputF466@@QAEEH@Z"
+target = 0x00407170
+[[units.battle-end-scene-poll-input-004250c0.relocations]]
+offset = 60
+type = "DIR32"
+symbol = "?g_MainKeyInputAt00671638@@3VKeyInputF466@@A"
+target = 0x00671638
+[[units.battle-end-scene-poll-input-004250c0.relocations]]
+offset = 65
+type = "REL32"
+symbol = "?CheckPressed@KeyInputF466@@QAEEH@Z"
+target = 0x00407170
+[[units.battle-end-scene-poll-input-004250c0.relocations]]
+offset = 82
+type = "DIR32"
+symbol = "?g_MainKeyInputAt00671638@@3VKeyInputF466@@A"
+target = 0x00671638
+[[units.battle-end-scene-poll-input-004250c0.relocations]]
+offset = 87
+type = "REL32"
+symbol = "?CheckPressed@KeyInputF466@@QAEEH@Z"
+target = 0x00407170
+[[units.battle-end-scene-poll-input-004250c0.relocations]]
+offset = 99
+type = "REL32"
+symbol = "?ToggleFullscreenAt004018A0@@YAXXZ"
+target = 0x004018A0
+
+
+[units.scene-input-poll-two-mappings-00426600]
+source = "src/SceneInputPollingFamilyF467.cpp"
+object = "build/matching/SceneInputPollingFamilyF467.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["SceneInput::PollTwoMappingsAt00426600"]
+symbol = "?PollInput@SceneTwoInputsF466@@QAEXXZ"
+target_address = 0x00426600
+size = 106
+[[units.scene-input-poll-two-mappings-00426600.relocations]]
+offset = 8
+type = "REL32"
+symbol = "?JoystickTickAt00403E50@@YAXXZ"
+target = 0x00403E50
+[[units.scene-input-poll-two-mappings-00426600.relocations]]
+offset = 13
+type = "REL32"
+symbol = "?KeyboardTickAt00403F40@@YAXXZ"
+target = 0x00403F40
+[[units.scene-input-poll-two-mappings-00426600.relocations]]
+offset = 18
+type = "DIR32"
+symbol = "?g_MainKeyInputAt00671638@@3VKeyInputF466@@A"
+target = 0x00671638
+[[units.scene-input-poll-two-mappings-00426600.relocations]]
+offset = 23
+type = "REL32"
+symbol = "?Advance@KeyInputF466@@QAEXXZ"
+target = 0x00406E80
+[[units.scene-input-poll-two-mappings-00426600.relocations]]
+offset = 28
+type = "DIR32"
+symbol = "?g_SecondaryKeyInputAt00671680@@3VKeyInputF466@@A"
+target = 0x00671680
+[[units.scene-input-poll-two-mappings-00426600.relocations]]
+offset = 33
+type = "REL32"
+symbol = "?Advance@KeyInputF466@@QAEXXZ"
+target = 0x00406E80
+[[units.scene-input-poll-two-mappings-00426600.relocations]]
+offset = 40
+type = "DIR32"
+symbol = "?g_MainKeyInputAt00671638@@3VKeyInputF466@@A"
+target = 0x00671638
+[[units.scene-input-poll-two-mappings-00426600.relocations]]
+offset = 45
+type = "REL32"
+symbol = "?CheckPressed@KeyInputF466@@QAEEH@Z"
+target = 0x00407170
+[[units.scene-input-poll-two-mappings-00426600.relocations]]
+offset = 59
+type = "DIR32"
+symbol = "?g_MainKeyInputAt00671638@@3VKeyInputF466@@A"
+target = 0x00671638
+[[units.scene-input-poll-two-mappings-00426600.relocations]]
+offset = 64
+type = "REL32"
+symbol = "?CheckPressed@KeyInputF466@@QAEEH@Z"
+target = 0x00407170
+[[units.scene-input-poll-two-mappings-00426600.relocations]]
+offset = 81
+type = "DIR32"
+symbol = "?g_MainKeyInputAt00671638@@3VKeyInputF466@@A"
+target = 0x00671638
+[[units.scene-input-poll-two-mappings-00426600.relocations]]
+offset = 86
+type = "REL32"
+symbol = "?CheckPressed@KeyInputF466@@QAEEH@Z"
+target = 0x00407170
+[[units.scene-input-poll-two-mappings-00426600.relocations]]
+offset = 98
+type = "REL32"
+symbol = "?ToggleFullscreenAt004018A0@@YAXXZ"
+target = 0x004018A0
+
+
+[units.opening-scene-process-input-00428c80]
+source = "src/SceneInputPollingFamilyF467.cpp"
+object = "build/matching/SceneInputPollingFamilyF467.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["OpeningScene::ProcessInputAt00428C80"]
+symbol = "?ProcessInput@OpeningInputF466@@QAEXXZ"
+target_address = 0x00428C80
+size = 106
+[[units.opening-scene-process-input-00428c80.relocations]]
+offset = 8
+type = "REL32"
+symbol = "?JoystickTickAt00403E50@@YAXXZ"
+target = 0x00403E50
+[[units.opening-scene-process-input-00428c80.relocations]]
+offset = 13
+type = "REL32"
+symbol = "?KeyboardTickAt00403F40@@YAXXZ"
+target = 0x00403F40
+[[units.opening-scene-process-input-00428c80.relocations]]
+offset = 18
+type = "DIR32"
+symbol = "?g_MainKeyInputAt00671638@@3VKeyInputF466@@A"
+target = 0x00671638
+[[units.opening-scene-process-input-00428c80.relocations]]
+offset = 23
+type = "REL32"
+symbol = "?Advance@KeyInputF466@@QAEXXZ"
+target = 0x00406E80
+[[units.opening-scene-process-input-00428c80.relocations]]
+offset = 28
+type = "DIR32"
+symbol = "?g_SecondaryKeyInputAt00671680@@3VKeyInputF466@@A"
+target = 0x00671680
+[[units.opening-scene-process-input-00428c80.relocations]]
+offset = 33
+type = "REL32"
+symbol = "?Advance@KeyInputF466@@QAEXXZ"
+target = 0x00406E80
+[[units.opening-scene-process-input-00428c80.relocations]]
+offset = 40
+type = "DIR32"
+symbol = "?g_MainKeyInputAt00671638@@3VKeyInputF466@@A"
+target = 0x00671638
+[[units.opening-scene-process-input-00428c80.relocations]]
+offset = 45
+type = "REL32"
+symbol = "?CheckPressed@KeyInputF466@@QAEEH@Z"
+target = 0x00407170
+[[units.opening-scene-process-input-00428c80.relocations]]
+offset = 59
+type = "DIR32"
+symbol = "?g_MainKeyInputAt00671638@@3VKeyInputF466@@A"
+target = 0x00671638
+[[units.opening-scene-process-input-00428c80.relocations]]
+offset = 64
+type = "REL32"
+symbol = "?CheckPressed@KeyInputF466@@QAEEH@Z"
+target = 0x00407170
+[[units.opening-scene-process-input-00428c80.relocations]]
+offset = 81
+type = "DIR32"
+symbol = "?g_MainKeyInputAt00671638@@3VKeyInputF466@@A"
+target = 0x00671638
+[[units.opening-scene-process-input-00428c80.relocations]]
+offset = 86
+type = "REL32"
+symbol = "?CheckPressed@KeyInputF466@@QAEEH@Z"
+target = 0x00407170
+[[units.opening-scene-process-input-00428c80.relocations]]
+offset = 98
+type = "REL32"
+symbol = "?ToggleFullscreenAt004018A0@@YAXXZ"
+target = 0x004018A0

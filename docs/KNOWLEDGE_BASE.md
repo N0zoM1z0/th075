@@ -7187,3 +7187,55 @@ layouts remain unasserted; no graphic SDK/callee CODE double-counting,
 fake parameters, locals, original bytes/assembler, masking, cropping,
 all-unit cold replay or external Oracle receipt. It is a separate
 whole-function addition from accepted F463 battle-end policy.
+
+
+## F467: three complete game-scene native input policies, real OR-key combination
+
+Three independently authored original functions use related but distinct
+input update paths. `BattleEndScene::PollInputAt004250C0` (R102) is
+**107 complete original CODE bytes / 32 original x86 instructions**,
+native PE SHA256
+`d40584cce3faeb759ca8e38a514ddee3e532d2471b1a4420a47a6d9ef0bdcc60`.
+`SceneInput::PollTwoMappingsAt00426600` (R102) is **106 complete
+CODE bytes / 32 original instructions**, SHA256
+`17444f033e6174d85536c82954a7c41e81c301bb18e09bd8e601e559a274557e`.
+`OpeningScene::ProcessInputAt00428C80` (R036) independently occupies
+**106 CODE bytes / 32 original instructions**, SHA256
+`d78daec2b5a419e0cc4ff46fda94c0e67693012628a73fe78f65a73f23b2ced7`.
+The physically distinct native addresses, original source ownership and
+true COFF references were all independently checked before grouping them
+in a single natural C++ compilation unit.
+
+Every original native function calls the real input joystick updater
+`00403E50`, keyboard updater `00403F40`, then updates the original
+shared first key controller at global `00671638` through `00406E80`.
+The two 106-byte functions also update the second independent mapping
+controller at `00671680` via the same real borrowed method, whereas
+BattleEnd input instead invokes the actual current fighter input action
+at global `00671418` through native `00452F10`. The rest uses original
+scan codes `0x1C`, `0x38`, `0xB8` with real borrowed one-byte `CheckPressed`
+method at `00407170`, and the genuine fullscreen mode toggle
+`004018A0`. The initial meaningful but **incorrect** first probe used
+`Pressed(0x1C) && !Pressed(0x38) && Pressed(0xB8)`, producing a
+single wrong branch destination in each function despite otherwise
+matching every native instruction. The original actually jumps **to the
+mode-toggle call** whenever the 0x38 key succeeds, or else checks 0xB8;
+therefore the correct complete behavior is exactly
+`Pressed(0x1C) && (Pressed(0x38) || Pressed(0xB8))`. The corrected
+source naturally restores all original branch displacements with no
+grafted bytes or workaround.
+
+Pinned VC7.1 `/Od /Ob0 /Gy /GR- /GX- /Zi` source
+`src/SceneInputPollingFamilyF467.cpp` yields entire native original
+**55/55, 54/54 and 54/54 nonrelocation bytes**, plus **13/13 genuine
+original physical COFF DIR32/REL32 fields, symbols and targets for each
+of the three distinct original functions (39 total)**. Fresh cold
+replay targeted **only** `battle-end-scene-poll-input-004250c0`,
+`scene-input-poll-two-mappings-00426600` and
+`opening-scene-process-input-00428c80`: **3/3 exact across one object**,
+crediting exactly **319 distinct authored CODE bytes**. All borrowed
+original input engines, actor methods and fullscreen callees remain
+external; no duplicate callee CODE, invented private class identities,
+source ASM, fake locals, partial-native matching, all-unit replay or
+external Oracle receipt. The old F466 AND-conditional version remains
+an independent private negative control.

@@ -762,3 +762,6 @@ FrameCapture::CapturePrimaryAt004170D0
 FrameCapture::PresentPrimaryAt00417160
 BattleEndScene::UpdateAt00424F60
 BattleEndScene::DrawAt00425000
+BattleEndScene::PollInputAt004250C0
+SceneInput::PollTwoMappingsAt00426600
+OpeningScene::ProcessInputAt00428C80
