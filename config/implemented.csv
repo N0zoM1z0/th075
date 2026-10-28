@@ -584,3 +584,6 @@ ReplayScene::Initialize
 Graphics::DrawProjectedTexturedQuad
 CardList::LoadEncodedCharacterFile
 CardList::LoadCharacterFile
+ProgressRecords::SetSelection
+ProgressRecords::GetSelectedRecordAddress
+ProfileSelection::StoreWorkingEightBytesAt00416E20

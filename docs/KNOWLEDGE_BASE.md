@@ -2740,3 +2740,90 @@ this verifies neither library deque implementations nor full private
 owner class naming. The 97 origin-pending functions are uncredited;
 local Git checkpoint and canonical cold replay are **not** external
 Oracle receipts.
+
+
+## F274: three independent native score selector/address/working-copy leaves cold-exact
+
+One physically borrowed source translation unit
+`src/ProgressSelectionF274.cpp` reconstructs three full game-specific
+functions with native 32-bit thiscall entrypoints, *without* allocating
+or inventing the original private score matrix class. The original
+whole PE bodies were independently extracted and decoded, not guessed
+from prior C++ declarations.
+
+| Original function | Full native CODE | Native instructions | Genuine physical COFF fields | Complete original SHA256 |
+| --- | ---: | ---: | ---: | --- |
+| ProgressRecords::SetSelection `0041A1A0` | 37 | 13 | 0 | `0f99eec904b581eede37af1b5192943bfc5cec8a79584a529a755548d4d0d6d6` |
+| ProgressRecords::GetSelectedRecordAddress `0041A240` | 48 | 15 | 0 | `a85d7a9d446d15bbf1c2b14ab8f49e180fa42c6b9a5e1fea3a95ab0e52c73dfb` |
+| ProfileSelection::StoreWorkingEightBytes `00416E20` | 84 | 25 | 1 | `0af4d8ab0264b631bc1fb818b7757108ad1385d5e3f2a85abd7ca91f4ff4a3ed` |
+
+Both R021 selector leaves were independently accepted as **authored**
+in `config/function-origins.csv` and documented under `docs/ORIGIN_REVIEW.md`
+long before this reconstruction. However their historical provisional
+rows in `config/functions.csv` had an **empty owner**, not `authored`.
+F274 did not assume that an empty owner was correct or avoid the
+inconsistent tracking state: it checked the live R021 evidence, the
+actual complete native game behavior and source contracts, then set
+`functions.csv` owner to `authored` for the two exact accepted rows.
+The separate R180 helper already had `owner=authored`; no origin
+classification was changed, and all 97 still-pending origins remain
+untouched and uncredited. Original nominal private owner names are
+not independently proven.
+
+`SetSelection` writes the two **signed char** argument bytes directly
+to observed owner+0x16AC4 and owner+0x16AC5 and finishes with RET 8.
+`GetSelectedRecordAddress` sign-extends both stored bytes and computes
+`this + 0x17F0 * fighter + 0x5FC * difficulty` using the exact original
+x86 arithmetic, returning the real selected working-record pointer.
+`StoreWorkingEightBytes` sign-extends a signed stack slot parameter,
+computes destination `this + fighter*0x17F0 + difficulty*0x5FC +
+0x55C + slot*0x10`, and calls the genuine original `memcpy` at
+`00640F20` to copy **exactly eight bytes** from owner+0x16A94.
+No otherwise-unobserved record structure, array length, allocation,
+or accessor is represented. The 84-byte source has precisely one
+physical REL32 field targeting native memcpy; the 37/48-byte leaves
+have **zero** actual relocation fields.
+
+All three ordinary pinned VC7.1 `/Od /Ob0 /Gy /GR- /GX- /GS /Zi`
+source functions first compiled to full 37/48/84-byte originals
+respectively, with **37/37**, **48/48**, **80/80** comparable
+nonrelocation bytes and all **0/0, 0/0, 1/1** native relocation
+offsets/types/destinations. Canonical units
+`progress-records-set-selection-0041a1a0`,
+`progress-records-selected-address-0041a240`, and
+`profile-selection-store-working-eight-00416e20` were then
+independently cold rebuilt **only as this affected three-unit group**
+and reported **`3/3 exact` across one object**. Original native
+function listings, natural source and cold receipts are retained
+in `.analysis/f274-progress-leaves/`. The already accepted F269
+ReplayScene caller and independent game/CRT callees receive no CODE
+credit here. No byte graft, fake storage, masks, assembly, cropped
+original function or all-unit cold replay was used; local Git checkpoint
+is not remote Oracle acceptance.
+
+### F274 independently revisited large, still nonexact bosses
+
+The original R035-authored 1,252-byte ReplayRecords::AppendRecord has
+**1,033/1,052** nonrelocated matching bytes in best retained complete
+F225 C++ source, all 50 authentic physical COFF fields, with 19
+residual differences confined to actual six 8-byte iterator stack
+slots. New F272 bounded declaration-order controls retained exact
+size/fields but did not produce an exact body; full diagnostics are
+archived in `.analysis/f272-append-investigation/`. Do not credit.
+
+For the 746-byte `SpriteSequence::RenderElements`, the independently
+reviewed source reproduces all 198 native instruction classes and
+true 0xBC stack frame but remains **734 bytes** due to distinct real
+end-iterator/x/quad/tint slots. F274 eight new meaningful nested
+Quad/RECT/counter/tint lifetime variants still emitted 734/719 and
+failed exact; retain `.analysis/f274-sprite-scope/` and earlier
+`.analysis/f261-sprite-sequence/`, **zero** new CODE credit.
+
+Original complete 1,722-byte `Effects::LoadPatternCatalog` at
+`005F71F0` was independently re-queried via read-only Ghidra. Its
+actual custom effect pattern and archive calls, EH-owned container
+cleanup and nested per-entry parsing make it a genuine large authored
+controller; a mere plausible decompile is not an exact C++ source.
+The full original function/decompile and read-only listing are kept
+in `.analysis/f274-effects-catalog/` for later native-guided probes.
+No byte credit is claimed.

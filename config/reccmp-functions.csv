@@ -585,3 +585,6 @@ ReplayScene::Initialize,0x0042A180,function
 Graphics::DrawProjectedTexturedQuad,0x00402D50,function
 CardList::LoadEncodedCharacterFile,0x00431B60,function
 CardList::LoadCharacterFile,0x004319B0,function
+ProgressRecords::SetSelection,0x0041A1A0,function
+ProgressRecords::GetSelectedRecordAddress,0x0041A240,function
+ProfileSelection::StoreWorkingEightBytesAt00416E20,0x00416E20,function

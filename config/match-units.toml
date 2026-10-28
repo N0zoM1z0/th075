@@ -42578,3 +42578,37 @@ offset = 419
 type = "REL32"
 symbol = "@__security_check_cookie@4"
 target = 0x00640611
+
+[units.progress-records-set-selection-0041a1a0]
+source = "src/ProgressSelectionF274.cpp"
+object = "build/matching/ProgressSelectionF274.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["ProgressRecords::SetSelection"]
+symbol = "?SetSelection@ProgressRecordsF274@@QAEXCC@Z"
+target_address = 0x0041A1A0
+size = 37
+relocations = []
+
+[units.progress-records-selected-address-0041a240]
+source = "src/ProgressSelectionF274.cpp"
+object = "build/matching/ProgressSelectionF274.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["ProgressRecords::GetSelectedRecordAddress"]
+symbol = "?GetSelectedRecordAddress@ProgressRecordsF274@@QAEPAXXZ"
+target_address = 0x0041A240
+size = 48
+relocations = []
+
+[units.profile-selection-store-working-eight-00416e20]
+source = "src/ProgressSelectionF274.cpp"
+object = "build/matching/ProgressSelectionF274.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["ProfileSelection::StoreWorkingEightBytesAt00416E20"]
+symbol = "?StoreWorkingEightBytes@ProgressRecordsF274@@QAEXC@Z"
+target_address = 0x00416E20
+size = 84
+[[units.profile-selection-store-working-eight-00416e20.relocations]]
+offset = 71
+type = "REL32"
+symbol = "_memcpy"
+target = 0x00640F20

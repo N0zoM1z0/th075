@@ -1,4 +1,4 @@
-# TH075 — active reconstruction handoff (F273)
+# TH075 — active reconstruction handoff (F274)
 
 **Updated 2026-10-28. Read this document before new experiments.**
 
@@ -22,17 +22,17 @@ not acceptance requirements.
 
 | Item | Current evidence |
 | --- | --- |
-| Local branch / last exact-code commit | `main` / F273 full 429-byte plain CardList reader; F272 encoded loader checkpoint `544a417` |
+| Local branch / last exact-code commit | `main` / F274 three whole selection/score helpers; F273 plain CardList checkpoint `443d8b9` |
 | Upstream | `origin/main` tracked locally; verify current ahead/behind and dirty state before further work |
-| Working tree | Clean after F273 checkpoint if successful; continue rather than avoid every existing dirty edit |
+| Working tree | Clean after F274 checkpoint if successful; continue rather than avoid every existing dirty edit |
 | Native binary | `resources/th075.exe`, SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98` |
 | Candidate count | 4,351; origin review: 1,002 authored, 2,671 library, 581 compiler, 97 unknown |
-| Accepted functions / units | **586 / 586** |
-| Accepted authored CODE | **793,067 bytes** |
-| Reviewed authored coverage | 793,067 / 1,973,516 = **40.19%** |
-| Conservative coverage | **40.11%** counting 3,608 origin-pending bytes |
+| Accepted functions / units | **589 / 589** |
+| Accepted authored CODE | **793,236 bytes** |
+| Reviewed authored coverage | 793,236 / 1,973,516 = **40.19%** |
+| Conservative coverage | **40.12%** counting 3,608 origin-pending bytes |
 | Goal | **98% not reached** |
-| Verification | F273 full 429-byte plain CardList file loader independently cold-exact (365/365 comparable bytes and 16 true COFF fields); F272 503-byte encoded loader checkpoint `544a417`. Only new F273 unit cold-replayed; no full cold replay or external Oracle receipt |
+| Verification | F274 three related complete 37/48/84-byte score selection helpers independently cold-exact (0/0/1 real COFF fields), after F273 full plain CardList checkpoint `443d8b9`. Only three new/affected units cold-replayed, no full cold replay or external Oracle receipt |
 
 **Recheck the actual live status immediately**. Local commits are checkpoints,
 not evidence of a remote push or external Oracle acceptance. Earlier Git
@@ -113,6 +113,9 @@ inert variable or arbitrary padding may earn exact credit.
 | F271: Graphics::DrawProjectedTexturedQuad | `00402D50` | 1,185 | 37 |
 | F272: CardList::LoadEncodedCharacterFile | `00431B60` | 503 | 15 |
 | F273: CardList::LoadCharacterFile | `004319B0` | 429 | 16 |
+| F274: ProgressRecords::SetSelection | `0041A1A0` | 37 | 0 |
+| F274: ProgressRecords::GetSelectedRecordAddress | `0041A240` | 48 | 0 |
+| F274: ProfileSelection::StoreWorkingEightBytes | `00416E20` | 84 | 1 |
 
 F222 proved signed 32-bit x87 `FILD` divided by the target's 36.0f
 (`00659308`), 74 physical animation records and a final call into the
@@ -212,6 +215,10 @@ F270 **did not** cold-accept the 497-byte `CharacterSelectScene::UpdateCancelAni
 F272 **cold-accepts the full 503-byte `CardList::LoadEncodedCharacterFile`** at `00431B60`, all 137 original native x86 instructions, **443/443** nonrelocation bytes and all **15 authentic COFF fields** including `_sprintf`, actual archive lookup/entry, Win32 ReadFile, two operator new calls, two deque back calls, memcpy, free and VC7 security-cookie check. Contrary to several older plain-card assumptions, original native path `cardlist.dat` has the 0x60/0x61 rolling XOR byte stream (delta += 0x41) and a **while** newline parser whose original terminator placement is `[index-begin-1]`, preserved without correcting behavior. No input CloseHandle is present in original; none is invented. The first whole probe emitted 515 bytes. Explicit *real* raw-operator-new pointer transfer and native file/size/read/key/delta/index lifetimes yielded 505; native-compatible 260-byte pathname and original parser while control flow reached complete 503 but 438/443 comparable bytes. A genuinely nested lifetime for the *used* appended `char*` result after the decoder index restored the native allocation/append stack slots EBP-0x13C/0x138 and **443/443** bytes. Original runtime 503 CODE SHA256 `dee41adcf9b1bdf69dce0ce4544d0b4e498ba72c39db43fbbcc84ef00c386711`; one-unit cold `exact; 503`. Source `src/CardLoadEncodedF272.cpp`, full negative controls, native and accepted receipt `.analysis/f272-card-encoded/`. F252 encoded-file **writer** remains a separate accepted 432-byte function; F255 429-byte **plain card reader** was nonexact at that historical point, now separately F273 cold-exact. No partial/truncated byte credit for other card/CRT/archive helpers; 97 origin-unknown functions remain pending.
 
 F273 **cold-accepts the complete native 429-byte `CardList::LoadCharacterFile` plaintext reader** at `004319B0` (118 original x86 instructions, all 365/365 comparable nonrelocation bytes and 16 true physical COFF fields). This independent authored origin is **R040**, not R041 (R041 belongs to F272's 503-byte encoded reader), verified directly from the actual origin ledger. The original plain reader uses CreateFileA/GetFileSize/new/ReadFile/**CloseHandle** rather than F272's archive/OpenEntry with **no** close; the shared parser uses a newline `while`, push_back(null), real two `back()` calls, operator new of each entry, native memcpy + original odd `[index-begin-1]` terminator, then a separate final buffer free. The first new complete natural 260-byte pathname/VC7.1 `/GS` source carries the genuine file/read/start/size/content/index locals at -4/-8/-C/-10/-14/-18 and the original allocation/appended pointer lifetimes after applying **independently verified F272 native lifetime logic as a hypothesis**; it compiled exact 429 length, 365/365 bytes and 16 relocations. `--unit card-list-load-plain-character-file-004319b0` alone cold-replayed exact. Full original assembly and positive proof remain `.analysis/f273-card-plain/`; historical F254/F255 negatives remain preserved. With F252 432-byte encoder and F272 encoded reader independently accepted, all three distinct CardList file flows now have full authored CODE credit, no duplicates. Private CardList class and CRT/STL callee bodies, plus all 97 pending origins remain uncredited.
+
+F274 **cold-accepts three complete native score-selection leaves** using one physically borrowed owner and one canonical C++ source, all with correct full 32-bit thiscall ABI and native signed selector semantics: 37-byte `ProgressRecords::SetSelection` at `0041A1A0` (37/37 nonfield, 0 relocations), 48-byte `GetSelectedRecordAddress` at `0041A240` (48/48, 0 fields) and 84-byte `ProfileSelection::StoreWorkingEightBytesAt00416E20` (80/80, 1 true REL32 to memcpy). The 37/48-byte pair stores original selection bytes at +0x16AC4/+0x16AC5 and selects the real 0x17F0×fighter + 0x5FC×difficulty record. The 84-byte helper copies exactly eight bytes from +0x16A94 into selected record+0x55C+0x10×signed slot. Crucially **the earlier two provisional `functions.csv` owner fields were blank**, despite **R021 independently authored origin in `config/function-origins.csv` and original R021 review**; F274 explicitly reconciles them to authored before granting exact CODE credit. R180 84-byte owner's authored classification was already consistent. Native names and complete score matrix layout are not asserted. All three actual complete functions cold-replayed `3/3 exact` across one new VC7.1 object, with no full cold replay or duplicate F269 caller CODE credit. Private disassembly/decompiler/probe/cold evidence lives in `.analysis/f274-progress-leaves/`, source `src/ProgressSelectionF274.cpp`.
+
+The **1,252-byte `ReplayRecords::AppendRecord`** big boss at `00413DE0` remains nonexact with preserved 1,033/1,052 comparable-byte best, 50 real relocations and full function length. F272 additionally tried ten physically grounded iterator constructor declaration/scope reorder controls; all retained whole code/fields but failed to correct all 19 native EBP slot differences (no authored CODE credit). The **746-byte `SpriteSequence::RenderElements`** remains 734-byte emitted with correct 198 instruction forms/0xBC frame and unresolved 12-byte stack-slot locality. F274 added eight nested real Quad/RECT/tint lifetimes, all negative, archived in `.analysis/f274-sprite-scope/`. The **1,722-byte R067-authored `Effects::LoadPatternCatalog`** boss was rechecked independently by Ghidra under `.analysis/f274-effects-catalog/`, revealing the actual native effect.pat archive, custom container, EH lifetime and nested per-entry parsing calls; no full C++ candidate was yet accepted and no credit is claimed. Preserve all these genuine boss investigations; continue exploring whole functions rather than farming tiny leaves alone.
 
 Relevant full native proofs: `config/match-units.toml`,
 `config/exact-adoptions.json`, sources `src/*F222.cpp`/`src/*F223.cpp`,

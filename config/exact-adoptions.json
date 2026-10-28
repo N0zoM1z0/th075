@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "ab7a0fe48b9e2331b6731d197b4cc2f5241760d7ab589f04fe5d5fa0c3d22ea4"
+      "current_sha256": "9136d2c6c64abe31fcdec7d44d6981b411430a9cf03b43a9ca4b9f9375966260"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "5d573fb9a3763a7d88d8b3b8a99de378bc120f538681dc315ba87ac3454595af"
+      "current_sha256": "1c846826e6243ae90b40d8f5118ecbd1a73b7017f70059dc4cb41fa7ce0a4366"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "6ed2677e300b06d040a3a182c5ca71c26f07b710cac74ff9cb9d91861215e3b3"
+      "current_sha256": "8d353d4674bfe271415f66fa0623a33350795af66f88cb12a150251b8863ef93"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "b6695c1b3add73d6b05f746dd5bebacb3f0f7a39eba4d4e538227873f3b086eb"
+      "current_sha256": "14005f4d78b64ce742bb8e1251e9ee799776a69abc60b1f091a593987f91788e"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "2ed0d0b71e81e0ecc3c1523e8d5ecee330a9cf96da3f02a8a59dbe51b6be25b3"
+      "current_sha256": "5c05e9778730278342fa5c76f36cf60e52e9ad57699645baff993f58760a5cbe"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -23184,6 +23184,138 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R040"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0041A1A0",
+        "size": "37",
+        "span_end": "0x0041A1C4",
+        "current_name": "FUN_0041a1a0",
+        "proposed_name": "ProgressRecords::SetSelection",
+        "module": "ProgressRecords",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R021",
+        "owner": "",
+        "notes": "R021; custom record-selection or bitmap/palette/run-length/upload policy; complete target CFG including all bounded switches; original ABI/name and complete owner layout unresolved; origin only, no source or exact credit."
+      },
+      "after": {
+        "address": "0x0041A1A0",
+        "size": "37",
+        "span_end": "0x0041A1C4",
+        "current_name": "FUN_0041a1a0",
+        "proposed_name": "ProgressRecords::SetSelection",
+        "module": "ProgressRecords",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void ProgressRecordsF274::SetSelection(signed char,signed char)",
+        "is_thunk": "false",
+        "source_file": "src/ProgressSelectionF274.cpp",
+        "evidence": "R021; F274; scripts/repo-python scripts/replay-exact-units.py --unit progress-records-set-selection-0041a1a0",
+        "owner": "authored",
+        "notes": "R021; custom record-selection or bitmap/palette/run-length/upload policy; complete target CFG including all bounded switches; original ABI/name and complete owner layout unresolved; origin only, no source or exact credit.; F274: complete original authored 37 CODE bytes /13 independently decoded native instructions, full PE SHA256 0f99eec904b581eede37af1b5192943bfc5cec8a79584a529a755548d4d0d6d6. First natural C++ source cold-exact using pinned VC7.1 /Od /GX- for 37/37 true nonrelocation bytes and 0 genuine COFF fields. Game progress owner two selection bytes at +0x16AC4/+0x16AC5 are stored directly from the two native signed-char stack arguments; actual ret 8. For the two R021 leaves, the previous blank provisional functions.csv owner is reconciled to the independently reviewed R021 authored origin before exact acceptance; the R180 leaf already had authored owner. All F269 caller/other game implementations remain separate, not re-credited. Original full private class layout and owner naming are unproven; these are borrowed physical game interfaces, without artificially modeled entire score matrix, fake storage, byte patches, masked relocation fields, cropped functions, all-unit cold replay or external Oracle receipt; all 97 pending origins remain uncredited."
+      },
+      "origin": {
+        "address": "0x0041A1A0",
+        "origin": "authored",
+        "subsystem": "ProgressRecords",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R021"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0041A240",
+        "size": "48",
+        "span_end": "0x0041A26F",
+        "current_name": "FUN_0041a240",
+        "proposed_name": "ProgressRecords::GetSelectedRecordAddress",
+        "module": "ProgressRecords",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R021",
+        "owner": "",
+        "notes": "R021; custom record-selection or bitmap/palette/run-length/upload policy; complete target CFG including all bounded switches; original ABI/name and complete owner layout unresolved; origin only, no source or exact credit."
+      },
+      "after": {
+        "address": "0x0041A240",
+        "size": "48",
+        "span_end": "0x0041A26F",
+        "current_name": "FUN_0041a240",
+        "proposed_name": "ProgressRecords::GetSelectedRecordAddress",
+        "module": "ProgressRecords",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void* ProgressRecordsF274::GetSelectedRecordAddress()",
+        "is_thunk": "false",
+        "source_file": "src/ProgressSelectionF274.cpp",
+        "evidence": "R021; F274; scripts/repo-python scripts/replay-exact-units.py --unit progress-records-selected-address-0041a240",
+        "owner": "authored",
+        "notes": "R021; custom record-selection or bitmap/palette/run-length/upload policy; complete target CFG including all bounded switches; original ABI/name and complete owner layout unresolved; origin only, no source or exact credit.; F274: complete original authored 48 CODE bytes /15 independently decoded native instructions, full PE SHA256 a85d7a9d446d15bbf1c2b14ab8f49e180fa42c6b9a5e1fea3a95ab0e52c73dfb. First natural C++ source cold-exact using pinned VC7.1 /Od /GX- for 48/48 true nonrelocation bytes and 0 genuine COFF fields. The two actually signed stored selector bytes yield native 0x17F0 by fighter and 0x5FC by difficulty strides, with the real this pointer sum and plain RET. For the two R021 leaves, the previous blank provisional functions.csv owner is reconciled to the independently reviewed R021 authored origin before exact acceptance; the R180 leaf already had authored owner. All F269 caller/other game implementations remain separate, not re-credited. Original full private class layout and owner naming are unproven; these are borrowed physical game interfaces, without artificially modeled entire score matrix, fake storage, byte patches, masked relocation fields, cropped functions, all-unit cold replay or external Oracle receipt; all 97 pending origins remain uncredited."
+      },
+      "origin": {
+        "address": "0x0041A240",
+        "origin": "authored",
+        "subsystem": "ProgressRecords",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R021"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00416E20",
+        "size": "84",
+        "span_end": "0x00416E73",
+        "current_name": "FUN_00416e20",
+        "proposed_name": "ProfileSelection::StoreWorkingEightBytesAt00416E20",
+        "module": "ProfileSelection",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R180; config/indexed-owner-policy-origin-evidence.json; scripts/repo-python scripts/verify-indexed-owner-policy-origins.py",
+        "owner": "authored",
+        "notes": "Full target-only nested signed selection/strides and directional eight-byte copy, explicit queue clear before automatic destruction, or explicit zero and post-construction archive-list clear. Whole independent original game parents and complete source operation/implicit controls are retained; no target-source byte positive is claimed. Complete game owner layouts and field meanings remain unknown. The separate default-list constructor graph stays unknown; its143-byte provisional node span ends in an external jump and must be reconciled with complete source223-byte code before any acceptance. No reconstructed source/private ABI/mapping/exact credit."
+      },
+      "after": {
+        "address": "0x00416E20",
+        "size": "84",
+        "span_end": "0x00416E73",
+        "current_name": "FUN_00416e20",
+        "proposed_name": "ProfileSelection::StoreWorkingEightBytesAt00416E20",
+        "module": "ProfileSelection",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void ProgressRecordsF274::StoreWorkingEightBytes(signed char)",
+        "is_thunk": "false",
+        "source_file": "src/ProgressSelectionF274.cpp",
+        "evidence": "R180; config/indexed-owner-policy-origin-evidence.json; scripts/repo-python scripts/verify-indexed-owner-policy-origins.py; F274; scripts/repo-python scripts/replay-exact-units.py --unit profile-selection-store-working-eight-00416e20",
+        "owner": "authored",
+        "notes": "Full target-only nested signed selection/strides and directional eight-byte copy, explicit queue clear before automatic destruction, or explicit zero and post-construction archive-list clear. Whole independent original game parents and complete source operation/implicit controls are retained; no target-source byte positive is claimed. Complete game owner layouts and field meanings remain unknown. The separate default-list constructor graph stays unknown; its143-byte provisional node span ends in an external jump and must be reconciled with complete source223-byte code before any acceptance. No reconstructed source/private ABI/mapping/exact credit.; F274: complete original authored 84 CODE bytes /25 independently decoded native instructions, full PE SHA256 0af4d8ab0264b631bc1fb818b7757108ad1385d5e3f2a85abd7ca91f4ff4a3ed. First natural C++ source cold-exact using pinned VC7.1 /Od /GX- for 80/80 true nonrelocation bytes and 1 genuine COFF fields. Native signed slot index multiplied by 16, selected fighter/difficulty record location at +0x55C with 0x17F0/0x5FC strides, original source eight bytes at this+0x16A94 and true memcpy at 00640F20 with correct stack byte count and ret 4. For the two R021 leaves, the previous blank provisional functions.csv owner is reconciled to the independently reviewed R021 authored origin before exact acceptance; the R180 leaf already had authored owner. All F269 caller/other game implementations remain separate, not re-credited. Original full private class layout and owner naming are unproven; these are borrowed physical game interfaces, without artificially modeled entire score matrix, fake storage, byte patches, masked relocation fields, cropped functions, all-unit cold replay or external Oracle receipt; all 97 pending origins remain uncredited."
+      },
+      "origin": {
+        "address": "0x00416E20",
+        "origin": "authored",
+        "subsystem": "ProfileSelection",
+        "disposition": "authored",
+        "confidence": "complete-custom-indexed-copy-and-explicit-owner-policy-context",
+        "evidence_id": "R180"
       }
     }
   ],
@@ -175188,6 +175320,79 @@
           "target": 6555153
         }
       ]
+    },
+    "progress-records-set-selection-0041a1a0": {
+      "source": "src/ProgressSelectionF274.cpp",
+      "object": "build/matching/ProgressSelectionF274.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "ProgressRecords::SetSelection"
+      ],
+      "symbol": "?SetSelection@ProgressRecordsF274@@QAEXCC@Z",
+      "target_address": 4301216,
+      "size": 37,
+      "relocations": []
+    },
+    "progress-records-selected-address-0041a240": {
+      "source": "src/ProgressSelectionF274.cpp",
+      "object": "build/matching/ProgressSelectionF274.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "ProgressRecords::GetSelectedRecordAddress"
+      ],
+      "symbol": "?GetSelectedRecordAddress@ProgressRecordsF274@@QAEPAXXZ",
+      "target_address": 4301376,
+      "size": 48,
+      "relocations": []
+    },
+    "profile-selection-store-working-eight-00416e20": {
+      "source": "src/ProgressSelectionF274.cpp",
+      "object": "build/matching/ProgressSelectionF274.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "ProfileSelection::StoreWorkingEightBytesAt00416E20"
+      ],
+      "symbol": "?StoreWorkingEightBytes@ProgressRecordsF274@@QAEXC@Z",
+      "target_address": 4288032,
+      "size": 84,
+      "relocations": [
+        {
+          "offset": 71,
+          "type": "REL32",
+          "symbol": "_memcpy",
+          "target": 6557472
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -175551,6 +175756,7 @@
     "src/ReplaySceneInitF269.cpp": "9a103c488389e8e638e4adb54440e5d3a744bdc7d0dc1c314afac159312ceb43",
     "src/GraphicsProjectedQuadF271.cpp": "f718c8852aadcd587435e7399e8a7506c639c03e9ef6f81adcced910a3c2a2f5",
     "src/CardLoadEncodedF272.cpp": "cc95f850ddf87c0f2bae5ac8d93fdca014fa3bab1f01979324ec5e72c4ce7f70",
-    "src/CardLoadPlainF273.cpp": "2e452d54afe8778c944e6179788db61765c31be6372ad922fce3ea97655b5544"
+    "src/CardLoadPlainF273.cpp": "2e452d54afe8778c944e6179788db61765c31be6372ad922fce3ea97655b5544",
+    "src/ProgressSelectionF274.cpp": "e7413da91314a425e0dead117f844dc66607bcefad8846c9b378302832da8814"
   }
 }
