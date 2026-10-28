@@ -760,3 +760,4 @@ EventQueue::EnqueueUniqueAt00423C80
 GameGlobals::InitializeBlackSurfaceAt00417000
 FrameCapture::CapturePrimaryAt004170D0
 FrameCapture::PresentPrimaryAt00417160
+BattleEndScene::UpdateAt00424F60

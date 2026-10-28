@@ -7094,3 +7094,57 @@ capture function stays separate, with no double-credit of inherited
 graphics/texture, Win32/CRT or draw callee CODE. No invented external
 class fields, fake locals, pasted target bytes, ASM, masks, partial
 comparison, all-unit cold replay or external Oracle acceptance.
+
+
+## F463: complete native 152-byte battle-end update and score transition policy
+
+The original independently R053-authored
+`BattleEndScene::UpdateAt00424F60`, at `00424F60..00424FF7`, is
+**152 complete original native CODE bytes / 45 original x86 instructions**,
+PE SHA256
+`794308aea60d349bbd4373329f151a92ecf3da1e30e62a89b744e2f96b5cc8f5`.
+The true scene receiver calls its borrowed native input reader `004250C0`
+and own vtable+8 animation action, advances the actual fighter at native
+`00671418` through its original vtable slot+0x40, and invokes original
+graphics update `004028F0`. The fighter's actual +0x6EF end flag
+gates story completion. Signed character mode at global `0067161E`
+selects special character 10 return `0x110B`; otherwise native C++
+sets stage **40** through `00419CB0`, sends viewport
+**(-10000,-300,1,1)** through `00407E60`, and compares unsigned fighter
+score +0x2D0 with global best result `00671420` to return `0x220A`
+(new high score) or `0x1102` (normal completed result). The ongoing
+scene path returns **8**. The borrowed virtual base declarations are
+only original physical ABI slots, not a complete original fighter type.
+
+`src/BattleEndSceneUpdateF463.cpp` is a natural original-like C++ source
+under pinned MSVC 7.1 `/Od /Ob0 /Gy /GR- /GX- /Zi`: complete original
+**152 authored CODE bytes**, **112/112 original nonrelocation bytes**
+and all **10/10 authentic original COFF DIR32/REL32 reference fields,
+types and original PE destinations** matched first attempt. Only
+`--unit battle-end-scene-update-00424f60` was rebuilt and cold replayed,
+**1/1 exact**. No borrowed input, fighter, stage or graphics callee
+CODE is double-counted, and no fake locals, assembly, imported original
+bytes, masks, truncated original or full-project cold replay credited.
+
+## F462: negative 16-combination complete 2,987-byte GameApplication WinMain CFG experiments
+
+Continuing the whole `GameApplication::RunAt00602A60` R064 native boss
+research, the true original remains **2,987 authored CODE bytes / 654
+x86 instructions**, with its 60-byte after-RET 15-entry scene dispatch
+DATA table to be compared separately and not credited as executable CODE.
+The previous complete natural C++ semantic source F456 preserved all
+15 actual scene allocation sizes and borrowed constructors but compiled
+only 2,951 CODE bytes plus 60 switch DATA, 0x264 stack frame versus
+original 0x278. The complete 16 variant `F462` controls in
+`.analysis/f462-winmain-branch-shape/` independently combine all eight
+true success/failure direction permutations for `RegisterClassExA`,
+`CreateWindowExA` and `CoInitialize`, with both natural switch case
+orders (including physically original case 4 first). **None** matches:
+their entire CODE lengths are 2,948–2,951, and their native frame
+remains 0x264. Changing syntax/branch direction alone is insufficient;
+the original requires the real missing 20 bytes of physical local
+objects and 14 original native instruction effects, not filler locals
+or bytes. All original startup failures and Win32 pump teardown remain
+part of the unresolved full-function comparison. No F462 cold exact
+credit, no cropped match, no forged original byte sequence, no
+whole-repository cold replay or external Oracle acceptance.

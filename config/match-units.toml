@@ -56603,3 +56603,63 @@ offset = 87
 type = "REL32"
 symbol = "?DrawTexturedQuadAt004029F0@@YAXPBVNativeQuadF461@@PBUtagRECT@@IPAUIDirect3DTexture8@@@Z"
 target = 0x004029F0
+
+
+[units.battle-end-scene-update-00424f60]
+source = "src/BattleEndSceneUpdateF463.cpp"
+object = "build/matching/BattleEndSceneUpdateF463.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["BattleEndScene::UpdateAt00424F60"]
+symbol = "?Update@BattleEndSceneF463@@QAEGXZ"
+target_address = 0x00424F60
+size = 152
+[[units.battle-end-scene-update-00424f60.relocations]]
+offset = 11
+type = "REL32"
+symbol = "?PollInput@BattleEndSceneF463@@QAEXXZ"
+target = 0x004250C0
+[[units.battle-end-scene-update-00424f60.relocations]]
+offset = 27
+type = "DIR32"
+symbol = "?g_CurrentFighterAt00671418@@3PAVBattleEndFighterF463@@A"
+target = 0x00671418
+[[units.battle-end-scene-update-00424f60.relocations]]
+offset = 35
+type = "DIR32"
+symbol = "?g_CurrentFighterAt00671418@@3PAVBattleEndFighterF463@@A"
+target = 0x00671418
+[[units.battle-end-scene-update-00424f60.relocations]]
+offset = 43
+type = "REL32"
+symbol = "?RefreshGraphicsAt004028F0@@YAXXZ"
+target = 0x004028F0
+[[units.battle-end-scene-update-00424f60.relocations]]
+offset = 48
+type = "DIR32"
+symbol = "?g_CurrentFighterAt00671418@@3PAVBattleEndFighterF463@@A"
+target = 0x00671418
+[[units.battle-end-scene-update-00424f60.relocations]]
+offset = 66
+type = "DIR32"
+symbol = "?g_EndCharacterAt0067161E@@3CA"
+target = 0x0067161E
+[[units.battle-end-scene-update-00424f60.relocations]]
+offset = 84
+type = "REL32"
+symbol = "?ChooseStageAt00419CB0@@YAXH@Z"
+target = 0x00419CB0
+[[units.battle-end-scene-update-00424f60.relocations]]
+offset = 106
+type = "REL32"
+symbol = "?ConfigureViewportAt00407E60@@YAXHHHH@Z"
+target = 0x00407E60
+[[units.battle-end-scene-update-00424f60.relocations]]
+offset = 114
+type = "DIR32"
+symbol = "?g_CurrentFighterAt00671418@@3PAVBattleEndFighterF463@@A"
+target = 0x00671418
+[[units.battle-end-scene-update-00424f60.relocations]]
+offset = 120
+type = "DIR32"
+symbol = "?g_BestResultScoreAt00671420@@3IA"
+target = 0x00671420

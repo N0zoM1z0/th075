@@ -1,6 +1,6 @@
 # TH075 — current reconstruction handoff
 
-**Maintained: 2026-10-29, after F461.** Read this document, then check the **live repository**. The current user explicitly wants both large/core bosses and small leaves tackled seriously, tangible progress committed immediately with subject `gpt-web: ...`, and **only changed/new units cold-replayed**. The user reports no other sessions: inspect and finish all dirty work; never skip, reset, overwrite or silently discard it.
+**Maintained: 2026-10-29, after F463.** Read this document, then check the **live repository**. The current user explicitly wants both large/core bosses and small leaves tackled seriously, tangible progress committed immediately with subject `gpt-web: ...`, and **only changed/new units cold-replayed**. The user reports no other sessions: inspect and finish all dirty work; never skip, reset, overwrite or silently discard it.
 
 ## 1. Trusted state and first commands
 
@@ -8,11 +8,11 @@ Canonical evidence is the pinned original PE, `config/function-origins.csv`, `co
 
 | Item | Verified snapshot |
 | --- | --- |
-| Git | `main`; pre-F461 reconstruction commit **`14824fc`** (F460), preceded by `5275605` (F459) and `06d96d7` (F458); F461 commit follows this update |
+| Git | `main`; pre-F463 reconstruction commit **`ec2fc75`** (F461), preceded by `14824fc` (F460) and `5275605` (F459); F463 commit follows this update |
 | Pinned target | user-supplied Japanese `resources/th075.exe` v1.11; SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`; **never** `th075c.exe` |
-| Exact and source-present | **762 functions / 762 exact units** |
-| Accepted authored CODE | **855,091 bytes / 1,973,516 reviewed bytes = 43.33%** |
-| Conservative | **43.25%**, including 3,608 bytes with unresolved origin |
+| Exact and source-present | **763 functions / 763 exact units** |
+| Accepted authored CODE | **855,243 bytes / 1,973,516 reviewed bytes = 43.34%** |
+| Conservative | **43.26%**, including 3,608 bytes with unresolved origin |
 | Origin review | 1,002 authored, 2,671 library, 581 compiler, **97 pending** across 4,351 provisional candidates |
 | Goal | **98% not reached**; Git and local cold results are not external Oracle receipts |
 
@@ -29,7 +29,7 @@ If **any** dirty source, unit, or manifest is present, first inspect its exact e
 
 ## 2. Newly closed chains — **not** the backlog
 
-The full register of **all 762** accepted functions is in `config/functions.csv` and `config/match-units.toml`; this table intentionally highlights only the newest, important independent CODE extents. No called function, imported CRT/Win32 code, or owned jump-table bytes are counted twice.
+The full register of **all 763** accepted functions is in `config/functions.csv` and `config/match-units.toml`; this table intentionally highlights only the newest, important independent CODE extents. No called function, imported CRT/Win32 code, or owned jump-table bytes are counted twice.
 
 | Unit / accepted address | Whole CODE | Authentic fields | Evidence |
 | --- | ---: | ---: | --- |
@@ -96,6 +96,7 @@ The full register of **all 762** accepted functions is in `config/functions.csv`
 | F459 `GameGlobals::InitializeBlackSurfaceAt00417000` `00417000` | **168** | **1** | `src/GameGlobalsInitializeBlackSurfaceF459.cpp`, `.analysis/f459-black-surface/` |
 | F460 `FrameCapture::CapturePrimaryAt004170D0` `004170D0` | **65** | **3** | `src/FrameCapturePrimaryF460.cpp`, `.analysis/f460-framecapture-capture/` |
 | F461 `FrameCapture::PresentPrimaryAt00417160` `00417160` | **98** | **4** | `src/FrameCapturePresentPrimaryF461.cpp`, `.analysis/f461-frame-present/` |
+| F463 `BattleEndScene::UpdateAt00424F60` `00424F60` | **152** | **10** | `src/BattleEndSceneUpdateF463.cpp`, `.analysis/f463-battle-end-update/` |
 
 **F340:** the companion archive entry seek at `0041D750` is independently cold exact for its whole 164-byte function including every one of its nine external references. It uses genuine iterator and `strcmp` semantics, returns the archive handle after `SetFilePointer` or `INVALID_HANDLE_VALUE` if not found. The original private archive list remains borrowed, not instantiated.
 
@@ -210,6 +211,10 @@ The full register of **all 762** accepted functions is in `config/functions.csv`
 **F460:** the original R100 `FrameCapture::CapturePrimaryAt004170D0` is now complete **65 original CODE bytes / 24 instructions**, **53/53 native nonrelocation bytes** and **3/3 actual physical COFF fields**, with **1/1 only affected-unit cold exact**. It calls actual present buffer accessor `004028B0`, original Win32 imported SetRect `00657210` for 640×480, and the actual capture routine `00401D80` with receiver and pointers to real native 32-bit result and RECT. Original RECT is physical EBP-0x14..-0x5 and returned buffer DWORD EBP-4. Two standalone C++ locals place them incorrectly; grouping the two **actually used meaningful fields** as a native 20-byte structure naturally reproduces original VC7.1 EBP allocations. Borrowed game capture and Win32 SDK implementation not credited.
 
 **F461:** original R100 frame-capture `PresentPrimaryAt00417160` now **98 native CODE bytes / 30 x86 instructions, 82/82 native nonfield bytes, four authentic physical COFF refs**, isolated **1/1 cold exact**. The original physical 0x98 stack frame comprises a *real* 16-byte RECT at EBP-0x98 and a native **136-byte quad stack carrier** at EBP-0x88 (132 drawable bytes known, final four untyped); treating those as separate C++ locals changes EBP slots. The source therefore groups only the genuinely used RECT and quad in one correctly sized native 152-byte presentation state. Actual imported `SetRect` at `00657210` selects 640×480; actual borrowed quad initializer `0040DB50` uses the RECT; native graphic mode setter `00401F50(0)` and original textured draw `004029F0` receive quad, rect, 0xffffffff tint and dereferenced external texture pointer. No external renderer/Win32 CODE, no guessed private quad tail fields or partial matching credited. F460 input capture and F461 presentation are now separately complete.
+
+**F463:** original R053 `BattleEndScene::UpdateAt00424F60` is now complete **152 authored CODE bytes / 45 original x86 instructions**, with **112/112 native nonrelocation bytes, all 10/10 original physical COFF refs and targeted cold 1/1 exact**. The natural scene method calls original native PollInput `004250C0`, own vtable+8 animation tick, fighter global `00671418` vtable+0x40 action advancement, and graphics update `004028F0`. The actual fighter +0x6EF end event chooses signed-character mode 10 return `0x110B`; other modes configure original stage 40 through `00419CB0` and viewport (-10000,-300,1,1) through `00407E60`, then use real global best score `00671420` and fighter +0x2D0 to return `0x220A` or `0x1102`; ordinary ongoing mode returns 8. Borrowed virtual method slots represent the physical native ABI, not an invented complete fighter class.
+
+**F462: whole GameApplication main-loop negative controls:** 16 separately compiled, full natural C++ 2,987-CODE-byte WinMain variants tested all combinations of window registration, HWND creation and COM initialization success/failure branch ordering and the original case-4-first scene allocation switch layout. Their actual authored CODE sizes remain **2,948–2,951 bytes**, versus native **2,987**; all variants use a 0x264 native-style stack frame, versus original 0x278. Thus the branch-orientation hypothesis is ruled out as a sufficient fix; no F462 CODE accepted or counted. The actual original 15-case after-RET switch and Win32/COM cleanup remain unaccepted full-function dependencies.
 
 **Corrections to old notes:** The 686-byte writer and 429-byte reader are both **exact** (F339/F338), not pending F249/F250. The full 1,252-byte replay writer and 375-byte finalizer are both **exact** (F326/F328), not pending F219/F218/F289. The 1,766-byte font rasterizer is **exact** (F319), not pending F299/F302. The 301-byte glyph loader is **exact** (F318), not pending F291. The 916-byte MusicRoom catalog + separately compared 16-byte jump table is **exact in F258** (916 CODE credit only). Other accepted 1,000+ byte bosses include F271 projected quad (1,185), F278 pattern chooser (1,264), F282 resource loader (1,186), F292 overlay text box (1,385), F294 effects catalog (1,722), and F244 scene advance (1,529 CODE). Earlier failures remain useful *historical controls*, but must never be presented as current unaccepted work.
 

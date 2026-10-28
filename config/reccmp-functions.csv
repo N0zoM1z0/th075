@@ -761,3 +761,4 @@ EventQueue::EnqueueUniqueAt00423C80,0x00423C80,function
 GameGlobals::InitializeBlackSurfaceAt00417000,0x00417000,function
 FrameCapture::CapturePrimaryAt004170D0,0x004170D0,function
 FrameCapture::PresentPrimaryAt00417160,0x00417160,function
+BattleEndScene::UpdateAt00424F60,0x00424F60,function
