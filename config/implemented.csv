@@ -554,3 +554,4 @@ ResultScene::BuildRecordPage
 ResultScene::RenderCounters
 ResultScene::DrawDecimalDigits
 SceneTransition::DispatchMode
+ResultScene::Initialize

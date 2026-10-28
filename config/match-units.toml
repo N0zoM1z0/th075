@@ -39492,3 +39492,178 @@ offset = 612
 type = "REL32"
 symbol = "?SetCallback@ScenePresentationF242@@YAXP6AXPAPAUIDirect3DTexture8@@@Z@Z"
 target = 0x004028A0
+
+
+[units.result-scene-initialize-0042e640]
+source = "src/ResultSceneCtorF243.cpp"
+object = "build/matching/ResultSceneCtorF243.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["ResultScene::Initialize"]
+symbol = "??0ResultSceneCtorF243@@QAE@XZ"
+target_address = 0x0042E640
+size = 547
+[[units.result-scene-initialize-0042e640.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0ResultSceneCtorF243@@QAE@XZ"
+target = 0x006559E3
+[[units.result-scene-initialize-0042e640.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.result-scene-initialize-0042e640.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.result-scene-initialize-0042e640.relocations]]
+offset = 34
+type = "REL32"
+symbol = "??0SceneBaseF243@@QAE@XZ"
+target = 0x004251C0
+[[units.result-scene-initialize-0042e640.relocations]]
+offset = 50
+type = "DIR32"
+symbol = "??_7ResultSceneCtorF243@@6B@"
+target = 0x00658038
+[[units.result-scene-initialize-0042e640.relocations]]
+offset = 57
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.result-scene-initialize-0042e640.relocations]]
+offset = 81
+type = "REL32"
+symbol = "??0TextureManagerF243@@QAE@XZ"
+target = 0x0040AD80
+[[units.result-scene-initialize-0042e640.relocations]]
+offset = 125
+type = "REL32"
+symbol = "?AllocateUnformattedSlots@TextureManagerF243@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.result-scene-initialize-0042e640.relocations]]
+offset = 130
+type = "DIR32"
+symbol = "?g_ResultTextureRootAt00658014@@3QBDB"
+target = 0x00658014
+[[units.result-scene-initialize-0042e640.relocations]]
+offset = 135
+type = "DIR32"
+symbol = "?g_ResultTexturePathAt0065801C@@3QBDB"
+target = 0x0065801C
+[[units.result-scene-initialize-0042e640.relocations]]
+offset = 146
+type = "REL32"
+symbol = "?LoadDefault@TextureManagerF243@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.result-scene-initialize-0042e640.relocations]]
+offset = 179
+type = "DIR32"
+symbol = "?g_ResultActorSecondaryAt0067141C@@3PAXA"
+target = 0x0067141C
+[[units.result-scene-initialize-0042e640.relocations]]
+offset = 197
+type = "DIR32"
+symbol = "?g_ResultScoreTotalAt0067160C@@3HA"
+target = 0x0067160C
+[[units.result-scene-initialize-0042e640.relocations]]
+offset = 206
+type = "DIR32"
+symbol = "?g_ResultScoreTotalAt0067160C@@3HA"
+target = 0x0067160C
+[[units.result-scene-initialize-0042e640.relocations]]
+offset = 212
+type = "DIR32"
+symbol = "?g_ResultTotalDenominatorAt006714BC@@3HA"
+target = 0x006714BC
+[[units.result-scene-initialize-0042e640.relocations]]
+offset = 218
+type = "DIR32"
+symbol = "?g_ResultOneAt0065747C@@3MB"
+target = 0x0065747C
+[[units.result-scene-initialize-0042e640.relocations]]
+offset = 231
+type = "DIR32"
+symbol = "?g_ResultBonusAt006714C0@@3FA"
+target = 0x006714C0
+[[units.result-scene-initialize-0042e640.relocations]]
+offset = 244
+type = "DIR32"
+symbol = "?g_ResultBonusAt006714C0@@3FA"
+target = 0x006714C0
+[[units.result-scene-initialize-0042e640.relocations]]
+offset = 256
+type = "DIR32"
+symbol = "?g_ResultHundredAt00657888@@3MB"
+target = 0x00657888
+[[units.result-scene-initialize-0042e640.relocations]]
+offset = 262
+type = "DIR32"
+symbol = "?g_ResultOneAt0065747C@@3MB"
+target = 0x0065747C
+[[units.result-scene-initialize-0042e640.relocations]]
+offset = 274
+type = "DIR32"
+symbol = "?g_ResultActorPrimaryAt00671418@@3PAXA"
+target = 0x00671418
+[[units.result-scene-initialize-0042e640.relocations]]
+offset = 288
+type = "DIR32"
+symbol = "?g_ResultSequenceAt00671622@@3CA"
+target = 0x00671622
+[[units.result-scene-initialize-0042e640.relocations]]
+offset = 294
+type = "DIR32"
+symbol = "?g_ResultActorPrimaryAt00671418@@3PAXA"
+target = 0x00671418
+[[units.result-scene-initialize-0042e640.relocations]]
+offset = 325
+type = "DIR32"
+symbol = "?g_ResultActorPrimaryAt00671418@@3PAXA"
+target = 0x00671418
+[[units.result-scene-initialize-0042e640.relocations]]
+offset = 344
+type = "DIR32"
+symbol = "?g_ResultTenThousandAt00658034@@3MB"
+target = 0x00658034
+[[units.result-scene-initialize-0042e640.relocations]]
+offset = 351
+type = "DIR32"
+symbol = "?g_ResultSequenceAt00671622@@3CA"
+target = 0x00671622
+[[units.result-scene-initialize-0042e640.relocations]]
+offset = 363
+type = "DIR32"
+symbol = "?g_ResultActorPrimaryAt00671418@@3PAXA"
+target = 0x00671418
+[[units.result-scene-initialize-0042e640.relocations]]
+offset = 382
+type = "DIR32"
+symbol = "?g_ResultOneAt0065747C@@3MB"
+target = 0x0065747C
+[[units.result-scene-initialize-0042e640.relocations]]
+offset = 466
+type = "DIR32"
+symbol = "?g_ResultActorPrimaryAt00671418@@3PAXA"
+target = 0x00671418
+[[units.result-scene-initialize-0042e640.relocations]]
+offset = 484
+type = "DIR32"
+symbol = "?g_ResultActorPrimaryAt00671418@@3PAXA"
+target = 0x00671418
+[[units.result-scene-initialize-0042e640.relocations]]
+offset = 496
+type = "DIR32"
+symbol = "?g_ResultActorPrimaryAt00671418@@3PAXA"
+target = 0x00671418
+[[units.result-scene-initialize-0042e640.relocations]]
+offset = 510
+type = "DIR32"
+symbol = "?g_ResultActorPrimaryAt00671418@@3PAXA"
+target = 0x00671418
+[[units.result-scene-initialize-0042e640.relocations]]
+offset = 539
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000

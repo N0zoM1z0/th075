@@ -13,7 +13,7 @@ Use the existing Ghidra wrapper and local tools; do not use REA.
 Preserve all accepted exact units and origin evidence through R268. The 97
 unresolved origins remain unknown; they do not block reconstruction of
 independently reviewed authored functions. Include all pending bytes in the conservative goal denominator.
-Start with the concise live handoff at `docs/RE_HANDOFF.md` (F242 as
+Start with the concise live handoff at `docs/RE_HANDOFF.md` (F243 as
 of 2026-10-28); the old verbose snapshot lives in Git history at
 `ca81d72:docs/RE_HANDOFF.md`. The knowledge base and origin journals
 retain detailed old experiments and must not override current evidence.

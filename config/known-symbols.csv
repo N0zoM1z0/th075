@@ -537,3 +537,4 @@ address,name,module,confidence,evidence
 0x0042EF10,ResultScene::RenderCounters,ResultScene,inferred,F240; original full 1344-byte renderer (320 x86 instructions) and all 44 physical relocations cold exact; complete scene and graphics parent layout unknown
 0x0042F530,ResultScene::DrawDecimalDigits,ResultScene,inferred,F241; entire native 423-byte two-mode digit painter and all 9 true relocation fields cold exact; original scene/drawing class types provisional
 0x00431F60,SceneTransition::DispatchMode,SceneTransition,inferred,F242; native complete 663-byte two-level transition dispatch and all 27 physical relocations cold exact; parent scene/graphics nominal ownership unknown
+0x0042E640,ResultScene::Initialize,ResultScene,inferred,F243; 547-byte result scene full native ctor and 33 real relocation fields cold-exact; original full owner identity and R108 base constructor origin remain provisional

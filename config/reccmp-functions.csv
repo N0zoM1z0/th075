@@ -555,3 +555,4 @@ ResultScene::BuildRecordPage,0x00431070,function
 ResultScene::RenderCounters,0x0042EF10,function
 ResultScene::DrawDecimalDigits,0x0042F530,function
 SceneTransition::DispatchMode,0x00431F60,function
+ResultScene::Initialize,0x0042E640,function

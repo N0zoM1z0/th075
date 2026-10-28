@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "b82c1164089f0f5a77ba5ff18fc6455cf706972b8a869855ffb01bc4f0c0b027"
+      "current_sha256": "a8a63a2a2760807e606059ec702719757eb6cf81bc3dddffe9d43eb3efd18899"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "c25d44aa20a4f8ab5a17fab5c95a5988af2c92414309a410d88fb5d064a2ef87"
+      "current_sha256": "1f66982bac24bfe807c41b856edcb1f3c79bcb78f680ff31f26f1fbd92596610"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "682e682092b37e48b0a0cc97382c2e39b1541bd9862b725d3e540c629a167f5b"
+      "current_sha256": "bb34ad41cd0390bc6ea981c5f9cc522f6e689569b6ec1816b3bc0e728ff17c3b"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "ffed24280477836af83d7aa15b5b9f41c92de898acd8e465cc9ef8feb1386fcc"
+      "current_sha256": "41ff7e5269c10520aaef3704ed41b5f74a6bbdb20585e4b6e02d00b0518f3b5e"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "c1f088c67b2005279d17d810252e65f7fdb20c228bdce2a9c8b7bd8403ff9ec0"
+      "current_sha256": "7ecacc634516cc879d003f5bcead149215371a79f57f5a4d6a0f9702ba64486f"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -21864,6 +21864,50 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R041"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0042E640",
+        "size": "547",
+        "span_end": "0x0042E862",
+        "current_name": "FUN_0042e640",
+        "proposed_name": "ResultScene::Initialize",
+        "module": "ResultScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R052; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x0042E640",
+        "size": "547",
+        "span_end": "0x0042E862",
+        "current_name": "FUN_0042e640",
+        "proposed_name": "ResultScene::Initialize",
+        "module": "ResultScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "ResultSceneCtorF243::ResultSceneCtorF243()",
+        "is_thunk": "false",
+        "source_file": "src/ResultSceneCtorF243.cpp",
+        "evidence": "R052; full body hash, complete decoded CFG and local game-specific behavior reviewed; F243; scripts/repo-python scripts/replay-exact-units.py --unit result-scene-initialize-0042e640",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F243: entire 547 authored CODE bytes / 127 original decoded instructions, SHA256 6fef0a170924d019037ccdb3c264dc8e357dd9c09c0edce3db3af9be94ae786a, original RET and real VC7.1 /GX EH handler 006559E3. First natural C++ source exact cold replays entire 547 bytes, all 415/415 nonrelocation bytes and all 33 real COFF fields including genuine 80-byte new texture manager constructor 0040AD80, allocation slots 3 at 0040B1D0, original real root 00658014 and resource path 0065801C in file load 0040BB80, base SceneBase 004251C0 and vtable 00658038. Base constructor 004251C0 retains R108 unresolved origin, no separate byte credit from this caller. Real actor globals 00671418/0067141C, integer totals 0067160C, denominator 006714BC, bonus 006714C0, sequence 00671622, and three independent float constants 0065747C/00657888/00658034 are all relocated exactly. Source preserves native integer-to-x87 FILD/FIDIV/FIADD sequences, 10000-scale bonus composition, original ordered four 900 and one 1800 halfword initial offsets, actor score update and two 10000 native clamps. Object and texture owners remain physical borrowed interfaces only; no complete original class sizes asserted beyond observed new(80). No fake locals, asm, masked relocations, pasted target bytes, cropped code, broad cold replay or external Oracle claim. R052 independently authored review, all 97 unknown origins preserved."
+      },
+      "origin": {
+        "address": "0x0042E640",
+        "origin": "authored",
+        "subsystem": "ResultScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R052"
       }
     }
   ],
@@ -169817,6 +169861,227 @@
           "target": 4204704
         }
       ]
+    },
+    "result-scene-initialize-0042e640": {
+      "source": "src/ResultSceneCtorF243.cpp",
+      "object": "build/matching/ResultSceneCtorF243.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "ResultScene::Initialize"
+      ],
+      "symbol": "??0ResultSceneCtorF243@@QAE@XZ",
+      "target_address": 4384320,
+      "size": 547,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??0ResultSceneCtorF243@@QAE@XZ",
+          "target": 6642147
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 34,
+          "type": "REL32",
+          "symbol": "??0SceneBaseF243@@QAE@XZ",
+          "target": 4346304
+        },
+        {
+          "offset": 50,
+          "type": "DIR32",
+          "symbol": "??_7ResultSceneCtorF243@@6B@",
+          "target": 6651960
+        },
+        {
+          "offset": 57,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 81,
+          "type": "REL32",
+          "symbol": "??0TextureManagerF243@@QAE@XZ",
+          "target": 4238720
+        },
+        {
+          "offset": 125,
+          "type": "REL32",
+          "symbol": "?AllocateUnformattedSlots@TextureManagerF243@@QAEXH@Z",
+          "target": 4239824
+        },
+        {
+          "offset": 130,
+          "type": "DIR32",
+          "symbol": "?g_ResultTextureRootAt00658014@@3QBDB",
+          "target": 6651924
+        },
+        {
+          "offset": 135,
+          "type": "DIR32",
+          "symbol": "?g_ResultTexturePathAt0065801C@@3QBDB",
+          "target": 6651932
+        },
+        {
+          "offset": 146,
+          "type": "REL32",
+          "symbol": "?LoadDefault@TextureManagerF243@@QAEXPBD0@Z",
+          "target": 4242304
+        },
+        {
+          "offset": 179,
+          "type": "DIR32",
+          "symbol": "?g_ResultActorSecondaryAt0067141C@@3PAXA",
+          "target": 6755356
+        },
+        {
+          "offset": 197,
+          "type": "DIR32",
+          "symbol": "?g_ResultScoreTotalAt0067160C@@3HA",
+          "target": 6755852
+        },
+        {
+          "offset": 206,
+          "type": "DIR32",
+          "symbol": "?g_ResultScoreTotalAt0067160C@@3HA",
+          "target": 6755852
+        },
+        {
+          "offset": 212,
+          "type": "DIR32",
+          "symbol": "?g_ResultTotalDenominatorAt006714BC@@3HA",
+          "target": 6755516
+        },
+        {
+          "offset": 218,
+          "type": "DIR32",
+          "symbol": "?g_ResultOneAt0065747C@@3MB",
+          "target": 6648956
+        },
+        {
+          "offset": 231,
+          "type": "DIR32",
+          "symbol": "?g_ResultBonusAt006714C0@@3FA",
+          "target": 6755520
+        },
+        {
+          "offset": 244,
+          "type": "DIR32",
+          "symbol": "?g_ResultBonusAt006714C0@@3FA",
+          "target": 6755520
+        },
+        {
+          "offset": 256,
+          "type": "DIR32",
+          "symbol": "?g_ResultHundredAt00657888@@3MB",
+          "target": 6649992
+        },
+        {
+          "offset": 262,
+          "type": "DIR32",
+          "symbol": "?g_ResultOneAt0065747C@@3MB",
+          "target": 6648956
+        },
+        {
+          "offset": 274,
+          "type": "DIR32",
+          "symbol": "?g_ResultActorPrimaryAt00671418@@3PAXA",
+          "target": 6755352
+        },
+        {
+          "offset": 288,
+          "type": "DIR32",
+          "symbol": "?g_ResultSequenceAt00671622@@3CA",
+          "target": 6755874
+        },
+        {
+          "offset": 294,
+          "type": "DIR32",
+          "symbol": "?g_ResultActorPrimaryAt00671418@@3PAXA",
+          "target": 6755352
+        },
+        {
+          "offset": 325,
+          "type": "DIR32",
+          "symbol": "?g_ResultActorPrimaryAt00671418@@3PAXA",
+          "target": 6755352
+        },
+        {
+          "offset": 344,
+          "type": "DIR32",
+          "symbol": "?g_ResultTenThousandAt00658034@@3MB",
+          "target": 6651956
+        },
+        {
+          "offset": 351,
+          "type": "DIR32",
+          "symbol": "?g_ResultSequenceAt00671622@@3CA",
+          "target": 6755874
+        },
+        {
+          "offset": 363,
+          "type": "DIR32",
+          "symbol": "?g_ResultActorPrimaryAt00671418@@3PAXA",
+          "target": 6755352
+        },
+        {
+          "offset": 382,
+          "type": "DIR32",
+          "symbol": "?g_ResultOneAt0065747C@@3MB",
+          "target": 6648956
+        },
+        {
+          "offset": 466,
+          "type": "DIR32",
+          "symbol": "?g_ResultActorPrimaryAt00671418@@3PAXA",
+          "target": 6755352
+        },
+        {
+          "offset": 484,
+          "type": "DIR32",
+          "symbol": "?g_ResultActorPrimaryAt00671418@@3PAXA",
+          "target": 6755352
+        },
+        {
+          "offset": 496,
+          "type": "DIR32",
+          "symbol": "?g_ResultActorPrimaryAt00671418@@3PAXA",
+          "target": 6755352
+        },
+        {
+          "offset": 510,
+          "type": "DIR32",
+          "symbol": "?g_ResultActorPrimaryAt00671418@@3PAXA",
+          "target": 6755352
+        },
+        {
+          "offset": 539,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -170150,6 +170415,7 @@
     "src/ResultRecordF239.cpp": "9debc53f3faa65778ca720c1acc0182440e915a4a11b077816719d41a4d2ac6c",
     "src/ResultRendererF240.cpp": "97aa163eb3644cff341563d880a3df205cd23dab60a00060b30a45b7f0b31243",
     "src/ResultDigitsF241.cpp": "c27048e5cbf7ed9087e69eac48b0856d5d4c8397afbcd7fc9f71920cee479fcb",
-    "src/SceneTransitionDispatchF242.cpp": "b803b6c3b3a49ac2d9e4272bc0fa297dfb7a8a315ea5257932f9b6fef4c130d7"
+    "src/SceneTransitionDispatchF242.cpp": "b803b6c3b3a49ac2d9e4272bc0fa297dfb7a8a315ea5257932f9b6fef4c130d7",
+    "src/ResultSceneCtorF243.cpp": "9cb927c751bfe8832bba61a3d48d3dcdd16e0d2e8aae77a541c5fa790536dd54"
   }
 }

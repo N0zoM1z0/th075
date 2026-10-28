@@ -1519,3 +1519,43 @@ comparison and cold log remain under `.analysis/f242-transition/`.
 masking conditions, all original fields/callbacks and source SHA.
 No masks, fake locals, omitted branches, machine-byte copying, invented
 owner sizeof, extra callee credit or external Oracle claim.
+
+
+## F243: result-scene constructor with native float scores and EH, cold exact
+
+The independently R052-authored `ResultScene::Initialize` constructor at
+`0042E640..0042E862` contains **547 complete native CODE bytes and
+127 decoded x86 instructions**, original SHA256
+`6fef0a170924d019037ccdb3c264dc8e357dd9c09c0edce3db3af9be94ae786a`.
+The natural `src/ResultSceneCtorF243.cpp`, compiled with pinned VC7.1
+`/Od /GX`, reproduces **415/415 nonrelocation bytes plus all 33 true
+physical DIR32/REL32 COFF fields**. Independent cold replay of *only*
+`result-scene-initialize-0042e640` reports **exact: 547**.
+
+It calls the actual scene base constructor at `004251C0`, which is
+**still R108 origin-unknown** and receives no separate source/byte credit,
+then emits the real result-scene vptr `00658038` and a genuine EH-backed
+80-byte texture manager `new` plus constructor `0040AD80`. It allocates
+three source slots at `0040B1D0` and loads the actual
+`data\\system\\result.dat` under original `data` root using
+`0040BB80`. The real C++ caller retains the physical field offsets
+for actor globals `00671418/0067141C`, integer score `0067160C`,
+bonus `006714C0`, sequence `00671622` and target `006714BC`. The
+original FILD/FIDIV, FILD/FDIV, FIADD and FSUB instructions for three
+normalized score and bonus fields are reproduced without float-promotion
+substitutions, along with the true 10,000-unit bonus composition.
+Native zero-initialization, four 900 halfword animation placements and
+one 1800 halfword placement, actor score update and two 10,000-valued
+actor fields preserve the exact order and complete native EH unwind.
+The carrier type's allocation size is independently verified as 80;
+neither complete original actor types nor the full result-scene layout is
+claimed. No artificial locals, ASM, pasted machine bytes, ignored fields,
+small-function cropping, all-unit cold replay, broader origin promotions
+or external Oracle receipt occurred.
+
+The complete native Ghidra 127-instruction listing, first natural source,
+relocation diagnostic and independent cold log remain at
+`.analysis/f243-result-init/`. `tests/test_result_scene_init_f243.py`
+guards whole original code SHA, the original EH entry and all 33 native
+relocations with accepted source hash. All 97 unresolved origins remain
+uncredited.
