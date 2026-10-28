@@ -674,3 +674,4 @@ YuyukoFighter::SelectSpecialVariant,0x00577BC0,function
 YukariFighter::SelectSpecialVariant,0x0059B740,function
 SuikaFighter::SelectSpecialVariant,0x005C4320,function
 MeilingFighter::SelectSpecialVariant,0x005E5910,function
+ProgressRecords::InsertRankedScore,0x00416EE0,function

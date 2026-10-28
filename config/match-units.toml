@@ -49045,3 +49045,23 @@ offset = 166
 type = "DIR32"
 symbol = "$L662"
 target = 0x005E5984
+
+
+[units.progress-records-insert-ranked-score-00416ee0]
+source = "src/ProgressRankInsertF375.cpp"
+object = "build/matching/ProgressRankInsertF375.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["ProgressRecords::InsertRankedScore"]
+symbol = "?InsertRankedScore@ProgressRankingF375@@QAEEI@Z"
+target_address = 0x00416EE0
+size = 281
+[[units.progress-records-insert-ranked-score-00416ee0.relocations]]
+offset = 138
+type = "REL32"
+symbol = "_time"
+target = 0x00641AFE
+[[units.progress-records-insert-ranked-score-00416ee0.relocations]]
+offset = 150
+type = "REL32"
+symbol = "_localtime"
+target = 0x0064197E

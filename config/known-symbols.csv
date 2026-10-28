@@ -656,3 +656,4 @@ address,name,module,confidence,evidence
 0x0059B740,YukariFighter::SelectSpecialVariant,YukariFighter,inferred,"F374; independently exact native 130-byte Yukari action selector plus 40-byte switch table, 12 genuine physical COFF fields; no table CODE credit"
 0x005C4320,SuikaFighter::SelectSpecialVariant,SuikaFighter,inferred,"F374; independently exact native 130-byte Suika action selector plus 40-byte switch table, 12 genuine physical COFF fields; no table CODE credit"
 0x005E5910,MeilingFighter::SelectSpecialVariant,MeilingFighter,inferred,"F374; independently exact native 130-byte Meiling action selector plus 40-byte switch table, 12 genuine physical COFF fields; no table CODE credit"
+0x00416EE0,ProgressRecords::InsertRankedScore,ProgressRecords,inferred,"F375; complete 281-byte 10-slot ranking insertion with real 16-byte record, original time/localtime and two genuine COFF fields, cold exact"

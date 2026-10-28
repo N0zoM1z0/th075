@@ -5614,3 +5614,38 @@ were cold-replayed in one command: **11/11 exact across 1 object**. Only
 No cropped table, masks, fake switch returns or table bytes in SOURCE,
 manual assembly, whole-repository cold replay, claimed unknown class
 layout or remote Oracle acceptance.
+
+
+## F375: complete 281-byte score ranking insertion and genuine date-frame lifetime
+
+Original `ProgressRecords::InsertRankedScore` at `00416EE0..00416FF8` is
+**281 original authored CODE bytes**, **85 original native x86 instructions**
+with real `RET 4`, original PE SHA256
+`f0d0e52b7834073511cc55e54606d944a8c4e07ab1f2720626750830f8cde1a3`.
+The native method rejects a score no greater than the original low-score
+threshold at owner +0x5F8 (returning byte 255), otherwise starts at rank 9
+and repeatedly copies the original physical 16-byte rank record from the
+previous slot while scores should move down. The `unsigned` rank comparison,
+original 16-byte four-DWORD natural struct assignment, break before index
+underflow, current date acquisition via `time`/`localtime`, true month/day
+bytes +0x564/+0x565, score DWORD at +0x568, eight character bytes of value
+100 and final unsigned-char rank value are all preserved. The observed
+record layout includes genuinely copied but otherwise untyped bytes 10..11;
+no private full record class/owner is asserted.
+
+The initial entire natural source was 280 bytes because of a differently
+arranged early return and two-branch do-while, not an incomplete function.
+Changing to the real top early-reject test and a natural `while` copy with
+`if(--index==0) break` recreated the **whole 281-byte / 85-instruction**
+code shape, leaving actual original stack displacements unmatched. Native
+index lives at EBP-4, `tm*` at EBP-8, `time_t` at EBP-C and name-loop int at
+EBP-10. An eight-byte natural date record whose **real used fields** are
+`time_t timestamp` then `tm* today` reproduces exactly those stack slots
+without inert locals or padding. This yields **273/273 original nonrelocation
+bytes** and **2/2 genuine runtime COFF REL32 references**, with native
+`time` at `00641AFE` and `localtime` at `0064197E`. The whole source in
+`src/ProgressRankInsertF375.cpp` was independently cold-rebuilt under
+VC7.1 `/Od /Ob0 /Gy /GR- /GX- /Zi` as only affected unit
+`progress-records-insert-ranked-score-00416ee0`, **1/1 exact**. No library
+callee credit, copied machine code, fake ABI/layout, masks, cropped original
+CODE, whole cold replay or external Oracle receipt.

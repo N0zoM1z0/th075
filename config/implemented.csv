@@ -673,3 +673,4 @@ YuyukoFighter::SelectSpecialVariant
 YukariFighter::SelectSpecialVariant
 SuikaFighter::SelectSpecialVariant
 MeilingFighter::SelectSpecialVariant
+ProgressRecords::InsertRankedScore
