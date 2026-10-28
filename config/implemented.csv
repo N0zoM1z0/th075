@@ -815,3 +815,8 @@ BackgroundStage::DestroyBG08aAt00451110
 BackgroundStage::DestroyBG08xAt00451350
 BackgroundStage::DestroyBG09aAt00451C50
 BackgroundStage::DestroyBG09xAt00451E90
+DataArchive::InitializeStateAndClearListAt0041D190
+ArchiveResource::CloseHandleAndClearEntriesAt0041D1F0
+RasterResources::InitializeSelectedWindowAndEmptyStateAt0041BF90
+CameraMotion::ResetParametersAt00412620
+FrameCapture::DrawIfEnabledAt004171D0

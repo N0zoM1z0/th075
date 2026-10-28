@@ -816,3 +816,8 @@ BackgroundStage::DestroyBG08aAt00451110,0x00451110,function
 BackgroundStage::DestroyBG08xAt00451350,0x00451350,function
 BackgroundStage::DestroyBG09aAt00451C50,0x00451C50,function
 BackgroundStage::DestroyBG09xAt00451E90,0x00451E90,function
+DataArchive::InitializeStateAndClearListAt0041D190,0x0041D190,function
+ArchiveResource::CloseHandleAndClearEntriesAt0041D1F0,0x0041D1F0,function
+RasterResources::InitializeSelectedWindowAndEmptyStateAt0041BF90,0x0041BF90,function
+CameraMotion::ResetParametersAt00412620,0x00412620,function
+FrameCapture::DrawIfEnabledAt004171D0,0x004171D0,function

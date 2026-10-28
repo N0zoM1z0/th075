@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377; F378; F379; F386; F389; F391; F392; F393; F394; F395; F403; F407; F414; F415; F421; F422; F427; F428; F429; F430; F431; F432; F435; F437; F440; F445; F446; F447; F448; F454; F458; F459; F460; F461; F463; F465; F467; F468; F469; F474; F479",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377; F378; F379; F386; F389; F391; F392; F393; F394; F395; F403; F407; F414; F415; F421; F422; F427; F428; F429; F430; F431; F432; F435; F437; F440; F445; F446; F447; F448; F454; F458; F459; F460; F461; F463; F465; F467; F468; F469; F474; F479; F481",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "3ba8ddd74126e340d65ec30e4c7961388dcf6ce869c7aa3145da62fa03bce15a"
+      "current_sha256": "d3488710f111623d3f5ae0054f136fa7de36de0cf1ecebda01c1b5878061efb6"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "123107e863f394d89514bd549cc05cf6964536ddaf8e88012871062e8d42aa09"
+      "current_sha256": "85a63933126b6f836a488288dd19286fdeac0ea4d35a8217d9278e05a4beff8c"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "ee605e3b4705b1b0fdd3dbc65aa4d0d38e8a7ab77ddf28fa4f42da889c84ebaf"
+      "current_sha256": "ff48198b512bfa4c38e624946c33060b97166c2bcf75c86fd1a85f606261df26"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "fd858c02ab0337a719cd061a5c142727963dcc78c612cccc6d4d1198d9ae7d6b"
+      "current_sha256": "1fa8834fa73a0843a00f68b63a6ef66c8ea09155d9a6de7943335ebcd5415221"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "7e69f81ada662e807e5426f4ff284b5eda03172721341a26f5758aa73f1b48e7"
+      "current_sha256": "60a60b48c42f350b99eba0cfd03e1dae85a4a0cb50046c05e190a108a0ffd9f5"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -33348,6 +33348,226 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R057"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0041D190",
+        "size": "90",
+        "span_end": "0x0041D1E9",
+        "current_name": "FUN_0041d190",
+        "proposed_name": "DataArchive::InitializeStateAndClearListAt0041D190",
+        "module": "DataArchive",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R180; config/indexed-owner-policy-origin-evidence.json; scripts/repo-python scripts/verify-indexed-owner-policy-origins.py",
+        "owner": "authored",
+        "notes": "Full target-only nested signed selection/strides and directional eight-byte copy, explicit queue clear before automatic destruction, or explicit zero and post-construction archive-list clear. Whole independent original game parents and complete source operation/implicit controls are retained; no target-source byte positive is claimed. Complete game owner layouts and field meanings remain unknown. The separate default-list constructor graph stays unknown; its143-byte provisional node span ends in an external jump and must be reconciled with complete source223-byte code before any acceptance. No reconstructed source/private ABI/mapping/exact credit."
+      },
+      "after": {
+        "address": "0x0041D190",
+        "size": "90",
+        "span_end": "0x0041D1E9",
+        "current_name": "FUN_0041d190",
+        "proposed_name": "DataArchive::InitializeStateAndClearListAt0041D190",
+        "module": "DataArchive",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "DataArchiveF481::DataArchiveF481()",
+        "is_thunk": "false",
+        "source_file": "src/ArchiveRasterCameraFramePoliciesF481.cpp",
+        "evidence": "R180; config/indexed-owner-policy-origin-evidence.json; scripts/repo-python scripts/verify-indexed-owner-policy-origins.py; F481; scripts/repo-python scripts/replay-exact-units.py --unit data-archive-initialize-state-0041d190",
+        "owner": "authored",
+        "notes": "Full target-only nested signed selection/strides and directional eight-byte copy, explicit queue clear before automatic destruction, or explicit zero and post-construction archive-list clear. Whole independent original game parents and complete source operation/implicit controls are retained; no target-source byte positive is claimed. Complete game owner layouts and field meanings remain unknown. The separate default-list constructor graph stays unknown; its143-byte provisional node span ends in an external jump and must be reconciled with complete source223-byte code before any acceptance. No reconstructed source/private ABI/mapping/exact credit.; F481 complete independently original authored R180 native 90-byte function DataArchive::InitializeStateAndClearListAt0041D190 at 0x0041D190, 25 original x86 instructions, original PE SHA256 c8680ebc6f18824f37a8121171ae846477969629b0b3b68515f3201d034fc628. Original native C++ /GX archive list at +4 invokes borrowed 0041D8F0 constructor, sets actual handle field +0 to NULL, calls true 0041D9F0 Clear; original SEH cleanup and return this compiler-produced. All original 66/66 nonrelocation bytes, 6/6 authentic physical COFF DIR32/REL32 reference fields and original destinations; five affected-only cold units exact 5/5 across one object. Borrowed original full private game class layouts unasserted; C++ member sizes/offsets only native physical views. No callee/Win32/SDK compiler helper CODE credited, no fake locals/padding, pasted bytes, ASM, masks/cropped original, full cold replay or external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x0041D190",
+        "origin": "authored",
+        "subsystem": "DataArchive",
+        "disposition": "authored",
+        "confidence": "complete-custom-indexed-copy-and-explicit-owner-policy-context",
+        "evidence_id": "R180"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0041D1F0",
+        "size": "98",
+        "span_end": "0x0041D251",
+        "current_name": "FUN_0041d1f0",
+        "proposed_name": "ArchiveResource::CloseHandleAndClearEntriesAt0041D1F0",
+        "module": "ResourceReleasePolicy",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R175; config/resource-release-policy-origin-evidence.json; scripts/repo-python scripts/verify-resource-release-policy-origins.py",
+        "owner": "authored",
+        "notes": "Complete explicit interface release or guarded handle-close/list-clear policy and complete typed SDK list cleanup graph. Actual independent R017/R045 release policies and unchanged R037 deleting parents retain ownership. Whole compiler-generated alternatives lack the explicit release/clear operations. Two full custom policies reproduce byte-for-byte with real EH/data fields; the 105-byte character policy is reviewed from its entire target CFG and a small-layout source destruction-order control, not a source-byte match. Ordinary full 19-byte tidy wrappers are byte-equal; original method spelling/types/private owner layouts remain unknown. Node-link getters and five-byte destruction children remain unknown. No reconstructed source/private ABI/mapping/exact credit."
+      },
+      "after": {
+        "address": "0x0041D1F0",
+        "size": "98",
+        "span_end": "0x0041D251",
+        "current_name": "FUN_0041d1f0",
+        "proposed_name": "ArchiveResource::CloseHandleAndClearEntriesAt0041D1F0",
+        "module": "ResourceReleasePolicy",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "DataArchiveF481::~DataArchiveF481()",
+        "is_thunk": "false",
+        "source_file": "src/ArchiveRasterCameraFramePoliciesF481.cpp",
+        "evidence": "R175; config/resource-release-policy-origin-evidence.json; scripts/repo-python scripts/verify-resource-release-policy-origins.py; F481; scripts/repo-python scripts/replay-exact-units.py --unit data-archive-close-entries-0041d1f0",
+        "owner": "authored",
+        "notes": "Complete explicit interface release or guarded handle-close/list-clear policy and complete typed SDK list cleanup graph. Actual independent R017/R045 release policies and unchanged R037 deleting parents retain ownership. Whole compiler-generated alternatives lack the explicit release/clear operations. Two full custom policies reproduce byte-for-byte with real EH/data fields; the 105-byte character policy is reviewed from its entire target CFG and a small-layout source destruction-order control, not a source-byte match. Ordinary full 19-byte tidy wrappers are byte-equal; original method spelling/types/private owner layouts remain unknown. Node-link getters and five-byte destruction children remain unknown. No reconstructed source/private ABI/mapping/exact credit.; F481 complete independently original authored R175 native 98-byte function ArchiveResource::CloseHandleAndClearEntriesAt0041D1F0 at 0x0041D1F0, 29 original x86 instructions, original PE SHA256 bc00c51364b599bfa0b4887220d5566dfe6cf5e711f4e7347b2c6fa3604bae6d. True natural /GX C++ destructor conditionally closes real original handle at this+0 through Win32 imported CloseHandle 00657138, clears original member list via 0041D9F0, then compiler auto-destroys member list via 0041D930; preserves EH transitions. All original 70/70 nonrelocation bytes, 7/7 authentic physical COFF DIR32/REL32 reference fields and original destinations; five affected-only cold units exact 5/5 across one object. Borrowed original full private game class layouts unasserted; C++ member sizes/offsets only native physical views. No callee/Win32/SDK compiler helper CODE credited, no fake locals/padding, pasted bytes, ASM, masks/cropped original, full cold replay or external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x0041D1F0",
+        "origin": "authored",
+        "subsystem": "ResourceReleasePolicy",
+        "disposition": "authored",
+        "confidence": "complete-explicit-resource-policy-and-whole-lifetime-controls",
+        "evidence_id": "R175"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0041BF90",
+        "size": "64",
+        "span_end": "0x0041BFCF",
+        "current_name": "FUN_0041bf90",
+        "proposed_name": "RasterResources::InitializeSelectedWindowAndEmptyStateAt0041BF90",
+        "module": "RasterResources",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R183; config/font-byte-policy-origin-evidence.json; scripts/repo-python scripts/verify-font-byte-policy-origins.py",
+        "owner": "authored",
+        "notes": "Complete explicit text-unit decoding or selected-window/empty-resource initialization with original whole font, texture and music-room game consumers. Actual two DWORD loads in the double-byte decode branch and signed byte fallback are preserved; the natural74-byte char-input source is a full negative against all85 target bytes. The small20-byte resource observer emits64 bytes but has one actual storage-offset difference from the original64-byte initializer; no padding or complete original owner layout is invented. The77-byte lead classifier remains unknown because whole ordinary and source-member alternatives are equal; the full25-byte SDK macro has a real external table field and gains no target binding or ownership credit. Preserve original56-byte allocation and complete119/129-byte accepted release policies independently. No source/private ABI/mapping/exact credit."
+      },
+      "after": {
+        "address": "0x0041BF90",
+        "size": "64",
+        "span_end": "0x0041BFCF",
+        "current_name": "FUN_0041bf90",
+        "proposed_name": "RasterResources::InitializeSelectedWindowAndEmptyStateAt0041BF90",
+        "module": "RasterResources",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "RasterStateF481* RasterStateF481::Initialize(HWND)",
+        "is_thunk": "false",
+        "source_file": "src/ArchiveRasterCameraFramePoliciesF481.cpp",
+        "evidence": "R183; config/font-byte-policy-origin-evidence.json; scripts/repo-python scripts/verify-font-byte-policy-origins.py; F481; scripts/repo-python scripts/replay-exact-units.py --unit raster-resources-initialize-state-0041bf90",
+        "owner": "authored",
+        "notes": "Complete explicit text-unit decoding or selected-window/empty-resource initialization with original whole font, texture and music-room game consumers. Actual two DWORD loads in the double-byte decode branch and signed byte fallback are preserved; the natural74-byte char-input source is a full negative against all85 target bytes. The small20-byte resource observer emits64 bytes but has one actual storage-offset difference from the original64-byte initializer; no padding or complete original owner layout is invented. The77-byte lead classifier remains unknown because whole ordinary and source-member alternatives are equal; the full25-byte SDK macro has a real external table field and gains no target binding or ownership credit. Preserve original56-byte allocation and complete119/129-byte accepted release policies independently. No source/private ABI/mapping/exact credit.; F481 complete independently original authored R183 native 64-byte function RasterResources::InitializeSelectedWindowAndEmptyStateAt0041BF90 at 0x0041BF90, 19 original x86 instructions, original PE SHA256 ef3f65ed3262399d765864cd003b1a1ad3752e33ac364d684596e38389ded302. True original HWND parameter assigned to this+0 and actual pointer / bitmap fields +4,+8,+C,+14 zeroed in the original assignment order; +0x10 gap exists physically but no asserted private member behavior. All original 64/64 nonrelocation bytes, 0/0 authentic physical COFF DIR32/REL32 reference fields and original destinations; five affected-only cold units exact 5/5 across one object. Borrowed original full private game class layouts unasserted; C++ member sizes/offsets only native physical views. No callee/Win32/SDK compiler helper CODE credited, no fake locals/padding, pasted bytes, ASM, masks/cropped original, full cold replay or external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x0041BF90",
+        "origin": "authored",
+        "subsystem": "RasterResources",
+        "disposition": "authored",
+        "confidence": "complete-explicit-font-byte-and-resource-default-policy-with-whole-game-context",
+        "evidence_id": "R183"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00412620",
+        "size": "64",
+        "span_end": "0x0041265F",
+        "current_name": "FUN_00412620",
+        "proposed_name": "CameraMotion::ResetParametersAt00412620",
+        "module": "CameraMotion",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit"
+      },
+      "after": {
+        "address": "0x00412620",
+        "size": "64",
+        "span_end": "0x0041265F",
+        "current_name": "FUN_00412620",
+        "proposed_name": "CameraMotion::ResetParametersAt00412620",
+        "module": "CameraMotion",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "CameraResetF481* CameraResetF481::ResetParameters()",
+        "is_thunk": "false",
+        "source_file": "src/ArchiveRasterCameraFramePoliciesF481.cpp",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103; F481; scripts/repo-python scripts/replay-exact-units.py --unit camera-motion-reset-parameters-00412620",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit; F481 complete independently original authored R103 native 64-byte function CameraMotion::ResetParametersAt00412620 at 0x00412620, 13 original x86 instructions, original PE SHA256 5cbfbb4ed7f9e8380bb4991739067876ee642797a60b3321491128d9e486b77d. Five actual native globals 006713EC, 0067140C, 006713F8, 00671410, 006713FC updated; original exact float bit immediate 0x41A00000 is 20.0f, not earlier mistaken 5.0f, with four other DWORD values zero and return this. All original 44/44 nonrelocation bytes, 5/5 authentic physical COFF DIR32/REL32 reference fields and original destinations; five affected-only cold units exact 5/5 across one object. Borrowed original full private game class layouts unasserted; C++ member sizes/offsets only native physical views. No callee/Win32/SDK compiler helper CODE credited, no fake locals/padding, pasted bytes, ASM, masks/cropped original, full cold replay or external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x00412620",
+        "origin": "authored",
+        "subsystem": "CameraMotion",
+        "disposition": "authored",
+        "confidence": "complete-game-policy-with-batch-context",
+        "evidence_id": "R103"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004171D0",
+        "size": "50",
+        "span_end": "0x00417201",
+        "current_name": "FUN_004171d0",
+        "proposed_name": "FrameCapture::DrawIfEnabledAt004171D0",
+        "module": "FrameCapture",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R100; scripts/repo-python scripts/verify-short-game-origins.py",
+        "owner": "authored",
+        "notes": "Complete game-policy body and CFG; reviewed custom callees, explicit fields and owner context; names/layouts inferred; no source or exact credit"
+      },
+      "after": {
+        "address": "0x004171D0",
+        "size": "50",
+        "span_end": "0x00417201",
+        "current_name": "FUN_004171d0",
+        "proposed_name": "FrameCapture::DrawIfEnabledAt004171D0",
+        "module": "FrameCapture",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void FrameTextureF481::DrawIfEnabled(const float (*)[4],const RECT*,unsigned int)",
+        "is_thunk": "false",
+        "source_file": "src/ArchiveRasterCameraFramePoliciesF481.cpp",
+        "evidence": "R100; scripts/repo-python scripts/verify-short-game-origins.py; F481; scripts/repo-python scripts/replay-exact-units.py --unit frame-capture-draw-if-enabled-004171d0",
+        "owner": "authored",
+        "notes": "Complete game-policy body and CFG; reviewed custom callees, explicit fields and owner context; names/layouts inferred; no source or exact credit; F481 complete independently original authored R100 native 50-byte function FrameCapture::DrawIfEnabledAt004171D0 at 0x004171D0, 22 original x86 instructions, original PE SHA256 b9790cfd51266b2262af4ddac9f014e6ad28bfa3b6b15c8e756a2fa3690c968f. Checks real enabled byte this+4, if set calls original cdecl DrawTexturedQuad 004029F0 with actual this+0 texture, original caller-supplied quad, RECT and color parameters; real thiscall ret 0xC. All original 46/46 nonrelocation bytes, 1/1 authentic physical COFF DIR32/REL32 reference fields and original destinations; five affected-only cold units exact 5/5 across one object. Borrowed original full private game class layouts unasserted; C++ member sizes/offsets only native physical views. No callee/Win32/SDK compiler helper CODE credited, no fake locals/padding, pasted bytes, ASM, masks/cropped original, full cold replay or external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x004171D0",
+        "origin": "authored",
+        "subsystem": "FrameCapture",
+        "disposition": "authored",
+        "confidence": "target-observed-game-policy-and-reviewed-callees",
+        "evidence_id": "R100"
       }
     }
   ],
@@ -206737,6 +206957,234 @@
           "target": 4496704
         }
       ]
+    },
+    "data-archive-initialize-state-0041d190": {
+      "source": "src/ArchiveRasterCameraFramePoliciesF481.cpp",
+      "object": "build/matching/ArchiveRasterCameraFramePoliciesF481.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "DataArchive::InitializeStateAndClearListAt0041D190"
+      ],
+      "symbol": "??0DataArchiveF481@@QAE@XZ",
+      "target_address": 4313488,
+      "size": 90,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??0DataArchiveF481@@QAE@XZ",
+          "target": 6640720
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 35,
+          "type": "REL32",
+          "symbol": "??0ArchiveEntryListF481@@QAE@XZ",
+          "target": 4315376
+        },
+        {
+          "offset": 62,
+          "type": "REL32",
+          "symbol": "?Clear@ArchiveEntryListF481@@QAEXXZ",
+          "target": 4315632
+        },
+        {
+          "offset": 82,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "data-archive-close-entries-0041d1f0": {
+      "source": "src/ArchiveRasterCameraFramePoliciesF481.cpp",
+      "object": "build/matching/ArchiveRasterCameraFramePoliciesF481.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "ArchiveResource::CloseHandleAndClearEntriesAt0041D1F0"
+      ],
+      "symbol": "??1DataArchiveF481@@QAE@XZ",
+      "target_address": 4313584,
+      "size": 98,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??1DataArchiveF481@@QAE@XZ",
+          "target": 6640741
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 51,
+          "type": "DIR32",
+          "symbol": "__imp__CloseHandle@4",
+          "target": 6648120
+        },
+        {
+          "offset": 62,
+          "type": "REL32",
+          "symbol": "?Clear@ArchiveEntryListF481@@QAEXXZ",
+          "target": 4315632
+        },
+        {
+          "offset": 80,
+          "type": "REL32",
+          "symbol": "??1ArchiveEntryListF481@@QAE@XZ",
+          "target": 4315440
+        },
+        {
+          "offset": 90,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "raster-resources-initialize-state-0041bf90": {
+      "source": "src/ArchiveRasterCameraFramePoliciesF481.cpp",
+      "object": "build/matching/ArchiveRasterCameraFramePoliciesF481.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "RasterResources::InitializeSelectedWindowAndEmptyStateAt0041BF90"
+      ],
+      "symbol": "?Initialize@RasterStateF481@@QAEPAV1@PAUHWND__@@@Z",
+      "target_address": 4308880,
+      "size": 64,
+      "relocations": []
+    },
+    "camera-motion-reset-parameters-00412620": {
+      "source": "src/ArchiveRasterCameraFramePoliciesF481.cpp",
+      "object": "build/matching/ArchiveRasterCameraFramePoliciesF481.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "CameraMotion::ResetParametersAt00412620"
+      ],
+      "symbol": "?ResetParameters@CameraResetF481@@QAEPAV1@XZ",
+      "target_address": 4269600,
+      "size": 64,
+      "relocations": [
+        {
+          "offset": 9,
+          "type": "DIR32",
+          "symbol": "?g_CameraResetOneAt006713EC@@3IA",
+          "target": 6755308
+        },
+        {
+          "offset": 19,
+          "type": "DIR32",
+          "symbol": "?g_CameraResetHeightAt0067140C@@3MA",
+          "target": 6755340
+        },
+        {
+          "offset": 29,
+          "type": "DIR32",
+          "symbol": "?g_CameraResetTwoAt006713F8@@3IA",
+          "target": 6755320
+        },
+        {
+          "offset": 39,
+          "type": "DIR32",
+          "symbol": "?g_CameraResetThreeAt00671410@@3IA",
+          "target": 6755344
+        },
+        {
+          "offset": 49,
+          "type": "DIR32",
+          "symbol": "?g_CameraResetFourAt006713FC@@3IA",
+          "target": 6755324
+        }
+      ]
+    },
+    "frame-capture-draw-if-enabled-004171d0": {
+      "source": "src/ArchiveRasterCameraFramePoliciesF481.cpp",
+      "object": "build/matching/ArchiveRasterCameraFramePoliciesF481.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FrameCapture::DrawIfEnabledAt004171D0"
+      ],
+      "symbol": "?DrawIfEnabled@FrameTextureF481@@QAEXPAY03$$CBMPBUtagRECT@@I@Z",
+      "target_address": 4288976,
+      "size": 50,
+      "relocations": [
+        {
+          "offset": 37,
+          "type": "REL32",
+          "symbol": "?DrawD3DQuadAt004029F0@@YAXPAY03$$CBMPBUtagRECT@@IPAUIDirect3DTexture8@@@Z",
+          "target": 4205040
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -207217,6 +207665,7 @@
     "src/GameApplicationWindowCallbackF468.cpp": "a7e3d7b7294354fc0a6351c4c552b7773670ad60baaa4e75380c90f6c1af1e04",
     "src/FighterOwnedObjectFactoriesF469.cpp": "60c98fa7f8dbcc047138e885582acf11c3c973310b25de2b6836faf275002f93",
     "src/SceneResourceDestructorsF474.cpp": "7c8b68ec3f6da9f1c2541ae7989c42d91840a0859d557ade06281c8a6ca69840",
-    "src/BackgroundStageDerivedDestructorsF479.cpp": "03fd3d9ae305d099750360a82d8e56e3cf1936e6dd3bdbfb7aa064a3c00cdcfe"
+    "src/BackgroundStageDerivedDestructorsF479.cpp": "03fd3d9ae305d099750360a82d8e56e3cf1936e6dd3bdbfb7aa064a3c00cdcfe",
+    "src/ArchiveRasterCameraFramePoliciesF481.cpp": "31d067e80e5cb52071240ea4128404151760a84fcfcd518f9d5a3dc47488e8aa"
   }
 }

@@ -7441,3 +7441,85 @@ vtable DATA or compiler/CRT code is double-counted. No full-project
 cold replay, partial exact matching, fake ABI, manual assembly or
 external Oracle acceptance. Historical exact F376/F377 stage loading
 constructors remain separate authored original code.
+
+
+## F481: five complete native archive, raster, camera and frame resource policies
+
+Five independently authored original C++ game resource routines were
+verified separately against the pinned original PE and compiled from a
+single native-equivalent source under
+`src/ArchiveRasterCameraFramePoliciesF481.cpp`. Each original function
+retains distinct physical ABI, native instruction boundaries and original
+COFF references, rather than being counted as a shared skeleton:
+
+- `DataArchive::InitializeStateAndClearListAt0041D190`: original R180
+  **90 authored CODE bytes /25 instructions**, original PE SHA256
+  `c8680ebc6f18824f37a8121171ae846477969629b0b3b68515f3201d034fc628`,
+  genuine list at this+4 constructor `0041D8F0`, owner handle at this+0
+  null and list Clear `0041D9F0`. Complete original **66/66 nonfield
+  bytes**, **6/6 authentic COFF refs**, true `/GX` native EH.
+- `ArchiveResource::CloseHandleAndClearEntriesAt0041D1F0`: R175
+  **98 CODE bytes /29 instructions**, PE SHA256
+  `bc00c51364b599bfa0b4887220d5566dfe6cf5e711f4e7347b2c6fa3604bae6d`,
+  conditionally invokes real Windows imported CloseHandle at `00657138`
+  with owner +0 handle, clears actual list `0041D9F0`, then naturally
+  invokes borrowed original list destructor `0041D930` through C++
+  member lifetime and original `/GX` SEH. **70/70 nonfield, 7/7
+  genuine original physical COFF fields**.
+- `RasterResources::InitializeSelectedWindowAndEmptyStateAt0041BF90`: R183
+  **64 CODE bytes /19 instructions**, PE SHA256
+  `ef3f65ed3262399d765864cd003b1a1ad3752e33ac364d684596e38389ded302`,
+  assigns real HWND parameter at receiver+0, resets observed +4/+8/
+  +0xC/+0x14 fields to zero and returns receiver. **64/64 nonfield
+  bytes and zero native relocations** (no fabricated references).
+- `CameraMotion::ResetParametersAt00412620`: R103 **64 CODE bytes
+  /13 instructions**, SHA256
+  `5cbfbb4ed7f9e8380bb4991739067876ee642797a60b3321491128d9e486b77d`,
+  directly updates original camera globals `006713EC`, `0067140C`,
+  `006713F8`, `00671410`, `006713FC`. The original native DWORD
+  immediate at `0067140C` is **`0x41A00000`, IEEE754 20.0f**, not
+  5.0f. Natural source correcting the initial wrong constant restores
+  **44/44 nonfield bytes and 5/5 genuine DIR32 fields**.
+- `FrameCapture::DrawIfEnabledAt004171D0`: R100 **50 CODE bytes /22
+  original instructions**, original PE SHA256
+  `b9790cfd51266b2262af4ddac9f014e6ad28bfa3b6b15c8e756a2fa3690c968f`,
+  tests real receiver enabled byte +4, dereferences physical texture
+  field +0 and conditionally forwards the three original caller params
+  to borrowed native `DrawTexturedQuad` at `004029F0`, authentic
+  native thiscall `RET 0xC`. **46/46 native nonfield, 1/1 true COFF
+  REL32**.
+
+Each source was compared over its **complete original CODE extent**,
+including all native returns, actual Win32 imports and original physical
+relocation types/symbols/resolved destinations. Only affected five new
+unit names were cold-built and replayed, **5/5 exact across one object**,
+crediting **366 original authored CODE bytes**. The original private
+owner allocation and unused fields beyond observed locations remain
+unknown; borrowed actual list, camera, D3D, Win32 and CRT callees earn
+no duplicate CODE credit. No assembly, embedded target bytes, masked
+references, fake padding, cropped body, all-unit cold replay or remote
+Oracle acceptance.
+
+## F480: native WinMain real early scene-pointer lifetime hypothesis (nonexact)
+
+The original complete `GameApplication::RunAt00602A60` remains **2,987
+CODE bytes / 654 native x86 instructions** with 60 post-RET owned
+15-case jump-table DATA bytes. Independent original disassembly at
+0x1C documents a real `mov [ebp-0x184],0` immediately after the
+app-mode constructor, before other three original automatic resource
+client constructions, and the same actual scene pointer later receives
+the original first allocated scene at native offset 0x491. This
+corrects the F456/F473 C++ source hypothesis that only initialized
+`currentScene` late at first scene creation. F480 experiments under
+`.analysis/f480-winmain-scene-owning-pointer/` express a **genuine used
+scene pointer initialized to NULL** at several live declaration
+locations and assign new Scene4 later. With early C++ RAII destructor
+semantics this adjusts complete CODE length from prior F473 3022 to
+**2963** native-source-generated CODE bytes, and x86 count from 650
+to **651**, with compiler frame 0x270 versus original 0x278. The
+whole original WinMain/COM/Windows message loop remains nonmatching,
+including physical true return/error control flow, native archive
+interface and scene switch state. This is a meaningful falsifiable
+whole-boss negative control **not accepted or credited**, not a reason
+to add fake local variables, paste machine instructions or cold replay
+all units.
