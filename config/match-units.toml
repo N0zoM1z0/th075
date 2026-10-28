@@ -56533,3 +56533,18 @@ offset = 88
 type = "REL32"
 symbol = "?PushBack@EventWordDequeF457@@QAEXPBI@Z"
 target = 0x00423E10
+
+
+[units.game-globals-initialize-black-surface-00417000]
+source = "src/GameGlobalsInitializeBlackSurfaceF459.cpp"
+object = "build/matching/GameGlobalsInitializeBlackSurfaceF459.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["GameGlobals::InitializeBlackSurfaceAt00417000"]
+symbol = "?InitializeBlackSurface@BlackSurfaceF459@@QAEPAV1@XZ"
+target_address = 0x00417000
+size = 168
+[[units.game-globals-initialize-black-surface-00417000.relocations]]
+offset = 26
+type = "REL32"
+symbol = "?CreateBlackSurfaceAt00401C20@@YAXHHPAPAUIDirect3DTexture8@@H@Z"
+target = 0x00401C20

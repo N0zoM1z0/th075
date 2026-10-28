@@ -6991,3 +6991,35 @@ scene switch case order (real code body case 4 comes first), live early
 currentScene initialization and startup window state/stack slots, plus
 Win32/COM error exit CFG. No all-unit cold replay or acceptance
 without original full code/data/physical COFF exactness.
+
+
+## F459: complete 168-byte native 640×480 black D3D8 surface initializer
+
+The independently original R053-authored
+`GameGlobals::InitializeBlackSurfaceAt00417000` at
+`00417000..004170A7` is **168 complete original authored CODE bytes and
+58 native x86 instructions**, PE original SHA256
+`45d9fa0cfa27b987a3f0e21fc5eb658829518e556b9d1cf16abd1f8d5568982e`.
+The native code allocates a real D3D8 black texture/surface with original
+borrowed game callee `00401C20`, exactly width **1024**, height **512**,
+texture output at real receiver +0 and format 0x20. It locks the actual
+`IDirect3DTexture8` through native COM vtable slot +0x40 with an
+**eight-byte real `D3DLOCKED_RECT`** at original native EBP-8/-4,
+then iterates the genuinely observed x=0..639 and y=0..479 original
+nested loops and writes the native 32-bit black ARGB value `0xFF000000`
+into the texture memory at DWORD offset `(y*1024+x)`. It invokes the
+genuine D3D8 texture `UnlockRect` virtual method at original vtable+0x44,
+clears true owner byte+4 and returns the original receiver. The actual
+private full D3D8/resource owner layout is **not** inferred, and the
+borrowed texture allocator and imported D3D runtime are not CODE credit.
+
+The first natural pinned VC7.1 source
+`src/GameGlobalsInitializeBlackSurfaceF459.cpp`, with original real
+D3D8 COM ABI and SDK `D3DLOCKED_RECT`, emitted all **168 original bytes**
+under `/Od /Ob0 /Gy /GR- /GX- /Zi`. The entire original PE-backed
+function is matched **164/164 nonrelocation bytes** and its **single real
+physical original COFF REL32** to `00401C20` at native offset 0x1A.
+Only affected `--unit game-globals-initialize-black-surface-00417000`
+was rebuilt and cold-replayed **1/1 exact**. No raw assembly/target bytes,
+masking or truncation, fabricated stack locals, all-unit cold replay,
+additional SDK code or external Oracle acceptance claimed.
