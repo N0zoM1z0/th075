@@ -45350,3 +45350,72 @@ offset = 203
 type = "REL32"
 symbol = "?ResetRound@FighterBaseActionsF159@@QAEXXZ"
 target = 0x00457010
+
+[units.font-surface-render-text-to-texture-00413460]
+source = "src/FontRenderTextureF317.cpp"
+object = "build/matching/FontRenderTextureF317.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["FontSurface::RenderTextToTexture"]
+symbol = "?RenderTextToTexture@FontSpriteF317@@QAEXPBDEEEEEE@Z"
+target_address = 0x00413460
+size = 398
+[[units.font-surface-render-text-to-texture-00413460.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$?RenderTextToTexture@FontSpriteF317@@QAEXPBDEEEEEE@Z"
+target = 0x006550B5
+[[units.font-surface-render-text-to-texture-00413460.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.font-surface-render-text-to-texture-00413460.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.font-surface-render-text-to-texture-00413460.relocations]]
+offset = 138
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.font-surface-render-text-to-texture-00413460.relocations]]
+offset = 167
+type = "REL32"
+symbol = "??0FontGlyphRasterF317@@QAE@H@Z"
+target = 0x0041BF90
+[[units.font-surface-render-text-to-texture-00413460.relocations]]
+offset = 226
+type = "DIR32"
+symbol = "?g_FontRasterScaleAt006578B0@@3MB"
+target = 0x006578B0
+[[units.font-surface-render-text-to-texture-00413460.relocations]]
+offset = 237
+type = "REL32"
+symbol = "?ConfigureTint@FontGlyphRasterF317@@QAEXPBMIEEE@Z"
+target = 0x0041C060
+[[units.font-surface-render-text-to-texture-00413460.relocations]]
+offset = 254
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.font-surface-render-text-to-texture-00413460.relocations]]
+offset = 266
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.font-surface-render-text-to-texture-00413460.relocations]]
+offset = 301
+type = "REL32"
+symbol = "?RasterizeText@FontGlyphRasterF317@@QAEXPBDPAXHHHHHEC@Z"
+target = 0x0041C2E0
+[[units.font-surface-render-text-to-texture-00413460.relocations]]
+offset = 332
+type = "REL32"
+symbol = "??_GFontGlyphRasterF317@@QAEPAXI@Z"
+target = 0x00413620
+[[units.font-surface-render-text-to-texture-00413460.relocations]]
+offset = 388
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000

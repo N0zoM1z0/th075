@@ -628,3 +628,4 @@ PatchouliFighter::ResetRound,0x00502340,function
 RemiliaFighter::ResetRound,0x00551B20,function
 YuyukoFighter::ResetRound,0x00574290,function
 MeilingFighter::ResetRound,0x005E21F0,function
+FontSurface::RenderTextToTexture,0x00413460,function

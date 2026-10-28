@@ -4110,3 +4110,81 @@ Six full originals total **1,352 CODE bytes**: no source
 padding, added dummy locals, inline assembly, byte grafting, masked
 relocations, cropped comparisons, CRT/VC7 authored credit, or full-unit
 cold replay. This local Git checkpoint is not an external Oracle receipt.
+
+
+## F317: full native 398-byte FontSurface::RenderTextToTexture exact
+
+Original R052-authored `FontSurface::RenderTextToTexture` starts at
+`00413460` and ends at native RET `004135ED`. The pinned target PE
+contains **398 complete CODE bytes**, **128 independently decoded native
+x86 instructions**, and original body SHA256
+`f879de336a20a85f1062eef0a7e18a6a0a69b3fa3ad72461ace01a194ea2599c`.
+Full read-only original Ghidra/decompiler/disassembly, initial negative
+406/397-byte source comparisons, exact 398-byte pinned VC7.1 object,
+relocation details and single-unit cold acceptance are at
+`.analysis/f317-font-texture/`. Final naturally authored source is
+`src/FontRenderTextureF317.cpp`.
+
+This native function conditionally copies this+0x14 byte mode to
+this+0x15 according to the last caller flag; otherwise sets +0x15=0.
+It calls the original **D3D8 texture vtable +0x40 LockRect** on actual
+texture owner at `this+0`, saving the original 8-byte D3DLOCKED_RECT
+with `pBits` at real EBP-0x10, and proceeds only on D3D_OK. It
+clamps signed 8-bit raster output depth to at most 5, stores the actual
+colour mode at +0x24, zeroes float +0x1C and writes 6.0f at +0x20.
+It allocates exactly **0x38 bytes** of real glyph raster owner through
+original new `0064159D` under **native automatic `/GX` exception
+handler `006550B5`**, invokes genuine raster constructor `0041BF90`
+with one zero and stores the result at +0x18. It calls true raster
+`ConfigureTint` `0041C060` with original source float pointer
+`006578B0`, native 32-bit zero-extended mode from +0x24 and caller
+RGB bytes. It then converts the two actual float fields via authentic
+VC7 `_ftol` `006406AC` twice, and invokes the real nine-argument
+`FontSurface::RasterizeText` core `0041C2E0` with original caller
+text pointer, real `D3DLOCKED_RECT::pBits`, dimensions 0x400×0x100,
+max width 0x230, native converted x/y and the original 4/depth.
+The source naturally follows native C++ `delete` semantics through the
+original scalar deleting destructor `00413620`, **without clearing the
+original owner pointer behind the programmer's back**. It then calls
+true D3D8 vtable +0x44 UnlockRect, saves native depth at this+0x14,
+and on all paths finally writes 5 to this+0xC.
+
+First complete real-source probe emitted 406 bytes, but a separate
+`if (member)` check wrapped normal C++ `delete`, adding 9 instructions
+bytes the target never has. Removing the redundant guard emits 397
+bytes, and original native assembly showed a distinct `MOVZX` from
+one unsigned mode byte into a **32-bit zero-extended parameter** for
+`ConfigureTint`, where the provisional source incorrectly declared
+`unsigned char` and generated a shorter `MOV DL`. Correcting the
+callee's *genuine calling-convention parameter type* restores the one
+byte, for **398/398 complete original native CODE**, all **350/350
+nonfield bytes** and **12/12 authentic native COFF relocation offsets,
+types and solved destinations**, including original EH handler,
+Win32/CRT new, two ftol helpers, font ctor/delete and raster draw call.
+Pinned VC7.1 `/Od /Ob0 /Gy /GR- /GX /GS /Zi` built only canonical
+`font-surface-render-text-to-texture-00413460` from clean C++ source
+and accepted via **1/1 affected-unit cold replay**, never a full
+replay. The invoked 1,766-byte rasterizer remains nonexact and does
+not inherit exact credit; D3D/Win32, CRT/VC7 code and all 97 pending
+origins are also uncredited. Native borrowed owner sizes are not claims
+of complete original class layout, and local Git is not Oracle proof.
+
+### F316: 746-byte SpriteSequence source-lifetime boss still nonexact
+
+The entire original R035-authored 746-byte
+`SpriteSequence::RenderElements` at `00411110` has **198 original
+x86 instruction forms and authentic 0xBC frame**. The best prior
+semantically meaningful original C++ source also emits 198 forms, but
+734 total bytes: original `end` iterator and `x` float are genuine
+8-bit-vs-32-bit EBP displacement differences (native -0x9C/-0x98,
+provisional -0x10/-0xC), four occurrences of three extra bytes each.
+The quad, rectangle, tint, counter and iterator have a distinct actual
+physical lifetime layout, not evidence of synthetic filler. 62 further
+real scope/declaration permutations of existing used RECT/tint/iterator
+/x/counter under `.analysis/f316-sequence-scope/` generated 716, 725
+or 734 bytes, none exact. Additional genuinely motivated 132-byte
+physical quad placement-construction experiments produced 793/799
+bytes with extra C++ placement runtime and are not accepted. All
+negative sources/COFF/logs remain privately available; no guessed
+text owner layouts, padding instructions, manual assembly, cropped
+original extent, masked fields or authored CODE credit is claimed.

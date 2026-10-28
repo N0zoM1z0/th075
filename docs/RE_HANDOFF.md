@@ -1,4 +1,4 @@
-# TH075 — active reconstruction handoff (F314/F315)
+# TH075 — active reconstruction handoff (F317)
 
 **Updated 2026-10-28. Read this document before new experiments.**
 
@@ -22,17 +22,17 @@ not acceptance requirements.
 
 | Item | Current evidence |
 | --- | --- |
-| Local branch / last exact-code commit | `main` / F314 four complete Patchouli/Remilia/Yuyuko/Meiling round resets plus F315 Suika/Yukari owned dirty checkpoint; F311 four fighter constructors `585e1c0` |
+| Local branch / last exact-code commit | `main` / F317 whole 398-byte FontSurface texture text renderer; prior F314/F315 six native resets checkpoint `5e697a4` |
 | Upstream | `origin/main` tracked locally; verify current ahead/behind and dirty state before further work |
-| Working tree | Clean after the six F314/F315 round reset checkpoint if successful; continue rather than avoid every existing dirty edit |
+| Working tree | Clean after F317 checkpoint if successful; continue rather than avoid every existing dirty edit |
 | Native binary | `resources/th075.exe`, SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98` |
 | Candidate count | 4,351; origin review: 1,002 authored, 2,671 library, 581 compiler, 97 unknown |
-| Accepted functions / units | **629 / 629** |
-| Accepted authored CODE | **806,813 bytes** |
-| Reviewed authored coverage | 806,813 / 1,973,516 = **40.88%** |
-| Conservative coverage | **40.81%** counting 3,608 origin-pending bytes |
+| Accepted functions / units | **630 / 630** |
+| Accepted authored CODE | **807,211 bytes** |
+| Reviewed authored coverage | 807,211 / 1,973,516 = **40.90%** |
+| Conservative coverage | **40.83%** counting 3,608 origin-pending bytes |
 | Goal | **98% not reached** |
-| Verification | F314 four original R050 whole fighter resets cold-exact: Patchouli 211, Remilia 175, Yuyuko 175, Meiling 235 (all nonfield bytes and 1 native base-reset COFF ref each). The preexisting dirty F315 source/ledger for Yukari 295 and Suika 261 was independently verified against complete PE and cold 2/2; only the six affected F314/F315 units replayed, no all-unit replay/Oracle receipt. |
+| Verification | F317 whole 398-byte R052 FontSurface::RenderTextToTexture call/exception controller cold-exact (350/350 comparable bytes, 12 original COFF fields), following F314/F315 six whole fighter resets at `5e697a4`. Only the new F317 unit cold replayed 1/1; no full-set replay/remote Oracle acceptance. |
 
 **Recheck the actual live status immediately**. Local commits are checkpoints,
 not evidence of a remote push or external Oracle acceptance. Earlier Git
@@ -156,6 +156,7 @@ inert variable or arbitrary padding may earn exact credit.
 | F314: RemiliaFighter::ResetRound | `00551B20` | 175 | 1 |
 | F314: YuyukoFighter::ResetRound | `00574290` | 175 | 1 |
 | F314: MeilingFighter::ResetRound | `005E21F0` | 235 | 1 |
+| F317: FontSurface::RenderTextToTexture | `00413460` | 398 | 12 |
 
 F222 proved signed 32-bit x87 `FILD` divided by the target's 36.0f
 (`00659308`), 74 physical animation records and a final call into the
@@ -311,6 +312,10 @@ Active separate **874-byte authored SuikaFighter::UpdateSpecialState big-functio
 F314 **cold-accepts the entire four independently authored R050 fighter round reset functions**, exact all native `PatchouliFighter::ResetRound` `00502340` 211 CODE /41 instructions (207/207 nonrelocation, 1 true REL32 to base `00457010`), `RemiliaFighter::ResetRound` `00551B20` 175 CODE/35 instructions (171/171 and 1), `YuyukoFighter::ResetRound` `00574290` 175 CODE/35 (171/171 and 1), `MeilingFighter::ResetRound` `005E21F0` 235 CODE/45 (231/231 and 1). First full natural C++ for each matched the entire native function and actual `HALF` field clear order, preserving each character's distinct observed counters and last inherited FighterState reset `00457010`; **no invented sprite/gameplay behavior or unobserved memory wipes**. All four sources compiled cold **4/4 exact**, using only those affected units, `src/PatchouliResetF314.cpp`, `src/RemiliaResetF314.cpp`, `src/YuyukoResetF314.cpp`, `src/MeilingResetF314.cpp`; independent original decompile/PE/COFF/cold receipts `.analysis/f314-reset-specials/`. Their native SHA256 are respectively `9f1aeec9014c80d64512c2031507d8af436851db94cd5a6e90d42322b6712d61`, `6e842229549d57ec86e02d4a7d0c2f18ea039c128abe8a533791d49081936e7c`, `628c0ac2f579878379986a9852bc23558a9ab7fd4eb141e280f53ffd951b27e8`, `8158cc21587aedeb1e6596dc903654f9e330d9a0cd27214a5dcd4740b42f994a`.
 
 **Own all dirty changes**: F315 original Suika/Yukari C++/matching TOML and canonical manifests appeared in the persistent worktree while F314 source probes were being constructed. Instead of avoiding/overwriting those changes, both were *independently* validated to exact whole native code, original owned origin, 3/1 real physical relocations, source hash, tracking manifest and **2/2 affected cold replay**, and retained verbatim; F314 four other nonoverlapping reset functions were added separately, giving **six entirely disjoint newly authored round-reset native CODE functions totaling 1,352 bytes**, no double credit for inherited FighterState::ResetRound. All six F314/F315 affected sources were then checked/replayed without ever cold-replaying the 629 total units. External Oracle receipt remains absent; 97 origin-unknown candidates excluded.
+
+F317 **independently cold-accepts the COMPLETE R052 398-byte `FontSurface::RenderTextToTexture`** at `00413460..004135ED` (**128 native original x86 instructions, 350/350 nonrelocation bytes and all 12 real physical COFF relocation offsets/types/destinations**). True original D3D8 `IDirect3DTexture8::LockRect/UnlockRect` via vtable slots +0x40/+0x44 and 8-byte original `D3DLOCKED_RECT`, optional original mode restoration, signed byte line-count clamp 5, EH-backed new 0x38 through native 0064159D, actual font raster constructor `0041BF90`, raster colour configure `0041C060` (original float const pointer `006578B0`) and two authentic C-runtime `_ftol` calls `006406AC` feed native 9-parameter full raster call `0041C2E0`. The original flow invokes the native scalar deleting-destructor `00413620`, unlocks the texture and restores native mode/byte state; EH handler `006550B5` is compiler-generated from real C++ lifetime. The first whole meaningful C++ source generated 406 bytes because an extra explicit `if(ptr)` guarded a `delete` which already has the actual null branch; removing redundant guard produced 397. Independent native `MOVZX` proves the mode parameter to `ConfigureTint` is a 32-bit unsigned integer, not an 8-bit parameter; matching this genuine native call ABI restored the final authentic byte, yielding whole **398/398 native CODE, 350/350 comparable bytes and 12/12 COFF fields**. Full original PE SHA256 `f879de336a20a85f1062eef0a7e18a6a0a69b3fa3ad72461ace01a194ea2599c`. Source `src/FontRenderTextureF317.cpp`, original Ghidra/C++ negative/full COFF/cold proof `.analysis/f317-font-texture/`. Only `--unit font-surface-render-text-to-texture-00413460` cold replayed `1/1 exact`, not all units; its 1,766-byte font rasterization callee remains **nonexact** and earns no duplicate authored credit.
+
+F316 additionally revisited the full 746-byte `SpriteSequence::RenderElements` boss at `00411110` (198 independent original instructions, genuine 0xBC frame). The strongest prior complete natural VC7.1 source emits 734 bytes with the same 198 instruction forms, but the genuine `end` iterator and `x` coordinate are kept at EBP-0x10/-0xC instead of native -0x9C/-0x98, causing four 3-byte addressing-size gaps (12 total) and different rect/quad/tint source lifetime layouts. **62 real rect/tint/iterator/x/counter declaration and scope variants** under `.analysis/f316-sequence-scope/` emitted only 716/725/734 bytes, and ordinary placement-construction variants emitted 793/799 rather than native 746 due extra call/lifetime code. They are preserved as negative controls, **no CODE credit** and no invented fake locals/asm/target-byte grafting. Suika's 874-byte F313/F314 boss remains 742/794 comparable and full 20 COFF fields, also unaccepted.
 
 Relevant full native proofs: `config/match-units.toml`,
 `config/exact-adoptions.json`, sources `src/*F222.cpp`/`src/*F223.cpp`,

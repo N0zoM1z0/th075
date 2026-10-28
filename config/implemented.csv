@@ -627,3 +627,4 @@ PatchouliFighter::ResetRound
 RemiliaFighter::ResetRound
 YuyukoFighter::ResetRound
 MeilingFighter::ResetRound
+FontSurface::RenderTextToTexture
