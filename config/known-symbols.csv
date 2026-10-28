@@ -560,3 +560,4 @@ address,name,module,confidence,evidence
 0x004258D0,MusicRoomScene::ReleaseTexturesRecordsAndAudioAt004258D0,MusicRoomScene,inferred,"F263; complete 244-byte native music scene destructor, real COM release and 60 F261 record lifetimes, all 12 COFF fields cold-exact"
 0x0042F710,ResultListScene::Initialize,ResultListScene,inferred,"F264; entire 366-byte ResultList scene ctor, native game progress ten-entry loop, and 17 genuine COFF relocation fields cold-exact; original scene/deque layout provisional"
 0x0042F880,ResultListScene::Release,ResultListScene,inferred,F265; complete 229-byte native ResultList scene destructor with 10 genuine COFF fields cold-exact; original full scene/deque/texture class ownership unproven
+0x0042C3D0,ReplayPlaybackScene::Initialize,ReplayPlaybackScene,inferred,F266; entire 395-byte replay playback scene constructor with 3 VC7 deque lifetimes and all 24 real COFF fields cold-exact; original class identity provisional

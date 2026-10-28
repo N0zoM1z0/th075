@@ -577,3 +577,4 @@ MusicRoomScene::Initialize
 MusicRoomScene::ReleaseTexturesRecordsAndAudioAt004258D0
 ResultListScene::Initialize
 ResultListScene::Release
+ReplayPlaybackScene::Initialize

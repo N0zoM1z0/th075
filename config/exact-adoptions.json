@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "0dc3c39f7d2a0f7cd3faf56b51513c033616c6c2e6df6f15369c1e43c2be0560"
+      "current_sha256": "e147230a15b12204040c2cbf65796def54dd4550c21b392899fddc71e59a36c1"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "43f0c3a0cbc730478c010299791ff8695315c7ba5cadbdd65621cc94abac1138"
+      "current_sha256": "83c1f2a451bd2282a0c7c91977f04e4cbdddf799dbbd3d4b02d3dd33b685451c"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "a320949dd2b14b6ada8436929f81225c99cbfd333b1416d27101f21a019d4c29"
+      "current_sha256": "e2ff67b4639824a96e0cee4e08ea173ef0de642e79cbd838ddc8a75cc277a41e"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "5553df567ba2054d122d6c4e69733ed82725cfaa7e22750beba32893e637a1bb"
+      "current_sha256": "eb8e23d1704c68389c0d2eca67a0acf3ffffd8f97ef533aa74f8f2889b2d2ae4"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "6c376c55ace5844640f0e17d6a7b7102ab07a08df57c4c188934a9ab0ff5e49f"
+      "current_sha256": "eab46ab2d40a81cd69b87343139bdbf1451078dae01a7d6a51364c5761a54e06"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -22876,6 +22876,50 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R053"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0042C3D0",
+        "size": "395",
+        "span_end": "0x0042C55A",
+        "current_name": "FUN_0042c3d0",
+        "proposed_name": "ReplayPlaybackScene::Initialize",
+        "module": "ReplayPlaybackScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R052; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x0042C3D0",
+        "size": "395",
+        "span_end": "0x0042C55A",
+        "current_name": "FUN_0042c3d0",
+        "proposed_name": "ReplayPlaybackScene::Initialize",
+        "module": "ReplayPlaybackScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "ReplayPlaybackInitF266::ReplayPlaybackInitF266()",
+        "is_thunk": "false",
+        "source_file": "src/ReplayPlaybackInitF266.cpp",
+        "evidence": "R052; full body hash, complete decoded CFG and local game-specific behavior reviewed; F266; scripts/repo-python scripts/replay-exact-units.py --unit replay-playback-scene-initialize-0042c3d0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F266: full native original 395 authored CODE bytes /106 independently decoded x86 instructions, original RET at 0042C55A and complete SHA256 15f366e7ffebe90d8259e016606642e843753a37ebc324d1143eead1f0205160. First complete pinned VC7.1 /Od /GX natural C++ scene constructor independently cold-replayed exact with 299/299 comparable bytes and all 24 actual physical COFF fields, native EH handler 00655964, scene vtable 00658008 and genuine source-generated EH unwind. Base 004251C0 remains R108 origin-unknown and excluded. Original three 20-byte VC7 deque constructors at scene+0C 00420320, +20 0042DB30, +34 00414360 and explicit Clear at +0C 0041DF50 are separately classified library and receive no authored CODE credit. Genuine EH-backed 80-byte texture allocation/ctor 0040AD80, three slot allocation 0040B1D0, original replay.dat/datab asset root 00657FC0/00657FB8 via 0040BB80, two original native actor globals 00671418/0067141C virtual slot-five deleting destructors guarded and nulled, separately F231 accepted replay file scan 0042D470, scene+51 status zero, scene+48 16-bit global input 0067162C and mode+4C=5 all preserved in native order. Source instantiates only independently verified physical 20-byte deque members, borrows incomplete actor/texture and base interfaces, and does not assert entire original class identity. All 97 pending origins remain uncredited. No fake storage, arbitrary padding, source masks, assembly, target bytes, cropped extent, all-unit cold replay or external Oracle credit."
+      },
+      "origin": {
+        "address": "0x0042C3D0",
+        "origin": "authored",
+        "subsystem": "ReplayPlaybackScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R052"
       }
     }
   ],
@@ -173771,6 +173815,173 @@
           "target": 0
         }
       ]
+    },
+    "replay-playback-scene-initialize-0042c3d0": {
+      "source": "src/ReplayPlaybackInitF266.cpp",
+      "object": "build/matching/ReplayPlaybackInitF266.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "ReplayPlaybackScene::Initialize"
+      ],
+      "symbol": "??0ReplayPlaybackInitF266@@QAE@XZ",
+      "target_address": 4375504,
+      "size": 395,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??0ReplayPlaybackInitF266@@QAE@XZ",
+          "target": 6642020
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 34,
+          "type": "REL32",
+          "symbol": "??0ReplayBaseF266@@QAE@XZ",
+          "target": 4346304
+        },
+        {
+          "offset": 50,
+          "type": "DIR32",
+          "symbol": "??_7ReplayPlaybackInitF266@@6B@",
+          "target": 6651912
+        },
+        {
+          "offset": 61,
+          "type": "REL32",
+          "symbol": "??0ReplayDequeNamesF266@@QAE@XZ",
+          "target": 4326176
+        },
+        {
+          "offset": 76,
+          "type": "REL32",
+          "symbol": "??0ReplayDequeFilesF266@@QAE@XZ",
+          "target": 4381488
+        },
+        {
+          "offset": 91,
+          "type": "REL32",
+          "symbol": "??0ReplayDequeRecordsF266@@QAE@XZ",
+          "target": 4277088
+        },
+        {
+          "offset": 106,
+          "type": "REL32",
+          "symbol": "?Clear@ReplayDequeNamesF266@@QAEXXZ",
+          "target": 4317008
+        },
+        {
+          "offset": 113,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 137,
+          "type": "REL32",
+          "symbol": "??0ReplayTextureF266@@QAE@XZ",
+          "target": 4238720
+        },
+        {
+          "offset": 181,
+          "type": "REL32",
+          "symbol": "?AllocateSlots@ReplayTextureF266@@QAEXH@Z",
+          "target": 4239824
+        },
+        {
+          "offset": 186,
+          "type": "DIR32",
+          "symbol": "?g_ReplayCatalogRootAt00657FB8@@3QBDB",
+          "target": 6651832
+        },
+        {
+          "offset": 191,
+          "type": "DIR32",
+          "symbol": "?g_ReplayCatalogFileAt00657FC0@@3QBDB",
+          "target": 6651840
+        },
+        {
+          "offset": 202,
+          "type": "REL32",
+          "symbol": "?LoadDefault@ReplayTextureF266@@QAEXPBD0@Z",
+          "target": 4242304
+        },
+        {
+          "offset": 208,
+          "type": "DIR32",
+          "symbol": "?g_ReplayActorAAt00671418@@3PAVReplayActorF266@@A",
+          "target": 6755352
+        },
+        {
+          "offset": 216,
+          "type": "DIR32",
+          "symbol": "?g_ReplayActorAAt00671418@@3PAVReplayActorF266@@A",
+          "target": 6755352
+        },
+        {
+          "offset": 262,
+          "type": "DIR32",
+          "symbol": "?g_ReplayActorAAt00671418@@3PAVReplayActorF266@@A",
+          "target": 6755352
+        },
+        {
+          "offset": 272,
+          "type": "DIR32",
+          "symbol": "?g_ReplayActorBAt0067141C@@3PAVReplayActorF266@@A",
+          "target": 6755356
+        },
+        {
+          "offset": 281,
+          "type": "DIR32",
+          "symbol": "?g_ReplayActorBAt0067141C@@3PAVReplayActorF266@@A",
+          "target": 6755356
+        },
+        {
+          "offset": 327,
+          "type": "DIR32",
+          "symbol": "?g_ReplayActorBAt0067141C@@3PAVReplayActorF266@@A",
+          "target": 6755356
+        },
+        {
+          "offset": 339,
+          "type": "REL32",
+          "symbol": "?ScanFiles@ReplayPlaybackInitF266@@QAEXXZ",
+          "target": 4379760
+        },
+        {
+          "offset": 356,
+          "type": "DIR32",
+          "symbol": "?g_ReplayControllerAt0067162C@@3GA",
+          "target": 6755884
+        },
+        {
+          "offset": 387,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -174127,6 +174338,7 @@
     "src/MusicRoomInitF262.cpp": "47b51e6c329c085d07ea4e6f7ab036ca1fc5d69ff8e0ac7a25b3c7e3c8b7677e",
     "src/MusicRoomReleaseF263.cpp": "4f42f5bb13ad4b9659bbe2ab4b42fceb02132af3fe440e243cb1443bc9f4245d",
     "src/ResultListInitF264.cpp": "fc21a3209f58e96416667406447cc01156e8f7808bb6239b7beac3f5f66cf48d",
-    "src/ResultListReleaseF265.cpp": "020380623f282b40430b272d86b926fee00319ad22dcbf9748847d9b955f7785"
+    "src/ResultListReleaseF265.cpp": "020380623f282b40430b272d86b926fee00319ad22dcbf9748847d9b955f7785",
+    "src/ReplayPlaybackInitF266.cpp": "d1feb3f989ba4f073bb9391231fd04c6a309e74a469d8a5929b95fa8a75d66cf"
   }
 }

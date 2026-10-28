@@ -2335,3 +2335,45 @@ The cumulative tracked whole-function exact state is **579 functions,
 39.94% conservative pending-inclusive coverage. The 98% objective is
 far from complete and local cold replay is not an external Oracle
 verification receipt.
+
+
+## F266: complete 395-byte ReplayPlayback scene constructor with three native deque lifetimes
+
+R052-authored `ReplayPlaybackScene::Initialize` at `0042C3D0..0042C55A`
+is **395 complete native CODE bytes**, 106 independently decoded x86
+instructions ending RET at `0042C55A`, with original SHA256
+`15f366e7ffebe90d8259e016606642e843753a37ebc324d1143eead1f0205160`.
+Read-only Ghidra function, entire native instructions, decompile and
+first full natural C++ source are retained under
+`.analysis/f266-replay-playback-init/`. Its actual origin R052 is
+independently reviewed authored; the invoked base constructor `004251C0`
+remains separately R108 **unknown origin**, without new CODE credit.
+
+The real scene vtable is at `00658008`, EH handler `00655964`, and three
+physically distinct, naturally 20-byte VC7 deque owners start at +0x0C,
++0x20 and +0x34. Original constructor bodies `00420320`, `0042DB30`,
+`00414360` are each independently classified **library**, not authored.
+The explicit early deque Clear uses original `0041DF50`. The genuine
+EH-backed `new(80)` texture manager calls constructor `0040AD80`,
+`AllocateSlots(3)` at `0040B1D0` and default resource load `0040BB80`
+using original replay.dat and datab strings at `00657FC0/00657FB8`.
+The original two global actors at `00671418` and `0067141C` are each
+conditionally deleted through true virtual deleting destructor slot
+`vtable+0x14` and nulled, then the separately F231-cold-exact replay
+directory scanner `0042D470` is called. It zeroes field +0x51, stores
+the actual controller halfword from `0067162C` to +0x48, and sets
+mode +0x4C to 5. All original EH states, nested conditional calls,
+branch ordering, and unwind paths are retained.
+
+The first complete ordinary VC7.1 `/Od /GX /GS` C++ source
+`src/ReplayPlaybackInitF266.cpp` naturally compiles into **all 395
+original bytes**, **299/299** nonrelocation byte positions, and **24/24
+authentic COFF relocations**. One independently fresh cold replay of
+unit `replay-playback-scene-initialize-0042c3d0` reported
+`exact; 395 coverage bytes`. The three 20-byte owners and 80-byte
+texture allocation carriers are native observed bounds, not a claim
+of complete private original game class identity. External C runtime,
+STL and unproven child implementations remain uncredited and all 97
+origin-pending functions remain unknown. No byte masks, fake locals,
+source-padding, assembly, copied target bytes or truncated compare.
+The local checkpoint is not an external Oracle receipt.

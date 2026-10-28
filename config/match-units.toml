@@ -41725,3 +41725,132 @@ offset = 221
 type = "DIR32"
 symbol = "__except_list"
 target = 0x00000000
+
+[units.replay-playback-scene-initialize-0042c3d0]
+source = "src/ReplayPlaybackInitF266.cpp"
+object = "build/matching/ReplayPlaybackInitF266.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["ReplayPlaybackScene::Initialize"]
+symbol = "??0ReplayPlaybackInitF266@@QAE@XZ"
+target_address = 0x0042C3D0
+size = 395
+[[units.replay-playback-scene-initialize-0042c3d0.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0ReplayPlaybackInitF266@@QAE@XZ"
+target = 0x00655964
+[[units.replay-playback-scene-initialize-0042c3d0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.replay-playback-scene-initialize-0042c3d0.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.replay-playback-scene-initialize-0042c3d0.relocations]]
+offset = 34
+type = "REL32"
+symbol = "??0ReplayBaseF266@@QAE@XZ"
+target = 0x004251C0
+[[units.replay-playback-scene-initialize-0042c3d0.relocations]]
+offset = 50
+type = "DIR32"
+symbol = "??_7ReplayPlaybackInitF266@@6B@"
+target = 0x00658008
+[[units.replay-playback-scene-initialize-0042c3d0.relocations]]
+offset = 61
+type = "REL32"
+symbol = "??0ReplayDequeNamesF266@@QAE@XZ"
+target = 0x00420320
+[[units.replay-playback-scene-initialize-0042c3d0.relocations]]
+offset = 76
+type = "REL32"
+symbol = "??0ReplayDequeFilesF266@@QAE@XZ"
+target = 0x0042DB30
+[[units.replay-playback-scene-initialize-0042c3d0.relocations]]
+offset = 91
+type = "REL32"
+symbol = "??0ReplayDequeRecordsF266@@QAE@XZ"
+target = 0x00414360
+[[units.replay-playback-scene-initialize-0042c3d0.relocations]]
+offset = 106
+type = "REL32"
+symbol = "?Clear@ReplayDequeNamesF266@@QAEXXZ"
+target = 0x0041DF50
+[[units.replay-playback-scene-initialize-0042c3d0.relocations]]
+offset = 113
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.replay-playback-scene-initialize-0042c3d0.relocations]]
+offset = 137
+type = "REL32"
+symbol = "??0ReplayTextureF266@@QAE@XZ"
+target = 0x0040AD80
+[[units.replay-playback-scene-initialize-0042c3d0.relocations]]
+offset = 181
+type = "REL32"
+symbol = "?AllocateSlots@ReplayTextureF266@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.replay-playback-scene-initialize-0042c3d0.relocations]]
+offset = 186
+type = "DIR32"
+symbol = "?g_ReplayCatalogRootAt00657FB8@@3QBDB"
+target = 0x00657FB8
+[[units.replay-playback-scene-initialize-0042c3d0.relocations]]
+offset = 191
+type = "DIR32"
+symbol = "?g_ReplayCatalogFileAt00657FC0@@3QBDB"
+target = 0x00657FC0
+[[units.replay-playback-scene-initialize-0042c3d0.relocations]]
+offset = 202
+type = "REL32"
+symbol = "?LoadDefault@ReplayTextureF266@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.replay-playback-scene-initialize-0042c3d0.relocations]]
+offset = 208
+type = "DIR32"
+symbol = "?g_ReplayActorAAt00671418@@3PAVReplayActorF266@@A"
+target = 0x00671418
+[[units.replay-playback-scene-initialize-0042c3d0.relocations]]
+offset = 216
+type = "DIR32"
+symbol = "?g_ReplayActorAAt00671418@@3PAVReplayActorF266@@A"
+target = 0x00671418
+[[units.replay-playback-scene-initialize-0042c3d0.relocations]]
+offset = 262
+type = "DIR32"
+symbol = "?g_ReplayActorAAt00671418@@3PAVReplayActorF266@@A"
+target = 0x00671418
+[[units.replay-playback-scene-initialize-0042c3d0.relocations]]
+offset = 272
+type = "DIR32"
+symbol = "?g_ReplayActorBAt0067141C@@3PAVReplayActorF266@@A"
+target = 0x0067141C
+[[units.replay-playback-scene-initialize-0042c3d0.relocations]]
+offset = 281
+type = "DIR32"
+symbol = "?g_ReplayActorBAt0067141C@@3PAVReplayActorF266@@A"
+target = 0x0067141C
+[[units.replay-playback-scene-initialize-0042c3d0.relocations]]
+offset = 327
+type = "DIR32"
+symbol = "?g_ReplayActorBAt0067141C@@3PAVReplayActorF266@@A"
+target = 0x0067141C
+[[units.replay-playback-scene-initialize-0042c3d0.relocations]]
+offset = 339
+type = "REL32"
+symbol = "?ScanFiles@ReplayPlaybackInitF266@@QAEXXZ"
+target = 0x0042D470
+[[units.replay-playback-scene-initialize-0042c3d0.relocations]]
+offset = 356
+type = "DIR32"
+symbol = "?g_ReplayControllerAt0067162C@@3GA"
+target = 0x0067162C
+[[units.replay-playback-scene-initialize-0042c3d0.relocations]]
+offset = 387
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
