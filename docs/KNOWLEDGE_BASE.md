@@ -2377,3 +2377,45 @@ STL and unproven child implementations remain uncredited and all 97
 origin-pending functions remain unknown. No byte masks, fake locals,
 source-padding, assembly, copied target bytes or truncated compare.
 The local checkpoint is not an external Oracle receipt.
+
+
+## F267: cold-exact whole replay-owned filename destructor (265 bytes)
+
+The R245-authored `ReplayBrowserScene::DestroyOwnedReplayFiles` at
+`0042C560..0042C668` has **265 complete original CODE bytes**,
+76 independently decoded original x86 instructions and plain RET at
+`0042C668`. Entire native code SHA256:
+`244c00ec00b86db59d8b7de103206a258cf97d91d89329a67c16c14cc070ea50`.
+Its read-only Ghidra function/decompile and entire native instruction
+listing were independently reviewed and retained under
+`.analysis/f267-replay-release/`.
+
+The function installs real replay scene vtable `00658008` and native EH
+handler `00655997`, copies the actual 16-bit selected controller from
+scene+0x48 to global `0067162C`, then iterates the owned filename
+deque at scene+0x0C from `unsigned int index=0` while `index < Size()`
+using native `0041DD50`. It calls actual element accessor `0041DDC0`,
+fetches the owned `char*` from its result, materializes the real cleanup
+local at EBP-0x14, and passes it to native `_free` at `0064169D` for
+**every** file. It clears the deque using real `0041DF50`, conditionally
+deletes texture manager at scene+8 through the nonvirtual scalar deleting
+destructor `00425460`, and automatically calls the three original deque
+destructors in reverse member order: `004143B0` at +0x34, `0042DB80`
+at +0x20, and `00420420` at +0x0C, before the independently accepted
+scene base destructor `00431F40`. The entire original EH cleanup state
+sequence (3,2,1,0,-1) and return are preserved.
+
+The first ordinary C++ translation unit
+`src/ReplayPlaybackReleaseF267.cpp` (three naturally 20-byte member
+objects, borrowed virtual scene/texture interfaces, no invented scene
+layout) matched **all 265 bytes**, **205/205 nonrelocated bytes**, and
+**15/15 real physical COFF relocation fields** under pinned VC7.1
+`/Od /GX`. Canonical unit `replay-browser-destroy-owned-files-0042c560`
+was independently rebuilt cold and reported `exact; 265 coverage bytes`.
+The F266 395-byte constructor and separately accepted F231 file scanner
+prove native companion calls but **do not** credit their CODE twice.
+The true VC7 STL destructor/calculators, CRT, unknown R108 base constructor,
+and unproven original game class layouts are not authored credit;
+all 97 origin-pending cases remain excluded. No byte masking, assembly,
+artificial padding, target grafts, cropped extents or all-unit replay.
+Local Git commits are checkpoints rather than external Oracle receipts.

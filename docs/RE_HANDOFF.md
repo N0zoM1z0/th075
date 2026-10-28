@@ -1,4 +1,4 @@
-# TH075 — active reconstruction handoff (F266)
+# TH075 — active reconstruction handoff (F267)
 
 **Updated 2026-10-28. Read this document before new experiments.**
 
@@ -22,17 +22,17 @@ not acceptance requirements.
 
 | Item | Current evidence |
 | --- | --- |
-| Local branch / last exact-code commit | `main` / F266 full 395-byte ReplayPlayback scene constructor; prior F265 checkpoint `95e9523` |
+| Local branch / last exact-code commit | `main` / F267 entire 265-byte replay scene destructor; F266 constructor checkpoint `f658d03` |
 | Upstream | `origin/main` tracked locally; verify current ahead/behind and dirty state before further work |
-| Working tree | Clean after F266 checkpoint if successful; continue rather than avoid every existing dirty edit |
+| Working tree | Clean after F267 checkpoint if successful; continue rather than avoid every existing dirty edit |
 | Native binary | `resources/th075.exe`, SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98` |
 | Candidate count | 4,351; origin review: 1,002 authored, 2,671 library, 581 compiler, 97 unknown |
-| Accepted functions / units | **580 / 580** |
-| Accepted authored CODE | **790,060 bytes** |
-| Reviewed authored coverage | 790,060 / 1,973,516 = **40.03%** |
-| Conservative coverage | **39.96%** counting 3,608 origin-pending bytes |
+| Accepted functions / units | **581 / 581** |
+| Accepted authored CODE | **790,325 bytes** |
+| Reviewed authored coverage | 790,325 / 1,973,516 = **40.05%** |
+| Conservative coverage | **39.97%** counting 3,608 origin-pending bytes |
 | Goal | **98% not reached** |
-| Verification | F266 entire 395-byte ReplayPlayback scene constructor independently cold-exact, 299/299 comparable bytes and all 24 real COFF fields, following F265 checkpoint `95e9523`. Only F266 new unit cold-replayed, no all-unit cold replay or external Oracle acceptance |
+| Verification | F267 entire 265-byte replay-browser cleanup destructor cold-exact, 205/205 comparable bytes and all 15 COFF relocation fields, following F266 constructor checkpoint `f658d03`. Only F267 cold-replayed, no full cold replay or external Oracle receipt |
 
 **Recheck the actual live status immediately**. Local commits are checkpoints,
 not evidence of a remote push or external Oracle acceptance. Earlier Git
@@ -107,6 +107,7 @@ inert variable or arbitrary padding may earn exact credit.
 | F264: ResultListScene::Initialize | `0042F710` | 366 | 17 |
 | F265: ResultListScene::Release | `0042F880` | 229 | 10 |
 | F266: ReplayPlaybackScene::Initialize | `0042C3D0` | 395 | 24 |
+| F267: ReplayBrowserScene::DestroyOwnedReplayFiles | `0042C560` | 265 | 15 |
 
 F222 proved signed 32-bit x87 `FILD` divided by the target's 36.0f
 (`00659308`), 74 physical animation records and a final call into the
@@ -189,7 +190,9 @@ F264 **cold-accepts all 366 bytes of `ResultListScene::Initialize`** at `0042F71
 
 F265 **cold-accepts the paired 229-byte `ResultListScene::Release`** at `0042F880`, full 68 decoded instructions, 189/189 comparable bytes and all 10 physical COFF relocations. The first natural C++ translation generated the exact complete native EH destructor, with original ClearEntries `00431940`, two conditional nonvirtual texture deletes on `this+0xC/+0x8`, native D3D8 COM slot-two Release at `this+0x10`, the automatically emitted 20-byte VC7 deque destructor at `this+0x18` through library-only `00420420`, and already accepted base destructor `00431F40`. Only F265 was cold replayed exact; no additional credit for library/CRT, external ClearEntries or origin-unknown R108 base constructor. Preserve `.analysis/f265-result-list-release/`. The matching F264 constructor is independently accepted.
 
-F266 **cold-accepts the complete 395-byte ReplayPlaybackScene::Initialize** scene constructor at `0042C3D0` (106 original instructions, 299/299 nonrelocation bytes, all 24 true COFF fields). Full natural C++ exactly reproduces three separately verified native 20-byte deque constructor calls at scene+0C/+20/+34, an explicit queue Clear at +0C, EH-backed 80-byte texture creation/load from replay.dat, two genuine global actor virtual deleting destructors and null stores, independently F231 accepted replay directory scanner, and original two control/state fields. Its scene base ctor R108 remains unknown-origin and library deque implementations are uncredited. Only `--unit replay-playback-scene-initialize-0042c3d0` cold replayed exact; save the entire native/COFF and source proof at `.analysis/f266-replay-playback-init/`. The original 265-byte `ReplayBrowserScene::DestroyOwnedReplayFiles` at `0042C560` is still unmatched and a natural next lifecycle partner.
+F266 **cold-accepts the complete 395-byte ReplayPlaybackScene::Initialize** scene constructor at `0042C3D0` (106 original instructions, 299/299 nonrelocation bytes, all 24 true COFF fields). Full natural C++ exactly reproduces three separately verified native 20-byte deque constructor calls at scene+0C/+20/+34, an explicit queue Clear at +0C, EH-backed 80-byte texture creation/load from replay.dat, two genuine global actor virtual deleting destructors and null stores, independently F231 accepted replay directory scanner, and original two control/state fields. Its scene base ctor R108 remains unknown-origin and library deque implementations are uncredited. Only `--unit replay-playback-scene-initialize-0042c3d0` cold replayed exact; save the entire native/COFF and source proof at `.analysis/f266-replay-playback-init/`. The original 265-byte `ReplayBrowserScene::DestroyOwnedReplayFiles` at `0042C560` was subsequently cold-exact accepted at F267; do not double-credit it.
+
+F267 **cold-accepts the complete 265-byte `ReplayBrowserScene::DestroyOwnedReplayFiles`** destructor at `0042C560`, 76 native x86 instructions, all 205/205 nonrelocation bytes and 15 genuine physical COFF fields. First native-faithful C++ source reproduces original saved controller word, full unsigned indexed deque size/At loop and actual `free` of each owned replay filename, queue Clear and nonvirtual texture cleanup, then automatic three-member deque destruction in reverse order with native EH states and accepted base scene destructor. All three 20-byte members and their library calls were independently grounded against F266 constructor, not invented. Only `--unit replay-browser-destroy-owned-files-0042c560` cold-replayed exact. Preserve `.analysis/f267-replay-release/`. The independent F231 filename producer/scanner and F266 constructor are accepted but not double-counted; all 97 origin-unknown cases remain pending.
 
 Relevant full native proofs: `config/match-units.toml`,
 `config/exact-adoptions.json`, sources `src/*F222.cpp`/`src/*F223.cpp`,

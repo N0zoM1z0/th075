@@ -41854,3 +41854,87 @@ offset = 387
 type = "DIR32"
 symbol = "__except_list"
 target = 0x00000000
+
+[units.replay-browser-destroy-owned-files-0042c560]
+source = "src/ReplayPlaybackReleaseF267.cpp"
+object = "build/matching/ReplayPlaybackReleaseF267.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["ReplayBrowserScene::DestroyOwnedReplayFilesAt0042C560"]
+symbol = "??1ReplayPlaybackReleaseF267@@UAE@XZ"
+target_address = 0x0042C560
+size = 265
+[[units.replay-browser-destroy-owned-files-0042c560.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??1ReplayPlaybackReleaseF267@@UAE@XZ"
+target = 0x00655997
+[[units.replay-browser-destroy-owned-files-0042c560.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.replay-browser-destroy-owned-files-0042c560.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.replay-browser-destroy-owned-files-0042c560.relocations]]
+offset = 35
+type = "DIR32"
+symbol = "??_7ReplayPlaybackReleaseF267@@6B@"
+target = 0x00658008
+[[units.replay-browser-destroy-owned-files-0042c560.relocations]]
+offset = 56
+type = "DIR32"
+symbol = "?g_ReplayControllerAt0067162C@@3GA"
+target = 0x0067162C
+[[units.replay-browser-destroy-owned-files-0042c560.relocations]]
+offset = 85
+type = "REL32"
+symbol = "?Size@ReplayDequeNamesF267@@QBEIXZ"
+target = 0x0041DD50
+[[units.replay-browser-destroy-owned-files-0042c560.relocations]]
+offset = 105
+type = "REL32"
+symbol = "?At@ReplayDequeNamesF267@@QAEPAPADI@Z"
+target = 0x0041DDC0
+[[units.replay-browser-destroy-owned-files-0042c560.relocations]]
+offset = 119
+type = "REL32"
+symbol = "_free"
+target = 0x0064169D
+[[units.replay-browser-destroy-owned-files-0042c560.relocations]]
+offset = 135
+type = "REL32"
+symbol = "?Clear@ReplayDequeNamesF267@@QAEXXZ"
+target = 0x0041DF50
+[[units.replay-browser-destroy-owned-files-0042c560.relocations]]
+offset = 175
+type = "REL32"
+symbol = "??_GReplayTextureF267@@QAEPAXI@Z"
+target = 0x00425460
+[[units.replay-browser-destroy-owned-files-0042c560.relocations]]
+offset = 202
+type = "REL32"
+symbol = "??1ReplayDequeRecordsF267@@QAE@XZ"
+target = 0x004143B0
+[[units.replay-browser-destroy-owned-files-0042c560.relocations]]
+offset = 217
+type = "REL32"
+symbol = "??1ReplayDequeFilesF267@@QAE@XZ"
+target = 0x0042DB80
+[[units.replay-browser-destroy-owned-files-0042c560.relocations]]
+offset = 232
+type = "REL32"
+symbol = "??1ReplayDequeNamesF267@@QAE@XZ"
+target = 0x00420420
+[[units.replay-browser-destroy-owned-files-0042c560.relocations]]
+offset = 247
+type = "REL32"
+symbol = "??1ReplayBaseF267@@UAE@XZ"
+target = 0x00431F40
+[[units.replay-browser-destroy-owned-files-0042c560.relocations]]
+offset = 257
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000

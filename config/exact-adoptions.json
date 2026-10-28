@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "e147230a15b12204040c2cbf65796def54dd4550c21b392899fddc71e59a36c1"
+      "current_sha256": "ffb02ee8b3c5c9d6116b30ad3ea895dbb9c880cfeed75ee84f60c3521e496931"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "83c1f2a451bd2282a0c7c91977f04e4cbdddf799dbbd3d4b02d3dd33b685451c"
+      "current_sha256": "d410048aa3d12d5205aac4e8097cdf700beeb24a82c40c73dcaac6b790d928a1"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "e2ff67b4639824a96e0cee4e08ea173ef0de642e79cbd838ddc8a75cc277a41e"
+      "current_sha256": "7ab1288295032b9943400384ce2826d5dddfa76fb6da2a820e92f607684a2a26"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "eb8e23d1704c68389c0d2eca67a0acf3ffffd8f97ef533aa74f8f2889b2d2ae4"
+      "current_sha256": "c363469c42d00a63816f395b14f9856e3714bf309ba7ac3924da4c770ddc4578"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "eab46ab2d40a81cd69b87343139bdbf1451078dae01a7d6a51364c5761a54e06"
+      "current_sha256": "dd99aa5a5ee6fd4be659675aa61d24a6dd4f1c5a678fe5d656c6c9b4c6714f1f"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -22920,6 +22920,50 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R052"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0042C560",
+        "size": "265",
+        "span_end": "0x0042C668",
+        "current_name": "FUN_0042c560",
+        "proposed_name": "ReplayBrowserScene::DestroyOwnedReplayFilesAt0042C560",
+        "module": "ReplayBrowserScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R245; config/replay-browser-lifetime-origin-evidence.json; scripts/repo-python scripts/verify-replay-browser-lifetime-origins.py",
+        "owner": "authored",
+        "notes": "Whole265-byte lifetime persists selection word at+0x48, deletes every owned filename array from deque+0x0C through actual array-delete entry, clears filenames and conditionally deletes child+8 before automatic three member/base cleanup. Independently reviewed complete filename producer613, initializer395, selector1005 and render2246 establish actual replay ownership and observed three table slots. Entire shared cleanup/handler51 and metadata60 retain all four states; explicit265 reproduces, genuine implicit105 and empty explicit114 differ. Current generic owner76 and child4 are observations, not original private sizeof/layout/ABI/virtuality/element types/profile; actual game accesses through+0x51 and allocates child80. No source/mapping/exact credit."
+      },
+      "after": {
+        "address": "0x0042C560",
+        "size": "265",
+        "span_end": "0x0042C668",
+        "current_name": "FUN_0042c560",
+        "proposed_name": "ReplayBrowserScene::DestroyOwnedReplayFilesAt0042C560",
+        "module": "ReplayBrowserScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "ReplayPlaybackReleaseF267::~ReplayPlaybackReleaseF267()",
+        "is_thunk": "false",
+        "source_file": "src/ReplayPlaybackReleaseF267.cpp",
+        "evidence": "R245; config/replay-browser-lifetime-origin-evidence.json; scripts/repo-python scripts/verify-replay-browser-lifetime-origins.py; F267; scripts/repo-python scripts/replay-exact-units.py --unit replay-browser-destroy-owned-files-0042c560",
+        "owner": "authored",
+        "notes": "Whole265-byte lifetime persists selection word at+0x48, deletes every owned filename array from deque+0x0C through actual array-delete entry, clears filenames and conditionally deletes child+8 before automatic three member/base cleanup. Independently reviewed complete filename producer613, initializer395, selector1005 and render2246 establish actual replay ownership and observed three table slots. Entire shared cleanup/handler51 and metadata60 retain all four states; explicit265 reproduces, genuine implicit105 and empty explicit114 differ. Current generic owner76 and child4 are observations, not original private sizeof/layout/ABI/virtuality/element types/profile; actual game accesses through+0x51 and allocates child80. No source/mapping/exact credit.; F267: full original authored 265 CODE bytes /76 independently decoded x86 instructions ending RET at 0042C668, complete PE SHA256 244c00ec00b86db59d8b7de103206a258cf97d91d89329a67c16c14cc070ea50. Pinned VC7.1 /Od /GX whole natural C++ destructor independently cold exact, 205/205 comparable original bytes and all 15 authentic COFF DIR32/REL32 relocation fields, native scene vtable 00658008 and genuine EH handler 00655997. Native saved controller word scene+48 to global 0067162C, unsigned indexed loop i=0 through actual 20-byte first deque +0C Size 0041DD50 and At 0041DDC0, real per-filename pointer temporary EBP-14 passed to free 0064169D, complete queue Clear 0041DF50, guarded scalar deleting texture dtor 00425460 at scene+8, automatic actual reverse three member deque destructors at scene+34 (004143B0), +20 (0042DB80) and +0C (00420420), then accepted base game destructor 00431F40 with authentic EH state transitions all retained. Companion F266 entire 395-byte initializer independently accepted with the same native three deque boundaries and original replay file scanner F231; no double counting of external callees. No guessed original complete nominal scene/deque/texture class layout or unknown state fields inserted; all 97 unresolved origins uncredited. First whole native-faithful source exact, no assembly, target byte graft, padding, masked fields, cropped function or all-unit replay; no external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x0042C560",
+        "origin": "authored",
+        "subsystem": "ReplayBrowserScene",
+        "disposition": "authored",
+        "confidence": "whole-replay-browser-selection-persistence-owned-array-and-child-cleanup-with-independent-filename-producer-and-registered-lifetime",
+        "evidence_id": "R245"
       }
     }
   ],
@@ -173982,6 +174026,119 @@
           "target": 0
         }
       ]
+    },
+    "replay-browser-destroy-owned-files-0042c560": {
+      "source": "src/ReplayPlaybackReleaseF267.cpp",
+      "object": "build/matching/ReplayPlaybackReleaseF267.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "ReplayBrowserScene::DestroyOwnedReplayFilesAt0042C560"
+      ],
+      "symbol": "??1ReplayPlaybackReleaseF267@@UAE@XZ",
+      "target_address": 4375904,
+      "size": 265,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??1ReplayPlaybackReleaseF267@@UAE@XZ",
+          "target": 6642071
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 35,
+          "type": "DIR32",
+          "symbol": "??_7ReplayPlaybackReleaseF267@@6B@",
+          "target": 6651912
+        },
+        {
+          "offset": 56,
+          "type": "DIR32",
+          "symbol": "?g_ReplayControllerAt0067162C@@3GA",
+          "target": 6755884
+        },
+        {
+          "offset": 85,
+          "type": "REL32",
+          "symbol": "?Size@ReplayDequeNamesF267@@QBEIXZ",
+          "target": 4316496
+        },
+        {
+          "offset": 105,
+          "type": "REL32",
+          "symbol": "?At@ReplayDequeNamesF267@@QAEPAPADI@Z",
+          "target": 4316608
+        },
+        {
+          "offset": 119,
+          "type": "REL32",
+          "symbol": "_free",
+          "target": 6559389
+        },
+        {
+          "offset": 135,
+          "type": "REL32",
+          "symbol": "?Clear@ReplayDequeNamesF267@@QAEXXZ",
+          "target": 4317008
+        },
+        {
+          "offset": 175,
+          "type": "REL32",
+          "symbol": "??_GReplayTextureF267@@QAEPAXI@Z",
+          "target": 4346976
+        },
+        {
+          "offset": 202,
+          "type": "REL32",
+          "symbol": "??1ReplayDequeRecordsF267@@QAE@XZ",
+          "target": 4277168
+        },
+        {
+          "offset": 217,
+          "type": "REL32",
+          "symbol": "??1ReplayDequeFilesF267@@QAE@XZ",
+          "target": 4381568
+        },
+        {
+          "offset": 232,
+          "type": "REL32",
+          "symbol": "??1ReplayDequeNamesF267@@QAE@XZ",
+          "target": 4326432
+        },
+        {
+          "offset": 247,
+          "type": "REL32",
+          "symbol": "??1ReplayBaseF267@@UAE@XZ",
+          "target": 4398912
+        },
+        {
+          "offset": 257,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -174339,6 +174496,7 @@
     "src/MusicRoomReleaseF263.cpp": "4f42f5bb13ad4b9659bbe2ab4b42fceb02132af3fe440e243cb1443bc9f4245d",
     "src/ResultListInitF264.cpp": "fc21a3209f58e96416667406447cc01156e8f7808bb6239b7beac3f5f66cf48d",
     "src/ResultListReleaseF265.cpp": "020380623f282b40430b272d86b926fee00319ad22dcbf9748847d9b955f7785",
-    "src/ReplayPlaybackInitF266.cpp": "d1feb3f989ba4f073bb9391231fd04c6a309e74a469d8a5929b95fa8a75d66cf"
+    "src/ReplayPlaybackInitF266.cpp": "d1feb3f989ba4f073bb9391231fd04c6a309e74a469d8a5929b95fa8a75d66cf",
+    "src/ReplayPlaybackReleaseF267.cpp": "1454470944d5b58ddc45c1ef372f4bb1d30aaeb0b0b9e116a8d49ddd4b2290bc"
   }
 }
