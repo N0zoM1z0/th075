@@ -56573,3 +56573,33 @@ offset = 54
 type = "REL32"
 symbol = "?CapturePresentRectAt00401D80@@YAXPAVFrameCaptureF460@@PBIPBUtagRECT@@@Z"
 target = 0x00401D80
+
+
+[units.frame-capture-present-primary-00417160]
+source = "src/FrameCapturePresentPrimaryF461.cpp"
+object = "build/matching/FrameCapturePresentPrimaryF461.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["FrameCapture::PresentPrimaryAt00417160"]
+symbol = "?PresentPrimary@FrameCapturePresentF461@@YAXPAPAUIDirect3DTexture8@@@Z"
+target_address = 0x00417160
+size = 98
+[[units.frame-capture-present-primary-00417160.relocations]]
+offset = 32
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.frame-capture-present-primary-00417160.relocations]]
+offset = 50
+type = "REL32"
+symbol = "?InitializeFromRectangle@NativeQuadF461@@QAEXPBUtagRECT@@@Z"
+target = 0x0040DB50
+[[units.frame-capture-present-primary-00417160.relocations]]
+offset = 57
+type = "REL32"
+symbol = "?SetGraphicsModeAt00401F50@@YAXH@Z"
+target = 0x00401F50
+[[units.frame-capture-present-primary-00417160.relocations]]
+offset = 87
+type = "REL32"
+symbol = "?DrawTexturedQuadAt004029F0@@YAXPBVNativeQuadF461@@PBUtagRECT@@IPAUIDirect3DTexture8@@@Z"
+target = 0x004029F0

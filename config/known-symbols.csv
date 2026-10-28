@@ -742,3 +742,4 @@ address,name,module,confidence,evidence
 0x00423C80,EventQueue::EnqueueUniqueAt00423C80,EventQueue,inferred,"F458 original complete 96-byte cdecl native event queue unique append, no early break; 6 native physical global/deque COFF refs exact"
 0x00417000,GameGlobals::InitializeBlackSurfaceAt00417000,GameGlobals,inferred,"F459; whole 168-byte D3D8 black-surface 640x480 bitmap initialization, original texture LockRect/UnlockRect COM vtbl slots and one native PE COFF call exact"
 0x004170D0,FrameCapture::CapturePrimaryAt004170D0,FrameCapture,inferred,F460; 65-byte full original native 640x480 Win32 SetRect present buffer capture; true contiguous RECT+DWORD at EBP -0x14 and -4; 3 native COFF refs cold exact
+0x00417160,FrameCapture::PresentPrimaryAt00417160,FrameCapture,inferred,"F461; full original 98-byte D3D8 present 16-byte RECT+136-byte native quad stack, 4 genuine COFF physical relocations; single-unit cold exact"

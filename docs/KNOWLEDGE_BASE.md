@@ -7056,3 +7056,41 @@ Only the affected `--unit frame-capture-primary-004170d0` was
 cold rebuilt/replayed **1/1 exact**. No fake stack locals, raw ASM,
 original-byte graft, masked/partial native body, external helper/Win32
 CODE duplicate, full cold replay or remote Oracle acceptance.
+
+
+## F461: full 98-byte native frame capture presentation with the original 152-byte RECT/quad stack state
+
+The independent original R100-authored `FrameCapture::PresentPrimaryAt00417160`
+at `00417160..004171C1` is **98 complete native authored CODE bytes /
+30 original x86 instructions**, original PE SHA256
+`19f91b5a63ab79eabeca1ea603a548ae3a1180819a0242b57c498cc1d3263bd4`.
+Its actual native 0x98-byte stack consists of a real 16-byte Win32 RECT
+at EBP-0x98 and a directly adjacent **136-byte physical quad carrier**
+at EBP-0x88. Only the first **132** bytes of that quad are understood
+as the original drawable sprite geometry; its last four are untyped
+physical storage and are *not* asserted to be real private class fields.
+These are genuinely used source objects, not inert stack-padding vars.
+Natural `struct NativePresentFrameF461 {RECT rectangle; NativeQuadF461
+quad;}` preserves both original EBP addresses and the real stack extent
+where separately declared locals did not.
+
+The full native function calls imported Win32 `SetRect` through true
+IAT `00657210`, setting 640×480 source with zero origin, invokes the
+original borrowed quad `InitializeFromRectangle` at `0040DB50`, sets
+original game graphics mode to zero via `00401F50`, and calls real
+textured quad draw at `004029F0` with the original native quad pointer,
+RECT, color `0xffffffff`, and the original dereferenced D3D8 input
+texture pointer. The original entire CODE was compared, not a cropped
+draw helper, including all 30 native instructions and full RET.
+
+The source `src/FrameCapturePresentPrimaryF461.cpp` compiled under
+pinned VC7.1 `/Od /Ob0 /Gy /GR- /GX- /Zi` matches the **entire 98
+original CODE bytes**, **82/82 original nonrelocation bytes**, and
+**all four original physical COFF DIR32/REL32 references/destinations**:
+Win32 SetRect, original quad initializer, graphics mode, and textured
+draw. Only new `--unit frame-capture-present-primary-00417160` was cold
+replayed, **1/1 exact**. The separate exact F460 65-byte frame source
+capture function stays separate, with no double-credit of inherited
+graphics/texture, Win32/CRT or draw callee CODE. No invented external
+class fields, fake locals, pasted target bytes, ASM, masks, partial
+comparison, all-unit cold replay or external Oracle acceptance.
