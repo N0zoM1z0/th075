@@ -38922,3 +38922,143 @@ offset = 656
 type = "REL32"
 symbol = "@__security_check_cookie@4"
 target = 0x00640611
+
+
+[units.result-scene-build-record-page-00431070]
+source = "src/ResultRecordF239.cpp"
+object = "build/matching/ResultRecordF239.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["ResultScene::BuildRecordPage"]
+symbol = "?BuildRecordPage@ResultRecordSceneF239@@QAEXXZ"
+target_address = 0x00431070
+size = 721
+[[units.result-scene-build-record-page-00431070.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$?BuildRecordPage@ResultRecordSceneF239@@QAEXXZ"
+target = 0x00655A6B
+[[units.result-scene-build-record-page-00431070.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.result-scene-build-record-page-00431070.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.result-scene-build-record-page-00431070.relocations]]
+offset = 31
+type = "DIR32"
+symbol = "___security_cookie"
+target = 0x0066FE30
+[[units.result-scene-build-record-page-00431070.relocations]]
+offset = 60
+type = "DIR32"
+symbol = "?g_RecordProgressAt006718F8@@3VResultRecordProgressF239@@A"
+target = 0x006718F8
+[[units.result-scene-build-record-page-00431070.relocations]]
+offset = 65
+type = "REL32"
+symbol = "?Select@ResultRecordProgressF239@@QAEXEE@Z"
+target = 0x0041A1A0
+[[units.result-scene-build-record-page-00431070.relocations]]
+offset = 70
+type = "DIR32"
+symbol = "?g_RecordProgressAt006718F8@@3VResultRecordProgressF239@@A"
+target = 0x006718F8
+[[units.result-scene-build-record-page-00431070.relocations]]
+offset = 75
+type = "REL32"
+symbol = "?GetSelectedRecordAddress@ResultRecordProgressF239@@QAEPAXXZ"
+target = 0x0041A240
+[[units.result-scene-build-record-page-00431070.relocations]]
+offset = 89
+type = "DIR32"
+symbol = "?g_RecordEmptyAt006580B1@@3QBDB"
+target = 0x006580B1
+[[units.result-scene-build-record-page-00431070.relocations]]
+offset = 101
+type = "REL32"
+symbol = "_strcpy"
+target = 0x00641B80
+[[units.result-scene-build-record-page-00431070.relocations]]
+offset = 188
+type = "REL32"
+symbol = "?Size@ResultNameDequeF239@@QAEHXZ"
+target = 0x0041DD50
+[[units.result-scene-build-record-page-00431070.relocations]]
+offset = 236
+type = "DIR32"
+symbol = "?g_RecordEmptyNameAt006580B4@@3QBDB"
+target = 0x006580B4
+[[units.result-scene-build-record-page-00431070.relocations]]
+offset = 251
+type = "DIR32"
+symbol = "?g_RecordMissingFormatAt006580D8@@3QBDB"
+target = 0x006580D8
+[[units.result-scene-build-record-page-00431070.relocations]]
+offset = 263
+type = "REL32"
+symbol = "_sprintf"
+target = 0x006404F0
+[[units.result-scene-build-record-page-00431070.relocations]]
+offset = 337
+type = "REL32"
+symbol = "?Entry@ResultNameDequeF239@@QAEPAPADH@Z"
+target = 0x0041DD70
+[[units.result-scene-build-record-page-00431070.relocations]]
+offset = 355
+type = "DIR32"
+symbol = "?g_RecordFullFormatAt006580F4@@3QBDB"
+target = 0x006580F4
+[[units.result-scene-build-record-page-00431070.relocations]]
+offset = 367
+type = "REL32"
+symbol = "_sprintf"
+target = 0x006404F0
+[[units.result-scene-build-record-page-00431070.relocations]]
+offset = 389
+type = "REL32"
+symbol = "_strcat"
+target = 0x00641B90
+[[units.result-scene-build-record-page-00431070.relocations]]
+offset = 446
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.result-scene-build-record-page-00431070.relocations]]
+offset = 484
+type = "REL32"
+symbol = "??0GlyphSurfaceF239@@QAE@PAUHWND__@@@Z"
+target = 0x0041BF90
+[[units.result-scene-build-record-page-00431070.relocations]]
+offset = 549
+type = "DIR32"
+symbol = "?g_RecordFontAt00658110@@3QBDB"
+target = 0x00658110
+[[units.result-scene-build-record-page-00431070.relocations]]
+offset = 560
+type = "REL32"
+symbol = "?ConfigureFont@GlyphSurfaceF239@@QAEXPBDHEEE@Z"
+target = 0x0041C060
+[[units.result-scene-build-record-page-00431070.relocations]]
+offset = 605
+type = "REL32"
+symbol = "?Rasterize@GlyphSurfaceF239@@QAEXPBDPAXHHHHHED@Z"
+target = 0x0041C2E0
+[[units.result-scene-build-record-page-00431070.relocations]]
+offset = 651
+type = "REL32"
+symbol = "??_GGlyphSurfaceF239@@QAEPAXI@Z"
+target = 0x00413620
+[[units.result-scene-build-record-page-00431070.relocations]]
+offset = 705
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.result-scene-build-record-page-00431070.relocations]]
+offset = 713
+type = "REL32"
+symbol = "@__security_check_cookie@4"
+target = 0x00640611

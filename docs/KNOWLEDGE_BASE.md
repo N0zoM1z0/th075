@@ -1343,3 +1343,45 @@ comparison diagnostics and cold log remain under `.analysis/f238-result-page/`.
 No invented padding, fake locals, inline asm, shortened function, masked
 fields, complete nominal game class inference or external Oracle credit;
 all 97 origin-pending candidates remain unknown.
+
+
+## F239: complete result record page with real score-deque access and rasterization
+
+The independently R040-authored `ResultScene::BuildRecordPage` at
+`00431070..00431340` has **721 complete CODE bytes / 174 original x86
+instructions**, SHA256
+`fe75efccccafb762e8d16e02634a192d793edf1f2b9acdc0b23ce006009c0e04`.
+The first natural C++ source `src/ResultRecordF239.cpp` reproduces the
+**entire 721-byte extent, 617/617 non-field bytes, all 26 native COFF
+relocation fields**, and real `/GX` handler `00655A6B` plus `/GS`
+cookie/check. Only `--unit result-scene-build-record-page-00431070` was
+cold-replayed; it independently reports **exact: 721**.
+
+The source keeps the original `006718F8` progress-card selection calls
+`0041A1A0` / `0041A240`, signed result-page index at `this+0x1BC`
+scaled by ten, two true little-endian 16-bit per-record values at
+selected record offsets `0x394` and `0x268`, real `this+0x18` deque
+size at `0041DD50` and indexed name access at `0041DD70`. The no-record
+branch prints its original missing-entry string and two zero counters;
+the populated branch formats the real indexed name and both short
+values. Original string/sprintf/strcat address relocations, signed
+indices and conditional branches are all preserved.
+
+The actual text buffer is 2000 bytes, the scratch line 200 bytes; the
+D3DLOCKED_RECT and these two arrays live in meaningful nested scopes as
+independently validated for F238. The genuine D3D8 texture at `this+0x10`
+locks and unlocks, while a real 56-byte font object is allocated,
+configured with the original font string, rasterizes a 1024x512 surface
+with observed pitch 640, and receives its authentic deleting destructor
+call. No source/body credit is assigned to the external progress/STL
+callees, CRT functions, SDK imports or glyph helper bodies. All source
+class names and any complete original parent/deque record layouts remain
+inferred and call-only.
+
+`tests/test_result_record_f239.py` guards the full target PE extent, SHA256,
+all 26 real relocation positions and destinations, and immutable accepted
+source hash. Native assembly, decompiler output, first exact natural
+probe, native body SHA and cold log remain in `.analysis/f238-result-page/`.
+No masks, fake stack locals, byte grafts, cropped target code, all-unit
+cold replay, remote Oracle claims or origin-status promotions were made.
+All 97 unknown-origin candidates remain pending.

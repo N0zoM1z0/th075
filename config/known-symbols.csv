@@ -533,3 +533,4 @@ address,name,module,confidence,evidence
 0x00426670,MusicRoomScene::RenderTrackCatalogText,MusicRoomScene,inferred,F235; complete authored 555-byte music catalog text builder and 21 original relocation fields cold exact; original nominal scene and glyph layouts unproven
 0x004268A0,MusicRoomScene::RenderSelectedTitle,MusicRoomScene,inferred,F235; native whole 452-byte title renderer and 16 actual relocations cold-exact; source buffer 300 and signed selector physically checked; nominal owner unresolved
 0x00431350,ResultScene::BuildCounterPage,ResultScene,inferred,F238; complete 664-byte native score counter builder with 30 genuine relocation fields exact; original scene/card/glyph nominal layouts remain provisional
+0x00431070,ResultScene::BuildRecordPage,ResultScene,inferred,F239; whole 721-byte native result page builder and all 26 physical relocations cold exact; scene/record deque nominal layouts provisional

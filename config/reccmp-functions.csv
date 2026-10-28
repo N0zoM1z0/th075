@@ -551,3 +551,4 @@ MusicRoomScene::UpdateSelection,0x004259D0,function
 MusicRoomScene::RenderTrackCatalogText,0x00426670,function
 MusicRoomScene::RenderSelectedTitle,0x004268A0,function
 ResultScene::BuildCounterPage,0x00431350,function
+ResultScene::BuildRecordPage,0x00431070,function
