@@ -5303,3 +5303,69 @@ eight distinct float constants. The standalone unit
 whole fighter layout and exact nominal C++ method name remain unknown, with
 no assembly, byte grafts, fake locals, masked references, cropped CODE,
 full-repo cold replay or external Oracle receipts.
+
+
+## F362: second independently original 1,027-byte auxiliary state controller
+
+The R049-authored function `00470A40..00470E42` is **1,027 entire original
+CODE bytes**, 240 independently decoded x86 instructions, with original
+PE SHA256 `3778ba85e4a5bf91f1cb8dc0a9bfb67df547dc839dc14d0426d659589608dec3`.
+It implements the original player-side zero/contact flag reset, 3 independent
+action windows with the original effect ID 998, three distinct 94.0f/60.0f/
+100.0f vertical offsets and exact 57×signed-facing X calculation, side
+effect texture/channel resets and the original 540/320-distance f2a timer.
+The exact body structure can be compared with separately already accepted
+F062 `CharacterAux5E5500::AdvanceAuxiliary` (at `005E5500`), but the complete
+original C++ source is not proven to be the same original class or original
+nominal method; this target's address and its three physical REL32 call
+placements remain independent original evidence. Its original body is
+not credited by copying F062's address/bytes or duplicating any CRT/SDK/callee
+credit.
+
+The natural, self-contained source `src/CharacterAuxSpecial00470A40F362.cpp`
+compiles with native VC7.1 `/Od /Ob0 /Gy /GR- /GX- /Zi` into **983/983**
+nonrelocation bytes, and all **eleven** genuine DIR32/REL32 fields/destinations
+(three direct calls to `00453AC0` and eight independent original float
+constant entries) match the actual target. Single newly affected F362 unit
+`character-aux-special-00470a40` returned **1/1 exact** on independently
+recompiled cold source. It is complete original authored CODE credit only;
+private full receiver/class layouts and original naming remain provisional.
+
+## Post-F362 negative large-boss probes: native Marisa auxiliary particle chain
+
+Independently decoded complete R049-authored `00497070..0049757A` is **1,291
+CODE bytes** with **273 x86 instructions**, original PE SHA256
+`317471d44dd19b5a4aadd99760da7725ef1c549429b3109b7d9e979e57222acf`.
+The native function is a nested eight-stage / 36-sample particle ribbon
+renderer with genuine 132-byte quad, 28-byte particle records, signed phase
+and directional short words, four cosine/sine lookups per sample, original
+32-bit and x87 signed integer conversions, two quad transforms, and 74-vertex
+draw calls. It is *not* part of F362 and has no exact credit.
+
+Fresh complete semantic probes under `.analysis/f356-character-aux-boss/` and
+`.analysis/f358-marisa-frame/` corrected a formerly guessed second quad
+corner (the original uses the fourth vertex at quad byte +48). Tests of
+meaningful local-state layouts reached a full 1,284-byte compiled routine
+(270 instructions), but still mismatched stack placements. Crucially, reading
+the real original `004116F0` six-float call ABI and putting the three zero
+angles **first** and computed phase angles **last** in natural C++ matches
+the original right-to-left argument evaluation. Putting the integral float
+offsets on the left of the two phase sine/cosine sums, and reversing the
+arguments inside the trigonometric phase expressions to match actual target
+x87 loads, yields **the whole original 1,291-byte length, identical 273
+mnemonics and instruction lengths**, and a diagnostic **1043/1167**
+nonrelocation byte match. All 31 compiler-generated COFF relocation sites
+were listed; the target native particle-depth field at `006582E0` still
+requires expression-order correction, and most remaining difference bytes
+are authentic EBP local displacements. None is masked or accepted. The
+original 0xE8 stack frame contrasts with the currently best 0xE0 compile
+frame; a real C++ source type/lexical layout must explain the missing eight
+bytes rather than adding arbitrary padding.
+
+The current `src` tree has **no** adopted `00497070` source; the complete
+meaningful experiments and failed variants remain in `.analysis/f356-*`,
+`.analysis/f358-*`, `.analysis/f359-*`, `.analysis/f360-*`, `.analysis/f361-marisa-expression-order/`,
+`.analysis/f362-marisa-carrier/` and `.analysis/f363-marisa-shorts/` as private
+lossless negative evidence. Existing document guesses or identical instruction
+counts never establish exactness. No partial CODE credit, full cold replay,
+manual assembly or target-byte grafts.

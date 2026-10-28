@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "866af7772143591bc5f51cd65923eceed6017d54eb230f859694b4871ab35270"
+      "current_sha256": "55f1d529d45b8a27cc322c24eefc06f5e8ba56a13205093fe5f3ed047bec4ca3"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "7071ca6a05c71189b4cdc7d3015b49933c2f259129a8e77255df9ad9555d59a1"
+      "current_sha256": "5564d28c45e311cfbbb9e1ff292b94cc2f6e6e34996c211f856f1afa8ad8f381"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "d5f876f6150479a99a886ea0e5d53e63416e82676692f4f3060e77f3cb6bfa9a"
+      "current_sha256": "4eec3a27f3684064f2f701044eac22e9e48381b30f2ecd0ea0d7be79f0a2ceac"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "9d53f32376f9bcaa36fc1c61927598009eec295cdb923a9ad2d3cf014db87e64"
+      "current_sha256": "05ec7c86b8ad5e3a9b509057221d98223f5d0cf19c2bc0d7e288ab300834d050"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "d0bc0a56e40906fd2f3e4f98cff12bb68a736ef51a0877e86c178eade4902541"
+      "current_sha256": "211cb5dd6e416cfc0184c2985acbad91aa976c7e82bbf4c7e33991cfd84b6b49"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -26215,6 +26215,50 @@
       },
       "origin": {
         "address": "0x00496C60",
+        "origin": "authored",
+        "subsystem": "CharacterAux",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R049"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00470A40",
+        "size": "1027",
+        "span_end": "0x00470E42",
+        "current_name": "FUN_00470a40",
+        "proposed_name": "CharacterAux::RunAt00470A40",
+        "module": "CharacterAux",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00470A40",
+        "size": "1027",
+        "span_end": "0x00470E42",
+        "current_name": "FUN_00470a40",
+        "proposed_name": "CharacterAux::RunAt00470A40",
+        "module": "CharacterAux",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void CharacterAuxRunAt00470A40F362::AdvanceAuxiliarySpecial()",
+        "is_thunk": "false",
+        "source_file": "src/CharacterAuxSpecial00470A40F362.cpp",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed; F362; scripts/repo-python scripts/replay-exact-units.py --unit character-aux-special-00470a40",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent; F362: full original R049 authored 1027-byte auxiliary controller 00470A40..00470E42, 240 genuine x86 instructions, PE SHA256 3778ba85e4a5bf91f1cb8dc0a9bfb67df547dc839dc14d0426d659589608dec3. Native independently observed state switches, three real 998 tracked-effect spawns and three 94.0f/60.0f/100.0f float constants, signed facing multiplication, original 8-bit flags, four 2-byte effect slots, native opponent-relative distance counter at f2a. Independently decoded complete original extent and individually compared this separately registered natural C++ function, not counting accepted same-shaped 005E5500 body or any shared callee twice. Full 983/983 nonrelocated original bytes, all 11 genuine physical COFF DIR32/REL32 relocations and solved native targets match, affected F362 unit alone cold 1/1 exact. Similarity of machine-code structure to existing F062 is corroborative only, not independent class identity/source proof. Borrowed receiver declarations do not assert original full character owner; no asm, copied target bytes, false locals, relocation masks, truncated extent, whole replay or remote Oracle receipt."
+      },
+      "origin": {
+        "address": "0x00470A40",
         "origin": "authored",
         "subsystem": "CharacterAux",
         "disposition": "authored",
@@ -184917,6 +184961,94 @@
           "target": 6649984
         }
       ]
+    },
+    "character-aux-special-00470a40": {
+      "source": "src/CharacterAuxSpecial00470A40F362.cpp",
+      "object": "build/matching/CharacterAuxSpecial00470A40F362.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "CharacterAux::RunAt00470A40"
+      ],
+      "symbol": "?AdvanceAuxiliarySpecial@CharacterAuxRunAt00470A40F362@@QAEXXZ",
+      "target_address": 4655680,
+      "size": 1027,
+      "relocations": [
+        {
+          "offset": 14,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 270,
+          "type": "DIR32",
+          "symbol": "__real@42bc0000",
+          "target": 6656312
+        },
+        {
+          "offset": 313,
+          "type": "REL32",
+          "symbol": "?SpawnTrackedEffect@CharacterAuxRunAt00470A40F362@@QAEXFMMCCE@Z",
+          "target": 4537024
+        },
+        {
+          "offset": 526,
+          "type": "DIR32",
+          "symbol": "__real@42700000",
+          "target": 6652516
+        },
+        {
+          "offset": 569,
+          "type": "REL32",
+          "symbol": "?SpawnTrackedEffect@CharacterAuxRunAt00470A40F362@@QAEXFMMCCE@Z",
+          "target": 4537024
+        },
+        {
+          "offset": 764,
+          "type": "DIR32",
+          "symbol": "__real@42c80000",
+          "target": 6649992
+        },
+        {
+          "offset": 807,
+          "type": "REL32",
+          "symbol": "?SpawnTrackedEffect@CharacterAuxRunAt00470A40F362@@QAEXFMMCCE@Z",
+          "target": 4537024
+        },
+        {
+          "offset": 843,
+          "type": "DIR32",
+          "symbol": "__real@44070000",
+          "target": 6656308
+        },
+        {
+          "offset": 874,
+          "type": "DIR32",
+          "symbol": "__real@c4070000",
+          "target": 6656304
+        },
+        {
+          "offset": 917,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 948,
+          "type": "DIR32",
+          "symbol": "__real@c3a00000",
+          "target": 6649984
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -185345,6 +185477,7 @@
     "src/SuikaSpecialStateF348.cpp": "ba8a07827d115f0bc3e1485337b3cb3715f9580db08f3c61f6c009725fdc6ef4",
     "src/ArchiveOpenRegisterF353.cpp": "72afec730f15b6d9ff9b6ffeda0d78e9d9e337db87e9c72d28f14c01575d4f03",
     "src/AuxEffectPruneF354.cpp": "1a81b175d1b8e0dbd43e1690de33761a53fad706848abb706947b7f8f32c8d6e",
-    "src/CharacterAuxSpecial00496C60F361.cpp": "735404f7b343770f65fc18c13af23ba20a82c34cd8611ce534c9965104947c76"
+    "src/CharacterAuxSpecial00496C60F361.cpp": "735404f7b343770f65fc18c13af23ba20a82c34cd8611ce534c9965104947c76",
+    "src/CharacterAuxSpecial00470A40F362.cpp": "20b156ac2ad15ddb871576c657fca645c5572273fbf79c7613a5dedbb45536d3"
   }
 }

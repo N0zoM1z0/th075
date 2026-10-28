@@ -653,3 +653,4 @@ SuikaFighter::UpdateSpecialStateAt005C3FB0
 ArchiveCatalog::OpenAndRegister
 AuxEffectManager::AdvanceAndPruneTwoListsAt005F7D80
 CharacterAux::RunAt00496C60
+CharacterAux::RunAt00470A40
