@@ -1,4 +1,4 @@
-# TH075 — active reconstruction handoff (F324)
+# TH075 — active reconstruction handoff (F325)
 
 **Updated 2026-10-28. Read this document before new experiments.**
 
@@ -22,17 +22,17 @@ not acceptance requirements.
 
 | Item | Current evidence |
 | --- | --- |
-| Local branch / last exact-code commit | `main` / F324 three whole 280-byte scene/replay/result glyph-atlas drawing functions; prior F320 native 83-byte font selection checkpoint `7c40d60` and F319 1,766-byte rasterizer boss `c4e661e` |
+| Local branch / last exact-code commit | `main` / F325 whole 183-byte SpriteSequence history append; F324 three 280-byte glyph-atlas renderer checkpoint `7414298`, F319 1,766-byte rasterizer boss `c4e661e` |
 | Upstream | `origin/main` tracked locally; verify current ahead/behind and dirty state before further work |
-| Working tree | Clean after F324 checkpoint if successful; continue rather than avoid every existing dirty edit |
+| Working tree | Clean after F325 checkpoint if successful; continue rather than avoid every existing dirty edit |
 | Native binary | `resources/th075.exe`, SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98` |
 | Candidate count | 4,351; origin review: 1,002 authored, 2,671 library, 581 compiler, 97 unknown |
-| Accepted functions / units | **636 / 636** |
-| Accepted authored CODE | **810,201 bytes** |
-| Reviewed authored coverage | 810,201 / 1,973,516 = **41.05%** |
-| Conservative coverage | **40.98%** counting 3,608 origin-pending bytes |
+| Accepted functions / units | **637 / 637** |
+| Accepted authored CODE | **810,384 bytes** |
+| Reviewed authored coverage | 810,384 / 1,973,516 = **41.06%** |
+| Conservative coverage | **40.99%** counting 3,608 origin-pending bytes |
 | Goal | **98% not reached** |
-| Verification | F324 three separate 280-byte `DrawNameGlyphs` atlas renderers at 0042AFF0/0042C150/00431770, each 81 native x86 instructions, 256/256 nonfield bytes and six physical native COFF fields; affected **3/3 cold-exact**. F320 font selection and F319 full 1,766-byte rasterization boss previously checkpointed at `7c40d60`/`c4e661e`. No all-unit cold replay or external Oracle receipt. |
+| Verification | F325 entire 183-byte SpriteSequence::AppendElement at `00411000` cold-exact (167/167 nonfield bytes, 4 true physical REL32 references, native RET 0xA4), after F324 three 280-byte scene glyph renderers checkpoint `7414298`. Only F325 affected single unit cold replayed 1/1; no full replay or external Oracle receipt. |
 
 **Recheck the actual live status immediately**. Local commits are checkpoints,
 not evidence of a remote push or external Oracle acceptance. Earlier Git
@@ -163,6 +163,7 @@ inert variable or arbitrary padding may earn exact credit.
 | F324: SceneText::DrawNameGlyphs | `0042AFF0` | 280 | 6 |
 | F324: ReplayScene::DrawNameGlyphs | `0042C150` | 280 | 6 |
 | F324: ResultScene::DrawNameGlyphs | `00431770` | 280 | 6 |
+| F325: SpriteSequence::AppendElement | `00411000` | 183 | 4 |
 
 F222 proved signed 32-bit x87 `FILD` divided by the target's 36.0f
 (`00659308`), 74 physical animation records and a final call into the
@@ -330,6 +331,8 @@ F319 **cold-accepts ALL 1,766 CODE bytes of the 551-original-instruction `FontSu
 F320 **independently cold-accepts the full R103-authored 83-byte `TextRasterizer::SelectFont`** at `0041C0D0..0041C122` (31 native x86 instructions, **71/71 nonrelocation bytes and 3/3 true original GDI import COFF DIR32 fields**). The first grounded natural VC7.1 C++ selects the native current font in the game's HDC: `GetDC(this+0 HWND)` through original `00657218`, `SelectObject(HDC,this+8 HGDIOBJ)` through `00657048` saves real previous GDI object at this+0xC; `GetTextMetricsA` through `00657040` fills native Win32 `TEXTMETRICA`, and real `tmAscent` is written to this+0x2C. Whole PE CODE SHA256 `e24b2a690079d62be41af03135640adb47899f3ecaa2cfeef65c4a956ddad65a`. Native disassembly, exact COFF and single-unit cold receipt `.analysis/f320-font-leaves/`, accepted source `src/FontSelectF320.cpp`; affected only unit `text-rasterizer-select-font-0041c0d0` cold replayed **1/1 exact**. This genuinely completes the GDI selection dependency of separately F319-accepted full font rasterizer, without double counting original rasterizer, imported Win32 implementation, CRT or any of the 97 pending origins. Complete private font class layout is unclaimed; no artificial source padding or byte graft, masked fields, cropped function, all-unit replay or external Oracle receipt.
 
 F324 **independently cold-accepts THREE distinct complete 280-byte authored glyph atlas render functions**: `SceneText::DrawNameGlyphsAt0042AFF0` (`R102`), `SceneText::DrawNameGlyphsAt0042C150` (`R102`), `ResultScene::DrawNameGlyphs` `00431770` (`R043`). All have **81 independent original x86 instructions, 256/256 nonfield positions and six genuine physical native COFF relocation fields each**. Full pinned PE SHA256 respectively `582cae75647df937c4e306dda7493cf48bd5303d510141016b824d97e313e313`, `e131b61d5b6b6d93de2e86e0c41281b447e9a3af1265a48634f654de22643a25`, `f15d10c289d027c00a5516530b66741d2e4c7d09862f9ed5974de5dcc5849f81`. The native source constructs one real 132-byte quad `0040DA00` from the original glyph width/height globals `00657F78/0065786C` and two float coordinates, then draws eight signed atlas indexes: signed division and remainder by 26, glyph width 19/height 20, real GDI `SetRect` import `00657210`, authentic receiver this+8 `DrawQuad` `0040C9A0` (texture index 2, original tint), and real `SpriteTransform::TranslateQuad` `00411500` (x=14.0f advance) each iteration. The first complete natural C++ emitted 256 bytes rather than original 280 because its eight used **loop index** operations allocated an 8-bit EBP displacement at EBP−4 instead of original long EBP−0x9C. A physically supported ordinary C++ **20-byte local record containing exactly two used native values: 32-bit signed index and Win32 `RECT`**, while keeping the genuine 132-byte quad as a separate directly constructed object, naturally allocates index EBP−0x9C and RECT EBP−0x98; this restores the eight three-byte addressing gaps and quad EBP−0x88, yielding entire native 280-byte control flow and all six relocations without fillers. Three independently authored source files `src/SceneEntryGlyphsF324.cpp`, `src/ReplayBrowserGlyphsF324.cpp`, `src/ResultSceneGlyphsF324.cpp` were compiled as separate pinned VC7.1 objects, each **280/280 original CODE and 6/6 real COFF fields**, then only the **three affected units** cold rebuilt **3/3 exact**. All original PE/Ghidra, failed standalone 256-byte probes, naturally grouped exact objects and cold receipts are under `.analysis/f324-name-glyphs/`. The adjacent `ReplayScene::DrawSaveFilename` at `0042C270` (303 bytes) was independently attempted as a full source at `.analysis/f323-replay-filename/` but remains **nonexact** (natural 341–342-byte emissions with wrong original 14-byte literal/8-byte glyph/quad stack placement), **zero CODE credit**. No invented private UI scene class layouts, already accepted quad/transform helper code duplication, fake local padding, original byte graft, relocation masks, cropped function, all-unit replay or external Oracle receipt.
+
+F325 **cold-accepts the entire original R035 183-byte `SpriteSequence::AppendElement`** `00411000..004110B6` (48 independently decoded original native instructions, `RET 0xA4`, **167/167 comparable bytes, all four true COFF REL32 fields**). A real 164-byte native stack history element contains exact 2-byte sprite index, physically 132-byte SpriteQuad copied by the original **33-dword `REP MOVSD`**, real x/y floats, complete D3DVECTOR offset, tint and signed mode. Original native constructor `00411C10` initializes this actual record at EBP−0xA8, `SpriteSequence` list lives at this+4, authentic Append/Size/RemoveFront call targets are respectively `00411D30`, `00411CE0`, `00411D00`. First semantic C++ cached an unnecessary `list` pointer at EBP−4 and generated 177 bytes with the wrong 0xB4 frame. Eliminating only this redundant, genuinely unobserved local alias restores original 0xAC frame and the **full 183 native bytes**, all original call sites and actual caller by-value 164-byte parameter ABI. Full Japanese PE CODE SHA256 `4cb93c31e32196534a5f739b4ee7ed1de39dacf9f0a495301db63e9f08cb51de`. Adopted `src/SpriteSequenceAppendF325.cpp`, original PE/Ghidra/negative and whole COFF/cold proof `.analysis/f325-sprite-append/`; only `--unit sprite-sequence-append-element-00411000` was cold replayed **1/1 exact**, not all units. The related **746-byte** `SpriteSequence::RenderElements` boss at `00411110` remains **unaccepted** after genuine quad alignment and used-object grouping variants under `.analysis/f316-sequence-scope/` and `.analysis/f321-sequence-aligned/`; original full 198 native instructions / 0xBC frame are not yet fully matched, with best ungrouped probe 734 vs native 746. Do not count its CODE, invent alignment padding, or assume the earlier documentation's class layout.
 
 Relevant full native proofs: `config/match-units.toml`,
 `config/exact-adoptions.json`, sources `src/*F222.cpp`/`src/*F223.cpp`,

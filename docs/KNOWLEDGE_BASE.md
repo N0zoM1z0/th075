@@ -4456,3 +4456,60 @@ bytes, not the original 303, due 8-bit/32-bit EBP displacement
 differences. Retain all negatives and PE disassembly under
 `.analysis/f323-replay-filename/`; no premature CODE acceptance
 or artificial padding.
+
+
+## F325: whole 183-byte SpriteSequence::AppendElement cold-exact
+
+`SpriteSequence::AppendElement` at `00411000..004110B6` is one
+R035-authored, completely bounded original native function of
+**183 CODE bytes**, **48 actual x86 instructions**, actual
+`RET 0xA4` (the real by-value 164-byte caller parameter packet)
+and full original PE SHA256
+`4cb93c31e32196534a5f739b4ee7ed1de39dacf9f0a495301db63e9f08cb51de`.
+Original full Ghidra/control disassembly and the two whole C++
+source/COFF comparisons and only-one-unit cold proof are preserved
+at `.analysis/f325-sprite-append/`. Source
+`src/SpriteSequenceAppendF325.cpp` models only a genuinely observed
+**164-byte SpriteHistoryElementF325** with original native fields,
+not the opaque library's entire private element/allocator layout.
+
+The original element constructor at `00411C10` initializes the
+physical 164-byte stack object at EBP−0xA8. The source then copies
+actual short texture, the complete **132-byte SpriteQuad** by
+33-dword `REP MOVSD` from the by-value caller packet, three actual
+D3DVECTOR coordinate words, signed byte blend mode, x/y game
+positions and DWORD tint in the precise original native order.
+It passes a pointer to the real element to the native history list
+`Append` call `00411D30` at this+4, fetches native `Size` from
+`00411CE0`, compares with true signed short max history capacity
+at this+0x12, and conditionally invokes real `RemoveFront`
+`00411D00`. Every call is a physical COFF REL32 field; **all
+four genuine target relocations match**. The original whole native
+0xAC stack frame holds this at EBP−0xAC and the complete genuine
+164-byte temporary immediately above, with no additional compiler
+locals.
+
+A first complete semantic C++ unnecessarily cached the actual
+this+4 history-list receiver into its own local pointer. It generated
+177 bytes with an erroneous 0xB4 frame and lost the original member
+receiver reevaluation. Removing that *unobserved pointer cache*
+while directly taking the same true this+4 member on each real
+call produces **183/183 CODE bytes, 167/167 comparable positions,
+and 4/4 native physical COFF fields** naturally with pinned VC7.1
+`/Od /Ob0 /Gy /GR- /GX- /GS /Zi`. Only canonical
+`sprite-sequence-append-element-00411000` was cold rebuilt,
+`1/1 exact`, never an all-unit replay. The FighterRender caller,
+actual original list constructor/Append/Size/RemoveFront functions,
+SpriteQuad constructor, CRT/VC7 and 97 origin-unknown cases do not
+receive duplicate authored CODE.
+
+The adjacent major boss `SpriteSequence::RenderElements` at
+`00411110` (746 original CODE, 198 x86 instructions, real 0xBC
+frame) is **still nonexact**. Additional independently compiled
+meaningful stack aggregate/quad alignment hypotheses in
+`.analysis/f316-sequence-scope/` and
+`.analysis/f321-sequence-aligned/` emitted 711/733/745/754 bytes
+or changed native iterator ABI. None is credited as complete. No
+artificial stack alignment filler, machine-byte patch, manual x86,
+truncated function, masked original relocations, or remote Oracle
+acceptance is claimed.

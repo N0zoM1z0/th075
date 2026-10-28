@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "40df2c345bfe5204d71a386f893d92adfa73581cd3e3db6c905395631d3db241"
+      "current_sha256": "3cd9b1ecbf70c83b1449caf560362bcc8e1f73e95ef8321554534edb1b367be8"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "b00663a0f3d67dd043f0ae0608d7317748290886883fc626be2fc03005674475"
+      "current_sha256": "f4d6913c8692349b10fe49d3c3b1fe6c9fa4a18d5bae1a711e900283ff32e511"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "61b190b4e5cd0b3ae62eca63bf9f0770322cea70a7eb83de699cb6cdd1697796"
+      "current_sha256": "9a67f8c7e57329045ce413359d5ba386528120a0c515af0862fffaedaabd0e77"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "042c3efaed98c3369d8071a7c9f11c8cb860ca220910993cade208fa499fa5b5"
+      "current_sha256": "d8f4366077267243a9f8537d73604655395dae2007efc11c090b6f76f4229b4a"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "3e3af4f6d3c068328bb1afd58eb9987441021fe38b8063946232b02ce777abb1"
+      "current_sha256": "7fbf91a73b9945620b0e93eaf6d20af320057c0bcc7d7703cd99e4402b97c91b"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -25384,6 +25384,50 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R043"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00411000",
+        "size": "183",
+        "span_end": "0x004110B6",
+        "current_name": "FUN_00411000",
+        "proposed_name": "SpriteSequence::AppendElement",
+        "module": "SpriteSequence",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R035; full body hash, complete decoded CFG and game-specific policy reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00411000",
+        "size": "183",
+        "span_end": "0x004110B6",
+        "current_name": "FUN_00411000",
+        "proposed_name": "SpriteSequence::AppendElement",
+        "module": "SpriteSequence",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void SpriteSequenceF325::AppendElement(short,float,float,SpriteQuad40CA80,D3DVECTOR,DWORD,signed char)",
+        "is_thunk": "false",
+        "source_file": "src/SpriteSequenceAppendF325.cpp",
+        "evidence": "R035; full body hash, complete decoded CFG and game-specific policy reviewed; F325; scripts/repo-python scripts/replay-exact-units.py --unit sprite-sequence-append-element-00411000",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F325: entire R035 authored native 183 CODE bytes at 00411000..004110B6, 48 independently decoded original x86 instructions including exact thiscall RET 0xA4, full PE SHA256 4cb93c31e32196534a5f739b4ee7ed1de39dacf9f0a495301db63e9f08cb51de. Complete natural C++ has a genuinely used 164-byte SpriteHistoryElementF325 local constructed via original 00411C10 at native EBP-0xA8, with observed short frame id, entire physically 132-byte by-value SpriteQuad at local+4 copied by native 33-DWORD REP MOVSD, real 2 positional floats, 3-element D3DVECTOR, tint DWORD and final signed byte blend mode. Caller ABI passes the same genuine 164-byte by-value argument packet and original local has precisely the observed 0xAC stack frame, with this saved at EBP-0xAC. All native game-specific assignment order and memcpy REP MOVSD identical, and the exact actual SpriteHistoryList receiver is this+4. Append record via original native 00411D30; get size via 00411CE0, compare to signed short history capacity this+0x12, and conditionally RemoveFront via native 00411D00. The first complete C++ version incorrectly cached a redundant local list pointer, making a 0xB4 frame/177 bytes and shortened genuine source list call receiver reevaluations. Removing the **unobserved, not-needed saved list local** and directly reevaluating real this+4 on three actual calls restores exactly whole 183/183 original CODE, all 167/167 nonfield bytes and 4/4 real physical COFF REL32 relocation offsets/types/solved targets. Pinned VC7.1 /Od /Ob0 /Gy /GR- /GX- /GS /Zi one affected unit cold 1/1 exact. Existing FighterRender453F70 caller, SpriteQuad constructor and real history list implementation CODE all remain separately owned and are never double credited; original private class types are borrowed only at physically observed call boundaries, 97 pending origins, Win32/CRT/VC7 implementation uncredited. No target bytes copied, manual assembly, unused fake locals, masked fields, truncated original, full cold replay or external Oracle verification."
+      },
+      "origin": {
+        "address": "0x00411000",
+        "origin": "authored",
+        "subsystem": "SpriteSequence",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R035"
       }
     }
   ],
@@ -181707,6 +181751,53 @@
           "target": 4265216
         }
       ]
+    },
+    "sprite-sequence-append-element-00411000": {
+      "source": "src/SpriteSequenceAppendF325.cpp",
+      "object": "build/matching/SpriteSequenceAppendF325.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "SpriteSequence::AppendElement"
+      ],
+      "symbol": "?AppendElement@SpriteSequenceF325@@QAEXFMMVSpriteQuad40CA80@@U_D3DVECTOR@@KC@Z",
+      "target_address": 4263936,
+      "size": 183,
+      "relocations": [
+        {
+          "offset": 24,
+          "type": "REL32",
+          "symbol": "??0SpriteHistoryElementF325@@QAE@XZ",
+          "target": 4267024
+        },
+        {
+          "offset": 129,
+          "type": "REL32",
+          "symbol": "?Append@SpriteHistoryListF325@@QAEXABUSpriteHistoryElementF325@@@Z",
+          "target": 4267312
+        },
+        {
+          "offset": 143,
+          "type": "REL32",
+          "symbol": "?Size@SpriteHistoryListF325@@QAEHXZ",
+          "target": 4267232
+        },
+        {
+          "offset": 171,
+          "type": "REL32",
+          "symbol": "?RemoveFront@SpriteHistoryListF325@@QAEXXZ",
+          "target": 4267264
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -182116,6 +182207,7 @@
     "src/FontSelectF320.cpp": "77085b7d5fe1e960a8ea905cd694baf1d3dd5a29331a9895d440a4df40877b41",
     "src/SceneEntryGlyphsF324.cpp": "9566f95c6dc4fed9133f4b7f6cc2c47e7bc8791b0a2c9993f2b013de0b6afe3e",
     "src/ReplayBrowserGlyphsF324.cpp": "7458d265c6604ff25ac6597856fd1d7a2c33d254917b50daedc3ffd30a573005",
-    "src/ResultSceneGlyphsF324.cpp": "0020aaee5216016ed43422a7aab493c0f3402142be3f44f1196d912c6b7bc2b2"
+    "src/ResultSceneGlyphsF324.cpp": "0020aaee5216016ed43422a7aab493c0f3402142be3f44f1196d912c6b7bc2b2",
+    "src/SpriteSequenceAppendF325.cpp": "fa693240fd1726470d952ed1647ede93062c8e0ddde52d78dc35b982faa0ea6a"
   }
 }

@@ -45678,3 +45678,32 @@ offset = 265
 type = "REL32"
 symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z"
 target = 0x00411500
+
+[units.sprite-sequence-append-element-00411000]
+source = "src/SpriteSequenceAppendF325.cpp"
+object = "build/matching/SpriteSequenceAppendF325.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["SpriteSequence::AppendElement"]
+symbol = "?AppendElement@SpriteSequenceF325@@QAEXFMMVSpriteQuad40CA80@@U_D3DVECTOR@@KC@Z"
+target_address = 0x00411000
+size = 183
+[[units.sprite-sequence-append-element-00411000.relocations]]
+offset = 24
+type = "REL32"
+symbol = "??0SpriteHistoryElementF325@@QAE@XZ"
+target = 0x00411C10
+[[units.sprite-sequence-append-element-00411000.relocations]]
+offset = 129
+type = "REL32"
+symbol = "?Append@SpriteHistoryListF325@@QAEXABUSpriteHistoryElementF325@@@Z"
+target = 0x00411D30
+[[units.sprite-sequence-append-element-00411000.relocations]]
+offset = 143
+type = "REL32"
+symbol = "?Size@SpriteHistoryListF325@@QAEHXZ"
+target = 0x00411CE0
+[[units.sprite-sequence-append-element-00411000.relocations]]
+offset = 171
+type = "REL32"
+symbol = "?RemoveFront@SpriteHistoryListF325@@QAEXXZ"
+target = 0x00411D00

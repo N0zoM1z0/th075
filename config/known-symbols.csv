@@ -617,3 +617,4 @@ address,name,module,confidence,evidence
 0x0042AFF0,SceneText::DrawNameGlyphsAt0042AFF0,SceneText,inferred,"F324; whole original 280-byte SceneEntryGlyphsF324 glyph-atlas draw loop, six genuine native COFF fields cold exact, full private receiver layout unproven"
 0x0042C150,SceneText::DrawNameGlyphsAt0042C150,SceneText,inferred,"F324; whole original 280-byte ReplayBrowserGlyphsF324 glyph-atlas draw loop, six genuine native COFF fields cold exact, full private receiver layout unproven"
 0x00431770,ResultScene::DrawNameGlyphs,ResultScene,inferred,"F324; whole original 280-byte ResultSceneGlyphsF324 glyph-atlas draw loop, six genuine native COFF fields cold exact, full private receiver layout unproven"
+0x00411000,SpriteSequence::AppendElement,SpriteSequence,inferred,"F325; complete 183 native CODE history append with 164-byte real element, true SpriteQuad REP MOVSD and all 4 game-list COFF fields cold exact; original private class layout unproven"

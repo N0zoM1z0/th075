@@ -635,3 +635,4 @@ TextRasterizer::SelectFontAt0041C0D0,0x0041C0D0,function
 SceneText::DrawNameGlyphsAt0042AFF0,0x0042AFF0,function
 SceneText::DrawNameGlyphsAt0042C150,0x0042C150,function
 ResultScene::DrawNameGlyphs,0x00431770,function
+SpriteSequence::AppendElement,0x00411000,function
