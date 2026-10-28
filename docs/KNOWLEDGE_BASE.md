@@ -5117,3 +5117,38 @@ byte copying, assembly, fake locals, or truncation). Targeted cold replay of
 only; neither target extent is double credited. The old F270 "one x87
 comparison pending" is now obsolete, though all negative controls remain in
 `.analysis/f270-character-cancel/` and `.analysis/f346-cancel-macro/`.
+
+
+## F347: complete 746-byte sprite sequence render, native x87 scale operand order
+
+`SpriteSequence::RenderElements` at `00411110..004113F9` is a full original
+**746-CODE-byte**, **198-instruction** R046-authored render function, with
+PE-backed original SHA256
+`ac21e238be71c4675b81ee5b7a2b7c0ae128406ffba4880b9650846718727cfe`.
+The source `src/SpriteSequenceRenderF347.cpp` reconstructs the entire guarded
+list traversal, signed timing/spacing, counter, texture RECT, blend selection,
+132-byte quad object construction and copied quad, original alpha/tint
+computation, 3-axis translate, and either direct quad or projected quad draw.
+Its borrowed iterator, render backend and nominal quad interfaces are *not*
+claims to complete private object layouts. The full native function has a
+final `RET` and no post-RET owned table.
+
+Historical F331/F332/F336 complete 746-byte probes were only 599/614 comparable
+nonrelocation bytes: three separate x87 scale comparisons each differed in
+five genuine native bytes. Previous attempts varied `volatile`, pointer/ref
+types, field accessor, named scale triple, and equality forms with a symbolic
+global zero on the **left**; none matched the *whole* original body. F347
+retested independent natural C++ alternatives. A nonzero scale condition
+expressed as `scale.x != 0.0f || scale.y != 0.0f || scale.z != 0.0f` (with
+float zero **on the right**) emits the native `FLD [0065782C]` followed by
+`FLD [original scale field]` at all three points. Zero-first, named zero-left
+and double-precision literals remain negative controls. The matching literal
+is a genuine VC7.1 compiler float constant, not a copied target blob.
+
+The resulting 746-byte object matches **614/614** nonrelocation bytes and
+**33/33** genuine physical DIR32/REL32 COFF fields, including each exact
+callee target and the three `0x0065782C` zero references. Full native
+instruction extents and all fields independently checked; only new unit
+`sprite-sequence-render-elements-00411110` was cold replayed, **1/1 exact**.
+No truncated body, compiler/list callee credit, assembly, invented data
+padding, or remote Oracle receipt.

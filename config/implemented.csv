@@ -648,3 +648,4 @@ ArchiveCatalog::CloseNamed
 DataArchive::AppendReadableFileAt0041D6C0
 YukariFighter::UpdateSpecialStateAt0059B490
 CharacterSelectScene::UpdateCancelAnimation
+SpriteSequence::RenderElements

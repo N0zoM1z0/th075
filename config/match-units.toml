@@ -46944,3 +46944,178 @@ offset = 385
 type = "REL32"
 symbol = "?Play@SceneSelectionSoundF270@@QAEXH@Z"
 target = 0x004079C0
+
+
+[units.sprite-sequence-render-elements-00411110]
+source = "src/SpriteSequenceRenderF347.cpp"
+object = "build/matching/SpriteSequenceRenderF347.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["SpriteSequence::RenderElements"]
+symbol = "?RenderElements@SpriteSequenceF261@@QAEXXZ"
+target_address = 0x00411110
+size = 746
+[[units.sprite-sequence-render-elements-00411110.relocations]]
+offset = 27
+type = "REL32"
+symbol = "?size@SequenceListF261@@QBEIXZ"
+target = 0x00411CE0
+[[units.sprite-sequence-render-elements-00411110.relocations]]
+offset = 73
+type = "REL32"
+symbol = "?begin@SequenceListF261@@QAE?AVSequenceIteratorF261@@XZ"
+target = 0x00411C90
+[[units.sprite-sequence-render-elements-00411110.relocations]]
+offset = 94
+type = "REL32"
+symbol = "?End@SequenceListF261@@QAEXPAVSequenceIteratorF261@@@Z"
+target = 0x00411CC0
+[[units.sprite-sequence-render-elements-00411110.relocations]]
+offset = 100
+type = "DIR32"
+symbol = "?g_SequenceBaseXAt00671404@@3MB"
+target = 0x00671404
+[[units.sprite-sequence-render-elements-00411110.relocations]]
+offset = 106
+type = "DIR32"
+symbol = "?g_SequenceBaseOffsetAt00657834@@3MB"
+target = 0x00657834
+[[units.sprite-sequence-render-elements-00411110.relocations]]
+offset = 118
+type = "DIR32"
+symbol = "?g_SequenceBaseYAt006713C4@@3MB"
+target = 0x006713C4
+[[units.sprite-sequence-render-elements-00411110.relocations]]
+offset = 132
+type = "REL32"
+symbol = "?Construct@NativeQuadCarrierF331@@QAEXXZ"
+target = 0x0040D990
+[[units.sprite-sequence-render-elements-00411110.relocations]]
+offset = 161
+type = "REL32"
+symbol = "??ESequenceIteratorF261@@QAE?AV0@H@Z"
+target = 0x00411E20
+[[units.sprite-sequence-render-elements-00411110.relocations]]
+offset = 191
+type = "REL32"
+symbol = "??9SequenceIteratorF261@@QBE_NABV0@@Z"
+target = 0x00411E50
+[[units.sprite-sequence-render-elements-00411110.relocations]]
+offset = 257
+type = "REL32"
+symbol = "??CSequenceIteratorF261@@QBEPAEXZ"
+target = 0x00411E00
+[[units.sprite-sequence-render-elements-00411110.relocations]]
+offset = 274
+type = "REL32"
+symbol = "?GetTextureRect@SequenceRendererF261@@QAEXHPAUtagRECT@@@Z"
+target = 0x0040D870
+[[units.sprite-sequence-render-elements-00411110.relocations]]
+offset = 282
+type = "REL32"
+symbol = "??CSequenceIteratorF261@@QBEPAEXZ"
+target = 0x00411E00
+[[units.sprite-sequence-render-elements-00411110.relocations]]
+offset = 338
+type = "REL32"
+symbol = "?SetBlendMode@SequenceRendererF261@@QAEXH@Z"
+target = 0x0040C7F0
+[[units.sprite-sequence-render-elements-00411110.relocations]]
+offset = 355
+type = "REL32"
+symbol = "?SetBlendMode@SequenceRendererF261@@QAEXH@Z"
+target = 0x0040C7F0
+[[units.sprite-sequence-render-elements-00411110.relocations]]
+offset = 372
+type = "REL32"
+symbol = "?SetBlendMode@SequenceRendererF261@@QAEXH@Z"
+target = 0x0040C7F0
+[[units.sprite-sequence-render-elements-00411110.relocations]]
+offset = 380
+type = "REL32"
+symbol = "??CSequenceIteratorF261@@QBEPAEXZ"
+target = 0x00411E00
+[[units.sprite-sequence-render-elements-00411110.relocations]]
+offset = 406
+type = "REL32"
+symbol = "??CSequenceIteratorF261@@QBEPAEXZ"
+target = 0x00411E00
+[[units.sprite-sequence-render-elements-00411110.relocations]]
+offset = 449
+type = "REL32"
+symbol = "??CSequenceIteratorF261@@QBEPAEXZ"
+target = 0x00411E00
+[[units.sprite-sequence-render-elements-00411110.relocations]]
+offset = 483
+type = "DIR32"
+symbol = "?g_SequenceYOffsetAt00657830@@3MB"
+target = 0x00657830
+[[units.sprite-sequence-render-elements-00411110.relocations]]
+offset = 505
+type = "REL32"
+symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z"
+target = 0x00411500
+[[units.sprite-sequence-render-elements-00411110.relocations]]
+offset = 513
+type = "REL32"
+symbol = "??CSequenceIteratorF261@@QBEPAEXZ"
+target = 0x00411E00
+[[units.sprite-sequence-render-elements-00411110.relocations]]
+offset = 519
+type = "DIR32"
+symbol = "__real@00000000"
+target = 0x0065782C
+[[units.sprite-sequence-render-elements-00411110.relocations]]
+offset = 542
+type = "REL32"
+symbol = "??CSequenceIteratorF261@@QBEPAEXZ"
+target = 0x00411E00
+[[units.sprite-sequence-render-elements-00411110.relocations]]
+offset = 548
+type = "DIR32"
+symbol = "__real@00000000"
+target = 0x0065782C
+[[units.sprite-sequence-render-elements-00411110.relocations]]
+offset = 571
+type = "REL32"
+symbol = "??CSequenceIteratorF261@@QBEPAEXZ"
+target = 0x00411E00
+[[units.sprite-sequence-render-elements-00411110.relocations]]
+offset = 577
+type = "DIR32"
+symbol = "__real@00000000"
+target = 0x0065782C
+[[units.sprite-sequence-render-elements-00411110.relocations]]
+offset = 607
+type = "REL32"
+symbol = "??CSequenceIteratorF261@@QBEPAEXZ"
+target = 0x00411E00
+[[units.sprite-sequence-render-elements-00411110.relocations]]
+offset = 622
+type = "REL32"
+symbol = "??CSequenceIteratorF261@@QBEPAEXZ"
+target = 0x00411E00
+[[units.sprite-sequence-render-elements-00411110.relocations]]
+offset = 637
+type = "REL32"
+symbol = "??CSequenceIteratorF261@@QBEPAEXZ"
+target = 0x00411E00
+[[units.sprite-sequence-render-elements-00411110.relocations]]
+offset = 666
+type = "REL32"
+symbol = "??CSequenceIteratorF261@@QBEPAEXZ"
+target = 0x00411E00
+[[units.sprite-sequence-render-elements-00411110.relocations]]
+offset = 683
+type = "REL32"
+symbol = "?DrawProjectedQuad@SequenceRendererF261@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@KKKK@Z"
+target = 0x0040CA20
+[[units.sprite-sequence-render-elements-00411110.relocations]]
+offset = 714
+type = "REL32"
+symbol = "??CSequenceIteratorF261@@QBEPAEXZ"
+target = 0x00411E00
+[[units.sprite-sequence-render-elements-00411110.relocations]]
+offset = 731
+type = "REL32"
+symbol = "?DrawQuad@SequenceRendererF261@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z"
+target = 0x0040C9A0

@@ -1,6 +1,6 @@
 # TH075 — current reconstruction handoff
 
-**Maintained: 2026-10-28, after F346.** Read this document, then check the **live repository**. The current user explicitly wants both large/core bosses and small leaves tackled seriously, tangible progress committed immediately with subject `gpt-web: ...`, and **only changed/new units cold-replayed**. The user reports no other sessions: inspect and finish all dirty work; never skip, reset, overwrite or silently discard it.
+**Maintained: 2026-10-28, after F347.** Read this document, then check the **live repository**. The current user explicitly wants both large/core bosses and small leaves tackled seriously, tangible progress committed immediately with subject `gpt-web: ...`, and **only changed/new units cold-replayed**. The user reports no other sessions: inspect and finish all dirty work; never skip, reset, overwrite or silently discard it.
 
 ## 1. Trusted state and first commands
 
@@ -10,9 +10,9 @@ Canonical evidence is the pinned original PE, `config/function-origins.csv`, `co
 | --- | --- |
 | Git | `main`; latest reconstruction commit **`26ac6fd`** (F339), preceded by `a8a4496` (F338), `3a16048` (F337), `18f19d6` (F335), `c9e0a1f` (F334) |
 | Pinned target | user-supplied Japanese `resources/th075.exe` v1.11; SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`; **never** `th075c.exe` |
-| Exact and source-present | **650 functions / 650 exact units** |
-| Accepted authored CODE | **815,596 bytes / 1,973,516 reviewed bytes = 41.33%** |
-| Conservative | **41.25%**, including 3,608 bytes with unresolved origin |
+| Exact and source-present | **651 functions / 651 exact units** |
+| Accepted authored CODE | **816,342 bytes / 1,973,516 reviewed bytes = 41.36%** |
+| Conservative | **41.29%**, including 3,608 bytes with unresolved origin |
 | Origin review | 1,002 authored, 2,671 library, 581 compiler, **97 pending** across 4,351 provisional candidates |
 | Goal | **98% not reached**; Git and local cold results are not external Oracle receipts |
 
@@ -29,7 +29,7 @@ If **any** dirty source, unit, or manifest is present, first inspect its exact e
 
 ## 2. Newly closed chains — **not** the backlog
 
-The full register of **all 650** accepted functions is in `config/functions.csv` and `config/match-units.toml`; this table intentionally highlights only the newest, important independent CODE extents. No called function, imported CRT/Win32 code, or owned jump-table bytes are counted twice.
+The full register of **all 651** accepted functions is in `config/functions.csv` and `config/match-units.toml`; this table intentionally highlights only the newest, important independent CODE extents. No called function, imported CRT/Win32 code, or owned jump-table bytes are counted twice.
 
 | Unit / accepted address | Whole CODE | Authentic fields | Evidence |
 | --- | ---: | ---: | --- |
@@ -46,6 +46,7 @@ The full register of **all 650** accepted functions is in `config/functions.csv`
 | F342 `DataArchive::AppendReadableFile` `0041D6C0` | 133 | 7 | `src/ArchiveAppendFileF342.cpp`, `.analysis/f342-archive-file-add/` |
 | F345 `YukariFighter::UpdateSpecialState` `0059B490` | **679** | **11** | `src/YukariSpecialStateF345.cpp`, `.analysis/f345-yukari-boss/` |
 | F346 `CharacterSelectScene::UpdateCancelAnimation` `00435870` | **497** | **13** | `src/CharacterSelectCancelF346.cpp`, `.analysis/f346-cancel-macro/` |
+| F347 `SpriteSequence::RenderElements` `00411110` | **746** | **33** | `src/SpriteSequenceRenderF347.cpp`, `.analysis/f346-sprite-literal/` |
 
 **F340:** the companion archive entry seek at `0041D750` is independently cold exact for its whole 164-byte function including every one of its nine external references. It uses genuine iterator and `strcmp` semantics, returns the archive handle after `SetFilePointer` or `INVALID_HANDLE_VALUE` if not found. The original private archive list remains borrowed, not instantiated.
 
@@ -59,6 +60,8 @@ The full register of **all 650** accepted functions is in `config/functions.csv`
 
 **F343 (still open):** `ArchiveCatalog::Release` at `0041CE50` was independently redecoded and whole 171-byte C++ codegen achieved **108/115** comparable bytes with all 14 real relocation locations recognized. Seven stack displacements for delete temporaries/name storage differ; exactness remains **unclaimed**, and attempts/probes are retained in `.analysis/f343-archive-release/`. Do not patch arbitrary inert locals to turn this diagnostic into false credit.
 
+**F347:** resolved the former 746-byte sprite sequence render backlog. The native loads **zero first** before each of three x87 `FUCOMPP` tests; expressing the genuine `scale.x/y/z != 0.0f` with the zero literal on the right, instead of the old global-zero-left expression, naturally reproduces the compiler order. The complete 198-instruction native function, all 33 genuine COFF references and the 132-byte sprite-quad construction/draw state cold-match **1/1 exact**. No earlier diagnostic label is treated as proof.
+
 **Corrections to old notes:** The 686-byte writer and 429-byte reader are both **exact** (F339/F338), not pending F249/F250. The full 1,252-byte replay writer and 375-byte finalizer are both **exact** (F326/F328), not pending F219/F218/F289. The 1,766-byte font rasterizer is **exact** (F319), not pending F299/F302. The 301-byte glyph loader is **exact** (F318), not pending F291. The 916-byte MusicRoom catalog + separately compared 16-byte jump table is **exact in F258** (916 CODE credit only). Other accepted 1,000+ byte bosses include F271 projected quad (1,185), F278 pattern chooser (1,264), F282 resource loader (1,186), F292 overlay text box (1,385), F294 effects catalog (1,722), and F244 scene advance (1,529 CODE). Earlier failures remain useful *historical controls*, but must never be presented as current unaccepted work.
 
 ## 3. Active authored targets — investigate **complete functions**
@@ -67,7 +70,6 @@ These remain **unclassified/nonexact** in `config/functions.csv`, despite promis
 
 | Function (native start) | Whole CODE | Best known / actual blocker | Retained private evidence |
 | --- | ---: | --- | --- |
-| `SpriteSequence::RenderElements` `00411110` | **746** | Full 746-byte / 33-field C++ probe **599/614** comparable. Only three x87 `FLD` comparisons remain, 15 mismatched bytes. Different const/volatile/ref/inequality operands did not fix native load order. | `.analysis/f261-sprite-sequence/`, `.analysis/f331-sprite-nativeframe/`, `.analysis/f332-sequence-x87/`, `.analysis/f336-sprite-accessor/` |
 | `SpriteScene::RenderMirroredNode` `00410A00` | **1,268** | 324 original instructions; natural 1,279-byte shape still wrong in x87/quad lifetimes. | `.analysis/f254-sprite-boss/`, `.analysis/f289-mirrored/` |
 | `SuikaFighter::UpdateSpecialState` `005C3FB0` | **874** | Full original length, 20 fields, **742/794** comparable; native x87 comparison/actor-relative evaluation differs. | `.analysis/f313-suika-boss/`, `.analysis/f314-suika-shots/` |
 | `AuxEffectManager::AdvanceAndPruneTwoLists` `005F7D80` | **276** | Full original length, ten fields, **233/236** comparable; freed pointer/end-iterator stack placement. | `.analysis/f298-aux-lifetimes/`, `.analysis/f327-aux-end-freed/` |
