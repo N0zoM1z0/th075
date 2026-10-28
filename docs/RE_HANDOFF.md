@@ -1,6 +1,6 @@
-# TH075 active reconstruction status — F221
+# TH075 active reconstruction status — F222
 
-Updated 2026-10-27. The user explicitly resumed reconstruction and requires
+Updated 2026-10-28. The user explicitly resumed reconstruction and requires
 serious treatment of both large/core and small/leaf functions; all historical
 assumptions are provisional. Do not avoid or discard dirty work. Use commit
 subjects `gpt-web: ...`. The H184 *no-active-goal* handoff below is historical
@@ -835,10 +835,37 @@ that function also remains pending and is fully preserved
 privately. These experiments provide native ABI evidence, not
 partial code credit.
 
-Current ledger: **530 exact functions, 765,134 CODE bytes / 1,973,516 reviewed
-authored bytes = 38.77%**, conservative 38.70% with 3,608 unknown-origin bytes
-retained. F184..F221 (excluding exploratory-only numbers) added thirty-seven accepted units,
-thirty-four objects and thirty-seven new source/header inputs.
+F222 cold-reconstructed the entire reviewed authored
+MarisaFighter::ResetRound at 0x00493130: 780 complete CODE bytes,
+157 native x86 instructions, plain RET/INT3, SHA256
+bfed8d082f3fd36aeb82e8d2694f1b61fd3fc2f1e90b5f53ff7061c31f0ea774.
+The pinned target binary SHA256 is
+bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98.
+Original native FILD dword stack index and FDIV dword at
+00659308 (physical IEEE float 36.0f) establish signed int
+and single-precision denominator. Native final call at 00493433
+targets the already accepted FighterState::ResetRound at 00457010.
+
+The physically observed 32 halfword and one byte clears lead to
+37 iterations of two 28-byte animation records, each with seven
+genuine fields. A source-compatible record array and signed int
+loop compile to 780 bytes and 766/768 nonfield byte matches on
+the first natural VC7.1 /GX- probe. The only differences are two
+loop branch bytes: i<37 emits CMP 0x25 / JGE while the native
+uses CMP 0x24 / JG. Changing to i<=36 restored all 768/768
+nonfield bytes. All three real relocations match the native:
+DIR32 at code offsets 0x222 and 0x2CB to 00659308, REL32 at
+0x304 to 00457010. A fresh registered pinned VC7.1 cold
+replay independently proves 780/780 bytes and all three fields.
+No nominal fighter class layout, original animation element names,
+data/global ownership, base callee byte double credit, inert
+padding or masked relocation fields are claimed. All 97
+unknown-origin candidates are still uncredited.
+
+Current ledger: **531 exact functions, 765,914 CODE bytes / 1,973,516 reviewed
+authored bytes = 38.81%**, conservative 38.74% with 3,608 unknown-origin bytes
+retained. F184..F222 (excluding exploratory-only numbers) added thirty-eight accepted units,
+thirty-five objects and thirty-eight new source/header inputs.
 Keep R268 origin evidence, all 97 unknown candidates, 493 pre-F184
 accepted units and protected private F184/F185 preview/drafts intact.
 

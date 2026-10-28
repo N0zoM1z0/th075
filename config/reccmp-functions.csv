@@ -529,3 +529,4 @@ ReplayRecords::FindAvailablePath,0x00414300,function
 StaticResourceQueues::ClearFourQueuesAt00413880,0x00413880,function
 ReplayRecords::IsPrimaryInputQueueEmptyAt004142D0,0x004142D0,function
 CharacterSelectScene::ResetSelection,0x00433230,function
+MarisaFighter::ResetRound,0x00493130,function

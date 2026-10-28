@@ -63,6 +63,9 @@ F220 cold-accepts two replay queue policies: 67 bytes of four-queue
 clearing (four relocations) and 35 bytes of primary queue emptiness
 (one relocation). The 1,252-byte appended record writer remains
 unaccepted after fully sized natural for-loop compiler controls.
+F221 cold-accepts the 569-byte character-selection reset with 11
+relocations; F222 cold-accepts the 780-byte Marisa round reset
+with 3 real fields, signed native x87 and 74 animation records.
 F189 was an earlier noncredit investigation superseded by F196 exact.
 The original H184 handoff was historical and is superseded by the current
 request. Earlier experiments and names remain hypotheses until tested.
@@ -73,9 +76,9 @@ See the current [handoff](RE_HANDOFF.md) for current status.
 - Supplied Japanese th075.exe 1.11, SHA-256
   `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
   Archive identity is pinned; official distribution provenance is uncorroborated.
-- **529 exact functions/units, 764,565 CODE bytes, 199 canonical objects,
-  304 accepted source-header inputs.** Reviewed coverage is 38.74%; conservative
-  coverage is 38.67%, including all 97 unknown origins/3,608 pending bytes.
+- **531 exact functions/units, 765,914 CODE bytes, 201 canonical objects,
+  306 accepted source-header inputs.** Reviewed coverage is 38.81%; conservative
+  coverage is 38.74%, including all 97 unknown origins/3,608 pending bytes.
 - Ownership, source presence, names, Ghidra types, compilation and reproducible
   exactness remain distinct. Read ledgers and relevant origin evidence before
   relying on any classification or provisional boundary.
@@ -760,6 +763,28 @@ matches 1017/1052 non-field bytes. This is explicitly
 is retained without masked fields, fabricated stack padding,
 ABI lies or partial code credit. The 792-byte record reader
 and 375-byte finalizer remain separate large-function targets.
+
+## F222: exact Marisa fighter round reset
+
+The independently reviewed MarisaFighter::ResetRound at 00493130
+is 780 native CODE bytes/157 complete instructions and three
+actual DIR32/REL32 relocations; body SHA256
+bfed8d082f3fd36aeb82e8d2694f1b61fd3fc2f1e90b5f53ff7061c31f0ea774.
+The natural C++ source preserves 32 halfword clear stores,
+one byte clear, 37 pairs of 28-byte animation records,
+signed x87 FILD dword and FDIV dword of float 36.0 at 00659308,
+and the accepted base reset call 00457010.
+
+The only first-probe mismatches were two bytes in a loop condition:
+i<37 compiled CMP 37/JGE instead of native CMP 36/JG.
+The same meaningful loop written i<=36 generates all 768/768
+nonrelocation bytes exactly. Independent canonical pinned VC7.1
+cold replay confirms all 780/780 bytes including both scale
+DIR32 fields at offsets 0x222/0x2CB and the actual REL32
+base-reset call at 0x304. The receiver is a physical call-only
+view, not a recovered full Marisa class; no data, helper,
+compiler-generated sections, fake locals, binary masks
+or duplicate base-callee code is credited.
 
 ## Retained failures and method boundaries
 

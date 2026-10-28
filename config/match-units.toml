@@ -36545,3 +36545,27 @@ offset = 561
 type = "REL32"
 symbol = "?RegisterSelection@ProgressSelectionF221@@QAEXEE@Z"
 target = 0x0041A1A0
+
+[units.marisa-fighter-reset-round-00493130]
+source = "src/MarisaResetF222.cpp"
+object = "build/matching/MarisaResetF222.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["MarisaFighter::ResetRound"]
+symbol = "?ResetRound@MarisaRoundF222@@QAEXXZ"
+target_address = 0x00493130
+size = 780
+[[units.marisa-fighter-reset-round-00493130.relocations]]
+offset = 546
+type = "DIR32"
+symbol = "?g_MarisaSequenceScaleAt00659308@@3MB"
+target = 0x00659308
+[[units.marisa-fighter-reset-round-00493130.relocations]]
+offset = 715
+type = "DIR32"
+symbol = "?g_MarisaSequenceScaleAt00659308@@3MB"
+target = 0x00659308
+[[units.marisa-fighter-reset-round-00493130.relocations]]
+offset = 772
+type = "REL32"
+symbol = "?ResetRound@FighterBaseActionsF159@@QAEXXZ"
+target = 0x00457010

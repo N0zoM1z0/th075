@@ -26,10 +26,16 @@ This pins the supplied sample; its official distribution provenance has not
 been independently corroborated. The localized `th075c.exe` has a different
 identity and cannot substitute for the target.
 
-The current checkpoint has **530 exact functions / 765,134 code bytes** from
-4,351 provisional candidates. Reviewed authored coverage is 38.77%; conservative
-coverage, including all 3,608 pending bytes, is **38.70%**. The objective of
+The current checkpoint has **531 exact functions / 765,914 code bytes** from
+4,351 provisional candidates. Reviewed authored coverage is 38.81%; conservative
+coverage, including all 3,608 pending bytes, is **38.74%**. The objective of
 98% authored bytes exact remains incomplete.
+F222 cold-reconstructed the complete 780-byte Marisa fighter round
+reset with three actual COFF fields. Native FILD m32/F DIV m32 proves
+signed i/36.0f; native loop i<=36 (CMP 36/JG) rather than i<37
+(CMP 37/JGE) yields the original VC7.1 code. All 780 code bytes
+and two float/one base-call relocations were cold replayed exact.
+
 F221 independently cold-reconstructed the 569-byte complete character
 selection reset state machine, with all eleven real COFF fields. An
 initial natural source differed in one byte of the 4.712389f float
