@@ -1,5 +1,13 @@
 # TH075 reconstruction knowledge index
 
+Current validation policy (2026-10-28): prioritize exact function reconstruction.
+Target identity, complete extents, all relocations, truthful origins and affected
+unit cold replay remain the acceptance evidence. The default CI now runs only
+the small exact/checkpoint/byte-accounting suite. Per-function robustness tests,
+duplicate source/native assertions, hard-coded progress counts and full historical
+test runs are not required. Historical test counts below describe past runs;
+consult AGENTS.md and RE_WORKFLOW.md for current requirements.
+
 Updated 2026-10-27: the user resumed reconstruction. F184 added two
 canonical cold-exact input policies (+538 CODE bytes / 46 relocation fields);
 F185 added the 1,273-byte title core state machine plus an owned 40-byte

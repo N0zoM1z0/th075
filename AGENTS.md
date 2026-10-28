@@ -1,30 +1,25 @@
 # TH075 function reconstruction rules
 
-Current scope is TH075 function reconstruction, restarted by the user on
-2026-10-27. Address both large/core functions and small helpers. Treat prior
+Current scope is TH075 exact function reconstruction, including both
+large/core functions and small helpers. Treat prior
 documents, working hypotheses, and historical exact labels as testable leads,
-not proof. Preserve and investigate any dirty edits; there is no other agent.
-Commit substantial verified progress promptly, with subjects `gpt-web: ...`.
-The former H184 handoff's no-active-goal instruction is historical and is
-superseded by the current request. The earlier 98% authored-byte objective
-remains incomplete; do not declare completion without a verified build.
+not proof. Inspect and continue every dirty edit, including unfinished investigations;
+the user explicitly states there is no other reconstruction session.
+Commit substantial verified progress promptly with `gpt-web: ...` subjects.
+The 98% authored-byte objective remains incomplete; do not declare completion
+without a verified build.
 
 Use the existing Ghidra wrapper and local tools; do not use REA.
 Preserve all accepted exact units and origin evidence through R268. The 97
 unresolved origins remain unknown; they do not block reconstruction of
 independently reviewed authored functions. Include all pending bytes in the conservative goal denominator.
-Start with the concise live handoff at `docs/RE_HANDOFF.md` (F246 as
-of 2026-10-28); the old verbose snapshot lives in Git history at
-`ca81d72:docs/RE_HANDOFF.md`. The knowledge base and origin journals
-retain detailed old experiments and must not override current evidence.
-Use the current cohort in `docs/RE_HANDOFF.md`. The user reiterated on
-2026-10-28: **only cold-replay changed/affected units**, never run an all-unit
-cold replay. Do not rebuild other accepted units without dependency changes. Keep
-compiler builds serial and periodically remove only obsolete reproducible
+Start with the live cohort in `docs/RE_HANDOFF.md`; historical experiments
+must not override current evidence. **Only cold-replay new/affected units**,
+never all units. Keep compiler builds serial. Remove only obsolete reproducible
 outputs, preserving evidence, manifests, sources, inputs and shared tools.
 Write repository documentation, comments, and handoffs in English. Preserve
 original titles, filenames, and target strings where they are evidence.
-Use the latest user-required commit subject format `gpt-web: ...` (2026-10-27).
+Use `gpt-web: ...` for all local reconstruction commits.
 Use `scripts/repo-python` for repository Python commands, including public
 MCP Bash requests. It checks the private environment and hash-pinned decoder;
 do not replace it with a shell-dependent Python or silent fallback.
@@ -36,9 +31,9 @@ SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 Its identity is pinned to the user's archive, not independently corroborated
 against an official distribution. Never substitute `th075c.exe`.
 
-Before changing reconstruction state, read `docs/RE_HANDOFF.md`,
-`docs/RE_WORKFLOW.md`, `docs/KNOWLEDGE_BASE.md`, and relevant source. Inspect
-`git status`, then run from the repository root:
+At session start, read `docs/RE_HANDOFF.md` and `docs/RE_WORKFLOW.md`;
+consult relevant `docs/KNOWLEDGE_BASE.md` entries and source. Before changing
+reconstruction state, inspect `git status` and run from the repository root:
 
 ```bash
 scripts/repo-python scripts/verify-target.py
@@ -77,41 +72,46 @@ scripts/repo-python scripts/ghidra.py check
   interface does not establish the complete object layout; do not instantiate or
   embed an incomplete reconstructed owner.
 
+## Validation scope
+
+Focus on complete-function exact reconstruction. Do not add allocation-failure,
+null-pointer, fault-injection, or general robustness tests for each function.
+Preserve any such branches actually present in the target; do not add defensive
+behavior absent from the original.
+
+Acceptance needs the target/tracking checks and cold replay of only new or
+affected units. A new function does not need a separate Python test, duplicate
+native-byte assertions, source-text assertions, or hard-coded progress counts.
+`scripts/ci.py` runs the small exact-comparison, checkpoint, and byte-accounting
+suite. Run it when changing that infrastructure or at handoff, not after every
+probe. Historical origin tests are available for changes to their evidence or
+verifiers; the full historical suite is not a routine acceptance requirement.
+Documentation-only changes need `git diff --check`.
+
 ## Tools and working state
 
-- The user required every operation to be headless on 2026-10-25. Never open
-  host GUI windows. Unset `DISPLAY` and `WAYLAND_DISPLAY` for Wine/debugger
+- Keep every operation headless. Unset `DISPLAY` and `WAYLAND_DISPLAY` for Wine/debugger
   processes and disable Wine graphical drivers for those processes; use CLI
   logs, batch debugging and the existing headless Ghidra wrapper. Preserve
   shared tool installations and the existing private service settings.
 
-- On 2026-10-04 the user waived public MCP acceptance. Use local investigation
-  and final verification while preserving complete evidence and cold builds.
-
+- Public MCP acceptance is not required; use local evidence and cold builds.
 - Use `scripts/ghidra.py` or `.tools/mcp_for_gptweb-ghidra` for Ghidra access.
-  Every operation verifies the target, program identity, mapping samples, and
-  attestation marker. Queries additionally require their own completion marker.
 - Queries open the project read-only with analysis disabled. Never patch target
   bytes. Accepted database names/types/boundaries must be mirrored into ledgers
   and read back before relying on a database write.
-- `inventory` exports to `.analysis/inventory/`; it does not overwrite accepted
-  ledgers. Initial `import` is only for a new project and initial empty ledgers.
+  Do not re-import the existing project.
 - The wrapper lock serializes CLI and bridge access to the private TH075
   project. Use one writable reconstruction session and serial compiler builds;
   do not delegate matching. Keep `config/claims.csv` header-only.
-- The pinned VC7.1 probe compiler is build 3077. TH075's Rich header contains
-  multiple historical builds; do not infer one executable-wide compiler profile.
-  Flags are explicit per unit, including flags that are merely reproducibility
-  settings rather than distinguishable target facts.
-- `.tools/ghidra`, `.tools/jdk`, and `.tools/msvc710` currently refer to shared
-  installations from TH095. Treat these shared tool installations as read-only.
-  TH075 has its own bridge checkout, target, configuration, project, and outputs.
-- The user explicitly selected no authentication for the existing private
-  Funnel URL. Preserve that setting and the fixed random path. Keep the actual
-  URL out of tracked files, documentation, routine logs, and process arguments.
+- Use pinned VC7.1 build 3077 with explicit per-unit flags; do not infer one
+  executable-wide compiler profile.
+- Shared `.tools/ghidra`, `.tools/jdk`, and `.tools/msvc710` installations are read-only.
+- Preserve the existing private Funnel URL, fixed path and no-auth setting.
+  Keep the URL out of tracked files, routine logs and process arguments.
 - Keep private hypotheses/logs in `.analysis/`, objects in `build/`, and the
   private Ghidra project in `ghidra-project/`. Never commit game executables/data,
   archives, analysis databases, downloaded tools, generated decompiles, or secrets.
 - Update the knowledge base and handoff after a bounded accepted function. Replay
   affected units after changing headers, ABI declarations, flags, or relocations.
-  Run `scripts/repo-python scripts/ci.py` and `git diff --check` before handoff.
+  Follow the validation scope above and run `git diff --check` before handoff.

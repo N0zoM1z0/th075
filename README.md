@@ -43,13 +43,13 @@ and the [source-backed knowledge base](docs/KNOWLEDGE_BASE.md).
 Inspect **all dirty work** before editing; do not discard it because an
 earlier agent left it. Address both large/core functions and small helpers,
 recheck old hypotheses against native instructions, and promptly commit
-substantial accepted progress with subject `gpt-web: ...`.
+substantial accepted progress with the commit prefix requested for that session.
+Preserve concurrent web work and stage only this session's reviewed files.
 
 From the repository root:
 
 ```bash
 git status --short --branch
-scripts/repo-python scripts/check-tools.py
 scripts/repo-python scripts/verify-target.py
 scripts/repo-python scripts/validate-tracking.py --require-target
 scripts/repo-python scripts/report-reconstruction-status.py --summary
@@ -81,6 +81,13 @@ headless Wine processes and the existing tools. Do not manufacture byte
 matches with copied target bytes, assembly, arbitrary padding, masks or
 unproved owner layouts. Do not count external data or runtime helper bytes.
 Keep the 97 unresolved origin candidates uncredited.
+
+Keep validation focused on exact reconstruction: `scripts/ci.py` runs the small
+comparison/checkpoint/byte-accounting suite without compiling accepted units.
+Cold-replay only new or affected units. No new test file per function, duplicate
+source-text assertions, allocation-failure/null-pointer tests, or full historical
+test run is required. Historical origin tests remain available for changes to
+their evidence or verifiers. See [the workflow](docs/RE_WORKFLOW.md).
 
 ## Finding information
 

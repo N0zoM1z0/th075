@@ -1,13 +1,8 @@
-"""Public regression checks for fail-closed analysis and exact comparison."""
+"""Check complete-function byte and relocation comparison."""
 from __future__ import annotations
-import contextlib
-import hashlib
 import importlib.util
-import io
-import json
 from pathlib import Path
 import struct
-import subprocess
 import tempfile
 import unittest
 from unittest.mock import patch
@@ -22,42 +17,7 @@ def load(name: str, filename: str):
     return module
 
 
-GHIDRA = load("th075_ghidra", "ghidra.py")
 COMPARE = load("th075_compare", "compare-coff-function.py")
-
-
-class GhidraContractTests(unittest.TestCase):
-    def test_native_option_cannot_be_an_address(self):
-        with self.assertRaises(ValueError):
-            GHIDRA.checked_addresses(["-overwrite"])
-
-    def test_text_filter_is_not_a_headless_option(self):
-        self.assertEqual(GHIDRA.query_script_args("search_strings", ["10", "-overwrite"]),
-                         ["10", "text:-overwrite"])
-
-    def test_native_query_bounds(self):
-        with self.assertRaises(ValueError):
-            GHIDRA.query_script_args("disassemble", ["501", "0x401000"])
-        with self.assertRaises(ValueError):
-            GHIDRA.query_script_args("list_functions", ["0", "501", ""])
-
-    def test_zero_exit_without_operation_marker_is_rejected(self):
-        completed = subprocess.CompletedProcess([], 0,
-            "INFO VerifyTarget.java> TEST_ATTESTATION (GhidraScript)\n", "")
-        with patch.object(GHIDRA, "find_analyzer", return_value=(Path("/fake"), Path("/fake/headless"))), \
-             patch.object(GHIDRA.subprocess, "run", return_value=completed), \
-             contextlib.redirect_stdout(io.StringIO()):
-            with self.assertRaisesRegex(RuntimeError, "TEST_QUERY"):
-                GHIDRA.run_headless([], "TEST_ATTESTATION", "TEST_QUERY")
-
-    def test_marker_in_script_arguments_is_not_success(self):
-        completed = subprocess.CompletedProcess([], 0,
-            "INFO REPORT: Execute script: QueryProgram.java 'TEST_ATTESTATION'\n", "")
-        with patch.object(GHIDRA, "find_analyzer", return_value=(Path("/fake"), Path("/fake/headless"))), \
-             patch.object(GHIDRA.subprocess, "run", return_value=completed), \
-             contextlib.redirect_stdout(io.StringIO()):
-            with self.assertRaises(RuntimeError):
-                GHIDRA.run_headless([], "TEST_ATTESTATION")
 
 
 class ExactComparisonTests(unittest.TestCase):

@@ -72,7 +72,14 @@ class ExactCheckpointTests(unittest.TestCase):
 
     def test_unknown_origins_receive_no_adoption_credit(self):
         plan = E.plan()
-        self.assertEqual(len(plan["functions"]), 500)
         self.assertTrue(all(item["origin"]["disposition"] == "authored"
                             for item in plan["functions"]))
-        self.assertEqual(sum(unit["size"] for unit in plan["added_units"].values()), 772505)
+        # Every accepted function must have one independently complete unit;
+        # exact CODE byte credit must agree with original whole extents.
+        self.assertEqual(len(plan["functions"]), len(plan["added_units"]))
+        self.assertEqual(
+            sum(int(item["after"]["size"]) for item in plan["functions"]),
+            sum(int(unit["size"]) for unit in plan["added_units"].values()))
+        self.assertEqual(
+            len({item["after"]["address"] for item in plan["functions"]}),
+            len(plan["functions"]))

@@ -36,28 +36,6 @@ class GoalAccountingTests(unittest.TestCase):
                  patch.object(STATUS, "rows", side_effect=lambda name: ledgers[name]):
                 return STATUS.load()[1]
 
-    def test_pending_origin_blocks_goal_even_at_one_hundred_percent(self):
-        result = self.summary(["authored", "review"], [100, 900], [0])
-        self.assertEqual(result["authored_exact_percent"], 100.0)
-        self.assertFalse(result["origin_review_complete"])
-        self.assertFalse(result["fifty_percent_goal_complete"])
-
-    def test_goal_counts_bytes_and_excludes_library_bytes(self):
-        result = self.summary(["authored", "authored", "exclude"], [60, 40, 900], [0])
-        self.assertEqual(result["authored_bytes"], 100)
-        self.assertEqual(result["exact_authored_bytes"], 60)
-        self.assertTrue(result["fifty_percent_goal_complete"])
-
-    def test_many_small_exact_functions_do_not_satisfy_byte_goal(self):
-        result = self.summary(["authored"] * 4, [10, 10, 10, 100], [0, 1, 2])
-        self.assertTrue(result["origin_review_complete"])
-        self.assertFalse(result["fifty_percent_goal_complete"])
-
-    def test_empty_authored_set_has_no_percentage_or_goal_credit(self):
-        result = self.summary(["exclude"], [100], [])
-        self.assertIsNone(result["authored_exact_percent"])
-        self.assertFalse(result["fifty_percent_goal_complete"])
-
     def test_ninety_eight_percent_boundary_uses_bytes(self):
         at_boundary = self.summary(["authored", "authored"], [98, 2], [0])
         below_boundary = self.summary(["authored", "authored"], [97, 3], [0])

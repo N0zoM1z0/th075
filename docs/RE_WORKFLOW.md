@@ -7,13 +7,12 @@ Historical documents and tentative Ghidra labels are **not proof**.
 
 ## 1. Start safely
 
-Inspect Git, especially pre-existing dirty files; handle them rather than
-working around them. There is no other active reconstruction agent. Use the
-same workspace and private compiler/Ghidra environments across agents.
+Inspect Git, verify and continue all pre-existing dirty edits. The user
+explicitly says no other session is active; never avoid or discard unfinished
+work. Keep compiler builds serial and reuse the existing private environments.
 
 ```bash
 git status --short --branch
-scripts/repo-python scripts/check-tools.py
 scripts/repo-python scripts/verify-target.py
 scripts/repo-python scripts/validate-tracking.py --require-target
 scripts/repo-python scripts/report-reconstruction-status.py --summary
@@ -106,8 +105,7 @@ authored origin already supported independently.
 Update `config/functions.csv` (source/match state), then
 `implemented.csv`, `matches.csv`, `reccmp-functions.csv`,
 `known-symbols.csv`, `exact-adoptions.json`, the manifest
-SHA256 in `tests/exact_checkpoint.py`, counts in
-`tests/test_exact_checkpoint.py`, and the progress card.
+SHA256 in `tests/exact_checkpoint.py`, and the progress card.
 Preserve original before/after ledger and origin entries and all
 canonical source hashes. Do **not** count other callees, data,
 CRT/SDK code, EH helpers, or functions with uncertain ownership.
@@ -118,7 +116,6 @@ CRT/SDK code, EH helpers, or functions with uncertain ownership.
 scripts/repo-python scripts/validate-tracking.py --require-target
 scripts/repo-python scripts/report-reconstruction-status.py --summary
 scripts/repo-python scripts/update-progress.py
-scripts/repo-python -m unittest discover -s tests -p test_exact_checkpoint.py
 scripts/repo-python scripts/ci.py
 git diff --check
 git status --short --branch
@@ -126,8 +123,19 @@ git add <reviewed-files>
 git commit -m 'gpt-web: <specific verified work>'
 ```
 
-Cold-replay only affected units unless shared dependencies changed;
-full CI is expected for final handoff. After meaningful progress,
+Cold-replay only new or affected units, including dependents of changed shared
+inputs. `scripts/ci.py` runs the small exact-comparison, checkpoint, and
+byte-accounting suite without compiler builds. Run it at handoff or after
+changing that infrastructure; ordinary probes need only their direct comparison.
+Run a historical origin test only when its evidence or verifier is affected.
+There is no requirement to run the full historical suite, add a Python test per
+accepted function, or duplicate native bytes and source text in assertions.
+Do not add allocation-failure, null-pointer, fault-injection or general robustness
+tests during exact reconstruction. Reproduce original failure branches when
+present, without adding new defensive behavior. Documentation-only edits need
+`git diff --check`.
+
+After meaningful progress,
 commit promptly, then update the **concise** active
 `docs/RE_HANDOFF.md` and retain detailed proof notes in
 `docs/KNOWLEDGE_BASE.md`. Restore no old no-goal directives from

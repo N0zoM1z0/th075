@@ -4,9 +4,16 @@
 
 The latest user instruction is to **continue actually reconstructing TH075**,
 tackle both large/core functions and small leaves, distrust historical
-hypotheses until checked, handle all dirty work (no concurrent session), and
-save substantial verified progress in Git commits beginning `gpt-web: ...`.
+hypotheses until checked, actively continue all dirty work (the user confirms no other active session),
+and save substantial verified progress with `gpt-web: ...` commits.
 Earlier H184 advice to stop is historical and **does not apply**.
+
+Validation policy (2026-10-28): focus on exact reconstruction. No per-function
+robustness/fault-injection tests or full historical test run is required.
+`scripts/ci.py` runs the small exact/checkpoint/accounting suite; canonical
+acceptance still cold-replays only new or affected units. See AGENTS.md and
+RE_WORKFLOW.md for the current scope. Historical test counts are observations,
+not acceptance requirements.
 
 ## 1. Verified state at handoff
 
@@ -160,9 +167,8 @@ bytes outside accepted authored coverage.
 
 ## 4. Acceptance and commit checklist
 
-1. Inspect **all dirty state**, read any prior unfinished source and retain
-   meaningful experiments. Never discard someone else's assumed changes;
-   the user has confirmed there is no other active session.
+1. Inspect dirty state and retain meaningful experiments. Continue all
+   existing work rather than avoiding or discarding it; the user reports no concurrent session.
 2. Independently verify native target SHA, full function boundary,
    decoded instructions, all exits, C++ EH, and owned jump tables.
 3. Test natural C++ with exact pinned VC7.1 flags; diagnostic
@@ -174,11 +180,11 @@ bytes outside accepted authored coverage.
    ```
 5. Only after whole-function `exact`, update `config/functions.csv`,
    `implemented.csv`, `matches.csv`, `reccmp-functions.csv`,
-   `known-symbols.csv`, `exact-adoptions.json` and SHA-pinned checkpoint
-   tests. Update progress from live ledgers, not remembered counts.
-6. Run tracking, affected cold units, checkpoint tests, optional full `scripts/ci.py` (never all-unit cold replay),
+   `known-symbols.csv`, `exact-adoptions.json` and its checkpoint hash.
+   Update progress from live ledgers, not remembered counts.
+6. Run tracking, affected cold units, the small `scripts/ci.py` suite at handoff,
    and `git diff --check`. Commit material progress with
-   `git commit -m 'gpt-web: <specific completed work>'`.
+   the commit subject prefix requested for that session.
 7. Keep nominal class identities, original layout ownership, unresolved
    origins and Oracle receipts separate from local byte equality.
 
