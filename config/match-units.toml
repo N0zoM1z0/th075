@@ -57008,3 +57008,283 @@ offset = 69
 type = "DIR32"
 symbol = "__imp__DefWindowProcA@16"
 target = 0x00657240
+
+
+[units.sakuya-fighter-create-owned-object-004c0920]
+source = "src/FighterOwnedObjectFactoriesF469.cpp"
+object = "build/matching/FighterOwnedObjectFactoriesF469.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["SakuyaFighter::CreateOwnedObjectAt004C0920"]
+symbol = "?CreateOwnedObject@SakuyaFighterFactoryF469@@QAEXPAPAVSakuyaOwnedObjectF469@@@Z"
+target_address = 0x004C0920
+size = 120
+[[units.sakuya-fighter-create-owned-object-004c0920.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$?CreateOwnedObject@SakuyaFighterFactoryF469@@QAEXPAPAVSakuyaOwnedObjectF469@@@Z"
+target = 0x0065646B
+[[units.sakuya-fighter-create-owned-object-004c0920.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.sakuya-fighter-create-owned-object-004c0920.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.sakuya-fighter-create-owned-object-004c0920.relocations]]
+offset = 36
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.sakuya-fighter-create-owned-object-004c0920.relocations]]
+offset = 67
+type = "REL32"
+symbol = "??0SakuyaOwnedObjectF469@@QAE@PAX@Z"
+target = 0x004CA640
+[[units.sakuya-fighter-create-owned-object-004c0920.relocations]]
+offset = 110
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.patchouli-fighter-create-owned-object-005022c0]
+source = "src/FighterOwnedObjectFactoriesF469.cpp"
+object = "build/matching/FighterOwnedObjectFactoriesF469.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["PatchouliFighter::CreateOwnedObjectAt005022C0"]
+symbol = "?CreateOwnedObject@PatchouliFighterFactoryF469@@QAEXPAPAVPatchouliOwnedObjectF469@@@Z"
+target_address = 0x005022C0
+size = 120
+[[units.patchouli-fighter-create-owned-object-005022c0.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$?CreateOwnedObject@PatchouliFighterFactoryF469@@QAEXPAPAVPatchouliOwnedObjectF469@@@Z"
+target = 0x006564AB
+[[units.patchouli-fighter-create-owned-object-005022c0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.patchouli-fighter-create-owned-object-005022c0.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.patchouli-fighter-create-owned-object-005022c0.relocations]]
+offset = 36
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.patchouli-fighter-create-owned-object-005022c0.relocations]]
+offset = 67
+type = "REL32"
+symbol = "??0PatchouliOwnedObjectF469@@QAE@PAX@Z"
+target = 0x0050A4E0
+[[units.patchouli-fighter-create-owned-object-005022c0.relocations]]
+offset = 110
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.remilia-fighter-create-owned-object-00551aa0]
+source = "src/FighterOwnedObjectFactoriesF469.cpp"
+object = "build/matching/FighterOwnedObjectFactoriesF469.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["RemiliaFighter::CreateOwnedObjectAt00551AA0"]
+symbol = "?CreateOwnedObject@RemiliaFighterFactoryF469@@QAEXPAPAVRemiliaOwnedObjectF469@@@Z"
+target_address = 0x00551AA0
+size = 120
+[[units.remilia-fighter-create-owned-object-00551aa0.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$?CreateOwnedObject@RemiliaFighterFactoryF469@@QAEXPAPAVRemiliaOwnedObjectF469@@@Z"
+target = 0x0065656B
+[[units.remilia-fighter-create-owned-object-00551aa0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.remilia-fighter-create-owned-object-00551aa0.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.remilia-fighter-create-owned-object-00551aa0.relocations]]
+offset = 36
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.remilia-fighter-create-owned-object-00551aa0.relocations]]
+offset = 67
+type = "REL32"
+symbol = "??0RemiliaOwnedObjectF469@@QAE@PAX@Z"
+target = 0x0055ABE0
+[[units.remilia-fighter-create-owned-object-00551aa0.relocations]]
+offset = 110
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.yuyuko-fighter-create-owned-object-00574210]
+source = "src/FighterOwnedObjectFactoriesF469.cpp"
+object = "build/matching/FighterOwnedObjectFactoriesF469.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["YuyukoFighter::CreateOwnedObjectAt00574210"]
+symbol = "?CreateOwnedObject@YuyukoFighterFactoryF469@@QAEXPAPAVYuyukoOwnedObjectF469@@@Z"
+target_address = 0x00574210
+size = 120
+[[units.yuyuko-fighter-create-owned-object-00574210.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$?CreateOwnedObject@YuyukoFighterFactoryF469@@QAEXPAPAVYuyukoOwnedObjectF469@@@Z"
+target = 0x0065658B
+[[units.yuyuko-fighter-create-owned-object-00574210.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.yuyuko-fighter-create-owned-object-00574210.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.yuyuko-fighter-create-owned-object-00574210.relocations]]
+offset = 36
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.yuyuko-fighter-create-owned-object-00574210.relocations]]
+offset = 67
+type = "REL32"
+symbol = "??0YuyukoOwnedObjectF469@@QAE@PAX@Z"
+target = 0x0057D4E0
+[[units.yuyuko-fighter-create-owned-object-00574210.relocations]]
+offset = 110
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.yukari-fighter-create-owned-object-00597480]
+source = "src/FighterOwnedObjectFactoriesF469.cpp"
+object = "build/matching/FighterOwnedObjectFactoriesF469.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["YukariFighter::CreateOwnedObjectAt00597480"]
+symbol = "?CreateOwnedObject@YukariFighterFactoryF469@@QAEXPAPAVYukariOwnedObjectF469@@@Z"
+target_address = 0x00597480
+size = 120
+[[units.yukari-fighter-create-owned-object-00597480.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$?CreateOwnedObject@YukariFighterFactoryF469@@QAEXPAPAVYukariOwnedObjectF469@@@Z"
+target = 0x006565AB
+[[units.yukari-fighter-create-owned-object-00597480.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.yukari-fighter-create-owned-object-00597480.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.yukari-fighter-create-owned-object-00597480.relocations]]
+offset = 36
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.yukari-fighter-create-owned-object-00597480.relocations]]
+offset = 67
+type = "REL32"
+symbol = "??0YukariOwnedObjectF469@@QAE@PAX@Z"
+target = 0x005A1560
+[[units.yukari-fighter-create-owned-object-00597480.relocations]]
+offset = 110
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.suika-fighter-create-owned-object-005c0bb0]
+source = "src/FighterOwnedObjectFactoriesF469.cpp"
+object = "build/matching/FighterOwnedObjectFactoriesF469.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["SuikaFighter::CreateOwnedObjectAt005C0BB0"]
+symbol = "?CreateOwnedObject@SuikaFighterFactoryF469@@QAEXPAPAVSuikaOwnedObjectF469@@@Z"
+target_address = 0x005C0BB0
+size = 120
+[[units.suika-fighter-create-owned-object-005c0bb0.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$?CreateOwnedObject@SuikaFighterFactoryF469@@QAEXPAPAVSuikaOwnedObjectF469@@@Z"
+target = 0x006565CB
+[[units.suika-fighter-create-owned-object-005c0bb0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.suika-fighter-create-owned-object-005c0bb0.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.suika-fighter-create-owned-object-005c0bb0.relocations]]
+offset = 36
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.suika-fighter-create-owned-object-005c0bb0.relocations]]
+offset = 67
+type = "REL32"
+symbol = "??0SuikaOwnedObjectF469@@QAE@PAX@Z"
+target = 0x005C9C20
+[[units.suika-fighter-create-owned-object-005c0bb0.relocations]]
+offset = 110
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.meiling-fighter-create-owned-object-005e2170]
+source = "src/FighterOwnedObjectFactoriesF469.cpp"
+object = "build/matching/FighterOwnedObjectFactoriesF469.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["MeilingFighter::CreateOwnedObjectAt005E2170"]
+symbol = "?CreateOwnedObject@MeilingFighterFactoryF469@@QAEXPAPAVMeilingOwnedObjectF469@@@Z"
+target_address = 0x005E2170
+size = 120
+[[units.meiling-fighter-create-owned-object-005e2170.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$?CreateOwnedObject@MeilingFighterFactoryF469@@QAEXPAPAVMeilingOwnedObjectF469@@@Z"
+target = 0x006565EB
+[[units.meiling-fighter-create-owned-object-005e2170.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.meiling-fighter-create-owned-object-005e2170.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.meiling-fighter-create-owned-object-005e2170.relocations]]
+offset = 36
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.meiling-fighter-create-owned-object-005e2170.relocations]]
+offset = 67
+type = "REL32"
+symbol = "??0MeilingOwnedObjectF469@@QAE@PAX@Z"
+target = 0x005EB490
+[[units.meiling-fighter-create-owned-object-005e2170.relocations]]
+offset = 110
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000

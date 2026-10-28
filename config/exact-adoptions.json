@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377; F378; F379; F386; F389; F391; F392; F393; F394; F395; F403; F407; F414; F415; F421; F422; F427; F428; F429; F430; F431; F432; F435; F437; F440; F445; F446; F447; F448; F454; F458; F459; F460; F461; F463; F465; F467; F468",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377; F378; F379; F386; F389; F391; F392; F393; F394; F395; F403; F407; F414; F415; F421; F422; F427; F428; F429; F430; F431; F432; F435; F437; F440; F445; F446; F447; F448; F454; F458; F459; F460; F461; F463; F465; F467; F468; F469",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "c7a250466a7e68ad5e36ab669d7dd14e29924fb99c51f99defe32dedbdf214dd"
+      "current_sha256": "403413af41b03df2717ad66e25d30699e8d04d8a215c7f5b10d285262884f64a"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "dba8b4167e5474cbaefc2af8e3b852adb09447c06896e552a32e97cc96b82313"
+      "current_sha256": "6b25d2c3179908309cbb23cfd4ac37f51496d3eb5d2c63efd89df1d61a17dc77"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "0b57a08dc0f1af4e973cdb14344f932c9cd94c0044b3ea54bb632b48de52a2eb"
+      "current_sha256": "943883d06169d47ae7ac7f2b4d16cb4315733a7ee7d04ef9d16ce53dc7131cee"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "f54625076c7d4f21945470a3283478e61f770925b783a5b1419e4c473ebbdeda"
+      "current_sha256": "15794d8126bdfe15b916f48cbc96ca760682e755121ea65d4b0cbacf1fde8f32"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "928e3a7d82d137a0d25517fb6cb1e4e693728bbedd262eb906804a61bd8248bf"
+      "current_sha256": "18d8c89080c1231b8a697527d152b0db26e2e0533431ab3325262b69482e0b4f"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -31192,6 +31192,314 @@
         "disposition": "authored",
         "confidence": "complete-game-policy-with-independent-context-and-lifetime-controls",
         "evidence_id": "R114"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004C0920",
+        "size": "120",
+        "span_end": "0x004C0997",
+        "current_name": "FUN_004c0920",
+        "proposed_name": "SakuyaFighter::CreateOwnedObject",
+        "module": "SakuyaFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R050; whole body hash, complete CFG, character constructor/factory chain and local behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; method name and complete class layout inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x004C0920",
+        "size": "120",
+        "span_end": "0x004C0997",
+        "current_name": "FUN_004c0920",
+        "proposed_name": "SakuyaFighter::CreateOwnedObject",
+        "module": "SakuyaFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void SakuyaFighterFactoryF469::CreateOwnedObject(SakuyaOwnedObjectF469**)",
+        "is_thunk": "false",
+        "source_file": "src/FighterOwnedObjectFactoriesF469.cpp",
+        "evidence": "R050; whole body hash, complete CFG, character constructor/factory chain and local behavior reviewed; F469; scripts/repo-python scripts/replay-exact-units.py --unit sakuya-fighter-create-owned-object-004c0920",
+        "owner": "authored",
+        "notes": "Origin reviewed; method name and complete class layout inferred; source and exact state remain independent; F469 complete independent R050 original Sakuya fighter-owned auxiliary object factory at 0x004C0920, 120 native CODE bytes, 34 original x86 instructions, native PE SHA256 121f8da07117b7aa1b1f20e8940bf61829eb0a504299f8bc25969bee35a179a4. True C++ thiscall owner factory accepts real Sakuya aux object pointer output, native `operator new` with original allocation size 0xE8 at 0064159D, null guard, original Sakuya-specific constructor at 004CA640, exception-safe /GX owner-pointer temporary with native EH handler original, result assigned through the original output-pointer arg and genuine ret 4. All original 96/96 nonrelocation bytes and 6/6 authentic physical COFF refs and PE destinations match. Whole seven-factory affected-only 7/7 cold replay exact in one object. Borrowed per-character original constructor was already credited separately F422 and is not counted twice; original 0xE8 allocation footprint is not asserted as complete private member layout; no fake locals/ASM/source native bytes, masking/truncation, full cold replay, external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x004C0920",
+        "origin": "authored",
+        "subsystem": "SakuyaFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R050"
+      }
+    },
+    {
+      "before": {
+        "address": "0x005022C0",
+        "size": "120",
+        "span_end": "0x00502337",
+        "current_name": "FUN_005022c0",
+        "proposed_name": "PatchouliFighter::CreateOwnedObject",
+        "module": "PatchouliFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R050; whole body hash, complete CFG, character constructor/factory chain and local behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; method name and complete class layout inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x005022C0",
+        "size": "120",
+        "span_end": "0x00502337",
+        "current_name": "FUN_005022c0",
+        "proposed_name": "PatchouliFighter::CreateOwnedObject",
+        "module": "PatchouliFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void PatchouliFighterFactoryF469::CreateOwnedObject(PatchouliOwnedObjectF469**)",
+        "is_thunk": "false",
+        "source_file": "src/FighterOwnedObjectFactoriesF469.cpp",
+        "evidence": "R050; whole body hash, complete CFG, character constructor/factory chain and local behavior reviewed; F469; scripts/repo-python scripts/replay-exact-units.py --unit patchouli-fighter-create-owned-object-005022c0",
+        "owner": "authored",
+        "notes": "Origin reviewed; method name and complete class layout inferred; source and exact state remain independent; F469 complete independent R050 original Patchouli fighter-owned auxiliary object factory at 0x005022C0, 120 native CODE bytes, 34 original x86 instructions, native PE SHA256 c8b05c85fb3e9a5c50da7f720e7a36d39abe183dee1809e160f4ac55fdc21596. True C++ thiscall owner factory accepts real Patchouli aux object pointer output, native `operator new` with original allocation size 0xE8 at 0064159D, null guard, original Patchouli-specific constructor at 0050A4E0, exception-safe /GX owner-pointer temporary with native EH handler original, result assigned through the original output-pointer arg and genuine ret 4. All original 96/96 nonrelocation bytes and 6/6 authentic physical COFF refs and PE destinations match. Whole seven-factory affected-only 7/7 cold replay exact in one object. Borrowed per-character original constructor was already credited separately F422 and is not counted twice; original 0xE8 allocation footprint is not asserted as complete private member layout; no fake locals/ASM/source native bytes, masking/truncation, full cold replay, external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x005022C0",
+        "origin": "authored",
+        "subsystem": "PatchouliFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R050"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00551AA0",
+        "size": "120",
+        "span_end": "0x00551B17",
+        "current_name": "FUN_00551aa0",
+        "proposed_name": "RemiliaFighter::CreateOwnedObject",
+        "module": "RemiliaFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R050; whole body hash, complete CFG, character constructor/factory chain and local behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; method name and complete class layout inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00551AA0",
+        "size": "120",
+        "span_end": "0x00551B17",
+        "current_name": "FUN_00551aa0",
+        "proposed_name": "RemiliaFighter::CreateOwnedObject",
+        "module": "RemiliaFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void RemiliaFighterFactoryF469::CreateOwnedObject(RemiliaOwnedObjectF469**)",
+        "is_thunk": "false",
+        "source_file": "src/FighterOwnedObjectFactoriesF469.cpp",
+        "evidence": "R050; whole body hash, complete CFG, character constructor/factory chain and local behavior reviewed; F469; scripts/repo-python scripts/replay-exact-units.py --unit remilia-fighter-create-owned-object-00551aa0",
+        "owner": "authored",
+        "notes": "Origin reviewed; method name and complete class layout inferred; source and exact state remain independent; F469 complete independent R050 original Remilia fighter-owned auxiliary object factory at 0x00551AA0, 120 native CODE bytes, 34 original x86 instructions, native PE SHA256 1588b71b5a69211ed7ee6103df4c29516a81918225b2b2a54ba467286af5d63e. True C++ thiscall owner factory accepts real Remilia aux object pointer output, native `operator new` with original allocation size 0xE8 at 0064159D, null guard, original Remilia-specific constructor at 0055ABE0, exception-safe /GX owner-pointer temporary with native EH handler original, result assigned through the original output-pointer arg and genuine ret 4. All original 96/96 nonrelocation bytes and 6/6 authentic physical COFF refs and PE destinations match. Whole seven-factory affected-only 7/7 cold replay exact in one object. Borrowed per-character original constructor was already credited separately F422 and is not counted twice; original 0xE8 allocation footprint is not asserted as complete private member layout; no fake locals/ASM/source native bytes, masking/truncation, full cold replay, external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x00551AA0",
+        "origin": "authored",
+        "subsystem": "RemiliaFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R050"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00574210",
+        "size": "120",
+        "span_end": "0x00574287",
+        "current_name": "FUN_00574210",
+        "proposed_name": "YuyukoFighter::CreateOwnedObject",
+        "module": "YuyukoFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R050; whole body hash, complete CFG, character constructor/factory chain and local behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; method name and complete class layout inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00574210",
+        "size": "120",
+        "span_end": "0x00574287",
+        "current_name": "FUN_00574210",
+        "proposed_name": "YuyukoFighter::CreateOwnedObject",
+        "module": "YuyukoFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void YuyukoFighterFactoryF469::CreateOwnedObject(YuyukoOwnedObjectF469**)",
+        "is_thunk": "false",
+        "source_file": "src/FighterOwnedObjectFactoriesF469.cpp",
+        "evidence": "R050; whole body hash, complete CFG, character constructor/factory chain and local behavior reviewed; F469; scripts/repo-python scripts/replay-exact-units.py --unit yuyuko-fighter-create-owned-object-00574210",
+        "owner": "authored",
+        "notes": "Origin reviewed; method name and complete class layout inferred; source and exact state remain independent; F469 complete independent R050 original Yuyuko fighter-owned auxiliary object factory at 0x00574210, 120 native CODE bytes, 34 original x86 instructions, native PE SHA256 3026a80dbf78ed7797bd244f165053c9d7ee381ddf5f5fec23a6db8273fb2064. True C++ thiscall owner factory accepts real Yuyuko aux object pointer output, native `operator new` with original allocation size 0xE8 at 0064159D, null guard, original Yuyuko-specific constructor at 0057D4E0, exception-safe /GX owner-pointer temporary with native EH handler original, result assigned through the original output-pointer arg and genuine ret 4. All original 96/96 nonrelocation bytes and 6/6 authentic physical COFF refs and PE destinations match. Whole seven-factory affected-only 7/7 cold replay exact in one object. Borrowed per-character original constructor was already credited separately F422 and is not counted twice; original 0xE8 allocation footprint is not asserted as complete private member layout; no fake locals/ASM/source native bytes, masking/truncation, full cold replay, external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x00574210",
+        "origin": "authored",
+        "subsystem": "YuyukoFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R050"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00597480",
+        "size": "120",
+        "span_end": "0x005974F7",
+        "current_name": "FUN_00597480",
+        "proposed_name": "YukariFighter::CreateOwnedObject",
+        "module": "YukariFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R050; whole body hash, complete CFG, character constructor/factory chain and local behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; method name and complete class layout inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00597480",
+        "size": "120",
+        "span_end": "0x005974F7",
+        "current_name": "FUN_00597480",
+        "proposed_name": "YukariFighter::CreateOwnedObject",
+        "module": "YukariFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void YukariFighterFactoryF469::CreateOwnedObject(YukariOwnedObjectF469**)",
+        "is_thunk": "false",
+        "source_file": "src/FighterOwnedObjectFactoriesF469.cpp",
+        "evidence": "R050; whole body hash, complete CFG, character constructor/factory chain and local behavior reviewed; F469; scripts/repo-python scripts/replay-exact-units.py --unit yukari-fighter-create-owned-object-00597480",
+        "owner": "authored",
+        "notes": "Origin reviewed; method name and complete class layout inferred; source and exact state remain independent; F469 complete independent R050 original Yukari fighter-owned auxiliary object factory at 0x00597480, 120 native CODE bytes, 34 original x86 instructions, native PE SHA256 9e7a3cdebaee0f59104d603bfe067cc87759d839e3b7409a88abb6f262780fe6. True C++ thiscall owner factory accepts real Yukari aux object pointer output, native `operator new` with original allocation size 0xE8 at 0064159D, null guard, original Yukari-specific constructor at 005A1560, exception-safe /GX owner-pointer temporary with native EH handler original, result assigned through the original output-pointer arg and genuine ret 4. All original 96/96 nonrelocation bytes and 6/6 authentic physical COFF refs and PE destinations match. Whole seven-factory affected-only 7/7 cold replay exact in one object. Borrowed per-character original constructor was already credited separately F422 and is not counted twice; original 0xE8 allocation footprint is not asserted as complete private member layout; no fake locals/ASM/source native bytes, masking/truncation, full cold replay, external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x00597480",
+        "origin": "authored",
+        "subsystem": "YukariFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R050"
+      }
+    },
+    {
+      "before": {
+        "address": "0x005C0BB0",
+        "size": "120",
+        "span_end": "0x005C0C27",
+        "current_name": "FUN_005c0bb0",
+        "proposed_name": "SuikaFighter::CreateOwnedObject",
+        "module": "SuikaFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R050; whole body hash, complete CFG, character constructor/factory chain and local behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; method name and complete class layout inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x005C0BB0",
+        "size": "120",
+        "span_end": "0x005C0C27",
+        "current_name": "FUN_005c0bb0",
+        "proposed_name": "SuikaFighter::CreateOwnedObject",
+        "module": "SuikaFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void SuikaFighterFactoryF469::CreateOwnedObject(SuikaOwnedObjectF469**)",
+        "is_thunk": "false",
+        "source_file": "src/FighterOwnedObjectFactoriesF469.cpp",
+        "evidence": "R050; whole body hash, complete CFG, character constructor/factory chain and local behavior reviewed; F469; scripts/repo-python scripts/replay-exact-units.py --unit suika-fighter-create-owned-object-005c0bb0",
+        "owner": "authored",
+        "notes": "Origin reviewed; method name and complete class layout inferred; source and exact state remain independent; F469 complete independent R050 original Suika fighter-owned auxiliary object factory at 0x005C0BB0, 120 native CODE bytes, 34 original x86 instructions, native PE SHA256 c59ea238f85455512dd54300cdebb7dcf91faff8fcda48c731ee187f0531555b. True C++ thiscall owner factory accepts real Suika aux object pointer output, native `operator new` with original allocation size 0xE8 at 0064159D, null guard, original Suika-specific constructor at 005C9C20, exception-safe /GX owner-pointer temporary with native EH handler original, result assigned through the original output-pointer arg and genuine ret 4. All original 96/96 nonrelocation bytes and 6/6 authentic physical COFF refs and PE destinations match. Whole seven-factory affected-only 7/7 cold replay exact in one object. Borrowed per-character original constructor was already credited separately F422 and is not counted twice; original 0xE8 allocation footprint is not asserted as complete private member layout; no fake locals/ASM/source native bytes, masking/truncation, full cold replay, external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x005C0BB0",
+        "origin": "authored",
+        "subsystem": "SuikaFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R050"
+      }
+    },
+    {
+      "before": {
+        "address": "0x005E2170",
+        "size": "120",
+        "span_end": "0x005E21E7",
+        "current_name": "FUN_005e2170",
+        "proposed_name": "MeilingFighter::CreateOwnedObject",
+        "module": "MeilingFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R050; whole body hash, complete CFG, character constructor/factory chain and local behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; method name and complete class layout inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x005E2170",
+        "size": "120",
+        "span_end": "0x005E21E7",
+        "current_name": "FUN_005e2170",
+        "proposed_name": "MeilingFighter::CreateOwnedObject",
+        "module": "MeilingFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void MeilingFighterFactoryF469::CreateOwnedObject(MeilingOwnedObjectF469**)",
+        "is_thunk": "false",
+        "source_file": "src/FighterOwnedObjectFactoriesF469.cpp",
+        "evidence": "R050; whole body hash, complete CFG, character constructor/factory chain and local behavior reviewed; F469; scripts/repo-python scripts/replay-exact-units.py --unit meiling-fighter-create-owned-object-005e2170",
+        "owner": "authored",
+        "notes": "Origin reviewed; method name and complete class layout inferred; source and exact state remain independent; F469 complete independent R050 original Meiling fighter-owned auxiliary object factory at 0x005E2170, 120 native CODE bytes, 34 original x86 instructions, native PE SHA256 f054f3447f7114a88bf85297522966d7c3c753acef1135e223e5c8e81eb9529f. True C++ thiscall owner factory accepts real Meiling aux object pointer output, native `operator new` with original allocation size 0xE8 at 0064159D, null guard, original Meiling-specific constructor at 005EB490, exception-safe /GX owner-pointer temporary with native EH handler original, result assigned through the original output-pointer arg and genuine ret 4. All original 96/96 nonrelocation bytes and 6/6 authentic physical COFF refs and PE destinations match. Whole seven-factory affected-only 7/7 cold replay exact in one object. Borrowed per-character original constructor was already credited separately F422 and is not counted twice; original 0xE8 allocation footprint is not asserted as complete private member layout; no fake locals/ASM/source native bytes, masking/truncation, full cold replay, external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x005E2170",
+        "origin": "authored",
+        "subsystem": "MeilingFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R050"
       }
     }
   ],
@@ -202512,6 +202820,419 @@
           "target": 6648384
         }
       ]
+    },
+    "sakuya-fighter-create-owned-object-004c0920": {
+      "source": "src/FighterOwnedObjectFactoriesF469.cpp",
+      "object": "build/matching/FighterOwnedObjectFactoriesF469.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "SakuyaFighter::CreateOwnedObjectAt004C0920"
+      ],
+      "symbol": "?CreateOwnedObject@SakuyaFighterFactoryF469@@QAEXPAPAVSakuyaOwnedObjectF469@@@Z",
+      "target_address": 4983072,
+      "size": 120,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$?CreateOwnedObject@SakuyaFighterFactoryF469@@QAEXPAPAVSakuyaOwnedObjectF469@@@Z",
+          "target": 6644843
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 36,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 67,
+          "type": "REL32",
+          "symbol": "??0SakuyaOwnedObjectF469@@QAE@PAX@Z",
+          "target": 5023296
+        },
+        {
+          "offset": 110,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "patchouli-fighter-create-owned-object-005022c0": {
+      "source": "src/FighterOwnedObjectFactoriesF469.cpp",
+      "object": "build/matching/FighterOwnedObjectFactoriesF469.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "PatchouliFighter::CreateOwnedObjectAt005022C0"
+      ],
+      "symbol": "?CreateOwnedObject@PatchouliFighterFactoryF469@@QAEXPAPAVPatchouliOwnedObjectF469@@@Z",
+      "target_address": 5251776,
+      "size": 120,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$?CreateOwnedObject@PatchouliFighterFactoryF469@@QAEXPAPAVPatchouliOwnedObjectF469@@@Z",
+          "target": 6644907
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 36,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 67,
+          "type": "REL32",
+          "symbol": "??0PatchouliOwnedObjectF469@@QAE@PAX@Z",
+          "target": 5285088
+        },
+        {
+          "offset": 110,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "remilia-fighter-create-owned-object-00551aa0": {
+      "source": "src/FighterOwnedObjectFactoriesF469.cpp",
+      "object": "build/matching/FighterOwnedObjectFactoriesF469.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "RemiliaFighter::CreateOwnedObjectAt00551AA0"
+      ],
+      "symbol": "?CreateOwnedObject@RemiliaFighterFactoryF469@@QAEXPAPAVRemiliaOwnedObjectF469@@@Z",
+      "target_address": 5577376,
+      "size": 120,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$?CreateOwnedObject@RemiliaFighterFactoryF469@@QAEXPAPAVRemiliaOwnedObjectF469@@@Z",
+          "target": 6645099
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 36,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 67,
+          "type": "REL32",
+          "symbol": "??0RemiliaOwnedObjectF469@@QAE@PAX@Z",
+          "target": 5614560
+        },
+        {
+          "offset": 110,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "yuyuko-fighter-create-owned-object-00574210": {
+      "source": "src/FighterOwnedObjectFactoriesF469.cpp",
+      "object": "build/matching/FighterOwnedObjectFactoriesF469.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "YuyukoFighter::CreateOwnedObjectAt00574210"
+      ],
+      "symbol": "?CreateOwnedObject@YuyukoFighterFactoryF469@@QAEXPAPAVYuyukoOwnedObjectF469@@@Z",
+      "target_address": 5718544,
+      "size": 120,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$?CreateOwnedObject@YuyukoFighterFactoryF469@@QAEXPAPAVYuyukoOwnedObjectF469@@@Z",
+          "target": 6645131
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 36,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 67,
+          "type": "REL32",
+          "symbol": "??0YuyukoOwnedObjectF469@@QAE@PAX@Z",
+          "target": 5756128
+        },
+        {
+          "offset": 110,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "yukari-fighter-create-owned-object-00597480": {
+      "source": "src/FighterOwnedObjectFactoriesF469.cpp",
+      "object": "build/matching/FighterOwnedObjectFactoriesF469.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "YukariFighter::CreateOwnedObjectAt00597480"
+      ],
+      "symbol": "?CreateOwnedObject@YukariFighterFactoryF469@@QAEXPAPAVYukariOwnedObjectF469@@@Z",
+      "target_address": 5862528,
+      "size": 120,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$?CreateOwnedObject@YukariFighterFactoryF469@@QAEXPAPAVYukariOwnedObjectF469@@@Z",
+          "target": 6645163
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 36,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 67,
+          "type": "REL32",
+          "symbol": "??0YukariOwnedObjectF469@@QAE@PAX@Z",
+          "target": 5903712
+        },
+        {
+          "offset": 110,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "suika-fighter-create-owned-object-005c0bb0": {
+      "source": "src/FighterOwnedObjectFactoriesF469.cpp",
+      "object": "build/matching/FighterOwnedObjectFactoriesF469.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "SuikaFighter::CreateOwnedObjectAt005C0BB0"
+      ],
+      "symbol": "?CreateOwnedObject@SuikaFighterFactoryF469@@QAEXPAPAVSuikaOwnedObjectF469@@@Z",
+      "target_address": 6032304,
+      "size": 120,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$?CreateOwnedObject@SuikaFighterFactoryF469@@QAEXPAPAVSuikaOwnedObjectF469@@@Z",
+          "target": 6645195
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 36,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 67,
+          "type": "REL32",
+          "symbol": "??0SuikaOwnedObjectF469@@QAE@PAX@Z",
+          "target": 6069280
+        },
+        {
+          "offset": 110,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "meiling-fighter-create-owned-object-005e2170": {
+      "source": "src/FighterOwnedObjectFactoriesF469.cpp",
+      "object": "build/matching/FighterOwnedObjectFactoriesF469.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "MeilingFighter::CreateOwnedObjectAt005E2170"
+      ],
+      "symbol": "?CreateOwnedObject@MeilingFighterFactoryF469@@QAEXPAPAVMeilingOwnedObjectF469@@@Z",
+      "target_address": 6168944,
+      "size": 120,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$?CreateOwnedObject@MeilingFighterFactoryF469@@QAEXPAPAVMeilingOwnedObjectF469@@@Z",
+          "target": 6645227
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 36,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 67,
+          "type": "REL32",
+          "symbol": "??0MeilingOwnedObjectF469@@QAE@PAX@Z",
+          "target": 6206608
+        },
+        {
+          "offset": 110,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -202989,6 +203710,7 @@
     "src/BattleEndSceneUpdateF463.cpp": "716e5038779c56375b9ae52dec725cb6602121ac516cd5653cdaf61666ac85ee",
     "src/BattleEndSceneDrawF465.cpp": "04d39fea6db852972374269c19935221c2623f8ca46145f9cd1c1ea620aa55fe",
     "src/SceneInputPollingFamilyF467.cpp": "3ce1c86284bcde745ee18fea4f93723ebe9982585f15c5883fee9875afeeb2db",
-    "src/GameApplicationWindowCallbackF468.cpp": "a7e3d7b7294354fc0a6351c4c552b7773670ad60baaa4e75380c90f6c1af1e04"
+    "src/GameApplicationWindowCallbackF468.cpp": "a7e3d7b7294354fc0a6351c4c552b7773670ad60baaa4e75380c90f6c1af1e04",
+    "src/FighterOwnedObjectFactoriesF469.cpp": "60c98fa7f8dbcc047138e885582acf11c3c973310b25de2b6836faf275002f93"
   }
 }

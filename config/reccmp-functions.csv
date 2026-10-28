@@ -767,3 +767,10 @@ BattleEndScene::PollInputAt004250C0,0x004250C0,function
 SceneInput::PollTwoMappingsAt00426600,0x00426600,function
 OpeningScene::ProcessInputAt00428C80,0x00428C80,function
 GameApplication::WindowCallbackAt00603650,0x00603650,function
+SakuyaFighter::CreateOwnedObjectAt004C0920,0x004C0920,function
+PatchouliFighter::CreateOwnedObjectAt005022C0,0x005022C0,function
+RemiliaFighter::CreateOwnedObjectAt00551AA0,0x00551AA0,function
+YuyukoFighter::CreateOwnedObjectAt00574210,0x00574210,function
+YukariFighter::CreateOwnedObjectAt00597480,0x00597480,function
+SuikaFighter::CreateOwnedObjectAt005C0BB0,0x005C0BB0,function
+MeilingFighter::CreateOwnedObjectAt005E2170,0x005E2170,function

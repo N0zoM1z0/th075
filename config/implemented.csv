@@ -766,3 +766,10 @@ BattleEndScene::PollInputAt004250C0
 SceneInput::PollTwoMappingsAt00426600
 OpeningScene::ProcessInputAt00428C80
 GameApplication::WindowCallbackAt00603650
+SakuyaFighter::CreateOwnedObjectAt004C0920
+PatchouliFighter::CreateOwnedObjectAt005022C0
+RemiliaFighter::CreateOwnedObjectAt00551AA0
+YuyukoFighter::CreateOwnedObjectAt00574210
+YukariFighter::CreateOwnedObjectAt00597480
+SuikaFighter::CreateOwnedObjectAt005C0BB0
+MeilingFighter::CreateOwnedObjectAt005E2170

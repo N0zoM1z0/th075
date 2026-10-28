@@ -7273,3 +7273,44 @@ loop is **still unclassified**, with no accidental callee/WinMain or
 Win32 implementation CODE credit. No invented game class layout, fake
 locals, masking, assembly/pasted original bytes, cropped comparison,
 full-repository cold replay or external Oracle receipt.
+
+
+## F469: seven independently exact native 120-byte fighter-owned object factories
+
+The original R050 independently authored fighter object allocation path
+contains seven complete **120-byte / 34 native x86 instruction** factories
+that allocate distinct original 0xE8-byte character objects and return
+the newly owned object pointer through the original thiscall output slot.
+Each factory performs a genuine `operator new(0xE8)` at `0064159D`,
+returns null if allocation returns null, calls its own actual original
+character-specific constructor with the fighter owner as parameter,
+preserves MSVC VC7.1 `/GX` SEH cleanup with true unique handler and
+valid 0x10-byte local allocations, then assigns the result and executes
+original `RET 4`. Each original function was independently disassembled
+and its exact constructor address, native PE SHA and original 34
+instructions verified before considering family-level code.
+
+Distinct original factory → constructor addresses are: Sakuya
+`004C0920` → `004CA640`, Patchouli `005022C0` → `0050A4E0`, Remilia
+`00551AA0` → `0055ABE0`, Yuyuko `00574210` → `0057D4E0`, Yukari
+`00597480` → `005A1560`, Suika `005C0BB0` → `005C9C20` and Meiling
+`005E2170` → `005EB490`. Their actual original PE function SHA256
+hashes are individually retained in the corresponding R050 native
+tracking rows; each has a separately checked EH handler relocation
+address, rather than seven copies of one original address. A minimal
+borrowed `0xE8` C++ carrier represents only the actual operator-new
+footprint and the already independently accepted F422 constructor ABI,
+**not** a claim of complete private object allocation or member layout.
+
+Pinned VC7.1 `/Od /Ob0 /Gy /GR- /GX /GS /Zi` natural source
+`src/FighterOwnedObjectFactoriesF469.cpp` matches all seven complete
+original bodies on first semantic probe, with **96/96 original nonfield
+bytes and all six real physical DIR32/REL32 COFF fields, symbols and
+original destinations for each distinct factory**. A single affected-
+only cold compiler run targeting the seven new unit names returned
+**7/7 exact across one object**, crediting exactly **840 authored CODE
+bytes** without double-counting any original F422 fighter object
+constructor, the CRT `operator new` or compiler EH helper code.
+All historical negative codegen/source tests remain intact; no fake
+locals, assembly/pasted PE bytes, masked or truncated native functions,
+full cold replay or external Oracle acceptance.
