@@ -46391,3 +46391,62 @@ offset = 154
 type = "REL32"
 symbol = "?Clear@NativePointerListF337@@QAEXXZ"
 target = 0x005F82D0
+
+[units.archive-open-and-read-index-0041d510]
+source = "src/ArchiveOpenReadIndexF338.cpp"
+object = "build/matching/ArchiveOpenReadIndexF338.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["DataArchive::OpenAndReadIndex"]
+symbol = "?OpenAndReadIndex@ArchiveIndexF250@@QAEXPBD@Z"
+target_address = 0x0041D510
+size = 429
+[[units.archive-open-and-read-index-0041d510.relocations]]
+offset = 10
+type = "DIR32"
+symbol = "___security_cookie"
+target = 0x0066FE30
+[[units.archive-open-and-read-index-0041d510.relocations]]
+offset = 45
+type = "DIR32"
+symbol = "__imp__CloseHandle@4"
+target = 0x00657138
+[[units.archive-open-and-read-index-0041d510.relocations]]
+offset = 73
+type = "DIR32"
+symbol = "__imp__CreateFileA@28"
+target = 0x00657130
+[[units.archive-open-and-read-index-0041d510.relocations]]
+offset = 124
+type = "DIR32"
+symbol = "__imp__ReadFile@20"
+target = 0x0065712C
+[[units.archive-open-and-read-index-0041d510.relocations]]
+offset = 137
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x006416A2
+[[units.archive-open-and-read-index-0041d510.relocations]]
+offset = 194
+type = "DIR32"
+symbol = "__imp__ReadFile@20"
+target = 0x0065712C
+[[units.archive-open-and-read-index-0041d510.relocations]]
+offset = 361
+type = "REL32"
+symbol = "_strcpy"
+target = 0x00641B80
+[[units.archive-open-and-read-index-0041d510.relocations]]
+offset = 385
+type = "REL32"
+symbol = "?AddEntry@ArchiveIndexListF250@@QAEXABUArchiveWireEntryF250@@@Z"
+target = 0x0041D9C0
+[[units.archive-open-and-read-index-0041d510.relocations]]
+offset = 408
+type = "REL32"
+symbol = "??3@YAXPAX@Z"
+target = 0x0064169D
+[[units.archive-open-and-read-index-0041d510.relocations]]
+offset = 419
+type = "REL32"
+symbol = "@__security_check_cookie@4"
+target = 0x00640611

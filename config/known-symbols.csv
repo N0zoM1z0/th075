@@ -624,3 +624,4 @@ address,name,module,confidence,evidence
 0x004239F0,EventQueue::AcquireSharedServiceAt004239F0,EventQueue,inferred,"F335; full 155-byte R114 event queue service acquire lifecycle, 18 authentic COFF fields cold exact; borrowed class names only"
 0x00423A90,EventQueue::ReleaseSharedServiceAt00423A90,EventQueue,inferred,"F335; full 143-byte R114 event queue service release lifecycle, 16 authentic COFF fields cold exact; borrowed class names only"
 0x005F7140,BattlePointerQueues::ReleaseEntriesAt005F7140,GameContextPolicy,inferred,"F337; whole 162-byte original R166 authored two-side native pointer free and queue clear, 8 real COFF game/CRT fields; full private container layout unknown"
+0x0041D510,DataArchive::OpenAndReadIndex,DataArchive,inferred,"F338; complete 429-byte native archive index loader, actual 28-byte decoding state and 108-byte record, ten real COFF original fields cold exact; full private archive owner unproven"

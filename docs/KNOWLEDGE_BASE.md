@@ -4864,3 +4864,75 @@ implementations, full private class layouts, and all 97 pending
 origins remain uncredited. No byte graft, manual x86, artificial
 stack padding, masked relocation, cropped native extent, full
 replay or remote Oracle receipt.
+
+
+## F338: full 429-byte DataArchive::OpenAndReadIndex boss cold-exact
+
+The R052-authored original native archive-index file loading
+function `DataArchive::OpenAndReadIndex` at `0041D510..0041D6BC`
+contains **429 complete pinned PE CODE bytes**, **130 independently
+decoded x86 instructions**, native `0x9C` frame and real `/GS`
+stack cookie. Entire original pinned Japanese PE body SHA256:
+`caf7adaed6de06f3fbeb7d4e0335476498c7507342ad40f0411ad438c1cb4a49`.
+Read-only Ghidra/native and all old complete 429-byte natural C++
+failed scopes/typed decode controls are preserved at
+`.analysis/f248-archive-write/`; new actual 28-byte source-state
+controls and final exact C++/COFF/cold proof at
+`.analysis/f338-archive-physical/`. Canonical adopted full source
+`src/ArchiveOpenReadIndexF338.cpp`.
+
+The actual native archive loader checks and closes any old archive
+HANDLE at this+0, calls original imported CreateFileA with true
+GENERIC_READ/OPEN_EXISTING, checks INVALID_HANDLE_VALUE, reads one
+original 16-bit little-endian entry count, allocates `count*108`
+raw wire-table bytes with original native new[] at `006416A2`,
+and reads that complete encrypted table using real Win32 ReadFile.
+Two actually used unsigned 8-bit codepoint decoder values begin at
+100: each wire byte is XORed with `key`; then `key += step` and
+`step += 77`, wrapping naturally at 8 bits. The same genuine
+unsigned index is reset and reused in the following record loop.
+Each true 108-byte archive record contains exactly 100 filename
+bytes and two DWORD fields at offsets 100/104. The loader copies
+those two ints and original source filename via real native
+`strcpy` at `00641B80` into an actual 108-byte temporary entry,
+then calls the original game `ArchiveIndexList::AddEntry`
+`0041D9C0` on receiver this+4. It deletes the native raw buffer
+and completes actual VC7.1 `/GS` security cookie check `00640611`.
+No invented error branch or added file close changes native flow.
+
+Older 429-byte natural source experiments under F248/F250 had all
+**10 original genuine COFF relocations** but a best of only
+**366/389** comparable bytes, due to compiler physical local
+allocation. The full original stack frame supports exactly these
+**28 bytes of genuine parser state**:
+
+| Native EBP locations | Actually used original state |
+| --- | --- |
+| −0x1C..−0x19 | real key-byte storage, only final byte −0x19 accessed |
+| −0x18 | decoded base pointer |
+| −0x14 | unsigned short entry count (native aligned slot) |
+| −0x10..−0xD | real step-byte storage, only final byte −0xD accessed |
+| −0xC | genuine shared unsigned index DWORD |
+| −0x8 | genuine ReadFile transferred bytes DWORD |
+| −0x4 | actual raw allocation pointer |
+
+A plain typed `ArchiveReadStateF338` groups *only this actually used
+native data*; two DWORD-sized carriers model preexisting physical
+stack storage, whose final bytes are the only observed key and
+step, without constructing dummy locals, allocating extra bytes
+or accessing unrelated regions. The original private source authors'
+preferred field/byte types are not inferred. The complete natural
+C++ source under pinned VC7.1 `/Od /Ob0 /Gy /GR- /GX- /GS /Zi`
+now generates **429/429 original CODE, 389/389 nonfield bytes and
+10/10 real physical COFF relocation offset/type/native solved
+destinations**. Only `archive-open-and-read-index-0041d510` was
+rebuilt cold **alone**, reporting `exact; 429 coverage bytes` and
+`1/1 exact`. The larger **686-byte `DataArchive::Write`** is a
+separate whole native function and *remains nonexact*, with the
+old best 495/574 comparable bytes. It does not inherit credit.
+
+External Win32/CRT/VC7 implementation bytes, private complete
+archive owner/list implementation, other already accepted callees
+and all 97 pending-origin candidates are excluded. No byte graft,
+asm, artificial stack padding, missing/masked COFF, cropped native
+function, full replay or remote Oracle acceptance.
