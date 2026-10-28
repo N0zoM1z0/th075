@@ -40163,3 +40163,68 @@ offset = 212
 type = "REL32"
 symbol = "?OpenSpecialMenu@InputProcessF245@@YAXXZ"
 target = 0x004018A0
+
+
+[units.name-entry-scene-update-player-0042a340]
+source = "src/NameEntryUpdateF246.cpp"
+object = "build/matching/NameEntryUpdateF246.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["NameEntryScene::UpdatePlayer"]
+symbol = "?UpdatePlayer@NameEntryUpdateF246@@QAEGXZ"
+target_address = 0x0042A340
+size = 541
+[[units.name-entry-scene-update-player-0042a340.relocations]]
+offset = 11
+type = "REL32"
+symbol = "?PollPlayerInput@NameEntryUpdateF246@@QAEXXZ"
+target = 0x0042AB90
+[[units.name-entry-scene-update-player-0042a340.relocations]]
+offset = 35
+type = "DIR32"
+symbol = "?g_NameEntrySoundAt00671618@@3PAVNameEntrySoundF246@@A"
+target = 0x00671618
+[[units.name-entry-scene-update-player-0042a340.relocations]]
+offset = 40
+type = "REL32"
+symbol = "?Play@NameEntrySoundF246@@QAEXH@Z"
+target = 0x004079C0
+[[units.name-entry-scene-update-player-0042a340.relocations]]
+offset = 176
+type = "DIR32"
+symbol = "?g_NameEntryProgressAt006718F8@@3VNameEntryProgressF246@@A"
+target = 0x006718F8
+[[units.name-entry-scene-update-player-0042a340.relocations]]
+offset = 181
+type = "REL32"
+symbol = "?SaveScore@NameEntryProgressF246@@QAEXXZ"
+target = 0x004169E0
+[[units.name-entry-scene-update-player-0042a340.relocations]]
+offset = 196
+type = "DIR32"
+symbol = "?g_NameEntryProgressAt006718F8@@3VNameEntryProgressF246@@A"
+target = 0x006718F8
+[[units.name-entry-scene-update-player-0042a340.relocations]]
+offset = 201
+type = "REL32"
+symbol = "?LoadWorkingEightBytes@NameEntryProgressF246@@QAEXE@Z"
+target = 0x00416E80
+[[units.name-entry-scene-update-player-0042a340.relocations]]
+offset = 208
+type = "DIR32"
+symbol = "?g_NameEntryExtraFlagAt006714CE@@3CA"
+target = 0x006714CE
+[[units.name-entry-scene-update-player-0042a340.relocations]]
+offset = 433
+type = "DIR32"
+symbol = "?g_NameEntrySoundAt00671618@@3PAVNameEntrySoundF246@@A"
+target = 0x00671618
+[[units.name-entry-scene-update-player-0042a340.relocations]]
+offset = 438
+type = "REL32"
+symbol = "?Play@NameEntrySoundF246@@QAEXH@Z"
+target = 0x004079C0
+[[units.name-entry-scene-update-player-0042a340.relocations]]
+offset = 529
+type = "REL32"
+symbol = "?Present@NameEntryGraphicsF246@@YAXXZ"
+target = 0x004028F0

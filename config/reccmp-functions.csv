@@ -558,3 +558,4 @@ SceneTransition::DispatchMode,0x00431F60,function
 ResultScene::Initialize,0x0042E640,function
 SceneController::AdvanceAt0042E8F0,0x0042E8F0,function
 ResultListScene::PollInput,0x0042F450,function
+NameEntryScene::UpdatePlayer,0x0042A340,function

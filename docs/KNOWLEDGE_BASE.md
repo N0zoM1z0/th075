@@ -1641,3 +1641,44 @@ first natural source and preview/cold evidence are retained under
 `.analysis/f245-call-chain/`. There are no target-byte grafts, masks,
 ASM, fake locals, cropped function or external Oracle claims. The 97
 unknown-origin entries remain unresolved and uncredited.
+
+
+## F246: whole character-name entry update with 16-bit cursor math cold exact
+
+R040 classifies `NameEntryScene::UpdatePlayer` at `0042A340..0042A55C` as
+authored. It contains **541 CODE bytes /151 original x86 instructions**,
+SHA256 `a8e48f26ffb990e03b5420dd7f1be9cac608b81502f89c902c9883f299c955da`.
+The natural `src/NameEntryUpdateF246.cpp` uses physically observed input
+fields +0x10/+0x12/+0x14/+0x16 and player signed index +0x120, and
+original external record storage at this+0x0C. It handles a 26-wide
+selection grid, special 0x5B erase and 0x5C confirm actions, actual
+8-character field writes in +0x55C/+0x563 per-player blocks (16-byte
+stride), sound cues at `004079C0`, native progress-card file save
+`004169E0`, reload `00416E80` with original `006718F8` receiver and
+flag `006714CE`, and both early return codes 0x2207 and 0x2202. Its
+final path invokes the native virtual scene draw slot two, then accepted
+Graphics::Present before returning 10.
+
+The first complete source compiled to 539 bytes, otherwise identical at
+instruction level, because `FIELD(short,0x14) = FIELD(short,0x14) +/- 1`
+promotes to signed 32-bit register arithmetic in VC7.1. Genuine 16-bit
+prefix `++FIELD(short,0x14)` and `--FIELD(short,0x14)` compile to native
+`MOV DX,word; ADD/SUB DX,1` instead. The full native control flow and
+all position offsets then exactly match: **541/541 CODE bytes, 497/497
+non-field bytes and all 11 physical COFF fields**. Independent targeted
+`replay-exact-units.py --unit name-entry-scene-update-player-0042a340`
+reports **exact: 541**. The existing progress-card Save/Load callees
+remain separate origin-reviewed but *unmatched*, receiving no additional
+source/code credit from their newly accepted caller.
+
+The native instruction listing, original and corrected normal sources,
+comparison and independent cold logs live under `.analysis/f246-name-entry/`.
+`tests/test_name_entry_update_f246.py` guards whole original PE code,
+16-bit arithmetic instructions, 11 actual relocation destinations and
+accepted source SHA without broad cold builds. A separately investigated
+588-byte `FighterState::ReleaseResources` at `00456910` has genuine
+member auto-destruction and VC7.1 EH state transitions; it remains
+**unaccepted** because no full natural exact source has yet been proven.
+The raw original listing is in `.analysis/f245-call-chain/`. No masks,
+target-byte grafts, invented ABI, fake locals, cropped returns or remote
+Oracle receipt are claimed, and all 97 unresolved origins stay pending.

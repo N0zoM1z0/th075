@@ -540,3 +540,4 @@ address,name,module,confidence,evidence
 0x0042E640,ResultScene::Initialize,ResultScene,inferred,F243; 547-byte result scene full native ctor and 33 real relocation fields cold-exact; original full owner identity and R108 base constructor origin remain provisional
 0x0042E8F0,SceneController::AdvanceAt0042E8F0,SceneController,inferred,F244; whole 1529-byte result stage controller plus 32-byte owned switch tables and all 74 native relocations cold exact; original nominal class owner unresolved
 0x0042F450,ResultListScene::PollInput,ResultListScene,inferred,F245; whole 220 native bytes/21 true fields cold exact; original parent and input device layouts provisional
+0x0042A340,NameEntryScene::UpdatePlayer,NameEntryScene,inferred,F246; original full 541-byte name-entry controller and 11 actual relocations cold exact; original parent/progress class types provisional
