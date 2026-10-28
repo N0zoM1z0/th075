@@ -993,3 +993,59 @@ candidates and original evidence remain unchanged; Git commits are local
 checkpoints, not external Oracle receipts. Private proofs are retained in
 `.analysis/f226-player-choice/`, `.analysis/f227-fighter-recovery/`,
 and `.analysis/f228-confirmation/`.
+
+
+## F229: complete 1,442-byte character-selection scene state machine and 9-case table
+
+R044 independently classifies the entire `CharacterSelectScene::Advance` body
+`00433470..00433A11` authored. Native CODE is **1,442 bytes** and 362
+complete x86 instructions with SHA256
+`88d95852e72a14f2c4769a778506b382ae586604e6e7ca6db04a718942550a68`.
+The **owned table**, not extra CODE, occupies `00433A12..00433A35`: nine
+32-bit dispatch destinations (case 0/1/2/4/8 + four default paths) at
+`004338E2`, `004338F0`, `004338FE`, `00433926`, `0043390C`,
+`00433926` repeated for 5/6/7, and `0043391A`. The full **1,478-byte
+comparison extent** has SHA256
+`dc3dd8d70688b8abb748c39579d1d997826d09a14f05e6542494f22351d7e679`.
+
+An independently developed, natural C++ source
+`src/CharacterSelectAdvanceF229.cpp` reproduces native scene polling,
+vtable slot-2 dispatch, screen animation and mode flags, distinct
+cancel/return branches for modes 1/5, 3/4, and other modes, two-player
+selection/confirmation/animation switch dispatch, the actual replay
+state transition and final tick wraparound. Call-only interfaces reuse
+actual accepted input/selection/replay callees; they are not recovered
+complete original class declarations. The input cancel frames use a
+**physically observed 0x48-byte indexing stride** (independent
+`SelectionInput4388D0.cpp` evidence); the bytes other than the leading
+queried cancel word are deliberately not interpreted or instantiated.
+
+First natural source emitted 1,429 native-shaped CODE bytes plus a 36-byte
+table (1,465 total) versus 1,442 + 36 original. Full instruction
+alignment independently identified cancel-priority branch placement,
+compiler arithmetic for the 0x48 input stride, opposite-player lvalue
+addressing and branch order for state dispatch. Restoring the
+actual semantics using `if (cancelled) ... else ...`, pointer-relative
+player-array indexing and an inverted outer state dispatch caused
+ordinary VC7.1 `/Od /GX-` to emit **1,442 CODE + 36 table exactly**. The
+comparison is **1174/1174 actual non-field bytes plus 76/76 real COFF
+fields**, including nine physical local table relocations with fully
+resolved original destinations. `replay-exact-units.py --unit
+character-select-scene-advance-00433470` independently cold-built the
+new object and returned `exact` (1,442 coverage bytes). The difference
+from the native 1,478-byte compared extent is owned table bytes, which
+receive **no CODE credit**.
+
+Nearby `CharacterSelectScene::UpdateCancelAnimation` at `00435870` remains
+unsolved: the natural full 497-byte body matches 438/445 non-field bytes
+with 13 relocations, while VC7.1 repeatedly emits a different x87 load
+order for the 60.0f equality test. Source-value and expression-order
+experiments remain as private negative controls at
+`.analysis/f229-character-select/`; **no matching ledger row, match unit
+or byte credit** was assigned for this incomplete function. Full F229
+native disassembly, first/best sources and comparison logs are retained.
+
+No literal target bytes, assembly, fake storage allocations, padding,
+local-value masking, or cropped comparisons were introduced. This is
+local cold-exact replay, not an external Oracle receipt or full game
+rebuild. All 97 origin-unknown candidates remain uncredited.

@@ -37681,3 +37681,394 @@ offset = 934
 type = "REL32"
 symbol = "?Play@ChoiceSoundBankF228@@QAEXH@Z"
 target = 0x004079C0
+
+
+[units.character-select-scene-advance-00433470]
+source = "src/CharacterSelectAdvanceF229.cpp"
+object = "build/matching/CharacterSelectAdvanceF229.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["CharacterSelectScene::Advance"]
+symbol = "?Advance@CharacterSelectAdvanceF229@@QAEGXZ"
+target_address = 0x00433470
+size = 1442
+compare_size = 1478
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 13
+type = "REL32"
+symbol = "?PollInput@CharacterSelectAdvanceF229@@QAEXXZ"
+target = 0x004388D0
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 29
+type = "REL32"
+symbol = "?ResetInput@SelectionGlobalF229@@YAXXZ"
+target = 0x004028F0
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 44
+type = "DIR32"
+symbol = "?g_ChoiceHalfStepAt00657874@@3MB"
+target = 0x00657874
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 66
+type = "DIR32"
+symbol = "?g_ChoiceFadeAt00658260@@3MB"
+target = 0x00658260
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 90
+type = "DIR32"
+symbol = "?g_ChoiceClockStepAt0065825C@@3MB"
+target = 0x0065825C
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 192
+type = "DIR32"
+symbol = "?g_ChoiceRiseLimitAt0065788C@@3MB"
+target = 0x0065788C
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 214
+type = "DIR32"
+symbol = "?g_ChoiceHalfStepAt00657874@@3MB"
+target = 0x00657874
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 238
+type = "DIR32"
+symbol = "?g_ChoiceRiseLimitAt0065788C@@3MB"
+target = 0x0065788C
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 260
+type = "DIR32"
+symbol = "?g_ChoiceHalfStepAt00657874@@3MB"
+target = 0x00657874
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 326
+type = "DIR32"
+symbol = "?g_ChoiceZeroAt0065782C@@3MB"
+target = 0x0065782C
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 348
+type = "DIR32"
+symbol = "?g_ChoiceHalfStepAt00657874@@3MB"
+target = 0x00657874
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 372
+type = "DIR32"
+symbol = "?g_ChoiceZeroAt0065782C@@3MB"
+target = 0x0065782C
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 394
+type = "DIR32"
+symbol = "?g_ChoiceHalfStepAt00657874@@3MB"
+target = 0x00657874
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 410
+type = "DIR32"
+symbol = "?g_ChoiceGameModeAt006714B4@@3CA"
+target = 0x006714B4
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 422
+type = "DIR32"
+symbol = "?g_ChoiceGameModeAt006714B4@@3CA"
+target = 0x006714B4
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 438
+type = "DIR32"
+symbol = "?g_ChoiceFocusAt006714B8@@3CA"
+target = 0x006714B8
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 447
+type = "DIR32"
+symbol = "?g_SelectInputCancelAt00671670@@3PAUInputCancelRecordF229@@A"
+target = 0x00671670
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 467
+type = "DIR32"
+symbol = "?g_ChoiceSoundAt00671618@@3PAVSceneSelectionSoundF229@@A"
+target = 0x00671618
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 472
+type = "REL32"
+symbol = "?Play@SceneSelectionSoundF229@@QAEXH@Z"
+target = 0x004079C0
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 479
+type = "DIR32"
+symbol = "?g_ChoiceFocusAt006714B8@@3CA"
+target = 0x006714B8
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 501
+type = "DIR32"
+symbol = "?g_ChoiceFocusAt006714B8@@3CA"
+target = 0x006714B8
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 567
+type = "DIR32"
+symbol = "?g_ChoiceFocusAt006714B8@@3CA"
+target = 0x006714B8
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 595
+type = "DIR32"
+symbol = "?g_ChoiceSoundAt00671618@@3PAVSceneSelectionSoundF229@@A"
+target = 0x00671618
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 600
+type = "REL32"
+symbol = "?Play@SceneSelectionSoundF229@@QAEXH@Z"
+target = 0x004079C0
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 607
+type = "DIR32"
+symbol = "?g_ChoiceFocusAt006714B8@@3CA"
+target = 0x006714B8
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 636
+type = "DIR32"
+symbol = "?g_ChoiceFocusAt006714B8@@3CA"
+target = 0x006714B8
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 663
+type = "DIR32"
+symbol = "?g_ChoiceFocusAt006714B8@@3CA"
+target = 0x006714B8
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 692
+type = "DIR32"
+symbol = "?g_ChoiceFocusAt006714B8@@3CA"
+target = 0x006714B8
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 718
+type = "DIR32"
+symbol = "?g_ChoiceGameModeAt006714B4@@3CA"
+target = 0x006714B4
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 730
+type = "DIR32"
+symbol = "?g_ChoiceGameModeAt006714B4@@3CA"
+target = 0x006714B4
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 741
+type = "DIR32"
+symbol = "?g_SelectInputCancelAt00671670@@3PAUInputCancelRecordF229@@A"
+target = 0x00671670
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 775
+type = "DIR32"
+symbol = "?g_ChoiceSoundAt00671618@@3PAVSceneSelectionSoundF229@@A"
+target = 0x00671618
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 780
+type = "REL32"
+symbol = "?Play@SceneSelectionSoundF229@@QAEXH@Z"
+target = 0x004079C0
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 836
+type = "DIR32"
+symbol = "?g_SelectInputCancelAt00671670@@3PAUInputCancelRecordF229@@A"
+target = 0x00671670
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 861
+type = "DIR32"
+symbol = "?g_ChoiceSoundAt00671618@@3PAVSceneSelectionSoundF229@@A"
+target = 0x00671618
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 866
+type = "REL32"
+symbol = "?Play@SceneSelectionSoundF229@@QAEXH@Z"
+target = 0x004079C0
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 887
+type = "DIR32"
+symbol = "?g_SelectInputCancelAt00671670@@3PAUInputCancelRecordF229@@A"
+target = 0x00671670
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 912
+type = "DIR32"
+symbol = "?g_ChoiceSoundAt00671618@@3PAVSceneSelectionSoundF229@@A"
+target = 0x00671618
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 917
+type = "REL32"
+symbol = "?Play@SceneSelectionSoundF229@@QAEXH@Z"
+target = 0x004079C0
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 935
+type = "DIR32"
+symbol = "?g_SelectInputCancelAt00671670@@3PAUInputCancelRecordF229@@A"
+target = 0x00671670
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 944
+type = "DIR32"
+symbol = "?g_SelectInputCancelAt00671670@@3PAUInputCancelRecordF229@@A"
+target = 0x00671670
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 1001
+type = "DIR32"
+symbol = "?g_ChoiceSoundAt00671618@@3PAVSceneSelectionSoundF229@@A"
+target = 0x00671618
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 1006
+type = "REL32"
+symbol = "?Play@SceneSelectionSoundF229@@QAEXH@Z"
+target = 0x004079C0
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 1073
+type = "DIR32"
+symbol = "?g_ChoiceGameModeAt006714B4@@3CA"
+target = 0x006714B4
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 1086
+type = "REL32"
+symbol = "?ProcessSubselection@CharacterSelectAdvanceF229@@QAEXXZ"
+target = 0x00433BE0
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 1100
+type = "REL32"
+symbol = "?ProcessPlayerOptions@CharacterSelectAdvanceF229@@QAEXC@Z"
+target = 0x00433A40
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 1134
+type = "DIR32"
+symbol = "$L535"
+target = 0x00433A12
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 1146
+type = "REL32"
+symbol = "?UpdateSelect@CharacterSelectAdvanceF229@@QAEXC@Z"
+target = 0x00433CF0
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 1160
+type = "REL32"
+symbol = "?UpdatePlayerChoice@CharacterSelectAdvanceF229@@QAEXC@Z"
+target = 0x004348E0
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 1174
+type = "REL32"
+symbol = "?UpdatePlayerConfirmation@CharacterSelectAdvanceF229@@QAEXC@Z"
+target = 0x00434CF0
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 1188
+type = "REL32"
+symbol = "?UpdateChoiceAnimation@CharacterSelectAdvanceF229@@QAEXC@Z"
+target = 0x004350E0
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 1202
+type = "REL32"
+symbol = "?UpdateCancelAnimation@CharacterSelectAdvanceF229@@QAEXC@Z"
+target = 0x00435870
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 1247
+type = "DIR32"
+symbol = "?g_SequenceIdleAt0067161E@@3EA"
+target = 0x0067161E
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 1255
+type = "DIR32"
+symbol = "?g_SelectedFightersAt006714C8@@3PACA"
+target = 0x006714C8
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 1267
+type = "DIR32"
+symbol = "?g_SelectedFightersAt006714C8@@3PACA"
+target = 0x006714C8
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 1279
+type = "DIR32"
+symbol = "?g_SequencePhaseAt0067161D@@3CA"
+target = 0x0067161D
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 1291
+type = "DIR32"
+symbol = "?g_SequencePhaseAt0067161D@@3CA"
+target = 0x0067161D
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 1299
+type = "DIR32"
+symbol = "?g_SequencePhaseAt0067161D@@3CA"
+target = 0x0067161D
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 1306
+type = "DIR32"
+symbol = "?g_ChoiceGameModeAt006714B4@@3CA"
+target = 0x006714B4
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 1317
+type = "DIR32"
+symbol = "?g_ModeLeftAt006714AC@@3EA"
+target = 0x006714AC
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 1324
+type = "DIR32"
+symbol = "?g_ModeRightAt006714AD@@3EA"
+target = 0x006714AD
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 1341
+type = "REL32"
+symbol = "?ChangeScene@SelectionGlobalF229@@YAXHHHH@Z"
+target = 0x00407E60
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 1349
+type = "DIR32"
+symbol = "?g_ReplayCaptureAt00671750@@3VSelectionReplayF229@@A"
+target = 0x00671750
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 1354
+type = "REL32"
+symbol = "?BeginCapture@SelectionReplayF229@@QAEXXZ"
+target = 0x00413790
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 1375
+type = "DIR32"
+symbol = "?g_ChoiceReturnStepAt0065747C@@3MB"
+target = 0x0065747C
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 1399
+type = "DIR32"
+symbol = "?g_ChoiceLoopLimitAt00658258@@3MB"
+target = 0x00658258
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 1421
+type = "DIR32"
+symbol = "?g_ChoiceLoopLimitAt00658258@@3MB"
+target = 0x00658258
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 1442
+type = "DIR32"
+symbol = "$L500"
+target = 0x004338E2
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 1446
+type = "DIR32"
+symbol = "$L502"
+target = 0x004338F0
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 1450
+type = "DIR32"
+symbol = "$L504"
+target = 0x004338FE
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 1454
+type = "DIR32"
+symbol = "$L493"
+target = 0x00433926
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 1458
+type = "DIR32"
+symbol = "$L506"
+target = 0x0043390C
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 1462
+type = "DIR32"
+symbol = "$L493"
+target = 0x00433926
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 1466
+type = "DIR32"
+symbol = "$L493"
+target = 0x00433926
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 1470
+type = "DIR32"
+symbol = "$L493"
+target = 0x00433926
+[[units.character-select-scene-advance-00433470.relocations]]
+offset = 1474
+type = "DIR32"
+symbol = "$L508"
+target = 0x0043391A

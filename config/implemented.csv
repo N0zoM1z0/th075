@@ -542,3 +542,4 @@ AliceFighter::CreateOwnedObject
 AliceFighter::ResetRound
 CharacterSelectScene::UpdatePlayerChoice
 CharacterSelectScene::UpdatePlayerConfirmation
+CharacterSelectScene::Advance
