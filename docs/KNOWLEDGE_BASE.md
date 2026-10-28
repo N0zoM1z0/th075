@@ -4605,3 +4605,81 @@ padding, masked relocation or truncated function was used. Existing
 ReplayRecords read functions, Win32/CRT implementation, and all 97
 origin-pending functions are not double counted. Local exact
 checkpoint is **not** a remote Oracle acceptance receipt.
+
+
+## F328: complete original 375-byte ReplayRecords file finalizer cold-exact
+
+`ReplayRecords::FinalizeFile` at `004138E0..00413A56` is a complete
+R035-authored original Japanese PE function of **375 CODE bytes**,
+**105 independent native x86 instructions**, original `/GS` stack
+security cookie/prologue/epilogue and `0x12C` native frame. Full
+original native CODE SHA256 is
+`8deb7f0df2e205313ed2f0ded219a968465133d19c8c5b4aeb4dc67d7809f3b1`.
+The previously F218-attempted complete semantic source/negative tests
+remain under `.analysis/f218-replay-file/`, with new 280-byte/12-byte
+physical grouped C++ negative controls, exact whole COFF and
+**one-unit-only cold replay** under `.analysis/f328-replay-final/`.
+Accepted real C++ source `src/ReplayFinalizeFileF328.cpp`.
+
+Its native behavior constructs the output replay filename via original
+`00414300` into a 264-byte path buffer, calls imported CreateFileA
+(GENERIC_WRITE/CREATE_ALWAYS) and writes the original 0x3C-byte
+record header at owner+0x108 with actual WriteFile. It closes its
+prior input handle, reopens original data path `replay\replay.tmp`
+from game global `00657904` as GENERIC_READ/OPEN_EXISTING, gets
+its actual GetFileSize, allocates the requested byte count through
+original `006416A2`, and loops over all original unsigned byte indexes,
+calling native ReadFile(input,byteBuffer,1) then
+WriteFile(output,byteBuffer,1) with the correct original `written`
+DWORD and Win32 IATs. Afterwards it frees the real allocated pointer
+through original native `0064169D`, closes and clears the input
+handle, closes the output and checks original `/GS` cookie via
+native `00640611`. No source-invented error branch, file close or
+allocator fallback is added. All 15 actual COFF relocation fields
+(including real cookie, game path builder, Win32 IATs, allocation and
+free, and security check) are compared in their physical original
+positions and solved native destinations.
+
+The old whole natural C++ source compiled 384 bytes rather than 375
+with an incorrect 0x134 frame and wrongly allocated original locals.
+The original source storage contains **exactly these used values**:
+
+| Native EBP stack location | Real meaningful original field |
+| --- | --- |
+| −0x128 | pointer passed to native free |
+| −0x124 | actual allocated pointer returned by native new |
+| −0x120 | actual byte copy pointer used by ReadFile and WriteFile |
+| −0x11C | actual `written` DWORD passed to all original file I/O |
+| −0x118..−0x11 | actual 264-byte output archive path |
+| −0x10 | native `/GS` cookie (compiler-managed, not modeled as a source field) |
+| −0xC | real output file HANDLE |
+| −0x8 | real input file byte count from GetFileSize |
+| −0x4 | real unsigned per-byte loop index |
+
+A **280-byte `NativeFinalizeWorkF328`** plain C++ struct groups
+only the three genuinely used pointer aliases, byte count and path.
+With the actual native `/GS` cookie, the pinned VC7.1 compiler
+then naturally generated the complete **375-byte CODE extent,
+308/315 nonrelocation byte matches and all 15 actual COFF targets**.
+The last seven nonfield mismatches were entirely different EBP
+positions for the *three other real values*. Ordinary independent
+variables assigned the output HANDLE EBP−0x8 and file size EBP−0xC,
+opposite native. A **12-byte `ActualFileStateF328`** grouping only
+real output HANDLE, file size DWORD and unsigned index in precisely
+that original physical order restores native EBP−0xC/−0x8/−0x4
+without any additional code/data/padding. The resulting source
+compiles exactly **375/375 original CODE bytes, 315/315 original
+comparable byte positions and 15/15 physical COFF relocations**
+under pinned VC7.1 `/Od /Ob0 /Gy /GR- /GX- /GS /Zi`. Only the
+affected unit `replay-records-finalize-file-004138e0` was cold rebuilt,
+reporting **1/1 exact**.
+
+This is independent authored CODE from F326's complete 1,252-byte
+`AppendRecord`, F259's separately accepted `LoadRecord`, and the
+other replay-file methods; there is **no duplicate CODE credit** for
+any originally accepted game callee, imported Win32/CRT/VC7 code or
+the 97 origin-unknown candidates. Borrowed owner/allocator interface
+identities remain provisional; the complete original class layout
+is not inferred solely from the machine-code match. No manual x86,
+masked relocations, fake source locals/padding, byte graft, cropped
+original function, all-unit cold replay or remote Oracle acceptance.
