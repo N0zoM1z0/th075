@@ -547,3 +547,5 @@ CharacterSelectScene::ProcessPlayerOptions
 CharacterSelectScene::ProcessSubselection
 ReplayBrowserScene::ScanFiles
 MusicRoomScene::UpdateSelection
+MusicRoomScene::RenderTrackCatalogText
+MusicRoomScene::RenderSelectedTitle

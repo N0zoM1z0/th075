@@ -1203,3 +1203,53 @@ instantiated or embedded, no extra helper/global/data bytes are credited.
 This is a local exact replay, not a remote Oracle receipt, and the 97
 origin-unknown candidates are unchanged. Complete native evidence and
 reproducible probe/cold logs are under `.analysis/f234-music-select/`.
+
+
+## F235: exact pair of complete music-room text-rasterization functions
+
+Both entire R040 authored text-rendering native extents have been measured
+independently against the pinned original PE.
+
+* `MusicRoomScene::RenderTrackCatalogText`, `00426670..0042689A`,
+  **555 CODE bytes / 136 native x86 instructions**, SHA256
+  `e4fa7a8d0959984efd8330089a6c75c21d33ef3ad7c983ff7d47bc796053ab24`,
+  reproduces the target's true 2,000-byte text buffer, complete count loop
+  over 16-byte track records, real progress status at `00416DC0` with
+  `006718F8`, signed track metadata, original empty/hidden/newline string
+  addresses `00657C0A`, `00657C0C`, `00657C20`, and real strcpy/strcat.
+  The scene's `this+0x10` D3D8 texture is locked, original 56-byte glyph
+  renderer constructed and configured, string rasterized to native locked
+  surface dimensions 1024x1024/560-pitch, then deleted and unlocked. Its
+  natural `/Od /GX /GS` source first compiled to **471/471** non-field
+  bytes with **all 21 original COFF relocations** and cold-replayed `exact`.
+
+* `MusicRoomScene::RenderSelectedTitle`, `004268A0..00426A63`,
+  **452 CODE bytes / 114 native instructions**, SHA256
+  `a023fd37218cf93c70c7ba2cd13ece2bcd2baafc00df0c1fb00cabedc6ba24ad`,
+  tests the genuine signed selected-record index and original missing-title
+  versus `sprintf("%s",name)` path. Native strings at `00657C32/00657C34`,
+  scene D3D8 texture `+0x14`, glyph font `00657C38`, 512x32/560-pitch
+  rasterization, deletion, unlock and native `RET4` remain intact. The
+  first complete 452-byte VC7.1 probe had 358/388 comparable bytes because
+  a presumed 308-byte local buffer made `SUB ESP,0x168` and shifted all
+  physical stack operands eight bytes below the native `SUB ESP,0x160`.
+  Native object and char-array addresses confirm the real **300-byte local
+  message buffer** (not a fake padding or masking change). That ordinary
+  source change matches **388/388** comparable bytes and all **16 real
+  relocation fields**, independently cold-replayed `exact`.
+
+Both C++ files `src/MusicListRenderF235.cpp` and
+`src/MusicTitleRenderF235.cpp` use only borrowed scene/texture receivers and
+previously accepted F191 physical 56-byte glyph receiver observations;
+no complete original class layout, embedded incomplete owner or imported
+D3D8/font/CRT/helper bytes are claimed. Both real exception frames
+(`006557F9` and `00655811`), native `0066FE30` /GS cookie and
+`00640611` check, operator new(56), glyph constructor `0041BF90`, font
+setup `0041C060`, rasterizer `0041C2E0` and existing deleting destructor
+`00413620` are precisely accounted for as **relocations only**. Every
+physical original full function extent and all 21+16 relocations are
+independently guarded in `tests/test_music_render_f235.py`; original
+negative/best probes, target hashes and cold logs are retained in
+`.analysis/f235-music-render/`. Only the two changed F235 units were
+cold-replayed; no broad rebuild or invented source bytes. The 97 unresolved
+origin candidates remain uncredited; Oracle acceptance remains separate.

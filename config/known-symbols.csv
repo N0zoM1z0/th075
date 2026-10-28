@@ -530,3 +530,5 @@ address,name,module,confidence,evidence
 0x00433BE0,CharacterSelectScene::ProcessSubselection,CharacterSelectScene,inferred,F230; complete 264-byte cold exact with 16 relocations; actual scene class and source name provisional
 0x0042D470,ReplayBrowserScene::ScanFiles,ReplayBrowserScene,inferred,F231; complete original 613-byte file scan and 31 native relocation fields cold exact; original nominal class/deque layouts unproven
 0x004259D0,MusicRoomScene::UpdateSelection,MusicRoomScene,inferred,F234; full 675-byte music selection update and 24 physical relocations cold exact; original class identities and layouts provisional
+0x00426670,MusicRoomScene::RenderTrackCatalogText,MusicRoomScene,inferred,F235; complete authored 555-byte music catalog text builder and 21 original relocation fields cold exact; original nominal scene and glyph layouts unproven
+0x004268A0,MusicRoomScene::RenderSelectedTitle,MusicRoomScene,inferred,F235; native whole 452-byte title renderer and 16 actual relocations cold-exact; source buffer 300 and signed selector physically checked; nominal owner unresolved

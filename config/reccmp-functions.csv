@@ -548,3 +548,5 @@ CharacterSelectScene::ProcessPlayerOptions,0x00433A40,function
 CharacterSelectScene::ProcessSubselection,0x00433BE0,function
 ReplayBrowserScene::ScanFiles,0x0042D470,function
 MusicRoomScene::UpdateSelection,0x004259D0,function
+MusicRoomScene::RenderTrackCatalogText,0x00426670,function
+MusicRoomScene::RenderSelectedTitle,0x004268A0,function

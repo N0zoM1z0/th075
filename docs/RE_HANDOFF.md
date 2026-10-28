@@ -1,4 +1,4 @@
-# TH075 — active reconstruction handoff (F234)
+# TH075 — active reconstruction handoff (F235)
 
 **Updated 2026-10-28. Read this document before new experiments.**
 
@@ -12,17 +12,17 @@ Earlier H184 advice to stop is historical and **does not apply**.
 
 | Item | Current evidence |
 | --- | --- |
-| Local branch / last exact-code commit | `main` / F234 local acceptance; prior F231 committed `e5aac7f` |
+| Local branch / last exact-code commit | `main` / F235 local acceptance; F234 commit `21cb1c7` |
 | Upstream | `origin/main` tracked locally; verify current ahead/behind and dirty state before further work |
-| Working tree | Clean after F234 acceptance commit if successful; inspect any dirty work before editing |
+| Working tree | Clean after F235 commit if successful; inspect any dirty work before editing |
 | Native binary | `resources/th075.exe`, SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98` |
 | Candidate count | 4,351; origin review: 1,002 authored, 2,671 library, 581 compiler, 97 unknown |
-| Accepted functions / units | **549 / 549** |
-| Accepted authored CODE | **774,729 bytes** |
-| Reviewed authored coverage | 774,729 / 1,973,516 = **39.26%** |
-| Conservative coverage | **39.18%** counting 3,608 origin-pending bytes |
+| Accepted functions / units | **551 / 551** |
+| Accepted authored CODE | **775,736 bytes** |
+| Reviewed authored coverage | 775,736 / 1,973,516 = **39.31%** |
+| Conservative coverage | **39.24%** counting 3,608 origin-pending bytes |
 | Goal | **98% not reached** |
-| Verification | F234 675-byte whole music-room selector cold exact with all 24 fields; prior F231 613-byte replay scan cold exact with 31 fields; tracking/checkpoint/targeted tests passed; NO all-unit cold replay; no external Oracle receipt |
+| Verification | F235 two complete music rendering units (555+452 CODE bytes, 21+16 fields) independently cold-exact; F234 675-byte whole music selector cold-exact; targeted tracking/checkpoint tests passed, NO all-unit cold replay; no external Oracle receipt |
 
 **Recheck the actual live status immediately**. Local commits are checkpoints,
 not evidence of a remote push or external Oracle acceptance. Earlier Git
@@ -65,7 +65,9 @@ inert variable or arbitrary padding may earn exact credit.
 | F230 `5dd2dcc`: CharacterSelectScene::ProcessPlayerOptions | `00433A40` | 404 | 18 |
 | F230 `5dd2dcc`: CharacterSelectScene::ProcessSubselection | `00433BE0` | 264 | 16 |
 | F231 `e5aac7f`: ReplayBrowserScene::ScanFiles | `0042D470` | 613 | 31 |
-| F234: MusicRoomScene::UpdateSelection | `004259D0` | 675 | 24 |
+| F234 `21cb1c7`: MusicRoomScene::UpdateSelection | `004259D0` | 675 | 24 |
+| F235: MusicRoomScene::RenderTrackCatalogText | `00426670` | 555 | 21 |
+| F235: MusicRoomScene::RenderSelectedTitle | `004268A0` | 452 | 16 |
 
 F222 proved signed 32-bit x87 `FILD` divided by the target's 36.0f
 (`00659308`), 74 physical animation records and a final call into the
@@ -73,7 +75,7 @@ F222 proved signed 32-bit x87 `FILD` divided by the target's 36.0f
 `i <= 36`, not the byte-different `i < 37`. Its three relocations all
 match. F223 adds two complete borrowed constructors and a real EH-backed
 232-byte `new`; Youmu additionally calls the observed +0xFEC child init.
-All nineteen units were independently cold-exact. F224 used a complete, native-EH-backed `new(0xE8)` with the real Youmu constructor at `00536360`, then ordered 16 halfword resets, the accepted base reset `00457010`, and the observed +0xFEC subcomponent reset `00531CE0`. Their nominal C++ classes and
+All twenty-one units were independently cold-exact. F224 used a complete, native-EH-backed `new(0xE8)` with the real Youmu constructor at `00536360`, then ordered 16 halfword resets, the accepted base reset `00457010`, and the observed +0xFEC subcomponent reset `00531CE0`. Their nominal C++ classes and
 external helper implementations are **not** established by code equality.
 
 F225 additionally accepts an entire 668-byte character-selection constructor (185 native instructions) with actual vtable, three separately allocated texture managers, two deleting destructors, two real configuration loops, and 38 relocation fields. Its first full probe used mistaken pointer-indirect indexing and emitted 677 bytes; the verified this-relative byte arrays restore exact native 668 bytes. The base-scene constructor remains R108 origin-unknown and uncredited.
@@ -82,7 +84,7 @@ F226 adds an entire 1,005-byte replay-browser selection state machine. A natural
 
 F227/F228 independently cold-replay 6 additional authored units (4 fighter routines, 2 large character-select controllers) for 2,722 more CODE bytes. Two 120-byte factory functions reconstruct genuine EH-backed `new(232)` and individual constructors; two round resets retain character-specific field order. `UpdatePlayerChoice` 1,029 bytes, 245 instructions, and 32 fields; `UpdatePlayerConfirmation` 995 bytes, 242 instructions, and 34 fields. Both include real x87, input and stage transitions. Their unfinished dirty source and unit evidence were investigated and completed, not discarded.
 
-F229 adds the complete 1,442-byte R044 authored scene advancement state machine and its nine-entry 36-byte owned dispatch table. A first natural source emitted 1,429 CODE bytes plus table, but its branch and indexing shapes differed. Correct typed 0x48-stride input frames, true opposite-player indexing and native-first cancel/action dispatch ordering restore 1,442 CODE bytes, 1174/1174 comparable bytes and all 76 physical relocations over the 1,478-byte full comparison extent. Only `character-select-scene-advance-00433470` was cold-replayed, exact. **Do not credit jump-table bytes as CODE.** The nearby `UpdateCancelAnimation` at `00435870` remains **unaccepted** (497-byte object, 438/445 comparable bytes; x87 FLD order mismatch), with all negative natural-source variants retained under `.analysis/f229-character-select/` and `.analysis/f230-selection-helpers/` and `.analysis/f231-replay-scan/`, `.analysis/f232-append-scope/`, `.analysis/f233-record-scope/`, `.analysis/f234-music-select/`.
+F229 adds the complete 1,442-byte R044 authored scene advancement state machine and its nine-entry 36-byte owned dispatch table. A first natural source emitted 1,429 CODE bytes plus table, but its branch and indexing shapes differed. Correct typed 0x48-stride input frames, true opposite-player indexing and native-first cancel/action dispatch ordering restore 1,442 CODE bytes, 1174/1174 comparable bytes and all 76 physical relocations over the 1,478-byte full comparison extent. Only `character-select-scene-advance-00433470` was cold-replayed, exact. **Do not credit jump-table bytes as CODE.** The nearby `UpdateCancelAnimation` at `00435870` remains **unaccepted** (497-byte object, 438/445 comparable bytes; x87 FLD order mismatch), with all negative natural-source variants retained under `.analysis/f229-character-select/` and `.analysis/f230-selection-helpers/` and `.analysis/f231-replay-scan/`, `.analysis/f232-append-scope/`, `.analysis/f233-record-scope/`, `.analysis/f234-music-select/` and `.analysis/f235-music-render/`.
 
 F230 accepts the two real selection-state callees used by F229: 404-byte `ProcessPlayerOptions` (111 native instructions, 18 relocations) and 264-byte `ProcessSubselection` (70 native instructions, 16 relocations). The second compiled exact on the first natural source; the first required preserving native 32-bit boolean-toggle lowering (`flag ? 0 : 1` instead of `!flag`). Both were independently cold-replayed and earned 668 new authored CODE bytes. Call target `00438A60` retains its separate unknown origin and receives no matching credit.
 
@@ -92,10 +94,12 @@ F232 tested a new meaningful subset of lexical scope alternatives for the **comp
 
 F234 cold-accepts the complete 675-byte `MusicRoomScene::UpdateSelection` (179 native instructions, 24 true relocation fields). First natural C++ source gets 579/579 nonfield bytes and all fields, covering actual directional input, 16-byte track-record stride, signed index/scroll, unlocked-card check, highlight, music play/fade, exit, cooldown. Only `--unit music-room-scene-update-selection-004259d0` cold replayed; no all-unit replay.
 
+F235 independently cold-replays the two complete music-room text rasterization calls with native EH, GS, 56-byte glyph allocation, D3D8 LockRect/UnlockRect, and all physical fields: `RenderTrackCatalogText` 555 CODE/136 instructions/21 relocs, `RenderSelectedTitle` 452 CODE/114 instructions/16 relocs. The catalog was cold exact with the first natural source (471/471 comparable bytes). The selected-title first source emitted the exact 452 length but used a wrongly inferred 308-byte local message buffer; original stack/frame measurements prove 300 bytes, fixing all 30 stack operand differences and yielding 388/388 and cold exact. Only the two F235 units were rebuilt. The original glyph class layout remains inferred and caller contexts are call-only.
+
 Relevant full native proofs: `config/match-units.toml`,
 `config/exact-adoptions.json`, sources `src/*F222.cpp`/`src/*F223.cpp`,
 and `docs/KNOWLEDGE_BASE.md`. The cold-replay logs are private in
-`.analysis/f222-marisa-reset/`, `.analysis/f223-fighter-ctors/`, and `.analysis/f224-youmu-lifecycle/`, and `.analysis/f225-big-functions/` and `.analysis/f226-replay-browser/`, `.analysis/f227-fighter-recovery/`, `.analysis/f226-player-choice/` and `.analysis/f228-confirmation/` and `.analysis/f229-character-select/` and `.analysis/f230-selection-helpers/` and `.analysis/f231-replay-scan/`, `.analysis/f232-append-scope/`, `.analysis/f233-record-scope/`, `.analysis/f234-music-select/`.
+`.analysis/f222-marisa-reset/`, `.analysis/f223-fighter-ctors/`, and `.analysis/f224-youmu-lifecycle/`, and `.analysis/f225-big-functions/` and `.analysis/f226-replay-browser/`, `.analysis/f227-fighter-recovery/`, `.analysis/f226-player-choice/` and `.analysis/f228-confirmation/` and `.analysis/f229-character-select/` and `.analysis/f230-selection-helpers/` and `.analysis/f231-replay-scan/`, `.analysis/f232-append-scope/`, `.analysis/f233-record-scope/`, `.analysis/f234-music-select/` and `.analysis/f235-music-render/`.
 Earlier accepted functions remain in the canonical ledgers. **Do not run any all-unit cold replay**; user explicitly requires only newly changed/affected units. Keep builds serialized/headless.
 
 ## 3. Unsolved **large** functions — recommended next work
