@@ -52211,3 +52211,864 @@ offset = 1982
 type = "DIR32"
 symbol = "$L402"
 target = 0x00445BED
+
+
+[units.battle-loader-load-stage-004183d0]
+source = "src/BattleStageLoadBossF389.cpp"
+object = "build/matching/BattleStageLoadBossF389.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["BattleLoader::LoadStageAt004183D0"]
+symbol = "?LoadStage@BattleStageLoaderF389@@YAXXZ"
+target_address = 0x004183D0
+size = 3765
+compare_size = 3857
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$?LoadStage@BattleStageLoaderF389@@YAXXZ"
+target = 0x00655422
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 31
+type = "DIR32"
+symbol = "?g_StartStageLogAt00657A4C@@3QBDB"
+target = 0x00657A4C
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 36
+type = "REL32"
+symbol = "?BattleLogAt0041CC50@@YAXPBD@Z"
+target = 0x0041CC50
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 45
+type = "DIR32"
+symbol = "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A"
+target = 0x00671424
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 53
+type = "DIR32"
+symbol = "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A"
+target = 0x00671424
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 104
+type = "DIR32"
+symbol = "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A"
+target = 0x00671424
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 115
+type = "DIR32"
+symbol = "?g_StageIdAt0067161D@@3CA"
+target = 0x0067161D
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 147
+type = "DIR32"
+symbol = "$L1359"
+target = 0x00419285
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 154
+type = "DIR32"
+symbol = "?g_StageVariantAt00671604@@3EA"
+target = 0x00671604
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 168
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 195
+type = "REL32"
+symbol = "??0StageBG00aF389@@QAE@XZ"
+target = 0x00449AA0
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 238
+type = "DIR32"
+symbol = "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A"
+target = 0x00671424
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 247
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 274
+type = "REL32"
+symbol = "??0StageBG00xF389@@QAE@XZ"
+target = 0x0044A520
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 317
+type = "DIR32"
+symbol = "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A"
+target = 0x00671424
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 329
+type = "DIR32"
+symbol = "?g_StageVariantAt00671604@@3EA"
+target = 0x00671604
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 343
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 370
+type = "REL32"
+symbol = "??0StageBG01aF389@@QAE@XZ"
+target = 0x0044ABB0
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 413
+type = "DIR32"
+symbol = "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A"
+target = 0x00671424
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 422
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 449
+type = "REL32"
+symbol = "??0StageBG01xF389@@QAE@XZ"
+target = 0x0044B0F0
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 491
+type = "DIR32"
+symbol = "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A"
+target = 0x00671424
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 503
+type = "DIR32"
+symbol = "?g_StageVariantAt00671604@@3EA"
+target = 0x00671604
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 517
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 544
+type = "REL32"
+symbol = "??0StageBG02aF389@@QAE@XZ"
+target = 0x0044B550
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 586
+type = "DIR32"
+symbol = "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A"
+target = 0x00671424
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 598
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 625
+type = "REL32"
+symbol = "??0StageBG02xF389@@QAE@XZ"
+target = 0x0044C4B0
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 668
+type = "DIR32"
+symbol = "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A"
+target = 0x00671424
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 680
+type = "DIR32"
+symbol = "?g_StageVariantAt00671604@@3EA"
+target = 0x00671604
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 694
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 721
+type = "REL32"
+symbol = "??0StageBG03aF389@@QAE@XZ"
+target = 0x0044CB70
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 764
+type = "DIR32"
+symbol = "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A"
+target = 0x00671424
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 776
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 803
+type = "REL32"
+symbol = "??0StageBG03xF389@@QAE@XZ"
+target = 0x0044D0B0
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 846
+type = "DIR32"
+symbol = "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A"
+target = 0x00671424
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 858
+type = "DIR32"
+symbol = "?g_StageVariantAt00671604@@3EA"
+target = 0x00671604
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 872
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 899
+type = "REL32"
+symbol = "??0StageBG04aF389@@QAE@XZ"
+target = 0x0044D530
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 942
+type = "DIR32"
+symbol = "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A"
+target = 0x00671424
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 954
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 981
+type = "REL32"
+symbol = "??0StageBG04xF389@@QAE@XZ"
+target = 0x0044DE70
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 1023
+type = "DIR32"
+symbol = "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A"
+target = 0x00671424
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 1035
+type = "DIR32"
+symbol = "?g_StageVariantAt00671604@@3EA"
+target = 0x00671604
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 1049
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 1076
+type = "REL32"
+symbol = "??0StageBG05aF389@@QAE@XZ"
+target = 0x0044E2F0
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 1118
+type = "DIR32"
+symbol = "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A"
+target = 0x00671424
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 1130
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 1157
+type = "REL32"
+symbol = "??0StageBG05xF389@@QAE@XZ"
+target = 0x0044F300
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 1200
+type = "DIR32"
+symbol = "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A"
+target = 0x00671424
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 1212
+type = "DIR32"
+symbol = "?g_StageVariantAt00671604@@3EA"
+target = 0x00671604
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 1226
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 1253
+type = "REL32"
+symbol = "??0StageBG06aF389@@QAE@XZ"
+target = 0x0044F780
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 1296
+type = "DIR32"
+symbol = "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A"
+target = 0x00671424
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 1308
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 1344
+type = "REL32"
+symbol = "??0StageBG06xF389@@QAE@XZ"
+target = 0x004500F0
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 1387
+type = "DIR32"
+symbol = "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A"
+target = 0x00671424
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 1399
+type = "DIR32"
+symbol = "?g_StageVariantAt00671604@@3EA"
+target = 0x00671604
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 1413
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 1449
+type = "REL32"
+symbol = "??0StageBG07aF389@@QAE@XZ"
+target = 0x00450330
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 1498
+type = "DIR32"
+symbol = "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A"
+target = 0x00671424
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 1510
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 1546
+type = "REL32"
+symbol = "??0StageBG07xF389@@QAE@XZ"
+target = 0x004508E0
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 1594
+type = "DIR32"
+symbol = "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A"
+target = 0x00671424
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 1606
+type = "DIR32"
+symbol = "?g_StageVariantAt00671604@@3EA"
+target = 0x00671604
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 1620
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 1656
+type = "REL32"
+symbol = "??0StageBG08aF389@@QAE@XZ"
+target = 0x00450B20
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 1704
+type = "DIR32"
+symbol = "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A"
+target = 0x00671424
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 1716
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 1752
+type = "REL32"
+symbol = "??0StageBG08xF389@@QAE@XZ"
+target = 0x00451130
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 1801
+type = "DIR32"
+symbol = "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A"
+target = 0x00671424
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 1813
+type = "DIR32"
+symbol = "?g_StageVariantAt00671604@@3EA"
+target = 0x00671604
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 1827
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 1863
+type = "REL32"
+symbol = "??0StageBG09aF389@@QAE@XZ"
+target = 0x00451370
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 1912
+type = "DIR32"
+symbol = "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A"
+target = 0x00671424
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 1924
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 1960
+type = "REL32"
+symbol = "??0StageBG09xF389@@QAE@XZ"
+target = 0x00451C70
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 2009
+type = "DIR32"
+symbol = "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A"
+target = 0x00671424
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 2021
+type = "DIR32"
+symbol = "?g_StageVariantAt00671604@@3EA"
+target = 0x00671604
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 2035
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 2071
+type = "REL32"
+symbol = "??0StageBG00bF389@@QAE@XZ"
+target = 0x00449E10
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 2120
+type = "DIR32"
+symbol = "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A"
+target = 0x00671424
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 2129
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 2165
+type = "REL32"
+symbol = "??0StageBG00yF389@@QAE@XZ"
+target = 0x0044A750
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 2213
+type = "DIR32"
+symbol = "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A"
+target = 0x00671424
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 2225
+type = "DIR32"
+symbol = "?g_StageVariantAt00671604@@3EA"
+target = 0x00671604
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 2239
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 2275
+type = "REL32"
+symbol = "??0StageBG01bF389@@QAE@XZ"
+target = 0x0044AE50
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 2323
+type = "DIR32"
+symbol = "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A"
+target = 0x00671424
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 2332
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 2368
+type = "REL32"
+symbol = "??0StageBG01yF389@@QAE@XZ"
+target = 0x0044B320
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 2417
+type = "DIR32"
+symbol = "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A"
+target = 0x00671424
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 2429
+type = "DIR32"
+symbol = "?g_StageVariantAt00671604@@3EA"
+target = 0x00671604
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 2443
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 2479
+type = "REL32"
+symbol = "??0StageBG02bF389@@QAE@XZ"
+target = 0x0044BA70
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 2528
+type = "DIR32"
+symbol = "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A"
+target = 0x00671424
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 2540
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 2576
+type = "REL32"
+symbol = "??0StageBG02yF389@@QAE@XZ"
+target = 0x0044C6F0
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 2625
+type = "DIR32"
+symbol = "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A"
+target = 0x00671424
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 2637
+type = "DIR32"
+symbol = "?g_StageVariantAt00671604@@3EA"
+target = 0x00671604
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 2651
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 2687
+type = "REL32"
+symbol = "??0StageBG03bF389@@QAE@XZ"
+target = 0x0044CE10
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 2736
+type = "DIR32"
+symbol = "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A"
+target = 0x00671424
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 2748
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 2784
+type = "REL32"
+symbol = "??0StageBG03yF389@@QAE@XZ"
+target = 0x0044D2F0
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 2832
+type = "DIR32"
+symbol = "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A"
+target = 0x00671424
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 2844
+type = "DIR32"
+symbol = "?g_StageVariantAt00671604@@3EA"
+target = 0x00671604
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 2858
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 2894
+type = "REL32"
+symbol = "??0StageBG04bF389@@QAE@XZ"
+target = 0x0044D9C0
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 2942
+type = "DIR32"
+symbol = "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A"
+target = 0x00671424
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 2954
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 2990
+type = "REL32"
+symbol = "??0StageBG04yF389@@QAE@XZ"
+target = 0x0044E0B0
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3039
+type = "DIR32"
+symbol = "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A"
+target = 0x00671424
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3051
+type = "DIR32"
+symbol = "?g_StageVariantAt00671604@@3EA"
+target = 0x00671604
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3065
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3101
+type = "REL32"
+symbol = "??0StageBG05bF389@@QAE@XZ"
+target = 0x0044E810
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3150
+type = "DIR32"
+symbol = "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A"
+target = 0x00671424
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3162
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3198
+type = "REL32"
+symbol = "??0StageBG05yF389@@QAE@XZ"
+target = 0x0044F540
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3247
+type = "DIR32"
+symbol = "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A"
+target = 0x00671424
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3259
+type = "DIR32"
+symbol = "?g_StageVariantAt00671604@@3EA"
+target = 0x00671604
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3273
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3309
+type = "REL32"
+symbol = "??0StageBG00cF389@@QAE@XZ"
+target = 0x0044A230
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3358
+type = "DIR32"
+symbol = "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A"
+target = 0x00671424
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3367
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3403
+type = "REL32"
+symbol = "??0StageBG00zF389@@QAE@XZ"
+target = 0x0044A980
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3451
+type = "DIR32"
+symbol = "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A"
+target = 0x00671424
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3463
+type = "DIR32"
+symbol = "?g_StageVariantAt00671604@@3EA"
+target = 0x00671604
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3477
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3513
+type = "REL32"
+symbol = "??0StageBG02cF389@@QAE@XZ"
+target = 0x0044BF90
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3561
+type = "DIR32"
+symbol = "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A"
+target = 0x00671424
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3573
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3609
+type = "REL32"
+symbol = "??0StageBG02zF389@@QAE@XZ"
+target = 0x0044C930
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3658
+type = "DIR32"
+symbol = "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A"
+target = 0x00671424
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3665
+type = "DIR32"
+symbol = "?g_BattleModeAt006714B4@@3CA"
+target = 0x006714B4
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3677
+type = "DIR32"
+symbol = "?g_StageIdAt0067161D@@3CA"
+target = 0x0067161D
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3683
+type = "REL32"
+symbol = "?SetStageStateAt00419CB0@@YAXH@Z"
+target = 0x00419CB0
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3693
+type = "DIR32"
+symbol = "?g_ReplayModeAt0066C238@@3CA"
+target = 0x0066C238
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3705
+type = "DIR32"
+symbol = "?g_ReplayModeAt0066C238@@3CA"
+target = 0x0066C238
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3717
+type = "DIR32"
+symbol = "?g_StageIdAt0067161D@@3CA"
+target = 0x0067161D
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3729
+type = "DIR32"
+symbol = "?g_AudioStageAt006718F8@@3VAudioStageF389@@A"
+target = 0x006718F8
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3734
+type = "REL32"
+symbol = "?BeginStage@AudioStageF389@@QAEXH@Z"
+target = 0x00416CE0
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3739
+type = "DIR32"
+symbol = "?g_EndStageLogAt00657A5C@@3QBDB"
+target = 0x00657A5C
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3744
+type = "REL32"
+symbol = "?BattleLogAt0041CC50@@YAXPBD@Z"
+target = 0x0041CC50
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3757
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3765
+type = "DIR32"
+symbol = "$L962"
+target = 0x00418467
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3769
+type = "DIR32"
+symbol = "$L973"
+target = 0x00418516
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3773
+type = "DIR32"
+symbol = "$L984"
+target = 0x004185C4
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3777
+type = "DIR32"
+symbol = "$L995"
+target = 0x00418675
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3781
+type = "DIR32"
+symbol = "$L1006"
+target = 0x00418727
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3785
+type = "DIR32"
+symbol = "$L1017"
+target = 0x004187D8
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3789
+type = "DIR32"
+symbol = "$L1028"
+target = 0x00418889
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3793
+type = "DIR32"
+symbol = "$L1039"
+target = 0x00418944
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3797
+type = "DIR32"
+symbol = "$L1050"
+target = 0x00418A13
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3801
+type = "DIR32"
+symbol = "$L1061"
+target = 0x00418AE2
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3805
+type = "DIR32"
+symbol = "$L1072"
+target = 0x00418BB2
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3809
+type = "DIR32"
+symbol = "$L1083"
+target = 0x00418C7E
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3813
+type = "DIR32"
+symbol = "$L1094"
+target = 0x00418D4A
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3817
+type = "DIR32"
+symbol = "$L1105"
+target = 0x00418E1A
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3821
+type = "DIR32"
+symbol = "$L1116"
+target = 0x00418EE9
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3825
+type = "DIR32"
+symbol = "$L1127"
+target = 0x00418FB8
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3829
+type = "DIR32"
+symbol = "$L959"
+target = 0x0041921E
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3833
+type = "DIR32"
+symbol = "$L959"
+target = 0x0041921E
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3837
+type = "DIR32"
+symbol = "$L959"
+target = 0x0041921E
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3841
+type = "DIR32"
+symbol = "$L959"
+target = 0x0041921E
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3845
+type = "DIR32"
+symbol = "$L1138"
+target = 0x00419088
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3849
+type = "DIR32"
+symbol = "$L959"
+target = 0x0041921E
+[[units.battle-loader-load-stage-004183d0.relocations]]
+offset = 3853
+type = "DIR32"
+symbol = "$L1149"
+target = 0x00419154

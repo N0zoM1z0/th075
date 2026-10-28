@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377; F378; F379; F386",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377; F378; F379; F386; F389",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "6c6839ccbdbafbf1ded8cd87e60fcdad4600e03a49ab0f937047126fae377801"
+      "current_sha256": "2d2180cd472291486f1785a90e41d619f26c44243884a10438b75b74527c0527"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "6ce75595b3f01c181eb7b0419fdccffb1de69dadfc5e116716015db03e7d6cae"
+      "current_sha256": "3821884310cfcdbfc7f097deccc783a0beb0a19137b51f65ec1f9b1cd20e9ab4"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "2af91981d3f29a2d08816ba795d2af3c455f38a0f33fd1c23bee8932c0e11cea"
+      "current_sha256": "bac1d5e0104690445740e9e718ab4001b1a4b14465c1535fcdcc0441611f6671"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "adc9fc14ed299970cfa3510a986aac3a2f27767c500872f7b8def099f7c29956"
+      "current_sha256": "c479e737093a613b5147c4e78f4733fb443a604ddcac2b4c8f096e7c4d44fa28"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "627c0da82091927d0d07d7d54a79f6753e54999607ce83ab3c93a11584f29afb"
+      "current_sha256": "63b7c5ca0a1aef77dd98a22d90567b7ad7f1390060d295bdca65406695d10407"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -28857,6 +28857,50 @@
         "address": "0x00445A00",
         "origin": "authored",
         "subsystem": "BattleState",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R065"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004183D0",
+        "size": "3765",
+        "span_end": "0x00419284",
+        "current_name": "FUN_004183d0",
+        "proposed_name": "BattleLoader::LoadStageAt004183D0",
+        "module": "BattleLoader",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R065; complete target body, guarded switch table, CFG and game-specific behavior",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x004183D0",
+        "size": "3765",
+        "span_end": "0x00419284",
+        "current_name": "FUN_004183d0",
+        "proposed_name": "BattleLoader::LoadStageAt004183D0",
+        "module": "BattleLoader",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "cdecl",
+        "signature": "void BattleStageLoaderF389::LoadStage()",
+        "is_thunk": "false",
+        "source_file": "src/BattleStageLoadBossF389.cpp",
+        "evidence": "R065; complete target body, guarded switch table, CFG and game-specific behavior; F389; scripts/repo-python scripts/replay-exact-units.py --unit battle-loader-load-stage-004183d0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state independent; F389 independently complete R065 original authored 3765-byte stage-loader boss at 004183D0..00419284, 761 original native x86 instructions, PE SHA256 9d670e4a82fec9987f1785f1d1818aec6677c609cd0d71ba91da8c45406a6076. Entire C++ VC7.1 /GX exception+stage destruction/new lifetime, main 23-entry stage-id switch (18 real case groups including sparse default holes) with original separate 92-byte jump table after RET compared but NOT CODE credited. All original 36 distinct real new sizes 0x68,0xEC,0xF0,0xF4,0xF8 and 0x1D28 from native, original stage variant fallthrough-first branch order (g_StageVariantAt00671604!=0). Thirty-six authentic constructor calls to separately cold-exact original stage functions (R055), original global stage pointer destruction via vtbl[0] scalar deleting dtor, stage log strings, signed battle-mode stage update 00419CB0 and replay-mode-gated stage music 00416CE0. C++ declarations contain only originally observed allocation footprints as opaque carriers, NOT claims to a complete original stage member layout. Comparison across complete 3857 physical bytes matches 3177/3177 nonfield bytes and all 170 original physical COFF DIR32/REL32 destinations, including 23 after-RET table fields. Single affected-unit cold 1/1 exact; no stage-constructor/CRT code double credit, no direct native bytes embedded, fake locals/masks/asm, cropped body, full cold replay or remote Oracle receipt."
+      },
+      "origin": {
+        "address": "0x004183D0",
+        "origin": "authored",
+        "subsystem": "BattleLoader",
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R065"
@@ -193875,6 +193919,1050 @@
           "target": 4479981
         }
       ]
+    },
+    "battle-loader-load-stage-004183d0": {
+      "source": "src/BattleStageLoadBossF389.cpp",
+      "object": "build/matching/BattleStageLoadBossF389.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattleLoader::LoadStageAt004183D0"
+      ],
+      "symbol": "?LoadStage@BattleStageLoaderF389@@YAXXZ",
+      "target_address": 4293584,
+      "size": 3765,
+      "compare_size": 3857,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$?LoadStage@BattleStageLoaderF389@@YAXXZ",
+          "target": 6640674
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 31,
+          "type": "DIR32",
+          "symbol": "?g_StartStageLogAt00657A4C@@3QBDB",
+          "target": 6650444
+        },
+        {
+          "offset": 36,
+          "type": "REL32",
+          "symbol": "?BattleLogAt0041CC50@@YAXPBD@Z",
+          "target": 4312144
+        },
+        {
+          "offset": 45,
+          "type": "DIR32",
+          "symbol": "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 53,
+          "type": "DIR32",
+          "symbol": "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 104,
+          "type": "DIR32",
+          "symbol": "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 115,
+          "type": "DIR32",
+          "symbol": "?g_StageIdAt0067161D@@3CA",
+          "target": 6755869
+        },
+        {
+          "offset": 147,
+          "type": "DIR32",
+          "symbol": "$L1359",
+          "target": 4297349
+        },
+        {
+          "offset": 154,
+          "type": "DIR32",
+          "symbol": "?g_StageVariantAt00671604@@3EA",
+          "target": 6755844
+        },
+        {
+          "offset": 168,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 195,
+          "type": "REL32",
+          "symbol": "??0StageBG00aF389@@QAE@XZ",
+          "target": 4496032
+        },
+        {
+          "offset": 238,
+          "type": "DIR32",
+          "symbol": "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 247,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 274,
+          "type": "REL32",
+          "symbol": "??0StageBG00xF389@@QAE@XZ",
+          "target": 4498720
+        },
+        {
+          "offset": 317,
+          "type": "DIR32",
+          "symbol": "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 329,
+          "type": "DIR32",
+          "symbol": "?g_StageVariantAt00671604@@3EA",
+          "target": 6755844
+        },
+        {
+          "offset": 343,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 370,
+          "type": "REL32",
+          "symbol": "??0StageBG01aF389@@QAE@XZ",
+          "target": 4500400
+        },
+        {
+          "offset": 413,
+          "type": "DIR32",
+          "symbol": "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 422,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 449,
+          "type": "REL32",
+          "symbol": "??0StageBG01xF389@@QAE@XZ",
+          "target": 4501744
+        },
+        {
+          "offset": 491,
+          "type": "DIR32",
+          "symbol": "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 503,
+          "type": "DIR32",
+          "symbol": "?g_StageVariantAt00671604@@3EA",
+          "target": 6755844
+        },
+        {
+          "offset": 517,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 544,
+          "type": "REL32",
+          "symbol": "??0StageBG02aF389@@QAE@XZ",
+          "target": 4502864
+        },
+        {
+          "offset": 586,
+          "type": "DIR32",
+          "symbol": "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 598,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 625,
+          "type": "REL32",
+          "symbol": "??0StageBG02xF389@@QAE@XZ",
+          "target": 4506800
+        },
+        {
+          "offset": 668,
+          "type": "DIR32",
+          "symbol": "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 680,
+          "type": "DIR32",
+          "symbol": "?g_StageVariantAt00671604@@3EA",
+          "target": 6755844
+        },
+        {
+          "offset": 694,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 721,
+          "type": "REL32",
+          "symbol": "??0StageBG03aF389@@QAE@XZ",
+          "target": 4508528
+        },
+        {
+          "offset": 764,
+          "type": "DIR32",
+          "symbol": "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 776,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 803,
+          "type": "REL32",
+          "symbol": "??0StageBG03xF389@@QAE@XZ",
+          "target": 4509872
+        },
+        {
+          "offset": 846,
+          "type": "DIR32",
+          "symbol": "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 858,
+          "type": "DIR32",
+          "symbol": "?g_StageVariantAt00671604@@3EA",
+          "target": 6755844
+        },
+        {
+          "offset": 872,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 899,
+          "type": "REL32",
+          "symbol": "??0StageBG04aF389@@QAE@XZ",
+          "target": 4511024
+        },
+        {
+          "offset": 942,
+          "type": "DIR32",
+          "symbol": "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 954,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 981,
+          "type": "REL32",
+          "symbol": "??0StageBG04xF389@@QAE@XZ",
+          "target": 4513392
+        },
+        {
+          "offset": 1023,
+          "type": "DIR32",
+          "symbol": "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 1035,
+          "type": "DIR32",
+          "symbol": "?g_StageVariantAt00671604@@3EA",
+          "target": 6755844
+        },
+        {
+          "offset": 1049,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 1076,
+          "type": "REL32",
+          "symbol": "??0StageBG05aF389@@QAE@XZ",
+          "target": 4514544
+        },
+        {
+          "offset": 1118,
+          "type": "DIR32",
+          "symbol": "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 1130,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 1157,
+          "type": "REL32",
+          "symbol": "??0StageBG05xF389@@QAE@XZ",
+          "target": 4518656
+        },
+        {
+          "offset": 1200,
+          "type": "DIR32",
+          "symbol": "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 1212,
+          "type": "DIR32",
+          "symbol": "?g_StageVariantAt00671604@@3EA",
+          "target": 6755844
+        },
+        {
+          "offset": 1226,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 1253,
+          "type": "REL32",
+          "symbol": "??0StageBG06aF389@@QAE@XZ",
+          "target": 4519808
+        },
+        {
+          "offset": 1296,
+          "type": "DIR32",
+          "symbol": "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 1308,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 1344,
+          "type": "REL32",
+          "symbol": "??0StageBG06xF389@@QAE@XZ",
+          "target": 4522224
+        },
+        {
+          "offset": 1387,
+          "type": "DIR32",
+          "symbol": "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 1399,
+          "type": "DIR32",
+          "symbol": "?g_StageVariantAt00671604@@3EA",
+          "target": 6755844
+        },
+        {
+          "offset": 1413,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 1449,
+          "type": "REL32",
+          "symbol": "??0StageBG07aF389@@QAE@XZ",
+          "target": 4522800
+        },
+        {
+          "offset": 1498,
+          "type": "DIR32",
+          "symbol": "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 1510,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 1546,
+          "type": "REL32",
+          "symbol": "??0StageBG07xF389@@QAE@XZ",
+          "target": 4524256
+        },
+        {
+          "offset": 1594,
+          "type": "DIR32",
+          "symbol": "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 1606,
+          "type": "DIR32",
+          "symbol": "?g_StageVariantAt00671604@@3EA",
+          "target": 6755844
+        },
+        {
+          "offset": 1620,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 1656,
+          "type": "REL32",
+          "symbol": "??0StageBG08aF389@@QAE@XZ",
+          "target": 4524832
+        },
+        {
+          "offset": 1704,
+          "type": "DIR32",
+          "symbol": "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 1716,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 1752,
+          "type": "REL32",
+          "symbol": "??0StageBG08xF389@@QAE@XZ",
+          "target": 4526384
+        },
+        {
+          "offset": 1801,
+          "type": "DIR32",
+          "symbol": "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 1813,
+          "type": "DIR32",
+          "symbol": "?g_StageVariantAt00671604@@3EA",
+          "target": 6755844
+        },
+        {
+          "offset": 1827,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 1863,
+          "type": "REL32",
+          "symbol": "??0StageBG09aF389@@QAE@XZ",
+          "target": 4526960
+        },
+        {
+          "offset": 1912,
+          "type": "DIR32",
+          "symbol": "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 1924,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 1960,
+          "type": "REL32",
+          "symbol": "??0StageBG09xF389@@QAE@XZ",
+          "target": 4529264
+        },
+        {
+          "offset": 2009,
+          "type": "DIR32",
+          "symbol": "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 2021,
+          "type": "DIR32",
+          "symbol": "?g_StageVariantAt00671604@@3EA",
+          "target": 6755844
+        },
+        {
+          "offset": 2035,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 2071,
+          "type": "REL32",
+          "symbol": "??0StageBG00bF389@@QAE@XZ",
+          "target": 4496912
+        },
+        {
+          "offset": 2120,
+          "type": "DIR32",
+          "symbol": "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 2129,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 2165,
+          "type": "REL32",
+          "symbol": "??0StageBG00yF389@@QAE@XZ",
+          "target": 4499280
+        },
+        {
+          "offset": 2213,
+          "type": "DIR32",
+          "symbol": "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 2225,
+          "type": "DIR32",
+          "symbol": "?g_StageVariantAt00671604@@3EA",
+          "target": 6755844
+        },
+        {
+          "offset": 2239,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 2275,
+          "type": "REL32",
+          "symbol": "??0StageBG01bF389@@QAE@XZ",
+          "target": 4501072
+        },
+        {
+          "offset": 2323,
+          "type": "DIR32",
+          "symbol": "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 2332,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 2368,
+          "type": "REL32",
+          "symbol": "??0StageBG01yF389@@QAE@XZ",
+          "target": 4502304
+        },
+        {
+          "offset": 2417,
+          "type": "DIR32",
+          "symbol": "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 2429,
+          "type": "DIR32",
+          "symbol": "?g_StageVariantAt00671604@@3EA",
+          "target": 6755844
+        },
+        {
+          "offset": 2443,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 2479,
+          "type": "REL32",
+          "symbol": "??0StageBG02bF389@@QAE@XZ",
+          "target": 4504176
+        },
+        {
+          "offset": 2528,
+          "type": "DIR32",
+          "symbol": "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 2540,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 2576,
+          "type": "REL32",
+          "symbol": "??0StageBG02yF389@@QAE@XZ",
+          "target": 4507376
+        },
+        {
+          "offset": 2625,
+          "type": "DIR32",
+          "symbol": "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 2637,
+          "type": "DIR32",
+          "symbol": "?g_StageVariantAt00671604@@3EA",
+          "target": 6755844
+        },
+        {
+          "offset": 2651,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 2687,
+          "type": "REL32",
+          "symbol": "??0StageBG03bF389@@QAE@XZ",
+          "target": 4509200
+        },
+        {
+          "offset": 2736,
+          "type": "DIR32",
+          "symbol": "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 2748,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 2784,
+          "type": "REL32",
+          "symbol": "??0StageBG03yF389@@QAE@XZ",
+          "target": 4510448
+        },
+        {
+          "offset": 2832,
+          "type": "DIR32",
+          "symbol": "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 2844,
+          "type": "DIR32",
+          "symbol": "?g_StageVariantAt00671604@@3EA",
+          "target": 6755844
+        },
+        {
+          "offset": 2858,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 2894,
+          "type": "REL32",
+          "symbol": "??0StageBG04bF389@@QAE@XZ",
+          "target": 4512192
+        },
+        {
+          "offset": 2942,
+          "type": "DIR32",
+          "symbol": "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 2954,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 2990,
+          "type": "REL32",
+          "symbol": "??0StageBG04yF389@@QAE@XZ",
+          "target": 4513968
+        },
+        {
+          "offset": 3039,
+          "type": "DIR32",
+          "symbol": "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 3051,
+          "type": "DIR32",
+          "symbol": "?g_StageVariantAt00671604@@3EA",
+          "target": 6755844
+        },
+        {
+          "offset": 3065,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 3101,
+          "type": "REL32",
+          "symbol": "??0StageBG05bF389@@QAE@XZ",
+          "target": 4515856
+        },
+        {
+          "offset": 3150,
+          "type": "DIR32",
+          "symbol": "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 3162,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 3198,
+          "type": "REL32",
+          "symbol": "??0StageBG05yF389@@QAE@XZ",
+          "target": 4519232
+        },
+        {
+          "offset": 3247,
+          "type": "DIR32",
+          "symbol": "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 3259,
+          "type": "DIR32",
+          "symbol": "?g_StageVariantAt00671604@@3EA",
+          "target": 6755844
+        },
+        {
+          "offset": 3273,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 3309,
+          "type": "REL32",
+          "symbol": "??0StageBG00cF389@@QAE@XZ",
+          "target": 4497968
+        },
+        {
+          "offset": 3358,
+          "type": "DIR32",
+          "symbol": "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 3367,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 3403,
+          "type": "REL32",
+          "symbol": "??0StageBG00zF389@@QAE@XZ",
+          "target": 4499840
+        },
+        {
+          "offset": 3451,
+          "type": "DIR32",
+          "symbol": "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 3463,
+          "type": "DIR32",
+          "symbol": "?g_StageVariantAt00671604@@3EA",
+          "target": 6755844
+        },
+        {
+          "offset": 3477,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 3513,
+          "type": "REL32",
+          "symbol": "??0StageBG02cF389@@QAE@XZ",
+          "target": 4505488
+        },
+        {
+          "offset": 3561,
+          "type": "DIR32",
+          "symbol": "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 3573,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 3609,
+          "type": "REL32",
+          "symbol": "??0StageBG02zF389@@QAE@XZ",
+          "target": 4507952
+        },
+        {
+          "offset": 3658,
+          "type": "DIR32",
+          "symbol": "?g_CurrentBattleStageAt00671424@@3PAVBattleStageF389@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 3665,
+          "type": "DIR32",
+          "symbol": "?g_BattleModeAt006714B4@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 3677,
+          "type": "DIR32",
+          "symbol": "?g_StageIdAt0067161D@@3CA",
+          "target": 6755869
+        },
+        {
+          "offset": 3683,
+          "type": "REL32",
+          "symbol": "?SetStageStateAt00419CB0@@YAXH@Z",
+          "target": 4299952
+        },
+        {
+          "offset": 3693,
+          "type": "DIR32",
+          "symbol": "?g_ReplayModeAt0066C238@@3CA",
+          "target": 6734392
+        },
+        {
+          "offset": 3705,
+          "type": "DIR32",
+          "symbol": "?g_ReplayModeAt0066C238@@3CA",
+          "target": 6734392
+        },
+        {
+          "offset": 3717,
+          "type": "DIR32",
+          "symbol": "?g_StageIdAt0067161D@@3CA",
+          "target": 6755869
+        },
+        {
+          "offset": 3729,
+          "type": "DIR32",
+          "symbol": "?g_AudioStageAt006718F8@@3VAudioStageF389@@A",
+          "target": 6756600
+        },
+        {
+          "offset": 3734,
+          "type": "REL32",
+          "symbol": "?BeginStage@AudioStageF389@@QAEXH@Z",
+          "target": 4287712
+        },
+        {
+          "offset": 3739,
+          "type": "DIR32",
+          "symbol": "?g_EndStageLogAt00657A5C@@3QBDB",
+          "target": 6650460
+        },
+        {
+          "offset": 3744,
+          "type": "REL32",
+          "symbol": "?BattleLogAt0041CC50@@YAXPBD@Z",
+          "target": 4312144
+        },
+        {
+          "offset": 3757,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 3765,
+          "type": "DIR32",
+          "symbol": "$L962",
+          "target": 4293735
+        },
+        {
+          "offset": 3769,
+          "type": "DIR32",
+          "symbol": "$L973",
+          "target": 4293910
+        },
+        {
+          "offset": 3773,
+          "type": "DIR32",
+          "symbol": "$L984",
+          "target": 4294084
+        },
+        {
+          "offset": 3777,
+          "type": "DIR32",
+          "symbol": "$L995",
+          "target": 4294261
+        },
+        {
+          "offset": 3781,
+          "type": "DIR32",
+          "symbol": "$L1006",
+          "target": 4294439
+        },
+        {
+          "offset": 3785,
+          "type": "DIR32",
+          "symbol": "$L1017",
+          "target": 4294616
+        },
+        {
+          "offset": 3789,
+          "type": "DIR32",
+          "symbol": "$L1028",
+          "target": 4294793
+        },
+        {
+          "offset": 3793,
+          "type": "DIR32",
+          "symbol": "$L1039",
+          "target": 4294980
+        },
+        {
+          "offset": 3797,
+          "type": "DIR32",
+          "symbol": "$L1050",
+          "target": 4295187
+        },
+        {
+          "offset": 3801,
+          "type": "DIR32",
+          "symbol": "$L1061",
+          "target": 4295394
+        },
+        {
+          "offset": 3805,
+          "type": "DIR32",
+          "symbol": "$L1072",
+          "target": 4295602
+        },
+        {
+          "offset": 3809,
+          "type": "DIR32",
+          "symbol": "$L1083",
+          "target": 4295806
+        },
+        {
+          "offset": 3813,
+          "type": "DIR32",
+          "symbol": "$L1094",
+          "target": 4296010
+        },
+        {
+          "offset": 3817,
+          "type": "DIR32",
+          "symbol": "$L1105",
+          "target": 4296218
+        },
+        {
+          "offset": 3821,
+          "type": "DIR32",
+          "symbol": "$L1116",
+          "target": 4296425
+        },
+        {
+          "offset": 3825,
+          "type": "DIR32",
+          "symbol": "$L1127",
+          "target": 4296632
+        },
+        {
+          "offset": 3829,
+          "type": "DIR32",
+          "symbol": "$L959",
+          "target": 4297246
+        },
+        {
+          "offset": 3833,
+          "type": "DIR32",
+          "symbol": "$L959",
+          "target": 4297246
+        },
+        {
+          "offset": 3837,
+          "type": "DIR32",
+          "symbol": "$L959",
+          "target": 4297246
+        },
+        {
+          "offset": 3841,
+          "type": "DIR32",
+          "symbol": "$L959",
+          "target": 4297246
+        },
+        {
+          "offset": 3845,
+          "type": "DIR32",
+          "symbol": "$L1138",
+          "target": 4296840
+        },
+        {
+          "offset": 3849,
+          "type": "DIR32",
+          "symbol": "$L959",
+          "target": 4297246
+        },
+        {
+          "offset": 3853,
+          "type": "DIR32",
+          "symbol": "$L1149",
+          "target": 4297044
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -194317,6 +195405,7 @@
     "src/BackgroundLoadFamilyF377.cpp": "a805a521ba3c0dab860094d89b4c0d3b4863a928c19da6c03767a940ab2d490c",
     "src/CharacterAux005301B0F378.cpp": "ddd6bbe7ee7bc941070700e913c964b6ce922dd3b20b9fb1eaec75e11bbd2bd3",
     "src/CharacterProjectileAdvanceF379.cpp": "2131d50467472c69717c8aa4def9aa0cc778f6664905a85cc0e2000b70a10787",
-    "src/BattleStateApplySequenceF386.cpp": "81aa09bcda53ef6c4c434b3325733dc020c88466ba8d8eba2da38188cb1e580e"
+    "src/BattleStateApplySequenceF386.cpp": "81aa09bcda53ef6c4c434b3325733dc020c88466ba8d8eba2da38188cb1e580e",
+    "src/BattleStageLoadBossF389.cpp": "d44b33d27b9d18c67c030f8d5b5e406e4c45bd8f400e4a70d7c3ce99386af6cb"
   }
 }

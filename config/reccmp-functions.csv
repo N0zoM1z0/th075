@@ -714,3 +714,4 @@ BackgroundStage::LoadBG09x,0x00451C70,function
 CharacterAux::RunAt005301B0,0x005301B0,function
 CharacterProjectile::AdvanceAt004F4170,0x004F4170,function
 BattleState::ApplySequenceAt00445A00,0x00445A00,function
+BattleLoader::LoadStageAt004183D0,0x004183D0,function

@@ -5887,3 +5887,62 @@ physical relocations were reviewed independently. Affected-only canonical
 **1/1 exact**, crediting **1,958 authored CODE bytes** only. No unknown
 class allocations, borrowed helper/CRT/table data bytes, fake locals,
 assembly, masks, cropped comparison, all-unit replay or remote Oracle receipt.
+
+
+## F389: complete 3,765-byte battle stage loader with original 36 allocations and 23-case jump table
+
+The independently reviewed R065-authored native
+`BattleLoader::LoadStageAt004183D0`, at `004183D0..00419284`, is
+**3,765 original CODE bytes** and **761 original x86 instructions**,
+original PE SHA256
+`9d670e4a82fec9987f1785f1d1818aec6677c609cd0d71ba91da8c45406a6076`.
+Its complete `RET` is followed by the actually owned **92-byte** jump table
+`00419285..004192E0`, 23 native absolute pointer entries (18 distinct
+valid case labels and five native default-case references). All table
+entries are physically compared and relocated, yet **none** are credited as
+authored CODE. Canonical `size=3765` and `compare_size=3857` preserve both
+those boundaries.
+
+This is the original full battle stage loader, not a thin wrapper. It logs
+the stage load via the original game logger `0041CC50`, conditionally
+destroys the old global stage at `00671424` through the native virtual
+scalar deleting destructor, and enters a **23-entry native switch** on
+original signed stage ID `0067161D`. Its **18 meaningful stage cases**
+0..15, 20 and 22 each have two distinct branches based on the real
+unsigned stage-variant selector `00671604`, covering **36 actual native
+`new` allocations and 36 original constructor calls** with genuinely
+observed sizes `0x68`, `0xEC`, `0xF0`, `0xF4`, `0xF8` and `0x1D28`.
+The 36 actual constructors at `00449AA0..00451C70` were already
+**independently** cold exact in F376/F377, but **no bytes** from their
+C++ bodies are counted again here: only the caller's own 3,765 CODE bytes.
+Its VC7.1 `/GX` native EH frame and all 36 branch-specific exception
+state transitions are preserved. The final battle-mode global `006714B4`
+conditionally calls original `00419CB0`, and replay-mode global `0066C238`
+gates the original audio/stage call `00416CE0` via receiver `006718F8`.
+Native logger strings `00657A4C/00657A5C` retain their original addresses.
+
+The source `src/BattleStageLoadBossF389.cpp` contains 36 **size-only
+opaque carriers** for C++ `new` expressions, each with a verified physical
+allocation footprint but **no asserted private stage member names, field
+layout or method bodies**. The common virtual base exists solely to express
+the original native deleting-destructor ABI. The first natural source
+under pinned VC7.1 `/Od /Ob0 /Gy /GR- /GX /GS /Zi` already had the
+correct **3,857-byte full comparison length** (3,765 CODE + 92 switch
+DATA), 170 genuine COFF relocation positions and native SEH stack frame,
+but was only 2754/3177 nonfield bytes because its semantically equivalent
+`if(variant==0) base; else special;` generated each *base* body first.
+Original disassembly proved the opposite fallthrough arrangement for
+**every** stage ID: `if(variant!=0) special; else base;` writes the special
+constructor first and conditional-jumps into the base one. Correcting
+**only** these 18 native source control-flow directions recovered all
+**3177/3177** remaining original nonrelocation bytes, including every
+independent allocation, pointer store, destructor path and EH handler.
+All **170/170** genuine original physical COFF DIR32/REL32 references
+(including exactly 23 native switch-table pointers) were independently
+checked against true PE relocation destinations. Only affected unit
+`battle-loader-load-stage-004183d0` was cold-replayed, **1/1 exact**.
+The 36 background constructor bodies, compiler/EH helpers, external
+logger/audio/CRT methods and 92 jump table DATA bytes earn **zero duplicate
+CODE credit**. No manual assembly, pasted machine bytes, arbitrary local
+padding, masked refs, cropped function, all-unit cold replay or external
+Oracle acceptance is claimed.
