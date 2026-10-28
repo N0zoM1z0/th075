@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "38b7a282a23d52db093f1b19f10d1428c69b837d5f755542362a3b8e433d4af9"
+      "current_sha256": "5560a7fd316b767d11a81d1831b9955cc1f0541fd7d2b615ff46e75d1d5ed407"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "aa4e34e71ebd8db6e4bb01289568615b7229f5065cdb4ca63437d44a553806c2"
+      "current_sha256": "045ca33d561baa79c2aa65345c6255690938f224ce3de5de43e9357354b64c31"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "ec75ff19516ed4354b2eccc7eb8165774ba9dc43c912c59a97681c6aa6b58bf6"
+      "current_sha256": "c31d41fac3c1032d2332c6ab623802dd64dad3a13f778e04ea2df30abf2c96c3"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "d6cc9c93220ee904f64ea6319427dfc3e24804a024a9b047260372b7e19bfe37"
+      "current_sha256": "52aa32b15301737bc85097e12b4641d306d9a9cca75ed281bff451f4c5f89066"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "548e73de4c050cf64e1cbfa3e14a233933c2d79bcd9f0887dc6b373caf746e88"
+      "current_sha256": "66f5826f82788a1c68acb51a2102774e61020b1096d111227235fd20ca519558"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -21028,6 +21028,50 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R041"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0042C670",
+        "size": "1005",
+        "span_end": "0x0042CA5C",
+        "current_name": "FUN_0042c670",
+        "proposed_name": "ReplayBrowserScene::UpdateSelection",
+        "module": "ReplayBrowserScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R040; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x0042C670",
+        "size": "1005",
+        "span_end": "0x0042CA5C",
+        "current_name": "FUN_0042c670",
+        "proposed_name": "ReplayBrowserScene::UpdateSelection",
+        "module": "ReplayBrowserScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "unsigned short ReplayBrowserF226::UpdateSelection()",
+        "is_thunk": "false",
+        "source_file": "src/ReplayBrowserSelectionF226.cpp",
+        "evidence": "R040; full body hash, complete decoded CFG and local game-specific behavior reviewed; F226; scripts/repo-python scripts/replay-exact-units.py --unit replay-browser-update-selection-0042c670",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F226: 1005 complete authored CODE bytes, 296 independently decoded native instructions, SHA256 4a126816bcb81b8c7ecc660e844624b5cd501ac8ffdd60c6dac8c84ae7ddfc1d. Pinned VC7.1 /GX- exact cold replay with all 48 real REL32/DIR32 relocation fields (global sound device, list/detail methods, path string destination and transition). Reconstructs true vtable slot-two dispatch, two selection axes with clamped and wrapped signed-short indices, ten-row jumps, signed input flags, file record availability/variant checks, transition sound, selected filename strcpy and typed scene mode returns 0x2201/0x2202/5. Full native function has one RET; all forward branches and all exits were compared. A first prototype used promoted short arithmetic and unnecessary macro do/while control branches, emitted 1016 bytes; after meaningful prefix ++/-- for four 16-bit fields and direct transition statements, emitted exact full 1005 bytes with all 813/813 comparable bytes, all 48 relocation fields. Physical queue and item views are call-only and do not prove entire STL or scene object layouts. No fake locals, cropped bodies, target bytes, asm, masks or alias substitutions. Local canonical cold replay, not external Oracle; origin-unknown 97 candidates remain uncredited."
+      },
+      "origin": {
+        "address": "0x0042C670",
+        "origin": "authored",
+        "subsystem": "ReplayBrowserScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R040"
       }
     }
   ],
@@ -165747,6 +165791,317 @@
           "target": 0
         }
       ]
+    },
+    "replay-browser-update-selection-0042c670": {
+      "source": "src/ReplayBrowserSelectionF226.cpp",
+      "object": "build/matching/ReplayBrowserSelectionF226.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "ReplayBrowserScene::UpdateSelection"
+      ],
+      "symbol": "?UpdateSelection@ReplayBrowserF226@@QAEGXZ",
+      "target_address": 4376176,
+      "size": 1005,
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "REL32",
+          "symbol": "?ReadInput@ReplayBrowserF226@@QAEXXZ",
+          "target": 4379440
+        },
+        {
+          "offset": 28,
+          "type": "REL32",
+          "symbol": "?ResetInputState@BrowserSceneStepsF226@@YAXXZ",
+          "target": 4204784
+        },
+        {
+          "offset": 62,
+          "type": "DIR32",
+          "symbol": "?g_SoundAt00671618@@3PAVSoundDeviceF226@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 67,
+          "type": "REL32",
+          "symbol": "?Play@SoundDeviceF226@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 124,
+          "type": "DIR32",
+          "symbol": "?g_SoundAt00671618@@3PAVSoundDeviceF226@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 129,
+          "type": "REL32",
+          "symbol": "?Play@SoundDeviceF226@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 165,
+          "type": "REL32",
+          "symbol": "?Size@ReplayNameListF226@@QAEIXZ",
+          "target": 4316496
+        },
+        {
+          "offset": 180,
+          "type": "REL32",
+          "symbol": "?Size@ReplayNameListF226@@QAEIXZ",
+          "target": 4316496
+        },
+        {
+          "offset": 209,
+          "type": "DIR32",
+          "symbol": "?g_SoundAt00671618@@3PAVSoundDeviceF226@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 214,
+          "type": "REL32",
+          "symbol": "?Play@SoundDeviceF226@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 270,
+          "type": "DIR32",
+          "symbol": "?g_SoundAt00671618@@3PAVSoundDeviceF226@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 275,
+          "type": "REL32",
+          "symbol": "?Play@SoundDeviceF226@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 310,
+          "type": "REL32",
+          "symbol": "?Size@ReplayNameListF226@@QAEIXZ",
+          "target": 4316496
+        },
+        {
+          "offset": 325,
+          "type": "REL32",
+          "symbol": "?Size@ReplayNameListF226@@QAEIXZ",
+          "target": 4316496
+        },
+        {
+          "offset": 359,
+          "type": "DIR32",
+          "symbol": "?g_SoundAt00671618@@3PAVSoundDeviceF226@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 364,
+          "type": "REL32",
+          "symbol": "?Play@SoundDeviceF226@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 412,
+          "type": "REL32",
+          "symbol": "?Entry@ReplayItemsF226@@QAEPAUReplayItemF226@@H@Z",
+          "target": 4381600
+        },
+        {
+          "offset": 445,
+          "type": "DIR32",
+          "symbol": "?g_SoundAt00671618@@3PAVSoundDeviceF226@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 450,
+          "type": "REL32",
+          "symbol": "?Play@SoundDeviceF226@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 494,
+          "type": "REL32",
+          "symbol": "?Entry@ReplayItemsF226@@QAEPAUReplayItemF226@@H@Z",
+          "target": 4381600
+        },
+        {
+          "offset": 568,
+          "type": "REL32",
+          "symbol": "?Size@ReplayNameListF226@@QAEIXZ",
+          "target": 4316496
+        },
+        {
+          "offset": 595,
+          "type": "REL32",
+          "symbol": "?Entry@ReplayItemsF226@@QAEPAUReplayItemF226@@H@Z",
+          "target": 4381600
+        },
+        {
+          "offset": 615,
+          "type": "DIR32",
+          "symbol": "?g_SoundAt00671618@@3PAVSoundDeviceF226@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 620,
+          "type": "REL32",
+          "symbol": "?Play@SoundDeviceF226@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 650,
+          "type": "REL32",
+          "symbol": "?Entry@ReplayItemsF226@@QAEPAUReplayItemF226@@H@Z",
+          "target": 4381600
+        },
+        {
+          "offset": 684,
+          "type": "DIR32",
+          "symbol": "?g_SelectedReplayVariantAt006714A4@@3GA",
+          "target": 6755492
+        },
+        {
+          "offset": 692,
+          "type": "DIR32",
+          "symbol": "?g_ReplayModeAt0066C238@@3EA",
+          "target": 6734392
+        },
+        {
+          "offset": 712,
+          "type": "REL32",
+          "symbol": "?Entry@ReplayNameListF226@@QAEPAPADH@Z",
+          "target": 4316608
+        },
+        {
+          "offset": 720,
+          "type": "DIR32",
+          "symbol": "?g_ReplayPathAt00671754@@3PADA",
+          "target": 6756180
+        },
+        {
+          "offset": 725,
+          "type": "REL32",
+          "symbol": "_strcpy",
+          "target": 6560640
+        },
+        {
+          "offset": 744,
+          "type": "REL32",
+          "symbol": "?BeginSelectedReplay@BrowserSceneStepsF226@@YAXHHHH@Z",
+          "target": 4226656
+        },
+        {
+          "offset": 775,
+          "type": "DIR32",
+          "symbol": "?g_SelectedReplayVariantAt006714A4@@3GA",
+          "target": 6755492
+        },
+        {
+          "offset": 781,
+          "type": "DIR32",
+          "symbol": "?g_ReplayModeAt0066C238@@3EA",
+          "target": 6734392
+        },
+        {
+          "offset": 801,
+          "type": "REL32",
+          "symbol": "?Entry@ReplayNameListF226@@QAEPAPADH@Z",
+          "target": 4316608
+        },
+        {
+          "offset": 809,
+          "type": "DIR32",
+          "symbol": "?g_ReplayPathAt00671754@@3PADA",
+          "target": 6756180
+        },
+        {
+          "offset": 814,
+          "type": "REL32",
+          "symbol": "_strcpy",
+          "target": 6560640
+        },
+        {
+          "offset": 833,
+          "type": "REL32",
+          "symbol": "?BeginSelectedReplay@BrowserSceneStepsF226@@YAXHHHH@Z",
+          "target": 4226656
+        },
+        {
+          "offset": 855,
+          "type": "DIR32",
+          "symbol": "?g_SoundAt00671618@@3PAVSoundDeviceF226@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 860,
+          "type": "REL32",
+          "symbol": "?Play@SoundDeviceF226@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 866,
+          "type": "DIR32",
+          "symbol": "?g_ReplayModeAt0066C238@@3EA",
+          "target": 6734392
+        },
+        {
+          "offset": 886,
+          "type": "REL32",
+          "symbol": "?Entry@ReplayNameListF226@@QAEPAPADH@Z",
+          "target": 4316608
+        },
+        {
+          "offset": 894,
+          "type": "DIR32",
+          "symbol": "?g_ReplayPathAt00671754@@3PADA",
+          "target": 6756180
+        },
+        {
+          "offset": 899,
+          "type": "REL32",
+          "symbol": "_strcpy",
+          "target": 6560640
+        },
+        {
+          "offset": 918,
+          "type": "REL32",
+          "symbol": "?BeginSelectedReplay@BrowserSceneStepsF226@@YAXHHHH@Z",
+          "target": 4226656
+        },
+        {
+          "offset": 959,
+          "type": "DIR32",
+          "symbol": "?g_SoundAt00671618@@3PAVSoundDeviceF226@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 964,
+          "type": "REL32",
+          "symbol": "?Play@SoundDeviceF226@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 981,
+          "type": "DIR32",
+          "symbol": "?g_SoundAt00671618@@3PAVSoundDeviceF226@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 986,
+          "type": "REL32",
+          "symbol": "?Play@SoundDeviceF226@@QAEXH@Z",
+          "target": 4225472
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -166061,6 +166416,7 @@
     "src/YoumuInitF223.cpp": "b01ad6c36bbaf7db888418a6f5298f17706aa2973b372e4ebf9c13b58d3c426e",
     "src/YoumuOwnedF224.cpp": "fa22ce1defb84aa61cec89068913f4627ab884d29b8749c32afc4d9181ca1c85",
     "src/YoumuResetF224.cpp": "1f6e7e591a4da122df9eb0822b6d5cd9cf8ac09cb3e8dbf6309d4a27e7370a26",
-    "src/CharacterSelectInitF225.cpp": "ee10126ec6ce2f673790cafc361097cebedd429e822ac2d7ece0d3b173add89e"
+    "src/CharacterSelectInitF225.cpp": "ee10126ec6ce2f673790cafc361097cebedd429e822ac2d7ece0d3b173add89e",
+    "src/ReplayBrowserSelectionF226.cpp": "944ade508638fe15e8a84983279289be6adb5a0c06ec59a54aa25ef3394a5c52"
   }
 }

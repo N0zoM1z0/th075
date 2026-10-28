@@ -536,3 +536,4 @@ YoumuFighter::Initialize,0x0052CEE0,function
 YoumuFighter::CreateOwnedObject,0x0052D090,function
 YoumuFighter::ResetRound,0x0052D110,function
 CharacterSelectScene::Initialize,0x00432EA0,function
+ReplayBrowserScene::UpdateSelection,0x0042C670,function

@@ -910,3 +910,32 @@ synthetic return, invented storage layout, asm or masked fields are used.
 This local exact unit does not claim external Oracle acceptance, runtime
 behavior validation, base constructor origin or any additional library
 bytes. All 97 unknown-origin candidates remain uncredited.
+
+
+## F226: replay-browser selection machine, complete 1,005-byte cold exact
+
+The independently R040-reviewed `ReplayBrowserScene::UpdateSelection` at
+`0042C670..0042CA5C` has 296 native x86 instructions / 1005 CODE bytes,
+complete SHA256 `4a126816bcb81b8c7ecc660e844624b5cd501ac8ffdd60c6dac8c84ae7ddfc1d`.
+Ghidra read-only verified the whole body, unique RET, all branch exits and
+real imports/callees. Source `src/ReplayBrowserSelectionF226.cpp` implements
+the input poll, vtable slot-2 draw, input reset, horizontal/vertical repeat
+motion, page jumps, signed 16-bit replay indices, queue size and indexed
+replay metadata access, replay-variant selection, sound cue calls, selected
+pathname copy, scene transitions, and all three distinct result values
+(`0x2201`, `0x2202`, and `5`). Only borrowed physical list/record/scene
+interfaces appear; none establishes full original container layouts.
+
+The first natural /Od /GX- probe emitted 1,016 bytes. At the full
+instruction level, a macro-style `do/while(0)` generated unnecessary
+conditional branches, while four short assignments promoted to 32-bit
+arithmetic. Replacing the macro wrapper with direct statements and using
+genuine `++`/`--` 16-bit lvalue operations precisely reproduces all 296
+native instructions, **813/813 non-relocation bytes**, and all **48 true
+DIR32/REL32 relocation destinations**. The sole F226 cold replay
+`--unit replay-browser-update-selection-0042c670` reports **exact: 1005**
+(not structural-only). Private probes and instruction diff analyzer remain
+in `.analysis/f226-replay-browser/`. No pre-existing accepted unit was
+recompiled; no whole-program cold replay, masked fields, fake locals,
+assembly, ABI substitutions, code cropping or external helper credit.
+All 97 origin-pending functions remain uncredited.
