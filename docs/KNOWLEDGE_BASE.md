@@ -939,3 +939,57 @@ in `.analysis/f226-replay-browser/`. No pre-existing accepted unit was
 recompiled; no whole-program cold replay, masked fields, fake locals,
 assembly, ABI substitutions, code cropping or external helper credit.
 All 97 origin-pending functions remain uncredited.
+
+
+## F227-F228: Reimu and Alice exact lifecycle; recover two pending character-select boss functions
+
+On the same pinned TH075 1.11 binary, four independent R046/R050 fighter
+functions cold-build to `exact` without shared header changes:
+
+* Reimu factory `0046D160`, 120 bytes, 34 native instructions, 6 real COFF
+  fields, target SHA256
+  `922399edaaa88c66ee9c8095d8d53bb23e1f78163c0d803b9bced866cb884301`;
+  ordinary `new(0xE8)` calls actual `004769B0` and genuine EH `0065642B`.
+* Reimu round reset `0046D1E0`, 235 bytes, 45 instructions, one REL32
+  to accepted base `00457010`, SHA256
+  `0e0e300a72c0a9b1cb632014ce4db7f19d300bffab2e56e89664f14ff8da7cfd`;
+  the native resets 16 halfwords **before** base reset and two **after**.
+* Alice factory `004E2D90`, 120 bytes, 34 instructions, 6 fields, SHA256
+  `678cc5d0b2e17603636b0fb955198e91ce0c8c35c6f81b0edc4a9c5f215e70f2`;
+  ordinary EH-backed `new(0xE8)` calls actual `004EBD00`, handler `0065648B`.
+* Alice round reset `004E2E10`, 223 bytes, 43 instructions, one REL32
+  to `00457010`, SHA256
+  `353ddb043c35008a7b6d5c7355b432ab6511abd5962bc2c0a5aa16c9ba167360`;
+  the native performs 17 halfword writes **before** base reset.
+
+Each natural C++ body in `src/*F227.cpp` independently reproduces the
+entire target, including relocation targets. Two recovered unfinished
+character-select source/manifest changes were **investigated rather than
+discarded**; they were originally left unregistered in the acceptance
+ledgers, causing the exact-checkpoint count guard to catch a mismatch. The
+source, original binary and all native destinations were independently
+reverified before registering those units:
+
+* `CharacterSelectScene::UpdatePlayerChoice` at
+  `004348E0..00434CE4`, 1,029 bytes / 245 native instructions, SHA256
+  `7caee90598d5bd3f45389a0e5b0852ea679517934ada3f04627594557dbe4872`.
+  The natural signed-player source `src/CharacterSelectChoiceF226.cpp` cold
+  replays 901/901 comparable bytes plus all 32 physical COFF relocations,
+  including float animation constants, native sound/input calls, and CRT rand.
+* `CharacterSelectScene::UpdatePlayerConfirmation` at
+  `00434CF0..004350D2`, 995 bytes / 242 native instructions, SHA256
+  `67e1ce98232d90f7b4dfa9fc781b850672732483a0befd09b54eda9222f64412`.
+  The signed player and game-mode source
+  `src/CharacterSelectConfirmF228.cpp` independently cold replays 859/859
+  comparable bytes plus all 34 native relocations. The native x87 bounded
+  animations and signed CRT rand modulo-three logic are retained.
+
+In both controllers, nominal scene identity/layout remains inferred; their
+physical signed player strides and actual byte offsets are native-observed.
+All six are independent whole-function `exact`, not structural acceptance.
+Only these six affected units were cold-replayed: no all-unit cold replay
+or class inference from unrelated games. Existing 97 unknown-origin
+candidates and original evidence remain unchanged; Git commits are local
+checkpoints, not external Oracle receipts. Private proofs are retained in
+`.analysis/f226-player-choice/`, `.analysis/f227-fighter-recovery/`,
+and `.analysis/f228-confirmation/`.

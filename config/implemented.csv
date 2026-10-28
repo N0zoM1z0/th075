@@ -536,3 +536,9 @@ YoumuFighter::CreateOwnedObject
 YoumuFighter::ResetRound
 CharacterSelectScene::Initialize
 ReplayBrowserScene::UpdateSelection
+ReimuFighter::CreateOwnedObject
+ReimuFighter::ResetRound
+AliceFighter::CreateOwnedObject
+AliceFighter::ResetRound
+CharacterSelectScene::UpdatePlayerChoice
+CharacterSelectScene::UpdatePlayerConfirmation

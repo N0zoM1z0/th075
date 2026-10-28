@@ -37221,3 +37221,463 @@ offset = 986
 type = "REL32"
 symbol = "?Play@SoundDeviceF226@@QAEXH@Z"
 target = 0x004079C0
+
+
+[units.character-select-scene-update-player-choice-004348e0]
+source = "src/CharacterSelectChoiceF226.cpp"
+object = "build/matching/CharacterSelectChoiceF226.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["CharacterSelectScene::UpdatePlayerChoice"]
+symbol = "?UpdatePlayerChoice@CharacterSelectChoiceF226@@QAEXC@Z"
+target_address = 0x004348E0
+size = 1029
+[[units.character-select-scene-update-player-choice-004348e0.relocations]]
+offset = 23
+type = "DIR32"
+symbol = "?g_ChoiceMinimumAt0065782C@@3MB"
+target = 0x0065782C
+[[units.character-select-scene-update-player-choice-004348e0.relocations]]
+offset = 50
+type = "DIR32"
+symbol = "?g_ChoiceBackStepAt00657874@@3MB"
+target = 0x00657874
+[[units.character-select-scene-update-player-choice-004348e0.relocations]]
+offset = 84
+type = "DIR32"
+symbol = "?g_ChoiceRiseBoundAt00658268@@3MB"
+target = 0x00658268
+[[units.character-select-scene-update-player-choice-004348e0.relocations]]
+offset = 111
+type = "DIR32"
+symbol = "?g_ChoiceRiseStepAt00657D14@@3MB"
+target = 0x00657D14
+[[units.character-select-scene-update-player-choice-004348e0.relocations]]
+offset = 145
+type = "DIR32"
+symbol = "?g_ChoiceDropBoundAt00657858@@3MB"
+target = 0x00657858
+[[units.character-select-scene-update-player-choice-004348e0.relocations]]
+offset = 172
+type = "DIR32"
+symbol = "?g_ChoiceDropStepAt00657480@@3MB"
+target = 0x00657480
+[[units.character-select-scene-update-player-choice-004348e0.relocations]]
+offset = 206
+type = "DIR32"
+symbol = "?g_ChoiceRiseBoundAt00658268@@3MB"
+target = 0x00658268
+[[units.character-select-scene-update-player-choice-004348e0.relocations]]
+offset = 233
+type = "DIR32"
+symbol = "?g_ChoiceRiseStepAt00657D14@@3MB"
+target = 0x00657D14
+[[units.character-select-scene-update-player-choice-004348e0.relocations]]
+offset = 267
+type = "DIR32"
+symbol = "?g_ChoiceDropBoundAt00657858@@3MB"
+target = 0x00657858
+[[units.character-select-scene-update-player-choice-004348e0.relocations]]
+offset = 294
+type = "DIR32"
+symbol = "?g_ChoiceDropStepAt00657480@@3MB"
+target = 0x00657480
+[[units.character-select-scene-update-player-choice-004348e0.relocations]]
+offset = 328
+type = "DIR32"
+symbol = "?g_ChoiceZeroAt00657CBC@@3MB"
+target = 0x00657CBC
+[[units.character-select-scene-update-player-choice-004348e0.relocations]]
+offset = 355
+type = "DIR32"
+symbol = "?g_ChoiceReturnStepAt0065747C@@3MB"
+target = 0x0065747C
+[[units.character-select-scene-update-player-choice-004348e0.relocations]]
+offset = 391
+type = "DIR32"
+symbol = "?g_ChoiceZeroAt00657CBC@@3MB"
+target = 0x00657CBC
+[[units.character-select-scene-update-player-choice-004348e0.relocations]]
+offset = 418
+type = "DIR32"
+symbol = "?g_ChoiceDropStepAt00657480@@3MB"
+target = 0x00657480
+[[units.character-select-scene-update-player-choice-004348e0.relocations]]
+offset = 452
+type = "DIR32"
+symbol = "?g_ChoiceZeroAt00657CBC@@3MB"
+target = 0x00657CBC
+[[units.character-select-scene-update-player-choice-004348e0.relocations]]
+offset = 502
+type = "DIR32"
+symbol = "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundBankF226@@A"
+target = 0x00671618
+[[units.character-select-scene-update-player-choice-004348e0.relocations]]
+offset = 507
+type = "REL32"
+symbol = "?Play@ChoiceSoundBankF226@@QAEXH@Z"
+target = 0x004079C0
+[[units.character-select-scene-update-player-choice-004348e0.relocations]]
+offset = 544
+type = "REL32"
+symbol = "?TestAction@ChoiceInputF226@@YAHH@Z"
+target = 0x00438A60
+[[units.character-select-scene-update-player-choice-004348e0.relocations]]
+offset = 560
+type = "DIR32"
+symbol = "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundBankF226@@A"
+target = 0x00671618
+[[units.character-select-scene-update-player-choice-004348e0.relocations]]
+offset = 565
+type = "REL32"
+symbol = "?Play@ChoiceSoundBankF226@@QAEXH@Z"
+target = 0x004079C0
+[[units.character-select-scene-update-player-choice-004348e0.relocations]]
+offset = 607
+type = "DIR32"
+symbol = "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundBankF226@@A"
+target = 0x00671618
+[[units.character-select-scene-update-player-choice-004348e0.relocations]]
+offset = 612
+type = "REL32"
+symbol = "?Play@ChoiceSoundBankF226@@QAEXH@Z"
+target = 0x004079C0
+[[units.character-select-scene-update-player-choice-004348e0.relocations]]
+offset = 668
+type = "DIR32"
+symbol = "?g_ChoiceRandomModeAt00671610@@3PAEA"
+target = 0x00671610
+[[units.character-select-scene-update-player-choice-004348e0.relocations]]
+offset = 691
+type = "DIR32"
+symbol = "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundBankF226@@A"
+target = 0x00671618
+[[units.character-select-scene-update-player-choice-004348e0.relocations]]
+offset = 696
+type = "REL32"
+symbol = "?Play@ChoiceSoundBankF226@@QAEXH@Z"
+target = 0x004079C0
+[[units.character-select-scene-update-player-choice-004348e0.relocations]]
+offset = 725
+type = "DIR32"
+symbol = "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundBankF226@@A"
+target = 0x00671618
+[[units.character-select-scene-update-player-choice-004348e0.relocations]]
+offset = 730
+type = "REL32"
+symbol = "?Play@ChoiceSoundBankF226@@QAEXH@Z"
+target = 0x004079C0
+[[units.character-select-scene-update-player-choice-004348e0.relocations]]
+offset = 736
+type = "DIR32"
+symbol = "?g_ChoiceStageAt00671621@@3EA"
+target = 0x00671621
+[[units.character-select-scene-update-player-choice-004348e0.relocations]]
+offset = 922
+type = "REL32"
+symbol = "_rand"
+target = 0x006418AB
+[[units.character-select-scene-update-player-choice-004348e0.relocations]]
+offset = 940
+type = "DIR32"
+symbol = "?g_ChoiceRandomModeAt00671610@@3PAEA"
+target = 0x00671610
+[[units.character-select-scene-update-player-choice-004348e0.relocations]]
+offset = 963
+type = "DIR32"
+symbol = "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundBankF226@@A"
+target = 0x00671618
+[[units.character-select-scene-update-player-choice-004348e0.relocations]]
+offset = 968
+type = "REL32"
+symbol = "?Play@ChoiceSoundBankF226@@QAEXH@Z"
+target = 0x004079C0
+
+
+[units.reimu-fighter-create-owned-object-0046d160]
+source = "src/ReimuOwnedF227.cpp"
+object = "build/matching/ReimuOwnedF227.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["ReimuFighter::CreateOwnedObject"]
+symbol = "?CreateOwnedObject@ReimuFactoryF227@@QAEXPAPAVReimuGeneratedF227@@@Z"
+target_address = 0x0046D160
+size = 120
+[[units.reimu-fighter-create-owned-object-0046d160.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$?CreateOwnedObject@ReimuFactoryF227@@QAEXPAPAVReimuGeneratedF227@@@Z"
+target = 0x0065642B
+[[units.reimu-fighter-create-owned-object-0046d160.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.reimu-fighter-create-owned-object-0046d160.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.reimu-fighter-create-owned-object-0046d160.relocations]]
+offset = 36
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.reimu-fighter-create-owned-object-0046d160.relocations]]
+offset = 67
+type = "REL32"
+symbol = "??0ReimuGeneratedF227@@QAE@PAX@Z"
+target = 0x004769B0
+[[units.reimu-fighter-create-owned-object-0046d160.relocations]]
+offset = 110
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.reimu-fighter-reset-round-0046d1e0]
+source = "src/ReimuResetF227.cpp"
+object = "build/matching/ReimuResetF227.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["ReimuFighter::ResetRound"]
+symbol = "?ResetRound@ReimuRoundF227@@QAEXXZ"
+target_address = 0x0046D1E0
+size = 235
+[[units.reimu-fighter-reset-round-0046d1e0.relocations]]
+offset = 203
+type = "REL32"
+symbol = "?ResetRound@FighterBaseActionsF159@@QAEXXZ"
+target = 0x00457010
+
+
+[units.alice-fighter-create-owned-object-004e2d90]
+source = "src/AliceOwnedF227.cpp"
+object = "build/matching/AliceOwnedF227.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["AliceFighter::CreateOwnedObject"]
+symbol = "?CreateOwnedObject@AliceFactoryF227@@QAEXPAPAVAliceGeneratedF227@@@Z"
+target_address = 0x004E2D90
+size = 120
+[[units.alice-fighter-create-owned-object-004e2d90.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$?CreateOwnedObject@AliceFactoryF227@@QAEXPAPAVAliceGeneratedF227@@@Z"
+target = 0x0065648B
+[[units.alice-fighter-create-owned-object-004e2d90.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.alice-fighter-create-owned-object-004e2d90.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.alice-fighter-create-owned-object-004e2d90.relocations]]
+offset = 36
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.alice-fighter-create-owned-object-004e2d90.relocations]]
+offset = 67
+type = "REL32"
+symbol = "??0AliceGeneratedF227@@QAE@PAX@Z"
+target = 0x004EBD00
+[[units.alice-fighter-create-owned-object-004e2d90.relocations]]
+offset = 110
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.alice-fighter-reset-round-004e2e10]
+source = "src/AliceResetF227.cpp"
+object = "build/matching/AliceResetF227.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["AliceFighter::ResetRound"]
+symbol = "?ResetRound@AliceRoundF227@@QAEXXZ"
+target_address = 0x004E2E10
+size = 223
+[[units.alice-fighter-reset-round-004e2e10.relocations]]
+offset = 215
+type = "REL32"
+symbol = "?ResetRound@FighterBaseActionsF159@@QAEXXZ"
+target = 0x00457010
+
+
+[units.character-select-scene-update-player-confirmation-00434cf0]
+source = "src/CharacterSelectConfirmF228.cpp"
+object = "build/matching/CharacterSelectConfirmF228.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["CharacterSelectScene::UpdatePlayerConfirmation"]
+symbol = "?UpdatePlayerConfirmation@CharacterSelectConfirmF228@@QAEXC@Z"
+target_address = 0x00434CF0
+size = 995
+[[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
+offset = 23
+type = "DIR32"
+symbol = "?g_ChoiceMinimumAt0065782C@@3MB"
+target = 0x0065782C
+[[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
+offset = 50
+type = "DIR32"
+symbol = "?g_ChoiceBackStepAt00657874@@3MB"
+target = 0x00657874
+[[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
+offset = 84
+type = "DIR32"
+symbol = "?g_ChoiceRiseBoundAt00658268@@3MB"
+target = 0x00658268
+[[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
+offset = 111
+type = "DIR32"
+symbol = "?g_ChoiceRiseStepAt00657D14@@3MB"
+target = 0x00657D14
+[[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
+offset = 145
+type = "DIR32"
+symbol = "?g_ChoiceDropBoundAt00657858@@3MB"
+target = 0x00657858
+[[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
+offset = 172
+type = "DIR32"
+symbol = "?g_ChoiceDropStepAt00657480@@3MB"
+target = 0x00657480
+[[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
+offset = 206
+type = "DIR32"
+symbol = "?g_ChoiceRiseBoundAt00658268@@3MB"
+target = 0x00658268
+[[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
+offset = 233
+type = "DIR32"
+symbol = "?g_ChoiceRiseStepAt00657D14@@3MB"
+target = 0x00657D14
+[[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
+offset = 267
+type = "DIR32"
+symbol = "?g_ChoiceDropBoundAt00657858@@3MB"
+target = 0x00657858
+[[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
+offset = 294
+type = "DIR32"
+symbol = "?g_ChoiceDropStepAt00657480@@3MB"
+target = 0x00657480
+[[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
+offset = 328
+type = "DIR32"
+symbol = "?g_ChoiceReadyBoundAt0065826C@@3MB"
+target = 0x0065826C
+[[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
+offset = 355
+type = "DIR32"
+symbol = "?g_ChoiceDropStepAt00657480@@3MB"
+target = 0x00657480
+[[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
+offset = 389
+type = "DIR32"
+symbol = "?g_ChoiceReadyBoundAt0065826C@@3MB"
+target = 0x0065826C
+[[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
+offset = 439
+type = "DIR32"
+symbol = "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundBankF228@@A"
+target = 0x00671618
+[[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
+offset = 444
+type = "REL32"
+symbol = "?Play@ChoiceSoundBankF228@@QAEXH@Z"
+target = 0x004079C0
+[[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
+offset = 481
+type = "REL32"
+symbol = "?TestAction@ChoiceInputF228@@YAHH@Z"
+target = 0x00438A60
+[[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
+offset = 497
+type = "DIR32"
+symbol = "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundBankF228@@A"
+target = 0x00671618
+[[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
+offset = 502
+type = "REL32"
+symbol = "?Play@ChoiceSoundBankF228@@QAEXH@Z"
+target = 0x004079C0
+[[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
+offset = 544
+type = "DIR32"
+symbol = "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundBankF228@@A"
+target = 0x00671618
+[[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
+offset = 549
+type = "REL32"
+symbol = "?Play@ChoiceSoundBankF228@@QAEXH@Z"
+target = 0x004079C0
+[[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
+offset = 605
+type = "DIR32"
+symbol = "?g_ChoiceReadyBoundAt0065826C@@3MB"
+target = 0x0065826C
+[[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
+offset = 654
+type = "DIR32"
+symbol = "?g_ChoiceSelectedPairAt006714CC@@3PAEA"
+target = 0x006714CC
+[[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
+offset = 676
+type = "DIR32"
+symbol = "?g_ChoiceGameModeAt006714B4@@3CA"
+target = 0x006714B4
+[[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
+offset = 688
+type = "DIR32"
+symbol = "?g_ChoiceGameModeAt006714B4@@3CA"
+target = 0x006714B4
+[[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
+offset = 721
+type = "DIR32"
+symbol = "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundBankF228@@A"
+target = 0x00671618
+[[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
+offset = 726
+type = "REL32"
+symbol = "?Play@ChoiceSoundBankF228@@QAEXH@Z"
+target = 0x004079C0
+[[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
+offset = 751
+type = "DIR32"
+symbol = "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundBankF228@@A"
+target = 0x00671618
+[[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
+offset = 756
+type = "REL32"
+symbol = "?Play@ChoiceSoundBankF228@@QAEXH@Z"
+target = 0x004079C0
+[[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
+offset = 844
+type = "REL32"
+symbol = "_rand"
+target = 0x006418AB
+[[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
+offset = 862
+type = "DIR32"
+symbol = "?g_ChoiceSelectedPairAt006714CC@@3PAEA"
+target = 0x006714CC
+[[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
+offset = 884
+type = "DIR32"
+symbol = "?g_ChoiceGameModeAt006714B4@@3CA"
+target = 0x006714B4
+[[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
+offset = 896
+type = "DIR32"
+symbol = "?g_ChoiceGameModeAt006714B4@@3CA"
+target = 0x006714B4
+[[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
+offset = 929
+type = "DIR32"
+symbol = "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundBankF228@@A"
+target = 0x00671618
+[[units.character-select-scene-update-player-confirmation-00434cf0.relocations]]
+offset = 934
+type = "REL32"
+symbol = "?Play@ChoiceSoundBankF228@@QAEXH@Z"
+target = 0x004079C0

@@ -1,4 +1,4 @@
-# TH075 — active reconstruction handoff (F226)
+# TH075 — active reconstruction handoff (F228)
 
 **Updated 2026-10-28. Read this document before new experiments.**
 
@@ -12,21 +12,21 @@ Earlier H184 advice to stop is historical and **does not apply**.
 
 | Item | Current evidence |
 | --- | --- |
-| Local branch / last exact-code commit | `main` / F226 acceptance; previous F225 `5f544f0` |
-| Upstream | `origin/main`; F224 `417d882`, F225 `5f544f0` and this F226 checkpoint; confirm actual Git state |
+| Local branch / last exact-code commit | `main` / F228 acceptance; previous committed F226 `823608c` |
+| Upstream | `origin/main`; F226 `823608c` plus pending F227/F228 acceptance; verify branch status after commit |
 | Working tree | Clean after F226 commit if completed; inspect actual status every time |
 | Native binary | `resources/th075.exe`, SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98` |
 | Candidate count | 4,351; origin review: 1,002 authored, 2,671 library, 581 compiler, 97 unknown |
-| Accepted functions / units | **538 / 538** |
-| Accepted authored CODE | **768,609 bytes** |
-| Reviewed authored coverage | 768,609 / 1,973,516 = **38.95%** |
-| Conservative coverage | **38.88%** counting 3,608 origin-pending bytes |
+| Accepted functions / units | **544 / 544** |
+| Accepted authored CODE | **771,331 bytes** |
+| Reviewed authored coverage | 771,331 / 1,973,516 = **39.08%** |
+| Conservative coverage | **39.01%** counting 3,608 origin-pending bytes |
 | Goal | **98% not reached** |
-| Verification | F226 targeted 1005-byte cold exact and checkpoint/tracking passed; prior F225 full CI 3,613/3,613 passed; no all-unit cold replay attempted; no Oracle receipt claimed |
+| Verification | F226 1005-byte unit; F227 four fighter units + recovered 1029-byte choice; F228 independent 995-byte confirmation; only six new/affected units cold-replayed for latest batch, no all-unit cold replay; targeted tests passed; no external Oracle receipt |
 
 **Recheck the actual live status immediately**. Local commits are checkpoints,
 not evidence of a remote push or external Oracle acceptance. Earlier Git
-pushes were blocked by DNS. Preserve all locally ahead commits (retain F224 `417d882` and F225 `5f544f0`; commit F226 checkpoint); do not
+pushes were blocked by DNS. Preserve all locally ahead commits (retain F224 `417d882`, F225 `5f544f0`, F226 `823608c`; promptly commit F227/F228 verified additions); do not
 switch to the behind `origin/main`, force-push or reset the worktree.
 
 ```bash
@@ -54,7 +54,13 @@ inert variable or arbitrary padding may earn exact credit.
 | F224 `417d882`: YoumuFighter::CreateOwnedObject | `0052D090` | 120 | 6 |
 | F224 `417d882`: YoumuFighter::ResetRound | `0052D110` | 225 | 2 |
 | F225 `5f544f0`: CharacterSelectScene::Initialize | `00432EA0` | 668 | 38 |
-| F226: ReplayBrowserScene::UpdateSelection | `0042C670` | 1,005 | 48 |
+| F226 `823608c`: ReplayBrowserScene::UpdateSelection | `0042C670` | 1,005 | 48 |
+| F227: ReimuFighter::CreateOwnedObject | `0046D160` | 120 | 6 |
+| F227: ReimuFighter::ResetRound | `0046D1E0` | 235 | 1 |
+| F227: AliceFighter::CreateOwnedObject | `004E2D90` | 120 | 6 |
+| F227: AliceFighter::ResetRound | `004E2E10` | 223 | 1 |
+| F227: CharacterSelectScene::UpdatePlayerChoice | `004348E0` | 1,029 | 32 |
+| F228: CharacterSelectScene::UpdatePlayerConfirmation | `00434CF0` | 995 | 34 |
 
 F222 proved signed 32-bit x87 `FILD` divided by the target's 36.0f
 (`00659308`), 74 physical animation records and a final call into the
@@ -62,17 +68,19 @@ F222 proved signed 32-bit x87 `FILD` divided by the target's 36.0f
 `i <= 36`, not the byte-different `i < 37`. Its three relocations all
 match. F223 adds two complete borrowed constructors and a real EH-backed
 232-byte `new`; Youmu additionally calls the observed +0xFEC child init.
-All eight units were independently cold-exact. F224 used a complete, native-EH-backed `new(0xE8)` with the real Youmu constructor at `00536360`, then ordered 16 halfword resets, the accepted base reset `00457010`, and the observed +0xFEC subcomponent reset `00531CE0`. Their nominal C++ classes and
+All fourteen units were independently cold-exact. F224 used a complete, native-EH-backed `new(0xE8)` with the real Youmu constructor at `00536360`, then ordered 16 halfword resets, the accepted base reset `00457010`, and the observed +0xFEC subcomponent reset `00531CE0`. Their nominal C++ classes and
 external helper implementations are **not** established by code equality.
 
 F225 additionally accepts an entire 668-byte character-selection constructor (185 native instructions) with actual vtable, three separately allocated texture managers, two deleting destructors, two real configuration loops, and 38 relocation fields. Its first full probe used mistaken pointer-indirect indexing and emitted 677 bytes; the verified this-relative byte arrays restore exact native 668 bytes. The base-scene constructor remains R108 origin-unknown and uncredited.
 
 F226 adds an entire 1,005-byte replay-browser selection state machine. A natural source probe originally emitted 1,016 bytes because of 32-bit promotions and a redundant macro-generated loop. The corrected short prefix increment/decrement and direct transition statements match all 296 native instructions, 813/813 comparable bytes and 48 real relocation fields. Only this affected unit was cold-replayed.
 
+F227/F228 independently cold-replay 6 additional authored units (4 fighter routines, 2 large character-select controllers) for 2,722 more CODE bytes. Two 120-byte factory functions reconstruct genuine EH-backed `new(232)` and individual constructors; two round resets retain character-specific field order. `UpdatePlayerChoice` 1,029 bytes, 245 instructions, and 32 fields; `UpdatePlayerConfirmation` 995 bytes, 242 instructions, and 34 fields. Both include real x87, input and stage transitions. Their unfinished dirty source and unit evidence were investigated and completed, not discarded.
+
 Relevant full native proofs: `config/match-units.toml`,
 `config/exact-adoptions.json`, sources `src/*F222.cpp`/`src/*F223.cpp`,
 and `docs/KNOWLEDGE_BASE.md`. The cold-replay logs are private in
-`.analysis/f222-marisa-reset/`, `.analysis/f223-fighter-ctors/`, and `.analysis/f224-youmu-lifecycle/`, and `.analysis/f225-big-functions/` and `.analysis/f226-replay-browser/`.
+`.analysis/f222-marisa-reset/`, `.analysis/f223-fighter-ctors/`, and `.analysis/f224-youmu-lifecycle/`, and `.analysis/f225-big-functions/` and `.analysis/f226-replay-browser/`, `.analysis/f227-fighter-recovery/`, `.analysis/f226-player-choice/` and `.analysis/f228-confirmation/`.
 Earlier accepted functions remain in the canonical ledgers. **Do not run any all-unit cold replay**; user explicitly requires only newly changed/affected units. Keep builds serialized/headless.
 
 ## 3. Unsolved **large** functions — recommended next work
@@ -118,7 +126,7 @@ bytes outside accepted authored coverage.
    `implemented.csv`, `matches.csv`, `reccmp-functions.csv`,
    `known-symbols.csv`, `exact-adoptions.json` and SHA-pinned checkpoint
    tests. Update progress from live ledgers, not remembered counts.
-6. Run tracking, affected cold units, checkpoint tests, `scripts/ci.py`,
+6. Run tracking, affected cold units, checkpoint tests, optional full `scripts/ci.py` (never all-unit cold replay),
    and `git diff --check`. Commit material progress with
    `git commit -m 'gpt-web: <specific completed work>'`.
 7. Keep nominal class identities, original layout ownership, unresolved

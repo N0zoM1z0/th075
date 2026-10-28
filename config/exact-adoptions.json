@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "5560a7fd316b767d11a81d1831b9955cc1f0541fd7d2b615ff46e75d1d5ed407"
+      "current_sha256": "0e7b3d70e7cf12a203c8ddbf1a5a646010a0a509c03cfce5362added20588243"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "045ca33d561baa79c2aa65345c6255690938f224ce3de5de43e9357354b64c31"
+      "current_sha256": "a08113ad141e5d5d1b1a401bed0f2bedc1d952b0bf37d1897c34c13b198b12dd"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "c31d41fac3c1032d2332c6ab623802dd64dad3a13f778e04ea2df30abf2c96c3"
+      "current_sha256": "2e7864921055de363fae9778a62524b5853d3909cc1aa6918a4073c9175f87a1"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "52aa32b15301737bc85097e12b4641d306d9a9cca75ed281bff451f4c5f89066"
+      "current_sha256": "54950b365737a1eaa5baf42fa74fc62b829e2f6c5358b6e88d3158a421115d3d"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "66f5826f82788a1c68acb51a2102774e61020b1096d111227235fd20ca519558"
+      "current_sha256": "e74c93a7e1969ec6d76fd954d522f74e66d972841d6c33307ec6bf66da322f69"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -21072,6 +21072,270 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R040"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0046D160",
+        "size": "120",
+        "span_end": "0x0046D1D7",
+        "current_name": "FUN_0046d160",
+        "proposed_name": "ReimuFighter::CreateOwnedObject",
+        "module": "ReimuFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R046; full body hash, complete decoded CFG and Reimu-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x0046D160",
+        "size": "120",
+        "span_end": "0x0046D1D7",
+        "current_name": "FUN_0046d160",
+        "proposed_name": "ReimuFighter::CreateOwnedObject",
+        "module": "ReimuFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void ReimuFactoryF227::CreateOwnedObject(ReimuGeneratedF227**)",
+        "is_thunk": "false",
+        "source_file": "src/ReimuOwnedF227.cpp",
+        "evidence": "R046; full body hash, complete decoded CFG and Reimu-specific behavior reviewed; F227; scripts/repo-python scripts/replay-exact-units.py --unit reimu-fighter-create-owned-object-0046d160",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F227: complete 120 authored CODE bytes / 34 decoded x86 instructions, target SHA256 922399edaaa88c66ee9c8095d8d53bb23e1f78163c0d803b9bced866cb884301. Natural pinned VC7.1 cold-exact full function with 6 true physical COFF relocation fields; Native one-state /GX EH, real handler and operator new(0xE8) plus independent generated 232-byte constructor; output pointer and RET4. Physical allocation carrier does not prove nominal original class sizeof or full owner layout. Original method spelling/complete fighter layout unknown; independent authored origin R046/R050 retained. This is local exact replay, not an external Oracle receipt. No fake locals, byte masks, target bytes, asm, alignment changes or cropped extents. All 97 unknown origins unchanged."
+      },
+      "origin": {
+        "address": "0x0046D160",
+        "origin": "authored",
+        "subsystem": "ReimuFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R046"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0046D1E0",
+        "size": "235",
+        "span_end": "0x0046D2CA",
+        "current_name": "FUN_0046d1e0",
+        "proposed_name": "ReimuFighter::ResetRound",
+        "module": "ReimuFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R046; full body hash, complete decoded CFG and Reimu-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x0046D1E0",
+        "size": "235",
+        "span_end": "0x0046D2CA",
+        "current_name": "FUN_0046d1e0",
+        "proposed_name": "ReimuFighter::ResetRound",
+        "module": "ReimuFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void ReimuRoundF227::ResetRound()",
+        "is_thunk": "false",
+        "source_file": "src/ReimuResetF227.cpp",
+        "evidence": "R046; full body hash, complete decoded CFG and Reimu-specific behavior reviewed; F227; scripts/repo-python scripts/replay-exact-units.py --unit reimu-fighter-reset-round-0046d1e0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F227: complete 235 authored CODE bytes / 45 decoded x86 instructions, target SHA256 0e0e300a72c0a9b1cb632014ce4db7f19d300bffab2e56e89664f14ff8da7cfd. Natural pinned VC7.1 cold-exact full function with 1 true physical COFF relocation fields; 16 ordered initial halfword zero writes followed by base reset 00457010 then two trailing halfword zero writes; source assignment order matches original exactly. Original method spelling/complete fighter layout unknown; independent authored origin R046/R050 retained. This is local exact replay, not an external Oracle receipt. No fake locals, byte masks, target bytes, asm, alignment changes or cropped extents. All 97 unknown origins unchanged."
+      },
+      "origin": {
+        "address": "0x0046D1E0",
+        "origin": "authored",
+        "subsystem": "ReimuFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R046"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004E2D90",
+        "size": "120",
+        "span_end": "0x004E2E07",
+        "current_name": "FUN_004e2d90",
+        "proposed_name": "AliceFighter::CreateOwnedObject",
+        "module": "AliceFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R050; whole body hash, complete CFG, character constructor/factory chain and local behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; method name and complete class layout inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x004E2D90",
+        "size": "120",
+        "span_end": "0x004E2E07",
+        "current_name": "FUN_004e2d90",
+        "proposed_name": "AliceFighter::CreateOwnedObject",
+        "module": "AliceFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void AliceFactoryF227::CreateOwnedObject(AliceGeneratedF227**)",
+        "is_thunk": "false",
+        "source_file": "src/AliceOwnedF227.cpp",
+        "evidence": "R050; whole body hash, complete CFG, character constructor/factory chain and local behavior reviewed; F227; scripts/repo-python scripts/replay-exact-units.py --unit alice-fighter-create-owned-object-004e2d90",
+        "owner": "authored",
+        "notes": "Origin reviewed; method name and complete class layout inferred; source and exact state remain independent; F227: complete 120 authored CODE bytes / 34 decoded x86 instructions, target SHA256 678cc5d0b2e17603636b0fb955198e91ce0c8c35c6f81b0edc4a9c5f215e70f2. Natural pinned VC7.1 cold-exact full function with 6 true physical COFF relocation fields; Native one-state /GX EH, real handler and operator new(0xE8) plus independent generated 232-byte constructor; output pointer and RET4. Physical allocation carrier does not prove nominal original class sizeof or full owner layout. Original method spelling/complete fighter layout unknown; independent authored origin R046/R050 retained. This is local exact replay, not an external Oracle receipt. No fake locals, byte masks, target bytes, asm, alignment changes or cropped extents. All 97 unknown origins unchanged."
+      },
+      "origin": {
+        "address": "0x004E2D90",
+        "origin": "authored",
+        "subsystem": "AliceFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R050"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004E2E10",
+        "size": "223",
+        "span_end": "0x004E2EEE",
+        "current_name": "FUN_004e2e10",
+        "proposed_name": "AliceFighter::ResetRound",
+        "module": "AliceFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R050; whole body hash, complete CFG, character constructor/factory chain and local behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; method name and complete class layout inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x004E2E10",
+        "size": "223",
+        "span_end": "0x004E2EEE",
+        "current_name": "FUN_004e2e10",
+        "proposed_name": "AliceFighter::ResetRound",
+        "module": "AliceFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void AliceRoundF227::ResetRound()",
+        "is_thunk": "false",
+        "source_file": "src/AliceResetF227.cpp",
+        "evidence": "R050; whole body hash, complete CFG, character constructor/factory chain and local behavior reviewed; F227; scripts/repo-python scripts/replay-exact-units.py --unit alice-fighter-reset-round-004e2e10",
+        "owner": "authored",
+        "notes": "Origin reviewed; method name and complete class layout inferred; source and exact state remain independent; F227: complete 223 authored CODE bytes / 43 decoded x86 instructions, target SHA256 353ddb043c35008a7b6d5c7355b432ab6511abd5962bc2c0a5aa16c9ba167360. Natural pinned VC7.1 cold-exact full function with 1 true physical COFF relocation fields; 17 initial halfword zero writes followed by base reset 00457010; source assignment order and return match the native body exactly. Original method spelling/complete fighter layout unknown; independent authored origin R046/R050 retained. This is local exact replay, not an external Oracle receipt. No fake locals, byte masks, target bytes, asm, alignment changes or cropped extents. All 97 unknown origins unchanged."
+      },
+      "origin": {
+        "address": "0x004E2E10",
+        "origin": "authored",
+        "subsystem": "AliceFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R050"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004348E0",
+        "size": "1029",
+        "span_end": "0x00434CE4",
+        "current_name": "FUN_004348e0",
+        "proposed_name": "CharacterSelectScene::UpdatePlayerChoice",
+        "module": "CharacterSelectScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R041; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x004348E0",
+        "size": "1029",
+        "span_end": "0x00434CE4",
+        "current_name": "FUN_004348e0",
+        "proposed_name": "CharacterSelectScene::UpdatePlayerChoice",
+        "module": "CharacterSelectScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void CharacterSelectChoiceF226::UpdatePlayerChoice(signed char player)",
+        "is_thunk": "false",
+        "source_file": "src/CharacterSelectChoiceF226.cpp",
+        "evidence": "R041; full body hash, complete decoded CFG and local game-specific behavior reviewed; F227 recovered pending full source; scripts/repo-python scripts/replay-exact-units.py --unit character-select-scene-update-player-choice-004348e0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F227: recovered pre-existing unmatched local source and complete 1029-byte COFF unit rather than dropping or bypassing dirty work. Independently checked native 004348E0..00434CE4 / 245 instructions / RET4, SHA256 7caee90598d5bd3f45389a0e5b0852ea679517934ada3f04627594557dbe4872. Pinned VC7.1 /GX- cold exact of all 1029 authored CODE bytes and 32 actual DIR32/REL32 relocations. Implements six x87 interpolation channels per signed player index, float compare/control transitions, actual signed 0x1C-stride input word checks, native sound cues and stage input globals, two boolean toggles and rand()%3. Rebuilt recovered source against attested target and independently verified 901/901 non-field bytes and all physical relocation targets. Original owner layout and method spelling provisional; player indexing is physically observed. Local cold exact is not external Oracle; no masks, pasted bytes, fake locals, conditional code splits or cropped function. All 97 unknown origins remain pending."
+      },
+      "origin": {
+        "address": "0x004348E0",
+        "origin": "authored",
+        "subsystem": "CharacterSelectScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R041"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00434CF0",
+        "size": "995",
+        "span_end": "0x004350D2",
+        "current_name": "FUN_00434cf0",
+        "proposed_name": "CharacterSelectScene::UpdatePlayerConfirmation",
+        "module": "CharacterSelectScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R041; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00434CF0",
+        "size": "995",
+        "span_end": "0x004350D2",
+        "current_name": "FUN_00434cf0",
+        "proposed_name": "CharacterSelectScene::UpdatePlayerConfirmation",
+        "module": "CharacterSelectScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void CharacterSelectConfirmF228::UpdatePlayerConfirmation(signed char)",
+        "is_thunk": "false",
+        "source_file": "src/CharacterSelectConfirmF228.cpp",
+        "evidence": "R041; full body hash, complete decoded CFG and local game-specific behavior reviewed; F228; scripts/repo-python scripts/replay-exact-units.py --unit character-select-scene-update-player-confirmation-00434cf0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F228: complete 995 authored CODE bytes / 242 decoded native x86 instructions, SHA256 67e1ce98232d90f7b4dfa9fc781b850672732483a0befd09b54eda9222f64412. Full VC7.1 /Od /GX- natural source cold-exact for all 995 bytes including 34 real DIR32/REL32 native relocation fields and RET4. Native player choice confirmation performs five float animations and the ready-bound clamp to 75.0f, signed-char 0x1C-stride player-input extraction, native sound cues, two global selection slots at 006714CC, signed game-mode 3/4 pair state override, guarded confirmation/cancellation, 32-bit boolean toggle computation, and signed CRT random modulo 3. First source was 995 bytes with 855/859 comparable bytes but used unsigned-char game mode and emitted four MOVZX where original uses MOVSX; genuine signed-char declaration resolves all four fields to achieve 859/859 exact nonrelocation bytes. No fake locals, padding, cropped extent, inline assembly, byte masking, unknown function origins or fabricated complete class. Physical scene input receiver is borrowed and original full layout/name remain provisional. Cold replay is local, not an accepted external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x00434CF0",
+        "origin": "authored",
+        "subsystem": "CharacterSelectScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R041"
       }
     }
   ],
@@ -166102,6 +166366,624 @@
           "target": 4225472
         }
       ]
+    },
+    "reimu-fighter-create-owned-object-0046d160": {
+      "source": "src/ReimuOwnedF227.cpp",
+      "object": "build/matching/ReimuOwnedF227.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "ReimuFighter::CreateOwnedObject"
+      ],
+      "symbol": "?CreateOwnedObject@ReimuFactoryF227@@QAEXPAPAVReimuGeneratedF227@@@Z",
+      "target_address": 4641120,
+      "size": 120,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$?CreateOwnedObject@ReimuFactoryF227@@QAEXPAPAVReimuGeneratedF227@@@Z",
+          "target": 6644779
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 36,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 67,
+          "type": "REL32",
+          "symbol": "??0ReimuGeneratedF227@@QAE@PAX@Z",
+          "target": 4680112
+        },
+        {
+          "offset": 110,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "reimu-fighter-reset-round-0046d1e0": {
+      "source": "src/ReimuResetF227.cpp",
+      "object": "build/matching/ReimuResetF227.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "ReimuFighter::ResetRound"
+      ],
+      "symbol": "?ResetRound@ReimuRoundF227@@QAEXXZ",
+      "target_address": 4641248,
+      "size": 235,
+      "relocations": [
+        {
+          "offset": 203,
+          "type": "REL32",
+          "symbol": "?ResetRound@FighterBaseActionsF159@@QAEXXZ",
+          "target": 4550672
+        }
+      ]
+    },
+    "alice-fighter-create-owned-object-004e2d90": {
+      "source": "src/AliceOwnedF227.cpp",
+      "object": "build/matching/AliceOwnedF227.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "AliceFighter::CreateOwnedObject"
+      ],
+      "symbol": "?CreateOwnedObject@AliceFactoryF227@@QAEXPAPAVAliceGeneratedF227@@@Z",
+      "target_address": 5123472,
+      "size": 120,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$?CreateOwnedObject@AliceFactoryF227@@QAEXPAPAVAliceGeneratedF227@@@Z",
+          "target": 6644875
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 36,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 67,
+          "type": "REL32",
+          "symbol": "??0AliceGeneratedF227@@QAE@PAX@Z",
+          "target": 5160192
+        },
+        {
+          "offset": 110,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "alice-fighter-reset-round-004e2e10": {
+      "source": "src/AliceResetF227.cpp",
+      "object": "build/matching/AliceResetF227.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "AliceFighter::ResetRound"
+      ],
+      "symbol": "?ResetRound@AliceRoundF227@@QAEXXZ",
+      "target_address": 5123600,
+      "size": 223,
+      "relocations": [
+        {
+          "offset": 215,
+          "type": "REL32",
+          "symbol": "?ResetRound@FighterBaseActionsF159@@QAEXXZ",
+          "target": 4550672
+        }
+      ]
+    },
+    "character-select-scene-update-player-choice-004348e0": {
+      "source": "src/CharacterSelectChoiceF226.cpp",
+      "object": "build/matching/CharacterSelectChoiceF226.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "CharacterSelectScene::UpdatePlayerChoice"
+      ],
+      "symbol": "?UpdatePlayerChoice@CharacterSelectChoiceF226@@QAEXC@Z",
+      "target_address": 4409568,
+      "size": 1029,
+      "relocations": [
+        {
+          "offset": 23,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceMinimumAt0065782C@@3MB",
+          "target": 6649900
+        },
+        {
+          "offset": 50,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceBackStepAt00657874@@3MB",
+          "target": 6649972
+        },
+        {
+          "offset": 84,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceRiseBoundAt00658268@@3MB",
+          "target": 6652520
+        },
+        {
+          "offset": 111,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceRiseStepAt00657D14@@3MB",
+          "target": 6651156
+        },
+        {
+          "offset": 145,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceDropBoundAt00657858@@3MB",
+          "target": 6649944
+        },
+        {
+          "offset": 172,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceDropStepAt00657480@@3MB",
+          "target": 6648960
+        },
+        {
+          "offset": 206,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceRiseBoundAt00658268@@3MB",
+          "target": 6652520
+        },
+        {
+          "offset": 233,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceRiseStepAt00657D14@@3MB",
+          "target": 6651156
+        },
+        {
+          "offset": 267,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceDropBoundAt00657858@@3MB",
+          "target": 6649944
+        },
+        {
+          "offset": 294,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceDropStepAt00657480@@3MB",
+          "target": 6648960
+        },
+        {
+          "offset": 328,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceZeroAt00657CBC@@3MB",
+          "target": 6651068
+        },
+        {
+          "offset": 355,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceReturnStepAt0065747C@@3MB",
+          "target": 6648956
+        },
+        {
+          "offset": 391,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceZeroAt00657CBC@@3MB",
+          "target": 6651068
+        },
+        {
+          "offset": 418,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceDropStepAt00657480@@3MB",
+          "target": 6648960
+        },
+        {
+          "offset": 452,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceZeroAt00657CBC@@3MB",
+          "target": 6651068
+        },
+        {
+          "offset": 502,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundBankF226@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 507,
+          "type": "REL32",
+          "symbol": "?Play@ChoiceSoundBankF226@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 544,
+          "type": "REL32",
+          "symbol": "?TestAction@ChoiceInputF226@@YAHH@Z",
+          "target": 4426336
+        },
+        {
+          "offset": 560,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundBankF226@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 565,
+          "type": "REL32",
+          "symbol": "?Play@ChoiceSoundBankF226@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 607,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundBankF226@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 612,
+          "type": "REL32",
+          "symbol": "?Play@ChoiceSoundBankF226@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 668,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceRandomModeAt00671610@@3PAEA",
+          "target": 6755856
+        },
+        {
+          "offset": 691,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundBankF226@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 696,
+          "type": "REL32",
+          "symbol": "?Play@ChoiceSoundBankF226@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 725,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundBankF226@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 730,
+          "type": "REL32",
+          "symbol": "?Play@ChoiceSoundBankF226@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 736,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceStageAt00671621@@3EA",
+          "target": 6755873
+        },
+        {
+          "offset": 922,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 940,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceRandomModeAt00671610@@3PAEA",
+          "target": 6755856
+        },
+        {
+          "offset": 963,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundBankF226@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 968,
+          "type": "REL32",
+          "symbol": "?Play@ChoiceSoundBankF226@@QAEXH@Z",
+          "target": 4225472
+        }
+      ]
+    },
+    "character-select-scene-update-player-confirmation-00434cf0": {
+      "source": "src/CharacterSelectConfirmF228.cpp",
+      "object": "build/matching/CharacterSelectConfirmF228.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "CharacterSelectScene::UpdatePlayerConfirmation"
+      ],
+      "symbol": "?UpdatePlayerConfirmation@CharacterSelectConfirmF228@@QAEXC@Z",
+      "target_address": 4410608,
+      "size": 995,
+      "relocations": [
+        {
+          "offset": 23,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceMinimumAt0065782C@@3MB",
+          "target": 6649900
+        },
+        {
+          "offset": 50,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceBackStepAt00657874@@3MB",
+          "target": 6649972
+        },
+        {
+          "offset": 84,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceRiseBoundAt00658268@@3MB",
+          "target": 6652520
+        },
+        {
+          "offset": 111,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceRiseStepAt00657D14@@3MB",
+          "target": 6651156
+        },
+        {
+          "offset": 145,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceDropBoundAt00657858@@3MB",
+          "target": 6649944
+        },
+        {
+          "offset": 172,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceDropStepAt00657480@@3MB",
+          "target": 6648960
+        },
+        {
+          "offset": 206,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceRiseBoundAt00658268@@3MB",
+          "target": 6652520
+        },
+        {
+          "offset": 233,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceRiseStepAt00657D14@@3MB",
+          "target": 6651156
+        },
+        {
+          "offset": 267,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceDropBoundAt00657858@@3MB",
+          "target": 6649944
+        },
+        {
+          "offset": 294,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceDropStepAt00657480@@3MB",
+          "target": 6648960
+        },
+        {
+          "offset": 328,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceReadyBoundAt0065826C@@3MB",
+          "target": 6652524
+        },
+        {
+          "offset": 355,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceDropStepAt00657480@@3MB",
+          "target": 6648960
+        },
+        {
+          "offset": 389,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceReadyBoundAt0065826C@@3MB",
+          "target": 6652524
+        },
+        {
+          "offset": 439,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundBankF228@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 444,
+          "type": "REL32",
+          "symbol": "?Play@ChoiceSoundBankF228@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 481,
+          "type": "REL32",
+          "symbol": "?TestAction@ChoiceInputF228@@YAHH@Z",
+          "target": 4426336
+        },
+        {
+          "offset": 497,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundBankF228@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 502,
+          "type": "REL32",
+          "symbol": "?Play@ChoiceSoundBankF228@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 544,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundBankF228@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 549,
+          "type": "REL32",
+          "symbol": "?Play@ChoiceSoundBankF228@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 605,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceReadyBoundAt0065826C@@3MB",
+          "target": 6652524
+        },
+        {
+          "offset": 654,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceSelectedPairAt006714CC@@3PAEA",
+          "target": 6755532
+        },
+        {
+          "offset": 676,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceGameModeAt006714B4@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 688,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceGameModeAt006714B4@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 721,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundBankF228@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 726,
+          "type": "REL32",
+          "symbol": "?Play@ChoiceSoundBankF228@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 751,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundBankF228@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 756,
+          "type": "REL32",
+          "symbol": "?Play@ChoiceSoundBankF228@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 844,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 862,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceSelectedPairAt006714CC@@3PAEA",
+          "target": 6755532
+        },
+        {
+          "offset": 884,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceGameModeAt006714B4@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 896,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceGameModeAt006714B4@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 929,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundBankF228@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 934,
+          "type": "REL32",
+          "symbol": "?Play@ChoiceSoundBankF228@@QAEXH@Z",
+          "target": 4225472
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -166417,6 +167299,12 @@
     "src/YoumuOwnedF224.cpp": "fa22ce1defb84aa61cec89068913f4627ab884d29b8749c32afc4d9181ca1c85",
     "src/YoumuResetF224.cpp": "1f6e7e591a4da122df9eb0822b6d5cd9cf8ac09cb3e8dbf6309d4a27e7370a26",
     "src/CharacterSelectInitF225.cpp": "ee10126ec6ce2f673790cafc361097cebedd429e822ac2d7ece0d3b173add89e",
-    "src/ReplayBrowserSelectionF226.cpp": "944ade508638fe15e8a84983279289be6adb5a0c06ec59a54aa25ef3394a5c52"
+    "src/ReplayBrowserSelectionF226.cpp": "944ade508638fe15e8a84983279289be6adb5a0c06ec59a54aa25ef3394a5c52",
+    "src/ReimuOwnedF227.cpp": "8f0dc09c5206d12974b60bd55a876a9c7a1d1a778980df3617c78b330ed21e0f",
+    "src/ReimuResetF227.cpp": "d9dcc8a844bfa39152756b8cc635367e72a1648da08a6affa585e7494bcf3ecd",
+    "src/AliceOwnedF227.cpp": "a954cbe8485fa9167bb3b17ff95c5819507b1e63e30dfd8c4f24b848628ed619",
+    "src/AliceResetF227.cpp": "84c063ec343aa1726bf545a2c3a8b72d4e2929ec02bbe2a187ed692e0d1bea8e",
+    "src/CharacterSelectChoiceF226.cpp": "6ecdd0f1e51af3e1878359d8b2c92eaacecb4dbba392a4c4c716d8452011776e",
+    "src/CharacterSelectConfirmF228.cpp": "27033f3f8d02d11e291df37f21a69199077a59003640dc88f1f84df14b394a92"
   }
 }

@@ -537,3 +537,9 @@ YoumuFighter::CreateOwnedObject,0x0052D090,function
 YoumuFighter::ResetRound,0x0052D110,function
 CharacterSelectScene::Initialize,0x00432EA0,function
 ReplayBrowserScene::UpdateSelection,0x0042C670,function
+ReimuFighter::CreateOwnedObject,0x0046D160,function
+ReimuFighter::ResetRound,0x0046D1E0,function
+AliceFighter::CreateOwnedObject,0x004E2D90,function
+AliceFighter::ResetRound,0x004E2E10,function
+CharacterSelectScene::UpdatePlayerChoice,0x004348E0,function
+CharacterSelectScene::UpdatePlayerConfirmation,0x00434CF0,function
