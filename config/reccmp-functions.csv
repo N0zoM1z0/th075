@@ -588,3 +588,4 @@ CardList::LoadCharacterFile,0x004319B0,function
 ProgressRecords::SetSelection,0x0041A1A0,function
 ProgressRecords::GetSelectedRecordAddress,0x0041A240,function
 ProfileSelection::StoreWorkingEightBytesAt00416E20,0x00416E20,function
+FighterState::ChoosePatternSequence,0x0045D810,function

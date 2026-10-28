@@ -587,3 +587,4 @@ CardList::LoadCharacterFile
 ProgressRecords::SetSelection
 ProgressRecords::GetSelectedRecordAddress
 ProfileSelection::StoreWorkingEightBytesAt00416E20
+FighterState::ChoosePatternSequence

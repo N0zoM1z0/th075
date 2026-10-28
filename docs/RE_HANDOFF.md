@@ -1,4 +1,4 @@
-# TH075 — active reconstruction handoff (F274)
+# TH075 — active reconstruction handoff (F278)
 
 **Updated 2026-10-28. Read this document before new experiments.**
 
@@ -22,17 +22,17 @@ not acceptance requirements.
 
 | Item | Current evidence |
 | --- | --- |
-| Local branch / last exact-code commit | `main` / F274 three whole selection/score helpers; F273 plain CardList checkpoint `443d8b9` |
+| Local branch / last exact-code commit | `main` / F278 full 1,264-byte fighter pattern boss; F274 selection/score checkpoint `dde1c40` |
 | Upstream | `origin/main` tracked locally; verify current ahead/behind and dirty state before further work |
-| Working tree | Clean after F274 checkpoint if successful; continue rather than avoid every existing dirty edit |
+| Working tree | Clean after F278 checkpoint if successful; continue rather than avoid every existing dirty edit |
 | Native binary | `resources/th075.exe`, SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98` |
 | Candidate count | 4,351; origin review: 1,002 authored, 2,671 library, 581 compiler, 97 unknown |
-| Accepted functions / units | **589 / 589** |
-| Accepted authored CODE | **793,236 bytes** |
-| Reviewed authored coverage | 793,236 / 1,973,516 = **40.19%** |
-| Conservative coverage | **40.12%** counting 3,608 origin-pending bytes |
+| Accepted functions / units | **590 / 590** |
+| Accepted authored CODE | **794,500 bytes** |
+| Reviewed authored coverage | 794,500 / 1,973,516 = **40.26%** |
+| Conservative coverage | **40.18%** counting 3,608 origin-pending bytes |
 | Goal | **98% not reached** |
-| Verification | F274 three related complete 37/48/84-byte score selection helpers independently cold-exact (0/0/1 real COFF fields), after F273 full plain CardList checkpoint `443d8b9`. Only three new/affected units cold-replayed, no full cold replay or external Oracle receipt |
+| Verification | F278 complete 1,264-byte FighterState::ChoosePatternSequence cold-exact (1,140/1,140 nonrelocation bytes and all 31 authentic COFF fields); F274 three selection/score leaves previously checkpointed at `dde1c40`. Only new F278 boss cold-replayed, no all-unit cold replay or external Oracle receipt |
 
 **Recheck the actual live status immediately**. Local commits are checkpoints,
 not evidence of a remote push or external Oracle acceptance. Earlier Git
@@ -116,6 +116,7 @@ inert variable or arbitrary padding may earn exact credit.
 | F274: ProgressRecords::SetSelection | `0041A1A0` | 37 | 0 |
 | F274: ProgressRecords::GetSelectedRecordAddress | `0041A240` | 48 | 0 |
 | F274: ProfileSelection::StoreWorkingEightBytes | `00416E20` | 84 | 1 |
+| F278: FighterState::ChoosePatternSequence | `0045D810` | 1,264 | 31 |
 
 F222 proved signed 32-bit x87 `FILD` divided by the target's 36.0f
 (`00659308`), 74 physical animation records and a final call into the
@@ -219,6 +220,8 @@ F273 **cold-accepts the complete native 429-byte `CardList::LoadCharacterFile` p
 F274 **cold-accepts three complete native score-selection leaves** using one physically borrowed owner and one canonical C++ source, all with correct full 32-bit thiscall ABI and native signed selector semantics: 37-byte `ProgressRecords::SetSelection` at `0041A1A0` (37/37 nonfield, 0 relocations), 48-byte `GetSelectedRecordAddress` at `0041A240` (48/48, 0 fields) and 84-byte `ProfileSelection::StoreWorkingEightBytesAt00416E20` (80/80, 1 true REL32 to memcpy). The 37/48-byte pair stores original selection bytes at +0x16AC4/+0x16AC5 and selects the real 0x17F0×fighter + 0x5FC×difficulty record. The 84-byte helper copies exactly eight bytes from +0x16A94 into selected record+0x55C+0x10×signed slot. Crucially **the earlier two provisional `functions.csv` owner fields were blank**, despite **R021 independently authored origin in `config/function-origins.csv` and original R021 review**; F274 explicitly reconciles them to authored before granting exact CODE credit. R180 84-byte owner's authored classification was already consistent. Native names and complete score matrix layout are not asserted. All three actual complete functions cold-replayed `3/3 exact` across one new VC7.1 object, with no full cold replay or duplicate F269 caller CODE credit. Private disassembly/decompiler/probe/cold evidence lives in `.analysis/f274-progress-leaves/`, source `src/ProgressSelectionF274.cpp`.
 
 The **1,252-byte `ReplayRecords::AppendRecord`** big boss at `00413DE0` remains nonexact with preserved 1,033/1,052 comparable-byte best, 50 real relocations and full function length. F272 additionally tried ten physically grounded iterator constructor declaration/scope reorder controls; all retained whole code/fields but failed to correct all 19 native EBP slot differences (no authored CODE credit). The **746-byte `SpriteSequence::RenderElements`** remains 734-byte emitted with correct 198 instruction forms/0xBC frame and unresolved 12-byte stack-slot locality. F274 added eight nested real Quad/RECT/tint lifetimes, all negative, archived in `.analysis/f274-sprite-scope/`. The **1,722-byte R067-authored `Effects::LoadPatternCatalog`** boss was rechecked independently by Ghidra under `.analysis/f274-effects-catalog/`, revealing the actual native effect.pat archive, custom container, EH lifetime and nested per-entry parsing calls; no full C++ candidate was yet accepted and no credit is claimed. Preserve all these genuine boss investigations; continue exploring whole functions rather than farming tiny leaves alone.
+
+F278 **cold-accepts the COMPLETE 1,264-byte `FighterState::ChoosePatternSequence` boss** at `0045D810..0045DCFF` (342 independently decoded native x86 instructions, all 1,140/1,140 comparable nonrelocation bytes and 31/31 physical COFF relocations). This R045-authored fighter action controller performs native random-weighted selection with a selected opponent character's sequence, incrementally accumulating signed short weights; it writes actual 200-byte-stride fighter action names with `strcpy`, stores signed-kind bytes, checks native Flag/Count/Weight/Name helpers, searches CR-separated entries, and falls back to sequence 300 before a default action name. All original early exits and full fallback scan are preserved, not truncated. A first natural C++ whole probe generated 1,311 bytes; correcting the genuine second cursor advance, native positive early-exit guard, first phase CR-scanning loop and fallback `while` shape restored the full original 1,264-byte instruction extent with 1,104/1,140 matching nonfield bytes. Distinct **real variable lifetimes**, with unsigned `cursor` and signed short accumulated weight in the outer scope, while signed short random threshold and sequence belong inside a nested scope, recovered native EBP slots (-4, -8, -10, -C respectively) and exact 1,140/1,140 bytes. Both natural source lifetime candidates `finish-accum-before-target-inner` and `finish-accum-first-then-cursor` match, but only one natural source is adopted. Native CODE SHA256 `f3038d921b723ed8d71379d697003141faba9653a6017da1eb83002f9a948e5c`; complete source `src/FighterPatternChoiceF278.cpp`, private read-only original function/decompiler, historical failed compiler probes and final cold receipt under `.analysis/f277-fighter-pattern/` and `.analysis/f278-pattern-lifetime/`. **Only** `--unit fighter-state-choose-pattern-sequence-0045d810` cold-replayed exact; no CRT `rand`/`strcpy`, library, helper, pending-origin or already accepted fighter base bytes double-counted. Original private type/name layout is still inferred, not independently proven; no byte grafts, fake locals, masks, hand-assembly or cropped body.
 
 Relevant full native proofs: `config/match-units.toml`,
 `config/exact-adoptions.json`, sources `src/*F222.cpp`/`src/*F223.cpp`,

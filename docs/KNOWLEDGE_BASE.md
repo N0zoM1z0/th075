@@ -2827,3 +2827,85 @@ controller; a mere plausible decompile is not an exact C++ source.
 The full original function/decompile and read-only listing are kept
 in `.analysis/f274-effects-catalog/` for later native-guided probes.
 No byte credit is claimed.
+
+
+## F278: cold-exact entire 1,264-byte FighterState weighted-pattern selection boss
+
+The native R045-authored `FighterState::ChoosePatternSequence` entry
+`0045D810` has the **complete 1,264 CODE bytes** ending with a plain
+RET at `0045DCFF`, **342 independently decoded original x86 instructions**,
+and original full PE-backed CODE SHA256
+`f3038d921b723ed8d71379d697003141faba9653a6017da1eb83002f9a948e5c`.
+It is a substantial game-specific two-phase algorithm rather than a
+leaf or a fragment. Its source lives in `src/FighterPatternChoiceF278.cpp`;
+reproducible full target analysis, compiler variants, original native
+branch matching, final original COFF comparison and independent cold
+receipt live in `.analysis/f277-fighter-pattern/` and
+`.analysis/f278-pattern-lifetime/`. All negative probes are preserved.
+
+The function obtains a random target weight through `rand` at
+`006418AB` with native signed `% 256` lowering, resets a 16-bit
+accumulator and the chosen pattern count byte `this+0x53A`, selects
+the opposing fighter character from game globals at `006714C8` using
+the actual signed player side `this+0x2CC` and adds 200 to the first
+pattern sequence number. The borrowed native pattern catalogue begins
+at `this+0x714` and its original helpers are `Count` `0045DD00`,
+`Weight` `00420570`, `Flag` `00420530`, and `Name` `004205B0`.
+The first phase iterates real weighted pattern entries, accumulates
+signed short weights, and when the random threshold is reached,
+records the actual entry-kind byte at `this+0x6CB+(signed count)`,
+copies the corresponding pattern name using native `strcpy` `00641B80`
+into `this+0x53B + 200*(signed count)`, and may append one following
+pattern if the actual sequence length and zero-flag guards permit it.
+Otherwise it scans actual CR-delimited neighbouring records until
+an entry or the sequence boundary is reached. On no selection, it
+uses a second real `rand` call and fallback sequence **300**, performs
+the full analogous weighted pattern scan, and finally writes the
+original default name from `00659078` and zero kind when nothing
+is eligible. This preserves both complete loops, signed/unsigned
+source semantics, native arithmetic and all original exits. None of
+these game helper, CRT or library callee implementations is credited
+as extra authored CODE.
+
+A first full native-informed ordinary C++ translation emitted **1,311
+bytes**, too many. Independent rechecking showed the real cursor is
+incremented twice on the selected-first-entry path, rather than an
+old pre-call cursor copy; the second fallback sequence is physically
+stored in one short local rather than passed as an immediate at every
+call. Native branch observations favoured positive Count/Flag guards
+with one common exit, and native first/fallback scanning used actual
+while conditions, not synthetic break branches. These real semantic
+changes progressively narrowed the output to **1,275**, **1,265**,
+then the complete original **1,264 bytes**, including all **31
+original physical COFF relocation fields**, but the first full-size
+version matched only **1,104/1,140** nonrelocation bytes.
+
+Those last 36 bytes were physically concentrated in three signed
+16-bit stack-local slots, not missing control-flow instructions. A
+large set of declaration-order tests was negative because VC7.1
+determines stack placement using actual variable lifetime, not
+nominal name order. An independently grounded *meaningful* lifetime
+reconstruction declares the real unsigned 32-bit scan index `cursor`
+and the real signed short accumulated weight in the outer scope, and
+then declares the real signed short random threshold and pattern
+sequence inside a nested lifetime scope enclosing both selection
+phases. This yields exact native stack slots `cursor` EBP-4,
+`accumulated` EBP-8, `target` EBP-0x10 and `sequence` EBP-0x0C.
+Two alternative genuine declaration orders demonstrated the same
+compiler result with **1,140/1,140** byte comparison; final adopted
+source is `finish-accum-before-target-inner.cpp` from private
+`.analysis/f278-pattern-lifetime/`. There are **no dummy locals or
+fake owner layout members**.
+
+The pinned VC7.1 `/Od /Ob0 /Gy /GR- /GX- /GS /Zi` source
+reconstructs the **entire 1,264-byte** machine-code extent, all
+**1,140/1,140 nonrelocation bytes**, and all **31/31 genuine COFF
+relocation offsets/types/solved native destinations**. The canonical
+`fighter-state-choose-pattern-sequence-0045d810` unit was compiled
+from source independently as the **only affected cold-replay unit**
+and reported **`exact; 1264 coverage bytes`**. The game pattern
+helper types and original private fighter parent layout remain
+provisional, and all 97 unresolved origins remain uncredited.
+No target-byte grafting, truncated function, manual assembly, masked
+fields, artificial stack padding, full-set cold replay or remote
+Oracle acceptance is claimed.

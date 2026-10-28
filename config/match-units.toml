@@ -42612,3 +42612,167 @@ offset = 71
 type = "REL32"
 symbol = "_memcpy"
 target = 0x00640F20
+
+[units.fighter-state-choose-pattern-sequence-0045d810]
+source = "src/FighterPatternChoiceF278.cpp"
+object = "build/matching/FighterPatternChoiceF278.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["FighterState::ChoosePatternSequence"]
+symbol = "?ChoosePatternSequence@FighterPatternChoiceF277@@QAEXXZ"
+target_address = 0x0045D810
+size = 1264
+[[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
+offset = 10
+type = "REL32"
+symbol = "_rand"
+target = 0x006418AB
+[[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
+offset = 68
+type = "DIR32"
+symbol = "?g_SecondFighterCharacterAt006714C8@@3PACA"
+target = 0x006714C8
+[[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
+offset = 104
+type = "REL32"
+symbol = "?Count@PatternCatalogF277@@QAEFF@Z"
+target = 0x0045DD00
+[[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
+offset = 140
+type = "REL32"
+symbol = "?Weight@PatternCatalogF277@@QAEFFF@Z"
+target = 0x00420570
+[[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
+offset = 202
+type = "REL32"
+symbol = "?Weight@PatternCatalogF277@@QAEFFF@Z"
+target = 0x00420570
+[[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
+offset = 246
+type = "REL32"
+symbol = "?Name@PatternCatalogF277@@QAEPBDFF@Z"
+target = 0x004205B0
+[[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
+offset = 279
+type = "REL32"
+symbol = "_strcpy"
+target = 0x00641B80
+[[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
+offset = 331
+type = "REL32"
+symbol = "?Count@PatternCatalogF277@@QAEFF@Z"
+target = 0x0045DD00
+[[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
+offset = 367
+type = "REL32"
+symbol = "?Flag@PatternCatalogF277@@QAECFF@Z"
+target = 0x00420530
+[[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
+offset = 398
+type = "REL32"
+symbol = "?Weight@PatternCatalogF277@@QAEFFF@Z"
+target = 0x00420570
+[[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
+offset = 442
+type = "REL32"
+symbol = "?Name@PatternCatalogF277@@QAEPBDFF@Z"
+target = 0x004205B0
+[[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
+offset = 475
+type = "REL32"
+symbol = "_strcpy"
+target = 0x00641B80
+[[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
+offset = 522
+type = "REL32"
+symbol = "?Count@PatternCatalogF277@@QAEFF@Z"
+target = 0x0045DD00
+[[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
+offset = 556
+type = "REL32"
+symbol = "?Flag@PatternCatalogF277@@QAECFF@Z"
+target = 0x00420530
+[[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
+offset = 592
+type = "REL32"
+symbol = "?Count@PatternCatalogF277@@QAEFF@Z"
+target = 0x0045DD00
+[[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
+offset = 614
+type = "REL32"
+symbol = "_rand"
+target = 0x006418AB
+[[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
+offset = 680
+type = "REL32"
+symbol = "?Count@PatternCatalogF277@@QAEFF@Z"
+target = 0x0045DD00
+[[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
+offset = 716
+type = "REL32"
+symbol = "?Weight@PatternCatalogF277@@QAEFFF@Z"
+target = 0x00420570
+[[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
+offset = 778
+type = "REL32"
+symbol = "?Weight@PatternCatalogF277@@QAEFFF@Z"
+target = 0x00420570
+[[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
+offset = 822
+type = "REL32"
+symbol = "?Name@PatternCatalogF277@@QAEPBDFF@Z"
+target = 0x004205B0
+[[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
+offset = 855
+type = "REL32"
+symbol = "_strcpy"
+target = 0x00641B80
+[[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
+offset = 907
+type = "REL32"
+symbol = "?Count@PatternCatalogF277@@QAEFF@Z"
+target = 0x0045DD00
+[[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
+offset = 943
+type = "REL32"
+symbol = "?Flag@PatternCatalogF277@@QAECFF@Z"
+target = 0x00420530
+[[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
+offset = 974
+type = "REL32"
+symbol = "?Weight@PatternCatalogF277@@QAEFFF@Z"
+target = 0x00420570
+[[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
+offset = 1018
+type = "REL32"
+symbol = "?Name@PatternCatalogF277@@QAEPBDFF@Z"
+target = 0x004205B0
+[[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
+offset = 1051
+type = "REL32"
+symbol = "_strcpy"
+target = 0x00641B80
+[[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
+offset = 1098
+type = "REL32"
+symbol = "?Count@PatternCatalogF277@@QAEFF@Z"
+target = 0x0045DD00
+[[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
+offset = 1132
+type = "REL32"
+symbol = "?Flag@PatternCatalogF277@@QAECFF@Z"
+target = 0x00420530
+[[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
+offset = 1168
+type = "REL32"
+symbol = "?Count@PatternCatalogF277@@QAEFF@Z"
+target = 0x0045DD00
+[[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
+offset = 1221
+type = "DIR32"
+symbol = "?g_DefaultActionNameAt00659078@@3QBDB"
+target = 0x00659078
+[[units.fighter-state-choose-pattern-sequence-0045d810.relocations]]
+offset = 1253
+type = "REL32"
+symbol = "_strcpy"
+target = 0x00641B80

@@ -570,3 +570,4 @@ address,name,module,confidence,evidence
 0x0041A1A0,ProgressRecords::SetSelection,ProgressRecords,inferred,"F274; whole native 37-byte score selector/copy, 0 actual relocations cold-exact; complete private owner ABI unknown"
 0x0041A240,ProgressRecords::GetSelectedRecordAddress,ProgressRecords,inferred,"F274; whole native 48-byte score selector/copy, 0 actual relocations cold-exact; complete private owner ABI unknown"
 0x00416E20,ProfileSelection::StoreWorkingEightBytesAt00416E20,ProfileSelection,inferred,"F274; whole native 84-byte score selector/copy, 1 actual relocations cold-exact; complete private owner ABI unknown"
+0x0045D810,FighterState::ChoosePatternSequence,FighterState,inferred,F278; complete 1264-byte native fighter weighted pattern chooser with original two-phase scan/342 instructions/31 genuine relocations cold exact; full original PatternCatalog owner naming unproven
