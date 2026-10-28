@@ -7148,3 +7148,42 @@ or bytes. All original startup failures and Win32 pump teardown remain
 part of the unresolved full-function comparison. No F462 cold exact
 credit, no cropped match, no forged original byte sequence, no
 whole-repository cold replay or external Oracle acceptance.
+
+
+## F465: complete 180-byte original BattleEndScene native render and overlay policy
+
+The R053-authored original `BattleEndScene::DrawAt00425000` at
+`00425000..004250B3` is **180 complete original authored CODE bytes**
+and **50 original x86 instructions**, original pinned PE SHA256
+`93468d820b3c4dba84785743b1b29f6b983c6838c1c4e33c77f038bdfd38e6b2`.
+Its genuine original graphics begin frame call `00402660` gates all draw
+work; actor global `00671418` provides a real renderer at receiver+4
+whose borrowed native depth mode `0040C840(0)` and blend mode
+`0040C7F0(0)` are invoked in order. The original signed character ID
+global `0067161E` is loaded through `AL` and sent to the real fighter
+virtual method slot +0x44, preserving original byte argument ABI.
+If original fighter byte+0x6EE is set, the rendering overlayer at
+global `0067143C` is called through genuine **zero-argument** method
+`00412EB0`. The original optional positive alpha byte at `006714D1`
+causes real imported Win32 `SetRect` at `00657210` for 640×480, then
+forms the native overlay color by shifting that byte 24 bits and ORing
+original global color `0067149C`, and calls original filled rectangle
+`00403910`. The original graphics advance `004027D0` is invoked after
+all optional drawing paths.
+
+A first whole native C++ semantic probe declared the overlayer incorrectly
+as `SetDepthMode(1)`, which emitted **182 bytes**, including a spurious
+`push 1` at original offset 0x60, even though all remaining original
+control flow and native mode calls were already structurally aligned.
+Independent original full disassembly showed original `00412EB0` method
+receives **no arguments**. Correcting that borrowed method interface,
+without deleting the real optional overlay branch, produces natural
+complete-source VC7.1 **180 native CODE bytes**, **112/112 original
+nonrelocation bytes**, and **17/17 original physical COFF DIR32/REL32
+reference fields, types and original PE destinations**. Only affected
+`--unit battle-end-scene-draw-00425000` was compiled and cold replayed,
+**1/1 exact**. The actual full fighter, renderer and overlayer class
+layouts remain unasserted; no graphic SDK/callee CODE double-counting,
+fake parameters, locals, original bytes/assembler, masking, cropping,
+all-unit cold replay or external Oracle receipt. It is a separate
+whole-function addition from accepted F463 battle-end policy.

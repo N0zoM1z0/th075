@@ -744,3 +744,4 @@ address,name,module,confidence,evidence
 0x004170D0,FrameCapture::CapturePrimaryAt004170D0,FrameCapture,inferred,F460; 65-byte full original native 640x480 Win32 SetRect present buffer capture; true contiguous RECT+DWORD at EBP -0x14 and -4; 3 native COFF refs cold exact
 0x00417160,FrameCapture::PresentPrimaryAt00417160,FrameCapture,inferred,"F461; full original 98-byte D3D8 present 16-byte RECT+136-byte native quad stack, 4 genuine COFF physical relocations; single-unit cold exact"
 0x00424F60,BattleEndScene::UpdateAt00424F60,BattleEndScene,inferred,"F463: complete native 152-byte battle end advance/score state, 45 original x86 instructions and 10 physical native COFF refs targeted cold exact"
+0x00425000,BattleEndScene::DrawAt00425000,BattleEndScene,inferred,"F465; complete native 180-byte battle-end rendering, 17 actual native COFF refs, original actor vtable +0x44 and zero-argument overlayer; local cold exact"
