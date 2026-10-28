@@ -631,3 +631,4 @@ MeilingFighter::ResetRound,0x005E21F0,function
 FontSurface::RenderTextToTexture,0x00413460,function
 FontSurface::LoadGlyphOutline,0x0041C1B0,function
 FontSurface::RasterizeText,0x0041C2E0,function
+TextRasterizer::SelectFontAt0041C0D0,0x0041C0D0,function

@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "d61c2659c40698d575017a8c58f20da5f541a9edd3a50198e7ee9ce2ef057112"
+      "current_sha256": "cc8f924441440306b7b366e92a20072a77a36b83ae47968d914e905a305e11ce"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "950ee1f1417d013b5b54213cb06807a91e5a8c5d8faa1d1e4ee8b978da1e0c2f"
+      "current_sha256": "10d5660577a36e04f9eada1878d08fc8550ad26da3da4b9d4756dcd332d5cd74"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "dac35a1631d31e6fe7453f5cf3cbdabdf0c90aea102d63e95c3f4c26a8745eaa"
+      "current_sha256": "cd5a5b7e50c3e51ef076629dc087c6bfe680dc38e3399ce9096fdf1cfd35d04a"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "990b30b80af3e4d5ccd2e25809d5289bdafd2d10e9973c58145e5266d7afd033"
+      "current_sha256": "452ca5778272bee1749e6c9e5f5825f55a2359c18d3d26b8bc84baf2bf85092d"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "0bdac4006ee76224ad1ea8fb300e4afacb07032dbe08bb7df2a8fc96e9faf5cb"
+      "current_sha256": "0f3d9da883dd96791d1b88b9ca9ba4416a669035e888693dde611aaa64397ae2"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -25208,6 +25208,50 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R052"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0041C0D0",
+        "size": "83",
+        "span_end": "0x0041C122",
+        "current_name": "FUN_0041c0d0",
+        "proposed_name": "TextRasterizer::SelectFontAt0041C0D0",
+        "module": "TextRasterizer",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit"
+      },
+      "after": {
+        "address": "0x0041C0D0",
+        "size": "83",
+        "span_end": "0x0041C122",
+        "current_name": "FUN_0041c0d0",
+        "proposed_name": "TextRasterizer::SelectFontAt0041C0D0",
+        "module": "TextRasterizer",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void FontSelectF320::SelectFont()",
+        "is_thunk": "false",
+        "source_file": "src/FontSelectF320.cpp",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103; F320; scripts/repo-python scripts/replay-exact-units.py --unit text-rasterizer-select-font-0041c0d0",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit; F320: complete R103-authored 83-byte native CODE at 0041C0D0..0041C122, 31 independently decoded original x86 instructions, complete original PE body SHA256 e24b2a690079d62be41af03135640adb47899f3ecaa2cfeef65c4a956ddad65a. Complete first natural C++ GDI font selection source uses original HWND this+0, HDC this+4, selected font at this+8, previous HGDIOBJ this+0xC, true TEXTMETRICA at stack, stores actual tmAscent into this+0x2C. Actual imported GDI GetDC IAT at 00657218, SelectObject at 00657048, GetTextMetricsA at 00657040 are all three true physical COFF DIR32 offsets/types/solved targets, with all 71/71 original nonrelocation bytes and complete 83/83 CODE stream. Pinned VC7.1 /Od /Ob0 /Gy /GR- /GX- /GS /Zi independent affected one-unit cold 1/1 exact. This completes part of original F319 rasterization prep call chain, but no downstream F319/F318/F293 original CODE is double counted. The borrowed original HWND/HDC/font caller offsets do not claim complete original private font class layout; no target machine byte graft, manual x86, fake locals/padding, relocation mask, cropped original function, unknown origin 97, Win32/CRT/VC7 callee authored CODE or external Oracle receipt; no all-unit cold replay."
+      },
+      "origin": {
+        "address": "0x0041C0D0",
+        "origin": "authored",
+        "subsystem": "TextRasterizer",
+        "disposition": "authored",
+        "confidence": "complete-game-policy-with-batch-context",
+        "evidence_id": "R103"
       }
     }
   ],
@@ -181313,6 +181357,47 @@
           "target": 4309296
         }
       ]
+    },
+    "text-rasterizer-select-font-0041c0d0": {
+      "source": "src/FontSelectF320.cpp",
+      "object": "build/matching/FontSelectF320.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "TextRasterizer::SelectFontAt0041C0D0"
+      ],
+      "symbol": "?SelectFont@FontSelectF320@@QAEXXZ",
+      "target_address": 4309200,
+      "size": 83,
+      "relocations": [
+        {
+          "offset": 17,
+          "type": "DIR32",
+          "symbol": "__imp__GetDC@4",
+          "target": 6648344
+        },
+        {
+          "offset": 43,
+          "type": "DIR32",
+          "symbol": "__imp__SelectObject@8",
+          "target": 6647880
+        },
+        {
+          "offset": 66,
+          "type": "DIR32",
+          "symbol": "__imp__GetTextMetricsA@8",
+          "target": 6647872
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -181718,6 +181803,7 @@
     "src/MeilingResetF314.cpp": "c13619e2a4c1eded6de5da384cd29a0a553afdc898fe61c7641605bb2aefeabc",
     "src/FontRenderTextureF317.cpp": "c1d5ab5a7ada6c9d7cf645af5ccd0e67fc1badc45604cbeba5e23f14a2f53762",
     "src/FontLoadGlyphOutlineF318.cpp": "9bae4786b51c5af3301114ac780b319bd6b49456f80ed5d88da840d9e7f80962",
-    "src/FontRasterizeTextF319.cpp": "147eec7e26fcced365cae82c80117c097c4f23288fdba85e6055a7b2ec9c5250"
+    "src/FontRasterizeTextF319.cpp": "147eec7e26fcced365cae82c80117c097c4f23288fdba85e6055a7b2ec9c5250",
+    "src/FontSelectF320.cpp": "77085b7d5fe1e960a8ea905cd694baf1d3dd5a29331a9895d440a4df40877b41"
   }
 }

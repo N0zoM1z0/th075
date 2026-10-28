@@ -4351,3 +4351,33 @@ remains very far from the 98% objective; 97 pending origin cases,
 private game class layouts, and original GDI/CRT/VC7 helper bodies
 are still uncredited. No target-byte graft, asm, masks, truncated
 native extent, artificial fields or external Oracle confirmation.
+
+
+## F320: exact native 83-byte TextRasterizer::SelectFont GDI leaf
+
+The original R103-authored TextRasterizer font selection helper at
+`0041C0D0..0041C122` comprises **all 83 original native CODE bytes**
+and **31 complete original x86 instructions**, full pinned Japanese
+PE SHA256 `e24b2a690079d62be41af03135640adb47899f3ecaa2cfeef65c4a956ddad65a`.
+Actual native GDI call and game-owned pointer evidence is in
+`.analysis/f320-font-leaves/`: Windows HWND at this+0, HDC at +4,
+selected HGDIOBJ at +8, old selected HGDIOBJ at +0xC, and real
+font ascent LONG at +0x2C. A natural, complete `TEXTMETRICA`
+stack instance is passed through native imported `GetTextMetricsA`,
+whose `tmAscent` field is copied to the observed font metric field.
+The original call order is authentic `GetDC` IAT `00657218`,
+`SelectObject` IAT `00657048`, `GetTextMetricsA` IAT `00657040`.
+
+The first grounded C++ `src/FontSelectF320.cpp`, compiled with
+pinned VC7.1 `/Od /Ob0 /Gy /GR- /GX- /GS /Zi`, produces
+**83/83 original CODE bytes, 71/71 nonrelocation positions and
+3/3 genuine native physical COFF DIR32 offsets/types/solved GDI
+import destinations**, without padding, asm or machine-code graft.
+Only new canonical unit `text-rasterizer-select-font-0041c0d0`
+was cold rebuilt alone, returning `exact; 83 coverage bytes` and
+**1/1 exact**. This is independently counted as a new function
+rather than attributing already F319 accepted 1,766-byte rasterization
+caller CODE or earlier GDI/FontSurface routines to it. All imported
+Win32/CRT/VC7 implementation CODE, 97 origin-pending functions and
+unproven original private font layout are excluded. No all-unit
+replay or external Oracle verification is claimed.

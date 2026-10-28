@@ -45537,3 +45537,27 @@ offset = 1754
 type = "REL32"
 symbol = "?ReleaseRasterResources@FontRasterF299@@QAEXXZ"
 target = 0x0041C130
+
+[units.text-rasterizer-select-font-0041c0d0]
+source = "src/FontSelectF320.cpp"
+object = "build/matching/FontSelectF320.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["TextRasterizer::SelectFontAt0041C0D0"]
+symbol = "?SelectFont@FontSelectF320@@QAEXXZ"
+target_address = 0x0041C0D0
+size = 83
+[[units.text-rasterizer-select-font-0041c0d0.relocations]]
+offset = 17
+type = "DIR32"
+symbol = "__imp__GetDC@4"
+target = 0x00657218
+[[units.text-rasterizer-select-font-0041c0d0.relocations]]
+offset = 43
+type = "DIR32"
+symbol = "__imp__SelectObject@8"
+target = 0x00657048
+[[units.text-rasterizer-select-font-0041c0d0.relocations]]
+offset = 66
+type = "DIR32"
+symbol = "__imp__GetTextMetricsA@8"
+target = 0x00657040

@@ -630,3 +630,4 @@ MeilingFighter::ResetRound
 FontSurface::RenderTextToTexture
 FontSurface::LoadGlyphOutline
 FontSurface::RasterizeText
+TextRasterizer::SelectFontAt0041C0D0
