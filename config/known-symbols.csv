@@ -585,3 +585,4 @@ address,name,module,confidence,evidence
 0x004584D0,FighterState::LoadStageResource,FighterState,inferred,F286; complete 374-byte native fighter stage resource loader with real stage-global guard and 17 physical COFF relocations cold exact
 0x004567B0,FighterState::Initialize,FighterState,inferred,"F287; whole 345-byte native fighter constructor with real member ctor/EH order, 18 authentic COFF fields cold exact; complete private game class ABI unproven"
 0x00424E00,BattleEndScene::Initialize,BattleEndScene,inferred,"F288; whole 308-byte native battle-end scene constructor, exact stage profile branch and 34 genuine COFF fields cold-exact; private original class layout provisional"
+0x00412EB0,OverlayText::DrawBox,OverlayText,inferred,F292; entire 1385-byte two-layer caption box sprite controller /359 native instructions and all 43 genuine COFF fields cold exact; original quad internals not asserted

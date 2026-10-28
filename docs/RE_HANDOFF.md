@@ -1,4 +1,4 @@
-# TH075 — active reconstruction handoff (F288)
+# TH075 — active reconstruction handoff (F292)
 
 **Updated 2026-10-28. Read this document before new experiments.**
 
@@ -22,17 +22,17 @@ not acceptance requirements.
 
 | Item | Current evidence |
 | --- | --- |
-| Local branch / last exact-code commit | `main` / F288 complete 308-byte BattleEnd scene constructor; F287 fighter ctor checkpoint `3996420` |
+| Local branch / last exact-code commit | `main` / F292 entire 1,385-byte overlay text rendering boss; F288 BattleEnd scene checkpoint `e699ca4` |
 | Upstream | `origin/main` tracked locally; verify current ahead/behind and dirty state before further work |
-| Working tree | Clean after F288 checkpoint if successful; continue rather than avoid every existing dirty edit |
+| Working tree | Clean after F292 checkpoint if successful; continue rather than avoid every existing dirty edit |
 | Native binary | `resources/th075.exe`, SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98` |
 | Candidate count | 4,351; origin review: 1,002 authored, 2,671 library, 581 compiler, 97 unknown |
-| Accepted functions / units | **604 / 604** |
-| Accepted authored CODE | **798,863 bytes** |
-| Reviewed authored coverage | 798,863 / 1,973,516 = **40.48%** |
-| Conservative coverage | **40.41%** counting 3,608 origin-pending bytes |
+| Accepted functions / units | **605 / 605** |
+| Accepted authored CODE | **800,248 bytes** |
+| Reviewed authored coverage | 800,248 / 1,973,516 = **40.55%** |
+| Conservative coverage | **40.48%** counting 3,608 origin-pending bytes |
 | Goal | **98% not reached** |
-| Verification | F288 entire 308-byte BattleEndScene::Initialize cold-exact (172/172 comparable bytes, 34 true native COFF fields), following F287 whole fighter ctor checkpoint `3996420`. Only new F288 unit cold-replayed; no all-unit cold replay or external Oracle receipt |
+| Verification | F292 whole 1,385-byte OverlayText::DrawBox rendering boss independently cold-exact (1,213/1,213 comparable bytes and 43 original physical COFF fields), after F288 308-byte scene checkpoint `e699ca4`. Only new F292 unit cold-replayed; no all-unit cold replay or external Oracle receipt |
 
 **Recheck the actual live status immediately**. Local commits are checkpoints,
 not evidence of a remote push or external Oracle acceptance. Earlier Git
@@ -131,6 +131,7 @@ inert variable or arbitrary padding may earn exact credit.
 | F286: FighterState::LoadStageResource | `004584D0` | 374 | 17 |
 | F287: FighterState::Initialize | `004567B0` | 345 | 18 |
 | F288: BattleEndScene::Initialize | `00424E00` | 308 | 34 |
+| F292: OverlayText::DrawBox | `00412EB0` | 1,385 | 43 |
 
 F222 proved signed 32-bit x87 `FILD` divided by the target's 36.0f
 (`00659308`), 74 physical animation records and a final call into the
@@ -254,6 +255,10 @@ F286 **cold-accepts all 374 native CODE bytes of `FighterState::LoadStageResourc
 F287 **cold-accepts all 345 native CODE bytes of `FighterState::Initialize`** at `004567B0` (86 independently decoded original instructions, 273/273 nonrelocation bytes and 18/18 real physical COFF fields). It is the full core fighter construction path: actual base fighter ctor `00458650` and game vtable `00658FE8`, native actor properties +0x2D4, actor vector +0x468, input +0x494, deque +0x518, sound +0x6D0, script +0x714, sound-config call +0x6D0, original 28-byte stack memory initialization through actual `memset` `00640490`, 90-entry deque setup `0045A620`, EH-backed `new(0x54)` special controller ctor `0045B920`, genuine controller bind `0045BA10` on fighter+0x2EC and three texture pointer resets +4/+0x534/+0x700. A first C++ source incorrectly assumed the base had a separate virtual destructor and generated mismatched EH state; independent native evidence requires a polymorphic base without that invented destructor. Native also has an explicit 28-byte zeroed local, so automatic `char[28]={0}` lowering was wrong; an observed `unsigned int[7]` local cleared by real `memset` exactly reproduces the native 0x2C frame and bytecode without adding an unobserved operation. The actual complete source now emits all 345 bytes and exact original EH 0..5..-1, with full native PE SHA256 `f3de21648341293bf8058450b5425bf659e733a0cd41c6cbb11789bd2d80ef13`. Only `--unit fighter-state-initialize-004567b0` cold-replayed exact; source `src/FighterInitializeF287.cpp`, private original/native and negative controls `.analysis/f286-fighter-init-stage/`. F282's resource loader, F284's destructor and F286 stage resource loader were independently accepted, with no repeated code credit. Underlying VC7 library and external member constructors, original private complete FighterState layout and 97 pending origins remain excluded.
 
 F288 **cold-accepts the entire 308-byte `BattleEndScene::Initialize`** at `00424E00`, with 73 independent original x86 instructions, 172/172 nonrelocation bytes and 34 authentic physical COFF fields including native scene vtable 00657B7C and EH handler 00655718. A first whole natural C++ translation exactly reproduced the original inherited base constructor `004251C0` (separate R108 origin-unknown and not credited), source renderer +35.0f/+360.0f font configuration from global `0067143C`, title text draw from `00657B7B`, original fighter+0x6EE reset, stage byte from fighter+0x713, real actor virtual dispatch vtable+0x3C and separately F286-accepted stage texture loader `004584D0`. Native stage 8/9/other branches update global `006714CE` and select the proper real profile record at manager `006718F8` with signed fighter byte `006714C8` plus offsets +0/+20/+40; the default branch alone calls native profile reset `00425130`. Entire native SHA256 `4680497f7bf07f1e6e75d282ee5a75994ca784cb795238c5efb4a4519aa93780`. The complete source `src/BattleEndInitF288.cpp` has no guessed source member layout beyond borrowed call boundaries. Only `--unit battle-end-scene-initialize-00424e00` cold-replayed exact. Full original native and C++/COFF evidence `.analysis/f288-battle-end/` with original decomp `.analysis/f286-fighter-init-stage/`. All 97 pending origins excluded, no full replay/Oracle claim.
+
+F292 **cold-accepts the entire 1,385-byte native `OverlayText::DrawBox` boss** at `00412EB0..00413418`, 359 independently decoded native x86 instructions, all **1,213/1,213** nonrelocation byte positions and **43/43 genuine COFF relocations**, with original full PE CODE SHA256 `4c8c94555d1fafb8a9d3b9be723f1bef621c2a2dd7b9aa2c2f6d5f939923d185`. This full game text-box renderer owns a real 136-byte stack quad plus RECT, transforms a 571×78 background and a dynamically sized 571×128 foreground, supports a texture-mode side owner at this+0x28, performs original 39.0f scaling and native raw-float bit forwarding, applies layered five-pass offset outlines with black/white and 8-bit fade tint, and increments original caption alpha only when unsigned byte <255; otherwise animates the float scale with native field-first x87 operand ordering. The first complete source emitted 1,370 bytes with a false /GS stack cookie due the quad incorrectly modeled as a character buffer, and an incorrectly typed free call to the texture-mode subobject. After restoring the 34-DWORD physical quad carrier, actual texture method thiscall and the original float constant/bit ABI, it emitted 1,340 bytes. Independent exact *native instruction-shape diff* then revealed the missing 45 bytes were genuine original byte-color operations and alpha progression: 5 explicit `AND reg,0xFF`, 3 separate RGB ORs rather than folded literal `|0xFFFFFF`, plus a native unsigned `<255` compare and field-first x87 scale addition. Those real source semantics restored all 1,385 bytes and all 359 instructions with zero differences. Native whole source `src/OverlayTextDrawBoxF292.cpp`, full Ghidra function/assembly and negative probes `.analysis/f292-overlay-boss/`. Only `--unit overlay-text-draw-box-00412eb0` cold-replayed exact. No extra CODE for Win32/GFX/VC7 library calls, never credit object interior data as source, and keep all 97 origin-pending cases unknown. No padding, byte grafts, asm, cropped extent, artificial masking or remote Oracle receipt.
+
+F289 rechecked complete 375-byte `ReplayRecords::FinalizeFile` at `004138E0`, a 105-native-instruction unaccepted boss: old natural sources emit 342..396 bytes with real output/path/byte-loop/cleanup logic; fresh F289 source-order and 12-byte triple-record lifetime probes still compile at 396/408, not exact. Preserve `.analysis/f289-replay-finalize/` and no authored byte credit. F290 independently inspected 303-byte `ReplayScene::DrawSaveFilename` and F291 301-byte `FontSurface::LoadGlyphOutline`: complete native proof/negative natural whole-source VC7.1 probes remain under `.analysis/f290-replay-filename/` and `.analysis/f291-font-glyph/`; the latter emits exact 301 total bytes and 5 genuine COFF fields but 251/281 comparable byte positions with real unresolved stack-local organization, so **neither is accepted**. The 1,268-byte `SpriteScene::RenderMirroredNode` remains nonexact, with native 324 instruction classes vs old F254 1,279-byte emission/324 classes but nonmatching x87 shapes and locals; see `.analysis/f289-mirrored/` and `.analysis/f254-sprite-boss/`, no credit.
 
 Relevant full native proofs: `config/match-units.toml`,
 `config/exact-adoptions.json`, sources `src/*F222.cpp`/`src/*F223.cpp`,

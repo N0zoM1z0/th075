@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "50bf9401114464f88f51b6a3be3a0e07342176239a259c9dd596eb96d40bff89"
+      "current_sha256": "03f06a8d60828c25ffb716382ae5946eab500b4a6a08f7071a503ee60f2e6b4a"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "38cf6c797d20587bdb9fa566266e5f6cc960d4daeb12e82b37a4bbb9eb595142"
+      "current_sha256": "0631cb781ad0d1c524a09d0d9dbcf6859e884647c3fed0b97c03a891b2dbacc1"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "9caf7616bd6b5c8c153203deb77dd211728a7a0d6154c0e342901de8ad93ceb6"
+      "current_sha256": "9faa63d79055a3f07e5e353d54c27bd0f18737aa9506a6190ea323dac18c69d0"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "10fddc4f027dfcb14e27324b02a091ff17b0f1e044aea2fa59bb73320f532650"
+      "current_sha256": "a055d6aff3c8eb705767daebcc388d59182217cde5b11d06e54613c943a94523"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "88328a0b29429ab6b8562149f44a0d370df3eb21d364d5cad1fb4201e1895509"
+      "current_sha256": "a0989b3230be27733909d508ffc29c146b5640b43e5d61e2c43ec47090834128"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -23976,6 +23976,50 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R053"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00412EB0",
+        "size": "1385",
+        "span_end": "0x00413418",
+        "current_name": "FUN_00412eb0",
+        "proposed_name": "OverlayText::DrawBox",
+        "module": "OverlayText",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R035; full body hash, complete decoded CFG and game-specific policy reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00412EB0",
+        "size": "1385",
+        "span_end": "0x00413418",
+        "current_name": "FUN_00412eb0",
+        "proposed_name": "OverlayText::DrawBox",
+        "module": "OverlayText",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void OverlayTextF292::DrawBox()",
+        "is_thunk": "false",
+        "source_file": "src/OverlayTextDrawBoxF292.cpp",
+        "evidence": "R035; full body hash, complete decoded CFG and game-specific policy reviewed; F292; scripts/repo-python scripts/replay-exact-units.py --unit overlay-text-draw-box-00412eb0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F292: FULL original R035-authored 1385 CODE bytes, 359 independently decoded native x86 instructions and actual RET at 00413418; full PE SHA256 4c8c94555d1fafb8a9d3b9be723f1bef621c2a2dd7b9aa2c2f6d5f939923d185. First full natural source reproduced native method calls but was 1370 bytes due borrowed private quad incorrectly as char array causing unwarranted /GS insertion, incorrectly using 38.0 instead of real 39.0 in native six-parameter scaling, and free function instead of actual thiscall texture mode helper at this+0x28. Correct 136-byte local quad as a physically observed 34-DWORD C++ packet without fake object state/GS, true native raw float-as-DWORD argument forwarding and on-quad transform calls, and original early return float scale guard yielded 1340 bytes. Independent full instruction diff then exposed genuine native original unsigned 255 alpha threshold and per-channel bitwise alpha/tint math: five repeated `&0xFF` masks and separately ordered `|0xFF0000 |0xFF00 |0xFF` (not folded constant `|0xFFFFFF`), plus explicit field-first float increment and unsigned byte <=254 test. Reconstructing these genuine game color operations restored all 1385 bytes and 359 instructions, all 1213/1213 nonrelocation bytes and all 43 physical COFF fields (actual native SetRect IAT, real sprite transform/texture manager calls, no artificial relocations). Actual first backdrop rect 571x78 and secondary 571x128, byte-driven panel height, quad Translate/Scale and original 2 layers of five native DrawQuad instances with black/white and per-line 8-bit alpha, full renderer packet lifetime, source signed caption height and alpha transition preserved. Pinned VC7.1 /Od /GX- entire-source one-unit cold replay exact; original private 136-byte quad/texture owner layout and function nominal identities remain inferred, and all actual game/Win32 helper implementations independently owned/excluded; no double-credited code or unknown-origin 97 candidates. No fake locals/padding, native bytes copied, manual assembly, masked reloc fields, cropped function, full-set replay or remote Oracle accepted."
+      },
+      "origin": {
+        "address": "0x00412EB0",
+        "origin": "authored",
+        "subsystem": "OverlayText",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R035"
       }
     }
   ],
@@ -177879,6 +177923,287 @@
           "target": 0
         }
       ]
+    },
+    "overlay-text-draw-box-00412eb0": {
+      "source": "src/OverlayTextDrawBoxF292.cpp",
+      "object": "build/matching/OverlayTextDrawBoxF292.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "OverlayText::DrawBox"
+      ],
+      "symbol": "?DrawBox@OverlayTextF292@@QAEXXZ",
+      "target_address": 4271792,
+      "size": 1385,
+      "relocations": [
+        {
+          "offset": 35,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 53,
+          "type": "REL32",
+          "symbol": "?AssignRect@OverlayQuadF292@@QAEXPBUtagRECT@@@Z",
+          "target": 4250448
+        },
+        {
+          "offset": 93,
+          "type": "REL32",
+          "symbol": "?Scale@OverlayQuadF292@@QAEXMMMMKM@Z",
+          "target": 4265408
+        },
+        {
+          "offset": 126,
+          "type": "REL32",
+          "symbol": "?TranslateRaw@OverlayQuadF292@@QAEXKKK@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 172,
+          "type": "REL32",
+          "symbol": "?ApplyMode@OverlayTextureF292@@QAEXHPAVOverlayQuadF292@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 202,
+          "type": "DIR32",
+          "symbol": "?g_OverlayMinScaleAt0065747C@@3MB",
+          "target": 6648956
+        },
+        {
+          "offset": 224,
+          "type": "DIR32",
+          "symbol": "?g_OverlayScaleDeltaAt006578C0@@3MB",
+          "target": 6650048
+        },
+        {
+          "offset": 287,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 305,
+          "type": "REL32",
+          "symbol": "?BuildFromRect@OverlayQuadF292@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 345,
+          "type": "REL32",
+          "symbol": "?Scale@OverlayQuadF292@@QAEXMMMMKM@Z",
+          "target": 4265408
+        },
+        {
+          "offset": 378,
+          "type": "REL32",
+          "symbol": "?TranslateRaw@OverlayQuadF292@@QAEXKKK@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 401,
+          "type": "REL32",
+          "symbol": "?Translate@OverlayQuadF292@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 421,
+          "type": "REL32",
+          "symbol": "?Translate@OverlayQuadF292@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 454,
+          "type": "REL32",
+          "symbol": "?DrawQuad@OverlayDrawerF292@@YAXPAVOverlayQuadF292@@PBUtagRECT@@KK@Z",
+          "target": 4205040
+        },
+        {
+          "offset": 477,
+          "type": "REL32",
+          "symbol": "?Translate@OverlayQuadF292@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 497,
+          "type": "REL32",
+          "symbol": "?Translate@OverlayQuadF292@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 530,
+          "type": "REL32",
+          "symbol": "?DrawQuad@OverlayDrawerF292@@YAXPAVOverlayQuadF292@@PBUtagRECT@@KK@Z",
+          "target": 4205040
+        },
+        {
+          "offset": 553,
+          "type": "REL32",
+          "symbol": "?Translate@OverlayQuadF292@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 573,
+          "type": "REL32",
+          "symbol": "?Translate@OverlayQuadF292@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 606,
+          "type": "REL32",
+          "symbol": "?DrawQuad@OverlayDrawerF292@@YAXPAVOverlayQuadF292@@PBUtagRECT@@KK@Z",
+          "target": 4205040
+        },
+        {
+          "offset": 629,
+          "type": "REL32",
+          "symbol": "?Translate@OverlayQuadF292@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 649,
+          "type": "REL32",
+          "symbol": "?Translate@OverlayQuadF292@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 682,
+          "type": "REL32",
+          "symbol": "?DrawQuad@OverlayDrawerF292@@YAXPAVOverlayQuadF292@@PBUtagRECT@@KK@Z",
+          "target": 4205040
+        },
+        {
+          "offset": 705,
+          "type": "REL32",
+          "symbol": "?Translate@OverlayQuadF292@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 735,
+          "type": "REL32",
+          "symbol": "?DrawQuad@OverlayDrawerF292@@YAXPAVOverlayQuadF292@@PBUtagRECT@@KK@Z",
+          "target": 4205040
+        },
+        {
+          "offset": 790,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 808,
+          "type": "REL32",
+          "symbol": "?BuildFromRect@OverlayQuadF292@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 848,
+          "type": "REL32",
+          "symbol": "?Scale@OverlayQuadF292@@QAEXMMMMKM@Z",
+          "target": 4265408
+        },
+        {
+          "offset": 881,
+          "type": "REL32",
+          "symbol": "?TranslateRaw@OverlayQuadF292@@QAEXKKK@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 944,
+          "type": "REL32",
+          "symbol": "?Translate@OverlayQuadF292@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 964,
+          "type": "REL32",
+          "symbol": "?Translate@OverlayQuadF292@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 1012,
+          "type": "REL32",
+          "symbol": "?DrawQuad@OverlayDrawerF292@@YAXPAVOverlayQuadF292@@PBUtagRECT@@KK@Z",
+          "target": 4205040
+        },
+        {
+          "offset": 1035,
+          "type": "REL32",
+          "symbol": "?Translate@OverlayQuadF292@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 1055,
+          "type": "REL32",
+          "symbol": "?Translate@OverlayQuadF292@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 1103,
+          "type": "REL32",
+          "symbol": "?DrawQuad@OverlayDrawerF292@@YAXPAVOverlayQuadF292@@PBUtagRECT@@KK@Z",
+          "target": 4205040
+        },
+        {
+          "offset": 1126,
+          "type": "REL32",
+          "symbol": "?Translate@OverlayQuadF292@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 1146,
+          "type": "REL32",
+          "symbol": "?Translate@OverlayQuadF292@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 1194,
+          "type": "REL32",
+          "symbol": "?DrawQuad@OverlayDrawerF292@@YAXPAVOverlayQuadF292@@PBUtagRECT@@KK@Z",
+          "target": 4205040
+        },
+        {
+          "offset": 1217,
+          "type": "REL32",
+          "symbol": "?Translate@OverlayQuadF292@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 1237,
+          "type": "REL32",
+          "symbol": "?Translate@OverlayQuadF292@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 1285,
+          "type": "REL32",
+          "symbol": "?DrawQuad@OverlayDrawerF292@@YAXPAVOverlayQuadF292@@PBUtagRECT@@KK@Z",
+          "target": 4205040
+        },
+        {
+          "offset": 1308,
+          "type": "REL32",
+          "symbol": "?Translate@OverlayQuadF292@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 1374,
+          "type": "REL32",
+          "symbol": "?DrawQuad@OverlayDrawerF292@@YAXPAVOverlayQuadF292@@PBUtagRECT@@KK@Z",
+          "target": 4205040
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -178256,6 +178581,7 @@
     "src/EffectSpawnF285.cpp": "cfdbfcca829528b4b5bf79d2a5e6222660d51f0c822a71ff6e406c8e87085224",
     "src/FighterStageResourceF286.cpp": "4800489b9832cff455bf6d86de64b2b95a90d7b6968517d20db8250c18856e46",
     "src/FighterInitializeF287.cpp": "dada3c895cfdbbde3af53074192e1c14985470e956edbd6743990bf7458ec5c2",
-    "src/BattleEndInitF288.cpp": "fa77e5db010f5de26aa3b06bc75019a57f9aadea3c3810448b68eed8ce353005"
+    "src/BattleEndInitF288.cpp": "fa77e5db010f5de26aa3b06bc75019a57f9aadea3c3810448b68eed8ce353005",
+    "src/OverlayTextDrawBoxF292.cpp": "1509d20c9f9a5035991bc15e343535bde2e7a0515cba19abbc94a22169b79973"
   }
 }

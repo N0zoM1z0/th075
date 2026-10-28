@@ -3400,3 +3400,114 @@ owner definitions, and their external game/CRT/VC7 implementations
 receive no duplicate source credit. All 97 origin-pending functions
 remain excluded. No target-byte graft, assembly, fake locals, masked
 relocation fields, cropped body, or external Oracle receipt.
+
+
+## F292: full cold-exact 1,385-byte OverlayText game text box renderer boss
+
+The original R035-authored `OverlayText::DrawBox` at
+`00412EB0..00413418` contains **1,385 complete PE-backed native CODE
+bytes**, **359 independently decoded original x86 instructions** ending
+in an original plain RET at `00413418`, and original full SHA256
+`4c8c94555d1fafb8a9d3b9be723f1bef621c2a2dd7b9aa2c2f6d5f939923d185`.
+Its complete native Ghidra function/decompile/physical instruction
+listing, preliminary whole-source variants, actual native instruction
+shape/stack comparison, and final native COFF/cold acceptance remain
+under `.analysis/f292-overlay-boss/`; the naturally authored complete
+C++ is `src/OverlayTextDrawBoxF292.cpp`.
+
+The original function has one 16-byte RECT local and one **136-byte
+actual transformed quad** on the native stack, and keeps its `this`
+pointer at EBP-0x9C in a genuine 0x9C stack frame, **without** a
+spurious `/GS` cookie. The first source incorrectly modeled this
+opaque 136-byte borrowed quad as `char[136]`, causing VC7.1 `/GS` to
+insert an unwarranted security cookie. A physically equivalent
+`unsigned int[34]` local is the original borrowed 136-byte object
+**carrier**, without claiming to know the object's actual private
+interior field semantics or causing extra instructions. Source helpers
+remain native game methods (quad BuildRect/Scale/Translate; texture
+mode `this+0x28`, device drawing) rather than fabricated implementations.
+The actual native scale call passes **39.0f** (`0x421C0000`, not the
+misread 38.0f) with another existing float field's native 32-bit
+bit pattern, and primitive translation forwards the raw x/y float
+bits using the original calling convention without x87 conversions.
+
+After the initial background rectangle `0,0,571,78`, the text box
+checks a real byte-mode at `this+0x25`, invokes original texture
+helper `0040C9A0` on game subobject `this+0x28` or initializes
+scale at `this+0x10`. Its actual float scale test determines whether
+to render immediately or increase scale via the original `006578C0`
+float global. The positive rendering path computes original panel
+height `(unsigned byte(this+0x24)+6)*signed char(this+0x15)`, then
+renders a dynamically sized backing rectangle with original scale,
+translation and five physical offset passes at black `0xFF000000`
+and white `0xFFFFFFFF`. It reconstructs another true rectangle
+from that height to 128, and renders **another five offset passes**
+with an original unsigned byte alpha at this+`0xC`. The native source
+compares `unsigned alpha < 255` rather than testing a signed byte
+against -1, and adds 10 before drawing when nonterminal. For each
+alpha DrawQuad, native code visibly executes `MOVZX byte; AND 0xFF;
+SHL 24`; all **five** `AND 0xFF` instructions must be expressed in
+real source math, rather than relying on a possibly optimized
+zero-extended byte. The final DrawQuad also performs three separate
+native OR operations for RGB `0xFF0000`, `0xFF00`, `0xFF`, not a single
+collapsed 24-bit literal. The true float scale update loads the
+field first then performs `FADD` with original float constant, not
+the opposite operand order. All ten original sprite DrawQuad calls
+and all scale/translation calls remain, with no missing outline pass.
+
+First full meaningful source emitted 1,370 bytes but had a spurious
+security frame, incorrectly typed texture-mode helper and wrong
+39.0f scale constant. Correcting genuine 34-DWORD quad carrier, raw
+DWORD float forwarding, thiscall owner and field-first early-exit
+shape recovered a 1,340-byte complete control flow and original 0x9C
+frame. An independent **full instruction-sequence diff** showed the
+remaining 45 bytes reflected actual alpha masks, bitwise RGB color
+combination and unsigned 255 threshold. Restoring these exact
+*semantics* naturally emits **all 1,385 original bytes**, **359 original
+instructions**, all **1,213/1,213** nonrelocation positions and
+**43/43 real physical COFF relocation offsets/types/native targets**
+under pinned VC7.1 `/Od /Ob0 /Gy /GR- /GX- /GS /Zi`. Only the
+new `overlay-text-draw-box-00412eb0` unit was independently rebuilt
+**cold** and reported `exact; 1385 coverage bytes`, without any
+full-set replay or truncated extent. No owned post-RET table is
+separately counted; borrowed Win32 `SetRect` and other graphics/CRT
+callees have not earned additional authored CODE credit. All 97
+origin-unknown candidates remain excluded, the complete original
+private game quad layout remains provisional and the Git checkpoint
+is not a remote Oracle verification receipt.
+
+### F289-F291 negative controls retained (no CODE credit)
+
+F289 independently rechecked whole `ReplayRecords::FinalizeFile` at
+`004138E0` (**375 native CODE**, 105 original instructions), tested
+original transferred/file output/path/index/size and allocation
+lifetimes. Existing natural source controls 342/372/384/396 bytes
+are nonexact; recent physical triple DWORD grouping yields 408, also
+nonexact. Retain native assembly/shape diff/private controls in
+`.analysis/f289-replay-finalize/`, do not credit.
+
+F290 read original whole 303-byte `ReplayScene::DrawSaveFilename`
+`0042C270`, with 144-byte rendered background, 14-byte original replay
+prefix literal, 8-byte runtime tint and two native caption branches.
+Natural whole-function source/variable scope and physical object
+size controls emitted 287/288/342/357 bytes, not exact. Retain
+`.analysis/f290-replay-filename/` and no CODE credit.
+
+F291 reviewed complete 301-byte `FontSurface::LoadGlyphOutline`
+`0041C1B0` including original Win32 GetGlyphOutlineA twice, 20-byte
+GLYPHMETRICS, 16-byte MAT2 affine identity, authentic original
+free/new buffers and glyph metrics. A corrected meaningful source
+with a 16-byte real matrix initialization temporary and actual old/new
+buffer pointers emits **all 301 bytes and all five physical COFF
+fields**, but native local stack ownership differs at 30 of 281
+nonrelocation byte positions, so no exact claim. Five real
+declaration-order controls failed to resolve the positions; retain
+`.analysis/f291-font-glyph/`, zero CODE credit.
+
+F289 also independently compared the 1,268-byte
+`SpriteScene::RenderMirroredNode` old F254 1,279-byte/324-instruction
+clone against all original 324 instructions, exposing not just local
+EBP-slot differences but genuine x87 operation-shape differences.
+Private `.analysis/f289-mirrored/` and
+`.analysis/f254-sprite-boss/` retain the negative. No source/byte
+credit for this boss until complete exact reconstruction.

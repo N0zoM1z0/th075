@@ -603,3 +603,4 @@ Effects::SpawnAuxObjectAt005F78B0,0x005F78B0,function
 FighterState::LoadStageResource,0x004584D0,function
 FighterState::Initialize,0x004567B0,function
 BattleEndScene::Initialize,0x00424E00,function
+OverlayText::DrawBox,0x00412EB0,function

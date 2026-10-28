@@ -43983,3 +43983,227 @@ offset = 300
 type = "DIR32"
 symbol = "__except_list"
 target = 0x00000000
+
+[units.overlay-text-draw-box-00412eb0]
+source = "src/OverlayTextDrawBoxF292.cpp"
+object = "build/matching/OverlayTextDrawBoxF292.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["OverlayText::DrawBox"]
+symbol = "?DrawBox@OverlayTextF292@@QAEXXZ"
+target_address = 0x00412EB0
+size = 1385
+[[units.overlay-text-draw-box-00412eb0.relocations]]
+offset = 35
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.overlay-text-draw-box-00412eb0.relocations]]
+offset = 53
+type = "REL32"
+symbol = "?AssignRect@OverlayQuadF292@@QAEXPBUtagRECT@@@Z"
+target = 0x0040DB50
+[[units.overlay-text-draw-box-00412eb0.relocations]]
+offset = 93
+type = "REL32"
+symbol = "?Scale@OverlayQuadF292@@QAEXMMMMKM@Z"
+target = 0x004115C0
+[[units.overlay-text-draw-box-00412eb0.relocations]]
+offset = 126
+type = "REL32"
+symbol = "?TranslateRaw@OverlayQuadF292@@QAEXKKK@Z"
+target = 0x00411500
+[[units.overlay-text-draw-box-00412eb0.relocations]]
+offset = 172
+type = "REL32"
+symbol = "?ApplyMode@OverlayTextureF292@@QAEXHPAVOverlayQuadF292@@PBUtagRECT@@K@Z"
+target = 0x0040C9A0
+[[units.overlay-text-draw-box-00412eb0.relocations]]
+offset = 202
+type = "DIR32"
+symbol = "?g_OverlayMinScaleAt0065747C@@3MB"
+target = 0x0065747C
+[[units.overlay-text-draw-box-00412eb0.relocations]]
+offset = 224
+type = "DIR32"
+symbol = "?g_OverlayScaleDeltaAt006578C0@@3MB"
+target = 0x006578C0
+[[units.overlay-text-draw-box-00412eb0.relocations]]
+offset = 287
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.overlay-text-draw-box-00412eb0.relocations]]
+offset = 305
+type = "REL32"
+symbol = "?BuildFromRect@OverlayQuadF292@@QAEXPBUtagRECT@@@Z"
+target = 0x00411400
+[[units.overlay-text-draw-box-00412eb0.relocations]]
+offset = 345
+type = "REL32"
+symbol = "?Scale@OverlayQuadF292@@QAEXMMMMKM@Z"
+target = 0x004115C0
+[[units.overlay-text-draw-box-00412eb0.relocations]]
+offset = 378
+type = "REL32"
+symbol = "?TranslateRaw@OverlayQuadF292@@QAEXKKK@Z"
+target = 0x00411500
+[[units.overlay-text-draw-box-00412eb0.relocations]]
+offset = 401
+type = "REL32"
+symbol = "?Translate@OverlayQuadF292@@QAEXMMM@Z"
+target = 0x00411500
+[[units.overlay-text-draw-box-00412eb0.relocations]]
+offset = 421
+type = "REL32"
+symbol = "?Translate@OverlayQuadF292@@QAEXMMM@Z"
+target = 0x00411500
+[[units.overlay-text-draw-box-00412eb0.relocations]]
+offset = 454
+type = "REL32"
+symbol = "?DrawQuad@OverlayDrawerF292@@YAXPAVOverlayQuadF292@@PBUtagRECT@@KK@Z"
+target = 0x004029F0
+[[units.overlay-text-draw-box-00412eb0.relocations]]
+offset = 477
+type = "REL32"
+symbol = "?Translate@OverlayQuadF292@@QAEXMMM@Z"
+target = 0x00411500
+[[units.overlay-text-draw-box-00412eb0.relocations]]
+offset = 497
+type = "REL32"
+symbol = "?Translate@OverlayQuadF292@@QAEXMMM@Z"
+target = 0x00411500
+[[units.overlay-text-draw-box-00412eb0.relocations]]
+offset = 530
+type = "REL32"
+symbol = "?DrawQuad@OverlayDrawerF292@@YAXPAVOverlayQuadF292@@PBUtagRECT@@KK@Z"
+target = 0x004029F0
+[[units.overlay-text-draw-box-00412eb0.relocations]]
+offset = 553
+type = "REL32"
+symbol = "?Translate@OverlayQuadF292@@QAEXMMM@Z"
+target = 0x00411500
+[[units.overlay-text-draw-box-00412eb0.relocations]]
+offset = 573
+type = "REL32"
+symbol = "?Translate@OverlayQuadF292@@QAEXMMM@Z"
+target = 0x00411500
+[[units.overlay-text-draw-box-00412eb0.relocations]]
+offset = 606
+type = "REL32"
+symbol = "?DrawQuad@OverlayDrawerF292@@YAXPAVOverlayQuadF292@@PBUtagRECT@@KK@Z"
+target = 0x004029F0
+[[units.overlay-text-draw-box-00412eb0.relocations]]
+offset = 629
+type = "REL32"
+symbol = "?Translate@OverlayQuadF292@@QAEXMMM@Z"
+target = 0x00411500
+[[units.overlay-text-draw-box-00412eb0.relocations]]
+offset = 649
+type = "REL32"
+symbol = "?Translate@OverlayQuadF292@@QAEXMMM@Z"
+target = 0x00411500
+[[units.overlay-text-draw-box-00412eb0.relocations]]
+offset = 682
+type = "REL32"
+symbol = "?DrawQuad@OverlayDrawerF292@@YAXPAVOverlayQuadF292@@PBUtagRECT@@KK@Z"
+target = 0x004029F0
+[[units.overlay-text-draw-box-00412eb0.relocations]]
+offset = 705
+type = "REL32"
+symbol = "?Translate@OverlayQuadF292@@QAEXMMM@Z"
+target = 0x00411500
+[[units.overlay-text-draw-box-00412eb0.relocations]]
+offset = 735
+type = "REL32"
+symbol = "?DrawQuad@OverlayDrawerF292@@YAXPAVOverlayQuadF292@@PBUtagRECT@@KK@Z"
+target = 0x004029F0
+[[units.overlay-text-draw-box-00412eb0.relocations]]
+offset = 790
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.overlay-text-draw-box-00412eb0.relocations]]
+offset = 808
+type = "REL32"
+symbol = "?BuildFromRect@OverlayQuadF292@@QAEXPBUtagRECT@@@Z"
+target = 0x00411400
+[[units.overlay-text-draw-box-00412eb0.relocations]]
+offset = 848
+type = "REL32"
+symbol = "?Scale@OverlayQuadF292@@QAEXMMMMKM@Z"
+target = 0x004115C0
+[[units.overlay-text-draw-box-00412eb0.relocations]]
+offset = 881
+type = "REL32"
+symbol = "?TranslateRaw@OverlayQuadF292@@QAEXKKK@Z"
+target = 0x00411500
+[[units.overlay-text-draw-box-00412eb0.relocations]]
+offset = 944
+type = "REL32"
+symbol = "?Translate@OverlayQuadF292@@QAEXMMM@Z"
+target = 0x00411500
+[[units.overlay-text-draw-box-00412eb0.relocations]]
+offset = 964
+type = "REL32"
+symbol = "?Translate@OverlayQuadF292@@QAEXMMM@Z"
+target = 0x00411500
+[[units.overlay-text-draw-box-00412eb0.relocations]]
+offset = 1012
+type = "REL32"
+symbol = "?DrawQuad@OverlayDrawerF292@@YAXPAVOverlayQuadF292@@PBUtagRECT@@KK@Z"
+target = 0x004029F0
+[[units.overlay-text-draw-box-00412eb0.relocations]]
+offset = 1035
+type = "REL32"
+symbol = "?Translate@OverlayQuadF292@@QAEXMMM@Z"
+target = 0x00411500
+[[units.overlay-text-draw-box-00412eb0.relocations]]
+offset = 1055
+type = "REL32"
+symbol = "?Translate@OverlayQuadF292@@QAEXMMM@Z"
+target = 0x00411500
+[[units.overlay-text-draw-box-00412eb0.relocations]]
+offset = 1103
+type = "REL32"
+symbol = "?DrawQuad@OverlayDrawerF292@@YAXPAVOverlayQuadF292@@PBUtagRECT@@KK@Z"
+target = 0x004029F0
+[[units.overlay-text-draw-box-00412eb0.relocations]]
+offset = 1126
+type = "REL32"
+symbol = "?Translate@OverlayQuadF292@@QAEXMMM@Z"
+target = 0x00411500
+[[units.overlay-text-draw-box-00412eb0.relocations]]
+offset = 1146
+type = "REL32"
+symbol = "?Translate@OverlayQuadF292@@QAEXMMM@Z"
+target = 0x00411500
+[[units.overlay-text-draw-box-00412eb0.relocations]]
+offset = 1194
+type = "REL32"
+symbol = "?DrawQuad@OverlayDrawerF292@@YAXPAVOverlayQuadF292@@PBUtagRECT@@KK@Z"
+target = 0x004029F0
+[[units.overlay-text-draw-box-00412eb0.relocations]]
+offset = 1217
+type = "REL32"
+symbol = "?Translate@OverlayQuadF292@@QAEXMMM@Z"
+target = 0x00411500
+[[units.overlay-text-draw-box-00412eb0.relocations]]
+offset = 1237
+type = "REL32"
+symbol = "?Translate@OverlayQuadF292@@QAEXMMM@Z"
+target = 0x00411500
+[[units.overlay-text-draw-box-00412eb0.relocations]]
+offset = 1285
+type = "REL32"
+symbol = "?DrawQuad@OverlayDrawerF292@@YAXPAVOverlayQuadF292@@PBUtagRECT@@KK@Z"
+target = 0x004029F0
+[[units.overlay-text-draw-box-00412eb0.relocations]]
+offset = 1308
+type = "REL32"
+symbol = "?Translate@OverlayQuadF292@@QAEXMMM@Z"
+target = 0x00411500
+[[units.overlay-text-draw-box-00412eb0.relocations]]
+offset = 1374
+type = "REL32"
+symbol = "?DrawQuad@OverlayDrawerF292@@YAXPAVOverlayQuadF292@@PBUtagRECT@@KK@Z"
+target = 0x004029F0
