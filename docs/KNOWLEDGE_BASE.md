@@ -4937,3 +4937,29 @@ The separately F338-accepted 429-byte archive index reader is a
 different CODE range; neither counts original imported Win32/CRT
 or 97 origin-pending functions. Earlier claims that either of the
 686/429 archive functions was **currently unaccepted** are obsolete.
+
+
+## F340: complete 164-byte archive name seek, verified native iterator ABI
+
+The previously unclassified R053-authored `DataArchive::SeekNamedEntry` at
+`0041D750..0041D7F3` consists of **164 original CODE bytes** (PE SHA-256
+`b0f65cb3e5a968f5875d430cbcaa38afc8a54e3861028d50d01a00cb187516c8`).
+Unlike the independently exact 180-byte `SeekNamedEntryWithSize` at `0041D800`,
+this one takes only a name and returns a borrowed archive HANDLE or -1. The
+original body invokes real list Begin/End at `0041D950`/`0041D980`, iterator
+`!=`, postfix increment, `Entry`, and `==` at their original verified addresses,
+uses `strcmp`, and calls `SetFilePointer` with the record's genuine byte offset
++104. It has a single `RET 4` and no independently owned after-return code or
+post-return table. The original private iterator, list, archive context and
+class names are **not fully recovered**; this probe declares only the observed
+four-byte borrowed iterator and caller interface.
+
+`src/ArchiveSeekF340.cpp` reproduces the complete natural C++ routine with
+VC7.1 `/Od /Ob0 /Gy /GR- /GX- /GS /Zi`. The original 164-byte extent and all
+**nine** physically present COFF relocations independently agree, including
+all target destinations; nonrelocated instruction bytes match **128/128**.
+Canonical cold replay of only
+`data-archive-seek-named-entry-0041d750` yields **1/1 exact**,
+with no unrelated existing unit replayed. This is original CODE credit only,
+not compiler-generated iterator, CRT or Win32 callee credit, and not a public
+Factory Oracle acceptance.
