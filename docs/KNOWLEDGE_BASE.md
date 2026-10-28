@@ -4820,3 +4820,47 @@ Win32/CRT/VC7 call targets, opaque original EventService class and
 97 unknown origins receive no duplicated CODE credit. No target
 byte graft, assembly, artificial padding, truncated extent, masked
 original COFF fields, full all-unit replay or remote Oracle proof.
+
+
+## F337: entire 162-byte two-side BattlePointerQueues release cold-exact
+
+R166-authored `BattlePointerQueues::ReleaseEntriesAt005F7140` at
+`005F7140..005F71E1` has **all 162 original pinned Japanese PE CODE
+bytes**, 54 complete original x86 instructions, native `0x10` stack
+frame and PE body SHA256
+`a6e281ee48d96a55d56a6e3f26545b454a48091274d2032a49e1e63e090ff232`.
+Original native Ghidra/decompiler, complete first natural C++/COFF
+probe, meaningful native-state grouped C++ exact and one-unit cold
+receipt are retained at `.analysis/f337-archive-close/`; canonical
+accepted source `src/BattlePointerReleaseF337.cpp`.
+
+Original gameplay cleanup traverses two genuine 20-byte physical
+queue members at owner+0 and owner+0x14. For each, it loops over
+the actual unsigned 32-bit item index until native Size `005F8110`,
+fetches a real owned pointer with original At `005F8130`, frees it
+via native C runtime `00640F15`, and invokes original Clear
+`005F82D0`. It uses the same unsigned index in both loops and
+**two distinct actually used** freed-pointer locals, preserving
+both original full iteration/cleanup orders. The genuine `0x10`
+frame holds this at EBP−0x10, second freed pointer at −0xC,
+first freed pointer at −0x8 and unsigned index at −0x4.
+
+First complete source under pinned VC7.1 `/Od /Ob0 /Gy /GR-
+/GX- /GS /Zi` emitted **162 native CODE bytes** and all eight
+real COFF fields but placed first freed pointer and index in wrong
+EBP slots, causing 12/130 nonfield mismatches. The native pointer
+locations were independently confirmed. A plain, actual **12-byte
+`PointerQueueStateF337`** containing only these three genuinely
+used values in the original physical member order `second`,
+`first`, `i` lets MSVC emit exactly **162/162 original CODE,
+130/130 comparable byte positions and 8/8 original physical COFF
+REL32 fields** (two each to native Size, At, free, Clear).
+Only newly affected canonical
+`battle-pointer-queues-release-entries-005f7140` was cold compiled
+and accepted **1/1 exact**. Separate F304 original resource
+release owner calls this helper but never duplicates these 162
+CODE bytes. Win32/CRT/VC7 and other game containers' source
+implementations, full private class layouts, and all 97 pending
+origins remain uncredited. No byte graft, manual x86, artificial
+stack padding, masked relocation, cropped native extent, full
+replay or remote Oracle receipt.

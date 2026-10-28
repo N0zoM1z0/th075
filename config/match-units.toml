@@ -46342,3 +46342,52 @@ offset = 135
 type = "DIR32"
 symbol = "__imp__CloseHandle@4"
 target = 0x00657138
+
+[units.battle-pointer-queues-release-entries-005f7140]
+source = "src/BattlePointerReleaseF337.cpp"
+object = "build/matching/BattlePointerReleaseF337.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BattlePointerQueues::ReleaseEntriesAt005F7140"]
+symbol = "?ReleaseEntries@BattlePointerQueuesF337@@QAEXXZ"
+target_address = 0x005F7140
+size = 162
+[[units.battle-pointer-queues-release-entries-005f7140.relocations]]
+offset = 31
+type = "REL32"
+symbol = "?Size@NativePointerListF337@@QAEIXZ"
+target = 0x005F8110
+[[units.battle-pointer-queues-release-entries-005f7140.relocations]]
+offset = 48
+type = "REL32"
+symbol = "?At@NativePointerListF337@@QAEPAPAXI@Z"
+target = 0x005F8130
+[[units.battle-pointer-queues-release-entries-005f7140.relocations]]
+offset = 62
+type = "REL32"
+symbol = "_free"
+target = 0x00640F15
+[[units.battle-pointer-queues-release-entries-005f7140.relocations]]
+offset = 75
+type = "REL32"
+symbol = "?Clear@NativePointerListF337@@QAEXXZ"
+target = 0x005F82D0
+[[units.battle-pointer-queues-release-entries-005f7140.relocations]]
+offset = 104
+type = "REL32"
+symbol = "?Size@NativePointerListF337@@QAEIXZ"
+target = 0x005F8110
+[[units.battle-pointer-queues-release-entries-005f7140.relocations]]
+offset = 124
+type = "REL32"
+symbol = "?At@NativePointerListF337@@QAEPAPAXI@Z"
+target = 0x005F8130
+[[units.battle-pointer-queues-release-entries-005f7140.relocations]]
+offset = 138
+type = "REL32"
+symbol = "_free"
+target = 0x00640F15
+[[units.battle-pointer-queues-release-entries-005f7140.relocations]]
+offset = 154
+type = "REL32"
+symbol = "?Clear@NativePointerListF337@@QAEXXZ"
+target = 0x005F82D0

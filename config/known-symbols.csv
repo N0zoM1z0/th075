@@ -623,3 +623,4 @@ address,name,module,confidence,evidence
 0x00423B40,EventQueue::RunWorkerAt00423B40,EventQueue,inferred,"F334; complete 273-byte native queue worker with real 28-byte checked iterator state, 19 genuine Win32/game relocation fields; stdcall/owner nominal name provisional"
 0x004239F0,EventQueue::AcquireSharedServiceAt004239F0,EventQueue,inferred,"F335; full 155-byte R114 event queue service acquire lifecycle, 18 authentic COFF fields cold exact; borrowed class names only"
 0x00423A90,EventQueue::ReleaseSharedServiceAt00423A90,EventQueue,inferred,"F335; full 143-byte R114 event queue service release lifecycle, 16 authentic COFF fields cold exact; borrowed class names only"
+0x005F7140,BattlePointerQueues::ReleaseEntriesAt005F7140,GameContextPolicy,inferred,"F337; whole 162-byte original R166 authored two-side native pointer free and queue clear, 8 real COFF game/CRT fields; full private container layout unknown"

@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "b137026353bae27d98e1a5a61427c7d69bc66ed4c9d08f1acd89f9e99fc930f9"
+      "current_sha256": "6e3274f76d09c6e39c3107e0bdd9ab90133ebff87c6ca8856ee7b3634cde1b40"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "a2bde70b9997b1c83524bd2249f153479e042a1c2e75b02651d727a371228e84"
+      "current_sha256": "8312314d4ac2ec153c37082aa61c7388ac393330dbc6c91d936425d6521506a9"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "5d2389251acdd34579561fcc2e75382947d365ed41a57fadf0328a411631c0fb"
+      "current_sha256": "115af66f4b0a151e5f8b2d6ecfcb22cf69df8211407147bbded5b69aff03de02"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "9942a42ea06d016c3eed817c84c6713376cbc6511aa0be202b388de19b8e3bea"
+      "current_sha256": "a23c5f2290bcd5885e5dacd9385d12390fc9b6ef1fd1228a6a163c2050b61e1c"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "ca41bed8f8ff6b54d7f16c1d300ab36abc8e520350e219c91d4f41947035dad7"
+      "current_sha256": "7dc50d136258dd655dc0e3891a3b491325126e9c9630d0b773630a747dd4bd41"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -25648,6 +25648,50 @@
         "disposition": "authored",
         "confidence": "complete-game-policy-with-independent-context-and-lifetime-controls",
         "evidence_id": "R114"
+      }
+    },
+    {
+      "before": {
+        "address": "0x005F7140",
+        "size": "162",
+        "span_end": "0x005F71E1",
+        "current_name": "FUN_005f7140",
+        "proposed_name": "BattlePointerQueues::ReleaseEntriesAt005F7140",
+        "module": "GameContextPolicy",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R166; config/game-parent-policy-origin-evidence.json; scripts/repo-python scripts/verify-game-parent-policy-origins.py",
+        "owner": "authored",
+        "notes": "Complete observed custom policy and independent whole authored parent, real call/field/loop/EH context and natural source controls; no ownership inferred from caller labels alone. Three whole policy controls compare unmasked; the 203-byte sparse-default virtual initializer is supported by full target policy/parent witnesses and a full distinct implicit-construction control, not a source match. SDK clear/destructor aliases and original method spelling/types/private layouts remain unknown. Independent list/deque/base helpers and protected lifetime/copy/math/destruction policies retain original origins; no reconstructed source/private ABI/mapping/exact credit."
+      },
+      "after": {
+        "address": "0x005F7140",
+        "size": "162",
+        "span_end": "0x005F71E1",
+        "current_name": "FUN_005f7140",
+        "proposed_name": "BattlePointerQueues::ReleaseEntriesAt005F7140",
+        "module": "GameContextPolicy",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void BattlePointerQueuesF337::ReleaseEntries()",
+        "is_thunk": "false",
+        "source_file": "src/BattlePointerReleaseF337.cpp",
+        "evidence": "R166; config/game-parent-policy-origin-evidence.json; scripts/repo-python scripts/verify-game-parent-policy-origins.py; F337; scripts/repo-python scripts/replay-exact-units.py --unit battle-pointer-queues-release-entries-005f7140",
+        "owner": "authored",
+        "notes": "Complete observed custom policy and independent whole authored parent, real call/field/loop/EH context and natural source controls; no ownership inferred from caller labels alone. Three whole policy controls compare unmasked; the 203-byte sparse-default virtual initializer is supported by full target policy/parent witnesses and a full distinct implicit-construction control, not a source match. SDK clear/destructor aliases and original method spelling/types/private layouts remain unknown. Independent list/deque/base helpers and protected lifetime/copy/math/destruction policies retain original origins; no reconstructed source/private ABI/mapping/exact credit.; F337: entire original R166-authored 162 native CODE bytes at 005F7140..005F71E1 (54 independent original x86 instructions, native 0x10 stack frame and RET), full PE CODE SHA256 a6e281ee48d96a55d56a6e3f26545b454a48091274d2032a49e1e63e090ff232. This physically observed game-specific release traverses real two 20-byte side lists beginning at this+0 and this+0x14. For each, genuine unsigned loop indexes from zero to native Size through original 005F8110, calls authentic At 005F8130 to fetch actual owned pointer and frees it through original native CRT 00640F15, then calls original 005F82D0 Clear on that same side. The two loop passes use one actual reused unsigned index and two independently observed, truly freed pointer variables. Native stack original saved this at EBP-0x10, first owned pointer at -0x8, second at -0xC, and one reused unsigned loop index at -0x4. First full semantically natural unoptimized source compiled complete 162 native bytes and all eight physical COFF relocation fields but only 118/130 nonfield positions due 12 wrong actual EBP slots for index/first pointer. Independent normal two-field aggregate controls showed source allocation differed. A **plain 12-byte PointerQueueStateF337 containing exactly three actually used native values (second pointer, first pointer, unsigned index) in observed physical order** naturally positions the values at -0xC/-0x8/-0x4, restoring entire native 162/162 CODE, all 130/130 comparable positions and 8/8 original genuine COFF REL32 offset/type/solved native target references (two each to native Size, At, free, Clear). Pinned VC7.1 /Od /Ob0 /Gy /GR- /GX- /GS /Zi; only newly affected F337 single unit cold replayed 1/1 exact. Its original caller F304 235-byte resources destructor was independently accepted and receives no duplicate CODE credit; other original full opaque container owner/private allocator types and original native callee bodies remain separately owned, and 97 pending origin functions/CRT/VC7 uncredited. No byte graft, synthetic unused locals/padding, assembly, masked fields, truncated original extent, all-unit cold replay or remote Oracle receipt."
+      },
+      "origin": {
+        "address": "0x005F7140",
+        "origin": "authored",
+        "subsystem": "GameContextPolicy",
+        "disposition": "authored",
+        "confidence": "complete-custom-game-policy-with-whole-authored-parent-and-source-controls",
+        "evidence_id": "R166"
       }
     }
   ],
@@ -182841,6 +182885,77 @@
           "target": 6648120
         }
       ]
+    },
+    "battle-pointer-queues-release-entries-005f7140": {
+      "source": "src/BattlePointerReleaseF337.cpp",
+      "object": "build/matching/BattlePointerReleaseF337.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattlePointerQueues::ReleaseEntriesAt005F7140"
+      ],
+      "symbol": "?ReleaseEntries@BattlePointerQueuesF337@@QAEXXZ",
+      "target_address": 6254912,
+      "size": 162,
+      "relocations": [
+        {
+          "offset": 31,
+          "type": "REL32",
+          "symbol": "?Size@NativePointerListF337@@QAEIXZ",
+          "target": 6258960
+        },
+        {
+          "offset": 48,
+          "type": "REL32",
+          "symbol": "?At@NativePointerListF337@@QAEPAPAXI@Z",
+          "target": 6258992
+        },
+        {
+          "offset": 62,
+          "type": "REL32",
+          "symbol": "_free",
+          "target": 6557461
+        },
+        {
+          "offset": 75,
+          "type": "REL32",
+          "symbol": "?Clear@NativePointerListF337@@QAEXXZ",
+          "target": 6259408
+        },
+        {
+          "offset": 104,
+          "type": "REL32",
+          "symbol": "?Size@NativePointerListF337@@QAEIXZ",
+          "target": 6258960
+        },
+        {
+          "offset": 124,
+          "type": "REL32",
+          "symbol": "?At@NativePointerListF337@@QAEPAPAXI@Z",
+          "target": 6258992
+        },
+        {
+          "offset": 138,
+          "type": "REL32",
+          "symbol": "_free",
+          "target": 6557461
+        },
+        {
+          "offset": 154,
+          "type": "REL32",
+          "symbol": "?Clear@NativePointerListF337@@QAEXXZ",
+          "target": 6259408
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -183256,6 +183371,7 @@
     "src/ReplayFinalizeFileF328.cpp": "b4d03723e01204d852494d1d3d65379667a03915dd5d18795dd53eddfd9e7f48",
     "src/EventQueueRunWorkerF334.cpp": "2586551f1c1fb01696484a3d289bba76f56284f51a47a21ef6c6bd6ae491edd9",
     "src/EventServiceAcquireF335.cpp": "e3005939abd2c4142c9f795b3478ca8eab54df9623d65fc39d89fec9dccbddbb",
-    "src/EventServiceReleaseF335.cpp": "d4b8fa77aa0647b4f2bb0659ebfdd40798c8a0919d0afee9596956806655b05c"
+    "src/EventServiceReleaseF335.cpp": "d4b8fa77aa0647b4f2bb0659ebfdd40798c8a0919d0afee9596956806655b05c",
+    "src/BattlePointerReleaseF337.cpp": "ce2d4fee016128a0db2ce9424dc20158c7020e083ade5b8badee65ca76156b5f"
   }
 }
