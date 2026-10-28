@@ -2110,3 +2110,49 @@ real named texture deletion alias emits 254 instead of 248 bytes, and
 therefore cannot be exact. These new negative controls are retained at
 `.analysis/f260-battle-lifetimes/`. No unverified ownership or
 byte credit is claimed for the destructor.
+
+
+## F261: complete native music-record construction/destruction (2 cold-exact units)
+
+R236-authored music-record helpers at `00427430..00427461` and
+`00427470..004274C1` have full Ghidra-reviewed boundaries, with 50 and
+82 original CODE bytes respectively, 16 and 30 native instructions, and
+no owned jump tables. Constructor full SHA256:
+`1d2aef7cb1e15914180d9063cbe3f872c1d108a9237ea596af94ebf396292d12`;
+destructor full SHA256:
+`2c34ab0bdbe8a9d8c3ebed966343a4cc332572bef47bea23ce7c93c6f01cdb64`.
+The original music scene creates/destructs **60 records of stride 16** via
+the standard VC7 array lifetime machinery. An actual record has signed
+byte count/index at +0, three individually owned character pointers at
++4, +8 and +12, and naturally supplied alignment. The independent 50-byte
+constructor initializes precisely these four native fields, returning this.
+The destructor resets the count and calls real `_free` 3 times, with
+a 16-byte stack frame: distinct real release temporaries at EBP-4, -8
+and -C, original `this` at EBP-10. Declaring all three release pointers
+up front produced 38/70 comparable bytes due to call/stack ordering.
+Meaningful separate release scopes, each preserving actual source pointer
+lifetimes, yield the entire **70/70 nonrelocation** bytes and **3/3 physical
+REL32** calls to native CRT free at `0064169D`.
+
+One exact shared translation unit `src/MusicCatalogRecordF261.cpp` plus
+`src/MusicCatalogRecordF261.hpp` declares a natural 16-byte type, rather
+than a padded invented owner; only observed data and behavior is present.
+The constructor reproduces **50/50** bytes and has **zero relocations**.
+Both complete functions independently cold-replayed exact together as
+`music-catalog-record-constructor-00427430` and
+`music-catalog-record-destructor-00427470` from one fresh pinned VC7.1
+`/Od /GX- /GS` object. These 132 CODE bytes do not credit any array helper
+implementation or establish the whole parent MusicRoom scene layout.
+The 97 unresolved origins remain uncredited. Native listings and negative
+compiler variants remain private at `.analysis/f261-music-record/`. No
+target grafts, assembly, invented padding or full cold replay.
+
+The larger R035 `SpriteSequence::RenderElements` target at `00411110`
+(746 bytes, real `RET` at `004113F9`) was also independently inspected. Its
+actual `0xBC` frame contains a complete 132-byte SpriteQuad, 16-byte RECT,
+list iterators, one signed cycling counter, x87 translation and guarded
+blend/tint/scale dispatch. A natural whole-function source is retained as
+`.analysis/f261-sprite-sequence/SequenceRenderF261.cpp`; the first probe
+emitted 717 bytes with a 0xC0 frame, so no exact claim or added CODE
+credit. The next investigation must reconcile physical local lifetime and
+branch lowering, not merely trust the Ghidra decompile or truncate extent.

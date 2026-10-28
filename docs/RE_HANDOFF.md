@@ -1,4 +1,4 @@
-# TH075 — active reconstruction handoff (F260)
+# TH075 — active reconstruction handoff (F261)
 
 **Updated 2026-10-28. Read this document before new experiments.**
 
@@ -22,17 +22,17 @@ not acceptance requirements.
 
 | Item | Current evidence |
 | --- | --- |
-| Local branch / last exact-code commit | `main` / F260 343-byte result-scene polling controller; F259 checkpoint `3228334` |
+| Local branch / last exact-code commit | `main` / F261 two whole music catalog record lifetime helpers; prior F260 `5cc4288` |
 | Upstream | `origin/main` tracked locally; verify current ahead/behind and dirty state before further work |
-| Working tree | Clean after F260 checkpoint if successful; continue rather than avoid every existing dirty edit |
+| Working tree | Clean after F261 checkpoint if successful; continue rather than avoid every existing dirty edit |
 | Native binary | `resources/th075.exe`, SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98` |
 | Candidate count | 4,351; origin review: 1,002 authored, 2,671 library, 581 compiler, 97 unknown |
-| Accepted functions / units | **573 / 573** |
-| Accepted authored CODE | **788,322 bytes** |
-| Reviewed authored coverage | 788,322 / 1,973,516 = **39.95%** |
-| Conservative coverage | **39.87%** counting 3,608 origin-pending bytes |
+| Accepted functions / units | **575 / 575** |
+| Accepted authored CODE | **788,454 bytes** |
+| Reviewed authored coverage | 788,454 / 1,973,516 = **39.95%** |
+| Conservative coverage | **39.88%** counting 3,608 origin-pending bytes |
 | Goal | **98% not reached** |
-| Verification | F260 entire 343-byte ResultScene::PollInput controller cold-exact including all 27 authentic COFF fields; F259 792-byte loader previously checkpointed at `3228334`. Only F260 compiled at this new acceptance; no all-unit replay or external Oracle acceptance |
+| Verification | F261 original complete 50-byte music-record constructor and 82-byte destructor independently cold-exact (0 and 3 genuine COFF relocations); F260 343-byte input controller previously accepted. Only F261 new/affected units replayed, no all-unit cold replay or external Oracle acceptance |
 
 **Recheck the actual live status immediately**. Local commits are checkpoints,
 not evidence of a remote push or external Oracle acceptance. Earlier Git
@@ -100,6 +100,8 @@ inert variable or arbitrary padding may earn exact credit.
 | F258: MusicRoom::LoadCatalog | `00426DD0` | 916 (+16 table) | 18 |
 | F259: ReplayRecords::LoadRecord | `00413AC0` | 792 | 29 |
 | F260: ResultScene::PollInput | `00430D80` | 343 | 27 |
+| F261: MusicRoomRecord::Initialize | `00427430` | 50 | 0 |
+| F261: MusicRoomRecord::ReleaseBuffers | `00427470` | 82 | 3 |
 
 F222 proved signed 32-bit x87 `FILD` divided by the target's 36.0f
 (`00659308`), 74 physical animation records and a final call into the
@@ -169,6 +171,10 @@ F258 **cold-accepts the complete 916-byte `MusicRoom::LoadCatalog` boss** at `00
 F259 **cold-accepts the complete 792-byte `ReplayRecords::LoadRecord`** at `00413AC0`, all 274 native x86 instructions, 676/676 comparable non-field bytes and all 29 genuine COFF fields. The F216/F233 historical best was only 639/676 with wrong `HANDLE`, record count and `ReadFile` transfer stack slots. Native-grounded nested real source variable lifetimes (record index, dword item, raw word, entry count, handle, byte item, transfer size) fixed 35/37 originally differing comparable bytes, reaching 674/676. The last two bytes were not a manual padding fix: independent native short-word conversion proved the original signed-word `Push(const short&)` call constructs an implicit temporary at EBP-0x1E from an `unsigned short` read at EBP-0x0C. The genuine conversion `Push(static_cast<short>(rawWord))` restores 676/676 bytes and the real 00414640 callee ABI. Pinned VC7.1 cold replay of only `--unit replay-records-load-record-00413ac0` yields exact for all 792 CODE bytes and 29 actual fields. Native file reads and four separate typed list loops remain complete. Preserve `.analysis/f259-replay-load-lifetimes/` and F216/F233 negatives; caller/record layouts and external container bodies remain unproven and uncredited.
 
 F260 **cold-accepts the full 343-byte `ResultScene::PollInput`** controller at `00430D80`, all 84 native x86 instructions, all 235/235 comparable nonrelocation bytes and 27/27 authentic physical COFF fields. The first independently written natural VC7.1 C++ probe matched the entire native extent without compiler-shaping hacks. It preserves the original two input polling calls, four reset scene direction/action bytes, six paired positive/negative direction/action comparisons against the two 0x48-spaced input frames, four real `00407170` key-state queries, and the guarded `004018A0` window-mode call. Only `--unit result-scene-poll-input-00430d80` cold-replayed exact; no external input implementation, unproven scene layout or 97 pending origins credited. Private original Ghidra function/decompile/native assembly and full probe are under `.analysis/f260-result-poll/`.
+
+F261 cold-accepts both **native music catalog record lifetime helpers**: 50-byte 16-instruction constructor `00427430` and 82-byte 30-instruction destructor `00427470`, with 50/50 and 70/70 nonrelocation bytes and 0 and 3 true COFF fields respectively. A naturally aligned `signed char` and three owned `char*` members occupy 16 bytes, matching the independent 60-record array used by MusicRoom initialization. Genuine nested destructor pointer/free scopes restore original EBP-4/-8/-C cleanup temp slots; no synthetic padding or unknown full scene layout is introduced. Both units were cold replayed together as `2/2 exact` from one fresh VC7.1 object, not all units. Retain `.analysis/f261-music-record/` and inspect these accepted record helpers when reconstructing `MusicRoomScene::Initialize` at `00425750` (372-byte EH array ctor boss).
+
+F261 also independently examined the entire 746-byte `SpriteSequence::RenderElements` at `00411110` (R035 authored) and developed a natural complete list/quad/texture/transform source, but its first genuine pinned VC7.1 probe emits **717 bytes** instead of 746 and has a different 0xC0 stack frame vs native 0xBC. It remains a **nonexact boss** with no CODE credit. Full Ghidra function and native assembly and the retained negative source are under `.analysis/f261-sprite-sequence/`; do not infer exactness from conceptual similarity.
 
 Relevant full native proofs: `config/match-units.toml`,
 `config/exact-adoptions.json`, sources `src/*F222.cpp`/`src/*F223.cpp`,

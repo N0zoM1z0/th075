@@ -41345,3 +41345,37 @@ offset = 335
 type = "REL32"
 symbol = "?ToggleWindowMode@ResultInputServiceF260@@YAXXZ"
 target = 0x004018A0
+
+[units.music-catalog-record-constructor-00427430]
+source = "src/MusicCatalogRecordF261.cpp"
+object = "build/matching/MusicCatalogRecordF261.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["MusicRoomRecord::InitializeAt00427430"]
+symbol = "??0MusicCatalogRecordF261@@QAE@XZ"
+target_address = 0x00427430
+size = 50
+relocations = []
+
+[units.music-catalog-record-destructor-00427470]
+source = "src/MusicCatalogRecordF261.cpp"
+object = "build/matching/MusicCatalogRecordF261.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["MusicRoomRecord::ReleaseBuffersAt00427470"]
+symbol = "??1MusicCatalogRecordF261@@QAE@XZ"
+target_address = 0x00427470
+size = 82
+[[units.music-catalog-record-destructor-00427470.relocations]]
+offset = 29
+type = "REL32"
+symbol = "_free"
+target = 0x0064169D
+[[units.music-catalog-record-destructor-00427470.relocations]]
+offset = 50
+type = "REL32"
+symbol = "_free"
+target = 0x0064169D
+[[units.music-catalog-record-destructor-00427470.relocations]]
+offset = 71
+type = "REL32"
+symbol = "_free"
+target = 0x0064169D
