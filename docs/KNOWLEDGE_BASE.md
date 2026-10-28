@@ -5991,3 +5991,36 @@ true destinations. Only the affected `archive-catalog-begin-use-0041ce10`
 unit was independently cold replayed in the two-unit F391/F392 scope,
 **1/1 exact**. No extra invented locals, assembly, code/data grafts,
 masked references, truncated original or remote Oracle acceptance.
+
+
+## F393: original independent 44-byte signed character and AI random-range helpers
+
+Two separately reviewed authored original game functions,
+`CharacterAuxObject::ChooseIntegerRangeAt00410F00` and
+`CharacterAI::ChooseIntegerRangeAt00455610`, each occupy **44 complete
+original CODE bytes / 18 native instructions** and have a single genuine
+original `_rand` call at physical target `006418AB`. Their respective native
+PE SHA256 values are
+`bc5371baf16b8819fc51db20175a88ae5cf9ad95425c376a104dd5f4be3648bb`
+and `32166d7d9655dc227f3f5a2c1623c07231e295f53a83f9d6b33d0ae615025d04`.
+Both use the original signed lower bound, upper bound and original CRT
+rand result to select an integer offset. The true native sequence computes
+`maximum - minimum` **before** calling rand, keeps that range in the
+callee-saved `ESI`, multiplies the return value, uses `CDQ`, `AND 0x7FFF`,
+`ADD` and signed arithmetic shift right by 15 to round a division by 32768,
+then adds original minimum and returns with `RET 8`. This precise signed
+rounding is real game behavior, not a compiler/library function given
+authored credit. The private receiver C++ classes remain borrowed ABI views.
+
+The first semantically equivalent source `minimum+rand()*(maximum-minimum)/
+32768` emitted only 42 bytes, putting rand before the range subtraction and
+not preserving ESI, so it is a native **negative control**. Merely writing
+the genuine source evaluation order as `(maximum-minimum)*rand()/32768 +
+minimum` generates all native push/pop ESI and identical full original 44
+CODE bytes. Both independently reviewed functions under pinned VC7.1
+`/Od /Ob0 /Gy /GR- /GX- /Zi` matched **40/40** original nonrelocation
+bytes and their one authentic physical COFF REL32 `_rand` field/destination.
+Only the two affected F393 units were cold replayed together (**2/2 exact
+across 1 object**) and credit **88** distinct authored CODE bytes; native
+CRT rand itself is not credited. No byte graft, assembly, fake temporary,
+truncated comparison, full cold replay or external Oracle receipt.

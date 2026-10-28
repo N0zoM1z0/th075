@@ -1,6 +1,6 @@
 # TH075 — current reconstruction handoff
 
-**Maintained: 2026-10-28, after F392.** Read this document, then check the **live repository**. The current user explicitly wants both large/core bosses and small leaves tackled seriously, tangible progress committed immediately with subject `gpt-web: ...`, and **only changed/new units cold-replayed**. The user reports no other sessions: inspect and finish all dirty work; never skip, reset, overwrite or silently discard it.
+**Maintained: 2026-10-28, after F393.** Read this document, then check the **live repository**. The current user explicitly wants both large/core bosses and small leaves tackled seriously, tangible progress committed immediately with subject `gpt-web: ...`, and **only changed/new units cold-replayed**. The user reports no other sessions: inspect and finish all dirty work; never skip, reset, overwrite or silently discard it.
 
 ## 1. Trusted state and first commands
 
@@ -8,10 +8,10 @@ Canonical evidence is the pinned original PE, `config/function-origins.csv`, `co
 
 | Item | Verified snapshot |
 | --- | --- |
-| Git | `main`; pre-F391/F392 reconstruction commit **`6d5e37f`** (F389), preceded by `2d55421` (F386), `2d17417` (F379); this F391/F392 commit follows the update |
+| Git | `main`; pre-F393 reconstruction commit **`09f4949`** (F391/F392), preceded by `6d5e37f` (F389), `2d55421` (F386); F393 commit follows this update |
 | Pinned target | user-supplied Japanese `resources/th075.exe` v1.11; SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`; **never** `th075c.exe` |
-| Exact and source-present | **718 functions / 718 exact units** |
-| Accepted authored CODE | **841,653 bytes / 1,973,516 reviewed bytes = 42.65%** |
+| Exact and source-present | **720 functions / 720 exact units** |
+| Accepted authored CODE | **841,741 bytes / 1,973,516 reviewed bytes = 42.65%** |
 | Conservative | **42.57%**, including 3,608 bytes with unresolved origin |
 | Origin review | 1,002 authored, 2,671 library, 581 compiler, **97 pending** across 4,351 provisional candidates |
 | Goal | **98% not reached**; Git and local cold results are not external Oracle receipts |
@@ -29,7 +29,7 @@ If **any** dirty source, unit, or manifest is present, first inspect its exact e
 
 ## 2. Newly closed chains — **not** the backlog
 
-The full register of **all 718** accepted functions is in `config/functions.csv` and `config/match-units.toml`; this table intentionally highlights only the newest, important independent CODE extents. No called function, imported CRT/Win32 code, or owned jump-table bytes are counted twice.
+The full register of **all 720** accepted functions is in `config/functions.csv` and `config/match-units.toml`; this table intentionally highlights only the newest, important independent CODE extents. No called function, imported CRT/Win32 code, or owned jump-table bytes are counted twice.
 
 | Unit / accepted address | Whole CODE | Authentic fields | Evidence |
 | --- | ---: | ---: | --- |
@@ -68,6 +68,7 @@ The full register of **all 718** accepted functions is in `config/functions.csv`
 | F389 `BattleLoader::LoadStageAt004183D0` `004183D0` | **3,765 CODE + 92 table** | **170** | `src/BattleStageLoadBossF389.cpp`, `.analysis/f389-battle-loader-stage/` |
 | F391 `AliceFighter::UpdateSpecialStateAt004E62A0` `004E62A0` | **256** | **5** | `src/AliceSpecialStateF391.cpp`, `.analysis/f391-alice-leaf/` |
 | F392 `ArchiveCatalog::BeginUseAt0041CE10` `0041CE10` | **56** | **7** | `src/ArchiveBeginUseF392.cpp`, `.analysis/f392-archive-begin/` |
+| F393 `CharacterAuxObject / CharacterAI::ChooseIntegerRange` `00410F00` / `00455610` | **44 × 2** | **1 × 2** | `src/CharacterIntegerRandomRangesF393.cpp`, `.analysis/f393-choose-range/` |
 
 **F340:** the companion archive entry seek at `0041D750` is independently cold exact for its whole 164-byte function including every one of its nine external references. It uses genuine iterator and `strcmp` semantics, returns the archive handle after `SetFilePointer` or `INVALID_HANDLE_VALUE` if not found. The original private archive list remains borrowed, not instantiated.
 
@@ -124,6 +125,8 @@ The full register of **all 718** accepted functions is in `config/functions.csv`
 **F391:** separate R068 Alice original 256-byte fighter special-state guard at `004E62A0`, **72 native x86 instructions**, **236/236** nonfield bytes and **5/5** true physical COFF global float constant references. It resets contact flag only when original grounded zero and positive char flag and clamps signed +0xF14 opponent-relative 540/320 distance policy. Natural VC7.1 C++ with genuine direct FLOAT macro, no constructed private fighter class, affected-only cold **1/1 exact**.
 
 **F392:** independent R237-authored archive first-open/shared-count entry at `0041CE10`: if native use count at `0068BE04` is zero it clears both native registry containers `0068BE08`/`0068BE1C`, increments the real global count, returns original `this`. Entire **56-byte/17-instruction** native function **28/28** comparable bytes and **7/7** actual COFF native refs cold exact. Borrowed class interfaces and unchanged external container code do not earn separate CODE.
+
+**F393:** the two independently R-authored 44-byte signed random-range helpers at `00410F00` and `00455610` are cold exact, **40/40 original nonfield bytes and one original CRT rand COFF reference each**. Genuine expression order is `(maximum-minimum)*rand()/32768 + minimum`: the original VC7.1 preserves the signed range in ESI across the random call and performs native signed rounding before `sar 15`; a semantically equivalent rand-first formula compiles only 42 bytes. Both full 44-byte original functions were independently cold replayed **2/2 exact across one object**, no CRT/helper/AI owner code double-counted.
 
 **Corrections to old notes:** The 686-byte writer and 429-byte reader are both **exact** (F339/F338), not pending F249/F250. The full 1,252-byte replay writer and 375-byte finalizer are both **exact** (F326/F328), not pending F219/F218/F289. The 1,766-byte font rasterizer is **exact** (F319), not pending F299/F302. The 301-byte glyph loader is **exact** (F318), not pending F291. The 916-byte MusicRoom catalog + separately compared 16-byte jump table is **exact in F258** (916 CODE credit only). Other accepted 1,000+ byte bosses include F271 projected quad (1,185), F278 pattern chooser (1,264), F282 resource loader (1,186), F292 overlay text box (1,385), F294 effects catalog (1,722), and F244 scene advance (1,529 CODE). Earlier failures remain useful *historical controls*, but must never be presented as current unaccepted work.
 

@@ -716,3 +716,5 @@ BattleState::ApplySequenceAt00445A00
 BattleLoader::LoadStageAt004183D0
 AliceFighter::UpdateSpecialStateAt004E62A0
 ArchiveCatalog::BeginUseAt0041CE10
+CharacterAuxObject::ChooseIntegerRangeAt00410F00
+CharacterAI::ChooseIntegerRangeAt00455610

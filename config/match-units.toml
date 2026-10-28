@@ -53152,3 +53152,33 @@ offset = 45
 type = "DIR32"
 symbol = "?g_ArchiveUseCountAt0068BE04@@3IA"
 target = 0x0068BE04
+
+
+[units.character-aux-object-choose-range-00410f00]
+source = "src/CharacterIntegerRandomRangesF393.cpp"
+object = "build/matching/CharacterIntegerRandomRangesF393.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["CharacterAuxObject::ChooseIntegerRangeAt00410F00"]
+symbol = "?ChooseRange@CharacterAuxObjectF393@@QAEHHH@Z"
+target_address = 0x00410F00
+size = 44
+[[units.character-aux-object-choose-range-00410f00.relocations]]
+offset = 15
+type = "REL32"
+symbol = "_rand"
+target = 0x006418AB
+
+
+[units.character-ai-choose-range-00455610]
+source = "src/CharacterIntegerRandomRangesF393.cpp"
+object = "build/matching/CharacterIntegerRandomRangesF393.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["CharacterAI::ChooseIntegerRangeAt00455610"]
+symbol = "?ChooseRange@CharacterAIF393@@QAEHHH@Z"
+target_address = 0x00455610
+size = 44
+[[units.character-ai-choose-range-00455610.relocations]]
+offset = 15
+type = "REL32"
+symbol = "_rand"
+target = 0x006418AB
