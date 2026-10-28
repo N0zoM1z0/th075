@@ -663,3 +663,14 @@ BackgroundStage::ApplyBG02cBlendAt0044C3C0,0x0044C3C0,function
 CharacterAux::RunAt00505A60,0x00505A60,function
 CharacterAux::RunAt00532520,0x00532520,function
 CharacterAux::RunAt004C49C0,0x004C49C0,function
+ReimuFighter::SelectSpecialVariant,0x00470E50,function
+MarisaFighter::SelectSpecialVariant,0x00497580,function
+SakuyaFighter::SelectSpecialVariant,0x004C50A0,function
+AliceFighter::SelectSpecialVariant,0x004E63A0,function
+PatchouliFighter::SelectSpecialVariant,0x00506090,function
+YoumuFighter::SelectSpecialVariant,0x005305A0,function
+RemiliaFighter::SelectSpecialVariant,0x00555940,function
+YuyukoFighter::SelectSpecialVariant,0x00577BC0,function
+YukariFighter::SelectSpecialVariant,0x0059B740,function
+SuikaFighter::SelectSpecialVariant,0x005C4320,function
+MeilingFighter::SelectSpecialVariant,0x005E5910,function

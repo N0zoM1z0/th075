@@ -5576,3 +5576,41 @@ and three tracked effects. Only new unit
 `/Od /Ob0 /Gy /GR- /GX- /Zi` cold replayed, yielding **1/1 exact**. No
 other game callee/CRT/owner byte credit, invented source locals, masks,
 manual assembly, cropped extent, full cold replay or external Oracle receipt.
+
+
+## F374: eleven complete 130-byte fighter special-variant switches with 40-byte native jump tables
+
+The R049-authored original game has separate 130-CODE-byte / 36-instruction
+methods selecting each character's move/FX variant for the original
+signed global `0067161E` mode byte. These are located at: Reimu `00470E50`,
+Marisa `00497580`, Sakuya `004C50A0`, Alice `004E63A0`, Patchouli
+`00506090`, Youmu `005305A0`, Remilia `00555940`, Yuyuko `00577BC0`,
+Yukari `0059B740`, Suika `005C4320`, and Meiling `005E5910`. Every complete
+method uses a native ten-way `switch` for global modes 1..10 and stores
+**seven** distinct game role-dependent case action IDs to true byte
+`this+0x6E5` (modes 7/8/9/10 intentionally share the last case branch).
+Each original code extent finishes at `entry+129` with a real RET; directly
+**after** it lies an original **40-byte owned switch table** with ten native
+absolute pointers to original distinct case labels. Those tables are data,
+not separately authored executable CODE. Neither the F374 source nor the
+byte counts claim any complete original fighter owner allocation/layout.
+
+The natural source `src/FighterSpecialVariantsF374.cpp` contains eleven
+distinct separately named C++ `switch` policies, whose seven *semantic action
+values* were independently decoded and checked from each original native
+body (not copied raw machine instructions or an invented generic table).
+VC7.1 pinned `/Od /Ob0 /Gy /GR- /GX- /Zi` compiled all eleven exact
+functions in a single object. Diagnostic comparison across the **full 170
+original bytes** of each method plus immediately owned switch table gives
+**122/122** nonrelocation byte matches, plus **12/12 original COFF DIR32
+fields** per method: signed global at `0067161E`, local switch table at
+`entry+130`, and ten local case pointers at true relative native labels.
+Canonical units record `size = 130`, `compare_size = 170`; local symbol
+origins and *every* original native physical table pointer are bound, so
+the jump-table addresses cannot silently shift. All eleven affected units
+were cold-replayed in one command: **11/11 exact across 1 object**. Only
+**11 × 130 = 1,430 distinct authored original CODE bytes** are credited;
+**11 × 40 = 440 matched table DATA bytes** are compared but not credited.
+No cropped table, masks, fake switch returns or table bytes in SOURCE,
+manual assembly, whole-repository cold replay, claimed unknown class
+layout or remote Oracle acceptance.

@@ -662,3 +662,14 @@ BackgroundStage::ApplyBG02cBlendAt0044C3C0
 CharacterAux::RunAt00505A60
 CharacterAux::RunAt00532520
 CharacterAux::RunAt004C49C0
+ReimuFighter::SelectSpecialVariant
+MarisaFighter::SelectSpecialVariant
+SakuyaFighter::SelectSpecialVariant
+AliceFighter::SelectSpecialVariant
+PatchouliFighter::SelectSpecialVariant
+YoumuFighter::SelectSpecialVariant
+RemiliaFighter::SelectSpecialVariant
+YuyukoFighter::SelectSpecialVariant
+YukariFighter::SelectSpecialVariant
+SuikaFighter::SelectSpecialVariant
+MeilingFighter::SelectSpecialVariant

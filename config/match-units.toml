@@ -48264,3 +48264,784 @@ offset = 1678
 type = "DIR32"
 symbol = "__real@c3a00000"
 target = 0x00657880
+
+
+[units.reimu-fighter-select-special-variant-00470e50]
+source = "src/FighterSpecialVariantsF374.cpp"
+object = "build/matching/FighterSpecialVariantsF374.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["ReimuFighter::SelectSpecialVariant"]
+symbol = "?SelectVariant@ReimuFighterSpecialVariantF374@@QAEXXZ"
+target_address = 0x00470E50
+size = 130
+compare_size = 170
+[[units.reimu-fighter-select-special-variant-00470e50.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "?g_SelectedEffectModeAt0067161E@@3CA"
+target = 0x0067161E
+[[units.reimu-fighter-select-special-variant-00470e50.relocations]]
+offset = 40
+type = "DIR32"
+symbol = "$L682"
+target = 0x00470ED2
+[[units.reimu-fighter-select-special-variant-00470e50.relocations]]
+offset = 130
+type = "DIR32"
+symbol = "$L284"
+target = 0x00470E7C
+[[units.reimu-fighter-select-special-variant-00470e50.relocations]]
+offset = 134
+type = "DIR32"
+symbol = "$L287"
+target = 0x00470E88
+[[units.reimu-fighter-select-special-variant-00470e50.relocations]]
+offset = 138
+type = "DIR32"
+symbol = "$L290"
+target = 0x00470E94
+[[units.reimu-fighter-select-special-variant-00470e50.relocations]]
+offset = 142
+type = "DIR32"
+symbol = "$L293"
+target = 0x00470EA0
+[[units.reimu-fighter-select-special-variant-00470e50.relocations]]
+offset = 146
+type = "DIR32"
+symbol = "$L296"
+target = 0x00470EAC
+[[units.reimu-fighter-select-special-variant-00470e50.relocations]]
+offset = 150
+type = "DIR32"
+symbol = "$L299"
+target = 0x00470EB8
+[[units.reimu-fighter-select-special-variant-00470e50.relocations]]
+offset = 154
+type = "DIR32"
+symbol = "$L302"
+target = 0x00470EC4
+[[units.reimu-fighter-select-special-variant-00470e50.relocations]]
+offset = 158
+type = "DIR32"
+symbol = "$L302"
+target = 0x00470EC4
+[[units.reimu-fighter-select-special-variant-00470e50.relocations]]
+offset = 162
+type = "DIR32"
+symbol = "$L302"
+target = 0x00470EC4
+[[units.reimu-fighter-select-special-variant-00470e50.relocations]]
+offset = 166
+type = "DIR32"
+symbol = "$L302"
+target = 0x00470EC4
+
+
+[units.marisa-fighter-select-special-variant-00497580]
+source = "src/FighterSpecialVariantsF374.cpp"
+object = "build/matching/FighterSpecialVariantsF374.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["MarisaFighter::SelectSpecialVariant"]
+symbol = "?SelectVariant@MarisaFighterSpecialVariantF374@@QAEXXZ"
+target_address = 0x00497580
+size = 130
+compare_size = 170
+[[units.marisa-fighter-select-special-variant-00497580.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "?g_SelectedEffectModeAt0067161E@@3CA"
+target = 0x0067161E
+[[units.marisa-fighter-select-special-variant-00497580.relocations]]
+offset = 40
+type = "DIR32"
+symbol = "$L685"
+target = 0x00497602
+[[units.marisa-fighter-select-special-variant-00497580.relocations]]
+offset = 130
+type = "DIR32"
+symbol = "$L320"
+target = 0x004975AC
+[[units.marisa-fighter-select-special-variant-00497580.relocations]]
+offset = 134
+type = "DIR32"
+symbol = "$L323"
+target = 0x004975B8
+[[units.marisa-fighter-select-special-variant-00497580.relocations]]
+offset = 138
+type = "DIR32"
+symbol = "$L326"
+target = 0x004975C4
+[[units.marisa-fighter-select-special-variant-00497580.relocations]]
+offset = 142
+type = "DIR32"
+symbol = "$L329"
+target = 0x004975D0
+[[units.marisa-fighter-select-special-variant-00497580.relocations]]
+offset = 146
+type = "DIR32"
+symbol = "$L332"
+target = 0x004975DC
+[[units.marisa-fighter-select-special-variant-00497580.relocations]]
+offset = 150
+type = "DIR32"
+symbol = "$L335"
+target = 0x004975E8
+[[units.marisa-fighter-select-special-variant-00497580.relocations]]
+offset = 154
+type = "DIR32"
+symbol = "$L338"
+target = 0x004975F4
+[[units.marisa-fighter-select-special-variant-00497580.relocations]]
+offset = 158
+type = "DIR32"
+symbol = "$L338"
+target = 0x004975F4
+[[units.marisa-fighter-select-special-variant-00497580.relocations]]
+offset = 162
+type = "DIR32"
+symbol = "$L338"
+target = 0x004975F4
+[[units.marisa-fighter-select-special-variant-00497580.relocations]]
+offset = 166
+type = "DIR32"
+symbol = "$L338"
+target = 0x004975F4
+
+
+[units.sakuya-fighter-select-special-variant-004c50a0]
+source = "src/FighterSpecialVariantsF374.cpp"
+object = "build/matching/FighterSpecialVariantsF374.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["SakuyaFighter::SelectSpecialVariant"]
+symbol = "?SelectVariant@SakuyaFighterSpecialVariantF374@@QAEXXZ"
+target_address = 0x004C50A0
+size = 130
+compare_size = 170
+[[units.sakuya-fighter-select-special-variant-004c50a0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "?g_SelectedEffectModeAt0067161E@@3CA"
+target = 0x0067161E
+[[units.sakuya-fighter-select-special-variant-004c50a0.relocations]]
+offset = 40
+type = "DIR32"
+symbol = "$L688"
+target = 0x004C5122
+[[units.sakuya-fighter-select-special-variant-004c50a0.relocations]]
+offset = 130
+type = "DIR32"
+symbol = "$L356"
+target = 0x004C50CC
+[[units.sakuya-fighter-select-special-variant-004c50a0.relocations]]
+offset = 134
+type = "DIR32"
+symbol = "$L359"
+target = 0x004C50D8
+[[units.sakuya-fighter-select-special-variant-004c50a0.relocations]]
+offset = 138
+type = "DIR32"
+symbol = "$L362"
+target = 0x004C50E4
+[[units.sakuya-fighter-select-special-variant-004c50a0.relocations]]
+offset = 142
+type = "DIR32"
+symbol = "$L365"
+target = 0x004C50F0
+[[units.sakuya-fighter-select-special-variant-004c50a0.relocations]]
+offset = 146
+type = "DIR32"
+symbol = "$L368"
+target = 0x004C50FC
+[[units.sakuya-fighter-select-special-variant-004c50a0.relocations]]
+offset = 150
+type = "DIR32"
+symbol = "$L371"
+target = 0x004C5108
+[[units.sakuya-fighter-select-special-variant-004c50a0.relocations]]
+offset = 154
+type = "DIR32"
+symbol = "$L374"
+target = 0x004C5114
+[[units.sakuya-fighter-select-special-variant-004c50a0.relocations]]
+offset = 158
+type = "DIR32"
+symbol = "$L374"
+target = 0x004C5114
+[[units.sakuya-fighter-select-special-variant-004c50a0.relocations]]
+offset = 162
+type = "DIR32"
+symbol = "$L374"
+target = 0x004C5114
+[[units.sakuya-fighter-select-special-variant-004c50a0.relocations]]
+offset = 166
+type = "DIR32"
+symbol = "$L374"
+target = 0x004C5114
+
+
+[units.alice-fighter-select-special-variant-004e63a0]
+source = "src/FighterSpecialVariantsF374.cpp"
+object = "build/matching/FighterSpecialVariantsF374.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["AliceFighter::SelectSpecialVariant"]
+symbol = "?SelectVariant@AliceFighterSpecialVariantF374@@QAEXXZ"
+target_address = 0x004E63A0
+size = 130
+compare_size = 170
+[[units.alice-fighter-select-special-variant-004e63a0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "?g_SelectedEffectModeAt0067161E@@3CA"
+target = 0x0067161E
+[[units.alice-fighter-select-special-variant-004e63a0.relocations]]
+offset = 40
+type = "DIR32"
+symbol = "$L691"
+target = 0x004E6422
+[[units.alice-fighter-select-special-variant-004e63a0.relocations]]
+offset = 130
+type = "DIR32"
+symbol = "$L392"
+target = 0x004E63CC
+[[units.alice-fighter-select-special-variant-004e63a0.relocations]]
+offset = 134
+type = "DIR32"
+symbol = "$L395"
+target = 0x004E63D8
+[[units.alice-fighter-select-special-variant-004e63a0.relocations]]
+offset = 138
+type = "DIR32"
+symbol = "$L398"
+target = 0x004E63E4
+[[units.alice-fighter-select-special-variant-004e63a0.relocations]]
+offset = 142
+type = "DIR32"
+symbol = "$L401"
+target = 0x004E63F0
+[[units.alice-fighter-select-special-variant-004e63a0.relocations]]
+offset = 146
+type = "DIR32"
+symbol = "$L404"
+target = 0x004E63FC
+[[units.alice-fighter-select-special-variant-004e63a0.relocations]]
+offset = 150
+type = "DIR32"
+symbol = "$L407"
+target = 0x004E6408
+[[units.alice-fighter-select-special-variant-004e63a0.relocations]]
+offset = 154
+type = "DIR32"
+symbol = "$L410"
+target = 0x004E6414
+[[units.alice-fighter-select-special-variant-004e63a0.relocations]]
+offset = 158
+type = "DIR32"
+symbol = "$L410"
+target = 0x004E6414
+[[units.alice-fighter-select-special-variant-004e63a0.relocations]]
+offset = 162
+type = "DIR32"
+symbol = "$L410"
+target = 0x004E6414
+[[units.alice-fighter-select-special-variant-004e63a0.relocations]]
+offset = 166
+type = "DIR32"
+symbol = "$L410"
+target = 0x004E6414
+
+
+[units.patchouli-fighter-select-special-variant-00506090]
+source = "src/FighterSpecialVariantsF374.cpp"
+object = "build/matching/FighterSpecialVariantsF374.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["PatchouliFighter::SelectSpecialVariant"]
+symbol = "?SelectVariant@PatchouliFighterSpecialVariantF374@@QAEXXZ"
+target_address = 0x00506090
+size = 130
+compare_size = 170
+[[units.patchouli-fighter-select-special-variant-00506090.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "?g_SelectedEffectModeAt0067161E@@3CA"
+target = 0x0067161E
+[[units.patchouli-fighter-select-special-variant-00506090.relocations]]
+offset = 40
+type = "DIR32"
+symbol = "$L694"
+target = 0x00506112
+[[units.patchouli-fighter-select-special-variant-00506090.relocations]]
+offset = 130
+type = "DIR32"
+symbol = "$L428"
+target = 0x005060BC
+[[units.patchouli-fighter-select-special-variant-00506090.relocations]]
+offset = 134
+type = "DIR32"
+symbol = "$L431"
+target = 0x005060C8
+[[units.patchouli-fighter-select-special-variant-00506090.relocations]]
+offset = 138
+type = "DIR32"
+symbol = "$L434"
+target = 0x005060D4
+[[units.patchouli-fighter-select-special-variant-00506090.relocations]]
+offset = 142
+type = "DIR32"
+symbol = "$L437"
+target = 0x005060E0
+[[units.patchouli-fighter-select-special-variant-00506090.relocations]]
+offset = 146
+type = "DIR32"
+symbol = "$L440"
+target = 0x005060EC
+[[units.patchouli-fighter-select-special-variant-00506090.relocations]]
+offset = 150
+type = "DIR32"
+symbol = "$L443"
+target = 0x005060F8
+[[units.patchouli-fighter-select-special-variant-00506090.relocations]]
+offset = 154
+type = "DIR32"
+symbol = "$L446"
+target = 0x00506104
+[[units.patchouli-fighter-select-special-variant-00506090.relocations]]
+offset = 158
+type = "DIR32"
+symbol = "$L446"
+target = 0x00506104
+[[units.patchouli-fighter-select-special-variant-00506090.relocations]]
+offset = 162
+type = "DIR32"
+symbol = "$L446"
+target = 0x00506104
+[[units.patchouli-fighter-select-special-variant-00506090.relocations]]
+offset = 166
+type = "DIR32"
+symbol = "$L446"
+target = 0x00506104
+
+
+[units.youmu-fighter-select-special-variant-005305a0]
+source = "src/FighterSpecialVariantsF374.cpp"
+object = "build/matching/FighterSpecialVariantsF374.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["YoumuFighter::SelectSpecialVariant"]
+symbol = "?SelectVariant@YoumuFighterSpecialVariantF374@@QAEXXZ"
+target_address = 0x005305A0
+size = 130
+compare_size = 170
+[[units.youmu-fighter-select-special-variant-005305a0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "?g_SelectedEffectModeAt0067161E@@3CA"
+target = 0x0067161E
+[[units.youmu-fighter-select-special-variant-005305a0.relocations]]
+offset = 40
+type = "DIR32"
+symbol = "$L697"
+target = 0x00530622
+[[units.youmu-fighter-select-special-variant-005305a0.relocations]]
+offset = 130
+type = "DIR32"
+symbol = "$L464"
+target = 0x005305CC
+[[units.youmu-fighter-select-special-variant-005305a0.relocations]]
+offset = 134
+type = "DIR32"
+symbol = "$L467"
+target = 0x005305D8
+[[units.youmu-fighter-select-special-variant-005305a0.relocations]]
+offset = 138
+type = "DIR32"
+symbol = "$L470"
+target = 0x005305E4
+[[units.youmu-fighter-select-special-variant-005305a0.relocations]]
+offset = 142
+type = "DIR32"
+symbol = "$L473"
+target = 0x005305F0
+[[units.youmu-fighter-select-special-variant-005305a0.relocations]]
+offset = 146
+type = "DIR32"
+symbol = "$L476"
+target = 0x005305FC
+[[units.youmu-fighter-select-special-variant-005305a0.relocations]]
+offset = 150
+type = "DIR32"
+symbol = "$L479"
+target = 0x00530608
+[[units.youmu-fighter-select-special-variant-005305a0.relocations]]
+offset = 154
+type = "DIR32"
+symbol = "$L482"
+target = 0x00530614
+[[units.youmu-fighter-select-special-variant-005305a0.relocations]]
+offset = 158
+type = "DIR32"
+symbol = "$L482"
+target = 0x00530614
+[[units.youmu-fighter-select-special-variant-005305a0.relocations]]
+offset = 162
+type = "DIR32"
+symbol = "$L482"
+target = 0x00530614
+[[units.youmu-fighter-select-special-variant-005305a0.relocations]]
+offset = 166
+type = "DIR32"
+symbol = "$L482"
+target = 0x00530614
+
+
+[units.remilia-fighter-select-special-variant-00555940]
+source = "src/FighterSpecialVariantsF374.cpp"
+object = "build/matching/FighterSpecialVariantsF374.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["RemiliaFighter::SelectSpecialVariant"]
+symbol = "?SelectVariant@RemiliaFighterSpecialVariantF374@@QAEXXZ"
+target_address = 0x00555940
+size = 130
+compare_size = 170
+[[units.remilia-fighter-select-special-variant-00555940.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "?g_SelectedEffectModeAt0067161E@@3CA"
+target = 0x0067161E
+[[units.remilia-fighter-select-special-variant-00555940.relocations]]
+offset = 40
+type = "DIR32"
+symbol = "$L700"
+target = 0x005559C2
+[[units.remilia-fighter-select-special-variant-00555940.relocations]]
+offset = 130
+type = "DIR32"
+symbol = "$L500"
+target = 0x0055596C
+[[units.remilia-fighter-select-special-variant-00555940.relocations]]
+offset = 134
+type = "DIR32"
+symbol = "$L503"
+target = 0x00555978
+[[units.remilia-fighter-select-special-variant-00555940.relocations]]
+offset = 138
+type = "DIR32"
+symbol = "$L506"
+target = 0x00555984
+[[units.remilia-fighter-select-special-variant-00555940.relocations]]
+offset = 142
+type = "DIR32"
+symbol = "$L509"
+target = 0x00555990
+[[units.remilia-fighter-select-special-variant-00555940.relocations]]
+offset = 146
+type = "DIR32"
+symbol = "$L512"
+target = 0x0055599C
+[[units.remilia-fighter-select-special-variant-00555940.relocations]]
+offset = 150
+type = "DIR32"
+symbol = "$L515"
+target = 0x005559A8
+[[units.remilia-fighter-select-special-variant-00555940.relocations]]
+offset = 154
+type = "DIR32"
+symbol = "$L518"
+target = 0x005559B4
+[[units.remilia-fighter-select-special-variant-00555940.relocations]]
+offset = 158
+type = "DIR32"
+symbol = "$L518"
+target = 0x005559B4
+[[units.remilia-fighter-select-special-variant-00555940.relocations]]
+offset = 162
+type = "DIR32"
+symbol = "$L518"
+target = 0x005559B4
+[[units.remilia-fighter-select-special-variant-00555940.relocations]]
+offset = 166
+type = "DIR32"
+symbol = "$L518"
+target = 0x005559B4
+
+
+[units.yuyuko-fighter-select-special-variant-00577bc0]
+source = "src/FighterSpecialVariantsF374.cpp"
+object = "build/matching/FighterSpecialVariantsF374.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["YuyukoFighter::SelectSpecialVariant"]
+symbol = "?SelectVariant@YuyukoFighterSpecialVariantF374@@QAEXXZ"
+target_address = 0x00577BC0
+size = 130
+compare_size = 170
+[[units.yuyuko-fighter-select-special-variant-00577bc0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "?g_SelectedEffectModeAt0067161E@@3CA"
+target = 0x0067161E
+[[units.yuyuko-fighter-select-special-variant-00577bc0.relocations]]
+offset = 40
+type = "DIR32"
+symbol = "$L703"
+target = 0x00577C42
+[[units.yuyuko-fighter-select-special-variant-00577bc0.relocations]]
+offset = 130
+type = "DIR32"
+symbol = "$L536"
+target = 0x00577BEC
+[[units.yuyuko-fighter-select-special-variant-00577bc0.relocations]]
+offset = 134
+type = "DIR32"
+symbol = "$L539"
+target = 0x00577BF8
+[[units.yuyuko-fighter-select-special-variant-00577bc0.relocations]]
+offset = 138
+type = "DIR32"
+symbol = "$L542"
+target = 0x00577C04
+[[units.yuyuko-fighter-select-special-variant-00577bc0.relocations]]
+offset = 142
+type = "DIR32"
+symbol = "$L545"
+target = 0x00577C10
+[[units.yuyuko-fighter-select-special-variant-00577bc0.relocations]]
+offset = 146
+type = "DIR32"
+symbol = "$L548"
+target = 0x00577C1C
+[[units.yuyuko-fighter-select-special-variant-00577bc0.relocations]]
+offset = 150
+type = "DIR32"
+symbol = "$L551"
+target = 0x00577C28
+[[units.yuyuko-fighter-select-special-variant-00577bc0.relocations]]
+offset = 154
+type = "DIR32"
+symbol = "$L554"
+target = 0x00577C34
+[[units.yuyuko-fighter-select-special-variant-00577bc0.relocations]]
+offset = 158
+type = "DIR32"
+symbol = "$L554"
+target = 0x00577C34
+[[units.yuyuko-fighter-select-special-variant-00577bc0.relocations]]
+offset = 162
+type = "DIR32"
+symbol = "$L554"
+target = 0x00577C34
+[[units.yuyuko-fighter-select-special-variant-00577bc0.relocations]]
+offset = 166
+type = "DIR32"
+symbol = "$L554"
+target = 0x00577C34
+
+
+[units.yukari-fighter-select-special-variant-0059b740]
+source = "src/FighterSpecialVariantsF374.cpp"
+object = "build/matching/FighterSpecialVariantsF374.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["YukariFighter::SelectSpecialVariant"]
+symbol = "?SelectVariant@YukariFighterSpecialVariantF374@@QAEXXZ"
+target_address = 0x0059B740
+size = 130
+compare_size = 170
+[[units.yukari-fighter-select-special-variant-0059b740.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "?g_SelectedEffectModeAt0067161E@@3CA"
+target = 0x0067161E
+[[units.yukari-fighter-select-special-variant-0059b740.relocations]]
+offset = 40
+type = "DIR32"
+symbol = "$L706"
+target = 0x0059B7C2
+[[units.yukari-fighter-select-special-variant-0059b740.relocations]]
+offset = 130
+type = "DIR32"
+symbol = "$L572"
+target = 0x0059B76C
+[[units.yukari-fighter-select-special-variant-0059b740.relocations]]
+offset = 134
+type = "DIR32"
+symbol = "$L575"
+target = 0x0059B778
+[[units.yukari-fighter-select-special-variant-0059b740.relocations]]
+offset = 138
+type = "DIR32"
+symbol = "$L578"
+target = 0x0059B784
+[[units.yukari-fighter-select-special-variant-0059b740.relocations]]
+offset = 142
+type = "DIR32"
+symbol = "$L581"
+target = 0x0059B790
+[[units.yukari-fighter-select-special-variant-0059b740.relocations]]
+offset = 146
+type = "DIR32"
+symbol = "$L584"
+target = 0x0059B79C
+[[units.yukari-fighter-select-special-variant-0059b740.relocations]]
+offset = 150
+type = "DIR32"
+symbol = "$L587"
+target = 0x0059B7A8
+[[units.yukari-fighter-select-special-variant-0059b740.relocations]]
+offset = 154
+type = "DIR32"
+symbol = "$L590"
+target = 0x0059B7B4
+[[units.yukari-fighter-select-special-variant-0059b740.relocations]]
+offset = 158
+type = "DIR32"
+symbol = "$L590"
+target = 0x0059B7B4
+[[units.yukari-fighter-select-special-variant-0059b740.relocations]]
+offset = 162
+type = "DIR32"
+symbol = "$L590"
+target = 0x0059B7B4
+[[units.yukari-fighter-select-special-variant-0059b740.relocations]]
+offset = 166
+type = "DIR32"
+symbol = "$L590"
+target = 0x0059B7B4
+
+
+[units.suika-fighter-select-special-variant-005c4320]
+source = "src/FighterSpecialVariantsF374.cpp"
+object = "build/matching/FighterSpecialVariantsF374.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["SuikaFighter::SelectSpecialVariant"]
+symbol = "?SelectVariant@SuikaFighterSpecialVariantF374@@QAEXXZ"
+target_address = 0x005C4320
+size = 130
+compare_size = 170
+[[units.suika-fighter-select-special-variant-005c4320.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "?g_SelectedEffectModeAt0067161E@@3CA"
+target = 0x0067161E
+[[units.suika-fighter-select-special-variant-005c4320.relocations]]
+offset = 40
+type = "DIR32"
+symbol = "$L709"
+target = 0x005C43A2
+[[units.suika-fighter-select-special-variant-005c4320.relocations]]
+offset = 130
+type = "DIR32"
+symbol = "$L608"
+target = 0x005C434C
+[[units.suika-fighter-select-special-variant-005c4320.relocations]]
+offset = 134
+type = "DIR32"
+symbol = "$L611"
+target = 0x005C4358
+[[units.suika-fighter-select-special-variant-005c4320.relocations]]
+offset = 138
+type = "DIR32"
+symbol = "$L614"
+target = 0x005C4364
+[[units.suika-fighter-select-special-variant-005c4320.relocations]]
+offset = 142
+type = "DIR32"
+symbol = "$L617"
+target = 0x005C4370
+[[units.suika-fighter-select-special-variant-005c4320.relocations]]
+offset = 146
+type = "DIR32"
+symbol = "$L620"
+target = 0x005C437C
+[[units.suika-fighter-select-special-variant-005c4320.relocations]]
+offset = 150
+type = "DIR32"
+symbol = "$L623"
+target = 0x005C4388
+[[units.suika-fighter-select-special-variant-005c4320.relocations]]
+offset = 154
+type = "DIR32"
+symbol = "$L626"
+target = 0x005C4394
+[[units.suika-fighter-select-special-variant-005c4320.relocations]]
+offset = 158
+type = "DIR32"
+symbol = "$L626"
+target = 0x005C4394
+[[units.suika-fighter-select-special-variant-005c4320.relocations]]
+offset = 162
+type = "DIR32"
+symbol = "$L626"
+target = 0x005C4394
+[[units.suika-fighter-select-special-variant-005c4320.relocations]]
+offset = 166
+type = "DIR32"
+symbol = "$L626"
+target = 0x005C4394
+
+
+[units.meiling-fighter-select-special-variant-005e5910]
+source = "src/FighterSpecialVariantsF374.cpp"
+object = "build/matching/FighterSpecialVariantsF374.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["MeilingFighter::SelectSpecialVariant"]
+symbol = "?SelectVariant@MeilingFighterSpecialVariantF374@@QAEXXZ"
+target_address = 0x005E5910
+size = 130
+compare_size = 170
+[[units.meiling-fighter-select-special-variant-005e5910.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "?g_SelectedEffectModeAt0067161E@@3CA"
+target = 0x0067161E
+[[units.meiling-fighter-select-special-variant-005e5910.relocations]]
+offset = 40
+type = "DIR32"
+symbol = "$L712"
+target = 0x005E5992
+[[units.meiling-fighter-select-special-variant-005e5910.relocations]]
+offset = 130
+type = "DIR32"
+symbol = "$L644"
+target = 0x005E593C
+[[units.meiling-fighter-select-special-variant-005e5910.relocations]]
+offset = 134
+type = "DIR32"
+symbol = "$L647"
+target = 0x005E5948
+[[units.meiling-fighter-select-special-variant-005e5910.relocations]]
+offset = 138
+type = "DIR32"
+symbol = "$L650"
+target = 0x005E5954
+[[units.meiling-fighter-select-special-variant-005e5910.relocations]]
+offset = 142
+type = "DIR32"
+symbol = "$L653"
+target = 0x005E5960
+[[units.meiling-fighter-select-special-variant-005e5910.relocations]]
+offset = 146
+type = "DIR32"
+symbol = "$L656"
+target = 0x005E596C
+[[units.meiling-fighter-select-special-variant-005e5910.relocations]]
+offset = 150
+type = "DIR32"
+symbol = "$L659"
+target = 0x005E5978
+[[units.meiling-fighter-select-special-variant-005e5910.relocations]]
+offset = 154
+type = "DIR32"
+symbol = "$L662"
+target = 0x005E5984
+[[units.meiling-fighter-select-special-variant-005e5910.relocations]]
+offset = 158
+type = "DIR32"
+symbol = "$L662"
+target = 0x005E5984
+[[units.meiling-fighter-select-special-variant-005e5910.relocations]]
+offset = 162
+type = "DIR32"
+symbol = "$L662"
+target = 0x005E5984
+[[units.meiling-fighter-select-special-variant-005e5910.relocations]]
+offset = 166
+type = "DIR32"
+symbol = "$L662"
+target = 0x005E5984
