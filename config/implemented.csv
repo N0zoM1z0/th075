@@ -551,3 +551,4 @@ MusicRoomScene::RenderTrackCatalogText
 MusicRoomScene::RenderSelectedTitle
 ResultScene::BuildCounterPage
 ResultScene::BuildRecordPage
+ResultScene::RenderCounters

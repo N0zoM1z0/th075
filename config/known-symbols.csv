@@ -534,3 +534,4 @@ address,name,module,confidence,evidence
 0x004268A0,MusicRoomScene::RenderSelectedTitle,MusicRoomScene,inferred,F235; native whole 452-byte title renderer and 16 actual relocations cold-exact; source buffer 300 and signed selector physically checked; nominal owner unresolved
 0x00431350,ResultScene::BuildCounterPage,ResultScene,inferred,F238; complete 664-byte native score counter builder with 30 genuine relocation fields exact; original scene/card/glyph nominal layouts remain provisional
 0x00431070,ResultScene::BuildRecordPage,ResultScene,inferred,F239; whole 721-byte native result page builder and all 26 physical relocations cold exact; scene/record deque nominal layouts provisional
+0x0042EF10,ResultScene::RenderCounters,ResultScene,inferred,F240; original full 1344-byte renderer (320 x86 instructions) and all 44 physical relocations cold exact; complete scene and graphics parent layout unknown

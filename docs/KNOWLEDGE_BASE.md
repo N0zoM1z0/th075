@@ -1385,3 +1385,56 @@ probe, native body SHA and cold log remain in `.analysis/f238-result-page/`.
 No masks, fake stack locals, byte grafts, cropped target code, all-unit
 cold replay, remote Oracle claims or origin-status promotions were made.
 All 97 unknown-origin candidates remain pending.
+
+
+## F240: original 1,344-byte result-scene render boss completely cold-exact
+
+The independently R040-authored `ResultScene::RenderCounters` at
+`0042EF10..0042F44F` is **1,344 complete native CODE bytes / 320 x86
+instructions**, SHA256
+`4caa7d7d4c0d1f0ea0db8d352f14f744b8cd8474a0146c368d7b5e4624d5c8b1`.
+The pinned VC7.1 `/Od /GX- /GS` source in `src/ResultRendererF240.cpp`
+emits **1,168/1,168 nonrelocation bytes and all 44 authentic COFF fields**
+including real graphic state, transform, frame capture, six numeric draw
+functions and end-of-frame calls. The independently targeted
+`replay-exact-units.py --unit result-scene-render-counters-0042ef10`
+cold-replays **exact: 1344** (not just structural-only).
+
+Original rendering begins with `Graphics::BeginFrameValueAt00402660`,
+constructs the already accepted 132-byte `SpriteQuad40CA80` at EBP-0x88,
+uses the genuine RECT at EBP-0x98 and borrowed scene at EBP-0x9C.
+The first normal source placed the quad at EBP-0x98 and RECT at EBP-0x10,
+emitting 1320 instead of 1344 native bytes. The correct ordinary C++
+**outer quad / inner RECT** lifetime restores both physical addresses.
+It then applies the original texture depth/blend/filter modes, three
+real normalized x87 rotations around the same center, scale, D3D color,
+frame capture, quad translations, four dynamic result offsets, mode
+selection and two final player/actor counts. It invokes the authentic
+`DrawDecimalDigits` target `0042F530` six times with native coordinates,
+colors and signed counts, then the genuine `Graphics::EndFrame` at
+`004027D0`. None of these unchanged external callee bodies earns extra
+authored-byte credit.
+
+The accepted `ScaleQuad` callee `004115C0` takes IEEE754 float bit
+patterns but the original caller uses **three direct DWORD MOV/PUSH
+transfers**, not three x87 stores. A borrowed call-only
+`ResultRawScaleF240` facade accepts the same 32-bit bits and preserves
+that physical interface. The only remaining code mismatch was 4 bytes
+in a native `FLD`/`FMUL` pair: the genuine original loads the 255.0f
+constant at `00657CF0` then multiplies a float in `this+0x14`, while
+initial sources loaded the field first. Modeling only that observed
+partial scene prefix with a direct float member `physicallyObservedAlphaAt0014`
+causes MSVC to emit the original exact x87 ordering; no scene owner was
+instantiated and no full original class layout is asserted. The native
+call-only class names, any unknown private fields and inferred original
+identity remain provisional.
+
+`tests/test_result_renderer_f240.py` protects the complete native SHA,
+original x87 instruction bytes, all 44 real relocation fields, six digit
+call count, pinned source SHA and observed partial physical layout without
+recompiling old units. All stepwise failures, source candidates and
+independent 320-instruction native listing remain in
+`.analysis/f240-result-render/`. No machine byte grafts, inline assembly,
+fake locals, masks, arbitrary stack padding, cropped code, whole-project
+cold replay or external Oracle receipt are involved. The independently
+reviewed 97 origin-unknown candidates stay uncredited.
