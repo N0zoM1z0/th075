@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "1c71d97a2fbf6bd171f87eb06aa21e2287050fddd26f8cb74c7f2d9aa6efcee2"
+      "current_sha256": "e54a4ed06fcc94a4fb18ce9dad9434ee03bd8af8bf3735503b432f8a244e5ab5"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "8fcef5c29e45c799fa726d297a99877e945ea01992002f236fd5b765d4fd7239"
+      "current_sha256": "70e943d7ad1ce10d7e49023522d8e4ac94758954230b6eddd75b3b61a67ef8f9"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "43d5c2d57278d0ccda92604d29d9d3cd1fad5b42dcf6db00b1f0aa8acfeff9e6"
+      "current_sha256": "93c100f907215494226d9770d38b988ee5f8e79adeee74dd5b6264aec4e3fccf"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "d26f038fd8d92a627450c46c1ec835b65633eb9bf16572f147984228d3b5b03e"
+      "current_sha256": "bfb9b4fb684fcad0b79cef2b723fe9f6be4f7e86d796b9592189566420473e4a"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "762a849f5974cea130b96781aed0b6f0223b3c4abd2d2f1372ff815c7622285d"
+      "current_sha256": "4bec5d97776607e55af54cd0ad509d3c4abf7b6b8d5474e8722e5bdd23b6b4b7"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -23052,6 +23052,50 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R052"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00402D50",
+        "size": "1185",
+        "span_end": "0x004031F0",
+        "current_name": "FUN_00402d50",
+        "proposed_name": "Graphics::DrawProjectedTexturedQuad",
+        "module": "Graphics",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R001; custom D3D8 globals/policies; full control flow and return reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; inferred name; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00402D50",
+        "size": "1185",
+        "span_end": "0x004031F0",
+        "current_name": "FUN_00402d50",
+        "proposed_name": "Graphics::DrawProjectedTexturedQuad",
+        "module": "Graphics",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "cdecl",
+        "signature": "void Graphics::DrawProjectedTexturedQuad(const float (*)[4], const RECT*, float, float, float, D3DCOLOR, IDirect3DTexture8*)",
+        "is_thunk": "false",
+        "source_file": "src/GraphicsProjectedQuadF271.cpp",
+        "evidence": "R001; custom D3D8 globals/policies; full control flow and return reviewed; F271; scripts/repo-python scripts/replay-exact-units.py --unit graphics-draw-projected-textured-quad-00402d50",
+        "owner": "authored",
+        "notes": "Origin reviewed; inferred name; source and exact state remain independent; F271: the FULL R001-authored 1185 original PE CODE bytes /291 independently decoded native x86 instructions to actual RET at 004031F0 (body SHA256 dcda68d89e3a45c1464d845b321d7228b79a1e7e9290ea0470ed594768553769), no owned post-RET data. Pinned VC7.1 /Od /GX- independent one-unit cold replay exact: 1037/1037 nonrelocated bytes and 37/37 real physical COFF relocations including 24 game float/global resource fields, three genuine __ftol2 conversions at 006406AC, native cached texture and D3D8 device refs. The complete seven-argument 32-bit cdecl routine gets real IDirect3DTexture8 surface level, D3DSURFACE_DESC, native unsigned Width/Height conversion, four 28-byte local D3D ScreenVertex vertices, checks each actual depth factor and returns early when its comparison is not satisfied, computes full position/depth/rhw/UV attributes, applies actual draw scale/origin per vertex, independently color-multiplies three RGB channels through real __ftol2 and writes alpha-preserving D3DCOLOR into four vertices, conditionally sets texture on native device and calls DrawPrimitiveUP with original D3DPT_TRIANGLEFAN 6, two triangles and 28-byte stride. Initial full C++ natural source was 1085 bytes; native-guided real reused projection factor shifted to the full 1185 instructions and 997/1037 nonrelocated bytes, correcting triangle fan fixed 1 byte, then nested actual source projection lifetime restored original surface pointer EBP-9C, width EBP-98, height EBP-94 and shared projection EBP-A0 with no artificial locals/padding; final 1037/1037 and all 37 fields. Borrowed D3D8/Graphics ScreenVertex representation is independently established by previously exact Graphics::DrawTexturedQuad and Graphics::DrawProjectedTriangleStrip, not an invented frame ABI. No user-supplied native bytes copied into source, assembly, fake return, grafted tables, masked comparison fields, truncated method or whole-set cold replay, and no external Oracle acceptance. All 97 pending-origin functions retain unknown status and no CRT/SDK or independent callee bodies receive authored CODE credit."
+      },
+      "origin": {
+        "address": "0x00402D50",
+        "origin": "authored",
+        "subsystem": "Graphics",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R001; docs/ORIGIN_REVIEW.md; shared D3D8 state and custom policy, complete branches/exit reviewed"
       }
     }
   ],
@@ -174579,6 +174623,251 @@
           "target": 0
         }
       ]
+    },
+    "graphics-draw-projected-textured-quad-00402d50": {
+      "source": "src/GraphicsProjectedQuadF271.cpp",
+      "object": "build/matching/GraphicsProjectedQuadF271.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "Graphics::DrawProjectedTexturedQuad"
+      ],
+      "symbol": "?DrawProjectedTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@MMMKPAUIDirect3DTexture8@@@Z",
+      "target_address": 4205904,
+      "size": 1185,
+      "relocations": [
+        {
+          "offset": 162,
+          "type": "DIR32",
+          "symbol": "?g_DepthClipAt00657480@Graphics@@3MB",
+          "target": 6648960
+        },
+        {
+          "offset": 197,
+          "type": "DIR32",
+          "symbol": "?g_HalfPixelOffsetAt00657478@Graphics@@3MB",
+          "target": 6648952
+        },
+        {
+          "offset": 224,
+          "type": "DIR32",
+          "symbol": "?g_HalfPixelOffsetAt00657478@Graphics@@3MB",
+          "target": 6648952
+        },
+        {
+          "offset": 239,
+          "type": "DIR32",
+          "symbol": "?g_DepthClipAt00657480@Graphics@@3MB",
+          "target": 6648960
+        },
+        {
+          "offset": 245,
+          "type": "DIR32",
+          "symbol": "?g_UnitDepthAt0065747C@Graphics@@3MB",
+          "target": 6648956
+        },
+        {
+          "offset": 287,
+          "type": "DIR32",
+          "symbol": "?g_DepthClipAt00657480@Graphics@@3MB",
+          "target": 6648960
+        },
+        {
+          "offset": 323,
+          "type": "DIR32",
+          "symbol": "?g_HalfPixelOffsetAt00657478@Graphics@@3MB",
+          "target": 6648952
+        },
+        {
+          "offset": 350,
+          "type": "DIR32",
+          "symbol": "?g_HalfPixelOffsetAt00657478@Graphics@@3MB",
+          "target": 6648952
+        },
+        {
+          "offset": 365,
+          "type": "DIR32",
+          "symbol": "?g_DepthClipAt00657480@Graphics@@3MB",
+          "target": 6648960
+        },
+        {
+          "offset": 371,
+          "type": "DIR32",
+          "symbol": "?g_UnitDepthAt0065747C@Graphics@@3MB",
+          "target": 6648956
+        },
+        {
+          "offset": 413,
+          "type": "DIR32",
+          "symbol": "?g_DepthClipAt00657480@Graphics@@3MB",
+          "target": 6648960
+        },
+        {
+          "offset": 449,
+          "type": "DIR32",
+          "symbol": "?g_HalfPixelOffsetAt00657478@Graphics@@3MB",
+          "target": 6648952
+        },
+        {
+          "offset": 476,
+          "type": "DIR32",
+          "symbol": "?g_HalfPixelOffsetAt00657478@Graphics@@3MB",
+          "target": 6648952
+        },
+        {
+          "offset": 491,
+          "type": "DIR32",
+          "symbol": "?g_DepthClipAt00657480@Graphics@@3MB",
+          "target": 6648960
+        },
+        {
+          "offset": 497,
+          "type": "DIR32",
+          "symbol": "?g_UnitDepthAt0065747C@Graphics@@3MB",
+          "target": 6648956
+        },
+        {
+          "offset": 539,
+          "type": "DIR32",
+          "symbol": "?g_DepthClipAt00657480@Graphics@@3MB",
+          "target": 6648960
+        },
+        {
+          "offset": 575,
+          "type": "DIR32",
+          "symbol": "?g_HalfPixelOffsetAt00657478@Graphics@@3MB",
+          "target": 6648952
+        },
+        {
+          "offset": 602,
+          "type": "DIR32",
+          "symbol": "?g_HalfPixelOffsetAt00657478@Graphics@@3MB",
+          "target": 6648952
+        },
+        {
+          "offset": 617,
+          "type": "DIR32",
+          "symbol": "?g_DepthClipAt00657480@Graphics@@3MB",
+          "target": 6648960
+        },
+        {
+          "offset": 623,
+          "type": "DIR32",
+          "symbol": "?g_UnitDepthAt0065747C@Graphics@@3MB",
+          "target": 6648956
+        },
+        {
+          "offset": 804,
+          "type": "DIR32",
+          "symbol": "?g_DrawScale@Graphics@@3MA",
+          "target": 6733956
+        },
+        {
+          "offset": 814,
+          "type": "DIR32",
+          "symbol": "?g_DrawOriginX@Graphics@@3MA",
+          "target": 6754848
+        },
+        {
+          "offset": 842,
+          "type": "DIR32",
+          "symbol": "?g_DrawScale@Graphics@@3MA",
+          "target": 6733956
+        },
+        {
+          "offset": 852,
+          "type": "DIR32",
+          "symbol": "?g_DrawOriginY@Graphics@@3MA",
+          "target": 6754852
+        },
+        {
+          "offset": 873,
+          "type": "DIR32",
+          "symbol": "?g_ColorMultiplier@Graphics@@3MA",
+          "target": 6733952
+        },
+        {
+          "offset": 943,
+          "type": "DIR32",
+          "symbol": "?g_ColorMultiplier@Graphics@@3MA",
+          "target": 6733952
+        },
+        {
+          "offset": 948,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 1002,
+          "type": "DIR32",
+          "symbol": "?g_ColorMultiplier@Graphics@@3MA",
+          "target": 6733952
+        },
+        {
+          "offset": 1007,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 1057,
+          "type": "DIR32",
+          "symbol": "?g_ColorMultiplier@Graphics@@3MA",
+          "target": 6733952
+        },
+        {
+          "offset": 1062,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 1106,
+          "type": "DIR32",
+          "symbol": "?g_CachedTexture@Graphics@@3PAUIDirect3DTexture8@@A",
+          "target": 6754856
+        },
+        {
+          "offset": 1122,
+          "type": "DIR32",
+          "symbol": "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A",
+          "target": 6754864
+        },
+        {
+          "offset": 1130,
+          "type": "DIR32",
+          "symbol": "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A",
+          "target": 6754864
+        },
+        {
+          "offset": 1145,
+          "type": "DIR32",
+          "symbol": "?g_CachedTexture@Graphics@@3PAUIDirect3DTexture8@@A",
+          "target": 6754856
+        },
+        {
+          "offset": 1161,
+          "type": "DIR32",
+          "symbol": "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A",
+          "target": 6754864
+        },
+        {
+          "offset": 1169,
+          "type": "DIR32",
+          "symbol": "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A",
+          "target": 6754864
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -174939,6 +175228,7 @@
     "src/ReplayPlaybackInitF266.cpp": "d1feb3f989ba4f073bb9391231fd04c6a309e74a469d8a5929b95fa8a75d66cf",
     "src/ReplayPlaybackReleaseF267.cpp": "1454470944d5b58ddc45c1ef372f4bb1d30aaeb0b0b9e116a8d49ddd4b2290bc",
     "src/ReplayInputF268.cpp": "82e65ec2b6142aa3f8321322365707e0f5aaee36ad1efd196f59a9af99d62535",
-    "src/ReplaySceneInitF269.cpp": "9a103c488389e8e638e4adb54440e5d3a744bdc7d0dc1c314afac159312ceb43"
+    "src/ReplaySceneInitF269.cpp": "9a103c488389e8e638e4adb54440e5d3a744bdc7d0dc1c314afac159312ceb43",
+    "src/GraphicsProjectedQuadF271.cpp": "f718c8852aadcd587435e7399e8a7506c639c03e9ef6f81adcced910a3c2a2f5"
   }
 }

@@ -1,4 +1,4 @@
-# TH075 — active reconstruction handoff (F269)
+# TH075 — active reconstruction handoff (F271)
 
 **Updated 2026-10-28. Read this document before new experiments.**
 
@@ -22,17 +22,17 @@ not acceptance requirements.
 
 | Item | Current evidence |
 | --- | --- |
-| Local branch / last exact-code commit | `main` / F269 complete 315-byte replay scene constructor; F268 input polling checkpoint `0f56c9d` |
+| Local branch / last exact-code commit | `main` / F271 full 1,185-byte projected graphics boss; prior F269 replay scene checkpoint `3c40ebd` |
 | Upstream | `origin/main` tracked locally; verify current ahead/behind and dirty state before further work |
-| Working tree | Clean after F269 checkpoint if successful; continue rather than avoid every existing dirty edit |
+| Working tree | Clean after F271 checkpoint if successful; continue rather than avoid every existing dirty edit |
 | Native binary | `resources/th075.exe`, SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98` |
 | Candidate count | 4,351; origin review: 1,002 authored, 2,671 library, 581 compiler, 97 unknown |
-| Accepted functions / units | **583 / 583** |
-| Accepted authored CODE | **790,950 bytes** |
-| Reviewed authored coverage | 790,950 / 1,973,516 = **40.08%** |
-| Conservative coverage | **40.01%** counting 3,608 origin-pending bytes |
+| Accepted functions / units | **584 / 584** |
+| Accepted authored CODE | **792,135 bytes** |
+| Reviewed authored coverage | 792,135 / 1,973,516 = **40.14%** |
+| Conservative coverage | **40.07%** counting 3,608 origin-pending bytes |
 | Goal | **98% not reached** |
-| Verification | F269 complete 315-byte replay scene constructor independently cold-exact (219/219 comparable bytes, 24 native relocations), after F268 input poll `0f56c9d`. Only new F269 unit cold replayed, no full cold replay or external Oracle receipt |
+| Verification | F271 full 1,185-byte Graphics::DrawProjectedTexturedQuad independently cold-exact (1,037/1,037 comparable bytes, all 37 real relocations) after F269 replay scene checkpoint `3c40ebd`. Only new F271 unit cold replayed; no full cold replay or external Oracle receipt |
 
 **Recheck the actual live status immediately**. Local commits are checkpoints,
 not evidence of a remote push or external Oracle acceptance. Earlier Git
@@ -110,6 +110,7 @@ inert variable or arbitrary padding may earn exact credit.
 | F267: ReplayBrowserScene::DestroyOwnedReplayFiles | `0042C560` | 265 | 15 |
 | F268: ReplayScene::PollPlaybackInput | `0042D330` | 310 | 27 |
 | F269: ReplayScene::Initialize | `0042A180` | 315 | 24 |
+| F271: Graphics::DrawProjectedTexturedQuad | `00402D50` | 1,185 | 37 |
 
 F222 proved signed 32-bit x87 `FILD` divided by the target's 36.0f
 (`00659308`), 74 physical animation records and a final call into the
@@ -201,6 +202,10 @@ F268 **cold-accepts the full 310-byte native `ReplayScene::PollPlaybackInput`** 
 F268 separately reanalyzed the **full 746-byte `SpriteSequence::RenderElements` boss** at `00411110` (R035 authored). Correcting actual early exit control flow to two native `JNZ/JMP` paths, native floating-point `!=` branch order and nesting the genuine counter gives a **734-byte** complete natural C++ probe with **198/198 decoded x86 instructions** matching the native instruction-sequence shapes; the original is 746 bytes. The remaining 12 bytes are attributable to four observed short versus long EBP local-offset instructions: two uses of the real `end` iterator (native -0x9C, object -0x10), and two uses of the real `x` coordinate (native -0x98, object -0x0C). Correct full frame is now 0xBC and genuine original `this` stack position is recovered. Several meaningful scope, real RECT/tint placement, declaration ordering and signed/float branch controls remain negative; no truncation, masks or fabricated padding. **Do not credit any of these 746 CODE bytes yet**. Best full-size native evidence, all source experiments and operand-shape diff at `.analysis/f261-sprite-sequence/`; focus next on real local lifetime allocation rather than repeating superficial names.
 
 F269 **independently cold-accepts the entire 315-byte `ReplayScene::Initialize`** at `0042A180`, all 84 decoded native x86 instructions, 219/219 comparable nonrelocation bytes, 24 authentic physical COFF fields and true EH constructor/return. One first complete natural C++ source produces the exact native base scene constructor call, 80-byte EH texture allocation and replay.dat asset load, three short resets, real progress selection from two globals, score insertion through actor's +0x2D0 field, one 8-bit result-state storage and replay path selection. R108 origin-unknown base constructor and external score functions have not received duplicated CODE credit. F268's already committed 310-byte input poll at `0042D330` is **not** reaccepted or separately credited: its identical untracked experiment was checked against the tracked unit and archived privately. Only F269 `--unit replay-scene-initialize-0042a180` cold-replayed exact with all authentic EH and relocs. Preserve `.analysis/f268-replay-scene/`.
+
+F271 **cold-accepts the COMPLETE 1,185-byte `Graphics::DrawProjectedTexturedQuad` boss** at `00402D50..004031F0` (291 independently decoded x86 instructions, 1,037/1,037 comparable nonrelocation bytes, all 37 authentic COFF relocation fields). Full original function SHA256 `dcda68d89e3a45c1464d845b321d7228b79a1e7e9290ea0470ed594768553769`. The native D3D8 routine creates four real 28-byte projected vertex records, reads a surface `D3DSURFACE_DESC`, converts actual width/height, computes a reused perspective factor for each vertex, exits early on clipping, preserves full x87 position/depth and UV calculations, scales/translates all vertices, optionally multiplies all three color channels (three original `__ftol2` calls), binds the texture if its cache changes, then draws the original **D3DPT_TRIANGLEFAN** (not triangle strip) with two triangles and stride 28. A first full natural C++ control emitted 1,085 bytes; correcting original early-return branch form and the single real reused projection factor yielded 1,185 bytes and 997/1,037 comparable bytes. The remaining actual EBP-slot mismatches were solved by a genuine nested lifetime for that factor (native `surface` EBP-0x9C, width -0x98, height -0x94, projection -0xA0), while the correct triangle fan fixed another real one-byte semantic error. The final complete C++ matched all 37 field destinations and cold-replayed exact using only `--unit graphics-draw-projected-textured-quad-00402d50`. Preserve original native listing/negative controls and final proof under `.analysis/f271-graphics-projected/`, source at `src/GraphicsProjectedQuadF271.cpp`. This is independent R001-authored CODE; do not credit Direct3D8/CRT `__ftol2` bodies or unrelated library callees; 97 unknown origins remain unresolved. No artificial stack padding, fake locals, copied target machine-code, masked fields or truncated function.
+
+F270 **did not** cold-accept the 497-byte `CharacterSelectScene::UpdateCancelAnimation` at `00435870`. The first full natural C++ retained all 13 original relocations and emitted the full 497-byte source with **438/445** comparable nonrelocation bytes; one physically distinct x87 equality with native constant `60.0f` at `00658264` loads operands in the opposite order to VC7's current source. Actual control/data-flow alternatives (global literal, direction, const/volatile, array indexing, typed accesses and de Morgan) did not improve that genuine seven-byte nonfield mismatch, so no 497 CODE bytes are credited. Keep all negative sources at `.analysis/f270-character-cancel/`; don't substitute assembly or literal target bytes.
 
 Relevant full native proofs: `config/match-units.toml`,
 `config/exact-adoptions.json`, sources `src/*F222.cpp`/`src/*F223.cpp`,

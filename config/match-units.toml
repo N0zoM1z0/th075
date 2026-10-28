@@ -42211,3 +42211,197 @@ offset = 307
 type = "DIR32"
 symbol = "__except_list"
 target = 0x00000000
+
+[units.graphics-draw-projected-textured-quad-00402d50]
+source = "src/GraphicsProjectedQuadF271.cpp"
+object = "build/matching/GraphicsProjectedQuadF271.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["Graphics::DrawProjectedTexturedQuad"]
+symbol = "?DrawProjectedTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@MMMKPAUIDirect3DTexture8@@@Z"
+target_address = 0x00402D50
+size = 1185
+[[units.graphics-draw-projected-textured-quad-00402d50.relocations]]
+offset = 162
+type = "DIR32"
+symbol = "?g_DepthClipAt00657480@Graphics@@3MB"
+target = 0x00657480
+[[units.graphics-draw-projected-textured-quad-00402d50.relocations]]
+offset = 197
+type = "DIR32"
+symbol = "?g_HalfPixelOffsetAt00657478@Graphics@@3MB"
+target = 0x00657478
+[[units.graphics-draw-projected-textured-quad-00402d50.relocations]]
+offset = 224
+type = "DIR32"
+symbol = "?g_HalfPixelOffsetAt00657478@Graphics@@3MB"
+target = 0x00657478
+[[units.graphics-draw-projected-textured-quad-00402d50.relocations]]
+offset = 239
+type = "DIR32"
+symbol = "?g_DepthClipAt00657480@Graphics@@3MB"
+target = 0x00657480
+[[units.graphics-draw-projected-textured-quad-00402d50.relocations]]
+offset = 245
+type = "DIR32"
+symbol = "?g_UnitDepthAt0065747C@Graphics@@3MB"
+target = 0x0065747C
+[[units.graphics-draw-projected-textured-quad-00402d50.relocations]]
+offset = 287
+type = "DIR32"
+symbol = "?g_DepthClipAt00657480@Graphics@@3MB"
+target = 0x00657480
+[[units.graphics-draw-projected-textured-quad-00402d50.relocations]]
+offset = 323
+type = "DIR32"
+symbol = "?g_HalfPixelOffsetAt00657478@Graphics@@3MB"
+target = 0x00657478
+[[units.graphics-draw-projected-textured-quad-00402d50.relocations]]
+offset = 350
+type = "DIR32"
+symbol = "?g_HalfPixelOffsetAt00657478@Graphics@@3MB"
+target = 0x00657478
+[[units.graphics-draw-projected-textured-quad-00402d50.relocations]]
+offset = 365
+type = "DIR32"
+symbol = "?g_DepthClipAt00657480@Graphics@@3MB"
+target = 0x00657480
+[[units.graphics-draw-projected-textured-quad-00402d50.relocations]]
+offset = 371
+type = "DIR32"
+symbol = "?g_UnitDepthAt0065747C@Graphics@@3MB"
+target = 0x0065747C
+[[units.graphics-draw-projected-textured-quad-00402d50.relocations]]
+offset = 413
+type = "DIR32"
+symbol = "?g_DepthClipAt00657480@Graphics@@3MB"
+target = 0x00657480
+[[units.graphics-draw-projected-textured-quad-00402d50.relocations]]
+offset = 449
+type = "DIR32"
+symbol = "?g_HalfPixelOffsetAt00657478@Graphics@@3MB"
+target = 0x00657478
+[[units.graphics-draw-projected-textured-quad-00402d50.relocations]]
+offset = 476
+type = "DIR32"
+symbol = "?g_HalfPixelOffsetAt00657478@Graphics@@3MB"
+target = 0x00657478
+[[units.graphics-draw-projected-textured-quad-00402d50.relocations]]
+offset = 491
+type = "DIR32"
+symbol = "?g_DepthClipAt00657480@Graphics@@3MB"
+target = 0x00657480
+[[units.graphics-draw-projected-textured-quad-00402d50.relocations]]
+offset = 497
+type = "DIR32"
+symbol = "?g_UnitDepthAt0065747C@Graphics@@3MB"
+target = 0x0065747C
+[[units.graphics-draw-projected-textured-quad-00402d50.relocations]]
+offset = 539
+type = "DIR32"
+symbol = "?g_DepthClipAt00657480@Graphics@@3MB"
+target = 0x00657480
+[[units.graphics-draw-projected-textured-quad-00402d50.relocations]]
+offset = 575
+type = "DIR32"
+symbol = "?g_HalfPixelOffsetAt00657478@Graphics@@3MB"
+target = 0x00657478
+[[units.graphics-draw-projected-textured-quad-00402d50.relocations]]
+offset = 602
+type = "DIR32"
+symbol = "?g_HalfPixelOffsetAt00657478@Graphics@@3MB"
+target = 0x00657478
+[[units.graphics-draw-projected-textured-quad-00402d50.relocations]]
+offset = 617
+type = "DIR32"
+symbol = "?g_DepthClipAt00657480@Graphics@@3MB"
+target = 0x00657480
+[[units.graphics-draw-projected-textured-quad-00402d50.relocations]]
+offset = 623
+type = "DIR32"
+symbol = "?g_UnitDepthAt0065747C@Graphics@@3MB"
+target = 0x0065747C
+[[units.graphics-draw-projected-textured-quad-00402d50.relocations]]
+offset = 804
+type = "DIR32"
+symbol = "?g_DrawScale@Graphics@@3MA"
+target = 0x0066C084
+[[units.graphics-draw-projected-textured-quad-00402d50.relocations]]
+offset = 814
+type = "DIR32"
+symbol = "?g_DrawOriginX@Graphics@@3MA"
+target = 0x00671220
+[[units.graphics-draw-projected-textured-quad-00402d50.relocations]]
+offset = 842
+type = "DIR32"
+symbol = "?g_DrawScale@Graphics@@3MA"
+target = 0x0066C084
+[[units.graphics-draw-projected-textured-quad-00402d50.relocations]]
+offset = 852
+type = "DIR32"
+symbol = "?g_DrawOriginY@Graphics@@3MA"
+target = 0x00671224
+[[units.graphics-draw-projected-textured-quad-00402d50.relocations]]
+offset = 873
+type = "DIR32"
+symbol = "?g_ColorMultiplier@Graphics@@3MA"
+target = 0x0066C080
+[[units.graphics-draw-projected-textured-quad-00402d50.relocations]]
+offset = 943
+type = "DIR32"
+symbol = "?g_ColorMultiplier@Graphics@@3MA"
+target = 0x0066C080
+[[units.graphics-draw-projected-textured-quad-00402d50.relocations]]
+offset = 948
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.graphics-draw-projected-textured-quad-00402d50.relocations]]
+offset = 1002
+type = "DIR32"
+symbol = "?g_ColorMultiplier@Graphics@@3MA"
+target = 0x0066C080
+[[units.graphics-draw-projected-textured-quad-00402d50.relocations]]
+offset = 1007
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.graphics-draw-projected-textured-quad-00402d50.relocations]]
+offset = 1057
+type = "DIR32"
+symbol = "?g_ColorMultiplier@Graphics@@3MA"
+target = 0x0066C080
+[[units.graphics-draw-projected-textured-quad-00402d50.relocations]]
+offset = 1062
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.graphics-draw-projected-textured-quad-00402d50.relocations]]
+offset = 1106
+type = "DIR32"
+symbol = "?g_CachedTexture@Graphics@@3PAUIDirect3DTexture8@@A"
+target = 0x00671228
+[[units.graphics-draw-projected-textured-quad-00402d50.relocations]]
+offset = 1122
+type = "DIR32"
+symbol = "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A"
+target = 0x00671230
+[[units.graphics-draw-projected-textured-quad-00402d50.relocations]]
+offset = 1130
+type = "DIR32"
+symbol = "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A"
+target = 0x00671230
+[[units.graphics-draw-projected-textured-quad-00402d50.relocations]]
+offset = 1145
+type = "DIR32"
+symbol = "?g_CachedTexture@Graphics@@3PAUIDirect3DTexture8@@A"
+target = 0x00671228
+[[units.graphics-draw-projected-textured-quad-00402d50.relocations]]
+offset = 1161
+type = "DIR32"
+symbol = "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A"
+target = 0x00671230
+[[units.graphics-draw-projected-textured-quad-00402d50.relocations]]
+offset = 1169
+type = "DIR32"
+symbol = "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A"
+target = 0x00671230

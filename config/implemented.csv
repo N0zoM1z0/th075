@@ -581,3 +581,4 @@ ReplayPlaybackScene::Initialize
 ReplayBrowserScene::DestroyOwnedReplayFilesAt0042C560
 ReplayScene::PollPlaybackInput
 ReplayScene::Initialize
+Graphics::DrawProjectedTexturedQuad
