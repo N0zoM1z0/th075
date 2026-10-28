@@ -40048,3 +40048,118 @@ offset = 1557
 type = "DIR32"
 symbol = "$L55470"
 target = 0x0042EDF0
+
+
+[units.result-list-scene-poll-input-0042f450]
+source = "src/ResultPollF245.cpp"
+object = "build/matching/ResultPollF245.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["ResultListScene::PollInput"]
+symbol = "?PollInput@ResultInputSceneF245@@QAEXXZ"
+target_address = 0x0042F450
+size = 220
+[[units.result-list-scene-poll-input-0042f450.relocations]]
+offset = 8
+type = "REL32"
+symbol = "?First@InputProcessF245@@YAXXZ"
+target = 0x00403E50
+[[units.result-list-scene-poll-input-0042f450.relocations]]
+offset = 13
+type = "REL32"
+symbol = "?Second@InputProcessF245@@YAXXZ"
+target = 0x00403F40
+[[units.result-list-scene-poll-input-0042f450.relocations]]
+offset = 32
+type = "DIR32"
+symbol = "?g_ResultInputAt00671638@@3VPollInputDeviceF245@@A"
+target = 0x00671638
+[[units.result-list-scene-poll-input-0042f450.relocations]]
+offset = 37
+type = "REL32"
+symbol = "?Update@PollInputDeviceF245@@QAEXXZ"
+target = 0x00406E80
+[[units.result-list-scene-poll-input-0042f450.relocations]]
+offset = 42
+type = "DIR32"
+symbol = "?g_ResultInputAltAt00671680@@3VPollInputDeviceF245@@A"
+target = 0x00671680
+[[units.result-list-scene-poll-input-0042f450.relocations]]
+offset = 47
+type = "REL32"
+symbol = "?Update@PollInputDeviceF245@@QAEXXZ"
+target = 0x00406E80
+[[units.result-list-scene-poll-input-0042f450.relocations]]
+offset = 53
+type = "DIR32"
+symbol = "?g_ResultAcceptPrimaryAt0067166C@@3HA"
+target = 0x0067166C
+[[units.result-list-scene-poll-input-0042f450.relocations]]
+offset = 62
+type = "DIR32"
+symbol = "?g_ResultAcceptSecondAt006716B4@@3HA"
+target = 0x006716B4
+[[units.result-list-scene-poll-input-0042f450.relocations]]
+offset = 78
+type = "DIR32"
+symbol = "?g_ResultCancelPrimaryAt00671670@@3HA"
+target = 0x00671670
+[[units.result-list-scene-poll-input-0042f450.relocations]]
+offset = 87
+type = "DIR32"
+symbol = "?g_ResultCancelSecondAt006716B8@@3HA"
+target = 0x006716B8
+[[units.result-list-scene-poll-input-0042f450.relocations]]
+offset = 103
+type = "DIR32"
+symbol = "?g_ResultChoicePrimaryAt00671674@@3HA"
+target = 0x00671674
+[[units.result-list-scene-poll-input-0042f450.relocations]]
+offset = 112
+type = "DIR32"
+symbol = "?g_ResultChoiceSecondAt006716BC@@3HA"
+target = 0x006716BC
+[[units.result-list-scene-poll-input-0042f450.relocations]]
+offset = 128
+type = "DIR32"
+symbol = "?g_ResultSkipPrimaryAt00671678@@3HA"
+target = 0x00671678
+[[units.result-list-scene-poll-input-0042f450.relocations]]
+offset = 137
+type = "DIR32"
+symbol = "?g_ResultSkipSecondAt006716C0@@3HA"
+target = 0x006716C0
+[[units.result-list-scene-poll-input-0042f450.relocations]]
+offset = 154
+type = "DIR32"
+symbol = "?g_ResultInputAt00671638@@3VPollInputDeviceF245@@A"
+target = 0x00671638
+[[units.result-list-scene-poll-input-0042f450.relocations]]
+offset = 159
+type = "REL32"
+symbol = "?IsKeyDown@PollInputDeviceF245@@QAEEH@Z"
+target = 0x00407170
+[[units.result-list-scene-poll-input-0042f450.relocations]]
+offset = 173
+type = "DIR32"
+symbol = "?g_ResultInputAt00671638@@3VPollInputDeviceF245@@A"
+target = 0x00671638
+[[units.result-list-scene-poll-input-0042f450.relocations]]
+offset = 178
+type = "REL32"
+symbol = "?IsKeyDown@PollInputDeviceF245@@QAEEH@Z"
+target = 0x00407170
+[[units.result-list-scene-poll-input-0042f450.relocations]]
+offset = 195
+type = "DIR32"
+symbol = "?g_ResultInputAt00671638@@3VPollInputDeviceF245@@A"
+target = 0x00671638
+[[units.result-list-scene-poll-input-0042f450.relocations]]
+offset = 200
+type = "REL32"
+symbol = "?IsKeyDown@PollInputDeviceF245@@QAEEH@Z"
+target = 0x00407170
+[[units.result-list-scene-poll-input-0042f450.relocations]]
+offset = 212
+type = "REL32"
+symbol = "?OpenSpecialMenu@InputProcessF245@@YAXXZ"
+target = 0x004018A0

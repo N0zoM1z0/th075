@@ -1613,3 +1613,31 @@ probes, entire instruction diff and cold logs are retained in
 `.analysis/f244-result-advance/`. No fake locals, target byte grafts,
 assembly, masked fields, truncated function or externally accepted
 Oracle receipt is claimed; the 97 unknown-origin cases are unchanged.
+
+
+## F245: result-list input poll, 220-byte full cold exact
+
+The R053-reviewed `ResultListScene::PollInput` at
+`0042F450..0042F52B` is **220 original CODE bytes / 60 decoded x86
+instructions**, native SHA256
+`c6c63048374ca1109839baa4dce442cd6b38ffa10a8ec2a80cc104d11cae05ea`.
+The natural `src/ResultPollF245.cpp` precisely recreates both physical
+input initialization calls `00403E50` and `00403F40`, clears the actual
+scene+0x0C/+0x0D flags, updates distinct original controllers
+`00671638/00671680` through `00406E80`, and handles all four native
+pairs of 32-bit button states and exact exit combination of physical
+key codes 0x1C, 0x38 and 0xB8 through `00407170/004018A0`.
+
+First normal pinned MSVC7.1 `/Od /GX-` source compiles to **220/220
+complete CODE bytes with 136/136 nonrelocation bytes and 21/21 actual
+COFF relocations**. The independent single-unit cold replay of only
+`result-list-scene-poll-input-0042f450` returns **exact: 220**. It is a
+separate native callee of the previously accepted 1,529-byte F244 result
+scene main loop, so caller and callee code are not double counted.
+`tests/test_result_poll_f245.py` pins original native PE code SHA, all
+21 relocation positions, two devices, four global state pairs and the
+source hash, without recompiling older units. Complete native disassembly,
+first natural source and preview/cold evidence are retained under
+`.analysis/f245-call-chain/`. There are no target-byte grafts, masks,
+ASM, fake locals, cropped function or external Oracle claims. The 97
+unknown-origin entries remain unresolved and uncredited.

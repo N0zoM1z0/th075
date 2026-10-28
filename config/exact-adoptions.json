@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "59d4c7ad0e5a50e70343fdbcc3e32ccb7b6247c16f573b497220dd86a07c5755"
+      "current_sha256": "57d08a49e59746e6c49c6132854c1cf8257b723bd714d1ccb27d0d90c45986a7"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "7c677649843f6817bea45caf690adef9e92e9d10ff2069d49090b711235a1339"
+      "current_sha256": "00c5f7855969ec891a5fa0772c9db6c5ecc80e4761b1eb800fe6eb3cd4605741"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "bb35fbdb66c81bbe40d9b958d73369f33a1a76c3588ae75dc58de04de51d9d6f"
+      "current_sha256": "404e0c8388b23676331aef901b008725e146a7370591aac41772fba67d9ba6c3"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "4b31be568ce4d0887d574284841b052ab40b729ab1366aa80e71844c0b707af2"
+      "current_sha256": "e815ed866a711c0f5bfe160e6c875c481544dec80dc8f7e7ea983c46664f99a1"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "a58cb9eff8ec1903d0a159c4c7a3ca294298d1a5a97f6469c8074e93b7c0f649"
+      "current_sha256": "d93a7dd2824fade20f018f5097708c68b9941398e2434b78f1548e7252fd1a82"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -21952,6 +21952,50 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R065"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0042F450",
+        "size": "220",
+        "span_end": "0x0042F52B",
+        "current_name": "FUN_0042f450",
+        "proposed_name": "ResultListScene::PollInput",
+        "module": "ResultListScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R053; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x0042F450",
+        "size": "220",
+        "span_end": "0x0042F52B",
+        "current_name": "FUN_0042f450",
+        "proposed_name": "ResultListScene::PollInput",
+        "module": "ResultListScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void ResultInputSceneF245::PollInput()",
+        "is_thunk": "false",
+        "source_file": "src/ResultPollF245.cpp",
+        "evidence": "R053; full body hash, complete decoded CFG and local game-specific behavior reviewed; F245; scripts/repo-python scripts/replay-exact-units.py --unit result-list-scene-poll-input-0042f450",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F245: complete 220 authored CODE bytes / 60 decoded native x86 instructions ending native RET, original SHA256 c6c63048374ca1109839baa4dce442cd6b38ffa10a8ec2a80cc104d11cae05ea. First normal VC7.1 /Od /GX- natural C++ source matches all 220 physical bytes, 136/136 non-field bytes and 21 real COFF relocation fields. Native calls real input preparation functions at 00403E50/00403F40, clears two physical scene input bytes +0x0C/+0x0D, updates real two distinct input controllers 00671638/00671680 with existing 00406E80, observes four original pairs of actual 32-bit directional/confirm/cancel state globals 0067166C..006716C0, and takes native three-button shortcut via 00407170 test codes 0x1C,0x38,0xB8 and 004018A0 action. Borrowed device type is call-only, no original complete class or parent layout inferred. Independent R053 authored origin retained and previously exact R065 boss call at 0042E8F0 is not double-counted; no fake locals, byte patches, asm, masked fields, cropped body, broad cold replay or Oracle receipt. All 97 pending origins unchanged."
+      },
+      "origin": {
+        "address": "0x0042F450",
+        "origin": "authored",
+        "subsystem": "ResultListScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R053"
       }
     }
   ],
@@ -170594,6 +170638,155 @@
           "target": 4386288
         }
       ]
+    },
+    "result-list-scene-poll-input-0042f450": {
+      "source": "src/ResultPollF245.cpp",
+      "object": "build/matching/ResultPollF245.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "ResultListScene::PollInput"
+      ],
+      "symbol": "?PollInput@ResultInputSceneF245@@QAEXXZ",
+      "target_address": 4387920,
+      "size": 220,
+      "relocations": [
+        {
+          "offset": 8,
+          "type": "REL32",
+          "symbol": "?First@InputProcessF245@@YAXXZ",
+          "target": 4210256
+        },
+        {
+          "offset": 13,
+          "type": "REL32",
+          "symbol": "?Second@InputProcessF245@@YAXXZ",
+          "target": 4210496
+        },
+        {
+          "offset": 32,
+          "type": "DIR32",
+          "symbol": "?g_ResultInputAt00671638@@3VPollInputDeviceF245@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 37,
+          "type": "REL32",
+          "symbol": "?Update@PollInputDeviceF245@@QAEXXZ",
+          "target": 4222592
+        },
+        {
+          "offset": 42,
+          "type": "DIR32",
+          "symbol": "?g_ResultInputAltAt00671680@@3VPollInputDeviceF245@@A",
+          "target": 6755968
+        },
+        {
+          "offset": 47,
+          "type": "REL32",
+          "symbol": "?Update@PollInputDeviceF245@@QAEXXZ",
+          "target": 4222592
+        },
+        {
+          "offset": 53,
+          "type": "DIR32",
+          "symbol": "?g_ResultAcceptPrimaryAt0067166C@@3HA",
+          "target": 6755948
+        },
+        {
+          "offset": 62,
+          "type": "DIR32",
+          "symbol": "?g_ResultAcceptSecondAt006716B4@@3HA",
+          "target": 6756020
+        },
+        {
+          "offset": 78,
+          "type": "DIR32",
+          "symbol": "?g_ResultCancelPrimaryAt00671670@@3HA",
+          "target": 6755952
+        },
+        {
+          "offset": 87,
+          "type": "DIR32",
+          "symbol": "?g_ResultCancelSecondAt006716B8@@3HA",
+          "target": 6756024
+        },
+        {
+          "offset": 103,
+          "type": "DIR32",
+          "symbol": "?g_ResultChoicePrimaryAt00671674@@3HA",
+          "target": 6755956
+        },
+        {
+          "offset": 112,
+          "type": "DIR32",
+          "symbol": "?g_ResultChoiceSecondAt006716BC@@3HA",
+          "target": 6756028
+        },
+        {
+          "offset": 128,
+          "type": "DIR32",
+          "symbol": "?g_ResultSkipPrimaryAt00671678@@3HA",
+          "target": 6755960
+        },
+        {
+          "offset": 137,
+          "type": "DIR32",
+          "symbol": "?g_ResultSkipSecondAt006716C0@@3HA",
+          "target": 6756032
+        },
+        {
+          "offset": 154,
+          "type": "DIR32",
+          "symbol": "?g_ResultInputAt00671638@@3VPollInputDeviceF245@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 159,
+          "type": "REL32",
+          "symbol": "?IsKeyDown@PollInputDeviceF245@@QAEEH@Z",
+          "target": 4223344
+        },
+        {
+          "offset": 173,
+          "type": "DIR32",
+          "symbol": "?g_ResultInputAt00671638@@3VPollInputDeviceF245@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 178,
+          "type": "REL32",
+          "symbol": "?IsKeyDown@PollInputDeviceF245@@QAEEH@Z",
+          "target": 4223344
+        },
+        {
+          "offset": 195,
+          "type": "DIR32",
+          "symbol": "?g_ResultInputAt00671638@@3VPollInputDeviceF245@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 200,
+          "type": "REL32",
+          "symbol": "?IsKeyDown@PollInputDeviceF245@@QAEEH@Z",
+          "target": 4223344
+        },
+        {
+          "offset": 212,
+          "type": "REL32",
+          "symbol": "?OpenSpecialMenu@InputProcessF245@@YAXXZ",
+          "target": 4200608
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -170929,6 +171122,7 @@
     "src/ResultDigitsF241.cpp": "c27048e5cbf7ed9087e69eac48b0856d5d4c8397afbcd7fc9f71920cee479fcb",
     "src/SceneTransitionDispatchF242.cpp": "b803b6c3b3a49ac2d9e4272bc0fa297dfb7a8a315ea5257932f9b6fef4c130d7",
     "src/ResultSceneCtorF243.cpp": "9cb927c751bfe8832bba61a3d48d3dcdd16e0d2e8aae77a541c5fa790536dd54",
-    "src/ResultSceneAdvanceF244.cpp": "91268e7939d184b2b0d726b094522b6debfeda34246f0a4692ceb29910ab5f65"
+    "src/ResultSceneAdvanceF244.cpp": "91268e7939d184b2b0d726b094522b6debfeda34246f0a4692ceb29910ab5f65",
+    "src/ResultPollF245.cpp": "0fc41b6491b86a743e548a7ada3ed0897c14f7c6c2818917266529726ae1fd51"
   }
 }
