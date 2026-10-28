@@ -53072,3 +53072,83 @@ offset = 3853
 type = "DIR32"
 symbol = "$L1149"
 target = 0x00419154
+
+
+[units.alice-fighter-special-state-004e62a0]
+source = "src/AliceSpecialStateF391.cpp"
+object = "build/matching/AliceSpecialStateF391.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["AliceFighter::UpdateSpecialStateAt004E62A0"]
+symbol = "?UpdateSpecialState@AliceFighterUpdateF391@@QAEXXZ"
+target_address = 0x004E62A0
+size = 256
+[[units.alice-fighter-special-state-004e62a0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__real@00000000"
+target = 0x0065782C
+[[units.alice-fighter-special-state-004e62a0.relocations]]
+offset = 72
+type = "DIR32"
+symbol = "__real@44070000"
+target = 0x00659134
+[[units.alice-fighter-special-state-004e62a0.relocations]]
+offset = 103
+type = "DIR32"
+symbol = "__real@c4070000"
+target = 0x00659130
+[[units.alice-fighter-special-state-004e62a0.relocations]]
+offset = 146
+type = "DIR32"
+symbol = "__real@43a00000"
+target = 0x0065787C
+[[units.alice-fighter-special-state-004e62a0.relocations]]
+offset = 177
+type = "DIR32"
+symbol = "__real@c3a00000"
+target = 0x00657880
+
+
+[units.archive-catalog-begin-use-0041ce10]
+source = "src/ArchiveBeginUseF392.cpp"
+object = "build/matching/ArchiveBeginUseF392.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["ArchiveCatalog::BeginUseAt0041CE10"]
+symbol = "?BeginUse@ArchiveCatalogF392@@QAEPAV1@XZ"
+target_address = 0x0041CE10
+size = 56
+[[units.archive-catalog-begin-use-0041ce10.relocations]]
+offset = 9
+type = "DIR32"
+symbol = "?g_ArchiveUseCountAt0068BE04@@3IA"
+target = 0x0068BE04
+[[units.archive-catalog-begin-use-0041ce10.relocations]]
+offset = 17
+type = "DIR32"
+symbol = "?g_ArchiveResourcesAt0068BE08@@3VArchiveResourceRegistryF392@@A"
+target = 0x0068BE08
+[[units.archive-catalog-begin-use-0041ce10.relocations]]
+offset = 22
+type = "REL32"
+symbol = "?Clear@ArchiveResourceRegistryF392@@QAEXXZ"
+target = 0x0041DCD0
+[[units.archive-catalog-begin-use-0041ce10.relocations]]
+offset = 27
+type = "DIR32"
+symbol = "?g_ArchiveNamesAt0068BE1C@@3VArchiveNameRegistryF392@@A"
+target = 0x0068BE1C
+[[units.archive-catalog-begin-use-0041ce10.relocations]]
+offset = 32
+type = "REL32"
+symbol = "?Clear@ArchiveNameRegistryF392@@QAEXXZ"
+target = 0x0041DF50
+[[units.archive-catalog-begin-use-0041ce10.relocations]]
+offset = 37
+type = "DIR32"
+symbol = "?g_ArchiveUseCountAt0068BE04@@3IA"
+target = 0x0068BE04
+[[units.archive-catalog-begin-use-0041ce10.relocations]]
+offset = 45
+type = "DIR32"
+symbol = "?g_ArchiveUseCountAt0068BE04@@3IA"
+target = 0x0068BE04

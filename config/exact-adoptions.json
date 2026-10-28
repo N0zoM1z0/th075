@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377; F378; F379; F386; F389",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377; F378; F379; F386; F389; F391; F392",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "2d2180cd472291486f1785a90e41d619f26c44243884a10438b75b74527c0527"
+      "current_sha256": "2318568fdb09c6e49a176f7beac719d94739d33677bbd22bd504a96e35684499"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "3821884310cfcdbfc7f097deccc783a0beb0a19137b51f65ec1f9b1cd20e9ab4"
+      "current_sha256": "cf125cb117b799dc7d1b17e0c583475971dda41eebcd7d4df86795d9bb242948"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "bac1d5e0104690445740e9e718ab4001b1a4b14465c1535fcdcc0441611f6671"
+      "current_sha256": "a1d21b8a9cc4d1f3da193b8594498486c05be43959f0fd3162db7c3a4d1d07dc"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "c479e737093a613b5147c4e78f4733fb443a604ddcac2b4c8f096e7c4d44fa28"
+      "current_sha256": "854d21fe26922eea8862eaf90f4c8b97afd8756875ae2247b2e706d97728d50a"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "63b7c5ca0a1aef77dd98a22d90567b7ad7f1390060d295bdca65406695d10407"
+      "current_sha256": "bde3c9154228dc4f538819ba2ddd462b9c68620e5fd8e63f555c1fea6e26f770"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -28904,6 +28904,94 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R065"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004E62A0",
+        "size": "256",
+        "span_end": "0x004E639F",
+        "current_name": "FUN_004e62a0",
+        "proposed_name": "AliceFighter::UpdateSpecialStateAt004E62A0",
+        "module": "AliceFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R068; complete target body/CFG and reviewed fighter vtable slots",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x004E62A0",
+        "size": "256",
+        "span_end": "0x004E639F",
+        "current_name": "FUN_004e62a0",
+        "proposed_name": "AliceFighter::UpdateSpecialStateAt004E62A0",
+        "module": "AliceFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void AliceFighterUpdateF391::UpdateSpecialState()",
+        "is_thunk": "false",
+        "source_file": "src/AliceSpecialStateF391.cpp",
+        "evidence": "R068; complete target body/CFG and reviewed fighter vtable slots; F391; scripts/repo-python scripts/replay-exact-units.py --unit alice-fighter-special-state-004e62a0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state independent; F391: complete independently authored native 256-byte function at 0x004E62A0, original SHA256 308c23d0e223bbfc2416e2444bcb26aeacbf569b5b93b3dcae58e85949ec1143, 72 native x86 instructions, genuine grounded reset and +0xF14 signed opponent-distance bounds/clamp. All original 236/236 nonfield bytes and 5/5 genuine native COFF DIR32/REL32 physical relocations and solved original destinations exact; affected-only cold replay 2/2 exact. Full private game type/owner layout not claimed; no inherited callee/CRT code credit, fake locals, assembler, cropped comparison, masked bytes, full cold replay or remote Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x004E62A0",
+        "origin": "authored",
+        "subsystem": "AliceFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R068"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0041CE10",
+        "size": "56",
+        "span_end": "0x0041CE47",
+        "current_name": "FUN_0041ce10",
+        "proposed_name": "ArchiveCatalog::BeginUseAt0041CE10",
+        "module": "ArchiveCatalog",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R237; config/archive-catalog-use-origin-evidence.json; scripts/repo-python scripts/verify-archive-catalog-use-origins.py",
+        "owner": "authored",
+        "notes": "Whole shared first-user count/paired-container policy supported by independently accepted last-user archive/name release, registration/closure, real named archive files and complete main caller. Genuine original clear/destructor/Tidy source and cold ordinary/template/implicit alternatives retained; source shape alone does not establish authorship or original spelling/type/layout/compiler profile/ABI. Existing destructor-family aliases remain literal. No source/mapping/exact credit."
+      },
+      "after": {
+        "address": "0x0041CE10",
+        "size": "56",
+        "span_end": "0x0041CE47",
+        "current_name": "FUN_0041ce10",
+        "proposed_name": "ArchiveCatalog::BeginUseAt0041CE10",
+        "module": "ArchiveCatalog",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "ArchiveCatalogF392* ArchiveCatalogF392::BeginUse()",
+        "is_thunk": "false",
+        "source_file": "src/ArchiveBeginUseF392.cpp",
+        "evidence": "R237; config/archive-catalog-use-origin-evidence.json; scripts/repo-python scripts/verify-archive-catalog-use-origins.py; F392; scripts/repo-python scripts/replay-exact-units.py --unit archive-catalog-begin-use-0041ce10",
+        "owner": "authored",
+        "notes": "Whole shared first-user count/paired-container policy supported by independently accepted last-user archive/name release, registration/closure, real named archive files and complete main caller. Genuine original clear/destructor/Tidy source and cold ordinary/template/implicit alternatives retained; source shape alone does not establish authorship or original spelling/type/layout/compiler profile/ABI. Existing destructor-family aliases remain literal. No source/mapping/exact credit.; F392: complete independently authored native 56-byte function at 0x0041CE10, original SHA256 d1535bcfaedd01fd759aace0acfcf125dc453f5705be4f2ac4339e7210de4fad, 17 native x86 instructions, native shared use-count first-open two-container clear, increment and return this. All original 28/28 nonfield bytes and 7/7 genuine native COFF DIR32/REL32 physical relocations and solved original destinations exact; affected-only cold replay 2/2 exact. Full private game type/owner layout not claimed; no inherited callee/CRT code credit, fake locals, assembler, cropped comparison, masked bytes, full cold replay or remote Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0041CE10",
+        "origin": "authored",
+        "subsystem": "ArchiveCatalog",
+        "disposition": "authored",
+        "confidence": "whole-first-user-archive-catalog-policy-with-independent-named-file-and-paired-count-container-context",
+        "evidence_id": "R237"
       }
     }
   ],
@@ -194963,6 +195051,124 @@
           "target": 4297044
         }
       ]
+    },
+    "alice-fighter-special-state-004e62a0": {
+      "source": "src/AliceSpecialStateF391.cpp",
+      "object": "build/matching/AliceSpecialStateF391.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "AliceFighter::UpdateSpecialStateAt004E62A0"
+      ],
+      "symbol": "?UpdateSpecialState@AliceFighterUpdateF391@@QAEXXZ",
+      "target_address": 5137056,
+      "size": 256,
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 72,
+          "type": "DIR32",
+          "symbol": "__real@44070000",
+          "target": 6656308
+        },
+        {
+          "offset": 103,
+          "type": "DIR32",
+          "symbol": "__real@c4070000",
+          "target": 6656304
+        },
+        {
+          "offset": 146,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 177,
+          "type": "DIR32",
+          "symbol": "__real@c3a00000",
+          "target": 6649984
+        }
+      ]
+    },
+    "archive-catalog-begin-use-0041ce10": {
+      "source": "src/ArchiveBeginUseF392.cpp",
+      "object": "build/matching/ArchiveBeginUseF392.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "ArchiveCatalog::BeginUseAt0041CE10"
+      ],
+      "symbol": "?BeginUse@ArchiveCatalogF392@@QAEPAV1@XZ",
+      "target_address": 4312592,
+      "size": 56,
+      "relocations": [
+        {
+          "offset": 9,
+          "type": "DIR32",
+          "symbol": "?g_ArchiveUseCountAt0068BE04@@3IA",
+          "target": 6864388
+        },
+        {
+          "offset": 17,
+          "type": "DIR32",
+          "symbol": "?g_ArchiveResourcesAt0068BE08@@3VArchiveResourceRegistryF392@@A",
+          "target": 6864392
+        },
+        {
+          "offset": 22,
+          "type": "REL32",
+          "symbol": "?Clear@ArchiveResourceRegistryF392@@QAEXXZ",
+          "target": 4316368
+        },
+        {
+          "offset": 27,
+          "type": "DIR32",
+          "symbol": "?g_ArchiveNamesAt0068BE1C@@3VArchiveNameRegistryF392@@A",
+          "target": 6864412
+        },
+        {
+          "offset": 32,
+          "type": "REL32",
+          "symbol": "?Clear@ArchiveNameRegistryF392@@QAEXXZ",
+          "target": 4317008
+        },
+        {
+          "offset": 37,
+          "type": "DIR32",
+          "symbol": "?g_ArchiveUseCountAt0068BE04@@3IA",
+          "target": 6864388
+        },
+        {
+          "offset": 45,
+          "type": "DIR32",
+          "symbol": "?g_ArchiveUseCountAt0068BE04@@3IA",
+          "target": 6864388
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -195406,6 +195612,8 @@
     "src/CharacterAux005301B0F378.cpp": "ddd6bbe7ee7bc941070700e913c964b6ce922dd3b20b9fb1eaec75e11bbd2bd3",
     "src/CharacterProjectileAdvanceF379.cpp": "2131d50467472c69717c8aa4def9aa0cc778f6664905a85cc0e2000b70a10787",
     "src/BattleStateApplySequenceF386.cpp": "81aa09bcda53ef6c4c434b3325733dc020c88466ba8d8eba2da38188cb1e580e",
-    "src/BattleStageLoadBossF389.cpp": "d44b33d27b9d18c67c030f8d5b5e406e4c45bd8f400e4a70d7c3ce99386af6cb"
+    "src/BattleStageLoadBossF389.cpp": "d44b33d27b9d18c67c030f8d5b5e406e4c45bd8f400e4a70d7c3ce99386af6cb",
+    "src/AliceSpecialStateF391.cpp": "bcbb7650d3335fe2914937e906a1e94103a06c73cf1c33c816fb65df64f0d1ad",
+    "src/ArchiveBeginUseF392.cpp": "57008bedfd1db06aa8ed94789ea712e2184f9146c855b80a2b08d7e6f48ea69e"
   }
 }

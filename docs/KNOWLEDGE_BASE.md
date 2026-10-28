@@ -5946,3 +5946,48 @@ logger/audio/CRT methods and 92 jump table DATA bytes earn **zero duplicate
 CODE credit**. No manual assembly, pasted machine bytes, arbitrary local
 padding, masked refs, cropped function, all-unit cold replay or external
 Oracle acceptance is claimed.
+
+
+## F391: complete original 256-byte Alice special-state guard and opponent distance policy
+
+The separately R068-authored original Alice fighter update at
+`004E62A0..004E639F` comprises **256 complete original CODE bytes**,
+**72 native x86 instructions**, PE-backed SHA256
+`308c23d0e223bbfc2416e2444bcb26aeacbf569b5b93b3dcae58e85949ec1143`.
+The actual game code clears signed contact byte `+0x3AC` when float +0x50
+equals native 0.0f and flag is positive; it independently compares native
+relative X against its true opponent pointer +0x2E8, using 540/-540 and
+320/-320 boundaries and signed +0xF14 clamp/reset at 60. The Ghidra class
+name and full private Alice fighter layout remain provisional; this source
+declares only the independently observed borrowed field ABI.
+
+`src/AliceSpecialStateF391.cpp` uses the same independently tested VC7.1
+float lvalue expression shape as other accepted game-specific fighters, but
+all original source fields and this independent physical extent were checked
+against the R068 original, not copied as native bytes. Complete independent
+original x86 comparison produces **236/236** matching nonrelocation bytes
+and **5/5 genuine native COFF DIR32 constant-pool relocation fields**. Only
+this affected unit was cold replayed, **1/1 exact**, as part of a two-unit
+local F391/F392 replay. No private class instance, external callee credit,
+assembly, fake locals, masked/cropped function, all-unit replay or Oracle receipt.
+
+## F392: complete 56-byte original archive BeginUse reference-count and first-use policy
+
+The R237-authored original `ArchiveCatalog::BeginUse` at `0041CE10..0041CE47`
+has **56 complete native authored CODE bytes**, **17 x86 instructions**,
+original PE SHA256
+`d1535bcfaedd01fd759aace0acfcf125dc453f5705be4f2ac4339e7210de4fad`.
+The actual source checks original catalog count `0068BE04` for zero; on
+first use, calls the true container clear methods `0041DCD0` and `0041DF50`
+for physical global resource/name registries `0068BE08`/`0068BE1C`,
+then increments the original count and returns the caller's receiver
+(`this`). This is not a constructor, and neither complete container owner
+layout nor separate external list/CRT implementation is credited.
+
+The natural `src/ArchiveBeginUseF392.cpp` compiled at exact native
+length on its first reviewed trial, reproducing all **28/28 original
+nonrelocation bytes** and **7/7 genuine physical COFF references** and
+true destinations. Only the affected `archive-catalog-begin-use-0041ce10`
+unit was independently cold replayed in the two-unit F391/F392 scope,
+**1/1 exact**. No extra invented locals, assembly, code/data grafts,
+masked references, truncated original or remote Oracle acceptance.

@@ -697,3 +697,5 @@ address,name,module,confidence,evidence
 0x004F4170,CharacterProjectile::AdvanceAt004F4170,CharacterProjectile,inferred,"F379; whole authored 855-byte native character projectile state and owner-spawns, 22 COFF physical refs cold exact; private class layout unknown"
 0x00445A00,BattleState::ApplySequenceAt00445A00,BattleState,inferred,"F386; complete R065 1958-byte native input/replay controller with exact 28-byte post-RET switch table and all 120 genuine COFF refs; cold exact, private owner unknown"
 0x004183D0,BattleLoader::LoadStageAt004183D0,BattleLoader,inferred,"F389; entire 3765 authored CODE bytes/761 native insns and 92-byte post-RET table, original 36 constructor calls, observed size-only allocation carriers, all 170 original COFF refs cold exact; private layouts unproved"
+0x004E62A0,AliceFighter::UpdateSpecialStateAt004E62A0,AliceFighter,inferred,"F391; independently authored 256 original game CODE bytes and 5 physical refs cold exact, borrowed private class ABI"
+0x0041CE10,ArchiveCatalog::BeginUseAt0041CE10,ArchiveCatalog,inferred,"F392; independently authored 56 original game CODE bytes and 7 physical refs cold exact, borrowed private class ABI"
