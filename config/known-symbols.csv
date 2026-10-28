@@ -586,3 +586,7 @@ address,name,module,confidence,evidence
 0x004567B0,FighterState::Initialize,FighterState,inferred,"F287; whole 345-byte native fighter constructor with real member ctor/EH order, 18 authentic COFF fields cold exact; complete private game class ABI unproven"
 0x00424E00,BattleEndScene::Initialize,BattleEndScene,inferred,"F288; whole 308-byte native battle-end scene constructor, exact stage profile branch and 34 genuine COFF fields cold-exact; private original class layout provisional"
 0x00412EB0,OverlayText::DrawBox,OverlayText,inferred,F292; entire 1385-byte two-layer caption box sprite controller /359 native instructions and all 43 genuine COFF fields cold exact; original quad internals not asserted
+0x00413420,FontSurface::ConfigureTextAt00413420,FontSurface,inferred,"F293; entire native 64-byte game-specific routine, 0 real COFF relocations cold-exact; private owner identity not independently proven"
+0x005F70E0,Effects::LoadResourcesAt005F70E0,Effects,inferred,"F293; entire native 84-byte game-specific routine, 9 real COFF relocations cold-exact; private owner identity not independently proven"
+0x0041C9D0,FontSurface::DecodePackedTextUnitAt0041C9D0,FontSurface,inferred,"F293; entire native 85-byte game-specific routine, 1 real COFF relocations cold-exact; private owner identity not independently proven"
+0x0041C130,FontSurface::ReleaseRasterResourcesAt0041C130,FontSurface,inferred,"F293; entire native 119-byte game-specific routine, 4 real COFF relocations cold-exact; private owner identity not independently proven"

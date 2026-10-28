@@ -604,3 +604,7 @@ FighterState::LoadStageResource,0x004584D0,function
 FighterState::Initialize,0x004567B0,function
 BattleEndScene::Initialize,0x00424E00,function
 OverlayText::DrawBox,0x00412EB0,function
+FontSurface::ConfigureTextAt00413420,0x00413420,function
+Effects::LoadResourcesAt005F70E0,0x005F70E0,function
+FontSurface::DecodePackedTextUnitAt0041C9D0,0x0041C9D0,function
+FontSurface::ReleaseRasterResourcesAt0041C130,0x0041C130,function

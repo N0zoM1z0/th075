@@ -44207,3 +44207,110 @@ offset = 1374
 type = "REL32"
 symbol = "?DrawQuad@OverlayDrawerF292@@YAXPAVOverlayQuadF292@@PBUtagRECT@@KK@Z"
 target = 0x004029F0
+
+[units.font-surface-configure-text-00413420]
+source = "src/FontConfigureF293.cpp"
+object = "build/matching/FontConfigureF293.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["FontSurface::ConfigureTextAt00413420"]
+symbol = "?ConfigureText@FontConfigureF293@@QAEXKKE@Z"
+target_address = 0x00413420
+size = 64
+relocations = []
+
+[units.effects-load-resources-005f70e0]
+source = "src/EffectsLoadF293.cpp"
+object = "build/matching/EffectsLoadF293.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["Effects::LoadResourcesAt005F70E0"]
+symbol = "?LoadResources@EffectsResourcesF293@@QAEXXZ"
+target_address = 0x005F70E0
+size = 84
+[[units.effects-load-resources-005f70e0.relocations]]
+offset = 11
+type = "REL32"
+symbol = "?LoadPatternCatalog@EffectsResourcesF293@@QAEXXZ"
+target = 0x005F71F0
+[[units.effects-load-resources-005f70e0.relocations]]
+offset = 16
+type = "DIR32"
+symbol = "?g_EffectsLogStartAt0065A078@@3QBDB"
+target = 0x0065A078
+[[units.effects-load-resources-005f70e0.relocations]]
+offset = 21
+type = "REL32"
+symbol = "?Printf@EffectsLogF293@@YAXPBD@Z"
+target = 0x0041CC50
+[[units.effects-load-resources-005f70e0.relocations]]
+offset = 42
+type = "REL32"
+symbol = "?AllocatePages@EffectsTextureF293@@QAEXHH@Z"
+target = 0x0040B110
+[[units.effects-load-resources-005f70e0.relocations]]
+offset = 47
+type = "DIR32"
+symbol = "?g_EffectsArchiveRootAt0065A088@@3QBDB"
+target = 0x0065A088
+[[units.effects-load-resources-005f70e0.relocations]]
+offset = 52
+type = "DIR32"
+symbol = "?g_EffectsFileAt0065A090@@3QBDB"
+target = 0x0065A090
+[[units.effects-load-resources-005f70e0.relocations]]
+offset = 63
+type = "REL32"
+symbol = "?LoadFromArchive@EffectsTextureF293@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.effects-load-resources-005f70e0.relocations]]
+offset = 68
+type = "DIR32"
+symbol = "?g_EffectsLogCompleteAt0065A0A8@@3QBDB"
+target = 0x0065A0A8
+[[units.effects-load-resources-005f70e0.relocations]]
+offset = 73
+type = "REL32"
+symbol = "?Printf@EffectsLogF293@@YAXPBD@Z"
+target = 0x0041CC50
+
+[units.font-surface-decode-packed-text-0041c9d0]
+source = "src/FontDecodeF293.cpp"
+object = "build/matching/FontDecodeF293.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["FontSurface::DecodePackedTextUnitAt0041C9D0"]
+symbol = "?DecodeUnit@PackedFontUnitF293@@QAEEPBIPAI@Z"
+target_address = 0x0041C9D0
+size = 85
+[[units.font-surface-decode-packed-text-0041c9d0.relocations]]
+offset = 17
+type = "REL32"
+symbol = "?IsDoubleByte@PackedFontUnitF293@@QAE_ND@Z"
+target = 0x0041CA30
+
+[units.font-surface-release-raster-0041c130]
+source = "src/FontReleaseF293.cpp"
+object = "build/matching/FontReleaseF293.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["FontSurface::ReleaseRasterResourcesAt0041C130"]
+symbol = "?ReleaseRasterResources@FontReleaseF293@@QAEXXZ"
+target_address = 0x0041C130
+size = 119
+[[units.font-surface-release-raster-0041c130.relocations]]
+offset = 32
+type = "REL32"
+symbol = "_free"
+target = 0x00640F15
+[[units.font-surface-release-raster-0041c130.relocations]]
+offset = 65
+type = "DIR32"
+symbol = "__imp__SelectObject@8"
+target = 0x00657048
+[[units.font-surface-release-raster-0041c130.relocations]]
+offset = 72
+type = "DIR32"
+symbol = "__imp__DeleteObject@4"
+target = 0x0065704C
+[[units.font-surface-release-raster-0041c130.relocations]]
+offset = 91
+type = "DIR32"
+symbol = "__imp__ReleaseDC@8"
+target = 0x00657214

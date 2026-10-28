@@ -3511,3 +3511,72 @@ EBP-slot differences but genuine x87 operation-shape differences.
 Private `.analysis/f289-mirrored/` and
 `.analysis/f254-sprite-boss/` retain the negative. No source/byte
 credit for this boss until complete exact reconstruction.
+
+
+## F293: cold-exact four original font/effects helpers in two large control call chains
+
+Four complete originally authored game-specific functions downstream
+of the separately F292-accepted entire 1,385-byte overlay boss and
+the still-unaccepted 1,722-byte Effects resource catalog were
+independently reviewed via the pinned Japanese PE. Original native
+functions and machine-code evidence live in `.analysis/f293-graphics-leaves/`;
+pinned VC7.1 negative/positive source comparisons and full affected
+4-unit cold replay at `.analysis/f293-leaf-probes/`.
+
+| Function/address and reviewed origin | Entire original CODE | Native x86 instructions | Exact nonfield bytes | Native COFF fields | Full PE CODE SHA256 |
+| --- | ---: | ---: | ---: | ---: | --- |
+| FontSurface::ConfigureText `00413420` R103 | 64 | 22 | 64/64 | 0 | `b2168041d4e4d9617977f8a28a3e2aa97a11f72188c8261f782e97216415b651` |
+| Effects::LoadResources `005F70E0` R100 | 84 | 25 | 48/48 | 9 | `26e3b771cd9296a4ac17f1b9d423fa34ff0e09a7de53a31633ff5c0153dcf5eb` |
+| FontSurface::DecodePackedTextUnit `0041C9D0` R183 | 85 | 33 | 81/81 | 1 | `fb8963ee9d3b043a87b7024e0b292e8982e35274343e149140007788a69c86a3` |
+| FontSurface::ReleaseRasterResources `0041C130` R109 | 119 | 39 | 103/103 | 4 | `7b848e9c7fe4570cdf2f900e6efc549ac363354fad64446ca0c56594b0f4e2a8` |
+
+The original 64-byte font configuration method writes two actual
+32-bit fields at this+4/+8, zeroes DWORD +0x10 and bytes +0x15/+0x14,
+then copies a real unsigned mode byte at +0x25. Its true thiscall
+`RET 0x0C` has no physical relocations. The original 84-byte Effects
+load helper *first* calls the much larger resource catalog loader
+`005F71F0` (not yet exact), then prints its two distinct native log
+messages from `0065A078/0065A0A8`, and configures a genuine texture
+receiver at this+0x28 through `0040B110(0x90,0x10)` and
+`0040BB80(0065A090,0065A088)`. An early plausible source stored a
+source-level pointer to the texture member and emitted 89 bytes,
+**five too many**; reevaluating the pointer at each actual native call
+recovers the entire 84-byte original, without an unused local alias.
+The 85-byte two-byte packed font decoder's native return count is
+**one byte in AL**. An initial integer-return C++ variant emitted
+91 bytes, incorrectly generating `MOV EAX,1/2`; the actual return is
+`unsigned char` with `MOV AL,1/2`, exactly matching the real 85-byte
+function. It uses the actual native caller's `IsDoubleByte` at
+`0041CA30` and the original `(word & 0xFF)<<8 |
+(int)(word & 0xFF00)>>8` data conversion.
+The complete 119-byte raster resource release helper frees a real
+previous glyph buffer at +0x14 through native `00640F15` and clears
+the field. Its actual old-buffer alias is stored at EBP-4, and its
+original selected font call is **nested**
+`DeleteObject(SelectObject(hdc, savedObject))`, not a separate local
+variable; the original subsequently releases the window/DC and
+zeroes saved HGDIOBJ/DC fields. Using real pointer alias lifetime
+rather than fictional return caching recovered all native operations
+and original 4 native relocation targets.
+
+Final natural C++ sources are `src/FontConfigureF293.cpp`,
+`src/EffectsLoadF293.cpp`, `src/FontDecodeF293.cpp` and
+`src/FontReleaseF293.cpp`; all use pinned VC7.1
+`/Od /Ob0 /Gy /GR- /GX- /GS /Zi`. The matching units
+`font-surface-configure-text-00413420`,
+`effects-load-resources-005f70e0`,
+`font-surface-decode-packed-text-0041c9d0`,
+`font-surface-release-raster-0041c130` were cold rebuilt
+**only as the affected four-unit group**, with **4/4 exact**.
+A private historical FontConfig probe incorrectly supplied an old
+`?Configure@FontConfigF293@@QAEXMME@Z` *symbol name* to the
+first match-unit manifest despite the genuinely correct full
+64-byte new source, so the first cold replay was **3/4**. The failure
+was audited, the manifest symbol fixed to the actually compiled
+`?ConfigureText@FontConfigureF293@@QAEXKKE@Z`, and the same four
+affected units rebuilt **4/4 exact**, not silently accepted on
+probe evidence. No all-unit cold replay, manual byte patch, asm,
+field mask, fake locals, truncated target or remote Oracle receipt.
+All underlying Win32/CRT/VC7 helpers and 97 pending origin-unknown
+functions remain uncredited; no private whole class definition is
+asserted.
