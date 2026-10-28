@@ -593,3 +593,4 @@ FighterScript::CountPatternEntries,0x0045DD00,function
 FighterScript::GetByteFieldAt00420530,0x00420530,function
 FighterScript::GetWordFieldAt00420570,0x00420570,function
 FighterScript::GetDwordFieldAt004205B0,0x004205B0,function
+Effects::SpawnConfiguredAuxObjectAt005F7AA0,0x005F7AA0,function

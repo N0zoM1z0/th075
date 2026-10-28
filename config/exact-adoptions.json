@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "de105e02e1b417ac15ff9f9bef5aa683f7e0990e18d0dc8964bf0f9a49339ca1"
+      "current_sha256": "5f8ce536145439afcfabf15db5962384a97fd7b9ef032c4e95695eb2ed4f145b"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "c8896870cdd5bb3858c73cc8f6d3eac06bd824ebdb37dcfca2df0bd91e83a330"
+      "current_sha256": "8decd9eb1f2e0d1148e75592e788d76bd39080797106b59dcc14f8d7257d2eb5"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "6439a0074080bd878af8ec211be34cc8f3f91df0e2d649c617f4a5b5282e343d"
+      "current_sha256": "02a524871cab36a875d4e5003402a0d1b7c012bb5035efaa89e59150d6247ed5"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "ae2440e69c66ed49f1c996a2812c026b4c8ed6d11d0a7d18dde82885e973f15d"
+      "current_sha256": "716b21137382e67b97fa3fb0b169f3b9f3b30959dd27873fb4355fe293a8052b"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "d12e3c02e3e0e64fa8fc75dc4e545330147ac69c567f45aa3f41ab585790f107"
+      "current_sha256": "16032d34b946db56f29d3aa04c3c04997649970067b059872fbf16aea0360627"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -23536,6 +23536,50 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R076"
+      }
+    },
+    {
+      "before": {
+        "address": "0x005F7AA0",
+        "size": "602",
+        "span_end": "0x005F7CF9",
+        "current_name": "FUN_005f7aa0",
+        "proposed_name": "Effects::SpawnConfiguredAuxObjectAt005F7AA0",
+        "module": "Effects",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R067; full target body/CFG and game-specific call or vtable binding",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x005F7AA0",
+        "size": "602",
+        "span_end": "0x005F7CF9",
+        "current_name": "FUN_005f7aa0",
+        "proposed_name": "Effects::SpawnConfiguredAuxObjectAt005F7AA0",
+        "module": "Effects",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void EffectOwnerF281::SpawnConfiguredAuxObject(short,DWORD,DWORD,unsigned char,signed char,unsigned char,unsigned char,const DWORD*)",
+        "is_thunk": "false",
+        "source_file": "src/EffectSpawnF281.cpp",
+        "evidence": "R067; full target body/CFG and game-specific call or vtable binding; F281; scripts/repo-python scripts/replay-exact-units.py --unit effects-spawn-configured-aux-object-005f7aa0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state independent; F281: complete R067-authored 602 CODE bytes /175 independently decoded original native x86 instructions at 005F7AA0..005F7CF9, RET 0x20 at 005F7CF7; complete original PE code SHA256 2d065ef4cb07d47f8002eb5ea4f201ecabc9592721697767e882ab27ea3816c3. Pinned VC7.1 /Od /GX /GS single-unit cold replay exact: 506/506 nonrelocation bytes and all 24 real COFF physical relocation offsets/types/destinations (including native EH handler 006566A3 and real exception-list relocations). Real signed short configuration selector at this+78 through native index lookup 005F8380, original nonzero / signed channel 0 or 1 guards; native collection push_back 005F81B0 on this+20*channel, EH-backed new(0x94) via 0064159D with real AuxObject ctor 005FAB10, then repeated genuine 005F8180 back() calls. Exact game object fields +60 sequence id, +62/+64 reset shorts, +44/+48 x/y, +66/+67/+68 flags, +40 reset, +80/+84/+88/+8C four original DWORD parameter values, and original native virtual calls at vtable slots 0 and 4. First full natural C++ emitted 603 bytes while native is 602, due to concrete branch-lowering: first two guard clauses are independent early returns compiled as jnz-short/jmp-near, while side>=0 and side<=1 are a single combined invalid-side test compiled as a shared short jl/jle to near exit. Restoring these native guards yielded full 602 bytes and all actual relocation targets without filler or padding. All 97 pending origins remain uncredited; game owner, effect subclass and underlying vector/deque private class identities are only borrowed physical call interfaces. No byte patch, invented extra fault branch, manual assembly, masked relocations, truncated code, all-unit replay or external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x005F7AA0",
+        "origin": "authored",
+        "subsystem": "Effects",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R067"
       }
     }
   ],
@@ -175962,6 +176006,173 @@
           "target": 4330336
         }
       ]
+    },
+    "effects-spawn-configured-aux-object-005f7aa0": {
+      "source": "src/EffectSpawnF281.cpp",
+      "object": "build/matching/EffectSpawnF281.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "Effects::SpawnConfiguredAuxObjectAt005F7AA0"
+      ],
+      "symbol": "?SpawnConfiguredAuxObject@EffectOwnerF281@@QAEXFKKECEEPBK@Z",
+      "target_address": 6257312,
+      "size": 602,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$?SpawnConfiguredAuxObject@EffectOwnerF281@@QAEXFKKECEEPBK@Z",
+          "target": 6645411
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 42,
+          "type": "REL32",
+          "symbol": "?At@EffectConfigSlotsF281@@QAEPAPAXH@Z",
+          "target": 6259584
+        },
+        {
+          "offset": 113,
+          "type": "REL32",
+          "symbol": "?push_back@EffectObjectListF281@@QAEXABQAX@Z",
+          "target": 6259120
+        },
+        {
+          "offset": 123,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 154,
+          "type": "REL32",
+          "symbol": "??0EffectSpawnedF281@@QAE@PAX@Z",
+          "target": 6269712
+        },
+        {
+          "offset": 194,
+          "type": "REL32",
+          "symbol": "?back@EffectObjectListF281@@QAEPAPAXXZ",
+          "target": 6259072
+        },
+        {
+          "offset": 214,
+          "type": "REL32",
+          "symbol": "?back@EffectObjectListF281@@QAEPAPAXXZ",
+          "target": 6259072
+        },
+        {
+          "offset": 239,
+          "type": "REL32",
+          "symbol": "?back@EffectObjectListF281@@QAEPAPAXXZ",
+          "target": 6259072
+        },
+        {
+          "offset": 262,
+          "type": "REL32",
+          "symbol": "?back@EffectObjectListF281@@QAEPAPAXXZ",
+          "target": 6259072
+        },
+        {
+          "offset": 285,
+          "type": "REL32",
+          "symbol": "?back@EffectObjectListF281@@QAEPAPAXXZ",
+          "target": 6259072
+        },
+        {
+          "offset": 308,
+          "type": "REL32",
+          "symbol": "?back@EffectObjectListF281@@QAEPAPAXXZ",
+          "target": 6259072
+        },
+        {
+          "offset": 331,
+          "type": "REL32",
+          "symbol": "?back@EffectObjectListF281@@QAEPAPAXXZ",
+          "target": 6259072
+        },
+        {
+          "offset": 354,
+          "type": "REL32",
+          "symbol": "?back@EffectObjectListF281@@QAEPAPAXXZ",
+          "target": 6259072
+        },
+        {
+          "offset": 377,
+          "type": "REL32",
+          "symbol": "?back@EffectObjectListF281@@QAEPAPAXXZ",
+          "target": 6259072
+        },
+        {
+          "offset": 400,
+          "type": "REL32",
+          "symbol": "?back@EffectObjectListF281@@QAEPAPAXXZ",
+          "target": 6259072
+        },
+        {
+          "offset": 421,
+          "type": "REL32",
+          "symbol": "?back@EffectObjectListF281@@QAEPAPAXXZ",
+          "target": 6259072
+        },
+        {
+          "offset": 449,
+          "type": "REL32",
+          "symbol": "?back@EffectObjectListF281@@QAEPAPAXXZ",
+          "target": 6259072
+        },
+        {
+          "offset": 478,
+          "type": "REL32",
+          "symbol": "?back@EffectObjectListF281@@QAEPAPAXXZ",
+          "target": 6259072
+        },
+        {
+          "offset": 507,
+          "type": "REL32",
+          "symbol": "?back@EffectObjectListF281@@QAEPAPAXXZ",
+          "target": 6259072
+        },
+        {
+          "offset": 536,
+          "type": "REL32",
+          "symbol": "?back@EffectObjectListF281@@QAEPAPAXXZ",
+          "target": 6259072
+        },
+        {
+          "offset": 566,
+          "type": "REL32",
+          "symbol": "?back@EffectObjectListF281@@QAEPAPAXXZ",
+          "target": 6259072
+        },
+        {
+          "offset": 592,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -176329,6 +176540,7 @@
     "src/ProgressSelectionF274.cpp": "e7413da91314a425e0dead117f844dc66607bcefad8846c9b378302832da8814",
     "src/FighterPatternChoiceF278.cpp": "17681212fe7a15b23f4133b5b18996abd868b092b4872e694e72066e98453320",
     "src/PatternCountF279.cpp": "469cc3b3a62aa907c8142a8b46469fb848ea7d5503dbfbce4fac91e1c5b2d2b0",
-    "src/PatternAccessorsF279.cpp": "1ccfde755df5f90ab455c28bec906e0ea1204b792477ee6174e03d413130ef52"
+    "src/PatternAccessorsF279.cpp": "1ccfde755df5f90ab455c28bec906e0ea1204b792477ee6174e03d413130ef52",
+    "src/EffectSpawnF281.cpp": "91b496c05eeb84a5b8c7b49e2b1e5b2a972407e8a45030af2867fe1cdd3c851c"
   }
 }

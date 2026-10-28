@@ -2964,3 +2964,61 @@ bytes are separately credited once, not duplicated from the
 previously accepted F278 caller or library deque callees. No full
 all-unit cold replay, artificial offsets/padding, relocation masks,
 uncertified input or remote Oracle verification is claimed.
+
+
+## F281: full 602-byte Effects::SpawnConfiguredAuxObject cold-exact
+
+The R067-authored `Effects::SpawnConfiguredAuxObjectAt005F7AA0` is a
+complete native **602-byte** game-specific effect-spawning controller at
+`005F7AA0..005F7CF9` with **175 independently decoded original x86
+instructions** and a native `RET 0x20` at `005F7CF7`. Original full
+PE-backed CODE SHA256 is
+`2d065ef4cb07d47f8002eb5ea4f201ecabc9592721697767e882ab27ea3816c3`.
+The original Ghidra read-only function/decompile/entire physical assembly,
+whole natural VC7.1 source probes, native branch-shape comparisons and cold
+receipt are retained in `.analysis/f281-effects-spawn/`.
+
+The full original operation looks up a signed short pattern through the
+actual config vector at `this+0x78` with original indexed access
+`005F8380`. It requires that the slot contains a nonzero pointer and
+that the pattern is nonzero; a separate signed `side` byte must be in
+[0,1]. On accepted inputs, it pushes a zero pointer to the native
+side-selected list at `this + 0x14*side` through the real native
+`005F81B0` call. Genuine VC7.1 EH-backed `new(0x94)` at `0064159D`
+constructs one aux effect through its original ctor `005FAB10`, retaining
+all actual return-transfer stack lifetimes and exception states. It then
+uses *each* original `005F8180` `back()` invocation (not a cached or
+reused fabricated reference) to store pattern word +0x60, zero words
++0x62/+0x64, source x/y DWORD +0x44/+0x48, three flag bytes at
++0x66/+0x67/+0x68, zero +0x40, and four original caller DWORDs at
++0x80/+0x84/+0x88/+0x8C. The routine finally performs the original
+virtual calls in slots zero and +4 through the newly created object.
+
+The first complete plausible C++ probe (same actual 24 native COFF
+fields and native EH frame) generated **603 bytes**, while the original
+has 602. Its only instruction-shape differences were the genuinely
+distinct branch-lowering sequence: native nonnull-pattern and nonzero-ID
+guards each use a short JNZ followed by a long JMP to the exit; their
+C++ analogues are separate early-return checks. The native side bounds
+are **one combined** invalid-side test, so a negative signed byte jumps
+to the same long exit used by a byte greater than one (native short JL
+and JLE followed by one shared JMP). Independent `/Od` probes confirmed
+that four separate returns generated 607 bytes and a fully combined
+condition generated 603, whereas two real early returns plus **one**
+combined signed-side out-of-range return produce the entire **602-byte**
+target without compiler hints, fake locals or padding.
+
+Final complete natural C++ at `src/EffectSpawnF281.cpp` emits all
+**602 bytes**, all **506/506** comparable nonrelocation bytes and all
+**24/24 actual physical COFF relocation offsets/types/solved native
+destinations**. One pinned VC7.1 `/Od /Ob0 /Gy /GR- /GX /GS /Zi`
+**single-unit cold build** `effects-spawn-configured-aux-object-005f7aa0`
+reports `exact; 602 coverage bytes`, with no all-unit replay. The
+borrowed side list, effect subclass and configuration vector interfaces
+are observed call/physical-allocation boundaries, not proved complete
+original nominal class layouts. Their runtime/library implementations
+(including real effect-child ctor at `005FAB10`) are not separately
+credited; nor is the independently unresolved 1,722-byte Effects
+catalogue loader at `005F71F0`. All 97 pending origin-unknown functions
+remain uncredited. No target code graft, manual assembly, cropped
+function, masked relocation, invented branches or remote Oracle acceptance.

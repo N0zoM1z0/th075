@@ -592,3 +592,4 @@ FighterScript::CountPatternEntries
 FighterScript::GetByteFieldAt00420530
 FighterScript::GetWordFieldAt00420570
 FighterScript::GetDwordFieldAt004205B0
+Effects::SpawnConfiguredAuxObjectAt005F7AA0
