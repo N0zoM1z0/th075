@@ -8347,3 +8347,41 @@ counting the borrowed original quad, GDI/game renderer, CRT or
 security-check code. No source assembly, pasted native bytes, false
 class layout, fake locals/padding, relocation masks, shortened
 original CODE, full-project replay or external Oracle acceptance.
+
+
+## F520: all 22 original fighter-action bosses verified as complete 1,102,055-byte CODE cohort (research, NOT exact)
+
+Pinned original Japanese TH075 PE has exactly 22 still-unaccepted
+independently R-origin authored fighter action/advance bosses in the
+reviewed 28,432–82,796-byte size class. Their **whole original CODE**
+amounts to 1,102,055 bytes, **292,761 original x86 instructions**,
+**16,861 original call sites** and **84 genuine native indirect JMP
+instructions**, all verified through the full final `RET` per function.
+The **2,359 authentic original post-RET DWORD slots (9,436 DATA bytes)**
+and **6,687 bytes of original sparse byte-index maps** together form
+**16,123 genuine physical switch DATA bytes**, separately validated
+and excluded from authored CODE coverage. Eleven CharacterObject-family
+bosses each have one indexed jump +198–200-byte native index map.
+Eleven CharacterMove/Reimu-family bosses have six (two functions) or
+seven (nine functions) native indexed jumps. Complete per-function PE
+CODE SHA256, physical after-RET table/mapping SHA256, stack allocation,
+instruction/real call counts, exact original native instruction-aligned
+DWORD targets and post-RET CC padding have been independently frozen
+in `config/fighter-boss-dispatch-fingerprints.json`, checked against
+the target by `scripts/repo-python scripts/verify-fighter-boss-family.py`.
+
+Four actual *byte-identical* sparse index groups recur across different
+original bosses (original map lengths and copy counts: **49×8, 68×8,
+49×3 and 66×2**). The two 49-byte maps are different SHA256 values;
+shared byte-index maps do **not** imply shared original native DWORD
+CODE destinations. Original physical DWORD tables can intentionally
+have duplicate default/epilogue addresses; the new verifier does not
+repeat an earlier mistaken uniqueness assumption and instead validates
+**every original DWORD target** against the entire original decoded
+CODE instruction boundaries. Full audit and exact cohort table are
+in `docs/FIGHTER_BOSS_FAMILY_DISPATCH.md`, alongside existing individual
+whole Reimu R063 and CharacterMove R048 original reports. Each of the
+22 giant functions remains **unreconstructed source and nonexact**;
+this is evidence for future whole C++ implementation, **0 new CODE
+credit**, no borrowed caller/callee/after-RET DATA double-credit, no
+source native byte graft, no synthetic locals, and no full cold replay.
