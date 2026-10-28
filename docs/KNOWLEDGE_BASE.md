@@ -6654,3 +6654,72 @@ helper/CRT data/CODE double credit, asm or native byte grafts, fabricated
 unused local temporaries, masks, cropped extent, full cold replay or
 external Oracle acceptance. All historical probes are retained as
 private falsifiable controls, not duplicate accepted functions.
+
+
+## F440: complete 1,291-byte Marisa nested 8×36 projectile chain renderer, 136-byte quad carrier and original x87 Z evaluation
+
+The long-open original R049-authored
+`CharacterAux::RunAt00497070`, at `00497070..0049757A`, is **1,291
+original authored CODE bytes / 273 original native x86 instructions**,
+independently SHA256-verified against the pinned Japanese PE as
+`317471d44dd19b5a4aadd99760da7725ef1c549429b3109b7d9e979e57222acf`.
+It is a whole specialized Marisa fighter projectile/particle renderer,
+not a small borrowed wrapper. When native owner +0x1006 permits drawing,
+it establishes the real camera X/Y frame, enables the original texture
+blend mode through `0040C7F0`, then loops original i=1..8, each
+constructing true signed 16-bit phase A/B, angle and radius states.
+The nested original 36-element j loop calculates four physical cosine
+and sine coordinates via authentic `0040D900/0040D940` calls, builds
+an observed 132-byte SpriteQuad drawable payload, rotates the packet
+through real `004116F0`, translates it twice via native `00411500`, and
+updates each 28-byte chain particle at `this+0x1018`, including the final
+73rd/74th repeated endpoints. Every outer iteration draws 0x4A native
+chain elements with original texture ID 0x277 via `0040C970`. The entire
+original execution flow, loops, x87 arithmetic, and true float constant
+references are reproduced naturally, without copying native instructions
+or giving any trig/geometry/texture callee CODE additional credit.
+
+Historical negative F356/F358/F360/F361/F362/F363/F388 sources matched
+similar control/float shapes but had an incorrect native `0xE0` stack
+frame, dozens of original EBP-slot mismatches, and one real x87
+operation-order discrepancy. Re-examining the exact native frame proved
+`sub esp,0xE8`, `this` at EBP-0xAC, native outer i at -0xA4, inner
+j at -0xA8, phaseA short at -0xA0, camera X shift at -0x9C, and a single
+quad carrier at EBP-0x98. The physically allocated quad carrier here is
+**136 bytes**, of which **132** bytes are independently decoded as the
+real rendered SpriteQuad; the remaining four bytes have *no proven
+original private field identities* and are not used or credited as
+additional native CODE. This is distinct from the **140-byte** observed
+carrier in separately F437-accepted mirrored-node renderer. Compiling
+a source with the correctly observed 136-byte carrier recovers the
+original 0xE8 stack frame and **1157/1167** nonrelocation bytes.
+
+The real `short radius` is stored in a *4-byte aligned native stack
+slot* EBP-4; a natural `__declspec(align(4)) short radius` (not a dummy
+local) recovers all five native radius operand displacements, giving
+**1162/1167** matching nonfields. The last five differing bytes lie
+at original Z/depth calculation around offset 0x1F9. The original
+actually loads float `g_MarisaParticleDepthAt006582E0`, multiplies by
+actor `this+0x1010`, then divides by native float divisor at
+`00657480`. A parenthesized C++ field macro at the actor operand
+reorders `FLD`/`FMUL` and was a falsifiable natural negative. Reusing
+the separately proven direct unparenthesized float dereference expression
+`#define FLOAT(o) *reinterpret_cast<float*>(RAW+(o))` gives the native
+`FLD globalDepth; FMUL [owner+0x1010]; FDIV globalDivisor` and removes
+all five remaining differences, without changing any data field or
+introducing inert locals, padding, asm or target bytes.
+
+`src/MarisaProjectileChainRenderF440.cpp` compiles under pinned VC7.1
+`/Od /Ob0 /Gy /GR- /GX- /GS /Zi` to the **complete 1,291 native CODE
+bytes** with **1167/1167 original nonrelocation bytes** and **all 31/31
+genuine original physical COFF DIR32/REL32 relocations and exact target
+addresses**, including actual trig, quad ctor, blend/transform/texture
+calls, all original x87 constant pools and native `_ftol2`. The single
+affected unit `marisa-auxiliary-projectile-chain-render-00497070` was
+independently rebuilt and cold replayed **1/1 exact**. The complete
+private fighter/renderer/quad class identity and untyped carrier tail
+remain unproved; no external callee or data double-credit, artificial
+stack variable, assembler/byte graft, masks, cropped original, all-unit
+replay or external Oracle receipt. All F356-F363/F388/F438-F439
+negative source experiments are retained in `.analysis` rather than
+deleted or re-credited.

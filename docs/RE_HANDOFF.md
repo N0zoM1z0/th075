@@ -1,6 +1,6 @@
 # TH075 — current reconstruction handoff
 
-**Maintained: 2026-10-28, after F437.** Read this document, then check the **live repository**. The current user explicitly wants both large/core bosses and small leaves tackled seriously, tangible progress committed immediately with subject `gpt-web: ...`, and **only changed/new units cold-replayed**. The user reports no other sessions: inspect and finish all dirty work; never skip, reset, overwrite or silently discard it.
+**Maintained: 2026-10-29, after F440.** Read this document, then check the **live repository**. The current user explicitly wants both large/core bosses and small leaves tackled seriously, tangible progress committed immediately with subject `gpt-web: ...`, and **only changed/new units cold-replayed**. The user reports no other sessions: inspect and finish all dirty work; never skip, reset, overwrite or silently discard it.
 
 ## 1. Trusted state and first commands
 
@@ -8,11 +8,11 @@ Canonical evidence is the pinned original PE, `config/function-origins.csv`, `co
 
 | Item | Verified snapshot |
 | --- | --- |
-| Git | `main`; pre-F437 reconstruction commit **`f1787c0`** (F435), preceded by `77e5773` (F432), `b6bc09a` (F431); F437 commit follows this update |
+| Git | `main`; pre-F440 reconstruction commit **`2f755fc`** (F437), preceded by `f1787c0` (F435), `77e5773` (F432); F440 commit follows this update |
 | Pinned target | user-supplied Japanese `resources/th075.exe` v1.11; SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`; **never** `th075c.exe` |
-| Exact and source-present | **748 functions / 748 exact units** |
-| Accepted authored CODE | **851,591 bytes / 1,973,516 reviewed bytes = 43.15%** |
-| Conservative | **43.07%**, including 3,608 bytes with unresolved origin |
+| Exact and source-present | **749 functions / 749 exact units** |
+| Accepted authored CODE | **852,882 bytes / 1,973,516 reviewed bytes = 43.22%** |
+| Conservative | **43.14%**, including 3,608 bytes with unresolved origin |
 | Origin review | 1,002 authored, 2,671 library, 581 compiler, **97 pending** across 4,351 provisional candidates |
 | Goal | **98% not reached**; Git and local cold results are not external Oracle receipts |
 
@@ -29,7 +29,7 @@ If **any** dirty source, unit, or manifest is present, first inspect its exact e
 
 ## 2. Newly closed chains — **not** the backlog
 
-The full register of **all 748** accepted functions is in `config/functions.csv` and `config/match-units.toml`; this table intentionally highlights only the newest, important independent CODE extents. No called function, imported CRT/Win32 code, or owned jump-table bytes are counted twice.
+The full register of **all 749** accepted functions is in `config/functions.csv` and `config/match-units.toml`; this table intentionally highlights only the newest, important independent CODE extents. No called function, imported CRT/Win32 code, or owned jump-table bytes are counted twice.
 
 | Unit / accepted address | Whole CODE | Authentic fields | Evidence |
 | --- | ---: | ---: | --- |
@@ -85,6 +85,7 @@ The full register of **all 748** accepted functions is in `config/functions.csv`
 | F432 `OptionsScene::ReleaseSceneTextureAndResourceAt00428E60` `00428E60` | **154** | **7** | `src/OptionsSceneReleaseF432.cpp`, `.analysis/f432-options-release/` |
 | F435 `NameEntryScene::InitializeAt0042B1F0` `0042B1F0` | **260** | **15** | `src/NameEntrySceneInitializeF435.cpp`, `.analysis/f435-name-entry-initialize/` |
 | F437 `SpriteScene::RenderMirroredNode` `00410A00` | **1,268** | **26** | `src/SpriteMirroredNodeRenderF437.cpp`, `.analysis/f437-mirror-proven-fsubr/` |
+| F440 `CharacterAux::RunAt00497070` `00497070` | **1,291** | **31** | `src/MarisaProjectileChainRenderF440.cpp`, `.analysis/f440-marisa-z-operand-order/` |
 
 **F340:** the companion archive entry seek at `0041D750` is independently cold exact for its whole 164-byte function including every one of its nine external references. It uses genuine iterator and `strcmp` semantics, returns the archive handle after `SetFilePointer` or `INVALID_HANDLE_VALUE` if not found. The original private archive list remains borrowed, not instantiated.
 
@@ -174,7 +175,9 @@ The full register of **all 748** accepted functions is in `config/functions.csv`
 
 **F435:** original R109 260-byte `NameEntryScene::InitializeAt0042B1F0` is now complete cold exact, **71 original x86 instructions, 200/200 native nonfield bytes, 15/15 real COFF relocations**, including true VC7.1 `/GX` exception records. Native base constructor `004251C0` and vtable `00657FAC`, `new(0x50)` texture manager `0040AD80`, 3 archive slots `0040B1D0`, exact `data\system\replay.dat` filename `00657F84`/`datab` archive root `00657F7C`, flag at `006714CE` and selection reader at `00671750/00414300` all confirmed. Only F435 cold replay **1/1 exact**; private owner and borrowed callees uncredited. The former 1,268-byte mirror negative was subsequently **resolved by F437 complete cold exact**, with 140-byte native stack carriers and the native FILD/FSUBR X expression.
 
-**F437:** the entire long-pending R035 mirrored sprite renderer `SpriteScene::RenderMirroredNode` at `00410A00` is now **1,268 native CODE bytes / 324 original x86 instructions**, with **1164/1164 original nonfield bytes, all 26 authentic physical COFF refs** and **affected-only 1/1 cold exact**. The two quad carriers each occupy a physically observed **140-byte stack extent**, although only 132 bytes of each are understood as real drawable geometry; the untyped 8-byte tail in each must **not** be claimed as recovered original private class fields. This yields original EBP-0x180 stack and all real RECT/quad/tint/camera slots, correcting historical F254/F289/F355/F381-F434 lifetime failures. Cross-checking separately cold-exact SpriteNode F129 (`00410350`) and FighterRender F126 (`00453F70`) found the precise native `FILD; MOV; FSUBR` source pattern: directly unparenthesized float lvalue minus integer facing × node X. The parenthesized, semantically equal float expression instead wrongly emits `FLD` then `FISUB`. Reusing that **original compiler expression behavior** restores the full 1,268 bytes; native tinted and ordinary sprite draws, transform/scale/rotation and real texture filtering all verified. `CharacterAux::RunAt00497070` Marisa rendering boss remains **unclassified**, not to be conflated with F437.
+**F437:** the entire long-pending R035 mirrored sprite renderer `SpriteScene::RenderMirroredNode` at `00410A00` is now **1,268 native CODE bytes / 324 original x86 instructions**, with **1164/1164 original nonfield bytes, all 26 authentic physical COFF refs** and **affected-only 1/1 cold exact**. The two quad carriers each occupy a physically observed **140-byte stack extent**, although only 132 bytes of each are understood as real drawable geometry; the untyped 8-byte tail in each must **not** be claimed as recovered original private class fields. This yields original EBP-0x180 stack and all real RECT/quad/tint/camera slots, correcting historical F254/F289/F355/F381-F434 lifetime failures. Cross-checking separately cold-exact SpriteNode F129 (`00410350`) and FighterRender F126 (`00453F70`) found the precise native `FILD; MOV; FSUBR` source pattern: directly unparenthesized float lvalue minus integer facing × node X. The parenthesized, semantically equal float expression instead wrongly emits `FLD` then `FISUB`. Reusing that **original compiler expression behavior** restores the full 1,268 bytes; native tinted and ordinary sprite draws, transform/scale/rotation and real texture filtering all verified. The separately identified Marisa `CharacterAux::RunAt00497070` boss was independently completed in F440 (its own 1,291 original CODE bytes and distinct 136-byte quad stack carrier); do not conflate the two.
+
+**F440:** the entire original R049 Marisa auxiliary projectile/particle chain renderer `CharacterAux::RunAt00497070` `00497070` is now complete **1,291 authored native CODE bytes / 273 original x86 instructions**, **1167/1167** original nonfield bytes and **31/31** authentic physical native COFF fields, with **only one affected-unit cold replay 1/1 exact**. The native 8×36 nested chain/particle sequence, texture chain draw, four genuine trig calls per internal iteration, source field offsets and X/Y/Z camera transform all remain intact. The original quad stack allocation is independently **136 bytes** (132 known drawable bytes with untyped 4-byte tail), *not* F437 mirrored-node 140 bytes. VC7.1 `__declspec(align(4)) short radius` restores the actually observed EBP-4 short slot and five native accesses, without fake padding. Using a real unparenthesized `FLOAT(0x1010)` lvalue restores the native `FLD [006582E0]; FMUL [owner+0x1010]; FDIV [00657480]` Z depth evaluation; parenthesized equivalent source had five wrong nonreloc bytes. Native 0xE8 frame is recovered with all actual physical temps, original global float constants, four trig calls and all draw/transform callee refs. Old F356-F363/F388/F438-F439 negatives superseded; no invented full original sprite/owner class layout or external callee CODE credits.
 
 **Corrections to old notes:** The 686-byte writer and 429-byte reader are both **exact** (F339/F338), not pending F249/F250. The full 1,252-byte replay writer and 375-byte finalizer are both **exact** (F326/F328), not pending F219/F218/F289. The 1,766-byte font rasterizer is **exact** (F319), not pending F299/F302. The 301-byte glyph loader is **exact** (F318), not pending F291. The 916-byte MusicRoom catalog + separately compared 16-byte jump table is **exact in F258** (916 CODE credit only). Other accepted 1,000+ byte bosses include F271 projected quad (1,185), F278 pattern chooser (1,264), F282 resource loader (1,186), F292 overlay text box (1,385), F294 effects catalog (1,722), and F244 scene advance (1,529 CODE). Earlier failures remain useful *historical controls*, but must never be presented as current unaccepted work.
 
@@ -184,7 +187,6 @@ These remain **unclassified/nonexact** in `config/functions.csv`, despite promis
 
 | Function (native start) | Whole CODE | Best known / actual blocker | Retained private evidence |
 | --- | ---: | --- | --- |
-| `CharacterAux::RunAt00497070` `00497070` | **1,291** | Original native 273-instruction nested 8×36 trigonometric chain; complete natural source now 1,291 bytes, exactly 273 instruction kinds and lengths, but 1043/1167 comparable byte positions, wrong physical stack allocations and at least one float relocation; **not exact**. | `.analysis/f356-character-aux-boss/`, `.analysis/f358-marisa-frame/`, `.analysis/f361-marisa-expression-order/`, `.analysis/f362-marisa-carrier/`, `.analysis/f363-marisa-shorts/` |
 | `SceneObject::ReleaseAt0043B0B0` `0043B0B0` | **248** | Full natural control but nine or more real EBP-slot differences. Name and owner provisional. | `.analysis/f215-battle-release/`, `.analysis/f260-battle-lifetimes/` |
 | `ReplayScene::DrawSaveFilename` `0042C270` | **303** | Natural output 341–342 bytes; actual 14-byte prefix, 8-byte glyph bytes and quad scope. | `.analysis/f323-replay-filename/`, `.analysis/f290-replay-filename/` |
 | `NameEntryScene::DrawDecimalGlyphLabelAt0042B110` | **169** | Original glyph/quad stack and `/GS` differ; natural 143/170-byte probes fail. | `.analysis/f329-rank-glyphs/`, `.analysis/f330-glyph-packet/` |

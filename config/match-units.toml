@@ -55678,3 +55678,168 @@ offset = 1260
 type = "REL32"
 symbol = "?SetTextureFilter@SpriteRenderDeviceF254@@QAEXH@Z"
 target = 0x0040C860
+
+
+[units.marisa-auxiliary-projectile-chain-render-00497070]
+source = "src/MarisaProjectileChainRenderF440.cpp"
+object = "build/matching/MarisaProjectileChainRenderF440.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["CharacterAux::RunAt00497070"]
+symbol = "?RenderChain@MarisaAuxF356@@QAEXXZ"
+target_address = 0x00497070
+size = 1291
+[[units.marisa-auxiliary-projectile-chain-render-00497070.relocations]]
+offset = 44
+type = "REL32"
+symbol = "?Construct@NativeMarisaQuadF362@@QAEXXZ"
+target = 0x0040D990
+[[units.marisa-auxiliary-projectile-chain-render-00497070.relocations]]
+offset = 50
+type = "DIR32"
+symbol = "?g_MarisaCameraXAt00671404@@3MB"
+target = 0x00671404
+[[units.marisa-auxiliary-projectile-chain-render-00497070.relocations]]
+offset = 56
+type = "DIR32"
+symbol = "?g_MarisaCameraOffsetXAt00657834@@3MB"
+target = 0x00657834
+[[units.marisa-auxiliary-projectile-chain-render-00497070.relocations]]
+offset = 68
+type = "DIR32"
+symbol = "?g_MarisaCameraYAt006713C4@@3MB"
+target = 0x006713C4
+[[units.marisa-auxiliary-projectile-chain-render-00497070.relocations]]
+offset = 87
+type = "REL32"
+symbol = "?SetBlendMode@MarisaRendererF356@@QAEXH@Z"
+target = 0x0040C7F0
+[[units.marisa-auxiliary-projectile-chain-render-00497070.relocations]]
+offset = 238
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.marisa-auxiliary-projectile-chain-render-00497070.relocations]]
+offset = 294
+type = "DIR32"
+symbol = "?g_MarisaAngleStepAt00657828@@3MB"
+target = 0x00657828
+[[units.marisa-auxiliary-projectile-chain-render-00497070.relocations]]
+offset = 300
+type = "DIR32"
+symbol = "?g_MarisaAngleMultiplierAt00657850@@3MB"
+target = 0x00657850
+[[units.marisa-auxiliary-projectile-chain-render-00497070.relocations]]
+offset = 309
+type = "REL32"
+symbol = "?CameraCosineAt0040D900@@YAMM@Z"
+target = 0x0040D900
+[[units.marisa-auxiliary-projectile-chain-render-00497070.relocations]]
+offset = 346
+type = "DIR32"
+symbol = "?g_MarisaAngleStepAt00657828@@3MB"
+target = 0x00657828
+[[units.marisa-auxiliary-projectile-chain-render-00497070.relocations]]
+offset = 352
+type = "DIR32"
+symbol = "?g_MarisaAngleMultiplierAt00657850@@3MB"
+target = 0x00657850
+[[units.marisa-auxiliary-projectile-chain-render-00497070.relocations]]
+offset = 361
+type = "REL32"
+symbol = "?CameraSineAt0040D940@@YAMM@Z"
+target = 0x0040D940
+[[units.marisa-auxiliary-projectile-chain-render-00497070.relocations]]
+offset = 408
+type = "DIR32"
+symbol = "?g_MarisaAngleStepAt00657828@@3MB"
+target = 0x00657828
+[[units.marisa-auxiliary-projectile-chain-render-00497070.relocations]]
+offset = 414
+type = "DIR32"
+symbol = "?g_MarisaAngleMultiplierAt00657850@@3MB"
+target = 0x00657850
+[[units.marisa-auxiliary-projectile-chain-render-00497070.relocations]]
+offset = 423
+type = "REL32"
+symbol = "?CameraCosineAt0040D900@@YAMM@Z"
+target = 0x0040D900
+[[units.marisa-auxiliary-projectile-chain-render-00497070.relocations]]
+offset = 457
+type = "DIR32"
+symbol = "?g_MarisaAngleStepAt00657828@@3MB"
+target = 0x00657828
+[[units.marisa-auxiliary-projectile-chain-render-00497070.relocations]]
+offset = 463
+type = "DIR32"
+symbol = "?g_MarisaAngleMultiplierAt00657850@@3MB"
+target = 0x00657850
+[[units.marisa-auxiliary-projectile-chain-render-00497070.relocations]]
+offset = 472
+type = "REL32"
+symbol = "?CameraSineAt0040D940@@YAMM@Z"
+target = 0x0040D940
+[[units.marisa-auxiliary-projectile-chain-render-00497070.relocations]]
+offset = 506
+type = "DIR32"
+symbol = "?g_MarisaParticleDepthAt006582E0@@3MB"
+target = 0x006582E0
+[[units.marisa-auxiliary-projectile-chain-render-00497070.relocations]]
+offset = 518
+type = "DIR32"
+symbol = "?g_MarisaDepthDivisorAt00657480@@3MB"
+target = 0x00657480
+[[units.marisa-auxiliary-projectile-chain-render-00497070.relocations]]
+offset = 653
+type = "DIR32"
+symbol = "?g_MarisaPhaseDivisorAAt00659310@@3MB"
+target = 0x00659310
+[[units.marisa-auxiliary-projectile-chain-render-00497070.relocations]]
+offset = 664
+type = "REL32"
+symbol = "?CameraCosineAt0040D900@@YAMM@Z"
+target = 0x0040D900
+[[units.marisa-auxiliary-projectile-chain-render-00497070.relocations]]
+offset = 673
+type = "DIR32"
+symbol = "?g_MarisaPhaseMultiplierAt00657878@@3MB"
+target = 0x00657878
+[[units.marisa-auxiliary-projectile-chain-render-00497070.relocations]]
+offset = 760
+type = "DIR32"
+symbol = "?g_MarisaPhaseDivisorBAt0065788C@@3MB"
+target = 0x0065788C
+[[units.marisa-auxiliary-projectile-chain-render-00497070.relocations]]
+offset = 771
+type = "REL32"
+symbol = "?CameraSineAt0040D940@@YAMM@Z"
+target = 0x0040D940
+[[units.marisa-auxiliary-projectile-chain-render-00497070.relocations]]
+offset = 780
+type = "DIR32"
+symbol = "?g_MarisaPhaseMultiplierAt00657878@@3MB"
+target = 0x00657878
+[[units.marisa-auxiliary-projectile-chain-render-00497070.relocations]]
+offset = 807
+type = "REL32"
+symbol = "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004116F0
+[[units.marisa-auxiliary-projectile-chain-render-00497070.relocations]]
+offset = 886
+type = "REL32"
+symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z"
+target = 0x00411500
+[[units.marisa-auxiliary-projectile-chain-render-00497070.relocations]]
+offset = 897
+type = "DIR32"
+symbol = "?g_MarisaCameraOffsetYAt00657830@@3MB"
+target = 0x00657830
+[[units.marisa-auxiliary-projectile-chain-render-00497070.relocations]]
+offset = 919
+type = "REL32"
+symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z"
+target = 0x00411500
+[[units.marisa-auxiliary-projectile-chain-render-00497070.relocations]]
+offset = 1278
+type = "REL32"
+symbol = "?DrawProjectileChain@MarisaRendererF356@@QAEXHPBXH@Z"
+target = 0x0040C970
