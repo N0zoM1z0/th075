@@ -14,7 +14,7 @@ Earlier H184 advice to stop is historical and **does not apply**.
 | --- | --- |
 | Local branch / last exact-code commit | `main` / F228 acceptance; previous committed F226 `823608c` |
 | Upstream | `origin/main`; F226 `823608c` plus pending F227/F228 acceptance; verify branch status after commit |
-| Working tree | Clean after F226 commit if completed; inspect actual status every time |
+| Working tree | Commit F227/F228 after the full F228 CI; inspect actual status every time |
 | Native binary | `resources/th075.exe`, SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98` |
 | Candidate count | 4,351; origin review: 1,002 authored, 2,671 library, 581 compiler, 97 unknown |
 | Accepted functions / units | **544 / 544** |
@@ -22,7 +22,7 @@ Earlier H184 advice to stop is historical and **does not apply**.
 | Reviewed authored coverage | 771,331 / 1,973,516 = **39.08%** |
 | Conservative coverage | **39.01%** counting 3,608 origin-pending bytes |
 | Goal | **98% not reached** |
-| Verification | F226 1005-byte unit; F227 four fighter units + recovered 1029-byte choice; F228 independent 995-byte confirmation; only six new/affected units cold-replayed for latest batch, no all-unit cold replay; targeted tests passed; no external Oracle receipt |
+| Verification | F226 1005-byte unit; F227 four fighter units + recovered 1029-byte choice; F228 independent 995-byte confirmation; only six new/affected units cold-replayed for latest batch, no all-unit cold replay; full F228 CI 3,613/3,613 passed; no external Oracle receipt |
 
 **Recheck the actual live status immediately**. Local commits are checkpoints,
 not evidence of a remote push or external Oracle acceptance. Earlier Git
