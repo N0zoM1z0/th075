@@ -1,1094 +1,142 @@
-# TH075 active reconstruction status — F223
+# TH075 — active reconstruction handoff (F223)
 
-Updated 2026-10-28. The user explicitly resumed reconstruction and requires
-serious treatment of both large/core and small/leaf functions; all historical
-assumptions are provisional. Do not avoid or discard dirty work. Use commit
-subjects `gpt-web: ...`. The H184 *no-active-goal* handoff below is historical
-and superseded by this active request.
+**Updated 2026-10-28. Read this document before new experiments.**
 
-F184 input functions were independently reconstructed from the supplied target and accepted
-by complete canonical cold replay:
+The latest user instruction is to **continue actually reconstructing TH075**,
+tackle both large/core functions and small leaves, distrust historical
+hypotheses until checked, handle all dirty work (no concurrent session), and
+save substantial verified progress in Git commits beginning `gpt-web: ...`.
+Earlier H184 advice to stop is historical and **does not apply**.
 
-| Function | Extent | Code bytes | Actual relocation fields | Cold replay |
-| --- | --- | ---: | ---: | --- |
-| TitleScene::PollMenuInput | 0043ABF0..0043ACD3 | 228 | 19 | exact |
-| ReplayScene::PollInput | 00429DC0..00429EF5 | 310 | 27 | exact |
+## 1. Verified state at handoff
 
-Both original extents end in plain RET and are followed by INT3 alignment.
-Independent Capstone decoding consumed all 538 native bytes. Ghidra read-back
-agrees on boundaries and direct callees; VC7.1 source code independently
-recompiled into two complete matching COMDAT bodies in one object. All 46
-relocation offsets, types, symbols and resolved native targets are retained in
-`config/match-units.toml`. The replay command used:
+| Item | Current evidence |
+| --- | --- |
+| Local branch / last exact-code commit | `main` / `ca81d72` (F223; housekeeping follows) |
+| Upstream | `origin/main`; 30 commits ahead after F223, plus this housekeeping commit; confirm live count |
+| Working tree | Clean immediately after F223; cleanup changes committed separately; always check live state |
+| Native binary | `resources/th075.exe`, SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98` |
+| Candidate count | 4,351; origin review: 1,002 authored, 2,671 library, 581 compiler, 97 unknown |
+| Accepted functions / units | **534 / 534** |
+| Accepted authored CODE | **766,591 bytes** |
+| Reviewed authored coverage | 766,591 / 1,973,516 = **38.84%** |
+| Conservative coverage | **38.77%** counting 3,608 origin-pending bytes |
+| Goal | **98% not reached** |
+| Verification | F222/F223 cold exact; 2026-10-28 full CI **3,613/3,613 passed**; no new Oracle receipt claimed |
+
+**Recheck the actual live status immediately**. Local commits are checkpoints,
+not evidence of a remote push or external Oracle acceptance. Earlier Git
+pushes were blocked by DNS. Preserve all locally ahead commits (30 after F223, plus this cleanup); do not
+switch to the behind `origin/main`, force-push or reset the worktree.
 
 ```bash
-scripts/repo-python scripts/replay-exact-units.py --unit title-poll-menu-input-0043abf0 --unit replay-poll-input-00429dc0
+git status --short --branch
+git log -5 --oneline
+scripts/repo-python scripts/verify-target.py
+scripts/repo-python scripts/validate-tracking.py --require-target
+scripts/repo-python scripts/report-reconstruction-status.py --summary
+scripts/repo-python scripts/ghidra.py check
 ```
 
-Distinct synthetic pointer-only receiver interfaces avoid asserting the title
-and replay scenes share a complete class layout. DWORD title controls and byte
-replay controls, independent signs, ESC behavior and window-toggle key chord
-remain separate. Native C++ class names, owner layouts and runtime integration
-are still unknown; no imported credit was granted for helpers or data.
-
-F185 added a substantial core state machine, **`TitleScene::Advance` at
-`0x0043A270`: 1,273 CODE bytes plus the full 40-byte owned ten-entry switch
-table immediately after RET**. Target body and table were independently read
-from the pinned executable; native code hash
-`f528f379b927bad808eaa0703fa48c798fb8998bbae44ca9a2c96264215928a7`,
-table hash `01b9780b16a3176977d6c14d930d0eb42e860439a880b82435248b8459770254`.
-All 342 native instructions, table entries, 65 external and 11 local
-relocation fields were checked. Cold source replay of the full 1,313-byte
-extent returned exact. The code implements two-player menu mode dispatch,
-exit/cancel/navigation, per-item fade progress, timed transition and
-randomized attract mode with audio fade. The source is a pointer-only borrowed
-scene/virtual-slot view: owner layout, original return type/name and broader
-runtime identity remain unproven; source/byte credit is only for the 1,273
-function CODE bytes. The jump table is compared but adds no CODE credit.
-
-A redundant identical candidate unit alias was independently detected after
-registration and reconciled, leaving **one uniquely mapped unit for each
-matching function** (496/496). Its private reconciliation receipt is preserved;
-new automated coverage rejects unmatched or duplicate extents. No unrelated
-source, original object layouts or origin classifications were changed.
-
-
-F186 additionally cold-reconstructed **`OptionsScene::AdvanceAt00428F00`**,
-a 951-byte scene state-machine with an adjacent owned 28-byte / seven-entry
-switch table. The complete 979-byte extent, **70 COFF relocations including
-eight same-COMDAT local-target fields**, is cold-exact. Independent Capstone
-decoding consumed all 269 native code instructions, ending at plain RET
-004292B6; the table occupies 004292B7..004292D2 and is followed by INT3.
-Native CODE SHA256
-`21e698c0f26cbca4c23286883c7de9a04cf91b1825c1090dfa320b09956f75fa`;
-table SHA256
-`f84e9f643843fc0db5c9ce2278848b8224a99bb915d32538e7d99646afd4f124`.
-The reconstruction retains seven menu choices, signed two-axis navigation,
-three option toggles, signed wrap/modulo policy, sound/stream volume bounds,
-audio-offset application, delayed sample sound, configuration saving and
-two early transition exits. The initial ordinary `!flag` source generated
-a 982-byte comparison block; a later `1 - (flag != 0)` control gave 1001;
-natural `flag ? 0 : 1` reproduced native 32-bit NEG/SBB/INC and all
-remaining instruction/branch locations. Failed control objects and proofs
-remain under `.analysis/f186-options-advance/`; no structural-only result
-was counted as exact. Both call-only scene interfaces and the separate
-configuration-saving callee remain provisional: this unit earns only its
-own 951 CODE bytes, not helper/table ownership credit.
-
-F187 cold-reconstructed **`GameConfig::SaveIni`** at 00419450: 339 native
-CODE bytes / 116 complete instructions, one plain RET at 004195A2 and
-following INT3. The full 339 bytes and **27 actual DIR32 relocation fields**
-(including the verified native filename anchor 00657A70 and four Win32
-imports) pass canonical cold replay with zero differences. Its real C++
-source calls `CreateFileA("config.ini",...)`, `SetFilePointer`, exactly
-eleven `WriteFile` operations of 80-byte config storage and observed individual
-bytes, and `CloseHandle`. The third write precedes a real byte store of 1;
-no invented struct layout, ignored return check, Win32 shortcuts or data-byte
-credit. The original source's namespace and full storage ownership remain
-unknown. The first ordinary /Od source (same 339 bytes) used a different
-HANDLE/DWORD stack order, giving 26 nonrelocation byte differences; declaring
-the real `DWORD written` ahead of `HANDLE file` reproduced the native local
-slot assignments and complete compiler output. F187 implements the *same*
-`OptionsSettingsF186::SaveConfiguration` COFF name already called by F186;
-the accepted F186 body/source/relocations were not modified.
-
-F188 independently cold-reconstructed `OptionsScene::ApplySelectionAt00429F00`:
-**563 CODE bytes** plus the following owned **28-byte seven-entry switch
-jump table**, 591/591 full comparison bytes and **34 actual COFF relocation
-fields**, of which eight are local to this COMDAT. The native body is 137
-x86 instructions ending in RET 4 at 0042A130; the native code SHA256 is
-`65e7c664f6846ac95a8085eeb2bba5eab32f5ad2c272cb3d2dfa049ad8e2d759`,
-and the following table SHA256 is
-`3bab5fa7d3230c10ba3afdd6140cc4ddd35837b701713cbff1d0156ffe9a64b2`.
-The complete owned 591-byte comparison, including all relocations, passed
-fresh /GX cold replay. Ghidra/dependency inspection independently confirmed
-Direct3D8 LockRect/UnlockRect slots, the 56-byte `operator new` size,
-FontSurface constructor, CreateFont, Rasterize, generated scalar deleting
-destructor and EH/cookie recovery. Native handler 006558BD and its
-006558AF cleanup remain external compiler-generated dependencies; they are
-**not** independently counted as matching source or data. The source
-uses exactly the existing F186 caller COFF method symbol, with signed
-menu-index comparison reflecting native MOVSX.
-
-The unoptimized /GX- probe gave a different non-EH 534-byte body; /GX
-reconstructed the EH prologue and typed allocation. A nominal 512-byte text
-buffer caused an 8-byte stack-window displacement. Natural 500- and
-504-byte text buffers both gave the same native frame; the original nominal
-buffer size remains unknown. The original unsigned switch expression
-emitted MOVZX, and a signed comparison restored native MOVSX. A later
-source-only offset-check experiment renumbered compiler-local jump labels;
-that control was rejected and the original field/target mapping cold-replayed
-again. All experiments remain private under
-`.analysis/f188-options-selection/`. The 56-byte temporary rasterizer
-allocation is physically anchored to native constructor/method offsets and
-allocation size, but member +0x18 and complete original class semantics are
-unproven. Do not transplant that type or infer other owners. There is no
-claim of exactness for borrowed text rendering, D3D or EH helpers.
-
-F190 independently cold-reconstructed `Graphics::SetDefaultStates`
-`0x00401540`: **604 CODE bytes / 178 native x86 instructions**, with
-**45 genuine COFF relocations** and no owned switch table. The entire 604
-bytes were recreated by pinned VC7.1 /GX- from natural D3D8 API calls.
-Native code SHA256:
-`d5cff4b102acaa874856d80ff21fd09dcd624731c4775e81d6ea00f4c3d74bac`.
-The source preserves all four initial render-state changes, three accepted
-blend/depth/filter helper calls, eight texture-stage states, later cull/lighting
-states, FVF `0x144`, feature-gated D3DXAssembleShader of the observed shader
-source at 0066C090, pixel shader creation and buffer release, the four real
-floating-point grayscale weights, SetPixelShaderConstant, and the accepted
-pixel-mode state setter. No data, D3DX SDK/library helper or global bytes
-receive separate credit. Initial ordinary `if (g_Device)` generated a
-603-byte structurally mismatching body: it used one long conditional jump.
-Writing the equivalent but native-observed `if (g_Device == 0) return;`
-restored the short conditional plus long unconditional branch and all
-604 bytes matched, with 45 fields replayed. Private negative controls are
-under `.analysis/f190-graphics-defaults/`.
-
-F189 separately investigated the large `BattleScene::Initialize`
-`0x0043AD10`: its complete 922 bytes decode into 230 instructions, one
-RET and original EH constructor frame. The native contains four nested
-allocation extents (0x50, 1, 0x14, 0x14 bytes) and dependencies that lack a
-proven complete source-level owner layout. Its native disassembly is retained
-in `.analysis/f189-battle-init/native.asm`, **without accepting or crediting
-unconstructed objects**. That large function remains a live target, not a
-reason to ignore the worktree or to fabricate layouts.
-
-F191 cold-reconstructed the other major music-room text routine
-`MusicRoomScene::RenderSelectedDetails`, `0x00426A70`. Its full native
-**860 CODE bytes** decode into **217 complete x86 instructions**, ending in
-`RET 4` at 00426DC9 with following INT3 alignment. Target body SHA256:
-`ea9d870e0edd790fe014a723f6a6466ff5867dec44fda5dee483ea856452b7ae`.
-The full function and **25 actual COFF DIR32/REL32 fields** pass fresh
-canonical VC7.1 `/GX` cold replay with zero differences. No owned jump
-table is attached to this extent. It performs two independent
-`IDirect3DTexture8::LockRect/UnlockRect` passes, each with native
-`new(56)`, rasterizer constructor/font setup, render and generated deleting
-destructor, and has original EH/GS cookie handling. The first pass copies the
-selected or fallback track description through the original CRT `_strcpy`
-callee; the second formats the track number, title and artist through
-`_sprintf`. The target uses *signed* track bounds and a real 16-byte
-per-record stride.
-
-Independent compiler controls caught a meaningful order distinction:
-`selected >= trackCount` emitted an alternate register/branch sequence
-(matching 722/760 non-relocation bytes), whereas
-`trackCount <= selected` produced the target's count-first comparison and
-all 760 nonrelocation bytes. Literal 1,996- and 2,000-byte text buffers both
-reproduced the same measured code, whereas 2,004 and 2,008 displaced
-stack slots by eight bytes; the precise original buffer declaration remains
-unknown. The physically 56-byte glyph allocation carrier is observed from
-the native allocation and actual constructor/method accesses, not proof of a
-complete reusable original font owner; +0x18 remains unresolved. No
-additional byte credit for the GDI helpers, SDK, game-data strings or EH
-helper. Private cold evidence and rejected probes are preserved under
-`.analysis/f191-music-details/`.
-
-F192 followed the actual base-scene lifecycle into a small but independently
-reviewed destructor. The complete 31-byte `SceneBase::ReleaseGameGlobalsAt00431F40`
-has 13 decoded native instructions and two COFF fields: the observed vtable
-anchor `0x00657B88` and the true `0x00417430` config cleanup callee.
-Its native body hash is
-`f0fdc9015cffb6b7194ee2641a8018c52eb7a984d6a68d1f9e8c809b77698cf9`.
-A standalone call-only `SceneBaseReleaseF192::~SceneBaseReleaseF192`
-cold-builds to **31/31 exact** with both relocation fields fully replayed.
-
-The paired scene base constructor `0x004251C0` was independently decoded
-(34 bytes, 13 instructions, native hash
-`9ff723978ea0aa946f4147ff70aef987da9b3dbd431196873a7dc4fa331eb85f`)
-and a **private full 34-byte structural-exact compiler probe** was built,
-including its vtable anchor and separate `0x00417210` defaults initializer.
-However R108's original explicit-vs-compiler-generated ownership ambiguity
-cannot be resolved just by that match. It remains **unknown origin, no source
-mapping, no match unit, no exact byte credit**, and is still counted in the
-conservative pending denominator. This was deliberately not hidden or
-force-reclassified to inflate the count.
-
-F193 follows the previously identified scene-base global-configuration
-constructor dependency. The authored `GameGlobals::Initialize` body at
-`0x00417210` contains **531 CODE bytes / 92 native x86 instructions** and
-**71 actual COFF relocation fields**. Target SHA256:
-`45043cd59354a3a3d1d5525d2c44233786e44e3cbfded0b2c45cd5dbc3a4f7b3`.
-Natural VC7.1 `/GX-` source cold-replayed all **531/531** bytes, including
-every field. The source preserves first-use gating at 00671614, each observed
-byte/DWORD keymap/default store, two player selections, eleven string copies
-to physically 20-byte-spaced character-name slots, mode flags, and the
-`0x004192F0` Win32 configuration-load dependency. It preserves the
-two native stores to one setting byte at 00671438; that byte's original
-source-level variable grouping remains uncertain. The source declares
-only borrowed global anchors; it allocates no settings storage, imports
-no helper/data credit and does not assert the original globals' nominal
-array extents. The `0x004251C0` constructor that calls it remains
-**origin unknown** and is not added to exact coverage.
-
-F194 closes the actual F193 config.ini *read* dependency at
-`0x004192F0`: **339 native CODE bytes**, **116 fully decoded x86
-instructions**, **27 actual Win32/data relocations**, whole
-canonical /GX- cold replay **339/339 exact**. Target native body SHA256:
-`5a76d9c05e369ba111429f3160678f7cd068acbf2942f27f85afcf258dbab4df`.
-The Win32 sequence is CreateFileA("config.ini", GENERIC_READ,
-OPEN_EXISTING), SetFilePointer, one 80-byte + ten single-byte ReadFile
-calls, one observed flag normalization after its own read, CloseHandle
-and normal RET. The original HANDLE and meaningful DWORD read-count
-locals occupy EBP-8 / EBP-4, unlike the already accepted save policy.
-Initial natural 339-byte controls mismatched 26 nonrelocation bytes
-despite equal size; independent local-name and declaration controls
-showed the compiler's physical local slot allocation depends on
-meaningful symbol identities. The adopted `readSize` is a genuine
-bytes-transferred output. Original source-level variable spelling
-remains unproved. Readonly filename/data storage and imported APIs
-earn no extra byte credit, and the separately accepted F193 caller
-is unchanged.
-
-F195 follows the other end of the shared scene/global lifetime:
-the **358-byte `GameGlobals::Release` at `0x00417430`**, 99 native
-instructions and 18 actual relocations, complete canonical /GX- cold replay
-**358/358 exact**. Native target SHA256:
-`238163545e5867e5869753fed589643a52634d8107f9fe11486a58a42bd6016b`.
-Natural source retains the reference-count decrement and zero gate;
-three different borrowed virtual-destructor paths (slot +0x14 for two
-combat actors, slot0 for a third), three real pointer null stores,
-streaming audio shutdown through accepted `ClearPlayback`, and three
-distinct scalar-deleting-destructor call targets 0041A110/41A140/41A170
-for separate heap-owned resources. The body was full byte-exact on the
-first normal source probe, using only call-only pointer views; no
-complete unknown heap classes were instantiated, no code/data credit
-was given for the generated destructor thunks or audio helper, and
-no ownership classification was changed. The authored F193 initializer
-and F194 read helper are separate accepted functions. Base constructor
-`004251C0` remains unknown-origin and uncredited.
-
-F196 is the first complete exact reconstruction of the previously
-unaccepted `BattleScene::Initialize` at `0x0043AD10`. Independent
-target decoding gives **922 CODE bytes, 230 original x86 instructions,
-no owned jump table, a normal RET, followed by INT3 alignment**;
-native SHA256:
-`10d1747c1b0b512f21e4b2cef06c1d00a291e05f0181d19261563e785959d75e`.
-A natural C++ derived constructor compiled with pinned VC7.1 `/GX`
-**cold-replays all 922/922 bytes and 40/40 actual relocation fields**,
-including the external base ctor call, exact native derived vtable
-pointer at 00658334, imported timeGetTime, real texture pack and two
-HUD constructor chains, sound/graphics state, actor addresses,
-float/byte initialization, and EH frame references. The recorded R020
-original EH metadata independently confirms **five cleanup states**
-for native handler 00655B74 and four transient allocation states
-following the base. Generated EH helper, vtable bytes, SDK/CRT and
-all borrowed subconstructor bodies receive **no independent byte credit**.
-
-The source-compatible allocation carriers were built from independent
-physical evidence: base vtable at offset0 and one-byte globals
-subobject at +4 yield the observed eight-byte base boundary;
-TextureManager's real ctor `0x0040AD80` calls nested vector
-constructors at +8,+0x18,+0x28 (three 16-byte regions), deque at
-+0x38 (20 bytes), and sets byte +0x4C. Together with its observed
-root storage this physically accounts for exactly **80 bytes**.
-The `new(1)` digit atlas constructor `0x00446590` has no object
-fields and the actual `new(20)` combo-counter constructors
-`0x0043D490` use the offsets independently accepted in F173.
-Original vector element types, the texture root word at +0, original
-class identities/nominal full scene layout and whether R108 base
-constructor `0x004251C0` was authored or generated remain unknown.
-The latter gets no new source or exact credit. These carriers are
-local to the observed new/ctor call sites; the derived scene is not
-instantiated, embedded or measured as a complete original type.
-No false padding fields/locals, inline assembly, conditional acceptance,
-masked relocation bytes, EH code grafts or cropped extent were used.
-The earlier unaccepted F189 disassembly remains historical negative
-evidence; do not read its old 'unaccepted' statement as current status.
-
-F197 independently cross-tested those scene-base/texture physical
-contracts on another complete constructor: `TitleScene::Initialize` at
-`0x0043A020`, **435 native CODE bytes**, 116 native x86 instructions,
-**18 actual COFF relocation fields**, normal RET at 43A1D2 and INT3
-alignment. Native SHA256:
-`e4c04d16c30c718c2504e389a945d902b5766e687aa45e40123f3e5c8fb5b573`.
-It independently cold-replays **435/435 exact** from natural /GX C++.
-The original independent R020 `00655B23` EH handler reports exactly
-**two cleanup states** (base and one temporary allocation, native
-unwinds `00655B10/18`) rather than the battle constructor's five.
-The source reproduces the actual base ctor dependency `4251C0`, the
-title vtable anchor `658308`, both timeGetTime imports, new(80)
-TextureManager `40AD80`, slot allocation count4, original
-`data\system\title.dat` pack load, all menu alpha/selection
-byte stores, two selected-player bytes and sequence-state clear.
-No full nominal TitleScene object size or original container element
-types have been asserted or used to allocate a TitleScene. The
-paired R108 base constructor remains origin-unknown and uncredited.
-Matching the 8/80-byte physical contracts independently in F196 and
-F197 strengthens their byte/layout evidence, not proof of original C++
-names or independent acceptance of borrowed constructors.
-
-F198 independently follows the shared texture-manager dependency called
-from the complete F196/F197 battle/title constructors. **TextureManager::
-Initialize at 0x0040AD80** consists of **177 native CODE bytes**, 48
-whole x86 instructions, 12 real DIR32/REL32 relocation fields and a
-five-state original VC7.1 EH frame. Native body SHA256
-`e0ce84473c5b407a441c88fc5c7485a47547ad48e39abadf4beedd1d41cbf37a`.
-A source-compatible natural constructor using the observed physical
-80-byte receiver, reference-count base, three 16-byte sequence-storage
-regions at offsets 8/24/40 and one 20-byte queue at 56 compiled exact
-on the first full ordinary probe; the native member constructor and
-reset order, offset+4 state and offset+76 byte are preserved. The
-original R020 handler `00654ED4` has the expected five cleanup states,
-which are target evidence, not separate new exact helper credits.
-
-**TextureManager::AllocateUnformattedSlots at 0x0040B1D0** is
-**128 native CODE bytes**, 37 complete x86 instructions, eight
-actual relocation fields and the independent original one-state EH
-handler `00654F48`; SHA256
-`570580110f4777092fba3bb6ca93d760abb364c5dea46998a42e07ad0ed6cac4`.
-A meaningful 44-byte local entry object with real ctor 0040D8C0
-and destructor 0040D8E0 naturally reproduces the exact 0x34 stack
-frame. The two slot initialization calls target receivers at
-this+8 and this+24 and consume the real count, entry and initialized
-zero value. The first natural probe also matched every byte.
-Both methods passed the pinned canonical cold compiler/replay as
-**2/2 exact, 305 new CODE bytes and 20 real fields**.
-
-Member storage widths derive from independent F196/F197 native allocation
-sizes, actual ctor/dtor call offsets, original EH transitions and whole
-byte comparisons. Source-compatible names and container *element*
-types remain provisional, as does the nominal original class identity;
-neither source file defines external data or claims other helper, SDK
-or generated EH byte credits. The related larger 0x0040AE40 texture
-manager release remains to reconstruct.
-
-F199 completes the *release* half of the texture manager constructor
-accepted as F198. `TextureManager::ReleaseResources` at `0x0040AE40`
-is **434 native CODE bytes / 135 instructions** with **23 real COFF
-relocation fields**; SHA256
-`ae20b89ac58429797e1de78f18c5419a216567af8fc3ca11da18c837a14cc3f8`.
-The exact original `/GX` EH constructor/destructor unwinding record is
-`0x00654F12` (five states). The source-compatible borrowed 80-byte
-manager holds the previously observed base, vectors and queue. Its
-natural destructor frees the +4 raw memory, traverses two pointer
-vectors at +24 and +40 using the true count/accessor methods, dispatches
-COM Release via slot8, nulls first-vector released slots, clears the
-appropriate vectors, then invokes the native reverse-order automatic
-member destructors. The first full probe produced 431 bytes: it
-discarded the SDK `ULONG Release()` result that the *target itself*
-physically stores at `0x0040AEE8` / stack EBP-0x14. Capturing that
-observed post-release reference count (not fabricating padding or
-an extraneous result) restores the native 0x1C stack frame, exact
-434 bytes and **all 23 relocations** under new canonical cold replay.
-Original STL element types, class/field names, global data and
-SDK/compiler helper bodies remain provisional/uncredited.
-
-F201 was an already present, *uncommitted* candidate discovered during
-the real worktree inspection and investigated rather than skipped.
-`GameState::SaveSnapshot` at `0x00419920` is **904 native CODE
-bytes / 163 decoded instructions**, ordinary RET and following INT3,
-native SHA256
-`23b03c8ccd1fd456027c2536ec3842fdc31cdc7dcb18d140d3ba808f19ad53ad`.
-Independent comparison of the source to the original target verified
-**131 physical DIR32 relocation fields** and its full original
-four-way branching on battle modes **1, 2, 4 and 3**. Native byte,
-word and DWORD writes preserve the chosen player's identity, opposing
-character settings, signed side index, stage and battle-dependent
-live actor fields, in their original ordering. No original complete
-serialization structure or buffer extent is inferred: source uses
-borrowed source/snapshot globals only. Its previously pending unit
-was independently rebuilt *again* with the F199 unit and passed
-**904/904 cold exact**, rather than inheriting unreviewed labels from
-the dirty worktree. No data/import/helper/unknown-origin credit.
-F199 and F201 together add **1,338 authored CODE bytes** and
-154 actual relocations; all previous accepted units and 97 pending
-origins remain intact.
-
-F202 independently completed the corresponding snapshot *restore*
-function `GameState::RestoreFromSnapshot`, `0x004195B0`: the **full
-880 native CODE bytes**, **163 decoded instructions** with normal RET,
-and **129 physical COFF relocation fields** were cold-replayed
-**880/880 exact**. Target body SHA256:
-`20b5cc4a2deae989f5c72cee1bd0fd27eea7c9be6abdc020b7a82d0156981c17`.
-This natural C++ reproduces the real caller-compatible borrowed archive
-at `0x00671750`: record-header read (callee `0x00413A60`), independent
-`LoadRecord(int)` call (`0x00413AC0`), signed saved-mode checks and
-different combat-mode branches, 16-bit record counter update at
-`0x006714A4`, signed player and opposing side indexing `1 - side`,
-and all one-byte player/stage settings in native order. No original
-complete archive or snapshot storage type and no separately credited
-callee/global data are implied. F201 + F202 form a source-matched
-authored save/restore pair: **1,784 CODE bytes, 260 real relocation
-fields**, with both complete native extents cold-replayed.
-
-Dirty-worktree handling: an additional untracked
-`src/GameRestoreF202.cpp` appeared after initial F202 registration.
-It was **not discarded or bypassed**. Its bytes matched preexisting
-private `.analysis/f202-game-snapshot-restore/GameRestoreF202.cpp`
-(SHA256 `280a70998f702d7529a9879d8a0083e68b488f2d7fa833c594f7bce7d0fd47c1`);
-it used alternate C++ identifiers, not an independently adjudicated
-second target function. It was retained byte-for-byte as
-`.analysis/f202-snapshot-restore/UnadoptedAlternative-GameRestoreF202.cpp`
-rather than promoting an unregistered duplicate public source.
-The canonical exact source remains `src/GameStateRestoreF202.cpp`
-with source SHA256
-`912672914ecd95390aecd06a8f8db9ddf80af74f5c4f591805f36888cdfccecc`.
-All 97 pending origins (including R108 at `0x004251C0`) remain intact.
-
-F203 cold-reconstructed the substantial `GameProgress::
-CheckSelectionAt00419E10` progress-combination policy at `0x00419E10`.
-Independent Capstone decoding consumes **671 native CODE bytes / 202
-instructions**; the ordinary RET is followed by **two owned five-entry
-switch tables totaling 40 bytes**. Native code SHA256
-`997d651510426c6dbac11ce4a66f06e2ab20505bcdcf71c3808f026295031b3d`;
-table SHA256
-`519277b311148216fcb966bd52b680855633a07c101494aa1a2a88fa31588d55`.
-All ten table words resolve to the actual 00419E4C..0041A0A2
-native case targets, including intentional repeated labels. The
-complete canonical VC7.1 /GX- cold replay matches **711/711 comparison
-bytes**, with **56 real COFF fields**, including all ten local table
-relocations; only **671 CODE bytes** enter coverage.
-
-The source keeps the actual unsigned byte result, signed char arguments,
-two distinct switch regimes, queries to `0x00416DC0` through the borrowed
-`0x006718F8` record receiver, nonshortcircuit bitwise OR aggregation and
-bitwise AND of the tested progress states, and the native six-entry loops.
-The initial natural compound assignments `matches |= rhs` and
-`matches &= rhs` produced the correct 711-byte length but only
-250/487 non-relocation bytes, because VC7.1 deferred loading the prior
-accumulator until after its query calls. Equivalent meaningful
-`matches = matches | (rhs)` / `matches = matches & (rhs)` source
-emits the observed early EBX load, correct ESI/EDX accumulation and
-exact branch/order, without masked bytes, pad locals or ASM. No
-independent exact credit is claimed for SDK/code helpers, source data,
-jump-table bytes, or the unproven original record class layout.
-Private rejected probes are preserved at `.analysis/f203-progress-selection/`.
-
-F204 cold-reconstructed authored `Music::PlayTrackByIndex` at
-`0x00419CB0`, **318 native CODE bytes / 94 x86 instructions**, normal RET,
-**22 COFF relocation fields** and exact 318/318 cold replay. The
-native SHA256 is
-`9ac546b2bca59fe1e3e3d807574400f6bb324c14e0db8e758390a0316d174d88`.
-All six original wave filename formats, original formatting arguments,
-negative-index early exit, special ending-track archive category,
-progress recording and two restricted clock modes are preserved in
-normal C++. The actual 0x88 stack allocation supports a 128-byte
-meaningful wave-path buffer; 132/136 emit the wrong 0x90 stack-frame
-offset, while the original nominal buffer declaration remains unknown.
-Actual CRT sprintf, import/security cookie and original audio/progress
-callee relocations were compared but receive no independent code credit.
-
-F205 cold-reconstructed the independently reviewed authored 27-byte
-`AudioStream::ScheduleTransitionFadeAt00419DF0` at `0x00419DF0`
-(normal RET, native SHA256
-`43997ef22f85341a11655d92ecc54de7a78a3c916e3f3503e1555c6d15076fd0`).
-The natural call-only wrapper with exact parameters -6000/-200/1/1
-freshly cold-replays all 27 bytes and the single real REL32 call to
-`0x00407E60`. No guessed audio manager class or imported fade
-callee ownership is asserted. Both new units were rebuilt together:
-**345 exact authored CODE bytes / 23 actual fields, 2/2 cold exact**.
-All previous accepted units and 97 pending origins remain untouched.
-
-F206 independently cold-reconstructed the formerly difficult large
-TextureManager::LoadBitmapDirectory at address 0040B280: full
-727 native CODE bytes, 180 x86 instructions, 29 actual DIR32/REL32
-relocations, one RET4 and following INT3 alignment. Native SHA256:
-10539410fb282c0cc58270dc9360a7a11a87d748e519631a2b62c41848b374cc.
-Fresh /GX- cold replay matches all 727 bytes and every physical field;
-no target bytes or relocation fields were masked/cropped.
-
-Native game-authored control flow constructs the bitmap filename,
-initializes actual indexed records at this+8, loads bitmaps,
-chooses palette encode or creates/refreshes/frees 16-bit textures,
-and on failed load calls the real VC7 STL end(), begin()+index,
-and erase(begin()+index,end()) helpers before setting total=index.
-The target repeats the height>64 check in both OR arms; this
-was preserved exactly, not silently corrected to guessed intent.
-All STL helper methods remain imported library dependencies with
-no independent authored exact-byte credit.
-
-A private initial ordinary source returned only 576 bytes by
-replacing the STL iterator protocol with a guessed RemoveAt().
-Restoring the natural four-byte iterator protocol produced exactly
-180 instructions but just 645 bytes because the meaningful index
-and total scalar locals were placed near EBP and encoded with short
-displacements. A real local work record containing int index,
-int total and char filename[260] reproduces the native stack
-allocation 0x130 and true variable offsets EBP-0x118/-0x114/-0x110.
-A 264-byte buffer also emits the same exact native machine code:
-the precise original nominal declaration remains unknown.
-Private compiler variant diagnostics and full native disassembly
-are preserved under .analysis/f206-bitmap-directory/. Original
-C++ vector element types, iterator and texture owner class names,
-and data/helper/library authorship are not claimed.
-
-F207 separately validates the *companion* authored bitmap loader
-TextureManager::LoadBitmapDirectoryWithFormat at address 0040B560.
-Its complete native body is **575 CODE bytes / 145 decoded instructions**
-with one RET4 followed by CC alignment; original SHA256
-bdf51c229e4af4379d9bc45b5e816374a5653d5f239b0f97f8a2276e53c092cc.
-The first independent natural VC7.1 /GX- probe emitted exactly
-575 native bytes and all **23 original DIR32/REL32 fields**
-structurally. A fresh cold replay together with the full 727-byte
-F206 source yielded **2/2 exact units** and 1,302 matching authored
-CODE bytes. No owned inline table or masked field is involved.
-
-This companion copies the observed record fields, uses the distinct
-target bitmap path string at 00657800, loads a bitmap through the real
-0041A3D0 decoder and always selects the four-argument
-Graphics::CreateTexture at 00401C20 (including the actual bitmap
-depth byte). It refreshes the texture, frees and nulls decoded data,
-then on failure performs the same original VC7 STL begin()+index,
-end(), erase(begin()+index,end()) chain and updates total=index.
-The complete natural 0x130 stack frame and meaningful contiguous
-index/total/path storage independently reappear in the different
-575-byte native function. Neither the physical allocation width
-nor matching code proves original nominal STL element and class
-names or uniquely identifies the original filename array length;
-260 and 264 bytes remain indistinguishable compiler controls.
-All STL library functions, bitmap loaders, graphics APIs, imported
-data and EH/GS helpers earn no new exact CODE credit. All previous
-516 accepted functions and 97 pending origin candidates are intact.
-
-F211 independently cold-reconstructed reviewed authored
-`SpriteGeometry::InitializeRectangleFromRect` at `0x0040DB50`:
-**305 complete native CODE bytes / 109 x86 instructions**, ordinary
-`RET 4`, and **nine actual COFF call relocations**. Original CODE SHA256
-`044430cb8da9082f9bac7b8d3a7d0eaa1e908e15cd9e1fff5c90877153897ff0`.
-The source implements the original four-corner rectangle conversion,
-integer-to-float FILD/FSTP x/y values, four 16-byte xyzw temporary
-vertices and four complete four-word assignments to the target scene
-member slots, with the distinct +64 component initialization. The first
-natural four-element array formulation triggered a VC7.1 array
-construction helper and emitted only 282 bytes. Four independently
-declared vertex members compile into the target's four ordinary
-constructor calls and complete **305/305-byte** cold-exact body, with
-**9/9 real fields**. The separate F207 575-byte texture directory
-loader and this F211 source were independently rebuilt and cold-replayed
-together, **2/2 exact**, without modifying any previously accepted units.
-The component declarations are local, physically sized views; the
-original nominal Sprite class, source member names, imported constructor
-bodies and data ownership are still unknown. No hand-crafted assembly,
-false padding or cropped extent is counted.
-
-F212 completes the authored shared sound startup policy
-`GameGlobals::InitializeSound` at `0x004175A0`. The pinned target
-contains **334 CODE bytes / 84 decoded native instructions**, ordinary
-RET with INT3 alignment; original body SHA256
-`edabd3cf233ed6befa5b4761245e68d43f798d87ccd4580c60580a8c35c78fa8`.
-Pinned VC7.1 /GX natural C++ produces **334/334 cold exact bytes** and
-**all 29 actual relocation fields**. The original R020 EH handler
-`0x006551C1` has exactly three new/construction states. Both keyboard
-binding setups use the true +0/0x28 global binding anchors, followed
-by independently observed `new(120)`, `new(8)`, `new(20)`
-constructors at 412DD0, 417000 and 4071C0. The source exactly
-preserves two volume inputs (4073B0 and 4073C0), the wave bank load
-via 4076A0 with original path strings and worker init 5F70E0.
-Compiler EH helpers, audio bank/decode routines, static data and
-the source-level class identities for those physically sized
-allocations are not separately accepted. The allocation carriers
-are used only at native-observed `new` sites and do not claim any
-complete original owner layout. The first complete source already
-matched all bytes; the separate canonical cold build replayed all
-29 relocation fields without masks, inert locals or cropped
-extents. No origin or previously accepted match changed.
-
-F213 completes two independently reviewed authored progress-record
-update leaves from the same caller chain. `ProgressRecords::
-RaiseSelectedValue` at `0x0041A1D0` is **109 CODE bytes / 27 x86
-instructions**, native SHA256
-`058bec1db1ab03bceefd7b1ba7ae8e2182083c40b85d591e596a14e50d16511d`.
-`ProgressRecords::IncrementSelectedRecordCount` at `0x0041A270`
-is **90 CODE bytes / 24 instructions**, SHA256
-`64aea15dd4f38fa7a1281c4ec0e01c129cc015f4fd79c682181c73dd5742cac0`.
-Each entire function ends in the original return sequence with
-INT3 alignment. Neither has a COFF relocation; both have an
-explicit `relocations = []` in the source profile and exact unit.
-Cold compiling their common C++ file regenerated both complete
-bodies **2/2 exact** with no masked bytes.
-
-Both source methods use only a borrowed `this` pointer and
-the original signed indices at +0x16AC4/+0x16AC5 with strides
-0x17F0/0x5FC; they do not construct a complete progress-data owner.
-The first source `if (field < value)` produced incorrect operand
-load order; the equivalent `if (value > field)` loads the signed
-candidate first. Grouping `this + primary*0x17F0` *before*
-the secondary displacement preserves the native pointer arithmetic
-and register choices. The second function's `++field` compiled
-the correct byte count but eight incorrect operand-order bytes.
-Its genuine count update written as `field = field + 1`
-matches the original two independent read/write address
-calculations. No fake locals, extra storage, padding, or
-ABI/layout casts to another complete owner were introduced.
-
-The independently explored larger
-`ProgressRecords::InitializeDefaults` at `0x00416640`
-(910 native CODE bytes) remains **unaccepted**. Target evidence
-confirms a genuine 10x9 stack array containing ten fish-name strings,
-three nested record loops and a fourth counters loop, plus a GS
-cookie. Multiple meaningful array/struct and loop-index controls
-produce 910 bytes but still differ in local stack slots and
-expression evaluation; they remain in
-`.analysis/f209-progress-defaults/` without exact credit.
-Likewise the 248-byte battle-scene destructor at 0043B0B0 and
-texture slot/resource allocation probes remain in private analysis
-until all byte differences are resolved.
-
-F214 completes the previously unaccepted large, authored
-`ProgressRecords::InitializeDefaults` at `0x00416640`: **910
-complete CODE bytes / 223 native x86 instructions**, one ordinary
-RET with subsequent INT3, SHA256
-`6038d21f8518f49a355159fde8bd343c224e01c61ddc2ffcd3630cc1a6d3df14`.
-Fresh pinned VC7.1 /GX- cold replay proves **910/910 bytes exact** and
-**34/34 actual DIR32/REL32 relocation fields**. The function calls
-two real memset routines for separate full-sized data regions,
-physically initializes ten local NUL-terminated 9-byte fish names
-observed verbatim in the original code, fills the true 15 x 4 x 10
-record scores/default fields, the 15 x 15 DWORD counter matrix at
-owner+0x16710 and eight final 100-valued bytes. The fish-name
-array is retained because the native code genuinely initializes it,
-although its original higher-level semantic purpose is unknown.
-
-The historical correct-sized first probe differed in 250 of 774
-nonrelocation bytes due to compiler local stack-slot allocation and
-expression evaluation. Using meaningful block-scoped `for` counters
-reproduced the target EBP-0x6c/-0x70/-0x74/-0x78 slots and the
-90-byte fish-name local. Rewriting the record address as ordered
-pointer additions `this + outerStride + subgroupStride +
-recordStride` reproduced the native register calculations and left
-**one x86 SIB byte** different. Using the physically supported
-15-column record-counter matrix subscript, rather than a flat
-offset expression, recreated the precise base/index encoding.
-No padding, fabricated locals, inline ASM, copied binary bytes,
-hidden masked fields or truncated comparison range was used.
-
-No full original ProgressRecords class is instantiated or claimed:
-the constructor is an observed call-only receiver with borrowed
-offsets. The real CRT, original string literals and archived
-global data have no independent CODE credit. This completes the
-separate 910-byte large function, with the two 109/90-byte F213
-leaves already preserved and unchanged; all 97 unknown origins
-remain unclassified.
-
-F217 cold-reconstructed the two original archive lookup dependencies
-reached from the 916-byte music-room catalog parser and the 792-byte
-replay record loader. `ResourceLookup::FindByNameAt0041CF00` has
-**113 complete authored CODE bytes / 40 native instructions**, native
-SHA256
-`6391a9bbd25ec4b140e9fd14203dda8247ef25cd77891930f15a1ab7067586a1`,
-and **nine actual DIR32/REL32 relocation fields**. The source traverses
-the original archive name deque at 0068BE1C via size/accessor callees
-0041DD50 and 0041DD70, compares the physical char* entry with the
-requested name using CRT strcmp 006416B0, and returns the paired
-archive deque's 0068BE08 entry through 0041DAF0 or null. The first
-natural probe was correctly sized but inverted the final branch;
-expressing the real early null return yields **113/113 cold exact**.
-
-`DataArchive::SeekNamedEntryWithSize` has **180 complete authored
-CODE bytes / 66 native instructions**, original SHA256
-`72ce55c493128e07f8bce2445b2409fc9f041064408f1166d5befd0a45849979`,
-normal `RET 8`, and **ten actual COFF relocation fields**. The first
-natural source produced all bytes exactly. It uses true four-byte
-VC7.1 list iterator begin/end, postfix increment returning a
-temporary, equality/inequality, string lookup and entry field offsets
-+0x64 (size) and +0x68 (file offset); the successful path performs
-the original SetFilePointer and returns the existing archive handle.
-Both source files are uninstantiated, borrowed caller/interface views:
-no original complete deque/list owner layouts, iterator element types,
-CRT/SDK helper bytes or static data bytes are adopted. These two units
-independently cold replayed **293/293 CODE bytes and 19/19 fields**
-across two objects. All previous 522 exact units and the 97 unresolved
-origin classifications remain intact.
-
-The paired larger `ReplayRecords::LoadRecord` at 00413AC0 remains
-an independent **792-byte nonexact** natural source investigation.
-It emits the correct full code length and has 29 observed relocation
-fields; reusing the genuine four loop indices/byte temporary
-improved 580/676 to 618/676 nonrelocation bytes; distinct meaningful
-local-name probes improved to **639/676**. Remaining differences
-are original EBP local slot allocation and have not been masked.
-The 916-byte `MusicRoom::LoadCatalogAt00426DD0` still has a
-source-size/control-flow mismatch (actual body plus separate
-16-byte switch table), despite preserving archive, XOR and
-quoted-field parse behavior. Private negative evidence remains under
-`.analysis/f216-archive-record/`, `.analysis/f215-music-catalog/`
-and `.analysis/f217-resource-lookup/`. No exact credit was
-assigned to these incomplete bosses.
-
-F218 follows the same authentic replay file-record dependency chain
-with three source-compatible authored policies. `ReplayRecords::BeginCapture`
-at `0x00413790` is **225 whole CODE bytes / 67 instructions**,
-SHA256
-`8cb535b033a5a3b624a94d83f3e55aeebf6999223c29f50feed7282f8c66b65d`,
-with **nine actual COFF fields**. It preserves native `_time32`
-and `localtime`, day/month values, replay header reset, eight
-100-valued bytes, actual queue clearing, conditional previous handle
-close, original CreateFileA flags and the MessageBoxA error/caption.
-The initial ordinary C++ compiled structurally exact.
-
-`GameState::ReadSnapshotHeaderAt00413A60` at `0x00413A60`
-is **85 bytes / 31 instructions**, SHA256
-`a64e819aca08d030fa6326f31e0ada81334e475ace8089f6cf49f5b6a7468a84`,
-with **three Win32 import fields**. Its complete byte-accurate
-source uses target-observed existing filepath `this+4`,
-`ReadFile(this+0x108,0x3c)` and `CloseHandle`. The first
-correct-length compiler probe had four real HANDLE/read-count
-stack slot bytes swapped. A meaningful local `HANDLE file` and
-`DWORD bytesRead` combination restores native EBP-4/EBP-8
-storage without arbitrary padding.
-
-`ReplayRecords::FindAvailablePath` at `0x00414300` contains
-**89 bytes / 31 instructions**, SHA256
-`2d65ab5258cc61702673ad78e3c645fba70d58a6f296ec92559ad868b57a9466`,
-with **three actual fields**. Its original bound search
-0..999 formats `replay\replay%03d.rep` via the real
-target format anchor and CRT sprintf, then uses the real
-`_access(filename,0)` and returns either the first available
-index or 1000. The first source probe matched structurally exact.
-
-All three new units were rebuilt together from source and passed
-**3/3 canonical cold exact**, **399/399 CODE bytes**, and
-**15/15 real COFF relocations**. The original replay container,
-Win32/CRT implementations, data strings and generated helpers
-receive no separate credit.
-
-The adjacent 375-byte `ReplayRecords::FinalizeFile` at
-004138E0 remains a substantive unaccepted large-function study:
-the actual Win32 read/write/close flow and 264-byte output
-filename are reproduced; one natural source emits 342 bytes,
-a meaningful filename/transferred-byte working record emits
-372 bytes, and controls capturing a real allocation/free
-pointer pair emit 384 or 396 bytes. Differences in native
-0x12c stack-frame storage and temporary ownership remain
-unresolved. All private controls are preserved under
-`.analysis/f218-replay-file/`, and no partial-byte exact
-credit was taken. `ReplayRecords::AppendRecord` at
-00413DE0 (1252 bytes) is also an independently observed,
-unaccepted large replay writer target. No origin ledger
-classification or old accepted match was modified.
-
-F220 independently cold-reconstructed two whole reviewed authored
-policies in the replay queue system from one normal C++ source.
-`StaticResourceQueues::ClearFourQueuesAt00413880` at `0x00413880`
-has **67 native CODE bytes / 19 complete x86 instructions**, body SHA256
-`bf53ffaf4b4506f435935937e2e5961e7cfd1965918d7cce285e3bf8ccb3547d`.
-The natural source calls exactly the observed deque Clear methods at
-the physical this+0x154, +0x168, +0x17C and +0x190 offsets, targeting
-the original 414530/414720/414530/414910 helpers. The entire 67
-bytes and **all four actual REL32 relocation fields** are cold-exact.
-
-`ReplayRecords::IsPrimaryInputQueueEmptyAt004142D0` at `0x004142D0`
-has **35 native CODE bytes / 15 instructions**, body SHA256
-`72b5bfc6c414a06ad751cb62e2bb8bcf1c40264911c97728d7e22b74ccb339e3`.
-It checks the actual unsigned Size() at this+0x154 through native
-00414430 and returns the target's 0/1 byte without short-cutting
-or changing the JBE conditional. All 35 bytes and its **sole REL32
-field** are independently cold-exact. The two units were cold-built
-together: **102/102 authored CODE bytes, 5/5 physical call fields,
-2/2 exact**, one object, no owned data. Source uses borrowed queue
-interfaces only; vendor deque code, guessed full archive owner/element
-types and generated runtime are not credited. All 97 pending origins
-remain unaltered.
-
-The **1,252-byte authored `ReplayRecords::AppendRecord` at
-`0x00413DE0`** was also freshly investigated as a *complete*
-function. The original has six distinct 8-byte VC7.1 iterator
-objects with default ctors, four real queue Size/Begin/End/dereference/
-postincrement lifetimes and SetFilePointer/WriteFile calls. A first
-natural source compiled to 1,244 bytes: its `while` loop placed
-postincrement after the body. Moving each real `iterator++` into a
-natural `for (; first!=last; first++)` update reproduced the full
-**1,252-byte emitted extent**, all 50 physical external relocation
-positions and native branch graph. Unmatched bytes now arise from
-meaningful iterator/record count/output buffer stack slots, not
-absent code; a bounded compiler naming/slot experiment reached
-**1,017/1,052 nonrelocation bytes**. No byte credit, unit or source
-mapping was taken for the incomplete boss. All probes, native
-disassembly and failed controls remain private in
-`.analysis/f219-append-record/`. This must be revisited with
-genuine iterator lifetime/layout evidence rather than force-fitting
-padding or faking source ABIs.
-
-F221 independently cold-reconstructed the substantial character
-selection reset policy `CharacterSelectScene::ResetSelection` at
-`0x00433230`: **569 whole authored CODE bytes / 116 complete x86
-instructions**, one normal RET and following INT3, target SHA256
-`82fce94494f4ec78e593bd11ad74807f538a4a7ff3fdef463584aeb68ac16623`.
-Fresh pinned VC7.1 /GX- source cold-replays **569/569 bytes** and
-**all eleven actual COFF relocation fields** without differences.
-The source follows the original visible menu flags, alpha/position/
-float state stores, signed character index `(selection+1)%10` twice
-with native CDQ/IDIV, special stage 20 handling or signed stage
-modulo/comparison, and the final progress registration call
-`0x0041A1A0` via the authentic borrowed `0x006718F8` receiver.
-The only initial structural mismatch was a physical float constant:
-`4.712389f` emits IEEE-754 `0x4096CBE4`, whereas the native
-write at scene+0xDC is `0x4096CBE2`; `4.712388f` rounds to
-the genuine target field and restores the **entire function**.
-No binary-byte graft, fake local, ASM, reordered effect or shortened
-branch was needed. The nominal full CharacterSelectScene class
-and the concrete progress owner type remain unproved and uncredited.
-
-In parallel, bounded large-function tests on the full
-`ReplayRecords::AppendRecord` source at 00413DE0
-reconfirmed the exact 1252-byte length and 50 external
-relocation positions with four real C++ `for` iterator updates.
-Seventy-two additional meaningful name-based stack slot controls
-improved the nonrelocation result to **1025/1052**, but the
-original physical allocation of six 8-byte iterator objects,
-output byte count and queue size is not yet exact. The complete
-function remains unaccepted; all controls stay in
-`.analysis/f219-append-record/`.
-A further 57 meaningful single-local probes on the 792-byte
-ReplayRecords reader did not surpass **639/676** non-field bytes;
-that function also remains pending and is fully preserved
-privately. These experiments provide native ABI evidence, not
-partial code credit.
-
-F222 cold-reconstructed the entire reviewed authored
-MarisaFighter::ResetRound at 0x00493130: 780 complete CODE bytes,
-157 native x86 instructions, plain RET/INT3, SHA256
-bfed8d082f3fd36aeb82e8d2694f1b61fd3fc2f1e90b5f53ff7061c31f0ea774.
-The pinned target binary SHA256 is
-bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98.
-Original native FILD dword stack index and FDIV dword at
-00659308 (physical IEEE float 36.0f) establish signed int
-and single-precision denominator. Native final call at 00493433
-targets the already accepted FighterState::ResetRound at 00457010.
-
-The physically observed 32 halfword and one byte clears lead to
-37 iterations of two 28-byte animation records, each with seven
-genuine fields. A source-compatible record array and signed int
-loop compile to 780 bytes and 766/768 nonfield byte matches on
-the first natural VC7.1 /GX- probe. The only differences are two
-loop branch bytes: i<37 emits CMP 0x25 / JGE while the native
-uses CMP 0x24 / JG. Changing to i<=36 restored all 768/768
-nonfield bytes. All three real relocations match the native:
-DIR32 at code offsets 0x222 and 0x2CB to 00659308, REL32 at
-0x304 to 00457010. A fresh registered pinned VC7.1 cold
-replay independently proves 780/780 bytes and all three fields.
-No nominal fighter class layout, original animation element names,
-data/global ownership, base callee byte double credit, inert
-padding or masked relocation fields are claimed. All 97
-unknown-origin candidates are still uncredited.
-
-F223 independently cold-replayed three complete authored fighter
-lifecycle functions: MarisaFighter::Initialize 00492FB0 (243 bytes,
-6 physical COFF fields, 56 decoded instructions), MarisaFighter::
-CreateOwnedObject 004930B0 (120 bytes, 6 fields, 34 instructions
-and real VC7.1 EH), and YoumuFighter::Initialize 0052CEE0
-(314 bytes, 11 fields, 70 instructions with a real EH frame).
-The three natural VC7.1 source bodies rebuild 3/3 exact (677/677
-bytes, 23/23 relocations); no generated EH helpers, imported
-constructors, complete owner layouts, runtime or static data
-receive duplicate credit. These functions were already cold
-replayed as a dirty worktree at entry; the original changes
-were investigated and accepted rather than bypassed.
-
-F223: three independent fighter lifecycle units were rebuilt
-from natural VC7.1 C++ and cold replayed with all physical relocations:
-MarisaFighter::Initialize at 00492FB0 (243 CODE bytes/6 fields),
-MarisaFighter::CreateOwnedObject at 004930B0 (120 CODE bytes/6
-fields; real 232-byte allocation and EH), and YoumuFighter::Initialize
-at 0052CEE0 (314 CODE bytes/11 fields). The units credit 677
-authored CODE bytes and 23 actual field bindings, never the
-previously accepted base ctor, helper/EH code or original data.
-F222's 780-byte MarisaFighter::ResetRound is independently accepted
-and not counted again. All 97 unknown-origin functions remain pending.
-
-Current ledger: **534 exact functions, 766,591 CODE bytes / 1,973,516 reviewed
-authored bytes = 38.84%**, conservative 38.77% with 3,608 unknown-origin bytes
-retained. F184..F222 (excluding exploratory-only numbers) added thirty-eight accepted units,
-thirty-five objects and thirty-eight new source/header inputs.
-Keep R268 origin evidence, all 97 unknown candidates, 493 pre-F184
-accepted units and protected private F184/F185 preview/drafts intact.
-
-Next: revisit the full 248-byte `0x0043B0B0` battle-scene destructor
-(the native local-stack slot assignment remains unproven), alongside
-`0x0040B000` shared texture allocation (261 bytes) and substantial
-scene/graphics functions. Inspect native CFG, table ownership, calldata
-and lifetime before further exact-source adoption. Retain R108 origin
-uncertainty.
-Do not claim exact credit for incomplete probes. Record failed approaches and
-commit separately when they yield durable discoveries.
-
-## Historical H184 handoff (superseded active-goal and F184 preview statements)
-
-
-Updated 2026-10-26 for the user-requested cleanup and handoff, H184.
-
-The user cleared the active goal before requesting this handoff. **No goal is
-active; no pause action was taken. The 98% authored-byte objective remains
-incomplete.** This instruction supersedes historical active-goal commands.
-No new reconstruction batch or canonical acceptance was started after the
-handoff request. Subsequent project phases remain deferred.
-
-## Continuation command
-
-Use this command when the user requests reconstruction again:
-
-```text
-Resume TH075 function reconstruction toward 98% authored-byte exact, using
-H184 and the prepared F184 menu-input cohort. Read AGENTS.md, RE_HANDOFF.md,
-RE_WORKFLOW.md and KNOWLEDGE_BASE.md; inspect git status and run the four
-required target/tracking/status/Ghidra preflight checks. Preserve all accepted
-units, origin evidence through R268, all 97 unknown origins, every pending byte
-in the conservative denominator, and private inputs/objects. Start with full
-F184 previews 43ABF0/228 and 429DC0/310: both have zero differences but no
-canonical acceptance. Use the H184 resumption seed against the documentation
-handoff commit; preserve the old F184 seed against a306ad6 unchanged. Copy
-frozen drafts to a new mutable working directory before editing. Register
-complete extents/every actual relocation, then cold-replay only new units
-before granting credit. Keep compiler builds serial and everything headless;
-use scripts/repo-python, the existing Ghidra wrapper and no REA. Never invent
-owner layouts, inert locals, padding, ABIs, assembly, comparison masks, cropped
-extents or local-label rebasing. Commit/push bounded progress with subjects
-"gpt-6.1-sol: ...". Do not automatically pause an active goal merely because
-cleanup, a commit or context handoff finishes.
-```
-
-## Verified baseline
-
-| Measure | Value |
-| --- | --- |
-| Provisional candidates | 4,351 |
-| Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
-| Unknown origins | 97 / 3,608 code bytes |
-| Source-present / exact functions / exact units | 493 / 493 / 493 |
-| Exact CODE bytes | 749,438 |
-| Reviewed authored coverage | 749,438 / 1,973,516 (37.97%) |
-| Conservative coverage, including pending bytes | 749,438 / 1,977,124 (37.91%) |
-| Canonical objects / accepted source-header inputs | 166 / 268 |
-| Adoption manifest after F009 | 433 additions / 739,555 CODE bytes |
-
-The ledgers and status script are authoritative. CODE size determines credit;
-comparison extents include owned tables/remaps. Every pending byte stays in the
-denominator. Unknown origins receive no credit and do not block independently
-reviewed authored functions. Names and complete owner layouts remain provisional.
-
-Use only the supplied Japanese th075.exe 1.11, SHA-256
-`bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
-Identity is pinned to the user's archive, without independent official
-provenance corroboration. Never substitute th075c.exe or patch target bytes.
-
-The latest reconstruction commit is **a306ad6 (F183)**. This work added 16
-canonical units and 9,888 CODE bytes across five pushed commits:
-
-| Cohort | Commit | Accepted work | CODE bytes |
-| --- | --- | --- | --- |
-| F179 | 2a697d8 | Complete background renderer 435A70 | 6,404 |
-| F180 | 4ecb7fb | Eleven background counter/cycle callbacks | 463 |
-| F181 | d13a8e9 | Complete timed-sprite renderer 451A00 | 446 |
-| F182 | 9d128c4 | Two name-entry input policies | 1,486 |
-| F183 | a306ad6 | Complete title-menu renderer 43A7A0 | 1,089 |
-
-Each cohort cold-replayed only new units and passed 3,612 CI tests. Existing
-canonical inputs, origins, headers and protected evidence stayed unchanged.
-Detailed proofs/cold reports/checkpoints remain under `.analysis/f179*` through
-`.analysis/f183*`.
-
-## Prepared F184: diagnostic previews only
-
-| Native function | Bytes | Returns / branches | Actual fields | Differences |
-| --- | --- | --- | --- | --- |
-| R043 43ABF0, TitleScene::PollMenuInput | 228 | 1 / 9 | 19 | 0 |
-| R053 429DC0, ReplayScene::PollInput | 310 | 1 / 16 | 27 | 0 |
-
-Both full extents have plain RET, no owned tables and checked following INT3
-alignment. All 18 calls target canonical input/window helpers. Every one of the
-46 fields is included. Neither function has public source, a registered unit,
-a canonical cold build, source-presence credit or exact credit.
-
-Keep `.analysis/f184-menu-input/` containing MenuInputF184.cpp/.hpp, profile,
-both full diagnostics/relocated bodies/assembly and compiler log; the native
-and attested decompile evidence `.analysis/f184-menu-input.c`, `-ghidra.log`,
-`-native-proof.json` and `-native.asm`; `.analysis/f184-compare-menu-input.py`;
-and `build/probes/F184MenuInput.obj` with its live PDB companion.
-
-The preview was already running when the user cleared the goal. Its completed
-results were collected; no further function reconstruction was started.
-Preserve DWORD versus byte clears, independent signed direction checks,
-confirm/cancel bytes, Escape counter and actual chord placement. A call-only
-source interface does not prove shared original owner identity or full layout.
-
-The old preview seed records a306ad6. The H184 documentation commit changes
-HEAD without changing accepted code. Use the post-commit
-`.analysis/h184-handoff/resumption-seed.json` for a new working directory;
-do not rewrite the old seed or relabel an old object as cold evidence. The
-handoff-state, retention, source-checkpoint and commit-receipt files in the same
-private directory pin all inputs and the new commit. Verify hashes, register
-every field and cold-replay each new unit before updating acceptance ledgers.
-
-## Retained investigations
-
-Preserve 14 frozen prior working objects plus F184: 15 total. The private active
-retention receipt records their source/header/profile/object hashes. Also retain
-all 14 F157 probes, both F159 traces and 40 protected groups. The old F176
-440-byte probe is historical negative evidence; F181 independently accepts the
-same native function through a complete 446-byte object.
-
-- Complete 004AC040: F156-derived 151-entry baseline, 83,922-byte comparison,
-  18,539 differences/all 2,352 fields. Preserve its baseline object and closed
-  F153..F166 scope/profile/member/window/word controls; do not blindly repeat.
-- Complete 0050A580: 81,539 CODE / 82,106 comparison bytes; emitted 82,109 with
-  26,719 differences/all 1,449 fields. Keep F145CanonicalViews and five older
-  retained objects. No credit.
-- Complete 0055AC80: 28,862-byte comparison; emitted 28,868 with 8,545
-  differences/all 696 fields. Preserve F167 physical-flow source/object and the
-  closed lexical-scope control. No native-label rebasing.
-- R103 453EB0: native 181, retained emitted 185/111 differences. Earlier `/Op`
-  and member/window controls are closed; preserve its object.
-- R231 unread camera stores, R065 445A00's write-only local and R054 455B30's
-  28-byte clear still lack supported source-purpose explanations. No fabricated
-  inert locals, arrays or padding.
-- Options 428F00/951 and 429F00/563 require their owned-table review. Battle
-  initialization 43AD10/922 is an EH constructor with allocations/incomplete
-  owner layouts. These remain unaccepted; no fake owners or pasted EH bytes.
-
-F179 showed that borrowed observed float member windows can change x87 operand
-order and argument marshalling without changing types/ABI. F181 showed that
-meaningful names in distinct measured buckets can explain actual local slots.
-Read the precise archived controls before applying either observation elsewhere.
-
-## History and tools
-
-The complete former documents are preserved **byte-for-byte** in
-[handoff through F183](history/RE_HANDOFF_THROUGH_F183.md) and
-[knowledge through F183](history/KNOWLEDGE_BASE_THROUGH_F183.md). Original titles,
-paths, target strings, observations and unknowns remain intact. Archived goal-
-state and next-task commands are historical. Earlier F148 archives and origin
-histories are unchanged. Historical relative links were written from docs/;
-resolve them there or use the original Git version. Current instructions govern.
-
-**Preserve this workspace when switching agents.** Private sources, objects,
-receipts, target and Ghidra project are not in a Git clone. Preserve shared tools
-and private service/authentication settings; never print/commit the private URL.
-Use scripts/repo-python for every repository Python command. Remain headless:
-unset DISPLAY/WAYLAND_DISPLAY and disable Wine graphical drivers per process.
-Use the existing attested Ghidra wrapper, serial compiler builds and new/affected
-cold replay. Claims.csv stays header-only. Commit subjects remain
-`gpt-6.1-sol: ...`; commits and pushes remain authorized.
-
-## H184 cleanup and validation
-
-Wine lowercased PDB filenames, so earlier case-sensitive cleanup missed old
-outputs. H184 excludes every frozen path and every live object/executable/DLL
-companion **case-insensitively**. It losslessly archived 480 unpaired old PDBs,
-verified every full round-trip SHA-256, then removed only those original outputs.
-All object files and live PDB companions remain. The local archive is
-`.analysis/h184-handoff/retired-orphan-pdbs.tar.gz`; its receipt records original
-paths/hashes and restoration details. This step reclaimed 32,225,914 bytes net.
-
-No accepted source, header, ABI, flag, relocation, origin or manifest changed
-for this handoff; no cold rebuild was needed. No pause action or new goal was
-created. Final checks and cleanup receipts follow.
-
-Final CI passed **3,612 tests in 199.877 seconds**. Target,
-tracking/status, current documentation links and diff checks pass. All 493 exact
-units/166 canonical objects/268 accepted inputs, all origin evidence through
-R268, the 15 retained working objects, all 14 F157 probes/both F159 traces and 40
-protected groups were hash-verified unchanged. All 859 remaining build
-files were also hash-verified unchanged after cleanup. F184 remains two unaccepted
-zero-difference previews; no registration, new compiler build or cold replay ran
-after the user's handoff request.
-
-Cleanup retained all 628 object files and
-231 live PDB files, replaced 480 unpaired PDB outputs with
-a lossless verified archive, and removed 377 reproducible bytecode files
-(8,312,399 bytes). Total net reclamation is
-**40,538,313 bytes**. The former main documents' 231,263 bytes
-are preserved exactly in the new F183 archives; current entry documents are
-shortened without discarding their evidence. Private receipts and frozen source
-checkpoint are under `.analysis/h184-handoff/`; commit receipt and resumption
-seed are finalized after the authorized documentation commit is pushed.
-The goal remains cleared, and the 98% objective remains incomplete.
+Use `scripts/repo-python`; run all Wine/VC7.1 work **serially and headless**
+with the existing `.analysis/vc71-wine` prefix and the pinned toolchain.
+No replacement executable, fake owner type, pasted assembly, masked field,
+inert variable or arbitrary padding may earn exact credit.
+
+## 2. Latest accepted functions — already committed, do not double-count
+
+| Cohort / Git checkpoint | Native address | Whole CODE | Real COFF fields |
+| --- | --- | ---: | ---: |
+| F222 `65632c3`: MarisaFighter::ResetRound | `00493130` | 780 | 3 |
+| F223 `ca81d72`: MarisaFighter::Initialize | `00492FB0` | 243 | 6 |
+| F223 `ca81d72`: MarisaFighter::CreateOwnedObject | `004930B0` | 120 | 6 |
+| F223 `ca81d72`: YoumuFighter::Initialize | `0052CEE0` | 314 | 11 |
+
+F222 proved signed 32-bit x87 `FILD` divided by the target's 36.0f
+(`00659308`), 74 physical animation records and a final call into the
+*previously accepted* base reset `00457010`. The correct source loop is
+`i <= 36`, not the byte-different `i < 37`. Its three relocations all
+match. F223 adds two complete borrowed constructors and a real EH-backed
+232-byte `new`; Youmu additionally calls the observed +0xFEC child init.
+These four units were independently cold-exact. Their nominal C++ classes and
+external helper implementations are **not** established by code equality.
+
+Relevant full native proofs: `config/match-units.toml`,
+`config/exact-adoptions.json`, sources `src/*F222.cpp`/`src/*F223.cpp`,
+and `docs/KNOWLEDGE_BASE.md`. The cold-replay logs are private in
+`.analysis/f222-marisa-reset/` and `.analysis/f223-fighter-ctors/`.
+Earlier accepted functions remain in the canonical ledgers; do not rebuild
+everything unless a shared dependency changed.
+
+## 3. Unsolved **large** functions — recommended next work
+
+These are **diagnostics, not accepted code**. Each native function needs full
+body/owned-table, origin and relocation review before any adoption.
+
+| Function / entry | Target | Best prior compiler evidence | Retained research |
+| --- | ---: | --- | --- |
+| ReplayRecords::AppendRecord `00413DE0` | 1,252 B | Entire emitted size and 50 field positions; best **1,025/1,052** non-field bytes, iterator stack slots still wrong | `.analysis/f219-append-record/` |
+| ReplayRecords::LoadRecord `00413AC0` | 792 B | Entire emitted size, 29 fields, **639/676** non-field bytes; local HANDLE/count slots | `.analysis/f216-archive-record/` |
+| MusicRoom::LoadCatalog `00426DD0` | 916 B CODE + 16 B switch table | Natural variants 928/934 vs 932 compared bytes, control flow/layout mismatched | `.analysis/f215-music-catalog/` |
+| ReplayRecords::FinalizeFile `004138E0` | 375 B | Natural variants 342/372/384/396 B; pointer lifetimes/frame unknown | `.analysis/f218-replay-file/` |
+| BattleScene destructor `0043B0B0` | 248 B | Exact length/flow but 9–11 local-stack field byte differences | `.analysis/f200-battle-dtor/`, `.analysis/f215-battle-release/` |
+| Giant actor control `004AC040` | very large | Full baseline still nonexact; many closed tests, avoid repeating blindly | `.analysis/character-move-4ac040/`, archived knowledge |
+
+**Practical approach:** use the now-accepted replay queue and fighter
+lifecycle callees to infer *real* iterator/owner lifetimes. The F219/F216
+semantically harmless variable-name permutations were already exhausted:
+do not repeat 72/57 equivalent compiler probes. Their summarized result
+tables are retained, with the best complete source for further diagnosis.
+
+An exact 34-byte scene-base constructor at `004251C0` remains **origin
+unknown** (R108); do not classify it authored merely because its COFF body
+can match structurally. Preserve all 97 unknown origins and their 3,608
+bytes outside accepted authored coverage.
+
+## 4. Acceptance and commit checklist
+
+1. Inspect **all dirty state**, read any prior unfinished source and retain
+   meaningful experiments. Never discard someone else's assumed changes;
+   the user has confirmed there is no other active session.
+2. Independently verify native target SHA, full function boundary,
+   decoded instructions, all exits, C++ EH, and owned jump tables.
+3. Test natural C++ with exact pinned VC7.1 flags; diagnostic
+   `structural-exact` does **not** compare relocation fields.
+4. Register **every** true COFF relocation offset, type, symbol and target in
+   `config/match-units.toml`, then **cold replay**:
+   ```bash
+   scripts/repo-python scripts/replay-exact-units.py --unit UNIT_NAME
+   ```
+5. Only after whole-function `exact`, update `config/functions.csv`,
+   `implemented.csv`, `matches.csv`, `reccmp-functions.csv`,
+   `known-symbols.csv`, `exact-adoptions.json` and SHA-pinned checkpoint
+   tests. Update progress from live ledgers, not remembered counts.
+6. Run tracking, affected cold units, checkpoint tests, `scripts/ci.py`,
+   and `git diff --check`. Commit material progress with
+   `git commit -m 'gpt-web: <specific completed work>'`.
+7. Keep nominal class identities, original layout ownership, unresolved
+   origins and Oracle receipts separate from local byte equality.
+
+Detailed commands and examples: `docs/RE_WORKFLOW.md`,
+`docs/BUILD_MATCHING.md` and `AGENTS.md`.
+
+## 5. Artifact retention, cleanup and research provenance
+
+**Do not remove:** pinned `resources/th075.exe`; tracked `config/`, source,
+tests, matched unit profiles, exact-manifest hashes, `.analysis/vc71-wine/`,
+the private `ghidra-project/`, `.tools/`, protected H184 frozen work
+objects, and the large-function best negative sources/assemblies. The old
+H184 historical no-goal instruction is superseded.
+
+Per-variant COFF objects, repeated compile logs and diagnostic JSON for
+already-exhausted **F216Coord**, **F219Coord** and **F218Index** sweeps can
+be regenerated. The 2026-10-28 cleanup compacted their result tables,
+retained best/representative source and removed only redundant private
+temporary variants. Their historical outcomes remain in the private
+research directory.
+
+The previous **verbose** handoff is recoverable through
+`git show ca81d72:docs/RE_HANDOFF.md`; detailed F-series reasoning
+remains in `docs/KNOWLEDGE_BASE.md`. Other historical origin and handoff
+archives remain unchanged under `docs/history/`. Reading an older document
+never overrides the current target, ledgers, or latest user instructions.

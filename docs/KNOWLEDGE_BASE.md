@@ -758,7 +758,7 @@ rather than `while` loops recreate the complete 1252-byte
 code size, all 50 external field positions and native loop
 control-flow shapes, but compiler local stack assignments
 remain different: the best tested meaningful local naming
-matches 1017/1052 non-field bytes. This is explicitly
+matches 1025/1052 non-field bytes in the best later control. This is explicitly
 **not accepted**; private research in `.analysis/f219-append-record/`
 is retained without masked fields, fabricated stack padding,
 ABI lies or partial code credit. The 792-byte record reader
@@ -801,18 +801,6 @@ callee ABIs; they do not reconstruct a complete player,
 subcomponent or library object. Three accepted unit keys
 are recorded in match-units.toml, alongside source hashes
 in the exact adoption manifest.
-
-## F223: three complete fighter lifecycle functions
-
-F223 adds three separate authored exact policies in the canonical
-worktree: Marisa fighter constructor (243 bytes, six relocations),
-Marisa 232-byte child allocation policy (120 bytes, six relocations),
-and Youmu fighter constructor (314 bytes, eleven relocations).
-All 677 new CODE bytes and 23 fields cold replayed without masking.
-Typed borrowed allocation views do not prove original class names,
-nested ownership, external helpers or data layouts. F222 Marisa
-ResetRound (780 bytes) remains a distinct, separately accepted
-unit. Unknown origin classifications are preserved.
 
 ## Retained failures and method boundaries
 
