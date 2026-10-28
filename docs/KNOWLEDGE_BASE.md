@@ -5152,3 +5152,45 @@ instruction extents and all fields independently checked; only new unit
 `sprite-sequence-render-elements-00411110` was cold replayed, **1/1 exact**.
 No truncated body, compiler/list callee credit, assembly, invented data
 padding, or remote Oracle receipt.
+
+
+## F348: complete 874-byte Suika special-state boss, three x87 order corrections
+
+The R067-authored `SuikaFighter::UpdateSpecialStateAt005C3FB0` entire native
+`005C3FB0..005C4319` extent is **874 CODE bytes**, **237 original x86
+instructions**, original PE SHA256
+`3c6dd4c37824d3c79bc986c961905f1676647166439db4483f70a36849a8c73a`.
+Its source in `src/SuikaSpecialStateF348.cpp` implements the original contact
+reset; descending signed shot counter at +0xF1C; parent sound Play(3), two
+actual 0x336/0x337 projectile launches with the true `Rand(0,100)` guard and
+`Rand(0,40)` plus 20.0f horizontal offset; signed 0x3B6/0x3B0 guard/reaction
+logic; charge state at 0xF1E and signed 0x324/0x3A0 checks; and opponent
+relative distance-state clamping at 0xF26. Native control returns and the
+real `RET` after the 874-byte body are preserved. The original full fighter
+class remains unknown; its borrowed method/interface declarations are
+not constructed, embedded or claimed as original owner source.
+
+The F313/F314 full 874-byte probes retained **742/794** comparable bytes
+and 20 real references, with unresolved x87/actor pointer lowering. Fresh F348
+changes only experimentally justified source expressions. Using the known
+`F345`-style direct scalar `FLOAT()` and `OPPONENT_FLOAT()` lvalues improved
+all repeated actor-relative field-load orderings, reaching 782/794. The
+initial exact float-zero comparison is naturally `FLOAT(0x50)==0.0f`
+(physical constant at `0065782C`), resolving four bytes, reaching 786/794.
+The remaining two projectile X position expressions are the actual
+`OPPONENT_FLOAT(0x44)+20.0f`: the target's original 20.0f constant is at
+`0065786C`. A genuine right-hand literal emits original `FLD [actorX]` then
+`FADD [0065786C]`, instead of globally loading 20.0f first. This recovers
+the final eight bytes, giving **794/794** complete nonrelocation match.
+The separate Y offset 40.0f remains the actual original external constant
+with all its physical relocations. No arbitrary padding or asm is used.
+
+All **20** physical original COFF DIR32/REL32 fields, including both
+`__real@41a00000` addresses, zero constant, sound/random/spawn direct calls,
+original Y offset and four distance constants, resolve to their exact native
+Destinations. Only the affected
+`suika-fighter-update-special-state-005c3fb0` was cold-built with pinned
+VC7.1 `/Od /Ob0 /Gy /GR- /GX- /GS /Zi` and reported **1/1 exact**, all
+874 CODE bytes. Earlier failed experiments remain in ignored F313/F314 and
+F349-F351 evidence; this supersedes their pending claim. No extra byte credit
+for external callees, unknown original class layout, or external Oracle receipt.

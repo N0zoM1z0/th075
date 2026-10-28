@@ -650,3 +650,4 @@ DataArchive::AppendReadableFileAt0041D6C0,0x0041D6C0,function
 YukariFighter::UpdateSpecialStateAt0059B490,0x0059B490,function
 CharacterSelectScene::UpdateCancelAnimation,0x00435870,function
 SpriteSequence::RenderElements,0x00411110,function
+SuikaFighter::UpdateSpecialStateAt005C3FB0,0x005C3FB0,function

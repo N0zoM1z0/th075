@@ -47119,3 +47119,113 @@ offset = 731
 type = "REL32"
 symbol = "?DrawQuad@SequenceRendererF261@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z"
 target = 0x0040C9A0
+
+
+[units.suika-fighter-update-special-state-005c3fb0]
+source = "src/SuikaSpecialStateF348.cpp"
+object = "build/matching/SuikaSpecialStateF348.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["SuikaFighter::UpdateSpecialStateAt005C3FB0"]
+symbol = "?UpdateSpecialState@SuikaSpecialF313@@QAEXXZ"
+target_address = 0x005C3FB0
+size = 874
+[[units.suika-fighter-update-special-state-005c3fb0.relocations]]
+offset = 14
+type = "DIR32"
+symbol = "__real@00000000"
+target = 0x0065782C
+[[units.suika-fighter-update-special-state-005c3fb0.relocations]]
+offset = 108
+type = "REL32"
+symbol = "?Play@SuikaSoundF313@@QAEXH@Z"
+target = 0x0046D000
+[[units.suika-fighter-update-special-state-005c3fb0.relocations]]
+offset = 139
+type = "REL32"
+symbol = "?Rand@SuikaSpecialF313@@QAEHHH@Z"
+target = 0x00455580
+[[units.suika-fighter-update-special-state-005c3fb0.relocations]]
+offset = 171
+type = "DIR32"
+symbol = "?g_SpawnYOffsetAt00657858@@3MB"
+target = 0x00657858
+[[units.suika-fighter-update-special-state-005c3fb0.relocations]]
+offset = 186
+type = "REL32"
+symbol = "?Rand@SuikaSpecialF313@@QAEHHH@Z"
+target = 0x00455580
+[[units.suika-fighter-update-special-state-005c3fb0.relocations]]
+offset = 217
+type = "DIR32"
+symbol = "__real@41a00000"
+target = 0x0065786C
+[[units.suika-fighter-update-special-state-005c3fb0.relocations]]
+offset = 232
+type = "REL32"
+symbol = "?Rand@SuikaSpecialF313@@QAEHHH@Z"
+target = 0x00455580
+[[units.suika-fighter-update-special-state-005c3fb0.relocations]]
+offset = 258
+type = "REL32"
+symbol = "?SpawnProjectile@SuikaSpecialF313@@QAEXHMMEH@Z"
+target = 0x00453A70
+[[units.suika-fighter-update-special-state-005c3fb0.relocations]]
+offset = 289
+type = "REL32"
+symbol = "?Rand@SuikaSpecialF313@@QAEHHH@Z"
+target = 0x00455580
+[[units.suika-fighter-update-special-state-005c3fb0.relocations]]
+offset = 321
+type = "DIR32"
+symbol = "?g_SpawnYOffsetAt00657858@@3MB"
+target = 0x00657858
+[[units.suika-fighter-update-special-state-005c3fb0.relocations]]
+offset = 336
+type = "REL32"
+symbol = "?Rand@SuikaSpecialF313@@QAEHHH@Z"
+target = 0x00455580
+[[units.suika-fighter-update-special-state-005c3fb0.relocations]]
+offset = 367
+type = "DIR32"
+symbol = "__real@41a00000"
+target = 0x0065786C
+[[units.suika-fighter-update-special-state-005c3fb0.relocations]]
+offset = 382
+type = "REL32"
+symbol = "?Rand@SuikaSpecialF313@@QAEHHH@Z"
+target = 0x00455580
+[[units.suika-fighter-update-special-state-005c3fb0.relocations]]
+offset = 408
+type = "REL32"
+symbol = "?SpawnProjectile@SuikaSpecialF313@@QAEXHMMEH@Z"
+target = 0x00453A70
+[[units.suika-fighter-update-special-state-005c3fb0.relocations]]
+offset = 584
+type = "REL32"
+symbol = "?Play@SuikaSoundF313@@QAEXH@Z"
+target = 0x0046D000
+[[units.suika-fighter-update-special-state-005c3fb0.relocations]]
+offset = 608
+type = "REL32"
+symbol = "?Play@SuikaSoundF313@@QAEXH@Z"
+target = 0x0046D000
+[[units.suika-fighter-update-special-state-005c3fb0.relocations]]
+offset = 690
+type = "DIR32"
+symbol = "?g_RightLimitAt00659134@@3MB"
+target = 0x00659134
+[[units.suika-fighter-update-special-state-005c3fb0.relocations]]
+offset = 721
+type = "DIR32"
+symbol = "?g_LeftLimitAt00659130@@3MB"
+target = 0x00659130
+[[units.suika-fighter-update-special-state-005c3fb0.relocations]]
+offset = 764
+type = "DIR32"
+symbol = "?g_OuterRightAt0065787C@@3MB"
+target = 0x0065787C
+[[units.suika-fighter-update-special-state-005c3fb0.relocations]]
+offset = 795
+type = "DIR32"
+symbol = "?g_OuterLeftAt00657880@@3MB"
+target = 0x00657880
