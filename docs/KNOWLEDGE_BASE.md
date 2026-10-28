@@ -5463,3 +5463,41 @@ yielding **3/3 exact across one object** and 180 total distinct authored
 CODE bytes. Neither crt `__ftol2` nor the renderer callee is double counted.
 No fake or obsolete variables, source-dependent masks, assembly, truncated
 function, full-project cold replay or Oracle certification.
+
+
+## F365: complete 1,576-byte extended character auxiliary with native compound timer and signed projectiles
+
+The independently reviewed R049-authored native `CharacterAux::RunAt00505A60` at
+`00505A60..00506087` is **1,576 full original CODE bytes**, **386 original
+x86 instructions**, original PE SHA256
+`290a5ead5da248b3d3476ee0d1dd45b75a902fd73bcab3b5c17d960c915e9b96`.
+It resets ground/contact flags, advances and wraps two signed angular timers
+(`+0xF0E` facing×5 and `+0xF0C` +2), implements the real active `+0xF10`
+directional random projectile policy including signed opponent-facing
+comparison, original strength at `+0x490`, Rand(0,100) and Rand(0,640)
+through `00455580`, and two directional effect 908 projectile spawns via
+`00453A70`. It then updates the genuine three effect 817/linked-1 one-shot
+action windows through the inherited `00453AC0` and the original signed
+`+0xF12` opponent distance clamp. These are native-specific policies, not
+generalized promises about any complete original class.
+
+The first complete semantic natural C++ emitted 1,592 bytes: its unsigned
+comparison flag triggered a nonnative 64-bit x87 integer conversion. An
+actual signed comparison restored normal integer `FIMUL`, but a named
+comparison temporary still emitted 1,583 bytes. Inlining that meaningful
+signed condition restored the original 1,576-byte/386-instruction shape
+with residual compiler register differences. The original +F0E timer
+is naturally expressed as `FIELD(short,0xF0E) += FIELD(signed char,0x66)*5`:
+this genuine compound assignment lets VC7.1 preserve EAX across the original
+loop timer, short comparisons and subsequent actor pointer uses, instead of
+the equivalent `FIELD = facing*5 + FIELD` form, recovering every remaining
+nonrelocation byte with **1504/1504** original nonfield matches. All
+**18** native DIR32/REL32 physical COFF references and original solved
+destinations (real float constants and both projectile+tracked-effect
+spawners) were independently checked. Only the affected
+`character-aux-extended-composite-00505a60` unit was independently cold
+replayed, **1/1 exact**. After a connector failure interrupted canonical
+adoption, source and match-unit dirty changes were inspected and retained,
+then completed in canonical ledgers and checkpoint without resets. No whole
+project replay, cropped CFG, fake locals, ABI lies, assembly, byte copying
+or external Oracle certification.

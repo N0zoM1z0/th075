@@ -47789,3 +47789,103 @@ offset = 52
 type = "REL32"
 symbol = "?SetBlendMode@BackgroundDrawerF366@@QAEXH@Z"
 target = 0x0040C7F0
+
+
+[units.character-aux-extended-composite-00505a60]
+source = "src/CharacterAux00505A60F365.cpp"
+object = "build/matching/CharacterAux00505A60F365.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["CharacterAux::RunAt00505A60"]
+symbol = "?UpdateAuxiliary@CharacterAux00505A60F365@@QAEXXZ"
+target_address = 0x00505A60
+size = 1576
+[[units.character-aux-extended-composite-00505a60.relocations]]
+offset = 14
+type = "DIR32"
+symbol = "__real@00000000"
+target = 0x0065782C
+[[units.character-aux-extended-composite-00505a60.relocations]]
+offset = 299
+type = "DIR32"
+symbol = "__real@00000000"
+target = 0x0065782C
+[[units.character-aux-extended-composite-00505a60.relocations]]
+offset = 347
+type = "DIR32"
+symbol = "?g_SpecialPowerStepAt006590B4@@3MB"
+target = 0x006590B4
+[[units.character-aux-extended-composite-00505a60.relocations]]
+offset = 433
+type = "REL32"
+symbol = "?Rand@CharacterAux00505A60F365@@QAEHHH@Z"
+target = 0x00455580
+[[units.character-aux-extended-composite-00505a60.relocations]]
+offset = 464
+type = "REL32"
+symbol = "?Rand@CharacterAux00505A60F365@@QAEHHH@Z"
+target = 0x00455580
+[[units.character-aux-extended-composite-00505a60.relocations]]
+offset = 503
+type = "REL32"
+symbol = "?SpawnProjectile@CharacterAux00505A60F365@@QAEXHMMEH@Z"
+target = 0x00453A70
+[[units.character-aux-extended-composite-00505a60.relocations]]
+offset = 534
+type = "REL32"
+symbol = "?Rand@CharacterAux00505A60F365@@QAEHHH@Z"
+target = 0x00455580
+[[units.character-aux-extended-composite-00505a60.relocations]]
+offset = 573
+type = "REL32"
+symbol = "?SpawnProjectile@CharacterAux00505A60F365@@QAEXHMMEH@Z"
+target = 0x00453A70
+[[units.character-aux-extended-composite-00505a60.relocations]]
+offset = 819
+type = "DIR32"
+symbol = "__real@42bc0000"
+target = 0x00659138
+[[units.character-aux-extended-composite-00505a60.relocations]]
+offset = 862
+type = "REL32"
+symbol = "?SpawnTrackedEffect@CharacterAux00505A60F365@@QAEXFMMCCE@Z"
+target = 0x00453AC0
+[[units.character-aux-extended-composite-00505a60.relocations]]
+offset = 1075
+type = "DIR32"
+symbol = "__real@42700000"
+target = 0x00658264
+[[units.character-aux-extended-composite-00505a60.relocations]]
+offset = 1118
+type = "REL32"
+symbol = "?SpawnTrackedEffect@CharacterAux00505A60F365@@QAEXFMMCCE@Z"
+target = 0x00453AC0
+[[units.character-aux-extended-composite-00505a60.relocations]]
+offset = 1313
+type = "DIR32"
+symbol = "__real@42c80000"
+target = 0x00657888
+[[units.character-aux-extended-composite-00505a60.relocations]]
+offset = 1356
+type = "REL32"
+symbol = "?SpawnTrackedEffect@CharacterAux00505A60F365@@QAEXFMMCCE@Z"
+target = 0x00453AC0
+[[units.character-aux-extended-composite-00505a60.relocations]]
+offset = 1392
+type = "DIR32"
+symbol = "__real@44070000"
+target = 0x00659134
+[[units.character-aux-extended-composite-00505a60.relocations]]
+offset = 1423
+type = "DIR32"
+symbol = "__real@c4070000"
+target = 0x00659130
+[[units.character-aux-extended-composite-00505a60.relocations]]
+offset = 1466
+type = "DIR32"
+symbol = "__real@43a00000"
+target = 0x0065787C
+[[units.character-aux-extended-composite-00505a60.relocations]]
+offset = 1497
+type = "DIR32"
+symbol = "__real@c3a00000"
+target = 0x00657880
