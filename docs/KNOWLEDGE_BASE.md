@@ -1438,3 +1438,43 @@ independent 320-instruction native listing remain in
 fake locals, masks, arbitrary stack padding, cropped code, whole-project
 cold replay or external Oracle receipt are involved. The independently
 reviewed 97 origin-unknown candidates stay uncredited.
+
+
+## F241: complete variable/fixed decimal painter with native stack lifecycle
+
+R040 independently classifies `ResultScene::DrawDecimalDigits` at
+`0042F530..0042F6D6` as authored. Native code spans **423 whole bytes /
+127 x86 instructions**, SHA256
+`2d708f91fbaf060e21a87a4d066200fa0dda614c358a31d6276273b483240c55`.
+Its actual `thiscall` has six explicit 4-byte stack arguments and ends
+with the original `RET 0x18`, where the callee pops all 24 argument bytes.
+The source `src/ResultDigitsF241.cpp` uses the previously accepted
+132-byte `SpriteQuad40CA80` four-float constructor at `0040DA00`, native
+float glyph width/height constants at `00657CC0/0065786C`, true
+Win32 SetRect, two `DrawQuad` calls to `0040C9A0`, and two transforms
+at `00411500`. The fixed-count branch divides by signed ten after each
+render and translates the quad left 16px. The variable-width branch
+keeps rendering until the signed integer becomes -1 and shifts the quad
+left 15px. Both preserve the original atlas digit index and vertical
+20px style stride, pixel color, texture index 2 and complete exit paths.
+
+The first natural source compiled **459 rather than 423 bytes**, with
+actual scene saved at EBP-0xA0, number at EBP-0x8C, quad at EBP-0x88
+and rect at EBP-0x9C. The independent Ghidra read establishes original
+scene EBP-0xA4, number EBP-4, quad EBP-0x90 and rect EBP-0xA0. A
+**genuine outer remaining integer + nested inner SpriteQuad + innermost
+RECT** lifetime restores these exact addresses without any invented local
+variables, padding or unused storage. Ordinary pinned VC7.1 `/Od /GX-`
+then generates **423/423 CODE bytes, 387/387 non-field bytes and all 9
+actual COFF relocation fields**, with whole-function cold replay
+`--unit result-scene-draw-decimal-digits-0042f530` returning `exact`.
+
+`tests/test_result_digits_f241.py` separately pins original PE hash,
+true `RET 0x18`, all nine immutable physical relocations, the native
+source hash and genuine field declarations. Both the 459-byte negative
+source and complete native/compiled comparisons remain under
+`.analysis/f241-result-digits/`. No arbitrary bytes, embedded owner
+layouts, fake locals, assembly, masked relocation targets, cropping,
+all-unit cold replay or external Oracle receipt was used. The 97
+origin-unknown functions and previously accepted F240 source remain
+unchanged.

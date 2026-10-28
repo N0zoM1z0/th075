@@ -552,3 +552,4 @@ MusicRoomScene::RenderSelectedTitle
 ResultScene::BuildCounterPage
 ResultScene::BuildRecordPage
 ResultScene::RenderCounters
+ResultScene::DrawDecimalDigits
