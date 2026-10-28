@@ -4936,3 +4936,36 @@ archive owner/list implementation, other already accepted callees
 and all 97 pending-origin candidates are excluded. No byte graft,
 asm, artificial stack padding, missing/masked COFF, cropped native
 function, full replay or remote Oracle acceptance.
+
+
+## F339: exact original 686-byte DataArchive::Write full file writer
+
+F339 fully cold-accepts the original R052-authored `DataArchive::Write`
+at `0041D260..0041D50D` as **686 CODE bytes**, **228 native x86
+instructions**, **574/574 comparable bytes** and **28/28 genuine
+original COFF relocation offsets/types/native solved destinations**.
+Original PE body SHA256:
+`80e6e36f8489bdd62975eb418514e49b4724ae36daadbb4e90447279294cb4b1`.
+The actual native routine creates an output archive file, builds a
+16-bit-record-count header and exact 108-byte filename/size/offset
+records through native 4-byte iterators, encrypts the table with the
+original rolling byte XOR and writes both table and complete source
+file payloads via original Win32/CRT calls, preserving all native
+exit paths and pointer lifetimes. The source groups **only the 60
+actually used bytes** of native iterator/file/decoder state in
+`NativeArchiveWriteStateF339`; borrowed direct `BeginInto` and
+`EndInto` names are caller-side hidden-sret ABI aliases for original
+Begin/End entries, not proof of the native author's C++ names.
+
+The older 686-byte F249 natural source was nonexact at 495/574
+comparable bytes. F339 resolved its physical native EBP storage
+and file-buffer aliases, producing a complete pinned VC7.1 natural
+C++ object with **all 686 original CODE bytes**, 574/574 comparable
+nonfield bytes and all 28 native original relocations. Only
+`data-archive-write-0041d260` was cold replayed (**1/1 exact**).
+Source `src/ArchiveWriteF339.cpp`; evidence and earlier negatives
+`.analysis/f249-archive-writer/`, `.analysis/f339-archive-write-frame/`.
+The separately F338-accepted 429-byte archive index reader is a
+different CODE range; neither counts original imported Win32/CRT
+or 97 origin-pending functions. Earlier claims that either of the
+686/429 archive functions was **currently unaccepted** are obsolete.

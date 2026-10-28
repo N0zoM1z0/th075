@@ -46450,3 +46450,152 @@ offset = 419
 type = "REL32"
 symbol = "@__security_check_cookie@4"
 target = 0x00640611
+
+[units.data-archive-write-0041d260]
+source = "src/ArchiveWriteF339.cpp"
+object = "build/matching/ArchiveWriteF339.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["DataArchive::Write"]
+symbol = "?Write@ArchiveWriterF249@@QAEXPBD@Z"
+target_address = 0x0041D260
+size = 686
+[[units.data-archive-write-0041d260.relocations]]
+offset = 33
+type = "DIR32"
+symbol = "__imp__CreateFileA@28"
+target = 0x00657130
+[[units.data-archive-write-0041d260.relocations]]
+offset = 63
+type = "DIR32"
+symbol = "__imp__SetFilePointer@16"
+target = 0x00657128
+[[units.data-archive-write-0041d260.relocations]]
+offset = 78
+type = "REL32"
+symbol = "?BeginInto@ArchiveEntryListF249@@QAEXPAVArchiveIteratorF249@@@Z"
+target = 0x0041D950
+[[units.data-archive-write-0041d260.relocations]]
+offset = 93
+type = "REL32"
+symbol = "?EndInto@ArchiveEntryListF249@@QAEXPAVArchiveIteratorF249@@@Z"
+target = 0x0041D980
+[[units.data-archive-write-0041d260.relocations]]
+offset = 104
+type = "REL32"
+symbol = "?Count@ArchiveEntryListF249@@QAEHXZ"
+target = 0x0041D9A0
+[[units.data-archive-write-0041d260.relocations]]
+offset = 124
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x006416A2
+[[units.data-archive-write-0041d260.relocations]]
+offset = 156
+type = "REL32"
+symbol = "?Count@ArchiveEntryListF249@@QAEHXZ"
+target = 0x0041D9A0
+[[units.data-archive-write-0041d260.relocations]]
+offset = 188
+type = "REL32"
+symbol = "??9ArchiveIteratorF249@@QBE_NABV0@@Z"
+target = 0x0041E0D0
+[[units.data-archive-write-0041d260.relocations]]
+offset = 219
+type = "REL32"
+symbol = "?Entry@ArchiveIteratorF249@@QAEPADXZ"
+target = 0x0041E060
+[[units.data-archive-write-0041d260.relocations]]
+offset = 243
+type = "REL32"
+symbol = "?Entry@ArchiveIteratorF249@@QAEPADXZ"
+target = 0x0041E060
+[[units.data-archive-write-0041d260.relocations]]
+offset = 259
+type = "REL32"
+symbol = "_strcpy"
+target = 0x00641B80
+[[units.data-archive-write-0041d260.relocations]]
+offset = 270
+type = "REL32"
+symbol = "?Entry@ArchiveIteratorF249@@QAEPADXZ"
+target = 0x0041E060
+[[units.data-archive-write-0041d260.relocations]]
+offset = 293
+type = "REL32"
+symbol = "??EArchiveIteratorF249@@QAE?AV0@H@Z"
+target = 0x0041E080
+[[units.data-archive-write-0041d260.relocations]]
+offset = 412
+type = "DIR32"
+symbol = "__imp__WriteFile@20"
+target = 0x00657124
+[[units.data-archive-write-0041d260.relocations]]
+offset = 427
+type = "REL32"
+symbol = "??3@YAXPAX@Z"
+target = 0x0064169D
+[[units.data-archive-write-0041d260.relocations]]
+offset = 445
+type = "REL32"
+symbol = "?Begin@ArchiveEntryListF249@@QAE?AVArchiveIteratorF249@@XZ"
+target = 0x0041D950
+[[units.data-archive-write-0041d260.relocations]]
+offset = 465
+type = "REL32"
+symbol = "?End@ArchiveEntryListF249@@QAE?AVArchiveIteratorF249@@XZ"
+target = 0x0041D980
+[[units.data-archive-write-0041d260.relocations]]
+offset = 482
+type = "REL32"
+symbol = "??9ArchiveIteratorF249@@QBE_NABV0@@Z"
+target = 0x0041E0D0
+[[units.data-archive-write-0041d260.relocations]]
+offset = 519
+type = "REL32"
+symbol = "?Entry@ArchiveIteratorF249@@QAEPADXZ"
+target = 0x0041E060
+[[units.data-archive-write-0041d260.relocations]]
+offset = 526
+type = "DIR32"
+symbol = "__imp__CreateFileA@28"
+target = 0x00657130
+[[units.data-archive-write-0041d260.relocations]]
+offset = 547
+type = "DIR32"
+symbol = "__imp__GetFileSize@8"
+target = 0x00657058
+[[units.data-archive-write-0041d260.relocations]]
+offset = 559
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x006416A2
+[[units.data-archive-write-0041d260.relocations]]
+offset = 595
+type = "DIR32"
+symbol = "__imp__ReadFile@20"
+target = 0x0065712C
+[[units.data-archive-write-0041d260.relocations]]
+offset = 619
+type = "DIR32"
+symbol = "__imp__WriteFile@20"
+target = 0x00657124
+[[units.data-archive-write-0041d260.relocations]]
+offset = 629
+type = "DIR32"
+symbol = "__imp__CloseHandle@4"
+target = 0x00657138
+[[units.data-archive-write-0041d260.relocations]]
+offset = 644
+type = "REL32"
+symbol = "??3@YAXPAX@Z"
+target = 0x0064169D
+[[units.data-archive-write-0041d260.relocations]]
+offset = 661
+type = "REL32"
+symbol = "??EArchiveIteratorF249@@QAE?AV0@H@Z"
+target = 0x0041E080
+[[units.data-archive-write-0041d260.relocations]]
+offset = 676
+type = "DIR32"
+symbol = "__imp__CloseHandle@4"
+target = 0x00657138

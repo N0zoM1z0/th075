@@ -1,4 +1,4 @@
-# TH075 — active reconstruction handoff (F338)
+# TH075 — active reconstruction handoff (F339)
 
 **Updated 2026-10-28. Read this document before new experiments.**
 
@@ -22,17 +22,17 @@ not acceptance requirements.
 
 | Item | Current evidence |
 | --- | --- |
-| Local branch / last exact-code commit | `main` / F338 complete 429-byte archive index loading boss; F337 two-side effects cleanup checkpoint `3a16048`, F334 event worker checkpoint `c9e0a1f` |
+| Local branch / last exact-code commit | `main` / F339 whole 686-byte archive writer; F338 429-byte archive index loader checkpoint `a8a4496`, F337 two-side effects cleanup checkpoint `3a16048` |
 | Upstream | `origin/main` tracked locally; verify current ahead/behind and dirty state before further work |
-| Working tree | Clean after F338 checkpoint if successful; continue rather than avoid every existing dirty edit |
+| Working tree | Clean after F339 checkpoint if successful; continue rather than avoid every existing dirty edit |
 | Native binary | `resources/th075.exe`, SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98` |
 | Candidate count | 4,351; origin review: 1,002 authored, 2,671 library, 581 compiler, 97 unknown |
-| Accepted functions / units | **644 / 644** |
-| Accepted authored CODE | **813,173 bytes** |
-| Reviewed authored coverage | 813,173 / 1,973,516 = **41.20%** |
-| Conservative coverage | **41.13%** counting 3,608 origin-pending bytes |
+| Accepted functions / units | **645 / 645** |
+| Accepted authored CODE | **813,859 bytes** |
+| Reviewed authored coverage | 813,859 / 1,973,516 = **41.24%** |
+| Conservative coverage | **41.16%** counting 3,608 origin-pending bytes |
 | Goal | **98% not reached** |
-| Verification | F338 complete 429-byte original R052 DataArchive::OpenAndReadIndex cold 1/1 exact (130 native instructions, 389/389 comparable bytes, ten real physical COFF fields) following F337 two-side cleanup checkpoint `3a16048`. Only newly affected F338 unit cold replayed; no all-unit replay or external Oracle receipt. |
+| Verification | F339 complete 686-byte R052 DataArchive::Write cold 1/1 exact (228 native instructions, 574/574 comparable bytes and all 28 physical native COFF fields); F338 complete 429-byte DataArchive::OpenAndReadIndex checkpoint `a8a4496`. Only newly affected F339 unit cold-replayed; no all-unit replay or external Oracle receipt. |
 
 **Recheck the actual live status immediately**. Local commits are checkpoints,
 not evidence of a remote push or external Oracle acceptance. Earlier Git
@@ -171,6 +171,7 @@ inert variable or arbitrary padding may earn exact credit.
 | F335: EventQueue::ReleaseSharedService | `00423A90` | 143 | 16 |
 | F337: BattlePointerQueues::ReleaseEntries | `005F7140` | 162 | 8 |
 | F338: DataArchive::OpenAndReadIndex | `0041D510` | 429 | 10 |
+| F339: DataArchive::Write | `0041D260` | 686 | 28 |
 
 F222 proved signed 32-bit x87 `FILD` divided by the target's 36.0f
 (`00659308`), 74 physical animation records and a final call into the
@@ -352,6 +353,8 @@ F335 **independently cold-accepts the complete R114 EventQueue service acquisiti
 F337 **cold-accepts the entire 162-byte R166-authored `BattlePointerQueues::ReleaseEntriesAt005F7140`** at `005F7140..005F71E1` (54 independent original x86 instructions, 130/130 nonfield bytes, all eight authentic original COFF REL32 offset/type/native destinations). Native SHA256 `a6e281ee48d96a55d56a6e3f26545b454a48091274d2032a49e1e63e090ff232`. A real two-side native 20-byte-stride effect pointer queue owner is traversed twice; each side calls authentic game Size `005F8110`, At `005F8130`, original CRT free `00640F15` and Clear `005F82D0`. The single true unsigned loop index is reused across both sides, and first/second *real* freed pointers occupy native EBP−0x8 / −0xC, with index EBP−0x4, saved this −0x10. First complete natural C++ was 162 bytes/8 fields but only 118/130 nonfield due wrong index/first-pointer stack allocation. Regrouping **only three genuinely used pointer/index native values** into a plain 12-byte `PointerQueueStateF337` in real `second, first, index` physical order restores all **130/130** nonfield bytes and native control/relocations. Source `src/BattlePointerReleaseF337.cpp` and original PE/Ghidra/negative/positive COFF/cold receipts `.analysis/f337-archive-close/`. Only affected `battle-pointer-queues-release-entries-005f7140` cold built **1/1 exact**, never all-unit. Its original caller F304 previously independently accepted; no repeated code coverage. Other native game container/private allocator/CRT/VC7 implementations and all 97 origin-pending cases stay excluded; no manual asm, byte copying, unused stack padding, masked COFF or remote Oracle receipt.
 
 F338 **cold-accepts the ENTIRE R052-authored 429-byte archive index reading boss `DataArchive::OpenAndReadIndex`** at `0041D510..0041D6BC` (130 independently decoded complete original x86 instructions, original `/GS` cookie and native `0x9C` frame, **389/389 exact comparable bytes and all 10/10 native physical COFF fields**). Pinned original PE full CODE SHA256 `caf7adaed6de06f3fbeb7d4e0335476498c7507342ad40f0411ad438c1cb4a49`. It closes existing file, opens input with authentic CreateFileA, reads original little-endian unsigned short entry count, allocates and reads encrypted `count*108` bytes through real Win32/CRT, decodes every byte using two native 8-bit rolling XOR key/step values (both initial 100; step increments by 77, key by step), and parses exact 108-byte wire entries (100-byte filename and two DWORD offsets at +100/+104), calling genuine native `strcpy` and game `ArchiveIndexList::AddEntry` `0041D9C0` for each. Full original array destruction and /GS check retained. Old full-length F248/F250 natural C++ matched at best 366/389 nonfield positions with ten physical COFF references; earlier declaration/lexical reorder attempts were negative. F338 models **only the actually used physical parser fields** in a plain 28-byte `ArchiveReadStateF338`: first key byte at EBP−0x19 inside existing 4-byte storage region EBP−0x1C..−0x19; decoded pointer −0x18; ushort count −0x14; step byte −0xD within existing EBP−0x10..−0xD; shared index DWORD −0xC; transferred DWORD −0x8; allocated original content pointer −0x4. Only actual native byte3 of each existing key/step storage region is used; other bytes receive no invented reads/writes, there is no additional stack state/padding, and the original programmer's exact private preferred types are *not inferred*. This naturally recovers all **389/389 comparable bytes, entire 429-byte CODE and ten original COFF offset/type/native destinations** under pinned VC7.1. Only `archive-open-and-read-index-0041d510` cold replayed **1/1 exact**, never all-unit. Source `src/ArchiveOpenReadIndexF338.cpp`, read-only native disassembly and all historical negative probes `.analysis/f248-archive-write/`, successful physical C++/COFF/cold `.analysis/f338-archive-physical/`. Its separate full 686-byte `DataArchive::Write` boss at `0041D140` remains **nonexact** with old 495/574 best, zero credit. Win32/CRT/VC7, opaque archive/list implementations and all 97 origin-pending candidates remain excluded; no manual x86, byte graft, fake locals/pads, masked relocations, partial native extent or external Oracle acceptance.
+
+F339 **cold-accepts all 686 native CODE bytes of `DataArchive::Write` at `0041D260..0041D50D`** (228 decoded original x86 instructions, 574/574 comparable nonfield bytes and 28 authentic physical COFF fields). Pinned original PE body SHA256 `80e6e36f8489bdd62975eb418514e49b4724ae36daadbb4e90447279294cb4b1`. The original archive builder writes a true unsigned-short record count plus packed 108-byte filename/size/offset records; rolling XOR with byte key/step starting at 100 and incrementing step by 77; appends complete source file data through original Win32 CreateFileA/ReadFile/WriteFile/GetFileSize/CloseHandle calls and real native linked-list Begin/End/Entry/Size iterator operations. Earlier F249 first natural source had 495/574 nonfield bytes; F339 `NativeArchiveWriteStateF339` groups only actually used 60 bytes of native iterator/IO/state variables, and direct caller-side `BeginInto/EndInto` names reflect original hidden-sret Begin/End entrypoints without asserting their source names. All original 28 relocation positions/types/solved native destinations are exact, source `src/ArchiveWriteF339.cpp`, original/disassembly/negative and positive evidence `.analysis/f249-archive-writer/`, `.analysis/f339-archive-write-frame/`. The unit `data-archive-write-0041d260` was independently cold built **1/1 exact**, never all units. The adjacent F338 429-byte index loader has separate exact CODE ownership and no duplicate credit. Historical F249/F250 statements that both archive functions remained unaccepted are **superseded by F338 and F339**. No fabricated padding, code patching, masked relocations or external Oracle receipt.
 
 Relevant full native proofs: `config/match-units.toml`,
 `config/exact-adoptions.json`, sources `src/*F222.cpp`/`src/*F223.cpp`,

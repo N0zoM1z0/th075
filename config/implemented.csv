@@ -642,3 +642,4 @@ EventQueue::AcquireSharedServiceAt004239F0
 EventQueue::ReleaseSharedServiceAt00423A90
 BattlePointerQueues::ReleaseEntriesAt005F7140
 DataArchive::OpenAndReadIndex
+DataArchive::Write
