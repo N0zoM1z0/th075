@@ -4409,7 +4409,7 @@ remain uncredited. No assembly, target-byte copying, unused fake
 stack fields, masked relocations, partial native extent, all-unit
 cold replay or external Oracle receipt.
 
-### Adjacent F323 complete replay filename renderer remains nonexact
+### F323 historical Replay filename negative; subsequently resolved by F514 exact
 
 `ReplayScene::DrawSaveFilename` at `0042C270` has a **303-byte**
 original GDI/UI function that first constructs the same real quad,
@@ -8222,3 +8222,67 @@ intact under `.analysis/f505-scene-release-248/`,
 `.analysis/f507-scene-true-ownership/` and
 `.analysis/f508-progress-reversed-subscript/`. No partially matching
 CODE or data was credited.
+
+
+## F514: complete 303-byte original Replay filename glyph renderer now exact, real native `/GS` stack layout
+
+The formerly long-pending R053 authored original
+`ReplayScene::DrawSaveFilenameAt0042C270` is now **303 full original
+CODE bytes /88 native x86 instructions**, original pinned PE SHA256
+`3d024dbba42ae48c3f1b00881cf366e40b38c9c10bb795db174f8d471da48130`.
+The complete pinned VC7.1 `/Od /Ob0 /Gy /GR- /GX- /GS /Zi`
+source `src/ReplaySceneDrawSaveFilenameF514.cpp` matches all **255/255
+original nonrelocation bytes and the exact authentic 12/12 physical
+COFF DIR32/REL32 fields/symbols/actual original PE destinations**
+(including four actual original constant-prefix addends). The *only*
+affected `--unit replay-scene-draw-save-filename-0042c270` was cold
+recompiled and replayed **1/1 exact**.
+
+The original full native `/GS` EBP layout is **0xAC**: actual scene
+owner at EBP-0xAC, **14 bytes of meaningful replay filename prefix**
+plus 2 bytes of ordinary compiler member alignment beginning EBP-0xA8,
+real **132-byte drawable quad** at EBP-0x98, and separately *used*
+**8-byte glyph array at EBP-0x0C..-0x05**, with true VC7.1 stack
+security cookie at -4. The two original source objects have different
+C++ lifetimes: **prefix and quad share one meaningful C++ aggregate**
+with actual physically 16-byte prefix storage and previously proven
+real 132-byte quad packet, while the original glyph buffer is an
+**independently declared char[8] local**, not a member of quad. This
+forces the original compiler GS buffer placement and native physical
+read/write offsets without any artificial filler, guessed 140-byte
+packet or hand-inserted cookie.
+
+Natural original prefix copying reads the real observed read-only
+`replay\replay` byte string from original PE `00657F9C` in exactly
+three DWORDs and one final WORD at physical addends **0,+4,+8,+12**.
+The original `memcmp` at `00641F00` compares the first 13 prefix
+bytes with the actual caller's signed filename. A matching prefix
+yields glyph bytes `13,40,71,(signed filename[13]+4),
+(signed filename[14]+4),(signed filename[15]+4),100,100`.
+The nonmatching branch yields `20,44,30,43,100,100,100,100`.
+**Each branch separately calls actual original DrawCharacters
+`0042C150`** with real source x/y floats, tint and glyph bytes; the
+compiler produces two physical COFF REL32 calls with independently
+verified original PE destinations. The real quad constructor
+`0040DA00`, float constants `0065786C`/`00657F78`, `memcmp`, actual
+`__security_cookie` at `0066FE30` and `__security_check_cookie` at
+`00640611` are all genuine original references.
+
+Historical F323/F424/F425/F441–F444 probes were nonexact and merged
+the two real draw branches or placed prefix/glyph arrays at wrong
+physical offsets. F506 tested drawing per branch but incorrectly
+arranged the three used objects, emitting 342 bytes. F510 combined
+quad and glyphs and moved actual glyphs to EBP-0x24. F511/F512 grouped
+all three and recovered 303 bytes but only **237/255 nonfield bytes**
+were matching, all 18 offending bytes due actual glyph at -0x14 vs
+native -0x0C. F513 grouped prefix+quad but separately declared glyph
+**scalar fields** and put the genuine /GS cookie at -0x0C, with
+glyphs at -0x08, wrong. F514 source instead leaves **both real prefix
+/quad aggregate and genuine glyph char[8]** as distinct separately
+protected source locals, restoring every original stack slot naturally.
+All past probes remain safely retained under ignored `.analysis/`
+directories as negative controls; the full original **303 CODE bytes
+are now exact and separately credited exactly once**, not any borrowed
+external CRT, renderer or quad code. No original bytes/ASM graft,
+assumed private owner fields, fake locals, masks, cropped original,
+all-unit cold replay or external Oracle receipt.
