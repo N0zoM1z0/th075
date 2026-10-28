@@ -80,6 +80,68 @@ def main() -> None:
     assert boundary[START + 0x1C].mnemonic == "mov"
     assert boundary[START + 0x1C].op_str == "dword ptr [ebp - 0x184], 0"
     assert boundary[START + 0x46].op_str == "eax, [ebp - 0x180]"
+    # The complete native startup and shutdown each reveal actual C++
+    # automatic resource lifetimes, not a synthetic single cleanup tail.
+    # The same physical EBP local is passed to each ctor/dtor pair.
+    native_owners = (
+        ('ArchiveCatalog', 0x2AF, 0x2B2, 0xB6B, 0xB6E,
+         'ecx, [ebp - 0x35]', 0x0041CE10, 0x0041CE50),
+        ('GameDataResources', 0x307, 0x30A, 0xB63, 0xB66,
+         'ecx, [ebp - 0x36]', 0x00417210, 0x00417430),
+    )
+    for name, ctor_lea, ctor_call, dtor_lea, dtor_call, slot, ctor, dtor in native_owners:
+        for offset in (ctor_lea, dtor_lea):
+            instruction = boundary[START + offset]
+            assert instruction.mnemonic == 'lea' and instruction.op_str == slot, name
+        assert boundary[START + ctor_call].mnemonic == 'call'
+        assert boundary[START + ctor_call].op_str == f'0x{ctor:x}', name
+        assert boundary[START + dtor_call].mnemonic == 'call'
+        assert boundary[START + dtor_call].op_str == f'0x{dtor:x}', name
+        print(f'  Native C++ {name} lifetime: {slot}, ctor {ctor:#010x}, dtor {dtor:#010x}')
+
+    # Three actual archive-open operations are *two-argument cdecl*.
+    # Old complete C++ probes mistakenly expressed these as thiscall
+    # ArchiveCatalog methods (MOV ECX, owner before call), violating the
+    # original push/push/call/add esp,8 ABI at each physical call site.
+    for offset in (0x2C1, 0x2D3, 0x2E5):
+        assert boundary[START + offset - 10].mnemonic == 'push'
+        assert boundary[START + offset - 5].mnemonic == 'push'
+        assert boundary[START + offset].mnemonic == 'call'
+        assert boundary[START + offset].op_str == '0x41cf80'
+        assert boundary[START + offset + 5].mnemonic == 'add'
+        assert boundary[START + offset + 5].op_str == 'esp, 8'
+    print('  Three original cdecl archive opens 0041CF80: two pushed args, caller POP8')
+
+    # Original replay-related global receiver is physically supplied in
+    # ECX for each method, never a no-receiver cdecl function call.
+    for move_at, call_at, destination in (
+        (0x4B7, 0x4BC, 0x00416B10),
+        (0xAEA, 0xAEF, 0x004169E0),
+    ):
+        assert boundary[START + move_at].mnemonic == 'mov'
+        assert boundary[START + move_at].op_str == 'ecx, 0x6718f8'
+        assert boundary[START + call_at].mnemonic == 'call'
+        assert boundary[START + call_at].op_str == f'0x{destination:x}'
+    print('  True replay global 006718F8 thiscalls at 00416B10 / 004169E0')
+
+    # A real first-scene construction pointer (not an inert stack temp)
+    # receives the Scene4 ctor result before it is copied to currentScene.
+    native_initialization = (
+        (0x48B, 'mov', 'dword ptr [ebp - 0x19c], ecx'),
+        (0x491, 'mov', 'edx, dword ptr [ebp - 0x19c]'),
+        (0x497, 'mov', 'dword ptr [ebp - 0x184], edx'),
+        (0x49D, 'mov', 'word ptr [ebp - 0x3c], 0x2004'),
+        (0x4A3, 'mov', 'ax, word ptr [ebp - 0x3c]'),
+        (0x4C1, 'mov', 'ecx, 1'),
+        (0x4C6, 'test', 'ecx, ecx'),
+    )
+    for offset, opcode, operands in native_initialization:
+        instruction = boundary[START + offset]
+        assert instruction.mnemonic == opcode and instruction.op_str == operands
+    assert boundary[START + 0x4C8].mnemonic == 'je'
+    print('  First constructed scene pointer EBP-0x19C → current scene EBP-0x184')
+    print('  Initial scene state EBP-0x3C and genuine while(1) MOV/TEST/JE guard')
+
     # Initial and subsequent scene-state policy use an original instance
     # method, not a cdecl free function. Both point to original 00431F60.
     scene_calls = [x for x in ins if x.mnemonic == "call" and x.op_str == "0x431f60"]

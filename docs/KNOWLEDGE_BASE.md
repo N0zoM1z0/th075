@@ -8385,3 +8385,75 @@ whole Reimu R063 and CharacterMove R048 original reports. Each of the
 this is evidence for future whole C++ implementation, **0 new CODE
 credit**, no borrowed caller/callee/after-RET DATA double-credit, no
 source native byte graft, no synthetic locals, and no full cold replay.
+
+
+## F525–F531: entire 2,987-byte WinMain C++ lifetime/control reconstruction advances, still NOT exact
+
+Original whole WinMain R113 verified native 2,987 CODE, 654 x86
+instructions, 123 calls, stack 0x278 and original 15-scene switch DATA
+unchanged. Native original archive catalog has distinct true local ctor
+0041CE10 and nonvirtual dtor 0041CE50 at EBP-0x35. Local game-data
+resource has ctor 00417210/dtor 00417430 at EBP-0x36. Three original
+0041CF80 calls at +0x2C1/+0x2D3/+0x2E5 are native *two-argument
+cdecl*, not archive instance thiscalls: every original call takes two
+PUSH arguments and an ADD ESP,8. Native global object 006718F8 has
+instance methods 00416B10/004169E0, original MOV ECX,006718F8
+before each. The first Scene4 ctor result is actually stored to
+EBP-0x19C before moving into the live scene pointer EBP-0x184. The
+native initial scene state is unsigned short at -0x3C, and original
+outer message loop executes literal MOV ECX,1; TEST ECX,ECX; JE
+(branch must exist even though while(1) is always true). A single
+PeekMessageA if/else pump is nearer original than nested repeats.
+
+Pinned VC7.1 full-function F525 genuine three early failures restore
+626/654 original ordered instruction mnemonics; F526 natural flat
+message pump 639/654; F527 real archive/game-data C++ automatic lifetime,
+three cdecl archive opens and two global Replay thiscalls 649/654. F528
+full natural C++ `outer0-firsttmp1-while1.cpp` reproduces **654/654
+original instruction mnemonics in exact order, 123/123 calls, and
+original 0x278 stack**, but CODE only **2,981 vs original 2,987**.
+The per-instruction original operand/size comparison at
+`.analysis/f528-winmain-native-initial-scene/detailed-insn-alignment.tsv`
+shows just **224/654** fully matching mnemonic+operands+length and
+**430 operand/length discrepancies**. Most important originals: app
+mode at EBP-0x3D versus source -1, graphics at -0x189 versus -0xD,
+input/sound at -0x62/-0x61 versus source -0x15/-0x16, active scene
+at -0x184 versus -0xC, module pathname at -0x180 versus -0x158.
+F528 another natural source emits 2,987 bytes but 656 instructions
+due an extra scene null test, not exact. F529 scopes of actual PODs
+and F530 meaningful actual scene+path+HWND aggregate fail to restore
+native local stack positions, some aggregate hypotheses generate 3,113
+CODE. These are all real complete C++ source probes, **none counted
+as native CODE**; original comparisons are not masks or partial cuts.
+`scripts/repo-python scripts/verify-winmain-scene-dispatch.py` now
+read-only attests the above concrete original PE ctor/dtor/ABI/loop
+evidence, along with the previously checked original whole CODE,
+15 native switch cases and all four true early/success cleanup chains.
+See expanded `docs/WINMAIN_ORIGINAL_CONTROL_FLOW.md`; archived local
+evidence `.analysis/f523-winmain-lifetime-structure/` and F525–F530.
+
+## F521–F524 and F531: original progress counter and archive lifetime type evidence (negative)
+
+Original authored GameProgress::IncrementSelectedRecord at 00425130
+is **92 full CODE bytes** and has no COFF relocation fields. Natural
+source prefix increment `++SELECTED_COUNT` generates 92 bytes and
+**70/92 original nonfield bytes** (versus 48/92 for the earlier
+assignment expression). Correct final store uses exactly original
+physical registers, but its read still computes fighter+0x16AC4
+×0x17F0 before difficulty+0x16AC5 ×0x5FC, whereas native read
+computes difficulty FIRST and adds owner to the fighter offset. Thirty
+F521 genuine expression/lvalue variants, twelve F522 real member and
+qualifier variants, eight F524 physically observed 15 fighter records
+plus opaque 0x3B0 owner tail tried under original VC7.1; none restores
+whole 92. Several `volatile`/typed variants emit 68 or 100–102 bytes.
+
+Original ArchiveCatalog::ReleaseAt0041CE50 is now independently
+confirmed by whole WinMain call/receiver as the actual catalog
+*nonvirtual C++ destructor* of local at EBP-0x35, paired with ctor
+0041CE10. Eight F531 natural original destructor-source variants under
+pinned VC7.1 yield full 171 CODE only for nonvirtual dtor, but
+**108/115 original nonrelocation bytes match**, seven EBP-slot errors
+in actual resource/delete/filename temp lifetimes remain. Virtual
+destructor emits 182 CODE and is false for this original entry.
+These remaining functions are still **unaccepted**, no partial source
+CODE/borrowed callee credit, no artificial locals or all-unit replay.
