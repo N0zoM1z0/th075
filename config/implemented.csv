@@ -938,3 +938,4 @@ StaffRollScene::AdvanceAt00438C20
 ReplayScene::DrawSaveFilenameAt0042C270
 NameEntryScene::DrawDecimalGlyphLabelAt0042B110
 ResultScene::DrawRankLabelAt00431890
+GameProgress::IncrementSelectedRecordAt00425130

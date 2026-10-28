@@ -921,3 +921,4 @@ address,name,module,confidence,evidence
 0x0042C270,ReplayScene::DrawSaveFilenameAt0042C270,ReplayScene,inferred,"F514; 303-byte exact original replay filename glyph rendering both branches, native /GS, 12 true PE COFF fields and targeted 1/1 cold exact"
 0x0042B110,NameEntryScene::DrawDecimalGlyphLabelAt0042B110,NameEntryScene,inferred,"F516; entire original 169-byte NameEntry rank label, 145/145 native nonfield bytes, 6 authentic physical COFF fields and targeted 2/2 cold exact"
 0x00431890,ResultScene::DrawRankLabelAt00431890,ResultScene,inferred,"F516; entire original 169-byte Result rank label, 145/145 native nonfield bytes, 6 authentic physical COFF fields and targeted 2/2 cold exact"
+0x00425130,GameProgress::IncrementSelectedRecordAt00425130,GameProgress,inferred,"F535; whole original 92 CODE/24 instructions, native postfix signed 2D stride increment, zero COFF fields, changed-only 1/1 cold exact"

@@ -939,3 +939,4 @@ StaffRollScene::AdvanceAt00438C20,0x00438C20,function
 ReplayScene::DrawSaveFilenameAt0042C270,0x0042C270,function
 NameEntryScene::DrawDecimalGlyphLabelAt0042B110,0x0042B110,function
 ResultScene::DrawRankLabelAt00431890,0x00431890,function
+GameProgress::IncrementSelectedRecordAt00425130,0x00425130,function

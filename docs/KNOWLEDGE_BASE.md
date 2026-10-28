@@ -8026,7 +8026,7 @@ class layouts, no borrowed game/CRT/runtime callee code, false 32-bit
 parameter widening, fake locals, source ASM, original-byte graft, masks,
 partial native extents, all-unit cold replay or external Oracle receipt.
 
-## F497–F498: original native 92-byte GameProgress register-order mismatch (nonexact)
+## F497–F498: historical original 92-byte GameProgress register-order negative controls, solved by F535 exact
 
 The remaining R? `GameProgress::IncrementSelectedRecordAt00425130`
 has a 92-byte PE body that loads *signed character* at owner+0x16AC4
@@ -8432,7 +8432,7 @@ evidence, along with the previously checked original whole CODE,
 See expanded `docs/WINMAIN_ORIGINAL_CONTROL_FLOW.md`; archived local
 evidence `.analysis/f523-winmain-lifetime-structure/` and F525–F530.
 
-## F521–F524 and F531: original progress counter and archive lifetime type evidence (negative)
+## F521–F524: historical progress counter negatives, solved by F535; F531 archive lifetime remains nonexact
 
 Original authored GameProgress::IncrementSelectedRecord at 00425130
 is **92 full CODE bytes** and has no COFF relocation fields. Natural
@@ -8457,3 +8457,55 @@ in actual resource/delete/filename temp lifetimes remain. Virtual
 destructor emits 182 CODE and is false for this original entry.
 These remaining functions are still **unaccepted**, no partial source
 CODE/borrowed callee credit, no artificial locals or all-unit replay.
+
+
+## F535: genuine complete 92-byte GameProgress native selected-record postfix increment, 1/1 cold exact
+
+The independently original R103-authored full function
+`GameProgress::IncrementSelectedRecordAt00425130` at `00425130..
+0042518B` is now **92 original authored CODE bytes /24 genuine x86
+instructions**, original PE SHA256
+`0fb4c8bcd359efb606e39a0f39282fe764abcb7fbb2c7ebbd38699a100e8dd89`.
+Source `src/GameProgressIncrementSelectedRecordF535.cpp` is natural
+complete C++ with the two **physically real signed 8-bit selectors**
+owned at this+0x16AC4 (fighter) and this+0x16AC5 (difficulty),
+actual per-fighter `0x17F0` stride and per-difficulty `0x5FC`
+stride. The resulting original DWORD record counter is at
+`this + (fighter × 0x17F0) + (difficulty × 0x5FC) + 4`.
+
+**Decisive native source spelling:** the whole original uses source
+**POSTFIX `SELECTED_COUNT++`**, not the equivalent-in-result
+`++SELECTED_COUNT` or `SELECTED_COUNT=SELECTED_COUNT+1`. Under the
+verified pinned VC7.1 `/Od /Ob0 /Gy /GR- /GX- /GS /Zi` profile,
+postfix++ generates the original first read evaluation *difficulty
+first* (`MOVSX ECX,[this+0x16AC5]`, `IMUL ECX,0x5FC`), then fighter
+second (`MOVSX EAX,[this+0x16AC4]`, `IMUL EAX,0x17F0`), then `ADD
+EAX,[ebp-4]`, `MOV ECX,[EAX+ECX+4]` and `ADD ECX,1`. The later
+store evaluates difficulty in EAX, fighter in EDX, adds the actual
+owner to EDX and writes `[EDX+EAX+4]`; the compiler produced both
+original read and store exactly. Natural prefix++ generated native
+store half correctly but read half in a different order (**70/92
+original nonfield bytes**); explicit assignment yielded only 48/92.
+The F478/F497/F498/F508/F521/F522/F524 type, real 2D array,
+commutative indexing and volatile hypotheses therefore remained
+nonexact despite reproducing the same game state semantics. F534
+changed real VC7.1 CPU/profile flags (G5/G6/G7/Ob1/Op) without
+solving prefix++, and actual O1/O2 optimization shortened the source
+to 30 bytes. F535 tested fifteen real C++ statement spellings and
+found that either plain postfix++ or `static_cast<void>(...++)`
+produces the complete **92/92** original bytes. This is a source
+syntax/VC7.1 codegen difference, not a fabricated register or stack
+local.
+
+The code contains **zero actual native PE/COFF relocations**, no
+borrowed game functions, and its entire source's **92/92 bytes**
+were compared as original CODE. A fresh
+`scripts/repo-python scripts/replay-exact-units.py --unit
+game-progress-increment-selected-record-00425130` returned **1/1
+exact**, rebuilding only its own object. The first attempted targeted
+compiler run was interrupted, and its actual dirty manifest/source
+were preserved and finished on the next call without any reset.
+Only **92 newly exact original CODE bytes** are credited, no partial
+original, masked relocation bytes, source ASM, native-byte graft,
+false full private class layout, full all-unit cold replay or
+external Oracle receipt.

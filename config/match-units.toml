@@ -60396,3 +60396,13 @@ offset = 159
 type = "REL32"
 symbol = "@__security_check_cookie@4"
 target = 0x00640611
+
+[units.game-progress-increment-selected-record-00425130]
+source = "src/GameProgressIncrementSelectedRecordF535.cpp"
+object = "build/matching/GameProgressIncrementSelectedRecordF535.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["GameProgress::IncrementSelectedRecordAt00425130"]
+symbol = "?IncrementSelectedRecord@ProgressRecordCounterF478@@QAEXXZ"
+target_address = 0x00425130
+size = 92
+relocations = []
