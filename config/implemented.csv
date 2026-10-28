@@ -543,3 +543,5 @@ AliceFighter::ResetRound
 CharacterSelectScene::UpdatePlayerChoice
 CharacterSelectScene::UpdatePlayerConfirmation
 CharacterSelectScene::Advance
+CharacterSelectScene::ProcessPlayerOptions
+CharacterSelectScene::ProcessSubselection

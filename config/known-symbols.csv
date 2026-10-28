@@ -526,3 +526,5 @@ address,name,module,confidence,evidence
 0x004348E0,CharacterSelectScene::UpdatePlayerChoice,CharacterSelectScene,inferred,F227; complete 1029-byte x87 player choice controller cold-exact with 32 actual relocation fields; original class layout and name inferred
 0x00434CF0,CharacterSelectScene::UpdatePlayerConfirmation,CharacterSelectScene,inferred,F228; full 995 native CODE bytes and all 34 target-bound fields cold exact; signed game mode and player input ABI observed with original class naming provisional
 0x00433470,CharacterSelectScene::Advance,CharacterSelectScene,inferred,F229; complete 1442 native CODE bytes plus 36 byte switch table and all 76 relocations cold exact; original class layout and method name inferred
+0x00433A40,CharacterSelectScene::ProcessPlayerOptions,CharacterSelectScene,inferred,F230; complete 404-byte cold exact with 18 relocations; actual scene class and source name provisional
+0x00433BE0,CharacterSelectScene::ProcessSubselection,CharacterSelectScene,inferred,F230; complete 264-byte cold exact with 16 relocations; actual scene class and source name provisional

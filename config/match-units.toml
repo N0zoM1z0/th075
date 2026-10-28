@@ -38072,3 +38072,193 @@ offset = 1474
 type = "DIR32"
 symbol = "$L508"
 target = 0x0043391A
+
+
+[units.character-select-scene-process-player-options-00433a40]
+source = "src/CharacterSelectOptionsF230.cpp"
+object = "build/matching/CharacterSelectOptionsF230.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["CharacterSelectScene::ProcessPlayerOptions"]
+symbol = "?ProcessPlayerOptions@CharacterSelectOptionsF230@@QAEXC@Z"
+target_address = 0x00433A40
+size = 404
+[[units.character-select-scene-process-player-options-00433a40.relocations]]
+offset = 23
+type = "REL32"
+symbol = "?TestAction@ChoiceInputF230@@YAHH@Z"
+target = 0x00438A60
+[[units.character-select-scene-process-player-options-00433a40.relocations]]
+offset = 39
+type = "DIR32"
+symbol = "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundF230@@A"
+target = 0x00671618
+[[units.character-select-scene-process-player-options-00433a40.relocations]]
+offset = 44
+type = "REL32"
+symbol = "?Play@ChoiceSoundF230@@QAEXH@Z"
+target = 0x004079C0
+[[units.character-select-scene-process-player-options-00433a40.relocations]]
+offset = 136
+type = "REL32"
+symbol = "?TestAction@ChoiceInputF230@@YAHH@Z"
+target = 0x00438A60
+[[units.character-select-scene-process-player-options-00433a40.relocations]]
+offset = 152
+type = "DIR32"
+symbol = "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundF230@@A"
+target = 0x00671618
+[[units.character-select-scene-process-player-options-00433a40.relocations]]
+offset = 157
+type = "REL32"
+symbol = "?Play@ChoiceSoundF230@@QAEXH@Z"
+target = 0x004079C0
+[[units.character-select-scene-process-player-options-00433a40.relocations]]
+offset = 168
+type = "DIR32"
+symbol = "?g_SelectOptionFlagAt00671438@@3PAEA"
+target = 0x00671438
+[[units.character-select-scene-process-player-options-00433a40.relocations]]
+offset = 183
+type = "DIR32"
+symbol = "?g_SelectOptionFlagAt00671438@@3PAEA"
+target = 0x00671438
+[[units.character-select-scene-process-player-options-00433a40.relocations]]
+offset = 230
+type = "DIR32"
+symbol = "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundF230@@A"
+target = 0x00671618
+[[units.character-select-scene-process-player-options-00433a40.relocations]]
+offset = 235
+type = "REL32"
+symbol = "?Play@ChoiceSoundF230@@QAEXH@Z"
+target = 0x004079C0
+[[units.character-select-scene-process-player-options-00433a40.relocations]]
+offset = 246
+type = "DIR32"
+symbol = "?g_SelectOptionAt00671434@@3PACA"
+target = 0x00671434
+[[units.character-select-scene-process-player-options-00433a40.relocations]]
+offset = 267
+type = "DIR32"
+symbol = "?g_SelectOptionAt00671434@@3PACA"
+target = 0x00671434
+[[units.character-select-scene-process-player-options-00433a40.relocations]]
+offset = 292
+type = "DIR32"
+symbol = "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundF230@@A"
+target = 0x00671618
+[[units.character-select-scene-process-player-options-00433a40.relocations]]
+offset = 297
+type = "REL32"
+symbol = "?Play@ChoiceSoundF230@@QAEXH@Z"
+target = 0x004079C0
+[[units.character-select-scene-process-player-options-00433a40.relocations]]
+offset = 308
+type = "DIR32"
+symbol = "?g_SelectOptionAt00671434@@3PACA"
+target = 0x00671434
+[[units.character-select-scene-process-player-options-00433a40.relocations]]
+offset = 329
+type = "DIR32"
+symbol = "?g_SelectOptionAt00671434@@3PACA"
+target = 0x00671434
+[[units.character-select-scene-process-player-options-00433a40.relocations]]
+offset = 354
+type = "DIR32"
+symbol = "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundF230@@A"
+target = 0x00671618
+[[units.character-select-scene-process-player-options-00433a40.relocations]]
+offset = 359
+type = "REL32"
+symbol = "?Play@ChoiceSoundF230@@QAEXH@Z"
+target = 0x004079C0
+
+
+[units.character-select-scene-process-subselection-00433be0]
+source = "src/CharacterSelectSubselectionF230.cpp"
+object = "build/matching/CharacterSelectSubselectionF230.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["CharacterSelectScene::ProcessSubselection"]
+symbol = "?ProcessSubselection@CharacterSelectSubselectionF230@@QAEXXZ"
+target_address = 0x00433BE0
+size = 264
+[[units.character-select-scene-process-subselection-00433be0.relocations]]
+offset = 16
+type = "REL32"
+symbol = "?TestAction@ChoiceInputF230@@YAHH@Z"
+target = 0x00438A60
+[[units.character-select-scene-process-subselection-00433be0.relocations]]
+offset = 32
+type = "DIR32"
+symbol = "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundF230@@A"
+target = 0x00671618
+[[units.character-select-scene-process-subselection-00433be0.relocations]]
+offset = 37
+type = "REL32"
+symbol = "?Play@ChoiceSoundF230@@QAEXH@Z"
+target = 0x004079C0
+[[units.character-select-scene-process-subselection-00433be0.relocations]]
+offset = 58
+type = "DIR32"
+symbol = "?g_SelectedCardAt006718F8@@3VProgressCardViewF230@@A"
+target = 0x006718F8
+[[units.character-select-scene-process-subselection-00433be0.relocations]]
+offset = 63
+type = "REL32"
+symbol = "?GetSelectedValue@ProgressCardViewF230@@QAECXZ"
+target = 0x00438A80
+[[units.character-select-scene-process-subselection-00433be0.relocations]]
+offset = 73
+type = "DIR32"
+symbol = "?g_SelectedCardAt006718F8@@3VProgressCardViewF230@@A"
+target = 0x006718F8
+[[units.character-select-scene-process-subselection-00433be0.relocations]]
+offset = 78
+type = "REL32"
+symbol = "?GetSelectedValue@ProgressCardViewF230@@QAECXZ"
+target = 0x00438A80
+[[units.character-select-scene-process-subselection-00433be0.relocations]]
+offset = 112
+type = "DIR32"
+symbol = "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundF230@@A"
+target = 0x00671618
+[[units.character-select-scene-process-subselection-00433be0.relocations]]
+offset = 117
+type = "REL32"
+symbol = "?Play@ChoiceSoundF230@@QAEXH@Z"
+target = 0x004079C0
+[[units.character-select-scene-process-subselection-00433be0.relocations]]
+offset = 131
+type = "DIR32"
+symbol = "?g_SelectedFighterAt006714C8@@3EA"
+target = 0x006714C8
+[[units.character-select-scene-process-subselection-00433be0.relocations]]
+offset = 150
+type = "DIR32"
+symbol = "?g_PlayerPadAt00671620@@3EA"
+target = 0x00671620
+[[units.character-select-scene-process-subselection-00433be0.relocations]]
+offset = 156
+type = "DIR32"
+symbol = "?g_SelectStageAt00671621@@3EA"
+target = 0x00671621
+[[units.character-select-scene-process-subselection-00433be0.relocations]]
+offset = 163
+type = "DIR32"
+symbol = "?g_ChosenModeAt006714AC@@3EA"
+target = 0x006714AC
+[[units.character-select-scene-process-subselection-00433be0.relocations]]
+offset = 221
+type = "DIR32"
+symbol = "?g_PlayerPadAt00671620@@3EA"
+target = 0x00671620
+[[units.character-select-scene-process-subselection-00433be0.relocations]]
+offset = 230
+type = "DIR32"
+symbol = "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundF230@@A"
+target = 0x00671618
+[[units.character-select-scene-process-subselection-00433be0.relocations]]
+offset = 235
+type = "REL32"
+symbol = "?Play@ChoiceSoundF230@@QAEXH@Z"
+target = 0x004079C0

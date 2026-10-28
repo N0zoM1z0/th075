@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "0f41dc2e97f92d4119d38d62490c178c44914dd115eb1f1777780c80aa91f96e"
+      "current_sha256": "89082d6262be8b7fc82cd8af76bc09a670177f97ac4f7f650f904842d48af9c2"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "81737850e0a6123e5a14d5916943e1d5f34e59600c981f595d9107f64e2a4254"
+      "current_sha256": "8a4e941e7b27492cc3f3bfce79b3340393f2fe274299860c3ea2e57e026f82ea"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "44853d9ebccd688097c1b27def725edb82033d3fdd15166bf8b2ffc0ab2e930e"
+      "current_sha256": "e88eaa8e8f016e783cf492aa7bc9c9a1589d0f0c3766097dc2044ab5164a8181"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "59c7fa1ad59e5e8de5c8d37f01639896cad27cc5c8057aa2abea248e7a26eeb5"
+      "current_sha256": "ebebefe805d5a1c4513b8e41563e8ba27f86a49555fe32ec409ffc9cfbce0857"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "0bbb5d2faef8ae90c64ea3b8485c1ebae1d295196cdfb77a669327f3857d0036"
+      "current_sha256": "95e96fc4203029f65a980cd5bc8e58144146c741a652da82f7ef1143e21f4038"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -21380,6 +21380,94 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R044"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00433A40",
+        "size": "404",
+        "span_end": "0x00433BD3",
+        "current_name": "FUN_00433a40",
+        "proposed_name": "CharacterSelectScene::ProcessPlayerOptions",
+        "module": "CharacterSelectScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R041; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00433A40",
+        "size": "404",
+        "span_end": "0x00433BD3",
+        "current_name": "FUN_00433a40",
+        "proposed_name": "CharacterSelectScene::ProcessPlayerOptions",
+        "module": "CharacterSelectScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void CharacterSelectOptionsF230::ProcessPlayerOptions(signed char player)",
+        "is_thunk": "false",
+        "source_file": "src/CharacterSelectOptionsF230.cpp",
+        "evidence": "R041; full body hash, complete decoded CFG and local game-specific behavior reviewed; F230; scripts/repo-python scripts/replay-exact-units.py --unit character-select-scene-process-player-options-00433a40",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F230: whole 404 authored CODE bytes / 111 native x86 instructions ending true RET, target SHA256 14fa30b51abb4fcd520b51eeab01433d87f8d9f7d30d2921b323d3d8aa4bf3fc. Pinned VC7.1 /Od /GX- cold exact; 332/332 nonfield bytes and all 18 physical COFF relocation fields. Actual 28-byte player input stride and signed byte selector at +0xec, native cdecl action calls 00438A60 and sound calls 004079C0. Reproduces native 0x671438 byte boolean toggle and 0x671434 signed modulo-five option index, input left/right and cancel at +0x24. First ordinary `!flag` emitted 405 bytes because VC7.1 used byte SBB/INC; physically equivalent conditional `flag ? 0 : 1` emits target full-width EAX NEG/SBB/INC, restoring 404/404 including all 18 real fields. Callee origin at 00438A60 remains unresolved and uncredited. Borrowed typed this pointer views are not complete class layout evidence. Original naming and unobserved member types remain provisional; 97 unresolved origins unchanged. No fake locals, target-byte grafts, assembly, masked fields or cropped functions. Local cold exact only; no external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x00433A40",
+        "origin": "authored",
+        "subsystem": "CharacterSelectScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R041"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00433BE0",
+        "size": "264",
+        "span_end": "0x00433CE7",
+        "current_name": "FUN_00433be0",
+        "proposed_name": "CharacterSelectScene::ProcessSubselection",
+        "module": "CharacterSelectScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00433BE0",
+        "size": "264",
+        "span_end": "0x00433CE7",
+        "current_name": "FUN_00433be0",
+        "proposed_name": "CharacterSelectScene::ProcessSubselection",
+        "module": "CharacterSelectScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void CharacterSelectSubselectionF230::ProcessSubselection()",
+        "is_thunk": "false",
+        "source_file": "src/CharacterSelectSubselectionF230.cpp",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed; F230; scripts/repo-python scripts/replay-exact-units.py --unit character-select-scene-process-subselection-00433be0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F230: whole 264 authored CODE bytes / 70 native x86 instructions ending true RET, target SHA256 6f6fbddee5b1d6792e9184fa7df9736f25c8f30bc35a69ee0269313bad2992b9. Pinned VC7.1 /Od /GX- cold exact; 200/200 nonfield bytes and all 16 physical COFF relocation fields. Two physically separate accepted getter calls 00438A80 on real 006718F8 card receiver and genuine cdecl action call 00438A60. Keeps native ESI signed arithmetic and signed IDIV remainder, selection globals 006714C8/00671620/00671621/006714AC, sound effects and full confirmation/cancel cleanup in actual instruction order. First natural C++ body emitted all 264 target bytes with all 16 real relocations; caller does not earn extra credit for unknown callee 00438A60. Borrowed typed this pointer views are not complete class layout evidence. Original naming and unobserved member types remain provisional; 97 unresolved origins unchanged. No fake locals, target-byte grafts, assembly, masked fields or cropped functions. Local cold exact only; no external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x00433BE0",
+        "origin": "authored",
+        "subsystem": "CharacterSelectScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R043"
       }
     }
   ],
@@ -167508,6 +167596,256 @@
           "target": 4405530
         }
       ]
+    },
+    "character-select-scene-process-player-options-00433a40": {
+      "source": "src/CharacterSelectOptionsF230.cpp",
+      "object": "build/matching/CharacterSelectOptionsF230.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "CharacterSelectScene::ProcessPlayerOptions"
+      ],
+      "symbol": "?ProcessPlayerOptions@CharacterSelectOptionsF230@@QAEXC@Z",
+      "target_address": 4405824,
+      "size": 404,
+      "relocations": [
+        {
+          "offset": 23,
+          "type": "REL32",
+          "symbol": "?TestAction@ChoiceInputF230@@YAHH@Z",
+          "target": 4426336
+        },
+        {
+          "offset": 39,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundF230@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 44,
+          "type": "REL32",
+          "symbol": "?Play@ChoiceSoundF230@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 136,
+          "type": "REL32",
+          "symbol": "?TestAction@ChoiceInputF230@@YAHH@Z",
+          "target": 4426336
+        },
+        {
+          "offset": 152,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundF230@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 157,
+          "type": "REL32",
+          "symbol": "?Play@ChoiceSoundF230@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 168,
+          "type": "DIR32",
+          "symbol": "?g_SelectOptionFlagAt00671438@@3PAEA",
+          "target": 6755384
+        },
+        {
+          "offset": 183,
+          "type": "DIR32",
+          "symbol": "?g_SelectOptionFlagAt00671438@@3PAEA",
+          "target": 6755384
+        },
+        {
+          "offset": 230,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundF230@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 235,
+          "type": "REL32",
+          "symbol": "?Play@ChoiceSoundF230@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 246,
+          "type": "DIR32",
+          "symbol": "?g_SelectOptionAt00671434@@3PACA",
+          "target": 6755380
+        },
+        {
+          "offset": 267,
+          "type": "DIR32",
+          "symbol": "?g_SelectOptionAt00671434@@3PACA",
+          "target": 6755380
+        },
+        {
+          "offset": 292,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundF230@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 297,
+          "type": "REL32",
+          "symbol": "?Play@ChoiceSoundF230@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 308,
+          "type": "DIR32",
+          "symbol": "?g_SelectOptionAt00671434@@3PACA",
+          "target": 6755380
+        },
+        {
+          "offset": 329,
+          "type": "DIR32",
+          "symbol": "?g_SelectOptionAt00671434@@3PACA",
+          "target": 6755380
+        },
+        {
+          "offset": 354,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundF230@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 359,
+          "type": "REL32",
+          "symbol": "?Play@ChoiceSoundF230@@QAEXH@Z",
+          "target": 4225472
+        }
+      ]
+    },
+    "character-select-scene-process-subselection-00433be0": {
+      "source": "src/CharacterSelectSubselectionF230.cpp",
+      "object": "build/matching/CharacterSelectSubselectionF230.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "CharacterSelectScene::ProcessSubselection"
+      ],
+      "symbol": "?ProcessSubselection@CharacterSelectSubselectionF230@@QAEXXZ",
+      "target_address": 4406240,
+      "size": 264,
+      "relocations": [
+        {
+          "offset": 16,
+          "type": "REL32",
+          "symbol": "?TestAction@ChoiceInputF230@@YAHH@Z",
+          "target": 4426336
+        },
+        {
+          "offset": 32,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundF230@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 37,
+          "type": "REL32",
+          "symbol": "?Play@ChoiceSoundF230@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 58,
+          "type": "DIR32",
+          "symbol": "?g_SelectedCardAt006718F8@@3VProgressCardViewF230@@A",
+          "target": 6756600
+        },
+        {
+          "offset": 63,
+          "type": "REL32",
+          "symbol": "?GetSelectedValue@ProgressCardViewF230@@QAECXZ",
+          "target": 4426368
+        },
+        {
+          "offset": 73,
+          "type": "DIR32",
+          "symbol": "?g_SelectedCardAt006718F8@@3VProgressCardViewF230@@A",
+          "target": 6756600
+        },
+        {
+          "offset": 78,
+          "type": "REL32",
+          "symbol": "?GetSelectedValue@ProgressCardViewF230@@QAECXZ",
+          "target": 4426368
+        },
+        {
+          "offset": 112,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundF230@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 117,
+          "type": "REL32",
+          "symbol": "?Play@ChoiceSoundF230@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 131,
+          "type": "DIR32",
+          "symbol": "?g_SelectedFighterAt006714C8@@3EA",
+          "target": 6755528
+        },
+        {
+          "offset": 150,
+          "type": "DIR32",
+          "symbol": "?g_PlayerPadAt00671620@@3EA",
+          "target": 6755872
+        },
+        {
+          "offset": 156,
+          "type": "DIR32",
+          "symbol": "?g_SelectStageAt00671621@@3EA",
+          "target": 6755873
+        },
+        {
+          "offset": 163,
+          "type": "DIR32",
+          "symbol": "?g_ChosenModeAt006714AC@@3EA",
+          "target": 6755500
+        },
+        {
+          "offset": 221,
+          "type": "DIR32",
+          "symbol": "?g_PlayerPadAt00671620@@3EA",
+          "target": 6755872
+        },
+        {
+          "offset": 230,
+          "type": "DIR32",
+          "symbol": "?g_ChoiceSoundAt00671618@@3PAVChoiceSoundF230@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 235,
+          "type": "REL32",
+          "symbol": "?Play@ChoiceSoundF230@@QAEXH@Z",
+          "target": 4225472
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -167830,6 +168168,8 @@
     "src/AliceResetF227.cpp": "84c063ec343aa1726bf545a2c3a8b72d4e2929ec02bbe2a187ed692e0d1bea8e",
     "src/CharacterSelectChoiceF226.cpp": "6ecdd0f1e51af3e1878359d8b2c92eaacecb4dbba392a4c4c716d8452011776e",
     "src/CharacterSelectConfirmF228.cpp": "27033f3f8d02d11e291df37f21a69199077a59003640dc88f1f84df14b394a92",
-    "src/CharacterSelectAdvanceF229.cpp": "ce6f896d5b2d521691cae92be6bed32bb465e5cfe01a15c3316134ece4e2d841"
+    "src/CharacterSelectAdvanceF229.cpp": "ce6f896d5b2d521691cae92be6bed32bb465e5cfe01a15c3316134ece4e2d841",
+    "src/CharacterSelectOptionsF230.cpp": "73a55269ccba05c3db1b91ef040f1e062d31977eb1ba4a27f770050dceaff740",
+    "src/CharacterSelectSubselectionF230.cpp": "06961f5d996f82659d3234e55ff1e8387490272bf1c7b982691b4e760f7e6f8e"
   }
 }

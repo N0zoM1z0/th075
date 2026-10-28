@@ -1049,3 +1049,50 @@ No literal target bytes, assembly, fake storage allocations, padding,
 local-value masking, or cropped comparisons were introduced. This is
 local cold-exact replay, not an external Oracle receipt or full game
 rebuild. All 97 origin-unknown candidates remain uncredited.
+
+
+## F230: two complete player-options and submenu callees under the F229 boss
+
+Two distinct R041/R043 authored functions called directly by the F229
+`CharacterSelectScene::Advance` were reconstructed in ordinary pinned
+VC7.1 `/Od /GX-` C++ and cold-replayed **independently**, without recompiling
+any unrelated accepted match unit. Their nominal scene class and input
+owner are still physical call-only views, not proven original layouts.
+
+`CharacterSelectScene::ProcessPlayerOptions`, at `00433A40..00433BD3`,
+contains 404 CODE bytes / 111 native instructions and 18 physical
+relocations, SHA256
+`14fa30b51abb4fcd520b51eeab01433d87f8d9f7d30d2921b323d3d8aa4bf3fc`.
+The function takes signed `player` with an observed 28-byte action-input
+stride, calls the observed input checker at `00438A60`, toggles the scene's
+byte at `0xEC+player`, plays game sound cues, toggles per-player option flag
+`00671438`, updates signed `00671434` option indices modulo five in both
+directions, and clears/sets player cancellation at `0xEA+player`. The first
+complete natural source emitted 405 rather than native 404 bytes: VC7.1
+lowered plain `!byte` as 8-bit `SBB AL,AL; INC AL`. The **same meaningful
+boolean conditional** written `flag ? 0 : 1` emits native 32-bit
+`NEG EAX; SBB EAX,EAX; INC EAX`, preserving the original byte stores and
+all native branches. That version matches all **332/332 nonfield bytes**
+and 18/18 true relocation fields, then cold-replays `exact` (404 bytes).
+
+`CharacterSelectScene::ProcessSubselection` at `00433BE0..00433CE7`
+contains 264 CODE bytes / 70 instructions, SHA256
+`6f6fbddee5b1d6792e9184fa7df9736f25c8f30bc35a69ee0269313bad2992b9`.
+The first ordinary C++ source emits all **200/200 nonfield bytes** and
+16/16 relocations, cold `exact` (264 bytes). It preserves signed modulo
+arithmetic and the ESI-carried intermediate with two separate authentic
+`ProgressCard438A80::GetSelectedValue` calls at `00438A80` using the real
+`006718F8` caller-side receiver, sound cues, selected fighter/pad/stage
+globals `006714C8/00671620/00671621`, scene state writes, and cancel
+cleanup in target order.
+
+Original `00438A60` remains origin-unknown under R163; calls to it in
+these two authored functions **do not** reconstruct or credit its body.
+No guessed complete object allocation, target-byte grafts, assembly,
+artificial unused locals, comparison masks or cropped returns were used.
+Private first/negative and final sources plus disassemblies remain at
+`.analysis/f230-selection-helpers/`; accepted sources are
+`src/CharacterSelectOptionsF230.cpp` and
+`src/CharacterSelectSubselectionF230.cpp`. Both are local exact receipts,
+not externally verified Oracle submissions; all 97 unknown origins and
+unrelated accepted units are preserved.
