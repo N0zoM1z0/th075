@@ -542,3 +542,4 @@ address,name,module,confidence,evidence
 0x0042F450,ResultListScene::PollInput,ResultListScene,inferred,F245; whole 220 native bytes/21 true fields cold exact; original parent and input device layouts provisional
 0x0042A340,NameEntryScene::UpdatePlayer,NameEntryScene,inferred,F246; original full 541-byte name-entry controller and 11 actual relocations cold exact; original parent/progress class types provisional
 0x004169E0,ProgressRecords::SaveScoreFile,ProgressRecords,inferred,F247; native whole 297-byte save file and 11 real fields exact; original progress record full owner layout unknown
+0x00416B10,ProgressRecords::LoadScoreFile,ProgressRecords,inferred,"F248; whole 456 native score file reader, original short/long file formats and 15 original fields cold exact; full owner layout unknown"

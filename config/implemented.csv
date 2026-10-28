@@ -559,3 +559,4 @@ SceneController::AdvanceAt0042E8F0
 ResultListScene::PollInput
 NameEntryScene::UpdatePlayer
 ProgressRecords::SaveScoreFile
+ProgressRecords::LoadScoreFile

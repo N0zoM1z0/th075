@@ -1731,3 +1731,31 @@ in `.analysis/f247-progress-save/`. It does not declare the full original
 record owner layout, add failure robustness absent in the target,
 mask field differences, fabricate locals, or claim external Oracle
 acceptance. All 97 origin-pending functions remain uncredited.
+
+
+## F248: complete short/long score loader and native local-variable scopes
+
+`ProgressRecords::LoadScoreFile` at `00416B10..00416CD7` (R053) is
+**456 original authored CODE bytes /154 decoded native x86 instructions**,
+SHA256 `7d1129b0368244833fa32b710630cc3e4ed03a5392ea0fe40d2165511f442769`.
+Its source `src/ScoreLoadF248.cpp` uses only observed record offsets, native
+`score.dat` address `006579B4`, CreateFileA/GetFileSize/SetFilePointer,
+10 physical ReadFile code call sites and CloseHandle. For files of size
+`<=0x11170`, it reads the old 0xEF60 prefix and separate eight-byte header,
+then loops over **10x10 entries**, reading four bytes each into the score
+record at `+0x16710 + outer*60 + inner*4`, then 40-byte metadata and
+256-byte suffix. Larger files read five native segments (0x16710, 8,
+900, 40, 256) corresponding to independently exact F247 SaveScoreFile.
+The full record owner type remains unknown and is not instantiated.
+
+The initial normal VC7.1 code had the correct 456-byte extent and all 15
+relocation targets, but 371/396 non-field bytes matched; actual `HANDLE`
+and DWORD locals landed at incorrect offsets. A genuine scope containing
+**DWORD bytesRead and DWORD fileSize** with `HANDLE file` remaining outside
+reproduces the native handle EBP-4, output count EBP-8, and file size
+EBP-0xC, restoring **396/396** non-field bytes, all **15 real fields**,
+and an independent single-unit cold replay **exact: 456**. Variants and
+original disassembly are retained in `.analysis/f248-archive-write/`.
+No invented stack padding, masking, inline assembly, foreign callee-byte
+credit, incomplete code acceptance, or all-unit cold replay occurred.
+The 97 origin-pending candidates remain unchanged.

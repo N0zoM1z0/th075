@@ -560,3 +560,4 @@ SceneController::AdvanceAt0042E8F0,0x0042E8F0,function
 ResultListScene::PollInput,0x0042F450,function
 NameEntryScene::UpdatePlayer,0x0042A340,function
 ProgressRecords::SaveScoreFile,0x004169E0,function
+ProgressRecords::LoadScoreFile,0x00416B10,function
