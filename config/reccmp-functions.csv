@@ -728,3 +728,14 @@ StaticResourceQueues::InitializeHandleAt00413650,0x00413650,function
 FighterState::SetNoticeFieldsAt0045CD70,0x0045CD70,function
 FighterState::RenderNoticeAt0045D5D0,0x0045D5D0,function
 FighterState::ProcessActionAt0045CE10,0x0045CE10,function
+ReimuObject::InitializeAt004769B0,0x004769B0,function
+MarisaObject::InitializeAt0049C850,0x0049C850,function
+SakuyaObject::InitializeAt004CA640,0x004CA640,function
+AliceObject::InitializeAt004EBD00,0x004EBD00,function
+PatchouliObject::InitializeAt0050A4E0,0x0050A4E0,function
+YoumuObject::InitializeAt00536360,0x00536360,function
+RemiliaObject::InitializeAt0055ABE0,0x0055ABE0,function
+YuyukoObject::InitializeAt0057D4E0,0x0057D4E0,function
+YukariObject::InitializeAt005A1560,0x005A1560,function
+SuikaObject::InitializeAt005C9C20,0x005C9C20,function
+MeilingObject::InitializeAt005EB490,0x005EB490,function

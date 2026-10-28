@@ -6331,3 +6331,52 @@ rebuild/replay of only `fighter-state-process-action-0045ce10` returned
 masked fields, cropped function, full repository cold replay or external
 Oracle acceptance. F410-F420 alternative complete probes are retained
 as negative research controls under private `.analysis`.
+
+
+## F422: 11 complete R050 character auxiliary object native derived constructors
+
+Every original character has a distinct whole authored C++ object constructor
+which invokes the same already-borrowed native base constructor `0045B760`
+but installs **its own** original vtable and clears physical character-
+specific state. All eleven independent PE function boundaries, sizes,
+call references, original vtable addresses, instruction sequences and
+original PE SHA256 bodies were separately checked before source adoption.
+Reimu at `004769B0` and Meiling at `005EB490` each have **134 complete
+original CODE bytes / 33 x86 instructions**; the other nine constructors,
+Marisa `0049C850`, Sakuya `004CA640`, Alice `004EBD00`, Patchouli
+`0050A4E0`, Youmu `00536360`, Remilia `0055ABE0`, Yuyuko `0057D4E0`,
+Yukari `005A1560` and Suika `005C9C20`, each have **146 original CODE
+bytes / 35 native instructions**. Their physical vtables, respectively,
+are `00659210`, `006593D4`, `006595B8`, `0065970C`, `00659870`,
+`006599D4`, `00659B34`, `00659C88`, `00659DDC`, `00659F14`,
+and `0065A04C`, each read from and verified against its distinct original
+PE target at its real physical relocation field.
+
+All eleven native functions copy the actually observed parent receiver
+pointer to `this+0xE4`, parent DWORD at +4 to `this+4`, and point their
+local +0xC4 to actual `parent+0x468`. They then clear exactly the five
+original short values at `this+0xD8/+0xDA/+0xDC/+0xDE/+0xE0`. The nine
+146-byte constructors genuinely also clear a sixth short at +0xE2; Reimu
+and Meiling **do not**, explaining the original exact 12-byte difference.
+The explicit per-character C++ source under
+`src/CharacterObjectConstructorsF422.cpp` expresses true derived
+construction and actual source field expressions while declaring only the
+borrowed base constructor and virtual destructor ABI. It does **not** claim
+a complete private character object allocation or member layout, nor does
+it reconstruct/re-credit any executable bytes belonging to the actual base
+constructor.
+
+A fresh original-source-level probe for both native length variants matched
+all nonrelocation bytes on the first attempt, so a separate single compiler
+object was generated containing all eleven distinct natural constructors.
+Pinned VC7.1 `/Od /Ob0 /Gy /GR- /GX- /Zi` generates each function's own
+original virtual table relocation and borrowed base ctor call. All eleven
+whole-native comparisons then returned **126/126 or 138/138 original
+nonrelocation bytes**, with **2/2 true original physical COFF DIR32/REL32
+references** and independently verified native destinations. Local cold
+replay targeted **only** the eleven new unit names, returning **11/11
+exact across 1 compiled object**, crediting exactly **2 × 134 + 9 × 146
+= 1,582** originally authored distinct CODE bytes. No base-class callee
+credit, fake byte padding/ASM, target code bytes embedded in source,
+masked relocations, truncated comparison, full cold replay or external
+Oracle acceptance.
