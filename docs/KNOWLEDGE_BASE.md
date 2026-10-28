@@ -1,101 +1,59 @@
-# TH075 reconstruction knowledge index
+# TH075 reconstruction knowledge base — cumulative historical evidence
 
-Current validation policy (2026-10-28): prioritize exact function reconstruction.
-Target identity, complete extents, all relocations, truthful origins and affected
-unit cold replay remain the acceptance evidence. The default CI now runs only
-the small exact/checkpoint/byte-accounting suite. Per-function robustness tests,
-duplicate source/native assertions, hard-coded progress counts and full historical
-test runs are not required. Historical test counts below describe past runs;
-consult AGENTS.md and RE_WORKFLOW.md for current requirements.
+**Current snapshot: 2026-10-28, after F339.** This document is a
+**chronological experiment log**, not the active backlog. Older F-series
+sections describe observations *at that stage*; many statements such as
+"still unaccepted" or "remain nonexact" were true **then**, but have
+since been superseded. Do not use them as present-tense status. The
+current compact [handoff](RE_HANDOFF.md), original pinned native
+`resources/th075.exe`, and canonical ledgers outrank historical prose.
 
-Updated 2026-10-27: the user resumed reconstruction. F184 added two
-canonical cold-exact input policies (+538 CODE bytes / 46 relocation fields);
-F185 added the 1,273-byte title core state machine plus an owned 40-byte
-switch table and 76 relocation fields, all cold exact.
-F186 added a separate 951-byte options scene controller, seven-case owned
-28-byte switch table and 70 relocations, also fully cold exact.
-F187 added the 339-byte Win32 config writer and its 27 actual fields with
-independent canonical cold comparison.
-F188 adds the options text-resource update with 563 CODE bytes, seven-case
-owned table, 34 fields, and natural EH/new/delete path, all cold exact.
-F190 adds 604 exact graphics default-state bytes and all 45 relocations.
-F191 adds the complete 860-byte music-detail font/texture workflow, all 25
-actual relocation fields cold-exact.
-F192 accepts the 31-byte authored scene-base cleanup; the 34-byte
-source-indistinguishable paired constructor remains R108 unknown/uncredited.
-F193 cold-accepts the 531-byte shared game-defaults initializer with all
-71 actual relocations and eleven character-name copies.
-F194 cold-accepts its 339-byte config.ini reader with all 27 import/global
-fields, without granting borrowed storage or generated-source credit.
-F195 closes the shared global lifetime with 358 exact authored bytes and
-all 18 fields, using only borrowed destructor receiver interfaces.
-F196 cold-replays the previously pending 922-byte battle-scene constructor
-with the native five-state EH flow and all 40 relocation fields exact.
-The F189 'unaccepted' status is historical.
-F197 independently cross-verifies the same base8/texture80 physical
-contract in the 435-byte title constructor (two EH states, 18 fields), exact.
-F198 cold-accepts the 177-byte texture manager constructor and 128-byte
-resource-slot initializer, all 20 actual fields; natural five- and one-state
-EH policies preserved.
-F199 cold-accepts the complete 434-byte texture-manager destructor after
-preserving the native COM Release result store; 23 fields verified.
-F201 cold-accepts the separately reviewed 904-byte game-mode snapshot
-writer, preserving all 131 actual relocations and four game-mode branches.
-F202 cold-accepts the reciprocal 880-byte snapshot restoration and its
-129 actual fields; an extra unregistered dirty source is preserved privately
-and never counted twice.
-F203 cold-accepts the 671-byte progress selection with two owned 20-byte
-switch tables and all 56 relocations exact (711 compared bytes).
-F204 cold-accepts the 318-byte wave track selector (22 fields); F205
-cold-accepts the 27-byte transition fade call wrapper (one field).
-F206 cold-accepts the complete 727-byte bitmap directory loader with
-29 fields and original STL iterator erase on the failed-load path.
-F207 independently cold-accepts the 575-byte alternate-format bitmap
-directory loader with all 23 fields and the same native iterator lifetime.
-F211 cold-accepts the 305-byte sprite rectangle-to-quad constructor
-with all nine fields: four distinct 16-byte vertex members recreate
-the native compiler call sequence, unlike an array.
-F212 cold-accepts the 334-byte global audio/input startup policy
-with three-stage EH, all 29 physical relocation fields and real
-120/8/20-byte allocations.
-F213 cold-accepts two progress record policies, 109 and 90 bytes,
-both relocation-free; F214 cold-accepts the complete 910-byte progress
-defaults and all 34 actual relocations.
-F217 cold-accepts two authentic archive lookup/seek functions (113
-and 180 bytes; 19 actual fields), while the paired 792-byte record
-loader and 916-byte music catalog remain nonexact private probes.
-F218 cold-accepts the 225-byte replay capture, 85-byte snapshot
-header read and 89-byte available-path search, 15 real relocations.
-The 375-byte replay file finalizer remains a nonexact research target.
-F220 cold-accepts two replay queue policies: 67 bytes of four-queue
-clearing (four relocations) and 35 bytes of primary queue emptiness
-(one relocation). The 1,252-byte appended record writer remains
-unaccepted after fully sized natural for-loop compiler controls.
-F221 cold-accepts the 569-byte character-selection reset with 11
-relocations; F222 cold-accepts the 780-byte Marisa round reset
-with 3 real fields, signed native x87 and 74 animation records.
-F189 was an earlier noncredit investigation superseded by F196 exact.
-The original H184 handoff was historical and is superseded by the current
-request. Earlier experiments and names remain hypotheses until tested.
-See the current [handoff](RE_HANDOFF.md) for current status.
+## Current authoritative status and superseded negatives
 
-## Authoritative state
-
-- Supplied Japanese th075.exe 1.11, SHA-256
+- **645 cold-exact authored functions**, **813,859 authored CODE bytes**,
+  **41.24% reviewed coverage**, **41.16% conservative coverage**.
+  These are a dated snapshot: always run
+  `scripts/repo-python scripts/report-reconstruction-status.py --summary`.
+- The original Japanese target version 1.11 SHA256 is
   `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
-  Archive identity is pinned; official distribution provenance is uncorroborated.
-- **534 exact functions/units, 766,591 CODE bytes, 204 canonical objects,
-  309 accepted source-header inputs.** Reviewed coverage is 38.84%; conservative
-  coverage is 38.77%, including all 97 unknown origins/3,608 pending bytes.
-- Ownership, source presence, names, Ghidra types, compilation and reproducible
-  exactness remain distinct. Read ledgers and relevant origin evidence before
-  relying on any classification or provisional boundary.
-- CODE size determines credit; comparisons also include owned tables/remaps.
-  Only full canonical cold replay earns credit. Preserve evidence through R268
-  and every pending byte in the conservative denominator.
-- Original names and complete layouts remain provisional. Never instantiate or
-  embed partial owners. The known complete 132-byte packet and SDK RECT16 may
-  be instantiated; borrowed scene/drawing/manager views may not.
+  Review the source/origin/extent and original relocation evidence for
+  each target. Local cold comparison is **not remote Oracle acceptance**.
+- **F339 `DataArchive::Write` (686 CODE)** and **F338
+  `DataArchive::OpenAndReadIndex` (429 CODE)** are both exact;
+  F249/F250 negative results are historical.
+- **F326 `ReplayRecords::AppendRecord` (1,252 CODE)**, **F328
+  `ReplayRecords::FinalizeFile` (375 CODE)** and **F259
+  `ReplayRecords::LoadRecord` (792 CODE)** are exact;
+  F218/F219/F232/F272/F289 negative descriptions are historical.
+- **F319 `FontSurface::RasterizeText` (1,766 CODE)** and **F318
+  `FontSurface::LoadGlyphOutline` (301 CODE)** are exact;
+  F291/F299/F302 negatives are historical. The 916-byte F258
+  MusicRoom catalog boss and 1,722-byte F294 Effects catalog boss
+  are also accepted at their *original complete CODE extents*;
+  independently compared jump tables do not add CODE credit.
+- Truly **nonexact** current work includes 746-byte
+  `SpriteSequence::RenderElements` (best 599/614 nonfield bytes,
+  33 real fields, three x87 load-order mismatches), 874-byte Suika
+  special state (742/794), 276-byte two-side effect pruner
+  (233/236), 497-byte character-cancel animation (438/445),
+  1,268-byte mirrored sprite, and the 82,796-byte character move boss.
+  Exact original addresses, proof directories and entry points
+  are indexed in the [current handoff](RE_HANDOFF.md).
+- All 97 origin-pending functions / 3,608 bytes are still uncredited.
+  Do **not** infer full source class definitions from borrowed native
+  call boundaries, or count Win32/CRT/VC7 helper code. Cold-replay
+  **only new or affected units**, never the entire set.
+
+## How to read the historical sections
+
+The older "Current validation policy", "authoritative state" and old
+handoff snapshots (e.g. **534 exact / 766,591 bytes**) were milestones,
+not the current result. Their historical text remains accessible in Git
+history, including `git show 26ac6fd:docs/KNOWLEDGE_BASE.md`.
+Consult the accepted unit's `config/match-units.toml` entry and the
+single-unit cold logs, or inspect the pinned native PE, to settle any
+historical contradiction. Do not repeat a prior negative source-variable
+sweep without a new hypothesis supported by original physical slots.
 
 ## Recent reproducible observations
 
@@ -731,16 +689,18 @@ path formatting and `_access` search. All three separate
 functions cold-replayed exact together, adding 399 authored
 CODE bytes and 15 true fields.
 
-The adjacent 375-byte `ReplayRecords::FinalizeFile` remains
-unaccepted. Natural sources retain the Win32 replay copy,
+At the **F218 stage**, the adjacent 375-byte `ReplayRecords::FinalizeFile`
+was unaccepted; **F328 later cold-accepted the complete function**.
+The earlier natural sources retained the Win32 replay copy,
 record header write, original 264-byte path and GS cookie;
 full-body probes emit 342, 372, 384 or 396 bytes against 375.
 No cropped body, fake stack padding or masked relocations are
-counted. The 792-byte ReplayRecords load and 916-byte musicroom
-catalog parse also remain nonexact under complete native checks.
+counted. The 792-byte ReplayRecords load and 916-byte MusicRoom catalog parse
+were likewise nonexact **at F218**, but were later independently
+cold-accepted as **F259** and **F258**, respectively.
 Their failed full-body controls are preserved privately.
 
-## F220: two exact replay queue policies; native large writer pending
+## F220: two exact replay queue policies; large writer pending at F220
 
 The authored `StaticResourceQueues::ClearFourQueuesAt00413880`
 contains 67 CODE bytes/19 decoded instructions and four genuine
@@ -1160,9 +1120,10 @@ uncredited, including the separate `00438A60` previously unresolved call.
 ## F232-F233: negative whole-boss replay tests retain original full extents
 
 R035 independently reviews the authored on-disk replay functions.
-`ReplayRecords::AppendRecord` (`00413DE0`) remains 1252 entire CODE bytes
-with 50 real relocation fields and **only 1025/1052 nonfield bytes**
-matched by the best natural source. In F232 we preserved all six real
+`ReplayRecords::AppendRecord` (`00413DE0`) was a complete
+1,252-CODE-byte nonexact boss **at F232** (50 real relocation fields;
+that stage best 1025/1052 nonfield bytes). The entire function is
+**now independently cold-exact in F326**. In F232 we preserved all six real
 8-byte iterator objects, the four 20-byte queues and all native branches,
 while checking new lexical lifetime splits rather than repeating exhausted
 72 variable-name permutations; no exact result. These 1252-byte controls
@@ -1298,10 +1259,11 @@ receives **zero source/exact credit**; its native CODE and table must both
 match before adoption. All 97 unknown-origin candidates stay unchanged.
 
 
-## F236: complete music catalog boss, still unaccepted after genuine source fixes
+## F236: music catalog full-function negative controls (later accepted in F258)
 
 The independently R066-authored `MusicRoom::LoadCatalog` at `00426DD0`
-remains **unaccepted**. Native CODE size is 916 bytes, and the physically
+was **unaccepted at the F236 stage**; its complete function was later
+independently cold-accepted as **F258**. Native CODE size is 916 bytes, and the physically
 owned four-way jump table occupies another 16 contiguous comparison bytes.
 The earlier 928-byte natural V3 source incorrectly used a `for` loop
 for numeric digit parsing and passed the original archive-buffer pointer
@@ -1765,15 +1727,15 @@ The 97 origin-pending candidates remain unchanged.
 
 The R052-authored `DataArchive::Write` at `0041D260..0041D50D` is
 686 complete native bytes, with 228 independently decoded instructions
-and 28 authentic COFF fields. A natural source models Win32 output/file
-handles, true four-byte VC7.1 borrowed list iterators, 108-byte entries,
-original rolling XOR index header, file copy and deallocation. It already
-produces the **full 686-byte extent** and all 28 relocation targets, but
-only **482/574 non-field bytes** matched first. Rewriting source XOR as
+and 28 authentic COFF fields. A natural source modeled Win32 output/file handles, true four-byte
+VC7.1 borrowed list iterators, 108-byte entries, the original rolling
+XOR header and file copy. **At F249**, its full 686-byte extent and
+28 relocation targets matched but only **482/574** nonfield bytes;
+the now-complete F339 cold-exact proof supersedes this negative. Rewriting source XOR as
 true read/modify/write yields 495/574, while real declaration/scope
-experiments still leave native MSVC stack slots unmatched. All negative
-controls and original 228-instruction listing are retained in
-`.analysis/f249-archive-writer/`. No acceptance or authored byte credit.
+experiments still leave native MSVC stack slots unmatched. All negative controls and original 228-instruction listing remain
+in `.analysis/f249-archive-writer/`. **No credit was taken at F249;
+full independent credit was later earned in F339.**
 
 Similarly R052-authored `DataArchive::OpenAndReadIndex` at `0041D510`
 has a genuine 429-byte body with `/GS`, ten relocations, 108-byte wire
@@ -1784,8 +1746,9 @@ plus retaining the genuinely distinct decoded-buffer pointer reproduces
 the full 429 bytes. Sharing the actual XOR/entry iteration index and
 expressing byte XOR without promoted compound assignment improves the
 nonfield comparison to 366/389. Declaration-order permutations and
-real nested lifetime experiments were negative, preserved under
-`.analysis/f248-archive-write/`. No exact adoption or source credit.
+real nested lifetime experiments were negative **at F250**, preserved
+under `.analysis/f248-archive-write/`. **F338 later independently
+cold-accepted the entire 429-byte index reader.**
 
 The independently R040-authored `NameEntryScene::UpdateShared` at
 `0042B380..0042B56D` is **494 whole native CODE bytes / 143 instructions**,
@@ -1851,8 +1814,9 @@ protected ledgers with original authored origin IDs R041/R043/R052.
 and actual relocation positions and source hashes with no all-unit replay.
 The exact build logs are in `.analysis/f253-digit-family/`, previous
 negative experiments for the encoder in `.analysis/f252-cardfile/`.
-Separate larger `DataArchive::Write` (686) and `OpenAndReadIndex` (429)
-are **not** exact or credited; all original negative controls remain.
+The separate `DataArchive::Write` (686) and `OpenAndReadIndex` (429)
+were **not exact at the F253 checkpoint**, but are now independently
+cold-exact as **F339 and F338**. All original negative controls remain.
 No hand-authored instruction bytes, masks, dummy locals, truncated CODE
 extents, additional original class ABI claims, or remote Oracle acceptance.
 The 97 pending origins remain unchanged and uncredited.
@@ -2675,7 +2639,8 @@ Source `src/CardLoadEncodedF272.cpp` compiled under pinned VC7.1
 by itself** and reported `exact; 503 coverage bytes`. The independently
 accepted F252 card-file encoder at `00431D60` is a distinct complete
 432-byte *writer*; the separate 429-byte plain CardList reader at
-`004319B0` remains nonexact and uncredited. Do not conflate any of
+`004319B0` was nonexact **at F272**, but was then cold-accepted
+independently as **F273**. Do not conflate any of
 these three workflows. Library deque/CRT/archive callees and all 97
 unknown origins receive no extra authored CODE credit. Local cold
 verification is not an external Oracle receipt; no byte patches,
@@ -3091,8 +3056,9 @@ complete original FighterState or private TextureManager class layouts.
 The original other child constructors `00410F30`, native resource
 callees, VC7 library and 97 pending origins are not independently
 credited here. The paired 588-byte fighter resource destructor
-`00456910` remains nonexact; local Git checkpoint and cold replay
-are not remote Oracle verification. No assembly, byte grafts,
+`00456910` was still nonexact **at F282**, but later full-native
+source/COFF was cold-accepted separately as **F284**. Local Git
+checkpoints and cold replay are not remote Oracle verification. No assembly, byte grafts,
 masked comparisons, fake locals or cropped function.
 
 
@@ -3535,7 +3501,8 @@ The original 64-byte font configuration method writes two actual
 then copies a real unsigned mode byte at +0x25. Its true thiscall
 `RET 0x0C` has no physical relocations. The original 84-byte Effects
 load helper *first* calls the much larger resource catalog loader
-`005F71F0` (not yet exact), then prints its two distinct native log
+`005F71F0` (nonexact **at F293**, but independently cold-accepted
+by **F294**), then prints its two distinct native log
 messages from `0065A078/0065A0A8`, and configures a genuine texture
 receiver at this+0x28 through `0040B110(0x90,0x10)` and
 `0040BB80(0065A090,0065A088)`. An early plausible source stored a
@@ -4927,9 +4894,10 @@ now generates **429/429 original CODE, 389/389 nonfield bytes and
 10/10 real physical COFF relocation offset/type/native solved
 destinations**. Only `archive-open-and-read-index-0041d510` was
 rebuilt cold **alone**, reporting `exact; 429 coverage bytes` and
-`1/1 exact`. The larger **686-byte `DataArchive::Write`** is a
-separate whole native function and *remains nonexact*, with the
-old best 495/574 comparable bytes. It does not inherit credit.
+`1/1 exact`. The larger **686-byte `DataArchive::Write`** is a separate whole
+original native function: it was nonexact **at F338** (old best
+495/574), but was later independently cold-accepted as **F339**.
+Neither function inherits any CODE credit from the other.
 
 External Win32/CRT/VC7 implementation bytes, private complete
 archive owner/list implementation, other already accepted callees

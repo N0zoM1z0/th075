@@ -4,8 +4,9 @@ Current scope is TH075 exact function reconstruction, including both
 large/core functions and small helpers. Treat prior
 documents, working hypotheses, and historical exact labels as testable leads,
 not proof. Inspect dirty edits and continue unfinished investigations within the
-assigned scope. The user reports there are no other active sessions: inspect, preserve and
-continue all unfinished dirty work; commit verified progress promptly.
+assigned scope. The user reports **no other active sessions**: all dirty source,
+config and local evidence is ours to inspect, preserve, finish and commit.
+Never skip, reset or label it as another session's responsibility.
 Commit substantial verified progress promptly with the session's requested prefix.
 The 98% authored-byte objective remains incomplete; do not declare completion
 without a verified build.
@@ -110,7 +111,12 @@ or verifier changes. Documentation-only changes need `git diff --check`.
 - Preserve the existing private Funnel URL, fixed path and no-auth setting.
   Keep the URL out of tracked files, routine logs and process arguments.
 - Keep private hypotheses/logs in `.analysis/`, objects in `build/`, and the
-  private Ghidra project in `ghidra-project/`. Never commit game executables/data,
+  private Ghidra project in `ghidra-project/`. A lossless SHA256-verified
+  archive of regenerable historical probe `.pdb` files is under
+  `.analysis/cache-archives/` with an inventory and restoration steps.
+  Protect H184 frozen objects/PDBs, original native and best whole-boss
+  probes, `build/matching/`, `.analysis/vc71-wine/` and the Ghidra project.
+  Never commit game executables/data,
   archives, analysis databases, downloaded tools, generated decompiles, or secrets.
 - Update the knowledge base and handoff after a bounded accepted function. Replay
   affected units after changing headers, ABI declarations, flags, or relocations.

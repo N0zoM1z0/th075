@@ -101,6 +101,7 @@ their evidence or verifiers. See [the workflow](docs/RE_WORKFLOW.md).
 | [Ghidra MCP guide](docs/GHIDRA_MCP.md) | Headless project/bridge operation |
 | [Origin review](docs/ORIGIN_PENDING_REVIEW.md) | 97 unclassified origins |
 | [Historical handoffs](docs/history/RE_HANDOFF_THROUGH_F183.md) | Superseded records; not the current task list |
+| Private cache inventory (`.analysis/cache-archives/`) | Compressed/recoverable old probe PDBs; see [storage retention and restore](docs/RE_HANDOFF.md#5-diskstorage-hygiene-and-provenance) |
 
 The pre-cleanup verbose F223 handoff and README are also recoverable from
 Git commit `ca81d72`; older origin work is retained under `docs/history/`,

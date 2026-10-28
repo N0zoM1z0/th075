@@ -7,10 +7,10 @@ Historical documents and tentative Ghidra labels are **not proof**.
 
 ## 1. Start safely
 
-Inspect Git and continue pre-existing dirty work within the assigned scope.
-Preserve edits from concurrent sessions reported by the user; commit only this
-session's reviewed changes. Keep compiler builds serial and reuse the existing
-private environments.
+Inspect Git and continue **all** pre-existing dirty work in scope.
+The user explicitly reports **no other active sessions**. Inspect,
+complete and commit pending source/config/evidence rather than avoiding it;
+keep compiler builds serial and reuse existing private environments.
 
 ```bash
 git status --short --branch
@@ -147,10 +147,13 @@ Oracle acceptance**. Never claim an unavailable push succeeded.
 
 Keep `.analysis/vc71-wine`, private Ghidra project, shared
 `.tools`, accepted source/config/tests/manifest, original native
-disassembly and best complete negative probes. Repeated failed
-single-variable permutations can be compacted into a private
-verified compressed source/log/results archive and a short result
-summary; remove only **regenerable** probe objects. Do not delete
-the H184 protected frozen objects or large-boss baselines.
-The cleanups, active large targets and retention locations are
-listed in [the handoff](RE_HANDOFF.md).
+disassembly and best complete negative probes. Repeated failed source-variable permutations can be compacted into
+verified private archives and summary tables; only **regenerable**
+cache objects may be removed. The 2026-10-28 lossless archive
+`.analysis/cache-archives/probe-pdb-unprotected-2026-10-28.tar.gz`
+contains 2,031 old PDBs and a full SHA256 per-file receipt. Restore one
+with `tar -xzf ARCHIVE -C . build/probes/name.pdb`; first verify its
+SHA256 against the receipt. All `build/probes/*.obj`, 15 H184-protected
+PDBs and `build/matching/` were left available. Protect the native
+PE, Wine prefix, Ghidra project, H184 frozen objects and active
+big-boss negative baselines. See the [handoff](RE_HANDOFF.md).
