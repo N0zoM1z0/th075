@@ -111,10 +111,12 @@ body/owned-table, origin and relocation review before any adoption.
 | --- | ---: | --- | --- |
 | ReplayRecords::AppendRecord `00413DE0` | 1,252 B | Entire emitted size and 50 field positions; best **1,025/1,052** non-field bytes, iterator stack slots still wrong | `.analysis/f219-append-record/` |
 | ReplayRecords::LoadRecord `00413AC0` | 792 B | Entire emitted size, 29 fields, **639/676** non-field bytes; local HANDLE/count slots | `.analysis/f216-archive-record/` |
-| MusicRoom::LoadCatalog `00426DD0` | 916 B CODE + 16 B switch table | Natural variants 928/934 vs 932 compared bytes, control flow/layout mismatched | `.analysis/f215-music-catalog/` |
+| MusicRoom::LoadCatalog `00426DD0` | 916 B CODE + 16 B switch table | F236 complete 932-byte source/control and all 18 field locations, best **744/860** non-field bytes; native 0x48 frame vs emitted 0x50 | `.analysis/f215-music-catalog/`, `.analysis/f236-music-catalog/` |
 | ReplayRecords::FinalizeFile `004138E0` | 375 B | Natural variants 342/372/384/396 B; pointer lifetimes/frame unknown | `.analysis/f218-replay-file/` |
 | BattleScene destructor `0043B0B0` | 248 B | Exact length/flow but 9–11 local-stack field byte differences | `.analysis/f200-battle-dtor/`, `.analysis/f215-battle-release/` |
 | Giant actor control `004AC040` | very large | Full baseline still nonexact; many closed tests, avoid repeating blindly | `.analysis/character-move-4ac040/`, archived knowledge |
+
+F236 independently rechecks native 916+16 extent and four original table destinations; a natural condition-first numeric loop plus real cleanup-pointer lifetime restores the complete 932-byte comparison size and 18 field destinations. Seven meaningful lexical scopes and seven real declaration-order variants did not pass exact; best is 744/860 nonrelocation bytes with mismatched native local slot allocation. No accepted source or CODE credit; retain `.analysis/f236-music-catalog/EXPERIMENTS.md`.
 
 **Practical approach:** use the now-accepted replay queue and fighter
 lifecycle callees to infer *real* iterator/owner lifetimes. The F219/F216

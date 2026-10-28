@@ -1253,3 +1253,38 @@ negative/best probes, target hashes and cold logs are retained in
 `.analysis/f235-music-render/`. Only the two changed F235 units were
 cold-replayed; no broad rebuild or invented source bytes. The 97 unresolved
 origin candidates remain uncredited; Oracle acceptance remains separate.
+
+
+## F236: verified complete music catalog parse structure, still not exact
+
+The independently authored R066 `MusicRoom::LoadCatalog` at
+`00426DD0..00427163` contains **916 CODE bytes** (SHA256
+`3df59d06537c81eb8d58af1a193eafdab1035d96204384244e8250b949cf294a`),
+followed by its own **16-byte, four-entry** switch table with targets
+`00426F55`, `00426FA6`, `00427020`, `0042709A`. Its complete
+932-byte comparison has SHA256
+`1a5816e578f8af00aa4a14dc6ad0b4c0998c7539e5a46985422793cedf9c3017`.
+
+Earlier F215 C++ hypotheses separately emitted 928/934 bytes and lacked
+the full original. Native instructions newly establish **both** the
+condition-first numeric parse (`while (begin != end)` in real C++) and a
+real cleanup-pointer transfer through original `EBP-0x3C` before `free`.
+The combined ordinary source restores the **entire 932-byte emitted
+extent, 282 target-shaped instructions and all 18 actual relocation
+positions**, including all four jump-table fields. This is an important
+structural baseline, but **not an exact match**: only 731/860 comparable
+non-field bytes agree. The generated frame is `SUB ESP,0x50`, not the
+native `SUB ESP,0x48`; stack offsets of real file size, handle, buffer,
+read count, decrypt index, key/delta, CSV parser cursor and field bounds
+are different. Seven legitimate read/decrypt/parser lexical scope
+variants achieve a best of **744/860**; another seven real-variable
+declaration-order changes fail to improve it. No shadow bytes, masks,
+fake unused locals, artificial padding, source-body alternate compilation
+or incorrect ABI was introduced.
+
+The entire negative study is retained in
+`.analysis/f236-music-catalog/EXPERIMENTS.md`, with original Ghidra
+read-only analysis, complete native instructions, all natural probe
+sources/objects, and mismatched comparisons. The unresolved R066 function
+receives **zero source/exact credit**; its native CODE and table must both
+match before adoption. All 97 unknown-origin candidates stay unchanged.
