@@ -8048,3 +8048,59 @@ full 92-byte CODE size and no real native relocations, but use wrong
 nonfield comparison remains **48/92 to 54/92**, not exact. No source
 credit is added for this function, no fake register asm, forced padding,
 masked comparison or all-unit cold replay.
+
+
+## F500-F502: independently verified full original WinMain 15-case switch, four cleanup paths and thiscall scene-policy ABI (NOT exact)
+
+The still-unaccepted R064 `GameApplication::RunAt00602A60` contains
+**2,987 whole original native authored CODE bytes / 654 decoded x86
+instructions**, original PE SHA256
+`780862e0f784ac2cbd16ed20eaff12c0da49a0c831ce4a9f56e85fc2edb3ffa0`.
+Its 15-element, **60-byte** original scene jump table begins exactly
+after `RET 0x10` at original `0060360B`; the true table SHA256 is
+`840a0d5ad8c1d5ad0a26f5ff4beae4c657cb03640df58b0aa1b71abba243fe86`.
+All **15 original case targets** were decoded, verified instruction-aligned
+and checked to start with the right unique `operator new` footprint
+and native new call `0064159D`; physical case **4** is first in the
+original switch CODE even though the table indexes cases 0..14.
+After table DATA there are exactly nine `CC` alignment bytes before
+the independently exact F468 WinMain WindowCallback at `00603650`.
+No switch DATA/CC bytes count as CODE.
+
+Original complete x86 provides four separate, identical-order
+`00406650` sound → `00403BE0` input → `00401020` graphics →
+`00423A90` app mode native destructor call chains, one in each native
+startup failure (RegisterClassExA, CreateWindowExA, CoInitialize)
+and one in genuine successful shutdown. Original native C++ scene
+updates at `00602F0E` and `00602F95` call borrowed scene **thiscall**
+`00431F60`, **not** the cdecl free function incorrectly declared
+by older F455/F456 whole-source hypotheses. A genuine scene-pointer
+local initializes at EBP-0x184, immediately preceding the 260-byte
+module-path buffer at EBP-0x180. Original message pump invokes each of
+PeekMessageA, GetMessageA, TranslateMessage, DispatchMessageA exactly
+once in its authored CODE. These are independently observed original
+physical locations and native x86 call targets, not inferred complete
+source class layout.
+
+Pinned VC7.1 complete C++ F500 experiments corrected actual scene
+instance ABI and state-word branch order; the separate real scene
+pointer/path arrangement emits **2,974 native-style CODE bytes /653
+instructions /0x270 frame**, not original 2,987/654/0x278. A plausible
+physically grouped actual scene pointer+path carrier produces 3,109
+CODE bytes rather than matching native stack. F501 tests twelve
+separate complete-source forms using one Win32 PeekMessage if/else
+event pump, either branch orientation or early continue, and four
+actual MSG lifetime declaration positions. All remain nonexact at
+**2,947–2,962 CODE bytes /650 instructions, 0x270–0x274 frame**.
+The full original WinMain allocation/case/disposer details, proof of
+all 15 case CODE destinations, exact callback and table physical
+boundaries, and reproducible native validation method are recorded
+in `docs/WINMAIN_ORIGINAL_CONTROL_FLOW.md`; read-only script
+`scripts/repo-python scripts/verify-winmain-scene-dispatch.py` checks
+all independently against the SHA-pinned original PE. All experimental
+full source/probe logs survive under `.analysis/f500-winmain-owned-frame/`
+and `.analysis/f501-winmain-message-layout/`. Nothing from the full
+2,987-byte function is accepted, and no original table DATA or
+external callee code is double-credited. No byte masks, target patches,
+fake locals, source ASM, truncated CODE, all-unit replay or Oracle
+receipt claimed.
