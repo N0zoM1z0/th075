@@ -709,3 +709,4 @@ address,name,module,confidence,evidence
 0x00413650,StaticResourceQueues::InitializeHandleAt00413650,StaticResourcePolicy,inferred,"F414; full native 132 game CODE, 8 real physical refs, targeted cold exact; borrowed class ABI"
 0x0045CD70,FighterState::SetNoticeFieldsAt0045CD70,FighterState,inferred,"F415; full native 75 game CODE, 0 real physical refs, targeted cold exact; borrowed class ABI"
 0x0045D5D0,FighterState::RenderNoticeAt0045D5D0,FighterState,inferred,"F415; full native 113 game CODE, 5 real physical refs, targeted cold exact; borrowed class ABI"
+0x0045CE10,FighterState::ProcessActionAt0045CE10,FighterState,inferred,F421; complete native 1926-byte script and action boss plus 51 original switch DATA bytes compared; all 64 real COFF refs and 5 native 8-bit notice temporary slots cold exact; borrowed owner

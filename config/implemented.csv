@@ -726,3 +726,4 @@ BattleLoader::LoadCharactersAt004176F0
 StaticResourceQueues::InitializeHandleAt00413650
 FighterState::SetNoticeFieldsAt0045CD70
 FighterState::RenderNoticeAt0045D5D0
+FighterState::ProcessActionAt0045CE10

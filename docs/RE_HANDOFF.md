@@ -1,6 +1,6 @@
 # TH075 — current reconstruction handoff
 
-**Maintained: 2026-10-28, after F415.** Read this document, then check the **live repository**. The current user explicitly wants both large/core bosses and small leaves tackled seriously, tangible progress committed immediately with subject `gpt-web: ...`, and **only changed/new units cold-replayed**. The user reports no other sessions: inspect and finish all dirty work; never skip, reset, overwrite or silently discard it.
+**Maintained: 2026-10-28, after F421.** Read this document, then check the **live repository**. The current user explicitly wants both large/core bosses and small leaves tackled seriously, tangible progress committed immediately with subject `gpt-web: ...`, and **only changed/new units cold-replayed**. The user reports no other sessions: inspect and finish all dirty work; never skip, reset, overwrite or silently discard it.
 
 ## 1. Trusted state and first commands
 
@@ -8,11 +8,11 @@ Canonical evidence is the pinned original PE, `config/function-origins.csv`, `co
 
 | Item | Verified snapshot |
 | --- | --- |
-| Git | `main`; pre-F414/F415 reconstruction commit **`6e5e8a1`** (F407), preceded by `e95d419` (F403), `567c2d2` (F395); F414/F415 commit follows this update |
+| Git | `main`; pre-F421 reconstruction commit **`faa3e3a`** (F414/F415), preceded by `6e5e8a1` (F407), `e95d419` (F403); F421 commit follows this update |
 | Pinned target | user-supplied Japanese `resources/th075.exe` v1.11; SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`; **never** `th075c.exe` |
-| Exact and source-present | **728 functions / 728 exact units** |
-| Accepted authored CODE | **845,693 bytes / 1,973,516 reviewed bytes = 42.85%** |
-| Conservative | **42.77%**, including 3,608 bytes with unresolved origin |
+| Exact and source-present | **729 functions / 729 exact units** |
+| Accepted authored CODE | **847,619 bytes / 1,973,516 reviewed bytes = 42.95%** |
+| Conservative | **42.87%**, including 3,608 bytes with unresolved origin |
 | Origin review | 1,002 authored, 2,671 library, 581 compiler, **97 pending** across 4,351 provisional candidates |
 | Goal | **98% not reached**; Git and local cold results are not external Oracle receipts |
 
@@ -29,7 +29,7 @@ If **any** dirty source, unit, or manifest is present, first inspect its exact e
 
 ## 2. Newly closed chains — **not** the backlog
 
-The full register of **all 728** accepted functions is in `config/functions.csv` and `config/match-units.toml`; this table intentionally highlights only the newest, important independent CODE extents. No called function, imported CRT/Win32 code, or owned jump-table bytes are counted twice.
+The full register of **all 729** accepted functions is in `config/functions.csv` and `config/match-units.toml`; this table intentionally highlights only the newest, important independent CODE extents. No called function, imported CRT/Win32 code, or owned jump-table bytes are counted twice.
 
 | Unit / accepted address | Whole CODE | Authentic fields | Evidence |
 | --- | ---: | ---: | --- |
@@ -75,6 +75,7 @@ The full register of **all 728** accepted functions is in `config/functions.csv`
 | F407 `BattleLoader::LoadCharactersAt004176F0` `004176F0` | **3,232 CODE + 64 table** | **234** | `src/BattleCharacterLoadBossF407.cpp`, `.analysis/f408-battle-character-record/` |
 | F414 `StaticResourceQueues::InitializeHandleAt00413650` `00413650` | **132** | **8** | `src/StaticReplayQueueCtorF414.cpp`, `.analysis/f414-static-resource-queues/` |
 | F415 `FighterState::SetNoticeFields` / `RenderNotice` `0045CD70` / `0045D5D0` | **75 + 113** | **0 + 5** | `src/FighterNoticeSetDrawF415.cpp`, `.analysis/f415-notice-exact/` |
+| F421 `FighterState::ProcessActionAt0045CE10` `0045CE10` | **1,926 CODE + 51 switch DATA** | **64** | `src/FighterActionProcessF421.cpp`, `.analysis/f421-fighter-action-boolean-temporaries/` |
 
 **F340:** the companion archive entry seek at `0041D750` is independently cold exact for its whole 164-byte function including every one of its nine external references. It uses genuine iterator and `strcmp` semantics, returns the archive handle after `SetFilePointer` or `INVALID_HANDLE_VALUE` if not found. The original private archive list remains borrowed, not instantiated.
 
@@ -145,6 +146,8 @@ The full register of **all 728** accepted functions is in `config/functions.csv`
 **F414:** whole native **132-byte / 33-instruction** R177-authored static replay queue constructor at `00413650` now cold exact: correct four real 20-byte queue member lifetimes at physical `this+0x154/+0x168/+0x17C/+0x190`, calls native `00414360/00414550/00414360/00414740`, and clears original DWORD handle at offset zero. VC7.1 naturally generated original `/GX` SEH setup/teardown and handler at `006550EA`, all **100/100** nonfield bytes and **8/8** true COFF physical fields, affected-only cold **1/1**. An identical second in-progress alias was independently found in the dirty unit manifest, compared against exact same original symbol/source/refs and reconciled into one canonical unit with no double-credit or discarded research.
 
 **F415:** two distinct native fighter notice methods are individually cold exact: `SetNoticeFieldsAt0045CD70` **75/75 original bytes, 0 physical relocations**, and `RenderNoticeAt0045D5D0` **93/93 nonfield bytes out of complete 113 CODE, all 5 physical COFF relocations**. The first bounds-checks the signed notice byte before updating +0x6E7, while +0x6E8/+0x6E9 always update. The second passes actual unsigned byte RGB/step/highlight arguments to original borrowed render method `00413460`, choosing 24 vs 16 based on real global `0067161E`. Cold replay **2/2 exact across one object**, source/manifest dirty state inspected and kept without duplicate units; source class interfaces are borrowed, not a full fighter layout.
+
+**F421:** complete original **1,926-byte / 491-instruction** R065 `FighterState::ProcessActionAt0045CE10` boss is now cold exact. Native compiler-sourced 9-case jump table of 36 DWORD bytes and original 15-byte 0..14 command remap lie immediately after RET; complete **1,977-byte** comparison proves all original instructions, all **1721/1721** nonfield bytes and all **64/64** physical COFF relocations including 9 native table destinations. Only **1,926 CODE bytes** credited; table DATA uncredited. True signed mask/bit/number loop variables and a direct `static_cast<unsigned char>` Boolean expression at five notice-render call sites restore the original VC7.1 stack slots and exact source codegen without fake locals. The native switch and stage-script logic, both player/opponent notices, true event-mask consumption and active-input advance paths remain whole. After independently rejecting F410-F420 variants, only affected F421 unit cold replayed **1/1 exact**. Existing exact script accessors and F415 notice callees are borrowed, never credited again.
 
 **Corrections to old notes:** The 686-byte writer and 429-byte reader are both **exact** (F339/F338), not pending F249/F250. The full 1,252-byte replay writer and 375-byte finalizer are both **exact** (F326/F328), not pending F219/F218/F289. The 1,766-byte font rasterizer is **exact** (F319), not pending F299/F302. The 301-byte glyph loader is **exact** (F318), not pending F291. The 916-byte MusicRoom catalog + separately compared 16-byte jump table is **exact in F258** (916 CODE credit only). Other accepted 1,000+ byte bosses include F271 projected quad (1,185), F278 pattern chooser (1,264), F282 resource loader (1,186), F292 overlay text box (1,385), F294 effects catalog (1,722), and F244 scene advance (1,529 CODE). Earlier failures remain useful *historical controls*, but must never be presented as current unaccepted work.
 

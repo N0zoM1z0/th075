@@ -54532,3 +54532,334 @@ offset = 103
 type = "REL32"
 symbol = "?DrawNotice@NoticeDrawingF414@@QAEXPAXEEEHEE@Z"
 target = 0x00413460
+
+
+[units.fighter-state-process-action-0045ce10]
+source = "src/FighterActionProcessF421.cpp"
+object = "build/matching/FighterActionProcessF421.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["FighterState::ProcessActionAt0045CE10"]
+symbol = "?ProcessAction@FighterActionF410@@QAEEXZ"
+target_address = 0x0045CE10
+size = 1926
+compare_size = 1977
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 41
+type = "REL32"
+symbol = "?CountPatternEntries@FighterScriptAccessorF410@@QAEFF@Z"
+target = 0x0045DD00
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 68
+type = "DIR32"
+symbol = "?g_ActionLastIndexAt0066C24F@@3CA"
+target = 0x0066C24F
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 75
+type = "DIR32"
+symbol = "?g_ActionLastBitAt0066C24E@@3CA"
+target = 0x0066C24E
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 90
+type = "DIR32"
+symbol = "?g_ActionLastIndexAt0066C24F@@3CA"
+target = 0x0066C24F
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 111
+type = "DIR32"
+symbol = "?g_ActionLastBitAt0066C24E@@3CA"
+target = 0x0066C24E
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 165
+type = "REL32"
+symbol = "?GetByteField@FighterScriptAccessorF410@@QAECFF@Z"
+target = 0x00420530
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 191
+type = "DIR32"
+symbol = "$L592"
+target = 0x0045D5BA
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 198
+type = "DIR32"
+symbol = "$L593"
+target = 0x0045D596
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 234
+type = "REL32"
+symbol = "?GetWordField@FighterScriptAccessorF410@@QAEFFF@Z"
+target = 0x00420570
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 249
+type = "REL32"
+symbol = "?ClearNoticeTransition@FighterActionF410@@QAEXXZ"
+target = 0x0045D6F0
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 256
+type = "DIR32"
+symbol = "?g_ActionLastBitAt0066C24E@@3CA"
+target = 0x0066C24E
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 277
+type = "DIR32"
+symbol = "?g_ActionLastIndexAt0066C24F@@3CA"
+target = 0x0066C24F
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 350
+type = "REL32"
+symbol = "?GetDwordField@FighterScriptAccessorF410@@QAEPAXFF@Z"
+target = 0x004205B0
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 359
+type = "REL32"
+symbol = "?RenderNotice@FighterActionF410@@QAEXPAXEEEE@Z"
+target = 0x0045D5D0
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 417
+type = "REL32"
+symbol = "?GetWordField@FighterScriptAccessorF410@@QAEFFF@Z"
+target = 0x00420570
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 426
+type = "REL32"
+symbol = "?SetNoticeFields@FighterActionF410@@QAEXCEE@Z"
+target = 0x0045CD70
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 433
+type = "DIR32"
+symbol = "?g_ActionLastBitAt0066C24E@@3CA"
+target = 0x0066C24E
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 454
+type = "DIR32"
+symbol = "?g_ActionLastIndexAt0066C24F@@3CA"
+target = 0x0066C24F
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 527
+type = "REL32"
+symbol = "?GetDwordField@FighterScriptAccessorF410@@QAEPAXFF@Z"
+target = 0x004205B0
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 536
+type = "REL32"
+symbol = "?RenderNotice@FighterActionF410@@QAEXPAXEEEE@Z"
+target = 0x0045D5D0
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 595
+type = "REL32"
+symbol = "?SetNoticeFields@FighterActionF410@@QAEXCEE@Z"
+target = 0x0045CD70
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 636
+type = "REL32"
+symbol = "?GetWordField@FighterScriptAccessorF410@@QAEFFF@Z"
+target = 0x00420570
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 661
+type = "REL32"
+symbol = "?ClearNoticeTransition@FighterActionF410@@QAEXXZ"
+target = 0x0045D6F0
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 668
+type = "DIR32"
+symbol = "?g_ActionLastBitAt0066C24E@@3CA"
+target = 0x0066C24E
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 689
+type = "DIR32"
+symbol = "?g_ActionLastIndexAt0066C24F@@3CA"
+target = 0x0066C24F
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 762
+type = "REL32"
+symbol = "?GetDwordField@FighterScriptAccessorF410@@QAEPAXFF@Z"
+target = 0x004205B0
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 771
+type = "REL32"
+symbol = "?RenderNotice@FighterActionF410@@QAEXPAXEEEE@Z"
+target = 0x0045D5D0
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 835
+type = "REL32"
+symbol = "?GetWordField@FighterScriptAccessorF410@@QAEFFF@Z"
+target = 0x00420570
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 850
+type = "REL32"
+symbol = "?SetNoticeFields@FighterActionF410@@QAEXCEE@Z"
+target = 0x0045CD70
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 857
+type = "DIR32"
+symbol = "?g_ActionLastBitAt0066C24E@@3CA"
+target = 0x0066C24E
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 878
+type = "DIR32"
+symbol = "?g_ActionLastIndexAt0066C24F@@3CA"
+target = 0x0066C24F
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 951
+type = "REL32"
+symbol = "?GetDwordField@FighterScriptAccessorF410@@QAEPAXFF@Z"
+target = 0x004205B0
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 960
+type = "REL32"
+symbol = "?RenderNotice@FighterActionF410@@QAEXPAXEEEE@Z"
+target = 0x0045D5D0
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 1001
+type = "REL32"
+symbol = "?SetNoticeFields@FighterActionF410@@QAEXCEE@Z"
+target = 0x0045CD70
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 1013
+type = "DIR32"
+symbol = "?g_ActionLastBitAt0066C24E@@3CA"
+target = 0x0066C24E
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 1034
+type = "DIR32"
+symbol = "?g_ActionLastIndexAt0066C24F@@3CA"
+target = 0x0066C24F
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 1107
+type = "REL32"
+symbol = "?GetDwordField@FighterScriptAccessorF410@@QAEPAXFF@Z"
+target = 0x004205B0
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 1116
+type = "REL32"
+symbol = "?RenderNotice@FighterActionF410@@QAEXPAXEEEE@Z"
+target = 0x0045D5D0
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 1157
+type = "REL32"
+symbol = "?GetWordField@FighterScriptAccessorF410@@QAEFFF@Z"
+target = 0x00420570
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 1207
+type = "REL32"
+symbol = "?GetWordField@FighterScriptAccessorF410@@QAEFFF@Z"
+target = 0x00420570
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 1216
+type = "REL32"
+symbol = "?SelectStageAt00419CB0@@YAXH@Z"
+target = 0x00419CB0
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 1224
+type = "REL32"
+symbol = "?RebuildStageAt00419DF0@@YAXXZ"
+target = 0x00419DF0
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 1265
+type = "REL32"
+symbol = "?GetWordField@FighterScriptAccessorF410@@QAEFFF@Z"
+target = 0x00420570
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 1316
+type = "REL32"
+symbol = "?GetWordField@FighterScriptAccessorF410@@QAEFFF@Z"
+target = 0x00420570
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 1367
+type = "REL32"
+symbol = "?GetWordField@FighterScriptAccessorF410@@QAEFFF@Z"
+target = 0x00420570
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 1513
+type = "DIR32"
+symbol = "?g_ActionLastIndexAt0066C24F@@3CA"
+target = 0x0066C24F
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 1528
+type = "DIR32"
+symbol = "?g_ActionLastBitAt0066C24E@@3CA"
+target = 0x0066C24E
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 1564
+type = "REL32"
+symbol = "?GetByteField@FighterScriptAccessorF410@@QAECFF@Z"
+target = 0x00420530
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 1631
+type = "REL32"
+symbol = "?CountPatternEntries@FighterScriptAccessorF410@@QAEFF@Z"
+target = 0x0045DD00
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 1644
+type = "DIR32"
+symbol = "?g_ActionLastIndexAt0066C24F@@3CA"
+target = 0x0066C24F
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 1651
+type = "DIR32"
+symbol = "?g_ActionLastBitAt0066C24E@@3CA"
+target = 0x0066C24E
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 1683
+type = "DIR32"
+symbol = "?g_InputCanCancelAt00671632@@3EA"
+target = 0x00671632
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 1890
+type = "REL32"
+symbol = "?CountPatternEntries@FighterScriptAccessorF410@@QAEFF@Z"
+target = 0x0045DD00
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 1903
+type = "DIR32"
+symbol = "?g_ActionLastIndexAt0066C24F@@3CA"
+target = 0x0066C24F
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 1910
+type = "DIR32"
+symbol = "?g_ActionLastBitAt0066C24E@@3CA"
+target = 0x0066C24E
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 1926
+type = "DIR32"
+symbol = "$L343"
+target = 0x0045CEDA
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 1930
+type = "DIR32"
+symbol = "$L394"
+target = 0x0045D06C
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 1934
+type = "DIR32"
+symbol = "$L446"
+target = 0x0045D202
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 1938
+type = "DIR32"
+symbol = "$L458"
+target = 0x0045D275
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 1942
+type = "DIR32"
+symbol = "$L468"
+target = 0x0045D2A7
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 1946
+type = "DIR32"
+symbol = "$L475"
+target = 0x0045D2E1
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 1950
+type = "DIR32"
+symbol = "$L484"
+target = 0x0045D314
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 1954
+type = "DIR32"
+symbol = "$L493"
+target = 0x0045D347
+[[units.fighter-state-process-action-0045ce10.relocations]]
+offset = 1958
+type = "DIR32"
+symbol = "$L340"
+target = 0x0045D3EF
