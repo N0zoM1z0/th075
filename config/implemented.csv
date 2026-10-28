@@ -646,3 +646,4 @@ DataArchive::Write
 DataArchive::SeekNamedEntry
 ArchiveCatalog::CloseNamed
 DataArchive::AppendReadableFileAt0041D6C0
+YukariFighter::UpdateSpecialStateAt0059B490

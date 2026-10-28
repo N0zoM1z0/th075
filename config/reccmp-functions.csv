@@ -647,3 +647,4 @@ DataArchive::Write,0x0041D260,function
 DataArchive::SeekNamedEntry,0x0041D750,function
 ArchiveCatalog::CloseNamed,0x0041D080,function
 DataArchive::AppendReadableFileAt0041D6C0,0x0041D6C0,function
+YukariFighter::UpdateSpecialStateAt0059B490,0x0059B490,function

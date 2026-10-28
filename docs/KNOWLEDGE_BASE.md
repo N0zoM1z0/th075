@@ -5018,3 +5018,66 @@ COFF fields/destinations. Independent cold replay of only
 `data-archive-append-readable-file-0041d6c0` returned **1/1 exact**. This
 supersedes the old 130-byte nonexact control in historical file policy
 notes; no target bytes/assembly, fake locals or partial-function credit.
+
+
+## F345: full 679-byte Yukari special-state boss, VC7.1 macro-sensitive x87 reconstruction
+
+The R067-authored `YukariFighter::UpdateSpecialStateAt0059B490` at
+`0059B490..0059B736` is a complete **679-byte**, **191-instruction** native
+function (original PE SHA256
+`0529bb313498e1b6d0af591a2c6e47bf03d739398b76b1114de8e950e3b71f34`).
+The target's `thiscall` receiver stores ECX at EBP-4 and has 0x10 bytes of
+original scratch space. Real signed-short state +F12 advances by 2 only if
++3B8 is zero, wraps to -180 when reaching 180, and +3AC clears when grounded.
+A three-way conditional requires +62/+64/+F0A all zero before dispatching
+three separate actions (+60 in 150..153, 154..157 or exactly 158) to the
+**already accepted** `00453AC0` tracked effect with effect ID **830**, real
+facing-dependent X, and Y+94/60/100. The action one-shot +F0A is set on each
+trigger. Two distinct actor-relative X difference tests compare actual
++44 and opponent (+2E8)->+44 with +/-540 and +/-320, updating the signed
++F32 limit counter at 60. The three integer-to-float intermediates occupy
+actual scratch offsets EBP-8/-0xC/-0x10. No original 16-byte owner or private
+parent/derived fighter layout is newly claimed.
+
+A first **complete** source probe `YukariSpecialF345.cpp` emitted 679 bytes
+and all 11 physical fields, but only 581/635 non-field byte matches. The
+comparison `>179` compiled a native `cmp 179; jle` while the verified target
+requires `cmp 180; jl`, so the source uses `>= 180`. The remaining 52
+byte differences concerned `FLD` ordering for the exact 0.0f equality and
+four opponent-distance evaluations. Swapping operands, using direct global
+constants and merely parenthesizing an equivalent nested `FIELD(float, ...)`
+macro **did not help**. Inspecting the already independently exact F062
+`CharacterAux5E5500.cpp`, whose tracked-effects/distance algebra is related,
+revealed the *precise unparenthesized macro expressions* as a falsifiable
+code-generation control:
+
+```cpp
+#define FLOAT(offset) *reinterpret_cast<float*>(reinterpret_cast<unsigned char*>(this) + (offset))
+#define OPPONENT_FLOAT(offset) *reinterpret_cast<float*>(reinterpret_cast<unsigned char*>(FIELD(void*, 0x2E8)) + (offset))
+```
+
+With these authentic F062-style expression forms and the independently
+verified Yukari-specific logic, natural VC7.1 `/Od /Ob0 /Gy /GR- /GX- /GS
+/Zi` produced **635/635** nonrelocation matches and **11/11** original
+physical DIR32/REL32 bytes/references at their authentic 679-byte locations.
+Cold replaying **only** `yukari-fighter-update-special-state-0059b490`
+returned **1/1 exact**. The F062 1,027 bytes and their external callee
+bodies are not double counted. Source `src/YukariSpecialStateF345.cpp`;
+ignored diagnostic controls `.analysis/f345-yukari-boss/`. No artificial
+padding, assembly, bogus locals, byte masks, truncated functions or remote
+Factory receipt are asserted. The complete original fighter layout and
+private class name remain provisional.
+
+## F343: still-unmatched 171-byte archive registry reference-release control
+
+The R053-authored `0041CE50..0041CEFA` native reference count/cleanup
+function was independently decoded (original SHA256
+`558f79a85d376b77e258f05eb4bd8020d61b14bf893eaa9cd06d060ed0174975`).
+A natural 171-byte source matches 108/115 nonfield bytes. It decrements
++0068BE04, deletes resource pointers through original `0041D8C0`, frees
+owned names, clears two original registry collections, and retains all 14
+real code references. Seven EBP local displacements remain unmatched, in
+the native scalar deletion/filename temporaries. Experiments with variable
+declaration order, lexical scopes, direct vs named pointer, and meaningful
+filename aggregates did not match. Diagnostic sources/results are retained
+in `.analysis/f343-archive-release/`; this function is **NOT accepted**.

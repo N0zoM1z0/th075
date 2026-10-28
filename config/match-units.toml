@@ -46804,3 +46804,68 @@ offset = 123
 type = "REL32"
 symbol = "@__security_check_cookie@4"
 target = 0x00640611
+
+
+[units.yukari-fighter-update-special-state-0059b490]
+source = "src/YukariSpecialStateF345.cpp"
+object = "build/matching/YukariSpecialStateF345.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["YukariFighter::UpdateSpecialStateAt0059B490"]
+symbol = "?UpdateSpecialState@YukariSpecialF345@@QAEXXZ"
+target_address = 0x0059B490
+size = 679
+[[units.yukari-fighter-update-special-state-0059b490.relocations]]
+offset = 80
+type = "DIR32"
+symbol = "__real@00000000"
+target = 0x0065782C
+[[units.yukari-fighter-update-special-state-0059b490.relocations]]
+offset = 216
+type = "DIR32"
+symbol = "__real@42bc0000"
+target = 0x00659138
+[[units.yukari-fighter-update-special-state-0059b490.relocations]]
+offset = 259
+type = "REL32"
+symbol = "?SpawnTrackedEffect@YukariSpecialF345@@QAEXFMMCCE@Z"
+target = 0x00453AC0
+[[units.yukari-fighter-update-special-state-0059b490.relocations]]
+offset = 323
+type = "DIR32"
+symbol = "__real@42700000"
+target = 0x00658264
+[[units.yukari-fighter-update-special-state-0059b490.relocations]]
+offset = 366
+type = "REL32"
+symbol = "?SpawnTrackedEffect@YukariSpecialF345@@QAEXFMMCCE@Z"
+target = 0x00453AC0
+[[units.yukari-fighter-update-special-state-0059b490.relocations]]
+offset = 416
+type = "DIR32"
+symbol = "__real@42c80000"
+target = 0x00657888
+[[units.yukari-fighter-update-special-state-0059b490.relocations]]
+offset = 459
+type = "REL32"
+symbol = "?SpawnTrackedEffect@YukariSpecialF345@@QAEXFMMCCE@Z"
+target = 0x00453AC0
+[[units.yukari-fighter-update-special-state-0059b490.relocations]]
+offset = 495
+type = "DIR32"
+symbol = "__real@44070000"
+target = 0x00659134
+[[units.yukari-fighter-update-special-state-0059b490.relocations]]
+offset = 526
+type = "DIR32"
+symbol = "__real@c4070000"
+target = 0x00659130
+[[units.yukari-fighter-update-special-state-0059b490.relocations]]
+offset = 569
+type = "DIR32"
+symbol = "__real@43a00000"
+target = 0x0065787C
+[[units.yukari-fighter-update-special-state-0059b490.relocations]]
+offset = 600
+type = "DIR32"
+symbol = "__real@c3a00000"
+target = 0x00657880

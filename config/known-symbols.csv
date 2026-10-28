@@ -629,3 +629,4 @@ address,name,module,confidence,evidence
 0x0041D750,DataArchive::SeekNamedEntry,DataArchive,inferred,"F340; entire original 164-byte archive seek, 9 real COFF relocations, independently cold exact; private owner is borrowed"
 0x0041D080,ArchiveCatalog::CloseNamed,ArchiveCatalog,inferred,"F341; complete 264-byte native cdecl dual registry iterator cleanup, 19 true relocation fields cold exact; original owner unknown"
 0x0041D6C0,DataArchive::AppendReadableFileAt0041D6C0,DataArchive,inferred,"F342; entire 133-byte original archive file insertion, actual 108-byte wire record, seven true relocations cold exact; private owner not reconstructed"
+0x0059B490,YukariFighter::UpdateSpecialStateAt0059B490,YukariFighter,inferred,"F345; complete 679-byte native independent Yukari special update, genuine 11 physical relocation fields and 191 x86 instructions cold exact; borrowed fighter identity/layout provisional"
