@@ -739,3 +739,4 @@ YukariObject::InitializeAt005A1560
 SuikaObject::InitializeAt005C9C20
 MeilingObject::InitializeAt005EB490
 StaticResourceQueues::ReleaseQueuesAndCloseHandleAt004136E0
+RasterResources::ReleaseAndResetAt0041BFD0

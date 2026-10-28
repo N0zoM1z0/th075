@@ -740,3 +740,4 @@ YukariObject::InitializeAt005A1560,0x005A1560,function
 SuikaObject::InitializeAt005C9C20,0x005C9C20,function
 MeilingObject::InitializeAt005EB490,0x005EB490,function
 StaticResourceQueues::ReleaseQueuesAndCloseHandleAt004136E0,0x004136E0,function
+RasterResources::ReleaseAndResetAt0041BFD0,0x0041BFD0,function

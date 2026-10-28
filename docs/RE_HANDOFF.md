@@ -1,6 +1,6 @@
 # TH075 — current reconstruction handoff
 
-**Maintained: 2026-10-28, after F427.** Read this document, then check the **live repository**. The current user explicitly wants both large/core bosses and small leaves tackled seriously, tangible progress committed immediately with subject `gpt-web: ...`, and **only changed/new units cold-replayed**. The user reports no other sessions: inspect and finish all dirty work; never skip, reset, overwrite or silently discard it.
+**Maintained: 2026-10-28, after F428.** Read this document, then check the **live repository**. The current user explicitly wants both large/core bosses and small leaves tackled seriously, tangible progress committed immediately with subject `gpt-web: ...`, and **only changed/new units cold-replayed**. The user reports no other sessions: inspect and finish all dirty work; never skip, reset, overwrite or silently discard it.
 
 ## 1. Trusted state and first commands
 
@@ -8,11 +8,11 @@ Canonical evidence is the pinned original PE, `config/function-origins.csv`, `co
 
 | Item | Verified snapshot |
 | --- | --- |
-| Git | `main`; pre-F427 reconstruction commit **`e1602cf`** (F422), preceded by `562f1eb` (F421), `faa3e3a` (F414/F415); F427 commit follows this update |
+| Git | `main`; pre-F428 reconstruction commit **`cd34719`** (F427), preceded by `e1602cf` (F422), `562f1eb` (F421); F428 commit follows this update |
 | Pinned target | user-supplied Japanese `resources/th075.exe` v1.11; SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`; **never** `th075c.exe` |
-| Exact and source-present | **741 functions / 741 exact units** |
-| Accepted authored CODE | **849,362 bytes / 1,973,516 reviewed bytes = 43.04%** |
-| Conservative | **42.96%**, including 3,608 bytes with unresolved origin |
+| Exact and source-present | **742 functions / 742 exact units** |
+| Accepted authored CODE | **849,491 bytes / 1,973,516 reviewed bytes = 43.04%** |
+| Conservative | **42.97%**, including 3,608 bytes with unresolved origin |
 | Origin review | 1,002 authored, 2,671 library, 581 compiler, **97 pending** across 4,351 provisional candidates |
 | Goal | **98% not reached**; Git and local cold results are not external Oracle receipts |
 
@@ -29,7 +29,7 @@ If **any** dirty source, unit, or manifest is present, first inspect its exact e
 
 ## 2. Newly closed chains — **not** the backlog
 
-The full register of **all 741** accepted functions is in `config/functions.csv` and `config/match-units.toml`; this table intentionally highlights only the newest, important independent CODE extents. No called function, imported CRT/Win32 code, or owned jump-table bytes are counted twice.
+The full register of **all 742** accepted functions is in `config/functions.csv` and `config/match-units.toml`; this table intentionally highlights only the newest, important independent CODE extents. No called function, imported CRT/Win32 code, or owned jump-table bytes are counted twice.
 
 | Unit / accepted address | Whole CODE | Authentic fields | Evidence |
 | --- | ---: | ---: | --- |
@@ -78,6 +78,7 @@ The full register of **all 741** accepted functions is in `config/functions.csv`
 | F421 `FighterState::ProcessActionAt0045CE10` `0045CE10` | **1,926 CODE + 51 switch DATA** | **64** | `src/FighterActionProcessF421.cpp`, `.analysis/f421-fighter-action-boolean-temporaries/` |
 | F422 11 complete `CharacterObject::Initialize` constructors `004769B0`..`005EB490` | **134 × 2 + 146 × 9 = 1,582** | **2 × 11** | `src/CharacterObjectConstructorsF422.cpp`, `.analysis/f422-character-objects/` |
 | F427 `StaticResourceQueues::ReleaseQueuesAndCloseHandleAt004136E0` `004136E0` | **161** | **10** | `src/StaticResourceQueuesDtorF427.cpp`, `.analysis/f427-resource-dtor-lvalue/` |
+| F428 `RasterResources::ReleaseAndResetAt0041BFD0` `0041BFD0` | **129** | **4** | `src/RasterResourcesReleaseF428.cpp`, `.analysis/f428-resource-release/` |
 
 **F340:** the companion archive entry seek at `0041D750` is independently cold exact for its whole 164-byte function including every one of its nine external references. It uses genuine iterator and `strcmp` semantics, returns the archive handle after `SetFilePointer` or `INVALID_HANDLE_VALUE` if not found. The original private archive list remains borrowed, not instantiated.
 
@@ -154,6 +155,8 @@ The full register of **all 741** accepted functions is in `config/functions.csv`
 **F422:** eleven independently reviewed R050 native auxiliary-character derived-object constructors are now **11/11 cold exact across one changed object**, adding **1,582 genuinely distinct original CODE bytes**. Reimu (`004769B0`) and Meiling (`005EB490`) each have 134 original CODE bytes / 33 instructions, clearing shorts +0xD8..+0xE0; Marisa, Sakuya, Alice, Patchouli, Youmu, Remilia, Yuyuko, Yukari and Suika have 146 original bytes / 35 instructions, **additionally** clearing +0xE2. Each native body calls the borrowed base constructor `0045B760`, installs its own independently checked original vtable address, and stores original parent at +0xE4, mirrored parent +4 at local +4 and parent+0x468 into +0xC4. Each unit compares its entire original function, all **126/126** or **138/138** nonfield bytes and both **2/2** genuine COFF refs. No inferred full private owner layout, inheritance helper code, or new/generic constructor body is double credited.
 
 **F427:** R177 original 161-byte reverse-destruction/lifetime routine `004136E0` now **1/1 affected-only cold exact**. Independent native disassembly confirms 42 original x86 instructions: callback to genuine queue-resource cleanup at `00413880`; guarded imported Win32 `CloseHandle` on real receiver handle at +0; clearing handle; and VC7.1 `/GX` compiler-managed reverse destruction at +0x190/+0x17C/+0x168/+0x154 through genuine 00414790/004143B0/004145A0/004143B0 calls. A plausible local `HANDLE&` changes the EH frame (169 bytes) and is incorrect; direct original handle member access naturally generates the actual 161-byte body, all **121/121** comparable bytes and **10/10** physical original COFF refs. F414 sibling ctor remains separately exact, and borrowed queue children/CloseHandle earn no code credit.
+
+**F428:** R178 original `RasterResources::ReleaseAndResetAt0041BFD0` is fully cold exact for **129 authored native CODE bytes / 41 original x86 instructions**. The code checks real owner +0x14 buffer, uses an actual freed `void*` temporary at EBP-4, invokes CRT `free` then clears +0x14, performs Win32 GDI SelectObject (IAT `00657048`), DeleteObject (`0065704C`) and ReleaseDC (`00657214`) in original order, then clears +8/+C/+4. Natural C++ under pinned VC7.1 emits **113/113 original nonfield bytes** and **4/4 genuine physical COFF relocations**, single affected-unit cold replay **1/1 exact**; no imported library or CRT CODE credit. Replay filename F424/F425 full probes (303 bytes) remain nonexact and are retained in private analysis.
 
 **Corrections to old notes:** The 686-byte writer and 429-byte reader are both **exact** (F339/F338), not pending F249/F250. The full 1,252-byte replay writer and 375-byte finalizer are both **exact** (F326/F328), not pending F219/F218/F289. The 1,766-byte font rasterizer is **exact** (F319), not pending F299/F302. The 301-byte glyph loader is **exact** (F318), not pending F291. The 916-byte MusicRoom catalog + separately compared 16-byte jump table is **exact in F258** (916 CODE credit only). Other accepted 1,000+ byte bosses include F271 projected quad (1,185), F278 pattern chooser (1,264), F282 resource loader (1,186), F292 overlay text box (1,385), F294 effects catalog (1,722), and F244 scene advance (1,529 CODE). Earlier failures remain useful *historical controls*, but must never be presented as current unaccepted work.
 

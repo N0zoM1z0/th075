@@ -55143,3 +55143,33 @@ offset = 153
 type = "DIR32"
 symbol = "__except_list"
 target = 0x00000000
+
+
+[units.raster-resources-release-reset-0041bfd0]
+source = "src/RasterResourcesReleaseF428.cpp"
+object = "build/matching/RasterResourcesReleaseF428.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["RasterResources::ReleaseAndResetAt0041BFD0"]
+symbol = "?ReleaseAndReset@RasterResourcesF428@@QAEXXZ"
+target_address = 0x0041BFD0
+size = 129
+[[units.raster-resources-release-reset-0041bfd0.relocations]]
+offset = 32
+type = "REL32"
+symbol = "_free"
+target = 0x00640F15
+[[units.raster-resources-release-reset-0041bfd0.relocations]]
+offset = 65
+type = "DIR32"
+symbol = "__imp__SelectObject@8"
+target = 0x00657048
+[[units.raster-resources-release-reset-0041bfd0.relocations]]
+offset = 72
+type = "DIR32"
+symbol = "__imp__DeleteObject@4"
+target = 0x0065704C
+[[units.raster-resources-release-reset-0041bfd0.relocations]]
+offset = 91
+type = "DIR32"
+symbol = "__imp__ReleaseDC@8"
+target = 0x00657214

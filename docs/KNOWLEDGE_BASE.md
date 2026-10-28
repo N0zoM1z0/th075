@@ -6416,3 +6416,34 @@ constructor remains separate native CODE credit, whereas its member
 constructors/destructors and Win32 callee code are not double counted.
 No masking, assembler/target-byte graft, fake pad/local, cropped native
 extent, full-project cold replay or external Oracle acceptance.
+
+
+## F428: native 129-byte GDI/CRT raster bitmap and device-context release
+
+The independently authored R178 original
+`RasterResources::ReleaseAndResetAt0041BFD0` at `0041BFD0..0041C050`
+consists of **129 native original CODE bytes / 41 x86 instructions**,
+original PE SHA256
+`e69251b4328d2108f697aa3bcddbd27a7632620782abbe136a7dd7d73461968d`.
+It conditionally frees a real pointer at owner +0x14 using the original
+borrowed CRT `_free` at `00640F15` and a *genuine* local freed pointer
+at EBP-4, then sets +0x14 to zero. It calls native GDI `SelectObject`
+on the original owner HDC at +4 and saved GDI selection at +0xC, passes
+its actual return to `DeleteObject`, and invokes `ReleaseDC` for the
+original HWND +0 and HDC +4. The three imported Win32 functions are
+identified by their actual original IAT relocations `00657048`,
+`0065704C`, `00657214`. Finally it clears the genuinely written +8,
++0xC and +4 resource fields. The complete owner allocation and other
+private raster class attributes are not inferred.
+
+Natural source `src/RasterResourcesReleaseF428.cpp` with the borrowed
+correct Win32 handles, owner fields and real used buffer pointer matches
+the **entire original 129-byte CODE body**, **113/113 nonrelocation
+bytes** and all **4/4 genuine original COFF REL32/DIR32 physical
+references and exact native destinations**. Pinned VC7.1
+`/Od /Ob0 /Gy /GR- /GX- /Zi` affected-only cold replay of
+`raster-resources-release-reset-0041bfd0` returned **1/1 exact**. This
+credits 129 authored CODE bytes, no additional Win32, GDI or CRT callee
+bytes. No fake local/ABI, raw native byte graft, manual assembler,
+masked fields, cropped function, all-unit cold replay or external Oracle
+acceptance.

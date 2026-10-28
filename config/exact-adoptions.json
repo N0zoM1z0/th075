@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377; F378; F379; F386; F389; F391; F392; F393; F394; F395; F403; F407; F414; F415; F421; F422; F427",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377; F378; F379; F386; F389; F391; F392; F393; F394; F395; F403; F407; F414; F415; F421; F422; F427; F428",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "d2834e46fafc40b515d050dd94b33247564119dee3f8ceff1dd39bc9ee22942e"
+      "current_sha256": "e3782c0901143495815fe29290ac8ae3416ab3d489d1dbd52af7e4047fbd6118"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "ba87305c90274d8e7521f598b8fdbdfc2c9de68fcb6cb645afceb31d2a0a7563"
+      "current_sha256": "67e9f92c91481b7b047f480c033a8513e26c72c29f5e2f5ea0ad84ca5e7efccd"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "3307d4f67dd9e40fafa1bcb47d20b53e8b96f01f7776083acfa06c8e85bc7063"
+      "current_sha256": "124ab09b8336961b95adfcc01769aab18fe356e13678ca4ab76fb19f699f7040"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "8dee3ed509e72078e7eb5600f83fcf5eaf0830bc0370ca3dc5c73fe7a2ab4bbb"
+      "current_sha256": "f8a8f4437de94b3e0fbd8e80be3d482e18830e0659f7051a0c34669cf6ccaa3b"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "77508ce16d19ea3fba8f97de22ece399c927a2d38af89f9ae24c4150f8ad79ff"
+      "current_sha256": "d1e5af2bf8f9e83940de0a9f847fdad5c5f7a84b63594e71b841ddb1afe7400b"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -30004,6 +30004,50 @@
         "disposition": "authored",
         "confidence": "complete-explicit-static-resource-policy-and-whole-source-order-controls",
         "evidence_id": "R177"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0041BFD0",
+        "size": "129",
+        "span_end": "0x0041C050",
+        "current_name": "FUN_0041bfd0",
+        "proposed_name": "RasterResources::ReleaseAndResetAt0041BFD0",
+        "module": "RasterResources",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R178; config/remaining-lifetime-policy-origin-evidence.json; scripts/repo-python scripts/verify-remaining-lifetime-policy-origins.py",
+        "owner": "authored",
+        "notes": "Complete explicit post-construction queue/vector clears, or guarded storage delete followed by SelectObject/DeleteObject/ReleaseDC and field resets. Whole natural small-owner source controls distinguish explicit operations from automatic construction/cleanup; layouts differ and no target-source byte match is claimed. Entire R017/R177/R109 authored context and R024/R037/R020 compiler records are preserved. Separate 27-byte interface Release remains unknown despite two whole byte-equal ordinary source alternatives. No reconstructed source/private ABI/mapping/exact credit."
+      },
+      "after": {
+        "address": "0x0041BFD0",
+        "size": "129",
+        "span_end": "0x0041C050",
+        "current_name": "FUN_0041bfd0",
+        "proposed_name": "RasterResources::ReleaseAndResetAt0041BFD0",
+        "module": "RasterResources",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void RasterResourcesF428::ReleaseAndReset()",
+        "is_thunk": "false",
+        "source_file": "src/RasterResourcesReleaseF428.cpp",
+        "evidence": "R178; config/remaining-lifetime-policy-origin-evidence.json; scripts/repo-python scripts/verify-remaining-lifetime-policy-origins.py; F428; scripts/repo-python scripts/replay-exact-units.py --unit raster-resources-release-reset-0041bfd0",
+        "owner": "authored",
+        "notes": "Complete explicit post-construction queue/vector clears, or guarded storage delete followed by SelectObject/DeleteObject/ReleaseDC and field resets. Whole natural small-owner source controls distinguish explicit operations from automatic construction/cleanup; layouts differ and no target-source byte match is claimed. Entire R017/R177/R109 authored context and R024/R037/R020 compiler records are preserved. Separate 27-byte interface Release remains unknown despite two whole byte-equal ordinary source alternatives. No reconstructed source/private ABI/mapping/exact credit.; F428 complete independent R178 native authored 129-byte raster bitmap/DC release at 0041BFD0..0041C050, 41 original instructions, PE SHA256 e69251b4328d2108f697aa3bcddbd27a7632620782abbe136a7dd7d73461968d. Real owner buffer +0x14 checks pointer then saves actual freed buffer at EBP-4, calls native CRT free 00640F15 and clears +0x14; follows real Windows GDI `SelectObject` IAT 00657048 on owner DC +4 and old +C, `DeleteObject` IAT 0065704C on its return, and `ReleaseDC` IAT 00657214 on owner HWND +0/DC +4; clears true +8/+C/+4 DWORDs. Native complete 113/113 nonreloc bytes, 4/4 true physical original COFF refs and destinations, 1/1 only affected cold exact. Borrowed Win32 types/CRT callee bytes and original private class allocations uncredited; no fake locals/bytes, assembly, masked/cropped match, full cold replay or external Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0041BFD0",
+        "origin": "authored",
+        "subsystem": "RasterResources",
+        "disposition": "authored",
+        "confidence": "complete-explicit-lifetime-policy-and-whole-source-operation-controls",
+        "evidence_id": "R178"
       }
     }
   ],
@@ -198800,6 +198844,52 @@
           "target": 0
         }
       ]
+    },
+    "raster-resources-release-reset-0041bfd0": {
+      "source": "src/RasterResourcesReleaseF428.cpp",
+      "object": "build/matching/RasterResourcesReleaseF428.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "RasterResources::ReleaseAndResetAt0041BFD0"
+      ],
+      "symbol": "?ReleaseAndReset@RasterResourcesF428@@QAEXXZ",
+      "target_address": 4308944,
+      "size": 129,
+      "relocations": [
+        {
+          "offset": 32,
+          "type": "REL32",
+          "symbol": "_free",
+          "target": 6557461
+        },
+        {
+          "offset": 65,
+          "type": "DIR32",
+          "symbol": "__imp__SelectObject@8",
+          "target": 6647880
+        },
+        {
+          "offset": 72,
+          "type": "DIR32",
+          "symbol": "__imp__DeleteObject@4",
+          "target": 6647884
+        },
+        {
+          "offset": 91,
+          "type": "DIR32",
+          "symbol": "__imp__ReleaseDC@8",
+          "target": 6648340
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -199255,6 +199345,7 @@
     "src/FighterNoticeSetDrawF415.cpp": "c6bf9bf808a6c4fd58b17c72076a82442546a67b3084e107113541cbfe0fb994",
     "src/FighterActionProcessF421.cpp": "7e7c63efc0583b519499a653a315f29b0651ebd49a993f00221e0af49afdc9d8",
     "src/CharacterObjectConstructorsF422.cpp": "100c6617346f039498b9ab74c9e9b0d33746089f68ac5a6bd3ed25f8b441c465",
-    "src/StaticResourceQueuesDtorF427.cpp": "7801f0737c651cf020ad8f10a3cadd47dbb01e481126fc236b2ecd50cc4fd854"
+    "src/StaticResourceQueuesDtorF427.cpp": "7801f0737c651cf020ad8f10a3cadd47dbb01e481126fc236b2ecd50cc4fd854",
+    "src/RasterResourcesReleaseF428.cpp": "fbd72f9dbdf1410fa4fcabd2a9f443c54f8f13b9dad0bd6bb174ce92267b559a"
   }
 }
