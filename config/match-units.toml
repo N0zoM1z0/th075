@@ -47349,3 +47349,63 @@ offset = 237
 type = "DIR32"
 symbol = "__except_list"
 target = 0x00000000
+
+
+[units.aux-effect-manager-advance-prune-two-lists-005f7d80]
+source = "src/AuxEffectPruneF354.cpp"
+object = "build/matching/AuxEffectPruneF354.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["AuxEffectManager::AdvanceAndPruneTwoListsAt005F7D80"]
+symbol = "?AdvanceAndPruneTwoLists@AuxEffectManagerF297@@QAEXXZ"
+target_address = 0x005F7D80
+size = 276
+[[units.aux-effect-manager-advance-prune-two-lists-005f7d80.relocations]]
+offset = 47
+type = "REL32"
+symbol = "?Size@EffectListF297@@QAEHXZ"
+target = 0x005F8110
+[[units.aux-effect-manager-advance-prune-two-lists-005f7d80.relocations]]
+offset = 94
+type = "REL32"
+symbol = "?At@EffectListF297@@QAEPAPAVEffectChildF297@@H@Z"
+target = 0x005F8130
+[[units.aux-effect-manager-advance-prune-two-lists-005f7d80.relocations]]
+offset = 130
+type = "REL32"
+symbol = "?Begin@EffectListF297@@QAE?AVEffectIteratorF297@@XZ"
+target = 0x005F80B0
+[[units.aux-effect-manager-advance-prune-two-lists-005f7d80.relocations]]
+offset = 148
+type = "REL32"
+symbol = "?EndInto@EffectListF297@@QAEPAVEffectIteratorF297@@PAV2@@Z"
+target = 0x005F80E0
+[[units.aux-effect-manager-advance-prune-two-lists-005f7d80.relocations]]
+offset = 157
+type = "REL32"
+symbol = "??9EffectIteratorF297@@QBE_NABV0@@Z"
+target = 0x005F8460
+[[units.aux-effect-manager-advance-prune-two-lists-005f7d80.relocations]]
+offset = 172
+type = "REL32"
+symbol = "??DEffectIteratorF297@@QBEAAPAVEffectChildF297@@XZ"
+target = 0x005F8400
+[[units.aux-effect-manager-advance-prune-two-lists-005f7d80.relocations]]
+offset = 188
+type = "REL32"
+symbol = "??DEffectIteratorF297@@QBEAAPAVEffectChildF297@@XZ"
+target = 0x005F8400
+[[units.aux-effect-manager-advance-prune-two-lists-005f7d80.relocations]]
+offset = 202
+type = "REL32"
+symbol = "_free"
+target = 0x00640F15
+[[units.aux-effect-manager-advance-prune-two-lists-005f7d80.relocations]]
+offset = 231
+type = "REL32"
+symbol = "?Erase@EffectListF297@@QAE?AVEffectIteratorF297@@V2@@Z"
+target = 0x005F8290
+[[units.aux-effect-manager-advance-prune-two-lists-005f7d80.relocations]]
+offset = 258
+type = "REL32"
+symbol = "??EEffectIteratorF297@@QAE?AV0@H@Z"
+target = 0x005F8420

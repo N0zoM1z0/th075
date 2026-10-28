@@ -5230,3 +5230,42 @@ VC7.1 `/Od /Ob0 /Gy /GR- /GX /GS /Zi`; only affected unit
 `archive-catalog-open-and-register-0041cf80` returned **1/1 exact**. No
 external Oracle assertion, asm, copied bytes, fake locals, truncated body or
 masking of relocation references.
+
+
+## F354: complete two-side auxiliary effects update and prune with real iterator state
+
+The R109-authored native `AuxEffectManager::AdvanceAndPruneTwoLists` at
+`005F7D80..005F7E93` is **276 full original CODE bytes**, **93 original x86
+instructions**, with original PE SHA256
+`b23cb9469c9501989cd48500296650b521e9edc094c651e5a790c1d41c776b2b`.
+It drives both side-indexed lists at the actual 20-byte receiver stride,
+iterates a count/index pair to call the original virtual Advance method,
+then traverses genuine 8-byte iterators, tests each child pointer's +8 state,
+frees ended child entries using original CRT free, erases them from the list
+through native `005F8290`, or invokes native postfix++ for continuing items.
+The original `RET` is included, and all related list, virtual dispatch,
+operator!=, operator*, End and Begin calls preserve native behavior.
+
+Earlier whole 276-byte F298/F327 sources produced 233/236 nonrelocation
+matching bytes and had *three physically different stack references*: native
+End writes to EBP-0x1C while removed child pointers occupy EBP-0x20,
+not compiler-chosen -0x20 and -0x18 respectively. Whole native analysis
+identified four contiguous meaningful control values in the original
+frame: `removed` pointer at -0x20, 8-byte `end` iterator starting -0x1C,
+`index` at -0x14 and `count` at -0x10. Modeling those values in their
+true order as a 20-byte `IndexCountF298` physical control struct and
+passing its `end` to the original 8-byte hidden-sret End call reproduces
+those native slots naturally. `EndInto` is only a caller-side alias for the
+*real* `005F80E0` End entry and does not assert original source spelling
+or an extra method. Other tested orders produced 226/236 or retained the
+old 233/236 negative results and earned no credit.
+
+`src/AuxEffectPruneF354.cpp` with VC7.1 `/Od /Ob0 /Gy /GR- /GX- /GS
+/Zi` reproduces **236/236** nonrelocation bytes and **10/10** physical
+COFF REL32 destinations over the **entire 276-byte native function**. Only
+new unit `aux-effect-manager-advance-prune-two-lists-005f7d80` was cold
+replayed, yielding **1/1 exact**. Borrowed deque/iterator interfaces are
+not an asserted complete private layout, and no CRT, runtime, external
+callee or compiler-generated body bytes were additionally credited. No
+assembly, arbitrary padding, artificial inert local, masks, truncated
+function or external Oracle acceptance is claimed.

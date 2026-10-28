@@ -651,3 +651,4 @@ CharacterSelectScene::UpdateCancelAnimation
 SpriteSequence::RenderElements
 SuikaFighter::UpdateSpecialStateAt005C3FB0
 ArchiveCatalog::OpenAndRegister
+AuxEffectManager::AdvanceAndPruneTwoListsAt005F7D80

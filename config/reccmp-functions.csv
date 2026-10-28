@@ -652,3 +652,4 @@ CharacterSelectScene::UpdateCancelAnimation,0x00435870,function
 SpriteSequence::RenderElements,0x00411110,function
 SuikaFighter::UpdateSpecialStateAt005C3FB0,0x005C3FB0,function
 ArchiveCatalog::OpenAndRegister,0x0041CF80,function
+AuxEffectManager::AdvanceAndPruneTwoListsAt005F7D80,0x005F7D80,function
