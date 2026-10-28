@@ -719,3 +719,5 @@ AliceFighter::UpdateSpecialStateAt004E62A0,0x004E62A0,function
 ArchiveCatalog::BeginUseAt0041CE10,0x0041CE10,function
 CharacterAuxObject::ChooseIntegerRangeAt00410F00,0x00410F00,function
 CharacterAI::ChooseIntegerRangeAt00455610,0x00455610,function
+GameProgress::SetUnlockBitAt00416CE0,0x00416CE0,function
+GameProgress::TestUnlockBitAt00416DC0,0x00416DC0,function

@@ -6024,3 +6024,48 @@ Only the two affected F393 units were cold replayed together (**2/2 exact
 across 1 object**) and credit **88** distinct authored CODE bytes; native
 CRT rand itself is not credited. No byte graft, assembly, fake temporary,
 truncated comparison, full cold replay or external Oracle receipt.
+
+
+## F394: complete native signed progress unlock bitset set/test with correct 32-bit boolean lowering
+
+Two independent R103-authored game-progress functions are fully reconstructed:
+`GameProgress::SetUnlockBitAt00416CE0`, **108 original CODE bytes / 39 native x86
+instructions** (PE SHA256
+`957dee189131c6559bde1a9a5715e4176e5cc8404e4b1132e349321a7f3b23e6`),
+and `GameProgress::TestUnlockBitAt00416DC0`, **93 original CODE bytes / 35
+native instructions** (PE SHA256
+`df52c9a7f30a5580c76056b8fdc2620d96b436bd89d50ab9d708189cef7cab29`).
+Both are genuine native game policy that range checks the originally signed
+16-bit input selector `0..320` and accesses physical owner bitset DWORDs
+at native +`0x16A9C`. They use signed C++ `/32` and `%32`, causing the
+original VC7.1 `CDQ`, remainder bias and signed shift sequence even though
+the range guard makes negative values unobservable in the index expression.
+No complete progress class layout or other GameProgress routine is credited.
+
+The source setter has a real empty invalid-selector branch:
+`if(selected>320 || selected<0) {} else bitset[index] |= mask`; the naive
+valid-index-first equivalent omitted two original branch bytes. The test
+returns 0 for invalid indexes, and its native final five-instruction
+`XOR EAX,EAX; CMP EAX,EDX; SBB EAX,EAX; NEG EAX` performs an **unsigned
+32-bit relational comparison converted to the return byte**. A direct
+C++ boolean return or `setne` expression incorrectly emits a shorter
+88-byte function. The native-faithful scalar-return form
+`(int)(0u < (BITSET[index] & (1 << (selected%32))))` reproduces the
+original full 93-byte function; an independent natural explicit ternary
+`(0u < maskedBits) ? 1 : 0` was also experimentally **93-byte exact**,
+with the alternate source retained under private research as a
+negative/positive codegen control.
+
+The original functions contain **no physical COFF relocations**; their
+actual complete PE bodies are compared byte-for-byte with **108/108** and
+**93/93** native bytes, no masking, and their canonical TOML units
+explicitly declare `relocations = []` so a missing audit cannot be confused
+with a verified absence of relocations. The existing in-progress F394
+canonical source and two registry entries found dirty in the live worktree
+were inspected and retained; only the missing explicit empty relocation
+fields and corresponding frozen checkpoint SHA were repaired. Affected-only
+`--unit game-progress-set-unlock-bit-00416ce0` and
+`--unit game-progress-test-unlock-bit-00416dc0` cold replay returned
+**2/2 exact across one object**, crediting **201 distinct original authored
+CODE bytes**. No extra runtime/helper bytes, duplicate F397 credit, fake
+local, assembly, cropped compare, full cold replay or external Oracle claim.

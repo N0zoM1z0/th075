@@ -53182,3 +53182,25 @@ offset = 15
 type = "REL32"
 symbol = "_rand"
 target = 0x006418AB
+
+
+[units.game-progress-set-unlock-bit-00416ce0]
+source = "src/GameProgressUnlockBitsF394.cpp"
+object = "build/matching/GameProgressUnlockBitsF394.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["GameProgress::SetUnlockBitAt00416CE0"]
+symbol = "?SetUnlockBit@GameProgressF394@@QAEXF@Z"
+target_address = 0x00416CE0
+size = 108
+relocations = []
+
+
+[units.game-progress-test-unlock-bit-00416dc0]
+source = "src/GameProgressUnlockBitsF394.cpp"
+object = "build/matching/GameProgressUnlockBitsF394.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["GameProgress::TestUnlockBitAt00416DC0"]
+symbol = "?TestUnlockBit@GameProgressF394@@QAEEF@Z"
+target_address = 0x00416DC0
+size = 93
+relocations = []
