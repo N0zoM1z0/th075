@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377; F378",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "0795fb365866f38897a8d4f36f4acf5f76bc9ff783bbf223a0c34c2c5acedeae"
+      "current_sha256": "3c7e71c71332747dbf64fd9887d0872f09ab77c7512040bd1aa77991e56109c3"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "b4fcaf6ddb83f16a0a166e544488d0ee80c199bfddf38d966978aec37e69e53e"
+      "current_sha256": "5c43ff0556a23179577097f22e9c12feeb30fc7c91ddf84839f1e45d9b761a06"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "123866c12e76d9d0a4cf5b20e5a6e82ca27b89d7d1cb1f966dc93f24609d2d4d"
+      "current_sha256": "88344a5f4a7f6a67feaa2adf89781908cfb1954979625cba624179f06729bb85"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "bf7e9758edd362be8bcfe6b760f3e03d833eb9759e56f1c780cb5c63f46c27c6"
+      "current_sha256": "228839f77999ce728b0c2d825e537c52a24e7a8bd54b390eaba1654bdf0e22cf"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "0cbd3d524bb52eaef17ab057266e6a89c537e01f8a0dcb5054c3421a8c52ee04"
+      "current_sha256": "3f40f54f59bba6ae8701b603d4f523e89a3f833544652bf4ee4f7e34c065cec0"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -28728,6 +28728,50 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R055"
+      }
+    },
+    {
+      "before": {
+        "address": "0x005301B0",
+        "size": "1008",
+        "span_end": "0x0053059F",
+        "current_name": "FUN_005301b0",
+        "proposed_name": "CharacterAux::RunAt005301B0",
+        "module": "CharacterAux",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x005301B0",
+        "size": "1008",
+        "span_end": "0x0053059F",
+        "current_name": "FUN_005301b0",
+        "proposed_name": "CharacterAux::RunAt005301B0",
+        "module": "CharacterAux",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void CharacterAux005301B0F378::UpdateSpecial()",
+        "is_thunk": "false",
+        "source_file": "src/CharacterAux005301B0F378.cpp",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed; F378; scripts/repo-python scripts/replay-exact-units.py --unit character-aux-queue-and-mode-effects-005301b0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent; F378 original independent entire 1008-byte R049 authored character special queue, mode and distance controller at 005301B0..0053059F, 266 native x86 instructions, target PE SHA256 38e28c551c8935639a34b28022c1f920d75632522a5fe38a01d77bcf14bb6376. Original real 16-byte command snapshot of short action/guard, float x/y, signed-facing byte, native 16-bit bearing at physical EBP-10..-1, real queue append 00531CB0/Count 00531C60/Prune 00531C80 at owner +FEC (only when short +82==0 and +3B8==0), short +F10 native decrement, contact reset, +F0E effect-state reset/guard and 4 real effect 810 conditional spawns with mode global 006714B4, native re-tested else-if mode==3, real opponent/world state booleans and +F0C state, +F14 distance-policy 540/320 clamp. Initial whole natural source emitted 992 bytes because an else branch elided the native redundant explicit mode==3 re-test; genuine else if mode==3 reintroduces original 16 bytes and exact native jump flow. All 936/936 nonfield bytes and 18 original physical COFF DIR32/REL32 locations/destinations exact, complete 1008 native CODE and 1/1 changed-only cold replay. Unknown original owner and queue class remain borrowed not asserted; no assembly, fake field/extra byte, masks, truncated comparison, external callee code credit, full replay or remote Oracle receipt."
+      },
+      "origin": {
+        "address": "0x005301B0",
+        "origin": "authored",
+        "subsystem": "CharacterAux",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R049"
       }
     }
   ],
@@ -192716,6 +192760,136 @@
           "target": 0
         }
       ]
+    },
+    "character-aux-queue-and-mode-effects-005301b0": {
+      "source": "src/CharacterAux005301B0F378.cpp",
+      "object": "build/matching/CharacterAux005301B0F378.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "CharacterAux::RunAt005301B0"
+      ],
+      "symbol": "?UpdateSpecial@CharacterAux005301B0F378@@QAEXXZ",
+      "target_address": 5439920,
+      "size": 1008,
+      "relocations": [
+        {
+          "offset": 118,
+          "type": "REL32",
+          "symbol": "?AddSnapshot@ObservedEffectQueueF378@@QAEXPBUObservedInputSnapshotF378@@@Z",
+          "target": 5446832
+        },
+        {
+          "offset": 132,
+          "type": "REL32",
+          "symbol": "?Count@ObservedEffectQueueF378@@QAEIXZ",
+          "target": 5446752
+        },
+        {
+          "offset": 151,
+          "type": "REL32",
+          "symbol": "?PruneOld@ObservedEffectQueueF378@@QAEXXZ",
+          "target": 5446784
+        },
+        {
+          "offset": 198,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 361,
+          "type": "DIR32",
+          "symbol": "?g_CharacterSpecialModeAt006714B4@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 389,
+          "type": "DIR32",
+          "symbol": "__real@42c80000",
+          "target": 6649992
+        },
+        {
+          "offset": 413,
+          "type": "REL32",
+          "symbol": "?SpawnTrackedEffect@CharacterAux005301B0F378@@QAEXFMMCCE@Z",
+          "target": 4537024
+        },
+        {
+          "offset": 449,
+          "type": "DIR32",
+          "symbol": "?g_CharacterSpecialModeAt006714B4@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 496,
+          "type": "DIR32",
+          "symbol": "__real@42c80000",
+          "target": 6649992
+        },
+        {
+          "offset": 520,
+          "type": "REL32",
+          "symbol": "?SpawnTrackedEffect@CharacterAux005301B0F378@@QAEXFMMCCE@Z",
+          "target": 4537024
+        },
+        {
+          "offset": 615,
+          "type": "DIR32",
+          "symbol": "__real@42c80000",
+          "target": 6649992
+        },
+        {
+          "offset": 639,
+          "type": "REL32",
+          "symbol": "?SpawnTrackedEffect@CharacterAux005301B0F378@@QAEXFMMCCE@Z",
+          "target": 4537024
+        },
+        {
+          "offset": 740,
+          "type": "DIR32",
+          "symbol": "__real@42c80000",
+          "target": 6649992
+        },
+        {
+          "offset": 764,
+          "type": "REL32",
+          "symbol": "?SpawnTrackedEffect@CharacterAux005301B0F378@@QAEXFMMCCE@Z",
+          "target": 4537024
+        },
+        {
+          "offset": 824,
+          "type": "DIR32",
+          "symbol": "__real@44070000",
+          "target": 6656308
+        },
+        {
+          "offset": 855,
+          "type": "DIR32",
+          "symbol": "__real@c4070000",
+          "target": 6656304
+        },
+        {
+          "offset": 898,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 929,
+          "type": "DIR32",
+          "symbol": "__real@c3a00000",
+          "target": 6649984
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -193155,6 +193329,7 @@
     "src/FighterSpecialVariantsF374.cpp": "0e560e3a6c3e4cd00165bc7a335537ac07d1f70a955d3ff725f107a6607e4f87",
     "src/ProgressRankInsertF375.cpp": "f2f4bcd45c409b53d3849abc16f07262148ca875156388b234f1f864799462de",
     "src/BackgroundLoadPairF376.cpp": "50bff1fe99326d234edcfe6669fa2152ff8b1ddfae58c69077c3a8779c86ba78",
-    "src/BackgroundLoadFamilyF377.cpp": "a805a521ba3c0dab860094d89b4c0d3b4863a928c19da6c03767a940ab2d490c"
+    "src/BackgroundLoadFamilyF377.cpp": "a805a521ba3c0dab860094d89b4c0d3b4863a928c19da6c03767a940ab2d490c",
+    "src/CharacterAux005301B0F378.cpp": "ddd6bbe7ee7bc941070700e913c964b6ce922dd3b20b9fb1eaec75e11bbd2bd3"
   }
 }

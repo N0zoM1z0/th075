@@ -51380,3 +51380,103 @@ offset = 143
 type = "DIR32"
 symbol = "__except_list"
 target = 0x00000000
+
+
+[units.character-aux-queue-and-mode-effects-005301b0]
+source = "src/CharacterAux005301B0F378.cpp"
+object = "build/matching/CharacterAux005301B0F378.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["CharacterAux::RunAt005301B0"]
+symbol = "?UpdateSpecial@CharacterAux005301B0F378@@QAEXXZ"
+target_address = 0x005301B0
+size = 1008
+[[units.character-aux-queue-and-mode-effects-005301b0.relocations]]
+offset = 118
+type = "REL32"
+symbol = "?AddSnapshot@ObservedEffectQueueF378@@QAEXPBUObservedInputSnapshotF378@@@Z"
+target = 0x00531CB0
+[[units.character-aux-queue-and-mode-effects-005301b0.relocations]]
+offset = 132
+type = "REL32"
+symbol = "?Count@ObservedEffectQueueF378@@QAEIXZ"
+target = 0x00531C60
+[[units.character-aux-queue-and-mode-effects-005301b0.relocations]]
+offset = 151
+type = "REL32"
+symbol = "?PruneOld@ObservedEffectQueueF378@@QAEXXZ"
+target = 0x00531C80
+[[units.character-aux-queue-and-mode-effects-005301b0.relocations]]
+offset = 198
+type = "DIR32"
+symbol = "__real@00000000"
+target = 0x0065782C
+[[units.character-aux-queue-and-mode-effects-005301b0.relocations]]
+offset = 361
+type = "DIR32"
+symbol = "?g_CharacterSpecialModeAt006714B4@@3CA"
+target = 0x006714B4
+[[units.character-aux-queue-and-mode-effects-005301b0.relocations]]
+offset = 389
+type = "DIR32"
+symbol = "__real@42c80000"
+target = 0x00657888
+[[units.character-aux-queue-and-mode-effects-005301b0.relocations]]
+offset = 413
+type = "REL32"
+symbol = "?SpawnTrackedEffect@CharacterAux005301B0F378@@QAEXFMMCCE@Z"
+target = 0x00453AC0
+[[units.character-aux-queue-and-mode-effects-005301b0.relocations]]
+offset = 449
+type = "DIR32"
+symbol = "?g_CharacterSpecialModeAt006714B4@@3CA"
+target = 0x006714B4
+[[units.character-aux-queue-and-mode-effects-005301b0.relocations]]
+offset = 496
+type = "DIR32"
+symbol = "__real@42c80000"
+target = 0x00657888
+[[units.character-aux-queue-and-mode-effects-005301b0.relocations]]
+offset = 520
+type = "REL32"
+symbol = "?SpawnTrackedEffect@CharacterAux005301B0F378@@QAEXFMMCCE@Z"
+target = 0x00453AC0
+[[units.character-aux-queue-and-mode-effects-005301b0.relocations]]
+offset = 615
+type = "DIR32"
+symbol = "__real@42c80000"
+target = 0x00657888
+[[units.character-aux-queue-and-mode-effects-005301b0.relocations]]
+offset = 639
+type = "REL32"
+symbol = "?SpawnTrackedEffect@CharacterAux005301B0F378@@QAEXFMMCCE@Z"
+target = 0x00453AC0
+[[units.character-aux-queue-and-mode-effects-005301b0.relocations]]
+offset = 740
+type = "DIR32"
+symbol = "__real@42c80000"
+target = 0x00657888
+[[units.character-aux-queue-and-mode-effects-005301b0.relocations]]
+offset = 764
+type = "REL32"
+symbol = "?SpawnTrackedEffect@CharacterAux005301B0F378@@QAEXFMMCCE@Z"
+target = 0x00453AC0
+[[units.character-aux-queue-and-mode-effects-005301b0.relocations]]
+offset = 824
+type = "DIR32"
+symbol = "__real@44070000"
+target = 0x00659134
+[[units.character-aux-queue-and-mode-effects-005301b0.relocations]]
+offset = 855
+type = "DIR32"
+symbol = "__real@c4070000"
+target = 0x00659130
+[[units.character-aux-queue-and-mode-effects-005301b0.relocations]]
+offset = 898
+type = "DIR32"
+symbol = "__real@43a00000"
+target = 0x0065787C
+[[units.character-aux-queue-and-mode-effects-005301b0.relocations]]
+offset = 929
+type = "DIR32"
+symbol = "__real@c3a00000"
+target = 0x00657880

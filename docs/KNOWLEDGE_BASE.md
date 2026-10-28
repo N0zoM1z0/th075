@@ -5740,3 +5740,43 @@ exact. No game CRT, base constructor, vtable, archived assets, camera/pack
 callee, compiler thunk or other nonoriginal CODE is double counted, and no
 ASM, fake locals, byte grafts, masked relocation data, truncated function
 or remote Oracle receipt is claimed.
+
+
+## F378: full 1,008-byte command snapshot queue and special-mode character controller
+
+The independently observed original R049-authored `CharacterAux::RunAt005301B0`
+occupies **1,008 full native CODE bytes** at `005301B0..0053059F`,
+**266 original x86 instructions**, original PE SHA256
+`38e28c551c8935639a34b28022c1f920d75632522a5fe38a01d77bcf14bb6376`.
+Its first genuinely owned value is a 16-byte stack command snapshot at EBP-10,
+formed from two action shorts at +0x60/+0x62, the original x/y floats at
++0x44/+0x48, signed facing +0x66 and bearing short +0x80 with the natural
+C++ alignment between those members. When +0x82 and +0x3B8 both vanish,
+it calls the real borrowed queue methods at `00531CB0` (append with
+snapshot pointer), `00531C60` (count), and `00531C80` (prune if >10)
+through the real +0xFEC receiver. It then decrements signed +0xF10,
+resets grounded +0x3AC if native zero float and positive flag, and when
++0xF0E is zero resets native effect transform/color fields. The latter
+condition branches on the original signed global `006714B4`: mode other
+than 3 always launches effect ID 810 through real inherited `00453AC0`;
+mode 3 conditionally launches that same effect for action +0xF0C==1,
+linked opponent/local active flags at +0x2CD and opponent +0x6EF, or local
++0x6EF. Four distinct original references to that effect spawner and their
+actual state increment/write paths are included. Finally opponent-relative
+540/320 checks clamp signed short +0xF14. The complete fighter and queue
+owner classes remain explicitly borrowed, not inferred from a snapshot.
+
+A new entire natural implementation started at 992 bytes because ordinary
+`if(mode!=3) ... else ...` incorrectly collapses a redundant but physically
+present second mode check. Comparing the full original x86 streams showed
+**three native instructions and 16 bytes** for the second `mode==3` re-test.
+The semantically faithful `else if(g_CharacterSpecialModeAt006714B4==3)`
+emits those bytes and correct native jump targets under pinned VC7.1
+`/Od /Ob0 /Gy /GR- /GX- /Zi`. The resulting entire 1,008-byte function
+matches **936/936 nonrelocation bytes** and all **18/18 original physical
+COFF DIR32/REL32 fields/destinations**, including three queue calls, four
+real effect spawns, float constants, and both references to global mode.
+Only affected unit `character-aux-queue-and-mode-effects-005301b0` was
+independently cold replayed, **1/1 exact**. This credits no queue/effect
+callee bytes, no unknown class layout, cropped body, fake locals/ASM,
+byte masks, full cold replay or external Oracle verification.

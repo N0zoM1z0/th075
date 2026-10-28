@@ -1,6 +1,6 @@
 # TH075 — current reconstruction handoff
 
-**Maintained: 2026-10-28, after F377.** Read this document, then check the **live repository**. The current user explicitly wants both large/core bosses and small leaves tackled seriously, tangible progress committed immediately with subject `gpt-web: ...`, and **only changed/new units cold-replayed**. The user reports no other sessions: inspect and finish all dirty work; never skip, reset, overwrite or silently discard it.
+**Maintained: 2026-10-28, after F378.** Read this document, then check the **live repository**. The current user explicitly wants both large/core bosses and small leaves tackled seriously, tangible progress committed immediately with subject `gpt-web: ...`, and **only changed/new units cold-replayed**. The user reports no other sessions: inspect and finish all dirty work; never skip, reset, overwrite or silently discard it.
 
 ## 1. Trusted state and first commands
 
@@ -8,11 +8,11 @@ Canonical evidence is the pinned original PE, `config/function-origins.csv`, `co
 
 | Item | Verified snapshot |
 | --- | --- |
-| Git | `main`; pre-F377 reconstruction commit **`dea32ae`** (F376), preceded by `be948e0` (F375), `96bde00` (F374); F377 commit follows this handoff update |
+| Git | `main`; pre-F378 reconstruction commit **`c10a1a0`** (F377), preceded by `dea32ae` (F376), `be948e0` (F375); F378 commit follows this handoff update |
 | Pinned target | user-supplied Japanese `resources/th075.exe` v1.11; SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`; **never** `th075c.exe` |
-| Exact and source-present | **712 functions / 712 exact units** |
-| Accepted authored CODE | **833,755 bytes / 1,973,516 reviewed bytes = 42.25%** |
-| Conservative | **42.17%**, including 3,608 bytes with unresolved origin |
+| Exact and source-present | **713 functions / 713 exact units** |
+| Accepted authored CODE | **834,763 bytes / 1,973,516 reviewed bytes = 42.30%** |
+| Conservative | **42.22%**, including 3,608 bytes with unresolved origin |
 | Origin review | 1,002 authored, 2,671 library, 581 compiler, **97 pending** across 4,351 provisional candidates |
 | Goal | **98% not reached**; Git and local cold results are not external Oracle receipts |
 
@@ -29,7 +29,7 @@ If **any** dirty source, unit, or manifest is present, first inspect its exact e
 
 ## 2. Newly closed chains — **not** the backlog
 
-The full register of **all 712** accepted functions is in `config/functions.csv` and `config/match-units.toml`; this table intentionally highlights only the newest, important independent CODE extents. No called function, imported CRT/Win32 code, or owned jump-table bytes are counted twice.
+The full register of **all 713** accepted functions is in `config/functions.csv` and `config/match-units.toml`; this table intentionally highlights only the newest, important independent CODE extents. No called function, imported CRT/Win32 code, or owned jump-table bytes are counted twice.
 
 | Unit / accepted address | Whole CODE | Authentic fields | Evidence |
 | --- | ---: | ---: | --- |
@@ -62,6 +62,7 @@ The full register of **all 712** accepted functions is in `config/functions.csv`
 | F375 `ProgressRecords::InsertRankedScore` `00416EE0` | **281** | **2** | `src/ProgressRankInsertF375.cpp`, `.analysis/f375-ranked-score/` |
 | F376 `BackgroundStage::LoadBG00a/00b` `00449AA0/00449E10` | **151 + 161** | **11 + 11** | `src/BackgroundLoadPairF376.cpp`, `.analysis/f376-background-ctor/` |
 | F377 remaining 34 `BackgroundStage::LoadBG*` native constructor functions `0044A230..00451C70` | **5,219** total | **369** | `src/BackgroundLoadFamilyF377.cpp`, `.analysis/f377-bg-family/` |
+| F378 `CharacterAux::RunAt005301B0` `005301B0` | **1,008** | **18** | `src/CharacterAux005301B0F378.cpp`, `.analysis/f378-youmu-aux/` |
 
 **F340:** the companion archive entry seek at `0041D750` is independently cold exact for its whole 164-byte function including every one of its nine external references. It uses genuine iterator and `strcmp` semantics, returns the archive handle after `SetFilePointer` or `INVALID_HANDLE_VALUE` if not found. The original private archive list remains borrowed, not instantiated.
 
@@ -106,6 +107,8 @@ The full register of **all 712** accepted functions is in `config/functions.csv`
 **F376:** separate original R055 stage-background constructors `00449AA0` (151 bytes) and `00449E10` (161 bytes) cold-rebuilt **2/2 exact**. Authentic borrowed base constructor at `00449DE0`, EH handlers `00655BF8/00655C18`, stage-specific vtables, quad initialization at +0x68 or +0x6C, archive allocation/load calls and real original data paths each match all physical bytes/references. Each is independently verified to have **11/11 original COFF references**, with 107/107 and 117/117 nonfield bytes respectively. No complete original stage layout is asserted; this is not enough to classify the rest of background loader family without independent testing.
 
 **F377:** independently decoded and reconstructed **all 34 other original R055-authored background stage load constructors**, spanning `0044A230..00451C70`. The native fields, original vtable and unique EH handler, genuine camera offset (or absence), asset path addresses, allocated slots and actual default float/state writes were parsed **per native function** and checked against each full original byte extent, not extrapolated by address alone. Compiled the 34 independent natural derived C++ constructors in one VC7.1 `/GX` object. All 34 objects were individually structural-exact; all **369 original physical COFF relocations** and target destinations were independently reviewed. A cold replay restricted to those 34 units produced **34/34 exact across one object**, crediting **5,219 distinct original authored CODE bytes** (5 without camera call, 29 with it, including 140/151/161/171/181-byte complete forms). This closes the entire currently reviewed R055 `LoadBG*` authored constructor family together with F376, but does not assert full private stage layouts or other background functions.
+
+**F378:** the independent native **1,008-byte / 266-instruction** R049 character auxiliary queue and special-mode controller at `005301B0` is cold exact, **936/936** native nonfield bytes and **18/18** original physical COFF references. The real 16-byte command input record is first copied into the original -0x10 stack layout; queue at +0xFEC then appends, counts and prunes snapshots via three original game calls, followed by signed timer countdown, grounded state and mode-specific effects. A naive C++ `else` removed a genuine second signed global `mode==3` check and was only 992 bytes; writing the observed `else if(mode==3)` restores 16 native CODE bytes and all the original branches. It also reproduces four actual effect 810 spawns plus +F14 opponent-distance policy. Only the affected F378 unit was cold replayed **1/1 exact**.
 
 **Corrections to old notes:** The 686-byte writer and 429-byte reader are both **exact** (F339/F338), not pending F249/F250. The full 1,252-byte replay writer and 375-byte finalizer are both **exact** (F326/F328), not pending F219/F218/F289. The 1,766-byte font rasterizer is **exact** (F319), not pending F299/F302. The 301-byte glyph loader is **exact** (F318), not pending F291. The 916-byte MusicRoom catalog + separately compared 16-byte jump table is **exact in F258** (916 CODE credit only). Other accepted 1,000+ byte bosses include F271 projected quad (1,185), F278 pattern chooser (1,264), F282 resource loader (1,186), F292 overlay text box (1,385), F294 effects catalog (1,722), and F244 scene advance (1,529 CODE). Earlier failures remain useful *historical controls*, but must never be presented as current unaccepted work.
 
