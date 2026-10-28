@@ -7023,3 +7023,36 @@ Only affected `--unit game-globals-initialize-black-surface-00417000`
 was rebuilt and cold-replayed **1/1 exact**. No raw assembly/target bytes,
 masking or truncation, fabricated stack locals, all-unit cold replay,
 additional SDK code or external Oracle acceptance claimed.
+
+
+## F460: full native 65-byte FrameCapture::CapturePrimary and its real 20-byte RECT + buffer state
+
+The independently R100-authored original native
+`FrameCapture::CapturePrimaryAt004170D0` occupies **65 complete original
+CODE bytes and 24 x86 instructions**, original PE-backed SHA256
+`7902e64d0f7be19d52efc5437d13683392c433838d3e986d22a47b9ea7e2a387`.
+The method acquires the real source buffer handle through actual native
+`004028B0`, stores the result DWORD on the original stack, calls
+imported genuine Windows `SetRect` via IAT `00657210` to set the region
+left/top=0 and right/bottom=640/480, then invokes native game capture
+`00401D80` with the true receiver, address of the real captured buffer
+handle and rectangle. The actual native RECT is at EBP-0x14..EBP-0x5
+and the 32-bit captured buffer handle is at **EBP-4**; the receiver is
+originally saved at EBP-0x18 in the original 0x18 frame.
+
+The first natural source using a standalone DWORD and RECT emitted the
+correct **65-byte size** but allocated the two meaningful locals in
+the wrong native physical slots, yielding **49/53 comparable original
+bytes**. Reordering the declaration alone did not change VC7.1 stack
+allocation. Independently grouping the actual 16-byte RECT and actual
+returned 4-byte handle into a 20-byte used C++ state struct naturally
+restores their real original EBP positions without fake local padding or
+unused data. The pinned VC7.1 `/Od /Ob0 /Gy /GR- /GX- /Zi` C++ source
+`src/FrameCapturePrimaryF460.cpp` matches the full **65 original CODE
+bytes**, **53/53 native nonrelocation bytes** and all **three original
+physical COFF REL32/DIR32 fields**, including the original imported
+Win32 `SetRect` IAT target and actual game buffer/capture methods.
+Only the affected `--unit frame-capture-primary-004170d0` was
+cold rebuilt/replayed **1/1 exact**. No fake stack locals, raw ASM,
+original-byte graft, masked/partial native body, external helper/Win32
+CODE duplicate, full cold replay or remote Oracle acceptance.

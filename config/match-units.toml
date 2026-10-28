@@ -56548,3 +56548,28 @@ offset = 26
 type = "REL32"
 symbol = "?CreateBlackSurfaceAt00401C20@@YAXHHPAPAUIDirect3DTexture8@@H@Z"
 target = 0x00401C20
+
+
+[units.frame-capture-primary-004170d0]
+source = "src/FrameCapturePrimaryF460.cpp"
+object = "build/matching/FrameCapturePrimaryF460.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["FrameCapture::CapturePrimaryAt004170D0"]
+symbol = "?CapturePrimary@FrameCaptureF460@@QAEXXZ"
+target_address = 0x004170D0
+size = 65
+[[units.frame-capture-primary-004170d0.relocations]]
+offset = 10
+type = "REL32"
+symbol = "?GetPresentBufferAt004028B0@@YAIXZ"
+target = 0x004028B0
+[[units.frame-capture-primary-004170d0.relocations]]
+offset = 37
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.frame-capture-primary-004170d0.relocations]]
+offset = 54
+type = "REL32"
+symbol = "?CapturePresentRectAt00401D80@@YAXPAVFrameCaptureF460@@PBIPBUtagRECT@@@Z"
+target = 0x00401D80

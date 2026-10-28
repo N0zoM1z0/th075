@@ -759,3 +759,4 @@ SceneObject::ReleaseAt00433140,0x00433140,function
 GraphicsResourceClient::~GraphicsResourceClientAt00401020,0x00401020,function
 EventQueue::EnqueueUniqueAt00423C80,0x00423C80,function
 GameGlobals::InitializeBlackSurfaceAt00417000,0x00417000,function
+FrameCapture::CapturePrimaryAt004170D0,0x004170D0,function
