@@ -638,3 +638,4 @@ ResultScene::DrawNameGlyphs,0x00431770,function
 SpriteSequence::AppendElement,0x00411000,function
 ReplayRecords::AppendRecord,0x00413DE0,function
 ReplayRecords::FinalizeFile,0x004138E0,function
+EventQueue::RunWorkerAt00423B40,0x00423B40,function

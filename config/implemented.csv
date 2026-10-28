@@ -637,3 +637,4 @@ ResultScene::DrawNameGlyphs
 SpriteSequence::AppendElement
 ReplayRecords::AppendRecord
 ReplayRecords::FinalizeFile
+EventQueue::RunWorkerAt00423B40

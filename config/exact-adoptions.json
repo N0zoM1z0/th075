@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "569f637bf028a1c2e9708d035da05c98840d31b20259d7ab1725255c34cc34d3"
+      "current_sha256": "bc805d731afb2b8262c0e40b7f80e90d77c6438d649a47184d5d4598810c1c65"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "6779c4d83ad2b5047b76667a39aa2d0bfd559978707088d24b9ed4aba42a9ab7"
+      "current_sha256": "fd0f206859da42464ca4df2b37abfa5c90fab8df59b42b8e2f1c762d1c3e3d3f"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "f8aac7aec6af574db6f0ae89fb70adc8bc5832e2d0fbd2d42b626cab9a612564"
+      "current_sha256": "5a8a64521fc315c98ac0ed2084e0a3bbd617938bab787179f61a58030d635612"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "42f6bd96fd4c470eb2719ff1b4cc77a3b0e23c73628c14a116970065cff16096"
+      "current_sha256": "75b98cd1937cb68e54cf071bee90d7aa7885f74b90643443625561719ee03de5"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "8ab9e62c294dd03e08e5131c75c51dc1cdac344d62bd1b70d515375f63378fd2"
+      "current_sha256": "6e5f7012dcf2d61b46e7839fe254316a817338e6d259c76fdf6d962a77b45e5c"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -25516,6 +25516,50 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R035"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00423B40",
+        "size": "273",
+        "span_end": "0x00423C50",
+        "current_name": "FUN_00423b40",
+        "proposed_name": "EventQueue::RunWorkerAt00423B40",
+        "module": "EventQueue",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R112; complete body, game-control ancestry, fields, raw PE imports and bounded callee contexts",
+        "owner": "authored",
+        "notes": "Complete origin review; inferred role and owner layout remain provisional; no source or exact credit"
+      },
+      "after": {
+        "address": "0x00423B40",
+        "size": "273",
+        "span_end": "0x00423C50",
+        "current_name": "FUN_00423b40",
+        "proposed_name": "EventQueue::RunWorkerAt00423B40",
+        "module": "EventQueue",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "stdcall",
+        "signature": "static int __stdcall EventWorkerF334::RunWorker(int)",
+        "is_thunk": "false",
+        "source_file": "src/EventQueueRunWorkerF334.cpp",
+        "evidence": "R112; complete body, game-control ancestry, fields, raw PE imports and bounded callee contexts; F334; scripts/repo-python scripts/replay-exact-units.py --unit event-queue-run-worker-00423b40",
+        "owner": "authored",
+        "notes": "Complete origin review; inferred role and owner layout remain provisional; no source or exact credit; F334: complete original R112-authored 273 PE CODE bytes at 00423B40..00423C50, 84 independently decoded original native x86 instructions and RET 4 on unreachable exit, full original PE SHA256 c953583969d6b7574aa88650dadce4e7ca69ea30dce1b809482df02d741e1ca9. The game-specific Windows worker waits on real WaitForSingleObject imported IAT 00657120 using original global HANDLE 0068BE34 and global timeout 0066C23C, reads begin/end of original queue object at 0068BE44, traverses it with exact std::vector borrowed 8-byte iterator receiver, on empty job pointer zero erases current and refreshes end; on nonzero entry fetches actual event HANDLE through TWO real pointer indirections then calls imported SetEvent 0065705C and original iterator postfix++ helper. Native outer infinite worker loop and original unreachable return 0 / original ABI RET4 retained verbatim. The original 0x44 stack frame includes a genuine 28-byte live checked-iterator state with three natively initialized zero DWORDs at EBP-0xC/-0x18/-0x1C followed by two true eight-byte core iterators at -0x8 and -0x14, and five observed real 8-byte iterator return temporary objects at -0x24/-0x2C/-0x34/-0x3C/-0x44; these zero stores occur in the original exact order before the two real ctor entry calls 00423F50. First naive semantic source used a needless saved-this member local, omitted three actual checked-iterator initialization DWORD stores and reversed empty-item event branch, emitting 253 bytes. A plain typed 28-byte LiveWorkerIteratorsF334 holding ONLY the three actually initialized real DWORDs plus two authentic iterator objects, with only the real original Borrowed .Initialize() native iterator ctor ABI entrypoints (00423F50) and a native-matching one-argument stdcall thread-worker entry (the owner name/static distinction remains provisional), reproduces entire original 273/273 CODE, 197/197 nonfield positions and all 19/19 physical COFF offsets/types/solved original Win32/game addresses. The pointed-to game queue/iterator method implementation bodies and unknown private C++ class layouts are not claimed. Full original read-only Ghidra/native compare plus exact VC7.1 /Od /GX- native object, independently single-affected-unit cold 1/1 exact, no all-unit cold replay. No target bytes grafted, inline assembly, fabricated inert padding, masked relocation, cropped native body or external Oracle claim; CRT/Win32 and 97 pending origin candidates excluded."
+      },
+      "origin": {
+        "address": "0x00423B40",
+        "origin": "authored",
+        "subsystem": "EventQueue",
+        "disposition": "authored",
+        "confidence": "complete-game-policy-with-independent-controls",
+        "evidence_id": "R112"
       }
     }
   ],
@@ -182322,6 +182366,143 @@
           "target": 6555153
         }
       ]
+    },
+    "event-queue-run-worker-00423b40": {
+      "source": "src/EventQueueRunWorkerF334.cpp",
+      "object": "build/matching/EventQueueRunWorkerF334.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "EventQueue::RunWorkerAt00423B40"
+      ],
+      "symbol": "?RunWorker@EventWorkerF334@@SGHH@Z",
+      "target_address": 4340544,
+      "size": 273,
+      "relocations": [
+        {
+          "offset": 31,
+          "type": "REL32",
+          "symbol": "?Initialize@QueueIteratorF334@@QAEXXZ",
+          "target": 4341584
+        },
+        {
+          "offset": 39,
+          "type": "REL32",
+          "symbol": "?Initialize@QueueIteratorF334@@QAEXXZ",
+          "target": 4341584
+        },
+        {
+          "offset": 58,
+          "type": "DIR32",
+          "symbol": "?g_QueueWaitTimeoutAt0066C23C@@3KA",
+          "target": 6734396
+        },
+        {
+          "offset": 65,
+          "type": "DIR32",
+          "symbol": "?g_QueueReadyEventAt0068BE34@@3PAXA",
+          "target": 6864436
+        },
+        {
+          "offset": 72,
+          "type": "DIR32",
+          "symbol": "__imp__WaitForSingleObject@8",
+          "target": 6648096
+        },
+        {
+          "offset": 81,
+          "type": "DIR32",
+          "symbol": "?g_EventQueueAt0068BE44@@3VQueueCollectionF334@@A",
+          "target": 6864452
+        },
+        {
+          "offset": 86,
+          "type": "REL32",
+          "symbol": "?Begin@QueueCollectionF334@@QAE?AVQueueIteratorF334@@XZ",
+          "target": 4340960
+        },
+        {
+          "offset": 106,
+          "type": "DIR32",
+          "symbol": "?g_EventQueueAt0068BE44@@3VQueueCollectionF334@@A",
+          "target": 6864452
+        },
+        {
+          "offset": 111,
+          "type": "REL32",
+          "symbol": "?End@QueueCollectionF334@@QAE?AVQueueIteratorF334@@XZ",
+          "target": 4341008
+        },
+        {
+          "offset": 134,
+          "type": "REL32",
+          "symbol": "??9QueueIteratorF334@@QBE_NABV0@@Z",
+          "target": 4341712
+        },
+        {
+          "offset": 149,
+          "type": "REL32",
+          "symbol": "??DQueueIteratorF334@@QBEAAPAHXZ",
+          "target": 4341616
+        },
+        {
+          "offset": 161,
+          "type": "DIR32",
+          "symbol": "?g_EventQueueAt0068BE44@@3VQueueCollectionF334@@A",
+          "target": 6864452
+        },
+        {
+          "offset": 166,
+          "type": "REL32",
+          "symbol": "?Front@QueueCollectionF334@@QAEPAPAXXZ",
+          "target": 4341232
+        },
+        {
+          "offset": 177,
+          "type": "DIR32",
+          "symbol": "__imp__SetEvent@4",
+          "target": 6647900
+        },
+        {
+          "offset": 191,
+          "type": "REL32",
+          "symbol": "??EQueueIteratorF334@@QAE?AV0@H@Z",
+          "target": 4341648
+        },
+        {
+          "offset": 210,
+          "type": "DIR32",
+          "symbol": "?g_EventQueueAt0068BE44@@3VQueueCollectionF334@@A",
+          "target": 6864452
+        },
+        {
+          "offset": 215,
+          "type": "REL32",
+          "symbol": "?Erase@QueueCollectionF334@@QAE?AVQueueIteratorF334@@V2@@Z",
+          "target": 4341488
+        },
+        {
+          "offset": 235,
+          "type": "DIR32",
+          "symbol": "?g_EventQueueAt0068BE44@@3VQueueCollectionF334@@A",
+          "target": 6864452
+        },
+        {
+          "offset": 240,
+          "type": "REL32",
+          "symbol": "?End@QueueCollectionF334@@QAE?AVQueueIteratorF334@@XZ",
+          "target": 4341008
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -182734,6 +182915,7 @@
     "src/ResultSceneGlyphsF324.cpp": "0020aaee5216016ed43422a7aab493c0f3402142be3f44f1196d912c6b7bc2b2",
     "src/SpriteSequenceAppendF325.cpp": "fa693240fd1726470d952ed1647ede93062c8e0ddde52d78dc35b982faa0ea6a",
     "src/ReplayAppendRecordF326.cpp": "c6b5574850661750eea44dee778441a872289ef51d385604acbbd0295896fdb1",
-    "src/ReplayFinalizeFileF328.cpp": "b4d03723e01204d852494d1d3d65379667a03915dd5d18795dd53eddfd9e7f48"
+    "src/ReplayFinalizeFileF328.cpp": "b4d03723e01204d852494d1d3d65379667a03915dd5d18795dd53eddfd9e7f48",
+    "src/EventQueueRunWorkerF334.cpp": "2586551f1c1fb01696484a3d289bba76f56284f51a47a21ef6c6bd6ae491edd9"
   }
 }

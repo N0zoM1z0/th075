@@ -4683,3 +4683,88 @@ identities remain provisional; the complete original class layout
 is not inferred solely from the machine-code match. No manual x86,
 masked relocations, fake source locals/padding, byte graft, cropped
 original function, all-unit cold replay or remote Oracle acceptance.
+
+
+## F334: complete native 273-byte EventQueue worker cold-exact
+
+`EventQueue::RunWorkerAt00423B40` is one complete R112-authored
+Win32/game queue-worker function at `00423B40..00423C50`,
+**273 original CODE bytes** and **84 independent original x86
+instructions**, with a genuine `0x44` native stack frame and
+`RET 4` on the unreachable original exit. Full pinned PE body
+SHA256 `c953583969d6b7574aa88650dadce4e7ca69ea30dce1b809482df02d741e1ca9`.
+Original Win32/game Ghidra decomp and full native physical x86
+assembly at `.analysis/f329-rank-glyphs/` and
+`.analysis/f333-event-worker/`, final natural C++ under
+`src/EventQueueRunWorkerF334.cpp`, original full 19-field COFF
+comparison and **single-affected-unit cold 1/1 exact** receipt
+under `.analysis/f334-worker-physical/`.
+
+The real worker waits through original imported WaitForSingleObject
+`00657120` using the genuine queue-ready event HANDLE global
+`0068BE34` and timeout global `0066C23C`. The original game event
+queue at `0068BE44` supplies native Begin (`00423CE0`) and End
+(`00423D10`) checked vector iterators; the real compare method
+`00423FD0` controls a complete inner loop. The current element
+dereference `00423F70` yields an actual pointer to an event-entry
+record. If its first int is zero, original `Erase` `00423EF0`
+returns a new iterator, assigned to the current iterator, then
+End is refreshed. Otherwise the original current-event method
+`00423DF0` returns the event HANDLE through two actual pointer
+indirections. The worker invokes imported SetEvent `0065705C`, then
+uses real iterator postfix increment `00423F90` with the actual
+8-byte returned old iterator. The outer worker is an original
+infinite loop, including the native compiler-generated `mov eax,1`
+test and unreachable return; no invented stop or error handling.
+
+Original local stack **28 bytes of live checked iterator state**
+contain three *actually written* tracking DWORDs and two actual
+8-byte vector-iterator core values. The tracking dwords have
+original initializations at EBP−0xC, −0x18 and −0x1C, all zeroed
+**in that order before native iterator constructor calls**.
+The first iterator core occupies EBP−0x8..−0x1 and second at
+−0x14..−0xD. The original five 8-byte iterator-return temporaries
+occupy EBP−0x24, −0x2C, −0x34, −0x3C, −0x44. A first natural
+253-byte C++ worker had saved a non-existent this receiver and
+omitted those three genuine tracking stores. A normal used-data
+`LiveWorkerIteratorsF334` struct of exactly 28 bytes plus a borrowed
+*direct original constructor ABI* alias `.Initialize()` at
+`00423F50`, and a static stdcall with original `RET 4` (private
+function identity still provisional), reproduces the exact
+original 273-byte native opcode layout. Its `if` branches and
+SetEvent dereference are source-faithful rather than forced with
+manual instructions.
+
+Pinned VC7.1 `/Od /Ob0 /Gy /GR- /GX- /GS /Zi` compiles
+**273/273 original machine CODE bytes, 197/197 comparable original
+nonfield bytes and all 19/19 physical COFF relocations**. Only
+`event-queue-run-worker-00423b40` was cold replayed, reporting
+`exact; 273 coverage bytes` / **1/1 exact**. This does not prove
+the original private queue class source definitions, borrowed
+constructor method names, or native code inside event/iterator
+callees. Win32, CRT/VC7 and 97 origin-pending functions remain
+excluded. No code byte patch, asm, fake padding, all-unit replay
+or external Oracle acceptance.
+
+### F331/F332: entire 746-byte SpriteSequence boss close but nonexact
+
+New tests used only the independently observed original stack
+region of the complete `SpriteSequence::RenderElements`
+`00411110`, including true counter, RECT, iterator end, x float,
+tint DWORD and 132-byte quad. Modeling the real quad carrier as
+33 copied DWORDs (the native `REP MOVSD` form), rather than a
+spurious `unsigned char[132]` buffer that wrongly triggers `/GS`,
+with a borrowed direct original quad-constructor entry call
+restores the full **746 original CODE-byte length and 198 native
+instruction shapes**. All **33 original COFF fields** match.
+A fully occupied real state layout is at **599/614 comparable
+bytes**, only 15 remaining nonfield bytes mismatch: in each of
+three source glyph scale float comparisons, original x87 loads
+the constant `0065782C` first and record float (+0x90,+0x94,+0x98)
+second, whereas VC7.1 emits the reverse two native `FLD` operand
+loads for the current C++ expression. Simple C++ operand swap,
+const/volatile/ref/equal/inequal/bool variants have failed without
+changing any gameplay. Do not hide three five-byte mismatches,
+use manual asm or accept partial whole boss as exact. Private
+evidence `.analysis/f331-sprite-nativeframe/`,
+`.analysis/f332-sequence-x87/` retained, zero new CODE credit.
