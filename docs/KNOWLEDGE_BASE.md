@@ -7916,3 +7916,61 @@ replayed **1/1 exact**. No Win32/GDI implementation code or full
 original private class members credited, no padding, asm, copied
 native bytes, masks, truncated function, full-project replay or
 external Oracle acceptance.
+
+
+## F496: 89 independently verified 11-byte original Stage background empty virtual callbacks
+
+All **89** remaining separately authored `BackgroundStage::NoOpVirtual`
+entries between original PE addresses `00449B40` and `00451DF0` were
+individually origin-checked and physically decoded before accepting
+them. Each complete native function is exactly **11 original authored
+CODE bytes /7 original x86 instructions**, with identical original PE
+SHA256 `012a7b6ce927f083ba98a546e3d3f750b2a1d82f350ca27efbd30a9c3c7718a5`
+and actual entire x86 instruction bytes:
+
+```
+55 8B EC 51 89 4D FC 8B E5 5D C3
+```
+
+The genuine native function is only a `thiscall` receiver saved to
+EBP-4 and ordinary epilogue/RET; it performs **no game work** and has
+**zero physical COFF relocations**. Every function has a separately
+addressed independently authored original entry. Unlike arbitrary
+compiler stubs or partial body extraction, these are genuine 11-byte
+full original game virtual methods. The natural source in
+`src/BackgroundStageNoOpVirtualsF496.cpp` defines 89 individually named
+`void StageBackgroundNoopF496_NNN::NoOp() {}` methods. Pinned VC7.1
+`/Od /Ob0 /Gy /GR- /GX- /GS /Zi` reproduces the entire original byte
+stream and **11/11 real nonrelocation bytes per original address**,
+with accurately frozen empty relocation list rather than fabricated
+callee refs. The 89 affected units were cold rebuilt and independently
+replayed **89/89 exact across one object**. Exactly **89 × 11 = 979
+original authored CODE bytes** are credited. Historical F376/F377 stage
+constructors, F479 stage derived destructors and borrowed native base
+classes are not double-counted. No executable patch, source assembly,
+extra locals, masks, partial match, all-unit replay or external Oracle.
+
+## F495: natural rank-label `/GS` local-buffer layout evidence (negative, no CODE credit)
+
+Original R075 NameEntry `0042B110` and original R043 Result `00431890`
+rank/decimal labels are each **169 complete native CODE bytes**. Both
+original physical stack frames are 0x9C, with native this saved
+EBP-0x9C, real drawable quad receiver EBP-0x98, all eight rendered
+glyph bytes EBP-0xC..-5, and the genuine VC7.1 `/GS` stack canary at
+EBP-4. The original eight glyphs encode prefix 13,40,71, signed rank
+quotient/remainder base+52 and three terminators 100. Full original
+C++ logic matches all native arithmetic and 169-byte whole length but
+glyph bytes move to EBP-0x14 if source uses an ordinary 8-byte `char`
+array in quad aggregate. Struct-of-eight meaningful fields correctly
+positions the actual glyph record at EBP-0xC but loses native /GS,
+shrinking the whole code to 153 bytes. New F495 physical quad carrier
+experiments in `.analysis/f495-rank-gs-real-quad-buffer/` try native
+132/136/140-byte byte-addressable used packet storage, native union
+of packet DWORD and char views, and mixed byte/word meaningful carrier
+fields. They all remain **negative**, despite some restoring whole
+169 CODE bytes and 136/145 comparable original bytes: the actual
+rendered glyph stack and native canary semantics are not simultaneously
+restored. No inert buffer/canary, unsafe ABI, original-byte patch,
+truncated 169-byte comparison, partial exact credit or whole cold
+replay. Revisit genuine class member layout/VC7.1 source parse/lifetime
+order rather than treating a mere equal instruction count as exact.

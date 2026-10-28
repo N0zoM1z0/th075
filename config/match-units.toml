@@ -59117,3 +59117,981 @@ offset = 83
 type = "DIR32"
 symbol = "__imp__CreateFontA@56"
 target = 0x00657044
+
+[units.background-stage-noop-virtual-00449b40]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt00449B40"]
+symbol = "?NoOp@StageBackgroundNoopF496_000@@QAEXXZ"
+target_address = 0x00449B40
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-00449cc0]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt00449CC0"]
+symbol = "?NoOp@StageBackgroundNoopF496_001@@QAEXXZ"
+target_address = 0x00449CC0
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-00449cd0]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt00449CD0"]
+symbol = "?NoOp@StageBackgroundNoopF496_002@@QAEXXZ"
+target_address = 0x00449CD0
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044a160]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044A160"]
+symbol = "?NoOp@StageBackgroundNoopF496_003@@QAEXXZ"
+target_address = 0x0044A160
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044a170]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044A170"]
+symbol = "?NoOp@StageBackgroundNoopF496_004@@QAEXXZ"
+target_address = 0x0044A170
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044a2d0]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044A2D0"]
+symbol = "?NoOp@StageBackgroundNoopF496_005@@QAEXXZ"
+target_address = 0x0044A2D0
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044a450]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044A450"]
+symbol = "?NoOp@StageBackgroundNoopF496_006@@QAEXXZ"
+target_address = 0x0044A450
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044a460]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044A460"]
+symbol = "?NoOp@StageBackgroundNoopF496_007@@QAEXXZ"
+target_address = 0x0044A460
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044a5b0]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044A5B0"]
+symbol = "?NoOp@StageBackgroundNoopF496_008@@QAEXXZ"
+target_address = 0x0044A5B0
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044a680]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044A680"]
+symbol = "?NoOp@StageBackgroundNoopF496_009@@QAEXXZ"
+target_address = 0x0044A680
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044a690]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044A690"]
+symbol = "?NoOp@StageBackgroundNoopF496_010@@QAEXXZ"
+target_address = 0x0044A690
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044a7e0]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044A7E0"]
+symbol = "?NoOp@StageBackgroundNoopF496_011@@QAEXXZ"
+target_address = 0x0044A7E0
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044a8b0]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044A8B0"]
+symbol = "?NoOp@StageBackgroundNoopF496_012@@QAEXXZ"
+target_address = 0x0044A8B0
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044a8c0]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044A8C0"]
+symbol = "?NoOp@StageBackgroundNoopF496_013@@QAEXXZ"
+target_address = 0x0044A8C0
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044aa10]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044AA10"]
+symbol = "?NoOp@StageBackgroundNoopF496_014@@QAEXXZ"
+target_address = 0x0044AA10
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044aae0]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044AAE0"]
+symbol = "?NoOp@StageBackgroundNoopF496_015@@QAEXXZ"
+target_address = 0x0044AAE0
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044aaf0]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044AAF0"]
+symbol = "?NoOp@StageBackgroundNoopF496_016@@QAEXXZ"
+target_address = 0x0044AAF0
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044ac50]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044AC50"]
+symbol = "?NoOp@StageBackgroundNoopF496_017@@QAEXXZ"
+target_address = 0x0044AC50
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044ad80]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044AD80"]
+symbol = "?NoOp@StageBackgroundNoopF496_018@@QAEXXZ"
+target_address = 0x0044AD80
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044ad90]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044AD90"]
+symbol = "?NoOp@StageBackgroundNoopF496_019@@QAEXXZ"
+target_address = 0x0044AD90
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044aef0]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044AEF0"]
+symbol = "?NoOp@StageBackgroundNoopF496_020@@QAEXXZ"
+target_address = 0x0044AEF0
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044b020]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044B020"]
+symbol = "?NoOp@StageBackgroundNoopF496_021@@QAEXXZ"
+target_address = 0x0044B020
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044b030]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044B030"]
+symbol = "?NoOp@StageBackgroundNoopF496_022@@QAEXXZ"
+target_address = 0x0044B030
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044b180]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044B180"]
+symbol = "?NoOp@StageBackgroundNoopF496_023@@QAEXXZ"
+target_address = 0x0044B180
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044b250]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044B250"]
+symbol = "?NoOp@StageBackgroundNoopF496_024@@QAEXXZ"
+target_address = 0x0044B250
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044b260]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044B260"]
+symbol = "?NoOp@StageBackgroundNoopF496_025@@QAEXXZ"
+target_address = 0x0044B260
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044b3b0]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044B3B0"]
+symbol = "?NoOp@StageBackgroundNoopF496_026@@QAEXXZ"
+target_address = 0x0044B3B0
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044b480]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044B480"]
+symbol = "?NoOp@StageBackgroundNoopF496_027@@QAEXXZ"
+target_address = 0x0044B480
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044b490]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044B490"]
+symbol = "?NoOp@StageBackgroundNoopF496_028@@QAEXXZ"
+target_address = 0x0044B490
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044b970]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044B970"]
+symbol = "?NoOp@StageBackgroundNoopF496_029@@QAEXXZ"
+target_address = 0x0044B970
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044be90]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044BE90"]
+symbol = "?NoOp@StageBackgroundNoopF496_030@@QAEXXZ"
+target_address = 0x0044BE90
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044c3b0]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044C3B0"]
+symbol = "?NoOp@StageBackgroundNoopF496_031@@QAEXXZ"
+target_address = 0x0044C3B0
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044c550]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044C550"]
+symbol = "?NoOp@StageBackgroundNoopF496_032@@QAEXXZ"
+target_address = 0x0044C550
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044c620]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044C620"]
+symbol = "?NoOp@StageBackgroundNoopF496_033@@QAEXXZ"
+target_address = 0x0044C620
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044c630]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044C630"]
+symbol = "?NoOp@StageBackgroundNoopF496_034@@QAEXXZ"
+target_address = 0x0044C630
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044c790]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044C790"]
+symbol = "?NoOp@StageBackgroundNoopF496_035@@QAEXXZ"
+target_address = 0x0044C790
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044c860]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044C860"]
+symbol = "?NoOp@StageBackgroundNoopF496_036@@QAEXXZ"
+target_address = 0x0044C860
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044c870]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044C870"]
+symbol = "?NoOp@StageBackgroundNoopF496_037@@QAEXXZ"
+target_address = 0x0044C870
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044c9d0]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044C9D0"]
+symbol = "?NoOp@StageBackgroundNoopF496_038@@QAEXXZ"
+target_address = 0x0044C9D0
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044caa0]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044CAA0"]
+symbol = "?NoOp@StageBackgroundNoopF496_039@@QAEXXZ"
+target_address = 0x0044CAA0
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044cab0]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044CAB0"]
+symbol = "?NoOp@StageBackgroundNoopF496_040@@QAEXXZ"
+target_address = 0x0044CAB0
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044cc10]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044CC10"]
+symbol = "?NoOp@StageBackgroundNoopF496_041@@QAEXXZ"
+target_address = 0x0044CC10
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044cd40]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044CD40"]
+symbol = "?NoOp@StageBackgroundNoopF496_042@@QAEXXZ"
+target_address = 0x0044CD40
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044cd50]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044CD50"]
+symbol = "?NoOp@StageBackgroundNoopF496_043@@QAEXXZ"
+target_address = 0x0044CD50
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044ceb0]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044CEB0"]
+symbol = "?NoOp@StageBackgroundNoopF496_044@@QAEXXZ"
+target_address = 0x0044CEB0
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044cfe0]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044CFE0"]
+symbol = "?NoOp@StageBackgroundNoopF496_045@@QAEXXZ"
+target_address = 0x0044CFE0
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044cff0]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044CFF0"]
+symbol = "?NoOp@StageBackgroundNoopF496_046@@QAEXXZ"
+target_address = 0x0044CFF0
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044d150]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044D150"]
+symbol = "?NoOp@StageBackgroundNoopF496_047@@QAEXXZ"
+target_address = 0x0044D150
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044d220]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044D220"]
+symbol = "?NoOp@StageBackgroundNoopF496_048@@QAEXXZ"
+target_address = 0x0044D220
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044d230]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044D230"]
+symbol = "?NoOp@StageBackgroundNoopF496_049@@QAEXXZ"
+target_address = 0x0044D230
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044d390]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044D390"]
+symbol = "?NoOp@StageBackgroundNoopF496_050@@QAEXXZ"
+target_address = 0x0044D390
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044d460]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044D460"]
+symbol = "?NoOp@StageBackgroundNoopF496_051@@QAEXXZ"
+target_address = 0x0044D460
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044d470]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044D470"]
+symbol = "?NoOp@StageBackgroundNoopF496_052@@QAEXXZ"
+target_address = 0x0044D470
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044d8f0]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044D8F0"]
+symbol = "?NoOp@StageBackgroundNoopF496_053@@QAEXXZ"
+target_address = 0x0044D8F0
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044d900]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044D900"]
+symbol = "?NoOp@StageBackgroundNoopF496_054@@QAEXXZ"
+target_address = 0x0044D900
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044dda0]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044DDA0"]
+symbol = "?NoOp@StageBackgroundNoopF496_055@@QAEXXZ"
+target_address = 0x0044DDA0
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044ddb0]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044DDB0"]
+symbol = "?NoOp@StageBackgroundNoopF496_056@@QAEXXZ"
+target_address = 0x0044DDB0
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044df10]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044DF10"]
+symbol = "?NoOp@StageBackgroundNoopF496_057@@QAEXXZ"
+target_address = 0x0044DF10
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044dfe0]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044DFE0"]
+symbol = "?NoOp@StageBackgroundNoopF496_058@@QAEXXZ"
+target_address = 0x0044DFE0
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044dff0]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044DFF0"]
+symbol = "?NoOp@StageBackgroundNoopF496_059@@QAEXXZ"
+target_address = 0x0044DFF0
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044e150]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044E150"]
+symbol = "?NoOp@StageBackgroundNoopF496_060@@QAEXXZ"
+target_address = 0x0044E150
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044e220]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044E220"]
+symbol = "?NoOp@StageBackgroundNoopF496_061@@QAEXXZ"
+target_address = 0x0044E220
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044e230]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044E230"]
+symbol = "?NoOp@StageBackgroundNoopF496_062@@QAEXXZ"
+target_address = 0x0044E230
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044e740]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044E740"]
+symbol = "?NoOp@StageBackgroundNoopF496_063@@QAEXXZ"
+target_address = 0x0044E740
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044e750]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044E750"]
+symbol = "?NoOp@StageBackgroundNoopF496_064@@QAEXXZ"
+target_address = 0x0044E750
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044f230]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044F230"]
+symbol = "?NoOp@StageBackgroundNoopF496_065@@QAEXXZ"
+target_address = 0x0044F230
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044f240]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044F240"]
+symbol = "?NoOp@StageBackgroundNoopF496_066@@QAEXXZ"
+target_address = 0x0044F240
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044f3a0]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044F3A0"]
+symbol = "?NoOp@StageBackgroundNoopF496_067@@QAEXXZ"
+target_address = 0x0044F3A0
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044f470]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044F470"]
+symbol = "?NoOp@StageBackgroundNoopF496_068@@QAEXXZ"
+target_address = 0x0044F470
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044f480]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044F480"]
+symbol = "?NoOp@StageBackgroundNoopF496_069@@QAEXXZ"
+target_address = 0x0044F480
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044f5e0]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044F5E0"]
+symbol = "?NoOp@StageBackgroundNoopF496_070@@QAEXXZ"
+target_address = 0x0044F5E0
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044f6b0]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044F6B0"]
+symbol = "?NoOp@StageBackgroundNoopF496_071@@QAEXXZ"
+target_address = 0x0044F6B0
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-0044f6c0]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt0044F6C0"]
+symbol = "?NoOp@StageBackgroundNoopF496_072@@QAEXXZ"
+target_address = 0x0044F6C0
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-00450190]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt00450190"]
+symbol = "?NoOp@StageBackgroundNoopF496_073@@QAEXXZ"
+target_address = 0x00450190
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-00450260]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt00450260"]
+symbol = "?NoOp@StageBackgroundNoopF496_074@@QAEXXZ"
+target_address = 0x00450260
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-00450270]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt00450270"]
+symbol = "?NoOp@StageBackgroundNoopF496_075@@QAEXXZ"
+target_address = 0x00450270
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-00450810]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt00450810"]
+symbol = "?NoOp@StageBackgroundNoopF496_076@@QAEXXZ"
+target_address = 0x00450810
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-00450820]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt00450820"]
+symbol = "?NoOp@StageBackgroundNoopF496_077@@QAEXXZ"
+target_address = 0x00450820
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-00450980]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt00450980"]
+symbol = "?NoOp@StageBackgroundNoopF496_078@@QAEXXZ"
+target_address = 0x00450980
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-00450a50]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt00450A50"]
+symbol = "?NoOp@StageBackgroundNoopF496_079@@QAEXXZ"
+target_address = 0x00450A50
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-00450a60]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt00450A60"]
+symbol = "?NoOp@StageBackgroundNoopF496_080@@QAEXXZ"
+target_address = 0x00450A60
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-00450ed0]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt00450ED0"]
+symbol = "?NoOp@StageBackgroundNoopF496_081@@QAEXXZ"
+target_address = 0x00450ED0
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-004511d0]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt004511D0"]
+symbol = "?NoOp@StageBackgroundNoopF496_082@@QAEXXZ"
+target_address = 0x004511D0
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-004512a0]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt004512A0"]
+symbol = "?NoOp@StageBackgroundNoopF496_083@@QAEXXZ"
+target_address = 0x004512A0
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-004512b0]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt004512B0"]
+symbol = "?NoOp@StageBackgroundNoopF496_084@@QAEXXZ"
+target_address = 0x004512B0
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-004519f0]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt004519F0"]
+symbol = "?NoOp@StageBackgroundNoopF496_085@@QAEXXZ"
+target_address = 0x004519F0
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-00451d10]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt00451D10"]
+symbol = "?NoOp@StageBackgroundNoopF496_086@@QAEXXZ"
+target_address = 0x00451D10
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-00451de0]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt00451DE0"]
+symbol = "?NoOp@StageBackgroundNoopF496_087@@QAEXXZ"
+target_address = 0x00451DE0
+size = 11
+relocations = []
+
+
+[units.background-stage-noop-virtual-00451df0]
+source = "src/BackgroundStageNoOpVirtualsF496.cpp"
+object = "build/matching/BackgroundStageNoOpVirtualsF496.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::NoOpVirtualAt00451DF0"]
+symbol = "?NoOp@StageBackgroundNoopF496_088@@QAEXXZ"
+target_address = 0x00451DF0
+size = 11
+relocations = []
