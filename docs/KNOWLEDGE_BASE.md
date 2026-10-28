@@ -6206,3 +6206,63 @@ CODE credit. No fake locals/padding, target-byte copying, raw assembly,
 masked relocations, cropped function, full cold replay or external Oracle
 acceptance claim. The old F398-F402 mismatches remain private negative
 controls, not accepted alternate functions.
+
+
+## F414: full original 132-byte static replay queue constructor and four native C++ member lifetimes
+
+The independently R177-reviewed original authored constructor at
+`00413650..004136D3` is **132 complete native CODE bytes** and
+**33 native x86 instructions**, original PE SHA256
+`d2429a68b58c626c9ef3fff2539dadcabe761aee24f8cc3b66dc96ed9b331b25`.
+The native method constructs four genuine 20-byte replay queue views
+at `this+0x154`, `+0x168`, `+0x17C`, `+0x190`, calling
+`00414360`, `00414550`, `00414360`, `00414740` respectively; after
+those source-order constructions it zeros the actual root handle DWORD at
+`this+0x0`. Genuine VC7.1 `/GX` C++ constructor EH states 0/1/2 and
+handler `006550EA` are compiler-generated naturally from the real four
+member constructor/destructor declarations, not hand-inserted SEH bytes.
+Only physical 20-byte member extents and the overall borrowed prefix
+allocation placement are modeled; their hidden queue fields and exact
+original private owner class are not asserted.
+
+`src/StaticReplayQueueCtorF414.cpp` under VC7.1 `/Od /Ob0 /Gy /GR- /GX
+/GS /Zi` matches all **100/100 native nonrelocation bytes** and
+all **8 authentic COFF physical relocations**, including four native
+real queue constructors, two exception-list slots, original EH handler
+and final restore. Affected-only
+`--unit static-resource-queues-initialize-handle-00413650` replay was
+**1/1 exact**. The live dirty worktree also exposed a second unit name
+for the **same original address, source, mangled symbol and identical 8
+relocations**. Both were inspected and the redundant alias reconciled into
+a single canonical accepted unit; no duplicate original 132-byte credit
+and all actual source/evidence remained intact. No CRT/queue callee CODE
+credit, fake alignment locals, raw bytes, manual assembly or full replay.
+
+## F415: complete native notice byte-state setter and fighter notice renderer pair
+
+Two independent, previously unclassified, game-specific originals are
+`FighterState::SetNoticeFieldsAt0045CD70`: **75 complete native bytes**,
+**24 original instructions**, PE SHA256
+`23ab2cd62ba92da2751e03dd49870c08865e466a8201535bdca65ebf934b4ee3`,
+and `FighterState::RenderNoticeAt0045D5D0`: **113 complete native CODE
+bytes**, **43 original instructions**, PE SHA256
+`2060c9380d73c4760fd35727e78904580ae461559d482c794c9b0553fc9e573e`.
+The first only updates native state byte at fighter +0x6E7 when the
+signed notice argument is nonnegative and no greater than original
++0x532; the original two color/flag bytes +0x6E8/+0x6E9 are written
+**unconditionally**, not incorrectly hidden behind this same guard. It
+has **zero genuine native COFF relocations**, explicitly declared
+`relocations=[]`, and matches **75/75 native machine-code bytes**.
+The renderer tests original signed global byte `0067161E` for fewer than
+eight characters, selecting genuine depth **24** or **16** and calling
+real borrowed notice renderer at `0067143C`, through `00413460`, with
+actual unsigned-byte RGB, step and highlighted parameters. The true
+VC7.1 unsigned-byte argument ABI is needed for the complete
+**93/93 nonrelocation bytes** and **5/5 native physical COFF fields**
+over its entire 113-byte CODE span. The two methods are naturally
+compiled in `src/FighterNoticeSetDrawF415.cpp` under pinned VC7.1
+`/Od /Ob0 /Gy /GR- /GX- /Zi`; affected-only cold replay yielded
+**2/2 exact across one object**. Original fighter private layouts
+and renderer implementation remain borrowed, not source-defined or
+credited. Neither function used fake locals, ASM, patched byte arrays,
+masked/cropped comparisons or a full-project cold replay.

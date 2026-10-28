@@ -706,3 +706,6 @@ address,name,module,confidence,evidence
 0x005F7D00,AuxEffectManager::DispatchSelectedListAt005F7D00,AuxEffectManager,inferred,"F395; complete R109 original 114-byte selected side auxiliary iterator dispatch, 5 real COFF call fields and virtual child dispatch cold exact"
 0x00416E80,ProfileSelection::LoadWorkingEightBytesAt00416E80,ProfileSelection,inferred,"F403; full R180 85-byte native eight-byte selected record restore, signed selection strides, authentic memcpy REL32 cold exact; private layout unknown"
 0x004176F0,BattleLoader::LoadCharactersAt004176F0,BattleLoader,inferred,"F407; full 3232 original authored CODE with 11 fighter constructors, original 64-byte jump data, 234 real COFF fields including 16 switch targets and 18 genuine +4 fighter offsets, targeted cold exact"
+0x00413650,StaticResourceQueues::InitializeHandleAt00413650,StaticResourcePolicy,inferred,"F414; full native 132 game CODE, 8 real physical refs, targeted cold exact; borrowed class ABI"
+0x0045CD70,FighterState::SetNoticeFieldsAt0045CD70,FighterState,inferred,"F415; full native 75 game CODE, 0 real physical refs, targeted cold exact; borrowed class ABI"
+0x0045D5D0,FighterState::RenderNoticeAt0045D5D0,FighterState,inferred,"F415; full native 113 game CODE, 5 real physical refs, targeted cold exact; borrowed class ABI"

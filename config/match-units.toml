@@ -54436,3 +54436,99 @@ offset = 3292
 type = "DIR32"
 symbol = "$L1055"
 target = 0x00417EBE
+
+
+[units.static-resource-queues-initialize-handle-00413650]
+source = "src/StaticReplayQueueCtorF414.cpp"
+object = "build/matching/StaticReplayQueueCtorF414.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["StaticResourceQueues::InitializeHandleAt00413650"]
+symbol = "??0ReplayStaticQueuesF414@@QAE@XZ"
+target_address = 0x00413650
+size = 132
+[[units.static-resource-queues-initialize-handle-00413650.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0ReplayStaticQueuesF414@@QAE@XZ"
+target = 0x006550EA
+[[units.static-resource-queues-initialize-handle-00413650.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.static-resource-queues-initialize-handle-00413650.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.static-resource-queues-initialize-handle-00413650.relocations]]
+offset = 38
+type = "REL32"
+symbol = "??0NativeByteQueueF414@@QAE@XZ"
+target = 0x00414360
+[[units.static-resource-queues-initialize-handle-00413650.relocations]]
+offset = 59
+type = "REL32"
+symbol = "??0NativeWordQueueF414@@QAE@XZ"
+target = 0x00414550
+[[units.static-resource-queues-initialize-handle-00413650.relocations]]
+offset = 77
+type = "REL32"
+symbol = "??0NativeByteQueueF414@@QAE@XZ"
+target = 0x00414360
+[[units.static-resource-queues-initialize-handle-00413650.relocations]]
+offset = 95
+type = "REL32"
+symbol = "??0NativeDwordQueueF414@@QAE@XZ"
+target = 0x00414740
+[[units.static-resource-queues-initialize-handle-00413650.relocations]]
+offset = 124
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.fighter-set-notice-fields-0045cd70]
+source = "src/FighterNoticeSetDrawF415.cpp"
+object = "build/matching/FighterNoticeSetDrawF415.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["FighterState::SetNoticeFieldsAt0045CD70"]
+symbol = "?SetNoticeFields@FighterNoticePairF414@@QAEXCEE@Z"
+target_address = 0x0045CD70
+size = 75
+relocations = []
+
+
+[units.fighter-render-notice-0045d5d0]
+source = "src/FighterNoticeSetDrawF415.cpp"
+object = "build/matching/FighterNoticeSetDrawF415.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["FighterState::RenderNoticeAt0045D5D0"]
+symbol = "?RenderNotice@FighterNoticePairF414@@QAEXPAXEEEE@Z"
+target_address = 0x0045D5D0
+size = 113
+[[units.fighter-render-notice-0045d5d0.relocations]]
+offset = 10
+type = "DIR32"
+symbol = "?g_BattleCharacterNumberAt0067161E@@3CA"
+target = 0x0067161E
+[[units.fighter-render-notice-0045d5d0.relocations]]
+offset = 53
+type = "DIR32"
+symbol = "?g_NoticeRendererAt0067143C@@3PAVNoticeDrawingF414@@A"
+target = 0x0067143C
+[[units.fighter-render-notice-0045d5d0.relocations]]
+offset = 58
+type = "REL32"
+symbol = "?DrawNotice@NoticeDrawingF414@@QAEXPAXEEEHEE@Z"
+target = 0x00413460
+[[units.fighter-render-notice-0045d5d0.relocations]]
+offset = 98
+type = "DIR32"
+symbol = "?g_NoticeRendererAt0067143C@@3PAVNoticeDrawingF414@@A"
+target = 0x0067143C
+[[units.fighter-render-notice-0045d5d0.relocations]]
+offset = 103
+type = "REL32"
+symbol = "?DrawNotice@NoticeDrawingF414@@QAEXPAXEEEHEE@Z"
+target = 0x00413460

@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377; F378; F379; F386; F389; F391; F392; F393; F394; F395; F403; F407",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377; F378; F379; F386; F389; F391; F392; F393; F394; F395; F403; F407; F414; F415",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "c323431d8b1c31cf204d24083c0857f939052eb04e394dbe8ea8fb250429b64e"
+      "current_sha256": "749c08e28db7f9563d67eee08f7a33c0cb97561301a9b0685c55c646e8bafdf8"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "a0f2338c0a0e77fb3b9596cf0ff8b8d57d4f54f6866d85590e66863d27696863"
+      "current_sha256": "da7879f81da0a726e58227f21192ccde8ed7654dfdac60a94df18102d3bf4b4e"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "98f4b6d6a6af916ed2a539cb1ca04f36fcdb9a5d6ea28374ae47a80a5ce9ed0e"
+      "current_sha256": "016ef69504376b49365695e23ff74f204a53054d86ee9c3f89285da18223599f"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "6ff1b12f880c9be7df31e125acff1f2936e90a3cbb91d2d29797aadf8d7ec6e0"
+      "current_sha256": "37aa11fc1968c29bfb41bd0abf4c8db837a2cd8f04121a21b31211b6805d3179"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "f2cd20f8032a7721a6e9999e836159ad20fe8a1b3af8887c9b6d4e94d8104928"
+      "current_sha256": "797d27f89d49b59195aee1ea7fe8661f2df0d37a59f86324f01a9f08889554bd"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -29300,6 +29300,138 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R065"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00413650",
+        "size": "132",
+        "span_end": "0x004136D3",
+        "current_name": "FUN_00413650",
+        "proposed_name": "StaticResourceQueues::InitializeHandleAt00413650",
+        "module": "StaticResourcePolicy",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R177; config/static-resource-policy-origin-evidence.json; scripts/repo-python scripts/verify-static-resource-policy-origins.py",
+        "owner": "authored",
+        "notes": "Complete explicit post-construction handle initialization, ascending four-queue clear, guarded CloseHandle-and-zero, or pointer deletion loop before automatic reverse destruction. Whole small-layout source controls preserve operation/order differences from generated lifetime code under both exception profiles; no source-byte match is claimed for these four custom target bodies. Complete SDK pointer-vector index/clear/destructor graph is compared through full original R017/R166 and R024/R037/R073/R077 context. Ordinary complete49/31/19/19-byte alternatives are byte-equal; original names/types/private owner layouts remain unknown. Short const getter and 72-byte lifetime child stay unknown. No reconstructed source/private ABI/mapping/exact credit."
+      },
+      "after": {
+        "address": "0x00413650",
+        "size": "132",
+        "span_end": "0x004136D3",
+        "current_name": "FUN_00413650",
+        "proposed_name": "StaticResourceQueues::InitializeHandleAt00413650",
+        "module": "StaticResourcePolicy",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "ReplayStaticQueuesF414::ReplayStaticQueuesF414()",
+        "is_thunk": "false",
+        "source_file": "src/StaticReplayQueueCtorF414.cpp",
+        "evidence": "R177; config/static-resource-policy-origin-evidence.json; scripts/repo-python scripts/verify-static-resource-policy-origins.py; F414; scripts/repo-python scripts/replay-exact-units.py --unit static-resource-queues-initialize-handle-00413650",
+        "owner": "authored",
+        "notes": "Complete explicit post-construction handle initialization, ascending four-queue clear, guarded CloseHandle-and-zero, or pointer deletion loop before automatic reverse destruction. Whole small-layout source controls preserve operation/order differences from generated lifetime code under both exception profiles; no source-byte match is claimed for these four custom target bodies. Complete SDK pointer-vector index/clear/destructor graph is compared through full original R017/R166 and R024/R037/R073/R077 context. Ordinary complete49/31/19/19-byte alternatives are byte-equal; original names/types/private owner layouts remain unknown. Short const getter and 72-byte lifetime child stay unknown. No reconstructed source/private ABI/mapping/exact credit.; F414 R-authored independently reviewed native complete 132 CODE bytes at 0x00413650, PE SHA256 d2429a68b58c626c9ef3fff2539dadcabe761aee24f8cc3b66dc96ed9b331b25, 33 native x86 instructions; genuine four separate 20-byte replay queue constructors with original /GX EH lifetimes at +154/+168/+17C/+190 and original root handle reset. All 100/100 nonreloc byte values and all 8 genuine physical COFF native references/destinations exact; relevant only targeted cold replay 1/1 or 2/2 exact. Private complete owner class and borrowed native callee code remain uncredited, no fake padding/locals, masks/assembly/raw bytes, cropped code, full cold replay or external Oracle claim."
+      },
+      "origin": {
+        "address": "0x00413650",
+        "origin": "authored",
+        "subsystem": "StaticResourcePolicy",
+        "disposition": "authored",
+        "confidence": "complete-explicit-static-resource-policy-and-whole-source-order-controls",
+        "evidence_id": "R177"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0045CD70",
+        "size": "75",
+        "span_end": "0x0045CDBA",
+        "current_name": "FUN_0045cd70",
+        "proposed_name": "FighterState::SetNoticeFieldsAt0045CD70",
+        "module": "FighterState",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit"
+      },
+      "after": {
+        "address": "0x0045CD70",
+        "size": "75",
+        "span_end": "0x0045CDBA",
+        "current_name": "FUN_0045cd70",
+        "proposed_name": "FighterState::SetNoticeFieldsAt0045CD70",
+        "module": "FighterState",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void FighterNoticePairF414::SetNoticeFields(signed char,unsigned char,unsigned char)",
+        "is_thunk": "false",
+        "source_file": "src/FighterNoticeSetDrawF415.cpp",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103; F415; scripts/repo-python scripts/replay-exact-units.py --unit fighter-set-notice-fields-0045cd70",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit; F415 R-authored independently reviewed native complete 75 CODE bytes at 0x0045CD70, PE SHA256 23ab2cd62ba92da2751e03dd49870c08865e466a8201535bdca65ebf934b4ee3, 24 native x86 instructions; actual native notice byte 0x6E7 has independent signed index range guard but +0x6E8/+0x6E9 always write their original byte arguments. All 75/75 nonreloc byte values and all 0 genuine physical COFF native references/destinations exact; relevant only targeted cold replay 1/1 or 2/2 exact. Private complete owner class and borrowed native callee code remain uncredited, no fake padding/locals, masks/assembly/raw bytes, cropped code, full cold replay or external Oracle claim."
+      },
+      "origin": {
+        "address": "0x0045CD70",
+        "origin": "authored",
+        "subsystem": "FighterState",
+        "disposition": "authored",
+        "confidence": "complete-game-policy-with-batch-context",
+        "evidence_id": "R103"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0045D5D0",
+        "size": "113",
+        "span_end": "0x0045D640",
+        "current_name": "FUN_0045d5d0",
+        "proposed_name": "FighterState::RenderNoticeAt0045D5D0",
+        "module": "FighterState",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R102; scripts/repo-python scripts/verify-short-game-origins.py --cohort R102",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game policy; complete fields, call/context witnesses and unchanged RET cleanup; inferred names/layouts, no source or exact credit"
+      },
+      "after": {
+        "address": "0x0045D5D0",
+        "size": "113",
+        "span_end": "0x0045D640",
+        "current_name": "FUN_0045d5d0",
+        "proposed_name": "FighterState::RenderNoticeAt0045D5D0",
+        "module": "FighterState",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void FighterNoticePairF414::RenderNotice(void*,unsigned char,unsigned char,unsigned char,unsigned char)",
+        "is_thunk": "false",
+        "source_file": "src/FighterNoticeSetDrawF415.cpp",
+        "evidence": "R102; scripts/repo-python scripts/verify-short-game-origins.py --cohort R102; F415; scripts/repo-python scripts/replay-exact-units.py --unit fighter-render-notice-0045d5d0",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game policy; complete fields, call/context witnesses and unchanged RET cleanup; inferred names/layouts, no source or exact credit; F415 R-authored independently reviewed native complete 113 CODE bytes at 0x0045D5D0, PE SHA256 2060c9380d73c4760fd35727e78904580ae461559d482c794c9b0553fc9e573e, 43 native x86 instructions; native global character number selects 24/16 depth, real byte args flow into original borrowed notice renderer at 00413460. All 93/93 nonreloc byte values and all 5 genuine physical COFF native references/destinations exact; relevant only targeted cold replay 1/1 or 2/2 exact. Private complete owner class and borrowed native callee code remain uncredited, no fake padding/locals, masks/assembly/raw bytes, cropped code, full cold replay or external Oracle claim."
+      },
+      "origin": {
+        "address": "0x0045D5D0",
+        "origin": "authored",
+        "subsystem": "FighterState",
+        "disposition": "authored",
+        "confidence": "complete-game-policy-with-batch-context",
+        "evidence_id": "R102"
       }
     }
   ],
@@ -197088,6 +197220,150 @@
           "target": 4292286
         }
       ]
+    },
+    "static-resource-queues-initialize-handle-00413650": {
+      "source": "src/StaticReplayQueueCtorF414.cpp",
+      "object": "build/matching/StaticReplayQueueCtorF414.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "StaticResourceQueues::InitializeHandleAt00413650"
+      ],
+      "symbol": "??0ReplayStaticQueuesF414@@QAE@XZ",
+      "target_address": 4273744,
+      "size": 132,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??0ReplayStaticQueuesF414@@QAE@XZ",
+          "target": 6639850
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 38,
+          "type": "REL32",
+          "symbol": "??0NativeByteQueueF414@@QAE@XZ",
+          "target": 4277088
+        },
+        {
+          "offset": 59,
+          "type": "REL32",
+          "symbol": "??0NativeWordQueueF414@@QAE@XZ",
+          "target": 4277584
+        },
+        {
+          "offset": 77,
+          "type": "REL32",
+          "symbol": "??0NativeByteQueueF414@@QAE@XZ",
+          "target": 4277088
+        },
+        {
+          "offset": 95,
+          "type": "REL32",
+          "symbol": "??0NativeDwordQueueF414@@QAE@XZ",
+          "target": 4278080
+        },
+        {
+          "offset": 124,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "fighter-set-notice-fields-0045cd70": {
+      "source": "src/FighterNoticeSetDrawF415.cpp",
+      "object": "build/matching/FighterNoticeSetDrawF415.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FighterState::SetNoticeFieldsAt0045CD70"
+      ],
+      "symbol": "?SetNoticeFields@FighterNoticePairF414@@QAEXCEE@Z",
+      "target_address": 4574576,
+      "size": 75,
+      "relocations": []
+    },
+    "fighter-render-notice-0045d5d0": {
+      "source": "src/FighterNoticeSetDrawF415.cpp",
+      "object": "build/matching/FighterNoticeSetDrawF415.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FighterState::RenderNoticeAt0045D5D0"
+      ],
+      "symbol": "?RenderNotice@FighterNoticePairF414@@QAEXPAXEEEE@Z",
+      "target_address": 4576720,
+      "size": 113,
+      "relocations": [
+        {
+          "offset": 10,
+          "type": "DIR32",
+          "symbol": "?g_BattleCharacterNumberAt0067161E@@3CA",
+          "target": 6755870
+        },
+        {
+          "offset": 53,
+          "type": "DIR32",
+          "symbol": "?g_NoticeRendererAt0067143C@@3PAVNoticeDrawingF414@@A",
+          "target": 6755388
+        },
+        {
+          "offset": 58,
+          "type": "REL32",
+          "symbol": "?DrawNotice@NoticeDrawingF414@@QAEXPAXEEEHEE@Z",
+          "target": 4273248
+        },
+        {
+          "offset": 98,
+          "type": "DIR32",
+          "symbol": "?g_NoticeRendererAt0067143C@@3PAVNoticeDrawingF414@@A",
+          "target": 6755388
+        },
+        {
+          "offset": 103,
+          "type": "REL32",
+          "symbol": "?DrawNotice@NoticeDrawingF414@@QAEXPAXEEEHEE@Z",
+          "target": 4273248
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -197538,6 +197814,8 @@
     "src/GameProgressUnlockBitsF394.cpp": "ac30c27c93c77225a9389bd4a86655ff24187eaf26d65b9e818bc1509b95daa3",
     "src/AuxEffectSelectedDispatchF395.cpp": "0cbd2ae1f2c059f545dd09db30e6580321fe0f50a6c4233dacde2a9b2fac72fe",
     "src/ProfileSelectionLoadWorkingF403.cpp": "7d8271d8fed37e0a84f112711d748c00418639dd2b456827fb39dc0d089152af",
-    "src/BattleCharacterLoadBossF407.cpp": "e65da241f5d380d959407f5fed6a4828b08d90d203a54044a75dd96eafc8edcb"
+    "src/BattleCharacterLoadBossF407.cpp": "e65da241f5d380d959407f5fed6a4828b08d90d203a54044a75dd96eafc8edcb",
+    "src/StaticReplayQueueCtorF414.cpp": "b42a979fcb1d5968e025889f54811c87c56ebaa5a5efe080f7bc1afed799a45a",
+    "src/FighterNoticeSetDrawF415.cpp": "c6bf9bf808a6c4fd58b17c72076a82442546a67b3084e107113541cbfe0fb994"
   }
 }
