@@ -4381,3 +4381,78 @@ caller CODE or earlier GDI/FontSurface routines to it. All imported
 Win32/CRT/VC7 implementation CODE, 97 origin-pending functions and
 unproven original private font layout are excluded. No all-unit
 replay or external Oracle verification is claimed.
+
+
+## F324: three independent full 280-byte game glyph-atlas draw functions cold-exact
+
+Three separate authored game functions occupy independent native
+PE address intervals, despite having the same verified atlas-draw
+logic. They are *separately compiled, COFF compared and cold-replayed*,
+not counted as a single file duplicated across one original address:
+
+| Original native glyph renderer | Review | Full CODE | Original x86 instructions | Nonfield bytes | Physical COFF fields | Full original PE CODE SHA256 |
+| --- | --- | ---: | ---: | ---: | ---: | --- |
+| `SceneText::DrawNameGlyphsAt0042AFF0` | R102 authored | 280 | 81 | 256/256 | 6 | `582cae75647df937c4e306dda7493cf48bd5303d510141016b824d97e313e313` |
+| `SceneText::DrawNameGlyphsAt0042C150` | R102 authored | 280 | 81 | 256/256 | 6 | `e131b61d5b6b6d93de2e86e0c41281b447e9a3af1265a48634f654de22643a25` |
+| `ResultScene::DrawNameGlyphs` at `00431770` | R043 authored | 280 | 81 | 256/256 | 6 | `f15d10c289d027c00a5516530b66741d2e4c7d09862f9ed5974de5dcc5849f81` |
+
+All three native functions set up one real 132-byte object by
+calling original quad constructor `0040DA00` on the original two
+float coordinates and upper right from native glyph width/height
+constants `00657F78`, `0065786C`. A real 8-iteration loop treats
+each glyph index as **signed char**, performs original signed
+remainder/division by 26, constructs actual atlas rectangles with
+19-pixel glyph width/20-pixel height via imported Win32 `SetRect`
+`00657210`, invokes the original 132-byte quad renderer `0040C9A0`
+at receiver this+8 using texture index 2 and original caller tint,
+then invokes original `SpriteTransform::TranslateQuad` `00411500`
+with x step 14.0f before the next glyph. Each function has six
+authentic COFF fields: two global float constants, quad constructor,
+GDI SetRect IAT, game DrawQuad and game TranslateQuad calls.
+The original stack frame is exactly `0xA0` with saved this at
+EBP−0xA0, real signed index at EBP−0x9C, actual `RECT` at EBP−0x98
+and full borrowed 132-byte SpriteQuad at EBP−0x88.
+
+The first natural complete C++ source emitted only **256 bytes**
+because its separately declared loop index was assigned EBP−4,
+producing 8 shorter 3-byte index references. The real `RECT` was
+therefore also displaced. A **single 20-byte plain used-data struct
+`GlyphIndexRectF324`** containing only the actually read/written
+index and Win32 RECT, rather than a fabricated pad/unused field,
+lets pinned VC7.1 `/Od /Ob0 /Gy /GR- /GX- /GS /Zi` naturally
+place both at the original native EBP locations. The entire natural
+quad constructor and gameplay rendering statement order is preserved.
+Thus **each** of three independent original target functions emits
+all **280/280 CODE bytes**, every **256/256** comparable position
+and every **6/6** genuine COFF offset/type/native solved destination.
+Accepted sources are `src/SceneEntryGlyphsF324.cpp`,
+`src/ReplayBrowserGlyphsF324.cpp`, `src/ResultSceneGlyphsF324.cpp`;
+private read-only Ghidra originals, 256-byte negative source, full
+C++/COFF positives and new-unit-only cold receipts are at
+`.analysis/f324-name-glyphs/`. Only the three affected units
+`scene-entry-name-glyphs-0042aff0`,
+`replay-browser-name-glyphs-0042c150` and
+`result-scene-name-glyphs-00431770` were cold rebuilt
+**3/3 exact**. All six-field targets were independently audited
+against their own original PE bytes, not inferred from a common
+helper. 840 independently authored CODE bytes are newly covered;
+original quad constructor/renderer/transform and GDI imported code,
+full private UI scene layouts and all 97 unresolved origin candidates
+remain uncredited. No assembly, target-byte copying, unused fake
+stack fields, masked relocations, partial native extent, all-unit
+cold replay or external Oracle receipt.
+
+### Adjacent F323 complete replay filename renderer remains nonexact
+
+`ReplayScene::DrawSaveFilename` at `0042C270` has a **303-byte**
+original GDI/UI function that first constructs the same real quad,
+compares a 13-byte replay path prefix, then renders one of two
+8-byte glyph sequences. Native source locals include a 14-byte
+`replay/replay` prefix, real 132-byte quad, and actual 8 glyph bytes
+in a different natural VC7.1 `/GS` vulnerable-array layout. A full
+semantic source and twelve independent genuinely changed C++
+const-vs-mutable and declaration-order controls compiled 341–342
+bytes, not the original 303, due 8-bit/32-bit EBP displacement
+differences. Retain all negatives and PE disassembly under
+`.analysis/f323-replay-filename/`; no premature CODE acceptance
+or artificial padding.

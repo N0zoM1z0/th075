@@ -631,3 +631,6 @@ FontSurface::RenderTextToTexture
 FontSurface::LoadGlyphOutline
 FontSurface::RasterizeText
 TextRasterizer::SelectFontAt0041C0D0
+SceneText::DrawNameGlyphsAt0042AFF0
+SceneText::DrawNameGlyphsAt0042C150
+ResultScene::DrawNameGlyphs
