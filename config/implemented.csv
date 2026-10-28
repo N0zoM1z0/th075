@@ -721,3 +721,4 @@ CharacterAI::ChooseIntegerRangeAt00455610
 GameProgress::SetUnlockBitAt00416CE0
 GameProgress::TestUnlockBitAt00416DC0
 AuxEffectManager::DispatchSelectedListAt005F7D00
+ProfileSelection::LoadWorkingEightBytesAt00416E80

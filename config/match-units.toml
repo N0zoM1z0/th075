@@ -53239,3 +53239,19 @@ offset = 86
 type = "REL32"
 symbol = "??DEffectIteratorF395@@QBEAAPAVEffectChildF395@@XZ"
 target = 0x005F8400
+
+
+[units.profile-selection-load-working-eight-00416e80]
+source = "src/ProfileSelectionLoadWorkingF403.cpp"
+object = "build/matching/ProfileSelectionLoadWorkingF403.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["ProfileSelection::LoadWorkingEightBytesAt00416E80"]
+symbol = "?LoadWorkingEightBytes@ProgressRecordsF403@@QAEXC@Z"
+target_address = 0x00416E80
+size = 85
+
+[[units.profile-selection-load-working-eight-00416e80.relocations]]
+offset = 72
+type = "REL32"
+symbol = "_memcpy"
+target = 0x00640F20

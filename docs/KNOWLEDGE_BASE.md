@@ -6106,3 +6106,32 @@ VC7.1 `/Od /Ob0 /Gy /GR- /GX- /Zi`, **1/1 exact**, crediting just the
 114 authored game CODE bytes. No hidden callee credit, forged ABI, asm,
 byte grafts, fake padding, truncated body, all-unit cold replay or remote
 Oracle receipt.
+
+
+## F403: complete 85-byte signed profile selection copy into working record buffer
+
+The independently R180-authored original
+`ProfileSelection::LoadWorkingEightBytesAt00416E80`, at
+`00416E80..00416ED4`, is **85 complete original CODE bytes / 25
+native x86 instructions**, original PE SHA256
+`4b44537c5945a10ab61e6120113072c537f016735350bdd39d05bf765b156182`.
+Native code pushes the genuinely observed 8-byte length to CRT memcpy,
+uses the original signed-byte fighter choice at `this+0x16AC4` multiplied
+by original fighter-record stride 0x17F0 and signed difficulty at
+`this+0x16AC5` multiplied by 0x5FC, then adds signed slot times 16
+and physical per-record +0x55C offset. It copies from that selected
+record *into* the game-progress working buffer at `this+0x16A94`.
+This differs in genuine memory direction from the independently exact
+accepted F274 store; neither function inherits credit for the other's
+code or for the CRT itself. The private complete game-progress class
+remains unasserted.
+
+The natural source `src/ProfileSelectionLoadWorkingF403.cpp`, with only
+borrowed signed owner-field expressions, matches the complete target
+**81/81 original nonrelocation bytes** and its single physical original
+COFF REL32 call to `memcpy` at `00640F20`. Original 85-byte CODE extent
+and entire RET 4 are checked, no masking/truncation. The VC7.1
+`/Od /Ob0 /Gy /GR- /GX- /Zi` affected-only
+`--unit profile-selection-load-working-eight-00416e80` cold replay
+returned **1/1 exact**. No extra record allocation, callee/CRT bytes,
+fake slots/locals, assembly, full cold replay or external Oracle claim.
