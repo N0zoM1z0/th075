@@ -1690,3 +1690,44 @@ member auto-destruction and VC7.1 EH state transitions; it remains
 The raw original listing is in `.analysis/f245-call-chain/`. No masks,
 target-byte grafts, invented ABI, fake locals, cropped returns or remote
 Oracle receipt are claimed, and all 97 unresolved origins stay pending.
+
+
+## F247: score.dat persistence written in five native segments (297-byte exact)
+
+The original R053 authored `ProgressRecords::SaveScoreFile` at
+`004169E0..00416B08` is **297 complete CODE bytes and 97 native x86
+instructions**, SHA256
+`22aab794c8dac7641616adb23fef3eabc413de8fec2c2e42d624a7a84cde2847`.
+The normal C++ source `src/ProgressSaveF247.cpp` owns no invented
+record object, but borrows the native `this` pointer and the actual
+original `score.dat` string at `006579A8`. It uses Win32 CreateFileA
+(GENERIC_WRITE, CREATE_ALWAYS), SetFilePointer, and five real sequential
+WriteFile calls, then CloseHandle, preserving original file format:
+(1) 0x16710 bytes from record start; (2) eight bytes at +0x16A94;
+(3) 900 bytes at +0x16710; (4) 40 bytes at +0x16A9C; and
+(5) 256 bytes at +0x16AC6. Prior to writing, 256 actual iterations
+conditionally sample `rand() < 4096`; selected bytes at +0x16AC6+i
+receive `rand()%256` using VC7.1's original signed remainder correction.
+The external Win32 import and CRT rand implementations are **not**
+separately credited.
+
+The first natural `/Od /GX-` body compiled to **296** bytes: source
+`if (file != INVALID_HANDLE_VALUE) { ... }` chose a single 6-byte
+conditional jump. Original target uses the explicit failed-open
+`if (file == INVALID_HANDLE_VALUE) return;` form, emitting 7 bytes
+(short skip plus long exit). This natural semantic correction gives
+**297/297 CODE bytes, 253/253 non-field bytes, all 11 physical COFF
+relocations** with their original targets. Targeted, independent
+`replay-exact-units.py --unit progress-records-save-score-file-004169e0`
+reports **exact: 297**; no other cold units were built.
+
+This completed save function is directly called by the previously exact
+F246 541-byte name-entry controller. The earlier F246 note describing
+SaveScore as unmatched is now superseded; the two distinct native
+function extents are separately and nonoverlappingly credited.
+The original complete native disassembly, first failed-source probe,
+fixed normal source, relocation diagnostic and targeted cold log live
+in `.analysis/f247-progress-save/`. It does not declare the full original
+record owner layout, add failure robustness absent in the target,
+mask field differences, fabricate locals, or claim external Oracle
+acceptance. All 97 origin-pending functions remain uncredited.
