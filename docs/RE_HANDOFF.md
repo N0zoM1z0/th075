@@ -875,6 +875,17 @@ receive duplicate credit. These functions were already cold
 replayed as a dirty worktree at entry; the original changes
 were investigated and accepted rather than bypassed.
 
+F223: three independent fighter lifecycle units were rebuilt
+from natural VC7.1 C++ and cold replayed with all physical relocations:
+MarisaFighter::Initialize at 00492FB0 (243 CODE bytes/6 fields),
+MarisaFighter::CreateOwnedObject at 004930B0 (120 CODE bytes/6
+fields; real 232-byte allocation and EH), and YoumuFighter::Initialize
+at 0052CEE0 (314 CODE bytes/11 fields). The units credit 677
+authored CODE bytes and 23 actual field bindings, never the
+previously accepted base ctor, helper/EH code or original data.
+F222's 780-byte MarisaFighter::ResetRound is independently accepted
+and not counted again. All 97 unknown-origin functions remain pending.
+
 Current ledger: **534 exact functions, 766,591 CODE bytes / 1,973,516 reviewed
 authored bytes = 38.84%**, conservative 38.77% with 3,608 unknown-origin bytes
 retained. F184..F222 (excluding exploratory-only numbers) added thirty-eight accepted units,

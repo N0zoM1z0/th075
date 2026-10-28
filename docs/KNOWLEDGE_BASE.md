@@ -802,6 +802,18 @@ subcomponent or library object. Three accepted unit keys
 are recorded in match-units.toml, alongside source hashes
 in the exact adoption manifest.
 
+## F223: three complete fighter lifecycle functions
+
+F223 adds three separate authored exact policies in the canonical
+worktree: Marisa fighter constructor (243 bytes, six relocations),
+Marisa 232-byte child allocation policy (120 bytes, six relocations),
+and Youmu fighter constructor (314 bytes, eleven relocations).
+All 677 new CODE bytes and 23 fields cold replayed without masking.
+Typed borrowed allocation views do not prove original class names,
+nested ownership, external helpers or data layouts. F222 Marisa
+ResetRound (780 bytes) remains a distinct, separately accepted
+unit. Unknown origin classifications are preserved.
+
 ## Retained failures and method boundaries
 
 Retain 14 frozen prior objects plus F184, all 14 F157 probes, both F159 traces

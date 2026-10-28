@@ -28,7 +28,8 @@ identity and cannot substitute for the target.
 
 The current checkpoint has **534 exact functions / 766,591 code bytes** from
 4,351 provisional candidates. Reviewed authored coverage is 38.84%; conservative
-coverage, including all 3,608 pending bytes, is **38.77%**. The objective of
+coverage, including all 3,608 pending bytes, is **38.77%**. F223 cold-reconstructed the complete Marisa and Youmu fighter initializers and the Marisa owned-object creator, adding 243+120+314 authored native CODE bytes and all 23 actual relocation fields. The prior F222 780-byte Marisa ResetRound caller is accepted separately; borrowed FighterState base code and child constructors are never double-counted.
+The objective of
 98% authored bytes exact remains incomplete.
 F223 independently cold-reconstructed the full Marisa fighter
 initialization (243 CODE bytes), 120-byte exception-backed owned
