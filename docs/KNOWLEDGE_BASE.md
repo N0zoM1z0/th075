@@ -2680,3 +2680,63 @@ these three workflows. Library deque/CRT/archive callees and all 97
 unknown origins receive no extra authored CODE credit. Local cold
 verification is not an external Oracle receipt; no byte patches,
 masked fields, manual x86 assembly or cropped function were used.
+
+
+## F273: full 429-byte plain CardList reader cold-exact, independent of encoded loader
+
+The independent **R040-authored** `CardList::LoadCharacterFile` at
+`004319B0..00431B5C` is **429 original native CODE bytes** and **118
+original x86 instructions**, ending in `RET 4` at `00431B5A`. Its full
+PE-backed native body SHA256 is
+`0a1beba269423c6147c122a84cce0c4d6c2ee7b08722424db61ea57053886fcc`.
+The origin evidence is **R040** for this function; the adjacent F272
+encoded reader at `00431B60` has separately reviewed **R041** origin.
+The original Ghidra full function/decompile, all native machine-code
+instructions and the final entire C++ probe/cold receipt reside at
+`.analysis/f273-card-plain/`. Historical complete negative controls
+under `.analysis/f254-card-reader/` and `.analysis/f255-card-plain/`
+are preserved rather than treated as authoritative.
+
+The plain reader genuinely calls game ClearEntries at `00431940`,
+formats the path from `00658150` with a native-compatible **260-byte
+pathname** (rather than assuming older Ghidra `char[268]`), opens with
+Win32 CreateFileA, checks the original invalid handle, calls GetFileSize,
+allocates the actual file length through operator new at `006416A2`,
+performs ReadFile and **calls CloseHandle** on its file handle. It then
+executes an unsigned newline-parser `while(index < size)`, pushes an
+actual null `char*` through native deque push_back `0041DE30`, allocates
+`index-begin+1` bytes for each encountered line, stores it using real
+`0041DE00` deque back accesses, calls native memcpy for `index-begin`
+bytes, and writes its original unusual terminator at
+`appended[index-begin-1]` without correction. It moves begin forward,
+increments index at the loop bottom and finishes with the native free
+and `/GS` check. No XOR decode/archive manager is invoked by this
+plaintext routine, unlike the separate F272 encoded reader; no IO
+branches or cleanup absent from the target are invented.
+
+The older natural controls emitted 459/447 bytes and the prior best
+complete 429-byte probe matched only **339/365** nonrelocation bytes;
+22 reordering experiments remained negative. F273 checked the target's
+actual physical slots anew: HANDLE EBP-4, transferred readBytes -8,
+line begin -0xC, size -0x10, data -0x14, scan index -0x18, cookie
+-0x1C; filename in its genuine stack frame of 0x140, with distinct
+physical allocated-content, queued-null, allocated-entry, appended
+result and release-alias lifetimes. Native-guide nested *real* C++
+scopes, informed by F272's independently accepted encoded loader but
+retested against this separate R040 original, naturally restored the
+compiler's real buffer and deque record pointer locations. The first
+new meaningful source `src/CardLoadPlainF273.cpp` compiled the **full
+429 bytes**, all **365/365** nonrelocation positions and **16/16
+physical native COFF relocations** under pinned VC7.1
+`/Od /Ob0 /Gy /GR- /GX- /GS /Zi`. Canonical unit
+`card-list-load-plain-character-file-004319b0` was cold-rebuilt
+**alone** and reported **`exact; 429 coverage bytes`**. No all-unit
+replay, byte patches, masked fields, artificial padding or assembly.
+
+All three authored CardList file flows are now separately exact:
+plain loader F273 429 bytes, encoded loader F272 503 bytes and encoded
+writer F252 432 bytes. They are not conflated or double-counted, and
+this verifies neither library deque implementations nor full private
+owner class naming. The 97 origin-pending functions are uncredited;
+local Git checkpoint and canonical cold replay are **not** external
+Oracle receipts.

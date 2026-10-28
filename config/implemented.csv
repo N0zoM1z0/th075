@@ -583,3 +583,4 @@ ReplayScene::PollPlaybackInput
 ReplayScene::Initialize
 Graphics::DrawProjectedTexturedQuad
 CardList::LoadEncodedCharacterFile
+CardList::LoadCharacterFile

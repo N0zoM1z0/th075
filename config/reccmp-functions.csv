@@ -584,3 +584,4 @@ ReplayScene::PollPlaybackInput,0x0042D330,function
 ReplayScene::Initialize,0x0042A180,function
 Graphics::DrawProjectedTexturedQuad,0x00402D50,function
 CardList::LoadEncodedCharacterFile,0x00431B60,function
+CardList::LoadCharacterFile,0x004319B0,function
