@@ -532,3 +532,5 @@ MarisaFighter::ResetRound
 MarisaFighter::Initialize
 MarisaFighter::CreateOwnedObject
 YoumuFighter::Initialize
+YoumuFighter::CreateOwnedObject
+YoumuFighter::ResetRound

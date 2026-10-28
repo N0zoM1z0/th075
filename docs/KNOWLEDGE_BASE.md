@@ -839,3 +839,34 @@ handoff govern. Historical relative links were written from docs/. Earlier
 project are not in a Git clone. Preserve shared tools and private service/auth
 settings. Stay headless, use scripts/repo-python and the existing Ghidra wrapper
 without REA, cold-replay only new/affected units and keep compilers serial.
+
+
+## F224: independently cold-exact Youmu-owned allocation and round reset
+
+Two **authored**, independently R050-reviewed native extents are fully preserved
+without expanding any nominal fighter class: `0052D090` (120 CODE bytes,
+34 native instructions, SHA256
+`6820c7d36834a8967b2b9c6e099476c47a83a94a0b8edbe4b95f3f6288ba1d2b`) and
+`0052D110` (225 CODE bytes, 44 native instructions, SHA256
+`7c68b6e70cd26d9f1ae8227d36cb730f26bfb349937f0ff01130473155827fff`).
+Ghidra attested the full extents and disassembly. Both natural VC7.1 source
+probes produced exact non-relocation bytes: factory 96/96, reset 217/217.
+
+The factory uses normal `new` for the *observed* physical 0xE8 allocation
+and the existing constructor call `00536360`; VC7.1 `/GX` reproduces the
+full genuine EH frame, return convention, and six relocation fields including
+its native handler `006564FD`. No claim is made for generated EH helper
+bytes or the complete nominal allocated class. The reset writes 16 observed
+halfwords in the native order, calls the previously accepted base reset at
+`00457010`, then applies the real +0xFEC subcomponent reset at `00531CE0`.
+Its `/GX-` object preserves both original REL32 call relocations.
+
+`replay-exact-units.py --unit youmu-fighter-create-owned-object-0052d090` and
+`--unit youmu-fighter-reset-round-0052d110` both cold-built to `exact`, not
+merely `structural-exact`. The true symbol/target/offset ledger is in
+`config/match-units.toml`, with sources `src/YoumuOwnedF224.cpp` and
+`src/YoumuResetF224.cpp`. Original method/class naming and any unobserved
+private fields remain provisional; the 97 unknown origins and large pending
+function drafts are not made exact by this adoption. The experiments and
+assembly remain in `.analysis/f224-youmu-lifecycle/`. Local exactness is not
+an accepted external Oracle replay receipt.

@@ -515,3 +515,5 @@ address,name,module,confidence,evidence
 0x00492FB0,MarisaFighter::Initialize,Fighter,inferred,F223; complete 243-byte authored body and 6 relocations cold exact; original class identities/ownership provisional
 0x004930B0,MarisaFighter::CreateOwnedObject,Fighter,inferred,F223; complete 120-byte authored body and 6 relocations cold exact; original class identities/ownership provisional
 0x0052CEE0,YoumuFighter::Initialize,Fighter,inferred,F223; complete 314-byte authored body and 11 relocations cold exact; original class identities/ownership provisional
+0x0052D090,YoumuFighter::CreateOwnedObject,Fighter,inferred,F224; full 120-byte code extent and 6 relocation fields cold exact; original class identity and full layout provisional
+0x0052D110,YoumuFighter::ResetRound,Fighter,inferred,F224; full 225-byte code extent and 2 relocation fields cold exact; original class identity and full layout provisional

@@ -36713,3 +36713,61 @@ offset = 306
 type = "DIR32"
 symbol = "__except_list"
 target = 0x00000000
+
+[units.youmu-fighter-create-owned-object-0052d090]
+source = "src/YoumuOwnedF224.cpp"
+object = "build/matching/YoumuOwnedF224.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["YoumuFighter::CreateOwnedObject"]
+symbol = "?CreateOwnedObject@YoumuFactoryF224@@QAEXPAPAVYoumuGeneratedF224@@@Z"
+target_address = 0x0052D090
+size = 120
+[[units.youmu-fighter-create-owned-object-0052d090.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$?CreateOwnedObject@YoumuFactoryF224@@QAEXPAPAVYoumuGeneratedF224@@@Z"
+target = 0x006564FD
+[[units.youmu-fighter-create-owned-object-0052d090.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.youmu-fighter-create-owned-object-0052d090.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.youmu-fighter-create-owned-object-0052d090.relocations]]
+offset = 36
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.youmu-fighter-create-owned-object-0052d090.relocations]]
+offset = 67
+type = "REL32"
+symbol = "??0YoumuGeneratedF224@@QAE@PAX@Z"
+target = 0x00536360
+[[units.youmu-fighter-create-owned-object-0052d090.relocations]]
+offset = 110
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+[units.youmu-fighter-reset-round-0052d110]
+source = "src/YoumuResetF224.cpp"
+object = "build/matching/YoumuResetF224.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["YoumuFighter::ResetRound"]
+symbol = "?ResetRound@YoumuRoundF224@@QAEXXZ"
+target_address = 0x0052D110
+size = 225
+[[units.youmu-fighter-reset-round-0052d110.relocations]]
+offset = 203
+type = "REL32"
+symbol = "?ResetRound@FighterBaseActionsF159@@QAEXXZ"
+target = 0x00457010
+[[units.youmu-fighter-reset-round-0052d110.relocations]]
+offset = 217
+type = "REL32"
+symbol = "?ResetRound@YoumuSubcomponentF224@@QAEXXZ"
+target = 0x00531CE0

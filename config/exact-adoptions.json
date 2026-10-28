@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "c093aa4819a86493d88fd7e73ba045150e26e174311582d93871f2db9b3738e7"
+      "current_sha256": "2f367a3de83d997303d45ec1dc119481e85812fa3416dba8a75ad534b3316eae"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "4f0331e6e5c8c54c78862a162629f93a5a42a8091d4d3f90e0f822bb8fdaa71e"
+      "current_sha256": "c7dd01a9c388e2e59811751c3bd34bc1c4063f361ded7e8c8ebb33b64984f690"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "982e6d8f1d163ebe510fc443690fd558d738eb0ac25aac85139eb40d57594924"
+      "current_sha256": "0ddadb5942a7012e2cc6f0b03072689801373884f65090550be03147b62bbd60"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "f1908c5d28c69d12346b9baa8e8bf108d3c4b47e75ce6f446aec5e202c2ec094"
+      "current_sha256": "24673b09fcdc73895aada5a8317ded83ffb82b97e07167c48c14195400e0fcab"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "c09de445880239bdf1d762584e3596d57e8046b8adde0a5ecde378e6d0d15b38"
+      "current_sha256": "57efe911705a2b4678026915e401cf4aa0c9e0f3afb00b9e1f9c5a6465f31bd0"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -20891,6 +20891,94 @@
       },
       "origin": {
         "address": "0x0052CEE0",
+        "origin": "authored",
+        "subsystem": "YoumuFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R050"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0052D090",
+        "size": "120",
+        "span_end": "0x0052D107",
+        "current_name": "FUN_0052d090",
+        "proposed_name": "YoumuFighter::CreateOwnedObject",
+        "module": "YoumuFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R050; whole body hash, complete CFG, character constructor/factory chain and local behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; method name and complete class layout inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x0052D090",
+        "size": "120",
+        "span_end": "0x0052D107",
+        "current_name": "FUN_0052d090",
+        "proposed_name": "YoumuFighter::CreateOwnedObject",
+        "module": "YoumuFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void YoumuFactoryF224::CreateOwnedObject(YoumuGeneratedF224**)",
+        "is_thunk": "false",
+        "source_file": "src/YoumuOwnedF224.cpp",
+        "evidence": "R050; whole body hash, complete CFG, character constructor/factory chain and local behavior reviewed; F224; scripts/repo-python scripts/replay-exact-units.py --unit youmu-fighter-create-owned-object-0052d090",
+        "owner": "authored",
+        "notes": "Origin reviewed; method name and complete class layout inferred; source and exact state remain independent; F224: complete 120 authored CODE bytes / 34 complete decoded x86 instructions, target SHA256 6820c7d36834a8967b2b9c6e099476c47a83a94a0b8edbe4b95f3f6288ba1d2b. Pinned VC7.1 natural C++ cold exact, all 6 physical COFF relocations and all exits. Real /GX EH frame at 006564FD, operator new(0xE8) at 0064159D, generated object constructor call 00536360 and output pointer update; 232-byte allocation carrier is not a recovered complete class and EH handler bytes are not separately claimed. This is a local canonical cold replay, not an external Oracle receipt. No inline assembly, source-body splits, byte masks, fake locals or cropped extent. Original method spelling and fighter class identity remain provisional. All 97 origin-unknown candidates unchanged."
+      },
+      "origin": {
+        "address": "0x0052D090",
+        "origin": "authored",
+        "subsystem": "YoumuFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R050"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0052D110",
+        "size": "225",
+        "span_end": "0x0052D1F0",
+        "current_name": "FUN_0052d110",
+        "proposed_name": "YoumuFighter::ResetRound",
+        "module": "YoumuFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R050; whole body hash, complete CFG, character constructor/factory chain and local behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; method name and complete class layout inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x0052D110",
+        "size": "225",
+        "span_end": "0x0052D1F0",
+        "current_name": "FUN_0052d110",
+        "proposed_name": "YoumuFighter::ResetRound",
+        "module": "YoumuFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void YoumuRoundF224::ResetRound()",
+        "is_thunk": "false",
+        "source_file": "src/YoumuResetF224.cpp",
+        "evidence": "R050; whole body hash, complete CFG, character constructor/factory chain and local behavior reviewed; F224; scripts/repo-python scripts/replay-exact-units.py --unit youmu-fighter-reset-round-0052d110",
+        "owner": "authored",
+        "notes": "Origin reviewed; method name and complete class layout inferred; source and exact state remain independent; F224: complete 225 authored CODE bytes / 44 complete decoded x86 instructions, target SHA256 7c68b6e70cd26d9f1ae8227d36cb730f26bfb349937f0ff01130473155827fff. Pinned VC7.1 natural C++ cold exact, all 2 physical COFF relocations and all exits. 16 ordered short-field zero writes, established base ResetRound call at 00457010 then real embedded subcomponent +0xFEC ResetRound call at 00531CE0. The pointer receiver view is not a recovered complete original object layout. This is a local canonical cold replay, not an external Oracle receipt. No inline assembly, source-body splits, byte masks, fake locals or cropped extent. Original method spelling and fighter class identity remain provisional. All 97 origin-unknown candidates unchanged."
+      },
+      "origin": {
+        "address": "0x0052D110",
         "origin": "authored",
         "subsystem": "YoumuFighter",
         "disposition": "authored",
@@ -165270,6 +165358,100 @@
           "target": 0
         }
       ]
+    },
+    "youmu-fighter-create-owned-object-0052d090": {
+      "source": "src/YoumuOwnedF224.cpp",
+      "object": "build/matching/YoumuOwnedF224.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "YoumuFighter::CreateOwnedObject"
+      ],
+      "symbol": "?CreateOwnedObject@YoumuFactoryF224@@QAEXPAPAVYoumuGeneratedF224@@@Z",
+      "target_address": 5427344,
+      "size": 120,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$?CreateOwnedObject@YoumuFactoryF224@@QAEXPAPAVYoumuGeneratedF224@@@Z",
+          "target": 6644989
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 36,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 67,
+          "type": "REL32",
+          "symbol": "??0YoumuGeneratedF224@@QAE@PAX@Z",
+          "target": 5464928
+        },
+        {
+          "offset": 110,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "youmu-fighter-reset-round-0052d110": {
+      "source": "src/YoumuResetF224.cpp",
+      "object": "build/matching/YoumuResetF224.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "YoumuFighter::ResetRound"
+      ],
+      "symbol": "?ResetRound@YoumuRoundF224@@QAEXXZ",
+      "target_address": 5427472,
+      "size": 225,
+      "relocations": [
+        {
+          "offset": 203,
+          "type": "REL32",
+          "symbol": "?ResetRound@FighterBaseActionsF159@@QAEXXZ",
+          "target": 4550672
+        },
+        {
+          "offset": 217,
+          "type": "REL32",
+          "symbol": "?ResetRound@YoumuSubcomponentF224@@QAEXXZ",
+          "target": 5446880
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -165581,6 +165763,8 @@
     "src/MarisaResetF222.cpp": "1bda46532c2653e4592ba3844f8a8cfa1de29218c46ef367783c9c60a1f4af9d",
     "src/MarisaInitF223.cpp": "d0061974124a22f9134a3918dc1d7e22ab75a873763c604e90bdae0f5146dcd2",
     "src/MarisaOwnedF223.cpp": "ac74937b6465e57d633c83a1d7e4484bd8068b7b6f030809c2d282fdfc395ea7",
-    "src/YoumuInitF223.cpp": "b01ad6c36bbaf7db888418a6f5298f17706aa2973b372e4ebf9c13b58d3c426e"
+    "src/YoumuInitF223.cpp": "b01ad6c36bbaf7db888418a6f5298f17706aa2973b372e4ebf9c13b58d3c426e",
+    "src/YoumuOwnedF224.cpp": "fa22ce1defb84aa61cec89068913f4627ab884d29b8749c32afc4d9181ca1c85",
+    "src/YoumuResetF224.cpp": "1f6e7e591a4da122df9eb0822b6d5cd9cf8ac09cb3e8dbf6309d4a27e7370a26"
   }
 }
