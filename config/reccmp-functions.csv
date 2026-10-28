@@ -821,3 +821,10 @@ ArchiveResource::CloseHandleAndClearEntriesAt0041D1F0,0x0041D1F0,function
 RasterResources::InitializeSelectedWindowAndEmptyStateAt0041BF90,0x0041BF90,function
 CameraMotion::ResetParametersAt00412620,0x00412620,function
 FrameCapture::DrawIfEnabledAt004171D0,0x004171D0,function
+BackgroundBase::DestroyAt00449D40,0x00449D40,function
+CameraMotion::SetOverrideAt00412CC0,0x00412CC0,function
+SpriteSequence::RemoveFrontIfPresentAt004110C0,0x004110C0,function
+EventQueue::LocalAcquireReleaseAt004239C0,0x004239C0,function
+FrameCapture::InstallPresentCallbackAt00417120,0x00417120,function
+FrameCapture::EnableDirectDrawAt00417140,0x00417140,function
+BattleEndScene::DestroyAt00424F40,0x00424F40,function

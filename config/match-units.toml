@@ -58426,3 +58426,147 @@ offset = 37
 type = "REL32"
 symbol = "?DrawD3DQuadAt004029F0@@YAXPAY03$$CBMPBUtagRECT@@IPAUIDirect3DTexture8@@@Z"
 target = 0x004029F0
+
+[units.background-base-virtual-destroy-00449d40]
+source = "src/BackgroundCameraEventFrameLeavesF484.cpp"
+object = "build/matching/BackgroundCameraEventFrameLeavesF484.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundBase::DestroyAt00449D40"]
+symbol = "??1BackgroundBaseF484@@UAE@XZ"
+target_address = 0x00449D40
+size = 31
+[[units.background-base-virtual-destroy-00449d40.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "??_7BackgroundBaseF484@@6B@"
+target = 0x0065844C
+[[units.background-base-virtual-destroy-00449d40.relocations]]
+offset = 23
+type = "REL32"
+symbol = "??1BackgroundResourceF484@@QAE@XZ"
+target = 0x0040AE40
+
+
+[units.camera-motion-set-override-00412cc0]
+source = "src/BackgroundCameraEventFrameLeavesF484.cpp"
+object = "build/matching/BackgroundCameraEventFrameLeavesF484.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["CameraMotion::SetOverrideAt00412CC0"]
+symbol = "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z"
+target_address = 0x00412CC0
+size = 39
+[[units.camera-motion-set-override-00412cc0.relocations]]
+offset = 7
+type = "DIR32"
+symbol = "?g_OverrideEnabledAt00671414@@3EA"
+target = 0x00671414
+[[units.camera-motion-set-override-00412cc0.relocations]]
+offset = 16
+type = "DIR32"
+symbol = "?g_OverrideXAt006713E8@@3MA"
+target = 0x006713E8
+[[units.camera-motion-set-override-00412cc0.relocations]]
+offset = 25
+type = "DIR32"
+symbol = "?g_OverrideYAt006713BC@@3MA"
+target = 0x006713BC
+[[units.camera-motion-set-override-00412cc0.relocations]]
+offset = 33
+type = "DIR32"
+symbol = "?g_OverrideZAt006713F4@@3MA"
+target = 0x006713F4
+
+
+[units.sprite-sequence-remove-front-if-present-004110c0]
+source = "src/BackgroundCameraEventFrameLeavesF484.cpp"
+object = "build/matching/BackgroundCameraEventFrameLeavesF484.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["SpriteSequence::RemoveFrontIfPresentAt004110C0"]
+symbol = "?RemoveFrontIfPresent@SpriteSequenceF484@@QAEXXZ"
+target_address = 0x004110C0
+size = 37
+[[units.sprite-sequence-remove-front-if-present-004110c0.relocations]]
+offset = 14
+type = "REL32"
+symbol = "?Size@SpriteDequeF484@@QAEIXZ"
+target = 0x00411CE0
+[[units.sprite-sequence-remove-front-if-present-004110c0.relocations]]
+offset = 29
+type = "REL32"
+symbol = "?PopFront@SpriteDequeF484@@QAEXXZ"
+target = 0x00411D00
+
+
+[units.event-queue-local-acquire-release-004239c0]
+source = "src/BackgroundCameraEventFrameLeavesF484.cpp"
+object = "build/matching/BackgroundCameraEventFrameLeavesF484.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["EventQueue::LocalAcquireReleaseAt004239C0"]
+symbol = "?AcquireAndRelease@EventContextF484@@QAEPAV1@XZ"
+target_address = 0x004239C0
+size = 34
+[[units.event-queue-local-acquire-release-004239c0.relocations]]
+offset = 15
+type = "REL32"
+symbol = "??0EventLocalServiceF484@@QAE@H@Z"
+target = 0x004239F0
+[[units.event-queue-local-acquire-release-004239c0.relocations]]
+offset = 23
+type = "REL32"
+symbol = "??1EventLocalServiceF484@@QAE@XZ"
+target = 0x00423A90
+
+
+[units.frame-capture-install-present-callback-00417120]
+source = "src/BackgroundCameraEventFrameLeavesF484.cpp"
+object = "build/matching/BackgroundCameraEventFrameLeavesF484.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["FrameCapture::InstallPresentCallbackAt00417120"]
+symbol = "?InstallPresentCallback@FrameCapturePolicyF484@@QAEXXZ"
+target_address = 0x00417120
+size = 31
+[[units.frame-capture-install-present-callback-00417120.relocations]]
+offset = 8
+type = "DIR32"
+symbol = "?FramePresentPrimaryAt00417160@@YAXPAPAUIDirect3DTexture8@@@Z"
+target = 0x00417160
+[[units.frame-capture-install-present-callback-00417120.relocations]]
+offset = 13
+type = "REL32"
+symbol = "?RegisterFrameCallbackAt004028A0@@YAXP6AXPAPAUIDirect3DTexture8@@@Z@Z"
+target = 0x004028A0
+
+
+[units.frame-capture-enable-direct-draw-00417140]
+source = "src/BackgroundCameraEventFrameLeavesF484.cpp"
+object = "build/matching/BackgroundCameraEventFrameLeavesF484.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["FrameCapture::EnableDirectDrawAt00417140"]
+symbol = "?EnableDirectDraw@FrameCapturePolicyF484@@QAEXXZ"
+target_address = 0x00417140
+size = 28
+[[units.frame-capture-enable-direct-draw-00417140.relocations]]
+offset = 10
+type = "REL32"
+symbol = "?RegisterFrameCallbackAt004028A0@@YAXP6AXPAPAUIDirect3DTexture8@@@Z@Z"
+target = 0x004028A0
+
+
+[units.battle-end-scene-destroy-00424f40]
+source = "src/BackgroundCameraEventFrameLeavesF484.cpp"
+object = "build/matching/BackgroundCameraEventFrameLeavesF484.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BattleEndScene::DestroyAt00424F40"]
+symbol = "??1BattleEndSceneF484@@UAE@XZ"
+target_address = 0x00424F40
+size = 28
+[[units.battle-end-scene-destroy-00424f40.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "??_7BattleEndSceneF484@@6B@"
+target = 0x00657B7C
+[[units.battle-end-scene-destroy-00424f40.relocations]]
+offset = 20
+type = "REL32"
+symbol = "??1NativeSceneBaseF484@@UAE@XZ"
+target = 0x00431F40

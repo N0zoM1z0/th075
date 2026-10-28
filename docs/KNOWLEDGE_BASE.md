@@ -7523,3 +7523,89 @@ interface and scene switch state. This is a meaningful falsifiable
 whole-boss negative control **not accepted or credited**, not a reason
 to add fake local variables, paste machine instructions or cold replay
 all units.
+
+
+## F484: seven complete independently authored background, camera, sprite, event and frame helper functions
+
+Seven original native R-origin functions have been independently
+verified with their complete original code, original native instruction
+boundaries, actual ABI return conventions and every physical COFF
+field/type/reference and pinned Japanese PE destination. All compile
+naturally with pinned VC7.1 `/Od /Ob0 /Gy /GR- /GX- /Zi` and were
+cold replayed **7/7 exact across one changed object**:
+
+- `BackgroundBase::DestroyAt00449D40`, R108: **31 CODE bytes /12
+  native instructions, 23/23 nonfield bytes, 2/2 original relocations**,
+  PE SHA256 `4fc82ee47ccc2dca5ab8a419fe1d3850280cdde8374698e37a637ccd5083c84c`.
+  Genuine C++ virtual base destructor installs its own vtable `0065844C`
+  and calls the real native destructor `0040AE40` for the actually owned
+  subresource at `this+0x18`. The 36 separate F479 derived destructors
+  borrow this original *single* base function and never re-credit it.
+- `CameraMotion::SetOverrideAt00412CC0`, R035: **39 bytes /12
+  instructions, 23/23 nonfield bytes, 4/4 physical DIR32 refs**,
+  PE SHA256 `fb3ed11f9ea0e0a0be27039315f17bf2a54c226718d8fcc971f32f4e6588a93a`.
+  This true native cdecl function accepts a one-byte input override
+  mode and three raw float arguments, writes them to original globals
+  `00671414`, `006713E8`, `006713BC`, `006713F4` and returns without a
+  hidden game owner.
+- `SpriteSequence::RemoveFrontIfPresentAt004110C0`, R238: **37
+  bytes /15 instructions, 29/29 original nonfield bytes, 2/2 REL32
+  refs**, PE SHA256
+  `6ec43187e7d9285b8129200a0e5f997bf512bdcfd04acf2d48973e67c82e7141`.
+  Uses actual deque at `this+4`, unsigned Size `00411CE0` and real
+  PopFront `00411D00` only when Size is positive.
+- `EventQueue::LocalAcquireReleaseAt004239C0`, R114: **34 bytes /13
+  instructions, 26/26 original nonfield bytes and 2/2 real REL32 refs**,
+  PE SHA256 `6876552024eae981b549c28d4796a2e33ada0ab05a8f774d95189177da8c04a7`.
+  Native code constructs one *actually used* scoped service at EBP-1
+  with argument 16 through `004239F0`, invokes its destructor
+  `00423A90`, and only **after** this scope ends returns original
+  receiver at EBP-8. Writing `return this` from inside the live service
+  scope incorrectly creates an extra return-value temp and six nonnative
+  bytes; natural explicit C++ scope accurately restores native lifetime.
+- `FrameCapture::InstallPresentCallbackAt00417120`, R100: **31 CODE
+  bytes /12 instructions, 23/23 nonfield bytes, 2/2 real refs**,
+  PE SHA256 `17a30c91963186b27dcf3e041fd84e4c58ba64b588c285b2106abecf874cb660`.
+  Correctly registers actual **already exact F461** callback
+  `00417160` via game API `004028A0`, then clears receiver byte +4.
+- `FrameCapture::EnableDirectDrawAt00417140`, R102: **28 CODE
+  bytes /12 instructions, 24/24 nonfield bytes, 1/1 REL32** reference,
+  PE SHA256 `7b7b2b1f438308dca72456a613b6d25a9b4be0641d00cce7643042d644f318a6`.
+  Registers the null callback through `004028A0` and sets +4 true.
+  Both F484 FrameCapture methods are genuinely **void** thiscall;
+  inventing a returned receiver adds an invalid `mov eax, this` to
+  each.
+- `BattleEndScene::DestroyAt00424F40`, R097: **28 CODE bytes /11
+  original instructions, 20/20 nonfield bytes, 2/2 native refs**,
+  SHA256 `39f5491f34d77924b0337e8214b6683222d78966402b5d6ca2bfae041d1eba9d`.
+  Installs original derived vtable `00657B7C` then calls actual original
+  borrowed base scene destructor `00431F40`. No invented resource delete
+  absent from this exact native member.
+
+The entire `src/BackgroundCameraEventFrameLeavesF484.cpp` compilation
+matched all seven functions and **all 15/15 physical original COFF
+reference fields**. Only the seven new unit names were cold replayed,
+**7/7 exact**, adding exactly **228** original authored CODE bytes;
+no borrowed F479 base consumer, F461 callback, original Win32/CRT
+callee or unknown private owner layout is double credited. No fake stack
+locals, asm, copied target bytes, masks/cropped extent, full repo cold
+replay or external Oracle credit.
+
+## F482: full-stage-loader provenance check, already independently accepted as F389
+
+The actual R065 original `BattleLoader::LoadStageAt004183D0` was
+re-decompiled under native Ghidra and re-disassembled in F482, preserving
+its complete original PE function SHA256
+`9d670e4a82fec9987f1785f1d1818aec6677c609cd0d71ba91da8c45406a6076`,
+**3,765 original CODE bytes /761 native instructions**, including
+36 actual distinct native background stage `new`/constructor choices,
+separate originally owned **92-byte** after-RET 23-entry switch DATA
+and exact C++ `/GX` exception lifetime. The canonical ledger and
+original source were checked immediately after decompile and confirmed
+this function **was already accepted and cold replayed in F389** as
+`battle-loader-load-stage-004183d0`, with whole `compare_size=3857`,
+`3177/3177` nonfield bytes and `170/170` physical COFF relocations.
+No new stage-loader code is recredited in F482 or F484; historical
+assumptions that this function remains pending are incorrect. The
+actual separate 2,987-byte WinMain and 28K-82K character movement
+bosses remain outstanding.

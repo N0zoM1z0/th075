@@ -820,3 +820,10 @@ ArchiveResource::CloseHandleAndClearEntriesAt0041D1F0
 RasterResources::InitializeSelectedWindowAndEmptyStateAt0041BF90
 CameraMotion::ResetParametersAt00412620
 FrameCapture::DrawIfEnabledAt004171D0
+BackgroundBase::DestroyAt00449D40
+CameraMotion::SetOverrideAt00412CC0
+SpriteSequence::RemoveFrontIfPresentAt004110C0
+EventQueue::LocalAcquireReleaseAt004239C0
+FrameCapture::InstallPresentCallbackAt00417120
+FrameCapture::EnableDirectDrawAt00417140
+BattleEndScene::DestroyAt00424F40

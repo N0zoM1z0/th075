@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377; F378; F379; F386; F389; F391; F392; F393; F394; F395; F403; F407; F414; F415; F421; F422; F427; F428; F429; F430; F431; F432; F435; F437; F440; F445; F446; F447; F448; F454; F458; F459; F460; F461; F463; F465; F467; F468; F469; F474; F479; F481",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377; F378; F379; F386; F389; F391; F392; F393; F394; F395; F403; F407; F414; F415; F421; F422; F427; F428; F429; F430; F431; F432; F435; F437; F440; F445; F446; F447; F448; F454; F458; F459; F460; F461; F463; F465; F467; F468; F469; F474; F479; F481; F484",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "d3488710f111623d3f5ae0054f136fa7de36de0cf1ecebda01c1b5878061efb6"
+      "current_sha256": "c80aa864bdce7c42a14c6a12e9b6cfa885b39ded65f5d9774b660ff0769fb71f"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "85a63933126b6f836a488288dd19286fdeac0ea4d35a8217d9278e05a4beff8c"
+      "current_sha256": "3ce42193ce8bc3d6a006148473da5c8b13cb5154066ce3fcf8f7fdec015d759f"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "ff48198b512bfa4c38e624946c33060b97166c2bcf75c86fd1a85f606261df26"
+      "current_sha256": "e43f63ef8691ac51d3019a87414f3e8a167d70c8ceebd2e9397ae98c8c18d5b0"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "1fa8834fa73a0843a00f68b63a6ef66c8ea09155d9a6de7943335ebcd5415221"
+      "current_sha256": "c02904d6f9c36390a149d17863b920bcb1d936050d2d9b7cfa874614485cfb31"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "60a60b48c42f350b99eba0cfd03e1dae85a4a0cb50046c05e190a108a0ffd9f5"
+      "current_sha256": "da1ce671e37b2b538e6603ca0c976691e4d4b04508f31f3a41519b09a865e9d0"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -33568,6 +33568,314 @@
         "disposition": "authored",
         "confidence": "target-observed-game-policy-and-reviewed-callees",
         "evidence_id": "R100"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00449D40",
+        "size": "31",
+        "span_end": "0x00449D5E",
+        "current_name": "FUN_00449d40",
+        "proposed_name": "BackgroundBase::DestroyAt00449D40",
+        "module": "BackgroundBase",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R108; scripts/repo-python scripts/verify-game-lifetime-origins.py",
+        "owner": "authored",
+        "notes": "Complete explicit virtual destructor with game texture cleanup, paired construction and distinct implicit cleanup controls; role/layout inferred; origin only, no source or exact credit"
+      },
+      "after": {
+        "address": "0x00449D40",
+        "size": "31",
+        "span_end": "0x00449D5E",
+        "current_name": "FUN_00449d40",
+        "proposed_name": "BackgroundBase::DestroyAt00449D40",
+        "module": "BackgroundBase",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BackgroundBaseF484::~BackgroundBaseF484()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundCameraEventFrameLeavesF484.cpp",
+        "evidence": "R108; scripts/repo-python scripts/verify-game-lifetime-origins.py; F484; scripts/repo-python scripts/replay-exact-units.py --unit background-base-virtual-destroy-00449d40",
+        "owner": "authored",
+        "notes": "Complete explicit virtual destructor with game texture cleanup, paired construction and distinct implicit cleanup controls; role/layout inferred; origin only, no source or exact credit; F484 independently complete original authored R108 31-byte native body at 0x00449D40, 12 original x86 instructions, original pinned PE SHA256 4fc82ee47ccc2dca5ab8a419fe1d3850280cdde8374698e37a637ccd5083c84c. True background derived-compatible base virtual destructor installs own native vtable 0065844C, then naturally destructs actual +0x18 owned background resource through borrowed original 0040AE40; already accepted derived F479 uses this base CODE without re-crediting. Full 31/31 original CODE extent, 23/23 native nonreloc bytes and 2/2 authentic physical original COFF fields and destinations, seven affected-only units cold exact 7/7 in one object. Borrowed original member sizes, global call ABIs and native vtables do not establish full original private class layout; external base/scene/Win32 renderer implementation never double credited. No artificial padding, ASM/code graft, masked/cropped body, full cold replay or external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x00449D40",
+        "origin": "authored",
+        "subsystem": "BackgroundBase",
+        "disposition": "authored",
+        "confidence": "complete-lifetime-with-source-discrimination",
+        "evidence_id": "R108"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00412CC0",
+        "size": "39",
+        "span_end": "0x00412CE6",
+        "current_name": "FUN_00412cc0",
+        "proposed_name": "CameraMotion::SetOverride",
+        "module": "CameraMotion",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R035; full body hash, complete decoded CFG and game-specific policy reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00412CC0",
+        "size": "39",
+        "span_end": "0x00412CE6",
+        "current_name": "FUN_00412cc0",
+        "proposed_name": "CameraMotion::SetOverride",
+        "module": "CameraMotion",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "cdecl",
+        "signature": "void CameraMotionOverrideF484::SetOverride(unsigned char,float,float,float)",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundCameraEventFrameLeavesF484.cpp",
+        "evidence": "R035; full body hash, complete decoded CFG and game-specific policy reviewed; F484; scripts/repo-python scripts/replay-exact-units.py --unit camera-motion-set-override-00412cc0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F484 independently complete original authored R035 39-byte native body at 0x00412CC0, 12 original x86 instructions, original pinned PE SHA256 fb3ed11f9ea0e0a0be27039315f17bf2a54c226718d8fcc971f32f4e6588a93a. Original cdecl ABI writes exactly one requested byte to camera mode global 00671414, then three caller float DWORD values to globals 006713E8/006713BC/006713F4, native ordinary RET. Full 39/39 original CODE extent, 23/23 native nonreloc bytes and 4/4 authentic physical original COFF fields and destinations, seven affected-only units cold exact 7/7 in one object. Borrowed original member sizes, global call ABIs and native vtables do not establish full original private class layout; external base/scene/Win32 renderer implementation never double credited. No artificial padding, ASM/code graft, masked/cropped body, full cold replay or external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x00412CC0",
+        "origin": "authored",
+        "subsystem": "CameraMotion",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R035"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004110C0",
+        "size": "37",
+        "span_end": "0x004110E4",
+        "current_name": "FUN_004110c0",
+        "proposed_name": "SpriteSequence::RemoveFrontIfPresentAt004110C0",
+        "module": "SpriteSequence",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R238; config/guarded-sprite-list-origin-evidence.json; scripts/repo-python scripts/verify-guarded-sprite-list-origins.py",
+        "owner": "authored",
+        "notes": "Whole nonempty-guarded consumption of the receiver+4 sprite-record list, independently tied to complete164-byte packet append, full game rendering, twice-consecutive removal in the same fighter render receiver, and whole R167/R168 list/owner source graphs. Ordinary guard37 reproduces; entire original queue pop19 and borrowed guard25 differ. Source-family inference only; original private type/layout/spelling/compiler profile/ABI remain unknown. Pending implicit member construction411C10 stays unknown. No source/mapping/exact credit."
+      },
+      "after": {
+        "address": "0x004110C0",
+        "size": "37",
+        "span_end": "0x004110E4",
+        "current_name": "FUN_004110c0",
+        "proposed_name": "SpriteSequence::RemoveFrontIfPresentAt004110C0",
+        "module": "SpriteSequence",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void SpriteSequenceF484::RemoveFrontIfPresent()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundCameraEventFrameLeavesF484.cpp",
+        "evidence": "R238; config/guarded-sprite-list-origin-evidence.json; scripts/repo-python scripts/verify-guarded-sprite-list-origins.py; F484; scripts/repo-python scripts/replay-exact-units.py --unit sprite-sequence-remove-front-if-present-004110c0",
+        "owner": "authored",
+        "notes": "Whole nonempty-guarded consumption of the receiver+4 sprite-record list, independently tied to complete164-byte packet append, full game rendering, twice-consecutive removal in the same fighter render receiver, and whole R167/R168 list/owner source graphs. Ordinary guard37 reproduces; entire original queue pop19 and borrowed guard25 differ. Source-family inference only; original private type/layout/spelling/compiler profile/ABI remain unknown. Pending implicit member construction411C10 stays unknown. No source/mapping/exact credit.; F484 independently complete original authored R238 37-byte native body at 0x004110C0, 15 original x86 instructions, original pinned PE SHA256 6ec43187e7d9285b8129200a0e5f997bf512bdcfd04acf2d48973e67c82e7141. Native actual deque object at receiver+4 queries original unsigned Size 00411CE0 and only invokes real PopFront 00411D00 when >0, retaining actual native unsigned branch and caller stack order. Full 37/37 original CODE extent, 29/29 native nonreloc bytes and 2/2 authentic physical original COFF fields and destinations, seven affected-only units cold exact 7/7 in one object. Borrowed original member sizes, global call ABIs and native vtables do not establish full original private class layout; external base/scene/Win32 renderer implementation never double credited. No artificial padding, ASM/code graft, masked/cropped body, full cold replay or external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x004110C0",
+        "origin": "authored",
+        "subsystem": "SpriteSequence",
+        "disposition": "authored",
+        "confidence": "whole-guarded-sprite-record-consumption-with-independent-append-render-repeated-pop-and-original-list-context",
+        "evidence_id": "R238"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004239C0",
+        "size": "34",
+        "span_end": "0x004239E1",
+        "current_name": "FUN_004239c0",
+        "proposed_name": "EventQueue::LocalAcquireReleaseAt004239C0",
+        "module": "EventQueue",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R114; complete target CFG, cold whole source controls, raw imports and independent game contexts",
+        "owner": "authored",
+        "notes": "Origin reviewed; original owner layout and spelling remain provisional; no source or exact credit"
+      },
+      "after": {
+        "address": "0x004239C0",
+        "size": "34",
+        "span_end": "0x004239E1",
+        "current_name": "FUN_004239c0",
+        "proposed_name": "EventQueue::LocalAcquireReleaseAt004239C0",
+        "module": "EventQueue",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "EventContextF484* EventContextF484::AcquireAndRelease()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundCameraEventFrameLeavesF484.cpp",
+        "evidence": "R114; complete target CFG, cold whole source controls, raw imports and independent game contexts; F484; scripts/repo-python scripts/replay-exact-units.py --unit event-queue-local-acquire-release-004239c0",
+        "owner": "authored",
+        "notes": "Origin reviewed; original owner layout and spelling remain provisional; no source or exact credit; F484 independently complete original authored R114 34-byte native body at 0x004239C0, 13 original x86 instructions, original pinned PE SHA256 6876552024eae981b549c28d4796a2e33ada0ab05a8f774d95189177da8c04a7. A real scoped one-byte temporary EventLocalService receives argument16 in original constructor 004239F0 at EBP-1, native destructor 00423A90 runs before the final return of actual this at EBP-8; early return inside scope wrongly generated extra return temporary and six nonnative bytes. Full 34/34 original CODE extent, 26/26 native nonreloc bytes and 2/2 authentic physical original COFF fields and destinations, seven affected-only units cold exact 7/7 in one object. Borrowed original member sizes, global call ABIs and native vtables do not establish full original private class layout; external base/scene/Win32 renderer implementation never double credited. No artificial padding, ASM/code graft, masked/cropped body, full cold replay or external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x004239C0",
+        "origin": "authored",
+        "subsystem": "EventQueue",
+        "disposition": "authored",
+        "confidence": "complete-game-policy-with-independent-context-and-lifetime-controls",
+        "evidence_id": "R114"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00417120",
+        "size": "31",
+        "span_end": "0x0041713E",
+        "current_name": "FUN_00417120",
+        "proposed_name": "FrameCapture::InstallPresentCallbackAt00417120",
+        "module": "FrameCapture",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R100; scripts/repo-python scripts/verify-short-game-origins.py",
+        "owner": "authored",
+        "notes": "Complete game-policy body and CFG; reviewed custom callees, explicit fields and owner context; names/layouts inferred; no source or exact credit"
+      },
+      "after": {
+        "address": "0x00417120",
+        "size": "31",
+        "span_end": "0x0041713E",
+        "current_name": "FUN_00417120",
+        "proposed_name": "FrameCapture::InstallPresentCallbackAt00417120",
+        "module": "FrameCapture",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void FrameCapturePolicyF484::InstallPresentCallback()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundCameraEventFrameLeavesF484.cpp",
+        "evidence": "R100; scripts/repo-python scripts/verify-short-game-origins.py; F484; scripts/repo-python scripts/replay-exact-units.py --unit frame-capture-install-present-callback-00417120",
+        "owner": "authored",
+        "notes": "Complete game-policy body and CFG; reviewed custom callees, explicit fields and owner context; names/layouts inferred; no source or exact credit; F484 independently complete original authored R100 31-byte native body at 0x00417120, 12 original x86 instructions, original pinned PE SHA256 17a30c91963186b27dcf3e041fd84e4c58ba64b588c285b2106abecf874cb660. Original void thiscall registers callback original complete F461 00417160 through real 004028A0 and clears enabled byte at this+4; no returned this pointer, so no spurious return-value MOV. Full 31/31 original CODE extent, 23/23 native nonreloc bytes and 2/2 authentic physical original COFF fields and destinations, seven affected-only units cold exact 7/7 in one object. Borrowed original member sizes, global call ABIs and native vtables do not establish full original private class layout; external base/scene/Win32 renderer implementation never double credited. No artificial padding, ASM/code graft, masked/cropped body, full cold replay or external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x00417120",
+        "origin": "authored",
+        "subsystem": "FrameCapture",
+        "disposition": "authored",
+        "confidence": "target-observed-game-policy-and-reviewed-callees",
+        "evidence_id": "R100"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00417140",
+        "size": "28",
+        "span_end": "0x0041715B",
+        "current_name": "FUN_00417140",
+        "proposed_name": "FrameCapture::EnableDirectDrawAt00417140",
+        "module": "FrameCapture",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R102; scripts/repo-python scripts/verify-short-game-origins.py --cohort R102",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game policy; complete fields, call/context witnesses and unchanged RET cleanup; inferred names/layouts, no source or exact credit"
+      },
+      "after": {
+        "address": "0x00417140",
+        "size": "28",
+        "span_end": "0x0041715B",
+        "current_name": "FUN_00417140",
+        "proposed_name": "FrameCapture::EnableDirectDrawAt00417140",
+        "module": "FrameCapture",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void FrameCapturePolicyF484::EnableDirectDraw()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundCameraEventFrameLeavesF484.cpp",
+        "evidence": "R102; scripts/repo-python scripts/verify-short-game-origins.py --cohort R102; F484; scripts/repo-python scripts/replay-exact-units.py --unit frame-capture-enable-direct-draw-00417140",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game policy; complete fields, call/context witnesses and unchanged RET cleanup; inferred names/layouts, no source or exact credit; F484 independently complete original authored R102 28-byte native body at 0x00417140, 12 original x86 instructions, original pinned PE SHA256 7b7b2b1f438308dca72456a613b6d25a9b4be0641d00cce7643042d644f318a6. Original void thiscall passes NULL callback to real 004028A0 then sets enabled byte this+4 to one, no returned receiver pointer and no fake branch. Full 28/28 original CODE extent, 24/24 native nonreloc bytes and 1/1 authentic physical original COFF fields and destinations, seven affected-only units cold exact 7/7 in one object. Borrowed original member sizes, global call ABIs and native vtables do not establish full original private class layout; external base/scene/Win32 renderer implementation never double credited. No artificial padding, ASM/code graft, masked/cropped body, full cold replay or external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x00417140",
+        "origin": "authored",
+        "subsystem": "FrameCapture",
+        "disposition": "authored",
+        "confidence": "complete-game-policy-with-batch-context",
+        "evidence_id": "R102"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00424F40",
+        "size": "28",
+        "span_end": "0x00424F5B",
+        "current_name": "FUN_00424f40",
+        "proposed_name": "BattleEndScene::DestroyAt00424F40",
+        "module": "BattleEndScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R097; scripts/repo-python scripts/verify-battle-end-destructor-origin.py",
+        "owner": "authored",
+        "notes": "Complete explicit-destructor source shape with constructor-written game vtable, checked virtual slots and reviewed SceneBase cleanup call; name inferred, full class layout unknown; no source or exact credit"
+      },
+      "after": {
+        "address": "0x00424F40",
+        "size": "28",
+        "span_end": "0x00424F5B",
+        "current_name": "FUN_00424f40",
+        "proposed_name": "BattleEndScene::DestroyAt00424F40",
+        "module": "BattleEndScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BattleEndSceneF484::~BattleEndSceneF484()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundCameraEventFrameLeavesF484.cpp",
+        "evidence": "R097; scripts/repo-python scripts/verify-battle-end-destructor-origin.py; F484; scripts/repo-python scripts/replay-exact-units.py --unit battle-end-scene-destroy-00424f40",
+        "owner": "authored",
+        "notes": "Complete explicit-destructor source shape with constructor-written game vtable, checked virtual slots and reviewed SceneBase cleanup call; name inferred, full class layout unknown; no source or exact credit; F484 independently complete original authored R097 28-byte native body at 0x00424F40, 11 original x86 instructions, original pinned PE SHA256 39f5491f34d77924b0337e8214b6683222d78966402b5d6ca2bfae041d1eba9d. Native derived scene virtual destructor installs original vtable 00657B7C and invokes genuine borrowed base-scene destructor 00431F40, no unrelated texture resource ownership or extra cleanup. Full 28/28 original CODE extent, 20/20 native nonreloc bytes and 2/2 authentic physical original COFF fields and destinations, seven affected-only units cold exact 7/7 in one object. Borrowed original member sizes, global call ABIs and native vtables do not establish full original private class layout; external base/scene/Win32 renderer implementation never double credited. No artificial padding, ASM/code graft, masked/cropped body, full cold replay or external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x00424F40",
+        "origin": "authored",
+        "subsystem": "BattleEndScene",
+        "disposition": "authored",
+        "confidence": "target-observed-and-explicit-source-shape",
+        "evidence_id": "R097"
       }
     }
   ],
@@ -207185,6 +207493,257 @@
           "target": 4205040
         }
       ]
+    },
+    "background-base-virtual-destroy-00449d40": {
+      "source": "src/BackgroundCameraEventFrameLeavesF484.cpp",
+      "object": "build/matching/BackgroundCameraEventFrameLeavesF484.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundBase::DestroyAt00449D40"
+      ],
+      "symbol": "??1BackgroundBaseF484@@UAE@XZ",
+      "target_address": 4496704,
+      "size": 31,
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "??_7BackgroundBaseF484@@6B@",
+          "target": 6653004
+        },
+        {
+          "offset": 23,
+          "type": "REL32",
+          "symbol": "??1BackgroundResourceF484@@QAE@XZ",
+          "target": 4238912
+        }
+      ]
+    },
+    "camera-motion-set-override-00412cc0": {
+      "source": "src/BackgroundCameraEventFrameLeavesF484.cpp",
+      "object": "build/matching/BackgroundCameraEventFrameLeavesF484.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "CameraMotion::SetOverrideAt00412CC0"
+      ],
+      "symbol": "?SetOverride@CameraMotionOverrideF484@@YAXEMMM@Z",
+      "target_address": 4271296,
+      "size": 39,
+      "relocations": [
+        {
+          "offset": 7,
+          "type": "DIR32",
+          "symbol": "?g_OverrideEnabledAt00671414@@3EA",
+          "target": 6755348
+        },
+        {
+          "offset": 16,
+          "type": "DIR32",
+          "symbol": "?g_OverrideXAt006713E8@@3MA",
+          "target": 6755304
+        },
+        {
+          "offset": 25,
+          "type": "DIR32",
+          "symbol": "?g_OverrideYAt006713BC@@3MA",
+          "target": 6755260
+        },
+        {
+          "offset": 33,
+          "type": "DIR32",
+          "symbol": "?g_OverrideZAt006713F4@@3MA",
+          "target": 6755316
+        }
+      ]
+    },
+    "sprite-sequence-remove-front-if-present-004110c0": {
+      "source": "src/BackgroundCameraEventFrameLeavesF484.cpp",
+      "object": "build/matching/BackgroundCameraEventFrameLeavesF484.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "SpriteSequence::RemoveFrontIfPresentAt004110C0"
+      ],
+      "symbol": "?RemoveFrontIfPresent@SpriteSequenceF484@@QAEXXZ",
+      "target_address": 4264128,
+      "size": 37,
+      "relocations": [
+        {
+          "offset": 14,
+          "type": "REL32",
+          "symbol": "?Size@SpriteDequeF484@@QAEIXZ",
+          "target": 4267232
+        },
+        {
+          "offset": 29,
+          "type": "REL32",
+          "symbol": "?PopFront@SpriteDequeF484@@QAEXXZ",
+          "target": 4267264
+        }
+      ]
+    },
+    "event-queue-local-acquire-release-004239c0": {
+      "source": "src/BackgroundCameraEventFrameLeavesF484.cpp",
+      "object": "build/matching/BackgroundCameraEventFrameLeavesF484.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "EventQueue::LocalAcquireReleaseAt004239C0"
+      ],
+      "symbol": "?AcquireAndRelease@EventContextF484@@QAEPAV1@XZ",
+      "target_address": 4340160,
+      "size": 34,
+      "relocations": [
+        {
+          "offset": 15,
+          "type": "REL32",
+          "symbol": "??0EventLocalServiceF484@@QAE@H@Z",
+          "target": 4340208
+        },
+        {
+          "offset": 23,
+          "type": "REL32",
+          "symbol": "??1EventLocalServiceF484@@QAE@XZ",
+          "target": 4340368
+        }
+      ]
+    },
+    "frame-capture-install-present-callback-00417120": {
+      "source": "src/BackgroundCameraEventFrameLeavesF484.cpp",
+      "object": "build/matching/BackgroundCameraEventFrameLeavesF484.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FrameCapture::InstallPresentCallbackAt00417120"
+      ],
+      "symbol": "?InstallPresentCallback@FrameCapturePolicyF484@@QAEXXZ",
+      "target_address": 4288800,
+      "size": 31,
+      "relocations": [
+        {
+          "offset": 8,
+          "type": "DIR32",
+          "symbol": "?FramePresentPrimaryAt00417160@@YAXPAPAUIDirect3DTexture8@@@Z",
+          "target": 4288864
+        },
+        {
+          "offset": 13,
+          "type": "REL32",
+          "symbol": "?RegisterFrameCallbackAt004028A0@@YAXP6AXPAPAUIDirect3DTexture8@@@Z@Z",
+          "target": 4204704
+        }
+      ]
+    },
+    "frame-capture-enable-direct-draw-00417140": {
+      "source": "src/BackgroundCameraEventFrameLeavesF484.cpp",
+      "object": "build/matching/BackgroundCameraEventFrameLeavesF484.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FrameCapture::EnableDirectDrawAt00417140"
+      ],
+      "symbol": "?EnableDirectDraw@FrameCapturePolicyF484@@QAEXXZ",
+      "target_address": 4288832,
+      "size": 28,
+      "relocations": [
+        {
+          "offset": 10,
+          "type": "REL32",
+          "symbol": "?RegisterFrameCallbackAt004028A0@@YAXP6AXPAPAUIDirect3DTexture8@@@Z@Z",
+          "target": 4204704
+        }
+      ]
+    },
+    "battle-end-scene-destroy-00424f40": {
+      "source": "src/BackgroundCameraEventFrameLeavesF484.cpp",
+      "object": "build/matching/BackgroundCameraEventFrameLeavesF484.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattleEndScene::DestroyAt00424F40"
+      ],
+      "symbol": "??1BattleEndSceneF484@@UAE@XZ",
+      "target_address": 4345664,
+      "size": 28,
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "??_7BattleEndSceneF484@@6B@",
+          "target": 6650748
+        },
+        {
+          "offset": 20,
+          "type": "REL32",
+          "symbol": "??1NativeSceneBaseF484@@UAE@XZ",
+          "target": 4398912
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -207666,6 +208225,7 @@
     "src/FighterOwnedObjectFactoriesF469.cpp": "60c98fa7f8dbcc047138e885582acf11c3c973310b25de2b6836faf275002f93",
     "src/SceneResourceDestructorsF474.cpp": "7c8b68ec3f6da9f1c2541ae7989c42d91840a0859d557ade06281c8a6ca69840",
     "src/BackgroundStageDerivedDestructorsF479.cpp": "03fd3d9ae305d099750360a82d8e56e3cf1936e6dd3bdbfb7aa064a3c00cdcfe",
-    "src/ArchiveRasterCameraFramePoliciesF481.cpp": "31d067e80e5cb52071240ea4128404151760a84fcfcd518f9d5a3dc47488e8aa"
+    "src/ArchiveRasterCameraFramePoliciesF481.cpp": "31d067e80e5cb52071240ea4128404151760a84fcfcd518f9d5a3dc47488e8aa",
+    "src/BackgroundCameraEventFrameLeavesF484.cpp": "8f78f9b1da4dad7867ce61de7ba8ce3c4650506ababe51ec54291261ab93cf46"
   }
 }
