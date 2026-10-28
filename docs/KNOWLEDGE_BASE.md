@@ -870,3 +870,43 @@ private fields remain provisional; the 97 unknown origins and large pending
 function drafts are not made exact by this adoption. The experiments and
 assembly remain in `.analysis/f224-youmu-lifecycle/`. Local exactness is not
 an accepted external Oracle replay receipt.
+
+
+## F225: cold-exact complete character-select scene initialization (668 CODE bytes)
+
+The complete R041 authored `CharacterSelectScene::Initialize` at
+`00432EA0..0043313B` is 668 bytes / 185 native instructions, SHA256
+`d48db16d3f434e97d49368dd441c0434a777afb0c97c949344c05db86568f987`.
+Ghidra attested the entire native extent. Native `/GX` EH uses handler
+`00655AB9`, unknown-origin base ctor `004251C0` (R108, **not** adopted),
+and scene vtable `0065824C`; this constructor also guards and dispatches
+two native slot-five deleting destructors through the existing globals
+`00671418` and `0067141C`, then clears those pointers.
+
+The three distinct ordinary `new TextureAllocF225` allocations pass the
+observed 80-byte physical size and call the already accepted real manager
+constructor `0040AD80`. They allocate slot counts 8, 22 and 17 and load
+three original texture path/root pairs through `0040BB80`, in native
+order. The scene sets three global mode/transition flags, calls actual
+configuration load `004192F0`, reads 30 default option bytes and two
+15-element control maps via actual cdecl helper calls `0041A0E0` and
+`00419E10`, clears the final two scene bytes, and calls the native
+`00433230` selection reset. The three 80-byte allocation carriers and
+call-only scene/actor receivers do **not** establish their full nominal
+original class layouts; the five unobserved virtual actor slots are only
+physical placeholders for observed deleting-destructor slot five.
+
+The first natural source wrongly declared this-relative data in the two
+config loops as three pointer variables. It produced 677 bytes and extra
+loads. The corrected *array bytes within the scene* use `this[base+i]`
+and compile to the exact 668-byte whole native control flow with 516/516
+non-relocation bytes. All 38 physical COFF fields have exact target
+resolution (including EH, vtable, globals, Win32 allocation and real
+callee destinations). Independent cold replay of
+`character-select-scene-initialize-00432ea0` reports `exact: 668`; the
+canonical source is `src/CharacterSelectInitF225.cpp`, and probes/native
+assembly remain in `.analysis/f225-big-functions/`. No cropped extent,
+synthetic return, invented storage layout, asm or masked fields are used.
+This local exact unit does not claim external Oracle acceptance, runtime
+behavior validation, base constructor origin or any additional library
+bytes. All 97 unknown-origin candidates remain uncredited.

@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "2f367a3de83d997303d45ec1dc119481e85812fa3416dba8a75ad534b3316eae"
+      "current_sha256": "38b7a282a23d52db093f1b19f10d1428c69b837d5f755542362a3b8e433d4af9"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "c7dd01a9c388e2e59811751c3bd34bc1c4063f361ded7e8c8ebb33b64984f690"
+      "current_sha256": "aa4e34e71ebd8db6e4bb01289568615b7229f5065cdb4ca63437d44a553806c2"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "0ddadb5942a7012e2cc6f0b03072689801373884f65090550be03147b62bbd60"
+      "current_sha256": "ec75ff19516ed4354b2eccc7eb8165774ba9dc43c912c59a97681c6aa6b58bf6"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "24673b09fcdc73895aada5a8317ded83ffb82b97e07167c48c14195400e0fcab"
+      "current_sha256": "d6cc9c93220ee904f64ea6319427dfc3e24804a024a9b047260372b7e19bfe37"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "57efe911705a2b4678026915e401cf4aa0c9e0f3afb00b9e1f9c5a6465f31bd0"
+      "current_sha256": "548e73de4c050cf64e1cbfa3e14a233933c2d79bcd9f0887dc6b373caf746e88"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -20984,6 +20984,50 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R050"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00432EA0",
+        "size": "668",
+        "span_end": "0x0043313B",
+        "current_name": "FUN_00432ea0",
+        "proposed_name": "CharacterSelectScene::Initialize",
+        "module": "CharacterSelectScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R041; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00432EA0",
+        "size": "668",
+        "span_end": "0x0043313B",
+        "current_name": "FUN_00432ea0",
+        "proposed_name": "CharacterSelectScene::Initialize",
+        "module": "CharacterSelectScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "CharacterSelectCtorF225::CharacterSelectCtorF225()",
+        "is_thunk": "false",
+        "source_file": "src/CharacterSelectInitF225.cpp",
+        "evidence": "R041; full body hash, complete decoded CFG and local game-specific behavior reviewed; F225; scripts/repo-python scripts/replay-exact-units.py --unit character-select-scene-initialize-00432ea0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F225: complete 668 authored CODE bytes / 185 complete native instructions, SHA256 d48db16d3f434e97d49368dd441c0434a777afb0c97c949344c05db86568f987. Pinned VC7.1 /GX cold exact of entire extent and all 38 real COFF relocation fields, including genuine EH handler 00655AB9, source-borrowed base constructor 004251C0 (R108 origin remains unresolved), vtable 0065824C and two native deleting-destructor dispatches through virtual slot five. Preserves three genuine new(80) texture-manager allocations using accepted 0040AD80, sizes 8/22/17 and three texture-archive load calls, global state initialization, real config load, two bounded 30/15 element loops, and final reset 00433230. Initial source mistakenly treated three in-object byte arrays as pointers and emitted 677 bytes; replacing with actual this-relative byte indexing gives 668 bytes, 516/516 comparable bytes and all 38 fields. Nominal scene, actor and texture object layouts remain provisional; no source credit for external base constructor or EH handler. This is local canonical cold replay, not an external Oracle receipt. No pasted bytes, fake locals, masks or cropped function. All 97 unknown origins preserved."
+      },
+      "origin": {
+        "address": "0x00432EA0",
+        "origin": "authored",
+        "subsystem": "CharacterSelectScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R041"
       }
     }
   ],
@@ -165452,6 +165496,257 @@
           "target": 5446880
         }
       ]
+    },
+    "character-select-scene-initialize-00432ea0": {
+      "source": "src/CharacterSelectInitF225.cpp",
+      "object": "build/matching/CharacterSelectInitF225.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "CharacterSelectScene::Initialize"
+      ],
+      "symbol": "??0CharacterSelectCtorF225@@QAE@XZ",
+      "target_address": 4402848,
+      "size": 668,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??0CharacterSelectCtorF225@@QAE@XZ",
+          "target": 6642361
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 34,
+          "type": "REL32",
+          "symbol": "??0SceneBaseF225@@QAE@XZ",
+          "target": 4346304
+        },
+        {
+          "offset": 50,
+          "type": "DIR32",
+          "symbol": "??_7CharacterSelectCtorF225@@6B@",
+          "target": 6652492
+        },
+        {
+          "offset": 56,
+          "type": "DIR32",
+          "symbol": "?g_ActorAAt00671418@@3PAVActorResourceF225@@A",
+          "target": 6755352
+        },
+        {
+          "offset": 65,
+          "type": "DIR32",
+          "symbol": "?g_ActorAAt00671418@@3PAVActorResourceF225@@A",
+          "target": 6755352
+        },
+        {
+          "offset": 111,
+          "type": "DIR32",
+          "symbol": "?g_ActorAAt00671418@@3PAVActorResourceF225@@A",
+          "target": 6755352
+        },
+        {
+          "offset": 121,
+          "type": "DIR32",
+          "symbol": "?g_ActorBAt0067141C@@3PAVActorResourceF225@@A",
+          "target": 6755356
+        },
+        {
+          "offset": 129,
+          "type": "DIR32",
+          "symbol": "?g_ActorBAt0067141C@@3PAVActorResourceF225@@A",
+          "target": 6755356
+        },
+        {
+          "offset": 175,
+          "type": "DIR32",
+          "symbol": "?g_ActorBAt0067141C@@3PAVActorResourceF225@@A",
+          "target": 6755356
+        },
+        {
+          "offset": 186,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 210,
+          "type": "REL32",
+          "symbol": "??0TextureAllocF225@@QAE@XZ",
+          "target": 4238720
+        },
+        {
+          "offset": 254,
+          "type": "REL32",
+          "symbol": "?AllocateUnformattedSlots@TextureAllocF225@@QAEXH@Z",
+          "target": 4239824
+        },
+        {
+          "offset": 259,
+          "type": "DIR32",
+          "symbol": "?g_SelectTextureRootAt006581E4@@3QBDB",
+          "target": 6652388
+        },
+        {
+          "offset": 264,
+          "type": "DIR32",
+          "symbol": "?g_SelectTextureDataAt006581EC@@3QBDB",
+          "target": 6652396
+        },
+        {
+          "offset": 275,
+          "type": "REL32",
+          "symbol": "?LoadDefault@TextureAllocF225@@QAEXPBD0@Z",
+          "target": 4242304
+        },
+        {
+          "offset": 282,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 306,
+          "type": "REL32",
+          "symbol": "??0TextureAllocF225@@QAE@XZ",
+          "target": 4238720
+        },
+        {
+          "offset": 350,
+          "type": "REL32",
+          "symbol": "?AllocateUnformattedSlots@TextureAllocF225@@QAEXH@Z",
+          "target": 4239824
+        },
+        {
+          "offset": 355,
+          "type": "DIR32",
+          "symbol": "?g_CharacterTextureRootAt00658204@@3QBDB",
+          "target": 6652420
+        },
+        {
+          "offset": 360,
+          "type": "DIR32",
+          "symbol": "?g_CharacterTextureDataAt0065820C@@3QBDB",
+          "target": 6652428
+        },
+        {
+          "offset": 371,
+          "type": "REL32",
+          "symbol": "?LoadDefault@TextureAllocF225@@QAEXPBD0@Z",
+          "target": 4242304
+        },
+        {
+          "offset": 378,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 402,
+          "type": "REL32",
+          "symbol": "??0TextureAllocF225@@QAE@XZ",
+          "target": 4238720
+        },
+        {
+          "offset": 446,
+          "type": "REL32",
+          "symbol": "?AllocateUnformattedSlots@TextureAllocF225@@QAEXH@Z",
+          "target": 4239824
+        },
+        {
+          "offset": 451,
+          "type": "DIR32",
+          "symbol": "?g_BackgroundTextureRootAt00658228@@3QBDB",
+          "target": 6652456
+        },
+        {
+          "offset": 456,
+          "type": "DIR32",
+          "symbol": "?g_BackgroundTextureDataAt00658230@@3QBDB",
+          "target": 6652464
+        },
+        {
+          "offset": 467,
+          "type": "REL32",
+          "symbol": "?LoadDefault@TextureAllocF225@@QAEXPBD0@Z",
+          "target": 4242304
+        },
+        {
+          "offset": 473,
+          "type": "DIR32",
+          "symbol": "?g_SelectionModeAt0066C238@@3EA",
+          "target": 6734392
+        },
+        {
+          "offset": 480,
+          "type": "DIR32",
+          "symbol": "?g_FramePadAt00671620@@3EA",
+          "target": 6755872
+        },
+        {
+          "offset": 487,
+          "type": "DIR32",
+          "symbol": "?g_ContinueUsedAt00671624@@3EA",
+          "target": 6755876
+        },
+        {
+          "offset": 493,
+          "type": "REL32",
+          "symbol": "?Load@GameSettingsF225@@YAXXZ",
+          "target": 4297456
+        },
+        {
+          "offset": 526,
+          "type": "REL32",
+          "symbol": "?ReadDefault@GameSettingsF225@@YAEE@Z",
+          "target": 4301024
+        },
+        {
+          "offset": 575,
+          "type": "REL32",
+          "symbol": "?ReadControls@GameSettingsF225@@YAEEE@Z",
+          "target": 4300304
+        },
+        {
+          "offset": 598,
+          "type": "REL32",
+          "symbol": "?ReadControls@GameSettingsF225@@YAEEE@Z",
+          "target": 4300304
+        },
+        {
+          "offset": 640,
+          "type": "REL32",
+          "symbol": "?ResetSelection@CharacterSelectCtorF225@@QAEXXZ",
+          "target": 4403760
+        },
+        {
+          "offset": 660,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -165765,6 +166060,7 @@
     "src/MarisaOwnedF223.cpp": "ac74937b6465e57d633c83a1d7e4484bd8068b7b6f030809c2d282fdfc395ea7",
     "src/YoumuInitF223.cpp": "b01ad6c36bbaf7db888418a6f5298f17706aa2973b372e4ebf9c13b58d3c426e",
     "src/YoumuOwnedF224.cpp": "fa22ce1defb84aa61cec89068913f4627ab884d29b8749c32afc4d9181ca1c85",
-    "src/YoumuResetF224.cpp": "1f6e7e591a4da122df9eb0822b6d5cd9cf8ac09cb3e8dbf6309d4a27e7370a26"
+    "src/YoumuResetF224.cpp": "1f6e7e591a4da122df9eb0822b6d5cd9cf8ac09cb3e8dbf6309d4a27e7370a26",
+    "src/CharacterSelectInitF225.cpp": "ee10126ec6ce2f673790cafc361097cebedd429e822ac2d7ece0d3b173add89e"
   }
 }

@@ -1,4 +1,4 @@
-# TH075 — active reconstruction handoff (F224)
+# TH075 — active reconstruction handoff (F225)
 
 **Updated 2026-10-28. Read this document before new experiments.**
 
@@ -12,21 +12,21 @@ Earlier H184 advice to stop is historical and **does not apply**.
 
 | Item | Current evidence |
 | --- | --- |
-| Local branch / last exact-code commit | `main` / F224 acceptance; previous F223 `ca81d72`, housekeeping `3a01d26` |
-| Upstream | `origin/main`; the 32 F223-era local commits plus this F224 checkpoint; confirm live count |
-| Working tree | Clean at F224 handoff if final commit succeeds; inspect real status every time |
+| Local branch / last exact-code commit | `main` / F225 acceptance; previous F224 `417d882` |
+| Upstream | `origin/main`; F224 committed (`417d882`), F225 should be committed locally; confirm live count |
+| Working tree | Clean after the F225 commit if completed; inspect actual Git status every time |
 | Native binary | `resources/th075.exe`, SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98` |
 | Candidate count | 4,351; origin review: 1,002 authored, 2,671 library, 581 compiler, 97 unknown |
-| Accepted functions / units | **536 / 536** |
-| Accepted authored CODE | **766,936 bytes** |
-| Reviewed authored coverage | 766,936 / 1,973,516 = **38.86%** |
-| Conservative coverage | **38.79%** counting 3,608 origin-pending bytes |
+| Accepted functions / units | **537 / 537** |
+| Accepted authored CODE | **767,604 bytes** |
+| Reviewed authored coverage | 767,604 / 1,973,516 = **38.90%** |
+| Conservative coverage | **38.82%** counting 3,608 origin-pending bytes |
 | Goal | **98% not reached** |
-| Verification | F224 two independent cold-exact replays; F224 full CI 3,613/3,613 passed on 2026-10-28; no Oracle receipt claimed |
+| Verification | F224 two independent cold-exact replays; F225 668-byte full cold exact; F225 full CI 3,613/3,613 passed on 2026-10-28; no Oracle receipt claimed |
 
 **Recheck the actual live status immediately**. Local commits are checkpoints,
 not evidence of a remote push or external Oracle acceptance. Earlier Git
-pushes were blocked by DNS. Preserve all locally ahead commits (32 before F224; F224 must be committed locally); do not
+pushes were blocked by DNS. Preserve all locally ahead commits (F224 committed at 417d882; keep F225 as a new local checkpoint); do not
 switch to the behind `origin/main`, force-push or reset the worktree.
 
 ```bash
@@ -51,8 +51,9 @@ inert variable or arbitrary padding may earn exact credit.
 | F223 `ca81d72`: MarisaFighter::Initialize | `00492FB0` | 243 | 6 |
 | F223 `ca81d72`: MarisaFighter::CreateOwnedObject | `004930B0` | 120 | 6 |
 | F223 `ca81d72`: YoumuFighter::Initialize | `0052CEE0` | 314 | 11 |
-| F224: YoumuFighter::CreateOwnedObject | `0052D090` | 120 | 6 |
-| F224: YoumuFighter::ResetRound | `0052D110` | 225 | 2 |
+| F224 `417d882`: YoumuFighter::CreateOwnedObject | `0052D090` | 120 | 6 |
+| F224 `417d882`: YoumuFighter::ResetRound | `0052D110` | 225 | 2 |
+| F225: CharacterSelectScene::Initialize | `00432EA0` | 668 | 38 |
 
 F222 proved signed 32-bit x87 `FILD` divided by the target's 36.0f
 (`00659308`), 74 physical animation records and a final call into the
@@ -60,13 +61,15 @@ F222 proved signed 32-bit x87 `FILD` divided by the target's 36.0f
 `i <= 36`, not the byte-different `i < 37`. Its three relocations all
 match. F223 adds two complete borrowed constructors and a real EH-backed
 232-byte `new`; Youmu additionally calls the observed +0xFEC child init.
-All six units were independently cold-exact. F224 used a complete, native-EH-backed `new(0xE8)` with the real Youmu constructor at `00536360`, then ordered 16 halfword resets, the accepted base reset `00457010`, and the observed +0xFEC subcomponent reset `00531CE0`. Their nominal C++ classes and
+All seven units were independently cold-exact. F224 used a complete, native-EH-backed `new(0xE8)` with the real Youmu constructor at `00536360`, then ordered 16 halfword resets, the accepted base reset `00457010`, and the observed +0xFEC subcomponent reset `00531CE0`. Their nominal C++ classes and
 external helper implementations are **not** established by code equality.
+
+F225 additionally accepts an entire 668-byte character-selection constructor (185 native instructions) with actual vtable, three separately allocated texture managers, two deleting destructors, two real configuration loops, and 38 relocation fields. Its first full probe used mistaken pointer-indirect indexing and emitted 677 bytes; the verified this-relative byte arrays restore exact native 668 bytes. The base-scene constructor remains R108 origin-unknown and uncredited.
 
 Relevant full native proofs: `config/match-units.toml`,
 `config/exact-adoptions.json`, sources `src/*F222.cpp`/`src/*F223.cpp`,
 and `docs/KNOWLEDGE_BASE.md`. The cold-replay logs are private in
-`.analysis/f222-marisa-reset/`, `.analysis/f223-fighter-ctors/`, and `.analysis/f224-youmu-lifecycle/`.
+`.analysis/f222-marisa-reset/`, `.analysis/f223-fighter-ctors/`, and `.analysis/f224-youmu-lifecycle/`, and `.analysis/f225-big-functions/`.
 Earlier accepted functions remain in the canonical ledgers; do not rebuild
 everything unless a shared dependency changed.
 

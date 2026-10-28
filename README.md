@@ -15,10 +15,10 @@ user-supplied executable. It is **not yet a complete game rebuild**.
 | Size / image base | 2,576,384 bytes / `0x00400000` |
 | SHA-256 | `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98` |
 | MD5 | `21bcb855a39f2170195811e6ad292f18` |
-| Source-present / exact functions | **536 / 536** |
-| Accepted CODE bytes | **766,936** |
-| Reviewed authored coverage | **38.86%** of 1,973,516 reviewed bytes |
-| Conservative coverage | **38.79%**, with 3,608 origin-pending bytes included |
+| Source-present / exact functions | **537 / 537** |
+| Accepted CODE bytes | **767,604** |
+| Reviewed authored coverage | **38.90%** of 1,973,516 reviewed bytes |
+| Conservative coverage | **38.82%**, with 3,608 origin-pending bytes included |
 | Unresolved origins | **97** of 4,351 provisional function candidates |
 
 **The 98% authored-byte goal is incomplete.** Function labels and C++ owner
@@ -26,7 +26,7 @@ types are provisional; machine-code matches alone do not prove an entire
 original class layout. The target's official distribution provenance has not
 been independently verified; do not substitute a localized `th075c.exe`.
 
-These counts are a snapshot after the **F224** cold-exact adoption
+These counts are a snapshot after the **F225** cold-exact adoption
 (2026-10-28). Always get live counts from
 `scripts/repo-python scripts/report-reconstruction-status.py --summary`.
 Local Git commits preserve checkpoints; they are **not external Oracle
