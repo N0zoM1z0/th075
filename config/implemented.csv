@@ -773,3 +773,9 @@ YuyukoFighter::CreateOwnedObjectAt00574210
 YukariFighter::CreateOwnedObjectAt00597480
 SuikaFighter::CreateOwnedObjectAt005C0BB0
 MeilingFighter::CreateOwnedObjectAt005E2170
+OpeningScene::ReleaseResourcesAt004276B0
+ReplayScene::ReleaseResourcesAt0042A2C0
+NameEntryScene::ReleaseResourcesAt0042B300
+ResultScene::ReleaseResourcesAt0042E870
+StaffRollScene::ReleaseResourcesAt00438BA0
+TitleScene::ReleaseResourcesAt0043A1E0

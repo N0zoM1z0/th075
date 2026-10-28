@@ -7314,3 +7314,88 @@ constructor, the CRT `operator new` or compiler EH helper code.
 All historical negative codegen/source tests remain intact; no fake
 locals, assembly/pasted PE bytes, masked or truncated native functions,
 full cold replay or external Oracle acceptance.
+
+
+## F474: six full original scene-specific virtual texture resource destructors, with Title's native global state write
+
+Six independently original-authored C++ derived scene destructor functions
+were verified directly against the pinned Japanese TH075 executable,
+with their individually original SEH handler and virtual table values.
+Opening `004276B0` (R036), Replay `0042A2C0` (R234), NameEntry
+`0042B300` (R234), Result `0042E870` (R234) and StaffRoll `00438BA0`
+(R062) each have **127 original authored CODE bytes / 36 x86
+instructions**, **99/99 original nonrelocation bytes**, and **7/7
+authentic physical COFF DIR32/REL32 fields and native destinations**.
+The separately original R062 Title destructor at `0043A1E0` is **142
+whole CODE bytes / 39 instructions**, **110/110 matching nonrelocation
+bytes**, and **8/8 physical original relocations**. These are seven
+individually read/disassembled ref fields per function, not symbolic
+virtual-class matches assumed on names alone. Each unique original PE
+SHA256 and handler is retained in its approved `config/functions.csv`
+provenance row.
+
+All six independently model the real borrowed 8-byte scene base and
+owned texture pointer at `this+8`; each derived class has its own original
+virtual table, natural VC7.1 `/GX` exception registration, actual
+conditional C++ `delete texture` through native scalar deleting texture
+destructor `00425460`, true pointer temporaries, and borrowed original
+base-scene destructor at `00431F40`. The **Title** scene has a genuine
+additional *behavior* before deletion: sign extend original `signed
+char` at receiver +0x38 and write a native 16-bit signed value to global
+`00671630`. The physical gap from `this+0xC` to +0x37 is represented
+only as untyped observed owner storage; this is not proof of any
+particular original class members in that area. Other five destructor
+functions must **not** be credited with this Title-specific side effect.
+
+Natural `src/SceneResourceDestructorsF474.cpp` under pinned VC7.1
+`/Od /Ob0 /Gy /GR- /GX /GS /Zi` generates each complete body and its
+original authentic COFF references first try. Only the six affected
+manifest units were freshly rebuilt and cold-replayed **6/6 exact
+across one object**, crediting precisely **5×127 + 142 = 777** new
+original CODE bytes, with total **43/43 distinct original physical
+COFF fields** verified separately. The previously exact F447 Loading
+and Logo scene derived destructors and F432 Options scene destructor
+remain separate code without any duplicated callee bytes. No full
+private original scene identity, external texture/base constructor
+implementation, fake local padding, source assembly, target bytes
+copied, masks, cropped comparisons, all-unit cold replay or external
+Oracle acceptance.
+
+## F473: WinMain original four owned RAII destructors and early-error exits, whole-boss negative controls
+
+The 2,987-original-CODE-byte R064 `GameApplication::RunAt00602A60`
+remains **unaccepted**, notwithstanding substantial original native
+control-flow research. The original game startup has three separate
+early failures of `RegisterClassExA`, `CreateWindowExA` and
+`CoInitialize`. At each, original x86 first stores its own real return
+code zero to native local EBP-0x190/-0x194/-0x198, then calls the four
+*actual destructor functions*, in order `00406650` shared sound,
+`00403BE0` input, `00401020` shared graphics and `00423A90` app-mode,
+finally reloads that return code and branches to the original common
+security-cookie/stack epilogue. Their original destinations were
+independently decoded at all three call sites rather than inferred by
+source class names. The graphics local also has an actual zero DWORD
+store at original EBP-0x184 immediately following the four initial
+constructor calls, absent in the earlier natural probe. The original
+full function has 654 native instructions, `sub esp,0x278`, and a
+separately compared owned post-RET 60-byte scene switch table.
+
+The F456 complete natural WinMain code handled all 15 distinct scene
+allocations, Win32 WNDCLASSEXA and game message pump, but emitted
+**2,951 CODE bytes / 640 instructions** with native-style frame
+0x264, mostly sharing exit cleanup. New F473 whole-source probes in
+`.analysis/f473-winmain-native-raii/` instead introduce four actual
+C++ automatic destructors and each real failure early return. They
+compile to **3,022 CODE bytes / 650 instructions** and real frame
+0x274, showing their source-level lifetime modeling is substantially
+more faithful—but still not the original full CODE or exact frame.
+The compiler also continues to merge three failure paths' destructor
+sequences at a common exit rather than preserving original repeated
+blocks. A variant using native ArchiveCatalog C++ RAII also remains
+3,022 bytes. This is a falsifiable complete-function *negative result*,
+not a partial credit or permission to fabricate filler locals or paste
+original instructions. Real meaningful window/app/graphics local lifetime,
+actual Win32 COM behavior, return destinations, scene-switch-case
+ordering and the physical native stack must all be solved prior to
+accepting any code or comparing the table. No all-unit cold replay
+was run for these diagnostics.

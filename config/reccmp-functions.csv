@@ -774,3 +774,9 @@ YuyukoFighter::CreateOwnedObjectAt00574210,0x00574210,function
 YukariFighter::CreateOwnedObjectAt00597480,0x00597480,function
 SuikaFighter::CreateOwnedObjectAt005C0BB0,0x005C0BB0,function
 MeilingFighter::CreateOwnedObjectAt005E2170,0x005E2170,function
+OpeningScene::ReleaseResourcesAt004276B0,0x004276B0,function
+ReplayScene::ReleaseResourcesAt0042A2C0,0x0042A2C0,function
+NameEntryScene::ReleaseResourcesAt0042B300,0x0042B300,function
+ResultScene::ReleaseResourcesAt0042E870,0x0042E870,function
+StaffRollScene::ReleaseResourcesAt00438BA0,0x00438BA0,function
+TitleScene::ReleaseResourcesAt0043A1E0,0x0043A1E0,function

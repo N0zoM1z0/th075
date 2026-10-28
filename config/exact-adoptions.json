@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377; F378; F379; F386; F389; F391; F392; F393; F394; F395; F403; F407; F414; F415; F421; F422; F427; F428; F429; F430; F431; F432; F435; F437; F440; F445; F446; F447; F448; F454; F458; F459; F460; F461; F463; F465; F467; F468; F469",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377; F378; F379; F386; F389; F391; F392; F393; F394; F395; F403; F407; F414; F415; F421; F422; F427; F428; F429; F430; F431; F432; F435; F437; F440; F445; F446; F447; F448; F454; F458; F459; F460; F461; F463; F465; F467; F468; F469; F474",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "403413af41b03df2717ad66e25d30699e8d04d8a215c7f5b10d285262884f64a"
+      "current_sha256": "89cebe3087e407987afc659d94afa03b42d9b68eda873e7473673c3bb5cf0115"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "6b25d2c3179908309cbb23cfd4ac37f51496d3eb5d2c63efd89df1d61a17dc77"
+      "current_sha256": "4eb693c237de14ba4be301eb9df899184a40fb76570bfc3d41bb0002f5bc1eb6"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "943883d06169d47ae7ac7f2b4d16cb4315733a7ee7d04ef9d16ce53dc7131cee"
+      "current_sha256": "d8fdc02a2540eb87afc682df961d775f4c837a495e3f7205954ad1e4414a8431"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "15794d8126bdfe15b916f48cbc96ca760682e755121ea65d4b0cbacf1fde8f32"
+      "current_sha256": "64543016ec74276130e3667c10fe3f58528b675ae4b2226e3d2f88175dae4f70"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "18d8c89080c1231b8a697527d152b0db26e2e0533431ab3325262b69482e0b4f"
+      "current_sha256": "22f2815421d00584a888789b70fb011374364ef70b44868a317eff8dd39241c8"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -31500,6 +31500,270 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R050"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004276B0",
+        "size": "127",
+        "span_end": "0x0042772E",
+        "current_name": "FUN_004276b0",
+        "proposed_name": "OpeningScene::ReleaseResources",
+        "module": "OpeningScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R036; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x004276B0",
+        "size": "127",
+        "span_end": "0x0042772E",
+        "current_name": "FUN_004276b0",
+        "proposed_name": "OpeningScene::ReleaseResources",
+        "module": "OpeningScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "OpeningSceneReleaseF474::~OpeningSceneReleaseF474()",
+        "is_thunk": "false",
+        "source_file": "src/SceneResourceDestructorsF474.cpp",
+        "evidence": "R036; full body hash, complete decoded CFG and local game-specific behavior reviewed; F474; scripts/repo-python scripts/replay-exact-units.py --unit opening-scene-release-resource-004276b0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F474 whole independent R036 native OpeningScene resource destructor at 0x004276B0, 127 authored original CODE bytes, 36 native instructions, original PE SHA256 84c59307edda610c2b160d829a4a25e0d59646f66c6cdb1f7d41d3cadaac660d. Real C++ derived virtual destructor stores scene-specific original vtable, checks actual owned texture at this+8, calls authentic native scalar deleting texture destructor 00425460 via source `delete`, then original base scene destructor 00431F40 with naturally generated per-function VC7.1 /GX EH handler, SEH state, and genuine native pointer ownership/temporary fields. No extra Title scene selection side-effect; native body is the separate 127-byte variant. Complete original 99/99 nonreloc bytes and 7/7 physical authentic COFF references/symbols/original destinations match; six affected-only cold units replayed 6/6 exact in one object. Borrowed texture/base callee code not credited; private original class identities and unknown fields unproved, no fake padding/locals, machine byte graft, ASM, relocation masking, cropped native body, all-unit replay or external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x004276B0",
+        "origin": "authored",
+        "subsystem": "OpeningScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R036"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0042A2C0",
+        "size": "127",
+        "span_end": "0x0042A33E",
+        "current_name": "FUN_0042a2c0",
+        "proposed_name": "ReplayScene::ReleaseSceneResourceAt0042A2C0",
+        "module": "ReplayScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R234; config/scene-resource-cleanup-origin-evidence.json; scripts/repo-python scripts/verify-scene-resource-cleanup-origins.py",
+        "owner": "authored",
+        "notes": "Whole paired game scene cleanup conditionally deletes the resource initialized and configured by its independently accepted actual game asset loader, then performs observed base cleanup. Natural explicit/implicit models and full native code/EH bindings support authored source-family inference; original private layout/name/source/ABI and compiler profile remain unknown; no exact credit."
+      },
+      "after": {
+        "address": "0x0042A2C0",
+        "size": "127",
+        "span_end": "0x0042A33E",
+        "current_name": "FUN_0042a2c0",
+        "proposed_name": "ReplayScene::ReleaseSceneResourceAt0042A2C0",
+        "module": "ReplayScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "ReplaySceneReleaseF474::~ReplaySceneReleaseF474()",
+        "is_thunk": "false",
+        "source_file": "src/SceneResourceDestructorsF474.cpp",
+        "evidence": "R234; config/scene-resource-cleanup-origin-evidence.json; scripts/repo-python scripts/verify-scene-resource-cleanup-origins.py; F474; scripts/repo-python scripts/replay-exact-units.py --unit replay-scene-release-resource-0042a2c0",
+        "owner": "authored",
+        "notes": "Whole paired game scene cleanup conditionally deletes the resource initialized and configured by its independently accepted actual game asset loader, then performs observed base cleanup. Natural explicit/implicit models and full native code/EH bindings support authored source-family inference; original private layout/name/source/ABI and compiler profile remain unknown; no exact credit.; F474 whole independent R234 native ReplayScene resource destructor at 0x0042A2C0, 127 authored original CODE bytes, 36 native instructions, original PE SHA256 8da1772bb79bc9d3c18aaf548c30d4c43c8037783a7e9e60e8a618c9c1f8c50a. Real C++ derived virtual destructor stores scene-specific original vtable, checks actual owned texture at this+8, calls authentic native scalar deleting texture destructor 00425460 via source `delete`, then original base scene destructor 00431F40 with naturally generated per-function VC7.1 /GX EH handler, SEH state, and genuine native pointer ownership/temporary fields. No extra Title scene selection side-effect; native body is the separate 127-byte variant. Complete original 99/99 nonreloc bytes and 7/7 physical authentic COFF references/symbols/original destinations match; six affected-only cold units replayed 6/6 exact in one object. Borrowed texture/base callee code not credited; private original class identities and unknown fields unproved, no fake padding/locals, machine byte graft, ASM, relocation masking, cropped native body, all-unit replay or external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x0042A2C0",
+        "origin": "authored",
+        "subsystem": "ReplayScene",
+        "disposition": "authored",
+        "confidence": "whole-game-scene-resource-policy-with-independent-asset-initializer-and-complete-natural-lifetime-graph",
+        "evidence_id": "R234"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0042B300",
+        "size": "127",
+        "span_end": "0x0042B37E",
+        "current_name": "FUN_0042b300",
+        "proposed_name": "NameEntryScene::ReleaseSceneResourceAt0042B300",
+        "module": "NameEntryScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R234; config/scene-resource-cleanup-origin-evidence.json; scripts/repo-python scripts/verify-scene-resource-cleanup-origins.py",
+        "owner": "authored",
+        "notes": "Whole paired game scene cleanup conditionally deletes the resource initialized and configured by its independently accepted actual game asset loader, then performs observed base cleanup. Natural explicit/implicit models and full native code/EH bindings support authored source-family inference; original private layout/name/source/ABI and compiler profile remain unknown; no exact credit."
+      },
+      "after": {
+        "address": "0x0042B300",
+        "size": "127",
+        "span_end": "0x0042B37E",
+        "current_name": "FUN_0042b300",
+        "proposed_name": "NameEntryScene::ReleaseSceneResourceAt0042B300",
+        "module": "NameEntryScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "NameEntrySceneReleaseF474::~NameEntrySceneReleaseF474()",
+        "is_thunk": "false",
+        "source_file": "src/SceneResourceDestructorsF474.cpp",
+        "evidence": "R234; config/scene-resource-cleanup-origin-evidence.json; scripts/repo-python scripts/verify-scene-resource-cleanup-origins.py; F474; scripts/repo-python scripts/replay-exact-units.py --unit nameentry-scene-release-resource-0042b300",
+        "owner": "authored",
+        "notes": "Whole paired game scene cleanup conditionally deletes the resource initialized and configured by its independently accepted actual game asset loader, then performs observed base cleanup. Natural explicit/implicit models and full native code/EH bindings support authored source-family inference; original private layout/name/source/ABI and compiler profile remain unknown; no exact credit.; F474 whole independent R234 native NameEntryScene resource destructor at 0x0042B300, 127 authored original CODE bytes, 36 native instructions, original PE SHA256 21b3cf012f94743634d410c195bedc1f6c7eec870863ec6c1007d5d58d8fa9fb. Real C++ derived virtual destructor stores scene-specific original vtable, checks actual owned texture at this+8, calls authentic native scalar deleting texture destructor 00425460 via source `delete`, then original base scene destructor 00431F40 with naturally generated per-function VC7.1 /GX EH handler, SEH state, and genuine native pointer ownership/temporary fields. No extra Title scene selection side-effect; native body is the separate 127-byte variant. Complete original 99/99 nonreloc bytes and 7/7 physical authentic COFF references/symbols/original destinations match; six affected-only cold units replayed 6/6 exact in one object. Borrowed texture/base callee code not credited; private original class identities and unknown fields unproved, no fake padding/locals, machine byte graft, ASM, relocation masking, cropped native body, all-unit replay or external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x0042B300",
+        "origin": "authored",
+        "subsystem": "NameEntryScene",
+        "disposition": "authored",
+        "confidence": "whole-game-scene-resource-policy-with-independent-asset-initializer-and-complete-natural-lifetime-graph",
+        "evidence_id": "R234"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0042E870",
+        "size": "127",
+        "span_end": "0x0042E8EE",
+        "current_name": "FUN_0042e870",
+        "proposed_name": "ResultScene::ReleaseSceneResourceAt0042E870",
+        "module": "ResultScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R234; config/scene-resource-cleanup-origin-evidence.json; scripts/repo-python scripts/verify-scene-resource-cleanup-origins.py",
+        "owner": "authored",
+        "notes": "Whole paired game scene cleanup conditionally deletes the resource initialized and configured by its independently accepted actual game asset loader, then performs observed base cleanup. Natural explicit/implicit models and full native code/EH bindings support authored source-family inference; original private layout/name/source/ABI and compiler profile remain unknown; no exact credit."
+      },
+      "after": {
+        "address": "0x0042E870",
+        "size": "127",
+        "span_end": "0x0042E8EE",
+        "current_name": "FUN_0042e870",
+        "proposed_name": "ResultScene::ReleaseSceneResourceAt0042E870",
+        "module": "ResultScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "ResultSceneReleaseF474::~ResultSceneReleaseF474()",
+        "is_thunk": "false",
+        "source_file": "src/SceneResourceDestructorsF474.cpp",
+        "evidence": "R234; config/scene-resource-cleanup-origin-evidence.json; scripts/repo-python scripts/verify-scene-resource-cleanup-origins.py; F474; scripts/repo-python scripts/replay-exact-units.py --unit result-scene-release-resource-0042e870",
+        "owner": "authored",
+        "notes": "Whole paired game scene cleanup conditionally deletes the resource initialized and configured by its independently accepted actual game asset loader, then performs observed base cleanup. Natural explicit/implicit models and full native code/EH bindings support authored source-family inference; original private layout/name/source/ABI and compiler profile remain unknown; no exact credit.; F474 whole independent R234 native ResultScene resource destructor at 0x0042E870, 127 authored original CODE bytes, 36 native instructions, original PE SHA256 09a492272ba872a5984e131d89bbb06679e092c691cd97388c7129fe7b8a681c. Real C++ derived virtual destructor stores scene-specific original vtable, checks actual owned texture at this+8, calls authentic native scalar deleting texture destructor 00425460 via source `delete`, then original base scene destructor 00431F40 with naturally generated per-function VC7.1 /GX EH handler, SEH state, and genuine native pointer ownership/temporary fields. No extra Title scene selection side-effect; native body is the separate 127-byte variant. Complete original 99/99 nonreloc bytes and 7/7 physical authentic COFF references/symbols/original destinations match; six affected-only cold units replayed 6/6 exact in one object. Borrowed texture/base callee code not credited; private original class identities and unknown fields unproved, no fake padding/locals, machine byte graft, ASM, relocation masking, cropped native body, all-unit replay or external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x0042E870",
+        "origin": "authored",
+        "subsystem": "ResultScene",
+        "disposition": "authored",
+        "confidence": "whole-game-scene-resource-policy-with-independent-asset-initializer-and-complete-natural-lifetime-graph",
+        "evidence_id": "R234"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00438BA0",
+        "size": "127",
+        "span_end": "0x00438C1E",
+        "current_name": "FUN_00438ba0",
+        "proposed_name": "StaffRollScene::DestroyAt00438BA0",
+        "module": "StaffRollScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R062; complete target body and CFG with reviewed game-specific scene lifecycle calls",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x00438BA0",
+        "size": "127",
+        "span_end": "0x00438C1E",
+        "current_name": "FUN_00438ba0",
+        "proposed_name": "StaffRollScene::DestroyAt00438BA0",
+        "module": "StaffRollScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "StaffRollSceneReleaseF474::~StaffRollSceneReleaseF474()",
+        "is_thunk": "false",
+        "source_file": "src/SceneResourceDestructorsF474.cpp",
+        "evidence": "R062; complete target body and CFG with reviewed game-specific scene lifecycle calls; F474; scripts/repo-python scripts/replay-exact-units.py --unit staffroll-scene-release-resource-00438ba0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state independent; F474 whole independent R062 native StaffRollScene resource destructor at 0x00438BA0, 127 authored original CODE bytes, 36 native instructions, original PE SHA256 352166f50e39bf14885e1241e12a64d50d2b15ccb009f5302b3746090c707a6f. Real C++ derived virtual destructor stores scene-specific original vtable, checks actual owned texture at this+8, calls authentic native scalar deleting texture destructor 00425460 via source `delete`, then original base scene destructor 00431F40 with naturally generated per-function VC7.1 /GX EH handler, SEH state, and genuine native pointer ownership/temporary fields. No extra Title scene selection side-effect; native body is the separate 127-byte variant. Complete original 99/99 nonreloc bytes and 7/7 physical authentic COFF references/symbols/original destinations match; six affected-only cold units replayed 6/6 exact in one object. Borrowed texture/base callee code not credited; private original class identities and unknown fields unproved, no fake padding/locals, machine byte graft, ASM, relocation masking, cropped native body, all-unit replay or external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x00438BA0",
+        "origin": "authored",
+        "subsystem": "StaffRollScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R062"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0043A1E0",
+        "size": "142",
+        "span_end": "0x0043A26D",
+        "current_name": "FUN_0043a1e0",
+        "proposed_name": "TitleScene::DestroyAt0043A1E0",
+        "module": "TitleScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R062; complete target body and CFG with reviewed game-specific scene lifecycle calls",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0043A1E0",
+        "size": "142",
+        "span_end": "0x0043A26D",
+        "current_name": "FUN_0043a1e0",
+        "proposed_name": "TitleScene::DestroyAt0043A1E0",
+        "module": "TitleScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "TitleSceneReleaseF474::~TitleSceneReleaseF474()",
+        "is_thunk": "false",
+        "source_file": "src/SceneResourceDestructorsF474.cpp",
+        "evidence": "R062; complete target body and CFG with reviewed game-specific scene lifecycle calls; F474; scripts/repo-python scripts/replay-exact-units.py --unit title-scene-release-resource-0043a1e0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state independent; F474 whole independent R062 native TitleScene resource destructor at 0x0043A1E0, 142 authored original CODE bytes, 39 native instructions, original PE SHA256 1cef5336635570de4a569bbd05c914e0826027977db19cb90be2e94aea2cf26e. Real C++ derived virtual destructor stores scene-specific original vtable, checks actual owned texture at this+8, calls authentic native scalar deleting texture destructor 00425460 via source `delete`, then original base scene destructor 00431F40 with naturally generated per-function VC7.1 /GX EH handler, SEH state, and genuine native pointer ownership/temporary fields. Plus real original signed byte at physical this+0x38 copied with MOVSX to original short global 00671630 before texture destruction; the physically untyped this+0xC..0x37 gap is NOT claimed as recovered private fields. Complete original 110/110 nonreloc bytes and 8/8 physical authentic COFF references/symbols/original destinations match; six affected-only cold units replayed 6/6 exact in one object. Borrowed texture/base callee code not credited; private original class identities and unknown fields unproved, no fake padding/locals, machine byte graft, ASM, relocation masking, cropped native body, all-unit replay or external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x0043A1E0",
+        "origin": "authored",
+        "subsystem": "TitleScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R062"
       }
     }
   ],
@@ -203233,6 +203497,402 @@
           "target": 0
         }
       ]
+    },
+    "opening-scene-release-resource-004276b0": {
+      "source": "src/SceneResourceDestructorsF474.cpp",
+      "object": "build/matching/SceneResourceDestructorsF474.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "OpeningScene::ReleaseResourcesAt004276B0"
+      ],
+      "symbol": "??1OpeningSceneReleaseF474@@UAE@XZ",
+      "target_address": 4355760,
+      "size": 127,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??1OpeningSceneReleaseF474@@UAE@XZ",
+          "target": 6641781
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 35,
+          "type": "DIR32",
+          "symbol": "??_7OpeningSceneReleaseF474@@6B@",
+          "target": 6651108
+        },
+        {
+          "offset": 82,
+          "type": "REL32",
+          "symbol": "??_GSceneTextureF474@@QAEPAXI@Z",
+          "target": 4346976
+        },
+        {
+          "offset": 109,
+          "type": "REL32",
+          "symbol": "??1NativeSceneBaseF474@@UAE@XZ",
+          "target": 4398912
+        },
+        {
+          "offset": 119,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "replay-scene-release-resource-0042a2c0": {
+      "source": "src/SceneResourceDestructorsF474.cpp",
+      "object": "build/matching/SceneResourceDestructorsF474.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "ReplayScene::ReleaseResourcesAt0042A2C0"
+      ],
+      "symbol": "??1ReplaySceneReleaseF474@@UAE@XZ",
+      "target_address": 4367040,
+      "size": 127,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??1ReplaySceneReleaseF474@@UAE@XZ",
+          "target": 6641909
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 35,
+          "type": "DIR32",
+          "symbol": "??_7ReplaySceneReleaseF474@@6B@",
+          "target": 6651748
+        },
+        {
+          "offset": 82,
+          "type": "REL32",
+          "symbol": "??_GSceneTextureF474@@QAEPAXI@Z",
+          "target": 4346976
+        },
+        {
+          "offset": 109,
+          "type": "REL32",
+          "symbol": "??1NativeSceneBaseF474@@UAE@XZ",
+          "target": 4398912
+        },
+        {
+          "offset": 119,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "nameentry-scene-release-resource-0042b300": {
+      "source": "src/SceneResourceDestructorsF474.cpp",
+      "object": "build/matching/SceneResourceDestructorsF474.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "NameEntryScene::ReleaseResourcesAt0042B300"
+      ],
+      "symbol": "??1NameEntrySceneReleaseF474@@UAE@XZ",
+      "target_address": 4371200,
+      "size": 127,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??1NameEntrySceneReleaseF474@@UAE@XZ",
+          "target": 6641957
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 35,
+          "type": "DIR32",
+          "symbol": "??_7NameEntrySceneReleaseF474@@6B@",
+          "target": 6651820
+        },
+        {
+          "offset": 82,
+          "type": "REL32",
+          "symbol": "??_GSceneTextureF474@@QAEPAXI@Z",
+          "target": 4346976
+        },
+        {
+          "offset": 109,
+          "type": "REL32",
+          "symbol": "??1NativeSceneBaseF474@@UAE@XZ",
+          "target": 4398912
+        },
+        {
+          "offset": 119,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "result-scene-release-resource-0042e870": {
+      "source": "src/SceneResourceDestructorsF474.cpp",
+      "object": "build/matching/SceneResourceDestructorsF474.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "ResultScene::ReleaseResourcesAt0042E870"
+      ],
+      "symbol": "??1ResultSceneReleaseF474@@UAE@XZ",
+      "target_address": 4384880,
+      "size": 127,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??1ResultSceneReleaseF474@@UAE@XZ",
+          "target": 6642165
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 35,
+          "type": "DIR32",
+          "symbol": "??_7ResultSceneReleaseF474@@6B@",
+          "target": 6651960
+        },
+        {
+          "offset": 82,
+          "type": "REL32",
+          "symbol": "??_GSceneTextureF474@@QAEPAXI@Z",
+          "target": 4346976
+        },
+        {
+          "offset": 109,
+          "type": "REL32",
+          "symbol": "??1NativeSceneBaseF474@@UAE@XZ",
+          "target": 4398912
+        },
+        {
+          "offset": 119,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "staffroll-scene-release-resource-00438ba0": {
+      "source": "src/SceneResourceDestructorsF474.cpp",
+      "object": "build/matching/SceneResourceDestructorsF474.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "StaffRollScene::ReleaseResourcesAt00438BA0"
+      ],
+      "symbol": "??1StaffRollSceneReleaseF474@@UAE@XZ",
+      "target_address": 4426656,
+      "size": 127,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??1StaffRollSceneReleaseF474@@UAE@XZ",
+          "target": 6642437
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 35,
+          "type": "DIR32",
+          "symbol": "??_7StaffRollSceneReleaseF474@@6B@",
+          "target": 6652604
+        },
+        {
+          "offset": 82,
+          "type": "REL32",
+          "symbol": "??_GSceneTextureF474@@QAEPAXI@Z",
+          "target": 4346976
+        },
+        {
+          "offset": 109,
+          "type": "REL32",
+          "symbol": "??1NativeSceneBaseF474@@UAE@XZ",
+          "target": 4398912
+        },
+        {
+          "offset": 119,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "title-scene-release-resource-0043a1e0": {
+      "source": "src/SceneResourceDestructorsF474.cpp",
+      "object": "build/matching/SceneResourceDestructorsF474.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "TitleScene::ReleaseResourcesAt0043A1E0"
+      ],
+      "symbol": "??1TitleSceneReleaseF474@@UAE@XZ",
+      "target_address": 4432352,
+      "size": 142,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??1TitleSceneReleaseF474@@UAE@XZ",
+          "target": 6642485
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 35,
+          "type": "DIR32",
+          "symbol": "??_7TitleSceneReleaseF474@@6B@",
+          "target": 6652680
+        },
+        {
+          "offset": 57,
+          "type": "DIR32",
+          "symbol": "?g_TitleSelectionAt00671630@@3FA",
+          "target": 6755888
+        },
+        {
+          "offset": 97,
+          "type": "REL32",
+          "symbol": "??_GSceneTextureF474@@QAEPAXI@Z",
+          "target": 4346976
+        },
+        {
+          "offset": 124,
+          "type": "REL32",
+          "symbol": "??1NativeSceneBaseF474@@UAE@XZ",
+          "target": 4398912
+        },
+        {
+          "offset": 134,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -203711,6 +204371,7 @@
     "src/BattleEndSceneDrawF465.cpp": "04d39fea6db852972374269c19935221c2623f8ca46145f9cd1c1ea620aa55fe",
     "src/SceneInputPollingFamilyF467.cpp": "3ce1c86284bcde745ee18fea4f93723ebe9982585f15c5883fee9875afeeb2db",
     "src/GameApplicationWindowCallbackF468.cpp": "a7e3d7b7294354fc0a6351c4c552b7773670ad60baaa4e75380c90f6c1af1e04",
-    "src/FighterOwnedObjectFactoriesF469.cpp": "60c98fa7f8dbcc047138e885582acf11c3c973310b25de2b6836faf275002f93"
+    "src/FighterOwnedObjectFactoriesF469.cpp": "60c98fa7f8dbcc047138e885582acf11c3c973310b25de2b6836faf275002f93",
+    "src/SceneResourceDestructorsF474.cpp": "7c8b68ec3f6da9f1c2541ae7989c42d91840a0859d557ade06281c8a6ca69840"
   }
 }

@@ -57288,3 +57288,277 @@ offset = 110
 type = "DIR32"
 symbol = "__except_list"
 target = 0x00000000
+
+[units.opening-scene-release-resource-004276b0]
+source = "src/SceneResourceDestructorsF474.cpp"
+object = "build/matching/SceneResourceDestructorsF474.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["OpeningScene::ReleaseResourcesAt004276B0"]
+symbol = "??1OpeningSceneReleaseF474@@UAE@XZ"
+target_address = 0x004276B0
+size = 127
+[[units.opening-scene-release-resource-004276b0.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??1OpeningSceneReleaseF474@@UAE@XZ"
+target = 0x00655875
+[[units.opening-scene-release-resource-004276b0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.opening-scene-release-resource-004276b0.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.opening-scene-release-resource-004276b0.relocations]]
+offset = 35
+type = "DIR32"
+symbol = "??_7OpeningSceneReleaseF474@@6B@"
+target = 0x00657CE4
+[[units.opening-scene-release-resource-004276b0.relocations]]
+offset = 82
+type = "REL32"
+symbol = "??_GSceneTextureF474@@QAEPAXI@Z"
+target = 0x00425460
+[[units.opening-scene-release-resource-004276b0.relocations]]
+offset = 109
+type = "REL32"
+symbol = "??1NativeSceneBaseF474@@UAE@XZ"
+target = 0x00431F40
+[[units.opening-scene-release-resource-004276b0.relocations]]
+offset = 119
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.replay-scene-release-resource-0042a2c0]
+source = "src/SceneResourceDestructorsF474.cpp"
+object = "build/matching/SceneResourceDestructorsF474.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["ReplayScene::ReleaseResourcesAt0042A2C0"]
+symbol = "??1ReplaySceneReleaseF474@@UAE@XZ"
+target_address = 0x0042A2C0
+size = 127
+[[units.replay-scene-release-resource-0042a2c0.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??1ReplaySceneReleaseF474@@UAE@XZ"
+target = 0x006558F5
+[[units.replay-scene-release-resource-0042a2c0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.replay-scene-release-resource-0042a2c0.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.replay-scene-release-resource-0042a2c0.relocations]]
+offset = 35
+type = "DIR32"
+symbol = "??_7ReplaySceneReleaseF474@@6B@"
+target = 0x00657F64
+[[units.replay-scene-release-resource-0042a2c0.relocations]]
+offset = 82
+type = "REL32"
+symbol = "??_GSceneTextureF474@@QAEPAXI@Z"
+target = 0x00425460
+[[units.replay-scene-release-resource-0042a2c0.relocations]]
+offset = 109
+type = "REL32"
+symbol = "??1NativeSceneBaseF474@@UAE@XZ"
+target = 0x00431F40
+[[units.replay-scene-release-resource-0042a2c0.relocations]]
+offset = 119
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.nameentry-scene-release-resource-0042b300]
+source = "src/SceneResourceDestructorsF474.cpp"
+object = "build/matching/SceneResourceDestructorsF474.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["NameEntryScene::ReleaseResourcesAt0042B300"]
+symbol = "??1NameEntrySceneReleaseF474@@UAE@XZ"
+target_address = 0x0042B300
+size = 127
+[[units.nameentry-scene-release-resource-0042b300.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??1NameEntrySceneReleaseF474@@UAE@XZ"
+target = 0x00655925
+[[units.nameentry-scene-release-resource-0042b300.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.nameentry-scene-release-resource-0042b300.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.nameentry-scene-release-resource-0042b300.relocations]]
+offset = 35
+type = "DIR32"
+symbol = "??_7NameEntrySceneReleaseF474@@6B@"
+target = 0x00657FAC
+[[units.nameentry-scene-release-resource-0042b300.relocations]]
+offset = 82
+type = "REL32"
+symbol = "??_GSceneTextureF474@@QAEPAXI@Z"
+target = 0x00425460
+[[units.nameentry-scene-release-resource-0042b300.relocations]]
+offset = 109
+type = "REL32"
+symbol = "??1NativeSceneBaseF474@@UAE@XZ"
+target = 0x00431F40
+[[units.nameentry-scene-release-resource-0042b300.relocations]]
+offset = 119
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.result-scene-release-resource-0042e870]
+source = "src/SceneResourceDestructorsF474.cpp"
+object = "build/matching/SceneResourceDestructorsF474.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["ResultScene::ReleaseResourcesAt0042E870"]
+symbol = "??1ResultSceneReleaseF474@@UAE@XZ"
+target_address = 0x0042E870
+size = 127
+[[units.result-scene-release-resource-0042e870.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??1ResultSceneReleaseF474@@UAE@XZ"
+target = 0x006559F5
+[[units.result-scene-release-resource-0042e870.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.result-scene-release-resource-0042e870.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.result-scene-release-resource-0042e870.relocations]]
+offset = 35
+type = "DIR32"
+symbol = "??_7ResultSceneReleaseF474@@6B@"
+target = 0x00658038
+[[units.result-scene-release-resource-0042e870.relocations]]
+offset = 82
+type = "REL32"
+symbol = "??_GSceneTextureF474@@QAEPAXI@Z"
+target = 0x00425460
+[[units.result-scene-release-resource-0042e870.relocations]]
+offset = 109
+type = "REL32"
+symbol = "??1NativeSceneBaseF474@@UAE@XZ"
+target = 0x00431F40
+[[units.result-scene-release-resource-0042e870.relocations]]
+offset = 119
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.staffroll-scene-release-resource-00438ba0]
+source = "src/SceneResourceDestructorsF474.cpp"
+object = "build/matching/SceneResourceDestructorsF474.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["StaffRollScene::ReleaseResourcesAt00438BA0"]
+symbol = "??1StaffRollSceneReleaseF474@@UAE@XZ"
+target_address = 0x00438BA0
+size = 127
+[[units.staffroll-scene-release-resource-00438ba0.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??1StaffRollSceneReleaseF474@@UAE@XZ"
+target = 0x00655B05
+[[units.staffroll-scene-release-resource-00438ba0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.staffroll-scene-release-resource-00438ba0.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.staffroll-scene-release-resource-00438ba0.relocations]]
+offset = 35
+type = "DIR32"
+symbol = "??_7StaffRollSceneReleaseF474@@6B@"
+target = 0x006582BC
+[[units.staffroll-scene-release-resource-00438ba0.relocations]]
+offset = 82
+type = "REL32"
+symbol = "??_GSceneTextureF474@@QAEPAXI@Z"
+target = 0x00425460
+[[units.staffroll-scene-release-resource-00438ba0.relocations]]
+offset = 109
+type = "REL32"
+symbol = "??1NativeSceneBaseF474@@UAE@XZ"
+target = 0x00431F40
+[[units.staffroll-scene-release-resource-00438ba0.relocations]]
+offset = 119
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.title-scene-release-resource-0043a1e0]
+source = "src/SceneResourceDestructorsF474.cpp"
+object = "build/matching/SceneResourceDestructorsF474.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["TitleScene::ReleaseResourcesAt0043A1E0"]
+symbol = "??1TitleSceneReleaseF474@@UAE@XZ"
+target_address = 0x0043A1E0
+size = 142
+[[units.title-scene-release-resource-0043a1e0.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??1TitleSceneReleaseF474@@UAE@XZ"
+target = 0x00655B35
+[[units.title-scene-release-resource-0043a1e0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.title-scene-release-resource-0043a1e0.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.title-scene-release-resource-0043a1e0.relocations]]
+offset = 35
+type = "DIR32"
+symbol = "??_7TitleSceneReleaseF474@@6B@"
+target = 0x00658308
+[[units.title-scene-release-resource-0043a1e0.relocations]]
+offset = 57
+type = "DIR32"
+symbol = "?g_TitleSelectionAt00671630@@3FA"
+target = 0x00671630
+[[units.title-scene-release-resource-0043a1e0.relocations]]
+offset = 97
+type = "REL32"
+symbol = "??_GSceneTextureF474@@QAEPAXI@Z"
+target = 0x00425460
+[[units.title-scene-release-resource-0043a1e0.relocations]]
+offset = 124
+type = "REL32"
+symbol = "??1NativeSceneBaseF474@@UAE@XZ"
+target = 0x00431F40
+[[units.title-scene-release-resource-0043a1e0.relocations]]
+offset = 134
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
