@@ -703,3 +703,4 @@ address,name,module,confidence,evidence
 0x00455610,CharacterAI::ChooseIntegerRangeAt00455610,CharacterAI,inferred,"F393; independent 44-byte signed range-first random helper, one native rand REL32 and full 40 nonfield bytes cold exact, borrowed receiver ABI"
 0x00416CE0,GameProgress::SetUnlockBitAt00416CE0,GameProgress,inferred,"F394; independent original complete 108-byte native signed progress bitset set, no external COFF refs, local cold exact; borrowed private owner"
 0x00416DC0,GameProgress::TestUnlockBitAt00416DC0,GameProgress,inferred,"F394; independent original complete 93-byte native signed progress bitset test, no external COFF refs, local cold exact; borrowed private owner"
+0x005F7D00,AuxEffectManager::DispatchSelectedListAt005F7D00,AuxEffectManager,inferred,"F395; complete R109 original 114-byte selected side auxiliary iterator dispatch, 5 real COFF call fields and virtual child dispatch cold exact"

@@ -53204,3 +53204,38 @@ symbol = "?TestUnlockBit@GameProgressF394@@QAEEF@Z"
 target_address = 0x00416DC0
 size = 93
 relocations = []
+
+
+[units.aux-effect-dispatch-selected-list-005f7d00]
+source = "src/AuxEffectSelectedDispatchF395.cpp"
+object = "build/matching/AuxEffectSelectedDispatchF395.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["AuxEffectManager::DispatchSelectedListAt005F7D00"]
+symbol = "?DispatchSelectedList@AuxEffectManagerF395@@QAEXC@Z"
+target_address = 0x005F7D00
+size = 114
+[[units.aux-effect-dispatch-selected-list-005f7d00.relocations]]
+offset = 24
+type = "REL32"
+symbol = "?Begin@EffectListF395@@QAE?AVEffectIteratorF395@@XZ"
+target = 0x005F80B0
+[[units.aux-effect-dispatch-selected-list-005f7d00.relocations]]
+offset = 43
+type = "REL32"
+symbol = "?End@EffectListF395@@QAE?AVEffectIteratorF395@@XZ"
+target = 0x005F80E0
+[[units.aux-effect-dispatch-selected-list-005f7d00.relocations]]
+offset = 59
+type = "REL32"
+symbol = "??EEffectIteratorF395@@QAE?AV0@H@Z"
+target = 0x005F8420
+[[units.aux-effect-dispatch-selected-list-005f7d00.relocations]]
+offset = 71
+type = "REL32"
+symbol = "??9EffectIteratorF395@@QBE_NABV0@@Z"
+target = 0x005F8460
+[[units.aux-effect-dispatch-selected-list-005f7d00.relocations]]
+offset = 86
+type = "REL32"
+symbol = "??DEffectIteratorF395@@QBEAAPAVEffectChildF395@@XZ"
+target = 0x005F8400

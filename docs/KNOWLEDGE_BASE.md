@@ -6069,3 +6069,40 @@ fields and corresponding frozen checkpoint SHA were repaired. Affected-only
 **2/2 exact across one object**, crediting **201 distinct original authored
 CODE bytes**. No extra runtime/helper bytes, duplicate F397 credit, fake
 local, assembly, cropped compare, full cold replay or external Oracle claim.
+
+
+## F395: complete original selected auxiliary effect dispatcher, genuine 8-byte iterator and for loop
+
+The R109-authored `AuxEffectManager::DispatchSelectedListAt005F7D00` is
+**114 full original CODE bytes**, **41 native x86 instructions** ending in
+its actual `RET 4`, PE SHA256
+`77905fa4b9e3546107eeb0869d37a743fb08186907ad5ed134e7ccb84cd7ff1b`.
+Its signed-char side selector chooses one of the authentic per-side linked
+effect lists at owner `this + side*20`, borrowing the original physical
+20-byte list ABI. The body constructs **two genuine 8-byte iterator
+values** via native Begin at `005F80B0` and End at `005F80E0` (original
+caller-side hidden-sret return slots). The actual control is a *for loop*:
+first it jumps to the original comparator, then calls postfix increment
+`005F8420` with real 8-byte returned temporary; `operator!=` at `005F8460`
+compares to end and `operator*` at `005F8400` returns actual child address,
+which is immediately dispatched via the real child vtable method offset +8.
+The game-created child object, its private member layout, and the actual
+list/iterator class implementation are only borrowed interfaces, never
+constructed or credited here.
+
+First semantic source `while(current!=end) { Child* p=*current;
+p->Dispatch(); current++; }` generated 112 instead of 114 bytes and used
+the wrong EBP slots: `while` starts by comparing and storing the child
+in a named local before incrementing. Re-expressing the genuine original
+control as `for(;current!=end;current++) { (*current)->Dispatch(); }`
+reproduced the complete original 114-byte frame/CFG and the actual
+borrowed child's temporary stack position *without fake locals*.
+It matched **94/94 nonrelocation bytes** and all **5/5 original physical
+COFF REL32 references and solved native destinations** (Begin, End,
+postfix++, operator!=, dereference). The original virtual child call
+remains naturally indirect at vtable +8. The sole affected unit
+`aux-effect-dispatch-selected-list-005f7d00` cold replayed with pinned
+VC7.1 `/Od /Ob0 /Gy /GR- /GX- /Zi`, **1/1 exact**, crediting just the
+114 authored game CODE bytes. No hidden callee credit, forged ABI, asm,
+byte grafts, fake padding, truncated body, all-unit cold replay or remote
+Oracle receipt.

@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377; F378; F379; F386; F389; F391; F392; F393; F394",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377; F378; F379; F386; F389; F391; F392; F393; F394; F395",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "ae3d4870722a1fb2f85f67bca82189875b31701ced0366c85e82389b7ef57d34"
+      "current_sha256": "7720a2c3866f50ca61933ac44ab783acf97b99be2ac321ddd320e1cf65d633dc"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "886b800fd88beb0adf4c8b0578d214aaf3970715f2baf3af732ebbcb87eacae6"
+      "current_sha256": "f5cdfe643ca1999258baaa4280cb2e49851b4a77de05087b60c8aff8e0a2bc04"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "fbf777709a3fbdaf6b2decb3efb0051d87f8145b0b90551e6a6840d5d1960012"
+      "current_sha256": "ba5a3c64a238695db356909472933bc4382a13f72b3b912834bf938a564f7f36"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "7c5d05896c9097119f884ac913789eb2d71b95be780b72c8f7302cb3b1b8fce0"
+      "current_sha256": "06dfba41d98089e91b4d2d85f504f9b43436fefbe747af2bf35e6ee9d93b3f7b"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "24c0433e8f22e9c68a61615ee8496167ee0c73f674ad9800e30774720612543f"
+      "current_sha256": "01cd0d323147a85c5ed55d8ff96de105db6ae623921c66d6ca48a1db75a10bf4"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -29168,6 +29168,50 @@
         "disposition": "authored",
         "confidence": "complete-game-policy-with-batch-context",
         "evidence_id": "R103"
+      }
+    },
+    {
+      "before": {
+        "address": "0x005F7D00",
+        "size": "114",
+        "span_end": "0x005F7D71",
+        "current_name": "FUN_005f7d00",
+        "proposed_name": "AuxEffectManager::DispatchSelectedListAt005F7D00",
+        "module": "AuxEffectManager",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R109; scripts/repo-python scripts/verify-game-context-origins.py",
+        "owner": "authored",
+        "notes": "Complete explicit game policy, frozen mixed-origin callees and independent game parent/virtual context; names/layouts inferred; origin only, no source or exact credit"
+      },
+      "after": {
+        "address": "0x005F7D00",
+        "size": "114",
+        "span_end": "0x005F7D71",
+        "current_name": "FUN_005f7d00",
+        "proposed_name": "AuxEffectManager::DispatchSelectedListAt005F7D00",
+        "module": "AuxEffectManager",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void AuxEffectManagerF395::DispatchSelectedList(signed char)",
+        "is_thunk": "false",
+        "source_file": "src/AuxEffectSelectedDispatchF395.cpp",
+        "evidence": "R109; scripts/repo-python scripts/verify-game-context-origins.py; F395; scripts/repo-python scripts/replay-exact-units.py --unit aux-effect-dispatch-selected-list-005f7d00",
+        "owner": "authored",
+        "notes": "Complete explicit game policy, frozen mixed-origin callees and independent game parent/virtual context; names/layouts inferred; origin only, no source or exact credit; F395 independently original R109 114-byte game-specific selected side effect-list dispatch at 005F7D00..005F7D71, PE SHA256 77905fa4b9e3546107eeb0869d37a743fb08186907ad5ed134e7ccb84cd7ff1b, native 41 x86 instructions and true short-param RET4. Borrows 20-byte selected side list and actual 8-byte iterator; natural C++ `for(;current!=end;current++) (*current)->Dispatch()` calls true Begin 005F80B0, End 005F80E0, postfix++ 005F8420, != 005F8460, dereference 005F8400 with original 8-byte hidden return object, and actual virtual child dispatch at vtable+8. Earlier while+named child local creates 112-byte wrong CFG and physically wrong EBP slots; for-loop direct virtual call natural original produces 114 full original bytes, 94/94 native nonfield bytes and all 5 actual native COFF relocation fields and destinations. Single affected unit cold 1/1 exact; complete owner/iterator class layouts not asserted, no compiler/list callees credited, no ASM/byte patch/cropped body/fake locals/full replay/Oracle receipt."
+      },
+      "origin": {
+        "address": "0x005F7D00",
+        "origin": "authored",
+        "subsystem": "AuxEffectManager",
+        "disposition": "authored",
+        "confidence": "complete-game-policy-with-mixed-context",
+        "evidence_id": "R109"
       }
     }
   ],
@@ -195447,6 +195491,59 @@
       "target_address": 4287936,
       "size": 93,
       "relocations": []
+    },
+    "aux-effect-dispatch-selected-list-005f7d00": {
+      "source": "src/AuxEffectSelectedDispatchF395.cpp",
+      "object": "build/matching/AuxEffectSelectedDispatchF395.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "AuxEffectManager::DispatchSelectedListAt005F7D00"
+      ],
+      "symbol": "?DispatchSelectedList@AuxEffectManagerF395@@QAEXC@Z",
+      "target_address": 6257920,
+      "size": 114,
+      "relocations": [
+        {
+          "offset": 24,
+          "type": "REL32",
+          "symbol": "?Begin@EffectListF395@@QAE?AVEffectIteratorF395@@XZ",
+          "target": 6258864
+        },
+        {
+          "offset": 43,
+          "type": "REL32",
+          "symbol": "?End@EffectListF395@@QAE?AVEffectIteratorF395@@XZ",
+          "target": 6258912
+        },
+        {
+          "offset": 59,
+          "type": "REL32",
+          "symbol": "??EEffectIteratorF395@@QAE?AV0@H@Z",
+          "target": 6259744
+        },
+        {
+          "offset": 71,
+          "type": "REL32",
+          "symbol": "??9EffectIteratorF395@@QBE_NABV0@@Z",
+          "target": 6259808
+        },
+        {
+          "offset": 86,
+          "type": "REL32",
+          "symbol": "??DEffectIteratorF395@@QBEAAPAVEffectChildF395@@XZ",
+          "target": 6259712
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -195894,6 +195991,7 @@
     "src/AliceSpecialStateF391.cpp": "bcbb7650d3335fe2914937e906a1e94103a06c73cf1c33c816fb65df64f0d1ad",
     "src/ArchiveBeginUseF392.cpp": "57008bedfd1db06aa8ed94789ea712e2184f9146c855b80a2b08d7e6f48ea69e",
     "src/CharacterIntegerRandomRangesF393.cpp": "b5e901d91ceef1b05ca61f168d782a95ee0610d3ab18271b9659660a3e9b3b8e",
-    "src/GameProgressUnlockBitsF394.cpp": "ac30c27c93c77225a9389bd4a86655ff24187eaf26d65b9e818bc1509b95daa3"
+    "src/GameProgressUnlockBitsF394.cpp": "ac30c27c93c77225a9389bd4a86655ff24187eaf26d65b9e818bc1509b95daa3",
+    "src/AuxEffectSelectedDispatchF395.cpp": "0cbd2ae1f2c059f545dd09db30e6580321fe0f50a6c4233dacde2a9b2fac72fe"
   }
 }

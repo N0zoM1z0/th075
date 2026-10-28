@@ -1,6 +1,6 @@
 # TH075 — current reconstruction handoff
 
-**Maintained: 2026-10-28, after F394.** Read this document, then check the **live repository**. The current user explicitly wants both large/core bosses and small leaves tackled seriously, tangible progress committed immediately with subject `gpt-web: ...`, and **only changed/new units cold-replayed**. The user reports no other sessions: inspect and finish all dirty work; never skip, reset, overwrite or silently discard it.
+**Maintained: 2026-10-28, after F395.** Read this document, then check the **live repository**. The current user explicitly wants both large/core bosses and small leaves tackled seriously, tangible progress committed immediately with subject `gpt-web: ...`, and **only changed/new units cold-replayed**. The user reports no other sessions: inspect and finish all dirty work; never skip, reset, overwrite or silently discard it.
 
 ## 1. Trusted state and first commands
 
@@ -8,11 +8,11 @@ Canonical evidence is the pinned original PE, `config/function-origins.csv`, `co
 
 | Item | Verified snapshot |
 | --- | --- |
-| Git | `main`; pre-F394 reconstruction commit **`5695e62`** (F393), preceded by `09f4949` (F391/F392), `6d5e37f` (F389); F394 commit follows this update |
+| Git | `main`; pre-F395 reconstruction commit **`1dc4fc8`** (F394), preceded by `5695e62` (F393), `09f4949` (F391/F392); F395 commit follows this update |
 | Pinned target | user-supplied Japanese `resources/th075.exe` v1.11; SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`; **never** `th075c.exe` |
-| Exact and source-present | **722 functions / 722 exact units** |
-| Accepted authored CODE | **841,942 bytes / 1,973,516 reviewed bytes = 42.66%** |
-| Conservative | **42.58%**, including 3,608 bytes with unresolved origin |
+| Exact and source-present | **723 functions / 723 exact units** |
+| Accepted authored CODE | **842,056 bytes / 1,973,516 reviewed bytes = 42.67%** |
+| Conservative | **42.59%**, including 3,608 bytes with unresolved origin |
 | Origin review | 1,002 authored, 2,671 library, 581 compiler, **97 pending** across 4,351 provisional candidates |
 | Goal | **98% not reached**; Git and local cold results are not external Oracle receipts |
 
@@ -29,7 +29,7 @@ If **any** dirty source, unit, or manifest is present, first inspect its exact e
 
 ## 2. Newly closed chains — **not** the backlog
 
-The full register of **all 722** accepted functions is in `config/functions.csv` and `config/match-units.toml`; this table intentionally highlights only the newest, important independent CODE extents. No called function, imported CRT/Win32 code, or owned jump-table bytes are counted twice.
+The full register of **all 723** accepted functions is in `config/functions.csv` and `config/match-units.toml`; this table intentionally highlights only the newest, important independent CODE extents. No called function, imported CRT/Win32 code, or owned jump-table bytes are counted twice.
 
 | Unit / accepted address | Whole CODE | Authentic fields | Evidence |
 | --- | ---: | ---: | --- |
@@ -70,6 +70,7 @@ The full register of **all 722** accepted functions is in `config/functions.csv`
 | F392 `ArchiveCatalog::BeginUseAt0041CE10` `0041CE10` | **56** | **7** | `src/ArchiveBeginUseF392.cpp`, `.analysis/f392-archive-begin/` |
 | F393 `CharacterAuxObject / CharacterAI::ChooseIntegerRange` `00410F00` / `00455610` | **44 × 2** | **1 × 2** | `src/CharacterIntegerRandomRangesF393.cpp`, `.analysis/f393-choose-range/` |
 | F394 `GameProgress::SetUnlockBit` / `TestUnlockBit` `00416CE0` / `00416DC0` | **108 + 93** | **0 + 0** | `src/GameProgressUnlockBitsF394.cpp`, `.analysis/f396-progress-return-shape/` |
+| F395 `AuxEffectManager::DispatchSelectedListAt005F7D00` `005F7D00` | **114** | **5** | `src/AuxEffectSelectedDispatchF395.cpp`, `.analysis/f395-aux-dispatch/` |
 
 **F340:** the companion archive entry seek at `0041D750` is independently cold exact for its whole 164-byte function including every one of its nine external references. It uses genuine iterator and `strcmp` semantics, returns the archive handle after `SetFilePointer` or `INVALID_HANDLE_VALUE` if not found. The original private archive list remains borrowed, not instantiated.
 
@@ -130,6 +131,8 @@ The full register of **all 722** accepted functions is in `config/functions.csv`
 **F393:** the two independently R-authored 44-byte signed random-range helpers at `00410F00` and `00455610` are cold exact, **40/40 original nonfield bytes and one original CRT rand COFF reference each**. Genuine expression order is `(maximum-minimum)*rand()/32768 + minimum`: the original VC7.1 preserves the signed range in ESI across the random call and performs native signed rounding before `sar 15`; a semantically equivalent rand-first formula compiles only 42 bytes. Both full 44-byte original functions were independently cold replayed **2/2 exact across one object**, no CRT/helper/AI owner code double-counted.
 
 **F394:** independently target-reviewed full `GameProgress` bitset operations at `00416CE0` (**108 CODE bytes, 39 native x86 instructions**) and `00416DC0` (**93 CODE bytes, 35 native instructions**) are now affected-only **2/2 cold exact**. The true signed 16-bit 0..320 selector bounds and signed C++ division/remainder by 32 preserve the original x86 `CDQ/AND/SAR` and modulo correction. Source `SetUnlockBit` uses original empty invalid-index branch; `TestUnlockBit` returns original narrowed unsigned result from a *32-bit unsigned compare*, emitted by VC7.1 as `XOR; CMP; SBB; NEG`, not a simple `setne`. The latter required explicit scalar conversion `(int)(0u < mask)` in the already-adopted F394 source; independently proven `?1:0` is equivalent and preserved in `.analysis/f397-progress-bits-exact/`. Both native bodies have **zero original COFF relocations**; `relocations = []` is deliberately explicit in the manifest, and all **108/108 plus 93/93 code bytes** match. The previously dirty existing F394 source, tracking and freeze manifest were inspected and completed, not discarded or replaced by duplicated F397 credit.
+
+**F395:** the R109-authored 114-byte selected auxiliary effect-list dispatch at `005F7D00` is now complete cold exact. The original list uses a true signed-char side index times 20, real 8-byte Begin/End iterator, genuine postfix++/`!=`/dereference methods and virtual child dispatch at original vtable +8. A natural `while` plus named child temporary compiled 112 nonexact bytes; expressing the real `for` loop with *direct* `(*iterator)->Dispatch()` generated **114/114 full original bytes**, **94/94 nonfield bytes** and **5/5 genuine original COFF refs**, cold replay **1/1 exact**. This matches only original caller CODE, not borrowed container, child, or compiler-origin callee implementations.
 
 **Corrections to old notes:** The 686-byte writer and 429-byte reader are both **exact** (F339/F338), not pending F249/F250. The full 1,252-byte replay writer and 375-byte finalizer are both **exact** (F326/F328), not pending F219/F218/F289. The 1,766-byte font rasterizer is **exact** (F319), not pending F299/F302. The 301-byte glyph loader is **exact** (F318), not pending F291. The 916-byte MusicRoom catalog + separately compared 16-byte jump table is **exact in F258** (916 CODE credit only). Other accepted 1,000+ byte bosses include F271 projected quad (1,185), F278 pattern chooser (1,264), F282 resource loader (1,186), F292 overlay text box (1,385), F294 effects catalog (1,722), and F244 scene advance (1,529 CODE). Earlier failures remain useful *historical controls*, but must never be presented as current unaccepted work.
 
