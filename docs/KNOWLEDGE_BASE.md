@@ -5780,3 +5780,51 @@ Only affected unit `character-aux-queue-and-mode-effects-005301b0` was
 independently cold replayed, **1/1 exact**. This credits no queue/effect
 callee bytes, no unknown class layout, cropped body, fake locals/ASM,
 byte masks, full cold replay or external Oracle verification.
+
+
+## F379: complete 855-byte native character projectile lifecycle boss at 004F4170
+
+The original R067-authored `CharacterProjectile::AdvanceAt004F4170`
+is **855 complete native CODE bytes**, **243 original x86 instructions** at
+`004F4170..004F44C6`, original PE SHA256
+`6363210641192f26be157df6d995a88ed84882943871dca37ca72a45f56b2e3c`.
+It owns a complete game-specific projectile state machine, not an animation
+leaf: if its own +0x7C state is 5, it invokes native `0045B830` destroy;
+otherwise it tests its parent fighter at +0xE4 action range 50..149 and
+its own +0x62 motion mode, invokes the original destruction followed by a
+one-iteration projectile 996 spawn via parent `00453A70`, and optionally
+clears the parent +0xEFA timer and launches projectile 995. Outside that
+branch it converts two observed float positions at +0xC8 and +0xCC to
+signed shorts +0xDA/+0xDC using authentic `__ftol2` at `006406AC`,
+calls original interaction `0040FBB0`, resets action state, sets true
+polar velocity via original `0040FB70` with the native ratio constant,
+resets scale/color fields, and computes native angle through `00483300`
+with original radian divisor at `00657828`. Other modes either cancel
+motion via `0040FB40` or advance physical X/Y with original signed facing
+and apply stage-specific float scale decay. Bounds at native constants
+`00659424`, `006595EC` and `006583B4` and original collision query
+`0040FA30` govern destruction. Private parent/projectile layouts and
+original C++ method names are borrowed, not asserted.
+
+A first whole natural C++ source emitted 873 bytes, because two native
+projectile-owner calls and an angle calculation physically push the
+**unchanged 32-bit float bit patterns** through the borrowed caller ABI.
+Declaring these parameters as float made VC7.1 generate extraneous x87
+FLD/FSTP sequences. Correct caller-side raw-DWORD arguments and direct
+original +0x1C->+0x20 bitwise scale copy restored the original full
+**855-byte** extent. The last six nonrelocation byte differences at the
+original Y motion calculation came solely from compiler register lowering:
+the source form `FLOAT(0x48)=FLOAT(0x48)-FLOAT(0x54)` loads a pointer
+after FLD, while the native original first loads **both** EDX/EAX actor
+addresses and then does FLD/FSUB. Using one genuine unparenthesized
+`*reinterpret_cast<float*>(RAW+0x48)` lvalue expression (the exact same
+meaning without wrapper macro parentheses) reproduced the native evaluation
+order, yielding all **767/767** comparable bytes plus every one of the
+**22** real COFF DIR32/REL32 references and original solved destinations,
+including lifetime, motion, collision, CRT and parent-spawn calls. The
+whole natural source `src/CharacterProjectileAdvanceF379.cpp` under pinned
+VC7.1 `/Od /Ob0 /Gy /GR- /GX- /Zi` cold replayed only affected
+`character-projectile-advance-004f4170`, **1/1 exact**. No owner class
+construction, external callee credit, unused fabricated locals, masks,
+assembly, pasted native code, cropped function, whole cold replay or
+remote Oracle certification.

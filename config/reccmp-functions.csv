@@ -712,3 +712,4 @@ BackgroundStage::LoadBG08x,0x00451130,function
 BackgroundStage::LoadBG09a,0x00451370,function
 BackgroundStage::LoadBG09x,0x00451C70,function
 CharacterAux::RunAt005301B0,0x005301B0,function
+CharacterProjectile::AdvanceAt004F4170,0x004F4170,function

@@ -51480,3 +51480,123 @@ offset = 929
 type = "DIR32"
 symbol = "__real@c3a00000"
 target = 0x00657880
+
+
+[units.character-projectile-advance-004f4170]
+source = "src/CharacterProjectileAdvanceF379.cpp"
+object = "build/matching/CharacterProjectileAdvanceF379.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["CharacterProjectile::AdvanceAt004F4170"]
+symbol = "?Advance@CharacterProjectileF379@@QAEXXZ"
+target_address = 0x004F4170
+size = 855
+[[units.character-projectile-advance-004f4170.relocations]]
+offset = 22
+type = "REL32"
+symbol = "?Destroy@CharacterProjectileF379@@QAEXXZ"
+target = 0x0045B830
+[[units.character-projectile-advance-004f4170.relocations]]
+offset = 97
+type = "REL32"
+symbol = "?Destroy@CharacterProjectileF379@@QAEXXZ"
+target = 0x0045B830
+[[units.character-projectile-advance-004f4170.relocations]]
+offset = 158
+type = "REL32"
+symbol = "?SpawnProjectile@CharacterFighterF379@@QAEXHIIEH@Z"
+target = 0x00453A70
+[[units.character-projectile-advance-004f4170.relocations]]
+offset = 236
+type = "REL32"
+symbol = "?SpawnProjectile@CharacterFighterF379@@QAEXHIIEH@Z"
+target = 0x00453A70
+[[units.character-projectile-advance-004f4170.relocations]]
+offset = 285
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.character-projectile-advance-004f4170.relocations]]
+offset = 309
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.character-projectile-advance-004f4170.relocations]]
+offset = 333
+type = "REL32"
+symbol = "?TriggerInteraction@CharacterProjectileF379@@QAEXHHH@Z"
+target = 0x0040FBB0
+[[units.character-projectile-advance-004f4170.relocations]]
+offset = 377
+type = "DIR32"
+symbol = "?g_PolarScaleAt00658044@@3MB"
+target = 0x00658044
+[[units.character-projectile-advance-004f4170.relocations]]
+offset = 409
+type = "REL32"
+symbol = "?SetPolarVelocity@CharacterProjectileF379@@QAEXMM@Z"
+target = 0x0040FB70
+[[units.character-projectile-advance-004f4170.relocations]]
+offset = 476
+type = "REL32"
+symbol = "?AngleAt00483300@@YAMII@Z"
+target = 0x00483300
+[[units.character-projectile-advance-004f4170.relocations]]
+offset = 485
+type = "DIR32"
+symbol = "?g_AngleUnitAt00657828@@3MB"
+target = 0x00657828
+[[units.character-projectile-advance-004f4170.relocations]]
+offset = 549
+type = "REL32"
+symbol = "?SetMode@CharacterProjectileF379@@QAEXH@Z"
+target = 0x0040FB40
+[[units.character-projectile-advance-004f4170.relocations]]
+offset = 608
+type = "DIR32"
+symbol = "?g_PolarScaleAt00658044@@3MB"
+target = 0x00658044
+[[units.character-projectile-advance-004f4170.relocations]]
+offset = 640
+type = "REL32"
+symbol = "?SetPolarVelocity@CharacterProjectileF379@@QAEXMM@Z"
+target = 0x0040FB70
+[[units.character-projectile-advance-004f4170.relocations]]
+offset = 713
+type = "DIR32"
+symbol = "?g_ProjectScaleF379At00659454@@3MB"
+target = 0x00659454
+[[units.character-projectile-advance-004f4170.relocations]]
+offset = 743
+type = "DIR32"
+symbol = "?g_ProjectMaxXAt00659424@@3MB"
+target = 0x00659424
+[[units.character-projectile-advance-004f4170.relocations]]
+offset = 762
+type = "DIR32"
+symbol = "?g_ProjectMinXAt006595EC@@3MB"
+target = 0x006595EC
+[[units.character-projectile-advance-004f4170.relocations]]
+offset = 781
+type = "DIR32"
+symbol = "?g_ProjectMaxYAt006583B4@@3MB"
+target = 0x006583B4
+[[units.character-projectile-advance-004f4170.relocations]]
+offset = 800
+type = "DIR32"
+symbol = "?g_ProjectMinXAt006595EC@@3MB"
+target = 0x006595EC
+[[units.character-projectile-advance-004f4170.relocations]]
+offset = 815
+type = "REL32"
+symbol = "?Destroy@CharacterProjectileF379@@QAEXXZ"
+target = 0x0045B830
+[[units.character-projectile-advance-004f4170.relocations]]
+offset = 825
+type = "REL32"
+symbol = "?CheckCollision@CharacterProjectileF379@@QAEFXZ"
+target = 0x0040FA30
+[[units.character-projectile-advance-004f4170.relocations]]
+offset = 847
+type = "REL32"
+symbol = "?Destroy@CharacterProjectileF379@@QAEXXZ"
+target = 0x0045B830
