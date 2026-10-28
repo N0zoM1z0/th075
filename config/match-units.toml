@@ -42981,3 +42981,327 @@ offset = 592
 type = "DIR32"
 symbol = "__except_list"
 target = 0x00000000
+
+[units.fighter-state-load-resources-00456b60]
+source = "src/FighterLoadResourcesF282.cpp"
+object = "build/matching/FighterLoadResourcesF282.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["FighterState::LoadResources"]
+symbol = "?LoadResources@FighterLoadF282@@QAEXXZ"
+target_address = 0x00456B60
+size = 1186
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$?LoadResources@FighterLoadF282@@QAEXXZ"
+target = 0x00656155
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 31
+type = "DIR32"
+symbol = "___security_cookie"
+target = 0x0066FE30
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 45
+type = "DIR32"
+symbol = "?g_LogSoundsAt00658E84@@3QBDB"
+target = 0x00658E84
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 50
+type = "REL32"
+symbol = "?Append@FighterLogF282@@YAXPBD@Z"
+target = 0x0041CC50
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 70
+type = "DIR32"
+symbol = "?g_SoundFileFormatAt00658E94@@3QBDB"
+target = 0x00658E94
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 82
+type = "REL32"
+symbol = "_sprintf"
+target = 0x006404F0
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 90
+type = "DIR32"
+symbol = "?g_CharacterMeilingAt00658EA4@@3QBDB"
+target = 0x00658EA4
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 108
+type = "REL32"
+symbol = "_strcmp"
+target = 0x006416B0
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 120
+type = "DIR32"
+symbol = "?g_SoundArchiveMeilingAt00658EAC@@3QBDB"
+target = 0x00658EAC
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 144
+type = "REL32"
+symbol = "?Load@FighterSoundsF282@@QAEXPBD0@Z"
+target = 0x004076A0
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 151
+type = "DIR32"
+symbol = "?g_SoundArchiveDefaultAt00658EB4@@3QBDB"
+target = 0x00658EB4
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 175
+type = "REL32"
+symbol = "?Load@FighterSoundsF282@@QAEXPBD0@Z"
+target = 0x004076A0
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 180
+type = "DIR32"
+symbol = "?g_LogPatternsAt00658EBC@@3QBDB"
+target = 0x00658EBC
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 185
+type = "REL32"
+symbol = "?Append@FighterLogF282@@YAXPBD@Z"
+target = 0x0041CC50
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 199
+type = "REL32"
+symbol = "?LoadPattern@FighterLoadF282@@QAEXXZ"
+target = 0x00457660
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 204
+type = "DIR32"
+symbol = "?g_LogPicturesAt00658ED0@@3QBDB"
+target = 0x00658ED0
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 209
+type = "REL32"
+symbol = "?Append@FighterLogF282@@YAXPBD@Z"
+target = 0x0041CC50
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 219
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 255
+type = "REL32"
+symbol = "??0FighterTextureF282@@QAE@XZ"
+target = 0x0040AD80
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 314
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 350
+type = "REL32"
+symbol = "??0FighterTextureF282@@QAE@XZ"
+target = 0x0040AD80
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 433
+type = "REL32"
+symbol = "?AllocateSlots@FighterTextureF282@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 451
+type = "DIR32"
+symbol = "?g_MainTextureFormatAt00658EE4@@3QBDB"
+target = 0x00658EE4
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 463
+type = "REL32"
+symbol = "_sprintf"
+target = 0x006404F0
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 471
+type = "DIR32"
+symbol = "?g_CharacterAliceAt00658EFC@@3QBDB"
+target = 0x00658EFC
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 489
+type = "REL32"
+symbol = "_strcmp"
+target = 0x006416B0
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 501
+type = "DIR32"
+symbol = "?g_CharacterMeiling2At00658F04@@3QBDB"
+target = 0x00658F04
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 519
+type = "REL32"
+symbol = "_strcmp"
+target = 0x006416B0
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 531
+type = "DIR32"
+symbol = "?g_MainTextureArchiveAltAt00658F0C@@3QBDB"
+target = 0x00658F0C
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 569
+type = "REL32"
+symbol = "?Load@FighterTextureF282@@QAEXPBDH0@Z"
+target = 0x0040BBA0
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 576
+type = "DIR32"
+symbol = "?g_MainTextureArchiveDefaultAt00658F14@@3QBDB"
+target = 0x00658F14
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 614
+type = "REL32"
+symbol = "?Load@FighterTextureF282@@QAEXPBDH0@Z"
+target = 0x0040BBA0
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 645
+type = "REL32"
+symbol = "?AllocateSlots@FighterTextureF282@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 663
+type = "DIR32"
+symbol = "?g_SecondaryTextureFormatAt00658F1C@@3QBDB"
+target = 0x00658F1C
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 675
+type = "REL32"
+symbol = "_sprintf"
+target = 0x006404F0
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 683
+type = "DIR32"
+symbol = "?g_CharacterPatchouliAt00658F34@@3QBDB"
+target = 0x00658F34
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 701
+type = "REL32"
+symbol = "_strcmp"
+target = 0x006416B0
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 717
+type = "DIR32"
+symbol = "?g_CharacterYuyukoAt00658F40@@3QBDB"
+target = 0x00658F40
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 735
+type = "REL32"
+symbol = "_strcmp"
+target = 0x006416B0
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 747
+type = "DIR32"
+symbol = "?g_CharacterRemiliaAt00658F48@@3QBDB"
+target = 0x00658F48
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 764
+type = "REL32"
+symbol = "_strcmp"
+target = 0x006416B0
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 776
+type = "DIR32"
+symbol = "?g_CharacterYukariAt00658F50@@3QBDB"
+target = 0x00658F50
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 794
+type = "REL32"
+symbol = "_strcmp"
+target = 0x006416B0
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 806
+type = "DIR32"
+symbol = "?g_CharacterYoumuAt00658F58@@3QBDB"
+target = 0x00658F58
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 824
+type = "REL32"
+symbol = "_strcmp"
+target = 0x006416B0
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 836
+type = "DIR32"
+symbol = "?g_CharacterMeiling3At00658F60@@3QBDB"
+target = 0x00658F60
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 853
+type = "REL32"
+symbol = "_strcmp"
+target = 0x006416B0
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 865
+type = "DIR32"
+symbol = "?g_SecondaryTextureArchiveAltAt00658F68@@3QBDB"
+target = 0x00658F68
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 889
+type = "REL32"
+symbol = "?LoadDefault@FighterTextureF282@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 896
+type = "DIR32"
+symbol = "?g_SecondaryTextureArchiveDefaultAt00658F70@@3QBDB"
+target = 0x00658F70
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 920
+type = "REL32"
+symbol = "?LoadDefault@FighterTextureF282@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 950
+type = "DIR32"
+symbol = "?g_ScriptFormatAt00658F78@@3QBDB"
+target = 0x00658F78
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 962
+type = "REL32"
+symbol = "_sprintf"
+target = 0x006404F0
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 993
+type = "REL32"
+symbol = "?LoadFile@FighterScriptsF282@@QAEXPBDHH@Z"
+target = 0x004206D0
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 998
+type = "DIR32"
+symbol = "?g_ScriptArchiveAt00658F94@@3QBDB"
+target = 0x00658F94
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 1022
+type = "REL32"
+symbol = "?LoadArchive@FighterScriptsF282@@QAEXPBD0@Z"
+target = 0x004205F0
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 1029
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 1075
+type = "REL32"
+symbol = "??0FighterCommandsF282@@QAE@PAVFighterTextureF282@@@Z"
+target = 0x00410F30
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 1143
+type = "REL32"
+symbol = "?SetNoticeMode@FighterLoadF282@@QAEXH@Z"
+target = 0x0045CD50
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 1170
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.fighter-state-load-resources-00456b60.relocations]]
+offset = 1178
+type = "REL32"
+symbol = "@__security_check_cookie@4"
+target = 0x00640611

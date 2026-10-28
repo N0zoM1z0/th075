@@ -3022,3 +3022,75 @@ credited; nor is the independently unresolved 1,722-byte Effects
 catalogue loader at `005F71F0`. All 97 pending origin-unknown functions
 remain uncredited. No target code graft, manual assembly, cropped
 function, masked relocation, invented branches or remote Oracle acceptance.
+
+
+## F282: cold-exact complete 1,186-byte FighterState::LoadResources boss
+
+Original R045-authored `FighterState::LoadResources` at
+`00456B60..00457001` is **1,186 full native CODE bytes**, 272
+independently decoded x86 instructions with native RET at `00457001`
+and exact original PE-backed SHA256
+`b32d8ac0cfeccf13aeca2a12a628276b5efa4cfae78689ced2b321ed14bc85bb`.
+The true complete game resource initializer is not simply a texture
+leaf. It logs the sound/pattern/picture stages, formats an original
+character-specific sound `.dat` name, dispatches to game sound loader
+`004076A0` on the physically observed sound archive at `this+0x6D0`
+with a Meiling-specific alternative archive, calls the independently
+previously accepted large native `FighterPattern::Load` at `00457660`,
+and EH-allocates two **80-byte native texture managers** at fighter+4
+and fighter+0x534 through original game TextureManager ctor `0040AD80`.
+It supplies the original fighter+0x478 signed slot count, fighter
++0x2CE signed stage page selector, and fighter+0x532 signed count
+through native slot allocator `0040B1D0` and multi-archive image loader
+`0040BBA0`; the primary archive is selected on original Alice/Meiling
+checks. The complete secondary load path tests six real character
+strings in native order (Patchouli, Yuyuko, Remilia, Yukari, Youmu,
+Meiling) and uses `0040BB80` with the original alternative/default
+archive roots. The source then constructs an actual fighter `.sce`
+script resource path, calls native script reader `004206D0` and
+`004205F0` on the original script manager at `this+0x714`,
+EH-allocates the real **24-byte** command-list object at `this+0x480`
+through native ctor `00410F30`, initializing it from the primary texture
+manager, calls native mode setter `0045CD50(0)` and finally dispatches
+the authentic fighter virtual slot +0x18. Its three native `new`
+operations, all original EH states and security-cookie check at
+`00640611` are preserved, with no invented file guards.
+
+The read-only Ghidra decompile misleadingly suggested `char[532]` for
+the local pathname. Independently checking the original complete
+`0x240` native stack allocation and `LEA` pathname at `EBP-0x224`
+showed a natural **524-byte C++ filename buffer** is the physical
+layout that actually produces those native values under VC7.1 `/GS`;
+the first source with 532 bytes emitted a different 0x248 frame.
+Once corrected, the first complete natural source emitted 1,190 bytes
+with the same 272 instruction classes and all physical resource
+references. Comparison proved the remaining 4-byte size divergence
+was the secondary texture archive branch. The native six independent
+character tests use early short `JE` to the matched-character archive
+and final short `JNE` to the other archive. Reversing a logically
+equivalent but incorrectly shaped `!=0 && ...` condition into the
+actual `==0 || ...` condition restored the *real control-flow branch
+geometry* and compiled **all 1,186 bytes exactly** without fake
+instructions or padding. Both source conditions have the same meaning,
+but not the same unoptimized VC7.1 instruction shape.
+
+Final natural full source `src/FighterLoadResourcesF282.cpp` compiles
+under pinned VC7.1 `/Od /Ob0 /Gy /GR- /GX /GS /Zi` with
+**934/934 exact comparable nonrelocation bytes**, **63/63 genuine
+physical COFF relocation offsets/types/native destinations**, and all
+**1,186 original CODE bytes**, preserving real native exception frames
+and full cookie/CRT calls. The canonical matching unit
+`fighter-state-load-resources-00456b60` was rebuilt **cold by itself**
+and reports `exact; 1186 coverage bytes`; no full-set replay.
+Original Ghidra native/decompile/full disassembly, all failed
+size/buffer/branch alternatives and acceptance receipt are retained
+privately under `.analysis/f281-fighter-resources/` and
+`.analysis/f282-fighter-loader/`. The physical resource receivers
+and sizes are borrowed call/allocation interfaces, not claims of
+complete original FighterState or private TextureManager class layouts.
+The original other child constructors `00410F30`, native resource
+callees, VC7 library and 97 pending origins are not independently
+credited here. The paired 588-byte fighter resource destructor
+`00456910` remains nonexact; local Git checkpoint and cold replay
+are not remote Oracle verification. No assembly, byte grafts,
+masked comparisons, fake locals or cropped function.

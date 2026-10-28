@@ -1,4 +1,4 @@
-# TH075 — active reconstruction handoff (F281)
+# TH075 — active reconstruction handoff (F282)
 
 **Updated 2026-10-28. Read this document before new experiments.**
 
@@ -22,17 +22,17 @@ not acceptance requirements.
 
 | Item | Current evidence |
 | --- | --- |
-| Local branch / last exact-code commit | `main` / F281 full 602-byte effects configured-spawn boss; prior F279 pattern field checkpoint `192aabd` |
+| Local branch / last exact-code commit | `main` / F282 full 1,186-byte FighterState::LoadResources boss; prior F281 602-byte effect spawn `6ce20a9` |
 | Upstream | `origin/main` tracked locally; verify current ahead/behind and dirty state before further work |
-| Working tree | Clean after F281 checkpoint if successful; continue rather than avoid every existing dirty edit |
+| Working tree | Clean after F282 checkpoint if successful; continue rather than avoid every existing dirty edit |
 | Native binary | `resources/th075.exe`, SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98` |
 | Candidate count | 4,351; origin review: 1,002 authored, 2,671 library, 581 compiler, 97 unknown |
-| Accepted functions / units | **595 / 595** |
-| Accepted authored CODE | **795,330 bytes** |
-| Reviewed authored coverage | 795,330 / 1,973,516 = **40.30%** |
-| Conservative coverage | **40.23%** counting 3,608 origin-pending bytes |
+| Accepted functions / units | **596 / 596** |
+| Accepted authored CODE | **796,516 bytes** |
+| Reviewed authored coverage | 796,516 / 1,973,516 = **40.36%** |
+| Conservative coverage | **40.29%** counting 3,608 origin-pending bytes |
 | Goal | **98% not reached** |
-| Verification | F281 complete 602-byte Effects::SpawnConfiguredAuxObject cold-exact (506/506 nonrelocation bytes, 24 real COFF fields); F279 four FighterScript helpers previously checkpointed at `192aabd`. Only new F281 unit cold-replayed; no all-unit cold replay or external Oracle receipt |
+| Verification | F282 full 1,186-byte FighterState::LoadResources cold-exact (934/934 nonrelocation bytes, 63 real COFF fields), following F281 complete 602-byte effect-spawn checkpoint `6ce20a9`. Only new F282 unit cold-replayed; no all-unit cold replay or external Oracle receipt |
 
 **Recheck the actual live status immediately**. Local commits are checkpoints,
 not evidence of a remote push or external Oracle acceptance. Earlier Git
@@ -122,6 +122,7 @@ inert variable or arbitrary padding may earn exact credit.
 | F279: FighterScript::GetWordField | `00420570` | 55 | 2 |
 | F279: FighterScript::GetDwordField | `004205B0` | 54 | 2 |
 | F281: Effects::SpawnConfiguredAuxObject | `005F7AA0` | 602 | 24 |
+| F282: FighterState::LoadResources | `00456B60` | 1,186 | 63 |
 
 F222 proved signed 32-bit x87 `FILD` divided by the target's 36.0f
 (`00659308`), 74 physical animation records and a final call into the
@@ -231,6 +232,8 @@ F278 **cold-accepts the COMPLETE 1,264-byte `FighterState::ChoosePatternSequence
 F279 **cold-accepts four complete native FighterScript helpers** independently called by the accepted F278 1,264-byte fighter boss: `CountPatternEntries` at `0045DD00` (66 bytes, 23 original instructions, 58/58 comparable bytes, 2 true fields) with R152 authored origin; `GetByteFieldAt00420530` (53 bytes, 19 instructions, 45/45 nonrelocation bytes, two native fields), `GetWordFieldAt00420570` (55 bytes, 19 instructions, 47/47 bytes, two fields), and `GetDwordFieldAt004205B0` (54 bytes, 19 instructions, 46/46 bytes, two fields), all independently R076 authored. Native record indexing uses signed short sequence at `this+2*index`, real row deque at `this+0x7D0`, native VC7 `At` `00421570` and per-row `At` `00421360`; Count uses library-only deque `Size` `0045DD50` after rejecting negative sequence indexes, and three fields read signed byte +0, word +2 or pointer +4. All four naturally reconstructed into two real C++ sources, exact 228 CODE bytes combined and 8/8 physical relocations, independently cold-replayed as **4/4 exact across 2 objects**; underlying VC7 deque and F278 caller instructions receive **zero additional authored credit**. Private native read-only decompiles, full probe/COFF, cold receipt at `.analysis/f279-pattern-counter/` and `.analysis/f279-pattern-accessors/`; sources `src/PatternCountF279.cpp`, `src/PatternAccessorsF279.cpp`. Distinct original class identities remain unproven.
 
 F281 **cold-accepts the entire 602-byte `Effects::SpawnConfiguredAuxObject`** at `005F7AA0` (175 independently decoded native x86 instructions, 506/506 comparable nonrelocation bytes, all 24 physical COFF fields including original EH handler and exception-list references). The original R067-authored routine verifies a non-null effect configuration slot through native `005F8380` and nonzero sequence, verifies a signed side selector in [0,1], pushes a null pointer to native 20-byte-stride side deque through `005F81B0`, EH-allocates one original 0x94-byte object via `new` and `005FAB10`, then repeatedly retrieves the last pointer through original `005F8180` to write all 13 observed effect configuration fields at +0x40, +0x44/+0x48, +0x60/+0x62/+0x64, +0x66/+0x67/+0x68, +0x80/+0x84/+0x88/+0x8C before dispatching real virtual slots 0 and +4. The first complete natural C++ yielded 603 bytes; the native first two guard clauses compile as separate jnz-short/jmp-near early exits, whereas the signed side lower/upper bound is *one* combined invalid-side condition with shared near exit. Reconstructing that actual control-flow structure generated all native 602 bytes and 24 relocations without artificial padding. Only `--unit effects-spawn-configured-aux-object-005f7aa0` cold-replayed exact; source `src/EffectSpawnF281.cpp` and complete private original Ghidra/assembly/negative candidate evidence `.analysis/f281-effects-spawn/`. F281 does not accept or credit original 116-byte effect-child constructor `005FAB10`, original vector/deque runtime helpers, EH runtime, or the 1,722-byte Effects catalog boss `005F71F0`; 97 unknown origins remain uncredited. No full cold replay or external Oracle receipt.
+
+F282 **cold-accepts the COMPLETE 1,186-byte `FighterState::LoadResources` boss** at `00456B60` (272 independently decoded original x86 instructions, 934/934 comparable nonrelocation bytes, all 63 physical COFF relocations). The original R045-authored resource controller logs native sound/pattern/picture phase headings, loads a fighter-specific `.dat` sound archive, calls the separately F196-cold-accepted 3,696-byte fighter pattern loader, EH-allocates two real 80-byte texture-manager objects at fighter+4 and fighter+0x534, chooses first texture archive for Alice/Meiling, chooses second archive for Patchouli/Yuyuko/Remilia/Yukari/Youmu/Meiling, loads both fighter `.sce` script resources using original game archive helpers, EH-allocates the real 24-byte command list initialized from texture manager +4 into fighter+0x480, sets a notice mode byte to 0 and invokes the native final fighter virtual slot +0x18. All native sound/resource paths, branches, early exits, 63 authentic COFF destinations, EH and `/GS` code are preserved. The first natural source produced 1,190 bytes with the complete 272 instruction classes; actual source evidence shows a **524-byte path buffer** is needed to reproduce its native 0x240 stack frame and EBP-0x224 pathname address, whereas the read-only decompiler's 532-byte local guess was inaccurate. The one remaining 4-byte size difference was an incorrectly lowered texture-archive branch: expressing six actual name comparisons as positive `strcmp()==0` ORs instead of logically equivalent inverted `!=0` ANDs restored one native short conditional jump and complete 1,186-byte original. Full CODE SHA256 `b32d8ac0cfeccf13aeca2a12a628276b5efa4cfae78689ced2b321ed14bc85bb`. Only `--unit fighter-state-load-resources-00456b60` cold-replayed exact; source `src/FighterLoadResourcesF282.cpp`, private native/function evidence and all negative probe variants `.analysis/f282-fighter-loader/` and `.analysis/f281-fighter-resources/`. The paired **588-byte FighterState::ReleaseResources at `00456910` remains nonexact** and should be approached from its independently verified native deque, audio and fighter cleanup ownership; do not credit it, the separate child ctor `00410F30`, the library helper bodies, or the 97 pending origins.
 
 Relevant full native proofs: `config/match-units.toml`,
 `config/exact-adoptions.json`, sources `src/*F222.cpp`/`src/*F223.cpp`,
