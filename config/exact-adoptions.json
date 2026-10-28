@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377; F378; F379; F386; F389; F391; F392; F393; F394; F395; F403; F407; F414; F415; F421; F422; F427; F428; F429; F430; F431; F432; F435; F437; F440; F445; F446; F447; F448; F454; F458; F459; F460; F461; F463; F465; F467; F468; F469; F474; F479; F481; F484; F485; F488; F489; F490-F492; F494; F496; F499; F504; F514",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377; F378; F379; F386; F389; F391; F392; F393; F394; F395; F403; F407; F414; F415; F421; F422; F427; F428; F429; F430; F431; F432; F435; F437; F440; F445; F446; F447; F448; F454; F458; F459; F460; F461; F463; F465; F467; F468; F469; F474; F479; F481; F484; F485; F488; F489; F490-F492; F494; F496; F499; F504; F514; F516",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "e44f088d41614b56748e191fe147611a728a38de39301a9e64e635fd06015a54"
+      "current_sha256": "80379fa4c2669b7c5b4e8530f9fe62bdc268f91b0ca867fc189b7472f3098dc3"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "1c2b5cd2a510983562ca6910b1058513f8863867c628f992db3e92bed5df7300"
+      "current_sha256": "b7bc3b8fafe36e2319f1c0d43bf4fe047c69ed522ad74fb11c6a70a736ef8d7e"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "a5a0ea99c40a659d784068781ec848e340928cb58bd67b3c363ef62ae4a090a8"
+      "current_sha256": "2b33e81748af54ab0dda79cd9f20f6ad9867a522ee6f45c86822e46fa86fb6ba"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "63651fda89fc77773df9bb78e2e83da7fa01420ccf5a2431f391b6435ecb26ca"
+      "current_sha256": "e1b8c038c05b46ad29888dedc795605770098bb37d3d8d15d1a830163ecac257"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "b5b25822d3cdd8ce0c278daefe01b67d72d7ec94a48560579f27e13d8797ad2b"
+      "current_sha256": "2b32125215b1d27a6e2fe2f0ef05003bef2383a8a90dd066c20079bc40623a84"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -38672,6 +38672,94 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R053"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0042B110",
+        "size": "169",
+        "span_end": "0x0042B1B8",
+        "current_name": "FUN_0042b110",
+        "proposed_name": "NameEntryScene::DrawDecimalGlyphLabelAt0042B110",
+        "module": "NameEntryScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R109; scripts/repo-python scripts/verify-game-context-origins.py",
+        "owner": "authored",
+        "notes": "Complete explicit game policy, frozen mixed-origin callees and independent game parent/virtual context; names/layouts inferred; origin only, no source or exact credit"
+      },
+      "after": {
+        "address": "0x0042B110",
+        "size": "169",
+        "span_end": "0x0042B1B8",
+        "current_name": "FUN_0042b110",
+        "proposed_name": "NameEntryScene::DrawDecimalGlyphLabelAt0042B110",
+        "module": "NameEntryScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void NameEntryLabelF472::DrawRankLabel(float,float,unsigned int,signed char)",
+        "is_thunk": "false",
+        "source_file": "src/NameEntryResultRankGlyphLabelsF516.cpp",
+        "evidence": "R109; scripts/repo-python scripts/verify-game-context-origins.py; F516; scripts/repo-python scripts/replay-exact-units.py --unit nameentry-scene-draw-rank-glyphs-0042b110",
+        "owner": "authored",
+        "notes": "Complete explicit game policy, frozen mixed-origin callees and independent game parent/virtual context; names/layouts inferred; origin only, no source or exact credit; F516 complete independent R109 original NameEntryScene::DrawDecimalGlyphLabelAt0042B110, full 169 original authored CODE bytes, 53 real native x86 instructions, native PE SHA256 317ab6d10009cc492ff3603c897cabf0a4336b08a46981e0ab171e76e05ed573. Entire original scene thiscall x,y float coordinates and unsigned tint plus *signed char rank*; actual original float constants 0065786C/00657F78, one true borrowed 132-byte quad member constructor entrypoint 0040DA00 called with original native quad receiver at EBP-0x98. Crucial whole-source C++ scope: actual real RankQuad member sits in a used local aggregate, while the meaningful 8 glyph-char array is separately live; under VC7.1 /GS this alone yields original stack 0x9C, this at EBP-0x9C, native glyphs at EBP-0x0C..-0x05, cookie at -4 without any fake array or manually inserted padding. Original 8 glyph bytes are 13,40,71, rank/10+52, rank%10+52,100,100,100 computed with original signed IDIV/CDQ twice; calls its own distinct original NameEntry DrawGlyphs at 0042AFF0 with true caller float x/y and tint. Full 145/145 native original nonfield bytes, all 6 actual physical COFF DIR32/REL32 fields/PE target addresses including original security cookie/checker, actual true quad constructor, distinct DrawGlyphs and float constants; only two changed units were fresh cold replayed 2/2 exact across one object. The borrowed native quad entrypoint is a source-level constructor alias, not proof of original public C++ method spelling or full class layout. No borrowed quad/renderer/CRT callee CODE, extra dummy locals/padding, ASM, target-byte graft, masks/cropped original, all-unit cold replay or external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x0042B110",
+        "origin": "authored",
+        "subsystem": "NameEntryScene",
+        "disposition": "authored",
+        "confidence": "complete-game-policy-with-mixed-context",
+        "evidence_id": "R109"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00431890",
+        "size": "169",
+        "span_end": "0x00431938",
+        "current_name": "FUN_00431890",
+        "proposed_name": "ResultScene::DrawRankLabel",
+        "module": "ResultScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00431890",
+        "size": "169",
+        "span_end": "0x00431938",
+        "current_name": "FUN_00431890",
+        "proposed_name": "ResultScene::DrawRankLabel",
+        "module": "ResultScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void ResultRankLabelF472::DrawRankLabel(float,float,unsigned int,signed char)",
+        "is_thunk": "false",
+        "source_file": "src/NameEntryResultRankGlyphLabelsF516.cpp",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed; F516; scripts/repo-python scripts/replay-exact-units.py --unit result-scene-draw-rank-glyphs-00431890",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F516 complete independent R043 original ResultScene::DrawRankLabelAt00431890, full 169 original authored CODE bytes, 53 real native x86 instructions, native PE SHA256 078d897d1bb5ef0ec1e167d819a4fd07617a237a48c25f1f7d19b38bb24a3837. Entire original scene thiscall x,y float coordinates and unsigned tint plus *signed char rank*; actual original float constants 0065786C/00657F78, one true borrowed 132-byte quad member constructor entrypoint 0040DA00 called with original native quad receiver at EBP-0x98. Crucial whole-source C++ scope: actual real RankQuad member sits in a used local aggregate, while the meaningful 8 glyph-char array is separately live; under VC7.1 /GS this alone yields original stack 0x9C, this at EBP-0x9C, native glyphs at EBP-0x0C..-0x05, cookie at -4 without any fake array or manually inserted padding. Original 8 glyph bytes are 13,40,71, rank/10+52, rank%10+52,100,100,100 computed with original signed IDIV/CDQ twice; calls its own distinct original Result DrawGlyphs at 00431770 with true caller float x/y and tint. Full 145/145 native original nonfield bytes, all 6 actual physical COFF DIR32/REL32 fields/PE target addresses including original security cookie/checker, actual true quad constructor, distinct DrawGlyphs and float constants; only two changed units were fresh cold replayed 2/2 exact across one object. The borrowed native quad entrypoint is a source-level constructor alias, not proof of original public C++ method spelling or full class layout. No borrowed quad/renderer/CRT callee CODE, extra dummy locals/padding, ASM, target-byte graft, masks/cropped original, all-unit cold replay or external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x00431890",
+        "origin": "authored",
+        "subsystem": "ResultScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R043"
       }
     }
   ],
@@ -215640,6 +215728,124 @@
           "target": 6555153
         }
       ]
+    },
+    "nameentry-scene-draw-rank-glyphs-0042b110": {
+      "source": "src/NameEntryResultRankGlyphLabelsF516.cpp",
+      "object": "build/matching/NameEntryResultRankGlyphLabelsF516.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "NameEntryScene::DrawDecimalGlyphLabelAt0042B110"
+      ],
+      "symbol": "?DrawRankLabel@NameEntryLabelF472@@QAEXMMIC@Z",
+      "target_address": 4370704,
+      "size": 169,
+      "relocations": [
+        {
+          "offset": 10,
+          "type": "DIR32",
+          "symbol": "___security_cookie",
+          "target": 6749744
+        },
+        {
+          "offset": 28,
+          "type": "DIR32",
+          "symbol": "?g_RankHeightAt0065786C@@3MB",
+          "target": 6649964
+        },
+        {
+          "offset": 41,
+          "type": "DIR32",
+          "symbol": "?g_RankWidthAt00657F78@@3MB",
+          "target": 6651768
+        },
+        {
+          "offset": 64,
+          "type": "REL32",
+          "symbol": "?ConstructNative@RankQuadF472@@QAEXMMMM@Z",
+          "target": 4250112
+        },
+        {
+          "offset": 151,
+          "type": "REL32",
+          "symbol": "?DrawGlyphs@NameEntryLabelF472@@QAEXMMIPBE@Z",
+          "target": 4370416
+        },
+        {
+          "offset": 159,
+          "type": "REL32",
+          "symbol": "@__security_check_cookie@4",
+          "target": 6555153
+        }
+      ]
+    },
+    "result-scene-draw-rank-glyphs-00431890": {
+      "source": "src/NameEntryResultRankGlyphLabelsF516.cpp",
+      "object": "build/matching/NameEntryResultRankGlyphLabelsF516.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "ResultScene::DrawRankLabelAt00431890"
+      ],
+      "symbol": "?DrawRankLabel@ResultRankLabelF472@@QAEXMMIC@Z",
+      "target_address": 4397200,
+      "size": 169,
+      "relocations": [
+        {
+          "offset": 10,
+          "type": "DIR32",
+          "symbol": "___security_cookie",
+          "target": 6749744
+        },
+        {
+          "offset": 28,
+          "type": "DIR32",
+          "symbol": "?g_RankHeightAt0065786C@@3MB",
+          "target": 6649964
+        },
+        {
+          "offset": 41,
+          "type": "DIR32",
+          "symbol": "?g_RankWidthAt00657F78@@3MB",
+          "target": 6651768
+        },
+        {
+          "offset": 64,
+          "type": "REL32",
+          "symbol": "?ConstructNative@RankQuadF472@@QAEXMMMM@Z",
+          "target": 4250112
+        },
+        {
+          "offset": 151,
+          "type": "REL32",
+          "symbol": "?DrawGlyphs@ResultRankLabelF472@@QAEXMMIPBE@Z",
+          "target": 4396912
+        },
+        {
+          "offset": 159,
+          "type": "REL32",
+          "symbol": "@__security_check_cookie@4",
+          "target": 6555153
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -216133,6 +216339,7 @@
     "src/BackgroundStageNoOpVirtualsF496.cpp": "322ef2e4647bda063ddd9316e1fbe755835ecdb6d4b8e18ae7aa51683c85bee8",
     "src/AuxEffectAudioCommandForwardersF499.cpp": "621ef39171033ed997acf86acbbaf3205b34b8fe34c76bc5bca2b1698e71c19a",
     "src/StaffRollSceneAdvanceF504.cpp": "1a763436fb174268e32529c05efafbaa48db36900c06ec8773eb14495a7ea42c",
-    "src/ReplaySceneDrawSaveFilenameF514.cpp": "d099f7f42417ddea11461800f3f72d922a8acb93bbfcf758ba448d7012470369"
+    "src/ReplaySceneDrawSaveFilenameF514.cpp": "d099f7f42417ddea11461800f3f72d922a8acb93bbfcf758ba448d7012470369",
+    "src/NameEntryResultRankGlyphLabelsF516.cpp": "4238fa12b9a18e00178200247d07032aaa22280f4dea13724c4e649acfc70343"
   }
 }

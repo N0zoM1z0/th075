@@ -7950,7 +7950,7 @@ constructors, F479 stage derived destructors and borrowed native base
 classes are not double-counted. No executable patch, source assembly,
 extra locals, masks, partial match, all-unit replay or external Oracle.
 
-## F495: natural rank-label `/GS` local-buffer layout evidence (negative, no CODE credit)
+## F495: historical rank-label `/GS` local-buffer negative controls, subsequently superseded by F516 full exact
 
 Original R075 NameEntry `0042B110` and original R043 Result `00431890`
 rank/decimal labels are each **169 complete native CODE bytes**. Both
@@ -8286,3 +8286,64 @@ are now exact and separately credited exactly once**, not any borrowed
 external CRT, renderer or quad code. No original bytes/ASM graft,
 assumed private owner fields, fake locals, masks, cropped original,
 all-unit cold replay or external Oracle receipt.
+
+
+## F516: independently complete native 169-byte NameEntry and Result rank-glyph draw routines, original `/GS` and two separately real DrawGlyphs targets
+
+Both long-pending independently authored original-game rank/decimal label
+functions are now **complete cold exact** in natural pinned MSVC7.1:
+
+- R109 `NameEntryScene::DrawDecimalGlyphLabelAt0042B110` is exactly
+  **169 whole original native CODE bytes /53 original x86 instructions**,
+  original PE SHA256
+  `317ab6d10009cc492ff3603c897cabf0a4336b08a46981e0ab171e76e05ed573`,
+  with **145/145 original nonrelocation bytes and all 6 genuine
+  physical COFF DIR32/REL32 fields** including its separate borrowed
+  native `DrawGlyphs` call at `0042AFF0`.
+- R043 `ResultScene::DrawRankLabelAt00431890` is separately exactly
+  **169 original CODE bytes /53 original x86 instructions**, native
+  PE SHA256
+  `078d897d1bb5ef0ec1e167d819a4fd07617a237a48c25f1f7d19b38bb24a3837`,
+  with independently checked **145/145 original nonrelocation bytes
+  and all 6 genuine physical COFF fields**, including its distinct
+  borrowed native `DrawGlyphs` call at `00431770`.
+
+The original C++ meaning is straightforward (float x/y and unsigned
+tint, plus original **signed char** rank): construct the native quad
+with x/y and actual global width/height constants `00657F78` /
+`0065786C`, set original 8 glyph bytes to
+`13,40,71,(signed rank / 10+52),(signed rank % 10+52),100,100,100`,
+and invoke the scene's original distinct DrawGlyphs method with x/y,
+tint and the actual byte array. The rank quotient and remainder use
+real original x86 `MOVSX; CDQ; IDIV 10` separately; folding or
+unsigned operators would change native byte behavior.
+
+Previously F472/F475/F476/F495/F510 could obtain the complete native
+169-byte code and arithmetic but assigned glyph data to EBP-0x14, or
+removed the original `/GS` cookie to place glyphs correctly, or
+changed actual quad C++ object type/lifetime and generated 196/202
+bytes. The key genuine source distinction, discovered after solving
+F514 Replay glyph draw, is to represent the actual **132-byte quad as
+a member of its own *used* C++ aggregate** with the borrowed native
+`ConstructNative` entrypoint (physically original quad constructor
+`0040DA00`), but place the meaningful real `unsigned char glyphs[8]`
+as a **separately declared live local**. With pinned VC7.1
+`/Od /Ob0 /Gy /GR- /GX- /GS /Zi`, this naturally produces the
+original complete **0x9C** stack frame, `this` EBP-0x9C, real quad
+constructor receiver EBP-0x98, eight glyph values EBP-0x0C..-0x05,
+and original `/GS` security cookie EBP-4 with true callback check at
+`00640611`. The original 6 authentic physical COFF fields in each
+function include global cookie `0066FE30`, actual original float
+constants, quad constructor, *separately original* glyph target
+and real security check.
+
+The single natural source `src/NameEntryResultRankGlyphLabelsF516.cpp`
+generates both separate whole 169-byte bodies in one object, and a
+**single changed-only cold replay** of precisely the two unit names
+`nameentry-scene-draw-rank-glyphs-0042b110` and
+`result-scene-draw-rank-glyphs-00431890` passed **2/2 exact**. Exactly
+**338 new original authored CODE bytes** are credited without
+counting the borrowed original quad, GDI/game renderer, CRT or
+security-check code. No source assembly, pasted native bytes, false
+class layout, fake locals/padding, relocation masks, shortened
+original CODE, full-project replay or external Oracle acceptance.

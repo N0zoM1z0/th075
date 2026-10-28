@@ -60317,3 +60317,82 @@ offset = 293
 type = "REL32"
 symbol = "@__security_check_cookie@4"
 target = 0x00640611
+
+[units.nameentry-scene-draw-rank-glyphs-0042b110]
+source = "src/NameEntryResultRankGlyphLabelsF516.cpp"
+object = "build/matching/NameEntryResultRankGlyphLabelsF516.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["NameEntryScene::DrawDecimalGlyphLabelAt0042B110"]
+symbol = "?DrawRankLabel@NameEntryLabelF472@@QAEXMMIC@Z"
+target_address = 0x0042B110
+size = 169
+[[units.nameentry-scene-draw-rank-glyphs-0042b110.relocations]]
+offset = 10
+type = "DIR32"
+symbol = "___security_cookie"
+target = 0x0066FE30
+[[units.nameentry-scene-draw-rank-glyphs-0042b110.relocations]]
+offset = 28
+type = "DIR32"
+symbol = "?g_RankHeightAt0065786C@@3MB"
+target = 0x0065786C
+[[units.nameentry-scene-draw-rank-glyphs-0042b110.relocations]]
+offset = 41
+type = "DIR32"
+symbol = "?g_RankWidthAt00657F78@@3MB"
+target = 0x00657F78
+[[units.nameentry-scene-draw-rank-glyphs-0042b110.relocations]]
+offset = 64
+type = "REL32"
+symbol = "?ConstructNative@RankQuadF472@@QAEXMMMM@Z"
+target = 0x0040DA00
+[[units.nameentry-scene-draw-rank-glyphs-0042b110.relocations]]
+offset = 151
+type = "REL32"
+symbol = "?DrawGlyphs@NameEntryLabelF472@@QAEXMMIPBE@Z"
+target = 0x0042AFF0
+[[units.nameentry-scene-draw-rank-glyphs-0042b110.relocations]]
+offset = 159
+type = "REL32"
+symbol = "@__security_check_cookie@4"
+target = 0x00640611
+
+
+[units.result-scene-draw-rank-glyphs-00431890]
+source = "src/NameEntryResultRankGlyphLabelsF516.cpp"
+object = "build/matching/NameEntryResultRankGlyphLabelsF516.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["ResultScene::DrawRankLabelAt00431890"]
+symbol = "?DrawRankLabel@ResultRankLabelF472@@QAEXMMIC@Z"
+target_address = 0x00431890
+size = 169
+[[units.result-scene-draw-rank-glyphs-00431890.relocations]]
+offset = 10
+type = "DIR32"
+symbol = "___security_cookie"
+target = 0x0066FE30
+[[units.result-scene-draw-rank-glyphs-00431890.relocations]]
+offset = 28
+type = "DIR32"
+symbol = "?g_RankHeightAt0065786C@@3MB"
+target = 0x0065786C
+[[units.result-scene-draw-rank-glyphs-00431890.relocations]]
+offset = 41
+type = "DIR32"
+symbol = "?g_RankWidthAt00657F78@@3MB"
+target = 0x00657F78
+[[units.result-scene-draw-rank-glyphs-00431890.relocations]]
+offset = 64
+type = "REL32"
+symbol = "?ConstructNative@RankQuadF472@@QAEXMMMM@Z"
+target = 0x0040DA00
+[[units.result-scene-draw-rank-glyphs-00431890.relocations]]
+offset = 151
+type = "REL32"
+symbol = "?DrawGlyphs@ResultRankLabelF472@@QAEXMMIPBE@Z"
+target = 0x00431770
+[[units.result-scene-draw-rank-glyphs-00431890.relocations]]
+offset = 159
+type = "REL32"
+symbol = "@__security_check_cookie@4"
+target = 0x00640611
