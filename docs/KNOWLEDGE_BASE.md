@@ -6861,3 +6861,38 @@ together across two objects, returning **4/4 exact** and **254 distinct
 CODE bytes** for the two destructors (plus separately 443 for Opening/Staff
 constructors). No pasted code/ASM, masks/cropping, full cold replay or
 external Oracle receipt.
+
+
+## F448: complete original 231-byte three-texture scene-derived destructor
+
+The independently R054-authored `SceneObject::ReleaseAt00433140` occupies
+**231 complete original authored CODE bytes / 68 x86 native instructions**
+at `00433140..00433226`, original native PE SHA256
+`9ea0271e34091a5e5493c974540a6705048550e2985f2b0ae6ceccd1328dfcea`.
+It is a real original virtual C++ derived scene destructor which assigns
+its own vtable `0065824C` and conditionally deletes **three actual
+texture/resource pointers** at `this+8`, `this+0x44`, `this+0x48`. Each
+source-side C++ `delete` generates the genuine original two native
+pointer-ownership temps, tests the correct null pointer, and calls the
+original native nonvirtual scalar deleting texture dtor `00425460`.
+VC7.1 naturally emits the original `/GX` EH frame and handler at
+`00655ACB`, the 0x28 stack frame, three deletion-result temporaries
+and final borrowed original base scene destructor `00431F40`.
+The intervening `this+0xC..0x43` source carrier is *only a physically
+observed layout gap* needed to express the actual later texture pointer
+offsets, not a claim to the unknown original full scene private fields.
+
+A new source-level C++ triple-texture destructor
+`src/SceneTripleTextureReleaseF448.cpp` matched the complete 231-byte
+original native body on its first pinned VC7.1 `/Od /Ob0 /Gy /GR- /GX
+/GS /Zi` compile, with **195/195** original nonrelocation bytes and
+**9/9 authentic original physical COFF references and resolved PE
+destinations**, including actual native derived vtable, EH handler,
+three original deleting texture callees and real scene-base dtor. Only
+`--unit scene-object-triple-texture-release-00433140` was cold rebuilt
+and replayed, **1/1 exact**. No texture/base/CRT CODE double credit,
+unknown private layouts promoted to facts, fake locals, assembler/code
+bytes copied, masked/truncated comparison, whole-repository cold replay
+or external Oracle acceptance. The separately unaccepted
+`SceneObject::ReleaseAt0043B0B0` (248 bytes) remains an independent
+more complex scene destructor to reconstruct.

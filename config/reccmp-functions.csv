@@ -755,3 +755,4 @@ OpeningScene::InitializeAt004275D0,0x004275D0,function
 StaffRollScene::InitializeAt00438AC0,0x00438AC0,function
 LoadingScene::ReleaseSceneResourceAt004252B0,0x004252B0,function
 LogoScene::ReleaseSceneResourceAt00425550,0x00425550,function
+SceneObject::ReleaseAt00433140,0x00433140,function

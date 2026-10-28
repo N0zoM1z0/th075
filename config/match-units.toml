@@ -56338,3 +56338,58 @@ offset = 119
 type = "DIR32"
 symbol = "__except_list"
 target = 0x00000000
+
+
+[units.scene-object-triple-texture-release-00433140]
+source = "src/SceneTripleTextureReleaseF448.cpp"
+object = "build/matching/SceneTripleTextureReleaseF448.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["SceneObject::ReleaseAt00433140"]
+symbol = "??1TripleTextureSceneF448@@UAE@XZ"
+target_address = 0x00433140
+size = 231
+[[units.scene-object-triple-texture-release-00433140.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??1TripleTextureSceneF448@@UAE@XZ"
+target = 0x00655ACB
+[[units.scene-object-triple-texture-release-00433140.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.scene-object-triple-texture-release-00433140.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.scene-object-triple-texture-release-00433140.relocations]]
+offset = 35
+type = "DIR32"
+symbol = "??_7TripleTextureSceneF448@@6B@"
+target = 0x0065824C
+[[units.scene-object-triple-texture-release-00433140.relocations]]
+offset = 82
+type = "REL32"
+symbol = "??_GTextureF448@@QAEPAXI@Z"
+target = 0x00425460
+[[units.scene-object-triple-texture-release-00433140.relocations]]
+offset = 134
+type = "REL32"
+symbol = "??_GTextureF448@@QAEPAXI@Z"
+target = 0x00425460
+[[units.scene-object-triple-texture-release-00433140.relocations]]
+offset = 186
+type = "REL32"
+symbol = "??_GTextureF448@@QAEPAXI@Z"
+target = 0x00425460
+[[units.scene-object-triple-texture-release-00433140.relocations]]
+offset = 213
+type = "REL32"
+symbol = "??1SceneBaseF448@@UAE@XZ"
+target = 0x00431F40
+[[units.scene-object-triple-texture-release-00433140.relocations]]
+offset = 223
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
