@@ -44314,3 +44314,467 @@ offset = 91
 type = "DIR32"
 symbol = "__imp__ReleaseDC@8"
 target = 0x00657214
+
+[units.effects-load-pattern-catalog-005f71f0]
+source = "src/EffectsLoadPatternCatalogF294.cpp"
+object = "build/matching/EffectsLoadPatternCatalogF294.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["Effects::LoadPatternCatalogAt005F71F0"]
+symbol = "?LoadPatternCatalog@EffectsCatalogF294@@QAEXXZ"
+target_address = 0x005F71F0
+size = 1722
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$?LoadPatternCatalog@EffectsCatalogF294@@QAEXXZ"
+target = 0x00656679
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 37
+type = "REL32"
+symbol = "??0EffectScratchF294@@QAE@XZ"
+target = 0x00458880
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 49
+type = "DIR32"
+symbol = "?g_EffectPatPathAt0065A0C0@@3QBDB"
+target = 0x0065A0C0
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 54
+type = "DIR32"
+symbol = "?g_ArchiveRootAt0065A0B8@@3QBDB"
+target = 0x0065A0B8
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 59
+type = "REL32"
+symbol = "_FindEffectArchiveF294"
+target = 0x0041CF00
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 69
+type = "REL32"
+symbol = "?OpenEntry@EffectArchiveF294@@QAEPAXPBD@Z"
+target = 0x0041D750
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 101
+type = "REL32"
+symbol = "?Size@EffectSlotsF294@@QAEIXZ"
+target = 0x005F8340
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 121
+type = "REL32"
+symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+target = 0x005F8380
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 141
+type = "REL32"
+symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+target = 0x005F8380
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 148
+type = "REL32"
+symbol = "?Clear@EffectSequenceF294@@QAEXXZ"
+target = 0x005F8020
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 163
+type = "REL32"
+symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+target = 0x005F8380
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 190
+type = "REL32"
+symbol = "??_GEffectSequenceF294@@QAEPAXI@Z"
+target = 0x005F7EA0
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 215
+type = "REL32"
+symbol = "?Clear@EffectSlotsF294@@QAEXXZ"
+target = 0x005F83E0
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 237
+type = "DIR32"
+symbol = "__imp__ReadFile@20"
+target = 0x0065712C
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 263
+type = "REL32"
+symbol = "?Resize@EffectSlotsF294@@QAEXIABQAVEffectSequenceF294@@@Z"
+target = 0x005F83C0
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 285
+type = "DIR32"
+symbol = "__imp__ReadFile@20"
+target = 0x0065712C
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 337
+type = "DIR32"
+symbol = "__imp__ReadFile@20"
+target = 0x0065712C
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 352
+type = "REL32"
+symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+target = 0x005F8380
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 364
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 388
+type = "REL32"
+symbol = "??0EffectSequenceF294@@QAE@XZ"
+target = 0x005F7F20
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 425
+type = "REL32"
+symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+target = 0x005F8380
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 452
+type = "DIR32"
+symbol = "__imp__ReadFile@20"
+target = 0x0065712C
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 475
+type = "REL32"
+symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+target = 0x005F8380
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 482
+type = "REL32"
+symbol = "?Resize@EffectSequenceF294@@QAEXHABUEffectScratchF294@@@Z"
+target = 0x005F8000
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 539
+type = "REL32"
+symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+target = 0x005F8380
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 546
+type = "REL32"
+symbol = "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z"
+target = 0x005F7FC0
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 560
+type = "DIR32"
+symbol = "__imp__ReadFile@20"
+target = 0x0065712C
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 587
+type = "REL32"
+symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+target = 0x005F8380
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 594
+type = "REL32"
+symbol = "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z"
+target = 0x005F7FC0
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 605
+type = "DIR32"
+symbol = "__imp__ReadFile@20"
+target = 0x0065712C
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 632
+type = "REL32"
+symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+target = 0x005F8380
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 639
+type = "REL32"
+symbol = "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z"
+target = 0x005F7FC0
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 653
+type = "DIR32"
+symbol = "__imp__ReadFile@20"
+target = 0x0065712C
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 680
+type = "REL32"
+symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+target = 0x005F8380
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 687
+type = "REL32"
+symbol = "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z"
+target = 0x005F7FC0
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 701
+type = "DIR32"
+symbol = "__imp__ReadFile@20"
+target = 0x0065712C
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 723
+type = "DIR32"
+symbol = "__imp__ReadFile@20"
+target = 0x0065712C
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 750
+type = "REL32"
+symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+target = 0x005F8380
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 757
+type = "REL32"
+symbol = "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z"
+target = 0x005F7FC0
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 794
+type = "REL32"
+symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+target = 0x005F8380
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 801
+type = "REL32"
+symbol = "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z"
+target = 0x005F7FC0
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 842
+type = "REL32"
+symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+target = 0x005F8380
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 849
+type = "REL32"
+symbol = "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z"
+target = 0x005F7FC0
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 856
+type = "REL32"
+symbol = "?InitializeGraphics@EffectRecordF294@@QAEXXZ"
+target = 0x00458790
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 883
+type = "REL32"
+symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+target = 0x005F8380
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 890
+type = "REL32"
+symbol = "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z"
+target = 0x005F7FC0
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 904
+type = "DIR32"
+symbol = "__imp__ReadFile@20"
+target = 0x0065712C
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 931
+type = "REL32"
+symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+target = 0x005F8380
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 938
+type = "REL32"
+symbol = "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z"
+target = 0x005F7FC0
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 955
+type = "DIR32"
+symbol = "__imp__ReadFile@20"
+target = 0x0065712C
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 982
+type = "REL32"
+symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+target = 0x005F8380
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 989
+type = "REL32"
+symbol = "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z"
+target = 0x005F7FC0
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 1006
+type = "DIR32"
+symbol = "__imp__ReadFile@20"
+target = 0x0065712C
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 1033
+type = "REL32"
+symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+target = 0x005F8380
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 1040
+type = "REL32"
+symbol = "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z"
+target = 0x005F7FC0
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 1057
+type = "DIR32"
+symbol = "__imp__ReadFile@20"
+target = 0x0065712C
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 1084
+type = "REL32"
+symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+target = 0x005F8380
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 1091
+type = "REL32"
+symbol = "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z"
+target = 0x005F7FC0
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 1108
+type = "DIR32"
+symbol = "__imp__ReadFile@20"
+target = 0x0065712C
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 1130
+type = "DIR32"
+symbol = "__imp__ReadFile@20"
+target = 0x0065712C
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 1146
+type = "DIR32"
+symbol = "?g_EffectShortScaleAt00658044@@3MB"
+target = 0x00658044
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 1168
+type = "REL32"
+symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+target = 0x005F8380
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 1175
+type = "REL32"
+symbol = "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z"
+target = 0x005F7FC0
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 1200
+type = "DIR32"
+symbol = "?g_EffectShortScaleAt00658044@@3MB"
+target = 0x00658044
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 1222
+type = "REL32"
+symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+target = 0x005F8380
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 1229
+type = "REL32"
+symbol = "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z"
+target = 0x005F7FC0
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 1254
+type = "DIR32"
+symbol = "?g_EffectShortScaleAt00658044@@3MB"
+target = 0x00658044
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 1276
+type = "REL32"
+symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+target = 0x005F8380
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 1283
+type = "REL32"
+symbol = "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z"
+target = 0x005F7FC0
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 1319
+type = "REL32"
+symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+target = 0x005F8380
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 1326
+type = "REL32"
+symbol = "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z"
+target = 0x005F7FC0
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 1343
+type = "DIR32"
+symbol = "__imp__ReadFile@20"
+target = 0x0065712C
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 1370
+type = "REL32"
+symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+target = 0x005F8380
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 1377
+type = "REL32"
+symbol = "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z"
+target = 0x005F7FC0
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 1394
+type = "DIR32"
+symbol = "__imp__ReadFile@20"
+target = 0x0065712C
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 1421
+type = "REL32"
+symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+target = 0x005F8380
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 1428
+type = "REL32"
+symbol = "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z"
+target = 0x005F7FC0
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 1445
+type = "DIR32"
+symbol = "__imp__ReadFile@20"
+target = 0x0065712C
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 1467
+type = "DIR32"
+symbol = "__imp__ReadFile@20"
+target = 0x0065712C
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 1499
+type = "REL32"
+symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+target = 0x005F8380
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 1506
+type = "REL32"
+symbol = "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z"
+target = 0x005F7FC0
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 1537
+type = "DIR32"
+symbol = "__imp__ReadFile@20"
+target = 0x0065712C
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 1578
+type = "REL32"
+symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+target = 0x005F8380
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 1585
+type = "REL32"
+symbol = "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z"
+target = 0x005F7FC0
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 1619
+type = "DIR32"
+symbol = "__imp__ReadFile@20"
+target = 0x0065712C
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 1660
+type = "REL32"
+symbol = "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z"
+target = 0x005F8380
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 1667
+type = "REL32"
+symbol = "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z"
+target = 0x005F7FC0
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 1704
+type = "REL32"
+symbol = "??1EffectScratchF294@@QAE@XZ"
+target = 0x004588B0
+[[units.effects-load-pattern-catalog-005f71f0.relocations]]
+offset = 1714
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000

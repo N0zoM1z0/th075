@@ -607,3 +607,4 @@ FontSurface::ConfigureTextAt00413420
 Effects::LoadResourcesAt005F70E0
 FontSurface::DecodePackedTextUnitAt0041C9D0
 FontSurface::ReleaseRasterResourcesAt0041C130
+Effects::LoadPatternCatalogAt005F71F0

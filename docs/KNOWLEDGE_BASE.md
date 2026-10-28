@@ -3247,7 +3247,7 @@ bytes and **20/20 genuine physical COFF fields**. The pinned VC7.1
 for this affected function** and reported `exact; 487 coverage bytes`.
 F281 and F283 were independently cold-accepted previously and receive
 no duplicate CODE credit here. The native 1,722-byte Effects catalog
-loader at `005F71F0` remains unaccepted, as do all 97 origin-unknown
+loader at `005F71F0` was unaccepted in historical F285; it is now independently **F294 cold-exact**, while all 97 origin-unknown
 functions. No target byte grafting, assembly, synthetic filler, masked
 relocations, cropped function, all-unit cold replay or external Oracle
 verification is claimed.
@@ -3517,7 +3517,7 @@ credit for this boss until complete exact reconstruction.
 
 Four complete originally authored game-specific functions downstream
 of the separately F292-accepted entire 1,385-byte overlay boss and
-the still-unaccepted 1,722-byte Effects resource catalog were
+the then-unaccepted (now separately F294 cold-exact) 1,722-byte Effects resource catalog were
 independently reviewed via the pinned Japanese PE. Original native
 functions and machine-code evidence live in `.analysis/f293-graphics-leaves/`;
 pinned VC7.1 negative/positive source comparisons and full affected
@@ -3580,3 +3580,103 @@ field mask, fake locals, truncated target or remote Oracle receipt.
 All underlying Win32/CRT/VC7 helpers and 97 pending origin-unknown
 functions remain uncredited; no private whole class definition is
 asserted.
+
+
+## F294: complete cold-exact 1,722-byte Effects::LoadPatternCatalog archive boss
+
+The full original R067-authored game-specific pattern resource catalog
+loader `Effects::LoadPatternCatalogAt005F71F0` at
+`005F71F0..005F78A9` consists of **1,722 original native CODE bytes**
+and **582 independently decoded complete x86 instructions** ending in
+a real RET at `005F78A9`. Original full pinned PE CODE SHA256:
+`6fc11b0e9aec650d60b8e4d00bca85e26a026d4dce9bed0d3a5a46bd6adb526d`.
+The entire original Ghidra function/decompiler and full native physical
+disassembly are at `.analysis/f274-effects-catalog/` and
+`.analysis/f294-effects-catalog/`; the final natural C++ is
+`src/EffectsLoadPatternCatalogF294.cpp`. The Ghidra decompiler's
+opaque `TaskStack` type labels are *not* treated as proof of the
+original private class names; only its real observed 16-byte
+constructor/destructor at `00458880`/`004588B0` and scoped EH lifetime
+are represented in source.
+
+The original operation finds and opens the real
+`data\system\effect\effect.pat` entry through game archive
+lookup `0041CF00` and `0041D750`, and uses a genuine real 16-byte
+stack scratch object, native exception frame and EH handler
+`00656679`. It traverses the actual effect slot collection at
+`this+0x78`, clears/deletes previously owned non-null sequences through
+original game sequence `Clear`, indexed `At` and scalar deleting
+destructor, and clears then resizes the physical slot collection from
+its native file count. It reads each sequence ID and row count through
+the original `ReadFile` IAT `0065712C`; on absent rows it performs
+EH-backed native new(16) via `0064159D` and native `005F7F20`
+constructor, retains real C++ conditional pointer results and original
+EH state transition, then calls real `005F8000` resize with an actual
+16-byte scratch object. Its full nested record loop uses original
+`005F7FC0` access and actual four two-byte reads into the four
+observed native per-item offsets. Native record-kind bytes 0 and 1
+set the original opposite `record+0xC` flags. Kind 2 calls native
+`00458790` graphics initialization, reads the original texture
+record, all original one-byte components and shorts, and converts
+one actual signed short three times with native `FMUL` against game
+float global `00658044`, then converts three more signed shorts to
+float without the scale. No invented end-of-file check, CloseHandle,
+extra file read, or member destruction absent from original control
+flow was added. The native C++ cleanup restores the entire EH frame.
+
+The first entire natural C++ source generated **all 1,722 bytes** and
+all **582 original x86 instruction forms and 91 physical COFF
+relocations** on pinned VC7.1 `/Od /Ob0 /Gy /GR- /GX /GS /Zi`, but
+matched only **1,244/1,358** nonrelocation bytes. The difference was
+actual compiler local storage, not missing gameplay. Many genuine
+C++ declaration/lexical-scope permutations failed. Combining the
+**nine actually used parser values** (short scratch numeric conversion,
+row count, signed flag storage, row index, sequence ID, file row count,
+real Win32 file handle, transferred-byte count, outer file index)
+into an ordinary typed physical parser state struct
+`EffectVarsGroupF294` restored **1,347/1,358** bytes without any
+additional locals, allocation or source-level side effects. The
+original C++ call to resize slots uses a **typed null pointer rvalue
+bound to `EffectSequenceF294* const&`**; using such an actual reference
+argument instead of a preallocated named `empty` variable produces
+exactly native EBP-0x4C temporary null pointer and the original
+compiler `delete`-expression aliases at EBP-0x48 and EBP-0x44,
+reducing mismatches to four.
+
+The final four mismatches all referred to the same **single-byte
+file record kind at native EBP-0x25**, where the compiler allocates
+a real **four-byte stack storage slot** at EBP-0x28..-0x25. A plain
+C++ `signed char kind` inside the physical struct put the same
+input in the first byte (EBP-0x28), but native `ReadFile` and all
+three subsequent signed `MOVSX` operations read the *last* byte of
+that existing storage. The final source models the exact
+compiler-allocated four-byte input region as one genuine `DWORD
+kindStorage` and passes/accesses the observed signed byte at
+byte offset 3 through ordinary typed C++ member byte-address
+operations (`R(signed char,&values.kindStorage,3)`). The extra
+three byte positions were **already part of the original stack slot**,
+are never initialized or accessed as gameplay state, and do not
+allocate a separate dummy field, increase the original stack frame,
+or add any machine instructions. This is a borrowed physical
+original-input storage carrier, not evidence of the unobserved
+original author's preferred local type.
+
+This final whole source reproduces **all 1,722/1,722 original CODE
+bytes**, all **1,358/1,358 nonrelocation byte positions** and
+**91/91 genuine physical native COFF relocation offsets/types and
+solved destinations**, including original EH/Win32 and all real
+game vector/record calls, without masked/missing fields or copying
+original machine bytes. Only the **one changed canonical unit**
+`effects-load-pattern-catalog-005f71f0` was cold rebuilt from source
+and reported `exact; 1722 coverage bytes` / **1/1 exact**. All
+failed controls and the local full acceptance receipt are retained
+privately in `.analysis/f294-effects-catalog/`, rather than being
+discarded or treated as authoritative hypotheses. F293's original
+84-byte resource loader directly calling the now accepted boss,
+F281/F285 native effect spawners and F283 child constructor were
+previously cold accepted independently, with no duplicate CODE
+credit. Full original private effect catalog owner and STL/CRT
+implementations remain separately unproven, and all 97 origin-pending
+functions remain excluded. No all-unit cold replay, byte grafts,
+manual assembly, artificial padding, cropped original function or
+remote Oracle acceptance was claimed.

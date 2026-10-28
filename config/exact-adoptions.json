@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "fa6848342833c51483ae71dabaf56e8ca18c09b065db22e7286f3f68bb5084cb"
+      "current_sha256": "60ed1f3088dcd6c92ab727b5b5e83d3415b6f66f337f8c5bdbab044faff06f38"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "2ecd9dcc3d9c766a10bda86910df00b1570bb9e3ee4986ddb6a254c92bc211c4"
+      "current_sha256": "a64abaaf414c289576b02b05375b069dc0e359374e01e8dba69f18afecb1aeea"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "85fba18e94d08c8402ca00ddab6e017973ccbb94c7ac815deb797a539dc2c92a"
+      "current_sha256": "951495773c71a56f79c20dcb2fa758506bfca02f8958f0deb5f197a0cf60e378"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "f7291c07c087e80c84e2069ec9a5574d51e9af9c1216d96beb018d3a4e9226e4"
+      "current_sha256": "bfe00d2b6c107a87573183817530b9877fc6880a1c76f4b5f903bead8d105dbe"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "4b6ec76ba4c9e440d0ab210917e39a6681c3bc70dd3a65a411fa372140b8e750"
+      "current_sha256": "621290c4ebce987082d2aa83d18014bbeb1524e5464a2e5322384aa454d65b31"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -24196,6 +24196,50 @@
         "disposition": "authored",
         "confidence": "complete-game-policy-with-mixed-context",
         "evidence_id": "R109"
+      }
+    },
+    {
+      "before": {
+        "address": "0x005F71F0",
+        "size": "1722",
+        "span_end": "0x005F78A9",
+        "current_name": "FUN_005f71f0",
+        "proposed_name": "Effects::LoadPatternCatalogAt005F71F0",
+        "module": "Effects",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R067; full target body/CFG and game-specific call or vtable binding",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x005F71F0",
+        "size": "1722",
+        "span_end": "0x005F78A9",
+        "current_name": "FUN_005f71f0",
+        "proposed_name": "Effects::LoadPatternCatalogAt005F71F0",
+        "module": "Effects",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void EffectsCatalogF294::LoadPatternCatalog()",
+        "is_thunk": "false",
+        "source_file": "src/EffectsLoadPatternCatalogF294.cpp",
+        "evidence": "R067; full target body/CFG and game-specific call or vtable binding; F294; scripts/repo-python scripts/replay-exact-units.py --unit effects-load-pattern-catalog-005f71f0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state independent; F294: COMPLETE original R067-authored native 1722 CODE bytes and 582 independently decoded original x86 instructions at 005F71F0..005F78A9, original PE full body SHA256 6fc11b0e9aec650d60b8e4d00bca85e26a026d4dce9bed0d3a5a46bd6adb526d. Pinned VC7.1 /Od /GX /GS first complete semantically reconstructed whole C++ control-flow/source compiled full 1722 native bytes and all 91 physical COFF fields, initially 1244/1358 nonfield matches with true stack-frame length 0x84 and 582 instruction forms; meaningful grouping of actual 9 file reader/index/loop/type-byte state fields into the original observed contiguous stack record corrected 103 bytes to 1347/1358; replacing an allocated named null default element with an actual typed pointer rvalue bound to the Resize(const T&) temporary reproduced the original EBP-0x4C null reference slot and the two compiler-generated delete aliases at -0x48/-0x44, reaching 1354/1358. Original per-record 1-byte input is at EBP-0x25 (last byte of the real compiler-allocated DWORD storage at EBP-0x28); modeling the actually used physical four-byte file-tag storage with DWORD kindStorage and reading ONLY the observed high-address signed byte, not introducing any additional locals or stack bytes, naturally restores the final four native byte-lvalue instructions at -0x25 and makes 1358/1358 comparable bytes EXACT. Original file archive path data\\system\\effect\\effect.pat, game archive find 0041CF00 and OpenEntry 0041D750, native 16-byte scratch constructor 00458880 and destructor 004588B0 with real EH state, original effect slot vector and sequence clear/delete/resize, true file ReadFile IAT with original unsigned/signed loops, EH-backed new 16-byte sequence 005F7F20, original 005F8000 resize, 005F7FC0 per-item indexed access, real 0/1/2 code paths with event/texture pointer field +8 and flag +0xC, genuine 2/1-byte parameter reads, signed-short to float via native g_EffectShortScaleAt00658044 and final six float field conversions, full actual cleanup all preserved. No byte modifications, no assembly, no masked COFF relocation, no artificial code/stack padding, no truncated native body, no hand-authored EH, no invented extra read/allocator/return, and no entire-unit cold replay; only this affected unit independently cold 1/1 exact with all 91/91 genuine relocations. Original private native class names and layout remain provisional; F293 84-byte Effects::LoadResources wrapper and F281/F285 602/487-byte effect creators were separately accepted and get no double byte credit; original CRT/STL/Win32 callee bodies and all 97 origin-pending functions excluded. Local checkpoint is not remote Oracle certification."
+      },
+      "origin": {
+        "address": "0x005F71F0",
+        "origin": "authored",
+        "subsystem": "Effects",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R067"
       }
     }
   ],
@@ -178555,6 +178599,575 @@
           "target": 6648340
         }
       ]
+    },
+    "effects-load-pattern-catalog-005f71f0": {
+      "source": "src/EffectsLoadPatternCatalogF294.cpp",
+      "object": "build/matching/EffectsLoadPatternCatalogF294.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "Effects::LoadPatternCatalogAt005F71F0"
+      ],
+      "symbol": "?LoadPatternCatalog@EffectsCatalogF294@@QAEXXZ",
+      "target_address": 6255088,
+      "size": 1722,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$?LoadPatternCatalog@EffectsCatalogF294@@QAEXXZ",
+          "target": 6645369
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 37,
+          "type": "REL32",
+          "symbol": "??0EffectScratchF294@@QAE@XZ",
+          "target": 4556928
+        },
+        {
+          "offset": 49,
+          "type": "DIR32",
+          "symbol": "?g_EffectPatPathAt0065A0C0@@3QBDB",
+          "target": 6660288
+        },
+        {
+          "offset": 54,
+          "type": "DIR32",
+          "symbol": "?g_ArchiveRootAt0065A0B8@@3QBDB",
+          "target": 6660280
+        },
+        {
+          "offset": 59,
+          "type": "REL32",
+          "symbol": "_FindEffectArchiveF294",
+          "target": 4312832
+        },
+        {
+          "offset": 69,
+          "type": "REL32",
+          "symbol": "?OpenEntry@EffectArchiveF294@@QAEPAXPBD@Z",
+          "target": 4314960
+        },
+        {
+          "offset": 101,
+          "type": "REL32",
+          "symbol": "?Size@EffectSlotsF294@@QAEIXZ",
+          "target": 6259520
+        },
+        {
+          "offset": 121,
+          "type": "REL32",
+          "symbol": "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z",
+          "target": 6259584
+        },
+        {
+          "offset": 141,
+          "type": "REL32",
+          "symbol": "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z",
+          "target": 6259584
+        },
+        {
+          "offset": 148,
+          "type": "REL32",
+          "symbol": "?Clear@EffectSequenceF294@@QAEXXZ",
+          "target": 6258720
+        },
+        {
+          "offset": 163,
+          "type": "REL32",
+          "symbol": "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z",
+          "target": 6259584
+        },
+        {
+          "offset": 190,
+          "type": "REL32",
+          "symbol": "??_GEffectSequenceF294@@QAEPAXI@Z",
+          "target": 6258336
+        },
+        {
+          "offset": 215,
+          "type": "REL32",
+          "symbol": "?Clear@EffectSlotsF294@@QAEXXZ",
+          "target": 6259680
+        },
+        {
+          "offset": 237,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 263,
+          "type": "REL32",
+          "symbol": "?Resize@EffectSlotsF294@@QAEXIABQAVEffectSequenceF294@@@Z",
+          "target": 6259648
+        },
+        {
+          "offset": 285,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 337,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 352,
+          "type": "REL32",
+          "symbol": "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z",
+          "target": 6259584
+        },
+        {
+          "offset": 364,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 388,
+          "type": "REL32",
+          "symbol": "??0EffectSequenceF294@@QAE@XZ",
+          "target": 6258464
+        },
+        {
+          "offset": 425,
+          "type": "REL32",
+          "symbol": "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z",
+          "target": 6259584
+        },
+        {
+          "offset": 452,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 475,
+          "type": "REL32",
+          "symbol": "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z",
+          "target": 6259584
+        },
+        {
+          "offset": 482,
+          "type": "REL32",
+          "symbol": "?Resize@EffectSequenceF294@@QAEXHABUEffectScratchF294@@@Z",
+          "target": 6258688
+        },
+        {
+          "offset": 539,
+          "type": "REL32",
+          "symbol": "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z",
+          "target": 6259584
+        },
+        {
+          "offset": 546,
+          "type": "REL32",
+          "symbol": "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z",
+          "target": 6258624
+        },
+        {
+          "offset": 560,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 587,
+          "type": "REL32",
+          "symbol": "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z",
+          "target": 6259584
+        },
+        {
+          "offset": 594,
+          "type": "REL32",
+          "symbol": "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z",
+          "target": 6258624
+        },
+        {
+          "offset": 605,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 632,
+          "type": "REL32",
+          "symbol": "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z",
+          "target": 6259584
+        },
+        {
+          "offset": 639,
+          "type": "REL32",
+          "symbol": "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z",
+          "target": 6258624
+        },
+        {
+          "offset": 653,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 680,
+          "type": "REL32",
+          "symbol": "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z",
+          "target": 6259584
+        },
+        {
+          "offset": 687,
+          "type": "REL32",
+          "symbol": "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z",
+          "target": 6258624
+        },
+        {
+          "offset": 701,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 723,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 750,
+          "type": "REL32",
+          "symbol": "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z",
+          "target": 6259584
+        },
+        {
+          "offset": 757,
+          "type": "REL32",
+          "symbol": "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z",
+          "target": 6258624
+        },
+        {
+          "offset": 794,
+          "type": "REL32",
+          "symbol": "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z",
+          "target": 6259584
+        },
+        {
+          "offset": 801,
+          "type": "REL32",
+          "symbol": "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z",
+          "target": 6258624
+        },
+        {
+          "offset": 842,
+          "type": "REL32",
+          "symbol": "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z",
+          "target": 6259584
+        },
+        {
+          "offset": 849,
+          "type": "REL32",
+          "symbol": "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z",
+          "target": 6258624
+        },
+        {
+          "offset": 856,
+          "type": "REL32",
+          "symbol": "?InitializeGraphics@EffectRecordF294@@QAEXXZ",
+          "target": 4556688
+        },
+        {
+          "offset": 883,
+          "type": "REL32",
+          "symbol": "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z",
+          "target": 6259584
+        },
+        {
+          "offset": 890,
+          "type": "REL32",
+          "symbol": "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z",
+          "target": 6258624
+        },
+        {
+          "offset": 904,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 931,
+          "type": "REL32",
+          "symbol": "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z",
+          "target": 6259584
+        },
+        {
+          "offset": 938,
+          "type": "REL32",
+          "symbol": "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z",
+          "target": 6258624
+        },
+        {
+          "offset": 955,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 982,
+          "type": "REL32",
+          "symbol": "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z",
+          "target": 6259584
+        },
+        {
+          "offset": 989,
+          "type": "REL32",
+          "symbol": "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z",
+          "target": 6258624
+        },
+        {
+          "offset": 1006,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 1033,
+          "type": "REL32",
+          "symbol": "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z",
+          "target": 6259584
+        },
+        {
+          "offset": 1040,
+          "type": "REL32",
+          "symbol": "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z",
+          "target": 6258624
+        },
+        {
+          "offset": 1057,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 1084,
+          "type": "REL32",
+          "symbol": "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z",
+          "target": 6259584
+        },
+        {
+          "offset": 1091,
+          "type": "REL32",
+          "symbol": "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z",
+          "target": 6258624
+        },
+        {
+          "offset": 1108,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 1130,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 1146,
+          "type": "DIR32",
+          "symbol": "?g_EffectShortScaleAt00658044@@3MB",
+          "target": 6651972
+        },
+        {
+          "offset": 1168,
+          "type": "REL32",
+          "symbol": "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z",
+          "target": 6259584
+        },
+        {
+          "offset": 1175,
+          "type": "REL32",
+          "symbol": "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z",
+          "target": 6258624
+        },
+        {
+          "offset": 1200,
+          "type": "DIR32",
+          "symbol": "?g_EffectShortScaleAt00658044@@3MB",
+          "target": 6651972
+        },
+        {
+          "offset": 1222,
+          "type": "REL32",
+          "symbol": "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z",
+          "target": 6259584
+        },
+        {
+          "offset": 1229,
+          "type": "REL32",
+          "symbol": "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z",
+          "target": 6258624
+        },
+        {
+          "offset": 1254,
+          "type": "DIR32",
+          "symbol": "?g_EffectShortScaleAt00658044@@3MB",
+          "target": 6651972
+        },
+        {
+          "offset": 1276,
+          "type": "REL32",
+          "symbol": "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z",
+          "target": 6259584
+        },
+        {
+          "offset": 1283,
+          "type": "REL32",
+          "symbol": "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z",
+          "target": 6258624
+        },
+        {
+          "offset": 1319,
+          "type": "REL32",
+          "symbol": "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z",
+          "target": 6259584
+        },
+        {
+          "offset": 1326,
+          "type": "REL32",
+          "symbol": "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z",
+          "target": 6258624
+        },
+        {
+          "offset": 1343,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 1370,
+          "type": "REL32",
+          "symbol": "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z",
+          "target": 6259584
+        },
+        {
+          "offset": 1377,
+          "type": "REL32",
+          "symbol": "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z",
+          "target": 6258624
+        },
+        {
+          "offset": 1394,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 1421,
+          "type": "REL32",
+          "symbol": "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z",
+          "target": 6259584
+        },
+        {
+          "offset": 1428,
+          "type": "REL32",
+          "symbol": "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z",
+          "target": 6258624
+        },
+        {
+          "offset": 1445,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 1467,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 1499,
+          "type": "REL32",
+          "symbol": "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z",
+          "target": 6259584
+        },
+        {
+          "offset": 1506,
+          "type": "REL32",
+          "symbol": "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z",
+          "target": 6258624
+        },
+        {
+          "offset": 1537,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 1578,
+          "type": "REL32",
+          "symbol": "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z",
+          "target": 6259584
+        },
+        {
+          "offset": 1585,
+          "type": "REL32",
+          "symbol": "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z",
+          "target": 6258624
+        },
+        {
+          "offset": 1619,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 1660,
+          "type": "REL32",
+          "symbol": "?At@EffectSlotsF294@@QAEPAPAVEffectSequenceF294@@I@Z",
+          "target": 6259584
+        },
+        {
+          "offset": 1667,
+          "type": "REL32",
+          "symbol": "?At@EffectSequenceF294@@QAEPAVEffectRecordF294@@H@Z",
+          "target": 6258624
+        },
+        {
+          "offset": 1704,
+          "type": "REL32",
+          "symbol": "??1EffectScratchF294@@QAE@XZ",
+          "target": 4556976
+        },
+        {
+          "offset": 1714,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -178937,6 +179550,7 @@
     "src/FontConfigureF293.cpp": "1829a80cd7868dcf90f8ca1022920ca8c43be660f37cbbba19287e0c9f63f323",
     "src/EffectsLoadF293.cpp": "55482bf6dbb158708efcfc003fa98997cd5e4a946836a051347bdfa216fff3b7",
     "src/FontDecodeF293.cpp": "126802bfe6d42acba6a9b6f7f9a015a39122225b87711410bc487ddcd5dde9a5",
-    "src/FontReleaseF293.cpp": "aa4e58134c92b1e170faa5e886ba7f7336d55795ca739bb3eeb2c0d0430cb283"
+    "src/FontReleaseF293.cpp": "aa4e58134c92b1e170faa5e886ba7f7336d55795ca739bb3eeb2c0d0430cb283",
+    "src/EffectsLoadPatternCatalogF294.cpp": "0803db0a51df551a543b833e800fcecf0c13b4293ef93b911adab5e507e24a26"
   }
 }
