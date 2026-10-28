@@ -7399,3 +7399,45 @@ actual Win32 COM behavior, return destinations, scene-switch-case
 ordering and the physical native stack must all be solved prior to
 accepting any code or comparing the table. No all-unit cold replay
 was run for these diagnostics.
+
+
+## F479: 36 independent complete 28-byte stage-derived virtual destructors
+
+All **36** remaining separately authored stage-background derived class
+virtual destructors from BG00a (`00449DC0`) through BG09x (`00451E90`)
+were individually disassembled and origin-checked against the pinned
+Japanese original executable before source adoption. Every body is exactly
+**28 original native authored CODE bytes / 11 native x86 instructions**.
+They share the actual C++ destructor behavior, but **not** the same
+original addresses, vtables, source methods, or accepted CODE bytes.
+Every native body stores its own original class-specific virtual table
+into `this+0` and calls original borrowed `BackgroundBase` destructor
+`00449D40`. Its two physical original COFF fields are exactly a DIR32
+at native function offset +0x0C for the separately original stage vtable,
+and an REL32 call at original offset +0x14 for native `00449D40`.
+Every independently returned vtable target is different; stage-specific
+addresses range from BG00a `00658434` and BG00b `006584A4` through
+BG09a `00658DC0` and BG09x `00658E54`. The unique original target
+addresses, vtables, original PE SHA256 of each whole 28-byte body,
+and original origin identifiers are frozen in the 36 separate current
+`config/functions.csv` and exact-adoption entries, never copied as
+a single undifferentiated claim.
+
+Natural `src/BackgroundStageDerivedDestructorsF479.cpp` uses C++
+`class BG00aF479 : public NativeBackgroundBaseF479` (and 35 individually
+defined other derived classes) with truthful `virtual ~Class()` bodies.
+Pinned VC7.1 `/Od /Ob0 /Gy /GR- /GX- /GS /Zi` automatically installs
+the correct original derived vtable and emits the genuine base class
+destructor call without source-side raw vtable injection, copied native
+bytes, unearned inheritance layout claims, or fake locals. All 36
+independent full-function diagnostic comparisons are **28/28 native
+CODE extent**, **20/20 actual nonrelocation bytes**, **2/2 authentic
+original physical COFF relocation types/fields and original PE
+destinations**. A single cold compiler object targeted *only* the
+36 newly created manifest names; the original whole-CODE replay was
+**36/36 exact**, crediting exactly **36×28 = 1,008 original authored
+CODE bytes**. No other stage ctor, the shared base destructor, any
+vtable DATA or compiler/CRT code is double-counted. No full-project
+cold replay, partial exact matching, fake ABI, manual assembly or
+external Oracle acceptance. Historical exact F376/F377 stage loading
+constructors remain separate authored original code.

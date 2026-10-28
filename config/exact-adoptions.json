@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377; F378; F379; F386; F389; F391; F392; F393; F394; F395; F403; F407; F414; F415; F421; F422; F427; F428; F429; F430; F431; F432; F435; F437; F440; F445; F446; F447; F448; F454; F458; F459; F460; F461; F463; F465; F467; F468; F469; F474",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377; F378; F379; F386; F389; F391; F392; F393; F394; F395; F403; F407; F414; F415; F421; F422; F427; F428; F429; F430; F431; F432; F435; F437; F440; F445; F446; F447; F448; F454; F458; F459; F460; F461; F463; F465; F467; F468; F469; F474; F479",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "89cebe3087e407987afc659d94afa03b42d9b68eda873e7473673c3bb5cf0115"
+      "current_sha256": "3ba8ddd74126e340d65ec30e4c7961388dcf6ce869c7aa3145da62fa03bce15a"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "4eb693c237de14ba4be301eb9df899184a40fb76570bfc3d41bb0002f5bc1eb6"
+      "current_sha256": "123107e863f394d89514bd549cc05cf6964536ddaf8e88012871062e8d42aa09"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "d8fdc02a2540eb87afc682df961d775f4c837a495e3f7205954ad1e4414a8431"
+      "current_sha256": "ee605e3b4705b1b0fdd3dbc65aa4d0d38e8a7ab77ddf28fa4f42da889c84ebaf"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "64543016ec74276130e3667c10fe3f58528b675ae4b2226e3d2f88175dae4f70"
+      "current_sha256": "fd858c02ab0337a719cd061a5c142727963dcc78c612cccc6d4d1198d9ae7d6b"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "22f2815421d00584a888789b70fb011374364ef70b44868a317eff8dd39241c8"
+      "current_sha256": "7e69f81ada662e807e5426f4ff284b5eda03172721341a26f5758aa73f1b48e7"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -31764,6 +31764,1590 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R062"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00449DC0",
+        "size": "28",
+        "span_end": "0x00449DDB",
+        "current_name": "FUN_00449dc0",
+        "proposed_name": "BackgroundStage::DestroyBG00a",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x00449DC0",
+        "size": "28",
+        "span_end": "0x00449DDB",
+        "current_name": "FUN_00449dc0",
+        "proposed_name": "BackgroundStage::DestroyBG00a",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BG00aF479::~BG00aF479()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundStageDerivedDestructorsF479.cpp",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable; F479; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-derived-destructor-bg00a-00449dc0",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent; F479 complete independent R057 original 28-byte BG00a stage-derived virtual destructor at 0x00449DC0, 11 original native x86 instructions; pinned PE SHA256 62adc8406977f846b8f26bb9de38fccfa01bbe09afafaa3c3e59678779b3a5d8. Genuine distinct native vtable address 0x00658434 stored at this+0, followed by original borrowed stage base destructor at 0x00449D40. Native 20/20 nonrelocation bytes, 2/2 genuine physical DIR32/REL32 fields with their original PE destinations, 36/36 independent affected-only cold exact across one compilation object. Native source is a C++ derived virtual destructor; original full private stage class/virtual table contents not inferred and base destructor body not double counted. No invented padding, ASM, target byte graft, relocation masks, crop, full cold replay or external Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x00449DC0",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R057"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044A210",
+        "size": "28",
+        "span_end": "0x0044A22B",
+        "current_name": "FUN_0044a210",
+        "proposed_name": "BackgroundStage::DestroyBG00b",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044A210",
+        "size": "28",
+        "span_end": "0x0044A22B",
+        "current_name": "FUN_0044a210",
+        "proposed_name": "BackgroundStage::DestroyBG00b",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BG00bF479::~BG00bF479()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundStageDerivedDestructorsF479.cpp",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable; F479; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-derived-destructor-bg00b-0044a210",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent; F479 complete independent R057 original 28-byte BG00b stage-derived virtual destructor at 0x0044A210, 11 original native x86 instructions; pinned PE SHA256 2dc9afd2fa7540827bb80df6e9969116c3f018b9f851f86c32a271649381162d. Genuine distinct native vtable address 0x006584A4 stored at this+0, followed by original borrowed stage base destructor at 0x00449D40. Native 20/20 nonrelocation bytes, 2/2 genuine physical DIR32/REL32 fields with their original PE destinations, 36/36 independent affected-only cold exact across one compilation object. Native source is a C++ derived virtual destructor; original full private stage class/virtual table contents not inferred and base destructor body not double counted. No invented padding, ASM, target byte graft, relocation masks, crop, full cold replay or external Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044A210",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R057"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044A500",
+        "size": "28",
+        "span_end": "0x0044A51B",
+        "current_name": "FUN_0044a500",
+        "proposed_name": "BackgroundStage::DestroyBG00c",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044A500",
+        "size": "28",
+        "span_end": "0x0044A51B",
+        "current_name": "FUN_0044a500",
+        "proposed_name": "BackgroundStage::DestroyBG00c",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BG00cF479::~BG00cF479()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundStageDerivedDestructorsF479.cpp",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable; F479; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-derived-destructor-bg00c-0044a500",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent; F479 complete independent R057 original 28-byte BG00c stage-derived virtual destructor at 0x0044A500, 11 original native x86 instructions; pinned PE SHA256 38492d168c1c6f770663315666fb41ca5981249054b2bfe4d78d1a27ef8c513a. Genuine distinct native vtable address 0x006584FC stored at this+0, followed by original borrowed stage base destructor at 0x00449D40. Native 20/20 nonrelocation bytes, 2/2 genuine physical DIR32/REL32 fields with their original PE destinations, 36/36 independent affected-only cold exact across one compilation object. Native source is a C++ derived virtual destructor; original full private stage class/virtual table contents not inferred and base destructor body not double counted. No invented padding, ASM, target byte graft, relocation masks, crop, full cold replay or external Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044A500",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R057"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044A730",
+        "size": "28",
+        "span_end": "0x0044A74B",
+        "current_name": "FUN_0044a730",
+        "proposed_name": "BackgroundStage::DestroyBG00x",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044A730",
+        "size": "28",
+        "span_end": "0x0044A74B",
+        "current_name": "FUN_0044a730",
+        "proposed_name": "BackgroundStage::DestroyBG00x",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BG00xF479::~BG00xF479()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundStageDerivedDestructorsF479.cpp",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable; F479; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-derived-destructor-bg00x-0044a730",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent; F479 complete independent R057 original 28-byte BG00x stage-derived virtual destructor at 0x0044A730, 11 original native x86 instructions; pinned PE SHA256 151ef5ed5c1bbf85c5a75d732366218a2e20c885a64fd154acf9e4e937015b38. Genuine distinct native vtable address 0x00658538 stored at this+0, followed by original borrowed stage base destructor at 0x00449D40. Native 20/20 nonrelocation bytes, 2/2 genuine physical DIR32/REL32 fields with their original PE destinations, 36/36 independent affected-only cold exact across one compilation object. Native source is a C++ derived virtual destructor; original full private stage class/virtual table contents not inferred and base destructor body not double counted. No invented padding, ASM, target byte graft, relocation masks, crop, full cold replay or external Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044A730",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R057"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044A960",
+        "size": "28",
+        "span_end": "0x0044A97B",
+        "current_name": "FUN_0044a960",
+        "proposed_name": "BackgroundStage::DestroyBG00y",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044A960",
+        "size": "28",
+        "span_end": "0x0044A97B",
+        "current_name": "FUN_0044a960",
+        "proposed_name": "BackgroundStage::DestroyBG00y",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BG00yF479::~BG00yF479()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundStageDerivedDestructorsF479.cpp",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable; F479; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-derived-destructor-bg00y-0044a960",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent; F479 complete independent R057 original 28-byte BG00y stage-derived virtual destructor at 0x0044A960, 11 original native x86 instructions; pinned PE SHA256 a4983e77dd5c94212a24ab22a43bf98fd074431f5b2ffcff241616207185fd63. Genuine distinct native vtable address 0x00658574 stored at this+0, followed by original borrowed stage base destructor at 0x00449D40. Native 20/20 nonrelocation bytes, 2/2 genuine physical DIR32/REL32 fields with their original PE destinations, 36/36 independent affected-only cold exact across one compilation object. Native source is a C++ derived virtual destructor; original full private stage class/virtual table contents not inferred and base destructor body not double counted. No invented padding, ASM, target byte graft, relocation masks, crop, full cold replay or external Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044A960",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R057"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044AB90",
+        "size": "28",
+        "span_end": "0x0044ABAB",
+        "current_name": "FUN_0044ab90",
+        "proposed_name": "BackgroundStage::DestroyBG00z",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044AB90",
+        "size": "28",
+        "span_end": "0x0044ABAB",
+        "current_name": "FUN_0044ab90",
+        "proposed_name": "BackgroundStage::DestroyBG00z",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BG00zF479::~BG00zF479()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundStageDerivedDestructorsF479.cpp",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable; F479; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-derived-destructor-bg00z-0044ab90",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent; F479 complete independent R057 original 28-byte BG00z stage-derived virtual destructor at 0x0044AB90, 11 original native x86 instructions; pinned PE SHA256 7b0ab34bbd2e9ca7106db27a7eed60b6400767b3504d7873f543f0da158d2df0. Genuine distinct native vtable address 0x006585B0 stored at this+0, followed by original borrowed stage base destructor at 0x00449D40. Native 20/20 nonrelocation bytes, 2/2 genuine physical DIR32/REL32 fields with their original PE destinations, 36/36 independent affected-only cold exact across one compilation object. Native source is a C++ derived virtual destructor; original full private stage class/virtual table contents not inferred and base destructor body not double counted. No invented padding, ASM, target byte graft, relocation masks, crop, full cold replay or external Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044AB90",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R057"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044AE30",
+        "size": "28",
+        "span_end": "0x0044AE4B",
+        "current_name": "FUN_0044ae30",
+        "proposed_name": "BackgroundStage::DestroyBG01a",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044AE30",
+        "size": "28",
+        "span_end": "0x0044AE4B",
+        "current_name": "FUN_0044ae30",
+        "proposed_name": "BackgroundStage::DestroyBG01a",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BG01aF479::~BG01aF479()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundStageDerivedDestructorsF479.cpp",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable; F479; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-derived-destructor-bg01a-0044ae30",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent; F479 complete independent R057 original 28-byte BG01a stage-derived virtual destructor at 0x0044AE30, 11 original native x86 instructions; pinned PE SHA256 6a18f4080872bdeac9c371c352f51fc65f9039c7619009d48d0fbd3a3df08809. Genuine distinct native vtable address 0x006585EC stored at this+0, followed by original borrowed stage base destructor at 0x00449D40. Native 20/20 nonrelocation bytes, 2/2 genuine physical DIR32/REL32 fields with their original PE destinations, 36/36 independent affected-only cold exact across one compilation object. Native source is a C++ derived virtual destructor; original full private stage class/virtual table contents not inferred and base destructor body not double counted. No invented padding, ASM, target byte graft, relocation masks, crop, full cold replay or external Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044AE30",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R057"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044B0D0",
+        "size": "28",
+        "span_end": "0x0044B0EB",
+        "current_name": "FUN_0044b0d0",
+        "proposed_name": "BackgroundStage::DestroyBG01b",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044B0D0",
+        "size": "28",
+        "span_end": "0x0044B0EB",
+        "current_name": "FUN_0044b0d0",
+        "proposed_name": "BackgroundStage::DestroyBG01b",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BG01bF479::~BG01bF479()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundStageDerivedDestructorsF479.cpp",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable; F479; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-derived-destructor-bg01b-0044b0d0",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent; F479 complete independent R057 original 28-byte BG01b stage-derived virtual destructor at 0x0044B0D0, 11 original native x86 instructions; pinned PE SHA256 29cbfbe6afd827782fa044fef2596ec1e9e669beb21a5cd1d8169bbd17d7b1bf. Genuine distinct native vtable address 0x00658634 stored at this+0, followed by original borrowed stage base destructor at 0x00449D40. Native 20/20 nonrelocation bytes, 2/2 genuine physical DIR32/REL32 fields with their original PE destinations, 36/36 independent affected-only cold exact across one compilation object. Native source is a C++ derived virtual destructor; original full private stage class/virtual table contents not inferred and base destructor body not double counted. No invented padding, ASM, target byte graft, relocation masks, crop, full cold replay or external Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044B0D0",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R057"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044B300",
+        "size": "28",
+        "span_end": "0x0044B31B",
+        "current_name": "FUN_0044b300",
+        "proposed_name": "BackgroundStage::DestroyBG01x",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044B300",
+        "size": "28",
+        "span_end": "0x0044B31B",
+        "current_name": "FUN_0044b300",
+        "proposed_name": "BackgroundStage::DestroyBG01x",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BG01xF479::~BG01xF479()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundStageDerivedDestructorsF479.cpp",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable; F479; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-derived-destructor-bg01x-0044b300",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent; F479 complete independent R057 original 28-byte BG01x stage-derived virtual destructor at 0x0044B300, 11 original native x86 instructions; pinned PE SHA256 6aabd892789bf060db40ca50818a80329f22821f631e1eb4f59887c8232a9e1b. Genuine distinct native vtable address 0x00658670 stored at this+0, followed by original borrowed stage base destructor at 0x00449D40. Native 20/20 nonrelocation bytes, 2/2 genuine physical DIR32/REL32 fields with their original PE destinations, 36/36 independent affected-only cold exact across one compilation object. Native source is a C++ derived virtual destructor; original full private stage class/virtual table contents not inferred and base destructor body not double counted. No invented padding, ASM, target byte graft, relocation masks, crop, full cold replay or external Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044B300",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R057"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044B530",
+        "size": "28",
+        "span_end": "0x0044B54B",
+        "current_name": "FUN_0044b530",
+        "proposed_name": "BackgroundStage::DestroyBG01y",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044B530",
+        "size": "28",
+        "span_end": "0x0044B54B",
+        "current_name": "FUN_0044b530",
+        "proposed_name": "BackgroundStage::DestroyBG01y",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BG01yF479::~BG01yF479()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundStageDerivedDestructorsF479.cpp",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable; F479; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-derived-destructor-bg01y-0044b530",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent; F479 complete independent R057 original 28-byte BG01y stage-derived virtual destructor at 0x0044B530, 11 original native x86 instructions; pinned PE SHA256 53d9c09743c58394004e8efc693aba48474bd4edcc149190c4854deeddd61ea1. Genuine distinct native vtable address 0x006586AC stored at this+0, followed by original borrowed stage base destructor at 0x00449D40. Native 20/20 nonrelocation bytes, 2/2 genuine physical DIR32/REL32 fields with their original PE destinations, 36/36 independent affected-only cold exact across one compilation object. Native source is a C++ derived virtual destructor; original full private stage class/virtual table contents not inferred and base destructor body not double counted. No invented padding, ASM, target byte graft, relocation masks, crop, full cold replay or external Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044B530",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R057"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044BA50",
+        "size": "28",
+        "span_end": "0x0044BA6B",
+        "current_name": "FUN_0044ba50",
+        "proposed_name": "BackgroundStage::DestroyBG02a",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044BA50",
+        "size": "28",
+        "span_end": "0x0044BA6B",
+        "current_name": "FUN_0044ba50",
+        "proposed_name": "BackgroundStage::DestroyBG02a",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BG02aF479::~BG02aF479()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundStageDerivedDestructorsF479.cpp",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable; F479; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-derived-destructor-bg02a-0044ba50",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent; F479 complete independent R057 original 28-byte BG02a stage-derived virtual destructor at 0x0044BA50, 11 original native x86 instructions; pinned PE SHA256 c8e063527b1acec694acd8d0df6a93a97eef120777d9e0d1f437713e250f21cc. Genuine distinct native vtable address 0x006586E8 stored at this+0, followed by original borrowed stage base destructor at 0x00449D40. Native 20/20 nonrelocation bytes, 2/2 genuine physical DIR32/REL32 fields with their original PE destinations, 36/36 independent affected-only cold exact across one compilation object. Native source is a C++ derived virtual destructor; original full private stage class/virtual table contents not inferred and base destructor body not double counted. No invented padding, ASM, target byte graft, relocation masks, crop, full cold replay or external Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044BA50",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R057"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044BF70",
+        "size": "28",
+        "span_end": "0x0044BF8B",
+        "current_name": "FUN_0044bf70",
+        "proposed_name": "BackgroundStage::DestroyBG02b",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044BF70",
+        "size": "28",
+        "span_end": "0x0044BF8B",
+        "current_name": "FUN_0044bf70",
+        "proposed_name": "BackgroundStage::DestroyBG02b",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BG02bF479::~BG02bF479()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundStageDerivedDestructorsF479.cpp",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable; F479; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-derived-destructor-bg02b-0044bf70",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent; F479 complete independent R057 original 28-byte BG02b stage-derived virtual destructor at 0x0044BF70, 11 original native x86 instructions; pinned PE SHA256 da3b039db386a3b84c9b4fa1c7473730bb02ae81a2dea68059365c618126f207. Genuine distinct native vtable address 0x0065872C stored at this+0, followed by original borrowed stage base destructor at 0x00449D40. Native 20/20 nonrelocation bytes, 2/2 genuine physical DIR32/REL32 fields with their original PE destinations, 36/36 independent affected-only cold exact across one compilation object. Native source is a C++ derived virtual destructor; original full private stage class/virtual table contents not inferred and base destructor body not double counted. No invented padding, ASM, target byte graft, relocation masks, crop, full cold replay or external Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044BF70",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R057"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044C490",
+        "size": "28",
+        "span_end": "0x0044C4AB",
+        "current_name": "FUN_0044c490",
+        "proposed_name": "BackgroundStage::DestroyBG02c",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044C490",
+        "size": "28",
+        "span_end": "0x0044C4AB",
+        "current_name": "FUN_0044c490",
+        "proposed_name": "BackgroundStage::DestroyBG02c",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BG02cF479::~BG02cF479()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundStageDerivedDestructorsF479.cpp",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable; F479; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-derived-destructor-bg02c-0044c490",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent; F479 complete independent R057 original 28-byte BG02c stage-derived virtual destructor at 0x0044C490, 11 original native x86 instructions; pinned PE SHA256 9df40ba8db14435afd371375411743f9957186bdf1f17cb70c6b85c995217129. Genuine distinct native vtable address 0x00658768 stored at this+0, followed by original borrowed stage base destructor at 0x00449D40. Native 20/20 nonrelocation bytes, 2/2 genuine physical DIR32/REL32 fields with their original PE destinations, 36/36 independent affected-only cold exact across one compilation object. Native source is a C++ derived virtual destructor; original full private stage class/virtual table contents not inferred and base destructor body not double counted. No invented padding, ASM, target byte graft, relocation masks, crop, full cold replay or external Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044C490",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R057"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044C6D0",
+        "size": "28",
+        "span_end": "0x0044C6EB",
+        "current_name": "FUN_0044c6d0",
+        "proposed_name": "BackgroundStage::DestroyBG02x",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044C6D0",
+        "size": "28",
+        "span_end": "0x0044C6EB",
+        "current_name": "FUN_0044c6d0",
+        "proposed_name": "BackgroundStage::DestroyBG02x",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BG02xF479::~BG02xF479()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundStageDerivedDestructorsF479.cpp",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable; F479; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-derived-destructor-bg02x-0044c6d0",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent; F479 complete independent R057 original 28-byte BG02x stage-derived virtual destructor at 0x0044C6D0, 11 original native x86 instructions; pinned PE SHA256 74903cbe12d87f2f06a02e51b2816e3e4595309f559077058a4d420f2f84ea95. Genuine distinct native vtable address 0x006587A4 stored at this+0, followed by original borrowed stage base destructor at 0x00449D40. Native 20/20 nonrelocation bytes, 2/2 genuine physical DIR32/REL32 fields with their original PE destinations, 36/36 independent affected-only cold exact across one compilation object. Native source is a C++ derived virtual destructor; original full private stage class/virtual table contents not inferred and base destructor body not double counted. No invented padding, ASM, target byte graft, relocation masks, crop, full cold replay or external Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044C6D0",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R057"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044C910",
+        "size": "28",
+        "span_end": "0x0044C92B",
+        "current_name": "FUN_0044c910",
+        "proposed_name": "BackgroundStage::DestroyBG02y",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044C910",
+        "size": "28",
+        "span_end": "0x0044C92B",
+        "current_name": "FUN_0044c910",
+        "proposed_name": "BackgroundStage::DestroyBG02y",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BG02yF479::~BG02yF479()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundStageDerivedDestructorsF479.cpp",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable; F479; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-derived-destructor-bg02y-0044c910",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent; F479 complete independent R057 original 28-byte BG02y stage-derived virtual destructor at 0x0044C910, 11 original native x86 instructions; pinned PE SHA256 5bc8372432dff6cc116ab5a464d66e95c05b243df46c67fa212950f5e7bf60c6. Genuine distinct native vtable address 0x006587E0 stored at this+0, followed by original borrowed stage base destructor at 0x00449D40. Native 20/20 nonrelocation bytes, 2/2 genuine physical DIR32/REL32 fields with their original PE destinations, 36/36 independent affected-only cold exact across one compilation object. Native source is a C++ derived virtual destructor; original full private stage class/virtual table contents not inferred and base destructor body not double counted. No invented padding, ASM, target byte graft, relocation masks, crop, full cold replay or external Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044C910",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R057"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044CB50",
+        "size": "28",
+        "span_end": "0x0044CB6B",
+        "current_name": "FUN_0044cb50",
+        "proposed_name": "BackgroundStage::DestroyBG02z",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044CB50",
+        "size": "28",
+        "span_end": "0x0044CB6B",
+        "current_name": "FUN_0044cb50",
+        "proposed_name": "BackgroundStage::DestroyBG02z",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BG02zF479::~BG02zF479()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundStageDerivedDestructorsF479.cpp",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable; F479; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-derived-destructor-bg02z-0044cb50",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent; F479 complete independent R057 original 28-byte BG02z stage-derived virtual destructor at 0x0044CB50, 11 original native x86 instructions; pinned PE SHA256 0185ac52cb8f02feb8f393f4a8d7268125508c428dfe159bfe2e8c9a8f3d8dbd. Genuine distinct native vtable address 0x0065881C stored at this+0, followed by original borrowed stage base destructor at 0x00449D40. Native 20/20 nonrelocation bytes, 2/2 genuine physical DIR32/REL32 fields with their original PE destinations, 36/36 independent affected-only cold exact across one compilation object. Native source is a C++ derived virtual destructor; original full private stage class/virtual table contents not inferred and base destructor body not double counted. No invented padding, ASM, target byte graft, relocation masks, crop, full cold replay or external Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044CB50",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R057"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044CDF0",
+        "size": "28",
+        "span_end": "0x0044CE0B",
+        "current_name": "FUN_0044cdf0",
+        "proposed_name": "BackgroundStage::DestroyBG03a",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044CDF0",
+        "size": "28",
+        "span_end": "0x0044CE0B",
+        "current_name": "FUN_0044cdf0",
+        "proposed_name": "BackgroundStage::DestroyBG03a",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BG03aF479::~BG03aF479()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundStageDerivedDestructorsF479.cpp",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable; F479; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-derived-destructor-bg03a-0044cdf0",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent; F479 complete independent R057 original 28-byte BG03a stage-derived virtual destructor at 0x0044CDF0, 11 original native x86 instructions; pinned PE SHA256 e5ce77663e370ec2293d53b28cb6b9c20f8fc60adeba3c2a645ccc51d1cb6ba8. Genuine distinct native vtable address 0x00658858 stored at this+0, followed by original borrowed stage base destructor at 0x00449D40. Native 20/20 nonrelocation bytes, 2/2 genuine physical DIR32/REL32 fields with their original PE destinations, 36/36 independent affected-only cold exact across one compilation object. Native source is a C++ derived virtual destructor; original full private stage class/virtual table contents not inferred and base destructor body not double counted. No invented padding, ASM, target byte graft, relocation masks, crop, full cold replay or external Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044CDF0",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R057"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044D090",
+        "size": "28",
+        "span_end": "0x0044D0AB",
+        "current_name": "FUN_0044d090",
+        "proposed_name": "BackgroundStage::DestroyBG03b",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044D090",
+        "size": "28",
+        "span_end": "0x0044D0AB",
+        "current_name": "FUN_0044d090",
+        "proposed_name": "BackgroundStage::DestroyBG03b",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BG03bF479::~BG03bF479()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundStageDerivedDestructorsF479.cpp",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable; F479; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-derived-destructor-bg03b-0044d090",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent; F479 complete independent R057 original 28-byte BG03b stage-derived virtual destructor at 0x0044D090, 11 original native x86 instructions; pinned PE SHA256 49e77ef630c91b74c7d2608784a5dcc6356b3d7d3cf08e0e5df5d9cca63030ee. Genuine distinct native vtable address 0x00658894 stored at this+0, followed by original borrowed stage base destructor at 0x00449D40. Native 20/20 nonrelocation bytes, 2/2 genuine physical DIR32/REL32 fields with their original PE destinations, 36/36 independent affected-only cold exact across one compilation object. Native source is a C++ derived virtual destructor; original full private stage class/virtual table contents not inferred and base destructor body not double counted. No invented padding, ASM, target byte graft, relocation masks, crop, full cold replay or external Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044D090",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R057"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044D2D0",
+        "size": "28",
+        "span_end": "0x0044D2EB",
+        "current_name": "FUN_0044d2d0",
+        "proposed_name": "BackgroundStage::DestroyBG03x",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044D2D0",
+        "size": "28",
+        "span_end": "0x0044D2EB",
+        "current_name": "FUN_0044d2d0",
+        "proposed_name": "BackgroundStage::DestroyBG03x",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BG03xF479::~BG03xF479()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundStageDerivedDestructorsF479.cpp",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable; F479; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-derived-destructor-bg03x-0044d2d0",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent; F479 complete independent R057 original 28-byte BG03x stage-derived virtual destructor at 0x0044D2D0, 11 original native x86 instructions; pinned PE SHA256 e1d35aff1f4bf2cfdabab04c4e9178c4994c4cd4cf8a3942ca231aaab0651a8d. Genuine distinct native vtable address 0x006588D0 stored at this+0, followed by original borrowed stage base destructor at 0x00449D40. Native 20/20 nonrelocation bytes, 2/2 genuine physical DIR32/REL32 fields with their original PE destinations, 36/36 independent affected-only cold exact across one compilation object. Native source is a C++ derived virtual destructor; original full private stage class/virtual table contents not inferred and base destructor body not double counted. No invented padding, ASM, target byte graft, relocation masks, crop, full cold replay or external Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044D2D0",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R057"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044D510",
+        "size": "28",
+        "span_end": "0x0044D52B",
+        "current_name": "FUN_0044d510",
+        "proposed_name": "BackgroundStage::DestroyBG03y",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044D510",
+        "size": "28",
+        "span_end": "0x0044D52B",
+        "current_name": "FUN_0044d510",
+        "proposed_name": "BackgroundStage::DestroyBG03y",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BG03yF479::~BG03yF479()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundStageDerivedDestructorsF479.cpp",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable; F479; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-derived-destructor-bg03y-0044d510",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent; F479 complete independent R057 original 28-byte BG03y stage-derived virtual destructor at 0x0044D510, 11 original native x86 instructions; pinned PE SHA256 cb892f0ad3fd74b1e7b3919e222a526e2d471c5cd8162cca541204d492634b62. Genuine distinct native vtable address 0x0065890C stored at this+0, followed by original borrowed stage base destructor at 0x00449D40. Native 20/20 nonrelocation bytes, 2/2 genuine physical DIR32/REL32 fields with their original PE destinations, 36/36 independent affected-only cold exact across one compilation object. Native source is a C++ derived virtual destructor; original full private stage class/virtual table contents not inferred and base destructor body not double counted. No invented padding, ASM, target byte graft, relocation masks, crop, full cold replay or external Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044D510",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R057"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044D9A0",
+        "size": "28",
+        "span_end": "0x0044D9BB",
+        "current_name": "FUN_0044d9a0",
+        "proposed_name": "BackgroundStage::DestroyBG04a",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044D9A0",
+        "size": "28",
+        "span_end": "0x0044D9BB",
+        "current_name": "FUN_0044d9a0",
+        "proposed_name": "BackgroundStage::DestroyBG04a",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BG04aF479::~BG04aF479()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundStageDerivedDestructorsF479.cpp",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable; F479; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-derived-destructor-bg04a-0044d9a0",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent; F479 complete independent R057 original 28-byte BG04a stage-derived virtual destructor at 0x0044D9A0, 11 original native x86 instructions; pinned PE SHA256 6328c8e20d8f4b5d14f629ef90919d3a6493a0ad92921327023aa19fbe4ba98e. Genuine distinct native vtable address 0x00658948 stored at this+0, followed by original borrowed stage base destructor at 0x00449D40. Native 20/20 nonrelocation bytes, 2/2 genuine physical DIR32/REL32 fields with their original PE destinations, 36/36 independent affected-only cold exact across one compilation object. Native source is a C++ derived virtual destructor; original full private stage class/virtual table contents not inferred and base destructor body not double counted. No invented padding, ASM, target byte graft, relocation masks, crop, full cold replay or external Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044D9A0",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R057"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044DE50",
+        "size": "28",
+        "span_end": "0x0044DE6B",
+        "current_name": "FUN_0044de50",
+        "proposed_name": "BackgroundStage::DestroyBG04b",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044DE50",
+        "size": "28",
+        "span_end": "0x0044DE6B",
+        "current_name": "FUN_0044de50",
+        "proposed_name": "BackgroundStage::DestroyBG04b",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BG04bF479::~BG04bF479()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundStageDerivedDestructorsF479.cpp",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable; F479; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-derived-destructor-bg04b-0044de50",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent; F479 complete independent R057 original 28-byte BG04b stage-derived virtual destructor at 0x0044DE50, 11 original native x86 instructions; pinned PE SHA256 9b31a93da1c8a6ddd269e7782ba76bfbb7a5114e8716bbc7adee9895b0553e7a. Genuine distinct native vtable address 0x006589E4 stored at this+0, followed by original borrowed stage base destructor at 0x00449D40. Native 20/20 nonrelocation bytes, 2/2 genuine physical DIR32/REL32 fields with their original PE destinations, 36/36 independent affected-only cold exact across one compilation object. Native source is a C++ derived virtual destructor; original full private stage class/virtual table contents not inferred and base destructor body not double counted. No invented padding, ASM, target byte graft, relocation masks, crop, full cold replay or external Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044DE50",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R057"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044E090",
+        "size": "28",
+        "span_end": "0x0044E0AB",
+        "current_name": "FUN_0044e090",
+        "proposed_name": "BackgroundStage::DestroyBG04x",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044E090",
+        "size": "28",
+        "span_end": "0x0044E0AB",
+        "current_name": "FUN_0044e090",
+        "proposed_name": "BackgroundStage::DestroyBG04x",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BG04xF479::~BG04xF479()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundStageDerivedDestructorsF479.cpp",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable; F479; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-derived-destructor-bg04x-0044e090",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent; F479 complete independent R057 original 28-byte BG04x stage-derived virtual destructor at 0x0044E090, 11 original native x86 instructions; pinned PE SHA256 cd4f4ef00095b6b9e2d8250d271e6d74bd3ec4536f399340550c48f328927f91. Genuine distinct native vtable address 0x00658A4C stored at this+0, followed by original borrowed stage base destructor at 0x00449D40. Native 20/20 nonrelocation bytes, 2/2 genuine physical DIR32/REL32 fields with their original PE destinations, 36/36 independent affected-only cold exact across one compilation object. Native source is a C++ derived virtual destructor; original full private stage class/virtual table contents not inferred and base destructor body not double counted. No invented padding, ASM, target byte graft, relocation masks, crop, full cold replay or external Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044E090",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R057"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044E2D0",
+        "size": "28",
+        "span_end": "0x0044E2EB",
+        "current_name": "FUN_0044e2d0",
+        "proposed_name": "BackgroundStage::DestroyBG04y",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044E2D0",
+        "size": "28",
+        "span_end": "0x0044E2EB",
+        "current_name": "FUN_0044e2d0",
+        "proposed_name": "BackgroundStage::DestroyBG04y",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BG04yF479::~BG04yF479()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundStageDerivedDestructorsF479.cpp",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable; F479; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-derived-destructor-bg04y-0044e2d0",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent; F479 complete independent R057 original 28-byte BG04y stage-derived virtual destructor at 0x0044E2D0, 11 original native x86 instructions; pinned PE SHA256 80715d0d10f449e90215ecd69c53c49494bf1ff51938e316240768c8540f9cfe. Genuine distinct native vtable address 0x00658A88 stored at this+0, followed by original borrowed stage base destructor at 0x00449D40. Native 20/20 nonrelocation bytes, 2/2 genuine physical DIR32/REL32 fields with their original PE destinations, 36/36 independent affected-only cold exact across one compilation object. Native source is a C++ derived virtual destructor; original full private stage class/virtual table contents not inferred and base destructor body not double counted. No invented padding, ASM, target byte graft, relocation masks, crop, full cold replay or external Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044E2D0",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R057"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044E7F0",
+        "size": "28",
+        "span_end": "0x0044E80B",
+        "current_name": "FUN_0044e7f0",
+        "proposed_name": "BackgroundStage::DestroyBG05a",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044E7F0",
+        "size": "28",
+        "span_end": "0x0044E80B",
+        "current_name": "FUN_0044e7f0",
+        "proposed_name": "BackgroundStage::DestroyBG05a",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BG05aF479::~BG05aF479()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundStageDerivedDestructorsF479.cpp",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable; F479; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-derived-destructor-bg05a-0044e7f0",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent; F479 complete independent R057 original 28-byte BG05a stage-derived virtual destructor at 0x0044E7F0, 11 original native x86 instructions; pinned PE SHA256 cac6c998ed7c689d583370ef4abf31429f473c64b29dfa91b0e685b005321ba6. Genuine distinct native vtable address 0x00658AC4 stored at this+0, followed by original borrowed stage base destructor at 0x00449D40. Native 20/20 nonrelocation bytes, 2/2 genuine physical DIR32/REL32 fields with their original PE destinations, 36/36 independent affected-only cold exact across one compilation object. Native source is a C++ derived virtual destructor; original full private stage class/virtual table contents not inferred and base destructor body not double counted. No invented padding, ASM, target byte graft, relocation masks, crop, full cold replay or external Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044E7F0",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R057"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044F2E0",
+        "size": "28",
+        "span_end": "0x0044F2FB",
+        "current_name": "FUN_0044f2e0",
+        "proposed_name": "BackgroundStage::DestroyBG05b",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R059; complete body, CFG, paired vtable and family source/path witness",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044F2E0",
+        "size": "28",
+        "span_end": "0x0044F2FB",
+        "current_name": "FUN_0044f2e0",
+        "proposed_name": "BackgroundStage::DestroyBG05b",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BG05bF479::~BG05bF479()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundStageDerivedDestructorsF479.cpp",
+        "evidence": "R059; complete body, CFG, paired vtable and family source/path witness; F479; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-derived-destructor-bg05b-0044f2e0",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent; F479 complete independent R059 original 28-byte BG05b stage-derived virtual destructor at 0x0044F2E0, 11 original native x86 instructions; pinned PE SHA256 445c9cf893f7fc76f3de1de19571b433107292a9abe3b4c58ebb1b43c2467020. Genuine distinct native vtable address 0x00658B24 stored at this+0, followed by original borrowed stage base destructor at 0x00449D40. Native 20/20 nonrelocation bytes, 2/2 genuine physical DIR32/REL32 fields with their original PE destinations, 36/36 independent affected-only cold exact across one compilation object. Native source is a C++ derived virtual destructor; original full private stage class/virtual table contents not inferred and base destructor body not double counted. No invented padding, ASM, target byte graft, relocation masks, crop, full cold replay or external Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044F2E0",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R059"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044F520",
+        "size": "28",
+        "span_end": "0x0044F53B",
+        "current_name": "FUN_0044f520",
+        "proposed_name": "BackgroundStage::DestroyBG05x",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044F520",
+        "size": "28",
+        "span_end": "0x0044F53B",
+        "current_name": "FUN_0044f520",
+        "proposed_name": "BackgroundStage::DestroyBG05x",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BG05xF479::~BG05xF479()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundStageDerivedDestructorsF479.cpp",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable; F479; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-derived-destructor-bg05x-0044f520",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent; F479 complete independent R057 original 28-byte BG05x stage-derived virtual destructor at 0x0044F520, 11 original native x86 instructions; pinned PE SHA256 2f56b25a408003a750a85e77fe2996b471f9497c20dd40037c684cb0be9da8f5. Genuine distinct native vtable address 0x00658B84 stored at this+0, followed by original borrowed stage base destructor at 0x00449D40. Native 20/20 nonrelocation bytes, 2/2 genuine physical DIR32/REL32 fields with their original PE destinations, 36/36 independent affected-only cold exact across one compilation object. Native source is a C++ derived virtual destructor; original full private stage class/virtual table contents not inferred and base destructor body not double counted. No invented padding, ASM, target byte graft, relocation masks, crop, full cold replay or external Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044F520",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R057"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044F760",
+        "size": "28",
+        "span_end": "0x0044F77B",
+        "current_name": "FUN_0044f760",
+        "proposed_name": "BackgroundStage::DestroyBG05y",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044F760",
+        "size": "28",
+        "span_end": "0x0044F77B",
+        "current_name": "FUN_0044f760",
+        "proposed_name": "BackgroundStage::DestroyBG05y",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BG05yF479::~BG05yF479()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundStageDerivedDestructorsF479.cpp",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable; F479; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-derived-destructor-bg05y-0044f760",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent; F479 complete independent R057 original 28-byte BG05y stage-derived virtual destructor at 0x0044F760, 11 original native x86 instructions; pinned PE SHA256 48cf080bc13210d66a4025ead0f5a411069027d8a7d42f87cfe2a0b7e507d5df. Genuine distinct native vtable address 0x00658BC0 stored at this+0, followed by original borrowed stage base destructor at 0x00449D40. Native 20/20 nonrelocation bytes, 2/2 genuine physical DIR32/REL32 fields with their original PE destinations, 36/36 independent affected-only cold exact across one compilation object. Native source is a C++ derived virtual destructor; original full private stage class/virtual table contents not inferred and base destructor body not double counted. No invented padding, ASM, target byte graft, relocation masks, crop, full cold replay or external Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044F760",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R057"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004500D0",
+        "size": "28",
+        "span_end": "0x004500EB",
+        "current_name": "FUN_004500d0",
+        "proposed_name": "BackgroundStage::DestroyBG06a",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x004500D0",
+        "size": "28",
+        "span_end": "0x004500EB",
+        "current_name": "FUN_004500d0",
+        "proposed_name": "BackgroundStage::DestroyBG06a",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BG06aF479::~BG06aF479()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundStageDerivedDestructorsF479.cpp",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable; F479; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-derived-destructor-bg06a-004500d0",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent; F479 complete independent R057 original 28-byte BG06a stage-derived virtual destructor at 0x004500D0, 11 original native x86 instructions; pinned PE SHA256 f6600b4d5a0e1216efadaeed7b4c29ed4ea856693fcd513726e7b4b9b9234558. Genuine distinct native vtable address 0x00658BFC stored at this+0, followed by original borrowed stage base destructor at 0x00449D40. Native 20/20 nonrelocation bytes, 2/2 genuine physical DIR32/REL32 fields with their original PE destinations, 36/36 independent affected-only cold exact across one compilation object. Native source is a C++ derived virtual destructor; original full private stage class/virtual table contents not inferred and base destructor body not double counted. No invented padding, ASM, target byte graft, relocation masks, crop, full cold replay or external Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x004500D0",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R057"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00450310",
+        "size": "28",
+        "span_end": "0x0045032B",
+        "current_name": "FUN_00450310",
+        "proposed_name": "BackgroundStage::DestroyBG06x",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x00450310",
+        "size": "28",
+        "span_end": "0x0045032B",
+        "current_name": "FUN_00450310",
+        "proposed_name": "BackgroundStage::DestroyBG06x",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BG06xF479::~BG06xF479()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundStageDerivedDestructorsF479.cpp",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable; F479; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-derived-destructor-bg06x-00450310",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent; F479 complete independent R057 original 28-byte BG06x stage-derived virtual destructor at 0x00450310, 11 original native x86 instructions; pinned PE SHA256 e62c7fe991ca8605cc123e737758ef0ba0a7571f76d3f95830a3d7015e0fdbc8. Genuine distinct native vtable address 0x00658C54 stored at this+0, followed by original borrowed stage base destructor at 0x00449D40. Native 20/20 nonrelocation bytes, 2/2 genuine physical DIR32/REL32 fields with their original PE destinations, 36/36 independent affected-only cold exact across one compilation object. Native source is a C++ derived virtual destructor; original full private stage class/virtual table contents not inferred and base destructor body not double counted. No invented padding, ASM, target byte graft, relocation masks, crop, full cold replay or external Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x00450310",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R057"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004508C0",
+        "size": "28",
+        "span_end": "0x004508DB",
+        "current_name": "FUN_004508c0",
+        "proposed_name": "BackgroundStage::DestroyBG07a",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x004508C0",
+        "size": "28",
+        "span_end": "0x004508DB",
+        "current_name": "FUN_004508c0",
+        "proposed_name": "BackgroundStage::DestroyBG07a",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BG07aF479::~BG07aF479()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundStageDerivedDestructorsF479.cpp",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable; F479; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-derived-destructor-bg07a-004508c0",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent; F479 complete independent R057 original 28-byte BG07a stage-derived virtual destructor at 0x004508C0, 11 original native x86 instructions; pinned PE SHA256 09dc945047500aa6582a84bc4ad3071e08c41e3b49b6a68bd97a45d232015143. Genuine distinct native vtable address 0x00658C90 stored at this+0, followed by original borrowed stage base destructor at 0x00449D40. Native 20/20 nonrelocation bytes, 2/2 genuine physical DIR32/REL32 fields with their original PE destinations, 36/36 independent affected-only cold exact across one compilation object. Native source is a C++ derived virtual destructor; original full private stage class/virtual table contents not inferred and base destructor body not double counted. No invented padding, ASM, target byte graft, relocation masks, crop, full cold replay or external Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x004508C0",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R057"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00450B00",
+        "size": "28",
+        "span_end": "0x00450B1B",
+        "current_name": "FUN_00450b00",
+        "proposed_name": "BackgroundStage::DestroyBG07x",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x00450B00",
+        "size": "28",
+        "span_end": "0x00450B1B",
+        "current_name": "FUN_00450b00",
+        "proposed_name": "BackgroundStage::DestroyBG07x",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BG07xF479::~BG07xF479()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundStageDerivedDestructorsF479.cpp",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable; F479; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-derived-destructor-bg07x-00450b00",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent; F479 complete independent R057 original 28-byte BG07x stage-derived virtual destructor at 0x00450B00, 11 original native x86 instructions; pinned PE SHA256 c63e7ea01bfa345acfbe2051ea8f00f009e48fcc832263cfc9a4e908b08b8480. Genuine distinct native vtable address 0x00658CFC stored at this+0, followed by original borrowed stage base destructor at 0x00449D40. Native 20/20 nonrelocation bytes, 2/2 genuine physical DIR32/REL32 fields with their original PE destinations, 36/36 independent affected-only cold exact across one compilation object. Native source is a C++ derived virtual destructor; original full private stage class/virtual table contents not inferred and base destructor body not double counted. No invented padding, ASM, target byte graft, relocation masks, crop, full cold replay or external Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x00450B00",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R057"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00451110",
+        "size": "28",
+        "span_end": "0x0045112B",
+        "current_name": "FUN_00451110",
+        "proposed_name": "BackgroundStage::DestroyBG08a",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R059; complete body, CFG, paired vtable and family source/path witness",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x00451110",
+        "size": "28",
+        "span_end": "0x0045112B",
+        "current_name": "FUN_00451110",
+        "proposed_name": "BackgroundStage::DestroyBG08a",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BG08aF479::~BG08aF479()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundStageDerivedDestructorsF479.cpp",
+        "evidence": "R059; complete body, CFG, paired vtable and family source/path witness; F479; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-derived-destructor-bg08a-00451110",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent; F479 complete independent R059 original 28-byte BG08a stage-derived virtual destructor at 0x00451110, 11 original native x86 instructions; pinned PE SHA256 db2a64530f3046145f729225ffec43b984e21af8c7628bb1e3d64aebf220d698. Genuine distinct native vtable address 0x00658D38 stored at this+0, followed by original borrowed stage base destructor at 0x00449D40. Native 20/20 nonrelocation bytes, 2/2 genuine physical DIR32/REL32 fields with their original PE destinations, 36/36 independent affected-only cold exact across one compilation object. Native source is a C++ derived virtual destructor; original full private stage class/virtual table contents not inferred and base destructor body not double counted. No invented padding, ASM, target byte graft, relocation masks, crop, full cold replay or external Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x00451110",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R059"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00451350",
+        "size": "28",
+        "span_end": "0x0045136B",
+        "current_name": "FUN_00451350",
+        "proposed_name": "BackgroundStage::DestroyBG08x",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x00451350",
+        "size": "28",
+        "span_end": "0x0045136B",
+        "current_name": "FUN_00451350",
+        "proposed_name": "BackgroundStage::DestroyBG08x",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BG08xF479::~BG08xF479()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundStageDerivedDestructorsF479.cpp",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable; F479; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-derived-destructor-bg08x-00451350",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent; F479 complete independent R057 original 28-byte BG08x stage-derived virtual destructor at 0x00451350, 11 original native x86 instructions; pinned PE SHA256 8a03c8580e5676f80044c24dd13bb9dbd71b4c2d01b3d08e5f67f69e858d5b01. Genuine distinct native vtable address 0x00658D84 stored at this+0, followed by original borrowed stage base destructor at 0x00449D40. Native 20/20 nonrelocation bytes, 2/2 genuine physical DIR32/REL32 fields with their original PE destinations, 36/36 independent affected-only cold exact across one compilation object. Native source is a C++ derived virtual destructor; original full private stage class/virtual table contents not inferred and base destructor body not double counted. No invented padding, ASM, target byte graft, relocation masks, crop, full cold replay or external Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x00451350",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R057"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00451C50",
+        "size": "28",
+        "span_end": "0x00451C6B",
+        "current_name": "FUN_00451c50",
+        "proposed_name": "BackgroundStage::DestroyBG09a",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x00451C50",
+        "size": "28",
+        "span_end": "0x00451C6B",
+        "current_name": "FUN_00451c50",
+        "proposed_name": "BackgroundStage::DestroyBG09a",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BG09aF479::~BG09aF479()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundStageDerivedDestructorsF479.cpp",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable; F479; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-derived-destructor-bg09a-00451c50",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent; F479 complete independent R057 original 28-byte BG09a stage-derived virtual destructor at 0x00451C50, 11 original native x86 instructions; pinned PE SHA256 6c112e2963ec3682b9c89c5a665be3d25628efbad2e2769332c5c080e4fe1e14. Genuine distinct native vtable address 0x00658DC0 stored at this+0, followed by original borrowed stage base destructor at 0x00449D40. Native 20/20 nonrelocation bytes, 2/2 genuine physical DIR32/REL32 fields with their original PE destinations, 36/36 independent affected-only cold exact across one compilation object. Native source is a C++ derived virtual destructor; original full private stage class/virtual table contents not inferred and base destructor body not double counted. No invented padding, ASM, target byte graft, relocation masks, crop, full cold replay or external Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x00451C50",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R057"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00451E90",
+        "size": "28",
+        "span_end": "0x00451EAB",
+        "current_name": "FUN_00451e90",
+        "proposed_name": "BackgroundStage::DestroyBG09x",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x00451E90",
+        "size": "28",
+        "span_end": "0x00451EAB",
+        "current_name": "FUN_00451e90",
+        "proposed_name": "BackgroundStage::DestroyBG09x",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BG09xF479::~BG09xF479()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundStageDerivedDestructorsF479.cpp",
+        "evidence": "R057; cold VC7 explicit destructor source, complete body, CFG and paired vtable; F479; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-derived-destructor-bg09x-00451e90",
+        "owner": "authored",
+        "notes": "Origin reviewed; destructor role inferred; source and exact state independent; F479 complete independent R057 original 28-byte BG09x stage-derived virtual destructor at 0x00451E90, 11 original native x86 instructions; pinned PE SHA256 e540734bf925706534c80a4a58619a30560f04d915c82016076c75358b797ce3. Genuine distinct native vtable address 0x00658E54 stored at this+0, followed by original borrowed stage base destructor at 0x00449D40. Native 20/20 nonrelocation bytes, 2/2 genuine physical DIR32/REL32 fields with their original PE destinations, 36/36 independent affected-only cold exact across one compilation object. Native source is a C++ derived virtual destructor; original full private stage class/virtual table contents not inferred and base destructor body not double counted. No invented padding, ASM, target byte graft, relocation masks, crop, full cold replay or external Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x00451E90",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R057"
       }
     }
   ],
@@ -203893,6 +205477,1266 @@
           "target": 0
         }
       ]
+    },
+    "background-stage-derived-destructor-bg00a-00449dc0": {
+      "source": "src/BackgroundStageDerivedDestructorsF479.cpp",
+      "object": "build/matching/BackgroundStageDerivedDestructorsF479.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::DestroyBG00aAt00449DC0"
+      ],
+      "symbol": "??1BG00aF479@@UAE@XZ",
+      "target_address": 4496832,
+      "size": 28,
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "??_7BG00aF479@@6B@",
+          "target": 6652980
+        },
+        {
+          "offset": 20,
+          "type": "REL32",
+          "symbol": "??1NativeBackgroundBaseF479@@UAE@XZ",
+          "target": 4496704
+        }
+      ]
+    },
+    "background-stage-derived-destructor-bg00b-0044a210": {
+      "source": "src/BackgroundStageDerivedDestructorsF479.cpp",
+      "object": "build/matching/BackgroundStageDerivedDestructorsF479.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::DestroyBG00bAt0044A210"
+      ],
+      "symbol": "??1BG00bF479@@UAE@XZ",
+      "target_address": 4497936,
+      "size": 28,
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "??_7BG00bF479@@6B@",
+          "target": 6653092
+        },
+        {
+          "offset": 20,
+          "type": "REL32",
+          "symbol": "??1NativeBackgroundBaseF479@@UAE@XZ",
+          "target": 4496704
+        }
+      ]
+    },
+    "background-stage-derived-destructor-bg00c-0044a500": {
+      "source": "src/BackgroundStageDerivedDestructorsF479.cpp",
+      "object": "build/matching/BackgroundStageDerivedDestructorsF479.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::DestroyBG00cAt0044A500"
+      ],
+      "symbol": "??1BG00cF479@@UAE@XZ",
+      "target_address": 4498688,
+      "size": 28,
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "??_7BG00cF479@@6B@",
+          "target": 6653180
+        },
+        {
+          "offset": 20,
+          "type": "REL32",
+          "symbol": "??1NativeBackgroundBaseF479@@UAE@XZ",
+          "target": 4496704
+        }
+      ]
+    },
+    "background-stage-derived-destructor-bg00x-0044a730": {
+      "source": "src/BackgroundStageDerivedDestructorsF479.cpp",
+      "object": "build/matching/BackgroundStageDerivedDestructorsF479.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::DestroyBG00xAt0044A730"
+      ],
+      "symbol": "??1BG00xF479@@UAE@XZ",
+      "target_address": 4499248,
+      "size": 28,
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "??_7BG00xF479@@6B@",
+          "target": 6653240
+        },
+        {
+          "offset": 20,
+          "type": "REL32",
+          "symbol": "??1NativeBackgroundBaseF479@@UAE@XZ",
+          "target": 4496704
+        }
+      ]
+    },
+    "background-stage-derived-destructor-bg00y-0044a960": {
+      "source": "src/BackgroundStageDerivedDestructorsF479.cpp",
+      "object": "build/matching/BackgroundStageDerivedDestructorsF479.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::DestroyBG00yAt0044A960"
+      ],
+      "symbol": "??1BG00yF479@@UAE@XZ",
+      "target_address": 4499808,
+      "size": 28,
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "??_7BG00yF479@@6B@",
+          "target": 6653300
+        },
+        {
+          "offset": 20,
+          "type": "REL32",
+          "symbol": "??1NativeBackgroundBaseF479@@UAE@XZ",
+          "target": 4496704
+        }
+      ]
+    },
+    "background-stage-derived-destructor-bg00z-0044ab90": {
+      "source": "src/BackgroundStageDerivedDestructorsF479.cpp",
+      "object": "build/matching/BackgroundStageDerivedDestructorsF479.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::DestroyBG00zAt0044AB90"
+      ],
+      "symbol": "??1BG00zF479@@UAE@XZ",
+      "target_address": 4500368,
+      "size": 28,
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "??_7BG00zF479@@6B@",
+          "target": 6653360
+        },
+        {
+          "offset": 20,
+          "type": "REL32",
+          "symbol": "??1NativeBackgroundBaseF479@@UAE@XZ",
+          "target": 4496704
+        }
+      ]
+    },
+    "background-stage-derived-destructor-bg01a-0044ae30": {
+      "source": "src/BackgroundStageDerivedDestructorsF479.cpp",
+      "object": "build/matching/BackgroundStageDerivedDestructorsF479.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::DestroyBG01aAt0044AE30"
+      ],
+      "symbol": "??1BG01aF479@@UAE@XZ",
+      "target_address": 4501040,
+      "size": 28,
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "??_7BG01aF479@@6B@",
+          "target": 6653420
+        },
+        {
+          "offset": 20,
+          "type": "REL32",
+          "symbol": "??1NativeBackgroundBaseF479@@UAE@XZ",
+          "target": 4496704
+        }
+      ]
+    },
+    "background-stage-derived-destructor-bg01b-0044b0d0": {
+      "source": "src/BackgroundStageDerivedDestructorsF479.cpp",
+      "object": "build/matching/BackgroundStageDerivedDestructorsF479.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::DestroyBG01bAt0044B0D0"
+      ],
+      "symbol": "??1BG01bF479@@UAE@XZ",
+      "target_address": 4501712,
+      "size": 28,
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "??_7BG01bF479@@6B@",
+          "target": 6653492
+        },
+        {
+          "offset": 20,
+          "type": "REL32",
+          "symbol": "??1NativeBackgroundBaseF479@@UAE@XZ",
+          "target": 4496704
+        }
+      ]
+    },
+    "background-stage-derived-destructor-bg01x-0044b300": {
+      "source": "src/BackgroundStageDerivedDestructorsF479.cpp",
+      "object": "build/matching/BackgroundStageDerivedDestructorsF479.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::DestroyBG01xAt0044B300"
+      ],
+      "symbol": "??1BG01xF479@@UAE@XZ",
+      "target_address": 4502272,
+      "size": 28,
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "??_7BG01xF479@@6B@",
+          "target": 6653552
+        },
+        {
+          "offset": 20,
+          "type": "REL32",
+          "symbol": "??1NativeBackgroundBaseF479@@UAE@XZ",
+          "target": 4496704
+        }
+      ]
+    },
+    "background-stage-derived-destructor-bg01y-0044b530": {
+      "source": "src/BackgroundStageDerivedDestructorsF479.cpp",
+      "object": "build/matching/BackgroundStageDerivedDestructorsF479.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::DestroyBG01yAt0044B530"
+      ],
+      "symbol": "??1BG01yF479@@UAE@XZ",
+      "target_address": 4502832,
+      "size": 28,
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "??_7BG01yF479@@6B@",
+          "target": 6653612
+        },
+        {
+          "offset": 20,
+          "type": "REL32",
+          "symbol": "??1NativeBackgroundBaseF479@@UAE@XZ",
+          "target": 4496704
+        }
+      ]
+    },
+    "background-stage-derived-destructor-bg02a-0044ba50": {
+      "source": "src/BackgroundStageDerivedDestructorsF479.cpp",
+      "object": "build/matching/BackgroundStageDerivedDestructorsF479.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::DestroyBG02aAt0044BA50"
+      ],
+      "symbol": "??1BG02aF479@@UAE@XZ",
+      "target_address": 4504144,
+      "size": 28,
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "??_7BG02aF479@@6B@",
+          "target": 6653672
+        },
+        {
+          "offset": 20,
+          "type": "REL32",
+          "symbol": "??1NativeBackgroundBaseF479@@UAE@XZ",
+          "target": 4496704
+        }
+      ]
+    },
+    "background-stage-derived-destructor-bg02b-0044bf70": {
+      "source": "src/BackgroundStageDerivedDestructorsF479.cpp",
+      "object": "build/matching/BackgroundStageDerivedDestructorsF479.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::DestroyBG02bAt0044BF70"
+      ],
+      "symbol": "??1BG02bF479@@UAE@XZ",
+      "target_address": 4505456,
+      "size": 28,
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "??_7BG02bF479@@6B@",
+          "target": 6653740
+        },
+        {
+          "offset": 20,
+          "type": "REL32",
+          "symbol": "??1NativeBackgroundBaseF479@@UAE@XZ",
+          "target": 4496704
+        }
+      ]
+    },
+    "background-stage-derived-destructor-bg02c-0044c490": {
+      "source": "src/BackgroundStageDerivedDestructorsF479.cpp",
+      "object": "build/matching/BackgroundStageDerivedDestructorsF479.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::DestroyBG02cAt0044C490"
+      ],
+      "symbol": "??1BG02cF479@@UAE@XZ",
+      "target_address": 4506768,
+      "size": 28,
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "??_7BG02cF479@@6B@",
+          "target": 6653800
+        },
+        {
+          "offset": 20,
+          "type": "REL32",
+          "symbol": "??1NativeBackgroundBaseF479@@UAE@XZ",
+          "target": 4496704
+        }
+      ]
+    },
+    "background-stage-derived-destructor-bg02x-0044c6d0": {
+      "source": "src/BackgroundStageDerivedDestructorsF479.cpp",
+      "object": "build/matching/BackgroundStageDerivedDestructorsF479.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::DestroyBG02xAt0044C6D0"
+      ],
+      "symbol": "??1BG02xF479@@UAE@XZ",
+      "target_address": 4507344,
+      "size": 28,
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "??_7BG02xF479@@6B@",
+          "target": 6653860
+        },
+        {
+          "offset": 20,
+          "type": "REL32",
+          "symbol": "??1NativeBackgroundBaseF479@@UAE@XZ",
+          "target": 4496704
+        }
+      ]
+    },
+    "background-stage-derived-destructor-bg02y-0044c910": {
+      "source": "src/BackgroundStageDerivedDestructorsF479.cpp",
+      "object": "build/matching/BackgroundStageDerivedDestructorsF479.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::DestroyBG02yAt0044C910"
+      ],
+      "symbol": "??1BG02yF479@@UAE@XZ",
+      "target_address": 4507920,
+      "size": 28,
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "??_7BG02yF479@@6B@",
+          "target": 6653920
+        },
+        {
+          "offset": 20,
+          "type": "REL32",
+          "symbol": "??1NativeBackgroundBaseF479@@UAE@XZ",
+          "target": 4496704
+        }
+      ]
+    },
+    "background-stage-derived-destructor-bg02z-0044cb50": {
+      "source": "src/BackgroundStageDerivedDestructorsF479.cpp",
+      "object": "build/matching/BackgroundStageDerivedDestructorsF479.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::DestroyBG02zAt0044CB50"
+      ],
+      "symbol": "??1BG02zF479@@UAE@XZ",
+      "target_address": 4508496,
+      "size": 28,
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "??_7BG02zF479@@6B@",
+          "target": 6653980
+        },
+        {
+          "offset": 20,
+          "type": "REL32",
+          "symbol": "??1NativeBackgroundBaseF479@@UAE@XZ",
+          "target": 4496704
+        }
+      ]
+    },
+    "background-stage-derived-destructor-bg03a-0044cdf0": {
+      "source": "src/BackgroundStageDerivedDestructorsF479.cpp",
+      "object": "build/matching/BackgroundStageDerivedDestructorsF479.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::DestroyBG03aAt0044CDF0"
+      ],
+      "symbol": "??1BG03aF479@@UAE@XZ",
+      "target_address": 4509168,
+      "size": 28,
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "??_7BG03aF479@@6B@",
+          "target": 6654040
+        },
+        {
+          "offset": 20,
+          "type": "REL32",
+          "symbol": "??1NativeBackgroundBaseF479@@UAE@XZ",
+          "target": 4496704
+        }
+      ]
+    },
+    "background-stage-derived-destructor-bg03b-0044d090": {
+      "source": "src/BackgroundStageDerivedDestructorsF479.cpp",
+      "object": "build/matching/BackgroundStageDerivedDestructorsF479.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::DestroyBG03bAt0044D090"
+      ],
+      "symbol": "??1BG03bF479@@UAE@XZ",
+      "target_address": 4509840,
+      "size": 28,
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "??_7BG03bF479@@6B@",
+          "target": 6654100
+        },
+        {
+          "offset": 20,
+          "type": "REL32",
+          "symbol": "??1NativeBackgroundBaseF479@@UAE@XZ",
+          "target": 4496704
+        }
+      ]
+    },
+    "background-stage-derived-destructor-bg03x-0044d2d0": {
+      "source": "src/BackgroundStageDerivedDestructorsF479.cpp",
+      "object": "build/matching/BackgroundStageDerivedDestructorsF479.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::DestroyBG03xAt0044D2D0"
+      ],
+      "symbol": "??1BG03xF479@@UAE@XZ",
+      "target_address": 4510416,
+      "size": 28,
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "??_7BG03xF479@@6B@",
+          "target": 6654160
+        },
+        {
+          "offset": 20,
+          "type": "REL32",
+          "symbol": "??1NativeBackgroundBaseF479@@UAE@XZ",
+          "target": 4496704
+        }
+      ]
+    },
+    "background-stage-derived-destructor-bg03y-0044d510": {
+      "source": "src/BackgroundStageDerivedDestructorsF479.cpp",
+      "object": "build/matching/BackgroundStageDerivedDestructorsF479.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::DestroyBG03yAt0044D510"
+      ],
+      "symbol": "??1BG03yF479@@UAE@XZ",
+      "target_address": 4510992,
+      "size": 28,
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "??_7BG03yF479@@6B@",
+          "target": 6654220
+        },
+        {
+          "offset": 20,
+          "type": "REL32",
+          "symbol": "??1NativeBackgroundBaseF479@@UAE@XZ",
+          "target": 4496704
+        }
+      ]
+    },
+    "background-stage-derived-destructor-bg04a-0044d9a0": {
+      "source": "src/BackgroundStageDerivedDestructorsF479.cpp",
+      "object": "build/matching/BackgroundStageDerivedDestructorsF479.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::DestroyBG04aAt0044D9A0"
+      ],
+      "symbol": "??1BG04aF479@@UAE@XZ",
+      "target_address": 4512160,
+      "size": 28,
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "??_7BG04aF479@@6B@",
+          "target": 6654280
+        },
+        {
+          "offset": 20,
+          "type": "REL32",
+          "symbol": "??1NativeBackgroundBaseF479@@UAE@XZ",
+          "target": 4496704
+        }
+      ]
+    },
+    "background-stage-derived-destructor-bg04b-0044de50": {
+      "source": "src/BackgroundStageDerivedDestructorsF479.cpp",
+      "object": "build/matching/BackgroundStageDerivedDestructorsF479.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::DestroyBG04bAt0044DE50"
+      ],
+      "symbol": "??1BG04bF479@@UAE@XZ",
+      "target_address": 4513360,
+      "size": 28,
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "??_7BG04bF479@@6B@",
+          "target": 6654436
+        },
+        {
+          "offset": 20,
+          "type": "REL32",
+          "symbol": "??1NativeBackgroundBaseF479@@UAE@XZ",
+          "target": 4496704
+        }
+      ]
+    },
+    "background-stage-derived-destructor-bg04x-0044e090": {
+      "source": "src/BackgroundStageDerivedDestructorsF479.cpp",
+      "object": "build/matching/BackgroundStageDerivedDestructorsF479.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::DestroyBG04xAt0044E090"
+      ],
+      "symbol": "??1BG04xF479@@UAE@XZ",
+      "target_address": 4513936,
+      "size": 28,
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "??_7BG04xF479@@6B@",
+          "target": 6654540
+        },
+        {
+          "offset": 20,
+          "type": "REL32",
+          "symbol": "??1NativeBackgroundBaseF479@@UAE@XZ",
+          "target": 4496704
+        }
+      ]
+    },
+    "background-stage-derived-destructor-bg04y-0044e2d0": {
+      "source": "src/BackgroundStageDerivedDestructorsF479.cpp",
+      "object": "build/matching/BackgroundStageDerivedDestructorsF479.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::DestroyBG04yAt0044E2D0"
+      ],
+      "symbol": "??1BG04yF479@@UAE@XZ",
+      "target_address": 4514512,
+      "size": 28,
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "??_7BG04yF479@@6B@",
+          "target": 6654600
+        },
+        {
+          "offset": 20,
+          "type": "REL32",
+          "symbol": "??1NativeBackgroundBaseF479@@UAE@XZ",
+          "target": 4496704
+        }
+      ]
+    },
+    "background-stage-derived-destructor-bg05a-0044e7f0": {
+      "source": "src/BackgroundStageDerivedDestructorsF479.cpp",
+      "object": "build/matching/BackgroundStageDerivedDestructorsF479.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::DestroyBG05aAt0044E7F0"
+      ],
+      "symbol": "??1BG05aF479@@UAE@XZ",
+      "target_address": 4515824,
+      "size": 28,
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "??_7BG05aF479@@6B@",
+          "target": 6654660
+        },
+        {
+          "offset": 20,
+          "type": "REL32",
+          "symbol": "??1NativeBackgroundBaseF479@@UAE@XZ",
+          "target": 4496704
+        }
+      ]
+    },
+    "background-stage-derived-destructor-bg05b-0044f2e0": {
+      "source": "src/BackgroundStageDerivedDestructorsF479.cpp",
+      "object": "build/matching/BackgroundStageDerivedDestructorsF479.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::DestroyBG05bAt0044F2E0"
+      ],
+      "symbol": "??1BG05bF479@@UAE@XZ",
+      "target_address": 4518624,
+      "size": 28,
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "??_7BG05bF479@@6B@",
+          "target": 6654756
+        },
+        {
+          "offset": 20,
+          "type": "REL32",
+          "symbol": "??1NativeBackgroundBaseF479@@UAE@XZ",
+          "target": 4496704
+        }
+      ]
+    },
+    "background-stage-derived-destructor-bg05x-0044f520": {
+      "source": "src/BackgroundStageDerivedDestructorsF479.cpp",
+      "object": "build/matching/BackgroundStageDerivedDestructorsF479.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::DestroyBG05xAt0044F520"
+      ],
+      "symbol": "??1BG05xF479@@UAE@XZ",
+      "target_address": 4519200,
+      "size": 28,
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "??_7BG05xF479@@6B@",
+          "target": 6654852
+        },
+        {
+          "offset": 20,
+          "type": "REL32",
+          "symbol": "??1NativeBackgroundBaseF479@@UAE@XZ",
+          "target": 4496704
+        }
+      ]
+    },
+    "background-stage-derived-destructor-bg05y-0044f760": {
+      "source": "src/BackgroundStageDerivedDestructorsF479.cpp",
+      "object": "build/matching/BackgroundStageDerivedDestructorsF479.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::DestroyBG05yAt0044F760"
+      ],
+      "symbol": "??1BG05yF479@@UAE@XZ",
+      "target_address": 4519776,
+      "size": 28,
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "??_7BG05yF479@@6B@",
+          "target": 6654912
+        },
+        {
+          "offset": 20,
+          "type": "REL32",
+          "symbol": "??1NativeBackgroundBaseF479@@UAE@XZ",
+          "target": 4496704
+        }
+      ]
+    },
+    "background-stage-derived-destructor-bg06a-004500d0": {
+      "source": "src/BackgroundStageDerivedDestructorsF479.cpp",
+      "object": "build/matching/BackgroundStageDerivedDestructorsF479.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::DestroyBG06aAt004500D0"
+      ],
+      "symbol": "??1BG06aF479@@UAE@XZ",
+      "target_address": 4522192,
+      "size": 28,
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "??_7BG06aF479@@6B@",
+          "target": 6654972
+        },
+        {
+          "offset": 20,
+          "type": "REL32",
+          "symbol": "??1NativeBackgroundBaseF479@@UAE@XZ",
+          "target": 4496704
+        }
+      ]
+    },
+    "background-stage-derived-destructor-bg06x-00450310": {
+      "source": "src/BackgroundStageDerivedDestructorsF479.cpp",
+      "object": "build/matching/BackgroundStageDerivedDestructorsF479.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::DestroyBG06xAt00450310"
+      ],
+      "symbol": "??1BG06xF479@@UAE@XZ",
+      "target_address": 4522768,
+      "size": 28,
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "??_7BG06xF479@@6B@",
+          "target": 6655060
+        },
+        {
+          "offset": 20,
+          "type": "REL32",
+          "symbol": "??1NativeBackgroundBaseF479@@UAE@XZ",
+          "target": 4496704
+        }
+      ]
+    },
+    "background-stage-derived-destructor-bg07a-004508c0": {
+      "source": "src/BackgroundStageDerivedDestructorsF479.cpp",
+      "object": "build/matching/BackgroundStageDerivedDestructorsF479.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::DestroyBG07aAt004508C0"
+      ],
+      "symbol": "??1BG07aF479@@UAE@XZ",
+      "target_address": 4524224,
+      "size": 28,
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "??_7BG07aF479@@6B@",
+          "target": 6655120
+        },
+        {
+          "offset": 20,
+          "type": "REL32",
+          "symbol": "??1NativeBackgroundBaseF479@@UAE@XZ",
+          "target": 4496704
+        }
+      ]
+    },
+    "background-stage-derived-destructor-bg07x-00450b00": {
+      "source": "src/BackgroundStageDerivedDestructorsF479.cpp",
+      "object": "build/matching/BackgroundStageDerivedDestructorsF479.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::DestroyBG07xAt00450B00"
+      ],
+      "symbol": "??1BG07xF479@@UAE@XZ",
+      "target_address": 4524800,
+      "size": 28,
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "??_7BG07xF479@@6B@",
+          "target": 6655228
+        },
+        {
+          "offset": 20,
+          "type": "REL32",
+          "symbol": "??1NativeBackgroundBaseF479@@UAE@XZ",
+          "target": 4496704
+        }
+      ]
+    },
+    "background-stage-derived-destructor-bg08a-00451110": {
+      "source": "src/BackgroundStageDerivedDestructorsF479.cpp",
+      "object": "build/matching/BackgroundStageDerivedDestructorsF479.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::DestroyBG08aAt00451110"
+      ],
+      "symbol": "??1BG08aF479@@UAE@XZ",
+      "target_address": 4526352,
+      "size": 28,
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "??_7BG08aF479@@6B@",
+          "target": 6655288
+        },
+        {
+          "offset": 20,
+          "type": "REL32",
+          "symbol": "??1NativeBackgroundBaseF479@@UAE@XZ",
+          "target": 4496704
+        }
+      ]
+    },
+    "background-stage-derived-destructor-bg08x-00451350": {
+      "source": "src/BackgroundStageDerivedDestructorsF479.cpp",
+      "object": "build/matching/BackgroundStageDerivedDestructorsF479.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::DestroyBG08xAt00451350"
+      ],
+      "symbol": "??1BG08xF479@@UAE@XZ",
+      "target_address": 4526928,
+      "size": 28,
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "??_7BG08xF479@@6B@",
+          "target": 6655364
+        },
+        {
+          "offset": 20,
+          "type": "REL32",
+          "symbol": "??1NativeBackgroundBaseF479@@UAE@XZ",
+          "target": 4496704
+        }
+      ]
+    },
+    "background-stage-derived-destructor-bg09a-00451c50": {
+      "source": "src/BackgroundStageDerivedDestructorsF479.cpp",
+      "object": "build/matching/BackgroundStageDerivedDestructorsF479.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::DestroyBG09aAt00451C50"
+      ],
+      "symbol": "??1BG09aF479@@UAE@XZ",
+      "target_address": 4529232,
+      "size": 28,
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "??_7BG09aF479@@6B@",
+          "target": 6655424
+        },
+        {
+          "offset": 20,
+          "type": "REL32",
+          "symbol": "??1NativeBackgroundBaseF479@@UAE@XZ",
+          "target": 4496704
+        }
+      ]
+    },
+    "background-stage-derived-destructor-bg09x-00451e90": {
+      "source": "src/BackgroundStageDerivedDestructorsF479.cpp",
+      "object": "build/matching/BackgroundStageDerivedDestructorsF479.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::DestroyBG09xAt00451E90"
+      ],
+      "symbol": "??1BG09xF479@@UAE@XZ",
+      "target_address": 4529808,
+      "size": 28,
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "??_7BG09xF479@@6B@",
+          "target": 6655572
+        },
+        {
+          "offset": 20,
+          "type": "REL32",
+          "symbol": "??1NativeBackgroundBaseF479@@UAE@XZ",
+          "target": 4496704
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -204372,6 +207216,7 @@
     "src/SceneInputPollingFamilyF467.cpp": "3ce1c86284bcde745ee18fea4f93723ebe9982585f15c5883fee9875afeeb2db",
     "src/GameApplicationWindowCallbackF468.cpp": "a7e3d7b7294354fc0a6351c4c552b7773670ad60baaa4e75380c90f6c1af1e04",
     "src/FighterOwnedObjectFactoriesF469.cpp": "60c98fa7f8dbcc047138e885582acf11c3c973310b25de2b6836faf275002f93",
-    "src/SceneResourceDestructorsF474.cpp": "7c8b68ec3f6da9f1c2541ae7989c42d91840a0859d557ade06281c8a6ca69840"
+    "src/SceneResourceDestructorsF474.cpp": "7c8b68ec3f6da9f1c2541ae7989c42d91840a0859d557ade06281c8a6ca69840",
+    "src/BackgroundStageDerivedDestructorsF479.cpp": "03fd3d9ae305d099750360a82d8e56e3cf1936e6dd3bdbfb7aa064a3c00cdcfe"
   }
 }

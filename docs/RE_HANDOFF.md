@@ -1,6 +1,6 @@
 # TH075 — current reconstruction handoff
 
-**Maintained: 2026-10-29, after F474.** Read this document, then check the **live repository**. The current user explicitly wants both large/core bosses and small leaves tackled seriously, tangible progress committed immediately with subject `gpt-web: ...`, and **only changed/new units cold-replayed**. The user reports no other sessions: inspect and finish all dirty work; never skip, reset, overwrite or silently discard it.
+**Maintained: 2026-10-29, after F479.** Read this document, then check the **live repository**. The current user explicitly wants both large/core bosses and small leaves tackled seriously, tangible progress committed immediately with subject `gpt-web: ...`, and **only changed/new units cold-replayed**. The user reports no other sessions: inspect and finish all dirty work; never skip, reset, overwrite or silently discard it.
 
 ## 1. Trusted state and first commands
 
@@ -8,11 +8,11 @@ Canonical evidence is the pinned original PE, `config/function-origins.csv`, `co
 
 | Item | Verified snapshot |
 | --- | --- |
-| Git | `main`; pre-F474 reconstruction commit **`12293d8`** (F469), preceded by `e54c851` (F468) and `fea9a89` (F467); F474 commit follows this update |
+| Git | `main`; pre-F479 reconstruction commit **`b5eb1fc`** (F474), preceded by `12293d8` (F469) and `e54c851` (F468); F479 commit follows this update |
 | Pinned target | user-supplied Japanese `resources/th075.exe` v1.11; SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`; **never** `th075c.exe` |
-| Exact and source-present | **781 functions / 781 exact units** |
-| Accepted authored CODE | **857,442 bytes / 1,973,516 reviewed bytes = 43.45%** |
-| Conservative | **43.37%**, including 3,608 bytes with unresolved origin |
+| Exact and source-present | **817 functions / 817 exact units** |
+| Accepted authored CODE | **858,450 bytes / 1,973,516 reviewed bytes = 43.50%** |
+| Conservative | **43.42%**, including 3,608 bytes with unresolved origin |
 | Origin review | 1,002 authored, 2,671 library, 581 compiler, **97 pending** across 4,351 provisional candidates |
 | Goal | **98% not reached**; Git and local cold results are not external Oracle receipts |
 
@@ -29,7 +29,7 @@ If **any** dirty source, unit, or manifest is present, first inspect its exact e
 
 ## 2. Newly closed chains — **not** the backlog
 
-The full register of **all 781** accepted functions is in `config/functions.csv` and `config/match-units.toml`; this table intentionally highlights only the newest, important independent CODE extents. No called function, imported CRT/Win32 code, or owned jump-table bytes are counted twice.
+The full register of **all 817** accepted functions is in `config/functions.csv` and `config/match-units.toml`; this table intentionally highlights only the newest, important independent CODE extents. No called function, imported CRT/Win32 code, or owned jump-table bytes are counted twice.
 
 | Unit / accepted address | Whole CODE | Authentic fields | Evidence |
 | --- | ---: | ---: | --- |
@@ -102,6 +102,7 @@ The full register of **all 781** accepted functions is in `config/functions.csv`
 | F468 `GameApplication::WindowCallbackAt00603650` `00603650` | **83** | **3** | `src/GameApplicationWindowCallbackF468.cpp`, `.analysis/f468-winmain-callback/` |
 | F469 seven `Fighter::CreateOwnedObject` native factories `004C0920`..`005E2170` | **7 × 120 = 840** | **6 each (42)** | `src/FighterOwnedObjectFactoriesF469.cpp`, `.analysis/f469-owned-factories/` |
 | F474 six scene virtual resource destructors (Opening/Replay/NameEntry/Result/StaffRoll/Title) | **5 × 127 + 142 = 777** | **7 each + 8 = 43** | `src/SceneResourceDestructorsF474.cpp`, `.analysis/f474-scenes-destruct/` |
+| F479 36 distinct BG00a–BG09x original stage-derived virtual destructors | **36 × 28 = 1,008** | **2 × 36 = 72** | `src/BackgroundStageDerivedDestructorsF479.cpp`, `.analysis/f479-stage-derived-dtors/` |
 
 **F340:** the companion archive entry seek at `0041D750` is independently cold exact for its whole 164-byte function including every one of its nine external references. It uses genuine iterator and `strcmp` semantics, returns the archive handle after `SetFilePointer` or `INVALID_HANDLE_VALUE` if not found. The original private archive list remains borrowed, not instantiated.
 
@@ -232,6 +233,8 @@ The full register of **all 781** accepted functions is in `config/functions.csv`
 **F474:** six **distinct** original authored scene resource destructors—Opening `004276B0` (R036), Replay `0042A2C0` (R234), NameEntry `0042B300` (R234), Result `0042E870` (R234), StaffRoll `00438BA0` (R062), Title `0043A1E0` (R062)—are now **6/6 affected-only cold exact across one object**, crediting **777 actual CODE bytes**. The first five separately have **127 complete original bytes / 36 instructions, 99/99 original nonfields and 7/7 real original COFF refs**; Title has a real additional global selection state write, **142 original bytes / 39 instructions, 110/110 nonfields and 8/8 physical refs**. Source `src/SceneResourceDestructorsF474.cpp` expresses each derived virtual scene type, its *own* original vtable and `/GX` handler, truthful conditional `delete texture` at +8 through original `00425460` and actual original base-scene destructor `00431F40`. Title additionally sign-extends the actually observed byte at `this+0x38` into the original short global `00671630` before the delete; the intervening native owner region is untyped, **not claimed as recovered private fields**. No shared texture or base destructor callee CODE counted twice.
 
 **F473 WinMain core boss research (not accepted):** The native `GameApplication::RunAt00602A60` has **2,987 authored original CODE bytes / 654 original x86 instructions** and a separate 60-byte case table. Independent PE re-examination proved three success/failure branches *each* return through four real destruction calls in native order at **`00406650` sound, `00403BE0` input, `00401020` graphics and `00423A90` app mode**. The previous F456 manually `Release()`d shared cleanup at a tail and compiled to **2,951 CODE bytes, 640 instructions, 0x264 frame**. Natural C++ RAII/independent early-return F473 trials recover destructor lifetimes and compile to **3,022 CODE bytes, 650 instructions, 0x274 frame**—closer in frame shape to native 0x278, but still **nonexact and not credited**. Crucially, the VC7.1 compiler still merges early returns into a cleanup tail rather than native three separate four-destructor sequences. Native also writes a real local at EBP-0x184 after graphics construction, and private archive lifetime, scene object return locals, Win32 pump and the 15-case after-RET table need further independent reconciliation. All full-boss F473 probes are retained under `.analysis/f473-winmain-native-raii/`, not bypassed or credited.
+
+**F479:** all **36** separately originated and native-disassembled authored `BackgroundStage::DestroyBG*` virtual destructors, from BG00a (`00449DC0`) through BG09x (`00451E90`), are now **36/36 full-code targeted cold exact across one object**. Each original has its *own independently observed native stage vtable*, **28 complete CODE bytes / 11 x86 instructions**, **20/20 original nonfield bytes** and both **2/2 physical COFF references**: original vtable DIR32 at offset 0x0C and borrowed native BackgroundBase destructor `00449D40` REL32 at offset 0x14. The single natural source uses true derived virtual C++ destructors, not manual vtable writes or synthetic assembly. Only **1,008** additional distinct authored CODE bytes credited, not any base destructor/virtual table DATA. Independent PE-address hashes/vtables and exact local cold receipts retained.
 
 **Corrections to old notes:** The 686-byte writer and 429-byte reader are both **exact** (F339/F338), not pending F249/F250. The full 1,252-byte replay writer and 375-byte finalizer are both **exact** (F326/F328), not pending F219/F218/F289. The 1,766-byte font rasterizer is **exact** (F319), not pending F299/F302. The 301-byte glyph loader is **exact** (F318), not pending F291. The 916-byte MusicRoom catalog + separately compared 16-byte jump table is **exact in F258** (916 CODE credit only). Other accepted 1,000+ byte bosses include F271 projected quad (1,185), F278 pattern chooser (1,264), F282 resource loader (1,186), F292 overlay text box (1,385), F294 effects catalog (1,722), and F244 scene advance (1,529 CODE). Earlier failures remain useful *historical controls*, but must never be presented as current unaccepted work.
 

@@ -57562,3 +57562,722 @@ offset = 134
 type = "DIR32"
 symbol = "__except_list"
 target = 0x00000000
+
+[units.background-stage-derived-destructor-bg00a-00449dc0]
+source = "src/BackgroundStageDerivedDestructorsF479.cpp"
+object = "build/matching/BackgroundStageDerivedDestructorsF479.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DestroyBG00aAt00449DC0"]
+symbol = "??1BG00aF479@@UAE@XZ"
+target_address = 0x00449DC0
+size = 28
+[[units.background-stage-derived-destructor-bg00a-00449dc0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "??_7BG00aF479@@6B@"
+target = 0x00658434
+[[units.background-stage-derived-destructor-bg00a-00449dc0.relocations]]
+offset = 20
+type = "REL32"
+symbol = "??1NativeBackgroundBaseF479@@UAE@XZ"
+target = 0x00449D40
+
+
+[units.background-stage-derived-destructor-bg00b-0044a210]
+source = "src/BackgroundStageDerivedDestructorsF479.cpp"
+object = "build/matching/BackgroundStageDerivedDestructorsF479.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DestroyBG00bAt0044A210"]
+symbol = "??1BG00bF479@@UAE@XZ"
+target_address = 0x0044A210
+size = 28
+[[units.background-stage-derived-destructor-bg00b-0044a210.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "??_7BG00bF479@@6B@"
+target = 0x006584A4
+[[units.background-stage-derived-destructor-bg00b-0044a210.relocations]]
+offset = 20
+type = "REL32"
+symbol = "??1NativeBackgroundBaseF479@@UAE@XZ"
+target = 0x00449D40
+
+
+[units.background-stage-derived-destructor-bg00c-0044a500]
+source = "src/BackgroundStageDerivedDestructorsF479.cpp"
+object = "build/matching/BackgroundStageDerivedDestructorsF479.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DestroyBG00cAt0044A500"]
+symbol = "??1BG00cF479@@UAE@XZ"
+target_address = 0x0044A500
+size = 28
+[[units.background-stage-derived-destructor-bg00c-0044a500.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "??_7BG00cF479@@6B@"
+target = 0x006584FC
+[[units.background-stage-derived-destructor-bg00c-0044a500.relocations]]
+offset = 20
+type = "REL32"
+symbol = "??1NativeBackgroundBaseF479@@UAE@XZ"
+target = 0x00449D40
+
+
+[units.background-stage-derived-destructor-bg00x-0044a730]
+source = "src/BackgroundStageDerivedDestructorsF479.cpp"
+object = "build/matching/BackgroundStageDerivedDestructorsF479.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DestroyBG00xAt0044A730"]
+symbol = "??1BG00xF479@@UAE@XZ"
+target_address = 0x0044A730
+size = 28
+[[units.background-stage-derived-destructor-bg00x-0044a730.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "??_7BG00xF479@@6B@"
+target = 0x00658538
+[[units.background-stage-derived-destructor-bg00x-0044a730.relocations]]
+offset = 20
+type = "REL32"
+symbol = "??1NativeBackgroundBaseF479@@UAE@XZ"
+target = 0x00449D40
+
+
+[units.background-stage-derived-destructor-bg00y-0044a960]
+source = "src/BackgroundStageDerivedDestructorsF479.cpp"
+object = "build/matching/BackgroundStageDerivedDestructorsF479.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DestroyBG00yAt0044A960"]
+symbol = "??1BG00yF479@@UAE@XZ"
+target_address = 0x0044A960
+size = 28
+[[units.background-stage-derived-destructor-bg00y-0044a960.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "??_7BG00yF479@@6B@"
+target = 0x00658574
+[[units.background-stage-derived-destructor-bg00y-0044a960.relocations]]
+offset = 20
+type = "REL32"
+symbol = "??1NativeBackgroundBaseF479@@UAE@XZ"
+target = 0x00449D40
+
+
+[units.background-stage-derived-destructor-bg00z-0044ab90]
+source = "src/BackgroundStageDerivedDestructorsF479.cpp"
+object = "build/matching/BackgroundStageDerivedDestructorsF479.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DestroyBG00zAt0044AB90"]
+symbol = "??1BG00zF479@@UAE@XZ"
+target_address = 0x0044AB90
+size = 28
+[[units.background-stage-derived-destructor-bg00z-0044ab90.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "??_7BG00zF479@@6B@"
+target = 0x006585B0
+[[units.background-stage-derived-destructor-bg00z-0044ab90.relocations]]
+offset = 20
+type = "REL32"
+symbol = "??1NativeBackgroundBaseF479@@UAE@XZ"
+target = 0x00449D40
+
+
+[units.background-stage-derived-destructor-bg01a-0044ae30]
+source = "src/BackgroundStageDerivedDestructorsF479.cpp"
+object = "build/matching/BackgroundStageDerivedDestructorsF479.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DestroyBG01aAt0044AE30"]
+symbol = "??1BG01aF479@@UAE@XZ"
+target_address = 0x0044AE30
+size = 28
+[[units.background-stage-derived-destructor-bg01a-0044ae30.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "??_7BG01aF479@@6B@"
+target = 0x006585EC
+[[units.background-stage-derived-destructor-bg01a-0044ae30.relocations]]
+offset = 20
+type = "REL32"
+symbol = "??1NativeBackgroundBaseF479@@UAE@XZ"
+target = 0x00449D40
+
+
+[units.background-stage-derived-destructor-bg01b-0044b0d0]
+source = "src/BackgroundStageDerivedDestructorsF479.cpp"
+object = "build/matching/BackgroundStageDerivedDestructorsF479.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DestroyBG01bAt0044B0D0"]
+symbol = "??1BG01bF479@@UAE@XZ"
+target_address = 0x0044B0D0
+size = 28
+[[units.background-stage-derived-destructor-bg01b-0044b0d0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "??_7BG01bF479@@6B@"
+target = 0x00658634
+[[units.background-stage-derived-destructor-bg01b-0044b0d0.relocations]]
+offset = 20
+type = "REL32"
+symbol = "??1NativeBackgroundBaseF479@@UAE@XZ"
+target = 0x00449D40
+
+
+[units.background-stage-derived-destructor-bg01x-0044b300]
+source = "src/BackgroundStageDerivedDestructorsF479.cpp"
+object = "build/matching/BackgroundStageDerivedDestructorsF479.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DestroyBG01xAt0044B300"]
+symbol = "??1BG01xF479@@UAE@XZ"
+target_address = 0x0044B300
+size = 28
+[[units.background-stage-derived-destructor-bg01x-0044b300.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "??_7BG01xF479@@6B@"
+target = 0x00658670
+[[units.background-stage-derived-destructor-bg01x-0044b300.relocations]]
+offset = 20
+type = "REL32"
+symbol = "??1NativeBackgroundBaseF479@@UAE@XZ"
+target = 0x00449D40
+
+
+[units.background-stage-derived-destructor-bg01y-0044b530]
+source = "src/BackgroundStageDerivedDestructorsF479.cpp"
+object = "build/matching/BackgroundStageDerivedDestructorsF479.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DestroyBG01yAt0044B530"]
+symbol = "??1BG01yF479@@UAE@XZ"
+target_address = 0x0044B530
+size = 28
+[[units.background-stage-derived-destructor-bg01y-0044b530.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "??_7BG01yF479@@6B@"
+target = 0x006586AC
+[[units.background-stage-derived-destructor-bg01y-0044b530.relocations]]
+offset = 20
+type = "REL32"
+symbol = "??1NativeBackgroundBaseF479@@UAE@XZ"
+target = 0x00449D40
+
+
+[units.background-stage-derived-destructor-bg02a-0044ba50]
+source = "src/BackgroundStageDerivedDestructorsF479.cpp"
+object = "build/matching/BackgroundStageDerivedDestructorsF479.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DestroyBG02aAt0044BA50"]
+symbol = "??1BG02aF479@@UAE@XZ"
+target_address = 0x0044BA50
+size = 28
+[[units.background-stage-derived-destructor-bg02a-0044ba50.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "??_7BG02aF479@@6B@"
+target = 0x006586E8
+[[units.background-stage-derived-destructor-bg02a-0044ba50.relocations]]
+offset = 20
+type = "REL32"
+symbol = "??1NativeBackgroundBaseF479@@UAE@XZ"
+target = 0x00449D40
+
+
+[units.background-stage-derived-destructor-bg02b-0044bf70]
+source = "src/BackgroundStageDerivedDestructorsF479.cpp"
+object = "build/matching/BackgroundStageDerivedDestructorsF479.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DestroyBG02bAt0044BF70"]
+symbol = "??1BG02bF479@@UAE@XZ"
+target_address = 0x0044BF70
+size = 28
+[[units.background-stage-derived-destructor-bg02b-0044bf70.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "??_7BG02bF479@@6B@"
+target = 0x0065872C
+[[units.background-stage-derived-destructor-bg02b-0044bf70.relocations]]
+offset = 20
+type = "REL32"
+symbol = "??1NativeBackgroundBaseF479@@UAE@XZ"
+target = 0x00449D40
+
+
+[units.background-stage-derived-destructor-bg02c-0044c490]
+source = "src/BackgroundStageDerivedDestructorsF479.cpp"
+object = "build/matching/BackgroundStageDerivedDestructorsF479.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DestroyBG02cAt0044C490"]
+symbol = "??1BG02cF479@@UAE@XZ"
+target_address = 0x0044C490
+size = 28
+[[units.background-stage-derived-destructor-bg02c-0044c490.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "??_7BG02cF479@@6B@"
+target = 0x00658768
+[[units.background-stage-derived-destructor-bg02c-0044c490.relocations]]
+offset = 20
+type = "REL32"
+symbol = "??1NativeBackgroundBaseF479@@UAE@XZ"
+target = 0x00449D40
+
+
+[units.background-stage-derived-destructor-bg02x-0044c6d0]
+source = "src/BackgroundStageDerivedDestructorsF479.cpp"
+object = "build/matching/BackgroundStageDerivedDestructorsF479.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DestroyBG02xAt0044C6D0"]
+symbol = "??1BG02xF479@@UAE@XZ"
+target_address = 0x0044C6D0
+size = 28
+[[units.background-stage-derived-destructor-bg02x-0044c6d0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "??_7BG02xF479@@6B@"
+target = 0x006587A4
+[[units.background-stage-derived-destructor-bg02x-0044c6d0.relocations]]
+offset = 20
+type = "REL32"
+symbol = "??1NativeBackgroundBaseF479@@UAE@XZ"
+target = 0x00449D40
+
+
+[units.background-stage-derived-destructor-bg02y-0044c910]
+source = "src/BackgroundStageDerivedDestructorsF479.cpp"
+object = "build/matching/BackgroundStageDerivedDestructorsF479.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DestroyBG02yAt0044C910"]
+symbol = "??1BG02yF479@@UAE@XZ"
+target_address = 0x0044C910
+size = 28
+[[units.background-stage-derived-destructor-bg02y-0044c910.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "??_7BG02yF479@@6B@"
+target = 0x006587E0
+[[units.background-stage-derived-destructor-bg02y-0044c910.relocations]]
+offset = 20
+type = "REL32"
+symbol = "??1NativeBackgroundBaseF479@@UAE@XZ"
+target = 0x00449D40
+
+
+[units.background-stage-derived-destructor-bg02z-0044cb50]
+source = "src/BackgroundStageDerivedDestructorsF479.cpp"
+object = "build/matching/BackgroundStageDerivedDestructorsF479.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DestroyBG02zAt0044CB50"]
+symbol = "??1BG02zF479@@UAE@XZ"
+target_address = 0x0044CB50
+size = 28
+[[units.background-stage-derived-destructor-bg02z-0044cb50.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "??_7BG02zF479@@6B@"
+target = 0x0065881C
+[[units.background-stage-derived-destructor-bg02z-0044cb50.relocations]]
+offset = 20
+type = "REL32"
+symbol = "??1NativeBackgroundBaseF479@@UAE@XZ"
+target = 0x00449D40
+
+
+[units.background-stage-derived-destructor-bg03a-0044cdf0]
+source = "src/BackgroundStageDerivedDestructorsF479.cpp"
+object = "build/matching/BackgroundStageDerivedDestructorsF479.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DestroyBG03aAt0044CDF0"]
+symbol = "??1BG03aF479@@UAE@XZ"
+target_address = 0x0044CDF0
+size = 28
+[[units.background-stage-derived-destructor-bg03a-0044cdf0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "??_7BG03aF479@@6B@"
+target = 0x00658858
+[[units.background-stage-derived-destructor-bg03a-0044cdf0.relocations]]
+offset = 20
+type = "REL32"
+symbol = "??1NativeBackgroundBaseF479@@UAE@XZ"
+target = 0x00449D40
+
+
+[units.background-stage-derived-destructor-bg03b-0044d090]
+source = "src/BackgroundStageDerivedDestructorsF479.cpp"
+object = "build/matching/BackgroundStageDerivedDestructorsF479.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DestroyBG03bAt0044D090"]
+symbol = "??1BG03bF479@@UAE@XZ"
+target_address = 0x0044D090
+size = 28
+[[units.background-stage-derived-destructor-bg03b-0044d090.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "??_7BG03bF479@@6B@"
+target = 0x00658894
+[[units.background-stage-derived-destructor-bg03b-0044d090.relocations]]
+offset = 20
+type = "REL32"
+symbol = "??1NativeBackgroundBaseF479@@UAE@XZ"
+target = 0x00449D40
+
+
+[units.background-stage-derived-destructor-bg03x-0044d2d0]
+source = "src/BackgroundStageDerivedDestructorsF479.cpp"
+object = "build/matching/BackgroundStageDerivedDestructorsF479.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DestroyBG03xAt0044D2D0"]
+symbol = "??1BG03xF479@@UAE@XZ"
+target_address = 0x0044D2D0
+size = 28
+[[units.background-stage-derived-destructor-bg03x-0044d2d0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "??_7BG03xF479@@6B@"
+target = 0x006588D0
+[[units.background-stage-derived-destructor-bg03x-0044d2d0.relocations]]
+offset = 20
+type = "REL32"
+symbol = "??1NativeBackgroundBaseF479@@UAE@XZ"
+target = 0x00449D40
+
+
+[units.background-stage-derived-destructor-bg03y-0044d510]
+source = "src/BackgroundStageDerivedDestructorsF479.cpp"
+object = "build/matching/BackgroundStageDerivedDestructorsF479.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DestroyBG03yAt0044D510"]
+symbol = "??1BG03yF479@@UAE@XZ"
+target_address = 0x0044D510
+size = 28
+[[units.background-stage-derived-destructor-bg03y-0044d510.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "??_7BG03yF479@@6B@"
+target = 0x0065890C
+[[units.background-stage-derived-destructor-bg03y-0044d510.relocations]]
+offset = 20
+type = "REL32"
+symbol = "??1NativeBackgroundBaseF479@@UAE@XZ"
+target = 0x00449D40
+
+
+[units.background-stage-derived-destructor-bg04a-0044d9a0]
+source = "src/BackgroundStageDerivedDestructorsF479.cpp"
+object = "build/matching/BackgroundStageDerivedDestructorsF479.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DestroyBG04aAt0044D9A0"]
+symbol = "??1BG04aF479@@UAE@XZ"
+target_address = 0x0044D9A0
+size = 28
+[[units.background-stage-derived-destructor-bg04a-0044d9a0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "??_7BG04aF479@@6B@"
+target = 0x00658948
+[[units.background-stage-derived-destructor-bg04a-0044d9a0.relocations]]
+offset = 20
+type = "REL32"
+symbol = "??1NativeBackgroundBaseF479@@UAE@XZ"
+target = 0x00449D40
+
+
+[units.background-stage-derived-destructor-bg04b-0044de50]
+source = "src/BackgroundStageDerivedDestructorsF479.cpp"
+object = "build/matching/BackgroundStageDerivedDestructorsF479.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DestroyBG04bAt0044DE50"]
+symbol = "??1BG04bF479@@UAE@XZ"
+target_address = 0x0044DE50
+size = 28
+[[units.background-stage-derived-destructor-bg04b-0044de50.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "??_7BG04bF479@@6B@"
+target = 0x006589E4
+[[units.background-stage-derived-destructor-bg04b-0044de50.relocations]]
+offset = 20
+type = "REL32"
+symbol = "??1NativeBackgroundBaseF479@@UAE@XZ"
+target = 0x00449D40
+
+
+[units.background-stage-derived-destructor-bg04x-0044e090]
+source = "src/BackgroundStageDerivedDestructorsF479.cpp"
+object = "build/matching/BackgroundStageDerivedDestructorsF479.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DestroyBG04xAt0044E090"]
+symbol = "??1BG04xF479@@UAE@XZ"
+target_address = 0x0044E090
+size = 28
+[[units.background-stage-derived-destructor-bg04x-0044e090.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "??_7BG04xF479@@6B@"
+target = 0x00658A4C
+[[units.background-stage-derived-destructor-bg04x-0044e090.relocations]]
+offset = 20
+type = "REL32"
+symbol = "??1NativeBackgroundBaseF479@@UAE@XZ"
+target = 0x00449D40
+
+
+[units.background-stage-derived-destructor-bg04y-0044e2d0]
+source = "src/BackgroundStageDerivedDestructorsF479.cpp"
+object = "build/matching/BackgroundStageDerivedDestructorsF479.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DestroyBG04yAt0044E2D0"]
+symbol = "??1BG04yF479@@UAE@XZ"
+target_address = 0x0044E2D0
+size = 28
+[[units.background-stage-derived-destructor-bg04y-0044e2d0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "??_7BG04yF479@@6B@"
+target = 0x00658A88
+[[units.background-stage-derived-destructor-bg04y-0044e2d0.relocations]]
+offset = 20
+type = "REL32"
+symbol = "??1NativeBackgroundBaseF479@@UAE@XZ"
+target = 0x00449D40
+
+
+[units.background-stage-derived-destructor-bg05a-0044e7f0]
+source = "src/BackgroundStageDerivedDestructorsF479.cpp"
+object = "build/matching/BackgroundStageDerivedDestructorsF479.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DestroyBG05aAt0044E7F0"]
+symbol = "??1BG05aF479@@UAE@XZ"
+target_address = 0x0044E7F0
+size = 28
+[[units.background-stage-derived-destructor-bg05a-0044e7f0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "??_7BG05aF479@@6B@"
+target = 0x00658AC4
+[[units.background-stage-derived-destructor-bg05a-0044e7f0.relocations]]
+offset = 20
+type = "REL32"
+symbol = "??1NativeBackgroundBaseF479@@UAE@XZ"
+target = 0x00449D40
+
+
+[units.background-stage-derived-destructor-bg05b-0044f2e0]
+source = "src/BackgroundStageDerivedDestructorsF479.cpp"
+object = "build/matching/BackgroundStageDerivedDestructorsF479.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DestroyBG05bAt0044F2E0"]
+symbol = "??1BG05bF479@@UAE@XZ"
+target_address = 0x0044F2E0
+size = 28
+[[units.background-stage-derived-destructor-bg05b-0044f2e0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "??_7BG05bF479@@6B@"
+target = 0x00658B24
+[[units.background-stage-derived-destructor-bg05b-0044f2e0.relocations]]
+offset = 20
+type = "REL32"
+symbol = "??1NativeBackgroundBaseF479@@UAE@XZ"
+target = 0x00449D40
+
+
+[units.background-stage-derived-destructor-bg05x-0044f520]
+source = "src/BackgroundStageDerivedDestructorsF479.cpp"
+object = "build/matching/BackgroundStageDerivedDestructorsF479.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DestroyBG05xAt0044F520"]
+symbol = "??1BG05xF479@@UAE@XZ"
+target_address = 0x0044F520
+size = 28
+[[units.background-stage-derived-destructor-bg05x-0044f520.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "??_7BG05xF479@@6B@"
+target = 0x00658B84
+[[units.background-stage-derived-destructor-bg05x-0044f520.relocations]]
+offset = 20
+type = "REL32"
+symbol = "??1NativeBackgroundBaseF479@@UAE@XZ"
+target = 0x00449D40
+
+
+[units.background-stage-derived-destructor-bg05y-0044f760]
+source = "src/BackgroundStageDerivedDestructorsF479.cpp"
+object = "build/matching/BackgroundStageDerivedDestructorsF479.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DestroyBG05yAt0044F760"]
+symbol = "??1BG05yF479@@UAE@XZ"
+target_address = 0x0044F760
+size = 28
+[[units.background-stage-derived-destructor-bg05y-0044f760.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "??_7BG05yF479@@6B@"
+target = 0x00658BC0
+[[units.background-stage-derived-destructor-bg05y-0044f760.relocations]]
+offset = 20
+type = "REL32"
+symbol = "??1NativeBackgroundBaseF479@@UAE@XZ"
+target = 0x00449D40
+
+
+[units.background-stage-derived-destructor-bg06a-004500d0]
+source = "src/BackgroundStageDerivedDestructorsF479.cpp"
+object = "build/matching/BackgroundStageDerivedDestructorsF479.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DestroyBG06aAt004500D0"]
+symbol = "??1BG06aF479@@UAE@XZ"
+target_address = 0x004500D0
+size = 28
+[[units.background-stage-derived-destructor-bg06a-004500d0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "??_7BG06aF479@@6B@"
+target = 0x00658BFC
+[[units.background-stage-derived-destructor-bg06a-004500d0.relocations]]
+offset = 20
+type = "REL32"
+symbol = "??1NativeBackgroundBaseF479@@UAE@XZ"
+target = 0x00449D40
+
+
+[units.background-stage-derived-destructor-bg06x-00450310]
+source = "src/BackgroundStageDerivedDestructorsF479.cpp"
+object = "build/matching/BackgroundStageDerivedDestructorsF479.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DestroyBG06xAt00450310"]
+symbol = "??1BG06xF479@@UAE@XZ"
+target_address = 0x00450310
+size = 28
+[[units.background-stage-derived-destructor-bg06x-00450310.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "??_7BG06xF479@@6B@"
+target = 0x00658C54
+[[units.background-stage-derived-destructor-bg06x-00450310.relocations]]
+offset = 20
+type = "REL32"
+symbol = "??1NativeBackgroundBaseF479@@UAE@XZ"
+target = 0x00449D40
+
+
+[units.background-stage-derived-destructor-bg07a-004508c0]
+source = "src/BackgroundStageDerivedDestructorsF479.cpp"
+object = "build/matching/BackgroundStageDerivedDestructorsF479.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DestroyBG07aAt004508C0"]
+symbol = "??1BG07aF479@@UAE@XZ"
+target_address = 0x004508C0
+size = 28
+[[units.background-stage-derived-destructor-bg07a-004508c0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "??_7BG07aF479@@6B@"
+target = 0x00658C90
+[[units.background-stage-derived-destructor-bg07a-004508c0.relocations]]
+offset = 20
+type = "REL32"
+symbol = "??1NativeBackgroundBaseF479@@UAE@XZ"
+target = 0x00449D40
+
+
+[units.background-stage-derived-destructor-bg07x-00450b00]
+source = "src/BackgroundStageDerivedDestructorsF479.cpp"
+object = "build/matching/BackgroundStageDerivedDestructorsF479.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DestroyBG07xAt00450B00"]
+symbol = "??1BG07xF479@@UAE@XZ"
+target_address = 0x00450B00
+size = 28
+[[units.background-stage-derived-destructor-bg07x-00450b00.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "??_7BG07xF479@@6B@"
+target = 0x00658CFC
+[[units.background-stage-derived-destructor-bg07x-00450b00.relocations]]
+offset = 20
+type = "REL32"
+symbol = "??1NativeBackgroundBaseF479@@UAE@XZ"
+target = 0x00449D40
+
+
+[units.background-stage-derived-destructor-bg08a-00451110]
+source = "src/BackgroundStageDerivedDestructorsF479.cpp"
+object = "build/matching/BackgroundStageDerivedDestructorsF479.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DestroyBG08aAt00451110"]
+symbol = "??1BG08aF479@@UAE@XZ"
+target_address = 0x00451110
+size = 28
+[[units.background-stage-derived-destructor-bg08a-00451110.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "??_7BG08aF479@@6B@"
+target = 0x00658D38
+[[units.background-stage-derived-destructor-bg08a-00451110.relocations]]
+offset = 20
+type = "REL32"
+symbol = "??1NativeBackgroundBaseF479@@UAE@XZ"
+target = 0x00449D40
+
+
+[units.background-stage-derived-destructor-bg08x-00451350]
+source = "src/BackgroundStageDerivedDestructorsF479.cpp"
+object = "build/matching/BackgroundStageDerivedDestructorsF479.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DestroyBG08xAt00451350"]
+symbol = "??1BG08xF479@@UAE@XZ"
+target_address = 0x00451350
+size = 28
+[[units.background-stage-derived-destructor-bg08x-00451350.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "??_7BG08xF479@@6B@"
+target = 0x00658D84
+[[units.background-stage-derived-destructor-bg08x-00451350.relocations]]
+offset = 20
+type = "REL32"
+symbol = "??1NativeBackgroundBaseF479@@UAE@XZ"
+target = 0x00449D40
+
+
+[units.background-stage-derived-destructor-bg09a-00451c50]
+source = "src/BackgroundStageDerivedDestructorsF479.cpp"
+object = "build/matching/BackgroundStageDerivedDestructorsF479.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DestroyBG09aAt00451C50"]
+symbol = "??1BG09aF479@@UAE@XZ"
+target_address = 0x00451C50
+size = 28
+[[units.background-stage-derived-destructor-bg09a-00451c50.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "??_7BG09aF479@@6B@"
+target = 0x00658DC0
+[[units.background-stage-derived-destructor-bg09a-00451c50.relocations]]
+offset = 20
+type = "REL32"
+symbol = "??1NativeBackgroundBaseF479@@UAE@XZ"
+target = 0x00449D40
+
+
+[units.background-stage-derived-destructor-bg09x-00451e90]
+source = "src/BackgroundStageDerivedDestructorsF479.cpp"
+object = "build/matching/BackgroundStageDerivedDestructorsF479.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DestroyBG09xAt00451E90"]
+symbol = "??1BG09xF479@@UAE@XZ"
+target_address = 0x00451E90
+size = 28
+[[units.background-stage-derived-destructor-bg09x-00451e90.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "??_7BG09xF479@@6B@"
+target = 0x00658E54
+[[units.background-stage-derived-destructor-bg09x-00451e90.relocations]]
+offset = 20
+type = "REL32"
+symbol = "??1NativeBackgroundBaseF479@@UAE@XZ"
+target = 0x00449D40
