@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "91d4afc72070c1431a130c585cb9ffabbc0de01cc0af75313bea945eaa78b535"
+      "current_sha256": "581a5c5aed27c19e19c2de0d6713705524e6a798a1add478f3acc51e11bb2f52"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "1bda65b0a717cf867909d77e8a9e128077d0295feba47fbe9b1c11fc33059183"
+      "current_sha256": "049964f0504e8251d95bbadea38e88c05c38c63f6886939e61e26a7662f92288"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "bf7832de0ea06642921db77ef04a0fa75cc2581acf86fe832286b992ebdc49a6"
+      "current_sha256": "0768673b6c8d973d57e591aae7474197013277b2ae279c23e6205881d4f7fd04"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "eedf95e43a68b8521a67f51bb278faf067675ebb47f8f24862a07b0f9d328e7a"
+      "current_sha256": "c0f00774ddda9e0236e0b056302ede02cc421df1740b23c5a85d1206b6d5d0a9"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "37ce6f2d25ed8c4adab972f14bc8ef86aee7ae7c553223601d4a251af4d2d22b"
+      "current_sha256": "44b379815b1d45e24ab0c91e05633638f1028964768176bfdab78acd01caab02"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -22524,6 +22524,50 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R066"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00413AC0",
+        "size": "792",
+        "span_end": "0x00413DD7",
+        "current_name": "FUN_00413ac0",
+        "proposed_name": "ReplayRecords::LoadRecord",
+        "module": "ReplayRecords",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R035; full body hash, complete decoded CFG and game-specific policy reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00413AC0",
+        "size": "792",
+        "span_end": "0x00413DD7",
+        "current_name": "FUN_00413ac0",
+        "proposed_name": "ReplayRecords::LoadRecord",
+        "module": "ReplayRecords",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void ReplayRecordsF216::LoadRecord(signed char)",
+        "is_thunk": "false",
+        "source_file": "src/ReplayRecordLoadF259.cpp",
+        "evidence": "R035; full body hash, complete decoded CFG and game-specific policy reviewed; F259; scripts/repo-python scripts/replay-exact-units.py --unit replay-records-load-record-00413ac0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F259: native complete original 792 authored CODE bytes /274 independently decoded x86 instructions ending RET 4 at 00413DD5 with original body SHA256 9098d7133138719d630e6de50d698ba21db2689223402ac81cc0e4dab6aaac22. Pinned VC7.1 /Od /GX- natural C++ full cold-exact with 676/676 comparable bytes and all 29 original physical COFF relocation fields. Actual CreateFileA, signed record index offset 0x11C, SetFilePointer, initial 11 fixed-size byte/short/dword reads, 4 repeated count reads and four authentic 0x154/0x168/0x17C/0x190 deque/list clears and per-entry appends preserve whole CFG, unsigned loop bounds, true file IO handle and final CloseHandle, no fake checks. Earlier historical F216/F233 best whole emitter gave 639/676 due wrong local slots; F259 actual nested real variable lifetimes reconstruct native i EBP-4, uint32 item EBP-8, raw 16-bit word EBP-C, entries EBP-10, file handle EBP-14, byte item EBP-15, transferred count EBP-1C. The final 2-byte difference in the 674/676 full probe independently proved an authentic compiler-generated temporary at EBP-1E from static_cast<short>(unsigned short rawWord) bound to const short& in the word container Push, not a fake manual short local at EBP-20. This also fixes the real thiscall callee signature for 00414640 without crediting that callee. No guessed class layout/patch/mask/assembly/byte paste/truncated body/all-unit replay or external Oracle acceptance; original owner naming inferred and 97 unresolved origins still uncredited."
+      },
+      "origin": {
+        "address": "0x00413AC0",
+        "origin": "authored",
+        "subsystem": "ReplayRecords",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R035"
       }
     }
   ],
@@ -172510,6 +172554,203 @@
           "target": 4354202
         }
       ]
+    },
+    "replay-records-load-record-00413ac0": {
+      "source": "src/ReplayRecordLoadF259.cpp",
+      "object": "build/matching/ReplayRecordLoadF259.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "ReplayRecords::LoadRecord"
+      ],
+      "symbol": "?LoadRecord@ReplayRecordsF216@@QAEXC@Z",
+      "target_address": 4274880,
+      "size": 792,
+      "relocations": [
+        {
+          "offset": 36,
+          "type": "DIR32",
+          "symbol": "__imp__CreateFileA@28",
+          "target": 6648112
+        },
+        {
+          "offset": 78,
+          "type": "DIR32",
+          "symbol": "__imp__SetFilePointer@16",
+          "target": 6648104
+        },
+        {
+          "offset": 105,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 132,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 159,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 186,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 213,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 240,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 267,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 294,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 321,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 348,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 370,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 384,
+          "type": "REL32",
+          "symbol": "?Clear@ReplayByteListF216@@QAEXXZ",
+          "target": 4277552
+        },
+        {
+          "offset": 432,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 450,
+          "type": "REL32",
+          "symbol": "?Push@ReplayByteListF216@@QAEXPBD@Z",
+          "target": 4277328
+        },
+        {
+          "offset": 474,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 488,
+          "type": "REL32",
+          "symbol": "?Clear@ReplayWordListF216@@QAEXXZ",
+          "target": 4278048
+        },
+        {
+          "offset": 536,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 562,
+          "type": "REL32",
+          "symbol": "?Push@ReplayWordListF216@@QAEXABF@Z",
+          "target": 4277824
+        },
+        {
+          "offset": 586,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 600,
+          "type": "REL32",
+          "symbol": "?Clear@ReplayByteListF216@@QAEXXZ",
+          "target": 4277552
+        },
+        {
+          "offset": 648,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 666,
+          "type": "REL32",
+          "symbol": "?Push@ReplayByteListF216@@QAEXPBD@Z",
+          "target": 4277328
+        },
+        {
+          "offset": 690,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 704,
+          "type": "REL32",
+          "symbol": "?Clear@ReplayDwordListF216@@QAEXXZ",
+          "target": 4278544
+        },
+        {
+          "offset": 752,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 770,
+          "type": "REL32",
+          "symbol": "?Push@ReplayDwordListF216@@QAEXPBI@Z",
+          "target": 4278320
+        },
+        {
+          "offset": 782,
+          "type": "DIR32",
+          "symbol": "__imp__CloseHandle@4",
+          "target": 6648120
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -172858,6 +173099,7 @@
     "src/CardEncodeF252.cpp": "b8a479d0d58f869d50f5206e902862f58ca0ab25961b450921c7f94d3e4d8086",
     "src/ResultResourceF256.cpp": "5200e10fbc5a54bd970796dd01593ed88d289a0abce2b76112fdafb38ea13e41",
     "src/MusicCatalogEncodeF257.cpp": "039989c795af1520430ae8a2bfd88ebb0caa6ad9c249bd3e1addfc3a450ef7e3",
-    "src/MusicCatalogLoadF258.cpp": "c9ee285cc52bc820ef18058e59c1cf771b497baedd4b82ed523593e2894aa776"
+    "src/MusicCatalogLoadF258.cpp": "c9ee285cc52bc820ef18058e59c1cf771b497baedd4b82ed523593e2894aa776",
+    "src/ReplayRecordLoadF259.cpp": "ee08905a30cc9ce6ec569583ae96772ed9fc43ef548a59756f58b93d2cb5025e"
   }
 }

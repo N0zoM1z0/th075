@@ -2002,3 +2002,54 @@ no byte masks, truncated extent, target grafts, artificial stack padding,
 unused locals, fake returns, assembly, or whole-unit replay were used.
 Local Git/VC7.1 cold replay does not establish external Oracle acceptance.
 The 97 unresolved origins remain excluded from authored coverage.
+
+
+## F259: exact complete replay-record loader and compiler-created short conversion
+
+R035-authored `ReplayRecords::LoadRecord` (`00413AC0..00413DD7`) has
+**792 complete CODE bytes**, **274 native x86 instructions**, and RET 4
+at `00413DD5`; original full CODE SHA256 is
+`9098d7133138719d630e6de50d698ba21db2689223402ac81cc0e4dab6aaac22`.
+The target has **29 physical COFF relocation fields**, including real
+Windows file APIs, four deque/list `Clear` targets, four typed `Push`
+targets, signed record indexing and final CloseHandle. All real control
+flow, 11 initial fixed reads, four count reads, signed input slot index,
+four independent element iteration loops and native field offsets from
++0x144 through +0x190 are preserved. No extra failure checks are invented.
+The source only borrows observed interfaces; complete original types and
+record layouts are not asserted or credited.
+
+Historical whole F216/F233 natural C++ controls emitted the correct full
+792 bytes and 29 fields but matched only **639/676** comparable bytes.
+Instead of repeating 57 variable-name sweeps, F259 first independently
+reconciled the native stack: `i` at EBP-4, dword item at EBP-8,
+unsigned raw word at EBP-0xC, count at EBP-0x10, file handle at
+EBP-0x14, single-byte temporary at EBP-0x15, and ReadFile transfer
+count at EBP-0x1C. A nested *real* scope/lifetime graph for those
+variables recovered **674/676** comparable bytes, including the entire
+0x24-byte frame and correct native `this` at EBP-0x24.
+
+The last two mismatches belonged to the **compiler-produced signed-word
+reference temporary**, not a missing synthetic source variable. The PE
+reads two bytes into the actual `unsigned short` local at EBP-0x0C,
+copies its bits into a distinct `short` at EBP-0x1E and passes its
+address to the real `00414640` list helper. Initially declaring a manual
+`short shortItem` emitted the same instructions but placed that explicit
+local at EBP-0x20. Reconstructing the real operation as
+`Push(static_cast<short>(rawWord))`, with the borrowed callee signature
+`void Push(const short&)`, produces the original temporary at EBP-0x1E,
+without a manually declared fake local or a misdeclared ABI.
+
+The complete natural VC7.1 `/Od /GX- /GS` source
+`src/ReplayRecordLoadF259.cpp` matches **676/676** nonrelocated bytes and
+**29/29** actual relocation offsets/types/destinations. Only the new
+`replay-records-load-record-00413ac0` match unit was independently
+cold-rebuilt and reported **exact: 792**. Historical complete controls,
+the new meaningful lexical-scope experiments, Ghidra boundary, exact
+comparison and cold receipt remain under `.analysis/f216-archive-record/`,
+`.analysis/f233-record-scope/` and `.analysis/f259-replay-load-lifetimes/`.
+Original class identity and all 97 pending origins remain unknown where
+not proven; no extra bytes are credited for library/CRT or neighboring
+functions. No target-byte patch, assembly, false padding, fake returns,
+truncated extent or all-unit cold replay. A local checkpoint does not
+constitute an external Oracle receipt.

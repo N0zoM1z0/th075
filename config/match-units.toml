@@ -41047,3 +41047,157 @@ offset = 928
 type = "DIR32"
 symbol = "$L55521"
 target = 0x0042709A
+
+[units.replay-records-load-record-00413ac0]
+source = "src/ReplayRecordLoadF259.cpp"
+object = "build/matching/ReplayRecordLoadF259.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["ReplayRecords::LoadRecord"]
+symbol = "?LoadRecord@ReplayRecordsF216@@QAEXC@Z"
+target_address = 0x00413AC0
+size = 792
+[[units.replay-records-load-record-00413ac0.relocations]]
+offset = 36
+type = "DIR32"
+symbol = "__imp__CreateFileA@28"
+target = 0x00657130
+[[units.replay-records-load-record-00413ac0.relocations]]
+offset = 78
+type = "DIR32"
+symbol = "__imp__SetFilePointer@16"
+target = 0x00657128
+[[units.replay-records-load-record-00413ac0.relocations]]
+offset = 105
+type = "DIR32"
+symbol = "__imp__ReadFile@20"
+target = 0x0065712C
+[[units.replay-records-load-record-00413ac0.relocations]]
+offset = 132
+type = "DIR32"
+symbol = "__imp__ReadFile@20"
+target = 0x0065712C
+[[units.replay-records-load-record-00413ac0.relocations]]
+offset = 159
+type = "DIR32"
+symbol = "__imp__ReadFile@20"
+target = 0x0065712C
+[[units.replay-records-load-record-00413ac0.relocations]]
+offset = 186
+type = "DIR32"
+symbol = "__imp__ReadFile@20"
+target = 0x0065712C
+[[units.replay-records-load-record-00413ac0.relocations]]
+offset = 213
+type = "DIR32"
+symbol = "__imp__ReadFile@20"
+target = 0x0065712C
+[[units.replay-records-load-record-00413ac0.relocations]]
+offset = 240
+type = "DIR32"
+symbol = "__imp__ReadFile@20"
+target = 0x0065712C
+[[units.replay-records-load-record-00413ac0.relocations]]
+offset = 267
+type = "DIR32"
+symbol = "__imp__ReadFile@20"
+target = 0x0065712C
+[[units.replay-records-load-record-00413ac0.relocations]]
+offset = 294
+type = "DIR32"
+symbol = "__imp__ReadFile@20"
+target = 0x0065712C
+[[units.replay-records-load-record-00413ac0.relocations]]
+offset = 321
+type = "DIR32"
+symbol = "__imp__ReadFile@20"
+target = 0x0065712C
+[[units.replay-records-load-record-00413ac0.relocations]]
+offset = 348
+type = "DIR32"
+symbol = "__imp__ReadFile@20"
+target = 0x0065712C
+[[units.replay-records-load-record-00413ac0.relocations]]
+offset = 370
+type = "DIR32"
+symbol = "__imp__ReadFile@20"
+target = 0x0065712C
+[[units.replay-records-load-record-00413ac0.relocations]]
+offset = 384
+type = "REL32"
+symbol = "?Clear@ReplayByteListF216@@QAEXXZ"
+target = 0x00414530
+[[units.replay-records-load-record-00413ac0.relocations]]
+offset = 432
+type = "DIR32"
+symbol = "__imp__ReadFile@20"
+target = 0x0065712C
+[[units.replay-records-load-record-00413ac0.relocations]]
+offset = 450
+type = "REL32"
+symbol = "?Push@ReplayByteListF216@@QAEXPBD@Z"
+target = 0x00414450
+[[units.replay-records-load-record-00413ac0.relocations]]
+offset = 474
+type = "DIR32"
+symbol = "__imp__ReadFile@20"
+target = 0x0065712C
+[[units.replay-records-load-record-00413ac0.relocations]]
+offset = 488
+type = "REL32"
+symbol = "?Clear@ReplayWordListF216@@QAEXXZ"
+target = 0x00414720
+[[units.replay-records-load-record-00413ac0.relocations]]
+offset = 536
+type = "DIR32"
+symbol = "__imp__ReadFile@20"
+target = 0x0065712C
+[[units.replay-records-load-record-00413ac0.relocations]]
+offset = 562
+type = "REL32"
+symbol = "?Push@ReplayWordListF216@@QAEXABF@Z"
+target = 0x00414640
+[[units.replay-records-load-record-00413ac0.relocations]]
+offset = 586
+type = "DIR32"
+symbol = "__imp__ReadFile@20"
+target = 0x0065712C
+[[units.replay-records-load-record-00413ac0.relocations]]
+offset = 600
+type = "REL32"
+symbol = "?Clear@ReplayByteListF216@@QAEXXZ"
+target = 0x00414530
+[[units.replay-records-load-record-00413ac0.relocations]]
+offset = 648
+type = "DIR32"
+symbol = "__imp__ReadFile@20"
+target = 0x0065712C
+[[units.replay-records-load-record-00413ac0.relocations]]
+offset = 666
+type = "REL32"
+symbol = "?Push@ReplayByteListF216@@QAEXPBD@Z"
+target = 0x00414450
+[[units.replay-records-load-record-00413ac0.relocations]]
+offset = 690
+type = "DIR32"
+symbol = "__imp__ReadFile@20"
+target = 0x0065712C
+[[units.replay-records-load-record-00413ac0.relocations]]
+offset = 704
+type = "REL32"
+symbol = "?Clear@ReplayDwordListF216@@QAEXXZ"
+target = 0x00414910
+[[units.replay-records-load-record-00413ac0.relocations]]
+offset = 752
+type = "DIR32"
+symbol = "__imp__ReadFile@20"
+target = 0x0065712C
+[[units.replay-records-load-record-00413ac0.relocations]]
+offset = 770
+type = "REL32"
+symbol = "?Push@ReplayDwordListF216@@QAEXPBI@Z"
+target = 0x00414830
+[[units.replay-records-load-record-00413ac0.relocations]]
+offset = 782
+type = "DIR32"
+symbol = "__imp__CloseHandle@4"
+target = 0x00657138
