@@ -49065,3 +49065,133 @@ offset = 150
 type = "REL32"
 symbol = "_localtime"
 target = 0x0064197E
+
+
+[units.background-stage-load-bg00a-00449aa0]
+source = "src/BackgroundLoadPairF376.cpp"
+object = "build/matching/BackgroundLoadPairF376.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::LoadBG00a"]
+symbol = "??0Background00aF376@@QAE@XZ"
+target_address = 0x00449AA0
+size = 151
+[[units.background-stage-load-bg00a-00449aa0.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0Background00aF376@@QAE@XZ"
+target = 0x00655BF8
+[[units.background-stage-load-bg00a-00449aa0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg00a-00449aa0.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg00a-00449aa0.relocations]]
+offset = 32
+type = "REL32"
+symbol = "??0BackgroundBaseF376@@QAE@XZ"
+target = 0x00449DE0
+[[units.background-stage-load-bg00a-00449aa0.relocations]]
+offset = 48
+type = "DIR32"
+symbol = "??_7Background00aF376@@6B@"
+target = 0x00658434
+[[units.background-stage-load-bg00a-00449aa0.relocations]]
+offset = 59
+type = "REL32"
+symbol = "?Initialize@StageQuadF376@@QAEXXZ"
+target = 0x0040D990
+[[units.background-stage-load-bg00a-00449aa0.relocations]]
+offset = 72
+type = "REL32"
+symbol = "?AllocateUnformattedSlots@StagePackF376@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.background-stage-load-bg00a-00449aa0.relocations]]
+offset = 77
+type = "DIR32"
+symbol = "?g_BGDirectory00aF376@@3QBDB"
+target = 0x00658410
+[[units.background-stage-load-bg00a-00449aa0.relocations]]
+offset = 82
+type = "DIR32"
+symbol = "?g_BGFilename00aF376@@3QBDB"
+target = 0x00658418
+[[units.background-stage-load-bg00a-00449aa0.relocations]]
+offset = 93
+type = "REL32"
+symbol = "?ReadPack@StagePackF376@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.background-stage-load-bg00a-00449aa0.relocations]]
+offset = 143
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.background-stage-load-bg00b-00449e10]
+source = "src/BackgroundLoadPairF376.cpp"
+object = "build/matching/BackgroundLoadPairF376.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::LoadBG00b"]
+symbol = "??0Background00bF376@@QAE@XZ"
+target_address = 0x00449E10
+size = 161
+[[units.background-stage-load-bg00b-00449e10.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0Background00bF376@@QAE@XZ"
+target = 0x00655C18
+[[units.background-stage-load-bg00b-00449e10.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg00b-00449e10.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg00b-00449e10.relocations]]
+offset = 32
+type = "REL32"
+symbol = "??0BackgroundBaseF376@@QAE@XZ"
+target = 0x00449DE0
+[[units.background-stage-load-bg00b-00449e10.relocations]]
+offset = 48
+type = "DIR32"
+symbol = "??_7Background00bF376@@6B@"
+target = 0x006584A4
+[[units.background-stage-load-bg00b-00449e10.relocations]]
+offset = 59
+type = "REL32"
+symbol = "?Initialize@StageQuadF376@@QAEXXZ"
+target = 0x0040D990
+[[units.background-stage-load-bg00b-00449e10.relocations]]
+offset = 72
+type = "REL32"
+symbol = "?AllocateUnformattedSlots@StagePackF376@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.background-stage-load-bg00b-00449e10.relocations]]
+offset = 77
+type = "DIR32"
+symbol = "?g_BGDirectory00bF376@@3QBDB"
+target = 0x00658480
+[[units.background-stage-load-bg00b-00449e10.relocations]]
+offset = 82
+type = "DIR32"
+symbol = "?g_BGFilename00bF376@@3QBDB"
+target = 0x00658488
+[[units.background-stage-load-bg00b-00449e10.relocations]]
+offset = 93
+type = "REL32"
+symbol = "?ReadPack@StagePackF376@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.background-stage-load-bg00b-00449e10.relocations]]
+offset = 153
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000

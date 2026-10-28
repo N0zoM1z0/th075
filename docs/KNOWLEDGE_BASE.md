@@ -5649,3 +5649,44 @@ VC7.1 `/Od /Ob0 /Gy /GR- /GX- /Zi` as only affected unit
 `progress-records-insert-ranked-score-00416ee0`, **1/1 exact**. No library
 callee credit, copied machine code, fake ABI/layout, masks, cropped original
 CODE, whole cold replay or external Oracle receipt.
+
+
+## F376: complete native stage background 00a/00b load constructors with original EH
+
+The R055-authored original stage background load entries
+`BackgroundStage::LoadBG00a` at `00449AA0..00449B36` (**151 native CODE
+bytes**, 39 original instructions, PE SHA256
+`d45a2d51fe47f942c82e292bbe4c150f8ba28f32082148c4e3a50016845f05d7`)
+and `BackgroundStage::LoadBG00b` at `00449E10..00449EB0`
+(**161 CODE bytes**, 41 original instructions, PE SHA256
+`f84917e5088d10f58f1de4be9fc9d76e087bc40adb7566ab0522ca96e2499798`)
+are independent full original 32-bit VC7.1 `/GX` exception-protected
+derived C++ constructors. Each calls the real borrowed base constructor
+`00449DE0`, installs its own original vtable (`00658434` or `006584A4`),
+initializes a native stage camera data packet with real `0040D990` at
+`this+0x68` or `this+0x6C`, allocates genuine resource slots via
+`0040B1D0` at `this+0x18` (3 or 4 slots), loads its own exact original
+background directory/data via `0040BB80`, and clears the three original
+DWORDs `this+0xC/+0x10/+0x14`. BG00b additionally clears `this+0x68`.
+The real C++ EH entries and their distinct native handler references
+`00655BF8/00655C18`, as well as SEH activation/deactivation, are
+reproduced *by the compiler* from actual derived constructor source; no
+manual assembler or forged EH output. No complete original stage class
+allocation/field layout is asserted: base, camera and resource objects are
+borrowed callable interfaces.
+
+`src/BackgroundLoadPairF376.cpp` compiles both original 151/161-byte
+constructor bodies naturally under pinned VC7.1 `/Od /Ob0 /Gy /GR- /GX
+/GS /Zi` with genuine C++ base inheritance and destructor ABI. The two
+complete originals match **107/107 and 117/117 nonrelocation bytes** and
+**11/11 true original COFF DIR32/REL32 physical references** per body,
+including the correct native EH handler, original vtable, base constructor,
+asset strings and actual callees. Only the two changed units
+`background-stage-load-bg00a-00449aa0` and
+`background-stage-load-bg00b-00449e10` were cold replayed together: **2/2
+exact across 1 object**, crediting 312 distinct original authored CODE bytes.
+Other stage-specific loader variations remain unverified until independently
+compared, and their similarly structured implementation is **not** counted
+yet. No bytes from the base constructor, CRT, archive, vtables, jump data
+or compiler-generated EH callees are double counted. No fake local padding,
+assembly, raw byte graft, cropped comparison or full cold replay.
