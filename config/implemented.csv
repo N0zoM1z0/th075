@@ -600,3 +600,4 @@ CharacterAuxObject::InitializeAt005FAB10
 FighterState::ReleaseResources
 Effects::SpawnAuxObjectAt005F78B0
 FighterState::LoadStageResource
+FighterState::Initialize
