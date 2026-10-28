@@ -723,3 +723,4 @@ GameProgress::SetUnlockBitAt00416CE0,0x00416CE0,function
 GameProgress::TestUnlockBitAt00416DC0,0x00416DC0,function
 AuxEffectManager::DispatchSelectedListAt005F7D00,0x005F7D00,function
 ProfileSelection::LoadWorkingEightBytesAt00416E80,0x00416E80,function
+BattleLoader::LoadCharactersAt004176F0,0x004176F0,function

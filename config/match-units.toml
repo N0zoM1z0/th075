@@ -53255,3 +53255,1184 @@ offset = 72
 type = "REL32"
 symbol = "_memcpy"
 target = 0x00640F20
+
+
+[units.battle-loader-load-characters-004176f0]
+source = "src/BattleCharacterLoadBossF407.cpp"
+object = "build/matching/BattleCharacterLoadBossF407.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["BattleLoader::LoadCharactersAt004176F0"]
+symbol = "?LoadCharacters@BattleCharacterLoaderF398@@YAXXZ"
+target_address = 0x004176F0
+size = 3232
+compare_size = 3296
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$?LoadCharacters@BattleCharacterLoaderF398@@YAXXZ"
+target = 0x00655247
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 31
+type = "DIR32"
+symbol = "?g_LoadCharacterLogAt00657A30@@3QBDB"
+target = 0x00657A30
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 36
+type = "REL32"
+symbol = "?BattleLogAt0041CC50@@YAXPBD@Z"
+target = 0x0041CC50
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 46
+type = "DIR32"
+symbol = "?g_ReplayModeAt0066C238@@3CA"
+target = 0x0066C238
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 56
+type = "REL32"
+symbol = "?LoadReplaySelectionAt004195B0@@YAXXZ"
+target = 0x004195B0
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 68
+type = "DIR32"
+symbol = "?g_BattleModeAt006714B4@@3CA"
+target = 0x006714B4
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 83
+type = "DIR32"
+symbol = "?g_CharacterProgressAt0067161E@@3CA"
+target = 0x0067161E
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 92
+type = "DIR32"
+symbol = "?g_CharacterProgressAt0067161E@@3CA"
+target = 0x0067161E
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 99
+type = "DIR32"
+symbol = "?g_CharacterProgressAt0067161E@@3CA"
+target = 0x0067161E
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 163
+type = "REL32"
+symbol = "_rand"
+target = 0x006418AB
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 195
+type = "REL32"
+symbol = "_rand"
+target = 0x006418AB
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 236
+type = "REL32"
+symbol = "?CanChooseCharacterAt00419E10@@YAECH@Z"
+target = 0x00419E10
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 258
+type = "DIR32"
+symbol = "?g_StoryRosterAt00671490@@3PACA"
+target = 0x00671490
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 281
+type = "DIR32"
+symbol = "?g_CharacterCountAt0067161F@@3CA"
+target = 0x0067161F
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 288
+type = "DIR32"
+symbol = "?g_CharacterProgressAt0067161E@@3CA"
+target = 0x0067161E
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 294
+type = "DIR32"
+symbol = "?g_RosterAt0067148F@@3PACA"
+target = 0x0067148F
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 300
+type = "DIR32"
+symbol = "?g_SelectedCharacterAt006714C9@@3CA"
+target = 0x006714C9
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 306
+type = "DIR32"
+symbol = "?g_SelectedCharacterAt006714C9@@3CA"
+target = 0x006714C9
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 312
+type = "DIR32"
+symbol = "?g_StageSelectionAt0067161D@@3CA"
+target = 0x0067161D
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 319
+type = "DIR32"
+symbol = "?g_SelectedCharacterAt006714C9@@3CA"
+target = 0x0067161D
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 329
+type = "REL32"
+symbol = "_rand"
+target = 0x006418AB
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 343
+type = "DIR32"
+symbol = "?g_PlayerDefaultAt006714C8@@3CA"
+target = 0x006714C8
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 386
+type = "DIR32"
+symbol = "?g_StageSelectionAt0067161D@@3CA"
+target = 0x0067161D
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 393
+type = "DIR32"
+symbol = "?g_StageSelectionAt0067161D@@3CA"
+target = 0x0067161D
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 399
+type = "DIR32"
+symbol = "?g_SelectedSkinAt006714AD@@3CA"
+target = 0x006714AD
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 407
+type = "DIR32"
+symbol = "?g_PlayerDefaultAt006714C8@@3CA"
+target = 0x006714C8
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 414
+type = "DIR32"
+symbol = "?g_SelectedCharacterAt006714C9@@3CA"
+target = 0x006714C9
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 425
+type = "DIR32"
+symbol = "?g_BattleSkinAt006714AC@@3PACA"
+target = 0x006714AC
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 438
+type = "DIR32"
+symbol = "?g_SelectedSkinAt006714AD@@3CA"
+target = 0x006714AD
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 443
+type = "REL32"
+symbol = "_rand"
+target = 0x006418AB
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 457
+type = "DIR32"
+symbol = "?g_BattleDifficultyAt00671611@@3CA"
+target = 0x00671611
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 462
+type = "REL32"
+symbol = "_rand"
+target = 0x006418AB
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 476
+type = "DIR32"
+symbol = "?g_EnemyDifficultyAt006714CD@@3CA"
+target = 0x006714CD
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 511
+type = "DIR32"
+symbol = "?g_BattleModeAt006714B4@@3CA"
+target = 0x006714B4
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 523
+type = "DIR32"
+symbol = "?g_BattleModeAt006714B4@@3CA"
+target = 0x006714B4
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 544
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 561
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 574
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 630
+type = "DIR32"
+symbol = "?g_BattleCharactersAt006714C8@@3PACA"
+target = 0x006714C8
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 662
+type = "DIR32"
+symbol = "$L1234"
+target = 0x00418390
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 672
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 699
+type = "REL32"
+symbol = "??0Fighter0F398@@QAE@XZ"
+target = 0x0046D080
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 746
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 761
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 788
+type = "REL32"
+symbol = "??0Fighter1F398@@QAE@XZ"
+target = 0x00492FB0
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 835
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 850
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 877
+type = "REL32"
+symbol = "??0Fighter2F398@@QAE@XZ"
+target = 0x004C0820
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 924
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 939
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 966
+type = "REL32"
+symbol = "??0Fighter3F398@@QAE@XZ"
+target = 0x004E2C90
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 1013
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 1028
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 1055
+type = "REL32"
+symbol = "??0Fighter4F398@@QAE@XZ"
+target = 0x005021C0
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 1102
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 1117
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 1144
+type = "REL32"
+symbol = "??0Fighter5F398@@QAE@XZ"
+target = 0x0052CEE0
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 1191
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 1206
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 1233
+type = "REL32"
+symbol = "??0Fighter6F398@@QAE@XZ"
+target = 0x00551980
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 1280
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 1295
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 1322
+type = "REL32"
+symbol = "??0Fighter7F398@@QAE@XZ"
+target = 0x00574100
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 1369
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 1384
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 1411
+type = "REL32"
+symbol = "??0Fighter8F398@@QAE@XZ"
+target = 0x00597380
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 1458
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 1473
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 1500
+type = "REL32"
+symbol = "??0Fighter9F398@@QAE@XZ"
+target = 0x005C0AB0
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 1547
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 1559
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 1595
+type = "REL32"
+symbol = "??0Fighter10F398@@QAE@XZ"
+target = 0x005E2090
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 1642
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 1652
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 1671
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 1680
+type = "DIR32"
+symbol = "?g_BattleSkinAt006714AC@@3PACA"
+target = 0x006714AC
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 1697
+type = "DIR32"
+symbol = "?g_BattleChosenLevelAt00671610@@3PACA"
+target = 0x00671610
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 1707
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 1725
+type = "DIR32"
+symbol = "?g_BattleSelectionFlagsAt006714CC@@3PACA"
+target = 0x006714CC
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 1735
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 1752
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 1757
+type = "REL32"
+symbol = "?ResetControlState@FighterNativeF398@@QAEXXZ"
+target = 0x00456B60
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 1769
+type = "DIR32"
+symbol = "?g_StageParametersAt00671440@@3PAEA"
+target = 0x00671440
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 1780
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 1785
+type = "REL32"
+symbol = "?InitializeResources@FighterNativeF398@@QAEXPAX@Z"
+target = 0x00457490
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 1792
+type = "DIR32"
+symbol = "?g_BattleModeAt006714B4@@3CA"
+target = 0x006714B4
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 1804
+type = "DIR32"
+symbol = "?g_BattleModeAt006714B4@@3CA"
+target = 0x006714B4
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 1825
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 1842
+type = "DIR32"
+symbol = "?g_StoryFlagsAt006714D0@@3CA"
+target = 0x006714D0
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 1857
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 1878
+type = "DIR32"
+symbol = "?g_BattleLevelAt00671434@@3PACA"
+target = 0x00671434
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 1906
+type = "DIR32"
+symbol = "$L1235"
+target = 0x004183BC
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 1916
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 1938
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 1960
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 1982
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2004
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2024
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2033
+type = "DIR32"
+symbol = "?g_BattleSoundSettingAt00671438@@3PACA"
+target = 0x00671438
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2056
+type = "DIR32"
+symbol = "?g_BattleModeAt006714B4@@3CA"
+target = 0x006714B4
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2072
+type = "DIR32"
+symbol = "?g_ReplayModeAt0066C238@@3CA"
+target = 0x0066C238
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2083
+type = "DIR32"
+symbol = "?g_StoryResultAt00671621@@3EA"
+target = 0x00671621
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2091
+type = "DIR32"
+symbol = "?g_StoryChoiceAt00671620@@3CA"
+target = 0x00671620
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2101
+type = "DIR32"
+symbol = "?g_StoryResultAt00671621@@3EA"
+target = 0x00671621
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2108
+type = "DIR32"
+symbol = "?g_StoryStatusAt00671623@@3EA"
+target = 0x00671623
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2115
+type = "DIR32"
+symbol = "?g_StoryCurrentAt00671622@@3EA"
+target = 0x00671622
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2121
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2127
+type = "DIR32"
+symbol = "?g_StoryChoiceAt00671620@@3CA"
+target = 0x00671620
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2139
+type = "DIR32"
+symbol = "?g_StoryChoiceAt00671620@@3CA"
+target = 0x00671620
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2146
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2161
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2176
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2191
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2202
+type = "DIR32"
+symbol = "?g_CharacterProgressAt0067161E@@3CA"
+target = 0x0067161E
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2208
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2216
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2224
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2236
+type = "DIR32"
+symbol = "?g_SelectedCharacterAt006714C9@@3CA"
+target = 0x006714C9
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2246
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2256
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2273
+type = "DIR32"
+symbol = "?g_BattleModeAt006714B4@@3CA"
+target = 0x006714B4
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2285
+type = "DIR32"
+symbol = "?g_BattleModeAt006714B4@@3CA"
+target = 0x006714B4
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2297
+type = "DIR32"
+symbol = "?g_BattleModeAt006714B4@@3CA"
+target = 0x006714B4
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2309
+type = "DIR32"
+symbol = "?g_BattleModeAt006714B4@@3CA"
+target = 0x006714B4
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2321
+type = "DIR32"
+symbol = "?g_PlaySideAt006714B8@@3CA"
+target = 0x006714B8
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2331
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2343
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2358
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2371
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2387
+type = "DIR32"
+symbol = "?g_BattleModeAt006714B4@@3CA"
+target = 0x006714B4
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2398
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2411
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2425
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2438
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2451
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2458
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2463
+type = "REL32"
+symbol = "?SetOpponent@FighterNativeF398@@QAEXPAV1@@Z"
+target = 0x004574B0
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2468
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2475
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2480
+type = "REL32"
+symbol = "?SetOpponent@FighterNativeF398@@QAEXPAV1@@Z"
+target = 0x004574B0
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2486
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2496
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2505
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2515
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2524
+type = "REL32"
+symbol = "?CameraAttachAt00412660@@YAXPAM000@Z"
+target = 0x00412660
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2534
+type = "DIR32"
+symbol = "?g_BattleModeAt006714B4@@3CA"
+target = 0x006714B4
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2549
+type = "DIR32"
+symbol = "?g_StoryLoadingAt006714D1@@3EA"
+target = 0x006714D1
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2555
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2563
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2572
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2577
+type = "REL32"
+symbol = "?ActivateStoryStage@FighterNativeF398@@QAEXXZ"
+target = 0x004584D0
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2582
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2595
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2600
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2621
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2626
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2647
+type = "DIR32"
+symbol = "?g_CharacterProgressAt0067161E@@3CA"
+target = 0x0067161E
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2659
+type = "DIR32"
+symbol = "?g_CharacterProgressAt0067161E@@3CA"
+target = 0x0067161E
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2671
+type = "DIR32"
+symbol = "?g_StoryResultAt00671621@@3EA"
+target = 0x00671621
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2686
+type = "DIR32"
+symbol = "?g_StoryResultAt00671621@@3EA"
+target = 0x00671621
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2696
+type = "DIR32"
+symbol = "?g_StoryStatusAt00671623@@3EA"
+target = 0x00671623
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2705
+type = "DIR32"
+symbol = "?g_StoryStatusAt00671623@@3EA"
+target = 0x00671623
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2712
+type = "DIR32"
+symbol = "?g_StoryCurrentAt00671622@@3EA"
+target = 0x00671622
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2718
+type = "DIR32"
+symbol = "?g_StoryFlagsAt006714D0@@3CA"
+target = 0x006714D0
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2725
+type = "DIR32"
+symbol = "?g_PlayerDefaultAt006714C8@@3CA"
+target = 0x006714C8
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2731
+type = "DIR32"
+symbol = "?g_ProgressAt006718F8@@3VGameProgressRecordsF398@@A"
+target = 0x006718F8
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2736
+type = "REL32"
+symbol = "?SelectScore@GameProgressRecordsF398@@QAEXCC@Z"
+target = 0x0041A1A0
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2742
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2757
+type = "DIR32"
+symbol = "?g_ProgressAt006718F8@@3VGameProgressRecordsF398@@A"
+target = 0x006718F8
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2762
+type = "REL32"
+symbol = "?CurrentRecord@GameProgressRecordsF398@@QAEPAEXZ"
+target = 0x0041A240
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2773
+type = "DIR32"
+symbol = "?g_PlayerScoreAt006714B0@@3IA"
+target = 0x006714B0
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2778
+type = "DIR32"
+symbol = "?g_ProgressAt006718F8@@3VGameProgressRecordsF398@@A"
+target = 0x006718F8
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2783
+type = "REL32"
+symbol = "?CurrentRecord@GameProgressRecordsF398@@QAEPAEXZ"
+target = 0x0041A240
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2795
+type = "DIR32"
+symbol = "?g_RankAt00671420@@3IA"
+target = 0x00671420
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2802
+type = "DIR32"
+symbol = "?g_ReplayModeAt0066C238@@3CA"
+target = 0x0066C238
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2812
+type = "DIR32"
+symbol = "?g_ProgressAt006718F8@@3VGameProgressRecordsF398@@A"
+target = 0x006718F8
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2817
+type = "REL32"
+symbol = "?WriteSelection@GameProgressRecordsF398@@QAEXXZ"
+target = 0x0041A270
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2822
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2837
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2853
+type = "DIR32"
+symbol = "?g_StoryCounterAt006714C0@@3FA"
+target = 0x006714C0
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2861
+type = "DIR32"
+symbol = "?g_StoryTransitionsAt0067160C@@3HA"
+target = 0x0067160C
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2871
+type = "DIR32"
+symbol = "?g_CumulativeScoreAt006714BC@@3HA"
+target = 0x006714BC
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2898
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2918
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2924
+type = "DIR32"
+symbol = "?g_CumulativeScoreAt006714BC@@3HA"
+target = 0x006714BC
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2937
+type = "DIR32"
+symbol = "?g_CumulativeScoreAt006714BC@@3HA"
+target = 0x006714BC
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2946
+type = "DIR32"
+symbol = "?g_ReplayModeAt0066C238@@3CA"
+target = 0x0066C238
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2957
+type = "DIR32"
+symbol = "?g_PlayerScoreAt006714B0@@3IA"
+target = 0x006714B0
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2967
+type = "DIR32"
+symbol = "?g_RankAt00671420@@3IA"
+target = 0x00671420
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2976
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2983
+type = "DIR32"
+symbol = "?g_ReplayScoreAt0067189C@@3FA"
+target = 0x0067189C
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 2996
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 3002
+type = "DIR32"
+symbol = "?g_ReplayScoreAt0067189C@@3FA"
+target = 0x0067189C
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 3015
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 3021
+type = "DIR32"
+symbol = "?g_ReplayRoundAt006718A0@@3IA"
+target = 0x006718A0
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 3034
+type = "DIR32"
+symbol = "?g_CharacterProgressAt0067161E@@3CA"
+target = 0x0067161E
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 3040
+type = "DIR32"
+symbol = "?g_ProgressAt006718F8@@3VGameProgressRecordsF398@@A"
+target = 0x006718F8
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 3045
+type = "REL32"
+symbol = "?SaveSelectedCharacter@GameProgressRecordsF398@@QAEXC@Z"
+target = 0x0041A1D0
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 3050
+type = "DIR32"
+symbol = "?g_ProgressAt006718F8@@3VGameProgressRecordsF398@@A"
+target = 0x006718F8
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 3055
+type = "REL32"
+symbol = "?SaveScoreFile@GameProgressRecordsF398@@QAEXXZ"
+target = 0x004169E0
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 3063
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 3079
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 3095
+type = "DIR32"
+symbol = "?g_PlayerScoreAt006714B0@@3IA"
+target = 0x006714B0
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 3105
+type = "DIR32"
+symbol = "?g_RankAt00671420@@3IA"
+target = 0x00671420
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 3115
+type = "DIR32"
+symbol = "?g_StoryLoadingAt006714D1@@3EA"
+target = 0x006714D1
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 3121
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 3136
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 3151
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 3165
+type = "DIR32"
+symbol = "?g_BattleFightersAt00671418@@3PAPAVFighterNativeF398@@A"
+target = 0x00671418
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 3179
+type = "DIR32"
+symbol = "?g_EffectCollectionsAt006716C8@@3VEffectCollectionsF398@@A"
+target = 0x006716C8
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 3184
+type = "REL32"
+symbol = "?ClearEntries@EffectCollectionsF398@@QAEXXZ"
+target = 0x005F7140
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 3191
+type = "DIR32"
+symbol = "?g_ReplayModeAt0066C238@@3CA"
+target = 0x0066C238
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 3201
+type = "REL32"
+symbol = "?SaveReplayStateAt00419920@@YAXXZ"
+target = 0x00419920
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 3206
+type = "DIR32"
+symbol = "?g_LoadCharactersDoneAt00657A44@@3QBDB"
+target = 0x00657A44
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 3211
+type = "REL32"
+symbol = "?BattleLogAt0041CC50@@YAXPBD@Z"
+target = 0x0041CC50
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 3224
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 3232
+type = "DIR32"
+symbol = "$L967"
+target = 0x0041798A
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 3236
+type = "DIR32"
+symbol = "$L972"
+target = 0x004179E3
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 3240
+type = "DIR32"
+symbol = "$L977"
+target = 0x00417A3C
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 3244
+type = "DIR32"
+symbol = "$L982"
+target = 0x00417A95
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 3248
+type = "DIR32"
+symbol = "$L987"
+target = 0x00417AEE
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 3252
+type = "DIR32"
+symbol = "$L992"
+target = 0x00417B47
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 3256
+type = "DIR32"
+symbol = "$L997"
+target = 0x00417BA0
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 3260
+type = "DIR32"
+symbol = "$L1002"
+target = 0x00417BF9
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 3264
+type = "DIR32"
+symbol = "$L1007"
+target = 0x00417C52
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 3268
+type = "DIR32"
+symbol = "$L1012"
+target = 0x00417CAB
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 3272
+type = "DIR32"
+symbol = "$L1017"
+target = 0x00417D01
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 3276
+type = "DIR32"
+symbol = "$L1043"
+target = 0x00417E66
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 3280
+type = "DIR32"
+symbol = "$L1046"
+target = 0x00417E7C
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 3284
+type = "DIR32"
+symbol = "$L1049"
+target = 0x00417E92
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 3288
+type = "DIR32"
+symbol = "$L1052"
+target = 0x00417EA8
+[[units.battle-loader-load-characters-004176f0.relocations]]
+offset = 3292
+type = "DIR32"
+symbol = "$L1055"
+target = 0x00417EBE

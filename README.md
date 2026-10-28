@@ -15,10 +15,10 @@ user-supplied executable. It is **not yet a complete game rebuild**.
 | Size / image base | 2,576,384 bytes / `0x00400000` |
 | SHA-256 | `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98` |
 | MD5 | `21bcb855a39f2170195811e6ad292f18` |
-| Source-present / exact functions | **724 / 724** |
-| Accepted CODE bytes | **842,141** |
-| Reviewed authored coverage | **42.67%** of 1,973,516 reviewed bytes |
-| Conservative coverage | **42.59%**, with 3,608 origin-pending bytes included |
+| Source-present / exact functions | **725 / 725** |
+| Accepted CODE bytes | **845,373** |
+| Reviewed authored coverage | **42.84%** of 1,973,516 reviewed bytes |
+| Conservative coverage | **42.76%**, with 3,608 origin-pending bytes included |
 | Unresolved origins | **97** of 4,351 provisional function candidates |
 
 **The 98% authored-byte goal is incomplete.** Function labels and C++ owner
@@ -26,7 +26,7 @@ types are provisional; machine-code matches alone do not prove an entire
 original class layout. The target's official distribution provenance has not
 been independently verified; do not substitute a localized `th075c.exe`.
 
-These counts are a snapshot after the **F256-F269 plus F271-F274 and F278/F279/F281-F288/F292-F294 plus F300/F301/F303/F304/F309/F311/F314/F315/F317-F320 plus F324-F326/F328/F334/F335/F337-F342/F345-F348/F353-F354/F361-F366/F370-F371/F374-F379/F386/F389/F391-F395/F403** cold-exact adoptions
+These counts are a snapshot after the **F256-F269 plus F271-F274 and F278/F279/F281-F288/F292-F294 plus F300/F301/F303/F304/F309/F311/F314/F315/F317-F320 plus F324-F326/F328/F334/F335/F337-F342/F345-F348/F353-F354/F361-F366/F370-F371/F374-F379/F386/F389/F391-F395/F403/F407** cold-exact adoptions
 (2026-10-28). Always get live counts from
 `scripts/repo-python scripts/report-reconstruction-status.py --summary`.
 Local Git commits preserve checkpoints; they are **not external Oracle

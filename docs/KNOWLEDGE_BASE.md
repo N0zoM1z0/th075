@@ -6135,3 +6135,74 @@ and entire RET 4 are checked, no masking/truncation. The VC7.1
 `--unit profile-selection-load-working-eight-00416e80` cold replay
 returned **1/1 exact**. No extra record allocation, callee/CRT bytes,
 fake slots/locals, assembly, full cold replay or external Oracle claim.
+
+
+## F407: complete 3,232-byte battle LoadCharacters core with 11 native fighter allocations, real story RNG and both jump tables
+
+The R065-authored original `BattleLoader::LoadCharactersAt004176F0`
+at `004176F0..0041838F` is now complete **3,232 original native
+CODE bytes / 678 decoded original x86 instructions**, original PE SHA256
+`6acdbe6fd9efb49eaeb8a42bd7586d00648753d39894e6317a002105ddf1507a`.
+After the real `RET` lie **64 bytes of separately owned switch-table DATA**:
+the first 11 physical DWORDs dispatch the selected fighter type
+0..10, the second 5 DWORDs select the current fighter difficulty 0..4.
+Canonical unit `size = 3232, compare_size = 3296` compares every one of
+those after-RET data fields but credits **only** 3,232 original CODE bytes.
+
+The complete native game story and battle controller handles the real
+replay-mode loader, sequential unique roster selection in story mode using
+`_rand` and a 6-character used-bit mask, explicit C++ signed mode and
+selector bytes, stage character and special-variant selection, and 11
+separate original fighter allocations. Genuine `operator new` physical
+footprint sizes are `0x1000`, `0x1830`, `0xFEC`, `0xFEC`, `0xFE8`, `0xFF8`,
+`0xFE4`, `0xFE8`, `0x1008`, `0x1000`, and `0x1000`, each calling its own
+original fighter constructor (without re-crediting any of those callee
+bodies). The native virtual fighter *scalar deleting destructor* lives at
+original vtable +0x14, followed by resource/motion initialization methods
+at `00456B60`/`00457490`, actual two-side enemy/facing state, real
+per-player difficulty and skin effects, mode-dependent fighter virtual
+special selection and action initialization, linkage to the opponent,
+camera attachment, persistent story score/round/rank controller records,
+and final FX-queue clear and battle logging. All branches, including
+replay-only score assignments and nonstory HP state reset, are reproduced.
+Original complete private fighter class/size/ownership is **not** asserted:
+source only contains observed opaque `new` byte-footprint carriers and
+borrowed method declarations to reproduce native call ABIs.
+
+The first whole semantic C++ probe already produced genuine VC7.1 `/GX`
+exception-frame code and all game-specific calls but had the wrong stack
+slots, virtual-deletion implementation, and random story bonus ordering.
+The original uses `delete fighter` through a true virtual deleting
+destructor at +0x14; expressing the legitimate C++ `delete` (not a manual
+`ReleaseOwned(1)` substitute) restored both checked pointer stores and
+original EH transitions. The story bonus is an inline source Boolean
+`(rand()<0x4000 || firstFighter==6) ? 1 : 0` multiplied by ten; VC7.1
+genuinely materializes an original 32-bit Boolean temporary at EBP-0x88.
+The true story counter at global `006714C0` is **16 bit**, and the
+original `(!g_StoryFlagsAt006714D0)` calculation must first retain its
+32-bit intermediate, not lower an 8-bit `SBB/INC` directly.
+
+The last full-extent probe was only **six nonrelocation bytes away**.
+Those came from two *real* used, contiguous story-accumulator fields:
+`seen` bit mask at EBP-0x10 and successful selection `count` at
+EBP-0x14. Natural struct `SelectionTrackerF408 {int count; unsigned int
+seen;}` places the count lower and seen higher; initializing seen
+before count preserves the original initialization instruction order.
+That restores **all 2360/2360** original nonrelocation bytes across the
+whole original **3,296-byte** CODE+DATA comparison extent. All **234**
+genuine original physical COFF fields/destinations were individually
+reviewed: **218** within native CODE, **16** original owned post-RET
+table references, including **18** real nonzero `+4` symbol addends for
+references to original second fighter pointer global `0067141C`. The
+checks use native field bytes and the actual relocation addend, not just
+base symbol names; those are correctly represented in the manifest through
+unchanged COFF object addends.
+
+Pinned VC7.1 `/Od /Ob0 /Gy /GR- /GX /GS /Zi` cold replay of only the
+affected unit `battle-loader-load-characters-004176f0` returned **1/1
+exact**. No borrowed fighter constructor, game/CRT callee or vtable
+code, no 64 DATA bytes, and no compiler EH helper code earns duplicate
+CODE credit. No fake locals/padding, target-byte copying, raw assembly,
+masked relocations, cropped function, full cold replay or external Oracle
+acceptance claim. The old F398-F402 mismatches remain private negative
+controls, not accepted alternate functions.
