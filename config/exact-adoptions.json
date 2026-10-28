@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "5ba9120f5b4a4b1065369d043e17668161f90e40f3527e776bcf0131b561aa1c"
+      "current_sha256": "2de902de477a26ac63b40c6f7ebe40eac2bf93d92e496d5188c68f95c35aa659"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "b17951ec61c43bc58de569ca1ec2619e261562e46fbb3d4201b0e5bc0e3db565"
+      "current_sha256": "c47ec1f9f8c1be76fe851f0fa12f76c6e1110f7d5556dfe65db915f4dff2c2c8"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "898f83081681ed45a401f6090b1d65ed1b21df6517f822bb78d4c6dcc4612e82"
+      "current_sha256": "3fa065959429ac95efe392bf27e501a4667e5055d48d4e1b32ad920295f34d13"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "5727b26b80ce52141a0fe8d339c8266ce1ee7e51e547fe84fee2a51e877b3df4"
+      "current_sha256": "f400d33046281ed48af5954bacbff0e44d4aaa27fa1e104d0da2de52c18fa1f1"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "e721faa2c723160bf561d866c281b806bae726c4de7afaec84f52fd86a62cc87"
+      "current_sha256": "c2c5caffb381a0e8f42a64b5bdbacc0c2f12d47a836e9a780babb80add7bf8b8"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -21641,6 +21641,50 @@
         "address": "0x004268A0",
         "origin": "authored",
         "subsystem": "MusicRoomScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R040"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00431350",
+        "size": "664",
+        "span_end": "0x004315E7",
+        "current_name": "FUN_00431350",
+        "proposed_name": "ResultScene::BuildCounterPage",
+        "module": "ResultScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R040; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00431350",
+        "size": "664",
+        "span_end": "0x004315E7",
+        "current_name": "FUN_00431350",
+        "proposed_name": "ResultScene::BuildCounterPage",
+        "module": "ResultScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void ResultCounterSceneF238::BuildCounterPage()",
+        "is_thunk": "false",
+        "source_file": "src/ResultCounterF238.cpp",
+        "evidence": "R040; full body hash, complete decoded CFG and local game-specific behavior reviewed; F238; scripts/repo-python scripts/replay-exact-units.py --unit result-scene-build-counter-page-00431350",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F238: entire 664 authored CODE bytes / 167 decoded native x86 instructions ending original RET, target SHA256 a6d5246bf6f9f3e343e3f991d863080b0937550137b631048a6946982594a86d. Natural pinned VC7.1 /Od /GX /GS separately cold exact for entire function, all 544/544 non-field bytes and all 30 original physical COFF relocation fields, including genuine handler 00655A83, GS cookie/check, all four original distinct format-string addresses, four authentic sprintf/strcat operations, and existing 0041A1A0/0041A240 progress/card functions with physical 006718F8 receiver. The rasterized score text writes authentic 500-byte accumulated message and 200-byte formatting line using original 1024x512 D3D texture lock/unlock and 56-byte glyph new/configure/rasterize/deleting destructor. Initial natural source gave 670 bytes: lock rect at EBP-0xE4 and formatting line at EBP-0xDC, while original uses lock EBP-0x14, line EBP-0xE4 and message EBP-0x2DC. Genuine nested lifetime scopes (outer D3DLOCKED_RECT, middle 200-byte line, inner 500-byte message) independently restore native stack layout and full 664 bytes; no padding, dummy locals, masked bytes, asm, cropped body or shared helper credit. Original nominal scene, progress and glyph class identities remain inferred/call-only, no remote Oracle receipt or broad replay; all 97 pending origins remain uncredited."
+      },
+      "origin": {
+        "address": "0x00431350",
+        "origin": "authored",
+        "subsystem": "ResultScene",
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R040"
@@ -168666,6 +168710,209 @@
           "target": 6555153
         }
       ]
+    },
+    "result-scene-build-counter-page-00431350": {
+      "source": "src/ResultCounterF238.cpp",
+      "object": "build/matching/ResultCounterF238.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "ResultScene::BuildCounterPage"
+      ],
+      "symbol": "?BuildCounterPage@ResultCounterSceneF238@@QAEXXZ",
+      "target_address": 4395856,
+      "size": 664,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$?BuildCounterPage@ResultCounterSceneF238@@QAEXXZ",
+          "target": 6642307
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 31,
+          "type": "DIR32",
+          "symbol": "___security_cookie",
+          "target": 6749744
+        },
+        {
+          "offset": 71,
+          "type": "DIR32",
+          "symbol": "?g_ResultProgressAt006718F8@@3VResultProgressF238@@A",
+          "target": 6756600
+        },
+        {
+          "offset": 76,
+          "type": "REL32",
+          "symbol": "?Select@ResultProgressF238@@QAEXEE@Z",
+          "target": 4301216
+        },
+        {
+          "offset": 81,
+          "type": "DIR32",
+          "symbol": "?g_ResultProgressAt006718F8@@3VResultProgressF238@@A",
+          "target": 6756600
+        },
+        {
+          "offset": 86,
+          "type": "REL32",
+          "symbol": "?Counters@ResultProgressF238@@QAEPAHXZ",
+          "target": 4301376
+        },
+        {
+          "offset": 100,
+          "type": "DIR32",
+          "symbol": "?g_ResultCounterEmptyAt0065811E@@3QBDB",
+          "target": 6652190
+        },
+        {
+          "offset": 112,
+          "type": "REL32",
+          "symbol": "_strcpy",
+          "target": 6560640
+        },
+        {
+          "offset": 132,
+          "type": "DIR32",
+          "symbol": "?g_ResultCounterFormat0At00658120@@3QBDB",
+          "target": 6652192
+        },
+        {
+          "offset": 144,
+          "type": "REL32",
+          "symbol": "_sprintf",
+          "target": 6554864
+        },
+        {
+          "offset": 166,
+          "type": "REL32",
+          "symbol": "_strcat",
+          "target": 6560656
+        },
+        {
+          "offset": 187,
+          "type": "DIR32",
+          "symbol": "?g_ResultCounterFormat1At00658128@@3QBDB",
+          "target": 6652200
+        },
+        {
+          "offset": 199,
+          "type": "REL32",
+          "symbol": "_sprintf",
+          "target": 6554864
+        },
+        {
+          "offset": 221,
+          "type": "REL32",
+          "symbol": "_strcat",
+          "target": 6560656
+        },
+        {
+          "offset": 242,
+          "type": "DIR32",
+          "symbol": "?g_ResultCounterFormat2At00658130@@3QBDB",
+          "target": 6652208
+        },
+        {
+          "offset": 254,
+          "type": "REL32",
+          "symbol": "_sprintf",
+          "target": 6554864
+        },
+        {
+          "offset": 276,
+          "type": "REL32",
+          "symbol": "_strcat",
+          "target": 6560656
+        },
+        {
+          "offset": 297,
+          "type": "DIR32",
+          "symbol": "?g_ResultCounterFormat3At00658138@@3QBDB",
+          "target": 6652216
+        },
+        {
+          "offset": 309,
+          "type": "REL32",
+          "symbol": "_sprintf",
+          "target": 6554864
+        },
+        {
+          "offset": 331,
+          "type": "REL32",
+          "symbol": "_strcat",
+          "target": 6560656
+        },
+        {
+          "offset": 383,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 421,
+          "type": "REL32",
+          "symbol": "??0GlyphSurfaceF238@@QAE@PAUHWND__@@@Z",
+          "target": 4308880
+        },
+        {
+          "offset": 492,
+          "type": "DIR32",
+          "symbol": "?g_ResultCounterFontAt00658140@@3QBDB",
+          "target": 6652224
+        },
+        {
+          "offset": 503,
+          "type": "REL32",
+          "symbol": "?ConfigureFont@GlyphSurfaceF238@@QAEXPBDHEEE@Z",
+          "target": 4309088
+        },
+        {
+          "offset": 548,
+          "type": "REL32",
+          "symbol": "?Rasterize@GlyphSurfaceF238@@QAEXPBDPAXHHHHHED@Z",
+          "target": 4309728
+        },
+        {
+          "offset": 594,
+          "type": "REL32",
+          "symbol": "??_GGlyphSurfaceF238@@QAEPAXI@Z",
+          "target": 4273696
+        },
+        {
+          "offset": 648,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 656,
+          "type": "REL32",
+          "symbol": "@__security_check_cookie@4",
+          "target": 6555153
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -168994,6 +169241,7 @@
     "src/ReplayScanF231.cpp": "be41f8c94abdfb4a776d85c64c7e762837c06bcc46eff65df1be80400b2d363f",
     "src/MusicSelectF234.cpp": "9b9d142b2de7cfd3fa3d5a244c31db713a2bad0980275b05475ecef48baead07",
     "src/MusicListRenderF235.cpp": "ac693084e6b87ca3814734890da94d0c81969089859e4fd8ef7238fb1f9d4f6c",
-    "src/MusicTitleRenderF235.cpp": "88dada4f062d7297d4ce6d2950996501b9d23c04091c6ebfe893b41965617ab1"
+    "src/MusicTitleRenderF235.cpp": "88dada4f062d7297d4ce6d2950996501b9d23c04091c6ebfe893b41965617ab1",
+    "src/ResultCounterF238.cpp": "7f3459e1255f12f323ad443e32332c382a411e1a476e83c0eba095b12b922565"
   }
 }

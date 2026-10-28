@@ -1288,3 +1288,58 @@ read-only analysis, complete native instructions, all natural probe
 sources/objects, and mismatched comparisons. The unresolved R066 function
 receives **zero source/exact credit**; its native CODE and table must both
 match before adoption. All 97 unknown-origin candidates stay unchanged.
+
+
+## F236: complete music catalog boss, still unaccepted after genuine source fixes
+
+The independently R066-authored `MusicRoom::LoadCatalog` at `00426DD0`
+remains **unaccepted**. Native CODE size is 916 bytes, and the physically
+owned four-way jump table occupies another 16 contiguous comparison bytes.
+The earlier 928-byte natural V3 source incorrectly used a `for` loop
+for numeric digit parsing and passed the original archive-buffer pointer
+directly to free. F236 rechecked the original full body and decoded a
+meaningful while-first iteration form and a genuine final temporary
+pointer alias. A combined real-C++ source emits the **entire 932-byte
+CODE+table size** with all 18 physical relocation fields solved, but only
+**731/860 non-field bytes** match; local stack allocation (including
+fileBytes, buffer, parse cursor, quote mode, and three string allocation
+slots) remains wrong. Hoisting only actual in-use locals in ten separately
+reproducible variants failed to improve 731/860. The complete probes,
+original assembly, instruction diff and negative controls live at
+`.analysis/f236-music-catalog/`. No byte credit, masks, synthetic stack
+objects or external Oracle acceptance were assigned.
+
+## F238: complete result-counter page, 664-byte cold-exact native code
+
+R040 independently classifies `ResultScene::BuildCounterPage` at
+`00431350..004315E7` as authored. The complete original 664-byte CODE
+body has 167 native instructions and SHA256
+`a6d5246bf6f9f3e343e3f991d863080b0937550137b631048a6946982594a86d`.
+Natural `src/ResultCounterF238.cpp` uses the actual counter-card global
+`006718F8`, selected context `this+0x1C3/+0x1C4`, saved native data pointer
+`this+0x14`, four separate original "%%5d\\n" string addresses, four
+real sprintf/strcat calls, and the original texture at `this+0x10`.
+Authentic font new(56)/ctor/configuration/rasterizer/delete, D3D8
+LockRect/UnlockRect, EH handler `00655A83` and GS cookie/check are all
+preserved as physical re-targeted calls; their external bodies receive no
+additional authored-byte credit.
+
+Initial ordinary C++ declared the correct 500-byte accumulated message
+and 200-byte line formatting buffer, but because the D3DLOCKED_RECT sat in
+the same scope, VC7.1 placed the rect at EBP-0xE4, the line at EBP-0xDC,
+and cookie at EBP-0x10, emitting **670 bytes** rather than original 664.
+Native disassembly establishes the actual slots: D3DLOCKED_RECT at
+EBP-0x14, cookie EBP-0x18, 200-byte line EBP-0xE4 and 500-byte message
+EBP-0x2DC. The *genuine* source lifetime hierarchy is outer lock rect,
+inner line, innermost accumulated message, all used in their declared
+scopes. Nesting these real variables produces the original 664-byte
+control flow: **544/544 comparable non-field bytes and all 30 genuine
+COFF DIR32/REL32 relocations** match. Independent single-unit cold replay
+`--unit result-scene-build-counter-page-00431350` reports **exact: 664**.
+`tests/test_result_counter_f238.py` guards the complete original PE hash,
+all 30 physical fields and source hash without a broad cold replay.
+The full native disassembly, temporary sources/negative variants,
+comparison diagnostics and cold log remain under `.analysis/f238-result-page/`.
+No invented padding, fake locals, inline asm, shortened function, masked
+fields, complete nominal game class inference or external Oracle credit;
+all 97 origin-pending candidates remain unknown.

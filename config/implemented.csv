@@ -549,3 +549,4 @@ ReplayBrowserScene::ScanFiles
 MusicRoomScene::UpdateSelection
 MusicRoomScene::RenderTrackCatalogText
 MusicRoomScene::RenderSelectedTitle
+ResultScene::BuildCounterPage
