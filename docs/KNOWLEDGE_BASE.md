@@ -6932,3 +6932,62 @@ and cold replayed **1/1 exact**, without any byte mask, graft, raw
 assembly, cropped original, additional SDK/CRT code credit or whole
 repository cold replay/remote Oracle receipt. Original private owner
 identity and complete D3D implementation are not asserted.
+
+
+## F458: complete native 96-byte cdecl event queue unique enqueue without early break
+
+The independently original R113-authored `EventQueue::EnqueueUniqueAt00423C80`
+at `00423C80..00423CDF` is **96 complete native authored CODE bytes,
+32 original x86 instructions**, PE SHA256
+`db0643113e771847a47c080e65a31a14bc975429a15ee7edb92c1510b12672ce`.
+Its actual ABI is a **cdecl global game queue operation**, with ordinary
+`RET` and a 32-bit input event at native EBP+8, not a thiscall receiver.
+It initializes native `unsigned char add=1` at original EBP-1 and loops
+the genuine 32-bit index at EBP-8 through a shared queue at `0068BE44`.
+The original tests every queue element using actual unsigned Size and At
+methods `00423D40/00423D60`. On an already present value it sets the
+original `add` flag to zero **but does not break or skip the rest of the
+original scan**. Only after the full scan it conditionally calls native
+PushBack `00423E10` with the address of the original event parameter.
+The first plausible thiscall + early-break source incorrectly emitted
+103 bytes: both purported ABI and behavior contradicted original RET
+and real native `jmp loop-increment` following byte flag assignment.
+Using actual cdecl and no early break in natural source
+`src/EventQueueAppendUniqueF458.cpp` reproduced the **entire original
+96-byte CODE body**, **72/72 genuine nonrelocation bytes** and all
+**6/6 independently verified original physical COFF DIR32/REL32 fields,
+types and true original PE destinations**. Affected-only
+`--unit event-queue-append-unique-00423c80` cold replay gave **1/1 exact**.
+The original deque/private global implementation remains borrowed and
+is not double-credited. No invented locals, byte padding, source ASM,
+cropped source/native extent, masks, full cold replay or remote Oracle.
+
+## F455-F456: real full GameApplication::Run WinMain core boss reconnaissance (not accepted)
+
+The next independently decoded R064-authored `GameApplication::RunAt00602A60`
+is a much larger original **2,987 CODE-byte / 654 x86-instruction**
+original WinMain-style game startup loop, PE SHA256
+`780862e0f784ac2cbd16ed20eaff12c0da49a0c831ce4a9f56e85fc2edb3ffa0`.
+Original full Ghidra and native listing evidence are retained in
+`.analysis/f423-next-bosses/app-run.c` and trial sources in
+`.analysis/f455-game-main-boss/`, `.analysis/f456-game-main-scene-temporaries/`.
+The original owns a native 15-case scene selector switch table immediately
+after its complete RET at `0060360B`; its native Windows-class registration,
+Win32 real `GetModuleFileNameA`, `CreateWindowExA`, `GetMessageA`/
+`PeekMessageA`, imported WinMM and COM lifetime, game archive state,
+Direct3D/DirectInput/DirectSound setup, true native input event, scene
+allocation/deletion and shutdown branches must all be preserved exactly.
+Every actual 15 native scene allocation footprint/callee was identified
+in the original. A full natural C++ source hypothesis under pinned VC7.1
+`/Od /Ob0 /Gy /GR- /GX- /GS /Zi` compiles as **2,831 bytes / 640
+instructions**, with stack frame 0x228 vs original 0x278: original
+per-scene constructor result locals and early scene-pointer lifetime are
+missing. A second source expressing *all 15 real used per-scene new-result
+locals* compiles to **3,011 bytes / 670 instructions**, with frame 0x264.
+These are genuine whole-program source semantics/control-flow probes and
+strong falsifiable negative controls, but **NOT structural exact and no
+CODE credit** has been assigned. Pending differences involve native
+scene switch case order (real code body case 4 comes first), live early
+currentScene initialization and startup window state/stack slots, plus
+Win32/COM error exit CFG. No all-unit cold replay or acceptance
+without original full code/data/physical COFF exactness.

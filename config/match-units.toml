@@ -56493,3 +56493,43 @@ offset = 227
 type = "DIR32"
 symbol = "?g_GraphicsExtraSurfaceAt0067122C@@3PAUIDirect3DSurface8@@A"
 target = 0x0067122C
+
+
+[units.event-queue-append-unique-00423c80]
+source = "src/EventQueueAppendUniqueF458.cpp"
+object = "build/matching/EventQueueAppendUniqueF458.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["EventQueue::EnqueueUniqueAt00423C80"]
+symbol = "?AppendUnique@EventQueueGuardF457@@YAXI@Z"
+target_address = 0x00423C80
+size = 96
+[[units.event-queue-append-unique-00423c80.relocations]]
+offset = 29
+type = "DIR32"
+symbol = "?g_EventQueueAt0068BE44@@3VEventWordDequeF457@@A"
+target = 0x0068BE44
+[[units.event-queue-append-unique-00423c80.relocations]]
+offset = 34
+type = "REL32"
+symbol = "?Size@EventWordDequeF457@@QAEIXZ"
+target = 0x00423D40
+[[units.event-queue-append-unique-00423c80.relocations]]
+offset = 48
+type = "DIR32"
+symbol = "?g_EventQueueAt0068BE44@@3VEventWordDequeF457@@A"
+target = 0x0068BE44
+[[units.event-queue-append-unique-00423c80.relocations]]
+offset = 53
+type = "REL32"
+symbol = "?At@EventWordDequeF457@@QAEPAII@Z"
+target = 0x00423D60
+[[units.event-queue-append-unique-00423c80.relocations]]
+offset = 83
+type = "DIR32"
+symbol = "?g_EventQueueAt0068BE44@@3VEventWordDequeF457@@A"
+target = 0x0068BE44
+[[units.event-queue-append-unique-00423c80.relocations]]
+offset = 88
+type = "REL32"
+symbol = "?PushBack@EventWordDequeF457@@QAEXPBI@Z"
+target = 0x00423E10
