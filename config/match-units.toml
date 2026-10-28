@@ -45419,3 +45419,37 @@ offset = 388
 type = "DIR32"
 symbol = "__except_list"
 target = 0x00000000
+
+[units.font-surface-load-glyph-outline-0041c1b0]
+source = "src/FontLoadGlyphOutlineF318.cpp"
+object = "build/matching/FontLoadGlyphOutlineF318.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["FontSurface::LoadGlyphOutline"]
+symbol = "?LoadGlyphOutline@GlyphFontF318@@QAEXI@Z"
+target_address = 0x0041C1B0
+size = 301
+[[units.font-surface-load-glyph-outline-0041c1b0.relocations]]
+offset = 41
+type = "REL32"
+symbol = "_memset"
+target = 0x00640490
+[[units.font-surface-load-glyph-outline-0041c1b0.relocations]]
+offset = 127
+type = "DIR32"
+symbol = "__imp__GetGlyphOutlineA@28"
+target = 0x0065703C
+[[units.font-surface-load-glyph-outline-0041c1b0.relocations]]
+offset = 157
+type = "REL32"
+symbol = "_free"
+target = 0x00640F15
+[[units.font-surface-load-glyph-outline-0041c1b0.relocations]]
+offset = 179
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.font-surface-load-glyph-outline-0041c1b0.relocations]]
+offset = 232
+type = "DIR32"
+symbol = "__imp__GetGlyphOutlineA@28"
+target = 0x0065703C

@@ -611,3 +611,4 @@ address,name,module,confidence,evidence
 0x00574290,YuyukoFighter::ResetRound,YuyukoFighter,inferred,"F314; all 175 native authored CODE bytes and authentic inherited base reset call 00457010, pinned VC7.1 cold exact; complete private source class unproven"
 0x005E21F0,MeilingFighter::ResetRound,MeilingFighter,inferred,"F314; all 235 native authored CODE bytes and authentic inherited base reset call 00457010, pinned VC7.1 cold exact; complete private source class unproven"
 0x00413460,FontSurface::RenderTextToTexture,FontSurface,inferred,"F317; whole 398-byte D3D8 LockRect/new raster/Draw/Delete/Unlock texture text lifecycle cold exact, 12 native COFF fields; original complete class definitions not asserted"
+0x0041C1B0,FontSurface::LoadGlyphOutline,FontSurface,inferred,F318; whole 301-byte GDI glyph outline and 64-byte authentic native stack frame exact; 5 physical COFF fields; original full private class layout not asserted

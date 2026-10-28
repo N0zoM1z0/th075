@@ -4188,3 +4188,65 @@ bytes with extra C++ placement runtime and are not accepted. All
 negative sources/COFF/logs remain privately available; no guessed
 text owner layouts, padding instructions, manual assembly, cropped
 original extent, masked fields or authored CODE credit is claimed.
+
+
+## F318: exact 301-byte FontSurface glyph outline loader from a real 64-byte frame
+
+The original R053-authored `FontSurface::LoadGlyphOutline` is exactly
+**301 native CODE bytes** across `0041C1B0..0041C2DC`, with **102
+independently decoded original x86 instructions** ending in native
+`RET 4` at `0041C2DA`. The complete Japanese PE CODE SHA256 is
+`85ed2a07060abf35523608a7b6a33bd45fb52a5364e781aa669074ee0a510948`.
+Native read-only Ghidra/decompile and previous negative F291 source
+experiments are at `.analysis/f291-font-glyph/`. Final accepted natural
+C++ `src/FontLoadGlyphOutlineF318.cpp`, full original PE/COFF compare
+and only-affected-unit cold proof at `.analysis/f318-font-stack/`.
+
+The whole routine first checks the real HDC at this+4 and mandatory
+font pointer at this+8, then clears exactly 20 bytes of native Win32
+`GLYPHMETRICS` with `memset` `00640490`. It initializes four real
+source DWORDs for the original identity `MAT2`, copies their values
+in its original physical order into a separate 16-byte Win32 `MAT2`,
+then calls real `GetGlyphOutlineA` IAT at `0065703C` to measure the
+glyph. If the prior bitmap pointer at this+0x14 exists it frees it
+through original CRT `00640F15`, clears that field, allocates exactly
+the measured glyph bytes through original operator new `0064159D`,
+and calls `GetGlyphOutlineA` again to fill the output buffer. It
+stores the native glyph black-box width at this+0x20, height +0x1C,
+actual aligned row stride +0x24 from glyph-size / glyph-height, and
+the original X/Y origin offsets +0x30/+0x34. These are original
+observed semantics; no invented error branch or fallback was added.
+
+The previous F291 natural whole C++ source emitted all **301 bytes**
+and all five physical COFF fields, but mismatched 30 of 281 nonfield
+byte positions because independent unoptimized local allocations
+selected the wrong physical EBP slots. Re-reading the **full original
+0x44-byte stack frame**, we found that after `this` at EBP−0x44,
+the following **64 physically observed bytes** are all used:
+
+| Actual original EBP slots | Native source value / size |
+| --- | --- |
+| −0x40, −0x3C | new glyph output pointer and old glyph output pointer; 4 bytes each |
+| −0x38..−0x25 | actual 20-byte `GLYPHMETRICS` |
+| −0x24 | returned glyph byte count; 4 bytes |
+| −0x20..−0x11 | actual 16-byte `MAT2` |
+| −0x10, −0xC, −0x8, −0x4 | four real initialization words, including both `0x00010000` diagonal entries |
+
+Putting these **actual used fields**, in the independently observed
+order, into one natural `GlyphFrameF318` struct of exactly 64 bytes
+lets pinned VC7.1 `/Od /Ob0 /Gy /GR- /GX- /GS /Zi` assign the exact
+original stack operands, rather than inserting any fake padding.
+Its first complete C++ probe consequently reconstructs the entire
+**301/301 original CODE bytes, all 281/281 comparable positions and
+5/5 true COFF relocation offsets/types/solved native targets**:
+`memset` (REL32), two real `GetGlyphOutlineA` calls (DIR32 IAT),
+native free (REL32), and native operator new (REL32). The canonical
+new unit `font-surface-load-glyph-outline-0041c1b0` was recompiled
+**cold alone**, with `1/1 exact; 301 coverage bytes`. Separate
+F317 398-byte FontSurface text-to-texture controller was accepted
+independently; it does not cause extra CODE credit for this function
+or the still **nonexact 1,766-byte FontSurface::RasterizeText**.
+Original full private class types, Win32/CRT/VC7 callee bodies and all
+97 origin-pending candidates remain uncredited. No machine byte
+graft, manual x86, fake stack locals/pads, cropped original CODE,
+masked relocation fields, all-unit replay or remote Oracle receipt.
