@@ -3094,3 +3094,52 @@ credited here. The paired 588-byte fighter resource destructor
 `00456910` remains nonexact; local Git checkpoint and cold replay
 are not remote Oracle verification. No assembly, byte grafts,
 masked comparisons, fake locals or cropped function.
+
+
+## F283: three complete fighter resource and auxiliary object helpers cold-exact
+
+Three additional independently authored functions immediately downstream
+of the separately accepted F281/F282 larger controllers are now exact
+as **whole functions**. Their native full PE boundaries, independent
+instruction counts, source and physical COFF relocations were verified:
+
+| Original authored function | Complete CODE | Original instructions | Nonrelocation matches | Physical COFF fields | Full PE CODE SHA256 |
+| --- | ---: | ---: | ---: | ---: | --- |
+| FighterState::SetNoticeModeByte `0045CD50` (R103) | 25 | 10 | 25/25 | 0 | `1befd85338f3c8ffc00f6405c71bae0adf10cc1d0bd3d5899dac76aca0d95984` |
+| CommandList::InitializeDefaults `00410F30` (R166) | 104 | 29 | 80/80 | 6 | `1695850c6e7e19cd8dfb6d7bb5255221a2012d24b7df5412baa466bd63d32b32` |
+| CharacterAuxObject::Initialize `005FAB10` (R064) | 116 | 33 | 104/104 | 3 | `f7edb6015289b9d61fbcebcdfe17fc253623dd6737a0375365bad54a907b36b0` |
+
+The notice method receives a byte (native thiscall) and stores precisely
+it to fighter+`0x6E4`, returning `RET 4` without side effects. The
+complete command-list constructor naturally constructs its original
+real queue subobject at `this+4` via `00411C30` and emits the genuine
+VC7.1 exception handler at `0065501B`. It stores the input texture
+manager at `this+0`, a short capacity 15 at +`0x12`, mode byte 5
+at +`0x10`, and calls the original `004110F0` reset. The complete
+auxiliary effect constructor naturally calls base constructor `00458670`,
+sets the actual new child vtable `0065A0E0`, stores the supplied owner
+pointer at `this+0x90` and derived owner pointers (+`0x78` and +`0x28`)
+at `this+0x7C` and `this+4`, zeroes three actual shorts at
+`this+0x60/0x62/0x64`, and invokes original child reset `005FAC60`.
+The borrowed view types reflect only observed data or subobject-size
+boundaries, not a claim to have recovered full original owner layouts.
+
+All three *first complete* pinned VC7.1 natural-source probes exactly
+matched their respective entire CODE lengths and authentic physical
+relocations. Canonical units
+`fighter-state-set-notice-mode-0045cd50`,
+`command-list-initialize-defaults-00410f30`, and
+`character-aux-object-initialize-005fab10` were independently rebuilt
+**cold only for this affected three-unit group**, reporting `3/3 exact`
+on three source objects with normal `/GX` enabled only for the EH
+command-list constructor. Source files are `src/NoticeModeF283.cpp`,
+`src/CommandListCtorF283.cpp` and `src/EffectChildCtorF283.cpp`. Native
+function/assembly/decompile reviews, COFF previews and local cold proof
+are retained at `.analysis/f283-fighter-helpers/` and
+`.analysis/f283-resource-helper-probes/`. The F282 1,186-byte fighter
+loader and F281 602-byte effects spawn controller were separately
+accepted earlier and are not double-counted. Library queue, original
+base/child reset methods and all 97 pending-origin functions remain
+uncredited. No target bytes or assembly were inserted, no arbitrary
+source padding/masked relocation/truncated function or all-unit cold
+replay was used; local Git checkpoint is not an Oracle receipt.

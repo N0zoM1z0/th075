@@ -43305,3 +43305,76 @@ offset = 1178
 type = "REL32"
 symbol = "@__security_check_cookie@4"
 target = 0x00640611
+
+[units.fighter-state-set-notice-mode-0045cd50]
+source = "src/NoticeModeF283.cpp"
+object = "build/matching/NoticeModeF283.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["FighterState::SetNoticeModeByteAt0045CD50"]
+symbol = "?SetNoticeModeByte@FighterNoticeF283@@QAEXE@Z"
+target_address = 0x0045CD50
+size = 25
+relocations = []
+
+[units.command-list-initialize-defaults-00410f30]
+source = "src/CommandListCtorF283.cpp"
+object = "build/matching/CommandListCtorF283.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["CommandList::InitializeDefaultsAt00410F30"]
+symbol = "??0CommandListF283@@QAE@PAX@Z"
+target_address = 0x00410F30
+size = 104
+[[units.command-list-initialize-defaults-00410f30.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0CommandListF283@@QAE@PAX@Z"
+target = 0x0065501B
+[[units.command-list-initialize-defaults-00410f30.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.command-list-initialize-defaults-00410f30.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.command-list-initialize-defaults-00410f30.relocations]]
+offset = 35
+type = "REL32"
+symbol = "??0CommandQueueF283@@QAE@XZ"
+target = 0x00411C30
+[[units.command-list-initialize-defaults-00410f30.relocations]]
+offset = 74
+type = "REL32"
+symbol = "?Reset@CommandListF283@@QAEXXZ"
+target = 0x004110F0
+[[units.command-list-initialize-defaults-00410f30.relocations]]
+offset = 94
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+[units.character-aux-object-initialize-005fab10]
+source = "src/EffectChildCtorF283.cpp"
+object = "build/matching/EffectChildCtorF283.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["CharacterAuxObject::InitializeAt005FAB10"]
+symbol = "??0EffectChildCtorF283@@QAE@PAX@Z"
+target_address = 0x005FAB10
+size = 116
+[[units.character-aux-object-initialize-005fab10.relocations]]
+offset = 11
+type = "REL32"
+symbol = "??0BaseAuxEffectF283@@QAE@XZ"
+target = 0x00458670
+[[units.character-aux-object-initialize-005fab10.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "??_7EffectChildCtorF283@@6B@"
+target = 0x0065A0E0
+[[units.character-aux-object-initialize-005fab10.relocations]]
+offset = 103
+type = "REL32"
+symbol = "?Reset@EffectChildCtorF283@@QAEXXZ"
+target = 0x005FAC60

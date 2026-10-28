@@ -595,3 +595,6 @@ FighterScript::GetWordFieldAt00420570,0x00420570,function
 FighterScript::GetDwordFieldAt004205B0,0x004205B0,function
 Effects::SpawnConfiguredAuxObjectAt005F7AA0,0x005F7AA0,function
 FighterState::LoadResources,0x00456B60,function
+FighterState::SetNoticeModeByteAt0045CD50,0x0045CD50,function
+CommandList::InitializeDefaultsAt00410F30,0x00410F30,function
+CharacterAuxObject::InitializeAt005FAB10,0x005FAB10,function

@@ -594,3 +594,6 @@ FighterScript::GetWordFieldAt00420570
 FighterScript::GetDwordFieldAt004205B0
 Effects::SpawnConfiguredAuxObjectAt005F7AA0
 FighterState::LoadResources
+FighterState::SetNoticeModeByteAt0045CD50
+CommandList::InitializeDefaultsAt00410F30
+CharacterAuxObject::InitializeAt005FAB10
