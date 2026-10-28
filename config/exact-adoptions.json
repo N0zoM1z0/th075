@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377; F378; F379; F386; F389; F391; F392; F393; F394; F395; F403; F407; F414; F415; F421; F422; F427; F428; F429; F430; F431; F432; F435; F437; F440; F445; F446; F447; F448",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377; F378; F379; F386; F389; F391; F392; F393; F394; F395; F403; F407; F414; F415; F421; F422; F427; F428; F429; F430; F431; F432; F435; F437; F440; F445; F446; F447; F448; F454",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "7e65591824536bdbf3ea5ff0168773d50350011e9e15a7c7a452c7d19c16c409"
+      "current_sha256": "81b9190ec675f50f04a715daca57661e94b63a6364bcd394b58be0288209ad8c"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "83ce0f9ec71a5518d90a77a4cb60042ff9320386ea5697e2fa6d9262a61a1a97"
+      "current_sha256": "e07ff0146ef422c0cae6c3a81bd3e32a26e5038a755d1e44bd4f52b4216ca01d"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "0c9ff81e3783d1e4a82fe0d536b9fe7fae65062093089a417b3b10f3da2f33d5"
+      "current_sha256": "71c2280114b8fa4871f67ebcac2ca67867f9978082244f597457c9c64e7c0b7a"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "645667926c2676f70e5f7e84526e8b1808ec194ddce65ee6d84929e96146dfcb"
+      "current_sha256": "15612f35b2ddcc9fe0c2882413397ae6ad1619949bc22bb60a9b01f2162a5b1e"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "e6fefeeb0e1d4a9c1a0da589cb1fb0f98fc7cdadf170b06c083063c0c74a9d49"
+      "current_sha256": "f513e325b28b29e0562a6137e948556e22cd0d5e649fb7bfed5f100e63e5ecdb"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -30708,6 +30708,50 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R054"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00401020",
+        "size": "239",
+        "span_end": "0x0040110E",
+        "current_name": "FUN_00401020",
+        "proposed_name": "GraphicsResourceClient::~GraphicsResourceClient",
+        "module": "GraphicsResourceClient",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R001; custom D3D8 globals/policies; full control flow and return reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; inferred name; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00401020",
+        "size": "239",
+        "span_end": "0x0040110E",
+        "current_name": "FUN_00401020",
+        "proposed_name": "GraphicsResourceClient::~GraphicsResourceClient",
+        "module": "GraphicsResourceClient",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "GraphicsResourceClientF453::~GraphicsResourceClientF453()",
+        "is_thunk": "false",
+        "source_file": "src/GraphicsResourceGlobalReleaseF454.cpp",
+        "evidence": "R001; custom D3D8 globals/policies; full control flow and return reviewed; F454; scripts/repo-python scripts/replay-exact-units.py --unit graphics-resource-client-release-global-00401020",
+        "owner": "authored",
+        "notes": "Origin reviewed; inferred name; source and exact state remain independent; F454 complete independently original authored R001 239-byte graphics last-client global D3D8 resource release at 00401020..0040110E, 60 genuine original x86 instructions, native PE SHA256 820329e528fac0d038ac2a800f7547aecb8d1b62b377135928db6053dd1ed813. Genuine original global reference count 00671210 decrements; when zero loops exactly one true indexed D3D8 texture and surface in separate global groups 006711D4/006711FC, invokes each native COM vtbl[2] Release() and clears pointer, then checks and releases singleton globals 00671230/0067122C. Original second-level COM Release result from 00671230 is *physically* stored in a real DWORD native EBP-8 (`mov [ebp-8],eax`) even though not consumed, and natural `ULONG remainingRefCount=Release()` restores actual original store and three missing compiler bytes; this is a native-evidenced return value, not fabricated stack padding. Actual stack frame 0xC, receiver at -0xC and real index -4. All 167/167 native nonfield bytes and all 18/18 physical original COFF DIR32 refs/destinations match original full 239 CODE and one-unit targeted cold replay 1/1 exact. Original COM interface and private receiver layout borrowed only; no D3D runtime/CRT callee CODE credit, fake padding, machine byte patch, assembler, masks, cropped original, full cold replay or external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x00401020",
+        "origin": "authored",
+        "subsystem": "Graphics",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R001; docs/ORIGIN_REVIEW.md; shared D3D8 state and custom policy, complete branches/exit reviewed"
       }
     }
   ],
@@ -201178,6 +201222,137 @@
           "target": 0
         }
       ]
+    },
+    "graphics-resource-client-release-global-00401020": {
+      "source": "src/GraphicsResourceGlobalReleaseF454.cpp",
+      "object": "build/matching/GraphicsResourceGlobalReleaseF454.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "GraphicsResourceClient::~GraphicsResourceClientAt00401020"
+      ],
+      "symbol": "??1GraphicsResourceClientF453@@QAE@XZ",
+      "target_address": 4198432,
+      "size": 239,
+      "relocations": [
+        {
+          "offset": 10,
+          "type": "DIR32",
+          "symbol": "?g_GraphicsClientCountAt00671210@@3IA",
+          "target": 6754832
+        },
+        {
+          "offset": 18,
+          "type": "DIR32",
+          "symbol": "?g_GraphicsClientCountAt00671210@@3IA",
+          "target": 6754832
+        },
+        {
+          "offset": 58,
+          "type": "DIR32",
+          "symbol": "?g_GraphicsTextureSetAt006711D4@@3PAPAUIDirect3DTexture8@@A",
+          "target": 6754772
+        },
+        {
+          "offset": 71,
+          "type": "DIR32",
+          "symbol": "?g_GraphicsTextureSetAt006711D4@@3PAPAUIDirect3DTexture8@@A",
+          "target": 6754772
+        },
+        {
+          "offset": 81,
+          "type": "DIR32",
+          "symbol": "?g_GraphicsTextureSetAt006711D4@@3PAPAUIDirect3DTexture8@@A",
+          "target": 6754772
+        },
+        {
+          "offset": 97,
+          "type": "DIR32",
+          "symbol": "?g_GraphicsTextureSetAt006711D4@@3PAPAUIDirect3DTexture8@@A",
+          "target": 6754772
+        },
+        {
+          "offset": 111,
+          "type": "DIR32",
+          "symbol": "?g_GraphicsSurfaceSetAt006711FC@@3PAPAUIDirect3DSurface8@@A",
+          "target": 6754812
+        },
+        {
+          "offset": 124,
+          "type": "DIR32",
+          "symbol": "?g_GraphicsSurfaceSetAt006711FC@@3PAPAUIDirect3DSurface8@@A",
+          "target": 6754812
+        },
+        {
+          "offset": 134,
+          "type": "DIR32",
+          "symbol": "?g_GraphicsSurfaceSetAt006711FC@@3PAPAUIDirect3DSurface8@@A",
+          "target": 6754812
+        },
+        {
+          "offset": 150,
+          "type": "DIR32",
+          "symbol": "?g_GraphicsSurfaceSetAt006711FC@@3PAPAUIDirect3DSurface8@@A",
+          "target": 6754812
+        },
+        {
+          "offset": 162,
+          "type": "DIR32",
+          "symbol": "?g_GraphicsExtraTextureAt00671230@@3PAUIDirect3DTexture8@@A",
+          "target": 6754864
+        },
+        {
+          "offset": 171,
+          "type": "DIR32",
+          "symbol": "?g_GraphicsExtraTextureAt00671230@@3PAUIDirect3DTexture8@@A",
+          "target": 6754864
+        },
+        {
+          "offset": 178,
+          "type": "DIR32",
+          "symbol": "?g_GraphicsExtraTextureAt00671230@@3PAUIDirect3DTexture8@@A",
+          "target": 6754864
+        },
+        {
+          "offset": 191,
+          "type": "DIR32",
+          "symbol": "?g_GraphicsExtraTextureAt00671230@@3PAUIDirect3DTexture8@@A",
+          "target": 6754864
+        },
+        {
+          "offset": 201,
+          "type": "DIR32",
+          "symbol": "?g_GraphicsExtraSurfaceAt0067122C@@3PAUIDirect3DSurface8@@A",
+          "target": 6754860
+        },
+        {
+          "offset": 210,
+          "type": "DIR32",
+          "symbol": "?g_GraphicsExtraSurfaceAt0067122C@@3PAUIDirect3DSurface8@@A",
+          "target": 6754860
+        },
+        {
+          "offset": 217,
+          "type": "DIR32",
+          "symbol": "?g_GraphicsExtraSurfaceAt0067122C@@3PAUIDirect3DSurface8@@A",
+          "target": 6754860
+        },
+        {
+          "offset": 227,
+          "type": "DIR32",
+          "symbol": "?g_GraphicsExtraSurfaceAt0067122C@@3PAUIDirect3DSurface8@@A",
+          "target": 6754860
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -201646,6 +201821,7 @@
     "src/LoadingLogoSceneConstructorsF446.cpp": "6888b186fdcf36eeb77441509974a01599f6e5674ca5f8e55a5cd0c1e8239b9c",
     "src/SceneSequenceConstructorsF446.cpp": "733a2f1b933b5dafeff6b35888cb4a8119c185ca71ec730877de10387189cd2c",
     "src/LoadingLogoSceneDestructorsF447.cpp": "358d5f507ad97847202260645ff8f2a40f727bac3abd7066e9ec59b3b3a9bba8",
-    "src/SceneTripleTextureReleaseF448.cpp": "bc04a3873460e6ddbe4f270698159dc3dd3732b12c38eb2971051699179bf10e"
+    "src/SceneTripleTextureReleaseF448.cpp": "bc04a3873460e6ddbe4f270698159dc3dd3732b12c38eb2971051699179bf10e",
+    "src/GraphicsResourceGlobalReleaseF454.cpp": "0cea8c61573d8fef85b357864f9150b5ec2a09de69ac5ec8745be903febc2d5c"
   }
 }

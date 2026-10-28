@@ -6896,3 +6896,39 @@ bytes copied, masked/truncated comparison, whole-repository cold replay
 or external Oracle acceptance. The separately unaccepted
 `SceneObject::ReleaseAt0043B0B0` (248 bytes) remains an independent
 more complex scene destructor to reconstruct.
+
+
+## F454: exact 239-byte original global Direct3D resource client last-owner destructor
+
+Original R001-authored `GraphicsResourceClient::~GraphicsResourceClient`
+at `00401020..0040110E` is **239 complete native authored CODE bytes
+and 60 decoded original x86 instructions**, PE original SHA256
+`820329e528fac0d038ac2a800f7547aecb8d1b62b377135928db6053dd1ed813`.
+It decrements the actual original shared graphics client counter
+`00671210`; only on the transition to zero it releases real original
+Direct3D8 resources. It loops exactly one physically indexed element
+through independently original global texture and surface pointer arrays
+`006711D4` and `006711FC`, calls each actual COM `Release` vtable slot +8,
+then sets those pointers to zero. It also releases both real global
+singleton resources at `00671230` (texture) and `0067122C` (surface),
+clearing their pointers in original order. No imported D3D runtime or
+original SDK implementation is counted as authored CODE.
+
+The initially natural source `src/GraphicsResourceGlobalReleaseF454.cpp`
+was **236 bytes** because it simply discarded the return of the first
+singleton COM `Release`. Independent PE disassembly proved that the
+original **stores the actual returned ULONG refcount** in native local
+EBP-8 with instruction `mov dword ptr [ebp-8],eax` at original offset
+0xBA, even though this debugger-visible original returned value is not
+used later in the same function. Preserving that *physically observed
+original COM API result* in a legitimate C++ `ULONG remainingRefCount`
+local—not inventing an inert dummy or stack pad—recovers the actual
+`sub esp,0xC` frame, saved `this` at EBP-0xC and real loop index at
+EBP-4 and all original instruction bytes. Full original verification
+reports **167/167 nonrelocation bytes**, **18/18 authentic physical COFF
+DIR32 relocations** and actual correct original global targets. Only
+new unit `graphics-resource-client-release-global-00401020` was rebuilt
+and cold replayed **1/1 exact**, without any byte mask, graft, raw
+assembly, cropped original, additional SDK/CRT code credit or whole
+repository cold replay/remote Oracle receipt. Original private owner
+identity and complete D3D implementation are not asserted.

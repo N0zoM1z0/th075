@@ -1,6 +1,6 @@
 # TH075 — current reconstruction handoff
 
-**Maintained: 2026-10-29, after F448.** Read this document, then check the **live repository**. The current user explicitly wants both large/core bosses and small leaves tackled seriously, tangible progress committed immediately with subject `gpt-web: ...`, and **only changed/new units cold-replayed**. The user reports no other sessions: inspect and finish all dirty work; never skip, reset, overwrite or silently discard it.
+**Maintained: 2026-10-29, after F454.** Read this document, then check the **live repository**. The current user explicitly wants both large/core bosses and small leaves tackled seriously, tangible progress committed immediately with subject `gpt-web: ...`, and **only changed/new units cold-replayed**. The user reports no other sessions: inspect and finish all dirty work; never skip, reset, overwrite or silently discard it.
 
 ## 1. Trusted state and first commands
 
@@ -8,11 +8,11 @@ Canonical evidence is the pinned original PE, `config/function-origins.csv`, `co
 
 | Item | Verified snapshot |
 | --- | --- |
-| Git | `main`; pre-F448 reconstruction commit **`2b1e178`** (Opening/Staff F446 and Loading/Logo F447), preceded by `6bc22fc` (Loading/Logo F446) and `ccc2092` (F445); F448 commit follows this update |
+| Git | `main`; pre-F454 reconstruction commit **`c47142d`** (F448), preceded by `2b1e178` (F446/F447) and `6bc22fc` (F446 loading/logo); F454 commit follows this update |
 | Pinned target | user-supplied Japanese `resources/th075.exe` v1.11; SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`; **never** `th075c.exe` |
-| Exact and source-present | **757 functions / 757 exact units** |
-| Accepted authored CODE | **854,425 bytes / 1,973,516 reviewed bytes = 43.29%** |
-| Conservative | **43.22%**, including 3,608 bytes with unresolved origin |
+| Exact and source-present | **758 functions / 758 exact units** |
+| Accepted authored CODE | **854,664 bytes / 1,973,516 reviewed bytes = 43.31%** |
+| Conservative | **43.23%**, including 3,608 bytes with unresolved origin |
 | Origin review | 1,002 authored, 2,671 library, 581 compiler, **97 pending** across 4,351 provisional candidates |
 | Goal | **98% not reached**; Git and local cold results are not external Oracle receipts |
 
@@ -29,7 +29,7 @@ If **any** dirty source, unit, or manifest is present, first inspect its exact e
 
 ## 2. Newly closed chains — **not** the backlog
 
-The full register of **all 757** accepted functions is in `config/functions.csv` and `config/match-units.toml`; this table intentionally highlights only the newest, important independent CODE extents. No called function, imported CRT/Win32 code, or owned jump-table bytes are counted twice.
+The full register of **all 758** accepted functions is in `config/functions.csv` and `config/match-units.toml`; this table intentionally highlights only the newest, important independent CODE extents. No called function, imported CRT/Win32 code, or owned jump-table bytes are counted twice.
 
 | Unit / accepted address | Whole CODE | Authentic fields | Evidence |
 | --- | ---: | ---: | --- |
@@ -91,6 +91,7 @@ The full register of **all 757** accepted functions is in `config/functions.csv`
 | F446 (sequence) `OpeningScene::InitializeAt004275D0` / `StaffRollScene::InitializeAt00438AC0` | **219 + 224** | **16 + 17** | `src/SceneSequenceConstructorsF446.cpp`, original R036/R043 |
 | F447 `LoadingScene::ReleaseSceneResourceAt004252B0` / `LogoScene::ReleaseSceneResourceAt00425550` | **127 + 127** | **7 + 7** | `src/LoadingLogoSceneDestructorsF447.cpp`, `.analysis/f447-loading-logo-release/` |
 | F448 `SceneObject::ReleaseAt00433140` `00433140` | **231** | **9** | `src/SceneTripleTextureReleaseF448.cpp`, `.analysis/f448-scene-triple-release/` |
+| F454 `GraphicsResourceClient::~GraphicsResourceClientAt00401020` `00401020` | **239** | **18** | `src/GraphicsResourceGlobalReleaseF454.cpp`, `.analysis/f454-graphics-refcount/` |
 
 **F340:** the companion archive entry seek at `0041D750` is independently cold exact for its whole 164-byte function including every one of its nine external references. It uses genuine iterator and `strcmp` semantics, returns the archive handle after `SetFilePointer` or `INVALID_HANDLE_VALUE` if not found. The original private archive list remains borrowed, not instantiated.
 
@@ -193,6 +194,8 @@ The full register of **all 757** accepted functions is in `config/functions.csv`
 **F447:** the companion original R234 LoadingScene and LogoScene virtual resource destructors at `004252B0` and `00425550` are each **127 complete CODE bytes / 36 original instructions**, **99/99 nonrelocation bytes** and **7/7 original physical COFF refs**, including their own vtable/exception-handler addresses, actual scalar deleting texture destructor at `00425460`, and original base scene destructor at `00431F40`. Natural `if(texture) delete texture` provides the original two real C++ deletion temporaries and EH state, no manual ASM. All four of the new scene sequence+resource release units were **only changed-unit cold-replayed together 4/4 exact across 2 objects**, adding **219+224+127+127 = 697 native CODE bytes**, no external base or texture implementation re-credited.
 
 **F448:** complete R054 `SceneObject::ReleaseAt00433140` **231 original CODE bytes / 68 x86 instructions** cold exact, with **195/195 original nonrelocation bytes and all 9/9 physical COFF refs**. Natural C++ virtual scene destructor installs actual original derived vtable `0065824C` and three **distinct** conditional texture `delete` expressions at physical pointers +8/+0x44/+0x48, each through real scalar deleting destructor `00425460`; it naturally creates the original two pointer temporaries per deletion and native `/GX` EH handler `00655ACB`, and finally invokes original base destructor `00431F40`. Borrowed original resource slot offsets are exact but unrelated private bytes between +0xC and +0x44 are **not claimed** as recovered fields. Only F448 single-unit cold replay **1/1 exact**. `SceneObject::ReleaseAt0043B0B0` (248 bytes) remains pending and must not be confused with this separate destructor.
+
+**F454:** the entire original R001 global `GraphicsResourceClient` destructor at `00401020` is now **239 native CODE bytes / 60 instructions**, with **167/167 original nonrelocation bytes** and all **18/18 genuine physical COFF DIR32 references** cold exact (**1/1 affected unit**). Its last-reference-count path decrements original shared global count `00671210`, loops exactly one texture/surface pointer per original global array `006711D4/006711FC`, releases and clears those and singleton textures/surfaces `00671230/0067122C` through actual COM `Release` vtable+8. The original return of `Release()` at `00671230` is really written to EBP-8 (`mov [ebp-8],eax`) even though the value is unused later; preserving this *native-evidenced returned COM refcount* produces the missing 3 bytes and exact 0xC stack frame. It is not synthetic unused padding. The previously authored R054 248-byte `SceneObject::ReleaseAt0043B0B0` and StaffRoll 208-byte `Advance` remain **nonexact**; the latter presently reaches 206/208 if source semantics are not fully modeled, so no CODE credit.
 
 **Corrections to old notes:** The 686-byte writer and 429-byte reader are both **exact** (F339/F338), not pending F249/F250. The full 1,252-byte replay writer and 375-byte finalizer are both **exact** (F326/F328), not pending F219/F218/F289. The 1,766-byte font rasterizer is **exact** (F319), not pending F299/F302. The 301-byte glyph loader is **exact** (F318), not pending F291. The 916-byte MusicRoom catalog + separately compared 16-byte jump table is **exact in F258** (916 CODE credit only). Other accepted 1,000+ byte bosses include F271 projected quad (1,185), F278 pattern chooser (1,264), F282 resource loader (1,186), F292 overlay text box (1,385), F294 effects catalog (1,722), and F244 scene advance (1,529 CODE). Earlier failures remain useful *historical controls*, but must never be presented as current unaccepted work.
 

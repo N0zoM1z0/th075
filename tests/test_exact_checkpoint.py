@@ -51,7 +51,18 @@ class ExactCheckpointTests(unittest.TestCase):
                 E.historical_functions([bad])
 
     def test_unrelated_rows_are_never_projected(self):
-        row = {"address": "0x00401020", "calling_convention": "unapproved"}
+        # The former hard-coded fixture 0x00401020 is now independently
+        # reconstructed exact (F454). Select a genuinely excluded origin
+        # instead: it cannot be an approved authored adoption and keeps
+        # this test meaningful as reconstruction coverage grows.
+        import csv
+        with (E.ROOT / "config/function-origins.csv").open(newline="") as stream:
+            excluded = next((item["address"] for item in csv.DictReader(stream)
+                             if item["disposition"] == "exclude"), None)
+        self.assertIsNotNone(excluded)
+        self.assertNotIn(excluded, {item["after"]["address"]
+                                    for item in E.plan()["functions"]})
+        row = {"address": excluded, "calling_convention": "unapproved"}
         self.assertEqual(E.historical_functions([row]), [row])
 
     def test_no_unregistered_or_duplicate_function_units(self):
