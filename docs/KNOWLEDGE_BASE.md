@@ -2245,3 +2245,51 @@ original scene type identity or any incomplete private owner. All 97
 origin-pending functions remain uncredited. No target-byte graft, fake
 stack padding, unknown callback implementation, asm, masked fields or
 truncated machine-code comparison was used.
+
+
+## F264: exact 366-byte result-list scene constructor; signed loop guard
+
+The independent R052-authored `ResultListScene::Initialize` has original
+`0042F710..0042F87D` extent, **366 full CODE bytes**, 96 native x86
+instructions ending in RET and PE-backed SHA256
+`a14c5c094036156369be76dcb3d289928101271c4f068a1a56bf13fa98e0c49c`.
+Ghidra read-only function, full native instruction listing, original
+complete natural source and negative first comparison are retained under
+`.analysis/f264-result-list-init/`.
+
+The function invokes base scene ctor `004251C0` (R108 origin-unknown;
+no independent authored credit) and the real 20-byte VC7 deque
+constructor `00420320` on `this+0x18` (STL/library, also no authored
+credit). It installs vtable `006581D0` with real exception handler
+`00655A1E`, zeroes two resource pointers and EH-allocates one original
+80-byte texture manager `0040AD80`, calls `0040B1D0(4)`, and loads
+texture file/root strings at `00658064/0065805C` through `0040BB80`.
+It allocates the 1024x512, 32-bit graphics surface via `00401C20`,
+zeros observed scene flags +0x1C5/+0x1C3/+0x1C4 and short +0x1BC,
+sets +0x1BE to five, and loops over exactly ten real progress selectors
+calling the previously separately accepted authored `00419E10(
+static_cast<unsigned char>(index), 1)` to write +0x1C6..+0x1CF.
+It calls the independently F256-cold-exact character asset loader
+`00430EE0` and F238-cold-exact result counter page builder `00431350`.
+All original EH cleanup, resource and call ordering remain.
+
+The first complete native-faithful pinned VC7.1 `/Od /GX /GS` source
+`src/ResultListInitF264.cpp` emitted the entire **366 bytes**, all
+**17 physical COFF fields** at correct offsets/targets, and **297/298**
+nonrelocated matching bytes. At branch +0x128 the native target uses
+**signed JGE** (`0x7D`) but the initial C++ guessed an unsigned 32-bit
+loop counter and emitted **JAE** (`0x73`). Changing this genuine
+program-logic interpretation to `for (int index = 0; index < 10; ++index)`
+restored **298/298** bytes. This is an actual signedness correction,
+not byte patching or artificial compiler control. A fresh cold build
+of **only** unit `result-list-scene-initialize-0042f710` independently
+reported `exact; 366 coverage bytes`.
+
+The 20-byte deque carrier and borrowed 80-byte texture interface reflect
+physical native allocations only; they do not establish unknown original
+private owner/source declarations. All 97 pending origins remain unknown
+and uncredited. The authored-byte count is now **789,436/1,973,516
+(40.00%)**, while conservative pending-inclusive coverage remains
+**39.93%**. The 98% goal is unfinished; no library/base/CRT extra bytes,
+all-unit cold replay, truncated code, fake locals, assembly, relocation
+masks or external Oracle receipts are claimed.

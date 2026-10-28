@@ -558,3 +558,4 @@ address,name,module,confidence,evidence
 0x00427470,MusicRoomRecord::ReleaseBuffersAt00427470,MusicRoomRecord,inferred,F261; complete 82-byte native scene record lifetime with 3 authentic COFF fields cold-exact; original name provisional
 0x00425750,MusicRoomScene::Initialize,MusicRoomScene,inferred,F262; entire 372-byte MusicRoom scene ctor and its 60 native array-record lifetimes/23 relocations cold exact; original full scene layout and R108 base origin unproven
 0x004258D0,MusicRoomScene::ReleaseTexturesRecordsAndAudioAt004258D0,MusicRoomScene,inferred,"F263; complete 244-byte native music scene destructor, real COM release and 60 F261 record lifetimes, all 12 COFF fields cold-exact"
+0x0042F710,ResultListScene::Initialize,ResultListScene,inferred,"F264; entire 366-byte ResultList scene ctor, native game progress ten-entry loop, and 17 genuine COFF relocation fields cold-exact; original scene/deque layout provisional"

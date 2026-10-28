@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "f5e60b936ea3cb7ec334fc0deb2a1a3992d6c6f26e8b733bc500284254e3f2d7"
+      "current_sha256": "bd5de34adafcea0ea6b05626e0a3836ad189fbeeaf1cab079e7a2d04b4c438b8"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "a5f3d89c9560a9be3cb8130744f92c260c13feb1a8c626820505b6e54f017987"
+      "current_sha256": "82884a7bedce1b5a094d910ad23637a4609d3d3fbb873720dd90cebb0f1e43f0"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "56bdd1e0643ca61656b5041e32c6acc9a6829fc148f51596784741aa5416067a"
+      "current_sha256": "ea75b659f5f55a09ef76c3d09cc72b4919da3c792127dba62eb95ceb025d1d67"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "e445a2d73e4a974e97d6266b7206bd67e25a63db4b80c6c458be9ff563177bff"
+      "current_sha256": "f6912207c9f666ec5b21955a9b50cc11ffed4eca9dccc4041d52f2dd3406a19b"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "bdadb185c985998ffa647ddd2aa64d43a909c82ee73ac71171140944508643d9"
+      "current_sha256": "a07709915ee6d19ac76dddb65dcf8de29b5dca6b9cee4e90f7157bf280759ed9"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -22788,6 +22788,50 @@
         "disposition": "authored",
         "confidence": "whole-game-music-scene-record-policy-with-independent-catalog-render-array-and-source-lifetime-context",
         "evidence_id": "R236"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0042F710",
+        "size": "366",
+        "span_end": "0x0042F87D",
+        "current_name": "FUN_0042f710",
+        "proposed_name": "ResultListScene::Initialize",
+        "module": "ResultListScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R052; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x0042F710",
+        "size": "366",
+        "span_end": "0x0042F87D",
+        "current_name": "FUN_0042f710",
+        "proposed_name": "ResultListScene::Initialize",
+        "module": "ResultListScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "ResultListInitializerF264::ResultListInitializerF264()",
+        "is_thunk": "false",
+        "source_file": "src/ResultListInitF264.cpp",
+        "evidence": "R052; full body hash, complete decoded CFG and local game-specific behavior reviewed; F264; scripts/repo-python scripts/replay-exact-units.py --unit result-list-scene-initialize-0042f710",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F264: full original native R052-authored 366 CODE bytes /96 decoded x86 instructions ending RET at 0042F87D; SHA256 a14c5c094036156369be76dcb3d289928101271c4f068a1a56bf13fa98e0c49c. Pinned VC7.1 /Od /GX independent single-unit cold-exact for all 298/298 nonrelocation bytes and 17/17 actual COFF relocation fields including genuine EH handler 00655A1E and base constructor 004251C0 with unchanged R108 unknown-origin status. Native scene vtable 006581D0, physical 20-byte VC7 deque ctor 00420320 (library excluded), two initial screen pointer resets, EH-backed new(80) texture and 0040AD80 ctor, four-slot texture 0040B1D0 with original file/root 00658064/0065805C, original 1024x512 native graphics allocation 00401C20, three signed byte flags and one short index/count, original signed count 10-loop and ten native progress CheckSelection calls 00419E10, independently previously cold-exact result character resource loader 00430EE0 and page builder 00431350 all retained. First complete natural C++ emitted same 366 length, 17 fields, 297/298 nonrelocation bytes; native JGE branch at offset 0x128 disproved guessed unsigned index, correcting to int generated exact native JGE. Physical borrowed deque/texture and observed base carrier are not claims of complete nominal private class layouts or extra credited callees, and no dummy padding or unobserved fields are inserted. No target byte graft, assembly, masked relocation, truncated body, broad cold replay or external Oracle. All 97 pending origins remain excluded."
+      },
+      "origin": {
+        "address": "0x0042F710",
+        "origin": "authored",
+        "subsystem": "ResultListScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R052"
       }
     }
   ],
@@ -173475,6 +173519,131 @@
           "target": 0
         }
       ]
+    },
+    "result-list-scene-initialize-0042f710": {
+      "source": "src/ResultListInitF264.cpp",
+      "object": "build/matching/ResultListInitF264.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "ResultListScene::Initialize"
+      ],
+      "symbol": "??0ResultListInitializerF264@@QAE@XZ",
+      "target_address": 4388624,
+      "size": 366,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??0ResultListInitializerF264@@QAE@XZ",
+          "target": 6642206
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 34,
+          "type": "REL32",
+          "symbol": "??0ResultSceneBaseF264@@QAE@XZ",
+          "target": 4346304
+        },
+        {
+          "offset": 50,
+          "type": "DIR32",
+          "symbol": "??_7ResultListInitializerF264@@6B@",
+          "target": 6652368
+        },
+        {
+          "offset": 61,
+          "type": "REL32",
+          "symbol": "??0ResultRecordsDequeF264@@QAE@XZ",
+          "target": 4326176
+        },
+        {
+          "offset": 92,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 116,
+          "type": "REL32",
+          "symbol": "??0ResultTextureF264@@QAE@XZ",
+          "target": 4238720
+        },
+        {
+          "offset": 160,
+          "type": "REL32",
+          "symbol": "?AllocateSlots@ResultTextureF264@@QAEXH@Z",
+          "target": 4239824
+        },
+        {
+          "offset": 165,
+          "type": "DIR32",
+          "symbol": "?g_ResultListRootAt0065805C@@3QBDB",
+          "target": 6651996
+        },
+        {
+          "offset": 170,
+          "type": "DIR32",
+          "symbol": "?g_ResultListFileAt00658064@@3QBDB",
+          "target": 6652004
+        },
+        {
+          "offset": 181,
+          "type": "REL32",
+          "symbol": "?Load@ResultTextureF264@@QAEXPBD0@Z",
+          "target": 4242304
+        },
+        {
+          "offset": 205,
+          "type": "REL32",
+          "symbol": "?Allocate@ResultBitmapF264@@YAXHHPAPAXH@Z",
+          "target": 4201504
+        },
+        {
+          "offset": 305,
+          "type": "REL32",
+          "symbol": "?CheckSelection@ResultRecordsF264@@YAEEH@Z",
+          "target": 4300304
+        },
+        {
+          "offset": 330,
+          "type": "REL32",
+          "symbol": "?LoadCharacterTextures@ResultListInitializerF264@@QAEXXZ",
+          "target": 4394720
+        },
+        {
+          "offset": 338,
+          "type": "REL32",
+          "symbol": "?BuildCounterPage@ResultListInitializerF264@@QAEXXZ",
+          "target": 4395856
+        },
+        {
+          "offset": 358,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -173829,6 +173998,7 @@
     "src/MusicCatalogRecordF261.hpp": "d9e8c87ab27236c43719b291caa09f373879e1ef6a30f7f0b7d7ddcb73072cac",
     "src/MusicCatalogRecordF261.cpp": "1dc5b4b1b0b4309c34221c50767a787e55af244afa859ef7c26b7ab24bf59b36",
     "src/MusicRoomInitF262.cpp": "47b51e6c329c085d07ea4e6f7ab036ca1fc5d69ff8e0ac7a25b3c7e3c8b7677e",
-    "src/MusicRoomReleaseF263.cpp": "4f42f5bb13ad4b9659bbe2ab4b42fceb02132af3fe440e243cb1443bc9f4245d"
+    "src/MusicRoomReleaseF263.cpp": "4f42f5bb13ad4b9659bbe2ab4b42fceb02132af3fe440e243cb1443bc9f4245d",
+    "src/ResultListInitF264.cpp": "fc21a3209f58e96416667406447cc01156e8f7808bb6239b7beac3f5f66cf48d"
   }
 }

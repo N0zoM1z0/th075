@@ -41572,3 +41572,97 @@ offset = 236
 type = "DIR32"
 symbol = "__except_list"
 target = 0x00000000
+
+[units.result-list-scene-initialize-0042f710]
+source = "src/ResultListInitF264.cpp"
+object = "build/matching/ResultListInitF264.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["ResultListScene::Initialize"]
+symbol = "??0ResultListInitializerF264@@QAE@XZ"
+target_address = 0x0042F710
+size = 366
+[[units.result-list-scene-initialize-0042f710.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0ResultListInitializerF264@@QAE@XZ"
+target = 0x00655A1E
+[[units.result-list-scene-initialize-0042f710.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.result-list-scene-initialize-0042f710.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.result-list-scene-initialize-0042f710.relocations]]
+offset = 34
+type = "REL32"
+symbol = "??0ResultSceneBaseF264@@QAE@XZ"
+target = 0x004251C0
+[[units.result-list-scene-initialize-0042f710.relocations]]
+offset = 50
+type = "DIR32"
+symbol = "??_7ResultListInitializerF264@@6B@"
+target = 0x006581D0
+[[units.result-list-scene-initialize-0042f710.relocations]]
+offset = 61
+type = "REL32"
+symbol = "??0ResultRecordsDequeF264@@QAE@XZ"
+target = 0x00420320
+[[units.result-list-scene-initialize-0042f710.relocations]]
+offset = 92
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.result-list-scene-initialize-0042f710.relocations]]
+offset = 116
+type = "REL32"
+symbol = "??0ResultTextureF264@@QAE@XZ"
+target = 0x0040AD80
+[[units.result-list-scene-initialize-0042f710.relocations]]
+offset = 160
+type = "REL32"
+symbol = "?AllocateSlots@ResultTextureF264@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.result-list-scene-initialize-0042f710.relocations]]
+offset = 165
+type = "DIR32"
+symbol = "?g_ResultListRootAt0065805C@@3QBDB"
+target = 0x0065805C
+[[units.result-list-scene-initialize-0042f710.relocations]]
+offset = 170
+type = "DIR32"
+symbol = "?g_ResultListFileAt00658064@@3QBDB"
+target = 0x00658064
+[[units.result-list-scene-initialize-0042f710.relocations]]
+offset = 181
+type = "REL32"
+symbol = "?Load@ResultTextureF264@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.result-list-scene-initialize-0042f710.relocations]]
+offset = 205
+type = "REL32"
+symbol = "?Allocate@ResultBitmapF264@@YAXHHPAPAXH@Z"
+target = 0x00401C20
+[[units.result-list-scene-initialize-0042f710.relocations]]
+offset = 305
+type = "REL32"
+symbol = "?CheckSelection@ResultRecordsF264@@YAEEH@Z"
+target = 0x00419E10
+[[units.result-list-scene-initialize-0042f710.relocations]]
+offset = 330
+type = "REL32"
+symbol = "?LoadCharacterTextures@ResultListInitializerF264@@QAEXXZ"
+target = 0x00430EE0
+[[units.result-list-scene-initialize-0042f710.relocations]]
+offset = 338
+type = "REL32"
+symbol = "?BuildCounterPage@ResultListInitializerF264@@QAEXXZ"
+target = 0x00431350
+[[units.result-list-scene-initialize-0042f710.relocations]]
+offset = 358
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
