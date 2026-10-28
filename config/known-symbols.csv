@@ -529,3 +529,4 @@ address,name,module,confidence,evidence
 0x00433A40,CharacterSelectScene::ProcessPlayerOptions,CharacterSelectScene,inferred,F230; complete 404-byte cold exact with 18 relocations; actual scene class and source name provisional
 0x00433BE0,CharacterSelectScene::ProcessSubselection,CharacterSelectScene,inferred,F230; complete 264-byte cold exact with 16 relocations; actual scene class and source name provisional
 0x0042D470,ReplayBrowserScene::ScanFiles,ReplayBrowserScene,inferred,F231; complete original 613-byte file scan and 31 native relocation fields cold exact; original nominal class/deque layouts unproven
+0x004259D0,MusicRoomScene::UpdateSelection,MusicRoomScene,inferred,F234; full 675-byte music selection update and 24 physical relocations cold exact; original class identities and layouts provisional

@@ -38427,3 +38427,133 @@ offset = 605
 type = "REL32"
 symbol = "@__security_check_cookie@4"
 target = 0x00640611
+
+
+[units.music-room-scene-update-selection-004259d0]
+source = "src/MusicSelectF234.cpp"
+object = "build/matching/MusicSelectF234.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["MusicRoomScene::UpdateSelection"]
+symbol = "?UpdateSelection@MusicRoomSelectionF234@@QAEGXZ"
+target_address = 0x004259D0
+size = 675
+[[units.music-room-scene-update-selection-004259d0.relocations]]
+offset = 11
+type = "REL32"
+symbol = "?PollInput@MusicRoomSelectionF234@@QAEXXZ"
+target = 0x00426600
+[[units.music-room-scene-update-selection-004259d0.relocations]]
+offset = 27
+type = "REL32"
+symbol = "?EndInput@MusicAudioF234@@YAXXZ"
+target = 0x004028F0
+[[units.music-room-scene-update-selection-004259d0.relocations]]
+offset = 33
+type = "DIR32"
+symbol = "?g_MusicUpAt00671668@@3HA"
+target = 0x00671668
+[[units.music-room-scene-update-selection-004259d0.relocations]]
+offset = 42
+type = "DIR32"
+symbol = "?g_MusicUpAltAt006716B0@@3HA"
+target = 0x006716B0
+[[units.music-room-scene-update-selection-004259d0.relocations]]
+offset = 130
+type = "DIR32"
+symbol = "?g_TrackProgressAt006718F8@@3VMusicTrackStateF234@@A"
+target = 0x006718F8
+[[units.music-room-scene-update-selection-004259d0.relocations]]
+offset = 135
+type = "REL32"
+symbol = "?IsUnlocked@MusicTrackStateF234@@QAEEH@Z"
+target = 0x00416DC0
+[[units.music-room-scene-update-selection-004259d0.relocations]]
+offset = 160
+type = "REL32"
+symbol = "?Highlight@MusicRoomSelectionF234@@QAEXE@Z"
+target = 0x00426A70
+[[units.music-room-scene-update-selection-004259d0.relocations]]
+offset = 171
+type = "DIR32"
+symbol = "?g_MusicUpAt00671668@@3HA"
+target = 0x00671668
+[[units.music-room-scene-update-selection-004259d0.relocations]]
+offset = 180
+type = "DIR32"
+symbol = "?g_MusicUpAltAt006716B0@@3HA"
+target = 0x006716B0
+[[units.music-room-scene-update-selection-004259d0.relocations]]
+offset = 270
+type = "DIR32"
+symbol = "?g_TrackProgressAt006718F8@@3VMusicTrackStateF234@@A"
+target = 0x006718F8
+[[units.music-room-scene-update-selection-004259d0.relocations]]
+offset = 275
+type = "REL32"
+symbol = "?IsUnlocked@MusicTrackStateF234@@QAEEH@Z"
+target = 0x00416DC0
+[[units.music-room-scene-update-selection-004259d0.relocations]]
+offset = 300
+type = "REL32"
+symbol = "?Highlight@MusicRoomSelectionF234@@QAEXE@Z"
+target = 0x00426A70
+[[units.music-room-scene-update-selection-004259d0.relocations]]
+offset = 397
+type = "DIR32"
+symbol = "?g_MusicDownAt0067166C@@3HA"
+target = 0x0067166C
+[[units.music-room-scene-update-selection-004259d0.relocations]]
+offset = 406
+type = "DIR32"
+symbol = "?g_MusicDownAltAt006716B4@@3HA"
+target = 0x006716B4
+[[units.music-room-scene-update-selection-004259d0.relocations]]
+offset = 457
+type = "DIR32"
+symbol = "?g_TrackProgressAt006718F8@@3VMusicTrackStateF234@@A"
+target = 0x006718F8
+[[units.music-room-scene-update-selection-004259d0.relocations]]
+offset = 462
+type = "REL32"
+symbol = "?IsUnlocked@MusicTrackStateF234@@QAEEH@Z"
+target = 0x00416DC0
+[[units.music-room-scene-update-selection-004259d0.relocations]]
+offset = 487
+type = "REL32"
+symbol = "?Choose@MusicRoomSelectionF234@@QAEXE@Z"
+target = 0x004268A0
+[[units.music-room-scene-update-selection-004259d0.relocations]]
+offset = 514
+type = "REL32"
+symbol = "?PlayMusic@MusicAudioF234@@YAXH@Z"
+target = 0x00419CB0
+[[units.music-room-scene-update-selection-004259d0.relocations]]
+offset = 536
+type = "REL32"
+symbol = "?Transition@MusicAudioF234@@YAXHHHH@Z"
+target = 0x00407E60
+[[units.music-room-scene-update-selection-004259d0.relocations]]
+offset = 555
+type = "DIR32"
+symbol = "?g_MusicCancelAt00671670@@3HA"
+target = 0x00671670
+[[units.music-room-scene-update-selection-004259d0.relocations]]
+offset = 564
+type = "DIR32"
+symbol = "?g_MusicCancelAltAt006716B8@@3HA"
+target = 0x006716B8
+[[units.music-room-scene-update-selection-004259d0.relocations]]
+offset = 588
+type = "DIR32"
+symbol = "?g_MusicInputAt00671638@@3VMusicInputF234@@A"
+target = 0x00671638
+[[units.music-room-scene-update-selection-004259d0.relocations]]
+offset = 593
+type = "REL32"
+symbol = "?IsKeyDown@MusicInputF234@@QAEEH@Z"
+target = 0x00407170
+[[units.music-room-scene-update-selection-004259d0.relocations]]
+offset = 619
+type = "REL32"
+symbol = "?Transition@MusicAudioF234@@YAXHHHH@Z"
+target = 0x00407E60

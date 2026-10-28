@@ -1147,3 +1147,59 @@ log are retained under `.analysis/f231-replay-scan/`. No source body split,
 assembly, fake locals, masks, partial extents, external Oracle acceptance
 or unproved nominal class layouts. The 97 unknown-origin candidates remain
 uncredited, including the separate `00438A60` previously unresolved call.
+
+
+## F232-F233: negative whole-boss replay tests retain original full extents
+
+R035 independently reviews the authored on-disk replay functions.
+`ReplayRecords::AppendRecord` (`00413DE0`) remains 1252 entire CODE bytes
+with 50 real relocation fields and **only 1025/1052 nonfield bytes**
+matched by the best natural source. In F232 we preserved all six real
+8-byte iterator objects, the four 20-byte queues and all native branches,
+while checking new lexical lifetime splits rather than repeating exhausted
+72 variable-name permutations; no exact result. These 1252-byte controls
+and 50 field endpoints are retained in `.analysis/f232-append-scope/`.
+
+The independently reviewed `ReplayRecords::LoadRecord` (`00413AC0`) is
+792 complete native CODE bytes /274 x86 instructions and 29 true fields.
+F233 independently recompiled the best natural complete source: still
+639/676 nonfield bytes. Native comparison identified physical stack slots
+for HANDLE (-0x14), record count (-0x10), ReadFile bytesRead (-0x1C),
+byte item (-0x15), raw short (-0xC), and stored short (-0x1E), whereas
+ordinary VC7.1 naming/declaration order assigns different slots. Tested
+meaningful raw short declaration positions, short-item order, and actual
+read/record scopes without masking or phantom stack storage; none improves
+the best. Every negative source/preview and native-to-object instruction
+comparison is retained in `.analysis/f233-record-scope/`. Both functions
+remain **unaccepted and receive zero new authored CODE credit**.
+
+## F234: whole music-room selection state machine (675 cold exact)
+
+The R040 independently authored `MusicRoomScene::UpdateSelection`,
+`004259D0..00425C72`, has 675 original CODE bytes /179 x86 instructions
+and SHA256
+`da7be73a54b77cebacf43215e0f5502722393f166bcf2c79ee92326805761c6a`.
+Original native mode and input states are actual 32-bit globals
+`00671668/006716B0`, `0067166C/006716B4` and exit
+`00671670/006716B8`. Borrowed call-only scene state gives the true
+`+0x3DE` signed selected index, `+0x3DC` bound, `+0x3DF` ten-row scroll
+origin and `+0x3DD` 60-tick cooldown. Each 16-byte track record has an
+independently observed signed byte at `this + 0x1C + selected*16`, passed
+with +100 to the already-existing global progress-card check at
+`00416DC0` with its actual `006718F8` receiver. Original highlight
+`00426A70`, choose `004268A0`, music player `00419CB0`, input escape
+`00407170` and transition `00407E60` are real callee destinations.
+
+A single natural VC7.1 `/Od /GX-` source probe in
+`src/MusicSelectF234.cpp` reproduces **579/579 comparable nonrelocation
+bytes, all 24 independently mapped physical COFF relocations** and the
+full native function length. An independent cold replay of only
+`music-room-scene-update-selection-004259d0` reported **exact: 675**.
+`tests/test_music_select_f234.py` protects full native SHA, all 24
+relocations, call multiplicities, original `RET`, manifest/source hash,
+without broad cold builds. Nominal original source names and full
+scene/progress/input layouts remain provisional; no invented classes are
+instantiated or embedded, no extra helper/global/data bytes are credited.
+This is a local exact replay, not a remote Oracle receipt, and the 97
+origin-unknown candidates are unchanged. Complete native evidence and
+reproducible probe/cold logs are under `.analysis/f234-music-select/`.

@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "690e21f0c97aa81ba767de5bf4d274f1783387205344eba7fd450470c57d3cf6"
+      "current_sha256": "bb0daf7d2f79d05a0fc4b0c30947de60a41b7336121b099c9e6f5952cb206c5c"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "d04092d3140efc6e3b3535e6fde5eb3bbc6d33f80fc12b555f3a10914d0b46e7"
+      "current_sha256": "5c35235090126a55c1be44f30586efa6a5e3efa6b59deb84655d2a12d41fc4e3"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "890c9e5a32a057b015bea490cf65c62a70e06512dd8e8c844042d9bbcedfb05f"
+      "current_sha256": "1ce5b9a8fe897ab4e1a1073323ff8efcba18dddb75c34bb0b601749f4e387601"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "8595500d845b904c5df346e64dec98fd2fbdeb207ffb4ad40785344663894b39"
+      "current_sha256": "89e9f9221f16801ea99a3c624fccb8914c3c678186458220224cfa252d941d19"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "47b7df4f2dbd316568350cc9d673da685dff4e3752dac0e3dc838a9f9dad46db"
+      "current_sha256": "ac7c2f3949182d2f25a52b2b52ecb1d699a96979f907af4e38191b89fb003745"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -21509,6 +21509,50 @@
         "address": "0x0042D470",
         "origin": "authored",
         "subsystem": "ReplayBrowserScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R040"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004259D0",
+        "size": "675",
+        "span_end": "0x00425C72",
+        "current_name": "FUN_004259d0",
+        "proposed_name": "MusicRoomScene::UpdateSelection",
+        "module": "MusicRoomScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R040; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x004259D0",
+        "size": "675",
+        "span_end": "0x00425C72",
+        "current_name": "FUN_004259d0",
+        "proposed_name": "MusicRoomScene::UpdateSelection",
+        "module": "MusicRoomScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "unsigned short MusicRoomSelectionF234::UpdateSelection()",
+        "is_thunk": "false",
+        "source_file": "src/MusicSelectF234.cpp",
+        "evidence": "R040; full body hash, complete decoded CFG and local game-specific behavior reviewed; F234; scripts/repo-python scripts/replay-exact-units.py --unit music-room-scene-update-selection-004259d0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F234: complete 675 authored CODE bytes /179 native decoded x86 instructions with full SHA256 da7be73a54b77cebacf43215e0f5502722393f166bcf2c79ee92326805761c6a, original RET 00425C72. First natural C++ pinned VC7.1 /Od /GX- emits exact 675 full code bytes, all 579/579 non-field bytes, and all 24 true DIR32/REL32 target fields. Scene input poll 00426600, vtable slot 2, global input reset 004028F0, four original 32-bit directional states, 16-byte track record strides at scene +0x1C indexed by signed +0x3DE, signed 0x3DC max and 0x3DF display scroll, 10 visible items, actual progress/card check at 00416DC0 using 006718F8, highlight 00426A70, choose 004268A0, native music player 00419CB0, fade/scene change 00407E60, key cancel 00407170 and signed 60-frame cooldown all preserved with returns 0x2202 or 12. All 24 original field destinations matched with normal COFF relocations, no cropped code, byte masks, ASM, fake ABI, inert locals or full owner layout fabrication. Nominal scene/progress/input class identity inferred; their helper bodies receive no added code credit. Original R040 authored origin reviewed independently. Local targeted cold replay only, not external Oracle verification; all 97 unresolved origins remain unknown."
+      },
+      "origin": {
+        "address": "0x004259D0",
+        "origin": "authored",
+        "subsystem": "MusicRoomScene",
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R040"
@@ -168099,6 +168143,173 @@
           "target": 6555153
         }
       ]
+    },
+    "music-room-scene-update-selection-004259d0": {
+      "source": "src/MusicSelectF234.cpp",
+      "object": "build/matching/MusicSelectF234.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "MusicRoomScene::UpdateSelection"
+      ],
+      "symbol": "?UpdateSelection@MusicRoomSelectionF234@@QAEGXZ",
+      "target_address": 4348368,
+      "size": 675,
+      "relocations": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": "?PollInput@MusicRoomSelectionF234@@QAEXXZ",
+          "target": 4351488
+        },
+        {
+          "offset": 27,
+          "type": "REL32",
+          "symbol": "?EndInput@MusicAudioF234@@YAXXZ",
+          "target": 4204784
+        },
+        {
+          "offset": 33,
+          "type": "DIR32",
+          "symbol": "?g_MusicUpAt00671668@@3HA",
+          "target": 6755944
+        },
+        {
+          "offset": 42,
+          "type": "DIR32",
+          "symbol": "?g_MusicUpAltAt006716B0@@3HA",
+          "target": 6756016
+        },
+        {
+          "offset": 130,
+          "type": "DIR32",
+          "symbol": "?g_TrackProgressAt006718F8@@3VMusicTrackStateF234@@A",
+          "target": 6756600
+        },
+        {
+          "offset": 135,
+          "type": "REL32",
+          "symbol": "?IsUnlocked@MusicTrackStateF234@@QAEEH@Z",
+          "target": 4287936
+        },
+        {
+          "offset": 160,
+          "type": "REL32",
+          "symbol": "?Highlight@MusicRoomSelectionF234@@QAEXE@Z",
+          "target": 4352624
+        },
+        {
+          "offset": 171,
+          "type": "DIR32",
+          "symbol": "?g_MusicUpAt00671668@@3HA",
+          "target": 6755944
+        },
+        {
+          "offset": 180,
+          "type": "DIR32",
+          "symbol": "?g_MusicUpAltAt006716B0@@3HA",
+          "target": 6756016
+        },
+        {
+          "offset": 270,
+          "type": "DIR32",
+          "symbol": "?g_TrackProgressAt006718F8@@3VMusicTrackStateF234@@A",
+          "target": 6756600
+        },
+        {
+          "offset": 275,
+          "type": "REL32",
+          "symbol": "?IsUnlocked@MusicTrackStateF234@@QAEEH@Z",
+          "target": 4287936
+        },
+        {
+          "offset": 300,
+          "type": "REL32",
+          "symbol": "?Highlight@MusicRoomSelectionF234@@QAEXE@Z",
+          "target": 4352624
+        },
+        {
+          "offset": 397,
+          "type": "DIR32",
+          "symbol": "?g_MusicDownAt0067166C@@3HA",
+          "target": 6755948
+        },
+        {
+          "offset": 406,
+          "type": "DIR32",
+          "symbol": "?g_MusicDownAltAt006716B4@@3HA",
+          "target": 6756020
+        },
+        {
+          "offset": 457,
+          "type": "DIR32",
+          "symbol": "?g_TrackProgressAt006718F8@@3VMusicTrackStateF234@@A",
+          "target": 6756600
+        },
+        {
+          "offset": 462,
+          "type": "REL32",
+          "symbol": "?IsUnlocked@MusicTrackStateF234@@QAEEH@Z",
+          "target": 4287936
+        },
+        {
+          "offset": 487,
+          "type": "REL32",
+          "symbol": "?Choose@MusicRoomSelectionF234@@QAEXE@Z",
+          "target": 4352160
+        },
+        {
+          "offset": 514,
+          "type": "REL32",
+          "symbol": "?PlayMusic@MusicAudioF234@@YAXH@Z",
+          "target": 4299952
+        },
+        {
+          "offset": 536,
+          "type": "REL32",
+          "symbol": "?Transition@MusicAudioF234@@YAXHHHH@Z",
+          "target": 4226656
+        },
+        {
+          "offset": 555,
+          "type": "DIR32",
+          "symbol": "?g_MusicCancelAt00671670@@3HA",
+          "target": 6755952
+        },
+        {
+          "offset": 564,
+          "type": "DIR32",
+          "symbol": "?g_MusicCancelAltAt006716B8@@3HA",
+          "target": 6756024
+        },
+        {
+          "offset": 588,
+          "type": "DIR32",
+          "symbol": "?g_MusicInputAt00671638@@3VMusicInputF234@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 593,
+          "type": "REL32",
+          "symbol": "?IsKeyDown@MusicInputF234@@QAEEH@Z",
+          "target": 4223344
+        },
+        {
+          "offset": 619,
+          "type": "REL32",
+          "symbol": "?Transition@MusicAudioF234@@YAXHHHH@Z",
+          "target": 4226656
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -168424,6 +168635,7 @@
     "src/CharacterSelectAdvanceF229.cpp": "ce6f896d5b2d521691cae92be6bed32bb465e5cfe01a15c3316134ece4e2d841",
     "src/CharacterSelectOptionsF230.cpp": "73a55269ccba05c3db1b91ef040f1e062d31977eb1ba4a27f770050dceaff740",
     "src/CharacterSelectSubselectionF230.cpp": "06961f5d996f82659d3234e55ff1e8387490272bf1c7b982691b4e760f7e6f8e",
-    "src/ReplayScanF231.cpp": "be41f8c94abdfb4a776d85c64c7e762837c06bcc46eff65df1be80400b2d363f"
+    "src/ReplayScanF231.cpp": "be41f8c94abdfb4a776d85c64c7e762837c06bcc46eff65df1be80400b2d363f",
+    "src/MusicSelectF234.cpp": "9b9d142b2de7cfd3fa3d5a244c31db713a2bad0980275b05475ecef48baead07"
   }
 }

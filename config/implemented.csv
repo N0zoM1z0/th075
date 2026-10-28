@@ -546,3 +546,4 @@ CharacterSelectScene::Advance
 CharacterSelectScene::ProcessPlayerOptions
 CharacterSelectScene::ProcessSubselection
 ReplayBrowserScene::ScanFiles
+MusicRoomScene::UpdateSelection
