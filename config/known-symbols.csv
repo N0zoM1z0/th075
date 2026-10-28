@@ -628,3 +628,4 @@ address,name,module,confidence,evidence
 0x0041D260,DataArchive::Write,DataArchive,inferred,"F339; complete 686-byte R052 authored archive writer, 28 real COFF relocations native cold exact, original complete private owner/iterator layout unknown"
 0x0041D750,DataArchive::SeekNamedEntry,DataArchive,inferred,"F340; entire original 164-byte archive seek, 9 real COFF relocations, independently cold exact; private owner is borrowed"
 0x0041D080,ArchiveCatalog::CloseNamed,ArchiveCatalog,inferred,"F341; complete 264-byte native cdecl dual registry iterator cleanup, 19 true relocation fields cold exact; original owner unknown"
+0x0041D6C0,DataArchive::AppendReadableFileAt0041D6C0,DataArchive,inferred,"F342; entire 133-byte original archive file insertion, actual 108-byte wire record, seven true relocations cold exact; private owner not reconstructed"

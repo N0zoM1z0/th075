@@ -46759,3 +46759,48 @@ offset = 251
 type = "REL32"
 symbol = "??EResourceIteratorF341@@QAE?AU0@H@Z"
 target = 0x0041E020
+
+
+[units.data-archive-append-readable-file-0041d6c0]
+source = "src/ArchiveAppendFileF342.cpp"
+object = "build/matching/ArchiveAppendFileF342.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["DataArchive::AppendReadableFileAt0041D6C0"]
+symbol = "?AppendReadableFile@DataArchiveF342@@QAEXPBD@Z"
+target_address = 0x0041D6C0
+size = 133
+[[units.data-archive-append-readable-file-0041d6c0.relocations]]
+offset = 7
+type = "DIR32"
+symbol = "___security_cookie"
+target = 0x0066FE30
+[[units.data-archive-append-readable-file-0041d6c0.relocations]]
+offset = 41
+type = "DIR32"
+symbol = "__imp__CreateFileA@28"
+target = 0x00657130
+[[units.data-archive-append-readable-file-0041d6c0.relocations]]
+offset = 71
+type = "DIR32"
+symbol = "__imp__GetFileSize@8"
+target = 0x00657058
+[[units.data-archive-append-readable-file-0041d6c0.relocations]]
+offset = 87
+type = "REL32"
+symbol = "_strcpy"
+target = 0x00641B80
+[[units.data-archive-append-readable-file-0041d6c0.relocations]]
+offset = 100
+type = "DIR32"
+symbol = "__imp__CloseHandle@4"
+target = 0x00657138
+[[units.data-archive-append-readable-file-0041d6c0.relocations]]
+offset = 115
+type = "REL32"
+symbol = "?AddEntry@ArchiveEntryListF342@@QAEXABUArchiveWireEntryF342@@@Z"
+target = 0x0041D9C0
+[[units.data-archive-append-readable-file-0041d6c0.relocations]]
+offset = 123
+type = "REL32"
+symbol = "@__security_check_cookie@4"
+target = 0x00640611

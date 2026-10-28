@@ -4995,3 +4995,26 @@ and the full exact **264-byte** native function in a single-unit cold replay.
 External deque/CRT calls and compiler thunk bytes are not duplicated.
 Original private class/record names and complete layouts remain open. No
 assembly, masks, byte grafts, disassembly pasted as source, or full cold replay.
+
+
+## F342: complete native 133-byte archive readable file insertion
+
+The R179-authored `0041D6C0..0041D744` function has **133 bytes**, **44 native
+x86 instructions**, original PE SHA256
+`2972a34fbe5f525ed19797c45c09a0b4e7dddc185833d9f324fd3d370a45e2f6`.
+It opens the requested name with the original Win32 `CreateFileA` packet,
+returns early on `INVALID_HANDLE_VALUE`, then fills a genuine **108-byte**
+archive wire record. This record has `filename[100]`, `fileSize` at byte
+100, `fileOffset` at byte 104 initialized to zero. `GetFileSize` fills the
+size, `strcpy` fills the filename, `CloseHandle` releases the probe handle,
+and original `0041D9C0` `AddEntry` appends the copied wire record. The full
+native `/GS` security cookie and `__security_check_cookie` remain in code.
+
+`src/ArchiveAppendFileF342.cpp` models only the independently observed record
+and borrowed list caller ABI, not a complete archive owner class. The first
+complete natural VC7.1 `/Od /Ob0 /Gy /GR- /GX- /GS /Zi` probe reproduced
+all **105/105** comparable bytes and all **7** genuine original physical
+COFF fields/destinations. Independent cold replay of only
+`data-archive-append-readable-file-0041d6c0` returned **1/1 exact**. This
+supersedes the old 130-byte nonexact control in historical file policy
+notes; no target bytes/assembly, fake locals or partial-function credit.

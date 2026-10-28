@@ -645,3 +645,4 @@ DataArchive::OpenAndReadIndex
 DataArchive::Write
 DataArchive::SeekNamedEntry
 ArchiveCatalog::CloseNamed
+DataArchive::AppendReadableFileAt0041D6C0
