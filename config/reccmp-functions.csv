@@ -598,3 +598,4 @@ FighterState::LoadResources,0x00456B60,function
 FighterState::SetNoticeModeByteAt0045CD50,0x0045CD50,function
 CommandList::InitializeDefaultsAt00410F30,0x00410F30,function
 CharacterAuxObject::InitializeAt005FAB10,0x005FAB10,function
+FighterState::ReleaseResources,0x00456910,function

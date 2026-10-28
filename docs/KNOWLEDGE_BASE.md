@@ -3143,3 +3143,66 @@ base/child reset methods and all 97 pending-origin functions remain
 uncredited. No target bytes or assembly were inserted, no arbitrary
 source padding/masked relocation/truncated function or all-unit cold
 replay was used; local Git checkpoint is not an Oracle receipt.
+
+
+## F284: 588-byte FighterState resource destructor exactly reconstructs five physical member lifetimes
+
+The native R045-authored `FighterState::ReleaseResources` has the
+**complete** `00456910..00456B5B` PE-backed CODE extent (588 bytes,
+159 independently decoded x86 instructions, original plain RET at
+`00456B5B`) with original SHA256
+`bae6c2e827a51042738bfd0bc44fc5ba2b9b2af16fa0ad293a22c67085d4af50`.
+Read-only full native function/disassembly and actual original native
+receiver offsets are preserved at `.analysis/f281-fighter-resources/`;
+the complete first natural C++ source, whole COFF comparison and cold
+receipt are at `.analysis/f284-fighter-release/`, with adopted source
+`src/FighterReleaseResourcesF284.cpp`.
+
+The real destructor installs original FighterState vtable `00658FE8`
+and native EH handler `00656121`, allocates the exact 0x50 native
+cleanup frame and initializes original EH state 4. It uses an unsigned
+index and the **actual fighter+0x468 vector** with native size
+`004421E0`, element `At` `00458BC0`, null test, child preparation
+`00458B50`, subsequent actual scalar deleting destructor `00458690`,
+then calls the authentic vector clear `00458C20`. The physical fighter
+entry deque at +0x518 has separate native clear `00414530`. It deletes
+original individually owned pointers at fighter+0x480 (command-list
+scalar deleting destructor `00458710`), +0x2EC (special scalar deleting
+destructor `00458740`), and the real texture manager pointers +4,
++0x534, +0x700 (`00425460`) retaining native outer/inner null checks
+and *real* deletion return lifetimes.
+
+The original native EH cleanup sequence is **not hand-written** in
+source. True C++ member object destruction automatically invokes
+script owner at fighter+0x714 (`004204D0`), sound archive at +0x6D0
+(`00407270`), fighter deque at +0x518 (`004143B0`), input mapper at
++0x494 (`00406DF0`), then fighter actor vector at +0x468 (`00458BA0`).
+The pinned VC7.1 compiler naturally reproduces the original EH
+state updates **4 -> 3 -> 2 -> 1 -> 0 -> -1**. The physical
+carrier declarations put each genuine observed destructor-bearing
+subobject at its original address; unknown private bytes between
+those observed boundaries are not treated as known game state,
+nor are they passed as extra arguments, credited as CODE, or claimed
+to prove original parent class definitions. Their byte spans are
+**strictly grounded in actual original receiver offsets** rather
+than guessed unobserved subobject behavior. No artificial *stack*
+locals, compiler macros to force instruction bytes, masked fields or
+manual EH are used.
+
+The first complete natural C++ source for this independent original
+function, `src/FighterReleaseResourcesF284.cpp`, compiled with pinned
+VC7.1 `/Od /Ob0 /Gy /GR- /GX /GS /Zi` into **all 588 original
+CODE bytes**, **496/496 comparable nonrelocation bytes**, and
+**23/23 real physical COFF relocation offsets/types/native targets**
+without iterative fake-local tuning. Canonical affected unit
+`fighter-state-release-resources-00456910` was rebuilt cold by itself
+and reports **`exact; 588 coverage bytes`**. Previous F282 full
+1,186-byte initialization of these fighter resources and separately
+F283 accepted command-list ctor are independent, not double-counted.
+No original VC7 container runtime or child deleting-destructor body
+receives new authored credit from this call chain. All 97 unknown
+origins remain uncredited and the local Git checkpoint is not an
+external Oracle acceptance receipt. TH075's tracked exact totals
+reach **600 whole functions, 797,349 authored CODE bytes**, still
+only **40.40%** of the reviewed authored-code denominator. The 98%
+reconstruction goal remains unfinished.

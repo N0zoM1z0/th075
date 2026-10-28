@@ -43378,3 +43378,127 @@ offset = 103
 type = "REL32"
 symbol = "?Reset@EffectChildCtorF283@@QAEXXZ"
 target = 0x005FAC60
+
+[units.fighter-state-release-resources-00456910]
+source = "src/FighterReleaseResourcesF284.cpp"
+object = "build/matching/FighterReleaseResourcesF284.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["FighterState::ReleaseResources"]
+symbol = "??1FighterResourceReleaseF284@@UAE@XZ"
+target_address = 0x00456910
+size = 588
+[[units.fighter-state-release-resources-00456910.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??1FighterResourceReleaseF284@@UAE@XZ"
+target = 0x00656121
+[[units.fighter-state-release-resources-00456910.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.fighter-state-release-resources-00456910.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.fighter-state-release-resources-00456910.relocations]]
+offset = 35
+type = "DIR32"
+symbol = "??_7FighterResourceReleaseF284@@6B@"
+target = 0x00658FE8
+[[units.fighter-state-release-resources-00456910.relocations]]
+offset = 74
+type = "REL32"
+symbol = "?size@FighterVectorF284@@QBEIXZ"
+target = 0x004421E0
+[[units.fighter-state-release-resources-00456910.relocations]]
+offset = 97
+type = "REL32"
+symbol = "?At@FighterVectorF284@@QAEPAPAVFighterAuxChildF284@@I@Z"
+target = 0x00458BC0
+[[units.fighter-state-release-resources-00456910.relocations]]
+offset = 120
+type = "REL32"
+symbol = "?At@FighterVectorF284@@QAEPAPAVFighterAuxChildF284@@I@Z"
+target = 0x00458BC0
+[[units.fighter-state-release-resources-00456910.relocations]]
+offset = 127
+type = "REL32"
+symbol = "?ClearBeforeDelete@FighterAuxChildF284@@QAEXXZ"
+target = 0x00458B50
+[[units.fighter-state-release-resources-00456910.relocations]]
+offset = 145
+type = "REL32"
+symbol = "?At@FighterVectorF284@@QAEPAPAVFighterAuxChildF284@@I@Z"
+target = 0x00458BC0
+[[units.fighter-state-release-resources-00456910.relocations]]
+offset = 172
+type = "REL32"
+symbol = "??_GFighterAuxChildF284@@QAEPAXI@Z"
+target = 0x00458690
+[[units.fighter-state-release-resources-00456910.relocations]]
+offset = 203
+type = "REL32"
+symbol = "?Clear@FighterVectorF284@@QAEXXZ"
+target = 0x00458C20
+[[units.fighter-state-release-resources-00456910.relocations]]
+offset = 217
+type = "REL32"
+symbol = "?Clear@FighterDequeF284@@QAEXXZ"
+target = 0x00414530
+[[units.fighter-state-release-resources-00456910.relocations]]
+offset = 251
+type = "REL32"
+symbol = "??_GFighterCommandF284@@QAEPAXI@Z"
+target = 0x00458710
+[[units.fighter-state-release-resources-00456910.relocations]]
+offset = 297
+type = "REL32"
+symbol = "??_GFighterSpecialF284@@QAEPAXI@Z"
+target = 0x00458740
+[[units.fighter-state-release-resources-00456910.relocations]]
+offset = 349
+type = "REL32"
+symbol = "??_GFighterTextureF284@@QAEPAXI@Z"
+target = 0x00425460
+[[units.fighter-state-release-resources-00456910.relocations]]
+offset = 407
+type = "REL32"
+symbol = "??_GFighterTextureF284@@QAEPAXI@Z"
+target = 0x00425460
+[[units.fighter-state-release-resources-00456910.relocations]]
+offset = 465
+type = "REL32"
+symbol = "??_GFighterTextureF284@@QAEPAXI@Z"
+target = 0x00425460
+[[units.fighter-state-release-resources-00456910.relocations]]
+offset = 495
+type = "REL32"
+symbol = "??1FighterScriptF284@@QAE@XZ"
+target = 0x004204D0
+[[units.fighter-state-release-resources-00456910.relocations]]
+offset = 513
+type = "REL32"
+symbol = "??1FighterSoundF284@@QAE@XZ"
+target = 0x00407270
+[[units.fighter-state-release-resources-00456910.relocations]]
+offset = 531
+type = "REL32"
+symbol = "??1FighterDequeF284@@QAE@XZ"
+target = 0x004143B0
+[[units.fighter-state-release-resources-00456910.relocations]]
+offset = 549
+type = "REL32"
+symbol = "??1FighterInputF284@@QAE@XZ"
+target = 0x00406DF0
+[[units.fighter-state-release-resources-00456910.relocations]]
+offset = 570
+type = "REL32"
+symbol = "??1FighterVectorF284@@QAE@XZ"
+target = 0x00458BA0
+[[units.fighter-state-release-resources-00456910.relocations]]
+offset = 580
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
