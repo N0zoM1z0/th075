@@ -611,3 +611,5 @@ FontSurface::ReleaseRasterResourcesAt0041C130,0x0041C130,function
 Effects::LoadPatternCatalogAt005F71F0,0x005F71F0,function
 BattleObject::InitializeDefaultsAt0045B760,0x0045B760,function
 FighterState::AdvanceNoticeLevelsAt0045D710,0x0045D710,function
+BattleInput::PackDirectionBits,0x00455B30,function
+StaticBattleResources::ReleaseOwnedEntriesAt005F6FF0,0x005F6FF0,function

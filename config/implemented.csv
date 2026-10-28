@@ -610,3 +610,5 @@ FontSurface::ReleaseRasterResourcesAt0041C130
 Effects::LoadPatternCatalogAt005F71F0
 BattleObject::InitializeDefaultsAt0045B760
 FighterState::AdvanceNoticeLevelsAt0045D710
+BattleInput::PackDirectionBits
+StaticBattleResources::ReleaseOwnedEntriesAt005F6FF0

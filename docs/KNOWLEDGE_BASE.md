@@ -3782,3 +3782,107 @@ class identity/layout, library/CRT implementations and all 97 unknown
 origins remain uncredited. No artificial code, byte graft, assembly,
 relocation mask, truncated function, all-unit cold replay or remote
 Oracle receipt.
+
+
+## F303: exact 260-byte battle direction/button input packer
+
+Original R054-authored `BattleInput::PackDirectionBits` is the entire
+original native PE extent `00455B30..00455C33` (**260 CODE bytes**,
+**79 independent original x86 instructions**, authentic RET at
+`00455C33`); pinned Japanese PE body SHA256
+`810198e55fb195f65720b36989c66a223a3acc69da1d6ee66d6773f042eafa76`.
+Read-only original function/decompiler/native assembly, initial 253-byte
+full C++ control probe, positive alternative expression controls and
+COFF/cold proof remain under `.analysis/f303-battle-input/`; final
+whole-function source is `src/BattleInputPackDirectionF303.cpp`.
+
+The actual fighter native signed 32-bit direction axes at +`0x4DC`
+and +`0x4E0` generate the low four bits using signed `<0` and `>0`
+conditions. Four real unsigned 32-bit button fields at +`0x4E8`,
++`0x4EC`, +`0x4F0`, +`0x4F4` generate the other four bits, using
+original unsigned `>0` conditions. All eight actual original native
+`SETL`/`SETG`/`SETA`, `MOVZX`/`SHL` and successive per-byte `OR`
+instructions are reproduced. The byte local is physically EBP-`0x1D`;
+exactly the original next 28 stack bytes are cleared through the
+authentic C runtime `memset` call (not fabricated scratch padding).
+The complete code then passes the real native argument `90` and a pointer
+to that actual packed byte into the game command queue at fighter
++`0x518` through original `00455C40`. Its class interior is borrowed
+only as that physically observed call boundary.
+
+A first natural C++ with implicit integer promotions for seven boolean
+bit-shift expressions generated **253 bytes**, replacing the native
+byte-sized `SETcc -> MOVZX` with different `XOR`/`SBB` or zero-init
+lowering. Explicitly converting each genuine comparison to
+`unsigned char` before left-shift reproduces the entire **260 bytes**,
+**252/252** nonrelocation byte positions and **2/2 authentic native
+physical COFF fields**, at offsets +`0xE5` (real `memset` target
+`00640490`) and +`0xFC` (real game queue call `00455C40`). Pinned
+VC7.1 `/Od /Ob0 /Gy /GR- /GX- /GS /Zi` rebuilt only canonical
+`battle-input-pack-direction-bits-00455b30` as **one affected cold
+unit**, reporting `exact; 260 coverage bytes`. No original queue
+implementation, unknown private fighter layout, CRT, 97 pending
+origins or nonnative padding is credited. Local Git commit is not
+remote Oracle verification; no all-unit replay or source byte graft.
+
+### F302 large font rasterizer and F298 effect-list negative controls
+
+The complete 1,766-byte/551-original-instruction `FontSurface::RasterizeText`
+giant at `0041C2E0` has been reexamined, not dismissed. Reconstructed
+real 4-byte color and 2-byte pixel paths, signed font spacing, actual
+embedded `\c`, `\e`, `\n` byte controls and native Win32/CRT
+behavior in `.analysis/f299-font-raster/`. The best whole-function
+source emits exactly **1,766 bytes and 551 x86 instructions** with
+**15 genuine native COFF relocations**, but only **1,626/1,706**
+nonfield bytes match. Multiple ordinary source field-local grouping
+and source-order hypotheses in `.analysis/f302-font-lifetimes/`
+improve to **1,647/1,706** but do not solve all stack slots.
+The two-side 276-byte `AuxEffectManager::AdvanceAndPruneTwoLists`
+function at `005F7D80` also compiles its entire original 276 bytes
+and authentic 10 native fields but currently matches **233/236**
+nonfield bytes; the final three are original `End()` iterator return
+and actual freed-object pointer lifetimes. Do not credit either incomplete
+function, introduce artificial fields, or claim external Oracle success.
+
+
+## F304: 235-byte native Effects resource destructor cold-exact
+
+The R177-authored static Effects catalogue/resource release routine at
+`005F6FF0..005F70DA` is one **whole 235-byte PE CODE function**,
+**70 original decoded x86 instructions**, authentic RET at `005F70DA`,
+full PE body SHA256
+`1f53e7d10f210480c80997e41e95e0e5a4d2e34c6bdc86684da27fcb1857a17c`.
+Physical source and native call evidence are retained at
+`.analysis/f304-static-resources/` with canonical adopted file
+`src/StaticEffectReleaseF304.cpp`. The source only models borrowed
+physical actual game receiver offsets and real member destruction;
+it does not claim a recovered complete original private class layout.
+
+This native destructor calls original `005F7140` graphics cleanup,
+walks the true effect collection at owner+0x78 with actual unsigned
+`Size` `005F8340` and **two** original `At` `005F8380` calls per
+non-null entry, invokes authentic scalar deleting destructor
+`005F7EA0`, and finally calls native collection Clear `005F83E0`.
+Pinned VC7.1 naturally emits **the original EH handler `0065665C`**,
+0x14 frame, and states **2,1,0,-1**. In actual reverse physical
+member-lifetime order it destroys collection +0x78 through
+`005F8320`, native 80-byte texture at +0x28 through `0040AE40`, and
+**exactly two** original 20-byte side-list members at owner+0
+through the authentic native vector destructor iterator `00641D4A`
+with callback `005F8090`. The physical 20- and 80-byte carriers are
+anchored in original receiver/allocation boundaries, not padded to
+force an instruction sequence or credited as authored CODE.
+
+The **first complete grounded natural C++ source** compiled all
+235 original bytes and **179/179** nonfield bytes exactly under pinned
+VC7.1 `/Od /Ob0 /Gy /GR- /GX /GS /Zi`, with **all 14/14 physical
+COFF DIR32/REL32 fields** exactly matching original offsets, types
+and native solved targets, including the actual EH/exception-list
+fields. The canonical unit
+`static-battle-resources-release-owned-005f6ff0` was rebuilt **cold
+only alongside new F303**, reporting `2/2 exact` across two source
+objects, never an all-unit cold replay. Existing F294 effect catalogue
+loader and original F293 wrapper or effect-child code receive no
+additional CODE credit from a call; 97 origin-pending functions and
+VC7 runtime helpers remain uncredited. Original private class names
+remain provisional, and local Git is not remote Oracle verification.

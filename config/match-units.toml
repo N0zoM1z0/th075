@@ -44807,3 +44807,101 @@ symbol = "?AdvanceNoticeLevels@FighterNoticeF300@@QAEXXZ"
 target_address = 0x0045D710
 size = 247
 relocations = []
+
+[units.battle-input-pack-direction-bits-00455b30]
+source = "src/BattleInputPackDirectionF303.cpp"
+object = "build/matching/BattleInputPackDirectionF303.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BattleInput::PackDirectionBits"]
+symbol = "?PackDirectionBits@FighterInputF303@@QAEXXZ"
+target_address = 0x00455B30
+size = 260
+[[units.battle-input-pack-direction-bits-00455b30.relocations]]
+offset = 229
+type = "REL32"
+symbol = "_memset"
+target = 0x00640490
+[[units.battle-input-pack-direction-bits-00455b30.relocations]]
+offset = 252
+type = "REL32"
+symbol = "?Queue@FighterCommandQueueF303@@QAEXHPBE@Z"
+target = 0x00455C40
+
+[units.static-battle-resources-release-owned-005f6ff0]
+source = "src/StaticEffectReleaseF304.cpp"
+object = "build/matching/StaticEffectReleaseF304.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["StaticBattleResources::ReleaseOwnedEntriesAt005F6FF0"]
+symbol = "??1EffectCatalogF304@@QAE@XZ"
+target_address = 0x005F6FF0
+size = 235
+[[units.static-battle-resources-release-owned-005f6ff0.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??1EffectCatalogF304@@QAE@XZ"
+target = 0x0065665C
+[[units.static-battle-resources-release-owned-005f6ff0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.static-battle-resources-release-owned-005f6ff0.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.static-battle-resources-release-owned-005f6ff0.relocations]]
+offset = 41
+type = "REL32"
+symbol = "?CleanupGraphics@EffectCatalogF304@@QAEXXZ"
+target = 0x005F7140
+[[units.static-battle-resources-release-owned-005f6ff0.relocations]]
+offset = 70
+type = "REL32"
+symbol = "?Size@EffectRecordListF304@@QAEIXZ"
+target = 0x005F8340
+[[units.static-battle-resources-release-owned-005f6ff0.relocations]]
+offset = 90
+type = "REL32"
+symbol = "?At@EffectRecordListF304@@QAEPAPAXI@Z"
+target = 0x005F8380
+[[units.static-battle-resources-release-owned-005f6ff0.relocations]]
+offset = 110
+type = "REL32"
+symbol = "?At@EffectRecordListF304@@QAEPAPAXI@Z"
+target = 0x005F8380
+[[units.static-battle-resources-release-owned-005f6ff0.relocations]]
+offset = 137
+type = "REL32"
+symbol = "??_GEffectRecordF304@@QAEPAXI@Z"
+target = 0x005F7EA0
+[[units.static-battle-resources-release-owned-005f6ff0.relocations]]
+offset = 162
+type = "REL32"
+symbol = "?Clear@EffectRecordListF304@@QAEXXZ"
+target = 0x005F83E0
+[[units.static-battle-resources-release-owned-005f6ff0.relocations]]
+offset = 177
+type = "REL32"
+symbol = "??1EffectRecordListF304@@QAE@XZ"
+target = 0x005F8320
+[[units.static-battle-resources-release-owned-005f6ff0.relocations]]
+offset = 192
+type = "REL32"
+symbol = "??1ResourceTextureF304@@QAE@XZ"
+target = 0x0040AE40
+[[units.static-battle-resources-release-owned-005f6ff0.relocations]]
+offset = 204
+type = "DIR32"
+symbol = "??1ResourceSideEffectsF304@@QAE@XZ"
+target = 0x005F8090
+[[units.static-battle-resources-release-owned-005f6ff0.relocations]]
+offset = 217
+type = "REL32"
+symbol = "??_M@YGXPAXIHP6EX0@Z@Z"
+target = 0x00641D4A
+[[units.static-battle-resources-release-owned-005f6ff0.relocations]]
+offset = 227
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
