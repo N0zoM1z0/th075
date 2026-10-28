@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377; F378; F379; F386; F389; F391; F392; F393; F394; F395; F403; F407; F414; F415; F421; F422; F427; F428; F429; F430; F431; F432; F435; F437; F440; F445; F446; F447; F448; F454; F458; F459; F460; F461; F463; F465; F467; F468; F469; F474; F479; F481; F484; F485; F488; F489; F490-F492",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377; F378; F379; F386; F389; F391; F392; F393; F394; F395; F403; F407; F414; F415; F421; F422; F427; F428; F429; F430; F431; F432; F435; F437; F440; F445; F446; F447; F448; F454; F458; F459; F460; F461; F463; F465; F467; F468; F469; F474; F479; F481; F484; F485; F488; F489; F490-F492; F494",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "0b7dd7e11887a751296fb2a04ac7160716716055823c72086dd8901562015fe5"
+      "current_sha256": "bef6a947f5390adec38d6009ec04c101bac8d8ea0baf96e0960b69db2b758f52"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "0b21e5a3f675bc04aa3fa5391bbe0059d7ce3836c3daf9aaf5390a3b35a0ff67"
+      "current_sha256": "c2515acbbe9e9a0dd6d426953453b78de17f758cb4ad49930779ef5d00337111"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "43b581a6b37f7078d59a4255a6a738b3bef6c445ae2cb4e98538e33a5df6e742"
+      "current_sha256": "2b00294b91105e5402643084524b50980454dfe813c4c6cda6f18795f1751d4f"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "3ea634fbf33996afcd9b5d87ac15eb01630431a9df169de46d8c16426d88e7f6"
+      "current_sha256": "65e2c487f8aa451e5165f5c409360c0cc21d877751ca3e4b0e0927316c8538af"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "a71240c6ec5086b66b3875475d1ae62d6f83ee5d33f3763c592bcc64633959c8"
+      "current_sha256": "aee955b68f7ca1842dea82c90fafc9cf46592bfe377f0a53cbec4695f2ee7da4"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -34404,6 +34404,50 @@
         "disposition": "authored",
         "confidence": "complete-explicit-resource-policy-and-whole-lifetime-controls",
         "evidence_id": "R175"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0041C060",
+        "size": "99",
+        "span_end": "0x0041C0C2",
+        "current_name": "FUN_0041c060",
+        "proposed_name": "TextRasterizer::CreateFontAt0041C060",
+        "module": "TextRasterizer",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit"
+      },
+      "after": {
+        "address": "0x0041C060",
+        "size": "99",
+        "span_end": "0x0041C0C2",
+        "current_name": "FUN_0041c060",
+        "proposed_name": "TextRasterizer::CreateFontAt0041C060",
+        "module": "TextRasterizer",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void TextRasterizerF494::CreateFont(const char*,int,unsigned char,unsigned char,unsigned char)",
+        "is_thunk": "false",
+        "source_file": "src/TextRasterizerCreateFontF494.cpp",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103; F494; scripts/repo-python scripts/replay-exact-units.py --unit text-rasterizer-create-font-0041c060",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit; F494 complete independently original R103 authored native 99-byte TextRasterizer::CreateFontAt0041C060 at 0041C060..0041C0C2, 38 original x86 instructions, original PE SHA256 7787306d92a91e07f5c22dcb0bd14abd54b60853e61fbf0a80f6fc49531dc9c7. Actual native game thiscall CreateFont(const char* face,int height,unsigned char optA,unsigned char optB,unsigned char optC) stores actual int height into receiver+0x10, real low-byte font option fields +0x28,+0x29,+0x2A, then invokes Win32 CreateFontA with full 14 original parameters height, width0, escapement0, orientation0, weight400, italic0, underline0, strikeout0, charset0x80, outputprecision4, clipprecision0, quality2, pitchfamily0x31, actual face name; stores resulting HFONT to receiver+8. Correctly undefines Windows CreateFont macro so it cannot rewrite the original game member name and resolves imported ::CreateFontA explicitly. Entire 99 original CODE bytes, 95/95 nonrelocation bytes and one genuine DIR32 original physical COFF field at offset0x53 to native IAT 00657044; affected-only one-unit cold replay 1/1 exact. Real owner unused fields untyped, Win32 GDI implementation not credited, no original-byte graft, assembly, fake locals, masks, cropped original, full cold replay or external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x0041C060",
+        "origin": "authored",
+        "subsystem": "TextRasterizer",
+        "disposition": "authored",
+        "confidence": "complete-game-policy-with-batch-context",
+        "evidence_id": "R103"
       }
     }
   ],
@@ -209039,6 +209083,34 @@
           "target": 0
         }
       ]
+    },
+    "text-rasterizer-create-font-0041c060": {
+      "source": "src/TextRasterizerCreateFontF494.cpp",
+      "object": "build/matching/TextRasterizerCreateFontF494.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "TextRasterizer::CreateFontAt0041C060"
+      ],
+      "symbol": "?CreateFont@TextRasterizerF494@@QAEXPBDHEEE@Z",
+      "target_address": 4309088,
+      "size": 99,
+      "relocations": [
+        {
+          "offset": 83,
+          "type": "DIR32",
+          "symbol": "__imp__CreateFontA@56",
+          "target": 6647876
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -209527,6 +209599,7 @@
     "src/WindowResourceTextureInitializeF489.cpp": "5200eafbfb5605864271826da04f8bb43e0112a81404f477466939f93c833d75",
     "src/CharacterOwnedResourceDestructorF492.cpp": "f4ab5a56ace7e3610010ed83e9b3bd46b685085d97b408b1a2a96f96cadd2353",
     "src/CardListClearEntriesF490.cpp": "dadef683a94606d57e9045f8dcb443a6b9241144de87ec58a9ac394f9845892a",
-    "src/FighterSharedResourceDestructorsF491.cpp": "d66355ea188ec29574582b4726fb3afff1f092f2bd8b2e704fc080ad833287ab"
+    "src/FighterSharedResourceDestructorsF491.cpp": "d66355ea188ec29574582b4726fb3afff1f092f2bd8b2e704fc080ad833287ab",
+    "src/TextRasterizerCreateFontF494.cpp": "d0351008651c27f1459dc3584a6f41b0a681962f0e8e50afdb46b34728b9bd6f"
   }
 }

@@ -822,3 +822,4 @@ address,name,module,confidence,evidence
 0x004204D0,FighterResources::ClearMemberBeforeDestructionAt004204D0,FighterResources,inferred,"F490-F492; complete original 84-byte native resource/record lifetime, 6 real physical COFF fields, affected-only 4/4 cold exact"
 0x00412E50,SharedResource::ReleaseInterfaceAndTexturesAt00412E50,ResourceReleasePolicy,inferred,"F490-F492; complete original 83-byte native resource/record lifetime, 5 real physical COFF fields, affected-only 4/4 cold exact"
 0x0052D020,CharacterResource::ClearEntriesAndReleaseBaseAt0052D020,ResourceReleasePolicy,inferred,"F490-F492; complete original 105-byte native resource/record lifetime, 8 real physical COFF fields, affected-only 4/4 cold exact"
+0x0041C060,TextRasterizer::CreateFontAt0041C060,TextRasterizer,inferred,"F494; complete original 99-byte Win32 CreateFontA 14-parameter game font wrapper and actual options, one PE-backed IAT DIR32 physical ref cold exact"

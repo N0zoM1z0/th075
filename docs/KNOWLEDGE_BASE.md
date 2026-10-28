@@ -7884,3 +7884,35 @@ structural match of any reconstructed source**. No CODE coverage is
 credited for the 60,999 bytes or any of the 1,090 DATA bytes, no jump
 table is pasted into source, no fake stubs, and no all-unit cold replay
 was run.
+
+
+## F494: full native 99-byte original Win32 CreateFontA rasterizer wrapper
+
+Independently reviewed original R103
+`TextRasterizer::CreateFontAt0041C060` at `0041C060..0041C0C2`
+contains **99 complete authored CODE bytes, 38 original x86 instructions**,
+original Japanese PE SHA256
+`7787306d92a91e07f5c22dcb0bd14abd54b60853e61fbf0a80f6fc49531dc9c7`.
+The real source class saves the caller height DWORD at owner+0x10 and
+three actual individual low-byte style/option fields at owner+0x28,
++0x29 and +0x2A. It then passes the caller face name and original
+14-argument Win32 font configuration to true imported CreateFontA:
+`(height,0,0,0,400,0,0,0,0x80,4,0,2,0x31,faceName)`, and stores
+returned HFONT at real owner+8. Those are all physical original
+parameter/order facts, not an inferred full original Rasterizer layout.
+
+The C++ member itself has the real name `TextRasterizer::CreateFont`,
+which conflicts with Windows `#define CreateFont CreateFontA`. An initial
+original-like source compiled with the wrong macro-expanded member name
+and failed at the 14-argument call. The correct `#undef CreateFont`
+*after* including `windows.h`, and explicit `::CreateFontA(...)`,
+restores a natural complete C++ implementation under pinned VC7.1
+`/Od /Ob0 /Gy /GR- /GX- /Zi`, matching the entire **99 native CODE
+bytes**, **95/95 original nonrelocation bytes** and its sole genuine
+physical COFF DIR32 reference at native offset+0x53 to original Win32
+IAT address `00657044`. Only affected
+`--unit text-rasterizer-create-font-0041c060` was cold rebuilt and
+replayed **1/1 exact**. No Win32/GDI implementation code or full
+original private class members credited, no padding, asm, copied
+native bytes, masks, truncated function, full-project replay or
+external Oracle acceptance.

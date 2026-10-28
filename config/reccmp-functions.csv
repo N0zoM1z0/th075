@@ -840,3 +840,4 @@ CardList::ClearEntriesAt00431940,0x00431940,function
 FighterResources::ClearMemberBeforeDestructionAt004204D0,0x004204D0,function
 SharedResource::ReleaseInterfaceAndTexturesAt00412E50,0x00412E50,function
 CharacterResource::ClearEntriesAndReleaseBaseAt0052D020,0x0052D020,function
+TextRasterizer::CreateFontAt0041C060,0x0041C060,function

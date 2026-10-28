@@ -59102,3 +59102,18 @@ offset = 97
 type = "DIR32"
 symbol = "__except_list"
 target = 0x00000000
+
+
+[units.text-rasterizer-create-font-0041c060]
+source = "src/TextRasterizerCreateFontF494.cpp"
+object = "build/matching/TextRasterizerCreateFontF494.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["TextRasterizer::CreateFontAt0041C060"]
+symbol = "?CreateFont@TextRasterizerF494@@QAEXPBDHEEE@Z"
+target_address = 0x0041C060
+size = 99
+[[units.text-rasterizer-create-font-0041c060.relocations]]
+offset = 83
+type = "DIR32"
+symbol = "__imp__CreateFontA@56"
+target = 0x00657044
