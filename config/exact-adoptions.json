@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "561f3d79893fa86eb2f37cc944c03e3dbb47274bb7784d7e8c280d903170349d"
+      "current_sha256": "50bf9401114464f88f51b6a3be3a0e07342176239a259c9dd596eb96d40bff89"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "393c6e8a4305640831ef8d787dcaaf2b931da9bb6ae38a63078a8c20f158b367"
+      "current_sha256": "38cf6c797d20587bdb9fa566266e5f6cc960d4daeb12e82b37a4bbb9eb595142"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "e178f4255bf44c27c8e84614743e3e58c1266313f34073a784a21cb1b8545112"
+      "current_sha256": "9caf7616bd6b5c8c153203deb77dd211728a7a0d6154c0e342901de8ad93ceb6"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "05a91c00ad3a723a113f79654841a0ddbd43d8404ed6550853555c4517e87850"
+      "current_sha256": "10fddc4f027dfcb14e27324b02a091ff17b0f1e044aea2fa59bb73320f532650"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "ca5412b6c6ebba67f4bbdada4b8fc15497cd4f8c1c357f6b6779ff880ece68e6"
+      "current_sha256": "88328a0b29429ab6b8562149f44a0d370df3eb21d364d5cad1fb4201e1895509"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -23932,6 +23932,50 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R045"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00424E00",
+        "size": "308",
+        "span_end": "0x00424F33",
+        "current_name": "FUN_00424e00",
+        "proposed_name": "BattleEndScene::Initialize",
+        "module": "BattleEndScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R053; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00424E00",
+        "size": "308",
+        "span_end": "0x00424F33",
+        "current_name": "FUN_00424e00",
+        "proposed_name": "BattleEndScene::Initialize",
+        "module": "BattleEndScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BattleEndInitF288::BattleEndInitF288()",
+        "is_thunk": "false",
+        "source_file": "src/BattleEndInitF288.cpp",
+        "evidence": "R053; full body hash, complete decoded CFG and local game-specific behavior reviewed; F288; scripts/repo-python scripts/replay-exact-units.py --unit battle-end-scene-initialize-00424e00",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F288: full R053-authored 308 original native CODE bytes /73 independently decoded x86 instructions, real RET 00424F33, full original PE SHA256 4680497f7bf07f1e6e75d282ee5a75994ca784cb795238c5efb4a4519aa93780. First complete native-faithful pinned VC7.1 /Od /GX source cold-exact all 172/172 comparable positions and 34/34 authentic COFF fields including actual EH handler 00655718 and game vtable 00657B7C. Native base scene constructor 004251C0 retains R108 unknown-origin and no independent authored credit; original font renderer global 0067143C draws real 35.0f/360.0f header with one flag at 00413420 and original title at 00657B7B through 00413460. It clears fighter actor +0x6EE, fetches native stage byte from actor+0x713 into global 0067161E, invokes genuine virtual slot +0x3C on actor 00671418, calls separately F286-cold-exact FighterState::LoadStageResource 004584D0 and branches for stage 8, 9 or other. Original 8 and 9 paths write status 0 to 006714CE and call real profile selection 00416CE0 on 006718F8 with original signed fighter selector 006714C8 plus 0 or 20. Else path writes status -1, invokes original 00425130 reset and selects fighter+40. All actual native signed-char promotion, call ordering, 2-byte short branch displacements, original full C++ EH base lifetime and source floats reproduced on first complete natural probe. The borrowed scene/font/fighter interfaces represent only observed call ABIs, not complete private nominal class layouts; no credited bytes for dependent game/CRT/unknown-origin functions, 97 pending origins remain uncredited. No fake member behavior, assembly, target-byte copying, masked relocations, cropped function, full cold replay or external Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x00424E00",
+        "origin": "authored",
+        "subsystem": "BattleEndScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R053"
       }
     }
   ],
@@ -177608,6 +177652,233 @@
           "target": 0
         }
       ]
+    },
+    "battle-end-scene-initialize-00424e00": {
+      "source": "src/BattleEndInitF288.cpp",
+      "object": "build/matching/BattleEndInitF288.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattleEndScene::Initialize"
+      ],
+      "symbol": "??0BattleEndInitF288@@QAE@XZ",
+      "target_address": 4345344,
+      "size": 308,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??0BattleEndInitF288@@QAE@XZ",
+          "target": 6641432
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 32,
+          "type": "REL32",
+          "symbol": "??0SceneBaseF288@@QAE@XZ",
+          "target": 4346304
+        },
+        {
+          "offset": 48,
+          "type": "DIR32",
+          "symbol": "??_7BattleEndInitF288@@6B@",
+          "target": 6650748
+        },
+        {
+          "offset": 66,
+          "type": "DIR32",
+          "symbol": "?g_FontAt0067143C@@3PAVNativeFontRendererF288@@A",
+          "target": 6755388
+        },
+        {
+          "offset": 71,
+          "type": "REL32",
+          "symbol": "?Configure@NativeFontRendererF288@@QAEXMMH@Z",
+          "target": 4273184
+        },
+        {
+          "offset": 91,
+          "type": "DIR32",
+          "symbol": "?g_EndTitleAt00657B7B@@3QBDB",
+          "target": 6650747
+        },
+        {
+          "offset": 97,
+          "type": "DIR32",
+          "symbol": "?g_FontAt0067143C@@3PAVNativeFontRendererF288@@A",
+          "target": 6755388
+        },
+        {
+          "offset": 102,
+          "type": "REL32",
+          "symbol": "?DrawTextA@NativeFontRendererF288@@QAEXPBDHHHHHH@Z",
+          "target": 4273248
+        },
+        {
+          "offset": 108,
+          "type": "DIR32",
+          "symbol": "?g_FighterAt00671418@@3PAVFighterActorF288@@A",
+          "target": 6755352
+        },
+        {
+          "offset": 121,
+          "type": "DIR32",
+          "symbol": "?g_FighterAt00671418@@3PAVFighterActorF288@@A",
+          "target": 6755352
+        },
+        {
+          "offset": 132,
+          "type": "DIR32",
+          "symbol": "?g_StageAt0067161E@@3CA",
+          "target": 6755870
+        },
+        {
+          "offset": 138,
+          "type": "DIR32",
+          "symbol": "?g_FighterAt00671418@@3PAVFighterActorF288@@A",
+          "target": 6755352
+        },
+        {
+          "offset": 146,
+          "type": "DIR32",
+          "symbol": "?g_FighterAt00671418@@3PAVFighterActorF288@@A",
+          "target": 6755352
+        },
+        {
+          "offset": 155,
+          "type": "DIR32",
+          "symbol": "?g_FighterAt00671418@@3PAVFighterActorF288@@A",
+          "target": 6755352
+        },
+        {
+          "offset": 160,
+          "type": "REL32",
+          "symbol": "?LoadStageResource@FighterActorF288@@QAEXXZ",
+          "target": 4555984
+        },
+        {
+          "offset": 167,
+          "type": "DIR32",
+          "symbol": "?g_StageAt0067161E@@3CA",
+          "target": 6755870
+        },
+        {
+          "offset": 178,
+          "type": "DIR32",
+          "symbol": "?g_StatusAt006714CE@@3EA",
+          "target": 6755534
+        },
+        {
+          "offset": 187,
+          "type": "DIR32",
+          "symbol": "?g_CharacterAt006714C8@@3CA",
+          "target": 6755528
+        },
+        {
+          "offset": 193,
+          "type": "DIR32",
+          "symbol": "?g_ProgressAt006718F8@@3VProgressTableF288@@A",
+          "target": 6756600
+        },
+        {
+          "offset": 198,
+          "type": "REL32",
+          "symbol": "?SelectRecord@ProgressTableF288@@QAEXF@Z",
+          "target": 4287712
+        },
+        {
+          "offset": 207,
+          "type": "DIR32",
+          "symbol": "?g_StageAt0067161E@@3CA",
+          "target": 6755870
+        },
+        {
+          "offset": 218,
+          "type": "DIR32",
+          "symbol": "?g_StatusAt006714CE@@3EA",
+          "target": 6755534
+        },
+        {
+          "offset": 226,
+          "type": "DIR32",
+          "symbol": "?g_CharacterAt006714C8@@3CA",
+          "target": 6755528
+        },
+        {
+          "offset": 235,
+          "type": "DIR32",
+          "symbol": "?g_ProgressAt006718F8@@3VProgressTableF288@@A",
+          "target": 6756600
+        },
+        {
+          "offset": 240,
+          "type": "REL32",
+          "symbol": "?SelectRecord@ProgressTableF288@@QAEXF@Z",
+          "target": 4287712
+        },
+        {
+          "offset": 248,
+          "type": "DIR32",
+          "symbol": "?g_StatusAt006714CE@@3EA",
+          "target": 6755534
+        },
+        {
+          "offset": 254,
+          "type": "DIR32",
+          "symbol": "?g_ProgressAt006718F8@@3VProgressTableF288@@A",
+          "target": 6756600
+        },
+        {
+          "offset": 259,
+          "type": "REL32",
+          "symbol": "?ResetCurrent@ProgressTableF288@@QAEXXZ",
+          "target": 4346160
+        },
+        {
+          "offset": 266,
+          "type": "DIR32",
+          "symbol": "?g_CharacterAt006714C8@@3CA",
+          "target": 6755528
+        },
+        {
+          "offset": 275,
+          "type": "DIR32",
+          "symbol": "?g_ProgressAt006718F8@@3VProgressTableF288@@A",
+          "target": 6756600
+        },
+        {
+          "offset": 280,
+          "type": "REL32",
+          "symbol": "?SelectRecord@ProgressTableF288@@QAEXF@Z",
+          "target": 4287712
+        },
+        {
+          "offset": 300,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -177984,6 +178255,7 @@
     "src/FighterReleaseResourcesF284.cpp": "739e04d91affc8ea3b2fbfe33a6a3ce0598b4b6a68643bd44a0650abf953698b",
     "src/EffectSpawnF285.cpp": "cfdbfcca829528b4b5bf79d2a5e6222660d51f0c822a71ff6e406c8e87085224",
     "src/FighterStageResourceF286.cpp": "4800489b9832cff455bf6d86de64b2b95a90d7b6968517d20db8250c18856e46",
-    "src/FighterInitializeF287.cpp": "dada3c895cfdbbde3af53074192e1c14985470e956edbd6743990bf7458ec5c2"
+    "src/FighterInitializeF287.cpp": "dada3c895cfdbbde3af53074192e1c14985470e956edbd6743990bf7458ec5c2",
+    "src/BattleEndInitF288.cpp": "fa77e5db010f5de26aa3b06bc75019a57f9aadea3c3810448b68eed8ce353005"
   }
 }

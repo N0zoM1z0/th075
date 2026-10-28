@@ -43804,3 +43804,182 @@ offset = 337
 type = "DIR32"
 symbol = "__except_list"
 target = 0x00000000
+
+[units.battle-end-scene-initialize-00424e00]
+source = "src/BattleEndInitF288.cpp"
+object = "build/matching/BattleEndInitF288.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["BattleEndScene::Initialize"]
+symbol = "??0BattleEndInitF288@@QAE@XZ"
+target_address = 0x00424E00
+size = 308
+[[units.battle-end-scene-initialize-00424e00.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0BattleEndInitF288@@QAE@XZ"
+target = 0x00655718
+[[units.battle-end-scene-initialize-00424e00.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.battle-end-scene-initialize-00424e00.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.battle-end-scene-initialize-00424e00.relocations]]
+offset = 32
+type = "REL32"
+symbol = "??0SceneBaseF288@@QAE@XZ"
+target = 0x004251C0
+[[units.battle-end-scene-initialize-00424e00.relocations]]
+offset = 48
+type = "DIR32"
+symbol = "??_7BattleEndInitF288@@6B@"
+target = 0x00657B7C
+[[units.battle-end-scene-initialize-00424e00.relocations]]
+offset = 66
+type = "DIR32"
+symbol = "?g_FontAt0067143C@@3PAVNativeFontRendererF288@@A"
+target = 0x0067143C
+[[units.battle-end-scene-initialize-00424e00.relocations]]
+offset = 71
+type = "REL32"
+symbol = "?Configure@NativeFontRendererF288@@QAEXMMH@Z"
+target = 0x00413420
+[[units.battle-end-scene-initialize-00424e00.relocations]]
+offset = 91
+type = "DIR32"
+symbol = "?g_EndTitleAt00657B7B@@3QBDB"
+target = 0x00657B7B
+[[units.battle-end-scene-initialize-00424e00.relocations]]
+offset = 97
+type = "DIR32"
+symbol = "?g_FontAt0067143C@@3PAVNativeFontRendererF288@@A"
+target = 0x0067143C
+[[units.battle-end-scene-initialize-00424e00.relocations]]
+offset = 102
+type = "REL32"
+symbol = "?DrawTextA@NativeFontRendererF288@@QAEXPBDHHHHHH@Z"
+target = 0x00413460
+[[units.battle-end-scene-initialize-00424e00.relocations]]
+offset = 108
+type = "DIR32"
+symbol = "?g_FighterAt00671418@@3PAVFighterActorF288@@A"
+target = 0x00671418
+[[units.battle-end-scene-initialize-00424e00.relocations]]
+offset = 121
+type = "DIR32"
+symbol = "?g_FighterAt00671418@@3PAVFighterActorF288@@A"
+target = 0x00671418
+[[units.battle-end-scene-initialize-00424e00.relocations]]
+offset = 132
+type = "DIR32"
+symbol = "?g_StageAt0067161E@@3CA"
+target = 0x0067161E
+[[units.battle-end-scene-initialize-00424e00.relocations]]
+offset = 138
+type = "DIR32"
+symbol = "?g_FighterAt00671418@@3PAVFighterActorF288@@A"
+target = 0x00671418
+[[units.battle-end-scene-initialize-00424e00.relocations]]
+offset = 146
+type = "DIR32"
+symbol = "?g_FighterAt00671418@@3PAVFighterActorF288@@A"
+target = 0x00671418
+[[units.battle-end-scene-initialize-00424e00.relocations]]
+offset = 155
+type = "DIR32"
+symbol = "?g_FighterAt00671418@@3PAVFighterActorF288@@A"
+target = 0x00671418
+[[units.battle-end-scene-initialize-00424e00.relocations]]
+offset = 160
+type = "REL32"
+symbol = "?LoadStageResource@FighterActorF288@@QAEXXZ"
+target = 0x004584D0
+[[units.battle-end-scene-initialize-00424e00.relocations]]
+offset = 167
+type = "DIR32"
+symbol = "?g_StageAt0067161E@@3CA"
+target = 0x0067161E
+[[units.battle-end-scene-initialize-00424e00.relocations]]
+offset = 178
+type = "DIR32"
+symbol = "?g_StatusAt006714CE@@3EA"
+target = 0x006714CE
+[[units.battle-end-scene-initialize-00424e00.relocations]]
+offset = 187
+type = "DIR32"
+symbol = "?g_CharacterAt006714C8@@3CA"
+target = 0x006714C8
+[[units.battle-end-scene-initialize-00424e00.relocations]]
+offset = 193
+type = "DIR32"
+symbol = "?g_ProgressAt006718F8@@3VProgressTableF288@@A"
+target = 0x006718F8
+[[units.battle-end-scene-initialize-00424e00.relocations]]
+offset = 198
+type = "REL32"
+symbol = "?SelectRecord@ProgressTableF288@@QAEXF@Z"
+target = 0x00416CE0
+[[units.battle-end-scene-initialize-00424e00.relocations]]
+offset = 207
+type = "DIR32"
+symbol = "?g_StageAt0067161E@@3CA"
+target = 0x0067161E
+[[units.battle-end-scene-initialize-00424e00.relocations]]
+offset = 218
+type = "DIR32"
+symbol = "?g_StatusAt006714CE@@3EA"
+target = 0x006714CE
+[[units.battle-end-scene-initialize-00424e00.relocations]]
+offset = 226
+type = "DIR32"
+symbol = "?g_CharacterAt006714C8@@3CA"
+target = 0x006714C8
+[[units.battle-end-scene-initialize-00424e00.relocations]]
+offset = 235
+type = "DIR32"
+symbol = "?g_ProgressAt006718F8@@3VProgressTableF288@@A"
+target = 0x006718F8
+[[units.battle-end-scene-initialize-00424e00.relocations]]
+offset = 240
+type = "REL32"
+symbol = "?SelectRecord@ProgressTableF288@@QAEXF@Z"
+target = 0x00416CE0
+[[units.battle-end-scene-initialize-00424e00.relocations]]
+offset = 248
+type = "DIR32"
+symbol = "?g_StatusAt006714CE@@3EA"
+target = 0x006714CE
+[[units.battle-end-scene-initialize-00424e00.relocations]]
+offset = 254
+type = "DIR32"
+symbol = "?g_ProgressAt006718F8@@3VProgressTableF288@@A"
+target = 0x006718F8
+[[units.battle-end-scene-initialize-00424e00.relocations]]
+offset = 259
+type = "REL32"
+symbol = "?ResetCurrent@ProgressTableF288@@QAEXXZ"
+target = 0x00425130
+[[units.battle-end-scene-initialize-00424e00.relocations]]
+offset = 266
+type = "DIR32"
+symbol = "?g_CharacterAt006714C8@@3CA"
+target = 0x006714C8
+[[units.battle-end-scene-initialize-00424e00.relocations]]
+offset = 275
+type = "DIR32"
+symbol = "?g_ProgressAt006718F8@@3VProgressTableF288@@A"
+target = 0x006718F8
+[[units.battle-end-scene-initialize-00424e00.relocations]]
+offset = 280
+type = "REL32"
+symbol = "?SelectRecord@ProgressTableF288@@QAEXF@Z"
+target = 0x00416CE0
+[[units.battle-end-scene-initialize-00424e00.relocations]]
+offset = 300
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000

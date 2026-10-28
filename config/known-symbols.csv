@@ -584,3 +584,4 @@ address,name,module,confidence,evidence
 0x005F78B0,Effects::SpawnAuxObjectAt005F78B0,Effects,inferred,"F285; entire 487-byte native effect spawner with 20 authentic COFF relocations, true EH and repeated child back calls cold exact; distinct from F281 extended form"
 0x004584D0,FighterState::LoadStageResource,FighterState,inferred,F286; complete 374-byte native fighter stage resource loader with real stage-global guard and 17 physical COFF relocations cold exact
 0x004567B0,FighterState::Initialize,FighterState,inferred,"F287; whole 345-byte native fighter constructor with real member ctor/EH order, 18 authentic COFF fields cold exact; complete private game class ABI unproven"
+0x00424E00,BattleEndScene::Initialize,BattleEndScene,inferred,"F288; whole 308-byte native battle-end scene constructor, exact stage profile branch and 34 genuine COFF fields cold-exact; private original class layout provisional"

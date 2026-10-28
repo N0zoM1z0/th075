@@ -1,4 +1,4 @@
-# TH075 — active reconstruction handoff (F287)
+# TH075 — active reconstruction handoff (F288)
 
 **Updated 2026-10-28. Read this document before new experiments.**
 
@@ -22,17 +22,17 @@ not acceptance requirements.
 
 | Item | Current evidence |
 | --- | --- |
-| Local branch / last exact-code commit | `main` / F287 whole 345-byte FighterState constructor; F286 stage loader checkpoint `5c1086d` |
+| Local branch / last exact-code commit | `main` / F288 complete 308-byte BattleEnd scene constructor; F287 fighter ctor checkpoint `3996420` |
 | Upstream | `origin/main` tracked locally; verify current ahead/behind and dirty state before further work |
-| Working tree | Clean after F287 checkpoint if successful; continue rather than avoid every existing dirty edit |
+| Working tree | Clean after F288 checkpoint if successful; continue rather than avoid every existing dirty edit |
 | Native binary | `resources/th075.exe`, SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98` |
 | Candidate count | 4,351; origin review: 1,002 authored, 2,671 library, 581 compiler, 97 unknown |
-| Accepted functions / units | **603 / 603** |
-| Accepted authored CODE | **798,555 bytes** |
-| Reviewed authored coverage | 798,555 / 1,973,516 = **40.46%** |
-| Conservative coverage | **40.39%** counting 3,608 origin-pending bytes |
+| Accepted functions / units | **604 / 604** |
+| Accepted authored CODE | **798,863 bytes** |
+| Reviewed authored coverage | 798,863 / 1,973,516 = **40.48%** |
+| Conservative coverage | **40.41%** counting 3,608 origin-pending bytes |
 | Goal | **98% not reached** |
-| Verification | F287 complete 345-byte FighterState::Initialize cold-exact (273/273 comparable bytes, 18 true COFF fields) with authentic member/EH order; F286 374-byte stage loader checkpoint `5c1086d`. Only new F287 unit cold-replayed, no all-unit cold replay or external Oracle receipt |
+| Verification | F288 entire 308-byte BattleEndScene::Initialize cold-exact (172/172 comparable bytes, 34 true native COFF fields), following F287 whole fighter ctor checkpoint `3996420`. Only new F288 unit cold-replayed; no all-unit cold replay or external Oracle receipt |
 
 **Recheck the actual live status immediately**. Local commits are checkpoints,
 not evidence of a remote push or external Oracle acceptance. Earlier Git
@@ -130,6 +130,7 @@ inert variable or arbitrary padding may earn exact credit.
 | F285: Effects::SpawnAuxObject | `005F78B0` | 487 | 20 |
 | F286: FighterState::LoadStageResource | `004584D0` | 374 | 17 |
 | F287: FighterState::Initialize | `004567B0` | 345 | 18 |
+| F288: BattleEndScene::Initialize | `00424E00` | 308 | 34 |
 
 F222 proved signed 32-bit x87 `FILD` divided by the target's 36.0f
 (`00659308`), 74 physical animation records and a final call into the
@@ -251,6 +252,8 @@ F285 **cold-accepts the entire 487-byte ordinary `Effects::SpawnAuxObject`** at 
 F286 **cold-accepts all 374 native CODE bytes of `FighterState::LoadStageResource`** at `004584D0` (79 independently decoded native x86 instructions, 306/306 nonrelocation bytes, all 17 physical COFF relocations). It checks real signed stage global `0067161E`, conditionally deletes old texture at fighter+0x700, EH-allocates and constructs native new 80-byte texture manager, reads stage-specific signed slot count at fighter+0x704+stage, creates the authentic character-specific stage texture path and loads original archive. The read-only Ghidra 268-byte pathname guess was not assumed authoritative; the physical VC7.1 `/GS` code confirms a 260-byte pathname/local with original `0x12C` frame. The first whole natural source emitted 373 bytes because it used an enclosing positive `if` whose `JLE near` encoding is one byte shorter than the original `JG short` plus `JMP near`. Writing the actual native early-exit `if (stage <= 0) return;` restores all 374 CODE bytes without inert branches, padding or assembly. Original SHA256 `109507f8ab77b1660a4602546cffc1e859acbf9bdfc5a134355316bd24a9b8c6`; only `--unit fighter-state-load-stage-resource-004584d0` cold-replayed exact. Source `src/FighterStageResourceF286.cpp`, private native/probe/COFF evidence `.analysis/f286-fighter-init-stage/`. The 345-byte main `FighterState::Initialize` at `004567B0` was subsequently independently cold-accepted at F287; F282/F284 resource lifecycle bodies were independently accepted and do not earn duplicated CODE credit. All 97 pending origins remain excluded.
 
 F287 **cold-accepts all 345 native CODE bytes of `FighterState::Initialize`** at `004567B0` (86 independently decoded original instructions, 273/273 nonrelocation bytes and 18/18 real physical COFF fields). It is the full core fighter construction path: actual base fighter ctor `00458650` and game vtable `00658FE8`, native actor properties +0x2D4, actor vector +0x468, input +0x494, deque +0x518, sound +0x6D0, script +0x714, sound-config call +0x6D0, original 28-byte stack memory initialization through actual `memset` `00640490`, 90-entry deque setup `0045A620`, EH-backed `new(0x54)` special controller ctor `0045B920`, genuine controller bind `0045BA10` on fighter+0x2EC and three texture pointer resets +4/+0x534/+0x700. A first C++ source incorrectly assumed the base had a separate virtual destructor and generated mismatched EH state; independent native evidence requires a polymorphic base without that invented destructor. Native also has an explicit 28-byte zeroed local, so automatic `char[28]={0}` lowering was wrong; an observed `unsigned int[7]` local cleared by real `memset` exactly reproduces the native 0x2C frame and bytecode without adding an unobserved operation. The actual complete source now emits all 345 bytes and exact original EH 0..5..-1, with full native PE SHA256 `f3de21648341293bf8058450b5425bf659e733a0cd41c6cbb11789bd2d80ef13`. Only `--unit fighter-state-initialize-004567b0` cold-replayed exact; source `src/FighterInitializeF287.cpp`, private original/native and negative controls `.analysis/f286-fighter-init-stage/`. F282's resource loader, F284's destructor and F286 stage resource loader were independently accepted, with no repeated code credit. Underlying VC7 library and external member constructors, original private complete FighterState layout and 97 pending origins remain excluded.
+
+F288 **cold-accepts the entire 308-byte `BattleEndScene::Initialize`** at `00424E00`, with 73 independent original x86 instructions, 172/172 nonrelocation bytes and 34 authentic physical COFF fields including native scene vtable 00657B7C and EH handler 00655718. A first whole natural C++ translation exactly reproduced the original inherited base constructor `004251C0` (separate R108 origin-unknown and not credited), source renderer +35.0f/+360.0f font configuration from global `0067143C`, title text draw from `00657B7B`, original fighter+0x6EE reset, stage byte from fighter+0x713, real actor virtual dispatch vtable+0x3C and separately F286-accepted stage texture loader `004584D0`. Native stage 8/9/other branches update global `006714CE` and select the proper real profile record at manager `006718F8` with signed fighter byte `006714C8` plus offsets +0/+20/+40; the default branch alone calls native profile reset `00425130`. Entire native SHA256 `4680497f7bf07f1e6e75d282ee5a75994ca784cb795238c5efb4a4519aa93780`. The complete source `src/BattleEndInitF288.cpp` has no guessed source member layout beyond borrowed call boundaries. Only `--unit battle-end-scene-initialize-00424e00` cold-replayed exact. Full original native and C++/COFF evidence `.analysis/f288-battle-end/` with original decomp `.analysis/f286-fighter-init-stage/`. All 97 pending origins excluded, no full replay/Oracle claim.
 
 Relevant full native proofs: `config/match-units.toml`,
 `config/exact-adoptions.json`, sources `src/*F222.cpp`/`src/*F223.cpp`,

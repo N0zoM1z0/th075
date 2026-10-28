@@ -3355,3 +3355,48 @@ and all 97 origin-pending functions remain uncredited. No target
 code graft, hand assembly, masking, cropped function or artificial
 extra stack padding was used. Local Git checkpoints are not remote
 Oracle verification.
+
+
+## F288: exact complete 308-byte BattleEnd scene initialization
+
+R053-authored `BattleEndScene::Initialize` is all **308 native CODE
+bytes** `00424E00..00424F33`, with **73 independently decoded x86
+instructions**, actual plain RET at `00424F33` and original PE body
+SHA256 `4680497f7bf07f1e6e75d282ee5a75994ca784cb795238c5efb4a4519aa93780`.
+The first native-faithful C++ source `src/BattleEndInitF288.cpp`,
+original read-only Ghidra/native full assembly under
+`.analysis/f286-fighter-init-stage/`, complete COFF compare and cold
+receipt `.analysis/f288-battle-end/` were all independently checked.
+
+The real game scene base ctor at `004251C0` is separately origin
+**unknown** R108 and is not independently granted authored credit.
+The scene installs actual vtable `00657B7C` with EH handler `00655718`,
+configures the genuine global font renderer at `0067143C` using
+original 35.0f and 360.0f and one flag through `00413420`, then draws
+real title resource at `00657B7B` with native 120,120,255,16,1,0
+parameters through `00413460`. It zeroes the actual actor+`0x6EE`
+flag, moves native actor stage field +`0x713` to signed global
+`0067161E`, invokes the authentic fighter virtual method slot
++`0x3C` on global `00671418`, then calls the independently F286
+cold-exact `FighterState::LoadStageResource` at `004584D0`.
+
+The original three-way stage dispatch is fully preserved: stage=8
+and stage=9 both zero global `006714CE`, and call actual progress
+selection `00416CE0` on owner `006718F8` using the signed fighter
+byte `006714C8` plus 0 or 20 respectively. For all other stages it
+sets status to `0xFF`, calls the real `00425130` progress reset and
+selects fighter+40. The original special short-sized signed promotion
+of the fighter byte in the stage=8 path is reproduced automatically
+by real method `void SelectRecord(short)` and natural VC7.1 ABI.
+
+The first whole source built under pinned VC7.1 `/Od /GX` produced
+the complete **308 bytes**, **172/172** comparable nonfield bytes,
+and **34/34 true native COFF relocation offsets/types/destinations**.
+The canonical `battle-end-scene-initialize-00424e00` unit was cold
+recompiled **alone**, reporting `exact; 308 coverage bytes`, with
+no all-unit replay. Native scene/fighter/font/score interfaces are
+borrowed physical call ABIs, not claims of complete original private
+owner definitions, and their external game/CRT/VC7 implementations
+receive no duplicate source credit. All 97 origin-pending functions
+remain excluded. No target-byte graft, assembly, fake locals, masked
+relocation fields, cropped body, or external Oracle receipt.
