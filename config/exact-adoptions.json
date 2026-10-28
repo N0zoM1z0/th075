@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "7fd07d4c96576b2be3aa065da439fadccad8fc3446005b4de71faa39b4e51b83"
+      "current_sha256": "0795fb365866f38897a8d4f36f4acf5f76bc9ff783bbf223a0c34c2c5acedeae"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "18653d98e7146b8e85659fa0091a1389ca5b90f9e39f4141655b3612ed0679f4"
+      "current_sha256": "b4fcaf6ddb83f16a0a166e544488d0ee80c199bfddf38d966978aec37e69e53e"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "656558db688fa8bd3172bde8299056ab1d2d806ab1098a3440e31dff669c8664"
+      "current_sha256": "123866c12e76d9d0a4cf5b20e5a6e82ca27b89d7d1cb1f966dc93f24609d2d4d"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "988eba42ef2b79756b47c119454c9bc3191d5d7731a113d7bc1bb5f077c819cb"
+      "current_sha256": "bf7e9758edd362be8bcfe6b760f3e03d833eb9759e56f1c780cb5c63f46c27c6"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "5eef845d8f6b2413673ab0e5d5347ea52aa833245e0afbdabd12f3d9870710e2"
+      "current_sha256": "0cbd3d524bb52eaef17ab057266e6a89c537e01f8a0dcb5054c3421a8c52ee04"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -27227,6 +27227,1502 @@
       },
       "origin": {
         "address": "0x00449E10",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R055"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044A230",
+        "size": "151",
+        "span_end": "0x0044A2C6",
+        "current_name": "FUN_0044a230",
+        "proposed_name": "BackgroundStage::LoadBG00c",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044A230",
+        "size": "151",
+        "span_end": "0x0044A2C6",
+        "current_name": "FUN_0044a230",
+        "proposed_name": "BackgroundStage::LoadBG00c",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BackgroundBG00cF377::BackgroundBG00cF377()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundLoadFamilyF377.cpp",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses; F377; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-load-bg00c-0044a230",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent; F377 independent original full 151-byte native authored R055 game-specific stage BG00c derived constructor at 0x0044A230, PE native CODE SHA256 6349b9efe65f1615f5824f18e78082216f927aec9e35a8a823de08a220a83436, 39 original x86 instructions. Pinned VC7.1 /GX protected base constructor 00449DE0 and actual stage virtual table 0x006584FC, real camera init at +0x68 via 0040D990; resource slot count 3, true background directory 0x006584D8 and file string 0x006584E0 passed to 0040BB80, observed material/owner fields +0xC=0x00000000; +0x10=0x00000000; +0x14=0x00000000. Whole original native SEH handler at 0x00655C38, no cropped CFG or EH source bytes. Original complete derived stage layout and base methods are borrowed, not claimed. All 107/107 nonrelocated native bytes and 11/11 actual COFF physical fields verified, independent single cohort of 34 newly affected units cold 34/34 exact across one source object. No CRT, pack, base or EH callee double credit, forged ABI, unused locals, byte graft, assembly, masked relocation fields, whole-repo cold replay or remote Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044A230",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R055"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044A520",
+        "size": "140",
+        "span_end": "0x0044A5AB",
+        "current_name": "FUN_0044a520",
+        "proposed_name": "BackgroundStage::LoadBG00x",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044A520",
+        "size": "140",
+        "span_end": "0x0044A5AB",
+        "current_name": "FUN_0044a520",
+        "proposed_name": "BackgroundStage::LoadBG00x",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BackgroundBG00xF377::BackgroundBG00xF377()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundLoadFamilyF377.cpp",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses; F377; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-load-bg00x-0044a520",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent; F377 independent original full 140-byte native authored R055 game-specific stage BG00x derived constructor at 0x0044A520, PE native CODE SHA256 eae850dbaaf9643577b97c382c19540acbfb30e0c930bff36e1632f262cbfb7e, 36 original x86 instructions. Pinned VC7.1 /GX protected base constructor 00449DE0 and actual stage virtual table 0x00658538, NO standalone camera init in this original function; resource slot count 2, true background directory 0x00658514 and file string 0x0065851C passed to 0040BB80, observed material/owner fields +0xC=0x00000000; +0x10=0x00000000; +0x14=0x00000000. Whole original native SEH handler at 0x00655C58, no cropped CFG or EH source bytes. Original complete derived stage layout and base methods are borrowed, not claimed. All 100/100 nonrelocated native bytes and 10/10 actual COFF physical fields verified, independent single cohort of 34 newly affected units cold 34/34 exact across one source object. No CRT, pack, base or EH callee double credit, forged ABI, unused locals, byte graft, assembly, masked relocation fields, whole-repo cold replay or remote Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044A520",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R055"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044A750",
+        "size": "140",
+        "span_end": "0x0044A7DB",
+        "current_name": "FUN_0044a750",
+        "proposed_name": "BackgroundStage::LoadBG00y",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044A750",
+        "size": "140",
+        "span_end": "0x0044A7DB",
+        "current_name": "FUN_0044a750",
+        "proposed_name": "BackgroundStage::LoadBG00y",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BackgroundBG00yF377::BackgroundBG00yF377()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundLoadFamilyF377.cpp",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses; F377; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-load-bg00y-0044a750",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent; F377 independent original full 140-byte native authored R055 game-specific stage BG00y derived constructor at 0x0044A750, PE native CODE SHA256 3213206c4054f0dfa76b74e638ba0fe1b8e24df9a9847c49ebedd7c93c56c17e, 36 original x86 instructions. Pinned VC7.1 /GX protected base constructor 00449DE0 and actual stage virtual table 0x00658574, NO standalone camera init in this original function; resource slot count 2, true background directory 0x00658550 and file string 0x00658558 passed to 0040BB80, observed material/owner fields +0xC=0x00000000; +0x10=0x00000000; +0x14=0x00000000. Whole original native SEH handler at 0x00655C78, no cropped CFG or EH source bytes. Original complete derived stage layout and base methods are borrowed, not claimed. All 100/100 nonrelocated native bytes and 10/10 actual COFF physical fields verified, independent single cohort of 34 newly affected units cold 34/34 exact across one source object. No CRT, pack, base or EH callee double credit, forged ABI, unused locals, byte graft, assembly, masked relocation fields, whole-repo cold replay or remote Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044A750",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R055"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044A980",
+        "size": "140",
+        "span_end": "0x0044AA0B",
+        "current_name": "FUN_0044a980",
+        "proposed_name": "BackgroundStage::LoadBG00z",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044A980",
+        "size": "140",
+        "span_end": "0x0044AA0B",
+        "current_name": "FUN_0044a980",
+        "proposed_name": "BackgroundStage::LoadBG00z",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BackgroundBG00zF377::BackgroundBG00zF377()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundLoadFamilyF377.cpp",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses; F377; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-load-bg00z-0044a980",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent; F377 independent original full 140-byte native authored R055 game-specific stage BG00z derived constructor at 0x0044A980, PE native CODE SHA256 f9727110c76c027db2bbd1a80f739a2162205e6be31a57dd6cb1003c3e505bcb, 36 original x86 instructions. Pinned VC7.1 /GX protected base constructor 00449DE0 and actual stage virtual table 0x006585B0, NO standalone camera init in this original function; resource slot count 2, true background directory 0x0065858C and file string 0x00658594 passed to 0040BB80, observed material/owner fields +0xC=0x00000000; +0x10=0x00000000; +0x14=0x00000000. Whole original native SEH handler at 0x00655C98, no cropped CFG or EH source bytes. Original complete derived stage layout and base methods are borrowed, not claimed. All 100/100 nonrelocated native bytes and 10/10 actual COFF physical fields verified, independent single cohort of 34 newly affected units cold 34/34 exact across one source object. No CRT, pack, base or EH callee double credit, forged ABI, unused locals, byte graft, assembly, masked relocation fields, whole-repo cold replay or remote Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044A980",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R055"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044ABB0",
+        "size": "151",
+        "span_end": "0x0044AC46",
+        "current_name": "FUN_0044abb0",
+        "proposed_name": "BackgroundStage::LoadBG01a",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044ABB0",
+        "size": "151",
+        "span_end": "0x0044AC46",
+        "current_name": "FUN_0044abb0",
+        "proposed_name": "BackgroundStage::LoadBG01a",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BackgroundBG01aF377::BackgroundBG01aF377()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundLoadFamilyF377.cpp",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses; F377; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-load-bg01a-0044abb0",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent; F377 independent original full 151-byte native authored R055 game-specific stage BG01a derived constructor at 0x0044ABB0, PE native CODE SHA256 4f04f116db785c619288e77cd8ac807418a3f03d889a4da4014fbac09b620c85, 39 original x86 instructions. Pinned VC7.1 /GX protected base constructor 00449DE0 and actual stage virtual table 0x006585EC, real camera init at +0x68 via 0040D990; resource slot count 3, true background directory 0x006585C8 and file string 0x006585D0 passed to 0040BB80, observed material/owner fields +0xC=0x00000000; +0x10=0x00000000; +0x14=0x00000000. Whole original native SEH handler at 0x00655CB8, no cropped CFG or EH source bytes. Original complete derived stage layout and base methods are borrowed, not claimed. All 107/107 nonrelocated native bytes and 11/11 actual COFF physical fields verified, independent single cohort of 34 newly affected units cold 34/34 exact across one source object. No CRT, pack, base or EH callee double credit, forged ABI, unused locals, byte graft, assembly, masked relocation fields, whole-repo cold replay or remote Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044ABB0",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R055"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044AE50",
+        "size": "151",
+        "span_end": "0x0044AEE6",
+        "current_name": "FUN_0044ae50",
+        "proposed_name": "BackgroundStage::LoadBG01b",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044AE50",
+        "size": "151",
+        "span_end": "0x0044AEE6",
+        "current_name": "FUN_0044ae50",
+        "proposed_name": "BackgroundStage::LoadBG01b",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BackgroundBG01bF377::BackgroundBG01bF377()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundLoadFamilyF377.cpp",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses; F377; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-load-bg01b-0044ae50",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent; F377 independent original full 151-byte native authored R055 game-specific stage BG01b derived constructor at 0x0044AE50, PE native CODE SHA256 1ca3b69a9d1fe69b5de48b93774a9e7def821c070f32027a3e60400bd532be2c, 39 original x86 instructions. Pinned VC7.1 /GX protected base constructor 00449DE0 and actual stage virtual table 0x00658634, real camera init at +0x68 via 0040D990; resource slot count 3, true background directory 0x00658610 and file string 0x00658618 passed to 0040BB80, observed material/owner fields +0xC=0x00000000; +0x10=0x00000000; +0x14=0x00000000. Whole original native SEH handler at 0x00655CD8, no cropped CFG or EH source bytes. Original complete derived stage layout and base methods are borrowed, not claimed. All 107/107 nonrelocated native bytes and 11/11 actual COFF physical fields verified, independent single cohort of 34 newly affected units cold 34/34 exact across one source object. No CRT, pack, base or EH callee double credit, forged ABI, unused locals, byte graft, assembly, masked relocation fields, whole-repo cold replay or remote Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044AE50",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R055"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044B0F0",
+        "size": "140",
+        "span_end": "0x0044B17B",
+        "current_name": "FUN_0044b0f0",
+        "proposed_name": "BackgroundStage::LoadBG01x",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044B0F0",
+        "size": "140",
+        "span_end": "0x0044B17B",
+        "current_name": "FUN_0044b0f0",
+        "proposed_name": "BackgroundStage::LoadBG01x",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BackgroundBG01xF377::BackgroundBG01xF377()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundLoadFamilyF377.cpp",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses; F377; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-load-bg01x-0044b0f0",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent; F377 independent original full 140-byte native authored R055 game-specific stage BG01x derived constructor at 0x0044B0F0, PE native CODE SHA256 0ae3c3d97c427a48b21827ab828afec17e018d0d3d9bfe6312d52730c949f451, 36 original x86 instructions. Pinned VC7.1 /GX protected base constructor 00449DE0 and actual stage virtual table 0x00658670, NO standalone camera init in this original function; resource slot count 2, true background directory 0x0065864C and file string 0x00658654 passed to 0040BB80, observed material/owner fields +0xC=0x00000000; +0x10=0x00000000; +0x14=0x00000000. Whole original native SEH handler at 0x00655CF8, no cropped CFG or EH source bytes. Original complete derived stage layout and base methods are borrowed, not claimed. All 100/100 nonrelocated native bytes and 10/10 actual COFF physical fields verified, independent single cohort of 34 newly affected units cold 34/34 exact across one source object. No CRT, pack, base or EH callee double credit, forged ABI, unused locals, byte graft, assembly, masked relocation fields, whole-repo cold replay or remote Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044B0F0",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R055"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044B320",
+        "size": "140",
+        "span_end": "0x0044B3AB",
+        "current_name": "FUN_0044b320",
+        "proposed_name": "BackgroundStage::LoadBG01y",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044B320",
+        "size": "140",
+        "span_end": "0x0044B3AB",
+        "current_name": "FUN_0044b320",
+        "proposed_name": "BackgroundStage::LoadBG01y",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BackgroundBG01yF377::BackgroundBG01yF377()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundLoadFamilyF377.cpp",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses; F377; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-load-bg01y-0044b320",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent; F377 independent original full 140-byte native authored R055 game-specific stage BG01y derived constructor at 0x0044B320, PE native CODE SHA256 b2a7d451a118f307bc35dc932d708653e94baeff8d11c4d87a36d0f118cfd1c6, 36 original x86 instructions. Pinned VC7.1 /GX protected base constructor 00449DE0 and actual stage virtual table 0x006586AC, NO standalone camera init in this original function; resource slot count 2, true background directory 0x00658688 and file string 0x00658690 passed to 0040BB80, observed material/owner fields +0xC=0x00000000; +0x10=0x00000000; +0x14=0x00000000. Whole original native SEH handler at 0x00655D18, no cropped CFG or EH source bytes. Original complete derived stage layout and base methods are borrowed, not claimed. All 100/100 nonrelocated native bytes and 10/10 actual COFF physical fields verified, independent single cohort of 34 newly affected units cold 34/34 exact across one source object. No CRT, pack, base or EH callee double credit, forged ABI, unused locals, byte graft, assembly, masked relocation fields, whole-repo cold replay or remote Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044B320",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R055"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044B550",
+        "size": "161",
+        "span_end": "0x0044B5F0",
+        "current_name": "FUN_0044b550",
+        "proposed_name": "BackgroundStage::LoadBG02a",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044B550",
+        "size": "161",
+        "span_end": "0x0044B5F0",
+        "current_name": "FUN_0044b550",
+        "proposed_name": "BackgroundStage::LoadBG02a",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BackgroundBG02aF377::BackgroundBG02aF377()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundLoadFamilyF377.cpp",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses; F377; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-load-bg02a-0044b550",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent; F377 independent original full 161-byte native authored R055 game-specific stage BG02a derived constructor at 0x0044B550, PE native CODE SHA256 accfeef4775e327fcd8a5cb83d44ca3c72c8a65eaa03f4e2160dfde94bd57b8f, 41 original x86 instructions. Pinned VC7.1 /GX protected base constructor 00449DE0 and actual stage virtual table 0x006586E8, real camera init at +0x6C via 0040D990; resource slot count 5, true background directory 0x006586C4 and file string 0x006586CC passed to 0040BB80, observed material/owner fields +0xC=0x00000000; +0x10=0x00000000; +0x14=0x00000000; +0x68=0x00000000. Whole original native SEH handler at 0x00655D38, no cropped CFG or EH source bytes. Original complete derived stage layout and base methods are borrowed, not claimed. All 117/117 nonrelocated native bytes and 11/11 actual COFF physical fields verified, independent single cohort of 34 newly affected units cold 34/34 exact across one source object. No CRT, pack, base or EH callee double credit, forged ABI, unused locals, byte graft, assembly, masked relocation fields, whole-repo cold replay or remote Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044B550",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R055"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044BA70",
+        "size": "161",
+        "span_end": "0x0044BB10",
+        "current_name": "FUN_0044ba70",
+        "proposed_name": "BackgroundStage::LoadBG02b",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044BA70",
+        "size": "161",
+        "span_end": "0x0044BB10",
+        "current_name": "FUN_0044ba70",
+        "proposed_name": "BackgroundStage::LoadBG02b",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BackgroundBG02bF377::BackgroundBG02bF377()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundLoadFamilyF377.cpp",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses; F377; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-load-bg02b-0044ba70",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent; F377 independent original full 161-byte native authored R055 game-specific stage BG02b derived constructor at 0x0044BA70, PE native CODE SHA256 4bdfaa547c76a08103027370a39d1626a6333e97de0bdd2d80d417dbbf92639e, 41 original x86 instructions. Pinned VC7.1 /GX protected base constructor 00449DE0 and actual stage virtual table 0x0065872C, real camera init at +0x6C via 0040D990; resource slot count 5, true background directory 0x00658708 and file string 0x00658710 passed to 0040BB80, observed material/owner fields +0xC=0x00000000; +0x10=0x00000000; +0x14=0x00000000; +0x68=0x00000000. Whole original native SEH handler at 0x00655D58, no cropped CFG or EH source bytes. Original complete derived stage layout and base methods are borrowed, not claimed. All 117/117 nonrelocated native bytes and 11/11 actual COFF physical fields verified, independent single cohort of 34 newly affected units cold 34/34 exact across one source object. No CRT, pack, base or EH callee double credit, forged ABI, unused locals, byte graft, assembly, masked relocation fields, whole-repo cold replay or remote Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044BA70",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R055"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044BF90",
+        "size": "161",
+        "span_end": "0x0044C030",
+        "current_name": "FUN_0044bf90",
+        "proposed_name": "BackgroundStage::LoadBG02c",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044BF90",
+        "size": "161",
+        "span_end": "0x0044C030",
+        "current_name": "FUN_0044bf90",
+        "proposed_name": "BackgroundStage::LoadBG02c",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BackgroundBG02cF377::BackgroundBG02cF377()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundLoadFamilyF377.cpp",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses; F377; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-load-bg02c-0044bf90",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent; F377 independent original full 161-byte native authored R055 game-specific stage BG02c derived constructor at 0x0044BF90, PE native CODE SHA256 1196ed83109e7455b7ea6c6870cfe866693588ed2ea3f1a1786816298eee71f6, 41 original x86 instructions. Pinned VC7.1 /GX protected base constructor 00449DE0 and actual stage virtual table 0x00658768, real camera init at +0x6C via 0040D990; resource slot count 5, true background directory 0x00658744 and file string 0x0065874C passed to 0040BB80, observed material/owner fields +0xC=0x00000000; +0x10=0x00000000; +0x14=0x00000000; +0x68=0x00000000. Whole original native SEH handler at 0x00655D78, no cropped CFG or EH source bytes. Original complete derived stage layout and base methods are borrowed, not claimed. All 117/117 nonrelocated native bytes and 11/11 actual COFF physical fields verified, independent single cohort of 34 newly affected units cold 34/34 exact across one source object. No CRT, pack, base or EH callee double credit, forged ABI, unused locals, byte graft, assembly, masked relocation fields, whole-repo cold replay or remote Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044BF90",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R055"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044C4B0",
+        "size": "151",
+        "span_end": "0x0044C546",
+        "current_name": "FUN_0044c4b0",
+        "proposed_name": "BackgroundStage::LoadBG02x",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044C4B0",
+        "size": "151",
+        "span_end": "0x0044C546",
+        "current_name": "FUN_0044c4b0",
+        "proposed_name": "BackgroundStage::LoadBG02x",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BackgroundBG02xF377::BackgroundBG02xF377()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundLoadFamilyF377.cpp",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses; F377; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-load-bg02x-0044c4b0",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent; F377 independent original full 151-byte native authored R055 game-specific stage BG02x derived constructor at 0x0044C4B0, PE native CODE SHA256 de6b156cfcb5e989616014d506bf9559d3f41f6fca35086af65bead9e76a52cf, 39 original x86 instructions. Pinned VC7.1 /GX protected base constructor 00449DE0 and actual stage virtual table 0x006587A4, real camera init at +0x6C via 0040D990; resource slot count 2, true background directory 0x00658780 and file string 0x00658788 passed to 0040BB80, observed material/owner fields +0xC=0x00000000; +0x10=0x00000000; +0x14=0x00000000. Whole original native SEH handler at 0x00655D98, no cropped CFG or EH source bytes. Original complete derived stage layout and base methods are borrowed, not claimed. All 107/107 nonrelocated native bytes and 11/11 actual COFF physical fields verified, independent single cohort of 34 newly affected units cold 34/34 exact across one source object. No CRT, pack, base or EH callee double credit, forged ABI, unused locals, byte graft, assembly, masked relocation fields, whole-repo cold replay or remote Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044C4B0",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R055"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044C6F0",
+        "size": "151",
+        "span_end": "0x0044C786",
+        "current_name": "FUN_0044c6f0",
+        "proposed_name": "BackgroundStage::LoadBG02y",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044C6F0",
+        "size": "151",
+        "span_end": "0x0044C786",
+        "current_name": "FUN_0044c6f0",
+        "proposed_name": "BackgroundStage::LoadBG02y",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BackgroundBG02yF377::BackgroundBG02yF377()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundLoadFamilyF377.cpp",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses; F377; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-load-bg02y-0044c6f0",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent; F377 independent original full 151-byte native authored R055 game-specific stage BG02y derived constructor at 0x0044C6F0, PE native CODE SHA256 8ec88dbec47af14b9c263d3f69344cf0921f5cbc6f24310a9f3453e9624b7663, 39 original x86 instructions. Pinned VC7.1 /GX protected base constructor 00449DE0 and actual stage virtual table 0x006587E0, real camera init at +0x6C via 0040D990; resource slot count 2, true background directory 0x006587BC and file string 0x006587C4 passed to 0040BB80, observed material/owner fields +0xC=0x00000000; +0x10=0x00000000; +0x14=0x00000000. Whole original native SEH handler at 0x00655DB8, no cropped CFG or EH source bytes. Original complete derived stage layout and base methods are borrowed, not claimed. All 107/107 nonrelocated native bytes and 11/11 actual COFF physical fields verified, independent single cohort of 34 newly affected units cold 34/34 exact across one source object. No CRT, pack, base or EH callee double credit, forged ABI, unused locals, byte graft, assembly, masked relocation fields, whole-repo cold replay or remote Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044C6F0",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R055"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044C930",
+        "size": "151",
+        "span_end": "0x0044C9C6",
+        "current_name": "FUN_0044c930",
+        "proposed_name": "BackgroundStage::LoadBG02z",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044C930",
+        "size": "151",
+        "span_end": "0x0044C9C6",
+        "current_name": "FUN_0044c930",
+        "proposed_name": "BackgroundStage::LoadBG02z",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BackgroundBG02zF377::BackgroundBG02zF377()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundLoadFamilyF377.cpp",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses; F377; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-load-bg02z-0044c930",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent; F377 independent original full 151-byte native authored R055 game-specific stage BG02z derived constructor at 0x0044C930, PE native CODE SHA256 dcd021c95f1e9015708a9e5abd07e6af4a79567b87a39673f213bbf714155291, 39 original x86 instructions. Pinned VC7.1 /GX protected base constructor 00449DE0 and actual stage virtual table 0x0065881C, real camera init at +0x6C via 0040D990; resource slot count 2, true background directory 0x006587F8 and file string 0x00658800 passed to 0040BB80, observed material/owner fields +0xC=0x00000000; +0x10=0x00000000; +0x14=0x00000000. Whole original native SEH handler at 0x00655DD8, no cropped CFG or EH source bytes. Original complete derived stage layout and base methods are borrowed, not claimed. All 107/107 nonrelocated native bytes and 11/11 actual COFF physical fields verified, independent single cohort of 34 newly affected units cold 34/34 exact across one source object. No CRT, pack, base or EH callee double credit, forged ABI, unused locals, byte graft, assembly, masked relocation fields, whole-repo cold replay or remote Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044C930",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R055"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044CB70",
+        "size": "151",
+        "span_end": "0x0044CC06",
+        "current_name": "FUN_0044cb70",
+        "proposed_name": "BackgroundStage::LoadBG03a",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044CB70",
+        "size": "151",
+        "span_end": "0x0044CC06",
+        "current_name": "FUN_0044cb70",
+        "proposed_name": "BackgroundStage::LoadBG03a",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BackgroundBG03aF377::BackgroundBG03aF377()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundLoadFamilyF377.cpp",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses; F377; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-load-bg03a-0044cb70",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent; F377 independent original full 151-byte native authored R055 game-specific stage BG03a derived constructor at 0x0044CB70, PE native CODE SHA256 a02f5c0a1c471c71ce6ad7f4d71c6aeb1a0c37dce8d31c4a97f614668c2aee21, 39 original x86 instructions. Pinned VC7.1 /GX protected base constructor 00449DE0 and actual stage virtual table 0x00658858, real camera init at +0x6C via 0040D990; resource slot count 3, true background directory 0x00658834 and file string 0x0065883C passed to 0040BB80, observed material/owner fields +0xC=0x00000000; +0x10=0x00000000; +0x14=0x00000000. Whole original native SEH handler at 0x00655DF8, no cropped CFG or EH source bytes. Original complete derived stage layout and base methods are borrowed, not claimed. All 107/107 nonrelocated native bytes and 11/11 actual COFF physical fields verified, independent single cohort of 34 newly affected units cold 34/34 exact across one source object. No CRT, pack, base or EH callee double credit, forged ABI, unused locals, byte graft, assembly, masked relocation fields, whole-repo cold replay or remote Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044CB70",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R055"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044CE10",
+        "size": "151",
+        "span_end": "0x0044CEA6",
+        "current_name": "FUN_0044ce10",
+        "proposed_name": "BackgroundStage::LoadBG03b",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044CE10",
+        "size": "151",
+        "span_end": "0x0044CEA6",
+        "current_name": "FUN_0044ce10",
+        "proposed_name": "BackgroundStage::LoadBG03b",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BackgroundBG03bF377::BackgroundBG03bF377()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundLoadFamilyF377.cpp",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses; F377; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-load-bg03b-0044ce10",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent; F377 independent original full 151-byte native authored R055 game-specific stage BG03b derived constructor at 0x0044CE10, PE native CODE SHA256 d79cbb1e0c5cd846627821d47f169d34c6ea992a490467e76af7b6ffcc26f7f1, 39 original x86 instructions. Pinned VC7.1 /GX protected base constructor 00449DE0 and actual stage virtual table 0x00658894, real camera init at +0x6C via 0040D990; resource slot count 3, true background directory 0x00658870 and file string 0x00658878 passed to 0040BB80, observed material/owner fields +0xC=0x00000000; +0x10=0x00000000; +0x14=0x00000000. Whole original native SEH handler at 0x00655E18, no cropped CFG or EH source bytes. Original complete derived stage layout and base methods are borrowed, not claimed. All 107/107 nonrelocated native bytes and 11/11 actual COFF physical fields verified, independent single cohort of 34 newly affected units cold 34/34 exact across one source object. No CRT, pack, base or EH callee double credit, forged ABI, unused locals, byte graft, assembly, masked relocation fields, whole-repo cold replay or remote Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044CE10",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R055"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044D0B0",
+        "size": "151",
+        "span_end": "0x0044D146",
+        "current_name": "FUN_0044d0b0",
+        "proposed_name": "BackgroundStage::LoadBG03x",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044D0B0",
+        "size": "151",
+        "span_end": "0x0044D146",
+        "current_name": "FUN_0044d0b0",
+        "proposed_name": "BackgroundStage::LoadBG03x",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BackgroundBG03xF377::BackgroundBG03xF377()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundLoadFamilyF377.cpp",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses; F377; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-load-bg03x-0044d0b0",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent; F377 independent original full 151-byte native authored R055 game-specific stage BG03x derived constructor at 0x0044D0B0, PE native CODE SHA256 e861997b485fb580f3f861b3e50779bb9debcf4a283f11bfac28bb8652d00911, 39 original x86 instructions. Pinned VC7.1 /GX protected base constructor 00449DE0 and actual stage virtual table 0x006588D0, real camera init at +0x6C via 0040D990; resource slot count 2, true background directory 0x006588AC and file string 0x006588B4 passed to 0040BB80, observed material/owner fields +0xC=0x00000000; +0x10=0x00000000; +0x14=0x00000000. Whole original native SEH handler at 0x00655E38, no cropped CFG or EH source bytes. Original complete derived stage layout and base methods are borrowed, not claimed. All 107/107 nonrelocated native bytes and 11/11 actual COFF physical fields verified, independent single cohort of 34 newly affected units cold 34/34 exact across one source object. No CRT, pack, base or EH callee double credit, forged ABI, unused locals, byte graft, assembly, masked relocation fields, whole-repo cold replay or remote Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044D0B0",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R055"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044D2F0",
+        "size": "151",
+        "span_end": "0x0044D386",
+        "current_name": "FUN_0044d2f0",
+        "proposed_name": "BackgroundStage::LoadBG03y",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044D2F0",
+        "size": "151",
+        "span_end": "0x0044D386",
+        "current_name": "FUN_0044d2f0",
+        "proposed_name": "BackgroundStage::LoadBG03y",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BackgroundBG03yF377::BackgroundBG03yF377()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundLoadFamilyF377.cpp",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses; F377; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-load-bg03y-0044d2f0",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent; F377 independent original full 151-byte native authored R055 game-specific stage BG03y derived constructor at 0x0044D2F0, PE native CODE SHA256 32c66afe7f6d21056dd2637a283c2e8338213cec10d5dbf355262811b8ae264b, 39 original x86 instructions. Pinned VC7.1 /GX protected base constructor 00449DE0 and actual stage virtual table 0x0065890C, real camera init at +0x6C via 0040D990; resource slot count 2, true background directory 0x006588E8 and file string 0x006588F0 passed to 0040BB80, observed material/owner fields +0xC=0x00000000; +0x10=0x00000000; +0x14=0x00000000. Whole original native SEH handler at 0x00655E58, no cropped CFG or EH source bytes. Original complete derived stage layout and base methods are borrowed, not claimed. All 107/107 nonrelocated native bytes and 11/11 actual COFF physical fields verified, independent single cohort of 34 newly affected units cold 34/34 exact across one source object. No CRT, pack, base or EH callee double credit, forged ABI, unused locals, byte graft, assembly, masked relocation fields, whole-repo cold replay or remote Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044D2F0",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R055"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044D530",
+        "size": "161",
+        "span_end": "0x0044D5D0",
+        "current_name": "FUN_0044d530",
+        "proposed_name": "BackgroundStage::LoadBG04a",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044D530",
+        "size": "161",
+        "span_end": "0x0044D5D0",
+        "current_name": "FUN_0044d530",
+        "proposed_name": "BackgroundStage::LoadBG04a",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BackgroundBG04aF377::BackgroundBG04aF377()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundLoadFamilyF377.cpp",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses; F377; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-load-bg04a-0044d530",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent; F377 independent original full 161-byte native authored R055 game-specific stage BG04a derived constructor at 0x0044D530, PE native CODE SHA256 1d5604ddaced5941bbbee8cbf50da73c605f1572b0eccf9fb5307632aaaa35dc, 41 original x86 instructions. Pinned VC7.1 /GX protected base constructor 00449DE0 and actual stage virtual table 0x00658948, real camera init at +0x6C via 0040D990; resource slot count 2, true background directory 0x00658924 and file string 0x0065892C passed to 0040BB80, observed material/owner fields +0xC=0x44200000; +0x10=0x42C80000; +0x14=0x42C80000; +0x68=0x00000000. Whole original native SEH handler at 0x00655E78, no cropped CFG or EH source bytes. Original complete derived stage layout and base methods are borrowed, not claimed. All 117/117 nonrelocated native bytes and 11/11 actual COFF physical fields verified, independent single cohort of 34 newly affected units cold 34/34 exact across one source object. No CRT, pack, base or EH callee double credit, forged ABI, unused locals, byte graft, assembly, masked relocation fields, whole-repo cold replay or remote Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044D530",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R055"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044D9C0",
+        "size": "161",
+        "span_end": "0x0044DA60",
+        "current_name": "FUN_0044d9c0",
+        "proposed_name": "BackgroundStage::LoadBG04b",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044D9C0",
+        "size": "161",
+        "span_end": "0x0044DA60",
+        "current_name": "FUN_0044d9c0",
+        "proposed_name": "BackgroundStage::LoadBG04b",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BackgroundBG04bF377::BackgroundBG04bF377()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundLoadFamilyF377.cpp",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses; F377; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-load-bg04b-0044d9c0",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent; F377 independent original full 161-byte native authored R055 game-specific stage BG04b derived constructor at 0x0044D9C0, PE native CODE SHA256 ea0c1880cf7299762d8aa18a322b4f14d80a5237771e8f6aaa8ce441d943fe7b, 41 original x86 instructions. Pinned VC7.1 /GX protected base constructor 00449DE0 and actual stage virtual table 0x006589E4, real camera init at +0x6C via 0040D990; resource slot count 2, true background directory 0x006589C0 and file string 0x006589C8 passed to 0040BB80, observed material/owner fields +0xC=0x44200000; +0x10=0x42C80000; +0x14=0x42C80000; +0x68=0x00000000. Whole original native SEH handler at 0x00655E98, no cropped CFG or EH source bytes. Original complete derived stage layout and base methods are borrowed, not claimed. All 117/117 nonrelocated native bytes and 11/11 actual COFF physical fields verified, independent single cohort of 34 newly affected units cold 34/34 exact across one source object. No CRT, pack, base or EH callee double credit, forged ABI, unused locals, byte graft, assembly, masked relocation fields, whole-repo cold replay or remote Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044D9C0",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R055"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044DE70",
+        "size": "151",
+        "span_end": "0x0044DF06",
+        "current_name": "FUN_0044de70",
+        "proposed_name": "BackgroundStage::LoadBG04x",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044DE70",
+        "size": "151",
+        "span_end": "0x0044DF06",
+        "current_name": "FUN_0044de70",
+        "proposed_name": "BackgroundStage::LoadBG04x",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BackgroundBG04xF377::BackgroundBG04xF377()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundLoadFamilyF377.cpp",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses; F377; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-load-bg04x-0044de70",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent; F377 independent original full 151-byte native authored R055 game-specific stage BG04x derived constructor at 0x0044DE70, PE native CODE SHA256 e3c7bf4457ed2eb8cf81fd88d9a544b35126ce26d0b76e0448031059d298a8b0, 39 original x86 instructions. Pinned VC7.1 /GX protected base constructor 00449DE0 and actual stage virtual table 0x00658A4C, real camera init at +0x6C via 0040D990; resource slot count 2, true background directory 0x00658A28 and file string 0x00658A30 passed to 0040BB80, observed material/owner fields +0xC=0x00000000; +0x10=0x00000000; +0x14=0x00000000. Whole original native SEH handler at 0x00655EB8, no cropped CFG or EH source bytes. Original complete derived stage layout and base methods are borrowed, not claimed. All 107/107 nonrelocated native bytes and 11/11 actual COFF physical fields verified, independent single cohort of 34 newly affected units cold 34/34 exact across one source object. No CRT, pack, base or EH callee double credit, forged ABI, unused locals, byte graft, assembly, masked relocation fields, whole-repo cold replay or remote Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044DE70",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R055"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044E0B0",
+        "size": "151",
+        "span_end": "0x0044E146",
+        "current_name": "FUN_0044e0b0",
+        "proposed_name": "BackgroundStage::LoadBG04y",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044E0B0",
+        "size": "151",
+        "span_end": "0x0044E146",
+        "current_name": "FUN_0044e0b0",
+        "proposed_name": "BackgroundStage::LoadBG04y",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BackgroundBG04yF377::BackgroundBG04yF377()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundLoadFamilyF377.cpp",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses; F377; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-load-bg04y-0044e0b0",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent; F377 independent original full 151-byte native authored R055 game-specific stage BG04y derived constructor at 0x0044E0B0, PE native CODE SHA256 b39c52cc204e16555de998a5748bdeed897e854c45ce3dffd709f604a0477700, 39 original x86 instructions. Pinned VC7.1 /GX protected base constructor 00449DE0 and actual stage virtual table 0x00658A88, real camera init at +0x6C via 0040D990; resource slot count 2, true background directory 0x00658A64 and file string 0x00658A6C passed to 0040BB80, observed material/owner fields +0xC=0x00000000; +0x10=0x00000000; +0x14=0x00000000. Whole original native SEH handler at 0x00655ED8, no cropped CFG or EH source bytes. Original complete derived stage layout and base methods are borrowed, not claimed. All 107/107 nonrelocated native bytes and 11/11 actual COFF physical fields verified, independent single cohort of 34 newly affected units cold 34/34 exact across one source object. No CRT, pack, base or EH callee double credit, forged ABI, unused locals, byte graft, assembly, masked relocation fields, whole-repo cold replay or remote Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044E0B0",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R055"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044E2F0",
+        "size": "161",
+        "span_end": "0x0044E390",
+        "current_name": "FUN_0044e2f0",
+        "proposed_name": "BackgroundStage::LoadBG05a",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044E2F0",
+        "size": "161",
+        "span_end": "0x0044E390",
+        "current_name": "FUN_0044e2f0",
+        "proposed_name": "BackgroundStage::LoadBG05a",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BackgroundBG05aF377::BackgroundBG05aF377()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundLoadFamilyF377.cpp",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses; F377; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-load-bg05a-0044e2f0",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent; F377 independent original full 161-byte native authored R055 game-specific stage BG05a derived constructor at 0x0044E2F0, PE native CODE SHA256 d616b02d96469e71aeed45b90ab04a19e532a791fa09dae015b603c2e7872c20, 41 original x86 instructions. Pinned VC7.1 /GX protected base constructor 00449DE0 and actual stage virtual table 0x00658AC4, real camera init at +0x6C via 0040D990; resource slot count 4, true background directory 0x00658AA0 and file string 0x00658AA8 passed to 0040BB80, observed material/owner fields +0xC=0x44200000; +0x10=0x42C80000; +0x14=0x42C80000; +0x68=0x00000000. Whole original native SEH handler at 0x00655EF8, no cropped CFG or EH source bytes. Original complete derived stage layout and base methods are borrowed, not claimed. All 117/117 nonrelocated native bytes and 11/11 actual COFF physical fields verified, independent single cohort of 34 newly affected units cold 34/34 exact across one source object. No CRT, pack, base or EH callee double credit, forged ABI, unused locals, byte graft, assembly, masked relocation fields, whole-repo cold replay or remote Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044E2F0",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R055"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044E810",
+        "size": "181",
+        "span_end": "0x0044E8C4",
+        "current_name": "FUN_0044e810",
+        "proposed_name": "BackgroundStage::LoadBG05b",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R059; complete body, CFG, paired vtable and family source/path witness",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044E810",
+        "size": "181",
+        "span_end": "0x0044E8C4",
+        "current_name": "FUN_0044e810",
+        "proposed_name": "BackgroundStage::LoadBG05b",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BackgroundBG05bF377::BackgroundBG05bF377()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundLoadFamilyF377.cpp",
+        "evidence": "R059; complete body, CFG, paired vtable and family source/path witness; F377; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-load-bg05b-0044e810",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent; F377 independent original full 181-byte native authored R055 game-specific stage BG05b derived constructor at 0x0044E810, PE native CODE SHA256 a9b8837a292fe3719db51b5f5a1456197b0a2b3d04013d117b17c0c79aae051e, 45 original x86 instructions. Pinned VC7.1 /GX protected base constructor 00449DE0 and actual stage virtual table 0x00658B24, real camera init at +0x74 via 0040D990; resource slot count 18, true background directory 0x00658B00 and file string 0x00658B08 passed to 0040BB80, observed material/owner fields +0xC=0x44200000; +0x10=0x42C80000; +0x14=0x42C80000; +0x68=0x00000000; +0x6C=0x00000000; +0x70=0x00000000. Whole original native SEH handler at 0x00655F18, no cropped CFG or EH source bytes. Original complete derived stage layout and base methods are borrowed, not claimed. All 137/137 nonrelocated native bytes and 11/11 actual COFF physical fields verified, independent single cohort of 34 newly affected units cold 34/34 exact across one source object. No CRT, pack, base or EH callee double credit, forged ABI, unused locals, byte graft, assembly, masked relocation fields, whole-repo cold replay or remote Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044E810",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R059"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044F300",
+        "size": "151",
+        "span_end": "0x0044F396",
+        "current_name": "FUN_0044f300",
+        "proposed_name": "BackgroundStage::LoadBG05x",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044F300",
+        "size": "151",
+        "span_end": "0x0044F396",
+        "current_name": "FUN_0044f300",
+        "proposed_name": "BackgroundStage::LoadBG05x",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BackgroundBG05xF377::BackgroundBG05xF377()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundLoadFamilyF377.cpp",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses; F377; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-load-bg05x-0044f300",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent; F377 independent original full 151-byte native authored R055 game-specific stage BG05x derived constructor at 0x0044F300, PE native CODE SHA256 5c7e5747d77cb433d6ed43454b96f77495378ccc27d623dcec9a9e31e2908922, 39 original x86 instructions. Pinned VC7.1 /GX protected base constructor 00449DE0 and actual stage virtual table 0x00658B84, real camera init at +0x68 via 0040D990; resource slot count 2, true background directory 0x00658B60 and file string 0x00658B68 passed to 0040BB80, observed material/owner fields +0xC=0x00000000; +0x10=0x00000000; +0x14=0x00000000. Whole original native SEH handler at 0x00655F38, no cropped CFG or EH source bytes. Original complete derived stage layout and base methods are borrowed, not claimed. All 107/107 nonrelocated native bytes and 11/11 actual COFF physical fields verified, independent single cohort of 34 newly affected units cold 34/34 exact across one source object. No CRT, pack, base or EH callee double credit, forged ABI, unused locals, byte graft, assembly, masked relocation fields, whole-repo cold replay or remote Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044F300",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R055"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044F540",
+        "size": "151",
+        "span_end": "0x0044F5D6",
+        "current_name": "FUN_0044f540",
+        "proposed_name": "BackgroundStage::LoadBG05y",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044F540",
+        "size": "151",
+        "span_end": "0x0044F5D6",
+        "current_name": "FUN_0044f540",
+        "proposed_name": "BackgroundStage::LoadBG05y",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BackgroundBG05yF377::BackgroundBG05yF377()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundLoadFamilyF377.cpp",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses; F377; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-load-bg05y-0044f540",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent; F377 independent original full 151-byte native authored R055 game-specific stage BG05y derived constructor at 0x0044F540, PE native CODE SHA256 3a8374031a8e71faa37df1220108d40d3aa0e32b044ef86e7513591519fd65ca, 39 original x86 instructions. Pinned VC7.1 /GX protected base constructor 00449DE0 and actual stage virtual table 0x00658BC0, real camera init at +0x6C via 0040D990; resource slot count 2, true background directory 0x00658B9C and file string 0x00658BA4 passed to 0040BB80, observed material/owner fields +0xC=0x00000000; +0x10=0x00000000; +0x14=0x00000000. Whole original native SEH handler at 0x00655F58, no cropped CFG or EH source bytes. Original complete derived stage layout and base methods are borrowed, not claimed. All 107/107 nonrelocated native bytes and 11/11 actual COFF physical fields verified, independent single cohort of 34 newly affected units cold 34/34 exact across one source object. No CRT, pack, base or EH callee double credit, forged ABI, unused locals, byte graft, assembly, masked relocation fields, whole-repo cold replay or remote Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044F540",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R055"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044F780",
+        "size": "161",
+        "span_end": "0x0044F820",
+        "current_name": "FUN_0044f780",
+        "proposed_name": "BackgroundStage::LoadBG06a",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0044F780",
+        "size": "161",
+        "span_end": "0x0044F820",
+        "current_name": "FUN_0044f780",
+        "proposed_name": "BackgroundStage::LoadBG06a",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BackgroundBG06aF377::BackgroundBG06aF377()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundLoadFamilyF377.cpp",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses; F377; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-load-bg06a-0044f780",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent; F377 independent original full 161-byte native authored R055 game-specific stage BG06a derived constructor at 0x0044F780, PE native CODE SHA256 6744abc0eccc29345702c4ab4903d38ee557d2849308c774c2dfa5b954a7e66a, 41 original x86 instructions. Pinned VC7.1 /GX protected base constructor 00449DE0 and actual stage virtual table 0x00658BFC, real camera init at +0x6C via 0040D990; resource slot count 5, true background directory 0x00658BD8 and file string 0x00658BE0 passed to 0040BB80, observed material/owner fields +0xC=0x44200000; +0x10=0x42C80000; +0x14=0x42C80000; +0x68=0x00000000. Whole original native SEH handler at 0x00655F78, no cropped CFG or EH source bytes. Original complete derived stage layout and base methods are borrowed, not claimed. All 117/117 nonrelocated native bytes and 11/11 actual COFF physical fields verified, independent single cohort of 34 newly affected units cold 34/34 exact across one source object. No CRT, pack, base or EH callee double credit, forged ABI, unused locals, byte graft, assembly, masked relocation fields, whole-repo cold replay or remote Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0044F780",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R055"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004500F0",
+        "size": "151",
+        "span_end": "0x00450186",
+        "current_name": "FUN_004500f0",
+        "proposed_name": "BackgroundStage::LoadBG06x",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x004500F0",
+        "size": "151",
+        "span_end": "0x00450186",
+        "current_name": "FUN_004500f0",
+        "proposed_name": "BackgroundStage::LoadBG06x",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BackgroundBG06xF377::BackgroundBG06xF377()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundLoadFamilyF377.cpp",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses; F377; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-load-bg06x-004500f0",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent; F377 independent original full 151-byte native authored R055 game-specific stage BG06x derived constructor at 0x004500F0, PE native CODE SHA256 cfcf08de14a473f3384d2c7084b377660c8bfd0de73f3c3312131123993a15a3, 39 original x86 instructions. Pinned VC7.1 /GX protected base constructor 00449DE0 and actual stage virtual table 0x00658C54, real camera init at +0x6C via 0040D990; resource slot count 2, true background directory 0x00658C30 and file string 0x00658C38 passed to 0040BB80, observed material/owner fields +0xC=0x00000000; +0x10=0x00000000; +0x14=0x00000000. Whole original native SEH handler at 0x00655F98, no cropped CFG or EH source bytes. Original complete derived stage layout and base methods are borrowed, not claimed. All 107/107 nonrelocated native bytes and 11/11 actual COFF physical fields verified, independent single cohort of 34 newly affected units cold 34/34 exact across one source object. No CRT, pack, base or EH callee double credit, forged ABI, unused locals, byte graft, assembly, masked relocation fields, whole-repo cold replay or remote Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x004500F0",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R055"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00450330",
+        "size": "161",
+        "span_end": "0x004503D0",
+        "current_name": "FUN_00450330",
+        "proposed_name": "BackgroundStage::LoadBG07a",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x00450330",
+        "size": "161",
+        "span_end": "0x004503D0",
+        "current_name": "FUN_00450330",
+        "proposed_name": "BackgroundStage::LoadBG07a",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BackgroundBG07aF377::BackgroundBG07aF377()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundLoadFamilyF377.cpp",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses; F377; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-load-bg07a-00450330",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent; F377 independent original full 161-byte native authored R055 game-specific stage BG07a derived constructor at 0x00450330, PE native CODE SHA256 c92dee21563b0da0000409b262327485d54bb4865c78cc094e63f36778e916ee, 41 original x86 instructions. Pinned VC7.1 /GX protected base constructor 00449DE0 and actual stage virtual table 0x00658C90, real camera init at +0x6C via 0040D990; resource slot count 4, true background directory 0x00658C6C and file string 0x00658C74 passed to 0040BB80, observed material/owner fields +0xC=0x00000000; +0x10=0x00000000; +0x14=0x00000000; +0x68=0x00000000. Whole original native SEH handler at 0x00655FB8, no cropped CFG or EH source bytes. Original complete derived stage layout and base methods are borrowed, not claimed. All 117/117 nonrelocated native bytes and 11/11 actual COFF physical fields verified, independent single cohort of 34 newly affected units cold 34/34 exact across one source object. No CRT, pack, base or EH callee double credit, forged ABI, unused locals, byte graft, assembly, masked relocation fields, whole-repo cold replay or remote Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x00450330",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R055"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004508E0",
+        "size": "151",
+        "span_end": "0x00450976",
+        "current_name": "FUN_004508e0",
+        "proposed_name": "BackgroundStage::LoadBG07x",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x004508E0",
+        "size": "151",
+        "span_end": "0x00450976",
+        "current_name": "FUN_004508e0",
+        "proposed_name": "BackgroundStage::LoadBG07x",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BackgroundBG07xF377::BackgroundBG07xF377()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundLoadFamilyF377.cpp",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses; F377; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-load-bg07x-004508e0",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent; F377 independent original full 151-byte native authored R055 game-specific stage BG07x derived constructor at 0x004508E0, PE native CODE SHA256 d0a7829f947a04093609400f9d9ca6e8665253eae4f349b6e4252f9cf19d845b, 39 original x86 instructions. Pinned VC7.1 /GX protected base constructor 00449DE0 and actual stage virtual table 0x00658CFC, real camera init at +0x6C via 0040D990; resource slot count 2, true background directory 0x00658CD8 and file string 0x00658CE0 passed to 0040BB80, observed material/owner fields +0xC=0x00000000; +0x10=0x00000000; +0x14=0x00000000. Whole original native SEH handler at 0x00655FD8, no cropped CFG or EH source bytes. Original complete derived stage layout and base methods are borrowed, not claimed. All 107/107 nonrelocated native bytes and 11/11 actual COFF physical fields verified, independent single cohort of 34 newly affected units cold 34/34 exact across one source object. No CRT, pack, base or EH callee double credit, forged ABI, unused locals, byte graft, assembly, masked relocation fields, whole-repo cold replay or remote Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x004508E0",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R055"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00450B20",
+        "size": "171",
+        "span_end": "0x00450BCA",
+        "current_name": "FUN_00450b20",
+        "proposed_name": "BackgroundStage::LoadBG08a",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R059; complete body, CFG, paired vtable and family source/path witness",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x00450B20",
+        "size": "171",
+        "span_end": "0x00450BCA",
+        "current_name": "FUN_00450b20",
+        "proposed_name": "BackgroundStage::LoadBG08a",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BackgroundBG08aF377::BackgroundBG08aF377()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundLoadFamilyF377.cpp",
+        "evidence": "R059; complete body, CFG, paired vtable and family source/path witness; F377; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-load-bg08a-00450b20",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent; F377 independent original full 171-byte native authored R055 game-specific stage BG08a derived constructor at 0x00450B20, PE native CODE SHA256 be70f12e258c3cb52bcc8b51f3fdf0fdb118dbab3713e8ce0e6eb9a0dd5ed5f3, 43 original x86 instructions. Pinned VC7.1 /GX protected base constructor 00449DE0 and actual stage virtual table 0x00658D38, real camera init at +0x70 via 0040D990; resource slot count 54, true background directory 0x00658D14 and file string 0x00658D1C passed to 0040BB80, observed material/owner fields +0xC=0x00000000; +0x10=0x00000000; +0x14=0x00000000; +0x68=0x00000000; +0x6C=0x00000000. Whole original native SEH handler at 0x00655FF8, no cropped CFG or EH source bytes. Original complete derived stage layout and base methods are borrowed, not claimed. All 127/127 nonrelocated native bytes and 11/11 actual COFF physical fields verified, independent single cohort of 34 newly affected units cold 34/34 exact across one source object. No CRT, pack, base or EH callee double credit, forged ABI, unused locals, byte graft, assembly, masked relocation fields, whole-repo cold replay or remote Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x00450B20",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R059"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00451130",
+        "size": "151",
+        "span_end": "0x004511C6",
+        "current_name": "FUN_00451130",
+        "proposed_name": "BackgroundStage::LoadBG08x",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x00451130",
+        "size": "151",
+        "span_end": "0x004511C6",
+        "current_name": "FUN_00451130",
+        "proposed_name": "BackgroundStage::LoadBG08x",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BackgroundBG08xF377::BackgroundBG08xF377()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundLoadFamilyF377.cpp",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses; F377; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-load-bg08x-00451130",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent; F377 independent original full 151-byte native authored R055 game-specific stage BG08x derived constructor at 0x00451130, PE native CODE SHA256 0f3449ce132e030ede16dc183cda41173820582b6fda641bc55aa85051b3da3f, 39 original x86 instructions. Pinned VC7.1 /GX protected base constructor 00449DE0 and actual stage virtual table 0x00658D84, real camera init at +0x6C via 0040D990; resource slot count 2, true background directory 0x00658D60 and file string 0x00658D68 passed to 0040BB80, observed material/owner fields +0xC=0x00000000; +0x10=0x00000000; +0x14=0x00000000. Whole original native SEH handler at 0x00656018, no cropped CFG or EH source bytes. Original complete derived stage layout and base methods are borrowed, not claimed. All 107/107 nonrelocated native bytes and 11/11 actual COFF physical fields verified, independent single cohort of 34 newly affected units cold 34/34 exact across one source object. No CRT, pack, base or EH callee double credit, forged ABI, unused locals, byte graft, assembly, masked relocation fields, whole-repo cold replay or remote Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x00451130",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R055"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00451370",
+        "size": "161",
+        "span_end": "0x00451410",
+        "current_name": "FUN_00451370",
+        "proposed_name": "BackgroundStage::LoadBG09a",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x00451370",
+        "size": "161",
+        "span_end": "0x00451410",
+        "current_name": "FUN_00451370",
+        "proposed_name": "BackgroundStage::LoadBG09a",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BackgroundBG09aF377::BackgroundBG09aF377()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundLoadFamilyF377.cpp",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses; F377; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-load-bg09a-00451370",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent; F377 independent original full 161-byte native authored R055 game-specific stage BG09a derived constructor at 0x00451370, PE native CODE SHA256 8b8546c1ccd7f7b28f7467372897424c31c564a976f8c3d7d33204857c648479, 41 original x86 instructions. Pinned VC7.1 /GX protected base constructor 00449DE0 and actual stage virtual table 0x00658DC0, real camera init at +0x6C via 0040D990; resource slot count 26, true background directory 0x00658D9C and file string 0x00658DA4 passed to 0040BB80, observed material/owner fields +0xC=0x44200000; +0x10=0x42C80000; +0x14=0x42C80000; +0x68=0x00000000. Whole original native SEH handler at 0x00656038, no cropped CFG or EH source bytes. Original complete derived stage layout and base methods are borrowed, not claimed. All 117/117 nonrelocated native bytes and 11/11 actual COFF physical fields verified, independent single cohort of 34 newly affected units cold 34/34 exact across one source object. No CRT, pack, base or EH callee double credit, forged ABI, unused locals, byte graft, assembly, masked relocation fields, whole-repo cold replay or remote Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x00451370",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R055"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00451C70",
+        "size": "151",
+        "span_end": "0x00451D06",
+        "current_name": "FUN_00451c70",
+        "proposed_name": "BackgroundStage::LoadBG09x",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x00451C70",
+        "size": "151",
+        "span_end": "0x00451D06",
+        "current_name": "FUN_00451c70",
+        "proposed_name": "BackgroundStage::LoadBG09x",
+        "module": "BackgroundStage",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BackgroundBG09xF377::BackgroundBG09xF377()",
+        "is_thunk": "false",
+        "source_file": "src/BackgroundLoadFamilyF377.cpp",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses; F377; scripts/repo-python scripts/replay-exact-units.py --unit background-stage-load-bg09x-00451c70",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent; F377 independent original full 151-byte native authored R055 game-specific stage BG09x derived constructor at 0x00451C70, PE native CODE SHA256 953fdd712b90e58c0c692a36caa391aa0c5b989b0518f6abae3f12e5a86295d2, 39 original x86 instructions. Pinned VC7.1 /GX protected base constructor 00449DE0 and actual stage virtual table 0x00658E54, real camera init at +0x6C via 0040D990; resource slot count 2, true background directory 0x00658E30 and file string 0x00658E38 passed to 0040BB80, observed material/owner fields +0xC=0x00000000; +0x10=0x00000000; +0x14=0x00000000. Whole original native SEH handler at 0x00656058, no cropped CFG or EH source bytes. Original complete derived stage layout and base methods are borrowed, not claimed. All 107/107 nonrelocated native bytes and 11/11 actual COFF physical fields verified, independent single cohort of 34 newly affected units cold 34/34 exact across one source object. No CRT, pack, base or EH callee double credit, forged ABI, unused locals, byte graft, assembly, masked relocation fields, whole-repo cold replay or remote Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x00451C70",
         "origin": "authored",
         "subsystem": "BackgroundStage",
         "disposition": "authored",
@@ -188224,6 +189720,3002 @@
           "target": 0
         }
       ]
+    },
+    "background-stage-load-bg00c-0044a230": {
+      "source": "src/BackgroundLoadFamilyF377.cpp",
+      "object": "build/matching/BackgroundLoadFamilyF377.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::LoadBG00c"
+      ],
+      "symbol": "??0BackgroundBG00cF377@@QAE@XZ",
+      "target_address": 4497968,
+      "size": 151,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??0BackgroundBG00cF377@@QAE@XZ",
+          "target": 6642744
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 32,
+          "type": "REL32",
+          "symbol": "??0StageBaseF377@@QAE@XZ",
+          "target": 4496864
+        },
+        {
+          "offset": 48,
+          "type": "DIR32",
+          "symbol": "??_7BackgroundBG00cF377@@6B@",
+          "target": 6653180
+        },
+        {
+          "offset": 59,
+          "type": "REL32",
+          "symbol": "?Initialize@StageCameraF377@@QAEXXZ",
+          "target": 4250000
+        },
+        {
+          "offset": 72,
+          "type": "REL32",
+          "symbol": "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z",
+          "target": 4239824
+        },
+        {
+          "offset": 77,
+          "type": "DIR32",
+          "symbol": "?g_DirectoryBG00cAt006584D8F377@@3QBDB",
+          "target": 6653144
+        },
+        {
+          "offset": 82,
+          "type": "DIR32",
+          "symbol": "?g_FilenameBG00cAt006584E0F377@@3QBDB",
+          "target": 6653152
+        },
+        {
+          "offset": 93,
+          "type": "REL32",
+          "symbol": "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z",
+          "target": 4242304
+        },
+        {
+          "offset": 143,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "background-stage-load-bg00x-0044a520": {
+      "source": "src/BackgroundLoadFamilyF377.cpp",
+      "object": "build/matching/BackgroundLoadFamilyF377.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::LoadBG00x"
+      ],
+      "symbol": "??0BackgroundBG00xF377@@QAE@XZ",
+      "target_address": 4498720,
+      "size": 140,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??0BackgroundBG00xF377@@QAE@XZ",
+          "target": 6642776
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 32,
+          "type": "REL32",
+          "symbol": "??0StageBaseF377@@QAE@XZ",
+          "target": 4496864
+        },
+        {
+          "offset": 48,
+          "type": "DIR32",
+          "symbol": "??_7BackgroundBG00xF377@@6B@",
+          "target": 6653240
+        },
+        {
+          "offset": 61,
+          "type": "REL32",
+          "symbol": "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z",
+          "target": 4239824
+        },
+        {
+          "offset": 66,
+          "type": "DIR32",
+          "symbol": "?g_DirectoryBG00xAt00658514F377@@3QBDB",
+          "target": 6653204
+        },
+        {
+          "offset": 71,
+          "type": "DIR32",
+          "symbol": "?g_FilenameBG00xAt0065851CF377@@3QBDB",
+          "target": 6653212
+        },
+        {
+          "offset": 82,
+          "type": "REL32",
+          "symbol": "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z",
+          "target": 4242304
+        },
+        {
+          "offset": 132,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "background-stage-load-bg00y-0044a750": {
+      "source": "src/BackgroundLoadFamilyF377.cpp",
+      "object": "build/matching/BackgroundLoadFamilyF377.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::LoadBG00y"
+      ],
+      "symbol": "??0BackgroundBG00yF377@@QAE@XZ",
+      "target_address": 4499280,
+      "size": 140,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??0BackgroundBG00yF377@@QAE@XZ",
+          "target": 6642808
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 32,
+          "type": "REL32",
+          "symbol": "??0StageBaseF377@@QAE@XZ",
+          "target": 4496864
+        },
+        {
+          "offset": 48,
+          "type": "DIR32",
+          "symbol": "??_7BackgroundBG00yF377@@6B@",
+          "target": 6653300
+        },
+        {
+          "offset": 61,
+          "type": "REL32",
+          "symbol": "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z",
+          "target": 4239824
+        },
+        {
+          "offset": 66,
+          "type": "DIR32",
+          "symbol": "?g_DirectoryBG00yAt00658550F377@@3QBDB",
+          "target": 6653264
+        },
+        {
+          "offset": 71,
+          "type": "DIR32",
+          "symbol": "?g_FilenameBG00yAt00658558F377@@3QBDB",
+          "target": 6653272
+        },
+        {
+          "offset": 82,
+          "type": "REL32",
+          "symbol": "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z",
+          "target": 4242304
+        },
+        {
+          "offset": 132,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "background-stage-load-bg00z-0044a980": {
+      "source": "src/BackgroundLoadFamilyF377.cpp",
+      "object": "build/matching/BackgroundLoadFamilyF377.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::LoadBG00z"
+      ],
+      "symbol": "??0BackgroundBG00zF377@@QAE@XZ",
+      "target_address": 4499840,
+      "size": 140,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??0BackgroundBG00zF377@@QAE@XZ",
+          "target": 6642840
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 32,
+          "type": "REL32",
+          "symbol": "??0StageBaseF377@@QAE@XZ",
+          "target": 4496864
+        },
+        {
+          "offset": 48,
+          "type": "DIR32",
+          "symbol": "??_7BackgroundBG00zF377@@6B@",
+          "target": 6653360
+        },
+        {
+          "offset": 61,
+          "type": "REL32",
+          "symbol": "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z",
+          "target": 4239824
+        },
+        {
+          "offset": 66,
+          "type": "DIR32",
+          "symbol": "?g_DirectoryBG00zAt0065858CF377@@3QBDB",
+          "target": 6653324
+        },
+        {
+          "offset": 71,
+          "type": "DIR32",
+          "symbol": "?g_FilenameBG00zAt00658594F377@@3QBDB",
+          "target": 6653332
+        },
+        {
+          "offset": 82,
+          "type": "REL32",
+          "symbol": "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z",
+          "target": 4242304
+        },
+        {
+          "offset": 132,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "background-stage-load-bg01a-0044abb0": {
+      "source": "src/BackgroundLoadFamilyF377.cpp",
+      "object": "build/matching/BackgroundLoadFamilyF377.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::LoadBG01a"
+      ],
+      "symbol": "??0BackgroundBG01aF377@@QAE@XZ",
+      "target_address": 4500400,
+      "size": 151,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??0BackgroundBG01aF377@@QAE@XZ",
+          "target": 6642872
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 32,
+          "type": "REL32",
+          "symbol": "??0StageBaseF377@@QAE@XZ",
+          "target": 4496864
+        },
+        {
+          "offset": 48,
+          "type": "DIR32",
+          "symbol": "??_7BackgroundBG01aF377@@6B@",
+          "target": 6653420
+        },
+        {
+          "offset": 59,
+          "type": "REL32",
+          "symbol": "?Initialize@StageCameraF377@@QAEXXZ",
+          "target": 4250000
+        },
+        {
+          "offset": 72,
+          "type": "REL32",
+          "symbol": "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z",
+          "target": 4239824
+        },
+        {
+          "offset": 77,
+          "type": "DIR32",
+          "symbol": "?g_DirectoryBG01aAt006585C8F377@@3QBDB",
+          "target": 6653384
+        },
+        {
+          "offset": 82,
+          "type": "DIR32",
+          "symbol": "?g_FilenameBG01aAt006585D0F377@@3QBDB",
+          "target": 6653392
+        },
+        {
+          "offset": 93,
+          "type": "REL32",
+          "symbol": "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z",
+          "target": 4242304
+        },
+        {
+          "offset": 143,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "background-stage-load-bg01b-0044ae50": {
+      "source": "src/BackgroundLoadFamilyF377.cpp",
+      "object": "build/matching/BackgroundLoadFamilyF377.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::LoadBG01b"
+      ],
+      "symbol": "??0BackgroundBG01bF377@@QAE@XZ",
+      "target_address": 4501072,
+      "size": 151,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??0BackgroundBG01bF377@@QAE@XZ",
+          "target": 6642904
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 32,
+          "type": "REL32",
+          "symbol": "??0StageBaseF377@@QAE@XZ",
+          "target": 4496864
+        },
+        {
+          "offset": 48,
+          "type": "DIR32",
+          "symbol": "??_7BackgroundBG01bF377@@6B@",
+          "target": 6653492
+        },
+        {
+          "offset": 59,
+          "type": "REL32",
+          "symbol": "?Initialize@StageCameraF377@@QAEXXZ",
+          "target": 4250000
+        },
+        {
+          "offset": 72,
+          "type": "REL32",
+          "symbol": "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z",
+          "target": 4239824
+        },
+        {
+          "offset": 77,
+          "type": "DIR32",
+          "symbol": "?g_DirectoryBG01bAt00658610F377@@3QBDB",
+          "target": 6653456
+        },
+        {
+          "offset": 82,
+          "type": "DIR32",
+          "symbol": "?g_FilenameBG01bAt00658618F377@@3QBDB",
+          "target": 6653464
+        },
+        {
+          "offset": 93,
+          "type": "REL32",
+          "symbol": "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z",
+          "target": 4242304
+        },
+        {
+          "offset": 143,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "background-stage-load-bg01x-0044b0f0": {
+      "source": "src/BackgroundLoadFamilyF377.cpp",
+      "object": "build/matching/BackgroundLoadFamilyF377.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::LoadBG01x"
+      ],
+      "symbol": "??0BackgroundBG01xF377@@QAE@XZ",
+      "target_address": 4501744,
+      "size": 140,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??0BackgroundBG01xF377@@QAE@XZ",
+          "target": 6642936
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 32,
+          "type": "REL32",
+          "symbol": "??0StageBaseF377@@QAE@XZ",
+          "target": 4496864
+        },
+        {
+          "offset": 48,
+          "type": "DIR32",
+          "symbol": "??_7BackgroundBG01xF377@@6B@",
+          "target": 6653552
+        },
+        {
+          "offset": 61,
+          "type": "REL32",
+          "symbol": "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z",
+          "target": 4239824
+        },
+        {
+          "offset": 66,
+          "type": "DIR32",
+          "symbol": "?g_DirectoryBG01xAt0065864CF377@@3QBDB",
+          "target": 6653516
+        },
+        {
+          "offset": 71,
+          "type": "DIR32",
+          "symbol": "?g_FilenameBG01xAt00658654F377@@3QBDB",
+          "target": 6653524
+        },
+        {
+          "offset": 82,
+          "type": "REL32",
+          "symbol": "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z",
+          "target": 4242304
+        },
+        {
+          "offset": 132,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "background-stage-load-bg01y-0044b320": {
+      "source": "src/BackgroundLoadFamilyF377.cpp",
+      "object": "build/matching/BackgroundLoadFamilyF377.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::LoadBG01y"
+      ],
+      "symbol": "??0BackgroundBG01yF377@@QAE@XZ",
+      "target_address": 4502304,
+      "size": 140,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??0BackgroundBG01yF377@@QAE@XZ",
+          "target": 6642968
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 32,
+          "type": "REL32",
+          "symbol": "??0StageBaseF377@@QAE@XZ",
+          "target": 4496864
+        },
+        {
+          "offset": 48,
+          "type": "DIR32",
+          "symbol": "??_7BackgroundBG01yF377@@6B@",
+          "target": 6653612
+        },
+        {
+          "offset": 61,
+          "type": "REL32",
+          "symbol": "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z",
+          "target": 4239824
+        },
+        {
+          "offset": 66,
+          "type": "DIR32",
+          "symbol": "?g_DirectoryBG01yAt00658688F377@@3QBDB",
+          "target": 6653576
+        },
+        {
+          "offset": 71,
+          "type": "DIR32",
+          "symbol": "?g_FilenameBG01yAt00658690F377@@3QBDB",
+          "target": 6653584
+        },
+        {
+          "offset": 82,
+          "type": "REL32",
+          "symbol": "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z",
+          "target": 4242304
+        },
+        {
+          "offset": 132,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "background-stage-load-bg02a-0044b550": {
+      "source": "src/BackgroundLoadFamilyF377.cpp",
+      "object": "build/matching/BackgroundLoadFamilyF377.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::LoadBG02a"
+      ],
+      "symbol": "??0BackgroundBG02aF377@@QAE@XZ",
+      "target_address": 4502864,
+      "size": 161,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??0BackgroundBG02aF377@@QAE@XZ",
+          "target": 6643000
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 32,
+          "type": "REL32",
+          "symbol": "??0StageBaseF377@@QAE@XZ",
+          "target": 4496864
+        },
+        {
+          "offset": 48,
+          "type": "DIR32",
+          "symbol": "??_7BackgroundBG02aF377@@6B@",
+          "target": 6653672
+        },
+        {
+          "offset": 59,
+          "type": "REL32",
+          "symbol": "?Initialize@StageCameraF377@@QAEXXZ",
+          "target": 4250000
+        },
+        {
+          "offset": 72,
+          "type": "REL32",
+          "symbol": "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z",
+          "target": 4239824
+        },
+        {
+          "offset": 77,
+          "type": "DIR32",
+          "symbol": "?g_DirectoryBG02aAt006586C4F377@@3QBDB",
+          "target": 6653636
+        },
+        {
+          "offset": 82,
+          "type": "DIR32",
+          "symbol": "?g_FilenameBG02aAt006586CCF377@@3QBDB",
+          "target": 6653644
+        },
+        {
+          "offset": 93,
+          "type": "REL32",
+          "symbol": "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z",
+          "target": 4242304
+        },
+        {
+          "offset": 153,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "background-stage-load-bg02b-0044ba70": {
+      "source": "src/BackgroundLoadFamilyF377.cpp",
+      "object": "build/matching/BackgroundLoadFamilyF377.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::LoadBG02b"
+      ],
+      "symbol": "??0BackgroundBG02bF377@@QAE@XZ",
+      "target_address": 4504176,
+      "size": 161,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??0BackgroundBG02bF377@@QAE@XZ",
+          "target": 6643032
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 32,
+          "type": "REL32",
+          "symbol": "??0StageBaseF377@@QAE@XZ",
+          "target": 4496864
+        },
+        {
+          "offset": 48,
+          "type": "DIR32",
+          "symbol": "??_7BackgroundBG02bF377@@6B@",
+          "target": 6653740
+        },
+        {
+          "offset": 59,
+          "type": "REL32",
+          "symbol": "?Initialize@StageCameraF377@@QAEXXZ",
+          "target": 4250000
+        },
+        {
+          "offset": 72,
+          "type": "REL32",
+          "symbol": "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z",
+          "target": 4239824
+        },
+        {
+          "offset": 77,
+          "type": "DIR32",
+          "symbol": "?g_DirectoryBG02bAt00658708F377@@3QBDB",
+          "target": 6653704
+        },
+        {
+          "offset": 82,
+          "type": "DIR32",
+          "symbol": "?g_FilenameBG02bAt00658710F377@@3QBDB",
+          "target": 6653712
+        },
+        {
+          "offset": 93,
+          "type": "REL32",
+          "symbol": "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z",
+          "target": 4242304
+        },
+        {
+          "offset": 153,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "background-stage-load-bg02c-0044bf90": {
+      "source": "src/BackgroundLoadFamilyF377.cpp",
+      "object": "build/matching/BackgroundLoadFamilyF377.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::LoadBG02c"
+      ],
+      "symbol": "??0BackgroundBG02cF377@@QAE@XZ",
+      "target_address": 4505488,
+      "size": 161,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??0BackgroundBG02cF377@@QAE@XZ",
+          "target": 6643064
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 32,
+          "type": "REL32",
+          "symbol": "??0StageBaseF377@@QAE@XZ",
+          "target": 4496864
+        },
+        {
+          "offset": 48,
+          "type": "DIR32",
+          "symbol": "??_7BackgroundBG02cF377@@6B@",
+          "target": 6653800
+        },
+        {
+          "offset": 59,
+          "type": "REL32",
+          "symbol": "?Initialize@StageCameraF377@@QAEXXZ",
+          "target": 4250000
+        },
+        {
+          "offset": 72,
+          "type": "REL32",
+          "symbol": "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z",
+          "target": 4239824
+        },
+        {
+          "offset": 77,
+          "type": "DIR32",
+          "symbol": "?g_DirectoryBG02cAt00658744F377@@3QBDB",
+          "target": 6653764
+        },
+        {
+          "offset": 82,
+          "type": "DIR32",
+          "symbol": "?g_FilenameBG02cAt0065874CF377@@3QBDB",
+          "target": 6653772
+        },
+        {
+          "offset": 93,
+          "type": "REL32",
+          "symbol": "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z",
+          "target": 4242304
+        },
+        {
+          "offset": 153,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "background-stage-load-bg02x-0044c4b0": {
+      "source": "src/BackgroundLoadFamilyF377.cpp",
+      "object": "build/matching/BackgroundLoadFamilyF377.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::LoadBG02x"
+      ],
+      "symbol": "??0BackgroundBG02xF377@@QAE@XZ",
+      "target_address": 4506800,
+      "size": 151,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??0BackgroundBG02xF377@@QAE@XZ",
+          "target": 6643096
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 32,
+          "type": "REL32",
+          "symbol": "??0StageBaseF377@@QAE@XZ",
+          "target": 4496864
+        },
+        {
+          "offset": 48,
+          "type": "DIR32",
+          "symbol": "??_7BackgroundBG02xF377@@6B@",
+          "target": 6653860
+        },
+        {
+          "offset": 59,
+          "type": "REL32",
+          "symbol": "?Initialize@StageCameraF377@@QAEXXZ",
+          "target": 4250000
+        },
+        {
+          "offset": 72,
+          "type": "REL32",
+          "symbol": "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z",
+          "target": 4239824
+        },
+        {
+          "offset": 77,
+          "type": "DIR32",
+          "symbol": "?g_DirectoryBG02xAt00658780F377@@3QBDB",
+          "target": 6653824
+        },
+        {
+          "offset": 82,
+          "type": "DIR32",
+          "symbol": "?g_FilenameBG02xAt00658788F377@@3QBDB",
+          "target": 6653832
+        },
+        {
+          "offset": 93,
+          "type": "REL32",
+          "symbol": "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z",
+          "target": 4242304
+        },
+        {
+          "offset": 143,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "background-stage-load-bg02y-0044c6f0": {
+      "source": "src/BackgroundLoadFamilyF377.cpp",
+      "object": "build/matching/BackgroundLoadFamilyF377.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::LoadBG02y"
+      ],
+      "symbol": "??0BackgroundBG02yF377@@QAE@XZ",
+      "target_address": 4507376,
+      "size": 151,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??0BackgroundBG02yF377@@QAE@XZ",
+          "target": 6643128
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 32,
+          "type": "REL32",
+          "symbol": "??0StageBaseF377@@QAE@XZ",
+          "target": 4496864
+        },
+        {
+          "offset": 48,
+          "type": "DIR32",
+          "symbol": "??_7BackgroundBG02yF377@@6B@",
+          "target": 6653920
+        },
+        {
+          "offset": 59,
+          "type": "REL32",
+          "symbol": "?Initialize@StageCameraF377@@QAEXXZ",
+          "target": 4250000
+        },
+        {
+          "offset": 72,
+          "type": "REL32",
+          "symbol": "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z",
+          "target": 4239824
+        },
+        {
+          "offset": 77,
+          "type": "DIR32",
+          "symbol": "?g_DirectoryBG02yAt006587BCF377@@3QBDB",
+          "target": 6653884
+        },
+        {
+          "offset": 82,
+          "type": "DIR32",
+          "symbol": "?g_FilenameBG02yAt006587C4F377@@3QBDB",
+          "target": 6653892
+        },
+        {
+          "offset": 93,
+          "type": "REL32",
+          "symbol": "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z",
+          "target": 4242304
+        },
+        {
+          "offset": 143,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "background-stage-load-bg02z-0044c930": {
+      "source": "src/BackgroundLoadFamilyF377.cpp",
+      "object": "build/matching/BackgroundLoadFamilyF377.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::LoadBG02z"
+      ],
+      "symbol": "??0BackgroundBG02zF377@@QAE@XZ",
+      "target_address": 4507952,
+      "size": 151,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??0BackgroundBG02zF377@@QAE@XZ",
+          "target": 6643160
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 32,
+          "type": "REL32",
+          "symbol": "??0StageBaseF377@@QAE@XZ",
+          "target": 4496864
+        },
+        {
+          "offset": 48,
+          "type": "DIR32",
+          "symbol": "??_7BackgroundBG02zF377@@6B@",
+          "target": 6653980
+        },
+        {
+          "offset": 59,
+          "type": "REL32",
+          "symbol": "?Initialize@StageCameraF377@@QAEXXZ",
+          "target": 4250000
+        },
+        {
+          "offset": 72,
+          "type": "REL32",
+          "symbol": "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z",
+          "target": 4239824
+        },
+        {
+          "offset": 77,
+          "type": "DIR32",
+          "symbol": "?g_DirectoryBG02zAt006587F8F377@@3QBDB",
+          "target": 6653944
+        },
+        {
+          "offset": 82,
+          "type": "DIR32",
+          "symbol": "?g_FilenameBG02zAt00658800F377@@3QBDB",
+          "target": 6653952
+        },
+        {
+          "offset": 93,
+          "type": "REL32",
+          "symbol": "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z",
+          "target": 4242304
+        },
+        {
+          "offset": 143,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "background-stage-load-bg03a-0044cb70": {
+      "source": "src/BackgroundLoadFamilyF377.cpp",
+      "object": "build/matching/BackgroundLoadFamilyF377.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::LoadBG03a"
+      ],
+      "symbol": "??0BackgroundBG03aF377@@QAE@XZ",
+      "target_address": 4508528,
+      "size": 151,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??0BackgroundBG03aF377@@QAE@XZ",
+          "target": 6643192
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 32,
+          "type": "REL32",
+          "symbol": "??0StageBaseF377@@QAE@XZ",
+          "target": 4496864
+        },
+        {
+          "offset": 48,
+          "type": "DIR32",
+          "symbol": "??_7BackgroundBG03aF377@@6B@",
+          "target": 6654040
+        },
+        {
+          "offset": 59,
+          "type": "REL32",
+          "symbol": "?Initialize@StageCameraF377@@QAEXXZ",
+          "target": 4250000
+        },
+        {
+          "offset": 72,
+          "type": "REL32",
+          "symbol": "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z",
+          "target": 4239824
+        },
+        {
+          "offset": 77,
+          "type": "DIR32",
+          "symbol": "?g_DirectoryBG03aAt00658834F377@@3QBDB",
+          "target": 6654004
+        },
+        {
+          "offset": 82,
+          "type": "DIR32",
+          "symbol": "?g_FilenameBG03aAt0065883CF377@@3QBDB",
+          "target": 6654012
+        },
+        {
+          "offset": 93,
+          "type": "REL32",
+          "symbol": "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z",
+          "target": 4242304
+        },
+        {
+          "offset": 143,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "background-stage-load-bg03b-0044ce10": {
+      "source": "src/BackgroundLoadFamilyF377.cpp",
+      "object": "build/matching/BackgroundLoadFamilyF377.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::LoadBG03b"
+      ],
+      "symbol": "??0BackgroundBG03bF377@@QAE@XZ",
+      "target_address": 4509200,
+      "size": 151,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??0BackgroundBG03bF377@@QAE@XZ",
+          "target": 6643224
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 32,
+          "type": "REL32",
+          "symbol": "??0StageBaseF377@@QAE@XZ",
+          "target": 4496864
+        },
+        {
+          "offset": 48,
+          "type": "DIR32",
+          "symbol": "??_7BackgroundBG03bF377@@6B@",
+          "target": 6654100
+        },
+        {
+          "offset": 59,
+          "type": "REL32",
+          "symbol": "?Initialize@StageCameraF377@@QAEXXZ",
+          "target": 4250000
+        },
+        {
+          "offset": 72,
+          "type": "REL32",
+          "symbol": "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z",
+          "target": 4239824
+        },
+        {
+          "offset": 77,
+          "type": "DIR32",
+          "symbol": "?g_DirectoryBG03bAt00658870F377@@3QBDB",
+          "target": 6654064
+        },
+        {
+          "offset": 82,
+          "type": "DIR32",
+          "symbol": "?g_FilenameBG03bAt00658878F377@@3QBDB",
+          "target": 6654072
+        },
+        {
+          "offset": 93,
+          "type": "REL32",
+          "symbol": "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z",
+          "target": 4242304
+        },
+        {
+          "offset": 143,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "background-stage-load-bg03x-0044d0b0": {
+      "source": "src/BackgroundLoadFamilyF377.cpp",
+      "object": "build/matching/BackgroundLoadFamilyF377.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::LoadBG03x"
+      ],
+      "symbol": "??0BackgroundBG03xF377@@QAE@XZ",
+      "target_address": 4509872,
+      "size": 151,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??0BackgroundBG03xF377@@QAE@XZ",
+          "target": 6643256
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 32,
+          "type": "REL32",
+          "symbol": "??0StageBaseF377@@QAE@XZ",
+          "target": 4496864
+        },
+        {
+          "offset": 48,
+          "type": "DIR32",
+          "symbol": "??_7BackgroundBG03xF377@@6B@",
+          "target": 6654160
+        },
+        {
+          "offset": 59,
+          "type": "REL32",
+          "symbol": "?Initialize@StageCameraF377@@QAEXXZ",
+          "target": 4250000
+        },
+        {
+          "offset": 72,
+          "type": "REL32",
+          "symbol": "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z",
+          "target": 4239824
+        },
+        {
+          "offset": 77,
+          "type": "DIR32",
+          "symbol": "?g_DirectoryBG03xAt006588ACF377@@3QBDB",
+          "target": 6654124
+        },
+        {
+          "offset": 82,
+          "type": "DIR32",
+          "symbol": "?g_FilenameBG03xAt006588B4F377@@3QBDB",
+          "target": 6654132
+        },
+        {
+          "offset": 93,
+          "type": "REL32",
+          "symbol": "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z",
+          "target": 4242304
+        },
+        {
+          "offset": 143,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "background-stage-load-bg03y-0044d2f0": {
+      "source": "src/BackgroundLoadFamilyF377.cpp",
+      "object": "build/matching/BackgroundLoadFamilyF377.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::LoadBG03y"
+      ],
+      "symbol": "??0BackgroundBG03yF377@@QAE@XZ",
+      "target_address": 4510448,
+      "size": 151,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??0BackgroundBG03yF377@@QAE@XZ",
+          "target": 6643288
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 32,
+          "type": "REL32",
+          "symbol": "??0StageBaseF377@@QAE@XZ",
+          "target": 4496864
+        },
+        {
+          "offset": 48,
+          "type": "DIR32",
+          "symbol": "??_7BackgroundBG03yF377@@6B@",
+          "target": 6654220
+        },
+        {
+          "offset": 59,
+          "type": "REL32",
+          "symbol": "?Initialize@StageCameraF377@@QAEXXZ",
+          "target": 4250000
+        },
+        {
+          "offset": 72,
+          "type": "REL32",
+          "symbol": "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z",
+          "target": 4239824
+        },
+        {
+          "offset": 77,
+          "type": "DIR32",
+          "symbol": "?g_DirectoryBG03yAt006588E8F377@@3QBDB",
+          "target": 6654184
+        },
+        {
+          "offset": 82,
+          "type": "DIR32",
+          "symbol": "?g_FilenameBG03yAt006588F0F377@@3QBDB",
+          "target": 6654192
+        },
+        {
+          "offset": 93,
+          "type": "REL32",
+          "symbol": "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z",
+          "target": 4242304
+        },
+        {
+          "offset": 143,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "background-stage-load-bg04a-0044d530": {
+      "source": "src/BackgroundLoadFamilyF377.cpp",
+      "object": "build/matching/BackgroundLoadFamilyF377.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::LoadBG04a"
+      ],
+      "symbol": "??0BackgroundBG04aF377@@QAE@XZ",
+      "target_address": 4511024,
+      "size": 161,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??0BackgroundBG04aF377@@QAE@XZ",
+          "target": 6643320
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 32,
+          "type": "REL32",
+          "symbol": "??0StageBaseF377@@QAE@XZ",
+          "target": 4496864
+        },
+        {
+          "offset": 48,
+          "type": "DIR32",
+          "symbol": "??_7BackgroundBG04aF377@@6B@",
+          "target": 6654280
+        },
+        {
+          "offset": 59,
+          "type": "REL32",
+          "symbol": "?Initialize@StageCameraF377@@QAEXXZ",
+          "target": 4250000
+        },
+        {
+          "offset": 72,
+          "type": "REL32",
+          "symbol": "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z",
+          "target": 4239824
+        },
+        {
+          "offset": 77,
+          "type": "DIR32",
+          "symbol": "?g_DirectoryBG04aAt00658924F377@@3QBDB",
+          "target": 6654244
+        },
+        {
+          "offset": 82,
+          "type": "DIR32",
+          "symbol": "?g_FilenameBG04aAt0065892CF377@@3QBDB",
+          "target": 6654252
+        },
+        {
+          "offset": 93,
+          "type": "REL32",
+          "symbol": "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z",
+          "target": 4242304
+        },
+        {
+          "offset": 153,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "background-stage-load-bg04b-0044d9c0": {
+      "source": "src/BackgroundLoadFamilyF377.cpp",
+      "object": "build/matching/BackgroundLoadFamilyF377.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::LoadBG04b"
+      ],
+      "symbol": "??0BackgroundBG04bF377@@QAE@XZ",
+      "target_address": 4512192,
+      "size": 161,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??0BackgroundBG04bF377@@QAE@XZ",
+          "target": 6643352
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 32,
+          "type": "REL32",
+          "symbol": "??0StageBaseF377@@QAE@XZ",
+          "target": 4496864
+        },
+        {
+          "offset": 48,
+          "type": "DIR32",
+          "symbol": "??_7BackgroundBG04bF377@@6B@",
+          "target": 6654436
+        },
+        {
+          "offset": 59,
+          "type": "REL32",
+          "symbol": "?Initialize@StageCameraF377@@QAEXXZ",
+          "target": 4250000
+        },
+        {
+          "offset": 72,
+          "type": "REL32",
+          "symbol": "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z",
+          "target": 4239824
+        },
+        {
+          "offset": 77,
+          "type": "DIR32",
+          "symbol": "?g_DirectoryBG04bAt006589C0F377@@3QBDB",
+          "target": 6654400
+        },
+        {
+          "offset": 82,
+          "type": "DIR32",
+          "symbol": "?g_FilenameBG04bAt006589C8F377@@3QBDB",
+          "target": 6654408
+        },
+        {
+          "offset": 93,
+          "type": "REL32",
+          "symbol": "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z",
+          "target": 4242304
+        },
+        {
+          "offset": 153,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "background-stage-load-bg04x-0044de70": {
+      "source": "src/BackgroundLoadFamilyF377.cpp",
+      "object": "build/matching/BackgroundLoadFamilyF377.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::LoadBG04x"
+      ],
+      "symbol": "??0BackgroundBG04xF377@@QAE@XZ",
+      "target_address": 4513392,
+      "size": 151,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??0BackgroundBG04xF377@@QAE@XZ",
+          "target": 6643384
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 32,
+          "type": "REL32",
+          "symbol": "??0StageBaseF377@@QAE@XZ",
+          "target": 4496864
+        },
+        {
+          "offset": 48,
+          "type": "DIR32",
+          "symbol": "??_7BackgroundBG04xF377@@6B@",
+          "target": 6654540
+        },
+        {
+          "offset": 59,
+          "type": "REL32",
+          "symbol": "?Initialize@StageCameraF377@@QAEXXZ",
+          "target": 4250000
+        },
+        {
+          "offset": 72,
+          "type": "REL32",
+          "symbol": "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z",
+          "target": 4239824
+        },
+        {
+          "offset": 77,
+          "type": "DIR32",
+          "symbol": "?g_DirectoryBG04xAt00658A28F377@@3QBDB",
+          "target": 6654504
+        },
+        {
+          "offset": 82,
+          "type": "DIR32",
+          "symbol": "?g_FilenameBG04xAt00658A30F377@@3QBDB",
+          "target": 6654512
+        },
+        {
+          "offset": 93,
+          "type": "REL32",
+          "symbol": "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z",
+          "target": 4242304
+        },
+        {
+          "offset": 143,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "background-stage-load-bg04y-0044e0b0": {
+      "source": "src/BackgroundLoadFamilyF377.cpp",
+      "object": "build/matching/BackgroundLoadFamilyF377.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::LoadBG04y"
+      ],
+      "symbol": "??0BackgroundBG04yF377@@QAE@XZ",
+      "target_address": 4513968,
+      "size": 151,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??0BackgroundBG04yF377@@QAE@XZ",
+          "target": 6643416
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 32,
+          "type": "REL32",
+          "symbol": "??0StageBaseF377@@QAE@XZ",
+          "target": 4496864
+        },
+        {
+          "offset": 48,
+          "type": "DIR32",
+          "symbol": "??_7BackgroundBG04yF377@@6B@",
+          "target": 6654600
+        },
+        {
+          "offset": 59,
+          "type": "REL32",
+          "symbol": "?Initialize@StageCameraF377@@QAEXXZ",
+          "target": 4250000
+        },
+        {
+          "offset": 72,
+          "type": "REL32",
+          "symbol": "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z",
+          "target": 4239824
+        },
+        {
+          "offset": 77,
+          "type": "DIR32",
+          "symbol": "?g_DirectoryBG04yAt00658A64F377@@3QBDB",
+          "target": 6654564
+        },
+        {
+          "offset": 82,
+          "type": "DIR32",
+          "symbol": "?g_FilenameBG04yAt00658A6CF377@@3QBDB",
+          "target": 6654572
+        },
+        {
+          "offset": 93,
+          "type": "REL32",
+          "symbol": "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z",
+          "target": 4242304
+        },
+        {
+          "offset": 143,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "background-stage-load-bg05a-0044e2f0": {
+      "source": "src/BackgroundLoadFamilyF377.cpp",
+      "object": "build/matching/BackgroundLoadFamilyF377.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::LoadBG05a"
+      ],
+      "symbol": "??0BackgroundBG05aF377@@QAE@XZ",
+      "target_address": 4514544,
+      "size": 161,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??0BackgroundBG05aF377@@QAE@XZ",
+          "target": 6643448
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 32,
+          "type": "REL32",
+          "symbol": "??0StageBaseF377@@QAE@XZ",
+          "target": 4496864
+        },
+        {
+          "offset": 48,
+          "type": "DIR32",
+          "symbol": "??_7BackgroundBG05aF377@@6B@",
+          "target": 6654660
+        },
+        {
+          "offset": 59,
+          "type": "REL32",
+          "symbol": "?Initialize@StageCameraF377@@QAEXXZ",
+          "target": 4250000
+        },
+        {
+          "offset": 72,
+          "type": "REL32",
+          "symbol": "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z",
+          "target": 4239824
+        },
+        {
+          "offset": 77,
+          "type": "DIR32",
+          "symbol": "?g_DirectoryBG05aAt00658AA0F377@@3QBDB",
+          "target": 6654624
+        },
+        {
+          "offset": 82,
+          "type": "DIR32",
+          "symbol": "?g_FilenameBG05aAt00658AA8F377@@3QBDB",
+          "target": 6654632
+        },
+        {
+          "offset": 93,
+          "type": "REL32",
+          "symbol": "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z",
+          "target": 4242304
+        },
+        {
+          "offset": 153,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "background-stage-load-bg05b-0044e810": {
+      "source": "src/BackgroundLoadFamilyF377.cpp",
+      "object": "build/matching/BackgroundLoadFamilyF377.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::LoadBG05b"
+      ],
+      "symbol": "??0BackgroundBG05bF377@@QAE@XZ",
+      "target_address": 4515856,
+      "size": 181,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??0BackgroundBG05bF377@@QAE@XZ",
+          "target": 6643480
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 32,
+          "type": "REL32",
+          "symbol": "??0StageBaseF377@@QAE@XZ",
+          "target": 4496864
+        },
+        {
+          "offset": 48,
+          "type": "DIR32",
+          "symbol": "??_7BackgroundBG05bF377@@6B@",
+          "target": 6654756
+        },
+        {
+          "offset": 59,
+          "type": "REL32",
+          "symbol": "?Initialize@StageCameraF377@@QAEXXZ",
+          "target": 4250000
+        },
+        {
+          "offset": 72,
+          "type": "REL32",
+          "symbol": "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z",
+          "target": 4239824
+        },
+        {
+          "offset": 77,
+          "type": "DIR32",
+          "symbol": "?g_DirectoryBG05bAt00658B00F377@@3QBDB",
+          "target": 6654720
+        },
+        {
+          "offset": 82,
+          "type": "DIR32",
+          "symbol": "?g_FilenameBG05bAt00658B08F377@@3QBDB",
+          "target": 6654728
+        },
+        {
+          "offset": 93,
+          "type": "REL32",
+          "symbol": "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z",
+          "target": 4242304
+        },
+        {
+          "offset": 173,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "background-stage-load-bg05x-0044f300": {
+      "source": "src/BackgroundLoadFamilyF377.cpp",
+      "object": "build/matching/BackgroundLoadFamilyF377.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::LoadBG05x"
+      ],
+      "symbol": "??0BackgroundBG05xF377@@QAE@XZ",
+      "target_address": 4518656,
+      "size": 151,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??0BackgroundBG05xF377@@QAE@XZ",
+          "target": 6643512
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 32,
+          "type": "REL32",
+          "symbol": "??0StageBaseF377@@QAE@XZ",
+          "target": 4496864
+        },
+        {
+          "offset": 48,
+          "type": "DIR32",
+          "symbol": "??_7BackgroundBG05xF377@@6B@",
+          "target": 6654852
+        },
+        {
+          "offset": 59,
+          "type": "REL32",
+          "symbol": "?Initialize@StageCameraF377@@QAEXXZ",
+          "target": 4250000
+        },
+        {
+          "offset": 72,
+          "type": "REL32",
+          "symbol": "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z",
+          "target": 4239824
+        },
+        {
+          "offset": 77,
+          "type": "DIR32",
+          "symbol": "?g_DirectoryBG05xAt00658B60F377@@3QBDB",
+          "target": 6654816
+        },
+        {
+          "offset": 82,
+          "type": "DIR32",
+          "symbol": "?g_FilenameBG05xAt00658B68F377@@3QBDB",
+          "target": 6654824
+        },
+        {
+          "offset": 93,
+          "type": "REL32",
+          "symbol": "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z",
+          "target": 4242304
+        },
+        {
+          "offset": 143,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "background-stage-load-bg05y-0044f540": {
+      "source": "src/BackgroundLoadFamilyF377.cpp",
+      "object": "build/matching/BackgroundLoadFamilyF377.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::LoadBG05y"
+      ],
+      "symbol": "??0BackgroundBG05yF377@@QAE@XZ",
+      "target_address": 4519232,
+      "size": 151,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??0BackgroundBG05yF377@@QAE@XZ",
+          "target": 6643544
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 32,
+          "type": "REL32",
+          "symbol": "??0StageBaseF377@@QAE@XZ",
+          "target": 4496864
+        },
+        {
+          "offset": 48,
+          "type": "DIR32",
+          "symbol": "??_7BackgroundBG05yF377@@6B@",
+          "target": 6654912
+        },
+        {
+          "offset": 59,
+          "type": "REL32",
+          "symbol": "?Initialize@StageCameraF377@@QAEXXZ",
+          "target": 4250000
+        },
+        {
+          "offset": 72,
+          "type": "REL32",
+          "symbol": "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z",
+          "target": 4239824
+        },
+        {
+          "offset": 77,
+          "type": "DIR32",
+          "symbol": "?g_DirectoryBG05yAt00658B9CF377@@3QBDB",
+          "target": 6654876
+        },
+        {
+          "offset": 82,
+          "type": "DIR32",
+          "symbol": "?g_FilenameBG05yAt00658BA4F377@@3QBDB",
+          "target": 6654884
+        },
+        {
+          "offset": 93,
+          "type": "REL32",
+          "symbol": "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z",
+          "target": 4242304
+        },
+        {
+          "offset": 143,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "background-stage-load-bg06a-0044f780": {
+      "source": "src/BackgroundLoadFamilyF377.cpp",
+      "object": "build/matching/BackgroundLoadFamilyF377.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::LoadBG06a"
+      ],
+      "symbol": "??0BackgroundBG06aF377@@QAE@XZ",
+      "target_address": 4519808,
+      "size": 161,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??0BackgroundBG06aF377@@QAE@XZ",
+          "target": 6643576
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 32,
+          "type": "REL32",
+          "symbol": "??0StageBaseF377@@QAE@XZ",
+          "target": 4496864
+        },
+        {
+          "offset": 48,
+          "type": "DIR32",
+          "symbol": "??_7BackgroundBG06aF377@@6B@",
+          "target": 6654972
+        },
+        {
+          "offset": 59,
+          "type": "REL32",
+          "symbol": "?Initialize@StageCameraF377@@QAEXXZ",
+          "target": 4250000
+        },
+        {
+          "offset": 72,
+          "type": "REL32",
+          "symbol": "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z",
+          "target": 4239824
+        },
+        {
+          "offset": 77,
+          "type": "DIR32",
+          "symbol": "?g_DirectoryBG06aAt00658BD8F377@@3QBDB",
+          "target": 6654936
+        },
+        {
+          "offset": 82,
+          "type": "DIR32",
+          "symbol": "?g_FilenameBG06aAt00658BE0F377@@3QBDB",
+          "target": 6654944
+        },
+        {
+          "offset": 93,
+          "type": "REL32",
+          "symbol": "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z",
+          "target": 4242304
+        },
+        {
+          "offset": 153,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "background-stage-load-bg06x-004500f0": {
+      "source": "src/BackgroundLoadFamilyF377.cpp",
+      "object": "build/matching/BackgroundLoadFamilyF377.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::LoadBG06x"
+      ],
+      "symbol": "??0BackgroundBG06xF377@@QAE@XZ",
+      "target_address": 4522224,
+      "size": 151,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??0BackgroundBG06xF377@@QAE@XZ",
+          "target": 6643608
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 32,
+          "type": "REL32",
+          "symbol": "??0StageBaseF377@@QAE@XZ",
+          "target": 4496864
+        },
+        {
+          "offset": 48,
+          "type": "DIR32",
+          "symbol": "??_7BackgroundBG06xF377@@6B@",
+          "target": 6655060
+        },
+        {
+          "offset": 59,
+          "type": "REL32",
+          "symbol": "?Initialize@StageCameraF377@@QAEXXZ",
+          "target": 4250000
+        },
+        {
+          "offset": 72,
+          "type": "REL32",
+          "symbol": "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z",
+          "target": 4239824
+        },
+        {
+          "offset": 77,
+          "type": "DIR32",
+          "symbol": "?g_DirectoryBG06xAt00658C30F377@@3QBDB",
+          "target": 6655024
+        },
+        {
+          "offset": 82,
+          "type": "DIR32",
+          "symbol": "?g_FilenameBG06xAt00658C38F377@@3QBDB",
+          "target": 6655032
+        },
+        {
+          "offset": 93,
+          "type": "REL32",
+          "symbol": "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z",
+          "target": 4242304
+        },
+        {
+          "offset": 143,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "background-stage-load-bg07a-00450330": {
+      "source": "src/BackgroundLoadFamilyF377.cpp",
+      "object": "build/matching/BackgroundLoadFamilyF377.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::LoadBG07a"
+      ],
+      "symbol": "??0BackgroundBG07aF377@@QAE@XZ",
+      "target_address": 4522800,
+      "size": 161,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??0BackgroundBG07aF377@@QAE@XZ",
+          "target": 6643640
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 32,
+          "type": "REL32",
+          "symbol": "??0StageBaseF377@@QAE@XZ",
+          "target": 4496864
+        },
+        {
+          "offset": 48,
+          "type": "DIR32",
+          "symbol": "??_7BackgroundBG07aF377@@6B@",
+          "target": 6655120
+        },
+        {
+          "offset": 59,
+          "type": "REL32",
+          "symbol": "?Initialize@StageCameraF377@@QAEXXZ",
+          "target": 4250000
+        },
+        {
+          "offset": 72,
+          "type": "REL32",
+          "symbol": "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z",
+          "target": 4239824
+        },
+        {
+          "offset": 77,
+          "type": "DIR32",
+          "symbol": "?g_DirectoryBG07aAt00658C6CF377@@3QBDB",
+          "target": 6655084
+        },
+        {
+          "offset": 82,
+          "type": "DIR32",
+          "symbol": "?g_FilenameBG07aAt00658C74F377@@3QBDB",
+          "target": 6655092
+        },
+        {
+          "offset": 93,
+          "type": "REL32",
+          "symbol": "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z",
+          "target": 4242304
+        },
+        {
+          "offset": 153,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "background-stage-load-bg07x-004508e0": {
+      "source": "src/BackgroundLoadFamilyF377.cpp",
+      "object": "build/matching/BackgroundLoadFamilyF377.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::LoadBG07x"
+      ],
+      "symbol": "??0BackgroundBG07xF377@@QAE@XZ",
+      "target_address": 4524256,
+      "size": 151,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??0BackgroundBG07xF377@@QAE@XZ",
+          "target": 6643672
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 32,
+          "type": "REL32",
+          "symbol": "??0StageBaseF377@@QAE@XZ",
+          "target": 4496864
+        },
+        {
+          "offset": 48,
+          "type": "DIR32",
+          "symbol": "??_7BackgroundBG07xF377@@6B@",
+          "target": 6655228
+        },
+        {
+          "offset": 59,
+          "type": "REL32",
+          "symbol": "?Initialize@StageCameraF377@@QAEXXZ",
+          "target": 4250000
+        },
+        {
+          "offset": 72,
+          "type": "REL32",
+          "symbol": "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z",
+          "target": 4239824
+        },
+        {
+          "offset": 77,
+          "type": "DIR32",
+          "symbol": "?g_DirectoryBG07xAt00658CD8F377@@3QBDB",
+          "target": 6655192
+        },
+        {
+          "offset": 82,
+          "type": "DIR32",
+          "symbol": "?g_FilenameBG07xAt00658CE0F377@@3QBDB",
+          "target": 6655200
+        },
+        {
+          "offset": 93,
+          "type": "REL32",
+          "symbol": "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z",
+          "target": 4242304
+        },
+        {
+          "offset": 143,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "background-stage-load-bg08a-00450b20": {
+      "source": "src/BackgroundLoadFamilyF377.cpp",
+      "object": "build/matching/BackgroundLoadFamilyF377.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::LoadBG08a"
+      ],
+      "symbol": "??0BackgroundBG08aF377@@QAE@XZ",
+      "target_address": 4524832,
+      "size": 171,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??0BackgroundBG08aF377@@QAE@XZ",
+          "target": 6643704
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 32,
+          "type": "REL32",
+          "symbol": "??0StageBaseF377@@QAE@XZ",
+          "target": 4496864
+        },
+        {
+          "offset": 48,
+          "type": "DIR32",
+          "symbol": "??_7BackgroundBG08aF377@@6B@",
+          "target": 6655288
+        },
+        {
+          "offset": 59,
+          "type": "REL32",
+          "symbol": "?Initialize@StageCameraF377@@QAEXXZ",
+          "target": 4250000
+        },
+        {
+          "offset": 72,
+          "type": "REL32",
+          "symbol": "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z",
+          "target": 4239824
+        },
+        {
+          "offset": 77,
+          "type": "DIR32",
+          "symbol": "?g_DirectoryBG08aAt00658D14F377@@3QBDB",
+          "target": 6655252
+        },
+        {
+          "offset": 82,
+          "type": "DIR32",
+          "symbol": "?g_FilenameBG08aAt00658D1CF377@@3QBDB",
+          "target": 6655260
+        },
+        {
+          "offset": 93,
+          "type": "REL32",
+          "symbol": "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z",
+          "target": 4242304
+        },
+        {
+          "offset": 163,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "background-stage-load-bg08x-00451130": {
+      "source": "src/BackgroundLoadFamilyF377.cpp",
+      "object": "build/matching/BackgroundLoadFamilyF377.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::LoadBG08x"
+      ],
+      "symbol": "??0BackgroundBG08xF377@@QAE@XZ",
+      "target_address": 4526384,
+      "size": 151,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??0BackgroundBG08xF377@@QAE@XZ",
+          "target": 6643736
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 32,
+          "type": "REL32",
+          "symbol": "??0StageBaseF377@@QAE@XZ",
+          "target": 4496864
+        },
+        {
+          "offset": 48,
+          "type": "DIR32",
+          "symbol": "??_7BackgroundBG08xF377@@6B@",
+          "target": 6655364
+        },
+        {
+          "offset": 59,
+          "type": "REL32",
+          "symbol": "?Initialize@StageCameraF377@@QAEXXZ",
+          "target": 4250000
+        },
+        {
+          "offset": 72,
+          "type": "REL32",
+          "symbol": "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z",
+          "target": 4239824
+        },
+        {
+          "offset": 77,
+          "type": "DIR32",
+          "symbol": "?g_DirectoryBG08xAt00658D60F377@@3QBDB",
+          "target": 6655328
+        },
+        {
+          "offset": 82,
+          "type": "DIR32",
+          "symbol": "?g_FilenameBG08xAt00658D68F377@@3QBDB",
+          "target": 6655336
+        },
+        {
+          "offset": 93,
+          "type": "REL32",
+          "symbol": "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z",
+          "target": 4242304
+        },
+        {
+          "offset": 143,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "background-stage-load-bg09a-00451370": {
+      "source": "src/BackgroundLoadFamilyF377.cpp",
+      "object": "build/matching/BackgroundLoadFamilyF377.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::LoadBG09a"
+      ],
+      "symbol": "??0BackgroundBG09aF377@@QAE@XZ",
+      "target_address": 4526960,
+      "size": 161,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??0BackgroundBG09aF377@@QAE@XZ",
+          "target": 6643768
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 32,
+          "type": "REL32",
+          "symbol": "??0StageBaseF377@@QAE@XZ",
+          "target": 4496864
+        },
+        {
+          "offset": 48,
+          "type": "DIR32",
+          "symbol": "??_7BackgroundBG09aF377@@6B@",
+          "target": 6655424
+        },
+        {
+          "offset": 59,
+          "type": "REL32",
+          "symbol": "?Initialize@StageCameraF377@@QAEXXZ",
+          "target": 4250000
+        },
+        {
+          "offset": 72,
+          "type": "REL32",
+          "symbol": "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z",
+          "target": 4239824
+        },
+        {
+          "offset": 77,
+          "type": "DIR32",
+          "symbol": "?g_DirectoryBG09aAt00658D9CF377@@3QBDB",
+          "target": 6655388
+        },
+        {
+          "offset": 82,
+          "type": "DIR32",
+          "symbol": "?g_FilenameBG09aAt00658DA4F377@@3QBDB",
+          "target": 6655396
+        },
+        {
+          "offset": 93,
+          "type": "REL32",
+          "symbol": "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z",
+          "target": 4242304
+        },
+        {
+          "offset": 153,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "background-stage-load-bg09x-00451c70": {
+      "source": "src/BackgroundLoadFamilyF377.cpp",
+      "object": "build/matching/BackgroundLoadFamilyF377.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BackgroundStage::LoadBG09x"
+      ],
+      "symbol": "??0BackgroundBG09xF377@@QAE@XZ",
+      "target_address": 4529264,
+      "size": 151,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??0BackgroundBG09xF377@@QAE@XZ",
+          "target": 6643800
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 32,
+          "type": "REL32",
+          "symbol": "??0StageBaseF377@@QAE@XZ",
+          "target": 4496864
+        },
+        {
+          "offset": 48,
+          "type": "DIR32",
+          "symbol": "??_7BackgroundBG09xF377@@6B@",
+          "target": 6655572
+        },
+        {
+          "offset": 59,
+          "type": "REL32",
+          "symbol": "?Initialize@StageCameraF377@@QAEXXZ",
+          "target": 4250000
+        },
+        {
+          "offset": 72,
+          "type": "REL32",
+          "symbol": "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z",
+          "target": 4239824
+        },
+        {
+          "offset": 77,
+          "type": "DIR32",
+          "symbol": "?g_DirectoryBG09xAt00658E30F377@@3QBDB",
+          "target": 6655536
+        },
+        {
+          "offset": 82,
+          "type": "DIR32",
+          "symbol": "?g_FilenameBG09xAt00658E38F377@@3QBDB",
+          "target": 6655544
+        },
+        {
+          "offset": 93,
+          "type": "REL32",
+          "symbol": "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z",
+          "target": 4242304
+        },
+        {
+          "offset": 143,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -188662,6 +193154,7 @@
     "src/CharacterAux004C49C0F371.cpp": "7ef8f3890dbd37f07e2026b85b814c3f6a5218e2851b592fb47f40f5ef09a79a",
     "src/FighterSpecialVariantsF374.cpp": "0e560e3a6c3e4cd00165bc7a335537ac07d1f70a955d3ff725f107a6607e4f87",
     "src/ProgressRankInsertF375.cpp": "f2f4bcd45c409b53d3849abc16f07262148ca875156388b234f1f864799462de",
-    "src/BackgroundLoadPairF376.cpp": "50bff1fe99326d234edcfe6669fa2152ff8b1ddfae58c69077c3a8779c86ba78"
+    "src/BackgroundLoadPairF376.cpp": "50bff1fe99326d234edcfe6669fa2152ff8b1ddfae58c69077c3a8779c86ba78",
+    "src/BackgroundLoadFamilyF377.cpp": "a805a521ba3c0dab860094d89b4c0d3b4863a928c19da6c03767a940ab2d490c"
   }
 }

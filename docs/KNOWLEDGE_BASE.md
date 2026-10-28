@@ -5690,3 +5690,53 @@ compared, and their similarly structured implementation is **not** counted
 yet. No bytes from the base constructor, CRT, archive, vtables, jump data
 or compiler-generated EH callees are double counted. No fake local padding,
 assembly, raw byte graft, cropped comparison or full cold replay.
+
+
+## F377: independently native-reconstructed 34-member stage background load-constructor family
+
+All **34 remaining independently origin-reviewed R055 authored**
+`BackgroundStage::LoadBG*` constructors (from `0044A230` through `00451C70`)
+are now matched over their **entire true native CODE extents**. These are
+separate original stage-specific functions and not imagined compiler thunks:
+**five 140-byte**, **eighteen 151-byte**, **nine 161-byte**, **one 171-byte**,
+and **one 181-byte** functions, totaling **5,219 distinct original authored
+CODE bytes**, with actual native `RET` and every original VC7.1 `/GX`
+exception-handler transition preserved. All 34 original `function-origins.csv`
+rows were individually checked as authored before any CODE credit.
+
+Each original was *independently* disassembled and source facts extracted: its
+genuine `00449DE0` inherited base call; stage-specific vtable absolute
+address and unique SEH handler reference; presence or absence of the real
+`0040D990` native camera initializer and the independently observed camera
+offset (`this+0x68`, `+0x6C`, `+0x70` or `+0x74`); exact original
+`0040B1D0` allocation size (2, 3, 4, 5, 18, 26 or 54 slots); real background
+directory/filename pool addresses and original `0040BB80` archive-load
+call; actual three initialized DWORD material fields (`this+0xC/+0x10/+0x14`,
+including real 0.0f / 640.0f / 100.0f cases); and any additional genuinely
+initialized +0x68/+0x6C/+0x70 fields. There are **29 constructors with a
+camera init call and 5 without one**. The 34 distinct original input addresses,
+hexdumps/disassembly-derived observations, and per-target original complete
+comparison JSONs are preserved privately under `.analysis/f377-bg-family/`.
+The generation step is a way of spelling independently observed **natural
+C++ source semantics** with real inheritance and field accesses; it does
+not paste executable bytes or claim a complete original owner layout.
+
+`src/BackgroundLoadFamilyF377.cpp` contains 34 separate stage-specific
+constructor definitions under real C++ borrowed base, vtable, camera and
+pack API declarations, no stage owner instantiation. Under pinned VC7.1
+`/Od /Ob0 /Gy /GR- /GX /GS /Zi`, each full original native function
+is structurally identical without manually written EH or branch code.
+The complete 34-member object has **369** actual COFF physical
+DIR32/REL32 references and all per-function positions, external native
+addresses, vtable destinations and per-function EH handlers were
+individually checked against the exact original PE. The canonical match
+manifest has 34 separate units, each full real native CODE extent and
+all physical relocation bindings; only those 34 newly affected units
+were cold-rebuilt/replayed in one request: **34/34 exact across one object**.
+No full-repository cold replay was performed. The initial two separately
+accepted F376 background constructors remain unchanged and exact, so the
+**36 original authored R055 LoadBG constructors** are all source-present and
+exact. No game CRT, base constructor, vtable, archived assets, camera/pack
+callee, compiler thunk or other nonoriginal CODE is double counted, and no
+ASM, fake locals, byte grafts, masked relocation data, truncated function
+or remote Oracle receipt is claimed.

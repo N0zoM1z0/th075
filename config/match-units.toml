@@ -49195,3 +49195,2188 @@ offset = 153
 type = "DIR32"
 symbol = "__except_list"
 target = 0x00000000
+
+
+[units.background-stage-load-bg00c-0044a230]
+source = "src/BackgroundLoadFamilyF377.cpp"
+object = "build/matching/BackgroundLoadFamilyF377.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::LoadBG00c"]
+symbol = "??0BackgroundBG00cF377@@QAE@XZ"
+target_address = 0x0044A230
+size = 151
+[[units.background-stage-load-bg00c-0044a230.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0BackgroundBG00cF377@@QAE@XZ"
+target = 0x00655C38
+[[units.background-stage-load-bg00c-0044a230.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg00c-0044a230.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg00c-0044a230.relocations]]
+offset = 32
+type = "REL32"
+symbol = "??0StageBaseF377@@QAE@XZ"
+target = 0x00449DE0
+[[units.background-stage-load-bg00c-0044a230.relocations]]
+offset = 48
+type = "DIR32"
+symbol = "??_7BackgroundBG00cF377@@6B@"
+target = 0x006584FC
+[[units.background-stage-load-bg00c-0044a230.relocations]]
+offset = 59
+type = "REL32"
+symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+target = 0x0040D990
+[[units.background-stage-load-bg00c-0044a230.relocations]]
+offset = 72
+type = "REL32"
+symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.background-stage-load-bg00c-0044a230.relocations]]
+offset = 77
+type = "DIR32"
+symbol = "?g_DirectoryBG00cAt006584D8F377@@3QBDB"
+target = 0x006584D8
+[[units.background-stage-load-bg00c-0044a230.relocations]]
+offset = 82
+type = "DIR32"
+symbol = "?g_FilenameBG00cAt006584E0F377@@3QBDB"
+target = 0x006584E0
+[[units.background-stage-load-bg00c-0044a230.relocations]]
+offset = 93
+type = "REL32"
+symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.background-stage-load-bg00c-0044a230.relocations]]
+offset = 143
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.background-stage-load-bg00x-0044a520]
+source = "src/BackgroundLoadFamilyF377.cpp"
+object = "build/matching/BackgroundLoadFamilyF377.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::LoadBG00x"]
+symbol = "??0BackgroundBG00xF377@@QAE@XZ"
+target_address = 0x0044A520
+size = 140
+[[units.background-stage-load-bg00x-0044a520.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0BackgroundBG00xF377@@QAE@XZ"
+target = 0x00655C58
+[[units.background-stage-load-bg00x-0044a520.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg00x-0044a520.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg00x-0044a520.relocations]]
+offset = 32
+type = "REL32"
+symbol = "??0StageBaseF377@@QAE@XZ"
+target = 0x00449DE0
+[[units.background-stage-load-bg00x-0044a520.relocations]]
+offset = 48
+type = "DIR32"
+symbol = "??_7BackgroundBG00xF377@@6B@"
+target = 0x00658538
+[[units.background-stage-load-bg00x-0044a520.relocations]]
+offset = 61
+type = "REL32"
+symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.background-stage-load-bg00x-0044a520.relocations]]
+offset = 66
+type = "DIR32"
+symbol = "?g_DirectoryBG00xAt00658514F377@@3QBDB"
+target = 0x00658514
+[[units.background-stage-load-bg00x-0044a520.relocations]]
+offset = 71
+type = "DIR32"
+symbol = "?g_FilenameBG00xAt0065851CF377@@3QBDB"
+target = 0x0065851C
+[[units.background-stage-load-bg00x-0044a520.relocations]]
+offset = 82
+type = "REL32"
+symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.background-stage-load-bg00x-0044a520.relocations]]
+offset = 132
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.background-stage-load-bg00y-0044a750]
+source = "src/BackgroundLoadFamilyF377.cpp"
+object = "build/matching/BackgroundLoadFamilyF377.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::LoadBG00y"]
+symbol = "??0BackgroundBG00yF377@@QAE@XZ"
+target_address = 0x0044A750
+size = 140
+[[units.background-stage-load-bg00y-0044a750.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0BackgroundBG00yF377@@QAE@XZ"
+target = 0x00655C78
+[[units.background-stage-load-bg00y-0044a750.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg00y-0044a750.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg00y-0044a750.relocations]]
+offset = 32
+type = "REL32"
+symbol = "??0StageBaseF377@@QAE@XZ"
+target = 0x00449DE0
+[[units.background-stage-load-bg00y-0044a750.relocations]]
+offset = 48
+type = "DIR32"
+symbol = "??_7BackgroundBG00yF377@@6B@"
+target = 0x00658574
+[[units.background-stage-load-bg00y-0044a750.relocations]]
+offset = 61
+type = "REL32"
+symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.background-stage-load-bg00y-0044a750.relocations]]
+offset = 66
+type = "DIR32"
+symbol = "?g_DirectoryBG00yAt00658550F377@@3QBDB"
+target = 0x00658550
+[[units.background-stage-load-bg00y-0044a750.relocations]]
+offset = 71
+type = "DIR32"
+symbol = "?g_FilenameBG00yAt00658558F377@@3QBDB"
+target = 0x00658558
+[[units.background-stage-load-bg00y-0044a750.relocations]]
+offset = 82
+type = "REL32"
+symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.background-stage-load-bg00y-0044a750.relocations]]
+offset = 132
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.background-stage-load-bg00z-0044a980]
+source = "src/BackgroundLoadFamilyF377.cpp"
+object = "build/matching/BackgroundLoadFamilyF377.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::LoadBG00z"]
+symbol = "??0BackgroundBG00zF377@@QAE@XZ"
+target_address = 0x0044A980
+size = 140
+[[units.background-stage-load-bg00z-0044a980.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0BackgroundBG00zF377@@QAE@XZ"
+target = 0x00655C98
+[[units.background-stage-load-bg00z-0044a980.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg00z-0044a980.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg00z-0044a980.relocations]]
+offset = 32
+type = "REL32"
+symbol = "??0StageBaseF377@@QAE@XZ"
+target = 0x00449DE0
+[[units.background-stage-load-bg00z-0044a980.relocations]]
+offset = 48
+type = "DIR32"
+symbol = "??_7BackgroundBG00zF377@@6B@"
+target = 0x006585B0
+[[units.background-stage-load-bg00z-0044a980.relocations]]
+offset = 61
+type = "REL32"
+symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.background-stage-load-bg00z-0044a980.relocations]]
+offset = 66
+type = "DIR32"
+symbol = "?g_DirectoryBG00zAt0065858CF377@@3QBDB"
+target = 0x0065858C
+[[units.background-stage-load-bg00z-0044a980.relocations]]
+offset = 71
+type = "DIR32"
+symbol = "?g_FilenameBG00zAt00658594F377@@3QBDB"
+target = 0x00658594
+[[units.background-stage-load-bg00z-0044a980.relocations]]
+offset = 82
+type = "REL32"
+symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.background-stage-load-bg00z-0044a980.relocations]]
+offset = 132
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.background-stage-load-bg01a-0044abb0]
+source = "src/BackgroundLoadFamilyF377.cpp"
+object = "build/matching/BackgroundLoadFamilyF377.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::LoadBG01a"]
+symbol = "??0BackgroundBG01aF377@@QAE@XZ"
+target_address = 0x0044ABB0
+size = 151
+[[units.background-stage-load-bg01a-0044abb0.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0BackgroundBG01aF377@@QAE@XZ"
+target = 0x00655CB8
+[[units.background-stage-load-bg01a-0044abb0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg01a-0044abb0.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg01a-0044abb0.relocations]]
+offset = 32
+type = "REL32"
+symbol = "??0StageBaseF377@@QAE@XZ"
+target = 0x00449DE0
+[[units.background-stage-load-bg01a-0044abb0.relocations]]
+offset = 48
+type = "DIR32"
+symbol = "??_7BackgroundBG01aF377@@6B@"
+target = 0x006585EC
+[[units.background-stage-load-bg01a-0044abb0.relocations]]
+offset = 59
+type = "REL32"
+symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+target = 0x0040D990
+[[units.background-stage-load-bg01a-0044abb0.relocations]]
+offset = 72
+type = "REL32"
+symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.background-stage-load-bg01a-0044abb0.relocations]]
+offset = 77
+type = "DIR32"
+symbol = "?g_DirectoryBG01aAt006585C8F377@@3QBDB"
+target = 0x006585C8
+[[units.background-stage-load-bg01a-0044abb0.relocations]]
+offset = 82
+type = "DIR32"
+symbol = "?g_FilenameBG01aAt006585D0F377@@3QBDB"
+target = 0x006585D0
+[[units.background-stage-load-bg01a-0044abb0.relocations]]
+offset = 93
+type = "REL32"
+symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.background-stage-load-bg01a-0044abb0.relocations]]
+offset = 143
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.background-stage-load-bg01b-0044ae50]
+source = "src/BackgroundLoadFamilyF377.cpp"
+object = "build/matching/BackgroundLoadFamilyF377.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::LoadBG01b"]
+symbol = "??0BackgroundBG01bF377@@QAE@XZ"
+target_address = 0x0044AE50
+size = 151
+[[units.background-stage-load-bg01b-0044ae50.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0BackgroundBG01bF377@@QAE@XZ"
+target = 0x00655CD8
+[[units.background-stage-load-bg01b-0044ae50.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg01b-0044ae50.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg01b-0044ae50.relocations]]
+offset = 32
+type = "REL32"
+symbol = "??0StageBaseF377@@QAE@XZ"
+target = 0x00449DE0
+[[units.background-stage-load-bg01b-0044ae50.relocations]]
+offset = 48
+type = "DIR32"
+symbol = "??_7BackgroundBG01bF377@@6B@"
+target = 0x00658634
+[[units.background-stage-load-bg01b-0044ae50.relocations]]
+offset = 59
+type = "REL32"
+symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+target = 0x0040D990
+[[units.background-stage-load-bg01b-0044ae50.relocations]]
+offset = 72
+type = "REL32"
+symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.background-stage-load-bg01b-0044ae50.relocations]]
+offset = 77
+type = "DIR32"
+symbol = "?g_DirectoryBG01bAt00658610F377@@3QBDB"
+target = 0x00658610
+[[units.background-stage-load-bg01b-0044ae50.relocations]]
+offset = 82
+type = "DIR32"
+symbol = "?g_FilenameBG01bAt00658618F377@@3QBDB"
+target = 0x00658618
+[[units.background-stage-load-bg01b-0044ae50.relocations]]
+offset = 93
+type = "REL32"
+symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.background-stage-load-bg01b-0044ae50.relocations]]
+offset = 143
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.background-stage-load-bg01x-0044b0f0]
+source = "src/BackgroundLoadFamilyF377.cpp"
+object = "build/matching/BackgroundLoadFamilyF377.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::LoadBG01x"]
+symbol = "??0BackgroundBG01xF377@@QAE@XZ"
+target_address = 0x0044B0F0
+size = 140
+[[units.background-stage-load-bg01x-0044b0f0.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0BackgroundBG01xF377@@QAE@XZ"
+target = 0x00655CF8
+[[units.background-stage-load-bg01x-0044b0f0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg01x-0044b0f0.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg01x-0044b0f0.relocations]]
+offset = 32
+type = "REL32"
+symbol = "??0StageBaseF377@@QAE@XZ"
+target = 0x00449DE0
+[[units.background-stage-load-bg01x-0044b0f0.relocations]]
+offset = 48
+type = "DIR32"
+symbol = "??_7BackgroundBG01xF377@@6B@"
+target = 0x00658670
+[[units.background-stage-load-bg01x-0044b0f0.relocations]]
+offset = 61
+type = "REL32"
+symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.background-stage-load-bg01x-0044b0f0.relocations]]
+offset = 66
+type = "DIR32"
+symbol = "?g_DirectoryBG01xAt0065864CF377@@3QBDB"
+target = 0x0065864C
+[[units.background-stage-load-bg01x-0044b0f0.relocations]]
+offset = 71
+type = "DIR32"
+symbol = "?g_FilenameBG01xAt00658654F377@@3QBDB"
+target = 0x00658654
+[[units.background-stage-load-bg01x-0044b0f0.relocations]]
+offset = 82
+type = "REL32"
+symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.background-stage-load-bg01x-0044b0f0.relocations]]
+offset = 132
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.background-stage-load-bg01y-0044b320]
+source = "src/BackgroundLoadFamilyF377.cpp"
+object = "build/matching/BackgroundLoadFamilyF377.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::LoadBG01y"]
+symbol = "??0BackgroundBG01yF377@@QAE@XZ"
+target_address = 0x0044B320
+size = 140
+[[units.background-stage-load-bg01y-0044b320.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0BackgroundBG01yF377@@QAE@XZ"
+target = 0x00655D18
+[[units.background-stage-load-bg01y-0044b320.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg01y-0044b320.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg01y-0044b320.relocations]]
+offset = 32
+type = "REL32"
+symbol = "??0StageBaseF377@@QAE@XZ"
+target = 0x00449DE0
+[[units.background-stage-load-bg01y-0044b320.relocations]]
+offset = 48
+type = "DIR32"
+symbol = "??_7BackgroundBG01yF377@@6B@"
+target = 0x006586AC
+[[units.background-stage-load-bg01y-0044b320.relocations]]
+offset = 61
+type = "REL32"
+symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.background-stage-load-bg01y-0044b320.relocations]]
+offset = 66
+type = "DIR32"
+symbol = "?g_DirectoryBG01yAt00658688F377@@3QBDB"
+target = 0x00658688
+[[units.background-stage-load-bg01y-0044b320.relocations]]
+offset = 71
+type = "DIR32"
+symbol = "?g_FilenameBG01yAt00658690F377@@3QBDB"
+target = 0x00658690
+[[units.background-stage-load-bg01y-0044b320.relocations]]
+offset = 82
+type = "REL32"
+symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.background-stage-load-bg01y-0044b320.relocations]]
+offset = 132
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.background-stage-load-bg02a-0044b550]
+source = "src/BackgroundLoadFamilyF377.cpp"
+object = "build/matching/BackgroundLoadFamilyF377.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::LoadBG02a"]
+symbol = "??0BackgroundBG02aF377@@QAE@XZ"
+target_address = 0x0044B550
+size = 161
+[[units.background-stage-load-bg02a-0044b550.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0BackgroundBG02aF377@@QAE@XZ"
+target = 0x00655D38
+[[units.background-stage-load-bg02a-0044b550.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg02a-0044b550.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg02a-0044b550.relocations]]
+offset = 32
+type = "REL32"
+symbol = "??0StageBaseF377@@QAE@XZ"
+target = 0x00449DE0
+[[units.background-stage-load-bg02a-0044b550.relocations]]
+offset = 48
+type = "DIR32"
+symbol = "??_7BackgroundBG02aF377@@6B@"
+target = 0x006586E8
+[[units.background-stage-load-bg02a-0044b550.relocations]]
+offset = 59
+type = "REL32"
+symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+target = 0x0040D990
+[[units.background-stage-load-bg02a-0044b550.relocations]]
+offset = 72
+type = "REL32"
+symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.background-stage-load-bg02a-0044b550.relocations]]
+offset = 77
+type = "DIR32"
+symbol = "?g_DirectoryBG02aAt006586C4F377@@3QBDB"
+target = 0x006586C4
+[[units.background-stage-load-bg02a-0044b550.relocations]]
+offset = 82
+type = "DIR32"
+symbol = "?g_FilenameBG02aAt006586CCF377@@3QBDB"
+target = 0x006586CC
+[[units.background-stage-load-bg02a-0044b550.relocations]]
+offset = 93
+type = "REL32"
+symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.background-stage-load-bg02a-0044b550.relocations]]
+offset = 153
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.background-stage-load-bg02b-0044ba70]
+source = "src/BackgroundLoadFamilyF377.cpp"
+object = "build/matching/BackgroundLoadFamilyF377.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::LoadBG02b"]
+symbol = "??0BackgroundBG02bF377@@QAE@XZ"
+target_address = 0x0044BA70
+size = 161
+[[units.background-stage-load-bg02b-0044ba70.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0BackgroundBG02bF377@@QAE@XZ"
+target = 0x00655D58
+[[units.background-stage-load-bg02b-0044ba70.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg02b-0044ba70.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg02b-0044ba70.relocations]]
+offset = 32
+type = "REL32"
+symbol = "??0StageBaseF377@@QAE@XZ"
+target = 0x00449DE0
+[[units.background-stage-load-bg02b-0044ba70.relocations]]
+offset = 48
+type = "DIR32"
+symbol = "??_7BackgroundBG02bF377@@6B@"
+target = 0x0065872C
+[[units.background-stage-load-bg02b-0044ba70.relocations]]
+offset = 59
+type = "REL32"
+symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+target = 0x0040D990
+[[units.background-stage-load-bg02b-0044ba70.relocations]]
+offset = 72
+type = "REL32"
+symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.background-stage-load-bg02b-0044ba70.relocations]]
+offset = 77
+type = "DIR32"
+symbol = "?g_DirectoryBG02bAt00658708F377@@3QBDB"
+target = 0x00658708
+[[units.background-stage-load-bg02b-0044ba70.relocations]]
+offset = 82
+type = "DIR32"
+symbol = "?g_FilenameBG02bAt00658710F377@@3QBDB"
+target = 0x00658710
+[[units.background-stage-load-bg02b-0044ba70.relocations]]
+offset = 93
+type = "REL32"
+symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.background-stage-load-bg02b-0044ba70.relocations]]
+offset = 153
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.background-stage-load-bg02c-0044bf90]
+source = "src/BackgroundLoadFamilyF377.cpp"
+object = "build/matching/BackgroundLoadFamilyF377.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::LoadBG02c"]
+symbol = "??0BackgroundBG02cF377@@QAE@XZ"
+target_address = 0x0044BF90
+size = 161
+[[units.background-stage-load-bg02c-0044bf90.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0BackgroundBG02cF377@@QAE@XZ"
+target = 0x00655D78
+[[units.background-stage-load-bg02c-0044bf90.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg02c-0044bf90.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg02c-0044bf90.relocations]]
+offset = 32
+type = "REL32"
+symbol = "??0StageBaseF377@@QAE@XZ"
+target = 0x00449DE0
+[[units.background-stage-load-bg02c-0044bf90.relocations]]
+offset = 48
+type = "DIR32"
+symbol = "??_7BackgroundBG02cF377@@6B@"
+target = 0x00658768
+[[units.background-stage-load-bg02c-0044bf90.relocations]]
+offset = 59
+type = "REL32"
+symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+target = 0x0040D990
+[[units.background-stage-load-bg02c-0044bf90.relocations]]
+offset = 72
+type = "REL32"
+symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.background-stage-load-bg02c-0044bf90.relocations]]
+offset = 77
+type = "DIR32"
+symbol = "?g_DirectoryBG02cAt00658744F377@@3QBDB"
+target = 0x00658744
+[[units.background-stage-load-bg02c-0044bf90.relocations]]
+offset = 82
+type = "DIR32"
+symbol = "?g_FilenameBG02cAt0065874CF377@@3QBDB"
+target = 0x0065874C
+[[units.background-stage-load-bg02c-0044bf90.relocations]]
+offset = 93
+type = "REL32"
+symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.background-stage-load-bg02c-0044bf90.relocations]]
+offset = 153
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.background-stage-load-bg02x-0044c4b0]
+source = "src/BackgroundLoadFamilyF377.cpp"
+object = "build/matching/BackgroundLoadFamilyF377.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::LoadBG02x"]
+symbol = "??0BackgroundBG02xF377@@QAE@XZ"
+target_address = 0x0044C4B0
+size = 151
+[[units.background-stage-load-bg02x-0044c4b0.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0BackgroundBG02xF377@@QAE@XZ"
+target = 0x00655D98
+[[units.background-stage-load-bg02x-0044c4b0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg02x-0044c4b0.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg02x-0044c4b0.relocations]]
+offset = 32
+type = "REL32"
+symbol = "??0StageBaseF377@@QAE@XZ"
+target = 0x00449DE0
+[[units.background-stage-load-bg02x-0044c4b0.relocations]]
+offset = 48
+type = "DIR32"
+symbol = "??_7BackgroundBG02xF377@@6B@"
+target = 0x006587A4
+[[units.background-stage-load-bg02x-0044c4b0.relocations]]
+offset = 59
+type = "REL32"
+symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+target = 0x0040D990
+[[units.background-stage-load-bg02x-0044c4b0.relocations]]
+offset = 72
+type = "REL32"
+symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.background-stage-load-bg02x-0044c4b0.relocations]]
+offset = 77
+type = "DIR32"
+symbol = "?g_DirectoryBG02xAt00658780F377@@3QBDB"
+target = 0x00658780
+[[units.background-stage-load-bg02x-0044c4b0.relocations]]
+offset = 82
+type = "DIR32"
+symbol = "?g_FilenameBG02xAt00658788F377@@3QBDB"
+target = 0x00658788
+[[units.background-stage-load-bg02x-0044c4b0.relocations]]
+offset = 93
+type = "REL32"
+symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.background-stage-load-bg02x-0044c4b0.relocations]]
+offset = 143
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.background-stage-load-bg02y-0044c6f0]
+source = "src/BackgroundLoadFamilyF377.cpp"
+object = "build/matching/BackgroundLoadFamilyF377.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::LoadBG02y"]
+symbol = "??0BackgroundBG02yF377@@QAE@XZ"
+target_address = 0x0044C6F0
+size = 151
+[[units.background-stage-load-bg02y-0044c6f0.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0BackgroundBG02yF377@@QAE@XZ"
+target = 0x00655DB8
+[[units.background-stage-load-bg02y-0044c6f0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg02y-0044c6f0.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg02y-0044c6f0.relocations]]
+offset = 32
+type = "REL32"
+symbol = "??0StageBaseF377@@QAE@XZ"
+target = 0x00449DE0
+[[units.background-stage-load-bg02y-0044c6f0.relocations]]
+offset = 48
+type = "DIR32"
+symbol = "??_7BackgroundBG02yF377@@6B@"
+target = 0x006587E0
+[[units.background-stage-load-bg02y-0044c6f0.relocations]]
+offset = 59
+type = "REL32"
+symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+target = 0x0040D990
+[[units.background-stage-load-bg02y-0044c6f0.relocations]]
+offset = 72
+type = "REL32"
+symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.background-stage-load-bg02y-0044c6f0.relocations]]
+offset = 77
+type = "DIR32"
+symbol = "?g_DirectoryBG02yAt006587BCF377@@3QBDB"
+target = 0x006587BC
+[[units.background-stage-load-bg02y-0044c6f0.relocations]]
+offset = 82
+type = "DIR32"
+symbol = "?g_FilenameBG02yAt006587C4F377@@3QBDB"
+target = 0x006587C4
+[[units.background-stage-load-bg02y-0044c6f0.relocations]]
+offset = 93
+type = "REL32"
+symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.background-stage-load-bg02y-0044c6f0.relocations]]
+offset = 143
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.background-stage-load-bg02z-0044c930]
+source = "src/BackgroundLoadFamilyF377.cpp"
+object = "build/matching/BackgroundLoadFamilyF377.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::LoadBG02z"]
+symbol = "??0BackgroundBG02zF377@@QAE@XZ"
+target_address = 0x0044C930
+size = 151
+[[units.background-stage-load-bg02z-0044c930.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0BackgroundBG02zF377@@QAE@XZ"
+target = 0x00655DD8
+[[units.background-stage-load-bg02z-0044c930.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg02z-0044c930.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg02z-0044c930.relocations]]
+offset = 32
+type = "REL32"
+symbol = "??0StageBaseF377@@QAE@XZ"
+target = 0x00449DE0
+[[units.background-stage-load-bg02z-0044c930.relocations]]
+offset = 48
+type = "DIR32"
+symbol = "??_7BackgroundBG02zF377@@6B@"
+target = 0x0065881C
+[[units.background-stage-load-bg02z-0044c930.relocations]]
+offset = 59
+type = "REL32"
+symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+target = 0x0040D990
+[[units.background-stage-load-bg02z-0044c930.relocations]]
+offset = 72
+type = "REL32"
+symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.background-stage-load-bg02z-0044c930.relocations]]
+offset = 77
+type = "DIR32"
+symbol = "?g_DirectoryBG02zAt006587F8F377@@3QBDB"
+target = 0x006587F8
+[[units.background-stage-load-bg02z-0044c930.relocations]]
+offset = 82
+type = "DIR32"
+symbol = "?g_FilenameBG02zAt00658800F377@@3QBDB"
+target = 0x00658800
+[[units.background-stage-load-bg02z-0044c930.relocations]]
+offset = 93
+type = "REL32"
+symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.background-stage-load-bg02z-0044c930.relocations]]
+offset = 143
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.background-stage-load-bg03a-0044cb70]
+source = "src/BackgroundLoadFamilyF377.cpp"
+object = "build/matching/BackgroundLoadFamilyF377.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::LoadBG03a"]
+symbol = "??0BackgroundBG03aF377@@QAE@XZ"
+target_address = 0x0044CB70
+size = 151
+[[units.background-stage-load-bg03a-0044cb70.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0BackgroundBG03aF377@@QAE@XZ"
+target = 0x00655DF8
+[[units.background-stage-load-bg03a-0044cb70.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg03a-0044cb70.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg03a-0044cb70.relocations]]
+offset = 32
+type = "REL32"
+symbol = "??0StageBaseF377@@QAE@XZ"
+target = 0x00449DE0
+[[units.background-stage-load-bg03a-0044cb70.relocations]]
+offset = 48
+type = "DIR32"
+symbol = "??_7BackgroundBG03aF377@@6B@"
+target = 0x00658858
+[[units.background-stage-load-bg03a-0044cb70.relocations]]
+offset = 59
+type = "REL32"
+symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+target = 0x0040D990
+[[units.background-stage-load-bg03a-0044cb70.relocations]]
+offset = 72
+type = "REL32"
+symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.background-stage-load-bg03a-0044cb70.relocations]]
+offset = 77
+type = "DIR32"
+symbol = "?g_DirectoryBG03aAt00658834F377@@3QBDB"
+target = 0x00658834
+[[units.background-stage-load-bg03a-0044cb70.relocations]]
+offset = 82
+type = "DIR32"
+symbol = "?g_FilenameBG03aAt0065883CF377@@3QBDB"
+target = 0x0065883C
+[[units.background-stage-load-bg03a-0044cb70.relocations]]
+offset = 93
+type = "REL32"
+symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.background-stage-load-bg03a-0044cb70.relocations]]
+offset = 143
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.background-stage-load-bg03b-0044ce10]
+source = "src/BackgroundLoadFamilyF377.cpp"
+object = "build/matching/BackgroundLoadFamilyF377.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::LoadBG03b"]
+symbol = "??0BackgroundBG03bF377@@QAE@XZ"
+target_address = 0x0044CE10
+size = 151
+[[units.background-stage-load-bg03b-0044ce10.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0BackgroundBG03bF377@@QAE@XZ"
+target = 0x00655E18
+[[units.background-stage-load-bg03b-0044ce10.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg03b-0044ce10.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg03b-0044ce10.relocations]]
+offset = 32
+type = "REL32"
+symbol = "??0StageBaseF377@@QAE@XZ"
+target = 0x00449DE0
+[[units.background-stage-load-bg03b-0044ce10.relocations]]
+offset = 48
+type = "DIR32"
+symbol = "??_7BackgroundBG03bF377@@6B@"
+target = 0x00658894
+[[units.background-stage-load-bg03b-0044ce10.relocations]]
+offset = 59
+type = "REL32"
+symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+target = 0x0040D990
+[[units.background-stage-load-bg03b-0044ce10.relocations]]
+offset = 72
+type = "REL32"
+symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.background-stage-load-bg03b-0044ce10.relocations]]
+offset = 77
+type = "DIR32"
+symbol = "?g_DirectoryBG03bAt00658870F377@@3QBDB"
+target = 0x00658870
+[[units.background-stage-load-bg03b-0044ce10.relocations]]
+offset = 82
+type = "DIR32"
+symbol = "?g_FilenameBG03bAt00658878F377@@3QBDB"
+target = 0x00658878
+[[units.background-stage-load-bg03b-0044ce10.relocations]]
+offset = 93
+type = "REL32"
+symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.background-stage-load-bg03b-0044ce10.relocations]]
+offset = 143
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.background-stage-load-bg03x-0044d0b0]
+source = "src/BackgroundLoadFamilyF377.cpp"
+object = "build/matching/BackgroundLoadFamilyF377.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::LoadBG03x"]
+symbol = "??0BackgroundBG03xF377@@QAE@XZ"
+target_address = 0x0044D0B0
+size = 151
+[[units.background-stage-load-bg03x-0044d0b0.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0BackgroundBG03xF377@@QAE@XZ"
+target = 0x00655E38
+[[units.background-stage-load-bg03x-0044d0b0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg03x-0044d0b0.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg03x-0044d0b0.relocations]]
+offset = 32
+type = "REL32"
+symbol = "??0StageBaseF377@@QAE@XZ"
+target = 0x00449DE0
+[[units.background-stage-load-bg03x-0044d0b0.relocations]]
+offset = 48
+type = "DIR32"
+symbol = "??_7BackgroundBG03xF377@@6B@"
+target = 0x006588D0
+[[units.background-stage-load-bg03x-0044d0b0.relocations]]
+offset = 59
+type = "REL32"
+symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+target = 0x0040D990
+[[units.background-stage-load-bg03x-0044d0b0.relocations]]
+offset = 72
+type = "REL32"
+symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.background-stage-load-bg03x-0044d0b0.relocations]]
+offset = 77
+type = "DIR32"
+symbol = "?g_DirectoryBG03xAt006588ACF377@@3QBDB"
+target = 0x006588AC
+[[units.background-stage-load-bg03x-0044d0b0.relocations]]
+offset = 82
+type = "DIR32"
+symbol = "?g_FilenameBG03xAt006588B4F377@@3QBDB"
+target = 0x006588B4
+[[units.background-stage-load-bg03x-0044d0b0.relocations]]
+offset = 93
+type = "REL32"
+symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.background-stage-load-bg03x-0044d0b0.relocations]]
+offset = 143
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.background-stage-load-bg03y-0044d2f0]
+source = "src/BackgroundLoadFamilyF377.cpp"
+object = "build/matching/BackgroundLoadFamilyF377.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::LoadBG03y"]
+symbol = "??0BackgroundBG03yF377@@QAE@XZ"
+target_address = 0x0044D2F0
+size = 151
+[[units.background-stage-load-bg03y-0044d2f0.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0BackgroundBG03yF377@@QAE@XZ"
+target = 0x00655E58
+[[units.background-stage-load-bg03y-0044d2f0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg03y-0044d2f0.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg03y-0044d2f0.relocations]]
+offset = 32
+type = "REL32"
+symbol = "??0StageBaseF377@@QAE@XZ"
+target = 0x00449DE0
+[[units.background-stage-load-bg03y-0044d2f0.relocations]]
+offset = 48
+type = "DIR32"
+symbol = "??_7BackgroundBG03yF377@@6B@"
+target = 0x0065890C
+[[units.background-stage-load-bg03y-0044d2f0.relocations]]
+offset = 59
+type = "REL32"
+symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+target = 0x0040D990
+[[units.background-stage-load-bg03y-0044d2f0.relocations]]
+offset = 72
+type = "REL32"
+symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.background-stage-load-bg03y-0044d2f0.relocations]]
+offset = 77
+type = "DIR32"
+symbol = "?g_DirectoryBG03yAt006588E8F377@@3QBDB"
+target = 0x006588E8
+[[units.background-stage-load-bg03y-0044d2f0.relocations]]
+offset = 82
+type = "DIR32"
+symbol = "?g_FilenameBG03yAt006588F0F377@@3QBDB"
+target = 0x006588F0
+[[units.background-stage-load-bg03y-0044d2f0.relocations]]
+offset = 93
+type = "REL32"
+symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.background-stage-load-bg03y-0044d2f0.relocations]]
+offset = 143
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.background-stage-load-bg04a-0044d530]
+source = "src/BackgroundLoadFamilyF377.cpp"
+object = "build/matching/BackgroundLoadFamilyF377.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::LoadBG04a"]
+symbol = "??0BackgroundBG04aF377@@QAE@XZ"
+target_address = 0x0044D530
+size = 161
+[[units.background-stage-load-bg04a-0044d530.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0BackgroundBG04aF377@@QAE@XZ"
+target = 0x00655E78
+[[units.background-stage-load-bg04a-0044d530.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg04a-0044d530.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg04a-0044d530.relocations]]
+offset = 32
+type = "REL32"
+symbol = "??0StageBaseF377@@QAE@XZ"
+target = 0x00449DE0
+[[units.background-stage-load-bg04a-0044d530.relocations]]
+offset = 48
+type = "DIR32"
+symbol = "??_7BackgroundBG04aF377@@6B@"
+target = 0x00658948
+[[units.background-stage-load-bg04a-0044d530.relocations]]
+offset = 59
+type = "REL32"
+symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+target = 0x0040D990
+[[units.background-stage-load-bg04a-0044d530.relocations]]
+offset = 72
+type = "REL32"
+symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.background-stage-load-bg04a-0044d530.relocations]]
+offset = 77
+type = "DIR32"
+symbol = "?g_DirectoryBG04aAt00658924F377@@3QBDB"
+target = 0x00658924
+[[units.background-stage-load-bg04a-0044d530.relocations]]
+offset = 82
+type = "DIR32"
+symbol = "?g_FilenameBG04aAt0065892CF377@@3QBDB"
+target = 0x0065892C
+[[units.background-stage-load-bg04a-0044d530.relocations]]
+offset = 93
+type = "REL32"
+symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.background-stage-load-bg04a-0044d530.relocations]]
+offset = 153
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.background-stage-load-bg04b-0044d9c0]
+source = "src/BackgroundLoadFamilyF377.cpp"
+object = "build/matching/BackgroundLoadFamilyF377.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::LoadBG04b"]
+symbol = "??0BackgroundBG04bF377@@QAE@XZ"
+target_address = 0x0044D9C0
+size = 161
+[[units.background-stage-load-bg04b-0044d9c0.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0BackgroundBG04bF377@@QAE@XZ"
+target = 0x00655E98
+[[units.background-stage-load-bg04b-0044d9c0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg04b-0044d9c0.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg04b-0044d9c0.relocations]]
+offset = 32
+type = "REL32"
+symbol = "??0StageBaseF377@@QAE@XZ"
+target = 0x00449DE0
+[[units.background-stage-load-bg04b-0044d9c0.relocations]]
+offset = 48
+type = "DIR32"
+symbol = "??_7BackgroundBG04bF377@@6B@"
+target = 0x006589E4
+[[units.background-stage-load-bg04b-0044d9c0.relocations]]
+offset = 59
+type = "REL32"
+symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+target = 0x0040D990
+[[units.background-stage-load-bg04b-0044d9c0.relocations]]
+offset = 72
+type = "REL32"
+symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.background-stage-load-bg04b-0044d9c0.relocations]]
+offset = 77
+type = "DIR32"
+symbol = "?g_DirectoryBG04bAt006589C0F377@@3QBDB"
+target = 0x006589C0
+[[units.background-stage-load-bg04b-0044d9c0.relocations]]
+offset = 82
+type = "DIR32"
+symbol = "?g_FilenameBG04bAt006589C8F377@@3QBDB"
+target = 0x006589C8
+[[units.background-stage-load-bg04b-0044d9c0.relocations]]
+offset = 93
+type = "REL32"
+symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.background-stage-load-bg04b-0044d9c0.relocations]]
+offset = 153
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.background-stage-load-bg04x-0044de70]
+source = "src/BackgroundLoadFamilyF377.cpp"
+object = "build/matching/BackgroundLoadFamilyF377.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::LoadBG04x"]
+symbol = "??0BackgroundBG04xF377@@QAE@XZ"
+target_address = 0x0044DE70
+size = 151
+[[units.background-stage-load-bg04x-0044de70.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0BackgroundBG04xF377@@QAE@XZ"
+target = 0x00655EB8
+[[units.background-stage-load-bg04x-0044de70.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg04x-0044de70.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg04x-0044de70.relocations]]
+offset = 32
+type = "REL32"
+symbol = "??0StageBaseF377@@QAE@XZ"
+target = 0x00449DE0
+[[units.background-stage-load-bg04x-0044de70.relocations]]
+offset = 48
+type = "DIR32"
+symbol = "??_7BackgroundBG04xF377@@6B@"
+target = 0x00658A4C
+[[units.background-stage-load-bg04x-0044de70.relocations]]
+offset = 59
+type = "REL32"
+symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+target = 0x0040D990
+[[units.background-stage-load-bg04x-0044de70.relocations]]
+offset = 72
+type = "REL32"
+symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.background-stage-load-bg04x-0044de70.relocations]]
+offset = 77
+type = "DIR32"
+symbol = "?g_DirectoryBG04xAt00658A28F377@@3QBDB"
+target = 0x00658A28
+[[units.background-stage-load-bg04x-0044de70.relocations]]
+offset = 82
+type = "DIR32"
+symbol = "?g_FilenameBG04xAt00658A30F377@@3QBDB"
+target = 0x00658A30
+[[units.background-stage-load-bg04x-0044de70.relocations]]
+offset = 93
+type = "REL32"
+symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.background-stage-load-bg04x-0044de70.relocations]]
+offset = 143
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.background-stage-load-bg04y-0044e0b0]
+source = "src/BackgroundLoadFamilyF377.cpp"
+object = "build/matching/BackgroundLoadFamilyF377.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::LoadBG04y"]
+symbol = "??0BackgroundBG04yF377@@QAE@XZ"
+target_address = 0x0044E0B0
+size = 151
+[[units.background-stage-load-bg04y-0044e0b0.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0BackgroundBG04yF377@@QAE@XZ"
+target = 0x00655ED8
+[[units.background-stage-load-bg04y-0044e0b0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg04y-0044e0b0.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg04y-0044e0b0.relocations]]
+offset = 32
+type = "REL32"
+symbol = "??0StageBaseF377@@QAE@XZ"
+target = 0x00449DE0
+[[units.background-stage-load-bg04y-0044e0b0.relocations]]
+offset = 48
+type = "DIR32"
+symbol = "??_7BackgroundBG04yF377@@6B@"
+target = 0x00658A88
+[[units.background-stage-load-bg04y-0044e0b0.relocations]]
+offset = 59
+type = "REL32"
+symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+target = 0x0040D990
+[[units.background-stage-load-bg04y-0044e0b0.relocations]]
+offset = 72
+type = "REL32"
+symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.background-stage-load-bg04y-0044e0b0.relocations]]
+offset = 77
+type = "DIR32"
+symbol = "?g_DirectoryBG04yAt00658A64F377@@3QBDB"
+target = 0x00658A64
+[[units.background-stage-load-bg04y-0044e0b0.relocations]]
+offset = 82
+type = "DIR32"
+symbol = "?g_FilenameBG04yAt00658A6CF377@@3QBDB"
+target = 0x00658A6C
+[[units.background-stage-load-bg04y-0044e0b0.relocations]]
+offset = 93
+type = "REL32"
+symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.background-stage-load-bg04y-0044e0b0.relocations]]
+offset = 143
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.background-stage-load-bg05a-0044e2f0]
+source = "src/BackgroundLoadFamilyF377.cpp"
+object = "build/matching/BackgroundLoadFamilyF377.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::LoadBG05a"]
+symbol = "??0BackgroundBG05aF377@@QAE@XZ"
+target_address = 0x0044E2F0
+size = 161
+[[units.background-stage-load-bg05a-0044e2f0.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0BackgroundBG05aF377@@QAE@XZ"
+target = 0x00655EF8
+[[units.background-stage-load-bg05a-0044e2f0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg05a-0044e2f0.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg05a-0044e2f0.relocations]]
+offset = 32
+type = "REL32"
+symbol = "??0StageBaseF377@@QAE@XZ"
+target = 0x00449DE0
+[[units.background-stage-load-bg05a-0044e2f0.relocations]]
+offset = 48
+type = "DIR32"
+symbol = "??_7BackgroundBG05aF377@@6B@"
+target = 0x00658AC4
+[[units.background-stage-load-bg05a-0044e2f0.relocations]]
+offset = 59
+type = "REL32"
+symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+target = 0x0040D990
+[[units.background-stage-load-bg05a-0044e2f0.relocations]]
+offset = 72
+type = "REL32"
+symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.background-stage-load-bg05a-0044e2f0.relocations]]
+offset = 77
+type = "DIR32"
+symbol = "?g_DirectoryBG05aAt00658AA0F377@@3QBDB"
+target = 0x00658AA0
+[[units.background-stage-load-bg05a-0044e2f0.relocations]]
+offset = 82
+type = "DIR32"
+symbol = "?g_FilenameBG05aAt00658AA8F377@@3QBDB"
+target = 0x00658AA8
+[[units.background-stage-load-bg05a-0044e2f0.relocations]]
+offset = 93
+type = "REL32"
+symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.background-stage-load-bg05a-0044e2f0.relocations]]
+offset = 153
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.background-stage-load-bg05b-0044e810]
+source = "src/BackgroundLoadFamilyF377.cpp"
+object = "build/matching/BackgroundLoadFamilyF377.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::LoadBG05b"]
+symbol = "??0BackgroundBG05bF377@@QAE@XZ"
+target_address = 0x0044E810
+size = 181
+[[units.background-stage-load-bg05b-0044e810.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0BackgroundBG05bF377@@QAE@XZ"
+target = 0x00655F18
+[[units.background-stage-load-bg05b-0044e810.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg05b-0044e810.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg05b-0044e810.relocations]]
+offset = 32
+type = "REL32"
+symbol = "??0StageBaseF377@@QAE@XZ"
+target = 0x00449DE0
+[[units.background-stage-load-bg05b-0044e810.relocations]]
+offset = 48
+type = "DIR32"
+symbol = "??_7BackgroundBG05bF377@@6B@"
+target = 0x00658B24
+[[units.background-stage-load-bg05b-0044e810.relocations]]
+offset = 59
+type = "REL32"
+symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+target = 0x0040D990
+[[units.background-stage-load-bg05b-0044e810.relocations]]
+offset = 72
+type = "REL32"
+symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.background-stage-load-bg05b-0044e810.relocations]]
+offset = 77
+type = "DIR32"
+symbol = "?g_DirectoryBG05bAt00658B00F377@@3QBDB"
+target = 0x00658B00
+[[units.background-stage-load-bg05b-0044e810.relocations]]
+offset = 82
+type = "DIR32"
+symbol = "?g_FilenameBG05bAt00658B08F377@@3QBDB"
+target = 0x00658B08
+[[units.background-stage-load-bg05b-0044e810.relocations]]
+offset = 93
+type = "REL32"
+symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.background-stage-load-bg05b-0044e810.relocations]]
+offset = 173
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.background-stage-load-bg05x-0044f300]
+source = "src/BackgroundLoadFamilyF377.cpp"
+object = "build/matching/BackgroundLoadFamilyF377.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::LoadBG05x"]
+symbol = "??0BackgroundBG05xF377@@QAE@XZ"
+target_address = 0x0044F300
+size = 151
+[[units.background-stage-load-bg05x-0044f300.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0BackgroundBG05xF377@@QAE@XZ"
+target = 0x00655F38
+[[units.background-stage-load-bg05x-0044f300.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg05x-0044f300.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg05x-0044f300.relocations]]
+offset = 32
+type = "REL32"
+symbol = "??0StageBaseF377@@QAE@XZ"
+target = 0x00449DE0
+[[units.background-stage-load-bg05x-0044f300.relocations]]
+offset = 48
+type = "DIR32"
+symbol = "??_7BackgroundBG05xF377@@6B@"
+target = 0x00658B84
+[[units.background-stage-load-bg05x-0044f300.relocations]]
+offset = 59
+type = "REL32"
+symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+target = 0x0040D990
+[[units.background-stage-load-bg05x-0044f300.relocations]]
+offset = 72
+type = "REL32"
+symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.background-stage-load-bg05x-0044f300.relocations]]
+offset = 77
+type = "DIR32"
+symbol = "?g_DirectoryBG05xAt00658B60F377@@3QBDB"
+target = 0x00658B60
+[[units.background-stage-load-bg05x-0044f300.relocations]]
+offset = 82
+type = "DIR32"
+symbol = "?g_FilenameBG05xAt00658B68F377@@3QBDB"
+target = 0x00658B68
+[[units.background-stage-load-bg05x-0044f300.relocations]]
+offset = 93
+type = "REL32"
+symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.background-stage-load-bg05x-0044f300.relocations]]
+offset = 143
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.background-stage-load-bg05y-0044f540]
+source = "src/BackgroundLoadFamilyF377.cpp"
+object = "build/matching/BackgroundLoadFamilyF377.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::LoadBG05y"]
+symbol = "??0BackgroundBG05yF377@@QAE@XZ"
+target_address = 0x0044F540
+size = 151
+[[units.background-stage-load-bg05y-0044f540.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0BackgroundBG05yF377@@QAE@XZ"
+target = 0x00655F58
+[[units.background-stage-load-bg05y-0044f540.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg05y-0044f540.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg05y-0044f540.relocations]]
+offset = 32
+type = "REL32"
+symbol = "??0StageBaseF377@@QAE@XZ"
+target = 0x00449DE0
+[[units.background-stage-load-bg05y-0044f540.relocations]]
+offset = 48
+type = "DIR32"
+symbol = "??_7BackgroundBG05yF377@@6B@"
+target = 0x00658BC0
+[[units.background-stage-load-bg05y-0044f540.relocations]]
+offset = 59
+type = "REL32"
+symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+target = 0x0040D990
+[[units.background-stage-load-bg05y-0044f540.relocations]]
+offset = 72
+type = "REL32"
+symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.background-stage-load-bg05y-0044f540.relocations]]
+offset = 77
+type = "DIR32"
+symbol = "?g_DirectoryBG05yAt00658B9CF377@@3QBDB"
+target = 0x00658B9C
+[[units.background-stage-load-bg05y-0044f540.relocations]]
+offset = 82
+type = "DIR32"
+symbol = "?g_FilenameBG05yAt00658BA4F377@@3QBDB"
+target = 0x00658BA4
+[[units.background-stage-load-bg05y-0044f540.relocations]]
+offset = 93
+type = "REL32"
+symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.background-stage-load-bg05y-0044f540.relocations]]
+offset = 143
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.background-stage-load-bg06a-0044f780]
+source = "src/BackgroundLoadFamilyF377.cpp"
+object = "build/matching/BackgroundLoadFamilyF377.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::LoadBG06a"]
+symbol = "??0BackgroundBG06aF377@@QAE@XZ"
+target_address = 0x0044F780
+size = 161
+[[units.background-stage-load-bg06a-0044f780.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0BackgroundBG06aF377@@QAE@XZ"
+target = 0x00655F78
+[[units.background-stage-load-bg06a-0044f780.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg06a-0044f780.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg06a-0044f780.relocations]]
+offset = 32
+type = "REL32"
+symbol = "??0StageBaseF377@@QAE@XZ"
+target = 0x00449DE0
+[[units.background-stage-load-bg06a-0044f780.relocations]]
+offset = 48
+type = "DIR32"
+symbol = "??_7BackgroundBG06aF377@@6B@"
+target = 0x00658BFC
+[[units.background-stage-load-bg06a-0044f780.relocations]]
+offset = 59
+type = "REL32"
+symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+target = 0x0040D990
+[[units.background-stage-load-bg06a-0044f780.relocations]]
+offset = 72
+type = "REL32"
+symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.background-stage-load-bg06a-0044f780.relocations]]
+offset = 77
+type = "DIR32"
+symbol = "?g_DirectoryBG06aAt00658BD8F377@@3QBDB"
+target = 0x00658BD8
+[[units.background-stage-load-bg06a-0044f780.relocations]]
+offset = 82
+type = "DIR32"
+symbol = "?g_FilenameBG06aAt00658BE0F377@@3QBDB"
+target = 0x00658BE0
+[[units.background-stage-load-bg06a-0044f780.relocations]]
+offset = 93
+type = "REL32"
+symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.background-stage-load-bg06a-0044f780.relocations]]
+offset = 153
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.background-stage-load-bg06x-004500f0]
+source = "src/BackgroundLoadFamilyF377.cpp"
+object = "build/matching/BackgroundLoadFamilyF377.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::LoadBG06x"]
+symbol = "??0BackgroundBG06xF377@@QAE@XZ"
+target_address = 0x004500F0
+size = 151
+[[units.background-stage-load-bg06x-004500f0.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0BackgroundBG06xF377@@QAE@XZ"
+target = 0x00655F98
+[[units.background-stage-load-bg06x-004500f0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg06x-004500f0.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg06x-004500f0.relocations]]
+offset = 32
+type = "REL32"
+symbol = "??0StageBaseF377@@QAE@XZ"
+target = 0x00449DE0
+[[units.background-stage-load-bg06x-004500f0.relocations]]
+offset = 48
+type = "DIR32"
+symbol = "??_7BackgroundBG06xF377@@6B@"
+target = 0x00658C54
+[[units.background-stage-load-bg06x-004500f0.relocations]]
+offset = 59
+type = "REL32"
+symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+target = 0x0040D990
+[[units.background-stage-load-bg06x-004500f0.relocations]]
+offset = 72
+type = "REL32"
+symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.background-stage-load-bg06x-004500f0.relocations]]
+offset = 77
+type = "DIR32"
+symbol = "?g_DirectoryBG06xAt00658C30F377@@3QBDB"
+target = 0x00658C30
+[[units.background-stage-load-bg06x-004500f0.relocations]]
+offset = 82
+type = "DIR32"
+symbol = "?g_FilenameBG06xAt00658C38F377@@3QBDB"
+target = 0x00658C38
+[[units.background-stage-load-bg06x-004500f0.relocations]]
+offset = 93
+type = "REL32"
+symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.background-stage-load-bg06x-004500f0.relocations]]
+offset = 143
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.background-stage-load-bg07a-00450330]
+source = "src/BackgroundLoadFamilyF377.cpp"
+object = "build/matching/BackgroundLoadFamilyF377.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::LoadBG07a"]
+symbol = "??0BackgroundBG07aF377@@QAE@XZ"
+target_address = 0x00450330
+size = 161
+[[units.background-stage-load-bg07a-00450330.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0BackgroundBG07aF377@@QAE@XZ"
+target = 0x00655FB8
+[[units.background-stage-load-bg07a-00450330.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg07a-00450330.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg07a-00450330.relocations]]
+offset = 32
+type = "REL32"
+symbol = "??0StageBaseF377@@QAE@XZ"
+target = 0x00449DE0
+[[units.background-stage-load-bg07a-00450330.relocations]]
+offset = 48
+type = "DIR32"
+symbol = "??_7BackgroundBG07aF377@@6B@"
+target = 0x00658C90
+[[units.background-stage-load-bg07a-00450330.relocations]]
+offset = 59
+type = "REL32"
+symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+target = 0x0040D990
+[[units.background-stage-load-bg07a-00450330.relocations]]
+offset = 72
+type = "REL32"
+symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.background-stage-load-bg07a-00450330.relocations]]
+offset = 77
+type = "DIR32"
+symbol = "?g_DirectoryBG07aAt00658C6CF377@@3QBDB"
+target = 0x00658C6C
+[[units.background-stage-load-bg07a-00450330.relocations]]
+offset = 82
+type = "DIR32"
+symbol = "?g_FilenameBG07aAt00658C74F377@@3QBDB"
+target = 0x00658C74
+[[units.background-stage-load-bg07a-00450330.relocations]]
+offset = 93
+type = "REL32"
+symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.background-stage-load-bg07a-00450330.relocations]]
+offset = 153
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.background-stage-load-bg07x-004508e0]
+source = "src/BackgroundLoadFamilyF377.cpp"
+object = "build/matching/BackgroundLoadFamilyF377.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::LoadBG07x"]
+symbol = "??0BackgroundBG07xF377@@QAE@XZ"
+target_address = 0x004508E0
+size = 151
+[[units.background-stage-load-bg07x-004508e0.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0BackgroundBG07xF377@@QAE@XZ"
+target = 0x00655FD8
+[[units.background-stage-load-bg07x-004508e0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg07x-004508e0.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg07x-004508e0.relocations]]
+offset = 32
+type = "REL32"
+symbol = "??0StageBaseF377@@QAE@XZ"
+target = 0x00449DE0
+[[units.background-stage-load-bg07x-004508e0.relocations]]
+offset = 48
+type = "DIR32"
+symbol = "??_7BackgroundBG07xF377@@6B@"
+target = 0x00658CFC
+[[units.background-stage-load-bg07x-004508e0.relocations]]
+offset = 59
+type = "REL32"
+symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+target = 0x0040D990
+[[units.background-stage-load-bg07x-004508e0.relocations]]
+offset = 72
+type = "REL32"
+symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.background-stage-load-bg07x-004508e0.relocations]]
+offset = 77
+type = "DIR32"
+symbol = "?g_DirectoryBG07xAt00658CD8F377@@3QBDB"
+target = 0x00658CD8
+[[units.background-stage-load-bg07x-004508e0.relocations]]
+offset = 82
+type = "DIR32"
+symbol = "?g_FilenameBG07xAt00658CE0F377@@3QBDB"
+target = 0x00658CE0
+[[units.background-stage-load-bg07x-004508e0.relocations]]
+offset = 93
+type = "REL32"
+symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.background-stage-load-bg07x-004508e0.relocations]]
+offset = 143
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.background-stage-load-bg08a-00450b20]
+source = "src/BackgroundLoadFamilyF377.cpp"
+object = "build/matching/BackgroundLoadFamilyF377.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::LoadBG08a"]
+symbol = "??0BackgroundBG08aF377@@QAE@XZ"
+target_address = 0x00450B20
+size = 171
+[[units.background-stage-load-bg08a-00450b20.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0BackgroundBG08aF377@@QAE@XZ"
+target = 0x00655FF8
+[[units.background-stage-load-bg08a-00450b20.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg08a-00450b20.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg08a-00450b20.relocations]]
+offset = 32
+type = "REL32"
+symbol = "??0StageBaseF377@@QAE@XZ"
+target = 0x00449DE0
+[[units.background-stage-load-bg08a-00450b20.relocations]]
+offset = 48
+type = "DIR32"
+symbol = "??_7BackgroundBG08aF377@@6B@"
+target = 0x00658D38
+[[units.background-stage-load-bg08a-00450b20.relocations]]
+offset = 59
+type = "REL32"
+symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+target = 0x0040D990
+[[units.background-stage-load-bg08a-00450b20.relocations]]
+offset = 72
+type = "REL32"
+symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.background-stage-load-bg08a-00450b20.relocations]]
+offset = 77
+type = "DIR32"
+symbol = "?g_DirectoryBG08aAt00658D14F377@@3QBDB"
+target = 0x00658D14
+[[units.background-stage-load-bg08a-00450b20.relocations]]
+offset = 82
+type = "DIR32"
+symbol = "?g_FilenameBG08aAt00658D1CF377@@3QBDB"
+target = 0x00658D1C
+[[units.background-stage-load-bg08a-00450b20.relocations]]
+offset = 93
+type = "REL32"
+symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.background-stage-load-bg08a-00450b20.relocations]]
+offset = 163
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.background-stage-load-bg08x-00451130]
+source = "src/BackgroundLoadFamilyF377.cpp"
+object = "build/matching/BackgroundLoadFamilyF377.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::LoadBG08x"]
+symbol = "??0BackgroundBG08xF377@@QAE@XZ"
+target_address = 0x00451130
+size = 151
+[[units.background-stage-load-bg08x-00451130.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0BackgroundBG08xF377@@QAE@XZ"
+target = 0x00656018
+[[units.background-stage-load-bg08x-00451130.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg08x-00451130.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg08x-00451130.relocations]]
+offset = 32
+type = "REL32"
+symbol = "??0StageBaseF377@@QAE@XZ"
+target = 0x00449DE0
+[[units.background-stage-load-bg08x-00451130.relocations]]
+offset = 48
+type = "DIR32"
+symbol = "??_7BackgroundBG08xF377@@6B@"
+target = 0x00658D84
+[[units.background-stage-load-bg08x-00451130.relocations]]
+offset = 59
+type = "REL32"
+symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+target = 0x0040D990
+[[units.background-stage-load-bg08x-00451130.relocations]]
+offset = 72
+type = "REL32"
+symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.background-stage-load-bg08x-00451130.relocations]]
+offset = 77
+type = "DIR32"
+symbol = "?g_DirectoryBG08xAt00658D60F377@@3QBDB"
+target = 0x00658D60
+[[units.background-stage-load-bg08x-00451130.relocations]]
+offset = 82
+type = "DIR32"
+symbol = "?g_FilenameBG08xAt00658D68F377@@3QBDB"
+target = 0x00658D68
+[[units.background-stage-load-bg08x-00451130.relocations]]
+offset = 93
+type = "REL32"
+symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.background-stage-load-bg08x-00451130.relocations]]
+offset = 143
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.background-stage-load-bg09a-00451370]
+source = "src/BackgroundLoadFamilyF377.cpp"
+object = "build/matching/BackgroundLoadFamilyF377.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::LoadBG09a"]
+symbol = "??0BackgroundBG09aF377@@QAE@XZ"
+target_address = 0x00451370
+size = 161
+[[units.background-stage-load-bg09a-00451370.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0BackgroundBG09aF377@@QAE@XZ"
+target = 0x00656038
+[[units.background-stage-load-bg09a-00451370.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg09a-00451370.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg09a-00451370.relocations]]
+offset = 32
+type = "REL32"
+symbol = "??0StageBaseF377@@QAE@XZ"
+target = 0x00449DE0
+[[units.background-stage-load-bg09a-00451370.relocations]]
+offset = 48
+type = "DIR32"
+symbol = "??_7BackgroundBG09aF377@@6B@"
+target = 0x00658DC0
+[[units.background-stage-load-bg09a-00451370.relocations]]
+offset = 59
+type = "REL32"
+symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+target = 0x0040D990
+[[units.background-stage-load-bg09a-00451370.relocations]]
+offset = 72
+type = "REL32"
+symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.background-stage-load-bg09a-00451370.relocations]]
+offset = 77
+type = "DIR32"
+symbol = "?g_DirectoryBG09aAt00658D9CF377@@3QBDB"
+target = 0x00658D9C
+[[units.background-stage-load-bg09a-00451370.relocations]]
+offset = 82
+type = "DIR32"
+symbol = "?g_FilenameBG09aAt00658DA4F377@@3QBDB"
+target = 0x00658DA4
+[[units.background-stage-load-bg09a-00451370.relocations]]
+offset = 93
+type = "REL32"
+symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.background-stage-load-bg09a-00451370.relocations]]
+offset = 153
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.background-stage-load-bg09x-00451c70]
+source = "src/BackgroundLoadFamilyF377.cpp"
+object = "build/matching/BackgroundLoadFamilyF377.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::LoadBG09x"]
+symbol = "??0BackgroundBG09xF377@@QAE@XZ"
+target_address = 0x00451C70
+size = 151
+[[units.background-stage-load-bg09x-00451c70.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0BackgroundBG09xF377@@QAE@XZ"
+target = 0x00656058
+[[units.background-stage-load-bg09x-00451c70.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg09x-00451c70.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.background-stage-load-bg09x-00451c70.relocations]]
+offset = 32
+type = "REL32"
+symbol = "??0StageBaseF377@@QAE@XZ"
+target = 0x00449DE0
+[[units.background-stage-load-bg09x-00451c70.relocations]]
+offset = 48
+type = "DIR32"
+symbol = "??_7BackgroundBG09xF377@@6B@"
+target = 0x00658E54
+[[units.background-stage-load-bg09x-00451c70.relocations]]
+offset = 59
+type = "REL32"
+symbol = "?Initialize@StageCameraF377@@QAEXXZ"
+target = 0x0040D990
+[[units.background-stage-load-bg09x-00451c70.relocations]]
+offset = 72
+type = "REL32"
+symbol = "?AllocateUnformattedSlots@StageResourcePackF377@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.background-stage-load-bg09x-00451c70.relocations]]
+offset = 77
+type = "DIR32"
+symbol = "?g_DirectoryBG09xAt00658E30F377@@3QBDB"
+target = 0x00658E30
+[[units.background-stage-load-bg09x-00451c70.relocations]]
+offset = 82
+type = "DIR32"
+symbol = "?g_FilenameBG09xAt00658E38F377@@3QBDB"
+target = 0x00658E38
+[[units.background-stage-load-bg09x-00451c70.relocations]]
+offset = 93
+type = "REL32"
+symbol = "?ReadPack@StageResourcePackF377@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.background-stage-load-bg09x-00451c70.relocations]]
+offset = 143
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
