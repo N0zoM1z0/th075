@@ -6760,3 +6760,44 @@ borrowed external scene, D3D, texture/archive or CRT bodies. Complete
 private OptionsScene allocation/members beyond observed offsets remain
 unproved. No fake locals, raw assembler, native code byte grafts,
 masked/cropped comparisons, full cold replay or external Oracle receipt.
+
+
+## F446: two complete original LoadingScene / LogoScene derived resource constructors
+
+Two separately R053-authored original scene resource initialization functions
+are now exact: `LoadingScene::InitializeAt004251F0`, **181 complete original
+CODE bytes / 50 native x86 instructions**, PE SHA256
+`fe7f071e6914846211bdcbfcc7b3adf86c49042eda3420a7b323f58624d90373`,
+and `LogoScene::InitializeAt00425490`, **183 CODE bytes / 50 native
+instructions**, native SHA256
+`48b8b30745596c5ff11ad9ef190f01c336bf2b989add59c61201b79eae146d78`.
+Both C++ derived constructors naturally call real native scene base `004251C0`,
+install their own independently verified original vtables `00657BB4`
+and `00657BE0`, and use genuine native VC7.1 `/GX` exception frames and
+EH handlers `00655743`/`00655773`. Both allocate exactly 80 bytes
+for a borrowed resource manager with native operator new `0064159D`,
+construct it through native `0040AD80`, reserve **one** genuine archive
+slot via `0040B1D0`, and load the correct original asset with
+`0040BB80`: `data\system\load.dat` rooted at original `data`
+(`00657B9C/00657B94`) for LoadingScene, and
+`data\system\logo.dat` from original `00657BC8/00657BC0`
+for LogoScene. The LoadingScene native constructor then clears its
+physically observed **unsigned byte** state at `this+0xC`; LogoScene
+instead clears a native **16-bit short** state at the same offset,
+explaining the independent two-byte length difference. The complete
+original private scene/texture member allocations beyond observed ABI
+are not asserted or constructed.
+
+`src/LoadingLogoSceneConstructorsF446.cpp` expresses both natural
+C++ scene constructors independently under pinned VC7.1
+`/Od /Ob0 /Gy /GR- /GX /GS /Zi`. They match **133/133** and
+**135/135** original nonrelocation bytes respectively, with
+**12/12 genuine original physical COFF DIR32/REL32 relocations** and
+correct native destinations for each. Only the two new affected units
+`loading-scene-initialize-004251f0` and
+`logo-scene-initialize-00425490` were cold replayed, **2/2 exact
+across one compiled object**, crediting exactly **364 distinct original
+authored CODE bytes**. All borrowed base/texture/asset-manager and
+compiler EH helper bodies earn zero extra executable credit; no fake
+locals/assembly, pasted native code/data, masking/cropping, all-unit cold
+replay or external Oracle certification.

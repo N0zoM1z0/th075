@@ -1,6 +1,6 @@
 # TH075 — current reconstruction handoff
 
-**Maintained: 2026-10-29, after F445.** Read this document, then check the **live repository**. The current user explicitly wants both large/core bosses and small leaves tackled seriously, tangible progress committed immediately with subject `gpt-web: ...`, and **only changed/new units cold-replayed**. The user reports no other sessions: inspect and finish all dirty work; never skip, reset, overwrite or silently discard it.
+**Maintained: 2026-10-29, after F446.** Read this document, then check the **live repository**. The current user explicitly wants both large/core bosses and small leaves tackled seriously, tangible progress committed immediately with subject `gpt-web: ...`, and **only changed/new units cold-replayed**. The user reports no other sessions: inspect and finish all dirty work; never skip, reset, overwrite or silently discard it.
 
 ## 1. Trusted state and first commands
 
@@ -8,11 +8,11 @@ Canonical evidence is the pinned original PE, `config/function-origins.csv`, `co
 
 | Item | Verified snapshot |
 | --- | --- |
-| Git | `main`; pre-F445 reconstruction commit **`aaa3f85`** (F440), preceded by `2f755fc` (F437), `f1787c0` (F435); F445 commit follows this update |
+| Git | `main`; pre-F446 reconstruction commit **`ccc2092`** (F445), preceded by `aaa3f85` (F440), `2f755fc` (F437); F446 commit follows this update |
 | Pinned target | user-supplied Japanese `resources/th075.exe` v1.11; SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`; **never** `th075c.exe` |
-| Exact and source-present | **750 functions / 750 exact units** |
-| Accepted authored CODE | **853,133 bytes / 1,973,516 reviewed bytes = 43.23%** |
-| Conservative | **43.15%**, including 3,608 bytes with unresolved origin |
+| Exact and source-present | **752 functions / 752 exact units** |
+| Accepted authored CODE | **853,497 bytes / 1,973,516 reviewed bytes = 43.25%** |
+| Conservative | **43.17%**, including 3,608 bytes with unresolved origin |
 | Origin review | 1,002 authored, 2,671 library, 581 compiler, **97 pending** across 4,351 provisional candidates |
 | Goal | **98% not reached**; Git and local cold results are not external Oracle receipts |
 
@@ -29,7 +29,7 @@ If **any** dirty source, unit, or manifest is present, first inspect its exact e
 
 ## 2. Newly closed chains — **not** the backlog
 
-The full register of **all 750** accepted functions is in `config/functions.csv` and `config/match-units.toml`; this table intentionally highlights only the newest, important independent CODE extents. No called function, imported CRT/Win32 code, or owned jump-table bytes are counted twice.
+The full register of **all 752** accepted functions is in `config/functions.csv` and `config/match-units.toml`; this table intentionally highlights only the newest, important independent CODE extents. No called function, imported CRT/Win32 code, or owned jump-table bytes are counted twice.
 
 | Unit / accepted address | Whole CODE | Authentic fields | Evidence |
 | --- | ---: | ---: | --- |
@@ -87,6 +87,7 @@ The full register of **all 750** accepted functions is in `config/functions.csv`
 | F437 `SpriteScene::RenderMirroredNode` `00410A00` | **1,268** | **26** | `src/SpriteMirroredNodeRenderF437.cpp`, `.analysis/f437-mirror-proven-fsubr/` |
 | F440 `CharacterAux::RunAt00497070` `00497070` | **1,291** | **31** | `src/MarisaProjectileChainRenderF440.cpp`, `.analysis/f440-marisa-z-operand-order/` |
 | F445 `OptionsScene::InitializeAt00428D60` `00428D60` | **251** | **14** | `src/OptionsSceneInitializeF445.cpp`, `.analysis/f445-options-init/` |
+| F446 `LoadingScene::InitializeAt004251F0` / `LogoScene::InitializeAt00425490` | **181 + 183** | **12 + 12** | `src/LoadingLogoSceneConstructorsF446.cpp`, `.analysis/f446-loading-logo/` |
 
 **F340:** the companion archive entry seek at `0041D750` is independently cold exact for its whole 164-byte function including every one of its nine external references. It uses genuine iterator and `strcmp` semantics, returns the archive handle after `SetFilePointer` or `INVALID_HANDLE_VALUE` if not found. The original private archive list remains borrowed, not instantiated.
 
@@ -181,6 +182,8 @@ The full register of **all 750** accepted functions is in `config/functions.csv`
 **F440:** the entire original R049 Marisa auxiliary projectile/particle chain renderer `CharacterAux::RunAt00497070` `00497070` is now complete **1,291 authored native CODE bytes / 273 original x86 instructions**, **1167/1167** original nonfield bytes and **31/31** authentic physical native COFF fields, with **only one affected-unit cold replay 1/1 exact**. The native 8×36 nested chain/particle sequence, texture chain draw, four genuine trig calls per internal iteration, source field offsets and X/Y/Z camera transform all remain intact. The original quad stack allocation is independently **136 bytes** (132 known drawable bytes with untyped 4-byte tail), *not* F437 mirrored-node 140 bytes. VC7.1 `__declspec(align(4)) short radius` restores the actually observed EBP-4 short slot and five native accesses, without fake padding. Using a real unparenthesized `FLOAT(0x1010)` lvalue restores the native `FLD [006582E0]; FMUL [owner+0x1010]; FDIV [00657480]` Z depth evaluation; parenthesized equivalent source had five wrong nonreloc bytes. Native 0xE8 frame is recovered with all actual physical temps, original global float constants, four trig calls and all draw/transform callee refs. Old F356-F363/F388/F438-F439 negatives superseded; no invented full original sprite/owner class layout or external callee CODE credits.
 
 **F445:** separately R109-authored `OptionsScene::InitializeAt00428D60` original complete **251 CODE bytes / 69 native instructions** now cold exact, **195/195** nonfield bytes and all **14/14** native physical COFF refs. It is the natural paired C++ constructor to separately exact F432 OptionsScene destructor. Genuine native derived vtable `00657F38`, base scene ctor `004251C0`, real 80-byte texture manager `new`/ctor `0040AD80`, 3 archive slots via `0040B1D0`, observed `data\system\option.dat` path `00657D80` and `data` root `00657D78` through `0040BB80`, actual 1024×512 canvas via `00401C20` at owner +0xC, native mode byte +0x14=5 and two short mode/state resets +0x10/+0x12 and true `00429F00` menu index initialization are all covered, including native VC7.1 /GX handler `00655893`. No external texture/scene/D3D code or unproven private layout is counted. Replay filename 303-byte F424/F425/F441-F444 exploratory drafts remain *nonexact*: native quad/prefix/glyph EBP order is still unresolved, preserved privately and not credited.
+
+**F446:** independently R053-authored `LoadingScene::InitializeAt004251F0` and `LogoScene::InitializeAt00425490` are now **181 and 183 native CODE bytes**, each with **50 original instructions**, **133/133** and **135/135** original nonfield bytes plus **12/12 actual COFF relocations**. Complete targeted cold replay **2/2 exact across one object**, no all-unit replay. Both naturally invoke the borrowed scene base `004251C0`, install distinct original vtables `00657BB4`/`00657BE0` and true VC7.1 /GX SEH handlers `00655743/00655773`, allocate an 80-byte resource manager via original operator new `0064159D` and native constructor `0040AD80`, allocate one archive slot, then load physical original `data\system\load.dat` and `data\system\logo.dat` via `0040BB80` under `data` root, and clear their actual byte +0xC or short +0xC state. Each source and native function is separately verified, no borrowed base or asset-loader callee code duplicated.
 
 **Corrections to old notes:** The 686-byte writer and 429-byte reader are both **exact** (F339/F338), not pending F249/F250. The full 1,252-byte replay writer and 375-byte finalizer are both **exact** (F326/F328), not pending F219/F218/F289. The 1,766-byte font rasterizer is **exact** (F319), not pending F299/F302. The 301-byte glyph loader is **exact** (F318), not pending F291. The 916-byte MusicRoom catalog + separately compared 16-byte jump table is **exact in F258** (916 CODE credit only). Other accepted 1,000+ byte bosses include F271 projected quad (1,185), F278 pattern chooser (1,264), F282 resource loader (1,186), F292 overlay text box (1,385), F294 effects catalog (1,722), and F244 scene advance (1,529 CODE). Earlier failures remain useful *historical controls*, but must never be presented as current unaccepted work.
 

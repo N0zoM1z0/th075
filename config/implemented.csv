@@ -748,3 +748,5 @@ NameEntryScene::InitializeAt0042B1F0
 SpriteScene::RenderMirroredNode
 CharacterAux::RunAt00497070
 OptionsScene::InitializeAt00428D60
+LoadingScene::InitializeAt004251F0
+LogoScene::InitializeAt00425490
