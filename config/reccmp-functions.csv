@@ -653,3 +653,4 @@ SpriteSequence::RenderElements,0x00411110,function
 SuikaFighter::UpdateSpecialStateAt005C3FB0,0x005C3FB0,function
 ArchiveCatalog::OpenAndRegister,0x0041CF80,function
 AuxEffectManager::AdvanceAndPruneTwoListsAt005F7D80,0x005F7D80,function
+CharacterAux::RunAt00496C60,0x00496C60,function

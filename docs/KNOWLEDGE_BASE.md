@@ -5269,3 +5269,37 @@ not an asserted complete private layout, and no CRT, runtime, external
 callee or compiler-generated body bytes were additionally credited. No
 assembly, arbitrary padding, artificial inert local, masks, truncated
 function or external Oracle acceptance is claimed.
+
+
+## F361: independent whole 1,027-byte character auxiliary special-effect controller
+
+Original R049-authored `CharacterAux::RunAt00496C60` at `00496C60..00497062`
+contains 1,027 **entire** native CODE bytes and **240 decoded original x86
+instructions**, original PE SHA256
+`8e5055e414cb2c3bd4a8eab29ac0cf7b4a7c49ef8968d48ae8720c2a01ddc3ec`.
+The native method clears grounded/inactive contact flags, then responds to three
+separate signed action windows (0x96..0x99, 0x9a..0x9d, 0x9e). Each branch
+resets the original +0x2F6..+0x310 transform, 1.0f scales, 255 color,
+float motion values, spawns a tracked effect through the authentic inherited
+`00453AC0` at unique Y offsets 94/60/100 and marks the one-shot +0xF0A.
+Unlike an already exact F062 auxiliary controller, this native code uses
+**effect 817** (0x331), `linked=0`, and tracks opponent-relative distance
+in signed short +`0xF32`, not effect 998 / linked 1 / field +0xF2A.
+The actual original `RET`, original 1027-byte CFG and all branches were
+independently reviewed; no other emitted callee or private class code is
+claimed.
+
+The independently exact 1,027-byte F062 source was an expression-shape
+starting point, **not** an assumed identical body. We extracted only the
+genuinely shared declaration-only inherited ABI and C++ macro expression
+form, then separately replaced every target-specific effect/scale/flag and
+distance field using the actual native original. The very first native-correct
+F361 probe compiled as a full **1,027-byte** function, matched **983/983**
+nonrelocated bytes and the complete **11** original genuine COFF relocation
+fields/destinations including all three original tracked-effect calls and
+eight distinct float constants. The standalone unit
+`character-aux-special-00496c60` under pinned VC7.1
+`/Od /Ob0 /Gy /GR- /GX- /Zi` cold replay was **1/1 exact**. The original
+whole fighter layout and exact nominal C++ method name remain unknown, with
+no assembly, byte grafts, fake locals, masked references, cropped CODE,
+full-repo cold replay or external Oracle receipts.
