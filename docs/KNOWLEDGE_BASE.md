@@ -1559,3 +1559,57 @@ relocation diagnostic and independent cold log remain at
 guards whole original code SHA, the original EH entry and all 33 native
 relocations with accepted source hash. All 97 unresolved origins remain
 uncredited.
+
+
+## F244: full 1,529-byte result-scene score and stage Boss with two native tables
+
+R065 independently classifies `SceneController::AdvanceAt0042E8F0` as authored.
+Its actual native extent `0042E8F0..0042EEE8` contains **1,529 CODE bytes
+/408 decoded x86 instructions**, code SHA256
+`19736e382a7ced3ff5809c4d0f1f791969d7ac7e82bfad3e44f85866dda351f1`.
+Two **separate four-entry 32-bit switch jump tables** occupy
+`0042EEE9..0042EF08`, adding 32 owned *data* bytes without additional
+authored CODE credit. The complete 1,561-byte code+table SHA256 is
+`6434768fdb2a0e649341109308e49032782d6166d136b41972aa002e72095eab`.
+Both tables point to original case entry addresses
+`0042E9C9/0042E9E2/0042E9FB/0042EA14` and
+`0042EDA5/0042EDBE/0042EDD7/0042EDF0`.
+
+`src/ResultSceneAdvanceF244.cpp` implements the whole original x86
+control flow in natural pinned VC7.1 `/Od /GX-` C++. It does the genuine
+result-scene poll `0042F450`, virtual slot-two redraw, already accepted
+Graphics::Present, score-accounting paths (including three sequential
+integer-times-float FILD/FMUL/ftol conversions), two four-way bonus
+multiplier switches with independent native double constants 0.5, 1,
+1.5 and doubling, five actual halfword animation resets, scene/global
+actor score totals, unsigned best-score comparison and all real replay,
+continue and special-stage scene-exit return codes 0x2205/0x2207,
+0x1108 and 0x2301. The second half reproduces the original x87 alpha
+fades, saturated byte opacity, 30/60/90/120/180/300 tick score phases,
+manual 6-step score drain, modulo-three sound ticks and actor updates.
+The complete game scene and sound object nominal C++ types are unproven;
+all accesses are pointer-only observed offsets. External callee code and
+existing exact result renderer functions receive no duplicate credit.
+
+The **first natural whole-code probe** compiled to the correct 1,529
+CODE +32 table byte size, all 74 actual COFF fields and 1,255/1,265
+non-field bytes. An independent capstone instruction alignment showed
+the only different *unmasked* bytes in three compare/test sequences:
+(1) unsigned actual actor score > saved best; (2) native signed frame
+>= replay threshold; (3) remaining pending result score > per-frame
+step. Writing these as the source's equivalent reversed comparisons
+restores the native register and operand order, all ten byte differences
+and the full 1,561-byte structural proof. **All 1,265/1,265 non-field
+bytes and 74/74 COFF relocations match**, including eight DIR32 jump
+table entries. The targeted independent cold replay, repeated once after
+reconciling `units[].functions` with the existing R065 name, returns
+**exact: 1529**. No all-unit cold replay occurred.
+
+`tests/test_result_scene_advance_f244.py` guards whole native code and
+comparison SHA256, all eight real table destinations, all 66 code and
+eight data relocation positions, preserved original source hash and
+existing source role annotation. All native disassembly, first/best
+probes, entire instruction diff and cold logs are retained in
+`.analysis/f244-result-advance/`. No fake locals, target byte grafts,
+assembly, masked fields, truncated function or externally accepted
+Oracle receipt is claimed; the 97 unknown-origin cases are unchanged.

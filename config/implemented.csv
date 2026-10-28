@@ -555,3 +555,4 @@ ResultScene::RenderCounters
 ResultScene::DrawDecimalDigits
 SceneTransition::DispatchMode
 ResultScene::Initialize
+SceneController::AdvanceAt0042E8F0
