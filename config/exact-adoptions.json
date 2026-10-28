@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377; F378; F379; F386; F389; F391; F392; F393; F394; F395; F403; F407; F414; F415; F421; F422; F427; F428; F429; F430; F431; F432; F435; F437; F440; F445; F446; F447; F448; F454; F458; F459; F460; F461; F463; F465; F467; F468; F469; F474; F479; F481; F484; F485",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377; F378; F379; F386; F389; F391; F392; F393; F394; F395; F403; F407; F414; F415; F421; F422; F427; F428; F429; F430; F431; F432; F435; F437; F440; F445; F446; F447; F448; F454; F458; F459; F460; F461; F463; F465; F467; F468; F469; F474; F479; F481; F484; F485; F488",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "09aaa1bb7804f579e6edd757a7dc4f1f28fe9c15a1fa9e197bb7f4badcc044c5"
+      "current_sha256": "456581b8ad27fb2d021ee06ba65931e9d0e908a499a0edbd1b15fb7743eb9e43"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "8e13e145cd5fec6d3b4d1d6e775c42d2d5155ad644e8dc91aa16138a5ac77127"
+      "current_sha256": "5bffedddba885a8c8a9407f4b3cf96fceb0518a30e7b3205ea5f707de8aa338f"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "d85a8a7cf0e556fb7cefe6412176ab3541fd1d7635122101a1580cd691ce9e59"
+      "current_sha256": "64089319fbd85f6d7309eba0e6d68a9e51e6e04d499810bad0a2d50e655ab342"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "6461f00e61df5e6db07e6ef2ccb95d282aad9f26ec679f87432fecfc010d9e50"
+      "current_sha256": "bff73c219489a2678d3c14efc34ec0e678f335c2328a8a5c97f4b55142ab50f4"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "18d07d7e089bdf8a807d1d9fb8eacaaf8318725d96c1a71a76827d2dfc2ac20f"
+      "current_sha256": "92920c98a42f796022512e2a5ec7997fb9e1e017d62f358c9ca253d4af99d11f"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -33964,6 +33964,226 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R053"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00427730",
+        "size": "99",
+        "span_end": "0x00427792",
+        "current_name": "FUN_00427730",
+        "proposed_name": "OpeningScene::Advance",
+        "module": "OpeningScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R036; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00427730",
+        "size": "99",
+        "span_end": "0x00427792",
+        "current_name": "FUN_00427730",
+        "proposed_name": "OpeningScene::Advance",
+        "module": "OpeningScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "unsigned short OpeningSceneAdvanceF488::Advance()",
+        "is_thunk": "false",
+        "source_file": "src/SceneTemporalAndInputPoliciesF488.cpp",
+        "evidence": "R036; full body hash, complete decoded CFG and local game-specific behavior reviewed; F488; scripts/repo-python scripts/replay-exact-units.py --unit opening-scene-advance-state-00427730",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F488 complete original authored R036 OpeningScene::AdvanceAt00427730, native original full 99 CODE bytes at 0x00427730, 31 original x86 instructions, native PE SHA256 9588b47d69649b4ce2ebed5f493b0f7a8a8034aa0107b35ef6f899347e505777. Original PollInput 00428C80, vtable+8 animation, native graphics 004028F0; if original phase 0067166C==1 or alternate 006716B4==1 returns 0x2202; else after DWORD elapsed+0xC >0xC15C return 0xFF02; otherwise native WinMM timeGetTime minus time base+0x10 stores elapsed+0xC and returns 13. Entire original 79/79 nonrelocation bytes and 5/5 authentic original physical COFF refs/targets and only five affected units 5/5 cold exact across one compiler object. Native class interfaces are only actual borrowed base/callback slots, not proof of original full game private class. No externally already exact BattleLoader/graphic/Win32/Game actor CODE double-credit, guessed fake locals, pasted native bytes/assembly, masks, cropped originals, all-unit replay or external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x00427730",
+        "origin": "authored",
+        "subsystem": "OpeningScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R036"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00425330",
+        "size": "84",
+        "span_end": "0x00425383",
+        "current_name": "FUN_00425330",
+        "proposed_name": "LoadingScene::AdvanceAt00425330",
+        "module": "SceneRuntime",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R100; scripts/repo-python scripts/verify-short-game-origins.py",
+        "owner": "authored",
+        "notes": "Complete game-policy body and CFG; reviewed custom callees, explicit fields and owner context; names/layouts inferred; no source or exact credit"
+      },
+      "after": {
+        "address": "0x00425330",
+        "size": "84",
+        "span_end": "0x00425383",
+        "current_name": "FUN_00425330",
+        "proposed_name": "LoadingScene::AdvanceAt00425330",
+        "module": "SceneRuntime",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "unsigned short LoadingSceneAdvanceF488::Advance()",
+        "is_thunk": "false",
+        "source_file": "src/SceneTemporalAndInputPoliciesF488.cpp",
+        "evidence": "R100; scripts/repo-python scripts/verify-short-game-origins.py; F488; scripts/repo-python scripts/replay-exact-units.py --unit loading-scene-advance-state-00425330",
+        "owner": "authored",
+        "notes": "Complete game-policy body and CFG; reviewed custom callees, explicit fields and owner context; names/layouts inferred; no source or exact credit; F488 complete original authored R100 LoadingScene::AdvanceAt00425330, native original full 84 CODE bytes at 0x00425330, 28 original x86 instructions, native PE SHA256 ea4837ccb75e4b02de1fbfd7b1c72f1ceb526bb5b703588ed58e73c9f0f72d87. Native vtable+8 animation, real startup byte this+0xC; once false loads fighters through already exact BattleLoader 004176F0, tests original *signed byte* load mode 006714B4 equal3 and signed character 0067161E>=8 for special 0x1108, otherwise native already exact LoadStage boss 004183D0, sets byte state+0xC=1 and returns 0x2000. Original mode global MUST sign-extend via MOVSX, not wrong MOVZX. Entire original 68/68 nonrelocation bytes and 4/4 authentic original physical COFF refs/targets and only five affected units 5/5 cold exact across one compiler object. Native class interfaces are only actual borrowed base/callback slots, not proof of original full game private class. No externally already exact BattleLoader/graphic/Win32/Game actor CODE double-credit, guessed fake locals, pasted native bytes/assembly, masks, cropped originals, all-unit replay or external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x00425330",
+        "origin": "authored",
+        "subsystem": "SceneRuntime",
+        "disposition": "authored",
+        "confidence": "target-observed-game-policy-and-reviewed-callees",
+        "evidence_id": "R100"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004255D0",
+        "size": "78",
+        "span_end": "0x0042561D",
+        "current_name": "FUN_004255d0",
+        "proposed_name": "TimedScene::AdvanceAt004255D0",
+        "module": "SceneRuntime",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R100; scripts/repo-python scripts/verify-short-game-origins.py",
+        "owner": "authored",
+        "notes": "Complete game-policy body and CFG; reviewed custom callees, explicit fields and owner context; names/layouts inferred; no source or exact credit"
+      },
+      "after": {
+        "address": "0x004255D0",
+        "size": "78",
+        "span_end": "0x0042561D",
+        "current_name": "FUN_004255d0",
+        "proposed_name": "TimedScene::AdvanceAt004255D0",
+        "module": "SceneRuntime",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "unsigned short TimedSceneAdvanceF488::Advance()",
+        "is_thunk": "false",
+        "source_file": "src/SceneTemporalAndInputPoliciesF488.cpp",
+        "evidence": "R100; scripts/repo-python scripts/verify-short-game-origins.py; F488; scripts/repo-python scripts/replay-exact-units.py --unit timed-scene-advance-state-004255d0",
+        "owner": "authored",
+        "notes": "Complete game-policy body and CFG; reviewed custom callees, explicit fields and owner context; names/layouts inferred; no source or exact credit; F488 complete original authored R100 TimedScene::AdvanceAt004255D0, native original full 78 CODE bytes at 0x004255D0, 26 original x86 instructions, native PE SHA256 69bc7bc7accc0117e35f5d61228af908aa8f191d6d04fc695d662034730ee30e. Calls actual scene PollInput 004256C0, scene vtable+8 animation, native graphics 004028F0, increments real unsigned short timer at this+0xC (native 16-bit register write with unsigned zero-extension compare), returns 0x220D if timer>180 else 4. Entire original 70/70 nonrelocation bytes and 2/2 authentic original physical COFF refs/targets and only five affected units 5/5 cold exact across one compiler object. Native class interfaces are only actual borrowed base/callback slots, not proof of original full game private class. No externally already exact BattleLoader/graphic/Win32/Game actor CODE double-credit, guessed fake locals, pasted native bytes/assembly, masks, cropped originals, all-unit replay or external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x004255D0",
+        "origin": "authored",
+        "subsystem": "SceneRuntime",
+        "disposition": "authored",
+        "confidence": "target-observed-game-policy-and-reviewed-callees",
+        "evidence_id": "R100"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004256C0",
+        "size": "96",
+        "span_end": "0x0042571F",
+        "current_name": "FUN_004256c0",
+        "proposed_name": "SceneInput::PollAt004256C0",
+        "module": "SceneRuntime",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R100; scripts/repo-python scripts/verify-short-game-origins.py",
+        "owner": "authored",
+        "notes": "Complete game-policy body and CFG; reviewed custom callees, explicit fields and owner context; names/layouts inferred; no source or exact credit"
+      },
+      "after": {
+        "address": "0x004256C0",
+        "size": "96",
+        "span_end": "0x0042571F",
+        "current_name": "FUN_004256c0",
+        "proposed_name": "SceneInput::PollAt004256C0",
+        "module": "SceneRuntime",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void LoadingSceneInputF488::PollInput()",
+        "is_thunk": "false",
+        "source_file": "src/SceneTemporalAndInputPoliciesF488.cpp",
+        "evidence": "R100; scripts/repo-python scripts/verify-short-game-origins.py; F488; scripts/repo-python scripts/replay-exact-units.py --unit loading-scene-input-poll-004256c0",
+        "owner": "authored",
+        "notes": "Complete game-policy body and CFG; reviewed custom callees, explicit fields and owner context; names/layouts inferred; no source or exact credit; F488 complete original authored R100 SceneInput::PollAt004256C0, native original full 96 CODE bytes at 0x004256C0, 30 original x86 instructions, native PE SHA256 38bb20ed2eb499d59c4a2146e1ec5d809aa8e3455bbeac38055043c1b96f7c7b. Complete real joystick 00403E50 then keyboard 00403F40 polling, input global 00671638 advance 00406E80, original CheckPressed 00407170 for 0x1C AND (0x38 OR 0xB8), actual fullscreen toggle 004018A0; no second mapping controller. Entire original 52/52 nonrelocation bytes and 11/11 authentic original physical COFF refs/targets and only five affected units 5/5 cold exact across one compiler object. Native class interfaces are only actual borrowed base/callback slots, not proof of original full game private class. No externally already exact BattleLoader/graphic/Win32/Game actor CODE double-credit, guessed fake locals, pasted native bytes/assembly, masks, cropped originals, all-unit replay or external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x004256C0",
+        "origin": "authored",
+        "subsystem": "SceneRuntime",
+        "disposition": "authored",
+        "confidence": "target-observed-game-policy-and-reviewed-callees",
+        "evidence_id": "R100"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00439F90",
+        "size": "96",
+        "span_end": "0x00439FEF",
+        "current_name": "FUN_00439f90",
+        "proposed_name": "StaffRollScene::PollSkipInput",
+        "module": "StaffRollScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00439F90",
+        "size": "96",
+        "span_end": "0x00439FEF",
+        "current_name": "FUN_00439f90",
+        "proposed_name": "StaffRollScene::PollSkipInput",
+        "module": "StaffRollScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void StaffRollSceneInputF488::PollSkipInput()",
+        "is_thunk": "false",
+        "source_file": "src/SceneTemporalAndInputPoliciesF488.cpp",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed; F488; scripts/repo-python scripts/replay-exact-units.py --unit staffroll-scene-poll-skip-input-00439f90",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F488 complete original authored R043 StaffRollScene::PollSkipInputAt00439F90, native original full 96 CODE bytes at 0x00439F90, 30 original x86 instructions, native PE SHA256 37770f7a7d20c1891b83ae1a0be2547964ba3f31cd20cddcd292903e0e80bd80. Separately R043 authored full StaffRoll input/skip policy: real joystick 00403E50, keyboard 00403F40, one original global input queue 00671638 Advance 00406E80, native pressed 0x1C AND (0x38 OR 0xB8) at 00407170 toggles original graphics mode via 004018A0. Entire original 52/52 nonrelocation bytes and 11/11 authentic original physical COFF refs/targets and only five affected units 5/5 cold exact across one compiler object. Native class interfaces are only actual borrowed base/callback slots, not proof of original full game private class. No externally already exact BattleLoader/graphic/Win32/Game actor CODE double-credit, guessed fake locals, pasted native bytes/assembly, masks, cropped originals, all-unit replay or external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x00439F90",
+        "origin": "authored",
+        "subsystem": "StaffRollScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R043"
       }
     }
   ],
@@ -207972,6 +208192,314 @@
           "target": 4204496
         }
       ]
+    },
+    "opening-scene-advance-state-00427730": {
+      "source": "src/SceneTemporalAndInputPoliciesF488.cpp",
+      "object": "build/matching/SceneTemporalAndInputPoliciesF488.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "OpeningScene::AdvanceAt00427730"
+      ],
+      "symbol": "?Advance@OpeningSceneAdvanceF488@@QAEGXZ",
+      "target_address": 4355888,
+      "size": 99,
+      "relocations": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": "?PollInput@OpeningSceneAdvanceF488@@QAEXXZ",
+          "target": 4361344
+        },
+        {
+          "offset": 27,
+          "type": "REL32",
+          "symbol": "?NativeGraphicsBeforeAt004028F0@@YAXXZ",
+          "target": 4204784
+        },
+        {
+          "offset": 33,
+          "type": "DIR32",
+          "symbol": "?g_OpeningPhaseAt0067166C@@3IA",
+          "target": 6755948
+        },
+        {
+          "offset": 42,
+          "type": "DIR32",
+          "symbol": "?g_OpeningAlternateAt006716B4@@3IA",
+          "target": 6756020
+        },
+        {
+          "offset": 75,
+          "type": "DIR32",
+          "symbol": "__imp__timeGetTime@0",
+          "target": 6648420
+        }
+      ]
+    },
+    "loading-scene-advance-state-00425330": {
+      "source": "src/SceneTemporalAndInputPoliciesF488.cpp",
+      "object": "build/matching/SceneTemporalAndInputPoliciesF488.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "LoadingScene::AdvanceAt00425330"
+      ],
+      "symbol": "?Advance@LoadingSceneAdvanceF488@@QAEGXZ",
+      "target_address": 4346672,
+      "size": 84,
+      "relocations": [
+        {
+          "offset": 30,
+          "type": "REL32",
+          "symbol": "?LoadFightersAt004176F0@@YAXXZ",
+          "target": 4290288
+        },
+        {
+          "offset": 37,
+          "type": "DIR32",
+          "symbol": "?g_LoadModeAt006714B4@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 49,
+          "type": "DIR32",
+          "symbol": "?g_LoadCharacterAt0067161E@@3CA",
+          "target": 6755870
+        },
+        {
+          "offset": 65,
+          "type": "REL32",
+          "symbol": "?LoadStageAt004183D0@@YAXXZ",
+          "target": 4293584
+        }
+      ]
+    },
+    "timed-scene-advance-state-004255d0": {
+      "source": "src/SceneTemporalAndInputPoliciesF488.cpp",
+      "object": "build/matching/SceneTemporalAndInputPoliciesF488.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "TimedScene::AdvanceAt004255D0"
+      ],
+      "symbol": "?Advance@TimedSceneAdvanceF488@@QAEGXZ",
+      "target_address": 4347344,
+      "size": 78,
+      "relocations": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": "?PollInput@TimedSceneAdvanceF488@@QAEXXZ",
+          "target": 4347584
+        },
+        {
+          "offset": 27,
+          "type": "REL32",
+          "symbol": "?NativeGraphicsBeforeAt004028F0@@YAXXZ",
+          "target": 4204784
+        }
+      ]
+    },
+    "loading-scene-input-poll-004256c0": {
+      "source": "src/SceneTemporalAndInputPoliciesF488.cpp",
+      "object": "build/matching/SceneTemporalAndInputPoliciesF488.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "SceneInput::PollAt004256C0"
+      ],
+      "symbol": "?PollInput@LoadingSceneInputF488@@QAEXXZ",
+      "target_address": 4347584,
+      "size": 96,
+      "relocations": [
+        {
+          "offset": 8,
+          "type": "REL32",
+          "symbol": "?JoystickTickAt00403E50@@YAXXZ",
+          "target": 4210256
+        },
+        {
+          "offset": 13,
+          "type": "REL32",
+          "symbol": "?KeyboardTickAt00403F40@@YAXXZ",
+          "target": 4210496
+        },
+        {
+          "offset": 18,
+          "type": "DIR32",
+          "symbol": "?g_FirstInputAt00671638@@3VInputStateF488@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 23,
+          "type": "REL32",
+          "symbol": "?Advance@InputStateF488@@QAEXXZ",
+          "target": 4222592
+        },
+        {
+          "offset": 30,
+          "type": "DIR32",
+          "symbol": "?g_FirstInputAt00671638@@3VInputStateF488@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 35,
+          "type": "REL32",
+          "symbol": "?CheckPressed@InputStateF488@@QAEEH@Z",
+          "target": 4223344
+        },
+        {
+          "offset": 49,
+          "type": "DIR32",
+          "symbol": "?g_FirstInputAt00671638@@3VInputStateF488@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 54,
+          "type": "REL32",
+          "symbol": "?CheckPressed@InputStateF488@@QAEEH@Z",
+          "target": 4223344
+        },
+        {
+          "offset": 71,
+          "type": "DIR32",
+          "symbol": "?g_FirstInputAt00671638@@3VInputStateF488@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 76,
+          "type": "REL32",
+          "symbol": "?CheckPressed@InputStateF488@@QAEEH@Z",
+          "target": 4223344
+        },
+        {
+          "offset": 88,
+          "type": "REL32",
+          "symbol": "?FullscreenToggleAt004018A0@@YAXXZ",
+          "target": 4200608
+        }
+      ]
+    },
+    "staffroll-scene-poll-skip-input-00439f90": {
+      "source": "src/SceneTemporalAndInputPoliciesF488.cpp",
+      "object": "build/matching/SceneTemporalAndInputPoliciesF488.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "StaffRollScene::PollSkipInputAt00439F90"
+      ],
+      "symbol": "?PollSkipInput@StaffRollSceneInputF488@@QAEXXZ",
+      "target_address": 4431760,
+      "size": 96,
+      "relocations": [
+        {
+          "offset": 8,
+          "type": "REL32",
+          "symbol": "?JoystickTickAt00403E50@@YAXXZ",
+          "target": 4210256
+        },
+        {
+          "offset": 13,
+          "type": "REL32",
+          "symbol": "?KeyboardTickAt00403F40@@YAXXZ",
+          "target": 4210496
+        },
+        {
+          "offset": 18,
+          "type": "DIR32",
+          "symbol": "?g_FirstInputAt00671638@@3VInputStateF488@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 23,
+          "type": "REL32",
+          "symbol": "?Advance@InputStateF488@@QAEXXZ",
+          "target": 4222592
+        },
+        {
+          "offset": 30,
+          "type": "DIR32",
+          "symbol": "?g_FirstInputAt00671638@@3VInputStateF488@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 35,
+          "type": "REL32",
+          "symbol": "?CheckPressed@InputStateF488@@QAEEH@Z",
+          "target": 4223344
+        },
+        {
+          "offset": 49,
+          "type": "DIR32",
+          "symbol": "?g_FirstInputAt00671638@@3VInputStateF488@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 54,
+          "type": "REL32",
+          "symbol": "?CheckPressed@InputStateF488@@QAEEH@Z",
+          "target": 4223344
+        },
+        {
+          "offset": 71,
+          "type": "DIR32",
+          "symbol": "?g_FirstInputAt00671638@@3VInputStateF488@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 76,
+          "type": "REL32",
+          "symbol": "?CheckPressed@InputStateF488@@QAEEH@Z",
+          "target": 4223344
+        },
+        {
+          "offset": 88,
+          "type": "REL32",
+          "symbol": "?FullscreenToggleAt004018A0@@YAXXZ",
+          "target": 4200608
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -208455,6 +208983,7 @@
     "src/BackgroundStageDerivedDestructorsF479.cpp": "03fd3d9ae305d099750360a82d8e56e3cf1936e6dd3bdbfb7aa064a3c00cdcfe",
     "src/ArchiveRasterCameraFramePoliciesF481.cpp": "31d067e80e5cb52071240ea4128404151760a84fcfcd518f9d5a3dc47488e8aa",
     "src/BackgroundCameraEventFrameLeavesF484.cpp": "8f78f9b1da4dad7867ce61de7ba8ce3c4650506ababe51ec54291261ab93cf46",
-    "src/LoadingLogoSceneDrawF485.cpp": "efa62a8bbd3d1ac626dada724c4596e8ae9bb34e5fc5337e0bb7e32e46820fc6"
+    "src/LoadingLogoSceneDrawF485.cpp": "efa62a8bbd3d1ac626dada724c4596e8ae9bb34e5fc5337e0bb7e32e46820fc6",
+    "src/SceneTemporalAndInputPoliciesF488.cpp": "1a054a8f6a651c132c40410531b0004c2d85bc53c6d5ff17b5952dacdb010268"
   }
 }

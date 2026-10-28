@@ -830,3 +830,8 @@ FrameCapture::EnableDirectDrawAt00417140,0x00417140,function
 BattleEndScene::DestroyAt00424F40,0x00424F40,function
 LoadingScene::DrawAt00425390,0x00425390,function
 LogoScene::DrawAt00425620,0x00425620,function
+OpeningScene::AdvanceAt00427730,0x00427730,function
+LoadingScene::AdvanceAt00425330,0x00425330,function
+TimedScene::AdvanceAt004255D0,0x004255D0,function
+SceneInput::PollAt004256C0,0x004256C0,function
+StaffRollScene::PollSkipInputAt00439F90,0x00439F90,function

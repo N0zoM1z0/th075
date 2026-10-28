@@ -7661,3 +7661,80 @@ exact across one object**. Exactly 312 native authored CODE bytes are
 credited, with no original ctor, graphic renderer, D3D, CRT or Win32
 callee CODE double-count. No target machine bytes/ASM, fake locals,
 masked relocations, cropped body, full cold replay or remote Oracle.
+
+
+## F488: five complete original native scene advance / keyboard policy functions
+
+Five real independent scene state/input routines were first reverse-
+disassembled and individually origin-reviewed, then compiled from natural
+source `src/SceneTemporalAndInputPoliciesF488.cpp` with pinned VC7.1
+`/Od /Ob0 /Gy /GR- /GX- /Zi`. All native CODE and true COFF physical
+references were checked separately, not derived from similarity alone:
+
+- R036 `OpeningScene::AdvanceAt00427730` (`99 CODE bytes /31 original
+  x86 instructions`), original PE SHA256
+  `9588b47d69649b4ce2ebed5f493b0f7a8a8034aa0107b35ef6f899347e505777`: real
+  original Opening scene input, virtual+8 animation and `004028F0`
+  graphics; original globals `0067166C` / `006716B4` trigger 0x2202
+  next-state, elapsed threshold 0xC15C returns 0xFF02, otherwise native
+  WinMM timeGetTime records elapsed DWORD and returns 0xD. Original
+  **79/79 nonrelocation bytes, 5/5 physical COFF refs**.
+- R100 `LoadingScene::AdvanceAt00425330` (`84 CODE bytes /28
+  instructions`), PE SHA256
+  `ea4837ccb75e4b02de1fbfd7b1c72f1ceb526bb5b703588ed58e73c9f0f72d87`: actual
+  first-frame load gate at receiver+0xC and scene vtable+8 animation,
+  original already exact fighter loader `004176F0` and stage boss
+  `004183D0`, alternate special return 0x1108 when native signed mode
+  `006714B4` equals 3 and original character signed byte `0067161E`
+  >=8; otherwise marks the stage loaded and returns 0x2000. The first
+  complete 84-byte source differed by exactly **one original nonfield
+  byte**: `unsigned char` mode emitted MOVZX versus actual original
+  MOVSX. Restoring real `signed char` produces **68/68 original nonfield
+  bytes and 4/4 physical COFF fields**.
+- R100 `TimedScene::AdvanceAt004255D0` (`78 CODE /26 instructions`),
+  SHA256 `69bc7bc7accc0117e35f5d61228af908aa8f191d6d04fc695d662034730ee30e`: exact
+  native PollInput `004256C0`, vtable+8 animation and graphic tick,
+  real unsigned short timer at native +0xC incremented with original
+  16-bit instruction; result >180 returns 0x220D, else 4. Complete
+  **70/70 nonfield bytes and 2/2 real original COFF refs**.
+- R100 `SceneInput::PollAt004256C0` (`96 CODE /30 instructions`),
+  SHA256 `38bb20ed2eb499d59c4a2146e1ec5d809aa8e3455bbeac38055043c1b96f7c7b`,
+  and independently R043 `StaffRollScene::PollSkipInputAt00439F90`
+  (also `96 CODE /30 instructions`), SHA256
+  `37770f7a7d20c1891b83ae1a0be2547964ba3f31cd20cddcd292903e0e80bd80`: independently
+  compare all actual joystick `00403E50`/keyboard `00403F40`, native
+  one-controller shared input `00671638` Advance and original scan keys
+  `0x1C && (0x38 || 0xB8)` with real graphics toggle `004018A0`.
+  Both have **52/52 original nonfield bytes and 11/11 authentic physical
+  original COFF refs** checked *per original address*.
+
+All five affected units were **fresh cold replayed 5/5 exact in one
+compiler object**, crediting **99+84+78+96+96 = 453 distinct original
+authored CODE bytes**. No already accepted 3,232-byte fighter loader,
+3,765-byte stage loader, Win32/WinMM or shared input callee CODE was
+double-counted; original receiver classes remain borrowed ABI views,
+not complete private types. No target bytes graft, source ASM, fake
+stack fields, masked relocations, shortened original or full cold replay.
+
+## F486-F487: complete but nonexact 208-byte StaffRoll phase-window CFG probes
+
+The R043-authored native `StaffRollScene::Advance` at `00438C20` is
+**208 native CODE bytes**, independently disassembled. It advances
+controls and animation, and in stage phase 1 only on elapsed <=0x14C08
+checks the lower bound 0x13880: the actual original **unsigned JAE**
+jumps directly from native function offset 0x4A to the shared WinMM
+clock-update block at original offset 0xB6 when elapsed >=0x13880.
+Outside the upper window, or after the early stage viewport actions,
+the actual fighter/end-mode/best-score dispatch uses distinct original
+returns 0x110A/0x1107/0x1102; the clock fallback returns 0xB.
+The existing whole natural source F450 initially conflated the two
+window directions; F451 fixed true semantics with `goto`, yet pinned
+MSVC 7.1 emitted a two-instruction `JB fallthrough; JMP clock` instead
+of original single JAE, yielding **210** nonexact bytes. Ten alternative
+real phase outer-do/while/for and seven state switch/break variants
+under `.analysis/f486-staff-fallthrough-cfg/` and
+`.analysis/f487-staff-switch-break/` compiled at **210–230 bytes**,
+not original 208. Their original control/predicate assumptions and
+actual displacements remain falsifiable private evidence. No partial
+CODE credit, invented switch cases, asm, native machine byte patch or
+full-repository cold replay was used.

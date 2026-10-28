@@ -812,3 +812,8 @@ address,name,module,confidence,evidence
 0x00424F40,BattleEndScene::DestroyAt00424F40,BattleEndScene,inferred,"F484; whole native 28-byte exact BattleEndScene::DestroyAt00424F40, 2 original COFF fields and only affected 7/7 cold exact"
 0x00425390,LoadingScene::DrawAt00425390,LoadingScene,inferred,"F485; complete original Loading 156-byte scene draw, 136-byte physical quad carrier and 8 authentic COFF refs, affected-only cold exact"
 0x00425620,LogoScene::DrawAt00425620,LogoScene,inferred,"F485; complete original Logo 156-byte scene draw, 136-byte physical quad carrier and 8 authentic COFF refs, affected-only cold exact"
+0x00427730,OpeningScene::AdvanceAt00427730,OpeningScene,inferred,"F488; complete original 99-byte scene state/input, 5 genuine physical COFF refs, targeted five-unit cold exact"
+0x00425330,LoadingScene::AdvanceAt00425330,SceneRuntime,inferred,"F488; complete original 84-byte scene state/input, 4 genuine physical COFF refs, targeted five-unit cold exact"
+0x004255D0,TimedScene::AdvanceAt004255D0,SceneRuntime,inferred,"F488; complete original 78-byte scene state/input, 2 genuine physical COFF refs, targeted five-unit cold exact"
+0x004256C0,SceneInput::PollAt004256C0,SceneRuntime,inferred,"F488; complete original 96-byte scene state/input, 11 genuine physical COFF refs, targeted five-unit cold exact"
+0x00439F90,StaffRollScene::PollSkipInputAt00439F90,StaffRollScene,inferred,"F488; complete original 96-byte scene state/input, 11 genuine physical COFF refs, targeted five-unit cold exact"

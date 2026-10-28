@@ -829,3 +829,8 @@ FrameCapture::EnableDirectDrawAt00417140
 BattleEndScene::DestroyAt00424F40
 LoadingScene::DrawAt00425390
 LogoScene::DrawAt00425620
+OpeningScene::AdvanceAt00427730
+LoadingScene::AdvanceAt00425330
+TimedScene::AdvanceAt004255D0
+SceneInput::PollAt004256C0
+StaffRollScene::PollSkipInputAt00439F90
