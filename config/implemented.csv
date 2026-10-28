@@ -934,3 +934,4 @@ AuxEffect::SpawnConfiguredPeerAt005FABD0
 AuxEffect::PlaySharedSoundAt005FAC40
 CommandList::ClearEntriesAt004110F0
 BattleScene::SetSharedValueAt004557E0
+StaffRollScene::AdvanceAt00438C20

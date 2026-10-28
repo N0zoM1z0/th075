@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377; F378; F379; F386; F389; F391; F392; F393; F394; F395; F403; F407; F414; F415; F421; F422; F427; F428; F429; F430; F431; F432; F435; F437; F440; F445; F446; F447; F448; F454; F458; F459; F460; F461; F463; F465; F467; F468; F469; F474; F479; F481; F484; F485; F488; F489; F490-F492; F494; F496; F499",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377; F378; F379; F386; F389; F391; F392; F393; F394; F395; F403; F407; F414; F415; F421; F422; F427; F428; F429; F430; F431; F432; F435; F437; F440; F445; F446; F447; F448; F454; F458; F459; F460; F461; F463; F465; F467; F468; F469; F474; F479; F481; F484; F485; F488; F489; F490-F492; F494; F496; F499; F504",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "9d11619b1da58a341a0b932c1255bfb355c9a8db7a61ddfbb673ad8e45667703"
+      "current_sha256": "44a96e059c9cb2b5d23d905e6d5f6cb124134ce07dce5b04b01fb277ac9281e9"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "1408f30cfeaffaf860c3e12553f4c7c39b5c1a13f306c31cbf39536c62d10853"
+      "current_sha256": "5d43cf1009da4374582e6c390755ff1ea9c6b4077532e2fea4eea2949ad81f56"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "1b3db227bc0826797d806d7941dc26247f8ab741d7f4980859cb222ca9e4347f"
+      "current_sha256": "5906284b67a851e773a57ca257dc041384f08a282e816b8b37efe87d9daae190"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "416c5309e40a71d68f8c4385547925de47073efdb714577b0589c40e7359f972"
+      "current_sha256": "c3d998ea75b4924c9a033b517aa61d9cf73c8fb8481d8f4b32328fe441cef2bb"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "ef81773e424b0c238b7d43de7e5e1703c336a50d084a937e8ebe5f96fabc8e36"
+      "current_sha256": "a53a9659e92d6a4a39727a4447be8af2ea8ea2aca5329015eeec0057407055b9"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -38584,6 +38584,50 @@
         "disposition": "authored",
         "confidence": "whole-shared-scene-value-store-and-independent-complete-game-decay-policy",
         "evidence_id": "R233"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00438C20",
+        "size": "208",
+        "span_end": "0x00438CEF",
+        "current_name": "FUN_00438c20",
+        "proposed_name": "StaffRollScene::Advance",
+        "module": "StaffRollScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00438C20",
+        "size": "208",
+        "span_end": "0x00438CEF",
+        "current_name": "FUN_00438c20",
+        "proposed_name": "StaffRollScene::Advance",
+        "module": "StaffRollScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "unsigned short StaffRollAdvanceF450::Advance()",
+        "is_thunk": "false",
+        "source_file": "src/StaffRollSceneAdvanceF504.cpp",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed; F504; scripts/repo-python scripts/replay-exact-units.py --unit staffroll-scene-complete-advance-00438c20",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F504 independently complete R043 original StaffRollScene::Advance at 00438C20..00438CEF, 208 original authored CODE bytes, 57 native x86 instructions, native original PE SHA256 516cf2472968907001946b6e0d3a98291410076f09abdef5ac3eb18ea9fc1132. Original scene updates native input 00439F90 and original vtable+8, graphics 004028F0, real TickStaffTime 00438CF0; if phase global 0067166C equals 1 and outside the inclusive unsigned time-window 0x13880..0x14C08, original branch executes SetStage 00419CB0(40) and ConfigureStaffViewport 00407E60(-10000,-160,1,1), then ONLY inside that same condition dispatches fighter score/ending return 0x110A/0x1107/0x1102 using original fighter 00671418, completion 00671623, mode 006714CE and highscore 00671420. During the bounded time window, or phase!=1, native timeGetTime IAT 00657264 minus scene start +0x10 updates elapsed DWORD +0xC and returns 0xB. Old F450/F451/F486/F487 source incorrectly placed fighter branch outside the stage condition and emitted two-instruction short JB + unconditional JMP (210 bytes); original has JA direct to SetStage at offset0x4C, then JAE directly to clock reset at offset0xB6. Truthful source C++ grouping recovers both original exact native branches and entire 208-byte CFG, all 156/156 nonrelocation bytes and all 13/13 actual physical COFF DIR32/REL32 symbols and original destinations; single affected-only fresh cold 1/1 exact. No fake locals, assembly or pasted target bytes, relocation masking or cropped body, full cold replay, code credits for already accepted input/graphics/stage, or external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x00438C20",
+        "origin": "authored",
+        "subsystem": "StaffRollScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R043"
       }
     }
   ],
@@ -215356,6 +215400,107 @@
           "target": 6755880
         }
       ]
+    },
+    "staffroll-scene-complete-advance-00438c20": {
+      "source": "src/StaffRollSceneAdvanceF504.cpp",
+      "object": "build/matching/StaffRollSceneAdvanceF504.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "StaffRollScene::AdvanceAt00438C20"
+      ],
+      "symbol": "?Advance@StaffRollAdvanceF450@@QAEGXZ",
+      "target_address": 4426784,
+      "size": 208,
+      "relocations": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": "?UpdateStaffControls@StaffRollAdvanceF450@@QAEXXZ",
+          "target": 4431760
+        },
+        {
+          "offset": 27,
+          "type": "REL32",
+          "symbol": "?BeforeStaffAdvanceAt004028F0@@YAXXZ",
+          "target": 4204784
+        },
+        {
+          "offset": 35,
+          "type": "REL32",
+          "symbol": "?TickStaffTime@StaffRollAdvanceF450@@QAEXXZ",
+          "target": 4426992
+        },
+        {
+          "offset": 41,
+          "type": "DIR32",
+          "symbol": "?g_StaffRollPhaseAt0067166C@@3IA",
+          "target": 6755948
+        },
+        {
+          "offset": 79,
+          "type": "REL32",
+          "symbol": "?SetStageAt00419CB0@@YAXH@Z",
+          "target": 4299952
+        },
+        {
+          "offset": 101,
+          "type": "REL32",
+          "symbol": "?ConfigureStaffViewportAt00407E60@@YAXHHHH@Z",
+          "target": 4226656
+        },
+        {
+          "offset": 110,
+          "type": "DIR32",
+          "symbol": "?g_StaffRollFighterAt00671418@@3PAXA",
+          "target": 6755352
+        },
+        {
+          "offset": 120,
+          "type": "DIR32",
+          "symbol": "?g_StaffRollCompletionAt00671623@@3CA",
+          "target": 6755875
+        },
+        {
+          "offset": 131,
+          "type": "DIR32",
+          "symbol": "?g_ReplayNameModeAt006714CE@@3CA",
+          "target": 6755534
+        },
+        {
+          "offset": 140,
+          "type": "DIR32",
+          "symbol": "?g_ReplayNameModeAt006714CE@@3CA",
+          "target": 6755534
+        },
+        {
+          "offset": 146,
+          "type": "DIR32",
+          "symbol": "?g_StaffRollFighterAt00671418@@3PAXA",
+          "target": 6755352
+        },
+        {
+          "offset": 158,
+          "type": "DIR32",
+          "symbol": "?g_StaffRollBestScoreAt00671420@@3IA",
+          "target": 6755360
+        },
+        {
+          "offset": 184,
+          "type": "DIR32",
+          "symbol": "__imp__timeGetTime@0",
+          "target": 6648420
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -215847,6 +215992,7 @@
     "src/FighterSharedResourceDestructorsF491.cpp": "d66355ea188ec29574582b4726fb3afff1f092f2bd8b2e704fc080ad833287ab",
     "src/TextRasterizerCreateFontF494.cpp": "d0351008651c27f1459dc3584a6f41b0a681962f0e8e50afdb46b34728b9bd6f",
     "src/BackgroundStageNoOpVirtualsF496.cpp": "322ef2e4647bda063ddd9316e1fbe755835ecdb6d4b8e18ae7aa51683c85bee8",
-    "src/AuxEffectAudioCommandForwardersF499.cpp": "621ef39171033ed997acf86acbbaf3205b34b8fe34c76bc5bca2b1698e71c19a"
+    "src/AuxEffectAudioCommandForwardersF499.cpp": "621ef39171033ed997acf86acbbaf3205b34b8fe34c76bc5bca2b1698e71c19a",
+    "src/StaffRollSceneAdvanceF504.cpp": "1a763436fb174268e32529c05efafbaa48db36900c06ec8773eb14495a7ea42c"
   }
 }

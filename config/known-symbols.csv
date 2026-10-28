@@ -917,3 +917,4 @@ address,name,module,confidence,evidence
 0x005FAC40,AuxEffect::PlaySharedSoundAt005FAC40,AuxEffect,inferred,"F499; whole original native 29-byte R-origin effect/command/state forwarding, 2 original physical COFF refs and targeted 5/5 exact"
 0x004110F0,CommandList::ClearEntriesAt004110F0,GameContextPolicy,inferred,"F499; whole original native 22-byte R-origin effect/command/state forwarding, 1 original physical COFF refs and targeted 5/5 exact"
 0x004557E0,BattleScene::SetSharedValueAt004557E0,BattleScene,inferred,"F499; whole original native 21-byte R-origin effect/command/state forwarding, 1 original physical COFF refs and targeted 5/5 exact"
+0x00438C20,StaffRollScene::AdvanceAt00438C20,StaffRollScene,inferred,"F504; complete original 208 CODE /57 instructions, native JA+JAE time-window and fighter return, 13 genuine physical refs affected-only cold exact"

@@ -8104,3 +8104,55 @@ and `.analysis/f501-winmain-message-layout/`. Nothing from the full
 external callee code is double-credited. No byte masks, target patches,
 fake locals, source ASM, truncated CODE, all-unit replay or Oracle
 receipt claimed.
+
+
+## F504: complete exact original 208-byte StaffRoll advancement boss, correcting historical wrong stage/score scope
+
+The long-unaccepted R043 authored original native
+`StaffRollScene::AdvanceAt00438C20` at `00438C20..00438CEF` is now
+**208 original authored CODE bytes /57 x86 instructions**, original
+PE SHA256 `516cf2472968907001946b6e0d3a98291410076f09abdef5ac3eb18ea9fc1132`.
+Native nonrelocation comparison was independently **156/156** and
+all **13 genuine physical COFF DIR32/REL32 fields and their actual
+native destinations** were checked separately. A fresh, isolated
+`--unit staffroll-scene-complete-advance-00438c20` cold build and
+replay returned **1/1 exact**. The original native function uses only
+its true borrowed StaffRoll scene, input/graphic/stage/camera/audio and
+WinMM APIs; no external caller/callee CODE was double-counted.
+
+The fundamental error in F450/F451/F486/F487 was **the C++ control-flow
+scope and the actual native branch meaning**, not the compiler's inability
+to generate an optimized JMP. The original x86 at offsets +0x37..+0x4A
+is: test unsigned elapsed+0xC against upper bound `0x14C08`; `JA
+0x4C` directly enters stage operation if **above** upper bound; if
+not above, compare elapsed against lower bound `0x13880`; `JAE 0xB6`
+directly enters time reset if **in** the inclusive bounded window;
+otherwise it enters stage operation when **below** lower bound. Thus
+the guarded native code implements the source predicate
+`elapsed > 0x14C08 || elapsed < 0x13880` and both **SetStage(40)**
+and the **following fighter, ending-mode and best-score dispatch**
+belong to this **same** condition. Earlier sources either put the
+score dispatch outside this condition (untrue native behavior) or
+represented the bounded-window skip through an explicit goto, causing
+VC7.1 to emit extra `JB skip; JMP time` instructions and 210–235
+whole-function bytes.
+
+Natural complete source `src/StaffRollSceneAdvanceF504.cpp` groups both
+actual stage setup calls and all real fighter branches **inside** the
+original outside-window condition; the time-reset code is then simply
+the fall-through when phase is not 1 or elapsed is within the window.
+Pinned VC7.1 `/Od /Ob0 /Gy /GR- /GX- /GS /Zi` automatically emits the
+correct original `JA` to original offset0x4C and **one `JAE` directly
+to original offset0xB6**, without assembly or invented control-flow
+labels. Original phase global `0067166C` is checked for 1; score and
+fighter globals `00671418`, `00671623`, `006714CE`, `00671420` drive
+original three ending returns 0x110A/0x1107/0x1102; stage set
+`00419CB0(40)`, viewport `00407E60(-10000,-160,1,1)` and timeGetTime
+import `00657264` are individually verified. Normal clock fallback
+updates owner+0xC from WinMM time minus owner+0x10 and returns 0xB.
+The complete independently correct **208-byte x86 and 13 native COFF
+refs** are now frozen, with **zero partial code credit or borrowed
+callee duplication**. F450/F451/F486/F487/F503 variants remain
+valuable preserved historical *negative controls*, not current pending
+reconstruction claims. No fake locals, pasted original native bytes,
+assembler, masked references, truncated original or all-unit cold replay.

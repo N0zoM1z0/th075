@@ -935,3 +935,4 @@ AuxEffect::SpawnConfiguredPeerAt005FABD0,0x005FABD0,function
 AuxEffect::PlaySharedSoundAt005FAC40,0x005FAC40,function
 CommandList::ClearEntriesAt004110F0,0x004110F0,function
 BattleScene::SetSharedValueAt004557E0,0x004557E0,function
+StaffRollScene::AdvanceAt00438C20,0x00438C20,function

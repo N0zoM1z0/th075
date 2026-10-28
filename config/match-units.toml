@@ -60174,3 +60174,77 @@ offset = 11
 type = "DIR32"
 symbol = "?g_SharedFighterValueAt00671628@@3IA"
 target = 0x00671628
+
+[units.staffroll-scene-complete-advance-00438c20]
+source = "src/StaffRollSceneAdvanceF504.cpp"
+object = "build/matching/StaffRollSceneAdvanceF504.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["StaffRollScene::AdvanceAt00438C20"]
+symbol = "?Advance@StaffRollAdvanceF450@@QAEGXZ"
+target_address = 0x00438C20
+size = 208
+[[units.staffroll-scene-complete-advance-00438c20.relocations]]
+offset = 11
+type = "REL32"
+symbol = "?UpdateStaffControls@StaffRollAdvanceF450@@QAEXXZ"
+target = 0x00439F90
+[[units.staffroll-scene-complete-advance-00438c20.relocations]]
+offset = 27
+type = "REL32"
+symbol = "?BeforeStaffAdvanceAt004028F0@@YAXXZ"
+target = 0x004028F0
+[[units.staffroll-scene-complete-advance-00438c20.relocations]]
+offset = 35
+type = "REL32"
+symbol = "?TickStaffTime@StaffRollAdvanceF450@@QAEXXZ"
+target = 0x00438CF0
+[[units.staffroll-scene-complete-advance-00438c20.relocations]]
+offset = 41
+type = "DIR32"
+symbol = "?g_StaffRollPhaseAt0067166C@@3IA"
+target = 0x0067166C
+[[units.staffroll-scene-complete-advance-00438c20.relocations]]
+offset = 79
+type = "REL32"
+symbol = "?SetStageAt00419CB0@@YAXH@Z"
+target = 0x00419CB0
+[[units.staffroll-scene-complete-advance-00438c20.relocations]]
+offset = 101
+type = "REL32"
+symbol = "?ConfigureStaffViewportAt00407E60@@YAXHHHH@Z"
+target = 0x00407E60
+[[units.staffroll-scene-complete-advance-00438c20.relocations]]
+offset = 110
+type = "DIR32"
+symbol = "?g_StaffRollFighterAt00671418@@3PAXA"
+target = 0x00671418
+[[units.staffroll-scene-complete-advance-00438c20.relocations]]
+offset = 120
+type = "DIR32"
+symbol = "?g_StaffRollCompletionAt00671623@@3CA"
+target = 0x00671623
+[[units.staffroll-scene-complete-advance-00438c20.relocations]]
+offset = 131
+type = "DIR32"
+symbol = "?g_ReplayNameModeAt006714CE@@3CA"
+target = 0x006714CE
+[[units.staffroll-scene-complete-advance-00438c20.relocations]]
+offset = 140
+type = "DIR32"
+symbol = "?g_ReplayNameModeAt006714CE@@3CA"
+target = 0x006714CE
+[[units.staffroll-scene-complete-advance-00438c20.relocations]]
+offset = 146
+type = "DIR32"
+symbol = "?g_StaffRollFighterAt00671418@@3PAXA"
+target = 0x00671418
+[[units.staffroll-scene-complete-advance-00438c20.relocations]]
+offset = 158
+type = "DIR32"
+symbol = "?g_StaffRollBestScoreAt00671420@@3IA"
+target = 0x00671420
+[[units.staffroll-scene-complete-advance-00438c20.relocations]]
+offset = 184
+type = "DIR32"
+symbol = "__imp__timeGetTime@0"
+target = 0x00657264
