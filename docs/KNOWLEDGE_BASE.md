@@ -7738,3 +7738,40 @@ not original 208. Their original control/predicate assumptions and
 actual displacements remain falsifiable private evidence. No partial
 CODE credit, invented switch cases, asm, native machine byte patch or
 full-repository cold replay was used.
+
+
+## F489: full 128-byte native window-texture resource constructor and actual exception-safe member lifetime
+
+Original R035-authored `WindowResource::InitializeAt00412DD0` at
+`00412DD0..00412E4F` has **128 complete original authored CODE bytes
+/36 original x86 instructions**, pinned original PE SHA256
+`29fb8e8704dc0dd467d4d8ef153aece891397a9e64fc3325eb55afd66fe56de3`.
+This is a genuine VC7.1 `/GX` C++ owner constructor with original
+80-byte texture archive member at physical receiver+0x28, not a
+standalone Win32 helper or unrelated class base. It calls actual texture
+constructor `0040AD80`, initializes exactly one native slot via
+`0040B1D0`, loads original resource path global `00657898` and root
+`00657890` through `0040BB80`, and constructs a real 1024×512
+rendering surface using native `00401C20`, passing `this` and original
+format 0x20. The owner bytes +0..+0x27 remain untyped physically
+observed storage; their original private member types are unknown.
+
+The initially plausible C++ source declared the real nontrivial texture
+*constructor* but **omitted its destructor**. VC7.1 then naturally
+emitted only **83 bytes**, with no native SEH registration or exception
+state, contrary to the original actual `push -1; push EH; fs:[0]`
+prologue. This is falsifiable evidence for *real owned member lifetime*,
+not permission to add artificial exception markup. Declaring
+`~WindowTextureArchiveF489()` on the actual borrowed member produces
+the native `/GX` exception handler `0065508B`, native state 0 to -1
+transition, genuine cleanup/SEH epilogue and the exact complete
+128-byte original body. Natural pinned VC7.1 source
+`src/WindowResourceTextureInitializeF489.cpp` matches **88/88 original
+nonrelocation bytes and all 10/10 authentic physical native COFF
+DIR32/REL32 references**, including original SEH handler, `__except_list`,
+texture ctor/slot/resource and surface draw target. Only affected
+`--unit window-resource-initialize-texture-00412dd0` was cold rebuilt
+and replayed, **1/1 exact**. Borrowed texture, D3D/Win32/CRT and
+compiler EH helper CODE is not double-credited; no assumed private
+class layout, fabricated locals, pasted native bytes/ASM, masks,
+cropped original function, all-unit cold replay or remote Oracle.

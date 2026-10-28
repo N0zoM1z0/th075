@@ -834,3 +834,4 @@ LoadingScene::AdvanceAt00425330
 TimedScene::AdvanceAt004255D0
 SceneInput::PollAt004256C0
 StaffRollScene::PollSkipInputAt00439F90
+WindowResource::InitializeAt00412DD0

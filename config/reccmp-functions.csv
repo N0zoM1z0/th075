@@ -835,3 +835,4 @@ LoadingScene::AdvanceAt00425330,0x00425330,function
 TimedScene::AdvanceAt004255D0,0x004255D0,function
 SceneInput::PollAt004256C0,0x004256C0,function
 StaffRollScene::PollSkipInputAt00439F90,0x00439F90,function
+WindowResource::InitializeAt00412DD0,0x00412DD0,function

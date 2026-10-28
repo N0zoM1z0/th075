@@ -1,6 +1,6 @@
 # TH075 — current reconstruction handoff
 
-**Maintained: 2026-10-29, after F488.** Read this document, then check the **live repository**. The current user explicitly wants both large/core bosses and small leaves tackled seriously, tangible progress committed immediately with subject `gpt-web: ...`, and **only changed/new units cold-replayed**. The user reports no other sessions: inspect and finish all dirty work; never skip, reset, overwrite or silently discard it.
+**Maintained: 2026-10-29, after F489.** Read this document, then check the **live repository**. The current user explicitly wants both large/core bosses and small leaves tackled seriously, tangible progress committed immediately with subject `gpt-web: ...`, and **only changed/new units cold-replayed**. The user reports no other sessions: inspect and finish all dirty work; never skip, reset, overwrite or silently discard it.
 
 ## 1. Trusted state and first commands
 
@@ -8,10 +8,10 @@ Canonical evidence is the pinned original PE, `config/function-origins.csv`, `co
 
 | Item | Verified snapshot |
 | --- | --- |
-| Git | `main`; pre-F488 reconstruction commit **`0669a9a`** (F485), preceded by `ff7394b` (F484) and `324aaee` (F481); F488 commit follows this update |
+| Git | `main`; pre-F489 reconstruction commit **`cf94130`** (F488), preceded by `0669a9a` (F485) and `ff7394b` (F484); F489 commit follows this update |
 | Pinned target | user-supplied Japanese `resources/th075.exe` v1.11; SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`; **never** `th075c.exe` |
-| Exact and source-present | **836 functions / 836 exact units** |
-| Accepted authored CODE | **859,809 bytes / 1,973,516 reviewed bytes = 43.57%** |
+| Exact and source-present | **837 functions / 837 exact units** |
+| Accepted authored CODE | **859,937 bytes / 1,973,516 reviewed bytes = 43.57%** |
 | Conservative | **43.49%**, including 3,608 bytes with unresolved origin |
 | Origin review | 1,002 authored, 2,671 library, 581 compiler, **97 pending** across 4,351 provisional candidates |
 | Goal | **98% not reached**; Git and local cold results are not external Oracle receipts |
@@ -29,7 +29,7 @@ If **any** dirty source, unit, or manifest is present, first inspect its exact e
 
 ## 2. Newly closed chains — **not** the backlog
 
-The full register of **all 836** accepted functions is in `config/functions.csv` and `config/match-units.toml`; this table intentionally highlights only the newest, important independent CODE extents. No called function, imported CRT/Win32 code, or owned jump-table bytes are counted twice.
+The full register of **all 837** accepted functions is in `config/functions.csv` and `config/match-units.toml`; this table intentionally highlights only the newest, important independent CODE extents. No called function, imported CRT/Win32 code, or owned jump-table bytes are counted twice.
 
 | Unit / accepted address | Whole CODE | Authentic fields | Evidence |
 | --- | ---: | ---: | --- |
@@ -107,6 +107,7 @@ The full register of **all 836** accepted functions is in `config/functions.csv`
 | F484 background base / camera override / sprite deque / event RAII / 2 frame policy / battle-end dtor | **31 + 39 + 37 + 34 + 31 + 28 + 28 = 228** | **2 + 4 + 2 + 2 + 2 + 1 + 2 = 15** | `src/BackgroundCameraEventFrameLeavesF484.cpp`, `.analysis/f484-base-camera-gfx-leaves/` |
 | F485 LoadingScene::Draw `00425390` / LogoScene::Draw `00425620` | **156 + 156 = 312** | **8 + 8 = 16** | `src/LoadingLogoSceneDrawF485.cpp`, `.analysis/f485-loading-logo-quad-init/` |
 | F488 3 full scene advances and 2 independent input polls | **99 + 84 + 78 + 96 + 96 = 453** | **5 + 4 + 2 + 11 + 11 = 33** | `src/SceneTemporalAndInputPoliciesF488.cpp`, `.analysis/f488-scene-temporal-policies/` |
+| F489 `WindowResource::InitializeAt00412DD0` | **128** | **10** | `src/WindowResourceTextureInitializeF489.cpp`, `.analysis/f489-window-resource/` |
 
 **F340:** the companion archive entry seek at `0041D750` is independently cold exact for its whole 164-byte function including every one of its nine external references. It uses genuine iterator and `strcmp` semantics, returns the archive handle after `SetFilePointer` or `INVALID_HANDLE_VALUE` if not found. The original private archive list remains borrowed, not instantiated.
 
@@ -253,6 +254,8 @@ The full register of **all 836** accepted functions is in `config/functions.csv`
 **F488:** five *distinct* original authored complete state/input methods now **5/5 affected-only cold exact across one object**: Opening `AdvanceAt00427730` **99 native CODE bytes /79 nonfield bytes /5 COFF refs** (original phase/alternate 0x2202, elapsed threshold 0xC15C, timeGetTime reset and 0xFF02/0xD returns); Loading `AdvanceAt00425330` **84/68/4** (actual character loader `004176F0` followed by stage boss `004183D0`, special 0x1108 and 0x2000 mode, byte+0xC flag); Timed `AdvanceAt004255D0` **78/70/2** (native 16-bit timer++ and 180-frame threshold); Loading input `PollAt004256C0` **96/52/11** and StaffRoll `PollSkipInputAt00439F90` **96/52/11** (independent input queue, joystick/keyboard and real 0x1C && (0x38 || 0xB8) fullscreen toggle). Last single Loading mismatch came from the actual **signed char global at `006714B4`**, which *must* emit MOVSX rather than the plausible but incorrect unsigned MOVZX. Total exactly **453 authored original CODE bytes** and **33 original PE relocation fields**, no other exacted loader/graphics/input callee bytes.
 
 **F486-F487 StaffRoll 208-byte boss negative controls:** original `StaffRollScene::AdvanceAt00438C20` remains unclassified. Its genuine phase==1 stage-window transition at unsigned elapsed≤0x14C08 and elapsed≥0x13880 emits a *single direct* native `jae` to the timeGetTime reset block while outside the window it continues fighter/best-score policy; correct x86 original 208 bytes. Trying 10 actual phase outer-do/for/while control flows in `.analysis/f486-staff-fallthrough-cfg/` and 7 real state switch/break forms in `.analysis/f487-staff-switch-break/` produced **210–230 bytes**, with an extra `jb` plus `jmp` or wrong direct branch target. No original-CODE credit; do not change stage policy semantics or invent assembly to force matching.
+
+**F489:** R035 `WindowResource::InitializeAt00412DD0` now complete original **128 CODE bytes / 36 native x86 instructions**, **88/88 original nonrelocation bytes**, all **10/10 actual physical COFF references and original PE targets**, single-unit cold **1/1 exact**. The native owner contains a real texture member at +0x28; true texture ctor `0040AD80`, allocate 1 slot `0040B1D0`, load actual resource `00657898` root `00657890` via `0040BB80`, then create original 1024×512 surface with native format0x20 through `00401C20`. The first semantic C++ probe declared a ctor but not a destructor for this borrowed texture object, compiling to **83 bytes without native /GX EH**. Declaring the actual destructor restores original real native exception handler at `0065508B`, owner lifetime state and every byte. Original owner prefix +0..0x27 remains untyped; borrow actual native texture/graphics methods without double-crediting callees.
 
 **Corrections to old notes:** The 686-byte writer and 429-byte reader are both **exact** (F339/F338), not pending F249/F250. The full 1,252-byte replay writer and 375-byte finalizer are both **exact** (F326/F328), not pending F219/F218/F289. The 1,766-byte font rasterizer is **exact** (F319), not pending F299/F302. The 301-byte glyph loader is **exact** (F318), not pending F291. The 916-byte MusicRoom catalog + separately compared 16-byte jump table is **exact in F258** (916 CODE credit only). Other accepted 1,000+ byte bosses include F271 projected quad (1,185), F278 pattern chooser (1,264), F282 resource loader (1,186), F292 overlay text box (1,385), F294 effects catalog (1,722), and F244 scene advance (1,529 CODE). Earlier failures remain useful *historical controls*, but must never be presented as current unaccepted work.
 

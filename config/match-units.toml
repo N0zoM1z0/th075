@@ -58883,3 +58883,63 @@ offset = 88
 type = "REL32"
 symbol = "?FullscreenToggleAt004018A0@@YAXXZ"
 target = 0x004018A0
+
+
+[units.window-resource-initialize-texture-00412dd0]
+source = "src/WindowResourceTextureInitializeF489.cpp"
+object = "build/matching/WindowResourceTextureInitializeF489.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["WindowResource::InitializeAt00412DD0"]
+symbol = "??0WindowResourceF489@@QAE@XZ"
+target_address = 0x00412DD0
+size = 128
+[[units.window-resource-initialize-texture-00412dd0.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0WindowResourceF489@@QAE@XZ"
+target = 0x0065508B
+[[units.window-resource-initialize-texture-00412dd0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.window-resource-initialize-texture-00412dd0.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.window-resource-initialize-texture-00412dd0.relocations]]
+offset = 35
+type = "REL32"
+symbol = "??0WindowTextureArchiveF489@@QAE@XZ"
+target = 0x0040AD80
+[[units.window-resource-initialize-texture-00412dd0.relocations]]
+offset = 55
+type = "REL32"
+symbol = "?AllocateSlots@WindowTextureArchiveF489@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.window-resource-initialize-texture-00412dd0.relocations]]
+offset = 60
+type = "DIR32"
+symbol = "?g_WindowResourceRootAt00657890@@3QBDB"
+target = 0x00657890
+[[units.window-resource-initialize-texture-00412dd0.relocations]]
+offset = 65
+type = "DIR32"
+symbol = "?g_WindowResourceFileAt00657898@@3QBDB"
+target = 0x00657898
+[[units.window-resource-initialize-texture-00412dd0.relocations]]
+offset = 76
+type = "REL32"
+symbol = "?LoadArchive@WindowTextureArchiveF489@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.window-resource-initialize-texture-00412dd0.relocations]]
+offset = 97
+type = "REL32"
+symbol = "?CreateWindowDrawingSurfaceAt00401C20@@YAXHHPAVWindowResourceF489@@H@Z"
+target = 0x00401C20
+[[units.window-resource-initialize-texture-00412dd0.relocations]]
+offset = 120
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
