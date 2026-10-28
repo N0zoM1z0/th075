@@ -644,3 +644,4 @@ address,name,module,confidence,evidence
 0x0044C3C0,BackgroundStage::ApplyBG02cBlendAt0044C3C0,BackgroundStage,inferred,"F366; independent exact complete 60-byte c R231 blend callback, two original __ftol2 calls and 6 physical reloc fields, cold 3/3; original stage private layout unproven"
 0x00505A60,CharacterAux::RunAt00505A60,CharacterAux,inferred,"F365; complete 1576-byte native authored auxiliary boss, real two timers plus signed directional random projectile and 817 linked effect spawns, 18 COFF relocation fields cold exact"
 0x00532520,CharacterAux::RunAt00532520,CharacterAux,inferred,"F370; entire original 1060-byte native R049 27-pattern ordered input policy, 54 actual physical COFF refs cold exact; owner layout not claimed"
+0x004C49C0,CharacterAux::RunAt004C49C0,CharacterAux,inferred,"F371; complete native original 1757-byte active fighter opponent/mode state boss, 17 authentic COFF relocations, cold exact; complete private class unknown"

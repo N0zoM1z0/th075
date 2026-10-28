@@ -5534,3 +5534,45 @@ returned **1/1 exact**. No pattern bytes or external callee code,
 unused sentinel locals, manual assembly, cropped function, masked refs,
 whole-set replay or external Oracle receipt is asserted. The original
 receiver class name and complete layout remain provisional.
+
+
+## F371: complete 1,757-byte character active/borrowed-opponent controller boss
+
+The native R049-authored `CharacterAux::RunAt004C49C0` is an independently
+reviewed **1,757 original CODE bytes** at `004C49C0..004C509C`, with
+**413 original x86 instructions** ending in a real RET and original PE SHA256
+`e12a32537b16bf75c5c458d44a73efdf1282c60b7b18a1bc99d040c4d7e1fad5`.
+Its substantial game-specific policy starts with grounded/contact reset;
+if original signed short +F0C is positive, it maintains a 0.75f movement
+scale with a genuine +F0E short countdown or native inherited sound action
+call `00453E80`, synchronizes +F0C to actual +3B0 action time, and
+conditionally interrupts two modes 1 and 2 through real `0046D000`
+with the original mode thresholds. When not active it instead selects 1.0f.
+Another branch for +F12 active ties +84/+88 and +F10 to opponent-owned
++3BC and +10 state, and invokes original borrowed opponent action routine
+`0040FBB0` through the real +2E8 receiver pointer. Three separately
+guarded action-window effects use authentic +0x60, +0x62, +0x64 and +F0A
+flags, repeat the genuine 0x2F6..0x310 native transform/byte-color writes,
+and spawn effect 817 through original `00453AC0`: their original X facing
+factors are **30, 70 and 57** (not always 57), and Y offsets 94/60/100.
+Original opponent-relative 540/320 distance checks clamp +F16. Borrowed
+opponent/method interfaces do not assert a whole original game class layout.
+
+An independent natural source constructed from native CFG and original
+role-specific field/constants initially emitted 1,754 bytes. The native
+condition at +F0C has positive-active fallthrough, unlike a semantically
+equivalent <=0-first source. Two nested mode guards also use native
+`if(actionTime>limit) InterruptSpecial; else clear` branch ordering rather
+than a reversed <=-first version. Correcting these real branch directions
+restored the native unconditional/conditional jump layout. Expressing the
+actual 16-bit +F0E countdown with `--FIELD(short,0xF0E)` rather than an
+ordinary int-promoted `FIELD(short,...) = FIELD(short,...)-1` restores
+original 16-bit short operations. Those changes generate the **complete
+1,757-byte** source code with **1689/1689** authentic nonrelocation bytes
+and **17/17** authentic DIR32/REL32 COFF physical fields/destinations,
+including four mode-interrupt calls, one native sound, one opponent call
+and three tracked effects. Only new unit
+`character-aux-active-opponent-special-004c49c0` was pinned VC7.1
+`/Od /Ob0 /Gy /GR- /GX- /Zi` cold replayed, yielding **1/1 exact**. No
+other game callee/CRT/owner byte credit, invented source locals, masks,
+manual assembly, cropped extent, full cold replay or external Oracle receipt.
