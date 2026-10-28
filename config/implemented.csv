@@ -570,3 +570,4 @@ ResultScene::LoadSelectedCharacterResources
 MusicRoom::EncodeCatalogFileAt00427300
 MusicRoom::LoadCatalogAt00426DD0
 ReplayRecords::LoadRecord
+ResultScene::PollInput

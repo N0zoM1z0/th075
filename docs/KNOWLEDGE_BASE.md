@@ -2053,3 +2053,60 @@ not proven; no extra bytes are credited for library/CRT or neighboring
 functions. No target-byte patch, assembly, false padding, fake returns,
 truncated extent or all-unit cold replay. A local checkpoint does not
 constitute an external Oracle receipt.
+
+
+## F260: cold-exact complete result scene input polling controller
+
+The independently R043-authored `ResultScene::PollInput` at
+`00430D80..00430ED6` is 343 complete CODE bytes and 84 original decoded
+x86 instructions with a plain RET at `00430ED6`. Native full CODE SHA256:
+`c87ce04c274900402920b1929b3e3c03e079f5124fd0e8e64f0d76f67be35a3e`.
+Ghidra read-only function, complete native assembly and decompile are
+retained privately under `.analysis/f260-result-poll/`; the instruction
+sequence was checked independently of Ghidra's provisional names.
+
+The function calls original game-frame beginning/end `00403E50` and
+`00403F40`, zeros scene bytes at `this+0x1BF..0x1C2`, and polls the two
+actual global input objects based at `00671638` and `00671680` through
+`00406E80`. It compares original signed 32-bit key-axis globals
+`00671664/68/6C/70` and `006716AC/B0/B4/B8` against both +1 and -1
+as actually present. The four native `00407170` key-state calls receive
+original values 1, 0x1C, 0x38 and 0xB8; the final window-mode callback
+`004018A0` retains the exact conditional short-circuit structure.
+Only a borrowed input-frame interface is declared; neither a fabricated
+input object layout nor a complete original scene type is instantiated.
+
+A first complete natural C++ source
+`src/ResultPollF260.cpp` with independent global references and the
+actual guard structure compiled into the target's **exact 343 bytes**,
+**235/235** comparable nonrelocation bytes, and **27/27 genuine
+COFF relocation offsets/types/native destinations** under pinned VC7.1
+`/Od /GX- /GS`. An independent cold rebuild of **only**
+`result-scene-poll-input-00430d80` reports `exact; 343 coverage bytes`.
+No source masks, fabricated object ABI, assembly, target byte grafts,
+fake locals or extra fault branches were needed. External callees, original
+class identities and all 97 origin-pending functions remain uncredited.
+No external Oracle receipt is inferred from the local Git checkpoint.
+
+### Rechecked nonexact large-function lead
+
+The prior F219/F232 handoff incorrectly presented **1,025/1,052** as the
+whole-repository best for the original **1,252-byte** replay append boss
+`00413DE0`. Independent file inspection established a retained full-size
+F225 source control `.analysis/f225-big-functions/F219LocWBeforeAll.cpp`
+with the same 50 authentic COFF fields and **1,033/1,052** nonfield bytes.
+All remaining 19 comparable differences are genuine 8-byte iterator
+local slots, including native ByteIterator first/WordIterator first
+placements and DwordIterator constructor slots; no exact acceptance or
+extra CODE credit follows. The historical first two candidate phases
+may report 1,025/1,052 as their *phase-specific* best but should not
+override this later actual source/JSON observation. Preserve both
+complete negative sources.
+
+The battle scene destructor at `0043B0B0` was also revisited against
+the native 248-byte whole function and original 12 relocation fields.
+Nested actual cleanup pointer scopes still produce 189/200 bytes; a
+real named texture deletion alias emits 254 instead of 248 bytes, and
+therefore cannot be exact. These new negative controls are retained at
+`.analysis/f260-battle-lifetimes/`. No unverified ownership or
+byte credit is claimed for the destructor.

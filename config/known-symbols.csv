@@ -553,3 +553,4 @@ address,name,module,confidence,evidence
 0x00427300,MusicRoom::EncodeCatalogFileAt00427300,MusicRoom,inferred,F257; entire 298-byte native catalog CSV encoder and all 11 authentic COFF fields cold exact; full original scene/owner layout unknown
 0x00426DD0,MusicRoom::LoadCatalogAt00426DD0,MusicRoom,inferred,"F258; 916 original CODE + 16-byte owned dispatch table, all 18 physical relocation fields cold exact; full MusicRoom ABI unproven"
 0x00413AC0,ReplayRecords::LoadRecord,ReplayRecords,inferred,F259; native full 792-byte on-disk record loader and 29 physical COFF relocations cold exact; original class and container identity provisional
+0x00430D80,ResultScene::PollInput,ResultScene,inferred,F260; entire 343-byte result input polling controller with 27 native COFF fields cold exact; complete scene/input ABI unknown

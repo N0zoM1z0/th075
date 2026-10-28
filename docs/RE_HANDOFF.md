@@ -1,4 +1,4 @@
-# TH075 — active reconstruction handoff (F259)
+# TH075 — active reconstruction handoff (F260)
 
 **Updated 2026-10-28. Read this document before new experiments.**
 
@@ -22,17 +22,17 @@ not acceptance requirements.
 
 | Item | Current evidence |
 | --- | --- |
-| Local branch / last exact-code commit | `main` / F259 independently accepted 792-byte replay record loader; prior F258 boss checkpoint `4ca9633` |
+| Local branch / last exact-code commit | `main` / F260 343-byte result-scene polling controller; F259 checkpoint `3228334` |
 | Upstream | `origin/main` tracked locally; verify current ahead/behind and dirty state before further work |
-| Working tree | Clean after F259 checkpoint if successful; continue rather than avoid every existing dirty edit |
+| Working tree | Clean after F260 checkpoint if successful; continue rather than avoid every existing dirty edit |
 | Native binary | `resources/th075.exe`, SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98` |
 | Candidate count | 4,351; origin review: 1,002 authored, 2,671 library, 581 compiler, 97 unknown |
-| Accepted functions / units | **572 / 572** |
-| Accepted authored CODE | **787,979 bytes** |
-| Reviewed authored coverage | 787,979 / 1,973,516 = **39.93%** |
-| Conservative coverage | **39.85%** counting 3,608 origin-pending bytes |
+| Accepted functions / units | **573 / 573** |
+| Accepted authored CODE | **788,322 bytes** |
+| Reviewed authored coverage | 788,322 / 1,973,516 = **39.95%** |
+| Conservative coverage | **39.87%** counting 3,608 origin-pending bytes |
 | Goal | **98% not reached** |
-| Verification | F259 complete 792-byte ReplayRecords::LoadRecord independently cold-exact including all 29 authentic COFF fields; F258 prior 916-byte boss cold-exact at `4ca9633`. Only F259 recompiled for new acceptance; no all-unit replay or external Oracle acceptance |
+| Verification | F260 entire 343-byte ResultScene::PollInput controller cold-exact including all 27 authentic COFF fields; F259 792-byte loader previously checkpointed at `3228334`. Only F260 compiled at this new acceptance; no all-unit replay or external Oracle acceptance |
 
 **Recheck the actual live status immediately**. Local commits are checkpoints,
 not evidence of a remote push or external Oracle acceptance. Earlier Git
@@ -99,6 +99,7 @@ inert variable or arbitrary padding may earn exact credit.
 | F257: MusicRoom::EncodeCatalogFile | `00427300` | 298 | 11 |
 | F258: MusicRoom::LoadCatalog | `00426DD0` | 916 (+16 table) | 18 |
 | F259: ReplayRecords::LoadRecord | `00413AC0` | 792 | 29 |
+| F260: ResultScene::PollInput | `00430D80` | 343 | 27 |
 
 F222 proved signed 32-bit x87 `FILD` divided by the target's 36.0f
 (`00659308`), 74 physical animation records and a final call into the
@@ -121,7 +122,7 @@ F230 accepts the two real selection-state callees used by F229: 404-byte `Proces
 
 F231 accepts the entire `ReplayBrowserScene::ScanFiles` at `0042D470` (613 CODE bytes, 155 native instructions, 31 relocation fields). The complete native FindFirst/Next/Close directory loop, two `new char[260]` filenames, real `strcpy`/`strcat` roots, 60-byte header and one-byte status ReadFile calls, queue appenders, and original `/GS` cookie are preserved. First natural probe already emitted 613 bytes, 471/489 comparable bytes. By grounding the actual three nested lifetimes (header/count, flag, index) and ordinary `push_back(static_cast<char*>(0))` temporary pointer references, full 489/489 nonrelocation bytes and 31 real destinations match. Only `--unit replay-browser-scan-files-0042d470` was cold replayed. Adjacent replay-file ownership destructor at `0042C560` remains not yet exact; the library deque functions are not credited.
 
-F232 tested a new meaningful subset of lexical scope alternatives for the **complete** 1252-byte `ReplayRecords::AppendRecord`: all 50 COFF fields and full code length remain valid, but the best still has 1025/1052 nonfield bytes; no exact credit. F233 independently reevaluated the entire 792-byte `ReplayRecords::LoadRecord` (274 instructions, 29 fields), tracing native stack slots. Its old scoped/reordered temporary variants failed to improve the previous 639/676 best, receiving no credit at F233. F259 subsequently reconstructed and cold-accepted the entire function. Retain `.analysis/f232-append-scope/` and `.analysis/f233-record-scope/` rather than repeating older name sweeps.
+F232 tested a new meaningful subset of lexical scope alternatives for the **complete** 1252-byte `ReplayRecords::AppendRecord`: all 50 COFF fields and full code length remain valid, but the best still has 1025/1052 nonfield bytes; no exact credit. A separate retained F225 complete source probe gives 1033/1052, independently rechecked from its JSON; the F232-specific 1025 best is not the repository-wide best. F233 independently reevaluated the entire 792-byte `ReplayRecords::LoadRecord` (274 instructions, 29 fields), tracing native stack slots. Its old scoped/reordered temporary variants failed to improve the previous 639/676 best, receiving no credit at F233. F259 subsequently reconstructed and cold-accepted the entire function. Retain `.analysis/f232-append-scope/` and `.analysis/f233-record-scope/` rather than repeating older name sweeps.
 
 F234 cold-accepts the complete 675-byte `MusicRoomScene::UpdateSelection` (179 native instructions, 24 true relocation fields). First natural C++ source gets 579/579 nonfield bytes and all fields, covering actual directional input, 16-byte track-record stride, signed index/scroll, unlocked-card check, highlight, music play/fade, exit, cooldown. Only `--unit music-room-scene-update-selection-004259d0` cold replayed; no all-unit replay.
 
@@ -167,6 +168,8 @@ F258 **cold-accepts the complete 916-byte `MusicRoom::LoadCatalog` boss** at `00
 
 F259 **cold-accepts the complete 792-byte `ReplayRecords::LoadRecord`** at `00413AC0`, all 274 native x86 instructions, 676/676 comparable non-field bytes and all 29 genuine COFF fields. The F216/F233 historical best was only 639/676 with wrong `HANDLE`, record count and `ReadFile` transfer stack slots. Native-grounded nested real source variable lifetimes (record index, dword item, raw word, entry count, handle, byte item, transfer size) fixed 35/37 originally differing comparable bytes, reaching 674/676. The last two bytes were not a manual padding fix: independent native short-word conversion proved the original signed-word `Push(const short&)` call constructs an implicit temporary at EBP-0x1E from an `unsigned short` read at EBP-0x0C. The genuine conversion `Push(static_cast<short>(rawWord))` restores 676/676 bytes and the real 00414640 callee ABI. Pinned VC7.1 cold replay of only `--unit replay-records-load-record-00413ac0` yields exact for all 792 CODE bytes and 29 actual fields. Native file reads and four separate typed list loops remain complete. Preserve `.analysis/f259-replay-load-lifetimes/` and F216/F233 negatives; caller/record layouts and external container bodies remain unproven and uncredited.
 
+F260 **cold-accepts the full 343-byte `ResultScene::PollInput`** controller at `00430D80`, all 84 native x86 instructions, all 235/235 comparable nonrelocation bytes and 27/27 authentic physical COFF fields. The first independently written natural VC7.1 C++ probe matched the entire native extent without compiler-shaping hacks. It preserves the original two input polling calls, four reset scene direction/action bytes, six paired positive/negative direction/action comparisons against the two 0x48-spaced input frames, four real `00407170` key-state queries, and the guarded `004018A0` window-mode call. Only `--unit result-scene-poll-input-00430d80` cold-replayed exact; no external input implementation, unproven scene layout or 97 pending origins credited. Private original Ghidra function/decompile/native assembly and full probe are under `.analysis/f260-result-poll/`.
+
 Relevant full native proofs: `config/match-units.toml`,
 `config/exact-adoptions.json`, sources `src/*F222.cpp`/`src/*F223.cpp`,
 and `docs/KNOWLEDGE_BASE.md`. The cold-replay logs are private in
@@ -180,7 +183,7 @@ body/owned-table, origin and relocation review before any adoption.
 
 | Function / entry | Target | Best prior compiler evidence | Retained research |
 | --- | ---: | --- | --- |
-| ReplayRecords::AppendRecord `00413DE0` | 1,252 B | Entire emitted size and 50 field positions; best **1,025/1,052** non-field bytes, iterator stack slots still wrong | `.analysis/f219-append-record/` |
+| ReplayRecords::AppendRecord `00413DE0` | 1,252 B | F219 control **1,025/1,052**, but later F225 `F219LocWBeforeAll` correctly yields **1,033/1,052** non-field bytes; remaining true iterator slot differences | `.analysis/f219-append-record/`, `.analysis/f225-big-functions/` |
 | ReplayRecords::FinalizeFile `004138E0` | 375 B | Natural variants 342/372/384/396 B; pointer lifetimes/frame unknown | `.analysis/f218-replay-file/` |
 | BattleScene destructor `0043B0B0` | 248 B | Exact length/flow but 9–11 local-stack field byte differences | `.analysis/f200-battle-dtor/`, `.analysis/f215-battle-release/` |
 | Giant actor control `004AC040` | very large | Full baseline still nonexact; many closed tests, avoid repeating blindly | `.analysis/character-move-4ac040/`, archived knowledge |

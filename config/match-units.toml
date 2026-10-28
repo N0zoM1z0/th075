@@ -41201,3 +41201,147 @@ offset = 782
 type = "DIR32"
 symbol = "__imp__CloseHandle@4"
 target = 0x00657138
+
+[units.result-scene-poll-input-00430d80]
+source = "src/ResultPollF260.cpp"
+object = "build/matching/ResultPollF260.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["ResultScene::PollInput"]
+symbol = "?PollInput@ResultScenePollF260@@QAEXXZ"
+target_address = 0x00430D80
+size = 343
+[[units.result-scene-poll-input-00430d80.relocations]]
+offset = 8
+type = "REL32"
+symbol = "?BeginFrame@ResultInputServiceF260@@YAXXZ"
+target = 0x00403E50
+[[units.result-scene-poll-input-00430d80.relocations]]
+offset = 13
+type = "REL32"
+symbol = "?EndFrame@ResultInputServiceF260@@YAXXZ"
+target = 0x00403F40
+[[units.result-scene-poll-input-00430d80.relocations]]
+offset = 58
+type = "DIR32"
+symbol = "?g_ResultInputPrimaryAt00671638@@3VResultInputFrameF260@@A"
+target = 0x00671638
+[[units.result-scene-poll-input-00430d80.relocations]]
+offset = 63
+type = "REL32"
+symbol = "?Poll@ResultInputFrameF260@@QAEXXZ"
+target = 0x00406E80
+[[units.result-scene-poll-input-00430d80.relocations]]
+offset = 68
+type = "DIR32"
+symbol = "?g_ResultInputSecondaryAt00671680@@3VResultInputFrameF260@@A"
+target = 0x00671680
+[[units.result-scene-poll-input-00430d80.relocations]]
+offset = 73
+type = "REL32"
+symbol = "?Poll@ResultInputFrameF260@@QAEXXZ"
+target = 0x00406E80
+[[units.result-scene-poll-input-00430d80.relocations]]
+offset = 79
+type = "DIR32"
+symbol = "?g_ResultPrimaryVerticalAt00671668@@3HA"
+target = 0x00671668
+[[units.result-scene-poll-input-00430d80.relocations]]
+offset = 88
+type = "DIR32"
+symbol = "?g_ResultSecondaryVerticalAt006716B0@@3HA"
+target = 0x006716B0
+[[units.result-scene-poll-input-00430d80.relocations]]
+offset = 107
+type = "DIR32"
+symbol = "?g_ResultPrimaryVerticalAt00671668@@3HA"
+target = 0x00671668
+[[units.result-scene-poll-input-00430d80.relocations]]
+offset = 116
+type = "DIR32"
+symbol = "?g_ResultSecondaryVerticalAt006716B0@@3HA"
+target = 0x006716B0
+[[units.result-scene-poll-input-00430d80.relocations]]
+offset = 135
+type = "DIR32"
+symbol = "?g_ResultPrimaryHorizontalAt00671664@@3HA"
+target = 0x00671664
+[[units.result-scene-poll-input-00430d80.relocations]]
+offset = 144
+type = "DIR32"
+symbol = "?g_ResultSecondaryHorizontalAt006716AC@@3HA"
+target = 0x006716AC
+[[units.result-scene-poll-input-00430d80.relocations]]
+offset = 163
+type = "DIR32"
+symbol = "?g_ResultPrimaryHorizontalAt00671664@@3HA"
+target = 0x00671664
+[[units.result-scene-poll-input-00430d80.relocations]]
+offset = 172
+type = "DIR32"
+symbol = "?g_ResultSecondaryHorizontalAt006716AC@@3HA"
+target = 0x006716AC
+[[units.result-scene-poll-input-00430d80.relocations]]
+offset = 191
+type = "DIR32"
+symbol = "?g_ResultPrimaryConfirmAt0067166C@@3HA"
+target = 0x0067166C
+[[units.result-scene-poll-input-00430d80.relocations]]
+offset = 200
+type = "DIR32"
+symbol = "?g_ResultSecondaryConfirmAt006716B4@@3HA"
+target = 0x006716B4
+[[units.result-scene-poll-input-00430d80.relocations]]
+offset = 219
+type = "DIR32"
+symbol = "?g_ResultPrimaryCancelAt00671670@@3HA"
+target = 0x00671670
+[[units.result-scene-poll-input-00430d80.relocations]]
+offset = 228
+type = "DIR32"
+symbol = "?g_ResultSecondaryCancelAt006716B8@@3HA"
+target = 0x006716B8
+[[units.result-scene-poll-input-00430d80.relocations]]
+offset = 248
+type = "DIR32"
+symbol = "?g_ResultInputPrimaryAt00671638@@3VResultInputFrameF260@@A"
+target = 0x00671638
+[[units.result-scene-poll-input-00430d80.relocations]]
+offset = 253
+type = "REL32"
+symbol = "?IsHeld@ResultInputFrameF260@@QAE_NH@Z"
+target = 0x00407170
+[[units.result-scene-poll-input-00430d80.relocations]]
+offset = 277
+type = "DIR32"
+symbol = "?g_ResultInputPrimaryAt00671638@@3VResultInputFrameF260@@A"
+target = 0x00671638
+[[units.result-scene-poll-input-00430d80.relocations]]
+offset = 282
+type = "REL32"
+symbol = "?IsHeld@ResultInputFrameF260@@QAE_NH@Z"
+target = 0x00407170
+[[units.result-scene-poll-input-00430d80.relocations]]
+offset = 296
+type = "DIR32"
+symbol = "?g_ResultInputPrimaryAt00671638@@3VResultInputFrameF260@@A"
+target = 0x00671638
+[[units.result-scene-poll-input-00430d80.relocations]]
+offset = 301
+type = "REL32"
+symbol = "?IsHeld@ResultInputFrameF260@@QAE_NH@Z"
+target = 0x00407170
+[[units.result-scene-poll-input-00430d80.relocations]]
+offset = 318
+type = "DIR32"
+symbol = "?g_ResultInputPrimaryAt00671638@@3VResultInputFrameF260@@A"
+target = 0x00671638
+[[units.result-scene-poll-input-00430d80.relocations]]
+offset = 323
+type = "REL32"
+symbol = "?IsHeld@ResultInputFrameF260@@QAE_NH@Z"
+target = 0x00407170
+[[units.result-scene-poll-input-00430d80.relocations]]
+offset = 335
+type = "REL32"
+symbol = "?ToggleWindowMode@ResultInputServiceF260@@YAXXZ"
+target = 0x004018A0
