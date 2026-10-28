@@ -656,3 +656,6 @@ CharacterAux::RunAt00496C60
 CharacterAux::RunAt00470A40
 CharacterAux::RunAt00555530
 CharacterAux::RunAt00577750
+BackgroundStage::ApplyBG02aBlendAt0044B980
+BackgroundStage::ApplyBG02bBlendAt0044BEA0
+BackgroundStage::ApplyBG02cBlendAt0044C3C0

@@ -657,3 +657,6 @@ CharacterAux::RunAt00496C60,0x00496C60,function
 CharacterAux::RunAt00470A40,0x00470A40,function
 CharacterAux::RunAt00555530,0x00555530,function
 CharacterAux::RunAt00577750,0x00577750,function
+BackgroundStage::ApplyBG02aBlendAt0044B980,0x0044B980,function
+BackgroundStage::ApplyBG02bBlendAt0044BEA0,0x0044BEA0,function
+BackgroundStage::ApplyBG02cBlendAt0044C3C0,0x0044C3C0,function

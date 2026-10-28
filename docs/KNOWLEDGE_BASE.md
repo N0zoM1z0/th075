@@ -5430,3 +5430,36 @@ real calls to `00453AC0`. Independent affected-only cold replay of unit
 1,121 CODE bytes. This credits no generated/library/callee bytes or
 unknown class layouts, uses no masked/patched bytes, fake locals, assembly,
 cropped function, all-unit replay or external Oracle claim.
+
+
+## F366: three genuine stage background blend callbacks, 60 CODE bytes each
+
+Original R231-authored `BackgroundStage::ApplyBG02aBlendAt0044B980`,
+`ApplyBG02bBlendAt0044BEA0`, and `ApplyBG02cBlendAt0044C3C0` are three
+**distinct, independently reviewed original** 60-byte functions, each 18
+original x86 instructions ending at their native `RET`. Each computes and
+stores two real camera coordinates: it loads original global X at `00671404`
+and adds physical original X offset constant `00657834`, converts with
+`__ftol2` at `006406AC` and writes an actual local; then reads global Y at
+`006713C4`, converts through the second `__ftol2` and writes the other
+actual local. It passes zero to the existing stage-local renderer at
+`this+0x18` and calls original `SetBlendMode` at `0040C7F0`. These x/y locals
+are genuinely present in the original CODE even though the function makes no
+further reads; their source equivalents model native behavior, not inert
+fake padding. The original complete stage private owner class remains
+unknown, so the render backend is a pointer-only borrowed interface.
+
+The three original independent PE body hashes are, respectively,
+`d840c9b1051ac3549ef7c72fc342a4f6cc6f3444ec22bbaa007d38530ddfa095`,
+`49bfa3ecf1fbb5a65682807edc82a21174533deeadc36a288c3b463952129f38`,
+and `eab49a1a72fbed66caeb0170f2b4ceb91c315fee4517fd5176f1a7eb620737c6`.
+A single natural C++ source `src/BackgroundBlendF366.cpp` declares three
+separate method bodies with genuine camera X/Y computations and sets blend
+mode 0. Pinned VC7.1 `/Od /Ob0 /Gy /GR- /GX- /Zi` emits all three as exact
+60-byte individual functions: **36/36** nonfield bytes and **6/6** real
+physical COFF relocations per target, all destinations independently solved.
+Only the three affected units were independently cold replayed together,
+yielding **3/3 exact across one object** and 180 total distinct authored
+CODE bytes. Neither crt `__ftol2` nor the renderer callee is double counted.
+No fake or obsolete variables, source-dependent masks, assembly, truncated
+function, full-project cold replay or Oracle certification.

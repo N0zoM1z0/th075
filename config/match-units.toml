@@ -47669,3 +47669,123 @@ offset = 1042
 type = "DIR32"
 symbol = "__real@c3a00000"
 target = 0x00657880
+
+
+[units.background-stage-apply-blend-02a-0044b980]
+source = "src/BackgroundBlendF366.cpp"
+object = "build/matching/BackgroundBlendF366.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::ApplyBG02aBlendAt0044B980"]
+symbol = "?ApplyBG02aBlend@BackgroundBlendF366@@QAEXXZ"
+target_address = 0x0044B980
+size = 60
+[[units.background-stage-apply-blend-02a-0044b980.relocations]]
+offset = 11
+type = "DIR32"
+symbol = "?g_BGCameraXAt00671404@@3MA"
+target = 0x00671404
+[[units.background-stage-apply-blend-02a-0044b980.relocations]]
+offset = 17
+type = "DIR32"
+symbol = "?g_BGOffsetXAt00657834@@3MB"
+target = 0x00657834
+[[units.background-stage-apply-blend-02a-0044b980.relocations]]
+offset = 22
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.background-stage-apply-blend-02a-0044b980.relocations]]
+offset = 31
+type = "DIR32"
+symbol = "?g_BGCameraYAt006713C4@@3MA"
+target = 0x006713C4
+[[units.background-stage-apply-blend-02a-0044b980.relocations]]
+offset = 36
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.background-stage-apply-blend-02a-0044b980.relocations]]
+offset = 52
+type = "REL32"
+symbol = "?SetBlendMode@BackgroundDrawerF366@@QAEXH@Z"
+target = 0x0040C7F0
+
+
+[units.background-stage-apply-blend-02b-0044bea0]
+source = "src/BackgroundBlendF366.cpp"
+object = "build/matching/BackgroundBlendF366.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::ApplyBG02bBlendAt0044BEA0"]
+symbol = "?ApplyBG02bBlend@BackgroundBlendF366@@QAEXXZ"
+target_address = 0x0044BEA0
+size = 60
+[[units.background-stage-apply-blend-02b-0044bea0.relocations]]
+offset = 11
+type = "DIR32"
+symbol = "?g_BGCameraXAt00671404@@3MA"
+target = 0x00671404
+[[units.background-stage-apply-blend-02b-0044bea0.relocations]]
+offset = 17
+type = "DIR32"
+symbol = "?g_BGOffsetXAt00657834@@3MB"
+target = 0x00657834
+[[units.background-stage-apply-blend-02b-0044bea0.relocations]]
+offset = 22
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.background-stage-apply-blend-02b-0044bea0.relocations]]
+offset = 31
+type = "DIR32"
+symbol = "?g_BGCameraYAt006713C4@@3MA"
+target = 0x006713C4
+[[units.background-stage-apply-blend-02b-0044bea0.relocations]]
+offset = 36
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.background-stage-apply-blend-02b-0044bea0.relocations]]
+offset = 52
+type = "REL32"
+symbol = "?SetBlendMode@BackgroundDrawerF366@@QAEXH@Z"
+target = 0x0040C7F0
+
+
+[units.background-stage-apply-blend-02c-0044c3c0]
+source = "src/BackgroundBlendF366.cpp"
+object = "build/matching/BackgroundBlendF366.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::ApplyBG02cBlendAt0044C3C0"]
+symbol = "?ApplyBG02cBlend@BackgroundBlendF366@@QAEXXZ"
+target_address = 0x0044C3C0
+size = 60
+[[units.background-stage-apply-blend-02c-0044c3c0.relocations]]
+offset = 11
+type = "DIR32"
+symbol = "?g_BGCameraXAt00671404@@3MA"
+target = 0x00671404
+[[units.background-stage-apply-blend-02c-0044c3c0.relocations]]
+offset = 17
+type = "DIR32"
+symbol = "?g_BGOffsetXAt00657834@@3MB"
+target = 0x00657834
+[[units.background-stage-apply-blend-02c-0044c3c0.relocations]]
+offset = 22
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.background-stage-apply-blend-02c-0044c3c0.relocations]]
+offset = 31
+type = "DIR32"
+symbol = "?g_BGCameraYAt006713C4@@3MA"
+target = 0x006713C4
+[[units.background-stage-apply-blend-02c-0044c3c0.relocations]]
+offset = 36
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.background-stage-apply-blend-02c-0044c3c0.relocations]]
+offset = 52
+type = "REL32"
+symbol = "?SetBlendMode@BackgroundDrawerF366@@QAEXH@Z"
+target = 0x0040C7F0
