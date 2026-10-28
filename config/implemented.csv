@@ -560,3 +560,4 @@ ResultListScene::PollInput
 NameEntryScene::UpdatePlayer
 ProgressRecords::SaveScoreFile
 ProgressRecords::LoadScoreFile
+NameEntryScene::UpdateShared

@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "43234d20635d20ca53dc5b001ed769bbb2fc4ffcd5a10d096c6f9335b719f107"
+      "current_sha256": "7a921c02670fc66bd8e411f04ffd03b28b0cfb67acb9a4251617844eb87023b1"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "d47677274033081ee4ad22e89fd5e1bdefbc2e8a89593f2337f3fc8e2a7ffd75"
+      "current_sha256": "864029a52a3bb50764f94ca8b8c23ab1a757bcbafa684c74a24dedae95085ce3"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "2eaaf9c6db5d58f644a8479c217bfa96ec5095cb11b02f3dc093708b899572a3"
+      "current_sha256": "07d02e0168a57e10496996e5a7effa3d32056968c99a4ad40540a9fa2254bff7"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "95f93360430e42631831866013453e8368bde353362919bc3ae101737c72eaf0"
+      "current_sha256": "4ea7973cffc7ddd30184d51e0af7a5543589c012e99924fe684817c851968328"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "a02587d76bc4d6cb1716e1dfc4479c275f65639b7b7f165b5c4f954e7257d47d"
+      "current_sha256": "03ca7997c7c2d82460a32cbe0c986c36ee2c62e35d4c87ba966c57c9e3cf7c39"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -22128,6 +22128,50 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R053"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0042B380",
+        "size": "494",
+        "span_end": "0x0042B56D",
+        "current_name": "FUN_0042b380",
+        "proposed_name": "NameEntryScene::UpdateShared",
+        "module": "NameEntryScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R040; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x0042B380",
+        "size": "494",
+        "span_end": "0x0042B56D",
+        "current_name": "FUN_0042b380",
+        "proposed_name": "NameEntryScene::UpdateShared",
+        "module": "NameEntryScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "unsigned short NameSharedSceneF251::UpdateShared()",
+        "is_thunk": "false",
+        "source_file": "src/NameSharedF251.cpp",
+        "evidence": "R040; full body hash, complete decoded CFG and local game-specific behavior reviewed; F251; scripts/repo-python scripts/replay-exact-units.py --unit name-entry-scene-update-shared-0042b380",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F251: 494 complete authored CODE bytes /143 independently decoded native x86 instructions, SHA256 8ba26f2d27a8279ca52a9811ebdb7aa664726253349d2de6255a11f3ca75f1f0, real RET. Natural pinned VC7.1 /Od /GX- C++ source cold exact: 494/494 bytes, 430/430 non-relocation bytes and 16 authentic physical COFF fields. Borrowed scene reads name-entry input PollInput 0042BCD0, signed short cursor +0x0E/+0x10/+0x12, menu state +0x0C, action +0x16, button +0x14, 26-column grid; original eight-character global 00671858 and independently relocated last byte 0067185F. Genuine edit (0x5B) and save (0x5C) keys, native Play sound 004079C0 and global 00671618, conditional mode 0066C238 SaveCurrent 004138E0 on 00671750, virtual slot-two DrawCurrent, accepted Graphics::Present 004028F0. Source preserves true 16-bit prefix ++/-- and original early return 0x2202 and final return 7. First full natural source emitted 492 bytes because early return condition inverted original final JNZ/JMP branch layout; positive edit-if with else return restores two bytes and exact entire body. No fake locals, masks, pasted machine bytes, assembly, truncated function or full cold replay. Nominal original class and external SaveCurrent method ownership unproven; native caller only credited, all 97 unknown origin cases unchanged, no external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x0042B380",
+        "origin": "authored",
+        "subsystem": "NameEntryScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R040"
       }
     }
   ],
@@ -171210,6 +171254,125 @@
           "target": 6648120
         }
       ]
+    },
+    "name-entry-scene-update-shared-0042b380": {
+      "source": "src/NameSharedF251.cpp",
+      "object": "build/matching/NameSharedF251.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "NameEntryScene::UpdateShared"
+      ],
+      "symbol": "?UpdateShared@NameSharedSceneF251@@QAEGXZ",
+      "target_address": 4371328,
+      "size": 494,
+      "relocations": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": "?PollInput@NameSharedSceneF251@@QAEXXZ",
+          "target": 4373712
+        },
+        {
+          "offset": 50,
+          "type": "DIR32",
+          "symbol": "?g_NameSoundAt00671618@@3PAVNameSharedSoundF251@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 55,
+          "type": "REL32",
+          "symbol": "?Play@NameSharedSoundF251@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 97,
+          "type": "DIR32",
+          "symbol": "?g_NameLastLetterAt0067185F@@3EA",
+          "target": 6756447
+        },
+        {
+          "offset": 113,
+          "type": "DIR32",
+          "symbol": "?g_NameLettersAt00671858@@3PAEA",
+          "target": 6756440
+        },
+        {
+          "offset": 147,
+          "type": "DIR32",
+          "symbol": "?g_NameModeAt0066C238@@3CA",
+          "target": 6734392
+        },
+        {
+          "offset": 157,
+          "type": "DIR32",
+          "symbol": "?g_NameScoreAt00671750@@3VNameScoreF251@@A",
+          "target": 6756176
+        },
+        {
+          "offset": 162,
+          "type": "REL32",
+          "symbol": "?SaveCurrent@NameScoreF251@@QAEXXZ",
+          "target": 4274400
+        },
+        {
+          "offset": 208,
+          "type": "DIR32",
+          "symbol": "?g_NameLastLetterAt0067185F@@3EA",
+          "target": 6756447
+        },
+        {
+          "offset": 242,
+          "type": "DIR32",
+          "symbol": "?g_NameLettersAt00671858@@3PAEA",
+          "target": 6756440
+        },
+        {
+          "offset": 331,
+          "type": "DIR32",
+          "symbol": "?g_NameSoundAt00671618@@3PAVNameSharedSoundF251@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 336,
+          "type": "REL32",
+          "symbol": "?Play@NameSharedSoundF251@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 367,
+          "type": "DIR32",
+          "symbol": "?g_NameLettersAt00671858@@3PAEA",
+          "target": 6756440
+        },
+        {
+          "offset": 417,
+          "type": "DIR32",
+          "symbol": "?g_NameSoundAt00671618@@3PAVNameSharedSoundF251@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 422,
+          "type": "REL32",
+          "symbol": "?Play@NameSharedSoundF251@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 482,
+          "type": "REL32",
+          "symbol": "?Present@NameSharedGraphicsF251@@YAXXZ",
+          "target": 4204784
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -171549,6 +171712,7 @@
     "src/ResultPollF245.cpp": "0fc41b6491b86a743e548a7ada3ed0897c14f7c6c2818917266529726ae1fd51",
     "src/NameEntryUpdateF246.cpp": "08587a626c3324f464615ced906de11b623085799d1cfd3d62a952c6395788d9",
     "src/ProgressSaveF247.cpp": "ada651b046ae73243fe7358abec63099f555c998eda053bfcffe70a91209654e",
-    "src/ScoreLoadF248.cpp": "269f8f6dfb34c4f193486fb0d4284b3177d608803903ea64c34a5ad192433d8f"
+    "src/ScoreLoadF248.cpp": "269f8f6dfb34c4f193486fb0d4284b3177d608803903ea64c34a5ad192433d8f",
+    "src/NameSharedF251.cpp": "dcedd6e37b874626ef875bc40824410d215e45b1cf90c72da184152743b0f046"
   }
 }

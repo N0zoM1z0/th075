@@ -1759,3 +1759,52 @@ original disassembly are retained in `.analysis/f248-archive-write/`.
 No invented stack padding, masking, inline assembly, foreign callee-byte
 credit, incomplete code acceptance, or all-unit cold replay occurred.
 The 97 origin-pending candidates remain unchanged.
+
+
+## F249-F251: archive boss negatives and exact whole shared name editor
+
+The R052-authored `DataArchive::Write` at `0041D260..0041D50D` is
+686 complete native bytes, with 228 independently decoded instructions
+and 28 authentic COFF fields. A natural source models Win32 output/file
+handles, true four-byte VC7.1 borrowed list iterators, 108-byte entries,
+original rolling XOR index header, file copy and deallocation. It already
+produces the **full 686-byte extent** and all 28 relocation targets, but
+only **482/574 non-field bytes** matched first. Rewriting source XOR as
+true read/modify/write yields 495/574, while real declaration/scope
+experiments still leave native MSVC stack slots unmatched. All negative
+controls and original 228-instruction listing are retained in
+`.analysis/f249-archive-writer/`. No acceptance or authored byte credit.
+
+Similarly R052-authored `DataArchive::OpenAndReadIndex` at `0041D510`
+has a genuine 429-byte body with `/GS`, ten relocations, 108-byte wire
+record and copy into the physically observed 100-byte name plus two
+metadata dwords. The natural C++ source matches the whole function
+length and all external destinations. Changing `memcpy` to real `strcpy`
+plus retaining the genuinely distinct decoded-buffer pointer reproduces
+the full 429 bytes. Sharing the actual XOR/entry iteration index and
+expressing byte XOR without promoted compound assignment improves the
+nonfield comparison to 366/389. Declaration-order permutations and
+real nested lifetime experiments were negative, preserved under
+`.analysis/f248-archive-write/`. No exact adoption or source credit.
+
+The independently R040-authored `NameEntryScene::UpdateShared` at
+`0042B380..0042B56D` is **494 whole native CODE bytes / 143 instructions**,
+original SHA256
+`8ba26f2d27a8279ca52a9811ebdb7aa664726253349d2de6255a11f3ca75f1f0`.
+The natural `src/NameSharedF251.cpp` preserves original poll at
+`0042BCD0`, input short fields +0x0E/+0x10/+0x12/+0x14/+0x16, mode
+flag +0x0C, native 26-column selection code, erase 0x5B and save 0x5C,
+the two **distinct** physical globals `00671858/0067185F`, genuine
+16-bit cursor increments/decrements, original sound and conditional
+progress SaveCurrent call at `004138E0` on `00671750`, real virtual
+draw dispatch, accepted Graphics::Present and return values 0x2202/7.
+The first source emitted 492 bytes because it placed final early-return
+branch code before the reset block; the actual positive edit-if with
+else return makes VC7.1 emit native JNZ/JMP ordering. The entire 494-byte
+function compiles to **430/430 non-field bytes with all 16 COFF fields**
+and independent single-unit cold replay
+`--unit name-entry-scene-update-shared-0042b380` reports **exact: 494**.
+`tests/test_name_shared_f251.py` guards the native SHA, all actual
+relocations and accepted source digest without broad cold builds. Source
+names and complete original parent layouts are inferred and no external
+callee bytes, unknown-origin code or Oracle verification are claimed.
