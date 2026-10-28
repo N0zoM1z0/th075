@@ -750,3 +750,7 @@ CharacterAux::RunAt00497070
 OptionsScene::InitializeAt00428D60
 LoadingScene::InitializeAt004251F0
 LogoScene::InitializeAt00425490
+OpeningScene::InitializeAt004275D0
+StaffRollScene::InitializeAt00438AC0
+LoadingScene::ReleaseSceneResourceAt004252B0
+LogoScene::ReleaseSceneResourceAt00425550

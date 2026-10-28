@@ -733,3 +733,7 @@ address,name,module,confidence,evidence
 0x00428D60,OptionsScene::InitializeAt00428D60,OptionsScene,inferred,"F445; complete 251-byte /GX derived OptionsScene ctor with native option.dat resource, canvas and 14 real COFF refs, full cold exact"
 0x004251F0,LoadingScene::InitializeAt004251F0,LoadingScene,inferred,"F446; full 181-byte native /GX resource ctor with original data\system\load.dat archive, own native vtable, 12 COFF refs targeted cold exact"
 0x00425490,LogoScene::InitializeAt00425490,LogoScene,inferred,"F446; full 183-byte native /GX resource ctor with original data\system\logo.dat archive, own native vtable, 12 COFF refs targeted cold exact"
+0x004275D0,OpeningScene::InitializeAt004275D0,OpeningScene,inferred,"F446 complete original 219 byte VC7.1 /GX derived constructor, imported timeGetTime, 16 original physical COFF refs and targeted exact; full private scene layout unproved"
+0x00438AC0,StaffRollScene::InitializeAt00438AC0,StaffRollScene,inferred,"F446 complete original 224 byte VC7.1 /GX derived constructor, imported timeGetTime, 17 original physical COFF refs and targeted exact; full private scene layout unproved"
+0x004252B0,LoadingScene::ReleaseSceneResourceAt004252B0,LoadingScene,inferred,"F447; entire original 127-byte R234 scene-derived /GX resource destructor, 7 real native COFF refs, targeted cold exact"
+0x00425550,LogoScene::ReleaseSceneResourceAt00425550,LogoScene,inferred,"F447; entire original 127-byte R234 scene-derived /GX resource destructor, 7 real native COFF refs, targeted cold exact"

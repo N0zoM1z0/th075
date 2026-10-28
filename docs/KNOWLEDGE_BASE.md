@@ -6801,3 +6801,63 @@ authored CODE bytes**. All borrowed base/texture/asset-manager and
 compiler EH helper bodies earn zero extra executable credit; no fake
 locals/assembly, pasted native code/data, masking/cropping, all-unit cold
 replay or external Oracle certification.
+
+
+## F446 addendum: both native OpeningScene and StaffRollScene resource constructors
+
+Two additional independently R036/R043-authored complete constructors
+were recovered in the live dirty worktree and retained: original
+`OpeningScene::InitializeAt004275D0` has **219 original CODE bytes, 60
+native x86 instructions**, SHA256
+`50952c4df29abac45f1bafe3acc661aae27bc4dfeab3c518e89bf7dbdada71b1`;
+original `StaffRollScene::InitializeAt00438AC0` has **224 original CODE
+bytes, 61 native x86 instructions**, SHA256
+`7117528bd9aa7f3ee18aefa934255aed8090603ca57c49f6851ddec786576570`.
+The original OpeningScene derives from the genuine 8-byte scene base,
+installs the native vtable, creates the actual 80-byte borrowed manager,
+allocates **24** texture records from its physical native archive path,
+sets original stage **40** via `00419CB0`, reloads stage via `00419DF0`,
+then records real WinMM `timeGetTime()` and elapsed values. StaffRollScene
+performs original pre-init `00407D70`, selects stage **41**, creates
+its own 80-byte manager with **27** texture entries and authentic staff
+asset archive, initializes both actual elapsed/time fields through WinMM,
+and performs native post-init `00407CC0`. Both have complete VC7.1
+`/GX` native exception handling and real per-scene vtables; only the
+physically observed 8-byte base, manager footprint and actual scene
+fields are represented, no full original private class identity claimed.
+
+The original whole sources are preserved in
+`src/SceneSequenceConstructorsF446.cpp` and their canonical existing
+unit/ledger entries have been independently verified against the exact
+original PE. OpeningScene has **16 genuine original physical COFF
+relocations**, StaffRollScene **17**, all offsets/types/addends/destinations
+verified; their complete native CODE and source hashes match the frozen
+manifest. Both were independently retested in the **four-unit** affected
+F446/F447 cold replay (**2/2 exact for these constructors**) with no
+all-unit cold run or double credits for WinMM, game stage or texture
+constructor callees.
+
+## F447: complete LoadingScene / LogoScene reverse resource destructors
+
+The independently R234-authored original
+`LoadingScene::ReleaseSceneResourceAt004252B0` and
+`LogoScene::ReleaseSceneResourceAt00425550` each comprise **127 complete
+original authored CODE bytes / 36 native x86 instructions**. Their distinct
+original PE SHA256 values are
+`d1112fa51d0660735d3c6dbe922ff37e6c303ea8e4b2d0e37239df0397197d72`
+and `c87eecf9afc7d38e6a0331951bd54977c082c84091d0e25c7412631d56b9c9b1`.
+Each C++ virtual destructor installs its own original scene vtable
+(`00657BB4` or `00657BE0`), initializes the original `/GX` exception
+state and checks the actual borrowed resource-manager pointer at `this+8`.
+A genuine `if(texture) delete texture` generates two physically real
+compiler-owned pointer temporaries and invokes native scalar deleting
+destructor `00425460` with original flag 1. The original scene-base
+destructor `00431F40` executes after native EH reset, with distinct native
+SEH handlers `00655755`/`00655785`. Both native entire bodies reproduce
+**99/99 nonrelocation bytes** and **all seven real COFF fields/destinations**
+each, with no fake temporary/padding and no borrowed texture/base callee
+CODE credited. Only the four new F446/F447 units were cold rebuilt
+together across two objects, returning **4/4 exact** and **254 distinct
+CODE bytes** for the two destructors (plus separately 443 for Opening/Staff
+constructors). No pasted code/ASM, masks/cropping, full cold replay or
+external Oracle receipt.

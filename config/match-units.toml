@@ -56063,3 +56063,278 @@ offset = 175
 type = "DIR32"
 symbol = "__except_list"
 target = 0x00000000
+
+
+[units.opening-scene-initialize-004275d0]
+source = "src/SceneSequenceConstructorsF446.cpp"
+object = "build/matching/SceneSequenceConstructorsF446.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["OpeningScene::InitializeAt004275D0"]
+symbol = "??0OpeningSceneF446@@QAE@XZ"
+target_address = 0x004275D0
+size = 219
+[[units.opening-scene-initialize-004275d0.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0OpeningSceneF446@@QAE@XZ"
+target = 0x00655863
+[[units.opening-scene-initialize-004275d0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.opening-scene-initialize-004275d0.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.opening-scene-initialize-004275d0.relocations]]
+offset = 34
+type = "REL32"
+symbol = "??0SceneBaseF446@@QAE@XZ"
+target = 0x004251C0
+[[units.opening-scene-initialize-004275d0.relocations]]
+offset = 50
+type = "DIR32"
+symbol = "??_7OpeningSceneF446@@6B@"
+target = 0x00657CE4
+[[units.opening-scene-initialize-004275d0.relocations]]
+offset = 57
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.opening-scene-initialize-004275d0.relocations]]
+offset = 81
+type = "REL32"
+symbol = "??0TextureManagerF446@@QAE@XZ"
+target = 0x0040AD80
+[[units.opening-scene-initialize-004275d0.relocations]]
+offset = 125
+type = "REL32"
+symbol = "?AllocateSlots@TextureManagerF446@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.opening-scene-initialize-004275d0.relocations]]
+offset = 130
+type = "DIR32"
+symbol = "?g_OpeningRootAt00657CC4@@3QBDB"
+target = 0x00657CC4
+[[units.opening-scene-initialize-004275d0.relocations]]
+offset = 135
+type = "DIR32"
+symbol = "?g_OpeningPathAt00657CCC@@3QBDB"
+target = 0x00657CCC
+[[units.opening-scene-initialize-004275d0.relocations]]
+offset = 146
+type = "REL32"
+symbol = "?LoadArchive@TextureManagerF446@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.opening-scene-initialize-004275d0.relocations]]
+offset = 153
+type = "REL32"
+symbol = "?SetStageAt00419CB0@@YAXH@Z"
+target = 0x00419CB0
+[[units.opening-scene-initialize-004275d0.relocations]]
+offset = 161
+type = "REL32"
+symbol = "?ReloadStageAt00419DF0@@YAXXZ"
+target = 0x00419DF0
+[[units.opening-scene-initialize-004275d0.relocations]]
+offset = 167
+type = "DIR32"
+symbol = "__imp__timeGetTime@0"
+target = 0x00657264
+[[units.opening-scene-initialize-004275d0.relocations]]
+offset = 179
+type = "DIR32"
+symbol = "__imp__timeGetTime@0"
+target = 0x00657264
+[[units.opening-scene-initialize-004275d0.relocations]]
+offset = 211
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.staff-roll-scene-initialize-00438ac0]
+source = "src/SceneSequenceConstructorsF446.cpp"
+object = "build/matching/SceneSequenceConstructorsF446.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["StaffRollScene::InitializeAt00438AC0"]
+symbol = "??0StaffRollSceneF446@@QAE@XZ"
+target_address = 0x00438AC0
+size = 224
+[[units.staff-roll-scene-initialize-00438ac0.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0StaffRollSceneF446@@QAE@XZ"
+target = 0x00655AF3
+[[units.staff-roll-scene-initialize-00438ac0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.staff-roll-scene-initialize-00438ac0.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.staff-roll-scene-initialize-00438ac0.relocations]]
+offset = 34
+type = "REL32"
+symbol = "??0SceneBaseF446@@QAE@XZ"
+target = 0x004251C0
+[[units.staff-roll-scene-initialize-00438ac0.relocations]]
+offset = 50
+type = "DIR32"
+symbol = "??_7StaffRollSceneF446@@6B@"
+target = 0x006582BC
+[[units.staff-roll-scene-initialize-00438ac0.relocations]]
+offset = 55
+type = "REL32"
+symbol = "?BeforeStaffAt00407D70@@YAXXZ"
+target = 0x00407D70
+[[units.staff-roll-scene-initialize-00438ac0.relocations]]
+offset = 62
+type = "REL32"
+symbol = "?SetStageAt00419CB0@@YAXH@Z"
+target = 0x00419CB0
+[[units.staff-roll-scene-initialize-00438ac0.relocations]]
+offset = 72
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.staff-roll-scene-initialize-00438ac0.relocations]]
+offset = 96
+type = "REL32"
+symbol = "??0TextureManagerF446@@QAE@XZ"
+target = 0x0040AD80
+[[units.staff-roll-scene-initialize-00438ac0.relocations]]
+offset = 140
+type = "REL32"
+symbol = "?AllocateSlots@TextureManagerF446@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.staff-roll-scene-initialize-00438ac0.relocations]]
+offset = 145
+type = "DIR32"
+symbol = "?g_StaffRootAt00658298@@3QBDB"
+target = 0x00658298
+[[units.staff-roll-scene-initialize-00438ac0.relocations]]
+offset = 150
+type = "DIR32"
+symbol = "?g_StaffPathAt006582A0@@3QBDB"
+target = 0x006582A0
+[[units.staff-roll-scene-initialize-00438ac0.relocations]]
+offset = 161
+type = "REL32"
+symbol = "?LoadArchive@TextureManagerF446@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.staff-roll-scene-initialize-00438ac0.relocations]]
+offset = 167
+type = "DIR32"
+symbol = "__imp__timeGetTime@0"
+target = 0x00657264
+[[units.staff-roll-scene-initialize-00438ac0.relocations]]
+offset = 179
+type = "DIR32"
+symbol = "__imp__timeGetTime@0"
+target = 0x00657264
+[[units.staff-roll-scene-initialize-00438ac0.relocations]]
+offset = 196
+type = "REL32"
+symbol = "?AfterStaffAt00407CC0@@YAXXZ"
+target = 0x00407CC0
+[[units.staff-roll-scene-initialize-00438ac0.relocations]]
+offset = 216
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.loading-scene-release-resource-004252b0]
+source = "src/LoadingLogoSceneDestructorsF447.cpp"
+object = "build/matching/LoadingLogoSceneDestructorsF447.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["LoadingScene::ReleaseSceneResourceAt004252B0"]
+symbol = "??1LoadingSceneReleaseF447@@UAE@XZ"
+target_address = 0x004252B0
+size = 127
+[[units.loading-scene-release-resource-004252b0.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??1LoadingSceneReleaseF447@@UAE@XZ"
+target = 0x00655755
+[[units.loading-scene-release-resource-004252b0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.loading-scene-release-resource-004252b0.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.loading-scene-release-resource-004252b0.relocations]]
+offset = 35
+type = "DIR32"
+symbol = "??_7LoadingSceneReleaseF447@@6B@"
+target = 0x00657BB4
+[[units.loading-scene-release-resource-004252b0.relocations]]
+offset = 82
+type = "REL32"
+symbol = "??_GNativeSmallTextureF447@@QAEPAXI@Z"
+target = 0x00425460
+[[units.loading-scene-release-resource-004252b0.relocations]]
+offset = 109
+type = "REL32"
+symbol = "??1NativeSceneBaseF447@@UAE@XZ"
+target = 0x00431F40
+[[units.loading-scene-release-resource-004252b0.relocations]]
+offset = 119
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.logo-scene-release-resource-00425550]
+source = "src/LoadingLogoSceneDestructorsF447.cpp"
+object = "build/matching/LoadingLogoSceneDestructorsF447.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["LogoScene::ReleaseSceneResourceAt00425550"]
+symbol = "??1LogoSceneReleaseF447@@UAE@XZ"
+target_address = 0x00425550
+size = 127
+[[units.logo-scene-release-resource-00425550.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??1LogoSceneReleaseF447@@UAE@XZ"
+target = 0x00655785
+[[units.logo-scene-release-resource-00425550.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.logo-scene-release-resource-00425550.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.logo-scene-release-resource-00425550.relocations]]
+offset = 35
+type = "DIR32"
+symbol = "??_7LogoSceneReleaseF447@@6B@"
+target = 0x00657BE0
+[[units.logo-scene-release-resource-00425550.relocations]]
+offset = 82
+type = "REL32"
+symbol = "??_GNativeSmallTextureF447@@QAEPAXI@Z"
+target = 0x00425460
+[[units.logo-scene-release-resource-00425550.relocations]]
+offset = 109
+type = "REL32"
+symbol = "??1NativeSceneBaseF447@@UAE@XZ"
+target = 0x00431F40
+[[units.logo-scene-release-resource-00425550.relocations]]
+offset = 119
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000

@@ -751,3 +751,7 @@ CharacterAux::RunAt00497070,0x00497070,function
 OptionsScene::InitializeAt00428D60,0x00428D60,function
 LoadingScene::InitializeAt004251F0,0x004251F0,function
 LogoScene::InitializeAt00425490,0x00425490,function
+OpeningScene::InitializeAt004275D0,0x004275D0,function
+StaffRollScene::InitializeAt00438AC0,0x00438AC0,function
+LoadingScene::ReleaseSceneResourceAt004252B0,0x004252B0,function
+LogoScene::ReleaseSceneResourceAt00425550,0x00425550,function
