@@ -6523,3 +6523,32 @@ EH handler `00656629`). Only changed unit
 texture external callee code is double counted; no fake unused locals,
 assembly/byte grafts, cropped original, full cold replay or external
 Oracle receipt.
+
+
+## F432: complete 154-byte native options-scene virtual resource destructor
+
+Original R235-authored `OptionsScene::ReleaseSceneTextureAndResourceAt00428E60`
+at `00428E60..00428EF9` is **154 complete native CODE bytes, 46 original
+x86 instructions**, PE SHA256
+`04dc13582724d517c476050e7a6137a9e686f0f7cb2f518c1fc80e9af66d3947`.
+A real C++ derived-scene virtual destructor installs native options
+virtual table `00657F38`, conditionally `delete`s the resource at
+physical owner `this+8` through the original texture deleting-destructor
+entry `00425460` (with actual C++ pointer temporaries), and conditionally
+releases the D3D8 texture at `this+0xC` through actual COM vtable slot +8.
+It then invokes the genuine base-scene virtual destructor `00431F40`.
+The VC7.1 `/GX` EH frame, native SEH handler `006558A5`, reset of EH
+state, and all conditional branches result from natural C++ inheritance
+and `delete`, not copied machine code. Only the real observed 8-byte
+scene-base ABI and actual +8/+C resources are represented, **not** a
+complete private OptionsScene layout or external D3D/scene implementation.
+
+`src/OptionsSceneReleaseF432.cpp` matches the entire original body
+**126/126 nonrelocation bytes** and all **7/7 original physical COFF
+DIR32/REL32 relocations**, including true vtable, EH/SEH, original
+texture deleter and base destructor references. Pinned VC7.1
+`/Od /Ob0 /Gy /GR- /GX /GS /Zi` affected-only cold replay of
+`options-scene-release-texture-resource-00428e60` returned **1/1 exact**.
+No imported D3D resources, texture/scene callee CODE, fake local padding,
+masked/cropped comparison, assembly, byte grafts, full replay or remote
+Oracle acceptance credited.

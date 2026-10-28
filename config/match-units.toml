@@ -55408,3 +55408,48 @@ offset = 134
 type = "DIR32"
 symbol = "__except_list"
 target = 0x00000000
+
+
+[units.options-scene-release-texture-resource-00428e60]
+source = "src/OptionsSceneReleaseF432.cpp"
+object = "build/matching/OptionsSceneReleaseF432.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["OptionsScene::ReleaseSceneTextureAndResourceAt00428E60"]
+symbol = "??1OptionsSceneF432@@UAE@XZ"
+target_address = 0x00428E60
+size = 154
+[[units.options-scene-release-texture-resource-00428e60.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??1OptionsSceneF432@@UAE@XZ"
+target = 0x006558A5
+[[units.options-scene-release-texture-resource-00428e60.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.options-scene-release-texture-resource-00428e60.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.options-scene-release-texture-resource-00428e60.relocations]]
+offset = 35
+type = "DIR32"
+symbol = "??_7OptionsSceneF432@@6B@"
+target = 0x00657F38
+[[units.options-scene-release-texture-resource-00428e60.relocations]]
+offset = 82
+type = "REL32"
+symbol = "??_GOptionTextureF432@@QAEPAXI@Z"
+target = 0x00425460
+[[units.options-scene-release-texture-resource-00428e60.relocations]]
+offset = 136
+type = "REL32"
+symbol = "??1OptionsBaseF432@@UAE@XZ"
+target = 0x00431F40
+[[units.options-scene-release-texture-resource-00428e60.relocations]]
+offset = 146
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000

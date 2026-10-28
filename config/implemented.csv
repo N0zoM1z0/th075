@@ -743,3 +743,4 @@ RasterResources::ReleaseAndResetAt0041BFD0
 CameraMotion::SnapAt00412CF0
 FighterScript::InitializeAt00420440
 StaticBattleResources::ConstructAndClearContainersAt005F6F60
+OptionsScene::ReleaseSceneTextureAndResourceAt00428E60
