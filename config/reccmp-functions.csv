@@ -600,3 +600,4 @@ CommandList::InitializeDefaultsAt00410F30,0x00410F30,function
 CharacterAuxObject::InitializeAt005FAB10,0x005FAB10,function
 FighterState::ReleaseResources,0x00456910,function
 Effects::SpawnAuxObjectAt005F78B0,0x005F78B0,function
+FighterState::LoadStageResource,0x004584D0,function

@@ -1,4 +1,4 @@
-# TH075 — active reconstruction handoff (F285)
+# TH075 — active reconstruction handoff (F286)
 
 **Updated 2026-10-28. Read this document before new experiments.**
 
@@ -22,17 +22,17 @@ not acceptance requirements.
 
 | Item | Current evidence |
 | --- | --- |
-| Local branch / last exact-code commit | `main` / F285 complete 487-byte ordinary Effects spawner; F284 fighter resource destructor checkpoint `19ee9d2` |
+| Local branch / last exact-code commit | `main` / F286 complete 374-byte fighter stage resource loader; F285 effect spawner checkpoint `8fa8067` |
 | Upstream | `origin/main` tracked locally; verify current ahead/behind and dirty state before further work |
-| Working tree | Clean after F285 checkpoint if successful; continue rather than avoid every existing dirty edit |
+| Working tree | Clean after F286 checkpoint if successful; continue rather than avoid every existing dirty edit |
 | Native binary | `resources/th075.exe`, SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98` |
 | Candidate count | 4,351; origin review: 1,002 authored, 2,671 library, 581 compiler, 97 unknown |
-| Accepted functions / units | **601 / 601** |
-| Accepted authored CODE | **797,836 bytes** |
-| Reviewed authored coverage | 797,836 / 1,973,516 = **40.43%** |
-| Conservative coverage | **40.35%** counting 3,608 origin-pending bytes |
+| Accepted functions / units | **602 / 602** |
+| Accepted authored CODE | **798,210 bytes** |
+| Reviewed authored coverage | 798,210 / 1,973,516 = **40.45%** |
+| Conservative coverage | **40.37%** counting 3,608 origin-pending bytes |
 | Goal | **98% not reached** |
-| Verification | F285 ordinary 487-byte Effects::SpawnAuxObject cold-exact (407/407 comparable bytes, 20 physical relocations), distinct from F281 602-byte configured sibling; F284 588-byte fighter resource destructor previously checkpointed `19ee9d2`. Only newly affected F285 unit cold-replayed; no all-unit cold replay or external Oracle receipt |
+| Verification | F286 complete 374-byte FighterState::LoadStageResource cold-exact (306/306 comparable nonrelocation bytes and 17 physical COFF fields); F285 487-byte ordinary Effects spawner checkpoint `8fa8067`. Only newly affected F286 unit cold-replayed, no all-unit cold replay or external Oracle receipt |
 
 **Recheck the actual live status immediately**. Local commits are checkpoints,
 not evidence of a remote push or external Oracle acceptance. Earlier Git
@@ -128,6 +128,7 @@ inert variable or arbitrary padding may earn exact credit.
 | F283: CharacterAuxObject::Initialize | `005FAB10` | 116 | 3 |
 | F284: FighterState::ReleaseResources | `00456910` | 588 | 23 |
 | F285: Effects::SpawnAuxObject | `005F78B0` | 487 | 20 |
+| F286: FighterState::LoadStageResource | `004584D0` | 374 | 17 |
 
 F222 proved signed 32-bit x87 `FILD` divided by the target's 36.0f
 (`00659308`), 74 physical animation records and a final call into the
@@ -245,6 +246,8 @@ F283 **cold-accepts three complete related game-specific resource/auxiliary help
 F284 **cold-accepts all 588 CODE bytes of the complete `FighterState::ReleaseResources`** at `00456910` (159 independently decoded native x86 instructions, all 496/496 comparable nonrelocation bytes and 23 authentic physical COFF fields). The first complete physically grounded natural C++ source reproduced actual fighter vtable `00658FE8`, native EH handler `00656121` and 0x50 stack frame; the entire unsigned vector iteration at fighter+0x468 with genuine `size`, indexed `At`, child ClearBeforeDelete and scalar deleting destructor; original list Clear at fighter+0x518; guarded cleanup of command-list +0x480, special +0x2EC and three texture pointers at +4/+0x534/+0x700. Crucially VC7.1 automatically generates the original **reverse** native member destruction and EH transitions: script +0x714 `004204D0`, audio +0x6D0 `00407270`, deque +0x518 `004143B0`, input mapping +0x494 `00406DF0`, actor vector +0x468 `00458BA0`, with EH states 4,3,2,1,0,-1. The physical positional carrier sizes are *bounded by independently observed native member receiver offsets*, not claims to have inferred all hidden fighter fields or source owner class identities, and create no extra instructions/credit. Entire PE code SHA256 `bae6c2e827a51042738bfd0bc44fc5ba2b9b2af16fa0ad293a22c67085d4af50`. Only `--unit fighter-state-release-resources-00456910` cold-replayed exact; source `src/FighterReleaseResourcesF284.cpp`, raw original read-only native function `.analysis/f281-fighter-resources/` and complete compiler/COFF/cold proof `.analysis/f284-fighter-release/`. Paired F282 1,186-byte resource loader and F283 104-byte command list constructor were accepted independently earlier, no duplicated CODE bytes. The 97 unresolved origins and helper/CRT implementations remain uncredited. This lifts independently cold-accepted exact count to **600 whole functions**.
 
 F285 **cold-accepts the entire 487-byte ordinary `Effects::SpawnAuxObject`** at `005F78B0`, R067-authored, 143 native x86 instructions, 407/407 comparable nonrelocation bytes and 20 genuine physical COFF fields including authentic EH handler 0065668E. This is a separate native entrypoint from the previously F281-accepted 602-byte `Effects::SpawnConfiguredAuxObject` at `005F7AA0`. The original smaller form has seven stack parameters rather than eight: it uses the same actual config-vector and two-stage nonzero guard, signed side guard 0..1, true null-pointer deque insertion, EH-backed `new(0x94)` and separately F283-cold-exact child constructor `005FAB10`, repeated real `back()` calls to set the actual effect pattern ID, short resets, x/y, three mode flags and zero status field, and two original virtual start/initialize calls. It does **not** write the extended four DWORD source configuration fields at child+0x80..0x8C; these belong exclusively to F281's other original whole function. A fresh independent native read-only Ghidra/assembly examination confirmed the exact call sequence and actual `RET 0x1C`. Removing only those four real extra writes and the additional argument from the separately proven complete F281 C++ source reproduced all 487/487 native CODE bytes, all 407 nonfield bytes and 20 native COFF relocations on first full probe. Only `--unit effects-spawn-aux-object-005f78b0` cold-replayed exact, with raw original and negative controls under `.analysis/f285-effects-spawn-neighbor/` and final source `src/EffectSpawnF285.cpp`. Its original full native SHA256 is `862675bf727d13772549cb9542d745a593f2e28cae1e112d7751e68a8c4806c8`. No other effect-child/CRT/STL code double-counted; the 1,722-byte Effects catalog boss remains nonexact and 97 origins unresolved.
+
+F286 **cold-accepts all 374 native CODE bytes of `FighterState::LoadStageResource`** at `004584D0` (79 independently decoded native x86 instructions, 306/306 nonrelocation bytes, all 17 physical COFF relocations). It checks real signed stage global `0067161E`, conditionally deletes old texture at fighter+0x700, EH-allocates and constructs native new 80-byte texture manager, reads stage-specific signed slot count at fighter+0x704+stage, creates the authentic character-specific stage texture path and loads original archive. The read-only Ghidra 268-byte pathname guess was not assumed authoritative; the physical VC7.1 `/GS` code confirms a 260-byte pathname/local with original `0x12C` frame. The first whole natural source emitted 373 bytes because it used an enclosing positive `if` whose `JLE near` encoding is one byte shorter than the original `JG short` plus `JMP near`. Writing the actual native early-exit `if (stage <= 0) return;` restores all 374 CODE bytes without inert branches, padding or assembly. Original SHA256 `109507f8ab77b1660a4602546cffc1e859acbf9bdfc5a134355316bd24a9b8c6`; only `--unit fighter-state-load-stage-resource-004584d0` cold-replayed exact. Source `src/FighterStageResourceF286.cpp`, private native/probe/COFF evidence `.analysis/f286-fighter-init-stage/`. The 345-byte main `FighterState::Initialize` at `004567B0` remains an adjacent unfinished target; F282/F284 resource lifecycle bodies were independently accepted and do not earn duplicated CODE credit. All 97 pending origins remain excluded.
 
 Relevant full native proofs: `config/match-units.toml`,
 `config/exact-adoptions.json`, sources `src/*F222.cpp`/`src/*F223.cpp`,

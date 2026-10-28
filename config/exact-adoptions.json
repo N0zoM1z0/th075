@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "7046d77d754c5cc5ac48162fdc1ffb9456ab75d49a1e492f8d51c18b83e7ac74"
+      "current_sha256": "fa49e339baa4d63a6bd831f81eddfb42a5620e408f3d9661107ebc7bf7aa2575"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "7c89b26e9f879fdffa2fc7c6d706d5e2a1806ae49da070262c89398148346bef"
+      "current_sha256": "2d9e8e176372936d191f57aaea24e0bfb839ba7eef6c9bdbfc997261e418faca"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "e6cd4c2c36c591c3b4ef17d7bfc376269fef37592dd0cdccd3e259bc8ea0da22"
+      "current_sha256": "d16cb7b469ac2ec45e4102531b5e99dfa773cbb21c13e2c77adee3cda3fe17e6"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "ee3cab04395434037566f2c3bc93548f9c0c637614c6c32a6a62281000b7fab7"
+      "current_sha256": "fb314c305b86279ef0d1801e40f32ad9a5353c0ee3d15352eacb9ed7f6cecdec"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "2841631d6c1ce55442743c853f9bbb6449dca4bf2725c0d2a5c48a2d3dd6a024"
+      "current_sha256": "a6c11d9416849b340b72cb0488849a7fa938468c771be36f3c55ca94f044facf"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -23844,6 +23844,50 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R067"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004584D0",
+        "size": "374",
+        "span_end": "0x00458645",
+        "current_name": "FUN_004584d0",
+        "proposed_name": "FighterState::LoadStageResource",
+        "module": "FighterState",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R045; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x004584D0",
+        "size": "374",
+        "span_end": "0x00458645",
+        "current_name": "FUN_004584d0",
+        "proposed_name": "FighterState::LoadStageResource",
+        "module": "FighterState",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void FighterStageF286::LoadStageResource()",
+        "is_thunk": "false",
+        "source_file": "src/FighterStageResourceF286.cpp",
+        "evidence": "R045; full body hash, complete decoded CFG and local game-specific behavior reviewed; F286; scripts/repo-python scripts/replay-exact-units.py --unit fighter-state-load-stage-resource-004584d0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F286: complete original R045-authored 374 CODE bytes /79 independently decoded native x86 instructions, native RET 00458645 and full PE SHA256 109507f8ab77b1660a4602546cffc1e859acbf9bdfc5a134355316bd24a9b8c6. Native signed stage global 0067161E must be positive before proceeding; source with an enclosing positive if emitted 373 bytes because VC7 selected a 6-byte near JLE instead of actual 2-byte JG + 5-byte JMP early-exit sequence. Expressing the actual early-return path with `if (stage<=0) return;` naturally restores exactly 374 bytes, 306/306 comparable positions and all 17 physical DIR32/REL32 COFF fields, including original EH 00656190 and security cookie. Full function has guarded native texture deletion at fighter+0x700 via 00425460, genuine EH-backed new(80) via 0064159D and 0040AD80, original fighter+0x704+signedStage byte count via 0040B1D0, actual 260-byte resource name path at EBP-0x11C, original format string 00658FC0 and archive root 00658FE0 passed through native sprintf/0040BB80, and no fabricated other lifetime or file checks. Pinned VC7.1 /Od /GX /GS single affected-unit cold replay exact; separately F282 accepted base fighter resource loader and F284 resource destructor not double counted. Borrowed physical fighter/texture pointers are not complete original class layouts; all 97 unknown origins remain uncredited, no assembly/byte graft, masked relocations, cropped extent, artificial padding, full-set cold replay or external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x004584D0",
+        "origin": "authored",
+        "subsystem": "FighterState",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R045"
       }
     }
   ],
@@ -177264,6 +177308,131 @@
           "target": 0
         }
       ]
+    },
+    "fighter-state-load-stage-resource-004584d0": {
+      "source": "src/FighterStageResourceF286.cpp",
+      "object": "build/matching/FighterStageResourceF286.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FighterState::LoadStageResource"
+      ],
+      "symbol": "?LoadStageResource@FighterStageF286@@QAEXXZ",
+      "target_address": 4555984,
+      "size": 374,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$?LoadStageResource@FighterStageF286@@QAEXXZ",
+          "target": 6644112
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 31,
+          "type": "DIR32",
+          "symbol": "___security_cookie",
+          "target": 6749744
+        },
+        {
+          "offset": 47,
+          "type": "DIR32",
+          "symbol": "?g_CurrentStageAt0067161E@@3CA",
+          "target": 6755870
+        },
+        {
+          "offset": 123,
+          "type": "REL32",
+          "symbol": "??_GFighterStageTextureF286@@QAEPAXI@Z",
+          "target": 4346976
+        },
+        {
+          "offset": 148,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 184,
+          "type": "REL32",
+          "symbol": "??0FighterStageTextureF286@@QAE@XZ",
+          "target": 4238720
+        },
+        {
+          "offset": 246,
+          "type": "DIR32",
+          "symbol": "?g_CurrentStageAt0067161E@@3CA",
+          "target": 6755870
+        },
+        {
+          "offset": 278,
+          "type": "REL32",
+          "symbol": "?AllocateSlots@FighterStageTextureF286@@QAEXH@Z",
+          "target": 4239824
+        },
+        {
+          "offset": 285,
+          "type": "DIR32",
+          "symbol": "?g_CurrentStageAt0067161E@@3CA",
+          "target": 6755870
+        },
+        {
+          "offset": 304,
+          "type": "DIR32",
+          "symbol": "?g_StageTextureFormatAt00658FC0@@3QBDB",
+          "target": 6655936
+        },
+        {
+          "offset": 316,
+          "type": "REL32",
+          "symbol": "_sprintf",
+          "target": 6554864
+        },
+        {
+          "offset": 324,
+          "type": "DIR32",
+          "symbol": "?g_StageArchiveAt00658FE0@@3QBDB",
+          "target": 6655968
+        },
+        {
+          "offset": 348,
+          "type": "REL32",
+          "symbol": "?LoadDefault@FighterStageTextureF286@@QAEXPBD0@Z",
+          "target": 4242304
+        },
+        {
+          "offset": 358,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 366,
+          "type": "REL32",
+          "symbol": "@__security_check_cookie@4",
+          "target": 6555153
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -177638,6 +177807,7 @@
     "src/CommandListCtorF283.cpp": "e2adaeef8ee45d8f1eb209b0df7bace14e87c23bc6bcac672ac54975379d6179",
     "src/EffectChildCtorF283.cpp": "47116500628a210f2e46edaedfe0b2a40b82bc80dcc1cf5a3186923a63ad5142",
     "src/FighterReleaseResourcesF284.cpp": "739e04d91affc8ea3b2fbfe33a6a3ce0598b4b6a68643bd44a0650abf953698b",
-    "src/EffectSpawnF285.cpp": "cfdbfcca829528b4b5bf79d2a5e6222660d51f0c822a71ff6e406c8e87085224"
+    "src/EffectSpawnF285.cpp": "cfdbfcca829528b4b5bf79d2a5e6222660d51f0c822a71ff6e406c8e87085224",
+    "src/FighterStageResourceF286.cpp": "4800489b9832cff455bf6d86de64b2b95a90d7b6968517d20db8250c18856e46"
   }
 }

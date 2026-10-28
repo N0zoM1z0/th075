@@ -3251,3 +3251,48 @@ loader at `005F71F0` remains unaccepted, as do all 97 origin-unknown
 functions. No target byte grafting, assembly, synthetic filler, masked
 relocations, cropped function, all-unit cold replay or external Oracle
 verification is claimed.
+
+
+## F286: cold-exact 374-byte fighter stage texture resource loader
+
+R045-authored `FighterState::LoadStageResource` is complete PE-backed
+`004584D0..00458645` CODE, **374 bytes**, 79 independently decoded
+original x86 instructions, real plain RET at `00458645`, full SHA256
+`109507f8ab77b1660a4602546cffc1e859acbf9bdfc5a134355316bd24a9b8c6`.
+The original read-only Ghidra function/decompiler/entire disassembly,
+first 373-byte negative VC7.1 source and final exact COFF/cold proof
+remain at `.analysis/f286-fighter-init-stage/`; adopted source
+`src/FighterStageResourceF286.cpp` uses only borrowed native fighter
+and texture interfaces, not a guessed complete private class layout.
+
+The real original stage global is a **signed byte** at `0067161E`.
+If nonpositive it leaves the function; otherwise it checks native
+texture pointer fighter+`0x700`, conditionally calls the real scalar
+deleting destructor `00425460`, allocates an 80-byte manager through
+`0064159D` with the authentic EH-backed constructor `0040AD80`,
+stores it to fighter+`0x700`, and allocates its stage-specific pages
+with `0040B1D0` using the original signed byte at
+`fighter+0x704+stage`. It formats the true path using native format
+string `00658FC0`, fighter name at +0xC4 and the stage byte, then
+loads the original image archive `00658FE0` through `0040BB80`.
+All original EH states and the `/GS` cookie/check at `00640611` are
+retained. The pinned VC7.1 `/Od /GX /GS` source with an actual
+260-byte pathname produces native frame size `0x12C` and original
+`EBP-0x11C` path address; the Ghidra candidate `char[268]` was not
+assumed correct.
+
+The initial natural whole-function source used `if (stage > 0) { ... }`
+and produced 373 bytes, one less than native, with otherwise correct
+physical data and calls. Original machine code explicitly uses native
+`JG short +5; JMP near return` at function entry. Expressing the
+actual branch as `if (stage <= 0) return;` naturally restores that
+7-byte form under unoptimized VC7.1, yielding **all 374 bytes**,
+**306/306** comparable nonrelocation bytes and **17/17 authentic
+COFF relocation fields** (actual offsets/types/native targets).
+The canonical unit `fighter-state-load-stage-resource-004584d0` was
+recompiled **cold by itself**, reporting `exact; 374 coverage bytes`.
+Already accepted full F282 fighter resource loader and F284 destructor
+are independent and not double counted; their library helpers and all
+97 pending unknown origins are not credited. No byte graft, assembly,
+masking, artificial local source padding, truncation or all-unit cold
+replay. Local Git checkpoint is not external Oracle verification.

@@ -43611,3 +43611,97 @@ offset = 477
 type = "DIR32"
 symbol = "__except_list"
 target = 0x00000000
+
+[units.fighter-state-load-stage-resource-004584d0]
+source = "src/FighterStageResourceF286.cpp"
+object = "build/matching/FighterStageResourceF286.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["FighterState::LoadStageResource"]
+symbol = "?LoadStageResource@FighterStageF286@@QAEXXZ"
+target_address = 0x004584D0
+size = 374
+[[units.fighter-state-load-stage-resource-004584d0.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$?LoadStageResource@FighterStageF286@@QAEXXZ"
+target = 0x00656190
+[[units.fighter-state-load-stage-resource-004584d0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.fighter-state-load-stage-resource-004584d0.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.fighter-state-load-stage-resource-004584d0.relocations]]
+offset = 31
+type = "DIR32"
+symbol = "___security_cookie"
+target = 0x0066FE30
+[[units.fighter-state-load-stage-resource-004584d0.relocations]]
+offset = 47
+type = "DIR32"
+symbol = "?g_CurrentStageAt0067161E@@3CA"
+target = 0x0067161E
+[[units.fighter-state-load-stage-resource-004584d0.relocations]]
+offset = 123
+type = "REL32"
+symbol = "??_GFighterStageTextureF286@@QAEPAXI@Z"
+target = 0x00425460
+[[units.fighter-state-load-stage-resource-004584d0.relocations]]
+offset = 148
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.fighter-state-load-stage-resource-004584d0.relocations]]
+offset = 184
+type = "REL32"
+symbol = "??0FighterStageTextureF286@@QAE@XZ"
+target = 0x0040AD80
+[[units.fighter-state-load-stage-resource-004584d0.relocations]]
+offset = 246
+type = "DIR32"
+symbol = "?g_CurrentStageAt0067161E@@3CA"
+target = 0x0067161E
+[[units.fighter-state-load-stage-resource-004584d0.relocations]]
+offset = 278
+type = "REL32"
+symbol = "?AllocateSlots@FighterStageTextureF286@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.fighter-state-load-stage-resource-004584d0.relocations]]
+offset = 285
+type = "DIR32"
+symbol = "?g_CurrentStageAt0067161E@@3CA"
+target = 0x0067161E
+[[units.fighter-state-load-stage-resource-004584d0.relocations]]
+offset = 304
+type = "DIR32"
+symbol = "?g_StageTextureFormatAt00658FC0@@3QBDB"
+target = 0x00658FC0
+[[units.fighter-state-load-stage-resource-004584d0.relocations]]
+offset = 316
+type = "REL32"
+symbol = "_sprintf"
+target = 0x006404F0
+[[units.fighter-state-load-stage-resource-004584d0.relocations]]
+offset = 324
+type = "DIR32"
+symbol = "?g_StageArchiveAt00658FE0@@3QBDB"
+target = 0x00658FE0
+[[units.fighter-state-load-stage-resource-004584d0.relocations]]
+offset = 348
+type = "REL32"
+symbol = "?LoadDefault@FighterStageTextureF286@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.fighter-state-load-stage-resource-004584d0.relocations]]
+offset = 358
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.fighter-state-load-stage-resource-004584d0.relocations]]
+offset = 366
+type = "REL32"
+symbol = "@__security_check_cookie@4"
+target = 0x00640611
