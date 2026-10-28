@@ -45453,3 +45453,87 @@ offset = 232
 type = "DIR32"
 symbol = "__imp__GetGlyphOutlineA@28"
 target = 0x0065703C
+
+[units.font-surface-rasterize-text-0041c2e0]
+source = "src/FontRasterizeTextF319.cpp"
+object = "build/matching/FontRasterizeTextF319.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["FontSurface::RasterizeText"]
+symbol = "?RasterizeText@FontRasterF299@@QAEXPBDPAXHHHHHEC@Z"
+target_address = 0x0041C2E0
+size = 1766
+[[units.font-surface-rasterize-text-0041c2e0.relocations]]
+offset = 47
+type = "REL32"
+symbol = "_memset"
+target = 0x00640490
+[[units.font-surface-rasterize-text-0041c2e0.relocations]]
+offset = 107
+type = "REL32"
+symbol = "_strlen"
+target = 0x00640620
+[[units.font-surface-rasterize-text-0041c2e0.relocations]]
+offset = 121
+type = "REL32"
+symbol = "?PrepareGlyphSurface@FontRasterF299@@QAEXXZ"
+target = 0x0041C0D0
+[[units.font-surface-rasterize-text-0041c2e0.relocations]]
+offset = 171
+type = "REL32"
+symbol = "?DecodeUnit@FontRasterF299@@QAEEPBDPAH@Z"
+target = 0x0041C9D0
+[[units.font-surface-rasterize-text-0041c2e0.relocations]]
+offset = 226
+type = "REL32"
+symbol = "?DecodeUnit@FontRasterF299@@QAEEPBDPAH@Z"
+target = 0x0041C9D0
+[[units.font-surface-rasterize-text-0041c2e0.relocations]]
+offset = 355
+type = "REL32"
+symbol = "?DecodeNibble@FontRasterF299@@QAEED@Z"
+target = 0x0041CA80
+[[units.font-surface-rasterize-text-0041c2e0.relocations]]
+offset = 379
+type = "REL32"
+symbol = "?DecodeNibble@FontRasterF299@@QAEED@Z"
+target = 0x0041CA80
+[[units.font-surface-rasterize-text-0041c2e0.relocations]]
+offset = 405
+type = "REL32"
+symbol = "?DecodeNibble@FontRasterF299@@QAEED@Z"
+target = 0x0041CA80
+[[units.font-surface-rasterize-text-0041c2e0.relocations]]
+offset = 429
+type = "REL32"
+symbol = "?DecodeNibble@FontRasterF299@@QAEED@Z"
+target = 0x0041CA80
+[[units.font-surface-rasterize-text-0041c2e0.relocations]]
+offset = 455
+type = "REL32"
+symbol = "?DecodeNibble@FontRasterF299@@QAEED@Z"
+target = 0x0041CA80
+[[units.font-surface-rasterize-text-0041c2e0.relocations]]
+offset = 479
+type = "REL32"
+symbol = "?DecodeNibble@FontRasterF299@@QAEED@Z"
+target = 0x0041CA80
+[[units.font-surface-rasterize-text-0041c2e0.relocations]]
+offset = 859
+type = "REL32"
+symbol = "?LoadGlyphOutline@FontRasterF299@@QAEXI@Z"
+target = 0x0041C1B0
+[[units.font-surface-rasterize-text-0041c2e0.relocations]]
+offset = 1365
+type = "REL32"
+symbol = "?DecodeUnit@FontRasterF299@@QAEEPBDPAH@Z"
+target = 0x0041C9D0
+[[units.font-surface-rasterize-text-0041c2e0.relocations]]
+offset = 1465
+type = "REL32"
+symbol = "?LoadGlyphOutline@FontRasterF299@@QAEXI@Z"
+target = 0x0041C1B0
+[[units.font-surface-rasterize-text-0041c2e0.relocations]]
+offset = 1754
+type = "REL32"
+symbol = "?ReleaseRasterResources@FontRasterF299@@QAEXXZ"
+target = 0x0041C130

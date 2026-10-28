@@ -629,3 +629,4 @@ YuyukoFighter::ResetRound
 MeilingFighter::ResetRound
 FontSurface::RenderTextToTexture
 FontSurface::LoadGlyphOutline
+FontSurface::RasterizeText

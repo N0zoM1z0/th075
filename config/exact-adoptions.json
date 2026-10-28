@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "d63a7982f61e3482574246405a2b669b4241fffe3363804a731bef816ee1047d"
+      "current_sha256": "d61c2659c40698d575017a8c58f20da5f541a9edd3a50198e7ee9ce2ef057112"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "a644093bd755ddbacd9c505f28c5e4b3d5838b74b801002495d138a292e84800"
+      "current_sha256": "950ee1f1417d013b5b54213cb06807a91e5a8c5d8faa1d1e4ee8b978da1e0c2f"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "bcf3fd2c2aab4aa1ab3439b0f3a572cad0be066ca86a65006adde37f208512a1"
+      "current_sha256": "dac35a1631d31e6fe7453f5cf3cbdabdf0c90aea102d63e95c3f4c26a8745eaa"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "c7a7d20bc33ca2228aaca57767d87237054fb3bbd02f36dbefb993659c23c3a4"
+      "current_sha256": "990b30b80af3e4d5ccd2e25809d5289bdafd2d10e9973c58145e5266d7afd033"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "764fdf3793c34e27e5d850cbaf1cd4fe05b3510715de534357baba911b37b5d6"
+      "current_sha256": "0bdac4006ee76224ad1ea8fb300e4afacb07032dbe08bb7df2a8fc96e9faf5cb"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -25164,6 +25164,50 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R053"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0041C2E0",
+        "size": "1766",
+        "span_end": "0x0041C9C5",
+        "current_name": "FUN_0041c2e0",
+        "proposed_name": "FontSurface::RasterizeText",
+        "module": "FontSurface",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R052; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x0041C2E0",
+        "size": "1766",
+        "span_end": "0x0041C9C5",
+        "current_name": "FUN_0041c2e0",
+        "proposed_name": "FontSurface::RasterizeText",
+        "module": "FontSurface",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void FontRasterF299::RasterizeText(const char*,void*,int,int,int,int,int,unsigned char,signed char)",
+        "is_thunk": "false",
+        "source_file": "src/FontRasterizeTextF319.cpp",
+        "evidence": "R052; full body hash, complete decoded CFG and local game-specific behavior reviewed; F319; scripts/repo-python scripts/replay-exact-units.py --unit font-surface-rasterize-text-0041c2e0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F319: WHOLE original R052-authored native FontSurface::RasterizeText giant, complete 1766 Japanese PE-backed CODE bytes at 0041C2E0..0041C9C5 /551 independently decoded x86 instructions with authentic original 0x38 stack frame and RET 0x24 at 0041C9C3, full original PE SHA256 2eb1e53bbddcc11a3e9aa0c3f1a9cab200fe7d09d154448fb7cc0dc18980a6d7. Natural complete C++ reconstructs BOTH 32-bit ARGB/16-bit pixel drawing branches, signed Japanese text decoder, original embedded backslash c/e/n controls including six DecodeNibble calls, actual glyph loader and release calls, text wrap/spacing/height and native byte RGB gradient integer divisions, preserving real last-line and remaining length behavior; exact original native 551 instruction shape and all 15 physical COFF REL32 fields. First meaningful complete 1766-byte C++ under pinned VC7.1 /Od /GX- /GS still had only 1626/1706 nonfield bytes matching due genuine incorrectly placed parser/ARGB local EBP offsets, despite all original control branches/calls exact. Grouping all 14 genuinely used state values as a physical struct NativeTextStateF319 with original 48-byte observed used extents naturally recovered 1692/1706 nonrelocation slots with no additional code. The final 14 original discrepancies are three original source color bytes (red at EBP-0x16, blue at EBP-0x15, green at EBP-0x1, each accessed 4 times) and original 1-byte decoded control count reused in actual original EBP-0x24 slot (2 occurrences), NOT missing instructions. Native shows existing 4-byte physical color slots at EBP-0x18..-0x15 and EBP-0x4..-1; C++ represents their actually USED single-byte positions as byte indices 2/3 of authentic DWORD redBlueStorage and 3 of authentic DWORD greenStorage. Compiler emits exact byte stores/loads without initializing or reading any other unobserved word bytes, while total local struct remains native 48-byte, no separate fields/padding; real second decoded byte count reuses original unitSize, same native EBP-0x24. This exact semantic source produces all 1766 native CODE bytes, all 1706/1706 comparable bytes and all 15/15 actual physical COFF relocation offsets/types/solved native destinations; single affected-unit cold replay 1/1 exact, no entire-unit replay. Authentic native callees include memset 00640490, strlen 00640620, glyph preparation 0041C0D0, separately F293 cold exact decode 0041C9D0 (three calls), true hex nibble 0041CA80 (six calls), separately F318 accepted 301-byte glyph loader 0041C1B0 (two calls), and separately F293 accepted 119-byte glyph resource release 0041C130. These child/source definitions are not double credited by parent; original complete FontSurface private owner layout, Win32/CRT/VC7 implementations and 97 origin-pending functions excluded. No manual x86 assembly, target byte grafting, fake locals/field padding, masked relocations, cropped CODE or external Oracle acceptance."
+      },
+      "origin": {
+        "address": "0x0041C2E0",
+        "origin": "authored",
+        "subsystem": "FontSurface",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R052"
       }
     }
   ],
@@ -181156,6 +181200,119 @@
           "target": 6647868
         }
       ]
+    },
+    "font-surface-rasterize-text-0041c2e0": {
+      "source": "src/FontRasterizeTextF319.cpp",
+      "object": "build/matching/FontRasterizeTextF319.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FontSurface::RasterizeText"
+      ],
+      "symbol": "?RasterizeText@FontRasterF299@@QAEXPBDPAXHHHHHEC@Z",
+      "target_address": 4309728,
+      "size": 1766,
+      "relocations": [
+        {
+          "offset": 47,
+          "type": "REL32",
+          "symbol": "_memset",
+          "target": 6554768
+        },
+        {
+          "offset": 107,
+          "type": "REL32",
+          "symbol": "_strlen",
+          "target": 6555168
+        },
+        {
+          "offset": 121,
+          "type": "REL32",
+          "symbol": "?PrepareGlyphSurface@FontRasterF299@@QAEXXZ",
+          "target": 4309200
+        },
+        {
+          "offset": 171,
+          "type": "REL32",
+          "symbol": "?DecodeUnit@FontRasterF299@@QAEEPBDPAH@Z",
+          "target": 4311504
+        },
+        {
+          "offset": 226,
+          "type": "REL32",
+          "symbol": "?DecodeUnit@FontRasterF299@@QAEEPBDPAH@Z",
+          "target": 4311504
+        },
+        {
+          "offset": 355,
+          "type": "REL32",
+          "symbol": "?DecodeNibble@FontRasterF299@@QAEED@Z",
+          "target": 4311680
+        },
+        {
+          "offset": 379,
+          "type": "REL32",
+          "symbol": "?DecodeNibble@FontRasterF299@@QAEED@Z",
+          "target": 4311680
+        },
+        {
+          "offset": 405,
+          "type": "REL32",
+          "symbol": "?DecodeNibble@FontRasterF299@@QAEED@Z",
+          "target": 4311680
+        },
+        {
+          "offset": 429,
+          "type": "REL32",
+          "symbol": "?DecodeNibble@FontRasterF299@@QAEED@Z",
+          "target": 4311680
+        },
+        {
+          "offset": 455,
+          "type": "REL32",
+          "symbol": "?DecodeNibble@FontRasterF299@@QAEED@Z",
+          "target": 4311680
+        },
+        {
+          "offset": 479,
+          "type": "REL32",
+          "symbol": "?DecodeNibble@FontRasterF299@@QAEED@Z",
+          "target": 4311680
+        },
+        {
+          "offset": 859,
+          "type": "REL32",
+          "symbol": "?LoadGlyphOutline@FontRasterF299@@QAEXI@Z",
+          "target": 4309424
+        },
+        {
+          "offset": 1365,
+          "type": "REL32",
+          "symbol": "?DecodeUnit@FontRasterF299@@QAEEPBDPAH@Z",
+          "target": 4311504
+        },
+        {
+          "offset": 1465,
+          "type": "REL32",
+          "symbol": "?LoadGlyphOutline@FontRasterF299@@QAEXI@Z",
+          "target": 4309424
+        },
+        {
+          "offset": 1754,
+          "type": "REL32",
+          "symbol": "?ReleaseRasterResources@FontRasterF299@@QAEXXZ",
+          "target": 4309296
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -181560,6 +181717,7 @@
     "src/YuyukoResetF314.cpp": "2d9203a95c2f3b81d41c670578bfed2d34452a3c2b7e3bc461ddbd8ea234e372",
     "src/MeilingResetF314.cpp": "c13619e2a4c1eded6de5da384cd29a0a553afdc898fe61c7641605bb2aefeabc",
     "src/FontRenderTextureF317.cpp": "c1d5ab5a7ada6c9d7cf645af5ccd0e67fc1badc45604cbeba5e23f14a2f53762",
-    "src/FontLoadGlyphOutlineF318.cpp": "9bae4786b51c5af3301114ac780b319bd6b49456f80ed5d88da840d9e7f80962"
+    "src/FontLoadGlyphOutlineF318.cpp": "9bae4786b51c5af3301114ac780b319bd6b49456f80ed5d88da840d9e7f80962",
+    "src/FontRasterizeTextF319.cpp": "147eec7e26fcced365cae82c80117c097c4f23288fdba85e6055a7b2ec9c5250"
   }
 }

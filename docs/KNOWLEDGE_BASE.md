@@ -4164,8 +4164,8 @@ Win32/CRT new, two ftol helpers, font ctor/delete and raster draw call.
 Pinned VC7.1 `/Od /Ob0 /Gy /GR- /GX /GS /Zi` built only canonical
 `font-surface-render-text-to-texture-00413460` from clean C++ source
 and accepted via **1/1 affected-unit cold replay**, never a full
-replay. The invoked 1,766-byte rasterizer remains nonexact and does
-not inherit exact credit; D3D/Win32, CRT/VC7 code and all 97 pending
+replay. The invoked 1,766-byte rasterizer was nonexact at this F317 checkpoint,
+but was later independently F319-cold-accepted and does not inherit exact credit; D3D/Win32, CRT/VC7 code and all 97 pending
 origins are also uncredited. Native borrowed owner sizes are not claims
 of complete original class layout, and local Git is not Oracle proof.
 
@@ -4245,8 +4245,109 @@ new unit `font-surface-load-glyph-outline-0041c1b0` was recompiled
 **cold alone**, with `1/1 exact; 301 coverage bytes`. Separate
 F317 398-byte FontSurface text-to-texture controller was accepted
 independently; it does not cause extra CODE credit for this function
-or the still **nonexact 1,766-byte FontSurface::RasterizeText**.
+or the then-**nonexact** 1,766-byte FontSurface::RasterizeText,
+subsequently independently F319-cold-accepted.
 Original full private class types, Win32/CRT/VC7 callee bodies and all
 97 origin-pending candidates remain uncredited. No machine byte
 graft, manual x86, fake stack locals/pads, cropped original CODE,
 masked relocation fields, all-unit replay or remote Oracle receipt.
+
+
+## F319: cold-exact entire 1,766-byte FontSurface::RasterizeText major boss
+
+The original R052-authored full `FontSurface::RasterizeText` occupies
+**1,766 complete Japanese PE-backed CODE bytes** at
+`0041C2E0..0041C9C5` with native `RET 0x24` at `0041C9C3` and
+**551 independently decoded original x86 instructions**. Original
+whole PE body SHA256 is
+`2eb1e53bbddcc11a3e9aa0c3f1a9cab200fe7d09d154448fb7cc0dc18980a6d7`.
+Its full native Ghidra/disassembly and negative structural probes
+remain at `.analysis/f297-font-boss/`, `.analysis/f299-font-raster/`,
+`.analysis/f302-font-lifetimes/`, `.analysis/f305-font-reconcile/`,
+`.analysis/f307-font-native-slots/`; the final direct native slot
+reconstruction, original complete object/COFF and local cold proof
+are at `.analysis/f319-font-state/`. The adopted clean natural source
+is `src/FontRasterizeTextF319.cpp`.
+
+The entire original 551-instruction flow is independently grounded
+in native evidence, including actual `memset` and `strlen`, two text
+packing formats (32-bit ARGB and 16-bit output), true signed
+Japanese two-byte decoder logic, in-band ASCII backslash controls
+`\c` for real RGB hex override, `\e` for color reset, `\n` for
+line progression, wrap/spacing/counters/last-line termination and
+two independent actual glyph pixel scan loops. The 32-bit path
+composes native alpha and red/green/blue per-scanline gradient
+through real signed arithmetic and fixed packing shifts; the 16-bit
+path builds the original 0x8000/0x421 per-alpha word. It calls the
+original game font preparation at `0041C0D0`, native 8-bit packed
+decoder `0041C9D0` **three times**, nibble decoder `0041CA80`
+**six times**, the separately F318-accepted entire glyph outline
+loader `0041C1B0` **twice**, then the independently F293-cold-exact
+119-byte raster-resource release `0041C130` once. **All 15** genuine
+original COFF REL32 fields, not only their abstract targets, are
+compared with the complete native body. The already independently
+F317-accepted 398-byte font texture controller calls this function;
+no CODE credit for any of these callees or callers is transferred.
+
+### Root cause: original 48-byte font parser/pixel state lifetime
+
+The first complete natural VC7.1 `/Od` C++ source had already
+reproduced all **1,766 bytes and 551 instruction forms**, but got
+only **1,626/1,706** nonfield bytes because the compiler allocated
+otherwise genuine text/parser/pixel/RGB locals to different stack
+positions. Ordinary declaration/lexical scope and separate partial
+value groupings improved only to 1,647/1,706. Rechecking the
+**original complete 0x38-byte stack frame** instead of trusting
+Ghidra local variable suggestions revealed a **48-byte physically
+used native state group** immediately above actual `this` at
+EBP−0x34, plus the native compiler-generated code-switch temporary
+at EBP−0x38. Native source value slots, in their exact observed
+order, are:
+
+| Physical original slot | Actually accessed native value |
+| --- | --- |
+| EBP−0x30, −0x2C | Separate actual 16-bit and 32-bit output pointer values |
+| EBP−0x28 | Inner glyph pixel-row index |
+| EBP−0x24 | One shared decoded text-unit byte length (including the control escape's second decode) |
+| EBP−0x20 | Source text offset |
+| EBP−0x1C | Remaining source length |
+| EBP−0x18..−0x15 | Already allocated 4-byte color storage; **red byte at −0x16** (lane 2) and **blue byte at −0x15** (lane 3) |
+| EBP−0x14 | Actual decoded codepoint/source switch value |
+| EBP−0x10 | Outer glyph pixel-column index |
+| EBP−0xC, −0x8 | Pixel output x/y |
+| EBP−0x4..−0x1 | Real low 4-byte color storage, **green at −0x1** (lane 3) |
+
+No extra byte/word is allocated beyond these original native
+physical ranges. The original assembler never reads or initializes
+the unused lanes of the two real dword color-storage regions; our
+C++ likewise accesses only the actual observed byte lanes, through
+typed character pointers into `DWORD redBlueStorage` and
+`DWORD greenStorage`. The natural `NativeTextStateF319` has exactly
+**48 bytes** and is checked at compile time with `sizeof == 48`:
+`output16`, `output32`, `iy`, `unitSize`, `offset`, `length`,
+`redBlueStorage`, `code`, `ix`, `x`, `y`, `greenStorage`. The same
+`unitSize` variable handles both actual native text-decoder calls
+rather than allocating an unused second variable. A first physically
+grounded 48-byte structure with separate `red/green/blue` and
+`extra` locals matched **1,692/1,706**. Replacing only those
+actual native color-slot types and reusing the real decoded-unit
+count removed the remaining **12 genuine byte-lane access differences
+and two genuine `DecodeUnit` result-slot differences**, without
+adding any instruction, fake local, unobserved field usage or inert
+source padding.
+
+The final whole-source pinned VC7.1
+`/Od /Ob0 /Gy /GR- /GX- /GS /Zi` compilation reproduces
+**ALL 1,766/1,766 complete original CODE bytes**, all
+**1,706/1,706** nonrelocation positions and **15/15 authentic COFF
+relocation offsets/types/solved native destinations**. Only the
+new canonical unit `font-surface-rasterize-text-0041c2e0` was
+rebuilt cold and reported **`exact; 1766 coverage bytes` / 1/1
+exact**, never any all-unit cold replay. This now closes the
+separately accepted F317 398-byte texture controller, F318
+301-byte glyph loader, and F293 character decoder/resource release
+chain without double counting source CODE. The rest of the game
+remains very far from the 98% objective; 97 pending origin cases,
+private game class layouts, and original GDI/CRT/VC7 helper bodies
+are still uncredited. No target-byte graft, asm, masks, truncated
+native extent, artificial fields or external Oracle confirmation.
