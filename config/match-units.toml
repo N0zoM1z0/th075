@@ -44797,3 +44797,13 @@ offset = 20
 type = "DIR32"
 symbol = "??_7BattleObjectDefaultsF300@@6B@"
 target = 0x00659064
+
+[units.fighter-state-advance-notice-levels-0045d710]
+source = "src/FighterNoticeLevelsF301.cpp"
+object = "build/matching/FighterNoticeLevelsF301.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["FighterState::AdvanceNoticeLevelsAt0045D710"]
+symbol = "?AdvanceNoticeLevels@FighterNoticeF300@@QAEXXZ"
+target_address = 0x0045D710
+size = 247
+relocations = []

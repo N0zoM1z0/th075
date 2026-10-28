@@ -3745,3 +3745,40 @@ source, but **19 actual stack slot byte operands** remain nonmatching
 (1,033/1,052). Further real typed iterator/count/written declaration
 interleavings and pair-owner probes under `.analysis/f296-append-interleave/`
 were negative, and cannot be credited or solved with fake padding.
+
+
+## F301: cold-exact 247-byte FighterState notice state machine
+
+Original R103-authored game-specific `FighterState::AdvanceNoticeLevelsAt0045D710`
+comprises **all 247 PE-backed CODE bytes** at `0045D710..0045D806`,
+**64 independently decoded x86 instructions** and an authentic plain RET
+at `0045D806`. Full original CODE SHA256:
+`a76adeb47b34c648d3d1e0d274297fe54aa83d4bfc50442649bbd1a977b3453a`.
+The complete physical disassembly, original decompile, first 253-byte
+negative natural source and the accepted 247-byte entire C++ probe/cold
+receipt are retained at `.analysis/f300-battle-leaves/` and
+`.analysis/f300-battle-probes/`; final source
+`src/FighterNoticeLevelsF301.cpp` represents only the three real physical
+FighterState fields, not a made-up complete game object.
+
+The original switch uses a signed character mode at fighter+0x6E6 and
+updates only the two actual signed short counters at +0x6EA and +0x6EC.
+Mode 0 increments first only below 25, mode 1 independently decreases
+both counters only above zero, and mode 2 decreases first if positive
+and increases second if below 5. Cases 0/1/2 have the complete
+original long/short exit branches and per-field signed extensions.
+The first natural source emitted 253 bytes with a 0xC stack frame
+because `signed char mode=FIELD(...); switch(mode)` required an extra
+6-byte load/store to a distinct unoptimized switch temporary.
+Original native uses one direct signed byte switch expression, with
+only one local at EBP-8, a genuine 0x8 frame and no extra copy. Using
+`switch(FIELD(signed char,0x6E6))` naturally reconstructs exactly the
+**full 247 CODE bytes and all 247/247 nonfield positions** under pinned
+VC7.1 `/Od /Ob0 /Gy /GR- /GX- /GS /Zi`; it has **zero actual COFF
+relocation fields**. Only the new unit
+`fighter-state-advance-notice-levels-0045d710` was cold rebuilt and
+reported `exact; 247 coverage bytes`. Original private FighterState
+class identity/layout, library/CRT implementations and all 97 unknown
+origins remain uncredited. No artificial code, byte graft, assembly,
+relocation mask, truncated function, all-unit cold replay or remote
+Oracle receipt.

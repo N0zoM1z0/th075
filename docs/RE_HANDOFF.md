@@ -1,4 +1,4 @@
-# TH075 — active reconstruction handoff (F300)
+# TH075 — active reconstruction handoff (F301)
 
 **Updated 2026-10-28. Read this document before new experiments.**
 
@@ -22,17 +22,17 @@ not acceptance requirements.
 
 | Item | Current evidence |
 | --- | --- |
-| Local branch / last exact-code commit | `main` / F300 203-byte BattleObject native default constructor; previous F294 1,722-byte effects catalog boss checkpoint `34a452e` |
+| Local branch / last exact-code commit | `main` / F301 247-byte fighter notice-level state machine; F300 203-byte BattleObject constructor checkpoint `d5e4399` |
 | Upstream | `origin/main` tracked locally; verify current ahead/behind and dirty state before further work |
-| Working tree | Clean after F300 checkpoint if successful; continue rather than avoid every existing dirty edit |
+| Working tree | Clean after F301 checkpoint if successful; continue rather than avoid every existing dirty edit |
 | Native binary | `resources/th075.exe`, SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98` |
 | Candidate count | 4,351; origin review: 1,002 authored, 2,671 library, 581 compiler, 97 unknown |
-| Accepted functions / units | **611 / 611** |
-| Accepted authored CODE | **802,525 bytes** |
-| Reviewed authored coverage | 802,525 / 1,973,516 = **40.66%** |
-| Conservative coverage | **40.59%** counting 3,608 origin-pending bytes |
+| Accepted functions / units | **612 / 612** |
+| Accepted authored CODE | **802,772 bytes** |
+| Reviewed authored coverage | 802,772 / 1,973,516 = **40.68%** |
+| Conservative coverage | **40.60%** counting 3,608 origin-pending bytes |
 | Goal | **98% not reached** |
-| Verification | F300 complete 203-byte BattleObject::InitializeDefaults cold-exact (195/195 nonfield bytes, two authentic relocations), following independently F294-accepted 1,722-byte Effects::LoadPatternCatalog boss checkpoint `34a452e`. Only new F300 unit cold-replayed, no all-unit cold replay or external Oracle receipt |
+| Verification | F301 complete 247-byte FighterState::AdvanceNoticeLevels cold-exact (247/247 nonfield bytes, zero real native relocations), following F300 203-byte BattleObject default ctor checkpoint `d5e4399` and F294 1,722-byte effects boss. Only new F301 unit cold-replayed; no all-unit cold replay or external Oracle receipt |
 
 **Recheck the actual live status immediately**. Local commits are checkpoints,
 not evidence of a remote push or external Oracle acceptance. Earlier Git
@@ -138,6 +138,7 @@ inert variable or arbitrary padding may earn exact credit.
 | F293: FontSurface::ReleaseRasterResources | `0041C130` | 119 | 4 |
 | F294: Effects::LoadPatternCatalog | `005F71F0` | 1,722 | 91 |
 | F300: BattleObject::InitializeDefaults | `0045B760` | 203 | 2 |
+| F301: FighterState::AdvanceNoticeLevels | `0045D710` | 247 | 0 |
 
 F222 proved signed 32-bit x87 `FILD` divided by the target's 36.0f
 (`00659308`), 74 physical animation records and a final call into the
@@ -275,6 +276,8 @@ The first complete physical source compiled 1,722 bytes and all 582 x86 instruct
 F300 **cold-accepts the full 203-byte R166-authored `BattleObject::InitializeDefaults`** at `0045B760..0045B82A`, 42 independently decoded original native x86 instructions, all **195/195** comparable bytes and both real physical relocations (game base ctor `00458650`, derived vtable `00659064`). A first genuine natural C++ derived polymorphic constructor reproduced the whole native class-default zero initialization in the exact original source order: short words at +0x80,+0x82,+0x84,+0x86,+0x88; DWORDs at +0x7C,+0x8C,+0x90,+0x94,+0x98,+0x50,+0x54,+0x58,+0x5C,+0x4C. Full original PE CODE SHA256 `be111ce8814061e291a70639e4ffd1bf9dff77a6f14385c16882f2594c704550`; canonical unit `battle-object-initialize-defaults-0045b760`, accepted source `src/BattleDefaultsF300.cpp`, original Ghidra/probe/COFF/cold receipt `.analysis/f300-battle-leaves/` and `.analysis/f300-battle-probes/`. Only F300 cold replayed; original base implementation and unproven private object interior receive no credit.
 
 F297-F299 large and adjacent work is retained privately rather than falsely accepted: `AuxEffectManager::AdvanceAndPruneTwoLists` at `005F7D80` (276 CODE, ten real COFF fields) has a first complete native semantic source exactly 276 bytes and progressed from **222/236** to **233/236** nonrelocation matches when the actual count/index lifetimes were scoped. The last three real stack slot differences are End iterator destination and the used released-object pointer; genuine nested source/typed iterator/aggregate/for-condition variants under `.analysis/f297-aux-prune/` and `.analysis/f298-aux-lifetimes/` are negative, **zero CODE credit**. A separate **1,766-byte** `FontSurface::RasterizeText` boss was independently re-reviewed using its full native original and two 32-bit/16-bit framebuffer paths; real shared decoded-unit/pixel iterator lifetimes restore the native 0x38 frame, and an independently grounded native switch and signed length branch source reduces whole emission to 1,712 bytes but is not exact. Private complete source, raw x86 and disassembly-shape negatives at `.analysis/f297-font-boss/` and `.analysis/f299-font-raster/`, **zero code credit**. The historic 1,252-byte `ReplayRecords::AppendRecord` boss remains 1,033/1,052 nonfield best, 50 fields; its further genuine six-iterator/count/written declaration interleaving and typed iterator pair probes under `.analysis/f296-append-interleave/` did not restore the 19 original stack slots. Continue tackling true bosses and related leaves, but never claim these as accepted without full original-byte/relocation and affected cold replay.
+
+F301 **cold-accepts the entire 247-byte FighterState::AdvanceNoticeLevels** at `0045D710..0045D806`: 64 independently decoded original x86 instructions, all 247/247 comparable code bytes and **zero physical COFF relocation fields**. Native mode byte at fighter+0x6E6 controls a real 0/1/2 state machine: mode 0 increases signed short fighter+0x6EA up to 25; mode 1 decreases both +0x6EA and +0x6EC down toward zero independently; mode 2 decreases the first and raises the second toward 5. The first complete natural C++ used a distinct named mode byte and then `switch(mode)`, so VC7.1 generated an extra actual 6-byte copy into a second switch temporary and the wrong 0xC frame (253 emission); native x86 uses only one true switch byte at EBP-8 and a genuine 0x8 frame. Switching directly on the original field rvalue removes precisely those six excess bytes and produces the complete native **247/247** byte stream. Original whole PE body SHA256 `a76adeb47b34c648d3d1e0d274297fe54aa83d4bfc50442649bbd1a977b3453a`. Source `src/FighterNoticeLevelsF301.cpp`, read-only native and two full compiler variants plus cold receipt `.analysis/f300-battle-leaves/` and `.analysis/f300-battle-probes/`. Canonical affected unit `fighter-state-advance-notice-levels-0045d710` alone cold-replayed `1/1 exact`; no full replay or additional game/CRT/unknown-origin code credit.
 
 Relevant full native proofs: `config/match-units.toml`,
 `config/exact-adoptions.json`, sources `src/*F222.cpp`/`src/*F223.cpp`,
