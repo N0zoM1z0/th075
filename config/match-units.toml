@@ -42405,3 +42405,87 @@ offset = 1169
 type = "DIR32"
 symbol = "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A"
 target = 0x00671230
+
+[units.card-list-load-encoded-character-file-00431b60]
+source = "src/CardLoadEncodedF272.cpp"
+object = "build/matching/CardLoadEncodedF272.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["CardList::LoadEncodedCharacterFile"]
+symbol = "?LoadEncodedCharacterFile@CardListEncodedF272@@QAEXPBD0@Z"
+target_address = 0x00431B60
+size = 503
+[[units.card-list-load-encoded-character-file-00431b60.relocations]]
+offset = 10
+type = "DIR32"
+symbol = "___security_cookie"
+target = 0x0066FE30
+[[units.card-list-load-encoded-character-file-00431b60.relocations]]
+offset = 30
+type = "REL32"
+symbol = "?ClearEntries@CardListEncodedF272@@QAEXXZ"
+target = 0x00431940
+[[units.card-list-load-encoded-character-file-00431b60.relocations]]
+offset = 39
+type = "DIR32"
+symbol = "?g_CardEncodedPatternAt00658170@@3QBDB"
+target = 0x00658170
+[[units.card-list-load-encoded-character-file-00431b60.relocations]]
+offset = 51
+type = "REL32"
+symbol = "_sprintf"
+target = 0x006404F0
+[[units.card-list-load-encoded-character-file-00431b60.relocations]]
+offset = 74
+type = "REL32"
+symbol = "?FindDirectory@CardArchiveLookupF272@@YAPAVCardArchiveF272@@PBD@Z"
+target = 0x0041CF00
+[[units.card-list-load-encoded-character-file-00431b60.relocations]]
+offset = 84
+type = "REL32"
+symbol = "?OpenEntry@CardArchiveF272@@QAEPAXPBDPAK@Z"
+target = 0x0041D800
+[[units.card-list-load-encoded-character-file-00431b60.relocations]]
+offset = 107
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x006416A2
+[[units.card-list-load-encoded-character-file-00431b60.relocations]]
+offset = 149
+type = "DIR32"
+symbol = "__imp__ReadFile@20"
+target = 0x0065712C
+[[units.card-list-load-encoded-character-file-00431b60.relocations]]
+offset = 324
+type = "REL32"
+symbol = "?push_back@CardNameDequeF272@@QAEXABQAD@Z"
+target = 0x0041DE30
+[[units.card-list-load-encoded-character-file-00431b60.relocations]]
+offset = 339
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x006416A2
+[[units.card-list-load-encoded-character-file-00431b60.relocations]]
+offset = 362
+type = "REL32"
+symbol = "?back@CardNameDequeF272@@QAEPAPADXZ"
+target = 0x0041DE00
+[[units.card-list-load-encoded-character-file-00431b60.relocations]]
+offset = 384
+type = "REL32"
+symbol = "?back@CardNameDequeF272@@QAEPAPADXZ"
+target = 0x0041DE00
+[[units.card-list-load-encoded-character-file-00431b60.relocations]]
+offset = 418
+type = "REL32"
+symbol = "_memcpy"
+target = 0x00640F20
+[[units.card-list-load-encoded-character-file-00431b60.relocations]]
+offset = 482
+type = "REL32"
+symbol = "_free"
+target = 0x0064169D
+[[units.card-list-load-encoded-character-file-00431b60.relocations]]
+offset = 493
+type = "REL32"
+symbol = "@__security_check_cookie@4"
+target = 0x00640611

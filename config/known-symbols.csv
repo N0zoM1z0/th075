@@ -565,3 +565,4 @@ address,name,module,confidence,evidence
 0x0042D330,ReplayScene::PollPlaybackInput,ReplayScene,inferred,F268; entire 310-byte replay polling controller 27 native COFF fields cold-exact; related F260 common inputs independently matched
 0x0042A180,ReplayScene::Initialize,ReplayScene,inferred,F269; whole 315-byte native replay initialization including authentic score selection/texture/EH and all 24 physical relocation fields cold-exact
 0x00402D50,Graphics::DrawProjectedTexturedQuad,Graphics,inferred,"F271; entire 1185-byte native D3D8 projected four-vertex triangle-fan controller, 291 instructions and 37 genuine COFF fields cold-exact; original private class names not asserted"
+0x00431B60,CardList::LoadEncodedCharacterFile,CardList,inferred,F272; full 503-byte native encoded card list loader with exact original 260-byte path/decoder/newline/record allocation behavior and 15 COFF fields; full class identity unknown

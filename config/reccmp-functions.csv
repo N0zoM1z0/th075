@@ -583,3 +583,4 @@ ReplayBrowserScene::DestroyOwnedReplayFilesAt0042C560,0x0042C560,function
 ReplayScene::PollPlaybackInput,0x0042D330,function
 ReplayScene::Initialize,0x0042A180,function
 Graphics::DrawProjectedTexturedQuad,0x00402D50,function
+CardList::LoadEncodedCharacterFile,0x00431B60,function

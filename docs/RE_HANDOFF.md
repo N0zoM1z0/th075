@@ -1,4 +1,4 @@
-# TH075 — active reconstruction handoff (F271)
+# TH075 — active reconstruction handoff (F272)
 
 **Updated 2026-10-28. Read this document before new experiments.**
 
@@ -22,17 +22,17 @@ not acceptance requirements.
 
 | Item | Current evidence |
 | --- | --- |
-| Local branch / last exact-code commit | `main` / F271 full 1,185-byte projected graphics boss; prior F269 replay scene checkpoint `3c40ebd` |
+| Local branch / last exact-code commit | `main` / F272 complete 503-byte CardList encoded file reader; prior F271 graphics boss `fb1ea6d` |
 | Upstream | `origin/main` tracked locally; verify current ahead/behind and dirty state before further work |
-| Working tree | Clean after F271 checkpoint if successful; continue rather than avoid every existing dirty edit |
+| Working tree | Clean after F272 checkpoint if successful; continue rather than avoid every existing dirty edit |
 | Native binary | `resources/th075.exe`, SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98` |
 | Candidate count | 4,351; origin review: 1,002 authored, 2,671 library, 581 compiler, 97 unknown |
-| Accepted functions / units | **584 / 584** |
-| Accepted authored CODE | **792,135 bytes** |
-| Reviewed authored coverage | 792,135 / 1,973,516 = **40.14%** |
-| Conservative coverage | **40.07%** counting 3,608 origin-pending bytes |
+| Accepted functions / units | **585 / 585** |
+| Accepted authored CODE | **792,638 bytes** |
+| Reviewed authored coverage | 792,638 / 1,973,516 = **40.16%** |
+| Conservative coverage | **40.09%** counting 3,608 origin-pending bytes |
 | Goal | **98% not reached** |
-| Verification | F271 full 1,185-byte Graphics::DrawProjectedTexturedQuad independently cold-exact (1,037/1,037 comparable bytes, all 37 real relocations) after F269 replay scene checkpoint `3c40ebd`. Only new F271 unit cold replayed; no full cold replay or external Oracle receipt |
+| Verification | F272 complete 503-byte encoded CardList file loader independently cold-exact (443/443 comparable bytes and 15 original COFF fields). Earlier F271 1,185-byte graphics boss checkpoint `fb1ea6d`. Only new F272 unit cold-replayed; no full cold replay or external Oracle receipt |
 
 **Recheck the actual live status immediately**. Local commits are checkpoints,
 not evidence of a remote push or external Oracle acceptance. Earlier Git
@@ -111,6 +111,7 @@ inert variable or arbitrary padding may earn exact credit.
 | F268: ReplayScene::PollPlaybackInput | `0042D330` | 310 | 27 |
 | F269: ReplayScene::Initialize | `0042A180` | 315 | 24 |
 | F271: Graphics::DrawProjectedTexturedQuad | `00402D50` | 1,185 | 37 |
+| F272: CardList::LoadEncodedCharacterFile | `00431B60` | 503 | 15 |
 
 F222 proved signed 32-bit x87 `FILD` divided by the target's 36.0f
 (`00659308`), 74 physical animation records and a final call into the
@@ -171,7 +172,7 @@ F252/F253 independently cold-accepted five complete authored functions. `CardLis
 
 F254 investigated the full **1,268-byte `SpriteScene::RenderMirroredNode`**: whole source and original 324 native instructions reconstructed, but natural probes still differ in the two genuine SpriteQuad stack-slot allocations and some x87 expression lowering. Twenty-four explicit real-variable lifetime permutations did not restore the original 1,268-byte extent; **no exact credit**. F255 independently reproduced all 118 native control-flow instructions of the 429-byte `CardList::LoadCharacterFile`, including real deque pointer temporaries and file data, but it still emits 447 bytes. Twenty-two real declaration-order probes failed, so **no byte credit**. Private records live under `.analysis/f254-sprite-boss/` and `.analysis/f255-card-plain/`.
 
-F256 cold-accepted the entire **398-byte `ResultScene::LoadSelectedCharacterResources`**, 91 original x86 instructions, 318/318 comparable non-field bytes and all 20 physical COFF fields. Original destruction is **nonvirtual** at `00425460`, not a vtable dispatch as initially guessed. The native selector is evaluated independently in both special/normal card-list branches; the texture manager genuinely allocates 80 bytes with EH cleanup and loads the original character asset. Only F256 was cold-replayed exact; its encoded-card loading callee at `00431B60` is still unaccepted and uncredited.
+F256 cold-accepted the entire **398-byte `ResultScene::LoadSelectedCharacterResources`**, 91 original x86 instructions, 318/318 comparable non-field bytes and all 20 physical COFF fields. Original destruction is **nonvirtual** at `00425460`, not a vtable dispatch as initially guessed. The native selector is evaluated independently in both special/normal card-list branches; the texture manager genuinely allocates 80 bytes with EH cleanup and loads the original character asset. Only F256 was cold-replayed exact; its encoded-card loading callee at `00431B60` was not yet exact at F256, but is independently cold-accepted at F272 without counting it twice.
 
 F257 independently cold-accepted the complete **298-byte `MusicRoom::EncodeCatalogFile`** at `00427300`, all 100 native instructions, all 254/254 non-relocation bytes and 11/11 real COFF fields. A first full C++ probe had 222/254 comparable bytes due solely to observed stack variable placements. Genuine nested HANDLE, transfer count, file size, buffer, rolling XOR key/delta, index and allocation/free pointer lifetimes restore original local slots, including the native operator new and free transfers. Both `musicroom.csv` read and `musicroom.dat` create/write paths, all real failure branches and original 0x5C/0x5A rolling byte-XOR are preserved. Only `--unit music-room-encode-catalog-file-00427300` was cold-replayed. The separately reviewed 916+16-byte `MusicRoom::LoadCatalog` boss was nonexact at this point; F258 independently closed and accepted its entire native extent. Preserve `.analysis/f254-music-file/` (F257 investigation).
 
@@ -206,6 +207,8 @@ F269 **independently cold-accepts the entire 315-byte `ReplayScene::Initialize`*
 F271 **cold-accepts the COMPLETE 1,185-byte `Graphics::DrawProjectedTexturedQuad` boss** at `00402D50..004031F0` (291 independently decoded x86 instructions, 1,037/1,037 comparable nonrelocation bytes, all 37 authentic COFF relocation fields). Full original function SHA256 `dcda68d89e3a45c1464d845b321d7228b79a1e7e9290ea0470ed594768553769`. The native D3D8 routine creates four real 28-byte projected vertex records, reads a surface `D3DSURFACE_DESC`, converts actual width/height, computes a reused perspective factor for each vertex, exits early on clipping, preserves full x87 position/depth and UV calculations, scales/translates all vertices, optionally multiplies all three color channels (three original `__ftol2` calls), binds the texture if its cache changes, then draws the original **D3DPT_TRIANGLEFAN** (not triangle strip) with two triangles and stride 28. A first full natural C++ control emitted 1,085 bytes; correcting original early-return branch form and the single real reused projection factor yielded 1,185 bytes and 997/1,037 comparable bytes. The remaining actual EBP-slot mismatches were solved by a genuine nested lifetime for that factor (native `surface` EBP-0x9C, width -0x98, height -0x94, projection -0xA0), while the correct triangle fan fixed another real one-byte semantic error. The final complete C++ matched all 37 field destinations and cold-replayed exact using only `--unit graphics-draw-projected-textured-quad-00402d50`. Preserve original native listing/negative controls and final proof under `.analysis/f271-graphics-projected/`, source at `src/GraphicsProjectedQuadF271.cpp`. This is independent R001-authored CODE; do not credit Direct3D8/CRT `__ftol2` bodies or unrelated library callees; 97 unknown origins remain unresolved. No artificial stack padding, fake locals, copied target machine-code, masked fields or truncated function.
 
 F270 **did not** cold-accept the 497-byte `CharacterSelectScene::UpdateCancelAnimation` at `00435870`. The first full natural C++ retained all 13 original relocations and emitted the full 497-byte source with **438/445** comparable nonrelocation bytes; one physically distinct x87 equality with native constant `60.0f` at `00658264` loads operands in the opposite order to VC7's current source. Actual control/data-flow alternatives (global literal, direction, const/volatile, array indexing, typed accesses and de Morgan) did not improve that genuine seven-byte nonfield mismatch, so no 497 CODE bytes are credited. Keep all negative sources at `.analysis/f270-character-cancel/`; don't substitute assembly or literal target bytes.
+
+F272 **cold-accepts the full 503-byte `CardList::LoadEncodedCharacterFile`** at `00431B60`, all 137 original native x86 instructions, **443/443** nonrelocation bytes and all **15 authentic COFF fields** including `_sprintf`, actual archive lookup/entry, Win32 ReadFile, two operator new calls, two deque back calls, memcpy, free and VC7 security-cookie check. Contrary to several older plain-card assumptions, original native path `cardlist.dat` has the 0x60/0x61 rolling XOR byte stream (delta += 0x41) and a **while** newline parser whose original terminator placement is `[index-begin-1]`, preserved without correcting behavior. No input CloseHandle is present in original; none is invented. The first whole probe emitted 515 bytes. Explicit *real* raw-operator-new pointer transfer and native file/size/read/key/delta/index lifetimes yielded 505; native-compatible 260-byte pathname and original parser while control flow reached complete 503 but 438/443 comparable bytes. A genuinely nested lifetime for the *used* appended `char*` result after the decoder index restored the native allocation/append stack slots EBP-0x13C/0x138 and **443/443** bytes. Original runtime 503 CODE SHA256 `dee41adcf9b1bdf69dce0ce4544d0b4e498ba72c39db43fbbcc84ef00c386711`; one-unit cold `exact; 503`. Source `src/CardLoadEncodedF272.cpp`, full negative controls, native and accepted receipt `.analysis/f272-card-encoded/`. F252 encoded-file **writer** remains a separate accepted 432-byte function; F255 429-byte **plain card reader** still nonexact. No partial/truncated byte credit for other card/CRT/archive helpers; 97 origin-unknown functions remain pending.
 
 Relevant full native proofs: `config/match-units.toml`,
 `config/exact-adoptions.json`, sources `src/*F222.cpp`/`src/*F223.cpp`,
