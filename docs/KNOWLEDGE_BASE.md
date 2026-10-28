@@ -4768,3 +4768,55 @@ changing any gameplay. Do not hide three five-byte mismatches,
 use manual asm or accept partial whole boss as exact. Private
 evidence `.analysis/f331-sprite-nativeframe/`,
 `.analysis/f332-sequence-x87/` retained, zero new CODE credit.
+
+
+## F335: independently exact EventQueue service acquire/release lifetime
+
+Two complete R114-authored Win32/game event-queue service methods
+operate on distinct fully backed original Japanese PE CODE ranges:
+
+| Native method | Full CODE | Original x86 instructions | Nonfield exact | Actual COFF fields | Complete original PE SHA256 |
+| --- | ---: | ---: | ---: | ---: | --- |
+| `EventQueue::AcquireSharedServiceAt004239F0` | 155 | 41 | 83/83 | 18 | `d3cbe2979e99f5ee856459ce2dc812928f7a83c2297aaeefb2a40c757baf8700` |
+| `EventQueue::ReleaseSharedServiceAt00423A90` | 143 | 41 | 79/79 | 16 | `1bc97f316393be5b671899f9e570faac27eef7078e6486a813f11f7210d50331` |
+
+Acquire performs the native refcount check at `0068BE30` and stores
+the caller-provided delay at `0066C23C`, resetting that global
+only if negative. It invokes imported `timeBeginPeriod(1)` at
+`00657268`, original queue Reset `00423F30` on true global queue
+`0068BE44`, creates actual worker event via imported CreateEventA
+`00657054` and stores `0068BE34`, calls imported CreateThread
+`0065713C` with the independently F334-reconstructed original
+worker entry `00423B40`, actual thread ID address `0068BE3C`,
+and stores worker HANDLE `0068BE38`. It uses imported
+SetThreadPriority `00657140` with native priority 15, sets the
+running byte at `0068BE40` and increments true user refcount.
+Native `thiscall` returns its real receiver as original C++ code.
+
+Release decrements that same original refcount, checks for zero,
+clears running flag, calls native TerminateThread `00657134`,
+iterates exactly the actual queue count from `00423D40` through
+original per-item indexing `00423DB0`, signals every actual event
+HANDLE through imported SetEvent `0065705C`, then calls the same
+queue Reset and closes ready/worker HANDLEs through authentic
+CloseHandle IAT `00657138` twice. No implied waiting for thread
+shutdown or safety check absent from the target is added.
+
+A first complete natural C++ source models these actual original
+Win32/global service side effects, not the unknown queue class
+implementation. It was split into **two independent C++ source
+files and two actual COFF objects** `src/EventServiceAcquireF335.cpp`
+and `src/EventServiceReleaseF335.cpp` before acceptance. Pinned VC7.1
+`/Od /Ob0 /Gy /GR- /GX- /GS /Zi` reproduces every physical original
+CODE byte, all comparable bytes and **all 34 independently checked
+COFF relocation positions, types and native solved destinations**.
+Cold replay was restricted to the **two newly affected units**
+`event-service-acquire-shared-004239f0` and
+`event-service-release-shared-00423a90`, both **2/2 exact**.
+Original Ghidra/decompiler, separate positive full source/COFF and
+local cold receipts are retained at `.analysis/f335-event-service/`.
+The native worker (separate F334 complete 273 CODE), external
+Win32/CRT/VC7 call targets, opaque original EventService class and
+97 unknown origins receive no duplicated CODE credit. No target
+byte graft, assembly, artificial padding, truncated extent, masked
+original COFF fields, full all-unit replay or remote Oracle proof.

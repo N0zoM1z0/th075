@@ -46154,3 +46154,191 @@ offset = 240
 type = "REL32"
 symbol = "?End@QueueCollectionF334@@QAE?AVQueueIteratorF334@@XZ"
 target = 0x00423D10
+
+[units.event-service-acquire-shared-004239f0]
+source = "src/EventServiceAcquireF335.cpp"
+object = "build/matching/EventServiceAcquireF335.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["EventQueue::AcquireSharedServiceAt004239F0"]
+symbol = "?AcquireSharedService@EventServiceF335@@QAEPAV1@H@Z"
+target_address = 0x004239F0
+size = 155
+[[units.event-service-acquire-shared-004239f0.relocations]]
+offset = 9
+type = "DIR32"
+symbol = "?g_EventUsersAt0068BE30@@3HA"
+target = 0x0068BE30
+[[units.event-service-acquire-shared-004239f0.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "?g_EventWaitMsAt0066C23C@@3HA"
+target = 0x0066C23C
+[[units.event-service-acquire-shared-004239f0.relocations]]
+offset = 26
+type = "DIR32"
+symbol = "?g_EventWaitMsAt0066C23C@@3HA"
+target = 0x0066C23C
+[[units.event-service-acquire-shared-004239f0.relocations]]
+offset = 35
+type = "DIR32"
+symbol = "?g_EventWaitMsAt0066C23C@@3HA"
+target = 0x0066C23C
+[[units.event-service-acquire-shared-004239f0.relocations]]
+offset = 47
+type = "DIR32"
+symbol = "__imp__timeBeginPeriod@4"
+target = 0x00657268
+[[units.event-service-acquire-shared-004239f0.relocations]]
+offset = 52
+type = "DIR32"
+symbol = "?g_EventServiceQueueAt0068BE44@@3VEventServiceQueueF335@@A"
+target = 0x0068BE44
+[[units.event-service-acquire-shared-004239f0.relocations]]
+offset = 57
+type = "REL32"
+symbol = "?Reset@EventServiceQueueF335@@QAEXXZ"
+target = 0x00423F30
+[[units.event-service-acquire-shared-004239f0.relocations]]
+offset = 71
+type = "DIR32"
+symbol = "__imp__CreateEventA@16"
+target = 0x00657054
+[[units.event-service-acquire-shared-004239f0.relocations]]
+offset = 76
+type = "DIR32"
+symbol = "?g_EventReadyAt0068BE34@@3PAXA"
+target = 0x0068BE34
+[[units.event-service-acquire-shared-004239f0.relocations]]
+offset = 81
+type = "DIR32"
+symbol = "?g_EventThreadIdAt0068BE3C@@3KA"
+target = 0x0068BE3C
+[[units.event-service-acquire-shared-004239f0.relocations]]
+offset = 90
+type = "DIR32"
+symbol = "?RunWorker@EventWorkerF335@@SGHH@Z"
+target = 0x00423B40
+[[units.event-service-acquire-shared-004239f0.relocations]]
+offset = 100
+type = "DIR32"
+symbol = "__imp__CreateThread@24"
+target = 0x0065713C
+[[units.event-service-acquire-shared-004239f0.relocations]]
+offset = 105
+type = "DIR32"
+symbol = "?g_EventThreadAt0068BE38@@3PAXA"
+target = 0x0068BE38
+[[units.event-service-acquire-shared-004239f0.relocations]]
+offset = 113
+type = "DIR32"
+symbol = "?g_EventThreadAt0068BE38@@3PAXA"
+target = 0x0068BE38
+[[units.event-service-acquire-shared-004239f0.relocations]]
+offset = 120
+type = "DIR32"
+symbol = "__imp__SetThreadPriority@8"
+target = 0x00657140
+[[units.event-service-acquire-shared-004239f0.relocations]]
+offset = 126
+type = "DIR32"
+symbol = "?g_EventRunningAt0068BE40@@3EA"
+target = 0x0068BE40
+[[units.event-service-acquire-shared-004239f0.relocations]]
+offset = 133
+type = "DIR32"
+symbol = "?g_EventUsersAt0068BE30@@3HA"
+target = 0x0068BE30
+[[units.event-service-acquire-shared-004239f0.relocations]]
+offset = 142
+type = "DIR32"
+symbol = "?g_EventUsersAt0068BE30@@3HA"
+target = 0x0068BE30
+
+[units.event-service-release-shared-00423a90]
+source = "src/EventServiceReleaseF335.cpp"
+object = "build/matching/EventServiceReleaseF335.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["EventQueue::ReleaseSharedServiceAt00423A90"]
+symbol = "?ReleaseSharedService@EventServiceF335@@QAEXXZ"
+target_address = 0x00423A90
+size = 143
+[[units.event-service-release-shared-00423a90.relocations]]
+offset = 10
+type = "DIR32"
+symbol = "?g_EventUsersAt0068BE30@@3HA"
+target = 0x0068BE30
+[[units.event-service-release-shared-00423a90.relocations]]
+offset = 18
+type = "DIR32"
+symbol = "?g_EventUsersAt0068BE30@@3HA"
+target = 0x0068BE30
+[[units.event-service-release-shared-00423a90.relocations]]
+offset = 26
+type = "DIR32"
+symbol = "?g_EventRunningAt0068BE40@@3EA"
+target = 0x0068BE40
+[[units.event-service-release-shared-00423a90.relocations]]
+offset = 35
+type = "DIR32"
+symbol = "?g_EventThreadAt0068BE38@@3PAXA"
+target = 0x0068BE38
+[[units.event-service-release-shared-00423a90.relocations]]
+offset = 42
+type = "DIR32"
+symbol = "__imp__TerminateThread@8"
+target = 0x00657134
+[[units.event-service-release-shared-00423a90.relocations]]
+offset = 65
+type = "DIR32"
+symbol = "?g_EventServiceQueueAt0068BE44@@3VEventServiceQueueF335@@A"
+target = 0x0068BE44
+[[units.event-service-release-shared-00423a90.relocations]]
+offset = 70
+type = "REL32"
+symbol = "?Size@EventServiceQueueF335@@QAEIXZ"
+target = 0x00423D40
+[[units.event-service-release-shared-00423a90.relocations]]
+offset = 84
+type = "DIR32"
+symbol = "?g_EventServiceQueueAt0068BE44@@3VEventServiceQueueF335@@A"
+target = 0x0068BE44
+[[units.event-service-release-shared-00423a90.relocations]]
+offset = 89
+type = "REL32"
+symbol = "?At@EventServiceQueueF335@@QAEPAPAXI@Z"
+target = 0x00423DB0
+[[units.event-service-release-shared-00423a90.relocations]]
+offset = 98
+type = "DIR32"
+symbol = "__imp__SetEvent@4"
+target = 0x0065705C
+[[units.event-service-release-shared-00423a90.relocations]]
+offset = 105
+type = "DIR32"
+symbol = "?g_EventServiceQueueAt0068BE44@@3VEventServiceQueueF335@@A"
+target = 0x0068BE44
+[[units.event-service-release-shared-00423a90.relocations]]
+offset = 110
+type = "REL32"
+symbol = "?Reset@EventServiceQueueF335@@QAEXXZ"
+target = 0x00423F30
+[[units.event-service-release-shared-00423a90.relocations]]
+offset = 116
+type = "DIR32"
+symbol = "?g_EventReadyAt0068BE34@@3PAXA"
+target = 0x0068BE34
+[[units.event-service-release-shared-00423a90.relocations]]
+offset = 123
+type = "DIR32"
+symbol = "__imp__CloseHandle@4"
+target = 0x00657138
+[[units.event-service-release-shared-00423a90.relocations]]
+offset = 128
+type = "DIR32"
+symbol = "?g_EventThreadAt0068BE38@@3PAXA"
+target = 0x0068BE38
+[[units.event-service-release-shared-00423a90.relocations]]
+offset = 135
+type = "DIR32"
+symbol = "__imp__CloseHandle@4"
+target = 0x00657138

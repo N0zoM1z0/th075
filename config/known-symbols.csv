@@ -621,3 +621,5 @@ address,name,module,confidence,evidence
 0x00413DE0,ReplayRecords::AppendRecord,ReplayRecords,inferred,"F326; complete 1252-byte replay writer boss, 379 x86 instructions, six real iterator constructors/4 queue loops and all 50 physical relocations cold exact; owner private ABI names provisional"
 0x004138E0,ReplayRecords::FinalizeFile,ReplayRecords,inferred,"F328; entire 375-byte native replay file finalize with authentic /GS cookie, 264-byte path + real pointer and I/O state, 15 Win32/CRT/game physical relocations cold exact"
 0x00423B40,EventQueue::RunWorkerAt00423B40,EventQueue,inferred,"F334; complete 273-byte native queue worker with real 28-byte checked iterator state, 19 genuine Win32/game relocation fields; stdcall/owner nominal name provisional"
+0x004239F0,EventQueue::AcquireSharedServiceAt004239F0,EventQueue,inferred,"F335; full 155-byte R114 event queue service acquire lifecycle, 18 authentic COFF fields cold exact; borrowed class names only"
+0x00423A90,EventQueue::ReleaseSharedServiceAt00423A90,EventQueue,inferred,"F335; full 143-byte R114 event queue service release lifecycle, 16 authentic COFF fields cold exact; borrowed class names only"

@@ -639,3 +639,5 @@ SpriteSequence::AppendElement,0x00411000,function
 ReplayRecords::AppendRecord,0x00413DE0,function
 ReplayRecords::FinalizeFile,0x004138E0,function
 EventQueue::RunWorkerAt00423B40,0x00423B40,function
+EventQueue::AcquireSharedServiceAt004239F0,0x004239F0,function
+EventQueue::ReleaseSharedServiceAt00423A90,0x00423A90,function

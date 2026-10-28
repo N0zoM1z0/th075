@@ -638,3 +638,5 @@ SpriteSequence::AppendElement
 ReplayRecords::AppendRecord
 ReplayRecords::FinalizeFile
 EventQueue::RunWorkerAt00423B40
+EventQueue::AcquireSharedServiceAt004239F0
+EventQueue::ReleaseSharedServiceAt00423A90
