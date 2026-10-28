@@ -1,4 +1,4 @@
-# TH075 — active reconstruction handoff (F241)
+# TH075 — active reconstruction handoff (F242)
 
 **Updated 2026-10-28. Read this document before new experiments.**
 
@@ -12,17 +12,17 @@ Earlier H184 advice to stop is historical and **does not apply**.
 
 | Item | Current evidence |
 | --- | --- |
-| Local branch / last exact-code commit | `main` / F241 local acceptance; prior F240 boss commit `3710f61` |
+| Local branch / last exact-code commit | `main` / F242 local acceptance; prior F241 commit `279a870` |
 | Upstream | `origin/main` tracked locally; verify current ahead/behind and dirty state before further work |
-| Working tree | Clean after F241 commit if successful; inspect every pre-existing dirty file |
+| Working tree | Clean after F242 commit if successful; inspect all dirty edits and source experiments |
 | Native binary | `resources/th075.exe`, SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98` |
 | Candidate count | 4,351; origin review: 1,002 authored, 2,671 library, 581 compiler, 97 unknown |
-| Accepted functions / units | **555 / 555** |
-| Accepted authored CODE | **778,888 bytes** |
-| Reviewed authored coverage | 778,888 / 1,973,516 = **39.47%** |
-| Conservative coverage | **39.40%** counting 3,608 origin-pending bytes |
+| Accepted functions / units | **556 / 556** |
+| Accepted authored CODE | **779,551 bytes** |
+| Reviewed authored coverage | 779,551 / 1,973,516 = **39.50%** |
+| Conservative coverage | **39.43%** counting 3,608 origin-pending bytes |
 | Goal | **98% not reached** |
-| Verification | F241 exact 423-byte decimal painter (9 physical relocation fields, 387/387 comparable bytes) cold-replayed alone; F240 prior 1344-byte result rendering boss cold exact with 44 relocs. Focused tests and tracking passed; NO all-unit cold replay or external Oracle receipt |
+| Verification | F242 exact 663-byte two-level transition mode dispatcher with 27 physical fields, 555/555 comparable bytes and six original native callbacks; independent targeted cold replay only, tracking and checkpoint tests; no external Oracle receipt |
 
 **Recheck the actual live status immediately**. Local commits are checkpoints,
 not evidence of a remote push or external Oracle acceptance. Earlier Git
@@ -72,6 +72,7 @@ inert variable or arbitrary padding may earn exact credit.
 | F239 `95295a4`: ResultScene::BuildRecordPage | `00431070` | 721 | 26 |
 | F240 `3710f61`: ResultScene::RenderCounters | `0042EF10` | 1,344 | 44 |
 | F241: ResultScene::DrawDecimalDigits | `0042F530` | 423 | 9 |
+| F242: SceneTransition::DispatchMode | `00431F60` | 663 | 27 |
 
 F222 proved signed 32-bit x87 `FILD` divided by the target's 36.0f
 (`00659308`), 74 physical animation records and a final call into the
@@ -79,7 +80,7 @@ F222 proved signed 32-bit x87 `FILD` divided by the target's 36.0f
 `i <= 36`, not the byte-different `i < 37`. Its three relocations all
 match. F223 adds two complete borrowed constructors and a real EH-backed
 232-byte `new`; Youmu additionally calls the observed +0xFEC child init.
-All twenty-five units were independently cold-exact. F224 used a complete, native-EH-backed `new(0xE8)` with the real Youmu constructor at `00536360`, then ordered 16 halfword resets, the accepted base reset `00457010`, and the observed +0xFEC subcomponent reset `00531CE0`. Their nominal C++ classes and
+All twenty-six units were independently cold-exact. F224 used a complete, native-EH-backed `new(0xE8)` with the real Youmu constructor at `00536360`, then ordered 16 halfword resets, the accepted base reset `00457010`, and the observed +0xFEC subcomponent reset `00531CE0`. Their nominal C++ classes and
 external helper implementations are **not** established by code equality.
 
 F225 additionally accepts an entire 668-byte character-selection constructor (185 native instructions) with actual vtable, three separately allocated texture managers, two deleting destructors, two real configuration loops, and 38 relocation fields. Its first full probe used mistaken pointer-indirect indexing and emitted 677 bytes; the verified this-relative byte arrays restore exact native 668 bytes. The base-scene constructor remains R108 origin-unknown and uncredited.
@@ -88,7 +89,7 @@ F226 adds an entire 1,005-byte replay-browser selection state machine. A natural
 
 F227/F228 independently cold-replay 6 additional authored units (4 fighter routines, 2 large character-select controllers) for 2,722 more CODE bytes. Two 120-byte factory functions reconstruct genuine EH-backed `new(232)` and individual constructors; two round resets retain character-specific field order. `UpdatePlayerChoice` 1,029 bytes, 245 instructions, and 32 fields; `UpdatePlayerConfirmation` 995 bytes, 242 instructions, and 34 fields. Both include real x87, input and stage transitions. Their unfinished dirty source and unit evidence were investigated and completed, not discarded.
 
-F229 adds the complete 1,442-byte R044 authored scene advancement state machine and its nine-entry 36-byte owned dispatch table. A first natural source emitted 1,429 CODE bytes plus table, but its branch and indexing shapes differed. Correct typed 0x48-stride input frames, true opposite-player indexing and native-first cancel/action dispatch ordering restore 1,442 CODE bytes, 1174/1174 comparable bytes and all 76 physical relocations over the 1,478-byte full comparison extent. Only `character-select-scene-advance-00433470` was cold-replayed, exact. **Do not credit jump-table bytes as CODE.** The nearby `UpdateCancelAnimation` at `00435870` remains **unaccepted** (497-byte object, 438/445 comparable bytes; x87 FLD order mismatch), with all negative natural-source variants retained under `.analysis/f229-character-select/` and `.analysis/f230-selection-helpers/` and `.analysis/f231-replay-scan/`, `.analysis/f232-append-scope/`, `.analysis/f233-record-scope/`, `.analysis/f234-music-select/` and `.analysis/f235-music-render/`, `.analysis/f236-music-catalog/` and `.analysis/f238-result-page/` (F238 and F239), and `.analysis/f240-result-render/` and `.analysis/f241-result-digits/`.
+F229 adds the complete 1,442-byte R044 authored scene advancement state machine and its nine-entry 36-byte owned dispatch table. A first natural source emitted 1,429 CODE bytes plus table, but its branch and indexing shapes differed. Correct typed 0x48-stride input frames, true opposite-player indexing and native-first cancel/action dispatch ordering restore 1,442 CODE bytes, 1174/1174 comparable bytes and all 76 physical relocations over the 1,478-byte full comparison extent. Only `character-select-scene-advance-00433470` was cold-replayed, exact. **Do not credit jump-table bytes as CODE.** The nearby `UpdateCancelAnimation` at `00435870` remains **unaccepted** (497-byte object, 438/445 comparable bytes; x87 FLD order mismatch), with all negative natural-source variants retained under `.analysis/f229-character-select/` and `.analysis/f230-selection-helpers/` and `.analysis/f231-replay-scan/`, `.analysis/f232-append-scope/`, `.analysis/f233-record-scope/`, `.analysis/f234-music-select/` and `.analysis/f235-music-render/`, `.analysis/f236-music-catalog/` and `.analysis/f238-result-page/` (F238 and F239), and `.analysis/f240-result-render/` and `.analysis/f241-result-digits/` and `.analysis/f242-transition/`.
 
 F230 accepts the two real selection-state callees used by F229: 404-byte `ProcessPlayerOptions` (111 native instructions, 18 relocations) and 264-byte `ProcessSubselection` (70 native instructions, 16 relocations). The second compiled exact on the first natural source; the first required preserving native 32-bit boolean-toggle lowering (`flag ? 0 : 1` instead of `!flag`). Both were independently cold-replayed and earned 668 new authored CODE bytes. Call target `00438A60` retains its separate unknown origin and receives no matching credit.
 
@@ -106,14 +107,16 @@ F238 cold-replays the entire `ResultScene::BuildCounterPage` at `00431350` (664 
 
 F239 also cold-replays the adjacent **721-byte `ResultScene::BuildRecordPage`** (174 x86 instructions, 26 genuine COFF fields) with 617/617 native non-field bytes. It reads the original selected result record and signed 10-row page window, checks the real deque size and accesses original per-entry names, formats both absent/present record paths, and passes a genuine 2000-byte concatenation buffer through the shared 56-byte glyph and D3D8 texture lifecycle. Its first natural whole C++ source matches without guessed padding, and only `--unit result-scene-build-record-page-00431070` was cold replayed.
 
-F240 newly cold-replays the complete **1,344-byte `ResultScene::RenderCounters` boss** (320 instructions, 44 genuine COFF fields), 1168/1168 nonrelocation bytes. The 132-byte SpriteQuad is the existing independently reconstructed physical owner; the 16-byte RECT must live in a meaningful inner C++ scope to restore actual stack offsets -0x88/-0x98. Native `ScaleQuad` receives three raw IEEE754 DWORD patterns, so a call-only facade preserving float bits emits real MOV/PUSH instead of extra x87 temporaries. The last x87 4-byte discrepancy is resolved by a directly observed `this+0x14` float field: compiler naturally loads the 255.0f target global first then multiplies the member. All 6 digit draws, D3D8 mode calls, quad transform, frame capture, selection, actor and EndFrame calls match. Only F240 was cold replayed; its external callees are not separately credited. Research is in `.analysis/f240-result-render/` and `.analysis/f241-result-digits/`.
+F240 newly cold-replays the complete **1,344-byte `ResultScene::RenderCounters` boss** (320 instructions, 44 genuine COFF fields), 1168/1168 nonrelocation bytes. The 132-byte SpriteQuad is the existing independently reconstructed physical owner; the 16-byte RECT must live in a meaningful inner C++ scope to restore actual stack offsets -0x88/-0x98. Native `ScaleQuad` receives three raw IEEE754 DWORD patterns, so a call-only facade preserving float bits emits real MOV/PUSH instead of extra x87 temporaries. The last x87 4-byte discrepancy is resolved by a directly observed `this+0x14` float field: compiler naturally loads the 255.0f target global first then multiplies the member. All 6 digit draws, D3D8 mode calls, quad transform, frame capture, selection, actor and EndFrame calls match. Only F240 was cold replayed; its external callees are not separately credited. Research is in `.analysis/f240-result-render/` and `.analysis/f241-result-digits/` and `.analysis/f242-transition/`.
 
 F241 independently cold-accepts the complete **423-byte `ResultScene::DrawDecimalDigits`** that F240 calls six times (127 x86 instructions, 9 native relocations, 387/387 comparable bytes). It preserves true signed decimal quotient/remainder loops for fixed and variable digit counts, separate 16/15px left shifts, 20px atlas row stride and entire RET 0x18. The first ordinary source emitted 459 bytes and put its real number in a different stack slot. Nested meaningful number/132-byte quad/RECT lifetimes restore EBP-4, -0x90, and -0xA0, and native 423 bytes exactly. Only the F241 unit was cold-replayed, not all existing units. Its own main caller's bytes are not double-counted.
+
+F242 cold-accepts the original entire **663-byte `SceneTransition::DispatchMode`** controller at `00431F60`, 157 native instructions, 27 real relocation fields, 555/555 nonfield bytes. The original `RET 4`, signed transition countdown, mode remapping, two sparse switch decision trees and all six independently accepted callback targets are preserved; previous natural source emitted 674 bytes due to wrong switch-case lexical order and JZ/JLE lowering. Reordering only actual original cases and expressing positive nibble guards reproduces the full 663 bytes. Only this affected unit was cold replayed. Full proof and failed first natural source are under `.analysis/f242-transition/`.
 
 Relevant full native proofs: `config/match-units.toml`,
 `config/exact-adoptions.json`, sources `src/*F222.cpp`/`src/*F223.cpp`,
 and `docs/KNOWLEDGE_BASE.md`. The cold-replay logs are private in
-`.analysis/f222-marisa-reset/`, `.analysis/f223-fighter-ctors/`, and `.analysis/f224-youmu-lifecycle/`, and `.analysis/f225-big-functions/` and `.analysis/f226-replay-browser/`, `.analysis/f227-fighter-recovery/`, `.analysis/f226-player-choice/` and `.analysis/f228-confirmation/` and `.analysis/f229-character-select/` and `.analysis/f230-selection-helpers/` and `.analysis/f231-replay-scan/`, `.analysis/f232-append-scope/`, `.analysis/f233-record-scope/`, `.analysis/f234-music-select/` and `.analysis/f235-music-render/`, `.analysis/f236-music-catalog/` and `.analysis/f238-result-page/` (F238 and F239), and `.analysis/f240-result-render/` and `.analysis/f241-result-digits/`.
+`.analysis/f222-marisa-reset/`, `.analysis/f223-fighter-ctors/`, and `.analysis/f224-youmu-lifecycle/`, and `.analysis/f225-big-functions/` and `.analysis/f226-replay-browser/`, `.analysis/f227-fighter-recovery/`, `.analysis/f226-player-choice/` and `.analysis/f228-confirmation/` and `.analysis/f229-character-select/` and `.analysis/f230-selection-helpers/` and `.analysis/f231-replay-scan/`, `.analysis/f232-append-scope/`, `.analysis/f233-record-scope/`, `.analysis/f234-music-select/` and `.analysis/f235-music-render/`, `.analysis/f236-music-catalog/` and `.analysis/f238-result-page/` (F238 and F239), and `.analysis/f240-result-render/` and `.analysis/f241-result-digits/` and `.analysis/f242-transition/`.
 Earlier accepted functions remain in the canonical ledgers. **Do not run any all-unit cold replay**; user explicitly requires only newly changed/affected units. Keep builds serialized/headless.
 
 ## 3. Unsolved **large** functions — recommended next work

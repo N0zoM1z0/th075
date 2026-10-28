@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "0ef38b6fb06188a47e457b53719b31c088cc83ac2a8c2febeb81122a3db2964a"
+      "current_sha256": "b82c1164089f0f5a77ba5ff18fc6455cf706972b8a869855ffb01bc4f0c0b027"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "a3076e491fa0582c8412c1a3b6c5640fd050c51eaabab5a059bbf314bb264e9a"
+      "current_sha256": "c25d44aa20a4f8ab5a17fab5c95a5988af2c92414309a410d88fb5d064a2ef87"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "6eecad3b70bffc1c26e739a445d247b29391498f29bd73ab9b9251eec6eeeb42"
+      "current_sha256": "682e682092b37e48b0a0cc97382c2e39b1541bd9862b725d3e540c629a167f5b"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "8fe876315cb99cfca358018cb2313c4236966ba46f731966f5dc3a651c9000d0"
+      "current_sha256": "ffed24280477836af83d7aa15b5b9f41c92de898acd8e465cc9ef8feb1386fcc"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "f4b7c032f8e9922f6094e1192e42a5c1aa38988cd1531b294d3b232fb4009479"
+      "current_sha256": "c1f088c67b2005279d17d810252e65f7fdb20c228bdce2a9c8b7bd8403ff9ec0"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -21820,6 +21820,50 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R040"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00431F60",
+        "size": "663",
+        "span_end": "0x004321F6",
+        "current_name": "FUN_00431f60",
+        "proposed_name": "SceneTransition::DispatchMode",
+        "module": "SceneTransition",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R041; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00431F60",
+        "size": "663",
+        "span_end": "0x004321F6",
+        "current_name": "FUN_00431f60",
+        "proposed_name": "SceneTransition::DispatchMode",
+        "module": "SceneTransition",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "unsigned short TransitionDispatcherF242::DispatchMode(unsigned short)",
+        "is_thunk": "false",
+        "source_file": "src/SceneTransitionDispatchF242.cpp",
+        "evidence": "R041; full body hash, complete decoded CFG and local game-specific behavior reviewed; F242; scripts/repo-python scripts/replay-exact-units.py --unit scene-transition-dispatch-mode-00431f60",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F242: the original 663 complete authored CODE bytes /157 native x86 instructions from 00431F60..004321F6, SHA256 c2548722489fb02941d2068f23f8b9a512fddbc1a373318b88f60b61fb1465c7, original RET 4. Natural VC7.1 /Od /GX- cold exact with 555/555 non-relocation bytes and 27 true COFF DIR32/REL32 fields including transition frame global 0066C240, real remap flag 006714D2, six independent accepted graphical transition callback entries 00432360,00432200,004324D0,00432410,004322B0,00432660, native callback setter 004028A0, and presentation 004028F0. Ordinary double switch of low and high mode nibble with native sparse case order produces the exact binary search decision tree and every callback. Correct mode>0 bit-mask expressions reproduce the native JLE branches versus initial JZ. Initial natural code emitted 674 bytes due to lexically wrong case-body ordering; reordering actual case branches restored the original 663 bytes and all native switch/body/epilogue semantics. Real slot-two virtual draw dispatch and frame countdown are preserved; the nominal complete scene class layout remains unknown. No stubbed mask, ASM, fake locals, inline target bytes, cropped code, shared callee code credit or full cold replay. R041 authored origin independent of names, 97 unknown origins preserved; local exact not external Oracle."
+      },
+      "origin": {
+        "address": "0x00431F60",
+        "origin": "authored",
+        "subsystem": "SceneTransition",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R041"
       }
     }
   ],
@@ -169588,6 +169632,191 @@
           "target": 4265216
         }
       ]
+    },
+    "scene-transition-dispatch-mode-00431f60": {
+      "source": "src/SceneTransitionDispatchF242.cpp",
+      "object": "build/matching/SceneTransitionDispatchF242.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "SceneTransition::DispatchMode"
+      ],
+      "symbol": "?DispatchMode@TransitionDispatcherF242@@QAEGG@Z",
+      "target_address": 4398944,
+      "size": 663,
+      "relocations": [
+        {
+          "offset": 11,
+          "type": "DIR32",
+          "symbol": "?g_TransitionCountAt0066C240@@3HA",
+          "target": 6734400
+        },
+        {
+          "offset": 25,
+          "type": "DIR32",
+          "symbol": "?g_TransitionRemapAt006714D2@@3EA",
+          "target": 6755538
+        },
+        {
+          "offset": 212,
+          "type": "DIR32",
+          "symbol": "?g_TransitionCountAt0066C240@@3HA",
+          "target": 6734400
+        },
+        {
+          "offset": 221,
+          "type": "DIR32",
+          "symbol": "?RenderTransitionGroupF242@@YAXPAPAUIDirect3DTexture8@@@Z",
+          "target": 4399968
+        },
+        {
+          "offset": 226,
+          "type": "REL32",
+          "symbol": "?SetCallback@ScenePresentationF242@@YAXP6AXPAPAUIDirect3DTexture8@@@Z@Z",
+          "target": 4204704
+        },
+        {
+          "offset": 251,
+          "type": "DIR32",
+          "symbol": "?g_TransitionCountAt0066C240@@3HA",
+          "target": 6734400
+        },
+        {
+          "offset": 260,
+          "type": "DIR32",
+          "symbol": "?RenderTransition100F242@@YAXPAPAUIDirect3DTexture8@@@Z",
+          "target": 4399616
+        },
+        {
+          "offset": 265,
+          "type": "REL32",
+          "symbol": "?SetCallback@ScenePresentationF242@@YAXP6AXPAPAUIDirect3DTexture8@@@Z@Z",
+          "target": 4204704
+        },
+        {
+          "offset": 290,
+          "type": "DIR32",
+          "symbol": "?g_TransitionCountAt0066C240@@3HA",
+          "target": 6734400
+        },
+        {
+          "offset": 299,
+          "type": "DIR32",
+          "symbol": "?RenderTransition300F242@@YAXPAPAUIDirect3DTexture8@@@Z",
+          "target": 4400336
+        },
+        {
+          "offset": 304,
+          "type": "REL32",
+          "symbol": "?SetCallback@ScenePresentationF242@@YAXP6AXPAPAUIDirect3DTexture8@@@Z@Z",
+          "target": 4204704
+        },
+        {
+          "offset": 329,
+          "type": "DIR32",
+          "symbol": "?g_TransitionCountAt0066C240@@3HA",
+          "target": 6734400
+        },
+        {
+          "offset": 345,
+          "type": "DIR32",
+          "symbol": "?g_TransitionRemapAt006714D2@@3EA",
+          "target": 6755538
+        },
+        {
+          "offset": 460,
+          "type": "DIR32",
+          "symbol": "?g_TransitionCountAt0066C240@@3HA",
+          "target": 6734400
+        },
+        {
+          "offset": 469,
+          "type": "DIR32",
+          "symbol": "?RenderTransition2000F242@@YAXPAPAUIDirect3DTexture8@@@Z",
+          "target": 4400144
+        },
+        {
+          "offset": 474,
+          "type": "REL32",
+          "symbol": "?SetCallback@ScenePresentationF242@@YAXP6AXPAPAUIDirect3DTexture8@@@Z@Z",
+          "target": 4204704
+        },
+        {
+          "offset": 496,
+          "type": "DIR32",
+          "symbol": "?g_TransitionCountAt0066C240@@3HA",
+          "target": 6734400
+        },
+        {
+          "offset": 505,
+          "type": "DIR32",
+          "symbol": "?RenderTransition1000F242@@YAXPAPAUIDirect3DTexture8@@@Z",
+          "target": 4399792
+        },
+        {
+          "offset": 510,
+          "type": "REL32",
+          "symbol": "?SetCallback@ScenePresentationF242@@YAXP6AXPAPAUIDirect3DTexture8@@@Z@Z",
+          "target": 4204704
+        },
+        {
+          "offset": 532,
+          "type": "DIR32",
+          "symbol": "?g_TransitionCountAt0066C240@@3HA",
+          "target": 6734400
+        },
+        {
+          "offset": 541,
+          "type": "DIR32",
+          "symbol": "?RenderTransition3000F242@@YAXPAPAUIDirect3DTexture8@@@Z",
+          "target": 4400736
+        },
+        {
+          "offset": 546,
+          "type": "REL32",
+          "symbol": "?SetCallback@ScenePresentationF242@@YAXP6AXPAPAUIDirect3DTexture8@@@Z@Z",
+          "target": 4204704
+        },
+        {
+          "offset": 568,
+          "type": "DIR32",
+          "symbol": "?g_TransitionCountAt0066C240@@3HA",
+          "target": 6734400
+        },
+        {
+          "offset": 590,
+          "type": "REL32",
+          "symbol": "?Present@ScenePresentationF242@@YAXXZ",
+          "target": 4204784
+        },
+        {
+          "offset": 595,
+          "type": "DIR32",
+          "symbol": "?g_TransitionCountAt0066C240@@3HA",
+          "target": 6734400
+        },
+        {
+          "offset": 603,
+          "type": "DIR32",
+          "symbol": "?g_TransitionCountAt0066C240@@3HA",
+          "target": 6734400
+        },
+        {
+          "offset": 612,
+          "type": "REL32",
+          "symbol": "?SetCallback@ScenePresentationF242@@YAXP6AXPAPAUIDirect3DTexture8@@@Z@Z",
+          "target": 4204704
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -169920,6 +170149,7 @@
     "src/ResultCounterF238.cpp": "7f3459e1255f12f323ad443e32332c382a411e1a476e83c0eba095b12b922565",
     "src/ResultRecordF239.cpp": "9debc53f3faa65778ca720c1acc0182440e915a4a11b077816719d41a4d2ac6c",
     "src/ResultRendererF240.cpp": "97aa163eb3644cff341563d880a3df205cd23dab60a00060b30a45b7f0b31243",
-    "src/ResultDigitsF241.cpp": "c27048e5cbf7ed9087e69eac48b0856d5d4c8397afbcd7fc9f71920cee479fcb"
+    "src/ResultDigitsF241.cpp": "c27048e5cbf7ed9087e69eac48b0856d5d4c8397afbcd7fc9f71920cee479fcb",
+    "src/SceneTransitionDispatchF242.cpp": "b803b6c3b3a49ac2d9e4272bc0fa297dfb7a8a315ea5257932f9b6fef4c130d7"
   }
 }

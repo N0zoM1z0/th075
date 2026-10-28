@@ -1478,3 +1478,44 @@ layouts, fake locals, assembly, masked relocation targets, cropping,
 all-unit cold replay or external Oracle receipt was used. The 97
 origin-unknown functions and previously accepted F240 source remain
 unchanged.
+
+
+## F242: complete double-nibble scene-transition state machine, exact 663 bytes
+
+R041 independently reviews `SceneTransition::DispatchMode` at
+`00431F60..004321F6` as authored. The native whole function contains
+**663 original CODE bytes, 157 decoded x86 instructions and genuine RET 4**,
+SHA256 `c2548722489fb02941d2068f23f8b9a512fddbc1a373318b88f60b61fb1465c7`.
+The ordinary VC7.1 `/Od /GX-` source
+`src/SceneTransitionDispatchF242.cpp` faithfully reconstructs the signed
+32-bit fade countdown at `0066C240`, game-default mode-remap flag at
+`006714D2`, two distinct 0x0F00/0xF000 sparse switch trees, physical
+virtual slot-two drawing, Presentation callbacks `004028A0` and
+`004028F0`, and the unmodified 16-bit scene-state return. The six actual
+callback values `00432360`, `00432200`, `004324D0`, `00432410`,
+`004322B0`, `00432660` are **previously accepted authored draw functions**
+and receive no new separate CODE credit from this caller.
+
+The first natural code had full logic but emitted **674 rather than 663
+bytes**. Independent instruction alignment proved the original code body
+order is grouped 0x200/0x400/0x500/0x600/0x700, then 0x100, 0x300,
+0xF00, and *only then* case zero with its subordinate high-nibble tree.
+The native high tree is grouped 0x2000/0x6000, then 0x1000, 0x3000
+and 0xF000. MSVC preserves lexical body ordering while choosing the
+identical original sparse compare decision tree. Replacing a zero-check
+with an actual positive masked-value test generates the original signed
+`JLE` branch rather than `JZ`. Ordinary source compilation then gives
+**663/663 full code, 555/555 comparable nonfield bytes and every one
+of 27 real COFF relocation fields**. The single-affected-unit replay
+`--unit scene-transition-dispatch-mode-00431f60` independently reports
+**exact: 663**; no broad cold replay ran.
+
+The nominal parent class name and full scene object fields are not
+proven, and the virtual interface is used only as an existing borrowed
+receiver; all existing origin unknowns remain unknown. The original
+Ghidra listing, full native SHA, both natural C++ versions, byte
+comparison and cold log remain under `.analysis/f242-transition/`.
+`tests/test_scene_transition_dispatch_f242.py` pins native SHA, the
+masking conditions, all original fields/callbacks and source SHA.
+No masks, fake locals, omitted branches, machine-byte copying, invented
+owner sizeof, extra callee credit or external Oracle claim.

@@ -536,3 +536,4 @@ address,name,module,confidence,evidence
 0x00431070,ResultScene::BuildRecordPage,ResultScene,inferred,F239; whole 721-byte native result page builder and all 26 physical relocations cold exact; scene/record deque nominal layouts provisional
 0x0042EF10,ResultScene::RenderCounters,ResultScene,inferred,F240; original full 1344-byte renderer (320 x86 instructions) and all 44 physical relocations cold exact; complete scene and graphics parent layout unknown
 0x0042F530,ResultScene::DrawDecimalDigits,ResultScene,inferred,F241; entire native 423-byte two-mode digit painter and all 9 true relocation fields cold exact; original scene/drawing class types provisional
+0x00431F60,SceneTransition::DispatchMode,SceneTransition,inferred,F242; native complete 663-byte two-level transition dispatch and all 27 physical relocations cold exact; parent scene/graphics nominal ownership unknown
