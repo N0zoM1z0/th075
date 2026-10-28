@@ -551,3 +551,4 @@ address,name,module,confidence,evidence
 0x00431D60,CardList::EncodeCharacterFile,CardList,inferred,F252; independently whole 432-byte cold exact with 15 real COFF relocation fields; nominal parent layout unproven
 0x00430EE0,ResultScene::LoadSelectedCharacterResources,ResultScene,inferred,"F256; whole 398-byte native resource loader, all 20 COFF fields cold exact; original complete scene and texture class ownership unknown"
 0x00427300,MusicRoom::EncodeCatalogFileAt00427300,MusicRoom,inferred,F257; entire 298-byte native catalog CSV encoder and all 11 authentic COFF fields cold exact; full original scene/owner layout unknown
+0x00426DD0,MusicRoom::LoadCatalogAt00426DD0,MusicRoom,inferred,"F258; 916 original CODE + 16-byte owned dispatch table, all 18 physical relocation fields cold exact; full MusicRoom ABI unproven"

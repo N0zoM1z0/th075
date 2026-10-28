@@ -1,4 +1,4 @@
-# TH075 — active reconstruction handoff (F257)
+# TH075 — active reconstruction handoff (F258)
 
 **Updated 2026-10-28. Read this document before new experiments.**
 
@@ -22,17 +22,17 @@ not acceptance requirements.
 
 | Item | Current evidence |
 | --- | --- |
-| Local branch / last exact-code commit | `main` / F256 and F257 independent local acceptance; prior F252/F253 `184e923` |
+| Local branch / last exact-code commit | `main` / F258 independent boss acceptance; prior F256/F257 checkpoint `e152247` |
 | Upstream | `origin/main` tracked locally; verify current ahead/behind and dirty state before further work |
-| Working tree | Clean after F256/F257 checkpoint if successful; continue rather than avoid every existing dirty edit |
+| Working tree | Clean after F258 checkpoint if successful; continue rather than avoid every existing dirty edit |
 | Native binary | `resources/th075.exe`, SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98` |
 | Candidate count | 4,351; origin review: 1,002 authored, 2,671 library, 581 compiler, 97 unknown |
-| Accepted functions / units | **570 / 570** |
-| Accepted authored CODE | **786,271 bytes** |
-| Reviewed authored coverage | 786,271 / 1,973,516 = **39.84%** |
-| Conservative coverage | **39.77%** counting 3,608 origin-pending bytes |
+| Accepted functions / units | **571 / 571** |
+| Accepted authored CODE | **787,187 bytes** |
+| Reviewed authored coverage | 787,187 / 1,973,516 = **39.89%** |
+| Conservative coverage | **39.81%** counting 3,608 origin-pending bytes |
 | Goal | **98% not reached** |
-| Verification | F256 398-byte result resource loader cold-exact with 20 fields and F257 298-byte music catalog encoder cold-exact with 11 fields; only two affected units replayed, no all-unit cold replay or external Oracle acceptance |
+| Verification | F258 entire 916-byte MusicRoom catalog loader and owned 16-byte jump table cold-exact with all 18 native fields. F256/F257 independently cold exact in prior `e152247`; only F258 cold-replayed at this checkpoint. No all-unit replay or external Oracle acceptance |
 
 **Recheck the actual live status immediately**. Local commits are checkpoints,
 not evidence of a remote push or external Oracle acceptance. Earlier Git
@@ -97,6 +97,7 @@ inert variable or arbitrary padding may earn exact credit.
 | F253: ResultScene::DrawCounter | `004315F0` | 377 | 9 |
 | F256: ResultScene::LoadSelectedCharacterResources | `00430EE0` | 398 | 20 |
 | F257: MusicRoom::EncodeCatalogFile | `00427300` | 298 | 11 |
+| F258: MusicRoom::LoadCatalog | `00426DD0` | 916 (+16 table) | 18 |
 
 F222 proved signed 32-bit x87 `FILD` divided by the target's 36.0f
 (`00659308`), 74 physical animation records and a final call into the
@@ -125,7 +126,7 @@ F234 cold-accepts the complete 675-byte `MusicRoomScene::UpdateSelection` (179 n
 
 F235 independently cold-replays the two complete music-room text rasterization calls with native EH, GS, 56-byte glyph allocation, D3D8 LockRect/UnlockRect, and all physical fields: `RenderTrackCatalogText` 555 CODE/136 instructions/21 relocs, `RenderSelectedTitle` 452 CODE/114 instructions/16 relocs. The catalog was cold exact with the first natural source (471/471 comparable bytes). The selected-title first source emitted the exact 452 length but used a wrongly inferred 308-byte local message buffer; original stack/frame measurements prove 300 bytes, fixing all 30 stack operand differences and yielding 388/388 and cold exact. Only the two F235 units were rebuilt. The original glyph class layout remains inferred and caller contexts are call-only.
 
-F236 independently re-checked the 916-byte `MusicRoom::LoadCatalog` boss function and its separately owned 16-byte jump table. Correcting the signed-digit `while` shape and genuine final free-pointer alias yields the correct 932-byte whole comparison size, with 18 resolved fields, but still only 731/860 non-field bytes matched. Tested real variable declaration hoists and preserved every negative result at `.analysis/f236-music-catalog/`. This function **remains unaccepted** and receives no byte credit.
+F236 independently re-checked the 916-byte `MusicRoom::LoadCatalog` boss function and its separately owned 16-byte jump table. Correcting the signed-digit `while` shape and genuine final free-pointer alias yields the correct 932-byte whole comparison size, with 18 resolved fields, but still only 731/860 non-field bytes matched. Tested real variable declaration hoists and preserved every negative result at `.analysis/f236-music-catalog/`. This function was unaccepted at F236 and received no byte credit at that point; F258 subsequently cold-accepted the entire function.
 
 F238 cold-replays the entire `ResultScene::BuildCounterPage` at `00431350` (664 CODE bytes, 167 native instructions, 30 true relocations). The first source emitted 670 bytes despite matching the native frame size, because VC7 placed the real D3DLOCKED_RECT and 200-byte sprintf buffer in the wrong stack slots. Native-faithful nested scopes (outer locked rect, middle 200-byte line, inner 500-byte message) produce all 544/544 comparable bytes, original EH/GS paths and cold exact. Only `--unit result-scene-build-counter-page-00431350` was cold replayed.
 
@@ -159,7 +160,9 @@ F254 investigated the full **1,268-byte `SpriteScene::RenderMirroredNode`**: who
 
 F256 cold-accepted the entire **398-byte `ResultScene::LoadSelectedCharacterResources`**, 91 original x86 instructions, 318/318 comparable non-field bytes and all 20 physical COFF fields. Original destruction is **nonvirtual** at `00425460`, not a vtable dispatch as initially guessed. The native selector is evaluated independently in both special/normal card-list branches; the texture manager genuinely allocates 80 bytes with EH cleanup and loads the original character asset. Only F256 was cold-replayed exact; its encoded-card loading callee at `00431B60` is still unaccepted and uncredited.
 
-F257 independently cold-accepted the complete **298-byte `MusicRoom::EncodeCatalogFile`** at `00427300`, all 100 native instructions, all 254/254 non-relocation bytes and 11/11 real COFF fields. A first full C++ probe had 222/254 comparable bytes due solely to observed stack variable placements. Genuine nested HANDLE, transfer count, file size, buffer, rolling XOR key/delta, index and allocation/free pointer lifetimes restore original local slots, including the native operator new and free transfers. Both `musicroom.csv` read and `musicroom.dat` create/write paths, all real failure branches and original 0x5C/0x5A rolling byte-XOR are preserved. Only `--unit music-room-encode-catalog-file-00427300` was cold-replayed. The separately reviewed 916+16-byte `MusicRoom::LoadCatalog` boss remains nonexact; no bytes from it are credited. Preserve `.analysis/f254-music-file/` (F257 investigation).
+F257 independently cold-accepted the complete **298-byte `MusicRoom::EncodeCatalogFile`** at `00427300`, all 100 native instructions, all 254/254 non-relocation bytes and 11/11 real COFF fields. A first full C++ probe had 222/254 comparable bytes due solely to observed stack variable placements. Genuine nested HANDLE, transfer count, file size, buffer, rolling XOR key/delta, index and allocation/free pointer lifetimes restore original local slots, including the native operator new and free transfers. Both `musicroom.csv` read and `musicroom.dat` create/write paths, all real failure branches and original 0x5C/0x5A rolling byte-XOR are preserved. Only `--unit music-room-encode-catalog-file-00427300` was cold-replayed. The separately reviewed 916+16-byte `MusicRoom::LoadCatalog` boss was nonexact at this point; F258 independently closed and accepted its entire native extent. Preserve `.analysis/f254-music-file/` (F257 investigation).
+
+F258 **cold-accepts the complete 916-byte `MusicRoom::LoadCatalog` boss** at `00426DD0`, with the entire 16-byte four-entry switch table compared separately but not counted as CODE. Ghidra confirms the full `00426DD0..00427163` function and the following physical four-target table `00427164..00427173`. Whole target CODE SHA256 `3df59d06537c81eb8d58af1a193eafdab1035d96204384244e8250b949cf294a`, and full 932-byte SHA256 `1a5816e578f8af00aa4a14dc6ad0b4c0998c7539e5a46985422793cedf9c3017`. Existing F236 scope probe previously matched only 744/860 non-field bytes with an incorrect 0x50-byte stack frame. The F257 independently demonstrated allocator lifetime mechanism led to a new complete native-guided lifetime graph matching 852/860 with the correct native 0x48-byte frame; declaring three *actually used* independent string-allocation pointers restores their real temp slots and the separate final free alias, yielding all **860/860** nonfield bytes and **18/18** original physical relocations, including the full four table destinations. Source is `src/MusicCatalogLoadF258.cpp`; only `--unit music-room-load-catalog-00426dd0` cold-replayed and reported exact. This accepts 916 new authored CODE bytes, not 932. Original complete scene/record/archiver classes and independent external callees remain uncredited; all 97 unknown origins stay unknown. Retain `.analysis/f258-music-catalog-alloc/` and F236 negative probes. No artificial padding, fake returns, masks, byte patches, assembly, cropped bodies or all-unit cold replay.
 
 Relevant full native proofs: `config/match-units.toml`,
 `config/exact-adoptions.json`, sources `src/*F222.cpp`/`src/*F223.cpp`,
@@ -176,12 +179,11 @@ body/owned-table, origin and relocation review before any adoption.
 | --- | ---: | --- | --- |
 | ReplayRecords::AppendRecord `00413DE0` | 1,252 B | Entire emitted size and 50 field positions; best **1,025/1,052** non-field bytes, iterator stack slots still wrong | `.analysis/f219-append-record/` |
 | ReplayRecords::LoadRecord `00413AC0` | 792 B | Entire emitted size, 29 fields, **639/676** non-field bytes; local HANDLE/count slots | `.analysis/f216-archive-record/` |
-| MusicRoom::LoadCatalog `00426DD0` | 916 B CODE + 16 B switch table | F236 complete 932-byte source/control and all 18 field locations, best **744/860** non-field bytes; native 0x48 frame vs emitted 0x50 | `.analysis/f215-music-catalog/`, `.analysis/f236-music-catalog/` |
 | ReplayRecords::FinalizeFile `004138E0` | 375 B | Natural variants 342/372/384/396 B; pointer lifetimes/frame unknown | `.analysis/f218-replay-file/` |
 | BattleScene destructor `0043B0B0` | 248 B | Exact length/flow but 9–11 local-stack field byte differences | `.analysis/f200-battle-dtor/`, `.analysis/f215-battle-release/` |
 | Giant actor control `004AC040` | very large | Full baseline still nonexact; many closed tests, avoid repeating blindly | `.analysis/character-move-4ac040/`, archived knowledge |
 
-F236 independently rechecks native 916+16 extent and four original table destinations; a natural condition-first numeric loop plus real cleanup-pointer lifetime restores the complete 932-byte comparison size and 18 field destinations. Seven meaningful lexical scopes and seven real declaration-order variants did not pass exact; best is 744/860 nonrelocation bytes with mismatched native local slot allocation. No accepted source or CODE credit; retain `.analysis/f236-music-catalog/EXPERIMENTS.md`.
+F236 unsuccessfully rechecked the native 916+16 extent and four original table destinations. Its best 744/860 nonrelocation bytes and 0x50-frame mismatch are a historical negative control, now superseded by independently cold-exact F258. Retain `.analysis/f236-music-catalog/EXPERIMENTS.md` and the successful F258 probes rather than re-running the old scope sweeps.
 
 **Practical approach:** use the now-accepted replay queue and fighter
 lifecycle callees to infer *real* iterator/owner lifetimes. The F219/F216

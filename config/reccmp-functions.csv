@@ -569,3 +569,4 @@ ResultScene::DrawCounter,0x004315F0,function
 CardList::EncodeCharacterFile,0x00431D60,function
 ResultScene::LoadSelectedCharacterResources,0x00430EE0,function
 MusicRoom::EncodeCatalogFileAt00427300,0x00427300,function
+MusicRoom::LoadCatalogAt00426DD0,0x00426DD0,function

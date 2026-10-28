@@ -1942,6 +1942,63 @@ switch-table bytes) also calls operator new and free and has previously been
 blocked by significant incorrect local stack slot allocation, even with
 a correct total code size and 18 relocations. The F257 observation is an
 independently demonstrated compiler scope/temporary-pointer mechanism, **not**
-proof of a corresponding original large-loader declaration layout. Revisit
-that hypothesis against its full original native disassembly, rather than
-transplanting F257's exact source scopes or crediting any of its 916 bytes.
+proof of a corresponding original large-loader declaration layout. This was a provisional lead at F257, **not yet accepted** at that point.
+F258 independently revisited the full native function and later accepted it
+without transplanting F257's exact scope graph as an assumption.
+
+
+## F258: complete 916-byte MusicRoom catalog parser boss plus exact switch table
+
+Target Ghidra read-only boundary `00426DD0..00427163` is 916 bytes, with a
+plain RET at `00427163`. Native CODE SHA256:
+`3df59d06537c81eb8d58af1a193eafdab1035d96204384244e8250b949cf294a`.
+The post-RET `00427164..00427173` is a genuine 16-byte owned four-entry
+switch table targeting `00426F55`, `00426FA6`, `00427020`, `0042709A`.
+Original *complete* 932-byte CODE+table SHA256:
+`1a5816e578f8af00aa4a14dc6ad0b4c0998c7539e5a46985422793cedf9c3017`.
+The four table entries are physically compared and relocated but **not
+credited** as authored CODE; 916 bytes is the entire function credit.
+
+The independently R066-authored function is a true high-level controller:
+archive directory lookup `0041CF00`, entry open `0041D800`, ReadFile,
+byte-XOR decoding with initial key 0x5C and delta 0x5A (delta += 0x3D),
+parser cursor with quoted fields, newline/comma handling, numeric byte
+accumulation, four 16-byte-stride record-column cases, three allocated
+record strings, `memcpy`, and final free. It has 282 original x86
+instructions, 14 actual in-code relocation fields and four table-pointer
+fields. Library and external archive callees are not independently credited.
+
+Independent historical F236 whole C++ candidate emitted correct code and
+table sizes and 18 valid fields but had **744/860** comparable non-field
+bytes, owing to an incorrect 0x50-byte frame and many real stack variables
+in wrong slots. Instead of guessing previous scopes, F258 built a complete
+physical lifetime graph from original signed/unsigned native accesses and
+real variable lifetimes (`HANDLE`, read count, file size, parser cursor,
+quote, column, numeric bounds, string temporaries, decoded-byte buffer and
+free alias). It newly restored the native 0x48-byte frame and **852/860**
+comparable bytes without altering real behavior. Precisely eight residual
+bytes were four real EBP local offsets, each used twice: first three
+string allocations and the final buffer cleanup pointer. Separate
+meaningful C++ variables for all three original `operator new` results
+(`allocatedName`, `allocatedTitle`, `allocatedExtra`), assigned to their
+actual per-column destination fields, reproduced native -0x30, -0x34 and
+-0x38 allocation temporaries and the final -0x3C release alias. One-by-one
+controls improved 852 to 854, two improved to 856, and all three restored
+**860/860** compared bytes in the native **932-byte** comparison extent.
+The exact VC7.1 `/Od /GX- /GS /Gy` probe is preserved in
+`.analysis/f258-music-catalog-alloc/RecordAlloc-all.cpp`, with the original
+negative source, per-variant compiler diagnostics, the fresh Ghidra boundary
+query and relocation compare receipt. The accepted translation unit is
+`src/MusicCatalogLoadF258.cpp`.
+
+Full canonical unit `music-room-load-catalog-00426dd0` declares
+`size = 916` and `compare_size = 932`, covering the complete tail and
+all **18 physical COFF fields** including four owned dispatch entries.
+A new cold rebuild of **only that affected unit** separately reports
+`exact; 916 coverage bytes`, confirming that matching observed C++ structure
+and relocation targets persists without reuse of a previous COFF probe.
+Original full class identities/record layout and naming remain inferred;
+no byte masks, truncated extent, target grafts, artificial stack padding,
+unused locals, fake returns, assembly, or whole-unit replay were used.
+Local Git/VC7.1 cold replay does not establish external Oracle acceptance.
+The 97 unresolved origins remain excluded from authored coverage.

@@ -568,3 +568,4 @@ ResultScene::DrawCounter
 CardList::EncodeCharacterFile
 ResultScene::LoadSelectedCharacterResources
 MusicRoom::EncodeCatalogFileAt00427300
+MusicRoom::LoadCatalogAt00426DD0
