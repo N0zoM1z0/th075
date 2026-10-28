@@ -55083,3 +55083,63 @@ offset = 20
 type = "DIR32"
 symbol = "??_7MeilingObjectF422@@6B@"
 target = 0x0065A04C
+
+
+[units.static-resource-queues-release-close-handle-004136e0]
+source = "src/StaticResourceQueuesDtorF427.cpp"
+object = "build/matching/StaticResourceQueuesDtorF427.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["StaticResourceQueues::ReleaseQueuesAndCloseHandleAt004136E0"]
+symbol = "??1StaticResourceQueueF426@@QAE@XZ"
+target_address = 0x004136E0
+size = 161
+[[units.static-resource-queues-release-close-handle-004136e0.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??1StaticResourceQueueF426@@QAE@XZ"
+target = 0x0065512C
+[[units.static-resource-queues-release-close-handle-004136e0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.static-resource-queues-release-close-handle-004136e0.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.static-resource-queues-release-close-handle-004136e0.relocations]]
+offset = 39
+type = "REL32"
+symbol = "?ReleaseOwnedQueueItems@StaticResourceQueueF426@@QAEXXZ"
+target = 0x00413880
+[[units.static-resource-queues-release-close-handle-004136e0.relocations]]
+offset = 59
+type = "DIR32"
+symbol = "__imp__CloseHandle@4"
+target = 0x00657138
+[[units.static-resource-queues-release-close-handle-004136e0.relocations]]
+offset = 86
+type = "REL32"
+symbol = "??1DwordQueueF426@@QAE@XZ"
+target = 0x00414790
+[[units.static-resource-queues-release-close-handle-004136e0.relocations]]
+offset = 104
+type = "REL32"
+symbol = "??1ByteQueueF426@@QAE@XZ"
+target = 0x004143B0
+[[units.static-resource-queues-release-close-handle-004136e0.relocations]]
+offset = 122
+type = "REL32"
+symbol = "??1WordQueueF426@@QAE@XZ"
+target = 0x004145A0
+[[units.static-resource-queues-release-close-handle-004136e0.relocations]]
+offset = 143
+type = "REL32"
+symbol = "??1ByteQueueF426@@QAE@XZ"
+target = 0x004143B0
+[[units.static-resource-queues-release-close-handle-004136e0.relocations]]
+offset = 153
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000

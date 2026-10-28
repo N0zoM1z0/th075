@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377; F378; F379; F386; F389; F391; F392; F393; F394; F395; F403; F407; F414; F415; F421; F422",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377; F378; F379; F386; F389; F391; F392; F393; F394; F395; F403; F407; F414; F415; F421; F422; F427",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "589b5a862ec5795a7275fe878002d067a1f9b2e0c682c737e4ec7f3f60c20c50"
+      "current_sha256": "d2834e46fafc40b515d050dd94b33247564119dee3f8ceff1dd39bc9ee22942e"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "cfa1b3e1eaa256f4493e3e3d513e22cbe1aae62aa64a06f226e0d2216be78b13"
+      "current_sha256": "ba87305c90274d8e7521f598b8fdbdfc2c9de68fcb6cb645afceb31d2a0a7563"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "19152c0e0ef2c566cffa25f29cd76e743a776e2a331f18818b1921241b20b93f"
+      "current_sha256": "3307d4f67dd9e40fafa1bcb47d20b53e8b96f01f7776083acfa06c8e85bc7063"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "df3d7322c0f7d0723b7671bacd87728961c084a7c0ec5de3fced576712fdc214"
+      "current_sha256": "8dee3ed509e72078e7eb5600f83fcf5eaf0830bc0370ca3dc5c73fe7a2ab4bbb"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "7ef7b250bc77c968eb2d71e7801fc6dfafd2cb3ca92321c362f3d0936b76c732"
+      "current_sha256": "77508ce16d19ea3fba8f97de22ece399c927a2d38af89f9ae24c4150f8ad79ff"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -29960,6 +29960,50 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R050"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004136E0",
+        "size": "161",
+        "span_end": "0x00413780",
+        "current_name": "FUN_004136e0",
+        "proposed_name": "StaticResourceQueues::ReleaseQueuesAndCloseHandleAt004136E0",
+        "module": "StaticResourcePolicy",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R177; config/static-resource-policy-origin-evidence.json; scripts/repo-python scripts/verify-static-resource-policy-origins.py",
+        "owner": "authored",
+        "notes": "Complete explicit post-construction handle initialization, ascending four-queue clear, guarded CloseHandle-and-zero, or pointer deletion loop before automatic reverse destruction. Whole small-layout source controls preserve operation/order differences from generated lifetime code under both exception profiles; no source-byte match is claimed for these four custom target bodies. Complete SDK pointer-vector index/clear/destructor graph is compared through full original R017/R166 and R024/R037/R073/R077 context. Ordinary complete49/31/19/19-byte alternatives are byte-equal; original names/types/private owner layouts remain unknown. Short const getter and 72-byte lifetime child stay unknown. No reconstructed source/private ABI/mapping/exact credit."
+      },
+      "after": {
+        "address": "0x004136E0",
+        "size": "161",
+        "span_end": "0x00413780",
+        "current_name": "FUN_004136e0",
+        "proposed_name": "StaticResourceQueues::ReleaseQueuesAndCloseHandleAt004136E0",
+        "module": "StaticResourcePolicy",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "StaticResourceQueueF426::~StaticResourceQueueF426()",
+        "is_thunk": "false",
+        "source_file": "src/StaticResourceQueuesDtorF427.cpp",
+        "evidence": "R177; config/static-resource-policy-origin-evidence.json; scripts/repo-python scripts/verify-static-resource-policy-origins.py; F427; scripts/repo-python scripts/replay-exact-units.py --unit static-resource-queues-release-close-handle-004136e0",
+        "owner": "authored",
+        "notes": "Complete explicit post-construction handle initialization, ascending four-queue clear, guarded CloseHandle-and-zero, or pointer deletion loop before automatic reverse destruction. Whole small-layout source controls preserve operation/order differences from generated lifetime code under both exception profiles; no source-byte match is claimed for these four custom target bodies. Complete SDK pointer-vector index/clear/destructor graph is compared through full original R017/R166 and R024/R037/R073/R077 context. Ordinary complete49/31/19/19-byte alternatives are byte-equal; original names/types/private owner layouts remain unknown. Short const getter and 72-byte lifetime child stay unknown. No reconstructed source/private ABI/mapping/exact credit.; F427 independently complete R177 native 161-byte original resource-queue aggregate destructor at 0x004136E0..0x00413780, full 42 original x86 instructions, original PE SHA256 af821e67477e837a51bf52b014b54aee9703cd9214fcfd467aee0a716a4c6682. Real `this+0x0` native handle, cleanup `00413880`, guarded original imported CloseHandle 00657138, handle reset, then compiler-managed `/GX` reverse member destruction at this+0x190 (00414790), +0x17C (004143B0), +0x168 (004145A0), +0x154 (004143B0). A source HANDLE& local adds eight nonnative compiler bytes; directly accessing actual member handle in natural C++ keeps original 0x10 frame and genuine EH state 3,2,1,0,-1. Full 161 CODE bytes, 121/121 nonfield bytes, all ten genuine native physical COFF fields/destinations; one-unit affected-only cold 1/1 exact. Correct borrowed queue and Win32 destructor ABIs only; no complete private owner layout or compiler/C++ EH helper/callee CODE double-counted. No byte grafts, assembler, masked or truncated original, full repo cold replay or external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x004136E0",
+        "origin": "authored",
+        "subsystem": "StaticResourcePolicy",
+        "disposition": "authored",
+        "confidence": "complete-explicit-static-resource-policy-and-whole-source-order-controls",
+        "evidence_id": "R177"
       }
     }
   ],
@@ -198673,6 +198717,89 @@
           "target": 6660172
         }
       ]
+    },
+    "static-resource-queues-release-close-handle-004136e0": {
+      "source": "src/StaticResourceQueuesDtorF427.cpp",
+      "object": "build/matching/StaticResourceQueuesDtorF427.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "StaticResourceQueues::ReleaseQueuesAndCloseHandleAt004136E0"
+      ],
+      "symbol": "??1StaticResourceQueueF426@@QAE@XZ",
+      "target_address": 4273888,
+      "size": 161,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??1StaticResourceQueueF426@@QAE@XZ",
+          "target": 6639916
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 39,
+          "type": "REL32",
+          "symbol": "?ReleaseOwnedQueueItems@StaticResourceQueueF426@@QAEXXZ",
+          "target": 4274304
+        },
+        {
+          "offset": 59,
+          "type": "DIR32",
+          "symbol": "__imp__CloseHandle@4",
+          "target": 6648120
+        },
+        {
+          "offset": 86,
+          "type": "REL32",
+          "symbol": "??1DwordQueueF426@@QAE@XZ",
+          "target": 4278160
+        },
+        {
+          "offset": 104,
+          "type": "REL32",
+          "symbol": "??1ByteQueueF426@@QAE@XZ",
+          "target": 4277168
+        },
+        {
+          "offset": 122,
+          "type": "REL32",
+          "symbol": "??1WordQueueF426@@QAE@XZ",
+          "target": 4277664
+        },
+        {
+          "offset": 143,
+          "type": "REL32",
+          "symbol": "??1ByteQueueF426@@QAE@XZ",
+          "target": 4277168
+        },
+        {
+          "offset": 153,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -199127,6 +199254,7 @@
     "src/StaticReplayQueueCtorF414.cpp": "b42a979fcb1d5968e025889f54811c87c56ebaa5a5efe080f7bc1afed799a45a",
     "src/FighterNoticeSetDrawF415.cpp": "c6bf9bf808a6c4fd58b17c72076a82442546a67b3084e107113541cbfe0fb994",
     "src/FighterActionProcessF421.cpp": "7e7c63efc0583b519499a653a315f29b0651ebd49a993f00221e0af49afdc9d8",
-    "src/CharacterObjectConstructorsF422.cpp": "100c6617346f039498b9ab74c9e9b0d33746089f68ac5a6bd3ed25f8b441c465"
+    "src/CharacterObjectConstructorsF422.cpp": "100c6617346f039498b9ab74c9e9b0d33746089f68ac5a6bd3ed25f8b441c465",
+    "src/StaticResourceQueuesDtorF427.cpp": "7801f0737c651cf020ad8f10a3cadd47dbb01e481126fc236b2ecd50cc4fd854"
   }
 }

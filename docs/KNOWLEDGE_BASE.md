@@ -6380,3 +6380,39 @@ exact across 1 compiled object**, crediting exactly **2 × 134 + 9 × 146
 credit, fake byte padding/ASM, target code bytes embedded in source,
 masked relocations, truncated comparison, full cold replay or external
 Oracle acceptance.
+
+
+## F427: full R177 161-byte static queue reverse destructor and CloseHandle policy
+
+The original static replay/resource queue aggregate destructor at
+`004136E0..00413780` is **161 complete original native CODE bytes**,
+**42 native x86 instructions**, original target PE SHA256
+`af821e67477e837a51bf52b014b54aee9703cd9214fcfd467aee0a716a4c6682`.
+Its source-correct behavior first invokes real aggregate-owned cleanup
+`00413880`, then checks its true handle at receiver +0 and calls original
+imported Win32 `CloseHandle` at physical IAT `00657138`, clearing the
+handle. The remaining four 20-byte aggregate members are destroyed in the
+genuine reverse C++ order: +0x190 dword queue destructor `00414790`,
++0x17C byte queue `004143B0`, +0x168 word queue `004145A0`, and +0x154
+byte queue `004143B0`. The whole native VC7.1 `/GX` exception handling
+frame and original state transitions 3,2,1,0,-1 are compiler-produced
+from an actual C++ derived aggregate destructor. That source-side receiver
+interface is only a borrowed offset/size container, **not** a claim to
+the actual private aggregate class layout or queue implementations.
+
+A new original-source-level destructor in
+`src/StaticResourceQueuesDtorF427.cpp` naturally reproduces the full code,
+provided it accesses `*reinterpret_cast<HANDLE*>(this)` directly. A
+seemingly harmless local `HANDLE& handle` introduced an unnecessary pointer
+local, increased the native frame and changed the function to 169 bytes;
+this nonmatching version is retained privately as a negative control.
+All complete **121/121** nonrelocation bytes and **10/10** genuine original
+physical DIR32/REL32 relocations match, including original EH handler,
+three `__except_list` references, four native member-destruction calls,
+the real cleanup callee and physical CloseHandle import. Only the
+`static-resource-queues-release-close-handle-004136e0` unit was rebuilt
+and cold replayed, **1/1 exact**. The neighboring accepted F414 132-byte
+constructor remains separate native CODE credit, whereas its member
+constructors/destructors and Win32 callee code are not double counted.
+No masking, assembler/target-byte graft, fake pad/local, cropped native
+extent, full-project cold replay or external Oracle acceptance.
