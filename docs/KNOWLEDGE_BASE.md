@@ -3988,3 +3988,125 @@ CRT and other helper implementation bytes remain uncredited; no
 assembly, copying target machine bytes, inert padding, masked COFF
 fields or all-unit replay was used. This local checkpoint is not a
 remote Oracle acceptance receipt.
+
+
+## F315: two complete fighter round resets cold-exact (295 + 261 bytes)
+
+Two R050-authored complete game fighter round reset functions were
+independently decoded across their actual original Japanese PE extents:
+
+| Function, native start/end | Original CODE | Native x86 instructions | Nonrelocation bytes | Authentic physical COFF fields | Complete original CODE SHA256 |
+| --- | ---: | ---: | ---: | ---: | --- |
+| YukariFighter::ResetRound `00597500..00597626` | 295 | 55 | 291/291 | 1 (native `00457010`) | `524ad563a04a58001bcc5d56ce3c09a0fd89e28ebd7780758947758b2d67fc8c` |
+| SuikaFighter::ResetRound `005C0C30..005C0D34` | 261 | 49 | 249/249 | 3 (two globals, native `00457010`) | `edc6787d3634e9baaf52dbf596228022973b2c3d081a454bb02a49b30aee8d16` |
+
+Full independent original Ghidra decompilation/native machine code, first
+meaningful complete VC7.1 C++ sources, COFF exact proof and only-two-unit
+serial cold replay receipt are preserved in `.analysis/f315-fighter-round/`;
+final native-faithful C++ sources `src/YukariResetRoundF315.cpp` and
+`src/SuikaResetRoundF315.cpp`. Neither original class has a fabricated
+private layout: the source represents only independently observed game
+16-bit state flags and actual inherited reset call.
+
+Yukari resets 21 separately observed word fields: +0xF00..+0xF1A in
+2-byte native steps, +0xEFA, genuine second write to +0xF0A, +0xF32
+and +0xF30, and +0x512/+0x514/+0x516. It then calls the true
+inherited FighterState::ResetBaseRound `00457010` **before** resetting
+its two other high shorts +0xEFC and +0xEFE. Suika resets original
+words +0xEFC/+0xEFE and +0xF00..+0xF06, +0xEFA, a genuine second
+write to +0xF06, +0xF26, +0xF1C..+0xF24 and shared input statuses
++0x512/+0x514/+0x516. It then sets two actual absolute global
+byte flags at `0066C23A` and `0066C239` to `0xFF`, calls the original
+inherited reset `00457010`, and finally clears original +0xF28 and
++0xF2A. The two global bytes are **not** assumed to be fighter fields,
+and Suika's short assignments are not conflated with Yukari's.
+
+Both were accepted at whole original native boundaries under pinned VC7.1
+`/Od /Ob0 /Gy /GR- /GX- /GS /Zi`: **all 556 original CODE bytes**,
+**540/540** comparable bytes and **4/4 physical COFF relocation fields**.
+Only `yukari-fighter-reset-round-00597500` and
+`suika-fighter-reset-round-005c0c30` were cold rebuilt **together as
+the affected two-unit group**, reporting **2/2 exact**, never a
+full replay. Previously accepted inherited FighterState reset bodies
+are not double counted, nor are 97 origin-unknown candidates, CRT
+or external game implementation bytes. No byte grafting, assembly,
+spurious padding, or Oracle verification is claimed.
+
+### Additional independently reviewed nonexact large bosses
+
+F313 reexamined the **whole 874-byte** `SuikaFighter::UpdateSpecialState`
+`005C3FB0`, **237 original x86 instructions, 20 genuine COFF fields**
+with complete native disassembly and source, including actual random
+projectile spawning, distance-based meter response and game action
+behaviour. The first complete 874-byte source used two side-effect comma
+expressions for shot positions, generating the wrong native argument
+evaluation order and `0x44` frame, only 549/794 nonfield bytes matching.
+Substituting simple genuine C++ expression arguments reproduces the
+real original RTL push/float/Rand interleaving (672/794), then removing
+eight *actually unused*, purely speculative source locals restores the
+original real **0x24 stack frame** and **742/794** nonfield byte matches,
+retaining all 20 physical COFF fields. The remaining mismatch is not
+a missing script path: original `FLD` zero-comparison order and four
+original opponent pointer evaluation/`FSUB` patterns differ from VC7
+source lowering, even though semantic source expressions are equivalent.
+Retain `.analysis/f313-suika-boss/` and `.analysis/f314-suika-shots/`,
+**zero CODE credit until whole exact**; do not use fake temporaries,
+manual x86, masked relocations or target-byte grafting.
+
+F312 reexamined 1,252-byte `ReplayRecords::AppendRecord` using **12
+genuine nested iterator lexical scopes** on the complete source while
+retaining all six observed constructors and 50 native relocations.
+The best original all-functions full-source probe remains **1033/1052**
+nonrelocation bytes; 19 bytes still reflect true different physical
+iterator layouts. No result from the 12 experiments is credited.
+The full 1,766-byte font rasterizer and incomplete two-side Effects
+pruner are likewise retained as independent unaccepted native
+experiments, not included in authored CODE coverage.
+
+
+## F314: four independent whole 211/175/175/235-byte fighter round resets exact
+
+Separate R050-authored full original native CODE functions:
+
+| Character/function | Original native span | Entire CODE bytes | Independent native x86 instructions | Exact comparable bytes | Original COFF fields | Whole native original SHA256 |
+| --- | --- | ---: | ---: | ---: | ---: | --- |
+| PatchouliFighter::ResetRound | `00502340..00502412` | 211 | 41 | 207/207 | 1 | `9f1aeec9014c80d64512c2031507d8af436851db94cd5a6e90d42322b6712d61` |
+| RemiliaFighter::ResetRound | `00551B20..00551BCE` | 175 | 35 | 171/171 | 1 | `6e842229549d57ec86e02d4a7d0c2f18ea039c128abe8a533791d49081936e7c` |
+| YuyukoFighter::ResetRound | `00574290..0057433E` | 175 | 35 | 171/171 | 1 | `628c0ac2f579878379986a9852bc23558a9ab7fd4eb141e280f53ffd951b27e8` |
+| MeilingFighter::ResetRound | `005E21F0..005E22DA` | 235 | 45 | 231/231 | 1 | `8158cc21587aedeb1e6596dc903654f9e330d9a0cd27214a5dcd4740b42f994a` |
+
+These four real game-specific procedures reset **distinct, physical
+original unsigned-short fields** at individually observed FighterState
+offsets in the full native ordering, without replacing them with broad
+memset that would alter the original instruction code. They then invoke
+the original inherited `FighterState::ResetRound` at `00457010`, already
+accepted separately as a whole 1,151-byte parent and never
+double-credited. The native R050 author provenance and entire original
+PE code boundaries are checked for each function; the first full
+natural VC7.1 C++ source for each already reproduced the authentic
+`/Od /Ob0 /Gy /GR- /GX- /GS /Zi` machine code, all nonrelocation byte
+positions and exactly **one authentic REL32 field** to parent reset.
+Original native Ghidra/decompiler/complete source, COFF comparisons
+and 4/4 *affected-only* cold replay are under
+`.analysis/f314-reset-specials/`. Adopted sources
+`src/PatchouliResetF314.cpp`, `src/RemiliaResetF314.cpp`,
+`src/YuyukoResetF314.cpp`, `src/MeilingResetF314.cpp`; all four
+whole original functions earn **796** newly authored CODE bytes,
+without claiming private original FighterState source layout.
+
+The persisted worktree already contained noncommitted F315 Yukari
+(295 bytes, 291/291 nonfield, 1 genuine REL32) and Suika (261 bytes,
+249/249 nonfield, 2 true original global DIR32 and 1 base-reset REL32)
+source/tracking from the same reconstruction workflow. Instead of
+ignoring/abandoning them or rewriting them blindly, independently
+rechecked their complete original native original PE 55/49 instructions
+and hashes, native COFF relocation layout, exact natural C++ source
+bytes and canonical manifest hashes. Their **2/2 exact affected-unit
+cold replay** from `.analysis/f315-fighter-round/` is preserved, as
+are their authored files `src/YukariResetRoundF315.cpp` and
+`src/SuikaResetRoundF315.cpp`. F314 added *only* four other unique
+native functions and tracked them without F315 double-counting.
+Six full originals total **1,352 CODE bytes**: no source
+padding, added dummy locals, inline assembly, byte grafting, masked
+relocations, cropped comparisons, CRT/VC7 authored credit, or full-unit
+cold replay. This local Git checkpoint is not an external Oracle receipt.

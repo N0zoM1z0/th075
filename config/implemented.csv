@@ -621,3 +621,9 @@ ReimuFighter::Initialize
 MeilingFighter::Initialize
 RemiliaFighter::Initialize
 YuyukoFighter::Initialize
+YukariFighter::ResetRound
+SuikaFighter::ResetRound
+PatchouliFighter::ResetRound
+RemiliaFighter::ResetRound
+YuyukoFighter::ResetRound
+MeilingFighter::ResetRound

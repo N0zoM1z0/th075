@@ -45256,3 +45256,97 @@ offset = 120
 type = "REL32"
 symbol = "_strcpy"
 target = 0x00641B80
+
+[units.yukari-fighter-reset-round-00597500]
+source = "src/YukariResetRoundF315.cpp"
+object = "build/matching/YukariResetRoundF315.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["YukariFighter::ResetRound"]
+symbol = "?ResetRound@YukariRoundF315@@QAEXXZ"
+target_address = 0x00597500
+size = 295
+[[units.yukari-fighter-reset-round-00597500.relocations]]
+offset = 263
+type = "REL32"
+symbol = "?ResetBaseRound@YukariRoundF315@@QAEXXZ"
+target = 0x00457010
+
+[units.suika-fighter-reset-round-005c0c30]
+source = "src/SuikaResetRoundF315.cpp"
+object = "build/matching/SuikaResetRoundF315.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["SuikaFighter::ResetRound"]
+symbol = "?ResetRound@SuikaRoundF315@@QAEXXZ"
+target_address = 0x005C0C30
+size = 261
+[[units.suika-fighter-reset-round-005c0c30.relocations]]
+offset = 213
+type = "DIR32"
+symbol = "?g_SuikaGlobalMarkerAt0066C23A@@3EA"
+target = 0x0066C23A
+[[units.suika-fighter-reset-round-005c0c30.relocations]]
+offset = 220
+type = "DIR32"
+symbol = "?g_SuikaGlobalModeAt0066C239@@3EA"
+target = 0x0066C239
+[[units.suika-fighter-reset-round-005c0c30.relocations]]
+offset = 229
+type = "REL32"
+symbol = "?ResetBaseRound@SuikaRoundF315@@QAEXXZ"
+target = 0x00457010
+
+[units.patchouli-fighter-reset-round-00502340]
+source = "src/PatchouliResetF314.cpp"
+object = "build/matching/PatchouliResetF314.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["PatchouliFighter::ResetRound"]
+symbol = "?ResetRound@PatchouliRoundF314@@QAEXXZ"
+target_address = 0x00502340
+size = 211
+[[units.patchouli-fighter-reset-round-00502340.relocations]]
+offset = 203
+type = "REL32"
+symbol = "?ResetRound@FighterBaseActionsF159@@QAEXXZ"
+target = 0x00457010
+
+[units.remilia-fighter-reset-round-00551b20]
+source = "src/RemiliaResetF314.cpp"
+object = "build/matching/RemiliaResetF314.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["RemiliaFighter::ResetRound"]
+symbol = "?ResetRound@RemiliaRoundF314@@QAEXXZ"
+target_address = 0x00551B20
+size = 175
+[[units.remilia-fighter-reset-round-00551b20.relocations]]
+offset = 167
+type = "REL32"
+symbol = "?ResetRound@FighterBaseActionsF159@@QAEXXZ"
+target = 0x00457010
+
+[units.yuyuko-fighter-reset-round-00574290]
+source = "src/YuyukoResetF314.cpp"
+object = "build/matching/YuyukoResetF314.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["YuyukoFighter::ResetRound"]
+symbol = "?ResetRound@YuyukoRoundF314@@QAEXXZ"
+target_address = 0x00574290
+size = 175
+[[units.yuyuko-fighter-reset-round-00574290.relocations]]
+offset = 167
+type = "REL32"
+symbol = "?ResetRound@FighterBaseActionsF159@@QAEXXZ"
+target = 0x00457010
+
+[units.meiling-fighter-reset-round-005e21f0]
+source = "src/MeilingResetF314.cpp"
+object = "build/matching/MeilingResetF314.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["MeilingFighter::ResetRound"]
+symbol = "?ResetRound@MeilingRoundF314@@QAEXXZ"
+target_address = 0x005E21F0
+size = 235
+[[units.meiling-fighter-reset-round-005e21f0.relocations]]
+offset = 203
+type = "REL32"
+symbol = "?ResetRound@FighterBaseActionsF159@@QAEXXZ"
+target = 0x00457010

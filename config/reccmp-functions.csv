@@ -622,3 +622,9 @@ ReimuFighter::Initialize,0x0046D080,function
 MeilingFighter::Initialize,0x005E2090,function
 RemiliaFighter::Initialize,0x00551980,function
 YuyukoFighter::Initialize,0x00574100,function
+YukariFighter::ResetRound,0x00597500,function
+SuikaFighter::ResetRound,0x005C0C30,function
+PatchouliFighter::ResetRound,0x00502340,function
+RemiliaFighter::ResetRound,0x00551B20,function
+YuyukoFighter::ResetRound,0x00574290,function
+MeilingFighter::ResetRound,0x005E21F0,function
