@@ -41503,3 +41503,72 @@ offset = 364
 type = "DIR32"
 symbol = "__except_list"
 target = 0x00000000
+
+[units.music-room-scene-release-004258d0]
+source = "src/MusicRoomReleaseF263.cpp"
+object = "build/matching/MusicRoomReleaseF263.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["MusicRoomScene::ReleaseTexturesRecordsAndAudioAt004258D0"]
+symbol = "??1MusicRoomReleaseF263@@UAE@XZ"
+target_address = 0x004258D0
+size = 244
+[[units.music-room-scene-release-004258d0.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??1MusicRoomReleaseF263@@UAE@XZ"
+target = 0x006557E1
+[[units.music-room-scene-release-004258d0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.music-room-scene-release-004258d0.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.music-room-scene-release-004258d0.relocations]]
+offset = 35
+type = "DIR32"
+symbol = "??_7MusicRoomReleaseF263@@6B@"
+target = 0x00657CB0
+[[units.music-room-scene-release-004258d0.relocations]]
+offset = 154
+type = "REL32"
+symbol = "??_GMusicTextureF263@@QAEPAXI@Z"
+target = 0x00425460
+[[units.music-room-scene-release-004258d0.relocations]]
+offset = 171
+type = "REL32"
+symbol = "?Stop@MusicRoomSoundF263@@YAXXZ"
+target = 0x00407D70
+[[units.music-room-scene-release-004258d0.relocations]]
+offset = 178
+type = "REL32"
+symbol = "?ReleasePending@MusicRoomSoundF263@@YAXH@Z"
+target = 0x00419CB0
+[[units.music-room-scene-release-004258d0.relocations]]
+offset = 186
+type = "REL32"
+symbol = "?Reset@MusicRoomSoundF263@@YAXXZ"
+target = 0x00419DF0
+[[units.music-room-scene-release-004258d0.relocations]]
+offset = 195
+type = "DIR32"
+symbol = "??1MusicCatalogRecordF261@@QAE@XZ"
+target = 0x00427470
+[[units.music-room-scene-release-004258d0.relocations]]
+offset = 211
+type = "REL32"
+symbol = "??_M@YGXPAXIHP6EX0@Z@Z"
+target = 0x00641D4A
+[[units.music-room-scene-release-004258d0.relocations]]
+offset = 226
+type = "REL32"
+symbol = "??1MusicBaseSceneF263@@UAE@XZ"
+target = 0x00431F40
+[[units.music-room-scene-release-004258d0.relocations]]
+offset = 236
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000

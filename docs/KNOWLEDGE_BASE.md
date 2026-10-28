@@ -2204,3 +2204,44 @@ byte copying, fake exception frames, assembly, arbitrary padding,
 unproved virtual table reinterpretations, cropping or all-unit replay.
 Private original native listing, source and cold receipt remain under
 `.analysis/f261-music-init/`.
+
+
+## F263: exact full MusicRoom destructor and real COM/record lifetimes
+
+R236-authored `MusicRoomScene::ReleaseTexturesRecordsAndAudioAt004258D0`
+is a full **244-byte** native destructor (`004258D0..004259C3`) with 77
+original decoded x86 instructions and plain RET. Native CODE SHA256:
+`a7845acf43805829124ad1776d22133e05be52feaed5ff72fbd6c4a474be4316`.
+Ghidra read-only function and actual physical instructions were checked
+independently of its provisional name or older R236 source controls.
+
+The genuine routine installs physical scene vtable 00657CB0 and has
+original EH handler 006557E1, then calls the **D3D8 COM Release slot 2**
+on four owned handles at scene+0xC, +0x10, +0x14, +0x18. Their native
+call sequence reads the vtable pointer, pushes the COM `this` and calls
+`[vtable+8]` rather than making an ordinary C++ thiscall, so the natural
+IDirect3DTexture8 `Release()` interface is materially important. It
+then performs the original nonvirtual scalar deleting destructor
+`00425460` on texture pointer scene+8, calls the real game audio
+cleanup services `00407D70`, `00419CB0(40)`, `00419DF0`, and lets
+VC7.1 automatically generate the **60-element, 16-byte stride** array
+destruction on actual `MusicCatalogRecordF261` owned values. The compiler
+uses original `_eh_vector_destructor_iterator_` at `00641D4A` with the
+previously F261 separately cold-exact record destructor at `00427470`.
+Finally the accepted scene base destructor at `00431F40` executes. No
+other routine's authored CODE is double-counted, and the independently
+origin-unknown base constructor remains uncredited.
+
+The first complete native-grounded natural C++ source
+`src/MusicRoomReleaseF263.cpp` generated the entire **244 bytes**, all
+**196/196** original nonrelocated byte positions and **12/12** physical
+COFF relocation offsets/types/native targets under pinned VC7.1 `/Od /GX`.
+The manifest unit `music-room-scene-release-004258d0` was independently
+cold-rebuilt and reported `exact; 244 coverage bytes`, without any
+full-set replay. Its source and original read-only Ghidra/native/COFF
+proof are retained in `.analysis/f263-music-release/`. The observed
+physical scene fields and borrowed interfaces do not prove the complete
+original scene type identity or any incomplete private owner. All 97
+origin-pending functions remain uncredited. No target-byte graft, fake
+stack padding, unknown callback implementation, asm, masked fields or
+truncated machine-code comparison was used.
