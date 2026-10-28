@@ -55173,3 +55173,168 @@ offset = 91
 type = "DIR32"
 symbol = "__imp__ReleaseDC@8"
 target = 0x00657214
+
+
+[units.camera-motion-snap-00412cf0]
+source = "src/CameraMotionSnapF429.cpp"
+object = "build/matching/CameraMotionSnapF429.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["CameraMotion::SnapAt00412CF0"]
+symbol = "?Snap@CameraSnapF429@@YAXXZ"
+target_address = 0x00412CF0
+size = 146
+[[units.camera-motion-snap-00412cf0.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "?g_CameraChooseCurrentAt00671414@@3EA"
+target = 0x00671414
+[[units.camera-motion-snap-00412cf0.relocations]]
+offset = 16
+type = "DIR32"
+symbol = "?g_CameraCurrentXAt006713E8@@3MA"
+target = 0x006713E8
+[[units.camera-motion-snap-00412cf0.relocations]]
+offset = 22
+type = "DIR32"
+symbol = "?g_CameraActualXAt00671404@@3MA"
+target = 0x00671404
+[[units.camera-motion-snap-00412cf0.relocations]]
+offset = 28
+type = "DIR32"
+symbol = "?g_CameraCurrentYAt006713BC@@3MA"
+target = 0x006713BC
+[[units.camera-motion-snap-00412cf0.relocations]]
+offset = 34
+type = "DIR32"
+symbol = "?g_CameraYOffsetAt0065784C@@3MB"
+target = 0x0065784C
+[[units.camera-motion-snap-00412cf0.relocations]]
+offset = 40
+type = "DIR32"
+symbol = "?g_CameraActualYAt006713C4@@3MA"
+target = 0x006713C4
+[[units.camera-motion-snap-00412cf0.relocations]]
+offset = 46
+type = "DIR32"
+symbol = "?g_CameraCurrentXAt006713E8@@3MA"
+target = 0x006713E8
+[[units.camera-motion-snap-00412cf0.relocations]]
+offset = 52
+type = "DIR32"
+symbol = "?g_CameraInitialXAt006713E4@@3MA"
+target = 0x006713E4
+[[units.camera-motion-snap-00412cf0.relocations]]
+offset = 57
+type = "DIR32"
+symbol = "?g_CameraCurrentYAt006713BC@@3MA"
+target = 0x006713BC
+[[units.camera-motion-snap-00412cf0.relocations]]
+offset = 62
+type = "DIR32"
+symbol = "?g_CameraInitialYAt00671408@@3MA"
+target = 0x00671408
+[[units.camera-motion-snap-00412cf0.relocations]]
+offset = 68
+type = "DIR32"
+symbol = "?g_CameraCurrentZAt006713F4@@3MA"
+target = 0x006713F4
+[[units.camera-motion-snap-00412cf0.relocations]]
+offset = 74
+type = "DIR32"
+symbol = "?g_CameraActualZAt006713DC@@3MA"
+target = 0x006713DC
+[[units.camera-motion-snap-00412cf0.relocations]]
+offset = 82
+type = "DIR32"
+symbol = "?g_CameraAlternateXAt006713F0@@3MA"
+target = 0x006713F0
+[[units.camera-motion-snap-00412cf0.relocations]]
+offset = 88
+type = "DIR32"
+symbol = "?g_CameraActualXAt00671404@@3MA"
+target = 0x00671404
+[[units.camera-motion-snap-00412cf0.relocations]]
+offset = 94
+type = "DIR32"
+symbol = "?g_CameraAlternateYAt00671400@@3MA"
+target = 0x00671400
+[[units.camera-motion-snap-00412cf0.relocations]]
+offset = 100
+type = "DIR32"
+symbol = "?g_CameraYOffsetAt0065784C@@3MB"
+target = 0x0065784C
+[[units.camera-motion-snap-00412cf0.relocations]]
+offset = 106
+type = "DIR32"
+symbol = "?g_CameraActualYAt006713C4@@3MA"
+target = 0x006713C4
+[[units.camera-motion-snap-00412cf0.relocations]]
+offset = 111
+type = "DIR32"
+symbol = "?g_CameraAlternateXAt006713F0@@3MA"
+target = 0x006713F0
+[[units.camera-motion-snap-00412cf0.relocations]]
+offset = 116
+type = "DIR32"
+symbol = "?g_CameraInitialXAt006713E4@@3MA"
+target = 0x006713E4
+[[units.camera-motion-snap-00412cf0.relocations]]
+offset = 122
+type = "DIR32"
+symbol = "?g_CameraAlternateYAt00671400@@3MA"
+target = 0x00671400
+[[units.camera-motion-snap-00412cf0.relocations]]
+offset = 128
+type = "DIR32"
+symbol = "?g_CameraInitialYAt00671408@@3MA"
+target = 0x00671408
+[[units.camera-motion-snap-00412cf0.relocations]]
+offset = 134
+type = "DIR32"
+symbol = "?g_CameraAlternateZAt006713C0@@3MA"
+target = 0x006713C0
+[[units.camera-motion-snap-00412cf0.relocations]]
+offset = 140
+type = "DIR32"
+symbol = "?g_CameraActualZAt006713DC@@3MA"
+target = 0x006713DC
+
+
+[units.fighter-script-initialize-00420440]
+source = "src/FighterScriptInitializeF430.cpp"
+object = "build/matching/FighterScriptInitializeF430.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["FighterScript::InitializeAt00420440"]
+symbol = "??0FighterScriptF430@@QAE@XZ"
+target_address = 0x00420440
+size = 130
+[[units.fighter-script-initialize-00420440.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0FighterScriptF430@@QAE@XZ"
+target = 0x0065554E
+[[units.fighter-script-initialize-00420440.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.fighter-script-initialize-00420440.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.fighter-script-initialize-00420440.relocations]]
+offset = 40
+type = "REL32"
+symbol = "??0ScriptEntriesF430@@QAE@XZ"
+target = 0x004214E0
+[[units.fighter-script-initialize-00420440.relocations]]
+offset = 61
+type = "REL32"
+symbol = "?Clear@ScriptEntriesF430@@QAEXXZ"
+target = 0x004216D0
+[[units.fighter-script-initialize-00420440.relocations]]
+offset = 122
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
