@@ -8156,3 +8156,69 @@ callee duplication**. F450/F451/F486/F487/F503 variants remain
 valuable preserved historical *negative controls*, not current pending
 reconstruction claims. No fake locals, pasted original native bytes,
 assembler, masked references, truncated original or all-unit cold replay.
+
+
+## F509: original 82,796-byte CharacterMove action megaboss; 1,126 native after-RET switch DATA (research, NOT exact)
+
+The separate R048 authored `CharacterMove::AdvanceAt004AC040` original
+function is **82,796 full original PE CODE bytes /22,721 decoded x86
+instructions /1,361 call sites**, native original PE SHA256
+`4dced8c8583edf4b8234505793e28732e19af2adb311d0d39a755f0036e59cfc`.
+Its single `RET` ends at `004C03AC` after original CODE `004AC040..
+004C03AB`, followed by **151 genuine 32-bit jump slots (604 bytes)**
+in six dense tables and **522 native sparse byte indexes** in four
+actual index maps. All 1,126 physical post-RET DATA bytes are contiguous
+`004C03AC..004C0811`, SHA256
+`bd3fbb666cc78c750efbf154d066c8087cb36225fd34593994240e77ed392377`,
+then 14 original `CC` pad bytes before next function `004C0820`.
+The 151 original DWORDs resolve to **147 distinct valid original
+whole-function x86 instruction boundaries**. Four sparse native maps
+have true physical lengths 49,68,205,200. Whole source layout of the
+six original state dispatch ranges and all table addresses are in
+`docs/CHARACTER_MOVE_ACTION_DISPATCH.md` and checked by new read-only
+`scripts/repo-python scripts/verify-character-move-dispatch.py`.
+
+Original real native stack has `sub esp,0x720`, this at EBP-0x64 and
+its signed short action ID from owner+0x60 at EBP-0x68, with two early
+original state guards at owner+0x82 and nested owner+0x2E8/+0x3BA.
+The original full Ghidra decompiler 6,631-line output is retained at
+`.analysis/f509-charactermove-megaboss/original-native.c` and has six
+state switch blocks with 146 actual `case` labels. **Crucially, the
+68-byte original sparse index map `0x08F..0x0D2` is physically
+byte-identical** to the map of the separately R063-authored 60,999-byte
+Reimu boss at `0046CCFC`, SHA256
+`a5a34134b8e8e16d03f131a259adb2621cc4cf6499be28366ab35d452f1f48f6`;
+its dense CODE destinations are different. Original CharacterMove
+switches later group `0x187..0x253` then `0x255..0x31C`, versus
+Reimu's `0x187..0x25A` and `0x25C..0x31C`. Thus shared original
+state-lowering byte patterns are real but **not** interchangeable
+original code or C++ class layouts. This work yields independently
+attested whole-boss dispatch evidence **without any exact CODE credit
+for the 82,796 bytes or any DATA/padding**, no source native-byte
+graft, no guessed class ABI or full-unit cold replay.
+
+## F505–F508: authentic but nonexact medium-body physical layout trials
+
+Original R054 `SceneObject::ReleaseAt0043B0B0` is 248 CODE bytes.
+Existing natural C++ genuine C++ derived destructor sources matched
+whole 248 bytes with **191/200 original nonrelocation bytes** but
+mismatched nine native EBP offsets: source-generated texture deletion
+temporaries landed at -0x20/-0x1C and three freed buffers at
+-0x18/-0x14/-0x10; original uses -0x14/-0x10 for texture and
+-0x18/-0x1C/-0x20 for the actual three buffers. New F505 source
+declaration-scope variants preserve wrong allocation, and F507
+explicit used texture-release locals generate 251–256 bytes.
+Original 303-byte R? ReplayScene filename label draws once inside
+*each* memcmp branch; new F506 nine complete natural C++ variants
+with two actual draws, source glyph structs or arrays and real
+132/136/140-byte native quad carrier variants all generate 342 bytes
+and wrong native locals, not exact. Original R? 92-byte progress counter
+uses true signed fighter/difficulty and 0x17F0/0x5FC real native
+strides; F508 tests eight real commutative byte-pointer `i[p]`
+subscript/pointer expressions, but correct native register evaluation
+order is still absent (48/92 nonfield). All negative sources remain
+intact under `.analysis/f505-scene-release-248/`,
+`.analysis/f506-replay-draw-scope-layout/`,
+`.analysis/f507-scene-true-ownership/` and
+`.analysis/f508-progress-reversed-subscript/`. No partially matching
+CODE or data was credited.
