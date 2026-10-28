@@ -42082,3 +42082,132 @@ offset = 302
 type = "REL32"
 symbol = "?ToggleWindowMode@ReplayInputServiceF268@@YAXXZ"
 target = 0x004018A0
+
+[units.replay-scene-initialize-0042a180]
+source = "src/ReplaySceneInitF269.cpp"
+object = "build/matching/ReplaySceneInitF269.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["ReplayScene::Initialize"]
+symbol = "??0ReplaySceneInitF269@@QAE@XZ"
+target_address = 0x0042A180
+size = 315
+[[units.replay-scene-initialize-0042a180.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0ReplaySceneInitF269@@QAE@XZ"
+target = 0x006558E3
+[[units.replay-scene-initialize-0042a180.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.replay-scene-initialize-0042a180.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.replay-scene-initialize-0042a180.relocations]]
+offset = 34
+type = "REL32"
+symbol = "??0ReplayBaseF269@@QAE@XZ"
+target = 0x004251C0
+[[units.replay-scene-initialize-0042a180.relocations]]
+offset = 50
+type = "DIR32"
+symbol = "??_7ReplaySceneInitF269@@6B@"
+target = 0x00657F64
+[[units.replay-scene-initialize-0042a180.relocations]]
+offset = 57
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.replay-scene-initialize-0042a180.relocations]]
+offset = 81
+type = "REL32"
+symbol = "??0ReplayTextureF269@@QAE@XZ"
+target = 0x0040AD80
+[[units.replay-scene-initialize-0042a180.relocations]]
+offset = 125
+type = "REL32"
+symbol = "?AllocateSlots@ReplayTextureF269@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.replay-scene-initialize-0042a180.relocations]]
+offset = 130
+type = "DIR32"
+symbol = "?g_ReplaySceneRootAt00657F44@@3QBDB"
+target = 0x00657F44
+[[units.replay-scene-initialize-0042a180.relocations]]
+offset = 135
+type = "DIR32"
+symbol = "?g_ReplaySceneFileAt00657F4C@@3QBDB"
+target = 0x00657F4C
+[[units.replay-scene-initialize-0042a180.relocations]]
+offset = 146
+type = "REL32"
+symbol = "?LoadDefault@ReplayTextureF269@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.replay-scene-initialize-0042a180.relocations]]
+offset = 178
+type = "DIR32"
+symbol = "?g_CurrentDifficultyAt006714D0@@3EA"
+target = 0x006714D0
+[[units.replay-scene-initialize-0042a180.relocations]]
+offset = 185
+type = "DIR32"
+symbol = "?g_CurrentFighterAt006714C8@@3EA"
+target = 0x006714C8
+[[units.replay-scene-initialize-0042a180.relocations]]
+offset = 191
+type = "DIR32"
+symbol = "?g_ProgressRecordsAt006718F8@@3VProgressRecordsF269@@A"
+target = 0x006718F8
+[[units.replay-scene-initialize-0042a180.relocations]]
+offset = 196
+type = "REL32"
+symbol = "?SetSelection@ProgressRecordsF269@@QAEXCC@Z"
+target = 0x0041A1A0
+[[units.replay-scene-initialize-0042a180.relocations]]
+offset = 201
+type = "DIR32"
+symbol = "?g_ProgressRecordsAt006718F8@@3VProgressRecordsF269@@A"
+target = 0x006718F8
+[[units.replay-scene-initialize-0042a180.relocations]]
+offset = 206
+type = "REL32"
+symbol = "?GetSelectedRecordAddress@ProgressRecordsF269@@QAEPAXXZ"
+target = 0x0041A240
+[[units.replay-scene-initialize-0042a180.relocations]]
+offset = 217
+type = "DIR32"
+symbol = "?g_SelectedFighterAt00671418@@3PAEA"
+target = 0x00671418
+[[units.replay-scene-initialize-0042a180.relocations]]
+offset = 235
+type = "REL32"
+symbol = "?InsertRankedScore@ProgressRecordsF269@@QAEEH@Z"
+target = 0x00416EE0
+[[units.replay-scene-initialize-0042a180.relocations]]
+offset = 259
+type = "DIR32"
+symbol = "?g_ProgressRecordsAt006718F8@@3VProgressRecordsF269@@A"
+target = 0x006718F8
+[[units.replay-scene-initialize-0042a180.relocations]]
+offset = 264
+type = "REL32"
+symbol = "?StoreWorkingScore@ProgressRecordsF269@@QAEXE@Z"
+target = 0x00416E20
+[[units.replay-scene-initialize-0042a180.relocations]]
+offset = 276
+type = "DIR32"
+symbol = "?g_ReplaySavePathsAt00671750@@3VReplaySavePathsF269@@A"
+target = 0x00671750
+[[units.replay-scene-initialize-0042a180.relocations]]
+offset = 281
+type = "REL32"
+symbol = "?FindAvailablePath@ReplaySavePathsF269@@QAEHPAD@Z"
+target = 0x00414300
+[[units.replay-scene-initialize-0042a180.relocations]]
+offset = 307
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000

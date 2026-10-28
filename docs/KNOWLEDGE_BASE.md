@@ -2480,3 +2480,48 @@ was registered and **zero additional authored CODE bytes** are credited
 for this still-unaccepted large function. Next approach should reproduce
 the true original end/x lifetimes through natural VC7 source structure
 rather than masking four EBP offsets or inventing padding.
+
+
+## F269: cold-exact whole replay scene constructor, score and path handoff
+
+R052-authored `ReplayScene::Initialize` at `0042A180..0042A2BA`
+contains **315 complete PE-backed CODE bytes**, 84 original decoded
+x86 instructions and plain RET at `0042A2BA`, with native full SHA256
+`ceff174afda54e83c640d523728a32defab2d3321ce070c20b7e4c2a70c5ab33`.
+The original full Ghidra function/decompile/native x86 listing, initial
+whole-source probe and independent cold acceptance are retained at
+`.analysis/f268-replay-scene/` (the final source/artifact is numbered F269).
+
+The real EH scene constructor uses handler `006558E3`, vtable `00657F64`,
+original base constructor at `004251C0` (R108 origin **unknown**, no
+authored CODE credit) and a genuine `new(80)` texture manager allocation
+with native EH cleanup plus `0040AD80` ctor, `0040B1D0(3)` and archive
+load `0040BB80` from original file/root strings `00657F4C/00657F44`.
+It resets actual scene shorts +0x10/+0x12/+0x14, uses native two 8-bit
+selection globals `006714C8/D0` to call `0041A1A0` on progress table
+`006718F8`, retrieves selected working record via `0041A240` to scene
++0x0C, and calls `00416EE0` on that record using the original fighter
+state field +0x2D0 from actor global `00671418`. It stores the returned
+8-bit status at scene+0x120 and passes that to original profile selection
+write at `00416E20`. Finally it invokes `ReplayRecords::FindAvailablePath`
+`00414300` on authentic manager `00671750`, with output path buffer at
+scene+0x1C and resulting selection index at +0x18. Full original call
+ordering, genuine stack values and EH unwinds are preserved.
+
+The first complete natural C++ probe compiled to **315 native bytes**,
+**219/219** comparable nonrelocation bytes and **24/24 physical COFF
+relocation fields** (correct native offsets/types and destinations),
+under pinned VC7.1 `/Od /GX /GS`. After independently renaming only this
+new source to `src/ReplaySceneInitF269.cpp` to avoid duplicate F268
+acceptance, its full 315 bytes and all native fields remained exact;
+canonical cold replay of *only* `replay-scene-initialize-0042a180`
+reported `exact; 315 coverage bytes`.
+
+F268 already separately accepted the matching 310-byte replay input
+controller at `0042D330`. Its duplicate private natural-source probe
+was content-checked against the prior experimental source and not re-added
+to accepted authored coverage. Other game/library callees, unknown nominal
+scene/actor/progress/texture layouts and the 97 unresolved origins
+remain uncredited. Neither truncated code, target byte graft, arbitrary
+layout padding, relocation masks, asm nor all-unit cold replay was used.
+Local Git commits are not an external Oracle verification receipt.

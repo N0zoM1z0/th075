@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "dbc4f491759097f1c282851a1dc8248675f611670e0ac64c92190e5e6a491bf8"
+      "current_sha256": "1c71d97a2fbf6bd171f87eb06aa21e2287050fddd26f8cb74c7f2d9aa6efcee2"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "c716a8bf0ff70109b9436e094a50e7dba7a097913010a22adcc94ee7bd286e51"
+      "current_sha256": "8fcef5c29e45c799fa726d297a99877e945ea01992002f236fd5b765d4fd7239"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "443b9046f3d12fb419d670642ec19dd08a62c1a0b6db20d3be01eb66f7dae97b"
+      "current_sha256": "43d5c2d57278d0ccda92604d29d9d3cd1fad5b42dcf6db00b1f0aa8acfeff9e6"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "ad53a57bb184304d01cca2cc69724869b3bcec51c6b1f74b9632d582a0999910"
+      "current_sha256": "d26f038fd8d92a627450c46c1ec835b65633eb9bf16572f147984228d3b5b03e"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "2b1151ec4fa0315b1abe6cc4601612d4dce591ee34c2c75f1b788d79cb56cee7"
+      "current_sha256": "762a849f5974cea130b96781aed0b6f0223b3c4abd2d2f1372ff815c7622285d"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -23008,6 +23008,50 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R053"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0042A180",
+        "size": "315",
+        "span_end": "0x0042A2BA",
+        "current_name": "FUN_0042a180",
+        "proposed_name": "ReplayScene::Initialize",
+        "module": "ReplayScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R052; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x0042A180",
+        "size": "315",
+        "span_end": "0x0042A2BA",
+        "current_name": "FUN_0042a180",
+        "proposed_name": "ReplayScene::Initialize",
+        "module": "ReplayScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "ReplaySceneInitF269::ReplaySceneInitF269()",
+        "is_thunk": "false",
+        "source_file": "src/ReplaySceneInitF269.cpp",
+        "evidence": "R052; full body hash, complete decoded CFG and local game-specific behavior reviewed; F269; scripts/repo-python scripts/replay-exact-units.py --unit replay-scene-initialize-0042a180",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F269: entire R052-authored native 315 CODE bytes /84 independently decoded x86 instructions, complete original PE SHA256 ceff174afda54e83c640d523728a32defab2d3321ce070c20b7e4c2a70c5ab33 and RET at 0042A2BA. Natural C++ scene constructor pinned VC7.1 /Od /GX independently cold replayed exact with all 219/219 comparable bytes and 24/24 physical COFF offsets/types/destinations, genuine EH handler 006558E3/vtable 00657F64. Genuine inherited scene base ctor 004251C0 R108 unknown-origin and uncredited, allocated/constructed 80-byte TextureManager through native operator new 0064159D and ctor 0040AD80 with EH cleanup, 3 texture slots at 0040B1D0, original replay.dat resource source/root 00657F4C/00657F44 through 0040BB80. Native trio 16-bit reset at scene+10/+12/+14, selection globals 006714C8/D0 set to actual ProgressRecords at 006718F8 by 0041A1A0, selected working record from 0041A240 stored at scene+0C, original primary fighter global 00671418+0x2D0 inserted into score via 00416EE0 and 8-bit result at scene+120, persistent byte update via 00416E20, replay path allocation by 00414300 on real path manager 00671750 with output this+1C and index result this+18 all retained. Original class names/complete scene, progress, texture layouts are provisional; no dependent, CRT, library or unknown-origin code credited. No fake locals, arbitrary padding, masked relocation bytes, target-byte graft, cropped body, broad cold replay or external Oracle receipt. Independent whole natural-source C++ first generated exact 315 bytes and all real fields; source deliberately named F269 to avoid double-credit of previously F268-accepted 310-byte ReplayScene input poll."
+      },
+      "origin": {
+        "address": "0x0042A180",
+        "origin": "authored",
+        "subsystem": "ReplayScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R052"
       }
     }
   ],
@@ -174368,6 +174412,173 @@
           "target": 4200608
         }
       ]
+    },
+    "replay-scene-initialize-0042a180": {
+      "source": "src/ReplaySceneInitF269.cpp",
+      "object": "build/matching/ReplaySceneInitF269.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "ReplayScene::Initialize"
+      ],
+      "symbol": "??0ReplaySceneInitF269@@QAE@XZ",
+      "target_address": 4366720,
+      "size": 315,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??0ReplaySceneInitF269@@QAE@XZ",
+          "target": 6641891
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 34,
+          "type": "REL32",
+          "symbol": "??0ReplayBaseF269@@QAE@XZ",
+          "target": 4346304
+        },
+        {
+          "offset": 50,
+          "type": "DIR32",
+          "symbol": "??_7ReplaySceneInitF269@@6B@",
+          "target": 6651748
+        },
+        {
+          "offset": 57,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 81,
+          "type": "REL32",
+          "symbol": "??0ReplayTextureF269@@QAE@XZ",
+          "target": 4238720
+        },
+        {
+          "offset": 125,
+          "type": "REL32",
+          "symbol": "?AllocateSlots@ReplayTextureF269@@QAEXH@Z",
+          "target": 4239824
+        },
+        {
+          "offset": 130,
+          "type": "DIR32",
+          "symbol": "?g_ReplaySceneRootAt00657F44@@3QBDB",
+          "target": 6651716
+        },
+        {
+          "offset": 135,
+          "type": "DIR32",
+          "symbol": "?g_ReplaySceneFileAt00657F4C@@3QBDB",
+          "target": 6651724
+        },
+        {
+          "offset": 146,
+          "type": "REL32",
+          "symbol": "?LoadDefault@ReplayTextureF269@@QAEXPBD0@Z",
+          "target": 4242304
+        },
+        {
+          "offset": 178,
+          "type": "DIR32",
+          "symbol": "?g_CurrentDifficultyAt006714D0@@3EA",
+          "target": 6755536
+        },
+        {
+          "offset": 185,
+          "type": "DIR32",
+          "symbol": "?g_CurrentFighterAt006714C8@@3EA",
+          "target": 6755528
+        },
+        {
+          "offset": 191,
+          "type": "DIR32",
+          "symbol": "?g_ProgressRecordsAt006718F8@@3VProgressRecordsF269@@A",
+          "target": 6756600
+        },
+        {
+          "offset": 196,
+          "type": "REL32",
+          "symbol": "?SetSelection@ProgressRecordsF269@@QAEXCC@Z",
+          "target": 4301216
+        },
+        {
+          "offset": 201,
+          "type": "DIR32",
+          "symbol": "?g_ProgressRecordsAt006718F8@@3VProgressRecordsF269@@A",
+          "target": 6756600
+        },
+        {
+          "offset": 206,
+          "type": "REL32",
+          "symbol": "?GetSelectedRecordAddress@ProgressRecordsF269@@QAEPAXXZ",
+          "target": 4301376
+        },
+        {
+          "offset": 217,
+          "type": "DIR32",
+          "symbol": "?g_SelectedFighterAt00671418@@3PAEA",
+          "target": 6755352
+        },
+        {
+          "offset": 235,
+          "type": "REL32",
+          "symbol": "?InsertRankedScore@ProgressRecordsF269@@QAEEH@Z",
+          "target": 4288224
+        },
+        {
+          "offset": 259,
+          "type": "DIR32",
+          "symbol": "?g_ProgressRecordsAt006718F8@@3VProgressRecordsF269@@A",
+          "target": 6756600
+        },
+        {
+          "offset": 264,
+          "type": "REL32",
+          "symbol": "?StoreWorkingScore@ProgressRecordsF269@@QAEXE@Z",
+          "target": 4288032
+        },
+        {
+          "offset": 276,
+          "type": "DIR32",
+          "symbol": "?g_ReplaySavePathsAt00671750@@3VReplaySavePathsF269@@A",
+          "target": 6756176
+        },
+        {
+          "offset": 281,
+          "type": "REL32",
+          "symbol": "?FindAvailablePath@ReplaySavePathsF269@@QAEHPAD@Z",
+          "target": 4276992
+        },
+        {
+          "offset": 307,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -174727,6 +174938,7 @@
     "src/ResultListReleaseF265.cpp": "020380623f282b40430b272d86b926fee00319ad22dcbf9748847d9b955f7785",
     "src/ReplayPlaybackInitF266.cpp": "d1feb3f989ba4f073bb9391231fd04c6a309e74a469d8a5929b95fa8a75d66cf",
     "src/ReplayPlaybackReleaseF267.cpp": "1454470944d5b58ddc45c1ef372f4bb1d30aaeb0b0b9e116a8d49ddd4b2290bc",
-    "src/ReplayInputF268.cpp": "82e65ec2b6142aa3f8321322365707e0f5aaee36ad1efd196f59a9af99d62535"
+    "src/ReplayInputF268.cpp": "82e65ec2b6142aa3f8321322365707e0f5aaee36ad1efd196f59a9af99d62535",
+    "src/ReplaySceneInitF269.cpp": "9a103c488389e8e638e4adb54440e5d3a744bdc7d0dc1c314afac159312ceb43"
   }
 }
