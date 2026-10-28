@@ -912,3 +912,8 @@ address,name,module,confidence,evidence
 0x00451D10,BackgroundStage::NoOpVirtualAt00451D10,BackgroundStage,inferred,"F496; complete real original 11-byte NoOp thiscall at 0x00451D10, 7 native x86 instructions, zero actual COFF relocations, affected-only 89/89 cold exact"
 0x00451DE0,BackgroundStage::NoOpVirtualAt00451DE0,BackgroundStage,inferred,"F496; complete real original 11-byte NoOp thiscall at 0x00451DE0, 7 native x86 instructions, zero actual COFF relocations, affected-only 89/89 cold exact"
 0x00451DF0,BackgroundStage::NoOpVirtualAt00451DF0,BackgroundStage,inferred,"F496; complete real original 11-byte NoOp thiscall at 0x00451DF0, 7 native x86 instructions, zero actual COFF relocations, affected-only 89/89 cold exact"
+0x005FAB90,AuxEffect::SpawnPeerAt005FAB90,EffectForwarders,inferred,"F499; whole original native 61-byte R-origin effect/command/state forwarding, 1 original physical COFF refs and targeted 5/5 exact"
+0x005FABD0,AuxEffect::SpawnConfiguredPeerAt005FABD0,EffectForwarders,inferred,"F499; whole original native 65-byte R-origin effect/command/state forwarding, 1 original physical COFF refs and targeted 5/5 exact"
+0x005FAC40,AuxEffect::PlaySharedSoundAt005FAC40,AuxEffect,inferred,"F499; whole original native 29-byte R-origin effect/command/state forwarding, 2 original physical COFF refs and targeted 5/5 exact"
+0x004110F0,CommandList::ClearEntriesAt004110F0,GameContextPolicy,inferred,"F499; whole original native 22-byte R-origin effect/command/state forwarding, 1 original physical COFF refs and targeted 5/5 exact"
+0x004557E0,BattleScene::SetSharedValueAt004557E0,BattleScene,inferred,"F499; whole original native 21-byte R-origin effect/command/state forwarding, 1 original physical COFF refs and targeted 5/5 exact"

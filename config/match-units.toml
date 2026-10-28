@@ -60095,3 +60095,82 @@ symbol = "?NoOp@StageBackgroundNoopF496_088@@QAEXXZ"
 target_address = 0x00451DF0
 size = 11
 relocations = []
+
+[units.aux-effect-spawn-peer-005fab90]
+source = "src/AuxEffectAudioCommandForwardersF499.cpp"
+object = "build/matching/AuxEffectAudioCommandForwardersF499.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["AuxEffect::SpawnPeerAt005FAB90"]
+symbol = "?SpawnPeer@PeerFXOwnerF499@@QAEXFHHEE@Z"
+target_address = 0x005FAB90
+size = 61
+[[units.aux-effect-spawn-peer-005fab90.relocations]]
+offset = 51
+type = "REL32"
+symbol = "?Spawn@PeerFXManagerF499@@QAEXFHHEEEEPBX@Z"
+target = 0x005F7AA0
+
+
+[units.aux-effect-spawn-configured-peer-005fabd0]
+source = "src/AuxEffectAudioCommandForwardersF499.cpp"
+object = "build/matching/AuxEffectAudioCommandForwardersF499.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["AuxEffect::SpawnConfiguredPeerAt005FABD0"]
+symbol = "?SpawnConfiguredPeer@PeerFXOwnerF499@@QAEXFHHEEEE@Z"
+target_address = 0x005FABD0
+size = 65
+[[units.aux-effect-spawn-configured-peer-005fabd0.relocations]]
+offset = 55
+type = "REL32"
+symbol = "?Spawn@PeerFXManagerF499@@QAEXFHHEEEEPBX@Z"
+target = 0x005F7AA0
+
+
+[units.aux-effect-play-shared-sound-005fac40]
+source = "src/AuxEffectAudioCommandForwardersF499.cpp"
+object = "build/matching/AuxEffectAudioCommandForwardersF499.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["AuxEffect::PlaySharedSoundAt005FAC40"]
+symbol = "?PlaySharedSound@AudioForwarderF499@@QAEXF@Z"
+target_address = 0x005FAC40
+size = 29
+[[units.aux-effect-play-shared-sound-005fac40.relocations]]
+offset = 14
+type = "DIR32"
+symbol = "?g_SharedSoundAt00671618@@3PAVSharedSoundFXF499@@A"
+target = 0x00671618
+[[units.aux-effect-play-shared-sound-005fac40.relocations]]
+offset = 19
+type = "REL32"
+symbol = "?Play@SharedSoundFXF499@@QAEXH@Z"
+target = 0x004079C0
+
+
+[units.command-list-clear-entries-004110f0]
+source = "src/AuxEffectAudioCommandForwardersF499.cpp"
+object = "build/matching/AuxEffectAudioCommandForwardersF499.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["CommandList::ClearEntriesAt004110F0"]
+symbol = "?ClearEntries@NativeCommandListF499@@QAEXXZ"
+target_address = 0x004110F0
+size = 22
+[[units.command-list-clear-entries-004110f0.relocations]]
+offset = 14
+type = "REL32"
+symbol = "?Clear@NativeCommandDequeF499@@QAEXXZ"
+target = 0x00411D60
+
+
+[units.battle-scene-set-shared-value-004557e0]
+source = "src/AuxEffectAudioCommandForwardersF499.cpp"
+object = "build/matching/AuxEffectAudioCommandForwardersF499.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BattleScene::SetSharedValueAt004557E0"]
+symbol = "?SetSharedValue@BattleSceneSharedF499@@QAEXI@Z"
+target_address = 0x004557E0
+size = 21
+[[units.battle-scene-set-shared-value-004557e0.relocations]]
+offset = 11
+type = "DIR32"
+symbol = "?g_SharedFighterValueAt00671628@@3IA"
+target = 0x00671628

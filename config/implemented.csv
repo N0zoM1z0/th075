@@ -929,3 +929,8 @@ BackgroundStage::NoOpVirtualAt004519F0
 BackgroundStage::NoOpVirtualAt00451D10
 BackgroundStage::NoOpVirtualAt00451DE0
 BackgroundStage::NoOpVirtualAt00451DF0
+AuxEffect::SpawnPeerAt005FAB90
+AuxEffect::SpawnConfiguredPeerAt005FABD0
+AuxEffect::PlaySharedSoundAt005FAC40
+CommandList::ClearEntriesAt004110F0
+BattleScene::SetSharedValueAt004557E0

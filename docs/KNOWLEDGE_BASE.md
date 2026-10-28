@@ -7974,3 +7974,77 @@ restored. No inert buffer/canary, unsafe ABI, original-byte patch,
 truncated 169-byte comparison, partial exact credit or whole cold
 replay. Revisit genuine class member layout/VC7.1 source parse/lifetime
 order rather than treating a mere equal instruction count as exact.
+
+
+## F499: five exact original AuxEffect, sound, command and battle-state forwarders
+
+Five independent R101/R102/R167/R233 original authored game functions
+were individually verified against the original Japanese PE, fully
+compiled from `src/AuxEffectAudioCommandForwardersF499.cpp` under pinned
+VC7.1 `/Od /Ob0 /Gy /GR- /GX- /GS /Zi`, and fresh targeted cold
+replayed **5/5 exact** in one compiler object. The two physically distinct
+AuxEffect wrappers are `SpawnPeerAt005FAB90` **61 CODE bytes /25 native
+instructions** (PE SHA256
+`880a5115745e90929d87e33218bb682b72c04dadbbb6e123b6e255f373b59551`)
+and `SpawnConfiguredPeerAt005FABD0` **65 CODE bytes /27 native
+instructions** (SHA256
+`9d49aba514d07edabe5844f72ada9c3fe98970508bccb03b311719a479c75333`).
+Their native thiscall receiver owns a real original physical position
+record at +0x80 (16 bytes of observed actual offset/extent) and the
+original linked effect manager pointer at +0x90; both invoke authentic
+borrowed native `005F7AA0` with the original **eight actual arguments**.
+Both forward original 16-bit kind and two 32-bit values; the 61-byte
+variant sends its two given low-byte modes and two native zero modes,
+whereas 65-byte variant forwards all four caller low-byte modes. Source
+uses real `short`/`unsigned char` formal parameters and generates native
+`MOV low-register, operand; PUSH register`, not invented 32-bit sign
+extension, plus original thiscall RET 0x14/0x1C. Each has exactly one
+physical COFF REL32 callee field, matched to `005F7AA0`.
+
+`AuxEffect::PlaySharedSoundAt005FAC40` is **29 CODE bytes /11 native
+instructions**, SHA256
+`647284f43923e5530fcaa34a938784f7f624b44dd22c961a53365dbf64cd9bb9`.
+It sign-extends the actual signed 16-bit audio ID to DWORD before calling
+shared audio manager native `004079C0` via original sound pointer global
+`00671618`, with exactly two genuine physical COFF relocations.
+`CommandList::ClearEntriesAt004110F0` is **22 CODE bytes /10 native
+instructions**, SHA256
+`abfaec9ac3ba4f997aa6ed929f764fd49b19d1a032de683f1aee1202a44f85bb`,
+calling original borrowed `00411D60` deque clear on actual owner+4.
+`BattleScene::SetSharedValueAt004557E0` is **21 CODE bytes /9 original
+instructions**, SHA256
+`cbcf37543b27fc26938ab4e3e2855cede6514ca920710f7a5d7181cfd5cbf57f`,
+which writes the original input DWORD directly to native global
+`00671628` and preserves actual RET 4.
+
+The complete original **57/57, 61/61, 21/21, 18/18, 17/17** nonfield
+bytes and all **six authentic physical COFF DIR32/REL32 references**,
+including original global-address and shared callee targets, are separately
+checked in `config/match-units.toml`. Exactly **198 new original authored
+CODE bytes** are credited. No assumed complete private owner/manager
+class layouts, no borrowed game/CRT/runtime callee code, false 32-bit
+parameter widening, fake locals, source ASM, original-byte graft, masks,
+partial native extents, all-unit cold replay or external Oracle receipt.
+
+## F497–F498: original native 92-byte GameProgress register-order mismatch (nonexact)
+
+The remaining R? `GameProgress::IncrementSelectedRecordAt00425130`
+has a 92-byte PE body that loads *signed character* at owner+0x16AC4
+and *signed difficulty* at owner+0x16AC5. The native read/increment/
+write order computes signed difficulty stride `0x5FC` first in ECX,
+then signed character stride `0x17F0` in EAX, **adds this to the
+character offset**, and loads the counter DWORD at combined +4. It
+then repeats with exactly native register allocation for the store.
+The exact observed 2D stride relation is **4 × 0x5FC = 0x17F0**; that
+is a genuine native per-character/per-difficulty record count relation,
+but its full private record fields remain unknown. Several meaningful
+C++ parenthesized pointer expressions, byte-index/subscript alternatives
+and physically correct 2D typed rows using two true signed selector
+bytes were compiled under pinned VC7.1 in
+`.analysis/f497-progress-real-array-index/` and
+`.analysis/f498-progress-true-strided-record/`. All correctly produce
+full 92-byte CODE size and no real native relocations, but use wrong
+*operand computation order* when adding the owner base; the complete
+nonfield comparison remains **48/92 to 54/92**, not exact. No source
+credit is added for this function, no fake register asm, forced padding,
+masked comparison or all-unit cold replay.

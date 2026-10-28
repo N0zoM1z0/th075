@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377; F378; F379; F386; F389; F391; F392; F393; F394; F395; F403; F407; F414; F415; F421; F422; F427; F428; F429; F430; F431; F432; F435; F437; F440; F445; F446; F447; F448; F454; F458; F459; F460; F461; F463; F465; F467; F468; F469; F474; F479; F481; F484; F485; F488; F489; F490-F492; F494; F496",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377; F378; F379; F386; F389; F391; F392; F393; F394; F395; F403; F407; F414; F415; F421; F422; F427; F428; F429; F430; F431; F432; F435; F437; F440; F445; F446; F447; F448; F454; F458; F459; F460; F461; F463; F465; F467; F468; F469; F474; F479; F481; F484; F485; F488; F489; F490-F492; F494; F496; F499",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "183c97281971003f22c80c258fd1d4a96828a2d44f372142296964ce94f99e40"
+      "current_sha256": "9d11619b1da58a341a0b932c1255bfb355c9a8db7a61ddfbb673ad8e45667703"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "279e95471f9efed780ee27c3e55ecdf8d153196f3eae6ee78c7baaf11f7d358c"
+      "current_sha256": "1408f30cfeaffaf860c3e12553f4c7c39b5c1a13f306c31cbf39536c62d10853"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "e8bc88fdb1b41608f84ea55cf0671fdaee17c37226f8ca2668e61db880c43760"
+      "current_sha256": "1b3db227bc0826797d806d7941dc26247f8ab741d7f4980859cb222ca9e4347f"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "72089a796b909b3b028c17a198d5cd6027566748e5c613abad6b04cdd64ce456"
+      "current_sha256": "416c5309e40a71d68f8c4385547925de47073efdb714577b0589c40e7359f972"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "f791c1dd2513bd0c15a323a3ddb417550b8b8064a78af3717b3e3efcbe56cf69"
+      "current_sha256": "ef81773e424b0c238b7d43de7e5e1703c336a50d084a937e8ebe5f96fabc8e36"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -38364,6 +38364,226 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R058"
+      }
+    },
+    {
+      "before": {
+        "address": "0x005FAB90",
+        "size": "61",
+        "span_end": "0x005FABCC",
+        "current_name": "FUN_005fab90",
+        "proposed_name": "AuxEffect::SpawnPeerAt005FAB90",
+        "module": "EffectForwarders",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R101; scripts/repo-python scripts/verify-effect-forwarder-origins.py",
+        "owner": "authored",
+        "notes": "Complete game transform/effect body and CFG; reviewed custom callees, observed argument/member policy and truthful RET cleanup; inferred names/layouts, no source or exact credit"
+      },
+      "after": {
+        "address": "0x005FAB90",
+        "size": "61",
+        "span_end": "0x005FABCC",
+        "current_name": "FUN_005fab90",
+        "proposed_name": "AuxEffect::SpawnPeerAt005FAB90",
+        "module": "EffectForwarders",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void PeerFXOwnerF499::SpawnPeer(short,int,int,unsigned char,unsigned char)",
+        "is_thunk": "false",
+        "source_file": "src/AuxEffectAudioCommandForwardersF499.cpp",
+        "evidence": "R101; scripts/repo-python scripts/verify-effect-forwarder-origins.py; F499; scripts/repo-python scripts/replay-exact-units.py --unit aux-effect-spawn-peer-005fab90",
+        "owner": "authored",
+        "notes": "Complete game transform/effect body and CFG; reviewed custom callees, observed argument/member policy and truthful RET cleanup; inferred names/layouts, no source or exact credit; F499 complete independently authored original R101 AuxEffect::SpawnPeerAt005FAB90 native original whole 61 CODE bytes, 25 x86 instructions, original PE SHA256 880a5115745e90929d87e33218bb682b72c04dadbbb6e123b6e255f373b59551. Original owner has true 16-byte position at physical +0x80 and linked peer FX manager at +0x90, forwards native short ID, two signed input DWORDs and two original byte configuration flags, then two constant-zero flags, and the genuine owned position address to native manager method 005F7AA0 (8 total callee arguments). Full 57/57 original nonrelocation bytes and 1/1 genuine physical COFF DIR32/REL32 references and PE destinations. All five affected units were cold rebuilt 5/5 exact across one object; borrowed manager/audio/container implementation and private unused owner fields remain unasserted/uncounted. No fake locals, pasted original bytes, assembler, masks/truncated body, full cold replay or external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x005FAB90",
+        "origin": "authored",
+        "subsystem": "EffectForwarders",
+        "disposition": "authored",
+        "confidence": "complete-game-transform-or-effect-policy",
+        "evidence_id": "R101"
+      }
+    },
+    {
+      "before": {
+        "address": "0x005FABD0",
+        "size": "65",
+        "span_end": "0x005FAC10",
+        "current_name": "FUN_005fabd0",
+        "proposed_name": "AuxEffect::SpawnConfiguredPeerAt005FABD0",
+        "module": "EffectForwarders",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R101; scripts/repo-python scripts/verify-effect-forwarder-origins.py",
+        "owner": "authored",
+        "notes": "Complete game transform/effect body and CFG; reviewed custom callees, observed argument/member policy and truthful RET cleanup; inferred names/layouts, no source or exact credit"
+      },
+      "after": {
+        "address": "0x005FABD0",
+        "size": "65",
+        "span_end": "0x005FAC10",
+        "current_name": "FUN_005fabd0",
+        "proposed_name": "AuxEffect::SpawnConfiguredPeerAt005FABD0",
+        "module": "EffectForwarders",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void PeerFXOwnerF499::SpawnConfiguredPeer(short,int,int,unsigned char,unsigned char,unsigned char,unsigned char)",
+        "is_thunk": "false",
+        "source_file": "src/AuxEffectAudioCommandForwardersF499.cpp",
+        "evidence": "R101; scripts/repo-python scripts/verify-effect-forwarder-origins.py; F499; scripts/repo-python scripts/replay-exact-units.py --unit aux-effect-spawn-configured-peer-005fabd0",
+        "owner": "authored",
+        "notes": "Complete game transform/effect body and CFG; reviewed custom callees, observed argument/member policy and truthful RET cleanup; inferred names/layouts, no source or exact credit; F499 complete independently authored original R101 AuxEffect::SpawnConfiguredPeerAt005FABD0 native original whole 65 CODE bytes, 27 x86 instructions, original PE SHA256 9d49aba514d07edabe5844f72ada9c3fe98970508bccb03b311719a479c75333. The separately R101-owned 7-argument variant forwards original short ID, two native DWORD coordinates/configuration values, four actual byte flags (not two implicit zeros), and actual position address receiver+0x80 through borrowed native FX manager at +0x90 to 005F7AA0. Full 61/61 original nonrelocation bytes and 1/1 genuine physical COFF DIR32/REL32 references and PE destinations. All five affected units were cold rebuilt 5/5 exact across one object; borrowed manager/audio/container implementation and private unused owner fields remain unasserted/uncounted. No fake locals, pasted original bytes, assembler, masks/truncated body, full cold replay or external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x005FABD0",
+        "origin": "authored",
+        "subsystem": "EffectForwarders",
+        "disposition": "authored",
+        "confidence": "complete-game-transform-or-effect-policy",
+        "evidence_id": "R101"
+      }
+    },
+    {
+      "before": {
+        "address": "0x005FAC40",
+        "size": "29",
+        "span_end": "0x005FAC5C",
+        "current_name": "FUN_005fac40",
+        "proposed_name": "AuxEffect::PlaySharedSoundAt005FAC40",
+        "module": "AuxEffect",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R102; scripts/repo-python scripts/verify-short-game-origins.py --cohort R102",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game policy; complete fields, call/context witnesses and unchanged RET cleanup; inferred names/layouts, no source or exact credit"
+      },
+      "after": {
+        "address": "0x005FAC40",
+        "size": "29",
+        "span_end": "0x005FAC5C",
+        "current_name": "FUN_005fac40",
+        "proposed_name": "AuxEffect::PlaySharedSoundAt005FAC40",
+        "module": "AuxEffect",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void AudioForwarderF499::PlaySharedSound(short)",
+        "is_thunk": "false",
+        "source_file": "src/AuxEffectAudioCommandForwardersF499.cpp",
+        "evidence": "R102; scripts/repo-python scripts/verify-short-game-origins.py --cohort R102; F499; scripts/repo-python scripts/replay-exact-units.py --unit aux-effect-play-shared-sound-005fac40",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game policy; complete fields, call/context witnesses and unchanged RET cleanup; inferred names/layouts, no source or exact credit; F499 complete independently authored original R102 AuxEffect::PlaySharedSoundAt005FAC40 native original whole 29 CODE bytes, 11 x86 instructions, original PE SHA256 647284f43923e5530fcaa34a938784f7f624b44dd22c961a53365dbf64cd9bb9. Original 16-bit signed input sound ID must be sign-extended via MOVSX into 32-bit call argument and delivered to native shared sound manager global pointer 00671618 via native 004079C0. Full 21/21 original nonrelocation bytes and 2/2 genuine physical COFF DIR32/REL32 references and PE destinations. All five affected units were cold rebuilt 5/5 exact across one object; borrowed manager/audio/container implementation and private unused owner fields remain unasserted/uncounted. No fake locals, pasted original bytes, assembler, masks/truncated body, full cold replay or external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x005FAC40",
+        "origin": "authored",
+        "subsystem": "AuxEffect",
+        "disposition": "authored",
+        "confidence": "complete-game-policy-with-batch-context",
+        "evidence_id": "R102"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004110F0",
+        "size": "22",
+        "span_end": "0x00411105",
+        "current_name": "FUN_004110f0",
+        "proposed_name": "CommandList::ClearEntriesAt004110F0",
+        "module": "GameContextPolicy",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R167; config/list-policy-dependency-origin-evidence.json; scripts/repo-python scripts/verify-list-policy-dependency-origins.py",
+        "owner": "authored",
+        "notes": "Complete unmasked typed SDK/list-policy graph from unchanged R166 custom parent and registered EH; original source types, method spelling and private layouts remain unknown. The 172-byte allocation is observed, with a complete 164-byte payload probe only. Primary _Buynode covers all 223 bytes including catch/shared tail; the interior 80-byte candidate remains independently unknown. Short pointer getters and empty destruction children remain unknown. No reconstructed source/private ABI/mapping/exact credit."
+      },
+      "after": {
+        "address": "0x004110F0",
+        "size": "22",
+        "span_end": "0x00411105",
+        "current_name": "FUN_004110f0",
+        "proposed_name": "CommandList::ClearEntriesAt004110F0",
+        "module": "GameContextPolicy",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void NativeCommandListF499::ClearEntries()",
+        "is_thunk": "false",
+        "source_file": "src/AuxEffectAudioCommandForwardersF499.cpp",
+        "evidence": "R167; config/list-policy-dependency-origin-evidence.json; scripts/repo-python scripts/verify-list-policy-dependency-origins.py; F499; scripts/repo-python scripts/replay-exact-units.py --unit command-list-clear-entries-004110f0",
+        "owner": "authored",
+        "notes": "Complete unmasked typed SDK/list-policy graph from unchanged R166 custom parent and registered EH; original source types, method spelling and private layouts remain unknown. The 172-byte allocation is observed, with a complete 164-byte payload probe only. Primary _Buynode covers all 223 bytes including catch/shared tail; the interior 80-byte candidate remains independently unknown. Short pointer getters and empty destruction children remain unknown. No reconstructed source/private ABI/mapping/exact credit.; F499 complete independently authored original R167 CommandList::ClearEntriesAt004110F0 native original whole 22 CODE bytes, 10 x86 instructions, original PE SHA256 abfaec9ac3ba4f997aa6ed929f764fd49b19d1a032de683f1aee1202a44f85bb. Original command owner true member list at +4 uses borrowed native deque Clear 00411D60 with ordinary thiscall receiver and no other side effects. Full 18/18 original nonrelocation bytes and 1/1 genuine physical COFF DIR32/REL32 references and PE destinations. All five affected units were cold rebuilt 5/5 exact across one object; borrowed manager/audio/container implementation and private unused owner fields remain unasserted/uncounted. No fake locals, pasted original bytes, assembler, masks/truncated body, full cold replay or external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x004110F0",
+        "origin": "authored",
+        "subsystem": "GameContextPolicy",
+        "disposition": "authored",
+        "confidence": "complete-custom-list-wrapper-with-whole-parent-and-sdk-graph",
+        "evidence_id": "R167"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004557E0",
+        "size": "21",
+        "span_end": "0x004557F4",
+        "current_name": "FUN_004557e0",
+        "proposed_name": "BattleScene::SetSharedValueAt004557E0",
+        "module": "BattleScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R233; config/scene-shared-value-origin-evidence.json; scripts/repo-python scripts/verify-scene-shared-value-origins.py",
+        "owner": "authored",
+        "notes": "Complete RET4 word setter writes independently consumed writable scene value. Whole R044 BattleScene state policy decays positive float values and clamps negatives. Authored source-family inference; byte-equal unsigned/float alternatives leave original name/type/private owner/ABI unknown; no source or exact credit."
+      },
+      "after": {
+        "address": "0x004557E0",
+        "size": "21",
+        "span_end": "0x004557F4",
+        "current_name": "FUN_004557e0",
+        "proposed_name": "BattleScene::SetSharedValueAt004557E0",
+        "module": "BattleScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void BattleSceneSharedF499::SetSharedValue(unsigned int)",
+        "is_thunk": "false",
+        "source_file": "src/AuxEffectAudioCommandForwardersF499.cpp",
+        "evidence": "R233; config/scene-shared-value-origin-evidence.json; scripts/repo-python scripts/verify-scene-shared-value-origins.py; F499; scripts/repo-python scripts/replay-exact-units.py --unit battle-scene-set-shared-value-004557e0",
+        "owner": "authored",
+        "notes": "Complete RET4 word setter writes independently consumed writable scene value. Whole R044 BattleScene state policy decays positive float values and clamps negatives. Authored source-family inference; byte-equal unsigned/float alternatives leave original name/type/private owner/ABI unknown; no source or exact credit.; F499 complete independently authored original R233 BattleScene::SetSharedValueAt004557E0 native original whole 21 CODE bytes, 9 x86 instructions, original PE SHA256 cbcf37543b27fc26938ab4e3e2855cede6514ca920710f7a5d7181cfd5cbf57f. Original receiver takes one original full DWORD argument and assigns the original shared battle-state DWORD at global address 00671628, then returns via true thiscall ret 4. Full 17/17 original nonrelocation bytes and 1/1 genuine physical COFF DIR32/REL32 references and PE destinations. All five affected units were cold rebuilt 5/5 exact across one object; borrowed manager/audio/container implementation and private unused owner fields remain unasserted/uncounted. No fake locals, pasted original bytes, assembler, masks/truncated body, full cold replay or external Oracle receipt."
+      },
+      "origin": {
+        "address": "0x004557E0",
+        "origin": "authored",
+        "subsystem": "BattleScene",
+        "disposition": "authored",
+        "confidence": "whole-shared-scene-value-store-and-independent-complete-game-decay-policy",
+        "evidence_id": "R233"
       }
     }
   ],
@@ -214985,6 +215205,157 @@
       "target_address": 4529648,
       "size": 11,
       "relocations": []
+    },
+    "aux-effect-spawn-peer-005fab90": {
+      "source": "src/AuxEffectAudioCommandForwardersF499.cpp",
+      "object": "build/matching/AuxEffectAudioCommandForwardersF499.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "AuxEffect::SpawnPeerAt005FAB90"
+      ],
+      "symbol": "?SpawnPeer@PeerFXOwnerF499@@QAEXFHHEE@Z",
+      "target_address": 6269840,
+      "size": 61,
+      "relocations": [
+        {
+          "offset": 51,
+          "type": "REL32",
+          "symbol": "?Spawn@PeerFXManagerF499@@QAEXFHHEEEEPBX@Z",
+          "target": 6257312
+        }
+      ]
+    },
+    "aux-effect-spawn-configured-peer-005fabd0": {
+      "source": "src/AuxEffectAudioCommandForwardersF499.cpp",
+      "object": "build/matching/AuxEffectAudioCommandForwardersF499.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "AuxEffect::SpawnConfiguredPeerAt005FABD0"
+      ],
+      "symbol": "?SpawnConfiguredPeer@PeerFXOwnerF499@@QAEXFHHEEEE@Z",
+      "target_address": 6269904,
+      "size": 65,
+      "relocations": [
+        {
+          "offset": 55,
+          "type": "REL32",
+          "symbol": "?Spawn@PeerFXManagerF499@@QAEXFHHEEEEPBX@Z",
+          "target": 6257312
+        }
+      ]
+    },
+    "aux-effect-play-shared-sound-005fac40": {
+      "source": "src/AuxEffectAudioCommandForwardersF499.cpp",
+      "object": "build/matching/AuxEffectAudioCommandForwardersF499.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "AuxEffect::PlaySharedSoundAt005FAC40"
+      ],
+      "symbol": "?PlaySharedSound@AudioForwarderF499@@QAEXF@Z",
+      "target_address": 6270016,
+      "size": 29,
+      "relocations": [
+        {
+          "offset": 14,
+          "type": "DIR32",
+          "symbol": "?g_SharedSoundAt00671618@@3PAVSharedSoundFXF499@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 19,
+          "type": "REL32",
+          "symbol": "?Play@SharedSoundFXF499@@QAEXH@Z",
+          "target": 4225472
+        }
+      ]
+    },
+    "command-list-clear-entries-004110f0": {
+      "source": "src/AuxEffectAudioCommandForwardersF499.cpp",
+      "object": "build/matching/AuxEffectAudioCommandForwardersF499.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "CommandList::ClearEntriesAt004110F0"
+      ],
+      "symbol": "?ClearEntries@NativeCommandListF499@@QAEXXZ",
+      "target_address": 4264176,
+      "size": 22,
+      "relocations": [
+        {
+          "offset": 14,
+          "type": "REL32",
+          "symbol": "?Clear@NativeCommandDequeF499@@QAEXXZ",
+          "target": 4267360
+        }
+      ]
+    },
+    "battle-scene-set-shared-value-004557e0": {
+      "source": "src/AuxEffectAudioCommandForwardersF499.cpp",
+      "object": "build/matching/AuxEffectAudioCommandForwardersF499.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattleScene::SetSharedValueAt004557E0"
+      ],
+      "symbol": "?SetSharedValue@BattleSceneSharedF499@@QAEXI@Z",
+      "target_address": 4544480,
+      "size": 21,
+      "relocations": [
+        {
+          "offset": 11,
+          "type": "DIR32",
+          "symbol": "?g_SharedFighterValueAt00671628@@3IA",
+          "target": 6755880
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -215475,6 +215846,7 @@
     "src/CardListClearEntriesF490.cpp": "dadef683a94606d57e9045f8dcb443a6b9241144de87ec58a9ac394f9845892a",
     "src/FighterSharedResourceDestructorsF491.cpp": "d66355ea188ec29574582b4726fb3afff1f092f2bd8b2e704fc080ad833287ab",
     "src/TextRasterizerCreateFontF494.cpp": "d0351008651c27f1459dc3584a6f41b0a681962f0e8e50afdb46b34728b9bd6f",
-    "src/BackgroundStageNoOpVirtualsF496.cpp": "322ef2e4647bda063ddd9316e1fbe755835ecdb6d4b8e18ae7aa51683c85bee8"
+    "src/BackgroundStageNoOpVirtualsF496.cpp": "322ef2e4647bda063ddd9316e1fbe755835ecdb6d4b8e18ae7aa51683c85bee8",
+    "src/AuxEffectAudioCommandForwardersF499.cpp": "621ef39171033ed997acf86acbbaf3205b34b8fe34c76bc5bca2b1698e71c19a"
   }
 }

@@ -1,6 +1,6 @@
 # TH075 — current reconstruction handoff
 
-**Maintained: 2026-10-29, after F496.** Read this document, then check the **live repository**. The current user explicitly wants both large/core bosses and small leaves tackled seriously, tangible progress committed immediately with subject `gpt-web: ...`, and **only changed/new units cold-replayed**. The user reports no other sessions: inspect and finish all dirty work; never skip, reset, overwrite or silently discard it.
+**Maintained: 2026-10-29, after F499.** Read this document, then check the **live repository**. The current user explicitly wants both large/core bosses and small leaves tackled seriously, tangible progress committed immediately with subject `gpt-web: ...`, and **only changed/new units cold-replayed**. The user reports no other sessions: inspect and finish all dirty work; never skip, reset, overwrite or silently discard it.
 
 ## 1. Trusted state and first commands
 
@@ -8,11 +8,11 @@ Canonical evidence is the pinned original PE, `config/function-origins.csv`, `co
 
 | Item | Verified snapshot |
 | --- | --- |
-| Git | `main`; pre-F496 reconstruction commit **`1354dcc`** (F494), preceded by `c1c79fb` (Reimu R063 whole-boss dispatch research) and `e10a6c8` (F490-F492); F496 commit follows this update |
+| Git | `main`; pre-F499 reconstruction commit **`598b793`** (F496), preceded by `1354dcc` (F494) and `c1c79fb` (Reimu R063 boss research); F499 commit follows this update |
 | Pinned target | user-supplied Japanese `resources/th075.exe` v1.11; SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`; **never** `th075c.exe` |
-| Exact and source-present | **931 functions / 931 exact units** |
-| Accepted authored CODE | **861,399 bytes / 1,973,516 reviewed bytes = 43.65%** |
-| Conservative | **43.57%**, including 3,608 bytes with unresolved origin |
+| Exact and source-present | **936 functions / 936 exact units** |
+| Accepted authored CODE | **861,597 bytes / 1,973,516 reviewed bytes = 43.66%** |
+| Conservative | **43.58%**, including 3,608 bytes with unresolved origin |
 | Origin review | 1,002 authored, 2,671 library, 581 compiler, **97 pending** across 4,351 provisional candidates |
 | Goal | **98% not reached**; Git and local cold results are not external Oracle receipts |
 
@@ -29,7 +29,7 @@ If **any** dirty source, unit, or manifest is present, first inspect its exact e
 
 ## 2. Newly closed chains — **not** the backlog
 
-The full register of **all 931** accepted functions is in `config/functions.csv` and `config/match-units.toml`; this table intentionally highlights only the newest, important independent CODE extents. No called function, imported CRT/Win32 code, or owned jump-table bytes are counted twice.
+The full register of **all 936** accepted functions is in `config/functions.csv` and `config/match-units.toml`; this table intentionally highlights only the newest, important independent CODE extents. No called function, imported CRT/Win32 code, or owned jump-table bytes are counted twice.
 
 | Unit / accepted address | Whole CODE | Authentic fields | Evidence |
 | --- | ---: | ---: | --- |
@@ -111,6 +111,7 @@ The full register of **all 931** accepted functions is in `config/functions.csv`
 | F490–F492 CardList, FighterResources, SharedResource, CharacterResources cleanup | **112 + 84 + 83 + 105 = 384** | **5 + 6 + 5 + 8 = 24** | `src/CardListClearEntriesF490.cpp`, `src/FighterSharedResourceDestructorsF491.cpp`, `src/CharacterOwnedResourceDestructorF492.cpp` |
 | F494 `TextRasterizer::CreateFontAt0041C060` | **99** | **1** | `src/TextRasterizerCreateFontF494.cpp`, `.analysis/f494-font-factory/` |
 | F496 89 independently authored `BackgroundStage::NoOpVirtual` methods | **89 × 11 = 979** | **0 each, 89 independently verified** | `src/BackgroundStageNoOpVirtualsF496.cpp`, `.analysis/f496-background-noop-virtuals/` |
+| F499 2 AuxEffect peer spawns / sound / CommandList Clear / BattleScene shared state | **61 + 65 + 29 + 22 + 21 = 198** | **1 + 1 + 2 + 1 + 1 = 6** | `src/AuxEffectAudioCommandForwardersF499.cpp`, `.analysis/f499-effect-forwarders/` |
 
 **F340:** the companion archive entry seek at `0041D750` is independently cold exact for its whole 164-byte function including every one of its nine external references. It uses genuine iterator and `strcmp` semantics, returns the archive handle after `SetFilePointer` or `INVALID_HANDLE_VALUE` if not found. The original private archive list remains borrowed, not instantiated.
 
@@ -269,6 +270,10 @@ The full register of **all 931** accepted functions is in `config/functions.csv`
 **F496:** all **89 remaining genuine authored original stage empty virtual callbacks** from `00449B40` through `00451DF0` are now independently **89/89 affected-only cold exact** across one native VC7.1 compiler object. All 89 original complete CODE extents were individually read from pinned original PE and verified as identical native 11-byte function `55 8B EC 51 89 4D FC 8B E5 5D C3` (**7 native x86 instructions, zero physical relocations**), with their own distinct original addresses and authored origin evidence. Natural empty `void StageBackgroundNoopF496_NNN::NoOp(){}` generates the complete original 11/11 bytes per physical address; no false early returns, skipped logic, borrowed helper/code bytes or synthetic NOOP stubs for nonempty functions. Credit **only 979 distinct original CODE bytes**, not any already matched F479 background derived destructors or BG constructor/loading CODE.
 
 **F495 other work (still nonexact):** two genuinely distinct **169-byte NameEntry/Result rank-label renderers** `0042B110`/`00431890` are still unresolved. Original physical glyph stack is EBP-0xC..-5 with stack cookie at -4 and quad at -0x98; normal MSVC7.1 `/GS` glyph-array representation moves glyphs to EBP-0x14 while a real used quad char buffer 132 or 136 bytes moves it to -0x14/-0x10. Explicit meaningful struct glyph fields may restore physical -0xC but then VC7.1 omits the original required /GS cookie. Ten separate full-function C++ cases with real used quad storage and glyph field unions in `.analysis/f495-rank-gs-real-quad-buffer/` remain **nonexact**, no 169-byte CODE credited, and no artificial extra buffer is authorized to force `/GS`.
+
+**F499:** five separate R101/R102/R167/R233 authored original native effect/audio/queue/state forwarding functions are now **5/5 affected-only cold exact across one object**. Real original two AuxEffect owners `005FAB90` **61 native CODE bytes /25 instructions, 57/57 original nonfield bytes, one real COFF call** and `005FABD0` **65/27,61/61,one call** both forward native *short* kind, two DWORDs, actual low-byte configuration flags (two zero constants in first variant, all four provided in second), and physical `this+0x80` data address through manager pointer `this+0x90` to native shared `005F7AA0`. Original `PlaySharedSoundAt005FAC40` **29/11 instructions,21/21 nonfields,2 real refs** sign-extends signed short sound ID and dispatches to actual sound global pointer `00671618` using `004079C0`. CommandList `ClearEntriesAt004110F0` **22/10,18/18,one ref** invokes native list clear `00411D60` on real owner member+4. BattleScene `SetSharedValueAt004557E0` **21/9,17/17,one DIR32** sets native shared DWORD global `00671628`. All original native CODE and six genuine physical reference fields separately checked; only 198 fresh CODE bytes credited with no borrowed FX/audio/container/CRT callee code.
+
+**F497-F498 negative control (nonexact):** original R? 92-byte `GameProgress::IncrementSelectedRecordAt00425130` uses two genuine signed byte selection fields +0x16AC4/+0x16AC5 and *physically* a 4×0x5FC per-character record layout (=0x17F0). Actual native register allocation **multiplies difficulty*0x5FC first, fighter*0x17F0 second, then adds owner base specifically to fighter product** for both read/increment/store. Multiple meaningful C++ pointer addition/subscript and native 2D typed-row hypotheses in `.analysis/f497-progress-real-array-index/` and `.analysis/f498-progress-true-strided-record/` reproduce 92 length but not this original evaluation order; no 92-byte CODE accepted.
 
 **Corrections to old notes:** The 686-byte writer and 429-byte reader are both **exact** (F339/F338), not pending F249/F250. The full 1,252-byte replay writer and 375-byte finalizer are both **exact** (F326/F328), not pending F219/F218/F289. The 1,766-byte font rasterizer is **exact** (F319), not pending F299/F302. The 301-byte glyph loader is **exact** (F318), not pending F291. The 916-byte MusicRoom catalog + separately compared 16-byte jump table is **exact in F258** (916 CODE credit only). Other accepted 1,000+ byte bosses include F271 projected quad (1,185), F278 pattern chooser (1,264), F282 resource loader (1,186), F292 overlay text box (1,385), F294 effects catalog (1,722), and F244 scene advance (1,529 CODE). Earlier failures remain useful *historical controls*, but must never be presented as current unaccepted work.
 

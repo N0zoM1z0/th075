@@ -930,3 +930,8 @@ BackgroundStage::NoOpVirtualAt004519F0,0x004519F0,function
 BackgroundStage::NoOpVirtualAt00451D10,0x00451D10,function
 BackgroundStage::NoOpVirtualAt00451DE0,0x00451DE0,function
 BackgroundStage::NoOpVirtualAt00451DF0,0x00451DF0,function
+AuxEffect::SpawnPeerAt005FAB90,0x005FAB90,function
+AuxEffect::SpawnConfiguredPeerAt005FABD0,0x005FABD0,function
+AuxEffect::PlaySharedSoundAt005FAC40,0x005FAC40,function
+CommandList::ClearEntriesAt004110F0,0x004110F0,function
+BattleScene::SetSharedValueAt004557E0,0x004557E0,function
