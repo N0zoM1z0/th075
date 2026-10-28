@@ -835,3 +835,7 @@ TimedScene::AdvanceAt004255D0
 SceneInput::PollAt004256C0
 StaffRollScene::PollSkipInputAt00439F90
 WindowResource::InitializeAt00412DD0
+CardList::ClearEntriesAt00431940
+FighterResources::ClearMemberBeforeDestructionAt004204D0
+SharedResource::ReleaseInterfaceAndTexturesAt00412E50
+CharacterResource::ClearEntriesAndReleaseBaseAt0052D020

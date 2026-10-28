@@ -818,3 +818,7 @@ address,name,module,confidence,evidence
 0x004256C0,SceneInput::PollAt004256C0,SceneRuntime,inferred,"F488; complete original 96-byte scene state/input, 11 genuine physical COFF refs, targeted five-unit cold exact"
 0x00439F90,StaffRollScene::PollSkipInputAt00439F90,StaffRollScene,inferred,"F488; complete original 96-byte scene state/input, 11 genuine physical COFF refs, targeted five-unit cold exact"
 0x00412DD0,WindowResource::InitializeAt00412DD0,WindowResource,inferred,"F489; 128-byte complete native /GX owned texture archive constructor at +0x28 and 1024×512 surface, real native EH 0065508B and 10 genuine COFF refs cold exact"
+0x00431940,CardList::ClearEntriesAt00431940,CardList,inferred,"F490-F492; complete original 112-byte native resource/record lifetime, 5 real physical COFF fields, affected-only 4/4 cold exact"
+0x004204D0,FighterResources::ClearMemberBeforeDestructionAt004204D0,FighterResources,inferred,"F490-F492; complete original 84-byte native resource/record lifetime, 6 real physical COFF fields, affected-only 4/4 cold exact"
+0x00412E50,SharedResource::ReleaseInterfaceAndTexturesAt00412E50,ResourceReleasePolicy,inferred,"F490-F492; complete original 83-byte native resource/record lifetime, 5 real physical COFF fields, affected-only 4/4 cold exact"
+0x0052D020,CharacterResource::ClearEntriesAndReleaseBaseAt0052D020,ResourceReleasePolicy,inferred,"F490-F492; complete original 105-byte native resource/record lifetime, 8 real physical COFF fields, affected-only 4/4 cold exact"

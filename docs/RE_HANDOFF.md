@@ -1,6 +1,6 @@
 # TH075 — current reconstruction handoff
 
-**Maintained: 2026-10-29, after F489.** Read this document, then check the **live repository**. The current user explicitly wants both large/core bosses and small leaves tackled seriously, tangible progress committed immediately with subject `gpt-web: ...`, and **only changed/new units cold-replayed**. The user reports no other sessions: inspect and finish all dirty work; never skip, reset, overwrite or silently discard it.
+**Maintained: 2026-10-29, after F492.** Read this document, then check the **live repository**. The current user explicitly wants both large/core bosses and small leaves tackled seriously, tangible progress committed immediately with subject `gpt-web: ...`, and **only changed/new units cold-replayed**. The user reports no other sessions: inspect and finish all dirty work; never skip, reset, overwrite or silently discard it.
 
 ## 1. Trusted state and first commands
 
@@ -8,11 +8,11 @@ Canonical evidence is the pinned original PE, `config/function-origins.csv`, `co
 
 | Item | Verified snapshot |
 | --- | --- |
-| Git | `main`; pre-F489 reconstruction commit **`cf94130`** (F488), preceded by `0669a9a` (F485) and `ff7394b` (F484); F489 commit follows this update |
+| Git | `main`; pre-F490-F492 reconstruction commit **`47ecd62`** (F489), preceded by `cf94130` (F488) and `0669a9a` (F485); F490-F492 commit follows this update |
 | Pinned target | user-supplied Japanese `resources/th075.exe` v1.11; SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`; **never** `th075c.exe` |
-| Exact and source-present | **837 functions / 837 exact units** |
-| Accepted authored CODE | **859,937 bytes / 1,973,516 reviewed bytes = 43.57%** |
-| Conservative | **43.49%**, including 3,608 bytes with unresolved origin |
+| Exact and source-present | **841 functions / 841 exact units** |
+| Accepted authored CODE | **860,321 bytes / 1,973,516 reviewed bytes = 43.59%** |
+| Conservative | **43.51%**, including 3,608 bytes with unresolved origin |
 | Origin review | 1,002 authored, 2,671 library, 581 compiler, **97 pending** across 4,351 provisional candidates |
 | Goal | **98% not reached**; Git and local cold results are not external Oracle receipts |
 
@@ -29,7 +29,7 @@ If **any** dirty source, unit, or manifest is present, first inspect its exact e
 
 ## 2. Newly closed chains — **not** the backlog
 
-The full register of **all 837** accepted functions is in `config/functions.csv` and `config/match-units.toml`; this table intentionally highlights only the newest, important independent CODE extents. No called function, imported CRT/Win32 code, or owned jump-table bytes are counted twice.
+The full register of **all 841** accepted functions is in `config/functions.csv` and `config/match-units.toml`; this table intentionally highlights only the newest, important independent CODE extents. No called function, imported CRT/Win32 code, or owned jump-table bytes are counted twice.
 
 | Unit / accepted address | Whole CODE | Authentic fields | Evidence |
 | --- | ---: | ---: | --- |
@@ -108,6 +108,7 @@ The full register of **all 837** accepted functions is in `config/functions.csv`
 | F485 LoadingScene::Draw `00425390` / LogoScene::Draw `00425620` | **156 + 156 = 312** | **8 + 8 = 16** | `src/LoadingLogoSceneDrawF485.cpp`, `.analysis/f485-loading-logo-quad-init/` |
 | F488 3 full scene advances and 2 independent input polls | **99 + 84 + 78 + 96 + 96 = 453** | **5 + 4 + 2 + 11 + 11 = 33** | `src/SceneTemporalAndInputPoliciesF488.cpp`, `.analysis/f488-scene-temporal-policies/` |
 | F489 `WindowResource::InitializeAt00412DD0` | **128** | **10** | `src/WindowResourceTextureInitializeF489.cpp`, `.analysis/f489-window-resource/` |
+| F490–F492 CardList, FighterResources, SharedResource, CharacterResources cleanup | **112 + 84 + 83 + 105 = 384** | **5 + 6 + 5 + 8 = 24** | `src/CardListClearEntriesF490.cpp`, `src/FighterSharedResourceDestructorsF491.cpp`, `src/CharacterOwnedResourceDestructorF492.cpp` |
 
 **F340:** the companion archive entry seek at `0041D750` is independently cold exact for its whole 164-byte function including every one of its nine external references. It uses genuine iterator and `strcmp` semantics, returns the archive handle after `SetFilePointer` or `INVALID_HANDLE_VALUE` if not found. The original private archive list remains borrowed, not instantiated.
 
@@ -256,6 +257,8 @@ The full register of **all 837** accepted functions is in `config/functions.csv`
 **F486-F487 StaffRoll 208-byte boss negative controls:** original `StaffRollScene::AdvanceAt00438C20` remains unclassified. Its genuine phase==1 stage-window transition at unsigned elapsed≤0x14C08 and elapsed≥0x13880 emits a *single direct* native `jae` to the timeGetTime reset block while outside the window it continues fighter/best-score policy; correct x86 original 208 bytes. Trying 10 actual phase outer-do/for/while control flows in `.analysis/f486-staff-fallthrough-cfg/` and 7 real state switch/break forms in `.analysis/f487-staff-switch-break/` produced **210–230 bytes**, with an extra `jb` plus `jmp` or wrong direct branch target. No original-CODE credit; do not change stage policy semantics or invent assembly to force matching.
 
 **F489:** R035 `WindowResource::InitializeAt00412DD0` now complete original **128 CODE bytes / 36 native x86 instructions**, **88/88 original nonrelocation bytes**, all **10/10 actual physical COFF references and original PE targets**, single-unit cold **1/1 exact**. The native owner contains a real texture member at +0x28; true texture ctor `0040AD80`, allocate 1 slot `0040B1D0`, load actual resource `00657898` root `00657890` via `0040BB80`, then create original 1024×512 surface with native format0x20 through `00401C20`. The first semantic C++ probe declared a ctor but not a destructor for this borrowed texture object, compiling to **83 bytes without native /GX EH**. Declaring the actual destructor restores original real native exception handler at `0065508B`, owner lifetime state and every byte. Original owner prefix +0..0x27 remains untyped; borrow actual native texture/graphics methods without double-crediting callees.
+
+**F490-F492:** four distinct complete native cleanup routines are now **4/4 affected-only cold exact across 3 objects**, totaling **384 original authored CODE bytes and 24 authentic physical COFF relocations**. CardList `00431940` is **112 bytes /39 original instructions**: loops original list at +0x18 via Size/At, conditionally deletes nonnull owned entries through real native `0064169D`, then clears the list (original 92/92 nonfields and 5/5 refs). FighterResources `004204D0` is **84 bytes**, actual `/GX` owned member +0x7D0 invokes native clear `004216D0`, then automatic dtor `00421530` (60/60 and 6/6). SharedResource `00412E50` is **83 bytes** with authentic COM `Release` at vtable+8 on receiver+0 and automatic owned resource dtor at +0x28 through `0040AE40` (63/63 and 5/5). CharacterResource `0052D020` is a whole **105-byte** derived virtual destructor installing native vtable `006598D0`, clearing owned member +0xFEC via `00531CE0`, automatic member dtor `00531C40`, then base dtor `00456910` with native `/GX` handler `006564E8` (73/73 and 8/8). No original private class layout or external deletion/COM/helper CODE is assumed or duplicated.
 
 **Corrections to old notes:** The 686-byte writer and 429-byte reader are both **exact** (F339/F338), not pending F249/F250. The full 1,252-byte replay writer and 375-byte finalizer are both **exact** (F326/F328), not pending F219/F218/F289. The 1,766-byte font rasterizer is **exact** (F319), not pending F299/F302. The 301-byte glyph loader is **exact** (F318), not pending F291. The 916-byte MusicRoom catalog + separately compared 16-byte jump table is **exact in F258** (916 CODE credit only). Other accepted 1,000+ byte bosses include F271 projected quad (1,185), F278 pattern chooser (1,264), F282 resource loader (1,186), F292 overlay text box (1,385), F294 effects catalog (1,722), and F244 scene advance (1,529 CODE). Earlier failures remain useful *historical controls*, but must never be presented as current unaccepted work.
 

@@ -58943,3 +58943,162 @@ offset = 120
 type = "DIR32"
 symbol = "__except_list"
 target = 0x00000000
+
+[units.card-list-clear-entries-00431940]
+source = "src/CardListClearEntriesF490.cpp"
+object = "build/matching/CardListClearEntriesF490.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["CardList::ClearEntriesAt00431940"]
+symbol = "?ClearEntries@CardListF490@@QAEXXZ"
+target_address = 0x00431940
+size = 112
+[[units.card-list-clear-entries-00431940.relocations]]
+offset = 34
+type = "REL32"
+symbol = "?Size@CardPointersF490@@QAEIXZ"
+target = 0x0041DD50
+[[units.card-list-clear-entries-00431940.relocations]]
+offset = 54
+type = "REL32"
+symbol = "?At@CardPointersF490@@QAEPAPAXI@Z"
+target = 0x0041DD70
+[[units.card-list-clear-entries-00431940.relocations]]
+offset = 74
+type = "REL32"
+symbol = "?At@CardPointersF490@@QAEPAPAXI@Z"
+target = 0x0041DD70
+[[units.card-list-clear-entries-00431940.relocations]]
+offset = 88
+type = "REL32"
+symbol = "?DeleteCardPointerAt0064169D@@YAXPAX@Z"
+target = 0x0064169D
+[[units.card-list-clear-entries-00431940.relocations]]
+offset = 104
+type = "REL32"
+symbol = "?Clear@CardPointersF490@@QAEXXZ"
+target = 0x0041DF50
+
+
+[units.fighter-resources-clear-before-destruction-004204d0]
+source = "src/FighterSharedResourceDestructorsF491.cpp"
+object = "build/matching/FighterSharedResourceDestructorsF491.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["FighterResources::ClearMemberBeforeDestructionAt004204D0"]
+symbol = "??1FighterResourcesF491@@QAE@XZ"
+target_address = 0x004204D0
+size = 84
+[[units.fighter-resources-clear-before-destruction-004204d0.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??1FighterResourcesF491@@QAE@XZ"
+target = 0x00655566
+[[units.fighter-resources-clear-before-destruction-004204d0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.fighter-resources-clear-before-destruction-004204d0.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.fighter-resources-clear-before-destruction-004204d0.relocations]]
+offset = 45
+type = "REL32"
+symbol = "?Clear@FighterPatternCollectionF491@@QAEXXZ"
+target = 0x004216D0
+[[units.fighter-resources-clear-before-destruction-004204d0.relocations]]
+offset = 66
+type = "REL32"
+symbol = "??1FighterPatternCollectionF491@@QAE@XZ"
+target = 0x00421530
+[[units.fighter-resources-clear-before-destruction-004204d0.relocations]]
+offset = 76
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.shared-window-resource-release-00412e50]
+source = "src/FighterSharedResourceDestructorsF491.cpp"
+object = "build/matching/FighterSharedResourceDestructorsF491.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["SharedResource::ReleaseInterfaceAndTexturesAt00412E50"]
+symbol = "??1SharedWindowResourceF491@@QAE@XZ"
+target_address = 0x00412E50
+size = 83
+[[units.shared-window-resource-release-00412e50.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??1SharedWindowResourceF491@@QAE@XZ"
+target = 0x006550A0
+[[units.shared-window-resource-release-00412e50.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.shared-window-resource-release-00412e50.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.shared-window-resource-release-00412e50.relocations]]
+offset = 65
+type = "REL32"
+symbol = "??1D3DSharedResourceF491@@QAE@XZ"
+target = 0x0040AE40
+[[units.shared-window-resource-release-00412e50.relocations]]
+offset = 75
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.character-resources-clear-and-release-base-0052d020]
+source = "src/CharacterOwnedResourceDestructorF492.cpp"
+object = "build/matching/CharacterOwnedResourceDestructorF492.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["CharacterResource::ClearEntriesAndReleaseBaseAt0052D020"]
+symbol = "??1CharacterResourcesF492@@UAE@XZ"
+target_address = 0x0052D020
+size = 105
+[[units.character-resources-clear-and-release-base-0052d020.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??1CharacterResourcesF492@@UAE@XZ"
+target = 0x006564E8
+[[units.character-resources-clear-and-release-base-0052d020.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.character-resources-clear-and-release-base-0052d020.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.character-resources-clear-and-release-base-0052d020.relocations]]
+offset = 33
+type = "DIR32"
+symbol = "??_7CharacterResourcesF492@@6B@"
+target = 0x006598D0
+[[units.character-resources-clear-and-release-base-0052d020.relocations]]
+offset = 54
+type = "REL32"
+symbol = "?Clear@CharacterEntryListF492@@QAEXXZ"
+target = 0x00531CE0
+[[units.character-resources-clear-and-release-base-0052d020.relocations]]
+offset = 72
+type = "REL32"
+symbol = "??1CharacterEntryListF492@@QAE@XZ"
+target = 0x00531C40
+[[units.character-resources-clear-and-release-base-0052d020.relocations]]
+offset = 87
+type = "REL32"
+symbol = "??1NativeCharacterResourcesBaseF492@@UAE@XZ"
+target = 0x00456910
+[[units.character-resources-clear-and-release-base-0052d020.relocations]]
+offset = 97
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000

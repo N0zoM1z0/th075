@@ -836,3 +836,7 @@ TimedScene::AdvanceAt004255D0,0x004255D0,function
 SceneInput::PollAt004256C0,0x004256C0,function
 StaffRollScene::PollSkipInputAt00439F90,0x00439F90,function
 WindowResource::InitializeAt00412DD0,0x00412DD0,function
+CardList::ClearEntriesAt00431940,0x00431940,function
+FighterResources::ClearMemberBeforeDestructionAt004204D0,0x004204D0,function
+SharedResource::ReleaseInterfaceAndTexturesAt00412E50,0x00412E50,function
+CharacterResource::ClearEntriesAndReleaseBaseAt0052D020,0x0052D020,function

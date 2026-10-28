@@ -7775,3 +7775,65 @@ and replayed, **1/1 exact**. Borrowed texture, D3D/Win32/CRT and
 compiler EH helper CODE is not double-credited; no assumed private
 class layout, fabricated locals, pasted native bytes/ASM, masks,
 cropped original function, all-unit cold replay or remote Oracle.
+
+
+## F490-F492: four complete native card, fighter and shared resource lifetime policies
+
+Four separate original authored C++ methods have been recovered as whole
+original CODE extents with independently checked PE native instructions,
+relocations and borrowed resource/container ABI. Their actual original
+source ownership, PE SHA and exact evidence are frozen in their distinct
+function-origins and `config/functions.csv` rows.
+
+**F490 CardList:** original R043 `CardList::ClearEntriesAt00431940`
+occupies **112 native CODE bytes /39 original x86 instructions**, native
+SHA256 `b592cb1f5747792c46b6d67f443565d12bfeb5e94cf2d7205b57f1363dd5a4be`.
+The original list is at owner+0x18, with actual unsigned Size `0041DD50`,
+indexed At `0041DD70` and final Clear `0041DF50`. It iterates every
+slot, tests its actual owned pointer for null, stores the pointer in
+a real 32-bit original EBP-8 temp, calls authentic native deletion
+`0064169D` only on nonnull elements, and unconditionally clears the
+list. Full **92/92 original nonrelocation bytes** and **5/5 real original
+COFF fields** matched natural `src/CardListClearEntriesF490.cpp`.
+
+**F491 FighterResources:** original R180
+`FighterResources::ClearMemberBeforeDestructionAt004204D0`, **84 CODE
+bytes /22 instructions**, native SHA256
+`7289e83a2771ade7d9820b05dd083445ffb32f39fe654554ec84e95e1df29982`.
+The actual native C++ owned resource at `this+0x7D0` receives a real
+Clear call to `004216D0`, followed by its *automatic C++ member
+destructor* `00421530`, with compiler-produced genuine `/GX` EH state
+and handler `00655566`. Natural source recovers **60/60 nonfield bytes
+and all 6/6 genuine native COFF references**.
+
+**F491 SharedResource:** original R175
+`SharedResource::ReleaseInterfaceAndTexturesAt00412E50` consists of
+**83 CODE bytes /26 instructions**, SHA256
+`66883ae3ca9776a99962cebb1b654a4a718766a5146b9aadb8e61302a43267a2`.
+The real owner pointer at `this+0` is a D3D8 COM interface, whose
+original vtable+8 `Release` is invoked on the true interface receiver;
+then real owned native member at `this+0x28` is destructed through
+`0040AE40`, with natural original `/GX` handler `006550A0`. The
+**63/63 native nonfield bytes and 5/5 physical COFF fields** match.
+
+**F492 CharacterResources:** original R175
+`CharacterResource::ClearEntriesAndReleaseBaseAt0052D020` occupies
+**105 authored CODE bytes /27 instructions**, SHA256
+`a8909ac886a86da33ed1e9f1cc523d44050e1459db2b5684272d9cce2223e4e0`.
+It is an actual derived virtual C++ destructor, installs original class
+vtable `006598D0` and first clears physically real child at +0xFEC
+through `00531CE0`; the compiler then automatically invokes child
+destructor `00531C40` and original borrowed base destructor `00456910`.
+Its VC7.1 `/GX` EH state changes from 1 to 0 to -1 naturally, and
+original handler `006564E8` is preserved, with **73/73 nonrelocation
+bytes and all 8/8 original physical COFF reference types and targets**.
+The large untyped bytes ahead of +0xFEC do not imply a recovered full
+private fighter layout or additional child objects.
+
+Four affected units and only those units were rebuilt and individually
+cold replayed **4/4 exact across three source objects**, crediting
+**112+84+83+105 = 384 distinct original authored CODE bytes**. No
+borrowed list/actor/COM/Win32/CRT destructor or base callee code is
+credited twice, no source assembler/target code bytes, fake stack locals,
+masked COFF fields, cropped native bodies, all-unit cold replay or
+external Oracle receipt.
