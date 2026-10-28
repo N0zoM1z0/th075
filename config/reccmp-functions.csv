@@ -530,3 +530,6 @@ StaticResourceQueues::ClearFourQueuesAt00413880,0x00413880,function
 ReplayRecords::IsPrimaryInputQueueEmptyAt004142D0,0x004142D0,function
 CharacterSelectScene::ResetSelection,0x00433230,function
 MarisaFighter::ResetRound,0x00493130,function
+MarisaFighter::Initialize,0x00492FB0,function
+MarisaFighter::CreateOwnedObject,0x004930B0,function
+YoumuFighter::Initialize,0x0052CEE0,function

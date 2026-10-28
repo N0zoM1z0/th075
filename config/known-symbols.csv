@@ -512,3 +512,6 @@ address,name,module,confidence,evidence
 0x004142D0,ReplayRecords::IsPrimaryInputQueueEmptyAt004142D0,ReplayRecords,inferred,F220; complete 35 native authored bytes and 1 real fields exact; original owner STL type provisional
 0x00433230,CharacterSelectScene::ResetSelection,CharacterSelectScene,inferred,F221; complete authored 569-byte selection reset and all 11 true COFF fields cold exact; nominal scene owner layout unproven
 0x00493130,MarisaFighter::ResetRound,MarisaFighter,inferred,F222; complete 780-byte authored reset cold exact; three real fields; original fighter class/record identities provisional
+0x00492FB0,MarisaFighter::Initialize,Fighter,inferred,F223; complete 243-byte authored body and 6 relocations cold exact; original class identities/ownership provisional
+0x004930B0,MarisaFighter::CreateOwnedObject,Fighter,inferred,F223; complete 120-byte authored body and 6 relocations cold exact; original class identities/ownership provisional
+0x0052CEE0,YoumuFighter::Initialize,Fighter,inferred,F223; complete 314-byte authored body and 11 relocations cold exact; original class identities/ownership provisional

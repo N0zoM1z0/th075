@@ -76,9 +76,9 @@ See the current [handoff](RE_HANDOFF.md) for current status.
 - Supplied Japanese th075.exe 1.11, SHA-256
   `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
   Archive identity is pinned; official distribution provenance is uncorroborated.
-- **531 exact functions/units, 765,914 CODE bytes, 201 canonical objects,
-  306 accepted source-header inputs.** Reviewed coverage is 38.81%; conservative
-  coverage is 38.74%, including all 97 unknown origins/3,608 pending bytes.
+- **534 exact functions/units, 766,591 CODE bytes, 204 canonical objects,
+  309 accepted source-header inputs.** Reviewed coverage is 38.84%; conservative
+  coverage is 38.77%, including all 97 unknown origins/3,608 pending bytes.
 - Ownership, source presence, names, Ghidra types, compilation and reproducible
   exactness remain distinct. Read ledgers and relevant origin evidence before
   relying on any classification or provisional boundary.
@@ -785,6 +785,22 @@ base-reset call at 0x304. The receiver is a physical call-only
 view, not a recovered full Marisa class; no data, helper,
 compiler-generated sections, fake locals, binary masks
 or duplicate base-callee code is credited.
+
+## F223: Marisa and Youmu constructors / real EH ownership
+
+Full authored natural-source /GX- or /GX VC7.1 cold replays:
+MarisaFighter::Initialize at 00492FB0 (243 CODE bytes, six
+relocations), MarisaFighter::CreateOwnedObject at 004930B0
+(120 CODE bytes, six relocations, one-stage EH and actual
+new(0xE8) allocation) and YoumuFighter::Initialize at
+0052CEE0 (314 CODE bytes, eleven relocations, native
+EH and actual +0xFEC subcomponent initialization). All
+677 CODE bytes and 23 native fields match exactly. Source
+carriers express real allocator dimensions and borrowed
+callee ABIs; they do not reconstruct a complete player,
+subcomponent or library object. Three accepted unit keys
+are recorded in match-units.toml, alongside source hashes
+in the exact adoption manifest.
 
 ## Retained failures and method boundaries
 

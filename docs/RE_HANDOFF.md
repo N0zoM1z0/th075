@@ -1,4 +1,4 @@
-# TH075 active reconstruction status — F222
+# TH075 active reconstruction status — F223
 
 Updated 2026-10-28. The user explicitly resumed reconstruction and requires
 serious treatment of both large/core and small/leaf functions; all historical
@@ -862,8 +862,21 @@ data/global ownership, base callee byte double credit, inert
 padding or masked relocation fields are claimed. All 97
 unknown-origin candidates are still uncredited.
 
-Current ledger: **531 exact functions, 765,914 CODE bytes / 1,973,516 reviewed
-authored bytes = 38.81%**, conservative 38.74% with 3,608 unknown-origin bytes
+F223 independently cold-replayed three complete authored fighter
+lifecycle functions: MarisaFighter::Initialize 00492FB0 (243 bytes,
+6 physical COFF fields, 56 decoded instructions), MarisaFighter::
+CreateOwnedObject 004930B0 (120 bytes, 6 fields, 34 instructions
+and real VC7.1 EH), and YoumuFighter::Initialize 0052CEE0
+(314 bytes, 11 fields, 70 instructions with a real EH frame).
+The three natural VC7.1 source bodies rebuild 3/3 exact (677/677
+bytes, 23/23 relocations); no generated EH helpers, imported
+constructors, complete owner layouts, runtime or static data
+receive duplicate credit. These functions were already cold
+replayed as a dirty worktree at entry; the original changes
+were investigated and accepted rather than bypassed.
+
+Current ledger: **534 exact functions, 766,591 CODE bytes / 1,973,516 reviewed
+authored bytes = 38.84%**, conservative 38.77% with 3,608 unknown-origin bytes
 retained. F184..F222 (excluding exploratory-only numbers) added thirty-eight accepted units,
 thirty-five objects and thirty-eight new source/header inputs.
 Keep R268 origin evidence, all 97 unknown candidates, 493 pre-F184

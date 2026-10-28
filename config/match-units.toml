@@ -36569,3 +36569,147 @@ offset = 772
 type = "REL32"
 symbol = "?ResetRound@FighterBaseActionsF159@@QAEXXZ"
 target = 0x00457010
+
+[units.marisa-fighter-initialize-00492fb0]
+source = "src/MarisaInitF223.cpp"
+object = "build/matching/MarisaInitF223.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["MarisaFighter::Initialize"]
+symbol = "??0MarisaCtorF223@@QAE@XZ"
+target_address = 0x00492FB0
+size = 243
+[[units.marisa-fighter-initialize-00492fb0.relocations]]
+offset = 11
+type = "REL32"
+symbol = "??0BaseFighterCtorF223@@QAE@XZ"
+target = 0x004567B0
+[[units.marisa-fighter-initialize-00492fb0.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "??_7MarisaCtorF223@@6B@"
+target = 0x006592B8
+[[units.marisa-fighter-initialize-00492fb0.relocations]]
+offset = 59
+type = "DIR32"
+symbol = "?g_MarisaNameAt006592A8@@3QBDB"
+target = 0x006592A8
+[[units.marisa-fighter-initialize-00492fb0.relocations]]
+offset = 74
+type = "REL32"
+symbol = "_strcpy"
+target = 0x00641B80
+[[units.marisa-fighter-initialize-00492fb0.relocations]]
+offset = 82
+type = "DIR32"
+symbol = "?g_MarisaTagAt006592B0@@3QBDB"
+target = 0x006592B0
+[[units.marisa-fighter-initialize-00492fb0.relocations]]
+offset = 97
+type = "REL32"
+symbol = "_strcpy"
+target = 0x00641B80
+
+
+[units.marisa-fighter-create-owned-object-004930b0]
+source = "src/MarisaOwnedF223.cpp"
+object = "build/matching/MarisaOwnedF223.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["MarisaFighter::CreateOwnedObject"]
+symbol = "?CreateOwnedObject@MarisaFactoryF223@@QAEXPAPAVMarisaGeneratedF223@@@Z"
+target_address = 0x004930B0
+size = 120
+[[units.marisa-fighter-create-owned-object-004930b0.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$?CreateOwnedObject@MarisaFactoryF223@@QAEXPAPAVMarisaGeneratedF223@@@Z"
+target = 0x0065644B
+[[units.marisa-fighter-create-owned-object-004930b0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.marisa-fighter-create-owned-object-004930b0.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.marisa-fighter-create-owned-object-004930b0.relocations]]
+offset = 36
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.marisa-fighter-create-owned-object-004930b0.relocations]]
+offset = 67
+type = "REL32"
+symbol = "??0MarisaGeneratedF223@@QAE@PAX@Z"
+target = 0x0049C850
+[[units.marisa-fighter-create-owned-object-004930b0.relocations]]
+offset = 110
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+
+[units.youmu-fighter-initialize-0052cee0]
+source = "src/YoumuInitF223.cpp"
+object = "build/matching/YoumuInitF223.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["YoumuFighter::Initialize"]
+symbol = "??0YoumuCtorF223@@QAE@XZ"
+target_address = 0x0052CEE0
+size = 314
+[[units.youmu-fighter-initialize-0052cee0.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0YoumuCtorF223@@QAE@XZ"
+target = 0x006564C8
+[[units.youmu-fighter-initialize-0052cee0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.youmu-fighter-initialize-0052cee0.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.youmu-fighter-initialize-0052cee0.relocations]]
+offset = 32
+type = "REL32"
+symbol = "??0BaseFighterCtorF223@@QAE@XZ"
+target = 0x004567B0
+[[units.youmu-fighter-initialize-0052cee0.relocations]]
+offset = 48
+type = "DIR32"
+symbol = "??_7YoumuCtorF223@@6B@"
+target = 0x006598D0
+[[units.youmu-fighter-initialize-0052cee0.relocations]]
+offset = 62
+type = "REL32"
+symbol = "?Initialize@YoumuSubcomponentF223@@QAEXXZ"
+target = 0x00531C00
+[[units.youmu-fighter-initialize-0052cee0.relocations]]
+offset = 101
+type = "DIR32"
+symbol = "?g_YoumuNameAt006598C0@@3QBDB"
+target = 0x006598C0
+[[units.youmu-fighter-initialize-0052cee0.relocations]]
+offset = 116
+type = "REL32"
+symbol = "_strcpy"
+target = 0x00641B80
+[[units.youmu-fighter-initialize-0052cee0.relocations]]
+offset = 124
+type = "DIR32"
+symbol = "?g_YoumuTagAt006598C8@@3QBDB"
+target = 0x006598C8
+[[units.youmu-fighter-initialize-0052cee0.relocations]]
+offset = 139
+type = "REL32"
+symbol = "_strcpy"
+target = 0x00641B80
+[[units.youmu-fighter-initialize-0052cee0.relocations]]
+offset = 306
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000

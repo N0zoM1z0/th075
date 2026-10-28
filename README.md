@@ -26,10 +26,16 @@ This pins the supplied sample; its official distribution provenance has not
 been independently corroborated. The localized `th075c.exe` has a different
 identity and cannot substitute for the target.
 
-The current checkpoint has **531 exact functions / 765,914 code bytes** from
-4,351 provisional candidates. Reviewed authored coverage is 38.81%; conservative
-coverage, including all 3,608 pending bytes, is **38.74%**. The objective of
+The current checkpoint has **534 exact functions / 766,591 code bytes** from
+4,351 provisional candidates. Reviewed authored coverage is 38.84%; conservative
+coverage, including all 3,608 pending bytes, is **38.77%**. The objective of
 98% authored bytes exact remains incomplete.
+F223 independently cold-reconstructed the full Marisa fighter
+initialization (243 CODE bytes), 120-byte exception-backed owned
+object creation and 314-byte Youmu fighter initialization. All
+677 bytes and 23 actual COFF fields cold-replay exact across three
+objects; physical objects and EH frames remain borrowed views.
+
 F222 cold-reconstructed the complete 780-byte Marisa fighter round
 reset with three actual COFF fields. Native FILD m32/F DIV m32 proves
 signed i/36.0f; native loop i<=36 (CMP 36/JG) rather than i<37
