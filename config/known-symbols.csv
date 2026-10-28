@@ -810,3 +810,5 @@ address,name,module,confidence,evidence
 0x00417120,FrameCapture::InstallPresentCallbackAt00417120,FrameCapture,inferred,"F484; whole native 31-byte exact FrameCapture::InstallPresentCallbackAt00417120, 2 original COFF fields and only affected 7/7 cold exact"
 0x00417140,FrameCapture::EnableDirectDrawAt00417140,FrameCapture,inferred,"F484; whole native 28-byte exact FrameCapture::EnableDirectDrawAt00417140, 1 original COFF fields and only affected 7/7 cold exact"
 0x00424F40,BattleEndScene::DestroyAt00424F40,BattleEndScene,inferred,"F484; whole native 28-byte exact BattleEndScene::DestroyAt00424F40, 2 original COFF fields and only affected 7/7 cold exact"
+0x00425390,LoadingScene::DrawAt00425390,LoadingScene,inferred,"F485; complete original Loading 156-byte scene draw, 136-byte physical quad carrier and 8 authentic COFF refs, affected-only cold exact"
+0x00425620,LogoScene::DrawAt00425620,LogoScene,inferred,"F485; complete original Logo 156-byte scene draw, 136-byte physical quad carrier and 8 authentic COFF refs, affected-only cold exact"

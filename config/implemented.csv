@@ -827,3 +827,5 @@ EventQueue::LocalAcquireReleaseAt004239C0
 FrameCapture::InstallPresentCallbackAt00417120
 FrameCapture::EnableDirectDrawAt00417140
 BattleEndScene::DestroyAt00424F40
+LoadingScene::DrawAt00425390
+LogoScene::DrawAt00425620

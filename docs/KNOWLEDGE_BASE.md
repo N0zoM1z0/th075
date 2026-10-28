@@ -7609,3 +7609,55 @@ No new stage-loader code is recredited in F482 or F484; historical
 assumptions that this function remains pending are incorrect. The
 actual separate 2,987-byte WinMain and 28K-82K character movement
 bosses remain outstanding.
+
+
+## F485: exact complete 156-byte native Loading and Logo sprite draw routines, actual quad ctor receiver
+
+Two independent original R053-authored scene draw functions share a
+render path but have distinct real native CODE extents: LoadingScene
+`00425390..0042542B`, SHA256
+`ccaa339ab8b73f6fa7a037cc608e88d99c810a05a3269ffa78bbde13129495f4`,
+and LogoScene `00425620..004256BB`, SHA256
+`8fbaa99f4adcc5870bb3d5e50ea9538ed6f7870cf6dbb437e42cec075d807442`.
+Each is **156 original authored CODE bytes / 42 x86 instructions**.
+The genuine source stack is 0x9C with a 16-byte native RECT at EBP-0x98
+and a physically observed 136-byte quad carrier at EBP-0x88, of which
+132 geometry bytes are understood; its remaining four physical bytes
+are untyped, not a claim of complete private quad fields.
+
+Original graphics begin `00402660` gates scene drawing, then the native
+C++ source constructs the actual quad at **EBP-0x88** with original
+zero-arg native constructor entrypoint `0040D990`. It sets actual
+owner+8 texture renderer Depth mode 0 (`0040C840`) and blend mode 0
+(`0040C7F0`), creates a genuine 640×480 Win32 RECT through imported
+`SetRect` at IAT `00657210`, invokes borrowed game quad
+`BuildQuadFromRect` `00411400`, draws a real texture quad through native
+`0040C9A0` with source RECT, quad pointer, texture mode0 and tint
+0xffffffff, then advances the graphics frame via `004027D0`.
+
+Prior F470 full 156-byte structural probe used a C++ aggregate with
+`struct DrawFrameF470 {RECT rectangle; DrawQuadF470 quad;}`; because
+its quad member had a nontrivial default constructor, VC7.1 emitted an
+*implicit enclosing aggregate constructor*, calling it with the frame
+address EBP-0x98, whereas original PE calls `0040D990` with the quad
+member at EBP-0x88. All other native instructions were aligned; this
+yielded 123/124 original nonfield bytes and one different true COFF
+constructor symbol, so it was correctly not adopted. Separate automatic
+quad/RECT sources also changed their *actual* native stack locations
+and whole function length to 147 bytes.
+
+The complete natural source in `src/LoadingLogoSceneDrawF485.cpp` instead
+represents the borrowed original zero-arg quad constructor as an
+explicit named `DrawQuadF470::ConstructNative()` entrypoint on that
+**actual used quad member**, which is semantically native construction,
+not an invented original private method name or extra CODE. This
+corrects the original receiver address, produces the entire **156/156
+CODE extent**, **124/124 original nonrelocation bytes**, and **8/8
+genuine physical COFF DIR32/REL32 fields, types and native PE targets**
+for each distinct source. Only the two affected units
+`loading-scene-draw-complete-00425390` and
+`logo-scene-draw-complete-00425620` were built and cold replayed, **2/2
+exact across one object**. Exactly 312 native authored CODE bytes are
+credited, with no original ctor, graphic renderer, D3D, CRT or Win32
+callee CODE double-count. No target machine bytes/ASM, fake locals,
+masked relocations, cropped body, full cold replay or remote Oracle.

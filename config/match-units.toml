@@ -58570,3 +58570,102 @@ offset = 20
 type = "REL32"
 symbol = "??1NativeSceneBaseF484@@UAE@XZ"
 target = 0x00431F40
+
+[units.loading-scene-draw-complete-00425390]
+source = "src/LoadingLogoSceneDrawF485.cpp"
+object = "build/matching/LoadingLogoSceneDrawF485.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["LoadingScene::DrawAt00425390"]
+symbol = "?Draw@LoadingSceneDrawF470@@QAEXXZ"
+target_address = 0x00425390
+size = 156
+[[units.loading-scene-draw-complete-00425390.relocations]]
+offset = 16
+type = "REL32"
+symbol = "?GraphicsBeginAt00402660@@YAEXZ"
+target = 0x00402660
+[[units.loading-scene-draw-complete-00425390.relocations]]
+offset = 34
+type = "REL32"
+symbol = "?ConstructNative@DrawQuadF470@@QAEXXZ"
+target = 0x0040D990
+[[units.loading-scene-draw-complete-00425390.relocations]]
+offset = 50
+type = "REL32"
+symbol = "?SetDepthMode@SceneTextureDrawerF470@@QAEXH@Z"
+target = 0x0040C840
+[[units.loading-scene-draw-complete-00425390.relocations]]
+offset = 66
+type = "REL32"
+symbol = "?SetBlendMode@SceneTextureDrawerF470@@QAEXH@Z"
+target = 0x0040C7F0
+[[units.loading-scene-draw-complete-00425390.relocations]]
+offset = 93
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.loading-scene-draw-complete-00425390.relocations]]
+offset = 111
+type = "REL32"
+symbol = "?BuildQuadFromRect@DrawQuadF470@@QAEXPBUtagRECT@@@Z"
+target = 0x00411400
+[[units.loading-scene-draw-complete-00425390.relocations]]
+offset = 143
+type = "REL32"
+symbol = "?DrawQuad@SceneTextureDrawerF470@@QAEXHPBVDrawQuadF470@@PBUtagRECT@@I@Z"
+target = 0x0040C9A0
+[[units.loading-scene-draw-complete-00425390.relocations]]
+offset = 148
+type = "REL32"
+symbol = "?GraphicsAdvanceAt004027D0@@YAXXZ"
+target = 0x004027D0
+
+
+[units.logo-scene-draw-complete-00425620]
+source = "src/LoadingLogoSceneDrawF485.cpp"
+object = "build/matching/LoadingLogoSceneDrawF485.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["LogoScene::DrawAt00425620"]
+symbol = "?Draw@LogoSceneDrawF470@@QAEXXZ"
+target_address = 0x00425620
+size = 156
+[[units.logo-scene-draw-complete-00425620.relocations]]
+offset = 16
+type = "REL32"
+symbol = "?GraphicsBeginAt00402660@@YAEXZ"
+target = 0x00402660
+[[units.logo-scene-draw-complete-00425620.relocations]]
+offset = 34
+type = "REL32"
+symbol = "?ConstructNative@DrawQuadF470@@QAEXXZ"
+target = 0x0040D990
+[[units.logo-scene-draw-complete-00425620.relocations]]
+offset = 50
+type = "REL32"
+symbol = "?SetDepthMode@SceneTextureDrawerF470@@QAEXH@Z"
+target = 0x0040C840
+[[units.logo-scene-draw-complete-00425620.relocations]]
+offset = 66
+type = "REL32"
+symbol = "?SetBlendMode@SceneTextureDrawerF470@@QAEXH@Z"
+target = 0x0040C7F0
+[[units.logo-scene-draw-complete-00425620.relocations]]
+offset = 93
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.logo-scene-draw-complete-00425620.relocations]]
+offset = 111
+type = "REL32"
+symbol = "?BuildQuadFromRect@DrawQuadF470@@QAEXPBUtagRECT@@@Z"
+target = 0x00411400
+[[units.logo-scene-draw-complete-00425620.relocations]]
+offset = 143
+type = "REL32"
+symbol = "?DrawQuad@SceneTextureDrawerF470@@QAEXHPBVDrawQuadF470@@PBUtagRECT@@I@Z"
+target = 0x0040C9A0
+[[units.logo-scene-draw-complete-00425620.relocations]]
+offset = 148
+type = "REL32"
+symbol = "?GraphicsAdvanceAt004027D0@@YAXXZ"
+target = 0x004027D0

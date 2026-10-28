@@ -828,3 +828,5 @@ EventQueue::LocalAcquireReleaseAt004239C0,0x004239C0,function
 FrameCapture::InstallPresentCallbackAt00417120,0x00417120,function
 FrameCapture::EnableDirectDrawAt00417140,0x00417140,function
 BattleEndScene::DestroyAt00424F40,0x00424F40,function
+LoadingScene::DrawAt00425390,0x00425390,function
+LogoScene::DrawAt00425620,0x00425620,function

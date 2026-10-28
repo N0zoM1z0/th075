@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377; F378; F379; F386; F389; F391; F392; F393; F394; F395; F403; F407; F414; F415; F421; F422; F427; F428; F429; F430; F431; F432; F435; F437; F440; F445; F446; F447; F448; F454; F458; F459; F460; F461; F463; F465; F467; F468; F469; F474; F479; F481; F484",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377; F378; F379; F386; F389; F391; F392; F393; F394; F395; F403; F407; F414; F415; F421; F422; F427; F428; F429; F430; F431; F432; F435; F437; F440; F445; F446; F447; F448; F454; F458; F459; F460; F461; F463; F465; F467; F468; F469; F474; F479; F481; F484; F485",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "c80aa864bdce7c42a14c6a12e9b6cfa885b39ded65f5d9774b660ff0769fb71f"
+      "current_sha256": "09aaa1bb7804f579e6edd757a7dc4f1f28fe9c15a1fa9e197bb7f4badcc044c5"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "3ce42193ce8bc3d6a006148473da5c8b13cb5154066ce3fcf8f7fdec015d759f"
+      "current_sha256": "8e13e145cd5fec6d3b4d1d6e775c42d2d5155ad644e8dc91aa16138a5ac77127"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "e43f63ef8691ac51d3019a87414f3e8a167d70c8ceebd2e9397ae98c8c18d5b0"
+      "current_sha256": "d85a8a7cf0e556fb7cefe6412176ab3541fd1d7635122101a1580cd691ce9e59"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "c02904d6f9c36390a149d17863b920bcb1d936050d2d9b7cfa874614485cfb31"
+      "current_sha256": "6461f00e61df5e6db07e6ef2ccb95d282aad9f26ec679f87432fecfc010d9e50"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "da1ce671e37b2b538e6603ca0c976691e4d4b04508f31f3a41519b09a865e9d0"
+      "current_sha256": "18d07d7e089bdf8a807d1d9fb8eacaaf8318725d96c1a71a76827d2dfc2ac20f"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -33876,6 +33876,94 @@
         "disposition": "authored",
         "confidence": "target-observed-and-explicit-source-shape",
         "evidence_id": "R097"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00425390",
+        "size": "156",
+        "span_end": "0x0042542B",
+        "current_name": "FUN_00425390",
+        "proposed_name": "LoadingScene::Draw",
+        "module": "LoadingScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R053; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00425390",
+        "size": "156",
+        "span_end": "0x0042542B",
+        "current_name": "FUN_00425390",
+        "proposed_name": "LoadingScene::Draw",
+        "module": "LoadingScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void LoadingSceneDrawF470::Draw()",
+        "is_thunk": "false",
+        "source_file": "src/LoadingLogoSceneDrawF485.cpp",
+        "evidence": "R053; full body hash, complete decoded CFG and local game-specific behavior reviewed; F485; scripts/repo-python scripts/replay-exact-units.py --unit loading-scene-draw-complete-00425390",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F485 complete independent original R053 LoadingScene::DrawAt00425390 at 0x00425390: 156 authored original CODE bytes, all 42 original x86 instructions, native PE SHA256 ccaa339ab8b73f6fa7a037cc608e88d99c810a05a3269ffa78bbde13129495f4. Entire original GraphicsBegin 00402660 gate; true physically 152-byte stack state RECT at EBP-0x98 and 136-byte physical quad carrier at EBP-0x88 (only 132 known drawable bytes, final four untyped). Original zero-arg quad constructor entrypoint 0040D990 invoked with quad receiver EBP-0x88; an implicit enclosing aggregate C++ default constructor was wrong and used receiver EBP-0x98. Natural explicit native borrowed construction entrypoint on its real member restores original. Original scene drawer pointer at this+8 sets native Depth 0040C840(0), Blend 0040C7F0(0); original imported SetRect IAT 00657210 for 640x480, quad BuildFromRect native 00411400, sprite quad draw 0040C9A0 with color 0xFFFFFFFF, then full original GraphicsAdvance 004027D0. All 124/124 native nonfield bytes and 8/8 authentic original physical COFF fields and PE destinations and isolated affected-only 2/2 cold exact. Does not assert full original private scene/quad layout or method spelling of zero-arg constructor-entrypoint shim; all borrowed graphics methods/Win32/D3D CODE excluded, no fake locals/asm, target-byte graft, masked fields, cropped original, full cold replay or external Oracle."
+      },
+      "origin": {
+        "address": "0x00425390",
+        "origin": "authored",
+        "subsystem": "LoadingScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R053"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00425620",
+        "size": "156",
+        "span_end": "0x004256BB",
+        "current_name": "FUN_00425620",
+        "proposed_name": "LogoScene::Draw",
+        "module": "LogoScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R053; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00425620",
+        "size": "156",
+        "span_end": "0x004256BB",
+        "current_name": "FUN_00425620",
+        "proposed_name": "LogoScene::Draw",
+        "module": "LogoScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void LogoSceneDrawF470::Draw()",
+        "is_thunk": "false",
+        "source_file": "src/LoadingLogoSceneDrawF485.cpp",
+        "evidence": "R053; full body hash, complete decoded CFG and local game-specific behavior reviewed; F485; scripts/repo-python scripts/replay-exact-units.py --unit logo-scene-draw-complete-00425620",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F485 complete independent original R053 LogoScene::DrawAt00425620 at 0x00425620: 156 authored original CODE bytes, all 42 original x86 instructions, native PE SHA256 8fbaa99f4adcc5870bb3d5e50ea9538ed6f7870cf6dbb437e42cec075d807442. Entire original GraphicsBegin 00402660 gate; true physically 152-byte stack state RECT at EBP-0x98 and 136-byte physical quad carrier at EBP-0x88 (only 132 known drawable bytes, final four untyped). Original zero-arg quad constructor entrypoint 0040D990 invoked with quad receiver EBP-0x88; an implicit enclosing aggregate C++ default constructor was wrong and used receiver EBP-0x98. Natural explicit native borrowed construction entrypoint on its real member restores original. Original scene drawer pointer at this+8 sets native Depth 0040C840(0), Blend 0040C7F0(0); original imported SetRect IAT 00657210 for 640x480, quad BuildFromRect native 00411400, sprite quad draw 0040C9A0 with color 0xFFFFFFFF, then full original GraphicsAdvance 004027D0. All 124/124 native nonfield bytes and 8/8 authentic original physical COFF fields and PE destinations and isolated affected-only 2/2 cold exact. Does not assert full original private scene/quad layout or method spelling of zero-arg constructor-entrypoint shim; all borrowed graphics methods/Win32/D3D CODE excluded, no fake locals/asm, target-byte graft, masked fields, cropped original, full cold replay or external Oracle."
+      },
+      "origin": {
+        "address": "0x00425620",
+        "origin": "authored",
+        "subsystem": "LogoScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R053"
       }
     }
   ],
@@ -207744,6 +207832,146 @@
           "target": 4398912
         }
       ]
+    },
+    "loading-scene-draw-complete-00425390": {
+      "source": "src/LoadingLogoSceneDrawF485.cpp",
+      "object": "build/matching/LoadingLogoSceneDrawF485.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "LoadingScene::DrawAt00425390"
+      ],
+      "symbol": "?Draw@LoadingSceneDrawF470@@QAEXXZ",
+      "target_address": 4346768,
+      "size": 156,
+      "relocations": [
+        {
+          "offset": 16,
+          "type": "REL32",
+          "symbol": "?GraphicsBeginAt00402660@@YAEXZ",
+          "target": 4204128
+        },
+        {
+          "offset": 34,
+          "type": "REL32",
+          "symbol": "?ConstructNative@DrawQuadF470@@QAEXXZ",
+          "target": 4250000
+        },
+        {
+          "offset": 50,
+          "type": "REL32",
+          "symbol": "?SetDepthMode@SceneTextureDrawerF470@@QAEXH@Z",
+          "target": 4245568
+        },
+        {
+          "offset": 66,
+          "type": "REL32",
+          "symbol": "?SetBlendMode@SceneTextureDrawerF470@@QAEXH@Z",
+          "target": 4245488
+        },
+        {
+          "offset": 93,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 111,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@DrawQuadF470@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 143,
+          "type": "REL32",
+          "symbol": "?DrawQuad@SceneTextureDrawerF470@@QAEXHPBVDrawQuadF470@@PBUtagRECT@@I@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 148,
+          "type": "REL32",
+          "symbol": "?GraphicsAdvanceAt004027D0@@YAXXZ",
+          "target": 4204496
+        }
+      ]
+    },
+    "logo-scene-draw-complete-00425620": {
+      "source": "src/LoadingLogoSceneDrawF485.cpp",
+      "object": "build/matching/LoadingLogoSceneDrawF485.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "LogoScene::DrawAt00425620"
+      ],
+      "symbol": "?Draw@LogoSceneDrawF470@@QAEXXZ",
+      "target_address": 4347424,
+      "size": 156,
+      "relocations": [
+        {
+          "offset": 16,
+          "type": "REL32",
+          "symbol": "?GraphicsBeginAt00402660@@YAEXZ",
+          "target": 4204128
+        },
+        {
+          "offset": 34,
+          "type": "REL32",
+          "symbol": "?ConstructNative@DrawQuadF470@@QAEXXZ",
+          "target": 4250000
+        },
+        {
+          "offset": 50,
+          "type": "REL32",
+          "symbol": "?SetDepthMode@SceneTextureDrawerF470@@QAEXH@Z",
+          "target": 4245568
+        },
+        {
+          "offset": 66,
+          "type": "REL32",
+          "symbol": "?SetBlendMode@SceneTextureDrawerF470@@QAEXH@Z",
+          "target": 4245488
+        },
+        {
+          "offset": 93,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 111,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@DrawQuadF470@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 143,
+          "type": "REL32",
+          "symbol": "?DrawQuad@SceneTextureDrawerF470@@QAEXHPBVDrawQuadF470@@PBUtagRECT@@I@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 148,
+          "type": "REL32",
+          "symbol": "?GraphicsAdvanceAt004027D0@@YAXXZ",
+          "target": 4204496
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -208226,6 +208454,7 @@
     "src/SceneResourceDestructorsF474.cpp": "7c8b68ec3f6da9f1c2541ae7989c42d91840a0859d557ade06281c8a6ca69840",
     "src/BackgroundStageDerivedDestructorsF479.cpp": "03fd3d9ae305d099750360a82d8e56e3cf1936e6dd3bdbfb7aa064a3c00cdcfe",
     "src/ArchiveRasterCameraFramePoliciesF481.cpp": "31d067e80e5cb52071240ea4128404151760a84fcfcd518f9d5a3dc47488e8aa",
-    "src/BackgroundCameraEventFrameLeavesF484.cpp": "8f78f9b1da4dad7867ce61de7ba8ce3c4650506ababe51ec54291261ab93cf46"
+    "src/BackgroundCameraEventFrameLeavesF484.cpp": "8f78f9b1da4dad7867ce61de7ba8ce3c4650506ababe51ec54291261ab93cf46",
+    "src/LoadingLogoSceneDrawF485.cpp": "efa62a8bbd3d1ac626dada724c4596e8ae9bb34e5fc5337e0bb7e32e46820fc6"
   }
 }
