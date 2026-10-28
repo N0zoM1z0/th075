@@ -655,3 +655,4 @@ ArchiveCatalog::OpenAndRegister,0x0041CF80,function
 AuxEffectManager::AdvanceAndPruneTwoListsAt005F7D80,0x005F7D80,function
 CharacterAux::RunAt00496C60,0x00496C60,function
 CharacterAux::RunAt00470A40,0x00470A40,function
+CharacterAux::RunAt00555530,0x00555530,function

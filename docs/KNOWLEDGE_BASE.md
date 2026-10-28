@@ -5369,3 +5369,32 @@ meaningful experiments and failed variants remain in `.analysis/f356-*`,
 lossless negative evidence. Existing document guesses or identical instruction
 counts never establish exactness. No partial CODE credit, full cold replay,
 manual assembly or target-byte grafts.
+
+
+## F363: complete distance-first 1,028-byte character auxiliary policy at 00555530
+
+The independently authored R049 `CharacterAux::RunAt00555530` has exactly
+**1,028 original native CODE bytes**, 240 complete original x86 instructions
+ending in the native `RET`, original PE SHA256
+`e6460e8bb4113ca1fb20e8024adafdb0e6c589331e698129c758d90b2b67cb34`.
+It is *not* identical to the 1,027-byte F062/F361/F362 auxiliary helpers.
+Original Ghidra/PE evidence shows the ground/contact `0x50/0x3AC` reset
+first, then two independent opponent-relative distance clamps and reset
+on signed short `+0xF0C` (**before** effect spawning), and finally the
+three guarded action windows with original effect 850 (`0x352`), 1.0f
+scale, actual 3 Y offsets 94/60/100, 255 byte colors and the true
+`+0xF0A` one-shot effect bit. All 3 authentic inherited effect call
+references target `00453AC0`; the original complete fighter private owner
+and C++ spelling are still not independently recovered.
+
+Instead of blindly adopting a prior C++ reconstruction, F363 used the
+independently native-confirmed codegen/field macro shape as an experimental
+control, changed original field and literal values, and **physically moved**
+the real distance guards ahead of the action block as in the complete
+native 1,028-byte control flow. Pinned VC7.1 `/Od /Ob0 /Gy /GR- /GX-
+/Zi` then reproduced every one of the original **984/984 nonrelocated
+bytes** and **11/11 physical original COFF DIR32/REL32 destinations**.
+Only affected unit `character-aux-effect-distance-first-00555530` was
+cold-built and returned **1/1 exact**, including the entire original body.
+No F062 call/helper bytes are counted, no fabricated padding/locals, asm,
+masking, cropped comparison, external Oracle claim or all-unit cold replay.

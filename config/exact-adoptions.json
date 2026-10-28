@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "55f1d529d45b8a27cc322c24eefc06f5e8ba56a13205093fe5f3ed047bec4ca3"
+      "current_sha256": "82a30d3b431b0bdf96c2e2d369a128dec891178730ea0378714b3888ebe77ac0"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "5564d28c45e311cfbbb9e1ff292b94cc2f6e6e34996c211f856f1afa8ad8f381"
+      "current_sha256": "84a2f4d744125af5f0de3c4e4f398852b7f98bfc469c2ae5d642107bcb7120ac"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "4eec3a27f3684064f2f701044eac22e9e48381b30f2ecd0ea0d7be79f0a2ceac"
+      "current_sha256": "d58730444f5d386cb7b230b5444124e7b86848b565f49cd7c522c30564ada91f"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "05ec7c86b8ad5e3a9b509057221d98223f5d0cf19c2bc0d7e288ab300834d050"
+      "current_sha256": "e594ad7e1b7e30c3f96fce1c6010e511a171c7e6e6711907494ac09c58c3612c"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "211cb5dd6e416cfc0184c2985acbad91aa976c7e82bbf4c7e33991cfd84b6b49"
+      "current_sha256": "45e10f51fff9aadea9349c4c77daddd322c3338e4faf26373d4d8e6e605df937"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -26259,6 +26259,50 @@
       },
       "origin": {
         "address": "0x00470A40",
+        "origin": "authored",
+        "subsystem": "CharacterAux",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R049"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00555530",
+        "size": "1028",
+        "span_end": "0x00555933",
+        "current_name": "FUN_00555530",
+        "proposed_name": "CharacterAux::RunAt00555530",
+        "module": "CharacterAux",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00555530",
+        "size": "1028",
+        "span_end": "0x00555933",
+        "current_name": "FUN_00555530",
+        "proposed_name": "CharacterAux::RunAt00555530",
+        "module": "CharacterAux",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void CharacterAux00555530F363::AdvanceAuxiliary()",
+        "is_thunk": "false",
+        "source_file": "src/CharacterAux00555530F363.cpp",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed; F363; scripts/repo-python scripts/replay-exact-units.py --unit character-aux-effect-distance-first-00555530",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent; F363 complete R049 original 1028-byte character auxiliary controller at 00555530..00555933 (240 original native x86 instructions, PE SHA256 e6460e8bb4113ca1fb20e8024adafdb0e6c589331e698129c758d90b2b67cb34). Independently verified native checks zero/contact flags then two distance-policy clamp guards and reset at short +0xF0C BEFORE three distinct action-window 850 effect spawn policies, scale 1.0f, linked flag 1, original +0x2F6..+0x310 model and inherited 00453AC0 spawner; unlike earlier F062/F361 block ordering and constant choices. Natural VC7.1 C++ source first test reordering the blocks exactly as native, matched 984/984 nonrelocation bytes and all eleven authentic physical COFF fields including three original calls. Only affected 1028-byte single function cold replay 1/1 exact. No library/callee credit, cropped body, other reused bytes, assembly, fake locals, masks, whole-set cold replay, or remote Oracle receipt. Complete private owner class/name remains provisional."
+      },
+      "origin": {
+        "address": "0x00555530",
         "origin": "authored",
         "subsystem": "CharacterAux",
         "disposition": "authored",
@@ -185049,6 +185093,94 @@
           "target": 6649984
         }
       ]
+    },
+    "character-aux-effect-distance-first-00555530": {
+      "source": "src/CharacterAux00555530F363.cpp",
+      "object": "build/matching/CharacterAux00555530F363.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "CharacterAux::RunAt00555530"
+      ],
+      "symbol": "?AdvanceAuxiliary@CharacterAux00555530F363@@QAEXXZ",
+      "target_address": 5592368,
+      "size": 1028,
+      "relocations": [
+        {
+          "offset": 14,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 74,
+          "type": "DIR32",
+          "symbol": "__real@44070000",
+          "target": 6656308
+        },
+        {
+          "offset": 105,
+          "type": "DIR32",
+          "symbol": "__real@c4070000",
+          "target": 6656304
+        },
+        {
+          "offset": 148,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 179,
+          "type": "DIR32",
+          "symbol": "__real@c3a00000",
+          "target": 6649984
+        },
+        {
+          "offset": 470,
+          "type": "DIR32",
+          "symbol": "__real@42bc0000",
+          "target": 6656312
+        },
+        {
+          "offset": 513,
+          "type": "REL32",
+          "symbol": "?SpawnTrackedEffect@CharacterAux00555530F363@@QAEXFMMCCE@Z",
+          "target": 4537024
+        },
+        {
+          "offset": 727,
+          "type": "DIR32",
+          "symbol": "__real@42700000",
+          "target": 6652516
+        },
+        {
+          "offset": 770,
+          "type": "REL32",
+          "symbol": "?SpawnTrackedEffect@CharacterAux00555530F363@@QAEXFMMCCE@Z",
+          "target": 4537024
+        },
+        {
+          "offset": 965,
+          "type": "DIR32",
+          "symbol": "__real@42c80000",
+          "target": 6649992
+        },
+        {
+          "offset": 1008,
+          "type": "REL32",
+          "symbol": "?SpawnTrackedEffect@CharacterAux00555530F363@@QAEXFMMCCE@Z",
+          "target": 4537024
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -185478,6 +185610,7 @@
     "src/ArchiveOpenRegisterF353.cpp": "72afec730f15b6d9ff9b6ffeda0d78e9d9e337db87e9c72d28f14c01575d4f03",
     "src/AuxEffectPruneF354.cpp": "1a81b175d1b8e0dbd43e1690de33761a53fad706848abb706947b7f8f32c8d6e",
     "src/CharacterAuxSpecial00496C60F361.cpp": "735404f7b343770f65fc18c13af23ba20a82c34cd8611ce534c9965104947c76",
-    "src/CharacterAuxSpecial00470A40F362.cpp": "20b156ac2ad15ddb871576c657fca645c5572273fbf79c7613a5dedbb45536d3"
+    "src/CharacterAuxSpecial00470A40F362.cpp": "20b156ac2ad15ddb871576c657fca645c5572273fbf79c7613a5dedbb45536d3",
+    "src/CharacterAux00555530F363.cpp": "3000f66af0ac3a58110d57b942d6b5fb27d3bb486de7edb2d96d7866099b1bfb"
   }
 }

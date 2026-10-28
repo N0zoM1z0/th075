@@ -47539,3 +47539,68 @@ offset = 948
 type = "DIR32"
 symbol = "__real@c3a00000"
 target = 0x00657880
+
+
+[units.character-aux-effect-distance-first-00555530]
+source = "src/CharacterAux00555530F363.cpp"
+object = "build/matching/CharacterAux00555530F363.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["CharacterAux::RunAt00555530"]
+symbol = "?AdvanceAuxiliary@CharacterAux00555530F363@@QAEXXZ"
+target_address = 0x00555530
+size = 1028
+[[units.character-aux-effect-distance-first-00555530.relocations]]
+offset = 14
+type = "DIR32"
+symbol = "__real@00000000"
+target = 0x0065782C
+[[units.character-aux-effect-distance-first-00555530.relocations]]
+offset = 74
+type = "DIR32"
+symbol = "__real@44070000"
+target = 0x00659134
+[[units.character-aux-effect-distance-first-00555530.relocations]]
+offset = 105
+type = "DIR32"
+symbol = "__real@c4070000"
+target = 0x00659130
+[[units.character-aux-effect-distance-first-00555530.relocations]]
+offset = 148
+type = "DIR32"
+symbol = "__real@43a00000"
+target = 0x0065787C
+[[units.character-aux-effect-distance-first-00555530.relocations]]
+offset = 179
+type = "DIR32"
+symbol = "__real@c3a00000"
+target = 0x00657880
+[[units.character-aux-effect-distance-first-00555530.relocations]]
+offset = 470
+type = "DIR32"
+symbol = "__real@42bc0000"
+target = 0x00659138
+[[units.character-aux-effect-distance-first-00555530.relocations]]
+offset = 513
+type = "REL32"
+symbol = "?SpawnTrackedEffect@CharacterAux00555530F363@@QAEXFMMCCE@Z"
+target = 0x00453AC0
+[[units.character-aux-effect-distance-first-00555530.relocations]]
+offset = 727
+type = "DIR32"
+symbol = "__real@42700000"
+target = 0x00658264
+[[units.character-aux-effect-distance-first-00555530.relocations]]
+offset = 770
+type = "REL32"
+symbol = "?SpawnTrackedEffect@CharacterAux00555530F363@@QAEXFMMCCE@Z"
+target = 0x00453AC0
+[[units.character-aux-effect-distance-first-00555530.relocations]]
+offset = 965
+type = "DIR32"
+symbol = "__real@42c80000"
+target = 0x00657888
+[[units.character-aux-effect-distance-first-00555530.relocations]]
+offset = 1008
+type = "REL32"
+symbol = "?SpawnTrackedEffect@CharacterAux00555530F363@@QAEXFMMCCE@Z"
+target = 0x00453AC0
