@@ -747,3 +747,4 @@ OptionsScene::ReleaseSceneTextureAndResourceAt00428E60
 NameEntryScene::InitializeAt0042B1F0
 SpriteScene::RenderMirroredNode
 CharacterAux::RunAt00497070
+OptionsScene::InitializeAt00428D60

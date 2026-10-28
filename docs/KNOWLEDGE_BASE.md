@@ -6723,3 +6723,40 @@ stack variable, assembler/byte graft, masks, cropped original, all-unit
 replay or external Oracle receipt. All F356-F363/F388/F438-F439
 negative source experiments are retained in `.analysis` rather than
 deleted or re-credited.
+
+
+## F445: complete native 251-byte OptionsScene constructor, option.dat and D3D canvas
+
+The R109-authored native `OptionsScene::InitializeAt00428D60`, at
+`00428D60..00428E5A`, is **251 original authored CODE bytes / 69 native
+x86 instructions**, independently original PE SHA256
+`6ce1aef1c6f541c98bb666165ff39521010299f29ccfa1bfe0adb40937102a25`.
+The natural C++ derived OptionsScene constructor installs the actual
+original vtable at `00657F38`, calling the genuine native scene-base
+constructor `004251C0` with full VC7.1 `/GX` EH. Its original owner
+canvas +0xC is null-initialized. It allocates the real 80-byte texture
+manager with original CRT operator new `0064159D`, constructs at
+`0040AD80`, allocates the actual three archive slots via `0040B1D0`,
+and loads the genuine original game resource `data\system\option.dat`
+from physical native constant `00657D80` under root `data` at `00657D78`
+through borrowed `0040BB80`. It requests the actual 0x400×0x200 D3D8
+canvas with format 0x20 through native `00401C20`, passing output owner
++0xC, sets native mode byte +0x14=5 and original short +0x10/+0x12
+selections to zero, and passes the actual low byte of +0x10 to native
+thiscall `00429F00`. Full original EH handler `00655893` and its
+compiler-managed cleanup states are generated naturally, not grafted.
+
+The first genuinely observed borrowed source in
+`src/OptionsSceneInitializeF445.cpp` exactly reproduces **all 251 native
+CODE bytes**, **195/195 original nonrelocation byte positions**, and
+**14/14 genuine original COFF DIR32/REL32 field positions, ABI symbols
+and native PE destinations**, independently checked before registering
+the matching unit. Pinned VC7.1 `/Od /Ob0 /Gy /GR- /GX /GS /Zi` cold
+replay of **only** new
+`options-scene-initialize-00428d60` returned **1/1 exact**. Its
+original paired resource destructor F432 is separately independently
+exact; those two distinct authored code extents do not double count the
+borrowed external scene, D3D, texture/archive or CRT bodies. Complete
+private OptionsScene allocation/members beyond observed offsets remain
+unproved. No fake locals, raw assembler, native code byte grafts,
+masked/cropped comparisons, full cold replay or external Oracle receipt.
