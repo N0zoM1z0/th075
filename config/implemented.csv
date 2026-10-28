@@ -598,3 +598,4 @@ FighterState::SetNoticeModeByteAt0045CD50
 CommandList::InitializeDefaultsAt00410F30
 CharacterAuxObject::InitializeAt005FAB10
 FighterState::ReleaseResources
+Effects::SpawnAuxObjectAt005F78B0

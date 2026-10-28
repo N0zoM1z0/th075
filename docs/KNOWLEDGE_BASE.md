@@ -3206,3 +3206,48 @@ external Oracle acceptance receipt. TH075's tracked exact totals
 reach **600 whole functions, 797,349 authored CODE bytes**, still
 only **40.40%** of the reviewed authored-code denominator. The 98%
 reconstruction goal remains unfinished.
+
+
+## F285: cold-exact 487-byte ordinary effects spawner, distinct from F281 configured form
+
+The R067-authored native `Effects::SpawnAuxObjectAt005F78B0` is
+**487 complete PE-backed CODE bytes** from `005F78B0..005F7A96`,
+143 independently decoded original x86 instructions ending with a
+`RET 0x1C` at `005F7A94`. Original full PE body SHA256:
+`862675bf727d13772549cb9542d745a593f2e28cae1e112d7751e68a8c4806c8`.
+Read-only Ghidra function/decompile/native assembly, pinned VC7.1 source,
+COFF comparison and single-unit cold result are at
+`.analysis/f285-effects-spawn-neighbor/`; final source is
+`src/EffectSpawnF285.cpp`.
+
+This original routine is **not** the same function as the already
+F281-accepted 602-byte `Effects::SpawnConfiguredAuxObject` at `005F7AA0`.
+It is its ordinary form without an eighth configuration-pointer argument
+and without four 32-bit data writes to new object+0x80/+0x84/+0x88/+0x8C.
+The actual native control flow independently confirms separate early
+returns for a missing effect config and zero short sequence ID, then a
+single combined signed side-byte guard requiring 0 or 1. It uses the
+real game config vector indexed by native `005F8380` from owner+0x78,
+side deque at `this+0x14*side` via native `005F81B0`, pushes a genuinely
+null pointer, allocates a **0x94-byte** EH-backed game effect object
+via native operator new and the separately F283-cold-accepted complete
+child constructor `005FAB10`, and repeatedly calls native deque
+`back()` `005F8180` rather than caching a fabricated child pointer.
+It stores true fields +0x60 (sequence), +0x62/+0x64 (zero shorts),
++0x44/+0x48 (x/y), +0x66/+0x67/+0x68 (mode/status byte arguments) and
++0x40 (zero), and dispatches the real original two virtual methods.
+
+A first independently compiled full-source variant, using the
+F281-accepted native-EH control shape only as a hypothesis and removing
+the four actual absent data copies and argument, emitted the **entire
+487 original CODE bytes**, **407/407** comparable nonrelocation
+bytes and **20/20 genuine physical COFF fields**. The pinned VC7.1
+`/Od /Ob0 /Gy /GR- /GX /GS /Zi` unit
+`effects-spawn-aux-object-005f78b0` was freshly rebuilt **cold only
+for this affected function** and reported `exact; 487 coverage bytes`.
+F281 and F283 were independently cold-accepted previously and receive
+no duplicate CODE credit here. The native 1,722-byte Effects catalog
+loader at `005F71F0` remains unaccepted, as do all 97 origin-unknown
+functions. No target byte grafting, assembly, synthetic filler, masked
+relocations, cropped function, all-unit cold replay or external Oracle
+verification is claimed.

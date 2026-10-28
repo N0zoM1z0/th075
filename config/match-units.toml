@@ -43502,3 +43502,112 @@ offset = 580
 type = "DIR32"
 symbol = "__except_list"
 target = 0x00000000
+
+[units.effects-spawn-aux-object-005f78b0]
+source = "src/EffectSpawnF285.cpp"
+object = "build/matching/EffectSpawnF285.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["Effects::SpawnAuxObjectAt005F78B0"]
+symbol = "?SpawnAuxObject@EffectOwnerF285@@QAEXFKKECEE@Z"
+target_address = 0x005F78B0
+size = 487
+[[units.effects-spawn-aux-object-005f78b0.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$?SpawnAuxObject@EffectOwnerF285@@QAEXFKKECEE@Z"
+target = 0x0065668E
+[[units.effects-spawn-aux-object-005f78b0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.effects-spawn-aux-object-005f78b0.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.effects-spawn-aux-object-005f78b0.relocations]]
+offset = 42
+type = "REL32"
+symbol = "?At@EffectConfigSlotsF285@@QAEPAPAXH@Z"
+target = 0x005F8380
+[[units.effects-spawn-aux-object-005f78b0.relocations]]
+offset = 113
+type = "REL32"
+symbol = "?push_back@EffectObjectListF285@@QAEXABQAX@Z"
+target = 0x005F81B0
+[[units.effects-spawn-aux-object-005f78b0.relocations]]
+offset = 123
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.effects-spawn-aux-object-005f78b0.relocations]]
+offset = 154
+type = "REL32"
+symbol = "??0EffectSpawnedF285@@QAE@PAX@Z"
+target = 0x005FAB10
+[[units.effects-spawn-aux-object-005f78b0.relocations]]
+offset = 194
+type = "REL32"
+symbol = "?back@EffectObjectListF285@@QAEPAPAXXZ"
+target = 0x005F8180
+[[units.effects-spawn-aux-object-005f78b0.relocations]]
+offset = 214
+type = "REL32"
+symbol = "?back@EffectObjectListF285@@QAEPAPAXXZ"
+target = 0x005F8180
+[[units.effects-spawn-aux-object-005f78b0.relocations]]
+offset = 239
+type = "REL32"
+symbol = "?back@EffectObjectListF285@@QAEPAPAXXZ"
+target = 0x005F8180
+[[units.effects-spawn-aux-object-005f78b0.relocations]]
+offset = 262
+type = "REL32"
+symbol = "?back@EffectObjectListF285@@QAEPAPAXXZ"
+target = 0x005F8180
+[[units.effects-spawn-aux-object-005f78b0.relocations]]
+offset = 285
+type = "REL32"
+symbol = "?back@EffectObjectListF285@@QAEPAPAXXZ"
+target = 0x005F8180
+[[units.effects-spawn-aux-object-005f78b0.relocations]]
+offset = 308
+type = "REL32"
+symbol = "?back@EffectObjectListF285@@QAEPAPAXXZ"
+target = 0x005F8180
+[[units.effects-spawn-aux-object-005f78b0.relocations]]
+offset = 331
+type = "REL32"
+symbol = "?back@EffectObjectListF285@@QAEPAPAXXZ"
+target = 0x005F8180
+[[units.effects-spawn-aux-object-005f78b0.relocations]]
+offset = 354
+type = "REL32"
+symbol = "?back@EffectObjectListF285@@QAEPAPAXXZ"
+target = 0x005F8180
+[[units.effects-spawn-aux-object-005f78b0.relocations]]
+offset = 377
+type = "REL32"
+symbol = "?back@EffectObjectListF285@@QAEPAPAXXZ"
+target = 0x005F8180
+[[units.effects-spawn-aux-object-005f78b0.relocations]]
+offset = 400
+type = "REL32"
+symbol = "?back@EffectObjectListF285@@QAEPAPAXXZ"
+target = 0x005F8180
+[[units.effects-spawn-aux-object-005f78b0.relocations]]
+offset = 421
+type = "REL32"
+symbol = "?back@EffectObjectListF285@@QAEPAPAXXZ"
+target = 0x005F8180
+[[units.effects-spawn-aux-object-005f78b0.relocations]]
+offset = 451
+type = "REL32"
+symbol = "?back@EffectObjectListF285@@QAEPAPAXXZ"
+target = 0x005F8180
+[[units.effects-spawn-aux-object-005f78b0.relocations]]
+offset = 477
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
