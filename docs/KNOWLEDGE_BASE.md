@@ -5194,3 +5194,39 @@ VC7.1 `/Od /Ob0 /Gy /GR- /GX- /GS /Zi` and reported **1/1 exact**, all
 874 CODE bytes. Earlier failed experiments remain in ignored F313/F314 and
 F349-F351 evidence; this supersedes their pending claim. No extra byte credit
 for external callees, unknown original class layout, or external Oracle receipt.
+
+
+## F353: complete 245-byte archive registry open/registration with native EH
+
+The R053-authored `0041CF80..0041D074` native routine consists of **245
+CODE bytes** and 69 complete independently decoded x86 instructions. Its
+original PE-backed SHA256 is
+`a4aab60a6b8d367c1779da30e8a4ba340e81e5838029e0d38a98865eac05dcc3`.
+It is a **cdecl** two-argument function with the original VC7 exception
+registration and cleanup-state frame (`0065543B` handler). It appends a
+null pointer to the resource deque, constructs a genuine **16-byte** archive
+instance through native `0041D190` after operator new, stores it at the
+original deque back and invokes the previously exact `0041D510` index loader.
+It then appends a null name to the name deque, uses `strlen + 1`, native
+second array allocation and `strcpy` to register the supplied name. Neither
+external deque code nor constructor/CRT/EH callee code is separately credited.
+The 16-byte allocation footprint is observed, not a claim to complete source
+for that class or deque representation.
+
+The initial natural source was 257 bytes, adding two pointer-name transfers.
+Direct natural new expressions at the two actual back-pointer assignments
+restored the complete original **245 bytes**, but the first probe had 9 true
+EBP slot-byte differences (148/157 comparable). Rechecking actual native
+relative slot positions showed the original name deque null value is passed
+through a genuine temporary to a `const&` pointer parameter, not a named
+`char*` with the same lexical lifetime as the archive null. Replacing only
+`char* emptyName=0; Append(emptyName)` with
+`Append(static_cast<char*>(0))` preserves real C++ semantics and lets VC7.1
+reproduce every original stack offset: **157/157 nonfield bytes**, all
+**22** real DIR32/REL32 COFF references and solved physical destinations,
+including EH registration and both distinct operator-new call sites.
+`src/ArchiveOpenRegisterF353.cpp` was independently cold-rebuilt with pinned
+VC7.1 `/Od /Ob0 /Gy /GR- /GX /GS /Zi`; only affected unit
+`archive-catalog-open-and-register-0041cf80` returned **1/1 exact**. No
+external Oracle assertion, asm, copied bytes, fake locals, truncated body or
+masking of relocation references.

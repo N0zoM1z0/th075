@@ -650,3 +650,4 @@ YukariFighter::UpdateSpecialStateAt0059B490
 CharacterSelectScene::UpdateCancelAnimation
 SpriteSequence::RenderElements
 SuikaFighter::UpdateSpecialStateAt005C3FB0
+ArchiveCatalog::OpenAndRegister

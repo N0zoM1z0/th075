@@ -1,6 +1,6 @@
 # TH075 — current reconstruction handoff
 
-**Maintained: 2026-10-28, after F348.** Read this document, then check the **live repository**. The current user explicitly wants both large/core bosses and small leaves tackled seriously, tangible progress committed immediately with subject `gpt-web: ...`, and **only changed/new units cold-replayed**. The user reports no other sessions: inspect and finish all dirty work; never skip, reset, overwrite or silently discard it.
+**Maintained: 2026-10-28, after F353.** Read this document, then check the **live repository**. The current user explicitly wants both large/core bosses and small leaves tackled seriously, tangible progress committed immediately with subject `gpt-web: ...`, and **only changed/new units cold-replayed**. The user reports no other sessions: inspect and finish all dirty work; never skip, reset, overwrite or silently discard it.
 
 ## 1. Trusted state and first commands
 
@@ -8,11 +8,11 @@ Canonical evidence is the pinned original PE, `config/function-origins.csv`, `co
 
 | Item | Verified snapshot |
 | --- | --- |
-| Git | `main`; latest reconstruction commit **`26ac6fd`** (F339), preceded by `a8a4496` (F338), `3a16048` (F337), `18f19d6` (F335), `c9e0a1f` (F334) |
+| Git | `main`; pre-F353 reconstruction commit **`ea29d10`** (F348), preceded by `ad66460` (F347), `5be5893` (F346), `df91cf3` (F345); F353 commit follows this handoff update |
 | Pinned target | user-supplied Japanese `resources/th075.exe` v1.11; SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`; **never** `th075c.exe` |
-| Exact and source-present | **652 functions / 652 exact units** |
-| Accepted authored CODE | **817,216 bytes / 1,973,516 reviewed bytes = 41.41%** |
-| Conservative | **41.33%**, including 3,608 bytes with unresolved origin |
+| Exact and source-present | **653 functions / 653 exact units** |
+| Accepted authored CODE | **817,461 bytes / 1,973,516 reviewed bytes = 41.42%** |
+| Conservative | **41.35%**, including 3,608 bytes with unresolved origin |
 | Origin review | 1,002 authored, 2,671 library, 581 compiler, **97 pending** across 4,351 provisional candidates |
 | Goal | **98% not reached**; Git and local cold results are not external Oracle receipts |
 
@@ -29,7 +29,7 @@ If **any** dirty source, unit, or manifest is present, first inspect its exact e
 
 ## 2. Newly closed chains — **not** the backlog
 
-The full register of **all 652** accepted functions is in `config/functions.csv` and `config/match-units.toml`; this table intentionally highlights only the newest, important independent CODE extents. No called function, imported CRT/Win32 code, or owned jump-table bytes are counted twice.
+The full register of **all 653** accepted functions is in `config/functions.csv` and `config/match-units.toml`; this table intentionally highlights only the newest, important independent CODE extents. No called function, imported CRT/Win32 code, or owned jump-table bytes are counted twice.
 
 | Unit / accepted address | Whole CODE | Authentic fields | Evidence |
 | --- | ---: | ---: | --- |
@@ -48,6 +48,7 @@ The full register of **all 652** accepted functions is in `config/functions.csv`
 | F346 `CharacterSelectScene::UpdateCancelAnimation` `00435870` | **497** | **13** | `src/CharacterSelectCancelF346.cpp`, `.analysis/f346-cancel-macro/` |
 | F347 `SpriteSequence::RenderElements` `00411110` | **746** | **33** | `src/SpriteSequenceRenderF347.cpp`, `.analysis/f346-sprite-literal/` |
 | F348 `SuikaFighter::UpdateSpecialState` `005C3FB0` | **874** | **20** | `src/SuikaSpecialStateF348.cpp`, `.analysis/f351-suika-constant/` |
+| F353 `ArchiveCatalog::OpenAndRegister` `0041CF80` | **245** | **22** | `src/ArchiveOpenRegisterF353.cpp`, `.analysis/f353-archive-register/` |
 
 **F340:** the companion archive entry seek at `0041D750` is independently cold exact for its whole 164-byte function including every one of its nine external references. It uses genuine iterator and `strcmp` semantics, returns the archive handle after `SetFilePointer` or `INVALID_HANDLE_VALUE` if not found. The original private archive list remains borrowed, not instantiated.
 
@@ -64,6 +65,8 @@ The full register of **all 652** accepted functions is in `config/functions.csv`
 **F347:** resolved the former 746-byte sprite sequence render backlog. The native loads **zero first** before each of three x87 `FUCOMPP` tests; expressing the genuine `scale.x/y/z != 0.0f` with the zero literal on the right, instead of the old global-zero-left expression, naturally reproduces the compiler order. The complete 198-instruction native function, all 33 genuine COFF references and the 132-byte sprite-quad construction/draw state cold-match **1/1 exact**. No earlier diagnostic label is treated as proof.
 
 **F348:** the 874-byte complete Suika controller is **now cold exact** rather than pending. The target has 237 real instructions and 20 actual COFF fields. Direct floating-point `FLOAT` and opponent lvalues correct 40 historical x87/actor-relative differences, source `FLOAT(0x50)==0.0f` corrects the initial zero test, and true `OPPONENT_FLOAT(0x44)+20.0f` (constant pool `0065786C`) corrects both projectile X operands. Entire 794/794 non-field bytes and all 20 physical relocations cold-replay exact. This supersedes the F313/F314 742/794 negative probe; it does not credit unrelated random/spawn/sound callees.
+
+**F353:** the full 245-byte R053 cdecl archive registration EH routine now cold matches, all 22 physical relocation references (including native EH handler), both Win32/CRT allocation variants, real `0041D190` constructor and `0041D510` index loader. The original name-list append receives a true null pointer temporary by `const&`; this changes VC7.1 local slots so all 157 nonrelocation bytes align naturally. Borrowed 16-byte allocation carrier does not establish a complete game object layout.
 
 **Corrections to old notes:** The 686-byte writer and 429-byte reader are both **exact** (F339/F338), not pending F249/F250. The full 1,252-byte replay writer and 375-byte finalizer are both **exact** (F326/F328), not pending F219/F218/F289. The 1,766-byte font rasterizer is **exact** (F319), not pending F299/F302. The 301-byte glyph loader is **exact** (F318), not pending F291. The 916-byte MusicRoom catalog + separately compared 16-byte jump table is **exact in F258** (916 CODE credit only). Other accepted 1,000+ byte bosses include F271 projected quad (1,185), F278 pattern chooser (1,264), F282 resource loader (1,186), F292 overlay text box (1,385), F294 effects catalog (1,722), and F244 scene advance (1,529 CODE). Earlier failures remain useful *historical controls*, but must never be presented as current unaccepted work.
 
