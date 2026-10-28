@@ -47889,3 +47889,283 @@ offset = 1497
 type = "DIR32"
 symbol = "__real@c3a00000"
 target = 0x00657880
+
+
+[units.character-input-priority-controller-00532520]
+source = "src/CharacterInputPriorityF370.cpp"
+object = "build/matching/CharacterInputPriorityF370.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["CharacterAux::RunAt00532520"]
+symbol = "?ResolvePriority@CharacterInputPriorityF370@@QAEXXZ"
+target_address = 0x00532520
+size = 1060
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 22
+type = "DIR32"
+symbol = "?g_ComboPatternAt00659920@@3QBDB"
+target = 0x00659920
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 30
+type = "REL32"
+symbol = "?CheckPattern@CharacterInputPriorityF370@@QAECPBDHH@Z"
+target = 0x00455800
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 61
+type = "DIR32"
+symbol = "?g_ComboPatternAt00659928@@3QBDB"
+target = 0x00659928
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 69
+type = "REL32"
+symbol = "?CheckPattern@CharacterInputPriorityF370@@QAECPBDHH@Z"
+target = 0x00455800
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 100
+type = "DIR32"
+symbol = "?g_ComboPatternAt00659930@@3QBDB"
+target = 0x00659930
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 108
+type = "REL32"
+symbol = "?CheckPattern@CharacterInputPriorityF370@@QAECPBDHH@Z"
+target = 0x00455800
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 139
+type = "DIR32"
+symbol = "?g_ComboPatternAt00659938@@3QBDB"
+target = 0x00659938
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 147
+type = "REL32"
+symbol = "?CheckPattern@CharacterInputPriorityF370@@QAECPBDHH@Z"
+target = 0x00455800
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 178
+type = "DIR32"
+symbol = "?g_ComboPatternAt00659940@@3QBDB"
+target = 0x00659940
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 186
+type = "REL32"
+symbol = "?CheckPattern@CharacterInputPriorityF370@@QAECPBDHH@Z"
+target = 0x00455800
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 217
+type = "DIR32"
+symbol = "?g_ComboPatternAt00659948@@3QBDB"
+target = 0x00659948
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 225
+type = "REL32"
+symbol = "?CheckPattern@CharacterInputPriorityF370@@QAECPBDHH@Z"
+target = 0x00455800
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 256
+type = "DIR32"
+symbol = "?g_ComboPatternAt00659950@@3QBDB"
+target = 0x00659950
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 264
+type = "REL32"
+symbol = "?CheckPattern@CharacterInputPriorityF370@@QAECPBDHH@Z"
+target = 0x00455800
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 295
+type = "DIR32"
+symbol = "?g_ComboPatternAt00659958@@3QBDB"
+target = 0x00659958
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 303
+type = "REL32"
+symbol = "?CheckPattern@CharacterInputPriorityF370@@QAECPBDHH@Z"
+target = 0x00455800
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 334
+type = "DIR32"
+symbol = "?g_ComboPatternAt00659960@@3QBDB"
+target = 0x00659960
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 342
+type = "REL32"
+symbol = "?CheckPattern@CharacterInputPriorityF370@@QAECPBDHH@Z"
+target = 0x00455800
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 373
+type = "DIR32"
+symbol = "?g_ComboPatternAt00659968@@3QBDB"
+target = 0x00659968
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 381
+type = "REL32"
+symbol = "?CheckPattern@CharacterInputPriorityF370@@QAECPBDHH@Z"
+target = 0x00455800
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 412
+type = "DIR32"
+symbol = "?g_ComboPatternAt00659970@@3QBDB"
+target = 0x00659970
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 420
+type = "REL32"
+symbol = "?CheckPattern@CharacterInputPriorityF370@@QAECPBDHH@Z"
+target = 0x00455800
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 451
+type = "DIR32"
+symbol = "?g_ComboPatternAt00659978@@3QBDB"
+target = 0x00659978
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 459
+type = "REL32"
+symbol = "?CheckPattern@CharacterInputPriorityF370@@QAECPBDHH@Z"
+target = 0x00455800
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 490
+type = "DIR32"
+symbol = "?g_ComboPatternAt00659980@@3QBDB"
+target = 0x00659980
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 498
+type = "REL32"
+symbol = "?CheckPattern@CharacterInputPriorityF370@@QAECPBDHH@Z"
+target = 0x00455800
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 529
+type = "DIR32"
+symbol = "?g_ComboPatternAt00659988@@3QBDB"
+target = 0x00659988
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 537
+type = "REL32"
+symbol = "?CheckPattern@CharacterInputPriorityF370@@QAECPBDHH@Z"
+target = 0x00455800
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 568
+type = "DIR32"
+symbol = "?g_ComboPatternAt00659990@@3QBDB"
+target = 0x00659990
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 576
+type = "REL32"
+symbol = "?CheckPattern@CharacterInputPriorityF370@@QAECPBDHH@Z"
+target = 0x00455800
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 607
+type = "DIR32"
+symbol = "?g_ComboPatternAt00659998@@3QBDB"
+target = 0x00659998
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 615
+type = "REL32"
+symbol = "?CheckPattern@CharacterInputPriorityF370@@QAECPBDHH@Z"
+target = 0x00455800
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 646
+type = "DIR32"
+symbol = "?g_ComboPatternAt006599A0@@3QBDB"
+target = 0x006599A0
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 654
+type = "REL32"
+symbol = "?CheckPattern@CharacterInputPriorityF370@@QAECPBDHH@Z"
+target = 0x00455800
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 685
+type = "DIR32"
+symbol = "?g_ComboPatternAt006599A4@@3QBDB"
+target = 0x006599A4
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 693
+type = "REL32"
+symbol = "?CheckPattern@CharacterInputPriorityF370@@QAECPBDHH@Z"
+target = 0x00455800
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 724
+type = "DIR32"
+symbol = "?g_ComboPatternAt006599A8@@3QBDB"
+target = 0x006599A8
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 732
+type = "REL32"
+symbol = "?CheckPattern@CharacterInputPriorityF370@@QAECPBDHH@Z"
+target = 0x00455800
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 763
+type = "DIR32"
+symbol = "?g_ComboPatternAt006599AC@@3QBDB"
+target = 0x006599AC
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 771
+type = "REL32"
+symbol = "?CheckPattern@CharacterInputPriorityF370@@QAECPBDHH@Z"
+target = 0x00455800
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 802
+type = "DIR32"
+symbol = "?g_ComboPatternAt006599B0@@3QBDB"
+target = 0x006599B0
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 810
+type = "REL32"
+symbol = "?CheckPattern@CharacterInputPriorityF370@@QAECPBDHH@Z"
+target = 0x00455800
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 841
+type = "DIR32"
+symbol = "?g_ComboPatternAt006599B4@@3QBDB"
+target = 0x006599B4
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 849
+type = "REL32"
+symbol = "?CheckPattern@CharacterInputPriorityF370@@QAECPBDHH@Z"
+target = 0x00455800
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 880
+type = "DIR32"
+symbol = "?g_ComboPatternAt006599B8@@3QBDB"
+target = 0x006599B8
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 888
+type = "REL32"
+symbol = "?CheckPattern@CharacterInputPriorityF370@@QAECPBDHH@Z"
+target = 0x00455800
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 919
+type = "DIR32"
+symbol = "?g_ComboPatternAt006599BC@@3QBDB"
+target = 0x006599BC
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 927
+type = "REL32"
+symbol = "?CheckPattern@CharacterInputPriorityF370@@QAECPBDHH@Z"
+target = 0x00455800
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 955
+type = "DIR32"
+symbol = "?g_ComboPatternAt006599C0@@3QBDB"
+target = 0x006599C0
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 963
+type = "REL32"
+symbol = "?CheckPattern@CharacterInputPriorityF370@@QAECPBDHH@Z"
+target = 0x00455800
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 991
+type = "DIR32"
+symbol = "?g_ComboPatternAt006599C4@@3QBDB"
+target = 0x006599C4
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 999
+type = "REL32"
+symbol = "?CheckPattern@CharacterInputPriorityF370@@QAECPBDHH@Z"
+target = 0x00455800
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 1027
+type = "DIR32"
+symbol = "?g_ComboPatternAt006599CC@@3QBDB"
+target = 0x006599CC
+[[units.character-input-priority-controller-00532520.relocations]]
+offset = 1035
+type = "REL32"
+symbol = "?CheckPattern@CharacterInputPriorityF370@@QAECPBDHH@Z"
+target = 0x00455800

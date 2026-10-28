@@ -660,3 +660,4 @@ BackgroundStage::ApplyBG02aBlendAt0044B980
 BackgroundStage::ApplyBG02bBlendAt0044BEA0
 BackgroundStage::ApplyBG02cBlendAt0044C3C0
 CharacterAux::RunAt00505A60
+CharacterAux::RunAt00532520

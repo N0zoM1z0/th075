@@ -661,3 +661,4 @@ BackgroundStage::ApplyBG02aBlendAt0044B980,0x0044B980,function
 BackgroundStage::ApplyBG02bBlendAt0044BEA0,0x0044BEA0,function
 BackgroundStage::ApplyBG02cBlendAt0044C3C0,0x0044C3C0,function
 CharacterAux::RunAt00505A60,0x00505A60,function
+CharacterAux::RunAt00532520,0x00532520,function

@@ -5501,3 +5501,36 @@ adoption, source and match-unit dirty changes were inspected and retained,
 then completed in canonical ledgers and checkpoint without resets. No whole
 project replay, cropped CFG, fake locals, ABI lies, assembly, byte copying
 or external Oracle certification.
+
+
+## F370: full 1,060-byte 27-pattern character-input priority chain
+
+The independently reviewed R049 original authored `CharacterAux::RunAt00532520`
+at `00532520..00532943` is **1,060 native CODE bytes**, **305 native x86
+instructions**, original PE SHA256
+`3e8c264e7cd987f4c13faf1f44cb0d419616fad6237260decb925fcd77a3d68c`.
+It resets the original per-character action byte at `+0x511` and tries 27
+distinct original ordered input patterns by calling the real game input matcher
+`00455800`: 4 five-char patterns with limit 15, 12 four-char patterns with
+limit 15, 9 three-char patterns with limit 10, and 2 trailing four-char
+patterns with limit 15. The records at `00659920..006599CC` are independently
+observed original constant pool addresses; complete string storage and actual
+original input matcher implementation are borrowed, not credited. The action
+priority values are target-specific and each checked against the real native
+conditions before source adoption. Every matched pattern writes a distinct
+original action-value byte (with some intentionally grouped repeats) and
+short-circuits later checks. This native shape is a natural C++ `if/else if`
+priority chain, not a loop, table-based reduction, or pasted disassembly.
+
+A fresh natural 27-condition implementation in
+`src/CharacterInputPriorityF370.cpp` compiled with the pinned VC7.1
+`/Od /Ob0 /Gy /GR- /GX- /Zi` flags into the *whole* exact original
+**1,060-byte** function on its first attempt: all **844/844 nonrelocation
+bytes** and all **54 physical COFF DIR32/REL32 references** matched the
+original targets. These are the 27 independent real native pattern addresses
+and 27 references to the real game `00455800` callee. Independent
+`--unit character-input-priority-controller-00532520` cold replay
+returned **1/1 exact**. No pattern bytes or external callee code,
+unused sentinel locals, manual assembly, cropped function, masked refs,
+whole-set replay or external Oracle receipt is asserted. The original
+receiver class name and complete layout remain provisional.
