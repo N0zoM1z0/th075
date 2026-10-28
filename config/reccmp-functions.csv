@@ -743,3 +743,4 @@ StaticResourceQueues::ReleaseQueuesAndCloseHandleAt004136E0,0x004136E0,function
 RasterResources::ReleaseAndResetAt0041BFD0,0x0041BFD0,function
 CameraMotion::SnapAt00412CF0,0x00412CF0,function
 FighterScript::InitializeAt00420440,0x00420440,function
+StaticBattleResources::ConstructAndClearContainersAt005F6F60,0x005F6F60,function

@@ -6492,3 +6492,34 @@ independently cold-replayed, **1/1 exact**, in a two-unit F429/F430 call.
 Borrowed container ctor/clear/dtor code and compiler/EH helper bytes are
 not credited. No assembly, arbitrary pad, truncated function, masks,
 full cold replay or external Oracle acceptance claim.
+
+
+## F431: complete 142-byte static battle effects resource array constructor
+
+Original R178-authored `StaticBattleResources::ConstructAndClearContainersAt005F6F60`
+occupies **142 complete native CODE bytes, 40 original x86 instructions**,
+original PE SHA256
+`e97540483ba2b0cb9683de4c1fb1d218a9abb670cf72cd86c9e46ee1e0130552`.
+The source has two actually constructed borrowed 20-byte effect lists at
+`this+0x00/+0x14`; they are a true C++ array, so pinned VC7.1 `/GX`
+compiler emits the original `_ehvec_ctor` helper at `00641C78` with
+original list ctor `005F8040`, destructor `005F8090`, and native
+exception-frame registration and cleanup. The real graphics/texture owner
+at `this+0x28` occupies its 80-byte observed native constructor extent
+(`0040AD80`), and the separate native auxiliary owner at +0x78 invokes
+`005F82F0`. The constructor body genuinely clears both lists through
+`005F82D0` and resets the +0x78 auxiliary through `005F83E0`. These are
+borrowed actual source-call and member-footprint interfaces, not claims
+of complete original private type layouts.
+
+A fresh independent natural C++ constructor
+`src/StaticBattleResourcesConstructF431.cpp` compiled to **all 142 native
+CODE bytes on its first probe**, with **94/94** matching nonrelocation
+bytes and all **12/12 genuine original COFF DIR32/REL32 field types,
+positions, symbol references and PE destinations** (including native
+EH handler `00656629`). Only changed unit
+`static-battle-resources-construct-and-clear-005f6f60` was cold rebuilt,
+**1/1 exact**. No borrowed array-iterator/compiler, graphics, list or
+texture external callee code is double counted; no fake unused locals,
+assembly/byte grafts, cropped original, full cold replay or external
+Oracle receipt.

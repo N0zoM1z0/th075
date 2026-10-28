@@ -725,3 +725,4 @@ address,name,module,confidence,evidence
 0x0041BFD0,RasterResources::ReleaseAndResetAt0041BFD0,RasterResources,inferred,"F428; full 129-byte original CRT and GDI bitmap/DC release with authentic IAT SelectObject/DeleteObject/ReleaseDC and original free, 4 genuine physical refs cold exact"
 0x00412CF0,CameraMotion::SnapAt00412CF0,CameraMotion,inferred,"F429; full native 146 CODE, 23 physical original COFF refs, 1/1 affected exact; true borrowed owner layout"
 0x00420440,FighterScript::InitializeAt00420440,FighterScript,inferred,"F430; full native 130 CODE, 6 physical original COFF refs, 1/1 affected exact; true borrowed owner layout"
+0x005F6F60,StaticBattleResources::ConstructAndClearContainersAt005F6F60,StaticResourcePolicy,inferred,"F431; entire original 142-byte native static two-element effects resource constructor with genuine VC7.1 vector constructor/EH, 12 real COFF refs and local cold exact"

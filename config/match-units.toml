@@ -55338,3 +55338,73 @@ offset = 122
 type = "DIR32"
 symbol = "__except_list"
 target = 0x00000000
+
+
+[units.static-battle-resources-construct-and-clear-005f6f60]
+source = "src/StaticBattleResourcesConstructF431.cpp"
+object = "build/matching/StaticBattleResourcesConstructF431.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["StaticBattleResources::ConstructAndClearContainersAt005F6F60"]
+symbol = "??0StaticBattleResourcesF431@@QAE@XZ"
+target_address = 0x005F6F60
+size = 142
+[[units.static-battle-resources-construct-and-clear-005f6f60.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0StaticBattleResourcesF431@@QAE@XZ"
+target = 0x00656629
+[[units.static-battle-resources-construct-and-clear-005f6f60.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.static-battle-resources-construct-and-clear-005f6f60.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.static-battle-resources-construct-and-clear-005f6f60.relocations]]
+offset = 29
+type = "DIR32"
+symbol = "??1EffectList20F431@@QAE@XZ"
+target = 0x005F8090
+[[units.static-battle-resources-construct-and-clear-005f6f60.relocations]]
+offset = 34
+type = "DIR32"
+symbol = "??0EffectList20F431@@QAE@XZ"
+target = 0x005F8040
+[[units.static-battle-resources-construct-and-clear-005f6f60.relocations]]
+offset = 47
+type = "REL32"
+symbol = "??_L@YGXPAXIHP6EX0@Z1@Z"
+target = 0x00641C78
+[[units.static-battle-resources-construct-and-clear-005f6f60.relocations]]
+offset = 65
+type = "REL32"
+symbol = "??0EffectTexture80F431@@QAE@XZ"
+target = 0x0040AD80
+[[units.static-battle-resources-construct-and-clear-005f6f60.relocations]]
+offset = 80
+type = "REL32"
+symbol = "??0EffectAuxiliaryF431@@QAE@XZ"
+target = 0x005F82F0
+[[units.static-battle-resources-construct-and-clear-005f6f60.relocations]]
+offset = 92
+type = "REL32"
+symbol = "?Clear@EffectList20F431@@QAEXXZ"
+target = 0x005F82D0
+[[units.static-battle-resources-construct-and-clear-005f6f60.relocations]]
+offset = 103
+type = "REL32"
+symbol = "?Clear@EffectList20F431@@QAEXXZ"
+target = 0x005F82D0
+[[units.static-battle-resources-construct-and-clear-005f6f60.relocations]]
+offset = 114
+type = "REL32"
+symbol = "?Reset@EffectAuxiliaryF431@@QAEXXZ"
+target = 0x005F83E0
+[[units.static-battle-resources-construct-and-clear-005f6f60.relocations]]
+offset = 134
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
