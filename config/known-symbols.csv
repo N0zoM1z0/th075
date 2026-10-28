@@ -556,3 +556,4 @@ address,name,module,confidence,evidence
 0x00430D80,ResultScene::PollInput,ResultScene,inferred,F260; entire 343-byte result input polling controller with 27 native COFF fields cold exact; complete scene/input ABI unknown
 0x00427430,MusicRoomRecord::InitializeAt00427430,MusicRoomRecord,inferred,F261; complete 50-byte native scene record lifetime with 0 authentic COFF fields cold-exact; original name provisional
 0x00427470,MusicRoomRecord::ReleaseBuffersAt00427470,MusicRoomRecord,inferred,F261; complete 82-byte native scene record lifetime with 3 authentic COFF fields cold-exact; original name provisional
+0x00425750,MusicRoomScene::Initialize,MusicRoomScene,inferred,F262; entire 372-byte MusicRoom scene ctor and its 60 native array-record lifetimes/23 relocations cold exact; original full scene layout and R108 base origin unproven

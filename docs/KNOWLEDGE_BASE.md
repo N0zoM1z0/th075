@@ -2156,3 +2156,51 @@ blend/tint/scale dispatch. A natural whole-function source is retained as
 emitted 717 bytes with a 0xC0 frame, so no exact claim or added CODE
 credit. The next investigation must reconcile physical local lifetime and
 branch lowering, not merely trust the Ghidra decompile or truncate extent.
+
+
+## F262: complete exact music scene constructor (372 native bytes)
+
+Original R052-authored `MusicRoomScene::Initialize` at `00425750..004258C3`
+contains **372 complete PE CODE bytes**, 105 independently decoded
+x86 instructions ending in RET at `004258C3`, and original code SHA256
+`1c90a806836924c60ecb3d0ac46e8177975f346538c473c1a3251c5f19223fe2`.
+A read-only Ghidra function/decompile/native instruction audit independently
+confirmed its full EH-backed scope and own exits. The scene base
+constructor `004251C0` is separately R108 origin-unknown and **not**
+independently credited merely because the caller's REL32 destination
+matches. The original parent class name and complete source declaration
+remain provisional.
+
+The original constructor uses a standard VC7 array constructor helper
+at `00641C78` on **60 real MusicCatalogRecordF261 entries of size 16**
+starting at `this+0x1C`; the constructor and matching destructor
+`00427430` and `00427470` are both separately F261 cold-exact. It sets
+the native 00657CB0 vtable, retains actual EH states and handler
+`006557B9`, and performs genuine `new(80)` with physical temporary and
+cleanup for texture object ctor `0040AD80`, original two-slot allocation
+`0040B1D0`, and `0040BB80` resource load with native source/root strings
+`00657BF4` and `00657BEC`. It issues the four actual graphics surface
+allocations at `00401C20` for 512x512, 1024x1024, 512x32, 512x32
+with depth 32 and observed `this+0xC/+0x10/+0x14/+0x18` handles. It
+zeroes scene byte fields +0x3DE and +0x3DF, calls the separately accepted
+MusicRoom catalog loader `00426DD0` plus native catalog text `00426670`,
+track setup `00426A70` and selected title `004268A0` (both with 0),
+then zeroes +0x3DD. Every original error/unwind path remains.
+
+A first complete natural C++ constructor in `src/MusicRoomInitF262.cpp`
+with physically observed 8-byte base boundary, four graphics-resource
+handles, a **real** array of already reconstructed 16-byte records, and
+observed state fields reproduced the whole target length **372**,
+**280/280** comparable bytes, and **23/23 real COFF relocation**
+offsets, types and destinations. An independent pinned VC7.1 `/Od /GX`
+**single-unit cold rebuild** of
+`music-room-scene-initialize-00425750` confirmed `exact; 372 coverage
+bytes`. The whole C++ translation is not a claim that unknown private
+MusicRoom, base or texture-manager identities/layouts are proven; no
+unknown owned child, CRT array helper, base origin, or external callee
+gets additional authored byte credit. The 97 pending origins remain
+uncredited and the conservative denominator includes them. No target
+byte copying, fake exception frames, assembly, arbitrary padding,
+unproved virtual table reinterpretations, cropping or all-unit replay.
+Private original native listing, source and cold receipt remain under
+`.analysis/f261-music-init/`.

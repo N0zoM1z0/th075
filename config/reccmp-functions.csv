@@ -574,3 +574,4 @@ ReplayRecords::LoadRecord,0x00413AC0,function
 ResultScene::PollInput,0x00430D80,function
 MusicRoomRecord::InitializeAt00427430,0x00427430,function
 MusicRoomRecord::ReleaseBuffersAt00427470,0x00427470,function
+MusicRoomScene::Initialize,0x00425750,function

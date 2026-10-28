@@ -573,3 +573,4 @@ ReplayRecords::LoadRecord
 ResultScene::PollInput
 MusicRoomRecord::InitializeAt00427430
 MusicRoomRecord::ReleaseBuffersAt00427470
+MusicRoomScene::Initialize

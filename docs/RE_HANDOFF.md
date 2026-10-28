@@ -1,4 +1,4 @@
-# TH075 — active reconstruction handoff (F261)
+# TH075 — active reconstruction handoff (F262)
 
 **Updated 2026-10-28. Read this document before new experiments.**
 
@@ -22,17 +22,17 @@ not acceptance requirements.
 
 | Item | Current evidence |
 | --- | --- |
-| Local branch / last exact-code commit | `main` / F261 two whole music catalog record lifetime helpers; prior F260 `5cc4288` |
+| Local branch / last exact-code commit | `main` / F262 whole 372-byte MusicRoom scene constructor; F261 record helper checkpoint `61502ab` |
 | Upstream | `origin/main` tracked locally; verify current ahead/behind and dirty state before further work |
-| Working tree | Clean after F261 checkpoint if successful; continue rather than avoid every existing dirty edit |
+| Working tree | Clean after F262 checkpoint if successful; continue rather than avoid every existing dirty edit |
 | Native binary | `resources/th075.exe`, SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98` |
 | Candidate count | 4,351; origin review: 1,002 authored, 2,671 library, 581 compiler, 97 unknown |
-| Accepted functions / units | **575 / 575** |
-| Accepted authored CODE | **788,454 bytes** |
-| Reviewed authored coverage | 788,454 / 1,973,516 = **39.95%** |
-| Conservative coverage | **39.88%** counting 3,608 origin-pending bytes |
+| Accepted functions / units | **576 / 576** |
+| Accepted authored CODE | **788,826 bytes** |
+| Reviewed authored coverage | 788,826 / 1,973,516 = **39.97%** |
+| Conservative coverage | **39.90%** counting 3,608 origin-pending bytes |
 | Goal | **98% not reached** |
-| Verification | F261 original complete 50-byte music-record constructor and 82-byte destructor independently cold-exact (0 and 3 genuine COFF relocations); F260 343-byte input controller previously accepted. Only F261 new/affected units replayed, no all-unit cold replay or external Oracle acceptance |
+| Verification | F262 entire native 372-byte MusicRoomScene constructor independently cold exact with all 23 genuine COFF relocations, including 60 real F261 record-array lifetimes. F261 two small record helpers previously checkpointed at `61502ab`; only new/affected F262 cold replayed, no all-unit replay or external Oracle acceptance |
 
 **Recheck the actual live status immediately**. Local commits are checkpoints,
 not evidence of a remote push or external Oracle acceptance. Earlier Git
@@ -102,6 +102,7 @@ inert variable or arbitrary padding may earn exact credit.
 | F260: ResultScene::PollInput | `00430D80` | 343 | 27 |
 | F261: MusicRoomRecord::Initialize | `00427430` | 50 | 0 |
 | F261: MusicRoomRecord::ReleaseBuffers | `00427470` | 82 | 3 |
+| F262: MusicRoomScene::Initialize | `00425750` | 372 | 23 |
 
 F222 proved signed 32-bit x87 `FILD` divided by the target's 36.0f
 (`00659308`), 74 physical animation records and a final call into the
@@ -175,6 +176,8 @@ F260 **cold-accepts the full 343-byte `ResultScene::PollInput`** controller at `
 F261 cold-accepts both **native music catalog record lifetime helpers**: 50-byte 16-instruction constructor `00427430` and 82-byte 30-instruction destructor `00427470`, with 50/50 and 70/70 nonrelocation bytes and 0 and 3 true COFF fields respectively. A naturally aligned `signed char` and three owned `char*` members occupy 16 bytes, matching the independent 60-record array used by MusicRoom initialization. Genuine nested destructor pointer/free scopes restore original EBP-4/-8/-C cleanup temp slots; no synthetic padding or unknown full scene layout is introduced. Both units were cold replayed together as `2/2 exact` from one fresh VC7.1 object, not all units. Retain `.analysis/f261-music-record/` and inspect these accepted record helpers when reconstructing `MusicRoomScene::Initialize` at `00425750` (372-byte EH array ctor boss).
 
 F261 also independently examined the entire 746-byte `SpriteSequence::RenderElements` at `00411110` (R035 authored) and developed a natural complete list/quad/texture/transform source, but its first genuine pinned VC7.1 probe emits **717 bytes** instead of 746 and has a different 0xC0 stack frame vs native 0xBC. It remains a **nonexact boss** with no CODE credit. Full Ghidra function and native assembly and the retained negative source are under `.analysis/f261-sprite-sequence/`; do not infer exactness from conceptual similarity.
+
+F262 **cold-accepts the whole 372-byte native `MusicRoomScene::Initialize`** scene constructor at `00425750` (105 original x86 instructions, 280/280 nonrelocation bytes and 23/23 true physical COFF fields). First natural C++ translation precisely reproduced VC7.1 EH, the standard CRT array constructor for **60** of the separately F261-cold-accepted **16-byte records** at scene+0x1C, 80-byte texture-manager `new`, four 00401C20 graphics surfaces, actual source filenames and music roots, complete F258-cold-accepted catalog loader call plus catalog/track/title controllers and native three music state flags. Inherited base scene constructor `004251C0` remains R108 origin-unknown and uncredited. This is a physically grounded partial scene lifetime only; original nominal layout, parent identity, other callees, and 97 unknown origins remain unproven/uncredited. Only `--unit music-room-scene-initialize-00425750` cold-replayed exact; preserve `.analysis/f261-music-init/` and the F261 record source. Investigate adjacent **244-byte `MusicRoomScene::ReleaseTexturesRecordsAndAudio`** at `004258D0` next, using the real complete 60-record destructor rather than fabricated deallocation behavior.
 
 Relevant full native proofs: `config/match-units.toml`,
 `config/exact-adoptions.json`, sources `src/*F222.cpp`/`src/*F223.cpp`,

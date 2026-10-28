@@ -41379,3 +41379,127 @@ offset = 71
 type = "REL32"
 symbol = "_free"
 target = 0x0064169D
+
+[units.music-room-scene-initialize-00425750]
+source = "src/MusicRoomInitF262.cpp"
+object = "build/matching/MusicRoomInitF262.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["MusicRoomScene::Initialize"]
+symbol = "??0MusicRoomInitializeF262@@QAE@XZ"
+target_address = 0x00425750
+size = 372
+[[units.music-room-scene-initialize-00425750.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0MusicRoomInitializeF262@@QAE@XZ"
+target = 0x006557B9
+[[units.music-room-scene-initialize-00425750.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.music-room-scene-initialize-00425750.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.music-room-scene-initialize-00425750.relocations]]
+offset = 34
+type = "REL32"
+symbol = "??0MusicBaseSceneF262@@QAE@XZ"
+target = 0x004251C0
+[[units.music-room-scene-initialize-00425750.relocations]]
+offset = 50
+type = "DIR32"
+symbol = "??_7MusicRoomInitializeF262@@6B@"
+target = 0x00657CB0
+[[units.music-room-scene-initialize-00425750.relocations]]
+offset = 55
+type = "DIR32"
+symbol = "??1MusicCatalogRecordF261@@QAE@XZ"
+target = 0x00427470
+[[units.music-room-scene-initialize-00425750.relocations]]
+offset = 60
+type = "DIR32"
+symbol = "??0MusicCatalogRecordF261@@QAE@XZ"
+target = 0x00427430
+[[units.music-room-scene-initialize-00425750.relocations]]
+offset = 76
+type = "REL32"
+symbol = "??_L@YGXPAXIHP6EX0@Z1@Z"
+target = 0x00641C78
+[[units.music-room-scene-initialize-00425750.relocations]]
+offset = 87
+type = "REL32"
+symbol = "??2@YAPAXI@Z"
+target = 0x0064159D
+[[units.music-room-scene-initialize-00425750.relocations]]
+offset = 111
+type = "REL32"
+symbol = "??0MusicTextureManagerF262@@QAE@XZ"
+target = 0x0040AD80
+[[units.music-room-scene-initialize-00425750.relocations]]
+offset = 155
+type = "REL32"
+symbol = "?AllocateUnformattedSlots@MusicTextureManagerF262@@QAEXH@Z"
+target = 0x0040B1D0
+[[units.music-room-scene-initialize-00425750.relocations]]
+offset = 160
+type = "DIR32"
+symbol = "?g_MusicTextureRootAt00657BEC@@3QBDB"
+target = 0x00657BEC
+[[units.music-room-scene-initialize-00425750.relocations]]
+offset = 165
+type = "DIR32"
+symbol = "?g_MusicTextureFileAt00657BF4@@3QBDB"
+target = 0x00657BF4
+[[units.music-room-scene-initialize-00425750.relocations]]
+offset = 176
+type = "REL32"
+symbol = "?LoadDefault@MusicTextureManagerF262@@QAEXPBD0@Z"
+target = 0x0040BB80
+[[units.music-room-scene-initialize-00425750.relocations]]
+offset = 200
+type = "REL32"
+symbol = "?Allocate@MusicSurfaceF262@@YAXHHPAPAXH@Z"
+target = 0x00401C20
+[[units.music-room-scene-initialize-00425750.relocations]]
+offset = 227
+type = "REL32"
+symbol = "?Allocate@MusicSurfaceF262@@YAXHHPAPAXH@Z"
+target = 0x00401C20
+[[units.music-room-scene-initialize-00425750.relocations]]
+offset = 251
+type = "REL32"
+symbol = "?Allocate@MusicSurfaceF262@@YAXHHPAPAXH@Z"
+target = 0x00401C20
+[[units.music-room-scene-initialize-00425750.relocations]]
+offset = 275
+type = "REL32"
+symbol = "?Allocate@MusicSurfaceF262@@YAXHHPAPAXH@Z"
+target = 0x00401C20
+[[units.music-room-scene-initialize-00425750.relocations]]
+offset = 306
+type = "REL32"
+symbol = "?LoadCatalog@MusicRoomInitializeF262@@QAEXXZ"
+target = 0x00426DD0
+[[units.music-room-scene-initialize-00425750.relocations]]
+offset = 314
+type = "REL32"
+symbol = "?RenderCatalogText@MusicRoomInitializeF262@@QAEXXZ"
+target = 0x00426670
+[[units.music-room-scene-initialize-00425750.relocations]]
+offset = 324
+type = "REL32"
+symbol = "?SetupTrack@MusicRoomInitializeF262@@QAEXH@Z"
+target = 0x00426A70
+[[units.music-room-scene-initialize-00425750.relocations]]
+offset = 334
+type = "REL32"
+symbol = "?RenderTitle@MusicRoomInitializeF262@@QAEXH@Z"
+target = 0x004268A0
+[[units.music-room-scene-initialize-00425750.relocations]]
+offset = 364
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
