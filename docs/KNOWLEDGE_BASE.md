@@ -11448,3 +11448,38 @@ functions/819 actual native original CODE bytes**, all uncredited.
 [F648 original physical full-byte/source and caller evidence](GAME_STATE_FORWARD_LEAVES_F648.md),
 selected `scripts/repo-python scripts/verify-game-state-forward-leaves-f648.py`.
 Formal 943/862,726 authored exact remains unchanged; no all-unit cold replay.
+
+
+## F646/F647: native 30-x86 CF and 60-x86 D0 reflected-landing source only in three selected huge fighters
+
+Original pinned Japanese PE actual D0 complete 60-x86 case
+negates signed byte direction+0x66, does real `FLD/FCHS/FSTP`
+float position reflection, then original global-first
+`FLD [0065782C]`, `FLD this+0x5C`, `FUCOMPP`, `TEST AH,0x44`
+equality to set 0.6f drag; ground x87 threshold, game action0xA
+and reset, otherwise original frame auxiliary action5.
+Original complete CF30-x86 case sets motion flag+0x3AC,
+subtracts float global `00657478` from position, clamps/clears at
+ground `0065782C`, calls original frame and action0.
+Ordinary VC7.1 natural source `probes/FighterReflectLandingD0F646.inc`
+and `probes/FighterFallStateCFF647.inc` compiled inside actual whole
+giant source TUs yields **strict original D0 at `00564BE0`
+(60/252 B/6 actual typed fields; 19 native saved EBP−0x88 MOV
++3B), `005214B0` (60/195 B/6), and CF+D0 TOGETHER at
+`00543210` (30+60 original x86/114+195 original inner CODE B/
+4+6 typed native fields)**. Three newly compiled whole giant
+sources each reverify preceding F645 B4/B5, F642 A7/A8,
+older source-backed native actions and entire separately owned
+original afterRET jump DATA. Other 9 fighter original D0 cases
+remain **35/36 genuine GPR-role mismatches** despite identical 60
+x86/6 COFF; adding CF shifts register cycle and can regress
+previously matching D0 in other parents. Fourteen whole-parent
+natural C++ lvalue/float/condition variants failed to resolve it.
+**4 newly strict original internal case bodies /210 actual native
+x86 roles/756 original uncredited inner CODE B/22 PE/COFF refs**.
+F598–F647 bounded case study **570 strict original inner cases /
+154,011 original native inner CODE bytes**, NOT accepted whole
+functions. [F646/F647 actual original PE and source/negative proof](FIGHTER_FALL_REFLECT_F646_F647.md),
+`scripts/repo-python scripts/verify-fighter-fall-reflect-f646.py --boss 0x00543210`.
+Official 943/862,726 accepted authored whole CODE unchanged, no
+943-unit cold replay or external Oracle.

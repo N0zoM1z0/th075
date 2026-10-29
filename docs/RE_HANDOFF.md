@@ -1,6 +1,6 @@
 # TH075 — active reconstruction handoff
 
-**Maintained 2026-10-29 after F648.** This is the **only current task list**.
+**Maintained 2026-10-29 after F647.** This is the **only current task list**.
 The [F540–F596 research chronology](history/RE_HANDOFF_F540_THROUGH_F596.md),
 [knowledge base](KNOWLEDGE_BASE.md), and older F-series studies are
 **historical evidence**, not statements of current progress. Independently
@@ -1074,6 +1074,41 @@ F644/F648 complete source-backed origin-unknown whole functions total
 
 ```bash
 scripts/repo-python scripts/verify-game-state-forward-leaves-f648.py
+```
+
+**F646/F647 original native CF/D0 source grammar: strictly
+recovered in THREE selected huge fighter parent TUs**, not all 11.
+Normal C++ original D0 negates real signed orientation+0x66,
+uses x87 `FCHS` to negate +0x50 float, native global-first `FLD
+[0065782C]`/`FLD this+0x5C; FUCOMPP` equality to set genuine
+0.6f drag, then ground x87 branch, action0xA/reset and frame-aux5.
+Original CF sets flag+0x3AC, falls by float `00657478`,
+clamps and clears flag at ground, queries frame and calls action0.
+`00564BE0` **D0 60 native x86/252 original CODE B/6 PE/COFF**
+with 19 real saved-this EBP−0x88 MOV widenings; `005214B0` D0
+**60/195B/6**. Original `00543210` is newly strict with **BOTH
+complete CF30/114B/4 and D0 60/195B/6** in one actual whole
+VC7.1 source. **Four strict original game-case interiors,
+210 real native GPR/x87/CFG roles, 756 original uncredited native
+inner CODE bytes, 22 true typed PE/COFF**; same new giant source
+rechecks previous F645 B4/B5, F642 sprite A7/A8 and all earlier
+native case bodies and entire afterRET packed DATA. Other original
+D0 fighter owners have genuine 35–36 GPR-cycle role mismatches
+despite same 60 native x86/6 COFF; fourteen independent equivalent
+C++ whole-parent compiler trials failed to fix them, and including
+real CF in `00564BE0`/`005214B0` can *rotate* formerly correct
+D0 GPR phase. Do NOT claim 11 strict CF/D0 case bodies.
+F598–F647 bounded strict original game-case study now **570
+inner cases /154,011 original native inner CODE bytes**, no newly
+accepted whole authored exact match; official 943/862,726 unchanged.
+[F646/F647 original selected strict native x86/PE and negative
+compiler evidence](FIGHTER_FALL_REFLECT_F646_F647.md),
+[natural D0](../probes/FighterReflectLandingD0F646.inc),
+[natural CF](../probes/FighterFallStateCFF647.inc).
+
+```bash
+scripts/repo-python scripts/verify-fighter-fall-reflect-f646.py --boss 0x00543210
+scripts/repo-python scripts/verify-fighter-fall-reflect-f646.py --boss 0x00564BE0
 ```
 
 ## 4. Other three unmatched authored *whole* functions
