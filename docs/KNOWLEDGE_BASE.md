@@ -10912,25 +10912,3 @@ and separate authored complete destructors remain NONEXACT.
 targeted `scripts/repo-python scripts/verify-fighter-mode63-basic-f626.py --boss 0x004AC040`,
 `--negative-actor 0x0058AF60`. Official authored whole exact
 943/862,726 unchanged, no full 943-unit cold replay.
-
-
-## F626: strict native 109-x86 mode63 case in five giant fighters, two negative register phases
-
-Real pinned Japanese PE 0x63 has 109 original x86 and 417 original
-native CODE bytes in `004AC040`,`00486550`,`00543210`,`004D7E70`,
-`005214B0`, not the special 118-x86 bonus variant of F624. Ordinary
-C++ `probes/FighterMode63BasicF626.inc` in each fresh whole giant
-compile reproduces **545 original GPR/x87/CFG roles /2,085 original
-internal CODE bytes/35 true physical PE-targeted typed COFF fields**;
-all 30 previous F614 game case grammars and afterRET packed jump DATA
-remain source-backed on the same new object. Correct original mode3
-short circuit, no extra `+0x370` bonus branch, real next case0x8C
-instead of final compressed table DEFAULT slot26. Independent original
-`004F7130` (416 B) and `0058AF60` (417 B, actual next case0x89)
-source trials preserve 109 x86 but have **67 original register/CFG
-role differences** per giant, not strict matches. Strict internal
-study F598–F626: **346 real original case interiors/90,699 original
-inner CODE bytes**, not newly accepted whole function CODE. Official
-943/862,726 authored whole exact unchanged, no all-unit cold replay.
-[F626 native proof and negative variants](FIGHTER_MODE63_REGULAR_F626.md),
-targeted `scripts/repo-python scripts/verify-fighter-mode63-basic-f626.py --boss 0x004AC040`.
