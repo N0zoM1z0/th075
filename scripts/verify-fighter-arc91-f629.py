@@ -124,7 +124,7 @@ def verify_case(reader,pe,decoder,boss,report,mapped,code,refs,n,info,helpers,ne
     # Verify the actual earlier F628 THREE original x87 cases, real
     # strict mode63 predecessor, 30 earlier real game actions and
     # entire afterRET physical jump DATA in this NEW extended OBJ.
-    need(extra_after_0x91 in (0,73,75,292,300,438,450,504,518,723,737),
+    need(extra_after_0x91 in (0,73,75,292,300,438,450,504,518,723,737,936,950),
          f'{addr:#x}: only actual original 73/75-x86 case96 may extend 0x91')
     h['f628'].verify_obj(reader,pe,decoder,boss,report,mapped,code,refs,
          earlier,helpers,negative,extra_followup_x86=78+extra_after_0x91)
@@ -144,7 +144,8 @@ def verify_case(reader,pe,decoder,boss,report,mapped,code,refs,n,info,helpers,ne
                 0x98 if extra_after_0x91 in (73,75) else
                 0x9C if extra_after_0x91 in (292,300) else
                 0x9F if extra_after_0x91 in (438,450) else
-                0xA0 if extra_after_0x91 in (504,518) else 0xA4)
+                0xA0 if extra_after_0x91 in (504,518) else
+                0xA4 if extra_after_0x91 in (723,737) else 0xA8)
         if target is not None and target.mnemonic=='mov' and target.op_str.endswith(f', 0x{wanted:x}'):
             refs96.append(target)
     need(len(refs96)==1,f'{addr:#x}: original next case0x96 marker source not uniquely typed')

@@ -1,6 +1,6 @@
 # TH075 — active reconstruction handoff
 
-**Maintained 2026-10-29 after F640.** This is the **only current task list**.
+**Maintained 2026-10-29 after F641.** This is the **only current task list**.
 The [F540–F596 research chronology](history/RE_HANDOFF_F540_THROUGH_F596.md),
 [knowledge base](KNOWLEDGE_BASE.md), and older F-series studies are
 **historical evidence**, not statements of current progress. Independently
@@ -930,6 +930,34 @@ proof](GAME_CALL_FORWARDERS_F640.md),
 
 ```bash
 scripts/repo-python scripts/verify-game-call-forwarders-f640.py
+```
+
+**F641 original native counter-free timed landing cases `0xA3/
+0xA4/0xA5` rebuilt in ALL ELEVEN huge fighter whole-source
+VC7.1 translation units.** Three physically separate original
+A3→A4→A5→A7 case bounds each own **71 native x86** and genuine
+heights **−9f/−10f/−13f**, each completing to native **action 2**.
+Unlike prior 73/75-x86 F633/F639 landing cases, original A3/A4/A5
+**do NOT clear `+0xF00/+0xEFC` trajectory shorts or `+0xF0A`
+extra flag**. Correct natural source
+[`FighterLandingNoCounterF641.inc`](../probes/FighterLandingNoCounterF641.inc)
+reproduces all genuine native x87 ground/contact/double FMUL
+and game call roles, **33 strict original internal case bodies,
+2,343 actual x86 GPR/x87/CFG roles, 8,901 uncredited native
+CODE bytes and 297 real physical PE/COFF targets**, including
+`00564BE0` wide original 327-byte cases from exactly 21 real
+saved EBP−0x88 MOV widenings. Same new objects recheck earlier
+F639 9F/A0/A1, F637 9E, F636 9B/9C, F633 97/98/9A,
+F631 96, native mode63 where previously strict, 30 older native
+case proofs and entire separately owned afterRET packed jump DATA;
+previous original GPR-negative cases remain negative. F598–F641
+strict original interior record: **522 case bodies /140,487 native
+original inner CODE bytes**, still **zero accepted new whole-giant
+source or authored CODE**. Official 943/862,726 exact ledger
+unchanged. [F641 original per-case counter-free/native PE proof](FIGHTER_NO_COUNTER_LANDINGS_F641.md).
+
+```bash
+scripts/repo-python scripts/verify-fighter-no-counter-landings-f641.py --boss 0x00564BE0
 ```
 
 ## 4. Other three unmatched authored *whole* functions

@@ -11297,3 +11297,31 @@ whole PE/C++/call provenance](GAME_CALL_FORWARDERS_F640.md),
 selected `scripts/repo-python scripts/verify-game-call-forwarders-f640.py`.
 Official authored 943/862,726 whole exact unchanged, no all-unit
 cold replay/Oracle.
+
+
+## F641: three complete counter-free A3/A4/A5 original native landing actions inside each of eleven giants
+
+Real Japanese TH075 original giant fighter action0xA3→0xA4,
+0xA4→0xA5, 0xA5→0xA7 physically own **71 x86 each**, original
+heights −9f/−10f/−13f and real frame completion native action2.
+Unlike earlier F633/F639 source landings, the actual A3/A4/A5
+source **omits the native trajectory short zero store** at
+`+0xF00/+0xEFC` and even `00543210/0058AF60` have NO extra
+`+0xF0A` zero store in these later original cases. Natural C++
+`probes/FighterLandingNoCounterF641.inc` restores actual original
+71-instruction codegen and all nine typed zero-addend PE/COFF
+float/game refs per case. **All 11 freshly compiled whole giant
+source TUs** strictly match **33 real original internal case
+bodies /2,343 GPR/x87/CFG roles /8,901 original native internal
+CODE bytes/297 true typed refs**. Real saved EBP−0x88 wide actor
+`00564BE0` has exactly 21 native MOV receiver widenings per
+327-byte original case; normal others 264 native bytes each.
+Same new objects recheck F639 9F/A0/A1, F637 strict-vs-inclusive
+9E, F636 pair, F633 trio, F631 96, earlier mode63 when strict,
+F614 thirty previous cases and entire afterRET packed switch DATA,
+while previously unmatched original 0x91 register cycles remain
+nonexact. F598–F641 strict interior research totals **522 real
+original case bodies/140,487 original inner CODE bytes**, not
+accepted whole authored exact functions. [F641 native case proof](FIGHTER_NO_COUNTER_LANDINGS_F641.md),
+reproducible `scripts/repo-python scripts/verify-fighter-no-counter-landings-f641.py --boss 0x0058AF60`.
+Official 943/862,726 whole authored exact unchanged; no full cold replay.

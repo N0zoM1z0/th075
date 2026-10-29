@@ -187,14 +187,15 @@ def verify_obj(reader,pe,decoder,boss,report,mapped,code,refs,caseinfo,helpers,n
     # must then be rechecked in the SAME newly compiled full giant.
     need(extra_followup_x86 in (0,78,105,151,153,178,180,370,378,397,405,
                                  516,528,543,555,582,596,609,623,
-                                 801,815,828,842),
+                                 801,815,828,842,1014,1028,1041,1055),
          f'{addr:#x}: only genuine 78/105-x86 action91 and 73/75-x86 action96 extensions permitted')
     next_marker_value=(0x92 if extra_followup_x86==0 else
                        0x97 if extra_followup_x86 in (78,105) else
                        0x98 if extra_followup_x86 in (151,153,178,180) else
                        0x9C if extra_followup_x86 in (370,378,397,405) else
                        0x9F if extra_followup_x86 in (516,528,543,555) else
-                       0xA0 if extra_followup_x86 in (582,596,609,623) else 0xA4)
+                       0xA0 if extra_followup_x86 in (582,596,609,623) else
+                       0xA4 if extra_followup_x86 in (801,815,828,842) else 0xA8)
     refs91=[]
     for field in refs:
         if 'g_FighterProbeMarker' not in field['symbol']:continue

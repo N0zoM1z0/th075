@@ -166,19 +166,23 @@ def verify_fresh_whole(reader,pe,decoder,boss,report,mapped,code,refs,properties
     expected=3*prior_info['original_complete_x86_instructions']
     need(counts==expected and counts in (219,225)
          and extra_followup_x86 in (0,2*73,2*75,2*73+66,2*75+68,
-                                 2*73+66+3*73,2*75+68+3*73)
+                                 2*73+66+3*73,2*75+68+3*73,
+                                 2*73+66+3*73+3*71,2*75+68+3*73+3*71)
          and (not extra_followup_x86 or extra_followup_x86 in (
               2*prior_info['original_complete_x86_instructions'],
               2*prior_info['original_complete_x86_instructions']+
                  (68 if prior_info['original_complete_x86_instructions']==75 else 66),
               2*prior_info['original_complete_x86_instructions']+
-                 (68 if prior_info['original_complete_x86_instructions']==75 else 66)+3*73)),
+                 (68 if prior_info['original_complete_x86_instructions']==75 else 66)+3*73,
+              2*prior_info['original_complete_x86_instructions']+
+                 (68 if prior_info['original_complete_x86_instructions']==75 else 66)+3*73+3*71)),
          f'{addr:#x}: authentic 73/75-x86 native case count or followup differs')
     h['f631'].verify_new_obj(reader,pe,decoder,boss,report,mapped,code,refs,
         earlier,prior_info,h,extra_sibling_x86=counts+extra_followup_x86)
     wanted=(0x9C if extra_followup_x86==0 else
             0x9F if extra_followup_x86 in (2*73,2*75) else
-            0xA0 if extra_followup_x86 in (2*73+66,2*75+68) else 0xA4)
+            0xA0 if extra_followup_x86 in (2*73+66,2*75+68) else
+            0xA4 if extra_followup_x86 in (2*73+66+3*73,2*75+68+3*73) else 0xA8)
     markers=[]
     for field in refs:
         if 'g_FighterProbeMarker' not in field['symbol']:continue

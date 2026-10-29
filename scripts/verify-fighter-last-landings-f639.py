@@ -66,7 +66,7 @@ def actual_source(addr,boss,report,mapped,reader,pe,decoder,h,originals):
     return source
 
 
-def check_fresh_whole(reader,pe,decoder,boss,report,mapped,code,refs,originals,h):
+def check_fresh_whole(reader,pe,decoder,boss,report,mapped,code,refs,originals,h,extra_after_last_x86=0):
     addr=boss['address'];ins=[]
     for x in decoder.disasm(code,0):
         ins.append(x)
@@ -81,21 +81,27 @@ def check_fresh_whole(reader,pe,decoder,boss,report,mapped,code,refs,originals,h
     # The full true predecessor original grammar/PE fields and all
     # its older actual source-backed cases + DATA must remain exact
     # on THIS new C++ parent object, not an earlier compiled one.
+    need(extra_after_last_x86 in (0,3*71),
+         f'{addr:#x}: only three real complete 71-instruction original A3/A4/A5 may follow A1')
     h['f637'].verify_source(reader,pe,decoder,boss,report,mapped,code,refs,
-                             earlier,meta,h,extra_after_9e_x86=3*73)
+                             earlier,meta,h,extra_after_9e_x86=3*73+extra_after_last_x86)
+    wanted=0xA4 if extra_after_last_x86==0 else 0xA8
     markers=[]
     for field in refs:
         if 'g_FighterProbeMarker' not in field['symbol']:continue
         n=next((x for x in ins if x.address<=field['offset']<x.address+x.size),None)
-        if n is not None and n.mnemonic=='mov' and n.op_str.endswith(', 0xa4'):
+        if n is not None and n.mnemonic=='mov' and n.op_str.endswith(f', 0x{wanted:x}'):
             markers.append(n)
     need(len(markers)==1,
          f'{addr:#x}: actual next native action0xA3 full-C++ boundary is not unique')
     end=ins.index(markers[0])
     count=3*73
-    need(end>=count,f'{addr:#x}: source original 3×73 x86 cut off before next action')
-    instructions=ins[end-count:end]
-    need(instructions[-1].address+instructions[-1].size==markers[0].address,
+    need(end>=count+extra_after_last_x86,
+         f'{addr:#x}: source original 3×73 x86 cut off before next action or later sibling')
+    instructions=ins[end-count-extra_after_last_x86:end-extra_after_last_x86]
+    next_boundary=(ins[end-extra_after_last_x86].address if extra_after_last_x86
+                   else markers[0].address)
+    need(instructions[-1].address+instructions[-1].size==next_boundary,
          f'{addr:#x}: true native complete case0xA1 must end at next action0xA3 marker')
     receipts=[]
     for ordinal,action in enumerate(ACTIONS):
