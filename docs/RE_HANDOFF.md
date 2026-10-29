@@ -151,6 +151,25 @@ unknown. `004588B0` has six mixed vendor/game callers.
 See [F595 original native small-function provenance](SMALL_ORIGIN_UNKNOWN_FIELDSETTER_F595.md)
 and historical [origin review](ORIGIN_PENDING_REVIEW.md).
 
+**F599: two large, complete, original-PE-byte-identical natural C++
+copy members now source-backed, but original provenance still UNKNOWN.**
+`0045AAE0` / 368 B /118 x86 and `004591E0` /417 B /128 x86
+are generated *implicitly* from one genuinely used 116-byte C++ record
+with nontrivial member lifetimes. Their complete **785/785 original CODE
+bytes, 753/753 non-relocation bytes and 8/8 real physical typed COFF
+destinations** are identical after true relocation linking. The first
+nontrivial member destructor and VC7.1 `/GX` frame reproduce both native
+exception-state writes; `/GX-` is a negative control. The actual owner
+and developer's implicit-vs-explicit syntax remain unproved, so **do not
+count 785 source-backed bytes as newly accepted authored CODE**.
+[Complete F599 original source/ownership evidence](RECORD116_IMPLICIT_COPY_ORIGIN_F599.md),
+[actual natural C++](../probes/Record116ImplicitCopyF599.cpp) and one
+selected cold compile plus optional EH negative:
+
+```bash
+scripts/repo-python scripts/verify-record116-implicit-copies-f599.py --with-negative-gxoff
+```
+
 ## 5. Required workflow and data acceptance
 
 1. Inspect dirty Git changes immediately and **continue all of them**;
