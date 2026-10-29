@@ -9187,3 +9187,38 @@ F566 study: [source integration](FIGHTER_INTEGRATED_SCRIPTED_F566.md);
 affected-only reproducible command
 scripts/repo-python scripts/verify-fighter-integrated-scripted-switch.py.
 No full cold replay or external Oracle receipt.
+
+## F567: eleven giant fighter whole-switch source integration, first actions 0..10
+
+F567 freshly builds **eight more entire natural C++ Advance() TUs**,
+each implementing all the true original first-table action cases
+0..10 in one compiled source function. Full whole native CODE SHA,
+all guarded original switches and physical after-RET DATA are
+independently verified for each original fighter; real source case
+expressions are regenerated from tracked original-backed helpers.
+All **88/88 original complete case GPR/x87/control grammars**
+match new VC7.1 source, containing **4,989 real x86 instructions and
+18,033 original native inner CODE bytes**, with **571/571 typed COFF
+fields**, 1,163 physical original-style switch DWORD refs, 3,335
+byte-identical original sparse indexes and 7,987 after-RET DATA bytes.
+
+The exceptional 00564BE0 giant has native 585 extra code bytes across
+its 11 first-switch cases, independently verified as **191 EBP-0x88
+wide owner loads ×3 bytes plus 3 near JL branches ×4 bytes**; native
+register/x87/branch grammar remains matching and no fake local
+padding has been added. The other seven new fighter sources emit
+native-length inner case CODE exactly.
+
+Combining previous F564 two and F566 one with F567 eight, **all 11
+original multi-switch giants** now have single-TU natural C++ source
+models for first 11 real game actions: **121 complete native cases,
+6,835 x86 instruction roles, 24,529 native inner CODE bytes, 790 real
+typed COFF fields**, all 1,607 original switch DWORD destinations,
+4,502 compressed map bytes and 10,930 separate after-RET DATA-layout
+bytes. Their **613,391 entire original giant CODE bytes are still
+unmatched**, and all later source action labels remain test-only
+markers. Complete live report
+[F567 whole cohort integration](FIGHTER_ALL_MULTISWITCH_INTEGRATION_F567.md)
+and affected-only repro
+scripts/repo-python scripts/verify-fighter-all-multiswitch-opening-cases.py.
+No split/whole exact credit, all-unit cold replay or external Oracle.

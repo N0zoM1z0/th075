@@ -1,6 +1,6 @@
 # TH075 — current agent handoff
 
-**Maintained: 2026-10-29, after F566; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
+**Maintained: 2026-10-29, after F567; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
 
 ## 1. Current authoritative state (not historical hypotheses)
 
@@ -201,6 +201,26 @@ and scripts/repo-python scripts/verify-fighter-integrated-scripted-switch.py.
 All 1,938 inner CODE bytes remain in the **nonexact** 46,755-byte
 giant; later actions are diagnostic markers, not restored game source.
 No whole/split exact CODE credit.
+
+**F567 completes an original-backed integrated opening C++ source
+experiment for all eleven giant multi-switch fighters**. The eight
+previously unintegrated roles now each compile a separate single-
+function VC7.1 Advance() containing the genuine first eleven native
+game actions 0..10. Across all eleven (including previously verified
+F564/F566): **121 original native game case subranges, 6,835 true
+GPR/x87/branch x86 instruction roles and 790 actual typed COFF fields**
+with all 1,607 native switch DWORD fields, 4,502 literal sparse index
+bytes and separate 10,930 after-RET DATA-layout bytes. The unique
+00564BE0 wide EBP-0x88 giant has 585 additional native byte lengths
+from exactly 191 real wide loads and 3 long JL branches, not padding.
+See [F567 all-eleven giant original action integration](FIGHTER_ALL_MULTISWITCH_INTEGRATION_F567.md)
+and selected-only source verifier
+scripts/repo-python scripts/verify-fighter-all-multiswitch-opening-cases.py
+--boss 0x00564BE0. **All 613,391 whole giant CODE bytes remain
+nonexact**, since the rest of the original game action cases and
+real enclosing stack/owner lifetimes are still not source-complete.
+All 24,529 inner-case original CODE bytes are diagnostic source
+codegen only, zero split/whole exact CODE credit.
 
 **Three other authored functions remain nonexact (all require full CODE):**
 
