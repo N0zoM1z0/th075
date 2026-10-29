@@ -9932,3 +9932,32 @@ case or whole CODE/DATA credit, no cold all-unit replay/Oracle.
 Reproducer:
 `scripts/repo-python scripts/verify-characterobject-guarded-stages-f590.py`,
 [F590 original guarded cases study](CHARACTEROBJECT_GUARDED_STAGES_F590.md).
+
+
+## F591: actual 0x385/0x386/0x387 native actor fade branches
+
+Original complete 33,293-byte CharacterObject giant `004EBDA0`
+now has true 0x385/0x386/0x387 source bodies recovered in the
+same normal VC7.1 function. Real 0x385 is 138 x86/511 original
+CODE bytes, initializes 0.75f scale, native parent 00453E60(5f),
+parent effects0x387 and stage2 effect0x386, float global
+00659724 x2 and stage>1 color fade by 40.
+Real 0x386 (84/330) has no parent FX and **ALWAYS fades by 20**
+even at stage0; copying 0x385's stage>1 condition generated four
+extra x86 instructions. Fixing the true original native stage
+condition also gave exact GPR roles in the next source case.
+Real 0x387 (74/262) has native 0.75f scales, original sprite
+short 0x4E2, -75.0f offset, real global 006583F8 twice,
+stage>1 and strictly >20-opacity fade with no forced byte-zero.
+All three whole case grammar and byte widths are strictly
+original PE-backed; **24 physical typed COFF source refs** are
+matched at their native ordinals, zero addend. Across F572–F591,
+**49 real original game actions, 7,109 original x86 roles,
+26,691 inner original CODE bytes, 498 genuine physical typed
+COFF records**, 60 DWORD jump targets and 198 exact sparse byte
+indexes, distinct 438 after-RET DATA-layout bytes. Entire giant
+still NONEXACT, inner cases do not count as standalone functions,
+no all-unit cold replay/Oracle.
+Source/verifier:
+`scripts/repo-python scripts/verify-characterobject-stage-fades-f591.py`,
+[F591 original stage fade study](CHARACTEROBJECT_STAGE_FADES_F591.md).

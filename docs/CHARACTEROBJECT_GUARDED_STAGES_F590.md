@@ -139,3 +139,14 @@ its 25,588 authentic internal native CODE bytes are not 46
 separately exact native original functions. No standalone split/whole
 CODE or DATA credit, no all-unit cold replay and no external
 Factory/Oracle acceptance receipt.
+
+## F591 follow-up: three strictly matched native stage-fade actions
+
+The same selected ordinary VC7.1 C++ source now also recovers complete
+original `0x385` 138 x86/511 original CODE bytes, `0x386` 84/330
+and `0x387` 74/262. Native 0x386's unsigned opacity fade is
+**unconditional**, unlike the neighboring stage>1 checks; treating
+these as equivalent adds four nonoriginal instructions. F590 still
+checks its prior 46 game actions under the one expanded C++ source;
+[F591 stage-fade proof](CHARACTEROBJECT_STAGE_FADES_F591.md) checks
+49, with all original PE/COFF and whole-boss NONEXACT safeguards.

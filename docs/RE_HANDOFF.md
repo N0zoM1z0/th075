@@ -1,6 +1,6 @@
 # TH075 — current agent handoff
 
-**Maintained: 2026-10-29, after F590; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
+**Maintained: 2026-10-29, after F591; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
 
 ## 1. Current authoritative state (not historical hypotheses)
 
@@ -749,6 +749,34 @@ credit. See
 and targeted verifier
 `scripts/repo-python scripts/verify-characterobject-guarded-stages-f590.py`.
 No full all-unit cold replay or Oracle receipt.
+
+**F591 restores three more FULL native CharacterObject stage/fade
+cases `0x385/0x386/0x387`** inside still-incomplete entire original
+giant `004EBDA0` (33,293 whole CODE bytes). Original complete
+handlers are **138 native x86 instructions/511 original bytes**
+with actual parent effect0x387, stage2 effect0x386, scale float
+00659724 and 40-opacity fade; **84/330** with 0.75f scale and
+**UNCONDITIONAL** 20-opacity fade; **74/262** with original sprite
+0x4E2/-75f, float 006583F8 and stage>1 strictly >20 fade.
+Reexamining native 0x386 proved an imported neighboring-stage
+condition wrong: it added four nonoriginal source instructions.
+Removing it also naturally recovers native register allocation in
+0x387 without padding. All **296 new original x86 roles /
+1,103 inner CODE bytes /24 physical typed zero-addend COFF refs**
+now match entire native GPR/x87/CFG/individual widths with no
+new tolerated source-order exceptions.
+
+In the SAME newly compiled one-TU C++ source there are now **49
+whole original action bodies, 7,109 native instruction roles,
+26,691 original internal CODE bytes and 498 actual PE-verified
+typed COFF fields**, plus all 60 native physical jump-slot COFF
+refs and 198 exact sparse-index bytes (438 distinct after-RET
+DATA-layout bytes). Original giant **33293 CODE bytes still
+NONEXACT**, zero standalone case CODE/DATA exact credit. See
+[F591 three native stage-fade action study](CHARACTEROBJECT_STAGE_FADES_F591.md)
+and selected checker
+`scripts/repo-python scripts/verify-characterobject-stage-fades-f591.py`.
+No full cold replay or external Oracle.
 
 **Three other authored functions remain nonexact (all require full CODE):**
 
