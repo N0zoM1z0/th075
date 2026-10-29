@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-29, after F653 and the storage/document consolidation.**
+**Maintained 2026-10-29, after F654 and the storage/document consolidation.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -77,9 +77,9 @@ scripts/repo-python scripts/verify-characterobject-typed-member-f635.py --case 3
 The 22 original giant CODE owners remain authored NONEXACT. The main
 case-source subcohort has **11 real multi-switch giant fighters**,
 with real per-actor native differences and a full afterRET sparse/
-dense dispatch shape. F598–F653 compiler-backed original research
-proves **575 strict original *internal action case bodies* /
-155,094 original native internal CODE bytes**. These do **NOT** mean
+dense dispatch shape. F598–F654 compiler-backed original research
+proves **577 strict original *internal action case bodies* /
+155,643 original native internal CODE bytes**. These do **NOT** mean
 572 additional independently callable exact functions or credited
 whole function bytes; each parent remains nonexact. Case interior
 source must always be compiled in the **fresh complete original
@@ -87,19 +87,20 @@ parent C++ translation unit** and its preceding cases + entire jump
 DATA rechecked. [Full original dispatch fingerprint JSON](../config/fighter-boss-dispatch-fingerprints.json),
 [original fighter family dispatch](FIGHTER_BOSS_FAMILY_DISPATCH.md).
 
-**Latest strict path:** native `00543210` now source-matches **seven
+**Latest strict path:** native `00543210` now source-matches **nine
 consecutive** actual inner cases: `CF` (30 x86/114 B/4 refs), `D0`
 (60/195 B/6), `D1` (59/199 B/8), `D2` (74/251 B/10), `12C`
-(59/207 B/6), `12D` (61/219 B/6), and `12E` (59/207 B/6). All
-seven match in **one newly compiled complete giant parent**: **402
-real native x86 roles /1,392 original inner CODE bytes /46 original
-typed PE/COFF fields**. F653 adds the true `12C/12D/12E` physical
-handlers (**179 x86/633 B/18 fields**). It proves genuine signed
-falling recovery and original stage-specific state/animation with
-true original PE/COFF fields; the whole parent is still NONEXACT.
-[New selected complete native F653 evidence](FIGHTER_FALLING_RECOVERY_F653.md).
-F651/F652 previously added D1/D2; CF/D0 were already strict.
-Real original handler bounds are **D1→D2→0x12C**, no separate D3.
+(59/207 B/6), `12D` (61/219 B/6), `12E` (59/207 B/6), `12F`
+(82/288 B/8), and `130` (79/261 B/6). All nine match in **one newly
+compiled complete giant parent**: **563 real native x86 roles /1,941
+original inner CODE bytes /60 original typed PE/COFF fields**.
+F654 adds two full physically bounded `12F/130` originals (161 x86,
+549 B, 14 actual fields), genuine stage-4 split 0.6f/0.9f falling
+drag and stage-3 ground-projectile spawning. [F654 native and new
+source evidence](FIGHTER_FALLING_FINISH_F654.md). F653 previously added
+`12C/12D/12E` (179 x86/633 B/18 fields); F651/F652 added D1/D2;
+CF/D0 were earlier strict. The original whole parent is still NONEXACT;
+`D2→12C` is the real handler boundary, with no separate D3 source.
 The native original D2 float drag occurs **outside** stage-zero
 initialization, essential for CFG and x87 role order. Eight other
 D1/D2 owner versions still have **28 or 42–52 genuine register/CFG
@@ -127,7 +128,9 @@ F646 `0xD0` remains nonstrict in other original actors due to
 explicitly distinguishes the 3 strict parent contexts.
 
 ```bash
-# NEW full giant, selected actor only, 7 consecutive strict real cases:
+# NEW full giant, selected actor only, nine consecutive strict real cases:
+scripts/repo-python scripts/verify-fighter-falling-finish-f654.py
+# Previous seven-case original native proof remains independently reproducible:
 scripts/repo-python scripts/verify-fighter-falling-recovery-f653.py
 # Earlier 4-case historical proof remains independently reproducible:
 scripts/repo-python scripts/verify-fighter-resource-shots-f651.py

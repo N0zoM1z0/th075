@@ -11616,3 +11616,24 @@ remain NONEXACT, all 943/862,726 independently accepted whole function
 figures unchanged. [Full original proof](FIGHTER_FALLING_RECOVERY_F653.md),
 `scripts/repo-python scripts/verify-fighter-falling-recovery-f653.py`.
 No 943-unit replay.
+
+
+## F654: two more original native fighter falling stages and ground-shot exit
+
+A new full giant fighter `00543210` C++ source probe adds real complete
+**0x12F (82 x86/288 B/8 native PE fields) and 0x130 (79 x86/261 B/6
+real native fields)**. Stage-4 case `12F` subtracts 0.6f/0.9f through
+**separate genuine original PE globals** (00658058/00659240), then
+initializes 25.0f original vertical movement; `130` has exact x87
+ground contact, genuine y/vertical/acceleration clears and original
+stage-3 0x339 shot. All real physical REL32/DIR32 call/globals,
+addends, 161 instruction roles and full CFG/widths match original
+native after verifying the entire freshly compiled parent, prior
+seven CF/D0/D1/D2/12C/12D/12E strict cases and all independent
+original post-RET jump DATA. F598–F654 **577 strict native case
+interiors /155,643 uncredited original CODE bytes**, with **nine
+consecutive cases /563 original x86 /1,941 internal CODE B /60 real
+PE/COFF fields** in this one giant. No whole giant or new independent
+authored function is accepted. [F654 complete proof](FIGHTER_FALLING_FINISH_F654.md),
+`scripts/repo-python scripts/verify-fighter-falling-finish-f654.py`.
+No 943-unit full cold replay.

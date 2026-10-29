@@ -103,7 +103,7 @@ def replace_following_cases(src):
     return src
 
 
-def verify_new(reader,pe,decoder,code,refs,old,originals,h):
+def verify_new(reader,pe,decoder,code,refs,old,originals,h,following_native=None):
     ins=[]
     for x in decoder.disasm(code,0):
         ins.append(x)
@@ -150,9 +150,16 @@ def verify_new(reader,pe,decoder,code,refs,old,originals,h):
                        'real_typed_PE_COFF_fields':len(physical),
                        'independently_accepted_whole_function':False})
         offset+=len(original)
-    need(ins[offset].mnemonic=='mov' and ins[offset].op_str.endswith(', 0x130'),
-         '0x12E must end directly before the original following 0x12F marker')
-    return strict
+    if following_native is None:
+        need(ins[offset].mnemonic=='mov' and ins[offset].op_str.endswith(', 0x130'),
+             '0x12E must end directly before the original following 0x12F marker')
+    else:
+        need(following_native==0x12F and ins[offset].mnemonic=='mov'
+             and ins[offset].op_str=='edx, dword ptr [ebp - 8]'
+             and ins[offset+1].mnemonic=='movsx'
+             and ins[offset+1].op_str=='eax, word ptr [edx + 0x62]',
+             'native 0x12F continuation does not immediately follow 0x12E')
+    return strict,offset
 
 
 def main():
@@ -181,7 +188,7 @@ def main():
     need(cp.returncode==0,'actual pinned VC7.1 whole parent compile failed: '+cp.stderr[-550:])
     code,refs=reader.object_function(obj,f'?Advance@FighterSwitchF598_Boss{ACTOR:08X}@@QAEXXZ')
     old=f651.verify_full(reader,pe,decoder,boss,report,mapped,code,refs,older,h,following_native=0x12C)
-    strict=verify_new(reader,pe,decoder,code,refs,old,originals,h)
+    strict,_=verify_new(reader,pe,decoder,code,refs,old,originals,h)
     receipt={'pinned_original_parent':'0x00543210','complete_original_parent_NONEXACT':True,
              'parent_original_CODE_bytes':boss['size'],'parent_original_after_RET_DATA_bytes':boss['postret_size'],
              'older_CF_D0_D1_D2_and_jump_tables_verified_same_fresh_parent':True,
