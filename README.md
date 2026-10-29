@@ -26,7 +26,7 @@ types are provisional; machine-code matches alone do not prove an entire
 original class layout. The target's official distribution provenance has not
 been independently verified; do not substitute a localized `th075c.exe`.
 
-These snapshot counts were rechecked after **F655** (2026-10-29).
+These snapshot counts were rechecked after **F656** (2026-10-30).
 The **live** sources of truth, not any dated prose milestone, are `config/functions.csv`,
 `config/function-origins.csv`, and `config/match-units.toml`.
 Refresh using `scripts/repo-python scripts/report-reconstruction-status.py --summary`.
@@ -50,16 +50,18 @@ bodies remain wrong**. This is outstanding, **not a fully byte-exact
 33K function**. Reproduce via
 `scripts/repo-python scripts/verify-characterobject-native-collision-order-f596.py`.
 
-**F598–F654's 577 strictly source-backed fighter *internal case
-bodies* (155,643 original internal CODE bytes) remain uncredited**:
+**F598–F656's 582 strictly source-backed fighter *internal case
+bodies* (157,127 original internal CODE bytes) remain uncredited**:
 none of their enclosing giant `Advance()` functions is fully exact.
-The newest two `0x12F/0x130` cases (F654) add **161 x86 instructions,
-549 original CODE bytes and 14 physical PE/COFF fields**, following
-F653's three stages `12C/12D/12E`. Giant `00543210` now has **nine
-consecutive strict native cases** `CF/D0/D1/D2/12C/12D/12E/12F/130`
-(**563 original x86 roles, 1,941 internal CODE bytes and 60 fields**),
-all verified in one newly compiled parent. Reproduce the
-[full native proof](docs/FIGHTER_FALLING_FINISH_F654.md).
+The newest F656 adds five independently original `0x131/0x133..0x136`
+native case interiors (**434 x86 roles, 1,484 original CODE bytes,
+36 real PE/COFF fields**), with `0x132` correctly identified as a
+shared default handler, not an independent native case. Giant
+`00543210` now has **14 consecutive physical strict native cases**,
+**997 genuine original x86 roles /3,425 internal CODE bytes /
+96 physical typed fields**, all validated within the **same newly
+compiled parent** and its complete after-RET switch DATA. Reproduce
+[the new F656 full-parent original proof](docs/FIGHTER_LATE_STAGES_F656.md).
 Native complex `0xCC` in `005AEEC0`
 and `00564BE0` still has **80/78 genuine wrong GPR/CFG roles**
 despite matching x86 count and all 11 real PE/COFF fields; **do not

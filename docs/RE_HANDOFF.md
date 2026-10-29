@@ -77,30 +77,31 @@ scripts/repo-python scripts/verify-characterobject-typed-member-f635.py --case 3
 The 22 original giant CODE owners remain authored NONEXACT. The main
 case-source subcohort has **11 real multi-switch giant fighters**,
 with real per-actor native differences and a full afterRET sparse/
-dense dispatch shape. F598–F654 compiler-backed original research
-proves **577 strict original *internal action case bodies* /
-155,643 original native internal CODE bytes**. These do **NOT** mean
-572 additional independently callable exact functions or credited
+dense dispatch shape. F598–F656 compiler-backed original research
+proves **582 strict original *internal action case bodies* /
+157,127 original native internal CODE bytes**. These do **NOT** mean
+582 additional independently callable exact functions or credited
 whole function bytes; each parent remains nonexact. Case interior
 source must always be compiled in the **fresh complete original
 parent C++ translation unit** and its preceding cases + entire jump
 DATA rechecked. [Full original dispatch fingerprint JSON](../config/fighter-boss-dispatch-fingerprints.json),
 [original fighter family dispatch](FIGHTER_BOSS_FAMILY_DISPATCH.md).
 
-**Latest strict path:** native `00543210` now source-matches **nine
-consecutive** actual inner cases: `CF` (30 x86/114 B/4 refs), `D0`
-(60/195 B/6), `D1` (59/199 B/8), `D2` (74/251 B/10), `12C`
-(59/207 B/6), `12D` (61/219 B/6), `12E` (59/207 B/6), `12F`
-(82/288 B/8), and `130` (79/261 B/6). All nine match in **one newly
-compiled complete giant parent**: **563 real native x86 roles /1,941
-original inner CODE bytes /60 original typed PE/COFF fields**.
-F654 adds two full physically bounded `12F/130` originals (161 x86,
-549 B, 14 actual fields), genuine stage-4 split 0.6f/0.9f falling
-drag and stage-3 ground-projectile spawning. [F654 native and new
-source evidence](FIGHTER_FALLING_FINISH_F654.md). F653 previously added
-`12C/12D/12E` (179 x86/633 B/18 fields); F651/F652 added D1/D2;
-CF/D0 were earlier strict. The original whole parent is still NONEXACT;
-`D2→12C` is the real handler boundary, with no separate D3 source.
+**Latest strict path:** native `00543210` now source-matches **14
+consecutive real physical inner cases** `CF/D0/D1/D2/12C/12D/12E/12F/130/
+131/133/134/135/136` in **one newly compiled complete parent**:
+**997 authentic native x86 roles /3,425 original inner CODE bytes /
+96 actual physical typed PE/COFF fields**. F656 newly adds five real
+original `0x131/0x133..0x136` cases (**434 x86/1,484 bytes/36 fields**),
+including x87 collision landing, stage-3/8 sprite shots, distinct
+authentic velocity decay globals and stage-specific native flags.
+`0x132` is the same original shared default handler as `0x50` and
+**not** a physical separate native case. [Newest full-parent F656
+original and C++ proof](FIGHTER_LATE_STAGES_F656.md).
+F654 previously added `12F/130` (161 x86/549 B/14 refs); F653 added
+`12C/12D/12E` (179/633 B/18); F651/F652 added D1/D2; CF/D0 were
+earlier strict. The original whole parent remains NONEXACT. Real
+original `D2→12C` has no separate D3 physical source handler.
 The native original D2 float drag occurs **outside** stage-zero
 initialization, essential for CFG and x87 role order. Eight other
 D1/D2 owner versions still have **28 or 42–52 genuine register/CFG
@@ -128,7 +129,9 @@ F646 `0xD0` remains nonstrict in other original actors due to
 explicitly distinguishes the 3 strict parent contexts.
 
 ```bash
-# NEW full giant, selected actor only, nine consecutive strict real cases:
+# NEW complete selected giant, 14 physical consecutive real cases:
+scripts/repo-python scripts/verify-fighter-late-stages-f656.py
+# Prior nine-case native fighter proof still reproducible:
 scripts/repo-python scripts/verify-fighter-falling-finish-f654.py
 # Previous seven-case original native proof remains independently reproducible:
 scripts/repo-python scripts/verify-fighter-falling-recovery-f653.py

@@ -11660,3 +11660,30 @@ original native functions /1,002 CODE bytes**, all uncredited;
 [F655 complete original proof](GAME_UNATTRIBUTED_LEAVES_F655.md),
 `scripts/repo-python scripts/verify-game-unattributed-leaves-f655.py`.
 No all-unit cold replay.
+
+
+## F656: five further original native fighter stage cases in 00543210
+
+A fresh **entire giant** original selected-parent C++ compile matches
+original physical handlers `0x131` (81 x86/280 CODE B/6 fields),
+`0x133` (110/370/9), `0x134` (61/219/6), `0x135` (102/349/8),
+and `0x136` (80/266/7). Real native `0x132` is a shared **default
+handler**, not a separately owned CODE case. The five new complete
+actual interior extents total **434 native x86 roles /1,484 original
+CODE bytes /36 independent typed PE/COFF fields**. Normal VC7.1
+C++ reproduces original x87 ground contact, distinct 006581E0
+velocity decay, stage 3/8 kind 0x341/0x342 shots, stage-10/11
+subtraction and authentic stage 5/10 sprite shots 0x33E/0x33F.
+Every physical original REL32 call and DIR32 x87 global is checked
+by source COFF type, real native instruction target, symbol and
+addend. Earlier **nine** native CF/D0/D1/D2/12C/12D/12E/12F/130
+cases and complete after-RET switch DATA remain strict in the SAME
+newly compiled giant. All 14 consecutive physical cases now have
+**997 original x86 roles /3,425 real native CODE bytes /
+96 PE/COFF fields**. Across F598–F656 the source-backed genuine
+strict inner case cohort reaches **582 /157,127 original internal
+CODE bytes**, still **zero independently whole-exact giant
+function acceptance**. The authored 943/862,726 formal exact ledger
+is unchanged. [Native F656 source and proof](FIGHTER_LATE_STAGES_F656.md),
+`scripts/repo-python scripts/verify-fighter-late-stages-f656.py`.
+No 943-unit all-unit cold replay.

@@ -91,7 +91,7 @@ def source_with_finish(src):
     return src
 
 
-def verify_new(reader,pe,dec,code,refs,originals,old,earlier,h):
+def verify_new(reader,pe,dec,code,refs,originals,old,earlier,h,following_native=None):
     ins=[]
     for x in dec.disasm(code,0):
         ins.append(x)
@@ -133,9 +133,16 @@ def verify_new(reader,pe,dec,code,refs,originals,old,earlier,h):
                        'true_PE_targeted_typed_COFF_fields':len(fields),
                        'new_credited_whole_function_bytes':0})
         offset+=len(original)
-    need(ins[offset].mnemonic=='mov' and ins[offset].op_str.endswith(', 0x132'),
-         'case 0x130 must physically end before original following 0x131 marker')
-    return result
+    if following_native is None:
+        need(ins[offset].mnemonic=='mov' and ins[offset].op_str.endswith(', 0x132'),
+             'case 0x130 must physically end before original following 0x131 marker')
+    else:
+        need(following_native==0x131 and ins[offset].mnemonic=='mov'
+             and ins[offset].op_str=='ecx, dword ptr [ebp - 8]'
+             and ins[offset+1].mnemonic=='mov'
+             and ins[offset+1].op_str=='edx, dword ptr [ebp - 8]',
+             'native 0x131 must immediately follow 0x130 in generated whole original giant')
+    return result,offset
 
 
 def main():
@@ -174,7 +181,7 @@ def main():
     code,refs=reader.object_function(obj,f'?Advance@FighterSwitchF598_Boss{ACTOR:08X}@@QAEXXZ')
     old=f651.verify_full(reader,pe,dec,boss,report,mapped,code,refs,old_native,h,following_native=0x12C)
     strict_653,following=f653.verify_new(reader,pe,dec,code,refs,old,f653_native,h,following_native=0x12F)
-    strict=verify_new(reader,pe,dec,code,refs,new_native,old,following,h)
+    strict,_=verify_new(reader,pe,dec,code,refs,new_native,old,following,h)
     result={'original_parent':'0x00543210','original_entire_parent_CODE_bytes':boss['size'],
             'original_parent_still_NONEXACT':True,'complete_after_RET_jump_DATA_bytes':boss['postret_size'],
             'same_new_parent_all_prior_CF_D0_D1_D2_12C_12D_12E_strict_and_after_RET':True,
