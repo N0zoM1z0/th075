@@ -7,8 +7,11 @@ VC7.1 C++ TU, with genuine gameplay source in all original cases and
 native GetStateAt40FA30 default exit; revalidate the prior 54 strict
 complete cases. The whole source has EXACT native CODE length, 8,789
 native x86 instruction positions/widths and 682 true typed PE-targeted
-zero-addend COFF fields, but 155/31,003 non-COFF bytes still DIFFER
-(in three bounded read-read swaps plus GPR assignments of case38D/38E/3E3).
+zero-addend COFF fields. The original F593 source has 155/31,003
+nonfield differences (3 read-read swaps plus case38D/38E/3E3 GPR).
+F596 natural original leftvalue expressions make all three pairs byte
+identical, leaving ONLY 137/31,003 nonfield bytes different in the
+three remaining actual original GPR allocation cases.
 
 New original complete case3E4 (261/1,126,19 true physical fields) and
 case3E5 (96/396,5 fields) are strict; case3E3 is original-sized and has
@@ -128,13 +131,21 @@ def whole_native_byte_geometry(reader,pe,decoder,code,refs):
          'entire original/C++ 8789 instructions, every native CODE offset and size not identical')
     differing_mnemonics=[i for i,(x,y) in enumerate(zip(n,c))
                          if x.mnemonic!=y.mnemonic]
-    need(differing_mnemonics==[i for pair in READ_READ_SWAPS for i in pair],
-         f'whole native CODE differs by unproved opcode order beyond three independent read-read swaps: {differing_mnemonics[:22]}')
+    historical=[i for pair in READ_READ_SWAPS for i in pair]
+    need(differing_mnemonics in ([],historical),
+         f'original giant x86 source differs by unproved opcode reorderings beyond the three physical native pairs: {differing_mnemonics[:22]}')
     for i,j in READ_READ_SWAPS:
         a,b=n[i],n[j];x,y=c[i],c[j]
-        need((a.mnemonic,b.mnemonic,x.mnemonic,y.mnemonic)==('mov','fld','fld','mov')
-             and a.size==b.size==x.size==y.size==3,
-             'source/native 3 bounded original independent MOV/FLD source swaps are not genuine')
+        need(a.mnemonic=='mov' and b.mnemonic=='fld' and
+             a.size==b.size==x.size==y.size==3,
+             'original Japanese physical collision native MOV/FLD pair opcode widths changed')
+        if differing_mnemonics:
+            need(x.mnemonic=='fld' and y.mnemonic=='mov',
+                 'historical F593 source read-read instruction pair no longer PE-attested')
+        else:
+            need(a.mnemonic==x.mnemonic and b.mnemonic==y.mnemonic
+                 and a.bytes==x.bytes and b.bytes==y.bytes,
+                 'F596 strict native collision preload before FLD is not exact machine bytes')
     masked=set()
     for r in refs:
         if 0<=r['offset']<CODE_BYTES:
@@ -146,11 +157,15 @@ def whole_native_byte_geometry(reader,pe,decoder,code,refs):
                      and original[off+j]!=code[off+j]]
         if differences:changed[ordinal]=differences
     nonfield=sum(len(a) for a in changed.values())
-    need(len(masked)==2488 and len(changed)==139 and nonfield==155
-         and CODE_BYTES-len(masked)-nonfield==30650,
-         f'whole original native 33K code comparison changed nonfield residuals: '
-         f'{len(changed)} instr, {nonfield} bytes')
-    return n,c,ret,changed
+    old_mode=bool(differing_mnemonics)
+    expected_changed=139 if old_mode else 133
+    expected_diff=155 if old_mode else 137
+    expected_same=30650 if old_mode else 30668
+    need(len(masked)==2488 and len(changed)==expected_changed and nonfield==expected_diff
+         and CODE_BYTES-len(masked)-nonfield==expected_same,
+         f'whole original native 33K code comparison has unexpected nonfield residuals: '
+         f'{len(changed)} instr, {nonfield} bytes (old=155 / F596=137)')
+    return n,c,ret,changed,differing_mnemonics
 
 
 def case_grammar(reader,pe,decoder,gram,orig_ins,compiled_ins,
@@ -239,7 +254,7 @@ def main():
          'previous 54 complete native case PE and typed COFF proof changed')
     need(OBJ.exists(),'missing newly compiled selected VC7.1 whole fighter source object')
     code,refs=reader.object_function(OBJ,SYMBOL)
-    n,c,ret,byte_diff=whole_native_byte_geometry(reader,pe,decoder,code,refs)
+    n,c,ret,byte_diff,mnemonic_differences=whole_native_byte_geometry(reader,pe,decoder,code,refs)
     dense=reader.pe_bytes_at(pe,tab['dense_addr'],tab['slots']*4)
     idx=reader.pe_bytes_at(pe,tab['map_addr'],tab['map_length'])
     need(hashlib.sha256(dense).hexdigest()==tab['dense_sha']
@@ -268,11 +283,12 @@ def main():
     need(result.stdout.strip() and result.returncode in (0,1),
          f'original entire 33,731-byte CODE+DATA linker-aware compare failed: {result.stderr}')
     full=json.loads(result.stdout)
+    expected_nonfield_same=30848 if mnemonic_differences else 30866
     need(full['result']=='mismatch' and full['size']==ORIGINAL_TOTAL
-         and full['matched_comparable_bytes']==30848
+         and full['matched_comparable_bytes']==expected_nonfield_same
          and full['comparable_bytes']==31003
          and len(full['relocations'])==682,
-         'whole original native CODE+DATA 30,848/31,003 COFF-masked nonfield byte proof changed')
+         f'whole original PE CODE+DATA 30,848 historical or 30,866 F596 nonfield byte match changed: {full["matched_comparable_bytes"]}/31,003')
     need(all(int(r['object_addend'],16)==0 for r in full['relocations']),
          'whole original PE relocation field has nonzero source addend')
     OUT.mkdir(parents=True,exist_ok=True)
@@ -286,15 +302,16 @@ def main():
       'native_whole_original_x86_instructions':8789,
       'source_whole_x86_instructions':8789,
       'native_whole_instruction_offsets_and_sizes_equal':True,
-      'source_whole_instruction_mnemonics_same_position':8783,
+      'source_whole_instruction_mnemonics_same_position':8789-len(mnemonic_differences),
       'true_PE_COFF_CODE_fields':622,
       'true_PE_COFF_afterret_DATA_fields':60,
       'true_zero_addend_PE_COFF_total_fields':682,
       'whole_CODE_and_DATA_nonrelocation_comparable_bytes':31003,
-      'whole_CODE_and_DATA_nonrelocation_identical_bytes':30848,
-      'whole_nonrelocation_differing_bytes':155,
-      'different_nonrelocation_original_instruction_entries':139,
-      'exactly_three_independent_readonly_MOV_FLD_pairs':list(READ_READ_SWAPS),
+      'whole_CODE_and_DATA_nonrelocation_identical_bytes':expected_nonfield_same,
+      'whole_nonrelocation_differing_bytes':31003-expected_nonfield_same,
+      'different_nonrelocation_original_instruction_entries':len(byte_diff),
+      'native_original_three_sensitive_MOV_FLD_pairs':list(READ_READ_SWAPS),
+      'remaining_swapped_Cpp_MOV_FLD_pair_indices':list(READ_READ_SWAPS) if mnemonic_differences else [],
       'new_strict_source_cases':{f'0x{k:X}':source_cases[k] for k in (0x3E4,0x3E5)},
       'nonexact_game_source_hypotheses':{f'0x{k:X}':source_cases[k] for k in (0x38D,0x38E,0x3E3)},
       'total_strict_original_game_action_bodies':56,
@@ -309,9 +326,9 @@ def main():
     print('F593: WHOLE original 33,293 native CODE bytes, 8,789/8,789 x86 '
           'instructions, all individual offsets and byte widths identical; '
           '622 CODE + 60 afterRET true typed PE-targeted COFF fields',flush=True)
-    print('F593: source 30,848/31,003 original nonrelocation CODE+DATA '
-          'bytes identical; 155 bytes/139 instructions STILL DIFFER and '
-          'three independently bounded original read-only order swaps',flush=True)
+    print(f'F593/F596: source {expected_nonfield_same:,}/31,003 original nonrelocation CODE+DATA bytes identical; '
+          f'{31_003-expected_nonfield_same} bytes/{len(byte_diff)} original instructions STILL DIFFER; '
+          f'{len(mnemonic_differences)} residual opcode-order differences (F596 now ZERO)',flush=True)
     print('F593: 56 strict native original game source bodies, 8,300 original '
           'x86 case roles, 31,374 original inner CODE bytes, 586 true typed '
           'case COFF fields; 3 original cases 38D/38E/3E3 remain GPR nonexact. '

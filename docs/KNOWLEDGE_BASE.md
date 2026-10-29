@@ -10093,3 +10093,41 @@ Reproducer
 [F595 original small leaf and owner evidence](SMALL_ORIGIN_UNKNOWN_FIELDSETTER_F595.md).
 Official 943 original whole exact functions /862,726 authored
 CODE bytes unchanged; no all-unit cold replay or Oracle.
+
+
+## F596: exact original native x87 collision source order throughout a 33K fighter giant
+
+Three original Japanese native cases in whole giant `004EBDA0`
+previously had one strictly bounded but byte-wrong independent
+`MOV`/`FLD` read-read pair apiece: original action0x32A (native
+case ordinals186/187; entire function1062/1063), 0x32C
+(114/115; whole1350/1351), and 0x335 (146/147; whole
+2521/2522). Their ordinary C++ source `F32(0x48) ± F32(0x54)`
+preloaded the second receiver register after reading the first
+x87 float; the original had both receiver lvalues loaded
+before `FLD`. Changing the three true gameplay expressions to
+`*(&F32(0x48)) ± *(&F32(0x54))` causes native VC7.1 to emit
+**all SIX exact native original 3-byte MOV/FLD instructions in
+original byte-identical order**. No fake locals or ASM and
+no changes to original motion/control semantics.
+
+Entire original 33,293 CODE-byte `004EBDA0` now has **all
+8,789/8,789 original native x86 instruction mnemonics at the
+same ordinal**, every instruction offset/individual byte width
+identical, all **622 CODE +60 after-RET native typed PE COFF
+references** with original destination/zero addends, 438
+original afterRET DATA layout and 198 byte-identical sparse
+index bytes. Whole original original-PE nonfield comparison
+is **30,866/31,003 bytes identical** (F593 prior
+30,848/31,003), leaving **137 residual bytes over 133
+instructions** in the three register-rotated cases38D,38E,3E3.
+56 full native source case bodies remain strict; whole giant
+still byte-NONEXACT. F573–F583 historical PE verifiers now
+accept only physical original read order or exact, previously
+proven historical harmless swap, and current source reports no
+remaining read-swap exceptions.
+Original-backed full source proof:
+`scripts/repo-python scripts/verify-characterobject-native-collision-order-f596.py`;
+[F596 strict native x87 order study](CHARACTEROBJECT_NATIVE_COLLISION_ORDER_F596.md).
+The original 943 whole authored exact functions/862,726 CODE
+bytes are unchanged, no all-unit replay or Oracle.

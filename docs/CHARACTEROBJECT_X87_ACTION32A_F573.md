@@ -137,3 +137,18 @@ while [F574's extended checker](CHARACTEROBJECT_STAGE_CURVE_F574.md)
 explicitly verifies 13 original inner cases and another separately
 proven read-only original/source instruction swap in action32C.
 All whole-fighter CODE remains nonexact.
+
+## F596 native collision source-order correction
+
+The original read-only `MOV`/`FLD` source-order discrepancy
+recorded above has now been **fully eliminated by an ordinary
+VC7.1 C++ original-owner lvalue expression** in real action
+`0x32A`. The exact native original original-PE machine
+instructions now occur in the original order, byte-for-byte,
+with no ASM, temporary stack filler, or source byte graft.
+Historic original PE mismatch records remain valid for their
+historical source versions, not the current source. The
+[F596 whole giant source-order study](CHARACTEROBJECT_NATIVE_COLLISION_ORDER_F596.md)
+rechecks 8,789 whole original x86 instruction ordinals and
+reduces actual original nonrelocation whole CODE+DATA byte
+differences from 155 to **137**. Original giant still nonexact.

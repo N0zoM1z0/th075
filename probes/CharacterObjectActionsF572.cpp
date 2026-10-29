@@ -1,7 +1,8 @@
-// F572/F573/F574/F575/F576/F577/F578/F579/F580/F581/F582/F583/F585/F586/F587/F588/F590/F591/F592/F593: selected natural VC7.1 source, original PE 004EBDA0.
+// F572/F573/F574/F575/F576/F577/F578/F579/F580/F581/F582/F583/F585/F586/F587/F588/F590/F591/F592/F593/F596: selected natural VC7.1 source, original PE 004EBDA0.
 // Original entire 33,293-byte CODE + 438 post-RET DATA now have the
 // exact physical native layout and all 8,789 original x86 instruction
-// offsets/lengths, but 155 non-COFF bytes still differ: NONEXACT.
+// offsets/lengths; all 8,789 mnemonic ordinals now match. 137 original
+// non-COFF bytes in three GPR contexts still differ: NONEXACT.
 // All real native action cases and the original 0040FA30 default are
 // present as normal C++; three case bodies still have wrong GPR roles.
 // No target ASM, injected filler, machine-byte graft or independent
@@ -412,7 +413,7 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         F32(0x48) = *(&F32(0x48)) + *(&F32(0x54));
         if (S16(0x62) < 2) {
             F32(0x30) = F32(0x30) + gLiftAt00657CC0;
-            if (F32(0x48) + F32(0x54) <= gCompareAt0065782C) {
+            if (*(&F32(0x48)) + *(&F32(0x54)) <= gCompareAt0065782C) {
                 PARENT->SpawnDirectedAt453A70(0x32B, I32(0x44), I32(0x48), S8(0x66), 1);
                 PARENT->SpawnDirectedAt453A70(0x32D, I32(0x44), I32(0x48), S8(0x66), 1);
                 PARENT->ModifyAt453D40(4);
@@ -490,7 +491,7 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         F32(0x48) = *(&F32(0x48)) + *(&F32(0x54));
         if (S16(0x62) < 2) {
             F32(0x30) = F32(0x30) + gLiftAt00657CC0;
-            if (F32(0x48) + F32(0x54) <= gCompareAt0065782C) {
+            if (*(&F32(0x48)) + *(&F32(0x54)) <= gCompareAt0065782C) {
                 PARENT->ModifyAt453D40(4);
                 PARENT->SpawnDirectedAt453A70(0x32B, I32(0x44), I32(0x48), S8(0x66), 1);
                 PARENT->SpawnDirectedAt453A70(0x32D, I32(0x44), I32(0x48), S8(0x66), 1);
@@ -822,7 +823,7 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         }
         F32(0x44) += static_cast<float>(S8(0x66)) * F32(0x50);
         F32(0x48) = *(&F32(0x48)) - *(&F32(0x54));
-        if (S16(0x62) == 10 && F32(0x48) - F32(0x54) <= gCollisionAt00657888) {
+        if (S16(0x62) == 10 && *(&F32(0x48)) - *(&F32(0x54)) <= gCollisionAt00657888) {
             F32(0x50) = 2.0f;
             F32(0x54) = 2.0f;
             SetStateAt40FB40(11);

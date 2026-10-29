@@ -128,6 +128,13 @@ def equivalent_independent_reads(native,compiled,f572):
     first=f572.authentic_grammar(native,0x32A)
     second=f572.authentic_grammar(compiled,0x32A)
     diffs=[i for i,(x,y) in enumerate(zip(first,second)) if x!=y]
+    if not diffs:
+        need(native[186].mnemonic==compiled[186].mnemonic=='mov'
+             and native[186].op_str==compiled[186].op_str
+             and native[187].mnemonic==compiled[187].mnemonic=='fld'
+             and native[187].op_str==compiled[187].op_str,
+             'F596 original case32A MOV-before-FLD native exact order must be physical')
+        return []
     need(diffs==[186,187],
          f'additional candidate-to-original instruction order mismatch: {diffs[:10]}')
     need(native[186].mnemonic=='mov' and
@@ -235,8 +242,8 @@ def main():
             'all_original_x86_instructions':1082,
             'original_internal_CODE_bytes':4019,
             'authentic_typed_case_COFF_fields':80,
-            'strict_case_native_order_count':10,
-            'semantically_equivalent_read_only_swaps_case32a':2,
+            'strict_case_native_order_count':10+int(not results[-1]['independent_read_only_instruction_swaps']),
+            'semantically_equivalent_read_only_swaps_case32a':len(results[-1]['independent_read_only_instruction_swaps']),
             'physical_switch_DWORD_COFF_fields':len(refs),
             'literal_original_sparse_index_bytes':len(sparse),
             'original_afterret_DATA_shape':len(code)-ret}
@@ -244,8 +251,8 @@ def main():
     print(f'F573 whole 004EBDA0 original: 11 authentic action bodies, 1082 native '
           f'instruction roles, 4019 native internal CODE bytes, {relocation_count}/80 '
           f'true COFF call/global fields, 60 zero-addend jump DWORD fields, '
-          f'198 byte-identical sparse bytes; one documented read-only pair '
-          f'commutes in action32A; original 33293-byte giant still NONEXACT')
+          f'198 byte-identical sparse bytes; original read-pair source differences '
+          f'{results[-1]["independent_read_only_instruction_swaps"]} in action32A; original 33293-byte giant still NONEXACT')
     print('Only one affected natural VC7.1 C++ TU rebuilt; NO credited '
           'whole giant or independent split CODE/DATA, no all-unit cold replay')
 

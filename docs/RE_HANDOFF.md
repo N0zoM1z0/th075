@@ -1,6 +1,6 @@
 # TH075 — current agent handoff
 
-**Maintained: 2026-10-29, after F595; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
+**Maintained: 2026-10-29, after F596; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
 
 ## 1. Current authoritative state (not historical hypotheses)
 
@@ -883,6 +883,37 @@ remain unchanged**. See
 [F595 independent complete small leaf and owner audit](SMALL_ORIGIN_UNKNOWN_FIELDSETTER_F595.md),
 reproducer `scripts/repo-python scripts/verify-native-pending-fieldsetter-f595.py`.
 No all-unit cold replay or external Oracle.
+
+**F596 removes ALL THREE historical native instruction-order
+swaps in the entire 33,293-byte original CharacterObject giant
+`004EBDA0`**, without ASM/fake stack locals. Reconstructed genuine
+C++ lvalue expressions in original actions **0x32A, 0x32C, 0x335**
+force VC7.1 to load receiver registers before `FLD` in the
+correct original PE machine order. Their complete native cases
+now have all original GPR/x87/CFG/byte-width instruction roles
+in exact order, with all **six formerly swapped three-byte
+instructions literally byte-identical** to native target.
+
+Entire original giant retains **33,293 CODE bytes /8,789 x86
+instructions and EVERY native instruction offset/length**,
+**ALL 8,789 original instruction MNEMONICS at the same native
+ordinal** (F593 had 8,783) and **682 truly typed original
+PE COFF fields** (622 CODE +60 after-RET DATA) with original
+true targets and zero addends. Whole original PE COFF-masked
+CODE+DATA byte comparison improves **30,848/31,003 →
+30,866/31,003**; remaining **137 original nonrelocation bytes
+across 133 original instructions** are wrong GPR allocations
+inside case38D/38E/3E3 only (45/64/24 native operand roles).
+**THE GIANT STILL REMAINS NONEXACT; ZERO independent case/whole
+CODE or DATA credit.** Prior 56 strict source-verified original
+case bodies /8,300 original x86 roles /31,374 internal native
+CODE bytes remain physical subrange evidence only. Read
+[F596 complete native collision order and whole 33K source audit](CHARACTEROBJECT_NATIVE_COLLISION_ORDER_F596.md),
+run affected TU only:
+`scripts/repo-python scripts/verify-characterobject-native-collision-order-f596.py`.
+Official **943 exact whole functions /862,726 authored CODE
+bytes**, 22 giant still-nonexact, NO full all-unit cold replay
+or external Oracle receipt.
 
 **Three other authored functions remain nonexact (all require full CODE):**
 

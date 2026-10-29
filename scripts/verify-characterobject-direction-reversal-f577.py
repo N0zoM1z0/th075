@@ -5,7 +5,7 @@ Fresh compile of ONE selected normal VC7.1 source including all real actions
 0x320..0x332 (except default 0x32F) in 33,293-byte 004EBDA0; all later action labels are
 explicit diagnostic markers. SHA-verify complete original Japanese TH075 PE
 and physical 60-slot COFF jump/data before checking entire native case bodies,
-real x87 operand/calls and typed COFF. Allow ONLY two proven read-only MOV/FLD source order swaps in older cases,
+real x87 operand/calls and typed COFF. Allow ONLY two proven read-only MOV/FLD source order swaps only in older pre-F596 candidate source,
 and true 18-byte native EBP local-frame widening in EACH newly recovered
 274-insn case. No fake frame or physical exact CODE credit.
 Never credit giant whole/split CODE or run all-unit cold replay.
@@ -114,6 +114,13 @@ def native_32c_read_swap(native,candidate,f572):
     a=f572.authentic_grammar(native,0x32C)
     b=f572.authentic_grammar(candidate,0x32C)
     diffs=[k for k,(x,y) in enumerate(zip(a,b)) if x!=y]
+    if not diffs:
+        need(native[114].mnemonic==candidate[114].mnemonic=='mov'
+             and native[114].op_str==candidate[114].op_str
+             and native[115].mnemonic==candidate[115].mnemonic=='fld'
+             and native[115].op_str==candidate[115].op_str,
+             'F596 original case32C MOV-before-FLD native machine order not physical')
+        return []
     need(diffs==[114,115],
          f'case32C previously independently bounded adjacent MOV/FLD mismatch changed: {diffs[:9]}')
     need(native[114].mnemonic=='mov'
@@ -335,7 +342,7 @@ def main():
           f'2333 native x86 source roles, 8612 whole original inner CODE bytes, '
           f'{total_coff}/161 genuine typed COFF records, 60 native-style jump '
           f'DWORD fields, 198 byte-identical original sparse bytes; '
-          f'two previously proven read-only swaps; native-minus-source 0x330/0x331 deep-frame width +{sum(r["native_deep_frame_extra_bytes"] for r in rows if r["action"] in ("0x330","0x331"))} bytes, '
+          f'up to two previously proven read-only swaps (F596 now zero); native-minus-source 0x330/0x331 deep-frame width +{sum(r["native_deep_frame_extra_bytes"] for r in rows if r["action"] in ("0x330","0x331"))} bytes, '
           f'case0x332 genuine native/original temp width +{next(r["native_deep_frame_extra_bytes"] for r in rows if r["action"]=="0x332")} bytes, '
           f'whole 33293-byte giant still NONEXACT')
     print('Only one affected VC7.1 C++ TU freshly compiled; no full cold '

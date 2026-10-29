@@ -108,6 +108,13 @@ def native_32c_read_swap(native,candidate,f572):
     a=f572.authentic_grammar(native,0x32C)
     b=f572.authentic_grammar(candidate,0x32C)
     diffs=[k for k,(x,y) in enumerate(zip(a,b)) if x!=y]
+    if not diffs:
+        need(native[114].mnemonic==candidate[114].mnemonic=='mov'
+             and native[114].op_str==candidate[114].op_str
+             and native[115].mnemonic==candidate[115].mnemonic=='fld'
+             and native[115].op_str==candidate[115].op_str,
+             'F596 original case32C MOV-before-FLD native machine order not physical')
+        return []
     need(diffs==[114,115],
          f'case32C previously independently bounded adjacent MOV/FLD mismatch changed: {diffs[:9]}')
     need(native[114].mnemonic=='mov'
@@ -249,7 +256,7 @@ def main():
           f'1506 native x86 source roles, 5587 whole original inner CODE bytes, '
           f'{total_coff}/113 genuine typed COFF records, 60 native-style jump '
           f'DWORD fields, 198 byte-identical original sparse bytes; '
-          f'two separately proven adjacent read-only source swaps, '
+          f'up to two separate original-PE-proven read-only source swaps (F596 current C++ has zero), '
           f'whole 33293-byte giant still NONEXACT')
     print('Only one affected VC7.1 C++ TU freshly compiled; no full cold '
           'replay or accepted whole/partial CODE/DATA exactness credit')

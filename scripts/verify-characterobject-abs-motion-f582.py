@@ -143,6 +143,13 @@ def native_32c_read_swap(native,candidate,f572):
     a=f572.authentic_grammar(native,0x32C)
     b=f572.authentic_grammar(candidate,0x32C)
     diffs=[k for k,(x,y) in enumerate(zip(a,b)) if x!=y]
+    if not diffs:
+        need(native[114].mnemonic==candidate[114].mnemonic=='mov'
+             and native[114].op_str==candidate[114].op_str
+             and native[115].mnemonic==candidate[115].mnemonic=='fld'
+             and native[115].op_str==candidate[115].op_str,
+             'F596 original case32C MOV-before-FLD native machine order not physical')
+        return []
     need(diffs==[114,115],
          f'case32C previously independently bounded adjacent MOV/FLD mismatch changed: {diffs[:9]}')
     need(native[114].mnemonic=='mov'
@@ -232,18 +239,25 @@ def validate_original_contact335(native,candidate,f572):
     a=f572.authentic_grammar(native,0x335)
     b=f572.authentic_grammar(candidate,0x335)
     diff=[i for i,(x,y) in enumerate(zip(a,b)) if x!=y]
-    need(diff==[146,147],
-         f'unrecognized true original 0x335 x87, GPR or branch mismatch: {diff[:10]}')
-    need(native[146].mnemonic=='mov'
-         and native[146].op_str.startswith('edx, dword ptr [ebp - ')
-         and native[147].mnemonic=='fld'
-         and native[147].op_str=='dword ptr [ecx + 0x48]'
-         and candidate[146].mnemonic=='fld'
-         and candidate[146].op_str=='dword ptr [ecx + 0x48]'
-         and candidate[147].mnemonic=='mov'
-         and candidate[147].op_str.startswith('edx, dword ptr [ebp - '),
-         'native original 0x335 one read-read commutation is not the verified independent pair')
-    b[146],b[147]=b[147],b[146]
+    need(diff in ([],[146,147]),
+         f'original 0x335 x87, GPR or branch source differs beyond one old native pair: {diff[:10]}')
+    if diff:
+        need(native[146].mnemonic=='mov'
+             and native[146].op_str.startswith('edx, dword ptr [ebp - ')
+             and native[147].mnemonic=='fld'
+             and native[147].op_str=='dword ptr [ecx + 0x48]'
+             and candidate[146].mnemonic=='fld'
+             and candidate[146].op_str=='dword ptr [ecx + 0x48]'
+             and candidate[147].mnemonic=='mov'
+             and candidate[147].op_str.startswith('edx, dword ptr [ebp - '),
+             'native original 0x335 one read-read commutation is not the verified independent pair')
+        b[146],b[147]=b[147],b[146]
+    else:
+        need(native[146].mnemonic==candidate[146].mnemonic=='mov'
+             and native[146].op_str==candidate[146].op_str
+             and native[147].mnemonic==candidate[147].mnemonic=='fld'
+             and native[147].op_str==candidate[147].op_str,
+             'F596 actual 0x335 owner preload before x87 FLD not byte-order identical')
     need(a==b,'native 0x335 GPR/x87/branch graph differs outside verified swap')
     need(native[238].mnemonic==candidate[238].mnemonic=='fld'
          and native[238].op_str=='dword ptr [0x65782c]'
@@ -553,7 +567,7 @@ def main():
                 changes=[]
             elif action==0x335:
                 changes=validate_original_contact335(orig,cand,f572)
-                need(len(changes)==2,'not precisely the original 0x335 source read-read swap')
+                need(changes in ([],[146,147]),'source 0x335 must be original machine order or precisely one historical native pair')
             elif action in (0x338,0x339):
                 need(validate_original_fade_spawn(orig,cand,f572,action),
                      'native original later state fade/spawn x86 source changed')
@@ -599,7 +613,7 @@ def main():
              'new_four_cases_strict_native_grammar':[0x33A,0x33B,0x33C,0x33D],
              'new_fade_spawn_cases_strict_native_grammar':[0x338,0x339],
              'source_action332_native_disp32_now_identical_width':True,
-             'action335_independent_readonly_swaps':[146,147],
+             'action335_independent_readonly_swaps':next(row['explicit_nonidentical_read_only_swap_indices'] for row in rows if row['action']=='0x335'),
              'genuine_original_deep_frame_extra_bytes':native_frame_extra,
              'original_dense_DWORD_COFF_slots':len(physical),
              'byte_identical_sparse_index_bytes':len(original_map),
@@ -609,7 +623,7 @@ def main():
           f'3762 native x86 source roles, 13959 whole original inner CODE bytes, '
           f'{total_coff}/266 genuine typed COFF records, 60 native-style jump '
           f'DWORD fields, 198 byte-identical original sparse bytes; '
-          f'three bounded read-only swaps; actual native-minus-source deep-frame width +{native_frame_extra} bytes across 0x330/0x331; case0x332 native disp32, '
+          f'up to three original PE-bounded read-only swaps (F596 now zero); actual native-minus-source deep-frame width +{native_frame_extra} bytes across 0x330/0x331; case0x332 native disp32, '
           f'whole 33293-byte giant still NONEXACT')
     print('Only one affected VC7.1 C++ TU freshly compiled; no full cold '
           'replay or accepted whole/partial CODE/DATA exactness credit')

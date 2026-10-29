@@ -141,3 +141,18 @@ maps to the original default handler, so the next actual 0x330
 handler bounds the native 0x32E whole code body. Both added
 fade cases match strict x86 instruction order. The giant remains
 whole-function nonexact and receives no new exact coverage.
+
+## F596 native collision source-order correction
+
+The original read-only `MOV`/`FLD` source-order discrepancy
+recorded above has now been **fully eliminated by an ordinary
+VC7.1 C++ original-owner lvalue expression** in real action
+`0x32C`. The exact native original original-PE machine
+instructions now occur in the original order, byte-for-byte,
+with no ASM, temporary stack filler, or source byte graft.
+Historic original PE mismatch records remain valid for their
+historical source versions, not the current source. The
+[F596 whole giant source-order study](CHARACTEROBJECT_NATIVE_COLLISION_ORDER_F596.md)
+rechecks 8,789 whole original x86 instruction ordinals and
+reduces actual original nonrelocation whole CODE+DATA byte
+differences from 155 to **137**. Original giant still nonexact.

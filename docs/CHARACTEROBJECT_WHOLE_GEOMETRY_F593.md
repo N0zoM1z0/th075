@@ -225,3 +225,26 @@ and per-TU compiler logs are preserved in ignored
 remains the native-only accepted statement. The same research
 session also independently re-probed the original 40-byte
 origin-unknown small leaf: [F595](SMALL_ORIGIN_UNKNOWN_FIELDSETTER_F595.md).
+
+## F596 follow-up: eliminate all three historical byte-order swaps
+
+**F593's 155-byte residual above is the historical baseline, not the
+latest current source.** The same giant now has three natural C++
+member-owner expression revisions in real actions 0x32A,
+0x32C and 0x335, all independently verified against actual
+original Japanese PE native bytes. The C++ compiler now loads
+both original receiver lvalues before x87, giving the native
+`MOV [saved-this]` then `FLD [actor+0x48]` order in all three
+previously source-reversed pairs. **All 8,789/8,789 original
+instruction mnemonics are now in exactly the same ordinal
+positions**, and all original offsets/individual byte widths
+remain equal. Exact original PE byte comparison improves from
+**30,848 to 30,866 of 31,003** nonrelocation CODE+DATA bytes;
+**137 genuine nonfield bytes remain different**, across 133
+original instruction entries, entirely in three uncorrected
+GPR-allocation case bodies 0x38D/0x38E/0x3E3.
+
+One affected normal VC7.1 TU, full 682 PE-grounded COFF
+records and unchanged 438 after-RET DATA layout are checked by
+[F596 native collision source-order proof](CHARACTEROBJECT_NATIVE_COLLISION_ORDER_F596.md).
+**The giant remains NONEXACT; official exact ledger unchanged.**
