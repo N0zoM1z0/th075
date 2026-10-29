@@ -61,6 +61,9 @@ def real_case(reader, pe, decoder, boss, by, f602):
          and native[52].mnemonic == 'mov' and '+ 0xf0c' in native[52].op_str
          and native[52].op_str.endswith(', 1')
          and native[55].mnemonic == 'mov' and native[55].op_str.endswith('byte ptr [edx + 0x66]')
+         and native[56].mnemonic == 'push' and native[56].op_str == 'eax'
+         and [native[i].mnemonic for i in (57,58,59,60,61,62,63,64)]
+             == ['mov','mov','push','mov','mov','push','push','mov']
          and native[65].mnemonic == 'call' and native[65].op_str == '0x453a70',
          f'{address:#x}: real stage-one signed-char projectile/one-shot flag/source ABI changed')
     kind = int(native[63].op_str, 0)
