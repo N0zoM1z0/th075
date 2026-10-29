@@ -26,7 +26,7 @@ types are provisional; machine-code matches alone do not prove an entire
 original class layout. The target's official distribution provenance has not
 been independently verified; do not substitute a localized `th075c.exe`.
 
-These snapshot counts were rechecked after **F676** (2026-10-30).
+These snapshot counts were rechecked after **F677** (2026-10-30).
 The **live** sources of truth, not any dated prose milestone, are `config/functions.csv`,
 `config/function-origins.csv`, and `config/match-units.toml`.
 Refresh using `scripts/repo-python scripts/report-reconstruction-status.py --summary`.
@@ -106,17 +106,19 @@ despite matching x86 count and all 11 real PE/COFF fields; **do not
 promote** it to exact just because the case body geometry matches.
 
 Separately, **whole-function** VC7.1 C++ probes now reproduce
-**75 distinct historical origin-unknown complete original functions /
-1,405 original native CODE bytes**, all uncredited pending actual
-source ownership. F675 newly recovers **four native optimized virtual-
-state constructors** (27/30/39/24 bytes) with **120/120 entire
-original linked CODE bytes /35 real x86 /four true DIR32 vtable
-fields**, under an independently tested VC7.1 `/O1` profile. Their
-actual original direct callers do not prove SDK vs game authored
-ownership. [F675 full original SDK native proof](docs/SDK_NATIVE_STATE_CONSTRUCTORS_F675.md).
-Earlier F670 proved the independent 26-byte scoped local-object
-constructor/destructor with two physical genuine REL32 fields;
-[F670 whole native leaf proof](docs/GAME_NATIVE_SCOPED_LIFETIME_F670.md).
+**76 distinct historical origin-unknown complete original functions /
+1,509 original native CODE bytes**, all uncredited pending actual
+source ownership. New F677 proves the **entire 104-byte optimized SDK
+state constructor `0060B728`**, with exact **34 native x86, one real
+original PE-vftable `DIR32` and genuine 0x104-DWORD `REP STOSD`
+zeroing**, compiled from a real two-element member loop and typed
+`memset` under VC7.1 `/O1 /Oi`. Fifteen independently compiled
+source/profile controls identified the correct original byte grammar.
+[F677 full original 104-byte native proof](docs/SDK_NATIVE_BULK_STATE_CTOR_F677.md).
+F675 earlier completed four other optimized SDK state constructors
+(120 original CODE bytes), also strictly whole-byte source-backed
+but historical game-vs-SDK authorship unknown.
+[F675 earlier complete optimized constructor proof](docs/SDK_NATIVE_STATE_CONSTRUCTORS_F675.md).
 All previously accepted 111-byte mapping transform `00455770`,
 77-byte Shift-JIS classifier `0041CA30`, Replay render, StaffRoll,
 rank-label and selected-progress functions stay accepted exact.

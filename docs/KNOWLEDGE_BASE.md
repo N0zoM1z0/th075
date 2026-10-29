@@ -12109,3 +12109,28 @@ original CODE B unchanged. [F676 original PE/COFF and separate
 context proofs](FIGHTER_CLOUD_BURST_F676.md),
 `scripts/repo-python scripts/verify-fighter-cloud-burst-f676.py`.
 No all-unit cold replay.
+
+
+## F677: entire 104-byte original optimized SDK state constructor via genuine REP STOSD
+
+Real registered original native `0060B728` is **104 whole CODE
+bytes /34 original x86 instructions /one physical zero-addend
+vftable DIR32 PE/COFF field at +10** to authentic original vtable
+`0065D3C0`. Ordinary pinned VC7.1 `/O1 /Oi` C++ reproduces actual
+native two-trip zeroing loop for members +0x38/+0x40, the original
+**0x104-DWORD `REP STOSD` zeroing of exactly +0x50..+0x460**, plus
+all actual other native state member initializations and return-this
+ABI. Source and 15 compiler/normal C++ alternatives were tested; only
+two-element member loop followed by true 0x410-byte `memset` under
+`/O1 /Oi` gives complete **104/104 original linked CODE B /34/34
+native x86**. Not machine-byte patching or fake object padding.
+The only original direct registered CALL to this SDK-like constructor
+is from currently library-classified 00605107; history/class owner
+is still `origin=unknown, disposition=review`. Prior F595–F675
+research 75/1,405B becomes **76 distinct whole original source-backed
+unknown-origin functions /1,509 genuine CODE bytes**, all uncredited.
+All 95 source-unknown candidates remain pending; formal authored
+whole exact remains 943/862,726 original CODE B.
+[F677 entire original native PE/COFF proof](SDK_NATIVE_BULK_STATE_CTOR_F677.md),
+`scripts/repo-python scripts/verify-sdk-native-bulk-state-ctor-f677.py`.
+No full 943-unit cold replay.
