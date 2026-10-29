@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F681; earlier frozen handoffs are archived.**
+**Maintained 2026-10-30, after F683; earlier frozen handoffs are archived.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -275,7 +275,7 @@ come from live `config/functions.csv`):
 | --- | ---: | --- |
 | `00602A60`, GameApplication::Run-like giant WinMain | **2,987 B**, 654 native x86, 123 calls, 60 separate afterRET DATA bytes | F528 C++ produced 2,981 B/654 x86 but wrong real EBP local ownership; F615 30 other complete native C++ source trials failed. [Real WinMain original CFG](WINMAIN_ORIGINAL_CONTROL_FLOW.md), [F615 true local lifetime negatives](WINMAIN_LOCAL_OBJECT_LAYOUT_F615.md). |
 | `0043B0B0`, scene/resource virtual destructor | **248 B**, 75 native x86, 12 PE/COFF refs | Normal VC7.1 **`/GX`** source matches **191/200 nonrelocation bytes**, not full CODE, because five original EBP local slot owners differ; F612/F632 many scope/type variants failed. [Actual source/PE lifetime](SCENE_DESTRUCTOR_POINTER_TYPES_F612.md), [F632 honest negative controls](DESTRUCTOR_FREE_ASSIGNMENT_F632.md). |
-| `0041CE50`, ArchiveCatalog nonvirtual destructor | **171 B**, 51 native x86, 14 PE/COFF refs | Normal **`/GX-`** C++ matches **108/115 nonrelocation bytes**, not full CODE; original filename, resource-delete and index temporaries have wrong EBP slots. F609 19 type/scope probes and later F643 14 used-variable lifetime controls failed; F660's seven additional genuine early filename-lifetime C++ forms yield 108/115 or regress to 102/115, no correct EBP slots. [F609 originals](ARCHIVE_DESTRUCTOR_SOURCE_TYPES_F609.md), [F660 new negatives](GIANT_REGISTER_AND_ARCHIVE_LIFETIME_NEGATIVES_F659_F660.md). |
+| `0041CE50`, ArchiveCatalog nonvirtual destructor | **171 B**, 51 native x86, 14 PE/COFF refs | Normal **`/GX-`** C++ matches **108/115 nonrelocation bytes**, not full CODE; original filename, resource-delete and index temporaries have wrong EBP slots. F609 19 type/scope probes and later F643 14 used-variable lifetime controls failed; F660's seven additional early filename-lifetime C++ forms yield 108/115 or regress to 102/115. New F682/F683 tested **39 further complete actual original C++ source hypotheses**: 21 resource-named/reference forms emit 177/53 rather than 171/51, one resource cast stays 108/115, 14 genuine filename type/register forms remain 108/115, two filename references regress to 102/115 and one VC7.1 `__restrict` grammar fails. The original EBP resource/delete/filename assignment cycle remains unresolved. [F682/F683 new full-target negative evidence](ARCHIVE_RESOURCE_FILENAME_LIFETIMES_F682_F683.md), [F609 originals](ARCHIVE_DESTRUCTOR_SOURCE_TYPES_F609.md), [F660 earlier negatives](GIANT_REGISTER_AND_ARCHIVE_LIFETIME_NEGATIVES_F659_F660.md). |
 
 ```bash
 # Cold-compile ONLY one unchanged tiny author's negative control:

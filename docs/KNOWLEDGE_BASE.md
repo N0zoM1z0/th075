@@ -12203,3 +12203,31 @@ whole-authored ledger still 943/862,726 CODE bytes.
 [F681 selected original PE/COFF source/receiver-role proof](FIGHTER_STORM_TERMINAL_F681.md),
 `scripts/repo-python scripts/verify-fighter-storm-terminal-f681.py`.
 No full 943-unit cold replay.
+
+
+## F682/F683: 39 genuine complete authored ArchiveCatalog destructor source negatives
+
+Original whole authored `0041CE50` still owns **171 native CODE bytes /
+51 x86 /14 authentic physical PE/COFF fields**, with actual native
+resource pointer at EBP−0xC, delete receiver at EBP−8, and filename
+freed at EBP−0x10. Earlier plain C++ named filename source emits
+same 171/51 but cycles values across −0x10/−0xC/−8, giving
+**108/115 truly comparable nonrelocation bytes**, no exact adoption.
+F682 cold-compiled **22 newly meaningful resource-value, named/ref,
+const, early/outer scope, direct delete expression and pointer-slot
+source controls**: 21 emit **177 B/53 x86/14 real fields** (extra
+true lifetime instructions); one meaningful cast emits 171/51 but
+still 108/115. F683 separately attempted **17 meaningful typed
+filename storage, volatile/register/const, integral pointer-address,
+index-register, cast or borrowed-list reference controls**: 14 are
+171/51 but still 108/115, two genuinely different filename
+references regress to 102/115, one unsupported `__restrict` syntax
+gets real VC7.1 C4235. All are honest selected whole-native
+failures, not made-up stack padding or permission to accept
+matching geometry as whole exact. Original resource/delete/filename
+temp allocation remains unexplained. Reproducible source/COFF/PDB
+and logs are retained under ignored `.analysis/f682-archive-resource-lifetime/`
+and `.analysis/f683-archive-name-types/`.
+[Complete original target F682/F683 negative matrix](ARCHIVE_RESOURCE_FILENAME_LIFETIMES_F682_F683.md).
+Zero authored exact CODE change; official whole 943/862,726 B and
+giant whole-nonexact status remain unchanged; no full cold replay.
