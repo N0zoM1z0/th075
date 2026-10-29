@@ -11936,3 +11936,29 @@ whole-authored exact ledger still **943/862,726 CODE bytes**.
 [Full original native PE/COFF proof](GAME_NATIVE_SCOPED_LIFETIME_F670.md),
 `scripts/repo-python scripts/verify-game-native-scoped-lifetime-f670.py`.
 No mass cold replay.
+
+
+## F671: source-backed full original native fighter 258 four-shot complex, true EBP negative
+
+A newly compiled complete original selected giant `00543210` C++
+parent reproduces actual native `0x258` **134 full original x86
+roles /12 real original typed PE/COFF fields /four complete kind0x322
+sprite calls**, with real per-shot signed `+0x66` multiplied by
+40/75, original float Y globals 006591EC/006581DC/0065908C/00657888,
+actual original fields +0x314/+0x318, stage4 animation and completion
+transition. **Original whole native case 502 B**, but generated
+source only **478 B**: eight true `MOV/FILD` x87 scratch instructions
+at original EBP−0x114/−0x118/−0x11C/−0x120 are at compiler
+EBP−0x2C/−0x30/−0x34/−0x38. All non-field GPR/x87/CFG roles
+match, but the original eight physical local operands/widths do
+**not**; verifier checks raw EBP independently and rejects strict
+credit rather than trusting the old broad stack-offset normalizer.
+All **25 preceding context-strict native cases**, prior original
+186/18A/18B EBP negatives and full independent afterRET DATA
+rechecked in the **same newly compiled parent**. The source-backed
+selected giant strict cohort remains 25/6,387 original internal
+CODE B; aggregate strict research F598–F671 remains **593 /160,089
+uncredited native CODE B**. No whole authored exact change from
+943/862,726. [Original F671 full native/source proof](FIGHTER_FOUR_SHOT_BARRAGE_F671.md),
+`scripts/repo-python scripts/verify-fighter-four-shot-barrage-f671.py`.
+No full 943-unit cold replay.

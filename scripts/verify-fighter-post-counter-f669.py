@@ -101,7 +101,7 @@ def add_native_cases(source):
     return source
 
 
-def verify_native(reader,pe,decoder,code,refs,originals,start,shared_exit,h):
+def verify_native(reader,pe,decoder,code,refs,originals,start,shared_exit,h,following_native=None):
     ins=[]
     for x in decoder.disasm(code,0):
         ins.append(x)
@@ -146,9 +146,17 @@ def verify_native(reader,pe,decoder,code,refs,originals,start,shared_exit,h):
                          'actual_original_typed_PE_COFF_fields':len(physical),
                          'accepted_new_whole_authored_function_CODE_bytes':0})
         ordinal+=len(native)
-    need(ins[ordinal].mnemonic=='mov' and ins[ordinal].op_str.endswith(', 0x259'),
-         'new native 257 body must physically end before original 258 marker')
-    return verified
+    if following_native is None:
+        need(ins[ordinal].mnemonic=='mov' and ins[ordinal].op_str.endswith(', 0x259'),
+             'new native 257 body must physically end before original 258 source marker')
+    else:
+        need(following_native==0x258
+             and ins[ordinal].mnemonic=='mov'
+             and ins[ordinal].op_str=='ecx, dword ptr [ebp - 8]'
+             and ins[ordinal+1].mnemonic=='movsx'
+             and ins[ordinal+1].op_str=='edx, word ptr [ecx + 0x62]',
+             'genuine next original 258 native C++ must directly follow strict 257')
+    return verified,ordinal
 
 
 def main():
@@ -211,7 +219,7 @@ def main():
         if x.mnemonic=='ret':break
     shared=ins[old['continuation_source_ordinal']-1].op_str
     ok668,idx=f668.verify_inner(reader,pe,dec,code,refs,n668,idx,shared,h,following_native=0x255)
-    verified=verify_native(reader,pe,dec,code,refs,original,idx,shared,h)
+    verified,_=verify_native(reader,pe,dec,code,refs,original,idx,shared,h)
     receipt={'real_selected_fighter_giant':'0x00543210',
              'whole_parent_CODE_bytes_still_NONEXACT':boss['size'],
              'original_after_RET_independent_DATA_bytes':boss['postret_size'],

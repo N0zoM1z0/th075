@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F670; earlier frozen handoffs are archived.**
+**Maintained 2026-10-30, after F671; earlier frozen handoffs are archived.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -105,7 +105,18 @@ resource-stage difference, original 0x37 projectile and conditional
 one-shot counter are source-backed. All prior 22 strictly matched
 cases, three original EBP-negative controls and full separately
 owned after-RET switch DATA rechecked in the **same fresh parent**.
-[Newest F669 native source and physical proof](FIGHTER_POST_COUNTER_F669.md).
+[F669 native source and physical proof](FIGHTER_POST_COUNTER_F669.md).
+**F671 next difficult original:** complete physical action258
+(**134 authentic x86 /502 real original inner CODE B /12 physical
+typed PE/COFF fields**) has a newly compiled ordinary C++
+four-projectile source that matches all GPR/x87/CFG roles, 12
+real targets and every original source call, but is **NONSTRICT**:
+eight true original x87 conversion scratch EBP−0x114/−0x118/−0x11C/
+−0x120 operands compile at −0x2C/−0x30/−0x34/−0x38, shortening
+source 502→478 B. No fake local padding or strict credit;
+all 25 earlier strict cases and afterRET DATA remain correct in
+this **same freshly compiled whole parent**.
+[Newest F671 complex original negative](FIGHTER_FOUR_SHOT_BARRAGE_F671.md).
 F664 earlier added 200/201 (228 x86/779 B/17 fields), and F668
 added 252/253/254; no enclosing whole giant is exact.
 **Critical F666 context warning:** a second freshly compiled whole-giant
@@ -174,7 +185,9 @@ F646 `0xD0` remains nonstrict in other original actors due to
 explicitly distinguishes the 3 strict parent contexts.
 
 ```bash
-# NEW whole giant: strict 255/256/257 and 22 preceding strict cases:
+# NEW whole giant: native 258 four-shot source and honest EBP negative:
+scripts/repo-python scripts/verify-fighter-four-shot-barrage-f671.py
+# Previous strict 255/256/257 and 22 preceding case bodies:
 scripts/repo-python scripts/verify-fighter-post-counter-f669.py
 # Prior selected whole giant: strict 252/253/254 and 19 preceding cases:
 scripts/repo-python scripts/verify-fighter-counter-special-f668.py

@@ -26,7 +26,7 @@ types are provisional; machine-code matches alone do not prove an entire
 original class layout. The target's official distribution provenance has not
 been independently verified; do not substitute a localized `th075c.exe`.
 
-These snapshot counts were rechecked after **F670** (2026-10-30).
+These snapshot counts were rechecked after **F671** (2026-10-30).
 The **live** sources of truth, not any dated prose milestone, are `config/functions.csv`,
 `config/function-origins.csv`, and `config/match-units.toml`.
 Refresh using `scripts/repo-python scripts/report-reconstruction-status.py --summary`.
@@ -68,7 +68,15 @@ giant `00543210` now contains **25 strict native interior cases /
 1,840 x86 /6,387 internal CODE B /167 genuine typed fields**.
 All EBP-negative cases and complete independent after-RET switch DATA
 remain verified in the new source, with **no whole-function exact
-credit**. [Latest F669 full original-parent proof](docs/FIGHTER_POST_COUNTER_F669.md).
+credit**. [F669 full original-parent proof](docs/FIGHTER_POST_COUNTER_F669.md).
+F671 goes on to reconstruct the **much larger native `0x258`
+502-byte, 134-x86, four-projectile case** with all 12 physical
+original PE/COFF fields, but explicitly remains **NONSTRICT**:
+eight original `MOV/FILD` stack temporary operands at EBP−0x114
+through −0x120 compile at EBP−0x2C through −0x38, emitting
+478 instead of 502 CODE bytes. The same fresh giant parent
+preserves all 25 earlier strict case interiors and full after-RET
+DATA. [Full complex F671 source/EBP negative proof](docs/FIGHTER_FOUR_SHOT_BARRAGE_F671.md).
 The older F666 register-phase context dependency remains relevant.
 A new **F666 preceding-source context control** subsequently added
 normal C++ for four actual earlier actions `1FA/1FB/1FE/1FF` and
