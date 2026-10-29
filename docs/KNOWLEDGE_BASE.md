@@ -12048,3 +12048,28 @@ without retesting. [F672 authentic original source/negative proof](FIGHTER_EIGHT
 `scripts/repo-python scripts/verify-fighter-eight-shot-and-follow-f672.py`.
 F598–F674 strict research remains **595 /161,569 native inner CODE B**;
 formal authored 943/862,726 unchanged. No mass replay.
+
+
+## F675: four new whole optimized SDK constructors with genuine VC7.1 O1 vtables
+
+A selected small ordinary C++ TU under pinned VC7.1 `/O1 /Ob0 /Gy
+/GR- /GX- /GS /Zi` reproduces **four distinct original entire
+native optimized virtual-state constructors: 00608F7B (27 B/8 x86),
+00609AA4 (30 B/9), 00609F58 (39 B/12), 006200DA (24 B/6)**.
+All **120/120 genuine original machine CODE B/35 x86 roles** are
+byte-identical after actual zero-addend `DIR32` source vtable linking
+to four independently read original PE addresses 0065D348/0065D374/
+0065D39C/0065DE1C. Normal C++ emits authentic original reference
+count +4=1 and zeroes only actual native observed pointer/state
+offsets. Crucial original 006200DA uses `AND DWORD PTR [this+0xC],0`
+then `[this+8]`, emitted only with the selected `/O1` source grammar;
+`/O2` reorders/retypes zeroing and `/Od` has wrong prologue.
+Original direct native registered caller counts 1/1/1/3, all not
+currently classified authored, but no historical class/source author
+identity is proved. All 95 original provenance-unknown candidates
+remain uncredited. Whole source-backed unknown-origin research cohort
+F595–F675 now **75 distinct complete native functions /1,405 original
+CODE B**, zero new accepted authored CODE. [F675 actual PE/COFF
+whole-byte proof](SDK_NATIVE_STATE_CONSTRUCTORS_F675.md),
+`scripts/repo-python scripts/verify-sdk-native-state-constructors-f675.py`.
+No mass replay.
