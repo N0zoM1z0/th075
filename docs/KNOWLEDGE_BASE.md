@@ -9090,3 +9090,34 @@ plus two member construction calls, used by many factory callers;
 compiler/lifetime hypotheses only until an independent owner/provider
 provenance chain is proven. Original analyses are retained in
 `.analysis/f561-origin-review/`, not substituted for authentic source.
+
+
+## F563: genuine second-stage positive-FLAG motion overrides in two giants
+
+Original complete fighter `004F7130` has physically bounded first-switch
+action 6/7/8 lengths **125/127/104 native x86 instructions** and
+**441/451/362 CODE bytes**; the separate 71,616-byte `005AEEC0`
+original has **125/115/102 instructions** and **441/393/352 bytes**.
+The newly decoded source-level logic is an authentic additional
+`if (FLAG > 0)` after stage-2 position, velocity and speed writes.
+The first fighter's action6 first/secondary triplets are
+(0,13,0.4)/(2,10,0.25), action7 (3,13,0.4)/(4.5,10,0.25)
+with FLAG cleared **only after** its second conditional override; action8
+has -4,13,0.4 plus a FLAG clear between position and velocity.
+The second fighter's action6 first/secondary triplets are
+(0,16,0.75)/(3,15,1.25), but action7 is a 115-instruction normal
+(8,16,0.75) policy and action8 a 102-instruction (-8,16,0.75)
+policy without the extra positive-FLAG override or FLAG clear.
+
+Two newly generated and freshly compiled original-PE-backed VC7.1 source
+probes independently validate **all 698/698 native instruction GPR/x87/
+branch/size roles and 44/44 true typed COFF fields**, the authentic final
+virtual method, **305 native-style switch DWORD fields**, repeated/default
+handler partitions and **822 literal original compressed index bytes**.
+The full 2,042 after-RET DATA-shape bytes are separate from CODE.
+Complete native research and reproduction:
+[F563 conditional-override study](FIGHTER_FLAG_OVERRIDE_SOURCE_F563.md)
+and `scripts/repo-python scripts/verify-fighter-conditional-override-actions.py`.
+The **2,440 original internal CODE bytes** are not independently exact
+functions and remain within **115,827 unmatched whole-fighter CODE bytes**.
+No total cold replay, target assembly graft or external Oracle receipt.

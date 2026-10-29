@@ -1,6 +1,6 @@
 # TH075 — current agent handoff
 
-**Maintained: 2026-10-29, after F562; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
+**Maintained: 2026-10-29, after F563; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
 
 ## 1. Current authoritative state (not historical hypotheses)
 
@@ -140,6 +140,24 @@ no source stage branch is fabricated in action 6/8. Reproducer:
 [F562 native original three-case source study](FIGHTER_SPLIT_STAGE_F562.md).
 The **1,097 inner CODE bytes remain inside the nonexact giant**, not
 independent exact function/CODE credit.
+
+**F563 now reconstructs two previously unmodeled original
+`FLAG > 0` secondary-motion giant-boss policies**, independently
+within `004F7130` (44,211 original CODE) and `005AEEC0`
+(71,616 original CODE). Six separate original action 6/7/8 cases are
+fully modeled in normal C++, for **698/698 native real GPR/x87/branch
+instruction roles**, **44 genuine COFF call/global fields**, real
+fighter-specific two-stage motion constants, all **305** physical jump
+DWORD fields and **822** exact sparse map bytes. Critically `004F7130`
+performs a secondary override in both action 6/7 and clears `FLAG` only
+at the end of the action-7 override, while `005AEEC0` overrides only
+its action 6 and never clears FLAG in its three cases. See
+[F563 native conditional-override source proof](FIGHTER_FLAG_OVERRIDE_SOURCE_F563.md)
+and targeted reproducer
+`scripts/repo-python scripts/verify-fighter-conditional-override-actions.py
+--boss 0x004F7130`. The 2,440 original internal CODE bytes remain
+inside **two unaccepted whole giant bosses**; zero split/whole exact
+CODE credit.
 
 **Three other authored functions remain nonexact (all require full CODE):**
 
