@@ -10053,3 +10053,43 @@ all-unit replay/Oracle.
 Targeted reproducer
 `scripts/repo-python scripts/verify-characterobject-whole-geometry-f593.py`,
 [F593 entire original fighter source/COFF study](CHARACTEROBJECT_WHOLE_GEOMETRY_F593.md).
+
+
+## F594–F595: original giant register-phase negative controls plus fully byte-exact small origin-unknown setter
+
+F594 tested 23 *genuine* pinned VC7.1 normal C++ variants targeting
+the actual original giant `004EBDA0` native case38D register
+rotation beginning at ordinal91, continuing across 38E into
+only first31 instructions of 3E3. Alternatives varied x87
+float member assignment, native lvalue reference, stage constant
+order/condition, valid ownership field type and counter updates.
+None recovered the original whole C++ GPR register phase; the
+same original **155 differing nonrelocation whole native bytes**
+remain, with source original 8,789/8,789 instruction lengths and
+all 682 physical original PE COFF fields still verified in F593.
+The 23 actual original-backed compile logs/objects and native
+case metrics are retained under `.analysis/f594-register-phase/`.
+
+Separately F595 attacks SMALL original origin-unknown leaf
+`004135F0`: actual 40 native CODE bytes/16 x86 instructions,
+no COFF references, three literal thiscall field stores at
++0x24/+0x1C/+0x20 and `RET 0xC`. New natural VC7.1 source
+`probes/NativeFieldSetterOriginPendingF595.cpp` **exactly
+matches all 40/40 native machine bytes** independently
+via whole original PE/COFF checker. Full call-graph research
+across 4,351 registered native functions finds NO direct
+callers or original raw 32-bit literal address references,
+so its original authored/vendor owner is **unknown** and it
+receives **zero accepted game CODE credit**.
+Peer audited pending 45-byte base ctor `00449DE0` has
+36 native direct original callers from previously exact
+BackgroundStage::LoadBGxx source functions and a 5-purecall
+vtable at 0065844C, but still compiler-implicit/explicit
+constructor origin ambiguity. Pending destructor 004588B0
+has six mixed source callers across authored resource
+load and STL vector/runtime contexts; also still unknown.
+Reproducer
+`scripts/repo-python scripts/verify-native-pending-fieldsetter-f595.py`,
+[F595 original small leaf and owner evidence](SMALL_ORIGIN_UNKNOWN_FIELDSETTER_F595.md).
+Official 943 original whole exact functions /862,726 authored
+CODE bytes unchanged; no all-unit cold replay or Oracle.

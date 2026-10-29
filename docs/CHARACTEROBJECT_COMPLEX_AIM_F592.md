@@ -210,19 +210,3 @@ within its first 31 instructions; F592's earlier `0x38D/0x38E`
 remain nonexact. **155 nonfield bytes still differ** across the
 whole fighter and no original exact CODE adoption occurs.
 See [F593 true whole-original code/data geometry study](CHARACTEROBJECT_WHOLE_GEOMETRY_F593.md).
-
-## F593 entire giant original CODE/DATA follow-up
-
-The same natural VC7.1 C++ `Advance()` now has *ALL* physically
-nondefault game-action bodies including last `0x3E3/0x3E4/0x3E5`
-and an original-backed default callback `0040FA30` instead of a
-diagnostic marker. Original whole giant and compiled source are
-**33,293 identical CODE lengths and 8,789 instruction positions
-and widths**, with all **622 original CODE +60 post-RET DATA
-physical PE/COFF references** grounded to target. There remain
-**155 actual nonrelocation byte differences**, so do not claim
-whole CODE exact. Newly full-source strict actions 0x3E4
-(261 x86/1,126 bytes) and 0x3E5 (96/396) raise the strict
-case count to **56**; three cases 0x38D/38E/3E3 still have
-compiler GPR mismatches and remain uncredited. See
-[F593 whole giant source geometry](CHARACTEROBJECT_WHOLE_GEOMETRY_F593.md).

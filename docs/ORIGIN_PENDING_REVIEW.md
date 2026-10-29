@@ -10,6 +10,19 @@ and fresh 1/1 77-byte cold exact source compilation. The historical R183
 unknown-provenance row in the R263 matrix remains as original negative
 source evidence, not as a current pending classification. Original source
 owner/type naming and possible vendored origin remain *provisional*.
+F595 independently compiled one of the original pending leaves,
+`004135F0`, into **40/40 byte-for-byte identical ordinary VC7.1
+C++** with complete 16-instruction/RET12 shape and 0 COFF fields.
+However, none of the 4,351 registered native functions calls it
+directly, and its absolute address never appears as a literal
+DWORD in the pinned PE file, so this is **source-shape proof,
+NOT authored-origin proof**. It stays unknown and uncredited.
+F595 also independently counted 36 original exact BackgroundStage
+loader calls of R108 origin-unknown constructor `00449DE0`, its
+pure-virtual vtable, and six mixed game/STL callers of
+`004588B0`; those remain unknown. See
+[small leaf/call graph F595](SMALL_ORIGIN_UNKNOWN_FIELDSETTER_F595.md).
+
 The current live pending set is **95 functions /3,420 bytes**; use
 `config/function-origins.csv` for the authoritative classification and
 `docs/RE_HANDOFF.md` for the current task list. Do not interpret the

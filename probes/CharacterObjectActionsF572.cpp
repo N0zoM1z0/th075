@@ -1,12 +1,11 @@
 // F572/F573/F574/F575/F576/F577/F578/F579/F580/F581/F582/F583/F585/F586/F587/F588/F590/F591/F592/F593: selected natural VC7.1 source, original PE 004EBDA0.
-// F593: all actual native case bodies have genuine gameplay source; entire
-// 33,293-byte original CODE +438 after-RET DATA have exact layout/8,789 x86
-// instruction count but 155 non-COFF CODE bytes still DIFFER: NONEXACT.
-// CharacterObject megaboss: the entire 33,293-byte original is NOT exact;
-// unverified hypotheses must never receive native CODE or DATA exact credit.
-// does not earn independent native CODE or after-RET DATA exact credit.
-// No machine code graft, artificial EBP locals or inline ASM are used.
-// hidden padding, byte grafting or fake stack locals are present.
+// Original entire 33,293-byte CODE + 438 post-RET DATA now have the
+// exact physical native layout and all 8,789 original x86 instruction
+// offsets/lengths, but 155 non-COFF bytes still differ: NONEXACT.
+// All real native action cases and the original 0040FA30 default are
+// present as normal C++; three case bodies still have wrong GPR roles.
+// No target ASM, injected filler, machine-byte graft or independent
+// split-case CODE/DATA acceptance is claimed.
 // F539 natural switch *probe*, not original fighter source or CODE credit.
 // This file is regenerable from the original PE under ignored .analysis.
 class ParentEffectsF572 {

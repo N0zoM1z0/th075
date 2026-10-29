@@ -1,6 +1,6 @@
 # TH075 — current agent handoff
 
-**Maintained: 2026-10-29, after F593; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
+**Maintained: 2026-10-29, after F595; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
 
 ## 1. Current authoritative state (not historical hypotheses)
 
@@ -853,6 +853,36 @@ Run the selected original native whole-code/PE/COFF verifier
 read [F593 original entire 33K geometry and 155-byte residual](CHARACTEROBJECT_WHOLE_GEOMETRY_F593.md).
 **943 existing exact whole functions /862,726 original CODE bytes
 remain unchanged; no all-unit cold replay or external Oracle.**
+
+**F594/F595 separately invested in BOTH large-boss compiler phase
+and SMALL complete leaf reconstruction.** F594 compiled **23
+actual C++ source variants** around the original 38D stage4
+register-allocation discontinuity, including true float lvalue
+references, natural assignment operators and stage comparisons.
+None repaired the prior original-PE-attested **45/64/24** GPR
+role differences in 38D/38E/3E3; some produced extra width
+mismatches or a one-byte whole-function regression. Saved under
+`.analysis/f594-register-phase/`, with no false exact credit.
+
+F595 independently reconstructed native pending small member setter
+**`004135F0` 40/40 ORIGINAL MACHINE BYTES**, complete **16/16
+original x86 instructions, `RET 0xC`, zero physical COFF fields**,
+using a fresh ordinary pinned VC7.1 C++ source. Its original
+owner remains **UNKNOWN**: zero registered direct call sites
+among 4,351 functions and zero raw DWORD address references
+in the pinned PE; cannot infer authorship or count it as a
+new accepted game function. A separate full original caller
+survey confirms R108 base constructor `00449DE0` is called by
+**36 independently exact authored BackgroundStage load routines**
+and has a five-purecall vtable, but its compiler-implicit/
+explicit source distinction remains unresolved; pending
+`004588B0` has six mixed authored/STL callers. All three
+pending small origins remain unclassified and official
+**943 exact game functions /862,726 original CODE bytes
+remain unchanged**. See
+[F595 independent complete small leaf and owner audit](SMALL_ORIGIN_UNKNOWN_FIELDSETTER_F595.md),
+reproducer `scripts/repo-python scripts/verify-native-pending-fieldsetter-f595.py`.
+No all-unit cold replay or external Oracle.
 
 **Three other authored functions remain nonexact (all require full CODE):**
 

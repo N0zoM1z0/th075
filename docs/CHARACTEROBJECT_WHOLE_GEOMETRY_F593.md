@@ -200,3 +200,28 @@ This is not a cold all-unit replay and it yields neither an
 independent exact original case CODE unit nor a whole giant
 Factory/Oracle acceptance receipt. The official **943 exact
 functions and 862,726 original CODE bytes remain unchanged**.
+
+## F594 compiler-context negative controls, retained without fake wins
+
+After the 155 remaining whole-original nonrelocation byte differences
+were isolated, 23 additional normal VC7.1 C++ source experiments
+specifically targeted the original action38D register-seed shift
+at native instruction ordinal91 and possible spillover into
+38E/3E3. Real-expression alternatives included `+=` and `*=`,
+float/member/global lvalue dereferences, equivalent comparisons,
+reversed constant operand order, real counter increments, raw-
+DWORD zero-initialization and candidate field type views.
+
+Every candidate compiled under `/Od /Ob0 /Gy /GR- /GX- /GS /Zi`.
+Many retained whole 33,293-CODE-byte function size but either
+changed original local opcode widths or left the *identical*
+**45/64/24 GPR mismatch counts** for 38D/38E/3E3. Two local
+counter assignment forms also changed entire source CODE size
+by one byte, so were rejected outright. **No variant produced
+new strictly identical native code**, and neither machine byte
+patching nor artificial temporaries were substituted. All source
+and per-TU compiler logs are preserved in ignored
+`.analysis/f594-register-phase/`; F593's exact 155-byte gap
+remains the native-only accepted statement. The same research
+session also independently re-probed the original 40-byte
+origin-unknown small leaf: [F595](SMALL_ORIGIN_UNKNOWN_FIELDSETTER_F595.md).
