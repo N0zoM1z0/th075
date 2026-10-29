@@ -9961,3 +9961,42 @@ no all-unit cold replay/Oracle.
 Source/verifier:
 `scripts/repo-python scripts/verify-characterobject-stage-fades-f591.py`,
 [F591 original stage fade study](CHARACTEROBJECT_STAGE_FADES_F591.md).
+
+
+## F592: five original entire x87 angle/trajectory game states and real external ABI
+
+Japanese original giant `004EBDA0` gets five more complete native
+case sources: `0x388` 92 x86/334 CODE bytes (genuine original
+45-range float scatter and x87 world threshold), `0x389`
+174/627 (native -30/150 signed state, stage4 effect 0x371,
+stage8 fade/loop), `0x38A` **234/971** (true 00483300
+computed two-float aiming, FIMUL, __ftol2, native byte global
+006714D0, TWO independent signed angular correction tests),
+`0x38B` **260/953** (native 00455580(-480,960), signed
+stage0 opacity ramp, stage8 raw DWORD parent+318/+31C copies
+and real effects 0x38C/0x38D), `0x38C` 74/276 (true
+00428D20 magnitude of two squared floats, x87 division and
+same 00483300 external helper with original raw DWORD arguments).
+Natural C++ has all 834 newly verified x86 register/x87/branch
+and original byte-width instruction roles with **64 real typed
+zero-addend original PE/COFF call/global fields**, including
+physical `DIR32` MOVSX of global 006714D0, not an ignored
+linker-field difference. Rewriting the 38A two actual angle
+corrections as `if/else` is semantically wrong and shortened
+native machine code; two independent guards plus an inner
+`break` restore the original 234/971. Real subsequent source
+cases restore preceding natural compiler near-jump widths.
+
+Only 54 actual complete case source bodies are strict original
+GPR/CFG verified; F592 also retains **unverified whole-source
+hypotheses 0x38D/0x38E**, which are not counted as exact
+or source-verified original inner cases. Cumulative **7,943
+whole original native x86 roles /29,852 original internal CODE
+bytes /562 native PE typed COFF fields** in one VC7.1 TU;
+all 60 original physical first-switch handler DWORDs,
+198 byte-identical compressed indexes and distinct 438 afterRET
+DATA. The whole original 33,293-byte giant stays nonexact.
+Reproducer
+`scripts/repo-python scripts/verify-characterobject-five-complex-actions-f592.py`,
+[F592 source/physical COFF study](CHARACTEROBJECT_COMPLEX_AIM_F592.md).
+No full cold replay, independent CODE credit or external Oracle.

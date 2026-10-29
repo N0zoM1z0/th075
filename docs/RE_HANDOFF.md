@@ -1,6 +1,6 @@
 # TH075 — current agent handoff
 
-**Maintained: 2026-10-29, after F591; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
+**Maintained: 2026-10-29, after F592; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
 
 ## 1. Current authoritative state (not historical hypotheses)
 
@@ -777,6 +777,40 @@ NONEXACT**, zero standalone case CODE/DATA exact credit. See
 and selected checker
 `scripts/repo-python scripts/verify-characterobject-stage-fades-f591.py`.
 No full cold replay or external Oracle.
+
+**F592 reconstructs FIVE additional complete original native
+CharacterObject action bodies `0x388..0x38C`** inside still
+nonexact original 33,293-byte `004EBDA0` giant. Their authentic
+whole original physical x86/source footprints are **92/334,
+174/627, 234/971, 260/953, 74/276** (instruction count/CODE
+bytes); all five are natural VC7.1 **full GPR/x87/CFG/width
+source grammar matches**, with **64 real zero-addend typed
+original PE call/global COFF fields**. Native `0x38A` performs
+real opponent angle `00483300`, CRT `__ftol2`, **TWO separate
+angle-correction guards** that re-test modified state (not
+`if/else`), and original signed global-byte `006714D0`;
+`0x38B` preserves original raw parent coordinate DWORD copies
+and stage8/11 effects 0x38C/0x38D. Native `0x38C` computes
+real squared-float magnitude through `00428D20` and calls the
+same external `00483300` angle wrapper with TWO RAW DWORD
+arguments; its precise physical callee/ABI is verified and the
+unknown-origin wrappers earn **no authored CODE credit**.
+
+The newly expanded ordinary C++ source correctly naturally
+widens previous 0x389/38A/38B/38C shared-exit jumps, not via
+padding. **Native 0x38D/0x38E source hypotheses are present but
+NOT yet strict GPR/CFG exact** and are excluded from source
+verified case counts. Across F572–F592 now **54 actual complete
+original game-action case bodies, 7,943 native x86 instruction
+roles, 29,852 inner original CODE bytes, 562 true typed PE COFF
+call/global refs** in one compiler TU, plus all 60 original
+switch DWORD refs and 198 literal compressed bytes.
+See [F592 complete native complex angle source study](CHARACTEROBJECT_COMPLEX_AIM_F592.md),
+selected verifier
+`scripts/repo-python scripts/verify-characterobject-five-complex-actions-f592.py`.
+**Whole original 33,293 CODE remains NONEXACT, zero independent
+case CODE/DATA exact credit.** No full all-unit cold replay or
+external Factory/Oracle receipt.
 
 **Three other authored functions remain nonexact (all require full CODE):**
 

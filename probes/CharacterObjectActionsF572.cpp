@@ -1,7 +1,9 @@
-// F572/F573/F574/F575/F576/F577/F578/F579/F580/F581/F582/F583/F585/F586/F587/F588/F590/F591: selected natural VC7.1 source, original PE 004EBDA0.
-// Implements complete original actions 0x320..0x387 (excluding default aliases) in a 33,293-byte
-// CharacterObject megaboss. All later cases are DIAGNOSTIC marker stores,
-// not restored gameplay; this source is NOT a complete original function,
+// F572/F573/F574/F575/F576/F577/F578/F579/F580/F581/F582/F583/F585/F586/F587/F588/F590/F591/F592: selected natural VC7.1 source, original PE 004EBDA0.
+// Original-native/VC7.1 validated game-action cases 0x320..0x38C (excluding defaults).
+// New normal C++ 0x38D/0x38E case hypotheses remain machine-GPR NONEXACT;
+// subsequent cases 0x3E3 onward are still diagnostic marker stores.
+// CharacterObject megaboss: the entire 33,293-byte original is NOT exact;
+// unverified hypotheses must never receive native CODE or DATA exact credit.
 // does not earn independent native CODE or after-RET DATA exact credit.
 // Original member/class names remain borrowed hypotheses. No target ASM,
 // hidden padding, byte grafting or fake stack locals are present.
@@ -43,6 +45,12 @@ extern float gShrinkAt00659094;
 extern float gGrowAt00657CBC;
 extern float gGrowAt00657478;
 extern float gCollisionAt00657888;
+extern float gAngleUnitAt00657828;
+extern float gLengthDivisorAt006583A0;
+extern float gLengthFactorAt00659720;
+extern float MagnitudeAt00428D20(float value);
+extern float AngleRawAt00483300(int first, int second);
+extern float AngleAt00483300(float first, float second);
 extern float gCompareAt0065782C;
 extern float gCompareAt0065747C;
 extern float gCompareAt00657480;
@@ -76,7 +84,9 @@ extern float AbsFloatAt00412D90(float value);
 #define PARENT (*reinterpret_cast<ParentEffectsF572**>(RAW+0xE4))
 #define PF32(off) (*reinterpret_cast<float*>(reinterpret_cast<char*>(PARENT)+(off)))
 #define PS8(off) (*reinterpret_cast<signed char*>(reinterpret_cast<char*>(PARENT)+(off)))
+#define PARENT_TARGET_Y (*reinterpret_cast<float*>(*reinterpret_cast<char**>(reinterpret_cast<char*>(PARENT)+0x2E8)+0x48))
 #define PARENT_TARGET_X (*reinterpret_cast<float*>(*reinterpret_cast<char**>(reinterpret_cast<char*>(PARENT)+0x2E8)+0x44))
+#define PI32(off) (*reinterpret_cast<int*>(reinterpret_cast<char*>(PARENT)+(off)))
 #define P16(off) (*reinterpret_cast<signed short*>(reinterpret_cast<char*>(PARENT)+(off)))
 
 extern unsigned int g_FighterProbeMarker;
@@ -2146,13 +2156,327 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         ResetAt45B830();
     break;
 }
-        case 0x388: g_FighterProbeMarker = 905; break;
-        case 0x389: g_FighterProbeMarker = 906; break;
-        case 0x38A: g_FighterProbeMarker = 907; break;
-        case 0x38B: g_FighterProbeMarker = 908; break;
-        case 0x38C: g_FighterProbeMarker = 909; break;
-        case 0x38D: g_FighterProbeMarker = 910; break;
-        case 0x38E: g_FighterProbeMarker = 911; break;
+        case 0x388: {
+    if (P16(0x3A0)<=0) {
+        ResetAt45B830();
+        break;
+    }
+    if (S16(0x62)==0 && S16(0x64)==0) {
+        ResetStateAt40FBB0(0,0,0);
+        F32(0x1C)=1.0f;
+        F32(0x20)=1.0f;
+        U8(0x11)=0xFF;
+        U8(0x12)=0xFF;
+        U8(0x13)=0xFF;
+        U8(0x14)=0xFF;
+        MotionAt40FB70(-(static_cast<float>(RandomAt455580(0,45))
+             - gSubtractAt00659728 + gOffsetAt006581DC),18.0f);
+    }
+    F32(0x44) += static_cast<float>(S8(0x66))*F32(0x50);
+    F32(0x48) = *(&F32(0x48))+*(&F32(0x54));
+    F32(0x54) = F32(0x54)-gVelocityDragAt00659454;
+    F32(0x30) = F32(0x30)+gGrowAt00657CBC;
+    if (F32(0x48)<gMaxPositionAt0065912C) {
+        ResetAt45B830();
+        break;
+    }
+    if (GetStateAt40FA30()==S16(0x70))
+        ResetAt45B830();
+    break;
+}
+        case 0x389: {
+    if (P16(0x3A0)<=0) {
+        ResetAt45B830();
+        break;
+    }
+    if (I32(0x7C)==6) {
+        I32(0x7C)=0;
+        S16(0x80)=1;
+    }
+    if (S16(0x62)==0 && S16(0x64)==0) {
+        S16(0xD8)=-30;
+        S16(0xDA)=150;
+        S16(0xDC)=0;
+        ResetStateAt40FBB0(0,0,0);
+        S16(0x80)=1;
+        I32(0x7C)=0;
+        F32(0x1C)=1.0f;
+        F32(0x20)=1.0f;
+        U8(0x11)=0;
+        U8(0x12)=0xFF;
+        U8(0x13)=0xFF;
+        U8(0x14)=0xFF;
+    }
+    if (S16(0x62)==4 && S16(0x64)==0) {
+        PARENT->SpawnComputedAt453A70(0x371,I32(0x44),
+                    F32(0x48)+gFloatAt00657850,S8(0x66),1);
+        PARENT->ModifyAt453D40(2);
+    }
+    if (S16(0x62)==0) {
+        if (U8(0x11)<225)
+            U8(0x11)+=30;
+        else
+            U8(0x11)=0xFF;
+    }
+    if (S16(0x62)<8 && S16(0x80)==0) {
+        SetStateAt40FB40(S16(0x62)+4);
+        break;
+    }
+    if (S16(0x62)>7) {
+        F32(0x1C)=static_cast<float>(F32(0x1C)*gMulDoubleAt00659730);
+        F32(0x20)=F32(0x20)+gAddAt006583FC;
+        if (U8(0x11)>=10)
+            U8(0x11)-=10;
+        else {
+            ResetAt45B830();
+            break;
+        }
+    }
+    if (GetStateAt40FA30()==S16(0x70)) {
+        SetStateAt40FB40(8);
+        break;
+    }
+    if (S16(0x64)==0)
+        I32(0x7C)=0;
+    if (S16(0x62)==8 && S16(0x64)==0 && S16(0xDC)<5) {
+        SetStateAt40FB40(4);
+        ++S16(0xDC);
+    }
+    break;
+}
+        case 0x38A: {
+    if (P16(0x3A0)<=0) {
+        ResetAt45B830();
+        break;
+    }
+    if (S16(0x62)==0 && S16(0x64)==0) {
+        ResetStateAt40FBB0(0,0,0);
+        S16(0x80)=1;
+        I32(0x7C)=0;
+        F32(0x1C)=1.0f;
+        F32(0x20)=1.0f;
+        U8(0x11)=0;
+        U8(0x12)=0xFF;
+        U8(0x13)=0xFF;
+        U8(0x14)=0xFF;
+        S16(0xD8)=10;
+        S16(0xDA)=0;
+        S16(0xDE)=0;
+        S16(0xDC)=0;
+    }
+    if (S16(0x62)==1 && S16(0x64)==0) {
+        PARENT->SpawnDirectedAt453A70(0x389,I32(0x44),I32(0x48),S8(0x66),1);
+    }
+    if (S16(0x62)>0) {
+        S16(0xDA) = static_cast<short>(AngleAt00483300(
+            *(&PARENT_TARGET_Y) - *(&F32(0x48)) + gCollisionAt00657888,
+            (*(&PARENT_TARGET_X) - *(&F32(0x44))) * S8(0x66)) / gAngleUnitAt00657828);
+        if (S16(0xDC)>S16(0xDA)) {
+            if (S16(0xDC)-S16(0xDA)<=180) {
+                S16(0xDC)-=2;
+                if (S16(0xDC)<-180) S16(0xDC)+=360;
+            } else {
+                S16(0xDC)+=2;
+                if (S16(0xDC)>180) S16(0xDC)-=360;
+            }
+        }
+        if (S16(0xDC)<=S16(0xDA)) {
+            if (S16(0xDC)-S16(0xDA)>=-180) {
+                S16(0xDC)+=2;
+                if (S16(0xDC)>180) S16(0xDC)-=360;
+            } else {
+                S16(0xDC)-=2;
+                if (S16(0xDC)<-180) S16(0xDC)+=360;
+            }
+        }
+    }
+    MotionAt40FB70(static_cast<float>(S16(0xDC)),4.0f);
+    F32(0x44) += static_cast<float>(S8(0x66))*F32(0x50);
+    F32(0x48) = *(&F32(0x48)) - *(&F32(0x54));
+    if (GetStateAt40FA30()==S16(0x70)) {
+        if (S16(0xD8)<gGlobalActorCountAt006714D0*5+10) {
+            ++S16(0xD8);
+            SetStateAt40FB40(1);
+            break;
+        }
+        ResetAt45B830();
+        break;
+    }
+    break;
+}
+        case 0x38B: {
+    if (P16(0x3A0)<=0) {
+        ResetAt45B830();
+        break;
+    }
+    if (S16(0x62)==0 && S16(0x64)==0) {
+        ResetStateAt40FBB0(0,0,0);
+        I32(0x7C)=0;
+        F32(0x1C)=1.0f;
+        F32(0x20)=1.0f;
+        U8(0x11)=0;
+        U8(0x12)=0xFF;
+        U8(0x13)=0xFF;
+        U8(0x14)=0xFF;
+        F32(0x50)=F32(0xC8)*gMulAt006590B4;
+        F32(0x54)=F32(0xCC)*gMulAt006590B4;
+        S16(0xD8)=static_cast<short>(RandomAt455580(-480,960));
+    }
+    F32(0x44) += static_cast<float>(S8(0x66))*F32(0x50);
+    F32(0x48) = *(&F32(0x48))+*(&F32(0x54));
+    if (S16(0x62)==0) {
+        if (U8(0x11)<=235)
+            U8(0x11)+=20;
+        else
+            U8(0x11)=0xFF;
+        F32(0x30)=F32(0x30)+gAddAt00659738;
+        F32(0x54)=F32(0x54)-gDropAt00658058;
+    }
+    if (S16(0x62)==12) {
+        F32(0x1C)=static_cast<float>(F32(0x1C)*gMulDoubleAt00659730);
+        F32(0x20)=F32(0x20)+gAddAt006583FC;
+        if (U8(0x11)>=10)
+            U8(0x11)-=10;
+        else {
+            ResetAt45B830();
+            break;
+        }
+    }
+    if (GetStateAt40FA30()==S16(0x70)) {
+        ResetAt45B830();
+        break;
+    }
+    if (S16(0x62)==1 && S16(0x64)==0) {
+        F32(0x50)=0.0f;
+        F32(0x54)=0.0f;
+        F32(0x30)=0.0f;
+    }
+    if (S16(0x62)==6 && S16(0x64)==0 && S16(0xDC)<0) {
+        SetStateAt40FB40(2);
+        ++S16(0xDC);
+    }
+    if (S16(0x62)==8 && S16(0x64)==0) {
+        PF32(0x314)=static_cast<float>(S16(0xD8));
+        PI32(0x318)=I32(0x44);
+        PI32(0x31C)=I32(0x48);
+        PARENT->SpawnDirectedAt453A70(0x38C,I32(0x44),I32(0x48),S8(0x66),1);
+        PARENT->ModifyAt453D40(15);
+    }
+    if (S16(0x62)==10 && S16(0x64)==0 && S16(0xDA)<6) {
+        ++S16(0xDA);
+        SetStateAt40FB40(9);
+    }
+    if (S16(0x62)==11 && S16(0x64)==0) {
+        PARENT->SpawnMovedAt453A70(0x38D,
+            static_cast<float>(S16(0xD8)*S8(0x66)) + F32(0x44),
+            0,S8(0x66),1);
+        PARENT->ModifyAt453D40(8);
+    }
+    break;
+}
+        case 0x38C: {
+    if (P16(0x3A0)<=0) {
+        ResetAt45B830();
+        break;
+    }
+    if (S16(0x62)==0 && S16(0x64)==0) {
+        ResetStateAt40FBB0(0,0,0);
+        F32(0x1C) = MagnitudeAt00428D20(
+            *(&F32(0xC8))* *(&F32(0xC8)) + *(&F32(0xD0))* *(&F32(0xD0)))
+            / gLengthDivisorAt006583A0 * gLengthFactorAt00659720;
+        F32(0x20)=1.0f;
+        U8(0x11)=0xFF;
+        U8(0x12)=0xFF;
+        U8(0x13)=0xFF;
+        U8(0x14)=0xFF;
+        F32(0x30) = AngleRawAt00483300(I32(0xD0),I32(0xC8)) / gAngleUnitAt00657828;
+    }
+    F32(0x20)=static_cast<float>(F32(0x20)*gMulDoubleAt00659730);
+    if (GetStateAt40FA30()==S16(0x70))
+        ResetAt45B830();
+    break;
+}
+        case 0x38D: {
+    if (S16(0x62)==0 && S16(0x64)==0) {
+        S16(0xD8)=0;
+        ResetStateAt40FBB0(0,0,0);
+        S16(0x80)=1;
+        I32(0x7C)=0;
+        F32(0x54)=0.0f;
+        F32(0x50)=0.0f;
+        F32(0x1C)=0.25f;
+        F32(0x20)=1.0f;
+        U8(0x11)=0xFF;
+        U8(0x12)=0xFF;
+        U8(0x13)=0xFF;
+        U8(0x14)=0xFF;
+        I32(0x28)=0;
+        I32(0x2C)=0;
+        I32(0x30)=0;
+        PARENT->SetupAt453E60(10.0f);
+    }
+    if (I32(0x7C)==6) {
+        I32(0x7C)=0;
+        ++S16(0x80);
+    }
+    if (S16(0x62)==3 && S16(0x64)==0)
+        PARENT->SpawnDirectedAt453A70(0x343,I32(0x44),I32(0x48),S8(0x66),1);
+    if (S16(0x62)<3) {
+        F32(0x1C)=F32(0x1C)+gFadeAt00659428;
+        F32(0x20)=F32(0x20)+gFadeAt00659428;
+    }
+    if (S16(0x62)==4) {
+        F32(0x1C)=F32(0x1C)*gSubAt00659090;
+        if (U8(0x11)>=20) {
+            U8(0x11)-=20;
+            U8(0x12)-=20;
+            U8(0x13)-=20;
+        } else {
+            U8(0x11)=0;
+            ResetAt45B830();
+            break;
+        }
+    }
+    if (GetStateAt40FA30()==S16(0x70))
+        ResetAt45B830();
+    if (S16(0x62)==4 && S16(0x64)==0 && S16(0xD8)<5) {
+        ++S16(0xD8);
+        SetStateAt40FB40(3);
+    }
+    break;
+}
+        case 0x38E: {
+    if (P16(0x3A0)<=0) {
+        ResetAt45B830();
+        break;
+    }
+    if (S16(0x62)==0 && S16(0x64)==0) {
+        S16(0xD8)=0;
+        ResetStateAt40FBB0(0,0,0);
+        S16(0x80)=1;
+        I32(0x7C)=0;
+        F32(0x54)=0.0f;
+        F32(0x50)=0.0f;
+        F32(0x1C)=0.75f;
+        F32(0x20)=1.0f;
+        U8(0x11)=0xFF;
+        U8(0x12)=0xFF;
+        U8(0x13)=0xFF;
+        U8(0x14)=0xFF;
+        I32(0x28)=0;
+        I32(0x2C)=0;
+        I32(0x30)=0;
+        PARENT->SetupAt453E60(5.0f);
+        PARENT->SpawnDirectedAt453A70(0x387,I32(0x44),I32(0x48),S8(0x66),1);
+    }
+    if (I32(0x7C)==6) {
+        I32(0x7C)=0;
+        ++S16(0x80);
+    }
+    if (GetStateAt40FA30()==S16(0x70))
+        ResetAt45B830();
+    break;
+}
         case 0x3E3: g_FighterProbeMarker = 996; break;
         case 0x3E4: g_FighterProbeMarker = 997; break;
         case 0x3E5: g_FighterProbeMarker = 998; break;

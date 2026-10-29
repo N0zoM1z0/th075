@@ -100,3 +100,18 @@ The **entire 33,293-byte original giant remains NONEXACT**;
 its 26,691 authentic internal original CODE bytes are not 49
 independently exact functions. No split/whole CODE or DATA credit,
 no full all-unit cold replay, no external Factory/Oracle receipt.
+
+## F592 follow-up: five complete angle/multi-stage source cases
+
+The same ordinary C++ switch now implements original game actions
+`0x388` **92/334**, `0x389` **174/627**, `0x38A` **234/971**,
+`0x38B` **260/953**, and `0x38C` **74/276** (entire native
+x86 instructions/CODE bytes). The genuine 64 typed physical
+COFF fields are all independently checked. `0x38A` requires two
+independently evaluated conditional angle guards, not an `if/else`;
+`0x38B` and `0x38C` require original raw DWORD field/angle ABI
+semantics. Next `0x38D/0x38E` source cases are not yet strict
+native GPR/CFG exact and receive **no verified case credit**.
+[F592 complete original source study](CHARACTEROBJECT_COMPLEX_AIM_F592.md)
+verifies all 54 real completed cases; the original full giant
+remains nonexact.

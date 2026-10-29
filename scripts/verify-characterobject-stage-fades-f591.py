@@ -178,7 +178,7 @@ def main():
          'complete original Japanese physical dense/sparse index hashes differ')
     src=SRC.read_text()
     need('F588/F590/F591' in src and all(src.count(f'case 0x{x:X}:')==1 for x in STATES)
-         and 'case 0x388: g_FighterProbeMarker = 905; break;' in src,
+         and 'case 0x3E3: g_FighterProbeMarker = 996; break;' in src,
          'source must implement all three real native cases, leave 385 diagnostic')
     # Exactly one affected VC7.1 TU freshly compiled by original-PE
     # backed F588 check, also checking all 46 previous native actions.
