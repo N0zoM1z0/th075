@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F664; earlier frozen handoffs are archived.**
+**Maintained 2026-10-30, after F665; earlier frozen handoffs are archived.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -214,16 +214,20 @@ relocation, and a fresh selected-unit cold replay**.
 
 ## 5. Small leaves: whole-byte source evidence ≠ authored attribution
 
-F595 + F616–F658 source experiments now prove **66 distinct
-historical origin-unknown complete native function bodies /1,183
-original entire machine CODE bytes**. The newest F658 adds **19
-complete original 5/8/11/14/16-byte native leaves /181 genuine
-CODE bytes /111 x86 instructions**, all directly original-byte
-identical without relocation masks, through one small natural C++
-VC7.1 TU. Their owners remain `unknown,review`, as do all **95
-historical provenance-unknown candidates**. This research earns **zero
-accepted authored whole-function CODE**. [Full new native whole-leaf
-source and caller proof](GAME_UNATTRIBUTED_SIMPLE_LEAVES_F658.md).
+F595 + F616–F665 source experiments now prove **70 distinct
+historical origin-unknown complete native function bodies /1,259
+original entire machine CODE bytes**. The newest F665 adds **four
+entire 19-byte native member-call forwarders /76 linked genuine
+original CODE bytes /36 x86 instructions /4 actual typed PE COFF
+REL32 fields**, all individually byte exact under one small normal
+VC7.1 TU. Their owners remain `unknown,review` as do all **95
+historical provenance-unknown candidates**. Native authored callers
+do not establish a wrapper's original source owner. This research
+earns **zero accepted authored whole-function CODE**.
+[Newest full four-native-original proof](GAME_NATIVE_FORWARDER_LEAVES_F665.md).
+F658 earlier independently added 19 complete simple native functions
+(181 bytes/111 x86) without relocation masking.
+[Previous F658 native proof](GAME_UNATTRIBUTED_SIMPLE_LEAVES_F658.md).
 
 Latest F655 seven **entire original registered native leaves**
 (`004138D0`, `004169D0`, `0041F7F0`, `00540280`, `00441FD0`,
@@ -238,6 +242,7 @@ virtual `__stdcall`) and `004588B0` (43 bytes, conditional CRT free).
 [Earlier genuine original F650 proof](GAME_COM_VIRTUAL_RELEASE_F650.md).
 
 ```bash
+scripts/repo-python scripts/verify-game-native-forwarder-leaves-f665.py
 scripts/repo-python scripts/verify-game-unattributed-simple-leaves-f658.py
 scripts/repo-python scripts/verify-game-unattributed-leaves-f655.py
 scripts/repo-python scripts/verify-game-virtual-release-f650.py

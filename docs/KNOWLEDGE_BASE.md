@@ -11810,3 +11810,25 @@ respective whole giant exactness. Official whole-authored original
 [Original complete PE/source proof](FIGHTER_SPECIAL_STAGE_F664.md),
 `scripts/repo-python scripts/verify-fighter-special-stage-f664.py`.
 No 943-unit all-unit cold replay.
+
+
+## F665: four distinct new whole origin-unknown source-backed forwarding leaves
+
+Original native PE `00458A80`, `00458B50`, `00458C20` and
+`005F8020` each have real **19 whole native CODE bytes /nine x86
+instructions /one physical zero-addend REL32 direct-call field**.
+Separate ordinary C++ `thiscall` forwarding sources under pinned
+VC7.1 reproduce all **76/76 original linked machine CODE bytes /
+36 original x86 roles /four true PE-targeted typed COFF symbols**,
+verified by genuine original native call destination and actual
+source field displacement; no masks or fabricated register layout.
+Native original direct-call graphs show counts **5,4,2,3**, with
+currently authored direct caller counts **0,2,2,1**, which does NOT
+prove historical authored-vs-compiler provenance. Those four
+functions and all 95 historical still-origin-unknown candidates
+remain uncredited. F665 increases the research-only whole-source
+unknown cohort from **66/1,183 original B** to **70/1,259 original B**,
+without any accepted authored whole-function code change.
+[F665 original PE/COFF proof](GAME_NATIVE_FORWARDER_LEAVES_F665.md),
+`scripts/repo-python scripts/verify-game-native-forwarder-leaves-f665.py`.
+No all-unit cold replay.

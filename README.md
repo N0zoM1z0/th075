@@ -26,7 +26,7 @@ types are provisional; machine-code matches alone do not prove an entire
 original class layout. The target's official distribution provenance has not
 been independently verified; do not substitute a localized `th075c.exe`.
 
-These snapshot counts were rechecked after **F664** (2026-10-30).
+These snapshot counts were rechecked after **F665** (2026-10-30).
 The **live** sources of truth, not any dated prose milestone, are `config/functions.csv`,
 `config/function-origins.csv`, and `config/match-units.toml`.
 Refresh using `scripts/repo-python scripts/report-reconstruction-status.py --summary`.
@@ -74,17 +74,17 @@ despite matching x86 count and all 11 real PE/COFF fields; **do not
 promote** it to exact just because the case body geometry matches.
 
 Separately, **whole-function** VC7.1 C++ probes now reproduce
-**66 distinct historical origin-unknown complete original functions /
-1,183 original native CODE bytes**, all uncredited pending actual
-source ownership. F658 adds **19 independently registered complete
-5/8/11/14/16-byte leaf functions, 181 original CODE bytes and 111
-native x86**, all directly whole-byte identical without relocation
-masking or fake locals. Its native direct-caller graph and provisional
-source grammars cannot determine actual authored-vs-vendor ownership.
-[New F658 whole native leaf proof](docs/GAME_UNATTRIBUTED_SIMPLE_LEAVES_F658.md).
-Earlier F655 independently proved seven additional original unknown
-leaves, including one true source-backed PE-linked CALL forwarder.
-[Previous F655 proof](docs/GAME_UNATTRIBUTED_LEAVES_F655.md).
+**70 distinct historical origin-unknown complete original functions /
+1,259 original native CODE bytes**, all uncredited pending actual
+source ownership. New F665 proves **four distinct genuine entire
+19-byte member-call wrappers /76 exact linked native CODE bytes**;
+all four genuine PE-targeted zero-addend `REL32` field records, full
+native 36 x86 roles and actual original caller graphs are independently
+verified. Even authored original callers do not identify historical
+source ownership. [New F665 complete original native proof](docs/GAME_NATIVE_FORWARDER_LEAVES_F665.md).
+Earlier F658 independently completed 19 original simple leaves without
+relocations; their authorship likewise remains unknown.
+[Earlier F658 whole native proof](docs/GAME_UNATTRIBUTED_SIMPLE_LEAVES_F658.md).
 All previously accepted 111-byte mapping transform `00455770`,
 77-byte Shift-JIS classifier `0041CA30`, Replay render, StaffRoll,
 rank-label and selected-progress functions stay accepted exact.
