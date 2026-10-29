@@ -94,7 +94,7 @@ def source_with_barrage(source):
     return source
 
 
-def verify_negative(reader,pe,dec,code,refs,native,start,shared_exit,h):
+def verify_negative(reader,pe,dec,code,refs,native,start,shared_exit,h,following_native=None):
     ins=[]
     for x in dec.disasm(code,0):
         ins.append(x)
@@ -140,10 +140,18 @@ def verify_negative(reader,pe,dec,code,refs,native,start,shared_exit,h):
                  and f'[ebp - {new}]' in compiled[i].op_str
                  for i,(old,new) in ORIGINAL_SLOTS.items()),
          f'actual original native scratch EBP negative changed: {raw[:10]}')
-    need(ins[start+ORIGINAL_X86].mnemonic=='mov'
-         and ins[start+ORIGINAL_X86].op_str.endswith(', 0x25a'),
-         'native original 0x258 must end at next 0x259 true physical marker')
-    return {'real_original_native_action':'0x258',
+    if following_native is None:
+        need(ins[start+ORIGINAL_X86].mnemonic=='mov'
+             and ins[start+ORIGINAL_X86].op_str.endswith(', 0x25a'),
+             'native original 0x258 must end at next 0x259 source marker')
+    else:
+        need(following_native==0x259
+             and ins[start+ORIGINAL_X86].mnemonic=='mov'
+             and ins[start+ORIGINAL_X86].op_str=='eax, dword ptr [ebp - 8]'
+             and ins[start+ORIGINAL_X86+1].mnemonic=='movsx'
+             and ins[start+ORIGINAL_X86+1].op_str=='ecx, word ptr [eax + 0x62]',
+             'actual native 259 body must immediately follow original 258')
+    result={'real_original_native_action':'0x258',
             'entire_original_PE_native_start':f'0x{lo:08X}',
             'original_next_physical_native_handler':f'0x{hi:08X}',
             'original_whole_case_x86_instructions':len(original),
@@ -154,6 +162,7 @@ def verify_negative(reader,pe,dec,code,refs,native,start,shared_exit,h):
             'original_EBP_scratch':['-'+ORIGINAL_SLOTS[i][0] for i in (40,65,90,115)],
             'compiled_EBP_scratch':['-'+ORIGINAL_SLOTS[i][1] for i in (40,65,90,115)],
             'new_case_strict':False,'accepted_original_whole_authored_CODE_bytes':0}
+    return result if following_native is None else (result,start+ORIGINAL_X86)
 
 
 def main():

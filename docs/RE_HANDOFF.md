@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F674; earlier frozen handoffs are archived.**
+**Maintained 2026-10-30, after F672+F674; earlier frozen handoffs are archived.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -106,9 +106,19 @@ All **26 preceding strict cases**, four native EBP-negative controls,
 and the complete afterRET DATA remained verified in the **same new
 parent**. [Newest F674 true physical source proof](FIGHTER_CLOUD_RAIN_F674.md).
 F673 earlier added `2BC` (208 x86/692 original CODE B/20 real fields).
-Original actions `259`–`25D` remain source placeholders in this chosen
-compiler context. F666 already proved that restoring earlier source
-can shift later registers; never claim 58KB whole-parent exactness.
+**Separate F672 original source context:** all five original native
+`259/25A/25B/25C/25D` bodies (434 whole x86 /1,469 native CODE B /
+42 real zero-addend typed PE fields) now have natural C++ complete
+case grammar. Genuine x87 multiplication/load order and original eight-
+shot + four single-shot behavior match, but **24 actual original EBP
+integer-to-float scratch operands/widths differ**, so all five are
+**NONSTRICT**. That alternative full parent rechecks 25 preceding
+strict cases and keeps 2BC strict, plus all original afterRET DATA.
+[Full F672 source/real EBP negative](FIGHTER_EIGHT_SHOT_AND_FOLLOW_F672.md).
+F674's selected strict 2EF source context uses 259–25D placeholders;
+F666 independently proved that combining source contexts can change
+later register allocation. Never merge these as if a whole 58K
+parent were exact.
 **F671 next difficult original:** complete physical action258
 (**134 authentic x86 /502 real original inner CODE B /12 physical
 typed PE/COFF fields**) has a newly compiled ordinary C++
@@ -188,7 +198,9 @@ F646 `0xD0` remains nonstrict in other original actors due to
 explicitly distinguishes the 3 strict parent contexts.
 
 ```bash
-# NEW selected whole giant: strict 2EF cloud-rain and real 31C negative:
+# NEW alternate giant: five native 259..25D source/EBP negatives and strict 2BC:
+scripts/repo-python scripts/verify-fighter-eight-shot-and-follow-f672.py
+# Context-scoped strict 2EF cloud-rain and real 31C negative:
 scripts/repo-python scripts/verify-fighter-cloud-rain-f674.py
 # Earlier whole giant: strict original full 2BC ground wave:
 scripts/repo-python scripts/verify-fighter-ground-wave-f673.py

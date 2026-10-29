@@ -12019,3 +12019,32 @@ uncredited original CODE bytes**, whole-authored 943/862,726 unchanged.
 [F674 native x86 and true COFF proof](FIGHTER_CLOUD_RAIN_F674.md),
 `scripts/repo-python scripts/verify-fighter-cloud-rain-f674.py`.
 No whole 943-unit replay.
+
+
+## F672: source-backed original fighter 259–25D, 434 x86 with real EBP negatives
+
+Original native giant `00543210` now has five more **complete
+source-backed but NONSTRICT** physical action body grammars: 259
+(210 original x86/733 CODE B/20 genuine PE/COFF fields), 25A/25B
+(each 60/198/6), 25C/25D (each 52/170/5), collectively **434
+original x86 /1,469 native CODE B /42 true physical typed fields**.
+259 emits eight separate original alternating 321/322 projectiles
+in four velocity/angle pairs; 25A..25D naturally recover original
+bounce-scale float member multiplication and one-shot stage logic,
+with original float Y globals and original PE call targets. VC7.1
+identity lvalue `(*(&POS54))*global` preserves original x87
+`FLD` then `FMUL` where naïve operand syntax swapped them. These
+five source cases remain genuinely **NONSTRICT** because **24 real
+integer-to-float MOV/FILD EBP local operands/widths** compile at
+positions -0x3C..-0x68 instead of original -0x124..-0x150, emitting
+1,397 B versus original 1,469 B. Raw physical EBP validation rejects
+false strict credit independently of the old broad normalizer.
+A fresh **entire giant parent** rechecks 25 prior strict case interiors,
+all original EBP negative controls, complete afterRET jump DATA,
+and real native 2BC remains strictly matched even when the five
+natural 259..25D source bodies are restored. F674 strict 2EF exists
+in a different parent source context; don't merge its acceptance
+without retesting. [F672 authentic original source/negative proof](FIGHTER_EIGHT_SHOT_AND_FOLLOW_F672.md),
+`scripts/repo-python scripts/verify-fighter-eight-shot-and-follow-f672.py`.
+F598–F674 strict research remains **595 /161,569 native inner CODE B**;
+formal authored 943/862,726 unchanged. No mass replay.

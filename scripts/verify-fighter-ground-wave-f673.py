@@ -115,7 +115,7 @@ def source_with_groundwave(source):
     return source
 
 
-def verify_groundwave(reader,dec,code,refs,native,shared_exit,h):
+def verify_groundwave(reader,dec,code,refs,native,shared_exit,h,start_ordinal=None):
     ins=[]
     for x in dec.disasm(code,0):
         ins.append(x)
@@ -123,15 +123,22 @@ def verify_groundwave(reader,dec,code,refs,native,shared_exit,h):
     # Marker 25D is deliberately an unresolved native predecessor in
     # this selected source context. Its unique physical previous MOV
     # and shared-exit JMP anchor original source case 2BC exactly.
-    marks=[]
-    for f in refs:
-        if 'g_FighterProbeMarker' not in f['symbol']:continue
-        i=next((j for j,x in enumerate(ins) if x.address<=f['offset']<x.address+x.size),None)
-        if i is not None and ins[i].mnemonic=='mov' and ins[i].op_str.endswith(', 0x25e'):
-            marks.append(i)
-    need(len(marks)==1 and ins[marks[0]+1].mnemonic=='jmp',
-         'original source previous native 25D placeholder not unique')
-    pos=marks[0]+2
+    if start_ordinal is None:
+        marks=[]
+        for f in refs:
+            if 'g_FighterProbeMarker' not in f['symbol']:continue
+            i=next((j for j,x in enumerate(ins) if x.address<=f['offset']<x.address+x.size),None)
+            if i is not None and ins[i].mnemonic=='mov' and ins[i].op_str.endswith(', 0x25e'):
+                marks.append(i)
+        need(len(marks)==1 and ins[marks[0]+1].mnemonic=='jmp',
+             'original source previous native 25D placeholder not unique')
+        pos=marks[0]+2
+    else:
+        pos=start_ordinal
+        need(ins[pos].mnemonic=='mov' and ins[pos].op_str=='eax, dword ptr [ebp - 8]'
+             and ins[pos+1].mnemonic=='movsx'
+             and ins[pos+1].op_str=='ecx, word ptr [eax + 0x62]',
+             'actual native 2BC must directly follow original 25D C++ body')
     original,lo,hi=native
     gen=ins[pos:pos+len(original)]
     need(len(gen)==ORIGINAL_X86 and gen[-1].mnemonic=='jmp'

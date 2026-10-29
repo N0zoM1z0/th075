@@ -26,7 +26,7 @@ types are provisional; machine-code matches alone do not prove an entire
 original class layout. The target's official distribution provenance has not
 been independently verified; do not substitute a localized `th075c.exe`.
 
-These snapshot counts were rechecked after **F674** (2026-10-30).
+These snapshot counts were rechecked after **F672+F674** (2026-10-30).
 The **live** sources of truth, not any dated prose milestone, are `config/functions.csv`,
 `config/function-origins.csv`, and `config/match-units.toml`.
 Refresh using `scripts/repo-python scripts/report-reconstruction-status.py --summary`.
@@ -67,7 +67,14 @@ differences, and is never credited. In the same fresh complete
 original EBP negatives and all after-RET switch DATA remain checked.
 The selected giant now contains **27 context-strict original native
 case bodies /2,272 x86 /7,867 inner CODE B /207 original fields**,
-but remains **whole-NONEXACT**. [Latest F674 full native PE proof](docs/FIGHTER_CLOUD_RAIN_F674.md).
+but remains **whole-NONEXACT**. [Latest strict F674 full native PE proof](docs/FIGHTER_CLOUD_RAIN_F674.md).
+New F672 separately reconstructs **five entire genuine native
+`0x259..0x25D` source cases** (434 x86/1,469 original CODE B/
+42 real PE/COFF fields) in a selected full parent, with all 26
+prior context-strict case interiors and separate after-RET data
+rechecked. They remain deliberately **NONSTRICT** because 24 genuine
+integer-to-float EBP local operands/widths differ from original.
+[Full F672 original source and EBP-negative proof](docs/FIGHTER_EIGHT_SHOT_AND_FOLLOW_F672.md).
 F673 earlier added the separate large `0x2BC` ground-wave case
 (208 x86/692 original B/20 real fields).
 F671 goes on to reconstruct the **much larger native `0x258`
