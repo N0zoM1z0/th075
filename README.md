@@ -26,7 +26,7 @@ types are provisional; machine-code matches alone do not prove an entire
 original class layout. The target's official distribution provenance has not
 been independently verified; do not substitute a localized `th075c.exe`.
 
-These snapshot counts were rechecked after **F652** (2026-10-29).
+These snapshot counts were rechecked after **F653** (2026-10-29).
 The **live** sources of truth, not any dated prose milestone, are `config/functions.csv`,
 `config/function-origins.csv`, and `config/match-units.toml`.
 Refresh using `scripts/repo-python scripts/report-reconstruction-status.py --summary`.
@@ -50,13 +50,16 @@ bodies remain wrong**. This is outstanding, **not a fully byte-exact
 33K function**. Reproduce via
 `scripts/repo-python scripts/verify-characterobject-native-collision-order-f596.py`.
 
-**F598–F652's 572 strictly source-backed fighter *internal case
-bodies* (154,461 original internal CODE bytes) remain uncredited**:
+**F598–F653's 575 strictly source-backed fighter *internal case
+bodies* (155,094 original internal CODE bytes) remain uncredited**:
 none of their enclosing giant `Advance()` functions is fully exact.
-The latest strict evidence is four consecutive native `CF/D0/D1/D2`
-cases in giant `00543210` (223 real x86, 759 internal CODE bytes,
-28 physical fields); only the last `D1/D2` (450 bytes) were newly
-reconstructed in F651/F652. Native complex `0xCC` in `005AEEC0`
+The newest three `0x12C/0x12D/0x12E` native falling-recovery cases
+(F653) add **179 x86 roles, 633 original CODE bytes and 18 genuine
+PE/COFF fields** to the **seven consecutive strict native case bodies**
+`CF/D0/D1/D2/12C/12D/12E` in giant `00543210` (402 native x86,
+1,392 internal CODE bytes, 46 physical fields). Reproduce the
+[new source and full-parent proof](docs/FIGHTER_FALLING_RECOVERY_F653.md).
+Native complex `0xCC` in `005AEEC0`
 and `00564BE0` still has **80/78 genuine wrong GPR/CFG roles**
 despite matching x86 count and all 11 real PE/COFF fields; **do not
 promote** it to exact just because the case body geometry matches.

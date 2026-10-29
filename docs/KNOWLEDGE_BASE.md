@@ -11593,3 +11593,26 @@ original internal CODE bytes**; accepted authored whole exact
 compiler proof](FIGHTER_COMPLEX_STAGE_CC_F649.md),
 `scripts/repo-python scripts/verify-fighter-complex-stage-cc-f649.py`.
 No all-unit cold replay.
+
+
+## F653: strict natural C++ native falling-recovery cases in original giant 00543210
+
+A new complete 58,294-CODE-byte fighter giant source probe cold-built under
+pinned VC7.1 matches the original **three consecutive 12C/12D/12E
+physical inner case extents** (207/219/207 original CODE bytes, 59/61/59
+native x86 instructions) with all **18 original PE/COFF fields**,
+true GPR/x87 and full CFG roles. Original `12D` uniquely clears its
+extra short flag `+0xF00` and triggers animation stage 4; `12C`
+prepares `0x1B` at stage 2, while `12E` prepares `0x1D` and sets
+action 2. Actual original x87 `FSUB` float `00658058` uses a verified
+typed DIR32 relocation; **do not confuse its zero-valued unlinked
+COFF operand with an incorrect original float constant**. Strict
+F651/F652 CF/D0/D1/D2 and complete after-RET switch DATA were
+rechecked in the **same newly compiled** fighter. Net newly strict
+**179 native x86 /633 internal original CODE B /18 typed PE/COFF**;
+now **575 strict original internal case bodies /155,094 uncredited
+native CODE bytes** across giant research. 22 whole giant parents
+remain NONEXACT, all 943/862,726 independently accepted whole function
+figures unchanged. [Full original proof](FIGHTER_FALLING_RECOVERY_F653.md),
+`scripts/repo-python scripts/verify-fighter-falling-recovery-f653.py`.
+No 943-unit replay.

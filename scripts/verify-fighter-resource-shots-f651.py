@@ -140,7 +140,7 @@ def source_with_d1_d2(reader,pe,decoder,boss,report,mapped,h):
     return src
 
 
-def verify_full(reader,pe,decoder,boss,report,mapped,code,refs,originals,h):
+def verify_full(reader,pe,decoder,boss,report,mapped,code,refs,originals,h,following_native=None):
     ins=[]
     for x in decoder.disasm(code,0):
         ins.append(x)
@@ -199,9 +199,17 @@ def verify_full(reader,pe,decoder,boss,report,mapped,code,refs,originals,h):
                         'original_complete_native_x86_roles':len(original),
                         'real_original_typed_PE_COFF_fields':len(physical),
                         'new_accepted_whole_authored_function_bytes':0})
-    need(ins[offset].mnemonic=='mov' and ins[offset].op_str.endswith(', 0x12d'),
-         'source D2 whole case must terminate at real following action0x12C marker')
-    return {'original_entire_parent_giant':f'0x{ACTOR:08X}',
+    if following_native is None:
+        need(ins[offset].mnemonic=='mov' and ins[offset].op_str.endswith(', 0x12d'),
+             'source D2 whole case must terminate at real following action0x12C marker')
+    else:
+        need(following_native==0x12C and ins[offset].mnemonic=='mov'
+             and ins[offset].op_str=='ecx, dword ptr [ebp - 8]'
+             and ins[offset+1].mnemonic=='movsx'
+             and ins[offset+1].op_str=='edx, word ptr [ecx + 0x62]',
+             'following original 0x12C native source must directly follow D2')
+    return {'continuation_source_ordinal':offset,
+            'original_entire_parent_giant':f'0x{ACTOR:08X}',
             'entire_original_parent_CODE_still_NONEXACT':boss['size'],
             'separately_owned_original_afterRET_switch_DATA_bytes':boss['postret_size'],
             'preceding_original_CF_D0_F645_F642_30_source_cases_and_jump_DATA_rechecked':True,
@@ -210,7 +218,7 @@ def verify_full(reader,pe,decoder,boss,report,mapped,code,refs,originals,h):
             'new_whole_authored_exact_functions':0}
 
 
-def main():
+def load_helpers():
     loaders={
       'f602':'scripts/verify-fighter-trajectory46-f602.py',
       'f603':'scripts/verify-fighter-trajectory-spawn-f603.py',
@@ -244,7 +252,11 @@ def main():
       'zero':'scripts/verify-fighter-actionzero-natural-source.py',
       'switch':'scripts/verify-fighter-natural-switch-probes.py',
     }
-    h={name:load('f651_'+name,ROOT/path) for name,path in loaders.items()}
+    return {name:load('f651_'+name,ROOT/path) for name,path in loaders.items()}
+
+
+def main():
+    h=load_helpers()
     reader=load('f651_reader',ROOT/'scripts/compare-coff-function.py')
     acts=load('f651_acts',ROOT/'scripts/report-fighter-action-handlers.py')
     pe=reader.verified_target();decoder=Cs(CS_ARCH_X86,CS_MODE_32)
