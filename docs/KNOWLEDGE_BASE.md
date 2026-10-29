@@ -10672,3 +10672,30 @@ insufficient. Zero accepted complete authored function CODE, no
 invented source padding/all-unit cold replay. [F615 full source
 experiment/provenance](WINMAIN_LOCAL_OBJECT_LAYOUT_F615.md),
 selected `scripts/repo-python scripts/verify-winmain-local-layout-f615.py --case msg-before-app-plus-all-hwnd-event-int`.
+
+
+## F616: genuine three complete 88-byte PE constructors, explicit vs implicit source ambiguity
+
+Original Japanese TH075 native game constructors `004251C0`
+(34 B/13 x86), `00458670` (23 B/10 x86) and `00458650`
+(31 B/12 x86) are independently fully CODE-reproducible under pinned
+VC7.1 `/Od /Ob0 /Gy /GR- /GX- /GS /Zi` from BOTH explicit empty
+constructors and implicit compiler-generated default constructors
+triggered via ordinary C++ placement-new. Their five real native
+physical COFF fields resolve to original vtable `00657B88`, member
+constructor `00417210`, base/derived virtual tables `0065904C` and
+`00659038`, and native base constructor `00458670` respectively.
+All **88/88 whole original linked CODE bytes** and **35/35 complete
+native x86 instructions** are equal after typed original-target
+resolution. An independent 4,351 native original function CALL scan
+finds 15 authored scene caller functions, two authored derived
+ctor callers, and two actual base ctor callers (one derived, one
+authored). **This proves game use but not historical author-vs-
+generated source origin**; all three remain 95-member original
+`unknown` origin review, no 88-byte authored exact credit or whole
+vtable ownership claim. [F616 complete original C++ alternatives
+and typed PE/COFF evidence](NATIVE_GAME_CONSTRUCTORS_F616.md),
+`probes/NativeGameConstructorsF616.cpp`,
+`probes/NativeGameConstructorsImplicitF616.cpp`, targeted
+`scripts/repo-python scripts/verify-native-game-constructors-f616.py`.
+No all-unit cold replay, no new match ledger credit.

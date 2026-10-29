@@ -1,6 +1,6 @@
 # TH075 — active reconstruction handoff
 
-**Maintained 2026-10-29 after F615.** This is the **only current task list**.
+**Maintained 2026-10-29 after F616.** This is the **only current task list**.
 The [F540–F596 research chronology](history/RE_HANDOFF_F540_THROUGH_F596.md),
 [knowledge base](KNOWLEDGE_BASE.md), and older F-series studies are
 **historical evidence**, not statements of current progress. Independently
@@ -511,6 +511,31 @@ callers yet implicit-vs-explicit constructor ambiguity; also
 unknown. `004588B0` has six mixed vendor/game callers.
 See [F595 original native small-function provenance](SMALL_ORIGIN_UNKNOWN_FIELDSETTER_F595.md)
 and historical [origin review](ORIGIN_PENDING_REVIEW.md).
+
+**F616 three original COMPLETE constructor CODE bodies rebuilt from two
+independent ordinary VC7.1 source grammars; provenance still UNKNOWN.**
+The exact original PE function boundaries are `004251C0` (34 B/13 x86,
+real vtable `00657B88`, real member ctor call `00417210`),
+`00458670` (23 B/10 x86, real vtable `0065904C`) and `00458650`
+(31 B/12 x86, actual base ctor call `00458670` and derived vtable
+`00659038`). Both C++ source alternatives—explicit empty constructors
+**and** compiler-generated implicit default constructors through real
+placement-new—cold compile to **all 88/88 linked native CODE bytes**
+after verifying every one of the **five true original typed PE/COFF
+fields**, 35 native x86 and destination symbols. Real original 4,351-
+function direct-call scan finds 15 authored scene initializers calling
+the scene ctor, 2 authored game callers of derived ctor, and 2 real
+base callers. Game usage does NOT establish explicit-vs-implicit
+source provenance: **all three remain `unknown`/`review`, with zero
+accepted authored CODE byte credit**. [F616 full original native
+constructor proof](NATIVE_GAME_CONSTRUCTORS_F616.md),
+[explicit C++](../probes/NativeGameConstructorsF616.cpp),
+[implicit generated source](../probes/NativeGameConstructorsImplicitF616.cpp).
+
+```bash
+scripts/repo-python scripts/verify-native-game-constructors-f616.py
+```
+
 
 **F604 added two further complete original byte-identical small
 source leaves with unknown provenance.** Original `00454C00`
