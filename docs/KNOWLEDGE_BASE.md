@@ -10141,3 +10141,41 @@ Original-backed full source proof:
 [F596 strict native x87 order study](CHARACTEROBJECT_NATIVE_COLLISION_ORDER_F596.md).
 The original 943 whole authored exact functions/862,726 CODE
 bytes are unchanged, no all-unit replay or Oracle.
+
+
+## F598: real action50 contact-return source inside eleven unmatched giant fighter controllers
+
+New PE-backed standalone original action50/`0x32` native case is a **58-x86
+instruction** interior of each of eleven separate large fighter originals.
+The original branch is an independent `CMP state,0x32; JE`, followed by
+true `0x33` indexed case boundary. One shared natural C++ singleton
+`probes/FighterSingletonContactF598.inc` corrects the originally
+misread x87 comparisons to **`POS < zero`** then **`POS > zero`**
+and matches the real `00454EE0` signed-byte contact callback, signed
+`this+0x3BE`, float×double `006583E8` projection to `this+0x490`,
+and `0040FA30` / `0040FAC0(0)` state transition.
+
+All **11/11** original entire SHA-pinned giant contexts were freshly
+compiled with the new case included in actual `Advance()` C++ (no ASM
+or stubbed inner case). Each case matches **58 original x86 GPR/x87/
+branch instruction roles, exactly seven typed COFF call/global fields
+with genuine original addresses and zero addends**. Ten cases match
+205-byte native length, one wide-frame `00564BE0` native is 256 bytes
+against 205 candidate solely because 17 genuine receiver MOVs use
+3-byte larger EBP-0x88 displacements. Old 121 case shapes and full
+seven-switch COFF/DATA geometry are still verified. Across the eleven
+nonexact parent giants: 132 real source-backed internal cases, 7,473
+native instruction roles, 26,835 original internal CODE bytes and
+867 physical typed case fields. **ZERO** new whole exact function
+credit, no after-RET DATA credit, no all-unit cold replay.
+
+Six original-backed candidate C++ changes to giant `004EBDA0`
+case38D register-phase, plus six real 171-byte native archive
+destructor filename/free lifetime tests, were also compiled and
+**negative** (the direct-free tradeoff fixes deletion stack slots but
+loses two real instructions). Preserve their ignored negative controls
+in `.analysis/f598-native-register-investigation/` and
+`.analysis/f598-archive-declaration/`. Targeted original/source
+reproducer `scripts/repo-python
+scripts/verify-fighter-singleton-contact-f598.py --boss 0x004F7130`;
+full detail [F598 giant and small original source study](FIGHTER_SINGLETON_CONTACT_F598.md).

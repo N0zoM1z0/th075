@@ -1,6 +1,6 @@
 # TH075 — active reconstruction handoff
 
-**Maintained 2026-10-29 after F596.** This is the **only current task list**.
+**Maintained 2026-10-29 after F598.** This is the **only current task list**.
 The [F540–F596 research chronology](history/RE_HANDOFF_F540_THROUGH_F596.md),
 [knowledge base](KNOWLEDGE_BASE.md), and older F-series studies are
 **historical evidence**, not statements of current progress. Independently
@@ -67,7 +67,7 @@ compiler-register cycles; **whole giant remains NONEXACT**:
 
 | Native case | Native complete role/size (not credited exact) | Different original GPR-role operands | Useful next evidence |
 | --- | --- | ---: | --- |
-| `0x38D` | 155 instructions /570 B | **45**, starting at case ordinal **91** (`004F344C`) | Native registers rotate after stage4 fade; source `F32(+0x1C)`/byte fade lexical scope suspected but **23 F594 natural variants failed** |
+| `0x38D` | 155 instructions /570 B | **45**, starting at case ordinal **91** (`004F344C`) | Native registers rotate after stage4 fade; source `F32(+0x1C)`/byte fade lexical scope suspected but **23 F594 + 6 F598 natural variants failed** |
 | `0x38E` | 87 /348 B | **64** | Register rotation persists across source case boundary; compare original owner/view, not isolated fake register assignments |
 | `0x3E3` | 200 /812 B | **24**, all in ordinals 0–30 | The same cycle disappears at ordinal31; investigate genuine enclosing scope and last-case compiler context |
 
@@ -108,13 +108,27 @@ Read `config/fighter-boss-dispatch-fingerprints.json`,
 [FIGHTER_BOSS_FAMILY_DISPATCH.md](FIGHTER_BOSS_FAMILY_DISPATCH.md),
 [FIGHTER_ACTION_CASE_RESOLUTION.md](FIGHTER_ACTION_CASE_RESOLUTION.md),
 and [FIGHTER_OPENING_SIX_CASES_CODEGEN.md](FIGHTER_OPENING_SIX_CASES_CODEGEN.md).
-Promising uncompleted nondefault action6–8 sources include giant
-`004F7130`, `005214B0`, and `005AEEC0`; verify actual PE
-case boundaries, call targets and compiler context anew, rather than
-trusting older hypothesized roles. Use only a *targeted* native boss unit verifier, for example:
+**F598, newly original-backed 12th action inside all eleven multi-switch
+fighter giants:** native isolated action **0x32/50** now compiles as real
+natural C++ in the same `Advance()` function as the earlier 11 original
+actions, rather than a diagnostic marker. The 11 whole-case codegen
+comparisons prove **638 original x86 instruction roles /2,306 internal
+CODE bytes /77 true typed native COFF fields**; the one `00564BE0`
+wide-frame case requires 17 physical EBP-0x88 receiver loads
+(**256 native vs 205 source CODE bytes**). All earlier 121 native
+case grammars and 1,607 physical jump DWORD fields/4,502 original
+sparse bytes remain verified. Together **132 inner cases /26,835
+original CODE bytes** are source-backed but **NO entire giant CODE
+byte-exact acceptance or split-case credit**. Later actions beginning
+`0x33` and their parent frame/switch lifetime remain undone.
+[F598 PE+VC7.1 11-fighter contact singleton](FIGHTER_SINGLETON_CONTACT_F598.md),
+tracked real C++ [case source](../probes/FighterSingletonContactF598.inc).
+
+Use only a *selected* fighter original and source compilation, for example:
 
 ```bash
-scripts/repo-python scripts/verify-fighter-opening-actions-natural-source.py --boss 0x005D73C0
+scripts/repo-python scripts/verify-fighter-singleton-contact-f598.py --boss 0x004F7130
+scripts/repo-python scripts/verify-fighter-singleton-contact-f598.py --boss 0x00564BE0
 ```
 
 Never run a full 943-unit cold replay.
@@ -125,7 +139,7 @@ Never run a full 943-unit cold replay.
 | --- | --- | --- |
 | **`00602A60`** `GameApplication::Run` | **2,987 B; 654 original x86, 123 calls**, original 0x278 frame | F528 best normal C++ source emits 2,981 B /654 x86 but wrong native EBP owner local slots; inspect `.analysis/f528-winmain-native-initial-scene/`, [WinMain whole CFG](WINMAIN_ORIGINAL_CONTROL_FLOW.md). The original scene switch's 60 after-RET bytes are DATA |
 | **`0043B0B0`** battle scene destructor | **248 B /75 x86 /12 original COFF fields** | True VC7.1 `/GX` ordinary C++ has **191/200** non-COFF bytes; nine different literal EBP temp slots for texture delete and three resource frees. [F589 native destructor probes](SCENE_TEXTURE_DELETE_CONTROLS_F589.md). No 248-byte exact credit |
-| **`0041CE50`** archive catalog nonvirtual destructor | **171 B /51 x86 /14 real COFF fields** | Natural `/GX-` C++ has **108/115** nonrelocation bytes; original delete/filename temporary locals use different EBP ownership. [F584 native archive delete experiments](ARCHIVE_DELETE_EXPRESSION_CONTROLS_F584.md). No 171-byte exact credit |
+| **`0041CE50`** archive catalog nonvirtual destructor | **171 B /51 x86 /14 real COFF fields** | Natural `/GX-` C++ has **108/115** nonrelocation bytes; original delete/filename temporary locals use different EBP ownership. F598 confirms direct filename `free` fixes the **resource** stack slots but incorrectly drops 2 native instructions (165 rather than 171 B); meaningful local filename source restores 171 B but shifts slots back. [F584 native archive delete experiments](ARCHIVE_DELETE_EXPRESSION_CONTROLS_F584.md) and [F598 small C++ negatives](FIGHTER_SINGLETON_CONTACT_F598.md). No 171-byte exact credit |
 
 Unknown provenance is **separate** from these authored nonexact
 functions. F595 produced **40/40 byte-identical native C++** for
