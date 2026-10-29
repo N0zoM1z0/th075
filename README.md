@@ -26,24 +26,44 @@ types are provisional; machine-code matches alone do not prove an entire
 original class layout. The target's official distribution provenance has not
 been independently verified; do not substitute a localized `th075c.exe`.
 
-These counts are the verified snapshot after **F555** (2026-10-29).
-The full, constantly changing register of accepted units is
-`config/functions.csv` and `config/match-units.toml`, **not** a long
-manual list of batch IDs. For live counts run
-`scripts/repo-python scripts/report-reconstruction-status.py --summary`.
-Exactly **25** currently `owner=authored,status=unclassified` functions
-remain: **22** original 28K–82K fighter action bosses, the **2,987-byte**
-WinMain, **248-byte** SceneObject destructor and **171-byte** archive
-nonvirtual destructor. The 111-byte coordinate mapping transform `00455770` is cold exact (F536), as is the separate 77-byte font Shift-JIS lead-byte classifier `0041CA30` (F555). The original owner names remain provisional. The old 303-byte Replay renderer, two 169-byte
-rank labels, 208-byte StaffRoll and 92-byte progress counter are all
-**already cold exact**; do not retry historical pending experiments.
-The 22-boss original-only verifier records **1,102,055 uncredited CODE
-bytes** and 16,123 uncredited post-RET switch DATA bytes. F537 also
-[resolves 7,152 original action-ID entries](docs/FIGHTER_ACTION_CASE_RESOLUTION.md) and [F539 reproduces two natural giant switch-dispatch codegen shapes](docs/FIGHTER_SWITCH_CODEGEN_RECONSTRUCTION.md) and [F540/F541 recover and independently compile native action-zero C++ codegen across all eleven multi-switch giants](docs/FIGHTER_ACTIONZERO_FAMILY_CODEGEN.md)
-and [F542 validates action-one C++ against eleven whole-giant originals](docs/FIGHTER_ACTIONONE_FAMILY_CODEGEN.md) and [F545 reproduces six real opening actions per multi-switch fighter](docs/FIGHTER_OPENING_SIX_CASES_CODEGEN.md) and [F547 recovers the full native 42-instruction action-nine source behavior](docs/FIGHTER_ACTIONNINE_FAMILY_CODEGEN.md) and [F548 compiles full 104-instruction action-six behavior for three giant fighters](docs/FIGHTER_ACTION_SIX_FAMILY_CODEGEN.md) and [F549 verifies separate 31-/20-instruction action-ten source families](docs/FIGHTER_ACTIONTEN_NATIVE_CPP.md) and [F551 completes action seven for three giant fighter bodies](docs/FIGHTER_ACTIONSEVEN_NATIVE_CPP.md) and [F553 restores role-specific action-eight C++ (including the missing flag-clear)](docs/FIGHTER_ACTIONEIGHT_NATIVE_CPP.md) and [F556 recovers complete 117-instruction extra-stage action 6/7 C++ in CharacterMove and a second giant](docs/FIGHTER_EXTRA_STAGE_SOURCE_F556.md) and [F557 verifies the 115-instruction no-flag stage variants (including a real 508-byte wide-stack case)](docs/FIGHTER_STAGE_NO_FLAG_F557.md) and [F558 verifies a third true action in CharacterMove and its 117-instruction sibling](docs/FIGHTER_EXTRA_STAGE_EIGHT_F558.md) and [F559 reproduces the native 458-byte wide-stack action-eight case in another giant](docs/FIGHTER_WIDE_ACTION_EIGHT_F559.md) and [F560 reconstructs precontact auxiliary action-eight logic in a 58K fighter boss](docs/FIGHTER_PRECONTACT_ACTION_EIGHT_F560.md) and [F562 models three true stage/motion actions in a separate 43K fighter boss](docs/FIGHTER_SPLIT_STAGE_F562.md) and [F563 reconstructs positive-FLAG secondary-motion cases across two additional giant fighter bosses](docs/FIGHTER_FLAG_OVERRIDE_SOURCE_F563.md) and [F564 integrates eleven real action cases into each whole fighter C++ switch](docs/FIGHTER_INTEGRATED_ELEVEN_CASES_F564.md) and [F565 recovers a distinct 96/83/83 native scripted-action family in another giant](docs/FIGHTER_SCRIPTED_STAGE_F565.md) and [F566 integrates all eleven original actions into the scripted giant C++ source](docs/FIGHTER_INTEGRATED_SCRIPTED_F566.md) and [F567 integrates real opening actions across all eleven multi-switch giant fighters](docs/FIGHTER_ALL_MULTISWITCH_INTEGRATION_F567.md) and [F569 reconstructs the original parent guards and compressed-dispatch source for eleven CharacterObject giants](docs/CHARACTEROBJECT_SINGLE_SWITCH_F569.md) and [F570/F571 audit genuine destructor local/object lifetimes without false exact credit](docs/DESTRUCTOR_LIFETIME_CONTROLS_F570_F571.md) and [F572 reconstructs ten genuine CharacterObject action bodies including three complete 271-instruction game policies](docs/CHARACTEROBJECT_FIRST_TEN_NATIVE_CASES_F572.md) and [F573 reconstructs a further complete 248-instruction CharacterObject x87 action with an explicitly verified read-only instruction swap](docs/CHARACTEROBJECT_X87_ACTION32A_F573.md) and [F574 reconstructs native FPU stage curve and collision effects in two more complete CharacterObject action bodies](docs/CHARACTEROBJECT_STAGE_CURVE_F574.md) and [F575 recovers two strict original CharacterObject fade actions with correct default-handler bounds](docs/CHARACTEROBJECT_FADE_ACTIONS_F575.md) and [F576 reconstructs two 274-instruction fire-state actions with native deep-frame spill widths explicitly explained](docs/CHARACTEROBJECT_FIRE_STATES_F576.md) and [F577 recovers the next complete 279-instruction CharacterObject direction reversal and original stack-width proof](docs/CHARACTEROBJECT_DIRECTION_REVERSAL_F577.md) and [F578 restores a further complete 269-instruction CharacterObject contact action and naturally eliminates an earlier six-byte source-frame width gap](docs/CHARACTEROBJECT_CONTACT_STAGE_F578.md) and [F579 recovers two more strictly matching native CharacterObject effect/fade action bodies](docs/CHARACTEROBJECT_FADE_SPAWNS_F579.md) and [F580 reconstructs four more fully matching native CharacterObject game-action bodies](docs/CHARACTEROBJECT_FOUR_ACTIONS_F580.md) and [F581 reconstructs two more complete CharacterObject parent-scatter actions while testing real archive destructor lifetime variants](docs/CHARACTEROBJECT_PARENT_SCATTER_F581.md) and [F582 reconstructs two complete original 159-instruction CharacterObject absolute-motion actions with exact native source order](docs/CHARACTEROBJECT_ABSOLUTE_MOTION_F582.md) and [F583 restores three complete CharacterObject state/fade actions with strict original source geometry](docs/CHARACTEROBJECT_STATE_LEAVES_F583.md) and [F584 tests twelve real complete ArchiveCatalog destructor delete-expression lifetimes without false exact credit](docs/ARCHIVE_DELETE_EXPRESSION_CONTROLS_F584.md) and [F585 reconstructs five complete CharacterObject trajectory/sync actions including three 286–289-instruction giants](docs/CHARACTEROBJECT_TRAJECTORY_F585.md) and [F586 reconstructs two more 295/278-instruction native CharacterObject late-stage actions and genuine x87 stack-frame gains](docs/CHARACTEROBJECT_LATE_STAGES_F586.md) and [F587 reconstructs an entire 397-instruction original CharacterObject four-way effect action with 25 authentic typed COFF refs](docs/CHARACTEROBJECT_FOUR_WAY_EVENT_F587.md) and [F588 restores three more entire native CharacterObject cases and naturally obtains the exact original EBP temp offsets](docs/CHARACTEROBJECT_THREE_NATIVE_STAGES_F588.md) and [F589 independently tests fourteen complete SceneObject virtual destructor texture-delete C++ expressions against original PE/COFF](docs/SCENE_TEXTURE_DELETE_CONTROLS_F589.md) and [F590 recovers the next three complete native CharacterObject guarded and contact actions with original global-byte COFF proof](docs/CHARACTEROBJECT_GUARDED_STAGES_F590.md) and [F591 restores three complete native CharacterObject effect/fade cases including the unconditional stage-color policy](docs/CHARACTEROBJECT_STAGE_FADES_F591.md) and [F592 reconstructs five complete 92–260-instruction CharacterObject angle/trajectory actions with 64 original PE-typed COFF fields](docs/CHARACTEROBJECT_COMPLEX_AIM_F592.md) and [F593 aligns the entire 33,293-byte CharacterObject giant, all 8,789 x86 instructions and 682 true PE/COFF fields while isolating 155 remaining original-byte differences](docs/CHARACTEROBJECT_WHOLE_GEOMETRY_F593.md) and [F595 reconstructs an original 40-byte field-setter leaf exactly but keeps its game/vendor ownership unknown](docs/SMALL_ORIGIN_UNKNOWN_FIELDSETTER_F595.md) and [F596 restores byte-exact native collision MOV/FLD order in the full 33K CharacterObject boss, reducing nonfield errors to 137](docs/CHARACTEROBJECT_NATIVE_COLLISION_ORDER_F596.md) through native switch tables and singleton branches; **no giant boss
-is C++ exact yet**. See the [active handoff](docs/RE_HANDOFF.md), not outdated chronological notes.
-Local Git commits preserve checkpoints; they are **not external Oracle
-verification receipts**.
+These counts were independently verified after **F596** (2026-10-29),
+but the live sources of truth are `config/functions.csv`,
+`config/function-origins.csv`, and `config/match-units.toml`.
+Refresh using `scripts/repo-python scripts/report-reconstruction-status.py --summary`.
+
+The original authored backlog is **25 whole functions**: **22 large fighter
+bosses** totaling **1,102,055 uncredited CODE bytes** (plus 16,123 distinct
+after-RET switch DATA bytes), the 2,987-byte WinMain, 248-byte battle scene
+destructor and 171-byte archive catalog destructor. **No giant is currently
+accepted whole exact.** The 95 origin-unknown candidates are a separate
+classification issue and cannot be silently counted as game-authored CODE.
+
+### Latest substantial whole giant and small-function work
+
+The one native giant `004EBDA0` now compiles from ordinary VC7.1 C++ into
+the same **33,293 bytes of CODE, 8,789 x86 instructions in identical order,
+and 438 after-RET DATA-layout bytes**. All **682 physical typed PE COFF
+fields** and 198 original sparse-index bytes are independently checked.
+Following F596's genuine C++ evaluation-order corrections, **30,866/31,003
+nonrelocation bytes match**; **137 bytes in three register-allocation case
+bodies remain wrong**. This is outstanding, **not a fully byte-exact
+33K function**. Reproduce via
+`scripts/repo-python scripts/verify-characterobject-native-collision-order-f596.py`.
+
+Smaller verified work includes a **40/40 whole original byte-exact
+source probe** for `004135F0`, but original authorship remains **unknown**;
+no exact authored credit was claimed. The 111-byte mapping transform
+`00455770` (F536), 77-byte Shift-JIS classifier `0041CA30` (F555),
+303-byte Replay renderer and historically disputed StaffRoll, rank-label
+and selected-progress functions are **already accepted exact**; do not
+repeat their superseded negative experiments.
+
+For the actual unresolved work, start with the
+[short current agent handoff](docs/RE_HANDOFF.md); the original long
+[F540–F596 chronological handoff](docs/history/RE_HANDOFF_F540_THROUGH_F596.md)
+preserves every historical action-source milestone without cluttering
+the first screen. Git commits preserve local checkpoints; they are
+**not external Oracle acceptance**.
 
 ## Begin a new reconstruction session
 
@@ -114,8 +134,9 @@ their evidence or verifiers. See [the workflow](docs/RE_WORKFLOW.md).
 | [Build and matching guide](docs/BUILD_MATCHING.md) | Compiler profiles, COFF and cold-replay mechanics |
 | [Ghidra MCP guide](docs/GHIDRA_MCP.md) | Headless project/bridge operation |
 | [Origin review](docs/ORIGIN_PENDING_REVIEW.md) | 95 currently unclassified origins (R263 historical matrix) |
-| [Historical handoffs](docs/history/RE_HANDOFF_THROUGH_F183.md) | Superseded records; not the current task list |
-| [Storage protection and recovery](docs/STORAGE_HYGIENE.md) | SHA256-verified archive/restore of historical JSON snapshots and regenerable probe PDBs; protect Wine, original PE, COFF objects and current source |
+| [Historical detailed F540–F596 handoff](docs/history/RE_HANDOFF_F540_THROUGH_F596.md) | All previous milestone notes; **not** current backlog |
+| [Earlier handoffs](docs/history/RE_HANDOFF_THROUGH_F183.md) | Older archived experiments |
+| [Storage protection and recovery](docs/STORAGE_HYGIENE.md) | Lossless SHA256-verified JSON/PDB archives and F597 archival of 243 old CI logs (≈90.4 MiB reclaimed); protect original PE, VC7.1/Wine, Ghidra, COFF/PDB and current source |
 
 The pre-cleanup verbose F223 handoff and README are also recoverable from
 Git commit `ca81d72`; older origin work is retained under `docs/history/`,

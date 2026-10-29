@@ -1,16 +1,26 @@
 # TH075 reconstruction knowledge base — cumulative historical evidence
 
-**Current snapshot: 2026-10-29, after F555.** This document is a
+**Current status annotation: 2026-10-29, after F596.** This document is a
 **chronological experiment log**, not the active backlog. Earlier F-series
 sections describe *historical* status; older claims such as "still pending",
 "nonexact", or "no credit" are **not active status** after a later exact
-adoption. The compact [current handoff](RE_HANDOFF.md), SHA-pinned original
+adoption. Earlier original 33K giant experiments such as F593
+show **historical** 155-byte source differences, superseded by F596
+**137 nonrelocation bytes**; all 8,789 original x86 instruction
+mnemonics are now in their exact machine ordinal positions.
+F597 organizes the previously 977-line active handoff into a
+short, current-source-backed page, retaining the full old F540–F596
+narrative in [historical chronology](history/RE_HANDOFF_F540_THROUGH_F596.md).
+It also preserves 243 old large CI logs as a hash-verified recoverable
+archive, reclaiming 90.4 MiB without deleting native experiments;
+see [storage protection](STORAGE_HYGIENE.md).
+The compact [current handoff](RE_HANDOFF.md), SHA-pinned original
 Japanese `resources/th075.exe`, and canonical live ledgers outrank old prose.
 
 ## Current authoritative status and superseded negatives
 
 - **943 cold-exact source-present functions**, **862,726 original authored
-  CODE bytes**, **43.71% reviewed authored coverage** and **43.63%
+  CODE bytes**, **43.71% reviewed authored coverage** and **43.64%
   conservative coverage**. **Only 25 `owner=authored,status=unclassified`
   function rows currently remain:** 22 giant fighter action/advance bosses
   totalling 1,102,055 original CODE bytes, WinMain (2,987), SceneObject

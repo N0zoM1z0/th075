@@ -1,10 +1,14 @@
 # TH075 local storage hygiene and lossless recovery
 
-**Updated 2026-10-29.** This is a storage report and recovery recipe, **not**
-a license to remove original PE/C++/COFF evidence or skip dirty work. The
-only tracked change required for the snapshot compaction was the reversible
-`scripts/archive-historical-analysis.py` helper; actual historical archives
-and receipts live under **Git-ignored** `.analysis/` (local to this worktree).
+**Updated 2026-10-29, after F597 maintenance.** This is a storage
+report and recovery recipe, **not** permission to remove original
+PE/C++/COFF evidence or skip dirty work. Archives and per-file
+SHA256 receipts are under **Git-ignored** `.analysis/cache-archives/`
+(local to this worktree). Their **restoration tools and instructions
+are tracked in Git**; new Git clones do not automatically receive
+those local archives. Historical JSON/PDB batches and the new F597
+legacy CI-log batch were archived separately without touching
+source, original-function evidence, Wine or accepted build objects.
 
 ## What was compacted, with independently verified bytes
 
@@ -12,7 +16,8 @@ and receipts live under **Git-ignored** `.analysis/` (local to this worktree).
 | --- | ---: | ---: | ---: | ---: |
 | Old parent/adoption JSON snapshots, 2026-10-29 | **135** | **649,802,039** | **35,694,113** | **614,107,926** |
 | Unprotected old compiler-probe PDBs, 2026-10-29 | **1,002** | **71,393,280** | **7,298,260** | **63,919,095** net including receipt |
-| **This cleanup** | **1,137** | **721,195,319** | **42,992,373** | **≈ 647 MiB** after receipts/index overhead |
+| **Earlier JSON/PDB batches** | **1,137** | **721,195,319** | **42,992,373** | **≈ 647 MiB** after receipts/index overhead |
+| **F597 old CI logs (F001–F300 only)** | **243** | **108,699,966** | **13,829,049** | **94,834,471 bytes net** after 36,446-byte receipt (**≈ 90.4 MiB**) |
 
 The pre-existing **2026-10-28** verified PDB archive and its original
 receipts are **still present** and were **not** removed or overwritten.
@@ -36,6 +41,55 @@ remove the old loose PDBs. The complete per-file receipt is
 `.analysis/cache-archives/probe-pdb-unprotected-2026-10-29-receipt.json`.
 The 2026-10-29 tar archive SHA256 is
 `a67cfcc66dbb8ac2cc990fd95a962d6e3a9eb923b24603d23ed4ad91ab3c446d`.
+
+## F597: verified recovery for redundant early CI logs
+
+**Actual cleanup performed:** 243 frozen pre-F301 historical CI
+**output logs** (`.analysis/fNNN-ci*.log` or
+`.analysis/fNNN-*/ci*.log`) originally occupied **108,699,966
+bytes**. They were bundled into the lossless local archive
+`.analysis/cache-archives/legacy-ci-logs-pre-f301.tar.gz` of
+**13,829,049 bytes**, with a **36,446-byte** per-file
+SHA256/size/original-path receipt at
+`.analysis/cache-archives/legacy-ci-logs-pre-f301-receipt.json`.
+The verified archive SHA256 is
+`72c3ff90479af3377bafaabb71ec1280e966eab598a301971aada122cf558b46`.
+Net storage reclaimed **94,834,471 bytes (≈90.4 MiB)**.
+
+The archiver **independently unpacked/read and SHA256-verified all
+243 original tar members before deleting any loose file**, then
+verified the entire tar again after removing the originals. We
+also **successfully restored an individual historical file**
+`.analysis/f179-ci.log` (**544,204 bytes**, SHA256
+`b5026befd9ce6a04a93d5164466007eea9ee45df60c1c2273bc976ee9b868386`),
+verified exact original bytes and returned that tested loose copy to
+the archive after the smoke test. No historical evidence bytes were
+lost; only loose duplicate representations were removed.
+
+```bash
+# Read-only plan: excludes F301+ fresh research, H184 protected work,
+# the compiler, current Ghidra/source/probes and all COFF/PDB/JSON.
+scripts/repo-python scripts/archive-legacy-ci-logs.py --plan
+
+# Verify all 243 archived original members by size and SHA256:
+scripts/repo-python scripts/archive-legacy-ci-logs.py --verify
+
+# Restore one known file on demand (never overwrites changed bytes):
+scripts/repo-python scripts/archive-legacy-ci-logs.py \
+  --restore .analysis/f179-ci.log
+
+# `--archive` was used once and deliberately refuses overwrite/re-run
+# against an existing historical archive + signed receipt.
+```
+
+This cleanup **does not** cover the original PE, `.analysis/vc71-wine/`,
+`.analysis/f493-reimu-megaboss/`,
+`.analysis/f509-charactermove-megaboss/`, current F593/F596
+whole-boss proof or F595 small-leaf evidence, `ghidra-project/`,
+`build/matching/`, **any** probe `.obj` or `.pdb`, historical
+PDB archives, original native JSON, decompilations, active Git
+dirty files or any F301+ CI log. Do not confuse compressing an
+old test run's duplicate stdout with deleting a native testcase.
 
 ## Restoring a historical JSON snapshot
 

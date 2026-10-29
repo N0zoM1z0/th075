@@ -28,16 +28,22 @@ The current live pending set is **95 functions /3,420 bytes**; use
 `docs/RE_HANDOFF.md` for the current task list. Do not interpret the
 `00455770` row in this historical matrix as still pending.
 
-This report records the current 97 pending candidates, covering 3,608 bytes.
-It records reviewed evidence and required distinguishing witnesses; all 97
-origins remain unknown. It does not mark the complete-origin milestone achieved
-or replace the original 1,311-candidate goal with a smaller objective.
+**Historical R263 table only:** the following 97 rows / 3,608 bytes
+record what was unresolved **at the time of R263**, not today's live
+95-row/3,420-byte queue. Some old rows have since been resolved by
+F536 and F555; `004135F0` is byte-reproduced by F595 but still has
+unknown provenance. Treat each row's evidence and needed witness as a
+historical research lead; use live `config/function-origins.csv` for
+present classification. This matrix does **not** mark the
+complete-origin milestone achieved.
 
 The target remains the supplied Japanese `th075.exe`, self-reporting version
 1.11, SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
-The exact baseline remains 60 functions /9,883 bytes /60 units across eleven
-objects. No target, reconstruction source/ABI declaration, mapping or exact
-ledger changes are made for this matrix.
+**At the older R263 checkpoint**, the exact baseline was 60 functions
+/9,883 bytes /60 units across eleven objects; the *current* complete
+accepted register is **943 exact functions /862,726 CODE bytes** as of
+F596. No new source, mapping or exact ledger credit is awarded by
+this archived provenance matrix.
 
 The original R251 audit covered all116 whole target bodies,114 RET-based
 CFGs and both complete11-/5-byte native tail cases. R253 classifies two19-byte
