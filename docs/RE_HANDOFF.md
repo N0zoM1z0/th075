@@ -1,6 +1,6 @@
 # TH075 — active reconstruction handoff
 
-**Maintained 2026-10-29 after F609.** This is the **only current task list**.
+**Maintained 2026-10-29 after F610.** This is the **only current task list**.
 The [F540–F596 research chronology](history/RE_HANDOFF_F540_THROUGH_F596.md),
 [knowledge base](KNOWLEDGE_BASE.md), and older F-series studies are
 **historical evidence**, not statements of current progress. Independently
@@ -335,6 +335,30 @@ study](FIGHTER_TRAJECTORY_LANDING_SPAWN_F608.md) and
 
 ```bash
 scripts/repo-python scripts/verify-fighter-trajectory-landing-spawn-f608.py --boss 0x0058AF60
+```
+
+**F610 restores full native inner case `0x4A` in NINE regular giant
+fighter controllers**. All 9 selected newly compiled VC7.1 whole-parent
+source probes have exact original **119/119 x86 GPR/x87/CFG roles and
+19 authentic native PE/COFF target destinations** per case, for
+**1,071 roles /4,028 internal original CODE bytes /171 true fields**.
+The action contains real `ContactAt454EE0()` bounce branching, two
+`__ftol2` projections, native action0x4C/0x61 transitions and
+actor-specific original `PrepareActionAt453D60` call ordering.
+Native `00564BE0` is wide at 556 bytes (38 real extra-wide saved-this
+MOVs plus two genuine near Jcc, against 434 candidate source), and
+native `005AEEC0` uses +0xEFC. Each newly compiled giant also retains
+the earlier 27 original game case grammars and actual afterRET switch
+DATA. The other two giants `0045DD70`/`0058AF60` have genuinely
+**165-x86/589-byte action0x4A** with extra stage-one spawn work;
+these remain undone. Across F598–F610: **306 original interior case
+bodies/74,989 original inner CODE bytes studied, but NO whole-giant
+exact source credit**; official 943/862,726 unchanged.
+[F610 original whole-case evidence](FIGHTER_TRAJECTORY_BOUNCE_F610.md),
+[actual natural C++](../probes/FighterTrajectoryBounce4AF610.inc).
+
+```bash
+scripts/repo-python scripts/verify-fighter-trajectory-bounce-f610.py --boss 0x004F7130
 ```
 
 Never run a full 943-unit cold replay.

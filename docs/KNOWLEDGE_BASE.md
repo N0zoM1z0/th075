@@ -10523,3 +10523,28 @@ partial acceptance or all-unit cold replay.
 [Original F609 analysis](ARCHIVE_DESTRUCTOR_SOURCE_TYPES_F609.md),
 selected `scripts/repo-python scripts/verify-archive-source-types-f609.py --case signed-index`.
 Official whole authored exact units remain 943/862,726 native CODE bytes.
+
+
+## F610: native bounce trajectory `0x4A` in nine giant fighters
+
+Independent Japanese TH075 1.11 original PE reanalysis, fresh selected
+VC7.1 C++ source and full original second packed-jump table proof
+reconstructs nine **119-original-x86 /19-typed-COFF** native action0x4A
+inner cases. They introduce original contact trigger `00454EE0`,
+float threshold `006590C0`, bounce multiplier `00657F74`, native
+action0x4C and action0x61, and real two `__ftol2` trajectory
+projections. Original `005D73C0` places a real 0x16 preparation
+**after** native 2.0f trajectory initialization; the other 8 regular
+owners place it **before** the original x87 projection. The normal
+cases are 434 native bytes; the wide-frame original `00564BE0` is
+556 (38 genuinely expanded EBP−0x88 receiver MOV loads plus two
+4-byte-expanded Jcc). All earlier 27 game cases and afterRET jump
+DATA remain verified in each new original-backed source compilation.
+F610 adds **9 actual inner cases /1,071 real x86 instruction roles /
+4,028 uncredited original interior CODE bytes /171 physical typed
+COFF refs**; F598–F610 studied **306** native inner case bodies/
+74,989 original interior CODE bytes, not independent complete exact
+functions. The other 2 giant action0x4A native 165-instruction spawn
+variants remain open. [Original case/PE/codegen F610 study](FIGHTER_TRAJECTORY_BOUNCE_F610.md)
+and selected `scripts/repo-python scripts/verify-fighter-trajectory-bounce-f610.py --boss 0x004F7130`.
+No all-unit cold replay; authored exact 943/862,726 unchanged.
