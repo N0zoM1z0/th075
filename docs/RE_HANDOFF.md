@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F680; earlier frozen handoffs are archived.**
+**Maintained 2026-10-30, after F681; earlier frozen handoffs are archived.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -82,36 +82,46 @@ scripts/repo-python scripts/verify-characterobject-typed-member-f635.py --case 3
 The 22 original giant CODE owners remain authored NONEXACT. The main
 case-source subcohort has **11 real multi-switch giant fighters**,
 with real per-actor native differences and a full afterRET sparse/
-dense dispatch shape. F598–F676 compiler-backed original research
-proves **596 context-strict original *internal action case bodies* /
-161,788 original native internal CODE bytes**. These do **NOT** mean
-596 additional independently callable exact functions or credited
+dense dispatch shape. F598–F681 compiler-backed original research
+proves **597 context-strict original *internal action case bodies* /
+162,036 original native internal CODE bytes**. These do **NOT** mean
+597 additional independently callable exact functions or credited
 whole function bytes; each parent remains nonexact. Case interior
 source must always be compiled in the **fresh complete original
 parent C++ translation unit** and its preceding cases + entire jump
 DATA rechecked. [Full original dispatch fingerprint JSON](../config/fighter-boss-dispatch-fingerprints.json),
 [original fighter family dispatch](FIGHTER_BOSS_FAMILY_DISPATCH.md).
 
-**Latest strict path:** native `00543210` now has **28 contextual
-strict original native case bodies /2,335 real x86 /8,086 original
-internal CODE B /214 genuinely typed PE/COFF fields** in one new
-complete original-shaped parent. F676 restores two **very large native
-`2F0/2F1` entire C++ case grammars** (616 original x86 /2,146 native
-CODE B /65 real typed fields), preserving all original instruction
-counts/widths but still **NONSTRICT**, with 147/170 actual nonfield
-GPR phase-role mismatches. Their insertion surprisingly makes real
-terminal `31C` **strict** (63 x86/219 B/7 true calls, zero native
-GPR errors) in the SAME selected whole-parent build. F674's earlier
-parent with those two cases still placeholders correctly found
-terminal `31C` NONSTRICT (36 register errors). Both results are
-independently retested; source context matters.
-All preceding 27 strict case interiors, four EBP negative controls and
-complete 943-byte separate afterRET DATA also remain reverified.
-[F676 latest original physical source and context proof](FIGHTER_CLOUD_BURST_F676.md).
-Earlier F674 strictly proved `2EF` (224 x86/788 B/20 native fields)
-with a naturally far-shared-exit source, but terminal 31C was then
-NONSTRICT. [Earlier F674 native proof](FIGHTER_CLOUD_RAIN_F674.md).
-F673 earlier added `2BC` (208 x86/692 original CODE B/20 real fields).
+**Latest strict path:** native `00543210` has **29 source-context
+strict original native case bodies /2,409 genuine x86 /8,334
+original internal CODE bytes /222 real typed fields** in a **fresh
+complete original-shaped VC7.1 C++ parent**. F681 newly makes
+physical terminal `0x31B` strict (**74 x86/248 native B/8 genuine
+REL32 call fields**), and the adjacent 31C remains strict
+(**63 x86/219 B/7 real fields**) in the same parent. This works
+only when BOTH genuine 2F0/2F1 and new **2F8 storm-loop natural
+C++ source** are present: isolated 31B previously had 43 GPR
+errors and disturbed 31C by 36. True original `2F8` has
+**252 native x86/928 original CODE B/23 physical fields**; its
+source emits 904 B and retains actual GPR/x87 and genuine EBP
+loop/scratch differences, so remains **NONSTRICT**.
+
+The new parent has a real source `this` save at `EBP−0xC` instead
+of earlier source `−8`, because the original 2F8's real loop index
+occupies compiler `−8` (original physical native index `−0x24`).
+F681 independently authenticates the **sole** saved-this store,
+all its 2,243 compiler reloads, original `EBP−0x44` saved receiver,
+and **only then** presents this role to older verifier helpers.
+All other EBP locals/widths remain independently checked; no blind
+stack-local offset mask. All previous **28 context-strict native
+cases**, genuine 186/18A/18B/258 negative controls and complete
+separate **943-byte afterRET switch DATA** remain verified in the
+**same new full-parent compile**. No original entire giant is exact.
+[F681 latest complete original PE/source/receiver-role proof](FIGHTER_STORM_TERMINAL_F681.md).
+F676 earlier made 31C strict when 2F0/2F1 were restored; F674
+correctly found 31C NONSTRICT in its older different parent context.
+[Prior F676 source context proof](FIGHTER_CLOUD_BURST_F676.md).
+
 **Separate F672 original source context:** all five original native
 `259/25A/25B/25C/25D` bodies (434 whole x86 /1,469 native CODE B /
 42 real zero-addend typed PE fields) now have natural C++ complete
@@ -204,7 +214,9 @@ F646 `0xD0` remains nonstrict in other original actors due to
 explicitly distinguishes the 3 strict parent contexts.
 
 ```bash
-# NEW complete selected fighter: 2F0/2F1 source negatives and newly strict 31C:
+# NEW entire selected giant: real 2F8 storm negative and strictly matched 31B+31C:
+scripts/repo-python scripts/verify-fighter-storm-terminal-f681.py
+# Prior 2F0/2F1 negative source and context-strict 31C:
 scripts/repo-python scripts/verify-fighter-cloud-burst-f676.py
 # Earlier alternate giant: five native 259..25D source/EBP negatives and strict 2BC:
 scripts/repo-python scripts/verify-fighter-eight-shot-and-follow-f672.py

@@ -173,7 +173,7 @@ def locate_marker(refs,ins,operand):
     return found[0]+2
 
 
-def verify_native(reader,dec,code,refs,original,terminal,shared_exit,h,following_native=None, terminal_expect_strict=False):
+def verify_native(reader,dec,code,refs,original,terminal,shared_exit,h,following_native=None, terminal_expect_strict=False, terminal_preceding_native=None):
     ins=[]
     for x in dec.disasm(code,0):
         ins.append(x)
@@ -211,7 +211,15 @@ def verify_native(reader,dec,code,refs,original,terminal,shared_exit,h,following
              and ins[ordinal+ORIGINAL_X86+1].mnemonic=='movsx'
              and ins[ordinal+ORIGINAL_X86+1].op_str=='ecx, word ptr [eax + 0x62]',
              'native C++ physical 2F0 must immediately follow strict 2EF')
-    terminal_start=locate_marker(refs,ins,0x31C)
+    if terminal_preceding_native is None:
+        terminal_start=locate_marker(refs,ins,0x31C)
+    else:
+        need(terminal_preceding_native==0x31B,
+             'only original independently bounded 31B may precede this native terminal')
+        terminal_start=locate_marker(refs,ins,0x303)+74
+        need(ins[terminal_start].mnemonic=='mov'
+             and ins[terminal_start].op_str.endswith(', dword ptr [ebp - 8]'),
+             'native stage 31C must physically follow original full 74-x86 31B body')
     term,term_lo,term_hi=terminal
     generated_terminal=ins[terminal_start:terminal_start+len(term)]
     need(len(generated_terminal)==len(term)==63

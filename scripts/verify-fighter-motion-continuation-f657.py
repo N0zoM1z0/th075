@@ -134,7 +134,7 @@ def verify_physical_fields(refs,n,gen,fields,act):
     return len(actual)
 
 
-def verify_new(reader,pe,decoder,code,refs,orig,older,start,h,following_native=None):
+def verify_new(reader,pe,decoder,code,refs,orig,older,start,h,following_native=None, source_scratch_slot="0x20"):
     ins=[]
     for x in decoder.disasm(code,0):
         ins.append(x)
@@ -172,8 +172,8 @@ def verify_new(reader,pe,decoder,code,refs,orig,older,start,h,following_native=N
                  and [i for i,_,_ in scratch_mismatch]==[72,73]
                  and '[ebp - 0x84]' in n[72].op_str
                  and '[ebp - 0x84]' in n[73].op_str
-                 and '[ebp - 0x20]' in gen[72].op_str
-                 and '[ebp - 0x20]' in gen[73].op_str,
+                 and f'[ebp - {source_scratch_slot}]' in gen[72].op_str
+                 and f'[ebp - {source_scratch_slot}]' in gen[73].op_str,
                  f'native 186 original scratch ownership NEGATIVE changed: normalized={mismatches[:5]}, raw_scratch={scratch_mismatch[:5]}, widths={widths}')
             negative={'original_action':'0x186',
                       'original_entire_physical_CODE_bytes':290,
@@ -182,7 +182,7 @@ def verify_new(reader,pe,decoder,code,refs,orig,older,start,h,following_native=N
                       'real_original_typed_PE_COFF_fields':count,
                       'genuine_nonfield_mismatching_operand_ordinals':[72,73],
                       'actual_original_EBP_scratch':'-0x84',
-                      'current_compiler_EBP_scratch':'-0x20',
+                      'current_compiler_EBP_scratch':'-'+source_scratch_slot,
                       'strict_native_case':False,
                       'new_authored_whole_function_credit':0}
         else:

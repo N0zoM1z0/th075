@@ -26,7 +26,7 @@ types are provisional; machine-code matches alone do not prove an entire
 original class layout. The target's official distribution provenance has not
 been independently verified; do not substitute a localized `th075c.exe`.
 
-These snapshot counts were rechecked after **F680** (2026-10-30).
+These snapshot counts were rechecked after **F681** (2026-10-30).
 The **live** sources of truth, not any dated prose milestone, are `config/functions.csv`,
 `config/function-origins.csv`, and `config/match-units.toml`.
 Refresh using `scripts/repo-python scripts/report-reconstruction-status.py --summary`.
@@ -53,25 +53,30 @@ F659's 14 additional whole-giant C++ condition/lifetime variants did
 not reduce the genuine 137-byte register cycle; two `+=` alternatives
 actually changed native x87 geometry. [New F659/F660 negative evidence](docs/GIANT_REGISTER_AND_ARCHIVE_LIFETIME_NEGATIVES_F659_F660.md).
 
-**F598–F676's 596 strictly source-backed fighter *internal case
-bodies* (161,788 original internal CODE bytes) remain uncredited**:
+**F598–F681's 597 context-strict source-backed fighter *internal
+case bodies* (162,036 original native CODE bytes) remain uncredited**:
 none of their enclosing giant `Advance()` functions is fully exact.
-F676 adds **two very large authentic `0x2F0/0x2F1` case C++
-source bodies** (**616 original x86/2,146 native CODE B/65 genuine
-PE/COFF fields**), but **147/170 original GPR role differences**
-remain: both are NONSTRICT. Crucially, restoring both naturally
-makes the later genuine original native **`0x31C` terminal case**
-**strict (63 x86/219 original CODE B/7 true typed fields/zero
-register errors)** in this *new complete parent source context*.
-In the earlier separate F674 source context the same terminal was
-correctly NONSTRICT (36 actual register errors). Both build
-contexts are retained and independently tested; do not conflate.
-The current selected giant has **28 context-strict inner cases /
-2,335 x86/8,086 original CODE B/214 typed PE/COFF fields**.
-All earlier 27 strict case proofs, four real scratch negatives and
-complete after-RET DATA are revalidated in the new full parent;
-the giant remains whole-NONEXACT. [F676 real context and terminal
-proof](docs/FIGHTER_CLOUD_BURST_F676.md).
+F681 adds a **new strict full native terminal case `0x31B`** (74 x86,
+248 original inner CODE B, 8 real typed call fields), while the
+previously strict adjoining terminal `0x31C` (63 x86/219 B/7 fields)
+remains exact in the **SAME fresh whole selected `00543210` parent**.
+The real **`0x2F8` 928-byte/252-x86/23-field storm loop** C++ source
+is newly recovered but remains **NONSTRICT** from genuine x87,
+integer-loop EBP and GPR differences (904 emitted B). The actual
+compiler receiver-save moved to **EBP−0xC** due the *real* source
+loop index; a fresh verifier independently authenticates every
+real `this` reload before comparison, without hiding its real
+local/scratch differences. F678's earlier 31B-only trial had 43
+GPR errors and regressed 31C by 36; restoring **both 2F8 and 31B**
+removes their genuine terminal GPR errors. All previous 28 strict
+case interiors, four EBP-negative cases and complete after-RET
+DATA were rechecked in the new parent.
+The selected giant now has **29 context-strict original native
+cases /2,409 x86/8,334 real inner CODE B/222 typed PE/COFF fields**.
+It remains whole-NONEXACT. [F681 actual saved-this and full-parent
+native proof](docs/FIGHTER_STORM_TERMINAL_F681.md).
+F676 previously added two large NONSTRICT 2F0/2F1 source bodies
+(616 x86/2,146 B/65 typed fields) and made 31C context-strict.
 F674 previously strictly proved `2EF` (224 x86/788 B/20 fields).
 New F672 separately reconstructs **five entire genuine native
 `0x259..0x25D` source cases** (434 x86/1,469 original CODE B/

@@ -94,7 +94,7 @@ def source_with_barrage(source):
     return source
 
 
-def verify_negative(reader,pe,dec,code,refs,native,start,shared_exit,h,following_native=None):
+def verify_negative(reader,pe,dec,code,refs,native,start,shared_exit,h,following_native=None, source_scratch_shift=0):
     ins=[]
     for x in dec.disasm(code,0):
         ins.append(x)
@@ -137,7 +137,7 @@ def verify_negative(reader,pe,dec,code,refs,native,start,shared_exit,h,following
          and a.op_str.replace('[ebp - 0x44]','[ebp - 8]')!=b.op_str]
     need([i for i,a,b in raw]==list(ORIGINAL_SLOTS)
          and all(f'[ebp - {old}]' in original[i].op_str
-                 and f'[ebp - {new}]' in compiled[i].op_str
+                 and f'[ebp - 0x{int(new,16)+source_scratch_shift:x}]' in compiled[i].op_str
                  for i,(old,new) in ORIGINAL_SLOTS.items()),
          f'actual original native scratch EBP negative changed: {raw[:10]}')
     if following_native is None:
@@ -160,7 +160,7 @@ def verify_negative(reader,pe,dec,code,refs,native,start,shared_exit,h,following
             'true_original_typed_PE_COFF_fields':len(physical),
             'real_wrong_native_EBP_scratch_ordinals':list(ORIGINAL_SLOTS),
             'original_EBP_scratch':['-'+ORIGINAL_SLOTS[i][0] for i in (40,65,90,115)],
-            'compiled_EBP_scratch':['-'+ORIGINAL_SLOTS[i][1] for i in (40,65,90,115)],
+            'compiled_EBP_scratch':[f'-0x{int(ORIGINAL_SLOTS[i][1],16)+source_scratch_shift:x}' for i in (40,65,90,115)],
             'new_case_strict':False,'accepted_original_whole_authored_CODE_bytes':0}
     return result if following_native is None else (result,start+ORIGINAL_X86)
 

@@ -134,7 +134,7 @@ def expected_symbol(action,ordinal,target):
     return SYMBOLS[target]
 
 
-def verify_negative(reader,dec,code,refs,originals,first_ordinal,shared_exit,h):
+def verify_negative(reader,dec,code,refs,originals,first_ordinal,shared_exit,h,following_native=None):
     ins=[]
     for x in dec.disasm(code,0):
         ins.append(x)
@@ -192,9 +192,17 @@ def verify_negative(reader,dec,code,refs,originals,first_ordinal,shared_exit,h):
                          'strict_original_native_case':False,
                          'new_accepted_whole_authored_CODE_bytes':0})
         pos+=len(native)
-    need(ins[pos].mnemonic=='mov' and ins[pos].op_str.endswith(', 0x2f9'),
-         'real original physical following native 2F8 marker missing after 2F1')
-    return receipts
+    if following_native is None:
+        need(ins[pos].mnemonic=='mov' and ins[pos].op_str.endswith(', 0x2f9'),
+             'real original physical following native 2F8 marker missing after 2F1')
+    else:
+        need(following_native==0x2F8
+             and ins[pos].mnemonic=='mov'
+             and ins[pos].op_str.endswith(', dword ptr [ebp - 8]')
+             and ins[pos+1].mnemonic=='movsx'
+             and ins[pos+1].op_str.endswith('+ 0x62]'),
+             'original native 2F8 must genuinely follow whole 2F1 source body')
+    return receipts if following_native is None else (receipts,pos)
 
 
 def main():

@@ -12160,3 +12160,46 @@ accepted whole-authored CODE remains unchanged.
 [F680 entire original linked PE/COFF proof](SDK_NATIVE_HELPER_LEAVES_F680.md),
 `scripts/repo-python scripts/verify-sdk-native-helper-leaves-f680.py`.
 No full cold replay.
+
+
+## F681: 928-byte real fighter 2F8 source and newly strict 248-byte terminal 31B
+
+A **fresh complete selected native fighter `00543210` parent** now
+contains authentic ordinary C++ original storm-loop `2F8` and terminal
+shot `31B` along with all prior 2F0/2F1 and terminal 31C sources.
+`2F8` is complete **252 original x86/928 native inner CODE B/23
+genuine typed PE/COFF fields** with real stage6 projectile-loop,
+signed opponent multiplier and original stage counters, but remains
+**NONSTRICT**: source emits 904 B, has nine original width/x87
+conversion differences (including original FILD/FSUBR vs source
+FLD/FISUB), true original stack loop index EBP−0x24 vs compiled
+EBP−8, and 152 genuine nonfield GPR/x87 role errors. No fake
+padding or credit.
+
+The original complete `31B` native terminal stage (`005513C5` to
+`005514BD`) now becomes **STRICT 74 genuine x86 /248 original CODE
+B /8 authentic zero-addend REL32 source fields**; previously strict
+`31C` also remains strict (**63 x86/219 B/7 fields**) in this SAME
+new parent. Earlier 31B-only source trial had 43 real GPR differences
+and 31C regressed by 36; adding genuine upstream storm and 31B
+source together makes both terminal GPR phases exact.
+
+Original saved `this` EBP−0x44 is genuine; source now stores its
+receiver at EBP−0xC, because 2F8 introduces a meaningful separate
+integer loop local at source EBP−8. F681 **authenticates entire
+unmodified compiled prologue and every one of 2,243 raw receiver
+reloads**, and presentation-normalizes ONLY this proved saved-this
+role when reusing earlier native verifiers, never genuine local
+scratch/loop operands. All prior 28 context-strict native cases,
+186/18A/18B/258 genuine scratch negatives, 2F0/2F1 GPR negatives
+and full independently owned original afterRET jump DATA are
+rechecked in the **same new full-parent object**. Selected giant now
+**29 context-strict original inner cases /2,409 real x86 /8,334
+original CODE B /222 true fields**; aggregate F598–F681 research
+**597 context-strict original case bodies /162,036 native original
+internal CODE bytes**, still uncredited. The whole giant and all 22
+original fighter whole parents remain NONEXACT; formal accepted
+whole-authored ledger still 943/862,726 CODE bytes.
+[F681 selected original PE/COFF source/receiver-role proof](FIGHTER_STORM_TERMINAL_F681.md),
+`scripts/repo-python scripts/verify-fighter-storm-terminal-f681.py`.
+No full 943-unit cold replay.

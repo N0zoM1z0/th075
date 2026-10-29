@@ -107,7 +107,7 @@ def verify_own_fields(refs,orig,gen,action):
     return len(physical)
 
 
-def verify_nonstrict(reader,pe,decoder,code,refs,originals,old,ordinal,h):
+def verify_nonstrict(reader,pe,decoder,code,refs,originals,old,ordinal,h, source_scratch_shift=0):
     ins=[]
     for x in decoder.disasm(code,0):
         ins.append(x)
@@ -118,6 +118,7 @@ def verify_nonstrict(reader,pe,decoder,code,refs,originals,old,ordinal,h):
         n,lo,hi=originals[action]
         gen=ins[offset:offset+len(n)]
         count,size,gen_size,scratch1,scratch2,origslot,genslot=SIZES[action]
+        genslot=f'0x{int(genslot,16)+source_scratch_shift:x}'
         need(len(gen)==count and gen[-1].mnemonic=='jmp'
              and gen[-1].op_str==ins[old['continuation_source_ordinal']-1].op_str
              and gen[-1].address+gen[-1].size-gen[0].address==gen_size,
