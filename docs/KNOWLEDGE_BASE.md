@@ -11388,3 +11388,37 @@ bytes**, all uncredited. [F644 complete native source and original
 field/caller proof](GAME_FLOAT_MATH_ADAPTERS_F644.md), targeted
 `scripts/repo-python scripts/verify-game-float-math-adapters-f644.py`.
 Official authored exact remains 943/862,726; no full cold replay.
+
+
+## F645: native 60-x86 B4/B5 motion restart, original two final JMPs and true actor-specific aux state
+
+Pinned Japanese TH075 PE authentic next physical game handlers
+**B4→B5→C8**, not the B6..C7 common default. Each entire original
+native B4/B5 case has **60 x86 /215 CODE bytes** normally, wide
+original `00564BE0` **275 B** (20 genuine saved-this `EBP−0x88`
+receiver MOVs widened ×3). Original stage-zero game action resets
+via `00453E20`, initializes true position +8f/−8f, velocity
+12.5f, drag .75f, clears actual +0x30 and calls original
+`0040FC50`; strict native `POS48 > ground float [0065782C]`
+branches into drag/ground action0xA and reset path. The original
+frame-completion auxiliary `0040FB40` argument is actor- and
+case-specific: B4/B5 pairs native 7/5, 8/10, 7/7, 6/6, 7/6.
+A first natural-C++ source produced **59/60 x86** per full case,
+missing the original second **final native JMP**. An additional
+ordinary C++ `break` within the auxiliary state conditional, PLUS
+final outside `break`, reproduces both original ordinals58/59
+without assembly. **11 fresh whole-giant VC7.1 C++ source TUs**
+now strictly reproduce **22 complete original native case interiors
+/1,320 real GPR/x87/CFG x86 roles /4,850 uncredited original native
+inner CODE bytes /176 physically typed zero-addend original PE/COFF
+calls/globals**. The same new whole parent objects recheck F642
+A7/A8 x87/FILD, F641 A3/A4/A5, F639/F637/F636/F633, earlier
+original 30 game action grammars and full separately owned
+original afterRET jump DATA, while prior native register negatives
+remain honestly nonexact. F598–F645 strict interior study totals
+**566 cases/153,255 original native inner CODE bytes**, no accepted
+new authored whole-function exact CODE. [F645 original PE and
+natural C++ proof](FIGHTER_MOTION_RESTART_F645.md), targeted
+`scripts/repo-python scripts/verify-fighter-motion-restart-f645.py --boss 0x00564BE0`.
+Official authored whole exact 943/862,726 remains unchanged; no
+all-unit cold replay or external Oracle receipt.

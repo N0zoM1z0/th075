@@ -81,12 +81,13 @@ def check_fresh_whole(reader,pe,decoder,boss,report,mapped,code,refs,originals,h
     # The full true predecessor original grammar/PE fields and all
     # its older actual source-backed cases + DATA must remain exact
     # on THIS new C++ parent object, not an earlier compiled one.
-    need(extra_after_last_x86 in (0,3*71,3*71+2*97),
+    need(extra_after_last_x86 in (0,3*71,3*71+2*97,3*71+2*97+2*60),
          f'{addr:#x}: only three real complete 71-instruction original A3/A4/A5 may follow A1')
     h['f637'].verify_source(reader,pe,decoder,boss,report,mapped,code,refs,
                              earlier,meta,h,extra_after_9e_x86=3*73+extra_after_last_x86)
     wanted=(0xA4 if extra_after_last_x86==0 else
-            0xA8 if extra_after_last_x86==3*71 else 0xB5)
+            0xA8 if extra_after_last_x86==3*71 else
+            0xB5 if extra_after_last_x86==3*71+2*97 else 0xC9)
     markers=[]
     for field in refs:
         if 'g_FighterProbeMarker' not in field['symbol']:continue

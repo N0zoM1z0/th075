@@ -146,13 +146,15 @@ def verify_source(reader,pe,decoder,boss,report,mapped,code,refs,native,meta,h,e
     by={x['action']:int(x['handler'],16) for x in mapped}
     previous={a:h['f633'].original_case(reader,pe,decoder,boss,by,a)
               for a in h['f636'].ACTIONS}
-    need(extra_after_9e_x86 in (0,3*73,3*73+3*71,3*73+3*71+2*97),
+    need(extra_after_9e_x86 in (0,3*73,3*73+3*71,3*73+3*71+2*97,
+                                 3*73+3*71+2*97+2*60),
          f'{addr:#x}: only genuine three 73-x86 original 9F/A0/A1 cases may follow 9E')
     h['f636'].strict_check(reader,pe,decoder,boss,report,mapped,code,refs,
                            previous,h,extra_after_pair_x86=len(native)+extra_after_9e_x86)
     wanted=(0xA0 if extra_after_9e_x86==0 else
             0xA4 if extra_after_9e_x86==3*73 else
-            0xA8 if extra_after_9e_x86==3*73+3*71 else 0xB5)
+            0xA8 if extra_after_9e_x86==3*73+3*71 else
+            0xB5 if extra_after_9e_x86==3*73+3*71+2*97 else 0xC9)
     markers=[]
     for field in refs:
         if 'g_FighterProbeMarker' not in field['symbol']:

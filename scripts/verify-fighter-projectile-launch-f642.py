@@ -141,7 +141,7 @@ def source_with_projectiles(addr,boss,report,mapped,reader,pe,decoder,h,original
     return src
 
 
-def verify_fresh(reader,pe,decoder,boss,report,mapped,code,refs,originals,h):
+def verify_fresh(reader,pe,decoder,boss,report,mapped,code,refs,originals,h,extra_after_a8_x86=0):
     addr=boss['address'];ins=[]
     for x in decoder.disasm(code,0):
         ins.append(x)
@@ -153,19 +153,25 @@ def verify_fresh(reader,pe,decoder,boss,report,mapped,code,refs,originals,h):
     by={x['action']:int(x['handler'],16) for x in mapped}
     old={a:h['f641'].native_case(reader,pe,decoder,boss,by,a)
          for a in h['f641'].ACTIONS}
+    need(extra_after_a8_x86 in (0,2*60),
+         f'{addr:#x}: only actual complete 60-x86 B4/B5 may follow A7/A8')
     h['f641'].check_source(reader,pe,decoder,boss,report,mapped,code,refs,
-                          old,h,extra_after_a5_x86=2*97)
+                          old,h,extra_after_a5_x86=2*97+extra_after_a8_x86)
+    wanted=0xB5 if extra_after_a8_x86==0 else 0xC9
     marker=[]
     for f in refs:
         if 'g_FighterProbeMarker' not in f['symbol']:continue
         x=next((i for i in ins if i.address<=f['offset']<i.address+i.size),None)
-        if x is not None and x.mnemonic=='mov' and x.op_str.endswith(', 0xb5'):
+        if x is not None and x.mnemonic=='mov' and x.op_str.endswith(f', 0x{wanted:x}'):
             marker.append(x)
     need(len(marker)==1,f'{addr:#x}: real next native case0xB4 source marker not unique')
     end=ins.index(marker[0]);count=2*97
-    need(end>=count,f'{addr:#x}: original entire consecutive A7/A8 cases truncated')
-    cases=ins[end-count:end]
-    need(cases[-1].address+cases[-1].size==marker[0].address,
+    need(end>=count+extra_after_a8_x86,
+         f'{addr:#x}: original entire consecutive A7/A8 cases truncated by following source')
+    cases=ins[end-count-extra_after_a8_x86:end-extra_after_a8_x86]
+    next_pc=(ins[end-extra_after_a8_x86].address if extra_after_a8_x86
+             else marker[0].address)
+    need(cases[-1].address+cases[-1].size==next_pc,
          f'{addr:#x}: source case0xA8 must end at real next case0xB4 boundary')
     found=[]
     for pos,action in enumerate(ACTIONS):

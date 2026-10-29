@@ -168,7 +168,8 @@ def verify_fresh_whole(reader,pe,decoder,boss,report,mapped,code,refs,properties
          and extra_followup_x86 in (0,2*73,2*75,2*73+66,2*75+68,
                                  2*73+66+3*73,2*75+68+3*73,
                                  2*73+66+3*73+3*71,2*75+68+3*73+3*71,
-                                 2*73+66+3*73+3*71+2*97,2*75+68+3*73+3*71+2*97)
+                                 2*73+66+3*73+3*71+2*97,2*75+68+3*73+3*71+2*97,
+                                 2*73+66+3*73+3*71+2*97+2*60,2*75+68+3*73+3*71+2*97+2*60)
          and (not extra_followup_x86 or extra_followup_x86 in (
               2*prior_info['original_complete_x86_instructions'],
               2*prior_info['original_complete_x86_instructions']+
@@ -178,7 +179,9 @@ def verify_fresh_whole(reader,pe,decoder,boss,report,mapped,code,refs,properties
               2*prior_info['original_complete_x86_instructions']+
                  (68 if prior_info['original_complete_x86_instructions']==75 else 66)+3*73+3*71,
               2*prior_info['original_complete_x86_instructions']+
-                 (68 if prior_info['original_complete_x86_instructions']==75 else 66)+3*73+3*71+2*97)),
+                 (68 if prior_info['original_complete_x86_instructions']==75 else 66)+3*73+3*71+2*97,
+              2*prior_info['original_complete_x86_instructions']+
+                 (68 if prior_info['original_complete_x86_instructions']==75 else 66)+3*73+3*71+2*97+2*60)),
          f'{addr:#x}: authentic 73/75-x86 native case count or followup differs')
     h['f631'].verify_new_obj(reader,pe,decoder,boss,report,mapped,code,refs,
         earlier,prior_info,h,extra_sibling_x86=counts+extra_followup_x86)
@@ -187,7 +190,9 @@ def verify_fresh_whole(reader,pe,decoder,boss,report,mapped,code,refs,properties
             0xA0 if extra_followup_x86 in (2*73+66,2*75+68) else
             0xA4 if extra_followup_x86 in (2*73+66+3*73,2*75+68+3*73) else
             0xA8 if extra_followup_x86 in (2*73+66+3*73+3*71,2*75+68+3*73+3*71)
-            else 0xB5)
+            else 0xB5 if extra_followup_x86 in (
+                2*73+66+3*73+3*71+2*97,2*75+68+3*73+3*71+2*97)
+            else 0xC9)
     markers=[]
     for field in refs:
         if 'g_FighterProbeMarker' not in field['symbol']:continue

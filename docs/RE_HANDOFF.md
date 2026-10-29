@@ -1,6 +1,6 @@
 # TH075 — active reconstruction handoff
 
-**Maintained 2026-10-29 after F644.** This is the **only current task list**.
+**Maintained 2026-10-29 after F645.** This is the **only current task list**.
 The [F540–F596 research chronology](history/RE_HANDOFF_F540_THROUGH_F596.md),
 [knowledge base](KNOWLEDGE_BASE.md), and older F-series studies are
 **historical evidence**, not statements of current progress. Independently
@@ -1016,6 +1016,38 @@ exact unchanged. [F644 original full PE/x87/C++ source proof](GAME_FLOAT_MATH_AD
 
 ```bash
 scripts/repo-python scripts/verify-game-float-math-adapters-f644.py
+```
+
+**F645** reconstructs real native original motion restart cases
+`0xB4/0xB5` inside ALL ELEVEN fighter giant C++ parent source TUs.
+Actual original physical next handlers **B4→B5→C8**, NOT the B6
+common default. Original game stage0 reset `00453E20`, +8f/−8f
+initial height, +12.5f velocity/+0.75f drag, `0040FC50` motion reset,
+strict native `POS48 > [0065782C]` and ground-cross transition to
+native `0040FAC0(0xA)`. Each frame-complete auxiliary `0040FB40`
+argument is actor/action-specific (native original B4/B5: 7/5,
+8/10, 7/7, 6/6 or 7/6). The original has **two separate final JMP
+instructions**, requiring a natural C++ `break` INSIDE the auxiliary
+conditional and another `break` OUTSIDE. The first 59-x86 source
+is not accepted; F645 normal C++ now recovers **22 distinct whole
+native interior cases /1,320 x86 GPR/x87/CFG roles /4,850 original
+inner CODE bytes /176 true physical typed PE/COFF refs** in eleven
+fresh entire fighter C++ parent objects. Genuine wide `00564BE0`
+has 20 saved-this EBP−0x88 receiver MOVs widened +3, native 275B
+per case versus 215B compact. Each newly built giant source also
+rechecks previous F642 projectile A7/A8, F641 71-x86 landings,
+F639/F637/F636, native mode when strict, older 30 native game
+cases and full original afterRET packed jump DATA. F598–F645
+cumulative source-backed study **566 original native action interiors
+/153,255 original internal CODE bytes**, STILL ZERO additional
+whole-giant exact source or accepted authored CODE. Official
+943/862,726 whole authored exact unchanged.
+[F645 original actual B4/B5/C8 C++/PE/COFF proof](FIGHTER_MOTION_RESTART_F645.md),
+[natural C++](../probes/FighterMotionRestartB4F645.inc).
+
+```bash
+scripts/repo-python scripts/verify-fighter-motion-restart-f645.py --boss 0x00564BE0
+scripts/repo-python scripts/verify-fighter-motion-restart-f645.py --boss 0x00543210
 ```
 
 ## 4. Other three unmatched authored *whole* functions

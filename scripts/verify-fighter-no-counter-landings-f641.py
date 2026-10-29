@@ -128,11 +128,12 @@ def check_source(reader,pe,decoder,boss,report,mapped,code,refs,originals,h,extr
     by={x['action']:int(x['handler'],16) for x in mapped}
     old={a:h['f633'].original_case(reader,pe,decoder,boss,by,a)
          for a in h['f639'].ACTIONS}
-    need(extra_after_a5_x86 in (0,2*97),
+    need(extra_after_a5_x86 in (0,2*97,2*97+2*60),
          f'{addr:#x}: only two real complete 97-x86 A7/A8 cases may follow A5')
     h['f639'].check_fresh_whole(reader,pe,decoder,boss,report,mapped,code,refs,
                                  old,h,extra_after_last_x86=3*71+extra_after_a5_x86)
-    wanted=0xA8 if extra_after_a5_x86==0 else 0xB5
+    wanted=(0xA8 if extra_after_a5_x86==0 else
+            0xB5 if extra_after_a5_x86==2*97 else 0xC9)
     marks=[]
     for f in refs:
         if 'g_FighterProbeMarker' not in f['symbol']:continue

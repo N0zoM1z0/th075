@@ -81,13 +81,15 @@ def strict_check(reader,pe,decoder,boss,report,mapped,code,refs,properties,h,ext
     need(count==expected and count in (2*73,2*75)
          and extra_after_pair_x86 in (0,66,68,66+3*73,68+3*73,
                                      66+3*73+3*71,68+3*73+3*71,
-                                     66+3*73+3*71+2*97,68+3*73+3*71+2*97)
+                                     66+3*73+3*71+2*97,68+3*73+3*71+2*97,
+                                     66+3*73+3*71+2*97+2*60,68+3*73+3*71+2*97+2*60)
          and (not extra_after_pair_x86 or
               extra_after_pair_x86 in (
                  (68 if count==2*75 else 66),
                  (68 if count==2*75 else 66)+3*73,
                  (68 if count==2*75 else 66)+3*73+3*71,
-                 (68 if count==2*75 else 66)+3*73+3*71+2*97)),
+                 (68 if count==2*75 else 66)+3*73+3*71+2*97,
+                 (68 if count==2*75 else 66)+3*73+3*71+2*97+2*60)),
          f'{addr:#x}: real native 9B/9C or next genuine 9E 66/68-x86 source extent changed')
     h['f633'].verify_fresh_whole(reader,pe,decoder,boss,report,mapped,code,refs,
                                  previous,h,extra_followup_x86=count+extra_after_pair_x86)
@@ -95,7 +97,9 @@ def strict_check(reader,pe,decoder,boss,report,mapped,code,refs,properties,h,ext
                       0xA0 if extra_after_pair_x86 in (66,68) else
                       0xA4 if extra_after_pair_x86 in (66+3*73,68+3*73) else
                       0xA8 if extra_after_pair_x86 in (66+3*73+3*71,68+3*73+3*71)
-                      else 0xB5)
+                      else 0xB5 if extra_after_pair_x86 in (
+                          66+3*73+3*71+2*97,68+3*73+3*71+2*97)
+                      else 0xC9)
     markers=[]
     for field in refs:
         if 'g_FighterProbeMarker' not in field['symbol']:continue
