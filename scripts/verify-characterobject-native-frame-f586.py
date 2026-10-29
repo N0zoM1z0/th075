@@ -8,8 +8,9 @@ actual int-to-x87 temporaries each; incomplete normal C++ source has
 historically produced six narrow load/store instructions per case.
 Adding the genuinely authored C++ game bodies 0x34A/0x34B shifts
 source 0x331's final two integer-to-x87 temporaries past the disp8
-boundary, leaving ONLY original ordinals 97/98 3-byte wider. Only
-those three precisely observed source geometries are accepted.
+boundary, leaving ONLY original ordinals 97/98 3-byte wider; adding
+genuine action0x34C naturally shifts the first too, removing this
+gap altogether. Only three PE-tested source modes are accepted.
 No fabricated frame, machine byte patch, all-unit replay or CODE credit.
 """
 from __future__ import annotations
@@ -40,16 +41,22 @@ def validate_native_wide_frame(native,candidate,f572,action):
         need(indices==list(originals),
              'original 0x330 six actual native width expansions changed')
     else:
-        need(indices in (list(originals),[97,98]),
-             f'original 0x331 width differences are not one true previously proven frame context: {indices}')
+        need(indices in (list(originals),[97,98],[]),
+             f'original 0x331 width differences are not one of three PE-tested VC7.1 contexts: {indices}')
         if indices==[97,98]:
-            # The larger normal C++ switch has genuine (not fake)
-            # stack slots EBP-0x80/-0x84/-0x88: only the first is disp8.
+            # C++ with real action0x34A/34B uses -0x80/-0x84/-0x88.
             need(all(f'[ebp - 0x{slot:x}]' in candidate[i].op_str
                      for i,slot in zip(originals,(0x80,0x80,0x84,0x84,0x88,0x88)))
                  and all(candidate[i].size==(3 if i in (97,98) else 6)
                          for i in originals),
-                 'larger-source 0x331 native-proven actual EBP-0x80/84/88 stack assignment changed')
+                 'original-specific 0x331 compact-plus-wide EBP slot ownership changed')
+        if not indices:
+            # Adding *real* native action0x34C makes all three C++
+            # temporary locations disp32 naturally, WITHOUT fake locals.
+            need(all(f'[ebp - 0x{slot:x}]' in candidate[i].op_str
+                     for i,slot in zip(originals,(0x84,0x84,0x88,0x88,0x8c,0x8c)))
+                 and all(candidate[i].size==6 for i in originals),
+                 'original 0x331 397-insn genuine C++ case context must have -0x84/-0x88/-0x8C source slots')
     need(all(delta==3 for _,_,_,delta in diffs),
          'additional non-stack native instruction size differences are not accepted')
     real=[(mnemonic,operand) for mnemonic,size,operand

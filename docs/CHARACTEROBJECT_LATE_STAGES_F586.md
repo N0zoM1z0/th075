@@ -156,3 +156,18 @@ controls and exact new `0x331` EBP-width evidence remain preserved
 in `.analysis/f586-characterobject-context/`.
 No accepted whole/split CODE/DATA, full all-unit cold replay or
 external Factory/Oracle receipt.
+
+## F587 follow-up: actual large source context eliminates remaining width gap
+
+F586's selected source originally reproduced native `0x331` as
+274 instructions /997 bytes versus original 274/1,003, because
+its first integer-to-FPU temporary was `EBP−0x80` (disp8) rather
+than native disp32. F587 adds a true complete original **397-insn /
+1,529-byte** game-action `0x34C` *inside the same source switch*.
+VC7.1 naturally shifts the `0x331` three temporaries to
+`EBP−0x84/−0x88/−0x8C` (all disp32), yielding 274/1,003
+source bytes without padding. F586's original-backed checker now
+independently recognizes this third precisely observed physical
+source context. Original full giant CODE remains nonexact and the
+native original EBP operand slots are still different.
+See [F587 four-way original action](CHARACTEROBJECT_FOUR_WAY_EVENT_F587.md).

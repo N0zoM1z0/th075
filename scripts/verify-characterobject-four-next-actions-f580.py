@@ -187,7 +187,7 @@ def validate_original_signed_direction_case(native,candidate,f572):
     else:
         need(not wide and
              any(all(f'[ebp - 0x{slot:x}]' in candidate[k].op_str
-                     for k in (97,98)) for slot in (0x84,0x8c)),
+                     for k in (97,98)) for slot in (0x84,0x8c,0x90)),
              'true original game C++ source context requires EBP-0x84 or EBP-0x8C genuine disp32 temp')
     need(native[189].mnemonic==candidate[189].mnemonic=='movsx'
          and native[189].op_str.endswith('byte ptr [edx + 0x66]')
@@ -338,7 +338,7 @@ def build_one():
     src=SOURCE.read_text()
     need('F572/F573/F574/F575/F576/F577/F578/F579/F580' in src and
          all(src.count(f'case 0x{k:X}:')==1 for k in range(START,END+1) if k not in (0x32F,0x333,0x334,0x336,0x337))
-         and 'case 0x34C: g_FighterProbeMarker = 845; break;' in src,
+         and 'case 0x34D: g_FighterProbeMarker = 846; break;' in src,
          'actual F580 source must implement 25 real action bodies and keep 0x33E diagnostic')
     need(src.count('gCurveAt0065972C')>=3 and src.count('MotionRawAt40FB70')>=2,
          'real source must include native polynomial and raw-float input')
@@ -417,7 +417,7 @@ def main():
              f'actual whole native actor case {action:#x} is truncated/discontinuous')
         need(len(orig)==len(cand) and (
              (last-first==clast-cfirst and all(x.size==y.size for x,y in zip(orig,cand)))
-             if action<0x330 or action>=0x338 else (last-first==clast-cfirst if action in (0x332,0x335) else last-first-clast+cfirst in (6,18) if action==0x331 else last-first-clast+cfirst==18)),
+             if action<0x330 or action>=0x338 else (last-first==clast-cfirst if action in (0x332,0x335) else last-first-clast+cfirst in (0,6,18) if action==0x331 else last-first-clast+cfirst==18)),
              f'whole native actor {action:#x} instruction/codebyte grammar differs')
         if action<=0x329:
             fields=f572.compare_actual_case(orig,cand,refs,action)
@@ -437,7 +437,7 @@ def main():
             elif action in (0x330,0x331):
                 widened,excess=validate_native_wide_frame(orig,cand,f572,action)
                 need((widened,excess)==(6,18) if action==0x330 else
-                     (widened,excess) in ((6,18),(2,6)),
+                     (widened,excess) in ((6,18),(2,6),(0,0)),
                      'original real EBP source widths are not the 6- or 2-temporary native-reproduced cases')
                 native_frame_extra+=excess
                 changes=[]
@@ -470,7 +470,7 @@ def main():
               f'independent read-only source-order exceptions {changes}',flush=True)
     need(len(rows)==25 and sum(x['native_x86_instructions'] for x in rows)==3216
          and sum(x['native_original_CODE_bytes'] for x in rows)==11895
-         and total_coff==224 and native_frame_extra in (24,36)
+         and total_coff==224 and native_frame_extra in (18,24,36)
          and [r['native_x86_instructions'] for r in rows[-4:]]==[66,84,127,127]
          and [r['native_original_CODE_bytes'] for r in rows[-4:]]==[229,301,472,472],
          'original case family 25 physically complete nondefault native actions/fields differs')
@@ -480,7 +480,7 @@ def main():
              'case_details':rows,
              'original_native_x86_insns':3216,
              'original_inner_CODE_bytes':11895,
-             'integrated_action332_now_disp32_same_size':native_frame_extra in (24,36),
+             'integrated_action332_now_disp32_same_size':native_frame_extra in (18,24,36),
              'genuine_typed_COFF_fields':224,
              'new_four_cases_strict_native_grammar':[0x33A,0x33B,0x33C,0x33D],
              'new_fade_spawn_cases_strict_native_grammar':[0x338,0x339],

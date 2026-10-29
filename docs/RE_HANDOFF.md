@@ -1,6 +1,6 @@
 # TH075 — current agent handoff
 
-**Maintained: 2026-10-29, after F586; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
+**Maintained: 2026-10-29, after F587; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
 
 ## 1. Current authoritative state (not historical hypotheses)
 
@@ -629,6 +629,39 @@ COFF call/global fields**, 60 physical jump DWORD slots and
 See [F586 original 0x34A/34B and stack-frame evidence](CHARACTEROBJECT_LATE_STAGES_F586.md)
 and targeted
 `scripts/repo-python scripts/verify-characterobject-late-stage-actions-f586.py`.
+
+**F587 now reconstructs the complete original 397-instruction /
+1,529-CODE-byte CharacterObject four-way event action `0x34C`**
+in original still-nonexact 33,293-CODE-byte giant `004EBDA0`.
+It restores four *different* parent actor states `0x198/0x19A/
+0x19C/0x19D`, original stage gating, native 8-effect loop, real
+x87 position globals `006590A8/00658264` and complete signed
+random transformations to four distinct native effect IDs
+`0x322/0x323/0x324/0x325`, including separate real
+`00455580/00453A70/00453D40` calls. One newly compiled VC7.1
+source emits **all 397 original GPR/x87/CFG/per-instruction
+width roles in exact order, with 25/25 genuine typed COFF
+physical fields**, no new tolerated instruction-order difference.
+
+Another *real compiler frame result*: the newly added giant action
+naturally shifts earlier source action0x331's temporaries from
+EBP−0x80/−0x84/−0x88 to **−0x84/−0x88/−0x8C**, so its
+source length now **274/1,003 bytes**, identical to native original
+274/1,003 rather than the prior F586 274/997. Its exact original
+EBP slots remain different, so these are still **not byte-exact
+original functions**; strict old source verifiers now distinguish
+all three separately observed original/C++ temporary layouts.
+Across F572–F587 one ordinary C++ function now verifies **40
+real complete native game-action cases, 6,048 original x86
+instruction roles, 22,774 original internal CODE bytes and
+414 authentic typed PE COFF call/global refs**, all 60 original
+switch DWORD fields and 198 exact compressed index bytes.
+The whole 33,293-byte original is still NONEXACT with zero
+independent inner CODE/DATA credit. See
+[F587 complete four-state game action study](CHARACTEROBJECT_FOUR_WAY_EVENT_F587.md)
+and run targeted
+`scripts/repo-python scripts/verify-characterobject-four-way-event-f587.py`.
+No full cold replay or external Oracle receipt.
 
 **Three other authored functions remain nonexact (all require full CODE):**
 

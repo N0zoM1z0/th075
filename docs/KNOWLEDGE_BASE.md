@@ -9788,3 +9788,41 @@ cannot be accepted as standalone functions; no all-unit cold replay
 or external Oracle. Reproducer
 `scripts/repo-python scripts/verify-characterobject-late-stage-actions-f586.py`;
 [F586 original late-stage source audit](CHARACTEROBJECT_LATE_STAGES_F586.md).
+
+
+## F587: full 397-instruction CharacterObject 0x34C and zero new EBP width gap in action0x331
+
+The original Japanese 33,293-byte CharacterObject whole giant
+`004EBDA0` has an authentic 397 x86/1,529-CODE-byte four-state
+`0x34C` action with real parent signed states 0x198/0x19C/
+0x19A/0x19D, 8-effect spawn loop, position x87 globals
+006590A8/00658264, original conditional 0040FB40(5), x87
+scale/color decay and original stage3 branch policy. Four
+independent real parent states generate **native** 0x322,
+0x323,0x324 and 0x325 original game effect IDs, using actual
+00455580 random offsets (-5,+30,-5,-random-30), original
+00453A70 computed-position spawns and 00453D40(6).
+The new normal VC7.1 source case reproduces ALL original 397
+register/x87/CFG/per-instruction byte widths and strict
+machine-order grammar with **25 actual typed zero-addend native
+COFF source fields**, not a partial case prefix. Whole 60-DWORD
+sparse switch/data remain authentic.
+
+Adding this real 397-insn C++ case to the same containing switch
+naturally changes previously source-compact action0x331's VC7.1
+integer-to-FPU temps to `EBP−0x84/−0x88/−0x8C`, all disp32.
+Source 0x331 is now **274 x86/1,003 bytes**, identical *width*
+to original native, while original native temps still reside at
+−0x90/−0x94/−0x98, hence not actual byte-exact CODE. The
+strict original-PE helper F586 now recognizes exactly three
+real proven source-frame contexts, not arbitrary stack sizes.
+
+In this one natural C++ source, F572–F587 now verify **40 complete
+original game-action case bodies, 6,048 native x86 instruction
+roles /22,774 internal native CODE bytes /414 true typed physical
+COFF fields**, 60 real physical handler DWORD refs, 198 literal
+compressed bytes, 438 distinct after-RET DATA-layout bytes.
+The entire original **33,293-byte giant remains nonexact**.
+No standalone action/whole CODE credit, all-unit replay or Oracle.
+Reproducer `scripts/repo-python scripts/verify-characterobject-four-way-event-f587.py`,
+[F587 original four-state source study](CHARACTEROBJECT_FOUR_WAY_EVENT_F587.md).

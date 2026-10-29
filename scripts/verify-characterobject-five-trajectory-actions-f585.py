@@ -162,7 +162,7 @@ def main():
          'entire native original first compressed switch hash wrong')
     src=(ROOT/'probes/CharacterObjectActionsF572.cpp').read_text()
     need('F583/F585' in src and all(src.count(f'case 0x{case:X}:')==1 for case in CASES)
-         and 'case 0x34C: g_FighterProbeMarker = 845; break;' in src,
+         and 'case 0x34D: g_FighterProbeMarker = 846; break;' in src,
          'actual new natural C++ must implement all five game cases, not diagnostic markers')
     # One fresh selected native-profile VC7.1 TU, including old 32 cases.
     # The previous original-native source checker independently checks all
