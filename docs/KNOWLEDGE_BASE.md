@@ -11861,3 +11861,29 @@ limits](FIGHTER_PRECEDING_STAGE_PHASE_F666.md),
 No new strict case or authored whole-function exact credit. Formal
 943/862,726 original authored whole exact and F598–F666 587/158,673
 uncredited strict fighter interior totals unchanged; no mass replay.
+
+
+## F668: three consecutive original fighter case interiors, true VC7.1 float evaluation order
+
+New ordinary C++ real native case `252`/`253`/`254` source builds in
+**one complete selected 58K giant** `00543210`: genuine original
+0x252 **72 x86/260 CODE B/6 real fields**, 0x253 **72/259/6**,
+0x254 **63/225/6**. VC7.1 prefix signed byte decrement at original
+member `+0x366` emits original 8-bit MOV/SUB/MOV. The meaningful
+float lvalue alias `(*(&POS48))+g_ContactProjectionAt00657888`
+restores **FLD [this+0x48] before genuine DIR32 FADD global 00657888**;
+normal commuted expression instead had two x87 instruction/width
+differences. All **207 original x86 /744 native internal CODE B /
+18 authenticated PE/COFF fields** now strict with original stage4
+kind0x37 spawn/animation/owner field clear, and genuine conditional
+resource handling only for the first two actions. Full F668 VC7.1
+parent compile rechecks 19 preceding strict native cases, three
+preserved original EBP negative cases, and complete afterRET DATA in
+**the same object**. Selected whole giant now **22 strict case
+interiors /1,644 x86 /5,715 original CODE B /150 true COFF fields**,
+but still NONEXACT and no independent entire-function credit. Across
+F598–F668 research **590 context-strict cases /159,417 original
+native internal CODE bytes** remain uncredited; F666's source phase
+context caveat still applies. [F668 full original PE proof](FIGHTER_COUNTER_SPECIAL_F668.md),
+`scripts/repo-python scripts/verify-fighter-counter-special-f668.py`.
+No all-unit cold replay.

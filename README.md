@@ -26,7 +26,7 @@ types are provisional; machine-code matches alone do not prove an entire
 original class layout. The target's official distribution provenance has not
 been independently verified; do not substitute a localized `th075c.exe`.
 
-These snapshot counts were rechecked after **F666** (2026-10-30).
+These snapshot counts were rechecked after **F668** (2026-10-30).
 The **live** sources of truth, not any dated prose milestone, are `config/functions.csv`,
 `config/function-origins.csv`, and `config/match-units.toml`.
 Refresh using `scripts/repo-python scripts/report-reconstruction-status.py --summary`.
@@ -53,20 +53,21 @@ F659's 14 additional whole-giant C++ condition/lifetime variants did
 not reduce the genuine 137-byte register cycle; two `+=` alternatives
 actually changed native x87 geometry. [New F659/F660 negative evidence](docs/GIANT_REGISTER_AND_ARCHIVE_LIFETIME_NEGATIVES_F659_F660.md).
 
-**F598–F664's 587 strictly source-backed fighter *internal case
-bodies* (158,673 original internal CODE bytes) remain uncredited**:
+**F598–F668's 590 strictly source-backed fighter *internal case
+bodies* (159,417 original internal CODE bytes) remain uncredited**:
 none of their enclosing giant `Advance()` functions is fully exact.
-F664 strictly reconstructs original `0x200/0x201` inside the real
-58KB giant `00543210`: **228 genuine original x86 instructions,
-779 original internal CODE bytes and 17 physical PE/COFF fields**.
-The same newly compiled entire fighter verifies **all 17 previous
-strict cases, three retained native EBP scratch negatives and the
-full independent after-RET switch DATA**. The selected giant now has
-**19 strict original internal cases /1,437 native x86 /4,971
-internal CODE bytes /132 original PE/COFF fields**. This is **not**
-whole-function exact: original `0x186/0x18A/0x18B` remain nonstrict
-and the original physical cases are not one uninterrupted strict run.
-[F664 original physical case proof](docs/FIGHTER_SPECIAL_STAGE_F664.md).
+F668 adds **three consecutive genuine native `0x252/0x253/0x254`
+whole-case interiors** in selected giant `00543210`, **207 original
+x86 /744 real native CODE bytes /18 typed PE/COFF fields**, including
+the authentic VC7.1 `FLD [this+0x48]` before `FADD [00657888]` and
+actual signed-byte counter decrements. All previous 19 context-strict
+native cases and independent after-RET DATA were reverified in the
+same fresh parent. The selected giant now has **22 strict original
+inner cases /1,644 x86 /5,715 internal CODE bytes /150 physical
+fields**. This is **NOT whole-function exact** and its source context
+still contains unresolved original cases; the nonexact EBP scratch
+stages remain negative. [New F668 entire-parent native proof](docs/FIGHTER_COUNTER_SPECIAL_F668.md).
+F664 previously added real `0x200/0x201` (228 x86/779 B/17 fields).
 A new **F666 preceding-source context control** subsequently added
 normal C++ for four actual earlier actions `1FA/1FB/1FE/1FF` and
 independently proved all **562 original x86 roles /1,942 original

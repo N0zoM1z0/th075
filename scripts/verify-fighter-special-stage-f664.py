@@ -97,7 +97,7 @@ def source_with_cases(source):
     return source
 
 
-def verify_new_code(reader,pe,dec,code,refs,boss,mapped,orig,helper):
+def verify_new_code(reader,pe,dec,code,refs,boss,mapped,orig,helper,following_native=None):
     ins=[]
     for x in dec.disasm(code,0):
         ins.append(x)
@@ -155,9 +155,17 @@ def verify_new_code(reader,pe,dec,code,refs,boss,mapped,orig,helper):
                          'original_typed_PE_COFF_fields':len(physical),
                          'independent_whole_function_accepted_bytes':0})
         position+=len(original)
-    need(ins[position].mnemonic=='mov' and ins[position].op_str.endswith(', 0x253'),
-         'new strict 0x201 must end at genuine following 0x252 marker')
-    return accepted
+    if following_native is None:
+        need(ins[position].mnemonic=='mov' and ins[position].op_str.endswith(', 0x253'),
+             'new strict 0x201 must end at genuine following 0x252 marker')
+    else:
+        need(following_native==0x252
+             and ins[position].mnemonic=='mov'
+             and ins[position].op_str=='edx, dword ptr [ebp - 8]'
+             and ins[position+1].mnemonic=='movsx'
+             and ins[position+1].op_str=='eax, word ptr [edx + 0x62]',
+             'native 0x252 C++ source must physically follow validated 0x201')
+    return accepted,position
 
 
 def main():
@@ -213,7 +221,7 @@ def main():
     c,idx=f656.verify_native(reader,pe,dec,code,refs,prior656,old,idx,h,following_native=0x186)
     d,negative186,idx=f657.verify_new(reader,pe,dec,code,refs,prior657,old,idx,h,following_native=0x18A)
     negative661=f661.verify_nonstrict(reader,pe,dec,code,refs,prior661,old,idx,h)
-    new=verify_new_code(reader,pe,dec,code,refs,boss,mapped,originals,h)
+    new,_=verify_new_code(reader,pe,dec,code,refs,boss,mapped,originals,h)
     receipt={'selected_true_giant':'0x00543210',
              'original_entire_parent_CODE_bytes_NONEXACT':boss['size'],
              'separate_after_RET_switch_DATA_bytes':boss['postret_size'],
