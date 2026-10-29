@@ -27,9 +27,9 @@ ROOT=Path(__file__).resolve().parents[1]
 SOURCE=ROOT/'probes/FighterLandingTimerSiblingsF633.inc'
 OUT=ROOT/'.analysis/f633-fighter-landing-siblings-source'
 ACTIONS=(0x97,0x98,0x9A)
-NEXT_ACTION={0x97:0x98,0x98:0x9A,0x9A:0x9B}
-INITIAL={0x97:-10.0,0x98:-13.0,0x9A:-9.0}
-NEXT_MOVE={0x97:0,0x98:0,0x9A:2}
+NEXT_ACTION={0x97:0x98,0x98:0x9A,0x9A:0x9B,0x9B:0x9C,0x9C:0x9E}
+INITIAL={0x97:-10.0,0x98:-13.0,0x9A:-9.0,0x9B:-10.0,0x9C:-13.0}
+NEXT_MOVE={0x97:0,0x98:0,0x9A:2,0x9B:2,0x9C:2}
 
 
 def need(ok,why):
@@ -141,7 +141,7 @@ def natural_source(addr,boss,report,mapped,reader,pe,decoder,h,properties):
     return source
 
 
-def verify_fresh_whole(reader,pe,decoder,boss,report,mapped,code,refs,properties,h):
+def verify_fresh_whole(reader,pe,decoder,boss,report,mapped,code,refs,properties,h,extra_followup_x86=0):
     addr=boss['address'];inst=[]
     for x in decoder.disasm(code,0):
         inst.append(x)
@@ -157,22 +157,27 @@ def verify_fresh_whole(reader,pe,decoder,boss,report,mapped,code,refs,properties
     earlier,prior_info=h['f631'].original_case(reader,pe,decoder,boss,by)
     counts=sum(properties[action][1]['original_whole_case_x86_instructions'] for action in ACTIONS)
     expected=3*prior_info['original_complete_x86_instructions']
-    need(counts==expected and counts in (219,225),
-         f'{addr:#x}: authentic three 73/75-x86 native cases do not share one source family')
+    need(counts==expected and counts in (219,225)
+         and extra_followup_x86 in (0,2*73,2*75)
+         and (not extra_followup_x86 or extra_followup_x86==2*prior_info['original_complete_x86_instructions']),
+         f'{addr:#x}: authentic 73/75-x86 native case count or followup differs')
     h['f631'].verify_new_obj(reader,pe,decoder,boss,report,mapped,code,refs,
-        earlier,prior_info,h,extra_sibling_x86=counts)
+        earlier,prior_info,h,extra_sibling_x86=counts+extra_followup_x86)
+    wanted=0x9C if extra_followup_x86==0 else 0x9F
     markers=[]
     for field in refs:
         if 'g_FighterProbeMarker' not in field['symbol']:continue
         native_ins=next((x for x in inst if x.address<=field['offset']<x.address+x.size),None)
-        if native_ins is not None and native_ins.mnemonic=='mov' and native_ins.op_str.endswith(', 0x9c'):
+        if native_ins is not None and native_ins.mnemonic=='mov' and native_ins.op_str.endswith(f', 0x{wanted:x}'):
             markers.append(native_ins)
     need(len(markers)==1,
          f'{addr:#x}: actual next original source case0x9B must be unambiguously COFF-marked')
     endindex=inst.index(markers[0])
-    need(endindex>=counts,f'{addr:#x}: source last three complete native case bodies truncated')
-    candidates=inst[endindex-counts:endindex]
-    need(candidates[-1].address+candidates[-1].size==markers[0].address,
+    need(endindex>=counts+extra_followup_x86,
+         f'{addr:#x}: source last three original native case bodies truncated by followup')
+    candidates=inst[endindex-counts-extra_followup_x86:endindex-extra_followup_x86]
+    next_case_pc=(inst[endindex-extra_followup_x86].address if extra_followup_x86 else markers[0].address)
+    need(candidates[-1].address+candidates[-1].size==next_case_pc,
          f'{addr:#x}: original source full case0x9A must end at case0x9B')
     result=[]
     offset=0

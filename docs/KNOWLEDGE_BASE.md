@@ -11142,3 +11142,32 @@ are genuinely NONEXACT; tracked F596 best source unchanged.
 selected `scripts/repo-python scripts/verify-characterobject-typed-member-f635.py --case 38d-zero-velocity-as-bits`.
 No accepted whole/split CODE credit; official 943/862,726 whole
 exact unchanged and no all-unit cold replay.
+
+
+## F636: original native complete two-case landing 0x9B/0x9C source in eleven giants
+
+Original TH075 PE physically bounds native action0x9B→0x9C→0x9E;
+no separate action0x9D handler. Authentic original height constants
+−10f/−13f and next move **action 2** in both cases differ from
+F633 0x97/0x98 action0. Normal VC7.1 C++ reuses the *same real*
+`probes/FighterLandingTimerSiblingsF633.inc` actor-specific source
+body, and **eleven fresh whole giant source TUs strictly reproduce
+22 native complete 0x9B/0x9C case interiors /1,614 GPR/x87/CFG
+roles /6,252 original uncredited native inner CODE bytes/198 actual
+zero-addend typed PE/COFF calls and globals**. Native `00564BE0`
+original saved-this `EBP−0x88` widens exactly 22 receiver MOVs per
+342-byte case; native `005AEEC0` uses `+0xEFC` trajectory, and
+native `0058AF60` and `00543210` have extra `+0xF0A` reset
+BEFORE/AFTER their main stage0 init in genuinely different original
+75-x86/288-byte cases. Each new OBJ independently revalidates
+F633 three previous native 0x97/0x98/0x9A cases, F631 0x96,
+real 0x91 (including unresolved 35/55 GPR-role predecessors),
+F628 three landing cases, native mode0x63 if strict, F614 thirty
+old source cases and all original afterRET packed switch DATA.
+F598–F636 now **445 strictly source-backed original game-case
+interiors/119,520 original native inner CODE bytes**, no new whole
+fighter exact/accepted authored CODE. [F636 full original PE/native
+source study](FIGHTER_LANDING_PAIR_F636.md), targeted
+`scripts/repo-python scripts/verify-fighter-landing-pair-f636.py --boss 0x0058AF60`.
+Official 943/862,726 exact authored unchanged; no all-unit cold
+replay or external Oracle acceptance.

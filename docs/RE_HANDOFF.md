@@ -1,6 +1,6 @@
 # TH075 — active reconstruction handoff
 
-**Maintained 2026-10-29 after F635.** This is the **only current task list**.
+**Maintained 2026-10-29 after F636.** This is the **only current task list**.
 The [F540–F596 research chronology](history/RE_HANDOFF_F540_THROUGH_F596.md),
 [knowledge base](KNOWLEDGE_BASE.md), and older F-series studies are
 **historical evidence**, not statements of current progress. Independently
@@ -790,6 +790,35 @@ real native CALL provenance](GAME_OBJECT_ACCESSOR_LEAVES_F634.md),
 
 ```bash
 scripts/repo-python scripts/verify-game-object-leaves-f634.py
+```
+
+**F636 original native landing action `0x9B/0x9C` source extended to
+ALL ELEVEN fighter giants:** real native physical boundaries
+`0x9B→0x9C→0x9E` (no independent 0x9D). Two complete 73-x86
+source cases each have real heights **−10f/−13f** and true next
+**action 2**, not earlier `0x97/0x98` action0. Actor `005AEEC0`
+retains real `+0xEFC` counter, `00564BE0` 342 native B per
+case from 22 real saved EBP−0x88 MOVs widened 3 bytes; actual
+`0058AF60` clears extra `+0xF0A` BEFORE trajectory while
+`00543210` clears it AFTER, in their real 75-x86 native versions.
+All **22 new internal case bodies**, **1,614 authentic GPR/x87/CFG
+roles, 6,252 original uncredited inner CODE bytes, 198 actual typed
+PE/COFF fields** are strict in fresh whole giant VC7.1 source TUs.
+On each same new OBJ the verifier rechecks F633 `0x97/98/9A`
+all three complete strict cases, F631 0x96, prior F629/F630
+0x91 with honest 35/55-register-role negatives, F628 three
+landings, mode0x63 where strict, 30 earlier original game cases
+and complete original afterRET packed DATA. Cumulative F598–F636
+**445 original strictly source-backed interior actions/119,520
+original native internal CODE bytes**, **zero new accepted whole
+native giant authored functions**. Official authored exact ledger
+943/862,726 remains unchanged.
+[F636 original real two-case PE+COFF and VC7.1 proof](FIGHTER_LANDING_PAIR_F636.md),
+[reused natural C++ body](../probes/FighterLandingTimerSiblingsF633.inc).
+
+```bash
+scripts/repo-python scripts/verify-fighter-landing-pair-f636.py --boss 0x00564BE0
+scripts/repo-python scripts/verify-fighter-landing-pair-f636.py --boss 0x0058AF60
 ```
 
 ## 4. Other three unmatched authored *whole* functions
