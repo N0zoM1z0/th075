@@ -11687,3 +11687,32 @@ function acceptance**. The authored 943/862,726 formal exact ledger
 is unchanged. [Native F656 source and proof](FIGHTER_LATE_STAGES_F656.md),
 `scripts/repo-python scripts/verify-fighter-late-stages-f656.py`.
 No 943-unit all-unit cold replay.
+
+
+## F657: three more strict fighter native stages, plus real EBP scratch blocker
+
+The original physical native cases 187 (50 x86/181 original B/
+5 real typed PE fields), 188 (50/181/5), and 189 (112/405/9)
+strictly match a **new selected complete giant `00543210` VC7.1
+C++ parent**. Original 187/188 contain stage-zero motion/10f/15f
+initialization, signed stage-gated native gravity and action0/2
+transitions. Original 189 contains exact original positive 006578C0
+float drag, bounded stage7–8 x87 y collision and action9 auxiliary
+transition, plus 9.0f/0.9f stage7 motion. Fresh proof includes all
+19 real PE/COFF field/source symbols and all original 212 x86 roles.
+Actual preceding original native case 186 is **NONEXACT** despite
+matching 82 x86 mnemonics and all 8 physical COFF fields: its two
+original EBP−0x84 scratch operations compile to EBP−0x20, 284 bytes
+vs 290 real native. A separate raw operand verifier protects this
+from the historical F598 broad EBP-slot normalization. No fake local
+or arbitrary padding. Fourteen previous original native cases plus
+full after-RET switch DATA are rechecked in the SAME whole parent.
+Net **585 strict original inner action cases /157,894 original
+uncredited internal CODE bytes** in giant research; selected 00543210
+has **17 strict, not uninterrupted** internal stages (4,192 B /1,209
+x86 /115 original fields), because case 186 is a genuine unresolved
+gap. All 22 original whole giants remain NONEXACT and formal
+943/862,726 original whole authored exact ledger unchanged.
+[F657 genuine case proof](FIGHTER_MOTION_CONTINUATION_F657.md),
+`scripts/repo-python scripts/verify-fighter-motion-continuation-f657.py`.
+No mass replay.

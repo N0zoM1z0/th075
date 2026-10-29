@@ -142,7 +142,7 @@ def source_with_native_stages(src):
     return src
 
 
-def verify_native(reader,pe,dec,code,refs,originals,older,next_ordinal,h):
+def verify_native(reader,pe,dec,code,refs,originals,older,next_ordinal,h,following_native=None):
     ins=[]
     for x in dec.disasm(code,0):
         ins.append(x)
@@ -185,9 +185,16 @@ def verify_native(reader,pe,dec,code,refs,originals,older,next_ordinal,h):
                        'physically_typed_PE_COFF_fields':len(physical),
                        'accepted_whole_independent_function_bytes':0})
         offset+=len(n)
-    need(ins[offset].mnemonic=='mov' and ins[offset].op_str.endswith(', 0x187'),
-         'last genuine native 0x136 must end before next physical handler 0x186 marker')
-    return strict
+    if following_native is None:
+        need(ins[offset].mnemonic=='mov' and ins[offset].op_str.endswith(', 0x187'),
+             'last genuine native 0x136 must end before next physical handler 0x186 marker')
+    else:
+        need(following_native==0x186 and ins[offset].mnemonic=='mov'
+             and ins[offset].op_str=='edx, dword ptr [ebp - 8]'
+             and ins[offset+1].mnemonic=='movsx'
+             and ins[offset+1].op_str=='eax, word ptr [edx + 0x62]',
+             'true generated 0x186 physical native following-case body missing')
+    return strict,offset
 
 
 def main():
@@ -225,7 +232,7 @@ def main():
     old=f651.verify_full(reader,pe,dec,boss,report,mapped,code,refs,native_651,h,following_native=0x12C)
     prev653,start654=f653.verify_new(reader,pe,dec,code,refs,old,native_653,h,following_native=0x12F)
     prev654,start656=f654.verify_new(reader,pe,dec,code,refs,native_654,old,start654,h,following_native=0x131)
-    strict=verify_native(reader,pe,dec,code,refs,native,old,start656,h)
+    strict,_=verify_native(reader,pe,dec,code,refs,native,old,start656,h)
     result={'original_selected_giant':'0x00543210',
             'whole_original_parent_CODE_bytes_still_NONEXACT':boss['size'],
             'separately_owned_original_after_RET_switch_DATA_bytes':boss['postret_size'],

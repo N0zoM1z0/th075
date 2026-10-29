@@ -26,7 +26,7 @@ types are provisional; machine-code matches alone do not prove an entire
 original class layout. The target's official distribution provenance has not
 been independently verified; do not substitute a localized `th075c.exe`.
 
-These snapshot counts were rechecked after **F656** (2026-10-30).
+These snapshot counts were rechecked after **F657** (2026-10-30).
 The **live** sources of truth, not any dated prose milestone, are `config/functions.csv`,
 `config/function-origins.csv`, and `config/match-units.toml`.
 Refresh using `scripts/repo-python scripts/report-reconstruction-status.py --summary`.
@@ -50,18 +50,19 @@ bodies remain wrong**. This is outstanding, **not a fully byte-exact
 33K function**. Reproduce via
 `scripts/repo-python scripts/verify-characterobject-native-collision-order-f596.py`.
 
-**F598–F656's 582 strictly source-backed fighter *internal case
-bodies* (157,127 original internal CODE bytes) remain uncredited**:
+**F598–F657's 585 strictly source-backed fighter *internal case
+bodies* (157,894 original internal CODE bytes) remain uncredited**:
 none of their enclosing giant `Advance()` functions is fully exact.
-The newest F656 adds five independently original `0x131/0x133..0x136`
-native case interiors (**434 x86 roles, 1,484 original CODE bytes,
-36 real PE/COFF fields**), with `0x132` correctly identified as a
-shared default handler, not an independent native case. Giant
-`00543210` now has **14 consecutive physical strict native cases**,
-**997 genuine original x86 roles /3,425 internal CODE bytes /
-96 physical typed fields**, all validated within the **same newly
-compiled parent** and its complete after-RET switch DATA. Reproduce
-[the new F656 full-parent original proof](docs/FIGHTER_LATE_STAGES_F656.md).
+F657 adds three original full `0x187/0x188/0x189` native cases
+(**212 native x86, 767 original CODE bytes, 19 real typed PE/COFF
+fields**) in giant `00543210`, with all prior 14 strict cases and
+full after-RET DATA preserved in **one newly compiled parent**.
+The giant now contains **17 strict original inner cases, 1,209 native
+x86 /4,192 original internal CODE bytes /115 real typed fields**.
+These are **not 17 consecutive strict cases**: the intervening true
+`0x186` remains NONSTRICT (two actual EBP scratch offsets differ,
+284 emitted vs 290 original bytes), without fake local padding or
+partial case credit. See [the latest F657 original proof](docs/FIGHTER_MOTION_CONTINUATION_F657.md).
 Native complex `0xCC` in `005AEEC0`
 and `00564BE0` still has **80/78 genuine wrong GPR/CFG roles**
 despite matching x86 count and all 11 real PE/COFF fields; **do not
