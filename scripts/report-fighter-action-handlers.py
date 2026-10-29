@@ -212,12 +212,56 @@ def report_boss(reader, target, decoder, boss) -> tuple[dict, list[dict]]:
                         'kind':'singleton'} for v in singled]
     default_entry = f'0x{next(iter(default_targets)):08X}'
     default_rows = sum(row['handler'] == default_entry for row in mapped)
+    # Inspect the *entire* physical action-zero handler body in each multi-table
+    # boss, bounded by the next independently native first-table case address.
+    # The same mnemonic-level action-zero policy appears in all 11 bosses, but
+    # its individual machine-code bytes/receiver stack slots are NOT shared.
+    case_zero = None
+    first_case_signature = None
+    if len(switches) > 1:
+        check(boss['tables'][0]['map_addr'] is None and boss['tables'][0]['slots'] == 11,
+              f'{start:08X}: no original eleven-slot zero-based initial switch')
+        first_two = reader.pe_bytes_at(target, boss['tables'][0]['dense_addr'], 8)
+        first, second = read_u32(first_two, 0), read_u32(first_two, 4)
+        check(first in instruction_starts and second in instruction_starts and first < second,
+              f'{start:08X}: action zero and one native boundaries invalid')
+        block = [i for i in ins if first <= i.address < second]
+        check(block[0].address == first and block[-1].address + block[-1].size == second,
+              f'{start:08X}: action-zero block is not complete native instructions')
+        check(len(block) == 50 and sum(i.mnemonic == 'call' for i in block) == 3,
+              f'{start:08X}: unexpected action-zero native case control flow')
+        check(all(i.op_str == '0x453e20' for i in block if i.mnemonic == 'call'),
+              f'{start:08X}: native action-zero callee changed')
+        check(sum(i.mnemonic in ('fld', 'fcomp', 'fnstsw', 'fstp', 'fsub', 'fadd') for i in block) == 18,
+              f'{start:08X}: native action-zero x87 pipeline changed')
+        check(all(any(constant in i.op_str for i in block)
+                  for constant in ('0x65782c', '0x657478', '0x658050')),
+              f'{start:08X}: native action-zero float constant identity changed')
+        check(any('0x3ac' in i.op_str for i in block)
+              and any('0x50' in i.op_str for i in block),
+              f'{start:08X}: native action-zero flag/position fields changed')
+        # All 14 real receiver loads use the same EBP stack slot; encoding
+        # switches from disp8 to disp32 when the slot is beyond +/-127.
+        this_loads = [i for i in block if i.mnemonic == 'mov'
+                      and re.fullmatch(r'(?:eax|ecx|edx), dword ptr \[ebp - 0x[0-9a-f]+\]', i.op_str)]
+        check(len(this_loads) == 14 and len({i.op_str.split('[')[1] for i in this_loads}) == 1,
+              f'{start:08X}: native action-zero receiver stack-slot uses changed')
+        this_slot = int(this_loads[0].op_str.split('- 0x')[1].rstrip(']'), 16)
+        block_len = second - first
+        check(block_len == (222 if this_slot >= 128 else 180),
+              f'{start:08X}: native disp8/disp32 action-zero body length mismatch')
+        case_zero = {'start':f'0x{first:08X}', 'end_exclusive':f'0x{second:08X}',
+                     'bytes':block_len, 'instructions':len(block), 'calls':3,
+                     'this_slot':f'EBP-0x{this_slot:X}',
+                     'this_slot_reads':len(this_loads),
+                     'sha256':sha(reader.pe_bytes_at(target, first, block_len))}
+        first_case_signature = tuple(i.mnemonic for i in block)
     return ({'boss':f'0x{start:08X}', 'code':size, 'instruction_count':len(ins),
              'action_cases':len(mapped), 'default_mapped_actions':default_rows,
              'nondefault_mapped_actions':len(mapped)-default_rows,
              'unique_mapped_handlers':len(set(v['handler'] for v in mapped)),
              'default':f'0x{next(iter(default_targets)):08X}', 'singleton_branches':singled,
-             'ranges':ranges},mapped+singleton_entries)
+             'ranges':ranges, 'case_zero':case_zero, '_first_case_signature':first_case_signature},mapped+singleton_entries)
 
 
 def main() -> None:
@@ -240,12 +284,19 @@ def main() -> None:
     indexed_total = 0
     singleton_total = 0
     default_total = 0
+    case_zero_signatures = []
     for boss in selected:
         summary, action_rows=report_boss(reader,target,decoder,boss)
+        signature = summary.pop('_first_case_signature')
+        if signature is not None:
+            case_zero_signatures.append(signature)
         summaries.append(summary); entries.extend(action_rows)
         indexed_total += summary['action_cases']
         singleton_total += len(summary['singleton_branches'])
         default_total += summary['default_mapped_actions']
+    check(len(set(case_zero_signatures)) <= 1, 'original eleven-boss action-zero mnemonic signatures diverged')
+    if not args.boss:
+        check(len(case_zero_signatures) == 11, 'not all original multi-table action-zero cases were verified')
     if args.csv:
         with Path(args.csv).open('w',newline='') as f:
             w=csv.DictWriter(f,fieldnames=['boss','action','table','slot','handler','kind'],lineterminator='\n')
@@ -265,6 +316,11 @@ def main() -> None:
                   f'default {row["default"]}')
             print('   ranges: '+'; '.join(parts))
             print('   singleton branches: '+singles)
+            if row['case_zero'] is not None:
+                c = row['case_zero']
+                print(f'   action zero: {c["start"]}..{c["end_exclusive"]} '
+                      f'{c["bytes"]} CODE bytes / {c["instructions"]} instructions, '
+                      f'14 real receiver reloads from {c["this_slot"]}')
         print(f'Original PE verified: {len(summaries)} entire native bosses, '
               f'{indexed_total} table-dispatched ({default_total} shared-default) and '
               f'{singleton_total} separately branched action IDs '

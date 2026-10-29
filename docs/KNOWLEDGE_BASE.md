@@ -8588,3 +8588,25 @@ ranges: `docs/FIGHTER_ACTION_CASE_RESOLUTION.md`, executable verifier:
 case target is an in-function instruction or native default, not a separately
 credited function. There is **no new giant-boss exact C++ or CODE/DATA credit**,
 no all-unit cold replay and no external Oracle receipt.
+
+
+## F538: eleven full native action-zero cases, shared instruction sequence but different encodings
+
+Original CODE inside all eleven *whole* multi-switch fighter bosses was
+independently read using each original dense table's first two genuine
+handler addresses as boundaries. Every action-zero case comprises the
+**same full sequence of 50 native x86 mnemonics**, with 18 x87-related
+instructions, three original `00453E20` calls, 14 physical receiver
+reloads, and real +0x3AC flag/+0x50 position and x87 constants
+`0065782C`, `00657478` and `00658050`. Ten original cases are 180
+bytes; the `00564BE0` case is 222 CODE bytes because its native receiver
+EBP-0x88 needs disp32 in all fourteen loads, adding exactly 42 bytes.
+This is a concrete compiler/layout constraint for subsequent **whole
+boss** natural C++ reconstruction. Every real per-boss case SHA256 and
+physical original boundary is recorded in
+[the F538 eleven-case study](FIGHTER_ACTION_ZERO_NATIVE_LAYOUT.md),
+and is verified in the updated
+`scripts/repo-python scripts/report-fighter-action-handlers.py` original
+PE-only runner. The 7,152-row F537 action index SHA256 is unchanged.
+**No whole boss C++ rebuilt, no accepted CODE/DATA credit or all-unit
+cold replay.** The existing 942 exact-unit register remains unchanged.
