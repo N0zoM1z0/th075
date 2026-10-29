@@ -12268,3 +12268,25 @@ formal whole-authored 943/862,726 remains. [Original full-parent
 F684 source and negative physical proof](FIGHTER_ANGLE_STORM_F684.md),
 `scripts/repo-python scripts/verify-fighter-angle-storm-f684.py`.
 No mass replay.
+
+
+## F686: one entire original source-UNKNOWN 19-byte native virtual destructor
+
+Actual original native PE `0061535A` owns **19 entire machine CODE B,
+5 real original x86 instructions, two zero-addend typed source PE/COFF
+fields**. Ordinary MSVC VC7.1 `/O1` C++ virtual destructor
+`free(*reinterpret_cast<void**>(this+0x104C))` yields original
+`PUSH [ECX+0x104C]; MOV [ECX],0065DA54; CALL 00640F15;
+POP ECX; RET`, byte-identical after linking actual compiler source
+vftable DIR32 at +8 and CRT `free` REL32 at +13. `/O2` instead
+emits 20/6 x86 and `/Od` 38/14; no arbitrary padding or assembly.
+Original SDK/game author and class name remain unknown despite three
+real direct registered caller instructions. This is one new
+source-backed *whole* origin-unknown function, bringing uncredited
+F595–F686 research to **82 distinct original whole functions /
+1,578 original native CODE B**. All 95 original provenance-unknown
+candidate ledger entries remain excluded; formal game-authored entire
+exact still 943/862,726 CODE B. [F686 whole original native PE/
+COFF link proof](SDK_NATIVE_VTABLE_DESTRUCTOR_F686.md),
+`scripts/repo-python scripts/verify-sdk-native-vtable-destructor-f686.py`.
+No all-unit cold replay.

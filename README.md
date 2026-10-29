@@ -26,7 +26,7 @@ types are provisional; machine-code matches alone do not prove an entire
 original class layout. The target's official distribution provenance has not
 been independently verified; do not substitute a localized `th075c.exe`.
 
-These snapshot counts were rechecked after **F684** (2026-10-30).
+These snapshot counts were rechecked after **F686** (2026-10-30).
 The **live** sources of truth, not any dated prose milestone, are `config/functions.csv`,
 `config/function-origins.csv`, and `config/match-units.toml`.
 Refresh using `scripts/repo-python scripts/report-reconstruction-status.py --summary`.
@@ -122,19 +122,18 @@ despite matching x86 count and all 11 real PE/COFF fields; **do not
 promote** it to exact just because the case body geometry matches.
 
 Separately, **whole-function** VC7.1 C++ probes now reproduce
-**81 distinct historical origin-unknown complete original functions /
-1,559 original native CODE bytes**, all uncredited pending actual
-source ownership. New F680 strictly reproduces **five whole native
-SDK-like helper bodies** (14/14/6/11/5 B, **50 linked original CODE
-bytes /21 genuine x86 /four typed PE fields**) with original imported
-STDCALL and direct CDECL free, conditional tail JMP, plain receiver
-forwarder, and real this-returning member clear. All five remain
-UNKNOWN source-owner, not authored exact.
-[F680 entire native helper source proof](docs/SDK_NATIVE_HELPER_LEAVES_F680.md).
-F677 earlier completed the larger 104-byte/34-x86/one DIR32 virtual-
-state bulk-zeroing constructor with real two-element loop and VC7.1
-`/O1 /Oi` `REP STOSD`.
-[F677 full original 104-byte native proof](docs/SDK_NATIVE_BULK_STATE_CTOR_F677.md).
+**82 distinct historical origin-unknown complete original functions /
+1,578 original native CODE bytes**, all uncredited pending actual
+source ownership. New F686 strictly reproduces the entire original
+**19-byte virtual destructor `0061535A`** with native `this+0x104C`
+pointer release, authentic vftable `DIR32`, real CRT CDECL `free`
+`REL32`, and all **5/5 original x86 /19/19 linked PE CODE bytes**
+under pinned VC7.1 `/O1`. `/O2` and `/Od` compile different shapes;
+original class/author provenance stays unknown.
+[F686 entire native virtual destructor proof](docs/SDK_NATIVE_VTABLE_DESTRUCTOR_F686.md).
+F680 earlier reconstructed five different fully linked SDK-like
+helper functions (50 total original CODE B/21 x86/four PE fields).
+[F680 prior whole-native helper proof](docs/SDK_NATIVE_HELPER_LEAVES_F680.md).
 All previously accepted 111-byte mapping transform `00455770`,
 77-byte Shift-JIS classifier `0041CA30`, Replay render, StaffRoll,
 rank-label and selected-progress functions stay accepted exact.
