@@ -11091,3 +11091,26 @@ NOT new fully exact authored whole functions. Official
 943/862,726 exact unchanged; no all-unit cold replay/Oracle.
 [F633 actual PE, typed COFF and C++ case proof](FIGHTER_LANDING_SIBLINGS_F633.md),
 selected `scripts/repo-python scripts/verify-fighter-landing-siblings-f633.py --boss 0x00564BE0`.
+
+
+## F634: exact full 14/14/13-byte game object this-accessors and no-op leaf, origin UNKNOWN
+
+Real Japanese native TH075 PE `0040D980` and `0040D9F0` each
+have an entire **14-byte/8-x86** `return this` leaf, and
+`0045B850` is a **13-byte/7-x86** empty receiver method returning
+with true native `RET 4`. All three have **zero actual native PE/COFF
+fields**, and normal VC7.1 C++ `probes/GameObjectThisAndNoopLeavesF634.cpp`
+reproduces **41/41 complete original native machine CODE bytes /
+23/23 x86 roles** after one cold compile, no special `DIFFBUILD`,
+asm or byte hacks. Independently decoding all 4,351 registered native
+PE CODE extents proves 16, 3 and 14 genuine direct CALL sites;
+14, 3 and 14 come from currently authored game functions, including
+four huge CharacterObject::Advance-like sources for `0045B850`.
+Nevertheless, code-generation identity and actual game callers
+cannot determine historical explicit-vs-generated class method
+origin: all three original `function-origins.csv` rows remain
+**unknown/review**, no 41-byte authored exact acceptance or class
+layout conjecture. [F634 real whole-function/PE-call proof](GAME_OBJECT_ACCESSOR_LEAVES_F634.md),
+targeted `scripts/repo-python scripts/verify-game-object-leaves-f634.py`.
+Official 943/862,726 accepted authored whole CODE unchanged,
+no all-unit cold replay.

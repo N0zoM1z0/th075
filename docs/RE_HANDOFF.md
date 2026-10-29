@@ -1,6 +1,6 @@
 # TH075 — active reconstruction handoff
 
-**Maintained 2026-10-29 after F633.** This is the **only current task list**.
+**Maintained 2026-10-29 after F634.** This is the **only current task list**.
 The [F540–F596 research chronology](history/RE_HANDOFF_F540_THROUGH_F596.md),
 [knowledge base](KNOWLEDGE_BASE.md), and older F-series studies are
 **historical evidence**, not statements of current progress. Independently
@@ -746,6 +746,28 @@ still unchanged.
 
 ```bash
 scripts/repo-python scripts/verify-fighter-landing-siblings-f633.py --boss 0x0058AF60
+```
+
+**F634 complete original game-facing small leaves, zero source-origin
+promotion:** three separate original registered whole CODE functions
+`0040D980` (14/14 native bytes/8 x86, returns normal `this`),
+`0040D9F0` (14/14 native bytes/8 x86, separate `this` identity) and
+`0045B850` (13/13 native bytes/7 x86, normal empty method with one
+argument and original `RET 4`) are **all entirely linked byte-exact**
+from ONE new cold-compiled natural VC7.1 source TU, with **zero
+physical original COFF fields**, no byte graft or ASM. Independent
+original PE direct-CALL decode across all 4,351 native function
+extents finds 16/3/14 actual uses; 14/3/14 CALL instructions are in
+currently authored game callers (including four huge CharacterObject
+functions for the 13-byte empty method). However native use and
+source identity **do NOT establish author-vs-compiler provenance**:
+original three rows remain `unknown`/`review`, so **no new accepted
+authored whole function CODE credit**. [F634 complete source and
+real native CALL provenance](GAME_OBJECT_ACCESSOR_LEAVES_F634.md),
+[real natural C++](../probes/GameObjectThisAndNoopLeavesF634.cpp).
+
+```bash
+scripts/repo-python scripts/verify-game-object-leaves-f634.py
 ```
 
 ## 4. Other three unmatched authored *whole* functions
