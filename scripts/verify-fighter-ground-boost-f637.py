@@ -131,7 +131,7 @@ def source_with_ground_boost(addr,boss,report,mapped,reader,pe,decoder,h,meta):
     return result
 
 
-def verify_source(reader,pe,decoder,boss,report,mapped,code,refs,native,meta,h):
+def verify_source(reader,pe,decoder,boss,report,mapped,code,refs,native,meta,h,extra_after_9e_x86=0):
     addr=boss['address']
     ins=[]
     for x in decoder.disasm(code,0):
@@ -146,22 +146,28 @@ def verify_source(reader,pe,decoder,boss,report,mapped,code,refs,native,meta,h):
     by={x['action']:int(x['handler'],16) for x in mapped}
     previous={a:h['f633'].original_case(reader,pe,decoder,boss,by,a)
               for a in h['f636'].ACTIONS}
+    need(extra_after_9e_x86 in (0,3*73),
+         f'{addr:#x}: only genuine three 73-x86 original 9F/A0/A1 cases may follow 9E')
     h['f636'].strict_check(reader,pe,decoder,boss,report,mapped,code,refs,
-                           previous,h,extra_after_pair_x86=len(native))
+                           previous,h,extra_after_pair_x86=len(native)+extra_after_9e_x86)
+    wanted=0xA0 if extra_after_9e_x86==0 else 0xA4
     markers=[]
     for field in refs:
         if 'g_FighterProbeMarker' not in field['symbol']:
             continue
         x=next((i for i in ins if i.address<=field['offset']<i.address+i.size),None)
-        if x is not None and x.mnemonic=='mov' and x.op_str.endswith(', 0xa0'):
+        if x is not None and x.mnemonic=='mov' and x.op_str.endswith(f', 0x{wanted:x}'):
             markers.append(x)
     need(len(markers)==1,
          f'{addr:#x}: genuine following original action0x9F source marker not uniquely COFF-typed')
     end=ins.index(markers[0]);num=meta['native_original_full_x86_instructions']
-    need(end>=num,f'{addr:#x}: actual source action0x9E native source x86 truncated')
-    cand=ins[end-num:end]
+    need(end>=num+extra_after_9e_x86,
+         f'{addr:#x}: actual source action0x9E native source truncated by newly reconstructed cases')
+    cand=ins[end-num-extra_after_9e_x86:end-extra_after_9e_x86]
+    true_next_pc=(ins[end-extra_after_9e_x86].address if extra_after_9e_x86
+                  else markers[0].address)
     need(len(cand)==len(native)==num and cand[-1].mnemonic=='jmp'
-         and cand[-1].address+cand[-1].size==markers[0].address,
+         and cand[-1].address+cand[-1].size==true_next_pc,
          f'{addr:#x}: actual 9E→9F complete source physical case boundary lost')
     widths=[n.size-c.size for n,c in zip(native,cand)]
     if addr==0x00564BE0:

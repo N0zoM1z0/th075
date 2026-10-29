@@ -1,6 +1,6 @@
 # TH075 — active reconstruction handoff
 
-**Maintained 2026-10-29 after F638.** This is the **only current task list**.
+**Maintained 2026-10-29 after F639.** This is the **only current task list**.
 The [F540–F596 research chronology](history/RE_HANDOFF_F540_THROUGH_F596.md),
 [knowledge base](KNOWLEDGE_BASE.md), and older F-series studies are
 **historical evidence**, not statements of current progress. Independently
@@ -875,6 +875,35 @@ source-backed but uncredited pending actual authored provenance.
 
 ```bash
 scripts/repo-python scripts/verify-game-inheritance-constructors-f638.py
+```
+
+**F639** restores all three original native `0x9F/0xA0/0xA1`
+complete landing cases in **ALL ELEVEN whole giant fighter C++
+parents**. Original real x86 CODE boundaries are 0x9F→0xA0,
+0xA0→0xA1, 0xA1→0xA3. Native start heights −9f/−10f/−13f,
+actual following action0/0/0, true original double reflection and
+all **nine original typed physical PE/COFF call/global fields per
+case** strictly match GPR/x87/CFG/width roles in newly rebuilt
+VC7.1 source. **33 complete original inner cases /2,409 native
+x86 roles /9,306 original uncredited native inner CODE bytes /
+297 physical PE-target COFF fields**. Native `00564BE0` is 342 B
+per case from 22 real EBP−0x88 MOV receiver widenings. Important:
+**original `00543210` and `0058AF60` have only 73 x86 here**;
+their prior 75-x86 real extra `+0xF0A` reset is an EARLIER-action
+feature, not a global per-character rule. On the same new giant OBJ,
+previous strict F637 `0x9E`, F636 9B/9C, F633 97/98/9A,
+F631 96, earlier mode and 30 real action sources and complete
+original packed afterRET DATA remain checked; negative previous
+0x91 register cycles remain nonexact. F598–F639 cumulative study
+**489 strict native original case interiors /131,586 original
+native inner CODE bytes**, still ZERO newly accepted whole-giant
+functions/credited authored bytes. Official 943/862,726 unchanged.
+[F639 real source/PE original case geometry and role proof](FIGHTER_LAST_LANDINGS_F639.md),
+[ordinary natural C++ source](../probes/FighterLandingTimerSiblingsF633.inc).
+
+```bash
+scripts/repo-python scripts/verify-fighter-last-landings-f639.py --boss 0x00543210
+scripts/repo-python scripts/verify-fighter-last-landings-f639.py --boss 0x00564BE0
 ```
 
 ## 4. Other three unmatched authored *whole* functions

@@ -11234,3 +11234,35 @@ physical target and caller proofs](GAME_INHERITANCE_CONSTRUCTORS_F638.md),
 rebuild `scripts/repo-python scripts/verify-game-inheritance-constructors-f638.py`.
 Official 943/862,726 whole-authored exact unchanged; no full
 all-unit cold replay or external Oracle receipt.
+
+
+## F639: 33 strict complete 0x9F/A0/A1 original giant fighter landing cases, no false extra F0A stores
+
+Pinned Japanese TH075 PE shows physical original 0x9F→0xA0,
+0xA0→0xA1, 0xA1→0xA3 complete landing cases, each **73 original
+native x86** across ALL 11 fighter parent giants. Original initial
+positions −9f/−10f/−13f and next action **0/0/0**. Each has nine
+true typed PE-targeted COFF float/game call refs: original
+`0065747C`, `006583B4`, `0065782C` twice, `00658058`,
+real `00454EE0`, double `FMUL qword [006583E8]`, true game
+`0040FA30` and `0040FAC0`. Natural C++
+`probes/FighterLandingTimerSiblingsF633.inc` in eleven NEW whole
+VC7.1 giant TU compilations strictly reproduces **33 authentic
+complete native inner case bodies, 2,409 GPR/x87/CFG roles,
+9,306 original uncredited inner CODE bytes, 297 actual typed
+zero-addend PE/COFF fields**. Real wide `00564BE0` has 22
+saved EBP−0x88 MOV receiver widenings per 342-byte native case.
+`00543210/0058AF60` original native 9F/A0/A1 are genuine 73-x86
+**without extra `+0xF0A` reset** despite earlier 75-x86 timer
+cases with this extra store: real source stage, not actor universal.
+Each new OBJ rechecks F637 native 0x9E (including strict above
+on `005D73C0`), F636 pair, F633 trio, F631 action0x96,
+F628 three landings, original mode63 when strict, previous F614
+30 native game cases and entire separately owned afterRET packed
+jump DATA; F629/F630 original register cycles still marked negative.
+F598–F639 total **489 strictly source-backed original internal
+case bodies/131,586 original native CODE bytes**, no newly accepted
+whole giant/whole authored exact code. [F639 actual native PE/whole
+source proofs](FIGHTER_LAST_LANDINGS_F639.md), targeted
+`scripts/repo-python scripts/verify-fighter-last-landings-f639.py --boss 0x0058AF60`.
+Formal whole exact ledger 943/862,726 unchanged, no all-unit cold replay.

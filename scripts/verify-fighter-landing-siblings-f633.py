@@ -27,9 +27,12 @@ ROOT=Path(__file__).resolve().parents[1]
 SOURCE=ROOT/'probes/FighterLandingTimerSiblingsF633.inc'
 OUT=ROOT/'.analysis/f633-fighter-landing-siblings-source'
 ACTIONS=(0x97,0x98,0x9A)
-NEXT_ACTION={0x97:0x98,0x98:0x9A,0x9A:0x9B,0x9B:0x9C,0x9C:0x9E}
-INITIAL={0x97:-10.0,0x98:-13.0,0x9A:-9.0,0x9B:-10.0,0x9C:-13.0}
-NEXT_MOVE={0x97:0,0x98:0,0x9A:2,0x9B:2,0x9C:2}
+NEXT_ACTION={0x97:0x98,0x98:0x9A,0x9A:0x9B,0x9B:0x9C,0x9C:0x9E,
+             0x9F:0xA0,0xA0:0xA1,0xA1:0xA3}
+INITIAL={0x97:-10.0,0x98:-13.0,0x9A:-9.0,0x9B:-10.0,0x9C:-13.0,
+         0x9F:-9.0,0xA0:-10.0,0xA1:-13.0}
+NEXT_MOVE={0x97:0,0x98:0,0x9A:2,0x9B:2,0x9C:2,
+           0x9F:0,0xA0:0,0xA1:0}
 
 
 def need(ok,why):
@@ -50,7 +53,11 @@ def original_case(reader,pe,decoder,boss,by,action):
     start,end=by[action],by[NEXT_ACTION[action]]
     next_pc=min((x for x in set(by.values()) if x>start),default=None)
     native=list(decoder.disasm(reader.pe_bytes_at(pe,start,end-start),start))
-    count=75 if addr in (0x0058AF60,0x00543210) else 73
+    # The two 75-x86 actors have genuine extra F0A short resets in
+    # earlier landing actions ONLY. Native 9F/A0/A1 are 73-x86 for
+    # every fighter, including those same two character owners.
+    count=(75 if addr in (0x0058AF60,0x00543210)
+           and action not in (0x9F,0xA0,0xA1) else 73)
     size=342 if addr==0x00564BE0 else (288 if count==75 else 276)
     need(addr<start<end<addr+boss['size'] and end==next_pc
          and len(native)==count and sum(x.size for x in native)==end-start==size
@@ -158,16 +165,20 @@ def verify_fresh_whole(reader,pe,decoder,boss,report,mapped,code,refs,properties
     counts=sum(properties[action][1]['original_whole_case_x86_instructions'] for action in ACTIONS)
     expected=3*prior_info['original_complete_x86_instructions']
     need(counts==expected and counts in (219,225)
-         and extra_followup_x86 in (0,2*73,2*75,2*73+66,2*75+68)
+         and extra_followup_x86 in (0,2*73,2*75,2*73+66,2*75+68,
+                                 2*73+66+3*73,2*75+68+3*73)
          and (not extra_followup_x86 or extra_followup_x86 in (
               2*prior_info['original_complete_x86_instructions'],
               2*prior_info['original_complete_x86_instructions']+
-                 (68 if prior_info['original_complete_x86_instructions']==75 else 66))),
+                 (68 if prior_info['original_complete_x86_instructions']==75 else 66),
+              2*prior_info['original_complete_x86_instructions']+
+                 (68 if prior_info['original_complete_x86_instructions']==75 else 66)+3*73)),
          f'{addr:#x}: authentic 73/75-x86 native case count or followup differs')
     h['f631'].verify_new_obj(reader,pe,decoder,boss,report,mapped,code,refs,
         earlier,prior_info,h,extra_sibling_x86=counts+extra_followup_x86)
     wanted=(0x9C if extra_followup_x86==0 else
-            0x9F if extra_followup_x86 in (2*73,2*75) else 0xA0)
+            0x9F if extra_followup_x86 in (2*73,2*75) else
+            0xA0 if extra_followup_x86 in (2*73+66,2*75+68) else 0xA4)
     markers=[]
     for field in refs:
         if 'g_FighterProbeMarker' not in field['symbol']:continue
