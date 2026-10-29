@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F661; earlier frozen handoffs are archived.**
+**Maintained 2026-10-30, after F664; earlier frozen handoffs are archived.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -82,20 +82,25 @@ scripts/repo-python scripts/verify-characterobject-typed-member-f635.py --case 3
 The 22 original giant CODE owners remain authored NONEXACT. The main
 case-source subcohort has **11 real multi-switch giant fighters**,
 with real per-actor native differences and a full afterRET sparse/
-dense dispatch shape. F598–F657 compiler-backed original research
-proves **585 strict original *internal action case bodies* /
-157,894 original native internal CODE bytes**. These do **NOT** mean
-585 additional independently callable exact functions or credited
+dense dispatch shape. F598–F664 compiler-backed original research
+proves **587 strict original *internal action case bodies* /
+158,673 original native internal CODE bytes**. These do **NOT** mean
+587 additional independently callable exact functions or credited
 whole function bytes; each parent remains nonexact. Case interior
 source must always be compiled in the **fresh complete original
 parent C++ translation unit** and its preceding cases + entire jump
 DATA rechecked. [Full original dispatch fingerprint JSON](../config/fighter-boss-dispatch-fingerprints.json),
 [original fighter family dispatch](FIGHTER_BOSS_FAMILY_DISPATCH.md).
 
-**Latest strict path:** native `00543210` has **17 strict native
-case interiors /1,209 genuine x86 /4,192 original internal CODE bytes /
-115 real typed PE/COFF fields**, in one newly compiled entire parent.
-F657 adds **three original full `0x187/0x188/0x189` native case
+**Latest strict path:** native `00543210` has **19 strictly matched
+native case interiors /1,437 genuine x86 /4,971 original internal
+CODE bytes /132 real typed PE/COFF fields**, in one newly compiled
+entire parent. F664 newly adds **two full original `0x200/0x201`
+case interiors** (**228 native x86 /779 original bytes /17 genuine
+physical original PE/COFF fields**) and rechecks all prior cases
+and after-RET DATA in the same new source object.
+[Newest F664 authentic native proof](FIGHTER_SPECIAL_STAGE_F664.md).
+Earlier F657 added **three original full `0x187/0x188/0x189` native case
 interiors** (**212 x86/767 original B/19 original physical fields**),
 including authentic 0.6f falling states and the stage7/9 collision
 and auxiliary action behavior. Its preceding real case `0x186` is
@@ -150,7 +155,9 @@ F646 `0xD0` remains nonstrict in other original actors due to
 explicitly distinguishes the 3 strict parent contexts.
 
 ```bash
-# NEW complete selected giant, nonstrict 18A/18B and 17 older strict cases:
+# NEW complete selected giant: 200/201 strict, 17 prior strict, three negative:
+scripts/repo-python scripts/verify-fighter-special-stage-f664.py
+# Earlier selected giant, nonstrict 18A/18B and 17 older strict cases:
 scripts/repo-python scripts/verify-fighter-motion-shots-f661.py
 # Earlier three strict cases and true original 186 negative:
 scripts/repo-python scripts/verify-fighter-motion-continuation-f657.py

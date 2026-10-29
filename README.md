@@ -26,7 +26,7 @@ types are provisional; machine-code matches alone do not prove an entire
 original class layout. The target's official distribution provenance has not
 been independently verified; do not substitute a localized `th075c.exe`.
 
-These snapshot counts were rechecked after **F661** (2026-10-30).
+These snapshot counts were rechecked after **F664** (2026-10-30).
 The **live** sources of truth, not any dated prose milestone, are `config/functions.csv`,
 `config/function-origins.csv`, and `config/match-units.toml`.
 Refresh using `scripts/repo-python scripts/report-reconstruction-status.py --summary`.
@@ -53,24 +53,21 @@ F659's 14 additional whole-giant C++ condition/lifetime variants did
 not reduce the genuine 137-byte register cycle; two `+=` alternatives
 actually changed native x87 geometry. [New F659/F660 negative evidence](docs/GIANT_REGISTER_AND_ARCHIVE_LIFETIME_NEGATIVES_F659_F660.md).
 
-**F598–F657's 585 strictly source-backed fighter *internal case
-bodies* (157,894 original internal CODE bytes) remain uncredited**:
+**F598–F664's 587 strictly source-backed fighter *internal case
+bodies* (158,673 original internal CODE bytes) remain uncredited**:
 none of their enclosing giant `Advance()` functions is fully exact.
-F657 adds three original full `0x187/0x188/0x189` native cases
-(**212 native x86, 767 original CODE bytes, 19 real typed PE/COFF
-fields**) in giant `00543210`, with all prior 14 strict cases and
-full after-RET DATA preserved in **one newly compiled parent**.
-The giant now contains **17 strict original inner cases, 1,209 native
-x86 /4,192 original internal CODE bytes /115 real typed fields**.
-These are **not 17 consecutive strict cases**: the intervening true
-`0x186` remains NONSTRICT (two actual EBP scratch offsets differ,
-284 emitted vs 290 original bytes). F661 additionally reconstructs
-the **true two later `0x18A/0x18B` case C++ bodies** (170 native x86,
-615 original internal CODE B and 13 physical fields), but explicitly
-keeps both NONSTRICT because four original x87 scratch EBP operands
-still differ. [F661 new full-parent native evidence](docs/FIGHTER_MOTION_SHOTS_F661.md)
-retains all 17 older strict cases and complete switch DATA in a newly
-compiled parent. No fake local padding or partial-case credit.
+F664 strictly reconstructs original `0x200/0x201` inside the real
+58KB giant `00543210`: **228 genuine original x86 instructions,
+779 original internal CODE bytes and 17 physical PE/COFF fields**.
+The same newly compiled entire fighter verifies **all 17 previous
+strict cases, three retained native EBP scratch negatives and the
+full independent after-RET switch DATA**. The selected giant now has
+**19 strict original internal cases /1,437 native x86 /4,971
+internal CODE bytes /132 original PE/COFF fields**. This is **not**
+whole-function exact: original `0x186/0x18A/0x18B` remain nonstrict
+and the original physical cases are not one uninterrupted strict run.
+[New F664 full-parent physical proof](docs/FIGHTER_SPECIAL_STAGE_F664.md).
+No fake local padding or partial whole-function CODE credit.
 Native complex `0xCC` in `005AEEC0`
 and `00564BE0` still has **80/78 genuine wrong GPR/CFG roles**
 despite matching x86 count and all 11 real PE/COFF fields; **do not

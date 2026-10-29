@@ -11780,3 +11780,33 @@ whole-function exact unchanged.
 [Full F661 original native/source proof](FIGHTER_MOTION_SHOTS_F661.md),
 `scripts/repo-python scripts/verify-fighter-motion-shots-f661.py`.
 No 943-unit mass replay.
+
+
+## F664: two original full physical fighter inner cases in the selected 58KB giant
+
+Original fighter `00543210` native action `0x200` is **102 true x86 /
+343 real original internal CODE B /8 typed physical PE/COFF fields**;
+`0x201` is **126/436 B/9 fields**. Fresh pinned VC7.1 ordinary
+C++ from the **full original-shaped giant parent**, not a detached
+case, verifies authentic x87 stage7/8 velocity subtraction against
+original float PE `00659240`, ground flag state, stage5 kind0x3C
+projectile's raw DWORD x/y arguments, original action completion,
+and `0x201`'s stage11 one-shot signed short counter/auxiliary action.
+Each entire native inner case exactly matches all genuine original
+x86 role mnemonics, GPR, widths/branches, and authentic original
+REL32/DIR32 symbol/zero-addend PE/COFF fields. A separate original
+EBP operand check permits ONLY the known saved receiver slot conversion;
+no scratch locals are masked. **Both 200/201 are strictly backed**,
+adding **228 genuine x86 /779 original case CODE B /17 real native
+PE/COFF fields**. All preceding **17 strict** cases, native 186/18A/18B
+nonstrict scratch negatives and independently owned complete 943-byte
+after-RET switch DATA remain validated in the **same newly compiled
+parent**. The selected giant has **19 strictly source-backed native
+internal cases /1,437 x86 /4,971 original internal CODE B /132 fields**.
+Across all F598–F664 fighter research **587 strict case interiors /
+158,673 original internal native CODE B**, all uncredited until
+respective whole giant exactness. Official whole-authored original
+943 functions/862,726 CODE B ledger unchanged.
+[Original complete PE/source proof](FIGHTER_SPECIAL_STAGE_F664.md),
+`scripts/repo-python scripts/verify-fighter-special-stage-f664.py`.
+No 943-unit all-unit cold replay.
