@@ -10728,3 +10728,28 @@ research](FIGHTER_AIR_TRANSITION_F617.md),
 `scripts/repo-python scripts/verify-fighter-air-transition-f617.py --boss 0x0045DD70`,
 `--negative-actor`. Official authored whole-exact 943/862,726 unchanged,
 no full all-unit cold replay or external Oracle.
+
+
+## F618: full original native 45-byte background polymorphic constructor, explicit/implicit unknown
+
+Native Japanese TH075 `00449DE0` is a complete 45-byte/16-x86
+game background owner default ctor, with physically owned original
+vtable `DIR32` `+0xC` → `0065844C`, first member `REL32` `+0x17`
+→ actual constructor `00412620` at `this+4`, and second member
+`REL32` `+0x22` → actual constructor `0040AD80` at `this+0x18`.
+Both an ordinary VC7.1 explicit empty constructor and an independent
+**compiler implicit default special-member** C++ placement-new source
+naturally generate the entire **45/45 identical original CODE bytes**
+after genuine typed PE-target resolution (33/33 non-COFF bytes,
+3 real physical zero-addend fields). Fresh independent decode of
+4,351 original native whole function extents found **36 direct CALLs
+from 36 distinct authored BackgroundStage loading functions**.
+This proves game use but not explicitly written-vs-generated source
+provenance or whole native vtable DATA contents: the original
+`00449DE0` remains `unknown`/`review` and receives no new authored
+exact credit. Along with F616, four 133-byte total whole original
+constructors are source-backed but uncredited pending provenance.
+[F618 actual original background ctor evidence](BACKGROUND_OWNER_CONSTRUCTOR_F618.md),
+reproducible `scripts/repo-python scripts/verify-background-owner-constructor-f618.py`.
+No full 943-unit cold replay and official 943/862,726 authored exact
+unchanged.

@@ -1,6 +1,6 @@
 # TH075 — active reconstruction handoff
 
-**Maintained 2026-10-29 after F617.** This is the **only current task list**.
+**Maintained 2026-10-29 after F618.** This is the **only current task list**.
 The [F540–F596 research chronology](history/RE_HANDOFF_F540_THROUGH_F596.md),
 [knowledge base](KNOWLEDGE_BASE.md), and older F-series studies are
 **historical evidence**, not statements of current progress. Independently
@@ -540,6 +540,29 @@ callers yet implicit-vs-explicit constructor ambiguity; also
 unknown. `004588B0` has six mixed vendor/game callers.
 See [F595 original native small-function provenance](SMALL_ORIGIN_UNKNOWN_FIELDSETTER_F595.md)
 and historical [origin review](ORIGIN_PENDING_REVIEW.md).
+
+**F618 another COMPLETE original native game background constructor
+`00449DE0` reconstructed with two independently matching C++ sources,
+provenance still unknown.** Entire original **45 CODE bytes/16 x86**
+set the genuine vtable `0065844C` and construct two members at
+`this+4` (`00412620`) and `this+0x18` (`0040AD80`). Both an explicitly
+written empty constructor and an **implicit compiler-generated**
+default constructor triggered by real placement-new reproduce
+**45/45 fully linked native bytes**, with 3 original physical typed
+PE/COFF fields and 33/33 nonrelocation bytes. Independent scan of
+4,351 native function extents verifies **36 real direct CALLs** from
+36 authored background-stage loading functions to this ctor. Caller
+ownership cannot choose between explicit and implicit construction:
+**native callee stays `unknown`/`review`; zero authored CODE credit.**
+Combined F616/F618: four whole-original source-backed ambiguous game
+constructor bodies/133 native CODE bytes, all **uncredited**.
+[F618 native full ctor evidence](BACKGROUND_OWNER_CONSTRUCTOR_F618.md),
+[explicit](../probes/BackgroundOwnerConstructorsF618.cpp),
+[implicit](../probes/BackgroundOwnerConstructorsImplicitF618.cpp).
+
+```bash
+scripts/repo-python scripts/verify-background-owner-constructor-f618.py
+```
 
 **F616 three original COMPLETE constructor CODE bodies rebuilt from two
 independent ordinary VC7.1 source grammars; provenance still UNKNOWN.**
