@@ -9143,3 +9143,26 @@ stores: the **115,827 complete original giant CODE bytes are still
 unmatched**. [F564 source integration](FIGHTER_INTEGRATED_ELEVEN_CASES_F564.md);
 reproducer scripts/repo-python scripts/verify-fighter-integrated-opening-switch.py.
 No split/whole CODE credit, all-unit cold replay or external Oracle.
+
+## F565: distinct 96/83/83 action family within 005214B0 original giant
+
+The complete original 46,755-byte 005214B0 fighter has physically
+bounded first-switch action 6/7/8 cases containing **96/83/83
+native x86 instructions** and **331/290/290 original CODE bytes**.
+Unlike the ten previous natural frame-advance fighter source
+variants, these case bodies gate the main x87 contact transition
+on signed stage >2 and do not increment frame counters or end with
+actor virtual frame calls. The new natural VC7.1 C++ source models
+real 0040FB40(5) extra stage and 0040FB40(11) current-action
+branches in action6, native 0040FAC0(9) in action7 and
+0040FB40(13) in action8, with actual conditional 0/+5.5/-5.5f
+position stores and 16.0f/0.8f velocity/speed and FLAG clear.
+One freshly compiled original-backed TU matches **all 262 actual
+case register/x87/branch/length roles**, 23 genuine typed COFF
+fields, 139 native-style physical DWORD jump slots and 345
+byte-identical sparse index bytes. The 911 native inner CODE bytes
+remain part of 46,755 completely unmatched original CODE bytes;
+901 after-RET DATA bytes remain separate. Reproducer:
+scripts/repo-python scripts/verify-fighter-scripted-stage-actions.py;
+[F565 scripted-state source](FIGHTER_SCRIPTED_STAGE_F565.md).
+No whole/subfunction exact credit, all-unit replay or external Oracle.

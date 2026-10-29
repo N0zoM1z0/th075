@@ -1,6 +1,6 @@
 # TH075 — current agent handoff
 
-**Maintained: 2026-10-29, after F564; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
+**Maintained: 2026-10-29, after F565; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
 
 ## 1. Current authoritative state (not historical hypotheses)
 
@@ -173,6 +173,20 @@ and scripts/repo-python scripts/verify-fighter-integrated-opening-switch.py
 --boss 0x004F7130. All 4,558 original inner CODE bytes remain inside
 **two nonexact giant functions**, with later action cases/owner frame
 not reconstructed and no whole/split CODE exact credit.
+
+**F565 reconstructs the last previously unmodeled first-switch
+fighter family, original 005214B0 (46,755 whole CODE bytes).**
+Unlike the frame-update actor families it has 96/83/83 native action
+6/7/8 x86 instructions, distinct signed stage >2 gated collision,
+no final virtual frame-advance call and true 0040FB40(5/11/13)
+versus 0040FAC0(9) character-state policy. One newly compiled
+natural C++ source matches all **262 complete native instruction roles,
+23/23 actual typed COFF call/global fields**, physical 139 switch
+DWORD references and 345 original sparse-index bytes. See
+[F565 distinct script-state source study](FIGHTER_SCRIPTED_STAGE_F565.md)
+and scripts/repo-python scripts/verify-fighter-scripted-stage-actions.py.
+These 911 inner CODE bytes remain in one entire **nonexact giant**,
+with zero split/whole exact CODE credit.
 
 **Three other authored functions remain nonexact (all require full CODE):**
 
