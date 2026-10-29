@@ -1,6 +1,6 @@
 # TH075 — active reconstruction handoff
 
-**Maintained 2026-10-29 after F620.** This is the **only current task list**.
+**Maintained 2026-10-29 after F622.** This is the **only current task list**.
 The [F540–F596 research chronology](history/RE_HANDOFF_F540_THROUGH_F596.md),
 [knowledge base](KNOWLEDGE_BASE.md), and older F-series studies are
 **historical evidence**, not statements of current progress. Independently
@@ -493,6 +493,39 @@ negative original PE proof](FIGHTER_SIMPLE_AIR_CONTEXT_F620.md),
 ```bash
 scripts/repo-python scripts/verify-fighter-facing5f-f620.py
 scripts/repo-python scripts/verify-fighter-facing5f-f620.py --negative-context
+```
+
+**F622** advances two entire giant fighter C++ sources to the
+original native action0x62. Independent PE decoding proved the real
+four unsigned collision status fields `+0x4E8/+0x4EC/+0x4F0/+0x4F4`
+are a **four-way logical OR of >0**, not three-zero AND one-positive:
+three original `JA` branches ENTER the counter assignment and final
+`JBE` skips it. The two signed direction×`+0x4DC` paths set original
+signed-short counter **1 or 2** at `+0xF00` (wide `00564BE0`) or
+**`+0xEFC`** (`005AEEC0`), then use original `0040FA30/0040FAC0`
+state transitions to 0x5F/0x5D/0x5E. Both full native cases are strict
+**65/65 actual GPR/x87/CFG roles, 4 genuine typed PE/COFF fields
+per giant**, giving **two new internal cases /561 native CODE bytes
+/130 x86 roles/8 real call fields**. The wide actor has precisely
+21 authentic widened EBP−0x88 receiver MOVs. Other original actors
+still mismatch native registers: `0045DD70` has 40 wrong roles;
+`004AC040` has 10 wrong roles in its actual 25-x86/87-byte case.
+All **30 prior** original case source roles and complete afterRET
+packed tables remain checked on the newly compiled whole-parent OBJ.
+**Important old verifier fix:** `verify-fighter-actionzero-natural-source.py`
+previously counted *all* native `JA` as indexed-switch default guards.
+F622 filters only guards **before the last indexed dispatch JMP**;
+original physical guard targets, jump counts, dense/sparse afterRET
+DATA and previous F614/zero-case local regressions still pass.
+F598–F622 cumulative **339 internal game case subranges /87,607
+original native inner CODE bytes**, NO new accepted whole-fighter
+exact functions. Official 943/862,726 unchanged.
+[Original F622 unsigned OR and dispatch guard fix](FIGHTER_COUNTER_DISPATCH_F622.md),
+[natural C++](../probes/FighterCounterDispatch62F622.inc).
+
+```bash
+scripts/repo-python scripts/verify-fighter-counter-dispatch-f622.py --boss 0x00564BE0
+scripts/repo-python scripts/verify-fighter-counter-dispatch-f622.py --negative-actor 0x0045DD70
 ```
 
 Never run a full 943-unit cold replay.

@@ -10783,3 +10783,33 @@ native positive+negative source proof](FIGHTER_SIMPLE_AIR_CONTEXT_F620.md),
 targeted `scripts/repo-python scripts/verify-fighter-facing5f-f620.py
 --negative-context`. Official 943/862,726 authored complete exact
 ledger unchanged; no all-unit cold replay/Oracle claim.
+
+
+## F622: genuine native fighter action0x62 unsigned four-way OR and correction of old switch JA heuristic
+
+Original pinned Japanese TH075 PE independently proves that native
+0x62 collision control uses signed direction byte +0x66 × signed
+int +0x4DC, and on either sign tests FOUR unsigned 32-bit fields
+`+0x4E8/+0x4EC/+0x4F0/+0x4F4` using **logical OR of >0**.
+Native early `JA` edges enter the short counter store; the fourth
+`JBE` skips it. Initial C++ with three `==0 &&` predicates matched
+65-x86/249-byte geometry but got the actual PE branch targets wrong.
+Correct native four-way `||` C++ produces strict 65/65 original
+GPR/x87/CFG operand roles, 4 real physically typed PE/COFF call
+refs each in two newly compiled giant sources: native `00564BE0`
+(312 original inner CODE bytes, 21 widened saved-this EBP−0x88
+MOVs, short counter +0xF00) and `005AEEC0` (249 bytes, original
+counter **+0xEFC**). F622 adds **2 strict original inner cases /
+130 x86 roles/561 original internal CODE bytes/8 true call fields**.
+Original `0045DD70` still has 40 role mismatches and short
+`004AC040` native case 25-x86/87-byte still has 10 role differences.
+Old `verify-fighter-actionzero-natural-source.py` had incorrectly
+identified every game-action `JA` as the switch-bound dispatch guard;
+now only dispatch-region guards BEFORE the last indexed JMP are
+identified, with original count, default, afterRET dense/sparse
+DATA and case0/F614 selected regressions preserved. F598–F622
+strict source-backed interior 339 cases/87,607 original native
+CODE bytes; enclosing entire giants NONEXACT, no whole-function
+credit, original 943/862,726 exact authored coverage unchanged.
+[F622 actual PE semantic and compiler proof](FIGHTER_COUNTER_DISPATCH_F622.md),
+selected `scripts/repo-python scripts/verify-fighter-counter-dispatch-f622.py --boss 0x005AEEC0`.

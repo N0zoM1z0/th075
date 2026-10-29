@@ -217,9 +217,17 @@ def verify_physical_tables(boss, native_summary, pe, reader, natural, ins, code,
     """All actual original and generated COFF jump-table DATA and partitions."""
     jumps=[x for x in ins if x.mnemonic=='jmp' and INDEXED.fullmatch(x.op_str)]
     require(len(jumps)==boss['jump_count'], 'not all native switch instructions re-emitted')
-    guards=[x for x in ins if x.mnemonic=='ja']
+    # The compiler emits all indexed dispatch JMPs *before* the first
+    # actual game case; only those preceding JA guards protect the
+    # switch's shared default target. Later original game states may
+    # legitimately use JA for unsigned collision counters (F622
+    # action0x62 has six distinct real JA conditionals). Counting
+    # every JA in the entire giant mistakes game code for dispatch.
+    first_game_case=next(x.address+x.size for x in reversed(ins)
+                         if x.mnemonic=='jmp' and INDEXED.fullmatch(x.op_str))
+    guards=[x for x in ins if x.mnemonic=='ja' and x.address<first_game_case]
     require(len(guards)==len(jumps) and len({i.op_str for i in guards})==1,
-            'native-bound unsigned default guards differ in generated C++')
+            'native-bound indexed-switch dispatch JA default guards differ in generated C++')
     probe_default=int(guards[0].op_str,16)
     native_default=int(native_summary['default'],16)
     physical=start;slots=0;bytes_index=0;origdest=[];canddest=[];maps=0
