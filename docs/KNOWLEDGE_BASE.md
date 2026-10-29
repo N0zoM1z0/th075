@@ -8657,3 +8657,32 @@ branch/call relocations do not byte-match and there is **no accepted giant
 CODE or split-function credit**. See `docs/FIGHTER_ACTIONZERO_SOURCE_RECONSTRUCTION.md`
 and `scripts/repo-python scripts/verify-fighter-actionzero-natural-source.py`.
 No full cold replay or external Oracle receipt.
+
+
+## F541: eleven independently recompiled original-style fighter action-zero cases
+
+The F540 two-source action-zero hypothesis has now been freshly compiled
+**separately for every one of the eleven 6/7-table original giant fighter
+controllers**, each using its *own* native action-ID case vocabulary rather
+than Reimu's switch layout transplanted to other fighters. All eleven
+natural C++ compiler outputs achieve **50/50 original action-zero x86
+mnemonics, exact real per-fighter EAX/ECX/EDX register allocation,
+comparison/x87 operand roles and control-flow edges**; every one retains
+**nine genuinely typed case COFF fields**. The complete native bosses
+(613,391 CODE bytes total) are independently verified before each
+comparison. All 11 individual switch COFF objects additionally match
+**1,607 physically real table-slot references**, all original repeated
+case-target/default partitions, **4,502/4,502 exact sparse index bytes**
+and **10,930 real post-RET DATA-shape bytes**.
+
+The `00564BE0` original action-zero case is **222** vs source-probe
+**180** machine bytes because the real parent giant stores receiver at
+EBP-0x88: fourteen disp32 reads explain +42 genuine bytes, and the
+isolated small probe does not manufacture an owner frame or fake padding.
+The natural C++ action-zero source for other ten emits 180 original-length
+bytes, still not relocation/stack-exact inside the complete original
+fighter. See [F541 eleven-giant case-codegen study](FIGHTER_ACTIONZERO_FAMILY_CODEGEN.md)
+and changed-only reproducer
+`scripts/repo-python scripts/verify-fighter-actionzero-natural-source.py`.
+**No full boss reconstructed, no new exact CODE/DATA credit, no all-unit
+cold replay or external Oracle acceptance.**

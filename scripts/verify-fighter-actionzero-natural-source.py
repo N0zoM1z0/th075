@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
-"""Cold-compile real C++ case-zero logic inside two original giant switch shapes.
+"""Fresh-compile natural C++ case-zero logic inside all eleven multi-switch fighters.
 
-Then verify the *complete* 50-instruction original action-zero case, all nine
-actual call/global COFF references, x87 ordering and conditional branch graph
-against **all eleven** fully hash-verified multi-switch boss originals.
-Only regenerable single-TU probes are compiled: no whole-boss exact claim,
-no partial native CODE accepted, no all-unit replay.
+Each original **whole** giant CODE SHA256/after-RET table is verified first.
+The original character-specific entire C++ switch topology is recovered from
+native action-to-handler evidence, and a genuine signed-byte/x87 action-zero
+branch is substituted into each generated natural C++ prototype. Then verify
+all 50 native case instructions including original register choices/branches,
+all 9 typed x87/call relocations, exact original sparse byte-index tables,
+all physical DWORD COFF relocations and original target equivalence classes.
+No full boss source is claimed; no partial CODE accepted; no all-unit replay.
 """
 from __future__ import annotations
 
@@ -22,7 +25,7 @@ from capstone import Cs,CS_ARCH_X86,CS_MODE_32
 
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'.analysis/f540-natural-actionzero-source'
-BOI={'Reimu':0x0045DD70,'CharacterMove':0x004AC040}
+NAMED={0x0045DD70:'Reimu',0x004AC040:'CharacterMove'}
 RELOC_FIELDS={
   'call':('REL32',0x00453E20,'ResetAt453E20'),
   'fcomp':('DIR32',0x0065782C,'g_ThresholdAt0065782C'),
@@ -184,86 +187,132 @@ def action_zero_original(reader,pe,decoder,actions,boss):
     return zero,instr
 
 
-def find_generated_case(code,decoder):
-    instruction=[]
+def candidate_instructions(code, decoder):
+    """Bound generated normal CODE at its own first complete RET."""
+    ins=[]
     for x in decoder.disasm(code,0):
-        instruction.append(x)
-        if x.mnemonic=='ret': break
-    indexed=[j for j,x in enumerate(instruction) if x.mnemonic=='jmp' and INDEXED.fullmatch(x.op_str)]
-    require(len(indexed)==6,'generated C++ switch lost original six-table lowering')
+        ins.append(x)
+        if x.mnemonic=='ret':break
+    require(ins and ins[-1].mnemonic=='ret','no complete natural C++ normal RET')
+    end=ins[-1].address+ins[-1].size
+    require(end<len(code),'native C++ did not emit real after-RET table DATA')
+    return ins,end
+
+
+def generated_case(ins, expected_jumps):
+    indexed=[j for j,x in enumerate(ins) if x.mnemonic=='jmp'
+             and INDEXED.fullmatch(x.op_str)]
+    require(len(indexed)==expected_jumps, 'generated switch lost original table count')
     start=indexed[-1]+1
-    require(len(instruction)>start+50,'generated action-zero body unexpectedly truncated')
-    result=instruction[start:start+50]
-    require(sum(i.size for i in result)==180 and len(result)==50,
-            'generated natural C++ action-zero case lost 180-byte x86 sequence')
-    require(result[-1].mnemonic=='jmp','natural case is not connected to common return')
+    require(len(ins)>start+50,'generated original action-zero C++ body truncated')
+    result=ins[start:start+50]
+    require(len(result)==50 and sum(i.size for i in result)==180,
+            'natural C++ action-zero must have original normal 180-byte code')
+    require(result[-1].mnemonic=='jmp','case-zero must join common return')
     assert_case_register_dataflow(result)
     return result
 
 
+def verify_physical_tables(boss, native_summary, pe, reader, natural, ins, code, refs, start):
+    """All actual original and generated COFF jump-table DATA and partitions."""
+    jumps=[x for x in ins if x.mnemonic=='jmp' and INDEXED.fullmatch(x.op_str)]
+    require(len(jumps)==boss['jump_count'], 'not all native switch instructions re-emitted')
+    guards=[x for x in ins if x.mnemonic=='ja']
+    require(len(guards)==len(jumps) and len({i.op_str for i in guards})==1,
+            'native-bound unsigned default guards differ in generated C++')
+    probe_default=int(guards[0].op_str,16)
+    native_default=int(native_summary['default'],16)
+    physical=start;slots=0;bytes_index=0;origdest=[];canddest=[];maps=0
+    for table in boss['tables']:
+        n=table['slots'];raw=reader.pe_bytes_at(pe,table['dense_addr'],4*n)
+        original=[int.from_bytes(raw[k:k+4],'little') for k in range(0,len(raw),4)]
+        here=sorted((r for r in refs if physical<=r['offset']<physical+4*n),
+                    key=lambda r:r['offset'])
+        require(len(here)==n and all(r['type']=='DIR32' and
+                r['offset']==physical+4*k and r['local_symbol_offset'] is not None
+                for k,r in enumerate(here)), 'missing/extra physical COFF DWORD switch table relocations')
+        actual=[r['local_symbol_offset'] for r in here]
+        require([x==native_default for x in original]==[x==probe_default for x in actual],
+                'candidate C++ default-slot placement differs from full native original')
+        origdest+=original;canddest+=actual
+        physical+=4*n;slots+=n
+        if table['map_addr'] is not None:
+            native=reader.pe_bytes_at(pe,table['map_addr'],table['map_length'])
+            candidate=bytes(code[physical:physical+table['map_length']])
+            require(candidate==native, 'candidate compiler emitted incorrect native sparse-index data')
+            require(natural.sha(candidate)==table['map_sha'], 'original sparse-map SHA changed')
+            physical+=len(native);bytes_index+=len(native);maps+=1
+    require(physical==len(code) and len(code)-start==boss['postret_size'],
+            'candidate switch DATA is not the full genuine original physical extent')
+    require(slots==boss['dense_entries'] and bytes_index==boss['sparse_bytes'],
+            'candidate post-RET DWORD or sparse-byte count drifted')
+    require(natural.canonical_partitions(origdest)==natural.canonical_partitions(canddest),
+            'same-source C++ did not reproduce cross-table original handler partition')
+    return slots,bytes_index,maps
+
+
 def main():
     arg=argparse.ArgumentParser(description=__doc__)
-    arg.add_argument('--boss',choices=tuple(BOI),help='Compile only the named natural case-zero candidate')
+    arg.add_argument('--boss', help='Build one full original multi-switch boss by PE address; also Reimu or CharacterMove')
     opts=arg.parse_args()
     reader=load_module('f540_reader',ROOT/'scripts/compare-coff-function.py')
     action=load_module('f540_actions',ROOT/'scripts/report-fighter-action-handlers.py')
     natural=load_module('f540_switch_source',ROOT/'scripts/verify-fighter-natural-switch-probes.py')
     pe=reader.verified_target()
     decoder=Cs(CS_ARCH_X86,CS_MODE_32)
-    all_bosses=json.loads((ROOT/'config/fighter-boss-dispatch-fingerprints.json').read_text())['bosses']
-    indexed={x['address']:x for x in all_bosses}
-    originals=[]
-    # Read *all eleven* original full giant native CODE SHA identities, then
-    # extract exactly independently native-bounded complete 50-insn cases.
-    for boss in all_bosses:
-        if len(boss['tables'])<=1:continue
-        zero,ins=action_zero_original(reader,pe,decoder,action,boss)
-        original_refs=reference_sequence(ins)
-        originals.append((boss,zero,ins,original_refs))
-    require(len(originals)==11,'all eleven native action-zero originals are required')
+    bosses=json.loads((ROOT/'config/fighter-boss-dispatch-fingerprints.json').read_text())['bosses']
+    candidates=[b for b in bosses if len(b['tables'])>1]
+    require(len(candidates)==11,'full original 11-multi-switch fighter register has changed')
+    if opts.boss:
+        lookup=opts.boss.lower()
+        byname={value.lower():key for key,value in NAMED.items()}
+        selected=byname[lookup] if lookup in byname else int(opts.boss,0)
+        candidates=[b for b in candidates if b['address']==selected]
+        require(len(candidates)==1,'unregistered multi-switch original boss address')
     outcomes=[]
-    for tag,addr in BOI.items():
-        if opts.boss and opts.boss!=tag:continue
-        # Reuses the verified *whole* native action-ID topology, not invented
-        # case numbers, and preserves real F539 single-switch grouping.
-        report,mapped=action.report_boss(reader,pe,decoder,indexed[addr])
-        base,cases=natural.generate_probe(tag,mapped,report['default'])
-        require(cases in (143,151),'incomplete original fighter case vocabulary')
-        obj=compile_one(tag,generate(base,tag))
-        raw,relocs=reader.object_function(obj,f'?Advance@FighterSwitchF540_{tag}@@QAEXXZ')
-        generated=find_generated_case(raw,decoder)
-        source_refs=reference_sequence(generated,relocs)
-        source_grammar=case_grammar(generated)
-        source_exact_registers=case_grammar(generated,register_sensitive=True)
-        parity=[]
-        for boss,zero,real,refs in originals:
-            require(refs==source_refs,'native/compiled exact physical reference sequence differs')
-            require(case_grammar(real)==source_grammar,
-                    f'{boss["address"]:08X}: natural C++ action-zero x87/control-flow differs')
-            if boss['address']==addr:
-                require(case_grammar(real,register_sensitive=True)==source_exact_registers,
-                        f'{tag}: natural C++ has unexpected receiver-register allocation')
-            # A native receiver EBP slot beyond signed disp8 costs 3 bytes on
-            # every one of its 14 real loads; absolutely no fake padding.
-            slot=int(zero['this_slot'].split('0x')[1],16)
-            normal_bytes=180 if slot<128 else 222
-            require(zero['bytes']==normal_bytes,'original receiver relocation width differs')
-            parity.append(zero['bytes'])
-        outcomes.append({'tag':tag,'native_boss':f'0x{addr:08X}',
-                        'whole_original_CODE':indexed[addr]['size'],
-                        'cpp_cases':cases,'native_originals_compared':len(originals),
-                        'matched_insns_per_case':50,
-                        'physical_refs_per_case':len(source_refs),
-                        'normal_native_case_bytes':sum(x==180 for x in parity),
-                        'wide_native_case_bytes':sum(x==222 for x in parity)})
-        print(f'{tag}: one natural C++ action-zero source, 50/50 x86 control/x87 '
-              f'instructions and 9/9 true COFF call/global fields; native 180-byte '
-              f'signed-byte guard/position policy covers ALL {len(originals)} complete '
-              'fighter originals (10 normal 180-byte cases, one real 222-byte disp32 case)')
-    require(outcomes,'no boss probes selected')
+    for boss in candidates:
+        addr=boss['address'];tag=NAMED.get(addr,f'Boss{addr:08X}')
+        # Whole original source identity and full entire native switch DATA
+        # are independently attested before any diagnostic recompilation.
+        native,mapped=action.report_boss(reader,pe,decoder,boss)
+        zero,original=action_zero_original(reader,pe,decoder,action,boss)
+        original_refs=reference_sequence(original)
+        base,number_cases=natural.generate_probe(tag,mapped,native['default'])
+        cpp=generate(base,tag)
+        obj=compile_one(tag,cpp)
+        code,refs=reader.object_function(obj,f'?Advance@FighterSwitchF540_{tag}@@QAEXXZ')
+        ins,original_end=candidate_instructions(code,decoder)
+        candidate=generated_case(ins,boss['jump_count'])
+        compiled_refs=reference_sequence(candidate,refs)
+        require(original_refs==compiled_refs,
+                f'{addr:08X}: 9 physical original call and data COFF references changed')
+        require(case_grammar(original,register_sensitive=True)==case_grammar(candidate,register_sensitive=True),
+                f'{addr:08X}: natural C++ case-zero exact per-fighter GPR/x87/branch grammar differs')
+        # Original has a true 222-byte body at EBP-0x88; no synthetic
+        # padding/local is introduced into the C++ candidate's 180 bytes.
+        slot=int(zero['this_slot'].split('0x')[1],16)
+        require(zero['bytes']==(222 if slot>=128 else 180)
+                and zero['this_slot_reads']==14,'native action-zero disp32 accounting changed')
+        slots,idxbytes,maps=verify_physical_tables(boss,native,pe,reader,natural,
+                                                   ins,code,refs,original_end)
+        summary={'original_boss':f'0x{addr:08X}', 'whole_original_CODE':boss['size'],
+                 'cpp_cases':number_cases, 'native_jumps':boss['jump_count'],
+                 'original_case_zero_bytes':zero['bytes'], 'candidate_case_zero_bytes':180,
+                 'matched_case_zero_instructions':len(candidate),
+                 'genuine_typed_case_zero_relocations':len(compiled_refs),
+                 'full_native_jumptable_COFF_fields':slots, 'exact_original_sparse_bytes':idxbytes,
+                 'original_sparse_map_count':maps, 'full_original_postret_shape':len(code)-original_end}
+        outcomes.append(summary)
+        print(f'{addr:#010x}: 50/50 real native x87/branch/register instructions, '
+              f'9/9 authentic COFF case references; {boss["jump_count"]} compiler jumps, '
+              f'{slots}/{slots} original-style DWORD COFF refs, '
+              f'{idxbytes}/{idxbytes} byte-identical sparse original indexes, '
+              f'{len(code)-original_end} real original post-RET DATA layout; '
+              f'case source {zero["bytes"]} native vs 180 generated',flush=True)
     (OUT/'summary.json').write_text(json.dumps(outcomes,indent=2)+'\n')
-    print('Fresh original VC7.1 local-only probe '+str(len(outcomes))+'/'+str(len(outcomes))+
-          ': no whole giant C++ exact code, no partial CODE credit and no full replay')
+    print(f'Fresh bounded VC7.1 C++ action-zero+whole-dispatch probes: '
+          f'{len(outcomes)}/{len(candidates)} validated. Only explicitly involved TUs compiled; '
+          'NO whole giant C++ exact source, partial CODE credit or all-unit replay')
 
 
 if __name__=='__main__':

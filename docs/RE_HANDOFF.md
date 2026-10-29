@@ -1,6 +1,6 @@
 # TH075 — current agent handoff
 
-**Maintained: 2026-10-29, after F540; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
+**Maintained: 2026-10-29, after F541; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
 
 ## 1. Current authoritative state (not historical hypotheses)
 
@@ -35,7 +35,7 @@ reproducible with `scripts/repo-python scripts/verify-fighter-actionzero-natural
 The 180-byte Reimu/CharacterMove case and all nine authentic call/data
 references emerge from normal VC7.1 C++, and its instruction/branch/x87
 structure generalizes to all eleven 180/222-byte original case-zero blocks.
-All remain **parts of unmatched whole fighters, not independently exact units**.
+All remain **parts of unmatched whole fighters, not independently exact units**. **F541 expands the natural action-zero source experiment to all 11 independently compiled multi-switch bosses**: each reproduces 50/50 original instruction and *per-fighter real register-choice* grammar and nine genuine case references, plus all 1,607 original-style DWORD table COFF fields, 4,502 identical sparse index bytes and 10,930 after-RET DATA-shape bytes. See [the eleven-fighter C++ codegen study](FIGHTER_ACTIONZERO_FAMILY_CODEGEN.md) and `scripts/repo-python scripts/verify-fighter-actionzero-natural-source.py --boss 0x00486550`. No giant exact CODE credit.
 
 **Three other authored functions remain nonexact (all require full CODE):**
 
