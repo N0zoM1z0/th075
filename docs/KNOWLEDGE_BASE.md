@@ -9016,3 +9016,27 @@ and [F559 native action-eight study](FIGHTER_WIDE_ACTION_EIGHT_F559.md).
 All **1,474 inner original CODE bytes** remain within the giant
 nonexact 61,872-byte parent; no split-unit exactness, DATA credit,
 full all-unit cold replay or external Oracle acceptance.
+
+
+## F560: complete native 117-instruction precontact action 8 in 00543210
+
+The entire original 58,294-byte `00543210` fighter giant has first
+switch cases 6/7/8 of **115/115/117 native x86 instructions**, bounded
+by actual original case DWORD entries, with native CODE sizes
+393/393/403 bytes. Previously recovered action 6/7 each compare
+`this+0x62` to an extra stage *after* collision; action 8 truly moves
+its stage-three x87 `00657D14` check and `0040FB40(4)` **before** the
+main x87 contact/collision check. Source then initializes game motion
+in native order: -7.0f position, FLAG=0, 18.0f velocity, 0.95f speed.
+Two independently generated selected-only pinned VC7.1 C++ probes
+confirm **all 347 original case GPR/x87/control instructions, 24 true
+physical COFF fields**, complete actual 156 original-style jump DWORD
+field partitions and 319 identical original sparse bytes, with separate
+943 after-RET DATA-layout bytes. The second independent source generator
+and its complete negative-to-positive controls are kept in ignored
+`.analysis/f560-543210-action-eight/`; tracked whole original verifier:
+`scripts/repo-python scripts/verify-fighter-precontact-stage-action-eight.py`,
+[full F560 117-insn study](FIGHTER_PRECONTACT_ACTION_EIGHT_F560.md).
+The 1,189 complete inner-case CODE bytes remain part of an unmatched
+whole boss, **not independently exact source**. No new exact CODE/DATA,
+no all-unit replay or external Oracle acceptance.

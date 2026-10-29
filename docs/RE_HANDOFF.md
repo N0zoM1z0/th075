@@ -1,6 +1,6 @@
 # TH075 — current agent handoff
 
-**Maintained: 2026-10-29, after F559; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
+**Maintained: 2026-10-29, after F560; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
 
 ## 1. Current authoritative state (not historical hypotheses)
 
@@ -110,6 +110,21 @@ and 350 original sparse bytes. See
 and `scripts/repo-python scripts/verify-fighter-wide-action-eight-source.py`.
 These 1,474 original inner bytes remain part of **unmatched whole giant
 CODE** with zero independent/split-case exactness credit.
+
+**F560 now reconstructs the full native action-8 source of giant
+`00543210` (58,294 complete original CODE bytes)** in a newly compiled
+VC7.1 C++ probe, retaining its action 6 and 7. Its real action-8
+**117 instructions / 403 CODE bytes** place auxiliary stage-three
+`0040FB40(4)` **before** contact/x87 comparison, then write native
+-7.0f position, clear FLAG, and initialize 18.0f/0.95f motion on
+transition. Two independent original-backed new source builds confirm
+**347/347 full case x86 instruction roles, 24 true COFF fields, 156
+physical switch DWORD fields and 319 byte-identical original sparse
+bytes**. See [F560 full original action-eight case C++ study](FIGHTER_PRECONTACT_ACTION_EIGHT_F560.md)
+and affected-only verifier
+`scripts/repo-python scripts/verify-fighter-precontact-stage-action-eight.py`.
+Its 1,189 inner original CODE bytes remain within **unmatched whole
+giant source**; zero split/whole exact CODE credit.
 
 **Three other authored functions remain nonexact (all require full CODE):**
 
