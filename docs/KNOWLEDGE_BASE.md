@@ -11038,3 +11038,25 @@ complete exact function credits. Official 943/862,726 whole-authored
 match ledger unchanged; no 943-unit all-unit cold replay.
 [F631 actual PE/native timer and predecessor negative case proof](FIGHTER_LANDING_TIMER_F631.md),
 targeted `scripts/repo-python scripts/verify-fighter-landing-timer96-f631.py --boss 0x0058AF60`.
+
+
+## F632: fifteen full original 171/248-byte authored destructor free-argument lifetime controls
+
+Independent pinned Japanese original PE/VC7.1 experiment tests **8
+natural ArchiveCatalog source variants** with actual filename pointer
+assignment inside the `free` argument, comma sequencing, casts and
+real const/void pointer declarations. All are **171B/51 x86/14 true
+COFF fields** but **108/115** original nonrelocation byte identity;
+original resource/delete/name EBP order `−0xC/−0x8/−0x10` still
+not reproduced. **7 complete real SceneObject resource-free source
+variants** (four genuine aggregate assignment in arguments and three
+individual named-pointer assignment forms) all preserve the real
+**248B/75 x86/12 COFF fields** but remain **191/200** or **189/200**
+original nonfield bytes; texture/delete EBP locals still wrongly
+`−0x20/−0x1C` rather than native `−0x14/−0x10`.
+Original whole functions still NONEXACT; this is a negative VC7.1
+expression/lifetime constraint, not a new authored match or fake
+compiler-stack layout trick. [F632 original full source/PE experiment](DESTRUCTOR_FREE_ASSIGNMENT_F632.md),
+selected `scripts/repo-python scripts/verify-destructor-free-assignment-f632.py --case scene-three-assignment-args`.
+Official 943/862,726 complete authored exact unchanged; no all-unit
+cold replay.

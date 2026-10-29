@@ -1,6 +1,6 @@
 # TH075 — active reconstruction handoff
 
-**Maintained 2026-10-29 after F631.** This is the **only current task list**.
+**Maintained 2026-10-29 after F632.** This is the **only current task list**.
 The [F540–F596 research chronology](history/RE_HANDOFF_F540_THROUGH_F596.md),
 [knowledge base](KNOWLEDGE_BASE.md), and older F-series studies are
 **historical evidence**, not statements of current progress. Independently
@@ -766,6 +766,26 @@ no F528 provenance/ABI assumption is accepted without original proof.
 
 ```bash
 scripts/repo-python scripts/verify-winmain-local-layout-f615.py --case msg-before-app-plus-all-hwnd-event-int
+```
+
+**F632 independently compiled 15 whole original authored destructor
+source-alternative tests**, targeting true local pointer assignment
+inside the actual CRT `free(...)` argument instead of a separate
+statement. Eight actual ArchiveCatalog source forms stay **171/51
+native-shaped x86, 14 real COFF fields but only 108/115 original
+nonrelocation bytes**, the same three wrong EBP slots. Four real
+SceneObject aggregate `free(assignedPointer)` and comma/cast/identity
+forms remain **248/75, 12 true COFF, 191/200 nonfield bytes**;
+three individual named-pointer alternatives are **189/200**.
+All still assign texture/delete locals `−0x20/−0x1C`, not original
+`−0x14/−0x10`; no complete authored exact source credit.
+This rules out a further class of ordinary expression-order fixes
+without falsely asserting historical object ownership. [F632
+full original PE/COFF and assignment-argument negative controls](DESTRUCTOR_FREE_ASSIGNMENT_F632.md).
+
+```bash
+scripts/repo-python scripts/verify-destructor-free-assignment-f632.py --case archive-ptr-in-free-arg
+scripts/repo-python scripts/verify-destructor-free-assignment-f632.py --case scene-three-assignment-args
 ```
 
 **F625 complete small-authored destructor native lifetime research:**
