@@ -10570,3 +10570,23 @@ case interiors /76,167 original internal CODE bytes, **zero new whole
 exact authored code**, no full cold replay or Oracle acceptance.
 [F611 original PE/native source evidence](FIGHTER_TRAJECTORY_BOUNCE_SPAWN_F611.md),
 selected `scripts/repo-python scripts/verify-fighter-trajectory-bounce-spawn-f611.py --boss 0x0058AF60`.
+
+
+## F612: genuine whole 248-byte scene destructor freed-pointer type/array negatives
+
+Independent pinned original Japanese `0043B0B0` SceneObject destructor
+remains **248 native CODE/75 x86/12 real physical typed COFF fields**
+with original `EBP−0x14/−0x10/−0x18/−0x1C/−0x20` texture/delete
+and three resource-free stack positions. Fresh selected VC7.1 `/GX`
+C++ controls test **22 actual pointer/aggregate source types**:
+16 intact original-shaped candidates emit **248/75 with 191/200**
+nonrelocation bytes equal; four true array field orders emit **189/200**;
+two reference aliases change whole CODE to **254/78**, not original.
+The two missing original texture-delete EBP source positions do not
+change in any full-size form, so casts, pointee type, const/volatile
+and straightforward free-value array ordering cannot explain the
+source allocation mismatch. No fake padding or machine byte graft,
+no accepted new authored whole CODE or 943-unit cold replay.
+[Native original F612 investigation](SCENE_DESTRUCTOR_POINTER_TYPES_F612.md),
+selected `scripts/repo-python scripts/verify-scene-freed-pointer-types-f612.py --case int-pointer`.
+Official exact authored ledger remains 943/862,726 original CODE bytes.
