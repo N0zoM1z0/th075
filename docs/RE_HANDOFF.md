@@ -1,6 +1,6 @@
 # TH075 — current agent handoff
 
-**Maintained: 2026-10-29, after F571; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
+**Maintained: 2026-10-29, after F572; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
 
 ## 1. Current authoritative state (not historical hypotheses)
 
@@ -271,6 +271,26 @@ slot allocation are not yet solved. Preserve all negative artifacts
 and treat neither function as exact.
 [F570/F571 full local-lifetime study](DESTRUCTOR_LIFETIME_CONTROLS_F570_F571.md).
 Zero accepted CODE/DATA and no all-unit replay.
+
+**F572 newly reconstructs actual gameplay for the first TEN
+native CharacterObject action bodies** inside the full 33,293-byte
+one-switch giant `004EBDA0`, not just its F569 dispatch markers.
+Seven genuine 13-byte/3-instruction leaf actions call native
+`004F4170`; three different **complete 271-instruction** bodies
+(`0x327`/`0x328`/`0x329`, 998/999/999 native CODE bytes) handle
+8-effect spawning, the true `00453A70` parent effects API, x87 stage
+motion and 13 real call/global symbols per body. A new *single*
+pinned VC7.1 natural C++ TU reproduces **all 834 original x86
+GPR/x87/branch/length instruction roles, 61 genuine typed COFF
+call/global fields**, all 60 original jump DWORD COFF slots and
+198 byte-identical compressed-map bytes. Source and affected-only
+verifier:
+[full F572 CharacterObject case-codegen study](CHARACTEROBJECT_FIRST_TEN_NATIVE_CASES_F572.md),
+`probes/CharacterObjectActionsF572.cpp`,
+`scripts/repo-python scripts/verify-characterobject-action-family-f572.py`.
+These **3,087 original inner CODE bytes** remain part of the
+**unmatched 33,293-byte whole fighter** with zero split/whole exact
+CODE credit; the other game-action labels remain diagnostic markers.
 
 **Three other authored functions remain nonexact (all require full CODE):**
 

@@ -9297,3 +9297,36 @@ Complete independent comparison logs/source remain preserved under
 .analysis/f571-scene-aggregate-lifetimes/. See
 [F570/F571 destructor negative source matrix](DESTRUCTOR_LIFETIME_CONTROLS_F570_F571.md).
 No new exact CODE/DATA or full cold replay.
+
+
+## F572: 10 genuine original action bodies including 3x271 x86 in CharacterObject
+
+F569 verified the common actual CharacterObject guard/cooldown/sparse
+switch but had **only diagnostic case markers**. F572 now recovers
+**ten actual complete native game-action bodies** in original
+`004EBDA0` (33,293 whole CODE bytes): `0x320..0x326` are seven
+independent 13-byte/3-instruction true `004F4170` call cases,
+while `0x327`/`0x328`/`0x329` are three full **271-instruction**
+effect/spawn/frame-motion/collision game policies (998/999/999
+native CODE bytes) with distinct original stage values:
+initial `+0xD8` −30/70/−30, initial `+0xDA` 150/150/200,
+subsequent +0xD8 updates +3/−2/+4. The source recovers the actual
+for-8 effect spawn at original `00453A70`, actual floating-point
+motion and native calls `0040FB70`, `0040FBB0`, `0040FB40` and
+`0040FA30`; all original GPR/x87/branch and byte-layout roles
+now compile naturally in one pinned VC7.1 C++ switch TU.
+A crucial real C++ pointer-lvalue expression causes the native owner
+load to precede x87 `FLD`; the native effect argument requires a
+real char parameter (plain int produces wrong MOVSX). After actual
+physical PE call/global COFF verification (rather than blindly
+normalizing object `[0]`), all **10 complete case structures,
+834/834 original x86 instructions, 3,087 actual native inner CODE
+bytes and 61/61 authentic typed COFF fields** match, with 60
+original-style dense DWORD switch fields, 198 byte-identical
+sparse-index bytes, and separate 438 after-RET DATA-layout bytes.
+Tracked natural C++ [F572 source](../probes/CharacterObjectActionsF572.cpp)
+and [native study](CHARACTEROBJECT_FIRST_TEN_NATIVE_CASES_F572.md),
+affected-only reproducer:
+`scripts/repo-python scripts/verify-characterobject-action-family-f572.py`.
+**The full 33,293 original boss is nonexact; inner CODE is not new
+exact function/coverage credit.** No whole cold replay/Oracle receipt.
