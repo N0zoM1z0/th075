@@ -1,6 +1,6 @@
 # TH075 — active reconstruction handoff
 
-**Maintained 2026-10-29 after F605.** This is the **only current task list**.
+**Maintained 2026-10-29 after F606.** This is the **only current task list**.
 The [F540–F596 research chronology](history/RE_HANDOFF_F540_THROUGH_F596.md),
 [knowledge base](KNOWLEDGE_BASE.md), and older F-series studies are
 **historical evidence**, not statements of current progress. Independently
@@ -263,6 +263,31 @@ source-backed, but officially accepted authored coverage unchanged**.
 
 ```bash
 scripts/repo-python scripts/verify-fighter-trajectory-followups-f605.py --boss 0x004F7130
+```
+
+**F606 completes the REAL 0x47/0x48 original source for the other
+two projectile-spawning giant fighters**, with native complete code
+at `0045DD70`: `0x47` **113/395 B, 14 typed fields** and `0x48`
+**86/310 B, 13 typed fields**; and at `0058AF60`: both `0x47/0x48`
+**113/395 B, 14 typed fields**. The surprising native difference
+is that `0058AF60` `0x48` spawns original sprite `0x3E7` **AFTER**
+its stage-2 auxiliary-state early exit, not before like `0x47`.
+Separate ordinary C++ bodies preserve the actual stage-one guard,
+byte direction and `+0xF0C` flag. **F606 adds 4 complete native
+interior cases /425 GPR/x87/CFG roles /1,495 original CODE bytes
+/55 physical COFF fields**, with all previous 24 action roles and
+complete afterRET jump DATA preserved in freshly compiled source.
+Combined F605/F606: all **22** 0x47/0x48 actions in 11 giants source-backed
+(1,973 native x86 roles/7,251 original internal CODE bytes/289 typed
+fields). Combined F598–F606: **286 native game action subranges/
+66,880 original internal CODE bytes**, still **ZERO new complete
+whole-fighter exact acceptance**; official 943/862,726 unchanged.
+[Original F606 stage-one order evidence](FIGHTER_TRAJECTORY_FOLLOWUP_SPAWNS_F606.md),
+[before-early-source](../probes/FighterTrajectoryFollowupSpawnF606.inc),
+[after-early-source](../probes/FighterTrajectoryFollowupLateSpawnF606.inc).
+
+```bash
+scripts/repo-python scripts/verify-fighter-trajectory-followup-spawns-f606.py --boss 0x0058AF60
 ```
 
 Never run a full 943-unit cold replay.

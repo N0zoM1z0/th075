@@ -10422,3 +10422,32 @@ official 943/862,726 accepted authored CODE unchanged.
 `probes/FighterTrajectoryFollowupsF605.inc`, targeted
 `scripts/repo-python scripts/verify-fighter-trajectory-followups-f605.py
 --boss 0x004F7130`. No 943-unit cold replay or Oracle acceptance.
+
+
+## F606: genuine original 0x47/0x48 staged projectile order in two special giants
+
+Actual original Japanese PE exposes one surprising source-order
+difference across the two remaining projectile-spawning game fighters:
+`0045DD70` action0x47 has original 113-instruction stage-one
+projectile then early auxiliary-state check; its action0x48 is plain
+86-instruction trajectory. `0058AF60` action0x47 is also a
+113-instruction stage-one projectile **before** the early exit, but
+its native action0x48 has the same 113 original x86 count with the
+projectile branch **AFTER** the stage-2 early-state return. Two
+natural C++ case source bodies explicitly preserve original behavior
+using true flag+0xF0C, native x87 motion, real signed-short velocity
+conversion and actual 0x3B7/0x3E7 ID+side parameters. Fresh separate
+pinned VC7.1 whole-parent source compilations reproduce the complete
+native **425 GPR/x87/CFG roles, 1,495 internal CODE bytes and
+55 individually typed physical PE/COFF fields** across four original
+cases, preserving all previous 24 PE-backed actions and entire afterRET
+jump DATA. With F605, all 22 true original 0x47/48 case subranges
+(1,973 x86 roles, 7,251 original native CODE bytes, 289 typed fields)
+are source-backed; with earlier giant case proofs 286 original
+**internal** actions/66,880 original inner CODE bytes, NO whole-giant
+exactness or independent case credit. [F606 exact PE/order evidence](FIGHTER_TRAJECTORY_FOLLOWUP_SPAWNS_F606.md),
+`probes/FighterTrajectoryFollowupSpawnF606.inc`,
+`probes/FighterTrajectoryFollowupLateSpawnF606.inc`; targeted
+`scripts/repo-python scripts/verify-fighter-trajectory-followup-spawns-f606.py --boss 0x0058AF60`.
+Official 943 whole authored exact functions/862,726 CODE bytes
+unchanged; no all-unit cold replay or external Oracle.
