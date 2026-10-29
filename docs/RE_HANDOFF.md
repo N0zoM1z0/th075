@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F668; earlier frozen handoffs are archived.**
+**Maintained 2026-10-30, after F669; earlier frozen handoffs are archived.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -82,29 +82,32 @@ scripts/repo-python scripts/verify-characterobject-typed-member-f635.py --case 3
 The 22 original giant CODE owners remain authored NONEXACT. The main
 case-source subcohort has **11 real multi-switch giant fighters**,
 with real per-actor native differences and a full afterRET sparse/
-dense dispatch shape. F598–F668 compiler-backed original research
-proves **590 strict original *internal action case bodies* /
-159,417 original native internal CODE bytes**. These do **NOT** mean
-590 additional independently callable exact functions or credited
+dense dispatch shape. F598–F669 compiler-backed original research
+proves **593 strict original *internal action case bodies* /
+160,089 original native internal CODE bytes**. These do **NOT** mean
+593 additional independently callable exact functions or credited
 whole function bytes; each parent remains nonexact. Case interior
 source must always be compiled in the **fresh complete original
 parent C++ translation unit** and its preceding cases + entire jump
 DATA rechecked. [Full original dispatch fingerprint JSON](../config/fighter-boss-dispatch-fingerprints.json),
 [original fighter family dispatch](FIGHTER_BOSS_FAMILY_DISPATCH.md).
 
-**Latest strict path:** native `00543210` has **22 strictly matched
-inner cases /1,644 authentic x86 /5,715 original internal CODE bytes /
-150 genuine typed PE/COFF fields**, in one newly compiled entire
-parent. New F668 adds three fully bounded genuine native `0x252/253/254`
-cases (**207 x86/744 real CODE B/18 original physical fields**), with
-original prefix signed byte decrement and **FLD member before FADD
-global** x87 evaluation order. All 19 previously strict original
-inner cases, real EBP scratch-negative controls and complete separate
-after-RET DATA rechecked in the same new parent object.
-[Newest F668 exact inner-case proof](FIGHTER_COUNTER_SPECIAL_F668.md).
-F664 previously added two full native `0x200/0x201` interiors
-(228 x86/779 B/17 genuine typed physical fields).
-[F664 original context-scoped proof](FIGHTER_SPECIAL_STAGE_F664.md).
+**Latest strict path:** native `00543210` now has **25 strictly
+matched original inner cases /1,840 real x86 /6,387 original
+internal CODE B /167 real typed PE/COFF fields** in one newly
+compiled complete original-shaped parent. F669 adds genuine native
+`0x255/0x256/0x257` (**196 x86/672 CODE B/17 real fields**),
+following F668's original `0x252/0x253/0x254` (**207 x86/744 B/18
+fields**), for a single **six-case contiguous strict native segment
+`252..257`: 403 x86, 1,416 original CODE B, 35 genuine typed fields**.
+The native prefix char decrement, true x87 `FLD` before global `FADD`,
+resource-stage difference, original 0x37 projectile and conditional
+one-shot counter are source-backed. All prior 22 strictly matched
+cases, three original EBP-negative controls and full separately
+owned after-RET switch DATA rechecked in the **same fresh parent**.
+[Newest F669 native source and physical proof](FIGHTER_POST_COUNTER_F669.md).
+F664 earlier added 200/201 (228 x86/779 B/17 fields), and F668
+added 252/253/254; no enclosing whole giant is exact.
 **Critical F666 context warning:** a second freshly compiled whole-giant
 source variant restores *four earlier original* `1FA/1FB/1FE/1FF`
 case C++ grammars (562 original x86/1,942 native CODE B/52 real
@@ -171,7 +174,9 @@ F646 `0xD0` remains nonstrict in other original actors due to
 explicitly distinguishes the 3 strict parent contexts.
 
 ```bash
-# NEW selected whole giant: strict 252/253/254 and 19 preceding strict cases:
+# NEW whole giant: strict 255/256/257 and 22 preceding strict cases:
+scripts/repo-python scripts/verify-fighter-post-counter-f669.py
+# Prior selected whole giant: strict 252/253/254 and 19 preceding cases:
 scripts/repo-python scripts/verify-fighter-counter-special-f668.py
 # Separate alternate whole giant: four native predecessors and GPR-phase negative:
 scripts/repo-python scripts/verify-fighter-preceding-stage-controls-f666.py

@@ -110,7 +110,7 @@ def source_with_special(source):
     return source
 
 
-def verify_inner(reader,pe,dec,code,refs,originals,start,original_shared_exit,h):
+def verify_inner(reader,pe,dec,code,refs,originals,start,original_shared_exit,h,following_native=None):
     ins=[]
     for x in dec.disasm(code,0):
         ins.append(x)
@@ -159,9 +159,16 @@ def verify_inner(reader,pe,dec,code,refs,originals,start,original_shared_exit,h)
                          'original_physical_typed_PE_COFF_fields':len(physical),
                          'new_accepted_whole_function_BYTES':0})
         ordinal+=len(native)
-    need(ins[ordinal].mnemonic=='mov' and ins[ordinal].op_str.endswith(', 0x256'),
-         'three new actual native 252/253/254 cases must end at original 255 marker')
-    return verified
+    if following_native is None:
+        need(ins[ordinal].mnemonic=='mov' and ins[ordinal].op_str.endswith(', 0x256'),
+             'three native 252/253/254 cases must end at original 255 source marker')
+    else:
+        need(following_native==0x255 and ins[ordinal].mnemonic=='mov'
+             and ins[ordinal].op_str=='ecx, dword ptr [ebp - 8]'
+             and ins[ordinal+1].mnemonic=='movsx'
+             and ins[ordinal+1].op_str=='edx, word ptr [ecx + 0x62]',
+             'genuine native 0x255 must physically follow strict 0x254 in new source')
+    return verified,ordinal
 
 
 def main():
@@ -225,7 +232,7 @@ def main():
     need(following>=len(ins)-len(ins)//2 and ins[following-1].mnemonic=='jmp',
          'original 252 physical follow-on ordinal/previous shared native exit not found')
     shared_exit=ins[old['continuation_source_ordinal']-1].op_str
-    strict=verify_inner(reader,pe,dec,code,refs,originals,following,shared_exit,h)
+    strict,_=verify_inner(reader,pe,dec,code,refs,originals,following,shared_exit,h)
     receipt={'original_selected_giant':'0x00543210',
              'original_entire_parent_CODE_bytes_still_NONEXACT':boss['size'],
              'separately_owned_after_RET_DATA_bytes':boss['postret_size'],

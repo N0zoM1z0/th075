@@ -11887,3 +11887,31 @@ native internal CODE bytes** remain uncredited; F666's source phase
 context caveat still applies. [F668 full original PE proof](FIGHTER_COUNTER_SPECIAL_F668.md),
 `scripts/repo-python scripts/verify-fighter-counter-special-f668.py`.
 No all-unit cold replay.
+
+
+## F669: original native fighter stages 255/256/257 extend strict 252–257 run
+
+Actual pinned original fighter `00543210` physical handlers 0x255
+(**72 x86/248 original CODE B/6 typed real PE/COFF fields**), 0x256
+(**52/176/5**), and 0x257 (**72/248/6**) now source-match the
+entire original cases in one **fresh normal VC7.1 complete 58K parent**.
+They initialize authentic native stage control and native action9,
+spawn original stage5 kind0x37 sprite using DWORD x plus typed y
+`(*(&POS48))+00657888` (real `FLD` member then genuine DIR32
+`FADD` float global) and for 255/257 alone conditionally increment
+real short `+0xF00` and trigger native auxiliary action6 at stage8.
+All **196 x86 /672 CODE B /17 physical typed PE/COFF fields**
+exactly match original native roles/width/CFG/field ownership and
+raw EBP source operand roles. Previous 22 strict interiors and three
+real EBP scratch negatives, plus whole afterRET native switch DATA,
+were rechecked in the same new parent object. Six consecutive genuine
+native case bodies 252–257 are now strict (**403 x86/1,416 B/35
+real PE fields**). Selected giant: **25 original strict case
+interiors /1,840 x86 /6,387 internal CODE B /167 native fields**.
+Across F598–F669 this is **593 context-strict original case bodies /
+160,089 uncredited native CODE bytes**. F666 earlier historical
+source-phase warning remains, no original whole giant is exact and
+formal authored 943/862,726 exact CODE ledger unchanged.
+[Original full-parent F669 proof](FIGHTER_POST_COUNTER_F669.md),
+`scripts/repo-python scripts/verify-fighter-post-counter-f669.py`.
+No 943-unit replay.
