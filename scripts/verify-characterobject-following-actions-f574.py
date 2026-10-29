@@ -1,0 +1,260 @@
+#!/usr/bin/env python3
+"""F574: real native CharacterObject action0x32B/0x32C, previous 11 rechecked.
+
+Fresh compile of ONE selected normal VC7.1 source including all real actions
+0x320..0x32C in original 33,293-byte 004EBDA0; all later action labels are
+explicit diagnostic markers. SHA-verify complete original Japanese TH075 PE
+and physical 60-slot COFF jump/data before checking entire native case bodies,
+real x87 operand/calls and typed COFF. Allow ONLY the independently proven
+read-only MOV/FLD swap at original action32A #186/187 and action32C #114/115.
+Never credit giant whole/split CODE or run all-unit cold replay.
+"""
+from __future__ import annotations
+
+import hashlib
+import importlib.util
+import json
+import os
+from pathlib import Path
+import subprocess
+import sys
+
+from capstone import Cs,CS_ARCH_X86,CS_MODE_32
+
+ROOT=Path(__file__).resolve().parents[1]
+SOURCE=ROOT/'probes/CharacterObjectActionsF572.cpp'
+OUT=ROOT/'.analysis/f574-following-action-source'
+MANIFEST=ROOT/'config/fighter-boss-dispatch-fingerprints.json'
+ADDR=0x004EBDA0
+START=0x320
+END=0x32C
+TYPED={
+   0x0040FBB0:('REL32','ResetStateAt40FBB0'),
+   0x00453E60:('REL32','SetupAt453E60'),
+   0x0045B830:('REL32','ResetAt45B830'),
+   0x0040FA30:('REL32','GetStateAt40FA30'),
+   0x0040FB40:('REL32','SetStateAt40FB40'),
+   0x00453A70:('REL32','SpawnAt453A70'),
+   0x00453D40:('REL32','ModifyAt453D40'),
+   0x0040FB70:('REL32','MotionRawAt40FB70'),
+   0x0040FAC0:('REL32','SetActionAt40FAC0'),
+   0x0065972C:('DIR32','gCurveAt0065972C'),
+   0x00658044:('DIR32','gStepAt00658044'),
+   0x00657CC0:('DIR32','gLiftAt00657CC0'),
+   0x0065782C:('DIR32','gCompareAt0065782C'),
+}
+
+
+def need(ok,message):
+    if not ok:raise ValueError(message)
+
+
+def module(name,path):
+    spec=importlib.util.spec_from_file_location(name,path)
+    need(spec is not None and spec.loader is not None,
+         f'missing tracked original-backed source verifier {path}')
+    mod=importlib.util.module_from_spec(spec)
+    sys.modules[name]=mod
+    spec.loader.exec_module(mod)
+    return mod
+
+
+def actual_typed_fields(native,candidate,relocations,action):
+    first,last=candidate[0].address,candidate[-1].address+candidate[-1].size
+    physical=[r for r in relocations if first<=r['offset']<last]
+    observed=[]
+    for ordinal,n in enumerate(native):
+        if n.mnemonic=='call' and n.op_str.startswith('0x'):
+            kind='REL32';address=int(n.op_str,16)
+        elif n.mnemonic.startswith('f') and 'ptr [0x' in n.op_str:
+            kind='DIR32';address=int(n.op_str.split('[0x',1)[1].split(']',1)[0],16)
+        else:continue
+        need(address in TYPED,
+             f'original {action:#x} unexpected native call/global {address:#x}, instruction {ordinal}')
+        expected_kind,expected_symbol=TYPED[address]
+        need(kind==expected_kind,'native original float/call field type changed')
+        if action==0x32C and address==0x00453A70 and ordinal in (138,152):
+            expected_symbol='SpawnDirectedAt453A70'
+        generated=candidate[ordinal]
+        need(n.mnemonic==generated.mnemonic,
+             f'physical original COFF instruction moved at {action:#x} ordinal {ordinal}')
+        refs=[r for r in physical if generated.address<=r['offset']<generated.address+generated.size]
+        need(len(refs)==1 and refs[0]['type']==kind
+             and refs[0]['addend']==0 and expected_symbol in refs[0]['symbol'],
+             f'C++ COFF real original call/global field mismatch at {action:#x} ordinal {ordinal}: {refs}')
+        observed.append((ordinal,kind,address))
+    expected=9 if action==0x32B else 13
+    need(len(observed)==len(physical)==expected,
+         f'original {action:#x} physical source COFF field count incorrect')
+    if action==0x32B:
+        need([k for k,x in enumerate(native) if x.mnemonic=='fimul']==[58,77]
+             and [k for k,x in enumerate(candidate) if x.mnemonic=='fimul']==[58,77],
+             'native 0x32B second integer-to-float multiply/update missing')
+    return observed
+
+
+def native_32c_read_swap(native,candidate,f572):
+    """Only permitted exception: one adjacent, independent memory READ pair.
+
+    Native: MOV EAX,[saved_this]; FLD [EDX+0x48]
+    Source: FLD [EDX+0x48]; MOV EAX,[saved_this].
+    No write, branch or external relocation separates the two; neither
+    reads the register written by the other. This is semantic equivalence,
+    NOT physical instruction-order exactness or CODE credit.
+    """
+    need(len(native)==len(candidate)==176,'original x86 case32C length drift')
+    a=f572.authentic_grammar(native,0x32C)
+    b=f572.authentic_grammar(candidate,0x32C)
+    diffs=[k for k,(x,y) in enumerate(zip(a,b)) if x!=y]
+    need(diffs==[114,115],
+         f'case32C previously independently bounded adjacent MOV/FLD mismatch changed: {diffs[:9]}')
+    need(native[114].mnemonic=='mov'
+         and native[114].op_str.startswith('eax, dword ptr [ebp - ')
+         and native[115].mnemonic=='fld'
+         and native[115].op_str=='dword ptr [edx + 0x48]'
+         and candidate[114].mnemonic=='fld'
+         and candidate[114].op_str=='dword ptr [edx + 0x48]'
+         and candidate[115].mnemonic=='mov'
+         and candidate[115].op_str.startswith('eax, dword ptr [ebp - '),
+         'one independent actual native MOV/FLD pair is not the original')
+    b[114],b[115]=b[115],b[114]
+    need(a==b,'extra original x87/branch/GPR difference after independently proven read swap')
+    return diffs
+
+
+def build_one():
+    OUT.mkdir(parents=True,exist_ok=True)
+    src=SOURCE.read_text()
+    need('F572/F573/F574' in src and
+         all(src.count(f'case 0x{k:X}:')==1 for k in range(START,END+1))
+         and 'case 0x32D: g_FighterProbeMarker = 814; break;' in src,
+         'actual F574 source must implement exactly first thirteen and keep next case diagnostic')
+    need(src.count('gCurveAt0065972C')>=3 and src.count('MotionRawAt40FB70')==2,
+         'real source must include native polynomial and raw-float input')
+    obj=OUT/'CharacterObjectF574.obj'
+    env=os.environ.copy();env.pop('DISPLAY',None);env.pop('WAYLAND_DISPLAY',None)
+    env['WINEPREFIX']=str(ROOT/'.analysis/vc71-wine')
+    env['WINEDLLOVERRIDES']='winex11.drv,winewayland.drv=d;winemenubuilder.exe=d'
+    proc=subprocess.run([str(ROOT/'scripts/compile-probe.sh'),str(SOURCE),str(obj),
+         '/Od','/Ob0','/Gy','/GR-','/GX-','/GS','/Zi','/I','src'],
+         cwd=ROOT,env=env,capture_output=True,text=True,timeout=120)
+    (OUT/'compiler.log').write_text(proc.stdout+proc.stderr)
+    need(proc.returncode==0,f'fresh selected native profile VC7.1 compile failed: {proc.stderr}')
+    return obj
+
+
+def main():
+    reader=module('f574_reader',ROOT/'scripts/compare-coff-function.py')
+    actions=module('f574_actions',ROOT/'scripts/report-fighter-action-handlers.py')
+    switch=module('f574_switch',ROOT/'scripts/verify-fighter-natural-switch-probes.py')
+    f572=module('f574_firstten',ROOT/'scripts/verify-characterobject-action-family-f572.py')
+    f573=module('f574_previous',ROOT/'scripts/verify-characterobject-extended-action-f573.py')
+    pe=reader.verified_target();decoder=Cs(CS_ARCH_X86,CS_MODE_32)
+    boss=next(x for x in json.loads(MANIFEST.read_text())['bosses'] if x['address']==ADDR)
+    need(boss['size']==33293 and boss['postret_size']==438,
+         'original complete giant function CODE or post-RET DATA drift')
+    report,mapped=actions.report_boss(reader,pe,decoder,boss)
+    allcases={r['action']:int(r['handler'],16) for r in mapped}
+    tab=boss['tables'][0]
+    need(tab['slots']==60 and tab['map_length']==198 and tab['map_addr'] is not None,
+         'original native one-switch compressed table geometry changed')
+    original_dense=reader.pe_bytes_at(pe,tab['dense_addr'],4*tab['slots'])
+    original_map=reader.pe_bytes_at(pe,tab['map_addr'],tab['map_length'])
+    need(hashlib.sha256(original_dense).hexdigest()==tab['dense_sha'] and
+         hashlib.sha256(original_map).hexdigest()==tab['map_sha'],
+         'actual original PE switch SHA controls do not match')
+    obj=build_one()
+    code,refs=reader.object_function(obj,'?Advance@FighterSwitchF572_Boss004EBDA0@@QAEXXZ')
+    allins=[]
+    for x in decoder.disasm(code,0):
+        allins.append(x)
+        if x.mnemonic=='ret':break
+    need(allins and allins[-1].mnemonic=='ret','candidate whole fighter switch no normal RET')
+    ret=allins[-1].address+allins[-1].size
+    need(len(code)-ret==boss['postret_size'],
+         'original candidate full after-RET jump DATA size differs')
+    physical=sorted((r for r in refs if ret<=r['offset']<ret+4*tab['slots']),
+                    key=lambda r:r['offset'])
+    need(len(physical)==tab['slots'] and all(r['type']=='DIR32'
+         and r['addend']==0 and r['offset']==ret+4*k
+         and r['local_symbol_offset'] is not None for k,r in enumerate(physical)),
+         'one-switch physical original direct handler COFF fields incorrect')
+    nslots=[int.from_bytes(original_dense[4*k:4*k+4],'little')
+            for k in range(tab['slots'])]
+    cslots=[r['local_symbol_offset'] for r in physical]
+    need(switch.canonical_partitions(nslots)==switch.canonical_partitions(cslots),
+         'actual default/repeated switch handler partitions mismatch')
+    need(code[ret+4*tab['slots']:]==original_map,'original literal sparse index bytes differ')
+    ja=[int(x.op_str,16) for x in allins if x.mnemonic=='ja' and x.op_str.startswith('0x')]
+    need(ja and [x==int(report['default'],16) for x in nslots]==[x==ja[0] for x in cslots],
+         'native shared default physical jump slots differ')
+    rows=[];total_coff=0
+    for action in range(START,END+1):
+        first=allcases[action];last=allcases[action+1]
+        need(boss['address']<=first<last<boss['address']+boss['size'],
+             'actual original game case outside giant source range')
+        orig=list(decoder.disasm(reader.pe_bytes_at(pe,first,last-first),first))
+        cfirst=cslots[original_map[action-START]]
+        clast=cslots[original_map[action+1-START]]
+        need(0<=cfirst<clast<ret,'candidate complete case source outside normal CODE')
+        cand=list(decoder.disasm(code[cfirst:clast],cfirst))
+        need(orig and orig[0].address==first and orig[-1].address+orig[-1].size==last
+             and cand and cand[0].address==cfirst and cand[-1].address+cand[-1].size==clast,
+             f'actual whole native actor case {action:#x} is truncated/discontinuous')
+        need(len(orig)==len(cand) and last-first==clast-cfirst
+             and all(x.size==y.size for x,y in zip(orig,cand)),
+             f'whole native actor {action:#x} instruction/codebyte grammar differs')
+        if action<=0x329:
+            fields=f572.compare_actual_case(orig,cand,refs,action)
+            changes=[]
+        elif action==0x32A:
+            fields=f573.actual_case32a_fields(orig,cand,refs)
+            changes=f573.equivalent_independent_reads(orig,cand,f572)
+        else:
+            fields=actual_typed_fields(orig,cand,refs,action)
+            if action==0x32B:
+                a=f572.authentic_grammar(orig,action)
+                b=f572.authentic_grammar(cand,action)
+                need(a==b,'full native stage/curve action32B has incorrect original register/x87/CFG roles')
+                changes=[]
+            else:
+                changes=native_32c_read_swap(orig,cand,f572)
+        total_coff+=len(fields)
+        rows.append({'action':f'0x{action:X}', 'native_x86_instructions':len(orig),
+                     'native_original_CODE_bytes':last-first,
+                     'genuine_physical_COFF_fields':len(fields),
+                     'explicit_nonidentical_read_only_swap_indices':changes})
+        print(f'{action:#05x}: whole original {len(orig)} x86 instructions / '
+              f'{last-first} CODE bytes, {len(fields)} genuine COFF fields, '
+              f'independent read-only source-order exceptions {changes}',flush=True)
+    need(len(rows)==13 and sum(x['native_x86_instructions'] for x in rows)==1370
+         and sum(x['native_original_CODE_bytes'] for x in rows)==5076
+         and total_coff==102 and [rows[-2]['native_x86_instructions'],rows[-1]['native_x86_instructions']]==[112,176]
+         and [rows[-2]['native_original_CODE_bytes'],rows[-1]['native_original_CODE_bytes']]==[422,635],
+         'original case family 13 physical complete native actions/fields differs')
+    OUT.mkdir(parents=True,exist_ok=True)
+    summary={'original_giant':f'0x{ADDR:08X}','whole_original_CODE_unaccepted':boss['size'],
+             'native_complete_real_action_count':len(rows),
+             'case_details':rows,
+             'original_native_x86_insns':1370,
+             'original_inner_CODE_bytes':5076,
+             'genuine_typed_COFF_fields':102,
+             'original_dense_DWORD_COFF_slots':len(physical),
+             'byte_identical_sparse_index_bytes':len(original_map),
+             'complete_native_afterret_DATA_shape':len(code)-ret}
+    (OUT/'summary.json').write_text(json.dumps(summary,indent=2)+'\n')
+    print(f'F574 original 0x{ADDR:08X}: 13 complete action bodies, '
+          f'1370 native x86 source roles, 5076 whole original inner CODE bytes, '
+          f'{total_coff}/102 genuine typed COFF records, 60 native-style jump '
+          f'DWORD fields, 198 byte-identical original sparse bytes; '
+          f'two separately proven adjacent read-only source swaps, '
+          f'whole 33293-byte giant still NONEXACT')
+    print('Only one affected VC7.1 C++ TU freshly compiled; no full cold '
+          'replay or accepted whole/partial CODE/DATA exactness credit')
+
+
+if __name__=='__main__':
+    try:main()
+    except (ValueError,OSError,subprocess.TimeoutExpired) as exc:
+        print('TH075 original CharacterObject action32B/32C source verification failed:',exc,file=sys.stderr)
+        raise SystemExit(1)

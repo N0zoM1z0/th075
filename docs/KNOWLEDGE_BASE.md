@@ -9366,3 +9366,33 @@ These inner bytes remain part of the **33,293 wholly nonexact
 giant**; no split/whole CODE credit, full replay or external Oracle.
 Full original-source study:
 [CharacterObject F573 x87 case](CHARACTEROBJECT_X87_ACTION32A_F573.md).
+
+
+## F574: further original action 0x32B/0x32C in CharacterObject 004EBDA0
+
+F574 extends tracked `probes/CharacterObjectActionsF572.cpp` with
+full original actions `0x32B` (112 native x86 instructions /422 CODE
+bytes, nine original typed COFF refs) and `0x32C` (176 instructions
+/635 bytes, 13 true typed refs). Action32B authentically creates
+stage-zero state and updates two visual scaling float fields using
+signed frame `(5 - S16(0x64))`, float global `0065972C`, original
+`SETL` Boolean condition compiled as `FIMUL`, and true float
+`00658044` and member arithmetic. The normal VC7.1 source is strict
+native exact instruction-order geometry. Action32C performs a
+five-effect `00453A70` loop, native `0040FBB0` and raw +0xC8
+motion call `0040FB70`, an original stage-2 x87 collision
+check, effect spawns `0x32B/0x32D`, and action switch
+`0040FAC0(0x33B)`. Its native 176 instruction and 635 byte
+geometry is exactly matched, except one proven independent read-only
+MOV EAX / FLD +0x48 pair is reversed, so NOT byte-order exact.
+In the *same newly compiled normal C++ switch*, F572/F573/F574
+cover **all 13 original case bodies 0x320..0x32C**, including
+**1,370 native instruction roles /5,076 real inner original CODE
+bytes, 102 true typed zero-addend original COFF references**, full
+60 original physical DWORD handler slots, 198 byte-identical
+compressed index bytes and 438 native after-RET DATA-layout bytes.
+The complete **33,293-byte giant still is NOT CODE-exact**;
+no independent partial function or DATA credit. Verified reproducibly
+by `scripts/repo-python scripts/verify-characterobject-following-actions-f574.py`;
+[full F574 native case study](CHARACTEROBJECT_STAGE_CURVE_F574.md).
+No all-unit replay or external Oracle acceptance.

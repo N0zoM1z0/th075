@@ -125,3 +125,15 @@ original inner CODE bytes** can be counted as an independently exact
 function: the complete **33,293-byte giant is still unmatched**.
 No accepted whole/split CODE/DATA coverage, full all-unit cold replay,
 or external Factory/Oracle receipt.
+
+## F574 follow-up: two more original action bodies
+
+The same tracked normal C++ source has now independently recovered
+complete native `0x32B` (112 original instructions /422 bytes)
+and `0x32C` (176 original instructions /635 bytes) in addition to
+F573's action `0x32A`. The F573 verifier still independently
+recompiles and revalidates its original first eleven actions,
+while [F574's extended checker](CHARACTEROBJECT_STAGE_CURVE_F574.md)
+explicitly verifies 13 original inner cases and another separately
+proven read-only original/source instruction swap in action32C.
+All whole-fighter CODE remains nonexact.

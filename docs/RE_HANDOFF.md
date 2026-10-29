@@ -1,6 +1,6 @@
 # TH075 — current agent handoff
 
-**Maintained: 2026-10-29, after F573; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
+**Maintained: 2026-10-29, after F574; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
 
 ## 1. Current authoritative state (not historical hypotheses)
 
@@ -309,6 +309,25 @@ See [F573 six original x87 equality conditions](CHARACTEROBJECT_X87_ACTION32A_F5
 and `scripts/repo-python scripts/verify-characterobject-extended-action-f573.py`.
 All **4,019 original inner CODE bytes remain inside the nonexact
 whole 33,293-byte giant**, with zero whole/split exact CODE credit.
+
+**F574 extends the same CharacterObject `004EBDA0` giant** with
+complete real native action `0x32B` (112 x86 instructions /422 CODE
+bytes) and `0x32C` (176/635), each reconstructed from original
+stage/x87 motion and effect/collision C++ rather than case markers.
+The first now strictly matches its entire original machine order;
+the second has exactly one independently demonstrated adjacent
+read-only MOV/FLD instruction-order swap, as already documented
+for F573 action0x32A. One freshly compiled VC7.1 C++ function now
+matches **all 13 original inner action bodies, 1,370 native x86
+instruction roles, 102/102 real typed COFF fields**, 60 actual
+native jump-table DWORDs, 198 original compressed bytes, and
+438 separate after-RET DATA layout bytes. Source / local-only
+reproducer:
+[full F574 native-stage study](CHARACTEROBJECT_STAGE_CURVE_F574.md),
+`probes/CharacterObjectActionsF572.cpp`, and
+`scripts/repo-python scripts/verify-characterobject-following-actions-f574.py`.
+**The 5,076 inner CODE bytes remain in the still unmatched
+33,293-byte giant** and earn ZERO whole/split exact credit.
 
 **Three other authored functions remain nonexact (all require full CODE):**
 
