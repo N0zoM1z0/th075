@@ -11483,3 +11483,33 @@ functions. [F646/F647 actual original PE and source/negative proof](FIGHTER_FALL
 `scripts/repo-python scripts/verify-fighter-fall-reflect-f646.py --boss 0x00543210`.
 Official 943/862,726 accepted authored whole CODE unchanged, no
 943-unit cold replay or external Oracle.
+
+
+## F650: original 27-byte stdcall virtual callback and 43-byte real conditional CRT free whole functions
+
+Pinned Japanese native original `004170B0` is a complete 27-B/
+14-x86 method with native `MOV ECX,[ECX]` vtable load then `PUSH
+receiver; CALL [ECX+8]`. Ordinary `__stdcall` function-pointer
+forwarding had the same size but wrong argument evaluation order;
+**abstract C++ virtual `__stdcall` Third()** yields all 27/27
+original machine bytes and original third-slot vtable sequence,
+without ASM. `004588B0` is full 43-B/17-x86 normal C++ destructor-
+like conditional free of `this+8`: real native `EBP−8` receiver,
+`EBP−4` meaningful free-pointer local and physical zero-addend
+`REL32 +32` to real original CRT `00640F15`. Initial source
+with separately named `raw` pointer had 49 wrong bytes; direct
+pointer member read with a real used `void*` local recovers **43/43
+fully linked original native bytes**. Together **two newly full
+source-backed original functions/70 whole CODE B/31 x86/one real
+physical PE/COFF call**, original direct game callers and original
+native branch validated. Both original historical authored/vendor
+source origins remain `unknown/review`, ZERO exact authored credit.
+Previously F595 independently matched `004135F0` 40/40B field
+setter and is NOT counted again as F650. F616/F618/F634/F638/
+F640/F644/F648/F650 recent distinct whole unknown study **39
+functions/889 original CODE bytes**, or **40/929** including
+separate F595, all uncredited. [F650 complete linked native
+PE/COFF/VC7.1 and call graph proof](GAME_COM_VIRTUAL_RELEASE_F650.md),
+targeted `scripts/repo-python scripts/verify-game-virtual-release-f650.py`.
+Formal accepted authored whole exact 943/862,726 unchanged;
+no full 943-unit cold replay.

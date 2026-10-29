@@ -1,6 +1,6 @@
 # TH075 — active reconstruction handoff
 
-**Maintained 2026-10-29 after F647.** This is the **only current task list**.
+**Maintained 2026-10-29 after F650.** This is the **only current task list**.
 The [F540–F596 research chronology](history/RE_HANDOFF_F540_THROUGH_F596.md),
 [knowledge base](KNOWLEDGE_BASE.md), and older F-series studies are
 **historical evidence**, not statements of current progress. Independently
@@ -1109,6 +1109,34 @@ compiler evidence](FIGHTER_FALL_REFLECT_F646_F647.md),
 ```bash
 scripts/repo-python scripts/verify-fighter-fall-reflect-f646.py --boss 0x00543210
 scripts/repo-python scripts/verify-fighter-fall-reflect-f646.py --boss 0x00564BE0
+```
+
+**F650 TWO more entire original game-facing native C++ source
+functions byte-exact:** original `004170B0` (**27/27 complete
+machine CODE bytes/14 x86**) is a genuine `__stdcall` virtual
+interface third-slot(+8) indirect call through `this+0`, requiring
+original `PUSH receiver` *after* loading vtable (the alternate
+stdcall *function-pointer* C++ expression gives eight wrong bytes).
+Original `004588B0` (**43/43 entire native bytes/17 x86/one actual
+physical `REL32` COFF field to CRT free `00640F15`**) conditionally
+frees actual `this+8` pointer, saving the real receiver `EBP−8`
+and genuine local free pointer `EBP−4`; removing an unnecessarily
+named source `raw` pointer recovers the original compiler lifetime.
+Both full original PE byte streams and real original call graph
+across all 4351 registered CODE extents independently match after
+one normal VC7.1 cold TU compile. Historical class names and
+explicit-vs-compiler/library source origin remain UNKNOWN; original
+both `function-origins.csv` rows stay `unknown/review`, **zero
+accepted authored exact bytes**. Previously F595 already matched
+`004135F0` (40 B): do NOT double count it as new. Current F616/
+F618/F634/F638/F640/F644/F648/F650 recent whole source-backed but
+unknown cohort **39 distinct originals/889 native CODE B**, or
+**40/929 B** including separate prior F595. [F650 original
+full native callback/free byte proof](GAME_COM_VIRTUAL_RELEASE_F650.md),
+[natural VC7.1 C++](../probes/GameComVirtualAndConditionalReleaseF650.cpp).
+
+```bash
+scripts/repo-python scripts/verify-game-virtual-release-f650.py
 ```
 
 ## 4. Other three unmatched authored *whole* functions
