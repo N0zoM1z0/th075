@@ -8634,3 +8634,26 @@ source/probe generator and its fresh native/compiler verification are in
 with full report in `docs/FIGHTER_SWITCH_CODEGEN_RECONSTRUCTION.md`.
 The full bosses remain entirely nonexact. No invented CODE/DATA credit, no
 all-unit cold replay and no external Oracle receipt.
+
+
+## F540: first real natural C++ action case inside all 11 giant fighter bosses
+
+F538 fully checked the 50-instruction native action-zero case in eleven giant
+originals, and F539 cold-compiled the real single-switch dispatcher for two
+of them. F540 builds on that verified original data with a natural VC7.1
+C++ **action-0 body**: signed-byte flag at receiver +0x3AC, float position
+at +0x50, four real float threshold observations (`0065782C`), one float
+subtraction (`00657478`), one **double** rise (`00658050`), three real
+`00453E20` thiscall sites, and two distinct sequential float range guards
+that preserve x87 `JP`/`JNE` unordered semantics. Reimu and CharacterMove
+fresh local compilation each achieve **50/50 complete x86 action-case grammar,
+180/180 source-to-original length, identical original register allocation,
+9/9 physical COFF reference roles**. Native-only analysis extends this
+exact source expression/control graph to **all eleven original 50-insn cases**
+with verified register dataflow and 10 ×180-byte vs one true 222-byte
+(14 widened owner reloads at EBP-0x88) physical widths. The C++ builds
+remain *case probes*, not full 60K/82K originals: their stacks and actual
+branch/call relocations do not byte-match and there is **no accepted giant
+CODE or split-function credit**. See `docs/FIGHTER_ACTIONZERO_SOURCE_RECONSTRUCTION.md`
+and `scripts/repo-python scripts/verify-fighter-actionzero-natural-source.py`.
+No full cold replay or external Oracle receipt.

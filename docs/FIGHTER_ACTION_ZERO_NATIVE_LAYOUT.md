@@ -48,6 +48,17 @@ The branch extents belong to **still-unmatched giant originals**: do not
 register them as independent 180/222-byte reconstructed functions or
 credit them as accepted CODE.
 
+## F540 natural C++ source follow-up
+
+The original 50-instruction body has now been modeled as genuine VC7.1 C++
+with signed flag, float position, float threshold/step, *double* rise,
+branch-sensitive `<`/`>`, and three authentic thiscall sites. Fresh targeted
+probes reproduce **50/50 instruction graphs and 9/9 original physical
+call/global relocation roles**, directly for Reimu and CharacterMove and
+normalized against all eleven complete original cases. See
+[F540 native action-zero C++ reconstruction](FIGHTER_ACTIONZERO_SOURCE_RECONSTRUCTION.md).
+No whole boss exact CODE is claimed.
+
 ## Next native-to-C++ attack surface
 
 For the full 60,999-byte Reimu function at `0x0045DD70`, original action

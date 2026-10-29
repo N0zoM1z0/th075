@@ -89,6 +89,17 @@ wrong sparse bytes, inconsistent default fallbacks, or a different dense
 case-target equivalence partition. Its output records actual verified
 compiler/test artifacts, not a fabricated exact comparison.
 
+## F540 action-zero C++ body follow-up
+
+After this F539 compiler-dispatch proof, F540 replaced the dummy C++ action
+0 with native-like real signed-char / float / double expressions and three
+physical thiscall sites. Its standalone compiler reproduces the complete
+**50-instruction action-zero native control/x87 shape and all nine relocation
+roles** for both giants, and the same verified behavior extends to all
+11 original giant multi-switch cases modulo register and physical stack
+width. [Detailed F540 proof](FIGHTER_ACTIONZERO_SOURCE_RECONSTRUCTION.md).
+The remaining case bodies are still unimplemented.
+
 ## What remains to reconstruct in the actual giant functions
 
 This establishes **source-level C++ feasibility for the entire switch
