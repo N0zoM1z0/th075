@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F677; earlier frozen handoffs are archived.**
+**Maintained 2026-10-30, after F680; earlier frozen handoffs are archived.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -279,24 +279,22 @@ relocation, and a fresh selected-unit cold replay**.
 
 ## 5. Small leaves: whole-byte source evidence ≠ authored attribution
 
-F595 + F616–F677 research now source-backs **76 distinct historical
-origin-unknown entire native functions /1,509 original machine CODE
-bytes**. New F677 proves the **104/104 original native CODE bytes /
-34 authentic x86 /one genuine zero-addend vftable DIR32 field** of
-optimized SDK-like constructor `0060B728`. Its real two-trip member
-initialization loop and complete `0x104`-DWORD `REP STOSD` zeroing
-arise naturally only from the tested VC7.1 `/O1 /Oi` ordinary C++
-source, not fake local padding. Fifteen original compiler/source
-alternatives were actually tested, and the original PE vftable
-`0065D3C0` was independently linked for complete byte identity.
-One original registered direct caller is currently library classified;
-historical source/SDK vs game authorship is still UNKNOWN.
-[New F677 original whole-native/source proof](SDK_NATIVE_BULK_STATE_CTOR_F677.md).
-Earlier F675 completed four other optimized original virtual-state
-constructors (120/120 B, 35 x86, four genuine PE/COFF vftable fields).
-[Earlier F675 proof](SDK_NATIVE_STATE_CONSTRUCTORS_F675.md).
+F595 + F616–F680 research now source-backs **81 distinct
+historical origin-unknown entire native functions /1,559 original
+machine CODE bytes**. New F680 adds **five independent complete
+5/6/11/14-byte optimized helpers**, totaling **50/50 real whole
+machine CODE bytes, 21 x86 and four authentic zero-addend PE/COFF
+fields**: native imported `__stdcall` and direct `__cdecl` frees,
+real conditional tailcall, five-byte receiver forwarder, and a
+six-byte native this-returning member-clear. Their caller graphs and
+original source IAT/direct target fields were checked; game-vs-SDK
+ownership remains unknown. [New F680 actual whole native helper
+source and physical field proof](SDK_NATIVE_HELPER_LEAVES_F680.md).
+F677 previously recovered the 104-byte original state constructor
+with two-member loop, true `/O1 /Oi` native `REP STOSD`, and
+one zero-addend vftable DIR32; [prior proof](SDK_NATIVE_BULK_STATE_CTOR_F677.md).
 All 95 original uncertain provenance candidates stay `unknown,review`;
-this research earns **zero accepted authored whole-function CODE**.
+this cohort earns **zero accepted authored whole-function CODE**.
 
 Latest F655 seven **entire original registered native leaves**
 (`004138D0`, `004169D0`, `0041F7F0`, `00540280`, `00441FD0`,
@@ -311,6 +309,7 @@ virtual `__stdcall`) and `004588B0` (43 bytes, conditional CRT free).
 [Earlier genuine original F650 proof](GAME_COM_VIRTUAL_RELEASE_F650.md).
 
 ```bash
+scripts/repo-python scripts/verify-sdk-native-helper-leaves-f680.py
 scripts/repo-python scripts/verify-sdk-native-bulk-state-ctor-f677.py
 scripts/repo-python scripts/verify-sdk-native-state-constructors-f675.py
 scripts/repo-python scripts/verify-game-native-scoped-lifetime-f670.py

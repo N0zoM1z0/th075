@@ -26,7 +26,7 @@ types are provisional; machine-code matches alone do not prove an entire
 original class layout. The target's official distribution provenance has not
 been independently verified; do not substitute a localized `th075c.exe`.
 
-These snapshot counts were rechecked after **F677** (2026-10-30).
+These snapshot counts were rechecked after **F680** (2026-10-30).
 The **live** sources of truth, not any dated prose milestone, are `config/functions.csv`,
 `config/function-origins.csv`, and `config/match-units.toml`.
 Refresh using `scripts/repo-python scripts/report-reconstruction-status.py --summary`.
@@ -106,19 +106,19 @@ despite matching x86 count and all 11 real PE/COFF fields; **do not
 promote** it to exact just because the case body geometry matches.
 
 Separately, **whole-function** VC7.1 C++ probes now reproduce
-**76 distinct historical origin-unknown complete original functions /
-1,509 original native CODE bytes**, all uncredited pending actual
-source ownership. New F677 proves the **entire 104-byte optimized SDK
-state constructor `0060B728`**, with exact **34 native x86, one real
-original PE-vftable `DIR32` and genuine 0x104-DWORD `REP STOSD`
-zeroing**, compiled from a real two-element member loop and typed
-`memset` under VC7.1 `/O1 /Oi`. Fifteen independently compiled
-source/profile controls identified the correct original byte grammar.
+**81 distinct historical origin-unknown complete original functions /
+1,559 original native CODE bytes**, all uncredited pending actual
+source ownership. New F680 strictly reproduces **five whole native
+SDK-like helper bodies** (14/14/6/11/5 B, **50 linked original CODE
+bytes /21 genuine x86 /four typed PE fields**) with original imported
+STDCALL and direct CDECL free, conditional tail JMP, plain receiver
+forwarder, and real this-returning member clear. All five remain
+UNKNOWN source-owner, not authored exact.
+[F680 entire native helper source proof](docs/SDK_NATIVE_HELPER_LEAVES_F680.md).
+F677 earlier completed the larger 104-byte/34-x86/one DIR32 virtual-
+state bulk-zeroing constructor with real two-element loop and VC7.1
+`/O1 /Oi` `REP STOSD`.
 [F677 full original 104-byte native proof](docs/SDK_NATIVE_BULK_STATE_CTOR_F677.md).
-F675 earlier completed four other optimized SDK state constructors
-(120 original CODE bytes), also strictly whole-byte source-backed
-but historical game-vs-SDK authorship unknown.
-[F675 earlier complete optimized constructor proof](docs/SDK_NATIVE_STATE_CONSTRUCTORS_F675.md).
 All previously accepted 111-byte mapping transform `00455770`,
 77-byte Shift-JIS classifier `0041CA30`, Replay render, StaffRoll,
 rank-label and selected-progress functions stay accepted exact.

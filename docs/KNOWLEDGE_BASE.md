@@ -12134,3 +12134,29 @@ whole exact remains 943/862,726 original CODE B.
 [F677 entire original native PE/COFF proof](SDK_NATIVE_BULK_STATE_CTOR_F677.md),
 `scripts/repo-python scripts/verify-sdk-native-bulk-state-ctor-f677.py`.
 No full 943-unit cold replay.
+
+
+## F680: five complete original optimized SDK-like native helper leaves
+
+Genuine original native PE `0060EA69` (14 CODE B/6 x86), `0061FB37`
+(14/7), `00614BC6` (6/3), `0060C120` (11/4) and `00620132` (5/1)
+all compile from one **normal pinned VC7.1 `/O1`** C++ TU into **50/50
+original PE-linked complete CODE B /21 real native x86**, with exactly
+four independently authenticated zero-addend PE/COFF fields. Their
+real operations are original IAT `__stdcall` free via DIR32 0065704C,
+real `__cdecl` free REL32 to 00640F15 plus POP ECX stack cleanup,
+`this`-returning `AND DWORD [EAX],0` native member clear, sentinel
+`tag!=-1` conditional thiscall tail JMP to 0060C0DF, and single
+real 0061FE0A JMP forwarder. The six-byte original this-return
+body has multiple plausible source grammars; `/O2` emits wrong
+nine-byte zeroing, so historical source name is not inferred.
+Complete original physical CODE extents, instructions, real relocation
+operands and source COFF symbols were independently verified, with
+native direct-call graph counts 14/7/3/15/1 but **zero** currently
+authored callers. All five original source origins remain UNKNOWN;
+F595–F680 research-only whole unknown cohort now **81 distinct
+originals /1,559 actual CODE B**, uncredited. Formal 943/862,726
+accepted whole-authored CODE remains unchanged.
+[F680 entire original linked PE/COFF proof](SDK_NATIVE_HELPER_LEAVES_F680.md),
+`scripts/repo-python scripts/verify-sdk-native-helper-leaves-f680.py`.
+No full cold replay.
