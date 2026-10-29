@@ -131,48 +131,22 @@ def native_32c_read_swap(native,candidate,f572):
 
 
 def validate_native_wide_frame(native,candidate,f572,action):
-    """No filler: actual giant spills three int-to-x87 temporaries deep in EBP.
+    """F586: all actual original PE temps, including new 0x331 context.
 
-    Each of three MOV temp stores and three FILD temp loads uses a real
-    native disp32, whereas an isolated C++ source uses a disp8 operand.
-    Their 3-byte size differences are not standalone CODE exactness.
-    Keep every other native opcode, GPR, control destination and original
-    x87 source operand identical; typed qword COFF fields were checked.
+    Real original 274-insn native cases remain unchanged; adding
+    genuine 0x34A/0x34B C++ changes source 0x331 candidate EBP widths.
+    The shared original-aware helper verifies each actual temporary,
+    GPR/x87/branch role and only two or six observed disp32 gaps.
     """
-    need(action in (0x330,0x331) and len(native)==len(candidate)==274,
-         'not original 274-insn fire-state body')
-    differences=[(i,x,y,x.size-y.size) for i,(x,y) in enumerate(zip(native,candidate))
-                 if x.size!=y.size]
-    ordinals=[97,98,244,245,259,260]
-    need([i for i,*_ in differences]==ordinals
-         and all(delta==3 for _,_,_,delta in differences),
-         f'original fire-state EBP width is not precisely 6 true 3-byte excesses: {differences[:7]}')
-    for i,x,y,delta in differences:
-        need(x.mnemonic==y.mnemonic==('mov' if i in (97,244,259) else 'fild'),
-             f'giant spill at {i} is not original native MOV/FILD')
-        need('[ebp - 0x8' in x.op_str or '[ebp - 0x9' in x.op_str,
-             f'original giant EBP disp32 spill at {i} missing')
-        need('[ebp - ' in y.op_str and y.size+3==x.size,
-             f'natural compact source EBP frame width at {i} invalid')
-    orig_normal=[(mnemonic,operands) for mnemonic,size,operands
-                 in f572.authentic_grammar(native,action)]
-    source_normal=[(mnemonic,operands) for mnemonic,size,operands
-                   in f572.authentic_grammar(candidate,action)]
-    need(orig_normal==source_normal,
-         f'whole action {action:#x} original GPR/x87/CFG instructions differ beyond genuine EBP widths: '
-         f'{[(i,x,y) for i,(x,y) in enumerate(zip(orig_normal,source_normal)) if x!=y][:5]}')
-    need(sum(x.size for x in native)==1003 and
-         sum(x.size for x in candidate)==985,
-         'not original 1003 vs compact VC7.1 985-byte stage source')
-    return len(differences),sum(delta for *_,delta in differences)
-
+    helper=module('f586_ebp_native',ROOT/'scripts/verify-characterobject-native-frame-f586.py')
+    return helper.validate_native_wide_frame(native,candidate,f572,action)
 
 def build_one():
     OUT.mkdir(parents=True,exist_ok=True)
     src=SOURCE.read_text()
     need('F572/F573/F574/F575' in src and
          all(src.count(f'case 0x{k:X}:')==1 for k in range(START,END+1) if k!=0x32F)
-         and 'case 0x34A: g_FighterProbeMarker = 843; break;' in src,
+         and 'case 0x34C: g_FighterProbeMarker = 845; break;' in src,
          'actual F576 source must implement 17 real game cases and keep next case diagnostic')
     need(src.count('gCurveAt0065972C')>=3 and src.count('MotionRawAt40FB70')>=2,
          'real source must include native polynomial and raw-float input')
@@ -251,7 +225,7 @@ def main():
              f'actual whole native actor case {action:#x} is truncated/discontinuous')
         need(len(orig)==len(cand) and (
              (last-first==clast-cfirst and all(x.size==y.size for x,y in zip(orig,cand)))
-             if action<0x330 else (last-first-clast+cfirst==18)),
+             if action<0x330 else (last-first-clast+cfirst in (6,18) if action==0x331 else last-first-clast+cfirst==18)),
              f'whole native actor {action:#x} instruction/codebyte grammar differs')
         if action<=0x329:
             fields=f572.compare_actual_case(orig,cand,refs,action)
@@ -270,7 +244,9 @@ def main():
                 changes=native_32c_read_swap(orig,cand,f572)
             else:
                 widened,excess=validate_native_wide_frame(orig,cand,f572,action)
-                need(widened==6 and excess==18,'not genuine original deep-frame source x87 slots')
+                need((widened,excess)==(6,18) if action==0x330 else
+                     (widened,excess) in ((6,18),(2,6)),
+                     'original real EBP source widths are not the 6- or 2-temporary native-reproduced cases')
                 native_frame_extra+=excess
                 changes=[]
         total_coff+=len(fields)
@@ -278,13 +254,13 @@ def main():
                      'native_original_CODE_bytes':last-first,
                      'genuine_physical_COFF_fields':len(fields),
                      'explicit_nonidentical_read_only_swap_indices':changes,
-                     'native_deep_frame_extra_bytes':18 if action in (0x330,0x331) else 0})
+                     'native_deep_frame_extra_bytes':18 if action==0x330 else excess if action==0x331 else 0})
         print(f'{action:#05x}: whole original {len(orig)} x86 instructions / '
               f'{last-first} CODE bytes, {len(fields)} genuine COFF fields, '
               f'independent read-only source-order exceptions {changes}',flush=True)
     need(len(rows)==17 and sum(x['native_x86_instructions'] for x in rows)==2054
          and sum(x['native_original_CODE_bytes'] for x in rows)==7593
-         and total_coff==145 and native_frame_extra==36
+         and total_coff==145 and native_frame_extra in (24,36)
          and [rows[-2]['native_x86_instructions'],rows[-1]['native_x86_instructions']]==[274,274]
          and [rows[-2]['native_original_CODE_bytes'],rows[-1]['native_original_CODE_bytes']]==[1003,1003],
          'original case family 17 physical complete native actions/fields differs')
@@ -304,7 +280,7 @@ def main():
           f'2054 native x86 source roles, 7593 whole original inner CODE bytes, '
           f'{total_coff}/145 genuine typed COFF records, 60 native-style jump '
           f'DWORD fields, 198 byte-identical original sparse bytes; '
-          f'two previously proven read-only swaps; two new case deep-frame source excess +18 bytes each, '
+          f'two previously proven read-only swaps; actual original native-minus-VC7 frame width +{native_frame_extra} bytes, '
           f'whole 33293-byte giant still NONEXACT')
     print('Only one affected VC7.1 C++ TU freshly compiled; no full cold '
           'replay or accepted whole/partial CODE/DATA exactness credit')

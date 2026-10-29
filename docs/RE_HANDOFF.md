@@ -1,6 +1,6 @@
 # TH075 — current agent handoff
 
-**Maintained: 2026-10-29, after F585; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
+**Maintained: 2026-10-29, after F586; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
 
 ## 1. Current authoritative state (not historical hypotheses)
 
@@ -594,6 +594,41 @@ and selected verifier
 `scripts/repo-python scripts/verify-characterobject-five-trajectory-actions-f585.py`.
 **Whole giant 33,293 CODE still NONEXACT; zero separate case or
 whole exact credit.** No all-unit cold replay or Oracle.
+
+**F586 newly restores original full CharacterObject actions
+`0x34A` and `0x34B`** inside still-unmatched 33,293-byte giant
+`004EBDA0`. The real former is **295 native x86 instructions/
+1,093 CODE bytes**, with stage-zero 0065786C x87 contact,
+0040FB40(1), original random(0,60), effect 0x323. The latter is
+**278/1,012**, whose actual `0040FB70` caller passes two RAW
+DWORD position fields `+0xC8/+0xCC` in native cdecl/thiscall
+push order, not a float-to-integer conversion, and uses distinct
+00657478 velocity decrement, random(0,15)-60 and effect 0x324.
+Both newly compiled full case bodies match **strict native
+GPR/x87/CFG/per-instruction byte-width geometry and all 18+17
+genuine typed zero-addend original PE COFF fields**.
+
+Critically, the added real source expands the *same enclosing*
+C++ actor's saved x87 temporaries: the old native 0x331
+(274/1,003) vs source 274/985 width gap of 18 real original
+bytes shrinks to **274/997, only 6 bytes**. The new natural
+source allocates actual temporaries `EBP−0x80/−0x84/−0x88`,
+with only native ordinal97/98 disp32 vs source disp8; the other
+four original `MOV/FILD` instructions now have identical sizes.
+A new **strict original-PE slot verifier** preserves precisely
+these two legitimate source contexts for native 0x331, without
+relaxing registers, x87, CFG or introducing fake EBP padding.
+The related source 0x332 temporary naturally moves from −0x84 to
+−0x8C, retaining original machine-code width but not original
+stack-slot identity. Across one new freshly compiled TU F572–F586
+now prove **39 complete real game-action cases, 5,651 native x86
+roles, 21,245 original internal CODE bytes, 389 authentic typed
+COFF call/global fields**, 60 physical jump DWORD slots and
+198 exact sparse bytes. Whole 33,293-byte fighter CODE remains
+**NONEXACT**, no standalone inner case CODE or DATA credit.
+See [F586 original 0x34A/34B and stack-frame evidence](CHARACTEROBJECT_LATE_STAGES_F586.md)
+and targeted
+`scripts/repo-python scripts/verify-characterobject-late-stage-actions-f586.py`.
 
 **Three other authored functions remain nonexact (all require full CODE):**
 

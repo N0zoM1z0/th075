@@ -1,5 +1,5 @@
-// F572/F573/F574/F575/F576/F577/F578/F579/F580/F581/F582/F583/F585: selected natural VC7.1 source, original PE 004EBDA0.
-// Implements complete original actions 0x320..0x349 in a 33,293-byte
+// F572/F573/F574/F575/F576/F577/F578/F579/F580/F581/F582/F583/F585/F586: selected natural VC7.1 source, original PE 004EBDA0.
+// Implements complete original actions 0x320..0x34B in a 33,293-byte
 // CharacterObject megaboss. All later cases are DIAGNOSTIC marker stores,
 // not restored gameplay; this source is NOT a complete original function,
 // does not earn independent native CODE or after-RET DATA exact credit.
@@ -22,7 +22,7 @@ public:
     void ResetAt4F4170();
     void ResetAt45B830();
     void ResetStateAt40FBB0(int,int,int);
-    void MotionAt40FB70(float,float); void MotionRawAt40FB70(int,float);
+    void MotionAt40FB70(float,float); void MotionRawAt40FB70(int,float); void MotionRawPairAt40FB70(int,int);
     void SetStateAt40FB40(int); void SetActionAt40FAC0(int); int RandomAt455580(int,int);
     short GetStateAt40FA30();
 };
@@ -56,6 +56,7 @@ extern float gStepAt00658044;
 extern float gFadeAt006583F8;
 extern float gFadeAt00659428;
 extern float gAbsScaleAt00659724;
+extern float gStageContactAt0065786C;
 extern float gBoundRightAt00659248;
 extern float gBoundLowerAt0065930C;
 extern float gBoundUpperAt00658E80;
@@ -1552,8 +1553,164 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         P16(0xF12) = 2;
     break;
 }
-        case 0x34A: g_FighterProbeMarker = 843; break;
-        case 0x34B: g_FighterProbeMarker = 844; break;
+        case 0x34A: {
+    if (P16(0x60) > 0x45 && P16(0x60) < 0x96 && S16(0x62) < 11) {
+        ResetAt45B830();
+        for (int iteration=0; iteration<8; ++iteration)
+            PARENT->SpawnAt453A70(0x3E4, I32(0x44), I32(0x48), 1, 1);
+        if (P16(0xEFA) > 25) {
+            P16(0xEFA) = 0;
+            PARENT->SpawnAt453A70(0x3E3, I32(0x44), I32(0x48), 1, 1);
+        }
+        break;
+    } else {
+        if (I32(0x7C) == 6) {
+            I32(0x7C) = 0;
+            S16(0x80) = 1;
+        }
+        if (S16(0x62) == 0 && S16(0x64) == 0) {
+            ResetStateAt40FBB0(0,0,0);
+            I32(0x7C) = 0;
+            F32(0x1C) = 1.0f;
+            F32(0x20) = 1.0f;
+            U8(0x11) = 0;
+            U8(0x12) = 0xFF;
+            U8(0x13) = 0xFF;
+            U8(0x14) = 0xFF;
+            F32(0x50) = 3.0f;
+            F32(0x54) = -3.0f;
+        }
+        F32(0x44) += static_cast<float>(S8(0x66)) * F32(0x50);
+        F32(0x48) = *(&F32(0x48)) + *(&F32(0x54));
+        if (S16(0x62) == 0) {
+            if (U8(0x11) <= 0xEB)
+                U8(0x11) += 20;
+            else
+                U8(0x11) = 0xFF;
+            F32(0x30) = F32(0x30) + gAddAt00659738;
+            F32(0x54) = F32(0x54) - gAddAt006583FC;
+            if (*(&F32(0x48)) + *(&F32(0x54)) <= gStageContactAt0065786C) {
+                F32(0x48) = 20.0f;
+                F32(0x54) = 0.0f;
+                F32(0x50) = 0.0f;
+                SetStateAt40FB40(1);
+                F32(0x30) = 0.0f;
+                U8(0x11) = 0xFF;
+                break;
+            }
+        }
+        if (S16(0x62) == 11) {
+            F32(0x1C) = static_cast<float>(F32(0x1C) * gMulDoubleAt00659730);
+            F32(0x20) = F32(0x20) + gAddAt006583FC;
+            if (U8(0x11) >= 10)
+                U8(0x11) -= 10;
+            else {
+                ResetAt45B830();
+                break;
+            }
+        }
+        if (GetStateAt40FA30() == S16(0x70)) {
+            ResetAt45B830();
+            break;
+        }
+        if (S16(0x62) == 1 && S16(0x64) == 0) {
+            F32(0x50) = 0.0f;
+            F32(0x54) = 0.0f;
+            F32(0x30) = 0.0f;
+        }
+        if (S16(0x62) == 6 && S16(0x64) == 0 && S16(0xDC) < 1) {
+            SetStateAt40FB40(2);
+            ++S16(0xDC);
+        }
+        if (S16(0x62) == 10 && S16(0x64) == 0 && S16(0xDA) < 6) {
+            ++S16(0xDA);
+            SetStateAt40FB40(9);
+        }
+        if (S16(0x62) == 9 && S16(0x64) == 0) {
+            PF32(0x314) = 1200.0f;
+            PF32(0x318) = static_cast<float>(RandomAt455580(0,60));
+            PARENT->SpawnMovedAt453A70(0x323,
+                   static_cast<float>(S8(0x66) * 10) + F32(0x44),
+                   I32(0x48), U8(0x66), 1);
+            PARENT->ModifyAt453D40(6);
+        }
+    }
+    break;
+}
+        case 0x34B: {
+    if (P16(0x60) > 0x45 && P16(0x60) < 0x96 && S16(0x62) < 11) {
+        ResetAt45B830();
+        for (int iteration=0; iteration<8; ++iteration)
+            PARENT->SpawnAt453A70(0x3E4, I32(0x44), I32(0x48), 1, 1);
+        if (P16(0xEFA) > 25) {
+            P16(0xEFA) = 0;
+            PARENT->SpawnAt453A70(0x3E3, I32(0x44), I32(0x48), 1, 1);
+        }
+        break;
+    } else {
+        if (I32(0x7C) == 6) {
+            I32(0x7C) = 0;
+            S16(0x80) = 1;
+        }
+        if (S16(0x62) == 0 && S16(0x64) == 0) {
+            ResetStateAt40FBB0(0,0,0);
+            I32(0x7C) = 0;
+            F32(0x1C) = 1.0f;
+            F32(0x20) = 1.0f;
+            U8(0x11) = 0;
+            U8(0x12) = 0xFF;
+            U8(0x13) = 0xFF;
+            U8(0x14) = 0xFF;
+            MotionRawPairAt40FB70(I32(0xCC), I32(0xC8));
+        }
+        F32(0x44) += static_cast<float>(S8(0x66)) * F32(0x50);
+        F32(0x48) = *(&F32(0x48)) + *(&F32(0x54));
+        if (S16(0x62) == 0) {
+            if (U8(0x11) <= 0xEB)
+                U8(0x11) += 20;
+            else
+                U8(0x11) = 0xFF;
+            F32(0x30) = F32(0x30) + gAddAt00659738;
+            F32(0x54) = F32(0x54) - gGrowAt00657478;
+        }
+        if (S16(0x62) == 11) {
+            F32(0x1C) = static_cast<float>(F32(0x1C) * gMulDoubleAt00659730);
+            F32(0x20) = F32(0x20) + gAddAt006583FC;
+            if (U8(0x11) >= 10)
+                U8(0x11) -= 10;
+            else {
+                ResetAt45B830();
+                break;
+            }
+        }
+        if (GetStateAt40FA30() == S16(0x70)) {
+            ResetAt45B830();
+            break;
+        }
+        if (S16(0x62) == 1 && S16(0x64) == 0) {
+            F32(0x50) = 0.0f;
+            F32(0x54) = 0.0f;
+            F32(0x30) = 0.0f;
+        }
+        if (S16(0x62) == 6 && S16(0x64) == 0 && S16(0xDC) < 0) {
+            SetStateAt40FB40(2);
+            ++S16(0xDC);
+        }
+        if (S16(0x62) == 10 && S16(0x64) == 0 && S16(0xDA) < 6) {
+            ++S16(0xDA);
+            SetStateAt40FB40(9);
+        }
+        if (S16(0x62) == 9 && S16(0x64) == 0) {
+            PF32(0x314) = 1200.0f;
+            PF32(0x318) = static_cast<float>(RandomAt455580(0,15) - 60);
+            PARENT->SpawnMovedAt453A70(0x324,
+                   static_cast<float>(S8(0x66) * 10) + F32(0x44),
+                   I32(0x48), U8(0x66), 1);
+            PARENT->ModifyAt453D40(6);
+        }
+    }
+    break;
+}
         case 0x34C: g_FighterProbeMarker = 845; break;
         case 0x34D: g_FighterProbeMarker = 846; break;
         case 0x34E: g_FighterProbeMarker = 847; break;

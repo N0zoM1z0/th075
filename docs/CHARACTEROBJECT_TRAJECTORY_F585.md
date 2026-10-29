@@ -139,3 +139,15 @@ its 19,140 original inner CODE bytes are not 37 independently exact
 functions and none can be adopted as standalone original CODE.
 No new accepted whole/split CODE or DATA, no all-unit cold replay,
 no external Factory/Oracle acceptance receipt.
+
+## F586 follow-up: two additional large native stage actions
+
+The same ordinary C++ switch now additionally implements original
+full `0x34A` (295 original x86 instructions /1,093 CODE bytes)
+and `0x34B` (278/1,012), requiring exact original native
+x87 contact and raw two-DWORD argument semantics at `0040FB70`.
+The F585 source verifier still independently checks its original
+37 real case bodies under the larger new TU; F586 checks all 39,
+including the improved genuine 0x331 native/temp width gap
+18→6 bytes. See [F586 complete late-stage original source proof](CHARACTEROBJECT_LATE_STAGES_F586.md).
+The whole original 33,293-byte fighter still is not CODE exact.

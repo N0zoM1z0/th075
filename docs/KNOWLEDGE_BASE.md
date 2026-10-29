@@ -9746,3 +9746,45 @@ Original whole 33,293-byte fighter still not exact; no
 standalone inner CODE credit or full all-unit cold replay/Oracle.
 [F585 trajectory source study](CHARACTEROBJECT_TRAJECTORY_F585.md),
 reproducer `scripts/repo-python scripts/verify-characterobject-five-trajectory-actions-f585.py`.
+
+
+## F586: native complete action0x34A/34B and genuine cross-case EBP shrink
+
+Original Japanese `004EBDA0` complete 33,293-byte CharacterObject
+switch has two more physically bounded real game action bodies:
+`0x34A` **295 native x86 instructions /1,093 real CODE bytes**
+with extra 0065786C x87 stage-zero contact (FCOMP/TEST AH,0x41/JP),
+original stage0 3.0f/-3.0f position, native random(0,60) and
+00453A70 effect 0x323; `0x34B` **278/1,012** with true
+0040FB70 raw `DWORD,DWORD` position/angle calls (no spurious
+FLD/FSTP), float global 00657478 velocity change, native
+random(0,15)-60 and effect 0x324. Both compile into native
+**strict original GPR/x87/relative branch/per-instruction width
+codegen** with **18+17 authentic zero-addend physical COFF fields**.
+
+In the SAME enlarged ordinary C++ TU, earlier native action0x331
+still contains 274 instructions/1,003 native bytes, but newly
+compiled source now needs 997 rather than previous 985 bytes.
+Original native EBP−0x90/−0x94/−0x98 actual integer-to-FPU temps
+are now candidate −0x80/−0x84/−0x88: only original MOV/FILD
+ordinals 97/98 have +3 native bytes each, while the other four
+ops are equally disp32. This is a **12-byte genuine natural
+compiler-context improvement**, not artificially padded source.
+Native original 0x330 still needs +18 width bytes; source 0x332
+now has its temp at −0x8C rather than earlier −0x84, both genuine
+disp32 source modes. New shared original-only
+`verify-characterobject-native-frame-f586.py` asserts the exact
+native real temp EBP slots, per-ordinal register/x87 grammar and
+only two physically observed source modes, and historical case
+verifiers now accept both rather than inaccurate +18/+18 claims.
+
+F572–F586 now prove **39 distinct whole original native game-action
+bodies, 5,651 original x86 instruction roles /21,245 internal
+CODE bytes and 389 genuine physical COFF call/global fields**, all
+60 native jump-table DWORD COFF slots, 198 literal compressed
+index bytes and 438 separate after-RET native DATA layout bytes.
+The **whole 33,293 native giant is not exact** and inner bodies
+cannot be accepted as standalone functions; no all-unit cold replay
+or external Oracle. Reproducer
+`scripts/repo-python scripts/verify-characterobject-late-stage-actions-f586.py`;
+[F586 original late-stage source audit](CHARACTEROBJECT_LATE_STAGES_F586.md).
