@@ -10286,3 +10286,33 @@ Reproducer `scripts/repo-python scripts/verify-fighter-additional-contact-f600.p
 owner-attestation](FIGHTER_ADDITIONAL_CONTACT_F600.md). Whole original
 giant NONEXACT; zero new official accepted authored CODE, no full cold
 replay.
+
+
+## F601: complete 21+37-byte original atan2 C++ adapters, plus original destructor lifetime negatives
+
+From the pinned Japanese TH075 PE, original complete `00483300`
+(21 bytes /10 x86 /one true `REL32` to `00483320`) and original
+`00483320` (37 bytes/15 x86/one true `REL32` to genuine CRT `_atan2`
+`00642240`) compile naturally under VC7.1 as cdecl float wrapper
+and its float→double→float worker. Full **58/58 linked native CODE
+bytes** agree after the two original physical relocation fields;
+all 25 x86 instruction starts/widths/mnemonics also agree. Fresh
+independent scan of 4,351 original registered full function extents
+found **211 true CALL instructions across 16 authored game functions**
+targeting `00483300` and exactly one direct call of `00483320`
+from its wrapper. Those callers prove gameplay use but not original
+adapter provenance; both leaf origins remain `unknown` with no new
+authored whole-exact CODE credit. The separate out-of-line CRT owner
+remains library. Source `probes/FloatAtan2AdaptersF601.cpp`, full
+original-backed targeted verifier `scripts/repo-python
+scripts/verify-float-atan2-adapters-f601.py`; [F601 whole x86 and
+real relocation research](FLOAT_ATAN2_ADAPTERS_F601.md).
+
+New independent whole-native negative resource-lifetime experiments
+in ignored `.analysis/f601-archive-reference/`,
+`.analysis/f601-archive-sequenced/`, `.analysis/f601-scene-lifetime/`
+found no 171-byte original ArchiveCatalog destructor stack-slot fix
+(pointer/reference return and comma-sequencing: best 108/115) or
+248-byte SceneObject destructor local-slot fix (resource aggregate
+reordering: best 191/200). All affected C++ TUs were individually
+cold compiled; nonexact branches were not falsely accepted.

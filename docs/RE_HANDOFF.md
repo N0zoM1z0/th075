@@ -210,6 +210,33 @@ unknown. `004588B0` has six mixed vendor/game callers.
 See [F595 original native small-function provenance](SMALL_ORIGIN_UNKNOWN_FIELDSETTER_F595.md)
 and historical [origin review](ORIGIN_PENDING_REVIEW.md).
 
+**F601: original 21/37-byte float `atan2` forwarding/worker pair
+whole-CODE C++ reconstructed, provenance still UNKNOWN.** Original
+`00483300` → `00483320` → CRT `_atan2` `00642240` is confirmed by
+all 25 original x86 instructions, both true original `REL32`
+fields/callees and **58/58 linked original CODE bytes**, from one
+ordinary cold VC7.1 source TU. An independent scan of all 4,351
+registered native functions finds **211 direct CALLs from 16
+independently authored game owners** to the front wrapper, and the
+only direct worker caller is the wrapper. Game use **does not prove**
+explicit author vs SDK compiler helper origin; **both remain unknown
+and uncredited**, official 943/862,726 unchanged. New complete-source
+witness [F601 original math adapter evidence](FLOAT_ATAN2_ADAPTERS_F601.md)
+and [real C++](../probes/FloatAtan2AdaptersF601.cpp). Rebuild **only**
+this one source TU:
+
+```bash
+scripts/repo-python scripts/verify-float-atan2-adapters-f601.py
+```
+
+F601 also independently tested the still-unmatched **171-byte archive**
+and **248-byte scene** whole destructors using natural pointer/ref
+interfaces, sequenced `delete/free`, real resource aggregate/lifetime
+reordering. They remain **108/115** and **191/200** (or worse)
+original nonfield matches respectively; no false exact credit. Native
+EBP local placement remains the blocker; full source/COFF negative
+receipts are retained privately and documented in the same F601 report.
+
 **F599: two large, complete, original-PE-byte-identical natural C++
 copy members now source-backed, but original provenance still UNKNOWN.**
 `0045AAE0` / 368 B /118 x86 and `004591E0` /417 B /128 x86
