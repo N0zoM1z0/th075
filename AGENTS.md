@@ -119,6 +119,12 @@ or verifier changes. Documentation-only changes need `git diff --check`.
   Old pre-F184 parent/adoption JSON snapshots are also individually
   SHA256-verified and losslessly `.zst`-compressed, with the reversible
   `scripts/archive-historical-analysis.py` script and local manifest.
+  A later SHA256-verified four-batch `.tar.zst` archive of 219 frozen
+  repetitive historical JSON diagnostics is also under the ignored
+  `.analysis/cache-archives/`, with full per-member restore/verify via
+  `scripts/archive-redundant-diagnostics.py`. The *live* origin-scan
+  `latest.json`, current research, original parent CODE, raw sources,
+  COFF and Ghidra decompilations were NOT removed.
   Detailed allowed cleaning and restore paths: `docs/STORAGE_HYGIENE.md`.
   Protect H184 frozen objects/PDBs, original native and best whole-boss
   probes, `build/matching/`, `.analysis/vc71-wine/` and the Ghidra project.

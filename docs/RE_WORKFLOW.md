@@ -169,5 +169,11 @@ per-file receipts before restoring. **All 15 H184-protected original
 PDB/COFF pairs are still directly present and byte-verified; all
 `build/probes/*.obj` are still present.** Only actual cold-replayed
 new/changed units should ever rebuild. Full details and safe recovery:
-[STORAGE_HYGIENE.md](STORAGE_HYGIENE.md). The historical F-series
-failure sources and original boss decompilations remain preserved.
+[STORAGE_HYGIENE.md](STORAGE_HYGIENE.md). Another narrowly frozen,
+original-SHA256-indexed **219 historical generated JSON diagnostics**
+were compressed to four ignored tar.zst archives (≈244.66 MiB net
+reclaimed); recover individual original scan/survey/whole-diagnostic
+JSON paths via `scripts/repo-python scripts/archive-redundant-diagnostics.py
+--restore .analysis/ORIGINAL_PATH.json` as documented there. The
+historical F-series negative C++ sources and original boss
+decompilations remain preserved.

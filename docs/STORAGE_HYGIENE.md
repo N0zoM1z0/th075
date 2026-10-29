@@ -1,6 +1,6 @@
 # TH075 local storage hygiene and lossless recovery
 
-**Updated 2026-10-29, after F597 maintenance.** This is a storage
+**Updated 2026-10-29, after frozen-diagnostic compaction (post F652).** This is a storage
 report and recovery recipe, **not** permission to remove original
 PE/C++/COFF evidence or skip dirty work. Archives and per-file
 SHA256 receipts are under **Git-ignored** `.analysis/cache-archives/`
@@ -9,6 +9,61 @@ are tracked in Git**; new Git clones do not automatically receive
 those local archives. Historical JSON/PDB batches and the new F597
 legacy CI-log batch were archived separately without touching
 source, original-function evidence, Wine or accepted build objects.
+
+## Latest cleanup: 219 frozen redundant JSON diagnostic snapshots (post F652)
+
+The four original *read-only historical* diagnostic sets below were
+archived losslessly under ignored `.analysis/cache-archives/` using
+[`scripts/archive-redundant-diagnostics.py`](../scripts/archive-redundant-diagnostics.py).
+**All 219 original SHA256 checks were compared to the actual decompressed
+tar members before any loose file was removed**; a durable 42,513-byte
+per-path original-size and SHA256 index was written before deletion.
+The four archived batches were independently read and verified **again
+from storage after deletion**. A one-file restore and exact re-compaction
+was successfully smoke-tested for **each of the four groups**.
+
+| Historical diagnostic family (generated JSON only) | Originals | Plain bytes | Compressed bytes |
+| --- | ---: | ---: | ---: |
+| Old origin `r###-triage` / `before-acceptance` scans, **not** live `latest.json` | 95 | 77,534,232 | 1,129,548 |
+| Repeated legacy `object-action-50a580/f###/*-whole-diagnostic.json` | 48 | 40,133,010 | 354,274 |
+| Repeated legacy `character-move-4ac040/f###/*-whole-diagnostic.json` | 37 | 48,510,031 | 740,271 |
+| Large `r###-*.json` historical R-series survey outputs (≤R270, original >1 MB) | 39 | 96,292,020 | 3,659,733 |
+| **Total verified** | **219** | **262,469,293** | **5,883,826** |
+
+Actual storage recovered: **256,542,954 bytes (244.66 MiB)** **after
+including the original per-file archive-index bytes**, excluding a few
+small directory-entry differences. This is storage *reclamation*,
+**not reconstruction progress**. The original snapshots remain byte-for-byte
+recoverable with their original relative path and SHA256. Current game source,
+compiler profiles, original PE, Ghidra project, Ghidra decompilations,
+`build/matching/`, original native COFF/OBJ/PDB, `vc71-wine/`, current
+`.analysis/origin-scan/latest.json`, all F5xx–F652 whole giant and small-leaf
+C++ research and every exact adoption were left intact. In particular,
+we removed only selected **repeated old generated JSON diagnostics** from
+the protected `character-move-4ac040/` area; no underlying native source,
+ASM, entire-game diagnostic trace or compiler object there was discarded.
+
+```bash
+# Read-only discovery before any future archive:
+scripts/repo-python scripts/archive-redundant-diagnostics.py --plan
+# Independently stream-verify all 219 original member SHA256s:
+scripts/repo-python scripts/archive-redundant-diagnostics.py --verify
+# Recover a particular ORIGINAL ignored JSON file at its exact old path:
+scripts/repo-python scripts/archive-redundant-diagnostics.py \
+  --restore .analysis/character-move-4ac040/f156/secondary-int-caller-whole-diagnostic.json
+# Once reviewed, reclaim that exact restored copy only after SHA256 verification:
+scripts/repo-python scripts/archive-redundant-diagnostics.py \
+  --recompact-restored .analysis/character-move-4ac040/f156/secondary-int-caller-whole-diagnostic.json
+```
+
+The four `.tar.zst` archives and `frozen-repeated-diagnostics-index.json`
+are **intentionally ignored and local to this checkout**. They are **not**
+part of a Git commit, Git clone, remote backup, or an external acceptance
+receipt. Never delete a local archive without a verified replacement
+backup if the corresponding ignored history is still needed. Older
+one-off scripts reading an archived `*-whole-diagnostic.json` or
+`r###-triage.json` must explicitly restore it first; do not mistake
+a missing loose copy for an absent/failed original experiment.
 
 ## What was compacted, with independently verified bytes
 
