@@ -216,6 +216,31 @@ unimplemented in this family. [F602 real trajectory](FIGHTER_TRAJECTORY_ACTION46
 scripts/repo-python scripts/verify-fighter-trajectory46-f602.py --boss 0x004F7130
 ```
 
+**F603 completes real action0x46 source coverage in the remaining
+TWO giant fighters `0045DD70` and `0058AF60`**. Their originals
+have **131 distinct x86 instructions /459 bytes /16 real native
+PE/COFF call/global fields each**, not F602's 104-instruction source.
+A genuine stage-one `+0xF0C` one-shot projectile call to `00453A70`
+spawns native IDs `0x3B7`/`0x3E7` with original side 1/0, and different
+later game action thresholds. Newly compiled ordinary VC7.1 source
+matches all **262 original x86 roles, 918 internal CODE bytes and
+32 true typed COFF fields**, with all original prior 23 cases and
+complete seven-switch afterRET table shape preserved in each
+whole-giant source TU. Across F602+F603 **all 11 action0x46
+original cases** have source proofs (1,198 roles/4,395 internal bytes/
+167 authentic fields); combined with prior F598/F600 this is
+**264 complete inner source cases/59,629 original interior CODE bytes**,
+NOT 264 independent exact whole game functions. The eleven full
+giant originals remain NONEXACT, all official 943/862,726 accepted
+function counts unchanged. [F603 original projectile and complete
+native case](FIGHTER_TRAJECTORY_SPAWN_F603.md),
+[natural 131-insn C++](../probes/FighterTrajectorySpawn46F603.inc).
+
+```bash
+scripts/repo-python scripts/verify-fighter-trajectory-spawn-f603.py --boss 0x0045DD70
+scripts/repo-python scripts/verify-fighter-trajectory-spawn-f603.py --boss 0x0058AF60
+```
+
 Never run a full 943-unit cold replay.
 
 ## 4. Other three unmatched authored *whole* functions

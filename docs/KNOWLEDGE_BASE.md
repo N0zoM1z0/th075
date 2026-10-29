@@ -10342,3 +10342,27 @@ remain undone. Source `probes/FighterTrajectoryContact46F602.inc`,
 selected local proof `scripts/repo-python scripts/verify-fighter-trajectory46-f602.py
 --boss 0x004F7130`; [F602 original 0x46 study](FIGHTER_TRAJECTORY_ACTION46_F602.md).
 No new independent/whole exact authored CODE or all-unit cold replay.
+
+
+## F603: actual original 131-instruction trajectory + one-shot projectile cases in last two giants
+
+Real second switch native original action0x46 in `0045DD70` and
+`0058AF60` contains **131 x86 instructions /459 whole interior CODE
+bytes /16 actual typed PE/COFF refs** per original, adding 27 real
+stage1 projectile instructions over the shorter F602 104-insn path.
+The original source uses signed stage+0x62=1, frame+0x64=0,
+new one-shot flag+0xF0C=1 and real `00453A70` receiver call with
+actual projectile IDs `0x3B7` vs `0x3E7`, final side 1 vs 0. The
+rest retains different native stage2/3 and aux3/4/5 policies,
+original per-class float constants, two `__ftol2` to short member
++0xF00/+0xF02, natural C++ x87 evaluation order and full existing
+23-case native switch/afterRET table. Freshly compiled ordinary VC7.1
+C++ from `probes/FighterTrajectorySpawn46F603.inc` has 131/131
+native GPR/x87/CFG roles and 16/16 true PE-targeted fields in both
+original fighters. New F603 original internal source: **2 cases,
+262 native x86 roles, 918 uncredited game CODE bytes and 32 genuine
+fields**. Across F598/F600/F602/F603: **264 inner original action
+bodies / 59,629 internal CODE bytes**, all embedded in eleven
+still NONEXACT gigantic game functions, zero adopted authored CODE
+or full cold replay. [F603 native call/flag/codegen evidence](FIGHTER_TRAJECTORY_SPAWN_F603.md);
+targeted `scripts/repo-python scripts/verify-fighter-trajectory-spawn-f603.py --boss 0x0045DD70`.
