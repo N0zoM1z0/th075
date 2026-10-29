@@ -160,7 +160,7 @@ def source_with_landing(addr,boss,report,mapped,reader,pe,decoder,helpers,casein
     return source
 
 
-def verify_obj(reader,pe,decoder,boss,report,mapped,code,refs,caseinfo,helpers,negative):
+def verify_obj(reader,pe,decoder,boss,report,mapped,code,refs,caseinfo,helpers,negative,extra_followup_x86=0):
     addr=boss['address'];h=helpers
     f598,f614=(h[n] for n in ('f598','f614'))
     inst=[]
@@ -180,23 +180,32 @@ def verify_obj(reader,pe,decoder,boss,report,mapped,code,refs,caseinfo,helpers,n
            h['f602'],h['f603'],h['f605'],h['f606'],h['f607'],h['f608'],
            h['f610'],h['f611'],h['f613'],h['core'],h['zero'],h['switch'],
            boss,report,mapped,code,refs,o58,i58)
-    # Next real 0x91 source marker, not a false packed default slot,
-    # uniquely bounds three contiguous natural 80-insn source cases.
+    # For the F628 baseline, next original 0x91 is still a source
+    # marker. Later F629/F630 can pass the REAL newly reconstructed
+    # 78/105 native 0x91 x86 extent, bounded instead by the actual
+    # next case0x96 marker. The prior three 80-x86 8C/8F/90 cases
+    # must then be rechecked in the SAME newly compiled full giant.
+    need(extra_followup_x86 in (0,78,105),
+         f'{addr:#x}: only an actual original 78/105-x86 followup may extend this source')
+    next_marker_value=0x92 if extra_followup_x86==0 else 0x97
     refs91=[]
     for field in refs:
         if 'g_FighterProbeMarker' not in field['symbol']:continue
         target=next((x for x in inst if x.address<=field['offset']<x.address+x.size),None)
-        if target is not None and target.mnemonic=='mov' and target.op_str.endswith(', 0x92'):
+        if target is not None and target.mnemonic=='mov' and target.op_str.endswith(f', 0x{next_marker_value:x}'):
             refs91.append(target)
     need(len(refs91)==1,
-         f'{addr:#x}: actual next original action0x91 source marker not unambiguous')
-    end=refs91[0].address
+         f'{addr:#x}: actual next original indexed action source marker not unambiguous')
+    marker_end=refs91[0].address
     index=inst.index(refs91[0])
-    need(index>=3*80,f'{addr:#x}: candidate does not own three entire 80-x86 cases')
-    case_source=inst[index-3*80:index]
+    need(index>=3*80+extra_followup_x86,
+         f'{addr:#x}: candidate does not own three complete 80-x86 cases plus real followup')
+    case_source=inst[index-3*80-extra_followup_x86:index-extra_followup_x86]
     case_start=case_source[0].address
+    end=(inst[index-extra_followup_x86].address if extra_followup_x86
+         else marker_end)
     need(case_source[-1].address+case_source[-1].size==end,
-         f'{addr:#x}: actual source case0x90 does not join next original case0x91')
+         f'{addr:#x}: actual source case0x90 does not join true original next action boundary')
     # Prior native 0x63 source ends EXACTLY at the first 0x8C case;
     # on seven original actors this case was already strict. Its
     # original native GPR/typed symbols are independently rechecked

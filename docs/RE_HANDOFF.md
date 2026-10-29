@@ -1,6 +1,6 @@
 # TH075 — active reconstruction handoff
 
-**Maintained 2026-10-29 after F628.** This is the **only current task list**.
+**Maintained 2026-10-29 after F629.** This is the **only current task list**.
 The [F540–F596 research chronology](history/RE_HANDOFF_F540_THROUGH_F596.md),
 [knowledge base](KNOWLEDGE_BASE.md), and older F-series studies are
 **historical evidence**, not statements of current progress. Independently
@@ -652,6 +652,35 @@ exact acceptance, official whole authored 943/862,726 unchanged.
 ```bash
 scripts/repo-python scripts/verify-fighter-jump-landings-f628.py --boss 0x005D73C0
 scripts/repo-python scripts/verify-fighter-jump-landings-f628.py --negative-actor 0x0045DD70
+```
+
+**F629 original complete action0x91 in EIGHT giant fighter whole C++ source TUs**:
+each real original compact case **78 x86/288 original CODE bytes/12
+physical typed PE/COFF fields**; native wide `00564BE0` **363
+original bytes**, 25 true saved-this `EBP−0x88` MOV widenings.
+True stage1/2/3 condition `POS54 < original float 00657480` is
+followed by native drag/ground float operations, two actual CRT
+`__ftol2` transitions with original `00657888` projection and
+signed short `+0xF00/+0xF02`, except `005AEEC0` **+0xEFC/+0xEFE**;
+reset, original native action0x61 and frame auxiliary transitions
+retain true original PE callee targets. All eight new full-giant
+C++ objects revalidate previous **three F628 8C/8F/90 cases,
+strict original 0x63 (including real F627 priority 138-x86),
+previous 30 F614 cases and complete afterRET jump DATA**.
+`004F7130` remains an honest **35 GPR/CFG-role mismatch** in 0x91,
+correct count/COFF alone is not enough. Two other original bosses
+have 105-x86 projectile version, not claimed. **F629 adds 8 strict
+original inner cases /624 native x86 roles/2,379 original native
+internal CODE bytes/96 real typed PE/COFF fields**, all *uncredited*
+as independently callable or whole giant functions. F598–F629:
+**379 original strict interiors /100,764 original inner CODE bytes**.
+Official complete authored exact remains 943/862,726.
+[F629 source/native role and PE evidence](FIGHTER_ARC_ACTION91_F629.md),
+[natural C++](../probes/FighterArcTrajectory91F629.inc).
+
+```bash
+scripts/repo-python scripts/verify-fighter-arc91-f629.py --boss 0x005D73C0
+scripts/repo-python scripts/verify-fighter-arc91-f629.py --negative-actor
 ```
 
 ## 4. Other three unmatched authored *whole* functions

@@ -10973,3 +10973,31 @@ functions or original executable edits; official exact 943/862,726
 unchanged, no full all-unit cold replay or Oracle receipt.
 [F628 original native source/x87/negative evidence](FIGHTER_JUMP_LANDINGS_F628.md),
 targeted `scripts/repo-python scripts/verify-fighter-jump-landings-f628.py --boss 0x00564BE0`.
+
+
+## F629: 78-native-x86 arc/trajectory action0x91 in eight huge fighters
+
+Pinned Japanese original action0x91 next physically bounded by case0x96
+has **78 x86 /288 native bytes** across seven compact fighter giants
+and **363 bytes** in true wide `00564BE0` (25 original `EBP−0x88`
+receiver MOVs widen +3 each). Natural normal VC7.1 C++ source
+`probes/FighterArcTrajectory91F629.inc` preserves actual stage1/2/3
+threshold float `00657480`/x87 JP, signed drag and ground float
+comparison `0065782C`, **two genuine CRT `__ftol2 006406AC`
+conversions**, original signed-short native trajectory `+0xF00`
+or real `005AEEC0 +0xEFC`, and actual `00453E20/0040FAC0/
+00453E60/0040FA30/0040FB40` game calls. Eight new whole giant
+C++ source builds each match **78/78 original GPR/x87/CFG roles
+and 12 true typed zero-addend PE/COFF targets**, and revalidate
+all three F628 complete cases, prior 0x63 including 138-x86 priority
+source, F614 30 earlier cases and complete afterRET DATA. **8 new
+original interior cases /624 native x86 roles /2,379 original inner
+CODE bytes/96 typed targets**, no whole-function acceptance.
+`004F7130` source has 35 genuine native GPR-role mismatches despite
+identical 78-x86 extent and real COFF; two remaining fighter originals
+have separately different 105-x86 projectile version. F598–F629
+strict research now 379 case interiors/100,764 native original
+inner CODE bytes, no newly accepted authored exact units, official
+943/862,726 unchanged and no full all-unit cold replay.
+[F629 original native case proof](FIGHTER_ARC_ACTION91_F629.md),
+`scripts/repo-python scripts/verify-fighter-arc91-f629.py --boss 0x005AEEC0`.
