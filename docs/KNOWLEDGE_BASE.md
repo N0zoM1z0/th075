@@ -10366,3 +10366,31 @@ bodies / 59,629 internal CODE bytes**, all embedded in eleven
 still NONEXACT gigantic game functions, zero adopted authored CODE
 or full cold replay. [F603 native call/flag/codegen evidence](FIGHTER_TRAJECTORY_SPAWN_F603.md);
 targeted `scripts/repo-python scripts/verify-fighter-trajectory-spawn-f603.py --boss 0x0045DD70`.
+
+
+## F604: true complete 24+31 native game-like source leaves, unsigned bit-test and original owner audit
+
+Independent original Japanese TH075 PE verified two previously
+unclassified whole native functions: `00454C00` is 24 bytes/9 x86,
+clearing receiver member DWORD `+0x47C`; `00454F70` is 31 bytes/15
+x86, testing unsigned `0x20` flag of a state object at `this+0x74` /
+`state+0x3C`. One ordinary VC7.1 source TU now emits all **55/55
+whole original byte-identical CODE bytes**, no relocations. The exact
+31-byte original bit-test uses **unsigned `>0`** (`XOR/CMP/SBB/NEG`),
+not equivalent `!=0` (29B/14 x86) or signed `>0` (30B/14 x86).
+Neither full class owner has been identified, and an independent
+4,351-original-function direct-call scan and full PE literal DWORD
+scan found no explicit references to either address; indirect uses
+are not ruled out and both origins stay **unknown**. No authored
+exact credit or full cold replay. Tracked source:
+`probes/SceneFlagAndCounterLeavesF604.cpp`; selected positive and
+negative reproducer `scripts/repo-python
+scripts/verify-scene-flag-counter-leaves-f604.py --negative-predicate`,
+[F604 original bit-test and provenance](SCENE_FLAG_COUNTER_LEAVES_F604.md).
+
+Additional complete 171-byte original archive destructor source-only
+trials under ignored `.analysis/f604-archive-compiler-local-layout/`
+excluded register/const and alignment variations as explanations
+for its seven nonrelocation EBP-ownership mismatches. Native original
+stack slots remain unresolved, zero new accepted authored destructor
+CODE; no all-unit cold replay.

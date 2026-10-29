@@ -261,6 +261,34 @@ unknown. `004588B0` has six mixed vendor/game callers.
 See [F595 original native small-function provenance](SMALL_ORIGIN_UNKNOWN_FIELDSETTER_F595.md)
 and historical [origin review](ORIGIN_PENDING_REVIEW.md).
 
+**F604 added two further complete original byte-identical small
+source leaves with unknown provenance.** Original `00454C00`
+(24 native CODE bytes/9 x86) naturally clears original receiver
+`+0x47C`; `00454F70` (31 native CODE bytes/15 x86) reads the flags
+at `(*[this+0x74])+0x3C` and returns `(flags & 0x20) > 0`.
+Both whole native functions match **55/55 original machine-code
+bytes** under pinned VC7.1 (no COFF relocations). The authentic
+unsigned `>0` compiler sequence is `XOR/CMP/SBB/NEG`; equivalent
+`!=0` compiles to a **nonexact 29-byte** negative control. An
+independent re-scan of all 4,351 original function extents finds
+zero direct `CALL` edges to either, and the executable has zero
+literal DWORD references; that does **not** prove source ownership,
+so **both stay `unknown`/`review` and uncredited**. The 943 authored
+whole exact functions/862,726 bytes remain unchanged.
+[Native full C++/negative controls](SCENE_FLAG_COUNTER_LEAVES_F604.md),
+[actual natural C++](../probes/SceneFlagAndCounterLeavesF604.cpp) and
+one selected local compiler verification:
+
+```bash
+scripts/repo-python scripts/verify-scene-flag-counter-leaves-f604.py --negative-predicate
+```
+
+Fresh source/local-type experiments also eliminated a `register`,
+const, and pointer-alignment explanation for the original
+`0041CE50` destructor's remaining EBP temporaries; it is still
+**108/115 original comparable bytes**, not an accepted 171-byte
+whole function. Full failed compiler observations retained privately.
+
 **F601: original 21/37-byte float `atan2` forwarding/worker pair
 whole-CODE C++ reconstructed, provenance still UNKNOWN.** Original
 `00483300` → `00483320` → CRT `_atan2` `00642240` is confirmed by
