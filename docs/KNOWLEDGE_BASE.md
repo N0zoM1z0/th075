@@ -10875,3 +10875,40 @@ negative proofs with `scripts/repo-python scripts/verify-destructor-direct-free-
 [Full original PE/COFF investigation](DESTRUCTOR_DIRECT_FREE_LIFETIMES_F625.md).
 Official authored exact whole CODE 943/862,726 remains unchanged;
 no all-unit cold replay or external Oracle acceptance.
+
+
+## F626: original 109-instruction mode0x63 in five giant fighters, genuine absent bonus branch
+
+Native Japanese TH075 physical real 0x63 is a 109-instruction
+regular mode-event action in seven original fighters, unlike F624's
+118-instruction versions. Original real native 0x31C transition
+**does NOT** execute any extra `+0x370` bonus flag action: it jumps
+directly to the common case exit. Natural C++
+`probes/FighterMode63BasicF626.inc` source reproduces the complete
+native **109/109 GPR/x87/CFG roles, 417/417 original inner CODE
+bytes and 7 actual typed zero-addend PE-targeted COFF fields** each
+in `004AC040`, `00486550`, `00543210`, `004D7E70`, `005214B0`.
+Original mode signed-byte `DIR32` `006714B4` ordinal0 and six
+actual game calls (four action setters `0040FAC0`, `0040FA30`
+getter and `0040FB40` aux) are independently physically checked.
+The full original afterRET compressed second table maps 0x63 to
+LAST actual dense slot25, with slot26 COMMON DEFAULT; the real
+next native handler is `0x8C`, which bounds original case0x63,
+not the default slot. Each of five newly compiled whole-parent
+C++ objects preserves the prior **30** source-backed native actions
+through F614 and actual dense/sparse original afterRET DATA.
+Two original actor owners **fail** strict registers under same
+source: `004F7130` original109/416 versus source109/417 has
+**67 native GPR/CFG errors** after genuine mode field masking;
+`0058AF60` original109/417 also **67 native GPR errors**, and has
+26 total second-table native entries (0x63 slot24, real next
+code handler `0x89`), not the generic 27-entry/0x8C map.
+F626 contributes **5 STRICT original game inner cases /545 true
+x86 roles/2,085 original internal native CODE bytes/35 physical
+COFF fields**, cum F598–F626 **346 original inner case bodies /
+90,699 original native inner CODE bytes**. All containing fighters
+and separate authored complete destructors remain NONEXACT.
+[F626 actual original PE/multi-case context evidence](FIGHTER_MODE_EVENT_BASIC_F626.md),
+targeted `scripts/repo-python scripts/verify-fighter-mode63-basic-f626.py --boss 0x004AC040`,
+`--negative-actor 0x0058AF60`. Official authored whole exact
+943/862,726 unchanged, no full 943-unit cold replay.

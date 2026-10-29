@@ -1,6 +1,6 @@
 # TH075 — active reconstruction handoff
 
-**Maintained 2026-10-29 after F625.** This is the **only current task list**.
+**Maintained 2026-10-29 after F626.** This is the **only current task list**.
 The [F540–F596 research chronology](history/RE_HANDOFF_F540_THROUGH_F596.md),
 [knowledge base](KNOWLEDGE_BASE.md), and older F-series studies are
 **historical evidence**, not statements of current progress. Independently
@@ -558,6 +558,38 @@ Official 943/862,726 authored whole-function exact unchanged.
 
 ```bash
 scripts/repo-python scripts/verify-fighter-mode63-f624.py --boss 0x005AEEC0
+```
+
+**F626 extends the genuine original native action0x63 source to
+FIVE additional giant fighter owners**, distinct from F624's two
+118-instruction/bonus-branch actors. Here the actual native original
+has **109 x86/417 CODE bytes and seven true PE/COFF fields** per
+strict source, **without** the bonus `this+0x370` after original
+`0x31C` transition. Native actors `004AC040`, `00486550`,
+`00543210`, `004D7E70`, `005214B0` now source-match **545/545
+original GPR/x87/CFG roles /2,085 original inner CODE bytes /
+35 exact physical zero-addend PE/COFF destinations**, in **five
+freshly compiled whole giant source TUs** retaining the prior 30
+original source case proofs through 0x58 and full afterRET DATA.
+Original packed slot25 is the LAST actual 0x63 handler in these
+actors; slot26 is default, true next physical native game case is
+0x8C. **Two other 109-instruction actors** `004F7130` and `0058AF60`
+remain **67 register/CFG mismatches each** (after verified mode
+DIR32); actual `0058AF60` has only 26 native compressed slots,
+0x63 at index24 and next handler 0x89, not generic 0x8C. Their
+source was independently compiled as honest negative controls.
+A second untracked alternative verifier was inspected for useful
+checks, then archived in ignored experiments to avoid duplicate
+contradictory tools. F598–F626 strictly source-backed **346 real
+native internal game cases /90,699 original inner CODE bytes**, NOT
+new accepted whole functions or full fighter CODE. Official authored
+943/862,726 unchanged.
+[Original F626 native mode-event source and negative PE study](FIGHTER_MODE_EVENT_BASIC_F626.md),
+[ordinary source](../probes/FighterMode63BasicF626.inc).
+
+```bash
+scripts/repo-python scripts/verify-fighter-mode63-basic-f626.py --boss 0x004AC040
+scripts/repo-python scripts/verify-fighter-mode63-basic-f626.py --negative-actor 0x0058AF60
 ```
 
 Never run a full 943-unit cold replay.
