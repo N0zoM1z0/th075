@@ -11832,3 +11832,32 @@ without any accepted authored whole-function code change.
 [F665 original PE/COFF proof](GAME_NATIVE_FORWARDER_LEAVES_F665.md),
 `scripts/repo-python scripts/verify-game-native-forwarder-leaves-f665.py`.
 No all-unit cold replay.
+
+
+## F666: four original preceding fighter C++ cases reveal genuine compiler phase dependency
+
+Selected original giant `00543210`: four actual native action case
+intervals `1FA` (82 x86/287 original B/9 source fields), `1FB`
+(174/603/15), `1FE` (153/526/14), and `1FF` (153/526/14)
+now have ordinary source-backed complete native case grammar. Each
+of their **562 original x86 roles, 1,942 original CODE bytes and
+52 physical typed PE/COFF fields** was freshly compared in a new
+entire original giant VC7.1 parent. They remain **NONSTRICT** from
+real GPR register phases (50/111/98/98 nonfield x86-role differences)
+and original `1FA` EBP−0x110 scratch-width ownership (287 original vs
+281 emitted B). More importantly, restoring those four source cases
+**changes the generated register phase of following 200/201**, causing
+67/85 real nonfield GPR differences in that alternate full parent,
+although its two 200/201 x86 counts, widths and 17 COFF fields still
+match the actual PE. F664's 200/201 strict source proof remains
+**valid only in its separate, partly placeholder source context**;
+never conflate results from these two different parent source variants
+or promote either to entire historical parent exact. The new F666
+verifier also rechecks the 17 prior independently strict case interiors,
+186/18A/18B genuine negative controls and all afterRET switch DATA in
+that newly compiled alternate parent. [Native context proof and
+limits](FIGHTER_PRECEDING_STAGE_PHASE_F666.md),
+`scripts/repo-python scripts/verify-fighter-preceding-stage-controls-f666.py`.
+No new strict case or authored whole-function exact credit. Formal
+943/862,726 original authored whole exact and F598–F666 587/158,673
+uncredited strict fighter interior totals unchanged; no mass replay.

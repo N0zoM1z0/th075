@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F665; earlier frozen handoffs are archived.**
+**Maintained 2026-10-30, after F666; earlier frozen handoffs are archived.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -99,7 +99,18 @@ entire parent. F664 newly adds **two full original `0x200/0x201`
 case interiors** (**228 native x86 /779 original bytes /17 genuine
 physical original PE/COFF fields**) and rechecks all prior cases
 and after-RET DATA in the same new source object.
-[Newest F664 authentic native proof](FIGHTER_SPECIAL_STAGE_F664.md).
+[F664 original context-scoped strict proof](FIGHTER_SPECIAL_STAGE_F664.md).
+**Critical F666 context warning:** a second freshly compiled whole-giant
+source variant restores *four earlier original* `1FA/1FB/1FE/1FF`
+case C++ grammars (562 original x86/1,942 native CODE B/52 real
+fields). They remain NONSTRICT from genuine GPR/EBP mismatches. Their
+insertion also changes the same following `200/201` register phases
+by 67/85 wrong original nonfield GPR roles, despite maintaining all
+physical instruction counts, bytes and typed fields. The F664
+strict inner-case proof applies **only to its explicitly verified
+original-shaped but still partly placeholder parent context**, not a
+fully restored historical parent. [F666 controlled full-native
+negative and register-cycle proof](FIGHTER_PRECEDING_STAGE_PHASE_F666.md).
 Earlier F657 added **three original full `0x187/0x188/0x189` native case
 interiors** (**212 x86/767 original B/19 original physical fields**),
 including authentic 0.6f falling states and the stage7/9 collision
@@ -155,7 +166,9 @@ F646 `0xD0` remains nonstrict in other original actors due to
 explicitly distinguishes the 3 strict parent contexts.
 
 ```bash
-# NEW complete selected giant: 200/201 strict, 17 prior strict, three negative:
+# NEW alternate full giant: four native predecessors and GPR-phase negative:
+scripts/repo-python scripts/verify-fighter-preceding-stage-controls-f666.py
+# Separate selected full-giant parent with strict 200/201 source context:
 scripts/repo-python scripts/verify-fighter-special-stage-f664.py
 # Earlier selected giant, nonstrict 18A/18B and 17 older strict cases:
 scripts/repo-python scripts/verify-fighter-motion-shots-f661.py

@@ -26,7 +26,7 @@ types are provisional; machine-code matches alone do not prove an entire
 original class layout. The target's official distribution provenance has not
 been independently verified; do not substitute a localized `th075c.exe`.
 
-These snapshot counts were rechecked after **F665** (2026-10-30).
+These snapshot counts were rechecked after **F666** (2026-10-30).
 The **live** sources of truth, not any dated prose milestone, are `config/functions.csv`,
 `config/function-origins.csv`, and `config/match-units.toml`.
 Refresh using `scripts/repo-python scripts/report-reconstruction-status.py --summary`.
@@ -66,7 +66,15 @@ full independent after-RET switch DATA**. The selected giant now has
 internal CODE bytes /132 original PE/COFF fields**. This is **not**
 whole-function exact: original `0x186/0x18A/0x18B` remain nonstrict
 and the original physical cases are not one uninterrupted strict run.
-[New F664 full-parent physical proof](docs/FIGHTER_SPECIAL_STAGE_F664.md).
+[F664 original physical case proof](docs/FIGHTER_SPECIAL_STAGE_F664.md).
+A new **F666 preceding-source context control** subsequently added
+normal C++ for four actual earlier actions `1FA/1FB/1FE/1FF` and
+independently proved all **562 original x86 roles /1,942 original
+internal CODE bytes /52 typed fields**, but their native GPR/EBP
+roles remain NONSTRICT. Critically this source insertion also shifts
+original GPR roles in formerly strict `200/201`; their F664 proof is
+**context-dependent**, not a single exact historical whole parent.
+[Full original negative phase-control evidence](docs/FIGHTER_PRECEDING_STAGE_PHASE_F666.md).
 No fake local padding or partial whole-function CODE credit.
 Native complex `0xCC` in `005AEEC0`
 and `00564BE0` still has **80/78 genuine wrong GPR/CFG roles**
