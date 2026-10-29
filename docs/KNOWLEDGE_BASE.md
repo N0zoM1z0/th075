@@ -11367,3 +11367,39 @@ source/typed relocation proof](FIGHTER_PROJECTILE_LAUNCH_F642.md),
 selected `scripts/repo-python scripts/verify-fighter-projectile-launch-f642.py --boss 0x004AC040`.
 Official 943/862,726 authored whole exact unchanged, no full cold
 replay or remote Oracle acceptance.
+
+
+## F642: native complete A7/A8 97-x86 fighter sprite launch cases, x87 operand order and two true stack width families
+
+Original Japanese TH075 giant fighter action0xA7→0xA8→0xB4
+owns **97 real x86 per complete physical case**, with 12 genuine
+typed zero-addend PE/COFF global/game method fields, spawning real
+sprite kind `0x38` side1 after native `0046D000(0xFA)` animation
+and `00453D60(0x2C)` preparation, signed direction×30 horizontal
+`IMUL/FILD`, true float y `this+0x48 + [00657888]`, ground
+correction and signed-short cooldown `0xB4`/decrement10/
+`FILD` bounce scaling `[006590B4]`; original 005AEEC0 uses
+cooldown member+0xEFC vs others+0xF00. Original next action is
+0 for A7 and 2 for A8. First natural C++ `POS48+global` yielded
+wrong `FLD global; FADD member` source x87 order at x86 ordinal34/35,
+although 97-x86/full-byte length/12 PE-targeted COFF fields
+matched. **19 actual whole-parent compiler expression variants**
+independently prove genuine C++ `F32(0x48)+global` recovers
+native `FLD member; FADD global` roles and widths with no ASM.
+Original `004AC040` 362-byte cases have exactly FOUR true wide
+signed-int MOV/FILD scratch operands +3B (not receiver frame),
+while real `00564BE0` 447-byte cases differ from ordinary 350B
+through 27 saved-this EBP−0x88 MOV widenings×3, FOUR signed-int
+scratch MOV/FILD widenings×3, and one near JNE +4B.
+**Eleven fresh whole VC7.1 giant C++ objects** now strictly
+match **22 original complete case interiors/2,134 original native
+GPR/x87/CFG roles/7,918 native original inner CODE bytes/264 typed
+PE-target COFF fields**, and reverify F641/F639/F637/F636/F633,
+original mode63 when strict, thirty preceding real game cases and
+complete separately owned afterRET packed jump DATA.
+F598–F642 strictly source-backed original game-case interiors
+**544/148,405 native original inner CODE bytes**, *not* accepted
+whole functions; 943/862,726 whole authored exact remains unchanged,
+no 943-unit cold replay. [F642 original PE/natural C++ and real
+scratch width evidence](FIGHTER_PROJECTILE_LAUNCH_F642.md),
+selected `scripts/repo-python scripts/verify-fighter-projectile-launch-f642.py --boss 0x004AC040`.

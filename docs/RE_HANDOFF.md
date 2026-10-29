@@ -993,6 +993,40 @@ scripts/repo-python scripts/verify-fighter-projectile-launch-f642.py --boss 0x00
 scripts/repo-python scripts/verify-fighter-projectile-launch-f642.py --boss 0x004AC040
 ```
 
+**F642 genuine original 97-x86 projectile-launch actions A7/A8
+restored in ALL ELEVEN huge fighter parent TUs**. Authentic two
+complete original handler ranges (A7→A8→B4) include real signed
+char direction*30 x coordinate (`IMUL/FILD`), y float member+global,
+`0046D000(0xFA)` animation, `00453D60(0x2C)` prep,
+`00453C80(kind0x38, side1)` sprite, real signed-short cooldown
+0xB4 with native `+0xEFC` for `005AEEC0`, native `FILD` bounce
+`FMUL [006590B4]` and decrement10, ending in game action 0/2.
+**19 whole-giant VC7.1 source trials** established `F32(0x48)`
+member access (not generic `POS48` alias) gives original native
+`FLD member; FADD [00657888]` pair at x8634/35. All **22 new
+native inner cases /2,134 actual GPR/x87/CFG roles /7,918 original
+internal CODE bytes /264 exact physically typed PE-target COFF
+fields** now match in the new *whole-parent* source objects.
+Original `004AC040` has four widened original MOV/FILD integer
+scratch accesses (+12 bytes/case); `00564BE0` original 447-byte
+case has 27 saved-this receiver MOVs widened +3, FOUR real
+integer scratch MOV/FILD widened +3 and one near JNE +4, not
+31 receiver MOVs. Every new parent OBJ rechecks all previous
+F641 A3/A4/A5, F639 9F/A0/A1, F637 9E, F636 9B/9C,
+F633 97/98/9A, earlier native mode, 30 previous game cases and
+complete original afterRET packed DATA. Whole originals are still
+NONEXACT. F598–F642 strict original interior study **544 cases
+/148,405 original inner CODE bytes**, **zero new fully exact
+whole-giant functions or accepted authored CODE**; official
+943/862,726 whole exact ledger unchanged.
+[F642 real original projectile/x87/FILD/PE field source proof](FIGHTER_PROJECTILE_LAUNCH_F642.md),
+[natural C++](../probes/FighterProjectileLaunchF642.inc).
+
+```bash
+scripts/repo-python scripts/verify-fighter-projectile-launch-f642.py --boss 0x00564BE0
+scripts/repo-python scripts/verify-fighter-projectile-launch-f642.py --boss 0x004AC040
+```
+
 ## 4. Other three unmatched authored *whole* functions
 
 | Original | Size / native structure | Precise remaining blocker, best source evidence |
