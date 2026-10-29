@@ -134,7 +134,7 @@ def verify_physical_fields(refs,n,gen,fields,act):
     return len(actual)
 
 
-def verify_new(reader,pe,decoder,code,refs,orig,older,start,h):
+def verify_new(reader,pe,decoder,code,refs,orig,older,start,h,following_native=None):
     ins=[]
     for x in decoder.disasm(code,0):
         ins.append(x)
@@ -197,9 +197,16 @@ def verify_new(reader,pe,decoder,code,refs,orig,older,start,h):
                            'actual_original_typed_COFF_fields':count,
                            'credited_new_authored_whole_function_bytes':0})
         offset+=len(n)
-    need(ins[offset].mnemonic=='mov' and ins[offset].op_str.endswith(', 0x18b'),
-         'native 189 complete case must end directly at original 18A source marker')
-    return proven,negative
+    if following_native is None:
+        need(ins[offset].mnemonic=='mov' and ins[offset].op_str.endswith(', 0x18b'),
+             'native 189 complete case must end directly at original 18A source marker')
+    else:
+        need(following_native==0x18A and ins[offset].mnemonic=='mov'
+             and ins[offset].op_str=='eax, dword ptr [ebp - 8]'
+             and ins[offset+1].mnemonic=='movsx'
+             and ins[offset+1].op_str=='ecx, word ptr [eax + 0x62]',
+             'native 0x18A must genuinely follow original 0x189, no marker')
+    return proven,negative,offset
 
 
 def main():
@@ -241,7 +248,7 @@ def main():
     prev653,start654=f653.verify_new(reader,pe,decoder,code,refs,old,orig653,h,following_native=0x12F)
     prev654,start656=f654.verify_new(reader,pe,decoder,code,refs,orig654,old,start654,h,following_native=0x131)
     prev656,start657=f656.verify_native(reader,pe,decoder,code,refs,orig656,old,start656,h,following_native=0x186)
-    proven,negative=verify_new(reader,pe,decoder,code,refs,orig,old,start657,h)
+    proven,negative,_=verify_new(reader,pe,decoder,code,refs,orig,old,start657,h)
     result={'original_parent':'0x00543210',
             'whole_parent_original_CODE_bytes_still_NONEXACT':boss['size'],
             'separate_original_after_RET_compressed_DATA_bytes':boss['postret_size'],

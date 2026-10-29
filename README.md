@@ -26,7 +26,7 @@ types are provisional; machine-code matches alone do not prove an entire
 original class layout. The target's official distribution provenance has not
 been independently verified; do not substitute a localized `th075c.exe`.
 
-These snapshot counts were rechecked after **F658** (2026-10-30).
+These snapshot counts were rechecked after **F661** (2026-10-30).
 The **live** sources of truth, not any dated prose milestone, are `config/functions.csv`,
 `config/function-origins.csv`, and `config/match-units.toml`.
 Refresh using `scripts/repo-python scripts/report-reconstruction-status.py --summary`.
@@ -49,6 +49,9 @@ nonrelocation bytes match**; **137 bytes in three register-allocation case
 bodies remain wrong**. This is outstanding, **not a fully byte-exact
 33K function**. Reproduce via
 `scripts/repo-python scripts/verify-characterobject-native-collision-order-f596.py`.
+F659's 14 additional whole-giant C++ condition/lifetime variants did
+not reduce the genuine 137-byte register cycle; two `+=` alternatives
+actually changed native x87 geometry. [New F659/F660 negative evidence](docs/GIANT_REGISTER_AND_ARCHIVE_LIFETIME_NEGATIVES_F659_F660.md).
 
 **F598–F657's 585 strictly source-backed fighter *internal case
 bodies* (157,894 original internal CODE bytes) remain uncredited**:
@@ -61,8 +64,13 @@ The giant now contains **17 strict original inner cases, 1,209 native
 x86 /4,192 original internal CODE bytes /115 real typed fields**.
 These are **not 17 consecutive strict cases**: the intervening true
 `0x186` remains NONSTRICT (two actual EBP scratch offsets differ,
-284 emitted vs 290 original bytes), without fake local padding or
-partial case credit. See [the latest F657 original proof](docs/FIGHTER_MOTION_CONTINUATION_F657.md).
+284 emitted vs 290 original bytes). F661 additionally reconstructs
+the **true two later `0x18A/0x18B` case C++ bodies** (170 native x86,
+615 original internal CODE B and 13 physical fields), but explicitly
+keeps both NONSTRICT because four original x87 scratch EBP operands
+still differ. [F661 new full-parent native evidence](docs/FIGHTER_MOTION_SHOTS_F661.md)
+retains all 17 older strict cases and complete switch DATA in a newly
+compiled parent. No fake local padding or partial-case credit.
 Native complex `0xCC` in `005AEEC0`
 and `00564BE0` still has **80/78 genuine wrong GPR/CFG roles**
 despite matching x86 count and all 11 real PE/COFF fields; **do not

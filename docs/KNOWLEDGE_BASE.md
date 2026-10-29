@@ -11740,3 +11740,43 @@ accepted authored ledger **943 /862,726** is unchanged.
 [Full native F658 proof](GAME_UNATTRIBUTED_SIMPLE_LEAVES_F658.md),
 `scripts/repo-python scripts/verify-game-unattributed-simple-leaves-f658.py`.
 No all-unit cold replay.
+
+
+## F659/F660: live rechecks and new authentic negative source hypotheses
+
+Original whole 33,293-byte CharacterObject boss `004EBDA0`
+still compiles 8,789 native x86 and 682 physical COFF fields but
+has **137 original non-COFF byte differences starting at
+004F344C**. Fourteen new pinned VC7.1 full-source trials of original
+stage4 test syntax, stage3 nested control flow/real arguments,
+fade control grammar and stage2 alpha arithmetic prove **12 identical
+137-byte register-cycle negatives** and **two `+=` forms regressing
+to 141 and erroneous physical native x87 widths**. Independently,
+seven whole 171-byte ArchiveCatalog authored destructor C++ filename
+lifetime experiments verify five unchanged **108/115** originals and
+two degraded **102/115**, with original EBP resource/delete/filename
+slots still wrong. None is whole-exact or accepted; no fake C++ locals.
+[Giant and destructor original native F659/F660 negative detail](GIANT_REGISTER_AND_ARCHIVE_LIFETIME_NEGATIVES_F659_F660.md).
+
+## F661: source-backed original fighter projectile 18A/18B with physical EBP nonmatches
+
+One **fresh complete** VC7.1 C++ fighter parent source `00543210`
+adds authentic original full physical 18A (71 x86/256 CODE B/6 typed
+fields) and 18B (99/359/7), recovering real side*151 and side*128
+sprite coordinates, original native x87 y offsets and short counter
+stages. Both are deliberately **NONSTRICT**: two genuine original
+EBP−0x88/−0x8C integer-to-float scratch operand pairs compile at
+EBP−0x24/−0x28, giving 250/353 original-sized compiler case bytes
+instead of 256/359. Normal GPR/x87/CFG roles and all **13 actual
+original typed PE/COFF fields** match, but the four real EBP
+operands/widths do not; a new verifier compares raw physical EBP
+slots independently of the old broad normalizer. **All 17 preceding
+strict original fighter cases and complete after-RET jump DATA** were
+rechecked in the **same newly compiled parent**. F598–F661 strictly
+backed fighter inner case total remains **585 /157,894 native CODE
+bytes** (not including these 615 new nonstrict source-backed bytes).
+All 22 original whole giants remain NONEXACT, 943/862,726 authored
+whole-function exact unchanged.
+[Full F661 original native/source proof](FIGHTER_MOTION_SHOTS_F661.md),
+`scripts/repo-python scripts/verify-fighter-motion-shots-f661.py`.
+No 943-unit mass replay.

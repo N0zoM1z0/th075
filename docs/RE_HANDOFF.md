@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F658; earlier frozen handoffs are archived.**
+**Maintained 2026-10-30, after F661; earlier frozen handoffs are archived.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -63,8 +63,13 @@ type/ownership trials **did not** resolve 137 bytes. Read
 [the F596 physical original native evidence](CHARACTEROBJECT_NATIVE_COLLISION_ORDER_F596.md),
 [F635 controlled negative C++ alternatives](CHARACTEROBJECT_TYPED_MEMBER_CONTROLS_F635.md)
 and native target, rather than trusting older F593 figures such as
-“155 remaining bytes”. Focus on source scope/lifetime and original
-register phase, not additional fake fields.
+“155 remaining bytes”. F659 independently recompiled 14 new
+stage-3/stage-4 C++ grammar hypotheses against the **entire**
+original 33KB function: 12 remained **137 wrong nonfield bytes**,
+and two `+=` variants regressed to **141 plus native x87 geometry
+errors**. [New F659/F660 original source negatives](GIANT_REGISTER_AND_ARCHIVE_LIFETIME_NEGATIVES_F659_F660.md).
+Focus on real source scope/lifetime and original register phase,
+not additional fake fields.
 
 ```bash
 scripts/repo-python scripts/verify-characterobject-native-collision-order-f596.py
@@ -108,8 +113,16 @@ these (434 x86/1,484 B/36 fields), preserving the full after-RET
 dispatch. `0x132` is the same actual default handler as `0x50`, not
 a separately owned native case. [Earlier F656 original proof](FIGHTER_LATE_STAGES_F656.md).
 F654 added `12F/130`, F653 added `12C/12D/12E`, F651/F652 added
-D1/D2 and CF/D0 were earlier strict. The original 58K whole parent
-is still NONEXACT; `D2→12C` has no separate D3 handler.
+D1/D2 and CF/D0 were earlier strict. F661 additionally reconstructs
+native **18A/18B complete source-backed case C++ interiors**
+(**170 genuine x86, 615 original CODE B, 13 real PE/COFF fields**),
+but both remain **NONSTRICT**: their original meaningful x87 scratch
+EBP−0x88/−0x8C occurs at compiler EBP−0x24/−0x28, shortening each
+case by six bytes. All 17 previous strictly backed cases and whole
+after-RET DATA are rechecked in the **same new C++ parent**.
+[Latest 18A/18B source and authentic native negative proof](FIGHTER_MOTION_SHOTS_F661.md).
+The original 58K whole parent is still NONEXACT; `D2→12C`
+has no separate D3 physical handler.
 The native original D2 float drag occurs **outside** stage-zero
 initialization, essential for CFG and x87 role order. Eight other
 D1/D2 owner versions still have **28 or 42–52 genuine register/CFG
@@ -137,7 +150,9 @@ F646 `0xD0` remains nonstrict in other original actors due to
 explicitly distinguishes the 3 strict parent contexts.
 
 ```bash
-# NEW complete selected giant, three strict native cases plus real 186 negative:
+# NEW complete selected giant, nonstrict 18A/18B and 17 older strict cases:
+scripts/repo-python scripts/verify-fighter-motion-shots-f661.py
+# Earlier three strict cases and true original 186 negative:
 scripts/repo-python scripts/verify-fighter-motion-continuation-f657.py
 # Prior 14 strictly verified real physical native cases:
 scripts/repo-python scripts/verify-fighter-late-stages-f656.py
@@ -176,7 +191,7 @@ come from live `config/functions.csv`):
 | --- | ---: | --- |
 | `00602A60`, GameApplication::Run-like giant WinMain | **2,987 B**, 654 native x86, 123 calls, 60 separate afterRET DATA bytes | F528 C++ produced 2,981 B/654 x86 but wrong real EBP local ownership; F615 30 other complete native C++ source trials failed. [Real WinMain original CFG](WINMAIN_ORIGINAL_CONTROL_FLOW.md), [F615 true local lifetime negatives](WINMAIN_LOCAL_OBJECT_LAYOUT_F615.md). |
 | `0043B0B0`, scene/resource virtual destructor | **248 B**, 75 native x86, 12 PE/COFF refs | Normal VC7.1 **`/GX`** source matches **191/200 nonrelocation bytes**, not full CODE, because five original EBP local slot owners differ; F612/F632 many scope/type variants failed. [Actual source/PE lifetime](SCENE_DESTRUCTOR_POINTER_TYPES_F612.md), [F632 honest negative controls](DESTRUCTOR_FREE_ASSIGNMENT_F632.md). |
-| `0041CE50`, ArchiveCatalog nonvirtual destructor | **171 B**, 51 native x86, 14 PE/COFF refs | Normal **`/GX-`** C++ matches **108/115 nonrelocation bytes**, not full CODE; original filename, resource-delete and index temporaries have wrong EBP slots. F609 19 type/scope probes and later F643 14 used-variable lifetime controls failed; [F609 originals](ARCHIVE_DESTRUCTOR_SOURCE_TYPES_F609.md), [F632 negative controls](DESTRUCTOR_FREE_ASSIGNMENT_F632.md). |
+| `0041CE50`, ArchiveCatalog nonvirtual destructor | **171 B**, 51 native x86, 14 PE/COFF refs | Normal **`/GX-`** C++ matches **108/115 nonrelocation bytes**, not full CODE; original filename, resource-delete and index temporaries have wrong EBP slots. F609 19 type/scope probes and later F643 14 used-variable lifetime controls failed; F660's seven additional genuine early filename-lifetime C++ forms yield 108/115 or regress to 102/115, no correct EBP slots. [F609 originals](ARCHIVE_DESTRUCTOR_SOURCE_TYPES_F609.md), [F660 new negatives](GIANT_REGISTER_AND_ARCHIVE_LIFETIME_NEGATIVES_F659_F660.md). |
 
 ```bash
 # Cold-compile ONLY one unchanged tiny author's negative control:
