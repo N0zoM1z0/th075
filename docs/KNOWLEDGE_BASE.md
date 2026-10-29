@@ -1,21 +1,25 @@
 # TH075 reconstruction knowledge base — cumulative historical evidence
 
-**Current status annotation: 2026-10-29, after F596.** This document is a
-**chronological experiment log**, not the active backlog. Earlier F-series
+**Current status annotation: 2026-10-29, after F652 and the compact
+handoff/storage audit.** This is a **chronological experiment log**,
+not the live backlog. Consult the [current agent handoff](RE_HANDOFF.md)
+and live function/origin/match manifests first. Earlier F-series
 sections describe *historical* status; older claims such as "still pending",
 "nonexact", or "no credit" are **not active status** after a later exact
 adoption. Earlier original 33K giant experiments such as F593
 show **historical** 155-byte source differences, superseded by F596
 **137 nonrelocation bytes**; all 8,789 original x86 instruction
 mnemonics are now in their exact machine ordinal positions.
-F597 organizes the previously 977-line active handoff into a
-short, current-source-backed page, retaining the full old F540–F596
-narrative in [historical chronology](history/RE_HANDOFF_F540_THROUGH_F596.md).
-It also preserves 243 old large CI logs as a hash-verified recoverable
-archive, reclaiming 90.4 MiB without deleting native experiments;
-see [storage protection](STORAGE_HYGIENE.md).
-The compact [current handoff](RE_HANDOFF.md), SHA-pinned original
-Japanese `resources/th075.exe`, and canonical live ledgers outrank old prose.
+The former 1,500-line post-F596 active handoff is preserved in the
+**frozen [F598–F652 chronology](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md)**;
+older F540–F596 notes remain in
+[prior historical chronology](history/RE_HANDOFF_F540_THROUGH_F596.md).
+The [active handoff](RE_HANDOFF.md) now fits a short task-oriented
+checklist. SHA256-verifiable recovered archives of redundant historical
+CI/diagnostic logs and old repeated JSON snapshots are documented in
+[storage protection](STORAGE_HYGIENE.md); no original PE, Ghidra,
+compiler environment, source, COFF or best negative experiment was lost.
+Canonical live ledgers and actual native PE outrank all historical prose.
 
 ## Current authoritative status and superseded negatives
 
@@ -60,6 +64,19 @@ Japanese `resources/th075.exe`, and canonical live ledgers outrank old prose.
   call boundaries, or count Win32/CRT/VC7 helper code. Cold-replay
   **only new or affected units**, never the entire set.
 
+**Latest F652 giant work is still an internal-case study, not whole
+function acceptance:** F598–F652 source-backed **572 native original
+inner case bodies /154,461 native internal CODE bytes**, all uncredited
+as whole functions. F651/F652 recover strict original D1/D2 in giant
+`00543210` (133 x86 /450 B/18 typed fields) while previous CF/D0
+remain strict in that *same* newly compiled parent. The original
+0xCC case in `005AEEC0` and `00564BE0` has complete 128/126 x86
+mnemonic/width geometry, **but 80/78 native non-field GPR/CFG role
+mismatches**, and is expressly **NONEXACT**. Recent small whole-function
+source-backed origin-unknown cohort totals 39/889 B, plus distinct
+F595 40 B, **40/929 B uncredited**. None of these local probes adds
+to the formal 943 whole authored accepted functions.
+
 ## How to read the historical sections
 
 The older "Current validation policy", "authoritative state" and old
@@ -71,7 +88,7 @@ single-unit cold logs, or inspect the pinned native PE, to settle any
 historical contradiction. Do not repeat a prior negative source-variable
 sweep without a new hypothesis supported by original physical slots.
 
-## Recent reproducible observations
+## Older reproducible observations — HISTORICAL chronology
 
 F179..F183 added 16 exact units/9,888 CODE bytes across five pushed commits.
 Each new unit passed full native extent/CFG/field review and canonical cold

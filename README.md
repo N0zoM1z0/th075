@@ -26,8 +26,8 @@ types are provisional; machine-code matches alone do not prove an entire
 original class layout. The target's official distribution provenance has not
 been independently verified; do not substitute a localized `th075c.exe`.
 
-These counts were independently verified after **F596** (2026-10-29),
-but the live sources of truth are `config/functions.csv`,
+These snapshot counts were rechecked after **F652** (2026-10-29).
+The **live** sources of truth, not any dated prose milestone, are `config/functions.csv`,
 `config/function-origins.csv`, and `config/match-units.toml`.
 Refresh using `scripts/repo-python scripts/report-reconstruction-status.py --summary`.
 
@@ -38,7 +38,7 @@ destructor and 171-byte archive catalog destructor. **No giant is currently
 accepted whole exact.** The 95 origin-unknown candidates are a separate
 classification issue and cannot be silently counted as game-authored CODE.
 
-### Latest substantial whole giant and small-function work
+### Latest verified giant research and complete small-function evidence
 
 The one native giant `004EBDA0` now compiles from ordinary VC7.1 C++ into
 the same **33,293 bytes of CODE, 8,789 x86 instructions in identical order,
@@ -50,19 +50,34 @@ bodies remain wrong**. This is outstanding, **not a fully byte-exact
 33K function**. Reproduce via
 `scripts/repo-python scripts/verify-characterobject-native-collision-order-f596.py`.
 
-Smaller verified work includes a **40/40 whole original byte-exact
-source probe** for `004135F0`, but original authorship remains **unknown**;
-no exact authored credit was claimed. The 111-byte mapping transform
-`00455770` (F536), 77-byte Shift-JIS classifier `0041CA30` (F555),
-303-byte Replay renderer and historically disputed StaffRoll, rank-label
-and selected-progress functions are **already accepted exact**; do not
-repeat their superseded negative experiments.
+**F598–F652's 572 strictly source-backed fighter *internal case
+bodies* (154,461 original internal CODE bytes) remain uncredited**:
+none of their enclosing giant `Advance()` functions is fully exact.
+The latest strict evidence is four consecutive native `CF/D0/D1/D2`
+cases in giant `00543210` (223 real x86, 759 internal CODE bytes,
+28 physical fields); only the last `D1/D2` (450 bytes) were newly
+reconstructed in F651/F652. Native complex `0xCC` in `005AEEC0`
+and `00564BE0` still has **80/78 genuine wrong GPR/CFG roles**
+despite matching x86 count and all 11 real PE/COFF fields; **do not
+promote** it to exact just because the case body geometry matches.
+
+Separately, recent **whole-function** VC7.1 C++ probes have fully
+reproduced 39 origin-unknown original functions /889 native CODE bytes,
+plus the distinct prior F595 **40-byte** three-field setter: **40
+complete origin-unknown source-backed originals /929 bytes**, all
+uncredited pending authored-vs-compiler/library provenance. The newest
+pair is `004170B0` (**27/27 bytes**, virtual `__stdcall` slot) and
+`004588B0` (**43/43 bytes**, original conditional CRT `free`).
+All previously accepted 111-byte mapping transform `00455770`,
+77-byte Shift-JIS classifier `0041CA30`, Replay render, StaffRoll,
+rank-label and selected-progress functions stay accepted exact.
+Do not revive their superseded negative experiments.
 
 For the actual unresolved work, start with the
-[short current agent handoff](docs/RE_HANDOFF.md); the original long
-[F540–F596 chronological handoff](docs/history/RE_HANDOFF_F540_THROUGH_F596.md)
-preserves every historical action-source milestone without cluttering
-the first screen. Git commits preserve local checkpoints; they are
+[short current agent handoff](docs/RE_HANDOFF.md); the full *former* [F598–F652 active-handoff research narrative](docs/history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md)
+and still older [F540–F596 chronology](docs/history/RE_HANDOFF_F540_THROUGH_F596.md)
+preserve the original experimental detail without cluttering the first
+screen. Both are **frozen historical sources, not the live backlog**. Git commits preserve local checkpoints; they are
 **not external Oracle acceptance**.
 
 ## Begin a new reconstruction session
@@ -134,9 +149,10 @@ their evidence or verifiers. See [the workflow](docs/RE_WORKFLOW.md).
 | [Build and matching guide](docs/BUILD_MATCHING.md) | Compiler profiles, COFF and cold-replay mechanics |
 | [Ghidra MCP guide](docs/GHIDRA_MCP.md) | Headless project/bridge operation |
 | [Origin review](docs/ORIGIN_PENDING_REVIEW.md) | 95 currently unclassified origins (R263 historical matrix) |
+| [Frozen F598–F652 detailed handoff](docs/history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md) | Full old 1,500-line evidence narrative; **not** current backlog |
 | [Historical detailed F540–F596 handoff](docs/history/RE_HANDOFF_F540_THROUGH_F596.md) | All previous milestone notes; **not** current backlog |
 | [Earlier handoffs](docs/history/RE_HANDOFF_THROUGH_F183.md) | Older archived experiments |
-| [Storage protection and recovery](docs/STORAGE_HYGIENE.md) | Lossless SHA256-verified JSON/PDB archives and F597 archival of 243 old CI logs (≈90.4 MiB reclaimed); protect original PE, VC7.1/Wine, Ghidra, COFF/PDB and current source |
+| [Storage protection and recovery](docs/STORAGE_HYGIENE.md) | Recoverable native evidence, historic PDB/CI logs, and latest **219 old JSON diagnostics → 4 SHA256-verified archives (≈244.66 MiB net reclaimed)**; protect original PE, VC7.1/Wine, Ghidra and current COFF/source |
 
 The pre-cleanup verbose F223 handoff and README are also recoverable from
 Git commit `ca81d72`; older origin work is retained under `docs/history/`,
