@@ -562,13 +562,6 @@ scripts/repo-python scripts/verify-fighter-mode63-f624.py --boss 0x005AEEC0
 
 Never run a full 943-unit cold replay.
 
-**F625 meaningful authored whole-destructor negative evidence**: direct, native-behavior-equivalent resource frees naturally restore **both original delete-temp EBP positions** in the complete `0041CE50` archive destructor (`−0xC/−0x8`) and complete `0043B0B0` virtual EH scene destructor (`−0x14/−0x10`). But direct free eliminates the original pointer-save/reload pair: archive **165/49 source against native 171/51**; scene **230/69 source against native 248/75**. True original COFF references remain 14/12. Reintroducing named saved pointers restores the original whole instruction count but allocates the wrong EBP locals. This is **not** a whole match and cannot earn partial CODE credit; further source work must recover the genuinely original allocation/lifetime graph. [Full-original direct-free and 20+19 additional compiler controls](DESTRUCTOR_DIRECT_FREE_LIFETIME_F625.md):
-
-```bash
-scripts/repo-python scripts/verify-destructor-direct-free-f625.py --which archive
-scripts/repo-python scripts/verify-destructor-direct-free-f625.py --which scene
-```
-
 ## 4. Other three unmatched authored *whole* functions
 
 | Original | Size / native structure | Precise remaining blocker, best source evidence |

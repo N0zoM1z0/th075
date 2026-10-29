@@ -112,6 +112,11 @@ candidate truncates the native function or masks stack displacements.
 
 ## Accounting and bounded commands
 
+Together the two original authored whole destructors contain **419
+original CODE bytes**, none yet exact; this is **not** a 419-byte
+partial credit. The source evidence independently proves correct
+physical delete EBP ownership but not the complete original code.
+
 **F625 adds zero accepted complete original authored game functions
 and zero original accepted CODE bytes.** The official source
 reconstruction ledger stays **943 complete exact functions /
