@@ -1,6 +1,6 @@
 # TH075 — current agent handoff
 
-**Maintained: 2026-10-29, after F574; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
+**Maintained: 2026-10-29, after F575; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
 
 ## 1. Current authoritative state (not historical hypotheses)
 
@@ -328,6 +328,27 @@ reproducer:
 `scripts/repo-python scripts/verify-characterobject-following-actions-f574.py`.
 **The 5,076 inner CODE bytes remain in the still unmatched
 33,293-byte giant** and earn ZERO whole/split exact credit.
+
+**F575 recovers complete original native CharacterObject `0x32D`
+and `0x32E` fade-action C++** inside the same 33,293-byte fighter
+giant `004EBDA0`: **66/229** and **70/282** original
+x86-instruction/CODE-byte lengths, both strict native GPR/x87/CFG
+order matches. The genuine original first action uses scale 0.4f
+and float global 006583F8 plus conditional 20-byte alpha fade;
+the second uses 0.5f, independent global 00659428 and
+unconditional alpha decrement 10 after a `+0xD8==1` gate.
+Original action0x32F maps to **default**, so actual 0x330 native
+physical handler bounds the entire 0x32E case, not the next
+numeric ID. The same newly compiled source now checks **15 full
+native case bodies, 1,506 x86 roles and 113 true typed COFF
+fields**, all 60 jump DWORD labels and 198 exact original sparse
+bytes. Previous F573/F574 independent read-only MOV/FLD swaps
+remain explicitly NONEXACT machine order; these two new actions
+strictly match. Reproduce via
+[F575 native fade C++ study](CHARACTEROBJECT_FADE_ACTIONS_F575.md)
+and `scripts/repo-python scripts/verify-characterobject-fade-actions-f575.py`.
+The **5,587 inner CODE bytes remain part of the still nonexact
+33,293-byte giant**, not independent exact functions.
 
 **Three other authored functions remain nonexact (all require full CODE):**
 

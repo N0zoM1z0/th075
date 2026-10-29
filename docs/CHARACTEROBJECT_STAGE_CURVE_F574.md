@@ -128,3 +128,16 @@ unmatched 33,293-byte giant `004EBDA0`.** Original nominal owner,
 full C++ locals and all later actions remain outstanding; no
 accepted whole/split CODE/DATA credit, all-unit cold replay or
 external Factory/Oracle receipt.
+
+## F575 follow-up: two further genuine native fade case bodies
+
+The tracked natural C++ source now additionally contains actions
+`0x32D` (66 original instructions /229 CODE bytes) and `0x32E`
+(70/282). F574's strict first-thirteen-action verification is
+replayed with this extended source, and the new
+[F575 native source verifier](CHARACTEROBJECT_FADE_ACTIONS_F575.md)
+validates all 15 original physical case bodies. Action0x32F genuinely
+maps to the original default handler, so the next actual 0x330
+handler bounds the native 0x32E whole code body. Both added
+fade cases match strict x86 instruction order. The giant remains
+whole-function nonexact and receives no new exact coverage.

@@ -9396,3 +9396,31 @@ no independent partial function or DATA credit. Verified reproducibly
 by `scripts/repo-python scripts/verify-characterobject-following-actions-f574.py`;
 [full F574 native case study](CHARACTEROBJECT_STAGE_CURVE_F574.md).
 No all-unit replay or external Oracle acceptance.
+
+
+## F575: native CharacterObject fade actions 0x32D and 0x32E
+
+The complete original action `0x32D` in `004EBDA0` is **229 CODE
+bytes/66 native x86 instructions**, implementing the genuine
+stage 0 +0x1C/+0x20=0.4f scale state, sprite id +0x1A=0x4E2,
+position -75.0f, float global `006583F8` fade addition,
+conditional stage>1 byte-alpha decrement 20, and native
+`0045B830`/`0040FA30` game state resets. The following actual
+original `0x32E` body is **282 bytes/70 instructions**:
+initialization is additionally gated by signed +0xD8==1,
+its scale starts at 0.5f, uses a **different** float global
+`00659428` and unconditionally decrements unsigned byte +0x11
+by 10. Original ID `0x32F` maps to the shared default handler:
+**the real next physical case is 0x330**, not a made-up 0x32F
+CODE range. The new true C++ source with 15 complete original
+case bodies now reproduces **1,506 native x86 instruction roles,
+5,587 inner real original CODE bytes and 113/113 genuine typed
+zero-addend COFF references**, all 60 original-style dense jump
+fields, 198 literal compressed map bytes and 438 distinct native
+DATA layout bytes; both new cases strictly match original GPR/
+x87/order/length. F573/F574 two read-only swaps stay explicitly
+not byte-order exact. Detailed [F575 native study](CHARACTEROBJECT_FADE_ACTIONS_F575.md),
+local-only reproducer:
+`scripts/repo-python scripts/verify-characterobject-fade-actions-f575.py`.
+**The giant 33,293-byte original CODE remains NONEXACT**, no
+partial function credit, no all-unit cold replay/Oracle.

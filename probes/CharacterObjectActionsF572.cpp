@@ -1,5 +1,5 @@
-// F572/F573/F574: selected natural VC7.1 source, original PE 004EBDA0.
-// Implements complete original actions 0x320..0x32C in a 33,293-byte
+// F572/F573/F574/F575: selected natural VC7.1 source, original PE 004EBDA0.
+// Implements complete original actions 0x320..0x32E in a 33,293-byte
 // CharacterObject megaboss. All later cases are DIAGNOSTIC marker stores,
 // not restored gameplay; this source is NOT a complete original function,
 // does not earn independent native CODE or after-RET DATA exact credit.
@@ -40,6 +40,8 @@ extern float gDropAt00658058;
 extern float gLiftAt00657CC0;
 extern float gCurveAt0065972C;
 extern float gStepAt00658044;
+extern float gFadeAt006583F8;
+extern float gFadeAt00659428;
 #define I32(off) (*reinterpret_cast<int*>(RAW+(off)))
 #define F32(off) (*reinterpret_cast<float*>(RAW+(off)))
 #define S16(off) (*reinterpret_cast<signed short*>(RAW+(off)))
@@ -457,8 +459,57 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
     }
     break;
 }
-        case 0x32D: g_FighterProbeMarker = 814; break;
-        case 0x32E: g_FighterProbeMarker = 815; break;
+        case 0x32D: {
+    if (S16(0x62) == 0 && S16(0x64) == 0) {
+        ResetStateAt40FBB0(0,0,0);
+        F32(0x1C) = 0.4f;
+        F32(0x20) = 0.4f;
+        U8(0x11) = 0xFF;
+        U8(0x12) = 0xFF;
+        U8(0x13) = 0xFF;
+        U8(0x14) = 0xFF;
+        S16(0x1A) = 0x4E2;
+        F32(0x28) = -75.0f;
+    }
+    F32(0x1C) = F32(0x1C) + gFadeAt006583F8;
+    F32(0x20) = F32(0x20) + gFadeAt006583F8;
+    if (S16(0x62) > 1) {
+        if (U8(0x11) > 20)
+            U8(0x11) -= 20;
+        else {
+            ResetAt45B830();
+            break;
+        }
+    }
+    if (GetStateAt40FA30() == S16(0x70))
+        ResetAt45B830();
+    break;
+}
+        case 0x32E: {
+    if (S16(0x62) == 0 && S16(0x64) == 0 && S16(0xD8) == 1) {
+        S16(0xD8) = 0;
+        ResetStateAt40FBB0(0,0,0);
+        S16(0x80) = 1;
+        I32(0x7C) = 0;
+        F32(0x54) = 0.0f;
+        F32(0x50) = 0.0f;
+        F32(0x1C) = 0.5f;
+        F32(0x20) = 0.5f;
+        U8(0x11) = 0xFF;
+        U8(0x12) = 0xFF;
+        U8(0x13) = 0xFF;
+        U8(0x14) = 0xFF;
+        I32(0x28) = 0;
+        I32(0x2C) = 0;
+        I32(0x30) = 0;
+    }
+    F32(0x1C) = F32(0x1C) + gFadeAt00659428;
+    F32(0x20) = F32(0x20) + gFadeAt00659428;
+    U8(0x11) -= 10;
+    if (GetStateAt40FA30() == S16(0x70))
+        ResetAt45B830();
+    break;
+}
         case 0x330: g_FighterProbeMarker = 817; break;
         case 0x331: g_FighterProbeMarker = 818; break;
         case 0x332: g_FighterProbeMarker = 819; break;
