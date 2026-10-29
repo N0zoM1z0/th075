@@ -11060,3 +11060,34 @@ compiler-stack layout trick. [F632 original full source/PE experiment](DESTRUCTO
 selected `scripts/repo-python scripts/verify-destructor-free-assignment-f632.py --case scene-three-assignment-args`.
 Official 943/862,726 complete authored exact unchanged; no all-unit
 cold replay.
+
+
+## F633: native complete fighter landing timer siblings 0x97/0x98/0x9A across 11 giants
+
+Original pinned Japanese TH075 PE shows three distinct complete
+native sibling case0x97→0x98, case0x98→0x9A, case0x9A→0x9B bodies
+per fighter giant, each natural VC7.1 source-backed under F633:
+**33 original complete interior cases /2,421 native GPR/x87/CFG
+roles /9,378 original uncredited native inner CODE bytes/297 actual
+physically typed PE/COFF global/call fields**. Original source
+height constants are −10f/−13f/−9f, and original **next action
+0/0/2** matters: first naive copy of earlier timer `0x96` wrongly
+emitted action0 for 0x9A even though all x86 geometry/refs matched.
+The corrected natural C++ reproduces true `0x9A` PUSH 2, native
+x87 timer and ground clipping/real game contact, full `FMUL qword
+[006583E8]` reflection, signed short `+0xF00` or `005AEEC0
++0xEFC`, and two opposite real native `+0xF0A` reset orders.
+`00564BE0` has 22 real widened saved `this` EBP−0x88 MOVs per
+342-byte native case; normal compact 276/73 x86 or 288/75 x86.
+All **11 newly compiled whole giant C++ source objects** still pass
+F631 previous 0x96, F629 0x91 when strict, F628 three landing
+cases, native mode63 when strict, F614 thirty earlier cases and
+full separately owned afterRET jump DATA. Original preceding 0x91
+on `004F7130` still 35 native register-role differences, and two
+special 105-x86 sprite 0x91 predecessors still 55 each; none is
+silently accepted. F598–F633 total **423 strict source-backed real
+original game case interiors/113,268 original inner CODE bytes**,
+NOT new fully exact authored whole functions. Official
+943/862,726 exact unchanged; no all-unit cold replay/Oracle.
+[F633 actual PE, typed COFF and C++ case proof](FIGHTER_LANDING_SIBLINGS_F633.md),
+selected `scripts/repo-python scripts/verify-fighter-landing-siblings-f633.py --boss 0x00564BE0`.

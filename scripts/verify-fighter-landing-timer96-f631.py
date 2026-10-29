@@ -205,7 +205,7 @@ def verify_special_previous_91(reader,pe,decoder,boss,mapped,code,refs,inst,case
             'previous_special_case_NOT_source_strict':True}
 
 
-def verify_new_obj(reader,pe,decoder,boss,report,mapped,code,refs,real,info,h):
+def verify_new_obj(reader,pe,decoder,boss,report,mapped,code,refs,real,info,h,extra_sibling_x86=0):
     addr=boss['address'];ins=[]
     for x in decoder.disasm(code,0):
         ins.append(x)
@@ -216,17 +216,23 @@ def verify_new_obj(reader,pe,decoder,boss,report,mapped,code,refs,real,info,h):
          f'{addr:#x}: separately owned original full afterRET switch DATA changed')
     by={x['action']:int(x['handler'],16) for x in mapped}
     count=info['original_complete_x86_instructions']
+    need(extra_sibling_x86 in (0,3*73,3*75),
+         f'{addr:#x}: only actual complete three 73/75-x86 97/98/9A siblings may follow 0x96')
+    wanted=0x98 if extra_sibling_x86==0 else 0x9C
     marker=[]
     for field in refs:
         if 'g_FighterProbeMarker' not in field['symbol']:continue
         x=next((i for i in ins if i.address<=field['offset']<i.address+i.size),None)
-        if x is not None and x.mnemonic=='mov' and x.op_str.endswith(', 0x98'):
+        if x is not None and x.mnemonic=='mov' and x.op_str.endswith(f', 0x{wanted:x}'):
             marker.append(x)
     need(len(marker)==1,f'{addr:#x}: original next source case0x97 marker not unique')
-    idx=ins.index(marker[0]);need(idx>=count,'original 96 source truncated')
-    source=ins[idx-count:idx]
+    idx=ins.index(marker[0]);need(idx>=count+extra_sibling_x86,
+                                 'original 96 source truncated by following sibling cases')
+    source=ins[idx-count-extra_sibling_x86:idx-extra_sibling_x86]
+    actual_next=(ins[idx-extra_sibling_x86].address if extra_sibling_x86
+                 else marker[0].address)
     need(len(source)==len(real)==count
-         and source[-1].address+source[-1].size==marker[0].address
+         and source[-1].address+source[-1].size==actual_next
          and source[-1].mnemonic=='jmp',
          f'{addr:#x}: complete native source 0x96→0x97 physical CFG boundary shifted')
     widths=[x.size-y.size for x,y in zip(real,source)]
@@ -265,14 +271,14 @@ def verify_new_obj(reader,pe,decoder,boss,report,mapped,code,refs,real,info,h):
     if addr not in SPECIAL:
         earlier,meta=h['f629'].real_original(reader,pe,decoder,boss,by)
         h['f629'].verify_case(reader,pe,decoder,boss,report,mapped,code,refs,
-            earlier,meta,h,addr==NEG_ARC,extra_after_0x91=count)
+            earlier,meta,h,addr==NEG_ARC,extra_after_0x91=count+extra_sibling_x86)
         prior_status={'previous_0x91_strict':addr!=NEG_ARC,
                       'original_prior_0x91_GPR_role_mismatches':35 if addr==NEG_ARC else 0}
     else:
         prior={a:h['f628'].native_case(reader,pe,decoder,boss,by,a)
                for a in h['f628'].ACTIONS}
         h['f628'].verify_obj(reader,pe,decoder,boss,report,mapped,code,refs,
-            prior,h,True,extra_followup_x86=105+count)
+            prior,h,True,extra_followup_x86=105+count+extra_sibling_x86)
         prior_status=verify_special_previous_91(reader,pe,decoder,boss,mapped,
                 code,refs,ins,lo,h,count)
     return {'original_whole_boss':f'0x{addr:08X}',

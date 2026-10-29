@@ -1,6 +1,6 @@
 # TH075 — active reconstruction handoff
 
-**Maintained 2026-10-29 after F632.** This is the **only current task list**.
+**Maintained 2026-10-29 after F633.** This is the **only current task list**.
 The [F540–F596 research chronology](history/RE_HANDOFF_F540_THROUGH_F596.md),
 [knowledge base](KNOWLEDGE_BASE.md), and older F-series studies are
 **historical evidence**, not statements of current progress. Independently
@@ -718,6 +718,34 @@ full authored functions or whole-giant exact CODE.
 ```bash
 scripts/repo-python scripts/verify-fighter-landing-timer96-f631.py --boss 0x0058AF60
 scripts/repo-python scripts/verify-fighter-landing-timer96-f631.py --boss 0x00564BE0
+```
+
+**F633 reconstructs original complete native actions `0x97`,
+`0x98`, and `0x9A` in ALL ELEVEN fighter giants**. Three physically
+distinct complete original native cases per parent, with original
+initial float heights −10f/−13f/−9f and real next action destinations
+0/0/**2**, preserving the true extra short `+0xF0A` reset
+**BEFORE** trajectory on native `0058AF60` but **AFTER** on native
+`00543210`. Each new normal VC7.1 C++ enclosing giant source OBJ
+has **all three newly strict 73/75 native GPR/x87/CFG case roles,
+nine authentic typed PE/COFF fields per case**, and rechecks previous
+F631 `0x96`, earlier F629/F630 `0x91` (including real known 35/55
+register-role negatives), F628 three landing cases, native mode63
+when strict, 30 earlier original game cases and entire afterRET
+jump DATA. True wide `00564BE0` original is **342 native bytes** per
+case versus compact 276 from 22 genuine EBP−0x88 wide MOVs;
+`005AEEC0` uses real `+0xEFC` counter. F633 adds **33 strict
+original inner case bodies /2,421 native x86 roles /9,378 native
+internal CODE bytes/297 real typed fields**, all uncredited as
+independent or wholly exact original functions. Cumulative F598–F633
+strict original interior record is **423 cases /113,268 original
+native inner CODE bytes**. Official 943/862,726 authored whole-exact
+still unchanged.
+[F633 original native case/PE/whole-source proof](FIGHTER_LANDING_SIBLINGS_F633.md),
+[ordinary original-shaped C++](../probes/FighterLandingTimerSiblingsF633.inc).
+
+```bash
+scripts/repo-python scripts/verify-fighter-landing-siblings-f633.py --boss 0x0058AF60
 ```
 
 ## 4. Other three unmatched authored *whole* functions
