@@ -116,7 +116,7 @@ def source_with_action(addr,boss,report,mapped,reader,pe,decoder,h,native,info):
     return result
 
 
-def verify_case(reader,pe,decoder,boss,report,mapped,code,refs,n,info,helpers,negative):
+def verify_case(reader,pe,decoder,boss,report,mapped,code,refs,n,info,helpers,negative,extra_after_0x91=0):
     addr=boss['address'];h=helpers
     by={x['action']:int(x['handler'],16) for x in mapped}
     earlier={action:h['f628'].native_case(reader,pe,decoder,boss,by,action)
@@ -124,8 +124,10 @@ def verify_case(reader,pe,decoder,boss,report,mapped,code,refs,n,info,helpers,ne
     # Verify the actual earlier F628 THREE original x87 cases, real
     # strict mode63 predecessor, 30 earlier real game actions and
     # entire afterRET physical jump DATA in this NEW extended OBJ.
+    need(extra_after_0x91 in (0,73,75),
+         f'{addr:#x}: only actual original 73/75-x86 case96 may extend 0x91')
     h['f628'].verify_obj(reader,pe,decoder,boss,report,mapped,code,refs,
-         earlier,helpers,negative,extra_followup_x86=78)
+         earlier,helpers,negative,extra_followup_x86=78+extra_after_0x91)
     inst=[]
     for x in decoder.disasm(code,0):
         inst.append(x)
@@ -138,12 +140,15 @@ def verify_case(reader,pe,decoder,boss,report,mapped,code,refs,n,info,helpers,ne
     for field in refs:
         if 'g_FighterProbeMarker' not in field['symbol']:continue
         target=next((x for x in inst if x.address<=field['offset']<x.address+x.size),None)
-        if target is not None and target.mnemonic=='mov' and target.op_str.endswith(', 0x97'):
+        wanted=0x97 if extra_after_0x91==0 else 0x98
+        if target is not None and target.mnemonic=='mov' and target.op_str.endswith(f', 0x{wanted:x}'):
             refs96.append(target)
     need(len(refs96)==1,f'{addr:#x}: original next case0x96 marker source not uniquely typed')
-    idx=inst.index(refs96[0]);need(idx>=78,'original 0x91 native entire source case truncated')
-    gen=inst[idx-78:idx]
-    need(len(gen)==len(n)==78 and gen[-1].address+gen[-1].size==refs96[0].address
+    idx=inst.index(refs96[0]);need(idx>=78+extra_after_0x91,
+                                    'original 0x91 native entire source case truncated')
+    gen=inst[idx-78-extra_after_0x91:idx-extra_after_0x91]
+    actual_end=(inst[idx-extra_after_0x91].address if extra_after_0x91 else refs96[0].address)
+    need(len(gen)==len(n)==78 and gen[-1].address+gen[-1].size==actual_end
          and gen[-1].mnemonic=='jmp',
          f'{addr:#x}: actual native source 0x91 does not join next source case0x96')
     width=[x.size-y.size for x,y in zip(n,gen)]

@@ -11001,3 +11001,40 @@ inner CODE bytes, no newly accepted authored exact units, official
 943/862,726 unchanged and no full all-unit cold replay.
 [F629 original native case proof](FIGHTER_ARC_ACTION91_F629.md),
 `scripts/repo-python scripts/verify-fighter-arc91-f629.py --boss 0x005AEEC0`.
+
+
+## F630/F631: all eleven original timer action0x96 case interiors fully native GPR/x87/CFG role matched
+
+Pinned Japanese TH075 native case0x96 is **73-x86** in nine fighter
+controllers and **75-x86** in native `00543210`/`0058AF60` due to
+an authentic extra signed-short `this+0xF0A` reset. Crucial original
+PE difference: native `0058AF60` resets it BEFORE native trajectory
+counter `+0xF00`, position −9.0f and velocity reset, while original
+`00543210` resets it AFTER. Ordinary C++
+`probes/FighterLandingTimer96F631.inc` preserves this native ownership
+and source order, real float+0x368 accumulation `FADD [0065747C]`,
+max `FCOMP [006583B4]` clamp to 1000f, actual ground x87 strict
+comparisons, native contact `00454EE0`, double-precision
+`FMUL qword [006583E8]` storing member+0x490 and native action
+`0040FA30/0040FAC0` calls. All **eleven fresh whole giant C++
+source TUs** produce strict original native full 0x96 cases,
+**807 genuine GPR/x87/CFG roles /3,126 uncredited original inner
+CODE bytes /99 physical typed zero-addend PE/COFF targets**.
+Real native wide `00564BE0` has 22 receiver MOVs widened +3B
+(342 native bytes instead of 276 compact); `005AEEC0` has short
+counter +0xEFC. Same new objects reverify previous F628 three
+landing cases, native 0x63 when strict, previous F614 30 native
+case grammars and full separately-owned afterRET DATA, plus F629
+0x91 78-x86 source in eight original actors. Native `004F7130`
+0x91 remains 35 GPR differences. Special previous 105-x86 `0x91`
+actors `0045DD70`,`0058AF60` compile natural
+`probes/FighterArcSpawn91F630.inc` with correct 373 bytes/13 typed
+fields but still **55 real GPR/CFG mismatches per actor**: do not
+credit F630. The original 0x91 spawn side is **1 on both actors**;
+not the different earlier 0x46 side for `0058AF60`. F598–F631
+strict interior source study **390 real action cases /103,890
+original native inner CODE bytes**, not independently callable
+complete exact function credits. Official 943/862,726 whole-authored
+match ledger unchanged; no 943-unit all-unit cold replay.
+[F631 actual PE/native timer and predecessor negative case proof](FIGHTER_LANDING_TIMER_F631.md),
+targeted `scripts/repo-python scripts/verify-fighter-landing-timer96-f631.py --boss 0x0058AF60`.

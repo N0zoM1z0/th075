@@ -185,9 +185,10 @@ def verify_obj(reader,pe,decoder,boss,report,mapped,code,refs,caseinfo,helpers,n
     # 78/105 native 0x91 x86 extent, bounded instead by the actual
     # next case0x96 marker. The prior three 80-x86 8C/8F/90 cases
     # must then be rechecked in the SAME newly compiled full giant.
-    need(extra_followup_x86 in (0,78,105),
-         f'{addr:#x}: only an actual original 78/105-x86 followup may extend this source')
-    next_marker_value=0x92 if extra_followup_x86==0 else 0x97
+    need(extra_followup_x86 in (0,78,105,151,153,178,180),
+         f'{addr:#x}: only genuine 78/105-x86 action91 and 73/75-x86 action96 extensions permitted')
+    next_marker_value=(0x92 if extra_followup_x86==0 else
+                       0x97 if extra_followup_x86 in (78,105) else 0x98)
     refs91=[]
     for field in refs:
         if 'g_FighterProbeMarker' not in field['symbol']:continue

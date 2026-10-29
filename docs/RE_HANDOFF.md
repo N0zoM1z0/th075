@@ -1,6 +1,6 @@
 # TH075 — active reconstruction handoff
 
-**Maintained 2026-10-29 after F629.** This is the **only current task list**.
+**Maintained 2026-10-29 after F631.** This is the **only current task list**.
 The [F540–F596 research chronology](history/RE_HANDOFF_F540_THROUGH_F596.md),
 [knowledge base](KNOWLEDGE_BASE.md), and older F-series studies are
 **historical evidence**, not statements of current progress. Independently
@@ -681,6 +681,43 @@ Official complete authored exact remains 943/862,726.
 ```bash
 scripts/repo-python scripts/verify-fighter-arc91-f629.py --boss 0x005D73C0
 scripts/repo-python scripts/verify-fighter-arc91-f629.py --negative-actor
+```
+
+**F630/F631 restore native complete action0x96 in ALL ELEVEN huge
+fighter sources**, with a genuine **73-x86** timer/ground/contact
+physics case in nine original actors and **75-x86** in original
+`00543210`/`0058AF60` with extra signed-short `+0xF0A` reset.
+The PE proves opposite real order: **0058AF60 BEFORE** the trajectory
+counter/position, **00543210 AFTER** those stores. Natural VC7.1
+C++ matches **all 807 native GPR/x87/CFG instruction roles,
+3,126 original internal CODE bytes and 99 authentic zero-addend
+physical PE/COFF refs** in 11 new selected whole-giant source
+objects, including wide `00564BE0` native 342-byte 22-MOV expanded
+frame, signed native `+0xEFC` counter for `005AEEC0`, genuine float
+`0065747C/006583B4` animation cap, true double `FMUL qword
+[006583E8]` reflection and native game calls. Each new C++ OBJ
+independently rechecks **previous F628 landing three cases, native
+0x63 when strict, prior 30 game-case grammars and all afterRET
+packed DATA**. Eight previous F629 original 78-x86 0x91 cases
+remain strict in these same new parent sources. Original `004F7130`
+prior0x91 still has 35 native GPR mismatches. Actual two other
+previous original F630 0x91 **105-x86/373 B** source grammars have
+**13 physical PE/COFF sprite/CRT/game fields** but **55 native
+register-role differences each**, and are NOT claimed strict; the
+real two 0x91 projectile spawns each use original side **1** (sprite
+`0x3B7`/`0x3E7`) rather than borrowing the earlier 0x46 side.
+F631 adds **11 strict original internal case bodies /807 native
+x86 roles/3,126 native inner CODE bytes/99 real targets**.
+F598–F631 cumulative **390 strict internal original action subranges
+/103,890 original native inner CODE bytes**, zero newly accepted
+full authored functions or whole-giant exact CODE.
+[F631 original true timer/byte-field/PE proof](FIGHTER_LANDING_TIMER_F631.md),
+[ordinary timer C++](../probes/FighterLandingTimer96F631.inc),
+[special earlier sprite negative C++](../probes/FighterArcSpawn91F630.inc).
+
+```bash
+scripts/repo-python scripts/verify-fighter-landing-timer96-f631.py --boss 0x0058AF60
+scripts/repo-python scripts/verify-fighter-landing-timer96-f631.py --boss 0x00564BE0
 ```
 
 ## 4. Other three unmatched authored *whole* functions
