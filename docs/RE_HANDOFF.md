@@ -1,6 +1,6 @@
 # TH075 — current agent handoff
 
-**Maintained: 2026-10-29, after F576; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
+**Maintained: 2026-10-29, after F577; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
 
 ## 1. Current authoritative state (not historical hypotheses)
 
@@ -369,6 +369,29 @@ explicit, and both new actions have only explained stack encoding
 width differences; no complete giant/source exactness credit.
 See [F576 native fire-state source proof](CHARACTEROBJECT_FIRE_STATES_F576.md)
 and `scripts/repo-python scripts/verify-characterobject-fire-actions-f576.py`.
+
+**F577 newly reconstructs original native signed-byte direction
+reversal action `0x332`** in the same CharacterObject giant `004EBDA0`
+(33,293 complete original CODE bytes). The real physically bounded
+`0x332` handler ends at `0x335`, since `0x333`/`0x334` are default
+entries. Its full **279 native x86 instructions /1,019 CODE bytes**
+are compiled into 279 instructions /1,013 bytes with the actual
+stage-1 `S8(+0x66) = -S8(+0x66)` negation, native stage-zero
+(+6.0f,+4.5f) motion and `0x322` effect-spawn ID. The only
+length differences are native `EBP−0x9C` MOV/FILD operations
+(+3 bytes each), never padded C++. A new one-TU C++ proof has
+**18 real complete inner game-action bodies, 2,333 original x86
+instruction roles, 161 true typed COFF fields and 8,612 actual
+inner original CODE bytes**, plus all 60 native physical handler
+COFF DWORD fields and 198 identical compressed index bytes.
+Previous F573/F574 read-only instruction-order swaps remain
+explicitly bounded. See
+[F577 original direction-reversal source](CHARACTEROBJECT_DIRECTION_REVERSAL_F577.md)
+and targeted verifier
+`scripts/repo-python scripts/verify-characterobject-direction-reversal-f577.py`.
+**The whole 33,293-byte original giant remains CODE nonexact**;
+all inner CODE bytes are still part of that one unmatched whole
+function and earn no independently exact coverage.
 
 **Three other authored functions remain nonexact (all require full CODE):**
 

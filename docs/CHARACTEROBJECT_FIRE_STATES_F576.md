@@ -120,3 +120,14 @@ CODE bytes remain unaccepted**; the 7,593 inner native bytes are not
 17 separately exact functions and the other game-action bodies are
 not yet source-recovered. No all-unit cold replay or external Oracle
 acceptance receipt.
+
+## F577 follow-up: genuine native 0x332 facing reversal
+
+The same tracked ordinary C++ source has now gained one further
+complete **279-instruction /1,019-byte native game-action `0x332`**
+with original stage1 signed byte reversal and two +3 byte native
+EBP temporary width expansions. F576's verifier remains strictly
+scoped to the prior 17 native action cases and rechecks all of them
+under the newer source. The new [F577 direction-reversal study](CHARACTEROBJECT_DIRECTION_REVERSAL_F577.md)
+independently verifies the additional 0x332 source, retaining the
+still-unmatched whole 33,293-byte original giant accounting.

@@ -9454,3 +9454,30 @@ No complete whole `004EBDA0` original CODE credit, no cold all-unit
 replay, no external Oracle. Reproducer:
 `scripts/repo-python scripts/verify-characterobject-fire-actions-f576.py`;
 [F576 original fire-state reconstruction](CHARACTEROBJECT_FIRE_STATES_F576.md).
+
+
+## F577: original CharacterObject signed facing reversal in action0x332
+
+The complete Japanese original `004EBDA0` giant source has a new
+nondefault handler action `0x332` **279 native instructions /
+1,019 original CODE bytes**; the next physical game-action target
+is `0x335` since original `0x333/0x334` map to shared default.
+The real game behavior differs from earlier `0x330/0x331`: stage0
+float position +6.0f, velocity +4.5f, stage1 signed direction
+`S8(+0x66)=-S8(+0x66)` producing five new real x86
+MOVSX/NEG/MOV roles, and parent effect spawn `0x322`. Fresh one-TU
+VC7.1 C++ source naturally reproduces all **279 native x86
+GPR/x87/CFG instructions** but only 1,013 bytes: the original
+integer-FPU temporary `EBP−0x9C` loads at native ordinals 97/98
+need disp32 (+6 genuine original width bytes) versus the isolated
+source's compact `EBP−0x80` disp8. Sixteen true physical COFF
+call/float fields are independently typed and original-PE-backed.
+In the same C++ function, F572–F577 now verifies **18 complete
+native inner game-action cases, 2,333 original x86 roles, 8,612
+original inner CODE bytes and 161 typed physical COFF fields**,
+all 60 original DWORD sparse handlers and 198 byte-identical map
+bytes; 438 original after-RET DATA bytes stay separate. The entire
+33,293-byte giant is not exact; no split original CODE credit,
+all-unit cold replay or Oracle receipt. Full study:
+[F577 direction reversal](CHARACTEROBJECT_DIRECTION_REVERSAL_F577.md),
+reproducer `scripts/repo-python scripts/verify-characterobject-direction-reversal-f577.py`.

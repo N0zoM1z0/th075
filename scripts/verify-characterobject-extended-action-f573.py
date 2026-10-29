@@ -65,7 +65,7 @@ def candidate_object():
     OUT.mkdir(parents=True,exist_ok=True)
     src=SOURCE.read_text()
     need('F572/F573' in src and src.count('case 0x32A: {')==1
-         and 'case 0x332: g_FighterProbeMarker = 819; break;' in src,
+         and 'case 0x335: g_FighterProbeMarker = 822; break;' in src,
          'must retain original source and diagnostic marker on unmodeled next action')
     need(src.count('if (*(&F32(0xC8)) == gCompareAt')==6,
          'six true independent x87 equality-condition source expressions changed')
