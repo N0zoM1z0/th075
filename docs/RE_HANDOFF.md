@@ -594,6 +594,28 @@ scripts/repo-python scripts/verify-fighter-mode63-basic-f626.py --negative-actor
 
 Never run a full 943-unit cold replay.
 
+**F626** recovers the authentic **109-x86 native `0x63` action** inside
+**five further giant fighters**. Each newly compiled original-shaped
+entire C++ `Advance()` TU contains a strict **109/109 native
+GPR/x87/CFG/width case**, 417 original inner CODE bytes and 7 genuine
+PE/COFF fields, with all previous **30** source-backed game cases and
+complete packed afterRET DATA rechecked on the same new OBJ. The real
+0x63 packed slot25 is followed by common DEFAULT at slot26, but the
+next actual native game CODE handler is 0x8C/0x89, not that default.
+No speculative F624 special 0x370 bonus source branch was reused.
+Other 109-x86 original `004F7130` and `0058AF60` remain **67 native
+GPR/CFG role mismatches each** and were independently rebuilt as
+negative controls. **F626 adds 5 strict internal case bodies/545 native
+x86 roles/2,085 uncredited original inner CODE bytes/35 typed fields.**
+F598–F626 total strict study **346 original interior cases/90,699
+native inner CODE bytes**, still NO new fully exact giant function or
+authored match-unit credit. [F626 original native source and negatives](FIGHTER_MODE63_REGULAR_F626.md),
+[ordinary C++](../probes/FighterMode63BasicF626.inc).
+
+```bash
+scripts/repo-python scripts/verify-fighter-mode63-basic-f626.py --boss 0x004AC040
+```
+
 ## 4. Other three unmatched authored *whole* functions
 
 | Original | Size / native structure | Precise remaining blocker, best source evidence |
