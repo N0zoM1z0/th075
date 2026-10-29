@@ -60435,3 +60435,13 @@ offset = 101
 type = "DIR32"
 symbol = "?g_CombatOutputYAt0067142C@@3MA"
 target = 0x0067142C
+
+[units.font-surface-shift-jis-lead-byte-0041ca30]
+source = "src/FontLeadByteF555.cpp"
+object = "build/matching/FontLeadByteF555.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["FontSurface::IsDoubleByteAt0041CA30"]
+symbol = "?IsDoubleByte@PackedFontUnitF293@@QAE_ND@Z"
+target_address = 0x0041CA30
+size = 77
+relocations = []

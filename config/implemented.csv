@@ -940,3 +940,4 @@ NameEntryScene::DrawDecimalGlyphLabelAt0042B110
 ResultScene::DrawRankLabelAt00431890
 GameProgress::IncrementSelectedRecordAt00425130
 CombatCoordinateView::MapWorldToScreenAt00455770
+FontSurface::IsDoubleByteAt0041CA30

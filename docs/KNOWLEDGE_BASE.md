@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — cumulative historical evidence
 
-**Current snapshot: 2026-10-29, after F536.** This document is a
+**Current snapshot: 2026-10-29, after F555.** This document is a
 **chronological experiment log**, not the active backlog. Earlier F-series
 sections describe *historical* status; older claims such as "still pending",
 "nonexact", or "no credit" are **not active status** after a later exact
@@ -9,13 +9,13 @@ Japanese `resources/th075.exe`, and canonical live ledgers outrank old prose.
 
 ## Current authoritative status and superseded negatives
 
-- **942 cold-exact source-present functions**, **862,649 original authored
+- **943 cold-exact source-present functions**, **862,726 original authored
   CODE bytes**, **43.71% reviewed authored coverage** and **43.63%
   conservative coverage**. **Only 25 `owner=authored,status=unclassified`
   function rows currently remain:** 22 giant fighter action/advance bosses
   totalling 1,102,055 original CODE bytes, WinMain (2,987), SceneObject
   destructor (248), and ArchiveCatalog nonvirtual destructor (171).
-  All remain nonexact. 96 separate origin-pending candidate rows / 3,497
+  All remain nonexact. 95 separate origin-pending candidate rows / 3,420
   bytes are not automatically credited. These figures are a snapshot;
   refresh with `scripts/repo-python scripts/report-reconstruction-status.py --summary`.
 - The historical **F339-era snapshot was 645 exact /813,859 bytes /
@@ -45,7 +45,7 @@ Japanese `resources/th075.exe`, and canonical live ledgers outrank old prose.
   MusicRoom catalog boss and 1,722-byte F294 Effects catalog boss
   are also accepted at their *original complete CODE extents*;
   independently compared jump tables do not add CODE credit.
-- All 96 origin-pending functions / 3,497 bytes remain outside authored accepted CODE until independently reviewed.
+- All 95 origin-pending functions / 3,420 bytes remain outside authored accepted CODE until independently reviewed.
   Do **not** infer full source class definitions from borrowed native
   call boundaries, or count Win32/CRT/VC7 helper code. Cold-replay
   **only new or affected units**, never the entire set.
@@ -8893,3 +8893,30 @@ inside the 153,511-byte unmatched original giant functions. See
 [F553 whole-native action-eight study](FIGHTER_ACTIONEIGHT_NATIVE_CPP.md)
 and `scripts/repo-python scripts/verify-fighter-action-eight-natural-source.py`.
 No new exact CODE/DATA, all-unit replay or external Oracle acceptance.
+
+
+## F555: corrected original-only font classifier provenance, full cold-exact code
+
+The historical R183 frozen original-PE evidence had retained `0041CA30`
+(77 CODE, 28 x86 instructions) as *origin unknown*, since both standalone
+and member C++ policy observers were 77-byte matches. F555 independently
+re-reviewed the **real sole original caller** `0041C9D0`, itself 85-byte
+previously exact authored game FontSurface text decoding, and its genuine
+`REL32` call to `0041CA30`. Unlike the SDK `_ismbblead` table macro, this
+original byte helper uses **hard-coded Shift-JIS ranges** 0x81..0x9F and
+0xE0..0xFE, with no actual external COFF relocations. The full native
+77-byte original SHA256 is
+`ced8af85dcbe5d3260f506a47ab810905d7d2d7fb9cb9d9ca1f623bb4c020655`.
+Probable **game-authored** local text policy is now inferred, while the
+original exact class/source ownership and possible vendor derivation are
+explicitly unresolved. All historical R183 immutable controls/unknown
+snapshots are retained as historical evidence, not silently rewritten.
+
+`src/FontLeadByteF555.cpp` uses genuine member ABI already borrowed in the
+accepted F293 parent, and pinned VC7.1 /Od compilation naturally emits all
+**77/77 complete native bytes**, no relocation fields. Its affected-only
+cold replay `--unit font-surface-shift-jis-lead-byte-0041ca30` returned
+**1/1 exact**. Current origin review decreases from 96 to 95 functions;
+full authored exact accepted units increase from 942 to 943 and CODE from
+862,649 to 862,726. No partial code, fake data, all-unit replay or external
+Oracle receipt. See [F555 original-provenance review](FONT_SHIFTJIS_LEAD_BYTE_F555.md).

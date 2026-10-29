@@ -4,7 +4,13 @@
 retained as original research evidence, not the live 2026-10-29 inventory.
 F536 subsequently classified and cold-exactly reconstructed `00455770`
 (111 CODE bytes) on independent game-coordinate/x87/physical COFF evidence.
-The current live pending set is **96 functions /3,497 bytes**; use
+F555 independently identified the 77-byte game-local Shift-JIS lead-byte
+classifier `0041CA30` via the only native caller, true hard-coded ranges,
+and fresh 1/1 77-byte cold exact source compilation. The historical R183
+unknown-provenance row in the R263 matrix remains as original negative
+source evidence, not as a current pending classification. Original source
+owner/type naming and possible vendored origin remain *provisional*.
+The current live pending set is **95 functions /3,420 bytes**; use
 `config/function-origins.csv` for the authoritative classification and
 `docs/RE_HANDOFF.md` for the current task list. Do not interpret the
 `00455770` row in this historical matrix as still pending.

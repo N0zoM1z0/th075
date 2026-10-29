@@ -31,7 +31,7 @@ Do not re-import the existing Ghidra project or reset unpushed Git progress.
 
 Pick a real authored candidate from `config/functions.csv`, then cross-check
 its `config/function-origins.csv` classification against native control flow
-and library/compiler origin evidence. The 96 origin-unknown functions remain
+and library/compiler origin evidence. The 95 origin-unknown functions remain
 **uncredited**. A correct name or structural match does not prove authored
 ownership.
 
