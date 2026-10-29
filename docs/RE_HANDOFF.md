@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F673; earlier frozen handoffs are archived.**
+**Maintained 2026-10-30, after F674; earlier frozen handoffs are archived.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -82,31 +82,33 @@ scripts/repo-python scripts/verify-characterobject-typed-member-f635.py --case 3
 The 22 original giant CODE owners remain authored NONEXACT. The main
 case-source subcohort has **11 real multi-switch giant fighters**,
 with real per-actor native differences and a full afterRET sparse/
-dense dispatch shape. F598–F673 compiler-backed original research
-proves **594 strict original *internal action case bodies* /
-160,781 original native internal CODE bytes**. These do **NOT** mean
-594 additional independently callable exact functions or credited
+dense dispatch shape. F598–F674 compiler-backed original research
+proves **595 strict original *internal action case bodies* /
+161,569 original native internal CODE bytes**. These do **NOT** mean
+595 additional independently callable exact functions or credited
 whole function bytes; each parent remains nonexact. Case interior
 source must always be compiled in the **fresh complete original
 parent C++ translation unit** and its preceding cases + entire jump
 DATA rechecked. [Full original dispatch fingerprint JSON](../config/fighter-boss-dispatch-fingerprints.json),
 [original fighter family dispatch](FIGHTER_BOSS_FAMILY_DISPATCH.md).
 
-**Latest strict path:** native `00543210` now has **26 context-strict
-original inner cases /2,048 real x86 /7,079 genuine original
-internal CODE B /187 real typed PE/COFF fields**, all rechecked in
-one freshly compiled complete original-shaped parent. The newly
-strict **`0x2BC` 692-byte/208-x86/20-field ground-wave handler**
-includes actual two-projectile stage changes, original x87 contact,
-10/14-stage gravity/landing branches and genuine short counter
-actions. It also retains all **25 earlier strict case interiors**,
-old 186/18A/18B/258 EBP negative controls and complete independent
-afterRET switch DATA. [Newest F673 physical native source proof](FIGHTER_GROUND_WAVE_F673.md).
-F668/F669 earlier proved the six consecutive original 252–257
-handlers (403 x86/1,416 CODE B/35 typed fields). Original `0x259`
-through `0x25D` remain unresolved source placeholders in this selected
-context, not whole-exact claims; restoring earlier source can change
-later compiler register phase as independently shown in F666.
+**Latest strict path:** native `00543210` now has **27 context-strict
+original native cases /2,272 real x86 /7,867 genuine original
+internal CODE B /207 original typed PE/COFF fields**, all rechecked
+in one new complete original-shaped parent. The new **`0x2EF`
+788-byte/224-x86/20-field cloud-rain handler** matches all real
+original register/x87/CFG/byte widths and native calls including
+the true signed-byte global `006714D0` and five-byte shared-exit
+jump. Its original compiler jump length was restored **naturally** by
+adding true terminal native action `0x31C` source (63 x86/219 B/7
+real calls), which itself stays **NONSTRICT from 36 GPR phase errors**.
+All **26 preceding strict cases**, four native EBP-negative controls,
+and the complete afterRET DATA remained verified in the **same new
+parent**. [Newest F674 true physical source proof](FIGHTER_CLOUD_RAIN_F674.md).
+F673 earlier added `2BC` (208 x86/692 original CODE B/20 real fields).
+Original actions `259`–`25D` remain source placeholders in this chosen
+compiler context. F666 already proved that restoring earlier source
+can shift later registers; never claim 58KB whole-parent exactness.
 **F671 next difficult original:** complete physical action258
 (**134 authentic x86 /502 real original inner CODE B /12 physical
 typed PE/COFF fields**) has a newly compiled ordinary C++
@@ -186,7 +188,9 @@ F646 `0xD0` remains nonstrict in other original actors due to
 explicitly distinguishes the 3 strict parent contexts.
 
 ```bash
-# NEW whole selected giant: strict full 2BC original ground wave:
+# NEW selected whole giant: strict 2EF cloud-rain and real 31C negative:
+scripts/repo-python scripts/verify-fighter-cloud-rain-f674.py
+# Earlier whole giant: strict original full 2BC ground wave:
 scripts/repo-python scripts/verify-fighter-ground-wave-f673.py
 # Previous full parent: 258 four-shot source, honest EBP negative:
 scripts/repo-python scripts/verify-fighter-four-shot-barrage-f671.py

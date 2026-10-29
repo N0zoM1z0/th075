@@ -11991,3 +11991,31 @@ authored accepted whole-function ledger still **943/862,726 CODE B**.
 [F673 entire parent physical proof](FIGHTER_GROUND_WAVE_F673.md),
 `scripts/repo-python scripts/verify-fighter-ground-wave-f673.py`.
 No full 943-unit replay or whole giant acceptance.
+
+
+## F674: strict original large 2EF rain handler via real native terminal-source context
+
+A new pinned VC7.1 **entire selected 00543210 fighter parent** strictly
+matches original physical native action **2EF: 224 real x86 /788
+original CODE bytes /20 genuine typed PE/COFF fields**, including
+genuine original zero-addend DIR32 signed byte global 006714D0,
+true x87 cloud gravity/three projectile shots and original animation,
+random bound query/store and repeated short stage counters. The
+initial normal C++ produced a **short two-byte tail JMP** although
+the original physical shared exit requires **five bytes**. Replacing
+a later source placeholder with **real original native terminal action
+31C source** (63 true original x86 /219 real B/7 original typed REL32
+calls) makes the original far exit naturally five bytes and fully
+restores 2EF original x86/CFG/width roles. This physical terminal 31C
+is explicitly **NONSTRICT**, with 36 true original GPR phase differences
+and zero strict credit; it is meaningful source, never artificial
+padding. The same new whole-parent object rechecks **all 26 earlier
+strict original inner cases**, 186/18A/18B/258 scratch negatives and
+complete original afterRET switch DATA. The selected giant now has
+**27 context-strict inner cases /2,272 x86 /7,867 original CODE B /
+207 real native PE/COFF fields**, but still NONEXACT as a whole.
+Research total F598–F674 **595 strict original inner cases /161,569
+uncredited original CODE bytes**, whole-authored 943/862,726 unchanged.
+[F674 native x86 and true COFF proof](FIGHTER_CLOUD_RAIN_F674.md),
+`scripts/repo-python scripts/verify-fighter-cloud-rain-f674.py`.
+No whole 943-unit replay.
