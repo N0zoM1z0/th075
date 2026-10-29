@@ -9620,3 +9620,36 @@ rules out trivial filename type/scope as the original slot-order
 cause, not a standalone exact achievement. Detailed ignored
 C++/OBJ/COFF evidence: `.analysis/f581-archive-expr-order/`.
 No all-unit replay or external Oracle receipt.
+
+
+## F582: absolute-motion native cases0x340/341 with strict C++ x87 order
+
+Original `004EBDA0` CharacterObject giant has two next genuine
+**159-instruction /597 original CODE-byte** action cases `0x340`
+and `0x341`, each with **13 physical COFF typed call/global
+refs**. They both implement authentic signed parent direction ×90,
+parent `+0x44` minus opponent's `+0x44`, original cdecl float
+`00412D90` absolute-value return, FMUL real float 00659724,
+clamp threshold 00657D14, native velocity deceleration 00657480
+and stage<2 contact threshold 0065782C. Real action0x340
+spawns original effects 0x338/0x33A with parent callback
+00453D40(8), action0x341 uses 0x342/0x344 and
+00453D40(10); each switches to native action0x33B on collision.
+Normal VC7.1 source real `*(&PF32(+0x44))` lvalue preloads parent
+before signed direction FILD; real `*(&F32(+0x48)) +
+*(&F32(+0x54))` produces the exact original MOV/MOV/FLD/FADD
+order instead of an independently reordered FLD. Thirteen alternative
+C++ expression forms were compiled and checked without machine
+patching, artificial padding or fake original stack locals.
+
+Both new complete case bodies match native exact instruction grammar
+plus 26 actual typed zero-addend COFF relocations. F572–F582's
+same natural C++ now implements **29 real original case bodies,
+3,762 authentic original x86 roles /13,959 internal CODE bytes /
+266 real physical COFF fields**, original 60 physical dense switch
+DWORD refs and 198 literal compressed index bytes plus 438 after-RET
+DATA-layout bytes. The 33,293-byte original complete giant still
+NOT exact and no internal case earns independent credit.
+[F582 original source study](CHARACTEROBJECT_ABSOLUTE_MOTION_F582.md),
+reproducer `scripts/repo-python scripts/verify-characterobject-abs-motion-f582.py`.
+No all-unit cold replay or external Oracle acceptance.

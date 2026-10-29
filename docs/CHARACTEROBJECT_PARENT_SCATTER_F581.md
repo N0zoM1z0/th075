@@ -124,3 +124,15 @@ under ignored `.analysis/f581-archive-expr-order/`.
 
 **This F581 study changes no accepted whole CODE or DATA, has no
 full all-unit cold replay and has no external Oracle receipt.**
+
+## F582 follow-up: native absolute-motion action 0x340 and 0x341
+
+The same ordinary VC7.1 switch source has gained two genuinely
+reconstructed **159-instruction/597-byte** original action bodies,
+including real original cdecl float absolute-value `00412D90`,
+parent direction and distinct effects 0x338/0x33A vs 0x342/0x344.
+The F581 targeted source verifier remains scoped to its prior 27
+native actions; [F582 source evidence](CHARACTEROBJECT_ABSOLUTE_MOTION_F582.md)
+checks all 29 complete real action bodies with strict physical COFF
+fields and no extra read-only ordering exceptions. Whole giant CODE
+remains nonexact.

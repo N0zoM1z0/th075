@@ -1,6 +1,6 @@
 # TH075 — current agent handoff
 
-**Maintained: 2026-10-29, after F581; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
+**Maintained: 2026-10-29, after F582; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
 
 ## 1. Current authoritative state (not historical hypotheses)
 
@@ -492,6 +492,32 @@ See [F581 native parent scatter plus small destructor check](CHARACTEROBJECT_PAR
 and targeted source verifier
 `scripts/repo-python scripts/verify-characterobject-parent-scatter-f581.py`.
 No all-unit cold replay or external Oracle.
+
+**F582 now reconstructs two more complete native CharacterObject
+absolute-motion cases**, original `0x340` and `0x341` inside giant
+`004EBDA0`. Each entire physical native case is **159 x86
+instructions / 597 original CODE bytes**, with real parent direction
+×90, original cdecl float `00412D90` and original FMUL 00659724,
+contact threshold/velocity and two distinct 00453A70 effect IDs:
+0x338+0x33A / 0x342+0x344, with native parent 00453D40(8/10).
+Natural C++ parent and collision **real lvalue reference
+expressions** reproduce exact original register/load/x87 branch
+order, verified in alternative compiler experiments. **Both newly
+compiled full source cases pass strict GPR/x87/branch/instruction
+length geometry and 13+13 authentic typed zero-addend physical
+COFF references**, no new source-order exceptions.
+
+In the same one-TU VC7.1 diagnostic C++ source there are now
+**29 complete original action bodies, 3,762 original native x86
+instruction roles, 13,959 original inner CODE bytes and 266 genuine
+typed COFF call/global references**, plus all original 60 dense
+DWORD switch COFF fields and 198 exact compressed-index bytes.
+The 33,293-byte *whole* giant is NONEXACT and these inner bodies
+are never credited as exact standalone functions. See
+[F582 full native absolute-motion source study](CHARACTEROBJECT_ABSOLUTE_MOTION_F582.md)
+and targeted
+`scripts/repo-python scripts/verify-characterobject-abs-motion-f582.py`.
+No all-unit cold replay or Oracle receipt.
 
 **Three other authored functions remain nonexact (all require full CODE):**
 
