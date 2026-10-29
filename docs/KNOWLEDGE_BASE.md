@@ -10616,3 +10616,33 @@ F598–F613 cumulatively documents **319 native action interiors/
 parents NONEXACT, no accepted whole-function authored CODE or full cold
 replay. [F613 genuine source/PE proof](FIGHTER_TRAJECTORY_RECOVERY_F613.md),
 selected `scripts/repo-python scripts/verify-fighter-trajectory-recovery-f613.py --boss 0x004F7130`.
+
+
+## F614: original 10-projectile native action0x58 in eleven whole giant fighters
+
+Original Japanese TH075 native packed second switch action0x58 is a
+complete **135-x86** 469-byte internal case in eight regular giants,
+a genuinely widened 580-byte/135-x86 case in native `00564BE0`
+(37 real EBP−0x88 receiver MOVs), and **154-x86/539-byte** inner
+case in special `0045DD70` and `0058AF60` (true native additional
+stage-one `+0xF0C` guarded 0x3B7/0x3E7 sprite spawn).
+All eleven source cases build from ordinary pinned VC7.1 C++, with
+actual signed loop counter at EBP−4 for **10 x 0x3E4 sprite calls**,
+plus conditional `+0xEFA >25` bonus `0x3E3` call, original float
+velocity projections and two exact native float-equality `FUCOMPP`
+status checks, real source `*(&POS)` lvalue and physical `0x58`/`0x59`
+packed handler slots. Original **17 or 18 genuine PE-targeted COFF
+fields per case** are individually checked, including both real typed
+`FLD [0065782C]` refs before normalizing source unlinked immediates.
+F614 adds **11 real inner source cases /1,523 original x86 roles /
+5,410 uncredited original inner CODE bytes /189 true COFF fields**,
+retaining all **29 earlier native game cases and afterRET DATA** in
+freshly compiled whole-parent source objects. A preliminary probe
+harness wrongly set the special-stage macro to zero because of a
+Python single-line `if` suite; checking original source compiler
+output revealed and fixed this before strict acceptance.
+F598–F614 total: **330 real native case interiors /84,787 source-backed
+original internal CODE bytes**, still NO whole-giant exact credit,
+no all-unit cold replay/Oracle acceptance. [F614 source and real PE
+case evidence](FIGHTER_TRAJECTORY_BURST_F614.md),
+selected `scripts/repo-python scripts/verify-fighter-trajectory-burst-f614.py --boss 0x0045DD70`.

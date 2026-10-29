@@ -1,6 +1,6 @@
 # TH075 — active reconstruction handoff
 
-**Maintained 2026-10-29 after F613.** This is the **only current task list**.
+**Maintained 2026-10-29 after F614.** This is the **only current task list**.
 The [F540–F596 research chronology](history/RE_HANDOFF_F540_THROUGH_F596.md),
 [knowledge base](KNOWLEDGE_BASE.md), and older F-series studies are
 **historical evidence**, not statements of current progress. Independently
@@ -409,6 +409,33 @@ Official whole accepted 943/862,726 unchanged.
 
 ```bash
 scripts/repo-python scripts/verify-fighter-trajectory-recovery-f613.py --boss 0x004F7130
+```
+
+**F614 restores native action `0x58` in all ELEVEN giant fighters**.
+The genuine packed second switch jumps from case0x58 dense slot17 to
+case0x59 slot18. The complete original action contains a real **ten
+projectile 0x3E4 loop**, conditional bonus `0x3E3` if signed-short
+`+0xEFA >25`, and two original x87 `FUCOMPP` checks. Nine
+original fighters use **135 x86 instructions** (eight normal
+469-byte cases, real wide `00564BE0` 580 bytes/37 widened receiver
+MOVs); `0045DD70` and `0058AF60` use **154 x86/539 bytes** with a
+real additional `+0xF0C` once-only stage-one projectile `0x3B7`/
+`0x3E7`. F614 adds **11 complete native internal cases /1,523
+original x86 roles /5,410 uncredited original CODE bytes /189 actual
+typed PE/COFF fields**. Every new giant source is independently
+VC7.1 cold-compiled, retaining all prior **29 native game case
+bodies and original afterRET packed DATA**. A reused variable in the
+preliminary experimental harness initially omitted the special
+branch; the actual source/PE recheck caught and corrected that
+control-flow-source mistake before strict verification. F598–F614
+cumulative: **330 original real game case interiors /84,787 native
+internal CODE bytes**, not accepted whole-function CODE. All giant
+parents remain NONEXACT; official 943/862,726 unchanged.
+[F614 real original ten-burst and ABI source](FIGHTER_TRAJECTORY_BURST_F614.md),
+[natural C++](../probes/FighterTrajectoryBurst58F614.inc).
+
+```bash
+scripts/repo-python scripts/verify-fighter-trajectory-burst-f614.py --boss 0x0045DD70
 ```
 
 Never run a full 943-unit cold replay.
