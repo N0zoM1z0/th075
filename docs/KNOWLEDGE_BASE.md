@@ -12290,3 +12290,32 @@ exact still 943/862,726 CODE B. [F686 whole original native PE/
 COFF link proof](SDK_NATIVE_VTABLE_DESTRUCTOR_F686.md),
 `scripts/repo-python scripts/verify-sdk-native-vtable-destructor-f686.py`.
 No all-unit cold replay.
+
+
+## F687: two entire original optimized native COM/resource owner destructors
+
+Genuine original native functions `00608D8E` (**58 B/22 x86/4
+true zero-addend PE/COFF fields**) and `00608F96` (**64 B/27
+x86/one actual native vtable field**) compile together under
+pinned VC7.1 `/O1` from one ordinary C++ TU into **122/122
+whole PE-linked original machine CODE bytes /49 original x86 /
+five genuine typed fields**. The first uses authentic pointer+0x48
+resource reset/destroy calls `0061F42F`/`0061F452`, original
+vtable `0065D348`, imported free IAT `0065704C`, and raw virtual
+stdcall release slot `+8`. The second uses original vtable
+`0065D374`, two genuinely conditional stdcall COM handles at
+`this+0x14/+0x10` through virtual **vtable offset +0xE0** and the
+same original virtual `+8` release. A first C++ trial using
+**noninlined static wrappers** had wrong tailcalls/sizes; directly
+expressing the observed actual vtable function-pointer invocation
+in native destructor code recovers complete original bytes without
+inventing 57 virtual member declarations or fake class layout.
+One genuine registered native direct caller each is currently
+compiler classified, but no historical SDK class/author identity
+is inferred. F595–F687 historical source-unknown whole cohort now
+**84 distinct complete originals /1,700 real CODE bytes**,
+all uncredited and all 95 origin-unknown candidates still pending;
+formal authored whole exact stays 943/862,726 CODE B.
+[F687 full original native PE/COFF proof](SDK_NATIVE_COM_OWNER_DESTRUCTORS_F687.md),
+`scripts/repo-python scripts/verify-sdk-native-com-owner-destructors-f687.py`.
+No mass replay.

@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F686; earlier frozen handoffs are archived.**
+**Maintained 2026-10-30, after F687; earlier frozen handoffs are archived.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -306,24 +306,24 @@ relocation, and a fresh selected-unit cold replay**.
 
 ## 5. Small leaves: whole-byte source evidence ≠ authored attribution
 
-F595 + F616–F686 research now source-backs **82 distinct
-historical origin-unknown entire native functions /1,578 original
-machine CODE bytes**. New F686 completes the genuine whole
-**19-byte original `0061535A` virtual destructor**, with all five
-native x86/zero-addend `DIR32` vtable `0065DA54` and `REL32`
-CRT `free` `00640F15` source fields, including native direct pointer
-release at `this+0x104C`. Pinned VC7.1 `/O1` reproduces all 19
-linked bytes; `/O2` makes an extra register load and `/Od` emits a
-wrong stack-frame prologue. Three actual registered native direct
-callers were independently decoded; original class/author identity
-is still UNKNOWN. [New F686 whole-native original PE/COFF source
-proof](SDK_NATIVE_VTABLE_DESTRUCTOR_F686.md).
-F680 earlier added five more full SDK-like helper leaves
-(50 B/21 x86/four authenticated PE fields).
-[F680 earlier whole-native proof](SDK_NATIVE_HELPER_LEAVES_F680.md).
-All **95** unknown source provenance candidates still remain
-`unknown,review`, so this cohort earns **zero game-authored exact
-whole-function CODE bytes**.
+F595 + F616–F687 research now source-backs **84 distinct
+historical origin-unknown entire native functions /1,700 genuine
+original CODE bytes**. New F687 proves **two full original native
+58/64-byte virtual COM owner destructors** (`00608D8E` and
+`00608F96`) with **122/122 original native machine CODE B /
+49 x86 /five physically authenticated PE/COFF fields** under one
+selected pinned VC7.1 `/O1` TU. True native `+8` and `+0xE0`
+`__stdcall` virtual calls, two real direct thiscall cleanup targets,
+imported free and vtable assignments are reproduced without
+fabricating an interface class with 57 fake methods. Actual
+original registered direct callers are compiler-classified, but
+historical source provenance stays unknown. [New F687 complete
+native PE/COFF source proof](SDK_NATIVE_COM_OWNER_DESTRUCTORS_F687.md).
+F686 earlier recovered 19 bytes of another complete native vtable
+plus real CRT-free virtual destructor;
+[previous F686 proof](SDK_NATIVE_VTABLE_DESTRUCTOR_F686.md).
+All **95** source-unknown candidates still retain `unknown,review`;
+this research earns **zero game-authored whole-function CODE bytes**.
 
 Latest F655 seven **entire original registered native leaves**
 (`004138D0`, `004169D0`, `0041F7F0`, `00540280`, `00441FD0`,
@@ -338,6 +338,7 @@ virtual `__stdcall`) and `004588B0` (43 bytes, conditional CRT free).
 [Earlier genuine original F650 proof](GAME_COM_VIRTUAL_RELEASE_F650.md).
 
 ```bash
+scripts/repo-python scripts/verify-sdk-native-com-owner-destructors-f687.py
 scripts/repo-python scripts/verify-sdk-native-vtable-destructor-f686.py
 scripts/repo-python scripts/verify-sdk-native-helper-leaves-f680.py
 scripts/repo-python scripts/verify-sdk-native-bulk-state-ctor-f677.py
