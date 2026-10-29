@@ -11513,3 +11513,36 @@ PE/COFF/VC7.1 and call graph proof](GAME_COM_VIRTUAL_RELEASE_F650.md),
 targeted `scripts/repo-python scripts/verify-game-virtual-release-f650.py`.
 Formal accepted authored whole exact 943/862,726 unchanged;
 no full 943-unit cold replay.
+
+
+## F651/F652: four consecutive native CF/D0/D1/D2 cases strict in one giant 00543210 whole source, 450 new original inner CODE bytes
+
+Original Japanese TH075 physical giant `00543210` handlers D1→D2→
+0x12C include full 59-x86/199 B native D1 and 74-x86/251 B native
+D2. Resource signed-short `this+0x3B0` has true decrement3 and
+original early state0 or9, stage/frame0 creates kind0x3E6 side1
+sprite at game `00453A70` with true raw x and signed orientation
+and FPU y `F32(0x48)+[00657888]`. D1 calls reset `00453E20`
+and prepare `00453D60(0x2C)` before sprite; D2 spawns before
+native speed scaling `POS/ POS54` via global `00657F74` and prepare,
+then **applies drag outside the stage0 guard**: real x87
+`FLD member+0x5C; FMUL [00657F74]; FSUBR member+0x54`.
+Wrong initial C++ nested drag produced 74/74 x86 but wrong
+JNE targets at D2 ordinals16/20; moving it out and using real
+`F32(0x54)/F32(0x5C)` member expression restores original
+physical x87/CFG roles. Full new VC7.1 giant `Advance()` C++ TU
+now simultaneously verifies original **CF30 x86/114B/4 COFF,
+D0 60/195B/6, D1 59/199B/8, D2 74/251B/10**: four consecutive
+true native cases **223 x86/759 internal B/28 real physical refs**,
+with only **D1/D2 133 native x86 /450 original internal CODE bytes
+/18 real PE/COFF fields newly strict**. Earlier F645/F642/F614
+source-backed game cases and entire original afterRET compressed
+jump DATA likewise rechecked on same fresh parent C++ object.
+Eight other real actor D1/D2 source candidates remain 28 and
+42–52 real GPR/x87/CFG mismatches each; native `005AEEC0` and
+`00564BE0` lack actual D1/D2 physical handlers. No false credit.
+F598–F652 strictly source-backed case study **572 genuine original
+interiors/154,461 original inner CODE bytes**, not accepted whole
+functions. [F651/F652 native PE, typed COFF and source proof](FIGHTER_RESOURCE_SHOTS_F651_F652.md),
+`scripts/repo-python scripts/verify-fighter-resource-shots-f651.py`.
+Official 943/862,726 whole-authored exact unchanged; no all-unit replay.

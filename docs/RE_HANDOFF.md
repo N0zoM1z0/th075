@@ -1,6 +1,6 @@
 # TH075 — active reconstruction handoff
 
-**Maintained 2026-10-29 after F650.** This is the **only current task list**.
+**Maintained 2026-10-29 after F652.** This is the **only current task list**.
 The [F540–F596 research chronology](history/RE_HANDOFF_F540_THROUGH_F596.md),
 [knowledge base](KNOWLEDGE_BASE.md), and older F-series studies are
 **historical evidence**, not statements of current progress. Independently
@@ -1137,6 +1137,41 @@ full native callback/free byte proof](GAME_COM_VIRTUAL_RELEASE_F650.md),
 
 ```bash
 scripts/repo-python scripts/verify-game-virtual-release-f650.py
+```
+
+**F651/F652 TWO newly strict original native resource-shot action
+cases `D1/D2` in real giant `00543210`**, verified in a freshly
+compiled **whole** giant C++ TU with previous source-backed CF/D0
+retained strict in the SAME object. Actual pinned original physical
+handlers **D1→D2→0x12C**, not an invented D3. Native complete D1
+**59 x86/199 original internal CODE B/8 physical typed PE/COFF**:
+signed resource counter `+0x3B0` decremented3, early state0,
+`00453E20`/`00453D60(0x2C)` prepare, real spawn kind0x3E6
+via `00453A70` with signed orientation and float y, then frame
+and auxiliary2 or action0. Native complete D2 **74 x86/251
+original CODE B/10 real typed fields**: early state9, spawn
+first, real x87 `POS` and `POS54` scale by `00657F74`, prepare,
+then original **drag OUTSIDE stage/frame-zero block** with
+member-first `FLD POS5C; FMUL [00657F74]; FSUBR POS54`, frame
+auxiliary2 or action9. Initial source wrongly put drag inside
+stage0 (wrong real JNE target ordinals); now both cases strictly
+match. Previous CF30/D0 60 on actor `00543210` are reverified
+strict on the same new parent, yielding **four consecutive true
+native case bodies /223 x86/759 internal original CODE bytes/28
+physical typed fields**; only **D1/D2 133 x86/450 original inner
+CODE B/18 refs NEW**. Other eight genuine D1/D2 owners still have
+28/42–52 GPR and x87 role mismatches despite correct native-sized
+source forms; `005AEEC0` and `00564BE0` have NO physically separate
+D1/D2 handlers. F598–F652 cumulative **572 strictly source-backed
+original action interiors/154,461 original native CODE bytes**,
+zero accepted whole-giant authored functions. Official authored
+exact 943/862,726 unchanged. [F651/F652 full original physical
+native case and same-giant proof](FIGHTER_RESOURCE_SHOTS_F651_F652.md),
+[natural D1 C++](../probes/FighterResourceShotD1F651.inc),
+[natural D2 C++](../probes/FighterResourceShotD2F652.inc).
+
+```bash
+scripts/repo-python scripts/verify-fighter-resource-shots-f651.py
 ```
 
 ## 4. Other three unmatched authored *whole* functions
