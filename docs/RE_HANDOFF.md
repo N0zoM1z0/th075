@@ -1,6 +1,6 @@
 # TH075 — active reconstruction handoff
 
-**Maintained 2026-10-29 after F599.** This is the **only current task list**.
+**Maintained 2026-10-29 after F600.** This is the **only current task list**.
 The [F540–F596 research chronology](history/RE_HANDOFF_F540_THROUGH_F596.md),
 [knowledge base](KNOWLEDGE_BASE.md), and older F-series studies are
 **historical evidence**, not statements of current progress. Independently
@@ -129,6 +129,29 @@ Use only a *selected* fighter original and source compilation, for example:
 ```bash
 scripts/repo-python scripts/verify-fighter-singleton-contact-f598.py --boss 0x004F7130
 scripts/repo-python scripts/verify-fighter-singleton-contact-f598.py --boss 0x00564BE0
+```
+
+**F600 continues immediately after F598's standalone `0x32`:**
+original indexed action **`0x33`/51** was reconstructed as real
+natural C++ in the **same** eleven entire Fighter source switches.
+All **11/11** original cases match **58/58 instruction roles,
+7/7 actual native typed COFF fields** and **205 original/source
+case bytes**, except genuine `00564BE0` wide saved-this
+`EBP-0x88` encodes original **256 vs 205 source bytes**. Crucial
+original distinction: 0x32 initializes `-8.0f`, 0x33 `-9.0f`;
+register roles rotate at the case boundary and now match naturally.
+The new 11 cases add **638 original x86 roles, 2,306 native interior
+CODE bytes and 77 COFF fields**. Across 11 giant parents,
+**143 genuine source-backed case subranges/8,111 x86/29,141 original
+interior CODE bytes/944 typed fields** are now reverified, but
+**ZERO whole boss is newly exact or added to authored accepted CODE**.
+Earlier 11 cases plus full native F598 case50 and all original jump
+DATA remain verified in each freshly compiled F600 source TU.
+[F600 indexed original action0x33](FIGHTER_INDEXED_CONTACT51_F600.md).
+
+```bash
+scripts/repo-python scripts/verify-fighter-indexed-contact51-f600.py --boss 0x004F7130
+scripts/repo-python scripts/verify-fighter-indexed-contact51-f600.py --boss 0x00564BE0
 ```
 
 Never run a full 943-unit cold replay.

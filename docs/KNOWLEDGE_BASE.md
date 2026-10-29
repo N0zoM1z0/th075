@@ -10211,3 +10211,33 @@ Real C++ source `probes/Record116ImplicitCopyF599.cpp`; targeted
 verifier `scripts/repo-python scripts/verify-record116-implicit-copies-f599.py
 --with-negative-gxoff`; [full F599 special-member study](RECORD116_IMPLICIT_COPY_ORIGIN_F599.md).
 No all-unit cold replay or external Oracle.
+
+
+## F600: original indexed action0x33, next distinct game case in eleven huge fighters
+
+F600 independently reverified all eleven pinned original multi-switch
+Fighter CODE+afterRET DATA and discovered their actual second sparse
+switch action51 (`0x33`) physical bounds from real original first
+two DWORD slots plus literal first map indices 0,1. All eleven native
+blocks have **58 x86**, ten **205 bytes** and wide saved-this
+`00564BE0` **256 bytes**. Their actual gameplay differs from F598
+singleton0x32 in a `POS = -9.0f` vs `-8.0f` initializer and naturally
+rotated VC7.1 GPR cycle. Real C++ inner source
+`probes/FighterIndexedContact51F600.inc` independently matches all
+**58 original GPR/x87/branch instruction roles** and all **seven
+physical typed actual-original-target COFF fields** per giant with
+real zero addends. The one 256-byte native case is explained solely
+by 17 original EBP-0x88 load displacement +3 widths. All older
+11 original cases, complete F598 case50 and original switch COFF/DATA
+remain reverified in the new twelve+one-case source build.
+
+New F600 native interior evidence: **11 blocks /638 original x86
+/2,306 native CODE bytes /77 typed COFF fields**. Together with
+original F567+F598, **143 distinct complete original case subranges
+/8,111 x86 roles/29,141 original interior CODE bytes/944 typed
+fields** across eleven *still nonexact* huge originals. These are
+not 143 whole functions: ZERO new original whole author CODE exact
+credit, no split case adoption and no full 943-unit cold replay.
+Tracked targeted probe
+`scripts/repo-python scripts/verify-fighter-indexed-contact51-f600.py
+--boss 0x004F7130`; [F600 original native case](FIGHTER_INDEXED_CONTACT51_F600.md).
