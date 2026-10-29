@@ -1,6 +1,6 @@
 # TH075 — active reconstruction handoff
 
-**Maintained 2026-10-29 after F614.** This is the **only current task list**.
+**Maintained 2026-10-29 after F615.** This is the **only current task list**.
 The [F540–F596 research chronology](history/RE_HANDOFF_F540_THROUGH_F596.md),
 [knowledge base](KNOWLEDGE_BASE.md), and older F-series studies are
 **historical evidence**, not statements of current progress. Independently
@@ -463,6 +463,29 @@ native PE controls are reproducible via
 
 ```bash
 scripts/repo-python scripts/verify-scene-freed-pointer-types-f612.py --case int-pointer
+```
+
+**F615 original complete WinMain native local-layout controls:**
+Thirty separately *cold-compiled, whole function* natural VC7.1 C++
+source variants for authored `00602A60` examine actual used objects:
+scene pointer/path aggregate field orders, real MSG/WNDCLASSEXA lexical
+placement, genuinely used HWND/event/metric locals and meaningful
+predeclarations. The native remains **2,987 CODE bytes/654 x86,
+123 calls and 60 separate afterRET DATA bytes**. Every compiled
+candidate retains **654/654 native mnemonic order, 173 source COFF
+fields including scene switch, but none has 2,987 original CODE
+bytes**; generated lengths are **2,930–3,053 B**. One candidate
+naturally moves path to genuine original `EBP−0x180` but source
+scene pointer stays wrongly at `−0xC` and total CODE becomes **2,930**.
+Another reaches 627/654 equal instruction widths but source code is
+3,026 B. Reproducing one stack slot or mnemonic order does **NOT**
+make authored whole WinMain exact. All thirty are explicitly NONEXACT,
+no F528 provenance/ABI assumption is accepted without original proof.
+[Full original F615 real local-lifetime evidence](WINMAIN_LOCAL_OBJECT_LAYOUT_F615.md),
+[whole exploratory C++](../probes/WinMainLocalLayoutF615.cpp), targeted:
+
+```bash
+scripts/repo-python scripts/verify-winmain-local-layout-f615.py --case msg-before-app-plus-all-hwnd-event-int
 ```
 
 **F609 negative small-function research:** 19 freshly compiled

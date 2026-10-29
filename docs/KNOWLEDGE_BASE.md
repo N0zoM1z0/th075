@@ -10646,3 +10646,29 @@ original internal CODE bytes**, still NO whole-giant exact credit,
 no all-unit cold replay/Oracle acceptance. [F614 source and real PE
 case evidence](FIGHTER_TRAJECTORY_BURST_F614.md),
 selected `scripts/repo-python scripts/verify-fighter-trajectory-burst-f614.py --boss 0x0045DD70`.
+
+
+## F615: 30 complete native 2987-byte WinMain used-local object layout controls
+
+Original Japanese TH075 native authored WinMain/GameApplication startup
+`00602A60` is a WHOLE 2,987-byte/654-x86/123-call function with
+15 original owned scene case afterRET 60-byte DATA and a real 0x278
+stack frame. Tracked full ordinary VC7.1 C++ baseline
+`probes/WinMainLocalLayoutF615.cpp` compiles to 2,981 bytes/654 x86
+with all native ordered mnemonics but very wrong actual object EBP
+locals. F615 independently cold-built **30 complete used-local C++
+source alternatives**: genuine 260-byte path and scene-pointer
+aggregates/field order, actual MSG/WNDCLASSEX declaration order,
+original HWND/event handle and two used window metrics types.
+All produce **654/654 original mnemonic order, 60 separate source
+jump-table DATA bytes and 173 source physical COFF fields**; their
+CODE lengths are **2,930–3,053 bytes, NONE the original 2,987**.
+One truly used local combination makes module pathname correctly use
+native EBP−0x180, but active scene remains wrongly EBP−0xC and
+whole source is 2,930 bytes; another matches 627/654 native x86
+instruction widths but source has 3,026 bytes. These prove why
+matching isolated physical stack slots or mnemonic sequences is
+insufficient. Zero accepted complete authored function CODE, no
+invented source padding/all-unit cold replay. [F615 full source
+experiment/provenance](WINMAIN_LOCAL_OBJECT_LAYOUT_F615.md),
+selected `scripts/repo-python scripts/verify-winmain-local-layout-f615.py --case msg-before-app-plus-all-hwnd-event-int`.
