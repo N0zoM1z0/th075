@@ -8758,3 +8758,44 @@ COFF comparisons and logs remain preserved under
 and no negative probe is counted as new exact coverage. A real source-local
 lifetime change, not bitwise patching or artificial stack padding, remains
 necessary for this destructor.
+
+
+## F546: native scene virtual destructor real-lifetime negative controls, still NOT exact
+
+Revisited the original R054 authored `0043B0B0` **complete 248-byte
+SceneObject virtual destructor**, without altering its source mapping or
+claiming accepted CODE. The native whole function has 75 x86 instructions,
+12 real COFF fields and original EH/scene ownership. The best 248-byte
+pinned `/GX` VC7.1 natural C++ baseline retains **191/200 true
+nonrelocation bytes**, with nine real EBP slot/allocation differences.
+Ten additional full-body natural source probes tried meaningful texture
+pointer scope/const/type and genuine freed-pointer aggregate array/field
+orders, not synthetic padding, fake side effects or code copying. Scoped
+texture names yielded 254 or 251 CODE bytes, and the best whole-length
+object remained **191/200**. Entire failed sources, native COFF objects
+and comparisons are preserved under `.analysis/f546-scene-lifetimes/`.
+No 248-byte exact unit or author-byte credit was registered.
+
+## F547: natural 42-instruction fighter action-nine source in all eleven giant contexts
+
+Fresh pinned VC7.1 compiled eleven different original-PE-backed switch
+probes, each now including a **full actual native action-nine case** beyond
+F545's six opening cases. Original case bounds come from the real tenth
+and eleventh DWORD table targets of the *complete original huge fighter*.
+Each source emits **42 original instruction kinds, native x87 comparisons,
+member offsets/branches/exits and 6 real physical COFF call/global fields**.
+Six probe cases also have exact native EAX/ECX/EDX register assignment;
+**five still have different real GPR allocation**, so do not call them
+register-exact. Original auxiliary helper `0040FB40` gets **1** in the
+`00543210` boss but **0** for the other ten; this was physically validated
+as native `PUSH 1` and carried into natural C++. Original special
+`00564BE0` case length 183, versus 144 source-probe bytes, is accounted
+for by 13 genuine widened owner EBP-0x88 loads. The eleven cases contain
+**1,623 original CODE bytes**, but these remain inside incomplete full
+fighters, with zero separate exact credit. All eleven per-boss original
+switch-table equivalence partitions, **1,607 DWORD COFF fields**, 4,502
+original sparse index bytes and complete 10,930 after-RET DATA shape
+remain checked. Read [F547 codegen evidence](FIGHTER_ACTIONNINE_FAMILY_CODEGEN.md)
+and reproduce only affected compiler probes with
+`scripts/repo-python scripts/verify-fighter-actionnine-natural-source.py`.
+No full cold replay, giant exact CODE or external Oracle receipt.

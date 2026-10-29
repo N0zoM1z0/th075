@@ -40,7 +40,7 @@ rank labels, 208-byte StaffRoll and 92-byte progress counter are all
 The 22-boss original-only verifier records **1,102,055 uncredited CODE
 bytes** and 16,123 uncredited post-RET switch DATA bytes. F537 also
 [resolves 7,152 original action-ID entries](docs/FIGHTER_ACTION_CASE_RESOLUTION.md) and [F539 reproduces two natural giant switch-dispatch codegen shapes](docs/FIGHTER_SWITCH_CODEGEN_RECONSTRUCTION.md) and [F540/F541 recover and independently compile native action-zero C++ codegen across all eleven multi-switch giants](docs/FIGHTER_ACTIONZERO_FAMILY_CODEGEN.md)
-and [F542 validates action-one C++ against eleven whole-giant originals](docs/FIGHTER_ACTIONONE_FAMILY_CODEGEN.md) and [F545 reproduces six real opening actions per multi-switch fighter](docs/FIGHTER_OPENING_SIX_CASES_CODEGEN.md) through native switch tables and singleton branches; **no giant boss
+and [F542 validates action-one C++ against eleven whole-giant originals](docs/FIGHTER_ACTIONONE_FAMILY_CODEGEN.md) and [F545 reproduces six real opening actions per multi-switch fighter](docs/FIGHTER_OPENING_SIX_CASES_CODEGEN.md) and [F547 recovers the full native 42-instruction action-nine source behavior](docs/FIGHTER_ACTIONNINE_FAMILY_CODEGEN.md) through native switch tables and singleton branches; **no giant boss
 is C++ exact yet**. See the [active handoff](docs/RE_HANDOFF.md), not outdated chronological notes.
 Local Git commits preserve checkpoints; they are **not external Oracle
 verification receipts**.
