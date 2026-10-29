@@ -154,6 +154,15 @@ def compare_candidate(reader,pe,decoder,f598,core,zero,switch,boss,report,mapped
     native_dense=[int.from_bytes(reader.pe_bytes_at(pe,boss['tables'][1]['dense_addr']+4*i,4),'little') for i in range(12)]
     generated_dense=[next(r['local_symbol_offset'] for r in refs if r['offset']==ret+44+4*i) for i in range(12)]
     cases=[*ADDITIONAL,0x46]
+    # Independently inspect the native second-table literal sparse map,
+    # not just the 12 handler addresses: skipped 0x36/37 and 0x3C/3D
+    # must NOT be mistaken for own subrange bodies. The source's
+    # *complete* sparse table is checked again below.
+    second=boss['tables'][1]
+    original_index=reader.pe_bytes_at(pe,second['map_addr'],second['map_length'])
+    need(second['map_length']==49
+         and [original_index[action-0x33] for action in ADDITIONAL]==list(range(11)),
+         f'{address:#x}: original 0x33..0x41 sparse action->dense-slot encoding differs')
     need(all(original[x]==n for x,n in zip(cases,native_dense))
          and native_dense==sorted(set(native_dense))
          and generated_dense==sorted(set(generated_dense)),
