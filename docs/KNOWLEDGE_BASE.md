@@ -8712,3 +8712,49 @@ replayed *only for selected new probes* with
 `scripts/repo-python scripts/verify-fighter-actionone-natural-source.py`.
 **No giant whole-function exactness, no credited partial CODE/DATA, no
 full cold replay and no external Oracle receipt.**
+
+
+## F545: all six early action C++ cases across eleven original whole-giant fighters
+
+F545 independently compiles eleven full-native-switch natural C++ probes,
+each now implementing **all six complete original actions 0..5** instead
+of source-marker placeholders. Each of the 11 giant original functions
+is fully SHA-pinned first, and all original first-switch DWORD case
+boundaries, CODE and after-RET DATA are checked. The **2,486/2,486**
+case instructions and **440/440 actual case COFF fields** have correct
+per-fighter x86 GPR selection, native x87 semantics, call arguments,
+branch graph, and the genuine native action4/5 immediate float values.
+**Do not assume positive and negative action-speed symmetry**: original
+`005D73C0` stores +6.0f at action 4 but -4.5f at action 5. Original
+`00564BE0` has a 192-byte excess across its original first-six cases
+(1006 vs generated 814) caused exactly by 64 physical disp32 owner
+reloads at `EBP-0x88`; the source generator never adds fake padding.
+All **1,607** original switch DWORD COFF refs, **4,502** literal original
+sparse index bytes, 10,930 original after-RET DATA-layout bytes and
+handler-partition equivalence also agree. The **9,146** original CODE
+bytes of these six-case inner subranges remain part of 613,391 giant
+whole-function bytes, **NOT accepted partial function CODE**. Full
+per-boss evidence and reproducer:
+[the F545 natural six-case source study](FIGHTER_OPENING_SIX_CASES_CODEGEN.md)
+and `scripts/repo-python scripts/verify-fighter-opening-actions-natural-source.py`.
+No whole boss exact, all-unit cold replay or external Oracle claim.
+
+## F544: bounded new compile-profile controls for nonexact archive destructor
+
+The independently original authored **171-byte ArchiveCatalog nonvirtual
+RAII destructor at 0041CE50** still has exactly seven genuine local EBP
+slot discrepancies against natural C++ baseline (108/115 nonrelocation
+bytes, all 14 correct physical COFF reference locations). F544 freshly
+compiled the entire source under pinned VC7.1 with both `/Zc:forScope`
+modes, `/GX` versus `/GX-`, `/GS` versus `/GS-`, `/Z7` versus `/Zi`,
+`/Za`, `/Zp8`, `/J`, and `/Ob1` controls to test whether the historical
+mismatch was just an unjustified profile assumption. All ten
+noninlining profiles emitted **the same 171 bytes and same seven
+stack-slot differences**; `/Ob1` emitted **197** and cannot be compared
+as an exact 171-byte body. The debug-free one emitted no standalone
+function symbol and supplies no credit. Detailed cold probe code, full
+COFF comparisons and logs remain preserved under
+`.analysis/f544-archive-flags/`. No wrong-profile conjecture is accepted,
+and no negative probe is counted as new exact coverage. A real source-local
+lifetime change, not bitwise patching or artificial stack padding, remains
+necessary for this destructor.
