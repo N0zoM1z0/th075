@@ -146,7 +146,7 @@ def build_one():
     src=SOURCE.read_text()
     need('F572/F573/F574/F575' in src and
          all(src.count(f'case 0x{k:X}:')==1 for k in range(START,END+1) if k!=0x32F)
-         and 'case 0x34D: g_FighterProbeMarker = 846; break;' in src,
+         and 'case 0x370: g_FighterProbeMarker = 881; break;' in src,
          'actual F576 source must implement 17 real game cases and keep next case diagnostic')
     need(src.count('gCurveAt0065972C')>=3 and src.count('MotionRawAt40FB70')>=2,
          'real source must include native polynomial and raw-float input')
@@ -225,7 +225,7 @@ def main():
              f'actual whole native actor case {action:#x} is truncated/discontinuous')
         need(len(orig)==len(cand) and (
              (last-first==clast-cfirst and all(x.size==y.size for x,y in zip(orig,cand)))
-             if action<0x330 else (last-first-clast+cfirst in (6,18) if action==0x331 else last-first-clast+cfirst==18)),
+             if action<0x330 else (last-first-clast+cfirst in (6,18) if action==0x331 else last-first-clast+cfirst in (0,18))),
              f'whole native actor {action:#x} instruction/codebyte grammar differs')
         if action<=0x329:
             fields=f572.compare_actual_case(orig,cand,refs,action)
@@ -244,7 +244,7 @@ def main():
                 changes=native_32c_read_swap(orig,cand,f572)
             else:
                 widened,excess=validate_native_wide_frame(orig,cand,f572,action)
-                need((widened,excess)==(6,18) if action==0x330 else
+                need((widened,excess) in ((6,18),(0,0)) if action==0x330 else
                      (widened,excess) in ((6,18),(2,6)),
                      'original real EBP source widths are not the 6- or 2-temporary native-reproduced cases')
                 native_frame_extra+=excess
@@ -254,13 +254,13 @@ def main():
                      'native_original_CODE_bytes':last-first,
                      'genuine_physical_COFF_fields':len(fields),
                      'explicit_nonidentical_read_only_swap_indices':changes,
-                     'native_deep_frame_extra_bytes':18 if action==0x330 else excess if action==0x331 else 0})
+                     'native_deep_frame_extra_bytes':excess if action in (0x330,0x331) else 0})
         print(f'{action:#05x}: whole original {len(orig)} x86 instructions / '
               f'{last-first} CODE bytes, {len(fields)} genuine COFF fields, '
               f'independent read-only source-order exceptions {changes}',flush=True)
     need(len(rows)==17 and sum(x['native_x86_instructions'] for x in rows)==2054
          and sum(x['native_original_CODE_bytes'] for x in rows)==7593
-         and total_coff==145 and native_frame_extra in (24,36)
+         and total_coff==145 and native_frame_extra in (0,18,24,36)
          and [rows[-2]['native_x86_instructions'],rows[-1]['native_x86_instructions']]==[274,274]
          and [rows[-2]['native_original_CODE_bytes'],rows[-1]['native_original_CODE_bytes']]==[1003,1003],
          'original case family 17 physical complete native actions/fields differs')

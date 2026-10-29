@@ -1,6 +1,6 @@
 # TH075 — current agent handoff
 
-**Maintained: 2026-10-29, after F587; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
+**Maintained: 2026-10-29, after F588; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
 
 ## 1. Current authoritative state (not historical hypotheses)
 
@@ -662,6 +662,40 @@ independent inner CODE/DATA credit. See
 and run targeted
 `scripts/repo-python scripts/verify-characterobject-four-way-event-f587.py`.
 No full cold replay or external Oracle receipt.
+
+**F588 newly reconstructs three MORE full original CharacterObject
+stage actions `0x34D/0x34E/0x34F`** in the **still nonexact
+33,293-CODE-byte giant `004EBDA0`**. Physically bounded complete
+native cases are **190 instructions/697 bytes**, **163/603** and
+**161/599**. Real `0x34D` preserves two raw DWORD motion field
+copies (not incorrect FPU loads), native 5-effect parent loop,
+contact effects 0x32B/0x32D and state0x33B. Real `0x34E` has
+only a 4-effect parent loop, signed timer `>2` and no stage-zero
+7C/80 stores; real `0x34F` has signed timer `>1`, its own
+7C/80 stage0 stores and native direct reset callback. All three
+**match complete original GPR/x87/branch/per-instruction width
+source grammar, with 35 genuinely typed zero-addend original
+PE COFF call/float fields**, no new tolerated swaps.
+
+This is also the first ordinary natural source context where
+previous native actions `0x330/0x331/0x332` have **literally
+identical original Japanese EBP integer-to-FILD temporary operand
+addresses**, not merely equal instruction lengths: 0x330 original
+−0x84/−0x88/−0x8C, 0x331 −0x90/−0x94/−0x98, 0x332 −0x9C.
+All are independently checked in source-only and original-PE
+verifiers. No fake locals or machine-code byte grafts.
+
+The SAME single-TU C++ now proves **43 real complete gameplay
+cases, 6,562 original x86 instruction roles, 24,673 original
+internal CODE bytes and 449 genuine typed physical call/global
+COFF fields**, as well as all 60 native first-switch DWORD
+handler fields and 198 identical sparse indexes (438 distinct
+native after-RET DATA-layout bytes). Whole 33,293-byte boss
+still **NONEXACT, zero separate case CODE/DATA exact credit**.
+See [F588 three native stage cases plus original EBP source](CHARACTEROBJECT_THREE_NATIVE_STAGES_F588.md),
+and targeted verifier
+`scripts/repo-python scripts/verify-characterobject-three-late-actions-f588.py`.
+No all-unit cold replay or external Oracle.
 
 **Three other authored functions remain nonexact (all require full CODE):**
 

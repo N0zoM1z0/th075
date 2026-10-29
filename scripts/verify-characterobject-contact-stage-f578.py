@@ -179,7 +179,7 @@ def validate_original_signed_direction_case(native,candidate,f572):
     else:
         need(not wide and
              any(all(f'[ebp - 0x{slot:x}]' in candidate[k].op_str
-                     for k in (97,98)) for slot in (0x84,0x8c,0x90)),
+                     for k in (97,98)) for slot in (0x84,0x8c,0x90,0x9c)),
              'true original game C++ source context requires EBP-0x84 or EBP-0x8C genuine disp32 temp')
     need(native[189].mnemonic==candidate[189].mnemonic=='movsx'
          and native[189].op_str.endswith('byte ptr [edx + 0x66]')
@@ -242,7 +242,7 @@ def build_one():
     src=SOURCE.read_text()
     need('F572/F573/F574/F575/F576/F577/F578' in src and
          all(src.count(f'case 0x{k:X}:')==1 for k in range(START,END+1) if k not in (0x32F,0x333,0x334))
-         and 'case 0x34D: g_FighterProbeMarker = 846; break;' in src,
+         and 'case 0x370: g_FighterProbeMarker = 881; break;' in src,
          'actual F578 source must implement 19 nondefault game cases and keep next 0x338 diagnostic')
     need(src.count('gCurveAt0065972C')>=3 and src.count('MotionRawAt40FB70')>=2,
          'real source must include native polynomial and raw-float input')
@@ -321,7 +321,7 @@ def main():
              f'actual whole native actor case {action:#x} is truncated/discontinuous')
         need(len(orig)==len(cand) and (
              (last-first==clast-cfirst and all(x.size==y.size for x,y in zip(orig,cand)))
-             if action<0x330 else (last-first==clast-cfirst if action in (0x332,0x335) else last-first-clast+cfirst in (0,6,18) if action==0x331 else last-first-clast+cfirst==18)),
+             if action<0x330 else (last-first==clast-cfirst if action in (0x332,0x335) else last-first-clast+cfirst in (0,6,18) if action==0x331 else last-first-clast+cfirst in (0,18))),
              f'whole native actor {action:#x} instruction/codebyte grammar differs')
         if action<=0x329:
             fields=f572.compare_actual_case(orig,cand,refs,action)
@@ -340,7 +340,7 @@ def main():
                 changes=native_32c_read_swap(orig,cand,f572)
             elif action in (0x330,0x331):
                 widened,excess=validate_native_wide_frame(orig,cand,f572,action)
-                need((widened,excess)==(6,18) if action==0x330 else
+                need((widened,excess) in ((6,18),(0,0)) if action==0x330 else
                      (widened,excess) in ((6,18),(2,6),(0,0)),
                      'original real EBP source widths are not the 6- or 2-temporary native-reproduced cases')
                 native_frame_extra+=excess
@@ -360,13 +360,13 @@ def main():
                      'native_original_CODE_bytes':last-first,
                      'genuine_physical_COFF_fields':len(fields),
                      'explicit_nonidentical_read_only_swap_indices':changes,
-                     'native_deep_frame_extra_bytes':18 if action==0x330 else excess if action==0x331 else 0})
+                     'native_deep_frame_extra_bytes':excess if action in (0x330,0x331) else 0})
         print(f'{action:#05x}: whole original {len(orig)} x86 instructions / '
               f'{last-first} CODE bytes, {len(fields)} genuine COFF fields, '
               f'independent read-only source-order exceptions {changes}',flush=True)
     need(len(rows)==19 and sum(x['native_x86_instructions'] for x in rows)==2602
          and sum(x['native_original_CODE_bytes'] for x in rows)==9634
-         and total_coff==178 and native_frame_extra in (18,24,36)
+         and total_coff==178 and native_frame_extra in (0,18,24,36)
          and [r['native_x86_instructions'] for r in rows[-4:]]==[274,274,279,269]
          and [r['native_original_CODE_bytes'] for r in rows[-4:]]==[1003,1003,1019,1022],
          'original case family 19 physically complete nondefault native actions/fields differs')
@@ -376,7 +376,7 @@ def main():
              'case_details':rows,
              'original_native_x86_insns':2602,
              'original_inner_CODE_bytes':9634,
-             'integrated_action332_now_disp32_same_size':native_frame_extra in (18,24,36),
+             'integrated_action332_now_disp32_same_size':native_frame_extra in (0,18,24,36),
              'genuine_typed_COFF_fields':178,
              'source_action332_native_disp32_now_identical_width':True,
              'action335_independent_readonly_swaps':[146,147],

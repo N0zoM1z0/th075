@@ -156,7 +156,7 @@ def main():
          'original physical Japanese dense/sparse SHA verification failed')
     source=SRC.read_text()
     need('F585/F586' in source and all(source.count(f'case 0x{k:X}:')==1 for k in ORIGINAL_CASES)
-         and 'case 0x34D: g_FighterProbeMarker = 846; break;' in source,
+         and 'case 0x370: g_FighterProbeMarker = 881; break;' in source,
          'new C++ source must implement exactly two real new game action bodies and mark later native cases unknown')
     # Only ONE selected VC7.1 C++ object, freshly built by the existing
     # original-backed checker, independently verifying all 37 prior game cases.
@@ -224,7 +224,7 @@ def main():
          'previous 37 original actions recompiled with unexpected source/COFF changes')
     previous_context=json.loads((PREVIOUS/'summary.json').read_text())
     need(previous_context['native_complete_real_action_count']==32 and
-         previous_context['genuine_original_deep_frame_extra_bytes'] in (18,24),
+         previous_context['genuine_original_deep_frame_extra_bytes'] in (0,18,24),
          'new authentic 0x331 x87 EBP layout has not been physically validated as 18->6 bytes')
     OUT.mkdir(parents=True,exist_ok=True)
     shutil.copyfile(OBJECT,OUT/'one-normal-Cpp-source.obj')
@@ -243,8 +243,8 @@ def main():
              'original_physical_switch_DWORD_COFF':60,
              'exact_original_sparse_index_bytes':198,
              'native_afterret_DATA_layout_bytes':438,
-             'new_original_frame_width_surplus_0x330':18,
-             'new_original_frame_width_surplus_0x331':previous_context['genuine_original_deep_frame_extra_bytes']-18}
+             'new_original_frame_width_surplus_0x330':next(r['native_deep_frame_extra_bytes'] for r in previous_context['case_details'] if r['action']=='0x330'),
+             'new_original_frame_width_surplus_0x331':next(r['native_deep_frame_extra_bytes'] for r in previous_context['case_details'] if r['action']=='0x331')}
     (OUT/'summary.json').write_text(json.dumps(summary,indent=2)+'\n')
     print('F586: 39 real complete original game-action source cases, '
           '5651 native x86 instruction roles, 21245 original internal CODE '

@@ -10,7 +10,11 @@ Adding the genuinely authored C++ game bodies 0x34A/0x34B shifts
 source 0x331's final two integer-to-x87 temporaries past the disp8
 boundary, leaving ONLY original ordinals 97/98 3-byte wider; adding
 genuine action0x34C naturally shifts the first too, removing this
-gap altogether. Only three PE-tested source modes are accepted.
+gap altogether. Adding three genuine 34D/E/F full game cases
+moves 0x330 too, making its own original MOV/FILD temp slots
+EBP-0x84/-0x88/-0x8C byte-identical; original 0x331 now also has
+its original EBP-0x90/-0x94/-0x98 source. Only physically observed
+three-source modes are accepted; no arbitrary EBP matching.
 No fabricated frame, machine byte patch, all-unit replay or CODE credit.
 """
 from __future__ import annotations
@@ -38,8 +42,13 @@ def validate_native_wide_frame(native,candidate,f572,action):
            if x.size!=y.size]
     indices=[i for i,*_ in diffs]
     if action==0x330:
-        need(indices==list(originals),
-             'original 0x330 six actual native width expansions changed')
+        need(indices in (list(originals),[]),
+             'native 0x330 source width must be exactly six proven temp excesses or real source equal width')
+        if not indices:
+            need(all(f'[ebp - 0x{slot:x}]' in candidate[i].op_str
+                     for i,slot in zip(originals,(0x84,0x84,0x88,0x88,0x8c,0x8c)))
+                 and all(candidate[i].size==6 for i in originals),
+                 'F588 genuine 0x330 native-original receiver EBP source slots must now be byte-identical')
     else:
         need(indices in (list(originals),[97,98],[]),
              f'original 0x331 width differences are not one of three PE-tested VC7.1 contexts: {indices}')
@@ -53,10 +62,12 @@ def validate_native_wide_frame(native,candidate,f572,action):
         if not indices:
             # Adding *real* native action0x34C makes all three C++
             # temporary locations disp32 naturally, WITHOUT fake locals.
-            need(all(f'[ebp - 0x{slot:x}]' in candidate[i].op_str
-                     for i,slot in zip(originals,(0x84,0x84,0x88,0x88,0x8c,0x8c)))
+            need(any(all(f'[ebp - 0x{slot:x}]' in candidate[i].op_str
+                         for i,slot in zip(originals,
+                                            (first,first,first+4,first+4,first+8,first+8)))
+                     for first in (0x84,0x90))
                  and all(candidate[i].size==6 for i in originals),
-                 'original 0x331 397-insn genuine C++ case context must have -0x84/-0x88/-0x8C source slots')
+                 'original 0x331 native source must have only real F587/F588 three-temp EBP modes')
     need(all(delta==3 for _,_,_,delta in diffs),
          'additional non-stack native instruction size differences are not accepted')
     real=[(mnemonic,operand) for mnemonic,size,operand

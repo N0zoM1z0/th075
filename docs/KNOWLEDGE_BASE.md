@@ -9826,3 +9826,44 @@ The entire original **33,293-byte giant remains nonexact**.
 No standalone action/whole CODE credit, all-unit replay or Oracle.
 Reproducer `scripts/repo-python scripts/verify-characterobject-four-way-event-f587.py`,
 [F587 original four-state source study](CHARACTEROBJECT_FOUR_WAY_EVENT_F587.md).
+
+
+## F588: three strict native game stages and real original EBP temp location identity
+
+Original Japanese entire `004EBDA0` CharacterObject giant (33,293
+whole original CODE bytes) has three more genuine complete native
+case bodies: `0x34D` 190 x86/697 original CODE bytes with native
+five-effect parent loop, real raw DWORD C8/CC bit-preserved copies
+into +0x50/+0x54, contact threshold 0065782C, distinct parent
+effects 0x32B/0x32D and actor state0x33B; `0x34E` 163/603
+with real four-effect loop, signed D8>2 fade, *no* additional
+stage0 7C/80 stores, x87 speed floor2.0 and 0040FB40(1)
+increment; `0x34F` 161/599 with signed D8>1, real own stage0
+7C/80 stores and a direct 0045B830 reset. All three freshly
+compiled normal VC7.1 C++ cases match exact native x86
+GPR/x87/CFG/per-instruction byte-width source **with
+35 total typed zero-addend COFF call/global references**.
+Original 0x34F ends at genuine next nondefault `0x370`, not an
+invented 0x350 action. Whole native first-switch 60-DWORD/
+198-index DATA shape still byte/COFF valid.
+
+The added real source ALSO naturally recovers **original actual
+EBP stack-operand offsets**, not only native disp32 width, in
+previously verified cases: native 0x330 original `−0x84/−0x88/
+−0x8C`, native 0x331 original `−0x90/−0x94/−0x98`, native
+0x332 original `−0x9C` are now the **same literal EBP locations
+in freshly compiled C++**. The native-specific strict case
+verifiers require these complete original PE positions and the
+real 274/279 GPR/x87/relative-branch roles. Historical native
+surplus JSON is now dynamic and zero in this source, not a false
+hard-coded 18 byte difference. No synthetic local padding.
+
+The same original-backed selected source now validates **43 complete
+original game-action bodies, 6,562 native x86 instruction roles,
+24,673 original internal CODE bytes and 449 genuine typed physical
+COFF fields**, plus all 60 original switch DWORD COFF handlers,
+198 byte-identical sparse bytes and distinct 438 after-RET DATA.
+Original entire giant remains NONEXACT, no independent case CODE
+credit or all-unit cold replay/Oracle. Reproducer
+`scripts/repo-python scripts/verify-characterobject-three-late-actions-f588.py`;
+[F588 full native x87 stage source](CHARACTEROBJECT_THREE_NATIVE_STAGES_F588.md).

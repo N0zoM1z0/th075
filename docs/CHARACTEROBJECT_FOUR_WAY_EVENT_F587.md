@@ -138,3 +138,16 @@ remains NONEXACT** because later game-action bodies, original receiver
 class/whole stack frame and final real source are not all recovered.
 No new accepted whole/split CODE or DATA, full all-unit cold replay,
 or external Factory/Oracle receipt.
+
+## F588 follow-up: next three complete native action cases and real EBP ownership
+
+The same natural C++ switch now also implements actual native
+`0x34D` (190 original x86 instructions/697 CODE bytes), `0x34E`
+(163/603), and `0x34F` (161/599). All three reproduce entire
+original strict x86 GPR/x87/CFG/byte-width source and **35 genuine
+typed native COFF fields**. The new real C++ source also naturally
+moves x87 saved temp stack slots in prior actions `0x330/331/332`
+to **their literal original native EBP addresses**, not merely
+matching byte widths. The [F588 study](CHARACTEROBJECT_THREE_NATIVE_STAGES_F588.md)
+verifies the whole original PE and all 43 now-recovered case
+sources, retaining the nonexact whole giant accounting.
