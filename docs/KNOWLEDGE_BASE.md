@@ -9709,3 +9709,40 @@ with baseline `probes/ArchiveCatalogNativeLifetimeF584.cpp`;
 [F584 complete original RAII destructor proof](ARCHIVE_DELETE_EXPRESSION_CONTROLS_F584.md).
 The true original lexical owner/automatic lifetime still needs
 recovery. Zero full cold replay or external Oracle acceptance.
+
+
+## F585: five complete original trajectory x87 and parent-sync action bodies
+
+Japanese original CharacterObject giant `004EBDA0` (33,293 whole
+CODE bytes) contains complete game actions `0x345` 286/1,144,
+`0x346` 111/436, `0x347` 286/1,136, `0x348` 289/1,153,
+`0x349` 111/436 (real x86 instruction counts / entire native
+inner CODE bytes). Three large ~1.1KB cases implement original
+angle ±180 wrap, stage-specific polar motion and three authentic
+`__ftol2` external C runtime conversions each, plus real stage
+boundary floats 00659248/0065930C/00658E80. Role-specific
+speed limit+increment are `0x345` 140/+7, `0x347` 120/+6,
+`0x348` 200/+10, with true 0x348 negative polar sign. The two
+111-insn source cases sync actual parent `+0xF0C/+0xF0E`
+shorts through two original `__ftol2` calls each, then update
+floating speed and current actor state.
+
+The 111-insn source cases initially had GPR register rotations
+in small source probes, despite correct instruction counts/436
+CODE byte lengths. Adding the THREE real larger action source
+bodies to the *same* normal C++ switch naturally produced
+**all five complete native exact GPR/x87/branch/byte-width
+instruction grammars**, with no local fake padding/ASM.
+Native original PE and new C++ COFF checks verify **71 true
+typed physical zero-addend call/global fields** at original
+instruction positions, including actual external CRT 006406AC
+and never counting CRT code as authored game CODE.
+Across F572–F585 single source: **37 genuine original game-action
+bodies, 5,078 native instruction roles, 19,140 internal
+original CODE bytes, 354 true typed COFF fields**, 60 native
+physical jump-table DWORD fields and 198 exact sparse-index
+bytes, 438 separate after-RET native DATA-layout bytes.
+Original whole 33,293-byte fighter still not exact; no
+standalone inner CODE credit or full all-unit cold replay/Oracle.
+[F585 trajectory source study](CHARACTEROBJECT_TRAJECTORY_F585.md),
+reproducer `scripts/repo-python scripts/verify-characterobject-five-trajectory-actions-f585.py`.

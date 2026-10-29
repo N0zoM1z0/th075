@@ -1,6 +1,6 @@
 # TH075 — current agent handoff
 
-**Maintained: 2026-10-29, after F584; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
+**Maintained: 2026-10-29, after F585; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
 
 ## 1. Current authoritative state (not historical hypotheses)
 
@@ -564,6 +564,36 @@ and [F584 whole-original destructor negative controls](ARCHIVE_DELETE_EXPRESSION
 The 943 existing exact functions and 862,726 accepted CODE bytes
 remain unchanged. No all-unit cold replay, fabricated stack padding
 or external Oracle acceptance.
+
+**F585 reconstructs FIVE complete original native CharacterObject
+trajectory and coordinate-sync actions `0x345..0x349`** inside
+still-nonexact giant `004EBDA0` (33,293 entire original CODE bytes).
+The three genuinely large trajectory actions are **286/1,144,
+286/1,136, 289/1,153** (original x86 insns/CODE bytes) with
+original angle ±180 wrapping, speed caps 140/+7, 120/+6,
+200/+10 and real `006406AC` external `__ftol2` conversions.
+Native `0x348` uniquely reverses its polar angles with two NEG
+ops. The two distinct 111/436 native parent-sync cases call
+`__ftol2` twice each and use real parent `+0xF0C/+0xF0E` state.
+The first small probe rotated their EAX/ECX/EDX roles; *adding the
+real giant action C++ source in the same switch* naturally recovered
+correct registers and total complete byte lengths in all five cases,
+without compiler padding or ASM.
+
+New one-TU selected PE/COFF source proof has **five strict original
+complete action x86/GPR/x87/CFG/byte-width cases**, **1,083 native
+instruction roles, 4,305 original inner CODE bytes and 71 genuine
+typed zero-addend COFF fields**. Across F572–F585 the one C++
+switch now has **37 complete game actions, 5,078 original
+instruction roles, 19,140 original internal CODE bytes and 354
+real typed PE-grounded COFF records**, with all original 60 dense
+jump slots, 198 literal compressed bytes and 438 native after-RET
+DATA shape. Runtime `__ftol2` is external, not authored original.
+See [F585 five real trajectory source cases](CHARACTEROBJECT_TRAJECTORY_F585.md)
+and selected verifier
+`scripts/repo-python scripts/verify-characterobject-five-trajectory-actions-f585.py`.
+**Whole giant 33,293 CODE still NONEXACT; zero separate case or
+whole exact credit.** No all-unit cold replay or Oracle.
 
 **Three other authored functions remain nonexact (all require full CODE):**
 

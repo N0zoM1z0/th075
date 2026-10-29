@@ -114,3 +114,17 @@ independent original disassembly and source compiler controls under
 inner original case bytes are not 32 independent exact functions.
 No fabricated local stack frame, original assembly graft, all-unit
 cold replay or external Factory/Oracle acceptance receipt.
+
+## F585 follow-up: complete trajectory source cases
+
+The same normal C++ source now implements original complete
+`0x345`, `0x346`, `0x347`, `0x348` and `0x349` native game actions.
+The original first case is 286 instructions/1,144 CODE bytes;
+`0x347` and `0x348` are independently original-backed 286/1,136
+and 289/1,153 big trajectory states. The two 111/436 cases
+reproduce authentic parent short sync and external `__ftol2` calls.
+After the large real source cases were added, original GPR register
+allocation in the two short cases also emerged naturally.
+F583 still verifies all 32 earlier actions under the same new TU;
+[F585 five-trajectory study](CHARACTEROBJECT_TRAJECTORY_F585.md)
+checks all 37, retaining entire original 33K giant NONEXACT.
