@@ -11204,3 +11204,33 @@ inner CODE bytes**, NOT accepted complete game functions; official
 943/862,726 whole-authored exact unchanged, no full cold replay.
 [F637 original PE/x87/COFF source proof](FIGHTER_GROUND_BOOST_F637.md),
 selected `scripts/repo-python scripts/verify-fighter-ground-boost-f637.py --boss 0x005D73C0`.
+
+
+## F638: four full native game constructor bodies exact from explicit and compiler implicit C++ source, origins pending
+
+Actual pinned original Japanese game constructors `00458670`
+(23-byte polymorphic base vtable `0065904C`), `00458650`
+(31-byte derived constructor calling actual `00458670` and setting
+vtable `00659038`), `004251C0` (34-byte virtual owner vtable
+`00657B88` and real `this+4` member ctor `00417210`), and
+`00411C10` (25-byte nonvirtual owner member `this+4` ctor
+`0040D990`) are **FOUR independent complete original registered
+whole CODE functions**. Natural pinned VC7.1 C++ compiles BOTH
+explicit-empty and separately **compiler implicit/placement-new**
+default constructors with identical actual original entire native
+**113/113 original machine CODE bytes/46 x86/6 physically typed
+zero-addend original PE-targeted COFF references** after resolving
+real PE pointer/REL32 bytes. No machine byte graft or ASM.
+Independent direct original native CALL decoding across all 4,351
+registered function extents proves native 2/2/15/1 true uses,
+including 1/2/15/1 CALLs from currently authored game sources.
+Game use and whole-byte compiler identity do **not** establish
+historical explicitly written-vs-generated source origin: all four
+remain `unknown`/`review`, no accepted authored exact CODE credit.
+Combined separate F616/F618/F634/F638 fully source-backed
+origin-unknown whole originals: **11 distinct functions /287 native
+CODE bytes**, all uncredited. [F638 original PE/vtable/constructor
+physical target and caller proofs](GAME_INHERITANCE_CONSTRUCTORS_F638.md),
+rebuild `scripts/repo-python scripts/verify-game-inheritance-constructors-f638.py`.
+Official 943/862,726 whole-authored exact unchanged; no full
+all-unit cold replay or external Oracle receipt.

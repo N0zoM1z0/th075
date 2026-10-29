@@ -1,6 +1,6 @@
 # TH075 — active reconstruction handoff
 
-**Maintained 2026-10-29 after F637.** This is the **only current task list**.
+**Maintained 2026-10-29 after F638.** This is the **only current task list**.
 The [F540–F596 research chronology](history/RE_HANDOFF_F540_THROUGH_F596.md),
 [knowledge base](KNOWLEDGE_BASE.md), and older F-series studies are
 **historical evidence**, not statements of current progress. Independently
@@ -847,6 +847,34 @@ condition, source and native field proof](FIGHTER_GROUND_BOOST_F637.md),
 ```bash
 scripts/repo-python scripts/verify-fighter-ground-boost-f637.py --boss 0x005D73C0
 scripts/repo-python scripts/verify-fighter-ground-boost-f637.py --boss 0x00564BE0
+```
+
+**F638 reconstructs FOUR more complete original small game-facing
+constructors, with strict origin uncertainty:** native `00458670`
+(base virtual table `0065904C`, **23/23 original whole CODE B**),
+`00458650` (actual base call then derived vtable `00659038`, **31/31
+B**), `004251C0` (native vtable `00657B88` and nontrivial member
+ctor `00417210` at +4, **34/34 B**) and `00411C10` (nonvirtual
+member ctor `0040D990` at +4, **25/25 B**) are each **complete
+native whole byte-exact**, not switch fragments. TWO independent
+ordinary pinned VC7.1 source TUs—**explicit** and completely
+**implicit** default constructors forced by genuine placement-new—
+reproduce **113/113 original whole CODE bytes, 46 actual native x86,
+6 real PE-targeted zero-addend typed COFF fields**. Original 4,351
+registered CODE extents independently show 2/2/15/1 true CALLs,
+with 1/2/15/1 from currently authored game callers. But explicit
+versus compiler-generated special-member origin cannot be inferred
+from identical machine-code and callers: original four functions
+remain `unknown`/`review`, ZERO new authored exact ledger credit.
+With F616/F618 constructors and F634 complete game leaves, **11
+distinct whole original functions /287 original CODE bytes** are now
+source-backed but uncredited pending actual authored provenance.
+[F638 fully linked original PE and two source modes](GAME_INHERITANCE_CONSTRUCTORS_F638.md),
+[explicit source](../probes/GameInheritanceAndMemberConstructorsF638.cpp),
+[implicit](../probes/GameInheritanceAndMemberConstructorsImplicitF638.cpp).
+
+```bash
+scripts/repo-python scripts/verify-game-inheritance-constructors-f638.py
 ```
 
 ## 4. Other three unmatched authored *whole* functions
