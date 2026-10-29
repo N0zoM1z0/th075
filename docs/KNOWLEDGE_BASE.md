@@ -8850,3 +8850,26 @@ EBP-0x88 reads. See [F549 complete native action-ten case study](FIGHTER_ACTIONT
 and `scripts/repo-python scripts/verify-fighter-actionten-natural-source.py`.
 **1,065 original interior CODE bytes, not a whole boss/function exact
 match; no new accepted CODE/DATA, full cold replay or Oracle receipt.**
+
+
+## F551: three newly reconstructed original action-seven C++ cases
+
+Whole-original PE case 6/7/8 DWORDs delimit complete **362-byte, 104-
+instruction** native action 7 in Reimu `0045DD70`, `0058AF60`, and
+`005D73C0`. Independent original byte/instruction comparisons show only
+three source-policy differences from their previously compiled exact-shape
+action 6: unsigned frame-state +0x511 tests 5 rather than 3, native
+`0040FAC0` receives 0xCD rather than 0xCC, and `this+0x50` position
+initializes 4.0f/4.0f/6.0f. No uniform fighter float is assumed.
+
+Three fresh natural VC7.1 compiles preserve both full native action
+6 and 7 **624/624 original GPR/x87/branch instructions**, all **36
+physical call/global COFF fields**, true vtable indirect call form,
+422 correct native-style jump DWORD refs and 1,323 original sparse bytes.
+The two original cases comprise **2,172 interior CODE bytes** inside
+still-unmatched 153,511 CODE of the three whole bosses, not three exact
+independent functions. Reproduce with
+`scripts/repo-python scripts/verify-fighter-action-seven-natural-source.py`;
+full native source audit:
+[F551 two-case study](FIGHTER_ACTIONSEVEN_NATIVE_CPP.md). No credited CODE,
+full cold replay or Oracle receipt.
