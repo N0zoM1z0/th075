@@ -26,7 +26,7 @@ types are provisional; machine-code matches alone do not prove an entire
 original class layout. The target's official distribution provenance has not
 been independently verified; do not substitute a localized `th075c.exe`.
 
-These snapshot counts were rechecked after **F681** (2026-10-30).
+These snapshot counts were rechecked after **F684** (2026-10-30).
 The **live** sources of truth, not any dated prose milestone, are `config/functions.csv`,
 `config/function-origins.csv`, and `config/match-units.toml`.
 Refresh using `scripts/repo-python scripts/report-reconstruction-status.py --summary`.
@@ -75,6 +75,17 @@ The selected giant now has **29 context-strict original native
 cases /2,409 x86/8,334 real inner CODE B/222 typed PE/COFF fields**.
 It remains whole-NONEXACT. [F681 actual saved-this and full-parent
 native proof](docs/FIGHTER_STORM_TERMINAL_F681.md).
+A **separate F684 full-parent source context** newly recovers the
+entire original complex `0x2F9` angle/volley handler (**381 genuine
+x86/1,367 original CODE B/34 physical typed fields**); normal C++
+reproduces the original two projectile loops and `__ftol2` angle
+conversion, but emits **1,319 B** with 16 real wide stack differences,
+eight x87 evaluation-order positions and 236 wrong GPR/x87 roles:
+**NONSTRICT**. The upstream source also makes previously strict
+terminal 31B/31C **43/36 GPR roles nonexact in this other parent**,
+while 27 preceding nonterminal strict cases and entire afterRET DATA
+remain verified. Preserve both honest source contexts.
+[F684 entire 2F9 native/source/real EBP negative](docs/FIGHTER_ANGLE_STORM_F684.md).
 F676 previously added two large NONSTRICT 2F0/2F1 source bodies
 (616 x86/2,146 B/65 typed fields) and made 31C context-strict.
 F674 previously strictly proved `2EF` (224 x86/788 B/20 fields).

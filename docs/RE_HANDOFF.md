@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F683; earlier frozen handoffs are archived.**
+**Maintained 2026-10-30, after F684; earlier frozen handoffs are archived.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -117,7 +117,20 @@ stack-local offset mask. All previous **28 context-strict native
 cases**, genuine 186/18A/18B/258 negative controls and complete
 separate **943-byte afterRET switch DATA** remain verified in the
 **same new full-parent compile**. No original entire giant is exact.
-[F681 latest complete original PE/source/receiver-role proof](FIGHTER_STORM_TERMINAL_F681.md).
+[F681 original PE/source/receiver-role proof](FIGHTER_STORM_TERMINAL_F681.md).
+**Separate F684 full-parent context:** real native action `2F9`
+(**381 original x86 /1,367 whole inner CODE B/34 physical PE/COFF
+fields**) now has normal C++ for the authentic two kind0x391/392
+loop volleys and `00483300`/`__ftol2` angle conversions. It emits
+**1,319 B, NONSTRICT** due to 16 authentic wide integer-to-float
+EBP local positions (original −0x1D8..−0x1F4, compiled
+−0x58..−0x74), eight x87 load/move reorderings and 236 genuine
+GPR/x87 register-role discrepancies. That newly compiled full
+parent still rechecks 27 previous strict nonterminal cases and
+whole afterRET DATA, but real terminal 31B/31C now have 43/36
+GPR phase differences. This does **not** invalidate F681's
+separately verified context-strict terminal proofs.
+[F684 true original 2F9 negative study](FIGHTER_ANGLE_STORM_F684.md).
 F676 earlier made 31C strict when 2F0/2F1 were restored; F674
 correctly found 31C NONSTRICT in its older different parent context.
 [Prior F676 source context proof](FIGHTER_CLOUD_BURST_F676.md).
@@ -214,7 +227,9 @@ F646 `0xD0` remains nonstrict in other original actors due to
 explicitly distinguishes the 3 strict parent contexts.
 
 ```bash
-# NEW entire selected giant: real 2F8 storm negative and strictly matched 31B+31C:
+# NEW alternative full parent: real 2F9 x87/storm-source negative and true terminal GPR regressions:
+scripts/repo-python scripts/verify-fighter-angle-storm-f684.py
+# Prior complete selected giant: real 2F8 storm negative and strictly matched 31B+31C:
 scripts/repo-python scripts/verify-fighter-storm-terminal-f681.py
 # Prior 2F0/2F1 negative source and context-strict 31C:
 scripts/repo-python scripts/verify-fighter-cloud-burst-f676.py

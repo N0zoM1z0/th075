@@ -12231,3 +12231,40 @@ and `.analysis/f683-archive-name-types/`.
 [Complete original target F682/F683 negative matrix](ARCHIVE_RESOURCE_FILENAME_LIFETIMES_F682_F683.md).
 Zero authored exact CODE change; official whole 943/862,726 B and
 giant whole-nonexact status remain unchanged; no full cold replay.
+
+
+## F684: full original 2F9 angle-storm native 1,367-byte source grammar, genuine negative
+
+In a freshly compiled entire original fighter `00543210` source
+variant, new C++ reconstructs the **whole native physical action
+2F9 (`00550475`..`005509CC`), 381 original x86/1,367 actual inner
+CODE bytes/34 genuine typed PE/COFF fields**. Ordinary source
+models real kind 391/392 volley and two indexed stage11/stage14
+loops, true direction-scaled projectile origin, original float
+angle helper `00483300`, float global division `00657828`, VC7.1
+`__ftol2` call linked to original `006406AC`, actual action and
+short-counter stages. The source emits **381 x86/1,319 B**, not
+strict: 16 original wide x87 integer-scratch EBP operands occur at
+compiler shorter slots, eight original native x87 FLD vs MOV
+instruction-order positions differ, and **236 actual nonfield GPR/
+x87/CFG roles** remain nonexact. Four more C++ x87 identity-lvalue
+or volatile alternatives were compiled and rejected, not padded.
+
+F684 verifies all **34 genuine original PE/COFF fields**, the
+original sixteen scratch wrong operands and both real loop-index
+local differences in this newly compiled whole giant, with only
+physically authenticated saved-this role (`PE−0x44` vs compiler
+`−0x14`) presented to older helpers. All 27 previous nonterminal
+context-strict original cases, old real EBP negatives and complete
+943-byte original afterRET switch DATA remain valid **in this
+alternate full parent**. In contrast, the original 31B/31C terminal
+native cases gain 43/36 real GPR mismatches after inserting real
+2F9; their F681 contextual strict proofs remain valid only in
+that separate verified parent. Never sum strict credit across these
+incompatible source contexts or claim full giant exact. F598–F684
+cumulative research **597 strictly source-backed original inner
+cases/162,036 uncredited original native CODE bytes**, unchanged;
+formal whole-authored 943/862,726 remains. [Original full-parent
+F684 source and negative physical proof](FIGHTER_ANGLE_STORM_F684.md),
+`scripts/repo-python scripts/verify-fighter-angle-storm-f684.py`.
+No mass replay.

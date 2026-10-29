@@ -195,7 +195,7 @@ def check_real_fields(refs,native,gen,fields,symbols,action):
     return len(physical)
 
 
-def verify_storm(source_decoder,code,refs,orig,pos,shared,h):
+def verify_storm(source_decoder,code,refs,orig,pos,shared,h,following_native=None):
     ins=[]
     for x in source_decoder.disasm(code,0):
         ins.append(x)
@@ -221,8 +221,19 @@ def verify_storm(source_decoder,code,refs,orig,pos,shared,h):
     nonfield=[(i,a,b) for i,(a,b) in enumerate(zip(l,r)) if a!=b and i not in absolute_fields]
     need(len(nonfield)>100 and nonfield[0][0]==0,
          'original 2F8 source nonfield GPR/x87 negative unexpectedly eliminated')
-    need(ins[pos+len(native)].mnemonic=='mov' and ins[pos+len(native)].op_str.endswith(', 0x2fa'),
-         'native 2F8 complete source must end at true physical following 2F9 placeholder')
+    if following_native is None:
+        need(ins[pos+len(native)].mnemonic=='mov'
+             and ins[pos+len(native)].op_str.endswith(', 0x2fa'),
+             'native 2F8 complete source must end at true physical following 2F9 placeholder')
+    else:
+        need(following_native==0x2F9
+             and ins[pos+len(native)].mnemonic=='push'
+             and ins[pos+len(native)].op_str=='0xff0000'
+             and ins[pos+len(native)+1].mnemonic=='push'
+             and ins[pos+len(native)+1].op_str=='4'
+             and ins[pos+len(native)+2].mnemonic=='push'
+             and ins[pos+len(native)+2].op_str=='3',
+             'original complete native 2F9 meaningful storm configuration must immediately follow 2F8')
     return {'real_original_native_action':'0x2F8',
             'original_full_native_start':f'0x{lo:08X}',
             'original_real_next_handler':f'0x{hi:08X}',
