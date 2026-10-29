@@ -10502,3 +10502,24 @@ study](FIGHTER_TRAJECTORY_LANDING_SPAWN_F608.md),
 `probes/FighterTrajectoryLandingSpawnF608.inc`, targeted
 `scripts/repo-python scripts/verify-fighter-trajectory-landing-spawn-f608.py --boss 0x0058AF60`.
 No all-unit cold replay, no external Oracle receipt.
+
+
+## F609: independent original 171-byte ArchiveCatalog destructor source-type/loop controls
+
+Full original pinned Japanese PE `0041CE50` is 171 native CODE bytes,
+51 x86 instructions and 14 genuine physical typed COFF fields. F609
+selected natural VC7.1 `/GX-` compilation of **19 whole source
+variants** tried unsigned/signed and size_t loop index, equivalent
+C++ increment, actual bracketed deletion and free scopes, meaningful
+const/casts and pointer lvalues. Every variant emits the full
+171/51 original geometry and 14 original physical fields but remains
+**NONEXACT**: 18 at **108/115** original nonfield byte equality,
+1 distinct inequality-loop diagnostic at **107/115**. The native
+`EBP−0xC/−0x8/−0x10` resource/delete/name temp order remains
+`EBP−0x10/−0xC/−0x8` in generated C++. These variants rule out
+mere signedness, `for` spelling and simple lexical casts as the
+remaining compiler stack-allocation cause; no fabricated locals,
+partial acceptance or all-unit cold replay.
+[Original F609 analysis](ARCHIVE_DESTRUCTOR_SOURCE_TYPES_F609.md),
+selected `scripts/repo-python scripts/verify-archive-source-types-f609.py --case signed-index`.
+Official whole authored exact units remain 943/862,726 native CODE bytes.

@@ -1,6 +1,6 @@
 # TH075 — active reconstruction handoff
 
-**Maintained 2026-10-29 after F608.** This is the **only current task list**.
+**Maintained 2026-10-29 after F609.** This is the **only current task list**.
 The [F540–F596 research chronology](history/RE_HANDOFF_F540_THROUGH_F596.md),
 [knowledge base](KNOWLEDGE_BASE.md), and older F-series studies are
 **historical evidence**, not statements of current progress. Independently
@@ -346,6 +346,20 @@ Never run a full 943-unit cold replay.
 | **`00602A60`** `GameApplication::Run` | **2,987 B; 654 original x86, 123 calls**, original 0x278 frame | F528 best normal C++ source emits 2,981 B /654 x86 but wrong native EBP owner local slots; inspect `.analysis/f528-winmain-native-initial-scene/`, [WinMain whole CFG](WINMAIN_ORIGINAL_CONTROL_FLOW.md). The original scene switch's 60 after-RET bytes are DATA |
 | **`0043B0B0`** battle scene destructor | **248 B /75 x86 /12 original COFF fields** | True VC7.1 `/GX` ordinary C++ has **191/200** non-COFF bytes; nine different literal EBP temp slots for texture delete and three resource frees. [F589 native destructor probes](SCENE_TEXTURE_DELETE_CONTROLS_F589.md). No 248-byte exact credit |
 | **`0041CE50`** archive catalog nonvirtual destructor | **171 B /51 x86 /14 real COFF fields** | Natural `/GX-` C++ has **108/115** nonrelocation bytes; original delete/filename temporary locals use different EBP ownership. F598 confirms direct filename `free` fixes the **resource** stack slots but incorrectly drops 2 native instructions (165 rather than 171 B); meaningful local filename source restores 171 B but shifts slots back. [F584 native archive delete experiments](ARCHIVE_DELETE_EXPRESSION_CONTROLS_F584.md) and [F598 small C++ negatives](FIGHTER_SINGLETON_CONTACT_F598.md). No 171-byte exact credit |
+
+**F609 negative small-function research:** 19 freshly compiled
+**whole 171-byte/51-instruction** ArchiveCatalog destructor source
+variants (signed/unsigned/size_t loop indices, nested source scopes,
+actual delete/free casts, pointer lvalues) preserve the **14 true
+PE/COFF relocations** but all fail to reproduce native EBP temp
+ownership: 18 forms are **108/115** original nonrelocation bytes,
+`index!=Size()` is **107/115**. No whole destructor exact promotion.
+[Reproducible F609 whole-original negative constraints](ARCHIVE_DESTRUCTOR_SOURCE_TYPES_F609.md),
+[one selected native compiler check](../scripts/verify-archive-source-types-f609.py):
+
+```bash
+scripts/repo-python scripts/verify-archive-source-types-f609.py --case signed-index
+```
 
 Unknown provenance is **separate** from these authored nonexact
 functions. F595 produced **40/40 byte-identical native C++** for
