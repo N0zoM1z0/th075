@@ -218,7 +218,7 @@ int WINAPI GameApplicationRunF455(HINSTANCE instance,HINSTANCE previous,LPSTR co
           // The game-data and archive owners destruct naturally in reverse
           // order on this successful exit, as the original PE shows.
           return 0;
-          
+
         }
       }
     }
