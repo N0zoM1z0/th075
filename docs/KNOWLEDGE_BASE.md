@@ -8944,3 +8944,28 @@ new accepted CODE/DATA. [Full F556 native C++ study](FIGHTER_EXTRA_STAGE_SOURCE_
 reproducible one-boss verifier
 `scripts/repo-python scripts/verify-fighter-extra-stage-action-source.py`.
 No all-unit replay, fake exactness or external Oracle receipt.
+
+
+## F557: two flag-clear-free 115-instruction giant actor C++ families
+
+Physical original first-switch cases 6 and 7 in `00543210` (58,294 full
+original CODE bytes) and `00564BE0` (61,872) contain **115 native
+instructions** each, unlike the 117-case F556 family. They have the
+original extra 13-instruction stage/x87 threshold-`00657D14` callback,
+but **do not clear FLAG** within their stage 3/2 float initialization.
+Genuine per-fighter extra-stage/callback pairs are `3/4` then `4/5` for
+`00543210`, versus `2/3` then `2/3` for `00564BE0`; all original float
+values are independently read from physical MOV immediates. Four new
+VC7.1 natural source cases meet **460/460 native register/x87/control
+instructions, 32/32 genuine typed COFF references**, all 287 original
+switch COFF field partitions and 669 actual compressed index bytes.
+
+The original `00564BE0` cases are 508 bytes vs 393 candidate source
+because 37 EBP-0x88 owner reloads grow +3 bytes each and one `JL` grows
++4 bytes in each case; the 115-byte per-case difference is fully measured
+without source padding. The four **1,802 inner original CODE bytes** are
+still part of 120,166 whole-boss unmatched CODE, not independently exact.
+Detailed original native/COFF proof is at
+[F557 natural 115-insn study](FIGHTER_STAGE_NO_FLAG_F557.md), reproducible
+by `scripts/repo-python scripts/verify-fighter-stage-no-flag-source.py`.
+No full cold replay, fabricated byte match or external Oracle receipt.

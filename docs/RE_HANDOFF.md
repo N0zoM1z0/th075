@@ -1,6 +1,6 @@
 # TH075 — current agent handoff
 
-**Maintained: 2026-10-29, after F556; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
+**Maintained: 2026-10-29, after F557; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
 
 ## 1. Current authoritative state (not historical hypotheses)
 
@@ -73,6 +73,18 @@ targeted compiler command:
 `scripts/repo-python scripts/verify-fighter-extra-stage-action-source.py --boss CharacterMove`.
 **All 1,612 case bytes remain inside two whole unmatched giant functions**;
 no split/whole CODE exactness credit.
+
+**F557 adds two more entire 115-instruction original action-six/seven
+source families** (`00543210`, `00564BE0`) with truly **no FLAG clear**.
+Four new complete native C++ cases verify **460/460 original per-fighter
+GPR/x87/branch instructions and 32/32 authentic COFF fields**, plus all
+287 DWORD table slots and 669 original sparse bytes. The unusual 508-byte
+source parent is explained by **37 wide native EBP-0x88 reloads + one
+extra-long JL** per case, not padded C++. See
+[F557 115-instruction source/codegen proof](FIGHTER_STAGE_NO_FLAG_F557.md)
+and `scripts/repo-python scripts/verify-fighter-stage-no-flag-source.py
+--boss 0x00564BE0`. These 1,802 native interior bytes are **not** full-
+function exact CODE credit.
 
 **Three other authored functions remain nonexact (all require full CODE):**
 
