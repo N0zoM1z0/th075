@@ -1,6 +1,6 @@
 # TH075 — current agent handoff
 
-**Maintained: 2026-10-29, after F565; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
+**Maintained: 2026-10-29, after F566; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
 
 ## 1. Current authoritative state (not historical hypotheses)
 
@@ -187,6 +187,20 @@ DWORD references and 345 original sparse-index bytes. See
 and scripts/repo-python scripts/verify-fighter-scripted-stage-actions.py.
 These 911 inner CODE bytes remain in one entire **nonexact giant**,
 with zero split/whole exact CODE credit.
+
+**F566 now integrates all original actions 0..10 in ONE
+freshly compiled natural C++ function for the unique 46,755-byte
+scripted fighter giant 005214B0.** This moves beyond F565's
+independent action6/7/8 source: all eleven original cases together
+reproduce **550/550 physical native GPR/x87/branch/length instruction
+roles, 73/73 genuine typed COFF reference fields**, all native 139
+switch DWORD COFF slots and 345 byte-identical sparse index bytes,
+with 901 separate after-RET DATA bytes. See
+[F566 scripted fighter eleven-case source](FIGHTER_INTEGRATED_SCRIPTED_F566.md)
+and scripts/repo-python scripts/verify-fighter-integrated-scripted-switch.py.
+All 1,938 inner CODE bytes remain in the **nonexact** 46,755-byte
+giant; later actions are diagnostic markers, not restored game source.
+No whole/split exact CODE credit.
 
 **Three other authored functions remain nonexact (all require full CODE):**
 

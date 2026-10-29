@@ -9166,3 +9166,24 @@ remain part of 46,755 completely unmatched original CODE bytes;
 scripts/repo-python scripts/verify-fighter-scripted-stage-actions.py;
 [F565 scripted-state source](FIGHTER_SCRIPTED_STAGE_F565.md).
 No whole/subfunction exact credit, all-unit replay or external Oracle.
+
+## F566: eleven authentic native game actions integrated in 005214B0
+
+Original complete 46,755-byte fighter giant 005214B0's distinct scripted
+frame-state family (F565) has now been naturally compiled in **one C++
+Advance() function containing all first-table action cases 0..10 at once**.
+The full original PE SHA, genuine separate case0x32 singleton boundary
+and entire after-RET jump DATA are independently verified first.
+The single fresh VC7.1 COFF object matches **all 550 native
+GPR/x87/control instruction roles and lengths** in those eleven case
+subranges, **73/73 physically genuine typed COFF calls/globals**,
+all 139 original-style DWORD switch fields, real repeated/default
+handler destinations and 345 byte-identical original sparse index bytes.
+That is **1,938 internal native CODE bytes**, still included in
+**46,755 wholly unmatched giant original CODE bytes**, never split/
+whole exact credit. Remaining case labels are clearly diagnostic-only
+markers. Original after-RET DATA remain 901 separate bytes.
+F566 study: [source integration](FIGHTER_INTEGRATED_SCRIPTED_F566.md);
+affected-only reproducible command
+scripts/repo-python scripts/verify-fighter-integrated-scripted-switch.py.
+No full cold replay or external Oracle receipt.
