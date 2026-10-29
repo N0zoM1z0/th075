@@ -111,3 +111,15 @@ These **5,587 original inner CODE bytes are still included in the
 C++ class layout and still-unimplemented later actions remain unknown.
 Zero accepted whole/split-function CODE/DATA credit, no fake padding,
 no all-unit replay and no external Factory/Oracle receipt.
+
+## F576 follow-up: two separately reconstructed full large actions
+
+The same tracked ordinary C++ source has since gained real original
+`0x330` and `0x331`, each **274 native instructions / 1,003 CODE
+bytes**. F575's verifier continues to independently validate its
+original first 15 game-action bodies. The newer
+[F576 integrated original source study](CHARACTEROBJECT_FIRE_STATES_F576.md)
+adds both giant actions with **actual x87/COFF calls and an exactly
+explained 18-byte native original EBP width expansion per case**.
+They remain within a wholly nonexact original fighter, not two
+independent original subfunctions.

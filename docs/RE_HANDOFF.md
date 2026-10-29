@@ -1,6 +1,6 @@
 # TH075 — current agent handoff
 
-**Maintained: 2026-10-29, after F575; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
+**Maintained: 2026-10-29, after F576; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
 
 ## 1. Current authoritative state (not historical hypotheses)
 
@@ -349,6 +349,26 @@ strictly match. Reproduce via
 and `scripts/repo-python scripts/verify-characterobject-fade-actions-f575.py`.
 The **5,587 inner CODE bytes remain part of the still nonexact
 33,293-byte giant**, not independent exact functions.
+
+**F576 adds two more original large game-action bodies**, native
+`0x330` and `0x331` inside the same `004EBDA0` CharacterObject
+33,293-byte giant. Each whole native case has **274 instructions
+and 1,003 CODE bytes**; a newly compiled natural C++ source emits
+274 instructions /985 bytes because three real original native
+integer-to-x87 temporary slots each use two disp32 instructions
+(`6 × 3 = 18` extra native bytes per case). Native GPR/x87/branch
+roles and all 16 genuine COFF refs in each case match; action331
+uses original float global **00659090** where action330 uses
+**006583FC**, verified by the original PE, not copied from templates.
+The same newly compiled C++ now contains **17 real complete action
+bodies: 2,054 original x86 instruction roles, 145 genuine typed COFF
+fields and 7,593 native inner CODE bytes**, with 60 authentic
+switch DWORD refs and 198 byte-identical compressed index bytes.
+F573/F574's two earlier read-only MOV/FLD order exceptions remain
+explicit, and both new actions have only explained stack encoding
+width differences; no complete giant/source exactness credit.
+See [F576 native fire-state source proof](CHARACTEROBJECT_FIRE_STATES_F576.md)
+and `scripts/repo-python scripts/verify-characterobject-fire-actions-f576.py`.
 
 **Three other authored functions remain nonexact (all require full CODE):**
 

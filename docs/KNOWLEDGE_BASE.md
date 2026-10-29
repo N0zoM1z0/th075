@@ -9424,3 +9424,33 @@ local-only reproducer:
 `scripts/repo-python scripts/verify-characterobject-fade-actions-f575.py`.
 **The giant 33,293-byte original CODE remains NONEXACT**, no
 partial function credit, no all-unit cold replay/Oracle.
+
+
+## F576: complete 274-insn native action0x330/331 source in 004EBDA0
+
+The next two physically bounded original CharacterObject actions
+`0x330` and `0x331` each have **274 complete native x86 instructions
+and 1,003 original CODE bytes**, with stage-0 x87 motion, native
+8-effect spawn, state transitions, native `00455580` random and
+parent `00453A70` effect generation. Importantly, source `0x330`
+initializes motion `(-4.0f,6.0f)` and subtracts actual original
+global `006583FC`, while source `0x331` initializes `(3.0f,16.0f)`
+and subtracts **different original floating global `00659090`**.
+A single newly compiled VC7.1 C++ TU keeps the same true native
+274 GPR/x87/branch roles but emits only 985 bytes per action:
+original giant real EBP temporary integer-to-x87 FILD stack slots
+are deeper (native 0x330 `-0x84/-0x88/-0x8C`, action0x331
+`-0x90/-0x94/-0x98`), causing exactly **six original disp32
+MOV/FILD instructions × three additional bytes = 18 native CODE
+bytes** per case. No padding, grafted code or split-case exactness.
+Both native cases independently have 16 true typed physical
+COFF call/global references and verified original targets. The
+tracked C++ and verifier now handle **17 real physically bounded
+inner game-action cases, 2,054 native source instruction roles,
+7,593 original inner CODE bytes and 145 real COFF fields**, all
+60 physical jump DWORD slots and 198 exact sparse-map bytes.
+Original 0x32F is the default sparse entry, not a real function.
+No complete whole `004EBDA0` original CODE credit, no cold all-unit
+replay, no external Oracle. Reproducer:
+`scripts/repo-python scripts/verify-characterobject-fire-actions-f576.py`;
+[F576 original fire-state reconstruction](CHARACTEROBJECT_FIRE_STATES_F576.md).
