@@ -118,6 +118,16 @@ Original entry destinations can be individual action handlers, shared
 fall-through blocks, or the same physical default branch: this table by
 itself does not prove separate C++ `case` bodies or their variable names.
 
+## F538 natural C++ generation follow-up
+
+A separate pinned VC7.1 compiler experiment has now recovered both
+**325-byte / 66-instruction native dispatch shapes** from a single natural
+C++ `switch` (143/151 explicit case IDs). All 522 sparse-map bytes per
+boss, all 142/151 physical COFF DWORD slots and default-target partitioning
+match the original; **the large case bodies themselves are still nonexact**.
+See [the full native switch codegen probe](FIGHTER_SWITCH_CODEGEN_RECONSTRUCTION.md)
+and run `scripts/repo-python scripts/verify-fighter-natural-switch-probes.py`.
+
 ## Reproduction, including complete 7,152-row index
 
 ```bash

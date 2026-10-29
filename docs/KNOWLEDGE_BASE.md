@@ -8610,3 +8610,27 @@ and is verified in the updated
 PE-only runner. The 7,152-row F537 action index SHA256 is unchanged.
 **No whole boss C++ rebuilt, no accepted CODE/DATA credit or all-unit
 cold replay.** The existing 942 exact-unit register remains unchanged.
+
+
+## F538: natural C++ switch recovers native compiler-lowered giant dispatch
+
+This goes beyond F537 raw PE mapping. Using the complete original F537 native
+case-ID set, **one** ordinary VC7.1 C++ switch with 143 Reimu /151
+CharacterMove nondefault+singleton cases naturally reproduces the **exact
+66-instruction/325-byte original control dispatch grammar** of both original
+60,999-byte/82,796-byte bosses; this is *not* an actual CODE byte match,
+because stack displacements and external branch/code addresses differ. All
+**522 native sparse index bytes per boss are exactly repeated** by the
+compiler, and the after-RET table layout is 1,090/1,126 native bytes with
+142/151 authentic local `DIR32` COFF destination refs. All physical DWORD
+slot default/nondefault and equivalence partitions agree with the original.
+The codegen hypothesis crucially uses a combined short-circuit guard and
+a direct source `switch(I16(0x60))` instead of a redundant `int action`
+copy; separate-guard and extra-local alternatives are retained in ignored
+`.analysis/f538-fighter-natural-switch/`. The generated case bodies are
+*distinct placeholder stores*, not original authored fighter C++ code. The
+source/probe generator and its fresh native/compiler verification are in
+`scripts/repo-python scripts/verify-fighter-natural-switch-probes.py`,
+with full report in `docs/FIGHTER_SWITCH_CODEGEN_RECONSTRUCTION.md`.
+The full bosses remain entirely nonexact. No invented CODE/DATA credit, no
+all-unit cold replay and no external Oracle receipt.

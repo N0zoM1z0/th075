@@ -39,7 +39,7 @@ rank labels, 208-byte StaffRoll and 92-byte progress counter are all
 **already cold exact**; do not retry historical pending experiments.
 The 22-boss original-only verifier records **1,102,055 uncredited CODE
 bytes** and 16,123 uncredited post-RET switch DATA bytes. F537 also
-[resolves 7,152 original action-ID entries](docs/FIGHTER_ACTION_CASE_RESOLUTION.md)
+[resolves 7,152 original action-ID entries](docs/FIGHTER_ACTION_CASE_RESOLUTION.md) and [recovers two native giant switch-dispatch codegen shapes](docs/FIGHTER_SWITCH_CODEGEN_RECONSTRUCTION.md)
 through complete native jump tables and singleton branches; **no giant boss
 is C++ exact yet**. See the [active handoff](docs/RE_HANDOFF.md), not outdated chronological notes.
 Local Git commits preserve checkpoints; they are **not external Oracle
