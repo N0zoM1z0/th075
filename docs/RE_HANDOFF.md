@@ -1,6 +1,6 @@
 # TH075 — current agent handoff
 
-**Maintained: 2026-10-29, after F589; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
+**Maintained: 2026-10-29, after F590; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
 
 ## 1. Current authoritative state (not historical hypotheses)
 
@@ -716,6 +716,39 @@ targeted whole-original verifier
 The current 943 exact functions, 862,726 CODE bytes and all 22
 still-nonexact original giant bodies remain unchanged. No cold
 all-unit replay or external Factory/Oracle receipt.
+
+**F590 now adds THREE more strictly original-matching whole
+CharacterObject action bodies, `0x370/0x371/0x384`**, inside
+entire still-unmatched giant `004EBDA0` (33,293 original CODE
+bytes). Their genuine physical compressed-switch bounds are
+`0x370→0x371`, `0x371→0x384` (no invented nondefault 0x372),
+and `0x384→0x385`. Native source footprints **79/286, 44/156,
+128/473** (x86 instructions/original inner CODE bytes) now
+reproduce complete ordinary VC7.1 register/x87/branch/byte widths.
+Real 0x370 uses parent state0x133, direction ×260 and float
+constants 006590A0/006583FC/00659090; 0x371 uses two
+0.85f scales, native sprite 0x4E2 and -65f offset; 0x384
+checks parent +0x3A0, x87 physical global 006590B4 and contact
+0065782C, spawns effect0x388 and sets actions 0x385/0x38E.
+**The unique original MOVSX global byte 006714D0 has a verified
+physical zero-addend `DIR32` source relocation** at ordinal102;
+this is the *only* allowable original/C++ operand difference,
+not an ignored code-generation mismatch. New three cases have
+**251 original x86 instruction roles, 915 inner CODE bytes,
+25 authentic typed original PE COFF references**.
+
+Across one single newly compiled ordinary VC7.1 C++ source:
+**46 real complete original game action bodies, 6,813 native x86
+instruction roles, 25,588 original internal CODE bytes and
+474 genuine typed COFF call/global fields**, plus all 60 original
+physical jump DWORD refs, 198 literal sparse-index bytes and 438
+separate after-RET DATA layout bytes. The **33,293 whole original
+CODE bytes are still NONEXACT**, no standalone case/whole CODE
+credit. See
+[F590 original guarded-state source proof](CHARACTEROBJECT_GUARDED_STAGES_F590.md),
+and targeted verifier
+`scripts/repo-python scripts/verify-characterobject-guarded-stages-f590.py`.
+No full all-unit cold replay or Oracle receipt.
 
 **Three other authored functions remain nonexact (all require full CODE):**
 

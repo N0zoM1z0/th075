@@ -156,7 +156,7 @@ def main():
          'original physical Japanese dense/sparse SHA verification failed')
     source=SRC.read_text()
     need('F585/F586' in source and all(source.count(f'case 0x{k:X}:')==1 for k in ORIGINAL_CASES)
-         and 'case 0x370: g_FighterProbeMarker = 881; break;' in source,
+         and 'case 0x385: g_FighterProbeMarker = 902; break;' in source,
          'new C++ source must implement exactly two real new game action bodies and mark later native cases unknown')
     # Only ONE selected VC7.1 C++ object, freshly built by the existing
     # original-backed checker, independently verifying all 37 prior game cases.

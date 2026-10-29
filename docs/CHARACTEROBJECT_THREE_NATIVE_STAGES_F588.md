@@ -145,3 +145,14 @@ The **entire 33,293 original CODE-byte giant remains NONEXACT**;
 its **24,673 internal native bytes are not 43 separately exact
 original functions**. Zero new accepted whole/split CODE or DATA,
 no complete all-unit cold replay and no external Factory/Oracle receipt.
+
+## F590 follow-up: first real original guarded-state and selected-contact cases
+
+The same ordinary VC7.1 C++ source now also implements three complete
+native original actions, `0x370` **79 instructions/286 CODE bytes**,
+`0x371` **44/156** and `0x384` **128/473**, including its uniquely
+physical signed-byte `006714D0` global, whose real source `DIR32`
+COFF offset/target is independently checked. F588 still verifies
+its original 43 cases under this single expanded source; the newer
+[F590 original guarded-action study](CHARACTEROBJECT_GUARDED_STAGES_F590.md)
+verifies all 46, without claiming whole giant exactness.

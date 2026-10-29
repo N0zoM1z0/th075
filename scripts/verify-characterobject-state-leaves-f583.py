@@ -485,7 +485,7 @@ def build_one():
     src=SOURCE.read_text()
     need('F572/F573/F574/F575/F576/F577/F578/F579/F580/F581/F582/F583' in src and
          all(src.count(f'case 0x{k:X}:')==1 for k in range(START,END+1) if k not in (0x32F,0x333,0x334,0x336,0x337))
-         and 'case 0x370: g_FighterProbeMarker = 881; break;' in src,
+         and 'case 0x385: g_FighterProbeMarker = 902; break;' in src,
          'actual F583 source must implement 32 real actions and leave next native 0x345 diagnostic')
     need(src.count('gCurveAt0065972C')>=3 and src.count('MotionRawAt40FB70')>=2,
          'real source must include native polynomial and raw-float input')

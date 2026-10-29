@@ -9897,3 +9897,38 @@ source-only fixture `probes/BattleSceneTextureDeleteF589.cpp`,
 [F589 original scene EH/delete study](SCENE_TEXTURE_DELETE_CONTROLS_F589.md).
 Original resource ownership/lifetime, not a superficial cast,
 remains to be reconstructed. No all-unit replay or Oracle.
+
+
+## F590: original guarded/selected native cases0x370,371,384
+
+The whole original 33,293-byte Japanese CharacterObject giant
+`004EBDA0` now has three more complete game-action C++ sources:
+`0x370` **79 native x86/286 CODE bytes** with parent state0x133,
+signed direction byte times260 and actual original parent float
+global 006590A0, additive global 006583FC, multiplicative
+**same float global 00659090** via FMUL and native 20-step fade;
+`0x371` **44/156** with literal 0.85f x/y scales, sprite0x4E2,
+-65f offset and genuine x87 subtraction global 00659728;
+`0x384` **128/473** with parent signed +0x3A0 guard,
+real stage-zero FMUL 006590B4 on both velocities, native contact
+global 0065782C, real effect0x388 and action0x385, plus
+**signed-byte PE global006714D0** conditionally selecting0x38E.
+All three newly compiled C++ game case bodies match the entire
+original x86 GPR/x87/branch/individual byte-width grammar.
+`0x384` alone has actual `MOVSX ECX, BYTE PTR [006714D0]`
+versus C++ zero-linked global: the one place is independently
+verified by physical `DIR32` symbol/offset/zero addend at original
+ordinal102, not waived as arbitrary source discrepancy.
+Original 0x371 next physical nondefault handler is0x384, not0x372.
+
+F572–F590's one ordinary MSVC7.1 source now validates **46
+complete original game-action bodies, 6,813 x86 native instruction
+roles, 25,588 original internal CODE bytes, 474 real typed
+original-PE-targeted COFF call/global fields**, all 60 native
+first-switch handler DWORD refs and 198 byte-identical native
+sparse indexes plus 438 distinct original after-RET DATA-layout
+bytes. Complete 33,293-byte boss remains **NONEXACT**, no split
+case or whole CODE/DATA credit, no cold all-unit replay/Oracle.
+Reproducer:
+`scripts/repo-python scripts/verify-characterobject-guarded-stages-f590.py`,
+[F590 original guarded cases study](CHARACTEROBJECT_GUARDED_STAGES_F590.md).

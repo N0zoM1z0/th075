@@ -182,7 +182,7 @@ def main():
     src=SOURCE.read_text()
     need('F587/F588' in src
          and all(src.count(f'case 0x{k:X}:')==1 for k in STATES)
-         and 'case 0x370: g_FighterProbeMarker = 881; break;' in src,
+         and 'case 0x385: g_FighterProbeMarker = 902; break;' in src,
          'new source must implement 34D/34E/34F and leave actual next 0x370 unfinished')
     # Only ONE selected native-profile VC7.1 TU built while rechecking
     # all 40 prior complete original cases and entire PE physical tables.
