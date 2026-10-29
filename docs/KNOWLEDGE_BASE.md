@@ -8969,3 +8969,27 @@ Detailed original native/COFF proof is at
 [F557 natural 115-insn study](FIGHTER_STAGE_NO_FLAG_F557.md), reproducible
 by `scripts/repo-python scripts/verify-fighter-stage-no-flag-source.py`.
 No full cold replay, fabricated byte match or external Oracle receipt.
+
+
+## F558: full original actor action 8 in two 117-instruction extra-stage giants
+
+Native original `00486550` and CharacterMove `004AC040` first-switch
+case 8 is exactly **104 instructions / 362 CODE bytes** each: unlike
+original action 6/7 it lacks the 13-instruction stage/x87 bonus helper.
+The native state test is +0x511==4, first state call pushes 0xCE, and
+the true stage position value is -4.0f. But the original position/FLAG
+write **ordering differs**: `00486550` stores position, then clears FLAG,
+then stores 16.0f/0.75f velocity/speed; CharacterMove clears FLAG first,
+then writes -4.0f position and 15.0f/0.7f velocity/speed.
+
+Two newly compiled VC7.1 natural fighter sources revalidate actual
+**actions 6/7/8 together**: six full case structures containing
+**676/676 original per-fighter x86 GPR/x87/branch instructions, 44/44 real
+physical typed COFF call/global fields**, 314 actual native-style DWORD
+jump fields and 934 literal original sparse-byte maps. All **2,336 native
+interior CODE bytes** remain part of **133,531 nonexact complete original
+fighter CODE bytes**; 2,190 original after-RET DATA bytes remain separate.
+Full original evidence and affected-only source reproducer:
+[F558 action-eight C++ study](FIGHTER_EXTRA_STAGE_EIGHT_F558.md),
+`scripts/repo-python scripts/verify-fighter-extra-stage-action-eight.py`.
+No exact credit, full cold replay or external Oracle receipt.
