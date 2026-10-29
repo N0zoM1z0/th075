@@ -252,7 +252,11 @@ def main():
               f'native helper arg={native_aux_value}, actual GPR-allocation match={exact_gpr}; '
               f'isolated natural C++ source case 144 bytes',flush=True)
     OUT.mkdir(parents=True,exist_ok=True)
-    (OUT/'summary.json').write_text(json.dumps(summaries,indent=2)+'\n')
+    # Keep the all-eleven evidence intact after a one-boss targeted recheck.
+    # This is deliberately a local analysis artifact, not exactness credit.
+    summary_name = ('summary.json' if args.boss is None else
+                    f'summary-{originals[0]["address"]:08X}.json')
+    (OUT/summary_name).write_text(json.dumps(summaries,indent=2)+'\n')
     print(f'{len(summaries)}/{len(originals)} original whole-fighter contexts freshly compiled; '
           'NO giant whole-function exact CODE/DATA credit, no all-unit replay')
 

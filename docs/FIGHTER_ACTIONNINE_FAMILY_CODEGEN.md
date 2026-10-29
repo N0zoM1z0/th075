@@ -115,3 +115,13 @@ complete giant fighter source, owner layout and other actions remain
 unreconstructed**. No `config/matches.csv` or exact-unit manifest is
 changed, no accepted CODE/DATA credit is claimed, and there is no external
 Factory/Oracle receipt or all-unit cold replay.
+
+
+### F547 targeted verification output retention
+
+A subsequent selected-`--boss` run writes `summary-XXXXXXXX.json` rather
+than overwriting the earlier all-eleven `summary.json` under the ignored
+`.analysis/f547-action-nine-natural-source/`. This preserves independently
+verified full-family evidence while still cold-compiling only the requested
+new/affected fighter probe. No accepted unit, original executable, or
+coverage ledger changes from this housekeeping improvement.
