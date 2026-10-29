@@ -9330,3 +9330,39 @@ affected-only reproducer:
 `scripts/repo-python scripts/verify-characterobject-action-family-f572.py`.
 **The full 33,293 original boss is nonexact; inner CODE is not new
 exact function/coverage credit.** No whole cold replay/Oracle receipt.
+
+
+## F573: the 248-instruction x87-gated CharacterObject action 0x32A
+
+Original full-giant `004EBDA0` next physical compressed handler
+`0x32A` is a **complete 932-byte/248-instruction native x86
+body**. It has genuine five-effect parent spawn, staged
+actor-field initialization and **six independent original native
+FUCOMPP floating comparisons** against constants at 0065782C,
+0065747C, 00657480, 00657CF8, 00657D14, 00657874,
+selecting ±1/3/5f position and 6/8/10f velocity. The native
+stage-2 contact and motion update calls original effect spawn
+`00453A70` with arguments 0x32B/0x32D and game state
+`0040FAC0(0x33B)`; regular paths query `0040FA30` and call
+`0040FB40(1)`. Eleven new natural C++ lvalue/volatile/operand
+ordering experiments exposed the real VC7.1 source expression
+`*(&F32(0xC8)) == global`: it causes the original float
+GLOBAL-before-owner FLD/FUCOMPP order. Source emits all 248
+original instructions and 932 bytes with identical register,
+CFG and x87 roles **except original MOV EDX [saved_this] /
+FLD [ECX+0x48] is reversed** in the C++ output. These two
+operations are independent read-only and only that exact pair
+is explicitly permitted by the new checker; this is NOT original
+machine-order exactness.
+
+Updated [`probes/CharacterObjectActionsF572.cpp`](../probes/CharacterObjectActionsF572.cpp)
+with a newly compiled source and tracked
+`scripts/repo-python scripts/verify-characterobject-extended-action-f573.py`
+now covers 11 complete original internal game-action case
+bodies, **1,082 x86 roles / 4,019 original internal CODE bytes**
+and **80 genuine typed zero-addend COFF fields**, whole original
+60 DWORD source labels and 198 exact compressed index bytes.
+These inner bytes remain part of the **33,293 wholly nonexact
+giant**; no split/whole CODE credit, full replay or external Oracle.
+Full original-source study:
+[CharacterObject F573 x87 case](CHARACTEROBJECT_X87_ACTION32A_F573.md).

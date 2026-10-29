@@ -127,3 +127,15 @@ remaining dozens of game-action bodies, full original actor/class
 ownership and stack frame remain unreconstructed. There is no new
 accepted whole or partial CODE/DATA, no all-unit cold replay,
 and no external Factory/Oracle receipt.
+
+## F573 follow-up: new action 0x32A (not part of this F572 receipt)
+
+The same tracked `probes/CharacterObjectActionsF572.cpp` source now
+also contains the complete original 248-instruction action `0x32A`
+with six native x87 equality tests. F572's reproducible verifier
+still independently verifies all **ten originally selected strict
+cases 0x320..0x329**; F573 separately verifies the additional case
+with one transparently documented semantically independent read-only
+instruction swap. See [F573 action 0x32A study](CHARACTEROBJECT_X87_ACTION32A_F573.md)
+and `scripts/repo-python scripts/verify-characterobject-extended-action-f573.py`.
+All whole-boss CODE remains nonexact.

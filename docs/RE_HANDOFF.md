@@ -1,6 +1,6 @@
 # TH075 — current agent handoff
 
-**Maintained: 2026-10-29, after F572; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
+**Maintained: 2026-10-29, after F573; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
 
 ## 1. Current authoritative state (not historical hypotheses)
 
@@ -291,6 +291,24 @@ verifier:
 These **3,087 original inner CODE bytes** remain part of the
 **unmatched 33,293-byte whole fighter** with zero split/whole exact
 CODE credit; the other game-action labels remain diagnostic markers.
+
+**F573 adds the next actual complete `0x32A` action** in
+33,293-byte CharacterObject giant `004EBDA0`, a **248-native
+instruction / 932-byte original CODE** algorithm with six genuine
+`FUCOMPP` floating equality checks, effect spawns, x87 motion and
+state transition logic. One selected VC7.1 C++ source now models
+**11 full real native cases, 1,082 physical original instruction
+roles, 4,019 original inner CODE bytes and 80 authentic typed COFF
+call/global fields**; all 60 physical DWORD switch fields and
+198 compressed index bytes remain byte/authentic. Original action
+`0x32A` has **exactly one two-instruction read-only MOV/FLD ordering
+swap** in compiled source; the verifier independently proves that
+single commutation, never credits its bytes as exact. Prior F572
+10 actions still strictly reproduce their native machine order.
+See [F573 six original x87 equality conditions](CHARACTEROBJECT_X87_ACTION32A_F573.md)
+and `scripts/repo-python scripts/verify-characterobject-extended-action-f573.py`.
+All **4,019 original inner CODE bytes remain inside the nonexact
+whole 33,293-byte giant**, with zero whole/split exact CODE credit.
 
 **Three other authored functions remain nonexact (all require full CODE):**
 
