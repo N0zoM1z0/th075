@@ -1,6 +1,6 @@
 # TH075: all 22 independently owned whole fighter action bosses, real after-RET DATA
 
-**Status: original PE research, NOT reconstructed C++ and NOT exact CODE credit.**
+**Status: original PE research, NOT reconstructed C++ and NOT exact CODE credit.** F537 extends this whole-function research with the independently decoded **original 7,152 action-ID → native-entry** mapping across all 22 bosses, including 64 isolated `JE` branches and 4,847 indexed inputs that reach shared defaults; see [F537 action-case resolution](FIGHTER_ACTION_CASE_RESOLUTION.md). This does not convert any original boss into exact C++.
 
 This independently checks the *entire* original CODE stream for each of the
 remaining 22 R-origin authored fighter controllers in the pinned Japanese

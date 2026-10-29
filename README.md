@@ -38,8 +38,10 @@ nonvirtual destructor. The 111-byte coordinate mapping transform `00455770` has 
 rank labels, 208-byte StaffRoll and 92-byte progress counter are all
 **already cold exact**; do not retry historical pending experiments.
 The 22-boss original-only verifier records **1,102,055 uncredited CODE
-bytes** and 16,123 uncredited post-RET switch DATA bytes. See the
-[active handoff](docs/RE_HANDOFF.md), not outdated chronological notes.
+bytes** and 16,123 uncredited post-RET switch DATA bytes. F537 also
+[resolves 7,152 original action-ID entries](docs/FIGHTER_ACTION_CASE_RESOLUTION.md)
+through complete native jump tables and singleton branches; **no giant boss
+is C++ exact yet**. See the [active handoff](docs/RE_HANDOFF.md), not outdated chronological notes.
 Local Git commits preserve checkpoints; they are **not external Oracle
 verification receipts**.
 

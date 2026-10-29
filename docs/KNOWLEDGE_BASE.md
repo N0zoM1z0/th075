@@ -8563,3 +8563,28 @@ expression sequencing, name/reference ABI alternatives and lexical scopes
 under the pinned compiler failed to improve the genuine 171-byte,
 108/115 nonfield byte baseline. These controls are retained under
 `.analysis/f536-archive-and-boss/` and must not be called exact.
+
+
+## F537: physically resolved action-ID dispatch for all 22 full giant fighter bosses
+
+Previously recorded post-RET DWORD tables and sparse indexes were insufficient
+to pick original native handlers for arbitrary action IDs. F537 now independently
+decodes the complete native `SUB` base / signed-state local / `CMP` unsigned
+bound / `JA` default / sparse `MOVZX` / final indexed `JMP` instructions of
+**all 22 full original 28–82K CODE function bodies**, separately checks all
+whole-original native CODE and switch DATA SHA256 identities, and uses the real
+`CMP [state], action; JE native_target` pairs for nonindexed special actions.
+This resolves **7,088 indexed action IDs + 64 singleton actions = 7,152
+per-boss native-entry mappings**; the resulting deterministic CSV SHA256 is
+`3a265d8d4c44fe0672fb8f8184bce18775d36a80ad4707134ed5b3ccc6e08b08`.
+**4,847 of the indexed IDs deliberately route to their boss's actual JA
+default entry**, while 2,241 route to other original instruction entries.
+Reimu 0045DD70 and CharacterMove 004AC040 each have the same full set of
+548 physically tested action IDs, but their singleton/indexed classification
+*differs* at IDs 0x254 and 0x25B; never borrow their case-entry addresses
+or unverified complete owner types. Source-facing evidence and all 22 per-boss
+ranges: `docs/FIGHTER_ACTION_CASE_RESOLUTION.md`, executable verifier:
+`scripts/repo-python scripts/report-fighter-action-handlers.py`. Each original
+case target is an in-function instruction or native default, not a separately
+credited function. There is **no new giant-boss exact C++ or CODE/DATA credit**,
+no all-unit cold replay and no external Oracle receipt.
