@@ -8799,3 +8799,31 @@ remain checked. Read [F547 codegen evidence](FIGHTER_ACTIONNINE_FAMILY_CODEGEN.m
 and reproduce only affected compiler probes with
 `scripts/repo-python scripts/verify-fighter-actionnine-natural-source.py`.
 No full cold replay, giant exact CODE or external Oracle receipt.
+
+
+## F548: native 104-instruction C++ action-six, three whole fighter bosses
+
+The original first switch seventh/eighth native destination DWORDs bound
+**362 complete CODE bytes /104 actual instructions** in each of Reimu
+`0045DD70`, the `0058AF60` fighter and the `005D73C0` fighter. Their
+entire original parent CODE and all post-RET jump DATA are SHA-pinned
+and checked separately. Natural C++ reproduces the full signed two-stage
+fighter frame policy, x87 motion, two genuine `0040FAC0` calls, two
+`00453E20` calls, two authentic physical `0065782C` float references,
+and the **true original indirect owner virtual vtbl[0] call**.
+
+These three have genuine per-character behavior differences: Reimu
+uses stage2 and `12.5f /0.55f`; `0058AF60` uses stage4 with
+`12.5f /0.55f`; `005D73C0` uses stage2 and `14.0f /0.7f`.
+Three serially fresh compiled natural C++ probes reproduce
+**312/312 original x86 mnemonic/length/real GPR/x87/control roles**,
+**18/18 native physical call/constant COFF fields**, and the original
+indirect vtbl[0] call sites. Their physical switch data includes
+422 valid native-style DWORD COFF fields, 1,323 literal original
+sparse index bytes, 3,011 original post-RET DATA-layout bytes and all
+destination equivalence partitions. Complete source-based witness:
+[F548 fighter action-six study](FIGHTER_ACTION_SIX_FAMILY_CODEGEN.md),
+with `scripts/repo-python scripts/verify-fighter-action-six-natural-source.py`
+for affected-only native+compiler proof. These are parts of still-unmatched
+153,511 giant CODE bytes: **no source-accepted 1,086 internal CODE bytes**,
+no arbitrary stack padding, no all-unit cold replay, no external Oracle.
