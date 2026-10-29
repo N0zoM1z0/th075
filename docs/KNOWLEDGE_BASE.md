@@ -9238,3 +9238,33 @@ source audit logs are preserved under ignored
 .analysis/f567-integrated-fighters/ as independently verified controls.
 [F568 original-PE addend control](FIGHTER_COFF_ADDEND_CONTROL_F568.md).
 No giant whole/split exactness, no full cold replay or Oracle receipt.
+
+## F569: native CharacterObject early guards and entire 11 compressed source switches
+
+All 11 remaining original 28K–82K CharacterObject huge boss
+functions (488,664 native original CODE bytes) use one genuine sparse
+indexed state jump with action base 0x320, not the CharacterMove
+six-/seven-switch dispatch architecture. F569 newly generates and
+fresh-compiles one ordinary VC7.1 C++ switch source per whole
+original, recreating actual parent +0xE4 -> +0x2E8 -> +0x3BA
+signed guard, second parent +0x3BA and own +0x8A guard, signed-short
+cooldown -1 at +0x82, and native 0x320-normalized byte-index
+first switch. Eleven native guards match real 17-instruction
+register/branch grammars and all eleven 10-/11-instruction
+cooldown/switch dataflow roles; 10/11 cooldown and 9/11
+dispatch sequences have native GPR allocation. Wide original
+0050A580 uses EBP-0xAC/-0xB0 and six native disp32 index reloads,
+explaining 18 bytes of original-dispatch widening.
+Original 00536400 has additional native game behavior before this
+switch and different source register rotation, so is not called
+register- or CODE-exact. Every natural source probe reproduces
+the whole original jump DATA: **752 authentic zero-addend
+COFF DWORD handler refs, 2,185 literal native sparse bytes,
+5,193 distinct original after-RET layout bytes**.
+The 741 unique case IDs are **diagnostic marker stores**, not
+real restored game-action bodies. The full 488,664 whole original
+CODE bytes remain unmatched, with no extra exact source/bytes.
+See [F569 one-switch native original study](CHARACTEROBJECT_SINGLE_SWITCH_F569.md)
+and
+scripts/repo-python scripts/verify-characterobject-single-switch-source.py.
+No full all-unit replay or external Oracle receipt.

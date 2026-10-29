@@ -1,6 +1,6 @@
 # TH075 — current agent handoff
 
-**Maintained: 2026-10-29, after F568; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
+**Maintained: 2026-10-29, after F569; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
 
 ## 1. Current authoritative state (not historical hypotheses)
 
@@ -236,6 +236,26 @@ and targeted repro
 scripts/repo-python scripts/verify-fighter-all-multiswitch-opening-cases.py
 --boss 0x00564BE0. The eight complete giant CODE extents still are
 NOT exact and receive zero additional CODE credit.
+
+**F569 now reconstructs the real common pre-dispatch native C++
+for ALL ELEVEN separate CharacterObject one-switch giants**, totaling
+488,664 still-unmatched original CODE bytes. Fresh VC7.1 source
+compiles reproduce each fighter's real 17-instruction two-part parent/owner
+state guard logic, native 10-instruction cooldown decrement and
+11-instruction compressed single-table dispatch. **11/11 original
+guard/dispatch semantic paths**, 9/11 strict dispatch register
+allocations, all **752 actual zero-addend COFF dense jump fields**,
+2,185 identical native compressed byte indices and 5,193
+after-RET DATA-layout bytes are verified. Actual 0050A580 wide
+EBP-0xAC / -0xB0 stack slots widen six dispatcher loads by 18 bytes;
+00536400 has extra original game logic preceding dispatch that
+changes free registers. The 741 source action labels remain
+**diagnostic-only marker stores**, not restored gameplay.
+See [F569 one-switch source research](CHARACTEROBJECT_SINGLE_SWITCH_F569.md)
+and targeted
+scripts/repo-python scripts/verify-characterobject-single-switch-source.py
+--boss 0x0050A580. The 488,664 original whole function CODE bytes
+remain unmatched and receive zero new exact CODE/DATA credit.
 
 **Three other authored functions remain nonexact (all require full CODE):**
 
