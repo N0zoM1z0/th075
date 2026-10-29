@@ -11114,3 +11114,31 @@ layout conjecture. [F634 real whole-function/PE-call proof](GAME_OBJECT_ACCESSOR
 targeted `scripts/repo-python scripts/verify-game-object-leaves-f634.py`.
 Official 943/862,726 accepted authored whole CODE unchanged,
 no all-unit cold replay.
+
+
+## F635: 25 full original 33,293-byte authored giant typed-member compiler negatives
+
+`004EBDA0` original Japanese TH075 whole original has **33,293
+CODE bytes/8,789 native x86 +438 separately owned afterRET jump
+DATA bytes**, 682 normal VC7.1 physical source COFF refs (622 CODE
++60 DATA). F635 freshly cold-compiled **25 genuine whole original
+C++ source hypotheses** from `probes/CharacterObjectActionsF572.cpp`,
+limited to `0x38D/0x38E/0x3E3` real float-member zero/quarter/one
+IEEE-754 bit stores, C++ leftvalue/ref/multiply, signed/unsigned
+byte writes and stage4 threshold expression alternatives.
+23 candidate TUs preserve full original **8,789 x86 start, width,
+mnemonic order and same original 137/31,003 nonrelocation byte
+mismatches**. Two genuine `*=`/ref-expression source alternatives
+also preserve whole bytes and x86 instruction count but change
+actual original instruction **start/width** at whole x86 ordinals
+8081/8082 and worsen to **140 wrong original nonfield bytes**.
+First remaining native mismatch still whole x86 ordinal8076 at
+original `0x38D` stage4; the cycle continues into `0x38E` and
+first 31 roles of `0x3E3`. Changing float constant writes to an
+identical raw integer bit representation did **not** alter native
+GPR lifetime allocation under the pinned VC7.1 profile. All 25
+are genuinely NONEXACT; tracked F596 best source unchanged.
+[F635 entire original PE/COFF compiler study](CHARACTEROBJECT_TYPED_MEMBER_CONTROLS_F635.md),
+selected `scripts/repo-python scripts/verify-characterobject-typed-member-f635.py --case 38d-zero-velocity-as-bits`.
+No accepted whole/split CODE credit; official 943/862,726 whole
+exact unchanged and no all-unit cold replay.

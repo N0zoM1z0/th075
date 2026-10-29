@@ -1,6 +1,6 @@
 # TH075 — active reconstruction handoff
 
-**Maintained 2026-10-29 after F634.** This is the **only current task list**.
+**Maintained 2026-10-29 after F635.** This is the **only current task list**.
 The [F540–F596 research chronology](history/RE_HANDOFF_F540_THROUGH_F596.md),
 [knowledge base](KNOWLEDGE_BASE.md), and older F-series studies are
 **historical evidence**, not statements of current progress. Independently
@@ -92,6 +92,28 @@ Primary current results: [F596 collision-order and 137-byte residual](CHARACTERO
 `docs/CHARACTEROBJECT_COMPLEX_AIM_F592.md`. Fresh compiler and whole
 PE/COFF receipts under ignored `.analysis/f593-characterobject-whole-source/`
 and `.analysis/f596-characterobject-native-collision-source/`.
+
+**F635 independent whole original `004EBDA0` typed-member compiler
+hypotheses were negative.** Fresh pinned VC7.1 cold compilations of
+**25 entire original 33,293-CODE-byte /8,789-x86 C++ source variants**
+plus 438 separately owned afterRET DATA/682 zero-addend typed source
+COFF fields tested original-bit-identical float-vs-integer member
+stores, authentic C++ `*=`/lvalues, unsigned fade-byte and original
+`0x38D/0x38E/0x3E3` source access types. **23 whole candidates
+preserve every original x86 start/size/mnemonic and retain the
+same 137 differing nonrelocation original bytes**, first native
+whole x86 ordinal8076, case38D stage4. **Two `*=`/member-lvalue
+versions worsen to 140 differing original bytes and shift actual
+x87 instruction starts/widths at whole ordinals8081/8082**
+(despite 8,789 x86 and same full original CODE size). No new exact
+whole source or case credit; the tracked F596 best giant C++ source
+remains untouched. [F635 full PE source compiler alternatives and
+negative evidence](CHARACTEROBJECT_TYPED_MEMBER_CONTROLS_F635.md).
+
+```bash
+scripts/repo-python scripts/verify-characterobject-typed-member-f635.py --case 38d-zero-velocity-as-bits
+scripts/repo-python scripts/verify-characterobject-typed-member-f635.py --case 38d-stage4-assign-op
+```
 
 ## 3. Other large original fighter bosses — do not only fix leaves
 
