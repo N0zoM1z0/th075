@@ -150,6 +150,53 @@ def check_native_stack(ins, expected_slot):
             'native action-nine has unexpected receiver/13 stack reload witnesses')
 
 
+def source_nine_for(tag, report, mapped, original, reader, target, decoder, boss,
+                    six, switch, zero, one):
+    """Regenerate the previously verified native action-9 C++ from live PE.
+
+    This takes original boss context, no ignored generated source files.
+    All nonreconstructed cases remain diagnostic-only marker stores.
+    """
+    first_six=six.native_six(reader,target,decoder,boss)
+    basic,source_cases,_=six.source_for(switch,zero,one,report,mapped,tag,first_six)
+    expected=f'FighterSwitchF545_{tag}'
+    require(basic.count(expected)>=2,'preceding verified source owner changed')
+    cpp=basic.replace(expected,f'FighterSwitchF547_{tag}')
+    decl='void SetNativeActionAt40FAC0(int);'
+    require(cpp.count(decl)==1,'native method declaration changed')
+    cpp=cpp.replace(decl,decl+' void SetAuxActionAt40FB40(int);')
+    macro='#define POS (*reinterpret_cast<float*>(RAW+0x50))'
+    require(cpp.count(macro)==1,'native +0x50 original owner field not present')
+    cpp=cpp.replace(macro,macro+'''
+#define POS48 *reinterpret_cast<float*>(RAW+0x48)
+#define POS54 *reinterpret_cast<float*>(RAW+0x54)
+#define POS5C *reinterpret_cast<float*>(RAW+0x5C)''')
+    original_marker='case 0x9: g_FighterProbeMarker = 10; break;'
+    require(cpp.count(original_marker)==1,'missing original ninth action label')
+    # The true native first RESET branch exits this entire function;
+    # the explicit return is not a fabricated fallback or fake RET.
+    native_aux_push=original[38]
+    require(native_aux_push.mnemonic=='push' and native_aux_push.op_str in ('0','1'),
+            f'{boss["address"]:08X}: unexpected original action-nine helper argument')
+    native_aux_value=int(native_aux_push.op_str,0)
+    real_case='''case 0x9:
+        if (POS5C == g_ThresholdAt0065782C)
+            POS5C = 0.6f;
+        POS54 = POS54 - POS5C;
+        if (POS48 + POS54 <= g_ThresholdAt0065782C) {
+            SetNativeActionAt40FAC0(10);
+            POS48 = 0.0f;
+            ResetAt453E20();
+            return;
+        }
+        if (GetNativeActionAt40FA30() == I16(0x70)) {
+            SetAuxActionAt40FB40(ACTION_NINE_AUX_ARG);
+        }
+        break;'''
+    cpp=cpp.replace(original_marker,real_case.replace('ACTION_NINE_AUX_ARG',str(native_aux_value)))
+    return cpp,source_cases,native_aux_value
+
+
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--boss',help='One original PE address, Reimu or CharacterMove (default all eleven)')
@@ -180,43 +227,8 @@ def main():
         original=native_case(reader,target,decoder,boss)
         # Use the original-specific six-case generator; it does not copy
         # any other's case addresses or genericize asymmetric float constants.
-        first_six=six.native_six(reader,target,decoder,boss)
-        basic,source_cases,_=six.source_for(switch,zero,one,report,mapped,tag,first_six)
-        expected=f'FighterSwitchF545_{tag}'
-        require(basic.count(expected)>=2,'preceding verified source owner changed')
-        cpp=basic.replace(expected,f'FighterSwitchF547_{tag}')
-        decl='void SetNativeActionAt40FAC0(int);'
-        require(cpp.count(decl)==1,'native method declaration changed')
-        cpp=cpp.replace(decl,decl+' void SetAuxActionAt40FB40(int);')
-        macro='#define POS (*reinterpret_cast<float*>(RAW+0x50))'
-        require(cpp.count(macro)==1,'native +0x50 original owner field not present')
-        cpp=cpp.replace(macro,macro+'''
-#define POS48 *reinterpret_cast<float*>(RAW+0x48)
-#define POS54 *reinterpret_cast<float*>(RAW+0x54)
-#define POS5C *reinterpret_cast<float*>(RAW+0x5C)''')
-        original_marker='case 0x9: g_FighterProbeMarker = 10; break;'
-        require(cpp.count(original_marker)==1,'missing original ninth action label')
-        # The true native first RESET branch exits this entire function;
-        # the explicit return is not a fabricated fallback or fake RET.
-        native_aux_push=original[38]
-        require(native_aux_push.mnemonic=='push' and native_aux_push.op_str in ('0','1'),
-                f'{address:08X}: unexpected original action-nine helper argument')
-        native_aux_value=int(native_aux_push.op_str,0)
-        real_case='''case 0x9:
-            if (POS5C == g_ThresholdAt0065782C)
-                POS5C = 0.6f;
-            POS54 = POS54 - POS5C;
-            if (POS48 + POS54 <= g_ThresholdAt0065782C) {
-                SetNativeActionAt40FAC0(10);
-                POS48 = 0.0f;
-                ResetAt453E20();
-                return;
-            }
-            if (GetNativeActionAt40FA30() == I16(0x70)) {
-                SetAuxActionAt40FB40(ACTION_NINE_AUX_ARG);
-            }
-            break;'''
-        cpp=cpp.replace(original_marker,real_case.replace('ACTION_NINE_AUX_ARG',str(native_aux_value)))
+        cpp,source_cases,native_aux_value=source_nine_for(tag,report,mapped,original,
+                reader,target,decoder,boss,six,switch,zero,one)
         obj=compile_one(tag,cpp)
         code,refs,all_ins,postret,candidate=candidate_case(reader,decoder,obj,tag,boss['postret_size'])
         require([x.mnemonic for x in original]==[x.mnemonic for x in candidate],

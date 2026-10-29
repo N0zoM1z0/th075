@@ -8827,3 +8827,26 @@ with `scripts/repo-python scripts/verify-fighter-action-six-natural-source.py`
 for affected-only native+compiler proof. These are parts of still-unmatched
 153,511 giant CODE bytes: **no source-accepted 1,086 internal CODE bytes**,
 no arbitrary stack padding, no all-unit cold replay, no external Oracle.
+
+
+## F549: original fighter action 10 split into 31-/20-instruction natural C++ families
+
+In each original fighter, the physical first-switch case-10 DWORD through
+the native singleton action `0x32` entry bounds one full action-10 case.
+Nine originals have a real signed-short `this+0x62/+0x64 == 0` gate and
+`00453D60(30)` call, followed by `00453E20` reset and original
+`0040FA30` state comparison with `this+0x70`, and a zero/nonzero DWORD
+`this+0x4E0` branch to `0040FAC0`. Two other entire original cases
+(`005214B0`, `00564BE0`) truly omit that preliminary guarded call.
+Character-specific native transitions are **0/2** (three), **3/2** (three),
+and **0/1** (five). They are actual literal original PUSH arguments, not
+assumed uniform metadata. All eleven fresh natural VC7.1 C++ probes have
+**319/319 case control/mnemonic structures, 53/53 physical COFF REL32
+call fields**, 1,607 authentic native-style DWORD table references and
+4,502 byte-identical native sparse bytes. GPR identity only matches 6/11;
+all 11 retain receiver/thiscall dataflow and roles. The exceptional
+`00564BE0` is 87 versus 69 candidate bytes due to 6 original disp32
+EBP-0x88 reads. See [F549 complete native action-ten case study](FIGHTER_ACTIONTEN_NATIVE_CPP.md)
+and `scripts/repo-python scripts/verify-fighter-actionten-natural-source.py`.
+**1,065 original interior CODE bytes, not a whole boss/function exact
+match; no new accepted CODE/DATA, full cold replay or Oracle receipt.**
