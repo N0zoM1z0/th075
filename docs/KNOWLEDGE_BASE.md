@@ -10813,3 +10813,35 @@ CODE bytes; enclosing entire giants NONEXACT, no whole-function
 credit, original 943/862,726 exact authored coverage unchanged.
 [F622 actual PE semantic and compiler proof](FIGHTER_COUNTER_DISPATCH_F622.md),
 selected `scripts/repo-python scripts/verify-fighter-counter-dispatch-f622.py --boss 0x005AEEC0`.
+
+
+## F624: strict complete original 118-x86 mode/event case0x63 inside two giant fighters
+
+Pinned original Japanese TH075 PE physical second switch action0x63
+is real packed dense slot25, while slot26 is common default—not
+actual game CODE case end. Real next registered native handler is
+0x8C; a distinct source case0x8C COFF-backed marker establishes the
+full emitted 0x63 source boundary. Original x86 `MOVSX` at ordinal0
+reads genuine signed byte global `006714B4`; ordinal2 JNE targets
+ordinal7, ordinal6 JNE targets ordinal27. Correct C++ is
+`mode!=3 || member+0x2CD==0`, not the initial semantically wrong
+`if(mode==3)`. At ordinal54 genuine native JNE targets exit
+ordinal58 even if an additional action bonus is not triggered:
+`+0x370` bonus byte flag4/action0x302 on original `00564BE0`,
+flag5/action0x31D on `005AEEC0`. Natural source precisely restores
+both real CFG semantics and all **118 native GPR/x87/CFG roles,
+8 physical typed zero-addend original PE/COFF fields** in each
+freshly compiled whole giant. Native CODE extents **552 B** for
+`00564BE0` (31 genuinely widened EBP−0x88 MOV receivers and one
+JLE near +4 bytes) and **455 B** for `005AEEC0`: two original
+strict case interiors /236 x86 roles /1,007 native CODE bytes /
+16 actual field targets, all uncredited as whole functions.
+All **31** earlier source-backed case bodies and full separately owned
+afterRET packed switch DATA are rechecked on each new selected giant
+OBJ via strict F622/F614 original PE verifiers. Overall F598–F624
+has **341 strictly source-backed original internal action subranges /
+88,614 original native inner CODE bytes**, not simultaneously
+complete entire giants, no accepted additional whole authored CODE.
+[F624 actual original 0x63 source/boundary/typed field proof](FIGHTER_MODE_EVENT_ACTION63_F624.md),
+selected `scripts/repo-python scripts/verify-fighter-mode63-f624.py --boss 0x00564BE0`.
+Official 943/862,726 authored exact unchanged; no 943-unit cold replay.

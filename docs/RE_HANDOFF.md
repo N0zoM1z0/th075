@@ -1,6 +1,6 @@
 # TH075 — active reconstruction handoff
 
-**Maintained 2026-10-29 after F622.** This is the **only current task list**.
+**Maintained 2026-10-29 after F624.** This is the **only current task list**.
 The [F540–F596 research chronology](history/RE_HANDOFF_F540_THROUGH_F596.md),
 [knowledge base](KNOWLEDGE_BASE.md), and older F-series studies are
 **historical evidence**, not statements of current progress. Independently
@@ -526,6 +526,38 @@ exact functions. Official 943/862,726 unchanged.
 ```bash
 scripts/repo-python scripts/verify-fighter-counter-dispatch-f622.py --boss 0x00564BE0
 scripts/repo-python scripts/verify-fighter-counter-dispatch-f622.py --negative-actor 0x0045DD70
+```
+
+**F624** extends the two F622 giant fighter whole-source probes to
+the genuine next packed action **`0x63`** (original final real sparse
+slot25; slot26 is the DEFAULT handler, not the true source case end).
+The real next physical game CODE handler is `0x8C`. Native original
+mode byte `006714B4` has a **short-circuit `mode!=3 || +0x2CD==0`**:
+original JNE ordinal2 targets ordinal7, JNE ordinal6 targets ordinal27.
+The initial intuitive if(mode==3) source wrongly jumped to
+ordinals27/26 despite 118/455 matching instruction geometry. The
+original first branch of the second group **exits even if the bonus
+flag is false** (native JNE ordinal54 targets case-exit ordinal58);
+F624 corrects the C++ break position and independent original actor
+bonus state: `00564BE0` flag4→action0x302, `005AEEC0`
+flag5→action0x31D. Both freshly compiled whole giant C++ sources
+now strictly match **118/118 real GPR/x87/CFG roles and 8 genuine
+typed PE/COFF targets**, for **two new original inner cases /
+1,007 original CODE bytes /236 x86 roles /16 real fields**.
+The wide `00564BE0` case is 552 native bytes (31 EBP−0x88
+receiver MOVs +3 B, native JLE near +4 B); `005AEEC0` is 455 B.
+Each new object preserves previous **31** original game case source
+proofs (including true four-way-OR action0x62) and full afterRET
+packed switch DATA. F598–F624 bounded source study now documents
+**341 strictly matching original interior case subranges /88,614
+native original internal CODE bytes**, all still uncredited as
+separate functions or fully matched enclosing giant source.
+Official 943/862,726 authored whole-function exact unchanged.
+[F624 real action0x63 mode/bonus CFG and native PE boundary](FIGHTER_MODE_EVENT_ACTION63_F624.md),
+[ordinary C++ source](../probes/FighterMode63F624.inc).
+
+```bash
+scripts/repo-python scripts/verify-fighter-mode63-f624.py --boss 0x005AEEC0
 ```
 
 Never run a full 943-unit cold replay.
