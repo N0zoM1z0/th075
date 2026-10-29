@@ -54,6 +54,22 @@ DWORD switch COFF fields**, repeated/default handler partitions,
 **3,335 byte-identical original sparse indices**, and the separate
 **7,987 original after-RET DATA-layout bytes**.
 
+### Source-family distinctions cross-checked by a second verifier
+
+The independent second PE-to-C++ generator also exercised all eight
+original actor subfamilies: 104/104/104 versus 104/104/102 stage cases,
+117/117/104 extra-stage calls, 115/115/117 precontact auxiliary
+conditions, the unusual 115/115/102 wide-frame owner, and the 102/115/102
+single-stage-auxiliary policy. Source reassembly and physical native
+case boundaries were computed again independently of the canonical
+F567 object output. This controls against silently copying a source
+snippet into an incompatible character with different native state
+transitions or FLOAT/FLAG store order. The alternative source verifier
+and its original research report are preserved under ignored
+.analysis/f567-integrated-fighters/; F568 records its strict additional
+zero-addend COFF verification. The canonical tracked source reproducer
+remains the F567 script above.
+
 ## The wide-frame character is a real exception, not false exactness
 
 The original fighter at 00564BE0 stores the actual owner at

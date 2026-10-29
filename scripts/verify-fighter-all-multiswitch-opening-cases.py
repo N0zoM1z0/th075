@@ -193,6 +193,7 @@ def case_boundaries(reader,pe,dec,boss,report,code,refs):
                     key=lambda r:r['offset'])
     need(len(physical)==11 and all(r['type']=='DIR32'
          and r['offset']==end+4*k and r['local_symbol_offset'] is not None
+         and r['addend']==0
          for k,r in enumerate(physical)),
          'new C++ does not emit eleven genuine physical COFF case pointers')
     candidate=[r['local_symbol_offset'] for r in physical]
@@ -211,6 +212,11 @@ def case_boundaries(reader,pe,dec,boss,report,code,refs):
 def typed_fields(native,candidate,refs,action,h):
     first,last=candidate[0].address,candidate[-1].address+candidate[-1].size
     actual=[r for r in refs if first<=r['offset']<last]
+    # Independently regenerated F568 source COFF controls confirmed that
+    # none of these original call/float refs needs a COFF addend. Enforce
+    # the physical field value instead of merely matching symbol and type.
+    need(all(r['addend']==0 for r in actual),
+         f'native original case {action}: unexpected physical COFF addend')
     if action in (0,2):
         need(h['zero'].reference_sequence(native)==
              h['zero'].reference_sequence(candidate,refs),

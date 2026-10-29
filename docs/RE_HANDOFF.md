@@ -1,6 +1,6 @@
 # TH075 — current agent handoff
 
-**Maintained: 2026-10-29, after F567; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
+**Maintained: 2026-10-29, after F568; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
 
 ## 1. Current authoritative state (not historical hypotheses)
 
@@ -221,6 +221,21 @@ nonexact**, since the rest of the original game action cases and
 real enclosing stack/owner lifetimes are still not source-complete.
 All 24,529 inner-case original CODE bytes are diagnostic source
 codegen only, zero split/whole exact CODE credit.
+
+**F568 independently recompiled and audited the F567 eight giant
+source contexts with a second original-backed COFF checker**, closing
+a genuine physical relocation addend validation gap. All **571 actual
+REL32/DIR32 case fields** in 88 native subranges, plus the **88 first
+11-slot physical DWORD switch table refs**, have real zero COFF addends
+and genuine original callee/global/source target identity. The
+canonical F567 original-backed C++ verifier now explicitly rejects
+nonzero addends; independent controls remain in the ignored research
+directory, not a stale uncommitted duplicate. See
+[F568 independent COFF addend control](FIGHTER_COFF_ADDEND_CONTROL_F568.md)
+and targeted repro
+scripts/repo-python scripts/verify-fighter-all-multiswitch-opening-cases.py
+--boss 0x00564BE0. The eight complete giant CODE extents still are
+NOT exact and receive zero additional CODE credit.
 
 **Three other authored functions remain nonexact (all require full CODE):**
 

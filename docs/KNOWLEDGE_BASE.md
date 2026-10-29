@@ -9222,3 +9222,19 @@ markers. Complete live report
 and affected-only repro
 scripts/repo-python scripts/verify-fighter-all-multiswitch-opening-cases.py.
 No split/whole exact credit, all-unit cold replay or external Oracle.
+
+## F568: independently checked physical COFF addends across F567 giant actors
+
+A separate originally untracked eight-fighter natural VC7.1 source
+verifier was freshly executed against all eight complete original
+fighter contexts, matching the 88 physical native first-switch
+case-control subranges and all original switch DATA. It additionally
+proves **all 571 physical typed native case call/global COFF fields
+and all 88 original first-direct-table DWORD handler fields have
+zero addends**. The canonical tracked F567 source checker now
+rejects nonzero candidate COFF addends (re-tested on Reimu and
+wide-frame 00564BE0). The previously dirty alternative and its full
+source audit logs are preserved under ignored
+.analysis/f567-integrated-fighters/ as independently verified controls.
+[F568 original-PE addend control](FIGHTER_COFF_ADDEND_CONTROL_F568.md).
+No giant whole/split exactness, no full cold replay or Oracle receipt.
