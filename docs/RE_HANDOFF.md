@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F688; earlier frozen handoffs are archived.**
+**Maintained 2026-10-30, after F691; earlier frozen handoffs are archived.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -306,35 +306,29 @@ relocation, and a fresh selected-unit cold replay**.
 
 ## 5. Small leaves: whole-byte source evidence ≠ authored attribution
 
-F595 + F616–F687 research now source-backs **84 distinct
-historical origin-unknown entire native functions /1,700 genuine
-original CODE bytes**. New F687 proves **two full original native
-58/64-byte virtual COM owner destructors** (`00608D8E` and
-`00608F96`) with **122/122 original native machine CODE B /
-49 x86 /five physically authenticated PE/COFF fields** under one
-selected pinned VC7.1 `/O1` TU. True native `+8` and `+0xE0`
-`__stdcall` virtual calls, two real direct thiscall cleanup targets,
-imported free and vtable assignments are reproduced without
-fabricating an interface class with 57 fake methods. Actual
-original registered direct callers are compiler-classified, but
-historical source provenance stays unknown. [New F687 complete
-native PE/COFF source proof](SDK_NATIVE_COM_OWNER_DESTRUCTORS_F687.md).
-**New F688 original EH negative:** complete original SDK-like
-virtual derived destructor `0061A453` is 73 native B/23 x86,
-with genuine MSVC `_EH_prolog`, saved derived receiver at EBP−0x10,
-real cleanup/free and a call to F686's exact native base destructor.
-Twelve meaningful normal VC7.1 exception/derived destructor sources
-were compiled: ordinary `/O1` and `/O2` forms emit 39/41 B with
-no EH, function-try-blocks emit **83 B/30 x86** with a different
-EH register-state lifecycle, and body-level try/catch emits **69 B/
-22 x86** with wrong EH frame roles. All are NONEXACT; preserve
-original 00656B2C unwind handler and genuine receiver lifetime as
-next research. [F688 original EH negative study](SDK_EH_DERIVED_DESTRUCTOR_NEGATIVE_F688.md).
-F686 earlier recovered 19 bytes of another complete native vtable
-plus real CRT-free virtual destructor;
-[previous F686 proof](SDK_NATIVE_VTABLE_DESTRUCTOR_F686.md).
-All **95** source-unknown candidates still retain `unknown,review`;
-this research earns **zero game-authored whole-function CODE bytes**.
+F595 + F616–F691 research now source-backs **85 distinct
+historical origin-unknown entire native functions /1,949 genuine
+original CODE bytes**. New F691 proves a substantial whole
+**249-byte `0061F125` COM manager cleanup and linked-list unlink**
+function from ordinary pinned VC7.1 `/O1` C++: **104 entire original
+x86, 249/249 complete linked CODE bytes, five true zero-addend
+`DIR32` PE/COFF fields**, authentic two COM `+0xE0` handle calls,
+eight-element twin resource release loop using virtual `+8`, three
+original imported stdcall targets, and real linked global head
+`0068E264` with actual per-node link at `+0xAC`. A natural C++
+`while (*cursor && *cursor != this)` list termination restores the
+original final seventeen instructions and exact full 249-byte
+native extent; earlier semantic but wrong compiler branch forms
+emitted 253–257 bytes. Original historical author remains
+**unknown**, all 95 origin-unknown entries retain `unknown,review`.
+[New F691 entire native source and complete PE/COFF proof](SDK_NATIVE_COM_MANAGER_CLEANUP_F691.md).
+F687 earlier proved two complete native COM owner virtual destructors
+(122 CODE B/49 x86/five genuine typed fields);
+[earlier F687 evidence](SDK_NATIVE_COM_OWNER_DESTRUCTORS_F687.md).
+F688 independently isolated source-exception-layout negatives for
+original 73-byte `0061A453` derived destructor;
+[F688 EH negative](SDK_EH_DERIVED_DESTRUCTOR_NEGATIVE_F688.md).
+This cohort earns **zero accepted game-authored whole-function CODE**.
 
 Latest F655 seven **entire original registered native leaves**
 (`004138D0`, `004169D0`, `0041F7F0`, `00540280`, `00441FD0`,
@@ -349,6 +343,7 @@ virtual `__stdcall`) and `004588B0` (43 bytes, conditional CRT free).
 [Earlier genuine original F650 proof](GAME_COM_VIRTUAL_RELEASE_F650.md).
 
 ```bash
+scripts/repo-python scripts/verify-sdk-native-com-manager-cleanup-f691.py
 scripts/repo-python scripts/verify-sdk-native-com-owner-destructors-f687.py
 scripts/repo-python scripts/verify-sdk-native-vtable-destructor-f686.py
 scripts/repo-python scripts/verify-sdk-native-helper-leaves-f680.py

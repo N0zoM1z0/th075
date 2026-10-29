@@ -26,7 +26,7 @@ types are provisional; machine-code matches alone do not prove an entire
 original class layout. The target's official distribution provenance has not
 been independently verified; do not substitute a localized `th075c.exe`.
 
-These snapshot counts were rechecked after **F687** (2026-10-30).
+These snapshot counts were rechecked after **F691** (2026-10-30).
 The **live** sources of truth, not any dated prose milestone, are `config/functions.csv`,
 `config/function-origins.csv`, and `config/match-units.toml`.
 Refresh using `scripts/repo-python scripts/report-reconstruction-status.py --summary`.
@@ -122,19 +122,20 @@ despite matching x86 count and all 11 real PE/COFF fields; **do not
 promote** it to exact just because the case body geometry matches.
 
 Separately, **whole-function** VC7.1 C++ probes now reproduce
-**84 distinct historical origin-unknown complete original functions /
-1,700 original native CODE bytes**, all uncredited pending actual
-source ownership. New F687 proves two complete **58/64-byte SDK-like
-virtual COM owner destructors (`00608D8E/00608F96`)**, totaling
-**122/122 linked original CODE bytes /49 real x86 /five authentic
-typed PE/COFF fields**. Their natural VC7.1 `/O1` C++ restores
-real resource cleanup, imported free and native `__stdcall`
-indirect COM vtable slots `+8` and `+0xE0`, without fake interface
-vtable methods. They remain historically UNKNOWN source-owner.
-[F687 complete original virtual/COM destructor proof](docs/SDK_NATIVE_COM_OWNER_DESTRUCTORS_F687.md).
-F686 earlier reconstructed the genuine 19-byte vtable-plus-CRT-free
-virtual destructor with two actual typed fields.
-[F686 earlier whole native proof](docs/SDK_NATIVE_VTABLE_DESTRUCTOR_F686.md).
+**85 distinct historical origin-unknown complete original functions /
+1,949 original native CODE bytes**, all uncredited pending actual
+source ownership. New F691 completely reconstructs a substantial
+original **249-byte COM resource cleanup / singly linked manager
+unlink function `0061F125`**, proving **249/249 authentic linked CODE
+bytes /104 whole x86 /five true zero-addend DIR32 import/global
+fields** from ordinary pinned VC7.1 `/O1` C++. Its two native
+stdcall COM slots, eight-element twin resource release loop and
+actual global linked-list unlink are fully machine-byte identical;
+original class/author provenance remains UNKNOWN.
+[F691 full native COM manager source proof](docs/SDK_NATIVE_COM_MANAGER_CLEANUP_F691.md).
+F687 earlier recovered two 58/64-byte original COM virtual owner
+destructors, 122 linked native CODE bytes/49 x86/five typed fields.
+[F687 earlier whole native proof](docs/SDK_NATIVE_COM_OWNER_DESTRUCTORS_F687.md).
 All previously accepted 111-byte mapping transform `00455770`,
 77-byte Shift-JIS classifier `0041CA30`, Replay render, StaffRoll,
 rank-label and selected-progress functions stay accepted exact.

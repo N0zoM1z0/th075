@@ -12343,3 +12343,31 @@ be investigated before further source acceptance.
 [F688 selected original PE/VC7.1 EH negative evidence](SDK_EH_DERIVED_DESTRUCTOR_NEGATIVE_F688.md).
 Private reproducible probes in ignored `.analysis/f688-eh-derived-dtor/`;
 no all-unit cold replay.
+
+
+## F691: entire 249-byte COM manager cleanup exact native source and original singly linked unlink
+
+Actual registered original native `0061F125`–`0061F21E` is a **complete
+249-byte/104-x86 function** with all **five real zero-addend original
+PE/COFF DIR32 fields** to imports `00657048/0065704C/0065702C`
+and two actual original references to global manager list head
+`0068E264`. Its natural pinned VC7.1 **`/O1`** C++ source performs
+two native virtual **`+0xE0` stdcall COM handle releases**, an
+actual eight-trip twin `this+0x10/+0x30` COM vtable **`+8`
+release/clear loop**, two additional pointer releases, original
+imported pair/free/dispose lifetimes, and genuinely removes `this`
+from the singly linked manager list via real `+0xAC` next pointer.
+Initial meaningful `Next()/NextPtr()` C++ method source added
+non-native calls; inline pointer-to-link variants initially yielded
+257 B/108 x86, but original semantic C++ termination
+`while (*cursor && *cursor != this)` naturally emitted the
+**full original 249/249 linked PE machine CODE bytes /104 native x86**.
+Original source class names and author remain UNKNOWN despite one
+registered direct original CALL; this is NOT a new authored exact
+match unit. Historical whole source-backed uncredited cohort grows
+F595–F691 to **85 distinct complete original functions/1,949 original
+CODE B**; all **95** source provenance-unknown candidates remain
+pending, official 943/862,726 authored whole CODE unchanged.
+[F691 actual original whole x86/COFF/source proof](SDK_NATIVE_COM_MANAGER_CLEANUP_F691.md),
+`scripts/repo-python scripts/verify-sdk-native-com-manager-cleanup-f691.py`.
+No mass replay.
