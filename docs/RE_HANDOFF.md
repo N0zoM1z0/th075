@@ -190,6 +190,28 @@ original/source 79-instruction case grammar. The same selected-F600
 script remains the reproducer; this still contributes **zero
 whole-fighter exact acceptance**.
 
+**F602** restores actual second-switch trajectory action **`0x46`**
+inside **nine** of the eleven giant fighters. Each complete native
+case has **104 original GPR/x87/CFG instructions** and **15 physically
+verified typed PE/COFF destinations**; normal cases have 374 original
+bytes, with one real wide-EBP original `00564BE0` having 485.
+Across nine separate fresh VC7.1 source builds, **936 native roles,
+3,477 original internal CODE bytes, 135 typed fields** are now
+source-backed while keeping the earlier 23 true case roles and full
+seven-switch after-RET DATA geometry. Native per-boss speed bounds,
+stage/early/late actions, 2 float→short `__ftol2` conversions and
+original `005AEEC0` +0xEFC counter were independently checked.
+**Do not count these as whole game functions:** official exact
+943/862,726 remains unchanged. The two other fighter owners
+`0045DD70` and `0058AF60` have **131 native x86** in their action0x46
+because of an additional stage-one projectile spawn and are still
+unimplemented in this family. [F602 real trajectory](FIGHTER_TRAJECTORY_ACTION46_F602.md),
+[natural C++](../probes/FighterTrajectoryContact46F602.inc).
+
+```bash
+scripts/repo-python scripts/verify-fighter-trajectory46-f602.py --boss 0x004F7130
+```
+
 Never run a full 943-unit cold replay.
 
 ## 4. Other three unmatched authored *whole* functions

@@ -10316,3 +10316,26 @@ found no 171-byte original ArchiveCatalog destructor stack-slot fix
 248-byte SceneObject destructor local-slot fix (resource aggregate
 reordering: best 191/200). All affected C++ TUs were individually
 cold compiled; nonexact branches were not falsely accepted.
+
+
+## F602: entire original native trajectory action0x46 source across nine giant fighter bosses
+
+Original Japanese TH075 native second-indexed-switch action0x46
+was independently bounded from true physical dense DWORDs for case0x46
+and next case0x47. Nine complete 104-instruction branches are now
+verified in freshly compiled ordinary VC7.1 C++ `Advance()` sources,
+including 15 true typed PE/COFF fields per original game case.
+The actual x87 order required natural reference-to-member expression
+`*(&POS54)+*(&F32(0x98))` for an original `FLD + FADD` and
+parenthesized `(POS54) * global` for original `FLD member; FMUL global`.
+Physical original per-fighter stage, speed bounds, dynamic state,
+float-to-signed-short `__ftol2` with two adjacent native owner fields,
+original callee symbols and the genuine wide EBP-0x88 (37 source
+receiver loads) were checked. F602 adds **936 x86 native roles,
+3,477 original internal native CODE bytes, 135 typed PE/COFF fields**
+on top of prior 253 game case subranges; all nine whole originals
+remain nonexact and the two other 131-instruction action0x46 owners
+remain undone. Source `probes/FighterTrajectoryContact46F602.inc`,
+selected local proof `scripts/repo-python scripts/verify-fighter-trajectory46-f602.py
+--boss 0x004F7130`; [F602 original 0x46 study](FIGHTER_TRAJECTORY_ACTION46_F602.md).
+No new independent/whole exact authored CODE or all-unit cold replay.
