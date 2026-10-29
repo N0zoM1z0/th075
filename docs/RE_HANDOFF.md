@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F671; earlier frozen handoffs are archived.**
+**Maintained 2026-10-30, after F673; earlier frozen handoffs are archived.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -82,30 +82,31 @@ scripts/repo-python scripts/verify-characterobject-typed-member-f635.py --case 3
 The 22 original giant CODE owners remain authored NONEXACT. The main
 case-source subcohort has **11 real multi-switch giant fighters**,
 with real per-actor native differences and a full afterRET sparse/
-dense dispatch shape. F598–F669 compiler-backed original research
-proves **593 strict original *internal action case bodies* /
-160,089 original native internal CODE bytes**. These do **NOT** mean
-593 additional independently callable exact functions or credited
+dense dispatch shape. F598–F673 compiler-backed original research
+proves **594 strict original *internal action case bodies* /
+160,781 original native internal CODE bytes**. These do **NOT** mean
+594 additional independently callable exact functions or credited
 whole function bytes; each parent remains nonexact. Case interior
 source must always be compiled in the **fresh complete original
 parent C++ translation unit** and its preceding cases + entire jump
 DATA rechecked. [Full original dispatch fingerprint JSON](../config/fighter-boss-dispatch-fingerprints.json),
 [original fighter family dispatch](FIGHTER_BOSS_FAMILY_DISPATCH.md).
 
-**Latest strict path:** native `00543210` now has **25 strictly
-matched original inner cases /1,840 real x86 /6,387 original
-internal CODE B /167 real typed PE/COFF fields** in one newly
-compiled complete original-shaped parent. F669 adds genuine native
-`0x255/0x256/0x257` (**196 x86/672 CODE B/17 real fields**),
-following F668's original `0x252/0x253/0x254` (**207 x86/744 B/18
-fields**), for a single **six-case contiguous strict native segment
-`252..257`: 403 x86, 1,416 original CODE B, 35 genuine typed fields**.
-The native prefix char decrement, true x87 `FLD` before global `FADD`,
-resource-stage difference, original 0x37 projectile and conditional
-one-shot counter are source-backed. All prior 22 strictly matched
-cases, three original EBP-negative controls and full separately
-owned after-RET switch DATA rechecked in the **same fresh parent**.
-[F669 native source and physical proof](FIGHTER_POST_COUNTER_F669.md).
+**Latest strict path:** native `00543210` now has **26 context-strict
+original inner cases /2,048 real x86 /7,079 genuine original
+internal CODE B /187 real typed PE/COFF fields**, all rechecked in
+one freshly compiled complete original-shaped parent. The newly
+strict **`0x2BC` 692-byte/208-x86/20-field ground-wave handler**
+includes actual two-projectile stage changes, original x87 contact,
+10/14-stage gravity/landing branches and genuine short counter
+actions. It also retains all **25 earlier strict case interiors**,
+old 186/18A/18B/258 EBP negative controls and complete independent
+afterRET switch DATA. [Newest F673 physical native source proof](FIGHTER_GROUND_WAVE_F673.md).
+F668/F669 earlier proved the six consecutive original 252–257
+handlers (403 x86/1,416 CODE B/35 typed fields). Original `0x259`
+through `0x25D` remain unresolved source placeholders in this selected
+context, not whole-exact claims; restoring earlier source can change
+later compiler register phase as independently shown in F666.
 **F671 next difficult original:** complete physical action258
 (**134 authentic x86 /502 real original inner CODE B /12 physical
 typed PE/COFF fields**) has a newly compiled ordinary C++
@@ -185,7 +186,9 @@ F646 `0xD0` remains nonstrict in other original actors due to
 explicitly distinguishes the 3 strict parent contexts.
 
 ```bash
-# NEW whole giant: native 258 four-shot source and honest EBP negative:
+# NEW whole selected giant: strict full 2BC original ground wave:
+scripts/repo-python scripts/verify-fighter-ground-wave-f673.py
+# Previous full parent: 258 four-shot source, honest EBP negative:
 scripts/repo-python scripts/verify-fighter-four-shot-barrage-f671.py
 # Previous strict 255/256/257 and 22 preceding case bodies:
 scripts/repo-python scripts/verify-fighter-post-counter-f669.py

@@ -11962,3 +11962,32 @@ uncredited native CODE B**. No whole authored exact change from
 943/862,726. [Original F671 full native/source proof](FIGHTER_FOUR_SHOT_BARRAGE_F671.md),
 `scripts/repo-python scripts/verify-fighter-four-shot-barrage-f671.py`.
 No full 943-unit cold replay.
+
+
+## F673: large original fighter case 2BC strict, 692 genuine inner CODE bytes
+
+Fresh ordinary VC7.1 **entire original-shaped `00543210` fighter
+parent** now source-matches the actual **208-x86, 692-byte, 20-typed
+PE/COFF-field** full native physical case `0x2BC`, original PE
+`0054D1D5` to next real physical `0054D489` (`2BF`). Authentic
+initial/reset gravity and stage 4–10 x87 deceleration, stage11–13
+native y+velocity ground collision, native 0x73 initial shot,
+stage5 paired 0x326/0x33B shots, actual float 15.0f/0.85f motion,
+and stage 8/11/14 short-counter auxiliary decisions are reproduced.
+All genuine 20 PE-targeted REL32/DIR32 compiler source fields,
+zero addends, original native destinations, branch structure, widths,
+register roles, and raw EBP operands match after normalization of
+**only independently authenticated unlinked float targets**.
+All preceding **25 context-strict native case bodies**, 186/18A/18B/258
+genuine EBP negative controls, and separate full afterRET switch DATA
+were reverified in SAME newly compiled entire original-shaped giant.
+This specific selected source context leaves native 259..25D as
+original dispatch placeholders and cannot claim whole-parent exact.
+The selected giant has **26 context-strict internal cases /2,048 real
+x86 /7,079 original CODE B /187 genuine source fields**. Aggregate
+F598–F673 source-backed native fighter research now **594 strict
+case interiors /160,781 uncredited original CODE bytes**. Formal
+authored accepted whole-function ledger still **943/862,726 CODE B**.
+[F673 entire parent physical proof](FIGHTER_GROUND_WAVE_F673.md),
+`scripts/repo-python scripts/verify-fighter-ground-wave-f673.py`.
+No full 943-unit replay or whole giant acceptance.

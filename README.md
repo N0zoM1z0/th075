@@ -26,7 +26,7 @@ types are provisional; machine-code matches alone do not prove an entire
 original class layout. The target's official distribution provenance has not
 been independently verified; do not substitute a localized `th075c.exe`.
 
-These snapshot counts were rechecked after **F671** (2026-10-30).
+These snapshot counts were rechecked after **F673** (2026-10-30).
 The **live** sources of truth, not any dated prose milestone, are `config/functions.csv`,
 `config/function-origins.csv`, and `config/match-units.toml`.
 Refresh using `scripts/repo-python scripts/report-reconstruction-status.py --summary`.
@@ -53,22 +53,21 @@ F659's 14 additional whole-giant C++ condition/lifetime variants did
 not reduce the genuine 137-byte register cycle; two `+=` alternatives
 actually changed native x87 geometry. [New F659/F660 negative evidence](docs/GIANT_REGISTER_AND_ARCHIVE_LIFETIME_NEGATIVES_F659_F660.md).
 
-**F598–F669's 593 strictly source-backed fighter *internal case
-bodies* (160,089 original internal CODE bytes) remain uncredited**:
+**F598–F673's 594 strictly source-backed fighter *internal case
+bodies* (160,781 original internal CODE bytes) remain uncredited**:
 none of their enclosing giant `Advance()` functions is fully exact.
-F669 adds three consecutive original physical `0x255/0x256/0x257`
-case interiors (**196 original x86 /672 native CODE bytes /17 real
-PE/COFF fields**) in the **same complete VC7.1 giant parent** as
-all previous 22 context-strict case bodies. F668 previously added
-strict `0x252/0x253/0x254` (**207 x86 /744 B/18 fields**) with
-original signed-byte decrement and `FLD` member before `FADD` global
-float. These form **six consecutive new strict original inner cases,
-403 x86 /1,416 original native CODE B/35 fields**. The selected
-giant `00543210` now contains **25 strict native interior cases /
-1,840 x86 /6,387 internal CODE B /167 genuine typed fields**.
-All EBP-negative cases and complete independent after-RET switch DATA
-remain verified in the new source, with **no whole-function exact
-credit**. [F669 full original-parent proof](docs/FIGHTER_POST_COUNTER_F669.md).
+F673 strictly reconstructs original **large native `0x2BC` ground-wave
+case, 208 x86 /692 original internal CODE B /20 actual typed fields**,
+with real x87 landing/stage trajectories, paired resource shots, and
+three independent short-counter stage boundaries. It is proved in a
+**new complete selected `00543210` giant source parent**, rechecking
+all **25 previous context-strict cases**, four genuine EBP-scratch
+negative cases and full independent after-RET switch DATA. The selected
+giant now contains **26 context-strict original inner cases /2,048
+x86 /7,079 real CODE B /187 typed fields**. This remains **NOT**
+whole-function exact. [F673 new full-parent native proof](docs/FIGHTER_GROUND_WAVE_F673.md).
+F668/F669 earlier proved six consecutive 252–257 physical cases
+(403 x86/1,416 original B/35 real fields).
 F671 goes on to reconstruct the **much larger native `0x258`
 502-byte, 134-x86, four-projectile case** with all 12 physical
 original PE/COFF fields, but explicitly remains **NONSTRICT**:
