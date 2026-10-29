@@ -295,8 +295,8 @@ def main():
           'All native instruction widths/CFG grammar align, but 147/170 '
           'real original GPR register-phase differences remain: NONSTRICT. '
           'All previously 27 context-strict original native cases, four EBP '
-          'scratch negatives, real 31C terminal negative and full afterRET '
-          'switch DATA rechecked in SAME new VC7.1 parent; one newly strict '
+          'scratch negatives, newly STRICT 31C terminal and full afterRET '
+          'switch DATA rechecked in SAME new VC7.1 parent; original '
           'terminal 31C (63 x86/219 B/7 fields) and zero whole authored '
           'function credit and no 943-unit mass replay.')
 
