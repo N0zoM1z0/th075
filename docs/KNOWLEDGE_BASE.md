@@ -9583,3 +9583,40 @@ The whole original giant is still nonexact; internal case CODE
 is NOT independently exact/accepted, no full replay/Oracle.
 [F580 four full game-action study](CHARACTEROBJECT_FOUR_ACTIONS_F580.md),
 reproducer `scripts/repo-python scripts/verify-characterobject-four-next-actions-f580.py`.
+
+
+## F581: two more full original native parent-state CharacterObject actions
+
+Original whole 33,293-byte CharacterObject giant `004EBDA0`
+case `0x33E` is a **127 native x86 instruction /489-byte**
+parent-stage source action: signed direction ×140 and parent state
+0x2BE, native x87 `006590AC` position, real
+`00455580(0,4)` at stage6, authentic `FILD/FMUL` float
+`006578C0` plus `006581E0`, stage7 `FMUL 00659094` and
+native `0040FB40` callbacks. Distinct original `0x33F` is a
+**101-instruction /381-byte** source with parent state 0x2C1,
+signed direction ×180 and genuine stage17 callback; its native
+scale init is 2.0f/1.5f rather than 0x33E's 1.5f/1.5f.
+Both source cases newly compile in the **same normal VC7.1 C++
+switch** with exact original 127/101 GPR/x87/branch/byte-width
+instruction roles and authentic 10+6 zero-addend COFF call/global
+fields; no new machine-order exceptions. F572–F581 now cover
+**27 physically entire original game-action case bodies, 3,444
+native instruction roles /12,765 original inner CODE bytes,
+240 actual typed COFF fields** and the whole 60 DWORD/198-index
+original switch DATA (438 separate after-RET layout bytes).
+**The whole 33,293 CODE bytes remain nonexact**, with no
+independent inner function credit. Reproducer
+`scripts/repo-python scripts/verify-characterobject-parent-scatter-f581.py`;
+[F581 source study](CHARACTEROBJECT_PARENT_SCATTER_F581.md).
+
+The small 171-byte original `0041CE50` archive RAII destructor
+was also retested under pinned VC7.1 /GX- with 14 actual C++
+POD/union/one-element array/volatile/void pointer ownership
+variants. All 14 still produce a real 171-byte, 51-insn body,
+**108/115 comparable nonfield bytes** and the SAME wrong three-way
+EBP resource-delete/filename slot positions. This negative control
+rules out trivial filename type/scope as the original slot-order
+cause, not a standalone exact achievement. Detailed ignored
+C++/OBJ/COFF evidence: `.analysis/f581-archive-expr-order/`.
+No all-unit replay or external Oracle receipt.

@@ -1,6 +1,6 @@
 # TH075 — current agent handoff
 
-**Maintained: 2026-10-29, after F580; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
+**Maintained: 2026-10-29, after F581; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
 
 ## 1. Current authoritative state (not historical hypotheses)
 
@@ -464,6 +464,34 @@ case credit. See
 [F580 four real original action source study](CHARACTEROBJECT_FOUR_ACTIONS_F580.md),
 and run targeted
 `scripts/repo-python scripts/verify-characterobject-four-next-actions-f580.py`.
+
+**F581 adds TWO more strict original CharacterObject cases
+`0x33E` and `0x33F`** inside original still-nonexact whole giant
+`004EBDA0` (33,293 CODE bytes). The distinct native stage cases
+are **127 x86 instructions/489 bytes** with original 00455580
+scatter x87 globals `006578C0/006581E0/00659094`, and **101/381**
+with distinct parent state `0x2C1` and original direction ×180.
+Both newly compiled ordinary C++ source cases have **complete
+matching original x86 GPR/x87/CFG/instruction byte widths and
+10+6 real typed physical COFF fields**, no new order exceptions.
+The same one-TU VC7.1 source now proves **27 complete real action
+bodies, 3,444 native instruction roles, 12,765 native inner CODE
+bytes and 240 genuine physical call/global COFF fields**, along
+with all 60 original native dense handler COFF slots and 198 exact
+sparse bytes. The original 33,293-byte giant remains NONEXACT;
+no inner case is independently accepted CODE.
+
+The SMALL 171-byte ArchiveCatalog destructor at `0041CE50` was also
+independently retested with **14 new true POD/array/union/volatile
+C++ filename ownership forms**. All fresh compiles retain 51
+instructions/171 bytes but the original **108/115** nonfield byte
+match/three-way EBP slot permutation persists, so ZERO new small
+function exact credit. The negative source and COFF comparisons
+are retained under `.analysis/f581-archive-expr-order/`.
+See [F581 native parent scatter plus small destructor check](CHARACTEROBJECT_PARENT_SCATTER_F581.md),
+and targeted source verifier
+`scripts/repo-python scripts/verify-characterobject-parent-scatter-f581.py`.
+No all-unit cold replay or external Oracle.
 
 **Three other authored functions remain nonexact (all require full CODE):**
 

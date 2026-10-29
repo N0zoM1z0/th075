@@ -137,3 +137,14 @@ The **11,895 original internal CODE bytes still belong to the
 nonexact 33,293-byte *whole* boss**; this is neither 25 standalone
 exact functions nor a split original CODE credit. No all-unit cold
 replay and no external Factory/Oracle acceptance receipt.
+
+## F581 follow-up: two separate parent-stage actions
+
+The same tracked natural C++ source now implements complete original
+`0x33E` (127 native x86 instructions /489 bytes) and `0x33F`
+(101/381), in addition to F580's four strictly reproduced cases.
+F580's targeted source verifier continues to independently recheck
+all its original 25 cases under the enriched shared function.
+See [F581 native parent-scatter evidence](CHARACTEROBJECT_PARENT_SCATTER_F581.md)
+for complete physical COFF verification and the deliberately
+nonexact whole giant accounting.
