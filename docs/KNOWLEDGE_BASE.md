@@ -11422,3 +11422,29 @@ natural C++ proof](FIGHTER_MOTION_RESTART_F645.md), targeted
 `scripts/repo-python scripts/verify-fighter-motion-restart-f645.py --boss 0x00564BE0`.
 Official authored whole exact 943/862,726 remains unchanged; no
 all-unit cold replay or external Oracle receipt.
+
+
+## F648: eight exact entire game-facing native state/setter and member forward leaves, original origin unknown
+
+Original Japanese TH075 complete source-backed
+`00410FC0` **24B/10x86** (real 16-bit thiscall short field setter at
++0x12, `RET 4`), `0045B6F0` **27B/13x86** (real pointer+16 and
+thiscall receiver return), `00458770` **22B/10x86** (real
+this+4 member call `00411C70`), `004229D0` **28B/12x86** (native
+constructor argument forwarding to `00422A50`, receiver return),
+and four **15B/7x86** whole zero-argument forwarding wrappers
+`0040F9F0`,`004229C0`,`0045B6B0`,`005FAAD0`. Ordinary VC7.1
+`probes/GameStateSetterAndMemberForwardF648.cpp` reproduces all
+**161/161 original complete linked native CODE bytes /73/73
+original x86/6 genuine zero-addend physical PE-target REL32 call
+fields**. Original direct x86 CALL graph across all 4,351 registered
+whole native extents finds one real compiler/STL-like call each
+except state setter 00410FC0 has no direct registered call; neither
+source names nor callers establish original explicit authored vs
+compiler/library origin. All eight retain `unknown/review`, zero
+new accepted authored CODE. Whole origin-pending source study
+F616/F618/F634/F638/F640/F644/F648 now **37 original complete
+functions/819 actual native original CODE bytes**, all uncredited.
+[F648 original physical full-byte/source and caller evidence](GAME_STATE_FORWARD_LEAVES_F648.md),
+selected `scripts/repo-python scripts/verify-game-state-forward-leaves-f648.py`.
+Formal 943/862,726 authored exact remains unchanged; no all-unit cold replay.

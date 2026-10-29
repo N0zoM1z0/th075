@@ -1,6 +1,6 @@
 # TH075 — active reconstruction handoff
 
-**Maintained 2026-10-29 after F645.** This is the **only current task list**.
+**Maintained 2026-10-29 after F648.** This is the **only current task list**.
 The [F540–F596 research chronology](history/RE_HANDOFF_F540_THROUGH_F596.md),
 [knowledge base](KNOWLEDGE_BASE.md), and older F-series studies are
 **historical evidence**, not statements of current progress. Independently
@@ -1048,6 +1048,32 @@ whole-giant exact source or accepted authored CODE. Official
 ```bash
 scripts/repo-python scripts/verify-fighter-motion-restart-f645.py --boss 0x00564BE0
 scripts/repo-python scripts/verify-fighter-motion-restart-f645.py --boss 0x00543210
+```
+
+**F648 eight more COMPLETE pinned original native game-facing leaf
+functions** from one ordinary VC7.1 C++ TU: 16-bit thiscall setter
+`00410FC0` (**24/24 original CODE B**), `0045B6F0` real pointer
++16/return-this (**27/27 B**), `00458770` native member+4
+forward (**22/22 B**), `004229D0` constructor member+0 call and
+thiscall `RET 4` (**28/28 B**), plus four complete 15B one-arg
+pointer-wrapper/zero-state call adaptors `0040F9F0`,`004229C0`,
+`0045B6B0`,`005FAAD0`. All **161/161 native whole linked bytes
+/73 actual original x86 roles/6 genuinely typed original PE-target
+zero-addend REL32 COFF calls** are verified; original 4,351
+registered CODE-extents direct-CALL scan independently finds one
+real use per leaf except zero direct callers to 00410FC0.
+Original current callers are primarily STL construct/destroy and
+compiler-like sources; those labels and full machine-code identity
+**do NOT prove** historical explicit user source vs compiler/library
+origin. All eight original `unknown`/`review` rows remain pending:
+**ZERO accepted authored whole CODE**. F616/F618/F634/F638/F640/
+F644/F648 complete source-backed origin-unknown whole functions total
+**37 originals/819 original CODE bytes**, all uncredited.
+[F648 native full linked-source and caller proof](GAME_STATE_FORWARD_LEAVES_F648.md),
+[normal C++](../probes/GameStateSetterAndMemberForwardF648.cpp).
+
+```bash
+scripts/repo-python scripts/verify-game-state-forward-leaves-f648.py
 ```
 
 ## 4. Other three unmatched authored *whole* functions
