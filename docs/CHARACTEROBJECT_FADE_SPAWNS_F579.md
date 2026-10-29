@@ -111,3 +111,14 @@ giant remains nonexact**, including unimplemented later game actions
 and unrecovered entire original class/stack lifetime. There is zero
 new accepted whole/split CODE or DATA credit and no external
 Factory/Oracle acceptance receipt.
+
+## F580 follow-up: four more complete original action bodies
+
+The same tracked source now adds **0x33A (66/229), 0x33B (84/301),
+0x33C (127/472), 0x33D (127/472)** as genuine native game-action
+bodies. F579's verifier remains scoped to its prior 21 actual cases;
+[F580's original PE/COFF study](CHARACTEROBJECT_FOUR_ACTIONS_F580.md)
+verifies all 25. The latter finds the real 0x33D third native parent
+compare value **0x2BE**, not the `0x2C1` used by its first two
+comparisons, and restores the exact native x87 flag logic of 0x33B.
+No whole giant/split CASE CODE exact credit is claimed.

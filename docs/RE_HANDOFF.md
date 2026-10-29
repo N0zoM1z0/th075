@@ -1,6 +1,6 @@
 # TH075 — current agent handoff
 
-**Maintained: 2026-10-29, after F579; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
+**Maintained: 2026-10-29, after F580; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
 
 ## 1. Current authoritative state (not historical hypotheses)
 
@@ -442,6 +442,28 @@ and targeted verifier
 The **10,421 original inner CODE bytes remain inside one
 nonexact whole 33,293-byte giant**, not independent exact functions;
 no full cold replay or fabricated coverage credit.
+
+**F580 recovers FOUR more complete native CharacterObject action
+bodies** in giant 004EBDA0: `0x33A` 66 x86/229 B, `0x33B`
+84/301, `0x33C` 127/472, `0x33D` 127/472. All four are
+**strict native x86 instruction/GPR/x87/branch/length matches**
+in a new one-TU normal VC7.1 compile, with **31 genuine typed COFF
+call/float fields** and no newly tolerated read-only swaps.
+The native `0x33B` uses `TEST AH,5; JP`, which requires correct
+`float < threshold` C++ semantics; `0x33D` first two parent
+comparisons use 0x2C1 but **the third original compare uses 0x2BE**.
+The same C++ now holds **25 complete actual original game-action
+cases, 3,216 genuine x86 roles, 11,895 internal original CODE
+bytes and 224 genuine typed COFF reference fields**, plus all 60
+original native switch DWORD fields, 198 literal compressed index
+bytes and 438 separate post-RET DATA bytes. F573/F574/F578's
+three read-only MOV/FLD original-order exceptions and two deep
+EBP-width actor cases remain explicitly bounded; the **33,293
+whole original CODE bytes remain NONEXACT** with no standalone
+case credit. See
+[F580 four real original action source study](CHARACTEROBJECT_FOUR_ACTIONS_F580.md),
+and run targeted
+`scripts/repo-python scripts/verify-characterobject-four-next-actions-f580.py`.
 
 **Three other authored functions remain nonexact (all require full CODE):**
 

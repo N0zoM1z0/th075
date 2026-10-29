@@ -9548,3 +9548,38 @@ Reproducer:
 [F579 native effect/fade source](CHARACTEROBJECT_FADE_SPAWNS_F579.md).
 Original **entire 33,293-byte fighter still nonexact**; no
 split/whole exact CODE/DATA or all-unit cold replay/Oracle acceptance.
+
+
+## F580: strict native 0x33A..0x33D actor x87 and third parent guard
+
+The entire original 33,293-byte CharacterObject giant `004EBDA0`
+now has four additional truly native game-action case C++ bodies
+in the same single-TU switch: `0x33A` 66 instructions/229 original
+CODE bytes, `0x33B` 84/301, `0x33C` 127/472, `0x33D` 127/472.
+All four newly compiled sources match exact original x86 mnemonic,
+register/x87/branch graph and per-instruction byte lengths, with
+**31 genuine typed zero-addend COFF call/global fields**.
+`0x33A` is an authentic independent 20-step fade based on float
+006583FC; `0x33B` performs native 00455580 random motion with
+FILD/FSUB 00659728/FADD 006581DC/FCHS, real 0040FB70,
+and native threshold comparison against 0065912C.
+Ordinary C++ `float < threshold` is required for actual native
+`FCOMP; FNSTSW; TEST AH,5; JP` (not a superficially similar
+negated `<=` which uses different real x87 flags).
+`0x33C/0x33D` have full 127-instruction owner-stage policies
+with signed direction times 65, real parent position and native
+float global 006590AC. An original PE-only correction:
+`0x33D` first two parent-state comparisons are **0x2C1**, but
+its third physical comparison at instruction 34 is **0x2BE**;
+`0x33C` uses 0x2BE for all three. Natural C++ parent-first
+*reference-lvalue* expressions preserve the original GPR/FILD/FADD
+operand order, unlike straightforward arithmetic ordering.
+Across all 25 complete original nondefault action cases now
+**3,216 genuine original x86 instruction roles / 11,895 internal
+native CODE bytes /224 authentic physical COFF fields** in the
+single selected VC7.1 source, with 60 original dense handler refs,
+198 exact native sparse bytes and distinct 438 after-RET DATA.
+The whole original giant is still nonexact; internal case CODE
+is NOT independently exact/accepted, no full replay/Oracle.
+[F580 four full game-action study](CHARACTEROBJECT_FOUR_ACTIONS_F580.md),
+reproducer `scripts/repo-python scripts/verify-characterobject-four-next-actions-f580.py`.
