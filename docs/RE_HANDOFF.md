@@ -1,6 +1,6 @@
 # TH075 — active reconstruction handoff
 
-**Maintained 2026-10-29 after F626.** This is the **only current task list**.
+**Maintained 2026-10-29 after F627.** This is the **only current task list**.
 The [F540–F596 research chronology](history/RE_HANDOFF_F540_THROUGH_F596.md),
 [knowledge base](KNOWLEDGE_BASE.md), and older F-series studies are
 **historical evidence**, not statements of current progress. Independently
@@ -590,6 +590,35 @@ new accepted whole functions or full fighter CODE. Official authored
 ```bash
 scripts/repo-python scripts/verify-fighter-mode63-basic-f626.py --boss 0x004AC040
 scripts/repo-python scripts/verify-fighter-mode63-basic-f626.py --negative-actor 0x0058AF60
+```
+
+**F627** restores a THIRD actual original native case0x63
+grammar, a **138-instruction priority bonus BEFORE ordinary action
+0x31C**, for strict original fighter `005D73C0` (native 534 CODE
+bytes /138 GPR/x87/CFG exact roles /8 genuine typed original
+PE/COFF global and game-call targets). Real native first priority
+branch checks signed byte `this+0x370[index] == 5` then
+`this+0x32A[index] == 2`, sends `0040FAC0(0x303)` and **exits**;
+the ordinary `0x31C` branch has its own later full guard. This
+is not F624's optional after-31C bonus or F626's no-bonus variant.
+Both native `005D73C0` and `0045DD70` use SECOND compressed
+switch **26 slots, 0x63 at slot24**, next physical action0x8C;
+the true shared slot25 default is not CODE case end. `0045DD70`
+is a real **533-byte/138 x86** original negative; the same natural
+source emits 534 bytes and **87 GPR/CFG errors**, intentionally not
+credited. F627 contributes only **ONE strict source-backed inner
+case /138 original x86 roles/534 native internal CODE bytes/8
+real field targets**, with all 30 previous original game case and
+separate afterRET DATA proofs rechecked in its whole-parent TU.
+F598–F627 cumulative **347 source-backed internal native case
+subranges /91,233 original inner CODE bytes**, NOT new complete
+authored function exact credit; official 943/862,726 unchanged.
+[F627 real original bonus-priority case evidence](FIGHTER_MODE_PRIORITY_F627.md),
+[natural C++](../probes/FighterMode63PriorityF627.inc).
+
+```bash
+scripts/repo-python scripts/verify-fighter-mode63-priority-f627.py
+scripts/repo-python scripts/verify-fighter-mode63-priority-f627.py --negative-actor
 ```
 
 Never run a full 943-unit cold replay.

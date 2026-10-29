@@ -10912,3 +10912,32 @@ and separate authored complete destructors remain NONEXACT.
 targeted `scripts/repo-python scripts/verify-fighter-mode63-basic-f626.py --boss 0x004AC040`,
 `--negative-actor 0x0058AF60`. Official authored whole exact
 943/862,726 unchanged, no full 943-unit cold replay.
+
+
+## F627: authentic 138-x86 priority mode0x63 case on fighter 005D73C0
+
+Native Japanese TH075 original `005D73C0` and `0045DD70` expose
+a separate real **138-instruction native** second packed-switch
+case0x63 grammar: independent early priority path checks indexed
+signed byte `+0x370[index] == 5` BEFORE checking `+0x32A[index] ==2`
+and transitions to actual game action `0x303`, then exits; a
+second independently gated branch still checks indexed `+0x32A ==2`
+to transition to normal `0x31C`. This differs both from F624 118-x86
+optional bonus **after** action31C and F626 109-x86 no-bonus owners.
+Actual native compressed second switch has **26 physical dense
+slots, 0x63 at slot24**, common default25, and actual next game CODE
+handler `0x8C`. Ordinary fresh pinned VC7.1 C++ source
+`probes/FighterMode63PriorityF627.inc` reconstructs all original
+**138/138 x86 GPR/x87/CFG roles, 534 original native CODE bytes
+and 8 physically verified zero-addend PE/COFF targets** inside
+`005D73C0`, retaining the earlier 30 case roles and afterRET jump
+DATA. `0045DD70` original source has **533 B/138 x86** and 87
+nonmatching native register roles after normalizing the verified
+mode global, so is NOT counted. F627 adds **1 true strict native
+interior case /138 x86 roles/534 original inner CODE bytes/8 fields**,
+cumulative F598–F627 **347 original native case bodies/91,233
+internal CODE bytes**, all nested in nonexact giant function sources;
+official 943/862,726 whole authored exact unchanged.
+[Original F627 source/PE and negative owner evidence](FIGHTER_MODE_PRIORITY_F627.md),
+`scripts/repo-python scripts/verify-fighter-mode63-priority-f627.py
+--negative-actor`. No all-unit cold replay.
