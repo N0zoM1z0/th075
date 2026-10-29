@@ -8,6 +8,7 @@ Compile only the one new VC7.1 probe translation unit; no all-unit replay.
 from __future__ import annotations
 
 import argparse
+import csv
 import hashlib
 import importlib.util
 import json
@@ -135,6 +136,38 @@ def prove_case(reader, pe: bytes, decoder, obj: Path, case: dict) -> dict:
             'accepted_exact_authored_bytes':0}
 
 
+def original_callers(reader, pe, decoder):
+    # R209's imported attribution is not evidence. Re-read every original
+    # registered function and the real direct CALL instructions anew.
+    desired = {
+        0x004591E0: {0x00458E70, 0x00459CB0, 0x0045B640},
+        0x0045AAE0: {0x0045A950, 0x0045AFB0, 0x0045B0C0},
+    }
+    callers = {target:[] for target in desired}
+    with (ROOT/'config/functions.csv').open(newline='') as file:
+        rows=list(csv.DictReader(file))
+    for row in rows:
+        base=int(row['address'],16)
+        original=reader.pe_bytes_at(pe,base,int(row['size']))
+        for ins in decoder.disasm(original,base):
+            if ins.mnemonic!='call' or not ins.op_str.startswith('0x'):
+                continue
+            dest=int(ins.op_str,16)
+            if dest not in desired:
+                continue
+            need(row['status']=='excluded' and row['owner']=='library',
+                 f'original record special member now has non-library caller {base:08X}')
+            callers[dest].append({'caller':f'0x{base:08X}',
+                 'instruction':f'0x{ins.address:08X}',
+                 'origin_class_of_caller':'library',
+                 'caller_name':row['proposed_name']})
+    for target, expected in desired.items():
+        seen={int(q['caller'],16) for q in callers[target]}
+        need(len(callers[target])==len(expected)==3 and seen==expected,
+             f'{target:08X}: actual native direct caller set has changed: {callers[target]}')
+    return {f'0x{target:08X}':calls for target,calls in callers.items()},len(rows)
+
+
 def main():
     cli=argparse.ArgumentParser(description=__doc__)
     cli.add_argument('--with-negative-gxoff', action='store_true',
@@ -149,12 +182,20 @@ def main():
     decoder=Cs(CS_ARCH_X86, CS_MODE_32)
     obj=compile_source('implicit-GX', '')
     results=[prove_case(reader,pe,decoder,obj,case) for case in CASES]
+    negatives=[]
     if opts.with_negative_gxoff:
         negative=compile_source('implicit-GX-off', '-')
         code, refs=reader.object_function(negative, CASES[1]['symbol'], 368)
-        need(len(code)==368 and len(refs)==2,
+        ins=list(decoder.disasm(code,0))
+        need(len(code)==368 and len(refs)==2 and len(ins)>1
+             and ins[-1].mnemonic=='ret' and ins[-1].address+ins[-1].size==368,
              'non-EH control unexpectedly emits original 417-byte copy ctor')
+        negatives.append({'source_profile':'/GX-', 'source_copy_constructor_CODE_bytes':368,
+                          'original_copy_constructor_CODE_bytes':417,
+                          'original_COFF_fields':6,'without_EH_COFF_fields':len(refs),
+                          'matches_original_whole_copy_constructor':False})
         print('Negative /GX- control: 368-byte ctor, no original 417-byte EH frame',flush=True)
+    callsites, checked=original_callers(reader,pe,decoder)
     OUT.mkdir(parents=True,exist_ok=True)
     manifest={'original_SHA256':hashlib.sha256(pe).hexdigest(),
               'probe_source_sha256':hashlib.sha256(SOURCE.read_bytes()).hexdigest(),
@@ -164,6 +205,11 @@ def main():
               'whole_original_functions':results,
               'accepted_authored_CODE_bytes':0,
               'origin': 'unknown (explicit authored code vs implicit generated shape unresolved)',
+              'registered_original_function_boundaries_scanned':checked,
+              'original_native_direct_callers':callsites,
+              'all_discovered_direct_callers_are_classified_library':True,
+              'out_of_line_EH_handler_and_DATA_NOT_exactly_compared':True,
+              'negative_compiler_profile_controls':negatives,
               'all_unit_cold_replay':False}
     (OUT/'summary.json').write_text(json.dumps(manifest,indent=2)+'\n')
     for result in results:
@@ -172,9 +218,13 @@ def main():
               f"{result['original_x86_instructions']} complete x86 instructions, "
               f"{len(result['native_PE_backed_source_COFF_fields'])} original physical "
               f"COFF fields; actual native destination and fully linked CODE exact",flush=True)
+    print(f'F599: independently re-decoded {checked} registered original function '
+          'boundaries; each original copy worker has 3 genuine direct CALLs '
+          'from library-classified vector/copy wrappers (not an owner proof).',flush=True)
     print('F599: two authentic natural *implicit* C++ member functions verified. '
           'Original authored-vs-compiler ownership remains UNKNOWN; '
-          'zero newly accepted game CODE, no all-unit cold replay.',flush=True)
+          'out-of-line EH DATA uncredited, zero newly accepted game CODE, '
+          'no all-unit cold replay.',flush=True)
 
 
 if __name__=='__main__':

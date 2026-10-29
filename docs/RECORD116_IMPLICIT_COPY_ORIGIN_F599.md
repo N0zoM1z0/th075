@@ -66,10 +66,23 @@ produce both entire native functions**, and that the native originals
 have matching nontrivial member ownership and call placement. It does
 **not** prove the original developer chose implicit rather than an
 explicitly authored equivalent, establish the original record type,
-or establish the identity of the library/game record owner. Callers
-`0045AFB0` (SDK forward-copy helper) and `0045B640` (SDK placement
-construction wrapper) are independently recorded, but SDK callers
-alone cannot prove the two nested member-copy implementations' origin.
+or establish the identity of the library/game record owner. A fresh independent scan of **all 4,351 registered whole original
+function extents** finds **three direct CALLs to each original
+copy worker**, all from independently library-classified wrappers:
+
+| Actual original copy worker | All currently found direct native callers |
+| --- | --- |
+| `004591E0` copy construction | `00458E70` `std::vector::_Assign_n`; `00459CB0` `std::vector::_Insert_n`; `0045B640` VC7 placement construction |
+| `0045AAE0` copy assignment | `0045A950` `std::fill`; `0045AFB0` VC7 non-scalar forward copy; `0045B0C0` `std::_Copy_backward_opt` |
+
+Every direct `CALL` instruction address, its exact destination and the
+caller's existing independent library-origin row are checked afresh by
+the F599 verifier; a caller added or reclassified later requires a
+new review. These are *all discovered registered direct callers*, not
+proof of no unregistered/indirect uses, original member class origin,
+or implicit-vs-explicit source syntax. A library wrapper can call a
+game-defined member, so these observations alone do not prove that
+the two nested member-copy implementations were vendor authored.
 
 Therefore **both remain `unknown` in `config/function-origins.csv`**;
 `config/functions.csv`, authored/excluded counts, match-unit manifest,
