@@ -10179,3 +10179,35 @@ in `.analysis/f598-native-register-investigation/` and
 reproducer `scripts/repo-python
 scripts/verify-fighter-singleton-contact-f598.py --boss 0x004F7130`;
 full detail [F598 giant and small original source study](FIGHTER_SINGLETON_CONTACT_F598.md).
+
+
+## F599: two entire native record-copy functions match ordinary compiler-generated C++
+
+Independent physical-PE-only comparison plus fresh pinned VC7.1 source
+probes reconstructed complete origin-unknown `0045AAE0` (368 CODE
+bytes/118 x86/two native `REL32` fields to `0045AC50`) as an implicit
+116-byte-record assignment operator and `004591E0` (417 CODE bytes/128
+x86/six native `DIR32`/`REL32` fields including `00459390` copy
+construction and exception-chain metadata) as an implicit record copy
+constructor under `/GX`. **Both fully linked whole original code
+functions are byte-for-byte exact**, with 360/360 plus 393/393
+nonrelocation byte matches and all eight original destination fields.
+Turning `/GX` off instead makes a shorter 368-byte copy constructor
+with only two relocations and thus *does not* reproduce the original
+417-byte EH code. The 116-byte struct and its two 16-byte original
+copy/assign member calls are real compiler-source-shape witnesses,
+**not identified original owner/type declarations**. Out-of-line EH
+handler metadata is separately unverified and earns no CODE/DATA credit.
+
+Fresh independent original PE CALL graph over all 4,351 function
+boundaries found three genuine direct library-classified callers
+per unknown special member: constructor from `00458E70`, `00459CB0`,
+`0045B640`; assignment from `0045A950`, `0045AFB0`, `0045B0C0`.
+Those original call relationships show STL/vector element use but
+**do not distinguish authored explicit owner vs compiler implicit**
+special members. Both original functions stay `unknown` origin,
+`unclassified` CODE and **ZERO official authored exact credit**.
+Real C++ source `probes/Record116ImplicitCopyF599.cpp`; targeted
+verifier `scripts/repo-python scripts/verify-record116-implicit-copies-f599.py
+--with-negative-gxoff`; [full F599 special-member study](RECORD116_IMPLICIT_COPY_ORIGIN_F599.md).
+No all-unit cold replay or external Oracle.

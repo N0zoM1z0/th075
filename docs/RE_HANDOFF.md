@@ -1,6 +1,6 @@
 # TH075 — active reconstruction handoff
 
-**Maintained 2026-10-29 after F598.** This is the **only current task list**.
+**Maintained 2026-10-29 after F599.** This is the **only current task list**.
 The [F540–F596 research chronology](history/RE_HANDOFF_F540_THROUGH_F596.md),
 [knowledge base](KNOWLEDGE_BASE.md), and older F-series studies are
 **historical evidence**, not statements of current progress. Independently
@@ -162,6 +162,9 @@ nontrivial member destructor and VC7.1 `/GX` frame reproduce both native
 exception-state writes; `/GX-` is a negative control. The actual owner
 and developer's implicit-vs-explicit syntax remain unproved, so **do not
 count 785 source-backed bytes as newly accepted authored CODE**.
+An independent original direct-call scan over all 4,351 registered
+functions now finds **three distinct library-classified direct callers
+for each**, without proving the original member owner or author.
 [Complete F599 original source/ownership evidence](RECORD116_IMPLICIT_COPY_ORIGIN_F599.md),
 [actual natural C++](../probes/Record116ImplicitCopyF599.cpp) and one
 selected cold compile plus optional EH negative:
