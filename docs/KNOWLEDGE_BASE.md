@@ -8612,7 +8612,7 @@ PE-only runner. The 7,152-row F537 action index SHA256 is unchanged.
 cold replay.** The existing 942 exact-unit register remains unchanged.
 
 
-## F538: natural C++ switch recovers native compiler-lowered giant dispatch
+## F539: natural C++ switch recovers native compiler-lowered giant dispatch
 
 This goes beyond F537 raw PE mapping. Using the complete original F537 native
 case-ID set, **one** ordinary VC7.1 C++ switch with 143 Reimu /151

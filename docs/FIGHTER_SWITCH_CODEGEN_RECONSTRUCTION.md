@@ -1,4 +1,4 @@
-# F538 — native VC7.1 C++ switch lowering for two complete giant bosses
+# F539 — native VC7.1 C++ switch lowering for two complete giant bosses
 
 **Research milestone, not a giant-boss CODE match or a source-ownership claim.**
 This work is based on the *complete* original Japanese TH075 1.11 Reimu
@@ -62,7 +62,7 @@ The important difference from initial separate-guard/extra-local probes is
 that **one combined C++ short-circuit condition** and a **direct switch
 operand**, rather than an unnecessary named `int action` copy, naturally
 recover the original prefix's `JNE`/`JE` ordering and register selection.
-The earlier separate-guard versions also generated equal sparse data, but
+The earlier F538 exploratory separate-guard versions also generated equal sparse data, but
 introduced an extra native stack copy and did not reproduce the complete
 same-size 66-instruction switch prefix. The natural C++ local choice is
 supported by original physical code and cold compiler output; no synthetic
@@ -80,7 +80,7 @@ scripts/repo-python scripts/verify-fighter-natural-switch-probes.py --boss Reimu
 ```
 
 The new source verifier regenerates two **ignored** C++ probes under
-`.analysis/f538-natural-fighter-switch-source/`, uses the existing pinned
+`.analysis/f539-natural-fighter-switch-source/`, uses the existing pinned
 compiler, reads the actual generated COFF symbol, relocation and after-RET
 bytes, and checks *the original complete PE CODE and physical DATA again*
 from scratch. It rejects missing/extra table slots, a wrong native action
@@ -102,4 +102,4 @@ bodies must still be reconstructed *within the full original extent* and
 passed through **complete CODE plus physical relocation exactness**, rather
 than checking 325-byte subsets, table data or similar-looking machine code.
 There is **zero new accepted giant CODE**, no all-unit cold replay and no
-external Oracle exactness receipt from F538.
+external Oracle exactness receipt from F539.

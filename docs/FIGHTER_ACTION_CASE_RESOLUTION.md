@@ -118,7 +118,7 @@ Original entry destinations can be individual action handlers, shared
 fall-through blocks, or the same physical default branch: this table by
 itself does not prove separate C++ `case` bodies or their variable names.
 
-## F538 natural C++ generation follow-up
+## F539 natural C++ generation follow-up
 
 A separate pinned VC7.1 compiler experiment has now recovered both
 **325-byte / 66-instruction native dispatch shapes** from a single natural

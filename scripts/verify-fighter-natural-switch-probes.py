@@ -27,7 +27,7 @@ import sys
 from capstone import Cs, CS_ARCH_X86, CS_MODE_32
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / '.analysis/f538-natural-fighter-switch-source'
+OUT = ROOT / '.analysis/f539-natural-fighter-switch-source'
 BOSSES = {'Reimu':0x0045DD70,'CharacterMove':0x004AC040}
 ORIG = ROOT / 'config/fighter-boss-dispatch-fingerprints.json'
 MATCH = ROOT / 'scripts/compare-coff-function.py'
@@ -64,14 +64,14 @@ def generate_probe(tag: str, mapped: list[dict], default: str)->tuple[str,int]:
     ids=sorted(int(x['action']) for x in mapped
                if x['kind']=='singleton' or x['handler']!=default)
     require(len(ids)==len(set(ids)) and ids,'duplicate/nonexistent native cases')
-    source=f'''// F538 natural switch *probe*, not original fighter source or CODE credit.
+    source=f'''// F539 natural switch *probe*, not original fighter source or CODE credit.
 // This file is regenerable from the original PE under ignored .analysis.
-class FighterSwitchF538_{tag} {{ public: void Advance(); }};
+class FighterSwitchF539_{tag} {{ public: void Advance(); }};
 extern unsigned int g_FighterProbeMarker;
 #define RAW reinterpret_cast<char*>(this)
 #define I16(off) *reinterpret_cast<signed short*>(RAW+(off))
 #define OWNER (*reinterpret_cast<char**>(RAW+0x2E8))
-void FighterSwitchF538_{tag}::Advance() {{
+void FighterSwitchF539_{tag}::Advance() {{
     if (I16(0x82) != 0 || *reinterpret_cast<signed short*>(OWNER+0x3BA) != 0)
         return;
     switch (I16(0x60)) {{
@@ -107,9 +107,8 @@ def source_object(tag:str,source:str)->Path:
     return obj
 
 
-def dispatcher(ins, first_table: int, full_end: int):
+def dispatcher(ins, full_end: int):
     """From natural C++ input load through final indexed jump, excluding case bodies."""
-    positions={i.address:j for j,i in enumerate(ins)}
     guard_cmp=[j for j,i in enumerate(ins)
                if i.mnemonic=='cmp' and CMP32.fullmatch(i.op_str)]
     require(len(guard_cmp)>=1, 'missing original switch upper-bound decision')
@@ -160,7 +159,7 @@ def verify_one(tag:str, boss:dict, pe, reader, action, decoder)->dict:
     native_report, entries=action.report_boss(reader,pe,decoder,boss)
     cpp, concrete=generate_probe(tag,entries,native_report['default'])
     obj=source_object(tag,cpp)
-    code,refs=reader.object_function(obj,f'?Advance@FighterSwitchF538_{tag}@@QAEXXZ')
+    code,refs=reader.object_function(obj,f'?Advance@FighterSwitchF539_{tag}@@QAEXXZ')
     orig_code=reader.pe_bytes_at(pe,boss['address'],boss['size'])
     original=list(decoder.disasm(orig_code,boss['address']))
     # Candidate contains genuine x86 CODE and its after-RET original-shaped
@@ -171,8 +170,8 @@ def verify_one(tag:str, boss:dict, pe, reader, action, decoder)->dict:
         if i.mnemonic=='ret':break
     require(fake[-1].mnemonic=='ret','probe has no complete normal function RET')
     physical_data_start=fake[-1].address+fake[-1].size
-    native_disp,native_start,native_end=dispatcher(original,boss['tables'][0]['jmp'],boss['address']+boss['size'])
-    probe_disp,probe_start,probe_end=dispatcher(fake,0,physical_data_start)
+    native_disp,native_start,native_end=dispatcher(original,boss['address']+boss['size'])
+    probe_disp,probe_start,probe_end=dispatcher(fake,physical_data_start)
     require((native_end-native_start)==(probe_end-probe_start)==325,
             f'{tag}: original full 325-byte switch dispatch geometry not retained')
     ng,cg=grammar(native_disp,native_start,native_end),grammar(probe_disp,probe_start,probe_end)
@@ -229,8 +228,8 @@ def main() -> None:
     ap=argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--boss',choices=tuple(BOSSES),help='Rebuild/check only the named original giant fighter')
     a=ap.parse_args()
-    reader=module('f538_comparison',MATCH)
-    action=module('f538_physical_actions',ACTION)
+    reader=module('f539_comparison',MATCH)
+    action=module('f539_physical_actions',ACTION)
     pe=reader.verified_target()
     all_bosses={x['address']:x for x in json.loads(ORIG.read_text())['bosses']}
     decoder=Cs(CS_ARCH_X86,CS_MODE_32)
