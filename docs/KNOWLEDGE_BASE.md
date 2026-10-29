@@ -10330,8 +10330,11 @@ The actual x87 order required natural reference-to-member expression
 parenthesized `(POS54) * global` for original `FLD member; FMUL global`.
 Physical original per-fighter stage, speed bounds, dynamic state,
 float-to-signed-short `__ftol2` with two adjacent native owner fields,
-original callee symbols and the genuine wide EBP-0x88 (37 source
-receiver loads) were checked. F602 adds **936 x86 native roles,
+original callee symbols and the genuine wide EBP-0x88 (**33 original
+widened receiver `MOV` loads plus three short-to-near `Jcc` expansions**,
+exactly 111 original extra bytes) were checked. This corrects the
+older mistaken 37-widened-MOV summary with individual original x86
+byte widths; game behavior and source case stay unchanged. F602 adds **936 x86 native roles,
 3,477 original internal native CODE bytes, 135 typed PE/COFF fields**
 on top of prior 253 game case subranges; all nine whole originals
 remain nonexact and the two other 131-instruction action0x46 owners

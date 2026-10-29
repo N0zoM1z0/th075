@@ -82,12 +82,25 @@ original after-RET switch DATA layout in each selected new OBJ.
 | **Total** | **3,477 original inner bytes** | **936** | **135** | | |
 
 The original `00564BE0` case reads the actual `EBP−0x88` owner,
-requiring **37** original widened saved-this loads (111 native
-additional displacement bytes) compared with its 374-byte natural
-C++ case. The source uses no fake saved-local allocations.
+requiring **33 widened original `MOV` receiver reads** (each 3 native
+bytes longer) **and three actual `Jcc` transitions** at case ordinals
+`3`, `7` and `66` expanding from 2-byte short encodings into 6-byte
+near encodings because the real original larger case crosses the
+signed rel8 branch reach. The true additional native width is thus
+**33×3 + 3×4 = 111 original CODE bytes**, not 37 widened `MOV`s,
+extra filler, or ABI-padding. The source uses no fake saved-local
+allocations. The F602 verifier separately checks all 33 literal
+receiver widths and all three real original near conditional jumps.
 `005AEEC0` has an independently verified **`+0xEFC`** trajectory
 base, rather than `+0xF00` in all other eight of these nine
 fighters; both 16-bit output words are original member accesses.
+The original `005D73C0` also uses the distinct native **2.0f/12.0f**
+initial velocity clamps with physical original bounds `00657480`
+/ `006590C4`, rather than 6.0f/25.0f; this and all actor-specific
+stage/early/late action values are determined from the original x86.
+The original two missing 131-insn variants additionally use native
+`0x3B7` or `0x3E7` real spawn policies at `00453A70`; these must
+be fully reconstructed, not replaced with the compact case.
 The other actor constants are derived from independently decoded
 original instruction operands before source generation, not taken
 from guessed game type tables.

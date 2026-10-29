@@ -194,8 +194,12 @@ whole-fighter exact acceptance**.
 inside **nine** of the eleven giant fighters. Each complete native
 case has **104 original GPR/x87/CFG instructions** and **15 physically
 verified typed PE/COFF destinations**; normal cases have 374 original
-bytes, with one real wide-EBP original `00564BE0` having 485.
-Across nine separate fresh VC7.1 source builds, **936 native roles,
+bytes, with one real wide-EBP original `00564BE0` having 485: its genuine
+111-byte increase consists of 33 widened `MOV` receiver loads
+(**3 bytes each**) and **three 2-byte short → 6-byte near `Jcc`**
+branches (**4 bytes each**), not 37 widened loads. The native
+stage/counter source is derived from the PE. Across nine separate
+fresh VC7.1 source builds, **936 native roles,
 3,477 original internal CODE bytes, 135 typed fields** are now
 source-backed while keeping the earlier 23 true case roles and full
 seven-switch after-RET DATA geometry. Native per-boss speed bounds,
