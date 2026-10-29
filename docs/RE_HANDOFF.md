@@ -1,6 +1,6 @@
 # TH075 — active reconstruction handoff
 
-**Maintained 2026-10-29 after F639.** This is the **only current task list**.
+**Maintained 2026-10-29 after F640.** This is the **only current task list**.
 The [F540–F596 research chronology](history/RE_HANDOFF_F540_THROUGH_F596.md),
 [knowledge base](KNOWLEDGE_BASE.md), and older F-series studies are
 **historical evidence**, not statements of current progress. Independently
@@ -904,6 +904,32 @@ functions/credited authored bytes. Official 943/862,726 unchanged.
 ```bash
 scripts/repo-python scripts/verify-fighter-last-landings-f639.py --boss 0x00543210
 scripts/repo-python scripts/verify-fighter-last-landings-f639.py --boss 0x00564BE0
+```
+
+**F640 reconstructs TWELVE further COMPLETE original game-facing
+small functions** from one ordinary VC7.1 C++ TU, **203/203 entire
+original native machine CODE bytes, 99/99 complete x86 instruction
+roles and 10 genuine original typed zero-addend PE/COFF REL32 calls**.
+Six original `17B` single-argument forwarding wrappers
+(`0040D900`,`0040D940`,`00412D90`,`00428D20`,`00449A60`,
+`00438A60`), two original `11B` no-op thiscall methods
+(`004073A0`,`00438CF0`), three genuine `19B` receiver forwarding
+methods (`0040DE30`,`0040DF40`,`0040D8E0`) and real `22B` first-
+member constructor `0040D8C0`. Every original PE callee address,
+whole function length and original complete native CODE byte are
+strictly linked and checked. Direct PE CALL scan covers all
+**4,351 registered original CODE extents** with concrete game uses.
+**Original type/signatures and author-vs-generated ownership remain
+UNKNOWN** despite machine-code identity and game callers; all 12
+retain `unknown`/`review` and **zero authored exact acceptance**.
+Combined F616/F618/F634/F638/F640 study: **23 distinct entire
+original functions /490 whole native CODE bytes**, source-backed
+but still uncredited. [F640 actual PE-linked byte/source/caller
+proof](GAME_CALL_FORWARDERS_F640.md),
+[natural C++ grammar](../probes/GameCallForwardersF640.cpp).
+
+```bash
+scripts/repo-python scripts/verify-game-call-forwarders-f640.py
 ```
 
 ## 4. Other three unmatched authored *whole* functions

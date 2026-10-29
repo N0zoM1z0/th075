@@ -11266,3 +11266,34 @@ whole giant/whole authored exact code. [F639 actual native PE/whole
 source proofs](FIGHTER_LAST_LANDINGS_F639.md), targeted
 `scripts/repo-python scripts/verify-fighter-last-landings-f639.py --boss 0x0058AF60`.
 Formal whole exact ledger 943/862,726 unchanged, no all-unit cold replay.
+
+
+## F640: twelve full native C++ thin-call and thiscall game leaves, 203 exact CODE bytes but original source ownership unknown
+
+Normal original Japanese pinned VC7.1 C++ source
+`probes/GameCallForwardersF640.cpp` reproduces **12 independently
+registered complete original tiny native functions, 203/203 whole
+CODE bytes/99/99 x86 and 10 actual zero-addend physically typed
+original PE/COFF REL32 fields**. Six source grammar 17-byte
+`__cdecl` single-argument float-provisional forwarders map to
+`0040D900`,`0040D940`,`00412D90`,`00428D20`,`00449A60`,
+`00438A60` and actual PE callees `0040D920`,`0040D960`,`00412DB0`,
+`00428D40`,`00449A80`,`00641FB8`. Two 11-byte original thiscall
+no-op receivers are `004073A0`,`00438CF0`; three 19-byte source
+member call forwards are `0040DE30`,`0040DF40`,`0040D8E0`,
+and 22-byte member-ctor receiver source `0040D8C0`. All true native
+call operands are independently read and linked into temporary
+comparator bytes, not grafted into source or changed original EXE;
+full CODE then equals 203/203 original native bytes. Original PE
+CALL graph scans all 4,351 registered function extents, with real
+game-authored usage in drawing, camera, fighter and texture manager.
+Neither actual game calls nor identical wrapper machine-code prove
+historical C++ original signature (float vs int) or explicit author
+vs generated/library source: **all 12 stay `unknown`/`review`, no
+accepted authored exact credit**. Combined F616/F618/F634/F638/F640
+origin-unknown full source study **23 native whole functions/
+490 original native CODE bytes**, all uncredited. [F640 original
+whole PE/C++/call provenance](GAME_CALL_FORWARDERS_F640.md),
+selected `scripts/repo-python scripts/verify-game-call-forwarders-f640.py`.
+Official authored 943/862,726 whole exact unchanged, no all-unit
+cold replay/Oracle.
