@@ -146,7 +146,7 @@ def main():
          'genuine original Japanese dense/sparse native table hashes differ')
     src=SOURCE.read_text()
     need('F586/F587' in src and src.count('case 0x34C: {')==1
-         and 'case 0x3E3: g_FighterProbeMarker = 996; break;' in src,
+         and 'case 0x3E3: {' in src,
          'C++ source must implement complete real 0x34C action and retain next unfinished case diagnostic')
     # F586 re-checks every previous full action and compiles ONE VC7.1 TU.
     prior.main()

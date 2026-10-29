@@ -218,7 +218,7 @@ def main():
          'original physical Japanese native dense/sparse hash changed')
     src=SOURCE.read_text()
     need('F591/F592' in src and all(src.count(f'case 0x{k:X}:')==1 for k in STATES)
-         and 'case 0x3E3: g_FighterProbeMarker = 996; break;' in src
+         and 'case 0x3E3: {' in src
          and src.count('case 0x38D: {')==src.count('case 0x38E: {')==1,
          'C++ source must include 5 genuine game bodies, source-only register-nonexact 38D/E and next actual diagnostic 3E3')
     # Fresh compile ONE affected VC7.1 C++ source TU while original F591

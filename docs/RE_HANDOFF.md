@@ -1,6 +1,6 @@
 # TH075 — current agent handoff
 
-**Maintained: 2026-10-29, after F592; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
+**Maintained: 2026-10-29, after F593; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
 
 ## 1. Current authoritative state (not historical hypotheses)
 
@@ -811,6 +811,48 @@ selected verifier
 **Whole original 33,293 CODE remains NONEXACT, zero independent
 case CODE/DATA exact credit.** No full all-unit cold replay or
 external Factory/Oracle receipt.
+
+**F593 MAJOR WHOLE-FUNCTION BREAKTHROUGH for giant `004EBDA0`:**
+The ordinary VC7.1 native game C++ now models **EVERY original
+physical action case and the real default `GetStateAt40FA30()`**.
+One new selected normal C++ object reproduces **33,293 entire
+original CODE bytes, all 8,789 native x86 instruction offsets/
+byte widths**, the separate **438 after-RET DATA bytes** and
+**682 genuine zero-addend original PE/COFF source fields**
+(622 native CODE +60 native handler DWORD DATA). The original
+`004F3FA1` default is genuine `MOV ECX,[EBP-0x40]; CALL
+0040FA30`, replacing the earlier fabricated diagnostic store.
+The official relocation-aware **33,731-byte whole CODE+DATA
+comparator** reports **30,848/31,003 comparable original nonfield
+bytes identical**, leaving precisely **155 different nonfield
+bytes across 139 original instructions** (six positions in three
+bounded MOV/FLD read swaps, 45 GPR role differences in action38D,
+64 in action38E and 24 in the first 31 instructions of action3E3).
+**Whole giant is NOT byte-exact** and earns ZERO exact CODE or DATA.
+
+The NEW entirely strict source actions are original `0x3E4`
+(**261 x86/1,126 original CODE/19 typed COFF**) and actual last
+native `0x3E5` (**96/396/5**), both with complete GPR/x87/CFG
+and original physical PE targets. Ordinary C++ original source
+`3E4` requires real lvalue `PARENT_TARGET_Y + *(&gCollisionAt00657888)`
+to force native FLD parent-before-global and exact parent-preload
+before four native float boundary comparisons. `3E5` requires
+x87 `FILD; FIDIV; FADD ST0,ST0` real arithmetic and both
+original short exit jumps. The source also contains the original
+full `3E3` (200/812/17) but has 24 **unmatched GPR roles** in
+its first31 original instructions; prior 38D and38E remain
+register-source NONEXACT. The cumulative STRICT original action
+source receipts are now **56 complete cases /8,300 original x86
+roles /31,374 original internal CODE bytes /586 real typed
+PE/COFF fields**. The three remaining nonstrict case sources
+contribute 442 native roles/1,730 original inner CODE bytes but
+**are not counted** in the 56 source-strict cases.
+
+Run the selected original native whole-code/PE/COFF verifier
+`scripts/repo-python scripts/verify-characterobject-whole-geometry-f593.py`;
+read [F593 original entire 33K geometry and 155-byte residual](CHARACTEROBJECT_WHOLE_GEOMETRY_F593.md).
+**943 existing exact whole functions /862,726 original CODE bytes
+remain unchanged; no all-unit cold replay or external Oracle.**
 
 **Three other authored functions remain nonexact (all require full CODE):**
 

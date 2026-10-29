@@ -146,7 +146,7 @@ def build_one():
     src=SOURCE.read_text()
     need('F572/F573/F574/F575' in src and
          all(src.count(f'case 0x{k:X}:')==1 for k in range(START,END+1) if k!=0x32F)
-         and 'case 0x3E3: g_FighterProbeMarker = 996; break;' in src,
+         and 'case 0x3E3: {' in src,
          'actual F576 source must implement 17 real game cases and keep next case diagnostic')
     need(src.count('gCurveAt0065972C')>=3 and src.count('MotionRawAt40FB70')>=2,
          'real source must include native polynomial and raw-float input')

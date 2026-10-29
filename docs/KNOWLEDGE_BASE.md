@@ -10000,3 +10000,56 @@ Reproducer
 `scripts/repo-python scripts/verify-characterobject-five-complex-actions-f592.py`,
 [F592 source/physical COFF study](CHARACTEROBJECT_COMPLEX_AIM_F592.md).
 No full cold replay, independent CODE credit or external Oracle.
+
+
+## F593: entire original 33,293 CODE-byte fighter geometry and 682 genuine PE fields
+
+Japanese original `004EBDA0` CharacterObject megaboss now has
+natural C++ source in ALL original compressed native action bodies
+and a REAL default branch `default: GetStateAt40FA30();`
+reproducing native `004F3FA1 MOV ECX,[EBP-0x40]; CALL 0040FA30`
+in 8 bytes (not prior 10-byte fabricated marker store).
+The entire one-TU MSVC7.1 normal source emits **33,293 CODE
+bytes, 8,789 x86 instruction offsets and sizes fully identical
+to original native**, 438 separate postRET DATA bytes, and
+**682 physical zero-addend genuine original PE-targeted typed
+COFF fields**, 622 inside executable CODE and 60 in the dense
+switch DWORD DATA table. All 198 native sparse-index bytes remain
+literal identical. Genuine PE/COFF original symbol targets are
+independently checked from original relocated fields, including
+two true local switch labels and true external `__ftol2` call.
+
+An official independent relocation-aware comparison of the FULL
+original **33,731-byte CODE+DATA object** confirms
+**30,848/31,003 identical nonfield bytes** and **155 residual
+nonfield different bytes across exactly 139 x86 instruction
+positions**: six in three previously proved independent MOV/FLD
+read-order swaps, 45 GPR roles in whole action38D, 64 in action38E,
+24 in native action3E3's first31 instructions. The entire
+8,789 instruction original/compiled ordered mnemonic sequences
+differ in only the 6 previously known read-read swaps; even
+individual x86 encoded byte widths/physical offsets are identical.
+**These facts DO NOT constitute native CODE byte-exact acceptance.**
+
+New native source-strict physical complete 3E4 is **261 original
+x86/1,126 CODE bytes/19 typed native PE fields**, with original
+parent-state policy using +0xEFA/+0x3B6/+0x3B0/+0x36C, FCOMP
+qword00659228, float00657478, and real x87 parent-first
+FLD/FADD from ordinary true lvalue
+`PARENT_TARGET_Y + *(&gCollisionAt00657888)`.
+Native final action3E5 is **96 x86/396 CODE bytes/5 real typed
+PE fields**, with original float(P16(+0x3A0))/S16(+0xD8)*2.0f
+producing FILD/FIDIV/FADD ST(0),ST(0) and TWO original
+separate short return jumps. An otherwise identical standalone
+3E5-only source emits 70 wrong GPR assignments: real adjacent
+3E3/3E4 ordinary C++ source is needed to recover native register
+allocation context. Strict cumulative game case source evidence
+now **56 entire original cases /8,300 native instruction roles /
+31,374 original inner CODE bytes /586 typed case COFF refs**;
+remaining source 38D/38E/3E3 has native-sized body but still
+GPR nonexact. Original 33,293-byte whole giant still NONEXACT,
+zero standalone or whole CODE/DATA exact credit, no full cold
+all-unit replay/Oracle.
+Targeted reproducer
+`scripts/repo-python scripts/verify-characterobject-whole-geometry-f593.py`,
+[F593 entire original fighter source/COFF study](CHARACTEROBJECT_WHOLE_GEOMETRY_F593.md).
