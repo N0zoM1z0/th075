@@ -1,6 +1,6 @@
 # TH075 — current agent handoff
 
-**Maintained: 2026-10-29, after F577; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
+**Maintained: 2026-10-29, after F578; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
 
 ## 1. Current authoritative state (not historical hypotheses)
 
@@ -392,6 +392,32 @@ and targeted verifier
 **The whole 33,293-byte original giant remains CODE nonexact**;
 all inner CODE bytes are still part of that one unmatched whole
 function and earn no independently exact coverage.
+
+**F578 now reconstructs the whole original 269-instruction/
+1,022-CODE-byte CharacterObject contact action `0x335`** inside
+the still unmatched 33,293-byte giant `004EBDA0`, with actual
+stage/saturation FX loop, native x87 movement, stage-ten collision
+threshold 00657888 and stage-six float constant/member source order.
+The new C++ compiler output has matching native instruction count,
+GPR/x87/control operands and 17 true typed COFF fields; one genuine
+adjacent independent read-only MOV/FLD pair at native indices 146/147
+is explicitly documented as *not machine-order exact*. Crucially,
+the newly added real source case shifts neighboring original action
+`0x332`'s candidate temp from EBP−0x80 disp8 to EBP−0x84 disp32,
+so its **279-instruction /1,019-byte native case length now matches
+naturally without source padding**, while actual original EBP−0x9C
+source bytes/whole giant remain nonexact.
+
+In the *same newly compiled C++ function* F572–F578 now verify **19
+real game-action bodies, 2,602 native instruction roles, 9,634 actual
+internal original CODE bytes and 178 genuine typed COFF fields**,
+plus all 60 native switch DWORD COFF destinations and 198 byte-identical
+sparse-index bytes. The two earlier native read-only swaps remain and
+only 36 real frame-width bytes across action 0x330/0x331 remain.
+See [F578 native contact-stage study](CHARACTEROBJECT_CONTACT_STAGE_F578.md)
+and `scripts/repo-python scripts/verify-characterobject-contact-stage-f578.py`.
+**Full 33,293-byte giant still unmatched, zero split/whole CODE/DATA
+exact credit.**
 
 **Three other authored functions remain nonexact (all require full CODE):**
 

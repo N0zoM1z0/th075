@@ -178,20 +178,26 @@ def validate_original_signed_direction_case(native,candidate,f572):
          'original signed-direction case0x332 whole native instruction extent changed')
     native_code=sum(x.size for x in native)
     candidate_code=sum(x.size for x in candidate)
-    need((native_code,candidate_code)==(1019,1013),
-         'not the actual original 1,019-byte vs compact 1,013-byte native case')
+    need(native_code==1019 and candidate_code in (1013,1019),
+         'actual original 1019-byte native case or independently valid source size drift')
     wide=[(i,x,y,x.size-y.size) for i,(x,y) in enumerate(zip(native,candidate))
           if x.size!=y.size]
-    need([x[0] for x in wide]==[97,98]
-         and all(x[3]==3 for x in wide)
-         and native[97].mnemonic==candidate[97].mnemonic=='mov'
-         and native[98].mnemonic==candidate[98].mnemonic=='fild',
-         'original signed-direction integer-to-FPU temporary does not have exactly two disp32 expansions')
-    need('[ebp - 0x9c]' in native[97].op_str and
-         '[ebp - 0x9c]' in native[98].op_str and
-         '[ebp - 0x80]' in candidate[97].op_str and
-         '[ebp - 0x80]' in candidate[98].op_str,
-         'whole original stored temporary EBP offsets no longer verified')
+    need(native[97].mnemonic==candidate[97].mnemonic=='mov' and
+         native[98].mnemonic==candidate[98].mnemonic=='fild' and
+         '[ebp - 0x9c]' in native[97].op_str and
+         '[ebp - 0x9c]' in native[98].op_str,
+         'original native signed-direction FILD temporary at EBP-0x9C changed')
+    if candidate_code==1013:
+        need([x[0] for x in wide]==[97,98] and
+             all(x[3]==3 for x in wide) and
+             '[ebp - 0x80]' in candidate[97].op_str and
+             '[ebp - 0x80]' in candidate[98].op_str,
+             'earlier compact F577 source must have exactly two authentic widened EBP operations')
+    else:
+        need(not wide and
+             '[ebp - 0x84]' in candidate[97].op_str and
+             '[ebp - 0x84]' in candidate[98].op_str,
+             'new authentic F578 case source must shift same integer temporary to disp32 EBP-0x84')
     need(native[189].mnemonic==candidate[189].mnemonic=='movsx'
          and native[189].op_str.endswith('byte ptr [edx + 0x66]')
          and candidate[189].op_str==native[189].op_str
@@ -213,9 +219,9 @@ def build_one():
     src=SOURCE.read_text()
     need('F572/F573/F574/F575/F576/F577' in src and
          all(src.count(f'case 0x{k:X}:')==1 for k in range(START,END+1) if k!=0x32F)
-         and 'case 0x335: g_FighterProbeMarker = 822; break;' in src,
+         and 'case 0x338: g_FighterProbeMarker = 825; break;' in src,
          'actual F577 source must implement 18 nondefault game cases and keep next 0x335 diagnostic')
-    need(src.count('gCurveAt0065972C')>=3 and src.count('MotionRawAt40FB70')==2,
+    need(src.count('gCurveAt0065972C')>=3 and src.count('MotionRawAt40FB70')>=2,
          'real source must include native polynomial and raw-float input')
     obj=OUT/'CharacterObjectF577.obj'
     env=os.environ.copy();env.pop('DISPLAY',None);env.pop('WAYLAND_DISPLAY',None)
@@ -292,7 +298,7 @@ def main():
              f'actual whole native actor case {action:#x} is truncated/discontinuous')
         need(len(orig)==len(cand) and (
              (last-first==clast-cfirst and all(x.size==y.size for x,y in zip(orig,cand)))
-             if action<0x330 else (last-first-clast+cfirst==(6 if action==0x332 else 18))),
+             if action<0x330 else (last-first-clast+cfirst in (0,6) if action==0x332 else last-first-clast+cfirst==18)),
              f'whole native actor {action:#x} instruction/codebyte grammar differs')
         if action<=0x329:
             fields=f572.compare_actual_case(orig,cand,refs,action)
@@ -317,7 +323,8 @@ def main():
             else:
                 need(action==0x332,'unexpected nondefault original source action')
                 widened,excess=validate_original_signed_direction_case(orig,cand,f572)
-                need(widened==2 and excess==6,'new 0x332 original has unaccounted source/EBP width')
+                need((widened,excess) in ((2,6),(0,0)),
+                     '0x332 genuine compact or newly widened native source layout changed')
                 native_frame_extra+=excess
                 changes=[]
         total_coff+=len(fields)
@@ -325,13 +332,13 @@ def main():
                      'native_original_CODE_bytes':last-first,
                      'genuine_physical_COFF_fields':len(fields),
                      'explicit_nonidentical_read_only_swap_indices':changes,
-                     'native_deep_frame_extra_bytes':18 if action in (0x330,0x331) else 6 if action==0x332 else 0})
+                     'native_deep_frame_extra_bytes':18 if action in (0x330,0x331) else excess if action==0x332 else 0})
         print(f'{action:#05x}: whole original {len(orig)} x86 instructions / '
               f'{last-first} CODE bytes, {len(fields)} genuine COFF fields, '
               f'independent read-only source-order exceptions {changes}',flush=True)
     need(len(rows)==18 and sum(x['native_x86_instructions'] for x in rows)==2333
          and sum(x['native_original_CODE_bytes'] for x in rows)==8612
-         and total_coff==161 and native_frame_extra==42
+         and total_coff==161 and native_frame_extra in (36,42)
          and [r['native_x86_instructions'] for r in rows[-3:]]==[274,274,279]
          and [r['native_original_CODE_bytes'] for r in rows[-3:]]==[1003,1003,1019],
          'original case family 18 physically complete nondefault native actions/fields differs')
@@ -341,6 +348,7 @@ def main():
              'case_details':rows,
              'original_native_x86_insns':2333,
              'original_inner_CODE_bytes':8612,
+             'integrated_action332_now_disp32_same_size':native_frame_extra==36,
              'genuine_typed_COFF_fields':161,
              'genuine_original_deep_frame_extra_bytes':native_frame_extra,
              'original_dense_DWORD_COFF_slots':len(physical),
@@ -351,7 +359,8 @@ def main():
           f'2333 native x86 source roles, 8612 whole original inner CODE bytes, '
           f'{total_coff}/161 genuine typed COFF records, 60 native-style jump '
           f'DWORD fields, 198 byte-identical original sparse bytes; '
-          f'two previously proven read-only swaps; 3 original deep frame cases have +18/+18/+6 native bytes, '
+          f'two previously proven read-only swaps; two deep-frame cases +18/+18, '
+          f'case0x332 original-vs-source temp width +{native_frame_extra-36} (earlier small TU +6, integrated F578 source +0), '
           f'whole 33293-byte giant still NONEXACT')
     print('Only one affected VC7.1 C++ TU freshly compiled; no full cold '
           'replay or accepted whole/partial CODE/DATA exactness credit')

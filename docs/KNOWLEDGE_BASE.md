@@ -9481,3 +9481,41 @@ bytes; 438 original after-RET DATA bytes stay separate. The entire
 all-unit cold replay or Oracle receipt. Full study:
 [F577 direction reversal](CHARACTEROBJECT_DIRECTION_REVERSAL_F577.md),
 reproducer `scripts/repo-python scripts/verify-characterobject-direction-reversal-f577.py`.
+
+
+## F578: full 269-instruction action0x335 and genuine cross-case EBP expansion
+
+The independently PE-attested original CharacterObject `004EBDA0`
+case `0x335` to next true nondefault action `0x338` is a complete
+269 native x86 instruction/1,022 CODE-byte game policy. It implements
+actual eight-effect parent spawn, genuine stage-0 state reset and
+`0040FB70` raw +0xC8 motion (14.0f speed), signed-direction x87
+position updates and globals `00657CBC/00657478`, native stage-ten
+contact threshold `00657888`, original `0040FB40(11)`, decay and
+counter transitions, and an original stage-six `S16(+0xDC)` x87
+comparison with global `0065782C + F32(+0xCC)`. Natural C++
+`*(&gCompareAt0065782C) + *(&F32(0xCC))` reproduces the native
+GLOBAL-first FLD/FADD order, after eleven actual compiled C++
+expression controls. The new selected MSVC7.1 TU has all 269 native
+GPR/x87/CFG/byte-width instruction roles, authentic 17 typed
+zero-addend COFF call/global fields, and exactly one separately
+validated independent MOV/FLD read-order swap at ordinals146/147,
+which is never asserted as byte-exact CODE.
+
+Importantly this genuine added 269-instruction source case changes
+**another** previously verified native action's compact stack layout:
+F577 action0x332 was original 279/1,019 vs earlier C++ 279/1,013
+from candidate temporary EBP−0x80 (disp8), while the larger F578
+single TU places that actual temp at EBP−0x84 (disp32), giving
+both 279/1,019 bytes and no synthetic padding. Original temp remains
+EBP−0x9C; whole giant still not exact. Its two sibling action0x330/
+0x331 cases still each have +18 genuine original EBP width bytes.
+Across all **19 truly original game-action bodies 0x320..0x335
+excluding default case IDs**, newly compiled single-TU C++ matches
+2,602 original instruction roles /9,634 actual native inner CODE
+bytes, all 178 authentic typed COFF fields, all 60 physical switch
+DWORD labels, 198 literal original compressed bytes and 438
+separate after-RET DATA-layout bytes.
+Reproducer `scripts/repo-python scripts/verify-characterobject-contact-stage-f578.py`;
+[F578 contact-stage source study](CHARACTEROBJECT_CONTACT_STAGE_F578.md).
+No standalone split/whole CODE credit, all-unit cold replay or Oracle.

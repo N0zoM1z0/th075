@@ -129,9 +129,9 @@ def build_one():
     src=SOURCE.read_text()
     need('F572/F573/F574/F575' in src and
          all(src.count(f'case 0x{k:X}:')==1 for k in range(START,END+1))
-         and 'case 0x335: g_FighterProbeMarker = 822; break;' in src,
+         and 'case 0x338: g_FighterProbeMarker = 825; break;' in src,
          'actual F575 source must implement first fifteen and keep next case diagnostic')
-    need(src.count('gCurveAt0065972C')>=3 and src.count('MotionRawAt40FB70')==2,
+    need(src.count('gCurveAt0065972C')>=3 and src.count('MotionRawAt40FB70')>=2,
          'real source must include native polynomial and raw-float input')
     obj=OUT/'CharacterObjectF575.obj'
     env=os.environ.copy();env.pop('DISPLAY',None);env.pop('WAYLAND_DISPLAY',None)

@@ -104,3 +104,18 @@ functions. The many later original action bodies and true owner
 class/whole stack lifetimes remain outstanding; zero new accepted
 whole/split CODE or DATA credit, no all-unit cold replay, no external
 Factory/Oracle receipt.
+
+## F578 follow-up: source context changes F577 stack encoding
+
+F577's initial selected 18-case C++ source emitted action0x332 as
+279 instructions /1,013 bytes versus native 279 /1,019 because
+its compact `EBP−0x80` integer-to-FPU temporary uses disp8. F578
+adds the real native 269-instruction action `0x335` in the *same*
+ordinary C++ function. This genuine extra game source shifts the
+`0x332` temporary to candidate `EBP−0x84` and naturally changes its
+`MOV/FILD` pair to disp32: **279 original and candidate instructions,
+both 1,019 bytes**. No local-size padding was added; actual original
+source temp is still `EBP−0x9C`, so full machine bytes and containing
+whole giant remain nonexact. The F577 verifier now independently
+accepts exactly either previously observed true compiler context.
+See [F578 original contact-stage source study](CHARACTEROBJECT_CONTACT_STAGE_F578.md).
