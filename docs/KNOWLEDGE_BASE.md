@@ -9683,3 +9683,29 @@ not independently original exact functions and no all-unit replay
 or external Oracle was run. Selected verification script
 `scripts/repo-python scripts/verify-characterobject-state-leaves-f583.py`;
 [F583 source study](CHARACTEROBJECT_STATE_LEAVES_F583.md).
+
+
+## F584: original whole archive resource destructor delete-expression controls
+
+The original Japanese TH075 1.11 nonvirtual ArchiveCatalog destructor
+`0041CE50` has 171 CODE bytes, 51 complete native x86 instructions
+and native physical resource/destructor/filename temp slots
+`EBP−0xC/−0x8/−0x10` at native ordinals22/24/38. The best
+ordinary VC7.1 `/GX-` C++ destructor has the same 171 bytes and
+51 instructions but stores the same real pointers at
+`EBP−0x10/−0xC/−0x8`, matching only 108/115 nonfield bytes.
+Twelve NEW actual C++ resource deletion expressions using
+static/reinterpret/C-style/const pointer casts, explicit pointer
+alias, reference casts, address-of-dereference and constant
+conditional operators have now been independently compiled and
+compared as **entire** original functions. **10/12 still produce
+the identical nonexact 171-byte/51-insn output, same EBP slots,
+108/115 nonrelocation bytes**. The two constant ternary sources
+produce real compiler 193/198-byte whole bodies, not original 171.
+No source hack/padding/physical byte graft, no newly exact CODE.
+Tracked independent source-only reproducer:
+`scripts/repo-python scripts/verify-archive-delete-expressions-f584.py`
+with baseline `probes/ArchiveCatalogNativeLifetimeF584.cpp`;
+[F584 complete original RAII destructor proof](ARCHIVE_DELETE_EXPRESSION_CONTROLS_F584.md).
+The true original lexical owner/automatic lifetime still needs
+recovery. Zero full cold replay or external Oracle acceptance.

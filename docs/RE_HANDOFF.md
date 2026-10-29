@@ -1,6 +1,6 @@
 # TH075 — current agent handoff
 
-**Maintained: 2026-10-29, after F583; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
+**Maintained: 2026-10-29, after F584; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
 
 ## 1. Current authoritative state (not historical hypotheses)
 
@@ -544,6 +544,26 @@ selected reproducer
 `scripts/repo-python scripts/verify-characterobject-state-leaves-f583.py`.
 **Whole 33,293-byte giant remains NONEXACT, zero independent split
 or whole CODE credit.** No full cold replay or external Oracle.
+
+**F584 independently retests the smaller 171-byte /51-instruction
+nonvirtual ArchiveCatalog original destructor `0041CE50`**, not just
+another giant switch. Twelve real VC7.1 `/GX-` C++ delete-expression
+variants from an original-backed tracked baseline (cast,
+lvalue-reference, alias, pointer-to-pointer, conditional) were
+freshly compiled. **Ten still produce 171 bytes/51 instructions but
+only 108/115 identical nonrelocation bytes** and retain the source
+resource/destructor/filename EBP slots `−0x10/−0xC/−0x8` rather than
+native **`−0xC/−0x8/−0x10`**; two conditional forms produce invalid
+193/198-byte bodies. Original 51-instruction PE and all three saved
+local differences were independently checked before compilation.
+This excludes trivial source `delete` syntax as the original owner
+lifetime solution; the function remains **NOT exact**. Full targeted
+reproducer
+`scripts/repo-python scripts/verify-archive-delete-expressions-f584.py`,
+and [F584 whole-original destructor negative controls](ARCHIVE_DELETE_EXPRESSION_CONTROLS_F584.md).
+The 943 existing exact functions and 862,726 accepted CODE bytes
+remain unchanged. No all-unit cold replay, fabricated stack padding
+or external Oracle acceptance.
 
 **Three other authored functions remain nonexact (all require full CODE):**
 
