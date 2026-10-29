@@ -11637,3 +11637,26 @@ PE/COFF fields** in this one giant. No whole giant or new independent
 authored function is accepted. [F654 complete proof](FIGHTER_FALLING_FINISH_F654.md),
 `scripts/repo-python scripts/verify-fighter-falling-finish-f654.py`.
 No 943-unit full cold replay.
+
+
+## F655: seven new complete source-backed origin-UNKNOWN native game-adjacent leaves
+
+Fresh pinned VC7.1 ordinary C++ compilation reproduces full real
+original PE extents `004138D0`/`004169D0` (each 11-byte saved-this
+empty method), `0041F7F0`/`00540280` (distinct 11-byte CDECL pointer
++8), `00441FD0`/`0045B630` (distinct 5-byte empty CDECL stubs), and
+`00409490` (19-byte genuine thiscall forward to original `00409860`).
+**All seven complete original 73 CODE bytes /43 genuine native x86
+roles** are proven whole-machine-byte identical. Original forwarder
+has exactly **one real zero-addend COFF REL32 field**, linked only to
+its independently verified original PE call address. Original native
+registered whole CODE direct-caller graph: 0/1/1/1/0/1/3 respectively,
+with **one** authored caller of forwarder, not proof of its historical
+source origin. These seven source identities remain **unknown**
+origin, no authored exact credits. Separate F595 and F616–F655
+source-backed unknown research cohort is now **47 distinct complete
+original native functions /1,002 CODE bytes**, all uncredited;
+95 historical uncertain provenance rows remain unchanged.
+[F655 complete original proof](GAME_UNATTRIBUTED_LEAVES_F655.md),
+`scripts/repo-python scripts/verify-game-unattributed-leaves-f655.py`.
+No all-unit cold replay.

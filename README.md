@@ -26,7 +26,7 @@ types are provisional; machine-code matches alone do not prove an entire
 original class layout. The target's official distribution provenance has not
 been independently verified; do not substitute a localized `th075c.exe`.
 
-These snapshot counts were rechecked after **F654** (2026-10-29).
+These snapshot counts were rechecked after **F655** (2026-10-29).
 The **live** sources of truth, not any dated prose milestone, are `config/functions.csv`,
 `config/function-origins.csv`, and `config/match-units.toml`.
 Refresh using `scripts/repo-python scripts/report-reconstruction-status.py --summary`.
@@ -66,12 +66,15 @@ despite matching x86 count and all 11 real PE/COFF fields; **do not
 promote** it to exact just because the case body geometry matches.
 
 Separately, recent **whole-function** VC7.1 C++ probes have fully
-reproduced 39 origin-unknown original functions /889 native CODE bytes,
-plus the distinct prior F595 **40-byte** three-field setter: **40
-complete origin-unknown source-backed originals /929 bytes**, all
-uncredited pending authored-vs-compiler/library provenance. The newest
-pair is `004170B0` (**27/27 bytes**, virtual `__stdcall` slot) and
-`004588B0` (**43/43 bytes**, original conditional CRT `free`).
+reproduced 46 origin-unknown original functions /962 native CODE bytes,
+plus the distinct prior F595 **40-byte** three-field setter: **47
+complete origin-unknown source-backed originals /1,002 bytes**, all
+uncredited pending authored-vs-compiler/library provenance. Latest
+F655 proves **seven previously unsourced independent complete original
+leaves /73 linked native CODE bytes /43 x86 roles /one genuine REL32**,
+including a 19-byte real native call forwarder. Their real original
+callers do not determine historical authored-vs-vendor ownership.
+[Full selected leaf proof](docs/GAME_UNATTRIBUTED_LEAVES_F655.md).
 All previously accepted 111-byte mapping transform `00455770`,
 77-byte Shift-JIS classifier `0041CA30`, Replay render, StaffRoll,
 rank-label and selected-progress functions stay accepted exact.

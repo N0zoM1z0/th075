@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-29, after F654 and the storage/document consolidation.**
+**Maintained 2026-10-29, after F655 and the storage/document consolidation.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -181,25 +181,28 @@ relocation, and a fresh selected-unit cold replay**.
 
 F595 reconstructed `004135F0` (40/40 original whole CODE bytes)
 but historical source ownership remains **unknown**. The recent
-F616/F618/F634/F638/F640/F644/F648/F650 cohort independently has
-**39 source-backed origin-unknown *entire* native functions /889
+F616/F618/F634/F638/F640/F644/F648/F650/F655 cohort independently has
+**46 source-backed origin-unknown *entire* native functions /962
 original machine CODE bytes**, plus the distinct F595 40 bytes:
-**40 /929 original CODE bytes** in the broader still-uncredited
+**47 /1,002 original CODE bytes** in the broader still-uncredited
 research set. These are **not accepted authored functions**; the
 95 original provenance-unknown ledger rows are separately and
 conservatively excluded until real source ownership is established.
 
-Latest F650 two true complete source-backed leaves `004170B0`
-**27/27 original linked CODE bytes** (virtual `__stdcall` third
-vtable slot), and `004588B0` **43/43 original linked CODE bytes**
-(conditional `free(this+8)` with correct real EBP temp lifetime,
-one real typed PE-targeted COFF field to CRT `00640F15`). Their
-caller graph and natural source are reproducible, yet both remain
-`origin=unknown,disposition=review`; one game-authored *caller* of
-the second does not establish the callee's authored identity.
-[Verified full original native proof](GAME_COM_VIRTUAL_RELEASE_F650.md).
+Latest F655 seven **entire original registered native leaves**
+(`004138D0`, `004169D0`, `0041F7F0`, `00540280`, `00441FD0`,
+`0045B630`, `00409490`) now match **73/73 original linked CODE bytes,
+43 entire x86, one physical original REL32** in only one newly compiled
+small C++ TU. The native `00409490` wrapper's actual `00409860` callee,
+its one real authored caller among three, and all seven true original
+PE direct-call graphs are independently checked, but historical source
+ownership remains UNKNOWN. [Full native leaf and caller proof](GAME_UNATTRIBUTED_LEAVES_F655.md).
+Earlier F650 proves two other true whole leaves `004170B0` (27 bytes,
+virtual `__stdcall`) and `004588B0` (43 bytes, conditional CRT free).
+[Earlier genuine original F650 proof](GAME_COM_VIRTUAL_RELEASE_F650.md).
 
 ```bash
+scripts/repo-python scripts/verify-game-unattributed-leaves-f655.py
 scripts/repo-python scripts/verify-game-virtual-release-f650.py
 scripts/repo-python scripts/verify-game-float-math-adapters-f644.py
 ```
