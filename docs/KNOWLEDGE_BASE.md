@@ -8920,3 +8920,27 @@ cold replay `--unit font-surface-shift-jis-lead-byte-0041ca30` returned
 full authored exact accepted units increase from 942 to 943 and CODE from
 862,649 to 862,726. No partial code, fake data, all-unit replay or external
 Oracle receipt. See [F555 original-provenance review](FONT_SHIFTJIS_LEAD_BYTE_F555.md).
+
+
+## F556: 117-insn/403-byte native actor cases in two independent fighter giants
+
+The complete `00486550` and `004AC040` whole original fighter bosses
+(50,735 and 82,796 native CODE bytes respectively) contain distinct,
+physically bounded **403-byte/117-instruction** action 6 and 7 cases.
+Each has a real *additional* 13-instruction native guarded branch: checks
+signed stage `this+0x62==4`, x87-compares `this+0x54` to native
+`00657D14`, and issues actual `0040FB40(5)` on success. This stage-
+triggered original code is absent in the 104-instruction F548 fighters.
+Genuine per-role stage/float parameters are 4/16.0f/0.75f versus
+2/15.0f/0.7f; CharacterMove action 7 truly places the FLAG clear **before**
+its position/velocity/speed initialization, the other fighter after.
+Two freshly compiled pinned VC7.1 source probes now reproduce **4 ×117
+complete original register/x87/control instructions**, all **32 original
+physical COFF fields** including genuine extra-stage call/global refs,
+314 original-style physical DWORD switch relocations and 934 byte-identical
+original sparse indexes. Whole original giant CODE remains unmatched;
+1,612 inner-case bytes and 2,190 after-RET DATA-layout bytes are *not*
+new accepted CODE/DATA. [Full F556 native C++ study](FIGHTER_EXTRA_STAGE_SOURCE_F556.md),
+reproducible one-boss verifier
+`scripts/repo-python scripts/verify-fighter-extra-stage-action-source.py`.
+No all-unit replay, fake exactness or external Oracle receipt.

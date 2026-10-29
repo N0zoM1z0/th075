@@ -1,6 +1,6 @@
 # TH075 — current agent handoff
 
-**Maintained: 2026-10-29, after F555; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
+**Maintained: 2026-10-29, after F556; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
 
 ## 1. Current authoritative state (not historical hypotheses)
 
@@ -58,6 +58,21 @@ COFF references** plus full source-native switch-table layout. See
 [F553 action-eight source proof](FIGHTER_ACTIONEIGHT_NATIVE_CPP.md) and
 `scripts/repo-python scripts/verify-fighter-action-eight-natural-source.py
 --boss 0x0058AF60`. No split/whole giant exact CODE credit.
+
+**F556 independently reconstructs the harder 117-instruction/403-byte
+action 6 and 7 original variants** inside `00486550` and CharacterMove
+`004AC040` (82,796 original CODE bytes). Four original cases each compile
+with full **117/117 original register/x87/branch instructions and 8/8 true
+COFF call/global fields**, including a formerly absent guarded native
+`0040FB40(5)` invocation and original float threshold `00657D14`.
+The actual stage and float initializers differ between the fighters, and
+CharacterMove's action 7 clears FLAG **before** float stores, unlike the
+other original. Full description:
+[F556 original 117-insn case source](FIGHTER_EXTRA_STAGE_SOURCE_F556.md);
+targeted compiler command:
+`scripts/repo-python scripts/verify-fighter-extra-stage-action-source.py --boss CharacterMove`.
+**All 1,612 case bytes remain inside two whole unmatched giant functions**;
+no split/whole CODE exactness credit.
 
 **Three other authored functions remain nonexact (all require full CODE):**
 
