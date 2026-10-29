@@ -9867,3 +9867,33 @@ Original entire giant remains NONEXACT, no independent case CODE
 credit or all-unit cold replay/Oracle. Reproducer
 `scripts/repo-python scripts/verify-characterobject-three-late-actions-f588.py`;
 [F588 full native x87 stage source](CHARACTEROBJECT_THREE_NATIVE_STAGES_F588.md).
+
+
+## F589: entire 248-byte SceneObject virtual destructor texture-delete controls
+
+Real Japanese original `0043B0B0` SceneObject virtual destructor
+is **248 complete native CODE bytes/75 x86 instructions** with
+true EH `00655B86`, vtable `00658334`, frame clock global
+`0066C238`, real texture scalar delete `00425460`, THREE
+real CRT frees `00640F15` and base virtual destructor
+`00431F40` among **12 authentic typed zero-addend physical COFF
+fields**. The original scene texture/delete EBP temporary slots
+are `−0x14/−0x10` while the three free-owned pointers are
+`−0x18/−0x1C/−0x20`; ordinary VC7.1 C++ yields native-sized
+248/75 but texture locals `−0x20/−0x1C`, frees `−0x18/−0x14/
+−0x10`. These are exactly **nine original nonfield bytes**
+different in the complete 191/200-byte comparison.
+
+Fourteen NEW real source-only VC7.1 `/GX` texture delete expression
+forms, including explicit C++ pointer casts, true lvalue/const
+reference/pointer-to-pointer deref, byte-offset alias and three
+conditional source controls, were physically compiled and compared
+as COMPLETE original functions. Eleven remain **248/75, 191/200
+nonfield bytes, 12/12 genuine native PE call/global COFF refs**,
+with the same EBP offsets; three instead emit 267/272 bytes.
+Zero whole/source exact credit. Reproducer
+`scripts/repo-python scripts/verify-scene-texture-delete-f589.py`,
+source-only fixture `probes/BattleSceneTextureDeleteF589.cpp`,
+[F589 original scene EH/delete study](SCENE_TEXTURE_DELETE_CONTROLS_F589.md).
+Original resource ownership/lifetime, not a superficial cast,
+remains to be reconstructed. No all-unit replay or Oracle.

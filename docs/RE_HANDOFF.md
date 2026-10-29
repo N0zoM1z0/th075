@@ -1,6 +1,6 @@
 # TH075 — current agent handoff
 
-**Maintained: 2026-10-29, after F588; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
+**Maintained: 2026-10-29, after F589; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
 
 ## 1. Current authoritative state (not historical hypotheses)
 
@@ -696,6 +696,26 @@ See [F588 three native stage cases plus original EBP source](CHARACTEROBJECT_THR
 and targeted verifier
 `scripts/repo-python scripts/verify-characterobject-three-late-actions-f588.py`.
 No all-unit cold replay or external Oracle.
+
+**F589 independently targets the SMALL complete 248-native-CODE-byte,
+75-instruction original SceneObject virtual EH destructor `0043B0B0`**.
+New tracked verifier freshly compiles **14 actual VC7.1 `/GX`
+texture-delete C++ pointer/cast/reference source alternatives**.
+All 11 ordinary equivalent resource-pointers reproduce the original
+248-byte/75-instruction size and **12/12 original PE-typed physical
+zero-addend COFF fields**, but **only 191/200 nonfield bytes**
+because native texture temps at EBP−0x14/−0x10 and original
+three resource frees at −0x18/−0x1C/−0x20 differ from C++
+−0x20/−0x1C and −0x18/−0x14/−0x10. Three ternary controls
+compile to invalid 267/272 whole CODE bytes. No fake padding,
+byte-patching or incorrect source exact credit; original 248
+function remains unaccepted. See
+[F589 original scene texture-delete evidence](SCENE_TEXTURE_DELETE_CONTROLS_F589.md),
+targeted whole-original verifier
+`scripts/repo-python scripts/verify-scene-texture-delete-f589.py`.
+The current 943 exact functions, 862,726 CODE bytes and all 22
+still-nonexact original giant bodies remain unchanged. No cold
+all-unit replay or external Factory/Oracle receipt.
 
 **Three other authored functions remain nonexact (all require full CODE):**
 
