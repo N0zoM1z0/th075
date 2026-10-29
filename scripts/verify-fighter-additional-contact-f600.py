@@ -88,6 +88,23 @@ def whole_original_case(reader,pe,decoder,boss,byaction,case):
     return start,end,ins,None
 
 
+def native_counter_from_three_cases(reader,pe,decoder,boss,mapped):
+    # A shared C++ actor source template can conceal actual independent
+    # per-fighter field displacement differences. Reconstruct this signed
+    # short offset FROM the three independent complete original native
+    # action extents BEFORE generating the new C++ source, not from a
+    # hardcoded boss ID or stale decompiler class field hypothesis.
+    original={row['action']:int(row['handler'],16) for row in mapped}
+    offsets=[]
+    for action in sorted(WITH_STAGE):
+        _,_,_,offset=whole_original_case(reader,pe,decoder,boss,original,action)
+        need(offset is not None, 'native original stage7 counter not present')
+        offsets.append(offset)
+    need(len(set(offsets))==1 and offsets[0] in (0xEFC,0xF00),
+         f'{boss["address"]:#x}: genuine three original stage7 field offsets disagree: {offsets}')
+    return offsets[0]
+
+
 def correct_native_fields(inst,generated,refs,physical,case):
     fields=dict(DIRECT)
     if case in WITH_STAGE:
@@ -188,8 +205,8 @@ def compare_candidate(reader,pe,decoder,f598,core,zero,switch,boss,report,mapped
                  f'{address:#x}: original compact case{case:#x} physical widths differ')
         real=correct_native_fields(native,generated,refs,original,case)
         if case in WITH_STAGE:
-            need(original_counter== (0xEFC if address==0x005AEEC0 else 0xF00),
-                 f'{address:#x}: counter ownership is not original')
+            need(counter is None or original_counter==counter,
+                 f'{address:#x}: original three stage cases disagree on real counter owner')
             counter=original_counter
         record.append({'action':f'0x{case:02X}',
                        'native_original_start':f'0x{start:08X}',
@@ -253,7 +270,7 @@ def main():
         before,after=source.split(begin,1)
         need(end in after,'original next physical case0x46 is missing')
         nextcase=after.index(end)
-        counter=0xEFC if addr==0x005AEEC0 else 0xF00
+        counter=native_counter_from_three_cases(reader,pe,dec,boss,mapped)
         replaced=(f'#define CONTACT_STAGE_OFFSET 0x{counter:X}\n'
                   '#include "FighterAdditionalContactF600.inc"\n'
                   '#undef CONTACT_STAGE_OFFSET\n')

@@ -10264,3 +10264,25 @@ Together with F598 earlier actions this is 253 PE-backed inner cases/
 whole function bytes**, no all-unit cold replay or external Oracle.
 Detailed original evidence [F600 second contact switch](FIGHTER_ADDITIONAL_CONTACT_F600.md)
 and targeted compiler proof `scripts/repo-python scripts/verify-fighter-additional-contact-f600.py --boss 0x004F7130`.
+
+
+## F601: derive per-original Fighter contact stage-counter owner directly from three whole native cases
+
+Further original PE recheck disproved the idea that all 11 second-switch
+actor owners use one counter offset: actual original `005AEEC0` native
+cases `0x35`, `0x3B`, `0x41` access signed 16-bit `this+0xEFC`, while
+the ten other fighter originals each access `this+0xF00`. Reusing the
+ordinary `+0xF00` source for `005AEEC0` compiles the same 79 original
+instruction slots but **fails real native member operands in five
+instructions in each stage case**; it is not correct C++ source for
+that fighter. The F600 targeted verifier now **attests all three real
+original case extents, reads each original member displacement,
+requires identical offsets per boss, THEN derives a C++ macro from
+the PE** before compiling under VC7.1. No address→guessed-field
+exception remains in source generation; full native x86 roles/field
+COFF/switch DATA remain verified after each targeted compilation.
+Reproducer `scripts/repo-python scripts/verify-fighter-additional-contact-f600.py
+--boss 0x005AEEC0`; [F600 original-index source with new F601
+owner-attestation](FIGHTER_ADDITIONAL_CONTACT_F600.md). Whole original
+giant NONEXACT; zero new official accepted authored CODE, no full cold
+replay.

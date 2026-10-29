@@ -1,6 +1,6 @@
 # TH075 — active reconstruction handoff
 
-**Maintained 2026-10-29 after F600.** This is the **only current task list**.
+**Maintained 2026-10-29 after F601.** This is the **only current task list**.
 The [F540–F596 research chronology](history/RE_HANDOFF_F540_THROUGH_F596.md),
 [knowledge base](KNOWLEDGE_BASE.md), and older F-series studies are
 **historical evidence**, not statements of current progress. Independently
@@ -119,8 +119,10 @@ wide-frame case requires 17 physical EBP-0x88 receiver loads
 case grammars and 1,607 physical jump DWORD fields/4,502 original
 sparse bytes remain verified. Together **132 inner cases /26,835
 original CODE bytes** are source-backed but **NO entire giant CODE
-byte-exact acceptance or split-case credit**. Later actions beginning
-`0x33` and their parent frame/switch lifetime remain undone.
+byte-exact acceptance or split-case credit**. At F598, indexed
+cases from `0x33` were still unfinished; F600 now reconstructs the
+first eleven real second-table actions. States from `0x46` and the
+entire enclosing fighter frame remain unfinished.
 [F598 PE+VC7.1 11-fighter contact singleton](FIGHTER_SINGLETON_CONTACT_F598.md),
 tracked real C++ [case source](../probes/FighterSingletonContactF598.inc).
 
@@ -176,6 +178,17 @@ To reproduce a single affected compilation:
 ```bash
 scripts/repo-python scripts/verify-fighter-additional-contact-f600.py --boss 0x004F7130
 ```
+
+**F601 original-native counter ownership refinement:** before compiling
+each targeted giant, the verifier now independently reads the full
+original x86 in all **three** stage-7 cases `0x35`, `0x3B`, `0x41`,
+extracts each actual 16-bit member offset and requires agreement.
+Ten original fighters use `+0xF00` and `005AEEC0` uses `+0xEFC`;
+no per-boss hardcoded member-offset guess remains in source generation.
+A wrong universal `+0xF00` guess physically fails the `005AEEC0`
+original/source 79-instruction case grammar. The same selected-F600
+script remains the reproducer; this still contributes **zero
+whole-fighter exact acceptance**.
 
 Never run a full 943-unit cold replay.
 

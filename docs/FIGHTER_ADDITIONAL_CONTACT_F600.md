@@ -65,8 +65,15 @@ short and invoke native `SetAuxActionAt40FB40(1)`. Native original
 `005AEEC0` uses counter **`+0xEFC`**, while the other ten use
 **`+0xF00`**. The offset is selected per original actor via a
 named C++ preprocessor constant, not via an invented game structure
-or ABI split. Correctness is checked independently against all
-three native counter accesses and all eleven original functions.
+or ABI split. The F601 follow-up strengthens this further: **before
+C++ compilation**, the verifier independently re-decodes the
+*complete original* `0x35/0x3B/0x41` case extents of each selected
+fighter, extracts the actual 16-bit counter's original member
+offset from each native instruction stream, requires all three to
+agree, and generates the C++ macro from that original observation.
+No `if (boss == address) offset = ...` assumption is needed.
+Correctness is checked independently against the complete staged
+case native x86/COFF evidence and all eleven fighter originals.
 
 Each ordinary C++ case preserves the complete native GPR/x87/CFG
 instruction order, **not merely its mnemonic sequence**. The
