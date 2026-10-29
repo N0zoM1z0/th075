@@ -1,6 +1,6 @@
 # TH075 — active reconstruction handoff
 
-**Maintained 2026-10-29 after F601.** This is the **only current task list**.
+**Maintained 2026-10-29 after F605.** This is the **only current task list**.
 The [F540–F596 research chronology](history/RE_HANDOFF_F540_THROUGH_F596.md),
 [knowledge base](KNOWLEDGE_BASE.md), and older F-series studies are
 **historical evidence**, not statements of current progress. Independently
@@ -239,6 +239,30 @@ native case](FIGHTER_TRAJECTORY_SPAWN_F603.md),
 ```bash
 scripts/repo-python scripts/verify-fighter-trajectory-spawn-f603.py --boss 0x0045DD70
 scripts/repo-python scripts/verify-fighter-trajectory-spawn-f603.py --boss 0x0058AF60
+```
+
+**F605** advances the same huge second-switch fighters by rebuilding
+**both original actions `0x47` and `0x48` in all nine of the 104-instruction
+`0x46` owners**. The whole native case has 86 x86 roles and 13 genuine
+typed original COFF fields each: **18 cases /1,548 native x86 roles /
+5,756 real original interior CODE bytes /234 typed fields**, including
+the true `00564BE0` 28×3 widened `EBP−0x88` MOVs and one additional
+4-byte near-branch expansion in *each* action. The original movement
+copies a raw DWORD `+0x98` into `+0x54` instead of using `FLD/FSTP`.
+Original stage/early/late constants are verified **independently per
+action**, as some differ from action `0x46`. Each selected source
+compile retains 23 earlier cases, all native action0x46 roles and
+afterRET jump DATA. **Two other fighters** `0045DD70` and `0058AF60`
+need genuinely different 113-instruction projectile-spawn source for
+these follow-up actions. All full giant functions remain nonexact,
+no independent action fragment credited. Across F598–F605:
+**282 game inner case bodies /65,385 original internal CODE bytes
+source-backed, but officially accepted authored coverage unchanged**.
+[PE+VC7.1 original F605 evidence](FIGHTER_TRAJECTORY_FOLLOWUPS_F605.md),
+[natural 86-insn cases](../probes/FighterTrajectoryFollowupsF605.inc).
+
+```bash
+scripts/repo-python scripts/verify-fighter-trajectory-followups-f605.py --boss 0x004F7130
 ```
 
 Never run a full 943-unit cold replay.

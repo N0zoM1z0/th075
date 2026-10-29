@@ -10394,3 +10394,31 @@ excluded register/const and alignment variations as explanations
 for its seven nonrelocation EBP-ownership mismatches. Native original
 stack slots remain unresolved, zero new accepted authored destructor
 CODE; no all-unit cold replay.
+
+
+## F605: complete original 86-instruction trajectory follow-ups in nine huge game fighters
+
+Original Japanese TH075 PE independently verifies true packed second
+switch actions `0x47`/`0x48` as 18 complete native internal subranges
+across nine giant fighters: **1,548 complete original GPR/x87/CFG
+x86 roles, 5,756 original interior CODE bytes and 234 genuine typed
+COFF destination fields**. A key source-model correction: native
+`this+0x98` → `this+0x54` is a raw DWORD `MOV` not a float
+`FLD/FSTP` expression. Genuine `I32(0x54)=I32(0x98)` naturally fixes
+the original register cycle from the first differing GPR onward.
+Original 0.8f/1.3f drag, per-fighter/per-case stage and auxiliary
+states, two real float→short CRT conversions and original `+0xF00`
+vs `+0xEFC` owner slot distinctions are independently native-verified.
+The special original `00564BE0` 398 vs 310-byte native case includes
+28 wide `EBP−0x88` receiver loads and one short-to-near `JP` expansion
+per action. All prior 24 game cases and complete original afterRET
+switch DATA are preserved in fresh selected VC7.1 C++ objects.
+The other original fighters `0045DD70`/`0058AF60` need separate
+113-instruction action-specific spawn work; nine full giants still
+NONEXACT. Cumulative 282 source-backed original **internal** cases/
+65,385 CODE bytes are **not** 282 separate complete-function matches;
+official 943/862,726 accepted authored CODE unchanged.
+[Full original F605 evidence](FIGHTER_TRAJECTORY_FOLLOWUPS_F605.md),
+`probes/FighterTrajectoryFollowupsF605.inc`, targeted
+`scripts/repo-python scripts/verify-fighter-trajectory-followups-f605.py
+--boss 0x004F7130`. No 943-unit cold replay or Oracle acceptance.
