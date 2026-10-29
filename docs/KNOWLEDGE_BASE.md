@@ -8686,3 +8686,29 @@ and changed-only reproducer
 `scripts/repo-python scripts/verify-fighter-actionzero-natural-source.py`.
 **No full boss reconstructed, no new exact CODE/DATA credit, no all-unit
 cold replay or external Oracle acceptance.**
+
+
+## F542: real action-one gameplay C++ case, eleven independent complete giant contexts
+
+Each native multi-switch fighter boss's first switch DWORDs physically
+bound a **full original 60-instruction action-one case**, 212 CODE bytes
+in ten bosses and 263 CODE in the original `00564BE0` case. The 263-byte
+variant has seventeen genuine EBP-0x88 owner reloads that widen disp8 to
+disp32, exactly 51 additional native bytes. This is *not* a separate
+function. In addition to F541's real action-zero x87 control, action one
+performs `GetNativeActionAt40FA30()` (returns native signed short), compares
+against the real signed 16-bit `this+0x70`, and conditionally invokes
+`SetNativeActionAt40FAC0(2)` with natural C++ operand ordering.
+
+A new reproducible verifier fresh-compiles *eleven distinct* natural C++
+switch prototypes against each corresponding independently full-PE-checked
+boss: **660/660 true action-one mnemonics and real per-fighter register/branch
+operand roles, 121/121 physically genuine typed case relocations**,
+1,607 correct native-style DWORD COFF refs/whole-table target partitions,
+4,502 byte-identical original sparse action indexes and 10,930 original
+post-RET DATA-layout bytes. Source semantics and precise per-boss table
+are at [F542 action-one study](FIGHTER_ACTIONONE_FAMILY_CODEGEN.md),
+replayed *only for selected new probes* with
+`scripts/repo-python scripts/verify-fighter-actionone-natural-source.py`.
+**No giant whole-function exactness, no credited partial CODE/DATA, no
+full cold replay and no external Oracle receipt.**
