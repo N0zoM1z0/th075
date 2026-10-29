@@ -1,6 +1,6 @@
 # TH075 — active reconstruction handoff
 
-**Maintained 2026-10-29 after F612.** This is the **only current task list**.
+**Maintained 2026-10-29 after F613.** This is the **only current task list**.
 The [F540–F596 research chronology](history/RE_HANDOFF_F540_THROUGH_F596.md),
 [knowledge base](KNOWLEDGE_BASE.md), and older F-series studies are
 **historical evidence**, not statements of current progress. Independently
@@ -383,6 +383,32 @@ whole-exact bytes unchanged.
 
 ```bash
 scripts/repo-python scripts/verify-fighter-trajectory-bounce-spawn-f611.py --boss 0x0058AF60
+```
+
+**F613 restores real native action `0x4C` source across ALL ELEVEN
+fighter giants**. The full original PE bounded case has 74 complete
+native x86 GPR/x87/CFG roles and 14 authentic PE/COFF target fields
+per fighter: **11 new original inner cases /814 original x86 roles
+/3,210 native internal CODE bytes /154 physical typed fields**.
+The real `I16(+0xF00/0xEFC)` one-time motion initialization calls
+`0040FBB0(0,95.0f,0)`, but the float angle advance using original
+`00657878` occurs **UNCONDITIONALLY outside that guard**. Initial
+C++ wrongly scoped it inside: both sources were 74 x86/285 bytes but
+the native ordinal-3 JNE had the wrong destination. Natural C++
+correction reproduces original JNE to ordinal14 and full register/x87
+roles. Native `00564BE0` stays 360 bytes (25 real widened EBP−0x88
+receiver MOVs); `005AEEC0` retains actual +0xEFC trajectory.
+Each newly compiled whole-giant source preserves all previous 28
+native action case roles and full afterRET switch DATA, with all 14
+new true COFF call/float targets checked. F598–F613 cumulative
+**319 source-backed real game case interiors/79,377 original native
+CODE bytes**: still NOT independent or whole-giant exact credit.
+Official whole accepted 943/862,726 unchanged.
+[F613 native recovery and original case control-flow proof](FIGHTER_TRAJECTORY_RECOVERY_F613.md),
+[natural C++](../probes/FighterTrajectoryRecovery4CF613.inc).
+
+```bash
+scripts/repo-python scripts/verify-fighter-trajectory-recovery-f613.py --boss 0x004F7130
 ```
 
 Never run a full 943-unit cold replay.

@@ -10590,3 +10590,29 @@ no accepted new authored whole CODE or 943-unit cold replay.
 [Native original F612 investigation](SCENE_DESTRUCTOR_POINTER_TYPES_F612.md),
 selected `scripts/repo-python scripts/verify-scene-freed-pointer-types-f612.py --case int-pointer`.
 Official exact authored ledger remains 943/862,726 original CODE bytes.
+
+
+## F613: native recovery action0x4C across eleven huge fighters, genuine one-shot versus every-frame CFG
+
+Real Japanese TH075 PE packed second switch action0x4C has a complete
+**74-instruction /14 actual typed PE/COFF field** native case in each
+of the eleven large original fighting source functions. The crucial
+native x86 branch at ordinal3 **skips to ordinal14** when short
+`+0xF00/+0xEFC` is already nonzero; initialization of the flag and
+actual `0040FBB0(0,95.0f,0)` is skipped, but real float angle
+`+0x30 += global 00657878` executes every frame, NOT only on the
+first frame. A natural C++ source scope fix restores the actual
+74/74 native GPR/x87/CFG instruction grammar without altering byte
+size. Original contact calls include `00453D60`, two CRT `__ftol2`,
+`00453E20`, `0040FAC0`, `00453E60` and native `0040FC50`.
+Native `00564BE0` has 25 real `EBP−0x88` receiver MOVs widened 3B
+(360 native vs 285 generated source bytes), while `005AEEC0` uses
+native counter `+0xEFC`. All previous 28 native case roles and afterRET
+switch DATA are checked in **each fresh whole giant C++ compile**.
+F613 adds **11 internal cases /814 native x86 roles/3,210 uncredited
+original internal CODE bytes/154 actual physical typed COFF fields**.
+F598–F613 cumulatively documents **319 native action interiors/
+79,377 source-backed original internal CODE bytes**; all 11 whole
+parents NONEXACT, no accepted whole-function authored CODE or full cold
+replay. [F613 genuine source/PE proof](FIGHTER_TRAJECTORY_RECOVERY_F613.md),
+selected `scripts/repo-python scripts/verify-fighter-trajectory-recovery-f613.py --boss 0x004F7130`.
