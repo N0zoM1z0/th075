@@ -64,7 +64,7 @@ def source_with_pair(addr,boss,report,mapped,reader,pe,decoder,h,properties):
     return source
 
 
-def strict_check(reader,pe,decoder,boss,report,mapped,code,refs,properties,h):
+def strict_check(reader,pe,decoder,boss,report,mapped,code,refs,properties,h,extra_after_pair_x86=0):
     addr=boss['address'];ins=[]
     for x in decoder.disasm(code,0):
         ins.append(x)
@@ -78,22 +78,28 @@ def strict_check(reader,pe,decoder,boss,report,mapped,code,refs,properties,h):
               for ac in h['f633'].ACTIONS}
     count=sum(properties[ac][1]['original_whole_case_x86_instructions'] for ac in ACTIONS)
     expected=2*previous[0x97][1]['original_whole_case_x86_instructions']
-    need(count==expected and count in (2*73,2*75),
-         f'{addr:#x}: native original 9B/9C x86 family not 2*73/75')
+    need(count==expected and count in (2*73,2*75)
+         and extra_after_pair_x86 in (0,66,68)
+         and (not extra_after_pair_x86 or
+              extra_after_pair_x86==(68 if count==2*75 else 66)),
+         f'{addr:#x}: real native 9B/9C or next genuine 9E 66/68-x86 source extent changed')
     h['f633'].verify_fresh_whole(reader,pe,decoder,boss,report,mapped,code,refs,
-                                 previous,h,extra_followup_x86=count)
+                                 previous,h,extra_followup_x86=count+extra_after_pair_x86)
+    following_marker=0x9F if extra_after_pair_x86==0 else 0xA0
     markers=[]
     for field in refs:
         if 'g_FighterProbeMarker' not in field['symbol']:continue
         instruction=next((x for x in ins if x.address<=field['offset']<x.address+x.size),None)
-        if instruction is not None and instruction.mnemonic=='mov' and instruction.op_str.endswith(', 0x9f'):
+        if instruction is not None and instruction.mnemonic=='mov' and instruction.op_str.endswith(f', 0x{following_marker:x}'):
             markers.append(instruction)
     need(len(markers)==1,
          f'{addr:#x}: actual next original action0x9E source marker not unique')
     end=ins.index(markers[0])
-    need(end>=count,f'{addr:#x}: original two complete 9B/9C cases truncated')
-    candidates=ins[end-count:end]
-    need(candidates[-1].address+candidates[-1].size==markers[0].address,
+    need(end>=count+extra_after_pair_x86,
+         f'{addr:#x}: original two complete 9B/9C cases truncated by next case9E')
+    candidates=ins[end-count-extra_after_pair_x86:end-extra_after_pair_x86]
+    actual_end=(ins[end-extra_after_pair_x86].address if extra_after_pair_x86 else markers[0].address)
+    need(candidates[-1].address+candidates[-1].size==actual_end,
          f'{addr:#x}: actual complete native case0x9C must end at next original 0x9E')
     found=[];cur=0
     for ac in ACTIONS:

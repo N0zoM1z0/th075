@@ -216,10 +216,11 @@ def verify_new_obj(reader,pe,decoder,boss,report,mapped,code,refs,real,info,h,ex
          f'{addr:#x}: separately owned original full afterRET switch DATA changed')
     by={x['action']:int(x['handler'],16) for x in mapped}
     count=info['original_complete_x86_instructions']
-    need(extra_sibling_x86 in (0,3*73,3*75,5*73,5*75),
+    need(extra_sibling_x86 in (0,3*73,3*75,5*73,5*75,5*73+66,5*75+68),
          f'{addr:#x}: only actual complete three 73/75-x86 97/98/9A siblings may follow 0x96')
     wanted=(0x98 if extra_sibling_x86==0 else
-            0x9C if extra_sibling_x86 in (3*73,3*75) else 0x9F)
+            0x9C if extra_sibling_x86 in (3*73,3*75) else
+            0x9F if extra_sibling_x86 in (5*73,5*75) else 0xA0)
     marker=[]
     for field in refs:
         if 'g_FighterProbeMarker' not in field['symbol']:continue

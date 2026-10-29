@@ -1,6 +1,6 @@
 # TH075 — active reconstruction handoff
 
-**Maintained 2026-10-29 after F636.** This is the **only current task list**.
+**Maintained 2026-10-29 after F637.** This is the **only current task list**.
 The [F540–F596 research chronology](history/RE_HANDOFF_F540_THROUGH_F596.md),
 [knowledge base](KNOWLEDGE_BASE.md), and older F-series studies are
 **historical evidence**, not statements of current progress. Independently
@@ -819,6 +819,34 @@ native giant authored functions**. Official authored exact ledger
 ```bash
 scripts/repo-python scripts/verify-fighter-landing-pair-f636.py --boss 0x00564BE0
 scripts/repo-python scripts/verify-fighter-landing-pair-f636.py --boss 0x0058AF60
+```
+
+**F637 recovers real native whole interior action0x9E in ALL ELEVEN
+giant fighter source parents:** 66 authentic x86 normally /68 in
+native `00543210`/`0058AF60` from extra `+0xF0A` store in opposite
+AFTER/BEFORE motion-init order. Independently decoded original
+`005D73C0` uses **strict `POS48 > ground`**, real native `TEST
+AH,0x41` versus the other ten actors' **`POS48 >= ground`** with
+real `TEST AH,1`; first natural C++ source had 1 real x87/CFG-role
+mismatch here until the original equality behavior was fixed.
+Ordinary VC7.1 source in 11 fresh whole `Advance()` C++ objects now
+strictly matches **730 original native GPR/x87/CFG instruction roles,
+2,760 original native inner CODE bytes and 88 genuinely typed
+zero-addend PE/COFF global/call fields**. True wide `00564BE0`
+306 native bytes have exactly 21 widened saved-this EBP−0x88 MOVs,
+not source padding. Each new OBJ rechecks prior F636 original
+`9B/9C`, F633 original `97/98/9A`, F631 `0x96`, actual earlier
+mode/landing cases and entire afterRET compressed switch DATA.
+**F598–F637 total strictly source-backed 456 original case
+interiors/122,280 original inner CODE bytes**, still zero newly
+accepted complete giant authored functions. Official whole-authored
+943/862,726 exact unchanged. [F637 real original strict x87
+condition, source and native field proof](FIGHTER_GROUND_BOOST_F637.md),
+[ordinary C++](../probes/FighterGroundBoost9EF637.inc).
+
+```bash
+scripts/repo-python scripts/verify-fighter-ground-boost-f637.py --boss 0x005D73C0
+scripts/repo-python scripts/verify-fighter-ground-boost-f637.py --boss 0x00564BE0
 ```
 
 ## 4. Other three unmatched authored *whole* functions

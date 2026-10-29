@@ -11171,3 +11171,36 @@ source study](FIGHTER_LANDING_PAIR_F636.md), targeted
 `scripts/repo-python scripts/verify-fighter-landing-pair-f636.py --boss 0x0058AF60`.
 Official 943/862,726 exact authored unchanged; no all-unit cold
 replay or external Oracle acceptance.
+
+
+## F637: complete 0x9E native ground boost in eleven giant fighters, strict-vs-nonstrict PE x87 semantics
+
+Pinned original Japanese TH075 native case0x9E→0x9F is complete
+66 x86/243 CODE bytes in most fighters, **68/255** in native
+`00543210` and `0058AF60` from real additional short `+0xF0A`
+AFTER/BEFORE motion initialization, and **66/306 native bytes**
+in real wide saved-EBP−0x88 `00564BE0` (21 original receiver MOVs
++3 bytes each). Original stage-zero source initializes position
+−6f, velocity 8f, drag .75f; real original x87 ground check
+`POS48 >= original float 0065782C` uses `TEST AH,1` in TEN
+actors, while native **`005D73C0` uses strict `POS48 > ground`**
+with original `TEST AH,0x41` instead. The first source matched
+66-x86 count/8 COFFs but was wrong on native ordinal31 for this
+actor until the **actual inequality semantics** were corrected.
+The native landing path calls true `0040FAC0(0xA)` then clears
+vertical displacement and `00453E20` reset; frame-complete path
+uses `0040FA30`/`0040FAC0(9)`. Fresh ordinary VC7.1 C++
+`probes/FighterGroundBoost9EF637.inc` inside **all eleven whole
+giant source objects** strictly reproduces **730 true original
+GPR/x87/CFG x86 roles/2,760 original uncredited native inner
+CODE bytes/88 physical PE-targeted zero-addend COFF references**.
+Each new whole source compilation rechecks strict previous F636
+9B/9C, F633 97/98/9A, F631 0x96, real mode0x63 when strict,
+F614 thirty earlier native game-case grammars, and complete afterRET
+packed switch DATA. Previous original `0x91` GPR-negative source
+contexts remain honestly nonexact. F598–F637 bounded study now
+**456 strict original internal action case bodies/122,280 original
+inner CODE bytes**, NOT accepted complete game functions; official
+943/862,726 whole-authored exact unchanged, no full cold replay.
+[F637 original PE/x87/COFF source proof](FIGHTER_GROUND_BOOST_F637.md),
+selected `scripts/repo-python scripts/verify-fighter-ground-boost-f637.py --boss 0x005D73C0`.
