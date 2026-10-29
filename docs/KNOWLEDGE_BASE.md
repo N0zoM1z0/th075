@@ -10477,3 +10477,28 @@ two real 118-instruction action0x49 owner variants and full giant
 CODE remain nonexact. [F607 original PE+source proof](FIGHTER_TRAJECTORY_LANDING_F607.md),
 targeted `scripts/repo-python scripts/verify-fighter-trajectory-landing-f607.py --boss 0x004F7130`.
 No full all-unit cold replay; official 943/862,726 authored exact unchanged.
+
+
+## F608: real 118-instruction native 0x49 landing + stage-one projectile in two giant fighters
+
+Independent original Japanese PE source evidence proves complete
+indexed second-switch 0x49 inner CODE for `0045DD70` and `0058AF60`:
+original **118 x86/420 native interior bytes/16 real typed PE/COFF
+fields** per character, with original signed short flag `+0xF0C`,
+original `00453A70` 5-argument game spawn ID 0x3B7 /0x3E7
+and side 1/0, plus both original float `FUCOMPP` equality tests.
+Pinned VC7.1 naturally generates the actual 118-instruction original
+register/x87/CFG/order and 420-byte physical case, checked with all
+16 typed physical COFF original target destinations. Earlier 26
+original game action roles and entire physical afterRET switch DATA
+remain verified on the newly compiled whole giant source object.
+F608 adds **236 native x86 roles/840 uncredited original internal
+CODE bytes/32 genuine COFF refs**; with F607 all 11 native action0x49
+cases are source-backed (1,127 native roles/4,081 inner CODE/167
+fields). F598–F608 total **297 inner cases/70,961 original CODE
+bytes** while the entire giants remain NONEXACT and no independent
+new authored CODE exactness is granted. [Original F608 physical
+study](FIGHTER_TRAJECTORY_LANDING_SPAWN_F608.md),
+`probes/FighterTrajectoryLandingSpawnF608.inc`, targeted
+`scripts/repo-python scripts/verify-fighter-trajectory-landing-spawn-f608.py --boss 0x0058AF60`.
+No all-unit cold replay, no external Oracle receipt.

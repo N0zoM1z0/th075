@@ -1,6 +1,6 @@
 # TH075 — active reconstruction handoff
 
-**Maintained 2026-10-29 after F607.** This is the **only current task list**.
+**Maintained 2026-10-29 after F608.** This is the **only current task list**.
 The [F540–F596 research chronology](history/RE_HANDOFF_F540_THROUGH_F596.md),
 [knowledge base](KNOWLEDGE_BASE.md), and older F-series studies are
 **historical evidence**, not statements of current progress. Independently
@@ -312,6 +312,29 @@ CODE bodies remain nonexact; official 943/862,726 unchanged.
 
 ```bash
 scripts/repo-python scripts/verify-fighter-trajectory-landing-f607.py --boss 0x004F7130
+```
+
+**F608** reconstructed real 118-instruction projectile-spawning action
+`0x49` in the two remaining giant fighters `0045DD70` and `0058AF60`.
+Original native complete `0x49` cases are **420 bytes/118 x86/
+16 authentic typed COFF fields each**. Stage-one/frame-zero flag
+`+0xF0C` guards native game spawn `00453A70`, projectile IDs `0x3B7`
+/`0x3E7`, side 1/0. The two true `FUCOMPP` float equality tests and
+native `0x49` switch exits are preserved in natural C++.
+Both newly compiled VC7.1 giant source objects retain the **previous
+26 genuine game cases** and original afterRET DATA. F608 adds
+**2 internal cases /236 x86 roles /840 original interior CODE bytes
+/32 original physical typed COFF fields**. Combined F607/F608,
+**all 11 original 0x49 cases source-backed** (1,127 original x86,
+4,081 native inner CODE bytes, 167 fields). Across F598–F608:
+**297 native internal game cases /70,961 original CODE bytes**
+source-backed but **no new whole-game exact unit**; official 943/
+862,726 stays unchanged. Full original [F608 projectile landing
+study](FIGHTER_TRAJECTORY_LANDING_SPAWN_F608.md) and
+[natural C++](../probes/FighterTrajectoryLandingSpawnF608.inc).
+
+```bash
+scripts/repo-python scripts/verify-fighter-trajectory-landing-spawn-f608.py --boss 0x0058AF60
 ```
 
 Never run a full 943-unit cold replay.
