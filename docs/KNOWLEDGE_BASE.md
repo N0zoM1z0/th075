@@ -10941,3 +10941,35 @@ official 943/862,726 whole authored exact unchanged.
 [Original F627 source/PE and negative owner evidence](FIGHTER_MODE_PRIORITY_F627.md),
 `scripts/repo-python scripts/verify-fighter-mode63-priority-f627.py
 --negative-actor`. No all-unit cold replay.
+
+
+## F628: 24 strictly native 80-x86 fighter jump-landing cases, real qword FMUL and eight simultaneous predecessor 0x63 source matches
+
+Original pinned TH075 PE action0x8C/8F/90 are each true 80 native x86
+with eight individually typed PE/COFF game/global target fields:
+2 original `FCOMP [0065782C]`, `FADD [00658058]`, real
+`ContactAt454EE0` call, **double-precision `FMUL qword [006583E8]`**
+followed by FSTP to member+0x490, and true `0040FA30/0040FAC0/
+0040FB40` calls. Natural VC7.1 C++ source `probes/FighterJumpLandingF628.inc`
+recovers all original GPR/x87/CFG role/physical widths for **three
+complete original cases inside each of eight giant fighter C++
+parents**, totaling **24 native internal case bodies/1,920 native
+x86 roles /7,152 original uncredited internal CODE bytes/192 genuine
+zero-addend COFF refs**. Normal original case 289 B, real wide saved
+EBP−0x88 actor `00564BE0` original 361 B (24 original receiver MOV
+widenings×3 B). Original `005AEEC0` retains counter+0xEFC; stage3
+counter limits native 5/7 and initial −11f/−12f are per-case PE-read.
+**Each new whole-parent source also reproduces the preceding actual
+original `0x63` GPR/typed fields**, including F627 138-x86 priority
+`005D73C0`, F624 118-x86 special actors, and F626 109-x86 five
+regular actors; prior 30 native case proofs and full packed afterRET
+DATA are rechecked in each fresh C++ object. Actual original
+`0045DD70`,`0058AF60`,`004F7130` remain **51 GPR/CFG source-role
+mismatches per 8C/8F/90** even though size/count/typed COFF agree;
+these real negative case contexts are NOT called strict. F598–F628
+studied **371 original strict game-case interiors/98,385 original
+internal CODE bytes**, still zero accepted new whole-game authored
+functions or original executable edits; official exact 943/862,726
+unchanged, no full all-unit cold replay or Oracle receipt.
+[F628 original native source/x87/negative evidence](FIGHTER_JUMP_LANDINGS_F628.md),
+targeted `scripts/repo-python scripts/verify-fighter-jump-landings-f628.py --boss 0x00564BE0`.

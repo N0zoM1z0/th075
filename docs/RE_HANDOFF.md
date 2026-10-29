@@ -1,6 +1,6 @@
 # TH075 — active reconstruction handoff
 
-**Maintained 2026-10-29 after F627.** This is the **only current task list**.
+**Maintained 2026-10-29 after F628.** This is the **only current task list**.
 The [F540–F596 research chronology](history/RE_HANDOFF_F540_THROUGH_F596.md),
 [knowledge base](KNOWLEDGE_BASE.md), and older F-series studies are
 **historical evidence**, not statements of current progress. Independently
@@ -622,6 +622,37 @@ scripts/repo-python scripts/verify-fighter-mode63-priority-f627.py --negative-ac
 ```
 
 Never run a full 943-unit cold replay.
+
+**F628** restores original complete 0x8C/0x8F/0x90 landing actions
+inside **eight different huge fighter parents**, 3 actions each:
+**24 original complete case interiors /1,920 native x86 GPR/x87/CFG
+roles /7,152 original native inner CODE bytes /192 physically
+original-targeted zero-addend PE/COFF fields**. Original x87
+sequences prove strict `<` then `>` ground-bound correction against
+float `0065782C` with delta `00658058`; real contact method
+`00454EE0`, live signed member `+0x3BE` and **double-precision
+`FMUL qword [006583E8]`** store reflection to `+0x490`; frame
+getter/setter and stage3 signed short original `+0xF00/+0xEFC`
+5/7 limit retain their actual per-actor values. The source
+correctly handles original `00564BE0` 361-byte wide case with
+24 authentic EBP−0x88 MOV receiver widths versus 289 compact.
+**All eight source whole-giant objects also preserve a previously
+native-strict 0x63**, including real F627 priority 138-instruction
+source on `005D73C0`, plus all preceding F614 thirty native
+case proofs and full afterRET DATA. Native `0045DD70`,`0058AF60`,
+`004F7130` were separately cold-compiled and have **51 original
+GPR/CFG role differences per 8C/8F/90 case**, despite correct
+native byte count/COFF; none of those nine is claimed strict.
+F598–F628 cumulative research **371 real strict internal game case
+subranges/98,385 original inner CODE bytes**, ZERO new whole-giant
+exact acceptance, official whole authored 943/862,726 unchanged.
+[F628 genuine PE landing x87/typed fields and original negatives](FIGHTER_JUMP_LANDINGS_F628.md),
+[natural C++](../probes/FighterJumpLandingF628.inc).
+
+```bash
+scripts/repo-python scripts/verify-fighter-jump-landings-f628.py --boss 0x005D73C0
+scripts/repo-python scripts/verify-fighter-jump-landings-f628.py --negative-actor 0x0045DD70
+```
 
 ## 4. Other three unmatched authored *whole* functions
 
