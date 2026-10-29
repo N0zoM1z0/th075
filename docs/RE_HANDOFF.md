@@ -1,6 +1,6 @@
 # TH075 — active reconstruction handoff
 
-**Maintained 2026-10-29 after F624.** This is the **only current task list**.
+**Maintained 2026-10-29 after F625.** This is the **only current task list**.
 The [F540–F596 research chronology](history/RE_HANDOFF_F540_THROUGH_F596.md),
 [knowledge base](KNOWLEDGE_BASE.md), and older F-series studies are
 **historical evidence**, not statements of current progress. Independently
@@ -562,6 +562,13 @@ scripts/repo-python scripts/verify-fighter-mode63-f624.py --boss 0x005AEEC0
 
 Never run a full 943-unit cold replay.
 
+**F625 meaningful authored whole-destructor negative evidence**: direct, native-behavior-equivalent resource frees naturally restore **both original delete-temp EBP positions** in the complete `0041CE50` archive destructor (`−0xC/−0x8`) and complete `0043B0B0` virtual EH scene destructor (`−0x14/−0x10`). But direct free eliminates the original pointer-save/reload pair: archive **165/49 source against native 171/51**; scene **230/69 source against native 248/75**. True original COFF references remain 14/12. Reintroducing named saved pointers restores the original whole instruction count but allocates the wrong EBP locals. This is **not** a whole match and cannot earn partial CODE credit; further source work must recover the genuinely original allocation/lifetime graph. [Full-original direct-free and 20+19 additional compiler controls](DESTRUCTOR_DIRECT_FREE_LIFETIME_F625.md):
+
+```bash
+scripts/repo-python scripts/verify-destructor-direct-free-f625.py --which archive
+scripts/repo-python scripts/verify-destructor-direct-free-f625.py --which scene
+```
+
 ## 4. Other three unmatched authored *whole* functions
 
 | Original | Size / native structure | Precise remaining blocker, best source evidence |
@@ -608,6 +615,32 @@ no F528 provenance/ABI assumption is accepted without original proof.
 
 ```bash
 scripts/repo-python scripts/verify-winmain-local-layout-f615.py --case msg-before-app-plus-all-hwnd-event-int
+```
+
+**F625 complete small-authored destructor native lifetime research:**
+Two true original **WHOLE functions**, native `0041CE50`
+**171B/51 x86/14 COFF** and original scene EH `0043B0B0`
+**248B/75 x86/12 COFF**, have a common actual VC7.1 stack
+allocator effect. When the borrowed filename or each of three game
+resource pointers is passed directly to CRT `free` without an
+independently named source local, C++ **naturally restores both
+original deletion-resource EBP slots**: archive `−0xC/−0x8`,
+scene texture/delete `−0x14/−0x10`. BUT those source forms emit
+**165B/49 x86** and **230B/69 x86** respectively, rather than
+native 171/51 or 248/75. They drop precisely the original two
+archive filename or six scene free-value store/reload instructions,
+so neither is whole-function exact. Separately recompiled 20 C++
+archive materialized reference variants and 19 scene local/aggregate
+source variants retain wrong native EBP slots or wrong full CODE
+sizes; no fake padding, ABI mismatch or partial exact credit.
+[Full original F625 direct-free source and EH/stack lifetime
+proof](DESTRUCTOR_DIRECT_FREE_LIFETIMES_F625.md),
+[archive C++](../probes/ArchiveCatalogDirectFreeF625.cpp),
+[scene C++](../probes/BattleSceneDirectFreeF625.cpp).
+
+```bash
+scripts/repo-python scripts/verify-destructor-direct-free-f625.py --which archive
+scripts/repo-python scripts/verify-destructor-direct-free-f625.py --which scene
 ```
 
 **F609 negative small-function research:** 19 freshly compiled

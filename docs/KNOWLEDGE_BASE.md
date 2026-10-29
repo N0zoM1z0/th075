@@ -10845,3 +10845,38 @@ complete entire giants, no accepted additional whole authored CODE.
 [F624 actual original 0x63 source/boundary/typed field proof](FIGHTER_MODE_EVENT_ACTION63_F624.md),
 selected `scripts/repo-python scripts/verify-fighter-mode63-f624.py --boss 0x00564BE0`.
 Official 943/862,726 authored exact unchanged; no 943-unit cold replay.
+
+
+## F625: genuine original small authored destructor allocation mechanism, NOT yet whole native exact
+
+Pinned Japanese TH075 real authored whole archive nonvirtual destructor
+`0041CE50` 171B/51 native x86/14 physical COFF fields, and battle
+SceneObject EH virtual destructor `0043B0B0` 248B/75 native x86/
+12 real typed fields, remain NONEXACT. Natural borrowed pointer
+**direct free** source forms `probes/ArchiveCatalogDirectFreeF625.cpp`
+(165B/49 x86) and `probes/BattleSceneDirectFreeF625.cpp`
+(230B/69 x86) cold-compile under actual VC7.1 `/GX-` vs `/GX`
+profiles and genuinely recover BOTH original PE deletion EBP
+stack slots: archive x86 ordinals22/24 = −0xC/−0x8; scene
+ordinals26/28 = −0x14/−0x10. The source however drops actual
+original filename free store/reload (2 x86/6 B) or three scene
+resource pointer save/reloads (6 x86/18 B). Native original
+whole-function compare therefore requires **size-mismatch**,
+not partial acceptance. 20 additional real archive materialized
+prvalue/reference controls (171/51 with 108/115 or 102/115
+nonfield equality, 179/54 size-change), and 19 fresh scene
+source lifetime/aggregate controls (248/75 189/200 or 191/200;
+254/78,272/84,236/71,230/69 native-size mismatches) do not
+recover the actual original simultaneous saved/local allocation.
+Original source lifetime/ordering context must be recovered without
+fake temps or byte grafts. Reproduce two bounded original source
+negative proofs with `scripts/repo-python scripts/verify-destructor-direct-free-f625.py
+--which archive` and `--which scene`.
+[Full original PE/COFF investigation](DESTRUCTOR_DIRECT_FREE_LIFETIMES_F625.md).
+Official authored exact whole CODE 943/862,726 remains unchanged;
+no all-unit cold replay or external Oracle acceptance.
+
+
+## F625: direct-free original whole-destructor local-ownership evidence, no exact acceptance
+
+Original pinned authored `0041CE50` archive destructor (171 CODE/51 x86/14 typed COFF) and `0043B0B0` scene virtual EH destructor (248 CODE/75 x86/12 typed COFF) still have unresolved meaningful resource lifetime allocation. Ordinary VC7.1 direct pointer `free` source **naturally restores the exact first two native EBP delete-resource locals** (`−0xC/−0x8` archive and `−0x14/−0x10` scene), but drops one pointer save/load pair in archive (**165/49**) and three pairs in scene (**230/69**). The canonical full-original comparator accordingly rejects both as `size-mismatch`; no arbitrary padding, byte manipulation or exact/partial match credit. Separate actual 20 archive rvalue/reference and 19 scene local-scope negative compiler experiments likewise fail to yield complete native CODE. [F625 complete source and actual original EBP proof](DESTRUCTOR_DIRECT_FREE_LIFETIME_F625.md), `probes/ArchiveCatalogDirectFreeF625.cpp`, `probes/BattleSceneDirectFreeF625.cpp`; targeted `scripts/repo-python scripts/verify-destructor-direct-free-f625.py --which scene`. Authored exact ledger unchanged 943/862,726; no full cold replay.
