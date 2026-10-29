@@ -220,7 +220,9 @@ compiler byte match, a real game call, or a plausible C++ signature.
   [work protocol](RE_WORKFLOW.md) and [native origin review](ORIGIN_PENDING_REVIEW.md).
 - A **reversible per-file SHA256-indexed archive of 219 frozen,
   repetitive historical diagnostic JSON snapshots** has reclaimed
-  about **244.66 MiB** (including manifest). This checkout stores
+  about **244.66 MiB** (including manifest). Standard two-week-horizon
+  `git gc` also safely repacked Git objects, reclaiming **≈371.62 MiB**:
+  combined **≈616.28 MiB** saved. This checkout stores
   private `.tar.zst` archives and receipt under ignored
   `.analysis/cache-archives/`. The live original PE, `vc71-wine`,
   Ghidra project, current research, native/source/COFF/PDB probes,

@@ -10,6 +10,37 @@ those local archives. Historical JSON/PDB batches and the new F597
 legacy CI-log batch were archived separately without touching
 source, original-function evidence, Wine or accepted build objects.
 
+## Standard Git object maintenance after the documentation/archive commits
+
+After the complete old-handoff narrative had been preserved and the
+reconstruction/storage scripts committed, a **standard Git GC** was run
+with the normal **two-week prune horizon**:
+
+```bash
+git gc --prune=2.weeks.ago
+git fsck --connectivity-only --no-progress
+git status --short --branch
+```
+
+This was **not** `git gc --prune=now`, a force-delete of the reflog, a
+Git history rewrite or a manual removal of `.git/objects`. It retained
+all live refs, recent committed history and reflog entries; Git fsck
+exited successfully, reporting only five ordinary dangling blobs that
+were **not assumed to be accepted function sources**. Actual Git
+storage shrank from **413,241,344 bytes to 23,572,480 bytes**, a
+**389,668,864-byte (≈371.62 MiB) saving**; all 7,023 loose objects
+were safely packed/maintained by Git, with 13,527 packed objects in
+two packs afterward. Never run aggressive pruning or remove reflogs
+simply to recreate this one-time saving.
+
+**Combined verified savings in this round:** **646,211,818 bytes
+(≈616.28 MiB)** across the reversible 219-diagnostic archive
+(**256,542,954 bytes net, including the receipt**) and the standard
+Git storage maintenance (**389,668,864 bytes**). The checkout's
+measured on-disk size at the end is **2,754,048,000 bytes** (about
+2.6 GiB), including required VC7.1/Wine, original native evidence,
+Ghidra, accepted match objects and exact manifests.
+
 ## Latest cleanup: 219 frozen redundant JSON diagnostic snapshots (post F652)
 
 The four original *read-only historical* diagnostic sets below were

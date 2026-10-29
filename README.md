@@ -152,7 +152,7 @@ their evidence or verifiers. See [the workflow](docs/RE_WORKFLOW.md).
 | [Frozen F598–F652 detailed handoff](docs/history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md) | Full old 1,500-line evidence narrative; **not** current backlog |
 | [Historical detailed F540–F596 handoff](docs/history/RE_HANDOFF_F540_THROUGH_F596.md) | All previous milestone notes; **not** current backlog |
 | [Earlier handoffs](docs/history/RE_HANDOFF_THROUGH_F183.md) | Older archived experiments |
-| [Storage protection and recovery](docs/STORAGE_HYGIENE.md) | Recoverable native evidence, historic PDB/CI logs, and latest **219 old JSON diagnostics → 4 SHA256-verified archives (≈244.66 MiB net reclaimed)**; protect original PE, VC7.1/Wine, Ghidra and current COFF/source |
+| [Storage protection and recovery](docs/STORAGE_HYGIENE.md) | Recoverable native evidence, historic PDB/CI logs, and latest **219 old JSON diagnostics → 4 SHA256-verified archives (≈244.66 MiB net reclaimed)** plus normal Git GC (≈371.62 MiB); **≈616.28 MiB total** without discarding current source, original PE, VC7.1/Wine, Ghidra or accepted COFF objects |
 
 The pre-cleanup verbose F223 handoff and README are also recoverable from
 Git commit `ca81d72`; older origin work is retained under `docs/history/`,
