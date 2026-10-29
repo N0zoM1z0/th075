@@ -154,6 +154,29 @@ scripts/repo-python scripts/verify-fighter-indexed-contact51-f600.py --boss 0x00
 scripts/repo-python scripts/verify-fighter-indexed-contact51-f600.py --boss 0x00564BE0
 ```
 
+**F600 further reconstructed the next ELEVEN actual native contact cases
+`0x33/34/35/38/39/3A/3B/3E/3F/40/41` in every one of the same 11
+giants**, with original physical compressed table boundaries and
+normal VC7.1 C++ source. This is **121 complete native inner cases**,
+**7,711 x86 GPR/x87/CFG instruction roles**, **28,399 original interior
+CODE bytes** and **880 native PE/COFF physical reference fields**.
+The original `00564BE0` wide EBP-0x88 stack accounts for 624 extra
+physical receiver-displacement bytes; fighter `005AEEC0` uniquely uses
+counter `+0xEFC` instead of `+0xF00` in three action cases. Original
+`0x3E/3F/40` transitions use state **2**, not 0; three late contact
+cases contain an independent stage-7 guarded secondary action. The
+new C++ source retains every prior opening case0..10, F598 action0x32
+and the full original after-RET table shape. Across F598/F600 this
+is **253 inner case bodies /55,234 uncredited original CODE bytes**,
+not 253 new whole functions; **all 11 whole giants are still
+NONEXACT**. [F600 full physical/source controls](FIGHTER_ADDITIONAL_CONTACT_F600.md),
+[real eleven-case C++ source](../probes/FighterAdditionalContactF600.inc).
+To reproduce a single affected compilation:
+
+```bash
+scripts/repo-python scripts/verify-fighter-additional-contact-f600.py --boss 0x004F7130
+```
+
 Never run a full 943-unit cold replay.
 
 ## 4. Other three unmatched authored *whole* functions

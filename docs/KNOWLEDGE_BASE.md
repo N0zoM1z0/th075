@@ -10241,3 +10241,26 @@ credit, no split case adoption and no full 943-unit cold replay.
 Tracked targeted probe
 `scripts/repo-python scripts/verify-fighter-indexed-contact51-f600.py
 --boss 0x004F7130`; [F600 original native case](FIGHTER_INDEXED_CONTACT51_F600.md).
+
+
+## F600: true follow-on contact states across eleven *whole* giant original fighter functions
+
+Original Japanese TH075 1.11 PE was independently redecoded for
+all 121 new native complete action cases `0x33/34/35/38/39/3A/3B/3E/3F/40/41`,
+with the true compressed *distinct case* second-table order, preserving
+all earlier opening case0..10 and F598 action0x32. The tracked natural
+C++ source in `probes/FighterAdditionalContactF600.inc` now reproduces
+**7,711 original complete GPR/x87/branch roles**, all genuine case
+opcodes/widths except exactly the original wide EBP-0x88 receiver
+displacements at `00564BE0`, **28,399 original internal CODE bytes**
+(10*2,525 + 3,149) and **880 physically typed original PE/COFF
+call/global destinations**. Original counter `+0xEFC` is confirmed
+for `005AEEC0`; the other ten are `+0xF00`. Three long cases
+initially clear and later increment this counter only on original
+stage-7 conditions; cases `0x3E/3F/40` push transition state 2,
+not 0. Every case is inside its authentic still-incomplete giant.
+Together with F598 earlier actions this is 253 PE-backed inner cases/
+55,234 noncredited original CODE bytes, **zero newly accepted authored
+whole function bytes**, no all-unit cold replay or external Oracle.
+Detailed original evidence [F600 second contact switch](FIGHTER_ADDITIONAL_CONTACT_F600.md)
+and targeted compiler proof `scripts/repo-python scripts/verify-fighter-additional-contact-f600.py --boss 0x004F7130`.
