@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F669; earlier frozen handoffs are archived.**
+**Maintained 2026-10-30, after F670; earlier frozen handoffs are archived.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -239,20 +239,19 @@ relocation, and a fresh selected-unit cold replay**.
 
 ## 5. Small leaves: whole-byte source evidence ≠ authored attribution
 
-F595 + F616–F665 source experiments now prove **70 distinct
-historical origin-unknown complete native function bodies /1,259
-original entire machine CODE bytes**. The newest F665 adds **four
-entire 19-byte native member-call forwarders /76 linked genuine
-original CODE bytes /36 x86 instructions /4 actual typed PE COFF
-REL32 fields**, all individually byte exact under one small normal
-VC7.1 TU. Their owners remain `unknown,review` as do all **95
-historical provenance-unknown candidates**. Native authored callers
-do not establish a wrapper's original source owner. This research
-earns **zero accepted authored whole-function CODE**.
-[Newest full four-native-original proof](GAME_NATIVE_FORWARDER_LEAVES_F665.md).
-F658 earlier independently added 19 complete simple native functions
-(181 bytes/111 x86) without relocation masking.
-[Previous F658 native proof](GAME_UNATTRIBUTED_SIMPLE_LEAVES_F658.md).
+F595 + F616–F670 research now source-backs **71 distinct historical
+origin-unknown entire native functions /1,285 actual machine CODE
+bytes**. The new F670 completes the genuine original `00423B20`
+**26/26 native CODE bytes /11 x86 /2 typed physical REL32 fields**:
+normal C++ stack-local constructor 16/destructor at EBP−1, with real
+original callees 004239F0/00423A90. Its original full CODE had no
+registered direct callers; class/author ownership is **not** known.
+[Newest F670 original full native source and caller proof](GAME_NATIVE_SCOPED_LIFETIME_F670.md).
+F665 earlier added four complete 19-byte member-call forwarding
+functions (76 B/36 x86/4 typed original PE fields); all original
+95 historical provenance-unknown candidates remain `unknown,review`.
+This research earns **zero accepted authored whole-function CODE**.
+[Earlier F665 full native proof](GAME_NATIVE_FORWARDER_LEAVES_F665.md).
 
 Latest F655 seven **entire original registered native leaves**
 (`004138D0`, `004169D0`, `0041F7F0`, `00540280`, `00441FD0`,
@@ -267,6 +266,7 @@ virtual `__stdcall`) and `004588B0` (43 bytes, conditional CRT free).
 [Earlier genuine original F650 proof](GAME_COM_VIRTUAL_RELEASE_F650.md).
 
 ```bash
+scripts/repo-python scripts/verify-game-native-scoped-lifetime-f670.py
 scripts/repo-python scripts/verify-game-native-forwarder-leaves-f665.py
 scripts/repo-python scripts/verify-game-unattributed-simple-leaves-f658.py
 scripts/repo-python scripts/verify-game-unattributed-leaves-f655.py

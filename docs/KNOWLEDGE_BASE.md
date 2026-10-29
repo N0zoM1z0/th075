@@ -11915,3 +11915,24 @@ formal authored 943/862,726 exact CODE ledger unchanged.
 [Original full-parent F669 proof](FIGHTER_POST_COUNTER_F669.md),
 `scripts/repo-python scripts/verify-fighter-post-counter-f669.py`.
 No 943-unit replay.
+
+
+## F670: one complete original source-UNKNOWN scoped byte-local lifetime function
+
+Original PE `00423B20` owns a **complete native 26-byte/11-x86 CDECL
+function** that constructs one C++ temporary at authentic `EBP−1`,
+pushes real ctor argument `16` to original `004239F0`, and invokes
+real original destructor `00423A90` on the *same* local address.
+A fresh pinned VC7.1 one-function ordinary C++ source yields all
+**26/26 original linked native CODE bytes**, with both original
+zero-addend `REL32` source symbol/field/displacement sites physically
+checked; source type/class name remains provisional. Original direct
+CALL scan over 4,351 registered native CODE extents finds **zero**
+registered direct callers, not proof of authored/vendor ownership.
+All 95 original source-unknown candidates still remain uncredited.
+F595–F670 source-backed unknown cohort now **71 distinct complete
+originals /1,285 whole CODE bytes** (F670 +26 bytes); formal accepted
+whole-authored exact ledger still **943/862,726 CODE bytes**.
+[Full original native PE/COFF proof](GAME_NATIVE_SCOPED_LIFETIME_F670.md),
+`scripts/repo-python scripts/verify-game-native-scoped-lifetime-f670.py`.
+No mass cold replay.
