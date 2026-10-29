@@ -1,6 +1,6 @@
 # TH075 — current agent handoff
 
-**Maintained: 2026-10-29, after F582; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
+**Maintained: 2026-10-29, after F583; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
 
 ## 1. Current authoritative state (not historical hypotheses)
 
@@ -518,6 +518,32 @@ are never credited as exact standalone functions. See
 and targeted
 `scripts/repo-python scripts/verify-characterobject-abs-motion-f582.py`.
 No all-unit cold replay or Oracle receipt.
+
+**F583 continues with THREE complete native CharacterObject
+state/short-actor actions `0x342/0x343/0x344`** in the entire still
+nonexact 33,293-CODE-byte giant `004EBDA0`. Genuine original
+complete native x86 case footprints are **87/338**, **80/309** and
+**66/229** (instructions/inner CODE bytes), respectively. Native
+`0x342` invokes stage setup `00453E60(10f)` and real effect
+`00453A70(0x343)`; `0x343` has distinct **1.7f float scales,
+0065825C x87 global, signed stage>=0 and 20-step color fade**,
+not copied `0x339` logic. `0x344` independently reproduces the
+sprite 0x4E2/-75f original fade with global 006583FC. All three
+new normal C++ sources reproduce the **strict original native
+GPR/x87/control/instruction-width order** and **17 authentic
+typed COFF call/global refs**.
+
+The same newly compiled switch now verifies **32 physically true
+original action bodies, 3,995 native x86 instruction roles, 14,835
+native inner CODE bytes and 283 typed zero-addend COFF fields**,
+plus all 60 physical DWORD jump slots and 198 identical native
+compressed index bytes. Existing three read-only swap/EBP-depth
+caveats remain; none new. See
+[F583 original stage/fade case study](CHARACTEROBJECT_STATE_LEAVES_F583.md),
+selected reproducer
+`scripts/repo-python scripts/verify-characterobject-state-leaves-f583.py`.
+**Whole 33,293-byte giant remains NONEXACT, zero independent split
+or whole CODE credit.** No full cold replay or external Oracle.
 
 **Three other authored functions remain nonexact (all require full CODE):**
 

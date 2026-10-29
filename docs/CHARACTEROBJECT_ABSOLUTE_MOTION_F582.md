@@ -116,3 +116,14 @@ native internal CODE bytes remain inside the wholly nonexact
 33,293-byte original giant**; these are not 29 separately accepted
 functions. No accepted split/whole CODE or DATA credit, no full
 all-unit cold replay and no external Oracle receipt.
+
+## F583 follow-up: original state and fade actions 0x342..0x344
+
+The same natural VC7.1 source now contains three more genuine complete
+original game actions `0x342` 87/338, `0x343` 80/309 and `0x344`
+66/229 (x86 instructions / inner CODE bytes). They have strict native
+GPR/x87/branch/width grammar and their actual original physical
+COFF refs. F582's existing original-backed source verifier still
+rechecks its prior 29 whole case bodies; [F583's original state
+study](CHARACTEROBJECT_STATE_LEAVES_F583.md) independently verifies
+all 32 without new read-only swaps. Whole boss CODE still nonexact.

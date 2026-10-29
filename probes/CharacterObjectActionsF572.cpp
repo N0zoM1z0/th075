@@ -1,5 +1,5 @@
-// F572/F573/F574/F575/F576/F577/F578/F579/F580/F581/F582: selected natural VC7.1 source, original PE 004EBDA0.
-// Implements complete original actions 0x320..0x341 in a 33,293-byte
+// F572/F573/F574/F575/F576/F577/F578/F579/F580/F581/F582/F583: selected natural VC7.1 source, original PE 004EBDA0.
+// Implements complete original actions 0x320..0x344 in a 33,293-byte
 // CharacterObject megaboss. All later cases are DIAGNOSTIC marker stores,
 // not restored gameplay; this source is NOT a complete original function,
 // does not earn independent native CODE or after-RET DATA exact credit.
@@ -56,6 +56,7 @@ extern float gStepAt00658044;
 extern float gFadeAt006583F8;
 extern float gFadeAt00659428;
 extern float gAbsScaleAt00659724;
+extern float gFadeAt0065825C;
 extern float gMotionDecelAt00657480;
 extern float gInitialClampAt00657D14;
 extern float AbsFloatAt00412D90(float value);
@@ -1203,9 +1204,94 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         SetStateAt40FB40(1);
     break;
 }
-        case 0x342: g_FighterProbeMarker = 835; break;
-        case 0x343: g_FighterProbeMarker = 836; break;
-        case 0x344: g_FighterProbeMarker = 837; break;
+        case 0x342: {
+    if (S16(0x62) == 0 && S16(0x64) == 0) {
+        S16(0xD8) = 0;
+        ResetStateAt40FBB0(0,0,0);
+        S16(0x80) = 1;
+        I32(0x7C) = 0;
+        F32(0x54) = 0.0f;
+        F32(0x50) = 0.0f;
+        F32(0x1C) = 1.0f;
+        F32(0x20) = 1.0f;
+        U8(0x11) = 0xFF;
+        U8(0x12) = 0xFF;
+        U8(0x13) = 0xFF;
+        U8(0x14) = 0xFF;
+        I32(0x28) = 0;
+        I32(0x2C) = 0;
+        I32(0x30) = 0;
+        PARENT->SetupAt453E60(10.0f);
+    }
+    if (I32(0x7C) == 6) {
+        I32(0x7C) = 0;
+        ++S16(0x80);
+    }
+    if (S16(0x62) == 3 && S16(0x64) == 0)
+        PARENT->SpawnDirectedAt453A70(0x343, I32(0x44), I32(0x48), S8(0x66), 1);
+    if (GetStateAt40FA30() == S16(0x70))
+        ResetAt45B830();
+    break;
+}
+        case 0x343: {
+    if (S16(0x62) == 0 && S16(0x64) == 0) {
+        S16(0xD8) = 0;
+        ResetStateAt40FBB0(0,0,0);
+        S16(0x80) = 1;
+        I32(0x7C) = 0;
+        F32(0x54) = 0.0f;
+        F32(0x50) = 0.0f;
+        F32(0x1C) = 1.7f;
+        F32(0x20) = 1.7f;
+        U8(0x11) = 0xFF;
+        U8(0x12) = 0xFF;
+        U8(0x13) = 0xFF;
+        U8(0x14) = 0xFF;
+        I32(0x28) = 0;
+        I32(0x2C) = 0;
+        I32(0x30) = 0;
+    }
+    F32(0x1C) = F32(0x1C) + gFadeAt0065825C;
+    F32(0x20) = F32(0x20) + gFadeAt0065825C;
+    if (S16(0x62) > -1) {
+        if (U8(0x11) >= 20)
+            U8(0x11) -= 20;
+        else {
+            U8(0x11) = 0;
+            ResetAt45B830();
+            break;
+        }
+    }
+    if (GetStateAt40FA30() == S16(0x70))
+        ResetAt45B830();
+    break;
+}
+        case 0x344: {
+    if (S16(0x62) == 0 && S16(0x64) == 0) {
+        ResetStateAt40FBB0(0,0,0);
+        F32(0x1C) = 1.0f;
+        F32(0x20) = 1.0f;
+        U8(0x11) = 0xFF;
+        U8(0x12) = 0xFF;
+        U8(0x13) = 0xFF;
+        U8(0x14) = 0xFF;
+        S16(0x1A) = 0x4E2;
+        F32(0x28) = -75.0f;
+    }
+    F32(0x1C) = F32(0x1C) + gAddAt006583FC;
+    F32(0x20) = F32(0x20) + gAddAt006583FC;
+    if (S16(0x62) > 1) {
+        if (U8(0x11) > 20)
+            U8(0x11) -= 20;
+        else {
+            ResetAt45B830();
+            break;
+        }
+    }
+    if (GetStateAt40FA30() == S16(0x70))
+        ResetAt45B830();
+    break;
+}
         case 0x345: g_FighterProbeMarker = 838; break;
         case 0x346: g_FighterProbeMarker = 839; break;
         case 0x347: g_FighterProbeMarker = 840; break;

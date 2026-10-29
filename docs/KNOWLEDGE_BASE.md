@@ -9653,3 +9653,33 @@ NOT exact and no internal case earns independent credit.
 [F582 original source study](CHARACTEROBJECT_ABSOLUTE_MOTION_F582.md),
 reproducer `scripts/repo-python scripts/verify-characterobject-abs-motion-f582.py`.
 No all-unit cold replay or external Oracle acceptance.
+
+
+## F583: three strict native CharacterObject stage and fade action bodies
+
+In original 33,293-byte CharacterObject giant `004EBDA0`, real native
+compressed nondefault actions `0x342` (87 x86/338 CODE bytes),
+`0x343` (80/309) and `0x344` (66/229) now compile from real
+ordinary VC7.1 source in the same switch as F572–F582.
+Actual `0x342` stage0 resets native signed D8, real stage state,
+scale and position, invokes parent `00453E60(10.0f)`, tracks 7C==6
+frame increment and stage3 effect `00453A70(0x343)` with
+actual signed direction. Original `0x343` has native float scales
+1.7f (`0x3FD9999A`), real x87 float global `0065825C` at two
+physical relocation ordinals, signed stage > -1 and color fade 20.
+Original `0x344` independently uses native 0x4E2 sprite,
+-75.0f offset, real `006583FC` two-x87-add 20-step fade and
+`0045B830` reset. All three sources strictly match native x86
+GPR/x87/control order and byte widths, no new order exception.
+They add **233 native complete x86 instructions /876 inner CODE
+bytes /17 original-PE-grounded typed COFF physical fields**.
+The unified source now validates **32 complete real native case
+bodies, 3,995 native x86 instruction roles, 14,835 actual inner
+original CODE bytes and 283 genuine typed physical COFF refs**,
+plus all 60 native switch DWORD COFF fields and 198 literal
+original sparse bytes, 438 separate after-RET DATA-layout bytes.
+Original giant 33,293 whole CODE remains nonexact; the cases are
+not independently original exact functions and no all-unit replay
+or external Oracle was run. Selected verification script
+`scripts/repo-python scripts/verify-characterobject-state-leaves-f583.py`;
+[F583 source study](CHARACTEROBJECT_STATE_LEAVES_F583.md).
