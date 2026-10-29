@@ -11546,3 +11546,33 @@ interiors/154,461 original inner CODE bytes**, not accepted whole
 functions. [F651/F652 native PE, typed COFF and source proof](FIGHTER_RESOURCE_SHOTS_F651_F652.md),
 `scripts/repo-python scripts/verify-fighter-resource-shots-f651.py`.
 Official 943/862,726 whole-authored exact unchanged; no all-unit replay.
+
+
+## F649: full original native complex CC collision/stage source x86 grammar, NONEXACT native GPR phase
+
+Original Japanese TH075 physically bounded action0xCC case in
+huge `005AEEC0`: **128 native x86 /435 original CODE B**, and
+wide `00564BE0`: **126 x86 /542 original native B** from 39
+actual widened saved-this EBP−0x88 MOVs (+3 each), normal compiled
+source case 425 B. Genuine CC collision `00454BC0(3,4,255)`
+requires original five-byte `PUSH 0xFF`, NOT two-byte `PUSH -1`;
+16-bit `++I16(+0x64)`/`++I16(+0x62)` produce original 16-bit
+MOV/ADD instead of C++ promoted `MOVSX` intermediate. Original
+sprite `00453C80(kind0x3C,x,y,side1,1)` uses **raw float member
+DWORD MOV/PUSH bit copies**, while source float-by-value generated
+extra x87 `FLD/FSTP`; a provisional *raw ABI proxy* is required
+for compiler byte-geometry diagnosis, NOT a proven historical
+function declaration. **22 attempted whole original giant VC7.1 source variants**
+(20 full compiler objects and two genuine C2105 postfix-increment rejects) and fresh typed original PE source
+comparison prove all original 128/126 x86 ordinal/mnemonic/width
+geometry, complete case native extent, **11 true physically typed
+original COFF float/call targets per actor**, complete afterRET
+jump DATA shape, but still **80/78 actual non-field GPR/CFG role
+mismatches**. These are NOT strict case interiors, not exact
+whole-giant CODE, no acceptance or total credit. Bounded strict
+F598–F652 remains **572 original native case interiors /154,461
+original internal CODE bytes**; accepted authored whole exact
+943/862,726 unchanged. [F649 original whole source CC negative
+compiler proof](FIGHTER_COMPLEX_STAGE_CC_F649.md),
+`scripts/repo-python scripts/verify-fighter-complex-stage-cc-f649.py`.
+No all-unit cold replay.

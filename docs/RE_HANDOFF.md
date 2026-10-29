@@ -1,6 +1,6 @@
 # TH075 — active reconstruction handoff
 
-**Maintained 2026-10-29 after F652.** This is the **only current task list**.
+**Maintained 2026-10-29 after F649/F652.** This is the **only current task list**.
 The [F540–F596 research chronology](history/RE_HANDOFF_F540_THROUGH_F596.md),
 [knowledge base](KNOWLEDGE_BASE.md), and older F-series studies are
 **historical evidence**, not statements of current progress. Independently
@@ -1172,6 +1172,33 @@ native case and same-giant proof](FIGHTER_RESOURCE_SHOTS_F651_F652.md),
 
 ```bash
 scripts/repo-python scripts/verify-fighter-resource-shots-f651.py
+```
+
+**F649 complex original action0xCC negative/compiler-grammar study
+carried through to verified full giant parent source objects**:
+native `005AEEC0` physically owns **128 original x86/435 CODE
+bytes**, and true wide original `00564BE0` **126 x86/542 B** from
+39 actual saved EBP−0x88 receiver loads widened +3B compared with
+425-B natural source. Both normal C++ whole-giant TUs reproduce
+**every complete case0xCC x86 mnemonic, ordinal and physical width,
+all 11 original zero-addend typed PE/COFF float/call fields,
+and afterRET jump DATA geometry**, but **80/78 genuine original
+EAX/ECX/EDX and CFG role mismatches remain**. These original
+native CC cases are NOT strict and add no credit. Re-tested
+real source values: original collision call `00454BC0(3,4,0xFF)`
+uses 5-byte native PUSH rather than signed `-1` 2-byte push;
+16-bit prefix increments restore native no-MOVSX counter operations;
+actual sprite `00453C80` forwards raw x/y float bits via plain
+DWORD pushes (a provisional raw ABI proxy, NOT proven historical
+C++ signature). **22 attempted whole-parent compiler trials (20 compiled, two
+original VC7.1 C2105 postfix-increment rejections)** reduced source 130/128 x86 to 128/128 and 128/126 to 126/126
+but did NOT recover native register cycle; do not promote them.
+[F649 native original CC whole-case PE field and true register
+negative proof](FIGHTER_COMPLEX_STAGE_CC_F649.md),
+[provisional C++ source](../probes/FighterComplexStageCCF649.inc).
+
+```bash
+scripts/repo-python scripts/verify-fighter-complex-stage-cc-f649.py
 ```
 
 ## 4. Other three unmatched authored *whole* functions
