@@ -26,9 +26,20 @@ types are provisional; machine-code matches alone do not prove an entire
 original class layout. The target's official distribution provenance has not
 been independently verified; do not substitute a localized `th075c.exe`.
 
-These counts are a snapshot after the **F256-F269 plus F271-F274 and F278/F279/F281-F288/F292-F294 plus F300/F301/F303/F304/F309/F311/F314/F315/F317-F320 plus F324-F326/F328/F334/F335/F337-F342/F345-F348/F353-F354/F361-F366/F370-F371/F374-F379/F386/F389/F391-F395/F403/F407/F414-F415/F421-F422/F427-F432/F435/F437/F440/F445-F448/F454/F458-F461/F463/F465/F467-F469/F474/F479/F481/F484-F485/F488-F492/F494/F496/F499/F504/F514/F516/F535** cold-exact adoptions
-(2026-10-29). Always get live counts from
+These counts are the verified snapshot after **F535** (2026-10-29).
+The full, constantly changing register of accepted units is
+`config/functions.csv` and `config/match-units.toml`, **not** a long
+manual list of batch IDs. For live counts run
 `scripts/repo-python scripts/report-reconstruction-status.py --summary`.
+Exactly **25** currently `owner=authored,status=unclassified` functions
+remain: **22** original 28K–82K fighter action bosses, the **2,987-byte**
+WinMain, **248-byte** SceneObject destructor and **171-byte** archive
+nonvirtual destructor. The old 303-byte Replay renderer, two 169-byte
+rank labels, 208-byte StaffRoll and 92-byte progress counter are all
+**already cold exact**; do not retry historical pending experiments.
+The 22-boss original-only verifier records **1,102,055 uncredited CODE
+bytes** and 16,123 uncredited post-RET switch DATA bytes. See the
+[active handoff](docs/RE_HANDOFF.md), not outdated chronological notes.
 Local Git commits preserve checkpoints; they are **not external Oracle
 verification receipts**.
 
@@ -53,6 +64,7 @@ git status --short --branch
 scripts/repo-python scripts/verify-target.py
 scripts/repo-python scripts/validate-tracking.py --require-target
 scripts/repo-python scripts/report-reconstruction-status.py --summary
+scripts/repo-python scripts/audit-active-handoff.py
 scripts/repo-python scripts/ghidra.py check
 ```
 
@@ -101,7 +113,7 @@ their evidence or verifiers. See [the workflow](docs/RE_WORKFLOW.md).
 | [Ghidra MCP guide](docs/GHIDRA_MCP.md) | Headless project/bridge operation |
 | [Origin review](docs/ORIGIN_PENDING_REVIEW.md) | 97 unclassified origins |
 | [Historical handoffs](docs/history/RE_HANDOFF_THROUGH_F183.md) | Superseded records; not the current task list |
-| Private cache inventory (`.analysis/cache-archives/`) | Compressed/recoverable old probe PDBs; see [storage retention and restore](docs/RE_HANDOFF.md#5-diskstorage-hygiene-and-provenance) |
+| [Storage protection and recovery](docs/STORAGE_HYGIENE.md) | SHA256-verified archive/restore of historical JSON snapshots and regenerable probe PDBs; protect Wine, original PE, COFF objects and current source |
 
 The pre-cleanup verbose F223 handoff and README are also recoverable from
 Git commit `ca81d72`; older origin work is retained under `docs/history/`,

@@ -12,7 +12,8 @@ The 98% authored-byte objective remains incomplete; do not declare completion
 without a verified build.
 
 Use the existing Ghidra wrapper and local tools; do not use REA.
-Preserve all accepted exact units and origin evidence through R268. The 97
+Preserve **all** accepted exact units and origin evidence, including
+the historical R268 checkpoint and every later verified adoption. The 97
 unresolved origins remain unknown; they do not block reconstruction of
 independently reviewed authored functions. Include all pending bytes in the conservative goal denominator.
 Start with the live cohort in `docs/RE_HANDOFF.md`; historical experiments
@@ -41,6 +42,7 @@ reconstruction state, inspect `git status` and run from the repository root:
 scripts/repo-python scripts/verify-target.py
 scripts/repo-python scripts/validate-tracking.py --require-target
 scripts/repo-python scripts/report-reconstruction-status.py --summary
+scripts/repo-python scripts/audit-active-handoff.py
 scripts/repo-python scripts/ghidra.py check
 ```
 
@@ -114,6 +116,10 @@ or verifier changes. Documentation-only changes need `git diff --check`.
   private Ghidra project in `ghidra-project/`. A lossless SHA256-verified
   archive of regenerable historical probe `.pdb` files is under
   `.analysis/cache-archives/` with an inventory and restoration steps.
+  Old pre-F184 parent/adoption JSON snapshots are also individually
+  SHA256-verified and losslessly `.zst`-compressed, with the reversible
+  `scripts/archive-historical-analysis.py` script and local manifest.
+  Detailed allowed cleaning and restore paths: `docs/STORAGE_HYGIENE.md`.
   Protect H184 frozen objects/PDBs, original native and best whole-boss
   probes, `build/matching/`, `.analysis/vc71-wine/` and the Ghidra project.
   Never commit game executables/data,

@@ -16,6 +16,7 @@ keep compiler builds serial and reuse existing private environments.
 git status --short --branch
 scripts/repo-python scripts/verify-target.py
 scripts/repo-python scripts/validate-tracking.py --require-target
+scripts/repo-python scripts/audit-active-handoff.py
 scripts/repo-python scripts/report-reconstruction-status.py --summary
 scripts/repo-python scripts/ghidra.py check
 ```
@@ -143,17 +144,30 @@ commit promptly, then update the **concise** active
 archival docs. Git commits are local checkpoints, **not external
 Oracle acceptance**. Never claim an unavailable push succeeded.
 
-## 6. Keep research evidence without clutter
+## 6. Keep evidence and save space **without losing it**
 
-Keep `.analysis/vc71-wine`, private Ghidra project, shared
-`.tools`, accepted source/config/tests/manifest, original native
-disassembly and best complete negative probes. Repeated failed source-variable permutations can be compacted into
-verified private archives and summary tables; only **regenerable**
-cache objects may be removed. The 2026-10-28 lossless archive
-`.analysis/cache-archives/probe-pdb-unprotected-2026-10-28.tar.gz`
-contains 2,031 old PDBs and a full SHA256 per-file receipt. Restore one
-with `tar -xzf ARCHIVE -C . build/probes/name.pdb`; first verify its
-SHA256 against the receipt. All `build/probes/*.obj`, 15 H184-protected
-PDBs and `build/matching/` were left available. Protect the native
-PE, Wine prefix, Ghidra project, H184 frozen objects and active
-big-boss negative baselines. See the [handoff](RE_HANDOFF.md).
+Preserve the pinned Japanese original PE, `.analysis/vc71-wine/` VC7.1
+prefix, `ghidra-project/`, `.tools/`, all accepted source/config/manifest
+and `build/matching/` objects, all original native/COFF/whole-function
+evidence and meaningful negative C++ source experiments. **Never skip or
+reset dirty work.** Repeated historical snapshots may be moved to
+SHA256-verified, individually reversible archives; do not mistake old
+ignored JSON backups for the frozen live adoption manifest.
+
+On 2026-10-29, **135 old parent/adoption snapshots** (649,802,039 bytes)
+were losslessly compacted to adjacent `.json.zst` archives (35,694,113
+bytes), with SHA256 index under `.analysis/cache-archives/`. Restore one:
+
+```bash
+scripts/repo-python scripts/archive-historical-analysis.py --restore .analysis/f180-background-counters/parent-and-seed.json
+```
+
+A second **1,002 unprotected old probe PDBs** (71,393,280 bytes) were
+losslessly archived to the SHA256-verified 2026-10-29 tar.gz batch; the
+previous 2,031-PDB 2026-10-28 archive remains intact. Check the adjacent
+per-file receipts before restoring. **All 15 H184-protected original
+PDB/COFF pairs are still directly present and byte-verified; all
+`build/probes/*.obj` are still present.** Only actual cold-replayed
+new/changed units should ever rebuild. Full details and safe recovery:
+[STORAGE_HYGIENE.md](STORAGE_HYGIENE.md). The historical F-series
+failure sources and original boss decompilations remain preserved.

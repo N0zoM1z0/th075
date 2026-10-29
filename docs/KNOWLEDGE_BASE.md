@@ -1,19 +1,33 @@
 # TH075 reconstruction knowledge base — cumulative historical evidence
 
-**Current snapshot: 2026-10-28, after F339.** This document is a
-**chronological experiment log**, not the active backlog. Older F-series
-sections describe observations *at that stage*; many statements such as
-"still unaccepted" or "remain nonexact" were true **then**, but have
-since been superseded. Do not use them as present-tense status. The
-current compact [handoff](RE_HANDOFF.md), original pinned native
-`resources/th075.exe`, and canonical ledgers outrank historical prose.
+**Current snapshot: 2026-10-29, after F535.** This document is a
+**chronological experiment log**, not the active backlog. Earlier F-series
+sections describe *historical* status; older claims such as "still pending",
+"nonexact", or "no credit" are **not active status** after a later exact
+adoption. The compact [current handoff](RE_HANDOFF.md), SHA-pinned original
+Japanese `resources/th075.exe`, and canonical live ledgers outrank old prose.
 
 ## Current authoritative status and superseded negatives
 
-- **645 cold-exact authored functions**, **813,859 authored CODE bytes**,
-  **41.24% reviewed coverage**, **41.16% conservative coverage**.
-  These are a dated snapshot: always run
-  `scripts/repo-python scripts/report-reconstruction-status.py --summary`.
+- **941 cold-exact source-present functions**, **862,538 original authored
+  CODE bytes**, **43.71% reviewed authored coverage** and **43.63%
+  conservative coverage**. **Only 25 `owner=authored,status=unclassified`
+  function rows currently remain:** 22 giant fighter action/advance bosses
+  totalling 1,102,055 original CODE bytes, WinMain (2,987), SceneObject
+  destructor (248), and ArchiveCatalog nonvirtual destructor (171).
+  All remain nonexact. 97 separate origin-pending candidate rows / 3,608
+  bytes are not automatically credited. These figures are a snapshot;
+  refresh with `scripts/repo-python scripts/report-reconstruction-status.py --summary`.
+- The historical **F339-era snapshot was 645 exact /813,859 bytes /
+  41.24%**, not the current result. Do not carry these values forward.
+- A **746-byte SpriteSequence render** is already exact (F347), as are
+  **874-byte Suika special** (F348), **276-byte two-list effect prune**
+  (F354), **497-byte character cancel animation** (F346), and the
+  **1,268-byte mirrored sprite renderer** (F437). Earlier statements
+  claiming these are "truly nonexact" were superseded by complete
+  native cold-exact C++ adoptions. Likewise, F504 StaffRoll (208), F514
+  Replay filename (303), F516 two rank labels (169 each) and F535 progress
+  postfix increment (92) are **not pending**. See current handoff §3.
 - The original Japanese target version 1.11 SHA256 is
   `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
   Review the source/origin/extent and original relocation evidence for
@@ -31,15 +45,7 @@ current compact [handoff](RE_HANDOFF.md), original pinned native
   MusicRoom catalog boss and 1,722-byte F294 Effects catalog boss
   are also accepted at their *original complete CODE extents*;
   independently compared jump tables do not add CODE credit.
-- Truly **nonexact** current work includes 746-byte
-  `SpriteSequence::RenderElements` (best 599/614 nonfield bytes,
-  33 real fields, three x87 load-order mismatches), 874-byte Suika
-  special state (742/794), 276-byte two-side effect pruner
-  (233/236), 497-byte character-cancel animation (438/445),
-  1,268-byte mirrored sprite, and the 82,796-byte character move boss.
-  Exact original addresses, proof directories and entry points
-  are indexed in the [current handoff](RE_HANDOFF.md).
-- All 97 origin-pending functions / 3,608 bytes are still uncredited.
+- All 97 origin-pending functions / 3,608 bytes remain outside authored accepted CODE until independently reviewed.
   Do **not** infer full source class definitions from borrowed native
   call boundaries, or count Win32/CRT/VC7 helper code. Cold-replay
   **only new or affected units**, never the entire set.
