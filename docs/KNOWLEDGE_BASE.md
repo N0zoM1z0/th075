@@ -12319,3 +12319,27 @@ formal authored whole exact stays 943/862,726 CODE B.
 [F687 full original native PE/COFF proof](SDK_NATIVE_COM_OWNER_DESTRUCTORS_F687.md),
 `scripts/repo-python scripts/verify-sdk-native-com-owner-destructors-f687.py`.
 No mass replay.
+
+
+## F688: original 73-byte SDK-like derived destructor EH lifetime still nonexact
+
+Original PE `0061A453` is **73 complete CODE B/23 genuine x86**.
+Its real MSVC EH prologue uses original handler `00656B2C`
+and `006425A4`, saves derived receiver at `EBP−0x10`, updates real
+virtual table `0065DACC`, stores unwind state EBP−4, and performs
+cleanup `00619172`, conditional CRT `free 00640F15` at member
++0x106C, and final base destructor **0061535A** (independently
+exact source-backed in F686), restoring original FS:[0]. Genuine
+VC7.1 source trials preserve actual resource/base lifetime and test
+four compiler profiles plus eight distinct destructor function-try-
+block/body try-catch EH grammars: ordinary `/O1` and `/O2` forms
+emit 39/41 B without EH (and `/Od /GX` 65 B), while meaningful
+function-try-block variants produce authentic EH prologues but
+**83 B/30 x86** and body catch forms produce **69 B/22 x86**.
+None matches original 73 B/23 x86 or real EBP/EH ownership; all
+remain NONEXACT, zero game-authored or origin-unknown new whole
+function credit. Original source/U unwind code at 00656B2C must
+be investigated before further source acceptance.
+[F688 selected original PE/VC7.1 EH negative evidence](SDK_EH_DERIVED_DESTRUCTOR_NEGATIVE_F688.md).
+Private reproducible probes in ignored `.analysis/f688-eh-derived-dtor/`;
+no all-unit cold replay.

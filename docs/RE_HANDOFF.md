@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F687; earlier frozen handoffs are archived.**
+**Maintained 2026-10-30, after F688; earlier frozen handoffs are archived.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -319,6 +319,17 @@ fabricating an interface class with 57 fake methods. Actual
 original registered direct callers are compiler-classified, but
 historical source provenance stays unknown. [New F687 complete
 native PE/COFF source proof](SDK_NATIVE_COM_OWNER_DESTRUCTORS_F687.md).
+**New F688 original EH negative:** complete original SDK-like
+virtual derived destructor `0061A453` is 73 native B/23 x86,
+with genuine MSVC `_EH_prolog`, saved derived receiver at EBP−0x10,
+real cleanup/free and a call to F686's exact native base destructor.
+Twelve meaningful normal VC7.1 exception/derived destructor sources
+were compiled: ordinary `/O1` and `/O2` forms emit 39/41 B with
+no EH, function-try-blocks emit **83 B/30 x86** with a different
+EH register-state lifecycle, and body-level try/catch emits **69 B/
+22 x86** with wrong EH frame roles. All are NONEXACT; preserve
+original 00656B2C unwind handler and genuine receiver lifetime as
+next research. [F688 original EH negative study](SDK_EH_DERIVED_DESTRUCTOR_NEGATIVE_F688.md).
 F686 earlier recovered 19 bytes of another complete native vtable
 plus real CRT-free virtual destructor;
 [previous F686 proof](SDK_NATIVE_VTABLE_DESTRUCTOR_F686.md).
