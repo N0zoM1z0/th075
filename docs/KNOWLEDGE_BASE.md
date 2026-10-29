@@ -9040,3 +9040,53 @@ and its complete negative-to-positive controls are kept in ignored
 The 1,189 complete inner-case CODE bytes remain part of an unmatched
 whole boss, **not independently exact source**. No new exact CODE/DATA,
 no all-unit replay or external Oracle acceptance.
+
+
+## F562: three complete 102/115/102 actor cases inside 004D7E70 original giant
+
+Full original fighter `004D7E70` (43,601 native CODE bytes) has first-
+switch action 6/7/8 blocks of **352/393/352 original CODE bytes** and
+**102/115/102 real instructions**. Unlike the previous 117-case or
+115-case role families, only original action 7 invokes extra-stage
+`0040FB40(5)` after genuine `S16(+0x62)==4`/x87 `00657D14` test.
+All three stage-motion initializers omit FLAG clear entirely and store
+native position 0.0f/+5.0f/−5.0f, velocity 15.0f and speed 0.65f.
+Original action 6 virtual dispatches through `dword ptr [eax]`, while
+cases 7/8 use `[edx]`. New selected VC7.1 natural C++ source generated
+from the real original PE checks **319/319 true per-fighter GPR/x87/
+branch instructions**, **20/20 native typed COFF call/global fields**,
+140 physical switch DWORD reference partitions and 409 original sparse
+index bytes (969 original after-RET DATA-layout bytes separately).
+Reproducer `scripts/repo-python scripts/verify-fighter-split-stage-4d7e70.py`,
+[F562 original-backed C++ study](FIGHTER_SPLIT_STAGE_F562.md).
+The 1,097 native interior CODE bytes remain within one wholly unmatched
+43,601-byte original boss; no full or split exact source credit, no
+all-unit cold replay or external Oracle receipt.
+
+## F561: independent small-function provenance and destructor stack audit
+
+The intact original 248-byte BattleScene virtual destructor `0043B0B0`
+was re-decoded as **75 real contiguous x86 instructions**, with **12
+physical original COFF fields**. The best genuine C++ F505 baseline
+reproduces the full 248-byte instruction/control geometry but only **191/200
+nonrelocation bytes**: texture implicit delete temporaries are source
+EBP-0x20/-0x1C versus native EBP-0x14/-0x10, and buffers in source
+EBP-0x18/-0x14/-0x10 versus native EBP-0x18/-0x1C/-0x20. The nine
+remaining byte mismatches are genuine local-stack-layout differences,
+not available to mark as exact. Earlier independent real texture/aggregate
+lifetime probes remain under `.analysis/f505-*`, `.analysis/f533-*`,
+`.analysis/f546-*` and current read-only native alignment under
+`.analysis/f561-scene-local-recovery/`.
+
+Two larger *origin-unknown* `004591E0` (417 native CODE bytes) and
+`0045AAE0` (368) were fully decoded as **128 and 118 contiguous
+instructions**, dominated by source-to-destination field-wise copies,
+member helper invocations and an optional EH frame. They appear to be
+class/aggregate copy-construction machinery, **not established original
+game-specific authored behavior**, so no provenance reclassification or
+CODE credit is claimed. `00449DE0` (45 CODE bytes) is a vtable assign
+plus two member construction calls, used by many factory callers;
+`004588B0` is a 43-byte conditional `free` of member +8. These are
+compiler/lifetime hypotheses only until an independent owner/provider
+provenance chain is proven. Original analyses are retained in
+`.analysis/f561-origin-review/`, not substituted for authentic source.

@@ -1,6 +1,6 @@
 # TH075 — current agent handoff
 
-**Maintained: 2026-10-29, after F560; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
+**Maintained: 2026-10-29, after F562; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
 
 ## 1. Current authoritative state (not historical hypotheses)
 
@@ -125,6 +125,21 @@ and affected-only verifier
 `scripts/repo-python scripts/verify-fighter-precontact-stage-action-eight.py`.
 Its 1,189 inner original CODE bytes remain within **unmatched whole
 giant source**; zero split/whole exact CODE credit.
+
+**F562 separately reconstructs the full original action 6/7/8 C++
+in the 43,601-byte fighter giant `004D7E70`**. Its three physical native
+cases contain **102/115/102 x86 instructions and 352/393/352 CODE bytes**
+respectively; only action 7 has the extra x87 stage condition and
+`0040FB40(5)` callback. Newly compiled ordinary VC7.1 C++ matches all
+**319 original GPR/x87/control instruction roles, 20 real COFF
+call/constant fields**, the real action-6 `[eax]` versus action-7/8
+`[edx]` virtual dispatch and all **140 native-style switch DWORD fields
+and 409 exact original sparse indexes**. Actual role speed is 0.65f;
+no source stage branch is fabricated in action 6/8. Reproducer:
+`scripts/repo-python scripts/verify-fighter-split-stage-4d7e70.py`;
+[F562 native original three-case source study](FIGHTER_SPLIT_STAGE_F562.md).
+The **1,097 inner CODE bytes remain inside the nonexact giant**, not
+independent exact function/CODE credit.
 
 **Three other authored functions remain nonexact (all require full CODE):**
 
