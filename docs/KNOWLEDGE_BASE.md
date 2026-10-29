@@ -9519,3 +9519,32 @@ separate after-RET DATA-layout bytes.
 Reproducer `scripts/repo-python scripts/verify-characterobject-contact-stage-f578.py`;
 [F578 contact-stage source study](CHARACTEROBJECT_CONTACT_STAGE_F578.md).
 No standalone split/whole CODE credit, all-unit cold replay or Oracle.
+
+
+## F579: strict native actor effect/spawn+color actions 0x338 and 0x339
+
+Original 33,293-byte `004EBDA0` CharacterObject giant has two
+newly recovered complete physical source case bodies, native
+`0x338` **130 instructions/478 CODE bytes** with real
+00453E60(10.0f) parent setup, effects 00453A70(0x33A) and
+00453A70(0x339), stage-zero scale=1.0f and stage>1 unsigned
+color fade by 20; native `0x339` is a different original
+**80-instruction/309-byte** stage state with real float scale 1.3f
+and color fade by 40. Both actions use genuine x87 global 00659428,
+actual state methods 0040FBB0,0040FA30,0045B830 and real original
+signed stage/frame fields. Fresh one-TU VC7.1 C++ emits **all 210
+original x86 register/x87/branch roles and complete exact native
+case instruction lengths/order**, with 15 authentic typed
+zero-addend physical COFF call/global fields.
+The same C++ implements **21 actual complete original game-action
+bodies** with 2,812 original x86 instruction roles, 10,421 native
+inner CODE bytes and 193 genuine physical call/global COFF refs,
+plus all 60 real native dense switch COFF DWORDs and 198 literal
+compressed sparse-index bytes (438 distinct after-RET DATA).
+No additional read-only instruction swaps; existing F573/F574/F578
+source swap exceptions and F576 EBP frame widths remain explicit.
+Reproducer:
+`scripts/repo-python scripts/verify-characterobject-fade-spawns-f579.py`;
+[F579 native effect/fade source](CHARACTEROBJECT_FADE_SPAWNS_F579.md).
+Original **entire 33,293-byte fighter still nonexact**; no
+split/whole exact CODE/DATA or all-unit cold replay/Oracle acceptance.

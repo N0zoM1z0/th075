@@ -1,6 +1,6 @@
 # TH075 — current agent handoff
 
-**Maintained: 2026-10-29, after F578; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
+**Maintained: 2026-10-29, after F579; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
 
 ## 1. Current authoritative state (not historical hypotheses)
 
@@ -418,6 +418,30 @@ See [F578 native contact-stage study](CHARACTEROBJECT_CONTACT_STAGE_F578.md)
 and `scripts/repo-python scripts/verify-characterobject-contact-stage-f578.py`.
 **Full 33,293-byte giant still unmatched, zero split/whole CODE/DATA
 exact credit.**
+
+**F579 restores two additional complete native gameplay source
+cases `0x338` and `0x339`** inside still-unmatched CharacterObject
+giant `004EBDA0` (33,293 original whole CODE bytes). Native `0x338`
+is a **130-instruction /478-byte** parent-effect spawn, native
+00453E60 setup and 20-byte-color fade action; native `0x339` is
+**80 instructions /309 bytes**, with genuine 1.3f scale and 40-step
+color fade. Both newly selected C++ cases have **strict matching
+native GPR/x87/control/individual byte-width grammar**, not just
+unverified equivalence, and **9+6 genuine typed COFF fields**.
+The same newly compiled C++ source now contains **21 actual
+full original game-action bodies, 2,812 original x86 instruction
+roles, 10,421 native inner CODE bytes, 193 genuine typed
+COFF call/global fields**. Whole native jump DATA still matches
+all 60 dense handler references and 198 original sparse index bytes.
+Previously proven original 0x32A/0x32C/0x335 read-only source-order
+swaps and 0x330/331 real EBP widened slots remain explicitly
+bounded; 0x332 now naturally uses native disp32-width codegen.
+See [F579 native fade/spawn study](CHARACTEROBJECT_FADE_SPAWNS_F579.md)
+and targeted verifier
+`scripts/repo-python scripts/verify-characterobject-fade-spawns-f579.py`.
+The **10,421 original inner CODE bytes remain inside one
+nonexact whole 33,293-byte giant**, not independent exact functions;
+no full cold replay or fabricated coverage credit.
 
 **Three other authored functions remain nonexact (all require full CODE):**
 

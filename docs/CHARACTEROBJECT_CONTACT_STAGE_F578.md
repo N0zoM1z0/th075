@@ -151,3 +151,14 @@ independent case disassembly and read-only swap controls live under
 prove no complete whole boss source acceptance, no independent partial
 function or DATA credit, no all-unit cold replay and no external
 Factory/Oracle acceptance receipt.
+
+## F579 follow-up: next two strict real native action bodies
+
+The same ordinary C++ source now additionally reconstructs complete
+original `0x338` (130 x86 instructions /478 bytes) and `0x339`
+(80/309). Both newer cases strictly match their entire real
+GPR/x87/CFG/instruction width and native COFF references; no new
+read-only instruction swaps are introduced. F578's verifier still
+independently rechecks all 19 prior cases under the larger source.
+See [F579 native effect/fade source](CHARACTEROBJECT_FADE_SPAWNS_F579.md).
+The original entire 33,293-byte giant remains CODE nonexact.
