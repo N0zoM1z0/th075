@@ -1,6 +1,6 @@
 # TH075 — current agent handoff
 
-**Maintained: 2026-10-29, after F569; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
+**Maintained: 2026-10-29, after F571; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
 
 ## 1. Current authoritative state (not historical hypotheses)
 
@@ -256,6 +256,21 @@ and targeted
 scripts/repo-python scripts/verify-characterobject-single-switch-source.py
 --boss 0x0050A580. The 488,664 original whole function CODE bytes
 remain unmatched and receive zero new exact CODE/DATA credit.
+
+**F570/F571 independently rechecked both near-exact smaller authored
+destructor blockers**, not just the giant fighters: original 171-byte
+ArchiveCatalog 0041CE50 and 248-byte SceneObject 0043B0B0.
+Eighteen new VC7.1 archive lifetime/typed-pointer source variants
+produced fourteen 177-byte bodies or four 171-byte bodies still only
+108/115 or 102/115 comparable bytes. Ten new SceneObject source
+variants (aggregate before texture delete, reversed fields and scoped/
+named texture receivers) produced six 248-byte mismatches at 191/200
+or 189/200 and four 251-/255-byte size mismatches. The original
+three-way archive stack-slot permutation and texture/temp/three-heap
+slot allocation are not yet solved. Preserve all negative artifacts
+and treat neither function as exact.
+[F570/F571 full local-lifetime study](DESTRUCTOR_LIFETIME_CONTROLS_F570_F571.md).
+Zero accepted CODE/DATA and no all-unit replay.
 
 **Three other authored functions remain nonexact (all require full CODE):**
 

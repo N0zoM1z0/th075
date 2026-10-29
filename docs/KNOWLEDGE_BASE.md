@@ -9268,3 +9268,32 @@ See [F569 one-switch native original study](CHARACTEROBJECT_SINGLE_SWITCH_F569.m
 and
 scripts/repo-python scripts/verify-characterobject-single-switch-source.py.
 No full all-unit replay or external Oracle receipt.
+
+## F570/F571: complete original small destructor lifetime counterexamples
+
+The intact original ArchiveCatalog nonvirtual RAII destructor at
+0041CE50 (171 bytes, 51 x86 instructions, 14 authentic COFF fields)
+still has a real 3-way saved-local stack slot permutation:
+native resource-delete temps EBP-0xC/-8 versus small C++ -0x10/-0xC;
+native filename -0x10 versus C++ -8. Eighteen new natural C++
+lifetime declarations (explicit resource pointers/const, references,
+nested scopes, before-loop declaration orders) compiled under the
+original VC7.1 /GX- profile. Four 171-byte outputs still matched
+only 108/115 or 102/115 nonrelocation bytes, and 14 were 177 bytes.
+No exact source or credit.
+
+The original SceneObject virtual destructor at 0043B0B0 (248 bytes,
+75 x86 instructions, 12 real COFF fields) still has texture delete
+temporary EBP slots -0x14/-0x10 versus C++ -0x20/-0x1C, and real
+heap-free local slots -0x18/-0x1C/-0x20 versus C++ aggregate
+-0x18/-0x14/-0x10. Ten new VC7.1 /GX source combinations moving the
+aggregate ahead of texture delete, reversing aggregate members and
+introducing explicit pointer scopes/references produced six 248-byte
+mismatches (191/200 or 189/200 comparable bytes) and four
+251-/255-byte nonoriginal function lengths. Real owner/lifetime
+inference remains necessary, not compiler-byte patching.
+Complete independent comparison logs/source remain preserved under
+.analysis/f570-archive-cxx-lifetimes/ and
+.analysis/f571-scene-aggregate-lifetimes/. See
+[F570/F571 destructor negative source matrix](DESTRUCTOR_LIFETIME_CONTROLS_F570_F571.md).
+No new exact CODE/DATA or full cold replay.
