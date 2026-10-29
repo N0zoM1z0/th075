@@ -1,6 +1,6 @@
 # TH075 — active reconstruction handoff
 
-**Maintained 2026-10-29 after F618.** This is the **only current task list**.
+**Maintained 2026-10-29 after F620.** This is the **only current task list**.
 The [F540–F596 research chronology](history/RE_HANDOFF_F540_THROUGH_F596.md),
 [knowledge base](KNOWLEDGE_BASE.md), and older F-series studies are
 **historical evidence**, not statements of current progress. Independently
@@ -465,6 +465,34 @@ whole-function exact credit. All official 943/862,726 unchanged.
 ```bash
 scripts/repo-python scripts/verify-fighter-air-transition-f617.py --boss 0x0045DD70
 scripts/repo-python scripts/verify-fighter-air-transition-f617.py --negative-actor
+```
+
+**F619/F620 investigate a different native 64/64/44-instruction
+case family inside `005AEEC0` giant fighter.** Original 0x5D and
+0x5E are **each 210 native bytes/64 x86/3 real COFF call fields**,
+not F617's 101-x86 air grammar. Normal C++ reproduces complete
+native size/instruction count/callees but still has **42 native
+GPR/CFG source-role mismatches PER CASE**. The actual next case
+`0x5F` has **44 native x86/144 original CODE bytes/3 typed call
+fields**, and its natural C++ source is STRICT 44/44 GPR/x87/CFG
+role-identical **only in a whole-parent source still using diagnostic
+5D/5E placeholders**. When both real 64-instruction predecessor
+C++ bodies are inserted in that same newly compiled parent, the
+0x5F roles rotate and become **26 differences** as well. This
+establishes the importance of *enclosing* source-register grammar;
+no full three-case simultaneous exactness or whole giant credit.
+F620 adds only **one strict original inner case /44 x86/144 native
+internal CODE bytes/3 genuine typed COFF** to the bounded evidence,
+bringing F598–F620 to **337 strict original game-case subranges/
+87,046 original CODE bytes**. All official 943/862,726 authored
+whole-exact units unchanged. [F620 strict positive and explicit
+negative original PE proof](FIGHTER_SIMPLE_AIR_CONTEXT_F620.md),
+[native-positive 0x5F source](../probes/FighterFacing5FF620.inc),
+[native-geometry-only 0x5D/E source](../probes/FighterSimpleAirTransitionF619.inc).
+
+```bash
+scripts/repo-python scripts/verify-fighter-facing5f-f620.py
+scripts/repo-python scripts/verify-fighter-facing5f-f620.py --negative-context
 ```
 
 Never run a full 943-unit cold replay.

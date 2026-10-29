@@ -10753,3 +10753,33 @@ constructors are source-backed but uncredited pending provenance.
 reproducible `scripts/repo-python scripts/verify-background-owner-constructor-f618.py`.
 No full 943-unit cold replay and official 943/862,726 authored exact
 unchanged.
+
+
+## F619/F620: native giant 0x5AEEC0 64/64/44 x86 and genuine original source register-cycle dependency
+
+Original Japanese TH075 PE physical native packed slots 19/20/21/22
+bound case0x5D (210 B/64 x86/3 real typed calls), case0x5E
+(210 B/64 x86/3 real typed calls), and next case0x5F
+(144 B/44 x86/3 true typed PE calls), each inside the SAME still-
+nonexact `005AEEC0` fighter giant. Natural C++ for action0x5F,
+`probes/FighterFacing5FF620.inc`, is **44/44 actual native x86
+GPR/x87/CFG role/size identical**, with all original 3 true
+zero-addend PE-targeted call refs to `0040FA30/0040FAC0/0040FAC0`,
+when the 5D/E predecessors remain diagnostic placeholders in the
+newly built whole-parent source; all 30 prior original native case
+roles and afterRET switch DATA remain verified on that same object.
+However, replacing those placeholders with real C++ original-
+shaped `probes/FighterSimpleAirTransitionF619.inc` generates the
+correct 64/64 original x86/210/210 byte geometry and 3 COFF fields
+per action BUT remains **42/42 actual native GPR/CFG roles
+nonexact**; moreover the 0x5F native roles then shift to 26
+mismatches without changing that case source. F620 therefore adds
+only **one STRICT source-backed 144-byte original inner game case**
+and explicitly preserves the negative multi-case compiler context;
+none of the enclosing 005AEEC0 giant is fully native exact.
+F598–F620 now 337 strict internal case subranges/87,046 original
+inner CODE bytes, NOT whole-function acceptance. [F620 original
+native positive+negative source proof](FIGHTER_SIMPLE_AIR_CONTEXT_F620.md),
+targeted `scripts/repo-python scripts/verify-fighter-facing5f-f620.py
+--negative-context`. Official 943/862,726 authored complete exact
+ledger unchanged; no all-unit cold replay/Oracle claim.
