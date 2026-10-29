@@ -116,7 +116,7 @@ def natural_source(addr,boss,report,mapped,reader,pe,decoder,h,originals):
     return src
 
 
-def check_source(reader,pe,decoder,boss,report,mapped,code,refs,originals,h):
+def check_source(reader,pe,decoder,boss,report,mapped,code,refs,originals,h,extra_after_a5_x86=0):
     addr=boss['address'];ins=[]
     for x in decoder.disasm(code,0):
         ins.append(x)
@@ -128,20 +128,26 @@ def check_source(reader,pe,decoder,boss,report,mapped,code,refs,originals,h):
     by={x['action']:int(x['handler'],16) for x in mapped}
     old={a:h['f633'].original_case(reader,pe,decoder,boss,by,a)
          for a in h['f639'].ACTIONS}
+    need(extra_after_a5_x86 in (0,2*97),
+         f'{addr:#x}: only two real complete 97-x86 A7/A8 cases may follow A5')
     h['f639'].check_fresh_whole(reader,pe,decoder,boss,report,mapped,code,refs,
-                                 old,h,extra_after_last_x86=3*71)
+                                 old,h,extra_after_last_x86=3*71+extra_after_a5_x86)
+    wanted=0xA8 if extra_after_a5_x86==0 else 0xB5
     marks=[]
     for f in refs:
         if 'g_FighterProbeMarker' not in f['symbol']:continue
         instr=next((x for x in ins if x.address<=f['offset']<x.address+x.size),None)
-        if instr is not None and instr.mnemonic=='mov' and instr.op_str.endswith(', 0xa8'):
+        if instr is not None and instr.mnemonic=='mov' and instr.op_str.endswith(f', 0x{wanted:x}'):
             marks.append(instr)
     need(len(marks)==1,
          f'{addr:#x}: actual original next case0xA7 marker must be uniquely source-typed')
     end=ins.index(marks[0]);num=3*71
-    need(end>=num,f'{addr:#x}: three original 71-x86 source cases truncated')
-    source=ins[end-num:end]
-    need(source[-1].address+source[-1].size==marks[0].address,
+    need(end>=num+extra_after_a5_x86,
+         f'{addr:#x}: three original 71-x86 source cases truncated by later source')
+    source=ins[end-num-extra_after_a5_x86:end-extra_after_a5_x86]
+    true_next=(ins[end-extra_after_a5_x86].address if extra_after_a5_x86
+               else marks[0].address)
+    need(source[-1].address+source[-1].size==true_next,
          f'{addr:#x}: genuine original final A5 physical x86 source end not adjacent A7')
     receipts=[]
     for ordinal,action in enumerate(ACTIONS):

@@ -1,6 +1,6 @@
 # TH075 — active reconstruction handoff
 
-**Maintained 2026-10-29 after F641.** This is the **only current task list**.
+**Maintained 2026-10-29 after F642.** This is the **only current task list**.
 The [F540–F596 research chronology](history/RE_HANDOFF_F540_THROUGH_F596.md),
 [knowledge base](KNOWLEDGE_BASE.md), and older F-series studies are
 **historical evidence**, not statements of current progress. Independently
@@ -958,6 +958,39 @@ unchanged. [F641 original per-case counter-free/native PE proof](FIGHTER_NO_COUN
 
 ```bash
 scripts/repo-python scripts/verify-fighter-no-counter-landings-f641.py --boss 0x00564BE0
+```
+
+**F642 two genuine original 97-x86 projectile-launch actions A7/A8
+strict in all ELEVEN whole fighter giant source TUs.** Original
+case A7→A8→B4 calls real native animation `0046D000(0xFA)`, game
+`00453D60(0x2C)`, spawns projectile kind `0x38`/side1 with true
+signed-byte direction×30 int-to-float `FILD`, position plus original
+float global `00657888` via **native member-first `FLD` then global
+`FADD`**, and later calculates original cooldown rebound from another
+native `MOV EBPlocal/FILD` × real `006590B4`. The initial natural
+C++ `POS48 + global` emitted two wrong x87 roles despite 97 correct
+x86 count and 12 true COFF fields; **19 fresh source grammar trials**
+found natural `F32(0x48)+global` restores exact original x87 order.
+All **22 original inner case bodies /2,134 native GPR/x87/CFG roles
+/7,918 uncredited original native CODE bytes /264 genuine typed
+PE/COFF fields** now source-strict in new actual whole-fighter VC7.1
+objects, each retaining previous F641/F639/F637/F636/F633/F631/
+F628 original cases, mode0x63 when strict, thirty prior game action
+case checks and complete separately owned afterRET switch DATA.
+Native `004AC040` 362B case has **four genuine wide EBP signed-int
+scratch MOV/FILD accesses**, and wide `00564BE0` 447B case has
+**27 saved-this receiver EBP−0x88 widenings +four separate scratch
+widenings + one native near JNE** (not 31 saved-this MOVs).
+Previous native 0x91 35/55-register-cycle negatives remain pending,
+all whole giant CODE still NONEXACT. F598–F642 cumulative
+**544 source-backed original game case interiors/148,405 native
+inner CODE bytes**; official whole-authored exact 943/862,726
+unchanged. [F642 original source/PE/COFF native projectile proof](FIGHTER_PROJECTILE_LAUNCH_F642.md),
+[normal C++](../probes/FighterProjectileLaunchF642.inc).
+
+```bash
+scripts/repo-python scripts/verify-fighter-projectile-launch-f642.py --boss 0x00564BE0
+scripts/repo-python scripts/verify-fighter-projectile-launch-f642.py --boss 0x004AC040
 ```
 
 ## 4. Other three unmatched authored *whole* functions

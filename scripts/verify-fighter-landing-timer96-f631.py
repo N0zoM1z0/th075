@@ -218,13 +218,16 @@ def verify_new_obj(reader,pe,decoder,boss,report,mapped,code,refs,real,info,h,ex
     count=info['original_complete_x86_instructions']
     need(extra_sibling_x86 in (0,3*73,3*75,5*73,5*75,5*73+66,5*75+68,
                                5*73+66+3*73,5*75+68+3*73,
-                               5*73+66+3*73+3*71,5*75+68+3*73+3*71),
+                               5*73+66+3*73+3*71,5*75+68+3*73+3*71,
+                               5*73+66+3*73+3*71+2*97,5*75+68+3*73+3*71+2*97),
          f'{addr:#x}: only actual complete three 73/75-x86 97/98/9A siblings may follow 0x96')
     wanted=(0x98 if extra_sibling_x86==0 else
             0x9C if extra_sibling_x86 in (3*73,3*75) else
             0x9F if extra_sibling_x86 in (5*73,5*75) else
             0xA0 if extra_sibling_x86 in (5*73+66,5*75+68) else
-            0xA4 if extra_sibling_x86 in (5*73+66+3*73,5*75+68+3*73) else 0xA8)
+            0xA4 if extra_sibling_x86 in (5*73+66+3*73,5*75+68+3*73) else
+            0xA8 if extra_sibling_x86 in (5*73+66+3*73+3*71,5*75+68+3*73+3*71)
+            else 0xB5)
     marker=[]
     for field in refs:
         if 'g_FighterProbeMarker' not in field['symbol']:continue

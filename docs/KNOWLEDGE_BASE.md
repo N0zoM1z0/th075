@@ -11325,3 +11325,45 @@ original case bodies/140,487 original inner CODE bytes**, not
 accepted whole authored exact functions. [F641 native case proof](FIGHTER_NO_COUNTER_LANDINGS_F641.md),
 reproducible `scripts/repo-python scripts/verify-fighter-no-counter-landings-f641.py --boss 0x0058AF60`.
 Official 943/862,726 whole authored exact unchanged; no full cold replay.
+
+
+## F642: twenty-two full 97-x86 original projectile A7/A8 game-case interiors, recovered natural member x87 order
+
+Real pinned Japanese TH075 original PE A7/A8 are separate complete
+**97-native-x86** projectile launch/boost cases inside each of eleven
+still-NONEXACT fighter `Advance()` giants. They call true native
+`0046D000(0xFA)`/`00453D60(0x2C)`, set short cooldown
+`+0xF00` or real `005AEEC0 +0xEFC` to 180, spawn genuine kind
+0x38 side1 via `00453C80`, and compute signed facing byte×30
+into genuine `MOV EBP−scratch/FILD`, plus original y position
+`F32(0x48)+g_ContactProjectionAt00657888`. **Important**:
+ordinary C++ `POS48+global` alias or commuted expression made
+native x86 ordinals34/35 `FLD global/FADD member` rather than
+**original `FLD member/FADD global`**. Of 19 normal whole-parent
+VC7.1 source-expression trials, natural `F32(0x48)+global`
+restores original x87/CFG roles; **97/97 genuine original native
+GPR/x87/CFG roles and 12 actual typed PE/COFF symbol targets per
+case** now source-strict in all eleven new whole-giant C++ TUs.
+After native strict ground correction it computes cooldown rebound
+from second genuine short→int scratch `FILD` × original global
+`006590B4`, decrements counter by 10 while positive, and native
+A7 finishes action0 / A8 action2. Special original `004AC040`
+362B source has four real +3-byte EBP scratch `MOV/FILD` operand
+widths; `00564BE0` original 447B source has **27 +3-byte native
+EBP−0x88 saved-this MOV loads plus 4 genuine scratch widenings and
+one near JNE +4 bytes**. Corrected strict original x86 width test
+does not falsely classify all 31 widened instructions as receivers.
+F642 yields **22 true original complete inner cases /2,134 native
+x86 roles /7,918 original internal CODE bytes/264 real typed
+zero-addend COFF fields**, and recursively rechecks previous F641
+A3/A4/A5, F639 9F/A0/A1, F637 9E, F636 pair, F633 trio,
+F631 96, F628 three cases, mode63 and thirty original F614 game
+case proofs and all original afterRET packed DATA in same new giant.
+Prior source GPR cycle negative cases remain NONEXACT. F598–F642
+strict inner study **544 original source-backed case bodies/148,405
+original native inner CODE bytes**; no accepted whole giant function
+or additional whole authored exact bytes. [F642 actual PE/x87
+source/typed relocation proof](FIGHTER_PROJECTILE_LAUNCH_F642.md),
+selected `scripts/repo-python scripts/verify-fighter-projectile-launch-f642.py --boss 0x004AC040`.
+Official 943/862,726 authored whole exact unchanged, no full cold
+replay or remote Oracle acceptance.
