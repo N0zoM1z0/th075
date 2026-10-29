@@ -1,6 +1,6 @@
 # TH075 — current agent handoff
 
-**Maintained: 2026-10-29, after F563; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
+**Maintained: 2026-10-29, after F564; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
 
 ## 1. Current authoritative state (not historical hypotheses)
 
@@ -158,6 +158,21 @@ and targeted reproducer
 --boss 0x004F7130`. The 2,440 original internal CODE bytes remain
 inside **two unaccepted whole giant bosses**; zero split/whole exact
 CODE credit.
+
+**F564 integrates all eleven actual native actions 0..10 into one
+newly compiled natural C++ Advance() function per whole original fighter**
+for 004F7130 (44,211 CODE) and 005AEEC0 (71,616 CODE). Two fresh VC7.1
+source builds verify **all 22 complete original action cases, 1,296 real
+GPR/x87/branch/length instruction roles and 146 genuine typed COFF fields**
+plus the full 305 physical switch DWORD fields, default/repeated
+destinations, 822 exact sparse bytes and 2,042 after-RET DATA-shape
+bytes. With real action6-8 source in the same function, action9/10
+register allocation also reaches the native grammar. See
+[F564 eleven-case integrated source study](FIGHTER_INTEGRATED_ELEVEN_CASES_F564.md)
+and scripts/repo-python scripts/verify-fighter-integrated-opening-switch.py
+--boss 0x004F7130. All 4,558 original inner CODE bytes remain inside
+**two nonexact giant functions**, with later action cases/owner frame
+not reconstructed and no whole/split CODE exact credit.
 
 **Three other authored functions remain nonexact (all require full CODE):**
 

@@ -9121,3 +9121,25 @@ and `scripts/repo-python scripts/verify-fighter-conditional-override-actions.py`
 The **2,440 original internal CODE bytes** are not independently exact
 functions and remain within **115,827 unmatched whole-fighter CODE bytes**.
 No total cold replay, target assembly graft or external Oracle receipt.
+
+## F564: integrated complete first-eleven action cases in two giant C++ switches
+
+Two **single-TU** source experiments now compile all true original
+first-table actions 0..10 together in the complete native contexts of
+44,211-byte 004F7130 and 71,616-byte 005AEEC0 fighter controllers.
+The entire original giant CODE SHA and after-RET DATA are checked
+before each selected compiler invocation. **22 complete native
+case structures** (1,296 original x86 per-fighter GPR/x87/branch and
+instruction-length roles, 4,558 real inner CODE bytes) match the
+new natural VC7.1 source; **146 genuine typed COFF call/global fields**
+also match original physical instruction ordinals, along with all
+305 original switch DWORD COFF fields, repeated/default handler
+partitions, 822 literal sparse map bytes and 2,042 after-RET DATA
+layout bytes. Combined action9/10 source now has original GPR
+allocations for these two fighters where earlier isolated probes did
+not, showing that the enclosing C++ case structure affects compiler
+register layout. Later action labels remain diagnostic-only marker
+stores: the **115,827 complete original giant CODE bytes are still
+unmatched**. [F564 source integration](FIGHTER_INTEGRATED_ELEVEN_CASES_F564.md);
+reproducer scripts/repo-python scripts/verify-fighter-integrated-opening-switch.py.
+No split/whole CODE credit, all-unit cold replay or external Oracle.
