@@ -1,6 +1,6 @@
 # TH075 — current agent handoff
 
-**Maintained: 2026-10-29, after F551; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
+**Maintained: 2026-10-29, after F553; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
 
 ## 1. Current authoritative state (not historical hypotheses)
 
@@ -47,6 +47,17 @@ virtual calls remain exact in source shape. See [F551 action-six/seven family
 source study](FIGHTER_ACTIONSEVEN_NATIVE_CPP.md) and
 `scripts/repo-python scripts/verify-fighter-action-seven-natural-source.py
 --boss 0x005D73C0`. **No whole giant or split-case CODE credit.**
+
+**F553 additionally recovers actual original action 8** in three native
+fighters through newly compiled natural C++. Reimu and `005D73C0` retain
+104/104 native instructions; `0058AF60` has a *real* 102-instruction
+variant omitting `FLAG = 0`, with 352 CODE bytes rather than 362. Each
+character's C++ switch now independently validates complete actions
+6, 7, 8: **934/934 per-fighter native instruction roles, 54 authentic
+COFF references** plus full source-native switch-table layout. See
+[F553 action-eight source proof](FIGHTER_ACTIONEIGHT_NATIVE_CPP.md) and
+`scripts/repo-python scripts/verify-fighter-action-eight-natural-source.py
+--boss 0x0058AF60`. No split/whole giant exact CODE credit.
 
 **Three other authored functions remain nonexact (all require full CODE):**
 

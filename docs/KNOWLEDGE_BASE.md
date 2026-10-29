@@ -8873,3 +8873,23 @@ independent functions. Reproduce with
 full native source audit:
 [F551 two-case study](FIGHTER_ACTIONSEVEN_NATIVE_CPP.md). No credited CODE,
 full cold replay or Oracle receipt.
+
+
+## F553: real action-eight sources expose missing flag-clear in one fighter
+
+Full original first-table DWORD bounds show 104/104 instructions and
+362 bytes for native action 8 in Reimu `0045DD70` and `005D73C0`, but
+**only 102 native instructions /352 bytes for `0058AF60`**. All three
+perform original byte-state test `this+0x511==4`, pass 0xCE to original
+`0040FAC0`, and initialize `this+0x50=-4.0f`; unlike the other two,
+`0058AF60` truly omits a `FLAG = 0` write. The natural C++ source omission
+reproduces the physical original code without fake padding or ASM.
+Three newly rebuilt selected native C++ TUs now check **complete actions
+6, 7, 8** together: **934/934 actual native GPR/x87/branch instructions,
+54/54 real COFF call/float fields**, 422 physical native-style DWORD
+jump refs, 1,323 literal original sparse indexes and full original
+3,011 after-RET DATA-shape bytes. The 3,248 inner-case CODE bytes remain
+inside the 153,511-byte unmatched original giant functions. See
+[F553 whole-native action-eight study](FIGHTER_ACTIONEIGHT_NATIVE_CPP.md)
+and `scripts/repo-python scripts/verify-fighter-action-eight-natural-source.py`.
+No new exact CODE/DATA, all-unit replay or external Oracle acceptance.
