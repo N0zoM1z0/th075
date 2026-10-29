@@ -26,7 +26,7 @@ types are provisional; machine-code matches alone do not prove an entire
 original class layout. The target's official distribution provenance has not
 been independently verified; do not substitute a localized `th075c.exe`.
 
-These snapshot counts were rechecked after **F657** (2026-10-30).
+These snapshot counts were rechecked after **F658** (2026-10-30).
 The **live** sources of truth, not any dated prose milestone, are `config/functions.csv`,
 `config/function-origins.csv`, and `config/match-units.toml`.
 Refresh using `scripts/repo-python scripts/report-reconstruction-status.py --summary`.
@@ -68,16 +68,18 @@ and `00564BE0` still has **80/78 genuine wrong GPR/CFG roles**
 despite matching x86 count and all 11 real PE/COFF fields; **do not
 promote** it to exact just because the case body geometry matches.
 
-Separately, recent **whole-function** VC7.1 C++ probes have fully
-reproduced 46 origin-unknown original functions /962 native CODE bytes,
-plus the distinct prior F595 **40-byte** three-field setter: **47
-complete origin-unknown source-backed originals /1,002 bytes**, all
-uncredited pending authored-vs-compiler/library provenance. Latest
-F655 proves **seven previously unsourced independent complete original
-leaves /73 linked native CODE bytes /43 x86 roles /one genuine REL32**,
-including a 19-byte real native call forwarder. Their real original
-callers do not determine historical authored-vs-vendor ownership.
-[Full selected leaf proof](docs/GAME_UNATTRIBUTED_LEAVES_F655.md).
+Separately, **whole-function** VC7.1 C++ probes now reproduce
+**66 distinct historical origin-unknown complete original functions /
+1,183 original native CODE bytes**, all uncredited pending actual
+source ownership. F658 adds **19 independently registered complete
+5/8/11/14/16-byte leaf functions, 181 original CODE bytes and 111
+native x86**, all directly whole-byte identical without relocation
+masking or fake locals. Its native direct-caller graph and provisional
+source grammars cannot determine actual authored-vs-vendor ownership.
+[New F658 whole native leaf proof](docs/GAME_UNATTRIBUTED_SIMPLE_LEAVES_F658.md).
+Earlier F655 independently proved seven additional original unknown
+leaves, including one true source-backed PE-linked CALL forwarder.
+[Previous F655 proof](docs/GAME_UNATTRIBUTED_LEAVES_F655.md).
 All previously accepted 111-byte mapping transform `00455770`,
 77-byte Shift-JIS classifier `0041CA30`, Replay render, StaffRoll,
 rank-label and selected-progress functions stay accepted exact.

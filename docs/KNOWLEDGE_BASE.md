@@ -11716,3 +11716,27 @@ gap. All 22 original whole giants remain NONEXACT and formal
 [F657 genuine case proof](FIGHTER_MOTION_CONTINUATION_F657.md),
 `scripts/repo-python scripts/verify-fighter-motion-continuation-f657.py`.
 No mass replay.
+
+
+## F658: 19 further entire origin-UNKNOWN native leaves, zero relocation byte masks
+
+New ordinary pinned VC7.1 C++ source for **19 distinct original
+registered function extents** yields **181/181 exact complete
+original PE CODE bytes /111 whole x86 instruction roles /zero actual
+COFF fields**. Seven empty CDECL originals (5 bytes each), three
+CDECL argument identities (8 bytes), four pointer+4/8 CDECL returns
+(11 bytes), four first-DWORD receiver accessors (16 bytes) and one
+14-byte `return this` member form are independently reproducible
+from **one** small source translation unit; no fake layout/stack
+padding or invented machine-code bytes. Original caller graph over
+4,351 registered native CODE extents is saved but **not** an origin
+attribution claim: current authored direct callers of these
+simple leaves are zero, and other indirect callers are not excluded.
+Distinct prior F595–F655 origin-unknown cohort 47 functions/1,002
+CODE bytes now grows to **66 independently source-backed complete
+original functions /1,183 native CODE bytes**; all **95 historical
+origin-unknown native candidate rows remain uncredited** and formal
+accepted authored ledger **943 /862,726** is unchanged.
+[Full native F658 proof](GAME_UNATTRIBUTED_SIMPLE_LEAVES_F658.md),
+`scripts/repo-python scripts/verify-game-unattributed-simple-leaves-f658.py`.
+No all-unit cold replay.

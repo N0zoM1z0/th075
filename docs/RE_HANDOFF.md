@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-29, after F655 and the storage/document consolidation.**
+**Maintained 2026-10-30, after F658; earlier frozen handoffs are archived.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -192,15 +192,16 @@ relocation, and a fresh selected-unit cold replay**.
 
 ## 5. Small leaves: whole-byte source evidence ≠ authored attribution
 
-F595 reconstructed `004135F0` (40/40 original whole CODE bytes)
-but historical source ownership remains **unknown**. The recent
-F616/F618/F634/F638/F640/F644/F648/F650/F655 cohort independently has
-**46 source-backed origin-unknown *entire* native functions /962
-original machine CODE bytes**, plus the distinct F595 40 bytes:
-**47 /1,002 original CODE bytes** in the broader still-uncredited
-research set. These are **not accepted authored functions**; the
-95 original provenance-unknown ledger rows are separately and
-conservatively excluded until real source ownership is established.
+F595 + F616–F658 source experiments now prove **66 distinct
+historical origin-unknown complete native function bodies /1,183
+original entire machine CODE bytes**. The newest F658 adds **19
+complete original 5/8/11/14/16-byte native leaves /181 genuine
+CODE bytes /111 x86 instructions**, all directly original-byte
+identical without relocation masks, through one small natural C++
+VC7.1 TU. Their owners remain `unknown,review`, as do all **95
+historical provenance-unknown candidates**. This research earns **zero
+accepted authored whole-function CODE**. [Full new native whole-leaf
+source and caller proof](GAME_UNATTRIBUTED_SIMPLE_LEAVES_F658.md).
 
 Latest F655 seven **entire original registered native leaves**
 (`004138D0`, `004169D0`, `0041F7F0`, `00540280`, `00441FD0`,
@@ -215,6 +216,7 @@ virtual `__stdcall`) and `004588B0` (43 bytes, conditional CRT free).
 [Earlier genuine original F650 proof](GAME_COM_VIRTUAL_RELEASE_F650.md).
 
 ```bash
+scripts/repo-python scripts/verify-game-unattributed-simple-leaves-f658.py
 scripts/repo-python scripts/verify-game-unattributed-leaves-f655.py
 scripts/repo-python scripts/verify-game-virtual-release-f650.py
 scripts/repo-python scripts/verify-game-float-math-adapters-f644.py
