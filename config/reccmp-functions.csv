@@ -940,3 +940,4 @@ ReplayScene::DrawSaveFilenameAt0042C270,0x0042C270,function
 NameEntryScene::DrawDecimalGlyphLabelAt0042B110,0x0042B110,function
 ResultScene::DrawRankLabelAt00431890,0x00431890,function
 GameProgress::IncrementSelectedRecordAt00425130,0x00425130,function
+CombatCoordinateView::MapWorldToScreenAt00455770,0x00455770,function

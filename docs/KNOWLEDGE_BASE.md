@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — cumulative historical evidence
 
-**Current snapshot: 2026-10-29, after F535.** This document is a
+**Current snapshot: 2026-10-29, after F536.** This document is a
 **chronological experiment log**, not the active backlog. Earlier F-series
 sections describe *historical* status; older claims such as "still pending",
 "nonexact", or "no credit" are **not active status** after a later exact
@@ -9,13 +9,13 @@ Japanese `resources/th075.exe`, and canonical live ledgers outrank old prose.
 
 ## Current authoritative status and superseded negatives
 
-- **941 cold-exact source-present functions**, **862,538 original authored
+- **942 cold-exact source-present functions**, **862,649 original authored
   CODE bytes**, **43.71% reviewed authored coverage** and **43.63%
   conservative coverage**. **Only 25 `owner=authored,status=unclassified`
   function rows currently remain:** 22 giant fighter action/advance bosses
   totalling 1,102,055 original CODE bytes, WinMain (2,987), SceneObject
   destructor (248), and ArchiveCatalog nonvirtual destructor (171).
-  All remain nonexact. 97 separate origin-pending candidate rows / 3,608
+  All remain nonexact. 96 separate origin-pending candidate rows / 3,497
   bytes are not automatically credited. These figures are a snapshot;
   refresh with `scripts/repo-python scripts/report-reconstruction-status.py --summary`.
 - The historical **F339-era snapshot was 645 exact /813,859 bytes /
@@ -45,7 +45,7 @@ Japanese `resources/th075.exe`, and canonical live ledgers outrank old prose.
   MusicRoom catalog boss and 1,722-byte F294 Effects catalog boss
   are also accepted at their *original complete CODE extents*;
   independently compared jump tables do not add CODE credit.
-- All 97 origin-pending functions / 3,608 bytes remain outside authored accepted CODE until independently reviewed.
+- All 96 origin-pending functions / 3,497 bytes remain outside authored accepted CODE until independently reviewed.
   Do **not** infer full source class definitions from borrowed native
   call boundaries, or count Win32/CRT/VC7 helper code. Cold-replay
   **only new or affected units**, never the entire set.
@@ -8515,3 +8515,51 @@ Only **92 newly exact original CODE bytes** are credited, no partial
 original, masked relocation bytes, source ASM, native-byte graft,
 false full private class layout, full all-unit cold replay or
 external Oracle receipt.
+
+
+## F536: complete 111-byte original game-coordinate transform, 1/1 cold exact
+
+The formerly R263 origin-pending `00455770..004557DE` entire original CODE
+(111 bytes, 29 contiguous Capstone instructions, original SHA256
+`f32fa773f34571f1d1b95bf812e1f1c7af10337df50d5af02a11cd0ac983573f`)
+receives two native floats on the stack and terminates with `RET 8`. It has
+no native calls or indexed jump tables; the next function starts at `004557E0`.
+Its actual four borrowed receiver float fields are +0x2D8, +0x2DC, +0x2E0,
+and +0x2E4. Two genuine local float differences are stored at EBP-8 and
+EBP-4, and the receiver at EBP-0xC. It transforms x via `(x - left) /
+(right - left)` scaled by original global `00657884`, stores at `006714A8`,
+then transforms y via `(top - y) / (top - bottom)` scaled by original
+`00657D10`, stores at `0067142C`. Both original outputs have one actual
+code reference apiece (these stores); nothing establishes the intended
+runtime invocation, full owner type, or original variable names.
+
+This whole custom receiver-bound game-coordinate policy cannot arise from
+an ordinary implicit C++ copy/destroy lifecycle or standard library math
+wrapper. It was conservatively reclassified as inferred authored F536,
+reducing origin review from 97/3,608 to 96/3,497. **The original has no
+discovered direct callers or literal function-pointer reference**: do not
+claim execution, runtime reachability, or a known class/vtable owner.
+`src/CombatCoordinateViewF536.cpp` exposes only a borrowed thiscall interface,
+not a manufactured private owner layout or singleton.
+
+Pinned VC7.1 cold compilation of that complete source reproduces all
+**95/95 non-relocation bytes** and every authentic physical COFF DIR32 at
+relative offsets **0x44, 0x4A, 0x5F, 0x65** resolving to the original
+**00657884, 006714A8, 00657D10, 0067142C**. The crucial source form is
+an *unparenthesized* float lvalue `FIELD(offset)`; otherwise VC7.1 emits
+`fld` before the second native owner load and reverses the first x87
+subtraction, producing 69/95 comparable rather than all 95. Original
+function extent, all four relocation fields and native x87 order were
+independently decoded from the supplied hash-pinned Japanese PE, not from
+the legacy inventory or Ghidra guesses.
+
+Acceptance: `scripts/repo-python scripts/replay-exact-units.py --unit
+combat-coordinate-view-map-world-to-screen-00455770` returned **1/1 exact**
+from a fresh standalone object; there was **no full cold replay**, code
+byte copying, manual ASM, masked fields, partial boss credit or external
+Oracle acceptance. The ArchiveCatalog real nonvirtual destructor at
+`0041CE50` was also investigated: natural resource-pointer locals, comma
+expression sequencing, name/reference ABI alternatives and lexical scopes
+under the pinned compiler failed to improve the genuine 171-byte,
+108/115 nonfield byte baseline. These controls are retained under
+`.analysis/f536-archive-and-boss/` and must not be called exact.

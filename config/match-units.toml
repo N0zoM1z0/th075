@@ -60406,3 +60406,32 @@ symbol = "?IncrementSelectedRecord@ProgressRecordCounterF478@@QAEXXZ"
 target_address = 0x00425130
 size = 92
 relocations = []
+
+[units.combat-coordinate-view-map-world-to-screen-00455770]
+source = "src/CombatCoordinateViewF536.cpp"
+object = "build/matching/CombatCoordinateViewF536.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["CombatCoordinateView::MapWorldToScreenAt00455770"]
+symbol = "?MapWorldToScreen@CombatCoordinateViewF536@@QAEXMM@Z"
+target_address = 0x00455770
+size = 111
+[[units.combat-coordinate-view-map-world-to-screen-00455770.relocations]]
+offset = 68
+type = "DIR32"
+symbol = "?g_CombatScaleXAt00657884@@3MA"
+target = 0x00657884
+[[units.combat-coordinate-view-map-world-to-screen-00455770.relocations]]
+offset = 74
+type = "DIR32"
+symbol = "?g_CombatOutputXAt006714A8@@3MA"
+target = 0x006714A8
+[[units.combat-coordinate-view-map-world-to-screen-00455770.relocations]]
+offset = 95
+type = "DIR32"
+symbol = "?g_CombatScaleYAt00657D10@@3MA"
+target = 0x00657D10
+[[units.combat-coordinate-view-map-world-to-screen-00455770.relocations]]
+offset = 101
+type = "DIR32"
+symbol = "?g_CombatOutputYAt0067142C@@3MA"
+target = 0x0067142C

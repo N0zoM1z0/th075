@@ -1,15 +1,15 @@
 # TH075 — current agent handoff
 
-**Maintained: 2026-10-29, after F535; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
+**Maintained: 2026-10-29, after F536; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
 
 ## 1. Current authoritative state (not historical hypotheses)
 
 | Item | Verified as of this handoff |
 | --- | --- |
 | Pinned original | user-supplied **Japanese** `resources/th075.exe` ver1.11; SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`; **never** localized `th075c.exe` |
-| Whole exact C++ source | **941 functions / 941 exact units**, **862,538 original CODE bytes** |
-| Reviewed original authored coverage | **43.71%** of **1,973,516** reviewed bytes; conservative **43.63%** with pending-origin bytes |
-| Origin review | 4,351 provisional candidates; **1,002** origin-classified authored, **97** origin-pending, 3,608 origin-pending bytes |
+| Whole exact C++ source | **942 functions / 942 exact units**, **862,649 original CODE bytes** |
+| Reviewed original authored coverage | **43.71%** of **1,973,627** reviewed bytes; conservative **43.63%** with pending-origin bytes |
+| Origin review | 4,351 provisional candidates; **1,003** origin-classified authored, **96** origin-pending, 3,497 origin-pending bytes |
 | Current `owner=authored,status=unclassified` | **25 complete functions**: 22 large fighter bosses + 3 other originals below |
 | Goal | **98% original authored bytes NOT attained**; local Git/Cold checks are **not** external Oracle receipts |
 
@@ -37,12 +37,13 @@ scripts/repo-python scripts/ghidra.py check
 | `SceneObject::ReleaseAt0043B0B0` / `0043B0B0` | **248** | Genuine virtual destructor with original EH and three owned heap frees. Full natural `/GX` C++ reaches **191/200** original nonrelocation bytes, but physical native texture/delete temporaries at EBP -0x14/-0x10 and actual heap pointers -0x18/-0x1C/-0x20 disagree with compiler allocation order. `.analysis/f215-battle-release/struct0.cpp`, `.analysis/f449-scene-texture-heap-release/`, `.analysis/f533-scene-native-separate-pointers/`. No 248-byte credit. |
 | `ArchiveCatalog::Release` / `0041CE50` | **171** | Actually the **nonvirtual local RAII destructor** of the archive catalog, paired with `0041CE10`, as established from WinMain original call/receiver EBP -0x35. Genuine C++ destructor yields complete **171 bytes, 108/115** nonrelocation bytes (14 COFF fields), but physical resource/delete/filename locals at -0xC/-8/-0x10 differ from source -0x10/-0xC/-8. `.analysis/f343-archive-release/`, `.analysis/f531-archive-real-raii-destructor/` and `.analysis/f517-archive-true-name-record/`. Virtual destructor form is wrong (182 bytes). No 171-byte credit. |
 
-**No other `owner=authored,status=unclassified` function is currently in the live ledger.** The **97 pending origins** are a separate provenance classification problem; do not silently count them as authored. The full original authored-byte goal remains distant, even though many smaller game bosses are already exact.
+**No other `owner=authored,status=unclassified` function is currently in the live ledger.** The **96 pending origins** are a separate provenance classification problem; do not silently count them as authored. The full original authored-byte goal remains distant, even though many smaller game bosses are already exact.
 
 ## 3. Important *already solved* functions: do not redo old “pending” experiments
 
 | Previously disputed | Current correct result | Canonical source / batch |
 | --- | --- | --- |
+| Combat-coordinate transform `00455770` | **111 full CODE, 29 instructions, 4 native DIR32; 1/1 cold exact**. Source uses genuine VC7.1 unparenthesized float lvalues; provisional owner has no observed direct callers. Distinct from all 22 large bosses and the 3 other nonexact originals | `src/CombatCoordinateViewF536.cpp` / F536 |
 | GameProgress selected-record increment `00425130` | **92 CODE, 24 insns, no COFF fields, 1/1 cold exact**; actual native codegen requires **postfix** `SELECTED_COUNT++`, not prefix `++` | `src/GameProgressIncrementSelectedRecordF535.cpp` / F535 |
 | NameEntry/Result rank labels `0042B110`, `00431890` | **169 + 169 CODE; 2/2 cold exact**; real 132-byte quad member in used local aggregate, separate glyph[8], real `/GS` | `src/NameEntryResultRankGlyphLabelsF516.cpp` / F516 |
 | Replay filename glyph draw `0042C270` | **303 CODE, 1/1 cold exact**; correct prefix+132-byte quad aggregate and separate real glyph[8] | `src/ReplaySceneDrawSaveFilenameF514.cpp` / F514 |
@@ -84,4 +85,4 @@ Check the per-file SHA256 in the adjacent receipt. See [STORAGE_HYGIENE.md](STOR
 
 ## 6. History and next agent orientation
 
-Start from **§2** above, always work on at least one *whole* large boss alongside smaller outstanding code. Repeated brute-force variable renames, inert locals or cropped CODE are not progress. F535 completed the last 92-byte progress leaf; the meaningful smaller remaining are the **171/248-byte real destructors**. The 22 massive controllers dominate unaccepted authored CODE. Detailed older attempts are in [KNOWLEDGE_BASE.md](KNOWLEDGE_BASE.md) and `git show 8da230b:docs/RE_HANDOFF.md` (the earlier verbose 338-line handoff), while the prior ancient handoff is explicitly archival `docs/RE_HANDOFF_HISTORY.md`. **Never treat a historical “pending” claim as live status.**
+Start from **§2** above, always work on at least one *whole* large boss alongside smaller outstanding code. Repeated brute-force variable renames, inert locals or cropped CODE are not progress. F536 completed an independently reviewed 111-byte origin-pending game-specific coordinate transform (now 96 origin-pending); F535 completed the 92-byte progress leaf; the meaningful smaller remaining are the **171/248-byte real destructors**. The 22 massive controllers dominate unaccepted authored CODE. Detailed older attempts are in [KNOWLEDGE_BASE.md](KNOWLEDGE_BASE.md) and `git show 8da230b:docs/RE_HANDOFF.md` (the earlier verbose 338-line handoff), while the prior ancient handoff is explicitly archival `docs/RE_HANDOFF_HISTORY.md`. **Never treat a historical “pending” claim as live status.**

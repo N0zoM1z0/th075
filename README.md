@@ -15,18 +15,18 @@ user-supplied executable. It is **not yet a complete game rebuild**.
 | Size / image base | 2,576,384 bytes / `0x00400000` |
 | SHA-256 | `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98` |
 | MD5 | `21bcb855a39f2170195811e6ad292f18` |
-| Source-present / exact functions | **941 / 941** |
-| Accepted CODE bytes | **862,538** |
-| Reviewed authored coverage | **43.71%** of 1,973,516 reviewed bytes |
-| Conservative coverage | **43.63%**, with 3,608 origin-pending bytes included |
-| Unresolved origins | **97** of 4,351 provisional function candidates |
+| Source-present / exact functions | **942 / 942** |
+| Accepted CODE bytes | **862,649** |
+| Reviewed authored coverage | **43.71%** of 1,973,627 reviewed bytes |
+| Conservative coverage | **43.63%**, with 3,497 origin-pending bytes included |
+| Unresolved origins | **96** of 4,351 provisional function candidates |
 
 **The 98% authored-byte goal is incomplete.** Function labels and C++ owner
 types are provisional; machine-code matches alone do not prove an entire
 original class layout. The target's official distribution provenance has not
 been independently verified; do not substitute a localized `th075c.exe`.
 
-These counts are the verified snapshot after **F535** (2026-10-29).
+These counts are the verified snapshot after **F536** (2026-10-29).
 The full, constantly changing register of accepted units is
 `config/functions.csv` and `config/match-units.toml`, **not** a long
 manual list of batch IDs. For live counts run
@@ -34,7 +34,7 @@ manual list of batch IDs. For live counts run
 Exactly **25** currently `owner=authored,status=unclassified` functions
 remain: **22** original 28K–82K fighter action bosses, the **2,987-byte**
 WinMain, **248-byte** SceneObject destructor and **171-byte** archive
-nonvirtual destructor. The old 303-byte Replay renderer, two 169-byte
+nonvirtual destructor. The 111-byte coordinate mapping transform `00455770` has now independently joined the exact register (F536). The old 303-byte Replay renderer, two 169-byte
 rank labels, 208-byte StaffRoll and 92-byte progress counter are all
 **already cold exact**; do not retry historical pending experiments.
 The 22-boss original-only verifier records **1,102,055 uncredited CODE
@@ -91,7 +91,7 @@ For probes, use VC7.1 build 3077 with explicit per-unit flags, serialized
 headless Wine processes and the existing tools. Do not manufacture byte
 matches with copied target bytes, assembly, arbitrary padding, masks or
 unproved owner layouts. Do not count external data or runtime helper bytes.
-Keep the 97 unresolved origin candidates uncredited.
+Keep the 96 unresolved origin candidates uncredited.
 
 Keep validation focused on exact reconstruction: `scripts/ci.py` runs the small
 comparison/checkpoint/byte-accounting suite without compiling accepted units.
@@ -111,7 +111,7 @@ their evidence or verifiers. See [the workflow](docs/RE_WORKFLOW.md).
 | [Knowledge base](docs/KNOWLEDGE_BASE.md) | Detailed F-series proofs, rejected attempts and limitations |
 | [Build and matching guide](docs/BUILD_MATCHING.md) | Compiler profiles, COFF and cold-replay mechanics |
 | [Ghidra MCP guide](docs/GHIDRA_MCP.md) | Headless project/bridge operation |
-| [Origin review](docs/ORIGIN_PENDING_REVIEW.md) | 97 unclassified origins |
+| [Origin review](docs/ORIGIN_PENDING_REVIEW.md) | 96 currently unclassified origins (R263 historical matrix) |
 | [Historical handoffs](docs/history/RE_HANDOFF_THROUGH_F183.md) | Superseded records; not the current task list |
 | [Storage protection and recovery](docs/STORAGE_HYGIENE.md) | SHA256-verified archive/restore of historical JSON snapshots and regenerable probe PDBs; protect Wine, original PE, COFF objects and current source |
 

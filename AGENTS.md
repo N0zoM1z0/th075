@@ -13,7 +13,7 @@ without a verified build.
 
 Use the existing Ghidra wrapper and local tools; do not use REA.
 Preserve **all** accepted exact units and origin evidence, including
-the historical R268 checkpoint and every later verified adoption. The 97
+the historical R268 checkpoint and every later verified adoption. The 96
 unresolved origins remain unknown; they do not block reconstruction of
 independently reviewed authored functions. Include all pending bytes in the conservative goal denominator.
 Start with the live cohort in `docs/RE_HANDOFF.md`; historical experiments

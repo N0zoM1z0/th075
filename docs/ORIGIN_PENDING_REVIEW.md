@@ -1,4 +1,13 @@
-# Pending origin review matrix
+# Pending origin review matrix (R263 historical snapshot)
+
+**Historical as of R263, before F536:** the 97-row/3,608-byte table below is
+retained as original research evidence, not the live 2026-10-29 inventory.
+F536 subsequently classified and cold-exactly reconstructed `00455770`
+(111 CODE bytes) on independent game-coordinate/x87/physical COFF evidence.
+The current live pending set is **96 functions /3,497 bytes**; use
+`config/function-origins.csv` for the authoritative classification and
+`docs/RE_HANDOFF.md` for the current task list. Do not interpret the
+`00455770` row in this historical matrix as still pending.
 
 This report records the current 97 pending candidates, covering 3,608 bytes.
 It records reviewed evidence and required distinguishing witnesses; all 97
