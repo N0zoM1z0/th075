@@ -1,6 +1,6 @@
 # TH075 — current agent handoff
 
-**Maintained: 2026-10-29, after F558; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
+**Maintained: 2026-10-29, after F559; this is the active handoff, not a research diary.** Start by checking the *live repository*; the figures below are a snapshot. The user requires serious work on **whole large boss functions and smaller leaves**, natural C++, independently checked original bytes, and immediate commits using `gpt-web: ...`. **All dirty changes belong to this one work session:** inspect, continue and finish them; never skip/reset/discard them. **Never run a full all-unit cold replay**—only the new or affected `--unit` entries.
 
 ## 1. Current authoritative state (not historical hypotheses)
 
@@ -96,6 +96,20 @@ and velocity initialization, whereas CharacterMove clears `FLAG` first.
 See [F558 original action 8 study](FIGHTER_EXTRA_STAGE_EIGHT_F558.md) and
 `scripts/repo-python scripts/verify-fighter-extra-stage-action-eight.py
 --boss CharacterMove`. No full giant or independent case CODE credit.
+
+**F559 additionally rechecks and reconstructs the complete native action
+8** of the unusual wide-frame 61,872-byte fighter giant `00564BE0`,
+while independently re-verifying its complete actions 6 and 7. Its new
+102-instruction action-8 C++ source produces 352 bytes vs **458 native**;
+exactly **34 long EBP-0x88 receiver reloads plus one long JL** account for
+the native extra 106 bytes, with **no fake source padding**. The three
+real action cases together have **332/332 original GPR/x87/branch roles,
+22 genuine COFF call/float fields**, all original 131 DWORD jump slots
+and 350 original sparse bytes. See
+[F559 wide-frame action-eight native source proof](FIGHTER_WIDE_ACTION_EIGHT_F559.md)
+and `scripts/repo-python scripts/verify-fighter-wide-action-eight-source.py`.
+These 1,474 original inner bytes remain part of **unmatched whole giant
+CODE** with zero independent/split-case exactness credit.
 
 **Three other authored functions remain nonexact (all require full CODE):**
 

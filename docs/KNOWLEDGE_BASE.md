@@ -8993,3 +8993,26 @@ Full original evidence and affected-only source reproducer:
 [F558 action-eight C++ study](FIGHTER_EXTRA_STAGE_EIGHT_F558.md),
 `scripts/repo-python scripts/verify-fighter-extra-stage-action-eight.py`.
 No exact credit, full cold replay or external Oracle receipt.
+
+
+## F559: real 458-byte native action-eight in the wide-frame 00564BE0 fighter
+
+The complete independently SHA-checked `00564BE0` original giant
+(61,872 CODE bytes) has physically bounded full action 6/7/8 blocks of
+**508/508/458 CODE bytes**, holding **115/115/102 real x86
+instructions** respectively. F559 regenerates one ordinary VC7.1 C++
+prototype for all three, verifying **332/332 entire original native
+GPR/x87/control roles and 22 true typed COFF fields**, plus the full
+native 131 DWORD switch-field partitions and 350 exact sparse-index bytes.
+Action 8 genuinely **omits the extra-stage bonus call and FLAG clear**
+from earlier fighter variants, writes stage-two motion position -4.0f,
+velocity 12.0f and speed 0.4f and calls the true virtual
+`dword ptr [edx]` method. It has exactly **34 original wide EBP-0x88
+receiver loads** (+102 native bytes) and a long JL (+4 native bytes),
+explaining the entire **458-versus-352-byte** native/probe difference
+without padding. Reproducer:
+`scripts/repo-python scripts/verify-fighter-wide-action-eight-source.py`
+and [F559 native action-eight study](FIGHTER_WIDE_ACTION_EIGHT_F559.md).
+All **1,474 inner original CODE bytes** remain within the giant
+nonexact 61,872-byte parent; no split-unit exactness, DATA credit,
+full all-unit cold replay or external Oracle acceptance.
