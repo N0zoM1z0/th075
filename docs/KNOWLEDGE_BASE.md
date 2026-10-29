@@ -10699,3 +10699,32 @@ and typed PE/COFF evidence](NATIVE_GAME_CONSTRUCTORS_F616.md),
 `probes/NativeGameConstructorsImplicitF616.cpp`, targeted
 `scripts/repo-python scripts/verify-native-game-constructors-f616.py`.
 No all-unit cold replay, no new match ledger credit.
+
+
+## F617: six strict real native 101-instruction action0x5E fighter interiors; 0x5D negative GPR cycle
+
+Original Japanese TH075 physical packed second-switch actions0x5D/0x5E
+are independently full 101-instruction native case subranges in seven
+fighter parents. Reconstructing their original meaning under pinned
+VC7.1 shows two **independent** horizontal-facing float comparisons,
+with genuine lvalue `*(&F32(0x44))` restoring original x87/GPR and
+conditional `JNE` to the second comparison. **Six complete action0x5E
+inner cases** then match every native x86 GPR/x87/CFG role, width,
+real indexed packed 0x5E/0x5F case boundary and 8 original PE-targeted
+zero-addend COFF call/global fields each: **606 genuine x86 roles,
+2,115 original internal CODE bytes/48 typed fields**, including the
+430-native-byte `00564BE0` with 31 real EBP−0x88 receiver MOV widths.
+**The original action0x5D remains at 61 GPR-role mismatches even in
+those same six new objects** (101 x86 geometry/typed refs match but
+not registers), and `00543210` action0x5E has 61 independent GPR-cycle
+mismatches as an explicit negative compiler control. Four more fighters
+have different original 64/94/96/106-instruction case families.
+All 30 previously reconstructed original action cases and afterRET
+packed DATA are rechecked in each affected whole-parent source TU.
+Cumulative strict interior source study F598–F617: **336 cases /
+86,902 native inner CODE bytes**, NOT independent whole exact CODE
+and NOT credited authored source. [Actual original F617 source/negative
+research](FIGHTER_AIR_TRANSITION_F617.md),
+`scripts/repo-python scripts/verify-fighter-air-transition-f617.py --boss 0x0045DD70`,
+`--negative-actor`. Official authored whole-exact 943/862,726 unchanged,
+no full all-unit cold replay or external Oracle.

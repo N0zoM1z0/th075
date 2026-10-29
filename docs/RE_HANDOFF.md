@@ -1,6 +1,6 @@
 # TH075 — active reconstruction handoff
 
-**Maintained 2026-10-29 after F616.** This is the **only current task list**.
+**Maintained 2026-10-29 after F617.** This is the **only current task list**.
 The [F540–F596 research chronology](history/RE_HANDOFF_F540_THROUGH_F596.md),
 [knowledge base](KNOWLEDGE_BASE.md), and older F-series studies are
 **historical evidence**, not statements of current progress. Independently
@@ -436,6 +436,35 @@ parents remain NONEXACT; official 943/862,726 unchanged.
 
 ```bash
 scripts/repo-python scripts/verify-fighter-trajectory-burst-f614.py --boss 0x0045DD70
+```
+
+**F617 investigates the following original 0x5D and 0x5E air
+transitions across the 11 giant fighters without conflating success
+and failure.** In six original whole-giant source compilations,
+complete native action `0x5E` has **101/101 genuine GPR/x87/CFG
+instruction roles** and 8 exact real PE/COFF targets each,
+for **six strict internal cases /606 x86 roles /2,115 native
+interior CODE bytes /48 true physical typed fields**. The native
+physical `00564BE0` version is 430 bytes due to 31 widened EBP−0x88
+receiver MOVs (normal 337). Correct natural C++ source requires two
+**independent** native float-facing tests with member lvalue
+`*(&F32(0x44))`; the first native JNE must reach the next comparator,
+not skip both. **Every matching source's action0x5D still has 61
+GPR/CFG-role mismatches**, despite equal x86 count/width and 8 typed
+fields; original `00543210` 0x5E also has 61 wrong roles and was
+**separately compiled as a negative control**. Other original actors
+have 64/94/96/106-instruction variants that cannot reuse this source.
+Each selected 0x5E source object retains all earlier **30 authentic
+original game case roles and afterRET packed DATA** via targeted F614
+checks. F598–F617 strictly source-backed **336 native internal game
+case bodies /86,902 original inner CODE bytes**, zero new accepted
+whole-function exact credit. All official 943/862,726 unchanged.
+[F617 actual PE-native C++ role proofs and failures](FIGHTER_AIR_TRANSITION_F617.md),
+[ordinary 101-x86 source](../probes/FighterAirTransitionCaseF617.inc).
+
+```bash
+scripts/repo-python scripts/verify-fighter-air-transition-f617.py --boss 0x0045DD70
+scripts/repo-python scripts/verify-fighter-air-transition-f617.py --negative-actor
 ```
 
 Never run a full 943-unit cold replay.
