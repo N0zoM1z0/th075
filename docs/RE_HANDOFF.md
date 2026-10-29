@@ -1,6 +1,6 @@
 # TH075 — active reconstruction handoff
 
-**Maintained 2026-10-29 after F606.** This is the **only current task list**.
+**Maintained 2026-10-29 after F607.** This is the **only current task list**.
 The [F540–F596 research chronology](history/RE_HANDOFF_F540_THROUGH_F596.md),
 [knowledge base](KNOWLEDGE_BASE.md), and older F-series studies are
 **historical evidence**, not statements of current progress. Independently
@@ -288,6 +288,30 @@ whole-fighter exact acceptance**; official 943/862,726 unchanged.
 
 ```bash
 scripts/repo-python scripts/verify-fighter-trajectory-followup-spawns-f606.py --boss 0x0058AF60
+```
+
+**F607** extended **nine** of the giant fighters to the true
+second-switch action `0x49`, **99 complete native x86 roles and
+15 typed original PE/COFF fields per case**: **891 native x86 roles /
+3,241 original inner CODE bytes /135 genuine fields**. An initial
+99/347-byte source had an incorrect `FLD` order and inter-branch
+`JMP`; a real member-lvalue float equality and two separate C++
+`break`s reproduce exact original **99/350-byte case geometry**.
+Native `00564BE0` remains special at **441 bytes** due to 29
+widened receiver reads and one genuine near-branch expansion;
+`005AEEC0` still uses original +0xEFC signed-short trajectory
+slots. Each freshly compiled parent object preserves all prior
+26 game action case roles and every original afterRET jump table.
+The **other two giant fighters** have different **118-instruction
+action0x49** and must be studied separately. Across F598–F607,
+**295 internal native case bodies /70,121 native CODE bytes are
+source-backed, NOT whole game function exact credit**. All 22 giant
+CODE bodies remain nonexact; official 943/862,726 unchanged.
+[F607 original x87/CFG physical source](FIGHTER_TRAJECTORY_LANDING_F607.md),
+[natural C++](../probes/FighterTrajectoryLanding49F607.inc).
+
+```bash
+scripts/repo-python scripts/verify-fighter-trajectory-landing-f607.py --boss 0x004F7130
 ```
 
 Never run a full 943-unit cold replay.

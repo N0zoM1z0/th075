@@ -10451,3 +10451,29 @@ exactness or independent case credit. [F606 exact PE/order evidence](FIGHTER_TRA
 `scripts/repo-python scripts/verify-fighter-trajectory-followup-spawns-f606.py --boss 0x0058AF60`.
 Official 943 whole authored exact functions/862,726 CODE bytes
 unchanged; no all-unit cold replay or external Oracle.
+
+
+## F607: original native 99-instruction landing action0x49 in nine giant fighters
+
+Real second packed-switch native original action0x49 (bounded by
+physical dense jump slots 14/15) has been source-reconstructed for
+nine original whole fighter C++ bodies. Genuine VC7.1 natural C++
+source `probes/FighterTrajectoryLanding49F607.inc` emits all **99
+native instruction roles /350 ordinary-source bytes per case**, with
+15 original typed COFF call/float destinations including two precise
+`FLD`-float relocation operands. A source trial demonstrated that
+`*(&POS)==g_ThresholdAt0065782C` plus **two separate switch
+`break`s** preserves the actual original x87 `FUCOMPP` ordering and
+both end-of-switch `JMP`s, correcting a 347-byte near miss.
+Eight real native compact originals have 350 bytes, one `00564BE0`
+original has 441 (29 genuinely widened saved receiver MOV plus one
+real widened branch). All previous 26 native game action subranges
+and full afterRET jump DATA are rechecked on each fresh giant source
+object. F607 adds **9 genuine internal cases /891 original x86 roles
+/3,241 original interior CODE bytes /135 actual native COFF fields**;
+F598–F607 total 295 source-backed inner cases /70,121 original CODE
+bytes. These are NOT complete whole-function adoptions; the other
+two real 118-instruction action0x49 owner variants and full giant
+CODE remain nonexact. [F607 original PE+source proof](FIGHTER_TRAJECTORY_LANDING_F607.md),
+targeted `scripts/repo-python scripts/verify-fighter-trajectory-landing-f607.py --boss 0x004F7130`.
+No full all-unit cold replay; official 943/862,726 authored exact unchanged.
