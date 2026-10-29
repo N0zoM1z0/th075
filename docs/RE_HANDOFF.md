@@ -82,29 +82,35 @@ scripts/repo-python scripts/verify-characterobject-typed-member-f635.py --case 3
 The 22 original giant CODE owners remain authored NONEXACT. The main
 case-source subcohort has **11 real multi-switch giant fighters**,
 with real per-actor native differences and a full afterRET sparse/
-dense dispatch shape. F598–F674 compiler-backed original research
-proves **595 strict original *internal action case bodies* /
-161,569 original native internal CODE bytes**. These do **NOT** mean
-595 additional independently callable exact functions or credited
+dense dispatch shape. F598–F676 compiler-backed original research
+proves **596 context-strict original *internal action case bodies* /
+161,788 original native internal CODE bytes**. These do **NOT** mean
+596 additional independently callable exact functions or credited
 whole function bytes; each parent remains nonexact. Case interior
 source must always be compiled in the **fresh complete original
 parent C++ translation unit** and its preceding cases + entire jump
 DATA rechecked. [Full original dispatch fingerprint JSON](../config/fighter-boss-dispatch-fingerprints.json),
 [original fighter family dispatch](FIGHTER_BOSS_FAMILY_DISPATCH.md).
 
-**Latest strict path:** native `00543210` now has **27 context-strict
-original native cases /2,272 real x86 /7,867 genuine original
-internal CODE B /207 original typed PE/COFF fields**, all rechecked
-in one new complete original-shaped parent. The new **`0x2EF`
-788-byte/224-x86/20-field cloud-rain handler** matches all real
-original register/x87/CFG/byte widths and native calls including
-the true signed-byte global `006714D0` and five-byte shared-exit
-jump. Its original compiler jump length was restored **naturally** by
-adding true terminal native action `0x31C` source (63 x86/219 B/7
-real calls), which itself stays **NONSTRICT from 36 GPR phase errors**.
-All **26 preceding strict cases**, four native EBP-negative controls,
-and the complete afterRET DATA remained verified in the **same new
-parent**. [Newest F674 true physical source proof](FIGHTER_CLOUD_RAIN_F674.md).
+**Latest strict path:** native `00543210` now has **28 contextual
+strict original native case bodies /2,335 real x86 /8,086 original
+internal CODE B /214 genuinely typed PE/COFF fields** in one new
+complete original-shaped parent. F676 restores two **very large native
+`2F0/2F1` entire C++ case grammars** (616 original x86 /2,146 native
+CODE B /65 real typed fields), preserving all original instruction
+counts/widths but still **NONSTRICT**, with 147/170 actual nonfield
+GPR phase-role mismatches. Their insertion surprisingly makes real
+terminal `31C` **strict** (63 x86/219 B/7 true calls, zero native
+GPR errors) in the SAME selected whole-parent build. F674's earlier
+parent with those two cases still placeholders correctly found
+terminal `31C` NONSTRICT (36 register errors). Both results are
+independently retested; source context matters.
+All preceding 27 strict case interiors, four EBP negative controls and
+complete 943-byte separate afterRET DATA also remain reverified.
+[F676 latest original physical source and context proof](FIGHTER_CLOUD_BURST_F676.md).
+Earlier F674 strictly proved `2EF` (224 x86/788 B/20 native fields)
+with a naturally far-shared-exit source, but terminal 31C was then
+NONSTRICT. [Earlier F674 native proof](FIGHTER_CLOUD_RAIN_F674.md).
 F673 earlier added `2BC` (208 x86/692 original CODE B/20 real fields).
 **Separate F672 original source context:** all five original native
 `259/25A/25B/25C/25D` bodies (434 whole x86 /1,469 native CODE B /
@@ -198,7 +204,9 @@ F646 `0xD0` remains nonstrict in other original actors due to
 explicitly distinguishes the 3 strict parent contexts.
 
 ```bash
-# NEW alternate giant: five native 259..25D source/EBP negatives and strict 2BC:
+# NEW complete selected fighter: 2F0/2F1 source negatives and newly strict 31C:
+scripts/repo-python scripts/verify-fighter-cloud-burst-f676.py
+# Earlier alternate giant: five native 259..25D source/EBP negatives and strict 2BC:
 scripts/repo-python scripts/verify-fighter-eight-shot-and-follow-f672.py
 # Context-scoped strict 2EF cloud-rain and real 31C negative:
 scripts/repo-python scripts/verify-fighter-cloud-rain-f674.py

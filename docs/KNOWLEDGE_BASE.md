@@ -12073,3 +12073,39 @@ CODE B**, zero new accepted authored CODE. [F675 actual PE/COFF
 whole-byte proof](SDK_NATIVE_STATE_CONSTRUCTORS_F675.md),
 `scripts/repo-python scripts/verify-sdk-native-state-constructors-f675.py`.
 No mass replay.
+
+
+## F676: large native cloud-burst case sources reveal terminal GPR phase exactness
+
+Full newly compiled selected `00543210` giant ordinary VC7.1 C++
+adds real original physical native cases **2F0 (342 original x86 /
+1,169 whole case CODE B/42 actual typed PE fields)** and **2F1
+(274 x86/977 B/23 fields)** with original stage counters,
+12-shot cloud-burst pairs, float raw-X/Y ABI signatures, conditional
+random resource branches, multiple genuine original PE globals,
+and authentic stage4/5 and stage8/11 motion changes. The combined
+**616 x86 /2,146 original CODE bytes /65 real source PE fields**
+all have complete original mnemonic/width/CFG geometry under pinned
+VC7.1, but true **147/170 nonfield GPR register-role errors** remain;
+2F0/2F1 are deliberately **NONSTRICT**.
+
+Unexpectedly, this new fuller source context makes **real terminal
+native 31C (63 x86/219 entire original CODE B/7 genuine original
+REL32 fields) STRICT with zero original native GPR errors**. Previous
+F674 selected parent lacked actual 2F0/2F1 bodies and validly found
+this same 31C terminal NONSTRICT from 36 real GPR differences. Both
+normal VC7.1 complete-parent source contexts are independently
+retained and rechecked; the difference is real compiler register
+allocation, not a changed target, invented zero-pad or tolerance mask.
+F676 fresh parent also verifies all **27 earlier strict original
+fighter case interiors**, all true 186/18A/18B/258 EBP-negative
+controls and entire original afterRET switch DATA. Selected parent
+now **28 contextual strict original inner cases /2,335 x86 /
+8,086 original internal CODE B /214 genuine typed source fields**.
+F598–F676 cumulative research **596 contextual strict case interiors
+/161,788 uncredited native original CODE bytes**. All enclosing
+22 giants still NONEXACT and formal authored entire 943/862,726
+original CODE B unchanged. [F676 original PE/COFF and separate
+context proofs](FIGHTER_CLOUD_BURST_F676.md),
+`scripts/repo-python scripts/verify-fighter-cloud-burst-f676.py`.
+No all-unit cold replay.

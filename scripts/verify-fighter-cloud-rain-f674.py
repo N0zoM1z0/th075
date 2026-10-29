@@ -173,7 +173,7 @@ def locate_marker(refs,ins,operand):
     return found[0]+2
 
 
-def verify_native(reader,dec,code,refs,original,terminal,shared_exit,h):
+def verify_native(reader,dec,code,refs,original,terminal,shared_exit,h,following_native=None, terminal_expect_strict=False):
     ins=[]
     for x in dec.disasm(code,0):
         ins.append(x)
@@ -200,9 +200,17 @@ def verify_native(reader,dec,code,refs,original,terminal,shared_exit,h):
          and not a.mnemonic.startswith('j')
          and a.op_str.replace('[ebp - 0x44]','[ebp - 8]')!=b.op_str]
     need(not raw,f'2EF original raw EBP/local argument operand roles differ {raw[:8]}')
-    need(ins[ordinal+ORIGINAL_X86].mnemonic=='mov'
-         and ins[ordinal+ORIGINAL_X86].op_str.endswith(', 0x2f1'),
-         'original next physical 2F0 source marker must directly follow 2EF')
+    if following_native is None:
+        need(ins[ordinal+ORIGINAL_X86].mnemonic=='mov'
+             and ins[ordinal+ORIGINAL_X86].op_str.endswith(', 0x2f1'),
+             'original next physical 2F0 source marker must directly follow 2EF')
+    else:
+        need(following_native==0x2F0
+             and ins[ordinal+ORIGINAL_X86].mnemonic=='mov'
+             and ins[ordinal+ORIGINAL_X86].op_str=='eax, dword ptr [ebp - 8]'
+             and ins[ordinal+ORIGINAL_X86+1].mnemonic=='movsx'
+             and ins[ordinal+ORIGINAL_X86+1].op_str=='ecx, word ptr [eax + 0x62]',
+             'native C++ physical 2F0 must immediately follow strict 2EF')
     terminal_start=locate_marker(refs,ins,0x31C)
     term,term_lo,term_hi=terminal
     generated_terminal=ins[terminal_start:terminal_start+len(term)]
@@ -219,24 +227,37 @@ def verify_native(reader,dec,code,refs,original,terminal,shared_exit,h):
         field_match(term,generated_terminal,i,target,'call',symbol,term_fields,'31C')
     term_a,term_b=h['f598'].normalized(term),h['f598'].normalized(generated_terminal)
     wrong_term=[(i,a,b) for i,(a,b) in enumerate(zip(term_a,term_b)) if a!=b]
-    need(len(wrong_term)>=25 and wrong_term[0][0]==0,
-         'real terminal native 31C register-phase NEGATIVE was unexpectedly removed')
-    return {'new_original_strict_native_action':'0x2EF',
-            'original_native_physical_start':f'0x{lo:08X}',
-            'original_next_native_physical_handler':f'0x{hi:08X}',
-            'entire_strict_original_x86_instructions':ORIGINAL_X86,
-            'strict_original_internal_CODE_bytes':ORIGINAL_BYTES,
-            'original_real_typed_PE_COFF_fields':len(physical),
-            'real_original_physical_exit_JMP_bytes':5,
-            'new_accepted_whole_GAME_FUNCTION_CODE_bytes':0}, {
-            'original_native_terminal_action':'0x31C',
-            'actual_original_terminal_PE_start':f'0x{term_lo:08X}',
-            'original_terminal_source_x86_instructions':len(term),
-            'original_terminal_native_CODE_bytes':term_hi-term_lo,
-            'generated_terminal_native_CODE_bytes':sum(x.size for x in generated_terminal),
-            'genuine_typed_PE_COFF_calls':len(term_fields),
-            'real_nonfield_GPR_mismatch_count':len(wrong_term),
-            'strict_original_native_case':False}
+    if terminal_expect_strict:
+        need(following_native==0x2F0 and not wrong_term,
+             f'original terminal 31C genuine native nonfield GPR role mismatch: {wrong_term[:8]}')
+        raw_term=[(i,a.op_str,b.op_str) for i,(a,b) in enumerate(zip(term,generated_terminal))
+                  if a.mnemonic!='call' and not a.mnemonic.startswith('j')
+                  and a.op_str.replace('[ebp - 0x44]','[ebp - 8]')!=b.op_str]
+        need(not raw_term,
+             f'original terminal 31C raw EBP/nonfield operand mismatch: {raw_term[:8]}')
+    else:
+        need(len(wrong_term)>=25 and wrong_term[0][0]==0,
+             'original terminal native 31C register-phase NEGATIVE was unexpectedly removed')
+    strict_case={'new_original_strict_native_action':'0x2EF',
+                 'original_native_physical_start':f'0x{lo:08X}',
+                 'original_next_native_physical_handler':f'0x{hi:08X}',
+                 'entire_strict_original_x86_instructions':ORIGINAL_X86,
+                 'strict_original_internal_CODE_bytes':ORIGINAL_BYTES,
+                 'original_real_typed_PE_COFF_fields':len(physical),
+                 'real_original_physical_exit_JMP_bytes':5,
+                 'new_accepted_whole_GAME_FUNCTION_CODE_bytes':0}
+    terminal_case={'original_native_terminal_action':'0x31C',
+                   'actual_original_terminal_PE_start':f'0x{term_lo:08X}',
+                   'original_terminal_source_x86_instructions':len(term),
+                   'original_terminal_native_CODE_bytes':term_hi-term_lo,
+                   'generated_terminal_native_CODE_bytes':sum(x.size for x in generated_terminal),
+                   'genuine_typed_PE_COFF_calls':len(term_fields),
+                   'real_nonfield_GPR_mismatch_count':len(wrong_term),
+                   'strict_original_native_case':terminal_expect_strict}
+    if following_native is None:
+        return strict_case,terminal_case
+    return strict_case,terminal_case,ordinal+ORIGINAL_X86
+
 
 
 def main():
