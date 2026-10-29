@@ -10548,3 +10548,25 @@ functions. The other 2 giant action0x4A native 165-instruction spawn
 variants remain open. [Original case/PE/codegen F610 study](FIGHTER_TRAJECTORY_BOUNCE_F610.md)
 and selected `scripts/repo-python scripts/verify-fighter-trajectory-bounce-f610.py --boss 0x004F7130`.
 No all-unit cold replay; authored exact 943/862,726 unchanged.
+
+
+## F611: real original 165-instruction double-projectile bounce action0x4A in two giants
+
+Original Japanese TH075 PE `0045DD70` and `0058AF60` 0x4A actions
+have **165 x86/589 whole inner CODE bytes/21 physical PE/COFF typed
+refs** per giant, not the 119-instruction regular F610 variant. An
+extra two genuine original stage-one and collision-triggered guarded
+`+0xF0C` projectile spawns use real `00453A70` thiscall,
+`0x3B7`/`0x3E7` sprite kinds and original side 1/0. Natural pinned
+VC7.1 source `probes/FighterTrajectoryBounceSpawn4AF611.inc` emits
+all **330 native GPR/x87/CFG roles /1,178 original inner CODE bytes
+/42 physical typed PE-targeted COFF fields** in newly compiled giant
+source TUs. All prior 27 original cases and full afterRET switch
+DATA remain source-verified; both entire fighters are still NONEXACT.
+Combined F610/F611: all 11 original action0x4A case interiors are
+source-backed, 1,401 true native x86 roles/5,206 original internal CODE
+bytes/213 genuine typed fields. Overall F598–F611 studied 308 native
+case interiors /76,167 original internal CODE bytes, **zero new whole
+exact authored code**, no full cold replay or Oracle acceptance.
+[F611 original PE/native source evidence](FIGHTER_TRAJECTORY_BOUNCE_SPAWN_F611.md),
+selected `scripts/repo-python scripts/verify-fighter-trajectory-bounce-spawn-f611.py --boss 0x0058AF60`.

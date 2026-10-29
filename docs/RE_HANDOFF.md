@@ -1,6 +1,6 @@
 # TH075 — active reconstruction handoff
 
-**Maintained 2026-10-29 after F610.** This is the **only current task list**.
+**Maintained 2026-10-29 after F611.** This is the **only current task list**.
 The [F540–F596 research chronology](history/RE_HANDOFF_F540_THROUGH_F596.md),
 [knowledge base](KNOWLEDGE_BASE.md), and older F-series studies are
 **historical evidence**, not statements of current progress. Independently
@@ -359,6 +359,30 @@ exact source credit**; official 943/862,726 unchanged.
 
 ```bash
 scripts/repo-python scripts/verify-fighter-trajectory-bounce-f610.py --boss 0x004F7130
+```
+
+**F611 recovers the remaining TWO original native double-projectile
+`0x4A` bounce cases** in giant fighters `0045DD70` and `0058AF60`.
+Each complete native case is **165 x86/589 original inner CODE bytes /
+21 genuine physical typed PE/COFF fields**. Their original-stage-one
+and second collision-bounce paths EACH independently test flag
+`+0xF0C`, set once, and may call actual `00453A70` with sprite
+`0x3B7`/`0x3E7` (side 1/0), with original-stage and action policy.
+Two newly built whole C++ giant translation units reproduce **330
+original GPR/x87/CFG roles /1,178 native interior CODE bytes /42
+actual typed fields**, preserve all 27 previous real game case
+bodies and full original afterRET jump DATA. Combined F610/F611:
+**all 11 native `0x4A` case subranges** (1,401 original x86 roles,
+5,206 native internal CODE bytes, 213 real COFF fields) source-backed.
+F598–F611 cumulatively: **308 studied original inner cases /76,167
+original native CODE bytes**, still **NOT whole-giant exactness or
+independent case acceptance**. All official 943/862,726 authored
+whole-exact bytes unchanged.
+[F611 true double-spawn source/PE evidence](FIGHTER_TRAJECTORY_BOUNCE_SPAWN_F611.md),
+[natural C++](../probes/FighterTrajectoryBounceSpawn4AF611.inc).
+
+```bash
+scripts/repo-python scripts/verify-fighter-trajectory-bounce-spawn-f611.py --boss 0x0058AF60
 ```
 
 Never run a full 943-unit cold replay.
