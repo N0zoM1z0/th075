@@ -31,6 +31,10 @@ reason to undo later exact adoptions. Original pinned native PE and
    artificial unused-aggregate trial is disqualified. Read
    [Scene original native evidence](CHARACTEROBJECT_SCENE_PHASE_NEGATIVES_F689_F693.md)
    and [ArchiveCatalog lifetime controls](ARCHIVE_RESOURCE_FILENAME_LIFETIMES_F682_F683.md).
+   F697/F698 additionally retested **18 complete native-profile C++
+   aggregate-lifetime and borrowed `At()` return-reference hypotheses**,
+   all 171/51/14 original-shape but 108/115 (or 102/115) and NONEXACT;
+   see [physical negative matrix](ARCHIVE_AGGREGATE_AND_REFERENCE_NEGATIVES_F697_F698.md).
 4. **Keep leaf byte proofs separate from provenance**: F691
    reconstructs original whole `0061F125` (**249/249 B**) but its
    original source owner remains `unknown,review`; no authored exact

@@ -12468,3 +12468,25 @@ angle-lvalue source alternative failed to change original MOV/FLD order.
 `scripts/repo-python scripts/verify-fighter-grounded-volley-f696.py`.
 Formal authored whole-function exact coverage is unchanged: **943 whole
 functions /862,726 CODE bytes (43.71% reviewed)**. No 943-unit replay.
+
+
+## F697/F698: negative original whole ArchiveCatalog aggregate and reference-return lifetime controls
+
+Fresh pinned VC7.1 recompilation of **18 complete authored 171-byte
+ArchiveCatalog destructor sources** tested **10** real used filename
+`struct`/`union` lifetime placements (F697) and all **eight**
+nonbaseline `At(index)` pointer-reference/const-reference return-type
+combinations (F698). All retain **51 native-shaped x86 and 14 true
+PE/COFF fields**. Six within-loop/initializer aggregate variants
+and all eight return-interface variants remain **108/115** comparable
+native CODE bytes, with wrong slots `-0x10/-0xC/-0x8`. Four early
+outer aggregate placements regress to **102/115** with additional
+index-local displacement. The native real resource/delete/filename
+slots are still **`-0xC/-0x8/-0x10`**; **0/18** full function exact.
+This excludes a plausible direct container return-reference or simple
+aggregate-lifetime explanation without fake local reservations.
+[Original PE and actual full COFF negatives](ARCHIVE_AGGREGATE_AND_REFERENCE_NEGATIVES_F697_F698.md);
+reproducible ignored local scripts and original objects in
+`.analysis/f697-archive-aggregate-lifetime/` and
+`.analysis/f698-archive-return-reference/` remain saved. No exact
+credit, no full cold replay.
