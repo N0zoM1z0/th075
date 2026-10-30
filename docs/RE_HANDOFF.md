@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F722 original source-order fighter reconstruction.**
+**Maintained 2026-10-30, after F722 native fighter order and F723 whole Archive loop CFG controls.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -9,6 +9,20 @@ with its Markdown links adjusted for its new directory. The older
 [chronological knowledge base](KNOWLEDGE_BASE.md) are evidence, not a
 reason to undo later exact adoptions. Original pinned native PE and
 **live manifests outrank every historical sentence**.
+
+**F723 complete original small-function negatives:** Re-read original
+`0041CE50` authored ArchiveCatalog whole destructor **171 B/51
+x86/14 authentic typed PE/COFF fields** and tested **12 actual
+whole VC7.1 C++ loop CFG shapes**, retaining real delete/free/clear.
+Three conventional `for` increment forms stay native-shaped but
+**108/115** original nonfield B; reversed `Size()>index` regresses
+to **106/115**; three real `while` forms emit **169/50**; explicit
+break/continue forms emit **173/52**, infinite while **180/54**,
+infinite do **178/53**. Original `for` x86 loop geometry is
+confirmed; native resource/delete/name EBP slots still differ.
+[Complete 12-source PE evidence](ARCHIVE_LOOP_CFG_NEGATIVES_F723.md);
+`scripts/repo-python scripts/verify-archive-loop-structure-f723.py --case for-postincrement`.
+No exact whole game function CODE.
 
 **F722 latest major giant source and compiler phase gain:**
 Real native whole `00543210` actions `2C0` **753 B/218 x86/21

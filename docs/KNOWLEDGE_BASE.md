@@ -12913,3 +12913,26 @@ Old F708/F711/F714/F718/F720 targeted checkers accept optional new
 source starts/physical EBP shifts but retain original-source default
 regression behavior. No all-943-unit cold replay, 943/862726 exact
 accepted whole-function ledger unchanged.
+
+
+## F723: complete ArchiveCatalog destructor loop CFG negative matrix
+
+Re-read native original authored `0041CE50` **171 B/51 x86/14
+physical typed fields** with actual `MOV idx=0; JMP condition;`
+prebody, increment-block and unsigned `JAE` loop geometry. F723
+freshly built **12 entire VC7.1 native-profile C++ alternative loop
+shapes** with true indexed resource delete, borrowed filename CRT
+free and both original global container Clears; no unused locals.
+Three other ordinary `for` index increments remain **171/51/14**
+and only **108/115** original nonfield bytes, the actual native
+three-way EBP owner rotation still wrong. Reversed comparator
+`Size()>index` emits **171/51/14** but regresses to **106/115**;
+three `while` forms emit **169 B/50 x86**, two `for` explicit
+breaks emit **173/52**, infinite `while` **180/54**, infinite
+`do` **178/53**, and a body-conditional `for` **173/52**.
+Thus source loop grammar alone cannot restore native lifetime.
+Portable selected entire PE verifier:
+`scripts/repo-python scripts/verify-archive-loop-structure-f723.py --case for-postincrement`,
+optional `--all` only 12 affected small TUs.
+[All original machine-code comparisons and honest negatives](ARCHIVE_LOOP_CFG_NEGATIVES_F723.md).
+No new exact authored function CODE, no full 943-unit replay.
