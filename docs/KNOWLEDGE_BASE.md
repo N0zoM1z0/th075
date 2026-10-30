@@ -12999,3 +12999,32 @@ sparse-map bytes equal**. [Full original native physical and nonexact
 F728 evidence](FIGHTER_RANDOM_ARCS_F728.md); reproduce with
 `scripts/repo-python scripts/verify-fighter-random-arcs-f728.py`.
 No new whole-game byte-exact CODE, 943/862726 ledger unchanged.
+
+
+## F726/F727: 33KB original boss paired-scale and whole 248-byte Scene array-owner negatives
+
+F726 freshly compiled **10 entire 33,731-B CODE+DATA original-shaped
+VC7.1 C++** variants of authored `004EBDA0` (33,293 CODE /438
+original afterRET DATA, 8,789 native x86, 682 physical COFF fields),
+with both truly used adjacent `float` members at 0x1C/0x20,
+compound `+=`, real 2-float aggregate owner and stage-3 guard.
+Two original-equivalent guard variants preserve all original
+relocation geometry and retain exactly **137 real nonrelocation bytes
+wrong**, including original register EAX vs compiler ECX at
+`004F344C`. Eight true used-member source forms produce matching
+33,731-B size, 8,789 x86 and 682 reference *counts*, but shift
+one/two original COFF fields by **3 bytes**, so their geometry is
+**invalid**; no comparable original byte score or exact claim.
+
+F727 freshly compiled **12 entire authored 248-B/75-x86/12-field
+Scene virtual EH destructor** sources with actually used array of
+three genuinely freed resource pointers, six resource-index orders
+and early/late declaration. All match full native 248/75/12 source
+mnemonic/width geometry, **four at 191/200**, eight at **189/200**
+nonfield bytes; original texture and scalar delete EBP temps are
+`−0x14/−0x10`, source remains `−0x20/−0x1C`. No exact complete
+Scene source. Portable full PE native selected-case verifier
+`scripts/verify-scene-array-owner-f727.py` defaults to one real
+original destructor source, optional `--all` only 12 affected TUs.
+[Complete original PE and negative machine-code evidence](SCENE_ARRAY_AND_GIANT_ALPHA_NEGATIVES_F726_F727.md).
+No full 943-unit replay, 943/862726 authored ledger unchanged.

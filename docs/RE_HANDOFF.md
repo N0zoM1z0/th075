@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F728 complete random-arc source and honest prior-register regressions.**
+**Maintained 2026-10-30, after F728 random arcs and F726/F727 whole 33KB/Scene controls.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -9,6 +9,27 @@ with its Markdown links adjusted for its new directory. The older
 [chronological knowledge base](KNOWLEDGE_BASE.md) are evidence, not a
 reason to undo later exact adoptions. Original pinned native PE and
 **live manifests outrank every historical sentence**.
+
+**F726/F727 new large-boss and small-function compiler controls:**
+F726 compiled **10 complete original-shaped 33,731B/8,789-x86/
+682-field** source TUs of authored giant `004EBDA0`, testing actual
+adjacent used alpha float 0x1C/0x20 member aggregation/`+=`
+with stage guard. Two preserve all actual original COFF locations
+but still have **137 real nonfield byte differences**; eight have
+**one/two original PE field offsets shifted by −3 B** despite matching
+whole length/x86/ref counts, so do not count them as improvement.
+F727 compiled **12 complete original authored Scene `0043B0B0`
+248-B/75-x86/12-reference** used three-pointer array ownership
+variants, every index permutation × early/late scope; all native
+CODE mnemonic/width geometry retained, four **191/200** and eight
+**189/200** nonfield original bytes, wrong native texture EBP
+`−0x14/−0x10` vs source `−0x20/−0x1C` persists. Portable
+`scripts/repo-python scripts/verify-scene-array-owner-f727.py --case array-012-after-texture`
+rebuilds one affected original small target (optional `--all` for
+12 TUs); original 33KB study retains actual compile logs under
+ignored `.analysis/f726-33k-typed-alpha-owner/`.
+[Both entire original PE/COFF negative studies](SCENE_ARRAY_AND_GIANT_ALPHA_NEGATIVES_F726_F727.md).
+Zero new accepted complete authored function CODE, no full cold replay.
 
 **F728 latest new original-boss source with a CRITICAL strict-regression warning:**
 Original `00543210` physical `1F4` and `1F5` each **538 native CODE
