@@ -232,6 +232,22 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   GPR differences, whole native
   giant NONEXACT.
   [F844 selected original physical PE](SCRIPTED_FIGHTER_GROUNDED_130_F844.md).
+- **F844 original actor 0x130 grounded recovery:**
+  selected native 202B/58-x86/5
+  original physical PE fields in
+  one entire 22,289B/6,079-x86
+  parent. x87 POS48+POS54 and
+  store order/animation stage3
+  reproduce all non-PE original
+  machine bytes except two actual
+  whole-giant epilogue JMP operand
+  pairs; 12C-12F and C8-D2
+  original source states plus five
+  afterRET 901B tables reverified.
+  The 46B default retains four
+  honest non-PE GPR byte negatives;
+  no whole original exact credit.
+  [F844 native source](SCRIPTED_FIGHTER_GROUNDED_130_F844.md).
 - **F843 actual selected actor 12F native recovery:**
   complete original 207B/59 x86/six real
   original PE fields, not the other

@@ -1,87 +1,70 @@
-# F844 — Original grounded 130 state, distinct from other fighter's 261B finish
+# F844 — Original native stage 0x130 202B grounded recovery in the giant fighter
 
-The selected SHA-pinned Japanese TH075 v1.11 original
-fighter at 005214B0 owns 46,755 original callable CODE B
-and 901 separate afterRET packed switch DATA B.
-F843 reconstructed the true physical 12C/12D/12E/12F
-falling recovery actions. F844 adds the next original
-action 130 at physical 00526715..005267DE:
-**202 complete original native CODE B /58 x86/
-five genuine physically typed PE/COFF fields**.
-This is not the other F654 actor's 261B/79-x86
-0x130 action and cannot inherit that actor's source.
+The pinned Japanese TH075 v1.11 005214B0 fighter is
+46,755 original callable CODE bytes/13,230 native x86
+with five independently owned packed afterRET dispatch
+tables totaling 901 separate DATA bytes.
 
-## Real gameplay CFG and byte evidence
+F844 extends the full source with the physical original
+0x130 case at 00526715..005267DE, **202 complete native
+inner B/58 x86/5 physically typed original PE fields**.
+This genuine case has real horizontal/vertical/drag
+collision handling: it first subtracts POS5C from POS54,
+computes **POS48+POS54** in that precise native x87
+order, and conditionally sets action0xA and clears
+POS48, POS5C, then POS54 in their original order.
+The stage-zero setup uses real short +0x80 and
+word +0x7C, native getter/action9, and prepares
+animation **0x1C at stage3**.
 
-The normal C++ source first updates vertical velocity
-POS54 minus POS5C, then performs an x87
-ground comparison FLD(POS48), FADD(POS54),
-FCOMP the actual global 0065782C.
-A grounded collision changes action to 0xA,
-zeros original POS48, POS5C, POS54 IN THAT ORDER,
-and exits directly to the enclosing function epilogue.
-Otherwise it resets true stage/frame-zero initialization,
-conditionally changes action to 9 when the native action
-getter matches the actual animation status, and
-prepares animation 0x1C only at original stage3/frame0.
+Four full-parent C++ source alternatives test the
+physical operand-order, three actual reset stores
+and true stage guard. Every candidate preserves a
+202-B/58-x86/5-PE-field original-sized source
+interior, but the three incorrect alternatives
+introduce genuine nonrelocation native mismatches
+at x87/source operand or condition/store bytes.
+The selected natural C++ has every original
+x86 mnemonic, size, GPR/x87 operand, position
+and PE field matching except **four genuine
+unrelocated byte differences at +84/+85 and
++198/+199**, the two original entire-fighter
+epilogue long-JMP displacement pairs.
+Those bytes are not masked or accepted as exact.
 
-Four whole-parent normal VC7.1 source experiments
-falsify superficially equivalent but byte-inaccurate
-expressions: exchanging POS54 and POS48 in the x87 sum,
-reordering actual zero assignments, or changing the
-original stage3 guard. All variants still emit a
-202B/58-x86 interior, but each wrong expression
-introduces physical nonrelocation operand-byte
-differences against original PE.
+The tracked verifier first regenerates/validates the
+immediate F843 selected whole-parent source, then
+compiles only the new affected entire VC7.1
+translation unit. Current source grows from F843
+22,102 B/6,023 x86 to **22,289 callable CODE B/
+6,079 x86**. Its actual native saved receiver
+remains EBP-0x10, and all five original call/global
+PE fields are independently rechecked by physical
+original instruction ordinal, relocation type,
+zero addend and true destination.
 
-The selected source now matches every one of the
-original **58 native x86 instruction mnemonics,
-sizes and relative locations**, all five typed
-original PE operand positions/kinds/zero addends
-and game global/call destinations, and every
-nonrelocation byte except the original two
-enclosing whole-fighter JMP operands at offsets
-**84/85 and 198/199**. The remaining original
-relative displacement points to the complete
-game's distant epilogue 0052CB4F. Neither
-operand is masked as COFF or awarded exactness.
+The new COFF independently rechecks all four previous
+12C/12D/12E/12F complete original state interiors
+and eleven earlier C8..D2 case extents and true PE
+relocation targets. All five genuine original
+901B afterRET dense/sparse jump tables are
+physically verified, not just size-matched.
 
-## Recompiled entire selected parent
+The 46B original default/getter still has the
+genuine original saved-this geometry and all
+three true PE calls, with **four actual non-PE
+GPR operand bytes** wrong at +10/+12/+16/+19
+in this new parent. These are not hidden.
 
-F844 regenerates and physically verifies F843
-before compiling ONE newly expanded entire
-normal VC7.1 father. The generated callable
-source grows from **22,102 B/6,023 x86**
-to **22,289 B/6,079 x86**, with the
-original separate 901B packed dispatch DATA.
-
-The verifier independently rechecks the complete
-current actor 12C/12D/12E/12F native cases
-and all 24 true physical PE fields, plus all
-ELEVEN earlier original C8/C9/CA/CB/CC/CD/CE/
-CF/D0/D1/D2 whole case interiors and their
-physical call/global field identities. ALL FIVE
-genuine packed 901B afterRET dense/sparse
-switch tables are physically checked again.
-
-The current original 46B common default/getter
-retains correct physical EBP-0x10 and all
-three native REL32 calls but four genuine
-nonrelocation GPR operand bytes still differ
-at +10/+12/+16/+19. The previous short-parent
-34/34 claim does not transfer.
-
-Reproduce ONLY the one affected giant:
+Targeted reproduction:
 
     scripts/repo-python scripts/verify-scripted-fighter-grounded-130-f844.py
 
-Fresh full C++, pinned VC7.1 COFF/PDB,
-all original native target PE field checks,
-and source alternatives remain under ignored
+Actual sources, VC7.1 OBJ/PDB, alternative
+whole-source compiler experiments and physical
+PE verification receipts are in ignored
 .analysis/f844-scripted-stage130/.
-
-The original 46,755-B callable fighter is
-STILL NONEXACT. No independent 130 fragment,
-previous case or separate jump-table DATA earns
-whole-function authored exact CODE. No full
-accepted-unit cold replay occurred.
+The entire 46,755-B original callable game giant
+remains NONEXACT; no standalone case or packed
+jump DATA is credited as independently callable
+authored exact CODE. No all-units cold replay.

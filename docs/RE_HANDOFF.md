@@ -1233,6 +1233,29 @@ split case callable CODE credit.
 [F844 current selected original PE proof](SCRIPTED_FIGHTER_GROUNDED_130_F844.md);
 scripts/repo-python scripts/verify-scripted-fighter-grounded-130-f844.py.
 
+**F844 original fighter 0x130 complete grounded-recovery case:**
+the actual pinned game at 00526715 has **202
+whole inner CODE B/58 x86/5 native PE references**,
+now in one fresh **22,289 callable B/6,079 x86**
+selected giant parent (F843 22,102/6,023).
+Native x87 operand order POS48+POS54, actual
+three motion resets, stage3 animation1C
+and two entire-parent direct returns
+naturally reconstruct all original x86
+mnemonics/widths/GPR and real PE fields,
+with only two true original giant epilogue
+JMP operand byte pairs +84/+85,+198/+199
+different. Earlier 12C-12F and ELEVEN
+C8-D2 original complete cases rechecked
+with true physical PE fields. All five
+901B original afterRET jump tables remain
+correct. The 46B default/getter has four
+actual GPR byte negatives +10/+12/+16/+19,
+not accepted whole CODE.
+[F844 physical selected source](SCRIPTED_FIGHTER_GROUNDED_130_F844.md);
+scripts/repo-python scripts/verify-scripted-fighter-grounded-130-f844.py.
+Complete 46,755-B fighter remains NONEXACT.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin
