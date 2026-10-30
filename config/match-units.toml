@@ -60963,3 +60963,22 @@ relocations = [
  { offset = 0x98, type = "REL32", symbol = "??0RectQuadF765@@QAE@PBUtagRECT@@@Z", target = 0x0040DB50 },
  { offset = 0x9E, type = "REL32", symbol = "?DrawTexturedQuad@Graphics@@YAXABVRectQuadF765@@PBUtagRECT@@KPAUIDirect3DTexture8@@@Z", target = 0x004029F0 },
 ]
+
+# F766 original R011 212-byte complete mirrored sprite uses same genuine
+# outer texture RECT and inner destination/132B quad lifetime as F765.
+[units.sprite-draw-opaque-mirrored-0040d6b0]
+source = "src/SpriteOpaqueMirroredF766.cpp"
+object = "build/matching/SpriteOpaqueMirroredF766.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["SpriteDrawingF765::DrawOpaqueSpriteMirrored"]
+symbol = "?DrawOpaqueSpriteMirrored@SpriteDrawingF765@@QAEXHHHKE@Z"
+target_address = 0x0040D6B0
+size = 212
+relocations = [
+ { offset = 0x2B, type = "REL32", symbol = "?At@SpriteRecordListF765@@QAEPAUSpriteEntryF765@@H@Z", target = 0x0040DD60 },
+ { offset = 0x43, type = "REL32", symbol = "?At@SpriteRecordListF765@@QAEPAUSpriteEntryF765@@H@Z", target = 0x0040DD60 },
+ { offset = 0x97, type = "REL32", symbol = "?SetBlendMode@Graphics@@YAXH@Z", target = 0x00401F50 },
+ { offset = 0xA9, type = "REL32", symbol = "?GetTexture@SpriteDrawingF765@@QAEPAUIDirect3DTexture8@@H@Z", target = 0x0040C8C0 },
+ { offset = 0xC1, type = "REL32", symbol = "??0RectQuadF765@@QAE@PBUtagRECT@@@Z", target = 0x0040DB50 },
+ { offset = 0xC7, type = "REL32", symbol = "?DrawTexturedQuad@Graphics@@YAXABVRectQuadF765@@PBUtagRECT@@KPAUIDirect3DTexture8@@@Z", target = 0x004029F0 },
+]

@@ -15,16 +15,16 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
 
 ## Current verified original-game status (one short snapshot)
 
-- **972 cold-exact source-present functions**, **865,415 original authored
-  CODE bytes**, **43.85% reviewed authored coverage** and **43.77%
+- **973 cold-exact source-present functions**, **865,627 original authored
+  CODE bytes**, **43.86% reviewed authored coverage** and **43.78%
   conservative coverage** of native original CODE. The independently
   reviewed authored provenance cohort has **1,004** candidates, so
-  **32 authored whole functions remain NONEXACT**: **22** large
-  (1,102,055 original CODE B) plus **10** small/medium
-  (6,234 CODE B). The older **25**-function subset counted only
+  **31 authored whole functions remain NONEXACT**: **22** large
+  (1,102,055 original CODE B) plus **9** small/medium
+  (6,022 CODE B). The older **25**-function subset counted only
   `config/functions.csv.owner=authored` unfinished rows and omitted
   11 independently authored, formerly owner-blank small/medium targets,
-  of which F755, F758, F760 and F765 have accepted four. See [all 10 current addresses](RE_HANDOFF.md).
+  of which F755, F758, F760, F765 and F766 have accepted five. See [all 9 current addresses](RE_HANDOFF.md).
 - **95 original candidates /3,420 CODE bytes** have separately
   unresolved provenance; even a whole byte-exact C++ source does not
   permit reclassification or accepted authored CODE without independent
@@ -80,8 +80,11 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   These are still *internal switch-case source, NOT accepted whole
   game-function CODE*. Source 059 and 060/061 GPR differences remain.
   Reproduce from [F752 native/PE proof](FIGHTER_BORROWED_POSITION_F752.md).
-- **The currently most recent exact whole function is F765**, original
-  R011 SpriteDrawing opaque `0040D790` with **171 native CODE B,
+- **The currently most recent exact whole function is F766**, original
+  R011 mirrored opaque sprite `0040D6B0`, **212 CODE B/66 native x86
+  /6 genuine original PE fields**, selected 1/1 cold exact.
+  [F766 original mirror full proof](SPRITE_OPAQUE_MIRRORED_F766.md).
+  The previous F765 original R011 SpriteDrawing opaque `0040D790` with **171 native CODE B,
   52 x86, 6 physical PE/COFF fields**, 1/1 selected cold exact.
   [F765 original whole source/lifetime proof](SPRITE_OPAQUE_NATIVE_F765.md).
   The preceding F760 original R016-authored audio archive entry queue `00407B80` with **283 native
@@ -13889,3 +13892,22 @@ whole functions, 865,244→**865,415 native authored CODE B**, 43.85%
 reviewed/43.77% conservative. Whole 22 giants and ten other authored
 small/medium remain NONEXACT; no all-unit cold replay.
 [Complete original native physical proof](SPRITE_OPAQUE_NATIVE_F765.md).
+
+
+## F766: original 0040D6B0 212B mirrored opaque SpriteDrawing cold exact
+
+Paired with independently accepted F765 opaque rendering, native
+R011-authored mirrored `0040D6B0` now has complete real ordinary VC7.1
+C++ source, whole **212 CODE B/66 x86/6 zero-addend physical COFF
+fields**, 188/188 authentic nonfield bytes identical with original
+Japanese TH075. The real `flip & 1` path reverses destination RECT
+left/right horizontal coordinates using true outer textureBounds at
+EBP−0x10, inner target RECT at EBP−0x20 and original 132-B quad ctor
+at EBP−0xA4, preserving saved this at EBP−0xA8. Six original call
+targets include two true vector indexed record lookups 0040DD60,
+Graphics blend 00401F50, texture resolve 0040C8C0, original rect quad
+constructor 0040DB50 and final render 004029F0. Selected **1/1 exact** 212-byte whole-unit cold replay; no full 973-unit
+replay. Official 972→**973** source-present whole authored exact,
+865,415→**865,627** CODE B, reviewed 43.86% / conservative 43.78%,
+22 giant +9 other nonexact.
+[F766 complete original PE and COFF proof](SPRITE_OPAQUE_MIRRORED_F766.md).
