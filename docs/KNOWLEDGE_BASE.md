@@ -232,6 +232,25 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   GPR differences, whole native
   giant NONEXACT.
   [F844 selected original physical PE](SCRIPTED_FIGHTER_GROUNDED_130_F844.md).
+- **F860 native 196 float shot with actual original callback order:**
+  199B/60-x86/seven physically
+  typed PE fields restored in
+  one full **26,156B/7,242-x86**
+  C++ actor parent. Original
+  stage3 Prepare3, float sprite
+  353, then animationC8 via
+  0046D000, with actual
+  Y+48 lvalue FLD before
+  FADD global006581DC.
+  All opcode widths and PE
+  targets physically correct,
+  31 real GPR operand bytes
+  and two final-giant JMP
+  bytes remain nonexact.
+  Previous 31 original case
+  sources and five afterRET
+  901B tables rechecked.
+  [F860 original PE proof](SCRIPTED_FIGHTER_STAGE_196_F860.md).
 - **F859 native 194 ground return and invalid sibling Reset discovery:**
   real full original 297B/
   86-x86/7 PE fields vs
