@@ -921,6 +921,29 @@ NONEXACT, no inner-case CODE credited.
 [F830 native PE/source proof](SCRIPTED_FIGHTER_REFLECT_D0_F830.md);
 scripts/repo-python scripts/verify-scripted-fighter-reflect-d0-f830.py.
 
+**F831 original native 0xCF fall/ground state in SAME 46KB fighter:**
+actual 005260D6 complete **114 native inner B/30
+x86/4 physically typed original PE fields** added.
+Whole C++ parent now emits **17,955 callable B/4,788
+x86** versus F830 17,856/4,760. All CF native
+opcode widths and original PE call/global targets
+verified, but 20 actual nonrelocation case GPR/JMP
+operand bytes differ in this source. The TRUE
+earlier CF C++ changes following native D0
+register allocation again: D0 now has **39
+honest nonfield byte mismatches**, not F830's
+four shorter-parent bytes. Prior B4/B5 source
+and original 901B switch DATA checked.
+**The complete 46B/16-x86 default/getter
+recovers 34/34 original nonrelocation
+machine bytes plus all three authentic
+PE REL32 calls naturally from actual
+preceding game C++**, never forced GPRs.
+[F831 native selected whole source](SCRIPTED_FIGHTER_FALL_CF_F831.md);
+scripts/repo-python scripts/verify-scripted-fighter-fall-cf-f831.py.
+46,755B enclosing function still NONEXACT,
+zero independent case/suffix CODE credit.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin

@@ -214,6 +214,19 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   saved-this slot. Entire 248B remains
   nonexact, no credited original CODE.
   [F818 original PE typed-view result](SCENE_COMPLETE_BORROWED_OWNER_F818.md).
+- **F831 actual 0xCF falling state in one scripted 46KB fighter:**
+  114 true native inner B/30 x86/4
+  physical PE fields added in a
+  **17,955B/4,788-x86** whole source.
+  F831 CF has 20 genuine GPR/JMP
+  operand differences; native next
+  D0 GPR phase rotates to 39 real
+  differing bytes. But real CF source
+  restores the 46B common default's
+  **34/34 original unrelocation bytes**
+  and three true PE calls without
+  forcing registers. Giant nonexact.
+  [F831 original case PE proof](SCRIPTED_FIGHTER_FALL_CF_F831.md).
 - **F830 actual whole fighter native 0xD0 reflection:**
   195 complete original CODE B/60 x86/6 typed
   physical PE fields added in a new 17,856B/
