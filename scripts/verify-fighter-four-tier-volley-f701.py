@@ -101,9 +101,8 @@ def compare_typed_fields(native,src,refs,source_names,expected_ordinals,*,
     return fields
 
 
-def compile_original_full_parent(f696,f699,reader,pe,real,boss,report,mapped):
-    source,modules,helpers=f696.source_for_entire_parent(reader,pe,real,boss,report,mapped)
-    source=f699.source_with_2fa(source)
+def source_with_302(source):
+    """Insert actual complete 302 source into an original-shaped parent."""
     old='        case 0x302: g_FighterProbeMarker = 771; break;'
     need(source.count(old)==1, 'true complete native 302 source placeholder missing')
     source=source.replace(old,'#include "FighterFourTierVolleyF701.inc"')
@@ -114,6 +113,13 @@ def compile_original_full_parent(f696,f699,reader,pe,real,boss,report,mapped):
          'FighterAngleStormF684.inc','FighterApproachVolleyF699.inc',
          'FighterGroundedVolleyF696.inc','FighterFourTierVolleyF701.inc')),
          'all four adjacent real parent case source fragments must be present')
+    return source
+
+
+def compile_original_full_parent(f696,f699,reader,pe,real,boss,report,mapped):
+    source,modules,helpers=f696.source_for_entire_parent(reader,pe,real,boss,report,mapped)
+    source=f699.source_with_2fa(source)
+    source=source_with_302(source)
     OUT.mkdir(parents=True,exist_ok=True)
     cpp=OUT/'Boss00543210-302.cpp'
     obj=OUT/'Boss00543210-302.obj'

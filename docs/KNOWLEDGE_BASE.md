@@ -12589,3 +12589,41 @@ independently exact full function or source proven original class.
 [Complete native/source controls and preserved negatives](WINMAIN_USED_OBJECT_CONTEXT_NEGATIVES_F702_F704.md);
 local `.analysis/f702-*`, `.analysis/f703-*`, `.analysis/f704-*`.
 Unchanged exact authored ledger 943/862726, no cold all-unit replay.
+
+
+## F705–F707: nine whole 33KB register controls, combined real fighter context and ten EH destructor controls
+
+F705 independently compiled **nine more whole 33,731-B CODE+DATA**
+original C++ variants of `004EBDA0` centered on the *preceding* strict
+38C native case and meaningful 38D stage-3 shot call argument lvalues,
+not old fade/boolean permutations. All retain 8,789 original x86
+mnemonic/width positions, 682 real physically typed fields and exactly
+137 original nonfield wrong bytes, starting at original `004F344C`
+EAX/ECX. No stage-4 register-phase improvement.
+
+F706 compiles one **combined** original-shaped `00543210` parent with
+real `259–25D` plus later `2F8–302` source. The five full original
+actions now emit **434 x86/1,409 compiled B** against **434 native
+x86/1,469 B, all 42 real PE/COFF fields**; 25C/25D now have all
+170 original CODE *instruction widths*. Their authentic 24 EBP
+operands remain source-location nonexact. Critically, compiling these
+**real game source cases** increases the later original `2F9` from
+1,331 to **1,367 generated B**, restoring **all 381 native original
+x86 instruction widths**, 34/34 true typed PE refs, with all 16
+original wide scratch instruction sizes now correct. Actual EBP
+locals and eight x87 order changes plus 236 nonfield GPR roles still
+differ; no original whole giant exactness or inner-case credit.
+True 2F8 928 B/252, 2FA 979 B/281, 2FB 647 B/181 and
+302 935 B/261 geometry, prior 27 contextual strict original
+nonterminal cases and entire 943-B afterRET DATA rechecked in the
+SAME new complete VC7.1 parent.
+
+F707 independently compiled **five different meaningful C++ EH
+scopes × two real VC7.1 profiles** for the whole unknown-origin
+`0061A453` derived destructor (native 73 B/23 x86). O1/GX variants
+emit 69 B/22 with missing genuine EH state-zero and saved-ESI owner;
+O2/GX variants emit 88 B/24 with different `FS:[0]` prologue.
+None exactly matches native; unknown provenance remains uncredited.
+[F706 full parent and machine-width proof](FIGHTER_COMBINED_STORM_CONTEXT_F706.md),
+[F705/F707 actual whole source negative matrix](CHARACTEROBJECT_PHASE_AND_SDK_EH_CONTROLS_F705_F707.md).
+No all-unit cold replay, 943/862,726 full authored exact unchanged.

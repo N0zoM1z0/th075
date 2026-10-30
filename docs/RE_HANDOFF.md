@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F701 whole-boss action 302 reconstruction.**
+**Maintained 2026-10-30, after F706 combined real fighter action source and F705/F707 controls.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -9,6 +9,29 @@ with its Markdown links adjusted for its new directory. The older
 [chronological knowledge base](KNOWLEDGE_BASE.md) are evidence, not a
 reason to undo later exact adoptions. Original pinned native PE and
 **live manifests outrank every historical sentence**.
+
+**Latest F706 full-original-giant C++ context gain:** actual native
+`00543210` original `259/25A/25B/25C/25D` source is combined with
+real `2F8/2F9/2FA/2FB/302` in **one freshly compiled complete
+original-shaped VC7.1 parent**. Five complete original internal
+cases (434 native x86/1,469 B/42 authentic typed PE/COFF fields)
+now emit **1,409 source B**; 25C/25D exactly regain original
+170-B x86 *width geometry*. This genuine C++ source frame restores
+**all 1,367 original x86 bytes of `2F9` instruction widths**,
+381 original x86/34 original PE fields, versus 1,331-B older source.
+**Eight real x87-order and 236 GPR/CFG role errors remain in 2F9**;
+other authentic EBP operands and entire giant still NONEXACT.
+Previous 27 contextual strict nonterminal native interiors and
+whole **943-B afterRET switch DATA** rechecked in SAME new parent.
+[F706 whole source and authentic native field proof](FIGHTER_COMBINED_STORM_CONTEXT_F706.md);
+`scripts/repo-python scripts/verify-fighter-combined-native-storm-f706.py`.
+
+**New whole-function negatives:** F705 9 original 33K C++ variants
+with strict 38C/stage-3 38D argument grammars all remain at the
+same **137 native nonfield bytes**; F707 10 complete unknown-origin
+73-B EH derived destructor actual C++ scopes emit 69/22 or 88/24,
+not original 73/23. See
+[real original negative matrix](CHARACTEROBJECT_PHASE_AND_SDK_EH_CONTROLS_F705_F707.md).
 
 ## 0. Fast next-agent route (no full cold replay)
 

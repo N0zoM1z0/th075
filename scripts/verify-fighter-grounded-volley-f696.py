@@ -141,7 +141,11 @@ def verify_prior_parent_context(reader,pe,real,boss,report,mapped,code,refs,m,h,
                                 source_scratch_shift=16, source_f684_slot_shift=4,
                                 source_native_302_end_ordinal=None,
                                 source_2f9_expected_size=1319,
-                                source_2f9_wide_ordinals=None):
+                                source_2f9_wide_ordinals=None,
+                                following_native_259=False,
+                                source_259_25D_end_ordinal=None,
+                                source_storm_bytes=904,
+                                source_storm_width_differences=None):
     """Recheck the *same* newly compiled complete parent and after-RET DATA.
 
     The authentic native frame slot is EBP-44. Only source `this` MOVs
@@ -189,9 +193,12 @@ def verify_prior_parent_context(reader,pe,real,boss,report,mapped,code,refs,m,h,
     n669=m['f669'].original_native(reader,pe,real,boss,mapped)
     p669,idx=m['f669'].verify_native(reader,pe,decoder,code,refs,n669,idx,shared,h,following_native=0x258)
     n671=m['f671'].original_case(reader,pe,real,boss,mapped)
-    m['f671'].verify_negative(reader,pe,decoder,code,refs,n671,idx,shared,h,source_scratch_shift=source_scratch_shift)
+    m['f671'].verify_negative(reader,pe,decoder,code,refs,n671,idx,shared,h,
+                         source_scratch_shift=source_scratch_shift,
+                         following_native=0x259 if following_native_259 else None)
     n673=m['f673'].actual_native(reader,pe,real,boss,mapped)
-    m['f673'].verify_groundwave(reader,decoder,code,refs,n673,shared,h)
+    m['f673'].verify_groundwave(reader,decoder,code,refs,n673,shared,h,
+              start_ordinal=source_259_25D_end_ordinal)
     n674=m['f674'].original_case(reader,pe,real,boss,mapped)
     terminal=m['f674'].true_terminal(reader,pe,real,boss,mapped)
     strict2ef,negative31c,idx=m['f674'].verify_native(reader,decoder,code,refs,n674,
@@ -202,7 +209,9 @@ def verify_prior_parent_context(reader,pe,real,boss,report,mapped,code,refs,m,h,
     negative676,idx=m['f676'].verify_negative(reader,decoder,code,refs,n676,idx,shared,h,
                                               following_native=0x2F8)
     n31b=m['f681'].native_cases(reader,pe,real,boss,mapped,m['f676'])
-    negative2f8=m['f681'].verify_storm(decoder,code,refs,n31b,idx,shared,h,following_native=0x2F9)
+    negative2f8=m['f681'].verify_storm(decoder,code,refs,n31b,idx,shared,h,
+                         following_native=0x2F9,source_generated_bytes=source_storm_bytes,
+                         expected_width_differences=source_storm_width_differences)
     f684=load('f696_context_2f9','scripts/verify-fighter-angle-storm-f684.py')
     native2f9=f684.original_2f9(reader,pe,real,boss,mapped,m['f676'])
     # Real 2FB's second source index moves the *actual* F684 compiler

@@ -195,7 +195,9 @@ def check_real_fields(refs,native,gen,fields,symbols,action):
     return len(physical)
 
 
-def verify_storm(source_decoder,code,refs,orig,pos,shared,h,following_native=None):
+def verify_storm(source_decoder,code,refs,orig,pos,shared,h,following_native=None,*,
+                 source_generated_bytes=STORM_COMPILED_CODE,
+                 expected_width_differences=None):
     ins=[]
     for x in source_decoder.disasm(code,0):
         ins.append(x)
@@ -203,10 +205,11 @@ def verify_storm(source_decoder,code,refs,orig,pos,shared,h,following_native=Non
     native,lo,hi,fields=orig[STORM]
     gen=ins[pos:pos+len(native)]
     need(len(gen)==STORM_X86 and gen[-1].mnemonic=='jmp'
-         and gen[-1].op_str==shared and sum(x.size for x in gen)==STORM_COMPILED_CODE,
-         'original 2F8 source must represent complete 252-x86 physical case, nonexact 904B')
+         and gen[-1].op_str==shared and sum(x.size for x in gen)==source_generated_bytes,
+         'original 2F8 source must represent complete 252-x86 physical case with authenticated source extent')
     fcount=check_real_fields(refs,native,gen,fields,FIELD_SYMBOLS,STORM)
-    expected_widths=[(i,*w) for i,w in STORM_WIDE_DIFFERENCES.items()]
+    expected_widths=[(i,*w) for i,w in (STORM_WIDE_DIFFERENCES if expected_width_differences is None
+                                     else expected_width_differences).items()]
     widths=[(i,a.size,b.size) for i,(a,b) in enumerate(zip(native,gen)) if a.size!=b.size]
     need(widths==expected_widths,
          f'actual original 2F8 x87 integer-to-float scratch/operand widths changed: {widths}')
