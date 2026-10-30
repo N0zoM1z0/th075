@@ -214,6 +214,20 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   saved-this slot. Entire 248B remains
   nonexact, no credited original CODE.
   [F818 original PE typed-view result](SCENE_COMPLETE_BORROWED_OWNER_F818.md).
+- **F838 actual full Scene object release declaration and member order:**
+  eight original 248B/75-x86/12
+  physical PE-field normal VC7.1
+  destructor compiles. Moving real
+  three-pointer aggregate before
+  texture/clock/function has ZERO
+  compiler CODE effect, original
+  nonrelocation stays 191/200.
+  Actual released resource field
+  order changes source stack slots
+  but worsens to 189/200; native
+  texture/deleting temp slots
+  remain wrong. No exact CODE.
+  [F838 true native PE proof](SCENE_RELEASE_DECLARATION_F838.md).
 - **F837 selected complete original CB restores four downstream native register phases:**
   actual native 496B/141 x86/12
   physical original PE fields; true

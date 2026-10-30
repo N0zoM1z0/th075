@@ -1354,6 +1354,27 @@ accepted authored exact CODE.
 [F835 complete original PE evidence](ARCHIVE_LEXICAL_SCOPES_F835.md);
 scripts/repo-python scripts/verify-archive-lexical-scopes-f835.py.
 
+**F838 original Scene 248B destructor whole-owner declaration negative:**
+eight genuine original 75-x86/12-PE-field
+VC7.1 /GX destructor variants test
+placing the actual three freed-pointer
+aggregate BEFORE clock/texture/deletion
+and meaningful resource member orders.
+All eight compile as original full
+**248B/75 x86**, all 12 real original
+PE targets physically verified. Five
+real declaration positions reproduce
+same CODE and **191/200 original
+nonfield byte matches**; three member
+field order permutations worsen to
+**189/200**. None restores original
+texture EBP-0x14/deleting receiver
+EBP-0x10 and three deeper CRT-free
+slots together. No fabricated locals
+or accepted whole authored CODE.
+[F838 whole physical Scene proof](SCENE_RELEASE_DECLARATION_F838.md);
+scripts/repo-python scripts/verify-scene-release-declaration-f838.py.
+
 ## 4. Attribution, validation, research and storage
 
 - **Original authored ≠ compiler/library ≠ unknown**. The 95 unknown
