@@ -27,8 +27,8 @@ Canonical live ledgers and actual native PE outrank all historical prose.
 
 ## Current authoritative status and superseded negatives
 
-- **965 cold-exact source-present functions**, **864,024 original authored
-  CODE bytes**, **43.78% reviewed authored coverage** and **43.70%
+- **966 cold-exact source-present functions**, **864,118 original authored
+  CODE bytes**, **43.78% reviewed authored coverage** and **43.71%
   conservative coverage**. **Only 25 `owner=authored,status=unclassified`
   function rows currently remain:** 22 giant fighter action/advance bosses
   totalling 1,102,055 original CODE bytes, WinMain (2,987), SceneObject
@@ -13504,3 +13504,21 @@ Formal authored ledger **964→965 whole exact, 863913→864024
 original CODE B, 43.77→43.78% reviewed**, conservative 43.70%
 unchanged; no all-old-unit replay or giant whole-CODE credit.
 [Complete original native signed math and negative controls](GAME_PROGRESS_CLEAR_UNLOCK_F745.md).
+
+
+## F746: native original BG05b authored entire 94-B counter function COLD EXACT
+
+Independently R212-reviewed original game-authored `0044E8D0`
+**94 CODE B/32 original x86/no native COFF relocations** now a
+natural VC7.1 `BackgroundCountersF746::AdvanceBG05bCounters`
+whole function. Actual original signed DWORD at +0x68 decrements
+and wraps underflow to `0xF00`; +0x6C increments and wraps at 42;
++0x70 increments unconditionally. No guessed complete private
+object layout, artificial compiler locals, assembly or target
+bytes. **94/94 complete original bytes and all 32 native x86**
+identical. One new original whole-function unit cold-replayed
+**1/1 EXACT** after freshly compiling just one new source TU;
+old 965 exact units not cold-replayed. Native formally accepted
+**965→966 exact whole functions, 864,024→864,118 original CODE B,
+43.78% reviewed, 43.70→43.71% conservative**.
+[Original physical PE and exact unit](BACKGROUND_BG05B_TIMER_F746.md).

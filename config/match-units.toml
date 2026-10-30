@@ -60768,3 +60768,15 @@ symbol = "?ClearUnlockBit@GameProgressClearF745@@QAEXF@Z"
 target_address = 0x00416D50
 size = 111
 relocations = []
+
+# F746: independently R212-authored entire 94-B background-stage counter policy.
+# Native original entire CODE has 32 x86 and no COFF relocation fields.
+[units.background-stage-bg05b-timer-ticks-0044e8d0]
+source = "src/BackgroundCountersF746.cpp"
+object = "build/matching/BackgroundCountersF746.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundCountersF746::AdvanceBG05bCounters"]
+symbol = "?AdvanceBG05bCounters@BackgroundCountersF746@@QAEXXZ"
+target_address = 0x0044E8D0
+size = 94
+relocations = []

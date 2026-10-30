@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F745 authored whole GameProgress bit-clear 111-B cold exact.**
+**Maintained 2026-10-30, after F746 one authored BG05b counter update whole 94-B cold exact.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -9,6 +9,22 @@ with its Markdown links adjusted for its new directory. The older
 [chronological knowledge base](KNOWLEDGE_BASE.md) are evidence, not a
 reason to undo later exact adoptions. Original pinned native PE and
 **live manifests outrank every historical sentence**.
+
+**F746 latest exact entire original authored BG05b counter updater:**
+R212 pre-reviewed authored `0044E8D0` entire **94 native CODE B/
+32 native x86/zero original PE/COFF relocations** now compiled
+byte-exact from natural VC7.1 C++: real signed DWORD counter
+`+0x68` decrement and reset to `0xF00` below zero, increment
+`+0x6C` and reset to zero at 42, and increment real `+0x70`.
+**94/94 original CODE bytes** fully equal, including all original
+short branches and `RET`; native compiler 1/1 targeted cold exact
+with only one new object. Authored original provenance R212
+unchanged, no inferred complete private BG05b class or callee
+CODE double-credit. Formal **966 whole exact authored functions,
+864,118 native CODE B, 43.78% reviewed and 43.71% conservative**.
+The 25 other original whole authored functions (22 giants plus
+WinMain/Scene/Archive) remain nonexact; no all-unit replay.
+[Physical whole PE evidence and selected cold replay](BACKGROUND_BG05B_TIMER_F746.md).
 
 **F745 newest canonically exact authored whole 111B GameProgress bit clear:**
 Original independent R212-authored whole `00416D50` **111 native
@@ -718,8 +734,8 @@ but not whole original CODE. [Full physical negative matrix](WINMAIN_USED_OBJECT
 | Item | Authoritative snapshot; recheck live manifests on every new session |
 | --- | --- |
 | Original game | User-supplied Japanese TH075 ver1.11 `resources/th075.exe`, SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`; **never** localized `th075c.exe` |
-| Exact authored whole functions | **965 functions / 965 exact units**, **864,024 original CODE bytes** |
-| Reviewed authored bytes | **43.78%** of **1,973,704** original CODE bytes; conservatively **43.70%** with unknown origins included |
+| Exact authored whole functions | **966 functions / 966 exact units**, **864,118 original CODE bytes** |
+| Reviewed authored bytes | **43.78%** of **1,973,704** original CODE bytes; conservatively **43.71%** with unknown origins included |
 | Provisional ledger | **4,351** candidate original functions; **95** still origin-unknown with 3,420 CODE bytes; these have **no authored credit** |
 | Unfinished author-owned functions | **25 complete functions**: **22 large fighter bosses**, **1,102,055 CODE bytes** of original whole CODE, plus **three** other whole functions (2,987 B, 248 B, 171 B) |
 | Separated after-RET giant switch DATA | **16,123 bytes** across the 22 giants; DATA is not authored CODE credit |

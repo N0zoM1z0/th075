@@ -15,10 +15,10 @@ user-supplied executable. It is **not yet a complete game rebuild**.
 | Size / image base | 2,576,384 bytes / `0x00400000` |
 | SHA-256 | `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98` |
 | MD5 | `21bcb855a39f2170195811e6ad292f18` |
-| Source-present / exact functions | **965 / 965** |
-| Accepted CODE bytes | **864,024** |
+| Source-present / exact functions | **966 / 966** |
+| Accepted CODE bytes | **864,118** |
 | Reviewed authored coverage | **43.78%** of 1,973,704 reviewed bytes |
-| Conservative coverage | **43.70%**, with 3,420 origin-pending bytes included |
+| Conservative coverage | **43.71%**, with 3,420 origin-pending bytes included |
 | Unresolved origins | **95** of 4,351 provisional function candidates |
 
 **The 98% authored-byte goal is incomplete.** Function labels and C++ owner
@@ -26,7 +26,7 @@ types are provisional; machine-code matches alone do not prove an entire
 original class layout. The target's official distribution provenance has not
 been independently verified; do not substitute a localized `th075c.exe`.
 
-These live snapshot counts were rechecked after **F745** (2026-10-30); the F694 storage cleanup and F689–F693 negative-evidence audit do **not** add accepted CODE.
+These live snapshot counts were rechecked after **F746** (2026-10-30); the F694 storage cleanup and F689–F693 negative-evidence audit do **not** add accepted CODE.
 The **live** sources of truth, not any dated prose milestone, are `config/functions.csv`,
 `config/function-origins.csv`, and `config/match-units.toml`.
 Refresh using `scripts/repo-python scripts/report-reconstruction-status.py --summary`.
@@ -82,6 +82,12 @@ adds another original R212-authored **111-byte complete COLD-exact
 function**, preserving native signed division/modulo, defined unsigned
 masking and all 39 x86 instructions. Only the newly affected VC7.1
 object was rebuilt; the older 964 accepted units remain untouched.
+
+The [F746 BG05b native timer policy](docs/BACKGROUND_BG05B_TIMER_F746.md)
+adds one canonical whole 94-byte R212-authored function, 32 original
+x86 instructions and no relocation fields; only the new affected
+source object was cold-replayed. The previously accepted exact units
+and nonexact giant parent code remain unchanged.
 
 ### Latest verified giant research and complete small-function evidence
 
