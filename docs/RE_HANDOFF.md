@@ -1,6 +1,6 @@
 # TH075 — ACTIVE reconstruction agent handoff
 
-**Verified snapshot: 2026-10-31, current F780 exact ledger; F824 original fighter 9E and Scene/Archive controls.**
+**Verified snapshot: 2026-10-31, current F780 exact ledger; F825 nine timer states in original 46KB fighter.**
 This is the **short working queue**, not the chronological research log.
 Original Japanese PE and the live configuration **always outrank historical
 prose, old case-level exact labels, class names or inferred layouts**.
@@ -808,6 +808,26 @@ afterRET DATA freshly checked.
 [F824 complete original PE/source](SCRIPTED_FIGHTER_GROUND_BOOST_F824.md);
 scripts/repo-python scripts/verify-scripted-fighter-ground-boost-f824.py.
 Original 46,755B giant still NONEXACT.
+
+**F825 three further 9F/A0/A1 original timed landings:**
+native each **276 inner CODE B/73 x86/9
+physical PE/COFF fields**, with actual
+-9/-10/-13 initial float height and action0.
+One newly compiled 005214B0 whole parent
+now **15,859 callable B/4,189 x86**,
+up from F824 15,076B/3,976 x86.
+All NINE preceding/current original
+96/97/98/9A/9B/9C/9F/A0/A1 timer bodies
+have genuine native x86 mnemonic/width/GPR
+and 81 original PE fields; each has ONLY
+two authentic enclosing-parent final JMP
+operand bytes (272/273) wrong, never
+accepted as callable exact. Original 9E
+ground boost and current default GPR phase
+also checked, 901B switch DATA unchanged.
+[F825 native original-source proof](SCRIPTED_FIGHTER_LAST_TIMERS_F825.md);
+scripts/repo-python scripts/verify-scripted-fighter-last-timers-f825.py.
+Whole 46,755-B giant still NONEXACT.
 
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`

@@ -214,6 +214,17 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   saved-this slot. Entire 248B remains
   nonexact, no credited original CODE.
   [F818 original PE typed-view result](SCENE_COMPLETE_BORROWED_OWNER_F818.md).
+- **F825 original scripted fighter 9F/A0/A1 in same new parent:**
+  3 native whole inner 276B/73 x86/9-field
+  timer cases with real actor initial heights
+  and action0, in **15,859B/4,189-x86**
+  full affected parent. All 9 previous/current
+  timers are native x86/PE-field aligned;
+  each differs by 2 true enclosing-function
+  epilogue JMP bytes only. Actual 9E and
+  901B afterRET DATA preserved; no
+  whole callable exact CODE accepted.
+  [F825 target-native proof](SCRIPTED_FIGHTER_LAST_TIMERS_F825.md).
 - **F824 original fighter native 0x9E ground boost:**
   243 complete original inner B/66 x86/8 typed
   physical native PE fields rebuilt in the same
