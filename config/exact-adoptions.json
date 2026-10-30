@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377; F378; F379; F386; F389; F391; F392; F393; F394; F395; F403; F407; F414; F415; F421; F422; F427; F428; F429; F430; F431; F432; F435; F437; F440; F445; F446; F447; F448; F454; F458; F459; F460; F461; F463; F465; F467; F468; F469; F474; F479; F481; F484; F485; F488; F489; F490-F492; F494; F496; F499; F504; F514; F516; F535; F536; F555; F755",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377; F378; F379; F386; F389; F391; F392; F393; F394; F395; F403; F407; F414; F415; F421; F422; F427; F428; F429; F430; F431; F432; F435; F437; F440; F445; F446; F447; F448; F454; F458; F459; F460; F461; F463; F465; F467; F468; F469; F474; F479; F481; F484; F485; F488; F489; F490-F492; F494; F496; F499; F504; F514; F516; F535; F536; F555; F755; F758",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "e89805a57afdee301c26eafcdcfa6d10555dffeb40bd85338cd998053bd935ab"
+      "current_sha256": "23faafe622ecf3d626665bc5aa1d9eb3d906efae80c7acede3222419a5dbb490"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "6d96b9d1aa1751cfb10823c5c5b02b913c5c59b38cc2af27f823903ef7b9365f"
+      "current_sha256": "36234866c3322817ee3d518624049d1d3feca95c6ee9d62c928ebac2bb4ac685"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "e57d763b70baf062764a06257ffb39c78b40661fd4c9b6c71e5a4aa90f9874c0"
+      "current_sha256": "412ce4768c1b5299dd9c94c4651e5ffdb6a248e4ee08b0ff2afbc744538ac781"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "ef92e59068645bc84e52ffbaae0e0cb058588d86876ceb0f13fc0171c40d5ced"
+      "current_sha256": "ee0a1a252dce9e1f26a0434bde456dffd98c831e1ea894d5b35573d11796a50f"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "b8af94fae0641ba178bcfddc17e5ec8ecccb3dd6201d454064e377dfb8d0431e"
+      "current_sha256": "4a599dba0e618f2503d1e6960a6d51b2c4fe7ad8c6be1126f51d2b9a89e7cc29"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -38936,6 +38936,50 @@
         "disposition": "authored",
         "confidence": "custom-policy-backed",
         "evidence_id": "R015"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00407A50",
+        "size": "289",
+        "span_end": "0x00407B70",
+        "current_name": "FUN_00407a50",
+        "proposed_name": "AudioStream::QueueFile",
+        "module": "AudioStream",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R016",
+        "owner": "",
+        "notes": "R016; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit."
+      },
+      "after": {
+        "address": "0x00407A50",
+        "size": "289",
+        "span_end": "0x00407B70",
+        "current_name": "FUN_00407a50",
+        "proposed_name": "AudioQueueFileF758::QueueFile",
+        "module": "AudioStream",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "cdecl",
+        "signature": "void __cdecl AudioQueueFileF758::QueueFile(const char*, int)",
+        "is_thunk": "false",
+        "source_file": "src/AudioQueueFileF758.cpp",
+        "evidence": "R016; F758; scripts/repo-python scripts/replay-exact-units.py --unit audio-stream-queue-file-00407a50",
+        "owner": "authored",
+        "notes": "R016 independently original-authored entire 289B/77 x86 audio file queue policy. Original native 64-byte stack record local (not previously supposed 68B) with native ctor 00409290/dtor 004092F0 and real DWORD mode at +0x28; genuine HANDLE at EBP-0x10 is declared outside lifetime of the nested record at EBP-0x54, switch discrim EBP-0x58, frame -0x4C. Native shared registry 006713A0 size 004094B0, pop 004096A0, append 004095C0 and back 004094F0; CreateFileA import 00657130 and CloseHandle import 00657138 gate queueing, no extra fault handling; mode cases 0/1/2 write true record +0x28 and case2 invokes original 00408670. Original 00408110 file playback open with 0x100000, genuine /GX FS chain and record destructor. All 26 typed original PE/COFF fields have original offsets, zero addend, source symbol names and linked PE targets; complete 185/185 nonrelocated bytes, full 289/289 CODE and 77/77 original machine instructions cold exact. Earlier 68-byte storage was source hypothesis not original evidence; 64-B nested semantic scope restores all true stack slots without filler. Byte-array 64-B probe caused extra genuine /GS security-cookie code (nonmatching), whereas 16-DWORD envelope does not: storage private meaning remains unknown. Historical owner/type and complete registry layout are provisional; OS/VC7 library and EH carrier code not recredited."
+      },
+      "origin": {
+        "address": "0x00407A50",
+        "origin": "authored",
+        "subsystem": "AudioStream",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R016"
       }
     }
   ],
@@ -216280,6 +216324,185 @@
           "target": 0
         }
       ]
+    },
+    "audio-stream-queue-file-00407a50": {
+      "source": "src/AudioQueueFileF758.cpp",
+      "object": "build/matching/AudioQueueFileF758.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "AudioQueueFileF758::QueueFile"
+      ],
+      "symbol": "?QueueFile@AudioQueueFileF758@@YAXPBDH@Z",
+      "target_address": 4225616,
+      "size": 289,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$?QueueFile@AudioQueueFileF758@@YAXPBDH@Z",
+          "target": 6639116
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 31,
+          "type": "REL32",
+          "symbol": "??0AudioRecordF758@@QAE@XZ",
+          "target": 4231824
+        },
+        {
+          "offset": 43,
+          "type": "DIR32",
+          "symbol": "?g_SharedAudioRegistryF758@@3USharedAudioRegistryF758@@A",
+          "target": 6755232
+        },
+        {
+          "offset": 48,
+          "type": "REL32",
+          "symbol": "?Size@SharedAudioRegistryF758@@QAEIXZ",
+          "target": 4232368
+        },
+        {
+          "offset": 58,
+          "type": "DIR32",
+          "symbol": "?g_SharedAudioRegistryF758@@3USharedAudioRegistryF758@@A",
+          "target": 6755232
+        },
+        {
+          "offset": 63,
+          "type": "REL32",
+          "symbol": "?PopBack@SharedAudioRegistryF758@@QAEXXZ",
+          "target": 4232864
+        },
+        {
+          "offset": 91,
+          "type": "DIR32",
+          "symbol": "__imp__CreateFileA@28",
+          "target": 6648112
+        },
+        {
+          "offset": 114,
+          "type": "DIR32",
+          "symbol": "__imp__CloseHandle@4",
+          "target": 6648120
+        },
+        {
+          "offset": 123,
+          "type": "DIR32",
+          "symbol": "?g_SharedAudioRegistryF758@@3USharedAudioRegistryF758@@A",
+          "target": 6755232
+        },
+        {
+          "offset": 128,
+          "type": "REL32",
+          "symbol": "?PushBack@SharedAudioRegistryF758@@QAEXABVAudioRecordF758@@@Z",
+          "target": 4232640
+        },
+        {
+          "offset": 159,
+          "type": "DIR32",
+          "symbol": "?g_SharedAudioRegistryF758@@3USharedAudioRegistryF758@@A",
+          "target": 6755232
+        },
+        {
+          "offset": 164,
+          "type": "REL32",
+          "symbol": "?Back@SharedAudioRegistryF758@@QAEPAVAudioRecordF758@@XZ",
+          "target": 4232432
+        },
+        {
+          "offset": 178,
+          "type": "DIR32",
+          "symbol": "?g_SharedAudioRegistryF758@@3USharedAudioRegistryF758@@A",
+          "target": 6755232
+        },
+        {
+          "offset": 183,
+          "type": "REL32",
+          "symbol": "?Back@SharedAudioRegistryF758@@QAEPAVAudioRecordF758@@XZ",
+          "target": 4232432
+        },
+        {
+          "offset": 197,
+          "type": "DIR32",
+          "symbol": "?g_SharedAudioRegistryF758@@3USharedAudioRegistryF758@@A",
+          "target": 6755232
+        },
+        {
+          "offset": 202,
+          "type": "REL32",
+          "symbol": "?Back@SharedAudioRegistryF758@@QAEPAVAudioRecordF758@@XZ",
+          "target": 4232432
+        },
+        {
+          "offset": 218,
+          "type": "DIR32",
+          "symbol": "?g_SharedAudioRegistryF758@@3USharedAudioRegistryF758@@A",
+          "target": 6755232
+        },
+        {
+          "offset": 223,
+          "type": "REL32",
+          "symbol": "?Back@SharedAudioRegistryF758@@QAEPAVAudioRecordF758@@XZ",
+          "target": 4232432
+        },
+        {
+          "offset": 230,
+          "type": "REL32",
+          "symbol": "?ReadLoopPointsFromFile@AudioRecordF758@@QAEXPBD@Z",
+          "target": 4228720
+        },
+        {
+          "offset": 244,
+          "type": "DIR32",
+          "symbol": "?g_SharedAudioRegistryF758@@3USharedAudioRegistryF758@@A",
+          "target": 6755232
+        },
+        {
+          "offset": 249,
+          "type": "REL32",
+          "symbol": "?Back@SharedAudioRegistryF758@@QAEPAVAudioRecordF758@@XZ",
+          "target": 4232432
+        },
+        {
+          "offset": 256,
+          "type": "REL32",
+          "symbol": "?OpenFile@AudioRecordF758@@QAEXPBDK@Z",
+          "target": 4227344
+        },
+        {
+          "offset": 271,
+          "type": "REL32",
+          "symbol": "??1AudioRecordF758@@QAE@XZ",
+          "target": 4231920
+        },
+        {
+          "offset": 281,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -216778,6 +217001,7 @@
     "src/GameProgressIncrementSelectedRecordF535.cpp": "f4c50afa0d9757ed393b07b43f526b4c4055c58726c0ade432dcb1cb765b98d5",
     "src/CombatCoordinateViewF536.cpp": "becd508325947b864bd675dbea69d0786c08159172065a3e8e3ca0a6e53af81c",
     "src/FontLeadByteF555.cpp": "7c1955f33daa3157d34d5c618e71cc37099a79df3dcd0b3f1d6633f7c97c03ce",
-    "src/AudioStreamReleaseF755.cpp": "0637b975d4ed59afbfb7545c4f557a7edf6beb9b4576388d6c194fcd4ba6a9d3"
+    "src/AudioStreamReleaseF755.cpp": "0637b975d4ed59afbfb7545c4f557a7edf6beb9b4576388d6c194fcd4ba6a9d3",
+    "src/AudioQueueFileF758.cpp": "b3e0b0a884718a480c31162a3aad07ce87eeda42cda864befc2b8f7e3fa341ee"
   }
 }

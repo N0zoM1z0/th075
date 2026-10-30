@@ -15,16 +15,16 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
 
 ## Current verified original-game status (one short snapshot)
 
-- **969 cold-exact source-present functions**, **864,672 original authored
-  CODE bytes**, **43.81% reviewed authored coverage** and **43.73%
+- **970 cold-exact source-present functions**, **864,961 original authored
+  CODE bytes**, **43.82% reviewed authored coverage** and **43.75%
   conservative coverage** of native original CODE. The independently
   reviewed authored provenance cohort has **1,004** candidates, so
-  **35 authored whole functions remain NONEXACT**: **22** large
-  (1,102,055 original CODE B) plus **13** small/medium
-  (6,977 CODE B). The older **25**-function subset counted only
+  **34 authored whole functions remain NONEXACT**: **22** large
+  (1,102,055 original CODE B) plus **12** small/medium
+  (6,688 CODE B). The older **25**-function subset counted only
   `config/functions.csv.owner=authored` unfinished rows and omitted
   11 independently authored, formerly owner-blank small/medium targets,
-  of which F755 has now accepted one. See [all 13 current addresses](RE_HANDOFF.md).
+  of which F755 and F758 have now accepted two. See [all 12 current addresses](RE_HANDOFF.md).
 - **95 original candidates /3,420 CODE bytes** have separately
   unresolved provenance; even a whole byte-exact C++ source does not
   permit reclassification or accepted authored CODE without independent
@@ -41,8 +41,11 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   These are still *internal switch-case source, NOT accepted whole
   game-function CODE*. Source 059 and 060/061 GPR differences remain.
   Reproduce from [F752 native/PE proof](FIGHTER_BORROWED_POSITION_F752.md).
-- **The currently most recent exact whole function is F755**, original
-  R015-authored audio client destructor `00407270` with **292 CODE B / 82
+- **The currently most recent exact whole function is F758**, original
+  R016-authored audio file queue `00407A50` with **289 native CODE B, 77
+  x86 and 26 genuine physical PE/COFF fields**, one-unit cold exact.
+  [F758 original source/lifetime/PE proof](AUDIO_QUEUE_FILE_F758.md).
+  Paired F755 original R015-authored audio client destructor `00407270` with **292 CODE B / 82
   native x86 / 24 physical PE relocations** and one-unit cold replay.
   [F755 whole original proof](AUDIO_STREAM_CLIENT_RELEASE_F755.md). Paired F753
   original R015-authored AudioStream `004071C0` 161 B/42 x86/18 original COFF
@@ -13637,3 +13640,24 @@ a normal borrowed cleanup interface, not a guessed full private owner.
 Official 968→**969** original complete authored matches,
 864,380→**864,672** CODE B, reviewed **43.81%**, conservative **43.73%**.
 See [full F755 physical proof](AUDIO_STREAM_CLIENT_RELEASE_F755.md).
+
+
+## F758: source-backed 64-byte native AudioStream record enables original file queue exact
+
+Original R016-authored `00407A50` is **289 full native CODE B /77 x86 /26
+physical PE/COFF relocations**. Fresh normal `/GX` VC7.1 C++ has a real
+file `HANDLE` in the enclosing scope and a **64-byte** record in its
+nested lifetime. Correcting the earlier guessed 68-byte record aligns
+all genuine original slots: handle `EBP−0x10`, record `EBP−0x54`,
+mode switch `EBP−0x58`, frame `sub esp,0x4C`. Every real file-open,
+CloseHandle, shared queue trim/append, mode 0/1/2, loop-point scan
+and file start uses original Win32 and authored game calls, with native
+record ctor/dtor and compiler exception lifetime. Actual physical original
+**185/185 nonfield bytes** and **26/26 typed COFF fields** match,
+and the newly accepted whole unit `audio-stream-queue-file-00407a50`
+passes targeted **1/1 exact cold replay**. A BYTE array instead of
+opaque DWORD storage triggered *extra* nonnative `/GS` cookie bytes,
+so historical private record field meanings remain unknown.
+Official 969→**970 exact whole authored**, 864,672→**864,961 original
+CODE B**, reviewed **43.82%**, conservative **43.75%**. No corpus cold
+replay. [Complete original PE and compiler proof](AUDIO_QUEUE_FILE_F758.md).

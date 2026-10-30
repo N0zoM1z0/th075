@@ -925,3 +925,4 @@ address,name,module,confidence,evidence
 0x00455770,CombatCoordinateView::MapWorldToScreenAt00455770,CombatCoordinateView,inferred,"F536; complete native two-axis game transform, full 111 CODE and cold exact; owner/name provisional, no native callers"
 0x0041CA30,FontSurface::IsDoubleByteAt0041CA30,FontSurface,inferred,"F555; full original 77 CODE cold exact; only original caller 0041C9D0, 28 native insns, 0 COFF; original class identity and vendor provenance provisional"
 0x00407270,AudioStreamClientF755::~AudioStreamClientF755,AudioStream,inferred,"R015; F755; complete authored original 292 CODE, 82 x86, 24 native typed PE relocations and 1/1 cold replay; owner/name provisional"
+0x00407A50,AudioQueueFileF758::QueueFile,AudioStream,inferred,"R016; F758; original 289 CODE/77 x86, 26 typed native PE relocations and one-unit 1/1 cold exact; historical owner/record full meaning provisional"
