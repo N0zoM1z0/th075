@@ -1,6 +1,6 @@
 # TH075 — ACTIVE reconstruction agent handoff
 
-**Verified snapshot: 2026-10-31, current F780 exact ledger; F846 original 133 and F838 Scene.**
+**Verified snapshot: 2026-10-31, current F780 exact ledger; F847 fighter projectiles and F838 Scene.**
 This is the **short working queue**, not the chronological research log.
 Original Japanese PE and the live configuration **always outrank historical
 prose, old case-level exact labels, class names or inferred layouts**.
@@ -1303,6 +1303,31 @@ three physical original PE REL32 fields.
 scripts/repo-python scripts/verify-scripted-fighter-sidestep-133-f846.py.
 Enclosing 46,755B game function STILL
 NONEXACT, no standalone case/suffix credit.
+
+**F847 authentic fighter 134/135 original projectile cases:**
+both game interiors are **278 whole native
+CODE B/82 x86/seven true original PE
+fields each**, sprite 0x334 at stage4 and
+sprite 0x339 at stage7, native prepare
+animation1D at stages5 and7 respectively.
+Fresh selected VC7.1 whole fighter is
+**23,257 callable B/6,371 x86**
+(previous F846 22,731/6,211).
+Every native x86 width/GPR and 14 real
+PE call/global fields match except
+two genuine full-giant final JMP
+operand bytes +274/275 per case.
+All 18 preceding whole original C8-D2/
+12C-12F/130/131/133 source cases and
+five packed original 901B jump tables
+rechecked in the new COFF. Original
+46B shared getter remains **34/34
+native nonrelocation bytes** plus
+three original PE REL32 calls.
+[F847 current actor game PE proof](SCRIPTED_FIGHTER_PROJECTILES_134135_F847.md);
+scripts/repo-python scripts/verify-scripted-fighter-projectile-134135-f847.py.
+Whole 46,755B still NONEXACT; no
+independent inner case CODE credit.
 
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`

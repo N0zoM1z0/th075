@@ -232,6 +232,22 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   GPR differences, whole native
   giant NONEXACT.
   [F844 selected original physical PE](SCRIPTED_FIGHTER_GROUNDED_130_F844.md).
+- **F847 native 134/135 original projectile cases:**
+  each 278B/82 x86/seven
+  genuine physical PE fields in
+  one new **23,257B/6,371-x86**
+  whole selected fighter.
+  Native sprites334 at stage4,
+  339 at stage7, real animation1D
+  at stages5/7. Full original
+  x86/codegen/typed PE fields
+  match except two honest
+  whole-giant final JMP bytes
+  per case. Native 46B default
+  **34/34 nonrelocation bytes**
+  and three PE calls preserved,
+  plus five 901B jump tables.
+  [F847 physical original PE proof](SCRIPTED_FIGHTER_PROJECTILES_134135_F847.md).
 - **F846 original 0x133 side-step restores full native default GPR:**
   270 whole native inner B/78 x86/6
   original PE fields in one selected
