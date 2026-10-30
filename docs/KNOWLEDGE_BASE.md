@@ -198,6 +198,20 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   matched after all 14 original PE refs checked.
   None accepted exact.
   [F798 full native teardown evidence](ARCHIVE_NATIVE_LOOP_TEARDOWN_F798.md).
+- **F809 Scene 248-B authored destructor lifetimes:**
+  nine new fully compiled VC7.1 virtual/EH source
+  candidates independently reproduce both original
+  texture/delete pointer slots `EBP-0x14/-0x10`
+  *only* when direct CRT-free source removes
+  three real free-argument store/reloads (source
+  **230 B/69 x86** vs original **248 B/75**).
+  Three actually used named pointer values restore
+  source length but not slot layout (189/200
+  nonfield); aggregate/array preserves 191/200.
+  All real 12 native PE fields checked only
+  for equal-size candidates; no whole exact
+  or accepted CODE.
+  [F809 original PE/source lifetime tradeoff](SCENE_NATIVE_FREE_TEMP_LIFETIMES_F809.md).
 - **F808 native source restores GPR phase in 46KB original fighter:**
   adding the true full 350B/99-x86/15-COFF
   original action `0x49` to the same full

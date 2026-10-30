@@ -562,6 +562,28 @@ delete assignment source grammar both negative.
 [F798 original whole-function evidence](ARCHIVE_NATIVE_LOOP_TEARDOWN_F798.md);
 `scripts/repo-python scripts/verify-archive-loop-teardown-f798.py`.
 
+**F809 new physical lifetime constraint for authored Scene 0043B0B0:**
+nine fresh **whole 248-B virtual/EH destructor**
+compiles check the real two texture-delete temporary
+slots and three CRT-free argument slots. The genuine
+three-pointer aggregate/array remains **191/200**
+original nonfield bytes and preserves all 12 original
+physical PE refs but reverses the stack ownership.
+Replacing each saved CRT-free argument by direct
+`free(this+field)` naturally **recovers the exact
+native texture/delete `EBP-0x14/-0x10` slots**
+but generates **230 B/69 x86**, omitting precisely
+six real native stored/free-parameter instructions
+(18 B). Separately named/volatile/union locals
+restore **248 B/75 x86** but regress to
+**189/200** original nonfield bytes.
+An aligned real aggregate produces a non-native
+271-B stack-aligned EH prologue. None is
+whole-function exact; do not mask moved
+PE fields in the wrong-size controls.
+[F809 complete Scene original/VC7 lifetime proof](SCENE_NATIVE_FREE_TEMP_LIFETIMES_F809.md);
+`scripts/repo-python scripts/verify-scene-release-lifetimes-f809.py`.
+
 The R011 ordinary-quad `0040C9A0` is now **115-B/37-x86/4-PE-field
 whole cold exact** ([F780](SPRITE_ORDINARY_QUAD_NATIVE_F780.md)).
 Two original calls prime/capture a texture pointer and real VC7 vector
