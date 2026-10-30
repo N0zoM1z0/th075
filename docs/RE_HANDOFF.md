@@ -1,6 +1,6 @@
 # TH075 — ACTIVE reconstruction agent handoff
 
-**Verified snapshot: 2026-10-30, current F780 exact ledger; F798 Archive/WinMain/giant controls.**
+**Verified snapshot: 2026-10-31, current F780 exact ledger; F824 original fighter 9E and Scene/Archive controls.**
 This is the **short working queue**, not the chronological research log.
 Original Japanese PE and the live configuration **always outrank historical
 prose, old case-level exact labels, class names or inferred layouts**.
@@ -789,6 +789,25 @@ DATA independently checked.
 [F823 physical whole-parent proof](SCRIPTED_FIGHTER_LANDING_PAIR_F823.md);
 scripts/repo-python scripts/verify-scripted-fighter-landing-pair-f823.py.
 Whole 46,755B fighter still NONEXACT.
+
+**F824 whole 46KB fighter original 0x9E ground boost integrated:**
+original physical 00524939 complete **243 native
+inner CODE B/66 x86/8 real typed PE fields**,
+natural >= ground-approach and action A/9.
+Fresh one-parent VC7.1 output expands
+**14,848 to 15,076 callable B**, x86
+**3,912 to 3,976**. Exact native 0x9E
+opcode/width/GPR and all eight real PE field
+positions/targets; only four honest
+external whole-giant epilogue JMP operand
+bytes 202/203 and 239/240 differ,
+not accepted. All six earlier original
+timers, actual 91/8C/8F/90 states, 0x63
+shifted PE field and 901B separate
+afterRET DATA freshly checked.
+[F824 complete original PE/source](SCRIPTED_FIGHTER_GROUND_BOOST_F824.md);
+scripts/repo-python scripts/verify-scripted-fighter-ground-boost-f824.py.
+Original 46,755B giant still NONEXACT.
 
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
