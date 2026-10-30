@@ -12518,3 +12518,22 @@ not just its original placeholder. [Actual physical original evidence
 and source-context negative proof](FIGHTER_APPROACH_VOLLEY_F699.md).
 Reproduce with `scripts/repo-python scripts/verify-fighter-approach-volley-f699.py`.
 **Zero new independent whole-function accepted CODE; 943/862,726 unchanged.**
+
+
+## F700: complete 248-byte Scene texture-owner lifetime controls — real negatives
+
+Reconfirmed the pinned original authored `0043B0B0` whole destructor
+**248 B/75 x86/12 typed PE/COFF fields**, with actual physical EBP
+temporary slots `-0x14/-0x10/-0x18/-0x1C/-0x20`. Recompiled the
+existing best F589 small source control, still **191/200** genuine
+nonfield bytes. Ten additionally **fully used** original-native-profile
+VC7.1 `/GX` C++ forms tested real named texture pointer lifetimes,
+texture lvalue references, three separate freed-resource locals and
+four-field texture/resource owner aggregates. **Eight** introduce
+additional authentic instructions (**251/254/255 B**); **two** separate
+freed-pointer local models retain full **248/75/12** but regress to
+**189/200** and still allocate all five EBP slots incorrectly.
+No exact match, no fake locals, no 943-unit cold replay.
+[Native slots and complete ten-candidate COFF evidence](SCENE_TEXTURE_OWNER_LIFETIMES_F700.md);
+reproducible ignored local C++ research under
+`.analysis/f700-scene-texture-owner/`.

@@ -26,6 +26,10 @@ reason to undo later exact adoptions. Original pinned native PE and
    hypothesis. [Physical negative evidence](CHARACTEROBJECT_SCENE_PHASE_NEGATIVES_F689_F693.md).
 3. **Continue full authored `0043B0B0` (248 B) and `0041CE50`
    (171 B)**: real native EBP temporary ownership remains wrong.
+   F700 also freshly tested **10 whole, fully used Scene texture-owner
+   C++ lifetime variants**: eight generate 251/254/255 instead of
+   248 native B; two remain 248/75/12 but only **189/200** nonfield
+   bytes (a regression). See [new original full-function negatives](SCENE_TEXTURE_OWNER_LIFETIMES_F700.md).
    F689's **eight valid additional scoped free variants** regressed
    to 189/200; one valid nested aggregate stayed 191/200. An
    artificial unused-aggregate trial is disqualified. Read
