@@ -12,8 +12,9 @@ Original whole methods:
 F787/F788 showed that a truly *compiler-synthesized* copy
 constructor and assignment operator for a provisional 116B
 composite can reproduce these two full original functions
-exactly, including all 785 native CODE bytes outside the
-independently relocated 32 field bytes.
+exactly, including all 753 nonrelocated machine bytes among
+the 785 total native CODE bytes, with 32 independently
+relocated field bytes.
 
 That still did not prove historical ownership. F789 therefore
 generated **two separate, explicitly user-defined natural C++

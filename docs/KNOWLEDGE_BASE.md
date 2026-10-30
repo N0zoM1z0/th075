@@ -186,6 +186,18 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   are documented in [storage hygiene](STORAGE_HYGIENE.md); original
   sources, PE, Ghidra, Wine and accepted objects were preserved.
 
+- **F790 seven fresh whole fighter compilations:** source
+  stage comparisons and mode-63 short-circuit controls confirm
+  the original 58,294B/16,471-x86 giant still emits
+  **58,293B/16,471 x86** with CMP width differences
+  [18,61,84]. Three meaningful expression variants are
+  byte-identical; changing to `<=149` or reversing
+  outer short-circuit grammar changes wrong native branch
+  opcodes, and boolean-cast control increases the real
+  case to 712B. All 15 case-63 real PE fields, earlier
+  early-action physical mismatches and 943B switch DATA
+  checked; zero whole exact CODE credited.
+  [F790 full native source controls](FIGHTER_MODE63_CONTROLFLOW_F790.md).
 - **F789 independent historical-provenance ambiguity:** explicit
   **and** compiler-implicit whole native C++ copy methods both
   reproduce original `004591E0` 417B and `0045AAE0`

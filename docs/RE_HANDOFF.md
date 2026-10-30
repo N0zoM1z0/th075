@@ -1,6 +1,6 @@
 # TH075 — ACTIVE reconstruction agent handoff
 
-**Verified snapshot: 2026-10-30, current F780 exact ledger; F782 giant source controls.**
+**Verified snapshot: 2026-10-30, current F780 exact ledger; F790 giant source controls.**
 This is the **short working queue**, not the chronological research log.
 Original Japanese PE and the live configuration **always outrank historical
 prose, old case-level exact labels, class names or inferred layouts**.
@@ -22,9 +22,9 @@ Older [F598–F652](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
 | Exact reviewed coverage | **43.99%** |
 | Conservative coverage (includes pending origin bytes) | **43.91%** |
 | Authored candidates still NOT exact | **25 authored functions remain nonexact** |
-| 27 nonexact breakdown | **22 large original state advances**, **3 other original small/medium whole functions** |
+| 25 nonexact breakdown | **22 large original state advances**, **3 other original small/medium whole functions** |
 | 22 large original native CODE not accepted | **1,102,055 CODE bytes** (separate after-RET DATA not credited) |
-| 5 small/medium native CODE not accepted | **3,406 CODE bytes** |
+| 3 small/medium native CODE not accepted | **3,406 CODE bytes** |
 | Independently origin-unknown candidates | **95 functions / 3,420 CODE bytes**, uncredited |
 
 **Important correction:** the older **25 unfinished** figure only counted
@@ -280,6 +280,23 @@ Simply adding typed borrowed views does not solve this GPR phase;
 this is *negative evidence*, not exact credit.
 [Reproducible F782 controls](FIGHTER_MODE63_BORROWED_VIEWS_F782.md);
 `scripts/repo-python scripts/verify-fighter-mode63-borrowed-f782.py`.
+
+**F790 renewed full 58KB boss native mode-63 control-flow study:**
+seven full VC7.1 C++ parent rebuilds independently test
+`150>stage`, signed-int conversion, negated comparison,
+`<=149`, swapped short-circuit evaluation and genuine
+boolean normalization against the pinned native PE.
+The first three are codegen-identical to F781's still-nonexact
+**58,293/58,294 CODE B**; the other variants either change
+native Jcc semantics or produce a **712-B** instead of
+706-B mode-63 case. Real CMP register-width ordinals
+**18/61/84** remain unresolved; F790 rechecks original
+mode-63 15 PE fields, 58/59/60/61 predecessor native
+register negatives, the original 46-B common suffix and
+all 943 native afterRET switch DATA in complete parents.
+**Zero whole original fighter CODE credited.**
+[Original native/VC7.1 evidence](FIGHTER_MODE63_CONTROLFLOW_F790.md);
+`scripts/repo-python scripts/verify-fighter-mode63-controlflow-f790.py`.
 
 **Next meaningful giant tasks:** resolve the real native `059` **19**
 normalized nonfield GPR discrepancies and `060/061` **98/101**;
