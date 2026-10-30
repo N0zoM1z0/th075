@@ -214,6 +214,22 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   saved-this slot. Entire 248B remains
   nonexact, no credited original CODE.
   [F818 original PE typed-view result](SCENE_COMPLETE_BORROWED_OWNER_F818.md).
+- **F842 real 12C/12D/12E original falling recovery in growing fighter:**
+  selected actor original 207/219/207 native
+  interior B, 59/61/59 x86, six original
+  PE fields per case; true native
+  preparation stages 1/3/2 and animations
+  1B/1C/1C, distinct from the other F653
+  fighter. Normal 21,910B/5,966-x86 whole
+  source now includes 633 new original inner
+  B with only two real full-giant parent
+  JMP operand byte differences in each.
+  Previous eleven C8-D2 physical cases
+  and five native 901B packed tables
+  rechecked. 46B default getter rotates
+  back to four original GPR byte differences.
+  No independent original callable CODE credit.
+  [F842 physical target proof](SCRIPTED_FIGHTER_FALLING_RECOVERY_F842.md).
 - **F841 selected original CE completes complex CC/CD/CE trio:**
   full native 387B/113 x86/8
   genuine PE fields within new

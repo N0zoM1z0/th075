@@ -1,6 +1,6 @@
 # TH075 — ACTIVE reconstruction agent handoff
 
-**Verified snapshot: 2026-10-31, current F780 exact ledger; F827 giant and F828 authored Archive research.**
+**Verified snapshot: 2026-10-31, current F780 exact ledger; F842 selected giant and F838 Scene.**
 This is the **short working queue**, not the chronological research log.
 Original Japanese PE and the live configuration **always outrank historical
 prose, old case-level exact labels, class names or inferred layouts**.
@@ -1151,6 +1151,34 @@ afterRET packed tables.
 [F841 actual original CE PE proof](SCRIPTED_FIGHTER_COMPLEX_CE_F841.md);
 scripts/repo-python scripts/verify-scripted-fighter-complex-ce-f841.py.
 The full 46,755B fighter still NONEXACT.
+
+**F842 three original 12C/12D/12E falling-recovery game cases in 46KB fighter:**
+selected physical original complete states are **207/219/207
+native inner B**, **59/61/59 x86**, SIX typed
+PE fields each. Original actor-only prepare
+frame stages **1/3/2**, animation **1B/1C/1C**
+and +0xF00 short reset ONLY in 12D were
+independently read from original Japanese
+PE, not other actor F653 values 2/4/2,
+1B/1D/1D. One new whole parent is
+**21,910 callable CODE B/5,966 x86**,
+up from F841 21,322/5,793. All three
+new complete cases match native opcode/
+width/GPR and 18 physical PE references;
+only TWO actual entire-fighter epilogue
+long-JMP operand bytes differ per case.
+All ELEVEN preceding genuine C8-D2
+native whole-case sources and all five
+901B afterRET packed jump DATA tables
+reverified. The new source context rotates
+the 46B shared getter to FOUR actual
+unrelocated GPR byte mismatches at
+10/12/16/19; do not inherit F841
+shorter-parent default equality.
+[F842 original entire PE source](SCRIPTED_FIGHTER_FALLING_RECOVERY_F842.md);
+scripts/repo-python scripts/verify-scripted-fighter-falling-recovery-f842.py.
+Whole native 46,755B STILL NONEXACT, no
+independent inner-case callable CODE credit.
 
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
