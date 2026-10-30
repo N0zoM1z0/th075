@@ -13416,3 +13416,32 @@ whole authored ledger **963→964 functions, 863,853→863,913 CODE B,
 43.77% reviewed unchanged to two decimals, conservative
 43.69→43.70%**. No all-963 cold replay or giant CODE acceptance.
 [Exact original PE and targeted canonical replay](INPUT_MAPPING_INIT_NATIVE_F742.md).
+
+
+## F743: four real original late-early fighter cases 19C/19E/1A0/1A1 recovered in one giant
+
+Original entire fighter `00543210` native physical cases `19C`
+`0054A21A..0054A2F4` **218 CODE B/62 x86/7 true PE fields**,
+`19E` `0054A2F4..0054A462` **366/104/11**, `1A0`
+`0054A462..0054A597` **309/84/7**, `1A1` `0054A597..0054A6CC`
+**309/84/7** are newly source-backed C++ within one full
+original-shaped pinned VC7.1 father. **1,202 whole original
+internal CODE B, all 334 original x86 mnemonic+width positions,
+all 32 genuine typed source PE/COFF targets at identical native
+original instruction ordinals** matched; true ground collision,
+Y gravity, signed stage and 0x335 kind shots (x signed multiplier
+40,27,45,27) and original x87 globals 659A14/659A20/659288.
+But **GPR differences 33/59/53/53**, native signed-x87 EBP
+scratch `−0xC8/−0xCC/−0xD0/−0xD4` vs source `−0x88/−0x8C/
+−0x90/−0x94`, original saved this `−0x44` vs source `−0x3C`:
+all four and enclosing giant CODE NONEXACT. Original actual 19A/19B
+**607 B each** remain unimplemented; 199/19D/19F target shared
+switch default 00551598, not independently recovered action source.
+Previous full 190–198 + 13 actual prior selected native cases
+rechecked in SAME C++ source, with GPR regressions 1F4/1F5 71/71,
+200/201 67/85, 2EF 0 honestly retained. Whole original 943-B
+post-RET switch DATA, 156 typed real DIR32/native x86 label targets
+and 319/319 remaining sparse native bytes verified. No standalone
+original CODE credit, 964/863913 ledger unchanged, no mass replay.
+[True full PE and original compiler negatives](FIGHTER_LATER_EARLY_F743.md),
+`scripts/repo-python scripts/verify-fighter-later-early-f743.py`.

@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F742 authored 60-byte InputMapping native initializer cold-exact.**
+**Maintained 2026-10-30, after F743 native 19C/19E/1A0/1A1 full fighter source.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -9,6 +9,29 @@ with its Markdown links adjusted for its new directory. The older
 [chronological knowledge base](KNOWLEDGE_BASE.md) are evidence, not a
 reason to undo later exact adoptions. Original pinned native PE and
 **live manifests outrank every historical sentence**.
+
+**F743 latest substantial GIANT original-game source recovery (still NONEXACT):**
+Pinned original fighter `00543210` real 19C **218 native B/62 x86/
+7 original COFF fields**, 19E **366/104/11**, 1A0 **309/84/7**,
+1A1 **309/84/7**, all four now complete natural C++ action source
+in one original-shaped full 58KB VC7.1 parent. **1,202 native internal
+original CODE B, all 334 original x86 mnemonic AND size positions,
+all 32 genuinely typed PE/COFF physical field owner ordinals**
+now generated with authentic original collision/stage/shots.
+REAL NONEXACT register/EBP: source normalized nonfield GPR errors
+**33/59/53/53**, real native x87 scratch `−0xC8/−0xCC/−0xD0/
+−0xD4` vs compiler `−0x88/−0x8C/−0x90/−0x94`, original saved
+`this −0x44` vs source `−0x3C`. The two original contiguous
+**607B** complex physical cases 19A/19B are STILL UNRECOVERED;
+199/19D/19F dispatch to actual shared native default 00551598,
+not standalone source. Original previous 190–198 and 13 previous
+native original selected case GPR phases rechecked in SAME new
+parent, including 1F4/1F5 71/71, 200/201 67/85, 2EF 0.
+Full original **943B afterRET DATA**, 156 actual typed native/
+source DIR32 valid x86 labels and 319/319 sparse bytes verified.
+Zero new entire original game function CODE, no mass cold replay.
+[Complete PE/COFF and honest GPR/EBP original negatives](FIGHTER_LATER_EARLY_F743.md);
+`scripts/repo-python scripts/verify-fighter-later-early-f743.py`.
 
 **F742 newest canonical whole authored 60B InputMapping initializer COLD EXACT:**
 Native original authored R015 `00406DB0` complete **60 CODE B/
