@@ -1,6 +1,6 @@
 # TH075 — ACTIVE reconstruction agent handoff
 
-**Verified snapshot: 2026-10-30, current F780 exact ledger; F778 giant source research.**
+**Verified snapshot: 2026-10-30, current F780 exact ledger; F781 giant source research.**
 This is the **short working queue**, not the chronological research log.
 Original Japanese PE and the live configuration **always outrank historical
 prose, old case-level exact labels, class names or inferred layouts**.
@@ -233,7 +233,7 @@ Thirteen actual C++ 059 stage/float/short conversions and eight R015
 them without a new source hypothesis.
 [Original physical evidence and negative bounds](FIGHTER_CURRENT_REGISTER_PHASE_AUDIT_F777.md).
 
-**F778 latest genuine full-parent default-handler repair:** independent
+**F778 historical full-parent default-handler repair (before F781):** independent
 physical native dispatcher reading proves **239 original action IDs**
 map to the real `00551598` shared default, not a source marker.
 Its actual `0040FA30` state getter / `+0x70` compare / conditional
@@ -251,11 +251,31 @@ nonfield original after-RET DATA. **Giant still NONEXACT, zero
 whole-function CODE credit**. [F778 full native control-flow proof](FIGHTER_NATIVE_DEFAULT_F778.md),
 `scripts/repo-python scripts/verify-fighter-native-default-f778.py`.
 
+**F781 latest full-parent shared-getter recovery:** independently decoded
+original native `005515BA` is the real **8-B getter call**, reached
+by **exactly four direct physical JMPs** from action 0/2/4/5
+(`00543462`, `005435EA`, `005436CD`, `005436DC`).
+Those four source actions now use a shared post-switch getter entry,
+while other normal breaks still return directly; the original default
+guard retains its authentic short JMP over the getter. The whole
+compiled 58KB parent now emits **58,293 of 58,294 CODE B** and
+**16,471 of 16,471 original x86**, restoring the complete **46-B/16-x86
+native suffix** with three genuine target-attested PE calls (default
+`0040FA30/0040FAC0`, shared `0040FA30`). All four default GPR
+bytes remain wrong and the **one real length byte deficit in 0x63**
+persists, along with the original 059/060/061 GPR discrepancies.
+The 943-B afterRET DATA and 68 native physical references across
+058/059/060/061/063 are independently rechecked in the same parent.
+**No entire 00543210 exact CODE credit.**
+[Full F781 source/PE evidence](FIGHTER_EARLY_SHARED_GETTER_F781.md);
+`scripts/repo-python scripts/verify-fighter-shared-getter-f781.py`.
+
 **Next meaningful giant tasks:** resolve the real native `059` **19**
 normalized nonfield GPR discrepancies and `060/061` **98/101**;
 recheck *in the next newly compiled entire parent* (do not inherit
 F737/F744 counts) and restore the remaining genuine deep x87 stack
-lifetimes/earlier source actions. F759 had **40/40/34** real wrong register ordinals in 190/191/192,
+lifetimes/earlier source actions. Recheck 0x63 CMP native
+register widths [18,61,84] before attempting the last length byte. F759 had **40/40/34** real wrong register ordinals in 190/191/192,
 but **F760 repairs all three to zero other nonfield differences** in the
 new whole parent. This is a compiler-context/lifetime effect; full
 boss CODE and parent-tail JMP layout remain nonexact.

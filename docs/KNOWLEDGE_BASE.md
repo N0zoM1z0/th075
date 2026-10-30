@@ -34,7 +34,19 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   Use `scripts/repo-python scripts/report-reconstruction-status.py --summary`
   and the canonical native/origin manifests; do not quote this snapshot
   as timeless status after a later adoption.
-- **Most recent giant validation context is F778**: original shared
+- **Most recent giant validation context is F781**: the original
+  `005515BA` shared getter is reached by *exactly four* actual
+  native early action 0/2/4/5 JMPs. F781 restores one real 8-B
+  native call and a 2-B skip under native four-way control flow;
+  entire source length improves from **58,283→58,293** of
+  **58,294 original CODE B** and native/source x86 counts are
+  **16,471/16,471**. The independent F781 verifier compares
+  the entire genuine 46-B shared suffix (three PE call fields,
+  four real wrong GPR bytes), early 058/059/060/061/063 native
+  cases and 943-B afterRET switch DATA. **Not exact**; 0x63
+  still has an original register-width byte shortfall.
+  [F781 four-entry original native proof](FIGHTER_EARLY_SHARED_GETTER_F781.md).
+  Historical **F778**: original shared
   `00551598` switch fallback genuinely handles 239 native action IDs
   and now emits all native **32-B/10-x86** conditional reset grammar
   with two authentic PE/COFF call targets, reducing full fighter
@@ -14195,3 +14207,27 @@ fields at original offsets `1C,2D,4F,64`, and original call
 destinations. Fresh targeted `replay-exact-units.py --unit
 sprite-drawing-ordinary-quad-native-0040c9a0` accepts **1/1 exact**;
 no library/source-owned helper bytes double-counted.
+
+
+## F781: recover the four original native shared post-switch getter exits
+
+The actual original giant `00543210` has four code paths in its first
+six action handlers (0,2,4,5) which JMP at `00543462`,
+`005435EA`, `005436CD`, `005436DC` to native `005515BA`.
+It is an 8-B real `GetNativeActionAt40FA30` tail, not an arbitrary
+function epilogue or placeholder. The default guard at `00551598`
+short-jumps over the shared getter on ordinary break, and all other
+normal actions go directly to the epilogue at `005515C2`.
+
+The tracked F781 shared-tail fragment and whole-parent source builder
+restore that exact distinction using ordinary C++ switch/goto/return
+control flow. Fresh VC7.1 compilation produces a complete 46-B/16-x86
+source suffix and the same four native-position source JMPs; 3 tail
+PE/COFF CALL fields resolve to real `0040FA30`, `0040FAC0`,
+`0040FA30`. Four genuine default GPR operand bytes still differ.
+The 58,293-B complete original-shaped source and target 58,294-B
+function both decode to 16,471 x86; native 0x63 has three real
+register-width CMP differences leaving 1 B short, and many other
+authentic GPR differences remain. The 943-B afterRET table is
+separately checked; zero new callable exact CODE is credited.
+[Detailed physical evidence](FIGHTER_EARLY_SHARED_GETTER_F781.md).
