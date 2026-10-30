@@ -1,6 +1,6 @@
 # TH075 — ACTIVE reconstruction agent handoff
 
-**Verified snapshot: 2026-10-31, current F780 exact ledger; F860 stage196 and F854 Archive.**
+**Verified snapshot: 2026-10-31, current F780 exact ledger; F861 stage198 and F854 Archive.**
 This is the **short working queue**, not the chronological research log.
 Original Japanese PE and the live configuration **always outrank historical
 prose, old case-level exact labels, class names or inferred layouts**.
@@ -1651,6 +1651,36 @@ byte negatives rechecked.
 [F860 selected native physical proof](SCRIPTED_FIGHTER_STAGE_196_F860.md);
 scripts/repo-python scripts/verify-scripted-fighter-stage-196-f860.py.
 Whole original 46,755B giant NONEXACT.
+
+**F861 actual selected 0x198 physical case in original giant:**
+CORRECTION: native 5277EA..527BBD
+980B is FIVE separately addressed
+switch cases 198/19A/19C/19E/1A0,
+NOT one 980B action. Actual
+0x198 is **199 entire native inner
+B/60 x86/seven true PE fields**,
+stage4 state2 Prepare3 then
+sprite351 signed facing*90,
+Y global00659460 then native
+animationC8. One full normal
+VC7.1 fighter now **26,340
+callable CODE B/7,300 x86**,
+from F860 26,156/7,242.
+All native original opcode/width
+and seven PE call/global targets
+match, with 31 honest original
+GPR bytes plus two entire-fighter
+final JMP operand bytes +195/196
+DIFFERENT. Twelve preceding
+GPR-phase cases, twenty earlier
+source-backed native game cases,
+all five 901B packed DATA tables
+and common 46B getter again
+**34/34 original nonrelocation
+bytes +3 real PE calls** checked.
+[F861 target physical proof](SCRIPTED_FIGHTER_STAGE_198_F861.md);
+scripts/repo-python scripts/verify-scripted-fighter-stage-198-f861.py.
+Original 46,755B remains NONEXACT.
 
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`

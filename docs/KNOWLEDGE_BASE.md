@@ -232,6 +232,32 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   GPR differences, whole native
   giant NONEXACT.
   [F844 selected original physical PE](SCRIPTED_FIGHTER_GROUNDED_130_F844.md).
+- **F861 native original 198 first of five distinct 980B-region switch states:**
+  physical first state is
+  199B/60-x86/7 genuine
+  original PE fields, NOT
+  one 980B combined action.
+  True stage4 sprite351,
+  facing*90 float X, Y
+  global00659460, actual
+  action2 and animationC8
+  in whole 26,340B/
+  7,300-x86 current fighter.
+  All native opcode/width
+  and call/global fields
+  match; 31 real GPR and
+  two actual entire giant
+  final-JMP bytes differ.
+  Twelve previous native
+  GPR cases, twenty earlier
+  PE-backed game cases,
+  all five 901B afterRET
+  tables reverified. Shared
+  46B getter 34/34 original
+  nonrelocation bytes +
+  3 true PE calls recovered.
+  Still nonexact whole.
+  [F861 physical source](SCRIPTED_FIGHTER_STAGE_198_F861.md).
 - **F860 native 196 float shot with actual original callback order:**
   199B/60-x86/seven physically
   typed PE fields restored in
