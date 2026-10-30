@@ -13167,3 +13167,35 @@ Portable original native 171-B/51-x86 complete-source verifier
 `--all` compiles only 22 affected C++ TUs. [All real machine-code
 and physical COFF evidence](ARCHIVE_SHARED_USED_STATE_F733.md).
 ZERO exact new whole-game CODE, no full 943-unit cold replay.
+
+
+## F734: full original 190/191/192 eight-projectile C++ in one 58KB fighter parent
+
+Original `00543210` native entire physical original actions `190`
+`00549364..00549478` **276 B/75 x86/7 original typed COFF
+fields**, `191` `00549478..0054958C` **276/75/7** and `192`
+`0054958C..0054967C` **240/68/7** now compile from meaningful
+natural C++ in one original-shaped pinned VC7.1 parent. All 218
+native instruction **mnemonics** agree in source and **21/21
+original PE/COFF target/symbol/type/addend fields are owned by
+the same original x86 ordinals**. Original stage-five vs stage-four,
+real +0xF00/+0x4F0 flag, eight kind-0x324 shots, signed-facing
+70/64/44 integer-to-float directions, 0/20/45 member angles,
+original globals 00659A30/2C/28, and original finish 0/0/2
+implemented. Current source emits **266/266/230 B** versus
+native **276/276/240**, exactly three real source width negatives
+per complete case: one 6B→2B branch and two 6B→3B wide
+integer/x87 scratch accesses. Original EBP frame `this−0x44`,
+source now naturally `−0x34` (was `−0x28` in preceding parent).
+True original loop indices/signed x87 scratch also differ. All
+three have **0 normalized source GPR/CFG errors** but are
+NONSTRICT and add **ZERO** independently callable exact CODE.
+Previous original 1F4/1F5, 1FA/1FB/1FE/1FF, 200/201 and 2EF
+source-context machine geometry/typed fields rechecked in this
+new whole parent; entire original afterRET **943-B DATA**, 156
+actual DIR32 native/source x86 labels and other **319/319
+native bytes** verified in the same newly built parent. Historical
+source-context strict counts not inherited. [F734 original physical
+PE/COFF and actual EBP negative](FIGHTER_EIGHT_ROUND_F734.md),
+`scripts/repo-python scripts/verify-fighter-eight-round-f734.py`.
+No all-943 cold replay; 943/862726 whole-game exact ledger unchanged.

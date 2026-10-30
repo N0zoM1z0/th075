@@ -176,7 +176,8 @@ def case_evidence(reader,pe,real,f676,f598,f701,by,ins,refs,*,following_native_1
     return rows
 
 
-def complete_native_switch_DATA(reader,pe,real,boss,code,ins,refs):
+def complete_native_switch_DATA(reader,pe,real,boss,code,ins,refs,*,
+                                source_1f5_start=5555,source_1f6_start=5704):
     ret=ins[-1].address+ins[-1].size
     n=reader.pe_bytes_at(pe,BOSS+boss['size'],boss['postret_size'])
     obj=code[ret:]
@@ -210,8 +211,9 @@ def complete_native_switch_DATA(reader,pe,real,boss,code,ins,refs):
          'independent native/source sparse switch dispatch DATA bytes are not identical')
     # Grounded original 1F5 / following 1F6 physical table targets,
     # not merely any target within either 58KB body.
-    need(target_pairs.get(0x0054A8E6)==[ins[5555].address]
-         and target_pairs.get(0x0054AB00)==[ins[5704].address],
+    need(source_1f5_start<len(ins) and source_1f6_start<len(ins)
+         and target_pairs.get(0x0054A8E6)==[ins[source_1f5_start].address]
+         and target_pairs.get(0x0054AB00)==[ins[source_1f6_start].address],
          'original and newly recovered 1F5/1F6 dense switch target instruction identity changed')
     return {'original_entire_afterRET_bytes':len(n),
             'original_and_compiler_afterRET_typed_DIR32_fields':len(fields),

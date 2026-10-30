@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F732 fighter stage source and F733 complete Archive state-owner controls.**
+**Maintained 2026-10-30, after F734 native eight-round fighter source reconstruction.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -9,6 +9,28 @@ with its Markdown links adjusted for its new directory. The older
 [chronological knowledge base](KNOWLEDGE_BASE.md) are evidence, not a
 reason to undo later exact adoptions. Original pinned native PE and
 **live manifests outrank every historical sentence**.
+
+**F734 latest source-backed BIG fighter original actions (not whole-function exact):**
+Real native original `00543210` physical 190 **276 CODE B/75 x86/7
+original typed PE/COFF fields**, 191 **276/75/7**, and 192
+**240/68/7** now each have complete normal C++ source in a
+newly compiled entire VC7.1 fighter. All **218 original x86
+mnemonics** match and **21/21 physically typed PE/COFF target/
+source-symbol/type/addend original owner ordinals** agree. Genuine
+native stage/angle/8-round projectile, flag, original signed
+facing 70/64/44, and finish action 0/0/2 restored; compiled
+case sizes **266/266/230 B** instead of 276/276/240, due to
+one real 6B→2B branch and two actual 6B→3B wide EBP integer
+x87 scratch instructions per case. GPR normalized roles all 0
+wrong, but original saved `this` −0x44 vs compiler now −0x34,
+original signed-temp/index EBP slots still differ: NONSTRICT.
+Full same-parent previous original case selected PE/COFF fields
+rechecked, 200/201 GPR errors 67/85 persist and 2EF remains
+strict in its sampled context. ENTIRE original separately owned
+943-B afterRET switch DATA, 156 original/source DIR32 labels and
+319/319 sparse native bytes rechecked. ZERO accepted complete
+game function CODE. [Original 190/191/192 physical verification](FIGHTER_EIGHT_ROUND_F734.md);
+`scripts/repo-python scripts/verify-fighter-eight-round-f734.py`.
 
 **F733 latest authored SMALL entire-function negative proof:**
 Original `0041CE50` ArchiveCatalog whole **171 CODE B/51 x86/14
