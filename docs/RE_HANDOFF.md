@@ -373,6 +373,20 @@ do not relist it as pending. Do not recredit its native STL/CRT/OS
 callee code. Similarly the previous F750 CharacterAux 101-B
 nested collection wrapper is already accepted exact.
 
+**F787 original unknown-origin composite assignment source recovery:**
+original `0045AAE0` /368 CODE B /118 native x86 has an entire
+VC7.1 compiler-implicit C++ assignment source with all 360/360
+nonrelocation CODE bytes and both real `0045AC50` nested
+sequence calls at true offsets `151/163`; actual COFF section
+extent is independently checked (not cropped).
+The natural provisional 116B composite has genuinely observed
+16B POD blocks at `+0x00/+0x44` and nested values at
+`+0x54/+0x64`. **Provenance stays UNKNOWN**: equivalent
+codegen from an explicit historical assignment remains possible.
+Not accepted or credited to authored bytes.
+[Full F787 physical evidence](COMPOSITE_IMPLICIT_ASSIGNMENT_F787.md);
+`scripts/repo-python scripts/verify-composite-implicit-assignment-f787.py`.
+
 ## 4. Attribution, validation, research and storage
 
 - **Original authored ≠ compiler/library ≠ unknown**. The 95 unknown

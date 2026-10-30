@@ -186,6 +186,13 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   are documented in [storage hygiene](STORAGE_HYGIENE.md); original
   sources, PE, Ghidra, Wine and accepted objects were preserved.
 
+- **F787 original unknown-origin 368B assignment reconstruction:**
+  a full genuinely implicit VC7.1 composite operator= matches
+  `0045AAE0` (118/118 x86, 360/360 nonfield bytes, two
+  real PE-relocated STL calls), but codegen does **not** establish
+  historical authored/implicit ownership. Original candidate
+  remains unknown, **zero official authored exact credit**.
+  [F787 full native comparison](COMPOSITE_IMPLICIT_ASSIGNMENT_F787.md).
 ## How to read the historical sections
 
 The older "Current validation policy", "authoritative state" and old
