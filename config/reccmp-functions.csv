@@ -954,3 +954,5 @@ SpriteTexturesF736::DrawProjectedTriangleStrip,0x0040C970,function
 SpriteDrawingF736::DrawOpaqueSpriteWhite,0x0040D840,function
 SpriteDrawingF736::GetTextureRect,0x0040D870,function
 ProgressRecordsF736::CheckEncodedItem,0x0041A0E0,function
+RecordPrefix16F738::ResetAllocation36,0x00458790,function
+RecordPrefix16F738::ZeroAndSetFlag,0x00458880,function

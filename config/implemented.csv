@@ -953,3 +953,5 @@ SpriteTexturesF736::DrawProjectedTriangleStrip
 SpriteDrawingF736::DrawOpaqueSpriteWhite
 SpriteDrawingF736::GetTextureRect
 ProgressRecordsF736::CheckEncodedItem
+RecordPrefix16F738::ResetAllocation36
+RecordPrefix16F738::ZeroAndSetFlag

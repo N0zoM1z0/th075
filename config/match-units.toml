@@ -60599,3 +60599,29 @@ relocations = [
   { offset = 0x24, type = "DIR32", symbol = "?g_GameProgressCatalogAt006718F8@@3VGameProgressCatalogF736@@A", target = 0x006718F8 },
   { offset = 0x29, type = "REL32", symbol = "?CheckEncodedSlot@GameProgressCatalogF736@@QAE_NH@Z", target = 0x00416DC0 },
 ]
+
+# F738: native R210/R211 independently authored complete 16-byte record policies.
+[units.record-prefix-reset-allocation-00458790]
+source = "src/RecordPrefixPoliciesF738.cpp"
+object = "build/matching/RecordPrefixPoliciesF738.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["RecordPrefix16F738::ResetAllocation36"]
+symbol = "?ResetAllocation36@RecordPrefix16F738@@QAEXXZ"
+target_address = 0x00458790
+size = 70
+relocations = [
+  { offset = 0x1C, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
+  { offset = 0x3B, type = "REL32", symbol = "_memset", target = 0x00640490 },
+]
+
+[units.record-prefix-zero-flag-00458880]
+source = "src/RecordPrefixPoliciesF738.cpp"
+object = "build/matching/RecordPrefixPoliciesF738.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["RecordPrefix16F738::ZeroAndSetFlag"]
+symbol = "?ZeroAndSetFlag@RecordPrefix16F738@@QAEPAU1@XZ"
+target_address = 0x00458880
+size = 47
+relocations = [
+  { offset = 0x10, type = "REL32", symbol = "_memset", target = 0x00640490 },
+]

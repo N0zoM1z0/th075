@@ -27,8 +27,8 @@ Canonical live ledgers and actual native PE outrank all historical prose.
 
 ## Current authoritative status and superseded negatives
 
-- **955 cold-exact source-present functions**, **863,163 original authored
-  CODE bytes**, **43.73% reviewed authored coverage** and **43.66%
+- **957 cold-exact source-present functions**, **863,280 original authored
+  CODE bytes**, **43.74% reviewed authored coverage** and **43.66%
   conservative coverage**. **Only 25 `owner=authored,status=unclassified`
   function rows currently remain:** 22 giant fighter action/advance bosses
   totalling 1,102,055 original CODE bytes, WinMain (2,987), SceneObject
@@ -13280,3 +13280,30 @@ credit for internal source. Entire 943-B original postRET DATA,
 [F737 complete original PE, real source and GPR/EBP proof](FIGHTER_EIGHT_GROUND_F737.md),
 `scripts/repo-python scripts/verify-fighter-eight-ground-f737.py`.
 Official 955 authored exact whole/863163 original CODE unchanged.
+
+
+## F738: original record-prefix whole functions 00458790 and 00458880 canonically cold-exact
+
+Fresh ordinary VC7.1 C++ `src/RecordPrefixPoliciesF738.cpp`
+reconstructs R211 previously independently authored original
+`00458790` **70 CODE B/26 native x86/2 genuine typed REL32**:
+sets native byte+0xC zero, conditional scalar `operator new(36)`
+into actual member +8, and native **unconditional `memset(36)`
+AFTER both conditional allocation branches join**. First C++
+70-byte/26-x86 diagnostic wrongly included memset *within* the
+allocation condition; canonical whole original compare exposed
+one genuine `JNE` displacement mismatch at CODE+0x18 (source
+0x29 vs original 0x16). Correct native 004587BF join restores
+real game behavior and exact original byte naturally. R210
+`00458880` **47B/18 native x86/1 genuine REL32** explicitly
+clears native 16-byte `this` record then sets actual member
+pointer+8 null and flag+0xC one before returning receiver.
+Both complete functions **117/117 original CODE bytes and all 3
+original physical PE relocations** now **2/2 canonical targeted
+cold exact from ONE VC7.1 object**. No generic CRT allocator/
+memset CODE counted, no private type layout/identity inferred
+beyond observed slots. Authored original ledger **955→957 whole
+functions, 863,163→863,280 CODE B, 43.73→43.74% reviewed,
+conservative 43.66% unchanged**. All original giant/Scene/WinMain/
+Archive outstanding functions remain NONEXACT.
+[Whole PE/COFF and wrong-branch source evidence](RECORD_PREFIX_WHOLE_EXACT_F738.md).

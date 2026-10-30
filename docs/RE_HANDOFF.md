@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F737 real giant 194/195 and recovered native GPR phases.**
+**Maintained 2026-10-30, after F738 two canonical record-policy cold-exact whole functions.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -9,6 +9,27 @@ with its Markdown links adjusted for its new directory. The older
 [chronological knowledge base](KNOWLEDGE_BASE.md) are evidence, not a
 reason to undo later exact adoptions. Original pinned native PE and
 **live manifests outrank every historical sentence**.
+
+**F738 newest TWO canonical cold-exact complete authored record policies:**
+R211 native `00458790` **70B/26 x86/2 actual REL32** implements
+real conditional 36-byte scalar new, native pointer slot, and
+**unconditional memset AFTER branch join** (reused storage is
+cleared too); R210 `00458880` **47B/18 x86/1 REL32** memset
+entire original 16-byte prefix then zero pointer +8, set flag
++12 to one, return `this`. First attempted 70B source had one
+wrong `JNE` displacement 0x29 vs original 0x16 from wrongly
+conditional memset; native PE CFG reading corrected semantics.
+Both full game functions now **117 exact original CODE B/44
+ordered native x86 and all three physical zero-addend typed PE
+fields** under natural VC7.1, canonically cold-replayed **2/2
+units exact from just ONE built source object**. Provenance R210/
+R211 independently authored BEFORE reconstruction; CRT allocator
+and memset callee CODE not re-credited, original class private
+layout unknown. Formal ledger now **957 whole exact authored
+functions, 863,280 CODE B, 43.74% reviewed, 43.66%
+conservative**. All 25 long-running original nonexact functions
+(22 giants, WinMain/Scene/Archive) remain unaccepted.
+[Full native PE, wrong-branch control and canonical replay](RECORD_PREFIX_WHOLE_EXACT_F738.md).
 
 **F737 latest substantive original GIANT source and native register gain (NONEXACT):**
 Original giant `00543210` native complete 194 `0054967C..005497CB`
@@ -527,8 +548,8 @@ but not whole original CODE. [Full physical negative matrix](WINMAIN_USED_OBJECT
 | Item | Authoritative snapshot; recheck live manifests on every new session |
 | --- | --- |
 | Original game | User-supplied Japanese TH075 ver1.11 `resources/th075.exe`, SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`; **never** localized `th075c.exe` |
-| Exact authored whole functions | **955 functions / 955 exact units**, **863,163 original CODE bytes** |
-| Reviewed authored bytes | **43.73%** of **1,973,704** original CODE bytes; conservatively **43.66%** with unknown origins included |
+| Exact authored whole functions | **957 functions / 957 exact units**, **863,280 original CODE bytes** |
+| Reviewed authored bytes | **43.74%** of **1,973,704** original CODE bytes; conservatively **43.66%** with unknown origins included |
 | Provisional ledger | **4,351** candidate original functions; **95** still origin-unknown with 3,420 CODE bytes; these have **no authored credit** |
 | Unfinished author-owned functions | **25 complete functions**: **22 large fighter bosses**, **1,102,055 CODE bytes** of original whole CODE, plus **three** other whole functions (2,987 B, 248 B, 171 B) |
 | Separated after-RET giant switch DATA | **16,123 bytes** across the 22 giants; DATA is not authored CODE credit |
