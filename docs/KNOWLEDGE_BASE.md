@@ -198,6 +198,19 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   matched after all 14 original PE refs checked.
   None accepted exact.
   [F798 full native teardown evidence](ARCHIVE_NATIVE_LOOP_TEARDOWN_F798.md).
+- **F815 true scripted fighter 0x5F facing source:**
+  original 00523680 complete 144B/44 x86/3
+  native PE calls integrated in one 10,409B
+  VC7.1 parent with 32 prior source-backed
+  cases, all 901B postRET DATA and 46B
+  native shared tail rechecked. Original
+  physical action0 then action1 and two
+  opponent X comparisons are natural C++.
+  Source EBP-8 vs native EBP-0x10 yields
+  13 honest register displacement bytes,
+  plus 2 legitimate parent-tail JMP
+  displacement bytes. No whole exact
+  callable CODE. [F815 native PE result](SCRIPTED_FIGHTER_FACING_F815.md).
 - **F814 original fighter 5D/5E compiler context and false GPR win:**
   both 337B/101-x86/8-original-PE-field
   air-transition cases integrated after

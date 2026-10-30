@@ -628,6 +628,23 @@ Whole 46,755B game still nonexact.
 [F814 original PE/source context](SCRIPTED_FIGHTER_AIR_CONTEXT_F814.md);
 scripts/repo-python scripts/verify-scripted-fighter-air-context-f814.py.
 
+**F815 selected original 46KB scripted fighter now includes face action 0x5F:**
+real packed second-switch original 00523680..0052370F
+has 144 native B/44 x86 and three genuine zero-addend
+PE calls. Natural F620 facing source uses action
+transitions **0 then 1**, real this/opponent +0x44
+float comparisons, and native signed direction +0x66.
+A newly compiled whole 005214B0 parent grows source
+**10,280 to 10,409 CODE B**, x86 **2,630 to 2,672**;
+earlier 32 native cases, full 901B separate packed
+switch DATA and 46B shared getter rechecked.
+The real 0x5F machine still differs in 13 genuine
+saved-receiver EBP bytes (source -8 vs native -0x10),
+plus two authentic parent-tail JMP displacement bytes.
+[Complete original 0x5F physical source](SCRIPTED_FIGHTER_FACING_F815.md);
+scripts/repo-python scripts/verify-scripted-fighter-facing-f815.py.
+Full giant still NONEXACT; no split-case credit.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin
