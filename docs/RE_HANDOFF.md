@@ -1,6 +1,6 @@
 # TH075 — ACTIVE reconstruction agent handoff
 
-**Verified snapshot: 2026-10-30, current F776 exact ledger; F754 maintenance.**
+**Verified snapshot: 2026-10-30, current F779 exact ledger; F778 giant source research.**
 This is the **short working queue**, not the chronological research log.
 Original Japanese PE and the live configuration **always outrank historical
 prose, old case-level exact labels, class names or inferred layouts**.
@@ -16,15 +16,15 @@ Older [F598–F652](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
 | User-supplied Japanese TH075 `resources/th075.exe` v1.11 | SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98` |
 | Provisional original native candidate rows | **4,351** |
 | Independently reviewed `origin=authored` candidates | **1,004** |
-| Canonical accepted complete exact authored game functions | **977 functions / 977 exact units** |
-| Accepted complete original CODE | **868,036 original CODE bytes** |
+| Canonical accepted complete exact authored game functions | **978 functions / 978 exact units** |
+| Accepted complete original CODE | **868,128 original CODE bytes** |
 | Reviewed denominator | **1,973,704** native authored CODE B |
 | Exact reviewed coverage | **43.98%** |
-| Conservative coverage (includes pending origin bytes) | **43.90%** |
-| Authored candidates still NOT exact | **27 authored functions remain nonexact** |
-| 27 nonexact breakdown | **22 large original state advances**, **5 other original small/medium whole functions** |
+| Conservative coverage (includes pending origin bytes) | **43.91%** |
+| Authored candidates still NOT exact | **26 authored functions remain nonexact** |
+| 27 nonexact breakdown | **22 large original state advances**, **4 other original small/medium whole functions** |
 | 22 large original native CODE not accepted | **1,102,055 CODE bytes** (separate after-RET DATA not credited) |
-| 5 small/medium native CODE not accepted | **3,613 CODE bytes** |
+| 5 small/medium native CODE not accepted | **3,521 CODE bytes** |
 | Independently origin-unknown candidates | **95 functions / 3,420 CODE bytes**, uncredited |
 
 **Important correction:** the older **25 unfinished** figure only counted
@@ -56,7 +56,7 @@ All dirty tracked/untracked work belongs to this one reconstruction worker;
 inspect and continue it, do not skip/reset it. Run the hash-pinned original
 `th075.exe`, **not** `th075c.exe`. Use `scripts/repo-python` and the pinned
 VC7.1 compiler; compile probes serially under headless Wine. **Never run an
-all-977-unit cold replay.** Only newly accepted or affected whole functions
+all-978-unit cold replay.** Only newly accepted or affected whole functions
 need canonical `scripts/repo-python scripts/replay-exact-units.py --unit NAME`.
 Source grammar/byte geometry of an *internal switch case* does **not**
 earn credit for the still-NONEXACT enclosing whole callable function.
@@ -284,21 +284,25 @@ research without calling it accepted whole CODE. [Giant dispatch
 map](../config/fighter-boss-dispatch-fingerprints.json) is a
 physical-data lead, not provenance proof.
 
-## 3. All 5 additional nonexact original small/medium functions
+## 3. All 4 additional nonexact original small/medium functions
 
 These are **authored by `function-origins.csv`** but not canonically
 matched (most have blank provisional `functions.csv` owner). This is
-the complete **3,613-B** non-giant backlog, NOT just the three
+the complete **3,521-B** non-giant backlog, NOT just the three
 frequently researched ownership functions:
 
 | Native original entire function | CODE | Next evidence/source lead |
 | --- | ---: | --- |
-| `0x0040CA20` SpriteDrawing projected quad | 92 B | Real 132-B quad copy correct 92B/34 x86 but VC7.1 stack frame `−0x8C` vs native `−0x88`; `.analysis/f751-sprite-draw-probe/` |
 | `0x0040C9A0` SpriteDrawing ordinary quad | 115 B | Real quad copy and true Graphics draw callee, original whole function still missing |
 | `0x0041CE50` ArchiveCatalog destructor | 171 B | Best native 108/115 nonfield bytes, still seven genuine owner/CFG differences; [F697/F698 negatives](ARCHIVE_AGGREGATE_AND_REFERENCE_NEGATIVES_F697_F698.md) |
 | `0x0043B0B0` Scene destructor | 248 B | Best 191/200 native nonfield bytes; used texture owner/stack layout unresolved; [F700](SCENE_TEXTURE_OWNER_LIFETIMES_F700.md) |
 | `0x00602A60` WinMain | 2,987 B | Original saved local scene/path frame differs; [F702–F704](WINMAIN_USED_OBJECT_CONTEXT_NEGATIVES_F702_F704.md) |
 
+The R011 projected-quad `0040CA20` is now **92-B/34-x86/2-PE-field
+whole cold exact** ([F779](SPRITE_PROJECTED_QUAD_NATIVE_F779.md)).
+The observed 132-B quad needs explicit 4-B alignment, yielding real
+`EBP−0x84` copy and `EBP−0x88` saved owner, with no invented frame padding.
+It is no longer pending.
 The R011 SpriteDrawing mode variant `0040CEF0` is now **994-B/269-x86/15-field whole cold exact**,
 with original base-delegation and true rotated/unrotated `JP` branch
 ([F776](SPRITE_VARIANT_NATIVE_F776.md)); no longer pending.

@@ -61082,3 +61082,18 @@ relocations = [
  { offset = 0x3BB, type = "REL32", symbol = "?GetTexture@SpriteDrawingF776@@QAEPAUIDirect3DTexture8@@H@Z", target = 0x0040C8C0 },
  { offset = 0x3D3, type = "REL32", symbol = "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z", target = 0x004029F0 },
 ]
+
+# F779: original authored R011 complete 92-B projected quad, 34 x86
+# and two physical PE/COFF calls. 132-B copied object aligns to 4 bytes.
+[units.sprite-drawing-projected-quad-native-0040ca20]
+source = "src/SpriteProjectedQuadF779.cpp"
+object = "build/matching/SpriteProjectedQuadF779.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["SpriteDrawingF751::DrawProjectedQuad"]
+symbol = "?DrawProjectedQuad@SpriteDrawingF751@@QAEXHABUNativeSpriteQuadF751@@PBUtagRECT@@MMMK@Z"
+target_address = 0x0040CA20
+size = 92
+relocations = [
+ { offset = 0x2C, type = "REL32", symbol = "?GetTexture@SpriteDrawingF751@@QAEPAUIDirect3DTexture8@@H@Z", target = 0x0040C8C0 },
+ { offset = 0x4D, type = "REL32", symbol = "?DrawProjectedTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@MMMKPAUIDirect3DTexture8@@@Z", target = 0x00402D50 },
+]

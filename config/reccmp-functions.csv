@@ -976,3 +976,4 @@ TextureManagerF769::AllocateTextureSlots,0x0040B110,function
 TextureManagerF770::AllocateSharedTextures,0x0040B000,function
 SpriteDrawingF775::DrawScaled,0x0040D2E0,function
 SpriteDrawingF776::DrawVariant,0x0040CEF0,function
+SpriteDrawingF751::DrawProjectedQuad,0x0040CA20,function

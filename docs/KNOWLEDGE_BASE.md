@@ -15,16 +15,16 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
 
 ## Current verified original-game status (one short snapshot)
 
-- **977 cold-exact source-present functions**, **868,036 original authored
-  CODE bytes**, **43.98% reviewed authored coverage** and **43.90%
+- **978 cold-exact source-present functions**, **868,128 original authored
+  CODE bytes**, **43.98% reviewed authored coverage** and **43.91%
   conservative coverage** of native original CODE. The independently
   reviewed authored provenance cohort has **1,004** candidates, so
-  **27 authored whole functions remain NONEXACT**: **22** large
-  (1,102,055 original CODE B) plus **5** small/medium
-  (3,613 CODE B). The older **25**-function subset counted only
+  **26 authored whole functions remain NONEXACT**: **22** large
+  (1,102,055 original CODE B) plus **4** small/medium
+  (3,521 CODE B). The older **25**-function subset counted only
   `config/functions.csv.owner=authored` unfinished rows and omitted
   11 independently authored, formerly owner-blank small/medium targets,
-  of which F755, F758, F760, F765, F766, F769, F770, F775 and F776 have accepted nine. See [all 5 current addresses](RE_HANDOFF.md).
+  of which F755, F758, F760, F765, F766, F769, F770, F775, F776 and F779 have accepted ten. See [all 5 current addresses](RE_HANDOFF.md).
 - **95 original candidates /3,420 CODE bytes** have separately
   unresolved provenance; even a whole byte-exact C++ source does not
   permit reclassification or accepted authored CODE without independent
@@ -113,7 +113,13 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   These are still *internal switch-case source, NOT accepted whole
   game-function CODE*. Source 059 and 060/061 GPR differences remain.
   Reproduce from [F752 native/PE proof](FIGHTER_BORROWED_POSITION_F752.md).
-- **The currently most recent exact whole function is F776**, original
+- **The currently most recent exact whole function is F779**, original
+  `0040CA20` projected textured quad, 92 complete CODE B/34 native x86
+  and two original REL32 calls, verified by one-unit cold replay.
+  Explicit four-byte alignment of a real 132-B borrowed quad copy
+  gives native `sub esp,88h` instead of a speculative padding slot.
+  [F779 native source and physical proof](SPRITE_PROJECTED_QUAD_NATIVE_F779.md).
+  Historical **F776** is original
   R011 variant/mode sprite `0040CEF0`, 994 full native CODE B/269
   x86 and 15 genuine typed PE fields, 1/1 selected cold exact.
   [F776 complete original source proof](SPRITE_VARIANT_NATIVE_F776.md).
@@ -14147,3 +14153,19 @@ native after-RET DATA bytes, 156 real DIR32 and 319/319 other bytes
 reverified, as are the actual C8–CE/1F6–1F8/2DB/2F8–2FB cases.
 Zero new whole game exact credit (977/868,036 unchanged), no mass
 cold replay. [F778 original PE and full-parent source](FIGHTER_NATIVE_DEFAULT_F778.md).
+
+
+## F779: recover whole 0040CA20 projected-quad copy with native four-byte alignment
+
+Independent R011-authored full function: original `0040CA20..0040CA7B` is
+92 original CODE bytes, 34 x86 instructions, with two native PE calls
+(`0040C8C0` texture resolution and `00402D50` projected quad draw).
+Fresh VC7.1 compilation of `src/SpriteProjectedQuadF779.cpp`, under the
+per-unit `/Od /Ob0 /Gy /GR- /GX- /GS /Zi` profile, copies the entire
+132-byte source quad by `REP MOVSD` (33 dwords) into a native 4-byte
+aligned stack instance at `EBP-0x84`; no artificial 4-byte local is
+necessary. Native physical relocations and all 92 original CODE bytes
+passed `replay-exact-units.py --unit sprite-drawing-projected-quad-native-0040ca20`
+(1/1 exact). Private sprite layout beyond the observed 64B position data
+and 68B remaining payload remains unproved. The adjacent 115B ordinary
+quad and large fighter parents remain nonexact.
