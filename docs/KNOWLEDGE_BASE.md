@@ -232,6 +232,24 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   GPR differences, whole native
   giant NONEXACT.
   [F844 selected original physical PE](SCRIPTED_FIGHTER_GROUNDED_130_F844.md).
+- **F858 selected actor 192 current native stage4 sprite:**
+  original full 217B/64 x86/
+  6 genuine PE call fields in one
+  whole **25,690B/7,100-x86**
+  fighter. Distinct native action2,
+  stage4 sprite320, float +0x314
+  3.0f and final stage5 +0x7C=1
+  are original PE evidence, not
+  copied from 190. Every native
+  opcode/width/call target matches,
+  but 39 GPR and two whole giant
+  JMP bytes remain wrong. Earlier
+  29 whole source-backed game cases
+  and five 901B packed tables
+  rechecked; current getter four
+  real GPR byte negatives. No
+  accepted original whole CODE.
+  [F858 real source proof](SCRIPTED_FIGHTER_STAGE_192_F858.md).
 - **F857 original fighter 191 signed-float projectile:**
   true 166B/53-x86/five physical
   original PE fields in one full

@@ -1,6 +1,6 @@
 # TH075 — ACTIVE reconstruction agent handoff
 
-**Verified snapshot: 2026-10-31, current F780 exact ledger; F857 native 191 and F854 Archive.**
+**Verified snapshot: 2026-10-31, current F780 exact ledger; F858 native 192 and F854 Archive.**
 This is the **short working queue**, not the chronological research log.
 Original Japanese PE and the live configuration **always outrank historical
 prose, old case-level exact labels, class names or inferred layouts**.
@@ -1566,6 +1566,31 @@ original NONEXACT, zero
 new whole-callable credit.
 [F857 original PE evidence](SCRIPTED_FIGHTER_FLOATSHOT_191_F857.md);
 scripts/repo-python scripts/verify-scripted-fighter-floatshot-191-f857.py.
+
+**F858 selected 192 actor-native state4 sprite and genuine different sibling values:**
+original 00527521 complete **217 game interior
+B/64 x86/six physical PE REL32 calls**.
+Unlike native190, current192 transitions
+**state2**, emits sprite320 at **stage4**,
+writes +0x314 float **3.0f**, prepares
+animationFA then action0, sets +0x7C
+at **stage5**. Fresh normal VC7.1
+whole C++ parent **25,690 callable
+CODE B/7,100 x86** (F857 25,488/
+7,038), matching all original source
+opcode/width and six native PE calls,
+BUT 39 genuine GPR operand bytes and
+two full-giant final JMP operands
++213/+214 remain different. Nine
+previous GPR-affected and twenty
+earlier source-backed original cases
+and five native 901B packed tables
+rechecked. Current 46B default
+has four real GPR byte negatives.
+[F858 selected native source](SCRIPTED_FIGHTER_STAGE_192_F858.md);
+scripts/repo-python scripts/verify-scripted-fighter-stage-192-f858.py.
+The original 46,755B giant stays
+NONEXACT, no independent case credit.
 
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
