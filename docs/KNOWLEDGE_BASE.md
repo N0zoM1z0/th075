@@ -27,8 +27,8 @@ Canonical live ledgers and actual native PE outrank all historical prose.
 
 ## Current authoritative status and superseded negatives
 
-- **957 cold-exact source-present functions**, **863,280 original authored
-  CODE bytes**, **43.74% reviewed authored coverage** and **43.66%
+- **961 cold-exact source-present functions**, **863,592 original authored
+  CODE bytes**, **43.75% reviewed authored coverage** and **43.68%
   conservative coverage**. **Only 25 `owner=authored,status=unclassified`
   function rows currently remain:** 22 giant fighter action/advance bosses
   totalling 1,102,055 original CODE bytes, WinMain (2,987), SceneObject
@@ -13307,3 +13307,29 @@ functions, 863,163→863,280 CODE B, 43.73→43.74% reviewed,
 conservative 43.66% unchanged**. All original giant/Scene/WinMain/
 Archive outstanding functions remain NONEXACT.
 [Whole PE/COFF and wrong-branch source evidence](RECORD_PREFIX_WHOLE_EXACT_F738.md).
+
+
+## F739: four complete authored nested-vector EH game lifetimes canonical cold-exact
+
+Four independently R211/R212/R256-origin-reviewed complete native
+functions now natural VC7.1 `/GX` cold exact from ONE C++ object:
+`00458960` ctor **93B/25 x86**, `004586C0` dtor **72B/20**,
+`005F7F20` ctor **75B/21**, `005F7ED0` dtor **72B/20**.
+Real embedded 16-byte vectors are default constructed and destructed,
+explicitly cleared, and (in 20-byte ctor) two actual 16-bit members
+zeroed. All four authentic full EBP/EH prologues, FS:[0] chain
+restoration, state 0/−1 and original member-call order reproduce
+**312 original CODE B/86 x86/24 actual original typed EH/COFF fields**;
+canonical cold replay **4/4** with no old-unit cold replay.
+Additional ORIGINAL PE external EH carrier audit: **four real
+18-B `.text$x` cleanup/handler stubs** (6/6 nonfield bytes, 3
+physical typed targets EACH) and **four real 36-B `.xdata$x`
+unwind tables** (28/28 nonfield B, 2 local typed fields EACH)
+also match the emitted C++ carriers and original target roles,
+**136/136 total nonfield original external EH bytes**. These
+carriers/CRT/member callees are not added to independent game
+function CODE coverage. Formal authored whole ledger
+**957→961, 863,280→863,592 native CODE B, 43.74→43.75%
+reviewed, 43.66→43.68% conservative**. No original private
+class-layout claim, 22 giants/three ownership lifetimes still
+NONEXACT. [Complete native EH carrier audit and exact units](RECORD_VECTOR_EH_EXACT_F739.md).

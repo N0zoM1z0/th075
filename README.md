@@ -15,10 +15,10 @@ user-supplied executable. It is **not yet a complete game rebuild**.
 | Size / image base | 2,576,384 bytes / `0x00400000` |
 | SHA-256 | `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98` |
 | MD5 | `21bcb855a39f2170195811e6ad292f18` |
-| Source-present / exact functions | **957 / 957** |
-| Accepted CODE bytes | **863,280** |
-| Reviewed authored coverage | **43.74%** of 1,973,704 reviewed bytes |
-| Conservative coverage | **43.66%**, with 3,420 origin-pending bytes included |
+| Source-present / exact functions | **961 / 961** |
+| Accepted CODE bytes | **863,592** |
+| Reviewed authored coverage | **43.75%** of 1,973,704 reviewed bytes |
+| Conservative coverage | **43.68%**, with 3,420 origin-pending bytes included |
 | Unresolved origins | **95** of 4,351 provisional function candidates |
 
 **The 98% authored-byte goal is incomplete.** Function labels and C++ owner
@@ -26,7 +26,7 @@ types are provisional; machine-code matches alone do not prove an entire
 original class layout. The target's official distribution provenance has not
 been independently verified; do not substitute a localized `th075c.exe`.
 
-These live snapshot counts were rechecked after **F738** (2026-10-30); the F694 storage cleanup and F689–F693 negative-evidence audit do **not** add accepted CODE.
+These live snapshot counts were rechecked after **F739** (2026-10-30); the F694 storage cleanup and F689–F693 negative-evidence audit do **not** add accepted CODE.
 The **live** sources of truth, not any dated prose milestone, are `config/functions.csv`,
 `config/function-origins.csv`, and `config/match-units.toml`.
 Refresh using `scripts/repo-python scripts/report-reconstruction-status.py --summary`.
@@ -56,6 +56,13 @@ add **two more native exact complete authored functions, 117 original
 CODE bytes**, with real original branch semantics checked and just
 one fresh pinned VC7.1 source object cold-replayed. Latest giant
 F737 source and its nonexact deep stack differences remain intact.
+
+The [F739 native record-vector EH lifetime adoption](docs/RECORD_VECTOR_EH_EXACT_F739.md)
+adds **four more entire canonical cold-exact game functions (312 native
+CODE bytes)** under actual VC7.1 exception-handling member lifetime,
+with four associated original EH stub and unwind data carriers
+separately verified but not double-credited. New F739 units were
+cold replayed from one source object without rebuilding all prior units.
 
 ### Latest verified giant research and complete small-function evidence
 

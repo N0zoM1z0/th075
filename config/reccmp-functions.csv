@@ -956,3 +956,7 @@ SpriteDrawingF736::GetTextureRect,0x0040D870,function
 ProgressRecordsF736::CheckEncodedItem,0x0041A0E0,function
 RecordPrefix16F738::ResetAllocation36,0x00458790,function
 RecordPrefix16F738::ZeroAndSetFlag,0x00458880,function
+Record20F739::~Record20F739,0x004586C0,function
+Record20F739::Record20F739,0x00458960,function
+Record16F739::~Record16F739,0x005F7ED0,function
+Record16F739::Record16F739,0x005F7F20,function

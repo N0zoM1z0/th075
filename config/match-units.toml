@@ -60625,3 +60625,74 @@ size = 47
 relocations = [
   { offset = 0x10, type = "REL32", symbol = "_memset", target = 0x00640490 },
 ]
+
+# F739: four original R211/R212/R256 independently authored complete EH
+# constructors/destructors. Original EH handler addresses are independent
+# native .rdata references; the function CODE includes all six typed fields.
+[units.record20-clear-and-zero-construct-00458960]
+source = "src/RecordVectorLifetimesF739.cpp"
+object = "build/matching/RecordVectorLifetimesF739.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["Record20F739::Record20F739"]
+symbol = "??0Record20F739@@QAE@XZ"
+target_address = 0x00458960
+size = 93
+relocations = [
+ { offset = 0x6, type = "DIR32", symbol = "__ehhandler$??0Record20F739@@QAE@XZ", target = 0x00656228 },
+ { offset = 0xC, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
+ { offset = 0x14, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
+ { offset = 0x20, type = "REL32", symbol = "??0VectorBase20F739@@QAE@XZ", target = 0x00458AA0 },
+ { offset = 0x2F, type = "REL32", symbol = "?Clear@VectorBase20F739@@QAEXXZ", target = 0x00458B50 },
+ { offset = 0x55, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
+]
+
+[units.record20-clear-then-destroy-004586c0]
+source = "src/RecordVectorLifetimesF739.cpp"
+object = "build/matching/RecordVectorLifetimesF739.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["Record20F739::~Record20F739"]
+symbol = "??1Record20F739@@QAE@XZ"
+target_address = 0x004586C0
+size = 72
+relocations = [
+ { offset = 0x6, type = "DIR32", symbol = "__ehhandler$??1Record20F739@@QAE@XZ", target = 0x006561A8 },
+ { offset = 0xC, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
+ { offset = 0x14, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
+ { offset = 0x27, type = "REL32", symbol = "?Clear@VectorBase20F739@@QAEXXZ", target = 0x00458B50 },
+ { offset = 0x36, type = "REL32", symbol = "??1VectorBase20F739@@QAE@XZ", target = 0x00458AD0 },
+ { offset = 0x40, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
+]
+
+[units.record16-construct-clear-005f7f20]
+source = "src/RecordVectorLifetimesF739.cpp"
+object = "build/matching/RecordVectorLifetimesF739.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["Record16F739::Record16F739"]
+symbol = "??0Record16F739@@QAE@XZ"
+target_address = 0x005F7F20
+size = 75
+relocations = [
+ { offset = 0x6, type = "DIR32", symbol = "__ehhandler$??0Record16F739@@QAE@XZ", target = 0x006566D8 },
+ { offset = 0xC, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
+ { offset = 0x14, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
+ { offset = 0x20, type = "REL32", symbol = "??0VectorBase16F739@@QAE@XZ", target = 0x005F7F70 },
+ { offset = 0x2F, type = "REL32", symbol = "?Clear@VectorBase16F739@@QAEXXZ", target = 0x005F8020 },
+ { offset = 0x43, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
+]
+
+[units.record16-clear-then-destroy-005f7ed0]
+source = "src/RecordVectorLifetimesF739.cpp"
+object = "build/matching/RecordVectorLifetimesF739.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["Record16F739::~Record16F739"]
+symbol = "??1Record16F739@@QAE@XZ"
+target_address = 0x005F7ED0
+size = 72
+relocations = [
+ { offset = 0x6, type = "DIR32", symbol = "__ehhandler$??1Record16F739@@QAE@XZ", target = 0x006566B8 },
+ { offset = 0xC, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
+ { offset = 0x14, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
+ { offset = 0x27, type = "REL32", symbol = "?Clear@VectorBase16F739@@QAEXXZ", target = 0x005F8020 },
+ { offset = 0x36, type = "REL32", symbol = "??1VectorBase16F739@@QAE@XZ", target = 0x005F7FA0 },
+ { offset = 0x40, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
+]

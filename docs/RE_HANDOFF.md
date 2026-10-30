@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F738 two canonical record-policy cold-exact whole functions.**
+**Maintained 2026-10-30, after F739 four genuine record-vector EH lifetime cold-exact functions.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -9,6 +9,28 @@ with its Markdown links adjusted for its new directory. The older
 [chronological knowledge base](KNOWLEDGE_BASE.md) are evidence, not a
 reason to undo later exact adoptions. Original pinned native PE and
 **live manifests outrank every historical sentence**.
+
+**F739 newest FOUR canonically cold-exact complete authored EH lifetimes:**
+R211 `00458960` **93B/25 x86**, R256 `004586C0` **72B/20
+x86**, R212 `005F7F20` **75B/21 x86**, R256 `005F7ED0`
+**72B/20 x86** are genuine record constructor/destructor
+bodies with real member default construction, explicit `Clear`,
+real member automatic destruction, native EH FS:[0] installation/
+restore and 0/−1 states. ONE normal VC7.1 `/GX` C++ object gives
+**312/312 original CODE B, 86/86 x86, all 24 authentic typed
+physical PE/COFF fields** and **4/4 canonical targeted cold
+replay EXACT**. Independently audited four native EH handlers
+and unwind carriers: each original 18-B EH stub has **6/6
+nonfield bytes** and 3 typed native targets (vector destructor,
+local unwind table, `___CxxFrameHandler`); paired 36-B xdata
+**28/28 nonfield bytes** and two native typed local targets.
+Original carrier proof total **136/136 native nonfield B across
+all four**; no ancillary EH code/data incorrectly credited.
+Original R211/R212/R256 authorship established BEFORE source;
+no full class layout/name claim. Formal current **961 exact
+whole authored functions, 863,592 original CODE B, 43.75%
+reviewed and 43.68% conservative**. No mass old-unit replay.
+[Full original PE/COFF plus exception carrier audit](RECORD_VECTOR_EH_EXACT_F739.md).
 
 **F738 newest TWO canonical cold-exact complete authored record policies:**
 R211 native `00458790` **70B/26 x86/2 actual REL32** implements
@@ -548,8 +570,8 @@ but not whole original CODE. [Full physical negative matrix](WINMAIN_USED_OBJECT
 | Item | Authoritative snapshot; recheck live manifests on every new session |
 | --- | --- |
 | Original game | User-supplied Japanese TH075 ver1.11 `resources/th075.exe`, SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`; **never** localized `th075c.exe` |
-| Exact authored whole functions | **957 functions / 957 exact units**, **863,280 original CODE bytes** |
-| Reviewed authored bytes | **43.74%** of **1,973,704** original CODE bytes; conservatively **43.66%** with unknown origins included |
+| Exact authored whole functions | **961 functions / 961 exact units**, **863,592 original CODE bytes** |
+| Reviewed authored bytes | **43.75%** of **1,973,704** original CODE bytes; conservatively **43.68%** with unknown origins included |
 | Provisional ledger | **4,351** candidate original functions; **95** still origin-unknown with 3,420 CODE bytes; these have **no authored credit** |
 | Unfinished author-owned functions | **25 complete functions**: **22 large fighter bosses**, **1,102,055 CODE bytes** of original whole CODE, plus **three** other whole functions (2,987 B, 248 B, 171 B) |
 | Separated after-RET giant switch DATA | **16,123 bytes** across the 22 giants; DATA is not authored CODE credit |
