@@ -1027,6 +1027,28 @@ or DATA CODE.
 [F834 physical whole native recovery](SCRIPTED_FIGHTER_FULL_C8_F834.md);
 scripts/repo-python scripts/verify-scripted-fighter-fourway-c8-f834.py.
 
+**F836 full native 0xCA source added to original 005214B0 giant:**
+pinned original 00525892..00525A33 is **418 inner CODE
+B/121 x86/11 true physically typed PE fields**,
+not another fighter's 439B F759 case. Selected
+normal whole VC7.1 parent now **19,684 callable
+CODE B/5,308 x86**, up from F834 19,281/5,189.
+Original x87 grounded tests, real stage2 native
+sprites and two direct enclosing-parent action
+exits are natural C++. Native original opcode,
+width, GPR and PE target fields are exact; only
+FOUR honest original whole-giant epilogue
+JMP operand bytes (+203/204,+414/415) differ.
+Preceding C8/C9 original full native sources
+and all FIVE 901B packed switch DATA tables
+freshly rechecked. Original default 46B
+source GPR phase rotates again: four true
+nonrelocation byte negatives +10/12/16/19,
+saved-this EBP-0x10 and 3 PE calls correct.
+[F836 native selected whole-parent proof](SCRIPTED_FIGHTER_FOURWAY_CA_F836.md);
+scripts/repo-python scripts/verify-scripted-fighter-fourway-ca-f836.py.
+Whole giant NONEXACT; no split-case credit.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin

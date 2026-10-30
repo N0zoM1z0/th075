@@ -214,6 +214,21 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   saved-this slot. Entire 248B remains
   nonexact, no credited original CODE.
   [F818 original PE typed-view result](SCENE_COMPLETE_BORROWED_OWNER_F818.md).
+- **F836 actual original 0xCA in 46KB actor:**
+  418B/121 x86/11 true physical PE
+  references, NOT other actor F759
+  439B case. One fresh whole original
+  source 19,684B/5,308 x86 retains
+  C8/C9 physical PE fields and all 5
+  native 901B packed jump tables.
+  Complete original 0xCA x86 opcode,
+  width and register bytes now match
+  except two genuine entire parent
+  long-JMP displacement pairs. New CA
+  rotates default getter 4 native
+  nonfield GPR bytes again. Giant still
+  NONEXACT, zero callable CODE credit.
+  [F836 native full source](SCRIPTED_FIGHTER_FOURWAY_CA_F836.md).
 - **F835 complete original 171B Archive lexical scopes:**
   15 genuine whole VC7.1 original destructor
   probes. Thirteen nested/split source
