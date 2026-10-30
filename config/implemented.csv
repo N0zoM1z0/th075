@@ -971,3 +971,4 @@ AudioQueueFileF758::QueueFile
 AudioQueueArchiveF760::QueueArchiveEntry
 SpriteDrawingF765::DrawOpaqueSprite
 SpriteDrawingF765::DrawOpaqueSpriteMirrored
+TextureManagerF769::AllocateTextureSlots

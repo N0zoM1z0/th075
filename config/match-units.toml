@@ -60982,3 +60982,24 @@ relocations = [
  { offset = 0xC1, type = "REL32", symbol = "??0RectQuadF765@@QAE@PBUtagRECT@@@Z", target = 0x0040DB50 },
  { offset = 0xC7, type = "REL32", symbol = "?DrawTexturedQuad@Graphics@@YAXABVRectQuadF765@@PBUtagRECT@@KPAUIDirect3DTexture8@@@Z", target = 0x004029F0 },
 ]
+
+# F769: complete native R017-authored 184-B texture slot policy with
+# physically observed 44-B local VC7 ctor/dtor and real /GX lifetime.
+[units.texture-manager-allocate-slots-native-0040b110]
+source = "src/TextureSlotsF769.cpp"
+object = "build/matching/TextureSlotsF769.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["TextureManagerF769::AllocateTextureSlots"]
+symbol = "?AllocateTextureSlots@TextureManagerF769@@QAEXIE@Z"
+target_address = 0x0040B110
+size = 184
+relocations = [
+ { offset = 0x6, type = "DIR32", symbol = "__ehhandler$?AllocateTextureSlots@TextureManagerF769@@QAEXIE@Z", target = 0x00654F36 },
+ { offset = 0xC, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
+ { offset = 0x14, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
+ { offset = 0x22, type = "REL32", symbol = "??0NativeTextureElementF769@@QAE@XZ", target = 0x0040D8C0 },
+ { offset = 0x7B, type = "REL32", symbol = "?Assign@TextureSlotVectorF769@@QAEXIABUNativeTextureElementF769@@@Z", target = 0x0040DDA0 },
+ { offset = 0x95, type = "REL32", symbol = "?Assign@TexturePointerVectorF769@@QAEXIABK@Z", target = 0x0040DF20 },
+ { offset = 0xA4, type = "REL32", symbol = "??1NativeTextureElementF769@@QAE@XZ", target = 0x0040D8E0 },
+ { offset = 0xAE, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
+]

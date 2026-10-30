@@ -15,16 +15,16 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
 
 ## Current verified original-game status (one short snapshot)
 
-- **973 cold-exact source-present functions**, **865,627 original authored
-  CODE bytes**, **43.86% reviewed authored coverage** and **43.78%
+- **974 cold-exact source-present functions**, **865,811 original authored
+  CODE bytes**, **43.87% reviewed authored coverage** and **43.79%
   conservative coverage** of native original CODE. The independently
   reviewed authored provenance cohort has **1,004** candidates, so
-  **31 authored whole functions remain NONEXACT**: **22** large
-  (1,102,055 original CODE B) plus **9** small/medium
-  (6,022 CODE B). The older **25**-function subset counted only
+  **30 authored whole functions remain NONEXACT**: **22** large
+  (1,102,055 original CODE B) plus **8** small/medium
+  (5,838 CODE B). The older **25**-function subset counted only
   `config/functions.csv.owner=authored` unfinished rows and omitted
   11 independently authored, formerly owner-blank small/medium targets,
-  of which F755, F758, F760, F765 and F766 have accepted five. See [all 9 current addresses](RE_HANDOFF.md).
+  of which F755, F758, F760, F765, F766 and F769 have accepted six. See [all 8 current addresses](RE_HANDOFF.md).
 - **95 original candidates /3,420 CODE bytes** have separately
   unresolved provenance; even a whole byte-exact C++ source does not
   permit reclassification or accepted authored CODE without independent
@@ -92,7 +92,11 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   These are still *internal switch-case source, NOT accepted whole
   game-function CODE*. Source 059 and 060/061 GPR differences remain.
   Reproduce from [F752 native/PE proof](FIGHTER_BORROWED_POSITION_F752.md).
-- **The currently most recent exact whole function is F766**, original
+- **The currently most recent exact whole function is F769**, original
+  R017 texture slot allocator `0040B110`, 184 CODE B/56 x86/8 true
+  PE fields, 1/1 cold exact after restoring real 44-B local element.
+  [F769 original whole PE proof](TEXTURE_MANAGER_SLOTS_NATIVE_F769.md).
+  Previous F766 original
   R011 mirrored opaque sprite `0040D6B0`, **212 CODE B/66 native x86
   /6 genuine original PE fields**, selected 1/1 cold exact.
   [F766 original mirror full proof](SPRITE_OPAQUE_MIRRORED_F766.md).
@@ -13961,3 +13965,23 @@ real C8–CE/1F6–1F8/2DB source, and whole 943-B original afterRET
 DATA. Whole 00543210 source remains 58,261/58,294 native CODE B
 NONEXACT, official 973 game-function exact ledger unchanged.
 [Complete F768 original source and target verifier](FIGHTER_STORM_VOLLEY_TYPED_F768.md).
+
+
+## F769: native 44-byte texture slot element and full 0040B110 cold exact
+
+Original R017-authored game `0040B110` **184 complete CODE B /56
+native x86/8 genuine typed zero-addend original PE fields** now cold
+exact under ordinary VC7.1 `/GX` C++. Its real 44-byte constructed
+local (not a guessed 40-byte envelope) occupies original `EBP−0x38`,
+this receiver `EBP−0x40`, and the actual later zero DWORD `EBP−0x3C`,
+with `SUB ESP,0x34`, compiler exception chain, ctor `0040D8C0`,
+dtor `0040D8E0`, native mode+0x4C policy and vector assigns
+`0040DDA0`/`0040DF20`. Initial 40B source only had **137/152**
+nonfield bytes, the actual 44B used owner restores **152/152**
+and full 184/184 original CODE with all eight independently read
+physical PE/COFF references. One selected cold unit exact; no fake
+unused locals, original target modifications or VC7 vendor CODE credit.
+Official 973→**974** whole authored exact functions, 865,627→
+**865,811** native CODE B, reviewed **43.87%**, conservative
+**43.79%**; 22 giants plus 8 small/medium still not exact.
+[Complete F769 native lifetime and PE proof](TEXTURE_MANAGER_SLOTS_NATIVE_F769.md).
