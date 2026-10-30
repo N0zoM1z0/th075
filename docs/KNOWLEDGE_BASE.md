@@ -198,6 +198,17 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   matched after all 14 original PE refs checked.
   None accepted exact.
   [F798 full native teardown evidence](ARCHIVE_NATIVE_LOOP_TEARDOWN_F798.md).
+- **F805 formerly unclassified native 24B reset leaf:**
+  original `00454C00` entire **24 B/9 x86**
+  has a genuine `this+0x47C` 32-bit zero write
+  and zero PE/COFF relocations. Pinned VC7.1
+  C++ emits byte-identical whole machine code
+  for signed/unsigned int and float zero types,
+  but 23/21 B for short/byte alternatives.
+  Original nominal field type, historical owner
+  and attribution remain unknown/review:
+  no credited authored CODE.
+  [F805 full source/PE proof](UNKNOWN_DWORD_RESET_NATIVE_F805.md).
 - **F803 58KB shared default guard source grammar:** 15
   independent entire `00543210` native parent VC7.1
   compiles test true fallback getter/stage comparison.

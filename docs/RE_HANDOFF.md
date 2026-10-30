@@ -606,6 +606,21 @@ Both original `function-origins.csv` entries remain
 [F799 original whole-leaf source proof](UNKNOWN_OWNER_FIELD_LEAVES_F799.md);
 `scripts/repo-python scripts/verify-unknown-owner-field-leaves-f799.py`.
 
+**F805 complete 24-B previously unknown native source match:**
+original `00454C00` has 9 complete x86,
+zero original PE/COFF fields and a real
+`MOV DWORD PTR [this+0x47C],0` followed
+by plain thiscall `RET`. Natural VC7.1 C++
+`probes/UnknownNativeDwordResetF805.cpp`
+emits **24/24 target CODE B**; independent
+int/unsigned/float zero stores are codegen-identical,
+while a short/byte store produces 23/21 B.
+The original class/field nominal type and
+historical authored-vs-library ownership remain
+**unknown/review**, so no authored exact credit.
+[F805 complete native PE evidence](UNKNOWN_DWORD_RESET_NATIVE_F805.md);
+`scripts/repo-python scripts/verify-unknown-native-dword-reset-f805.py`.
+
 ## 4. Attribution, validation, research and storage
 
 - **Original authored ≠ compiler/library ≠ unknown**. The 95 unknown
