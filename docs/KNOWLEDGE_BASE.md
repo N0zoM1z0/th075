@@ -34,7 +34,14 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   Use `scripts/repo-python scripts/report-reconstruction-status.py --summary`
   and the canonical native/origin manifests; do not quote this snapshot
   as timeless status after a later adoption.
-- **Most recent giant source context is F763**: original 00543210
+- **Most recent giant source context is F764**: original fighter
+  2FA now emits 971 B/279 x86/31 genuine native PE/COFF fields
+  with all original mnemonic/width positions restored by six
+  authentic x87/borrowed float source corrections. **156 original
+  operand machine bytes still differ**, so the entire 58KB boss
+  remains NONEXACT, source 58,261/58,294 native CODE B.
+  [F764 native whole-parent proof](FIGHTER_APPROACH_VOLLEY_NATIVE_F764.md).
+  Earlier **F763** source context: original 00543210
   action 2DB now reproduces 1,024 complete original internal CODE B,
   290 x86 and 34 physical PE/COFF fields with no nonfield byte
   mismatches outside real shared-parent tail JMPs. Genuine strict x87
@@ -13840,3 +13847,22 @@ TU verifies old complete C8–CE/1F6–1F8 native source and full separate
 still eight extra source bytes/two extra x87 instructions. Formal
 whole-authored CODE remains 971/865,244, no extra case credit or mass
 cold replay. [Full native F763 proof](FIGHTER_APPROACH_NATIVE_F763.md).
+
+
+## F764: six real 2FA float source errors and native opcode geometry
+
+Fresh complete 58KB fighter original-shaped C++ source corrects
+original 2FA `POS48+POS54<=threshold`, strict actor side-edge `<`,
+the two opposite signed opponent/actor facing predicates, native
+`abs(deltaX)<threshold` and both actual borrowed float `+0x44`
+X member sources. The true native action `005509CC..00550D97`
+now has the same **971 native CODE B /279 native x86 mnemonic/width
+positions /31 real PE-targeted typed COFF fields** as newly compiled
+VC7.1 C++. **156 genuine nonfield GPR/operand bytes remain wrong**:
+this is NOT a byte-exact case or whole-function match. The full
+source still emits 58,261 of original 58,294 callable CODE B;
+all former F763/1F6–1F8/C8–CE complete native cases, independent
+943B afterRET DATA and 156 original DIR32 fields reverified in the
+ONE affected C++ TU. No all-971 cold replay and no new official
+whole-authored game CODE credit; live exact remains 971/865,244.
+[Full F764 original and reproducible compiler evidence](FIGHTER_APPROACH_VOLLEY_NATIVE_F764.md).

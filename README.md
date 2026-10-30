@@ -87,6 +87,12 @@ fields** by correcting true floating-point threshold predicates and
 borrowed actor X ordering. Whole fighter is still NONEXACT, currently
 58,269/58,294 CODE B and uncredited until the entire parent matches.
 
+New complete-parent [F764 fighter 2FA result](docs/FIGHTER_APPROACH_VOLLEY_NATIVE_F764.md)
+restores the original **971-B/279-x86/31-COFF opcode geometry** through
+six genuine float/comparison corrections. **156 original nonfield GPR
+bytes still differ**, and whole `00543210` remains NONEXACT at
+58,261/58,294 native CODE B; no partial case is credited.
+
 The **11 unmatched small/medium authored originals** include SpriteDrawing
 (6), TextureManager (2), and WinMain/Scene/Archive (3).
 They are fully enumerated in the [active handoff](docs/RE_HANDOFF.md).

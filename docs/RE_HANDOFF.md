@@ -146,7 +146,7 @@ register/other-code bytes; **not exact**. Original 943-B afterRET DATA
 remains separately verified. [F762 entire native evidence](FIGHTER_TYPED_RETURN_CROSS_CASE_F762.md);
 `scripts/repo-python scripts/verify-fighter-typed-returns-f762.py`.
 
-**F763 latest full-parent result:** original 2DB now reproduces
+**F763 historical full-parent result (before F764):** original 2DB now reproduces
 **1,024 native CODE B, 290 x86 and 34 real PE/COFF fields**, with
 zero other nonfield bytes outside the genuine shared-parent tail JMPs.
 Original `actorX < sideEdge`, `abs(actorX−opponentX) < threshold`
@@ -159,6 +159,20 @@ that is the next targeted x87/branch/GPR task. Original 943-B
 afterRET switch DATA separately verified, no accepted CODE credit.
 [Complete F763 native evidence](FIGHTER_APPROACH_NATIVE_F763.md);
 `scripts/repo-python scripts/verify-fighter-approach-native-f763.py`.
+
+**F764 latest original 2FA state research:** all six real floating
+predicates/borrowed actor-opponent `+0x44` X member reads corrected
+inside the same complete 58KB C++ parent. Actual native action 2FA
+now emits **971 B/279 x86/31 genuine typed PE/COFF fields** and
+has **zero original opcode or instruction-width differences**.
+However **156 real GPR/operand nonfield bytes remain WRONG**; this
+is NOT whole-case or whole-function exact. Recovered 2DB and
+1F6/1F7/1F8 native source bodies stay strict (except parent-tail
+JMPs), and original afterRET jump DATA remains 943 B/156 real
+DIR32/319 sparse bytes. Whole original `00543210` now emits
+**58,261/58,294 CODE B** (33-B deficit plus genuine wrong bytes);
+zero new accepted CODE. [F764 original whole-case proof](FIGHTER_APPROACH_VOLLEY_NATIVE_F764.md);
+`scripts/repo-python scripts/verify-fighter-approach-volley-native-f764.py`.
 
 **Next meaningful giant tasks:** resolve the real native `059` **19**
 normalized nonfield GPR discrepancies and `060/061` **98/101**;
