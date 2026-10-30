@@ -34,7 +34,15 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   Use `scripts/repo-python scripts/report-reconstruction-status.py --summary`
   and the canonical native/origin manifests; do not quote this snapshot
   as timeless status after a later adoption.
-- **Most recent giant source context is F762**: the true 58,294-B
+- **Most recent giant source context is F763**: original 00543210
+  action 2DB now reproduces 1,024 complete original internal CODE B,
+  290 x86 and 34 physical PE/COFF fields with no nonfield byte
+  mismatches outside real shared-parent tail JMPs. Genuine strict x87
+  side-edge and absolute-distance predicates plus borrowed actor X
+  correct both native status flags and GPR/x87 register order. The
+  complete parent emits 58,269/58,294 native CODE B, still NONEXACT.
+  [F763 PE/COFF proof](FIGHTER_APPROACH_NATIVE_F763.md).
+  Earlier **F762** context: the true 58,294-B
   fighter original now emits 58,277 B in one complete C++ parent.
   Three complete original game actions 1F6/1F7/1F8 now produce 3,833
   physical CODE B/1,118 native x86/115 true PE/COFF fields and correct
@@ -13812,3 +13820,23 @@ nonexact. **No independent split-case CODE credit**; accepted 971
 whole authored functions /865,244 CODE B unchanged. One affected TU
 only, no all-unit cold replay.
 [Complete F762 native verification](FIGHTER_TYPED_RETURN_CROSS_CASE_F762.md).
+
+
+## F763: original 2DB x87 predicates and borrowed actor X restore entire state
+
+In one freshly compiled full `00543210` giant, native original action
+`0054E451..0054E851` now emits **1,024/1,024 original CODE B/290 x86
+and all 34 physical typed PE/COFF fields**, without any other nonfield
+machine-code differences beyond the genuine unresolved shared-parent
+tail JMP displacements. Three true game source corrections were needed:
+`actorX < sideEdge` rather than `<=`, `abs(deltaX) < threshold`
+rather than `>=`, and borrowed actual float actor/opponent `+0x44`
+member views restoring original native MOV/MOV/FLD/FSUB order. Eleven
+complete original-parent C++ trials remeasured actual 15/14/13/12/3/0
+residual native byte differences. One selected normal VC7.1 source
+TU verifies old complete C8–CE/1F6–1F8 native source and full separate
+943B after-RET original jump DATA; whole actor source currently emits
+58,269 of 58,294 native CODE B, still NONEXACT. Historical 2FA is
+still eight extra source bytes/two extra x87 instructions. Formal
+whole-authored CODE remains 971/865,244, no extra case credit or mass
+cold replay. [Full native F763 proof](FIGHTER_APPROACH_NATIVE_F763.md).

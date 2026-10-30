@@ -81,6 +81,12 @@ Contact guard and both float member operands. The whole 58KB boss
 currently emits 58,277/58,294 B but remains NONEXACT, with **zero
 new official accepted whole CODE credit**.
 
+New [F763 full-parent fighter 2DB proof](docs/FIGHTER_APPROACH_NATIVE_F763.md)
+recovers another complete original **1,024 CODE B/290 x86/34 PE/COFF
+fields** by correcting true floating-point threshold predicates and
+borrowed actor X ordering. Whole fighter is still NONEXACT, currently
+58,269/58,294 CODE B and uncredited until the entire parent matches.
+
 The **11 unmatched small/medium authored originals** include SpriteDrawing
 (6), TextureManager (2), and WinMain/Scene/Archive (3).
 They are fully enumerated in the [active handoff](docs/RE_HANDOFF.md).

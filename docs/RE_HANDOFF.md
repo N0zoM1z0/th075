@@ -131,7 +131,7 @@ whole game callable function remains NONEXACT.
 [Original complete F760 evidence](FIGHTER_COMPLEX_STAGE_CC_CE_F760.md);
 `scripts/repo-python scripts/verify-fighter-complex-stage-cc-ce-f760.py`.
 
-**F762 newer full-parent native correction (supersedes F760 length):**
+**F762 historical full-parent correction (before F763):**
 `05F` now has genuine native-shaped source **144 B/44 x86/3 fields**,
 but its GPR phase remains NONEXACT. More importantly, original complete
 `1F6/1F7/1F8` now emit **3,833 original CODE B /1,118 x86 /115
@@ -145,6 +145,20 @@ FCOMP and the 1F8 native MOV/FLD order. The WHOLE 58,294-B boss emits
 register/other-code bytes; **not exact**. Original 943-B afterRET DATA
 remains separately verified. [F762 entire native evidence](FIGHTER_TYPED_RETURN_CROSS_CASE_F762.md);
 `scripts/repo-python scripts/verify-fighter-typed-returns-f762.py`.
+
+**F763 latest full-parent result:** original 2DB now reproduces
+**1,024 native CODE B, 290 x86 and 34 real PE/COFF fields**, with
+zero other nonfield bytes outside the genuine shared-parent tail JMPs.
+Original `actorX < sideEdge`, `abs(actorX−opponentX) < threshold`
+and real actor/opponent float `+0x44` lvalues restore the correct
+x87 TEST AH status flags and MOV/FLD register order. The formerly
+extra 8 B/two x86 in 2DB have been removed naturally; the full
+58,294-B boss candidate now emits **58,269 B**, 25-B deficit and
+still NONEXACT. Original 2FA still emits 979 B vs native 971 B;
+that is the next targeted x87/branch/GPR task. Original 943-B
+afterRET switch DATA separately verified, no accepted CODE credit.
+[Complete F763 native evidence](FIGHTER_APPROACH_NATIVE_F763.md);
+`scripts/repo-python scripts/verify-fighter-approach-native-f763.py`.
 
 **Next meaningful giant tasks:** resolve the real native `059` **19**
 normalized nonfield GPR discrepancies and `060/061` **98/101**;
