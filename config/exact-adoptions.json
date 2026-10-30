@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377; F378; F379; F386; F389; F391; F392; F393; F394; F395; F403; F407; F414; F415; F421; F422; F427; F428; F429; F430; F431; F432; F435; F437; F440; F445; F446; F447; F448; F454; F458; F459; F460; F461; F463; F465; F467; F468; F469; F474; F479; F481; F484; F485; F488; F489; F490-F492; F494; F496; F499; F504; F514; F516; F535; F536; F555; F755; F758; F760; F765; F766; F769; F770; F775; F776; F779",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377; F378; F379; F386; F389; F391; F392; F393; F394; F395; F403; F407; F414; F415; F421; F422; F427; F428; F429; F430; F431; F432; F435; F437; F440; F445; F446; F447; F448; F454; F458; F459; F460; F461; F463; F465; F467; F468; F469; F474; F479; F481; F484; F485; F488; F489; F490-F492; F494; F496; F499; F504; F514; F516; F535; F536; F555; F755; F758; F760; F765; F766; F769; F770; F775; F776; F779; F780",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "ce883305b16609f6273c84fb3c5a226676bf78d983c6ed2a6913b624e7b9401f"
+      "current_sha256": "9fe477dbe7b631ef75d26d48411b3a423e71095b45ab91c66bc28761ac3d66b8"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "0eba16e477113d2644cb8ead8b34c3db7a941ccd679113e22605f4097fc60d15"
+      "current_sha256": "e6ea57aa17cf743b3bbe7a3085bb03a63b0b2e3d86e1749e1845bca25272732b"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "338116b52abc8e8a696b18796166d4a79fea8b845a4c72f6aa53017dd9b898b1"
+      "current_sha256": "bb068277164d925112e10097dfcfbf64256aa105813bb7c1a574245b3f855575"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "0cc2b84ec673e6c08a5f4d8071315272a0de10c42e12701ef61029a94a77efaf"
+      "current_sha256": "825d10f524928e11fad7520cef852c617268861002985a0967d67e9b66e1663c"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "30c86f643968b01d656e4d1564cb9212bd6fca18963d9bb8cb4e6a501e44dcb8"
+      "current_sha256": "be1d6643d867126d48bf7e961853f13ae906c2d5af965278964000ec02de7f48"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -39327,6 +39327,50 @@
       },
       "origin": {
         "address": "0x0040CA20",
+        "origin": "authored",
+        "subsystem": "SpriteDrawing",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R011"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0040C9A0",
+        "size": "115",
+        "span_end": "0x0040CA12",
+        "current_name": "FUN_0040c9a0",
+        "proposed_name": "SpriteDrawing::DrawQuad",
+        "module": "SpriteDrawing",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R011",
+        "owner": "",
+        "notes": "R011; custom sprite/geometry or diagnostic-file policy, complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit."
+      },
+      "after": {
+        "address": "0x0040C9A0",
+        "size": "115",
+        "span_end": "0x0040CA12",
+        "current_name": "FUN_0040c9a0",
+        "proposed_name": "SpriteDrawingF780::DrawQuad",
+        "module": "SpriteDrawing",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void SpriteDrawingF780::DrawQuad(int,const NativeSpriteQuadF780&,const RECT*,DWORD)",
+        "is_thunk": "false",
+        "source_file": "src/SpriteOrdinaryQuadF780.cpp",
+        "evidence": "R011; F780; scripts/repo-python scripts/replay-exact-units.py --unit sprite-drawing-ordinary-quad-native-0040c9a0",
+        "owner": "authored",
+        "notes": "Original independently R011-authored full 0040C9A0 115 native CODE B/37 x86 ordinary sprite draw. Complete control flow has two GetTexture 0040C8C0 calls and a native VC7 STL size() 0040DD20 (library-owned and excluded) between first lookup and real 33-DWORD REP MOVSD copying original 132B quad; final Graphics DrawTexturedQuad goes to original 004029F0. Physical debug local stack is sub esp,0x90; saved this EBP-0x90; quad EBP-0x8C; real first lookup result EBP-0x8; observed STL count EBP-0x4. 140B meaningful scratch context groups physically observed 132B packet and two return values to express native layout; no unused padding, original historical context declaration remains provisional. Target 115/115 CODE, 37/37 instructions, 99/99 nonfield bytes, four real typed zero-addend PE/COFF REL32 original offsets and original destinations verified by fresh selected 1/1 cold replay. No vendor/STL CODE, target byte array, original private owner assertion or incomplete owner instantiation."
+      },
+      "origin": {
+        "address": "0x0040C9A0",
         "origin": "authored",
         "subsystem": "SpriteDrawing",
         "disposition": "authored",
@@ -217573,6 +217617,53 @@
           "target": 4205904
         }
       ]
+    },
+    "sprite-drawing-ordinary-quad-native-0040c9a0": {
+      "source": "src/SpriteOrdinaryQuadF780.cpp",
+      "object": "build/matching/SpriteOrdinaryQuadF780.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "SpriteDrawingF780::DrawQuad"
+      ],
+      "symbol": "?DrawQuad@SpriteDrawingF780@@QAEXHABUNativeSpriteQuadF780@@PBUtagRECT@@K@Z",
+      "target_address": 4245920,
+      "size": 115,
+      "relocations": [
+        {
+          "offset": 28,
+          "type": "REL32",
+          "symbol": "?GetTexture@SpriteDrawingF780@@QAEPAUIDirect3DTexture8@@H@Z",
+          "target": 4245696
+        },
+        {
+          "offset": 45,
+          "type": "REL32",
+          "symbol": "?size@SpriteEntryVectorF780@@QBEHXZ",
+          "target": 4250912
+        },
+        {
+          "offset": 79,
+          "type": "REL32",
+          "symbol": "?GetTexture@SpriteDrawingF780@@QAEPAUIDirect3DTexture8@@H@Z",
+          "target": 4245696
+        },
+        {
+          "offset": 100,
+          "type": "REL32",
+          "symbol": "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z",
+          "target": 4205040
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -218080,6 +218171,7 @@
     "src/TextureSharedF770.cpp": "23f3cd82b22ee2394e1d3b2c17c100267fb32cea1e25317b756ebaec4c22fb84",
     "src/SpriteScaledDrawF775.cpp": "a1ea269184620c974e3facae718f8ae988dd7562c27b4e31417df27824be289d",
     "src/SpriteVariantDrawF776.cpp": "2107c6b10b22a8c28c38811829fa17e7f3091e24301246f6d486876febed2f85",
-    "src/SpriteProjectedQuadF779.cpp": "37c14802b59a31e32de9c285f5727c1ca8a229c16b2d85a3edc5d6728c342118"
+    "src/SpriteProjectedQuadF779.cpp": "37c14802b59a31e32de9c285f5727c1ca8a229c16b2d85a3edc5d6728c342118",
+    "src/SpriteOrdinaryQuadF780.cpp": "7e82a66c7eb4017f9d008a33ec5168680aaea34d51a20c7e75d0d369b9cb8557"
   }
 }

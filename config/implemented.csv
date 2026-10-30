@@ -976,3 +976,4 @@ TextureManagerF770::AllocateSharedTextures
 SpriteDrawingF775::DrawScaled
 SpriteDrawingF776::DrawVariant
 SpriteDrawingF751::DrawProjectedQuad
+SpriteDrawingF780::DrawQuad

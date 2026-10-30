@@ -19,4 +19,5 @@ relocations, not masked differences. The complete single-unit
 cold build and match was re-run for
 `sprite-drawing-projected-quad-native-0040ca20`: **1/1 exact,
 92 complete CODE bytes**, original target hash pinned in
-`AGENTS.md`. Adjacent `0040C9A0` remains unaccepted.
+`AGENTS.md`. The adjacent `0040C9A0` ordinary quad was later independently accepted
+under [F780](SPRITE_ORDINARY_QUAD_NATIVE_F780.md).

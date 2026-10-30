@@ -15,16 +15,16 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
 
 ## Current verified original-game status (one short snapshot)
 
-- **978 cold-exact source-present functions**, **868,128 original authored
-  CODE bytes**, **43.98% reviewed authored coverage** and **43.91%
+- **979 cold-exact source-present functions**, **868,243 original authored
+  CODE bytes**, **43.99% reviewed authored coverage** and **43.91%
   conservative coverage** of native original CODE. The independently
   reviewed authored provenance cohort has **1,004** candidates, so
-  **26 authored whole functions remain NONEXACT**: **22** large
-  (1,102,055 original CODE B) plus **4** small/medium
-  (3,521 CODE B). The older **25**-function subset counted only
+  **25 authored whole functions remain NONEXACT**: **22** large
+  (1,102,055 original CODE B) plus **3** small/medium
+  (3,406 CODE B). The older **25**-function subset counted only
   `config/functions.csv.owner=authored` unfinished rows and omitted
   11 independently authored, formerly owner-blank small/medium targets,
-  of which F755, F758, F760, F765, F766, F769, F770, F775, F776 and F779 have accepted ten. See [all 5 current addresses](RE_HANDOFF.md).
+  of which F755, F758, F760, F765, F766, F769, F770, F775, F776, F779 and F780 have accepted all eleven. See [all 3 current addresses](RE_HANDOFF.md).
 - **95 original candidates /3,420 CODE bytes** have separately
   unresolved provenance; even a whole byte-exact C++ source does not
   permit reclassification or accepted authored CODE without independent
@@ -113,7 +113,12 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   These are still *internal switch-case source, NOT accepted whole
   game-function CODE*. Source 059 and 060/061 GPR differences remain.
   Reproduce from [F752 native/PE proof](FIGHTER_BORROWED_POSITION_F752.md).
-- **The currently most recent exact whole function is F779**, original
+- **The currently most recent exact whole function is F780**, original
+  R011 ordinary sprite quad `0040C9A0`: complete 115 original CODE B,
+  37 native x86, four physically verified typed PE/COFF calls
+  including excluded native STL size helper; 1/1 targeted cold exact.
+  [F780 full native source evidence](SPRITE_ORDINARY_QUAD_NATIVE_F780.md).
+  Historical **F779** was original
   `0040CA20` projected textured quad, 92 complete CODE B/34 native x86
   and two original REL32 calls, verified by one-unit cold replay.
   Explicit four-byte alignment of a real 132-B borrowed quad copy
@@ -14169,3 +14174,24 @@ passed `replay-exact-units.py --unit sprite-drawing-projected-quad-native-0040ca
 (1/1 exact). Private sprite layout beyond the observed 64B position data
 and 68B remaining payload remains unproved. The adjacent 115B ordinary
 quad and large fighter parents remain nonexact.
+
+
+## F780: complete original 0040C9A0 ordinary sprite quad 115B cold exact
+
+New complete R011 source `src/SpriteOrdinaryQuadF780.cpp` precisely
+emits original 115 CODE B and 37 x86 instructions from natural C++
+under pinned VC7.1. An independently read original disassembly and
+Ghidra decompilation establish the true call order: first texture
+lookup (`0040C8C0`), VC7 STL vector-size query (`0040DD20`),
+33-DWORD `REP MOVSD` of a physically observed 132B quad, second
+texture lookup (`0040C8C0`), and textured draw (`004029F0`).
+The authentic `sub esp,90h` frame saves `this` at `EBP-90h`,
+quad at `EBP-8Ch` and two call outputs at `EBP-8`/`EBP-4`.
+A 140B local draw context groups the actually stored values and
+restores native compiler layout without padding locals; this does
+not prove any original private class identity. Complete structural
+comparison matches all 99/99 nonfield bytes, four full PE/COFF REL32
+fields at original offsets `1C,2D,4F,64`, and original call
+destinations. Fresh targeted `replay-exact-units.py --unit
+sprite-drawing-ordinary-quad-native-0040c9a0` accepts **1/1 exact**;
+no library/source-owned helper bytes double-counted.

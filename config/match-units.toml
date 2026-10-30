@@ -61097,3 +61097,20 @@ relocations = [
  { offset = 0x2C, type = "REL32", symbol = "?GetTexture@SpriteDrawingF751@@QAEPAUIDirect3DTexture8@@H@Z", target = 0x0040C8C0 },
  { offset = 0x4D, type = "REL32", symbol = "?DrawProjectedTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@MMMKPAUIDirect3DTexture8@@@Z", target = 0x00402D50 },
 ]
+
+# F780: original R011 whole 115-B ordinary quad; 37 x86, 4 physical PE
+# calls. True 140-byte scratch holds 132B copied quad and two call results.
+[units.sprite-drawing-ordinary-quad-native-0040c9a0]
+source = "src/SpriteOrdinaryQuadF780.cpp"
+object = "build/matching/SpriteOrdinaryQuadF780.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["SpriteDrawingF780::DrawQuad"]
+symbol = "?DrawQuad@SpriteDrawingF780@@QAEXHABUNativeSpriteQuadF780@@PBUtagRECT@@K@Z"
+target_address = 0x0040C9A0
+size = 115
+relocations = [
+ { offset = 0x1C, type = "REL32", symbol = "?GetTexture@SpriteDrawingF780@@QAEPAUIDirect3DTexture8@@H@Z", target = 0x0040C8C0 },
+ { offset = 0x2D, type = "REL32", symbol = "?size@SpriteEntryVectorF780@@QBEHXZ", target = 0x0040DD20 },
+ { offset = 0x4F, type = "REL32", symbol = "?GetTexture@SpriteDrawingF780@@QAEPAUIDirect3DTexture8@@H@Z", target = 0x0040C8C0 },
+ { offset = 0x64, type = "REL32", symbol = "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z", target = 0x004029F0 },
+]

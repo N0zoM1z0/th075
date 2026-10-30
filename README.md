@@ -18,20 +18,19 @@ playable game or an officially verified distribution rebuild.**
 | MD5 | `21bcb855a39f2170195811e6ad292f18` |
 | Provisional native candidates | **4,351** |
 | Independently origin-reviewed authored candidates | **1,004** |
-| Source-present / whole-byte-exact units | **978 / 978** |
-| Accepted original CODE | **868,128** bytes |
-| Reviewed authored coverage | **43.98%** of **1,973,704** original bytes |
+| Source-present / whole-byte-exact units | **979 / 979** |
+| Accepted original CODE | **868,243** bytes |
+| Reviewed authored coverage | **43.99%** of **1,973,704** original bytes |
 | Conservative authored coverage | **43.91%**, including **3,420** provenance-pending bytes |
-| **Authored not exact** | **26** total: **22** large original state advances (**1,102,055 CODE B**) and **4** small/medium functions (**3,521 CODE B**) |
+| **Authored not exact** | **25** total: **22** large original state advances (**1,102,055 CODE B**) and **3** small/medium functions (**3,406 CODE B**) |
 | Independently unknown origin | **95** candidates; **3,420** CODE B uncredited |
 
 **The 98% authored-byte objective is NOT achieved.** The old claim that
 only **25** authored functions remained is incomplete: it counted only
 `config/functions.csv.owner=authored` pending rows and missed **11**
-other independently authored original candidates. F755, F758, F760, F765, F766, F769, F770, F775, F776 and F779 have now accepted ten
-of those 11, leaving **1** nonexact; their provenance was already recorded
-in `config/function-origins.csv`. That one remains nonexact and must
-remain on the small/medium task queue. The original PE, independent
+other independently authored original candidates. F755, F758, F760, F765, F766, F769, F770, F775, F776, F779 and F780 have now accepted all eleven
+of those 11, leaving **0** nonexact; their provenance was already recorded
+in `config/function-origins.csv`. The remaining three original non-giant authored functions are independently tracked and still nonexact. The original PE, independent
 origin ledger, canonical full-function match records and live status
 scripts are more authoritative than historical F-series prose.
 

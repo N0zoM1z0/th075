@@ -934,3 +934,4 @@ address,name,module,confidence,evidence
 0x0040D2E0,SpriteDrawingF775::DrawScaled,SpriteDrawing,inferred,"R011; F775; full original 970 CODE B/257 x86/14 true typed native PE references and selected 1/1 cold exact, borrowed private owner/name provisional"
 0x0040CEF0,SpriteDrawingF776::DrawVariant,SpriteDrawing,inferred,"R011; F776; whole native 994 CODE B/269 x86/15 true zero-addend PE references, one-unit 1/1 cold exact; historical class/private layout provisional"
 0x0040CA20,SpriteDrawingF751::DrawProjectedQuad,SpriteDrawing,inferred,"R011; F779; original 92 complete native CODE B/34 x86/two original PE/COFF refs, selected one-unit cold exact; true 4B aligned 132B quad copy"
+0x0040C9A0,SpriteDrawingF780::DrawQuad,SpriteDrawing,inferred,"R011; F780; whole 115 CODE B/37 x86/four real typed PE call targets; 132B borrowed quad plus two native saved prior lookup results; original owner/name provisional"

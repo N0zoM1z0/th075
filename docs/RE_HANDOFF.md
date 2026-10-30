@@ -1,6 +1,6 @@
 # TH075 — ACTIVE reconstruction agent handoff
 
-**Verified snapshot: 2026-10-30, current F779 exact ledger; F778 giant source research.**
+**Verified snapshot: 2026-10-30, current F780 exact ledger; F778 giant source research.**
 This is the **short working queue**, not the chronological research log.
 Original Japanese PE and the live configuration **always outrank historical
 prose, old case-level exact labels, class names or inferred layouts**.
@@ -16,15 +16,15 @@ Older [F598–F652](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
 | User-supplied Japanese TH075 `resources/th075.exe` v1.11 | SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98` |
 | Provisional original native candidate rows | **4,351** |
 | Independently reviewed `origin=authored` candidates | **1,004** |
-| Canonical accepted complete exact authored game functions | **978 functions / 978 exact units** |
-| Accepted complete original CODE | **868,128 original CODE bytes** |
+| Canonical accepted complete exact authored game functions | **979 functions / 979 exact units** |
+| Accepted complete original CODE | **868,243 original CODE bytes** |
 | Reviewed denominator | **1,973,704** native authored CODE B |
-| Exact reviewed coverage | **43.98%** |
+| Exact reviewed coverage | **43.99%** |
 | Conservative coverage (includes pending origin bytes) | **43.91%** |
-| Authored candidates still NOT exact | **26 authored functions remain nonexact** |
-| 27 nonexact breakdown | **22 large original state advances**, **4 other original small/medium whole functions** |
+| Authored candidates still NOT exact | **25 authored functions remain nonexact** |
+| 27 nonexact breakdown | **22 large original state advances**, **3 other original small/medium whole functions** |
 | 22 large original native CODE not accepted | **1,102,055 CODE bytes** (separate after-RET DATA not credited) |
-| 5 small/medium native CODE not accepted | **3,521 CODE bytes** |
+| 5 small/medium native CODE not accepted | **3,406 CODE bytes** |
 | Independently origin-unknown candidates | **95 functions / 3,420 CODE bytes**, uncredited |
 
 **Important correction:** the older **25 unfinished** figure only counted
@@ -33,9 +33,9 @@ rows flagged both `owner=authored` and `status=unclassified` in
 **11 more** candidates whose `function-origins.csv` origin was already
 reviewed as authored, but whose provisional `functions.csv` owner is still
 blank at that historical checkpoint because they lacked accepted source.
-F755 (`00407270`), F758 (`00407A50`), F760 (`00407B80`), F765 (`0040D790`), F766 (`0040D6B0`), F769 (`0040B110`), F770 (`0040B000`), F775 (`0040D2E0`) and F776 (`0040CEF0`) accepted nine; the **2 remaining** candidates
-still lack accepted source and must not be discarded or prematurely labeled
-in `functions.csv.owner`.
+F755 (`00407270`), F758 (`00407A50`), F760 (`00407B80`), F765 (`0040D790`), F766 (`0040D6B0`), F769 (`0040B110`), F770 (`0040B000`), F775 (`0040D2E0`), F776 (`0040CEF0`), F779 (`0040CA20`) and F780 (`0040C9A0`) accepted all eleven. The remaining three
+small/medium functions were already separately owner-marked authored.
+Do not credit them until complete independent cold exact matches.
 Use **`config/function-origins.csv` for provenance** and
 `config/matches.csv` / `config/match-units.toml` for whole CODE credit.
 The **98% whole-authored-byte goal is NOT met**.
@@ -56,7 +56,7 @@ All dirty tracked/untracked work belongs to this one reconstruction worker;
 inspect and continue it, do not skip/reset it. Run the hash-pinned original
 `th075.exe`, **not** `th075c.exe`. Use `scripts/repo-python` and the pinned
 VC7.1 compiler; compile probes serially under headless Wine. **Never run an
-all-978-unit cold replay.** Only newly accepted or affected whole functions
+all-979-unit cold replay.** Only newly accepted or affected whole functions
 need canonical `scripts/repo-python scripts/replay-exact-units.py --unit NAME`.
 Source grammar/byte geometry of an *internal switch case* does **not**
 earn credit for the still-NONEXACT enclosing whole callable function.
@@ -284,20 +284,27 @@ research without calling it accepted whole CODE. [Giant dispatch
 map](../config/fighter-boss-dispatch-fingerprints.json) is a
 physical-data lead, not provenance proof.
 
-## 3. All 4 additional nonexact original small/medium functions
+## 3. All 3 additional nonexact original small/medium functions
 
 These are **authored by `function-origins.csv`** but not canonically
 matched (most have blank provisional `functions.csv` owner). This is
-the complete **3,521-B** non-giant backlog, NOT just the three
+the complete **3,406-B** non-giant backlog, NOT just the three
 frequently researched ownership functions:
 
 | Native original entire function | CODE | Next evidence/source lead |
 | --- | ---: | --- |
-| `0x0040C9A0` SpriteDrawing ordinary quad | 115 B | Real quad copy and true Graphics draw callee, original whole function still missing |
 | `0x0041CE50` ArchiveCatalog destructor | 171 B | Best native 108/115 nonfield bytes, still seven genuine owner/CFG differences; [F697/F698 negatives](ARCHIVE_AGGREGATE_AND_REFERENCE_NEGATIVES_F697_F698.md) |
 | `0x0043B0B0` Scene destructor | 248 B | Best 191/200 native nonfield bytes; used texture owner/stack layout unresolved; [F700](SCENE_TEXTURE_OWNER_LIFETIMES_F700.md) |
 | `0x00602A60` WinMain | 2,987 B | Original saved local scene/path frame differs; [F702–F704](WINMAIN_USED_OBJECT_CONTEXT_NEGATIVES_F702_F704.md) |
 
+The R011 ordinary-quad `0040C9A0` is now **115-B/37-x86/4-PE-field
+whole cold exact** ([F780](SPRITE_ORDINARY_QUAD_NATIVE_F780.md)).
+Two original calls prime/capture a texture pointer and real VC7 vector
+size at stack `EBP−8`/`EBP−4`; the 132-B quad at `EBP−0x8C`
+is copied before the final textured draw. The native 140-B grouped
+scratch view matches the complete original 115 CODE bytes with all
+four true physical REL32 fields; original historical C++ class layout
+is not claimed. No double credit for the VC7 STL size() helper.
 The R011 projected-quad `0040CA20` is now **92-B/34-x86/2-PE-field
 whole cold exact** ([F779](SPRITE_PROJECTED_QUAD_NATIVE_F779.md)).
 The observed 132-B quad needs explicit 4-B alignment, yielding real
