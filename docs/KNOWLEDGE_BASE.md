@@ -214,6 +214,19 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   saved-this slot. Entire 248B remains
   nonexact, no credited original CODE.
   [F818 original PE typed-view result](SCENE_COMPLETE_BORROWED_OWNER_F818.md).
+- **F822 four true 276-B timer-landing cases in whole fighter:**
+  original 0x96/0x97/0x98/0x9A = **1,104
+  genuine original CODE B, 292 x86 and 36
+  independently physical PE fields**. Current
+  normal C++ parent grows to **14,326 B/
+  3,770 x86** with 901B original packed DATA.
+  Each source 276B/73-x86 case matches all
+  native opcodes/GPR/widths/PE field targets
+  except two actual parent-external final JMP
+  operand bytes, NOT independent exact CODE.
+  Earlier arc/landings/mode63 and native
+  EBP-0x10 context reverified.
+  [F822 complete PE source proof](SCRIPTED_FIGHTER_TIMED_LANDINGS_F822.md).
 - **F821 real 0x91 arc game state joins the growing 46KB fighter:**
   native 288B/78 x86/12 true original PE
   call/global/CRT fields in one new

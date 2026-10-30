@@ -751,6 +751,28 @@ Short-parent F629 strict claim does not transfer.
 scripts/repo-python scripts/verify-scripted-fighter-arc91-context-f821.py.
 No original giant callable exact credit.
 
+**F822 major complete original fighter timed-landings source advance:**
+one fresh 005214B0 VC7.1 parent now emits **14,326
+callable B/3,770 x86** and includes four more
+complete original gameplay cases 0x96/97/98/9A.
+Each is **276 native CODE B/73 x86/9 true PE
+references**, for 1,104 newly sourced internal B
+and 36 genuine native fields. Each source now
+matches ALL original x86 mnemonics, widths,
+register roles, native PE field positions/targets
+and nonrelocation bytes except precisely **two
+authentic encompassing-giant final JMP bytes**
+per case. Original saved this EBP-0x10 and
+901B afterRET packed DATA retained. Earlier
+0x91/8C/8F/90/0x63 physically rechecked;
+their documented native operand differences
+and shifted mode63 COFF field still apply.
+These cases are not callable independent
+whole original functions and gain zero
+accepted authored exact CODE.
+[F822 four full native cases](SCRIPTED_FIGHTER_TIMED_LANDINGS_F822.md);
+scripts/repo-python scripts/verify-scripted-fighter-timed-landings-f822.py.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin
