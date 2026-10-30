@@ -214,6 +214,24 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   saved-this slot. Entire 248B remains
   nonexact, no credited original CODE.
   [F818 original PE typed-view result](SCENE_COMPLETE_BORROWED_OWNER_F818.md).
+- **F837 selected complete original CB restores four downstream native register phases:**
+  actual native 496B/141 x86/12
+  physical original PE fields; true
+  short increment naturally emits
+  MOV DX/ADD DX,1. New whole
+  20,165B/5,447 x86 source C8-CB
+  all original opcode/width/PE bytes,
+  with only original enclosing giant
+  epilogue JMP operand negatives.
+  Adding true CB C++ also removes
+  all non-JMP GPR mismatches in
+  CF/D0/D1/D2, and restores common
+  default 46B tail 34/34 nonrelocation
+  plus three original PE REL32 calls.
+  Five native 901B packed afterRET
+  jump tables reverified. Original
+  entire 46KB game still NONEXACT.
+  [F837 physical PE source proof](SCRIPTED_FIGHTER_FOURWAY_CB_F837.md).
 - **F836 actual original 0xCA in 46KB actor:**
   418B/121 x86/11 true physical PE
   references, NOT other actor F759

@@ -1049,6 +1049,32 @@ saved-this EBP-0x10 and 3 PE calls correct.
 scripts/repo-python scripts/verify-scripted-fighter-fourway-ca-f836.py.
 Whole giant NONEXACT; no split-case credit.
 
+**F837 native fighter CB completes fourway series AND downstream register recovery:**
+pinned original 005214B0 CB is **496 original inner
+CODE B/141 x86/12 true PE call/global fields**
+(not the other-fighter F759 445B case). Original
+counter reset first, 16-bit ++short native
+MOV DX/ADD DX,1, authentic borrowed X+0x44
+projectile and all physical field targets
+are normal C++. One new entire selected
+VC7.1 parent **20,165 callable CODE B/5,447 x86**
+(previous F836 19,684/5,308). Only four
+original enclosing-parent JMP bytes at
+CB +214/215 and +492/493 remain wrong.
+TRUE preceding CB source ALSO recovers all
+later CF/D0/D1/D2 GPR bytes naturally:
+C8/C9/CA/CB/CF/D0/D1/D2 now each differ
+ONLY at genuine encompassing-giant final
+long-JMP displacement operands. Complete
+46B/16-x86 original F806 default tail
+**34/34 native nonrelocation bytes**
+plus 3 real PE call fields recovered,
+and all FIVE 901B afterRET native packed
+jump tables verified.
+[F837 selected whole-original PE proof](SCRIPTED_FIGHTER_FOURWAY_CB_F837.md);
+scripts/repo-python scripts/verify-scripted-fighter-fourway-cb-f837.py.
+Whole 46,755B giant STILL NONEXACT.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin
