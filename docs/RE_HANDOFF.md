@@ -1,6 +1,6 @@
 # TH075 — ACTIVE reconstruction agent handoff
 
-**Verified snapshot: 2026-10-30, current F780 exact ledger; F795 native WinMain and giant controls.**
+**Verified snapshot: 2026-10-30, current F780 exact ledger; F798 Archive/WinMain/giant controls.**
 This is the **short working queue**, not the chronological research log.
 Original Japanese PE and the live configuration **always outrank historical
 prose, old case-level exact labels, class names or inferred layouts**.
@@ -413,6 +413,24 @@ a superficially closer 2,993-B source has only
 **No full WinMain exact CODE or source class
 layout claimed.** [F795 physical PE/source evidence](WINMAIN_PHYSICAL_WINDOW_CONTEXT_F795.md);
 `scripts/repo-python scripts/verify-winmain-native-used-group-f795.py`.
+
+**F798 original ArchiveCatalog 171B native teardown stack recovery:**
+nine whole source builds with *actually used* loop
+index/filename and resource/delete receiver
+groupings. Two-field used contexts remain 171B/51
+x86 with 102 or 108 of 115 native nonfield B
+and all **14 authentic PE/COFF field destinations**
+but wrong live EBP lifetimes. A genuine four-member
+`filename/resource/deleteReceiver/index` context
+restores exactly the original **-0x10/-0x0C/-0x08/-0x04**
+semantic stack slots, an important compiler allocator
+lead, yet it generates **four extra MOV instructions**,
+**183B/55 x86 instead of native 171B/51 x86**, and
+the frame/saved `this` are wrong. Direct/inline
+delete assignment source grammar both negative.
+**Not exact**, no truncated/cropped credit.
+[F798 original whole-function evidence](ARCHIVE_NATIVE_LOOP_TEARDOWN_F798.md);
+`scripts/repo-python scripts/verify-archive-loop-teardown-f798.py`.
 
 The R011 ordinary-quad `0040C9A0` is now **115-B/37-x86/4-PE-field
 whole cold exact** ([F780](SPRITE_ORDINARY_QUAD_NATIVE_F780.md)).

@@ -186,6 +186,18 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   are documented in [storage hygiene](STORAGE_HYGIENE.md); original
   sources, PE, Ghidra, Wine and accepted objects were preserved.
 
+- **F798 Archive native four-owner temporary allocation:**
+  nine full 171B original destructor source controls
+  show that a real used filename/resource/delete/index
+  four-member context naturally places all four
+  semantic values at native `EBP−0x10/−0x0C/−0x08/−0x04`.
+  However it creates **four extra MOV** and a
+  183B/55-x86 source versus native 171B/51-x86,
+  with nonnative frame/this slots; two-field
+  alternatives remain 102 or 108/115 nonfield
+  matched after all 14 original PE refs checked.
+  None accepted exact.
+  [F798 full native teardown evidence](ARCHIVE_NATIVE_LOOP_TEARDOWN_F798.md).
 - **F795 original WinMain physical runtime layout:** true PE
   EBP stack locations for Graphics/created HWND/current
   Scene/module path form a consecutive sequence at
