@@ -1,6 +1,6 @@
 # TH075 — ACTIVE reconstruction agent handoff
 
-**Verified snapshot: 2026-10-31, current F780 exact ledger; F843 selected falling states and F838 Scene.**
+**Verified snapshot: 2026-10-31, current F780 exact ledger; F844 original falling/grounded states and F838 Scene.**
 This is the **short working queue**, not the chronological research log.
 Original Japanese PE and the live configuration **always outrank historical
 prose, old case-level exact labels, class names or inferred layouts**.
@@ -1204,6 +1204,34 @@ four real GPR byte negatives,
 no whole-game exact code credit.
 [F843 original physical PE proof](SCRIPTED_FIGHTER_FALLING_12F_F843.md);
 scripts/repo-python scripts/verify-scripted-fighter-falling-12f-f843.py.
+
+**F844 genuine next native 130 ground/animation state in original 46KB fighter:**
+selected original at 00526715 is **202
+native interior CODE B/58 x86/five physical
+PE call/global fields**, NOT F654 other
+actor's 261B source. Authentic x87 sum
+POS48+POS54, native grounded position/
+velocity/drag zero ORDER, original action9
+and prepare animation 0x1C at stage3
+now normal C++. Fresh selected whole
+VC7.1 parent emits **22,289 callable
+B/6,079 x86**, up from F843
+22,102B/6,023 x86. All original 130
+opcode/width/GPR and true PE locations
+match except TWO full giant-epilogue
+long-JMP two-byte operand pairs
+(130 +84/85, +198/199).
+All four earlier genuine 12C..12F
+cases, ELEVEN real C8..D2 source
+cases and ALL FIVE 901B afterRET
+packed native tables rechecked.
+The true 46B default retains four
+honest GPR nonfield bytes wrong
+at 10/12/16/19; original whole
+46,755B still NONEXACT with no
+split case callable CODE credit.
+[F844 current selected original PE proof](SCRIPTED_FIGHTER_GROUNDED_130_F844.md);
+scripts/repo-python scripts/verify-scripted-fighter-grounded-130-f844.py.
 
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`

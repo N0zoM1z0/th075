@@ -214,6 +214,24 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   saved-this slot. Entire 248B remains
   nonexact, no credited original CODE.
   [F818 original PE typed-view result](SCENE_COMPLETE_BORROWED_OWNER_F818.md).
+- **F844 actual native original grounded 0x130 in current 46KB fighter:**
+  real original 202B/58 x86/5
+  physical PE fields, not other
+  F654 261B actor. Natural original
+  x87 POS48+POS54, grounded
+  POS48/POS5C/POS54 zero order
+  and stage3 native 0x1C animation
+  recover all opcode/width/GPR
+  except two true whole-parent
+  epilogue long-JMP operand pairs.
+  Parent now **22,289B/6,079 x86**,
+  earlier four falling and eleven
+  storm/bounce/shot cases and
+  five original 901B tables verified.
+  Shared default still four actual
+  GPR differences, whole native
+  giant NONEXACT.
+  [F844 selected original physical PE](SCRIPTED_FIGHTER_GROUNDED_130_F844.md).
 - **F843 actual selected actor 12F native recovery:**
   complete original 207B/59 x86/six real
   original PE fields, not the other
