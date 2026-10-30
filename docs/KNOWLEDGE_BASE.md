@@ -214,6 +214,18 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   saved-this slot. Entire 248B remains
   nonexact, no credited original CODE.
   [F818 original PE typed-view result](SCENE_COMPLETE_BORROWED_OWNER_F818.md).
+- **F835 complete original 171B Archive lexical scopes:**
+  15 genuine whole VC7.1 original destructor
+  probes. Thirteen nested/split source
+  lexical scope and filename declaration
+  forms are entire-CODE and source COFF
+  byte-identical, all **171B/51 x86/14
+  real PE fields**, but still 108/115
+  original nonfield bytes. Filename
+  declared before loop worsens to 102/115;
+  used reference adds 8B/3 x86, nonnative
+  whole source. No accepted exact CODE.
+  [F835 original PE lifetime proof](ARCHIVE_LEXICAL_SCOPES_F835.md).
 - **F834 major 46KB giant native C8 case and five downstream GPR recoveries:**
   actual original 657-B/190-x86/17-real-PE-field
   C8 restored with natural ++signed-short native

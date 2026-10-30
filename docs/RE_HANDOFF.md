@@ -1290,6 +1290,22 @@ authored whole exact credit.
 [F828 real PE/source result](ARCHIVE_USED_STORAGE_CLASS_F828.md);
 scripts/repo-python scripts/verify-archive-storage-class-f828.py.
 
+**F835 new complete ArchiveCatalog native lexical-scope negative:**
+15 whole original 0041CE50 /Od /GX- builds test real
+delete/free nested scopes and filename lifetime.
+Thirteen original-sized 171B/51-x86 C++ variants
+produce bit-identical whole CODE and 14 source
+PE/COFF fields, but still only **108/115 real
+native nonrelocation bytes**. Declaring the used
+filename before the loop worsens to **102/115**,
+while an actually used filename const-reference
+emits **179B/54 x86**, not original geometry.
+All 14 true PE fields/targets checked in each
+size-correct source. No fake slots or formally
+accepted authored exact CODE.
+[F835 complete original PE evidence](ARCHIVE_LEXICAL_SCOPES_F835.md);
+scripts/repo-python scripts/verify-archive-lexical-scopes-f835.py.
+
 ## 4. Attribution, validation, research and storage
 
 - **Original authored ≠ compiler/library ≠ unknown**. The 95 unknown
