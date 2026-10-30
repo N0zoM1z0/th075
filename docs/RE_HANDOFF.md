@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F735 six R014/R015 authored complete cold-exact leaves.**
+**Maintained 2026-10-30, after F736 six R011/R014/R019/R021 authored complete cold-exact leaves.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -9,6 +9,26 @@ with its Markdown links adjusted for its new directory. The older
 [chronological knowledge base](KNOWLEDGE_BASE.md) are evidence, not a
 reason to undo later exact adoptions. Original pinned native PE and
 **live manifests outrank every historical sentence**.
+
+**F736 latest SIX MORE canonically cold-exact complete authored functions:**
+R019 original `0040B250` texture-container ClearSlots **33B/13 x86/
+2 real COFF fields**; R014 `0040C7F0` blend/depth policy **65B/
+24 x86/3 fields** and `0040C970` projected texture strip wrapper
+**42B/18 x86/2 fields**; R011 `0040D840` white sprite wrapper
+**35B/16 x86/1 field** and `0040D870` texture RECT getter
+**80B/27 x86/2 fields**; R021 `0041A0E0` signed-byte progress
+encoded item test **47B/17 x86/2 fields**. All SIX whole native
+original game functions have **302 original CODE B/115 exact x86
+mnemonic+width positions/12 genuine typed physical PE/COFF fields
+and 254/254 original nonfield bytes**. Three ordinary VC7.1
+source objects, six NEW only canonical cold-replay units **6/6
+exact**, no previously accepted unit cold replay. Original
+R011/R014/R019/R021 authorship pre-reviewed, game callee CODE not
+recredited. Canonical ledger now **955 complete exact authored
+functions, 863,163 original CODE B, 43.73% reviewed, 43.66%
+conservative**. Full original 22 giants and three complete
+WinMain/Scene/Archive functions still NONEXACT.
+[All 6 entire native PE/COFF source/replay receipts](SMALL_AUTHORED_ORIGINAL_LEAVES_F736.md).
 
 **F735 latest CANONICAL COLD-EXACT GAME SOURCE ADOPTION (six full small functions):**
 Six formerly unimplemented, pre-reviewed authored R014/R015
@@ -483,8 +503,8 @@ but not whole original CODE. [Full physical negative matrix](WINMAIN_USED_OBJECT
 | Item | Authoritative snapshot; recheck live manifests on every new session |
 | --- | --- |
 | Original game | User-supplied Japanese TH075 ver1.11 `resources/th075.exe`, SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`; **never** localized `th075c.exe` |
-| Exact authored whole functions | **949 functions / 949 exact units**, **862,861 original CODE bytes** |
-| Reviewed authored bytes | **43.72%** of **1,973,704** original CODE bytes; conservatively **43.64%** with unknown origins included |
+| Exact authored whole functions | **955 functions / 955 exact units**, **863,163 original CODE bytes** |
+| Reviewed authored bytes | **43.73%** of **1,973,704** original CODE bytes; conservatively **43.66%** with unknown origins included |
 | Provisional ledger | **4,351** candidate original functions; **95** still origin-unknown with 3,420 CODE bytes; these have **no authored credit** |
 | Unfinished author-owned functions | **25 complete functions**: **22 large fighter bosses**, **1,102,055 CODE bytes** of original whole CODE, plus **three** other whole functions (2,987 B, 248 B, 171 B) |
 | Separated after-RET giant switch DATA | **16,123 bytes** across the 22 giants; DATA is not authored CODE credit |

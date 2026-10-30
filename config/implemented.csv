@@ -947,3 +947,9 @@ TextureManagerF735::SetDepthMode
 TextureManagerF735::SetTextureFilter
 TextureManagerF735::SetPixelShaderMode
 TextureManagerF735::SetColorMultiplier
+TextureManagerSlotsF736::ClearSlots
+TextureManagerF736::SetBlendMode
+SpriteTexturesF736::DrawProjectedTriangleStrip
+SpriteDrawingF736::DrawOpaqueSpriteWhite
+SpriteDrawingF736::GetTextureRect
+ProgressRecordsF736::CheckEncodedItem

@@ -15,10 +15,10 @@ user-supplied executable. It is **not yet a complete game rebuild**.
 | Size / image base | 2,576,384 bytes / `0x00400000` |
 | SHA-256 | `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98` |
 | MD5 | `21bcb855a39f2170195811e6ad292f18` |
-| Source-present / exact functions | **949 / 949** |
-| Accepted CODE bytes | **862,861** |
-| Reviewed authored coverage | **43.72%** of 1,973,704 reviewed bytes |
-| Conservative coverage | **43.64%**, with 3,420 origin-pending bytes included |
+| Source-present / exact functions | **955 / 955** |
+| Accepted CODE bytes | **863,163** |
+| Reviewed authored coverage | **43.73%** of 1,973,704 reviewed bytes |
+| Conservative coverage | **43.66%**, with 3,420 origin-pending bytes included |
 | Unresolved origins | **95** of 4,351 provisional function candidates |
 
 **The 98% authored-byte goal is incomplete.** Function labels and C++ owner
@@ -26,7 +26,7 @@ types are provisional; machine-code matches alone do not prove an entire
 original class layout. The target's official distribution provenance has not
 been independently verified; do not substitute a localized `th075c.exe`.
 
-These live snapshot counts were rechecked after **F735** (2026-10-30); the F694 storage cleanup and F689–F693 negative-evidence audit do **not** add accepted CODE.
+These live snapshot counts were rechecked after **F736** (2026-10-30); the F694 storage cleanup and F689–F693 negative-evidence audit do **not** add accepted CODE.
 The **live** sources of truth, not any dated prose milestone, are `config/functions.csv`,
 `config/function-origins.csv`, and `config/match-units.toml`.
 Refresh using `scripts/repo-python scripts/report-reconstruction-status.py --summary`.
@@ -43,6 +43,13 @@ adds **six canonical cold-exact complete game functions (135 native CODE B)**,
 with six authentic original call relocations checked and only the two
 affected C++ objects freshly replayed. Existing exact units and
 large-boss nonexact source remain intact.
+
+The [F736 authored six-more-leaf adoption](docs/SMALL_AUTHORED_ORIGINAL_LEAVES_F736.md)
+adds another **six original-authored entire cold-exact functions (302
+native CODE bytes)** using just three newly compiled source objects.
+Combined with F735, this turn recovered twelve new cold-exact
+complete original functions (**437 authentic CODE bytes**), while
+all older accepted units and nonexact giant source remain intact.
 
 ### Latest verified giant research and complete small-function evidence
 

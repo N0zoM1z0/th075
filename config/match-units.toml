@@ -60520,3 +60520,82 @@ size = 19
 relocations = [
   { offset = 0xB, type = "REL32", symbol = "??1InputResourceClient@@QAE@XZ", target = 0x00403BE0 },
 ]
+
+# F736: six more independently R011/R014/R019/R021 authored complete leaf cases.
+[units.texture-manager-clear-slots-0040b250]
+source = "src/TexturePolicyLeavesF736.cpp"
+object = "build/matching/TexturePolicyLeavesF736.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["TextureManagerSlotsF736::ClearSlots"]
+symbol = "?ClearSlots@TextureManagerSlotsF736@@QAEXXZ"
+target_address = 0x0040B250
+size = 33
+relocations = [
+  { offset = 0xE, type = "REL32", symbol = "?Clear@NativeTextureNamesF736@@QAEXXZ", target = 0x0040DE30 },
+  { offset = 0x19, type = "REL32", symbol = "?Clear@NativeTextureSlotsF736@@QAEXXZ", target = 0x0040DF40 },
+]
+
+[units.texture-manager-blend-policy-0040c7f0]
+source = "src/TexturePolicyLeavesF736.cpp"
+object = "build/matching/TexturePolicyLeavesF736.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["TextureManagerF736::SetBlendMode"]
+symbol = "?SetBlendMode@TextureManagerF736@@QAEXH@Z"
+target_address = 0x0040C7F0
+size = 65
+relocations = [
+  { offset = 0x1C, type = "REL32", symbol = "?SetDepthMode@Graphics@@YAXH@Z", target = 0x00402250 },
+  { offset = 0x28, type = "REL32", symbol = "?SetDepthMode@Graphics@@YAXH@Z", target = 0x00402250 },
+  { offset = 0x34, type = "REL32", symbol = "?SetBlendMode@Graphics@@YAXH@Z", target = 0x00401F50 },
+]
+
+[units.texture-manager-projected-strip-0040c970]
+source = "src/TexturePolicyLeavesF736.cpp"
+object = "build/matching/TexturePolicyLeavesF736.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["SpriteTexturesF736::DrawProjectedTriangleStrip"]
+symbol = "?DrawProjectedTriangleStrip@SpriteTexturesF736@@QAEXHPAUScreenVertex@Graphics@@H@Z"
+target_address = 0x0040C970
+size = 42
+relocations = [
+  { offset = 0xF, type = "REL32", symbol = "?GetTexture@SpriteTexturesF736@@QAEPAUIDirect3DTexture8@@H@Z", target = 0x0040C8C0 },
+  { offset = 0x1D, type = "REL32", symbol = "?DrawProjectedTriangleStrip@Graphics@@YAXPAUScreenVertex@1@HPAUIDirect3DTexture8@@@Z", target = 0x00403200 },
+]
+
+[units.sprite-drawing-white-forward-0040d840]
+source = "src/SpriteDrawLeavesF736.cpp"
+object = "build/matching/SpriteDrawLeavesF736.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["SpriteDrawingF736::DrawOpaqueSpriteWhite"]
+symbol = "?DrawOpaqueSpriteWhite@SpriteDrawingF736@@QAEXHHH@Z"
+target_address = 0x0040D840
+size = 35
+relocations = [
+  { offset = 0x19, type = "REL32", symbol = "?DrawOpaqueSprite@SpriteDrawingF736@@QAEXHHHH@Z", target = 0x0040D790 },
+]
+
+[units.sprite-drawing-texture-rect-0040d870]
+source = "src/SpriteDrawLeavesF736.cpp"
+object = "build/matching/SpriteDrawLeavesF736.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["SpriteDrawingF736::GetTextureRect"]
+symbol = "?GetTextureRect@SpriteDrawingF736@@QAEXHPAUtagRECT@@@Z"
+target_address = 0x0040D870
+size = 80
+relocations = [
+  { offset = 0x25, type = "REL32", symbol = "?At@NativeSpriteRectListF736@@QAEPAUNativeSpriteRectRecordF736@@H@Z", target = 0x0040DD60 },
+  { offset = 0x3D, type = "REL32", symbol = "?At@NativeSpriteRectListF736@@QAEPAUNativeSpriteRectRecordF736@@H@Z", target = 0x0040DD60 },
+]
+
+[units.progress-record-check-encoded-item-0041a0e0]
+source = "src/ProgressEncodedItemF736.cpp"
+object = "build/matching/ProgressEncodedItemF736.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["ProgressRecordsF736::CheckEncodedItem"]
+symbol = "?CheckEncodedItem@ProgressRecordsF736@@YA_NC@Z"
+target_address = 0x0041A0E0
+size = 47
+relocations = [
+  { offset = 0x24, type = "DIR32", symbol = "?g_GameProgressCatalogAt006718F8@@3VGameProgressCatalogF736@@A", target = 0x006718F8 },
+  { offset = 0x29, type = "REL32", symbol = "?CheckEncodedSlot@GameProgressCatalogF736@@QAE_NH@Z", target = 0x00416DC0 },
+]

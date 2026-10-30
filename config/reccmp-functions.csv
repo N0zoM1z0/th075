@@ -948,3 +948,9 @@ TextureManagerF735::SetDepthMode,0x0040C840,function
 TextureManagerF735::SetTextureFilter,0x0040C860,function
 TextureManagerF735::SetPixelShaderMode,0x0040C880,function
 TextureManagerF735::SetColorMultiplier,0x0040C8A0,function
+TextureManagerSlotsF736::ClearSlots,0x0040B250,function
+TextureManagerF736::SetBlendMode,0x0040C7F0,function
+SpriteTexturesF736::DrawProjectedTriangleStrip,0x0040C970,function
+SpriteDrawingF736::DrawOpaqueSpriteWhite,0x0040D840,function
+SpriteDrawingF736::GetTextureRect,0x0040D870,function
+ProgressRecordsF736::CheckEncodedItem,0x0041A0E0,function

@@ -27,8 +27,8 @@ Canonical live ledgers and actual native PE outrank all historical prose.
 
 ## Current authoritative status and superseded negatives
 
-- **949 cold-exact source-present functions**, **862,861 original authored
-  CODE bytes**, **43.72% reviewed authored coverage** and **43.64%
+- **955 cold-exact source-present functions**, **863,163 original authored
+  CODE bytes**, **43.73% reviewed authored coverage** and **43.66%
   conservative coverage**. **Only 25 `owner=authored,status=unclassified`
   function rows currently remain:** 22 giant fighter action/advance bosses
   totalling 1,102,055 original CODE bytes, WinMain (2,987), SceneObject
@@ -13223,3 +13223,30 @@ all-943 old-unit replay. Formal full authored ledger MOVES
 43.71%→43.72%**, conservative stays 43.64%. Historical F732–F734
 large-boss and Scene/Archive negative contexts remain NONEXACT.
 [Full native/source proof and exact unit names](THIN_AUTHORED_FORWARDERS_F735.md).
+
+
+## F736: six more actual original authored whole functions cold-exact, 302 CODE B ADOPTED
+
+After F735 six accepted small originals, F736 targeted six **different
+previously R011/R014/R019/R021-origin-reviewed authored complete
+functions**. Complete pinned source R019 `0040B250` **33B/13 x86**
+TextureManager ClearSlots at native +8/+0x18; R014 `0040C7F0`
+**65B/24 x86** blend-depth policy and `0040C970` **42B/18 x86**
+texture-resolve/projected-draw wrapper; R011 `0040D840`
+**35B/16 x86** white sprite wrapper and `0040D870` **80B/27 x86**
+actual RECT/texture record lookup; and R021 `0041A0E0`
+**47B/17 x86** signed-byte progress rule original `CDQ/IDIV 10`
+and signed compare, original global `006718F8`.
+**All 302 entire original GAME CODE bytes, 115 complete ordered
+original x86 and 12 physically authentic typed REL32/DIR32 PE/COFF
+fields** match ordinary pinned VC7.1 C++ source. ALL 254/254
+nonrelocation original bytes identical; six independent source
+present match units **6/6 canonical cold replay EXACT** via
+only 3 rebuilt source objects. Existing 949 exact old functions
+not cold-replayed en masse. Formal authored exact snapshot now
+**955 source/955 exact whole functions /863,163 original CODE B /
+43.73% reviewed, 43.66% conservative**; R011/014/019/021
+classification unchanged, historical names/layouts provisional,
+no callee CODE double credit. 22 giants and three other complete
+nonexact WinMain/Scene/Archive original functions remain pending.
+[Complete original PE/COFF, new unit names and targeted replay](SMALL_AUTHORED_ORIGINAL_LEAVES_F736.md).
