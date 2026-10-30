@@ -107,8 +107,9 @@ class _SavedReceiverInsn:
     No native bytes or other EBP locals are changed; this is not a claim
     of original stack layout equivalence.
     """
-    def __init__(self, original):
+    def __init__(self, original, source_receiver_slot):
         self.original=original
+        self.source_receiver_slot=source_receiver_slot
 
     def __getattr__(self, key):
         return getattr(self.original,key)
@@ -117,22 +118,30 @@ class _SavedReceiverInsn:
     def op_str(self):
         raw=self.original.op_str
         if self.original.mnemonic!='mov':return raw
-        if raw=='dword ptr [ebp - 0x18], ecx':return 'dword ptr [ebp - 8], ecx'
-        if re.fullmatch(r'(eax|ecx|edx), dword ptr \[ebp - 0x18\]',raw):
-            return raw.replace('[ebp - 0x18]','[ebp - 8]')
+        slot=f'[ebp - {self.source_receiver_slot}]'
+        if raw==f'dword ptr {slot}, ecx':return 'dword ptr [ebp - 8], ecx'
+        if re.fullmatch(rf'(eax|ecx|edx), dword ptr \[ebp - {self.source_receiver_slot}\]',raw):
+            return raw.replace(slot,'[ebp - 8]')
         return raw
 
 
 class _SavedReceiverDecoder:
-    def __init__(self, decoder):self.decoder=decoder
+    def __init__(self, decoder, source_receiver_slot):
+        self.decoder=decoder
+        self.source_receiver_slot=source_receiver_slot
 
     def disasm(self, code, address):
         for insn in self.decoder.disasm(code,address):
-            yield _SavedReceiverInsn(insn) if address==0 else insn
+            yield _SavedReceiverInsn(insn,self.source_receiver_slot) if address==0 else insn
 
 
 def verify_prior_parent_context(reader,pe,real,boss,report,mapped,code,refs,m,h,*,
-                                expected_receiver_uses=2393, following_native_2fa=False):
+                                expected_receiver_uses=2393, following_native_2fa=False,
+                                source_receiver_slot='0x18', source_scratch_slot='0x30',
+                                source_scratch_shift=16, source_f684_slot_shift=4,
+                                source_native_302_end_ordinal=None,
+                                source_2f9_expected_size=1319,
+                                source_2f9_wide_ordinals=None):
     """Recheck the *same* newly compiled complete parent and after-RET DATA.
 
     The authentic native frame slot is EBP-44. Only source `this` MOVs
@@ -144,18 +153,19 @@ def verify_prior_parent_context(reader,pe,real,boss,report,mapped,code,refs,m,h,
         ins.append(x)
         if x.mnemonic=='ret':break
     original_prologue=list(real.disasm(reader.pe_bytes_at(pe,ACTOR,32),ACTOR))
-    uses=[x for x in ins if '[ebp - 0x18]' in x.op_str]
-    allowed={'dword ptr [ebp - 0x18], ecx',
-             'eax, dword ptr [ebp - 0x18]',
-             'ecx, dword ptr [ebp - 0x18]',
-             'edx, dword ptr [ebp - 0x18]'}
+    slot=f'[ebp - {source_receiver_slot}]'
+    uses=[x for x in ins if slot in x.op_str]
+    allowed={f'dword ptr {slot}, ecx',
+             f'eax, dword ptr {slot}',
+             f'ecx, dword ptr {slot}',
+             f'edx, dword ptr {slot}'}
     need(len(uses)==expected_receiver_uses and {x.op_str for x in uses}==allowed
-         and sum(x.op_str=='dword ptr [ebp - 0x18], ecx' for x in uses)==1
+         and sum(x.op_str==f'dword ptr {slot}, ecx' for x in uses)==1
          and all(x.mnemonic=='mov' for x in uses)
-         and ins[3].op_str=='dword ptr [ebp - 0x18], ecx'
+         and ins[3].op_str==f'dword ptr {slot}, ecx'
          and original_prologue[3].op_str=='dword ptr [ebp - 0x44], ecx',
          'actual original and new compiled whole-parent `this` owner not independently attested')
-    decoder=_SavedReceiverDecoder(real)
+    decoder=_SavedReceiverDecoder(real,source_receiver_slot)
     by={x['action']:int(x['handler'],16) for x in mapped}
     n651={a:m['f651'].true_native(reader,pe,real,boss,by,a) for a in (0xD1,0xD2)}
     old=m['f651'].verify_full(reader,pe,decoder,boss,report,mapped,code,refs,n651,h,
@@ -168,9 +178,9 @@ def verify_prior_parent_context(reader,pe,real,boss,report,mapped,code,refs,m,h,
     p656,idx=m['f656'].verify_native(reader,pe,decoder,code,refs,n656,old,idx,h,following_native=0x186)
     n657=m['f657'].native_cases(reader,pe,real,boss,mapped)
     p657,negative186,idx=m['f657'].verify_new(reader,pe,decoder,code,refs,n657,old,idx,h,
-                                    following_native=0x18A,source_scratch_slot='0x30')
+                                    following_native=0x18A,source_scratch_slot=source_scratch_slot)
     n661=m['f661'].true_native(reader,pe,real,boss,mapped)
-    m['f661'].verify_nonstrict(reader,pe,decoder,code,refs,n661,old,idx,h,source_scratch_shift=16)
+    m['f661'].verify_nonstrict(reader,pe,decoder,code,refs,n661,old,idx,h,source_scratch_shift=source_scratch_shift)
     n664=m['f664'].original_cases(reader,pe,real,boss,mapped)
     p664,idx=m['f664'].verify_new_code(reader,pe,decoder,code,refs,boss,mapped,n664,h,following_native=0x252)
     shared=ins[old['continuation_source_ordinal']-1].op_str
@@ -179,14 +189,15 @@ def verify_prior_parent_context(reader,pe,real,boss,report,mapped,code,refs,m,h,
     n669=m['f669'].original_native(reader,pe,real,boss,mapped)
     p669,idx=m['f669'].verify_native(reader,pe,decoder,code,refs,n669,idx,shared,h,following_native=0x258)
     n671=m['f671'].original_case(reader,pe,real,boss,mapped)
-    m['f671'].verify_negative(reader,pe,decoder,code,refs,n671,idx,shared,h,source_scratch_shift=16)
+    m['f671'].verify_negative(reader,pe,decoder,code,refs,n671,idx,shared,h,source_scratch_shift=source_scratch_shift)
     n673=m['f673'].actual_native(reader,pe,real,boss,mapped)
     m['f673'].verify_groundwave(reader,decoder,code,refs,n673,shared,h)
     n674=m['f674'].original_case(reader,pe,real,boss,mapped)
     terminal=m['f674'].true_terminal(reader,pe,real,boss,mapped)
     strict2ef,negative31c,idx=m['f674'].verify_native(reader,decoder,code,refs,n674,
             terminal,shared,h,following_native=0x2F0,terminal_expect_strict=False,
-            terminal_preceding_native=0x31B)
+            terminal_preceding_native=0x31B,
+            source_native_302_end_ordinal=source_native_302_end_ordinal)
     n676=m['f676'].original_cases(reader,pe,real,boss,mapped)
     negative676,idx=m['f676'].verify_negative(reader,decoder,code,refs,n676,idx,shared,h,
                                               following_native=0x2F8)
@@ -196,18 +207,21 @@ def verify_prior_parent_context(reader,pe,real,boss,report,mapped,code,refs,m,h,
     native2f9=f684.original_2f9(reader,pe,real,boss,mapped,m['f676'])
     # Real 2FB's second source index moves the *actual* F684 compiler
     # scratch slots by four bytes; check each original operand unchanged.
-    f684.SLOTS={i:(native, f'0x{int(source,16)+4:x}')
+    f684.SLOTS={i:(native, f'0x{int(source,16)+source_f684_slot_shift:x}')
                 for i,(native,source) in f684.SLOTS.items()}
     negative2f9=f684.verify_negative(decoder,native2f9,code,refs,idx+252,shared,h,
-                                        following_native_2fa=following_native_2fa)
+                                        following_native_2fa=following_native_2fa,
+                                        expected_compiled_size=source_2f9_expected_size,
+                                        expected_wide_ordinals=source_2f9_wide_ordinals)
     negative31b=f684.verify_terminal_negative(decoder,code,refs,n31b,shared,h,
-                                                m['f681'],m['f674'])
+                                                m['f681'],m['f674'],
+                                                source_native_302_end_ordinal=source_native_302_end_ordinal)
     need((len(p653),len(p654),len(p656),len(p657),len(p664),len(p668),len(p669))
          ==(3,2,5,3,2,3,3),
          'earlier 27 source-context strict original inner bodies regressed in new parent')
     return {
         'native_original_saved_this_EBP':'-0x44',
-        'new_compiler_actual_saved_this_EBP':'-0x18',
+        'new_compiler_actual_saved_this_EBP':'-'+source_receiver_slot,
         'physically_attested_compiled_saved_this_mov_uses':len(uses),
         'previous_27_nonterminal_context_strict_original_cases_rechecked':True,
         'genuine_previous_nonstrict_case_controls_rechecked':True,

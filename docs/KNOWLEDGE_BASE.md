@@ -12537,3 +12537,32 @@ No exact match, no fake locals, no 943-unit cold replay.
 [Native slots and complete ten-candidate COFF evidence](SCENE_TEXTURE_OWNER_LIFETIMES_F700.md);
 reproducible ignored local C++ research under
 `.analysis/f700-scene-texture-owner/`.
+
+
+## F701: new complete 0x302 four-tier radial volley inside full native 58KB boss
+
+Original physically bounded `00543210` action `0055101E`–`005513C5`
+**935 native CODE B, 261 real x86, 28 actual typed PE/COFF fields** is now
+meaningful ordinary VC7.1 C++, including full 6/6/8/8 projectile tier
+loops, true native signed global/direction, random stage initializers,
+ground crossing and stage-11 transition. Read-only native Y expression
+`(*(&POS48)) + g_F701_VolleyYAt00658268` recovered all four true
+`FLD [this+0x48] / FADD [absolute global]` instruction orders,
+removing eight genuine float operand/width ordering mismatches from
+the complete original parent. **Entire 302 source emits 935 B /261 x86
+with identical original mnemonic/width starts and 28/28 typed original
+PE/COFF references.** But **136 genuine nonfield GPR/CFG mismatches**,
+real source `this` `EBP-0x28` versus native `-0x44`, loop locals and
+`EBP-0x9C..-0xAC` versus native `-0x208..-0x218` x87 scratch remain.
+Therefore 302 is **NONSTRICT**, and the enclosing 58KB original giant
+remains **whole-NONEXACT**, with zero new credited function CODE.
+
+The actual 302 integer loop context shifts previous full generated
+`2F9/2FA/2FB` to **1331/979/647 compiled B** respectively, with
+381/281/181 real x86 and all 34/31/17 original typed PE/COFF fields.
+F701 independently rechecks these along with previous 27 strict
+nonterminal original cases and the **complete 943-byte afterRET DATA**
+in one fresh entire parent. Read [complete native/COFF and honest
+lifetime negative](FIGHTER_FOUR_TIER_VOLLEY_F701.md) and reproduce:
+`scripts/repo-python scripts/verify-fighter-four-tier-volley-f701.py`.
+No all-943 cold replay, 943/862726 authored exact baseline unchanged.

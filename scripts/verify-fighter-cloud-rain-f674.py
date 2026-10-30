@@ -173,7 +173,7 @@ def locate_marker(refs,ins,operand):
     return found[0]+2
 
 
-def verify_native(reader,dec,code,refs,original,terminal,shared_exit,h,following_native=None, terminal_expect_strict=False, terminal_preceding_native=None):
+def verify_native(reader,dec,code,refs,original,terminal,shared_exit,h,following_native=None, terminal_expect_strict=False, terminal_preceding_native=None, source_native_302_end_ordinal=None):
     ins=[]
     for x in dec.disasm(code,0):
         ins.append(x)
@@ -216,7 +216,19 @@ def verify_native(reader,dec,code,refs,original,terminal,shared_exit,h,following
     else:
         need(terminal_preceding_native==0x31B,
              'only original independently bounded 31B may precede this native terminal')
-        terminal_start=locate_marker(refs,ins,0x303)+74
+        if source_native_302_end_ordinal is None:
+            # The 0x302 parent case remains a source placeholder.
+            terminal_start=locate_marker(refs,ins,0x303)+74
+        else:
+            # The complete native 0x302 is now genuine C++, whose verified
+            # 261-instruction body ends at the immediately following 31B.
+            # This address comes from a separate PE/COFF validated source
+            # extent, not a search for a convenient matching tail.
+            terminal_start=source_native_302_end_ordinal+74
+            need(0<source_native_302_end_ordinal<len(ins)-74
+                 and ins[source_native_302_end_ordinal].mnemonic=='mov'
+                 and ins[source_native_302_end_ordinal].op_str.endswith(', dword ptr [ebp - 8]'),
+                 'source-backed 0x302 must lead into complete original 31B handler')
         need(ins[terminal_start].mnemonic=='mov'
              and ins[terminal_start].op_str.endswith(', dword ptr [ebp - 8]'),
              'native stage 31C must physically follow original full 74-x86 31B body')

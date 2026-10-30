@@ -166,14 +166,16 @@ def authenticate_saved_this(real,reader,pe,code):
             'machine_code_bytes_patched':0}
 
 
-def verify_negative(source_decoder,original,code,refs,start,shared,h,*,following_native_2fa=False):
+def verify_negative(source_decoder,original,code,refs,start,shared,h,*,
+                    following_native_2fa=False, expected_compiled_size=GENERATED_CODE,
+                    expected_wide_ordinals=None):
     ins=[]
     for x in source_decoder.disasm(code,0):
         ins.append(x)
         if x.mnemonic=='ret':break
     native,lo,hi,fields=original
     gen=ins[start:start+len(native)]
-    need(len(gen)==ORIGINAL_X86 and sum(x.size for x in gen)==GENERATED_CODE
+    need(len(gen)==ORIGINAL_X86 and sum(x.size for x in gen)==expected_compiled_size
          and gen[0].mnemonic=='push' and gen[0].op_str=='0xff0000'
          and gen[-1].mnemonic=='jmp' and gen[-1].op_str==shared,
          'actual full 2F9 381 native x86 source structure or shared original exit changed')
@@ -193,7 +195,7 @@ def verify_negative(source_decoder,original,code,refs,start,shared,h,*,following
              and PE_TARGETS[target] in actual[0]['symbol'],
              f'2F9 original PE/COFF authentic zero-addend typed field missing at x86{ordinal}')
     wide=[(i,a.size,b.size) for i,(a,b) in enumerate(zip(native,gen)) if a.size!=b.size]
-    need(wide==[(i,6,3) for i in SLOTS],
+    need(wide==[(i,6,3) for i in (SLOTS if expected_wide_ordinals is None else expected_wide_ordinals)],
          f'actual native 2F9 sixteen original EBP scratch width mismatches changed: {wide}')
     raw=[]
     for i,(a,b) in enumerate(zip(native,gen)):
@@ -232,7 +234,7 @@ def verify_negative(source_decoder,original,code,refs,start,shared,h,*,following
             'original_physical_next_native_handler':f'0x{hi:08X}',
             'entire_original_native_x86':len(native),
             'original_full_native_inner_CODE_bytes':hi-lo,
-            'compiler_generated_real_CPP_inner_CODE_bytes':GENERATED_CODE,
+            'compiler_generated_real_CPP_inner_CODE_bytes':expected_compiled_size,
             'all_physical_original_typed_PE_COFF_fields':len(physical),
             'native_original_wrong_wide_EBP_scratch_ordinals':list(SLOTS),
             'actual_native_four_float_order_mismatch_ordinals':wrong_mn,
@@ -243,12 +245,19 @@ def verify_negative(source_decoder,original,code,refs,start,shared,h,*,following
             'accepted_game_authored_whole_FUNCTION_CODE_bytes':0}
 
 
-def verify_terminal_negative(source_decoder,code,refs,originals,shared,h,f681,f674):
+def verify_terminal_negative(source_decoder,code,refs,originals,shared,h,f681,f674,*,
+                             source_native_302_end_ordinal=None):
  ins=[]
  for x in source_decoder.disasm(code,0):
   ins.append(x)
   if x.mnemonic=='ret':break
- first=f674.locate_marker(refs,ins,0x303)
+ first=(f674.locate_marker(refs,ins,0x303)
+        if source_native_302_end_ordinal is None
+        else source_native_302_end_ordinal)
+ if source_native_302_end_ordinal is not None:
+  need(0<first<len(ins)-74 and ins[first].mnemonic=='mov'
+       and ins[first].op_str.endswith(', dword ptr [ebp - 8]'),
+       'genuine newly restored 302 source does not lead to native 31B')
  native,lo,hi,fields=originals[0x31B]
  gen=ins[first:first+len(native)]
  need(len(gen)==74 and all(a.size==b.size for a,b in zip(native,gen))

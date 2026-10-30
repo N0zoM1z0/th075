@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F699 whole-boss action 2FA reconstruction.**
+**Maintained 2026-10-30, after F701 whole-boss action 302 reconstruction.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -138,6 +138,24 @@ source must always be compiled in the **fresh complete original
 parent C++ translation unit** and its preceding cases + entire jump
 DATA rechecked. [Full original dispatch fingerprint JSON](../config/fighter-boss-dispatch-fingerprints.json),
 [original fighter family dispatch](FIGHTER_BOSS_FAMILY_DISPATCH.md).
+
+**F701 latest large-boss source result (NONSTRICT):** complete native
+`00543210` action `0x302` (`0055101E`–`005513C5`) now compiles with
+**935/935 original CODE bytes, identical 261/261 x86 mnemonic/width
+positions and all 28/28 genuine typed physical PE/COFF source fields**.
+Ordinary C++ recovers the four real 6/6/8/8 indexed `0x393` projectile
+loops and authentic 4 native Y `FLD/FADD` operand orders. **136 real
+nonfield GPR/CFG mismatches and genuine EBP owner/scratch shifts remain**;
+this is **not** a strict inner case or accepted complete fighter. New
+source `this` is `EBP−0x28` (native `−0x44`), with 2,526 real reloads.
+In the same freshly compiled full giant, preceding `2F9/2FA/2FB` are
+now **1331/979/647 B** with **381/281/181** x86 and **34/31/17**
+authentic physical fields; the first 27 strictly backed nonterminal
+case interiors and **entire 943-B afterRET DATA** are rechecked. Do not
+merge older F696/F699 compiler stack phases into this new context.
+[F701 full native case and physical nonexactness](FIGHTER_FOUR_TIER_VOLLEY_F701.md);
+`scripts/repo-python scripts/verify-fighter-four-tier-volley-f701.py`.
+Zero extra function-level exact CODE.
 
 **F699 latest whole-boss result (NONSTRICT):** native real `00543210`
 internal action `0x2FA` (`005509CC`–`00550D97`) now has complete
