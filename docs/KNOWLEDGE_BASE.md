@@ -13579,3 +13579,36 @@ all STL library callee origins preserved, no whole class private
 layout asserted. Native authored snapshot **967 whole functions,
 864,219 native CODE B, 43.79% reviewed and 43.71% conservative**.
 [Full original PE/COFF ABI and selected replay](CHARACTER_AUX_FRAME_SELECTION_F750.md).
+
+
+## F752: true borrowed actor AND opponent position member types recover native 05D/05E direct FCOMP
+
+Full pinned original `00543210` native physically complete 05D
+`0054526D..005453BE` **337 CODE B/101 x86/8 original typed
+PE/COFF fields** and 05E `005453BE..0054550F`
+**337/101/8**, previously F749 341B/103x86 with two extra
+`FLD/FCOMPP` vs real `FLD ACTOR; FCOMP OPPONENT`.
+New genuine type-aware borrowed real `+0x44` X fields on
+**BOTH** actor/opponent C++ view (neither is instantiated or
+claims historical object layout) naturally recover original
+**337/101/8** each with zero mnemonic, width or normalized
+GPR errors, all 16 authentic typed PE field ordinals/real
+targets/symbols, and actual whole giant saved-this EBP−0x44.
+Each original case **301/305 nonfield CODE bytes** identical;
+only 4 actual displacement bytes across two legitimate shared
+giant tail JMPs differ per case. They are NOT independent
+whole GAME functions and no original CODE is newly accepted.
+
+Seven genuine whole original-shaped VC7.1 C++ actor/opponent
+borrowed member hypotheses vs raw lvalues proved that
+**both typed** member views are necessary; one-sided struct
+views emitted 337B/101 but nonnative FCOMP grammar.
+Portable [`verify-fighter-borrowed-position-f752.py`](../scripts/verify-fighter-borrowed-position-f752.py)
+checks source/PE strict original opcode/physical fields and 301/305
+nonfield B with honest tail negatives, all 059/060/061/062
+source and native EBP scratch, 27 earlier source-backed original
+whole-case contexts and full 943B native postRET DATA/156 DIR32
+x86 labels/319 equal sparse bytes in SAME fresh 58KB parent.
+F749 raw-pointer negative default remains independently testable.
+[Full original fighter x87 comparison and actual source](FIGHTER_BORROWED_POSITION_F752.md).
+Formal 967/864219 whole authored exact original CODE unchanged.

@@ -102,10 +102,15 @@ def source_with_six(src):
     return src
 
 
-def original_native_and_source(rd,pe,d,f676,f701,f598,by,ins,refs,mapper):
+def original_native_and_source(rd,pe,d,f676,f701,f598,by,ins,refs,mapper,*,
+                               native_direct_opponent_fcomp=False):
     result=[]
     for action,info in NATIVE.items():
         lo,hi,nb,nx,nfields,sb,sx,expect_gpr=info
+        if native_direct_opponent_fcomp and action in (0x05D,0x05E):
+            sb=nb
+            sx=nx
+            expect_gpr=0
         need(by[action]==lo and by[NEXT[action]]==hi and hi-lo==nb,
              f'original native 059/05D/05E/060/061/062 complete physical interval changed {action:#x}')
         native=list(d.disasm(rd.pe_bytes_at(pe,lo,nb),lo))
@@ -126,7 +131,8 @@ def original_native_and_source(rd,pe,d,f676,f701,f598,by,ins,refs,mapper):
              f'original native {action:#x} case CODE/CFG or current source size changed')
         refs0=f676.original_fields(native)
         fields=f701.compare_typed_fields(refs0,gen,refs,SYMBOLS,
-                      tuple(i for i,_,_ in refs0),ordinal_strict=action not in (0x05D,0x05E))
+                      tuple(i for i,_,_ in refs0),
+                      ordinal_strict=(native_direct_opponent_fcomp or action not in (0x05D,0x05E)))
         need(len(fields)==len(refs0)==nfields,
              f'original native {action:#x} genuine typed COFF source targets incorrect')
         absolute={i for i,t,m in refs0 if m!='call'}
@@ -139,7 +145,18 @@ def original_native_and_source(rd,pe,d,f676,f701,f598,by,ins,refs,mapper):
                  if a.mnemonic!=b.mnemonic]
         wide=[(i,a.size,b.size) for i,(a,b) in enumerate(zip(native,gen))
               if a.size!=b.size]
-        if action in (0x05D,0x05E):
+        if action in (0x05D,0x05E) and native_direct_opponent_fcomp:
+            need(not opwrong and not wide and nx==sx and nb==sb,
+                 f'original native {action:#x} direct face-to-opponent FCOMP full x86 grammar not restored')
+            for ordinal,mask,following in ((59,'0x41','jne'),(69,'5','jp')):
+                need(native[ordinal].mnemonic==gen[ordinal].mnemonic=='fcomp'
+                     and native[ordinal].op_str==gen[ordinal].op_str
+                     and f'[{"eax" if ordinal==59 else "ecx"} + 0x44]' in native[ordinal].op_str,
+                     f'original {action:#x} true borrowed-opponent memory FCOMP operand at {ordinal} changed')
+                need(native[ordinal+2].op_str==gen[ordinal+2].op_str==f'ah, {mask}'
+                     and native[ordinal+3].mnemonic==gen[ordinal+3].mnemonic==following,
+                     f'original {action:#x} authentic direct FCOMP native flags/branch differs')
+        elif action in (0x05D,0x05E):
             # The native original has two x87 memory FCOMP with a single
             # operand; the compiled source must retain TWO genuinely extra
             # FLD/FCOMPP grammar operations. We are NOT hiding these.
@@ -193,7 +210,8 @@ def original_native_and_source(rd,pe,d,f676,f701,f598,by,ins,refs,mapper):
     return result
 
 
-def check_other_original_contexts(rd,pe,d,f676,f598,by,ins,refs,mapper):
+def check_other_original_contexts(rd,pe,d,f676,f598,by,ins,refs,mapper,*,
+                                  native_source_1f4_start=7410):
     checks=[]
     relevant=(0x190,0x191,0x192,0x194,0x195,0x196,0x197,0x198,
               0x19A,0x19B,0x19C,0x19E,0x1A0,0x1A1,
@@ -202,7 +220,7 @@ def check_other_original_contexts(rd,pe,d,f676,f598,by,ins,refs,mapper):
     for action in relevant:
         lo=by[action];hi=min(x for x in by.values() if x>lo)
         n=list(d.disasm(rd.pe_bytes_at(pe,lo,hi-lo),lo))
-        st=7410 if action==0x1F4 else next((i for i,x in enumerate(ins)
+        st=native_source_1f4_start if action==0x1F4 else next((i for i,x in enumerate(ins)
                 if x.address==mapper.get(lo)),None)
         need(st is not None,'prior native original C++ action source start unmapped')
         g=ins[st:st+len(n)]

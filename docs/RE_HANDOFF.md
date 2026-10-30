@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F750 authored CharacterAux 101-byte frame refresh cold exact.**
+**Maintained 2026-10-30, after F752 original 05D/05E native direct FCOMP restoration in the whole fighter.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -9,6 +9,31 @@ with its Markdown links adjusted for its new directory. The older
 [chronological knowledge base](KNOWLEDGE_BASE.md) are evidence, not a
 reason to undo later exact adoptions. Original pinned native PE and
 **live manifests outrank every historical sentence**.
+
+**F752 NEW SUBSTANTIVE giant original native x87/COFF source restoration (NONEXACT whole):**
+Previous F749 native `00543210` original 05D/05E full
+**337 native CODE B/101 x86/8 typed PE refs each** emitted
+**341 B/103 x86** from raw fighter/opponent `float*` access:
+extra `FLD/FCOMPP` vs original **direct `FCOMP [opponent+0x44]`**
+at original x86 ordinal59 and 69. Six NEW natural borrowed-struct
+actual member experiments in full 58KB VC7.1 parent demonstrate
+that **BOTH typed actor and opponent `+0x44` float members**
+restore native direct memory `FCOMP`, original 337/101 mnemonic
+and WIDTH positions, **zero normalized GPR errors**, and all
+**8/8 physically typed original COFF fields at exact native
+owner ordinals** for EACH case. Original/compiled case **301/305
+nonfield CODE B per case** identical, only native shared-tail
+`JMP` offsets +103/+104 and +333/+334 differ because the entire
+58KB original/game source common tail layout is still NONEXACT.
+All original `this EBP−0x44` saved slot and 059/060/061 real
+x87 scratch remain correct; previous 27 original complete
+source-backed cases and entire original 943B afterRET DATA
+(156 true native/source DIR32 labels and 319/319 sparse bytes)
+rechecked in SAME newly compiled giant. Previously F747/F749
+raw-pointer negative baseline kept independent. ZERO newly
+accepted callable whole GAME CODE and no mass replay.
+[Complete original native + borrowed member FCOMP proof](FIGHTER_BORROWED_POSITION_F752.md);
+`scripts/repo-python scripts/verify-fighter-borrowed-position-f752.py`.
 
 **F750 latest canonical EXACT complete authored CharacterAux frame refresh:**
 Original independent R213-authored `005FAC60` **101 native CODE B/
