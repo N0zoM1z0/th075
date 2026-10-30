@@ -13141,3 +13141,29 @@ bytes all rechecked together. Historical F666 unchanged.
 [Complete physical original/same-parent source and stage comparisons](FIGHTER_FOLLOWING_NATIVE_F732.md),
 `scripts/repo-python scripts/verify-fighter-following-native-f732.py`.
 No all-943-unit replay; whole-function exact 943/862726 unchanged.
+
+
+## F733: original 171-B ArchiveCatalog real resource/name/index lifetime negative proof
+
+Freshly compiled **22 complete 171-B original-shaped ArchiveCatalog
+`0041CE50` C++** source controls using actual **resource+filename
+2-field structs**, real **index+resource+filename 3-field structs**
+(all 6 field orders), truly-used sequential resource/name unions
+and `void*` owners. Every member is read/written and genuinely
+used by native `delete`, filename `free`, or unsigned loop;
+no inert local or forced stack allocation. Pinned VC7.1 builds
+ALL emit **177 B/53 x86/14 typed PE/COFF source fields**, against
+original **171 B/51 x86/14 fields**. The actual named resource
+owner forces TWO extra `MOV`s at original native x8621 pointer
+handoff; the subsequent 8 of 14 native physical COFF field offsets
+shift **+6 bytes**, despite matching authentic target/type/symbol
+identities. Source can move initial pointer to real native
+`EBP−0xC` in some cases, but native whole x86/field geometry fails.
+This independently excludes used aggregate and actual sequential
+union source storage as a simple solution to original three-way
+`resource−0xC/deleteReceiver−8/filename−0x10` slot rotation.
+Portable original native 171-B/51-x86 complete-source verifier
+`scripts/verify-archive-shared-state-f733.py` defaults to 1 and
+`--all` compiles only 22 affected C++ TUs. [All real machine-code
+and physical COFF evidence](ARCHIVE_SHARED_USED_STATE_F733.md).
+ZERO exact new whole-game CODE, no full 943-unit cold replay.

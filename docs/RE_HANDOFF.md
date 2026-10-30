@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F732 true 1FA/1FB/1FE/1FF source integration.**
+**Maintained 2026-10-30, after F732 fighter stage source and F733 complete Archive state-owner controls.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -9,6 +9,24 @@ with its Markdown links adjusted for its new directory. The older
 [chronological knowledge base](KNOWLEDGE_BASE.md) are evidence, not a
 reason to undo later exact adoptions. Original pinned native PE and
 **live manifests outrank every historical sentence**.
+
+**F733 latest authored SMALL entire-function negative proof:**
+Original `0041CE50` ArchiveCatalog whole **171 CODE B/51 x86/14
+real typed physical PE/COFF fields**, native three-way used owner
+EBP slots `−0xC/−0x8/−0x10`. F733 compiled **22 ENTIRE VC7.1
+normal source** variants with genuinely used resource+filename
+pairs, index+resource+filename triples (all orders), real
+sequential resource/name union and actual `void*` owners.
+All preserve original delete/free/clear calls but emit **177 B/53
+x86/14 source typed fields**: two authentic additional compiler
+`MOV` instructions at original resource-owner handoff force the
+last **8 real native COFF relocations to shift +6 B** from their
+original physical locations. Some source variants move the first
+resource EBP store to native `−0xC` but always fail entire native
+CODE geometry. No fake stack locals, false byte-match adoption
+or all-943-unit cold replay.
+[Full original PE/COFF and used owner model evidence](ARCHIVE_SHARED_USED_STATE_F733.md);
+`scripts/repo-python scripts/verify-archive-shared-state-f733.py --case pair-resource-filename-loop`.
 
 **F732 latest physical 58KB giant native source/width GAIN (NONEXACT):**
 Four existing historical F666 diagnostic original cases `1FA/1FB/
