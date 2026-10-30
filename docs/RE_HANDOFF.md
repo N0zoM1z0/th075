@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F718 fighter double-volley and F719 archive loop lifetime controls.**
+**Maintained 2026-10-30, after F720/F721 complete late-storm fighter source and restored 2EF context.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -9,6 +9,29 @@ with its Markdown links adjusted for its new directory. The older
 [chronological knowledge base](KNOWLEDGE_BASE.md) are evidence, not a
 reason to undo later exact adoptions. Original pinned native PE and
 **live manifests outrank every historical sentence**.
+
+**F720/F721 latest substantial giant source and compiler phase GAIN:**
+Full original `00543210` action `2DF` **602 native B/169 x86/18
+typed PE fields** and `2E5` **798 B/223 x86/20 original fields**
+now compile from distinct real C++ in one complete original-shaped
+VC7.1 giant: **1,400 original internal CODE B, 392 exact mnemonic/
+width positions, 38 original physical typed source COFF references,
+0 normalized GPR/CFG differences in BOTH new cases**. A genuine
+source predicate `POS < native_zero` restores the exact original
+`TEST AH,5; JP` in 2DF; actual owner-height `==` naturally restores
+native original 2E5 `FLD/FLD/FUCOMPP/TEST AH,0x44`. But EBP real
+x87 scratches still differ (`−0x1AC..−0x1C4` original vs
+`−0xCC..−0xE4` source), so both remain **NONSTRICT** and whole
+58KB authored boss NONEXACT. Crucial cross-case finding: restoring
+true 2DF/2E5 naturally fixes all **144 previous 2EF GPR errors**:
+`2EF` returns to actual full **788-B/224-x86/20-field STRICT
+internal source-context matching**, restoring prior contextual
+nonterminal strict count to **27**. `2F0/2F1` stay 147/170
+nonstrict. The entire original 943-B afterRET switch DATA and all
+prior source-backed cases verified in the same giant. Zero additional
+accepted original GAME function CODE. [Original native proof and
+full context](FIGHTER_LATE_STORM_F720_F721.md);
+`scripts/repo-python scripts/verify-fighter-late-storm-f720-f721.py`.
 
 **F719 latest full small-function negatives:** original authored
 `0041CE50` **171 B/51 x86/14 real PE/COFF fields** was investigated

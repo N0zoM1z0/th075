@@ -12848,3 +12848,32 @@ verifier `scripts/verify-archive-loop-local-lifetimes-f719.py`
 supports `--case` and `--all` **only twelve affected source TUs**.
 [Actual entire PE/compiler and original stack negative](ARCHIVE_LOOP_LOCAL_LIFETIME_F719.md).
 No all-unit cold replay; authored exact 943/862726 unchanged.
+
+
+## F720/F721: original 2DF/2E5 full source and restored STRICT native 2EF cross-case register phase
+
+Original `00543210` internal action `2DF` `0054EFE7..0054F241`
+(**602 native B/169 x86/18 physical original typed PE fields**) and
+`2E5` `0054F241..0054F55F` (**798 B/223 x86/20 original fields**)
+now compile from meaningful, distinct natural C++ in **one full
+original-shaped VC7.1 giant**. All **392 real original x86 mnemonic
+AND width positions** match; all **38 authentic original PE/COFF
+relocations** have proper source instruction/target/type/addend.
+Strict `<` on original 2DF X clamp newly recovered actual
+`TEST AH,5; JP` (the earlier `<=` emitted nonnative `TEST AH,0x41`),
+from four complete whole-giant compiler controls. 2E5 actual
+owner-height `==` naturally emits original `FLD; FLD; FUCOMPP;
+FNSTSW; TEST AH,0x44` and its genuine kind `0x38E` seven-arg
+projectile and kind 0x386/384/388 follow-on paths. **Both
+handlers have 0 normalized native nonfield GPR/CFG differences**
+but source EBP x87 scratch `−0xCC..−0xE4` is still wrong vs
+native `−0x1AC..−0x1C4`: both NONSTRICT. Crucially the added REAL
+2DF/2E5 cases restore original **2EF 788-B/224-x86/20-field
+native STRICT internal source-context matching** from 144 GPR
+mismatches to zero, restoring **27 prior strict nonterminal game
+cases** in this new entire parent. 2F0/2F1 still 147/170 real
+GPR negatives, separate original 943-B afterRET DATA rechecked
+in the SAME parent. No accepted whole-function CODE; authored
+943/862726 (43.71%) unchanged, no all-unit cold replay.
+[Original physical fields, EBP and restored GPR proof](FIGHTER_LATE_STORM_F720_F721.md).
+`scripts/repo-python scripts/verify-fighter-late-storm-f720-f721.py`.

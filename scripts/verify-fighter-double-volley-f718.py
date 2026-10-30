@@ -82,7 +82,8 @@ def source_with_double_volley(src):
     return src
 
 
-def verify_two_native_actions(f701,f676,f598,reader,pe,real,boss,mapped,ins,refs):
+def verify_two_native_actions(f701,f676,f598,reader,pe,real,boss,mapped,ins,refs,*,
+                              following_native_2df=False):
     by={x['action']:int(x['handler'],16) for x in mapped}
     result=[]
     for action in ACTIONS:
@@ -144,10 +145,16 @@ def verify_two_native_actions(f701,f676,f598,reader,pe,real,boss,mapped,ins,refs
            'native_case_byte_exact':False})
     after=SOURCE_START[0x2DE]+NATIVE[0x2DE][3]
     need([x.mnemonic for x in ins[SOURCE_START[0x2DE]:SOURCE_START[0x2DE]+3]]
-         ==['push','push','push']
-         and ins[after].mnemonic=='mov'
-         and ins[after].op_str.endswith(', 0x2e0'),
-         'original whole 2DD/2DE source must directly precede true 2DF placeholder')
+         ==['push','push','push'],
+         'native 2DE must retain its true original storm header')
+    if following_native_2df:
+        need([x.mnemonic for x in ins[after:after+3]]==['push','push','push']
+             and [x.op_str for x in ins[after:after+3]]==['0xff0000','4','3'],
+             'native 2DE must lead to independently verified full native 2DF source')
+    else:
+        need(ins[after].mnemonic=='mov'
+             and ins[after].op_str.endswith(', 0x2e0'),
+             'original 2DE must lead to its former real 2DF source placeholder')
     return result
 
 

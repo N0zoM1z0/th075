@@ -174,12 +174,25 @@ def locate_marker(refs,ins,operand):
     return found[0]+2
 
 
-def verify_native(reader,dec,code,refs,original,terminal,shared_exit,h,following_native=None, terminal_expect_strict=False, terminal_preceding_native=None, source_native_302_end_ordinal=None, *, expected_2ef_real_GPR_differences=None):
+def verify_native(reader,dec,code,refs,original,terminal,shared_exit,h,following_native=None, terminal_expect_strict=False, terminal_preceding_native=None, source_native_302_end_ordinal=None, *, expected_2ef_real_GPR_differences=None,
+                  source_native_2e5_end_ordinal=None):
     ins=[]
     for x in dec.disasm(code,0):
         ins.append(x)
         if x.mnemonic=='ret':break
-    ordinal=locate_marker(refs,ins,0x2E6)
+    if source_native_2e5_end_ordinal is None:
+        # The original physical preceding 2E5 remains a placeholder.
+        ordinal=locate_marker(refs,ins,0x2E6)
+    else:
+        # A separate, *fully verified* physical original 2E5 C++ case
+        # now directly precedes 2EF. Don't pretend its old marker exists.
+        ordinal=source_native_2e5_end_ordinal
+        need(0<ordinal<len(ins)-ORIGINAL_X86
+             and ins[ordinal].mnemonic=='mov'
+             and ins[ordinal].op_str.endswith(', dword ptr [ebp - 8]')
+             and ins[ordinal+1].mnemonic=='movsx'
+             and ins[ordinal+1].op_str.endswith(', word ptr ['+ins[ordinal].op_str.split(', ')[0]+' + 0x62]'),
+             'complete original native source 2E5 must lead directly into physical 2EF receiver and stage')
     original_ins,lo,hi=original
     compiled=ins[ordinal:ordinal+len(original_ins)]
     need(len(compiled)==ORIGINAL_X86

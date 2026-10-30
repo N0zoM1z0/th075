@@ -148,7 +148,8 @@ def verify_prior_parent_context(reader,pe,real,boss,report,mapped,code,refs,m,h,
                                 source_storm_bytes=904,
                                 source_storm_width_differences=None,
                                 source_2ef_expected_GPR_mismatches=None,
-                                source_2f0_2f1_expected_GPR_counts=None):
+                                source_2f0_2f1_expected_GPR_counts=None,
+                                source_native_2e5_end_ordinal=None):
     """Recheck the *same* newly compiled complete parent and after-RET DATA.
 
     The authentic native frame slot is EBP-44. Only source `this` MOVs
@@ -209,7 +210,8 @@ def verify_prior_parent_context(reader,pe,real,boss,report,mapped,code,refs,m,h,
             terminal,shared,h,following_native=0x2F0,terminal_expect_strict=False,
             terminal_preceding_native=0x31B,
             source_native_302_end_ordinal=source_native_302_end_ordinal,
-            expected_2ef_real_GPR_differences=source_2ef_expected_GPR_mismatches)
+            expected_2ef_real_GPR_differences=source_2ef_expected_GPR_mismatches,
+            source_native_2e5_end_ordinal=source_native_2e5_end_ordinal)
     n676=m['f676'].original_cases(reader,pe,real,boss,mapped)
     negative676,idx=m['f676'].verify_negative(reader,decoder,code,refs,n676,idx,shared,h,
                                               following_native=0x2F8,
