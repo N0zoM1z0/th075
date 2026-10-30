@@ -214,12 +214,31 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   saved-this slot. Entire 248B remains
   nonexact, no credited original CODE.
   [F818 original PE typed-view result](SCENE_COMPLETE_BORROWED_OWNER_F818.md).
+- **F820 current 46KB giant three original landing cases and relocated-field warning:**
+  authentic 8C/8F/90 native landing states each
+  289B/80 x86/8 original PE fields, all
+  built within same **13,009-B/3,410-x86**
+  source parent and 901B original jump DATA.
+  Longer context has 55 unmasked operand bytes
+  different in each native case, despite
+  historical shorter F628 strict GPR roles.
+  The F819 prior mode63 source has one
+  actual source COFF field shifted **-1**
+  at x86 ordinal48 from original PE;
+  source-only mask count 143 is diagnostic,
+  conservative source/native PE union yields
+  **142 wrong /388 comparable B**.
+  [F820 full target physical audit](SCRIPTED_FIGHTER_LANDINGS_F820.md).
 - **F819 original scripted fighter 0x63 source, rechecked in longer parent:**
   native 00523C9D..00523E3D is 417B/109 x86/7 actual PE fields.
   Extended 005214B0 source emits 12,187 callable B; original
   5F-62 cases and 901B packed DATA reverified.
-  Real source 0x63 x86 widths at 38/61 and 143 native nonfield
-  bytes are WRONG in this parent despite earlier F626 short
+  Real source 0x63 x86 widths at 38/61 and
+  its ordinal48 original PE relocation shifts
+  one byte in source COFF. The prior 143 source-mask
+  diagnostic is NOT physically comparable;
+  safe native/source PE union yields 142 wrong
+  out of 388 nonfield bytes, despite earlier F626 short
   parent success. No game-case fragment gets callable CODE credit.
   [F819 native whole-parent physical proof](SCRIPTED_FIGHTER_MODE63_CONTEXT_F819.md).
 - **F818 original Scene typed borrowed owner fields do not fix stack:**

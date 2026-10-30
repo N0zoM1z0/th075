@@ -700,12 +700,38 @@ DATA. Generated whole-parent callable CODE grows **11,785
 to 12,187 B** (x86 3,069 to 3,176); saved this remains
 native EBP-0x10. But original 0x63 is NOT register-exact
 in this newer larger source: two actual x86 widths at
-ordinals 38/61 and **143 genuine unmasked bytes differ**.
+ordinals 38/61, plus a source COFF relocation at
+x86 ordinal 48 shifted one byte versus the real
+native PE operand. The historical 143 source-mask
+diagnostic is NOT physical exactness evidence;
+under a safe union of original and source PE
+fields **142/388 comparable nonfield B differ**.
 F626 short-parent source equality cannot be inherited.
 Default suffix has four authentic remaining GPR bytes.
 [F819 whole 0x63 PE-backed context](SCRIPTED_FIGHTER_MODE63_CONTEXT_F819.md);
 scripts/repo-python scripts/verify-scripted-fighter-mode63-context-f819.py.
 Enclosing 46,755B function still NONEXACT.
+
+**F820 three more complete real 46KB scripted fighter original landings:**
+native 8C/8F/90 each has **289 whole interior B /80 x86 /
+8 true physical PE fields** (867 real case B /240 x86 /
+24 game-call/float targets). One new pinned VC7.1 whole
+parent builds **13,009 callable CODE B/3,410 x86**,
+up from F819 12,187B/3,176 x86, with all early
+source-backed states, original 901B afterRET DATA and
+default tail checked. Earlier short-parent F628 zero
+GPR mismatches do NOT transfer: each case in the
+longer whole source has **55 honest nonrelocation byte
+differences**, including true enclosing epilogue JMP.
+A separate native-field audit CORRECTED F819's
+0x63 source-COFF relocation at x86 ordinal48: source
+field is physically **one byte earlier** than original
+PE, so historical 143 source-mask mismatch B is
+diagnostic only, not target exactness; safe union
+of native/source fields leaves **142/388** wrong.
+[F820 current whole PE/source proof](SCRIPTED_FIGHTER_LANDINGS_F820.md);
+scripts/repo-python scripts/verify-scripted-fighter-landing-trio-f820.py.
+No callable exact giant or case credit.
 
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`

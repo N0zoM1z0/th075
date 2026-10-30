@@ -30,10 +30,19 @@ source no longer has exact 0x63 GPR roles. While the original and
 source remain **417 B /109 x86 with all original instruction
 mnemonics and all seven typed PE call/global symbols**, the
 true original versus current source has instruction-width
-differences at x86 ordinals **38 and 61** and **143
-non-relocation machine-byte differences**. These are original
-register/operand differences, never masked as relocations or
-claimed exact. The F806 46B shared default remains
+differences at x86 ordinals **38 and 61**. A crucial F820
+independent PE correction establishes that the source COFF
+field at x86 ordinal 48 moves **one byte earlier** than its
+actual original native PE operand, while all six other
+original typed fields retain the same positions. The previous
+**143 source-COFF-only masked byte differences** was a diagnostic,
+NOT a valid exactness number because the candidate's relocation
+mask was not at the original field position. Masking only the
+union of actual original PE and source COFF fields leaves
+**142 nonfield differences among 388 conservatively
+comparable bytes**. These are real register/operand differences
+and the physically shifted field itself additionally
+precludes byte exactness; none is waived. The F806 46B shared default remains
 byte-different at genuine GPR offsets 10,12,16,19, while
 its original PE call targets and saved receiver remain correct.
 

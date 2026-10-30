@@ -183,6 +183,8 @@ def main():
     fields=[r for r in refs if srclo<=r['offset']<srchi]
     need(len(fields)==7,'native original seven mode63 typed fields missing')
     mask=set()
+    original_native_field_mask=set()
+    field_shifts={}
     for ordinal,(target,mn,source_symbol) in f['f626'].FIELDS.items():
         orig,gen=native63[ordinal],source_ins[ordinal]
         need(orig.mnemonic==gen.mnemonic==mn and
@@ -197,10 +199,28 @@ def main():
              and source_symbol in r['symbol'],
              'true original typed PE/COFF symbol mismatch '+str(r))
         k=r['offset']-srclo
+        original_offset=orig.address-by[0x63]+orig.size-4
+        actual_native=(int.from_bytes(real_pe[original_offset:original_offset+4],'little')
+                       if ordinal==0 else
+                       by[0x63]+original_offset+4+
+                       int.from_bytes(real_pe[original_offset:original_offset+4],'little',signed=True))
+        need(actual_native==target,
+             'native original target at ORIGINAL PE field differs from typed source symbol')
+        field_shifts[str(ordinal)]=k-original_offset
+        original_native_field_mask.update(range(original_offset,original_offset+4))
         mask.update(range(k,k+4))
+    need(field_shifts=={'0':0,'22':0,'48':-1,'71':0,'94':0,'99':0,'107':0},
+         'F819 original case63 genuine native PE/source field positions changed')
+    # A source relocation in ordinal 48 moves one byte due to two
+    # real register-width differences. Source-COFF-masked count
+    # is ONLY a diagnostic, NOT a valid physical original
+    # nonrelocation byte comparison for exactness.
     wrong=[j for j in range(417) if j not in mask and real_pe[j]!=code[srclo+j]]
-    need(len(wrong)==143,
-         'actual 0x63 source mismatch count changed; re-audit full native PE '+str(len(wrong)))
+    physical_union=mask|original_native_field_mask
+    safe_wrong=[j for j in range(417) if j not in physical_union
+                and real_pe[j]!=code[srclo+j]]
+    need(len(wrong)==143 and len(physical_union)==29 and len(safe_wrong)==142,
+         'F819 original vs moved typed field comparison changed')
     original_tail=rd.pe_bytes_at(pe,0x52CB25,46)
     tailmask={j for r in refs if ret-46<=r['offset']<ret
               for j in range(r['offset']-(ret-46),r['offset']-(ret-46)+4)}
@@ -214,8 +234,11 @@ def main():
        'new_native_complete_inner_CODE_B':417,'new_native_complete_x86':109,
        'original_typed_COFF_fields_in_new_case':7,
        'native_complete_source_opcode_width_differences':widths,
-       'real_unmasked_original_0x63_wrong_byte_count':len(wrong),
-       'real_unmasked_original_0x63_wrong_byte_offsets_first':wrong[:24],
+       'diagnostic_source_COFF_only_mask_wrong_B':len(wrong),
+       'true_native_vs_source_COFF_offset_shifts_by_ordinal':field_shifts,
+       'safe_original_and_source_COFF_union_comparable_B':417-len(physical_union),
+       'safe_original_and_source_COFF_union_wrong_B':len(safe_wrong),
+       'safe_original_unrelocated_wrong_offsets_first':safe_wrong[:24],
        'earlier_original_5F_60_61_62_source_persist':old,
        'original_901B_packed_switch_DATA_reverified':True,
        'original_saved_this_EBP_0x10_persist':True,
@@ -223,7 +246,7 @@ def main():
        'original_whole_game_exact':False,
        'new_whole_authored_exact_CODE_B':0,'mass_cold_replay_run':False}
     (OUT/'verified-summary.json').write_text(json.dumps(summary,indent=2)+chr(10))
-    print('F819 selected original 46KB fighter: new mode0x63 native 417B/109-x86/7 original PE fields integrated in 12187B whole parent. Earlier game cases and 901B jump DATA verified. Real 0x63 context has 2 native width and 143 unmasked byte negatives; no false inherited F626 short-parent exactness, default four GPR bytes still wrong. Whole boss NONEXACT.')
+    print('F819 selected original 46KB fighter: new mode0x63 native 417B/109-x86/7 original PE fields integrated in 12187B whole parent. Earlier game cases and 901B jump DATA verified. Real 0x63 context has 2 native width differences; one true original PE relocation at ordinal48 shifts -1, so 143 source-mask-only wrong bytes is a diagnostic and 142/388 are wrong under safe original/source PE field union; no false inherited F626 short-parent exactness, default four GPR bytes still wrong. Whole boss NONEXACT.')
 
 if __name__=='__main__':
     try:main()
