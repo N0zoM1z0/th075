@@ -232,6 +232,21 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   GPR differences, whole native
   giant NONEXACT.
   [F844 selected original physical PE](SCRIPTED_FIGHTER_GROUNDED_130_F844.md).
+- **F848 original 248B Scene destructor resource member access controls:**
+  ten complete pinned VC7.1 /GX
+  destructor source builds. Five
+  original-sized 248B/75-x86/
+  12-real-PE-field variants using
+  normal, volatile/register, address
+  and member-pointer access still
+  only 191/200 native nonrelocation
+  bytes. Truly used __forceinline
+  setters/getters produce extra calls
+  under /Ob0, wrong entire source
+  253–281B and 13–18 PE fields.
+  Native five temp slots remain wrong,
+  no accepted exact authored CODE.
+  [F848 native owner proof](SCENE_REAL_RESOURCE_MEMBER_ACCESS_F848.md).
 - **F847 native 134/135 original projectile cases:**
   each 278B/82 x86/seven
   genuine physical PE fields in

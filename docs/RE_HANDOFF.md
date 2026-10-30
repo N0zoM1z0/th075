@@ -1,6 +1,6 @@
 # TH075 — ACTIVE reconstruction agent handoff
 
-**Verified snapshot: 2026-10-31, current F780 exact ledger; F847 fighter projectiles and F838 Scene.**
+**Verified snapshot: 2026-10-31, current F780 exact ledger; F847 fighter projectiles and F848 Scene.**
 This is the **short working queue**, not the chronological research log.
 Original Japanese PE and the live configuration **always outrank historical
 prose, old case-level exact labels, class names or inferred layouts**.
@@ -1628,6 +1628,26 @@ slots together. No fabricated locals
 or accepted whole authored CODE.
 [F838 whole physical Scene proof](SCENE_RELEASE_DECLARATION_F838.md);
 scripts/repo-python scripts/verify-scene-release-declaration-f838.py.
+
+**F848 original Scene full 248B genuine owner-access controls:**
+ten complete /Od /Ob0 /GX native-shaped
+Scene destructors test actual three released
+pointer values via normal vs volatile/register
+aggregate, borrowed pointer-to-member,
+and __forceinline setters/getters.
+Five original-size **248B/75 x86/12 real
+physical PE field** source variants still
+match only **191/200** genuine nonrelocation
+bytes (native texture/delete temp slots
+EBP-0x14/-0x10 not reproduced).
+Actual inline getters/setters under /Ob0
+instead produce **253/254/263/266/281 B**
+and extra COFF calls: physically wrong
+whole original function lengths. No fake
+padding, source cropping or accepted exact
+authored whole CODE.
+[F848 native Scene PE/source proof](SCENE_REAL_RESOURCE_MEMBER_ACCESS_F848.md);
+scripts/repo-python scripts/verify-scene-actual-access-f848.py.
 
 ## 4. Attribution, validation, research and storage
 
