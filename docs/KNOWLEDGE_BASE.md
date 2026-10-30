@@ -198,6 +198,21 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   matched after all 14 original PE refs checked.
   None accepted exact.
   [F798 full native teardown evidence](ARCHIVE_NATIVE_LOOP_TEARDOWN_F798.md).
+- **F816 whole fighter native saved-this FRAME and default tail recovered:**
+  real original 0x60/61 each 586B/169-x86/11
+  original PE references, actual ten-shot used
+  loop indices EBP-8/EBP-0xC, recover native
+  EBP-0x10 saved receiver. Current whole
+  source 11,551 CODE B/3,006 x86 and full
+  901B packed DATA, with 33 earlier cases
+  verified. Native 46B/16-x86 default/getter
+  is **34/34 truly nonrelocation CODE bytes
+  identical**, plus three actual PE call
+  fields and four original early getter JMPs.
+  Only original parent-external JMP relative
+  bytes differ in newly sourced 0x5F/60/61;
+  full 46KB giant remains nonexact.
+  [F816 pinned original PE proof](SCRIPTED_FIGHTER_RESOURCE_VOLLEYS_F816.md).
 - **F815 true scripted fighter 0x5F facing source:**
   original 00523680 complete 144B/44 x86/3
   native PE calls integrated in one 10,409B

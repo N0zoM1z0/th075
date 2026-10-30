@@ -645,6 +645,30 @@ plus two authentic parent-tail JMP displacement bytes.
 scripts/repo-python scripts/verify-scripted-fighter-facing-f815.py.
 Full giant still NONEXACT; no split-case credit.
 
+**F816 major positive native saved-this frame and default-tail recovery:**
+the original 005214B0 fighter now includes *both* complete
+0x60/0x61 resource-ten-volley cases, each **586 real CODE B /
+169 x86 /11 physical original PE/COFF fields**.
+Actual game loop indices EBP-8 and EBP-0xC naturally
+restore the original saved this **EBP-0x10**. The source
+grows 10,409 to **11,551 B/3,006 x86** with 33 earlier
+physical original cases plus 901B afterRET packed DATA.
+The ordinary 0x5F/60/61 native-correct direct function
+exits reproduce actual parent epilogue CFG, all
+x86 widths/roles and **3+11+11 authentic PE fields**.
+Their only complete-case machine negatives are the
+different-sized incomplete parent's original
+external long-JMP rel32 displacements (two source
+byte differences in 0x5F, four in each 0x60/61).
+**Crucial: full native 46B/16-x86 F806 default/getter
+now matches ALL 34/34 nonrelocation original PE
+machine bytes, plus all three genuine physical PE
+REL32 calls and four early shared getter JMPs.**
+Whole 46,755B game still NONEXACT; no subcase or tail
+credited callable CODE.
+[F816 original entire-parent native physical proof](SCRIPTED_FIGHTER_RESOURCE_VOLLEYS_F816.md);
+scripts/repo-python scripts/verify-scripted-fighter-resource-volley-f816.py.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin
