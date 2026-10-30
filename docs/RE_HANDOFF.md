@@ -1,6 +1,6 @@
 # TH075 — ACTIVE reconstruction agent handoff
 
-**Verified snapshot: 2026-10-31, current F780 exact ledger; F856 original 190 and F854 Archive.**
+**Verified snapshot: 2026-10-31, current F780 exact ledger; F857 native 191 and F854 Archive.**
 This is the **short working queue**, not the chronological research log.
 Original Japanese PE and the live configuration **always outrank historical
 prose, old case-level exact labels, class names or inferred layouts**.
@@ -1530,6 +1530,42 @@ from whole C++ compiler context.
 scripts/repo-python scripts/verify-scripted-fighter-stage-190-f856.py.
 Whole 46,755B original remains
 NONEXACT; no exact CODE adoption.
+
+**F857 selected original 191 native float projectile case:**
+original 0052747B is **166 native
+complete inner B/53 x86/five
+true typed PE call/global fields**.
+Stage5 genuine sprite321 with
+signed facing*100 FILD then
+FADD X+0x44, and Y FLD
+member+0x48 before native
+FADD float global00659298,
+followed by real Prepare0
+and action0 source. One
+whole new normal VC7.1
+parent **25,488 callable CODE
+B/7,038 x86** (F856
+25,337/6,987). All native
+original opcode/width and
+five physical PE fields match,
+BUT **29 real source GPR bytes**
+plus two full-giant final
+JMP operand bytes +162/+163
+remain different. Eight
+preceding genuine 136/186..190
+GPR-negative complete cases
+and twenty earlier original
+source cases and ALL FIVE
+native 901B packed tables
+rechecked. Original 46B
+shared getter stays **34/34
+native nonrelocation bytes**
+plus three authentic PE
+calls. Whole 46,755B
+original NONEXACT, zero
+new whole-callable credit.
+[F857 original PE evidence](SCRIPTED_FIGHTER_FLOATSHOT_191_F857.md);
+scripts/repo-python scripts/verify-scripted-fighter-floatshot-191-f857.py.
 
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`

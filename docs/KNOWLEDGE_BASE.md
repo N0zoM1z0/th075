@@ -232,6 +232,27 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   GPR differences, whole native
   giant NONEXACT.
   [F844 selected original physical PE](SCRIPTED_FIGHTER_GROUNDED_130_F844.md).
+- **F857 original fighter 191 signed-float projectile:**
+  true 166B/53-x86/five physical
+  original PE fields in one full
+  25,488B/7,038-x86 parent.
+  Real stage5 facing*100 FILD/
+  FADD X and Y lvalue
+  member+48 FLD then FADD
+  global00659298 preserve all
+  original opcode/width/PE
+  fields; 29 genuine source
+  GPR operand bytes plus
+  two whole-giant final JMP
+  bytes remain NONEXACT.
+  Eight prior GPR-affected
+  states, twenty earlier
+  game cases and five 901B
+  packed tables checked.
+  Getter 46B 34/34 original
+  nonrelocation plus 3 PE calls.
+  No accepted whole callable CODE.
+  [F857 native source proof](SCRIPTED_FIGHTER_FLOATSHOT_191_F857.md).
 - **F856 original 190 stage3 sprite and original CALL order:**
   217 native B/64-x86/6 real
   original PE call fields in
