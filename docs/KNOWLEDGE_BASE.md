@@ -27,8 +27,8 @@ Canonical live ledgers and actual native PE outrank all historical prose.
 
 ## Current authoritative status and superseded negatives
 
-- **967 cold-exact source-present functions**, **864,219 original authored
-  CODE bytes**, **43.79% reviewed authored coverage** and **43.71%
+- **968 cold-exact source-present functions**, **864,380 original authored
+  CODE bytes**, **43.79% reviewed authored coverage** and **43.72%
   conservative coverage**. **Only 25 `owner=authored,status=unclassified`
   function rows currently remain:** 22 giant fighter action/advance bosses
   totalling 1,102,055 original CODE bytes, WinMain (2,987), SceneObject
@@ -13612,3 +13612,28 @@ x86 labels/319 equal sparse bytes in SAME fresh 58KB parent.
 F749 raw-pointer negative default remains independently testable.
 [Full original fighter x87 comparison and actual source](FIGHTER_BORROWED_POSITION_F752.md).
 Formal 967/864219 whole authored exact original CODE unchanged.
+
+
+## F753: complete original R015 AudioStream client constructor 161B COLD EXACT
+
+Pinned complete authored original `004071C0` **161 CODE B/
+42 x86/18 genuine typed original PE/COFF references** now
+natural VC7.1 `/GX` C++ with real 16-B embedded STL vector
+member, original ctor `00409350`, EH FS-state0/lifetime,
+shared refcount `00671388`, global mixer initialize
+`006713A0`/`00409740`, native `CreateThread` IAT `0065713C`
+with callback `00407EF0` and thread-id `0067139C`, shared
+handle `00671398`, `SetThreadPriority(15)` imported at `00657140`,
+vector `Clear` `00409490`, refcount increment and original
+RET. **All 161/161 original CODE B, 89/89 nonfield bytes,
+42/42 x86 and 18/18 actual typed native PE field owners/callees**
+canonical targeted **1/1 whole-function cold exact** in ONE new
+source object. Original 18-B EH handler stub `00654DE0` and
+36-B xdata `00667CA4` independently match 6/6+28/28
+nonfield B and all five true typed carrier targets against
+same fresh object; no ancillary or STL/OS callee CODE credit.
+Historical name/private object layout provisional, original R015
+game-authored evidence unchanged. Formal exact ledger
+**967→968 original authored entire functions, 864,219→864,380
+CODE B, reviewed 43.79%, conservative 43.71→43.72%**; no
+mass cold replay. [Actual original PE EH/COFF receipt and unit](AUDIO_STREAM_CLIENT_ACQUIRE_F753.md).

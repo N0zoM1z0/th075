@@ -60797,3 +60797,34 @@ relocations = [
  { offset = 0x4F, type = "REL32", symbol = "?At@OuterFrameCollectionF750@@QAEPAPAVInnerFrameCollectionF750@@H@Z", target = 0x005FAD20 },
  { offset = 0x56, type = "REL32", symbol = "?Size@InnerFrameCollectionF750@@QAEHXZ", target = 0x005F9E90 },
 ]
+
+# F753: complete R015-authored audio client ctor/AcquireClient shared
+# resource and worker-thread ownership; actual native EH and IAT fields.
+[units.audio-stream-client-acquire-004071c0]
+source = "src/AudioStreamAcquireF753.cpp"
+object = "build/matching/AudioStreamAcquireF753.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["AudioStreamClientF753::AudioStreamClientF753"]
+symbol = "??0AudioStreamClientF753@@QAE@XZ"
+target_address = 0x004071C0
+size = 161
+relocations = [
+ { offset = 0x6, type = "DIR32", symbol = "__ehhandler$??0AudioStreamClientF753@@QAE@XZ", target = 0x00654DE8 },
+ { offset = 0xC, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
+ { offset = 0x14, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
+ { offset = 0x20, type = "REL32", symbol = "??0AudioBuffersF753@@QAE@XZ", target = 0x00409350 },
+ { offset = 0x2D, type = "DIR32", symbol = "?g_AudioStreamRefCountF753@@3HA", target = 0x00671388 },
+ { offset = 0x35, type = "DIR32", symbol = "?g_GlobalAudioBuffersF753@@3UGlobalAudioBuffersF753@@A", target = 0x006713A0 },
+ { offset = 0x3A, type = "REL32", symbol = "?InitShared@GlobalAudioBuffersF753@@QAEXXZ", target = 0x00409740 },
+ { offset = 0x40, type = "DIR32", symbol = "?g_AudioWorkerHandleF753@@3PAXA", target = 0x00671398 },
+ { offset = 0x48, type = "DIR32", symbol = "?g_AudioWorkerIDF753@@3KA", target = 0x0067139C },
+ { offset = 0x51, type = "DIR32", symbol = "_AudioWorkerMainF753@4", target = 0x00407EF0 },
+ { offset = 0x5B, type = "DIR32", symbol = "__imp__CreateThread@24", target = 0x0065713C },
+ { offset = 0x60, type = "DIR32", symbol = "?g_AudioWorkerHandleF753@@3PAXA", target = 0x00671398 },
+ { offset = 0x67, type = "DIR32", symbol = "?g_AudioWorkerHandleF753@@3PAXA", target = 0x00671398 },
+ { offset = 0x6E, type = "DIR32", symbol = "__imp__SetThreadPriority@8", target = 0x00657140 },
+ { offset = 0x76, type = "REL32", symbol = "?Clear@AudioBuffersF753@@QAEXXZ", target = 0x00409490 },
+ { offset = 0x7C, type = "DIR32", symbol = "?g_AudioStreamRefCountF753@@3HA", target = 0x00671388 },
+ { offset = 0x85, type = "DIR32", symbol = "?g_AudioStreamRefCountF753@@3HA", target = 0x00671388 },
+ { offset = 0x99, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
+]

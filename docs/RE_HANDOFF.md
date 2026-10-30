@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F752 original 05D/05E native direct FCOMP restoration in the whole fighter.**
+**Maintained 2026-10-30, after F753 original authored audio client lifetime 161-B cold exact.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -9,6 +9,31 @@ with its Markdown links adjusted for its new directory. The older
 [chronological knowledge base](KNOWLEDGE_BASE.md) are evidence, not a
 reason to undo later exact adoptions. Original pinned native PE and
 **live manifests outrank every historical sentence**.
+
+**F753 newest canonical original complete 161-B AUDIO client cold EXACT:**
+Independently R015-authored native `004071C0` full **161
+CODE B/42 real x86/18 physically typed native PE/COFF fields**
+now ordinary VC7.1 `/GX` C++ vector-subobject constructor:
+real `this+0` 16-B STL vector ctor `00409350`, genuine EH
+state0/FS:[0], native shared audio refcount `[00671388]` and
+global mixer `006713A0` initialization, actual Win32
+`CreateThread` import `[0065713C]` invoking native callback
+`00407EF0`, stored worker handle/id `00671398/0067139C`,
+`SetThreadPriority` import `[00657140]` priority15, vector
+`Clear` `00409490`, count increment and original return.
+Entire **161/161 native CODE B, 42/42 x86, 89/89 original
+nonfield bytes and ALL 18 genuine PE/COFF fields** cold replay
+**1/1 exact across ONE newly built source object**. Associated
+native EH cleanup 18B stub `00654DE0`, handler `00654DE8`,
+unwind 36B data `00667CA4` also audited in fresh object:
+**6/6 +28/28 native nonfield B and all 5 typed native
+carrier fields** exact, NOT re-credited as callable game CODE.
+R015 authorship preserved, historical class private ABI/name
+beyond vector subobject unproved; no STL/OS callee double credit.
+Official **968 authored whole exact functions, 864,380 native
+CODE B, 43.79% reviewed /43.72% conservative**, original
+22 giants plus WinMain/Scene/Archive still NONEXACT.
+[Full native PE/EH carrier and selected replay](AUDIO_STREAM_CLIENT_ACQUIRE_F753.md).
 
 **F752 NEW SUBSTANTIVE giant original native x87/COFF source restoration (NONEXACT whole):**
 Previous F749 native `00543210` original 05D/05E full
@@ -811,8 +836,8 @@ but not whole original CODE. [Full physical negative matrix](WINMAIN_USED_OBJECT
 | Item | Authoritative snapshot; recheck live manifests on every new session |
 | --- | --- |
 | Original game | User-supplied Japanese TH075 ver1.11 `resources/th075.exe`, SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`; **never** localized `th075c.exe` |
-| Exact authored whole functions | **967 functions / 967 exact units**, **864,219 original CODE bytes** |
-| Reviewed authored bytes | **43.79%** of **1,973,704** original CODE bytes; conservatively **43.71%** with unknown origins included |
+| Exact authored whole functions | **968 functions / 968 exact units**, **864,380 original CODE bytes** |
+| Reviewed authored bytes | **43.79%** of **1,973,704** original CODE bytes; conservatively **43.72%** with unknown origins included |
 | Provisional ledger | **4,351** candidate original functions; **95** still origin-unknown with 3,420 CODE bytes; these have **no authored credit** |
 | Unfinished author-owned functions | **25 complete functions**: **22 large fighter bosses**, **1,102,055 CODE bytes** of original whole CODE, plus **three** other whole functions (2,987 B, 248 B, 171 B) |
 | Separated after-RET giant switch DATA | **16,123 bytes** across the 22 giants; DATA is not authored CODE credit |

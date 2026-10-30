@@ -15,10 +15,10 @@ user-supplied executable. It is **not yet a complete game rebuild**.
 | Size / image base | 2,576,384 bytes / `0x00400000` |
 | SHA-256 | `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98` |
 | MD5 | `21bcb855a39f2170195811e6ad292f18` |
-| Source-present / exact functions | **967 / 967** |
-| Accepted CODE bytes | **864,219** |
+| Source-present / exact functions | **968 / 968** |
+| Accepted CODE bytes | **864,380** |
 | Reviewed authored coverage | **43.79%** of 1,973,704 reviewed bytes |
-| Conservative coverage | **43.71%**, with 3,420 origin-pending bytes included |
+| Conservative coverage | **43.72%**, with 3,420 origin-pending bytes included |
 | Unresolved origins | **95** of 4,351 provisional function candidates |
 
 **The 98% authored-byte goal is incomplete.** Function labels and C++ owner
@@ -26,7 +26,7 @@ types are provisional; machine-code matches alone do not prove an entire
 original class layout. The target's official distribution provenance has not
 been independently verified; do not substitute a localized `th075c.exe`.
 
-These live snapshot counts were rechecked after **F750** (2026-10-30); the F694 storage cleanup and F689–F693 negative-evidence audit do **not** add accepted CODE.
+These live snapshot counts were rechecked after **F753** (2026-10-30); the F694 storage cleanup and F689–F693 negative-evidence audit do **not** add accepted CODE.
 The **live** sources of truth, not any dated prose milestone, are `config/functions.csv`,
 `config/function-origins.csv`, and `config/match-units.toml`.
 Refresh using `scripts/repo-python scripts/report-reconstruction-status.py --summary`.
@@ -94,6 +94,13 @@ adds another real original 101-B source and four genuine nested STL
 callee fields via one new canonical cold-exact unit, without
 recounting any library callee CODE. Only the new affected source
 object was rebuilt and cold replayed.
+
+The [F753 exact original audio-client lifetime](docs/AUDIO_STREAM_CLIENT_ACQUIRE_F753.md)
+adds one independent R015-authored complete game-function
+(**161 native CODE B**), with all 18 physically typed native
+PE/COFF fields and natural MSVC EH. The related native EH
+handler/unwind carriers match independently but are not counted
+again as game CODE. Only its new object was cold-replayed.
 
 ### Latest verified giant research and complete small-function evidence
 
