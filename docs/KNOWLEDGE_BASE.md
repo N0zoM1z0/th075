@@ -13108,3 +13108,36 @@ rechecked together. [Complete original PE/whole VC7.1 source and
 GPR-phase proof](FIGHTER_AIM_RETURN_F731.md), portable
 `scripts/repo-python scripts/verify-fighter-aim-return-f731.py`.
 No full cold 943-unit replay, 943/862726 reviewed exact unchanged.
+
+
+## F732: original complete 1FA/1FB/1FE/1FF in true 58KB giant, fixed genuine clamp grammar
+
+Historical F666 diagnosed four meaningful but NONSTRICT original
+`00543210` handlers. F732 rechecks their real original PE bounds
+and integrates corrected C++ into the **latest complete giant**:
+original `1FA` **287 CODE B/82 x86/9 real physical COFF fields**,
+`1FB` **603/174/15**, `1FE` **526/153/14**, `1FF`
+**526/153/14**, totaling **1,942 original internal CODE B,
+562 original mnemonic+width x86, 52 actual typed original
+PE/COFF fields** now generated in one full native-shaped parent.
+Unlike F666's old `1FA` short 281B source, new real preceding
+1F4–1F8 x87 lifetimes produce original **6B/6B MOV/FILD EBP
+widths** and total native **287B**, though source EBP `−0x84`
+is still wrong versus native `−0x110`.
+Original `1FE/1FF` compare is truly **`POS < [00657CF8]`**,
+not F666's `>=`: new full-parent comparator controls show only `<`
+restores original x86 ordinal 47 **`TEST AH,5`** and 48 **`JP`**;
+`<=` gives incorrect AH0x41 and `>=` gave AH1/JNE.
+All 562 native opcode+width positions and 52 original typed source
+fields now match; GPR/EBP still NONSTRICT: original normalized
+GPR differences **50/111/96/96**, not accepted exact CODE.
+
+**Context honesty:** source 200/201 previously GPR strict in
+F731 now regress to **67/85 errors** when the four true prior
+stage bodies are inserted; original 2EF remains GPR strict.
+Earlier real 1F4–1F8, 943 original independent afterRET bytes,
+156 native/source DIR32 valid labels and 319/319 original sparse
+bytes all rechecked together. Historical F666 unchanged.
+[Complete physical original/same-parent source and stage comparisons](FIGHTER_FOLLOWING_NATIVE_F732.md),
+`scripts/repo-python scripts/verify-fighter-following-native-f732.py`.
+No all-943-unit replay; whole-function exact 943/862726 unchanged.

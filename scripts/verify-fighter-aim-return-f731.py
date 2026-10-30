@@ -82,7 +82,8 @@ def source_with_aim_return(src):
     return src
 
 
-def verify_complete_native_1f8(reader,pe,decoder,f676,f729,by,ins,refs):
+def verify_complete_native_1f8(reader,pe,decoder,f676,f729,by,ins,refs,*,
+                               following_native_1fa=False):
     need(by[ACTION]==NATIVE_LO and by[0x1FA]==NATIVE_HI
          and NATIVE_HI-NATIVE_LO==NATIVE_CODE,
          'original whole native 1F8 physical PE bounds wrong')
@@ -147,9 +148,15 @@ def verify_complete_native_1f8(reader,pe,decoder,f676,f729,by,ins,refs):
          and source[361].mnemonic=='mov'
          and source[362].mnemonic=='push',
          'real native second angle call raw float source lvalue lost')
-    need(ins[SOURCE_START+SOURCE_X86].mnemonic=='mov'
-         and ins[SOURCE_START+SOURCE_X86].op_str.endswith(', 0x1fb'),
-         'real original 1F8 must terminate before source 1FA placeholder')
+    next_case=ins[SOURCE_START+SOURCE_X86]
+    if following_native_1fa:
+        need(next_case.mnemonic=='mov' and next_case.op_str.endswith(', dword ptr [ebp - 0x28]')
+             and ins[SOURCE_START+SOURCE_X86+1].mnemonic=='movsx'
+             and ins[SOURCE_START+SOURCE_X86+1].op_str.endswith('+ 0x62]'),
+             'real original 1F8 must directly lead to independently verified full 1FA source')
+    else:
+        need(next_case.mnemonic=='mov' and next_case.op_str.endswith(', 0x1fb'),
+             'real original 1F8 must terminate before prior source 1FA placeholder')
     return {'native_physical_PE_bounds':[f'0x{NATIVE_LO:08X}',f'0x{NATIVE_HI:08X}'],
        'native_complete_CODE_bytes':NATIVE_CODE,
        'current_source_complete_CODE_bytes':SOURCE_CODE,

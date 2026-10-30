@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F731 complete 1F8 aiming return and original 200/201 GPR phase recovery.**
+**Maintained 2026-10-30, after F732 true 1FA/1FB/1FE/1FF source integration.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -9,6 +9,31 @@ with its Markdown links adjusted for its new directory. The older
 [chronological knowledge base](KNOWLEDGE_BASE.md) are evidence, not a
 reason to undo later exact adoptions. Original pinned native PE and
 **live manifests outrank every historical sentence**.
+
+**F732 latest physical 58KB giant native source/width GAIN (NONEXACT):**
+Four existing historical F666 diagnostic original cases `1FA/1FB/
+1FE/1FF` newly integrated into the **latest whole VC7.1 giant**
+with corrected real original float bound. Native full `1FA`
+**287 B/82 x86/9 PE fields**, `1FB` **603/174/15**, `1FE`
+**526/153/14**, `1FF` **526/153/14**: all **1,942 original
+internal CODE B/562 original opcode AND width x86/52 real typed
+physical COFF fields** reproduced in one original-shaped parent.
+True previous F666 `1FA` was 281B from wrong 3B compiler stack
+slot; current real used preceding game source causes natural 6B
+`MOV/FILD`, original native 287B width, source EBP still `−0x84`
+vs original `−0x110`. F666 old `1FE/1FF` `POS>=00657CF8`
+generated wrong `TEST AH,1; JNE`; fresh original PE confirms
+**strict `<`** produces exact **`TEST AH,5; JP`**. Authentic
+register/EBP bytes still differ (**50/111/96/96** real nonfield
+GPR mismatches): ZERO newly credited whole game CODE.
+In this NEW parent, earlier original 200/201 revert to real
+**67/85 GPR errors** (F731 zero strictly applies only to its
+older source context), original 2EF remains zero. Previous
+1F4–1F8 physical source and complete **943B afterRET DATA**
+(156 real original/source DIR32 instruction labels and 319/319
+sparse native bytes) rechecked. F666 historical verifier retained.
+[Same-parent native PE/COFF and semantic fix](FIGHTER_FOLLOWING_NATIVE_F732.md);
+`scripts/repo-python scripts/verify-fighter-following-native-f732.py`.
 
 **F731 latest major genuine giant source and compiler GPR phase GAIN:**
 Original `00543210` native full internal `1F8` `0054B43A..0054B9F9`
