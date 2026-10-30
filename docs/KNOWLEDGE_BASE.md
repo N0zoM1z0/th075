@@ -214,6 +214,14 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   saved-this slot. Entire 248B remains
   nonexact, no credited original CODE.
   [F818 original PE typed-view result](SCENE_COMPLETE_BORROWED_OWNER_F818.md).
+- **F819 original scripted fighter 0x63 source, rechecked in longer parent:**
+  native 00523C9D..00523E3D is 417B/109 x86/7 actual PE fields.
+  Extended 005214B0 source emits 12,187 callable B; original
+  5F-62 cases and 901B packed DATA reverified.
+  Real source 0x63 x86 widths at 38/61 and 143 native nonfield
+  bytes are WRONG in this parent despite earlier F626 short
+  parent success. No game-case fragment gets callable CODE credit.
+  [F819 native whole-parent physical proof](SCRIPTED_FIGHTER_MODE63_CONTEXT_F819.md).
 - **F818 original Scene typed borrowed owner fields do not fix stack:**
   seven complete authored 248-B destructor builds.
   Actual typed borrowed texture this+8 and CRT-free

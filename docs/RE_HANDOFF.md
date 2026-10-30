@@ -692,6 +692,21 @@ match from a shorter parent.
 scripts/repo-python scripts/verify-scripted-fighter-resource-selector-f817.py.
 Entire 46,755B giant still NONEXACT, no case credit.
 
+**F819 additional real original case0x63 in the same 46KB giant:**
+fresh full source integrates F626's 00523C9D native original
+**417-B/109-x86/7-true-PE-field** mode state with existing
+0x5F/60/61/62 full native geometry and original 901-B packed
+DATA. Generated whole-parent callable CODE grows **11,785
+to 12,187 B** (x86 3,069 to 3,176); saved this remains
+native EBP-0x10. But original 0x63 is NOT register-exact
+in this newer larger source: two actual x86 widths at
+ordinals 38/61 and **143 genuine unmasked bytes differ**.
+F626 short-parent source equality cannot be inherited.
+Default suffix has four authentic remaining GPR bytes.
+[F819 whole 0x63 PE-backed context](SCRIPTED_FIGHTER_MODE63_CONTEXT_F819.md);
+scripts/repo-python scripts/verify-scripted-fighter-mode63-context-f819.py.
+Enclosing 46,755B function still NONEXACT.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin
