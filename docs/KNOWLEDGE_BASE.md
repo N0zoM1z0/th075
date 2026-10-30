@@ -214,6 +214,19 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   saved-this slot. Entire 248B remains
   nonexact, no credited original CODE.
   [F818 original PE typed-view result](SCENE_COMPLETE_BORROWED_OWNER_F818.md).
+- **F821 real 0x91 arc game state joins the growing 46KB fighter:**
+  native 288B/78 x86/12 true original PE
+  call/global/CRT fields in one new
+  13,282-B/3,486-x86 complete source
+  parent. Previous three landings, real
+  mode63 physical -1 shifted COFF field,
+  saved-this EBP-0x10 and 901B jump
+  DATA rechecked. Whole parent 0x91
+  still has 37 genuine nonrelocation
+  bytes wrong, native shared fallback
+  four GPR bytes wrong. Zero callable
+  exact game credit.
+  [F821 real PE arc source](SCRIPTED_FIGHTER_ARC91_F821.md).
 - **F820 current 46KB giant three original landing cases and relocated-field warning:**
   authentic 8C/8F/90 native landing states each
   289B/80 x86/8 original PE fields, all

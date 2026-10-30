@@ -733,6 +733,24 @@ of native/source fields leaves **142/388** wrong.
 scripts/repo-python scripts/verify-scripted-fighter-landing-trio-f820.py.
 No callable exact giant or case credit.
 
+**F821 additional physical native 0x91 original arc/gameplay in same giant:**
+authentic 005214B0 original action0x91 is **288 full
+interior CODE B/78 x86/12 physically typed PE call,
+float and __ftol2 references**. Source now
+rebuilds **13,282 callable B/3,486 x86** in
+a single growing whole parent, with all three
+prior 8C/8F/90 landing states, earlier
+0x63 native PE field shift, EBP-0x10 receiver
+and 901B original postRET packed DATA checked.
+This wider source has **37 original nonfield
+byte negatives** in case91, despite native
+opcode/width and all 12 PE field positions.
+Default still has four actual GPR bytes wrong.
+Short-parent F629 strict claim does not transfer.
+[F821 pinned original arc91 source](SCRIPTED_FIGHTER_ARC91_F821.md);
+scripts/repo-python scripts/verify-scripted-fighter-arc91-context-f821.py.
+No original giant callable exact credit.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin
