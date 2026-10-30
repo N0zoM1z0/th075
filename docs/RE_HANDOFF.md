@@ -1,6 +1,6 @@
 # TH075 — ACTIVE reconstruction agent handoff
 
-**Verified snapshot: 2026-10-31, current F780 exact ledger; F862 native 19A and F854 Archive.**
+**Verified snapshot: 2026-10-31, current F780 exact ledger; F863 native short states and F854 Archive.**
 This is the **short working queue**, not the chronological research log.
 Original Japanese PE and the live configuration **always outrank historical
 prose, old case-level exact labels, class names or inferred layouts**.
@@ -1716,6 +1716,38 @@ negatives retained.
 [F862 full physical false-positive proof](SCRIPTED_FIGHTER_STAGE_19A_F862.md);
 scripts/repo-python scripts/verify-scripted-fighter-stage-19a-f862.py.
 Original 46,755B giant still NONEXACT.
+
+**F863 two authentic separate 0x19C/0x19E native states inside big fighter:**
+original game cases physical
+005279DF and 00527A59 each
+**122 entire inner B/35 x86/three
+real PE calls**, stage0 setup
+and true Reset, getter/action0
+plus stage4 state +0x7C=1.
+One fresh entire VC7.1 fighter
+**26,841 callable CODE B/7,450
+x86** (F862 26,627/7,384).
+All native 35 mnemonic/width
+and three actual PE call
+field positions/targets match
+in EACH state; **22 genuine
+GPR bytes plus two full-game
+epilogue long JMP bytes**
++118/+119 per case remain
+NONEXACT. Previous 34
+physical original source-backed
+whole cases, common 46B getter
+**34/34 nonrelocation bytes**
+plus three native PE calls,
+and all FIVE original 901B
+afterRET packed DATA tables
+rechecked. These are giant
+interiors, NOT two credited
+independent leaf functions.
+[F863 selected original PE proof](SCRIPTED_FIGHTER_SHORT_19C_19E_F863.md);
+scripts/repo-python scripts/verify-scripted-fighter-short-19c19e-f863.py.
+Complete original 46,755B giant
+still NONEXACT.
 
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`

@@ -232,6 +232,28 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   GPR differences, whole native
   giant NONEXACT.
   [F844 selected original physical PE](SCRIPTED_FIGHTER_GROUNDED_130_F844.md).
+- **F863 actual 19C/19E short state pair in one giant parent:**
+  two distinct original
+  122B/35-x86/3-PE-call
+  game state interiors inside
+  one full **26,841B/7,450-x86**
+  fighter. Real stage0 Reset/
+  getter and stage4 state bit
+  reproduce entire native
+  opcode/width/PE fields,
+  still 22 real GPR bytes
+  and two original giant JMP
+  bytes per case different.
+  34 earlier physical game
+  case sources, five 901B
+  afterRET tables and shared
+  46B getter 34/34 genuine
+  native nonrelocation
+  bytes rechecked. These
+  are not independent
+  callable leaf functions,
+  no exact CODE credit.
+  [F863 physical source](SCRIPTED_FIGHTER_SHORT_19C_19E_F863.md).
 - **F862 full 19A native grounded/float-source and strict cropped-false-positive:**
   actual 302B/86 x86/eight
   original PE fields in
