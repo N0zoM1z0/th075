@@ -214,6 +214,22 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   saved-this slot. Entire 248B remains
   nonexact, no credited original CODE.
   [F818 original PE typed-view result](SCENE_COMPLETE_BORROWED_OWNER_F818.md).
+- **F827 46KB original projectile actions naturally restore native suffix:**
+  real A7/A8 each **350B/97 x86/12 genuine
+  native PE fields** in one newly built
+  **17,276B/4,586-x86** parent. Every
+  original native instruction and typed PE
+  call/global field agrees except two
+  honest enclosing-giant final JMP bytes
+  (346/347) per case. True original
+  saved-this EBP-0x10 and **full
+  default/getter 46B suffix 34/34
+  nonrelocation machine bytes** now
+  identical plus three true PE calls,
+  from REAL preceding source context.
+  Prior A3-A5/9 timers/9E and 901B
+  DATA checked, whole fighter nonexact.
+  [F827 original PE physical proof](SCRIPTED_FIGHTER_PROJECTILES_F827.md).
 - **F826 real original counter-free A3/A4/A5 landing actions:**
   three new native whole interior states
   264B/71 x86/9 physical typed PE fields

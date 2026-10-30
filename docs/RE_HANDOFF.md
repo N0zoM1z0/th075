@@ -1,6 +1,6 @@
 # TH075 — ACTIVE reconstruction agent handoff
 
-**Verified snapshot: 2026-10-31, current F780 exact ledger; F826 counter-free fighter landings.**
+**Verified snapshot: 2026-10-31, current F780 exact ledger; F827 original projectiles and native shared-tail recovery.**
 This is the **short working queue**, not the chronological research log.
 Original Japanese PE and the live configuration **always outrank historical
 prose, old case-level exact labels, class names or inferred layouts**.
@@ -848,6 +848,35 @@ byte negatives (260/261) each.
 [F826 original complete native source](SCRIPTED_FIGHTER_NO_COUNTER_F826.md);
 scripts/repo-python scripts/verify-scripted-fighter-no-counter-landings-f826.py.
 Still NONEXACT whole 46,755B giant, zero split-case credit.
+
+**F827 new 46KB giant native sprite and full default-tail recovery:**
+the same 005214B0 fighter now contains both
+real A7/A8 projectile cases, each **350 native
+inner B/97 x86/12 genuine physical PE fields**.
+Native source uses real sprite 0x38, signed
+direction*30, true +0xF00 cooldown,
+real StartAnimation/Spawn, projectile
+fall x87 and next states 0/2.
+One whole VC7.1 parent now builds
+**17,276 callable B/4,586 x86**,
+up from F826 16,606/4,396.
+A7/A8 source opcodes/GPR/widths and 24
+real PE call/global fields match; ONLY
+two authentic parent-final long-JMP
+displacement bytes (346/347) differ
+per case, no split exact credit.
+Previous 3 A3/A4/A5, 9 timers,
+9E and full original 901B packed
+DATA rechecked. **Major positive GPR:
+46B/16-x86 native F806 default/getter
+is again 34/34 nonrelocation machine
+bytes IDENTICAL plus three true original
+REL32 PE fields**, restoring actual
+EBP-0x10 and EDX/EAX/ECX naturally from
+genuine preceding original sprite logic.
+[F827 original whole-parent/source proof](SCRIPTED_FIGHTER_PROJECTILES_F827.md);
+scripts/repo-python scripts/verify-scripted-fighter-projectiles-f827.py.
+Original full 46,755B still NONEXACT.
 
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
