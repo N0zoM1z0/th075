@@ -34,7 +34,15 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   Use `scripts/repo-python scripts/report-reconstruction-status.py --summary`
   and the canonical native/origin manifests; do not quote this snapshot
   as timeless status after a later adoption.
-- **Most recent giant source context is F760**, building on F759/F752:
+- **Most recent giant source context is F762**: the true 58,294-B
+  fighter original now emits 58,277 B in one complete C++ parent.
+  Three complete original game actions 1F6/1F7/1F8 now produce 3,833
+  physical CODE B/1,118 native x86/115 true PE/COFF fields and correct
+  original nontail bytes. Original source Contact short-circuit and two
+  real borrowed +0x44 floating members restore FCOMP/MOV/FLD grammar.
+  The enclosing giant stays NONEXACT; 943-B afterRET DATA unchanged.
+  [F762 native original proof](FIGHTER_TYPED_RETURN_CROSS_CASE_F762.md).
+  Historical **F760** source context, building on F759/F752:
   original fighter CC/CD/CE is now natural C++ in the complete
   58KB parent, recovering 1,264 genuine CODE B/371 x86/31 typed
   PE fields and native control-flow of the unconditional virtual call.
@@ -13781,3 +13789,26 @@ Official 970→**971** authored entire functions, 864,961→**865,244
 original CODE bytes**, reviewed **43.84%**, conservative **43.76%**.
 Pending authored: 22 giant +11 non-giant; 98% still incomplete.
 [Full native queue ownership and PE evidence](AUDIO_QUEUE_ARCHIVE_ENTRY_F760.md).
+
+
+## F762: 05F true source plus full native 1F6, 1F7, 1F8 and actor X members
+
+The real `00543210` 58,294-original-CODE-byte giant, freshly compiled
+as ONE natural VC7.1 parent, now contains game source 05F (144 B/44
+x86/3 original fields; original GPR phase still NONEXACT) and all three
+complete native 1F6/1F7/1F8 interiors: **3,833 native CODE B/1,118
+x86/115 actual PE/COFF fields**. Reconstructing the true ContactAt454EE0
+short-circuit only for two edge conditions, rather than all four
+independent position checks, restores two original 2-byte JE instructions.
+Observed borrowed actor/opponent `+0x44` float member lvalues restore
+original `FCOMP [ACTOR+0x44]` in 1F6/1F7 and the actual 1F8 two-GPR
+`MOV;FLD;FSUB` evaluation order. All three original entire case
+nonfield bytes beyond authentic parent-shared tail JMPs are identical,
+and all 115 original physical PE/COFF typed reference owners and
+independent PE destinations match. The enclosing source emits
+**58,277 of 58,294 original CODE B**, still 17 B short and other
+nonexact GPR/CFG machine bytes; source 2DB/2FA x87 phases remain
+nonexact. **No independent split-case CODE credit**; accepted 971
+whole authored functions /865,244 CODE B unchanged. One affected TU
+only, no all-unit cold replay.
+[Complete F762 native verification](FIGHTER_TYPED_RETURN_CROSS_CASE_F762.md).

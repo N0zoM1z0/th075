@@ -117,7 +117,7 @@ CODE B, 1,340-B deficit; 943-B afterRET DATA remains separately
 verified. [F759 physical full-parent evidence](FIGHTER_FOUR_DIRECTIONAL_NATIVE_F759.md),
 `scripts/repo-python scripts/verify-fighter-four-directional-c8-f759.py`.
 
-**F760 newer whole-parent result (supersedes F759 negative GPR counts):**
+**F760 historical whole-parent result (before F762; supersedes F759 GPR negatives):**
 three more real CC/CD/CE source actions reproduce 1,264 original CODE B,
 371 original x86, 31 genuine PE/COFF fields, and 1,116/1,116
 nonfield/non-tail bytes. Correcting the real unconditional virtual call
@@ -130,6 +130,21 @@ The original 943-B afterRET DATA is still independently verified;
 whole game callable function remains NONEXACT.
 [Original complete F760 evidence](FIGHTER_COMPLEX_STAGE_CC_CE_F760.md);
 `scripts/repo-python scripts/verify-fighter-complex-stage-cc-ce-f760.py`.
+
+**F762 newer full-parent native correction (supersedes F760 length):**
+`05F` now has genuine native-shaped source **144 B/44 x86/3 fields**,
+but its GPR phase remains NONEXACT. More importantly, original complete
+`1F6/1F7/1F8` now emit **3,833 original CODE B /1,118 x86 /115
+actual typed PE/COFF fields** with zero nonfield byte mismatches except
+true still-nonmatching parent-shared JMP displacements. The original
+`ContactAt454EE0` gate applies only to the first two side-edge
+predicates, not the independent actor/opponent position comparisons.
+Borrowed typed actor/opponent `+0x44` float lvalues restore real x87
+FCOMP and the 1F8 native MOV/FLD order. The WHOLE 58,294-B boss emits
+**58,277 B**, a remaining **17-B length deficit** plus genuine
+register/other-code bytes; **not exact**. Original 943-B afterRET DATA
+remains separately verified. [F762 entire native evidence](FIGHTER_TYPED_RETURN_CROSS_CASE_F762.md);
+`scripts/repo-python scripts/verify-fighter-typed-returns-f762.py`.
 
 **Next meaningful giant tasks:** resolve the real native `059` **19**
 normalized nonfield GPR discrepancies and `060/061` **98/101**;

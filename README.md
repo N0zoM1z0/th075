@@ -74,6 +74,13 @@ match their original nonfield/COFF physical layouts as well. The whole
 `00543210` boss still emits only **58,173/58,294 original CODE B**
 and remains NONEXACT.
 
+New original entire-parent [F762](docs/FIGHTER_TYPED_RETURN_CROSS_CASE_F762.md)
+restores **3,833 native CODE B /1,118 x86 /115 genuine PE/COFF
+fields** of full 1F6/1F7/1F8 internal actions, fixing the original
+Contact guard and both float member operands. The whole 58KB boss
+currently emits 58,277/58,294 B but remains NONEXACT, with **zero
+new official accepted whole CODE credit**.
+
 The **11 unmatched small/medium authored originals** include SpriteDrawing
 (6), TextureManager (2), and WinMain/Scene/Archive (3).
 They are fully enumerated in the [active handoff](docs/RE_HANDOFF.md).
