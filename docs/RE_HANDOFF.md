@@ -1103,6 +1103,31 @@ nonrelocation plus three PE calls.
 scripts/repo-python scripts/verify-scripted-fighter-complex-cc-f839.py.
 Whole 46,755B still NONEXACT.
 
+**F840 selected original 0xCD complete native source:**
+physical original 00525DD0 is **387 native
+inner CODE B/113 x86/8 true original PE fields**
+rather than F760 other-fighter 435B CD. Real
+stage3 POS=11.0, vertical velocity=17.5,
+drag=0.8, native 16-bit ++, float
+POS48+POS54 and UNCONDITIONAL virtual
+callback after conditional stage subtract
+now normal C++. New entire VC7.1 parent
+**20,950 callable CODE B/5,682 x86**,
+from F839 20,578/5,571. All genuine
+original CD opcode/width/GPR/x87/PE
+fields match except TWO actual original
+whole-giant epilogue relative JMP
+operand pairs (+186/187, +383/384).
+Earlier complete CC, C8-CB and CF-D2
+physical original PE cases rechecked,
+46B shared default 34/34 native
+nonrelocation bytes + 3 original
+PE REL32 calls, and all FIVE original
+901B packed afterRET tables verified.
+[F840 current actor CD PE proof](SCRIPTED_FIGHTER_COMPLEX_CD_F840.md);
+scripts/repo-python scripts/verify-scripted-fighter-complex-cd-f840.py.
+Original enclosing 46,755B still NONEXACT.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin
