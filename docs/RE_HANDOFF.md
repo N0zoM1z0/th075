@@ -580,6 +580,30 @@ and cannot receive subcase CODE credit.
 [F812 native entire-parent proof](SCRIPTED_FIGHTER_TEN_BURST_FRAME_F812.md);
 scripts/repo-python scripts/verify-scripted-fighter-ten-burst-shared-f812.py.
 
+**F813 original scripted fighter action0x59 added with correct actor-specific stage:**
+the pinned 005214B0 PE has a complete 0x59 at
+0052327A..005233DD, **356B/95 x86/16
+genuine physical typed PE/COFF fields**. Unlike
+F752's different actor, THIS original uses
+signed **stage==3** and auxiliary **action 3**.
+The new tracked ordinary game source
+rebuilds **9,636 callable CODE B/2,432 x86**
+in ONE 46KB parent (F812: 9,295 B/2,339 x86),
+preserving all previous **30 source-backed
+original actions**, real 901-B packed switch
+DATA, 46-B F806 shared tail, three real
+PE calls and four actual early getter JMP
+positions. Every original 0x59 x86 mnemonic
+and width is exact, but **57 real case
+nonrelocation GPR/EBP bytes remain wrong**,
+and the newer default tail again has four
+GPR plus four EBP wrong bytes. Never
+transfer the F812 tail's register phase
+to this larger source. Whole 46,755-B giant
+remains NONEXACT, no subcase credit.
+[F813 full original/source PE check](SCRIPTED_FIGHTER_STAGE3_BOUNCE_F813.md);
+scripts/repo-python scripts/verify-scripted-fighter-stage3-bounce-f813.py.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin

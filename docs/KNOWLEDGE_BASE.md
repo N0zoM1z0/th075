@@ -198,6 +198,19 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   matched after all 14 original PE refs checked.
   None accepted exact.
   [F798 full native teardown evidence](ARCHIVE_NATIVE_LOOP_TEARDOWN_F798.md).
+- **F813 scripted giant action0x59 real actor-specific source:**
+  original 005214B0 case59 is 356B/95-x86/16
+  real native typed PE fields, with stage
+  **equal to three** and aux action **three**,
+  unlike the historical F752 source for another
+  actor. Full C++ source now emits **9,636 CODE
+  B/2,432 x86** from 9,295/2,339;
+  prior 30 cases, 901B switch DATA,
+  F806 46B shared tail/three PE calls/four
+  native entry JMPs rechecked. 57 real
+  unmasked case bytes and eight native tail
+  bytes remain nonexact. No whole-game credit.
+  [F813 original PE/source stage3](SCRIPTED_FIGHTER_STAGE3_BOUNCE_F813.md).
 - **F812 native ten-burst frame evidence:**
   F614's whole 469B/135-x86/17-PE-field
   original fighter action 0x58 joined 29
