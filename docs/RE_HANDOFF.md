@@ -1075,6 +1075,34 @@ jump tables verified.
 scripts/repo-python scripts/verify-scripted-fighter-fourway-cb-f837.py.
 Whole 46,755B giant STILL NONEXACT.
 
+**F839 actor-specific original CC repaired beyond historical source:**
+native original 00525C24..00525DCF
+**428 complete inner B/126 x86/10
+true PE call/global fields** now in
+full new **20,578 callable B/5,571-x86**
+source parent. Unlike other actor F649,
+native 0xCC requires x87 order POS48
+then POS54, real flag clear INSIDE
+stage3 and **unconditional vtable
+method call** AFTER conditional
+stage decrement. Prior source
+incorrectly guarded that virtual
+call and had actual wrong Jcc.
+Natural tracked C++ now matches all
+native CC opcode/width/GPR/x87/
+PE bytes except exactly TWO
+full-giant epilogue long JMP
+displacement byte pairs +186/187,
++424/425. All preceding C8-CB and
+following CF-D2 physical source
+cases and five original 901B
+afterRET tables remain verified;
+default 46B 34/34 native
+nonrelocation plus three PE calls.
+[F839 selected original CFG proof](SCRIPTED_FIGHTER_COMPLEX_CC_F839.md);
+scripts/repo-python scripts/verify-scripted-fighter-complex-cc-f839.py.
+Whole 46,755B still NONEXACT.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin

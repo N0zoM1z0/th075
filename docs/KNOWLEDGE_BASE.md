@@ -214,6 +214,24 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   saved-this slot. Entire 248B remains
   nonexact, no credited original CODE.
   [F818 original PE typed-view result](SCENE_COMPLETE_BORROWED_OWNER_F818.md).
+- **F839 selected original CC fixes old source virtual-call CFG:**
+  native 428B/126 x86/10 actual
+  PE fields reconstructed in whole
+  20,578B/5,571-x86 fighter.
+  Original PE proves float addition
+  POS48+POS54 ordering and a
+  VIRTUAL vtable call outside the
+  conditional stage>=max decrement;
+  prior other-actor F649 placement
+  was genuinely wrong. Full CC now
+  only two original parent-epilogue
+  long JMP pairs differ, with C8-CB
+  and CF-D2 PE-verified native
+  machine geometry retained.
+  46B default 34/34 nonrelocation
+  and 901B packed DATA checked.
+  Giant nonexact.
+  [F839 native PE reconstruction](SCRIPTED_FIGHTER_COMPLEX_CC_F839.md).
 - **F838 actual full Scene object release declaration and member order:**
   eight original 248B/75-x86/12
   physical PE-field normal VC7.1
