@@ -973,3 +973,4 @@ AudioQueueArchiveF760::QueueArchiveEntry,0x00407B80,function
 SpriteDrawingF765::DrawOpaqueSprite,0x0040D790,function
 SpriteDrawingF765::DrawOpaqueSpriteMirrored,0x0040D6B0,function
 TextureManagerF769::AllocateTextureSlots,0x0040B110,function
+TextureManagerF770::AllocateSharedTextures,0x0040B000,function

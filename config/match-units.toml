@@ -61003,3 +61003,27 @@ relocations = [
  { offset = 0xA4, type = "REL32", symbol = "??1NativeTextureElementF769@@QAE@XZ", target = 0x0040D8E0 },
  { offset = 0xAE, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
 ]
+
+# F770: original R017 complete 261-B shared texture allocation, true
+# 44-B local ctor/dtor and two used zero-values with distinct lifetimes.
+[units.texture-manager-allocate-shared-native-0040b000]
+source = "src/TextureSharedF770.cpp"
+object = "build/matching/TextureSharedF770.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["TextureManagerF770::AllocateSharedTextures"]
+symbol = "?AllocateSharedTextures@TextureManagerF770@@QAEXIIE@Z"
+target_address = 0x0040B000
+size = 261
+relocations = [
+ { offset = 0x6, type = "DIR32", symbol = "__ehhandler$?AllocateSharedTextures@TextureManagerF770@@QAEXIIE@Z", target = 0x00654F24 },
+ { offset = 0xC, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
+ { offset = 0x14, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
+ { offset = 0x22, type = "REL32", symbol = "??0NativeTextureElementF769@@QAE@XZ", target = 0x0040D8C0 },
+ { offset = 0x70, type = "REL32", symbol = "?Assign@TextureSlotVectorF769@@QAEXIABUNativeTextureElementF769@@@Z", target = 0x0040DDA0 },
+ { offset = 0x8A, type = "REL32", symbol = "?Assign@TexturePointerVectorF769@@QAEXIABK@Z", target = 0x0040DF20 },
+ { offset = 0xA4, type = "REL32", symbol = "?Assign@TexturePointerVectorF769@@QAEXIABK@Z", target = 0x0040DF20 },
+ { offset = 0xCD, type = "REL32", symbol = "?At@TexturePointerVectorF769@@QAEAAPAUIDirect3DTexture8@@I@Z", target = 0x0040DEE0 },
+ { offset = 0xDD, type = "REL32", symbol = "?Create16BitTexture@Graphics@@YA_NGGPAPAUIDirect3DTexture8@@@Z", target = 0x00401B20 },
+ { offset = 0xF1, type = "REL32", symbol = "??1NativeTextureElementF769@@QAE@XZ", target = 0x0040D8E0 },
+ { offset = 0xFB, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
+]
