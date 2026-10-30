@@ -232,6 +232,22 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   GPR differences, whole native
   giant NONEXACT.
   [F844 selected original physical PE](SCRIPTED_FIGHTER_GROUNDED_130_F844.md).
+- **F854 small authored original Archive 171B delete value categories:**
+  sixteen original whole C++ TUs
+  with genuine used resource
+  pointer/value/reference and
+  cast expressions. Four are
+  entire CODE-byte-identical
+  171B/51-x86/14-physical-PE-field
+  source but only 108/115
+  true native nonfield bytes
+  because EBP owner slots remain
+  wrong. Ten meaningful named
+  value/entry aliases compile
+  177B/53 x86, two more
+  183/185B, nonnative whole.
+  No exact callable CODE credited.
+  [F854 original PE proof](ARCHIVE_NATIVE_RESOURCE_VALUE_CATEGORIES_F854.md).
 - **F853 current 18A x87 float source operand order:**
   250 original B/71 x86/six
   native PE fields in one full

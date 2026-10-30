@@ -1,6 +1,6 @@
 # TH075 — ACTIVE reconstruction agent handoff
 
-**Verified snapshot: 2026-10-31, current F780 exact ledger; F853 native float shot and F848 Scene.**
+**Verified snapshot: 2026-10-31, current F780 exact ledger; F853 fighter float shot and F854 Archive.**
 This is the **short working queue**, not the chronological research log.
 Original Japanese PE and the live configuration **always outrank historical
 prose, old case-level exact labels, class names or inferred layouts**.
@@ -1786,6 +1786,29 @@ padding, source cropping or accepted exact
 authored whole CODE.
 [F848 native Scene PE/source proof](SCENE_REAL_RESOURCE_MEMBER_ACCESS_F848.md);
 scripts/repo-python scripts/verify-scene-actual-access-f848.py.
+
+**F854 complete original 171B Archive delete/resource owner categories:**
+sixteen freshly compiled whole /Od /GX-
+resource delete C++ value categories
+test actual owned pointer, const/volatile/
+register pointer, true pointer-reference
+alias, pointer-to-pointer entry, and
+delete cast expression. Four variants
+emit **byte-identical complete 171B/
+51 x86/14 real original PE fields**;
+each remains **108/115 native original
+nonrelocation bytes** (resource, receiver,
+filename EBP slots wrong). Ten
+actually named resource/reference source
+variants emit **177B/53 x86**, others
+183B/55 and 185B/56, nonnative
+entire function extent. All sixteen
+retain original resource/delete/filename
+semantic call symbol identities; only
+original-sized ones earn a native 14-field
+physical comparison, NONE exact.
+[F854 original Archive value category proof](ARCHIVE_NATIVE_RESOURCE_VALUE_CATEGORIES_F854.md);
+scripts/repo-python scripts/verify-archive-real-delete-value-f854.py.
 
 ## 4. Attribution, validation, research and storage
 
