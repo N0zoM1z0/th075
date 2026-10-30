@@ -232,6 +232,28 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   GPR differences, whole native
   giant NONEXACT.
   [F844 selected original physical PE](SCRIPTED_FIGHTER_GROUNDED_130_F844.md).
+- **F856 original 190 stage3 sprite and original CALL order:**
+  217 native B/64-x86/6 real
+  original PE call fields in
+  one entire 25,337B/6,987-x86
+  source parent. Genuine sprite
+  320, animationFA via 46D000,
+  then Prepare0 via 453D40;
+  swapping call order breaks
+  native physical PE targets.
+  All x86 width/opcode and
+  typed original calls match,
+  but 39 GPR and two real
+  enclosing-giant JMP bytes
+  still differ. Seven previous
+  GPR affected case sources,
+  20 earlier original cases
+  and five 901B packed tables
+  reverified. Original shared
+  getter again 34/34 native
+  nonrelocation bytes +3 calls.
+  Whole giant NONEXACT.
+  [F856 true native source](SCRIPTED_FIGHTER_STAGE_190_F856.md).
 - **F855 original 18B stage7 volley and native GPR phase:**
   real whole 353B/99-x86/
   7 physical PE fields inside

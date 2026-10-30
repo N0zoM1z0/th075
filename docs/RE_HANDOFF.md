@@ -1,6 +1,6 @@
 # TH075 — ACTIVE reconstruction agent handoff
 
-**Verified snapshot: 2026-10-31, current F780 exact ledger; F855 giant volley and F854 Archive.**
+**Verified snapshot: 2026-10-31, current F780 exact ledger; F856 original 190 and F854 Archive.**
 This is the **short working queue**, not the chronological research log.
 Original Japanese PE and the live configuration **always outrank historical
 prose, old case-level exact labels, class names or inferred layouts**.
@@ -1497,6 +1497,39 @@ non-PE GPR byte negatives.
 [F855 selected native PE proof](SCRIPTED_FIGHTER_VOLLEY_18B_F855.md);
 scripts/repo-python scripts/verify-scripted-fighter-volley-18b-f855.py.
 Whole 46,755B giant STILL NONEXACT.
+
+**F856 original fighter 0x190 stage3 sprite/animation sources:**
+the genuine original 005273A2 handler is
+**217 complete original inner B/64 x86/
+6 actual physical native PE CALL fields**.
+At stage3 source sets +0x314 float1,
+emits original sprite0x320 at 00453A70,
+STARTS native animation0xFA via
+0046D000 THEN prepares action0 via
+00453D40. Source with those calls
+reversed retains similar CODE geometry
+but has WRONG original PE destinations
+and is rejected. At stage4 source sets
++0x7C=1. New one-parent VC7.1 whole
+source **25,337 callable CODE B/
+6,987 x86** versus F855 25,135/
+6,925. All 64 native opcode/widths
+and 6 physical PE calls align, BUT
+39 authentic GPR operand bytes and
+2 original encompassing giant final
+JMP operand bytes +213/+214 still
+differ. All 27 preceding original
+PE-backed C8..18B whole source cases
+and all FIVE 901B packed native
+afterRET jump tables reverified.
+Original 46B common getter now
+34/34 native nonrelocation bytes
+plus three true PE calls naturally
+from whole C++ compiler context.
+[F856 actor-specific PE proof](SCRIPTED_FIGHTER_STAGE_190_F856.md);
+scripts/repo-python scripts/verify-scripted-fighter-stage-190-f856.py.
+Whole 46,755B original remains
+NONEXACT; no exact CODE adoption.
 
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
