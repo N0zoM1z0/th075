@@ -16,6 +16,11 @@ Preserve **all** accepted exact units and origin evidence, including
 the historical R268 checkpoint and every later verified adoption. The 95
 unresolved origins remain unknown; they do not block reconstruction of
 independently reviewed authored functions. Include all pending bytes in the conservative goal denominator.
+For the still-unmatched authored backlog, count provenance via
+`config/function-origins.csv` (currently 36 = 22 giant + 14
+small/medium), NOT only the 25 rows with `functions.csv.owner=authored`.
+Leaving the other 11 `functions.csv` owner cells blank until source
+acceptance is intentional; it does not make their origin unknown.
 Start with the live cohort in `docs/RE_HANDOFF.md`; historical experiments
 must not override current evidence. **Only cold-replay new/affected units**,
 never all units. Keep compiler builds serial. Remove only obsolete reproducible
@@ -136,6 +141,14 @@ or verifier changes. Documentation-only changes need `git diff --check`.
   archived path: archive `--verify` still works but reports the
   changed loose copy. Both `--restore` and `--recompact-restored`
   reject overwriting/removing that newly generated research file.
+  F754 additionally SHA256-verified, compressed and removed only
+  **1,931 frozen f133–f166 giant generated `.asm/.cod/.log` traces**,
+  reclaiming **86,614,259 bytes net** including full per-path receipt.
+  Each original trace is independently restorable from the local,
+  ignored `.analysis/cache-archives/historical-f133-f166-giant-traces.tar.zst`
+  with `scripts/repo-python scripts/archive-frozen-giant-traces.py
+  --restore ORIGINAL_RELATIVE_PATH`; never delete that local archive
+  or its index unless a verified replacement backup exists.
   Detailed allowed cleaning and restore paths: `docs/STORAGE_HYGIENE.md`.
   Protect H184 frozen objects/PDBs, original native and best whole-boss
   probes, `build/matching/`, `.analysis/vc71-wine/` and the Ghidra project.

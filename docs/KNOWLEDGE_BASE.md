@@ -1,85 +1,57 @@
-# TH075 reconstruction knowledge base — cumulative historical evidence
+# TH075 reconstruction knowledge base — chronological historical evidence
 
-**Current status annotation: 2026-10-30, after F695 original-evidence
-audit and F694 reversible storage cleanup; the actual F689–F693
-negative experiments are now documented for the next agent.** This is a **chronological experiment log**,
-not the live backlog. Consult the [current agent handoff](RE_HANDOFF.md)
-and live function/origin/match manifests first. Earlier F-series
-sections describe *historical* status; older claims such as "still pending",
-"nonexact", or "no credit" are **not active status** after a later exact
-adoption. Earlier original 33K giant experiments such as F593
-show **historical** 155-byte source differences, superseded by F596
-**137 nonrelocation bytes**; all 8,789 original x86 instruction
-mnemonics are now in their exact machine ordinal positions.
-The former 1,500-line post-F596 active handoff is preserved in the
-**frozen [F598–F652 chronology](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md)**;
-older F540–F596 notes remain in
-[prior historical chronology](history/RE_HANDOFF_F540_THROUGH_F596.md).
-The [active handoff](RE_HANDOFF.md) now fits a short task-oriented
-checklist. SHA256-verifiable recovered archives of redundant historical
-CI/diagnostic logs, old repeated JSON snapshots and (new F694) 1,760
-old generated compiler PDB/CI outputs are documented in
-[storage protection](STORAGE_HYGIENE.md). The two new F694 archives
-are local/ignored, **not bundled in Git**; no original PE, Ghidra,
-compiler environment, source, COFF OBJ or best negative experiment
-was lost.
-Canonical live ledgers and actual native PE outrank all historical prose.
+**Maintenance annotation, 2026-10-30 (F754 documentation/storage review):**
+This file is **historical** research evidence, not the live function
+ledger or the new-agent work queue. Old F-series headings with words like
+"latest", "still pending", "strict", "no credit", "current" or counts
+such as 943/25 refer to **their original research parent or date only**.
+Original native PE and actual reviewed origin/source/match manifests win
+if these historical notes differ. Start from the concise
+[active agent handoff](RE_HANDOFF.md) and [current README](../README.md).
+The historical 1,289-line F653–F753 handoff was preserved
+[with restored local Markdown links](history/RE_HANDOFF_F653_THROUGH_F753_2026-10-30.md);
+older [F598–F652](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md)
+and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
 
-## Current authoritative status and superseded negatives
+## Current verified original-game status (one short snapshot)
 
 - **968 cold-exact source-present functions**, **864,380 original authored
   CODE bytes**, **43.79% reviewed authored coverage** and **43.72%
-  conservative coverage**. **Only 25 `owner=authored,status=unclassified`
-  function rows currently remain:** 22 giant fighter action/advance bosses
-  totalling 1,102,055 original CODE bytes, WinMain (2,987), SceneObject
-  destructor (248), and ArchiveCatalog nonvirtual destructor (171).
-  All remain nonexact. 95 separate origin-pending candidate rows / 3,420
-  bytes are not automatically credited. These figures are a snapshot;
-  refresh with `scripts/repo-python scripts/report-reconstruction-status.py --summary`.
-- The historical **F339-era snapshot was 645 exact /813,859 bytes /
-  41.24%**, not the current result. Do not carry these values forward.
-- A **746-byte SpriteSequence render** is already exact (F347), as are
-  **874-byte Suika special** (F348), **276-byte two-list effect prune**
-  (F354), **497-byte character cancel animation** (F346), and the
-  **1,268-byte mirrored sprite renderer** (F437). Earlier statements
-  claiming these are "truly nonexact" were superseded by complete
-  native cold-exact C++ adoptions. Likewise, F504 StaffRoll (208), F514
-  Replay filename (303), F516 two rank labels (169 each) and F535 progress
-  postfix increment (92) are **not pending**. See current handoff §3.
-- The original Japanese target version 1.11 SHA256 is
-  `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
-  Review the source/origin/extent and original relocation evidence for
-  each target. Local cold comparison is **not remote Oracle acceptance**.
-- **F339 `DataArchive::Write` (686 CODE)** and **F338
-  `DataArchive::OpenAndReadIndex` (429 CODE)** are both exact;
-  F249/F250 negative results are historical.
-- **F326 `ReplayRecords::AppendRecord` (1,252 CODE)**, **F328
-  `ReplayRecords::FinalizeFile` (375 CODE)** and **F259
-  `ReplayRecords::LoadRecord` (792 CODE)** are exact;
-  F218/F219/F232/F272/F289 negative descriptions are historical.
-- **F319 `FontSurface::RasterizeText` (1,766 CODE)** and **F318
-  `FontSurface::LoadGlyphOutline` (301 CODE)** are exact;
-  F291/F299/F302 negatives are historical. The 916-byte F258
-  MusicRoom catalog boss and 1,722-byte F294 Effects catalog boss
-  are also accepted at their *original complete CODE extents*;
-  independently compared jump tables do not add CODE credit.
-- All 95 origin-pending functions / 3,420 bytes remain outside authored accepted CODE until independently reviewed.
-  Do **not** infer full source class definitions from borrowed native
-  call boundaries, or count Win32/CRT/VC7 helper code. Cold-replay
-  **only new or affected units**, never the entire set.
-
-**Latest F652 giant work is still an internal-case study, not whole
-function acceptance:** F598–F652 source-backed **572 native original
-inner case bodies /154,461 native internal CODE bytes**, all uncredited
-as whole functions. F651/F652 recover strict original D1/D2 in giant
-`00543210` (133 x86 /450 B/18 typed fields) while previous CF/D0
-remain strict in that *same* newly compiled parent. The original
-0xCC case in `005AEEC0` and `00564BE0` has complete 128/126 x86
-mnemonic/width geometry, **but 80/78 native non-field GPR/CFG role
-mismatches**, and is expressly **NONEXACT**. Recent small whole-function
-source-backed origin-unknown cohort totals 39/889 B, plus distinct
-F595 40 B, **40/929 B uncredited**. None of these local probes adds
-to the formal 943 whole authored accepted functions.
+  conservative coverage** of native original CODE. The independently
+  reviewed authored provenance cohort has **1,004** candidates, so
+  **36 authored whole functions remain NONEXACT**: **22** large
+  (1,102,055 original CODE B) plus **14** small/medium
+  (7,269 CODE B). The older **25**-function subset counted only
+  `config/functions.csv.owner=authored` unfinished rows and omitted
+  11 independently authored, still owner-blank small/medium targets.
+  See [all 14 concrete original addresses](RE_HANDOFF.md).
+- **95 original candidates /3,420 CODE bytes** have separately
+  unresolved provenance; even a whole byte-exact C++ source does not
+  permit reclassification or accepted authored CODE without independent
+  original ownership evidence. **The 98% goal remains incomplete.**
+- Pinned user-supplied Japanese original `resources/th075.exe`, v1.11:
+  SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
+  Use `scripts/repo-python scripts/report-reconstruction-status.py --summary`
+  and the canonical native/origin manifests; do not quote this snapshot
+  as timeless status after a later adoption.
+- **Most recent giant source context is F752**, not F652/F681:
+  original `00543210` 05D/05E direct memory `FCOMP` grammar restored
+  from real borrowed actor/opponent `+0x44` typed fields in one entire
+  native-shaped VC7.1 parent, with original saved `this EBP−0x44`.
+  These are still *internal switch-case source, NOT accepted whole
+  game-function CODE*. Source 059 and 060/061 GPR differences remain.
+  Reproduce from [F752 native/PE proof](FIGHTER_BORROWED_POSITION_F752.md).
+- **The currently most recent exact whole function is F753**, original
+  R015-authored AudioStream `004071C0` 161 B/42 x86/18 original COFF
+  fields with true `/GX` EH lifetime and independently checked
+  cleanup/unwind carriers. [F753 whole original proof](AUDIO_STREAM_CLIENT_ACQUIRE_F753.md).
+- Historical accepted targets such as F339 archive, F326 replay, F319
+  font and F347 SpriteSequence rendering **stay accepted**. Ignore
+  earlier provisional negatives that were superseded by their later
+  canonical cold-replay acceptance. Clone-local verified archives of
+  obsolete generated text traces/JSON/PDB/logs and recovery procedures
+  are documented in [storage hygiene](STORAGE_HYGIENE.md); original
+  sources, PE, Ghidra, Wine and accepted objects were preserved.
 
 ## How to read the historical sections
 

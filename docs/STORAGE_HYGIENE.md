@@ -1,6 +1,6 @@
 # TH075 local storage hygiene and lossless recovery
 
-**Updated 2026-10-30, after F694 compaction and F695 recovery-safety audit.**
+**Updated 2026-10-30, after F754 frozen-giant-trace compaction and active-document reconciliation.**
 This is a storage report and **lossless local recovery recipe**, NOT
 permission to remove original PE, C++/COFF research evidence, active
 work, matching objects, or unrecognized dirty changes. The archives,
@@ -12,7 +12,81 @@ instructions ARE tracked, but a fresh clone will not contain the
 archives. Historical F597 and older JSON/PDB/CI archives are still
 available and independently restorable.
 
-## Current F694 cleanup: 1,760 generated files preserved, ≈127.75 MiB net reclaimed
+## Latest F754 cleanup: 1,931 SHA256-recoverable frozen giant ASM/COD/LOG files
+
+**Actual executed archive:** frozen generated text traces from original
+historical investigations in only two allowlisted local directories:
+`.analysis/character-move-4ac040/f133..f166/` and
+`.analysis/object-action-50a580/f133..f166/`. The tracked
+[`archive-frozen-giant-traces.py`](../scripts/archive-frozen-giant-traces.py)
+selects **only** `.asm`, `.cod`, `.log` in these original historical
+subtrees, which were already frozen before the current F752 giant
+and F753 accepted whole-source work. No active F500+ experiment
+outside the allowlist was considered for removal.
+
+| Frozen generated trace family | SHA256-archived original files | Original bytes |
+| --- | ---: | ---: |
+| Historical native/emitted `.asm` disassembly and relocation dumps | **1,683** | **81,600,754** |
+| Historical compiler `.cod` emitted native listing | **12** | **6,065,146** |
+| Frozen experiment `.log` output | **236** | **2,665,732** |
+| **Original total** | **1,931** | **90,331,632 B (86.15 MiB)** |
+
+The archive was **3,373,146 bytes** (3.22 MiB), and the machine-local
+per-file SHA256/path/size receipt is **344,227 bytes**. The exact
+**net reclaimed space including this receipt is 86,614,259 bytes
+(82.60 MiB)**, before incidental filesystem allocation effects.
+The two old giant historical directory footprints decreased from
+approximately **144 MiB +50 MiB** to **75 MiB +28 MiB**. The
+`.analysis/cache-archives/` store grew as expected from roughly
+57 MiB to 61 MiB. The remaining roughly **1.3 GiB
+`.analysis/vc71-wine/` original compiler prefix MUST remain**.
+
+The new local ignored archive/receipt are:
+
+- `.analysis/cache-archives/historical-f133-f166-giant-traces.tar.zst`
+- `.analysis/cache-archives/historical-f133-f166-giant-traces-index.json`
+
+**Every 1,931 original member was SHA256 hashed, packed, then
+independently streamed out of the actual newly written archive and
+verified against the full original bytes/length BEFORE removing ANY
+loose file**. All original source loose files were individually
+rehashed just before unlinking; the full tar.zst archive was
+independently re-verified AFTER deletion. One actual original
+1,595,692-byte F154 `.cod` file was restored at its historical
+path, validated against original SHA256, and successfully
+re-compacted only when its bytes matched. There were **zero
+changed or accidentally overwritten originals** in the final
+verification. The local tar/index are **not in Git**; keep them
+when cloning, transferring or further reducing worktree storage.
+
+```bash
+# Read-only: no eligible loose frozen .asm/.cod/.log should remain
+scripts/repo-python scripts/archive-frozen-giant-traces.py --plan
+# Independently verify every archived original and original per-path SHA256
+scripts/repo-python scripts/archive-frozen-giant-traces.py --verify
+# Rehydrate an exact original file needed by an older research script
+scripts/repo-python scripts/archive-frozen-giant-traces.py \
+  --restore .analysis/character-move-4ac040/f154/BaselineMapTrace.cod
+# After examination, remove ONLY the byte-identical restored duplicate
+scripts/repo-python scripts/archive-frozen-giant-traces.py \
+  --recompact-restored .analysis/character-move-4ac040/f154/BaselineMapTrace.cod
+```
+
+`--archive` refuses overwrite of existing archive/index; `--restore`
+refuses to replace newly generated or changed loose originals; and
+`--recompact-restored` refuses deletion unless it independently
+verifies the loose original has exactly its archived SHA256.
+Old research scripts that read archived loose `.asm/.cod/.log`
+need to restore only those files first. **The full original target
+EXE, current source, every ignored C++/INC/HPP, OBJ/PDB, JSON
+research receipt, H184 best objects, the Ghidra project, Wine,
+accepted `build/matching/`, and current F7xx boss experiments
+were never removed.** Never count these storage savings as
+new native exact CODE.
+
+---
+
+## Historical F694 cleanup: 1,760 generated files preserved, ≈127.75 MiB net reclaimed
 
 The 2026-10-30 actual on-disk inventory identified only TWO narrowly
 allowlisted classes of old **reproducible compiler and test outputs**.

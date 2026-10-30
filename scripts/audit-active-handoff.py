@@ -25,11 +25,40 @@ def expect(condition: bool, message: str) -> None:
         raise RuntimeError(message)
 
 
+def check_local_markdown_links(relative_path: str) -> None:
+    """Prevent active/archived documentation moves breaking relative links.
+
+    Only Markdown local file paths are checked; URLs/anchors are not
+    pretext for external network access or historical content edits.
+    """
+    doc = ROOT / relative_path
+    source = doc.read_text()
+    for match in re.finditer(r'\]\(([^)]+)\)', source):
+        target = match.group(1)
+        if not target or target.startswith(('http://', 'https://', 'mailto:', '#')):
+            continue
+        path = target.split('#',1)[0]
+        expect((doc.parent / path).exists(),
+               f'Broken local Markdown link in {relative_path}: {target}')
+
+
 def main() -> None:
     with (ROOT / 'config/functions.csv').open(newline='') as f:
         rows = list(csv.DictReader(f))
+    # `functions.csv.owner` only identifies the 25 formerly investigated
+    # negative cases; 11 other independently authored small/medium rows
+    # deliberately have blank owner while their source is still missing.
+    # Authorship is authoritative in function-origins.csv, NOT this field.
+    with (ROOT / 'config/function-origins.csv').open(newline='') as f:
+        origins = {x['address']:x for x in csv.DictReader(f)}
+    expect(all(x['address'] in origins for x in rows),
+           'Native candidate missing an independent origin decision')
     accepted = [x for x in rows if x['status'] == 'matching']
-    pending = [x for x in rows if x['owner'] == 'authored' and x['status'] == 'unclassified']
+    authored = [x for x in rows if origins[x['address']]['origin'] == 'authored']
+    pending = [x for x in authored if x['status'] != 'matching']
+    expect(len(authored) == len(accepted) + len(pending)
+           and all(origins[x['address']]['origin'] == 'authored' for x in accepted),
+           'Accepted game CODE or independent authored backlog conflicts with origin ledger')
     giants = [x for x in pending if int(x['size']) >= 20000]
     exact_count = len(accepted)
     exact_bytes = sum(int(x['size']) for x in accepted)
@@ -63,10 +92,20 @@ def main() -> None:
            'Current handoff accepted CODE stale')
     expect(f'**{percent}%**' in handoff and f'**{conservative.group(1)}%**' in handoff,
            'Current handoff coverage numbers stale')
-    expect(f'**{len(pending)} complete functions**' in handoff and f'{len(giants)} large fighter bosses' in handoff,
-           'Current handoff authored pending count stale')
-    expect(f'**{sizesum:,} CODE bytes**' in handoff,
-           'Current handoff complete giant-boss original CODE byte count stale')
+    medium = [x for x in pending if int(x['size']) < 20000]
+    medium_bytes = sum(int(x['size']) for x in medium)
+    expect(f'**{len(authored):,}**' in handoff and
+           f'**{len(pending)} authored functions remain nonexact**' in handoff and
+           f'**{len(giants)} large original state advances**' in handoff and
+           f'**{len(medium)} other original small/medium whole functions**' in handoff,
+           'Current handoff is missing the complete origin-backed backlog; '
+           'do not use only functions.csv.owner')
+    expect(f'**{sizesum:,} CODE bytes**' in handoff and
+           f'**{medium_bytes:,} CODE bytes**' in handoff,
+           'Current handoff original large/small pending CODE bytes stale')
+    expect(f'**{len(pending)}**' in readme and f'**{len(giants)}**' in readme
+           and f'**{len(medium)}**' in readme,
+           'README must show the entire independently authored pending backlog')
     expect(f'**{exact_count} / {exact_count}**' in readme and f'**{exact_bytes:,}**' in readme,
            'README exact count/CODE stale')
     expect(f'**{percent}%**' in readme and f'**{conservative.group(1)}%**' in readme,
@@ -81,6 +120,13 @@ def main() -> None:
     expect(Path(ROOT / 'docs/STORAGE_HYGIENE.md').exists() and
            'docs/STORAGE_HYGIENE.md' in readme,
            'Storage recovery link missing')
+    for doc in ('README.md', 'docs/RE_HANDOFF.md',
+                'docs/STORAGE_HYGIENE.md',
+                'docs/history/RE_HANDOFF_F653_THROUGH_F753_2026-10-30.md'):
+        check_local_markdown_links(doc)
+    expect('scripts/archive-frozen-giant-traces.py' in readme and
+           'archive-frozen-giant-traces.py' in handoff,
+           'Current local frozen-trace archive/restore path absent from agent-facing docs')
 
     accepted_previous = ('0x00425130', '0x0042C270', '0x0042B110',
                          '0x00431890', '0x00438C20', '0x00411110',
@@ -89,15 +135,16 @@ def main() -> None:
     for address in accepted_previous:
         expect(by_address[address]['status'] == 'matching',
                f'Formerly disputed full original function no longer exact: {address}')
-    medium = [x for x in pending if int(x['size']) < 20000]
     for x in medium:
         expect(x['address'][2:].lower() in handoff.lower() and f'{int(x["size"]):,}' in handoff,
                f'One currently pending medium authored function is missing from active handoff: {x["address"]}')
     print(f'Agent docs concordant: {exact_count} exact whole functions, '
-          f'{exact_bytes:,} original CODE bytes ({percent}% reviewed), '
-          f'{len(pending)} currently authored nonexact: '
-          f'{len(giants)} giant ({sizesum:,} original CODE bytes) + '
-          f'{len(medium)} other complete functions. No cold replay or files modified.')
+          f'{exact_bytes:,} original CODE bytes ({percent}% reviewed); '
+          f'{len(authored)} independently authored original candidates, '
+          f'{len(pending)} ALL still nonexact: '
+          f'{len(giants)} giant ({sizesum:,} CODE B) + '
+          f'{len(medium)} other whole functions ({medium_bytes:,} CODE B). '
+          'No cold replay or files modified.')
 
 
 if __name__ == '__main__':

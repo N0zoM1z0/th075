@@ -146,6 +146,25 @@ Oracle acceptance**. Never claim an unavailable push succeeded.
 
 ## 6. Keep evidence and save space **without losing it**
 
+**F754 documented backlog correction:** the true author-origin backlog
+is **36 complete unmatched authored functions** from
+`config/function-origins.csv` (22 large + 14 small/medium), not the
+25 `owner=authored` rows selected by the old active audit. The
+[current handoff](RE_HANDOFF.md) contains the entire 14-function
+small/medium queue, and the former 1,289-line F653–F753 handoff
+is preserved [in frozen history](history/RE_HANDOFF_F653_THROUGH_F753_2026-10-30.md).
+Use the updated `audit-active-handoff.py` to cross-check every address.
+
+**F754 local storage recovery:** 1,931 generated old giant
+f133–f166 `.asm/.cod/.log` traces were archived with independent
+original-path SHA256s; net **86,614,259 bytes** saved. Original
+source/COFF/PDB/JSON/current giant or exact units were not removed.
+Restore only a needed original via `scripts/repo-python
+scripts/archive-frozen-giant-traces.py --restore ORIGINAL_PATH` and
+check the manifest with `--verify`. These tar+index files are
+**local ignored evidence**, not present in a fresh Git clone.
+See [STORAGE_HYGIENE.md](STORAGE_HYGIENE.md).
+
 Preserve the pinned Japanese original PE, `.analysis/vc71-wine/` VC7.1
 prefix, `ghidra-project/`, `.tools/`, all accepted source/config/manifest
 and `build/matching/` objects, all original native/COFF/whole-function
