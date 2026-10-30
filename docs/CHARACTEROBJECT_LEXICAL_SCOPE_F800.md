@@ -1,4 +1,4 @@
-# F798 — Complete CharacterObject case-scope source cannot repair the native register phase
+# F800 — Complete CharacterObject case-scope source cannot repair the native register phase
 
 The real user-supplied Japanese TH075 1.11 PE contains an authored
 whole character state advance at `004EBDA0`, with **33,293 native
@@ -8,7 +8,7 @@ after-RET switch DATA**. F596's current normal VC7.1 source has
 `0x38D/0x38E/0x3E3`; all source instruction positions, mnemonics
 and widths otherwise reproduce the original.
 
-## F798 independently tests switch-case lexical scope
+## F800 independently tests switch-case lexical scope
 
 Eleven *complete original-shaped* VC7.1 source builds change only
 real C++ lexical braces surrounding the 0x38B, 0x38C, 0x38D, 0x38E,
@@ -37,11 +37,11 @@ beginning at original PE `004F344C`. Complete original
 Reproduce without replaying the accepted corpus:
 
 ```bash
-scripts/repo-python scripts/verify-characterobject-scope-phase-f798.py
+scripts/repo-python scripts/verify-characterobject-scope-phase-f800.py
 ```
 
 Sources, compiler output and a physical comparison summary are
-regenerated under `.analysis/f798-character-scope/`. This
+regenerated under `.analysis/f800-character-scope/`. This
 eliminates lexical-brace-only source hypotheses for the currently
 unmatched register phases, **not** genuine semantic lifetime
 differences from earlier game logic. No whole original callable

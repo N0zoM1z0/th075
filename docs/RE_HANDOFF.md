@@ -374,7 +374,7 @@ NONEXACT; zero new whole CODE credit.
 [Complete native F794 evidence](CHARACTEROBJECT_COLOR_REGISTER_PHASE_F794.md);
 `scripts/repo-python scripts/verify-characterobject-color-source-f794.py`.
 
-**F798 33KB source lexical-scope hypothesis rejected by full PE:**
+**F800 33KB source lexical-scope hypothesis rejected by full PE:**
 eleven independent whole `004EBDA0` VC7.1 compiles test actual
 0x38B/0x38C/0x38D/0x38E/0x3E3/0x3E4 C++ lexical
 braces, individually and combined. **All eleven complete
@@ -383,8 +383,8 @@ with all **682 physical original PE/COFF fields**
 independently verified. All retain the same **137 true
 GPR/operand wrong bytes** in the final 33,293-B giant.
 Simple case braces cannot fix register phases.
-[F798 complete original-target source result](CHARACTEROBJECT_LEXICAL_SCOPE_F798.md);
-`scripts/repo-python scripts/verify-characterobject-scope-phase-f798.py`.
+[F800 complete original-target source result](CHARACTEROBJECT_LEXICAL_SCOPE_F800.md);
+`scripts/repo-python scripts/verify-characterobject-scope-phase-f800.py`.
 
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
@@ -543,6 +543,20 @@ not normalized away. Ten newly reproduced *whole* targeted
 C++ controls are nonexact; no authored credit.
 [F791 original native teardown owner controls](ARCHIVE_SCENE_RESOURCE_OWNER_LIFETIMES_F791.md);
 `scripts/repo-python scripts/verify-resource-teardown-ownership-f791.py`.
+
+**F799 new *complete* source matching but origin-unknown leaf CODE:**
+original `004135F0` writes exactly three real observed values at
+`this+0x24/+0x1C/+0x20`, **40 original CODE B/16 x86**;
+original `00454F70` follows a borrowed pointer `this+0x74` to
+mask `+0x3C`, returning boolean bit `0x20` by native
+`XOR/CMP/SBB/NEG`, **31 CODE B/15 x86**. Natural
+VC7.1 C++ precisely reproduces **71/71 complete unrelocated native
+CODE bytes**, zero original relocations. A semantically
+equivalent `!=0` getter emits 29B/14 x86 and is rejected.
+Both original `function-origins.csv` entries remain
+**unknown/review**, so no formal authored exact credit.
+[F799 original whole-leaf source proof](UNKNOWN_OWNER_FIELD_LEAVES_F799.md);
+`scripts/repo-python scripts/verify-unknown-owner-field-leaves-f799.py`.
 
 ## 4. Attribution, validation, research and storage
 

@@ -198,7 +198,18 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   matched after all 14 original PE refs checked.
   None accepted exact.
   [F798 full native teardown evidence](ARCHIVE_NATIVE_LOOP_TEARDOWN_F798.md).
-- **F798 33KB original giant lexical-scope negative proof:**
+- **F799 two complete PE source-matched origin-unknown leaves:**
+  original `004135F0` writes three borrowed owner fields
+  in **40/40 complete native bytes/16 x86**; original
+  `00454F70` checks a `+0x74 -> +0x3C` bit `0x20`
+  with actual greater-than-zero boolean grammar,
+  **31/31 native bytes/15 x86**. No original COFF
+  fields exist in either body. A semantically equivalent
+  `!=0` changes the second to 29 B and is not original.
+  Both original provenance rows remain unknown/review,
+  **71 source-matched bytes, zero accepted authored credit**.
+  [F799 physical original source](UNKNOWN_OWNER_FIELD_LEAVES_F799.md).
+- **F800 33KB original giant lexical-scope negative proof:**
   eleven complete native-shaped VC7.1 parents, varying
   actual 0x38B/38C/38D/38E/3E3/3E4 switch-case
   braces only, compile to identical 33,731B CODE+DATA
@@ -206,7 +217,7 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   relocations. The 137 real nonfield byte differences
   remain; lexical braces alone are not the missing
   register phase.
-  [F798 full machine-code/source proof](CHARACTEROBJECT_LEXICAL_SCOPE_F798.md).
+  [F800 full machine-code/source proof](CHARACTEROBJECT_LEXICAL_SCOPE_F800.md).
 - **F795 original WinMain physical runtime layout:** true PE
   EBP stack locations for Graphics/created HWND/current
   Scene/module path form a consecutive sequence at

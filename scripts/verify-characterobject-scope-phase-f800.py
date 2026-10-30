@@ -1,4 +1,4 @@
-"""F798: prove lexical switch-case braces cannot fix 33KB boss GPR phase.
+"""F800: prove lexical switch-case braces cannot fix 33KB boss GPR phase.
 
 Eleven full-parent MSVC7.1 builds retain identical *complete*
 33731 CODE+DATA compiler output and typed native target relocations,
@@ -8,7 +8,7 @@ No giant CODE credited, no all-unit cold replay.
 from pathlib import Path
 import os,sys,subprocess,json,importlib.util
 from capstone import Cs,CS_ARCH_X86,CS_MODE_32
-R=Path(__file__).resolve().parents[1];P=R/'.analysis/f798-character-scope';P.mkdir(parents=True,exist_ok=True)
+R=Path(__file__).resolve().parents[1];P=R/'.analysis/f800-character-scope';P.mkdir(parents=True,exist_ok=True)
 base=(R/'probes/CharacterObjectActionsF572.cpp').read_text()
 targets=(0x38B,0x38C,0x38D,0x38E,0x3E3,0x3E4)
 def unbrace(s,action):
@@ -31,9 +31,9 @@ cases={
  'scope-38B-38C-38D-38E':(0x38B,0x38C,0x38D,0x38E),
  'scope-3E3-3E4':(0x3E3,0x3E4)
 }
-sp=importlib.util.spec_from_file_location('f798_rd',R/'scripts/compare-coff-function.py')
+sp=importlib.util.spec_from_file_location('f800_rd',R/'scripts/compare-coff-function.py')
 rd=importlib.util.module_from_spec(sp);sys.modules[sp.name]=rd;sp.loader.exec_module(rd)
-sp=importlib.util.spec_from_file_location('f798_f593',R/'scripts/verify-characterobject-whole-geometry-f593.py')
+sp=importlib.util.spec_from_file_location('f800_f593',R/'scripts/verify-characterobject-whole-geometry-f593.py')
 f593=importlib.util.module_from_spec(sp);sys.modules[sp.name]=f593;sp.loader.exec_module(f593)
 boss=next(b for b in json.loads((R/'config/fighter-boss-dispatch-fingerprints.json').read_text())['bosses'] if b['address']==0x004EBDA0)
 tab=boss['tables'][0]
@@ -102,4 +102,4 @@ assert len(rows)==11
  'new_accepted_game_CODE_credit':0,
  'all_unit_cold_replay_run':False,
 },indent=2)+'\n')
-print('F798 eleven 33KB whole-parent VC7.1 compilations are byte-identical across full CODE and 438B afterRET DATA; all 682 genuine PE relocation fields verified. Native 137 GPR bytes remain nonexact; zero credit.',flush=True)
+print('F800 eleven 33KB whole-parent VC7.1 compilations are byte-identical across full CODE and 438B afterRET DATA; all 682 genuine PE relocation fields verified. Native 137 GPR bytes remain nonexact; zero credit.',flush=True)
