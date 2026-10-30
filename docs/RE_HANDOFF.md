@@ -1,6 +1,6 @@
 # TH075 — ACTIVE reconstruction agent handoff
 
-**Verified snapshot: 2026-10-31, current F780 exact ledger; F844 original falling/grounded states and F838 Scene.**
+**Verified snapshot: 2026-10-31, current F780 exact ledger; F845 original grounded states and F838 Scene.**
 This is the **short working queue**, not the chronological research log.
 Original Japanese PE and the live configuration **always outrank historical
 prose, old case-level exact labels, class names or inferred layouts**.
@@ -1255,6 +1255,29 @@ not accepted whole CODE.
 [F844 physical selected source](SCRIPTED_FIGHTER_GROUNDED_130_F844.md);
 scripts/repo-python scripts/verify-scripted-fighter-grounded-130-f844.py.
 Complete 46,755-B fighter remains NONEXACT.
+
+**F845 true original 0x131 grounded state in the growing fighter:**
+the native physical handler 005267DF..005268A8
+has **202 complete original interior B/58 x86/5
+typed real PE fields**, and genuine stage3
+animation **0x1D** (unlike prior 0x130 0x1C).
+The next distinct physical action is 0x133
+at 005268A9; default 0x132 maps the
+shared getter and cannot bound 0x131.
+One full selected VC7.1 C++ parent
+**22,476 callable B/6,135 x86**, up
+from F844 22,289/6,079. All 0x131
+native register/x87 and PE bytes match
+except two real parent-epilogue JMP
+operand pairs +84/+85,+198/+199.
+All prior 0x130, four 12C-12F and
+eleven C8-D2 original PE cases and all
+five 901B native jump tables checked.
+Common default 46B has four honest
+GPR byte negatives in the new context.
+[F845 selected original PE proof](SCRIPTED_FIGHTER_GROUNDED_131_F845.md);
+scripts/repo-python scripts/verify-scripted-fighter-grounded-131-f845.py.
+Whole 46,755B native original still NONEXACT.
 
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`

@@ -232,6 +232,21 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   GPR differences, whole native
   giant NONEXACT.
   [F844 selected original physical PE](SCRIPTED_FIGHTER_GROUNDED_130_F844.md).
+- **F845 original fighter 0x131 grounded recovery:**
+  independently bounded real 202B/
+  58-x86/5 genuine original PE fields
+  at 005267DF..005268A8. Correct
+  actor stage3 animation0x1D,
+  unlike sibling130 animation0x1C.
+  A new **22,476B/6,135-x86**
+  selected whole parent matches all
+  source native machine bytes except
+  two true giant-epilogue long-JMP
+  pairs. Rechecks prior 130,
+  12C-12F, eleven C8-D2 native
+  cases and 5 packed 901B tables.
+  Entire original remains nonexact.
+  [F845 actor native proof](SCRIPTED_FIGHTER_GROUNDED_131_F845.md).
 - **F844 original actor 0x130 grounded recovery:**
   selected native 202B/58-x86/5
   original physical PE fields in
