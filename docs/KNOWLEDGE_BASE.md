@@ -186,6 +186,17 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   are documented in [storage hygiene](STORAGE_HYGIENE.md); original
   sources, PE, Ghidra, Wine and accepted objects were preserved.
 
+- **F793 original fighter 0x58 predecessor register-phase audit:**
+  ten whole 58KB VC7.1 original-shaped parent compiles
+  prove eight meaningful native-equivalent source
+  variants of the preceding 469B 0x58 do not alter
+  the adjacent 356B 0x59's 19 real GPR operand
+  errors. Unsigned-loop branch and reversed x87
+  operand order introduce genuinely wrong bytes,
+  also without correcting 0x59. Physical original
+  17/16 typed references, 46B shared getter and
+  943B postRET original DATA checked. No exact
+  giant accepted. [F793 original native PE/source proof](FIGHTER_BURST_PREDECESSOR_PHASE_F793.md).
 - **F792 whole original fighter action-0x59 owner-phase test:**
   eight newly compiled 58KB parents recheck original 356B/95-x86
   native 0x59 plus 16 genuine PE/COFF relocations, original

@@ -1,6 +1,6 @@
 # TH075 — ACTIVE reconstruction agent handoff
 
-**Verified snapshot: 2026-10-30, current F780 exact ledger; F792 giant source controls.**
+**Verified snapshot: 2026-10-30, current F780 exact ledger; F793 giant source controls.**
 This is the **short working queue**, not the chronological research log.
 Original Japanese PE and the live configuration **always outrank historical
 prose, old case-level exact labels, class names or inferred layouts**.
@@ -314,6 +314,23 @@ DATA and original shared getter are rechecked. No split-case
 or giant whole-function CODE credited.
 [F792 full native register phase experiment](FIGHTER_BOUNCE_OWNER_PHASE_F792.md);
 `scripts/repo-python scripts/verify-fighter-bounce-owner-phase-f792.py`.
+
+**F793 genuine predecessor-to-bounce native GPR phase test:**
+ten entire 58KB parents changed real `0x58` game
+ten-projectile loop signedness, increment, threshold
+comparison, native position copy/float additions and
+two-stage guard without fake locals. Eight source
+variants retain exact **469B/135-x86 original 0x58
+nonfield bytes** and still reproduce **19 wrong
+0x59 GPR bytes**; unsigned loop changes one genuine
+branch Jcc, swapping x87 add operands changes two
+real 0x58 bytes, but **neither corrects 0x59**.
+Original 17/16 0x58/0x59 physical call/global
+references, entire 46-B shared getter and 943-B
+afterRET DATA rechecked within the current parent.
+Full 58,294-B giant remains nonexact.
+[F793 predecessor native source experiment](FIGHTER_BURST_PREDECESSOR_PHASE_F793.md);
+`scripts/repo-python scripts/verify-fighter-burst-predecessor-f793.py`.
 
 **Next meaningful giant tasks:** resolve the real native `059` **19**
 normalized nonfield GPR discrepancies and `060/061` **98/101**;
