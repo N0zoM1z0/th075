@@ -17,10 +17,12 @@ the historical R268 checkpoint and every later verified adoption. The 95
 unresolved origins remain unknown; they do not block reconstruction of
 independently reviewed authored functions. Include all pending bytes in the conservative goal denominator.
 For the still-unmatched authored backlog, count provenance via
-`config/function-origins.csv` (currently 27 = 22 giant + 5
-small/medium), NOT only the 25 rows with `functions.csv.owner=authored`.
-Leaving the remaining 2 `functions.csv` owner cells blank until source
-acceptance is intentional; it does not make their origin unknown.
+`config/function-origins.csv` (currently 25 = 22 giant + 3
+small/medium), not by assuming every unknown candidate is authored.
+The 11 independently authored, formerly owner-blank copy/audio/sprite
+candidates have now all been accepted in F755–F780. Remaining origin-
+unknown candidates require independent attribution; an exact source-
+generated machine function does not itself prove authored ownership.
 Start with the live cohort in `docs/RE_HANDOFF.md`; historical experiments
 must not override current evidence. **Only cold-replay new/affected units**,
 never all units. Keep compiler builds serial. Remove only obsolete reproducible

@@ -1,6 +1,6 @@
 # TH075 — ACTIVE reconstruction agent handoff
 
-**Verified snapshot: 2026-10-30, current F780 exact ledger; F790 giant source controls.**
+**Verified snapshot: 2026-10-30, current F780 exact ledger; F792 giant source controls.**
 This is the **short working queue**, not the chronological research log.
 Original Japanese PE and the live configuration **always outrank historical
 prose, old case-level exact labels, class names or inferred layouts**.
@@ -64,12 +64,13 @@ earn credit for the still-NONEXACT enclosing whole callable function.
 ## 2. Large/giant whole functions — invest real effort here
 
 **`0x00543210` / 58,294 original CODE B, plus 943 after-RET switch DATA B.**
-The latest whole-parent source is reproducible from tracked C++ using
-`[F752 native borrowed-position checker](FIGHTER_BORROWED_POSITION_F752.md)`:
-
-```bash
-scripts/repo-python scripts/verify-fighter-borrowed-position-f752.py
-```
+The **current** whole-parent source includes F781's native shared
+getter and is reproduced by
+`scripts/repo-python scripts/verify-fighter-shared-getter-f781.py`
+([F781 original physical proof](FIGHTER_EARLY_SHARED_GETTER_F781.md)).
+F752's borrowed-position checker is *historical evidence only*
+([F752 original source comparison](FIGHTER_BORROWED_POSITION_F752.md))
+and does not generate this latest 58,293-B parent.
 
 Current true native source positives in ONE complete VC7.1 parent:
 original saved `this` **`EBP−0x44`** matches naturally from real
@@ -297,6 +298,22 @@ all 943 native afterRET switch DATA in complete parents.
 **Zero whole original fighter CODE credited.**
 [Original native/VC7.1 evidence](FIGHTER_MODE63_CONTROLFLOW_F790.md);
 `scripts/repo-python scripts/verify-fighter-mode63-controlflow-f790.py`.
+
+**F792 renewed actual 0x59 356-B source-owner audit:** eight *whole*
+58KB fighter recompilations tested a genuine borrowed typed
+actor stage `+0x62`, typed velocity/drag `+0x54/+0x5C`,
+stage and native x87 comparison order, and real position
+assignment/short comparisons. In the fresh full parent,
+all native **95/95 0x59 x86** and **16/16 physically
+verified PE/COFF target fields** remain correctly positioned,
+but **19 genuine GPR operand bytes** are still wrong; reversing
+the actual position-add order regresses to **21**. Earlier
+case 0x58 remains strictly native, and 0x60/0x61
+still show 98/101 wrong GPR operand bytes. 943-B after-RET
+DATA and original shared getter are rechecked. No split-case
+or giant whole-function CODE credited.
+[F792 full native register phase experiment](FIGHTER_BOUNCE_OWNER_PHASE_F792.md);
+`scripts/repo-python scripts/verify-fighter-bounce-owner-phase-f792.py`.
 
 **Next meaningful giant tasks:** resolve the real native `059` **19**
 normalized nonfield GPR discrepancies and `060/061` **98/101**;

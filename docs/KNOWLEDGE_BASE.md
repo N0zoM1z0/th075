@@ -186,6 +186,16 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   are documented in [storage hygiene](STORAGE_HYGIENE.md); original
   sources, PE, Ghidra, Wine and accepted objects were preserved.
 
+- **F792 whole original fighter action-0x59 owner-phase test:**
+  eight newly compiled 58KB parents recheck original 356B/95-x86
+  native 0x59 plus 16 genuine PE/COFF relocations, original
+  0x58/0x60/0x61 and all 943B after-RET DATA.
+  Typed actor stage/velocity/drag and meaningful comparison forms
+  retain **19** wrong original GPR-operand bytes; reversing
+  position-sum order regresses to **21**, with no formal giant
+  callable CODE credit. The *latest* parent uses F781/F792,
+  not the historical F752 whole code.
+  [F792 original physical comparison](FIGHTER_BOUNCE_OWNER_PHASE_F792.md).
 - **F791 Archive and Scene resource owner lifetime checks:**
   complete original authored 171B Archive destructor and
   248B Scene destructor were separately decoded against
