@@ -34,7 +34,13 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   Use `scripts/repo-python scripts/report-reconstruction-status.py --summary`
   and the canonical native/origin manifests; do not quote this snapshot
   as timeless status after a later adoption.
-- **Most recent giant source context is F767**: original fighter
+- **Most recent giant source context is F768**: native fighter
+  2F8 928 CODE B/252 original x86/23 real PE fields now have zero
+  wrong opcode/widths, via observed actor `+0x44` float member
+  correctly emitting native signed-integer-first `FILD;FSUBR`.
+  Real nonfield operand mismatches improve 182→166; giant remains
+  NONEXACT. [F768 original PE proof](FIGHTER_STORM_VOLLEY_TYPED_F768.md).
+  Historical **F767** source context: original fighter
   internal 2F9 1,367-B/381-x86/34 original PE-field game source now
   has zero mnemonic/width differences after correcting true opponent
   and actor X/Y borrowed float evaluation. Physical nonfield operand
@@ -13936,3 +13942,22 @@ emits 58,261 B. Original after-RET 943B DATA remains separate and
 reverified. No split-case CODE credit, no all-unit cold replay: formal
 whole-authored CODE remains 973 exact functions /865,627 original bytes.
 [Full F767 actual original whole-parent evidence](FIGHTER_STORM_ANGLE_TYPED_F767.md).
+
+
+## F768: original 2F8 integer-FPU actor X math restored in entire fighter
+
+In the single affected original-shaped VC7.1 whole 58KB parent, native
+original 2F8 (`005500D5..00550475`) **928 CODE B /252 x86 /23
+genuine zero-addend PE/COFF fields** has all original mnemonics and
+widths. Authentic `actorX - float(signedFacing*3)` uses native
+`MOVSX; IMUL; MOV [EBP−0x1C8]; FILD; FSUBR [actor+0x44]`, not
+the previously guessed `FLD [actorX]; FISUB [scratch]`. Eleven real
+whole-parent source tests show borrowed actual actor +0x44 float
+field/lvalue fixes five real original x86 instruction order errors and
+reduces nonfield wrong bytes 182→166. The remaining **166** real
+register/memory operand bytes are not accepted exact; same compiled
+parent retains F767 2F9 249 wrong, F764 2FA 156 wrong, strict earlier
+real C8–CE/1F6–1F8/2DB source, and whole 943-B original afterRET
+DATA. Whole 00543210 source remains 58,261/58,294 native CODE B
+NONEXACT, official 973 game-function exact ledger unchanged.
+[Complete F768 original source and target verifier](FIGHTER_STORM_VOLLEY_TYPED_F768.md).

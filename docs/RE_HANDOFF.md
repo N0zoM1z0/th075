@@ -174,7 +174,7 @@ DIR32/319 sparse bytes. Whole original `00543210` now emits
 zero new accepted CODE. [F764 original whole-case proof](FIGHTER_APPROACH_VOLLEY_NATIVE_F764.md);
 `scripts/repo-python scripts/verify-fighter-approach-volley-native-f764.py`.
 
-**F767 current 2F9 physical source advance:** a real source correction of
+**F767 historical 2F9 physical source advance (before F768):** a real source correction of
 borrowed opponent/actor X `+0x44` float members and read-only opponent Y
 `+0x48`/actor Y lvalues restores all 381 original 2F9 mnemonics and
 instruction widths within its entire 1,367 original CODE B and 34
@@ -186,6 +186,20 @@ whole 58,294-B fighter still compiles to 58,261 B, 2FA still has 156
 real wrong operand bytes; true after-RET 943-B separate DATA reverified.
 [F767 original PE and source proof](FIGHTER_STORM_ANGLE_TYPED_F767.md);
 `scripts/repo-python scripts/verify-fighter-angle-storm-typed-f767.py`.
+
+**F768 newest 2F8 integer-FPU source recovery:** actual C++ actor
+`this+0x44` borrowed float member changes the real native actor-X
+minus signed-direction×3 operation from nonnative `FLD/FISUB` to
+original `MOVSX/IMUL/MOV/FILD/FSUBR`. In one newly compiled full
+58KB parent, all **928 CODE B/252 native x86/23 PE fields** of 2F8
+have exact original opcode and width positions; real nonfield
+mismatching bytes fall **182→166**, with all five wrong x86 opcodes
+eliminated. Those **166 operand bytes remain NONEXACT**. Same parent
+rechecks F767 2F9 (249 wrong bytes), F764 2FA (156 wrong bytes),
+and separate 943-B original afterRET DATA. The whole native function
+still compiles 58,261/58,294 CODE B and is NOT exact.
+[F768 full PE/COFF source proof](FIGHTER_STORM_VOLLEY_TYPED_F768.md);
+`scripts/repo-python scripts/verify-fighter-storm-volley-typed-f768.py`.
 
 **Next meaningful giant tasks:** resolve the real native `059` **19**
 normalized nonfield GPR discrepancies and `060/061` **98/101**;

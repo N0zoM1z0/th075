@@ -109,6 +109,12 @@ recovers **all 381 original x86 mnemonic/width positions** across
 nonfield bytes 265→249 using real borrowed actor/opponent X/Y source.
 Whole boss still NONEXACT; no internal-case CODE credited.
 
+Further [F768 full original fighter 2F8 research](docs/FIGHTER_STORM_VOLLEY_TYPED_F768.md)
+restores all native **928-B/252-x86/23-PE-field opcode/width** positions
+through the real integer-first `FILD; FSUBR actorX` source.
+Wrong original nonfield operands fall 182→166, still NONEXACT.
+The whole giant remains incomplete and no split-case bytes are credited.
+
 The **9 unmatched small/medium authored originals** include SpriteDrawing
 (4), TextureManager (2), and WinMain/Scene/Archive (3).
 They are fully enumerated in the [active handoff](docs/RE_HANDOFF.md).
