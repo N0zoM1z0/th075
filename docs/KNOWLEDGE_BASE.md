@@ -13074,3 +13074,37 @@ verifier `scripts/verify-scene-borrowed-resource-f730.py`
 defaults to one source, `--all` only ten affected TUs.
 [Original whole PE/EH and actual source-negative matrix](SCENE_BORROWED_RESOURCE_VIEW_NEGATIVES_F730.md).
 No native byte-exact authored CODE acceptance, no full cold replay.
+
+
+## F731: full native 1F8 aim-return C++ restores 200/201 original compiler register phase
+
+F731 recovered original entire native `00543210` case `1F8`
+`0054B43A..0054B9F9` **1,471 CODE B/422 x86/45 original physical
+PE/COFF typed fields** as meaningful complete natural VC7.1 C++ in
+one original-shaped 58KB parent (source **1,455 B/424 x86/45
+original true field owners**). Real stage14 aiming uses two
+`00483300` angle calls, original signed-short `NEG` before `FILD`,
+actual integer `FIMUL`, native `0040FB70`, and original `0040FBB0`
+with **80.0f /PUSH 0x42A00000** (older 85.0f hypothesis WRONG).
+Source raw float `*(&POS)` for second angle eliminates extra
+FLD/FSTP argument and real target-Y lvalue restores first angle
+source MOV/FLD owner grammar. **21 full giant C++ expression/ABI
+trials**; two native memory `FCOMP` at x86 127/139 still compile
+extra `FLD/FCOMPP`, and first angle has remaining small read-order
+swap; true original EBP x87 scratch `−0x100..−0x10C` source
+`−0x74..−0x80`. Entire giant NONEXACT, zero whole CODE credit.
+
+**Major cross-case gain:** adding genuine native 1F8 naturally
+restores actual original **0x200/0x201 GPR/CFG phases 67/85→0/0**
+in the newly built full parent, while original 2D0/2D1, 2DD/2DE
+and 2EF also have zero nonfield normalized GPR errors and unchanged
+native full instruction mnemonic/width geometry. This is **seven
+independently rechecked original native internal cases**, not proof
+of 27 inherited strict or byte-identical full 58KB game CODE.
+All 45 new physical native PE/COFF fields, previous original
+1F4–1F7 bounded source negatives and whole 943B afterRET DATA
+(156 real native/source DIR32 targets, 319/319 other original bytes)
+rechecked together. [Complete original PE/whole VC7.1 source and
+GPR-phase proof](FIGHTER_AIM_RETURN_F731.md), portable
+`scripts/repo-python scripts/verify-fighter-aim-return-f731.py`.
+No full cold 943-unit replay, 943/862726 reviewed exact unchanged.

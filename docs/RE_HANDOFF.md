@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F729 original return-bounce source and F730 complete Scene borrowed-resource controls.**
+**Maintained 2026-10-30, after F731 complete 1F8 aiming return and original 200/201 GPR phase recovery.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -9,6 +9,32 @@ with its Markdown links adjusted for its new directory. The older
 [chronological knowledge base](KNOWLEDGE_BASE.md) are evidence, not a
 reason to undo later exact adoptions. Original pinned native PE and
 **live manifests outrank every historical sentence**.
+
+**F731 latest major genuine giant source and compiler GPR phase GAIN:**
+Original `00543210` native full internal `1F8` `0054B43A..0054B9F9`
+**1,471 CODE B/422 x86/45 real physically typed PE/COFF fields**
+now has meaningful normal VC7.1 C++ source: real stage14 geometry,
+TWO native `00483300` angle calls, original integer `NEG/FILD` and
+`FIMUL`, real 0x338 shot, actual `0040FB70` and motion float
+**80.0f = 0x42A00000** (prior 85.0f source WRONG). 21 full 58KB
+C++ expression trials recovered real raw float argument load and
+original target-Y MOV/FLD owner order. Full source emits **1,455
+B/424 x86**, 45/45 PE/COFF target/symbol/zero addend/owner
+fields, but native memory `FCOMP` x86 127/139 still emits two
+extra `FLD/FCOMPP`, first-angle read order and EBP scratch
+`−0x100..−0x10C` vs source `−0x74..−0x80` remain NONEXACT.
+**MAJOR natural compiler phase recovery:** inserting original game
+1F8 source corrects previously real GPR regressions in native
+`0x200` **67→0** and `0x201` **85→0**. Original bounded 2D0/2D1,
+2DD/2DE and 2EF also have **0 actual GPR errors** in the same
+new full parent. Seven sample strict current-context native
+interiors are physically rechecked; DO NOT reuse an old 27-strict
+count in this new full parent. All earlier full 1F4–1F7 cases and
+**entire 943B original afterRET** (156 authentic original/source
+DIR32 label entries, 319/319 sparse bytes) compared in this
+same fresh VC7.1 source. Zero accepted whole-game CODE credit.
+[Full native x87, angle and GPR phase evidence](FIGHTER_AIM_RETURN_F731.md);
+`scripts/repo-python scripts/verify-fighter-aim-return-f731.py`.
 
 **F730 newest complete authored small-function test (NONEXACT):**
 Original Scene virtual EH destructor `0043B0B0` owns **248 CODE B/

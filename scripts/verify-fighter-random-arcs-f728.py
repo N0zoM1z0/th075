@@ -221,7 +221,8 @@ def complete_native_switch_DATA(reader,pe,real,boss,code,ins,refs):
             'original_data_sha256':hashlib.sha256(n).hexdigest()}
 
 
-def verify_prior_context_regression(reader,pe,real,f676,f598,by,ins,refs,boss):
+def verify_prior_context_regression(reader,pe,real,f676,f598,by,ins,refs,boss,*,
+                                    source_expected_gpr=None):
     # The literal source switch tables provide an independently physical
     # mapping from original instruction addresses to new source labels.
     ret=ins[-1].address+ins[-1].size
@@ -249,7 +250,8 @@ def verify_prior_context_regression(reader,pe,real,f676,f598,by,ins,refs,boss):
         wrong=[i for i,(a,b) in enumerate(zip(f598.normalized(native),
                                               f598.normalized(compiled)))
                if a!=b and i not in absolute]
-        expected=PREVIOUS_ACTION_GPR_REGRESSION.get(action,0)
+        expected=(source_expected_gpr if source_expected_gpr is not None
+                  else PREVIOUS_ACTION_GPR_REGRESSION).get(action,0)
         need(len(wrong)==expected
              and len(orig_fields)==len(emitted_fields)
              and all(a.mnemonic==b.mnemonic and a.size==b.size
@@ -262,10 +264,16 @@ def verify_prior_context_regression(reader,pe,real,f676,f598,by,ins,refs,boss):
             'original_actual_typed_PE_COFF_fields':len(orig_fields),
             'current_source_nonfield_GPR_CFG_differences':len(wrong),
             'current_context_strict_native_interior':len(wrong)==0})
-    need(out[0]['current_source_nonfield_GPR_CFG_differences']>0
-         and out[1]['current_source_nonfield_GPR_CFG_differences']>0
-         and out[2]['current_context_strict_native_interior'],
-         'real upstream source 200/201 regressions cannot be hidden as old strict')
+    if source_expected_gpr is None:
+        need(out[0]['current_source_nonfield_GPR_CFG_differences']>0
+             and out[1]['current_source_nonfield_GPR_CFG_differences']>0
+             and out[2]['current_context_strict_native_interior'],
+             'real upstream source 200/201 regressions cannot be hidden as old strict')
+    else:
+        need(all(x['current_source_nonfield_GPR_CFG_differences']
+                 ==source_expected_gpr.get(int(x['native_case'],16),0)
+                 for x in out),
+             'new actual original source case GPR phases must match this compiler parent')
     return out
 
 

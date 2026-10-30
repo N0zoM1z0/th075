@@ -84,7 +84,7 @@ def source_with_return_boundaries(src):
     return src
 
 
-def real_native_cases(reader,pe,real,f676,f598,by,ins,refs):
+def real_native_cases(reader,pe,real,f676,f598,by,ins,refs,*,following_native_1f8=False):
     rows=[]
     for action,(lo,hi,bytes_native,x86_native,count,source_ordinal) in NATIVE.items():
         next_action=0x1F7 if action==0x1F6 else 0x1F8
@@ -156,10 +156,16 @@ def real_native_cases(reader,pe,real,f676,f598,by,ins,refs):
              'original_real_scratch_EBP':native_slot,
              'current_source_real_scratch_EBP':source_slot,
              'original_case_byte_exact':False})
-    need(ins[5704].mnemonic==ins[6054].mnemonic=='mov'
-         and ins[6404].mnemonic=='mov'
-         and ins[6404].op_str.endswith(', 0x1f9'),
-         'native original 1F4->1F5->1F6->1F7->1F8 source order/boundary changed')
+    need(ins[5704].mnemonic==ins[6054].mnemonic==ins[6404].mnemonic=='mov',
+         'native original 1F4->1F5->1F6->1F7->1F8 source starts changed')
+    if following_native_1f8:
+        need('[ebp - 0x28]' in ins[6404].op_str
+             and ins[6405].mnemonic=='movsx'
+             and '+ 0x62]' in ins[6405].op_str,
+             'native 1F7 must directly lead into independently verified 1F8 source')
+    else:
+        need(ins[6404].op_str.endswith(', 0x1f9'),
+             'native 1F7 must lead to old 1F8 source placeholder')
     return rows
 
 
