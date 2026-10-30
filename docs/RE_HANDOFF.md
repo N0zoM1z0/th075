@@ -373,6 +373,21 @@ do not relist it as pending. Do not recredit its native STL/CRT/OS
 callee code. Similarly the previous F750 CharacterAux 101-B
 nested collection wrapper is already accepted exact.
 
+**F788 whole original 417B implicit composite copy constructor
+with genuine EH:** source probe `CompositeImplicitAssignmentF787.cpp`
+also reproduces independently reviewed unknown-origin
+`004591E0` **417/417 CODE B**, **128 original x86**,
+393/393 nonrelocation bytes and **all six** PE fields
+(including native `00656273` handler and two true
+`00459390` library-owned nested constructor calls).
+The actual first 16B header's **nontrivial destructor** creates
+native EH state 0 at source +38h; first nested construction
+sets byte-sized state 1 at +171h. It simultaneously preserves
+F787's entire 368-B assignment match. Both remain
+**provenance unknown**, no formal authored CODE credit.
+[Complete F788 native constructor/EH proof](COMPOSITE_IMPLICIT_CONSTRUCTOR_F788.md);
+`scripts/repo-python scripts/verify-composite-implicit-constructor-f788.py`.
+
 **F787 original unknown-origin composite assignment source recovery:**
 original `0045AAE0` /368 CODE B /118 native x86 has an entire
 VC7.1 compiler-implicit C++ assignment source with all 360/360

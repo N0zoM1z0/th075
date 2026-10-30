@@ -1,4 +1,5 @@
-// F787 research: complete natural VC7.1 implicit assignment source of
+// F787/F788 research: complete natural VC7.1 implicit assignment AND
+// implicitly generated copy-constructor source of
 // the original 0045AAE0. Origin is STILL UNKNOWN (do not credit authored
 // bytes); the 116B borrowed layout is physically constrained by the PE.
 #include <new>
@@ -16,6 +17,10 @@ public:
 // Two physical 16-byte POD blocks, not arbitrary padding.
 struct NativeCopyHeaderF787 {
     unsigned int dword00,dword04,dword08,dword0c;
+    // F788: nontrivial destructor of the actual 16B header yields
+    // the native EH-state 0 immediately after the grouped header
+    // copy and the native byte-sized EH-state 1 after nested owner 1.
+    ~NativeCopyHeaderF787();
 };
 struct NativeCopyTailF787 { unsigned int w0,w4,w8,wc; };
 // Remaining distinct short/int fields and two observed nested 16B owners.

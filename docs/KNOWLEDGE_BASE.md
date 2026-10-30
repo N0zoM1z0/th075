@@ -186,6 +186,15 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   are documented in [storage hygiene](STORAGE_HYGIENE.md); original
   sources, PE, Ghidra, Wine and accepted objects were preserved.
 
+- **F788 original unknown-origin copy construction:** natural
+  nontrivial 16B composite header destructor recovers the
+  missing physical EH state for `004591E0`, now
+  **417/417 CODE B, 128/128 native x86, 393/393 nonfield
+  bytes, all six real PE fields** (EH handler and two real
+  nested-copy calls). Together with F787, both related
+  source-shaped whole functions match their original bytes
+  while historical provenance remains unknown/uncredited.
+  [F788 EH/source proof](COMPOSITE_IMPLICIT_CONSTRUCTOR_F788.md).
 - **F787 original unknown-origin 368B assignment reconstruction:**
   a full genuinely implicit VC7.1 composite operator= matches
   `0045AAE0` (118/118 x86, 360/360 nonfield bytes, two
