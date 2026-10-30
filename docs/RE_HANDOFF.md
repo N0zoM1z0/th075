@@ -1961,6 +1961,30 @@ Whole 46,755B original giant
 still NONEXACT, zero accepted
 independent case CODE.
 
+**F869 native fighter 1F7 stage4–6 special transition and original sprite337:**
+selected game 00528166..00528298 has **307 complete
+native inner B/90 x86/11 physically typed PE fields**.
+Original stage>3 and stage<7 and unsigned
+byte+0x511==0x14 triggers action1F8, Reset
+and real 00455B30 effect then whole-giant
+early return; stage3 sprite337 and Prepare3
+are separate game logic. New full VC7.1
+source **28,756 callable CODE B/8,039 x86**
+(F868 28,464/7,951); every original
+opcode/width and 11 physical PE calls/globals
+align. BUT 50 genuine GPR operand bytes
+and four actual enclosing fighter JMP
+operand bytes +197/+198 and +303/+304
+remain NONEXACT. All 40 preceding whole
+native-backed cases, all five original 901B
+afterRET packed tables and native common
+getter four GPR negatives are rechecked
+in the same new parent.
+[F869 original action proof](SCRIPTED_FIGHTER_CONDITIONAL_1F7_F869.md);
+scripts/repo-python scripts/verify-scripted-fighter-conditional-1f7-f869.py.
+The original 46,755B giant remains NONEXACT;
+zero independent inner case exact CODE credit.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin

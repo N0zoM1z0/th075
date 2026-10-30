@@ -284,6 +284,26 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   slots remain wrong. No
   accepted whole CODE.
   [F864 physical proof](SCENE_THREE_REAL_NAMED_POINTERS_F864.md).
+- **F869 original 1F7 stage4–6 conditional action and sprite337:**
+  complete original 307B/90-x86/
+  11 native PE fields inside
+  one full **28,756B/8,039-x86**
+  fighter source. Original
+  stage>3/<7 and byte+511=20
+  transitions to action1F8
+  and effect455B30, while
+  stage3 sprite337 uses Prepare3.
+  All real native opcode/width/
+  PE target fields match, but
+  50 register bytes and two
+  complete giant return JMP
+  pairs remain different.
+  40 preceding original cases,
+  five packed 901B tables
+  and getter four true GPR
+  negatives rechecked. Still
+  nonexact whole callable CODE.
+  [F869 original PE proof](SCRIPTED_FIGHTER_CONDITIONAL_1F7_F869.md).
 - **F868 original 1F6 special U8 stage guard and native mixed-coordinate projectile:**
   actual 372B/111 x86/12
   physical PE fields in
