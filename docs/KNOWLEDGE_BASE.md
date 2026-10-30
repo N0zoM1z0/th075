@@ -214,6 +214,26 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   saved-this slot. Entire 248B remains
   nonexact, no credited original CODE.
   [F818 original PE typed-view result](SCENE_COMPLETE_BORROWED_OWNER_F818.md).
+- **F834 major 46KB giant native C8 case and five downstream GPR recoveries:**
+  actual original 657-B/190-x86/17-real-PE-field
+  C8 restored with natural ++signed-short native
+  MOV CX/ADD CX1; historical ordinary assignment
+  gave 656B and moved physical PE fields one byte.
+  New entire parent **19,281 CODE B/5,189 x86**
+  emits all real C8 native opcode, widths and
+  non-PE bytes except seven authentic enclosing
+  parent long-JMP operand pairs. The TRUE preceding
+  C8 source simultaneously removes all other
+  GPR/operand mismatches in C9, CF, D0, D1
+  and D2 (their only remaining non-PE negatives
+  are physical parent-epilogue jumps).
+  Full 46B shared native getter still 34/34
+  nonrelocated machine bytes plus 3 PE calls,
+  and **all five** separate original 901B packed
+  jump tables independently verified from new COFF.
+  Whole 46,755B game NONEXACT, zero callable exact
+  case or DATA adoption.
+  [F834 full PE proof](SCRIPTED_FIGHTER_FULL_C8_F834.md).
 - **F833 selected 0xC9 original 46KB storm case:**
   true native 279B/86-x86/11 typed
   original PE fields in one new

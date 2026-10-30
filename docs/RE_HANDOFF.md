@@ -996,6 +996,37 @@ do not copy C9's GPR phase as exact.
 scripts/repo-python scripts/verify-scripted-fighter-fourway-c9-f833.py.
 Original 46,755B giant still NONEXACT.
 
+**F834 major original 46KB fighter native C8 FULL 657B source and downstream recovery:**
+actual original 005254EA 0xC8 **657 complete interior
+B/190 x86/17 genuine typed PE fields**, source-grown
+normal VC7.1 entire fighter now **19,281 callable
+B/5,189 x86** versus F833 18,639/5,001.
+Full real storm/facing/projectile/short-counter gameplay
+is natural C++ with seven direct native parent exits.
+The actual prefix **++S16(0xF00)** recovers native
+MOV CX/ADD CX,1 (F834 alternative assignment/compound
+produce 656B wrong width and misplaced following PE
+fields). All 190 physical x86 mnemonics/widths/GPR
+and 17 source PE fields now match; **ONLY seven real
+enclosing parent JMP two-byte pairs** differ in C8.
+More importantly, restoring real preceding C8 NATURALLY
+fixes all prior GPR source negatives in five later
+complete native cases C9 (279B/86x86/11 refs),
+CF (114B/30/4), D0 (195B/60/6),
+D1 (199B/59/8), D2 (251B/74/10):
+all their original non-PE machine bytes now agree
+except TRUE encompassing final epilogue long-JMP
+operand pairs. Full F806 46B/16-x86 shared getter
+remains **34/34 original nonrelocation machine
+bytes plus three true PE REL32 calls**.
+**All FIVE genuine 901B afterRET packed jump
+tables were physically revalidated**, not merely
+their length. Entire 46,755B original STILL
+NONEXACT, zero formally accepted inner-case/suffix
+or DATA CODE.
+[F834 physical whole native recovery](SCRIPTED_FIGHTER_FULL_C8_F834.md);
+scripts/repo-python scripts/verify-scripted-fighter-fourway-c8-f834.py.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin
