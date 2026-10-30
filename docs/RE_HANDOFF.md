@@ -373,6 +373,17 @@ do not relist it as pending. Do not recredit its native STL/CRT/OS
 callee code. Similarly the previous F750 CharacterAux 101-B
 nested collection wrapper is already accepted exact.
 
+**F789 source-origin counterexample:** two separately explicit
+user-defined normal C++ copy methods also reproduce *exactly*
+the original 417B/128-x86 + 368B/118-x86 full machine code
+and **all 8 authentic PE/COFF fields**. F787/F788's
+compiler-implicit implementations independently reproduce the
+same whole source geometry. This **proves provenance ambiguity
+from byte evidence**; neither original candidate should be
+prematurely reclassified as authored or excluded.
+[Independent full explicit-source comparison](COMPOSITE_COPY_PROVENANCE_AMBIGUITY_F789.md);
+`scripts/repo-python scripts/verify-composite-source-ambiguity-f789.py`.
+
 **F788 whole original 417B implicit composite copy constructor
 with genuine EH:** source probe `CompositeImplicitAssignmentF787.cpp`
 also reproduces independently reviewed unknown-origin
