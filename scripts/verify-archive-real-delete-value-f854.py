@@ -123,5 +123,6 @@ assert sum(r.get('original_matching_nonfield')==108 for r in results)==4
  'new_accepted_original_callable_CODE_B':0,
  'mass_979_unit_cold_replay':False,
  'variants':results
-},indent=2)+'\\n')
+},indent=2)+'\n')
+assert json.loads((O/'verified-summary.json').read_text())['real_compiled_source_value_category_variants']==16, 'target receipt must be strict JSON'
 print('F854 real original Archive 171B: 16 complete pinned VC7.1 resource pointer, reference, value category expressions; four 171B/51x86 original-sized sources byte-identical and 14/14 physical original PE fields, STILL 108/115 nonrelocation bytes. All real named-value candidates 177/183/185B whole nonnative. Archive NONEXACT, zero accepted whole CODE.')
