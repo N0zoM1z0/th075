@@ -101,12 +101,13 @@ def native_order_source(src):
     return src
 
 
-def physical_fields(native_fields,generated,refs):
+def physical_fields(native_fields,generated,refs,source_symbols=None):
+    names=ORIGINAL_TARGET_SYMS if source_symbols is None else source_symbols
     fields=[r for r in refs if generated[0].address<=r['offset']<generated[-1].address+generated[-1].size]
     need(len(native_fields)==len(fields),'original PE/COFF native/source physical field count changed')
     for (ordinal,original_target,mnemonic),ref in zip(native_fields,fields):
-        need(original_target in ORIGINAL_TARGET_SYMS
-             and any(name in ref['symbol'] for name in ORIGINAL_TARGET_SYMS[original_target])
+        need(original_target in names
+             and any(name in ref['symbol'] for name in names[original_target])
              and ref['type']==('REL32' if mnemonic=='call' else 'DIR32')
              and ref['addend']==0 and ref['local_symbol_offset'] is None,
              f'original physical PE target {original_target:#x} native x86{ordinal}: wrong typed original source symbol')
@@ -118,7 +119,8 @@ def physical_fields(native_fields,generated,refs):
     return fields
 
 
-def verify_new_cases(reader,pe,real,f676,f598,boss,mapped,emitted,refs):
+def verify_new_cases(reader,pe,real,f676,f598,boss,mapped,emitted,refs,*,
+                     following_native_2c5=False):
     by={x['action']:int(x['handler'],16) for x in mapped}
     report=[]
     for action in (0x2C0,0x2C1):
@@ -177,10 +179,18 @@ def verify_new_cases(reader,pe,real,f676,f598,boss,mapped,emitted,refs):
         nx=131 if a in (0x2BF,0x2C4) else NATIVE_ACTIONS[a][3]
         need(emitted[CPP_START[a]+nx].address==emitted[CPP_START[next_a]].address,
              'original 2BF->2C0->2C1->2C4 source must remain physically contiguous in native order')
-    need(emitted[CPP_START[0x2C4]+131].mnemonic=='mov'
-         and emitted[CPP_START[0x2C4]+131].op_str.endswith(', 0x2c6')
-         and [x.mnemonic for x in emitted[7527:7530]]==['push','push','push'],
-         'original full 2C4 must lead to former 2C5 placeholder then true 2D0')
+    after=CPP_START[0x2C4]+131
+    if following_native_2c5:
+        need(emitted[after].mnemonic=='mov'
+             and emitted[after].op_str=='ecx, dword ptr [ebp - 0x28]'
+             and emitted[after+1].op_str=='edx, word ptr [ecx + 0x62]'
+             and [x.mnemonic for x in emitted[after+239:after+242]]==['push']*3,
+             'source original 2C4 must lead into whole authentic 2C5, then 2D0 storm')
+    else:
+        need(emitted[after].mnemonic=='mov'
+             and emitted[after].op_str.endswith(', 0x2c6')
+             and [x.mnemonic for x in emitted[7527:7530]]==['push','push','push'],
+             'original full 2C4 must lead to former 2C5 placeholder then true 2D0')
     return report
 
 
@@ -295,7 +305,7 @@ def main():
           'to native physical sequence; 2C0 source 753B/218 x86/21 typed native PE refs '
           'with one true original FSUBR vs source FADD and IMUL ±46 difference, '
           '2C1 720B/214 x86/20 typed native PE refs and ZERO normalized '
-          'GPR/CFG differences. All 432 genuine original mnemonic-width positions '
+          'GPR/CFG differences. All 432 native x86 instruction widths, 431/432 native mnemonic positions '
           'and 41 original physical zero-addend fields attested, EBP x87 scratch '
           'remains wrong. One newly compiled giant also rechecks all previous '
           'original contexts and 27 strict internal cases incl 2EF, full '

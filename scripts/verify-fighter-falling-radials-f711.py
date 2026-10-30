@@ -80,7 +80,7 @@ def source_with_radials(source):
 
 def compare_native_radials(reader,pe,real,f676,f598,f701,boss,mapped,emitted,refs,*,following_native_2db=False,
                            source_starts=None,source_ebp_shift=0,
-                           source_next_2db_registers=('eax','ecx')):
+                           source_next_2db_registers=('eax','ecx'),source_expected_GPR=None):
     starts=SOURCE_START if source_starts is None else source_starts
     need(all(a in starts for a in ACTIONS),'native 2D0/2D1 source case starts absent')
     by={x['action']:int(x['handler'],16) for x in mapped}
@@ -116,7 +116,8 @@ def compare_native_radials(reader,pe,real,f676,f598,f701,boss,mapped,emitted,ref
         original_zero={i for i,dest,mn in fields if mn!='call'}
         wrong=[i for i,(a,b) in enumerate(zip(f598.normalized(native),f598.normalized(compiled)))
                if a!=b and i not in original_zero]
-        need(len(wrong)==EXPECTED_REAL_GPR_MISMATCH and wrong[0]==5,
+        expected=(source_expected_GPR or {}).get(action,EXPECTED_REAL_GPR_MISMATCH)
+        need(len(wrong)==expected and (not wrong or wrong[0]==5),
              f'{action:#x}: actual source/native GPR/CFG roles changed: {wrong[:8]}')
         # Crucial: native widths/typed refs are now aligned, but the
         # compiler's EBP scratch data uses the wrong SOURCE local owner.

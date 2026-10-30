@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F722 native fighter order and F723 whole Archive loop CFG controls.**
+**Maintained 2026-10-30, after F724 original fighter followup source and F723 Archive loop controls.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -9,6 +9,26 @@ with its Markdown links adjusted for its new directory. The older
 [chronological knowledge base](KNOWLEDGE_BASE.md) are evidence, not a
 reason to undo later exact adoptions. Original pinned native PE and
 **live manifests outrank every historical sentence**.
+
+**F724 latest substantial large-original source and compiler phase gain:**
+Original `00543210` full physical internal action `2C5`
+`0054DDD2..0054E111` **831 CODE B/239 x86/23 original typed
+physical PE/COFF fields** now compiles from meaningful natural
+C++ to **831B/239 x86/23 real original fields**, all native
+x86 widths and 238/239 native mnemonics. Remaining true native
+`IMUL +46/FSUBR` vs source `−46/FADD` and x87 scratch
+EBP `−0x178/−0x17C/−0x180` versus compiler
+`−0xB0/−0xB4/−0xB8` make it NONSTRICT. In the SAME newly
+compiled true-native-ordered giant, those 3 genuinely used
+float temporary lifetimes naturally improve original downstream
+GPR allocation: `2D0` **60→0**, `2D1` **60→0**,
+`2DB` 235→159, `2DC` 80→1. Native 2EF remains STRICT
+within all 27 previous context-strict nonterminal original cases;
+all previous native PE fields and complete original 943-byte
+afterRET DATA rechecked. Entire authored giant STILL NONEXACT,
+zero new complete-function exact CODE credit.
+[F724 actual native C++ and physical GPR/EBP evidence](FIGHTER_FOLLOWUP_BURST_F724.md);
+`scripts/repo-python scripts/verify-fighter-followup-burst-f724.py`.
 
 **F723 complete original small-function negatives:** Re-read original
 `0041CE50` authored ArchiveCatalog whole destructor **171 B/51

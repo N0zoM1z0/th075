@@ -12936,3 +12936,33 @@ Portable selected entire PE verifier:
 optional `--all` only 12 affected small TUs.
 [All original machine-code comparisons and honest negatives](ARCHIVE_LOOP_CFG_NEGATIVES_F723.md).
 No new exact authored function CODE, no full 943-unit replay.
+
+
+## F724: original complete 2C5 followup source improves natural compiler GPR phases
+
+Original physical fighter `00543210` internal `2C5`
+`0054DDD2..0054E111` is **831 native CODE B/239 x86/23 true
+PE/COFF typed original references**. New meaningful normal VC7.1
+C++ reconstructs full reset, stage-16–24 fall/ground collision,
+true `0x74` directional float shot, stage-seven `0x3C` raw and
+`0x344` float shots, original animation and motion, stage 7–14
+kind `0x32E` shots, stage-15 repeated auxiliary 11 and stage-25
+termination. In one newly compiled **whole original-shaped 58KB
+parent**, source emits **831/239/23** in original PE/COFF
+physical owner order; every original native width and **238/239
+mnemonics** match. Native `IMUL +46/FSUBR` vs source algebraic
+`IMUL −46/FADD` and original `EBP−0x178/−0x17C/−0x180`
+vs source `−0xB0/−0xB4/−0xB8` remain NONEXACT.
+
+Inserting real `2C5` after native-ordered `2BF/2C0/2C1/2C4`
+adds three genuinely used x87 local lifetimes; the compiler
+**naturally improves** downstream native source GPR phases:
+`2D0` **60→0**, `2D1` **60→0**, `2DB` 235→159,
+`2DC` 80→1, while native `2DD/2DE/2DF/2E5` and strict
+`2EF` remain zero normalized GPR error. 27 previous contextual
+strict original nonterminal action bodies and original complete
+943-byte afterRET switch DATA rechecked in SAME fresh giant.
+No new byte-exact independently authored whole function.
+[F724 full native original PE/COFF and honest source-local negatives](FIGHTER_FOLLOWUP_BURST_F724.md);
+`scripts/repo-python scripts/verify-fighter-followup-burst-f724.py`.
+No full cold replay, 943/862726 accepted authored exact unchanged.
