@@ -198,6 +198,21 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   matched after all 14 original PE refs checked.
   None accepted exact.
   [F798 full native teardown evidence](ARCHIVE_NATIVE_LOOP_TEARDOWN_F798.md).
+- **F808 native source restores GPR phase in 46KB original fighter:**
+  adding the true full 350B/99-x86/15-COFF
+  original action `0x49` to the same full
+  original-shaped `005214B0` source
+  expands compiled CODE **7,817→8,152 B**
+  and 1,920→2,017 x86, rechecking
+  26 earlier original cases and 901B
+  afterRET DATA. Genuine source
+  integration naturally reverses F807's
+  four wrong default-guard registers
+  back to the exact original native
+  GPR roles; 46B tail now differs ONLY
+  in four real EBP saved-this displacement
+  bytes. Whole 46,755-B giant still
+  nonexact and uncredited. [F808 physical native register restoration](SCRIPTED_FIGHTER_LANDING_RESTORES_GPR_F808.md).
 - **F807 46KB real source integration and GPR phase:**
   same original `005214B0` now has original
   0x46/47/48 whole inner cases (994 native B/

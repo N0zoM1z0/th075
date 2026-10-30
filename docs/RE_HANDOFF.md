@@ -480,6 +480,30 @@ F806's old GPR phase into a newer parent.
 `scripts/repo-python scripts/verify-scripted-fighter-extended-f807.py`.
 Still NOT whole original 46,755-B exact.
 
+**F808 new positive 46KB giant 0x49 landing/GPR recovery:**
+fresh one-parent original `005214B0`
+C++ integrates full native `0x49`
+(**350 CODE B /99 x86/15 true PE fields**)
+with all 26 previous complete source-backed
+game actions and F806's 46-B/16-x86
+default/shared getter. Source parent expands
+**7,817→8,152 callable CODE B** and
+**1,920→2,017 x86**, with true packed
+901B afterRET DATA revalidated.
+**Crucial physical improvement:** adding
+the genuine preceding original `0x49`
+naturally RESTORES the four real native
+default-guard GPR bytes that were wrong
+in F807, *without any register forcing*.
+Only four original saved-this EBP displacement
+bytes at suffix offsets 2/13/26/36
+remain different (native `-0x10`,
+incomplete source `-4`). The full
+46,755-B giant is STILL NONEXACT;
+no 350B subcase or tail credit.
+[F808 actual native GPR restoration](SCRIPTED_FIGHTER_LANDING_RESTORES_GPR_F808.md);
+`scripts/repo-python scripts/verify-scripted-fighter-landing-shared-f808.py`.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin
