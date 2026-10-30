@@ -214,6 +214,21 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   saved-this slot. Entire 248B remains
   nonexact, no credited original CODE.
   [F818 original PE typed-view result](SCENE_COMPLETE_BORROWED_OWNER_F818.md).
+- **F843 actual selected actor 12F native recovery:**
+  complete original 207B/59 x86/six real
+  original PE fields, not the other
+  F654 fighter's 288B case. Original
+  action2, stage1, animation1B and no
+  F00 clear used in one **22,102B/
+  6,023-x86** whole fighter source.
+  All preceding four falling case
+  physical PE refs, earlier eleven
+  C8-D2 cases and five 901B
+  packed tables rechecked.
+  Only 2 original giant-epilogue
+  JMP machine bytes differ in 12F.
+  No full callable exact CODE credit.
+  [F843 physical game case](SCRIPTED_FIGHTER_FALLING_12F_F843.md).
 - **F842 real 12C/12D/12E original falling recovery in growing fighter:**
   selected actor original 207/219/207 native
   interior B, 59/61/59 x86, six original

@@ -1,6 +1,6 @@
 # TH075 — ACTIVE reconstruction agent handoff
 
-**Verified snapshot: 2026-10-31, current F780 exact ledger; F842 selected giant and F838 Scene.**
+**Verified snapshot: 2026-10-31, current F780 exact ledger; F843 selected falling states and F838 Scene.**
 This is the **short working queue**, not the chronological research log.
 Original Japanese PE and the live configuration **always outrank historical
 prose, old case-level exact labels, class names or inferred layouts**.
@@ -1179,6 +1179,31 @@ shorter-parent default equality.
 scripts/repo-python scripts/verify-scripted-fighter-falling-recovery-f842.py.
 Whole native 46,755B STILL NONEXACT, no
 independent inner-case callable CODE credit.
+
+**F843 actual original selected actor 12F after four falling states:**
+physical game 00526646 full **207 native inner B/
+59 x86/six true PE field targets**, NOT
+other actor F654's 288B/82 x86.
+Actor original native prepares animation
+0x1B at stage1, transitions state2,
+no +0xF00 clear. One entire selected
+VC7.1 fighter now **22,102 callable
+source CODE B/6,023 x86** (F842
+21,910/5,966). Complete original
+12C/12D/12E/12F each physical
+PE field, x86 width/GPR and previous
+eleven C8-D2 complete original cases
+all rechecked in new object.
+New 12F only real original complete
+game parent final JMP relative
+two-byte operand difference +203/204.
+All five original 901B packed
+afterRET jump DATA tables rechecked.
+Common default 46B still has
+four real GPR byte negatives,
+no whole-game exact code credit.
+[F843 original physical PE proof](SCRIPTED_FIGHTER_FALLING_12F_F843.md);
+scripts/repo-python scripts/verify-scripted-fighter-falling-12f-f843.py.
 
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
