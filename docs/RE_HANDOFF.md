@@ -1,6 +1,6 @@
 # TH075 — ACTIVE reconstruction agent handoff
 
-**Verified snapshot: 2026-10-31, current F780 exact ledger; F845 original grounded states and F838 Scene.**
+**Verified snapshot: 2026-10-31, current F780 exact ledger; F846 original 133 and F838 Scene.**
 This is the **short working queue**, not the chronological research log.
 Original Japanese PE and the live configuration **always outrank historical
 prose, old case-level exact labels, class names or inferred layouts**.
@@ -1278,6 +1278,31 @@ GPR byte negatives in the new context.
 [F845 selected original PE proof](SCRIPTED_FIGHTER_GROUNDED_131_F845.md);
 scripts/repo-python scripts/verify-scripted-fighter-grounded-131-f845.py.
 Whole 46,755B native original still NONEXACT.
+
+**F846 actual 0x133 original fighter side-step restores native getter GPR:**
+physical original 005268A9 0x133 case is
+**270 whole interior B/78 native x86/six PE
+fields**. At stage8 it multiplies signed
+facing by **70**, FILDs that integer then
+FADDs the true float X at this+0x44,
+not reversed x87 arithmetic. One updated
+full VC7.1 parent **22,731 callable B/
+6,211 x86**, versus F845 22,476/6,135.
+Native 0x133 opcodes/width/GPR/PE-field
+positions and targets all match; only
+two real complete-giant epilogue long-JMP
+operand bytes at +266/+267 differ.
+All 17 prior 0x130/0x131/12C-12F/C8-D2
+whole native source cases and all FIVE
+901B packed jump tables freshly rechecked.
+Genuine preceding 0x133 naturally
+restores F806 shared getter **34/34
+real original nonrelocation bytes** plus
+three physical original PE REL32 fields.
+[F846 native selected source](SCRIPTED_FIGHTER_SIDESTEP_133_F846.md);
+scripts/repo-python scripts/verify-scripted-fighter-sidestep-133-f846.py.
+Enclosing 46,755B game function STILL
+NONEXACT, no standalone case/suffix credit.
 
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`

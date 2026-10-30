@@ -232,6 +232,24 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   GPR differences, whole native
   giant NONEXACT.
   [F844 selected original physical PE](SCRIPTED_FIGHTER_GROUNDED_130_F844.md).
+- **F846 original 0x133 side-step restores full native default GPR:**
+  270 whole native inner B/78 x86/6
+  original PE fields in one selected
+  22,731B/6,211-x86 whole fighter.
+  Real facing-byte*70 FILD then FADD
+  this+0x44 order matches all original
+  source bytes except two authentic
+  enclosing-giant final JMP bytes.
+  All 17 prior physically typed
+  original cases and five native
+  901B switch tables rechecked.
+  The full 46B/16-x86 shared getter
+  now again matches **34/34 actual
+  original nonrelocation bytes**
+  plus 3 real PE calls, naturally
+  from new preceding gameplay source.
+  Whole original giant NONEXACT.
+  [F846 game PE proof](SCRIPTED_FIGHTER_SIDESTEP_133_F846.md).
 - **F845 original fighter 0x131 grounded recovery:**
   independently bounded real 202B/
   58-x86/5 genuine original PE fields
