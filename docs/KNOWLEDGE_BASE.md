@@ -34,7 +34,16 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   Use `scripts/repo-python scripts/report-reconstruction-status.py --summary`
   and the canonical native/origin manifests; do not quote this snapshot
   as timeless status after a later adoption.
-- **Most recent giant source context is F771**: original 2FB
+- **Most recent giant validation context is F777** (negative
+  original-source regression guard, not a newly exact boss): a fresh
+  current whole-parent C++ build checks complete original action 0x58
+  (469 B nonfield/nontail exact), 0x59/0x60/0x61 with 19/98/101
+  actual wrong bytes and 0x63 with 706 original B versus 705 emitted
+  and three real wrong register-width CMPs. All 68 genuine PE/COFF
+  fields and whole 943-B afterRET DATA checked; prior F626 strict
+  applies only to its older compiler context.
+  [F777 original register audit](FIGHTER_CURRENT_REGISTER_PHASE_AUDIT_F777.md).
+  Historical **F771** source context: original 2FB
   647-B/181-x86/17 physical PE/COFF fields now has no wrong
   opcode/width positions, after using actual typed borrowed X and
   opponent Y float members. Real operand bytes improve 119→111;
@@ -14085,3 +14094,26 @@ credit. Formal whole-authored source advances 976→**977 functions**,
 867,042→**868,036 CODE B**, reviewed **43.98%**, conservative
 **43.90%**. Still 22 giant plus five small/medium original callable
 functions nonexact. [Full original PE proof](SPRITE_VARIANT_NATIVE_F776.md).
+
+
+## F777: remeasure actual current fighter giant registers, guard against stale strictness
+
+One complete genuine VC7.1 `00543210` 58KB original-source parent was
+freshly compiled to independently check complete action 0x58
+**469 original B/135 x86/17 PE fields** (nonfield bytes exact
+outside real giant shared continuation), action 0x59
+**356 B/95 x86/16 refs** with 19 true native operand bytes
+wrong, 0x60 **541 B/154 x86/10 refs** with 98 wrong, 0x61
+**553 B/158 x86/10 refs** with 101 wrong, and 0x63 **706 original
+B versus 705 source B/189 x86/15 refs**. Native 0x63 CMP
+ordinals 18/61/84 are EDX/EAX/EDX and generated EAX/ECX/EAX,
+with original instruction widths 6/5/6 versus 5/6/5 B. This
+establishes that the historical F626 "strict" case0x63 finding
+**does not apply to this latest larger F771 compiler parent**.
+All 68 PE-targeted typed native COFF fields individually checked
+and original 943B postRET switch DATA separately reverified.
+Thirteen real 0x59 C++ semantics and eight R015 0x38D typed
+member controls had no positive exact results. Whole current
+00543210 still emits 58,261/58,294 native CODE B, NONEXACT.
+No new original whole CODE is credited, no full accepted-unit cold
+replay. [F777 complete physical original evidence](FIGHTER_CURRENT_REGISTER_PHASE_AUDIT_F777.md).

@@ -138,6 +138,14 @@ The paired [F776 original variant sprite function](docs/SPRITE_VARIANT_NATIVE_F7
 is **994-B/269-x86/15-native-PE-field whole cold exact**, with the
 true x87 JP branch and original ordinary C++ quad rotation path.
 
+The newest [F777 current 58KB fighter register audit](docs/FIGHTER_CURRENT_REGISTER_PHASE_AUDIT_F777.md)
+rechecked five **complete original case intervals /68 genuine PE
+fields** in one full VC7.1 parent. `0x58` remains native nonfield
+strict, but `0x59/0x60/0x61` have 19/98/101 real register bytes
+wrong and current `0x63` is **706 original B vs 705 emitted**.
+Old F626 strict claims belong to an earlier whole-source context,
+not the current giant. No new callable CODE is accepted from F777.
+
 The **5 unmatched small/medium authored originals** include SpriteDrawing
 (2), and WinMain/Scene/Archive (3).
 They are fully enumerated in the [active handoff](docs/RE_HANDOFF.md).

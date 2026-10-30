@@ -201,7 +201,7 @@ still compiles 58,261/58,294 CODE B and is NOT exact.
 [F768 full PE/COFF source proof](FIGHTER_STORM_VOLLEY_TYPED_F768.md);
 `scripts/repo-python scripts/verify-fighter-storm-volley-typed-f768.py`.
 
-**F771 latest 2FB whole-parent original source result:** the original
+**F771 historical 2FB whole-parent source result (before F777):** the original
 `00550D97..0055101E` 647-B/181-x86/17-PE-field state now uses real
 borrowed actor/opponent float `+0x44` X and opponent `+0x48` Y.
 Eleven full 58KB VC7.1 source variants show all four wrong original
@@ -213,6 +213,25 @@ the whole boss still emits 58,261 of original 58,294 CODE B and
 is accepted as an independent callable function. [F771 original
 physical evidence](FIGHTER_GROUNDED_VOLLEY_TYPED_F771.md);
 `scripts/repo-python scripts/verify-fighter-grounded-volley-typed-f771.py`.
+
+**F777 current 58KB original PE register audit, not a new whole exact:**
+Rebuilt the entire tracked F771 parent and independently confirmed its
+real native `058` complete **469-B/135-x86/17-PE-field** case is
+nonfield-exact outside legitimate external shared-tail JMPs, while
+adjacent complete `059` has **19** actual wrong GPR operand bytes,
+`060/061` **98/101**. Crucially *current-parent* native `063` is
+**706 B/189 x86 /15 PE fields** but source emits **705 B/189 x86**:
+real `CMP ...,0x96` ordinals **18/61/84** choose original
+EDX/EAX/EDX (6/5/6 B) versus generated EAX/ECX/EAX (5/6/5 B).
+Historical F626 `063` "strict" applies to a different old parent,
+**not this one**. All **68** true PE/COFF source references in the
+five native complete cases, plus original 943-B afterRET DATA, are
+revalidated by
+[`verify-fighter-current-register-phases-f777.py`](../scripts/verify-fighter-current-register-phases-f777.py).
+Thirteen actual C++ 059 stage/float/short conversions and eight R015
+`004EBDA0` typed-color/stage variants were negative; don't repeat
+them without a new source hypothesis.
+[Original physical evidence and negative bounds](FIGHTER_CURRENT_REGISTER_PHASE_AUDIT_F777.md).
 
 **Next meaningful giant tasks:** resolve the real native `059` **19**
 normalized nonfield GPR discrepancies and `060/061` **98/101**;
