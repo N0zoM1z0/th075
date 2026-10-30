@@ -12442,3 +12442,29 @@ remain uncredited, while **943/862,726 authored whole exact** and
 43.71% reviewed coverage remain unchanged. F694's archived
 historical generated PDB/CI files remain independently verified and
 restorable. No all-943 cold replay or new exact acceptance.
+
+
+## F696: recovered entire 0x2FB grounded-volley source in the actual 58KB fighter parent
+
+Pinned original `00543210` action `0x2FB` is one complete **647-byte /
+181-x86 original physical case** (`00550D97`–`0055101E`), including
+ground collision, a real `00483300` angle call, one `0x391` shot, a real
+index-driven `0x392` volley and stage transitions. Natural VC7.1 C++
+[`FighterGroundedVolleyF696.inc`](../probes/FighterGroundedVolleyF696.inc)
+inside a **newly compiled complete 58,294-B parent** reproduces all
+181 x86 positions and **all 17 genuine typed PE/COFF fields**, but emits
+635 B. Four true MOV/FLD opcode-order differences, four original wide
+EBP scratch operand widths and **109 real normalized GPR/CFG mismatches**
+remain: **NONSTRICT, no CODE credit**.
+
+The true new source `this` slot moved to `EBP-0x18` (native `-0x44`),
+with one real save and 2,392 legitimate reloads, because the added
+index loop changes compiler lifetime allocation. The F696 targeted verifier
+rechecks all prior **27 strict *nonterminal* context cases**, authentic
+known negative cases, the 236 genuinely differing roles in 2F9, and
+original whole 943-byte afterRET DATA in the **same new parent**. A natural
+angle-lvalue source alternative failed to change original MOV/FLD order.
+[Actual original PE, exact COFF field and stack-ownership proof](FIGHTER_GROUNDED_VOLLEY_F696.md);
+`scripts/repo-python scripts/verify-fighter-grounded-volley-f696.py`.
+Formal authored whole-function exact coverage is unchanged: **943 whole
+functions /862,726 CODE bytes (43.71% reviewed)**. No 943-unit replay.

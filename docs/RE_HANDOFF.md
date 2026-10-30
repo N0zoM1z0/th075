@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F695 documentation audit and F694 storage cleanup.**
+**Maintained 2026-10-30, after F696 whole-boss action 2FB reconstruction.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -130,6 +130,22 @@ source must always be compiled in the **fresh complete original
 parent C++ translation unit** and its preceding cases + entire jump
 DATA rechecked. [Full original dispatch fingerprint JSON](../config/fighter-boss-dispatch-fingerprints.json),
 [original fighter family dispatch](FIGHTER_BOSS_FAMILY_DISPATCH.md).
+
+**F696 next whole-boss result (NONSTRICT):** original full physical
+`00543210` action `0x2FB`, native `00550D97`–`0055101E`, now has
+**181 real x86 /647 original CODE B /17 genuine typed PE/COFF fields**
+reconstructed as normal C++ inside a newly compiled **full 58KB parent**.
+Source emits **181 x86 /635 B**, with four genuine angle MOV/FLD
+reorders, four real wide x87 scratch operand-width differences and
+**109 unmasked GPR/CFG-role differences**. Authentic saved receiver moved
+to compiler **EBP−0x18** versus original **−0x44**; all **27 previous
+nonterminal strict native case interiors** and complete **943-byte afterRET
+DATA** were rechecked in this *new* source context, while previous
+2F9/31B/31C negatives were independently preserved. One additional
+meaningful angle-lvalue syntax control still emitted the same four
+MOV/FLD reorders. Whole boss remains NONEXACT, zero authored exact
+credit. [F696 original case and full-context verification](FIGHTER_GROUNDED_VOLLEY_F696.md);
+`scripts/repo-python scripts/verify-fighter-grounded-volley-f696.py`.
 
 **Latest strict path:** native `00543210` has **29 source-context
 strict original native case bodies /2,409 genuine x86 /8,334
