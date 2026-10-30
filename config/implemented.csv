@@ -941,3 +941,9 @@ ResultScene::DrawRankLabelAt00431890
 GameProgress::IncrementSelectedRecordAt00425130
 CombatCoordinateView::MapWorldToScreenAt00455770
 FontSurface::IsDoubleByteAt0041CA30
+InputMappingF735::ReleaseClient
+TextureManagerF735::Present
+TextureManagerF735::SetDepthMode
+TextureManagerF735::SetTextureFilter
+TextureManagerF735::SetPixelShaderMode
+TextureManagerF735::SetColorMultiplier

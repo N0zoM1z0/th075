@@ -15,9 +15,9 @@ user-supplied executable. It is **not yet a complete game rebuild**.
 | Size / image base | 2,576,384 bytes / `0x00400000` |
 | SHA-256 | `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98` |
 | MD5 | `21bcb855a39f2170195811e6ad292f18` |
-| Source-present / exact functions | **943 / 943** |
-| Accepted CODE bytes | **862,726** |
-| Reviewed authored coverage | **43.71%** of 1,973,704 reviewed bytes |
+| Source-present / exact functions | **949 / 949** |
+| Accepted CODE bytes | **862,861** |
+| Reviewed authored coverage | **43.72%** of 1,973,704 reviewed bytes |
 | Conservative coverage | **43.64%**, with 3,420 origin-pending bytes included |
 | Unresolved origins | **95** of 4,351 provisional function candidates |
 
@@ -26,7 +26,7 @@ types are provisional; machine-code matches alone do not prove an entire
 original class layout. The target's official distribution provenance has not
 been independently verified; do not substitute a localized `th075c.exe`.
 
-These snapshot counts were rechecked after **F695** (2026-10-30); the F694 storage cleanup and F689–F693 negative-evidence audit do **not** add accepted CODE.
+These live snapshot counts were rechecked after **F735** (2026-10-30); the F694 storage cleanup and F689–F693 negative-evidence audit do **not** add accepted CODE.
 The **live** sources of truth, not any dated prose milestone, are `config/functions.csv`,
 `config/function-origins.csv`, and `config/match-units.toml`.
 Refresh using `scripts/repo-python scripts/report-reconstruction-status.py --summary`.
@@ -37,6 +37,12 @@ after-RET switch DATA bytes), the 2,987-byte WinMain, 248-byte battle scene
 destructor and 171-byte archive catalog destructor. **No giant is currently
 accepted whole exact.** The 95 origin-unknown candidates are a separate
 classification issue and cannot be silently counted as game-authored CODE.
+
+The new [F735 authored six-leaf adoption](docs/THIN_AUTHORED_FORWARDERS_F735.md)
+adds **six canonical cold-exact complete game functions (135 native CODE B)**,
+with six authentic original call relocations checked and only the two
+affected C++ objects freshly replayed. Existing exact units and
+large-boss nonexact source remain intact.
 
 ### Latest verified giant research and complete small-function evidence
 

@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F734 native eight-round fighter source reconstruction.**
+**Maintained 2026-10-30, after F735 six R014/R015 authored complete cold-exact leaves.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -9,6 +9,26 @@ with its Markdown links adjusted for its new directory. The older
 [chronological knowledge base](KNOWLEDGE_BASE.md) are evidence, not a
 reason to undo later exact adoptions. Original pinned native PE and
 **live manifests outrank every historical sentence**.
+
+**F735 latest CANONICAL COLD-EXACT GAME SOURCE ADOPTION (six full small functions):**
+Six formerly unimplemented, pre-reviewed authored R014/R015
+complete functions were rebuilt as **ordinary VC7.1 `thiscall` C++**.
+Original native `0040C7E0` TextureManager Present **16 B/8 x86**;
+`00406DF0` InputMapping ReleaseClient **19 B/9 x86**; and
+`0040C840/0040C860/0040C880/0040C8A0` four TextureManager
+forwarders **25 B/11 x86 each**. All original **135 CODE B/61
+x86/6 genuine REL32 fields** match their entire source functions;
+all **111/111 nonfield bytes** and actual call target/source
+symbol/type/addend/owning instruction compare exact, including
+shader original AL signed-byte argument and float color bitwise
+forwarding. Canonical replay **6/6 newly configured units EXACT
+across just 2 source objects**, no all-old-unit cold replay.
+The accepted ledger is now **949 exact whole functions/862,861
+original CODE B**, **43.72%** reviewed and **43.64%** conservative.
+Names/class layouts remain provisional; original R014/R015
+provenance reviewed before adoption. No giant or previous Scene/
+Archive/WinMain nonexact functions were promoted.
+[Complete native PE/typed COFF and cold replay](THIN_AUTHORED_FORWARDERS_F735.md).
 
 **F734 latest source-backed BIG fighter original actions (not whole-function exact):**
 Real native original `00543210` physical 190 **276 CODE B/75 x86/7
@@ -463,8 +483,8 @@ but not whole original CODE. [Full physical negative matrix](WINMAIN_USED_OBJECT
 | Item | Authoritative snapshot; recheck live manifests on every new session |
 | --- | --- |
 | Original game | User-supplied Japanese TH075 ver1.11 `resources/th075.exe`, SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`; **never** localized `th075c.exe` |
-| Exact authored whole functions | **943 functions / 943 exact units**, **862,726 original CODE bytes** |
-| Reviewed authored bytes | **43.71%** of **1,973,704** original CODE bytes; conservatively **43.64%** with unknown origins included |
+| Exact authored whole functions | **949 functions / 949 exact units**, **862,861 original CODE bytes** |
+| Reviewed authored bytes | **43.72%** of **1,973,704** original CODE bytes; conservatively **43.64%** with unknown origins included |
 | Provisional ledger | **4,351** candidate original functions; **95** still origin-unknown with 3,420 CODE bytes; these have **no authored credit** |
 | Unfinished author-owned functions | **25 complete functions**: **22 large fighter bosses**, **1,102,055 CODE bytes** of original whole CODE, plus **three** other whole functions (2,987 B, 248 B, 171 B) |
 | Separated after-RET giant switch DATA | **16,123 bytes** across the 22 giants; DATA is not authored CODE credit |

@@ -60445,3 +60445,78 @@ symbol = "?IsDoubleByte@PackedFontUnitF293@@QAE_ND@Z"
 target_address = 0x0041CA30
 size = 77
 relocations = []
+
+# F735: native-original R014/R015 authored small callable wrapper functions.
+# The targets are exact entire original PE boundaries (no padding/afterRET DATA).
+# Both source objects are shared by their own independent match units.
+[units.texture-manager-present-forward-0040c7e0]
+source = "src/TextureManagerForwardersF735.cpp"
+object = "build/matching/TextureManagerForwardersF735.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["TextureManagerF735::Present"]
+symbol = "?Present@TextureManagerF735@@QAEXXZ"
+target_address = 0x0040C7E0
+size = 16
+relocations = [
+  { offset = 0x8, type = "REL32", symbol = "?Present@Graphics@@YAXXZ", target = 0x004028F0 },
+]
+
+[units.texture-manager-depth-forward-0040c840]
+source = "src/TextureManagerForwardersF735.cpp"
+object = "build/matching/TextureManagerForwardersF735.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["TextureManagerF735::SetDepthMode"]
+symbol = "?SetDepthMode@TextureManagerF735@@QAEXH@Z"
+target_address = 0x0040C840
+size = 25
+relocations = [
+  { offset = 0xC, type = "REL32", symbol = "?SetDepthMode@Graphics@@YAXH@Z", target = 0x00402250 },
+]
+
+[units.texture-manager-filter-forward-0040c860]
+source = "src/TextureManagerForwardersF735.cpp"
+object = "build/matching/TextureManagerForwardersF735.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["TextureManagerF735::SetTextureFilter"]
+symbol = "?SetTextureFilter@TextureManagerF735@@QAEXH@Z"
+target_address = 0x0040C860
+size = 25
+relocations = [
+  { offset = 0xC, type = "REL32", symbol = "?SetTextureFilter@Graphics@@YAXH@Z", target = 0x004023B0 },
+]
+
+[units.texture-manager-shader-forward-0040c880]
+source = "src/TextureManagerForwardersF735.cpp"
+object = "build/matching/TextureManagerForwardersF735.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["TextureManagerF735::SetPixelShaderMode"]
+symbol = "?SetPixelShaderMode@TextureManagerF735@@QAEXC@Z"
+target_address = 0x0040C880
+size = 25
+relocations = [
+  { offset = 0xC, type = "REL32", symbol = "?SetPixelShaderMode@Graphics@@YAXC@Z", target = 0x004025F0 },
+]
+
+[units.texture-manager-color-forward-0040c8a0]
+source = "src/TextureManagerForwardersF735.cpp"
+object = "build/matching/TextureManagerForwardersF735.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["TextureManagerF735::SetColorMultiplier"]
+symbol = "?SetColorMultiplier@TextureManagerF735@@QAEXM@Z"
+target_address = 0x0040C8A0
+size = 25
+relocations = [
+  { offset = 0xC, type = "REL32", symbol = "?SetColorMultiplier@Graphics@@YAXM@Z", target = 0x00401AF0 },
+]
+
+[units.input-mapping-release-client-forward-00406df0]
+source = "src/InputMappingReleaseF735.cpp"
+object = "build/matching/InputMappingReleaseF735.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["InputMappingF735::ReleaseClient"]
+symbol = "?ReleaseClient@InputMappingF735@@QAEXXZ"
+target_address = 0x00406DF0
+size = 19
+relocations = [
+  { offset = 0xB, type = "REL32", symbol = "??1InputResourceClient@@QAE@XZ", target = 0x00403BE0 },
+]

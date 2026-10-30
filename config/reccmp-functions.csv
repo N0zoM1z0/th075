@@ -942,3 +942,9 @@ ResultScene::DrawRankLabelAt00431890,0x00431890,function
 GameProgress::IncrementSelectedRecordAt00425130,0x00425130,function
 CombatCoordinateView::MapWorldToScreenAt00455770,0x00455770,function
 FontSurface::IsDoubleByteAt0041CA30,0x0041CA30,function
+InputMappingF735::ReleaseClient,0x00406DF0,function
+TextureManagerF735::Present,0x0040C7E0,function
+TextureManagerF735::SetDepthMode,0x0040C840,function
+TextureManagerF735::SetTextureFilter,0x0040C860,function
+TextureManagerF735::SetPixelShaderMode,0x0040C880,function
+TextureManagerF735::SetColorMultiplier,0x0040C8A0,function

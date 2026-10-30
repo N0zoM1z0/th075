@@ -27,8 +27,8 @@ Canonical live ledgers and actual native PE outrank all historical prose.
 
 ## Current authoritative status and superseded negatives
 
-- **943 cold-exact source-present functions**, **862,726 original authored
-  CODE bytes**, **43.71% reviewed authored coverage** and **43.64%
+- **949 cold-exact source-present functions**, **862,861 original authored
+  CODE bytes**, **43.72% reviewed authored coverage** and **43.64%
   conservative coverage**. **Only 25 `owner=authored,status=unclassified`
   function rows currently remain:** 22 giant fighter action/advance bosses
   totalling 1,102,055 original CODE bytes, WinMain (2,987), SceneObject
@@ -13199,3 +13199,27 @@ source-context strict counts not inherited. [F734 original physical
 PE/COFF and actual EBP negative](FIGHTER_EIGHT_ROUND_F734.md),
 `scripts/repo-python scripts/verify-fighter-eight-round-f734.py`.
 No all-943 cold replay; 943/862726 whole-game exact ledger unchanged.
+
+
+## F735: six new R014/R015 whole authored cold-exact leaf functions ADOPTED
+
+Pinned original Japanese TH075 1.11 six previously **authored by
+independent R014/R015 target review**, not previously matched,
+functions now compile exactly under natural VC7.1. TextureManager
+`0040C7E0` **16 original B/8 x86**, InputMapping ReleaseClient
+`00406DF0` **19 B/9 x86**, and four TextureManager forwards
+`0040C840/0040C860/0040C880/0040C8A0` **25 B/11 x86 each**.
+All **135 native CODE bytes, 61 ordered native x86, six genuine
+physical `REL32` call targets**, full source decorated symbol,
+type, original ordinal and zero addend match. Actual shader signed
+char uses original `MOV AL,[EBP+8]`; color forwards genuine float
+as DWORD bits. Pinned actual C++ targets are existing exact
+`Graphics::Present`, Graphics depth/filter/pixel/color policy and
+`InputResourceClient::~InputResourceClient`, **no callee CODE
+recredited**. SIX newly configured canonical cold-replay units
+**6/6 exact across only 2 compiled original-shaped objects**; no
+all-943 old-unit replay. Formal full authored ledger MOVES
+**943→949 functions; 862,726→862,861 original CODE B; reviewed
+43.71%→43.72%**, conservative stays 43.64%. Historical F732–F734
+large-boss and Scene/Archive negative contexts remain NONEXACT.
+[Full native/source proof and exact unit names](THIN_AUTHORED_FORWARDERS_F735.md).
