@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F729 original 1F6/1F7 return-boundary recovery.**
+**Maintained 2026-10-30, after F729 original return-bounce source and F730 complete Scene borrowed-resource controls.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -9,6 +9,23 @@ with its Markdown links adjusted for its new directory. The older
 [chronological knowledge base](KNOWLEDGE_BASE.md) are evidence, not a
 reason to undo later exact adoptions. Original pinned native PE and
 **live manifests outrank every historical sentence**.
+
+**F730 newest complete authored small-function test (NONEXACT):**
+Original Scene virtual EH destructor `0043B0B0` owns **248 CODE B/
+75 real x86/12 typed original PE fields**, native texture temporary
+`EBP−0x14/−0x10` followed by three CRT frees. Ten freshly
+compiled **complete VC7.1 `/GX`** C++ source TUs modeled a genuine
+borrowed field view of original `this+0x4C/0x50/0x54`, rather than
+another three-value local array: four actual `CleanupPointers&` or
+`CleanupPointers*` views give **255 B/78 x86/12 fields**; four
+actually used mutable/const field references **269/84/12**;
+two per-guard actual borrows **272/84/12**. All real EH/vtable/
+texture/free/base source COFF symbol identities remain but physical
+source CODE lengths and EBP slots differ from native. No accepted
+whole-function exact CODE. New selected whole-small-function verifier
+`scripts/repo-python scripts/verify-scene-borrowed-resource-f730.py --case struct-ref-late`;
+optional `--all` only ten affected TUs.
+[Actual original PE and 10 real borrowed-lifetime negatives](SCENE_BORROWED_RESOURCE_VIEW_NEGATIVES_F730.md).
 
 **F729 latest LARGE original fighter source recovery, still NONEXACT:**
 Full native `00543210` original action `1F6` and `1F7` each

@@ -13052,3 +13052,25 @@ full source parent still exhibits 200/201 67/85 register regressions,
 context count inherited; no independently authored byte-exact CODE.
 [Complete F729 physical PE and genuine x87 negative](FIGHTER_RETURN_BOUNDARY_F729.md),
 `scripts/repo-python scripts/verify-fighter-return-boundary-f729.py`.
+
+
+## F730: complete Scene virtual EH destructor, real borrowed-resource storage views
+
+Freshly compiled **10 whole original 248B/75-x86 authored Scene
+`0043B0B0`** VC7.1 `/Od /GX` C++ source hypotheses that borrow
+actual `this+0x4C/0x50/0x54` resource storage rather than copy only
+values to local arrays. Four genuinely used `CleanupPointers&` or
+`CleanupPointers*` views emit **255 B/78 x86/12 typed source EH/
+texture/free/base COFF fields**; four individually used mutable/const
+field references emit **269/84/12**; two real per-guard reference
+views emit **272/84/12**. All retain true texture `delete` and
+three CRT frees, but none has the native 248B/75x86 geometry or
+original EBP temporary order. Native texture slots are
+`−0x14/−0x10`, whereas referenced alias source has even deeper
+used locals (e.g. `−0x24/−0x20` or `−0x2C/−0x28`). Matching
+12 source reference identities is not original physical field
+position equivalence. Portable selected entire small function
+verifier `scripts/verify-scene-borrowed-resource-f730.py`
+defaults to one source, `--all` only ten affected TUs.
+[Original whole PE/EH and actual source-negative matrix](SCENE_BORROWED_RESOURCE_VIEW_NEGATIVES_F730.md).
+No native byte-exact authored CODE acceptance, no full cold replay.
