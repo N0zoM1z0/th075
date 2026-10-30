@@ -214,6 +214,18 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   saved-this slot. Entire 248B remains
   nonexact, no credited original CODE.
   [F818 original PE typed-view result](SCENE_COMPLETE_BORROWED_OWNER_F818.md).
+- **F828 original ArchiveCatalog complete 171B source storage review:**
+  15 complete original-shaped 51-x86/14-native-PE-field
+  builds. Thirteen genuine register/volatile/
+  const/32-bit index/postincrement spellings
+  produce byte-identical generated whole CODE
+  and still 108/115 native nonfield bytes;
+  reversed unsigned loop condition makes
+  two additional honest byte differences,
+  reducing to 106/115. Actual PE resource,
+  delete receiver, filename EBP permutation
+  unchanged; no authored exact CODE.
+  [F828 whole Archive physical evidence](ARCHIVE_USED_STORAGE_CLASS_F828.md).
 - **F827 46KB original projectile actions naturally restore native suffix:**
   real A7/A8 each **350B/97 x86/12 genuine
   native PE fields** in one newly built

@@ -1,6 +1,6 @@
 # TH075 — ACTIVE reconstruction agent handoff
 
-**Verified snapshot: 2026-10-31, current F780 exact ledger; F827 original projectiles and native shared-tail recovery.**
+**Verified snapshot: 2026-10-31, current F780 exact ledger; F827 giant and F828 authored Archive research.**
 This is the **short working queue**, not the chronological research log.
 Original Japanese PE and the live configuration **always outrank historical
 prose, old case-level exact labels, class names or inferred layouts**.
@@ -1121,6 +1121,25 @@ produces nonnative 254 B/77 x86 and deeper saved this.
 No original historical owner invented or accepted CODE.
 [F818 native Scene whole-source result](SCENE_BORROWED_OWNER_FIELDS_F818.md);
 scripts/repo-python scripts/verify-scene-borrowed-owner-f818.py.
+
+**F828 complete Archive destructor register/volatile/const local controls:**
+15 full original 0041CE50 **171B/51 x86/14 real PE
+field** source compiles test actually used index and
+filename storage qualifiers, genuine equivalent 32-bit
+type and unsigned loop expression grammar. Thirteen
+variants produce identical whole VC7.1 CODE/COFF
+to baseline, still **108/115 native nonfield B**:
+real resource pointer EBP-0xC, scalar-delete
+receiver EBP-8, filename EBP-0x10 remain
+misallocated as source -0x10/-0xC/-8.
+Two reversed unsigned comparison variants
+worsen to **106/115** despite same full
+length and real PE field targets. Modern
+__restrict is unsupported in pinned MSVC7.1
+(C4235). No source fake layout/ABI, no
+authored whole exact credit.
+[F828 real PE/source result](ARCHIVE_USED_STORAGE_CLASS_F828.md);
+scripts/repo-python scripts/verify-archive-storage-class-f828.py.
 
 ## 4. Attribution, validation, research and storage
 
