@@ -198,6 +198,20 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   matched after all 14 original PE refs checked.
   None accepted exact.
   [F798 full native teardown evidence](ARCHIVE_NATIVE_LOOP_TEARDOWN_F798.md).
+- **F814 original fighter 5D/5E compiler context and false GPR win:**
+  both 337B/101-x86/8-original-PE-field
+  air-transition cases integrated after
+  the genuine action59 in one 10,280-B/
+  2,630-x86 scripted fighter parent. They
+  each now have 61 native GPR/CFG
+  role mismatches, despite real PE fields.
+  Swapping the preceding action59 getter
+  order makes source 5E role-exact only
+  by corrupting 0x59 native call/mnemonic
+  ordinals and adding a nonnative POP ESI
+  (47-B/17-x86 suffix versus original
+  46-B/16-x86). No case or giant accepted
+  exact CODE. [F814 native false-win proof](SCRIPTED_FIGHTER_AIR_CONTEXT_F814.md).
 - **F813 scripted giant action0x59 real actor-specific source:**
   original 005214B0 case59 is 356B/95-x86/16
   real native typed PE fields, with stage

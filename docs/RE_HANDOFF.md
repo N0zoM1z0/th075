@@ -604,6 +604,30 @@ remains NONEXACT, no subcase credit.
 [F813 full original/source PE check](SCRIPTED_FIGHTER_STAGE3_BOUNCE_F813.md);
 scripts/repo-python scripts/verify-scripted-fighter-stage3-bounce-f813.py.
 
+**F814 real 0x5D/0x5E source-context evidence in the same scripted giant:**
+adding F617's two genuine original **337B/101-x86/
+8-PE-field** air-transition cases after F813's true
+stage-3 0x59 yields one **10,280B/2,630-x86
+full-parent C++ source** with 33 original action
+bodies. Every original 0x59/5D/5E handler is
+bounded by real packed jump targets; all 16
+0x59 and 8+8 new typed PE fields, 30 prior
+actions and 901B afterRET table rechecked.
+But *both* 0x5D and 0x5E have **61 original
+GPR/CFG role mismatches** in this new parent;
+the old short-parent F617 strict 0x5E label
+must not be carried forward. A second
+full-parent source swapping the action59
+getter comparison restores 0x5E GPRs but
+breaks actual 0x59 x86 opcodes/widths at
+ordinals 54–57 and inserts a NONNATIVE
+POP ESI, changing the true 46B/16-x86
+default to 47B/17-x86. This alternative is
+**rejected**, not recorded as native exact.
+Whole 46,755B game still nonexact.
+[F814 original PE/source context](SCRIPTED_FIGHTER_AIR_CONTEXT_F814.md);
+scripts/repo-python scripts/verify-scripted-fighter-air-context-f814.py.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin
