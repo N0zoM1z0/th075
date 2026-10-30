@@ -13522,3 +13522,38 @@ old 965 exact units not cold-replayed. Native formally accepted
 **965→966 exact whole functions, 864,024→864,118 original CODE B,
 43.78% reviewed, 43.70→43.71% conservative**.
 [Original physical PE and exact unit](BACKGROUND_BG05B_TIMER_F746.md).
+
+
+## F747–F749: six authentic giant resource actions restore original whole-fighter saved-this EBP−0x44
+
+Entire physical pinned original `00543210` actions `059` **356B/95
+x86/16 original typed fields**, `05D` **337/101/8**, `05E`
+**337/101/8**, `060` **541/154/10**, `061` **553/158/10**,
+`062` **249/65/4** now have genuinely used whole original-shaped
+normal VC7.1 C++ source across **2,373 original internal CODE B,
+56 true physical PE/COFF fields**. Crucial native compiler saved
+`this` full 58KB parent **EBP−0x44** naturally restored from
+source `−0x3C` with actual `060/061` ten-iteration 0x3E4
+projectile loops, real resource-facing sign guards and native
+restored short-to-float state. Source and native REAL EBP scratch
+for `059 −0x4C/−0x50`, `060 loop−0x8 and x87−0x54/−0x58`,
+`061 loop−0xC and x87−0x5C/−0x60` exact. Original `062`
+249B/65 x86/4 fields now all native opcode+width and 0 GPR
+errors, and 27 previously source-backed original native action
+contexts (190–2EF) GPR-zero in SAME new full parent. These
+are original INTERNAL source grammars, not callable whole CODE.
+
+HONEST NEGATIVES: original `05D/05E` 337B/101 native x86
+compile 341B/103 x86 due TWO real extra source float `FLD/
+FCOMPP` operations vs original `FCOMP [opponent+0x44]`, 8
+independently whole-parent compiled float lvalue/const/volatile/
+reversed C++ hypotheses all failed to restore native. GPR errors
+059 **19**, 05D/05E **46/46**, 060/061 **98/101**;
+190 still 10B shorter. All 56 native physical fields matched
+real target symbols/kinds/addends and actual current source
+owners, with known 05D/05E last call ordinal shift honestly
+recorded. Full original 943B afterRET DATA, 156 genuinely typed
+DIR32 native/source x86 targets and 319/319 sparse bytes checked.
+[Actual whole PE/COFF source+positive frame+negative grammar](FIGHTER_EARLY_RESOURCE_STACK_F747_F749.md),
+`scripts/repo-python scripts/verify-fighter-early-resource-f749.py`.
+Official 966 exact whole authored/864118 original CODE unchanged.

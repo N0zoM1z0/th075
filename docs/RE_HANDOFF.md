@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F746 one authored BG05b counter update whole 94-B cold exact.**
+**Maintained 2026-10-30, after F749 giant original early resource and whole-parent saved-this frame recovery.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -9,6 +9,40 @@ with its Markdown links adjusted for its new directory. The older
 [chronological knowledge base](KNOWLEDGE_BASE.md) are evidence, not a
 reason to undo later exact adoptions. Original pinned native PE and
 **live manifests outrank every historical sentence**.
+
+**F747–F749 MAJOR new native original giant whole-parent frame source GAIN (NONEXACT):**
+Six additional meaningful real complete source cases in the SAME
+original `00543210` 58KB VC7.1 fighter: native `059` **356B/
+95 x86/16 typed real COFF fields**, `05D` **337/101/8**,
+`05E` **337/101/8**, `060` **541/154/10**, `061`
+**553/158/10**, `062` **249/65/4**. Total **2,373 physical
+original internal CODE B and 56 real native target/source
+relocations**; generated entire-case source sizes **356/341/
+341/541/553/249 B**, all actual C++ game semantics intact.
+Critical compiler-lifetime POSITIVE: genuine two independent
+**10-iteration original `0x3E4` projectile loops** and real
+signed-int-to-x87 speed conversion restore the *entire 58KB*
+parent's original `this` saved slot **EBP−0x44** from prior
+source `−0x3C`; real native/source 059 x87 scratch
+`−0x4C/−0x50`, 060 loop index `−0x8` and float scratch
+`−0x54/−0x58`, 061 loop index `−0xC` and float scratch
+`−0x5C/−0x60` also naturally match. Original case `062`
+**249B/65 x86/4 true fields** now original opcode/width and 0
+GPR errors. 27 selected other previously sourced original
+complete action contexts GPR-zero in this same latest parent;
+real native 190 still emits 266B vs original 276B due 3 width
+errors. Honest NONEXACT negatives: 05D/05E source each
+**341B/103 x86** not 337/101 due two extra `FLD/FCOMPP`
+vs native direct `FCOMP`, verified across 8 genuine real-member
+C++ source models; source 059/060/061 normalized GPR errors
+19/98/101. All **56 original genuine PE-targeted physical
+COFF fields** verified; saved `this` exact is NOT entire giant
+exactness. Complete **943B original afterRET** 156 native/source
+DIR32 instruction labels and 319/319 other original bytes
+rechecked in ONE fresh giant object. ZERO accepted standalone
+CODE, no all-unit replay.
+[Six full original PE/source/stack proofs and x87 negatives](FIGHTER_EARLY_RESOURCE_STACK_F747_F749.md);
+`scripts/repo-python scripts/verify-fighter-early-resource-f749.py`.
 
 **F746 latest exact entire original authored BG05b counter updater:**
 R212 pre-reviewed authored `0044E8D0` entire **94 native CODE B/

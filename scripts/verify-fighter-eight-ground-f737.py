@@ -154,7 +154,8 @@ def check_entire_cases(rd,pe,d,f676,f701,f598,by,ins,refs,*,following_native_196
 
 def check_selected_context(rd,pe,d,f676,f598,by,ins,refs,mapper,*,
                            source_1f4_start=5798,
-                           source_expected_context=None):
+                           source_expected_context=None,
+                           source_receiver_slot='0x3c'):
     rows=[]
     expected_context=(SELECTED_ACTUAL_CONTEXT if source_expected_context is None
                       else source_expected_context)
@@ -194,8 +195,8 @@ def check_selected_context(rd,pe,d,f676,f598,by,ins,refs,mapper,*,
     # The 1F5 C++ source now emits all original widths due to actually
     # used preceding 194+195 stack temporaries, though deep EBP offsets
     # and preserved `this` frame still differ (native -0x44, source -0x3c).
-    need(ins[3].op_str=='dword ptr [ebp - 0x3c], ecx',
-         'natural source saved receiver EBP must remain genuinely -0x3c')
+    need(ins[3].op_str==f'dword ptr [ebp - {source_receiver_slot}], ecx',
+         'natural source saved receiver EBP must remain physically proven for this parent')
     return rows
 
 
