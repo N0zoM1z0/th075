@@ -66,6 +66,14 @@ CODE B/532 x86/54 genuine typed relocations), and nine authentic
 downstream integer-to-x87 EBP slots. This does **not** credit partial
 case CODE: full `00543210` still has a 1,340-B whole-CODE deficit.
 
+The new [F760 whole-parent physical proof](docs/FIGHTER_COMPLEX_STAGE_CC_CE_F760.md)
+recovers three more original `CC/CD/CE` actions (1,264 CODE B /371 x86
+/31 physical COFF fields); all nonfield bytes outside legitimate parent-tail
+JMP displacements match. Eight downstream cases, including `190`, now
+match their original nonfield/COFF physical layouts as well. The whole
+`00543210` boss still emits only **58,173/58,294 original CODE B**
+and remains NONEXACT.
+
 The **12 unmatched small/medium authored originals** include SpriteDrawing
 (6), AudioStream (1), TextureManager (2), and WinMain/Scene/Archive (3).
 They are fully enumerated in the [active handoff](docs/RE_HANDOFF.md).

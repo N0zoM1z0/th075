@@ -86,7 +86,7 @@ jump labels /319 other native bytes** were rechecked in that parent.
 See [F747–F749 original frame proof](FIGHTER_EARLY_RESOURCE_STACK_F747_F749.md)
 and [F752 complete corrective comparison](FIGHTER_BORROWED_POSITION_F752.md).
 
-**F759 full-parent correction:** the previously placeholder `C8–CB`
+**F759 historical full-parent correction (before F760):** the previously placeholder `C8–CB`
 original actions now have **1,804 B/532 x86/54 genuinely typed COFF
 fields** of original source-backed case geometry. All **1,540/1,540**
 nonfield original bytes outside 54 relocation and 12 external parent-tail
@@ -106,7 +106,7 @@ scripts/repo-python scripts/verify-fighter-four-directional-c8-f759.py
 [Full F759 native physical proof](FIGHTER_C8_CB_WHOLE_PARENT_F759.md).
 No new independently exact whole original CODE was credited.
 
-**F759 verified new whole-parent source:** original four C8–CB actions now
+**F759 further historical whole-parent evidence:** original four C8–CB actions now
 recovered as 1,804 real internal CODE B /532 original x86/54 authentic
 PE fields, with 1,540 byte-identical other nonfield bytes and 12
 real shared-parent JMP displacement differences. The extra genuine
@@ -117,13 +117,28 @@ CODE B, 1,340-B deficit; 943-B afterRET DATA remains separately
 verified. [F759 physical full-parent evidence](FIGHTER_FOUR_DIRECTIONAL_NATIVE_F759.md),
 `scripts/repo-python scripts/verify-fighter-four-directional-c8-f759.py`.
 
+**F760 newer whole-parent result (supersedes F759 negative GPR counts):**
+three more real CC/CD/CE source actions reproduce 1,264 original CODE B,
+371 original x86, 31 genuine PE/COFF fields, and 1,116/1,116
+nonfield/non-tail bytes. Correcting the real unconditional virtual call
+after the short stage-count conditional fixed three actual `JL` bytes.
+Eight downstream source-backed actions 18A/18B/190/191/192/194/195/2D0
+now have **zero mismatches outside actual COFF and parent-tail JMP**
+including original 190 `276/276 B` and original GPR role. The full
+58,294-B native boss emits 58,173 B, a remaining 121-B CODE deficit.
+The original 943-B afterRET DATA is still independently verified;
+whole game callable function remains NONEXACT.
+[Original complete F760 evidence](FIGHTER_COMPLEX_STAGE_CC_CE_F760.md);
+`scripts/repo-python scripts/verify-fighter-complex-stage-cc-ce-f760.py`.
+
 **Next meaningful giant tasks:** resolve the real native `059` **19**
 normalized nonfield GPR discrepancies and `060/061` **98/101**;
 recheck *in the next newly compiled entire parent* (do not inherit
 F737/F744 counts) and restore the remaining genuine deep x87 stack
-lifetimes/earlier source actions. Native `190` now has **276 native B / 276 emitted B** with original
-integer-to-x87 scratch widths recovered by F759; real GPR, nonfield
-operands and full-parent layout remain nonexact.
+lifetimes/earlier source actions. F759 had **40/40/34** real wrong register ordinals in 190/191/192,
+but **F760 repairs all three to zero other nonfield differences** in the
+new whole parent. This is a compiler-context/lifetime effect; full
+boss CODE and parent-tail JMP layout remain nonexact.
 Never invent unused EBP padding or isolate a case for byte credit.
 
 **`0x004EBDA0` /33,293 original CODE B, plus 438 after-RET DATA B.**

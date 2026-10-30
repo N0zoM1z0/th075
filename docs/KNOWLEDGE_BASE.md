@@ -34,7 +34,15 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   Use `scripts/repo-python scripts/report-reconstruction-status.py --summary`
   and the canonical native/origin manifests; do not quote this snapshot
   as timeless status after a later adoption.
-- **Most recent giant source context is F759**, building on F752:
+- **Most recent giant source context is F760**, building on F759/F752:
+  original fighter CC/CD/CE is now natural C++ in the complete
+  58KB parent, recovering 1,264 genuine CODE B/371 x86/31 typed
+  PE fields and native control-flow of the unconditional virtual call.
+  Eight later whole-case contexts including original 190 are now
+  nonfield-exact outside their genuine shared-tail JMPs, with 121
+  original whole-parent CODE bytes still missing.
+  [F760 original physical whole-parent proof](FIGHTER_COMPLEX_STAGE_CC_CE_F760.md).
+  The prior **F759** snapshot is still historical:
   original fighter `00543210` four action placeholders `C8–CB` now
   restored in the complete VC7.1 C++ parent with **1,804 original
   internal CODE B/532 x86/54 real typed PE fields**, zero other
@@ -13681,6 +13689,14 @@ real PE/COFF fields**. Total **1,804 original game-case CODE B,
 532 x86, 54 native relocations and 1,540/1,540 directly matching
 nonfield bytes** after separating only **12 genuine full-parent shared
 exit-JMP relocation displacements** (which remain mismatched, not credited).
+Independently re-audited F759 whole-parent register phases remain NONEXACT:
+`190/191/192` have **40/40/34** genuine normalized non-call/JMP GPR
+operand differences despite newly correct MOV/FILD EBP slots and full
+native opcode width. The older F752 parent had zero GPR differences
+in those three, but 190 was ten bytes shorter. The tracked verifier
+now asserts the actual negative register counts rather than silently
+transplanting older F752 strict status.
+
 The old C8–CB placeholders omitted four real native x87 signed-int
 conversion scratch locals `EBP−0x74/−0x78/−0x7C/−0x80`, causing the
 previous wrong `−0x10` stack role across dozens of later cases. After
@@ -13722,3 +13738,24 @@ MOV/FILD stack placements in **nine later actions** (18A/18B,
 Full original afterRET 943 B, 156 genuine DIR32 and 319/319 sparse
 nonfield bytes verified. One whole affected TU was compiled; no
 970-unit cold replay. [Original physical proof and full reproducer](FIGHTER_FOUR_DIRECTIONAL_NATIVE_F759.md).
+
+
+## F760: original CC/CD/CE fighter source makes 190 full-native register phase exact
+
+One **entire native 00543210 fighter** recompiled from normal VC7.1 C++
+after adding all three authentic original state engines CC, CD and CE.
+Their original physical full CODE is **435/435/394 B**, **128/128/115
+x86**, **11/11/9 typed PE/COFF refs**. Every original mnemonic/width
+position and all **1,116 original nonrelocation/non-parent-tail bytes**
+match. Source-level correction of an incorrectly guarded virtual frame
+advance fixes the *last one-byte relative JL operand in each action*;
+all six legitimate jumps outside these cases still differ in the
+unfinished enclosing boss. Eight downstream complete original case
+contexts now have no actual other nonfield bytes wrong, including
+original 190 with **276/276 bytes/75 x86/7 real typed refs**, fixing
+F759's 40 wrong register ordinals in the same parent naturally.
+Whole boss currently emits **58,173/58,294 CODE B**, remaining deficit
+121 B; true 943-B afterRET dispatch DATA also checked (156 real DIR32
+and 319/319 other bytes). Original whole authored game CODE exact
+credit remains **970 functions /864,961 bytes**; no massive replay.
+[Full native PE, COFF and one-parent reproduction](FIGHTER_COMPLEX_STAGE_CC_CE_F760.md).
