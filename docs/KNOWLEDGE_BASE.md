@@ -198,6 +198,16 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   matched after all 14 original PE refs checked.
   None accepted exact.
   [F798 full native teardown evidence](ARCHIVE_NATIVE_LOOP_TEARDOWN_F798.md).
+- **F802 33KB giant physical-relocation pitfall:** 22
+  whole native-shaped VC7.1 stage-four grammar source builds;
+  17 preserve all original **682** physical PE fields and
+  none reduces the 137 wrong GPR bytes. Five apparently
+  same-size source TUs move real global relocation fields
+  by changing `FLD/FMUL` instruction widths, so
+  blindly ignoring candidate relocation operands gives
+  invalid exactness evidence. Source-count equality
+  is not target-PE relocation identity.
+  [F802 native physical target proof](CHARACTEROBJECT_STAGE4_RELOCATION_AUDIT_F802.md).
 - **F801 current 58KB fighter action-history source result:**
   eight actual entire `0x00543210` source builds with
   physically observed owner pointer `+0x2E8`,

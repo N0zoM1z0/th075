@@ -402,6 +402,20 @@ Simple case braces cannot fix register phases.
 [F800 complete original-target source result](CHARACTEROBJECT_LEXICAL_SCOPE_F800.md);
 `scripts/repo-python scripts/verify-characterobject-scope-phase-f800.py`.
 
+**F802 whole CharacterObject 0x38D original relocation caveat:**
+22 full 33KB VC7.1 source candidates test meaningful stage
+comparison, actual float fade and stage-four multiplication/
+color source syntax near first real wrong GPR at `004F344C`.
+Only **17/22 candidates** maintain all **682 authentic
+PE/COFF fields** at original positions/targets; all those
+still have >=**137 actual native wrong CODE bytes**.
+**Five compound-update candidates have wrong original
+PE field destinations despite emitting 33,293 CODE B,
+8,789 x86 and 682 *source* COFF records.**
+Never use their candidate-masked mismatch count as exactness
+evidence. [F802 full original PE/candidate comparison](CHARACTEROBJECT_STAGE4_RELOCATION_AUDIT_F802.md);
+`scripts/repo-python scripts/verify-characterobject-stage4-grammar-f802.py`.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin
