@@ -284,6 +284,34 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   slots remain wrong. No
   accepted whole CODE.
   [F864 physical proof](SCENE_THREE_REAL_NAMED_POINTERS_F864.md).
+- **F868 original 1F6 special U8 stage guard and native mixed-coordinate projectile:**
+  actual 372B/111 x86/12
+  physical PE fields in
+  full **28,464B/7,951-x86**
+  fighter parent. Native
+  stage8..10 plus unsigned
+  byte+0x511==20 branches
+  to action1F7, real Reset,
+  actual effect00455B30
+  and early giant exit.
+  Stage5 sprite80 through
+  native 00453C80 uses
+  true facing*100 FILD
+  float X but raw Y bits,
+  then sprite336 and
+  Prepare2. Complete native
+  opcode/width and all
+  12 PE refs match; **64
+  actual GPR bytes and four
+  enclosing giant JMP bytes**
+  still nonexact. Previous
+  39 PE-backed game cases,
+  five 901B afterRET tables
+  and 46B getter native
+  34/34 nonfield bytes
+  rechecked. No original
+  whole-callable exact CODE.
+  [F868 physical proof](SCRIPTED_FIGHTER_CONDITIONAL_1F6_F868.md).
 - **F867 real original 1F5 multi-stage 628B fighter state:**
   628B/195 original x86/
   17 genuine PE original fields

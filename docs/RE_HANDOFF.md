@@ -1916,6 +1916,51 @@ rechecked. Entire original
 [F867 full original PE source](SCRIPTED_FIGHTER_STAGED_1F5_F867.md);
 scripts/repo-python scripts/verify-scripted-fighter-staged-1f5-f867.py.
 
+**F868 native actor original 1F6 special byte511 stage guard and mixed XY shot:**
+actual 00527FF2..00528165
+is **372 native inner CODE B/
+111 x86/12 original physical
+typed PE call/global fields**.
+Native special stage>7 and
+stage<11 and **unsigned
+byte +0x511 == 20** branches
+to action1F7, Reset and
+original game effect455B30,
+then real complete-parent
+early return. Stage5 POS14
+emits original sprite80
+via 00453C80 with signed
+facing*100 FILD float X
+and raw integer Y+48,
+plus sprite336 via 00453A70
+and Prepare2 at 00453D40.
+One full selected VC7.1
+C++ parent **28,464 callable
+CODE B/7,951 x86**
+(F867 28,107/7,842).
+All original opcode/width/
+PE field locations and
+targets match, but **64
+honest native GPR byte
+negatives** and four
+complete-fighter final JMP
+operand negatives +197/+198
+and +368/+369 remain.
+All 39 earlier native
+game case interiors,
+all five original 901B
+packed afterRET tables,
+and native 46B getter
+**34/34 original
+nonrelocation bytes plus
+three correct PE calls**
+physically reverified.
+[F868 native game case proof](SCRIPTED_FIGHTER_CONDITIONAL_1F6_F868.md);
+scripts/repo-python scripts/verify-scripted-fighter-conditional-1f6-f868.py.
+Whole 46,755B original giant
+still NONEXACT, zero accepted
+independent case CODE.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin
