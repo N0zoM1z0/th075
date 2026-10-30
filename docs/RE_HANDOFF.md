@@ -1,6 +1,6 @@
 # TH075 — ACTIVE reconstruction agent handoff
 
-**Verified snapshot: 2026-10-31, current F780 exact ledger; F853 fighter float shot and F854 Archive.**
+**Verified snapshot: 2026-10-31, current F780 exact ledger; F855 giant volley and F854 Archive.**
 This is the **short working queue**, not the chronological research log.
 Original Japanese PE and the live configuration **always outrank historical
 prose, old case-level exact labels, class names or inferred layouts**.
@@ -1466,6 +1466,37 @@ actual nonfield GPR byte negatives.
 [F853 original Y-lvalue PE proof](SCRIPTED_FIGHTER_FLOATSHOT_18A_F853.md);
 scripts/repo-python scripts/verify-scripted-fighter-floatshot-18a-f853.py.
 Whole original 46,755B fighter remains NONEXACT.
+
+**F855 actual original 18B native short-counter and float volley:**
+selected game action 00527241 is **353 complete
+native inner B/99 x86/seven true physical
+PE call/global fields**. Stage7 genuine
+short++ auxiliary state6, stage6 float
+sprite0x328 signed-facing*128 SHL/FILD
+and lvalue Y this+0x48 then
+FADD original global00658400
+are natural C++. New entire affected
+VC7.1 fighter source **25,135 callable
+B/6,925 x86**, up from F853
+24,797/6,828. ALL original case
+opcode/width and native PE fields
+match but **71 honest GPR machine
+operand bytes**, including native
+AX versus source DX short increment
+and native EAX vs source EDX SHL,
+plus two real enclosing original
+whole-fighter final JMP operand
+bytes +349/+350 remain WRONG.
+All six preceding GPR-negative
+136/186..18A complete native
+cases and 20 earlier source-backed
+original cases and all five 901B
+packed jump DATA tables rechecked.
+Default getter 46B has four honest
+non-PE GPR byte negatives.
+[F855 selected native PE proof](SCRIPTED_FIGHTER_VOLLEY_18B_F855.md);
+scripts/repo-python scripts/verify-scripted-fighter-volley-18b-f855.py.
+Whole 46,755B giant STILL NONEXACT.
 
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`

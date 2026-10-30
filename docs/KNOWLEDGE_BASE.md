@@ -232,6 +232,26 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   GPR differences, whole native
   giant NONEXACT.
   [F844 selected original physical PE](SCRIPTED_FIGHTER_GROUNDED_130_F844.md).
+- **F855 original 18B stage7 volley and native GPR phase:**
+  real whole 353B/99-x86/
+  7 physical PE fields inside
+  one new 25,135B/6,925-x86
+  fighter source. Stage7 real
+  16-bit prefix++, auxiliary6,
+  stage6 signed facing*128
+  float projectile and true
+  Y lvalue restore all x86
+  opcode/width and PE fields.
+  **71 original GPR operand
+  bytes** plus two actual
+  enclosing giant epilogue JMP
+  bytes remain nonexact. Six
+  earlier GPR-affected source
+  cases, twenty other original
+  cases and five packed 901B
+  tables rechecked. No adopted
+  whole callable CODE credit.
+  [F855 native source](SCRIPTED_FIGHTER_VOLLEY_18B_F855.md).
 - **F854 small authored original Archive 171B delete value categories:**
   sixteen original whole C++ TUs
   with genuine used resource
