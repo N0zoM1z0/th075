@@ -1128,6 +1128,30 @@ PE REL32 calls, and all FIVE original
 scripts/repo-python scripts/verify-scripted-fighter-complex-cd-f840.py.
 Original enclosing 46,755B still NONEXACT.
 
+**F841 completes three genuine selected actor CC/CD/CE cases:**
+original CE 00525F53 is **387 full native
+inner B/113 x86/8 original physical PE
+fields**, with real stage3 POS **-11.0f**,
+speed17.5f, drag0.8f, 16-bit native
+counter increments and unconditional
+vtable method callback. One selected
+full normal VC7.1 source now **21,322
+callable CODE B/5,793 x86**, up
+from F840 20,950/5,682.
+All native CE GPR/x87/opcode/width/PE
+bytes match except two true enclosing
+original giant epilogue JMP pairs
+(+186/187,+383/384). All three CC/CD/CE,
+preceding C8-CB and following CF-D2
+original complete case PE geometry
+reverified, plus F806 46B default
+34/34 native nonrelocation bytes
+and all five original 901B
+afterRET packed tables.
+[F841 actual original CE PE proof](SCRIPTED_FIGHTER_COMPLEX_CE_F841.md);
+scripts/repo-python scripts/verify-scripted-fighter-complex-ce-f841.py.
+The full 46,755B fighter still NONEXACT.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin

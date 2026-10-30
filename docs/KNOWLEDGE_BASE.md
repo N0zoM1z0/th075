@@ -214,6 +214,24 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   saved-this slot. Entire 248B remains
   nonexact, no credited original CODE.
   [F818 original PE typed-view result](SCENE_COMPLETE_BORROWED_OWNER_F818.md).
+- **F841 selected original CE completes complex CC/CD/CE trio:**
+  full native 387B/113 x86/8
+  genuine PE fields within new
+  **21,322B/5,793-x86** whole
+  fighter. Original true stage3
+  negative horizontal -11.0f
+  and unconditional virtual
+  callback produce full original
+  mnemonic/width/GPR/PE bytes
+  except two enclosing original
+  giant JMP operand pairs.
+  All prior CC/CD, C8-CB and
+  later CF-D2 cases, real
+  46B getter 34/34 native
+  nonrelocation and five 901B
+  packed tables reverified.
+  Original giant still NONEXACT.
+  [F841 selected native source proof](SCRIPTED_FIGHTER_COMPLEX_CE_F841.md).
 - **F840 selected original CD stage/collision source:**
   387B/113 x86/8 physical original
   PE references recovered in one
