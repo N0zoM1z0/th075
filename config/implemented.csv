@@ -959,3 +959,5 @@ Record20F739::~Record20F739
 Record20F739::Record20F739
 Record16F739::~Record16F739
 Record16F739::Record16F739
+NestedRecord116F741::NestedRecord116F741
+NestedRecord116F741::~NestedRecord116F741

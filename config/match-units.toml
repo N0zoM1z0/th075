@@ -60696,3 +60696,47 @@ relocations = [
  { offset = 0x36, type = "REL32", symbol = "??1VectorBase16F739@@QAE@XZ", target = 0x005F7FA0 },
  { offset = 0x40, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
 ]
+
+# F741: R209/R210 independently authored genuine nested 116-byte record
+# ctor/dtor, verified with their separate complete 40B EH stubs and 52B
+# .xdata unwind records. Ancillary EH bytes do not count as game CODE.
+[units.nested-record116-construct-clear-004587e0]
+source = "src/NestedRecordLifecycleF741.cpp"
+object = "build/matching/NestedRecordLifecycleF741.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["NestedRecord116F741::NestedRecord116F741"]
+symbol = "??0NestedRecord116F741@@QAE@XZ"
+target_address = 0x004587E0
+size = 145
+relocations = [
+ { offset = 0x6, type = "DIR32", symbol = "__ehhandler$??0NestedRecord116F741@@QAE@XZ", target = 0x006561DE },
+ { offset = 0xC, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
+ { offset = 0x14, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
+ { offset = 0x20, type = "REL32", symbol = "??0Prefix16F741@@QAE@XZ", target = 0x00458880 },
+ { offset = 0x32, type = "REL32", symbol = "??0Vector16F741@@QAE@XZ", target = 0x004589C0 },
+ { offset = 0x41, type = "REL32", symbol = "??0Vector16F741@@QAE@XZ", target = 0x004589C0 },
+ { offset = 0x52, type = "REL32", symbol = "_memset", target = 0x00640490 },
+ { offset = 0x60, type = "REL32", symbol = "?Clear@Vector16F741@@QAEXXZ", target = 0x00458A80 },
+ { offset = 0x6B, type = "REL32", symbol = "?Clear@Vector16F741@@QAEXXZ", target = 0x00458A80 },
+ { offset = 0x89, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
+]
+
+[units.nested-record116-clear-then-destroy-004588e0]
+source = "src/NestedRecordLifecycleF741.cpp"
+object = "build/matching/NestedRecordLifecycleF741.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["NestedRecord116F741::~NestedRecord116F741"]
+symbol = "??1NestedRecord116F741@@QAE@XZ"
+target_address = 0x004588E0
+size = 116
+relocations = [
+ { offset = 0x6, type = "DIR32", symbol = "__ehhandler$??1NestedRecord116F741@@QAE@XZ", target = 0x0065620E },
+ { offset = 0xC, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
+ { offset = 0x14, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
+ { offset = 0x2A, type = "REL32", symbol = "?Clear@Vector16F741@@QAEXXZ", target = 0x00458A80 },
+ { offset = 0x35, type = "REL32", symbol = "?Clear@Vector16F741@@QAEXXZ", target = 0x00458A80 },
+ { offset = 0x44, type = "REL32", symbol = "??1Vector16F741@@QAE@XZ", target = 0x004589F0 },
+ { offset = 0x53, type = "REL32", symbol = "??1Vector16F741@@QAE@XZ", target = 0x004589F0 },
+ { offset = 0x62, type = "REL32", symbol = "??1Prefix16F741@@QAE@XZ", target = 0x004588B0 },
+ { offset = 0x6C, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
+]

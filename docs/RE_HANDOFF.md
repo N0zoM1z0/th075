@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F740 three native fighter 196/197/198 complete source cases.**
+**Maintained 2026-10-30, after F741 two nested-record authored complete EH functions cold-exact.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -9,6 +9,30 @@ with its Markdown links adjusted for its new directory. The older
 [chronological knowledge base](KNOWLEDGE_BASE.md) are evidence, not a
 reason to undo later exact adoptions. Original pinned native PE and
 **live manifests outrank every historical sentence**.
+
+**F741 newest TWO nested record lifetime authored whole functions COLD EXACT:**
+Previously R210-authored original `004587E0` **145 CODE B/41 x86/
+10 physical typed PE/COFF fields** constructs a true prefix
+subobject and two 16-byte vectors at +0x54/+0x64, advances
+real EH states 0/1/2, actually `memset(this,0,116)` then
+clears both vectors and resets +8. R209-authored original
+`004588E0` **116B/32 x86/9 native fields** clears the same
+two vectors and naturally destructs vector/vector/prefix in
+reverse with real EH state 2/1/0/−1. ONE ordinary VC7.1 `/GX`
+C++ object emits both entire **261 original CODE B/73 x86/
+19 true original COFF fields**, including 185/185 native nonfield
+bytes; **2/2 newly configured units canonical cold exact**.
+Independently checked EACH original associated 40-byte EH cleanup
+stub and 52-byte `.xdata` unwind table in pinned PE vs the same
+compiled object, **20/20 plus 36/36 nonfield B each**, 18 total
+original physically typed external/local fields; all 112/112
+unrelocated original carrier bytes agree. These EH carriers/
+callee CODE are NOT recredited. R209/R210 provenance unchanged,
+full historical object layout/names unproved. Formal accepted
+**963 authored whole exact functions, 863,853 native CODE B,
+43.77% reviewed, 43.69% conservative**. 22 giants plus
+WinMain/Scene/Archive remain NONEXACT. No all-unit replay.
+[Whole original native PE/COFF, EH carrier audit and cold replay](NESTED_RECORD_WHOLE_EH_F741.md).
 
 **F740 latest LARGE fighter native source, real compiler GPR phase REGRESSIONS:**
 Three genuinely new whole original `00543210` physical internal
@@ -601,8 +625,8 @@ but not whole original CODE. [Full physical negative matrix](WINMAIN_USED_OBJECT
 | Item | Authoritative snapshot; recheck live manifests on every new session |
 | --- | --- |
 | Original game | User-supplied Japanese TH075 ver1.11 `resources/th075.exe`, SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`; **never** localized `th075c.exe` |
-| Exact authored whole functions | **961 functions / 961 exact units**, **863,592 original CODE bytes** |
-| Reviewed authored bytes | **43.75%** of **1,973,704** original CODE bytes; conservatively **43.68%** with unknown origins included |
+| Exact authored whole functions | **963 functions / 963 exact units**, **863,853 original CODE bytes** |
+| Reviewed authored bytes | **43.77%** of **1,973,704** original CODE bytes; conservatively **43.69%** with unknown origins included |
 | Provisional ledger | **4,351** candidate original functions; **95** still origin-unknown with 3,420 CODE bytes; these have **no authored credit** |
 | Unfinished author-owned functions | **25 complete functions**: **22 large fighter bosses**, **1,102,055 CODE bytes** of original whole CODE, plus **three** other whole functions (2,987 B, 248 B, 171 B) |
 | Separated after-RET giant switch DATA | **16,123 bytes** across the 22 giants; DATA is not authored CODE credit |

@@ -15,10 +15,10 @@ user-supplied executable. It is **not yet a complete game rebuild**.
 | Size / image base | 2,576,384 bytes / `0x00400000` |
 | SHA-256 | `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98` |
 | MD5 | `21bcb855a39f2170195811e6ad292f18` |
-| Source-present / exact functions | **961 / 961** |
-| Accepted CODE bytes | **863,592** |
-| Reviewed authored coverage | **43.75%** of 1,973,704 reviewed bytes |
-| Conservative coverage | **43.68%**, with 3,420 origin-pending bytes included |
+| Source-present / exact functions | **963 / 963** |
+| Accepted CODE bytes | **863,853** |
+| Reviewed authored coverage | **43.77%** of 1,973,704 reviewed bytes |
+| Conservative coverage | **43.69%**, with 3,420 origin-pending bytes included |
 | Unresolved origins | **95** of 4,351 provisional function candidates |
 
 **The 98% authored-byte goal is incomplete.** Function labels and C++ owner
@@ -26,7 +26,7 @@ types are provisional; machine-code matches alone do not prove an entire
 original class layout. The target's official distribution provenance has not
 been independently verified; do not substitute a localized `th075c.exe`.
 
-These live snapshot counts were rechecked after **F739** (2026-10-30); the F694 storage cleanup and F689–F693 negative-evidence audit do **not** add accepted CODE.
+These live snapshot counts were rechecked after **F741** (2026-10-30); the F694 storage cleanup and F689–F693 negative-evidence audit do **not** add accepted CODE.
 The **live** sources of truth, not any dated prose milestone, are `config/functions.csv`,
 `config/function-origins.csv`, and `config/match-units.toml`.
 Refresh using `scripts/repo-python scripts/report-reconstruction-status.py --summary`.
@@ -63,6 +63,13 @@ CODE bytes)** under actual VC7.1 exception-handling member lifetime,
 with four associated original EH stub and unwind data carriers
 separately verified but not double-credited. New F739 units were
 cold replayed from one source object without rebuilding all prior units.
+
+The [F741 exact nested-record lifecycle](docs/NESTED_RECORD_WHOLE_EH_F741.md)
+adds two more entire R209/R210 original-authored cold-exact
+functions (**261 native CODE B**). Both external 40-byte EH stubs
+and 52-byte unwind data records also match their original native
+PE field ownership, but are not counted again as callable CODE.
+New F741 replay rebuilt just one source object, not all earlier units.
 
 ### Latest verified giant research and complete small-function evidence
 

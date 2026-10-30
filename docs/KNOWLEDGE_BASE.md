@@ -27,8 +27,8 @@ Canonical live ledgers and actual native PE outrank all historical prose.
 
 ## Current authoritative status and superseded negatives
 
-- **961 cold-exact source-present functions**, **863,592 original authored
-  CODE bytes**, **43.75% reviewed authored coverage** and **43.68%
+- **963 cold-exact source-present functions**, **863,853 original authored
+  CODE bytes**, **43.77% reviewed authored coverage** and **43.69%
   conservative coverage**. **Only 25 `owner=authored,status=unclassified`
   function rows currently remain:** 22 giant fighter action/advance bosses
   totalling 1,102,055 original CODE bytes, WinMain (2,987), SceneObject
@@ -13371,3 +13371,27 @@ new full parent. [Original PE/COFF, actual source, exact negative
 fields](FIGHTER_REPEATED_SHOT_F740.md),
 `scripts/repo-python scripts/verify-fighter-repeat-shot-f740.py`.
 Formal authored exact 961/863592 original CODE unchanged.
+
+
+## F741: two full nested-record lifecycle game functions 004587E0/004588E0 COLD EXACT
+
+R210 independent original authored `004587E0` **145 native CODE B/
+41 x86/10 typed physical PE/COFF references** and R209
+`004588E0` **116 B/32 x86/9 fields** now reproduce as normal
+VC7.1 `/GX` C++ with real nontrivial prefix and two embedded
+vector lifetimes at +0/+0x54/+0x64 in a true original 116-B
+record. Native ctor original state 0/1/2, `memset(this,0,116)`,
+two actual `Clear` calls and +8 reset; dtor original clear first/
+second then automatic vector/vector/prefix destruction state
+2/1/0/−1. **All 261 original complete CODE B/73 x86, 19 original
+typed field targets and 185/185 original nonfield bytes exact**;
+canonical **2/2 cold replay from ONE newly compiled source object**.
+Extra original PE/COFF EH check of **both entire 40-B cleanup /
+handler stubs and both 52-B xdata tables**: original stub
+20/20 and unwind 36/36 unrelocated bytes per owner, **112/112
+native unrelocated carrier bytes and 18 physically typed external/
+local references** all correct. Carriers and callees not credited
+as callable game CODE, private source class names unproved.
+New whole-authored ledger **961→963, 863,592→863,853 original
+CODE B, 43.75→43.77% reviewed and 43.68→43.69% conservative**.
+[Complete original PE/COFF+EH evidence and two exact units](NESTED_RECORD_WHOLE_EH_F741.md).

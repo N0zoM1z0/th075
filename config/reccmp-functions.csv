@@ -960,3 +960,5 @@ Record20F739::~Record20F739,0x004586C0,function
 Record20F739::Record20F739,0x00458960,function
 Record16F739::~Record16F739,0x005F7ED0,function
 Record16F739::Record16F739,0x005F7F20,function
+NestedRecord116F741::NestedRecord116F741,0x004587E0,function
+NestedRecord116F741::~NestedRecord116F741,0x004588E0,function
