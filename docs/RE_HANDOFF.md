@@ -1,6 +1,6 @@
 # TH075 — ACTIVE reconstruction agent handoff
 
-**Verified snapshot: 2026-10-30, current F780 exact ledger; F781 giant source research.**
+**Verified snapshot: 2026-10-30, current F780 exact ledger; F782 giant source controls.**
 This is the **short working queue**, not the chronological research log.
 Original Japanese PE and the live configuration **always outrank historical
 prose, old case-level exact labels, class names or inferred layouts**.
@@ -269,6 +269,17 @@ The 943-B afterRET DATA and 68 native physical references across
 **No entire 00543210 exact CODE credit.**
 [Full F781 source/PE evidence](FIGHTER_EARLY_SHARED_GETTER_F781.md);
 `scripts/repo-python scripts/verify-fighter-shared-getter-f781.py`.
+
+**F782 targeted native 0x63 hypothesis rejection:** four actual
+full F781 58KB VC7.1 compiled parents compared the original borrowed
+expressions with typed opponent `+0x60`, actor `+0x39D`, and
+both. Their **entire COFF CODE/DATA and all 1,863 typed relocation
+shapes are identical**; real CMP width positions [18,61,84] remain
+wrong, leaving original 0x63 706B vs generated 705B.
+Simply adding typed borrowed views does not solve this GPR phase;
+this is *negative evidence*, not exact credit.
+[Reproducible F782 controls](FIGHTER_MODE63_BORROWED_VIEWS_F782.md);
+`scripts/repo-python scripts/verify-fighter-mode63-borrowed-f782.py`.
 
 **Next meaningful giant tasks:** resolve the real native `059` **19**
 normalized nonfield GPR discrepancies and `060/061` **98/101**;

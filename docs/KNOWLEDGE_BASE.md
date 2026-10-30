@@ -34,6 +34,13 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   Use `scripts/repo-python scripts/report-reconstruction-status.py --summary`
   and the canonical native/origin manifests; do not quote this snapshot
   as timeless status after a later adoption.
+- **F782 targeted negative compiler evidence:** four complete F781
+  giant VC7.1 builds with typed borrowed opponent stage `+0x60`,
+  actor flag `+0x39D`, both, or neither are *byte identical* in
+  the complete 58KB COFF CODE/DATA with 1,863 same physical
+  relocations. Original action 0x63 still has 706B against
+  generated 705B and wrong CMP register widths [18,61,84].
+  [F782 source-level negative controls](FIGHTER_MODE63_BORROWED_VIEWS_F782.md).
 - **Most recent giant validation context is F781**: the original
   `005515BA` shared getter is reached by *exactly four* actual
   native early action 0/2/4/5 JMPs. F781 restores one real 8-B
