@@ -901,6 +901,26 @@ switch DATA separately owned.
 scripts/repo-python scripts/verify-scripted-fighter-motion-restart-f829.py.
 Whole original 46,755B still NONEXACT.
 
+**F830 genuine next native 005214B0 fighter action 0xD0:**
+whole original **195 inner CODE B/60 x86/
+6 original PE/COFF fields** now in fresh
+**17,856-B/4,760-x86** selected parent.
+Real signed-facing flip, x87 FUCOMPP,
+ground drag and auxiliary state are reproduced.
+Only four real physical nonrelocation bytes
+at +154/+155/+191/+192 differ, encoding two
+enclosing original game epilogue JMP targets.
+Earlier B4/B5 original cases, all 16 PE
+refs and 901B original afterRET DATA rechecked.
+The newly restored original D0 C++ rotates
+default getter GPR phase back to four
+nonrelocated byte differences +10/+12/+16/+19.
+Do not inherit F829 default tail equality
+in this longer parent. Whole 46,755B remains
+NONEXACT, no inner-case CODE credited.
+[F830 native PE/source proof](SCRIPTED_FIGHTER_REFLECT_D0_F830.md);
+scripts/repo-python scripts/verify-scripted-fighter-reflect-d0-f830.py.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin

@@ -214,6 +214,15 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   saved-this slot. Entire 248B remains
   nonexact, no credited original CODE.
   [F818 original PE typed-view result](SCENE_COMPLETE_BORROWED_OWNER_F818.md).
+- **F830 actual whole fighter native 0xD0 reflection:**
+  195 complete original CODE B/60 x86/6 typed
+  physical PE fields added in a new 17,856B/
+  4,760-x86 entire source parent, keeping B4/B5
+  and all 901B packed afterRET DATA. Two
+  genuine final epilogue JMP byte pairs remain
+  wrong; original D0 now rotates shared default
+  GPR allocation to four actual byte differences.
+  [F830 original-source proof](SCRIPTED_FIGHTER_REFLECT_D0_F830.md).
 - **F829 B4/B5 original restart states in one growing 46KB fighter:**
   native original 2x215B/60 x86/8
   physical PE fields in a new
