@@ -214,6 +214,18 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   saved-this slot. Entire 248B remains
   nonexact, no credited original CODE.
   [F818 original PE typed-view result](SCENE_COMPLETE_BORROWED_OWNER_F818.md).
+- **F826 real original counter-free A3/A4/A5 landing actions:**
+  three new native whole interior states
+  264B/71 x86/9 physical typed PE fields
+  each, with no +0xF00 reset unlike
+  previous timers. Rebuilt one **16,606B/
+  4,396-x86** parent, all nine earlier
+  timer cases and original 9E rechecked.
+  Every newly sourced case differs ONLY
+  by two honest original whole-game
+  epilogue JMP bytes at 260/261.
+  No accepted whole callable CODE.
+  [F826 physical source](SCRIPTED_FIGHTER_NO_COUNTER_F826.md).
 - **F825 original scripted fighter 9F/A0/A1 in same new parent:**
   3 native whole inner 276B/73 x86/9-field
   timer cases with real actor initial heights

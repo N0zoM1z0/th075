@@ -1,6 +1,6 @@
 # TH075 — ACTIVE reconstruction agent handoff
 
-**Verified snapshot: 2026-10-31, current F780 exact ledger; F825 nine timer states in original 46KB fighter.**
+**Verified snapshot: 2026-10-31, current F780 exact ledger; F826 counter-free fighter landings.**
 This is the **short working queue**, not the chronological research log.
 Original Japanese PE and the live configuration **always outrank historical
 prose, old case-level exact labels, class names or inferred layouts**.
@@ -828,6 +828,26 @@ also checked, 901B switch DATA unchanged.
 [F825 native original-source proof](SCRIPTED_FIGHTER_LAST_TIMERS_F825.md);
 scripts/repo-python scripts/verify-scripted-fighter-last-timers-f825.py.
 Whole 46,755-B giant still NONEXACT.
+
+**F826 genuine 0xA3/A4/A5 COUNTER-FREE fighter landings:**
+three complete original **264 native B/71 x86/9
+genuine PE fields** per case; crucially these
+states omit the prior family short +0xF00
+counter clear. Real native initial ground
+heights -9/-10/-13 and action2 continue.
+New entire affected C++ parent **16,606
+callable B/4,396 x86**, up from F825
+15,859B/4,189 x86, retains the earlier
+nine original timer cases, native 0x9E,
+901B afterRET packed DATA and native
+EBP-0x10 frame. Every new case has
+identical native opcode/width/GPR and true
+original PE references, with ONLY two
+actual enclosing-giant final JMP operand
+byte negatives (260/261) each.
+[F826 original complete native source](SCRIPTED_FIGHTER_NO_COUNTER_F826.md);
+scripts/repo-python scripts/verify-scripted-fighter-no-counter-landings-f826.py.
+Still NONEXACT whole 46,755B giant, zero split-case credit.
 
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
