@@ -12566,3 +12566,26 @@ in one fresh entire parent. Read [complete native/COFF and honest
 lifetime negative](FIGHTER_FOUR_TIER_VOLLEY_F701.md) and reproduce:
 `scripts/repo-python scripts/verify-fighter-four-tier-volley-f701.py`.
 No all-943 cold replay, 943/862726 authored exact baseline unchanged.
+
+
+## F702–F704: 37 whole WinMain genuine used-object lifetime negatives
+
+Live original authored `00602A60` is 2,987 CODE bytes, 654 x86 plus
+60 separately owned scene-switch DATA. Recovered original stack slots
+scene **`EBP−0x184`**, 260-byte module path **`EBP−0x180`** were
+independently compared with **37 freshly built whole WinMain C++ TUs**
+using actual `MSG`, `WNDCLASSEXA`, HWND main, HANDLE event, dimensions
+and directory-end pointer (all **used**, no filler). F702 varies 12
+real early lexical lifetimes; F703 tests 12 aggregate field placements;
+F704 tests 13 MSG/window/message/handle ownership groupings. Every
+variant retains the full 654 native ordered mnemonic positions, 173
+**compiler-side** COFF fields including 60 afterRET scene table bytes,
+but emits **3,002 or 3,026 B**, not native 2,987; 0/37 exact. Some
+true used aggregates move the scene/path pair to `−0x180/−0x17C`
+(with 619/654 original widths) but **still miss original both by
+four bytes**, proving declaration count/aggregate grouping alone
+does not reproduce original VC7.1 lifetime layout. This is not an
+independently exact full function or source proven original class.
+[Complete native/source controls and preserved negatives](WINMAIN_USED_OBJECT_CONTEXT_NEGATIVES_F702_F704.md);
+local `.analysis/f702-*`, `.analysis/f703-*`, `.analysis/f704-*`.
+Unchanged exact authored ledger 943/862726, no cold all-unit replay.

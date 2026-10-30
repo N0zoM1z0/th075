@@ -52,6 +52,16 @@ reason to undo later exact adoptions. Original pinned native PE and
    do not invoke it. Use F596/F589 targeted verifiers, never the
    entire 943-unit cold replay.
 
+**F702–F704 new WinMain full-function negative:** original authored
+`00602A60` **2,987-B/654-x86** source remains NONEXACT after **37**
+additional actual entire-function VC7.1 C++ local/aggregate
+lifetime tests with genuinely used `MSG`, `WNDCLASSEXA`, HWND, HANDLE,
+window dimensions and path-end pointer. All emit 3,002/3,026 B,
+654 ordered mnemonics and the original-shaped 60-B afterRET scene
+DATA but cannot recover both original adjacent source scene/path
+EBP slots `−0x184/−0x180`; best grouped models reach `−0x180/−0x17C`
+but not whole original CODE. [Full physical negative matrix](WINMAIN_USED_OBJECT_CONTEXT_NEGATIVES_F702_F704.md).
+
 ## 1. Live truth, targets, immediate preflight
 
 | Item | Authoritative snapshot; recheck live manifests on every new session |
