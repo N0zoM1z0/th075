@@ -198,6 +198,17 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   matched after all 14 original PE refs checked.
   None accepted exact.
   [F798 full native teardown evidence](ARCHIVE_NATIVE_LOOP_TEARDOWN_F798.md).
+- **F806 real previously artificial scripted 46KB fighter suffix:**
+  four genuine native early action0/2/4/5 entry
+  jumps and **46B/16 x86** full native fallback/getter
+  at `0052CB25` now have actual ordinary C++ source.
+  Three real zero-addend original PE calls
+  and all 23 original F600 case geometries/
+  901B postRET packed DATA are fresh-verified.
+  Only four honest EBP saved-receiver stack
+  bytes differ in the new suffix; full giant
+  still 46,755 original vs 6,868 current source,
+  not accepted CODE. [F806 original physical native shared getter](SCRIPTED_FIGHTER_SHARED_GETTER_F806.md).
 - **F805 formerly unclassified native 24B reset leaf:**
   original `00454C00` entire **24 B/9 x86**
   has a genuine `this+0x47C` 32-bit zero write

@@ -434,6 +434,27 @@ Never use their candidate-masked mismatch count as exactness
 evidence. [F802 full original PE/candidate comparison](CHARACTEROBJECT_STAGE4_RELOCATION_AUDIT_F802.md);
 `scripts/repo-python scripts/verify-characterobject-stage4-grammar-f802.py`.
 
+**F806 positive new 46KB fighter source in another entire boss:**
+original `005214B0` native has **46B/16-x86 default
+and shared-getter tail** `0052CB25..0052CB52`.
+The four authentic early actions 0/2/4/5 JMP from
+`00521709/00521891/00521974/00521983` to
+original `0052CB47`. Current natural tracked C++
+rebuild reproduces all 16 tail x86 identities
+and **three physical PE calls** to
+`0040FA30/0040FAC0/0040FA30`. Only
+four real saved-this EBP bytes differ
+(native `-0x10`, current incomplete source `-4`).
+Rechecks the first **23 complete original action cases**,
+all 80 independently typed second-switch fields,
+139 original dense pointer labels, 345 sparse bytes
+and 901 full afterRET DATA in one affected parent.
+Source parent grows **6,830→6,868 CODE B**;
+original complete giant is 46,755 B and
+remains NONEXACT. No split-case callable credit.
+[Actual F806 native shared-tail source](SCRIPTED_FIGHTER_SHARED_GETTER_F806.md);
+`scripts/repo-python scripts/verify-scripted-fighter-native-shared-tail-f806.py`.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin
