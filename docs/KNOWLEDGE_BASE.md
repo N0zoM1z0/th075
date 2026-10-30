@@ -198,6 +198,20 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   matched after all 14 original PE refs checked.
   None accepted exact.
   [F798 full native teardown evidence](ARCHIVE_NATIVE_LOOP_TEARDOWN_F798.md).
+- **F817 real fighter case0x62 changes downstream native default registers:**
+  actual 249B/65-x86/4 authentic PE-field
+  resource selector source joins the same
+  original-shaped 005214B0 whole parent,
+  expanding source CODE to **11,785 B**.
+  Original EBP-0x10 saved receiver and
+  5F/60/61 PE-backed case source persist;
+  real case62 has ten GPR operand and
+  two genuine final JMP byte differences,
+  while the F816 temporarily exact 46B
+  default rotates four nonrelocation GPR
+  bytes (10/12/16/19) again. No 46KB
+  whole function exact credit.
+  [F817 PE source context](SCRIPTED_FIGHTER_RESOURCE_SELECTOR_F817.md).
 - **F816 whole fighter native saved-this FRAME and default tail recovered:**
   real original 0x60/61 each 586B/169-x86/11
   original PE references, actual ten-shot used

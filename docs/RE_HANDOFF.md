@@ -669,6 +669,29 @@ credited callable CODE.
 [F816 original entire-parent native physical proof](SCRIPTED_FIGHTER_RESOURCE_VOLLEYS_F816.md);
 scripts/repo-python scripts/verify-scripted-fighter-resource-volley-f816.py.
 
+**F817 next scripted original 46KB resource selector:**
+real packed original 0x62 at 00523BA4 is **249B/65
+x86/4 genuine PE/COFF game calls**. Fresh one-parent
+source extends F816 to **11,785 CODE B /3,069 x86**,
+still preserving original saved this EBP-0x10,
+all previous 5F/60/61 complete native machine
+geometry, three-plus-eleven-plus-eleven true
+PE fields and entire 901B afterRET packed DATA.
+Natural original 0x62 resource decisions choose
+actions 0x5F, 0x5D or 0x5E.
+The new native-shaped case retains **10 honest
+GPR operand bytes** plus 2 external final JMP
+bytes different, and its genuine preceding
+C++ source ROTATES the later default GPRs
+again, leaving **four true default-tail byte
+negatives 10/12/16/19**. Saved-this frame
+remains physically native EBP-0x10. Do not
+inherit F816's 34/34 native default source
+match from a shorter parent.
+[F817 target PE/source proof](SCRIPTED_FIGHTER_RESOURCE_SELECTOR_F817.md);
+scripts/repo-python scripts/verify-scripted-fighter-resource-selector-f817.py.
+Entire 46,755B giant still NONEXACT, no case credit.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin
