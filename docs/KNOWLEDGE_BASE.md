@@ -232,6 +232,29 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   GPR differences, whole native
   giant NONEXACT.
   [F844 selected original physical PE](SCRIPTED_FIGHTER_GROUNDED_130_F844.md).
+- **F865 original 1A0 final separate state of five-case 980B switch region:**
+  real 235B/67-x86/5 original
+  physical PE fields with
+  both original FLD MEMBER
+  then FMUL global00658348
+  groups recovered via genuine
+  POS54 source left lvalue.
+  Together 198/19A/19C/19E/
+  1A0 independently occupy
+  980 original CODE B, each
+  source verified in new whole
+  **27,061B/7,515-x86** actor.
+  51 GPR bytes and two true
+  entire giant JMP bytes
+  still wrong in 1A0.
+  All 36 preceding original
+  PE-backed cases, 5 original
+  packed 901B DATA tables,
+  and shared getter four
+  GPR negatives checked.
+  No accepted whole callable
+  exact CODE credit.
+  [F865 original whole-source PE proof](SCRIPTED_FIGHTER_GROUND_SCALE_1A0_F865.md).
 - **F864 full original 248B Scene named resource free locals:**
   twelve complete VC7.1 /GX
   source experiments test real

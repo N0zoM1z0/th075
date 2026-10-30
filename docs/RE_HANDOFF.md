@@ -1,6 +1,6 @@
 # TH075 — ACTIVE reconstruction agent handoff
 
-**Verified snapshot: 2026-10-31, current F780 exact ledger; F863 fighter cases and F864 Scene locals.**
+**Verified snapshot: 2026-10-31, current F780 exact ledger; F865 complete five-case region and F864 Scene locals.**
 This is the **short working queue**, not the chronological research log.
 Original Japanese PE and the live configuration **always outrank historical
 prose, old case-level exact labels, class names or inferred layouts**.
@@ -1783,6 +1783,43 @@ physically rechecked.
 [F865 original x87/PE proof](SCRIPTED_FIGHTER_SUSTAIN_1A0_F865.md);
 scripts/repo-python scripts/verify-scripted-fighter-sustain-1a0-f865.py.
 Whole 46,755B giant NONEXACT.
+
+**F865 completes all FIVE separately bounded original states in 980B native switch region:**
+physical original 198/19A/19C/19E/1A0
+are 199/302/122/122/235 inner B,
+NOT one 980B case. New real 1A0
+at 00527AD3 has **235 native B/
+67 x86/5 genuine original PE fields**,
+two actual x87 scaled speed/velocity
+groups using float multiplier 00658348.
+Natural real POS54 LEFT LVALUE
+restores original FLD member then
+FMUL global width/order; bare
+POS54*global reverses the second
+group's machine widths. Original
+grounded POS/POS54/POS48 store
+order, stage>3 drag and action9
+native source integrated. One
+fresh selected whole VC7.1 father
+**27,061 callable CODE B/7,515 x86**
+(previous F863 26,841/7,450).
+All original 1A0 opcode/width
+and five PE call/global targets
+align, BUT **51 honest GPR operand
+bytes plus two encompassing original
+giant final JMP bytes +231/+232**
+still DIFFER. All 5 independently
+addressed cases in 980B, 36 older
+native whole-case source records and
+all FIVE original 901B packed
+afterRET DATA tables rechecked.
+Common 46B original getter has
+four current GPR byte negatives.
+[F865 complete physical case proof](SCRIPTED_FIGHTER_GROUND_SCALE_1A0_F865.md);
+scripts/repo-python scripts/verify-scripted-fighter-ground-scale-1a0-f865.py.
+Original whole 46,755B fighter
+STILL NONEXACT, no inner case
+or separate DATA exact credit.
 
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
