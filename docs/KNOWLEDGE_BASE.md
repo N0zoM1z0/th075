@@ -12627,3 +12627,25 @@ None exactly matches native; unknown provenance remains uncredited.
 [F706 full parent and machine-width proof](FIGHTER_COMBINED_STORM_CONTEXT_F706.md),
 [F705/F707 actual whole source negative matrix](CHARACTEROBJECT_PHASE_AND_SDK_EH_CONTROLS_F705_F707.md).
 No all-unit cold replay, 943/862,726 full authored exact unchanged.
+
+
+## F708: complete original 2BF/2C4 twin burst source added to true 58KB parent
+
+Native original `00543210` full `2BF` (`0054D489`–`0054D64D`) and
+`2C4` (`0054DC0E`–`0054DDD2`) are **two 452-B/131-x86 internal
+actions** with 16 true PE/COFF typed fields apiece. F708 normal C++
+recovers true stage-zero initialization, `0x73/0x74` float shots,
+seven-arg kind-`0x334` game call, native stage-12 `0x328/0x33C` and
+`0x32B/0x33D` pair, distinct original `0046D000` before/after
+ordering, and completion/phase transitions. A real C++ equivalent
+`float(dir*-20)+X` reduces original x87 opcode-order mismatches in
+each **full-length 452-B/131-x86/16-field** C++ handler from
+**5 to 1**. Real native `IMUL +20/FSUBR` vs source
+`IMUL -20/FADD` and EBP scratch slots **still differ**, so neither
+is strict or exact, no whole-function credit. Seven genuine arithmetic
+compiler controls retained. One same whole 58KB original-shaped parent
+checks both real cases, preceding real F706 259–25D, later F701
+2F8–302, previous 27 context-strict cases and all 943 native
+afterRET DATA bytes. [Complete physical original/native negative](FIGHTER_TWIN_BURST_F708.md),
+reproduce `scripts/repo-python scripts/verify-fighter-twin-burst-f708.py`.
+No all-unit cold replay; 943/862726 accepted authored unchanged.

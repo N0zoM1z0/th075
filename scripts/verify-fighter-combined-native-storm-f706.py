@@ -175,12 +175,13 @@ def verify_five_native_cases(f672,f598,f701,originals,ins,refs,start):
     return results,ix
 
 
-def check_later_native_physical(f701,f696,f699,f676,f681,f684,f598,reader,pe,real,boss,mapped,ins,refs):
+def check_later_native_physical(f701,f696,f699,f676,f681,f684,f598,reader,pe,real,boss,mapped,ins,refs,*,
+                               expected_storm_starts=(7949,8611,8792)):
     storm_starts=[i for i,x in enumerate(ins)
                   if [y.mnemonic for y in ins[i:i+3]]==['push']*3
                   and [y.op_str for y in ins[i:i+3]]==['0xff0000','4','3']]
     need(len(storm_starts)==3,'real 2F9,2FB,302 storm entries missing')
-    need(storm_starts==[7949,8611,8792],
+    need(storm_starts==list(expected_storm_starts),
          'native 259 through 302 parent case and original source order changed')
     by={x['action']:int(x['handler'],16) for x in mapped}
     frames=[('0x2F8',0x2F8,0x2F9,storm_starts[0]-252,storm_starts[0],928,252,23,f681.FIELD_SYMBOLS),

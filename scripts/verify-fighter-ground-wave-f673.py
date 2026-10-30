@@ -115,7 +115,8 @@ def source_with_groundwave(source):
     return source
 
 
-def verify_groundwave(reader,dec,code,refs,native,shared_exit,h,start_ordinal=None):
+def verify_groundwave(reader,dec,code,refs,native,shared_exit,h,start_ordinal=None,*,
+                      following_native_2bf=False):
     ins=[]
     for x in dec.disasm(code,0):
         ins.append(x)
@@ -170,9 +171,16 @@ def verify_groundwave(reader,dec,code,refs,native,shared_exit,h,start_ordinal=No
          and not a.mnemonic.startswith('j')
          and a.op_str.replace('[ebp - 0x44]','[ebp - 8]')!=b.op_str]
     need(not raw,f'original 2BC non-field raw EBP/local operand mismatch: {raw[:8]}')
-    need(ins[pos+ORIGINAL_X86].mnemonic=='mov'
-         and ins[pos+ORIGINAL_X86].op_str.endswith(', 0x2c0'),
-         'true following native 2BF placeholder must immediately follow original 2BC')
+    if following_native_2bf:
+        need(ins[pos+ORIGINAL_X86].mnemonic=='mov'
+             and ins[pos+ORIGINAL_X86].op_str=='edx, dword ptr [ebp - 8]'
+             and ins[pos+ORIGINAL_X86+1].mnemonic=='movsx'
+             and ins[pos+ORIGINAL_X86+1].op_str=='eax, word ptr [edx + 0x62]',
+             'original 2BC must lead to the independently attested full native C++ 2BF')
+    else:
+        need(ins[pos+ORIGINAL_X86].mnemonic=='mov'
+             and ins[pos+ORIGINAL_X86].op_str.endswith(', 0x2c0'),
+             'true following native 2BF placeholder must immediately follow original 2BC')
     return {'actual_original_native_action':'0x2BC',
             'original_complete_PE_start':f'0x{lo:08X}',
             'original_physical_next_handler':f'0x{hi:08X}',

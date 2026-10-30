@@ -144,6 +144,7 @@ def verify_prior_parent_context(reader,pe,real,boss,report,mapped,code,refs,m,h,
                                 source_2f9_wide_ordinals=None,
                                 following_native_259=False,
                                 source_259_25D_end_ordinal=None,
+                                following_native_2bf=False,
                                 source_storm_bytes=904,
                                 source_storm_width_differences=None):
     """Recheck the *same* newly compiled complete parent and after-RET DATA.
@@ -198,7 +199,8 @@ def verify_prior_parent_context(reader,pe,real,boss,report,mapped,code,refs,m,h,
                          following_native=0x259 if following_native_259 else None)
     n673=m['f673'].actual_native(reader,pe,real,boss,mapped)
     m['f673'].verify_groundwave(reader,decoder,code,refs,n673,shared,h,
-              start_ordinal=source_259_25D_end_ordinal)
+              start_ordinal=source_259_25D_end_ordinal,
+              following_native_2bf=following_native_2bf)
     n674=m['f674'].original_case(reader,pe,real,boss,mapped)
     terminal=m['f674'].true_terminal(reader,pe,real,boss,mapped)
     strict2ef,negative31c,idx=m['f674'].verify_native(reader,decoder,code,refs,n674,

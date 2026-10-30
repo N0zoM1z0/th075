@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F706 combined real fighter action source and F705/F707 controls.**
+**Maintained 2026-10-30, after F708 twin burst original game source.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -9,6 +9,21 @@ with its Markdown links adjusted for its new directory. The older
 [chronological knowledge base](KNOWLEDGE_BASE.md) are evidence, not a
 reason to undo later exact adoptions. Original pinned native PE and
 **live manifests outrank every historical sentence**.
+
+**F708 latest two full native original action restorations (NONSTRICT):**
+Inside real `00543210`, original physical cases `2BF`/`2C4` are each
+**452 original CODE B/131 x86/16 genuine typed PE/COFF fields**, newly
+reconstructed with *complete* natural C++ source and added to the
+same F706 259–25D/2F8–302 original-shaped giant. Source emits
+**452/131/16 each**, all original instruction widths and 32 physical
+typed fields; genuine x87 direction-first code grammar improves from
+five wrong opcode positions to **one FSUBR/FADD each**, but IMUL
++20/−20, GPR and original x87 scratch EBP slots remain different.
+The whole parent rechecks 27 previous strictly backed internal cases
+and original **943-byte afterRET DATA**. Full 58KB authored giant is
+STILL NONEXACT, zero new complete-function CODE credit. [Full source
+and physical original PE/COFF evidence](FIGHTER_TWIN_BURST_F708.md);
+`scripts/repo-python scripts/verify-fighter-twin-burst-f708.py`.
 
 **Latest F706 full-original-giant C++ context gain:** actual native
 `00543210` original `259/25A/25B/25C/25D` source is combined with
