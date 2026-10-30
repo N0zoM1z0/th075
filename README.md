@@ -103,6 +103,12 @@ New sibling R011 SpriteDrawing mirrored draw `0040D6B0` is also
 real `flip & 1` horizontal RECT reversal with correct VC7.1 lifetime.
 [F766 complete original proof](docs/SPRITE_OPAQUE_MIRRORED_F766.md).
 
+The newest full-giant [F767 2F9 angle restoration](docs/FIGHTER_STORM_ANGLE_TYPED_F767.md)
+recovers **all 381 original x86 mnemonic/width positions** across
+1,367 native CODE B/34 genuine fields and reduces wrong original
+nonfield bytes 265→249 using real borrowed actor/opponent X/Y source.
+Whole boss still NONEXACT; no internal-case CODE credited.
+
 The **9 unmatched small/medium authored originals** include SpriteDrawing
 (4), TextureManager (2), and WinMain/Scene/Archive (3).
 They are fully enumerated in the [active handoff](docs/RE_HANDOFF.md).

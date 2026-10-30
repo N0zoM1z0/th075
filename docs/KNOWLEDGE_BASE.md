@@ -34,7 +34,13 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   Use `scripts/repo-python scripts/report-reconstruction-status.py --summary`
   and the canonical native/origin manifests; do not quote this snapshot
   as timeless status after a later adoption.
-- **Most recent giant source context is F764**: original fighter
+- **Most recent giant source context is F767**: original fighter
+  internal 2F9 1,367-B/381-x86/34 original PE-field game source now
+  has zero mnemonic/width differences after correcting true opponent
+  and actor X/Y borrowed float evaluation. Physical nonfield operand
+  mismatches fall 265→249; still NONEXACT whole 58KB boss.
+  [F767 whole parent PE proof](FIGHTER_STORM_ANGLE_TYPED_F767.md).
+  Historical **F764** source context: original fighter
   2FA now emits 971 B/279 x86/31 genuine native PE/COFF fields
   with all original mnemonic/width positions restored by six
   authentic x87/borrowed float source corrections. **156 original
@@ -13911,3 +13917,22 @@ replay. Official 972→**973** source-present whole authored exact,
 865,415→**865,627** CODE B, reviewed 43.86% / conservative 43.78%,
 22 giant +9 other nonexact.
 [F766 complete original PE and COFF proof](SPRITE_OPAQUE_MIRRORED_F766.md).
+
+
+## F767: original 2F9 x87 angle source order restored in one full fighter
+
+One freshly compiled actual 58KB C++ parent with real game action 2F9
+now yields original entire **1,367 CODE B /381 native x86 mnemonic/size
+positions /34 typed PE/COFF fields**. Eleven full-giant source controls
+identify the actual opponent/actor X `+0x44` borrowed float source and
+meaningful read-only opponent Y `+0x48`/actor Y source lvalues as the
+missing native `MOV/FLD/FSUB` ordering in two real `00483300` angle
+calls. Eight previously wrong opcode positions are repaired, actual
+nonfield machine-byte mismatches fall **265→249** and all 34 original
+PE destinations are checked independently. The 249 real EAX/ECX/EDX
+/EBP operand differences still count as NONEXACT. Original 2FA is
+unchanged at 156 real wrong bytes; whole native 58,294-B fighter source
+emits 58,261 B. Original after-RET 943B DATA remains separate and
+reverified. No split-case CODE credit, no all-unit cold replay: formal
+whole-authored CODE remains 973 exact functions /865,627 original bytes.
+[Full F767 actual original whole-parent evidence](FIGHTER_STORM_ANGLE_TYPED_F767.md).

@@ -160,7 +160,7 @@ afterRET switch DATA separately verified, no accepted CODE credit.
 [Complete F763 native evidence](FIGHTER_APPROACH_NATIVE_F763.md);
 `scripts/repo-python scripts/verify-fighter-approach-native-f763.py`.
 
-**F764 latest original 2FA state research:** all six real floating
+**F764 historical original 2FA state research (before F767):** all six real floating
 predicates/borrowed actor-opponent `+0x44` X member reads corrected
 inside the same complete 58KB C++ parent. Actual native action 2FA
 now emits **971 B/279 x86/31 genuine typed PE/COFF fields** and
@@ -173,6 +173,19 @@ DIR32/319 sparse bytes. Whole original `00543210` now emits
 **58,261/58,294 CODE B** (33-B deficit plus genuine wrong bytes);
 zero new accepted CODE. [F764 original whole-case proof](FIGHTER_APPROACH_VOLLEY_NATIVE_F764.md);
 `scripts/repo-python scripts/verify-fighter-approach-volley-native-f764.py`.
+
+**F767 current 2F9 physical source advance:** a real source correction of
+borrowed opponent/actor X `+0x44` float members and read-only opponent Y
+`+0x48`/actor Y lvalues restores all 381 original 2F9 mnemonics and
+instruction widths within its entire 1,367 original CODE B and 34
+original zero-addend PE/COFF fields. Eleven true whole-parent compiler
+variants cut nonfield wrong bytes **265→249**, fixing all eight wrong
+original 2F9 opcode positions without ASM/padding or target bytes. The
+remaining 249 genuine register/operand bytes **are NOT exact**. The
+whole 58,294-B fighter still compiles to 58,261 B, 2FA still has 156
+real wrong operand bytes; true after-RET 943-B separate DATA reverified.
+[F767 original PE and source proof](FIGHTER_STORM_ANGLE_TYPED_F767.md);
+`scripts/repo-python scripts/verify-fighter-angle-storm-typed-f767.py`.
 
 **Next meaningful giant tasks:** resolve the real native `059` **19**
 normalized nonfield GPR discrepancies and `060/061` **98/101**;
