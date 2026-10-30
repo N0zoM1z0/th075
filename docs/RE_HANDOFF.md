@@ -1834,6 +1834,45 @@ Original whole 46,755B fighter
 STILL NONEXACT, no inner case
 or separate DATA exact credit.
 
+**F866 current actor original 1F4 complete double-projectile and 8-bit facing:**
+the native whole interior 00527BBE..
+00527D7D is **448 CODE B/136 x86/
+14 genuine original PE fields**.
+Real stage0 reset and flag clear,
+x87 height damping, landing early
+auxD, TWO separately checked
+stage4 branches with sprite338
+then Prepare1/POS8/speed9.5/
+drag0.65 and sprite7F via
+00453C80, stage13 auxB
+all source restored.
+A fourth INT method parameter
+incorrectly produces **449B**
+and ordinal113 MOVSX byte->int
+(4B), while a genuine fourth
+CHAR-equivalent parameter emits
+original MOV byte->byte (3B):
+**448B/136 x86 and all 14
+physical PE fields** now match
+opcodes/widths/call targets.
+One complete VC7.1 source parent
+**27,494 callable CODE B/
+7,649 x86** (F865 27,061/
+7,515). Still **82 actual GPR
+byte negatives** and four real
+complete-giant final JMP operand
+negatives +219/+220,+444/+445.
+All 37 previous native PE-backed
+game cases, authentic 1A0 stage0
+branch scope and five original 901B
+packed afterRET DATA tables
+rechecked. 46B common getter
+still has four true GPR negatives.
+[F866 real native PE proof](SCRIPTED_FIGHTER_DOUBLE_PROJECTILE_1F4_F866.md);
+scripts/repo-python scripts/verify-scripted-fighter-doubleprojectile-1f4-f866.py.
+Original 46,755B giant STILL
+NONEXACT, no split-case exact CODE.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin

@@ -284,6 +284,29 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   slots remain wrong. No
   accepted whole CODE.
   [F864 physical proof](SCENE_THREE_REAL_NAMED_POINTERS_F864.md).
+- **F866 true native 1F4 448B double projectile and narrow facing parameter:**
+  original 448B/136 x86/
+  14 physically typed PE
+  fields in new whole
+  **27,494B/7,649-x86** fighter.
+  Real native 00453C80
+  fourth parameter is narrow:
+  C++ int formal yields 4B
+  MOVSX and 449B incorrect
+  case, CHAR-equivalent formal
+  yields original 3B MOV
+  and 448B whole case.
+  Original x87 ground return,
+  two distinct stage4 projectile
+  branches and stage13 auxiliary
+  action also source recovered.
+  **82 real GPR bytes** plus
+  four complete-giant JMP
+  operand bytes still nonexact.
+  All 37 earlier native original
+  game cases and five packed
+  901B afterRET tables checked.
+  [F866 native source](SCRIPTED_FIGHTER_DOUBLE_PROJECTILE_1F4_F866.md).
 - **F865 native 1A0 original x87 float multiply and physically correct DIR32 fields:**
   235B/67-x86/five native
   original PE fields in full
