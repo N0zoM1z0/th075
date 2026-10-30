@@ -86,13 +86,44 @@ jump labels /319 other native bytes** were rechecked in that parent.
 See [F747–F749 original frame proof](FIGHTER_EARLY_RESOURCE_STACK_F747_F749.md)
 and [F752 complete corrective comparison](FIGHTER_BORROWED_POSITION_F752.md).
 
+**F759 full-parent correction:** the previously placeholder `C8–CB`
+original actions now have **1,804 B/532 x86/54 genuinely typed COFF
+fields** of original source-backed case geometry. All **1,540/1,540**
+nonfield original bytes outside 54 relocation and 12 external parent-tail
+JMP fields match; the 12 real tail displacements are NOT exact. Four
+meaningful native `EBP−0x74/−0x78/−0x7C/−0x80` FILD temporaries
+recover the missing 16B stack lifetime across downstream `18A/18B/190`
+and later contexts. Native `190` is now **276 B/75 x86 versus 276
+compiled B/75 x86**, but still has authentic GPR/CFG differences and
+shared-tail nonexact bytes. The whole giant still emits **56,954**
+versus **58,294 native CODE B**; `CC/CD/CE` remain placeholders
+(435/435/394 native B). Reproduce only the affected entire parent:
+
+```bash
+scripts/repo-python scripts/verify-fighter-four-directional-c8-f759.py
+```
+
+[Full F759 native physical proof](FIGHTER_C8_CB_WHOLE_PARENT_F759.md).
+No new independently exact whole original CODE was credited.
+
+**F759 verified new whole-parent source:** original four C8–CB actions now
+recovered as 1,804 real internal CODE B /532 original x86/54 authentic
+PE fields, with 1,540 byte-identical other nonfield bytes and 12
+real shared-parent JMP displacement differences. The extra genuine
+source *also* restores nine downstream MOV/FILD EBP scratch pairs
+(18A/18B, 190–195, 2D0, 302), including original 190 `EBP−0x90`.
+The enclosing 58,294-B original remains NONEXACT: 56,954 emitted
+CODE B, 1,340-B deficit; 943-B afterRET DATA remains separately
+verified. [F759 physical full-parent evidence](FIGHTER_FOUR_DIRECTIONAL_NATIVE_F759.md),
+`scripts/repo-python scripts/verify-fighter-four-directional-c8-f759.py`.
+
 **Next meaningful giant tasks:** resolve the real native `059` **19**
 normalized nonfield GPR discrepancies and `060/061` **98/101**;
 recheck *in the next newly compiled entire parent* (do not inherit
 F737/F744 counts) and restore the remaining genuine deep x87 stack
-lifetimes/earlier source actions. Native `190` remains **276 B vs
-266 emitted** due to one branch and two real integer-to-x87
-scratch widths even though selected parent GPR roles are correct.
+lifetimes/earlier source actions. Native `190` now has **276 native B / 276 emitted B** with original
+integer-to-x87 scratch widths recovered by F759; real GPR, nonfield
+operands and full-parent layout remain nonexact.
 Never invent unused EBP padding or isolate a case for byte credit.
 
 **`0x004EBDA0` /33,293 original CODE B, plus 438 after-RET DATA B.**

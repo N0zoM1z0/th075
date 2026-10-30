@@ -34,7 +34,15 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   Use `scripts/repo-python scripts/report-reconstruction-status.py --summary`
   and the canonical native/origin manifests; do not quote this snapshot
   as timeless status after a later adoption.
-- **Most recent giant source context is F752**, not F652/F681:
+- **Most recent giant source context is F759**, building on F752:
+  original fighter `00543210` four action placeholders `C8–CB` now
+  restored in the complete VC7.1 C++ parent with **1,804 original
+  internal CODE B/532 x86/54 real typed PE fields**, zero other
+  nonfield differences except original external parent-tail JMPs.
+  Four real FILD locals recover 16 native stack bytes for downstream
+  cases; parent remains NONEXACT.
+  [Original F759 whole-parent proof](FIGHTER_C8_CB_WHOLE_PARENT_F759.md).
+  Prior F752 original context:
   original `00543210` 05D/05E direct memory `FCOMP` grammar restored
   from real borrowed actor/opponent `+0x44` typed fields in one entire
   native-shaped VC7.1 parent, with original saved `this EBP−0x44`.
@@ -13661,3 +13669,56 @@ so historical private record field meanings remain unknown.
 Official 969→**970 exact whole authored**, 864,672→**864,961 original
 CODE B**, reviewed **43.82%**, conservative **43.75%**. No corpus cold
 replay. [Complete original PE and compiler proof](AUDIO_QUEUE_FILE_F758.md).
+
+
+## F759: original fighter 00543210 C8–CB native complete case sources
+
+Independent pinned native PE and one freshly compiled ordinary VC7.1
+**entire 00543210 fighter giant parent** prove that four previously
+placeholder case bodies `C8–CB` emit the actual original
+**496/424/439/445 CODE B, 145/127/129/131 x86 and 16/14/12/12
+real PE/COFF fields**. Total **1,804 original game-case CODE B,
+532 x86, 54 native relocations and 1,540/1,540 directly matching
+nonfield bytes** after separating only **12 genuine full-parent shared
+exit-JMP relocation displacements** (which remain mismatched, not credited).
+The old C8–CB placeholders omitted four real native x87 signed-int
+conversion scratch locals `EBP−0x74/−0x78/−0x7C/−0x80`, causing the
+previous wrong `−0x10` stack role across dozens of later cases. After
+replacing those four original semantic source bodies, native
+`18A/18B/190/191/192/194/195/2D0/302` MOV/FILD scratch operands
+match the real original slots; `190` becomes actual **276/276 B and
+75/75 x86**, though whole boss remains nonexact. The separate
+943-B original compressed switch DATA has **156 original DIR32 fields**
+and 319/319 identical nonfield bytes; no DATA CODE credit. Full original
+whole giant is 58,294 CODE B, current genuine source still 56,954 B,
+**1,340 B short**, with other register phases unresolved.
+`CC/CD/CE` next native original cases own 435/435/394 B and are still
+source placeholders.
+
+Only the selected full giant source was freshly built with pinned VC7.1:
+`scripts/repo-python scripts/verify-fighter-four-directional-c8-f759.py`.
+No all-unit cold replay; **no independent giant case/whole-function
+exact credit**. The 33KB `004EBDA0` boss remains nonexact (137 original
+nonfield differences); F756/F757 negative source experiments cannot
+be confused with code matching. Detailed source and original PE proof:
+[F759 four-action whole-parent research](FIGHTER_C8_CB_WHOLE_PARENT_F759.md).
+
+
+## F759: fighter whole-parent C8–CB native source and nine downstream FILD slots
+
+Original authored `00543210` full 58,294-B callable fighter source
+now includes four newly recovered complete game actions C8/C9/CA/CB,
+**1,804 actual original internal CODE B, 532 real x86 and 54 PE-typed
+zero-addend COFF relocations**. Every internal native instruction
+mnemonic/width, 1,540 other nonfield bytes and each field target matches
+in ONE freshly compiled full VC7.1 parent. Twelve genuine external
+parent shared-tail JMP displacement fields still differ, and the whole
+parent emits **56,954 B** rather than original 58,294 B; therefore
+**zero new exact whole-function CODE is credited**. Crucially these
+four real source actions induce the original natural integer-to-x87
+MOV/FILD stack placements in **nine later actions** (18A/18B,
+190/191/192/194/195, 2D0, 302), fixing F752's original 190
+`EBP−0x90` vs emitted `−0x80` discrepancy without fake locals.
+Full original afterRET 943 B, 156 genuine DIR32 and 319/319 sparse
+nonfield bytes verified. One whole affected TU was compiled; no
+970-unit cold replay. [Original physical proof and full reproducer](FIGHTER_FOUR_DIRECTIONAL_NATIVE_F759.md).

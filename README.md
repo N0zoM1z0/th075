@@ -51,10 +51,20 @@ native `this` stack frame `EBP−0x44`, and recent F752 restores original
 `05D/05E` direct floating-point `FCOMP` grammar. Nonetheless the whole
 function's shared tail and other original GPR/EBP geometry still differ.
 Use the [F752 physical evidence](docs/FIGHTER_BORROWED_POSITION_F752.md)
-and the full-parent targeted verifier, **not** truncated standalone case
-credit. The `004EBDA0` 33,293-B original state-advance still has 137
+and the new [F759 original four-case whole-parent proof](docs/FIGHTER_C8_CB_WHOLE_PARENT_F759.md),
+**not** truncated standalone case credit. F759 naturally restores four real
+`C8–CB` native action bodies (1,804 CODE B/532 x86/54 true COFF fields),
+fixing the previous 16-byte x87 scratch shift in many downstream actions.
+The complete 58KB parent still has **1,340 missing CODE bytes** and is
+**not** an accepted exact unit. The `004EBDA0` 33,293-B original state-advance still has 137
 real nonfield register-phase byte differences despite correct whole
 opcode widths and 682 real typed fields.
+
+New full-parent fighter research [F759](docs/FIGHTER_FOUR_DIRECTIONAL_NATIVE_F759.md)
+recovers four complete original C8–CB actions (1,804 original internal
+CODE B/532 x86/54 genuine typed relocations), and nine authentic
+downstream integer-to-x87 EBP slots. This does **not** credit partial
+case CODE: full `00543210` still has a 1,340-B whole-CODE deficit.
 
 The **12 unmatched small/medium authored originals** include SpriteDrawing
 (6), AudioStream (1), TextureManager (2), and WinMain/Scene/Archive (3).
