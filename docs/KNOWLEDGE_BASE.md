@@ -27,8 +27,8 @@ Canonical live ledgers and actual native PE outrank all historical prose.
 
 ## Current authoritative status and superseded negatives
 
-- **964 cold-exact source-present functions**, **863,913 original authored
-  CODE bytes**, **43.77% reviewed authored coverage** and **43.70%
+- **965 cold-exact source-present functions**, **864,024 original authored
+  CODE bytes**, **43.78% reviewed authored coverage** and **43.70%
   conservative coverage**. **Only 25 `owner=authored,status=unclassified`
   function rows currently remain:** 22 giant fighter action/advance bosses
   totalling 1,102,055 original CODE bytes, WinMain (2,987), SceneObject
@@ -13480,3 +13480,27 @@ postRET DATA, all 156 physical DIR32 instruction targets and
 compiler-phase evidence](FIGHTER_DOUBLE_REPEAT_F744.md),
 `scripts/repo-python scripts/verify-fighter-double-repeat-f744.py`.
 964/863913 formal authored whole exact unchanged, no full replay.
+
+
+## F745: original R212 signed progress unlock-bit clear entire 111B GAME function COLD EXACT
+
+Pinned original Japanese TH075 complete authored R212 `00416D50`
+**111 CODE B/39 ordered native x86/NO original PE/COFF fields**
+now ordinary `src/GameProgressClearUnlockF745.cpp` VC7.1 cold exact.
+Actual native signed-short inclusive range0..320, signed `/32`
+and `%32` original CDQ plus remainder-bias sequence, shift and
+original `OR ECX,-1;SUB ECX,EDX` bit-mask logic, and true member
+`this+0x16A9C` DWORD bit-clear/RET4 all match **111/111 original
+full native bytes**. Five whole natural C++ mask tests: signed
+`-1-(1<<r)` emits original 111/39 but is potentially undefined
+at bit31, unsigned `-1-(1u<<r)` and chosen defined
+`0xffffffffu-(1u<<r)` both emit **111B/39 original exact**;
+both direct `~(1u<<r)` or `~(1<<r)` compile **110B/40** nonexact.
+One new exact unit `game-progress-clear-unlock-bit-00416d50`
+**1/1 COLD replay** with only one compiled object, no original
+relocations or masking, pre-reviewed R212 authorship unchanged.
+Adjacent exact R103 authored Set/Test source F394 unchanged.
+Formal authored ledger **964→965 whole exact, 863913→864024
+original CODE B, 43.77→43.78% reviewed**, conservative 43.70%
+unchanged; no all-old-unit replay or giant whole-CODE credit.
+[Complete original native signed math and negative controls](GAME_PROGRESS_CLEAR_UNLOCK_F745.md).

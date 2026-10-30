@@ -962,3 +962,4 @@ Record16F739::Record16F739
 NestedRecord116F741::NestedRecord116F741
 NestedRecord116F741::~NestedRecord116F741
 InputMappingF742::InputMappingF742
+GameProgressClearF745::ClearUnlockBit

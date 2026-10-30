@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F744 complete 19A/19B source and genuine register-phase recovery.**
+**Maintained 2026-10-30, after F745 authored whole GameProgress bit-clear 111-B cold exact.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -9,6 +9,28 @@ with its Markdown links adjusted for its new directory. The older
 [chronological knowledge base](KNOWLEDGE_BASE.md) are evidence, not a
 reason to undo later exact adoptions. Original pinned native PE and
 **live manifests outrank every historical sentence**.
+
+**F745 newest canonically exact authored whole 111B GameProgress bit clear:**
+Original independent R212-authored whole `00416D50` **111 native
+CODE B /39 real x86 /ZERO physical COFF fields** now compiled
+byte-exact from natural defined-unsigned VC7.1 C++:
+`if(selected>320||selected<0) {} else BITS[selected/32] &=
+(0xFFFFFFFFu - (1u << (selected%32)));` — real signed short
+`0..320` guard and native bit array at original `this+0x16A9C`.
+Native signed `/32` and `%32` arithmetic (CDQ/remainder bias),
+`SHL`, actual `OR ECX,-1; SUB ECX,EDX`, `AND` and `RET 4`
+all match **111/111 full original CODE bytes**, no relocation
+masking. Five whole-source bit-mask variants were tested:
+three natural `-1 - shift` unsigned/signed formulations 111/39
+exact, two complement forms `~(1u<<r)` and `~(1<<r)` 110/40
+NONEXACT. The selected unsigned mask is defined even at bit31.
+**1/1 newly configured canonical targeted COLD replay exact**
+from one source object, no replays of the 964 older exact units,
+no R103 sibling-source changes or origin reclassification.
+Formal accepted ledger **965 whole exact authored functions,
+864,024 native CODE B, 43.78% reviewed and 43.70% conservative**.
+22 giants and WinMain/Scene/Archive still NONEXACT.
+[Complete signed native bitmask source and five experimental results](GAME_PROGRESS_CLEAR_UNLOCK_F745.md).
 
 **F744 latest MAJOR whole-original giant source gain (still GAME NONEXACT):**
 Original 00543210 physical entire 19A **607B/166 x86/17 native
@@ -696,8 +718,8 @@ but not whole original CODE. [Full physical negative matrix](WINMAIN_USED_OBJECT
 | Item | Authoritative snapshot; recheck live manifests on every new session |
 | --- | --- |
 | Original game | User-supplied Japanese TH075 ver1.11 `resources/th075.exe`, SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`; **never** localized `th075c.exe` |
-| Exact authored whole functions | **964 functions / 964 exact units**, **863,913 original CODE bytes** |
-| Reviewed authored bytes | **43.77%** of **1,973,704** original CODE bytes; conservatively **43.70%** with unknown origins included |
+| Exact authored whole functions | **965 functions / 965 exact units**, **864,024 original CODE bytes** |
+| Reviewed authored bytes | **43.78%** of **1,973,704** original CODE bytes; conservatively **43.70%** with unknown origins included |
 | Provisional ledger | **4,351** candidate original functions; **95** still origin-unknown with 3,420 CODE bytes; these have **no authored credit** |
 | Unfinished author-owned functions | **25 complete functions**: **22 large fighter bosses**, **1,102,055 CODE bytes** of original whole CODE, plus **three** other whole functions (2,987 B, 248 B, 171 B) |
 | Separated after-RET giant switch DATA | **16,123 bytes** across the 22 giants; DATA is not authored CODE credit |

@@ -60756,3 +60756,15 @@ relocations = [
  { offset = 0x1B, type = "REL32", symbol = "_memset", target = 0x00640490 },
  { offset = 0x2E, type = "REL32", symbol = "_memset", target = 0x00640490 },
 ]
+
+# F745: independently R212-authored entire signed progress-bit clear policy.
+# Native original 111B/39 x86 has no physical COFF relocation fields.
+[units.game-progress-clear-unlock-bit-00416d50]
+source = "src/GameProgressClearUnlockF745.cpp"
+object = "build/matching/GameProgressClearUnlockF745.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["GameProgressClearF745::ClearUnlockBit"]
+symbol = "?ClearUnlockBit@GameProgressClearF745@@QAEXF@Z"
+target_address = 0x00416D50
+size = 111
+relocations = []
