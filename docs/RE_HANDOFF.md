@@ -1,6 +1,6 @@
 # TH075 — ACTIVE reconstruction agent handoff
 
-**Verified snapshot: 2026-10-31, current F780 exact ledger; F861 stage198 and F854 Archive.**
+**Verified snapshot: 2026-10-31, current F780 exact ledger; F862 native 19A and F854 Archive.**
 This is the **short working queue**, not the chronological research log.
 Original Japanese PE and the live configuration **always outrank historical
 prose, old case-level exact labels, class names or inferred layouts**.
@@ -1681,6 +1681,41 @@ bytes +3 real PE calls** checked.
 [F861 target physical proof](SCRIPTED_FIGHTER_STAGE_198_F861.md);
 scripts/repo-python scripts/verify-scripted-fighter-stage-198-f861.py.
 Original 46,755B remains NONEXACT.
+
+**F862 actual native 19A full 302B plus rejected false register-prefix exactness:**
+selected original 005278B1 is **302 complete
+native inner B/86 x86/eight true physical
+PE fields**, starts directly with
+POS54-POS5C drag, original ground
+action0xA, stage5 sprite352
+facing*60 and Y global00658268,
+then animationC8, Prepare3,
+POS=-5/velocity12/drag0.65,
+stage6 +0x7C=1. Normal whole
+VC7.1 parent **26,627 callable
+B/7,384 x86**. All original
+mnemonics/widths/PE fields match,
+but **51 true GPR operand bytes
+plus four enclosing-giant JMP
+operand bytes remain wrong**.
+CRITICAL false positive: adding a
+NONNATIVE stage0 Reset creates
+**332B/96 x86/9 original-shaped
+COFF fields**, but its LAST
+302B/86 x86 deceptively matches
+native GPRs except original giant
+JMP. The verifier physically
+rejects that complete-source extent
+and one extra native call;
+never crop an inner case.
+Previous 33 whole native-backed
+game cases and five original 901B
+packed afterRET tables rechecked,
+getter 46B four true GPR
+negatives retained.
+[F862 full physical false-positive proof](SCRIPTED_FIGHTER_STAGE_19A_F862.md);
+scripts/repo-python scripts/verify-scripted-fighter-stage-19a-f862.py.
+Original 46,755B giant still NONEXACT.
 
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`

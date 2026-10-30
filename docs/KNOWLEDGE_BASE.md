@@ -232,6 +232,27 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   GPR differences, whole native
   giant NONEXACT.
   [F844 selected original physical PE](SCRIPTED_FIGHTER_GROUNDED_130_F844.md).
+- **F862 full 19A native grounded/float-source and strict cropped-false-positive:**
+  actual 302B/86 x86/eight
+  original PE fields in
+  26,627B/7,384-x86 whole
+  fighter source. Real
+  51 GPR bytes plus four
+  original giant final JMP
+  bytes still differ. An
+  invalid extra stage-zero
+  Reset prefixes **30B/10 x86/
+  one source call**: its complete
+  case 332B/96x86/9 PE fields
+  is NONNATIVE even though
+  cropped last302B appear
+  GPR byte-matched. Physical
+  whole source must reject this
+  seductive false exact claim.
+  Earlier 33 genuine source
+  case PE fields and all five
+  901B tables reverified.
+  [F862 original case proof](SCRIPTED_FIGHTER_STAGE_19A_F862.md).
 - **F861 native original 198 first of five distinct 980B-region switch states:**
   physical first state is
   199B/60-x86/7 genuine
