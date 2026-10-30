@@ -198,6 +198,22 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   matched after all 14 original PE refs checked.
   None accepted exact.
   [F798 full native teardown evidence](ARCHIVE_NATIVE_LOOP_TEARDOWN_F798.md).
+- **F810 46KB giant actual bounce action0x4A and GPR phase:**
+  fresh whole `005214B0` source integrates
+  complete real 434B/119-x86/19-PE-field
+  action 0x4A, previous 27 actual original
+  states, F806's 46B native shared-default,
+  and all 901B afterRET packed DATA.
+  Reconstructed source CODE grows
+  **8,152→8,571 B**, x86 2,017→2,134.
+  This genuine earlier game case rotates
+  downstream fallback GPRs *back* to
+  four wrong native byte operands after
+  F808 had recovered them, separately
+  from four actual EBP slot negatives.
+  No original split-case or whole exact
+  CODE accepted.
+  [F810 full parent register phase](SCRIPTED_FIGHTER_BOUNCE_GPR_PHASE_F810.md).
 - **F809 Scene 248-B authored destructor lifetimes:**
   nine new fully compiled VC7.1 virtual/EH source
   candidates independently reproduce both original

@@ -504,6 +504,34 @@ no 350B subcase or tail credit.
 [F808 actual native GPR restoration](SCRIPTED_FIGHTER_LANDING_RESTORES_GPR_F808.md);
 `scripts/repo-python scripts/verify-scripted-fighter-landing-shared-f808.py`.
 
+**F810 further positive new 46KB original scripted fighter `0x4A`:**
+real full `005214B0` action `0x4A`
+is **434 native B/119 x86/19 original
+physically typed PE/COFF fields**,
+original packed case bounds `00522DD6..00522F87`.
+Incorporating F610's natural game bounce
+source into F808's full-parent F806
+shared-default C++ rebuilds **28 true
+original actions** in one fresh
+VC7.1 source object: CODE **8,152→8,571 B**,
+x86 **2,017→2,134**. All 27 earlier
+source-backed original cases, three
+real default tail PE calls, four early
+native getter JMPs, and full 901-B
+afterRET switch DATA independently
+verified. **The real 0x4A source rotates
+default tail GPR allocation again**:
+four genuine GPR operand bytes
+`+10/+12/+16/+19` differ, plus four
+actual saved-this EBP bytes
+`+2/+13/+26/+36`; 46B/16-x86
+tail control and PE field shape unchanged.
+Do not inherit F808 GPR phase from its
+shorter parent. Full 46,755B original
+still NONEXACT, no original inner CODE credited.
+[F810 full PE/VC7.1 proof](SCRIPTED_FIGHTER_BOUNCE_GPR_PHASE_F810.md);
+`scripts/repo-python scripts/verify-scripted-fighter-bounce-shared-f810.py`.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin
