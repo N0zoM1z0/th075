@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F749 giant original early resource and whole-parent saved-this frame recovery.**
+**Maintained 2026-10-30, after F750 authored CharacterAux 101-byte frame refresh cold exact.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -9,6 +9,24 @@ with its Markdown links adjusted for its new directory. The older
 [chronological knowledge base](KNOWLEDGE_BASE.md) are evidence, not a
 reason to undo later exact adoptions. Original pinned native PE and
 **live manifests outrank every historical sentence**.
+
+**F750 latest canonical EXACT complete authored CharacterAux frame refresh:**
+Original independent R213-authored `005FAC60` **101 native CODE B/
+35 real x86/4 physically typed native REL32 fields** now ordinary
+VC7.1 natural C++ cold exact. Original game code reads signed
+`this+0x60` group and `this+0x62` frame, uses real two-level
+outer `std::vector::at(005FAD20)` and inner
+`at(005FACD0)` to store selected frame at `this+8`, copies
+real frame 16-bit `+4` code to `this+0x72`, then nested outer
+At and real `std::vector::size(005F9E90)` to narrow frame
+count to `this+0x70`. **85/85 original nonreloc machine bytes**
+and all four physical source/PE target/ordinal REL32 fields
+match full source, **1/1 one-new-unit COLD exact**. Existing
+library callee CODE not recredited and private class naming/
+layout are provisional. Formal exact authored **967 entire
+functions /864,219 original CODE B (43.79% reviewed,
+43.71% conservative)**, 98% goal still incomplete.
+[Whole original PE/source nested-collection proof](CHARACTER_AUX_FRAME_SELECTION_F750.md).
 
 **F747–F749 MAJOR new native original giant whole-parent frame source GAIN (NONEXACT):**
 Six additional meaningful real complete source cases in the SAME
@@ -768,8 +786,8 @@ but not whole original CODE. [Full physical negative matrix](WINMAIN_USED_OBJECT
 | Item | Authoritative snapshot; recheck live manifests on every new session |
 | --- | --- |
 | Original game | User-supplied Japanese TH075 ver1.11 `resources/th075.exe`, SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`; **never** localized `th075c.exe` |
-| Exact authored whole functions | **966 functions / 966 exact units**, **864,118 original CODE bytes** |
-| Reviewed authored bytes | **43.78%** of **1,973,704** original CODE bytes; conservatively **43.71%** with unknown origins included |
+| Exact authored whole functions | **967 functions / 967 exact units**, **864,219 original CODE bytes** |
+| Reviewed authored bytes | **43.79%** of **1,973,704** original CODE bytes; conservatively **43.71%** with unknown origins included |
 | Provisional ledger | **4,351** candidate original functions; **95** still origin-unknown with 3,420 CODE bytes; these have **no authored credit** |
 | Unfinished author-owned functions | **25 complete functions**: **22 large fighter bosses**, **1,102,055 CODE bytes** of original whole CODE, plus **three** other whole functions (2,987 B, 248 B, 171 B) |
 | Separated after-RET giant switch DATA | **16,123 bytes** across the 22 giants; DATA is not authored CODE credit |

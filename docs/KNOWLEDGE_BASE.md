@@ -27,8 +27,8 @@ Canonical live ledgers and actual native PE outrank all historical prose.
 
 ## Current authoritative status and superseded negatives
 
-- **966 cold-exact source-present functions**, **864,118 original authored
-  CODE bytes**, **43.78% reviewed authored coverage** and **43.71%
+- **967 cold-exact source-present functions**, **864,219 original authored
+  CODE bytes**, **43.79% reviewed authored coverage** and **43.71%
   conservative coverage**. **Only 25 `owner=authored,status=unclassified`
   function rows currently remain:** 22 giant fighter action/advance bosses
   totalling 1,102,055 original CODE bytes, WinMain (2,987), SceneObject
@@ -13557,3 +13557,25 @@ DIR32 native/source x86 targets and 319/319 sparse bytes checked.
 [Actual whole PE/COFF source+positive frame+negative grammar](FIGHTER_EARLY_RESOURCE_STACK_F747_F749.md),
 `scripts/repo-python scripts/verify-fighter-early-resource-f749.py`.
 Official 966 exact whole authored/864118 original CODE unchanged.
+
+
+## F750: original authored CharacterAux 005FAC60 whole 101B nested vector frame refresh COLD EXACT
+
+Independent R213-authored complete original `005FAC60..005FACC5`
+**101 CODE B/35 original x86/4 authentic typed REL32** now
+natural VC7.1 `CharacterAuxFrameF750::RefreshSelectedFrame`
+source exact. True short group index at `this+0x60` and frame
+index at +0x62, outer vector pointer +0x7C, actual outer
+`At(005FAD20)` returns an inner vector pointer reference, actual
+inner `At(005FACD0)` returns frame stored at +8, whose real
+`+4` short copies to +0x72, then second real outer At followed
+by inner `Size(005F9E90)` narrows count to +0x70. C++ nested
+expression naturally generates original x86 dual-parameter push
+order without invented cleanup; entire **85/85 nonfield native
+bytes and four actual source symbol/PE destination/owner REL32
+fields** equal. Only 1 new whole game-function cold replay unit
+**1/1 exact from one C++ object**; original 966 old matches and
+all STL library callee origins preserved, no whole class private
+layout asserted. Native authored snapshot **967 whole functions,
+864,219 native CODE B, 43.79% reviewed and 43.71% conservative**.
+[Full original PE/COFF ABI and selected replay](CHARACTER_AUX_FRAME_SELECTION_F750.md).

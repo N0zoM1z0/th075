@@ -60780,3 +60780,20 @@ symbol = "?AdvanceBG05bCounters@BackgroundCountersF746@@QAEXXZ"
 target_address = 0x0044E8D0
 size = 94
 relocations = []
+
+# F750: independently R213-authored complete 101-B character auxiliary
+# selected frame refresh. Nested STL at/size callees are library, NOT credited.
+[units.character-aux-refresh-selected-frame-005fac60]
+source = "src/CharacterAuxFrameF750.cpp"
+object = "build/matching/CharacterAuxFrameF750.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["CharacterAuxFrameF750::RefreshSelectedFrame"]
+symbol = "?RefreshSelectedFrame@CharacterAuxFrameF750@@QAEXXZ"
+target_address = 0x005FAC60
+size = 101
+relocations = [
+ { offset = 0x1E, type = "REL32", symbol = "?At@OuterFrameCollectionF750@@QAEPAPAVInnerFrameCollectionF750@@H@Z", target = 0x005FAD20 },
+ { offset = 0x25, type = "REL32", symbol = "?At@InnerFrameCollectionF750@@QAEPAUCharacterFrameF750@@H@Z", target = 0x005FACD0 },
+ { offset = 0x4F, type = "REL32", symbol = "?At@OuterFrameCollectionF750@@QAEPAPAVInnerFrameCollectionF750@@H@Z", target = 0x005FAD20 },
+ { offset = 0x56, type = "REL32", symbol = "?Size@InnerFrameCollectionF750@@QAEHXZ", target = 0x005F9E90 },
+]

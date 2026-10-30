@@ -964,3 +964,4 @@ NestedRecord116F741::~NestedRecord116F741
 InputMappingF742::InputMappingF742
 GameProgressClearF745::ClearUnlockBit
 BackgroundCountersF746::AdvanceBG05bCounters
+CharacterAuxFrameF750::RefreshSelectedFrame
