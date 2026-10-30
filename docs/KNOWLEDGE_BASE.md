@@ -232,6 +232,24 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   GPR differences, whole native
   giant NONEXACT.
   [F844 selected original physical PE](SCRIPTED_FIGHTER_GROUNDED_130_F844.md).
+- **F851 real original 188 ground state:**
+  native 214B/61-x86/6 real typed
+  PE fields, source actor transition
+  action2 and stage2 animation1D,
+  with actual gravity00659090.
+  New whole source 24,196B/
+  6,654-x86 has same native x86
+  grammar/PE targets, but **38 true
+  GPR operand bytes** and two
+  encompassing giant return-JMP
+  bytes are still wrong; previous
+  136 and 186/187 GPR errors
+  honestly rechecked. Twenty
+  earlier physical source cases
+  and five 901B packed tables
+  remain verified; no whole-code
+  exact credit.
+  [F851 native PE source proof](SCRIPTED_FIGHTER_GROUND_188_F851.md).
 - **F850 real 186/187 grounded game actions in current fighter:**
   original 250B/74 x86/7
   physical PE fields and
