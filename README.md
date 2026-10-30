@@ -146,6 +146,13 @@ wrong and current `0x63` is **706 original B vs 705 emitted**.
 Old F626 strict claims belong to an earlier whole-source context,
 not the current giant. No new callable CODE is accepted from F777.
 
+A further [F778 whole-fighter native default reconstruction](docs/FIGHTER_NATIVE_DEFAULT_F778.md)
+corrects real game behavior for **239 original switch action IDs**,
+recovering a **32-B/10-x86** native conditional action reset.
+This reduces the complete `00543210` source shortfall from 33 to
+**11 original CODE B**, but four genuine default GPR bytes and
+other whole-game registers remain NONEXACT; no split-case credit.
+
 The **5 unmatched small/medium authored originals** include SpriteDrawing
 (2), and WinMain/Scene/Archive (3).
 They are fully enumerated in the [active handoff](docs/RE_HANDOFF.md).

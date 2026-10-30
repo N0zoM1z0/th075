@@ -34,7 +34,14 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   Use `scripts/repo-python scripts/report-reconstruction-status.py --summary`
   and the canonical native/origin manifests; do not quote this snapshot
   as timeless status after a later adoption.
-- **Most recent giant validation context is F777** (negative
+- **Most recent giant validation context is F778**: original shared
+  `00551598` switch fallback genuinely handles 239 native action IDs
+  and now emits all native **32-B/10-x86** conditional reset grammar
+  with two authentic PE/COFF call targets, reducing full fighter
+  length deficit from 33 to **11 CODE B**. Four genuine GPR bytes,
+  one original `0x63` width byte, and ten original tail CODE bytes
+  remain NONEXACT. [F778 PE native proof](FIGHTER_NATIVE_DEFAULT_F778.md).
+  Historical **F777** validation context (negative
   original-source regression guard, not a newly exact boss): a fresh
   current whole-parent C++ build checks complete original action 0x58
   (469 B nonfield/nontail exact), 0x59/0x60/0x61 with 19/98/101
@@ -14117,3 +14124,26 @@ member controls had no positive exact results. Whole current
 00543210 still emits 58,261/58,294 native CODE B, NONEXACT.
 No new original whole CODE is credited, no full accepted-unit cold
 replay. [F777 complete physical original evidence](FIGHTER_CURRENT_REGISTER_PHASE_AUDIT_F777.md).
+
+
+## F778: genuine 239-action default handler fixes 00543210 common tail
+
+Original pinned fighter switch's seven actual after-RET dense/sparse
+jump tables map **239 native action IDs** to `00551598` shared
+default, not an arbitrary `g_FighterProbeMarker=0` used in earlier
+source. Original native **32-B/10-x86** guard calls `0040FA30`,
+compares actor signed short +0x70 and conditionally transitions with
+`0040FAC0(0)`; one new full normal VC7.1 parent reproduces native
+mnemonics, widths, both PE/COFF call targets and original source
+instruction locations, with **four real EAX/ECX/EDX bytes still
+wrong**. The entire original 58,294-B/16,471-x86 fighter now emits
+**58,283 B/16,468 x86** (was 58,261/16,459). Physical byte
+partition proves the remaining 11 B = native 0x63 CMP encoding 1 B
+plus default-path tail JMP 2 B and final extra call 8 B. Additional
+near-length-perfect 58,293-B/16,471-x86 C++ controls were rejected
+because other original action breaks improperly routed via that
+extra call. Source remains original-game NONEXACT; 943 separate
+native after-RET DATA bytes, 156 real DIR32 and 319/319 other bytes
+reverified, as are the actual C8–CE/1F6–1F8/2DB/2F8–2FB cases.
+Zero new whole game exact credit (977/868,036 unchanged), no mass
+cold replay. [F778 original PE and full-parent source](FIGHTER_NATIVE_DEFAULT_F778.md).

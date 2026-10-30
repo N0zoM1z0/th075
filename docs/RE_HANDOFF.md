@@ -214,7 +214,7 @@ is accepted as an independent callable function. [F771 original
 physical evidence](FIGHTER_GROUNDED_VOLLEY_TYPED_F771.md);
 `scripts/repo-python scripts/verify-fighter-grounded-volley-typed-f771.py`.
 
-**F777 current 58KB original PE register audit, not a new whole exact:**
+**F777 historical 58KB register audit (before F778):**
 Rebuilt the entire tracked F771 parent and independently confirmed its
 real native `058` complete **469-B/135-x86/17-PE-field** case is
 nonfield-exact outside legitimate external shared-tail JMPs, while
@@ -232,6 +232,24 @@ Thirteen actual C++ 059 stage/float/short conversions and eight R015
 `004EBDA0` typed-color/stage variants were negative; don't repeat
 them without a new source hypothesis.
 [Original physical evidence and negative bounds](FIGHTER_CURRENT_REGISTER_PHASE_AUDIT_F777.md).
+
+**F778 latest genuine full-parent default-handler repair:** independent
+physical native dispatcher reading proves **239 original action IDs**
+map to the real `00551598` shared default, not a source marker.
+Its actual `0040FA30` state getter / `+0x70` compare / conditional
+`0040FAC0(0)` transition is now normal whole-parent C++ with
+**32 original CODE B, 10 native x86 and two genuine PE/COFF call
+fields**; only four real EAX/ECX/EDX operand bytes in this guard
+remain wrong. Recovered source **58,261→58,283 CODE B**, now only
+**11 B/3 x86** shorter than original **58,294 B/16,471 x86**:
+10 B of separately observed tail JMP/getter CODE plus one real
+`0x63` CMP-width byte. "Near-exact-length" source controls that
+route other cases through an extra getter were explicitly REJECTED
+as nonnative control flow. Same fresh source verifies earlier
+C8–CE/1F6–1F8/2DB/2F8–2FB and all 943 B/156 DIR32/319 sparse
+nonfield original after-RET DATA. **Giant still NONEXACT, zero
+whole-function CODE credit**. [F778 full native control-flow proof](FIGHTER_NATIVE_DEFAULT_F778.md),
+`scripts/repo-python scripts/verify-fighter-native-default-f778.py`.
 
 **Next meaningful giant tasks:** resolve the real native `059` **19**
 normalized nonfield GPR discrepancies and `060/061` **98/101**;
