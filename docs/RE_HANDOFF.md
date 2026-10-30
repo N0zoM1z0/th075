@@ -773,6 +773,23 @@ accepted authored exact CODE.
 [F822 four full native cases](SCRIPTED_FIGHTER_TIMED_LANDINGS_F822.md);
 scripts/repo-python scripts/verify-scripted-fighter-timed-landings-f822.py.
 
+**F823 two more complete native 46KB fighter timer cases:**
+original 9B and 9C are each **276 native B/73 x86/9
+actual typed PE references**, with real -10/-13 float
+heights and original action2 transitions. One affected
+freshly compiled whole parent is **14,848 callable
+B/3,912 x86**, up from F822 14,326B/3,770 x86.
+All **six** 96/97/98/9A/9B/9C native timer cases
+have correct opcode/width/GPR and **54 original
+PE fields**; only two genuine full-giant epilogue
+JMP operand bytes (272/273) differ in each case,
+not accepted as exact CODE. Previous 91, 8C/8F/90,
+actual 0x63 shifted COFF field, and 901B afterRET
+DATA independently checked.
+[F823 physical whole-parent proof](SCRIPTED_FIGHTER_LANDING_PAIR_F823.md);
+scripts/repo-python scripts/verify-scripted-fighter-landing-pair-f823.py.
+Whole 46,755B fighter still NONEXACT.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin

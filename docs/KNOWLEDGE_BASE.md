@@ -214,6 +214,17 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   saved-this slot. Entire 248B remains
   nonexact, no credited original CODE.
   [F818 original PE typed-view result](SCENE_COMPLETE_BORROWED_OWNER_F818.md).
+- **F823 six complete original timer cases in new 46KB fighter parent:**
+  9B and 9C join previous 96/97/98/9A in a
+  **14,848B/3,912-x86** source parent. Each
+  native case is 276 B/73 x86/9 true PE
+  fields, all 54 native references match
+  with just two actual external final
+  JMP operand bytes different per case.
+  Original 0x91/8C-90/0x63 and 901B
+  packed DATA also checked. No accepted
+  original whole callable CODE credit.
+  [F823 original PE proof](SCRIPTED_FIGHTER_LANDING_PAIR_F823.md).
 - **F822 four true 276-B timer-landing cases in whole fighter:**
   original 0x96/0x97/0x98/0x9A = **1,104
   genuine original CODE B, 292 x86 and 36
