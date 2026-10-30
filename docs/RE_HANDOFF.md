@@ -374,6 +374,18 @@ NONEXACT; zero new whole CODE credit.
 [Complete native F794 evidence](CHARACTEROBJECT_COLOR_REGISTER_PHASE_F794.md);
 `scripts/repo-python scripts/verify-characterobject-color-source-f794.py`.
 
+**F798 33KB source lexical-scope hypothesis rejected by full PE:**
+eleven independent whole `004EBDA0` VC7.1 compiles test actual
+0x38B/0x38C/0x38D/0x38E/0x3E3/0x3E4 C++ lexical
+braces, individually and combined. **All eleven complete
+33,731-B source CODE+DATA sections are byte identical**,
+with all **682 physical original PE/COFF fields**
+independently verified. All retain the same **137 true
+GPR/operand wrong bytes** in the final 33,293-B giant.
+Simple case braces cannot fix register phases.
+[F798 complete original-target source result](CHARACTEROBJECT_LEXICAL_SCOPE_F798.md);
+`scripts/repo-python scripts/verify-characterobject-scope-phase-f798.py`.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin
