@@ -198,6 +198,20 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   matched after all 14 original PE refs checked.
   None accepted exact.
   [F798 full native teardown evidence](ARCHIVE_NATIVE_LOOP_TEARDOWN_F798.md).
+- **F812 native ten-burst frame evidence:**
+  F614's whole 469B/135-x86/17-PE-field
+  original fighter action 0x58 joined 29
+  preceding real action bodies in the same
+  freshly compiled 005214B0 parent with
+  original F806 46B shared tail and 901B
+  postRET switch DATA. Source CODE grows
+  **8,841 to 9,295 B**. Real used 10-shot
+  loop variable moves saved this from
+  EBP-4 to EBP-8, recovering all original
+  default GPR operands. Four honest source
+  EBP-8 vs native EBP-0x10 bytes remain
+  different, full 46KB giant NONEXACT.
+  [F812 original native source result](SCRIPTED_FIGHTER_TEN_BURST_FRAME_F812.md).
 - **F811 scripted 46KB giant recovery next-case/third GPR phase:**
   full original 285B/74-x86/14-native-PE-field
   0x4C recovery source now follows the complete

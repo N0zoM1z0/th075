@@ -562,6 +562,24 @@ claims into a new parent.
 `scripts/repo-python scripts/verify-scripted-fighter-recovery-shared-f811.py`.
 Still NOT full native 46,755-B exact.
 
+**F812 positive 46KB fighter ten-projectile source and frame lifetime:**
+native action 0x58 at 005230A5 is 469 complete interior B/135 x86
+with 17 true physical PE fields. One freshly built **30-action
+whole C++ parent** preserves 29 prior original case bodies,
+the 901B afterRET packed switch DATA and F806's 46-B shared
+default/getter with three authentic PE calls and four true early
+JMPs. Callable source CODE grows **8,841 to 9,295 B**,
+x86 **2,206 to 2,339**. Real gameplay's ten-shot
+loop introduces a used index and advances saved this
+from EBP-4 to **EBP-8**, naturally restoring all native
+default EDX/EAX/ECX GPR roles. Only four honest
+EBP displacement bytes remain wrong in the tail
+(native EBP-0x10, source EBP-8). The full
+original 46,755-B game giant remains NONEXACT
+and cannot receive subcase CODE credit.
+[F812 native entire-parent proof](SCRIPTED_FIGHTER_TEN_BURST_FRAME_F812.md);
+scripts/repo-python scripts/verify-scripted-fighter-ten-burst-shared-f812.py.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin
