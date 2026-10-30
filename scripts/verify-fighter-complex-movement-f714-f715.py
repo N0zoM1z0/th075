@@ -86,7 +86,8 @@ def combine_source(f706,f708,f711,f696,f699,f701,f672,reader,pe,real,boss,report
     return src,modules,h
 
 
-def audit_cases(f701,f676,f598,f699,reader,pe,real,boss,mapped,emitted,refs):
+def audit_cases(f701,f676,f598,f699,reader,pe,real,boss,mapped,emitted,refs,*,
+                following_native_2dd=False):
     by={x['action']:int(x['handler'],16) for x in mapped}
     results=[]
     for action in (0x2DB,0x2DC):
@@ -153,10 +154,19 @@ def audit_cases(f701,f676,f598,f699,reader,pe,real,boss,mapped,emitted,refs):
                         'real_native_GPR_CFG_negative_count':len(wrong),
                         'real_native_vs_compiler_EBP_scratch_operands':EBP[action],
                         'source_original_case_byte_exact':False})
-    need(emitted[SOURCE_CASE_STARTS[0x2DB]+SOURCE_2DB_X86].op_str=='0xff0000'
-         and emitted[SOURCE_CASE_STARTS[0x2DC]+ORIGINAL[0x2DC][3]].mnemonic=='mov'
-         and emitted[SOURCE_CASE_STARTS[0x2DC]+ORIGINAL[0x2DC][3]].op_str.endswith(', 0x2de'),
-         'full native original 2DB->2DC->2DD physical neighboring handler boundaries changed')
+    next_after_2dc=SOURCE_CASE_STARTS[0x2DC]+ORIGINAL[0x2DC][3]
+    need(emitted[SOURCE_CASE_STARTS[0x2DB]+SOURCE_2DB_X86].op_str=='0xff0000',
+         'native 2DB must lead into whole original 2DC storm')
+    if following_native_2dd:
+        need([x.mnemonic for x in emitted[next_after_2dc:next_after_2dc+3]]
+             ==['push','push','push']
+             and [x.op_str for x in emitted[next_after_2dc:next_after_2dc+3]]
+             ==['0xff0000','4','3'],
+             'real full native 2DC must lead to independently verified source-backed 2DD storm')
+    else:
+        need(emitted[next_after_2dc].mnemonic=='mov'
+             and emitted[next_after_2dc].op_str.endswith(', 0x2de'),
+             'native full 2DC must lead to its original source placeholder 2DD')
     return results
 
 

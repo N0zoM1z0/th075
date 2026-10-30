@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F716 RAII/owner and F717 edge-branch controls.**
+**Maintained 2026-10-30, after F718 full fighter double-volley restoration.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -9,6 +9,25 @@ with its Markdown links adjusted for its new directory. The older
 [chronological knowledge base](KNOWLEDGE_BASE.md) are evidence, not a
 reason to undo later exact adoptions. Original pinned native PE and
 **live manifests outrank every historical sentence**.
+
+**F718 latest large-boss source recovery (still NONSTRICT):**
+Real original `00543210` actions `2DD` **680 native B/189 x86/19
+original typed PE/COFF fields** and `2DE` **660 B/189 x86/18
+fields** now have complete natural C++ source in ONE newly compiled
+original-shaped 58KB parent. Both generated cases have identical
+original mnemonic/width geometry, all **37 original physical typed
+fields in original x86 positions**. **2DD has 80 real nonfield
+GPR/CFG mismatches**; 2DE has **0 normalized GPR/CFG differences**
+but original `EBP−0x1A8` x87 scratch uses source `−0xC8`, so neither
+is native strict. The source `this` slot is `EBP−0x28` versus native
+`−0x44`, with 3,015 total MOV uses including its save. Every
+prior original 2DB/2DC, 2D0/2D1, 2BF/2C4, five 259–25D and
+later 2F8–302 action context, 26 still-strict original internal
+bodies, known 2EF/2F0/2F1 honest GPR regressions and all **943 B
+of original independent afterRET switch DATA** rechecked in same
+compiled parent. Zero complete authored exact CODE accepted.
+[Full PE/COFF and EBP evidence](FIGHTER_DOUBLE_VOLLEY_F718.md);
+`scripts/repo-python scripts/verify-fighter-double-volley-f718.py`.
 
 **F716/F717 latest targeted whole-function controls:** F716
 investigated **16 real-used RAII owners** for original authored 171-B

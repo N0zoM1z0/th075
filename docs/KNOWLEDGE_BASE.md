@@ -12795,3 +12795,31 @@ regress from F715 closer 1,032/292. No x87/branch/GPR exactness
 gain. Preserve closer tracked F714/F715 source and original native
 negative comparison. [Physical original and full compiler results](ARCHIVE_RAII_OWNER_AND_FIGHTER_EDGE_CONTROLS_F716_F717.md).
 No exact whole-function credit, no EXE changes, no full 943 cold replay.
+
+
+## F718: fully recovered original 2DD/2DE dual-volley source in complete 58KB fighter parent
+
+Original physical `00543210` actions `2DD` `0054EAAB..0054ED53`
+(**680 B/189 x86/19 real PE/COFF fields**) and `2DE`
+`0054ED53..0054EFE7` (**660 B/189 x86/18 fields**) are
+now complete meaningful natural C++ in **one freshly compiled
+VC7.1 original-shaped entire giant**. Both emit **exactly** their
+original x86 mnemonic AND width positions, with all **37 original
+physical zero-addend typed field destinations at their original x86
+ordinals**. 2DD has real source state, X/Y drag, ground collision,
+paired `0x329/0x387` float shots and timer/action loops. 2DE
+recovers native stage-7 kind `0x3C` raw shot, stage-7–15 kind
+`0x329` float projectile, stage-16 repeat and stage-25 auxiliary.
+**2DD has 80 honest nonfield GPR/CFG differences**; **2DE has zero
+normalized GPR/CFG differences** after the physically attested saved
+receiver, but native `2DE` real EBP x87 scratch `−0x1A8` is source
+`−0xC8` and `2DD` `−0x1A0/−0x1A4` are `−0xC0/−0xC4`.
+Both are **NONSTRICT and not independent exact game functions**.
+In the SAME newly compiled parent, previous true source-backed
+`2DB/2DC`, `2D0/2D1`, `2BF/2C4`, five original 259–25D cases,
+later 2F8–302, the 26 still-strict earlier nonterminal cases,
+real 2EF/2F0/2F1 GPR negatives and all 943 independent original
+afterRET DATA bytes were rechecked.
+[F718 entire original PE/source and physical EBP evidence](FIGHTER_DOUBLE_VOLLEY_F718.md).
+`scripts/repo-python scripts/verify-fighter-double-volley-f718.py`.
+Whole authored exact ledger unchanged at 943/862726, no cold all-unit replay.
