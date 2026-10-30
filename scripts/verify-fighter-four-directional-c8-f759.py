@@ -208,6 +208,11 @@ def check_native_cases(reader,pe,decoder,code,refs,ins,map_table,by):
 
 
 def check_downstream_scratch(reader,pe,decoder,ins,mapper):
+    # Verify the real regression too: restoring native FILD slots does NOT
+    # imply that later eight-shot register phases are byte-exact.
+    f598=module('f759_downstream_normalizer',
+                'scripts/verify-fighter-singleton-contact-f598.py')
+    native_register_residuals={0x190:40,0x191:40,0x192:34}
     checked=[]
     for case,(start,end,ordinal,slot) in DOWNSTREAM.items():
         original=list(decoder.disasm(reader.pe_bytes_at(pe,start,end-start),start))
@@ -227,10 +232,18 @@ def check_downstream_scratch(reader,pe,decoder,ins,mapper):
         # Only the *physical EBP role* is claimed: some later source
         # registers still differ from the native owner, and that remains
         # an honest unaccepted whole-boss mismatch.
+        gpr_wrong=[i for i,(a,b) in enumerate(zip(
+                   f598.normalized(original),f598.normalized(source)))
+                   if a!=b and original[i].mnemonic not in ('call','jmp')]
+        if case in native_register_residuals:
+            require(len(gpr_wrong)==native_register_residuals[case],
+                    f'current F759 source {case:#x} original GPR regression changed; '
+                    're-audit native source, do not transplant F752 zero-GPR claim')
         checked.append({'native_case':f'0x{case:X}',
                         'original_and_source_EBP_FILD':f'-0x{slot:X}',
                         'native_case_CODE_B':end-start,
-                        'native_x86_instructions':len(original)})
+                        'native_x86_instructions':len(original),
+                        'source_nonfield_GPR_residuals':len(gpr_wrong)})
     print('F759 downstream: all 9 original/CPP real MOV/FILD stack roles restored '
           '(18A/18B,190/191/192,194/195,2D0,302); whole 58KB NOT exact',flush=True)
     return checked
@@ -300,6 +313,9 @@ def main():
            'true_nonidentical_external_parent_jump_displacement_fields':12,
            'source_giant_shared_tail_target':tail,
            'downstream_real_EBP_MOV_FILD_restorations':downstream,
+           'F759_actual_190_191_192_register_regressions_NOT_EXACT':
+             {x['native_case']:x['source_nonfield_GPR_residuals'] for x in downstream
+              if x['native_case'] in ('0x190','0x191','0x192')},
            'genuine_afterRET_DISPATCH_DATA':data,
            'new_whole_original_game_FUNCTION_exact':False,
            'new_canonical_game_function_CODE_credit':0,
