@@ -2059,6 +2059,46 @@ scripts/repo-python scripts/verify-scripted-fighter-float-volley-pair-f872.py.
 Whole 46,755B original NONEXACT,
 no internal case exact credit.
 
+**F873 two original 1FB/1FC physics-first recovery game states:**
+original native 00528634/00528731
+are TWO distinct complete
+**253 inner B/70 x86/six
+physical PE fields** EACH.
+True motion POS+50 height
+test and global00658350
+subtraction happen BEFORE
+stage0 ResetAt453E20 and
+counter/FLAG initialization.
+Stage6 repeats owner counters
+then separately sets POS15.0f.
+Incorrect stage0-before-physics
+source retains 253B/70x86 but
+destroys actual original branch
+mnemonics/widths. New one
+selected whole VC7.1 parent
+**30,110 callable CODE B/
+8,442 x86** (F872 29,634/
+8,306). Each case matches
+every original opcode/width
+and six true native PE offsets/
+targets, but has **46 actual
+GPR operand bytes** plus two
+original giant-final JMP bytes
++249/+250 different. All
+44 earlier original
+source-backed game cases
+and all five original
+901B packed afterRET
+jump DATA tables plus common
+getter native 34/34
+nonrelocation bytes+3 PE
+calls rechecked.
+[F873 original native CFG evidence](SCRIPTED_FIGHTER_RECOVERY_PAIR_1FB_1FC_F873.md);
+scripts/repo-python scripts/verify-scripted-fighter-recovery-pair-f873.py.
+Whole original 46,755B
+still NONEXACT, zero
+split-case exact CODE.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin

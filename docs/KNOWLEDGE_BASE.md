@@ -284,6 +284,33 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   slots remain wrong. No
   accepted whole CODE.
   [F864 physical proof](SCENE_THREE_REAL_NAMED_POINTERS_F864.md).
+- **F873 real 1FB/1FC two physics-before-stage0 recovery states:**
+  each original 253B/
+  70-x86/six original
+  PE fields in one
+  **30,110B/8,442-x86**
+  complete fighter C++.
+  Real POS height decay
+  global00658350 occurs
+  BEFORE stage0 Reset
+  and owner counters.
+  Stage6 resets counter/
+  flag and sets POS15.
+  Source matches all
+  original opcode widths
+  and six PE field
+  destinations per case,
+  but **46 GPR bytes
+  and two giant JMP
+  bytes per case** still
+  different. 44 prior
+  original game cases,
+  all five native 901B
+  afterRET packed DATA
+  tables and getter
+  34/34 nonrelocation
+  bytes rechecked.
+  [F873 native proof](SCRIPTED_FIGHTER_RECOVERY_PAIR_1FB_1FC_F873.md).
 - **F872 real 1F9/1FA native float volley pair:**
   each original 227B/65x86/
   seven typed physical PE
