@@ -124,6 +124,12 @@ New [F770 original complete shared-texture allocator](docs/TEXTURE_MANAGER_SHARE
 **261-B/79-x86/11-PE-field cold exact** restores real third vector
 zero and loop index lifetimes `EBP−0x44`/`−0x10`, not dummy locals.
 
+The new [F771 complete fighter 2FB source investigation](docs/FIGHTER_GROUNDED_VOLLEY_TYPED_F771.md)
+restores all native **647-B/181-x86/17-PE-field opcode/width** positions
+by using the authentic borrowed opponent/actor X and opponent Y float
+members. Its real register-byte differences decrease 119→111, but the
+entire 58KB boss remains NONEXACT and no case bytes are credited.
+
 The **7 unmatched small/medium authored originals** include SpriteDrawing
 (4), and WinMain/Scene/Archive (3).
 They are fully enumerated in the [active handoff](docs/RE_HANDOFF.md).

@@ -187,7 +187,7 @@ real wrong operand bytes; true after-RET 943-B separate DATA reverified.
 [F767 original PE and source proof](FIGHTER_STORM_ANGLE_TYPED_F767.md);
 `scripts/repo-python scripts/verify-fighter-angle-storm-typed-f767.py`.
 
-**F768 newest 2F8 integer-FPU source recovery:** actual C++ actor
+**F768 historical 2F8 integer-FPU source recovery (before F771):** actual C++ actor
 `this+0x44` borrowed float member changes the real native actor-X
 minus signed-direction×3 operation from nonnative `FLD/FISUB` to
 original `MOVSX/IMUL/MOV/FILD/FSUBR`. In one newly compiled full
@@ -200,6 +200,19 @@ and separate 943-B original afterRET DATA. The whole native function
 still compiles 58,261/58,294 CODE B and is NOT exact.
 [F768 full PE/COFF source proof](FIGHTER_STORM_VOLLEY_TYPED_F768.md);
 `scripts/repo-python scripts/verify-fighter-storm-volley-typed-f768.py`.
+
+**F771 latest 2FB whole-parent original source result:** the original
+`00550D97..0055101E` 647-B/181-x86/17-PE-field state now uses real
+borrowed actor/opponent float `+0x44` X and opponent `+0x48` Y.
+Eleven full 58KB VC7.1 source variants show all four wrong original
+MOV/FLD instruction ordinals repaired and wrong real operand bytes
+**119→111**, with 111 still explicitly **NONEXACT**. Previous full
+2F8 166, 2F9 249 and 2FA 156 real operand-byte negatives remain;
+the whole boss still emits 58,261 of original 58,294 CODE B and
+943-B afterRET jump DATA remains independently correct. No case CODE
+is accepted as an independent callable function. [F771 original
+physical evidence](FIGHTER_GROUNDED_VOLLEY_TYPED_F771.md);
+`scripts/repo-python scripts/verify-fighter-grounded-volley-typed-f771.py`.
 
 **Next meaningful giant tasks:** resolve the real native `059` **19**
 normalized nonfield GPR discrepancies and `060/061` **98/101**;

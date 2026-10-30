@@ -34,7 +34,12 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   Use `scripts/repo-python scripts/report-reconstruction-status.py --summary`
   and the canonical native/origin manifests; do not quote this snapshot
   as timeless status after a later adoption.
-- **Most recent giant source context is F768**: native fighter
+- **Most recent giant source context is F771**: original 2FB
+  647-B/181-x86/17 physical PE/COFF fields now has no wrong
+  opcode/width positions, after using actual typed borrowed X and
+  opponent Y float members. Real operand bytes improve 119→111;
+  original 58KB boss remains NONEXACT. [F771 entire-source proof](FIGHTER_GROUNDED_VOLLEY_TYPED_F771.md).
+  Historical **F768** source context: native fighter
   2F8 928 CODE B/252 original x86/23 real PE fields now have zero
   wrong opcode/widths, via observed actor `+0x44` float member
   correctly emitting native signed-integer-first `FILD;FSUBR`.
@@ -14011,3 +14016,23 @@ not fake padding. Exact ledger 974→**975 authored complete**,
 conservative **43.80%**. Still 22 giant plus 7 other original whole
 functions nonexact. No mass cold replay, original target changes,
 or vendor-code double count. [Full PE proof](TEXTURE_MANAGER_SHARED_NATIVE_F770.md).
+
+
+## F771: native 2FB angle MOV/FLD source order in whole 58KB fighter
+
+One new full 58KB VC7.1 game source includes original 2FB
+`00550D97..0055101E`, complete **647 native CODE B/181 x86/17
+original PE-targeted fields**. Eleven complete-parent source trials
+show the physical borrowed float opponent+0x44 X and +0x48 Y plus
+actor+0x44 X restore four genuinely wrong original MOV/FLD x86
+mnemonic positions from old raw-offset casts. Nonfield/nonparent-tail
+real operand differences improve **119→111** with all opcode/width
+positions correct and all 17 typed PE/COFF reference destinations
+independently verified. The 111 real GPR/EBP operand bytes remain
+**NONEXACT**. Prior 2F8/2F9/2FA originals still have 166/249/156
+native operand differences in the same full parent; original 943-B
+afterRET jump DATA, 156 actual DIR32 refs and 319/319 other data
+bytes remain correct. The full boss generates 58,261 of original
+58,294 CODE B; no independently callable game CODE is newly accepted.
+Formal exact still **975 functions /866,072 original authored CODE
+bytes**, no mass cold replay. [F771 full PE evidence](FIGHTER_GROUNDED_VOLLEY_TYPED_F771.md).
