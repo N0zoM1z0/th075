@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F720/F721 complete late-storm fighter source and restored 2EF context.**
+**Maintained 2026-10-30, after F722 original source-order fighter reconstruction.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -9,6 +9,30 @@ with its Markdown links adjusted for its new directory. The older
 [chronological knowledge base](KNOWLEDGE_BASE.md) are evidence, not a
 reason to undo later exact adoptions. Original pinned native PE and
 **live manifests outrank every historical sentence**.
+
+**F722 latest major giant source and compiler phase gain:**
+Real native whole `00543210` actions `2C0` **753 B/218 x86/21
+typed physical original PE/COFF fields** and `2C1` **720 B/214
+x86/20 fields** now have full meaningful natural C++ in one whole
+parent. Both generated complete cases have original CODE widths,
+all **41 original PE typed fields in original x86 order**.
+`2C1` has **0** normalized source GPR/CFG mismatches; nine new
+whole-parent expression trials improved `2C0` from five wrong
+x87 opcodes to only native FSUBR vs source FADD at ordinal 117
+(`IMUL +46` original vs `IMUL −46` source). All true original
+EBP scratch offsets remain wrong and giant is NONEXACT.
+**Important previous SOURCE ORDER ERROR discovered:** original
+PE case sequence is `2BF→2C0→2C1→2C4`; older selected C++
+grouped 2BF/2C4 together, followed by two original placeholders.
+Fresh source now **physically orders all four real actions**, not
+fake locals. The actual source register phases improve native
+`2C4` **66→2** GPR errors and `2DD` **80→0**; `2DB`
+236→235, `2DC` 95→80. `2EF` stays strictly matched in the
+new entire-parent context (27 contextual strict nonterminal cases),
+and **all original 943-byte afterRET DATA** is rechecked.
+No complete original GAME function byte-exact CODE accepted.
+[Full original physical 2C0/2C1 and native source-order proof](FIGHTER_EARLY_PAIR_NATIVE_ORDER_F722.md);
+`scripts/repo-python scripts/verify-fighter-native-order-f722.py`.
 
 **F720/F721 latest substantial giant source and compiler phase GAIN:**
 Full original `00543210` action `2DF` **602 native B/169 x86/18

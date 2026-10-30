@@ -78,7 +78,11 @@ def source_with_radials(source):
     return source
 
 
-def compare_native_radials(reader,pe,real,f676,f598,f701,boss,mapped,emitted,refs,*,following_native_2db=False):
+def compare_native_radials(reader,pe,real,f676,f598,f701,boss,mapped,emitted,refs,*,following_native_2db=False,
+                           source_starts=None,source_ebp_shift=0,
+                           source_next_2db_registers=('eax','ecx')):
+    starts=SOURCE_START if source_starts is None else source_starts
+    need(all(a in starts for a in ACTIONS),'native 2D0/2D1 source case starts absent')
     by={x['action']:int(x['handler'],16) for x in mapped}
     reviewed=[]
     for action in ACTIONS:
@@ -89,7 +93,7 @@ def compare_native_radials(reader,pe,real,f676,f598,f701,boss,mapped,emitted,ref
              and hi-lo==NATIVE_BYTES,
              f'{action:#x}: physical original PE handler boundaries wrong')
         native=list(real.disasm(reader.pe_bytes_at(pe,lo,hi-lo),lo))
-        start=SOURCE_START[action]
+        start=starts[action]
         compiled=emitted[start:start+NATIVE_X86]
         need(len(native)==len(compiled)==NATIVE_X86
              and sum(x.size for x in native)==sum(x.size for x in compiled)==NATIVE_BYTES
@@ -104,6 +108,7 @@ def compare_native_radials(reader,pe,real,f676,f598,f701,boss,mapped,emitted,ref
              and native[0].op_str==('0xff0000' if action==0x2D0 else '0xff'),
              f'{action:#x}: original source PE 15 typed COFF fields or storm config changed')
         for i,(original_slot,source_slot) in EBP[action].items():
+            source_slot=f"0x{int(source_slot,16)+source_ebp_shift:x}"
             need(f'[ebp - {original_slot}]' in native[i].op_str
                  and f'[ebp - {source_slot}]' in compiled[i].op_str
                  and native[i].size==compiled[i].size==6,
@@ -134,19 +139,21 @@ def compare_native_radials(reader,pe,real,f676,f598,f701,boss,mapped,emitted,ref
             'original_native_wrong_GPR_CFG_positions':len(wrong),
             'actual_original_and_source_integer_x87_EBP_slots':EBP[action],
             'native_internal_case_byte_exact':False})
-    need(emitted[SOURCE_START[0x2D0]+NATIVE_X86].mnemonic=='push'
-         and emitted[SOURCE_START[0x2D0]+NATIVE_X86].op_str=='0xff',
+    need(emitted[starts[0x2D0]+NATIVE_X86].mnemonic=='push'
+         and emitted[starts[0x2D0]+NATIVE_X86].op_str=='0xff',
          'native original full 2D0 must directly lead into true 2D1 storm')
     if following_native_2db:
-        j=SOURCE_START[0x2D1]+NATIVE_X86
-        need(emitted[j].mnemonic=='mov'
-             and emitted[j].op_str=='eax, dword ptr [ebp - 0x28]'
+        j=starts[0x2D1]+NATIVE_X86
+        reg,stage_reg=source_next_2db_registers
+        need(reg in ('eax','ecx','edx') and stage_reg in ('eax','ecx','edx')
+             and emitted[j].mnemonic=='mov'
+             and emitted[j].op_str==f'{reg}, dword ptr [ebp - 0x28]'
              and emitted[j+1].mnemonic=='movsx'
-             and emitted[j+1].op_str=='ecx, word ptr [eax + 0x62]',
+             and emitted[j+1].op_str==f'{stage_reg}, word ptr [{reg} + 0x62]',
              'native original full 2D1 must lead into independently verified real 2DB C++')
     else:
-        need(emitted[SOURCE_START[0x2D1]+NATIVE_X86].mnemonic=='mov'
-             and emitted[SOURCE_START[0x2D1]+NATIVE_X86].op_str.endswith(', 0x2dc'),
+        need(emitted[starts[0x2D1]+NATIVE_X86].mnemonic=='mov'
+             and emitted[starts[0x2D1]+NATIVE_X86].op_str.endswith(', 0x2dc'),
              'native original full 2D1 must lead into the 2DB source placeholder')
     return reviewed
 

@@ -79,7 +79,11 @@ def source_with_both(src):
     return src
 
 
-def prove_both(f701,f714,f676,f598,reader,pe,real,boss,mapped,ins,refs):
+def prove_both(f701,f714,f676,f598,reader,pe,real,boss,mapped,ins,refs,*,
+               source_starts=None,source_ebp_shift=0,source_after_2e5=None):
+    starts=SOURCE_START if source_starts is None else source_starts
+    after_2e5=SOURCE_TRUE_AFTER_2E5 if source_after_2e5 is None else source_after_2e5
+    need(all(action in starts for action in ACTIONS),'real original 2DF/2E5 source starts absent')
     by={x['action']:int(x['handler'],16) for x in mapped}
     result=[]
     for action in ACTIONS:
@@ -89,7 +93,7 @@ def prove_both(f701,f714,f676,f598,reader,pe,real,boss,mapped,ins,refs):
              and hi-lo==size and boss['address']<lo<hi<boss['address']+boss['size'],
              f'{action:#x}: original complete physical original handler bounds incorrect')
         original=list(real.disasm(reader.pe_bytes_at(pe,lo,hi-lo),lo))
-        start=SOURCE_START[action]
+        start=starts[action]
         generated=ins[start:start+nx]
         need(len(original)==len(generated)==nx
              and sum(x.size for x in original)==sum(x.size for x in generated)==size
@@ -112,6 +116,7 @@ def prove_both(f701,f714,f676,f598,reader,pe,real,boss,mapped,ins,refs):
              if a!=b and i not in absolute]
         need(not bad,f'{action:#x} original nonfield source register/CFG phase not actually restored: {bad[:8]}')
         for i,(original_slot,source_slot) in ORIGINAL_X87_STACK[action].items():
+            source_slot=f"0x{int(source_slot,16)+source_ebp_shift:x}"
             a,b=original[i],generated[i]
             need(a.mnemonic==b.mnemonic and a.size==b.size==6
                  and f'[ebp - {original_slot}]' in a.op_str
@@ -144,13 +149,13 @@ def prove_both(f701,f714,f676,f598,reader,pe,real,boss,mapped,ins,refs):
              'genuine_original_and_compiler_EBP_x87_owners':ORIGINAL_X87_STACK[action],
              'native_case_strict_byte_exact':False,
              'new_accepted_whole_game_FUNCTION_CODE_B':0})
-    need([x.mnemonic for x in ins[SOURCE_START[0x2DF]:SOURCE_START[0x2DF]+3]]
+    need([x.mnemonic for x in ins[starts[0x2DF]:starts[0x2DF]+3]]
          ==['push','push','push']
-         and [x.mnemonic for x in ins[SOURCE_START[0x2E5]:SOURCE_START[0x2E5]+3]]
+         and [x.mnemonic for x in ins[starts[0x2E5]:starts[0x2E5]+3]]
          ==['push','push','push']
-         and ins[SOURCE_TRUE_AFTER_2E5].mnemonic=='mov'
-         and ins[SOURCE_TRUE_AFTER_2E5].op_str=='edx, dword ptr [ebp - 0x28]'
-         and ins[SOURCE_TRUE_AFTER_2E5+1].op_str=='eax, word ptr [edx + 0x62]',
+         and ins[after_2e5].mnemonic=='mov'
+         and ins[after_2e5].op_str=='edx, dword ptr [ebp - 0x28]'
+         and ins[after_2e5+1].op_str=='eax, word ptr [edx + 0x62]',
          'real complete 2DF->2E5->2EF source must retain original physical immediate handler order')
     return result
 

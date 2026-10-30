@@ -87,7 +87,10 @@ def combine_source(f706,f708,f711,f696,f699,f701,f672,reader,pe,real,boss,report
 
 
 def audit_cases(f701,f676,f598,f699,reader,pe,real,boss,mapped,emitted,refs,*,
-                following_native_2dd=False):
+                following_native_2dd=False,source_starts=None,source_ebp_shift=0,
+                source_expected_GPR=None):
+    starts=SOURCE_CASE_STARTS if source_starts is None else source_starts
+    need(all(a in starts for a in ORIGINAL),'native 2DB/2DC original source starts absent')
     by={x['action']:int(x['handler'],16) for x in mapped}
     results=[]
     for action in (0x2DB,0x2DC):
@@ -96,7 +99,7 @@ def audit_cases(f701,f676,f598,f699,reader,pe,real,boss,mapped,emitted,refs,*,
              and hi-addr==nb and boss['address']<addr<hi<boss['address']+boss['size'],
              f'original native {action:#x} whole physical interval not verified')
         native=list(real.disasm(reader.pe_bytes_at(pe,addr,hi-addr),addr))
-        source_start=SOURCE_CASE_STARTS[action]
+        source_start=starts[action]
         source_nx=nx if action==0x2DC else SOURCE_2DB_X86
         gen=emitted[source_start:source_start+source_nx]
         need(len(native)==nx and sum(x.size for x in native)==nb
@@ -137,10 +140,14 @@ def audit_cases(f701,f676,f598,f699,reader,pe,real,boss,mapped,emitted,refs,*,
         absolute={i for i,t,mn in original_fields if mn!='call'}
         wrong=[i for i,(a,b) in enumerate(zip(f598.normalized(native),f598.normalized(gen)))
                if a!=b and i not in absolute]
-        need(len(wrong)==NATIVE_CONTEXT_WRONG[action] and wrong[0] in (0,5),
+        expected=(source_expected_GPR or {}).get(action,
+                    (NATIVE_CONTEXT_WRONG[action],None))
+        need(len(wrong)==expected[0] and (wrong[0] in (0,5) if expected[1] is None
+                                          else wrong[0]==expected[1]),
              f'actual original {action:#x} source GPR/CFG negative unexpectedly changed')
         for i,(native_slot,src_slot) in EBP[action].items():
             j=i if action==0x2DC else i+2
+            src_slot=f"0x{int(src_slot,16)+source_ebp_shift:x}"
             need(f'[ebp - {native_slot}]' in native[i].op_str
                  and f'[ebp - {src_slot}]' in gen[j].op_str
                  and native[i].size==gen[j].size==6,
@@ -154,8 +161,8 @@ def audit_cases(f701,f676,f598,f699,reader,pe,real,boss,mapped,emitted,refs,*,
                         'real_native_GPR_CFG_negative_count':len(wrong),
                         'real_native_vs_compiler_EBP_scratch_operands':EBP[action],
                         'source_original_case_byte_exact':False})
-    next_after_2dc=SOURCE_CASE_STARTS[0x2DC]+ORIGINAL[0x2DC][3]
-    need(emitted[SOURCE_CASE_STARTS[0x2DB]+SOURCE_2DB_X86].op_str=='0xff0000',
+    next_after_2dc=starts[0x2DC]+ORIGINAL[0x2DC][3]
+    need(emitted[starts[0x2DB]+SOURCE_2DB_X86].op_str=='0xff0000',
          'native 2DB must lead into whole original 2DC storm')
     if following_native_2dd:
         need([x.mnemonic for x in emitted[next_after_2dc:next_after_2dc+3]]

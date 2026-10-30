@@ -12877,3 +12877,39 @@ in the SAME parent. No accepted whole-function CODE; authored
 943/862726 (43.71%) unchanged, no all-unit cold replay.
 [Original physical fields, EBP and restored GPR proof](FIGHTER_LATE_STORM_F720_F721.md).
 `scripts/repo-python scripts/verify-fighter-late-storm-f720-f721.py`.
+
+
+## F722: restore native 2C0/2C1 whole actions and original 2BF→2C0→2C1→2C4 source order
+
+Pinned original `00543210` native full case `2C0`
+`0054D64D..0054D93E` is **753 original B/218 x86/21 original
+PE/COFF fields**; case `2C1` `0054D93E..0054DC0E` is **720 B/214
+x86/20 fields**. Normal C++ recovered all original stage/physics,
+shot and action-loop semantics. In one full native-shaped VC7.1
+parent, source **1,473 B/432 original x86 positions/41 true typed
+original fields**. Real `2C1` has **214/214 native mnemonic/widths
+and 0 normalized nonfield GPR/CFG errors**; real `2C0` has full
+native 753B/218 widths and **217/218 native mnemonics**. Nine
+whole-parent x87 grammar trials identified meaningful equivalent
+`float(dir×−46)+X` which reduces `2C0` native wrong opcode positions
+from 5 to **1**; native `IMUL +46;FSUBR` still differs from source
+`IMUL −46;FADD`, and original EBP scratch −0x160/−0x164/−0x168
+still differs from source −0x98/−0x9C/−0xA0. NONSTRICT.
+
+Correcting actual source order to **`2BF→2C0→2C1→2C4`** rather
+than historical source `2BF→2C4` followed by two placeholders
+naturally changes source compiler GPR phases. `2C4` normalized
+real nonfield mismatches fall **66→2**, `2DD` **80→0**,
+`2DC` **95→80** and `2DB` **236→235**; `2EF` remains
+strict at 0 errors and 27 context-strict prior nonterminal cases
+survive. All previous physical case fields and the whole independent
+**943-byte original afterRET switch DATA** are rechecked in the
+NEW full parent. Authentic other register and EBP differences
+remain; **no exact whole fighter CODE accepted**. Source, original
+physical evidence and new contexts:
+[F722 full original native-order proof](FIGHTER_EARLY_PAIR_NATIVE_ORDER_F722.md),
+`scripts/repo-python scripts/verify-fighter-native-order-f722.py`.
+Old F708/F711/F714/F718/F720 targeted checkers accept optional new
+source starts/physical EBP shifts but retain original-source default
+regression behavior. No all-943-unit cold replay, 943/862726 exact
+accepted whole-function ledger unchanged.

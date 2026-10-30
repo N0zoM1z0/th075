@@ -85,7 +85,10 @@ def source_for_genuine_twins(source):
     return source
 
 
-def check_native_cases(f701,f676,f598,reader,pe,real,boss,mapped,emitted,refs):
+def check_native_cases(f701,f676,f598,reader,pe,real,boss,mapped,emitted,refs,*,source_starts=None,
+                       source_ebp_shift_by_action=None,source_expected_GPR=None):
+    starts=ACTUAL_SOURCE_STARTS if source_starts is None else source_starts
+    need(all(k in starts for k in CASES),'native 2BF/2C4 source starts must both be attested')
     by={x['action']:int(x['handler'],16) for x in mapped}
     candidates=[]
     for ref in refs:
@@ -97,12 +100,12 @@ def check_native_cases(f701,f676,f598,reader,pe,real,boss,mapped,emitted,refs):
         if (emitted[start].mnemonic=='mov' and emitted[start+46].mnemonic=='push'
            and emitted[start+46].op_str in ('0x73','0x74')):
             candidates.append((emitted[start+46].op_str,start))
-    need(sorted(candidates)==[('0x73',ACTUAL_SOURCE_STARTS[0x2BF]),
-                              ('0x74',ACTUAL_SOURCE_STARTS[0x2C4])],
+    need(sorted(candidates)==[('0x73',starts[0x2BF]),
+                              ('0x74',starts[0x2C4])],
          f'actual original source typed 453B50 whole case-anchors changed: {candidates}')
     results=[]
     for action in CASES:
-        start=ACTUAL_SOURCE_STARTS[action]
+        start=starts[action]
         lo=by[action]
         hi=by[0x2C0 if action==0x2BF else 0x2C5]
         need(hi-lo==NATIVE_CODE and (lo,hi)==({
@@ -132,6 +135,8 @@ def check_native_cases(f701,f676,f598,reader,pe,real,boss,mapped,emitted,refs):
              and native[43].mnemonic=='fsubr' and candidate[43].mnemonic=='fadd',
              f'authentic {action:#x} 130/131 opcode x87/source IMUL negative changed')
         for ordinal,(native_slot,source_slot) in EBP_SCRATCH[action].items():
+            extra=(source_ebp_shift_by_action or {}).get(action,0)
+            source_slot=f"0x{int(source_slot,16)+extra:x}"
             need(f'[ebp - {native_slot}]' in native[ordinal].op_str
                  and f'[ebp - {source_slot}]' in candidate[ordinal].op_str
                  and native[ordinal].size==candidate[ordinal].size==6,
@@ -141,14 +146,15 @@ def check_native_cases(f701,f676,f598,reader,pe,real,boss,mapped,emitted,refs):
         typed_direct={i for i,target,mn in nf if mn!='call'}
         wrong=[i for i,(a,b) in enumerate(zip(norm_native,norm_source))
                if a!=b and i not in typed_direct]
-        need(len(wrong)==SOURCE_GPR_NEGATIVES[action]
-             and wrong[0]==(39 if action==0x2BF else 0),
+        expected=(source_expected_GPR or {}).get(action,
+                    (SOURCE_GPR_NEGATIVES[action],39 if action==0x2BF else 0))
+        need(len(wrong)==expected[0] and wrong[0]==expected[1],
              f'genuine {action:#x} GPR/CFG source roles changed: {wrong[:10]}')
         need(candidate[46].op_str==('0x73' if action==0x2BF else '0x74')
              and candidate[61].op_str=='0x334'
              and candidate[63].mnemonic=='call'
              and candidate[63].op_str.startswith('0x')
-             and candidate[130].op_str==emitted[ACTUAL_SOURCE_STARTS[0x2BF]+130].op_str,
+             and candidate[130].op_str==emitted[starts[0x2BF]+130].op_str,
              f'original complete {action:#x} 73/74 and 334 shots/shared exit changed')
         if action==0x2BF:
             need([candidate[i].op_str for i in (100,121,124,127)]
@@ -168,8 +174,8 @@ def check_native_cases(f701,f676,f598,reader,pe,real,boss,mapped,emitted,refs):
              'genuine_original_wrong_nonfield_GPR_x87_positions':len(wrong),
              'real_original_native_EBP_scratch_offsets':EBP_SCRATCH[action],
              'whole_original_game_function_EXACT':False})
-    need(emitted[ACTUAL_SOURCE_STARTS[0x2BF]+NATIVE_X86].mnemonic=='mov'
-         and emitted[ACTUAL_SOURCE_STARTS[0x2C4]+NATIVE_X86].mnemonic=='mov',
+    need(emitted[starts[0x2BF]+NATIVE_X86].mnemonic=='mov'
+         and emitted[starts[0x2C4]+NATIVE_X86].mnemonic=='mov',
          'both original 131-x86 full native bodies must include original following action boundary')
     return results
 

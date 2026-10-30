@@ -83,7 +83,10 @@ def source_with_double_volley(src):
 
 
 def verify_two_native_actions(f701,f676,f598,reader,pe,real,boss,mapped,ins,refs,*,
-                              following_native_2df=False):
+                              following_native_2df=False,source_starts=None,source_ebp_shift=0,
+                              source_expected_GPR=None):
+    starts=SOURCE_START if source_starts is None else source_starts
+    need(all(action in starts for action in ACTIONS),'source original 2DD/2DE starts missing')
     by={x['action']:int(x['handler'],16) for x in mapped}
     result=[]
     for action in ACTIONS:
@@ -92,7 +95,7 @@ def verify_two_native_actions(f701,f676,f598,reader,pe,real,boss,mapped,ins,refs
              and hi-lo==native_bytes and boss['address']<lo<hi<boss['address']+boss['size'],
              f'original physical 2DD/2DE native PE extent changed at {action:#x}')
         original=list(real.disasm(reader.pe_bytes_at(pe,lo,hi-lo),lo))
-        start=SOURCE_START[action]
+        start=starts[action]
         generated=ins[start:start+nx]
         need(len(original)==len(generated)==nx
              and sum(x.size for x in original)==sum(x.size for x in generated)==native_bytes
@@ -110,10 +113,11 @@ def verify_two_native_actions(f701,f676,f598,reader,pe,real,boss,mapped,ins,refs
         wrong=[i for i,(a,b) in enumerate(zip(f598.normalized(original),
                                               f598.normalized(generated)))
                if a!=b and i not in original_absolute]
-        need(len(wrong)==SOURCE_WRONG_GPR[action]
-             and (not wrong or wrong[0]==5),
+        expected=(source_expected_GPR or {}).get(action,SOURCE_WRONG_GPR[action])
+        need(len(wrong)==expected and (not wrong or wrong[0]==5),
              f'native {action:#x} actual reg/CFG normalized roles changed {wrong[:8]}')
         for ordinal,(native_slot,source_slot) in NATIVE_EBP[action].items():
+            source_slot=f"0x{int(source_slot,16)+source_ebp_shift:x}"
             a,b=original[ordinal],generated[ordinal]
             need(a.size==b.size==6
                  and f'[ebp - {native_slot}]' in a.op_str
@@ -143,8 +147,8 @@ def verify_two_native_actions(f701,f676,f598,reader,pe,real,boss,mapped,ins,refs
            'genuine_normalized_original_GPR_CFG_differences':len(wrong),
            'actual_original_and_compiler_EBP_x87_scratch':NATIVE_EBP[action],
            'native_case_byte_exact':False})
-    after=SOURCE_START[0x2DE]+NATIVE[0x2DE][3]
-    need([x.mnemonic for x in ins[SOURCE_START[0x2DE]:SOURCE_START[0x2DE]+3]]
+    after=starts[0x2DE]+NATIVE[0x2DE][3]
+    need([x.mnemonic for x in ins[starts[0x2DE]:starts[0x2DE]+3]]
          ==['push','push','push'],
          'native 2DE must retain its true original storm header')
     if following_native_2df:
