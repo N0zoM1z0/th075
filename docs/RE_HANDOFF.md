@@ -1,6 +1,6 @@
 # TH075 — ACTIVE reconstruction agent handoff
 
-**Verified snapshot: 2026-10-31, current F780 exact ledger; F852 fighter bounce and F848 Scene.**
+**Verified snapshot: 2026-10-31, current F780 exact ledger; F853 native float shot and F848 Scene.**
 This is the **short working queue**, not the chronological research log.
 Original Japanese PE and the live configuration **always outrank historical
 prose, old case-level exact labels, class names or inferred layouts**.
@@ -1441,6 +1441,31 @@ calls. Whole 46,755B NONEXACT, no
 standalone-case exact credit.
 [F852 selected original PE proof](SCRIPTED_FIGHTER_BOUNCE_189_F852.md);
 scripts/repo-python scripts/verify-scripted-fighter-bounce-189-f852.py.
+
+**F853 real fighter 18A original float Y lvalue/PE widths:**
+selected original 18A complete **250 native inner
+B/71 x86/six physically typed PE fields**.
+Original float Y must FLD this+0x48 first,
+then FADD float global0065929C; source
+bare POS48+global reversed 3B/6B x87
+widths, real lvalue (*(&POS48))+global
+restores native width/order. One selected
+full VC7.1 parent now **24,797 callable
+CODE B/6,828 x86** from F852
+24,562/6,759. All x86 source widths
+and six genuine original PE targets match,
+BUT **45 native GPR byte operands**
+and two true enclosing-giant final
+JMP operand bytes +246/+247 remain
+honestly WRONG. Prior 136/186-189
+GPR negatives, 20 earlier complete
+original source cases, five packed
+901B afterRET jump tables checked.
+Current common getter 46B has four
+actual nonfield GPR byte negatives.
+[F853 original Y-lvalue PE proof](SCRIPTED_FIGHTER_FLOATSHOT_18A_F853.md);
+scripts/repo-python scripts/verify-scripted-fighter-floatshot-18a-f853.py.
+Whole original 46,755B fighter remains NONEXACT.
 
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`

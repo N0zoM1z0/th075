@@ -232,6 +232,21 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   GPR differences, whole native
   giant NONEXACT.
   [F844 selected original physical PE](SCRIPTED_FIGHTER_GROUNDED_130_F844.md).
+- **F853 current 18A x87 float source operand order:**
+  250 original B/71 x86/six
+  native PE fields in one full
+  24,797B/6,828-x86 giant.
+  Actual float Y lvalue preserves
+  FLD member then FADD global
+  width pair, unlike macro
+  POS48+global. **45 genuine GPR
+  operand bytes** plus original
+  final giant JMP two-byte pair
+  remain nonexact. Earlier five
+  GPR-affected and 20 older
+  PE-backed cases plus five 901B
+  packed DATA tables rechecked.
+  [F853 original PE proof](SCRIPTED_FIGHTER_FLOATSHOT_18A_F853.md).
 - **F852 actual 0x189 native x87 bounce:**
   entire native 381B/107 x86/11
   original PE fields in one
