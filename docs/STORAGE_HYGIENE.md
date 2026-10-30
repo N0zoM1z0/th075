@@ -1,14 +1,75 @@
 # TH075 local storage hygiene and lossless recovery
 
-**Updated 2026-10-29, after frozen-diagnostic compaction (post F652).** This is a storage
-report and recovery recipe, **not** permission to remove original
-PE/C++/COFF evidence or skip dirty work. Archives and per-file
-SHA256 receipts are under **Git-ignored** `.analysis/cache-archives/`
-(local to this worktree). Their **restoration tools and instructions
-are tracked in Git**; new Git clones do not automatically receive
-those local archives. Historical JSON/PDB batches and the new F597
-legacy CI-log batch were archived separately without touching
-source, original-function evidence, Wine or accepted build objects.
+**Updated 2026-10-30, after F694 source-preserving cache compaction.**
+This is a storage report and **lossless local recovery recipe**, NOT
+permission to remove original PE, C++/COFF research evidence, active
+work, matching objects, or unrecognized dirty changes. The archives,
+SHA256 receipts and index files under Git-ignored
+`.analysis/cache-archives/` are **machine-local and NOT in Git**;
+this checkout must preserve them, or back them up independently before
+moving/cleaning the worktree. The restore/verify tooling and these
+instructions ARE tracked, but a fresh clone will not contain the
+archives. Historical F597 and older JSON/PDB/CI archives are still
+available and independently restorable.
+
+## Current F694 cleanup: 1,760 generated files preserved, ≈127.75 MiB net reclaimed
+
+The 2026-10-30 actual on-disk inventory identified only TWO narrowly
+allowlisted classes of old **reproducible compiler and test outputs**.
+[`archive-redundant-native-research.py`](../scripts/archive-redundant-native-research.py)
+archived all originals with their complete original path/byte size/SHA256,
+then re-read and verified EVERY tar member against EVERY still-present
+original file **before removing even one**. Both archives were then
+verified again from storage after deletion. Exact one-file
+`--restore` and `--recompact-restored` smoke tests succeeded for both
+classes; no source/OBJ/game CODE was lost.
+
+| Original generated-file cohort | Files | Original bytes | Compressed tar bytes | Net reclaimed INCLUDING receipt |
+| --- | ---: | ---: | ---: | ---: |
+| F500–F649 research compiler PDB (excluding key F593/F596 parent proofs) | 1,457 | 82,939,904 | 2,023,441 | **80,648,648 B** |
+| Root R001–R259 repeated historical CI output logs (excluding R260+ checkpoint/acceptance logs) | 303 | 60,857,730 | 7,509,018 | **53,304,224 B** |
+| **Total** | **1,760** | **143,797,634** | **9,532,459** | **133,952,872 B (127.75 MiB)** |
+
+The locally ignored `.analysis/` tree changed from about
+**2,231,088 KiB to 2,105,496 KiB** on this filesystem. This is
+filesystem allocation accounting; the exact **133,952,872-byte**
+net saving is based on original file sizes minus new archives and
+per-file receipt sizes. PDBs/CI logs remain **byte-for-byte
+recoverable** from the two SHA256-authenticated `.tar.gz` files and
+receipts in `.analysis/cache-archives/`. A routine historical script
+may require restoring a missing old PDB or CI log before execution.
+
+```bash
+# No changes: show remaining eligible loose files (normally zero)
+scripts/repo-python scripts/archive-redundant-native-research.py --family pdb --plan
+scripts/repo-python scripts/archive-redundant-native-research.py --family logs --plan
+# Independently verify EVERY original archived file by its SHA256
+scripts/repo-python scripts/archive-redundant-native-research.py --family pdb --verify
+scripts/repo-python scripts/archive-redundant-native-research.py --family logs --verify
+# Restore one actual F609 compiled debug file only if needed
+scripts/repo-python scripts/archive-redundant-native-research.py \
+  --family pdb --restore .analysis/f609-archive-source-types/release-double-address.pdb
+# After inspecting it, remove only that SHA256-unchanged duplicate
+scripts/repo-python scripts/archive-redundant-native-research.py \
+  --family pdb --recompact-restored .analysis/f609-archive-source-types/release-double-address.pdb
+# Example of original historical R142 CI log recovery
+scripts/repo-python scripts/archive-redundant-native-research.py \
+  --family logs --restore .analysis/r142-ci.log
+```
+
+**Not touched:** original pinned `th075.exe`; Wine/VC7.1 prefix;
+Ghidra project; H184's **15** original protected PDB/object pairs
+(**all 30 SHA256s rechecked**); all accepted `build/matching/` and
+`build/probes/*.obj`; all active F650+ PDBs; R260–R268
+checkpoint logs; every native C++/ASM/INC/source/COFF OBJ, original
+native trace, original JSON research receipt, decompilation and
+case/source-negative experiment; Git history and dirty changes.
+The original SOURCE provenance of uncredited SDK-like functions and
+the authored whole-function exact ledger remain unchanged.
+
+---
+
+## Earlier 2026-10-29 storage campaigns (historical measurements)
 
 ## Standard Git object maintenance after the documentation/archive commits
 
@@ -33,15 +94,14 @@ were safely packed/maintained by Git, with 13,527 packed objects in
 two packs afterward. Never run aggressive pruning or remove reflogs
 simply to recreate this one-time saving.
 
-**Combined verified savings in this round:** **646,211,818 bytes
+**Historical 2026-10-29 campaign savings (not including F694):** **646,211,818 bytes
 (≈616.28 MiB)** across the reversible 219-diagnostic archive
 (**256,542,954 bytes net, including the receipt**) and the standard
-Git storage maintenance (**389,668,864 bytes**). The checkout's
-measured on-disk size at the end is **2,754,048,000 bytes** (about
+Git storage maintenance (**389,668,864 bytes**). The checkout's **historical 2026-10-29** measured on-disk size was **2,754,048,000 bytes** (about
 2.6 GiB), including required VC7.1/Wine, original native evidence,
 Ghidra, accepted match objects and exact manifests.
 
-## Latest cleanup: 219 frozen redundant JSON diagnostic snapshots (post F652)
+## Earlier cleanup: 219 frozen redundant JSON diagnostics (post F652)
 
 The four original *read-only historical* diagnostic sets below were
 archived losslessly under ignored `.analysis/cache-archives/` using
@@ -170,7 +230,7 @@ scripts/repo-python scripts/archive-legacy-ci-logs.py \
 
 This cleanup **does not** cover the original PE, `.analysis/vc71-wine/`,
 `.analysis/f493-reimu-megaboss/`,
-`.analysis/f509-charactermove-megaboss/`, current F593/F596
+`.analysis/f509-charactermove-megaboss/`, then-current F593/F596
 whole-boss proof or F595 small-leaf evidence, `ghidra-project/`,
 `build/matching/`, **any** probe `.obj` or `.pdb`, historical
 PDB archives, original native JSON, decompilations, active Git

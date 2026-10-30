@@ -125,6 +125,13 @@ or verifier changes. Documentation-only changes need `git diff --check`.
   `scripts/archive-redundant-diagnostics.py`. The *live* origin-scan
   `latest.json`, current research, original parent CODE, raw sources,
   COFF and Ghidra decompilations were NOT removed.
+  F694 additionally SHA256-verified and losslessly archived 1,457
+  frozen F500–F649 research `.pdb` outputs and 303 pre-R260 root CI
+  logs, reclaiming ≈127.75 MiB net while retaining all C++/COFF OBJ,
+  current F650+ PDBs, R260+ checkpoint output and original artifacts.
+  The ignored archives/receipts are **local, not tracked in Git**; do
+  not lose them. Verify/restore one needed historical file using
+  `scripts/archive-redundant-native-research.py --family pdb|logs`.
   Detailed allowed cleaning and restore paths: `docs/STORAGE_HYGIENE.md`.
   Protect H184 frozen objects/PDBs, original native and best whole-boss
   probes, `build/matching/`, `.analysis/vc71-wine/` and the Ghidra project.

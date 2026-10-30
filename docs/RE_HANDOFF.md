@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F691; earlier frozen handoffs are archived.**
+**Maintained 2026-10-30, after F694 storage cleanup; source research through F691.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -381,19 +381,28 @@ compiler byte match, a real game call, or a plausible C++ signature.
   [the earlier frozen handoff](history/RE_HANDOFF_F540_THROUGH_F596.md).
   See [full ongoing chronological research](KNOWLEDGE_BASE.md),
   [work protocol](RE_WORKFLOW.md) and [native origin review](ORIGIN_PENDING_REVIEW.md).
-- A **reversible per-file SHA256-indexed archive of 219 frozen,
-  repetitive historical diagnostic JSON snapshots** has reclaimed
-  about **244.66 MiB** (including manifest). Standard two-week-horizon
-  `git gc` also safely repacked Git objects, reclaiming **≈371.62 MiB**:
-  combined **≈616.28 MiB** saved. This checkout stores
-  private `.tar.zst` archives and receipt under ignored
-  `.analysis/cache-archives/`. The live original PE, `vc71-wine`,
-  Ghidra project, current research, native/source/COFF/PDB probes,
-  accepted objects and original decompilations are **retained**.
-  `scripts/repo-python scripts/archive-redundant-diagnostics.py --verify`
-  checks all original members; use its `--restore PATH` if a frozen
-  old experiment expects an absent plain JSON path. Full recovery
-  procedures: [STORAGE_HYGIENE.md](STORAGE_HYGIENE.md).
+- **F694 current local cache hygiene:** 1,457 old F500–F649
+  compiler-generated PDB files and 303 root R001–R259 repeated CI
+  logs have been **losslessly** stored in two local ignored archives;
+  the pre- and post-deletion per-file SHA256 reads passed for **all
+  1,760 original files**. Net storage reclaimed **133,952,872
+  bytes (127.75 MiB)** including new receipt files. Both original
+  per-file restores and re-compactions were smoke-tested. Run
+  `scripts/repo-python scripts/archive-redundant-native-research.py
+  --family pdb --verify` or `--family logs --verify`; use
+  `--restore ORIGINAL_RELATIVE_PATH` when an old PDB/CI output is
+  needed. **The archives are ignored and NOT stored in Git: retain
+  them or back them up independently.** Current F650+ PDB, R260+
+  checkpoint CI, native/source CPP/COFF OBJ, all H184 objects,
+  original PE/Wine/Ghidra/accepted matcher objects were NOT deleted.
+- **Earlier 2026-10-29 maintenance:** 219 old JSON diagnostics were
+  archived with SHA256 receipts, saving ≈244.66 MiB; standard Git
+  GC saved ≈371.62 MiB in that **earlier** campaign. Do not mistake
+  these historical measurements for current storage size. Earlier
+  restore helper: `scripts/repo-python
+  scripts/archive-redundant-diagnostics.py --verify` and
+  `--restore PATH`. Full instructions and exact exclusions:
+  [STORAGE_HYGIENE.md](STORAGE_HYGIENE.md).
 - After each substantial result: verify original PE/selected compiler
   object, `validate-tracking.py --require-target`,
   `audit-active-handoff.py`, `update-progress.py --check`,

@@ -1,7 +1,7 @@
 # TH075 reconstruction knowledge base — cumulative historical evidence
 
-**Current status annotation: 2026-10-29, after F652 and the compact
-handoff/storage audit.** This is a **chronological experiment log**,
+**Current status annotation: 2026-10-30, after F694 reversible storage
+cleanup; chronological research entries currently run through F691.** This is a **chronological experiment log**,
 not the live backlog. Consult the [current agent handoff](RE_HANDOFF.md)
 and live function/origin/match manifests first. Earlier F-series
 sections describe *historical* status; older claims such as "still pending",
@@ -16,9 +16,12 @@ older F540–F596 notes remain in
 [prior historical chronology](history/RE_HANDOFF_F540_THROUGH_F596.md).
 The [active handoff](RE_HANDOFF.md) now fits a short task-oriented
 checklist. SHA256-verifiable recovered archives of redundant historical
-CI/diagnostic logs and old repeated JSON snapshots are documented in
-[storage protection](STORAGE_HYGIENE.md); no original PE, Ghidra,
-compiler environment, source, COFF or best negative experiment was lost.
+CI/diagnostic logs, old repeated JSON snapshots and (new F694) 1,760
+old generated compiler PDB/CI outputs are documented in
+[storage protection](STORAGE_HYGIENE.md). The two new F694 archives
+are local/ignored, **not bundled in Git**; no original PE, Ghidra,
+compiler environment, source, COFF OBJ or best negative experiment
+was lost.
 Canonical live ledgers and actual native PE outrank all historical prose.
 
 ## Current authoritative status and superseded negatives
@@ -12371,3 +12374,36 @@ pending, official 943/862,726 authored whole CODE unchanged.
 [F691 actual original whole x86/COFF/source proof](SDK_NATIVE_COM_MANAGER_CLEANUP_F691.md),
 `scripts/repo-python scripts/verify-sdk-native-com-manager-cleanup-f691.py`.
 No mass replay.
+
+
+## F694: local reversible historical native research cache cleanup
+
+Verified original Japanese target and current native/author ledger
+remain **943 accepted whole authored functions /862,726 original CODE
+B, 43.71% reviewed**, plus 95 unresolved provenance candidates.
+This is **storage hygiene**, zero new exact matches or source credit.
+
+A tracked strict archive/restore script now handles two carefully
+allowlisted old *generated-file* families:
+(1) **1,457 unprotected older F500–F649 probe PDB files /
+82,939,904 original bytes**; (2) **303 pre-R260 historical root CI
+logs /60,857,730 original bytes**. It independently verified
+**all 1,760 original file paths, sizes and per-member SHA256** in
+its new ignored private tar.gz archives **BEFORE** removing any
+loose copies, again **AFTER** deletion, and successfully tested
+one-file restore/recompact for each. New receipts include original
+SHA256, original relative path and archive digest. Net storage
+reclaimed **133,952,872 bytes (127.75 MiB)**, beyond earlier
+2026-10-29 lossless JSON/PDB/CI compression and Git GC.
+
+**Protected throughout:** H184 all 15 OBJ+PDB pairs (all 30 original
+SHA256 values independently verified), pinned `th075.exe`, Wine/
+VC7.1 compiler, Ghidra project, accepted whole match objects,
+all current F650+ PDB, R260+ checkpoint CI output and ALL C++,
+native ASM/INC, PE-backed JSON, source and COFF OBJ files.
+Private archives are **Git-ignored and cannot be restored from a
+fresh Git clone** unless transferred independently. Actual restore
+examples, `--plan/--verify` and precise safety exclusions:
+[Current storage maintenance](STORAGE_HYGIENE.md),
+`scripts/repo-python scripts/archive-redundant-native-research.py
+--family pdb --verify`. **No mass cold replay.**
