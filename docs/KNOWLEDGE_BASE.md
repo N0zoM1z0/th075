@@ -12705,3 +12705,32 @@ regression](FIGHTER_FALLING_RADIALS_F711.md);
 `scripts/repo-python scripts/verify-fighter-falling-radials-f711.py`.
 No 943-unit full cold replay, official 943/862726 whole-source ledger
 unchanged.
+
+
+## F712–F713: complete EH this-capture and paired Scene-owned lifetime controls (NONEXACT)
+
+F712 re-read the native **73-B/23-x86** whole unknown-origin
+`0061A453` derived virtual destructor with original EH, saved-this
+`EBP−0x10`, state-zero and resource/base cleanup. Six actual VC7.1
+`/O1 /GX` whole C++ source variants genuinely use the original
+`this+0x106C` resource in catch/rethrow or catch/swallow policies;
+three emit 69 B/22 x86, one 39/13, one 107/39, one 91/35.
+None emits the native EH state/lifetime, none exact, original source
+owner remains UNKNOWN.
+
+F713 tests **12 genuinely used** resource-lifetime C++ models in the
+whole authored `0043B0B0` Scene virtual destructor, with two actual
+freed pointers in a real 2-field aggregate and the third in a
+separately used scalar, all member orderings and before/after texture
+lexical scopes. Each cold compiles under VC7.1 `/Od /GX` to native
+**248 B/75 x86/12 original typed fields with identical mnemonic/width
+geometry**. Four match only **191/200**, eight **189/200** actual
+nonfield original bytes; all texture-delete EBP temporaries remain
+incorrect `−0x20/−0x1C` versus original `−0x14/−0x10`.
+Two portable tracked full-original selected verifiers support `--case`
+and `--all` only affected small source TUs:
+`scripts/verify-derived-eh-this-capture-f712.py` and
+`scripts/verify-scene-pair-scalar-owners-f713.py`. Original native PE,
+source alternative evidence and actual compiler receipts: [full
+physical negative matrix](SCENE_PAIRED_RESOURCE_AND_EH_THIS_CAPTURE_NEGATIVES_F712_F713.md).
+No fake locals, 943-unit full replay or authored exact CODE credit.

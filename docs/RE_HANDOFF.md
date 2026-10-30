@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F711 complete 2D0/2D1 falling radial source.**
+**Maintained 2026-10-30, after F711 full falling radials and F712/F713 small-function controls.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -9,6 +9,19 @@ with its Markdown links adjusted for its new directory. The older
 [chronological knowledge base](KNOWLEDGE_BASE.md) are evidence, not a
 reason to undo later exact adoptions. Original pinned native PE and
 **live manifests outrank every historical sentence**.
+
+**F712/F713 new complete-small-function negatives:** F713 freshly
+compiled **12 entire original 248-byte/75-x86/12-typed-field authored
+Scene destructor** C++ sources with two *actually freed* resources
+in a pair aggregate and one separate genuinely freed pointer, all
+permutations and before/after texture lifetime. Four remain **191/200**
+original nonfield bytes and eight **189/200**, wrong texture EBP
+`−0x20/−0x1C` versus native `−0x14/−0x10` always. F712 tested
+**six whole 73-B original unknown-origin `0061A453` derived EH dtor**
+catch/this-resource captures; generated 69/22 (3), 39/13, 91/35,
+107/39, none native 73/23. Both have portable tracked one-case or
+`--all` affected-local verifiers; no original provenance promotion or
+exact CODE. [Actual original/whole source negative matrix](SCENE_PAIRED_RESOURCE_AND_EH_THIS_CAPTURE_NEGATIVES_F712_F713.md).
 
 **F711 next entire original game-action restoration (NONSTRICT):**
 Two real `00543210` actions `2D0/2D1`, **416 native CODE B,
