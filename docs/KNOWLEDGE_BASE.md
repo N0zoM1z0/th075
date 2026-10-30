@@ -198,6 +198,18 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   matched after all 14 original PE refs checked.
   None accepted exact.
   [F798 full native teardown evidence](ARCHIVE_NATIVE_LOOP_TEARDOWN_F798.md).
+- **F801 current 58KB fighter action-history source result:**
+  eight actual entire `0x00543210` source builds with
+  physically observed owner pointer `+0x2E8`,
+  opponent stage `+0x60`, actor history `+0x32A`
+  and index `+0x39D` borrowed typed views emit
+  **identical whole 59,236-B CODE+DATA** and
+  **1,863 COFF relocation shapes**. All 15 real
+  0x63 native PE field destinations independently
+  checked. True original 0x63 width/register
+  differences [18,61,84] persist, zero whole
+  boss CODE credited.
+  [F801 complete native typed-view comparison](FIGHTER_BORROWED_ACTION_HISTORY_F801.md).
 - **F799 two complete PE source-matched origin-unknown leaves:**
   original `004135F0` writes three borrowed owner fields
   in **40/40 complete native bytes/16 x86**; original

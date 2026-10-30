@@ -332,6 +332,22 @@ Full 58,294-B giant remains nonexact.
 [F793 predecessor native source experiment](FIGHTER_BURST_PREDECESSOR_PHASE_F793.md);
 `scripts/repo-python scripts/verify-fighter-burst-predecessor-f793.py`.
 
+**F801 full 0x63 action history / opponent pointer source hypothesis:**
+eight complete 58KB VC7.1 parents independently modeled the
+real `this+0x32A` signed action-history array,
+`this+0x39D` index, `this+0x2E8` owner pointer
+and opponent `+0x60` signed stage as typed
+*borrowed* views. **All eight entire 59,236B
+CODE+943B DATA objects and all 1,863 COFF
+relocation shapes are bit-identical**. Original
+0x63 **15 native PE fields** and 46B common getter
+suffix were revalidated; original 706 B vs source
+705 B and CMP register-width ordinals 18/61/84
+remain genuine negatives. Full boss not exact;
+no authored callable CODE credited.
+[F801 physical native/typed-view proof](FIGHTER_BORROWED_ACTION_HISTORY_F801.md);
+`scripts/repo-python scripts/verify-fighter-native-borrowed-action-f801.py`.
+
 **Next meaningful giant tasks:** resolve the real native `059` **19**
 normalized nonfield GPR discrepancies and `060/061` **98/101**;
 recheck *in the next newly compiled entire parent* (do not inherit
