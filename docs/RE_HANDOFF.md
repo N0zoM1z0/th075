@@ -878,6 +878,29 @@ genuine preceding original sprite logic.
 scripts/repo-python scripts/verify-scripted-fighter-projectiles-f827.py.
 Original full 46,755B still NONEXACT.
 
+**F829 B4/B5 real original restart cases in the 46KB fighter:**
+each complete **215 native B/60 x86/8 physically
+typed original PE fields**, original initial
+heights +8/-8 and auxiliary motion 8/10.
+Fresh one-parent VC7.1 source becomes
+**17,676 callable B/4,702 x86**,
+up from F827 17,276/4,586.
+All real native instruction opcodes/GPR/widths
+and 16 physical call/global targets verified.
+Precisely **three real whole-giant epilogue
+JMPs per case** remain two-byte-displaced
+at case offsets 169/170, 206/207, 211/212;
+these are not masked as exact CODE.
+Earlier A7/A8 PE-backed projectile source
+and full F806 46B shared default with
+**34/34 identical unrelocated native
+machine bytes plus three authentic PE
+calls** remain verified. Original 901B
+switch DATA separately owned.
+[F829 original full-parent native proof](SCRIPTED_FIGHTER_MOTION_RESTART_F829.md);
+scripts/repo-python scripts/verify-scripted-fighter-motion-restart-f829.py.
+Whole original 46,755B still NONEXACT.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin

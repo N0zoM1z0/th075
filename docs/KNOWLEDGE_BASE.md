@@ -214,6 +214,20 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   saved-this slot. Entire 248B remains
   nonexact, no credited original CODE.
   [F818 original PE typed-view result](SCENE_COMPLETE_BORROWED_OWNER_F818.md).
+- **F829 B4/B5 original restart states in one growing 46KB fighter:**
+  native original 2x215B/60 x86/8
+  physical PE fields in a new
+  **17,676-B/4,702-x86** whole C++ parent.
+  Both native source opcodes/widths/GPR
+  and all 16 PE call targets match;
+  only three authentic external final
+  JMP two-byte operand pairs differ
+  in each complete original interior.
+  Earlier A7/A8 and F806 46B suffix
+  **34/34 real nonrelocation bytes**
+  plus true PE REL32 calls rechecked.
+  Giant NONEXACT, no callable CODE credit.
+  [F829 target proof](SCRIPTED_FIGHTER_MOTION_RESTART_F829.md).
 - **F828 original ArchiveCatalog complete 171B source storage review:**
   15 complete original-shaped 51-x86/14-native-PE-field
   builds. Thirteen genuine register/volatile/
