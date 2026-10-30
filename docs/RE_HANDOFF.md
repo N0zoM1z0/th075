@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F728 random arcs and F726/F727 whole 33KB/Scene controls.**
+**Maintained 2026-10-30, after F729 original 1F6/1F7 return-boundary recovery.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -9,6 +9,26 @@ with its Markdown links adjusted for its new directory. The older
 [chronological knowledge base](KNOWLEDGE_BASE.md) are evidence, not a
 reason to undo later exact adoptions. Original pinned native PE and
 **live manifests outrank every historical sentence**.
+
+**F729 latest LARGE original fighter source recovery, still NONEXACT:**
+Full native `00543210` original action `1F6` and `1F7` each
+**1,181 physical CODE B/348 x86/35 actual typed PE/COFF fields**
+now have meaningful C++ with complete ground/walls/side bounce,
+7D/7E reverse projectile and 336/337 action loops. In ONE full
+original-shaped giant, each generates **1,183 B/350 x86**, with
+**all 35 original fields at true target/symbol/type/addend** and
++1/+2 actual x86 ordinal shift from two non-native `FLD/FCOMPP`
+operations versus original `FCOMP [this+0x44]`. Nine complete source
+comparator trials establish first side-edge **strict `<`** naturally
+fixes original `TEST AH,5; JP`. Original integer/x87 EBP scratch
+`−0xF8/−0xFC` is still source `−0x6C/−0x70`; 286/285 genuine
+nonfield GPR/x87/CFG errors, not whole exact CODE. Previous
+original 200/201 GPR regressions remain **67/85**, original 2EF
+strict 0, and ENTIRE 943B original afterRET switch DATA (156
+native/source DIR32 labels, 319/319 sparse bytes) rechecked on
+this same new parent. Do not reuse old 27-strict count.
+[Full original 1F6/1F7 physical machine-code evidence](FIGHTER_RETURN_BOUNDARY_F729.md);
+`scripts/repo-python scripts/verify-fighter-return-boundary-f729.py`.
 
 **F726/F727 new large-boss and small-function compiler controls:**
 F726 compiled **10 complete original-shaped 33,731B/8,789-x86/

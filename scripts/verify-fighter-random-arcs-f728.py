@@ -109,7 +109,7 @@ def source_for_complete_parent(reader,pe,real,boss,report,mapped):
     return src,f706
 
 
-def case_evidence(reader,pe,real,f676,f598,f701,by,ins,refs):
+def case_evidence(reader,pe,real,f676,f598,f701,by,ins,refs,*,following_native_1f6=False):
     rows=[]
     for action,(start,end,original_size,nx,nfields,st) in CASES.items():
         need(by[action]==start and by[0x1F5 if action==0x1F4 else 0x1F6]==end
@@ -164,11 +164,15 @@ def case_evidence(reader,pe,real,f676,f598,f701,by,ins,refs):
              'native_real_EBP_x87_scratch_vs_source':X87_SLOTS[action],
              'actual_native_GPR_CFG_negative_ordinals':len(wrong),
              'native_case_byte_exact':False})
-    need(ins[5406].mnemonic=='mov'
-         and ins[5555].mnemonic=='mov'
-         and ins[5704].mnemonic=='mov'
-         and ins[5704].op_str.endswith(', 0x1f7'),
-         'source must place 1F4/1F5 full 149-x86 actions before original 1F6 placeholder')
+    need(ins[5406].mnemonic==ins[5555].mnemonic==ins[5704].mnemonic=='mov',
+         'source must preserve full 1F4->1F5->1F6 physical action start order')
+    if following_native_1f6:
+        need(ins[5704].op_str=='eax, dword ptr [ebp - 0x28]'
+             and ins[5705].op_str=='ecx, word ptr [eax + 0x62]',
+             'source after native 1F5 must be independently proven real 1F6 full source')
+    else:
+        need(ins[5704].op_str.endswith(', 0x1f7'),
+             'original 1F6 placeholder expected in F728 prior standalone source context')
     return rows
 
 

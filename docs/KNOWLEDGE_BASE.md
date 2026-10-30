@@ -13028,3 +13028,27 @@ Scene source. Portable full PE native selected-case verifier
 original destructor source, optional `--all` only 12 affected TUs.
 [Complete original PE and negative machine-code evidence](SCENE_ARRAY_AND_GIANT_ALPHA_NEGATIVES_F726_F727.md).
 No full 943-unit replay, 943/862726 authored ledger unchanged.
+
+
+## F729: complete original 1F6/1F7 boundary-return source, strict float side predicate
+
+New meaningful natural VC7.1 C++ in one full original-shaped `00543210`
+fighter restores native whole `1F6` `0054AB00..0054AF9D` and `1F7`
+`0054AF9D..0054B43A`, **1,181 original CODE B/348 x86/35 real
+physically typed PE/COFF fields each**, with real ground/contact,
+4 walls, signed bounce state, 0x7D/7E reversal shot and native
+0x336/0x337 stage-15 shot. Nine full-parent source comparator
+controls prove original first float bound uses strict `<`, restoring
+native `TEST AH,5; JP`; two later original `FCOMP [this+0x44]`
+still generate true extra `FLD/FCOMPP`, leaving **1,183 source B/
+350 x86 per original case**, with exact target/source symbol/field
+type/addend in all **70 actual PE/COFF records** and explicitly
+owned +1/+2 ordinal shifts after native x86 127/139. Original
+EBP float scratch `−0xF8/−0xFC` remains generated `−0x6C/−0x70`;
+286/285 native nonfield GPR/x87/CFG negatives remain. Current
+full source parent still exhibits 200/201 67/85 register regressions,
+2EF zero, and **156 original/source true afterRET DIR32 entries plus
+319/319 original sparse bytes** independently rechecked. No 27-strict
+context count inherited; no independently authored byte-exact CODE.
+[Complete F729 physical PE and genuine x87 negative](FIGHTER_RETURN_BOUNDARY_F729.md),
+`scripts/repo-python scripts/verify-fighter-return-boundary-f729.py`.
