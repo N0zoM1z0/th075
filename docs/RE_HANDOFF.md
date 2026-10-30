@@ -1,6 +1,6 @@
 # TH075 — ACTIVE reconstruction agent handoff
 
-**Verified snapshot: 2026-10-31, current F780 exact ledger; F851 fighter 188 and F848 Scene.**
+**Verified snapshot: 2026-10-31, current F780 exact ledger; F852 fighter bounce and F848 Scene.**
 This is the **short working queue**, not the chronological research log.
 Original Japanese PE and the live configuration **always outrank historical
 prose, old case-level exact labels, class names or inferred layouts**.
@@ -1409,6 +1409,38 @@ GPR operand bytes wrong 10/12/16/19.
 [F851 real actor original PE proof](SCRIPTED_FIGHTER_GROUND_188_F851.md);
 scripts/repo-python scripts/verify-scripted-fighter-ground-188-f851.py.
 Full original 46,755B NONEXACT.
+
+**F852 original 0x189 x87 bounce state in same growing fighter:**
+real original 00526FCA is **381 complete
+native inner B/107 x86/11 actual physical
+typed PE call/global fields**. Source uses
+genuine original FUCOMPP global-vs-member
+equality, x87 float POS48+POS54<ground,
+actual 00657478 velocity multiplier,
+auxiliary state7 and native stage3
+POS15/velocity8.5/drag0.85. One new
+whole VC7.1 source now **24,562 callable
+B/6,759-x86**, from F851 24,196/
+6,654. All 107 native opcode widths,
+instruction positions and eleven real
+physical PE target fields match, BUT
+**68 genuine original non-PE GPR bytes**
+and two entire giant epilogue relative
+JMP operand bytes +377/+378 still
+differ. Seven real source expressions
+were independently compiled; not
+all math-equivalent float spellings
+preserve original x87 branch machine
+code. Previous native 136/186/187/188
+GPR negatives and 20 earlier complete
+PE-backed cases, all FIVE packed 901B
+afterRET tables rechecked. The common
+46B getter again **34/34 actual original
+nonrelocation bytes** plus three PE
+calls. Whole 46,755B NONEXACT, no
+standalone-case exact credit.
+[F852 selected original PE proof](SCRIPTED_FIGHTER_BOUNCE_189_F852.md);
+scripts/repo-python scripts/verify-scripted-fighter-bounce-189-f852.py.
 
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`

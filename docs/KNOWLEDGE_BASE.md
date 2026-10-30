@@ -232,6 +232,26 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   GPR differences, whole native
   giant NONEXACT.
   [F844 selected original physical PE](SCRIPTED_FIGHTER_GROUNDED_130_F844.md).
+- **F852 actual 0x189 native x87 bounce:**
+  entire native 381B/107 x86/11
+  original PE fields in one
+  24,562B/6,759-x86 full
+  selected fighter source. Native
+  FUCOMPP equality and bounce
+  scalar at 00657478, state7
+  and stage3 speed/drag match
+  all actual opcode/width/PE
+  fields but 68 GPR bytes plus
+  two complete-giant exit
+  JMP operands still differ.
+  Previous 136/186-188 real
+  register negatives, 20 earlier
+  complete original case sources,
+  default 46B 34/34 nonrelocation
+  and five packed 901B tables
+  checked. No accepted callable
+  entire original CODE.
+  [F852 original selected PE proof](SCRIPTED_FIGHTER_BOUNCE_189_F852.md).
 - **F851 real original 188 ground state:**
   native 214B/61-x86/6 real typed
   PE fields, source actor transition
