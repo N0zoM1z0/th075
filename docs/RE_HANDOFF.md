@@ -969,6 +969,33 @@ NONEXACT with zero new whole-function credit.
 [F832 actor-specific native PE proof](SCRIPTED_FIGHTER_RESOURCE_SHOTS_F832.md);
 scripts/repo-python scripts/verify-scripted-fighter-resource-shots-f832.py.
 
+**F833 selected original scripted 0xC9 storm projectile source:**
+actual native 0052577B whole **279B/86 x86/
+11 physically typed original PE fields**
+joins the same 005214B0 actor-specific
+giant C++ parent, now **18,639 callable
+B/5,001 x86** from F832 18,375/4,917.
+Original storm 00454BC0(3,4,0xFF),
+two signed-direction 0x7D/0x7E native
+projectiles, float X at this+0x44,
+Y global 00658268 and original height
+recovery are ordinary C++ source.
+A genuinely borrowed UNINSTANTIATED X
+view reproduces all physical 86 x86
+mnemonics and widths; direct raw X or
+Y alias alternatives change real x87
+codegen. All 11 original call/global
+PE fields verified; **47 honest native
+nonrelocation GPR/parent-JMP bytes
+still differ** in this incomplete parent.
+Prior CF/D0/D1/D2 physical source, 901B
+packed DATA and shared default checked.
+The preceding 657B C8 remains missing;
+do not copy C9's GPR phase as exact.
+[F833 original target PE/source proof](SCRIPTED_FIGHTER_FOURWAY_C9_F833.md);
+scripts/repo-python scripts/verify-scripted-fighter-fourway-c9-f833.py.
+Original 46,755B giant still NONEXACT.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin

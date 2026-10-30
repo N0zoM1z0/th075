@@ -214,6 +214,20 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   saved-this slot. Entire 248B remains
   nonexact, no credited original CODE.
   [F818 original PE typed-view result](SCENE_COMPLETE_BORROWED_OWNER_F818.md).
+- **F833 selected 0xC9 original 46KB storm case:**
+  true native 279B/86-x86/11 typed
+  original PE fields in one new
+  **18,639-B/5,001-x86** source parent.
+  Actual signed-direction two-sprite
+  shot and borrowed observed X+0x44
+  view reproduce full original opcode
+  mnemonics and widths; raw X changes
+  real x87 register grammar. **47
+  honest nonrelocation GPR/JMP bytes**
+  still differ while original C8 is
+  missing; earlier CF/D0/D1/D2 and
+  901B afterRET DATA rechecked.
+  [F833 target proof](SCRIPTED_FIGHTER_FOURWAY_C9_F833.md).
 - **F832 original actor-specific D1/D2 resource shots:**
   199B/59 x86/8 true PE fields and
   251B/74 x86/10 fields in a full
