@@ -12764,3 +12764,34 @@ native GPR negatives and all 943-B original afterRET DATA.
 [Complete physical original PE/COFF and honest nonexactness](FIGHTER_COMPLEX_MOVEMENT_F714_F715.md);
 `verify-fighter-complex-movement-f714-f715.py` targeted one-parent rebuild.
 No all-943 cold replay, 943/862726 authored exact ledger unchanged.
+
+
+## F716/F717: native Archive RAII lifecycle and whole-fighter branch-CFG negatives
+
+F716 freshly built **16 whole nonexact original 171-B ArchiveCatalog
+destructor C++** RAII hypotheses that actually free the filename or
+delete the resource via a used C++ class owner. Real `/Od /Ob0`
+filename scope destructor/member release emits **167 B/49 x86/14
+COFF fields**, replacing original direct `CALL _free` with the
+class helper; early owner diagnostic scope yields 163/49, and `/GX`
+EH-enabled source yields 212/58/18. Actual scoped resource owner
+emits **141 B/43 x86/14 fields**, replacing the original native
+scalar-delete helper call. Eight separate diagnostic VC7.1 `/Ob1` or
+`/Ob2` whole source builds inline helpers naturally but generate
+**197 B/58 x86/15 fields** for actual filename owner or
+**203 B/60 x86/15 fields** for resource owner: none restores
+original 171/51/14 or its EBP stack order. Early ownership extending
+past original per-iteration release is a semantic *negative*, not
+a purported original source. One portable tracked verifier supports
+7 selected original whole C++ source controls with `--case`/`--all`:
+`scripts/verify-archive-raii-owner-f716.py`.
+
+F717 independently compiled five complete original-shaped `00543210`
+parent variants with real 2DB wall/contact short-circuit `goto` or
+nested `if` branch chains and actual edge comparators. All preserve
+**34 typed original physical PE/COFF destinations** but generate
+**1,042 B/297 x86** instead of 1,024 native B/290 x86 and also
+regress from F715 closer 1,032/292. No x87/branch/GPR exactness
+gain. Preserve closer tracked F714/F715 source and original native
+negative comparison. [Physical original and full compiler results](ARCHIVE_RAII_OWNER_AND_FIGHTER_EDGE_CONTROLS_F716_F717.md).
+No exact whole-function credit, no EXE changes, no full 943 cold replay.

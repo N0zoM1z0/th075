@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F714/F715 complete 2DB/2DC source restoration.**
+**Maintained 2026-10-30, after F716 RAII/owner and F717 edge-branch controls.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -9,6 +9,22 @@ with its Markdown links adjusted for its new directory. The older
 [chronological knowledge base](KNOWLEDGE_BASE.md) are evidence, not a
 reason to undo later exact adoptions. Original pinned native PE and
 **live manifests outrank every historical sentence**.
+
+**F716/F717 latest targeted whole-function controls:** F716
+investigated **16 real-used RAII owners** for original authored 171-B
+ArchiveCatalog destructor (`0041CE50`), plus eight diagnostic
+`/Ob1`/`/Ob2` full source builds. Original has direct CRT `_free`;
+real filename RAII source emits 167 B/49 x86 and CALL to owner helper
+instead; true resource RAII emits 141/43, not native 171/51. Even
+when compiler explicitly inlines the helper under `/Ob1`, emits
+197/58 or 203/60, not original. Selected tracked verifier
+`scripts/repo-python scripts/verify-archive-raii-owner-f716.py --case name-dtor-Ob0`.
+F717 tried five complete giant-fighter 2DB **actual short-circuit
+CFG branch-structure** variants; they regress to 1,042 B/297 x86
+against original 1,024/290, with 34 source fields unchanged, versus
+the closer F715 tracked source 1,032/292. Both are honest
+NONEXACT; no fabricated C++ locals/ASM or new exact whole function.
+[Native original physical study](ARCHIVE_RAII_OWNER_AND_FIGHTER_EDGE_CONTROLS_F716_F717.md).
 
 **F714/F715 latest large-boss whole-source recovery (NONSTRICT):**
 Inside original `00543210`, new normal C++ recovers physical `2DB`
