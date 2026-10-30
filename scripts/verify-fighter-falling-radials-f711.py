@@ -78,7 +78,7 @@ def source_with_radials(source):
     return source
 
 
-def compare_native_radials(reader,pe,real,f676,f598,f701,boss,mapped,emitted,refs):
+def compare_native_radials(reader,pe,real,f676,f598,f701,boss,mapped,emitted,refs,*,following_native_2db=False):
     by={x['action']:int(x['handler'],16) for x in mapped}
     reviewed=[]
     for action in ACTIONS:
@@ -135,10 +135,19 @@ def compare_native_radials(reader,pe,real,f676,f598,f701,boss,mapped,emitted,ref
             'actual_original_and_source_integer_x87_EBP_slots':EBP[action],
             'native_internal_case_byte_exact':False})
     need(emitted[SOURCE_START[0x2D0]+NATIVE_X86].mnemonic=='push'
-         and emitted[SOURCE_START[0x2D0]+NATIVE_X86].op_str=='0xff'
-         and emitted[SOURCE_START[0x2D1]+NATIVE_X86].mnemonic=='mov'
-         and emitted[SOURCE_START[0x2D1]+NATIVE_X86].op_str.endswith(', 0x2dc'),
-         'native original 2D0/2D1 must lead to their distinct true following handlers')
+         and emitted[SOURCE_START[0x2D0]+NATIVE_X86].op_str=='0xff',
+         'native original full 2D0 must directly lead into true 2D1 storm')
+    if following_native_2db:
+        j=SOURCE_START[0x2D1]+NATIVE_X86
+        need(emitted[j].mnemonic=='mov'
+             and emitted[j].op_str=='eax, dword ptr [ebp - 0x28]'
+             and emitted[j+1].mnemonic=='movsx'
+             and emitted[j+1].op_str=='ecx, word ptr [eax + 0x62]',
+             'native original full 2D1 must lead into independently verified real 2DB C++')
+    else:
+        need(emitted[SOURCE_START[0x2D1]+NATIVE_X86].mnemonic=='mov'
+             and emitted[SOURCE_START[0x2D1]+NATIVE_X86].op_str.endswith(', 0x2dc'),
+             'native original full 2D1 must lead into the 2DB source placeholder')
     return reviewed
 
 

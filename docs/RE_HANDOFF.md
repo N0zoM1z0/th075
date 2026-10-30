@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F711 full falling radials and F712/F713 small-function controls.**
+**Maintained 2026-10-30, after F714/F715 complete 2DB/2DC source restoration.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -9,6 +9,23 @@ with its Markdown links adjusted for its new directory. The older
 [chronological knowledge base](KNOWLEDGE_BASE.md) are evidence, not a
 reason to undo later exact adoptions. Original pinned native PE and
 **live manifests outrank every historical sentence**.
+
+**F714/F715 latest large-boss whole-source recovery (NONSTRICT):**
+Inside original `00543210`, new normal C++ recovers physical `2DB`
+**1,024 native B/290 x86/34 genuine PE/COFF typed original fields**
+(compiler **1,032 B/292 x86**, two extra authentic x87 `FLD/FCOMPP`
+operations and 236 nonfield GPR/CFG differences), and physical
+`2DC` **602 native B/169 x86/18 physical fields** (**exact same
+169 mnemonic/width positions in VC7.1 source** but 95 GPR/EBP
+mismatches). Total **1,626 original internal case CODE B** newly
+source-backed; ZERO independently callable exact-function credit.
+In one newly compiled whole original-shaped giant, 26 previous
+context-strict nonterminal cases survive; 2EF/2F0/2F1 144/175/170
+true GPR regressions and full 943-byte afterRET switch DATA are
+explicitly rechecked. Nine genuine x87 source comparisons for 2DB
+failed to remove two extra instructions. [Original physical proof and
+remaining true negatives](FIGHTER_COMPLEX_MOVEMENT_F714_F715.md);
+`scripts/repo-python scripts/verify-fighter-complex-movement-f714-f715.py`.
 
 **F712/F713 new complete-small-function negatives:** F713 freshly
 compiled **12 entire original 248-byte/75-x86/12-typed-field authored

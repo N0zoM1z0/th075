@@ -12734,3 +12734,33 @@ and `--all` only affected small source TUs:
 source alternative evidence and actual compiler receipts: [full
 physical negative matrix](SCENE_PAIRED_RESOURCE_AND_EH_THIS_CAPTURE_NEGATIVES_F712_F713.md).
 No fake locals, 943-unit full replay or authored exact CODE credit.
+
+
+## F714/F715: complete original 2DC dual-volley and 2DB multi-stage approach in actual 58KB fighter
+
+Original native `00543210` physical 2DB `0054E451..0054E851` owns
+**1,024 B/290 x86/34 real PE/COFF fields**; newly restored normal
+C++ implements its original wall/contact/facing and owner-distance
+logic, original stage-count and 2DF/2DC transitions, and actual
+7D/7E projectiles. VC7.1 full-parent compiled source emits **1,032
+B/292 x86**, with 34/34 physical typed native field destinations;
+two extra `FLD/FCOMPP` relative to original `FCOMP [this]`, altered
+x87/NaN branches and 236 real nonfield GPR/CFG mismatches remain.
+Nine full-parent source comparator grammar trials did not remove
+these genuine differences.
+
+Original native 2DC `0054E851..0054EAAB` owns **602 B/169 x86/18
+original zero-addend typed PE/COFF fields**; full C++ reconstructs
+storm initialization, difficulty-gated 333/387 shots, real x87
+height and X deceleration, completion countdown/random state.
+Full VC7.1 parent matches **all 169 original mnemonic AND width
+positions**, all 18 physical fields, but 95 real normalized nonfield
+GPR/CFG differences and wrong genuine source EBP slots remain.
+New original-backed 1,626 internal CODE B/459 x86 source recovered
+without any new independently callable byte-exact whole function.
+Same newly generated full parent rechecks prior real actions, previous
+26 still-strict internal cases, new 2EF 144 + 2F0/2F1 175/170
+native GPR negatives and all 943-B original afterRET DATA.
+[Complete physical original PE/COFF and honest nonexactness](FIGHTER_COMPLEX_MOVEMENT_F714_F715.md);
+`verify-fighter-complex-movement-f714-f715.py` targeted one-parent rebuild.
+No all-943 cold replay, 943/862726 authored exact ledger unchanged.
