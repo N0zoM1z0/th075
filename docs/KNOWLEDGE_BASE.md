@@ -12966,3 +12966,36 @@ No new byte-exact independently authored whole function.
 [F724 full native original PE/COFF and honest source-local negatives](FIGHTER_FOLLOWUP_BURST_F724.md);
 `scripts/repo-python scripts/verify-fighter-followup-burst-f724.py`.
 No full cold replay, 943/862726 accepted authored exact unchanged.
+
+
+## F728: two complete random-arc action sources with real physical FADD relocation repair
+
+Original giant fighter `00543210` physical `1F4` `0054A6CC..0054A8E6`
+and `1F5` `0054A8E6..0054AB00` are each **538 native B/149 x86/
+18 physical PE/COFF typed fields**. F728 meaningful natural C++
+restores real stage, three distinct bounded random calls, original
+kind `0x330` float X/Y shot, native ground/drag and distinct completion
+branches. Each source emits **506 B/149 original-ordered mnemonics**,
+with 18/18 native fields and 10 true x86 width differences from
+four original deep x87 used float conversion scratch locals. Eight
+entire original-shaped VC7.1 parents tested actual lvalue/term order;
+`(*(&POS48))+g_F728_RandomOffsetYAt00657858` naturally moves true
+original `DIR32` float Y fields to correct **FADD at native x86 36/55**,
+fixing previously wrong `FLD global; FADD member` field ownership.
+Each full case still has **71 real normalized nonfield GPR/CFG
+differences** and wrong EBP scratch owner, so NONSTRICT.
+
+Critically, adding both genuine early cases naturally causes an actual
+upstream compiler GPR-phase **REGRESSION** in previous native
+`0x200` (**67** nonfield GPR errors) and `0x201` (**85**) even though
+their complete native 343B/102 and 436B/126 case lengths, mnemonic/
+widths and 8/9 COFF counts remain original. `0x2EF` remains strict
+at zero GPR errors, but **do not reuse prior F724 27-strict-case count
+in this F728 C++ parent**; an exhaustive current strict count is not
+established. Independently verified *ALL 943 original afterRET DATA*:
+156 physical native/source `DIR32` switch relocations target actual
+instruction boundaries, and the remaining **319/319 original nonfield
+sparse-map bytes equal**. [Full original native physical and nonexact
+F728 evidence](FIGHTER_RANDOM_ARCS_F728.md); reproduce with
+`scripts/repo-python scripts/verify-fighter-random-arcs-f728.py`.
+No new whole-game byte-exact CODE, 943/862726 ledger unchanged.

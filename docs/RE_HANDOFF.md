@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F724 original fighter followup source and F723 Archive loop controls.**
+**Maintained 2026-10-30, after F728 complete random-arc source and honest prior-register regressions.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -9,6 +9,28 @@ with its Markdown links adjusted for its new directory. The older
 [chronological knowledge base](KNOWLEDGE_BASE.md) are evidence, not a
 reason to undo later exact adoptions. Original pinned native PE and
 **live manifests outrank every historical sentence**.
+
+**F728 latest new original-boss source with a CRITICAL strict-regression warning:**
+Original `00543210` physical `1F4` and `1F5` each **538 native CODE
+B/149 x86/18 real PE/COFF fields** now have complete natural C++
+random shot/drag/ground source. Both compile to **506 B/149 matching
+native mnemonics and all 18 typed fields at original instruction
+ordinals**, after meaningful `*(&POS48)` member access fixes the
+native original Y FADD global `DIR32` owner in both cases (8 fresh
+full-giant C++ evaluations). Their original `EBP−0xD8..−0xF4`
+float scratch vs new `−0x4C..−0x68` still causes 10 x86 width
+negatives in each. More importantly, **adding these two genuine
+source cases changes older VC7.1 register phases**: native original
+`0x200` now has 67 and `0x201` has 85 GPR mismatches, while
+`0x2EF` remains strict with 0. **F724's 27 strict internal cases
+must NOT be claimed for the new F728 source context.**
+Entire separately owned 943-byte afterRET switch DATA independently
+rechecked: **156 original/source typed DIR32 fields** all point to
+valid x86 source/native instructions, and all remaining **319/319
+native sparse-map bytes** match. Original whole 58KB boss remains
+NONEXACT, zero new complete authored game CODE credit.
+[F728 complete native/COFF and GPR regression evidence](FIGHTER_RANDOM_ARCS_F728.md);
+`scripts/repo-python scripts/verify-fighter-random-arcs-f728.py`.
 
 **F724 latest substantial large-original source and compiler phase gain:**
 Original `00543210` full physical internal action `2C5`
