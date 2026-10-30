@@ -198,6 +198,22 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   matched after all 14 original PE refs checked.
   None accepted exact.
   [F798 full native teardown evidence](ARCHIVE_NATIVE_LOOP_TEARDOWN_F798.md).
+- **F807 46KB real source integration and GPR phase:**
+  same original `005214B0` now has original
+  0x46/47/48 whole inner cases (994 native B/
+  276 original x86 /41 true typed PE fields)
+  together with F806's verified 46B default/getter
+  and first 23 originally sourced cases, all
+  in one new 7,817-B/1,920-x86 source parent
+  (previous 6,868B/1,650 x86). Entire 901B
+  switch DATA is rechecked. Adding those
+  genuine preceding motion actions rotates
+  later default GPR registers, producing
+  four native byte negatives + four prior
+  EBP displacement negatives in the tail;
+  actual original 46KB giant remains
+  nonexact, no split-case credit.
+  [F807 new complete original source proof](SCRIPTED_FIGHTER_EXPANDED_NATIVE_ACTIONS_F807.md).
 - **F806 real previously artificial scripted 46KB fighter suffix:**
   four genuine native early action0/2/4/5 entry
   jumps and **46B/16 x86** full native fallback/getter

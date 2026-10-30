@@ -455,6 +455,31 @@ remains NONEXACT. No split-case callable credit.
 [Actual F806 native shared-tail source](SCRIPTED_FIGHTER_SHARED_GETTER_F806.md);
 `scripts/repo-python scripts/verify-scripted-fighter-native-shared-tail-f806.py`.
 
+**F807 expanded the SAME 46KB scripted native fighter:**
+current `005214B0` source now integrates the three
+additional complete original motion actions
+`0x46/0x47/0x48` (**374+310+310
+native original inner B, 104+86+86 x86,
+41 real typed COFF fields**) with F806's
+four original shared getter exits and
+real **46B/16-x86** fallback tail.
+Previous 23 action bodies, actual 139 dense
+jump pointers, 345 sparse bytes and complete
+901B afterRET DATA rechecked **in the single
+new source parent**. C++ output improves
+**6,868→7,817 callable B** (1,650→1,920 x86).
+Crucial context negative: adding these true
+actions changes subsequent default GPR allocation:
+four native wrong register bytes at suffix
+offsets **10/12/16/19**, plus four honest
+saved-this EBP wrong bytes **2/13/26/36**,
+even though native tail control/16 x86/3 PE
+calls remain exact in grammar. Do not carry
+F806's old GPR phase into a newer parent.
+[Original full F807 parent evidence](SCRIPTED_FIGHTER_EXPANDED_NATIVE_ACTIONS_F807.md);
+`scripts/repo-python scripts/verify-scripted-fighter-extended-f807.py`.
+Still NOT whole original 46,755-B exact.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin
