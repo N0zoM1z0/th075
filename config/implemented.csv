@@ -973,3 +973,4 @@ SpriteDrawingF765::DrawOpaqueSprite
 SpriteDrawingF765::DrawOpaqueSpriteMirrored
 TextureManagerF769::AllocateTextureSlots
 TextureManagerF770::AllocateSharedTextures
+SpriteDrawingF775::DrawScaled

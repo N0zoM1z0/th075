@@ -17,9 +17,9 @@ the historical R268 checkpoint and every later verified adoption. The 95
 unresolved origins remain unknown; they do not block reconstruction of
 independently reviewed authored functions. Include all pending bytes in the conservative goal denominator.
 For the still-unmatched authored backlog, count provenance via
-`config/function-origins.csv` (currently 29 = 22 giant + 7
+`config/function-origins.csv` (currently 28 = 22 giant + 6
 small/medium), NOT only the 25 rows with `functions.csv.owner=authored`.
-Leaving the remaining 4 `functions.csv` owner cells blank until source
+Leaving the remaining 3 `functions.csv` owner cells blank until source
 acceptance is intentional; it does not make their origin unknown.
 Start with the live cohort in `docs/RE_HANDOFF.md`; historical experiments
 must not override current evidence. **Only cold-replay new/affected units**,

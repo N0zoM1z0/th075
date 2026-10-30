@@ -61027,3 +61027,30 @@ relocations = [
  { offset = 0xF1, type = "REL32", symbol = "??1NativeTextureElementF769@@QAE@XZ", target = 0x0040D8E0 },
  { offset = 0xFB, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
 ]
+
+# F775: R011 full authored 970-B scaled sprite draw, 257 x86 / 14
+# genuine original PE fields. Native ctor/copy/rotate 132-B quad.
+[units.sprite-drawing-scaled-native-0040d2e0]
+source = "src/SpriteScaledDrawF775.cpp"
+object = "build/matching/SpriteScaledDrawF775.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["SpriteDrawingF775::DrawScaled"]
+symbol = "?DrawScaled@SpriteDrawingF775@@QAEXHMMKMMMMME@Z"
+target_address = 0x0040D2E0
+size = 970
+relocations = [
+ { offset = 0x18, type = "REL32", symbol = "??0SpriteScaledQuadF775@@QAE@XZ", target = 0x0040D990 },
+ { offset = 0x3E, type = "REL32", symbol = "?At@SpriteScaledListF775@@QAEPAXI@Z", target = 0x0040DD60 },
+ { offset = 0x59, type = "REL32", symbol = "?At@SpriteScaledListF775@@QAEPAXI@Z", target = 0x0040DD60 },
+ { offset = 0x7A, type = "DIR32", symbol = "?g_ZeroAngleF775@@3MA", target = 0x0065782C },
+ { offset = 0xC5, type = "REL32", symbol = "??0SpriteScaledQuadF775@@QAE@MMMM@Z", target = 0x0040DA00 },
+ { offset = 0xDF, type = "DIR32", symbol = "?g_ZeroAngleF775@@3MA", target = 0x0065782C },
+ { offset = 0x136, type = "REL32", symbol = "??0SpriteScaledQuadF775@@QAE@MMMM@Z", target = 0x0040DA00 },
+ { offset = 0x153, type = "DIR32", symbol = "?g_AngleUnitF775@@3MA", target = 0x00657828 },
+ { offset = 0x15C, type = "REL32", symbol = "?CosAt0040D900@@YAMM@Z", target = 0x0040D900 },
+ { offset = 0x16E, type = "DIR32", symbol = "?g_AngleUnitF775@@3MA", target = 0x00657828 },
+ { offset = 0x177, type = "REL32", symbol = "?SinAt0040D940@@YAMM@Z", target = 0x0040D940 },
+ { offset = 0x2C8, type = "REL32", symbol = "??0D3DXVECTOR4@@QAE@XZ", target = 0x0040D980 },
+ { offset = 0x3A3, type = "REL32", symbol = "?GetTexture@SpriteDrawingF775@@QAEPAUIDirect3DTexture8@@H@Z", target = 0x0040C8C0 },
+ { offset = 0x3BB, type = "REL32", symbol = "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z", target = 0x004029F0 },
+]

@@ -8,7 +8,7 @@ ordinary C++, using the actual pinned VC7.1 compiler and comparing full native
 PE CODE plus genuine physical COFF relocations. **This is not a complete
 playable game or an officially verified distribution rebuild.**
 
-## Current verified snapshot (2026-10-30, F770 exact ledger; F754 maintenance)
+## Current verified snapshot (2026-10-30, F775 exact ledger; F754 maintenance)
 
 | Property | Verified value |
 | --- | --- |
@@ -18,25 +18,25 @@ playable game or an officially verified distribution rebuild.**
 | MD5 | `21bcb855a39f2170195811e6ad292f18` |
 | Provisional native candidates | **4,351** |
 | Independently origin-reviewed authored candidates | **1,004** |
-| Source-present / whole-byte-exact units | **975 / 975** |
-| Accepted original CODE | **866,072** bytes |
-| Reviewed authored coverage | **43.88%** of **1,973,704** original bytes |
-| Conservative authored coverage | **43.80%**, including **3,420** provenance-pending bytes |
-| **Authored not exact** | **29** total: **22** large original state advances (**1,102,055 CODE B**) and **7** small/medium functions (**5,577 CODE B**) |
+| Source-present / whole-byte-exact units | **976 / 976** |
+| Accepted original CODE | **867,042** bytes |
+| Reviewed authored coverage | **43.93%** of **1,973,704** original bytes |
+| Conservative authored coverage | **43.85%**, including **3,420** provenance-pending bytes |
+| **Authored not exact** | **28** total: **22** large original state advances (**1,102,055 CODE B**) and **6** small/medium functions (**4,607 CODE B**) |
 | Independently unknown origin | **95** candidates; **3,420** CODE B uncredited |
 
 **The 98% authored-byte objective is NOT achieved.** The old claim that
 only **25** authored functions remained is incomplete: it counted only
 `config/functions.csv.owner=authored` pending rows and missed **11**
-other independently authored original candidates. F755, F758, F760, F765, F766, F769 and F770 have now accepted seven
-of those 11, leaving **4** nonexact; their provenance was already recorded
-in `config/function-origins.csv`. Those 4 are not accepted exact and must
+other independently authored original candidates. F755, F758, F760, F765, F766, F769, F770 and F775 have now accepted eight
+of those 11, leaving **3** nonexact; their provenance was already recorded
+in `config/function-origins.csv`. Those 3 are not accepted exact and must
 remain on the small/medium task queue. The original PE, independent
 origin ledger, canonical full-function match records and live status
 scripts are more authoritative than historical F-series prose.
 
 Read [the short **current agent handoff**](docs/RE_HANDOFF.md) for the
-full 29-function original-authored backlog, native source checkpoints
+full 28-function original-authored backlog, native source checkpoints
 and targeted compiler commands. The previous 1,289-line handoff is
 preserved [as a frozen F653–F753 historical archive](docs/history/RE_HANDOFF_F653_THROUGH_F753_2026-10-30.md),
 with all local links updated. The [chronological knowledge base](docs/KNOWLEDGE_BASE.md)
@@ -130,8 +130,12 @@ by using the authentic borrowed opponent/actor X and opponent Y float
 members. Its real register-byte differences decrease 119→111, but the
 entire 58KB boss remains NONEXACT and no case bytes are credited.
 
-The **7 unmatched small/medium authored originals** include SpriteDrawing
-(4), and WinMain/Scene/Archive (3).
+New complete original [F775 SpriteDrawing scaled/rotated render](docs/SPRITE_SCALED_NATIVE_F775.md)
+is **970-B/257-x86/14-PE-field selected cold exact**, after correcting
+true nested quad/RECT lifetimes and three native x87 expression orders.
+
+The **6 unmatched small/medium authored originals** include SpriteDrawing
+(3), and WinMain/Scene/Archive (3).
 They are fully enumerated in the [active handoff](docs/RE_HANDOFF.md).
 For example `0040CA20` has real 92-B/34-x86 projected-quad source but
 still differs in the original used local-copy stack frame; do not call

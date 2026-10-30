@@ -15,16 +15,16 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
 
 ## Current verified original-game status (one short snapshot)
 
-- **975 cold-exact source-present functions**, **866,072 original authored
-  CODE bytes**, **43.88% reviewed authored coverage** and **43.80%
+- **976 cold-exact source-present functions**, **867,042 original authored
+  CODE bytes**, **43.93% reviewed authored coverage** and **43.85%
   conservative coverage** of native original CODE. The independently
   reviewed authored provenance cohort has **1,004** candidates, so
-  **29 authored whole functions remain NONEXACT**: **22** large
-  (1,102,055 original CODE B) plus **7** small/medium
-  (5,577 CODE B). The older **25**-function subset counted only
+  **28 authored whole functions remain NONEXACT**: **22** large
+  (1,102,055 original CODE B) plus **6** small/medium
+  (4,607 CODE B). The older **25**-function subset counted only
   `config/functions.csv.owner=authored` unfinished rows and omitted
   11 independently authored, formerly owner-blank small/medium targets,
-  of which F755, F758, F760, F765, F766, F769 and F770 have accepted seven. See [all 7 current addresses](RE_HANDOFF.md).
+  of which F755, F758, F760, F765, F766, F769, F770 and F775 have accepted eight. See [all 6 current addresses](RE_HANDOFF.md).
 - **95 original candidates /3,420 CODE bytes** have separately
   unresolved provenance; even a whole byte-exact C++ source does not
   permit reclassification or accepted authored CODE without independent
@@ -97,7 +97,11 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   These are still *internal switch-case source, NOT accepted whole
   game-function CODE*. Source 059 and 060/061 GPR differences remain.
   Reproduce from [F752 native/PE proof](FIGHTER_BORROWED_POSITION_F752.md).
-- **The currently most recent exact whole function is F770**, original
+- **The currently most recent exact whole function is F775**, original
+  R011 scaled/rotated sprite `0040D2E0`, 970 original CODE B/257 x86
+  and 14 native PE/COFF fields, 1/1 selected cold exact.
+  [F775 complete original proof](SPRITE_SCALED_NATIVE_F775.md).
+  Historical **F770** original
   R017 shared texture allocator `0040B000` 261 native CODE B/79 x86
   and 11 physical PE fields, 1/1 selected cold exact.
   [F770 original PE/COFF and lexical lifetime proof](TEXTURE_MANAGER_SHARED_NATIVE_F770.md).
@@ -14036,3 +14040,23 @@ bytes remain correct. The full boss generates 58,261 of original
 58,294 CODE B; no independently callable game CODE is newly accepted.
 Formal exact still **975 functions /866,072 original authored CODE
 bytes**, no mass cold replay. [F771 full PE evidence](FIGHTER_GROUNDED_VOLLEY_TYPED_F771.md).
+
+
+## F775: 0040D2E0 original scaled/rotated SpriteDrawing whole 970B cold exact
+
+One independently R011-authored original 970 whole native CODE B,
+257 original x86 and 14 zero-addend typed PE/COFF fields now match
+normal VC7.1 C++ source with real 132B quad ctor/copy/swap, nested
+texture RECT, physical two axis scales and native sin/cos rotation.
+Seven real used-variable lexical lifetime controls established that
+**outer quad plus inner texture RECT** restores original EBP-0x88
+quad and EBP-0x98 region; naive same-scope quad/RECT had emitted
+949 B rather than original 970 B. Three independently PE-decoded x87
+addition sequencing fixes restore 15 real opcode/size mismatches
+without ASM/padding. Complete **970/970 CODE, 257/257 native x86,
+914/914 nonfield bytes, 14/14 original typed PE fields** are cold exact
+under one new affected whole unit. Official authored 975→**976** whole
+functions, 866,072→**867,042** game CODE bytes, reviewed **43.93%**,
+conservative **43.85%**. Still 22 giant plus six small/medium whole
+authored original nonexact; no all-unit cold replay.
+[Full original R011 PE/COFF proof](SPRITE_SCALED_NATIVE_F775.md).
