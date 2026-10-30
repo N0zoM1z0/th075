@@ -198,6 +198,22 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   matched after all 14 original PE refs checked.
   None accepted exact.
   [F798 full native teardown evidence](ARCHIVE_NATIVE_LOOP_TEARDOWN_F798.md).
+- **F818 complete Scene destructor typed-owner negative proof:**
+  seven original-shaped VC7.1 full
+  0043B0B0 248B authored destructor
+  source builds test OBSERVED-only borrowed
+  typed fields at +0x08/+0x4C/+0x50/+0x54.
+  Texture/free combined typed view emits
+  the exact same original-shaped 248B/
+  75-x86 compiler function as the raw
+  field source, including all 12 real
+  physically verified PE/COFF fields;
+  still 191/200 truly original nonfield
+  bytes. Named used borrowed pointer/ref
+  adds 6B/2-x86 and wrong native frame
+  saved-this slot. Entire 248B remains
+  nonexact, no credited original CODE.
+  [F818 original PE typed-view result](SCENE_COMPLETE_BORROWED_OWNER_F818.md).
 - **F817 real fighter case0x62 changes downstream native default registers:**
   actual 249B/65-x86/4 authentic PE-field
   resource selector source joins the same

@@ -772,6 +772,29 @@ PE fields in the wrong-size controls.
 [F809 complete Scene original/VC7 lifetime proof](SCENE_NATIVE_FREE_TEMP_LIFETIMES_F809.md);
 `scripts/repo-python scripts/verify-scene-release-lifetimes-f809.py`.
 
+**F818 novel Scene 0043B0B0 typed resource-owner review:**
+seven selected complete pinned VC7.1 authored
+Scene destructor builds verify the real texture
++0x08 and free pointers +0x4C/+0x50/+0x54
+through one OBSERVED-only borrowed typed
+view, NEVER instantiating it as the original
+unknown historical class. Inline texture-only,
+free-only and combined typed views produce
+byte-identical **complete 248B/75-x86
+COFF functions** and all 12 identical
+real original PE relocation records,
+still **191/200 original nonfield
+bytes** (nine actual stack slots wrong).
+An actually used local borrowed pointer
+or reference instead produces a
+**254B/77-x86** nonnative destructor
+and moves the saved-this frame to EBP-0x28.
+Typed object access itself does not recover
+the native five-slot lifetime; no early
+whole-function exact claim or relocs masked.
+[F818 entire Scene physical source](SCENE_COMPLETE_BORROWED_OWNER_F818.md);
+scripts/repo-python scripts/verify-scene-borrowed-owner-f818.py.
+
 The R011 ordinary-quad `0040C9A0` is now **115-B/37-x86/4-PE-field
 whole cold exact** ([F780](SPRITE_ORDINARY_QUAD_NATIVE_F780.md)).
 Two original calls prime/capture a texture pointer and real VC7 vector
