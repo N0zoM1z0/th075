@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F739 four genuine record-vector EH lifetime cold-exact functions.**
+**Maintained 2026-10-30, after F740 three native fighter 196/197/198 complete source cases.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -9,6 +9,37 @@ with its Markdown links adjusted for its new directory. The older
 [chronological knowledge base](KNOWLEDGE_BASE.md) are evidence, not a
 reason to undo later exact adoptions. Original pinned native PE and
 **live manifests outrank every historical sentence**.
+
+**F740 latest LARGE fighter native source, real compiler GPR phase REGRESSIONS:**
+Three genuinely new whole original `00543210` physical internal
+actions `196` **436B/118 x86/12 typed original fields**, `197`
+**436/118/12**, and `198` **218/62/7** now have full native
+meaningful C++ source, in ONE freshly built original-shaped giant.
+All **298 original x86 mnemonics and 31/31 original physical typed
+PE/COFF fields** match their owning native x86 ordinals. Real
+stage6/7 kind0x330 shots with signed direction 60/68 and original
+Y globals 659A1C/65928C, original six-repeat gate and true
+198 stage4 angle60.0f /kind0x347/animation250 restored.
+Generated **424/424/218 B** vs original 436/436/218; 196/197
+have four authentic 6B→3B deep EBP MOV/FILD operands each.
+`198` matches all native x86 widths but real EBP float stack
+`−0xB4` vs compiler `−0x84` differs. Saved `this` native `−0x44`
+vs source `−0x3C`: giant NONEXACT.
+CRITICAL SAME-PARENT REGRESSION: new genuine 196–198 C++ again
+changes previous original GPR phases. `1F4/1F5` now both source
+**538B/149 native x86 widths** but **71/71** GPR errors;
+`1FA/1FB/1FE/1FF` errors **50/111/96/96**;
+`200/201` **67/85**, `2D0/2D1` **60/60**,
+`2DD/2DE` **80/0**, `2EF` remains 0. DO NOT inherit prior
+F737 13-context zero-GPR claim. The original `199` dispatch
+points to shared default at **00551598**; next contiguous physical
+handler after 198 is **19A at 00549D5C**, not standalone 199.
+Previously reconstructed original 190–195 plus whole original
+**943B afterRET** (156 typed native/source DIR32 labels and
+319/319 actual sparse bytes) all rechecked. No accepted whole
+GAME CODE or mass-unit replay.
+[Complete original PE/COFF and honest new register-phase proof](FIGHTER_REPEATED_SHOT_F740.md);
+`scripts/repo-python scripts/verify-fighter-repeat-shot-f740.py`.
 
 **F739 newest FOUR canonically cold-exact complete authored EH lifetimes:**
 R211 `00458960` **93B/25 x86**, R256 `004586C0` **72B/20

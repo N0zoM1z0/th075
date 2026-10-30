@@ -13333,3 +13333,41 @@ function CODE coverage. Formal authored whole ledger
 reviewed, 43.66→43.68% conservative**. No original private
 class-layout claim, 22 giants/three ownership lifetimes still
 NONEXACT. [Complete native EH carrier audit and exact units](RECORD_VECTOR_EH_EXACT_F739.md).
+
+
+## F740: real complete 196/197/198 original fighter C++ and newly observed native GPR phase regressions
+
+Pinned `00543210` physically original `196` `0054991A..00549ACE`
+**436 native CODE B/118 x86/12 actual typed PE/COFF fields**,
+`197` `00549ACE..00549C82` **436/118/12**, and `198`
+`00549C82..00549D5C` **218/62/7** are now normal C++ within
+one freshly built complete 58KB parent. Real repeated stage6/7
+kind 0x330 float shots using signed direction 60/68, original
+659A1C/65928C Y offsets, six-repeat signed counter gate,
+original stage7 different angle, and 198 original stage4
+0x347 projectile with 250 animation and action2. **All 298
+native original ordered x86 mnemonics and all 31 physically typed
+original PE/COFF fields** match; compiler 424/424/218 B versus
+native 436/436/218 due to eight real 6B→3B original x87 scratch
+operands in 196/197. Original actual deep EBP float slots
+`−0xA4..−0xB4` vs source `−0x74..−0x84`, original saved this
+`−0x44` vs source `−0x3C` remain nonexact. Original 198 entire
+x86 WIDTH positions match but EBP contents do not. **DO NOT claim
+whole fighter or these internal cases exact CODE**.
+
+Original native case 199 dispatch is a shared default at 00551598;
+next physically contiguous post-198 is original action 19A
+at 00549D5C (can share x87 state). Fresh entire source compiler
+register-phase **REGRESSIONS** on other previously recovered cases
+are actual: 1F4/1F5 GPR **71/71** despite both 538 native-shaped
+source B/149 matching x86 widths; 1FA/1FB/1FE/1FF
+**50/111/96/96**; 200/201 **67/85**, 2D0/2D1 **60/60**,
+2DD/2DE **80/0**, 2EF stays **0**. Older F737 zero-GPR
+counts apply only to that earlier entire parent; cannot inherit.
+Full original 190–195, selected 13 native previous contexts and
+all **943B original afterRET DATA** (156 actual native/source
+DIR32 x86 label targets and 319/319 sparse bytes) rechecked in
+new full parent. [Original PE/COFF, actual source, exact negative
+fields](FIGHTER_REPEATED_SHOT_F740.md),
+`scripts/repo-python scripts/verify-fighter-repeat-shot-f740.py`.
+Formal authored exact 961/863592 original CODE unchanged.

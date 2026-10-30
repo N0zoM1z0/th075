@@ -81,7 +81,7 @@ def with_194_195(src):
     return src
 
 
-def check_entire_cases(rd,pe,d,f676,f701,f598,by,ins,refs):
+def check_entire_cases(rd,pe,d,f676,f701,f598,by,ins,refs,*,following_native_196=False):
     result=[]
     for act,(lo,hi,start,orig_slot,src_slot,native_index,src_index) in CASES.items():
         next_action=0x195 if act==0x194 else 0x196
@@ -139,20 +139,30 @@ def check_entire_cases(rd,pe,d,f676,f701,f598,by,ins,refs):
              'source_real_EBP_loop_index':src_index,
              'native_nonfield_GPR_CFG_discrepancies':0,
              'whole_original_game_function_exact':False})
-    need(ins[5688].mnemonic=='mov'
-         and ins[5780].mnemonic=='mov'
-         and ins[5780].op_str.endswith(', 0x197'),
+    need(ins[5688].mnemonic=='mov' and ins[5780].mnemonic=='mov',
          'real 190/191/192->194->195->196 original physical source order missing')
+    if following_native_196:
+        need(ins[5780].op_str=='ecx, dword ptr [ebp - 0x3c]'
+             and ins[5781].mnemonic=='movsx'
+             and ins[5781].op_str=='edx, word ptr [ecx + 0x62]',
+             'actual full 196 native source must begin immediately after full 195')
+    else:
+        need(ins[5780].op_str.endswith(', 0x197'),
+             'historical earlier original-shaped parent must retain native 196 placeholder')
     return result
 
 
-def check_selected_context(rd,pe,d,f676,f598,by,ins,refs,mapper):
+def check_selected_context(rd,pe,d,f676,f598,by,ins,refs,mapper,*,
+                           source_1f4_start=5798,
+                           source_expected_context=None):
     rows=[]
-    for act,(native_B,nx,source_B,field_count,gpr_count) in SELECTED_ACTUAL_CONTEXT.items():
+    expected_context=(SELECTED_ACTUAL_CONTEXT if source_expected_context is None
+                      else source_expected_context)
+    for act,(native_B,nx,source_B,field_count,gpr_count) in expected_context.items():
         lo=by[act];hi=min(k for k in by.values() if k>lo)
         original=list(d.disasm(rd.pe_bytes_at(pe,lo,hi-lo),lo))
         address=mapper.get(lo)
-        start=(5798 if act==0x1F4 else
+        start=(source_1f4_start if act==0x1F4 else
                next((i for i,x in enumerate(ins) if x.address==address),None))
         need(start is not None,'original active context source owner missing')
         generated=ins[start:start+nx]
