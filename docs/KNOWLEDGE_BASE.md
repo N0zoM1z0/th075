@@ -284,6 +284,33 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   slots remain wrong. No
   accepted whole CODE.
   [F864 physical proof](SCENE_THREE_REAL_NAMED_POINTERS_F864.md).
+- **F871 raw original PE xrefs of three whole C++ byte-exact unknown-origin leaves:**
+  native 4135F0 40B,
+  454C00 24B and
+  454F70 31B are
+  individually rebuilt
+  complete and 100%
+  original machine CODE
+  under normal VC7.1.
+  Every original .text
+  byte E8/E9 direct-target
+  scan and every absolute
+  function pointer across
+  all five original PE
+  sections are ZERO for
+  all three. Scanner
+  positive controls on
+  known fighter functions
+  find thousands of real
+  direct original CALLs.
+  Dynamic/vtable/arithmetic
+  indirect calling remains
+  possible and original
+  authored classification
+  unproven. Keep all three
+  unknown/review, zero
+  new accepted whole CODE.
+  [F871 full original PE source proof](UNKNOWN_LEAF_STATIC_PE_CALLER_AUDIT_F871.md).
 - **F870 genuine 1F8 nested global-first FUCOMPP:**
   469 native B/143 x86/
   15 physically typed PE

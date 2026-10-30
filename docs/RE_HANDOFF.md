@@ -2414,6 +2414,37 @@ no newly credited whole exact CODE.
 [F864 original Scene physical control](SCENE_THREE_REAL_NAMED_RELEASE_F864.md);
 scripts/repo-python scripts/verify-scene-three-named-release-f864.py.
 
+**F871 independent ORIGINAL PE static xref audit of 3 fully source-matched but UNKNOWN-origin leaves:**
+native 004135F0 **40B/16 x86**,
+00454C00 **24B/9 x86**,
+00454F70 **31B/15 x86**
+all still exact normal VC7.1
+complete original game machine
+codegen after targeted compile.
+Raw original 2,449,408-B .text
+EVERY-byte E8/E9 rel32 target
+scan and ALL five original PE
+section byte searches for any
+absolute VA pointer found
+**ZERO direct E8 calls, E9 JMP
+or absolute VA occurrences**
+for ALL THREE. The SAME scan
+finds >500 real calls each
+to known original 0040FA30,
+0040FAC0 and 00453E20 as
+positive controls. Absence
+of static xrefs does NOT
+prove no computed indirect
+or runtime caller, nor
+historical authored origin.
+All three remain mandatory
+unknown/review; no formal
+whole authored exact CODE
+or origin adoption claimed.
+[F871 pinned PE static caller evidence](UNKNOWN_LEAF_STATIC_PE_CALLER_AUDIT_F871.md);
+scripts/repo-python scripts/audit-unknown-leaf-native-xrefs-f871.py.
+No full cold replay.
+
 ## 4. Attribution, validation, research and storage
 
 - **Original authored ≠ compiler/library ≠ unknown**. The 95 unknown
