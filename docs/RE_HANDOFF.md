@@ -1,6 +1,6 @@
 # TH075 — ACTIVE reconstruction agent handoff
 
-**Verified snapshot: 2026-10-31, current F780 exact ledger; F847 fighter projectiles and F848 Scene.**
+**Verified snapshot: 2026-10-31, current F780 exact ledger; F849 fighter physics and F848 Scene.**
 This is the **short working queue**, not the chronological research log.
 Original Japanese PE and the live configuration **always outrank historical
 prose, old case-level exact labels, class names or inferred layouts**.
@@ -1328,6 +1328,36 @@ three original PE REL32 calls.
 scripts/repo-python scripts/verify-scripted-fighter-projectile-134135-f847.py.
 Whole 46,755B still NONEXACT; no
 independent inner case CODE credit.
+
+**F849 new selected native 0x136 ground physics and HONEST GPR negatives:**
+original actual native 00526BE3 0x136
+is **321 whole interior CODE B/95 x86/
+10 true original PE fields**. Native stage>2
+ground drag and 0065747C extra correction,
+stage5 sprite0x33A and animation1D are
+normal current source, one complete
+VC7.1 selected parent now **23,563
+callable B/6,464 x86** (F847
+23,257/6,371). All original case
+mnemonics/widths and ten physical PE
+target offsets/types match. BUT 15 true
+register operand bytes within the
+late sprite/prepare portion (starting
+at native ordinal70 ECX vs source EAX)
+and two enclosing-parent epilogue
+JMP operand bytes +317/+318 still
+DIFFER. Ten meaningful C++ syntax/
+condition/float controls do not recover
+that GPR phase. Previous 20 complete
+native original C8-D2/12C-12F/130/131/
+133/134/135 source cases and all FIVE
+901B afterRET packed tables rechecked.
+Current 46B default has FOUR honest
+GPR operand negatives +10/12/16/19.
+[F849 physical original/negative proof](SCRIPTED_FIGHTER_GROUND_PHYSICS_136_F849.md);
+scripts/repo-python scripts/verify-scripted-fighter-physics-136-f849.py.
+Whole original 46,755B still NONEXACT,
+zero inner case or callable exact CODE.
 
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`

@@ -232,6 +232,27 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   GPR differences, whole native
   giant NONEXACT.
   [F844 selected original physical PE](SCRIPTED_FIGHTER_GROUNDED_130_F844.md).
+- **F849 original 0x136 physical ground/sprite and GPR negative:**
+  native real 321B/95 x86/ten
+  typed original PE fields in
+  one **23,563B/6,464-x86** whole
+  fighter. Real stage>2 extra
+  native gravity, sprite33A and
+  animation1D reconstruct original
+  opcode/width/PE fields, but
+  **15 honest native GPR operand
+  bytes** after ordinal70 and
+  two actual encompassing-fighter
+  final JMP bytes remain different.
+  Ten meaningful source syntax
+  controls cannot explain original
+  late register phase. Earlier
+  20 complete original PE-backed
+  states, all five packed 901B
+  tables and default's four true
+  register negative bytes checked.
+  No exact whole-function CODE.
+  [F849 native PE/register proof](SCRIPTED_FIGHTER_GROUND_PHYSICS_136_F849.md).
 - **F848 original 248B Scene destructor resource member access controls:**
   ten complete pinned VC7.1 /GX
   destructor source builds. Five
