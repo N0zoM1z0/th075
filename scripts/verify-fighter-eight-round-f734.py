@@ -105,7 +105,7 @@ def source_map_from_original_afterRET(reader,pe,boss,code,ins,refs):
     return mapper
 
 
-def new_native_actions(reader,pe,d,f676,f701,f598,by,ins,refs):
+def new_native_actions(reader,pe,d,f676,f701,f598,by,ins,refs,*,following_native_194=False,source_x87_slot_shift=0):
     rows=[]
     for action in CASES:
         lo,hi,nb,nx,nfields,sb,start=NATIVE[action]
@@ -136,6 +136,7 @@ def new_native_actions(reader,pe,d,f676,f701,f598,by,ins,refs):
              and f'[ebp - {compiled_slot}]' in compiled[source_index].op_str,
              f'native {action:#x} original 8-shot index EBP lifetime not honestly represented')
         i,j,old_slot,new_slot=FILD_SLOTS[action]
+        new_slot=f'0x{int(new_slot,16)+source_x87_slot_shift:x}'
         need(original[i].mnemonic==compiled[i].mnemonic=='mov'
              and original[j].mnemonic==compiled[j].mnemonic=='fild'
              and f'[ebp - {old_slot}]' in original[i].op_str
@@ -176,9 +177,16 @@ def new_native_actions(reader,pe,d,f676,f701,f598,by,ins,refs):
           'actual_source_EBP_signed_float_temp':new_slot,
           'normalized_nonfield_GPR_CFG_mismatches':0,
           'original_entire_case_byte_exact':False})
-    need(ins[SOURCE_LAST].mnemonic=='mov'
-         and ins[SOURCE_LAST].op_str.endswith(', 0x195'),
-         'three complete original 190->191->192 must lead into original 194 placeholder')
+    if following_native_194:
+        need(ins[SOURCE_LAST].mnemonic=='mov'
+             and ins[SOURCE_LAST].op_str=='edx, dword ptr [ebp - 0x3c]'
+             and ins[SOURCE_LAST+1].mnemonic=='movsx'
+             and ins[SOURCE_LAST+1].op_str=='eax, word ptr [edx + 0x62]',
+             'new complete physical native 194 must directly follow 192 in same parent')
+    else:
+        need(ins[SOURCE_LAST].mnemonic=='mov'
+             and ins[SOURCE_LAST].op_str.endswith(', 0x195'),
+             'three complete original 190->191->192 must lead into original 194 placeholder')
     return rows
 
 

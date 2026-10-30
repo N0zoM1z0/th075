@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F736 six R011/R014/R019/R021 authored complete cold-exact leaves.**
+**Maintained 2026-10-30, after F737 real giant 194/195 and recovered native GPR phases.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -9,6 +9,30 @@ with its Markdown links adjusted for its new directory. The older
 [chronological knowledge base](KNOWLEDGE_BASE.md) are evidence, not a
 reason to undo later exact adoptions. Original pinned native PE and
 **live manifests outrank every historical sentence**.
+
+**F737 latest substantive original GIANT source and native register gain (NONEXACT):**
+Original giant `00543210` native complete 194 `0054967C..005497CB`
+and 195 `005497CB..0054991A`, **335 CODE B/92 x86/7 physical
+original PE fields each**, now have entire actual normal VC7.1
+C++ source: signed 35/27 eight-shot volleys, real original
+`FCOMP [0065782C];TEST AH,0x41;JP`, actual stage 4 and real
+speed/ground/angle state. Full 58KB parent emits **329B/92 x86**
+per case, all **14 native typed fields in original x86 ordinal**,
+all ordered native mnemonics and **0 GPR mismatches**, but original
+6B/6B x87 scratch generated as 3B/3B and deep EBP values wrong.
+Real C++ used locals grow saved-this source to **EBP−0x3C**,
+native is **−0x44**. Crucial **fresh same-parent original native
+compiler register recovery**: previous original `1F5` now has
+**538 source B /149 x86 with ALL native opcode and WIDTH positions**
+and GPR 71→0; native `1FA/1FB/1FE/1FF` GPR 50/111/96/96→all0;
+`200/201` 67/85→0/0, `2D0/2D1` 60/60→0/0,
+`2DD/2DE` 80/0→0/0 and `2EF` stays 0. These are **13 selected
+original complete case contexts checked in same freshly compiled
+parent**, not independent exact game CODE or inherited strict tally.
+The entire **943B original afterRET DATA** (156 actual native/source
+DIR32 physical labels and 319/319 sparse bytes) also rechecked.
+[Original whole native field/EBP proof](FIGHTER_EIGHT_GROUND_F737.md);
+`scripts/repo-python scripts/verify-fighter-eight-ground-f737.py`.
 
 **F736 latest SIX MORE canonically cold-exact complete authored functions:**
 R019 original `0040B250` texture-container ClearSlots **33B/13 x86/

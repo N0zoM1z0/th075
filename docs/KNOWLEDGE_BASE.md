@@ -13250,3 +13250,33 @@ classification unchanged, historical names/layouts provisional,
 no callee CODE double credit. 22 giants and three other complete
 nonexact WinMain/Scene/Archive original functions remain pending.
 [Complete original PE/COFF, new unit names and targeted replay](SMALL_AUTHORED_ORIGINAL_LEAVES_F736.md).
+
+
+## F737: true native 194/195 eight-shot grounded source naturally restores multiple compiler register phases
+
+Original 00543210 full bounded native action `194` 0054967C..5497CB
+and `195` 5497CB..54991A each **335 original CODE B/92 x86/7
+physical typed PE/COFF fields** now compile as genuine normal VC7.1
+source in one whole 58KB parent, **329 B/92 native-ordered
+mnemonics/7 original typed field owner ordinals** each. Real
+`FCOMP 0065782C;TEST AH,0x41;JP`, state, fall drag, zero contact,
+`0x324` eight-shot volley signed 35/27, original Y globals
+00659A24/00659A20 and final action9 restored. Each source has
+**two real 6B→3B EBP MOV/FILD widths**, native float scratch
+`−0x9C/−0xA0` vs compiler `−0x6C/−0x70`, saved-this native
+`−0x44` vs source **`−0x3C`**, so whole parent remains NONEXACT.
+
+Major authentic compiler-lifetime positive: those real new C++
+local objects naturally restore full native opcode AND width geometry
+for previous original **1F5 538B/149x86** with 0 GPR errors
+(previous F734 source 506B/149x86 and 71 GPR errors). Original
+**1FA/1FB/1FE/1FF** GPR errors **50/111/96/96→0/0/0/0**,
+**200/201** **67/85→0/0**, **2D0/2D1** **60/60→0/0**,
+**2DD/2DE** **80/0→0/0**, 2EF still 0, across **13 selected
+full physically bounded original case interiors** in the SAME
+fresh parent. Native offsets and complete 58KB still wrong, no
+credit for internal source. Entire 943-B original postRET DATA,
+156 physical DIR32 labels and 319/319 original other bytes checked.
+[F737 complete original PE, real source and GPR/EBP proof](FIGHTER_EIGHT_GROUND_F737.md),
+`scripts/repo-python scripts/verify-fighter-eight-ground-f737.py`.
+Official 955 authored exact whole/863163 original CODE unchanged.
