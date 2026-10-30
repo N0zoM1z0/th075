@@ -60904,3 +60904,43 @@ relocations = [
  { offset = 0x10F, type = "REL32", symbol = "??1AudioRecordF758@@QAE@XZ", target = 0x004092F0 },
  { offset = 0x119, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
 ]
+
+# F760: original R016-authored complete 283B AudioStream archive queue,
+# native 64B local record, 27 independent PE/COFF references and /GX EH.
+[units.audio-stream-queue-archive-entry-00407b80]
+source = "src/AudioQueueArchiveF760.cpp"
+object = "build/matching/AudioQueueArchiveF760.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["AudioQueueArchiveF760::QueueArchiveEntry"]
+symbol = "?QueueArchiveEntry@AudioQueueArchiveF760@@YAXPBDH0@Z"
+target_address = 0x00407B80
+size = 283
+relocations = [
+ { offset = 0x6, type = "DIR32", symbol = "__ehhandler$?QueueArchiveEntry@AudioQueueArchiveF760@@YAXPBDH0@Z", target = 0x00654E1E },
+ { offset = 0xC, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
+ { offset = 0x14, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
+ { offset = 0x1C, type = "DIR32", symbol = "?g_SharedAudioRegistryF760@@3USharedAudioRegistryF760@@A", target = 0x006713A0 },
+ { offset = 0x21, type = "REL32", symbol = "?Size@SharedAudioRegistryF760@@QAEIXZ", target = 0x004094B0 },
+ { offset = 0x2B, type = "DIR32", symbol = "?g_SharedAudioRegistryF760@@3USharedAudioRegistryF760@@A", target = 0x006713A0 },
+ { offset = 0x30, type = "REL32", symbol = "?PopBack@SharedAudioRegistryF760@@QAEXXZ", target = 0x004096A0 },
+ { offset = 0x39, type = "DIR32", symbol = "?g_DefaultAudioArchiveNameF760@@3QBDB", target = 0x006577AC },
+ { offset = 0x3E, type = "REL32", symbol = "?FindByName@ResourceLookupF760@@YAPAVArchiveContextF760@@PBD@Z", target = 0x0041CF00 },
+ { offset = 0x48, type = "REL32", symbol = "?SeekNamedEntry@ArchiveContextF760@@QAEPAXPBD@Z", target = 0x0041D750 },
+ { offset = 0x5D, type = "REL32", symbol = "??0AudioRecordF760@@QAE@XZ", target = 0x00409290 },
+ { offset = 0x6D, type = "DIR32", symbol = "?g_SharedAudioRegistryF760@@3USharedAudioRegistryF760@@A", target = 0x006713A0 },
+ { offset = 0x72, type = "REL32", symbol = "?PushBack@SharedAudioRegistryF760@@QAEXABVAudioRecordF760@@@Z", target = 0x004095C0 },
+ { offset = 0x91, type = "DIR32", symbol = "?g_SharedAudioRegistryF760@@3USharedAudioRegistryF760@@A", target = 0x006713A0 },
+ { offset = 0x96, type = "REL32", symbol = "?Back@SharedAudioRegistryF760@@QAEPAVAudioRecordF760@@XZ", target = 0x004094F0 },
+ { offset = 0xA4, type = "DIR32", symbol = "?g_SharedAudioRegistryF760@@3USharedAudioRegistryF760@@A", target = 0x006713A0 },
+ { offset = 0xA9, type = "REL32", symbol = "?Back@SharedAudioRegistryF760@@QAEPAVAudioRecordF760@@XZ", target = 0x004094F0 },
+ { offset = 0xB7, type = "DIR32", symbol = "?g_SharedAudioRegistryF760@@3USharedAudioRegistryF760@@A", target = 0x006713A0 },
+ { offset = 0xBC, type = "REL32", symbol = "?Back@SharedAudioRegistryF760@@QAEPAVAudioRecordF760@@XZ", target = 0x004094F0 },
+ { offset = 0xD0, type = "DIR32", symbol = "?g_SharedAudioRegistryF760@@3USharedAudioRegistryF760@@A", target = 0x006713A0 },
+ { offset = 0xD5, type = "REL32", symbol = "?Back@SharedAudioRegistryF760@@QAEPAVAudioRecordF760@@XZ", target = 0x004094F0 },
+ { offset = 0xDC, type = "REL32", symbol = "?ReadLoopPointsFromArchive@AudioRecordF760@@QAEXPBD0@Z", target = 0x00408900 },
+ { offset = 0xEE, type = "DIR32", symbol = "?g_SharedAudioRegistryF760@@3USharedAudioRegistryF760@@A", target = 0x006713A0 },
+ { offset = 0xF3, type = "REL32", symbol = "?Back@SharedAudioRegistryF760@@QAEPAVAudioRecordF760@@XZ", target = 0x004094F0 },
+ { offset = 0xFA, type = "REL32", symbol = "?OpenArchiveEntry@AudioRecordF760@@QAEXPBDK0@Z", target = 0x00408390 },
+ { offset = 0x109, type = "REL32", symbol = "??1AudioRecordF760@@QAE@XZ", target = 0x004092F0 },
+ { offset = 0x113, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
+]

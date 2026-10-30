@@ -968,3 +968,4 @@ CharacterAuxFrameF750::RefreshSelectedFrame
 AudioStreamClientF753::AudioStreamClientF753
 AudioStreamClientF755::~AudioStreamClientF755
 AudioQueueFileF758::QueueFile
+AudioQueueArchiveF760::QueueArchiveEntry

@@ -15,16 +15,16 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
 
 ## Current verified original-game status (one short snapshot)
 
-- **970 cold-exact source-present functions**, **864,961 original authored
-  CODE bytes**, **43.82% reviewed authored coverage** and **43.75%
+- **971 cold-exact source-present functions**, **865,244 original authored
+  CODE bytes**, **43.84% reviewed authored coverage** and **43.76%
   conservative coverage** of native original CODE. The independently
   reviewed authored provenance cohort has **1,004** candidates, so
-  **34 authored whole functions remain NONEXACT**: **22** large
-  (1,102,055 original CODE B) plus **12** small/medium
-  (6,688 CODE B). The older **25**-function subset counted only
+  **33 authored whole functions remain NONEXACT**: **22** large
+  (1,102,055 original CODE B) plus **11** small/medium
+  (6,405 CODE B). The older **25**-function subset counted only
   `config/functions.csv.owner=authored` unfinished rows and omitted
   11 independently authored, formerly owner-blank small/medium targets,
-  of which F755 and F758 have now accepted two. See [all 12 current addresses](RE_HANDOFF.md).
+  of which F755, F758 and F760 have now accepted three. See [all 11 current addresses](RE_HANDOFF.md).
 - **95 original candidates /3,420 CODE bytes** have separately
   unresolved provenance; even a whole byte-exact C++ source does not
   permit reclassification or accepted authored CODE without independent
@@ -57,8 +57,11 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   These are still *internal switch-case source, NOT accepted whole
   game-function CODE*. Source 059 and 060/061 GPR differences remain.
   Reproduce from [F752 native/PE proof](FIGHTER_BORROWED_POSITION_F752.md).
-- **The currently most recent exact whole function is F758**, original
-  R016-authored audio file queue `00407A50` with **289 native CODE B, 77
+- **The currently most recent exact whole function is F760**, original
+  R016-authored audio archive entry queue `00407B80` with **283 native
+  CODE B /76 original x86 /27 PE/COFF fields** and one-unit cold exact.
+  [F760 archive-entry whole original proof](AUDIO_QUEUE_ARCHIVE_ENTRY_F760.md).
+  Paired F758 original R016-authored audio file queue `00407A50` with **289 native CODE B, 77
   x86 and 26 genuine physical PE/COFF fields**, one-unit cold exact.
   [F758 original source/lifetime/PE proof](AUDIO_QUEUE_FILE_F758.md).
   Paired F755 original R015-authored audio client destructor `00407270` with **292 CODE B / 82
@@ -13759,3 +13762,22 @@ Whole boss currently emits **58,173/58,294 CODE B**, remaining deficit
 and 319/319 other bytes). Original whole authored game CODE exact
 credit remains **970 functions /864,961 bytes**; no massive replay.
 [Full native PE, COFF and one-parent reproduction](FIGHTER_COMPLEX_STAGE_CC_CE_F760.md).
+
+
+## F760: Audio archive-entry queue 00407B80 whole 283B cold exact
+
+The separately R016-authored, complete `00407B80..00407C9A`
+**283 native CODE B /76 x86 /27 physical PE/COFF refs** now has
+normal VC7.1 `/GX` C++ source from `src/AudioQueueArchiveF760.cpp`.
+The original default archive name at `006577AC`, catalog lookup
+`0041CF00`, native seek `0041D750`, valid handle guard, real
+**64-byte local audio record** ctor/dtor (`00409290`/`004092F0`),
+shared queue trim/append, mode0/1/2 on `+0x28`, archive loop-point
+parse `00408900`, and audio open `00408390` are all preserved.
+All 27 typed PE fields and full 283 original code bytes pass one
+selected cold source build **1/1 exact**, without replaying previous
+970 accepted units or re-crediting Windows/CRT/VC7/EH callees.
+Official 970→**971** authored entire functions, 864,961→**865,244
+original CODE bytes**, reviewed **43.84%**, conservative **43.76%**.
+Pending authored: 22 giant +11 non-giant; 98% still incomplete.
+[Full native queue ownership and PE evidence](AUDIO_QUEUE_ARCHIVE_ENTRY_F760.md).
