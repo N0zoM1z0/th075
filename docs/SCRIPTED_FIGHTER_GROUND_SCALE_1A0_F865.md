@@ -21,7 +21,21 @@ F865 reconstructs the final original 1A0 state at
 00527AD3..00527BBD: **235 native B/67 x86/5
 genuine physical original PE call/global fields**.
 Stage/frame-zero initializes actual short/dword
-owner state +0x80/+0x7C. Two independent
+owner state +0x80/+0x7C AND conditionally performs
+BOTH following multiplications. In the
+original PE, JNE at x86 ordinals 3 and 7
+must both branch to ordinal22, AFTER both
+multiply/store groups. An earlier source
+placed the two multiplies outside that
+stage-zero block: it still emitted a
+235B/67-x86/five-field source but its
+JNEs went to ordinal12, BEFORE both
+multiplier groups. That changed native
+game semantics and introduced two further
+wrong original JNE bytes +10/+21.
+This erroneous assumption has been corrected
+in the tracked C++ and strict verifier.
+Two independent
 original x87 floating-point operations scale
 POS at this+0x50 and POS54 at this+0x54
 by the real native global 00658348. Original
@@ -54,7 +68,7 @@ types, zero addends, source symbols and
 physical native targets** (two multiplier
 DIR32 fields, ground DIR32, getter/setter
 REL32 calls). Genuine non-PE machine
-differences remain **51 native GPR operand
+differences remain **49 native GPR operand
 bytes** and TWO authentic whole-giant
 epilogue JMP operand bytes at original
 1A0 offsets +231/+232. These must not
@@ -62,8 +76,10 @@ be hidden or called exact original CODE.
 
 The tracked verifier regenerates the
 previous F863 physical evidence if missing,
-then freshly compiles only ONE selected
-entire VC7.1 father. It emits **27,061
+then compiles one correct full VC7.1
+father AND an independently compiled
+wrong-scope control of identical length
+but different authentic branch targets. It emits **27,061
 callable CODE B/7,515 x86**, up from
 F863 26,841 B/7,450 x86.
 It also independently rechecks all

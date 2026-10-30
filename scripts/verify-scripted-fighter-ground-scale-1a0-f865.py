@@ -8,7 +8,7 @@ then original native ground zero, later stage>3 drag, state9 and
 stage4 flag. Compile only ONE whole affected VC7.1 parent,
 verify all five new separately addressed states and 36 earlier
 native original case sources/5 packed 901B tables.
-Actual 51 nonfield GPR bytes plus two original encompassing-giant
+Actual 49 nonfield GPR bytes plus two original encompassing-giant
 JMP bytes remain; no standalone case or full whole exact CODE.
 """
 from pathlib import Path
@@ -18,7 +18,7 @@ R=Path(__file__).resolve().parents[1]
 O=R/'.analysis/f865-scripted-1a0'
 SYM='?Advance@FighterSwitchF598_Boss005214B0@@QAEXXZ'
 ADDR=0x005214B0
-BAD=[1,5,8,10,12,16,19,21,23,27,35,38,45,48,57,60,63,66,75,78,81,84,87,90,106,109,116,119,126,129,136,140,143,148,151,154,157,160,163,175,177,181,184,198,202,205,210,214,217,221,224,231,232]
+BAD=[1, 5, 8, 12, 16, 19, 23, 27, 35, 38, 45, 48, 57, 60, 63, 66, 75, 78, 81, 84, 87, 90, 106, 109, 116, 119, 126, 129, 136, 140, 143, 148, 151, 154, 157, 160, 163, 175, 177, 181, 184, 198, 202, 205, 210, 214, 217, 221, 224, 231, 232]
 FIELDS={
  14:(0x658348,'g_F865PhysicsMultiplierAt00658348'),
  19:(0x658348,'g_F865PhysicsMultiplierAt00658348'),
@@ -65,6 +65,8 @@ def selected_source(reader,pe,d,by):
     cpp=src.read_text()
     marker='        case 0x1A0: g_FighterProbeMarker = 417; break;'
     inc=(R/'probes/FighterScriptedGroundScale1A0F865.inc').read_text()
+    need('I32(0x7C)=0;\n        POS=POS*g_F865PhysicsMultiplierAt00658348;\n        POS54=(*(&POS54))*g_F865PhysicsMultiplierAt00658348;\n    }' in inc,
+         'original stage-zero multiplier lifetime moved OUTSIDE native branch')
     need(cpp.count(marker)==1 and inc.count('case 0x1A0:')==1
          and inc.count('return;')==1
          and inc.count('g_F865PhysicsMultiplierAt00658348')==2
@@ -75,8 +77,8 @@ def selected_source(reader,pe,d,by):
          'real source 1A0 twice-typed x87/ground stage changed')
     return 'extern float g_F865PhysicsMultiplierAt00658348;\n'+cpp.replace(
         marker,'#include "FighterScriptedGroundScale1A0F865.inc"',1)
-def compile_one(src):
-    cpp=O/'Boss005214B0-F865-whole.cpp';obj=O/'Boss005214B0-F865-whole.obj'
+def compile_one(src,variant='whole'):
+    cpp=O/('Boss005214B0-F865-'+variant+'.cpp');obj=O/('Boss005214B0-F865-'+variant+'.obj')
     cpp.write_text(src)
     env=os.environ.copy();env.pop('DISPLAY',None);env.pop('WAYLAND_DISPLAY',None)
     env['WINEPREFIX']=str(R/'.analysis/vc71-wine')
@@ -84,7 +86,7 @@ def compile_one(src):
     p=subprocess.run([str(R/'scripts/compile-probe.sh'),str(cpp),str(obj),
         '/Od','/Ob0','/Gy','/GR-','/GX','/GS','/Zi','/I','src','/I','probes'],
         cwd=R,env=env,capture_output=True,text=True,timeout=310)
-    (O/'compiler.log').write_text(p.stdout+p.stderr)
+    (O/('compiler-'+variant+'.log')).write_text(p.stdout+p.stderr)
     need(p.returncode==0,'full selected 1A0 current VC7.1 source failed '+(p.stdout+p.stderr)[-820:])
     return obj
 
@@ -150,6 +152,53 @@ def main():
          and sec[38].op_str.endswith(', 3'),
          'native 1A0 two original field-first FMUL or ground stage incorrect')
     orig=list(d.disasm(rd.pe_bytes_at(pe,by[0x1a0],235),by[0x1a0]))
+    need(orig[3].op_str==orig[7].op_str==hex(orig[22].address)
+         and sec[3].op_str==sec[7].op_str==hex(sec[22].address)
+         and sec[3].op_str!=hex(sec[12].address),
+         'NATIVE guard branches must SKIP both scale operations; wrong scope is not original')
+
+    # NEGATIVE CONTROL: a real but incorrect source spelling moves
+    # both floating-point multiplications OUTSIDE the stage0 guard.
+    # It retains all 235B/67 x86 and 5 PE fields, but changes the
+    # actual game branch destinations at ordinal 3 and 7.
+    actual_full_source=(O/'Boss005214B0-F865-whole.cpp').read_text()
+    marker='#include "FighterScriptedGroundScale1A0F865.inc"'
+    fragment=(R/'probes/FighterScriptedGroundScale1A0F865.inc').read_text()
+    scoped=('        I32(0x7C)=0;\n'
+            '        POS=POS*g_F865PhysicsMultiplierAt00658348;\n'
+            '        POS54=(*(&POS54))*g_F865PhysicsMultiplierAt00658348;\n'
+            '    }')
+    unscoped=('        I32(0x7C)=0;\n'
+              '    }\n'
+              '    POS=POS*g_F865PhysicsMultiplierAt00658348;\n'
+              '    POS54=(*(&POS54))*g_F865PhysicsMultiplierAt00658348;')
+    need(fragment.count(scoped)==1 and actual_full_source.count(marker)==1,
+         'original stage0 scope source cannot be checked against wrong AST')
+    wrong_fragment=fragment.replace(scoped,unscoped,1)
+    wrong_source=actual_full_source.replace(marker,wrong_fragment,1)
+    wrong_obj=compile_one(wrong_source,variant='invalid-unconditional-scale')
+    wrong_code,wrong_refs=rd.object_function(wrong_obj,SYM)
+    wrong_ins=[]
+    for x in d.disasm(wrong_code,0):
+        wrong_ins.append(x)
+        if x.mnemonic=='ret':break
+    wrong_ret=wrong_ins[-1].address+wrong_ins[-1].size
+    need((wrong_ret,len(wrong_ins),len(wrong_refs),len(wrong_code)-wrong_ret)==(27061,7515,992,901),
+         'wrong multiplier scope must remain deceptively same full CODE/x86/COFF shape')
+    wrong_mark=[j for j,x in enumerate(wrong_ins) if x.mnemonic=='mov'
+       and x.op_str.endswith(', 0x1f5')
+       and any('g_FighterProbeMarker' in r['symbol']
+              and x.address<=r['offset']<x.address+x.size for r in wrong_refs)]
+    need(len(wrong_mark)==1,'wrong scope whole case marker missing')
+    wrong_sec=wrong_ins[wrong_mark[0]-67:wrong_mark[0]]
+    wrong_bytes=sorted(set(BAD+[10,21]))
+    wrong_result=f834.physical_case(rd,pe,d,wrong_code,wrong_refs,wrong_sec,by,
+                                   0x1a0,235,5,wrong_bytes,0x1f4,f820)
+    need(wrong_result['native_complete_x86']==67
+         and wrong_sec[3].op_str==wrong_sec[7].op_str==hex(wrong_sec[12].address)
+         and wrong_sec[3].op_str!=hex(wrong_sec[22].address)
+         and 10 in wrong_bytes and 21 in wrong_bytes,
+         'wrong scope must have two real additional native JNE operand mismatches')
     for ordinal,(target,sym) in FIELDS.items():
         a,b=orig[ordinal],sec[ordinal]
         found=[r for r in refs if b.address<=r['offset']<b.address+b.size]
@@ -209,9 +258,12 @@ def main():
          'original_whole_callable_CODE_B':46755,
          'new_source_whole_callable_CODE_B':ret,
          'new_complete_native_1A0':actual,
+         'wrongly_unconditional_scale_negative_whole_source':wrong_result,
+         'wrong_scope_extra_real_JNE_operand_offsets':[10,21],
+         'native_correct_stage0_JNE_skips_both_float_scales':True,
          'native_1A0_true_original_PE_field_ordinals':list(FIELDS),
          'two_original_member_first_FMUL_groups_verified':True,
-         'real_original_1A0_GPR_wrong_B':51,
+         'real_original_1A0_GPR_wrong_B':49,
          'real_original_1A0_giant_exit_JMP_wrong_offsets':[231,232],
          'five_distinct_original_980B_region_native_cases':region_cases,
          'previous_16_original_PE_cases_rechecked':previous,
@@ -223,7 +275,8 @@ def main():
          'mass_cold_replay':False}
     (O/'verified-summary.json').write_text(json.dumps(receipt,indent=2)+'\n')
     assert json.loads((O/'verified-summary.json').read_text())['two_original_member_first_FMUL_groups_verified']
-    print('F865 completes five separately bounded 980B native original game cases 198/19A/19C/19E/1A0. New 1A0 235B/67x86/5 actual PE fields, both native FLD member then FMUL global658348 x87 widths correct, 51 GPR bytes plus 2 true whole-giant JMP bytes still differ. Entire C++ parent 27061B/7515-x86; 36 earlier original cases, 901B packed tables and common getter verified. Whole fighter NONEXACT.')
+    print('F865 extra strict negative control: incorrect stage0 multiplier scope preserves same 235B/67x86 and 5 PE fields but adds TWO genuine JNE byte errors +10/+21; original both guards skip multipliers.')
+    print('F865 completes five separately bounded 980B native original game cases 198/19A/19C/19E/1A0. New 1A0 235B/67x86/5 actual PE fields, both native FLD member then FMUL global658348 x87 widths correct, 49 GPR bytes plus 2 true whole-giant JMP bytes still differ. Entire C++ parent 27061B/7515-x86; 36 earlier original cases, 901B packed tables and common getter verified. Whole fighter NONEXACT.')
 
 if __name__=='__main__':
     try:main()

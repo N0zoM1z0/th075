@@ -1792,6 +1792,19 @@ at 00527AD3 has **235 native B/
 67 x86/5 genuine original PE fields**,
 two actual x87 scaled speed/velocity
 groups using float multiplier 00658348.
+Original stage-zero MUST
+include BOTH float multipliers:
+native JNE ordinals3/7 target
+ordinal22 AFTER the two
+multiply/store groups. Earlier
+alternate tracked F865 source
+had put them outside and branched
+to ordinal12 instead, introducing
+**two genuine JNE byte errors
++10/+21** even at the same
+235B/67-x86/five-PE-field extent.
+Fixed and now compiled as a
+negative control, never exact.
 Natural real POS54 LEFT LVALUE
 restores original FLD member then
 FMUL global width/order; bare
@@ -1805,7 +1818,7 @@ fresh selected whole VC7.1 father
 (previous F863 26,841/7,450).
 All original 1A0 opcode/width
 and five PE call/global targets
-align, BUT **51 honest GPR operand
+align, BUT **49 honest GPR operand
 bytes plus two encompassing original
 giant final JMP bytes +231/+232**
 still DIFFER. All 5 independently

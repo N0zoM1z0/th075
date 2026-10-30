@@ -147,6 +147,11 @@ def main():
          and gen[38].op_str.endswith(', 3'),
          'real original 1A0 x87 float scale/threshold codegen wrong')
     original=list(d.disasm(rd.pe_bytes_at(pe,by[0x1a0],235),by[0x1a0]))
+    need(original[3].op_str==original[7].op_str==hex(original[22].address)
+         and gen[3].op_str==gen[7].op_str==hex(gen[22].address)
+         and gen[3].op_str!=hex(gen[12].address),
+         'stage0 native actor JNE must SKIP BOTH real x87 multiplier groups')
+
     offsets=[]
     for ordinal,(target,sym) in FIELDS.items():
         a,b=original[ordinal],gen[ordinal]

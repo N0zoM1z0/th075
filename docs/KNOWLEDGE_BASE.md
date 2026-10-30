@@ -238,13 +238,24 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   both original FLD MEMBER
   then FMUL global00658348
   groups recovered via genuine
+  Stage-zero must contain BOTH
+  real multipliers; the previous
+  unguarded source was physically
+  incorrect despite exact original
+  235B/67x86/5-field geometry.
+  Original stage0 JNEs target
+  ordinal22; unguarded source
+  targets ordinal12, yielding
+  two added real byte errors
+  +10/+21. Corrected and
+  explicitly negative-tested.
   POS54 source left lvalue.
   Together 198/19A/19C/19E/
   1A0 independently occupy
   980 original CODE B, each
   source verified in new whole
   **27,061B/7,515-x86** actor.
-  51 GPR bytes and two true
+  49 GPR bytes and two true
   entire giant JMP bytes
   still wrong in 1A0.
   All 36 preceding original
