@@ -932,3 +932,4 @@ address,name,module,confidence,evidence
 0x0040B110,TextureManagerF769::AllocateTextureSlots,TextureManager,inferred,"R017; F769; complete native 184 CODE B,56 x86, eight original typed PE/COFF fields and one-unit 1/1 cold exact, observed 44B record; original name/layout provisional"
 0x0040B000,TextureManagerF770::AllocateSharedTextures,TextureManager,inferred,"R017; F770; original 261 CODE bytes/79 native x86/11 genuine typed PE relocations, cold 1/1 exact; borrowed private owner name/layout provisional"
 0x0040D2E0,SpriteDrawingF775::DrawScaled,SpriteDrawing,inferred,"R011; F775; full original 970 CODE B/257 x86/14 true typed native PE references and selected 1/1 cold exact, borrowed private owner/name provisional"
+0x0040CEF0,SpriteDrawingF776::DrawVariant,SpriteDrawing,inferred,"R011; F776; whole native 994 CODE B/269 x86/15 true zero-addend PE references, one-unit 1/1 cold exact; historical class/private layout provisional"

@@ -61054,3 +61054,31 @@ relocations = [
  { offset = 0x3A3, type = "REL32", symbol = "?GetTexture@SpriteDrawingF775@@QAEPAUIDirect3DTexture8@@H@Z", target = 0x0040C8C0 },
  { offset = 0x3BB, type = "REL32", symbol = "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z", target = 0x004029F0 },
 ]
+
+# F776: entire R011 authored 994-B variant sprite, 269 x86 /15
+# actual PE relocations. Real base-delegate branch and scaled/rotate path.
+[units.sprite-drawing-variant-native-0040cef0]
+source = "src/SpriteVariantDrawF776.cpp"
+object = "build/matching/SpriteVariantDrawF776.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["SpriteDrawingF776::DrawVariant"]
+symbol = "?DrawVariant@SpriteDrawingF776@@QAEXHMMKMMMMEE@Z"
+target_address = 0x0040CEF0
+size = 994
+relocations = [
+ { offset = 0x44, type = "REL32", symbol = "?DrawBase@SpriteDrawingF776@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+ { offset = 0x54, type = "REL32", symbol = "??0SpriteScaledQuadF776@@QAE@XZ", target = 0x0040D990 },
+ { offset = 0x7A, type = "REL32", symbol = "?At@SpriteScaledListF776@@QAEPAXI@Z", target = 0x0040DD60 },
+ { offset = 0x95, type = "REL32", symbol = "?At@SpriteScaledListF776@@QAEPAXI@Z", target = 0x0040DD60 },
+ { offset = 0xAD, type = "DIR32", symbol = "?g_ZeroAngleF776@@3MA", target = 0x0065782C },
+ { offset = 0xF8, type = "REL32", symbol = "??0SpriteScaledQuadF776@@QAE@MMMM@Z", target = 0x0040DA00 },
+ { offset = 0x11B, type = "DIR32", symbol = "?g_ZeroAngleF776@@3MA", target = 0x0065782C },
+ { offset = 0x172, type = "REL32", symbol = "??0SpriteScaledQuadF776@@QAE@MMMM@Z", target = 0x0040DA00 },
+ { offset = 0x18F, type = "DIR32", symbol = "?g_AngleUnitF776@@3MA", target = 0x00657828 },
+ { offset = 0x198, type = "REL32", symbol = "?CosAt0040D900@@YAMM@Z", target = 0x0040D900 },
+ { offset = 0x1AD, type = "DIR32", symbol = "?g_AngleUnitF776@@3MA", target = 0x00657828 },
+ { offset = 0x1B6, type = "REL32", symbol = "?SinAt0040D940@@YAMM@Z", target = 0x0040D940 },
+ { offset = 0x2E0, type = "REL32", symbol = "??0D3DXVECTOR4@@QAE@XZ", target = 0x0040D980 },
+ { offset = 0x3BB, type = "REL32", symbol = "?GetTexture@SpriteDrawingF776@@QAEPAUIDirect3DTexture8@@H@Z", target = 0x0040C8C0 },
+ { offset = 0x3D3, type = "REL32", symbol = "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z", target = 0x004029F0 },
+]

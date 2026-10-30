@@ -15,16 +15,16 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
 
 ## Current verified original-game status (one short snapshot)
 
-- **976 cold-exact source-present functions**, **867,042 original authored
-  CODE bytes**, **43.93% reviewed authored coverage** and **43.85%
+- **977 cold-exact source-present functions**, **868,036 original authored
+  CODE bytes**, **43.98% reviewed authored coverage** and **43.90%
   conservative coverage** of native original CODE. The independently
   reviewed authored provenance cohort has **1,004** candidates, so
-  **28 authored whole functions remain NONEXACT**: **22** large
-  (1,102,055 original CODE B) plus **6** small/medium
-  (4,607 CODE B). The older **25**-function subset counted only
+  **27 authored whole functions remain NONEXACT**: **22** large
+  (1,102,055 original CODE B) plus **5** small/medium
+  (3,613 CODE B). The older **25**-function subset counted only
   `config/functions.csv.owner=authored` unfinished rows and omitted
   11 independently authored, formerly owner-blank small/medium targets,
-  of which F755, F758, F760, F765, F766, F769, F770 and F775 have accepted eight. See [all 6 current addresses](RE_HANDOFF.md).
+  of which F755, F758, F760, F765, F766, F769, F770, F775 and F776 have accepted nine. See [all 5 current addresses](RE_HANDOFF.md).
 - **95 original candidates /3,420 CODE bytes** have separately
   unresolved provenance; even a whole byte-exact C++ source does not
   permit reclassification or accepted authored CODE without independent
@@ -97,7 +97,11 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   These are still *internal switch-case source, NOT accepted whole
   game-function CODE*. Source 059 and 060/061 GPR differences remain.
   Reproduce from [F752 native/PE proof](FIGHTER_BORROWED_POSITION_F752.md).
-- **The currently most recent exact whole function is F775**, original
+- **The currently most recent exact whole function is F776**, original
+  R011 variant/mode sprite `0040CEF0`, 994 full native CODE B/269
+  x86 and 15 genuine typed PE fields, 1/1 selected cold exact.
+  [F776 complete original source proof](SPRITE_VARIANT_NATIVE_F776.md).
+  Historical **F775** original
   R011 scaled/rotated sprite `0040D2E0`, 970 original CODE B/257 x86
   and 14 native PE/COFF fields, 1/1 selected cold exact.
   [F775 complete original proof](SPRITE_SCALED_NATIVE_F775.md).
@@ -14060,3 +14064,24 @@ functions, 866,072→**867,042** game CODE bytes, reviewed **43.93%**,
 conservative **43.85%**. Still 22 giant plus six small/medium whole
 authored original nonexact; no all-unit cold replay.
 [Full original R011 PE/COFF proof](SPRITE_SCALED_NATIVE_F775.md).
+
+
+## F776: original SpriteDrawing variant 0040CEF0 whole 994-B cold exact
+
+In one genuine normal VC7.1 source, the original R011 mode variant
+`0040CEF0..0040D2D1` is **994 complete native CODE B/269 x86/15
+actual typed zero-addend PE/COFF relocations**, with separate
+mode-zero delegation to original `0040CA80`, true inner texture RECT
+and 132B quad lifetime, scaled X/Y, rotation sin/cos and flag-based
+vector flip. An initial 995-B/269-x86 candidate copied a plausible
+but wrong C++ `scale==1 || angle!=zero` branch grammar; native actual
+`CMP scale,1; JE rotation; FUCOMPP/FNSTSW; TEST AH,44h; JP rotation`
+requires the *unrotated scaled path to fall through first*.
+Correct ordinary C++ `scale!=1 && angle==zero` followed by rotated
+else naturally restores **994/994 original CODE B, 269 x86, 934/934
+nonfield bytes and all 15 native PE fields**. One selected cold unit
+1/1 exact; original EXE unmodified and no SDK/helper CODE double
+credit. Formal whole-authored source advances 976→**977 functions**,
+867,042→**868,036 CODE B**, reviewed **43.98%**, conservative
+**43.90%**. Still 22 giant plus five small/medium original callable
+functions nonexact. [Full original PE proof](SPRITE_VARIANT_NATIVE_F776.md).

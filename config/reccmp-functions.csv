@@ -975,3 +975,4 @@ SpriteDrawingF765::DrawOpaqueSpriteMirrored,0x0040D6B0,function
 TextureManagerF769::AllocateTextureSlots,0x0040B110,function
 TextureManagerF770::AllocateSharedTextures,0x0040B000,function
 SpriteDrawingF775::DrawScaled,0x0040D2E0,function
+SpriteDrawingF776::DrawVariant,0x0040CEF0,function
