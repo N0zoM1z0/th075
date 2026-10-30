@@ -284,6 +284,33 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   slots remain wrong. No
   accepted whole CODE.
   [F864 physical proof](SCENE_THREE_REAL_NAMED_POINTERS_F864.md).
+- **F872 real 1F9/1FA native float volley pair:**
+  each original 227B/65x86/
+  seven typed physical PE
+  fields in one full
+  **29,634B/8,306-x86**
+  fighter. Facing*50 vs
+  *36, true native Y
+  globals 6598BC/659310,
+  and owner+2E8/+82
+  updates. Actual signed
+  FILD scratch slots
+  EBP-0x70 and -0x74
+  emerge naturally from
+  normal C++, no padding.
+  Every original opcode/
+  width and seven physical
+  PE fields per state match;
+  35 GPR and four actual
+  giant JMP bytes per state
+  still NONEXACT.
+  Earlier 42 source-backed
+  native cases and five
+  packed 901B tables
+  physically verified,
+  native getter 34/34
+  nonfield bytes +3 calls.
+  [F872 real PE proof](SCRIPTED_FIGHTER_FLOAT_VOLLEY_PAIR_1F9_1FA_F872.md).
 - **F871 raw original PE xrefs of three whole C++ byte-exact unknown-origin leaves:**
   native 4135F0 40B,
   454C00 24B and

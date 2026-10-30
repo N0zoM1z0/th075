@@ -2022,6 +2022,43 @@ scripts/repo-python scripts/verify-scripted-fighter-bounce-1f8-f870.py.
 Whole original 46,755B still
 NONEXACT, no split-case credit.
 
+**F872 original fighter 1F9/1FA pair: two true float stage2 volley states with real FILD scratch:**
+each native original independently
+**227 complete inner CODE B/65 x86/
+seven physical PE fields**.
+Stage2 and real +0x7C==3
+launches sprite32 with facing*50
+versus *36, native Y globals
+006598BC versus 00659310,
+owner pointer+2E8 -> short
++0x82=0x1E, action1FB
+versus1FC. Actual VC7.1
+compiler naturally allocates
+**FILD scratch EBP-0x70
+and -0x74** in the same
+entire parent, no fake locals.
+One new normal VC7.1 whole
+**29,634 callable CODE B/
+8,306 x86** (F870 29,210/
+8,180). Both entire native
+opcodes/widths and all 14
+true original PE fields match,
+BUT EACH retains **35 real
+GPR operand bytes and four
+giant final JMP operand bytes**
++186/+187,+223/+224.
+All 42 preceding original
+PE-backed source states,
+all five 901B packed
+afterRET jump DATA tables
+and native getter **34/34
+original nonrelocation bytes**
+plus three PE calls verified.
+[F872 real original PE evidence](SCRIPTED_FIGHTER_FLOAT_VOLLEY_PAIR_1F9_1FA_F872.md);
+scripts/repo-python scripts/verify-scripted-fighter-float-volley-pair-f872.py.
+Whole 46,755B original NONEXACT,
+no internal case exact credit.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin
