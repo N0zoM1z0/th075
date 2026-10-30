@@ -232,6 +232,28 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   GPR differences, whole native
   giant NONEXACT.
   [F844 selected original physical PE](SCRIPTED_FIGHTER_GROUNDED_130_F844.md).
+- **F859 native 194 ground return and invalid sibling Reset discovery:**
+  real full original 297B/
+  86-x86/7 PE fields vs
+  naive 192-derived source
+  298B/88-x86/8 COFF fields:
+  original 194 stage zero
+  must NOT call ResetAt453E20.
+  True x87 POS48+POS54
+  inclusive landing, ordered
+  drag/ground reset and
+  stage5 float2.0/sprite320
+  naturally restore native
+  opcode/width/PE geometry
+  in one 25,972B/7,184-x86
+  whole actor source, with
+  55 actual GPR and four
+  whole-epilogue JMP bytes
+  still NONEXACT. Prior 30
+  native cases and five 901B
+  DATA tables checked; no
+  adopted exact whole CODE.
+  [F859 target proof](SCRIPTED_FIGHTER_GROUND_194_F859.md).
 - **F858 selected actor 192 current native stage4 sprite:**
   original full 217B/64 x86/
   6 genuine PE call fields in one

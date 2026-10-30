@@ -1,6 +1,6 @@
 # TH075 — ACTIVE reconstruction agent handoff
 
-**Verified snapshot: 2026-10-31, current F780 exact ledger; F858 native 192 and F854 Archive.**
+**Verified snapshot: 2026-10-31, current F780 exact ledger; F859 grounded 194 and F854 Archive.**
 This is the **short working queue**, not the chronological research log.
 Original Japanese PE and the live configuration **always outrank historical
 prose, old case-level exact labels, class names or inferred layouts**.
@@ -1591,6 +1591,37 @@ has four real GPR byte negatives.
 scripts/repo-python scripts/verify-scripted-fighter-stage-192-f858.py.
 The original 46,755B giant stays
 NONEXACT, no independent case credit.
+
+**F859 selected native fighter 0x194 ground case fixes historical sibling assumption:**
+actual original 005275FA..00527722 is **297 full
+native inner CODE B/86 x86/7 PE fields**.
+Copying 0x192 ResetAt453E20 into 194
+was WRONG and emitted 298B/88 x86/
+8 refs; original 194 stage zero does
+NOT reset. Authentic C++ instead has
+POS54-POS5C, x87 inclusive ground
+landing action0xA plus actual
+POS48/POS5C/POS54 stores, action9,
+stage5 float2.0 at +0x314 with
+sprite320/animationFA/prep0,
+then stage6 +0x7C=1. Selected
+full VC7.1 parent **25,972
+callable CODE B/7,184 x86**
+(up from F858 25,690/7,100).
+All 86 native mnemonics/widths
+and seven true PE fields agree.
+**55 genuine GPR operand bytes**
+plus four complete giant epilogue
+JMP operand bytes remain DIFFERENT,
+not accepted exact. All 30 earlier
+complete native PE-backed source
+cases and five 901B afterRET
+packed jump DATA tables rechecked.
+Common getter current 4 true
+nonfield GPR byte negatives.
+[F859 real original PE proof](SCRIPTED_FIGHTER_GROUND_194_F859.md);
+scripts/repo-python scripts/verify-scripted-fighter-ground-194-f859.py.
+Whole original 46,755B NONEXACT.
 
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
