@@ -430,6 +430,21 @@ Not accepted or credited to authored bytes.
 [Full F787 physical evidence](COMPOSITE_IMPLICIT_ASSIGNMENT_F787.md);
 `scripts/repo-python scripts/verify-composite-implicit-assignment-f787.py`.
 
+**F791 reviewed entire authored Archive and Scene teardown owners:**
+selected real 3-member and 2-member resource/filename grouped
+locals for `0041CE50` (original 171B/51 x86) still emit
+**183B/55 x86 or 177B/53 x86** under VC7.1.
+Real used freed-pointer aggregate field order and lexical
+timing for `0043B0B0` (original 248B/75 x86) preserve
+all **12** genuine original physical PE/COFF refs but
+match only **191/200** nonfield bytes best (some
+permutations 189/200). Original resource/delete/filename
+and texture/free stack slots have been independently decoded,
+not normalized away. Ten newly reproduced *whole* targeted
+C++ controls are nonexact; no authored credit.
+[F791 original native teardown owner controls](ARCHIVE_SCENE_RESOURCE_OWNER_LIFETIMES_F791.md);
+`scripts/repo-python scripts/verify-resource-teardown-ownership-f791.py`.
+
 ## 4. Attribution, validation, research and storage
 
 - **Original authored ≠ compiler/library ≠ unknown**. The 95 unknown

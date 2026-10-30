@@ -186,6 +186,15 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   are documented in [storage hygiene](STORAGE_HYGIENE.md); original
   sources, PE, Ghidra, Wine and accepted objects were preserved.
 
+- **F791 Archive and Scene resource owner lifetime checks:**
+  complete original authored 171B Archive destructor and
+  248B Scene destructor were separately decoded against
+  authentic EBP stack roles and ten natural grouped lifetime
+  source controls cold-compiled with VC7.1. Archive grouping
+  produces wrong 177/183B source; Scene remains only
+  191/200 nonfield bytes best despite all 12 original
+  native PE relocations. No premature exact credit.
+  [F791 source and native negative proof](ARCHIVE_SCENE_RESOURCE_OWNER_LIFETIMES_F791.md).
 - **F790 seven fresh whole fighter compilations:** source
   stage comparisons and mode-63 short-circuit controls confirm
   the original 58,294B/16,471-x86 giant still emits
