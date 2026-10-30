@@ -146,7 +146,9 @@ def verify_prior_parent_context(reader,pe,real,boss,report,mapped,code,refs,m,h,
                                 source_259_25D_end_ordinal=None,
                                 following_native_2bf=False,
                                 source_storm_bytes=904,
-                                source_storm_width_differences=None):
+                                source_storm_width_differences=None,
+                                source_2ef_expected_GPR_mismatches=None,
+                                source_2f0_2f1_expected_GPR_counts=None):
     """Recheck the *same* newly compiled complete parent and after-RET DATA.
 
     The authentic native frame slot is EBP-44. Only source `this` MOVs
@@ -206,10 +208,12 @@ def verify_prior_parent_context(reader,pe,real,boss,report,mapped,code,refs,m,h,
     strict2ef,negative31c,idx=m['f674'].verify_native(reader,decoder,code,refs,n674,
             terminal,shared,h,following_native=0x2F0,terminal_expect_strict=False,
             terminal_preceding_native=0x31B,
-            source_native_302_end_ordinal=source_native_302_end_ordinal)
+            source_native_302_end_ordinal=source_native_302_end_ordinal,
+            expected_2ef_real_GPR_differences=source_2ef_expected_GPR_mismatches)
     n676=m['f676'].original_cases(reader,pe,real,boss,mapped)
     negative676,idx=m['f676'].verify_negative(reader,decoder,code,refs,n676,idx,shared,h,
-                                              following_native=0x2F8)
+                                              following_native=0x2F8,
+                                              source_native_GPR_counts=source_2f0_2f1_expected_GPR_counts)
     n31b=m['f681'].native_cases(reader,pe,real,boss,mapped,m['f676'])
     negative2f8=m['f681'].verify_storm(decoder,code,refs,n31b,idx,shared,h,
                          following_native=0x2F9,source_generated_bytes=source_storm_bytes,
@@ -234,7 +238,10 @@ def verify_prior_parent_context(reader,pe,real,boss,report,mapped,code,refs,m,h,
         'native_original_saved_this_EBP':'-0x44',
         'new_compiler_actual_saved_this_EBP':'-'+source_receiver_slot,
         'physically_attested_compiled_saved_this_mov_uses':len(uses),
-        'previous_27_nonterminal_context_strict_original_cases_rechecked':True,
+        'previous_27_nonterminal_context_strict_original_cases_rechecked':source_2ef_expected_GPR_mismatches is None,
+        'actual_source_context_nonterminal_strict_case_count':27 if source_2ef_expected_GPR_mismatches is None else 26,
+        'original_2ef_real_GPR_regression':strict2ef['original_native_GPR_operand_mismatch_count'],
+        'original_2f0_2f1_real_GPR_mismatches':[x['actual_nonfield_GPR_role_mismatches'] for x in negative676],
         'genuine_previous_nonstrict_case_controls_rechecked':True,
         'prior_2f9_nonfield_GPR_mismatches':negative2f9['actual_nonfield_native_register_x87_differences'],
         'prior_terminal_31b_real_gpr_negative':negative31b['source_context_genuine_GPR_mismatch_count'],

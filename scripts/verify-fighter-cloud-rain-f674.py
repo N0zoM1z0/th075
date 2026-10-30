@@ -12,6 +12,7 @@ No whole 58K giant CODE acceptance or full 943-unit cold replay.
 from __future__ import annotations
 import importlib.util
 import json
+import re
 import os
 from pathlib import Path
 import subprocess
@@ -173,7 +174,7 @@ def locate_marker(refs,ins,operand):
     return found[0]+2
 
 
-def verify_native(reader,dec,code,refs,original,terminal,shared_exit,h,following_native=None, terminal_expect_strict=False, terminal_preceding_native=None, source_native_302_end_ordinal=None):
+def verify_native(reader,dec,code,refs,original,terminal,shared_exit,h,following_native=None, terminal_expect_strict=False, terminal_preceding_native=None, source_native_302_end_ordinal=None, *, expected_2ef_real_GPR_differences=None):
     ins=[]
     for x in dec.disasm(code,0):
         ins.append(x)
@@ -194,12 +195,30 @@ def verify_native(reader,dec,code,refs,original,terminal,shared_exit,h,following
     lhs,rhs=h['f598'].normalized(original_ins),h['f598'].normalized(compiled)
     absolute={i for i,(target,mn,_) in FIELDS.items() if mn!='call'}
     wrong=[(i,a,b) for i,(a,b) in enumerate(zip(lhs,rhs)) if a!=b and i not in absolute]
-    need(not wrong,f'2EF non-PE-field original GPR/x87/CFG roles differ {wrong[:8]}')
+    if expected_2ef_real_GPR_differences is None:
+        need(not wrong,f'2EF non-PE-field original GPR/x87/CFG roles differ {wrong[:8]}')
+    else:
+        need(len(wrong)==expected_2ef_real_GPR_differences
+             and expected_2ef_real_GPR_differences>0
+             and wrong[0][0]==0,
+             f'2EF native GPR-phase regression must be explicitly counted, not declared strict: {wrong[:8]}')
     raw=[(i,a.op_str,b.op_str) for i,(a,b) in enumerate(zip(original_ins,compiled))
          if i not in absolute and a.mnemonic!='call'
          and not a.mnemonic.startswith('j')
          and a.op_str.replace('[ebp - 0x44]','[ebp - 8]')!=b.op_str]
-    need(not raw,f'2EF original raw EBP/local argument operand roles differ {raw[:8]}')
+    if expected_2ef_real_GPR_differences is None:
+        need(not raw,f'2EF original raw EBP/local argument operand roles differ {raw[:8]}')
+    else:
+        # Source GPR cycle has changed. Independently account for every
+        # native EBP source reference instead of blanket-normalizing it.
+        native_ebp=[(i,re.findall(r'\[ebp - (?:0x[0-9a-f]+|[0-9]+)\]',x.op_str))
+                    for i,x in enumerate(original_ins) if '[ebp - ' in x.op_str]
+        actual_ebp=[(i,re.findall(r'\[ebp - (?:0x[0-9a-f]+|[0-9]+)\]',x.op_str))
+                    for i,x in enumerate(compiled) if '[ebp - ' in x.op_str]
+        need([i for i,slots in native_ebp]==[i for i,slots in actual_ebp]
+             and all(a==['[ebp - 0x44]'] and b==['[ebp - 8]']
+                     for (_,a),(_,b) in zip(native_ebp,actual_ebp)),
+             '2EF original/source native EBP owner offsets changed beyond verified saved receiver')
     if following_native is None:
         need(ins[ordinal+ORIGINAL_X86].mnemonic=='mov'
              and ins[ordinal+ORIGINAL_X86].op_str.endswith(', 0x2f1'),
@@ -207,10 +226,21 @@ def verify_native(reader,dec,code,refs,original,terminal,shared_exit,h,following
     else:
         need(following_native==0x2F0
              and ins[ordinal+ORIGINAL_X86].mnemonic=='mov'
-             and ins[ordinal+ORIGINAL_X86].op_str=='eax, dword ptr [ebp - 8]'
-             and ins[ordinal+ORIGINAL_X86+1].mnemonic=='movsx'
-             and ins[ordinal+ORIGINAL_X86+1].op_str=='ecx, word ptr [eax + 0x62]',
-             'native C++ physical 2F0 must immediately follow strict 2EF')
+             and ins[ordinal+ORIGINAL_X86+1].mnemonic=='movsx',
+             'native C++ physical complete 2F0 must immediately follow original 2EF')
+        if expected_2ef_real_GPR_differences is None:
+            need(ins[ordinal+ORIGINAL_X86].op_str=='eax, dword ptr [ebp - 8]'
+                 and ins[ordinal+ORIGINAL_X86+1].op_str=='ecx, word ptr [eax + 0x62]',
+                 'original strict 2EF must lead into normal native-source 2F0')
+        else:
+            # The receiver was independently attested by the whole
+            # newly compiled parent. The following 2F0 body is separately
+            # revalidated against every original physical PE/COFF field.
+            next_receiver=ins[ordinal+ORIGINAL_X86].op_str
+            next_frame=ins[ordinal+ORIGINAL_X86+1].op_str
+            need(next_receiver.endswith(', dword ptr [ebp - 8]')
+                 and next_frame.endswith(', word ptr ['+next_receiver.split(', ')[0]+' + 0x62]'),
+                 'original 2EF phase-shifted source must still flow into real 2F0 receiver/frame')
     if terminal_preceding_native is None:
         terminal_start=locate_marker(refs,ins,0x31C)
     else:
@@ -258,13 +288,16 @@ def verify_native(reader,dec,code,refs,original,terminal,shared_exit,h,following
     else:
         need(len(wrong_term)>=25 and wrong_term[0][0]==0,
              'original terminal native 31C register-phase NEGATIVE was unexpectedly removed')
-    strict_case={'new_original_strict_native_action':'0x2EF',
+    strict_case={('new_original_strict_native_action' if expected_2ef_real_GPR_differences is None
+                  else 'original_native_nonstrict_action'):'0x2EF',
                  'original_native_physical_start':f'0x{lo:08X}',
                  'original_next_native_physical_handler':f'0x{hi:08X}',
                  'entire_strict_original_x86_instructions':ORIGINAL_X86,
                  'strict_original_internal_CODE_bytes':ORIGINAL_BYTES,
                  'original_real_typed_PE_COFF_fields':len(physical),
                  'real_original_physical_exit_JMP_bytes':5,
+                 'strict_original_native_case':expected_2ef_real_GPR_differences is None,
+                 'original_native_GPR_operand_mismatch_count':len(wrong),
                  'new_accepted_whole_GAME_FUNCTION_CODE_bytes':0}
     terminal_case={'original_native_terminal_action':'0x31C',
                    'actual_original_terminal_PE_start':f'0x{term_lo:08X}',

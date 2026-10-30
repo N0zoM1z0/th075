@@ -176,19 +176,25 @@ def verify_five_native_cases(f672,f598,f701,originals,ins,refs,start):
 
 
 def check_later_native_physical(f701,f696,f699,f676,f681,f684,f598,reader,pe,real,boss,mapped,ins,refs,*,
-                               expected_storm_starts=(7949,8611,8792)):
+                               expected_storm_starts=(7949,8611,8792),
+                               preceding_storm_starts=()):
     storm_starts=[i for i,x in enumerate(ins)
                   if [y.mnemonic for y in ins[i:i+3]]==['push']*3
                   and [y.op_str for y in ins[i:i+3]]==['0xff0000','4','3']]
-    need(len(storm_starts)==3,'real 2F9,2FB,302 storm entries missing')
-    need(storm_starts==list(expected_storm_starts),
+    need(len(storm_starts)==len(preceding_storm_starts)+3,
+         'physical original 2F9/2FB/302 plus any independently attested earlier storm entries missing')
+    need(storm_starts==list(preceding_storm_starts)+list(expected_storm_starts),
          'native 259 through 302 parent case and original source order changed')
     by={x['action']:int(x['handler'],16) for x in mapped}
-    frames=[('0x2F8',0x2F8,0x2F9,storm_starts[0]-252,storm_starts[0],928,252,23,f681.FIELD_SYMBOLS),
-            ('0x2F9',0x2F9,0x2FA,storm_starts[0],storm_starts[0]+381,1367,381,34,f684.PE_TARGETS),
-            ('0x2FA',0x2FA,0x2FB,storm_starts[0]+381,storm_starts[1],979,281,31,f699.TARGET_SYMBOLS),
-            ('0x2FB',0x2FB,0x302,storm_starts[1],storm_starts[2],647,181,17,f696.EXPECTED_SYMBOLS),
-            ('0x302',0x302,0x31B,storm_starts[2],storm_starts[2]+261,935,261,28,f701.NATIVE_FIELD_SYMBOLS)]
+    # Earlier reconstructed original game storm cases may add genuine
+    # original-compatible configuration prologues. Only the separately
+    # attested three target cases are used as physical F681-F701 anchors.
+    late_storm=storm_starts[len(preceding_storm_starts):]
+    frames=[('0x2F8',0x2F8,0x2F9,late_storm[0]-252,late_storm[0],928,252,23,f681.FIELD_SYMBOLS),
+            ('0x2F9',0x2F9,0x2FA,late_storm[0],late_storm[0]+381,1367,381,34,f684.PE_TARGETS),
+            ('0x2FA',0x2FA,0x2FB,late_storm[0]+381,late_storm[1],979,281,31,f699.TARGET_SYMBOLS),
+            ('0x2FB',0x2FB,0x302,late_storm[1],late_storm[2],647,181,17,f696.EXPECTED_SYMBOLS),
+            ('0x302',0x302,0x31B,late_storm[2],late_storm[2]+261,935,261,28,f701.NATIVE_FIELD_SYMBOLS)]
     reviewed=[]
     for label,action,next_action,start,end,size,nx,nfields,symbols in frames:
         native_addr=by[action]
@@ -218,7 +224,7 @@ def check_later_native_physical(f701,f696,f699,f676,f681,f684,f598,reader,pe,rea
                          'source_full_CODE_bytes':size,
                          'source_full_x86':len(source),
                          'all_original_typed_PE_COFF_fields':len(fields)})
-    return reviewed,storm_starts[-1]+261
+    return reviewed,late_storm[-1]+261
 
 
 def main():

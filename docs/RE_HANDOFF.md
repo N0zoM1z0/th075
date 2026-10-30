@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F708 real twin bursts and F709/F710 archive lifetime controls.**
+**Maintained 2026-10-30, after F711 complete 2D0/2D1 falling radial source.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -9,6 +9,27 @@ with its Markdown links adjusted for its new directory. The older
 [chronological knowledge base](KNOWLEDGE_BASE.md) are evidence, not a
 reason to undo later exact adoptions. Original pinned native PE and
 **live manifests outrank every historical sentence**.
+
+**F711 next entire original game-action restoration (NONSTRICT):**
+Two real `00543210` actions `2D0/2D1`, **416 native CODE B,
+120 x86, 15 authentic typed original PE/COFF fields EACH**, now
+compile from complete natural C++ inside a new full selected giant
+with exactly **416/120/15 source geometry** apiece (832 source B,
+240 x86, 30 actual PE fields total). Original directional shot and
+`FADD/FSUBR` semantics and native random float conversions recovered.
+Still 60 genuine nonfield GPR/CFG differences per case plus incorrect
+actual compiler EBP scratch slots. Crucial **new source-context
+REGRESSION**: preceding `2EF` now has 144 genuine native GPR-role
+differences; `2F0/2F1` have 175/170. Their opcode/width geometry
+and COFF refs remain real, but previous claim of **27 contextual
+strict cases is now only 26 in F711**. Earlier F708 selected
+context STILL has its own 27; do not transpose source-context results.
+Only 2D0 alone or 2D1 alone makes 88 real 2EF GPR mismatches;
+both make 144; seven natural expression controls did not fix it.
+Complete 943-B afterRET original DATA rechecked in same full parent.
+[F711 physical original and explicit strict regression](FIGHTER_FALLING_RADIALS_F711.md);
+`scripts/repo-python scripts/verify-fighter-falling-radials-f711.py`.
+No exact entire original function acceptance.
 
 **F708 latest two full native original action restorations (NONSTRICT):**
 Inside real `00543210`, original physical cases `2BF`/`2C4` are each

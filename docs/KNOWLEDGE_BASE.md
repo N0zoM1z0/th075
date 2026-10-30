@@ -12678,3 +12678,30 @@ tracked as `scripts/verify-archive-index-filename-lifetimes-f709-f710.py`
 (`--case` one or `--all` only twelve affected sources, never all units).
 It asserts full original typed COFF, the 51 authentic x86 widths and
 seven true original EBP displacement mismatch positions.
+
+
+## F711: two full 2D0/2D1 falling radial handlers, with genuine 2EF GPR regression
+
+Direct pinned original `00543210` physical actions `2D0`
+(`0054E111`–`0054E2B1`) and `2D1` (`0054E2B1`–`0054E451`)
+are each **416 B /120 x86 /15 genuine original PE/COFF typed fields**.
+New meaningful ordinary C++ recovers complete native stage, random
+velocity, differing signed x87 `FADD/FSUBR` globals, real `0x7D/0x7E`
+projectiles, contact and completion flow. In one full VC7.1 giant,
+**all 240 original x86 mnemonic/width positions and 30 physical typed
+original PE fields align**, but 60 genuine nonfield GPR/CFG positions
+per new action and original x87 stack slots still differ (NONSTRICT).
+Adding both real new actions changes original-source **2EF/2F0/2F1**
+register phase: now 144/175/170 genuine nonfield GPR differences,
+even though full original 788/1169/977 byte opcode/width geometry
+is preserved. **26**, not 27, preceding nonterminal context-strict
+original game actions survive in this new source context; actual
+943-byte original afterRET DATA remains verified in full. One-real-case
+original parent isolated 88 2EF GPR mismatches; both 144. Seven
+additional whole-parent C++ expression variations did not recover
+this phase, two changed real original opcode order. No fake code
+padding or uncredited inner-case adoption. [Native evidence and honest
+regression](FIGHTER_FALLING_RADIALS_F711.md);
+`scripts/repo-python scripts/verify-fighter-falling-radials-f711.py`.
+No 943-unit full cold replay, official 943/862726 whole-source ledger
+unchanged.

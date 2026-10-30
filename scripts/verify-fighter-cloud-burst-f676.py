@@ -134,7 +134,8 @@ def expected_symbol(action,ordinal,target):
     return SYMBOLS[target]
 
 
-def verify_negative(reader,dec,code,refs,originals,first_ordinal,shared_exit,h,following_native=None):
+def verify_negative(reader,dec,code,refs,originals,first_ordinal,shared_exit,h,following_native=None,*,
+                    source_native_GPR_counts=None):
     ins=[]
     for x in dec.disasm(code,0):
         ins.append(x)
@@ -170,6 +171,14 @@ def verify_negative(reader,dec,code,refs,originals,first_ordinal,shared_exit,h,f
         l,r=h['f598'].normalized(native),h['f598'].normalized(generated)
         excluded={i for i,t,m in true_fields if m!='call'}
         bad=[(i,a,b) for i,(a,b) in enumerate(zip(l,r)) if a!=b and i not in excluded]
+        # Later independently reconstructed original game cases may
+        # naturally alter VC7.1 register phases even for this already
+        # recovered complete 342/274-x86 native-shaped source. Those are
+        # real nonexact source differences; never turn them into strict.
+        if source_native_GPR_counts is not None:
+            need(action in source_native_GPR_counts,
+                 f'original {action:#x} GPR regression does not have an independent count')
+            want_wrong,want_first=source_native_GPR_counts[action]
         need(len(bad)==want_wrong and bad[0][0]==want_first,
              f'{action:#x}: independently observed original GPR phase negative pattern changed: {bad[:7]} count={len(bad)}')
         # This selected original native case has NO additional stack locals.
