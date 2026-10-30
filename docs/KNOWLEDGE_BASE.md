@@ -250,6 +250,26 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   slots remain wrong. No
   accepted whole CODE.
   [F864 physical proof](SCENE_THREE_REAL_NAMED_POINTERS_F864.md).
+- **F865 native 1A0 original x87 float multiply and physically correct DIR32 fields:**
+  235B/67-x86/five native
+  original PE fields in full
+  27,061B/7,515-x86 parent.
+  Bare POS54*global reverses
+  original FLD member/FMUL
+  global widths, shifts second
+  actual DIR32 +70 to +67.
+  True C++ lvalue (*(&POS54))
+  restores all five physically
+  typed original PE fields.
+  49 honest GPR and two original
+  whole giant final JMP bytes
+  still wrong. Previous 36
+  original game case sources,
+  five packed 901B DATA tables
+  and 46B getter real GPR
+  negatives remain checked.
+  No accepted callable exact CODE.
+  [F865 original physical PE proof](SCRIPTED_FIGHTER_SUSTAIN_1A0_F865.md).
 - **F864 independently callable Scene 248B destructor, three real named free pointer locals:**
   twelve complete VC7.1 source
   candidates: original 248B/

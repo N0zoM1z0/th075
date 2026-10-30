@@ -1749,6 +1749,41 @@ scripts/repo-python scripts/verify-scripted-fighter-short-19c19e-f863.py.
 Complete original 46,755B giant
 still NONEXACT.
 
+**F865 actual 1A0 native float +0x54 member-first operand/PE field recovery:**
+real original 00527AD3 complete
+**235 inner CODE B/67 x86/five
+physical native PE fields**. Source
+scales POS+0x50 and POS54+0x54
+by real global00658348.
+Bare POS54*global emits reversed
+6B FLD global/3B FMUL member,
+moving the second physical
+native DIR32 field +70 to +67.
+TRUE C++ left-lvalue
+(*(&POS54))*global emits
+original FLD member (3B)
+and FMUL global (6B), restoring
+all real PE field offsets
+[52,70,94,169,193].
+One new full VC7.1 parent
+**27,061 callable CODE B/
+7,515 x86** (F863
+26,841/7,450). Every original
+source opcode/width and true
+PE field matches; **49 real
+GPR bytes** plus two original
+whole-giant JMP bytes 231/232
+differ. Previous 36 original
+native source-backed cases,
+all five original 901B
+afterRET jump tables and
+46B common getter with four
+honest GPR negative bytes
+physically rechecked.
+[F865 original x87/PE proof](SCRIPTED_FIGHTER_SUSTAIN_1A0_F865.md);
+scripts/repo-python scripts/verify-scripted-fighter-sustain-1a0-f865.py.
+Whole 46,755B giant NONEXACT.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin
