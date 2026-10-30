@@ -284,6 +284,29 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   slots remain wrong. No
   accepted whole CODE.
   [F864 physical proof](SCENE_THREE_REAL_NAMED_POINTERS_F864.md).
+- **F870 genuine 1F8 nested global-first FUCOMPP:**
+  469 native B/143 x86/
+  15 physically typed PE
+  fields in new complete
+  29,210B/8,180-x86 fighter.
+  Original floating equality
+  must FLD global (6B) then
+  FLD member (3B), FUCOMPP:
+  bare POS48==global correct,
+  borrowed left-lvalue wrong
+  HERE. Native ground auxF,
+  stage3 raw7F, stage7
+  sprite335 and stage15 auxE
+  all source-backed.
+  **84 GPR bytes plus four
+  original enclosing giant
+  JMP operand bytes** remain
+  nonexact, while all prior
+  41 original case PE fields,
+  901B packed DATA tables
+  and shared getter 34/34
+  nonfield bytes are verified.
+  [F870 native x87 source](SCRIPTED_FIGHTER_NESTED_FUCOMPP_1F8_F870.md).
 - **F869 original 1F7 stage4–6 conditional action and sprite337:**
   complete original 307B/90-x86/
   11 native PE fields inside

@@ -1985,6 +1985,43 @@ scripts/repo-python scripts/verify-scripted-fighter-conditional-1f7-f869.py.
 The original 46,755B giant remains NONEXACT;
 zero independent inner case exact CODE credit.
 
+**F870 actual 1F8 original FUCOMPP global-first and 15 typed PE fields:**
+the original 00528299..0052846D case has
+**469 complete native inner CODE B/
+143 x86/15 PE global/call fields**.
+Important opposite x87 grammar:
+native equality must **FLD global
+0065782C (6B), then FLD member+48
+(3B), FUCOMPP**. Bare source
+POS48==global is correct HERE;
+a borrowed-left-lvalue reverses
+widths and shifts true PE offsets.
+Ground fall global00658058 and
+native early Reset/auxF, stage3
+POS8/speed12/drag0.8 + raw
+sprite7F, stage7 sprite335/
+Prepare4, stage15 auxE all
+integrated. New full VC7.1
+source **29,210 callable CODE
+B/8,180 x86** (F869 28,756/
+8,039), all x86 source grammar
+and 15 original PE locations/
+kinds/real targets verified,
+but **84 genuine GPR bytes**
+and four real enclosing-giant
+final JMP operand bytes 240/241,
+465/466 remain nonexact. All
+41 earlier physical native
+case sources and five original
+901B packed afterRET tables
+rechecked. Native 46B getter
+again 34/34 nonfield bytes
+plus three original PE calls.
+[F870 original x87 evidence](SCRIPTED_FIGHTER_NESTED_FUCOMPP_1F8_F870.md);
+scripts/repo-python scripts/verify-scripted-fighter-bounce-1f8-f870.py.
+Whole original 46,755B still
+NONEXACT, no split-case credit.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin
