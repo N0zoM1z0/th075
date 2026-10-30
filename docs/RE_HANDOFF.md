@@ -1873,6 +1873,49 @@ scripts/repo-python scripts/verify-scripted-fighter-doubleprojectile-1f4-f866.py
 Original 46,755B giant STILL
 NONEXACT, no split-case exact CODE.
 
+**F867 true original 1F5 628B six-stage projectile case:**
+actual game 00527D7E..00527FF1
+**628 native inner CODE B/195 x86/
+17 physically typed native PE fields**.
+Original stage0 Reset and float
+height drop use global006583FC
+then **distinct floor global
+00657480**, NOT common threshold
+0065782C. Native early ground
+Reset/aux18 and game return,
+stage1 sprite7F with POS9.5,
+stage2 sprite33B/Prepare1,
+stage13 sprite338/Prepare1,
+stage14 counter reset,
+stage15 POS10/speed15/drag0.65
+and second sprite7F, stage24
+auxiliary0x16 all recovered.
+Real narrow 8-bit facing on
+00453C80 avoids nonnative
+MOVSX. Selected full VC7.1
+fighter now **28,107 callable
+CODE B/7,842 x86**
+(F866 27,494/7,649).
+All original case opcodes/
+widths and 17 physical original
+PE call/global target fields
+agree, but **124 genuine GPR
+operand bytes** and four
+entire-fighter final JMP
+operand bytes 219/220 and
+624/625 remain WRONG.
+All 38 previous real native
+case interiors, five 901B
+afterRET packed DATA tables
+and common 46B getter
+**34/34 real original
+nonrelocation bytes plus
+three correct PE calls**
+rechecked. Entire original
+46,755B NONEXACT.
+[F867 full original PE source](SCRIPTED_FIGHTER_STAGED_1F5_F867.md);
+scripts/repo-python scripts/verify-scripted-fighter-staged-1f5-f867.py.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin

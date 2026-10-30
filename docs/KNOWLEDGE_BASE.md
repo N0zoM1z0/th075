@@ -284,6 +284,31 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   slots remain wrong. No
   accepted whole CODE.
   [F864 physical proof](SCENE_THREE_REAL_NAMED_POINTERS_F864.md).
+- **F867 real original 1F5 multi-stage 628B fighter state:**
+  628B/195 original x86/
+  17 genuine PE original fields
+  inside whole **28,107B/
+  7,842-x86** fighter.
+  Distinct real native
+  00657480 floor compared
+  with 0065782C ground,
+  two true narrow-facing
+  sprite7F calls, staged
+  sprite33B/338 and stage24
+  aux16 all sourced. All
+  original mnemonic/width/
+  physical PE targets match,
+  **124 GPR bytes and four
+  true giant epilogue JMP
+  bytes** remain nonexact.
+  All previous 38 native
+  source-backed cases, five
+  packed afterRET 901B
+  tables and common getter
+  34/34 native nonfield
+  bytes +3 PE calls verified.
+  No accepted exact whole CODE.
+  [F867 physical proof](SCRIPTED_FIGHTER_STAGED_1F5_F867.md).
 - **F866 true native 1F4 448B double projectile and narrow facing parameter:**
   original 448B/136 x86/
   14 physically typed PE
