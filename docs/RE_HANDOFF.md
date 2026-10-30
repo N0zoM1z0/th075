@@ -1,6 +1,6 @@
 # TH075 — ACTIVE reconstruction agent handoff
 
-**Verified snapshot: 2026-10-30, current F760 exact ledger; F754 maintenance.**
+**Verified snapshot: 2026-10-30, current F765 exact ledger; F754 maintenance.**
 This is the **short working queue**, not the chronological research log.
 Original Japanese PE and the live configuration **always outrank historical
 prose, old case-level exact labels, class names or inferred layouts**.
@@ -16,15 +16,15 @@ Older [F598–F652](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
 | User-supplied Japanese TH075 `resources/th075.exe` v1.11 | SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98` |
 | Provisional original native candidate rows | **4,351** |
 | Independently reviewed `origin=authored` candidates | **1,004** |
-| Canonical accepted complete exact authored game functions | **971 functions / 971 exact units** |
-| Accepted complete original CODE | **865,244 original CODE bytes** |
+| Canonical accepted complete exact authored game functions | **972 functions / 972 exact units** |
+| Accepted complete original CODE | **865,415 original CODE bytes** |
 | Reviewed denominator | **1,973,704** native authored CODE B |
-| Exact reviewed coverage | **43.84%** |
-| Conservative coverage (includes pending origin bytes) | **43.76%** |
-| Authored candidates still NOT exact | **33 authored functions remain nonexact** |
-| 33 nonexact breakdown | **22 large original state advances**, **11 other original small/medium whole functions** |
+| Exact reviewed coverage | **43.85%** |
+| Conservative coverage (includes pending origin bytes) | **43.77%** |
+| Authored candidates still NOT exact | **32 authored functions remain nonexact** |
+| 32 nonexact breakdown | **22 large original state advances**, **10 other original small/medium whole functions** |
 | 22 large original native CODE not accepted | **1,102,055 CODE bytes** (separate after-RET DATA not credited) |
-| 11 small/medium native CODE not accepted | **6,405 CODE bytes** |
+| 10 small/medium native CODE not accepted | **6,234 CODE bytes** |
 | Independently origin-unknown candidates | **95 functions / 3,420 CODE bytes**, uncredited |
 
 **Important correction:** the older **25 unfinished** figure only counted
@@ -33,7 +33,7 @@ rows flagged both `owner=authored` and `status=unclassified` in
 **11 more** candidates whose `function-origins.csv` origin was already
 reviewed as authored, but whose provisional `functions.csv` owner is still
 blank at that historical checkpoint because they lacked accepted source.
-F755 (`00407270`), F758 (`00407A50`) and F760 (`00407B80`) accepted three; the **8 remaining** candidates
+F755 (`00407270`), F758 (`00407A50`), F760 (`00407B80`) and F765 (`0040D790`) accepted four; the **7 remaining** candidates
 still lack accepted source and must not be discarded or prematurely labeled
 in `functions.csv.owner`.
 Use **`config/function-origins.csv` for provenance** and
@@ -56,7 +56,7 @@ All dirty tracked/untracked work belongs to this one reconstruction worker;
 inspect and continue it, do not skip/reset it. Run the hash-pinned original
 `th075.exe`, **not** `th075c.exe`. Use `scripts/repo-python` and the pinned
 VC7.1 compiler; compile probes serially under headless Wine. **Never run an
-all-971-unit cold replay.** Only newly accepted or affected whole functions
+all-972-unit cold replay.** Only newly accepted or affected whole functions
 need canonical `scripts/repo-python scripts/replay-exact-units.py --unit NAME`.
 Source grammar/byte geometry of an *internal switch case* does **not**
 earn credit for the still-NONEXACT enclosing whole callable function.
@@ -207,18 +207,17 @@ research without calling it accepted whole CODE. [Giant dispatch
 map](../config/fighter-boss-dispatch-fingerprints.json) is a
 physical-data lead, not provenance proof.
 
-## 3. All 11 additional nonexact original small/medium functions
+## 3. All 10 additional nonexact original small/medium functions
 
 These are **authored by `function-origins.csv`** but not canonically
 matched (most have blank provisional `functions.csv` owner). This is
-the complete **6,405-B** non-giant backlog, NOT just the three
+the complete **6,234-B** non-giant backlog, NOT just the three
 frequently researched ownership functions:
 
 | Native original entire function | CODE | Next evidence/source lead |
 | --- | ---: | --- |
 | `0x0040CA20` SpriteDrawing projected quad | 92 B | Real 132-B quad copy correct 92B/34 x86 but VC7.1 stack frame `−0x8C` vs native `−0x88`; `.analysis/f751-sprite-draw-probe/` |
 | `0x0040C9A0` SpriteDrawing ordinary quad | 115 B | Real quad copy and true Graphics draw callee, original whole function still missing |
-| `0x0040D790` SpriteDrawing opaque | 171 B | Full sprite/color forwarding and selection |
 | `0x0040D6B0` SpriteDrawing mirrored opaque | 212 B | Real member transform/order and original call ABI |
 | `0x0040D2E0` SpriteDrawing scaled XY | 970 B | Native original whole geometry and meaningful transform source |
 | `0x0040CEF0` SpriteDrawing variant | 994 B | Complete borrowed quad/rect transformations |
@@ -228,6 +227,9 @@ frequently researched ownership functions:
 | `0x0043B0B0` Scene destructor | 248 B | Best 191/200 native nonfield bytes; used texture owner/stack layout unresolved; [F700](SCENE_TEXTURE_OWNER_LIFETIMES_F700.md) |
 | `0x00602A60` WinMain | 2,987 B | Original saved local scene/path frame differs; [F702–F704](WINMAIN_USED_OBJECT_CONTEXT_NEGATIVES_F702_F704.md) |
 
+The R011 SpriteDrawing opaque draw `0040D790` is now **171-B/52-x86/6-field whole cold exact**,
+with 147/147 authentic nonfield bytes and real native RECT lifetimes
+([F765](SPRITE_OPAQUE_NATIVE_F765.md)); no longer in the pending queue.
 The R016 audio archive-entry queue `00407B80` is now **283-B/76-x86/27-COFF cold exact**
 ([F760](AUDIO_QUEUE_ARCHIVE_ENTRY_F760.md)), with original valid-handle
 conditional 64-byte record lifetime. It is no longer on the pending queue.

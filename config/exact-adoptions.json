@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377; F378; F379; F386; F389; F391; F392; F393; F394; F395; F403; F407; F414; F415; F421; F422; F427; F428; F429; F430; F431; F432; F435; F437; F440; F445; F446; F447; F448; F454; F458; F459; F460; F461; F463; F465; F467; F468; F469; F474; F479; F481; F484; F485; F488; F489; F490-F492; F494; F496; F499; F504; F514; F516; F535; F536; F555; F755; F758; F760",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377; F378; F379; F386; F389; F391; F392; F393; F394; F395; F403; F407; F414; F415; F421; F422; F427; F428; F429; F430; F431; F432; F435; F437; F440; F445; F446; F447; F448; F454; F458; F459; F460; F461; F463; F465; F467; F468; F469; F474; F479; F481; F484; F485; F488; F489; F490-F492; F494; F496; F499; F504; F514; F516; F535; F536; F555; F755; F758; F760; F765",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "c11ed9d86a50efc7861f500c772b07e1977471cbc6cd9a37027c83443950d461"
+      "current_sha256": "ecfa973680d9e01ac6bed89e228f6dfb03d6e0aa1e82ed0d5258e989a98d35f2"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "1d1d1a3149c3eadb88672e5907f7773cf037d3b4d0699a6d92b3c6805c404d18"
+      "current_sha256": "7f32bc1b6f10d259b961c218795b27bf3293b3005e1d1b06d209f6e10c9391cf"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "90ee7e35077fb2ad95e8c94303df8890d86de3762cb90009fd6b33756a59f74c"
+      "current_sha256": "0aa1e8e2d7dfcd3144e628c1e466c89e51eb005c22edfed4243089d257264a5a"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "06b4fef545b2db48dd053c4b3f922d675654b8b236bc7f19a7d9d5359072d7bc"
+      "current_sha256": "4a3b4521c393353689df5c7e81cc731562c0d6396b540e2286f52bb46ca6e7bd"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "332ac6ec2b78eef36d0d86d0ea749a3b4ef3a0230af85d840769be358501e1fa"
+      "current_sha256": "ccf07c534efcb8513e54e20a81fbd90065524520aa1161d505b24929a1690527"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -39024,6 +39024,50 @@
         "disposition": "authored",
         "confidence": "custom-policy-backed",
         "evidence_id": "R016"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0040D790",
+        "size": "171",
+        "span_end": "0x0040D83A",
+        "current_name": "FUN_0040d790",
+        "proposed_name": "SpriteDrawing::DrawOpaqueSprite",
+        "module": "SpriteDrawing",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R011",
+        "owner": "",
+        "notes": "R011; custom sprite/geometry or diagnostic-file policy, complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit."
+      },
+      "after": {
+        "address": "0x0040D790",
+        "size": "171",
+        "span_end": "0x0040D83A",
+        "current_name": "FUN_0040d790",
+        "proposed_name": "SpriteDrawingF765::DrawOpaqueSprite",
+        "module": "SpriteDrawing",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void SpriteDrawingF765::DrawOpaqueSprite(int,int,int,DWORD)",
+        "is_thunk": "false",
+        "source_file": "src/SpriteOpaqueDrawF765.cpp",
+        "evidence": "R011; F765; scripts/repo-python scripts/replay-exact-units.py --unit sprite-draw-opaque-native-0040d790",
+        "owner": "authored",
+        "notes": "Original independently game-authored R011 full 0040D790 171B/52 x86 opaque sprite rendering policy. Borrowed this+8 vector entry lookup 0040DD60 twice for native rectangle width/height at entry+4/+8. True outer texture RECT initialized left/top 0 at EBP-0x10, actual nested destination RECT at EBP-0x20, exact original this EBP-0xA8 and real 132B RECT quad local via native ctor 0040DB50 at EBP-0xA4. Natural scoped destination object (rather than independent guessed entry pointer, reversed lexical RECT lifetime, wrong local stack layout) restores twelve genuine machine byte offsets. Real Graphics::SetBlendMode(0) 00401F50, GetTexture(index) 0040C8C0, Graphics::DrawTexturedQuad 004029F0. Full original 171/171 CODE and 52 native x86 instructions, all 147/147 original nonfield bytes and six genuine zero-addend REL32 physical original PE/COFF reference fields, type, COFF decorated source symbols and independently decoded PE destinations. Cold-replayed ONE selected whole R011 unit exact, no all-unit replay, no artificial padding/ASM/target patch or separately credited library CODE. Original complete SpriteDrawing private type, borrowed vector/record and quad payload names/layout unknown."
+      },
+      "origin": {
+        "address": "0x0040D790",
+        "origin": "authored",
+        "subsystem": "SpriteDrawing",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R011"
       }
     }
   ],
@@ -216732,6 +216776,65 @@
           "target": 0
         }
       ]
+    },
+    "sprite-draw-opaque-native-0040d790": {
+      "source": "src/SpriteOpaqueDrawF765.cpp",
+      "object": "build/matching/SpriteOpaqueDrawF765.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "SpriteDrawingF765::DrawOpaqueSprite"
+      ],
+      "symbol": "?DrawOpaqueSprite@SpriteDrawingF765@@QAEXHHHK@Z",
+      "target_address": 4249488,
+      "size": 171,
+      "relocations": [
+        {
+          "offset": 43,
+          "type": "REL32",
+          "symbol": "?At@SpriteRecordListF765@@QAEPAUSpriteEntryF765@@H@Z",
+          "target": 4250976
+        },
+        {
+          "offset": 67,
+          "type": "REL32",
+          "symbol": "?At@SpriteRecordListF765@@QAEPAUSpriteEntryF765@@H@Z",
+          "target": 4250976
+        },
+        {
+          "offset": 110,
+          "type": "REL32",
+          "symbol": "?SetBlendMode@Graphics@@YAXH@Z",
+          "target": 4202320
+        },
+        {
+          "offset": 128,
+          "type": "REL32",
+          "symbol": "?GetTexture@SpriteDrawingF765@@QAEPAUIDirect3DTexture8@@H@Z",
+          "target": 4245696
+        },
+        {
+          "offset": 152,
+          "type": "REL32",
+          "symbol": "??0RectQuadF765@@QAE@PBUtagRECT@@@Z",
+          "target": 4250448
+        },
+        {
+          "offset": 158,
+          "type": "REL32",
+          "symbol": "?DrawTexturedQuad@Graphics@@YAXABVRectQuadF765@@PBUtagRECT@@KPAUIDirect3DTexture8@@@Z",
+          "target": 4205040
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -217232,6 +217335,7 @@
     "src/FontLeadByteF555.cpp": "7c1955f33daa3157d34d5c618e71cc37099a79df3dcd0b3f1d6633f7c97c03ce",
     "src/AudioStreamReleaseF755.cpp": "0637b975d4ed59afbfb7545c4f557a7edf6beb9b4576388d6c194fcd4ba6a9d3",
     "src/AudioQueueFileF758.cpp": "b3e0b0a884718a480c31162a3aad07ce87eeda42cda864befc2b8f7e3fa341ee",
-    "src/AudioQueueArchiveF760.cpp": "1d5c208d51c1687608ac40fefe37c8f31cca578ca06969ca714e6f34511005c4"
+    "src/AudioQueueArchiveF760.cpp": "1d5c208d51c1687608ac40fefe37c8f31cca578ca06969ca714e6f34511005c4",
+    "src/SpriteOpaqueDrawF765.cpp": "a16ec956c73132b3363ebd243325db263d487ecb31d38f3b115c4374c272baa0"
   }
 }

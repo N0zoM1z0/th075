@@ -60944,3 +60944,22 @@ relocations = [
  { offset = 0x109, type = "REL32", symbol = "??1AudioRecordF760@@QAE@XZ", target = 0x004092F0 },
  { offset = 0x113, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
 ]
+
+# F765: full original R011 authored opaque sprite, 171 native CODE/52 x86.
+# Two real used RECT lifetimes and original 132B quad ctor; 6 authentic fields.
+[units.sprite-draw-opaque-native-0040d790]
+source = "src/SpriteOpaqueDrawF765.cpp"
+object = "build/matching/SpriteOpaqueDrawF765.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["SpriteDrawingF765::DrawOpaqueSprite"]
+symbol = "?DrawOpaqueSprite@SpriteDrawingF765@@QAEXHHHK@Z"
+target_address = 0x0040D790
+size = 171
+relocations = [
+ { offset = 0x2B, type = "REL32", symbol = "?At@SpriteRecordListF765@@QAEPAUSpriteEntryF765@@H@Z", target = 0x0040DD60 },
+ { offset = 0x43, type = "REL32", symbol = "?At@SpriteRecordListF765@@QAEPAUSpriteEntryF765@@H@Z", target = 0x0040DD60 },
+ { offset = 0x6E, type = "REL32", symbol = "?SetBlendMode@Graphics@@YAXH@Z", target = 0x00401F50 },
+ { offset = 0x80, type = "REL32", symbol = "?GetTexture@SpriteDrawingF765@@QAEPAUIDirect3DTexture8@@H@Z", target = 0x0040C8C0 },
+ { offset = 0x98, type = "REL32", symbol = "??0RectQuadF765@@QAE@PBUtagRECT@@@Z", target = 0x0040DB50 },
+ { offset = 0x9E, type = "REL32", symbol = "?DrawTexturedQuad@Graphics@@YAXABVRectQuadF765@@PBUtagRECT@@KPAUIDirect3DTexture8@@@Z", target = 0x004029F0 },
+]

@@ -15,16 +15,16 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
 
 ## Current verified original-game status (one short snapshot)
 
-- **971 cold-exact source-present functions**, **865,244 original authored
-  CODE bytes**, **43.84% reviewed authored coverage** and **43.76%
+- **972 cold-exact source-present functions**, **865,415 original authored
+  CODE bytes**, **43.85% reviewed authored coverage** and **43.77%
   conservative coverage** of native original CODE. The independently
   reviewed authored provenance cohort has **1,004** candidates, so
-  **33 authored whole functions remain NONEXACT**: **22** large
-  (1,102,055 original CODE B) plus **11** small/medium
-  (6,405 CODE B). The older **25**-function subset counted only
+  **32 authored whole functions remain NONEXACT**: **22** large
+  (1,102,055 original CODE B) plus **10** small/medium
+  (6,234 CODE B). The older **25**-function subset counted only
   `config/functions.csv.owner=authored` unfinished rows and omitted
   11 independently authored, formerly owner-blank small/medium targets,
-  of which F755, F758 and F760 have now accepted three. See [all 11 current addresses](RE_HANDOFF.md).
+  of which F755, F758, F760 and F765 have accepted four. See [all 10 current addresses](RE_HANDOFF.md).
 - **95 original candidates /3,420 CODE bytes** have separately
   unresolved provenance; even a whole byte-exact C++ source does not
   permit reclassification or accepted authored CODE without independent
@@ -80,8 +80,11 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   These are still *internal switch-case source, NOT accepted whole
   game-function CODE*. Source 059 and 060/061 GPR differences remain.
   Reproduce from [F752 native/PE proof](FIGHTER_BORROWED_POSITION_F752.md).
-- **The currently most recent exact whole function is F760**, original
-  R016-authored audio archive entry queue `00407B80` with **283 native
+- **The currently most recent exact whole function is F765**, original
+  R011 SpriteDrawing opaque `0040D790` with **171 native CODE B,
+  52 x86, 6 physical PE/COFF fields**, 1/1 selected cold exact.
+  [F765 original whole source/lifetime proof](SPRITE_OPAQUE_NATIVE_F765.md).
+  The preceding F760 original R016-authored audio archive entry queue `00407B80` with **283 native
   CODE B /76 original x86 /27 PE/COFF fields** and one-unit cold exact.
   [F760 archive-entry whole original proof](AUDIO_QUEUE_ARCHIVE_ENTRY_F760.md).
   Paired F758 original R016-authored audio file queue `00407A50` with **289 native CODE B, 77
@@ -13866,3 +13869,23 @@ all former F763/1F6–1F8/C8–CE complete native cases, independent
 ONE affected C++ TU. No all-971 cold replay and no new official
 whole-authored game CODE credit; live exact remains 971/865,244.
 [Full F764 original and reproducible compiler evidence](FIGHTER_APPROACH_VOLLEY_NATIVE_F764.md).
+
+
+## F765: full original 0040D790 SpriteDrawing opaque render 171B cold exact
+
+Original independent R011-authored game `0040D790` **171 whole native
+CODE B/52 x86/6 original zero-addend typed PE/COFF** now matches
+a normal VC7.1 C++ source with genuine outer texture RECT
+`EBP−0x10`, nested used destination RECT `EBP−0x20` and 132-byte
+quad constructed from the target RECT at `EBP−0xA4`, natural
+receiver `EBP−0xA8`. Original graphics blend/texture/quad ctor
+steps and both `this+8` native indexed texture record reads are
+faithful. Eight used-lifetime source experiments showed that simply
+reordering two RECT declarations cannot restore native stack slots;
+actual nested destination lifetime restores **147/147 nonfield
+CODE bytes**, **all six original native REL32** and entire 171B
+under selected **1/1 exact cold replay**. Formal 971→**972** exact
+whole functions, 865,244→**865,415 native authored CODE B**, 43.85%
+reviewed/43.77% conservative. Whole 22 giants and ten other authored
+small/medium remain NONEXACT; no all-unit cold replay.
+[Complete original native physical proof](SPRITE_OPAQUE_NATIVE_F765.md).
