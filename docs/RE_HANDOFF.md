@@ -944,6 +944,31 @@ scripts/repo-python scripts/verify-scripted-fighter-fall-cf-f831.py.
 46,755B enclosing function still NONEXACT,
 zero independent case/suffix CODE credit.
 
+**F832 next two true original 46KB scripted fighter resource shots D1/D2:**
+original complete D1 **199 inner B/59 x86/8 typed PE
+fields**, D2 **251B/74 x86/10 genuine fields**,
+now in one freshly compiled **18,375-B/4,917-x86**
+whole parent, up from F831 17,955B/4,788 x86.
+Actual source is ACTOR-SPECIFIC: signed
+resource decay **6** rather than F651's
+other-fighter 3; D2 scales original horizontal/
+vertical speeds and calls PrepareActionAt453D60
+**BEFORE** native sprite 0x3E6 emission,
+not F652's other-fighter post-spawn order.
+All 18 original PE call/global field positions,
+types and true native targets verified from
+physical source rather than inherited field ordinals.
+Native full opcode/width geometry agrees, but
+32 and 46 actual D1/D2 nonrelocation register/
+parent-JMP byte negatives remain. Previous
+CF/D0 physical source with real PE fields,
+901B afterRET DATA and 46B shared tail
+rechecked; later default 4 honest GPR bytes
+still wrong. Enclosing 46,755B remains
+NONEXACT with zero new whole-function credit.
+[F832 actor-specific native PE proof](SCRIPTED_FIGHTER_RESOURCE_SHOTS_F832.md);
+scripts/repo-python scripts/verify-scripted-fighter-resource-shots-f832.py.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin

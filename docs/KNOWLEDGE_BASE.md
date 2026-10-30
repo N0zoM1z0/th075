@@ -214,6 +214,23 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   saved-this slot. Entire 248B remains
   nonexact, no credited original CODE.
   [F818 original PE typed-view result](SCENE_COMPLETE_BORROWED_OWNER_F818.md).
+- **F832 original actor-specific D1/D2 resource shots:**
+  199B/59 x86/8 true PE fields and
+  251B/74 x86/10 fields in a full
+  **18,375-B/4,917-x86** native-shaped
+  growing parent. Physical original
+  stage resource decay is 6, unlike the
+  old F651 other-fighter 3; original
+  D2 scales speed and prepares action
+  BEFORE spawning. The old F652 D2
+  PE ordinal table is thus INVALID for
+  this selected actor; all ten physical
+  original D2 fields now independently
+  mapped to real native target addresses.
+  Source has 32/46 genuine unmasked
+  D1/D2 byte negatives; whole giant
+  NONEXACT, no callable CODE credit.
+  [F832 current actual native game proof](SCRIPTED_FIGHTER_RESOURCE_SHOTS_F832.md).
 - **F831 actual 0xCF falling state in one scripted 46KB fighter:**
   114 true native inner B/30 x86/4
   physical PE fields added in a
