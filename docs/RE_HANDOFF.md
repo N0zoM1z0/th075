@@ -1,6 +1,6 @@
 # TH075 — ACTIVE reconstruction agent handoff
 
-**Verified snapshot: 2026-10-31, current F780 exact ledger; F849 fighter physics and F848 Scene.**
+**Verified snapshot: 2026-10-31, current F780 exact ledger; F850 fighter grounded cases and F848 Scene.**
 This is the **short working queue**, not the chronological research log.
 Original Japanese PE and the live configuration **always outrank historical
 prose, old case-level exact labels, class names or inferred layouts**.
@@ -1358,6 +1358,32 @@ GPR operand negatives +10/12/16/19.
 scripts/repo-python scripts/verify-scripted-fighter-physics-136-f849.py.
 Whole original 46,755B still NONEXACT,
 zero inner case or callable exact CODE.
+
+**F850 two actual 0x186/0x187 grounded native states:**
+selected original 186 **250 inner B/74 x86/7 PE
+fields**, 187 **214B/61 x86/6 PE fields**;
+distinct real original ground correction
+globals 00658058 vs 00659090, stage3
+animation1D with sprite341 vs 1C without
+sprite. New entire normal VC7.1 parent
+**23,997 callable B/6,595 x86**, up
+from F849 23,563/6,464. Original
+opcodes/x86 widths and all 13 physical
+PE fields/true targets match, but
+genuine source GPR byte differences
+of **47/38** plus 2 whole-game
+epilogue JMP bytes PER case still
+apply. Earlier original 136 GPR
+negatives retained: no false exact
+credit. Twenty prior complete
+native cases and all five original
+901B packed afterRET DATA tables
+reverified. F806 46B common getter
+again **34/34 native nonrelocation
+bytes** plus three original PE calls.
+[F850 true original PE and GPR negatives](SCRIPTED_FIGHTER_GROUND_186187_F850.md);
+scripts/repo-python scripts/verify-scripted-fighter-ground-186187-f850.py.
+Complete 46,755B original giant NONEXACT.
 
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`

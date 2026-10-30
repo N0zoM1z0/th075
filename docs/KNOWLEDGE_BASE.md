@@ -232,6 +232,29 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   GPR differences, whole native
   giant NONEXACT.
   [F844 selected original physical PE](SCRIPTED_FIGHTER_GROUNDED_130_F844.md).
+- **F850 real 186/187 grounded game actions in current fighter:**
+  original 250B/74 x86/7
+  physical PE fields and
+  214B/61 x86/6 PE fields,
+  genuine different native
+  ground globals and stage3
+  sprite vs no-sprite source.
+  Entire new **23,997B/
+  6,595-x86** parent. All x86
+  widths/opcodes and 13 true
+  PE destinations align, but
+  source GPR byte negatives
+  47/38 plus true final
+  giant JMP bytes remain.
+  Earlier 136 GPR negative,
+  20 native original source
+  cases, five 901B afterRET
+  tables physically rechecked.
+  Full 46B default getter
+  34/34 nonrelocation bytes
+  plus 3 PE calls recovered.
+  Whole giant still nonexact.
+  [F850 PE source proof](SCRIPTED_FIGHTER_GROUND_186187_F850.md).
 - **F849 original 0x136 physical ground/sprite and GPR negative:**
   native real 321B/95 x86/ten
   typed original PE fields in
