@@ -76,8 +76,15 @@ operands) versus original `EBP−0x90` (six-byte memory offsets).
 Those authentic original operand widths now emerge naturally from
 the preceding real C8–CB source, rather than an invented padding local
 or independently compiled case. **This fixes a genuine cross-case
-source lifetime hypothesis**; remaining unrelated case widths and
-register phases must be remeasured before another claim.
+source lifetime hypothesis**, but the newer full-parent register allocation
+also regresses three formerly strict contexts: original action `190`
+now has **40** source GPR-role discrepancies, `191` has **40**, and
+`192` has **34**, despite their now-native machine-code widths. The
+prior F752 source had zero normalized GPR errors in those same cases,
+but a 10-byte size deficit in `190`. These are genuine current-parent
+comparisons against the original PE, and the F759 verifier now checks
+all three negative register counts. Do not claim whole-case exactness
+from recovered FILD scratch alone.
 
 ## Whole parent and after-RET DATA remain separately accounted
 
