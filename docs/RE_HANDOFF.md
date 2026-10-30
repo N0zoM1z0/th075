@@ -1,6 +1,6 @@
 # TH075 — ACTIVE reconstruction agent handoff
 
-**Verified snapshot: 2026-10-31, current F780 exact ledger; F863 native short states and F854 Archive.**
+**Verified snapshot: 2026-10-31, current F780 exact ledger; F863 fighter cases and F864 Scene locals.**
 This is the **short working queue**, not the chronological research log.
 Original Japanese PE and the live configuration **always outrank historical
 prose, old case-level exact labels, class names or inferred layouts**.
@@ -2091,6 +2091,32 @@ original-sized ones earn a native 14-field
 physical comparison, NONE exact.
 [F854 original Archive value category proof](ARCHIVE_NATIVE_RESOURCE_VALUE_CATEGORIES_F854.md);
 scripts/repo-python scripts/verify-archive-real-delete-value-f854.py.
+
+**F864 original 248B Scene destructor actual named free-pointer controls:**
+twelve complete pinned VC7.1 /Od /GX
+destructor source tests use real
+separately named +0x4C/+0x50/+0x54
+free pointers, declarations before/
+after texture/clock, rotated orders,
+register/volatile and branch-scoped
+actual initialized locals. Ten
+original-size **248B/75-x86/
+12 physical PE-field** whole
+sources all retain original
+call targets/opcode widths,
+but NINE named models worsen
+native nonfield matches to
+**189/200** from aggregate
+baseline **191/200**.
+Two true branch pointer-reference
+models emit **254B/78 x86**,
+not the original whole extent.
+Texture/delete EBP remains
+-0x20/-0x1C vs native
+-0x14/-0x10. No fabricated
+locals or whole exact credit.
+[F864 native Scene named pointer proof](SCENE_THREE_REAL_NAMED_POINTERS_F864.md);
+scripts/repo-python scripts/verify-scene-three-named-release-f864.py.
 
 ## 4. Attribution, validation, research and storage
 

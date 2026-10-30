@@ -232,6 +232,24 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   GPR differences, whole native
   giant NONEXACT.
   [F844 selected original physical PE](SCRIPTED_FIGHTER_GROUNDED_130_F844.md).
+- **F864 full original 248B Scene named resource free locals:**
+  twelve complete VC7.1 /GX
+  source experiments test real
+  separately named frees vs
+  prior three-field aggregate.
+  Ten original-size candidates
+  retain all 12 native PE
+  fields; nine named forms
+  worsen nonrelocation byte
+  match to **189/200** vs
+  baseline **191/200**.
+  Two used references/pointers
+  to real members emit
+  254B/78 x86, nonnative.
+  Original five EBP temp
+  slots remain wrong. No
+  accepted whole CODE.
+  [F864 physical proof](SCENE_THREE_REAL_NAMED_POINTERS_F864.md).
 - **F863 actual 19C/19E short state pair in one giant parent:**
   two distinct original
   122B/35-x86/3-PE-call
