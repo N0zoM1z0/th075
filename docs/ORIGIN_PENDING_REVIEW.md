@@ -1,7 +1,7 @@
 # Pending origin review matrix (R263 historical snapshot)
 
 **Historical as of R263, before F536:** the 97-row/3,608-byte table below is
-retained as original research evidence, not the live 2026-10-29 inventory.
+retained as original research evidence, not the live 2026-10-30 inventory.
 F536 subsequently classified and cold-exactly reconstructed `00455770`
 (111 CODE bytes) on independent game-coordinate/x87/physical COFF evidence.
 F555 independently identified the 77-byte game-local Shift-JIS lead-byte
@@ -23,10 +23,19 @@ pure-virtual vtable, and six mixed game/STL callers of
 `004588B0`; those remain unknown. See
 [small leaf/call graph F595](SMALL_ORIGIN_UNKNOWN_FIELDSETTER_F595.md).
 
-The current live pending set is **95 functions /3,420 bytes**; use
-`config/function-origins.csv` for the authoritative classification and
-`docs/RE_HANDOFF.md` for the current task list. Do not interpret the
-`00455770` row in this historical matrix as still pending.
+The **current live** pending set is **95 functions /3,420 bytes**;
+use `config/function-origins.csv` for the authoritative current
+classification and `docs/RE_HANDOFF.md` for the active tasks.
+F595–F691 ordinary VC7.1 source research now matches **85 distinct
+complete original unknown-origin functions /1,949 machine CODE B**,
+including F686's 19-byte destructor, F687's 58/64-byte COM owners and
+F691's substantial **249-byte COM manager cleanup**. All 85 remain
+historically **source-UNKNOWN**, no game-authored exact credit:
+[F691 whole native proof](SDK_NATIVE_COM_MANAGER_CLEANUP_F691.md),
+[F687 complete COM destructor source](SDK_NATIVE_COM_OWNER_DESTRUCTORS_F687.md).
+Do not interpret `00455770` or `0041CA30` rows in the *historical*
+R263 table as still pending. A byte-perfect compiler product alone
+never resolves authored-vs-library provenance.
 
 **Historical R263 table only:** the following 97 rows / 3,608 bytes
 record what was unresolved **at the time of R263**, not today's live
@@ -40,9 +49,8 @@ complete-origin milestone achieved.
 The target remains the supplied Japanese `th075.exe`, self-reporting version
 1.11, SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 **At the older R263 checkpoint**, the exact baseline was 60 functions
-/9,883 bytes /60 units across eleven objects; the *current* complete
-accepted register is **943 exact functions /862,726 CODE bytes** as of
-F596. No new source, mapping or exact ledger credit is awarded by
+/9,883 bytes /60 units across eleven objects; the *current* accepted whole register is **943 exact
+functions /862,726 CODE bytes** as independently checked after F695. No new source, mapping or exact ledger credit is awarded by
 this archived provenance matrix.
 
 The original R251 audit covered all116 whole target bodies,114 RET-based
@@ -73,8 +81,9 @@ vtable/provider context; complete ordinary equality23 remains preserved.
 R263 classifies only641DAA /11 as inferred library through complete original
 abs11/abs64 auxiliary28 source-order contribution39. Separate labs-shaped11
 and original ordinary int/long/wide alternatives remain unresolved.
-The current remaining projection has95
-RET-based bodies and the same two native tail cases. Every remaining whole
+The **historical R263** remaining projection counted 95
+RET-based bodies and two native tail cases before later origin
+reclassifications. This is NOT the current 95-function inventory. Every remaining whole
 body hash and literal canonical pair is read back after these bounded transitions.
 
 Original structured references are read back by exact JSON trail and original
@@ -92,9 +101,10 @@ Ghidra reference observations do not rule out computed, interior, runtime or
 unmodeled reachability. The original R251 artifact is retained without rewriting.
 
 The categories group evidence gaps, not origins. All remaining rows have the
-outcome **underdetermined origin**. The final complete Web MCP acceptance is
-still due after the requested remaining-review end state is satisfied; no
-scope clarification is presumed.
+outcome **underdetermined origin**. The R263-era Web MCP acceptance remark was a historical request,
+not a current requirement. The current workflow uses the pinned PE,
+source provenance and **selected new/affected whole-unit cold replay**;
+never run all 943 simply because a frozen R263 matrix says so.
 
 | Address | Bytes | Evidence gap category | Whole target observation | Representative prior evidence | Required distinguishing witness |
 | --- | ---: | --- | --- | --- | --- |

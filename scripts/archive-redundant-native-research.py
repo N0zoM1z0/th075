@@ -138,12 +138,14 @@ def read_receipt(family: str) -> dict:
     return document
 
 
-def verify(family: str, *, report: bool = True) -> dict:
+def verify(family: str, *, report: bool = True, require_original_loose: bool = False) -> dict:
     archive, _, _ = locations(family)
     receipt = read_receipt(family)
     originals = receipt['files']
     seen: set[str] = set()
     total = 0
+    matching_loose = 0
+    newly_regenerated_or_changed_loose = 0
     with tarfile.open(archive, 'r:gz') as tar:
         for member in tar:
             name = member.name
@@ -163,9 +165,23 @@ def verify(family: str, *, report: bool = True) -> dict:
             ensure(length == info['size'] and h.hexdigest() == info['sha256'],
                    f'tar/original SHA256 mismatch: {name}')
             if existing.exists():
-                ensure(existing.is_file() and existing.stat().st_size == length and
-                       sha256(existing) == info['sha256'],
-                       f'loose file has been modified: {name}')
+                ensure(existing.is_file(),
+                       f'non-file now occupies archived path: {name}')
+                same = (existing.stat().st_size == length and
+                        sha256(existing) == info['sha256'])
+                if require_original_loose:
+                    ensure(same, f'original loose file changed during archival: {name}')
+                if same:
+                    matching_loose += 1
+                else:
+                    # Recompiling a historical source can legitimately
+                    # regenerate a *different* PDB at its original path.
+                    # Keep it intact and still verify the archived ORIGINAL
+                    # independently. Neither --restore nor --recompact
+                    # is allowed to overwrite/delete this changed copy.
+                    newly_regenerated_or_changed_loose += 1
+            elif require_original_loose:
+                raise RuntimeError(f'original loose file disappeared during archiving: {name}')
             seen.add(name)
             total += length
     ensure(seen == set(originals) and total == receipt['original_total_bytes'],
@@ -173,7 +189,10 @@ def verify(family: str, *, report: bool = True) -> dict:
     if report:
         print(f'F694 {family}: verified {len(seen)} original files, '
               f'{total:,} uncompressed bytes, {archive.stat().st_size:,} '
-              'archive bytes; 100% member SHA256 correct.', flush=True)
+              'archive bytes; 100% member SHA256 correct. '
+              f'{matching_loose} unchanged loose copies; '
+              f'{newly_regenerated_or_changed_loose} changed/regenerated loose copies preserved.',
+              flush=True)
     return receipt
 
 
@@ -225,7 +244,7 @@ def archive_selected(family: str) -> None:
         os.replace(receipt_tmp, receipt)
         # Critical: test every exact member while every loose original still
         # exists. A failure leaves the originals untouched for recovery.
-        verify(family)
+        verify(family, require_original_loose=True)
         for file in files:
             name = file.relative_to(ROOT).as_posix()
             ensure(safe_file(name, family).is_file() and

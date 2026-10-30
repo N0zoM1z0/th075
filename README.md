@@ -26,7 +26,7 @@ types are provisional; machine-code matches alone do not prove an entire
 original class layout. The target's official distribution provenance has not
 been independently verified; do not substitute a localized `th075c.exe`.
 
-These snapshot counts were rechecked after **F691** (2026-10-30).
+These snapshot counts were rechecked after **F695** (2026-10-30); the F694 storage cleanup and F689–F693 negative-evidence audit do **not** add accepted CODE.
 The **live** sources of truth, not any dated prose milestone, are `config/functions.csv`,
 `config/function-origins.csv`, and `config/match-units.toml`.
 Refresh using `scripts/repo-python scripts/report-reconstruction-status.py --summary`.
@@ -51,7 +51,14 @@ bodies remain wrong**. This is outstanding, **not a fully byte-exact
 `scripts/repo-python scripts/verify-characterobject-native-collision-order-f596.py`.
 F659's 14 additional whole-giant C++ condition/lifetime variants did
 not reduce the genuine 137-byte register cycle; two `+=` alternatives
-actually changed native x87 geometry. [New F659/F660 negative evidence](docs/GIANT_REGISTER_AND_ARCHIVE_LIFETIME_NEGATIVES_F659_F660.md).
+actually changed native x87 geometry. F690/F692 later compiled **28
+more entire 33KB C++ variants**; none improved whole exactness, and
+seven altered the actual x87 instruction geometry. F689 separately
+tested ten complete Scene destructor variants; none resolved the EBP
+slots and one deliberately artificial unused-aggregate form is
+invalid for reconstruction.
+[Current original 28+10 negative matrix](docs/CHARACTEROBJECT_SCENE_PHASE_NEGATIVES_F689_F693.md),
+[prior F659/F660 evidence](docs/GIANT_REGISTER_AND_ARCHIVE_LIFETIME_NEGATIVES_F659_F660.md).
 
 **F598–F681's 597 context-strict source-backed fighter *internal
 case bodies* (162,036 original native CODE bytes) remain uncredited**:

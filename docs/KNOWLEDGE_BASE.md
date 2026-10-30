@@ -1,7 +1,8 @@
 # TH075 reconstruction knowledge base — cumulative historical evidence
 
-**Current status annotation: 2026-10-30, after F694 reversible storage
-cleanup; chronological research entries currently run through F691.** This is a **chronological experiment log**,
+**Current status annotation: 2026-10-30, after F695 original-evidence
+audit and F694 reversible storage cleanup; the actual F689–F693
+negative experiments are now documented for the next agent.** This is a **chronological experiment log**,
 not the live backlog. Consult the [current agent handoff](RE_HANDOFF.md)
 and live function/origin/match manifests first. Earlier F-series
 sections describe *historical* status; older claims such as "still pending",
@@ -12407,3 +12408,37 @@ examples, `--plan/--verify` and precise safety exclusions:
 [Current storage maintenance](STORAGE_HYGIENE.md),
 `scripts/repo-python scripts/archive-redundant-native-research.py
 --family pdb --verify`. **No mass cold replay.**
+
+
+## F695: recovered real F689–F693 negative evidence; corrected current agent handoff
+
+The real `004EBDA0` original (33,293 CODE B/438 separate afterRET
+DATA/8,789 x86/682 physical PE/COFF fields) was re-audited against
+**28 independently compiled ordinary VC7.1 complete parent objects**
+under ignored `.analysis/f690-characterobject-phase/` and
+`.analysis/f692-characterobject-stage4/`. Of these, **16** retained
+all native instruction boundaries with **137 actual nonfield bytes**
+still wrong; **seven** changed x87 geometry and increased the
+nonfield mismatch count to 138/139; **one** changed the stage-4
+condition's physical instruction grammar without fixing 137;
+**four** produced wrong native whole CODE+DATA length. Zero exact.
+
+Original authored Scene destructor `0043B0B0` F689 experiments:
+**eight meaningful scoped free-value forms** match only **189/200**
+native nonrelocation bytes, and one meaningful lexically scoped
+aggregate matches **191/200**. An extra deliberately unused
+aggregate variant is **invalid as source padding**, not a valid
+reconstruction hypothesis. F693 verification script was attempted
+when the tool disconnected but was **never written/committed**;
+future agents must use the real existing F596/F589 targeted source
+verifiers instead. [Grounded original 28+10 complete negative matrix
+and first native GPR difference](CHARACTEROBJECT_SCENE_PHASE_NEGATIVES_F689_F693.md).
+
+The original R263 `ORIGIN_PENDING_REVIEW.md` ledger table is clearly
+marked **historical**; actual live 95 still-unknown provenance rows
+are defined only by `config/function-origins.csv`. The separate
+**85 source-backed complete UNKNOWN functions/1,949 original CODE B**
+remain uncredited, while **943/862,726 authored whole exact** and
+43.71% reviewed coverage remain unchanged. F694's archived
+historical generated PDB/CI files remain independently verified and
+restorable. No all-943 cold replay or new exact acceptance.

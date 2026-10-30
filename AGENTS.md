@@ -132,6 +132,10 @@ or verifier changes. Documentation-only changes need `git diff --check`.
   The ignored archives/receipts are **local, not tracked in Git**; do
   not lose them. Verify/restore one needed historical file using
   `scripts/archive-redundant-native-research.py --family pdb|logs`.
+  Recompiling an older source may create a **different** PDB at the
+  archived path: archive `--verify` still works but reports the
+  changed loose copy. Both `--restore` and `--recompact-restored`
+  reject overwriting/removing that newly generated research file.
   Detailed allowed cleaning and restore paths: `docs/STORAGE_HYGIENE.md`.
   Protect H184 frozen objects/PDBs, original native and best whole-boss
   probes, `build/matching/`, `.analysis/vc71-wine/` and the Ghidra project.

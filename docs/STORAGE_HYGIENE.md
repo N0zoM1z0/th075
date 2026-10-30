@@ -1,6 +1,6 @@
 # TH075 local storage hygiene and lossless recovery
 
-**Updated 2026-10-30, after F694 source-preserving cache compaction.**
+**Updated 2026-10-30, after F694 compaction and F695 recovery-safety audit.**
 This is a storage report and **lossless local recovery recipe**, NOT
 permission to remove original PE, C++/COFF research evidence, active
 work, matching objects, or unrecognized dirty changes. The archives,
@@ -56,6 +56,20 @@ scripts/repo-python scripts/archive-redundant-native-research.py \
 scripts/repo-python scripts/archive-redundant-native-research.py \
   --family logs --restore .analysis/r142-ci.log
 ```
+
+**A regenerated historical PDB is NOT an archive checksum failure.**
+After re-running an older VC7.1 source control, a former F500–F649
+`.pdb` may reappear at an archived path with a *different* SHA256.
+`--verify` still verifies every archived original member and reports
+that changed loose copy without modifying it. **Neither `--restore`
+nor `--recompact-restored` overwrites/deletes that regenerated file.**
+We exercised these refusal cases using an explicit temporary
+synthetic smoke output, then reverified the original stored tar
+members. During original archival, all loose original hashes are
+strictly checked **before** unlinking any file. If a newly generated
+PDB appears, `--plan` may list it; `--archive` refuses to overwrite
+the already authenticated tar/receipt. Never force-delete newly
+regenerated research data simply to repeat an earlier compaction.
 
 **Not touched:** original pinned `th075.exe`; Wine/VC7.1 prefix;
 Ghidra project; H184's **15** original protected PDB/object pairs

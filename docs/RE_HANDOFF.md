@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F694 storage cleanup; source research through F691.**
+**Maintained 2026-10-30, after F695 documentation audit and F694 storage cleanup.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -9,6 +9,40 @@ with its Markdown links adjusted for its new directory. The older
 [chronological knowledge base](KNOWLEDGE_BASE.md) are evidence, not a
 reason to undo later exact adoptions. Original pinned native PE and
 **live manifests outrank every historical sentence**.
+
+## 0. Fast next-agent route (no full cold replay)
+
+1. **Inspect ALL dirty work first**, including ignored `.analysis/`
+   experiments. F694 was a verified storage checkpoint, **not** an
+   assertion that today's worktree remains clean. Only the live
+   `git status --short --branch` establishes its actual state. All dirty changes belong to this one
+   worker; never reset or attribute them to another session.
+2. **Go after the 33KB authored giant `004EBDA0`**, not just leaves.
+   Exact original instruction geometry/typed fields are recovered but
+   **137 genuine GPR operand bytes remain**. Additional **28 F690/F692
+   natural C++ whole-parent variants** were re-audited from actual
+   COFF/PE; none improves this. Do not repeat syntactic stage-3/4
+   boolean/`+=`/lvalue permutations without a NEW original lifetime
+   hypothesis. [Physical negative evidence](CHARACTEROBJECT_SCENE_PHASE_NEGATIVES_F689_F693.md).
+3. **Continue full authored `0043B0B0` (248 B) and `0041CE50`
+   (171 B)**: real native EBP temporary ownership remains wrong.
+   F689's **eight valid additional scoped free variants** regressed
+   to 189/200; one valid nested aggregate stayed 191/200. An
+   artificial unused-aggregate trial is disqualified. Read
+   [Scene original native evidence](CHARACTEROBJECT_SCENE_PHASE_NEGATIVES_F689_F693.md)
+   and [ArchiveCatalog lifetime controls](ARCHIVE_RESOURCE_FILENAME_LIFETIMES_F682_F683.md).
+4. **Keep leaf byte proofs separate from provenance**: F691
+   reconstructs original whole `0061F125` (**249/249 B**) but its
+   original source owner remains `unknown,review`; no authored exact
+   credit. The whole-UNKNOWN research cohort is **85 functions /
+   1,949 B**, all uncredited. Never double-count giant interiors.
+5. **Preserve local archives and negative experiments**. The 1,760
+   archived F694 generated PDB/CI files are SHA256-recoverable, but
+   their private archives are NOT tracked in Git. Follow the
+   [exact restore procedure](STORAGE_HYGIENE.md). The attempted F693
+   verifier was **never written** during the prior connection outage;
+   do not invoke it. Use F596/F589 targeted verifiers, never the
+   entire 943-unit cold replay.
 
 ## 1. Live truth, targets, immediate preflight
 
@@ -67,7 +101,12 @@ and native target, rather than trusting older F593 figures such as
 stage-3/stage-4 C++ grammar hypotheses against the **entire**
 original 33KB function: 12 remained **137 wrong nonfield bytes**,
 and two `+=` variants regressed to **141 plus native x87 geometry
-errors**. [New F659/F660 original source negatives](GIANT_REGISTER_AND_ARCHIVE_LIFETIME_NEGATIVES_F659_F660.md).
+errors**. [F659/F660 original source negatives](GIANT_REGISTER_AND_ARCHIVE_LIFETIME_NEGATIVES_F659_F660.md).
+F690/F692 additionally produced **28 complete original-parent C++
+objects**, none exact: 16 preserved geometry but remained at 137
+nonfield wrong bytes; seven changed x87 geometry (138/139), one
+condition changed geometry, and four produced wrong entire lengths.
+[Full F689–F693 native negative audit](CHARACTEROBJECT_SCENE_PHASE_NEGATIVES_F689_F693.md).
 Focus on real source scope/lifetime and original register phase,
 not additional fake fields.
 
@@ -158,7 +197,7 @@ eight true original x87 conversion scratch EBP−0x114/−0x118/−0x11C/
 source 502→478 B. No fake local padding or strict credit;
 all 25 earlier strict cases and afterRET DATA remain correct in
 this **same freshly compiled whole parent**.
-[Newest F671 complex original negative](FIGHTER_FOUR_SHOT_BARRAGE_F671.md).
+[Earlier F671 complex original negative](FIGHTER_FOUR_SHOT_BARRAGE_F671.md).
 F664 earlier added 200/201 (228 x86/779 B/17 fields), and F668
 added 252/253/254; no enclosing whole giant is exact.
 **Critical F666 context warning:** a second freshly compiled whole-giant
@@ -181,7 +220,7 @@ and auxiliary action behavior. Its preceding real case `0x186` is
 **284 compiler bytes versus 290 original case bytes**. We additionally
 check raw EBP roles independently, rather than trusting the broad
 historical register-slot normalizer. Do not promote or pad `0x186`.
-[Newest F657 original proof](FIGHTER_MOTION_CONTINUATION_F657.md).
+[Earlier F657 original proof](FIGHTER_MOTION_CONTINUATION_F657.md).
 
 The **14 consecutive strict earlier native cases** are `CF/D0/D1/D2/
 12C/12D/12E/12F/130/131/133/134/135/136` (997 original x86/
@@ -197,7 +236,7 @@ but both remain **NONSTRICT**: their original meaningful x87 scratch
 EBP−0x88/−0x8C occurs at compiler EBP−0x24/−0x28, shortening each
 case by six bytes. All 17 previous strictly backed cases and whole
 after-RET DATA are rechecked in the **same new C++ parent**.
-[Latest 18A/18B source and authentic native negative proof](FIGHTER_MOTION_SHOTS_F661.md).
+[Earlier 18A/18B source and authentic native negative proof](FIGHTER_MOTION_SHOTS_F661.md).
 The original 58K whole parent is still NONEXACT; `D2→12C`
 has no separate D3 physical handler.
 The native original D2 float drag occurs **outside** stage-zero
@@ -207,7 +246,7 @@ role differences**; native `005AEEC0` and `00564BE0` have no separate
 D1/D2 handlers. Do not copy this actor-specific victory to all 11.
 [Selected strict full giant and field proof](FIGHTER_RESOURCE_SHOTS_F651_F652.md).
 
-**Latest difficult negative:** true native case `0xCC` inside giant
+**Separate historical difficult negative:** true native case `0xCC` inside giant
 `005AEEC0` has **128 x86/435 B** and original wide `00564BE0`
 **126 x86/542 B**. Normal C++ reconstructs entire case x86 starts,
 mnemonics and widths and all **11 true typed PE/COFF call/global
@@ -227,7 +266,7 @@ F646 `0xD0` remains nonstrict in other original actors due to
 explicitly distinguishes the 3 strict parent contexts.
 
 ```bash
-# NEW alternative full parent: real 2F9 x87/storm-source negative and true terminal GPR regressions:
+# Alternate F684 full parent: real 2F9 x87/storm-source negative and true terminal GPR regressions:
 scripts/repo-python scripts/verify-fighter-angle-storm-f684.py
 # Prior complete selected giant: real 2F8 storm negative and strictly matched 31B+31C:
 scripts/repo-python scripts/verify-fighter-storm-terminal-f681.py
@@ -289,7 +328,7 @@ come from live `config/functions.csv`):
 | Original full native function | Original whole CODE extent | Real remaining blocker and best direct source/PE evidence |
 | --- | ---: | --- |
 | `00602A60`, GameApplication::Run-like giant WinMain | **2,987 B**, 654 native x86, 123 calls, 60 separate afterRET DATA bytes | F528 C++ produced 2,981 B/654 x86 but wrong real EBP local ownership; F615 30 other complete native C++ source trials failed. [Real WinMain original CFG](WINMAIN_ORIGINAL_CONTROL_FLOW.md), [F615 true local lifetime negatives](WINMAIN_LOCAL_OBJECT_LAYOUT_F615.md). |
-| `0043B0B0`, scene/resource virtual destructor | **248 B**, 75 native x86, 12 PE/COFF refs | Normal VC7.1 **`/GX`** source matches **191/200 nonrelocation bytes**, not full CODE, because five original EBP local slot owners differ; F612/F632 many scope/type variants failed. [Actual source/PE lifetime](SCENE_DESTRUCTOR_POINTER_TYPES_F612.md), [F632 honest negative controls](DESTRUCTOR_FREE_ASSIGNMENT_F632.md). |
+| `0043B0B0`, scene/resource virtual destructor | **248 B**, 75 native x86, 12 PE/COFF refs | Normal VC7.1 **`/GX`** source matches **191/200 nonrelocation bytes**, not full CODE, because five original EBP local slot owners differ. F689 adds eight valid scoped-pointer negatives (189/200) and one valid nested-aggregate control (191/200); **do not** reuse its artificial unused-aggregate trial. [F689 source/COFF audit](CHARACTEROBJECT_SCENE_PHASE_NEGATIVES_F689_F693.md), [earlier source/PE lifetime](SCENE_DESTRUCTOR_POINTER_TYPES_F612.md). |
 | `0041CE50`, ArchiveCatalog nonvirtual destructor | **171 B**, 51 native x86, 14 PE/COFF refs | Normal **`/GX-`** C++ matches **108/115 nonrelocation bytes**, not full CODE; original filename, resource-delete and index temporaries have wrong EBP slots. F609 19 type/scope probes and later F643 14 used-variable lifetime controls failed; F660's seven additional early filename-lifetime C++ forms yield 108/115 or regress to 102/115. New F682/F683 tested **39 further complete actual original C++ source hypotheses**: 21 resource-named/reference forms emit 177/53 rather than 171/51, one resource cast stays 108/115, 14 genuine filename type/register forms remain 108/115, two filename references regress to 102/115 and one VC7.1 `__restrict` grammar fails. The original EBP resource/delete/filename assignment cycle remains unresolved. [F682/F683 new full-target negative evidence](ARCHIVE_RESOURCE_FILENAME_LIFETIMES_F682_F683.md), [F609 originals](ARCHIVE_DESTRUCTOR_SOURCE_TYPES_F609.md), [F660 earlier negatives](GIANT_REGISTER_AND_ARCHIVE_LIFETIME_NEGATIVES_F659_F660.md). |
 
 ```bash
@@ -330,7 +369,7 @@ original 73-byte `0061A453` derived destructor;
 [F688 EH negative](SDK_EH_DERIVED_DESTRUCTOR_NEGATIVE_F688.md).
 This cohort earns **zero accepted game-authored whole-function CODE**.
 
-Latest F655 seven **entire original registered native leaves**
+Historical F655 seven **entire original registered native leaves**
 (`004138D0`, `004169D0`, `0041F7F0`, `00540280`, `00441FD0`,
 `0045B630`, `00409490`) now match **73/73 original linked CODE bytes,
 43 entire x86, one physical original REL32** in only one newly compiled
