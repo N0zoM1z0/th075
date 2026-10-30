@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F743 native 19C/19E/1A0/1A1 full fighter source.**
+**Maintained 2026-10-30, after F744 complete 19A/19B source and genuine register-phase recovery.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -9,6 +9,36 @@ with its Markdown links adjusted for its new directory. The older
 [chronological knowledge base](KNOWLEDGE_BASE.md) are evidence, not a
 reason to undo later exact adoptions. Original pinned native PE and
 **live manifests outrank every historical sentence**.
+
+**F744 latest MAJOR whole-original giant source gain (still GAME NONEXACT):**
+Original 00543210 physical entire 19A **607B/166 x86/17 native
+PE/COFF fields** and 19B **607/166/17** now have meaningful
+normal VC7.1 C++ including real stage0 velocity scaling, ground
+collision, two original stage4/5 0x330 shots per action with
+signed ×35/27 directions, six-repeat count, original animation
+100/20, native Y globals and status callbacks. Both compile
+**exact original 607B + 166 mnemonic AND WIDTH positions**,
+and all **34 physical typed PE relocations** after genuine member
+Y lvalue fixes native `FLD ACTOR; FMUL [00657F74]` source
+ordinal 18/19 (prior first C++ put the FMUL global field on
+wrong FLD ordinal18). Source normalized GPR errors **0/0**.
+CRUCIAL fresh REAL compiler phase gain in SAME full parent:
+original previously source-backed 19C/19E/1A0/1A1 GPR
+**33/59/53/53→0/0/0/0**, and all 13 sampled complete original
+1F4/1F5, 1FA/1FB/1FE/1FF, 200/201, 2D0/2D1,
+2DD/2DE, 2EF GPR phases now **ZERO** with native x86-width
+geometry. Total **six consecutive whole internal game-case
+sources 2,416 original CODE B /666 native x86 /66 true typed
+PE/COFF fields** have original mnemonic+width and field layout,
+BUT real native EBP x87 `−0xB8..−0xD4` vs source `−0x88..−0xA4`,
+original saved this `−0x44` vs source `−0x3C`: giant still
+NONEXACT, ZERO new whole-game CODE credit. Native 199/19D/19F
+are shared real default 00551598, not separate functions.
+The entire original 943B afterRET switch DATA (156 actual
+native/source DIR32 targets, 319/319 sparse bytes) rechecked
+in THIS new whole parent. [Complete six-case native PE/COFF and
+EBP negatives](FIGHTER_DOUBLE_REPEAT_F744.md);
+`scripts/repo-python scripts/verify-fighter-double-repeat-f744.py`.
 
 **F743 latest substantial GIANT original-game source recovery (still NONEXACT):**
 Pinned original fighter `00543210` real 19C **218 native B/62 x86/

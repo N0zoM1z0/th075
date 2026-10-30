@@ -74,7 +74,8 @@ def source_with_repeat_shots(source):
     return source
 
 
-def verify_all_three_native(rd,pe,d,f676,f701,f598,by,ins,refs):
+def verify_all_three_native(rd,pe,d,f676,f701,f598,by,ins,refs,*,
+                            following_complete_19A=False):
     rows=[]
     for action in CASES:
         lo,hi,size,nx,nfields,source_size,start,scratch=NATIVE[action]
@@ -142,11 +143,16 @@ def verify_all_three_native(rd,pe,d,f676,f701,f598,by,ins,refs):
                 for ix,old,new in scratch],
            'normalized_nonfield_native_GPR_CFG_errors':0,
            'original_whole_game_function_byte_exact':False})
-    need(ins[5780].mnemonic=='mov' and ins[5898].mnemonic=='mov'
-         and ins[6016].mnemonic=='mov'
-         and ins[6078].mnemonic=='mov'
-         and ins[6078].op_str.endswith(', 0x19b'),
-         'real 196->197->198->19A original stage-source boundaries/next 19A placeholder changed')
+    need(all(ins[i].mnemonic=='mov' for i in (5780,5898,6016,6078)),
+         'original 196/197/198/19A source action start ordering changed')
+    if following_complete_19A:
+        need(ins[6078].op_str=='eax, dword ptr [ebp - 0x3c]'
+             and ins[6079].mnemonic=='movsx'
+             and ins[6079].op_str=='ecx, word ptr [eax + 0x62]',
+             'actual newly complete 19A source must directly follow original 198')
+    else:
+        need(ins[6078].op_str.endswith(', 0x19b'),
+             'old F740 whole parent must retain original 19A placeholder')
     return rows
 
 

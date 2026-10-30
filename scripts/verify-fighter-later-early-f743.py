@@ -96,10 +96,17 @@ def source_with_four(src):
     return src
 
 
-def verify_native_four(rd,pe,d,f676,f701,f598,by,ins,refs):
+def verify_native_four(rd,pe,d,f676,f701,f598,by,ins,refs,*,
+                       following_complete_19A_19B=False):
     rows=[]
     for action in CASES:
         lo,hi,nb,nx,nfields,start,gpr,mi,fi,old_slot,new_slot=ORIGINAL[action]
+        if following_complete_19A_19B:
+            # Two actually compiled source 166-x86 cases replace two prior
+            # placeholder 2-x86 markers: ordinal shift = 2*(166-2).
+            start+=328
+            gpr=0
+            new_slot=f'0x{int(new_slot,16)+0x10:x}'
         need(by[action]==lo and by[NEXT[action]]==hi and hi-lo==nb,
              f'original complete native physical PE handler bounds changed for {action:#x}')
         native=list(d.disasm(rd.pe_bytes_at(pe,lo,nb),lo))
@@ -161,9 +168,11 @@ def verify_native_four(rd,pe,d,f676,f701,f598,by,ins,refs):
             'original_real_used_x87_EBP_scratch':old_slot,
             'compiler_real_used_x87_EBP_scratch':new_slot,
             'native_internal_case_or_game_function_byte_exact':False})
+    source_shift=328 if following_complete_19A_19B else 0
     for k in (6082,6144,6248,6332,6416):
-        need(ins[k].mnemonic=='mov',f'original physical 19C/19E/1A0/1A1/1F4 source start shifted: x86{k}')
-    need(ins[6416].op_str.endswith('[ebp - 0x3c]'),
+        need(ins[k+source_shift].mnemonic=='mov',
+             f'original physical 19C/19E/1A0/1A1/1F4 source start shifted: x86{k+source_shift}')
+    need(ins[6416+source_shift].op_str.endswith('[ebp - 0x3c]'),
          'last native 1A1 C++ case must hand off to true original 1F4 source')
     return rows
 

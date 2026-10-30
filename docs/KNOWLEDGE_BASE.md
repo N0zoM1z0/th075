@@ -13445,3 +13445,38 @@ and 319/319 remaining sparse native bytes verified. No standalone
 original CODE credit, 964/863913 ledger unchanged, no mass replay.
 [True full PE and original compiler negatives](FIGHTER_LATER_EARLY_F743.md),
 `scripts/repo-python scripts/verify-fighter-later-early-f743.py`.
+
+
+## F744: full native 19A/19B repeat volleys repair true FMUL field owner and multiple giant GPR phases
+
+Complete native 00543210 whole physical original 19A `00549D5C..
+00549FBB` and 19B `00549FBB..0054A21A` each **607 CODE B/
+166 x86/17 real typed original PE/COFF fields** now source-backed
+C++ inside ONE complete VC7.1 giant. Both have authentic stage0
+float velocity scaling, real ground/drop/escape state, and
+stage4/stage5 kind0x330 signed ×35/×27 two real shot volleys;
+real Y globals 659A24/659A20, native signed six-repeat gate,
+100/20 animation and auxiliary4. First original-shaped C++
+compiled wrong `FLD GLOBAL; FMUL ACTOR` second velocity scale:
+true PE `DIR32` global at native original ordinal **19 FMUL**
+was on source ordinal18 FLD despite correct total CODE size.
+A real `*(&POS54)` lvalue naturally restores original `FLD ACTOR;
+FMUL 657F74`, genuine physical original field ownership. BOTH
+entire native actions now match original **607 B/166 ordered
+opcode AND WIDTH/17 true typed fields** and **0 normalized GPR
+errors**. Addition of real prior source also recovers GPR
+**33/59/53/53→0** in 19C/19E/1A0/1A1 and zero errors in
+13 further physically checked original 1F4/1F5/1FA..2EF
+source contexts. Six consecutive sourced inner actions now
+**2,416 native CODE B/666 x86/66 original physical typed PE
+references** with authentic geometry in same full parent.
+BUT x87 EBP real original `−0xB8..−0xD4` vs compiler
+`−0x88..−0xA4`, saved this native `−0x44` vs generated
+`−0x3C` persist. NONE standalone game or full 58KB giant
+byte-exact, no new formal CODE credit. Original 199/19D/19F
+shared default 00551598, not new functions. Entire 943B native
+postRET DATA, all 156 physical DIR32 instruction targets and
+319/319 sparse bytes verified. [Full F744 PE/COFF and native
+compiler-phase evidence](FIGHTER_DOUBLE_REPEAT_F744.md),
+`scripts/repo-python scripts/verify-fighter-double-repeat-f744.py`.
+964/863913 formal authored whole exact unchanged, no full replay.
