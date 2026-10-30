@@ -967,3 +967,4 @@ GameProgressClearF745::ClearUnlockBit,0x00416D50,function
 BackgroundCountersF746::AdvanceBG05bCounters,0x0044E8D0,function
 CharacterAuxFrameF750::RefreshSelectedFrame,0x005FAC60,function
 AudioStreamClientF753::AudioStreamClientF753,0x004071C0,function
+AudioStreamClientF755::~AudioStreamClientF755,0x00407270,function

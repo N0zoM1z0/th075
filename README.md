@@ -8,7 +8,7 @@ ordinary C++, using the actual pinned VC7.1 compiler and comparing full native
 PE CODE plus genuine physical COFF relocations. **This is not a complete
 playable game or an officially verified distribution rebuild.**
 
-## Current verified snapshot (2026-10-30, F753 exact ledger; F754 maintenance)
+## Current verified snapshot (2026-10-30, F755 exact ledger; F754 maintenance)
 
 | Property | Verified value |
 | --- | --- |
@@ -18,24 +18,25 @@ playable game or an officially verified distribution rebuild.**
 | MD5 | `21bcb855a39f2170195811e6ad292f18` |
 | Provisional native candidates | **4,351** |
 | Independently origin-reviewed authored candidates | **1,004** |
-| Source-present / whole-byte-exact units | **968 / 968** |
-| Accepted original CODE | **864,380** bytes |
-| Reviewed authored coverage | **43.79%** of **1,973,704** original bytes |
-| Conservative authored coverage | **43.72%**, including **3,420** provenance-pending bytes |
-| **Authored not exact** | **36** total: **22** large original state advances (**1,102,055 CODE B**) and **14** small/medium functions (**7,269 CODE B**) |
+| Source-present / whole-byte-exact units | **969 / 969** |
+| Accepted original CODE | **864,672** bytes |
+| Reviewed authored coverage | **43.81%** of **1,973,704** original bytes |
+| Conservative authored coverage | **43.73%**, including **3,420** provenance-pending bytes |
+| **Authored not exact** | **35** total: **22** large original state advances (**1,102,055 CODE B**) and **13** small/medium functions (**6,977 CODE B**) |
 | Independently unknown origin | **95** candidates; **3,420** CODE B uncredited |
 
 **The 98% authored-byte objective is NOT achieved.** The old claim that
 only **25** authored functions remained is incomplete: it counted only
 `config/functions.csv.owner=authored` pending rows and missed **11**
-additional candidates whose authorship was already determined in
-`config/function-origins.csv`. Those 11 are not accepted exact and must
+other independently authored original candidates. F755 has now accepted one
+of those 11, leaving **10** nonexact; their provenance was already recorded
+in `config/function-origins.csv`. Those 10 are not accepted exact and must
 remain on the small/medium task queue. The original PE, independent
 origin ledger, canonical full-function match records and live status
 scripts are more authoritative than historical F-series prose.
 
 Read [the short **current agent handoff**](docs/RE_HANDOFF.md) for the
-full 36-function original-authored backlog, native source checkpoints
+full 35-function original-authored backlog, native source checkpoints
 and targeted compiler commands. The previous 1,289-line handoff is
 preserved [as a frozen F653–F753 historical archive](docs/history/RE_HANDOFF_F653_THROUGH_F753_2026-10-30.md),
 with all local links updated. The [chronological knowledge base](docs/KNOWLEDGE_BASE.md)
@@ -55,8 +56,8 @@ credit. The `004EBDA0` 33,293-B original state-advance still has 137
 real nonfield register-phase byte differences despite correct whole
 opcode widths and 682 real typed fields.
 
-The **14 unmatched small/medium authored originals** include SpriteDrawing
-(6), AudioStream (3), TextureManager (2), and WinMain/Scene/Archive (3).
+The **13 unmatched small/medium authored originals** include SpriteDrawing
+(6), AudioStream (2), TextureManager (2), and WinMain/Scene/Archive (3).
 They are fully enumerated in the [active handoff](docs/RE_HANDOFF.md).
 For example `0040CA20` has real 92-B/34-x86 projected-quad source but
 still differs in the original used local-copy stack frame; do not call
@@ -64,6 +65,9 @@ that source exact. Recently accepted complete original AudioStream
 constructor `004071C0` is already **161-B cold exact** with its 18
 real COFF fields and separately verified EH handler/unwind data,
 which is not double-counted ([F753](docs/AUDIO_STREAM_CLIENT_ACQUIRE_F753.md)).
+The paired audio client release/destructor `00407270` is now **292-B
+whole-function cold exact**, with 24 authentic physical relocations
+([F755](docs/AUDIO_STREAM_CLIENT_RELEASE_F755.md)).
 
 ## Begin a safe reconstruction session
 

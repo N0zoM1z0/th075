@@ -17,7 +17,7 @@ the historical R268 checkpoint and every later verified adoption. The 95
 unresolved origins remain unknown; they do not block reconstruction of
 independently reviewed authored functions. Include all pending bytes in the conservative goal denominator.
 For the still-unmatched authored backlog, count provenance via
-`config/function-origins.csv` (currently 36 = 22 giant + 14
+`config/function-origins.csv` (currently 35 = 22 giant + 13
 small/medium), NOT only the 25 rows with `functions.csv.owner=authored`.
 Leaving the other 11 `functions.csv` owner cells blank until source
 acceptance is intentional; it does not make their origin unknown.

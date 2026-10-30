@@ -924,3 +924,4 @@ address,name,module,confidence,evidence
 0x00425130,GameProgress::IncrementSelectedRecordAt00425130,GameProgress,inferred,"F535; whole original 92 CODE/24 instructions, native postfix signed 2D stride increment, zero COFF fields, changed-only 1/1 cold exact"
 0x00455770,CombatCoordinateView::MapWorldToScreenAt00455770,CombatCoordinateView,inferred,"F536; complete native two-axis game transform, full 111 CODE and cold exact; owner/name provisional, no native callers"
 0x0041CA30,FontSurface::IsDoubleByteAt0041CA30,FontSurface,inferred,"F555; full original 77 CODE cold exact; only original caller 0041C9D0, 28 native insns, 0 COFF; original class identity and vendor provenance provisional"
+0x00407270,AudioStreamClientF755::~AudioStreamClientF755,AudioStream,inferred,"R015; F755; complete authored original 292 CODE, 82 x86, 24 native typed PE relocations and 1/1 cold replay; owner/name provisional"

@@ -966,3 +966,4 @@ GameProgressClearF745::ClearUnlockBit
 BackgroundCountersF746::AdvanceBG05bCounters
 CharacterAuxFrameF750::RefreshSelectedFrame
 AudioStreamClientF753::AudioStreamClientF753
+AudioStreamClientF755::~AudioStreamClientF755

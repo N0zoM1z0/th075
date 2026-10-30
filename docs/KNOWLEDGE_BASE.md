@@ -15,16 +15,16 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
 
 ## Current verified original-game status (one short snapshot)
 
-- **968 cold-exact source-present functions**, **864,380 original authored
-  CODE bytes**, **43.79% reviewed authored coverage** and **43.72%
+- **969 cold-exact source-present functions**, **864,672 original authored
+  CODE bytes**, **43.81% reviewed authored coverage** and **43.73%
   conservative coverage** of native original CODE. The independently
   reviewed authored provenance cohort has **1,004** candidates, so
-  **36 authored whole functions remain NONEXACT**: **22** large
-  (1,102,055 original CODE B) plus **14** small/medium
-  (7,269 CODE B). The older **25**-function subset counted only
+  **35 authored whole functions remain NONEXACT**: **22** large
+  (1,102,055 original CODE B) plus **13** small/medium
+  (6,977 CODE B). The older **25**-function subset counted only
   `config/functions.csv.owner=authored` unfinished rows and omitted
-  11 independently authored, still owner-blank small/medium targets.
-  See [all 14 concrete original addresses](RE_HANDOFF.md).
+  11 independently authored, formerly owner-blank small/medium targets,
+  of which F755 has now accepted one. See [all 13 current addresses](RE_HANDOFF.md).
 - **95 original candidates /3,420 CODE bytes** have separately
   unresolved provenance; even a whole byte-exact C++ source does not
   permit reclassification or accepted authored CODE without independent
@@ -41,8 +41,11 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   These are still *internal switch-case source, NOT accepted whole
   game-function CODE*. Source 059 and 060/061 GPR differences remain.
   Reproduce from [F752 native/PE proof](FIGHTER_BORROWED_POSITION_F752.md).
-- **The currently most recent exact whole function is F753**, original
-  R015-authored AudioStream `004071C0` 161 B/42 x86/18 original COFF
+- **The currently most recent exact whole function is F755**, original
+  R015-authored audio client destructor `00407270` with **292 CODE B / 82
+  native x86 / 24 physical PE relocations** and one-unit cold replay.
+  [F755 whole original proof](AUDIO_STREAM_CLIENT_RELEASE_F755.md). Paired F753
+  original R015-authored AudioStream `004071C0` 161 B/42 x86/18 original COFF
   fields with true `/GX` EH lifetime and independently checked
   cleanup/unwind carriers. [F753 whole original proof](AUDIO_STREAM_CLIENT_ACQUIRE_F753.md).
 - Historical accepted targets such as F339 archive, F326 replay, F319
@@ -13609,3 +13612,28 @@ game-authored evidence unchanged. Formal exact ledger
 **967→968 original authored entire functions, 864,219→864,380
 CODE B, reviewed 43.79%, conservative 43.71→43.72%**; no
 mass cold replay. [Actual original PE EH/COFF receipt and unit](AUDIO_STREAM_CLIENT_ACQUIRE_F753.md).
+
+
+## F755: complete original authored AudioStream client 00407270 cold-exact
+
+Original R015-authored `00407270..00407393` contains **292 whole CODE B,
+82 original native x86 and 24 genuine typed original PE/COFF relocations**.
+Fresh ordinary VC7.1 `/GX` C++ destructor `AudioStreamClientF755` embeds the
+observed 16-byte vector member (paired to F753 ctor `004071C0`), decrements
+the true shared audio refcount, stops the shared worker and closes two real
+Win32 handles, and performs all original vector element COM `Stop`,
+`Release`, slot nulling, clear and destruction operations. The separate
+`00409740` global cleanup callee is already classified R077 VC7 STL, not
+new authored CODE. Replacing two explicit pointer locals with direct
+`At(index)->Stop()` and `At(index)->Release()` restores **11** genuine
+compiler temporary/register stack bytes; native whole **196/196**
+nonfield CODE bytes, **24/24** physical relocation offsets/type/symbol
+/zero-addend/PE destinations and full **292/292** original CODE exact.
+One new cold build: `scripts/repo-python scripts/replay-exact-units.py
+--unit audio-stream-client-release-00407270` → **1/1 exact**; no all-unit
+replay. Explicit borrowed global C++ destructor syntax was tested but
+produced 294 source bytes (negative); the accepted 292-byte source uses
+a normal borrowed cleanup interface, not a guessed full private owner.
+Official 968→**969** original complete authored matches,
+864,380→**864,672** CODE B, reviewed **43.81%**, conservative **43.73%**.
+See [full F755 physical proof](AUDIO_STREAM_CLIENT_RELEASE_F755.md).
