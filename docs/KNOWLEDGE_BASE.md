@@ -250,6 +250,25 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   slots remain wrong. No
   accepted whole CODE.
   [F864 physical proof](SCENE_THREE_REAL_NAMED_POINTERS_F864.md).
+- **F864 independently callable Scene 248B destructor, three real named free pointer locals:**
+  twelve complete VC7.1 source
+  candidates: original 248B/
+  75-x86/12 physical PE fields
+  preserved in ten cases.
+  Actual aggregate 191/200
+  native nonrelocation bytes;
+  nine truly independent named
+  pointer sources are WORSE
+  at 189/200 despite natural
+  release-order and declaration
+  changes. Real branch pointer
+  references/member-address
+  sources grow to 254B/78-x86.
+  Original texture/delete EBP
+  -0x14/-0x10 slots remain
+  unrecovered. No standalone
+  original exact CODE credit.
+  [F864 strict native Scene proof](SCENE_THREE_REAL_NAMED_RELEASE_F864.md).
 - **F863 actual 19C/19E short state pair in one giant parent:**
   two distinct original
   122B/35-x86/3-PE-call

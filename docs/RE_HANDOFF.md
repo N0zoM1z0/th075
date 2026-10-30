@@ -2118,6 +2118,29 @@ locals or whole exact credit.
 [F864 native Scene named pointer proof](SCENE_THREE_REAL_NAMED_POINTERS_F864.md);
 scripts/repo-python scripts/verify-scene-three-named-release-f864.py.
 
+**F864 real independent Scene destructor's actual three named CRT-free locals:**
+twelve complete original 248B Scene
+normal VC7.1 /Od /GX source controls
+test **three separate genuinely used
+freed-pointer locals** (+4C/+50/+54),
+declaration order/before clock/texture/
+branch, register/volatile, plus actual
+pointer references/member address sources.
+Ten emit full **248B/75 x86/12 genuine
+physical original PE fields**; original
+three-field aggregate matches 191/200
+nonrelocation bytes, NINE separately
+named real-value C++ alternatives
+worsen to **189/200**. Two real
+borrowed branch aliases emit
+**254B/78 x86/12 refs** and fail
+the original full extent. Texture/
+delete original EBP -0x14/-0x10
+remain wrong, no fabricated locals,
+no newly credited whole exact CODE.
+[F864 original Scene physical control](SCENE_THREE_REAL_NAMED_RELEASE_F864.md);
+scripts/repo-python scripts/verify-scene-three-named-release-f864.py.
+
 ## 4. Attribution, validation, research and storage
 
 - **Original authored ≠ compiler/library ≠ unknown**. The 95 unknown
