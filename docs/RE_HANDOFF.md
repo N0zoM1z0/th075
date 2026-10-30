@@ -532,6 +532,36 @@ still NONEXACT, no original inner CODE credited.
 [F810 full PE/VC7.1 proof](SCRIPTED_FIGHTER_BOUNCE_GPR_PHASE_F810.md);
 `scripts/repo-python scripts/verify-scripted-fighter-bounce-shared-f810.py`.
 
+**F811 further 46KB scripted giant source recovered real original `0x4C`:**
+tracked original F613 0x4C game recovery
+(**285 native B/74 x86/14 genuine typed
+PE/COFF fields**) was integrated with
+all prior 28 source-backed original
+action cases and F806's true 46B
+fallback/shared getter in a **single
+freshly compiled source parent**.
+Source CODE expands **8,571→8,841 B**,
+x86 **2,134→2,206**; entire 901B
+native afterRET packed switch table,
+three real default PE calls and four
+early original getter JMP positions
+rechecked. **Third native-default
+register-phase observed:** adding
+real 0x4C rotates source GPR
+roles from F810 EAX/ECX/EDX to
+F811 ECX/EDX/EAX; original
+default remains EDX/EAX/ECX.
+Four genuine GPR bytes
+`10/12/16/19` and four real
+saved-this EBP bytes `2/13/26/36`
+still differ, despite exact
+46B/16-x86 local CFG/mnemonic/width.
+Never transfer old parent GPR
+claims into a new parent.
+[Original complete source/PE F811 evidence](SCRIPTED_FIGHTER_RECOVERY_GPR_PHASE_F811.md);
+`scripts/repo-python scripts/verify-scripted-fighter-recovery-shared-f811.py`.
+Still NOT full native 46,755-B exact.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin

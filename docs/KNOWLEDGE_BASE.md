@@ -198,6 +198,24 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   matched after all 14 original PE refs checked.
   None accepted exact.
   [F798 full native teardown evidence](ARCHIVE_NATIVE_LOOP_TEARDOWN_F798.md).
+- **F811 scripted 46KB giant recovery next-case/third GPR phase:**
+  full original 285B/74-x86/14-native-PE-field
+  0x4C recovery source now follows the complete
+  original 0x4A and 28 earlier source-backed
+  fighter actions in ONE fresh full VC7.1
+  parent. Generated CODE grows
+  **8,571→8,841 B**, x86 2,134→2,206,
+  with genuine F806 46B shared tail,
+  three true PE calls, four early getter
+  xrefs and 901B packed table rechecked.
+  Real 0x4C source rotates default GPR
+  from EAX/ECX/EDX to ECX/EDX/EAX
+  (original EDX/EAX/ECX); only
+  four GPR bytes and four honest
+  saved-this EBP bytes are wrong in
+  the suffix, no artificial register
+  forcing or accepted giant credit.
+  [F811 real native PE/state proof](SCRIPTED_FIGHTER_RECOVERY_GPR_PHASE_F811.md).
 - **F810 46KB giant actual bounce action0x4A and GPR phase:**
   fresh whole `005214B0` source integrates
   complete real 434B/119-x86/19-PE-field
