@@ -348,6 +348,24 @@ no authored callable CODE credited.
 [F801 physical native/typed-view proof](FIGHTER_BORROWED_ACTION_HISTORY_F801.md);
 `scripts/repo-python scripts/verify-fighter-native-borrowed-action-f801.py`.
 
+**F803 entire-parent default-guard GPR experiment:**
+15 whole 58KB native-shaped VC7.1 sources varied
+the true `00551598` fallback getter/stage
+comparison and borrowed `+0x70` typing.
+Nine emit **identical entire 59,236-B CODE+DATA
+sections and all 1,863 COFF relocation shapes**,
+retaining the genuine wrong native GPR operand
+bytes at fallback offsets **10/12/16/19**.
+Six alternatives move real branch/control
+instructions, source bytes or reference counts
+and cannot be accepted as native exact.
+All original 46-B shared tail true PE calls
+reverified, plus earlier 058/059/060/061/063
+and 943B original afterRET table in baseline.
+[F803 true original default guard study](FIGHTER_SHARED_DEFAULT_GRAMMAR_F803.md);
+`scripts/repo-python scripts/verify-fighter-default-source-grammar-f803.py`.
+No callable exact CODE.
+
 **Next meaningful giant tasks:** resolve the real native `059` **19**
 normalized nonfield GPR discrepancies and `060/061` **98/101**;
 recheck *in the next newly compiled entire parent* (do not inherit

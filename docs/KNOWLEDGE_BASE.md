@@ -198,6 +198,17 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   matched after all 14 original PE refs checked.
   None accepted exact.
   [F798 full native teardown evidence](ARCHIVE_NATIVE_LOOP_TEARDOWN_F798.md).
+- **F803 58KB shared default guard source grammar:** 15
+  independent entire `00543210` native parent VC7.1
+  compiles test true fallback getter/stage comparison.
+  Nine are whole **59,236-B CODE+DATA and 1,863
+  physical COFF field byte-identical** with the current
+  source but retain four original wrong GPR bytes
+  in the authentic 32B/10-x86 guard. Six other
+  variants change genuine native control/size; all
+  original 46B tail PE calls reverified. Zero
+  original whole exact game CODE earned.
+  [F803 original native fallback proof](FIGHTER_SHARED_DEFAULT_GRAMMAR_F803.md).
 - **F802 33KB giant physical-relocation pitfall:** 22
   whole native-shaped VC7.1 stage-four grammar source builds;
   17 preserve all original **682** physical PE fields and
