@@ -924,6 +924,18 @@ historical authored-vs-library ownership remain
 [F805 complete native PE evidence](UNKNOWN_DWORD_RESET_NATIVE_F805.md);
 `scripts/repo-python scripts/verify-unknown-native-dword-reset-f805.py`.
 
+**F818 Scene actual borrowed owner-fields original PE negative proof:**
+seven whole original 0043B0B0 normal VC7.1 destructor builds
+check typed texture +8 and three genuine CRT-free pointers
++0x4C/+0x50/+0x54. Direct typed views produce identical
+248-B/75-x86/12-PE-field source COFF to raw accesses
+and still 191/200 original nonfield B, with nine actual
+EBP stack differences. A named *used* reference/pointer
+produces nonnative 254 B/77 x86 and deeper saved this.
+No original historical owner invented or accepted CODE.
+[F818 native Scene whole-source result](SCENE_BORROWED_OWNER_FIELDS_F818.md);
+scripts/repo-python scripts/verify-scene-borrowed-owner-f818.py.
+
 ## 4. Attribution, validation, research and storage
 
 - **Original authored ≠ compiler/library ≠ unknown**. The 95 unknown

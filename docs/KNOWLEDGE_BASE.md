@@ -214,6 +214,16 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   saved-this slot. Entire 248B remains
   nonexact, no credited original CODE.
   [F818 original PE typed-view result](SCENE_COMPLETE_BORROWED_OWNER_F818.md).
+- **F818 original Scene typed borrowed owner fields do not fix stack:**
+  seven complete authored 248-B destructor builds.
+  Actual typed borrowed texture this+8 and CRT-free
+  pointer fields +4C/+50/+54 produce whole CODE and
+  12 original PE fields identical to raw source,
+  still 191/200 nonrelocation native bytes.
+  Naming a truly used view adds two instructions,
+  254 B/77 x86, with wrong saved-this frame.
+  No new callable exact credit.
+  [F818 whole native proof](SCENE_BORROWED_OWNER_FIELDS_F818.md).
 - **F817 real fighter case0x62 changes downstream native default registers:**
   actual 249B/65-x86/4 authentic PE-field
   resource selector source joins the same
