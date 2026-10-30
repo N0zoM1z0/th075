@@ -12823,3 +12823,28 @@ afterRET DATA bytes were rechecked.
 [F718 entire original PE/source and physical EBP evidence](FIGHTER_DOUBLE_VOLLEY_F718.md).
 `scripts/repo-python scripts/verify-fighter-double-volley-f718.py`.
 Whole authored exact ledger unchanged at 943/862726, no cold all-unit replay.
+
+
+## F719: original 171-byte ArchiveCatalog, used loop-local filename before delete NEGATIVES
+
+Original native authored `0041CE50` full destructor has **171 B/51
+x86/14 original physical typed PE/COFF fields**, with actual resource,
+scalar delete receiver and freed filename EBP scratch
+`−0xC/−8/−0x10`, whereas selected natural C++ emits
+`−0x10/−0xC/−8` and matches only **108/115** real nonfield bytes.
+F719 freshly compiled **12 additional entire native-profile VC7.1
+C++ source variants** focused on *inside-loop* actual filename
+lifetime (declared **before** `delete`, but assigned/freed after),
+nested real scope, volatile real pointer, resource named-local or
+actual pointer-to-pointer entry. Four meaningful candidate variants
+retain **171 B/51 x86/14 real COFF fields and the identical seven
+physical EBP byte differences**, six with actually used named resource
+or entry pointer become **177 B/53 x86/14 fields**, one real
+zero-initialized pointer becomes **178/52**, and an *extra real null
+lookup* control (not semantically original) becomes **189/57/16**.
+None fixes native three-way compiler temporary allocation or gains
+whole-function exactness. Tracked portable selected native-source
+verifier `scripts/verify-archive-loop-local-lifetimes-f719.py`
+supports `--case` and `--all` **only twelve affected source TUs**.
+[Actual entire PE/compiler and original stack negative](ARCHIVE_LOOP_LOCAL_LIFETIME_F719.md).
+No all-unit cold replay; authored exact 943/862726 unchanged.

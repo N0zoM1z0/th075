@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F718 full fighter double-volley restoration.**
+**Maintained 2026-10-30, after F718 fighter double-volley and F719 archive loop lifetime controls.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -9,6 +9,20 @@ with its Markdown links adjusted for its new directory. The older
 [chronological knowledge base](KNOWLEDGE_BASE.md) are evidence, not a
 reason to undo later exact adoptions. Original pinned native PE and
 **live manifests outrank every historical sentence**.
+
+**F719 latest full small-function negatives:** original authored
+`0041CE50` **171 B/51 x86/14 real PE/COFF fields** was investigated
+with **12 new full VC7.1 destructor source variants**, importantly
+checking the actual used filename declared *before* delete INSIDE
+the loop but assigned/freed after. Four real 171/51/14 variants
+still match only **108/115** native nonrelocation bytes (original
+EBP scratch `−0xC/−8/−0x10` vs source `−0x10/−0xC/−8`). Six
+real resource local/entry pointer variants emit 177/53, one name
+initialized prior delete emits 178/52, and an extra, behaviorally
+different null lookup produces 189/57. No exact whole function.
+Portable original PE/COFF checker:
+`scripts/repo-python scripts/verify-archive-loop-local-lifetimes-f719.py --case name-declared-before-delete`.
+[All 12 complete small native/source controls](ARCHIVE_LOOP_LOCAL_LIFETIME_F719.md).
 
 **F718 latest large-boss source recovery (still NONSTRICT):**
 Real original `00543210` actions `2DD` **680 native B/189 x86/19
