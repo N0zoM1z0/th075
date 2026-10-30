@@ -131,7 +131,8 @@ class _SavedReceiverDecoder:
             yield _SavedReceiverInsn(insn) if address==0 else insn
 
 
-def verify_prior_parent_context(reader,pe,real,boss,report,mapped,code,refs,m,h):
+def verify_prior_parent_context(reader,pe,real,boss,report,mapped,code,refs,m,h,*,
+                                expected_receiver_uses=2393, following_native_2fa=False):
     """Recheck the *same* newly compiled complete parent and after-RET DATA.
 
     The authentic native frame slot is EBP-44. Only source `this` MOVs
@@ -148,7 +149,7 @@ def verify_prior_parent_context(reader,pe,real,boss,report,mapped,code,refs,m,h)
              'eax, dword ptr [ebp - 0x18]',
              'ecx, dword ptr [ebp - 0x18]',
              'edx, dword ptr [ebp - 0x18]'}
-    need(len(uses)==2393 and {x.op_str for x in uses}==allowed
+    need(len(uses)==expected_receiver_uses and {x.op_str for x in uses}==allowed
          and sum(x.op_str=='dword ptr [ebp - 0x18], ecx' for x in uses)==1
          and all(x.mnemonic=='mov' for x in uses)
          and ins[3].op_str=='dword ptr [ebp - 0x18], ecx'
@@ -197,7 +198,8 @@ def verify_prior_parent_context(reader,pe,real,boss,report,mapped,code,refs,m,h)
     # scratch slots by four bytes; check each original operand unchanged.
     f684.SLOTS={i:(native, f'0x{int(source,16)+4:x}')
                 for i,(native,source) in f684.SLOTS.items()}
-    negative2f9=f684.verify_negative(decoder,native2f9,code,refs,idx+252,shared,h)
+    negative2f9=f684.verify_negative(decoder,native2f9,code,refs,idx+252,shared,h,
+                                        following_native_2fa=following_native_2fa)
     negative31b=f684.verify_terminal_negative(decoder,code,refs,n31b,shared,h,
                                                 m['f681'],m['f674'])
     need((len(p653),len(p654),len(p656),len(p657),len(p664),len(p668),len(p669))

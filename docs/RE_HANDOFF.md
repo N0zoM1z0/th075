@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F696 whole-boss action 2FB reconstruction.**
+**Maintained 2026-10-30, after F699 whole-boss action 2FA reconstruction.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -134,6 +134,24 @@ source must always be compiled in the **fresh complete original
 parent C++ translation unit** and its preceding cases + entire jump
 DATA rechecked. [Full original dispatch fingerprint JSON](../config/fighter-boss-dispatch-fingerprints.json),
 [original fighter family dispatch](FIGHTER_BOSS_FAMILY_DISPATCH.md).
+
+**F699 latest whole-boss result (NONSTRICT):** native real `00543210`
+internal action `0x2FA` (`005509CC`–`00550D97`) now has complete
+**971 original CODE B/279 x86/31 actual typed original PE/COFF fields**
+reconstructed as meaningful natural C++ in **one freshly compiled
+original-shaped 58KB parent**. Source emits **973 B/281 x86**, matches
+**31/31 physical typed native references**, but two original `FCOMP`
+operations become `FLD`+`FCOMPP`, three JP/JNE branches, the original
+`EBP-0x1F8` float conversion scratch and GPR/operand evaluation remain
+NONEXACT. Eleven additional actual compiler variants did not solve
+those differences. The added source changes downstream original `2FB`
+from compiled **635 to 641 B** but retains **181 x86/17 authentic
+references**. All preceding **27 contextual strict nonterminal case
+bodies** and separate full **943-B afterRET switch DATA** were rechecked
+in the **same** new parent; terminal 31B/31C still negative. Full giant
+remains NONEXACT and formal whole-function coverage unchanged.
+[F699 original/native evidence](FIGHTER_APPROACH_VOLLEY_F699.md);
+`scripts/repo-python scripts/verify-fighter-approach-volley-f699.py`.
 
 **F696 next whole-boss result (NONSTRICT):** original full physical
 `00543210` action `0x2FB`, native `00550D97`–`0055101E`, now has

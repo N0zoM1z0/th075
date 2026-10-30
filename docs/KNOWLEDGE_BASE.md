@@ -12490,3 +12490,31 @@ reproducible ignored local scripts and original objects in
 `.analysis/f697-archive-aggregate-lifetime/` and
 `.analysis/f698-archive-return-reference/` remain saved. No exact
 credit, no full cold replay.
+
+
+## F699: full native 2FA approach/volley source recovered in the authentic 58KB boss parent
+
+Native original `005509CC`–`00550D97` is a complete **971-byte /279-x86 /
+31-typed-PE/COFF-field** internal action inside giant `00543210`. New
+normal C++ genuinely models contact/position/facing gates, original
+`00412D90` absolute-value distance and `00454EE0` contact calls,
+randomized direction, actual `0x7D`/`0x7E` projectile calls and original
+stage continuation. In the **new full original-shaped VC7.1 giant**,
+[`FighterApproachVolleyF699.inc`](../probes/FighterApproachVolleyF699.inc)
+emits **281 x86/973 B**, with **31/31 authentic original typed physical
+field references**. Two original memory `FCOMP` sites become `FLD` +
+`FCOMPP` pairs (two extra instructions, two bytes), real JP/JNE and
+operand evaluation differences persist, native `EBP-0x1F8` scratch
+emits at compiler `EBP-0x7C`: **NONSTRICT**. Eleven additional complete
+compiler source variants did not fix those; a Wine-reset candidate
+has no valid comparison evidence.
+
+New upstream source changes F696 downstream real `2FB` from **635 to
+641 compiled B** while keeping its 181 x86/17 original fields; the
+actual prior 27 strict nonterminal case bodies and complete original
+943-byte after-RET switch DATA were freshly rechecked in the new parent.
+F684 verification now explicitly supports a real following source `2FA`,
+not just its original placeholder. [Actual physical original evidence
+and source-context negative proof](FIGHTER_APPROACH_VOLLEY_F699.md).
+Reproduce with `scripts/repo-python scripts/verify-fighter-approach-volley-f699.py`.
+**Zero new independent whole-function accepted CODE; 943/862,726 unchanged.**

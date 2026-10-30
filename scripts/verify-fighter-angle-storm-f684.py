@@ -166,7 +166,7 @@ def authenticate_saved_this(real,reader,pe,code):
             'machine_code_bytes_patched':0}
 
 
-def verify_negative(source_decoder,original,code,refs,start,shared,h):
+def verify_negative(source_decoder,original,code,refs,start,shared,h,*,following_native_2fa=False):
     ins=[]
     for x in source_decoder.disasm(code,0):
         ins.append(x)
@@ -217,9 +217,16 @@ def verify_negative(source_decoder,original,code,refs,start,shared,h):
     wrong=[(i,a,b) for i,(a,b) in enumerate(zip(lhs,rhs)) if a!=b and i not in absolute_fields]
     need(len(wrong)==236 and wrong[0][0]==5,
          f'2F9 has genuine nonfield GPR/x87 phase differences; never promote to strict: {len(wrong)} {wrong[:5]}')
-    need(ins[start+ORIGINAL_X86].mnemonic=='mov'
-         and ins[start+ORIGINAL_X86].op_str.endswith(', 0x2fb'),
-         'whole original native 2F9 must end at genuine following 2FA source marker')
+    if following_native_2fa:
+        # Real F699 source now follows 2F9, rather than a placeholder.
+        # The entire native 2FA begins with a genuine saved-this reload.
+        need(ins[start+ORIGINAL_X86].mnemonic=='mov'
+             and ins[start+ORIGINAL_X86].op_str=='edx, dword ptr [ebp - 8]',
+             'whole original native 2F9 must lead directly into the real source-backed 2FA handler')
+    else:
+        need(ins[start+ORIGINAL_X86].mnemonic=='mov'
+             and ins[start+ORIGINAL_X86].op_str.endswith(', 0x2fb'),
+             'whole original native 2F9 must end at genuine following 2FA source marker')
     return {'actual_original_native_action':'0x2F9',
             'original_entire_PE_case_start':f'0x{lo:08X}',
             'original_physical_next_native_handler':f'0x{hi:08X}',
