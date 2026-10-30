@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F741 two nested-record authored complete EH functions cold-exact.**
+**Maintained 2026-10-30, after F742 authored 60-byte InputMapping native initializer cold-exact.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -9,6 +9,24 @@ with its Markdown links adjusted for its new directory. The older
 [chronological knowledge base](KNOWLEDGE_BASE.md) are evidence, not a
 reason to undo later exact adoptions. Original pinned native PE and
 **live manifests outrank every historical sentence**.
+
+**F742 newest canonical whole authored 60B InputMapping initializer COLD EXACT:**
+Native original authored R015 `00406DB0` complete **60 CODE B/
+24 x86/3 physically typed original REL32 fields** now rebuilt
+naturally with pinned VC7.1: real `InputResourceClient` ctor
+at `00403B90` on unchanged `this`, then actual `memset` 28B at
+`this+0x2C` and 40B at `this+4`, original thiscall RET. Exactly
+**48/48 native nonfield bytes and three native field destinations**
+match, with a new one-unit-only canonical **1/1 COLD EXACT**.
+The first 4 original object-storage bytes are represented because
+the shared InputResourceClient header intentionally omits its
+historical complete private layout; no fabricated EBP local or
+newly credited CRT/base callee CODE. Original R015 provenance
+preserved. Formal accepted **964 whole authored exact functions,
+863,913 original CODE B (43.77% reviewed, 43.70% conservative)**.
+22 giants and three other owned WinMain/Scene/Archive remain
+whole-function NONEXACT. No 963-unit mass cold replay.
+[Full original PE/COFF and native member layout](INPUT_MAPPING_INIT_NATIVE_F742.md).
 
 **F741 newest TWO nested record lifetime authored whole functions COLD EXACT:**
 Previously R210-authored original `004587E0` **145 CODE B/41 x86/
@@ -625,8 +643,8 @@ but not whole original CODE. [Full physical negative matrix](WINMAIN_USED_OBJECT
 | Item | Authoritative snapshot; recheck live manifests on every new session |
 | --- | --- |
 | Original game | User-supplied Japanese TH075 ver1.11 `resources/th075.exe`, SHA256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`; **never** localized `th075c.exe` |
-| Exact authored whole functions | **963 functions / 963 exact units**, **863,853 original CODE bytes** |
-| Reviewed authored bytes | **43.77%** of **1,973,704** original CODE bytes; conservatively **43.69%** with unknown origins included |
+| Exact authored whole functions | **964 functions / 964 exact units**, **863,913 original CODE bytes** |
+| Reviewed authored bytes | **43.77%** of **1,973,704** original CODE bytes; conservatively **43.70%** with unknown origins included |
 | Provisional ledger | **4,351** candidate original functions; **95** still origin-unknown with 3,420 CODE bytes; these have **no authored credit** |
 | Unfinished author-owned functions | **25 complete functions**: **22 large fighter bosses**, **1,102,055 CODE bytes** of original whole CODE, plus **three** other whole functions (2,987 B, 248 B, 171 B) |
 | Separated after-RET giant switch DATA | **16,123 bytes** across the 22 giants; DATA is not authored CODE credit |

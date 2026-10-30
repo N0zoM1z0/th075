@@ -27,8 +27,8 @@ Canonical live ledgers and actual native PE outrank all historical prose.
 
 ## Current authoritative status and superseded negatives
 
-- **963 cold-exact source-present functions**, **863,853 original authored
-  CODE bytes**, **43.77% reviewed authored coverage** and **43.69%
+- **964 cold-exact source-present functions**, **863,913 original authored
+  CODE bytes**, **43.77% reviewed authored coverage** and **43.70%
   conservative coverage**. **Only 25 `owner=authored,status=unclassified`
   function rows currently remain:** 22 giant fighter action/advance bosses
   totalling 1,102,055 original CODE bytes, WinMain (2,987), SceneObject
@@ -13395,3 +13395,24 @@ as callable game CODE, private source class names unproved.
 New whole-authored ledger **961→963, 863,592→863,853 original
 CODE B, 43.75→43.77% reviewed and 43.68→43.69% conservative**.
 [Complete original PE/COFF+EH evidence and two exact units](NESTED_RECORD_WHOLE_EH_F741.md).
+
+
+## F742: actual original R015-authored 00406DB0 InputMapping whole 60B COLD EXACT
+
+Native Japanese TH075 original independently authored R015
+`00406DB0..00406DEC` **60 CODE B/24 x86/3 real REL32 fields**
+now ordinary pinned VC7.1 `InputMappingF742` constructor with
+actual unchanged-base `InputResourceClient` ctor `00403B90`,
+then genuine 28B zero at `this+0x2C` and 40B zero at `this+4`,
+then full original EAX=`this` and RET. Cold replay of ONLY one
+newly configured complete original function **1/1 exact from one
+source object**, all **48/48 original nonfield bytes and actual
+3 original REL32 PE destinations at +0xB/+0x1B/+0x2E** identical.
+Base class is a documented count-only original source interface;
+observed first four receiver bytes represented as real object
+storage without asserting complete historical private layout.
+No callee code or vendor CRT functions recredited. Formal original
+whole authored ledger **963→964 functions, 863,853→863,913 CODE B,
+43.77% reviewed unchanged to two decimals, conservative
+43.69→43.70%**. No all-963 cold replay or giant CODE acceptance.
+[Exact original PE and targeted canonical replay](INPUT_MAPPING_INIT_NATIVE_F742.md).

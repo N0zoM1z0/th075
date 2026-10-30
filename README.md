@@ -15,10 +15,10 @@ user-supplied executable. It is **not yet a complete game rebuild**.
 | Size / image base | 2,576,384 bytes / `0x00400000` |
 | SHA-256 | `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98` |
 | MD5 | `21bcb855a39f2170195811e6ad292f18` |
-| Source-present / exact functions | **963 / 963** |
-| Accepted CODE bytes | **863,853** |
+| Source-present / exact functions | **964 / 964** |
+| Accepted CODE bytes | **863,913** |
 | Reviewed authored coverage | **43.77%** of 1,973,704 reviewed bytes |
-| Conservative coverage | **43.69%**, with 3,420 origin-pending bytes included |
+| Conservative coverage | **43.70%**, with 3,420 origin-pending bytes included |
 | Unresolved origins | **95** of 4,351 provisional function candidates |
 
 **The 98% authored-byte goal is incomplete.** Function labels and C++ owner
@@ -26,7 +26,7 @@ types are provisional; machine-code matches alone do not prove an entire
 original class layout. The target's official distribution provenance has not
 been independently verified; do not substitute a localized `th075c.exe`.
 
-These live snapshot counts were rechecked after **F741** (2026-10-30); the F694 storage cleanup and F689–F693 negative-evidence audit do **not** add accepted CODE.
+These live snapshot counts were rechecked after **F742** (2026-10-30); the F694 storage cleanup and F689–F693 negative-evidence audit do **not** add accepted CODE.
 The **live** sources of truth, not any dated prose milestone, are `config/functions.csv`,
 `config/function-origins.csv`, and `config/match-units.toml`.
 Refresh using `scripts/repo-python scripts/report-reconstruction-status.py --summary`.
@@ -70,6 +70,12 @@ functions (**261 native CODE B**). Both external 40-byte EH stubs
 and 52-byte unwind data records also match their original native
 PE field ownership, but are not counted again as callable CODE.
 New F741 replay rebuilt just one source object, not all earlier units.
+
+The [F742 60-byte InputMapping initializer](docs/INPUT_MAPPING_INIT_NATIVE_F742.md)
+is another pre-reviewed original-authored complete game-function
+cold exact match. It adds one true native 60-byte body and three
+physical original CALL relocs from only one VC7.1 source object;
+the other 963 existing exact units were not cold-replayed.
 
 ### Latest verified giant research and complete small-function evidence
 

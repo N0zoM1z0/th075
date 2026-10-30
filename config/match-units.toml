@@ -60740,3 +60740,19 @@ relocations = [
  { offset = 0x62, type = "REL32", symbol = "??1Prefix16F741@@QAE@XZ", target = 0x004588B0 },
  { offset = 0x6C, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
 ]
+
+# F742: independently R015-authored entire 60-B input-mapping initializer;
+# natural native InputResourceClient lifetime and two real member clear spans.
+[units.input-mapping-initialize-00406db0]
+source = "src/InputMappingInitializeF742.cpp"
+object = "build/matching/InputMappingInitializeF742.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["InputMappingF742::InputMappingF742"]
+symbol = "??0InputMappingF742@@QAE@XZ"
+target_address = 0x00406DB0
+size = 60
+relocations = [
+ { offset = 0xB, type = "REL32", symbol = "??0InputResourceClient@@QAE@XZ", target = 0x00403B90 },
+ { offset = 0x1B, type = "REL32", symbol = "_memset", target = 0x00640490 },
+ { offset = 0x2E, type = "REL32", symbol = "_memset", target = 0x00640490 },
+]

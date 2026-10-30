@@ -962,3 +962,4 @@ Record16F739::~Record16F739,0x005F7ED0,function
 Record16F739::Record16F739,0x005F7F20,function
 NestedRecord116F741::NestedRecord116F741,0x004587E0,function
 NestedRecord116F741::~NestedRecord116F741,0x004588E0,function
+InputMappingF742::InputMappingF742,0x00406DB0,function
