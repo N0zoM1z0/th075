@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Maintained 2026-10-30, after F708 twin burst original game source.**
+**Maintained 2026-10-30, after F708 real twin bursts and F709/F710 archive lifetime controls.**
 This is the **active queue and verified ledger snapshot**. Old F-series
 milestone descriptions are *not current status*: the long previous
 [F598–F652 handoff was archived intact](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
@@ -62,7 +62,13 @@ not original 73/23. See
    COFF/PE; none improves this. Do not repeat syntactic stage-3/4
    boolean/`+=`/lvalue permutations without a NEW original lifetime
    hypothesis. [Physical negative evidence](CHARACTEROBJECT_SCENE_PHASE_NEGATIVES_F689_F693.md).
-3. **Continue full authored `0043B0B0` (248 B) and `0041CE50`
+3. **F709/F710 newly eliminate 12 genuine used-index/file-name
+   lifetime combinations** in the whole original 171-byte ArchiveCatalog
+   destructor, including four two-field aggregation source variants.
+   All retain original 171/51/14, but yield 108/115 or 102/115
+   original nonrelocation bytes; the three true EBP slots remain wrong.
+   [Full original PE/source negative evidence](ARCHIVE_INDEX_FILENAME_OWNER_NEGATIVES_F709_F710.md).
+   **Continue full authored `0043B0B0` (248 B) and `0041CE50`
    (171 B)**: real native EBP temporary ownership remains wrong.
    F700 also freshly tested **10 whole, fully used Scene texture-owner
    C++ lifetime variants**: eight generate 251/254/255 instead of

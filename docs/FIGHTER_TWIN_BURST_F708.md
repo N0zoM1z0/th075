@@ -58,8 +58,8 @@ Those are actual operand differences, **not** matching bytes. The
 negative sign is arithmetically equivalent for the observed signed
 byte facing range and does not add a synthetic float conversion
 helper or unused locals. Seven whole-parent C++ arithmetic controls
-were freshly compiled: four byte-width-identical cases retaining
-wrong `FLD/FISUB`, two additional `FCHS` or `NEG` forms with extra
+were freshly compiled: three byte-width-identical forms retaining the
+wrong `FLD/FISUB`, three additional `FCHS` or `NEG` forms with extra
 opcodes, and the selected semantically real negative-multiplier
 source with the better original x87 evaluation phase.
 

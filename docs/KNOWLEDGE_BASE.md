@@ -12649,3 +12649,32 @@ checks both real cases, preceding real F706 259–25D, later F701
 afterRET DATA bytes. [Complete physical original/native negative](FIGHTER_TWIN_BURST_F708.md),
 reproduce `scripts/repo-python scripts/verify-fighter-twin-burst-f708.py`.
 No all-unit cold replay; 943/862726 accepted authored unchanged.
+
+
+## F709/F710: complete 171-byte ArchiveCatalog original two-local lifetime negatives
+
+Original native authored `0041CE50` destructor is **171 CODE B/51 x86**,
+with 14 true physical COFF fields and genuine resource/delete/filename
+EBP locals `−0xC/−8/−0x10`; selected C++ still emits incorrect
+`−0x10/−0xC/−8`, matching 108/115 original nonfield bytes. F709
+freshly compiled **8 entire native-profile C++ TUs** with both
+**real used index and filename local** declaration order and guard
+scope. Six retain original-shaped 171/51/14 but remain 108/115;
+two filename-early alone variants **regress to 102/115** and
+reassign the genuine `EBP−4` index. F710 tested **4 further full
+C++ TUs** using a two-field structure with both **genuinely used**
+index and freed filename pointer, both member orders and pre-guard
+vs guarded lifetime. All preserve original 171/51/14; two match
+108/115 and two only 102/115. **None** of 12 new complete source
+variants naturally fixes native three-way stack allocation. Local
+actual SRC/OBJ/compiler/original PE/COFF receipts are retained under
+ignored `.analysis/f709-archive-loop-and-filename/` and
+`.analysis/f710-archive-used-iterator-context/`.
+[Whole native code and 12-source honest negative matrix](ARCHIVE_INDEX_FILENAME_OWNER_NEGATIVES_F709_F710.md).
+Zero newly accepted exact authored function CODE; no all-unit replay.
+
+Reproducible selected entire 171-B native C++ experiment generator is now
+tracked as `scripts/verify-archive-index-filename-lifetimes-f709-f710.py`
+(`--case` one or `--all` only twelve affected sources, never all units).
+It asserts full original typed COFF, the 51 authentic x86 widths and
+seven true original EBP displacement mismatch positions.
