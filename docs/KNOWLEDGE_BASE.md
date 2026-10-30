@@ -186,6 +186,17 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   are documented in [storage hygiene](STORAGE_HYGIENE.md); original
   sources, PE, Ghidra, Wine and accepted objects were preserved.
 
+- **F795 original WinMain physical runtime layout:** true PE
+  EBP stack locations for Graphics/created HWND/current
+  Scene/module path form a consecutive sequence at
+  `-0x189/-0x188/-0x184/-0x180`; complete 2,987-B/
+  654-x86 WinMain and its 60B scene jump DATA re-read.
+  26 fresh whole C++ source permutations of actually
+  used HWND/HANDLE/MSG/WNDCLASS/metrics do not yet
+  recreate real scene/path owner placement. The 2,993-B
+  near-length source has only 590/654 true native
+  x86 widths and must not be accepted.
+  [F795 original PE-backed source controls](WINMAIN_PHYSICAL_WINDOW_CONTEXT_F795.md).
 - **F794 independent second 33KB giant source controls:**
   ten whole `004EBDA0` game source builds explore
   actually used native four-byte color/stage field

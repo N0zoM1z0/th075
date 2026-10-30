@@ -1,6 +1,6 @@
 # TH075 — ACTIVE reconstruction agent handoff
 
-**Verified snapshot: 2026-10-30, current F780 exact ledger; F794 giant source controls.**
+**Verified snapshot: 2026-10-30, current F780 exact ledger; F795 native WinMain and giant controls.**
 This is the **short working queue**, not the chronological research log.
 Original Japanese PE and the live configuration **always outrank historical
 prose, old case-level exact labels, class names or inferred layouts**.
@@ -395,6 +395,24 @@ frequently researched ownership functions:
 | `0x0041CE50` ArchiveCatalog destructor | 171 B | Best native 108/115 nonfield bytes, still seven genuine owner/CFG differences; [F697/F698 negatives](ARCHIVE_AGGREGATE_AND_REFERENCE_NEGATIVES_F697_F698.md) |
 | `0x0043B0B0` Scene destructor | 248 B | Best 191/200 native nonfield bytes; used texture owner/stack layout unresolved; [F700](SCENE_TEXTURE_OWNER_LIFETIMES_F700.md) |
 | `0x00602A60` WinMain | 2,987 B | Original saved local scene/path frame differs; [F702–F704](WINMAIN_USED_OBJECT_CONTEXT_NEGATIVES_F702_F704.md) |
+
+**F795 original complete WinMain 00602A60 native stack-owner result:**
+independently decoded **four adjacent real native live
+objects**: graphics client `EBP−0x189`, created
+window HWND `EBP−0x188`, current scene pointer
+`EBP−0x184`, 260-B module path `EBP−0x180`.
+The original 2,987-B/654-x86 startup/15-scene TABLE
+is rechecked. Twenty-six normal VC7.1 *whole*
+WinMain variants place actual used HWND, ready HANDLE,
+MSG, WNDCLASS, directory-end and metrics into
+different meaningful scene/path groups.
+Best still `3,002` B (619 original instruction
+widths) and scene/path `−0x180/−0x17C`;
+a superficially closer 2,993-B source has only
+590/654 original widths and badly misplaced scene.
+**No full WinMain exact CODE or source class
+layout claimed.** [F795 physical PE/source evidence](WINMAIN_PHYSICAL_WINDOW_CONTEXT_F795.md);
+`scripts/repo-python scripts/verify-winmain-native-used-group-f795.py`.
 
 The R011 ordinary-quad `0040C9A0` is now **115-B/37-x86/4-PE-field
 whole cold exact** ([F780](SPRITE_ORDINARY_QUAD_NATIVE_F780.md)).
