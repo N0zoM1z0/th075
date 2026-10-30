@@ -1,6 +1,6 @@
 # TH075 — ACTIVE reconstruction agent handoff
 
-**Verified snapshot: 2026-10-30, current F780 exact ledger; F793 giant source controls.**
+**Verified snapshot: 2026-10-30, current F780 exact ledger; F794 giant source controls.**
 This is the **short working queue**, not the chronological research log.
 Original Japanese PE and the live configuration **always outrank historical
 prose, old case-level exact labels, class names or inferred layouts**.
@@ -356,6 +356,23 @@ Recheck only this native owner if you change it:
 ```bash
 scripts/repo-python scripts/verify-characterobject-native-collision-order-f596.py
 ```
+
+**F794 renewed second giant 004EBDA0 source-ownership review:**
+ten fresh entire 33,293-B/8,789-x86 VC7.1 full-parent
+builds tested actual typed red/green/blue/alpha
+`+0x11..+0x14` member accesses, real stage-counter
+updates, and stage-3 condition source order. Nine
+preserve all original PE/x86 geometry but still have
+**137 wrong register operand bytes**; reversing a
+real short-circuit stage test worsens it to
+**152**, including wrong original x86 Jcc widths
+at ordinals 8042/8046. Crucially the verifier independently
+checks *all 682 true original PE/COFF fields* and
+the 438-B/60-pointer afterRET table for every whole
+parent, not just register-normalized snippets. Giant remains
+NONEXACT; zero new whole CODE credit.
+[Complete native F794 evidence](CHARACTEROBJECT_COLOR_REGISTER_PHASE_F794.md);
+`scripts/repo-python scripts/verify-characterobject-color-source-f794.py`.
 
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`

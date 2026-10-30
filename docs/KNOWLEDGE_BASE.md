@@ -186,6 +186,17 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   are documented in [storage hygiene](STORAGE_HYGIENE.md); original
   sources, PE, Ghidra, Wine and accepted objects were preserved.
 
+- **F794 independent second 33KB giant source controls:**
+  ten whole `004EBDA0` game source builds explore
+  actually used native four-byte color/stage field
+  ownership. Original 33,293-B CODE/8,789 x86,
+  **all 682 PE/COFF fields including 60 original
+  jump-table pointers** independently verified in
+  every source. Nine remain 137 genuine register
+  bytes wrong; reordering stage short-circuit
+  worsens to 152 original machine-byte differences.
+  No formal whole-case or callable game exact credit.
+  [F794 full native source study](CHARACTEROBJECT_COLOR_REGISTER_PHASE_F794.md).
 - **F793 original fighter 0x58 predecessor register-phase audit:**
   ten whole 58KB VC7.1 original-shaped parent compiles
   prove eight meaningful native-equivalent source
