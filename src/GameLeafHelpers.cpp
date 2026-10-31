@@ -1,5 +1,17 @@
 #include "GameLeafHelpers.hpp"
 
+// Native signed 16-bit animation counters occupy three adjacent words:
+// Original +0x60, +0x62, +0x64. This is only a borrowed tail window
+// of the unknown full virtual AnimationState owner; never instantiate it.
+struct AnimationCounterTailF919 {
+    short primaryAction;
+    short secondaryAction;
+    short animationFrame;
+};
+typedef char AnimationCounterTailSizeF919[
+    sizeof(AnimationCounterTailF919)==6 ? 1 : -1];
+#define ANIMATION_COUNTERS (*reinterpret_cast<AnimationCounterTailF919*>(reinterpret_cast<u8*>(this) + 0x60))
+
 SpriteGeometry *SpriteGeometry::SetFourDwords(
     u32 first, u32 second, u32 third, u32 fourth)
 {
@@ -17,24 +29,24 @@ void AnimationState::ClearByte40()
 
 void AnimationState::ResetSecondaryCounter(short value)
 {
-    *reinterpret_cast<short *>(reinterpret_cast<u8 *>(this) + 0x64) = 0;
-    *reinterpret_cast<short *>(reinterpret_cast<u8 *>(this) + 0x62) = value;
+    ANIMATION_COUNTERS.animationFrame = 0;
+    ANIMATION_COUNTERS.secondaryAction = value;
     OnSecondaryCounterReset();
 }
 
 void AnimationState::ResetPrimaryCounters(short value)
 {
-    *reinterpret_cast<short *>(reinterpret_cast<u8 *>(this) + 0x64) = 0;
-    *reinterpret_cast<short *>(reinterpret_cast<u8 *>(this) + 0x62) = 0;
-    *reinterpret_cast<short *>(reinterpret_cast<u8 *>(this) + 0x60) = value;
+    ANIMATION_COUNTERS.animationFrame = 0;
+    ANIMATION_COUNTERS.secondaryAction = 0;
+    ANIMATION_COUNTERS.primaryAction = value;
     OnSecondaryCounterReset();
 }
 
 void AnimationState::SetThreeCounters(short first, short second, short third)
 {
-    *reinterpret_cast<short *>(reinterpret_cast<u8 *>(this) + 0x64) = third;
-    *reinterpret_cast<short *>(reinterpret_cast<u8 *>(this) + 0x62) = second;
-    *reinterpret_cast<short *>(reinterpret_cast<u8 *>(this) + 0x60) = first;
+    ANIMATION_COUNTERS.animationFrame = third;
+    ANIMATION_COUNTERS.secondaryAction = second;
+    ANIMATION_COUNTERS.primaryAction = first;
     OnSecondaryCounterReset();
 }
 
@@ -59,3 +71,4 @@ void SetClampedGameValue(int value)
     if (g_ClampedGameValue < 0)
         g_ClampedGameValue = 0;
 }
+#undef ANIMATION_COUNTERS

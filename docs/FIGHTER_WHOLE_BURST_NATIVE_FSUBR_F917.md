@@ -79,8 +79,8 @@ and re-reads the original pinned game PE.
 Across the two complete generated *unlinked* CODE sequences,
 **exactly eight bytes change**: the four real positive signed
 integer IMUL immediates and four genuine native `FSUBR`
-opcode bytes. They are the same **24 consecutive original
-instruction bytes across four six-instruction windows** in
+opcode bytes. The corresponding **24 full original x86 instructions across
+four separate six-instruction windows** now align in
 correct x86 positions, including real operand GPR roles,
 native EBP scratch slots, full 32-bit values and floating
 operation order. All original/source COFF field records and

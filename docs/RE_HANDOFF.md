@@ -205,6 +205,14 @@ the tracked implementation. The original complete owner layout
 remains unknown; *only the affected eleven whole units* were
 cold-replayed **11/11 exact**, preserving accepted coverage.
 
+[F919 three real signed-short AnimationState fields](ANIMATION_COUNTERS_TYPED_NATIVE_F919.md):
+the original 0040FAC0/0040FB00/0040FB40 physical complete
+functions prove a single +0x60/+0x62/+0x64 short-counter
+window. Replaced three independent raw casts with a typed
+six-byte borrowed view and cold-replayed **only the affected
+three whole functions: 3/3 exact, 151 existing native CODE B
+preserved**. The full AnimationState owner remains unknown.
+
 ## 5. Exact acceptance, storage, and end-of-session checks
 
 Read [AGENTS.md](../AGENTS.md), [workflow](RE_WORKFLOW.md)
