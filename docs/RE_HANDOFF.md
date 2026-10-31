@@ -162,17 +162,20 @@ real CC is present. Original whole
 true saved-this EBP and 0x720
 frame are not reconstructed.
 
-[F979 original 82KB 1A3/1A4](THIRD_FIGHTER_RANDOM_LOOPS_1A3_1A4_F979.md):
-tracked partial father 36,871B/10,093
-x86, real original 556B/147 and
-570B/151 cases; 22 true PE targets,
-0 mnemonic/width errors, 67/71 GPR
-errors. [F978 dual five-shot 1A2](THIRD_FIGHTER_DUAL_FIVE_SHOT_F978.md):
-1,142B/309 x86, 24 real PE fields.
-[F977 real 1A1](THIRD_FIGHTER_RANDOM_LOOP_1A1_F977.md)
-and [F976 real 1A0](THIRD_FIGHTER_RANDOM_LOOP_F976.md)
-recover ESI save and prior 191 widths.
-Whole original giant NONEXACT.
+[F981 original 82KB 1F4/1F5](THIRD_FIGHTER_STAGES_1F4_1F5_F981.md):
+tracked entire partial father **38,501B/
+10,553 x86**. Both genuine native
+1F4/1F5 are 830B/232x86/23 original
+PE fields, zero mnemonic/width errors,
+135 GPR errors each. Correct stage7
+0x7F projectile/drag store order and
+stage8 four original 0x32A/0x329
+effects. [F979 real 1A3/1A4](THIRD_FIGHTER_RANDOM_LOOPS_1A3_1A4_F979.md)
+has 556B/147,570B/151; 22 PE fields,
+0 original mnemonic/width mismatches.
+[F978 1A2 dual five-shot](THIRD_FIGHTER_DUAL_FIVE_SHOT_F978.md)
+has original 1,142B/309x86/24 fields.
+Complete 82,796B original NONEXACT.
 
 [F975 19D/19E/19F](THIRD_FIGHTER_STAGES19D19F_F975.md)
 native 400B/97,475B/128,
