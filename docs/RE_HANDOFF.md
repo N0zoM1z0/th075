@@ -2297,6 +2297,47 @@ scripts/repo-python scripts/verify-scripted-fighter-stage-252-254-f879.py.
 Original 46,755B giant NONEXACT,
 no split-case credit.
 
+**F880 real original native 255/256/257 action9 sprite37 states:**
+three original bounded cases
+**258/186/258 complete inner
+CODE B, 75/55/75 native x86,
+7/6/7 physical PE fields**.
+True stage0 Reset/+F00=0,
+getter action9, stage5
+float Y sprite37 real
+global657888, Prepare21.
+255 and 257 also have
+stage8/frame0 SHORT+F00<1,
+original native MOV/ADD
+r16 plus auxiliary action6;
+256 has NO stage8.
+Wrong 32-bit assignment
+emits nonnative MOVSX and
+one fewer CODE B in both
+real 16-bit states.
+New selected whole
+VC7.1 fighter **33,605
+callable CODE B/9,452 x86**
+(F879 32,948/9,253).
+All three opcode/width
+and 20 genuine physical
+original PE fields align,
+but GPR/final whole giant
+JMP operand bytes differ.
+Previously 54 native
+game case sources including
+1FD CMP 1B negative and
+252/254 field shifts,
+all five original 901B
+afterRET packed tables
+and common getter four
+GPR bytes rechecked.
+[F880 real PE case evidence](SCRIPTED_FIGHTER_STAGE255_257_F880.md);
+scripts/repo-python scripts/verify-scripted-fighter-stage255-257-f880.py.
+Entire original 46,755B
+fighter still NONEXACT,
+zero split-case CODE credit.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin

@@ -284,6 +284,29 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   slots remain wrong. No
   accepted whole CODE.
   [F864 physical proof](SCENE_THREE_REAL_NAMED_POINTERS_F864.md).
+- **F880 original consecutive 255/256/257 native 16-bit stage8 auxiliary:**
+  complete original
+  258/186/258B, 75/55/75
+  x86, 7/6/7 real
+  physically typed PE
+  fields. Native action9,
+  stage5 sprite37/Prepare21;
+  255/257 have true
+  stage8 short+F00 increment
+  and aux6, 256 does not.
+  Real prefix ++short
+  emits original MOV/ADD
+  r16 instead of nonnative
+  dword assignment MOVSX.
+  Whole source 33,605B/
+  9,452 x86, 54 earlier
+  original game cases
+  and 901B packed switch
+  DATA, common getter
+  GPR errors rechecked.
+  Original entire fighter
+  still NONEXACT.
+  [F880 native proof](SCRIPTED_FIGHTER_STAGE255_257_F880.md).
 - **F879 original 252/253/254 native byte decrement GPR phase:**
   native full case sizes
   260/260/224B, source
