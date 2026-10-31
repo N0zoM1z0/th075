@@ -151,27 +151,27 @@ real CC is present. Original whole
 true saved-this EBP and 0x720
 frame are not reconstructed.
 
-[F1017 native 82KB double-volley 2BE](THIRD_FIGHTER_STAGE_2BE_NATIVE_VOLLEYS_F1017.md):
+[F1018 actual original 82KB triple-volley 2BF](THIRD_FIGHTER_NATIVE_TRIPLE_VOLLEY_2BF_F1018.md):
 tracked PARTIAL father now
-**76,222B/20,965 x86**.
-Original 2BE **1,607B/
-471x86/50 physical PE
-targets** with all original
-mnemonic and widths aligned,
-**125 GPR roles still wrong**.
-Real original stage4
-sprite0x73, five stage15..23
-two-shot volleys with
-0x321+RandBoolean and0x33F,
-native Y global0065908C.
-Previous/later real case
-GPR roles and PE targets
-unchanged. [F1016 true
-double-ring2DB](THIRD_FIGHTER_TWO_RINGS_2DB_F1016.md)
-1,894B/548 x86/38 PE
-has all positional GPR
-roles aligned. Entire game
-82,796B still NONEXACT.
+**78,374B/21,579 x86**.
+Native2BF **2,167B/616x86/
+65 physical typed PE**,
+all original mnemonic, width
+and GPR roles aligned. Five
+distinct stage15/17/19/21/23
+triple shots (0x322+bool,
+0x340, 0x341), true facing×640
+FILD/FSUBR world X and
+Y+0065784C−Rand(0,400).
+Prior [F1017 real 2BE](THIRD_FIGHTER_STAGE_2BE_NATIVE_VOLLEYS_F1017.md)
+1,607B/471x86/50 PE has
+0 wrong mnemonic/width, but
+**125 native GPR roles remain
+wrong** even after 2BF.
+All later original case roles
+and PE fields stay aligned.
+Whole original 82,796B
+callable still NONEXACT.
 
 [F975 19D/19E/19F](THIRD_FIGHTER_STAGES19D19F_F975.md)
 native 400B/97,475B/128,
