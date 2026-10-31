@@ -218,6 +218,21 @@ constructor mappings and 15 native table entries.
 This **negative does not supersede F914's separate
 three-slot recovery**. Whole WinMain remains nonexact.
 
+[F935/F936 native Archive pointer owner controls](ARCHIVE_NATIVE_LOOP_VALUE_CATEGORIES_F936.md):
+32 independently compiled complete 171B
+ArchiveCatalog destructor grammar sources
+vary real unsigned index loop, filename
+reference/value category and scalar delete.
+Twenty-six still match only **108/115**
+actual original nonfield bytes and retain
+resource/delete/filename EBP **-0x10/
+-0x0C/-0x08** rather than native
+**-0x0C/-0x08/-0x10**; other candidates
+regress. Portable verifier re-checks all 14
+native PE call/global fields in seven
+complete original-shaped sources. The
+171B whole function is NONEXACT.
+
 [F914/F915 original WinMain frame/slot probe](WINMAIN_NATIVE_FRAME_FIRST_SCENE_OWNER_F914.md):
 19 full source member models and 30 declaration/member placement controls
 tested the genuinely used first scene pointer. A complete alternative
