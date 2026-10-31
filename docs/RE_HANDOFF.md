@@ -90,13 +90,10 @@ and the complete function remains NONEXACT.
 Full-source, original-target verifier included.
 Next: simultaneous native 0x58 + 0x59 grammar.
 
-[F909 preceding native 0x58 register-phase experiment](FIGHTER_PRE59_REGISTER_PHASE_F909.md):
-  27 whole normal VC7.1 father variants; 26 original-instruction-count
-  sources, 1 longer. None fixes the original 0x59 entry EAX/ECX phase
-  or improves the first whole GPR mismatch ordinal 2103. Eight
-  genuinely different equal-sized emitted CODE alternatives tested;
-  the register-phase mismatch is NOT explained by trivial preceding
-  ten-shot-burst source grammar.
+[F909 0x58 phase negatives](FIGHTER_PRE59_REGISTER_PHASE_F909.md):
+27 full VC7.1 parent variations did
+not repair 0x59's register phase.
+
 - [F906 first true GPR divergence](FIGHTER_FIRST_GPR_DIVERGENCE_F906.md):
   whole x86 ordinal **2103**, original address **0052327A**,
   case **0x59**. Currently **2,736 instruction GPR-role
@@ -343,6 +340,15 @@ type-checking signed shorts at +0x512/514/516.
 9 affected original functions (69,846 B)
 still 9/9 exact; polling input kept unchanged
 after evidence of `$SG` symbol renumbering.
+
+[F954 two signed profile selection bytes](PROGRESS_SELECTION_SIGNED_BYTE_FIELDS_F954.md):
+actual receiver+0x16AC4/5 shared
+signed 8-bit index view replaces
+raw casts across two source objects.
+Affected complete **11/11 canonical
+cold exact, 1,238 existing native
+CODE B**, including three 37/48/84B
+whole original small leaves.
 
 ## 5. Exact acceptance, storage, and end-of-session checks
 

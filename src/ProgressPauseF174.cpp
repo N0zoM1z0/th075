@@ -1,3 +1,4 @@
+#include "ProgressSelectionKeysF954.hpp"
 #include "ProgressPauseF174.hpp"
 #include "SelectionInput4388D0.hpp"
 #include "GameLeafHelpers.hpp"
@@ -7,8 +8,8 @@
 extern unsigned char g_RenderByte0067161C;
 
 #define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
-#define PROGRESS_ARRAY(type, offset) reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + FIELD(signed char, 0x16AC4) * 0x17F0 + (offset))
-#define SELECTED_VALUE(offset) (*reinterpret_cast<int*>(reinterpret_cast<unsigned char*>(this) + FIELD(signed char, 0x16AC4) * 0x17F0 + (offset) + FIELD(signed char, 0x16AC5) * 0x5FC))
+#define PROGRESS_ARRAY(type, offset) reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + F954_PROGRESS_KEYS(this).fighterAt16AC4 * 0x17F0 + (offset))
+#define SELECTED_VALUE(offset) (*reinterpret_cast<int*>(reinterpret_cast<unsigned char*>(this) + F954_PROGRESS_KEYS(this).fighterAt16AC4 * 0x17F0 + (offset) + F954_PROGRESS_KEYS(this).difficultyAt16AC5 * 0x5FC))
 #define PLAYER(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char**>(reinterpret_cast<unsigned char*>(this) + 0x44)[i] + (offset)))
 #define CONTROL_PLAYER reinterpret_cast<FighterControlCallsF174*>(reinterpret_cast<unsigned char**>(reinterpret_cast<unsigned char*>(this) + 0x44)[i])
 #define BASE_PLAYER reinterpret_cast<FighterBaseActionsF159*>(reinterpret_cast<unsigned char**>(reinterpret_cast<unsigned char*>(this) + 0x44)[i])
