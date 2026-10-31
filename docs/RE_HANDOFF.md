@@ -149,24 +149,28 @@ unmatched. Important true original callable extents:
 | 0050A580 | 81,539 | Giant state-advance original source reconstruction |
 | 0045DD70 | 60,999 | Giant state-advance original source reconstruction |
 
-[F947 third 82KB original CF/D0](THIRD_FIGHTER_FALL_REFLECT_F947.md):
-two genuine original **114B/30-x86 and
-195B/60-x86** fall/reflect handlers now
-source-reconstructed inside **18,513-B
-partial** 004AC040 parent; 4+6 native
-typed PE targets and true afterRET
-151 DIR32/522 nonfield DATA checked.
-[F943 original 0x62](THIRD_FIGHTER_NATIVE_SELECTOR_F943.md):
-87B/25-x86/4 PE calls.
-[F942 original 0x60/61](THIRD_FIGHTER_NATIVE_VOLLEY_F942.md):
-2×553B/158-x86/10 PE targets, native
-GPR roles matched. [F941 0x5F](THIRD_FIGHTER_FACING_F941.md)
-144B/44-x86/3 PE with 0 wrong GPR.
-[F939 0x5D/5E](THIRD_FIGHTER_NATIVE_PAIR_5D5E_F939.md)
-and [F938 0x59](THIRD_FIGHTER_REAL_BOUNCE_F938.md)
-also source-backed. Complete original
-82,796-B giant **NONEXACT**; CF/D0
-GPR and native this EBP still wrong.
+[F948 third 82KB original native C8](THIRD_FIGHTER_FOURWAY_C8_F948.md):
+the 004B009E..004B02B9 native
+539B/149-x86 four-way attack now has
+real natural **529B/149-x86 source with
+ZERO wrong mnemonics or GPR roles
+and 15 real typed PE targets**.
+Three genuine native width deficits
+(106,121,122) remain because
+original 0x720 frame and true
+EBP−0x94 x87 temporary are absent
+in the partial source (0x40 frame).
+[F947 authentic CF/D0](THIRD_FIGHTER_FALL_REFLECT_F947.md):
+original 114B/30 +195B/60 with
+10 real native PE targets.
+Previous [F943 selector](THIRD_FIGHTER_NATIVE_SELECTOR_F943.md),
+[F942 volleys](THIRD_FIGHTER_NATIVE_VOLLEY_F942.md),
+[F941 facing](THIRD_FIGHTER_FACING_F941.md),
+[F939 paired actions](THIRD_FIGHTER_NATIVE_PAIR_5D5E_F939.md),
+[F938 bounce](THIRD_FIGHTER_REAL_BOUNCE_F938.md)
+remain genuine source-backed partial
+cases; **the 82,796B whole game
+original is NONEXACT**.
 
 [F934/F937 strict native 0x58 controls](FIGHTER_STRICT_PREDECESSOR_LIMIT_F937.md):
 49 additional complete 58KB normal VC7.1
