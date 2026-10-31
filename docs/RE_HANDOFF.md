@@ -149,33 +149,29 @@ unmatched. Important true original callable extents:
 | 0050A580 | 81,539 | Giant state-advance original source reconstruction |
 | 0045DD70 | 60,999 | Giant state-advance original source reconstruction |
 
-[F952 third 82KB native CB register-phase controls](THIRD_FIGHTER_CB_REGISTER_PHASE_F952.md):
-28 full original-shaped partial VC7.1
-parent sources test actual CB source
-lvalues, float order and stage/ground
-comparisons. NONE repairs the first
-wrong GPR at CB ordinal5 or its
-**79 incorrect GPR roles**; 9
-tracked reproducible whole-source
-original-PE controls preserve typed
-11 PE targets, 151 afterRET labels.
-[F951 real CB](THIRD_FIGHTER_FOURWAY_CB_F951.md):
-original 466B/131 x86, source 454B
-with four genuine original EBP−0x9C/
-−0xA0 temp-width deficits.
-[F950 CA](THIRD_FIGHTER_FOURWAY_CA_F950.md):
-436B/123 x86 source 430B,
-2 wrong widths, 11 native PE fields.
-[F949 C9](THIRD_FIGHTER_FOURWAY_C9_F949.md):
-531B/158x86/13 PE fields with
-all original native x86 roles.
-[F948 C8](THIRD_FIGHTER_FOURWAY_C8_F948.md):
-539 native B/149x86; 529 source
-B with three wrong stack widths.
+[F953 third original 82KB CC/CD phase](THIRD_FIGHTER_CC_CD_NATIVE_PHASE_F953.md):
+two consecutive authentic 435B/128-x86
+original handlers each with **11 genuine
+PE-targeted fields**, now natural C++
+inside 21,237-B partial parent.
+**CD has 77 wrong GPR roles when only
+CD is source-backed, but 0 wrong GPR
+roles when real preceding CC is also
+source-backed.** CC still 77 wrong.
+All native mnemonics and widths
+match both entire case interiors,
+but actual `this` EBP and entire
+82KB giant remain NONEXACT.
+[F952 CB register-phase negatives](THIRD_FIGHTER_CB_REGISTER_PHASE_F952.md):
+28 whole-parent variants did not
+repair CB 79 wrong GPR roles.
+[F951 CB](THIRD_FIGHTER_FOURWAY_CB_F951.md),
+[F950 CA](THIRD_FIGHTER_FOURWAY_CA_F950.md),
+[F949 C9](THIRD_FIGHTER_FOURWAY_C9_F949.md),
+[F948 C8](THIRD_FIGHTER_FOURWAY_C8_F948.md),
 [F947 CF/D0](THIRD_FIGHTER_FALL_REFLECT_F947.md)
-and [F943/F942/F941/F939/F938 earlier real states](THIRD_FIGHTER_NATIVE_SELECTOR_F943.md)
-remain source-backed. Entire 82,796B
-original fighter still NONEXACT.
+and earlier [F943](THIRD_FIGHTER_NATIVE_SELECTOR_F943.md)
+remain native PE source-backed.
 
 [F934/F937 strict native 0x58 controls](FIGHTER_STRICT_PREDECESSOR_LIMIT_F937.md):
 49 additional complete 58KB normal VC7.1
