@@ -151,28 +151,29 @@ real CC is present. Original whole
 true saved-this EBP and 0x720
 frame are not reconstructed.
 
-[F998 original 82KB 25E nine-shot](THIRD_FIGHTER_NINE_SHOT_25E_F998.md):
-tracked partial fighter
-**60,595B/16,621 x86**.
-Native 25E **882B/236x86/
-24 original PE targets**,
-all mnemonic/width roles aligned,
-153 GPR roles wrong. Real
-nine sprite342 float-Y+006590AC
-shots and source float motion.
-**Register phase regression:**
-[F997 preceding 25D](THIRD_FIGHTER_FULL_CIRCLE_25D_REGISTER_RECOVERY_F997.md)
-had restored later GPR roles
-73/73/65/65→0/0/0/0, but
-real 25E brings them back
-to **73/73/65/65**. Original
-mnemonic/width and PE fields
-of all four remain correct.
-F997 real 25D **2,799B/749x86/
-78 PE**; [F996 real 25C](THIRD_FIGHTER_NINE_SHOT_25C_F996.md)
-**1,043B/271x86/23 PE**.
-Entire original 82,796B
-callable remains NONEXACT.
+[F1001 late 82KB 2BC/2BD](THIRD_FIGHTER_STAGES_2BC_2BD_F1001.md):
+tracked partial father now
+**62,063B/17,012 x86**.
+Real original 2BC **755B/199x86/
+15 true PE fields**, all native
+mnemonic/widths aligned;
+2BD **742B/196x86/15 PE**,
+source743B, one ADD-width
+defect ordinal133. Initial
+stage3 shot Y PE global
+**00659284**, later double
+shots **0065836C** — independently
+verified, earlier hypothesis wrong.
+8 natural 2BD signed integer
+grammars fail to repair width.
+[F998 25E](THIRD_FIGHTER_NINE_SHOT_25E_F998.md)
+882B/236x86/24 PE; real
+25E regresses following
+GPR phase 73/73/65/65.
+[F997 25D](THIRD_FIGHTER_FULL_CIRCLE_25D_REGISTER_RECOVERY_F997.md)
+2,799B/749x86/78 PE first
+repaired these GPR roles.
+Full original 82KB NONEXACT.
 
 [F975 19D/19E/19F](THIRD_FIGHTER_STAGES19D19F_F975.md)
 native 400B/97,475B/128,
