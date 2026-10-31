@@ -2598,6 +2598,35 @@ or origin adoption claimed.
 scripts/repo-python scripts/audit-unknown-leaf-native-xrefs-f871.py.
 No full cold replay.
 
+**F876 independently authored Archive full 171B destructor, real C++ helper return-value boundaries:**
+TEN full ordinary/forceinline/
+template return-of-real-pointer
+variants compiled with pinned
+VC7.1 /Od /Ob0 /GX-.
+Original **171B/51x86/14
+physical native PE fields**
+baseline still only **108/115**
+original nonrelocation bytes.
+Four genuine inline single
+getter sources instead emit
+**167B/50x86/13 COFF refs**:
+real At() call is moved OUT
+of destructor to helper; both
+helpers 163B/49x86/12 refs,
+template pointer wrappers
+178B/53x86/15 or
+185B/55x86/16 refs.
+These meaningful C++ helper
+sources preserve actual resource
+delete, filename CRT free and
+both container clear operations,
+but none is the full original
+native destructor call graph
+or CODE extent. Zero accepted
+new authored exact CODE.
+[F876 whole Archive original PE audit](ARCHIVE_INLINE_RETURN_BOUNDARIES_F876.md);
+scripts/repo-python scripts/verify-archive-inline-return-boundaries-f876.py.
+
 ## 4. Attribution, validation, research and storage
 
 - **Original authored ≠ compiler/library ≠ unknown**. The 95 unknown

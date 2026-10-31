@@ -284,6 +284,32 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   slots remain wrong. No
   accepted whole CODE.
   [F864 physical proof](SCENE_THREE_REAL_NAMED_POINTERS_F864.md).
+- **F876 standalone Archive original 171B inline-helper source lifetime negatives:**
+  ten complete VC7.1 /Od
+  /Ob0 normal destructor
+  sources with actually
+  used native resource/name
+  return pointer helpers.
+  Original 171B/51x86/
+  14 typed PE field baseline
+  remains 108/115 native
+  nonrelocation bytes; helper
+  versions move original
+  At() method calls into
+  separate source symbols:
+  single inline getter
+  167B/50x86/13 refs,
+  both 163B/49x86/12;
+  templates 178B/53x86/
+  15 or 185B/55x86/
+  16 refs. These alter
+  original complete function
+  boundaries and do not
+  recover genuine EBP owner
+  stack locations. Still
+  NONEXACT independent
+  original authored CODE.
+  [F876 native PE proof](ARCHIVE_INLINE_RETURN_BOUNDARIES_F876.md).
 - **F875 original 1FF six associated-owner stage actions:**
   full 533B/149 x86/
   nine true PE calls in
