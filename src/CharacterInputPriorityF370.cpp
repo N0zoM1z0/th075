@@ -1,3 +1,4 @@
+#include "FighterCommandByteF940.hpp"
 // Complete borrowed 27-pattern command-priority input controller. Each
 // genuine pattern has its own original constant pool address. The receiver
 // class and command string contents are not asserted beyond these reads.
@@ -32,7 +33,7 @@ extern const char g_ComboPatternAt006599BC[];
 extern const char g_ComboPatternAt006599C0[];
 extern const char g_ComboPatternAt006599C4[];
 extern const char g_ComboPatternAt006599CC[];
-#define STATUS (*reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char*>(this)+0x511))
+#define STATUS F940_COMMAND_AT511(this)
 void CharacterInputPriorityF370::ResolvePriority() {
     STATUS = 0;
     if (CheckPattern(g_ComboPatternAt00659920,5,15)) STATUS=61;

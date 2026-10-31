@@ -341,6 +341,14 @@ all 979 functions:
   **30 integer-zero / 6 float-initializer complete native constructors**,
   total **5,531 existing bytes**, 36/36 exact, 2 source objects.
 
+[F940 shared AI/priority input command byte](FIGHTER_COMMAND_BYTE_SHARED_F940.md):
+9 affected whole original functions, **69,846
+existing CODE B, 9/9 cold exact** after
+typing receiver+0x511. Input polling
+retained original raw source because the
+new type renumbered real `$SG` COFF
+string relocation symbols.
+
 ## 5. Exact acceptance, storage, and end-of-session checks
 
 Read [AGENTS.md](../AGENTS.md), [workflow](RE_WORKFLOW.md)
