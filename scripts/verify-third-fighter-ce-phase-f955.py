@@ -68,6 +68,7 @@ cases={
  'CD':(0x4B0A05,0x4B0BB8,435,128,11),
  'CE':(0x4B0BB8,0x4B0D42,394,115,9),
  'CF':(0x4B0D42,0x4B0DB4,114,30,4),
+ 'D0':(0x4B0DB4,0x4B0E77,195,60,6),
 }
 native={}
 for key,(lo,hi,n,nx,fields) in cases.items():
@@ -168,8 +169,15 @@ for name in ('CE-alone','CC-CD-and-CE'):
  assert e['actual_original_PE_targets_validated']==9
 assert len(alone['real_cases']['CE']['wrong_GPR_role_ordinals'])==72
 assert allreal['real_cases']['CE']['wrong_GPR_role_ordinals']==[]
-for name in ('CC','CD','CF'):
+for name in ('CC','CD','CF','D0'):
  assert allreal['real_cases'][name]['actual_original_PE_targets_validated']==cases[name][4]
+assert len(prior['real_cases']['CF']['wrong_GPR_role_ordinals'])==18
+assert len(prior['real_cases']['D0']['wrong_GPR_role_ordinals'])==35
+for enabled in (alone,before,allreal):
+ for action in ('CF','D0'):
+  assert enabled['real_cases'][action]['wrong_mnemonic_ordinals']==[]
+  assert enabled['real_cases'][action]['wrong_width_ordinals']==[]
+  assert enabled['real_cases'][action]['wrong_GPR_role_ordinals']==[]
 assert len(allreal['real_cases']['CC']['wrong_GPR_role_ordinals'])==77
 assert allreal['real_cases']['CD']['wrong_GPR_role_ordinals']==[]
 (O/'verified-summary.json').write_text(json.dumps({
@@ -179,6 +187,9 @@ assert allreal['real_cases']['CD']['wrong_GPR_role_ordinals']==[]
  'CD_CE_following_register_phase_from_true_CC_CD':True,
  'native_CE_GPR_errors_if_previous_CC_CD_markers':72,
  'native_CE_GPR_errors_if_predecessors_real':0,
+ 'native_CF_previous_GPR_errors':18,
+ 'native_D0_previous_GPR_errors':35,
+ 'native_CF_D0_roles_restored_if_CE_alone_or_CC_CD_real':True,
  'complete_original_game_exact':False,'new_accepted_whole_game_CODE_B':0,
  'mass_cold_replay':False,'whole_partial_parent_profiles':records
 },indent=2)+'\n')

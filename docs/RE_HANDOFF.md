@@ -149,9 +149,14 @@ unmatched. Important true original callable extents:
 [F955 three-state original 82KB CC/CD/CE phase](THIRD_FIGHTER_CE_NATIVE_PHASE_F955.md):
 original CE 394B/115x86/9 PE targets
 now naturally authored. CE's GPR roles
-improve **72 wrong→0** if true
-preceding CC+CD C++ is present in
-the same 21,616B partial father.
+improve **72 wrong→0** if real
+preceding CC+CD C++ is present.
+[F956 downstream CF/D0 GPR recovery](THIRD_FIGHTER_POST_CE_GPR_PHASE_F956.md):
+unchanged original CF/D0 native x86
+roles improve **18/35 wrong→0/0**
+when either actual CE or actual
+CC+CD predecessor source is compiled
+within the same partial father.
 [F953 original CC/CD](THIRD_FIGHTER_CC_CD_NATIVE_PHASE_F953.md):
 two 435B/128-x86/11 PE target
 cases; CD GPR roles likewise
@@ -205,16 +210,10 @@ tradeoff and verifies the whole 943B afterRET DATA.
 Next: recover BOTH adjacent cases in one genuine
 native parent. Entire 58KB function is NONEXACT.
 
-[F923/F924/F926 full-fighter register-owner controls](FIGHTER_REGISTER_OWNER_GRAMMAR_F926.md):
-**38 + 24 complete VC7.1 whole-father sources** test real
-actor 0x59 and opponent 0x63 signed-stage/float
-lvalue grammars. None improves the first GPR mismatch
-at whole ordinal 2198 (original 00545109, nineteen
-wrong roles in action0x59) or fixes the three native
-0x63 CMP register-width roles. A portable 10-whole-
-source bounded verifier records the negative result.
-**The 58KB original remains NONEXACT**; no partial
-case or total-size credit.
+[F926 58KB mode63 register negatives](FIGHTER_REGISTER_OWNER_GRAMMAR_F926.md):
+38+24 complete natural source
+controls failed to fix native 0x59
+and 0x63 GPR roles; no exact credit.
 
 [F916/F917 whole-parent x87 improvement](FIGHTER_WHOLE_BURST_NATIVE_FSUBR_F917.md):
 original 00543210's four real projectile-X calculations at
