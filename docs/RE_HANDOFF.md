@@ -151,27 +151,27 @@ real CC is present. Original whole
 true saved-this EBP and 0x720
 frame are not reconstructed.
 
-[F997 original 82KB circle 25D](THIRD_FIGHTER_FULL_CIRCLE_25D_REGISTER_RECOVERY_F997.md):
-tracked partial father **59,728B/
-16,387 x86**. Original 25D
-**2,799B/749x86/78 genuine
-PE fields**, 36 raw-X/float-Y
-sprite0x327 shots, all native
-mnemonics/widths align.
-**CRITICAL:** natural real
-preceding 25D restores all
-following 25F/260/261/262
-native GPR roles: deficits
-**73/73/65/65 → 0/0/0/0**,
-same partial stack frame0x434.
-25D itself has 477 GPR wrong.
-[F996 nine-shot 25C](THIRD_FIGHTER_NINE_SHOT_25C_F996.md):
-1,043B/271x86/23 PE, all
-mnemonics/widths aligned.
-[F995 circle 25B](THIRD_FIGHTER_FULL_CIRCLE_25B_F995.md):
-3,693B/957x86/77 PE; 36
-shots, 577 GPR wrong.
-Original whole 82,796B
+[F998 original 82KB 25E nine-shot](THIRD_FIGHTER_NINE_SHOT_25E_F998.md):
+tracked partial fighter
+**60,595B/16,621 x86**.
+Native 25E **882B/236x86/
+24 original PE targets**,
+all mnemonic/width roles aligned,
+153 GPR roles wrong. Real
+nine sprite342 float-Y+006590AC
+shots and source float motion.
+**Register phase regression:**
+[F997 preceding 25D](THIRD_FIGHTER_FULL_CIRCLE_25D_REGISTER_RECOVERY_F997.md)
+had restored later GPR roles
+73/73/65/65→0/0/0/0, but
+real 25E brings them back
+to **73/73/65/65**. Original
+mnemonic/width and PE fields
+of all four remain correct.
+F997 real 25D **2,799B/749x86/
+78 PE**; [F996 real 25C](THIRD_FIGHTER_NINE_SHOT_25C_F996.md)
+**1,043B/271x86/23 PE**.
+Entire original 82,796B
 callable remains NONEXACT.
 
 [F975 19D/19E/19F](THIRD_FIGHTER_STAGES19D19F_F975.md)
