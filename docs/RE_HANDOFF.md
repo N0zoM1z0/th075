@@ -3622,6 +3622,43 @@ Scene function or CODE.
 [F889 whole small original PE experiments](SCENE_MIXED_REAL_FREE_POINTER_OWNERS_F889.md);
 scripts/repo-python scripts/verify-scene-mixed-owner-slots-f889.py.
 
+**F900 independently authored small Archive destructor 25 complete real live-owner experiments:**
+original 0041CE50
+**171 native complete
+CODE B/51x86/14 real
+original PE call fields**.
+The native EBP resource,
+delete receiver, filename
+slots require -C/-8/-10.
+Full pinned VC7.1 /Od
+/GX- source trial:
+25 real resource+filename
+pair/triple/union/entry
+and live index ownership
+layouts, with real delete,
+filename CRT free, both
+list At/Clear preserved.
+23 genuinely grouped
+owner sources generate
+**177B/53x86**, NOT
+original whole function;
+one 171B/51x86 filename
+member variant matches
+only 102/115 native
+nonrelocation bytes,
+worse than baseline
+**108/115**. All preserve
+14 actual game call
+symbol identities; two
+171B candidates' original
+14 PE field positions,
+types, zero addends,
+destinations verified.
+No truncation or exact
+whole CODE credit.
+[F900 complete original Archive evidence](ARCHIVE_REAL_GROUPED_LIFETIMES_F900.md);
+scripts/repo-python scripts/verify-archive-grouped-live-owners-f900.py.
+
 ## 4. Attribution, validation, research and storage
 
 - **Original authored ≠ compiler/library ≠ unknown**. The 95 unknown
