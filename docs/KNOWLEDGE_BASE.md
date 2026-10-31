@@ -284,6 +284,55 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   slots remain wrong. No
   accepted whole CODE.
   [F864 physical proof](SCENE_THREE_REAL_NAMED_POINTERS_F864.md).
+- **F896 two complete original 2E5/2E6 random cascade sibling cases:**
+  each 374B/102 original
+  x86/12 actual physical
+  PE fields, five actual
+  shared-giant returns.
+  Current action random
+  0..100+F00, empty actor
+  action0/random60..120,
+  occupied F00<30 sends
+  2E5->2E6 or
+  2E6->2E5, F00<60
+  sends 2E7, else 2E8.
+  Stage2/3 real sprite38E
+  with narrow direction.
+  Full normal VC7.1
+  fighter 42,184B/11,896
+  x86; each case has
+  ZERO local register/
+  Jcc errors, only ten
+  genuine whole-father
+  far-JMP displacement B.
+  Three false whole sources
+  compiled/rejected.
+  All 71 earlier native
+  case interiors and five
+  901B packed DATA tables
+  checked; original getter
+  30/34 nonrelocation B.
+  [F896 original PE](SCRIPTED_FIGHTER_PAIRED_2E5_2E6_F896.md).
+- **F895 native original 2E4 409B/114x86/11 typed PE fields:**
+  Borrowed ownerX-thisX
+  true float Abs412D90
+  strict < threshold
+  global6591F4; native
+  Random455580(0,4)
+  plus action2E4.
+  Current complete father
+  41,466B/11,696x86.
+  Only four far-epilogue
+  JMP B wrong, three
+  false equal-size game
+  source controls rejected.
+  New shared targeted
+  physical PE checker
+  rechecks 70 source-backed
+  original inner cases and
+  901B packed DATA tables;
+  whole fighter NONEXACT.
+  [F895 original PE](SCRIPTED_FIGHTER_PHYSICAL_2E4_F895.md).
 - **F894 actual original 2DD physical boundary and full EAX random-return ABI:**
   Numeric 2DE maps to
   common DEFAULT 52CB25

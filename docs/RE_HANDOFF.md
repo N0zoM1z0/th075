@@ -2879,6 +2879,77 @@ scripts/repo-python scripts/verify-scripted-fighter-physical2dd-f894.py.
 Original whole 46,755B
 fighter still NONEXACT.
 
+**F896 original 2E5/2E6 paired real random game states:**
+each native **374 complete
+CODE B/102 x86/12
+real PE call/global fields**,
+physical 2E5 at 52B5FF,
+2E6 at 52B775.
+Current action getter match
+random455580(0,100) writes
+F00; if dword+7C=0 sets
+action0 and random(60,120)
+short516 then whole exit;
+otherwise real F00<30
+2E5->2E6 or 2E6->2E5,
+F00<60 ->2E7, else
+->2E8. Stage2 (2E5)
+or stage3 (2E6)
+height15 sprite38E.
+Current whole normal VC7.1
+fighter **42,184
+callable CODE B/11,896
+x86** (F895 41,466/
+11,696). Every native
+case opcode/width and
+all 24 original physical
+PE fields/targets checked.
+Both states ZERO true
+GPR/inner Jcc wrong B,
+only TEN original
+enclosing father far-JMP
+operand B each. Three
+same-sized FALSE source
+families recompiled and
+rejected. All 71 previous
+original native cases,
+five packed 901B tables
+and getter real four
+GPR wrong B rechecked.
+[F896 original game source PE proof](SCRIPTED_FIGHTER_PAIRED_2E5_2E6_F896.md);
+scripts/repo-python scripts/verify-scripted-fighter-pair2e5-2e6-f896.py.
+Entire original 46,755B
+callable fighter NONEXACT.
+
+**F895 actual original 2E4 full 409B native PE proof:**
+real 0052B466..0052B5FE
+**409 original inner
+CODE B/114x86/11
+typed physical PE fields**.
+True float borrowed
+ownerX-thisX Abs412D90
+strict < global6591F4
+chooses random455580
+0..4 + action2E4
+and early whole return.
+Getter completion protects
+random30..60 +516,
+stage10 shortF00<2/aux2.
+Fresh source parent F895
+41,466 CODE B/11,696
+x86, only 4 actual far
+giant JMP byte differences,
+3 whole false controls
+compile/reject. New shared
+scripts/verify-scripted-fighter-context-f895.py
+rechecks 70+ original
+cases in one current
+COFF parent, 1FD and
+252/254 true negatives,
+901B original packed
+DATA and common getter.
+[F895 original 2E4 PE receipt](SCRIPTED_FIGHTER_PHYSICAL_2E4_F895.md).
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin
