@@ -1,3 +1,4 @@
+#include "FighterNoticeBorrowedF960.hpp"
 // Two complete original fighter notice policies. Actual index guard only
 // controls the first notice byte: subsequent state/color byte writes
 // must happen even when notice index is invalid. The rendering backend
@@ -18,14 +19,14 @@ public:
 #define FIELD(type,off) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this)+(off)))
 void FighterNoticePairF414::SetNoticeFields(signed char notice,unsigned char first,unsigned char second) {
     if(notice>=0 && notice<=FIELD(signed char,0x532))
-        FIELD(signed char,0x6E7)=notice;
-    FIELD(unsigned char,0x6E8)=first;
-    FIELD(unsigned char,0x6E9)=second;
+        F960_BADGE(this).noticeAt6E7=notice;
+    F960_BADGE(this).firstAt6E8=first;
+    F960_BADGE(this).colorAt6E9=second;
 }
 void FighterNoticePairF414::RenderNotice(void* text,unsigned char r,unsigned char g,unsigned char b,unsigned char highlighted) {
     if(g_BattleCharacterNumberAt0067161E<8)
-        g_NoticeRendererAt0067143C->DrawNotice(text,r,g,b,24,FIELD(unsigned char,0x6F6),highlighted);
+        g_NoticeRendererAt0067143C->DrawNotice(text,r,g,b,24,F960_STEP_LOW_BYTE(this),highlighted);
     else
-        g_NoticeRendererAt0067143C->DrawNotice(text,r,g,b,16,FIELD(unsigned char,0x6F6),highlighted);
+        g_NoticeRendererAt0067143C->DrawNotice(text,r,g,b,16,F960_STEP_LOW_BYTE(this),highlighted);
 }
 #undef FIELD

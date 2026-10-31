@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Current evidence checkpoint: 2026-10-31, F937.** This is the short
+**Current evidence checkpoint: 2026-10-31, F960.** This is the short
 working queue, NOT a chronological research journal. Native original PE
 and live exact/origin manifests outrank historical C++ guesses and
 older F-series reports. The former long handoff, with its original
@@ -178,9 +178,11 @@ Native 12C has no afterRET label;
 uses actual D2 251B terminus.
 Whole 82,796B original NONEXACT.
 
-[F957 CA→CB source controls](THIRD_FIGHTER_CA_PRECEDES_CB_GPR_F957.md):
-30 real complete parent variants failed
-to improve CB's 79 wrong GPR roles.
+[F957 native CA→CB GPR negatives](THIRD_FIGHTER_CA_PRECEDES_CB_GPR_F957.md):
+30 complete partial parent trials did
+not improve CB's 79 wrong GPR
+roles; next focus genuine parent
+stack and ownership.
 
 [F952 local CB grammar negatives](THIRD_FIGHTER_CB_REGISTER_PHASE_F952.md):
 28 separate natural whole-parent
@@ -199,46 +201,25 @@ remain native PE source-backed.
 did not repair the native next-state
 register phase without 0x58 regressions.
 
-[F929/F930/F931 preceding real ten-shot-loop register phase](FIGHTER_FOLLOWING_BOUNCE_REGISTER_PHASE_F931.md):
-54 whole 58KB fighter C++ controls show a new
-causal compiler lead. A genuine 32-bit local loop
-using while (burst++<10) yields the NEXT original
-0x59 case as **356 B/95 x86/16 true physical
-PE targets and ZERO wrong original GPR roles or
-nonfield/nonshared-tail operand bytes**, previously
-19 each, within a whole 58,293-B compiled father.
-However the preceding native 0x58 **regresses by
-one mnemonic and two widths**: the strict original
-for-loop of F917 remains selected. The bounded
-two-complete-parent F931 checker records this
-tradeoff and verifies the whole 943B afterRET DATA.
-Next: recover BOTH adjacent cases in one genuine
-native parent. Entire 58KB function is NONEXACT.
+[F931 58KB original preceding-loop GPR phase](FIGHTER_FOLLOWING_BOUNCE_REGISTER_PHASE_F931.md):
+real `while (burst++<10)` moves next
+0x59 GPR errors **19→0**, but regresses
+original preceding 0x58 by one
+mnemonic/two widths. Not an exact
+native whole father.
 
 [F926 58KB mode63 register negatives](FIGHTER_REGISTER_OWNER_GRAMMAR_F926.md):
 38+24 complete natural source
 controls failed to fix native 0x59
 and 0x63 GPR roles; no exact credit.
 
-[F916/F917 whole-parent x87 improvement](FIGHTER_WHOLE_BURST_NATIVE_FSUBR_F917.md):
-original 00543210's four real projectile-X calculations at
-native x86 ordinals 11765/11970/12328/12528 now use a
-**borrowed typed +0x44 float lvalue**, positive signed integer
-IMUL and genuine original x87 FSUBR. In freshly compiled
-58KB whole parents, all **16,471 original instruction mnemonics**
-align and the four **six-instruction native projectile sequences
-are byte-identical**; exactly eight original-relevant source
-opcode/immediate bytes improved. Three original width mismatches
-and many real GPR/absolute relocation differences persist;
-**no whole exact or extra credited CODE**.
-
-These original functions remain nonexact despite local case
-research. Older 58KB parent sizes in the
-[frozen full research snapshot](history/RE_HANDOFF_F781_THROUGH_F906_PRE_CLEANUP_2026-10-31.md)
-are specific historical compiler contexts, not the latest
-whole-function acceptance. The
-[physical dispatch map](../config/fighter-boss-dispatch-fingerprints.json)
-is evidence for switch structure, not source provenance.
+[F917 58KB projectile-X x87 source recovery](FIGHTER_WHOLE_BURST_NATIVE_FSUBR_F917.md):
+four real original IMUL/FILD/FSUBR
+sequences now byte-correct, and
+all 16,471 whole-parent mnemonics
+align. Three native width and
+many real GPR/PE differences
+persist; entire giant NONEXACT.
 
 ## 4. All three remaining independent small/medium originals
 
@@ -347,14 +328,19 @@ type-checking signed shorts at +0x512/514/516.
 still 9/9 exact; polling input kept unchanged
 after evidence of `$SG` symbol renumbering.
 
-[F954 two signed profile selection bytes](PROGRESS_SELECTION_SIGNED_BYTE_FIELDS_F954.md):
-actual receiver+0x16AC4/5 shared
-signed 8-bit index view replaces
-raw casts across two source objects.
-Affected complete **11/11 canonical
-cold exact, 1,238 existing native
-CODE B**, including three 37/48/84B
-whole original small leaves.
+[F960 native fighter notice/HUD borrowed fields](FIGHTER_NOTICE_BORROWED_NATIVE_F960.md):
+true +0x6E7/6E8/6E9 notice bytes,
++0x6EA/6EC signed motion shorts,
++0x6F0/6F2/6F4/6F6 state shorts;
++0x6F6 render reads LOW BYTE
+(not the full 16-bit written field).
+**14/14 affected complete original
+functions remain cold exact,
+1,663 existing original CODE B
+across three original source TUs**.
+[F954 signed profile selectors](PROGRESS_SELECTION_SIGNED_BYTE_FIELDS_F954.md):
+two signed bytes +0x16AC4/5 remain
+11/11 cold exact, 1,238 existing B.
 
 ## 5. Exact acceptance, storage, and end-of-session checks
 

@@ -1,3 +1,4 @@
+#include "FighterNoticeBorrowedF960.hpp"
 #include "FighterOverlayDrawingF163.hpp"
 #include <stdlib.h>
 
@@ -7,18 +8,18 @@
 void FighterOverlayDrawingF163::RenderSideEffect()
 {
     if (FIELD(signed char, 0x2CC) == 0) {
-        DRAWING->DrawSprite(FIELD(signed char, 0x6E7),
-            0 - FIELD(short, 0x6EA) * FIELD(short, 0x6EA) -
-                FIELD(short, 0x6EC) * FIELD(short, 0x6EC) - 96,
-            FIELD(short, 0x6EC) * FIELD(short, 0x6EC),
-            D3DCOLOR_ARGB(FIELD(unsigned char, 0x6E9), 255, 255, 255),
+        DRAWING->DrawSprite(F960_BADGE(this).noticeAt6E7,
+            0 - F960_MOTION(this).axisAt6EA * F960_MOTION(this).axisAt6EA -
+                F960_MOTION(this).extentAt6EC * F960_MOTION(this).extentAt6EC - 96,
+            F960_MOTION(this).extentAt6EC * F960_MOTION(this).extentAt6EC,
+            D3DCOLOR_ARGB(F960_BADGE(this).colorAt6E9, 255, 255, 255),
             0, 0, 1.0f, 0, 0);
     } else {
-        DRAWING->DrawSprite(FIELD(signed char, 0x6E7),
-            FIELD(short, 0x6EA) * FIELD(short, 0x6EA) +
-                FIELD(short, 0x6EC) * FIELD(short, 0x6EC) + 704,
-            FIELD(short, 0x6EC) * FIELD(short, 0x6EC),
-            D3DCOLOR_ARGB(FIELD(unsigned char, 0x6E9), 255, 255, 255),
+        DRAWING->DrawSprite(F960_BADGE(this).noticeAt6E7,
+            F960_MOTION(this).axisAt6EA * F960_MOTION(this).axisAt6EA +
+                F960_MOTION(this).extentAt6EC * F960_MOTION(this).extentAt6EC + 704,
+            F960_MOTION(this).extentAt6EC * F960_MOTION(this).extentAt6EC,
+            D3DCOLOR_ARGB(F960_BADGE(this).colorAt6E9, 255, 255, 255),
             0, 0, 1.0f, 0, 1);
     }
 }
