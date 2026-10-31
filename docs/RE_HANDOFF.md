@@ -151,6 +151,16 @@ Use the targeted source-only reproductions:
     scripts/repo-python scripts/verify-winmain-stage-live-context-f904.py
     scripts/repo-python scripts/verify-winmain-leading-live-context-f904.py
 
+[F911 live main-before-scene ownership](WINMAIN_REAL_MAIN_BEFORE_SCENE_F911.md):
+32 full source live-owner layout variants narrowed the native HWND
+adjacency. The selected tracked *whole* WinMain now emits **2,984
+CODE B /654 x86** and **645/654 original instruction widths**;
+16 original ctor allocations and 15 native switch dispatch targets
+remain correct. Nine genuine widths still differ (five graphics,
+four cleanup local addresses); all original absolute EBP owner
+offsets and full PE fields still need reconstruction.
+**WinMain is NONEXACT.**
+
 [F910 physical original scene switch reconstruction](WINMAIN_ORIGINAL_SWITCH_PHYSICAL_ORDER_F910.md):
 the native afterRET jump table proves **case 4 is emitted physically
 before cases 0–3**, despite numeric dispatch order. A complete new
