@@ -140,6 +140,10 @@ previous archive indexes remain protected. Recover a
 single older original binary with
 `scripts/repo-python scripts/archive-recent-probe-objects-f1031.py --family binaries --restore ORIGINAL_RELATIVE_PATH`.
 See the [verified F1031 archival receipt and safety rules](docs/STORAGE_HYGIENE.md).
+A further **92 automatically regenerable CPython bytecode caches**
+(2,228,154 file bytes) were safely cleared from scripts/tests.
+Combined new F1031/F1032 measured file-byte savings:
+**95,775,037 B**. Future Python execution may regenerate them.
 
 F907 additionally archived **4,712 regenerable historical
 VC7.1 OBJ/PDB research copies**, recovering **220,205,684 bytes**

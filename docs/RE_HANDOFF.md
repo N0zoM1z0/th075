@@ -205,5 +205,8 @@ preserves **1,749 former original loose research OBJ/PDB**
 and reclaimed **93,546,883 bytes net**. Verify with
 `scripts/repo-python scripts/archive-recent-probe-objects-f1031.py --family binaries --verify`.
 The new archive and receipt are local, not Git-backed.
+F1032 additionally cleared 92 generated scripts/tests bytecode
+caches (2,228,154 B); newly measured F1031/F1032 net file-byte
+recovery is **95,775,037 B**, not new accepted original CODE.
 Never delete unrecognized ignored research or the only
 copy of original native/compiler evidence.
