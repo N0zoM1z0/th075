@@ -2219,6 +2219,47 @@ GPR negatives retained.
 scripts/repo-python scripts/verify-scripted-fighter-owner-wave-200-f877.py.
 Whole original 46,755B giant NONEXACT.
 
+**F878 actual original game 201 two independent stage5 tests and native gravity-global negative:**
+original 00528FC7..005290D1
+is **267 complete inner CODE B/
+80 x86/eight physical PE fields**.
+True stage0 Reset/FLAG and
+height ground global0065782C
+with actual drop **00658350**;
+stage5 first sprite336/Prepare2,
+then independent second guard
+sets POS30.0f.
+One normal full VC7.1 parent
+**32,249 callable CODE B/
+9,052 x86** (F877 31,997/
+8,974), original 201
+opcode/width/PE fields all
+match. Wrong but relocatable
+global00657478 has SAME
+267B/80x86 and nonfield bytes,
+but DIFFERENT real physical
+PE DIR32 destination, and is
+explicitly rejected by full
+negative source control.
+Merging two stage5 conditions
+produces nonnative full source
+parent **32,226B/9,044x86**.
+Selected source still **49
+true GPR operand bytes and
+two enclosing giant JMP
+operand bytes +263/+264**
+WRONG. All 50 earlier
+physical original game cases,
+including 1FD one-byte
+CMP negative, and all five
+901B packed afterRET tables
+rechecked. Getter four
+authentic GPR byte negatives.
+[F878 original PE/false global evidence](SCRIPTED_FIGHTER_STAGE_201_F878.md);
+scripts/repo-python scripts/verify-scripted-fighter-stage-201-f878.py.
+Full 46,755B giant NONEXACT,
+zero new accepted callable CODE.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin

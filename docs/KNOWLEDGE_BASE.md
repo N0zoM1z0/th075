@@ -284,6 +284,33 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   slots remain wrong. No
   accepted whole CODE.
   [F864 physical proof](SCENE_THREE_REAL_NAMED_POINTERS_F864.md).
+- **F878 original game 201 genuine separate stage5 tests/physical PE gravity:**
+  267B/80-x86/eight
+  true native PE fields
+  in one entire
+  **32,249B/9,052-x86**
+  selected fighter parent.
+  Stage5 sprite336 and
+  Prepare2 followed by
+  DIFFERENT independent
+  stage5 POS30 guard.
+  Original height-drop
+  global00658350 cannot
+  be replaced by 00657478:
+  wrong source has equal
+  lengths/relocation types
+  but PHYSICALLY wrong
+  PE DIR32 target. Two
+  negative whole sources
+  are compiled. **49
+  real GPR bytes and two
+  giant final JMP bytes**
+  remain nonexact. Earlier
+  50 original game cases
+  and five original 901B
+  packed tables verified.
+  No exact whole CODE.
+  [F878 native evidence](SCRIPTED_FIGHTER_STAGE_201_F878.md).
 - **F877 original 200 six-stage owner wave x87 FSUBR source:**
   native full 634B/177x86/
   ten real physical PE
