@@ -75,7 +75,22 @@ scripts/repo-python scripts/verify-scripted-fighter-tail31b-31c-f901.py
   physical PE call/global targets are verified, yet 424
   source fields move absolutely and twelve also move
   relative to action252/254. Never relocation-mask shifted fields.
-- [F909 preceding native 0x58 register-phase experiment](FIGHTER_PRE59_REGISTER_PHASE_F909.md):
+- [F932 cross-actor native 0x59 register-phase proof](SCRIPTED_FIGHTER_CROSS_BOSS_LOOP_REGISTER_PHASE_F932.md):
+the SAME genuine 32-bit ten-shot
+while (burst++<10) source change as F931
+improves the other 46KB original 005214B0
+action0x59 from **19 wrong original GPR
+roles and operand bytes to ZERO**, with
+356B/95 original x86/16 true PE fields
+verified. All 13,230 original whole source
+x86 remain ordinal aligned. However original
+action0x58 regresses by **one mnemonic
+and two widths**, so F901 remains selected
+and the complete function remains NONEXACT.
+Full-source, original-target verifier included.
+Next: simultaneous native 0x58 + 0x59 grammar.
+
+[F909 preceding native 0x58 register-phase experiment](FIGHTER_PRE59_REGISTER_PHASE_F909.md):
   27 whole normal VC7.1 father variants; 26 original-instruction-count
   sources, 1 longer. None fixes the original 0x59 entry EAX/ECX phase
   or improves the first whole GPR mismatch ordinal 2103. Eight
