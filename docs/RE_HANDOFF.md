@@ -151,27 +151,26 @@ real CC is present. Original whole
 true saved-this EBP and 0x720
 frame are not reconstructed.
 
-[F1012 original 82KB 303 x87 arc](THIRD_FIGHTER_NATIVE_303_X87_F1012.md):
-tracked partial father now
-**72,252B/19,803 x86**.
-Native303 **1,014B/267x86/
-29 real PE fields**, source
-1,011B, all mnemonic/GPR
-roles aligned, only final
-shared-tail JMP width wrong.
-Legitimate C++ F32(0x54)
-access fixes native x87 PE,
-borrowed F752 opponent X
-fixes MOV/FLD order, true
-F04+=F06 fixes GPR phase.
-Original cdecl00483300 x87
-math and __ftol2 verified.
-Genuine later303 also repairs
-[F1011 302](THIRD_FIGHTER_MODES_302_JUMP_RECOVERY_F1011.md)
-to **1,033B/279x86 with all
-mnemonic/width/GPR roles
-matched**, 25 PE targets.
-Whole 82KB NONEXACT.
+[F1013 original 82KB final 31B/31C](THIRD_FIGHTER_REAL_FINAL_31B_31C_F1013.md):
+tracked PARTIAL father now
+**72,707B/19,938 x86**.
+Real native 31B **257B/76x86/
+9 PE** and 31C **219B/63x86/
+7 PE**: all 139 mnemonic/
+width/GPR roles aligned.
+31B true shot0x3E5, 31C
+native signed state and BYTE
++0x3CF=1; 16 external PE
+targets and afterRET table.
+Natural real final game cases
+also repair previous
+[F1012 original 303](THIRD_FIGHTER_NATIVE_303_X87_F1012.md)
+terminal near shared JMP:
+303 now **1,014B/267x86,
+0 wrong mnem/width/GPR**,
+29 physical PE targets.
+Original whole 82,796B
+callable still NONEXACT.
 
 [F975 19D/19E/19F](THIRD_FIGHTER_STAGES19D19F_F975.md)
 native 400B/97,475B/128,
