@@ -284,6 +284,28 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   slots remain wrong. No
   accepted whole CODE.
   [F864 physical proof](SCENE_THREE_REAL_NAMED_POINTERS_F864.md).
+- **F875 original 1FF six associated-owner stage actions:**
+  full 533B/149 x86/
+  nine true PE calls in
+  new 31,378B/8,799-x86
+  fighter source. Stages1..5
+  owner action64 with actual
+  facing 74/40/36/33/32
+  and FILD temporary slots
+  EBP-0x88/-8C/-90/-94/-98
+  naturally restored; stage6
+  owner action35. All real
+  opcode/width/PE positions
+  verified; 109 GPR bytes
+  and two whole-giant JMP
+  bytes remain DIFFERENT.
+  Prior 46 original complete
+  game cases, real 1FE
+  full shape and 1FD one-byte
+  CMP defect plus all five
+  901B packed tables checked.
+  No accepted exact whole CODE.
+  [F875 original PE proof](SCRIPTED_FIGHTER_OWNER_STAGES_1FF_F875.md).
 - **F874 real 1FD/1FE borrowed owner CFG and register width:**
   original 1FD 386B/107-x86
   and 1FE 392B/107-x86,

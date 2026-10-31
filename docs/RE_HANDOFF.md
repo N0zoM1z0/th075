@@ -2140,6 +2140,41 @@ authentic GPR operand negatives.
 scripts/repo-python scripts/verify-scripted-fighter-owner-dual-f874.py.
 Whole 46,755B original still NONEXACT.
 
+**F875 real original 1FF stage1..6 borrowed owner and five native FILD temp slots:**
+original 00528B34..00528D48
+**533 complete game inner CODE B/
+149 x86/nine typed real PE calls**.
+Stage1..5 owner pointer+2E8
+action64, facing multipliers
+74/40/36/33/32, float X+44
+stored into owner+44, then
+stage6 owner action35.
+Natural VC7.1 x87 scratch
+**EBP-0x88/-0x8C/-0x90/
+-0x94/-0x98** for five
+FILD integer intermediates,
+all original PE call targets/
+offsets and x86 width/order.
+New full parent **31,378
+callable CODE B/8,799 x86**
+(F874 30,860/8,652).
+1FF still **109 native
+GPR byte errors** plus two
+real original giant final
+JMP bytes +529/+530.
+All 46 previous original
+case PE sources, 1FE full
+392B and 1FD still-one-byte
+CMP ECX-vs-EAX negative,
+five original 901B packed
+afterRET DATA tables
+reverified. Common getter
+retains four honest GPR
+operand byte differences.
+[F875 native owner stage proof](SCRIPTED_FIGHTER_OWNER_STAGES_1FF_F875.md);
+scripts/repo-python scripts/verify-scripted-fighter-owner-stages-1ff-f875.py.
+Whole original 46,755B remains NONEXACT.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin
