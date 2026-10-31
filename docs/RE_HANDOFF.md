@@ -166,29 +166,23 @@ real CC is present. Original whole
 true saved-this EBP and 0x720
 frame are not reconstructed.
 
-[F972 82KB original 199/19A float five-shot](THIRD_FIGHTER_FIVE_SHOT_MOTION_F972.md):
-TRACKED cumulative partial father
-**31,500B/8,678 x86**, real original
-two 593B/170x86 states with
-**38 typed PE targets**. Initial
-naive POS54*global compiled original
-x87 FLD/FMUL widths swapped
-(ordinal14/15) despite equal total
-case length; native typed F32
-lvalue restores all mnemonic/
-width roles with 91 wrong GPR
-per state.
-[F971 true 196/197/198](THIRD_FIGHTER_FIVE_SHOT_F971.md):
-three original 507B/146x86
-five-shot handlers, 45 typed
-PE targets and all x86 widths,
-77 GPR differences each.
-[F970 194/195](THIRD_FIGHTER_STAGES194195_F970.md),
-[F969 192](THIRD_FIGHTER_STAGE192_NATIVE_F969.md)
-and [F968 190/191](THIRD_FIGHTER_STAGES190191_F968.md)
-remain original native source
-backed. Whole original 82,796B
-giant remains NONEXACT.
+[F974 82KB native 19B/19C single shots](THIRD_FIGHTER_SINGLE_SHOT_F974.md):
+selected original-shaped partial C++
+father emits **32,180B/8,848 x86**.
+Real original 19B/19C each
+**355B/87x86/7 typed PE targets**,
+zero mnemonic/width errors but
+56 native GPR differences each.
+[F972 199/19A motion five-shots](THIRD_FIGHTER_FIVE_SHOT_MOTION_F972.md):
+both original 593B/170x86/19 PE;
+native FLD member/FMUL global
+restored after initial width errors,
+91 GPR differences each.
+[F971 196/197/198](THIRD_FIGHTER_FIVE_SHOT_F971.md):
+three original 507B/146-x86
+five-shot handlers with 45 real
+PE targets. Complete original
+82,796B giant remains NONEXACT.
 
 [F957 native CA→CB GPR negatives](THIRD_FIGHTER_CA_PRECEDES_CB_GPR_F957.md):
 30 complete partial parent trials did
