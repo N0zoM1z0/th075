@@ -2338,6 +2338,45 @@ Entire original 46,755B
 fighter still NONEXACT,
 zero split-case CODE credit.
 
+**F881 actual original fighter action258 mixed float-X/raw-Y projectile:**
+original 00529678..00529745
+has **206 complete game inner
+CODE B/60 native x86/six real
+physical PE REL32 fields**.
+Stage0 true Reset/state1,
+stage2 native sprite340
+at 00453A70 with signed
+facing*80 FILD EBP-0xB4
+plus float actor X, but
+raw integer Y+48 and
+narrow char facing argument.
+Then real 0046D000(0xFA)
+and Prepare5 at00453D40.
+Int formal is INCORRECT:
+whole native source case
+207B MOVSX versus original
+206B byte MOV. One full
+new VC7.1 parent **33,796
+callable CODE B/9,510 x86**
+(F880 33,605/9,452);
+all 60 opcode/width and
+six original PE call fields
+physically restored.
+**34 real GPR plus two
+whole-giant JMP byte
+negatives** remain.
+All preceding 57 original
+game states including 1FD
+1B CMP and 252/254 PE
+offset shifts, five packed
+901B afterRET tables and
+native getter four real
+GPR errors rechecked.
+[F881 physical mixed-coordinate proof](SCRIPTED_FIGHTER_FLOATX_258_F881.md);
+scripts/repo-python scripts/verify-scripted-fighter-floatx-258-f881.py.
+Whole 46,755B giant remains
+NONEXACT; no split-case CODE.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin

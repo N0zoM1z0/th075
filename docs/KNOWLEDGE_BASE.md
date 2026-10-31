@@ -284,6 +284,35 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   slots remain wrong. No
   accepted whole CODE.
   [F864 physical proof](SCENE_THREE_REAL_NAMED_POINTERS_F864.md).
+- **F881 original 258 narrow facing and mixed float-X/raw-Y projectile:**
+  actual native 206B/
+  60 x86/six genuine
+  physical PE calls
+  inside full **33,796B/
+  9,510-x86** fighter.
+  Stage2 sprite340
+  with FILD signed
+  facing*80 EBP-0xB4,
+  float X+44 and RAW
+  integer Y+48, then
+  StartAnimation(0xFA)
+  at 46D000/Prepare5.
+  True char fourth formal
+  emits native MOV r8 3B,
+  false int formal 4B
+  MOVSX/207B nonnative.
+  All six PE calls and
+  original opcode/width
+  match, but 34 GPR and
+  two giant JMP bytes
+  still wrong; 57 earlier
+  original cases, five
+  packed 901B tables
+  and getter register
+  negatives rechecked.
+  No original whole exact
+  CODE credit.
+  [F881 native PE evidence](SCRIPTED_FIGHTER_FLOATX_258_F881.md).
 - **F880 original consecutive 255/256/257 native 16-bit stage8 auxiliary:**
   complete original
   258/186/258B, 75/55/75
