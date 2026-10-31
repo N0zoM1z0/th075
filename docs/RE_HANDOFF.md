@@ -167,6 +167,19 @@ GPR defects. Other genuine
 scope/typed borrowed controls
 negative. Keep strict original.
 
+[F1021 82KB native 58/59 GPR controls](THIRD_FIGHTER_NATIVE_58_59_FULL_GPR_CONTROLS_F1021.md):
+TEN whole-shaped native
+82KB sources tested. Strict
+0x58 469B/135x86 has zero
+mnemonic/width/GPR errors,
+following 0x59 has 19 GPR
+errors. Postincrement fixes
+0x59 but regresses 0x58
+(1 mnemonic,2 width,40 GPR)
+and whole 6,958→6,979
+GPR differences. Other
+native C++ variants negative.
+
 [F1020 native 82KB complete source geometry](THIRD_FIGHTER_SHARED_REAL_RING_LOCAL_F1020.md):
 tracked original-shaped father now
 **82,796B/22,721 x86** =
