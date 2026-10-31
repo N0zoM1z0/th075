@@ -166,22 +166,28 @@ real CC is present. Original whole
 true saved-this EBP and 0x720
 frame are not reconstructed.
 
-[F976 third 82KB native random 1A0 loops](THIRD_FIGHTER_RANDOM_LOOP_F976.md):
-TRACKED cumulative partial C++
-**34,055B/9,341 x86**. Native
-1A0 5/8 real random-shot loops
-570B/148x86/12 actual PE
-targets now all mnemonic/width
-matched after fixing Y-base
-before Rand20 source evaluation.
-66 original GPR roles remain
-wrong. Real parent stack grows
-0x144→0x16C, moves saved `this`
-EBP−0x10→−0x18 and repairs
-**four native x87 widths in
-preceding 191** (12 wrong→8);
-original parent 0x720 and
-EBP−0x64 still absent.
+[F977 original 82KB native random 1A1 loops](THIRD_FIGHTER_RANDOM_LOOP_1A1_F977.md):
+TRACKED normal partial fighter
+now **34,624B/9,492 x86**.
+Real 1A1 random 5/8-shot
+source 570B/151x86/12 native
+PE fields, all original ordered
+mnemonics/widths; genuine
+**ESI saving across Rand calls**
+now appears in parent prologue.
+Real whole parent frame grows
+0x16C→0x194, saved receiver
+moves EBP−0x18→−0x20;
+earlier native 191 widths
+wrong **8→4** (four repaired).
+[F976 native 1A0](THIRD_FIGHTER_RANDOM_LOOP_F976.md)
+570B/148x86/12 PE fields
+with original Y-base-before-Rand
+evaluation, prior 191 widths
+12→8; 66 GPR roles still
+wrong. Whole original 82,796B
+fighter remains NONEXACT.
+
 [F975 19D/19E/19F](THIRD_FIGHTER_STAGES19D19F_F975.md)
 native 400B/97,475B/128,
 478B/128 with 31 PE targets,
