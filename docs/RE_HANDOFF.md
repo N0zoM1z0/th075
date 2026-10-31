@@ -151,6 +151,22 @@ real CC is present. Original whole
 true saved-this EBP and 0x720
 frame are not reconstructed.
 
+[F1021 FULL native-frame register-phase controls](THIRD_FIGHTER_FULL_NATIVE_LOOP_PHASE_F1021.md):
+10 complete 82KB normal VC7.1
+original-shaped fathers tested.
+First wrong GPR ordinal2180
+is true original 0x59 start
+004ADEFA. Strict native0x58
+469B/135x86/0 wrong roles;
+next0x59 still 19 wrong GPR.
+Postincrement while repairs0x59
+to 0 wrong but regresses0x58
+1 mnemonic/2 widths/40 GPR
+and WHOLE 6,958→6,979
+GPR defects. Other genuine
+scope/typed borrowed controls
+negative. Keep strict original.
+
 [F1020 native 82KB complete source geometry](THIRD_FIGHTER_SHARED_REAL_RING_LOCAL_F1020.md):
 tracked original-shaped father now
 **82,796B/22,721 x86** =
@@ -176,44 +192,8 @@ Original whole fighter
 still NONEXACT; accepted
 CODE remains unchanged.
 
-[F975 19D/19E/19F](THIRD_FIGHTER_STAGES19D19F_F975.md)
-native 400B/97,475B/128,
-478B/128 with 31 PE targets,
-0 mnemonic/width errors.
-Complete original 82,796B
-fighter remains NONEXACT.
-
-[F957 preceding CA negative](THIRD_FIGHTER_CA_PRECEDES_CB_GPR_F957.md):
-30 full-parent variants did not fix
-following CB's 79 GPR errors.
-
-[F952 local CB grammar negatives](THIRD_FIGHTER_CB_REGISTER_PHASE_F952.md):
-28 separate natural whole-parent
-variants also failed to fix CB GPR.
-
-[F951 CB](THIRD_FIGHTER_FOURWAY_CB_F951.md),
-[F950 CA](THIRD_FIGHTER_FOURWAY_CA_F950.md),
-[F949 C9](THIRD_FIGHTER_FOURWAY_C9_F949.md),
-[F948 C8](THIRD_FIGHTER_FOURWAY_C8_F948.md),
-[F947 CF/D0](THIRD_FIGHTER_FALL_REFLECT_F947.md)
-and earlier [F943](THIRD_FIGHTER_NATIVE_SELECTOR_F943.md)
-remain native PE source-backed.
-
-[F937 preceding native register phase](FIGHTER_STRICT_PREDECESSOR_LIMIT_F937.md):
-49 complete 58KB actor variants
-did not repair later GPR roles.
-
-[F931 native GPR phase](FIGHTER_FOLLOWING_BOUNCE_REGISTER_PHASE_F931.md):
-original 58KB parent loop control
-regresses predecessor.
-
-[F926 58KB register negatives](FIGHTER_REGISTER_OWNER_GRAMMAR_F926.md):
-full-native owner grammar trials
-did not repair GPR register phase.
-
-[F917 native 58KB signed X](FIGHTER_WHOLE_BURST_NATIVE_FSUBR_F917.md):
-all mnemonic roles align, three
-real width differences remain.
+[F975 original native stages](THIRD_FIGHTER_STAGES19D19F_F975.md):
+19D/19E/19F source recovered.
 
 ## 4. All three remaining independent small/medium originals
 
