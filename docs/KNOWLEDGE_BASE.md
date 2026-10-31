@@ -284,6 +284,53 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   slots remain wrong. No
   accepted whole CODE.
   [F864 physical proof](SCENE_THREE_REAL_NAMED_POINTERS_F864.md).
+- **F905 original native 252/253/254 short byte-SUB register phase:**
+  Native 260/260/224B,
+  72/72/63-x86, true
+  SUB DL/CL/AL and
+  18 actual native
+  PE fields. Current
+  near-complete father
+  generates AL/DL/CL
+  and 259/260/225B.
+  54 full VC7.1 C++
+  genuine byte lvalue,
+  signed, reference
+  or predicate sources;
+  46 remain 13,230x86,
+  NONE fixes original
+  GPR phase. Four
+  source variants even
+  emit whole 46,755B
+  but fail original
+  opcode/case boundary
+  checks. True 252
+  six -1B and 254 six
+  +1B original PE
+  fields stay shifted.
+  [F905 original PE proof](SCRIPTED_FIGHTER_BYTE_REG_PHASE_F905.md).
+- **F904 authored WinMain scene/short stage lifetime grouped source controls:**
+  43 complete original
+  startup sources using
+  actual sceneState,
+  previousState, first
+  scene, message and
+  window sizes. Correct
+  normal VC7.1 /GX-
+  restores 654 original
+  x86 mnemonics and
+  60B afterRET scene
+  DATA. Grouped real
+  short states improve
+  native x86 WIDTH
+  match from 619/654
+  to 633/654, but
+  original currentScene
+  EBP-184/path EBP-180
+  still source -180/-17C
+  and full authored
+  WinMain NONEXACT.
+  [F904 WinMain native research](WINMAIN_REAL_STAGE_OWNER_LIFETIMES_F904.md).
 - **F903 29 native mode63 typed borrowed-owner and short-circuit C++ controls:**
   Real original 417B/
   109x86/7 PE fields.

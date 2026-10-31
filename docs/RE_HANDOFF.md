@@ -3245,6 +3245,48 @@ scripts/repo-python scripts/verify-scripted-fighter-mode63-typed-f903.py.
 Entire original 46,755B
 fighter still NONEXACT.
 
+**F905 54 real 8-bit actor decrement source controls in full fighter:**
+native original 252/253/
+254 case CODE B exactly
+260/260/224, x86
+72/72/63, real byte
+SUB DL/CL/AL and six
+original PE fields
+EACH. Near-full
+current VC7.1 father
+naturally produces
+SUB AL/DL/CL,
+source 259/260/225B,
+with original 252
+six PE fields -1
+relative source and
+254 six fields +1;
+total 744 B matches
+but individual original
+case boundaries DO NOT.
+54 complete current
+father C++ variants
+signed/unsigned prefix,
+postfix, typed real
+byte owner, live reference,
+compound decrement and
+real predicate syntax,
+46 emit 13,230 x86,
+NONE restores both
+original SUB widths/GPR.
+Four full source variants
+coincidentally generate
+46,755B WHOLE length,
+still wrong original
+opcode/register phase.
+All 18 actual native
+case PE targets/offsets
+physically verified.
+[F905 native actual byte allocator evidence](SCRIPTED_FIGHTER_BYTE_REG_PHASE_F905.md);
+scripts/repo-python scripts/verify-scripted-fighter-byte-decrement-f905.py.
+No exact callable giant
+or internal case credit.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin
