@@ -2594,6 +2594,53 @@ callable fighter NONEXACT.
 [F887 actual original physical PE proof](SCRIPTED_FIGHTER_NATIVE_2BF_F887.md);
 scripts/repo-python scripts/verify-scripted-fighter-2bf-f887.py.
 
+**F888 corrected native 2C0/2C1 sprite345 original condition and whole getter GPR breakthrough:**
+2C0 native **288B/85x86/
+11 PE fields**, 2C1
+**276B/81x86/11 PE fields**.
+Both stage1 Prepare28/17,
+2C0 Prepare8 sprite73,
+2C1 Prepare9 sprite74.
+Original sprite345 is
+INSIDE actual current-action
+matching if; previous
+same-length C++ unguarded
+sprite bug had wrong JNE
+target +228/+204, now
+corrected and separately
+full-parent negative-tested.
+2C0 stage>10 stores +F10
+outside action condition;
+2C1 stores +F10 INSIDE.
+New complete normal VC7.1
+source **37,053 callable
+CODE B/10,463 x86**
+(F887 36,519/10,301),
+all native mnemonic/width,
+22 actual PE field
+destinations and source
+case-local branches match.
+ONLY enclosing-giant
+final JMP +284/+285 and
++272/+273 differ.
+IMPORTANT previously four
+GPR wrong common getter
+bytes (10/12/16/19)
+now NATURALLY disappear
+in expanded whole parent:
+native 46B getter
+**34/34 original nonfield
+B** match, three native
+PE call operands verified.
+Previous 63 original game
+cases plus five 901B
+packed switch DATA tables
+rechecked. STILL original
+entire 46,755B parent
+NONEXACT.
+[F888 original PE proof](SCRIPTED_FIGHTER_NATIVE_2C0_2C1_F888.md);
+scripts/repo-python scripts/verify-scripted-fighter-2c0-2c1-f888.py.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin

@@ -284,6 +284,40 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   slots remain wrong. No
   accepted whole CODE.
   [F864 physical proof](SCENE_THREE_REAL_NAMED_POINTERS_F864.md).
+- **F888 original 2C0/2C1 guarded sprite345 and shared getter register restoration:**
+  Native 288B/85x86/
+  11 PE fields and 276B/
+  81x86/11 PE fields,
+  both stage1 sprite73/74
+  and optional sprite345
+  ONLY upon current-action
+  match. Previous plausible
+  unguarded source had
+  SAME case size but
+  incorrect real original
+  JNE target; negative
+  whole C++ recompiled.
+  Now 2C0/2C1 have
+  ZERO native GPR or
+  local-branch bytes wrong,
+  only 2 actual far
+  enclosing giant JMP
+  bytes per case. New
+  whole **37,053B/10,463
+  x86** compiler phase
+  additionally restores
+  common 46B getter
+  **34/34 native nonfield
+  bytes** (F887 had
+  four GPR errors).
+  Original three getter
+  PE calls plus 63 prior
+  native cases and five
+  packed 901B DATA tables
+  physically verified.
+  Still NO whole exact
+  giant CODE credited.
+  [F888 native source proof](SCRIPTED_FIGHTER_NATIVE_2C0_2C1_F888.md).
 - **F887 native 2BF original fully shaped 473B/138x86/15 PE fields:**
   actual stage0 writes
   short+80=0x63 THEN =1,
