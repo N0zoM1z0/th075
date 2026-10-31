@@ -213,6 +213,16 @@ six-byte borrowed view and cold-replayed **only the affected
 three whole functions: 3/3 exact, 151 existing native CODE B
 preserved**. The full AnimationState owner remains unknown.
 
+[F920 texture entry native borrowed fields](TEXTURE_ENTRY_TYPED_BORROWED_F920.md):
+the entire already accepted original 0040C590
+`TexturePalette40C8C0::Refresh` now uses typed
+member reads at observed offsets +0/+4/+8/+0xC/+0x28
+instead of five unrelated raw offset casts. Ten
+full VC7.1 C++ variants were tested; the new
+tracked whole 340B/125-x86 original leaf remains
+**1/1 canonical cold exact** with all 11 existing
+actual PE/COFF references verified. No new exact credit.
+
 ## 5. Exact acceptance, storage, and end-of-session checks
 
 Read [AGENTS.md](../AGENTS.md), [workflow](RE_WORKFLOW.md)
