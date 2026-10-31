@@ -75,20 +75,12 @@ scripts/repo-python scripts/verify-scripted-fighter-tail31b-31c-f901.py
   physical PE call/global targets are verified, yet 424
   source fields move absolutely and twelve also move
   relative to action252/254. Never relocation-mask shifted fields.
-- [F932 cross-actor native 0x59 register-phase proof](SCRIPTED_FIGHTER_CROSS_BOSS_LOOP_REGISTER_PHASE_F932.md):
-the SAME genuine 32-bit ten-shot
-while (burst++<10) source change as F931
-improves the other 46KB original 005214B0
-action0x59 from **19 wrong original GPR
-roles and operand bytes to ZERO**, with
-356B/95 original x86/16 true PE fields
-verified. All 13,230 original whole source
-x86 remain ordinal aligned. However original
-action0x58 regresses by **one mnemonic
-and two widths**, so F901 remains selected
-and the complete function remains NONEXACT.
-Full-source, original-target verifier included.
-Next: simultaneous native 0x58 + 0x59 grammar.
+- [F932 native 0x59 register phase](SCRIPTED_FIGHTER_CROSS_BOSS_LOOP_REGISTER_PHASE_F932.md):
+  true preceding ten-shot postincrement loop
+  fixes the following 0x59's 19 wrong
+  GPR roles, but regresses original 0x58
+  by one mnemonic and two widths; complete
+  46KB parent remains NONEXACT.
 
 [F909 0x58 phase negatives](FIGHTER_PRE59_REGISTER_PHASE_F909.md):
 27 full VC7.1 parent variations did
@@ -381,6 +373,16 @@ version changed exact COFF $L labels.
 Full final affected/control cohort
 **13/13 whole functions cold exact,
 4,031 PREVIOUSLY accepted B**.
+
+[F986 original two-byte fighter fade window](FIGHTER_FADE_SHARED_BYTES_F986.md):
+original unsigned actor bytes
++0x538/+0x539 now shared across
+five original source objects.
+**43/43 complete native original
+functions cold exact**, preserving
+**6,185 previously accepted CODE B**,
+including full battle renderer,
+large timer and virtual actions.
 
 ## 5. Exact acceptance, storage, and end-of-session checks
 

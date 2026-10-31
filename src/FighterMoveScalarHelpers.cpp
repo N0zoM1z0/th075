@@ -1,3 +1,4 @@
+#include "FighterFadeBorrowedF986.hpp"
 #include "FighterGaugeBorrowedF980.hpp"
 #include "FighterMoveScalarHelpers.hpp"
 
@@ -12,8 +13,8 @@ void FighterMoveScalarHelpers::SetNonnegativeWord(short value)
 
 void FighterMoveScalarHelpers::BeginFadeParameters(unsigned char mode)
 {
-    FIELD(unsigned char, 0x538) = 0xF0;
-    FIELD(unsigned char, 0x539) = mode;
+    F986_FADE(this).fadeAlphaAt538 = 0xF0;
+    F986_FADE(this).drawModeAt539 = mode;
 }
 
 #undef FIELD

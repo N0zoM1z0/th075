@@ -1,3 +1,4 @@
+#include "FighterFadeBorrowedF986.hpp"
 #include "FighterNoticeBorrowedF960.hpp"
 #include "FighterOverlayDrawingF163.hpp"
 #include <stdlib.h>
@@ -37,14 +38,14 @@ void FighterOverlayDrawingF163::DrawFacingSprite(short sprite, float position, f
 
 void FighterOverlayDrawingF163::RenderFadeOverlay()
 {
-    unsigned char alpha = 160 - abs(128 - FIELD(unsigned char, 0x538)) * 5 / 4;
+    unsigned char alpha = 160 - abs(128 - F986_FADE(this).fadeAlphaAt538) * 5 / 4;
     if (FIELD(signed char, 0x2CC) == 0) {
-        DRAWING->DrawSprite(FIELD(unsigned char, 0x539),
-            0 - FIELD(unsigned char, 0x538) / 2, 0,
+        DRAWING->DrawSprite(F986_FADE(this).drawModeAt539,
+            0 - F986_FADE(this).fadeAlphaAt538 / 2, 0,
             D3DCOLOR_ARGB(alpha, 255, 255, 255), 0, 0, 1.0f, 0, 0);
     } else {
-        DRAWING->DrawSprite(FIELD(unsigned char, 0x539),
-            FIELD(unsigned char, 0x538) / 2 + 640, 0,
+        DRAWING->DrawSprite(F986_FADE(this).drawModeAt539,
+            F986_FADE(this).fadeAlphaAt538 / 2 + 640, 0,
             D3DCOLOR_ARGB(alpha, 255, 255, 255), 0, 0, 1.0f, 0, 1);
     }
 }

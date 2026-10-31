@@ -1,3 +1,4 @@
+#include "FighterFadeBorrowedF986.hpp"
 #include "BattleRender43D9D0.hpp"
 
 #define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
@@ -87,9 +88,9 @@ void BattleRender43D9D0::RenderFrame() {
         RenderHud();
         LISTS(0x44)->DispatchSelected(3);
         LISTS(0x48)->DispatchSelected(3);
-        if (ACTOR_FIELD(unsigned char, 0x44, 0x538) > 0)
+        if (F986_FADE(FIELD(void*, 0x44)).fadeAlphaAt538 > 0)
             ACTOR(0x44)->RenderFadeOverlay();
-        if (ACTOR_FIELD(unsigned char, 0x48, 0x538) > 0)
+        if (F986_FADE(FIELD(void*, 0x48)).fadeAlphaAt538 > 0)
             ACTOR(0x48)->RenderFadeOverlay();
         RenderStatusEffects();
         if (FIELD(signed char, 0x18) == 5) {

@@ -1,3 +1,4 @@
+#include "FighterFadeBorrowedF986.hpp"
 #include "FighterGaugeBorrowedF980.hpp"
 #include "CombatTimers.hpp"
 #define FIELD(type, object, offset) (*reinterpret_cast<type *>(reinterpret_cast<unsigned char *>(object) + offset))
@@ -74,7 +75,7 @@ updateViewBounds:
     if (SELF(short, 0x326) < 0) SELF(short, 0x326) = 0;
     if (SELF(int, 0x47C) > 0) --SELF(int, 0x47C);
     if (SELF(signed char, 0x484) > 0) --SELF(signed char, 0x484);
-    if (SELF(unsigned char, 0x538) > 0) SELF(unsigned char, 0x538) -= 3;
+    if (F986_FADE(this).fadeAlphaAt538 > 0) F986_FADE(this).fadeAlphaAt538 -= 3;
     SELF(float, 0x2D8) = (-g_CombatViewOffsetX - 320.0f + 640.0f) - (320.0f - g_CombatViewSpan) * 0.5f;
     SELF(float, 0x2DC) = (-g_CombatViewOffsetX + 320.0f + 640.0f) + (320.0f - g_CombatViewSpan) * 0.5f;
     SELF(float, 0x2E0) = (g_CombatViewOffsetY - 300.0f + 420.0f) + (320.0f - g_CombatViewSpan) * 210.0f / 320.0f;
