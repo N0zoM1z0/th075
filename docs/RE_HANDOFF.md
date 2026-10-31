@@ -166,25 +166,26 @@ real CC is present. Original whole
 true saved-this EBP and 0x720
 frame are not reconstructed.
 
-[F969 original 82KB 192 mixed integer/x87 volley](THIRD_FIGHTER_STAGE192_NATIVE_F969.md):
-TRACKED cumulative partial father now
-**27,610B/7,578 x86**. Native game
-192 original **732B/177x86/11 typed PE
-targets** is source-reconstructed
-with **zero mnemonic/width errors**;
-three real Y FIADD integer adds and
-six X/angle FILD moves. Source
-scratch lives EBP−0x84..−0xA4
-versus native −0xD8..−0xF8,
-and 121 original GPR roles differ.
-[F968 true 190/191](THIRD_FIGHTER_STAGES190191_F968.md)
-adds two original 597B/147-x86
-three-shot states, 22 native PE
-targets, twelve wrong EBP widths
+[F970 third 82KB original 194/195](THIRD_FIGHTER_STAGES194195_F970.md):
+new TRACKED cumulative partial C++
+parent **28,868B/7,910 x86**, adding
+two original **644B/168x86** volleys
+with 11+11 true PE targets and
+zero mnemonic/width differences;
+118 genuine GPR errors each.
+[F969 192 mixed FIADD/FILD](THIRD_FIGHTER_STAGE192_NATIVE_F969.md):
+original 732B/177x86, source
+same B/x86/11 PE fields with
+three original FIADD and six
+FILD integer scratch operations;
+121 GPR errors and wrong EBP.
+[F968 190/191 triple volleys](THIRD_FIGHTER_STAGES190191_F968.md):
+two 597B/147x86, 22 PE fields,
+twelve native EBP width errors
 per case. [F966 188/189](THIRD_FIGHTER_STAGE188189_F966.md)
 and [F965 186/187](THIRD_FIGHTER_STAGE186187_F965.md)
-also native PE source-backed.
-Whole 82,796B original NONEXACT.
+also native source-backed. Entire
+82,796-B original remains NONEXACT.
 
 [F957 native CA→CB GPR negatives](THIRD_FIGHTER_CA_PRECEDES_CB_GPR_F957.md):
 30 complete partial parent trials did
