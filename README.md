@@ -10,7 +10,7 @@ Only original, attributable, byte-identical **whole callable functions**
 earn canonical exact CODE credit. An internal case, original PE-similar
 mnemonic stream or matching total source length is not acceptance.
 
-## Current verified status (2026-10-31, F906 research / F780 exact ledger)
+## Current verified status (2026-10-31, F937 research / F780 exact ledger)
 
 | Property | Grounded result |
 | --- | --- |
@@ -60,8 +60,12 @@ The currently selected normal VC7.1 source emits
 mnemonics line up, **five opcode widths**, **443 original-absolute
 PE field offsets** and many real register roles remain wrong.
 [F901 whole-fighter source/PE audit](docs/SCRIPTED_FIGHTER_COMPLETE_TAIL_AND_WIDTH_AUDIT_F901.md)
-and [F906 first GPR mismatch at 0052327A](docs/FIGHTER_FIRST_GPR_DIVERGENCE_F906.md)
-are the best next steps. **The whole fighter is NOT exact.**
+establishes the strict baseline. The newer
+[F932 cross-actor register-phase result](docs/SCRIPTED_FIGHTER_CROSS_BOSS_LOOP_REGISTER_PHASE_F932.md)
+shows that one natural preceding ten-shot loop grammar
+restores the next 0x59 state from 19 wrong GPR roles to
+zero, BUT introduces a native 0x58 opcode and two
+width regressions. **The whole fighter is NOT exact.**
 
 The original **00543210** fighter is another 58,294-B whole giant
 with 943 separately owned afterRET DATA B. The
@@ -69,8 +73,11 @@ with 943 separately owned afterRET DATA B. The
 now matches all 16,471 native x86 mnemonic ordinals and restores
 four original positive IMUL / FSUBR sequences in the full parent,
 but **three real width and many GPR/PE field mismatches remain**.
-It and the
-other 20 giant originals remain nonexact. Large original
+The [F931 preceding-loop source lead](docs/FIGHTER_FOLLOWING_BOUNCE_REGISTER_PHASE_F931.md)
+fixes all next-state 0x59 GPR operands but regresses native 0x58;
+[F937 strict predecessor controls](docs/FIGHTER_STRICT_PREDECESSOR_LIMIT_F937.md)
+exclude several trivial loop/argument spellings.
+It and the other 20 giant originals remain nonexact. Large original
 functions **004AC040** (82,796 B), **0050A580** (81,539 B),
 and **0045DD70** (60,999 B) must not be neglected in favor
 of leaf-only reconstruction.
@@ -80,9 +87,9 @@ The three independent nonexact whole-function targets are
 **0043B0B0** (Scene destructor, 248 B) and
 **00602A60** (WinMain, 2,987 B). The latest real
 lifetime/ABI experiments are
-[F900 Archive](docs/ARCHIVE_REAL_GROUPED_LIFETIMES_F900.md),
+[F936 Archive](docs/ARCHIVE_NATIVE_LOOP_VALUE_CATEGORIES_F936.md),
 [F889 Scene](docs/SCENE_MIXED_REAL_FREE_POINTER_OWNERS_F889.md),
-and [F904 WinMain](docs/WINMAIN_REAL_STAGE_OWNER_LIFETIMES_F904.md).
+and [F927 WinMain](docs/WINMAIN_REAL_USED_GAP_NEGATIVES_F927.md).
 All three remain nonexact, despite fully compiled C++ experiments.
 
 ## Safe reconstruction workflow

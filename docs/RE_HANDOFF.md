@@ -1,6 +1,6 @@
 # TH075 — CURRENT reconstruction agent handoff
 
-**Current evidence checkpoint: 2026-10-31, F906.** This is the short
+**Current evidence checkpoint: 2026-10-31, F937.** This is the short
 working queue, NOT a chronological research journal. Native original PE
 and live exact/origin manifests outrank historical C++ guesses and
 older F-series reports. The former long handoff, with its original
@@ -123,12 +123,19 @@ Next: simultaneous native 0x58 + 0x59 grammar.
   shared tail jumps; they are still **internal cases**,
   never separate accepted whole callable functions.
 
-**Next work:** resolve register allocation beginning in
-the real case0x59, then the five source/native width
-differences in the SAME full compiled father. Verify PE
-field offsets, types, addends and original targets, not just
-instruction mnemonic/byte totals. Regenerate ignored current
-source/OBJ under .analysis/f901-fighter-31b/ with F901 if absent.
+**Next work:** the original 0x58 32-bit for-loop is strict
+in the current whole 005214B0 parent, yet its next original
+0x59 uses 19 wrong GPR roles. F932 demonstrates that real
+postincrement-while loop grammar restores ALL 0x59 roles
+but regresses 0x58 by one mnemonic/two widths in both
+the 46KB and the independent 58KB father. Recover a
+genuine original C++ lowering that makes BOTH adjacent
+cases native simultaneously, then tackle the remaining
+five whole-fighter width differences and shifted PE
+relocations. Do not use a nonnative loop only to fix
+the next state. Rebuild affected full parents through
+the F931/F932 original-backed scripts; if previous
+private sources are absent, regenerate with F901/F917.
 
 ## 3. Other genuinely large original functions
 
@@ -141,6 +148,23 @@ unmatched. Important true original callable extents:
 | 004AC040 | 82,796 | Giant state-advance original source reconstruction |
 | 0050A580 | 81,539 | Giant state-advance original source reconstruction |
 | 0045DD70 | 60,999 | Giant state-advance original source reconstruction |
+
+[F934/F937 strict native 0x58 controls](FIGHTER_STRICT_PREDECESSOR_LIMIT_F937.md):
+49 additional complete 58KB normal VC7.1
+source experiments vary real for-loop and
+true projectile parameter value categories.
+**36** preserve original 0x58's full 135
+x86 mnemonic, width and GPR roles, but
+**ALL 36 retain 19 wrong native 0x59 GPR
+roles**. The seven-source original-PE
+verifier checks original 0x58/0x59's
+17+16 physical fields and entire original
+943B separate afterRET DATA. The prior
+F931 postincrement-while source's 0x59
+improvement is genuine but its 0x58
+regression remains. Neither whole father
+is exact; aim for a truly simultaneous
+original 0x58/0x59 source grammar.
 
 [F929/F930/F931 preceding real ten-shot-loop register phase](FIGHTER_FOLLOWING_BOUNCE_REGISTER_PHASE_F931.md):
 54 whole 58KB fighter C++ controls show a new
