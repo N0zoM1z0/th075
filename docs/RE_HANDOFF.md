@@ -82,9 +82,9 @@ scripts/repo-python scripts/verify-scripted-fighter-tail31b-31c-f901.py
   by one mnemonic and two widths; complete
   46KB parent remains NONEXACT.
 
-[F909 0x58 phase negatives](FIGHTER_PRE59_REGISTER_PHASE_F909.md):
-27 full VC7.1 parent variations did
-not repair 0x59's register phase.
+[F909 pre59 negatives](FIGHTER_PRE59_REGISTER_PHASE_F909.md):
+27 whole-source native trials
+did not fix subsequent GPR roles.
 
 - [F906 first GPR divergence](FIGHTER_FIRST_GPR_DIVERGENCE_F906.md):
   whole 46KB case 0x59 at native 0052327A/ordinal2103.
@@ -154,22 +154,27 @@ real CC is present. Original whole
 true saved-this EBP and 0x720
 frame are not reconstructed.
 
-[F989 native 82KB action258](THIRD_FIGHTER_STAGE258_F989.md):
-tracked partial C++ emits **49,171B/
-13,626 x86**. Original state258
-**834B/212x86/15 true PE targets**
-all mnemonic and width aligned,
-137 wrong GPR roles. Genuine
-five 0x325 shots with F02*3+
-100/95/90/85/80, source frame
-grows 0x2E4→0x30C.
-[F988 native 255–257](THIRD_FIGHTER_STAGES255257_F988.md):
-258B/75,176B/52,248B/72,
-18 original PE target fields.
-[F987 native 252–254](THIRD_FIGHTER_STAGES252254_F987.md):
-native byte register decrement,
-no independent 254 table label.
-Whole original callable NONEXACT.
+[F990 original 82KB 259 FSUBR volley](THIRD_FIGHTER_STAGE259_F990.md):
+tracked whole-shaped partial fighter
+**50,000B/13,836 x86**. Original
+259 **845B/212 x86/15 native PE
+fields**, source 844B/212 x86;
+0 mnemonic, 3 original ADD width
+errors at local ordinals34/96/127,
+137 wrong GPR. Eight natural angle
+grammars all leave same deficits.
+Source expands frame 0x30C→0x334.
+[F989 true 258 five-shot](THIRD_FIGHTER_STAGE258_F989.md):
+834B/212 x86/15 PE; 0 wrong
+mnemonics/widths. Original prior
+191 source x87 widths are now
+**all matched** after genuine
+parent stack growth, but 191
+GPR/EBP and whole PE remain wrong.
+[F988 255–257](THIRD_FIGHTER_STAGES255257_F988.md):
+682 original CODE B/199 x86/18
+typed native PE fields.
+Entire 82,796B original NONEXACT.
 
 [F975 19D/19E/19F](THIRD_FIGHTER_STAGES19D19F_F975.md)
 native 400B/97,475B/128,
