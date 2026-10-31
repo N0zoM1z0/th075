@@ -149,26 +149,30 @@ unmatched. Important true original callable extents:
 | 0050A580 | 81,539 | Giant state-advance original source reconstruction |
 | 0045DD70 | 60,999 | Giant state-advance original source reconstruction |
 
-[F949 third 82KB native C9](THIRD_FIGHTER_FOURWAY_C9_F949.md):
-real original **531B/158x86/13 native
-PE targets** recovered in natural C++
-with **ZERO wrong mnemonic/width/GPR
-roles**; partial father now
-19,543B/5,244 x86.
-[F948 prior C8](THIRD_FIGHTER_FOURWAY_C8_F948.md):
-native 539B/149 x86; source 529B/
-149 x86 with GPR/mnemonics native,
-**three real wrong widths** due
-unrecovered EBP−0x94 and 0x720 frame.
-[F947 real CF/D0](THIRD_FIGHTER_FALL_REFLECT_F947.md):
-114B/30 +195B/60, ten true PE targets.
+[F950 third 82KB original CA](THIRD_FIGHTER_FOURWAY_CA_F950.md):
+original 004B04CC..004B0680
+is **436B/123 x86/11 native PE
+targets**. Natural C++ emits
+**430B/123 x86**, zero mnemonic/
+GPR-role errors; original EBP−0x98
+x87 scratch is not yet restored
+(two genuine wrong widths).
+[F949 native C9](THIRD_FIGHTER_FOURWAY_C9_F949.md):
+531B/158x86/13 PE fields, zero
+wrong native mnemonics/width/GPR.
+[F948 native C8](THIRD_FIGHTER_FOURWAY_C8_F948.md):
+539B/149x86 original, source 529B
+with three real wrong widths.
+[F947 true CF/D0](THIRD_FIGHTER_FALL_REFLECT_F947.md):
+114B/30 +195B/60 native cases.
 Earlier [F943](THIRD_FIGHTER_NATIVE_SELECTOR_F943.md),
 [F942](THIRD_FIGHTER_NATIVE_VOLLEY_F942.md),
 [F941](THIRD_FIGHTER_FACING_F941.md),
 [F939](THIRD_FIGHTER_NATIVE_PAIR_5D5E_F939.md),
 [F938](THIRD_FIGHTER_REAL_BOUNCE_F938.md)
-also source-backed. Whole original
-82,796B fighter remains NONEXACT.
+also source-backed. Current partial
+20KB C++ against the original
+82,796B whole still NONEXACT.
 
 [F934/F937 strict native 0x58 controls](FIGHTER_STRICT_PREDECESSOR_LIMIT_F937.md):
 49 additional complete 58KB normal VC7.1
