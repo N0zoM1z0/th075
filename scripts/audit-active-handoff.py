@@ -120,7 +120,29 @@ def main() -> None:
     expect(Path(ROOT / 'docs/STORAGE_HYGIENE.md').exists() and
            'docs/STORAGE_HYGIENE.md' in readme,
            'Storage recovery link missing')
+    # A former 149-KB "ACTIVE" handoff is now an explicitly dated
+    # historical snapshot. Do not let old incomplete-parent counts
+    # become the README/current start-again workflow by accident.
+    frozen_handoff = 'docs/history/RE_HANDOFF_F781_THROUGH_F906_PRE_CLEANUP_2026-10-31.md'
+    expect(Path(ROOT / frozen_handoff).exists()
+           and 'historical' in text_file(frozen_handoff)[:700].lower(),
+           'Old handoff snapshot must stay frozen and clearly historical')
+    expect(frozen_handoff in readme
+           and 'history/RE_HANDOFF_F781_THROUGH_F906_PRE_CLEANUP_2026-10-31.md' in handoff,
+           'Active navigation must retain the lossless historical handoff')
+    expect('## 1. Original native PE and complete-function exactness' in handoff
+           and '## 2. Primary large Boss' in handoff
+           and '## 4. All three remaining independent' in handoff,
+           'Live handoff must explain current giant/small work separately')
+    expect(len(handoff) < 20_000,
+           'Agent-facing handoff has regrown into a stale historical experiment journal')
+    expect('27-function original-authored backlog' not in readme
+           and 'Current verified snapshot (2026-10-30, F776' not in readme
+           and 'only **25** authored functions remained is incomplete' not in readme,
+           'README resurrected stale checkpoint dates, invalid backlog or contradictory counts')
+
     for doc in ('README.md', 'docs/RE_HANDOFF.md',
+                frozen_handoff,
                 'docs/STORAGE_HYGIENE.md',
                 'docs/history/RE_HANDOFF_F653_THROUGH_F753_2026-10-30.md'):
         check_local_markdown_links(doc)

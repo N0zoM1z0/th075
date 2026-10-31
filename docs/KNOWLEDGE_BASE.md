@@ -1,6 +1,14 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, 2026-10-30 (F754 documentation/storage review):**
+**Maintenance annotation, updated 2026-10-31 (F906 source audit):**
+The live whole-function original fighter context is documented in
+[the current short handoff](RE_HANDOFF.md), with F901/F906 native x86
+evidence. This chronological document is historical and intentionally
+retains obsolete intermediate source sizes for provenance.
+The previous detailed active handoff through F906 is
+[archived with restored local links](history/RE_HANDOFF_F781_THROUGH_F906_PRE_CLEANUP_2026-10-31.md).
+
+**Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function
 ledger or the new-agent work queue. Old F-series headings with words like
 "latest", "still pending", "strict", "no credit", "current" or counts
