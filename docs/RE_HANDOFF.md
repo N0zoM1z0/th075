@@ -162,20 +162,22 @@ real CC is present. Original whole
 true saved-this EBP and 0x720
 frame are not reconstructed.
 
-[F981 original 82KB 1F4/1F5](THIRD_FIGHTER_STAGES_1F4_1F5_F981.md):
-tracked entire partial father **38,501B/
-10,553 x86**. Both genuine native
-1F4/1F5 are 830B/232x86/23 original
-PE fields, zero mnemonic/width errors,
-135 GPR errors each. Correct stage7
-0x7F projectile/drag store order and
-stage8 four original 0x32A/0x329
-effects. [F979 real 1A3/1A4](THIRD_FIGHTER_RANDOM_LOOPS_1A3_1A4_F979.md)
-has 556B/147,570B/151; 22 PE fields,
-0 original mnemonic/width mismatches.
-[F978 1A2 dual five-shot](THIRD_FIGHTER_DUAL_FIVE_SHOT_F978.md)
-has original 1,142B/309x86/24 fields.
-Complete 82,796B original NONEXACT.
+[F982 original 82KB 1F6/1F7](THIRD_FIGHTER_STAGES_1F6_1F7_F982.md):
+tracked partial father **40,025B/
+10,979 x86**; native 1F6/1F7 each
+777B/215 x86/22 typed PE fields,
+0 wrong mnemonic/width positions,
+126 native GPR-role errors each.
+Distinct true DOUBLE global motion
+scale at 006583E0/006584C8.
+[F981 1F4/1F5](THIRD_FIGHTER_STAGES_1F4_1F5_F981.md):
+two 830B/232x86/23 native PE
+states, 0 mnemonic/width errors;
+original stage7 drag/shot ordering.
+[F979 1A3/1A4](THIRD_FIGHTER_RANDOM_LOOPS_1A3_1A4_F979.md)
+and [F978 1A2](THIRD_FIGHTER_DUAL_FIVE_SHOT_F978.md)
+remain source-backed. Entire native
+82,796B fighter NONEXACT.
 
 [F975 19D/19E/19F](THIRD_FIGHTER_STAGES19D19F_F975.md)
 native 400B/97,475B/128,
