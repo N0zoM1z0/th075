@@ -2780,6 +2780,57 @@ Whole original 46,755B
 giant NONEXACT, no
 split case CODE credit.
 
+**F893 original 2DC real native 660B ground-contact complex stage:**
+original 0052AFBB..0052B24E
+**660 complete native inner
+CODE B/188 x86/17 physical
+PE call/global fields**.
+True stage2 sprite33B
+height10, stage13
+sprite338, two actual
+ground threshold x87
+branches. Native contact
+POS48+POS54 **<=**
+ground0065782C calls
+aux24, clears height/
+speed/position, then
+RETURNS through entire
+giant epilogue. Getter
+action0 and actual random
+0..30 +516 assignment
+are INSIDE match guard,
+stage13 once-only shortF00
+aux2, stage15 height12.5/
+speed15, stage24 aux22.
+One new normal VC7.1
+full fighter **40,552
+callable CODE B/11,433 x86**
+(F892 39,907/11,247).
+All original opcode/width
+positions and 17 actual
+physical PE destinations
+match, ZERO GPR/local
+branch errors, only
+**four real original far
+giant JMP operand bytes**
++427/+428,+656/+657
+differ. Three same-size
+FALSE game source controls
+(strict ground<, outside
+random and sprite33A)
+independently compiled
+and rejected by original
+PE bytes. All 68 previous
+actual native case sources,
+five packed 901B afterRET
+tables and shared getter
+34/34 original nonfield
+bytes rechecked.
+[F893 original physical PE proof](SCRIPTED_FIGHTER_NATIVE_STAGE_2DC_F893.md);
+scripts/repo-python scripts/verify-scripted-fighter-stage2dc-f893.py.
+Whole original 46,755B
+fighter remains NONEXACT.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin
