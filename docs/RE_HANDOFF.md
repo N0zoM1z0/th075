@@ -3002,6 +3002,67 @@ case exact acceptance.
 [F897 native PE proof](SCRIPTED_FIGHTER_FOUR_2E7_2EA_F897.md);
 scripts/repo-python scripts/verify-scripted-fighter-four2e7-2ea-f897.py.
 
+**F898 real original 2F0 full 828B staged float/double movement:**
+native 0052C197..0052C4D2
+**828 inner CODE B/
+229x86/19 actual
+physical typed PE
+call/global fields**.
+Stage<6 short F02 ++
+and native facing*40
+FILD EBP-0x120
+sprite3E, stage>10
+original DOUBLE qword
+gravity657D00,
+stage7/9 float motion
+at +1C/+20, stage8
+native sprite38D,
+CloudOpponent signed
+byte*30+240, real
+float,float,int motion
+and sprite80 signed
+facing*150 FILD
+EBP-0x124, stage7
+negative motion and
+four byte flags.
+One complete normal
+VC7.1 father **45,169
+callable CODE B/12,783
+x86** (F897 44,353/
+12,556). Source 2F0
+still only **825B**:
+original last 5B far
+JMP relaxed to 2B
+short in this context,
+three missing native
+bytes NEVER credited.
+All 19 original PE
+fields and 228 earlier
+x86 opcode/width pairs
+match. Adding native
+2F0 naturally RESTORES
+previous final 2EA
+from F897 nonnative
+552B short-JMP to
+original full **555B**,
+so ALL four 2E7..2EA
+now 555B/167x86
+each with only original
+far giant JMP operand
+negatives. Two false
+full C++ controls compile
+and reject wrong source
+facing multiplier/sprite.
+73 previous original
+state interiors, five
+packed 901B DATA tables
+and native getter PE
+phase rechecked.
+[F898 physical original game evidence](SCRIPTED_FIGHTER_NATIVE_2F0_F898.md);
+scripts/repo-python scripts/verify-scripted-fighter-stage2f0-f898.py.
+Full original 46,755B
+fighter still NONEXACT.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin

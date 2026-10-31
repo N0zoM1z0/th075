@@ -284,6 +284,43 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   slots remain wrong. No
   accepted whole CODE.
   [F864 physical proof](SCENE_THREE_REAL_NAMED_POINTERS_F864.md).
+- **F898 native physical 2F0 828B/229x86 staged double gravity and physical 2EA repair:**
+  Actual original 2F0
+  828B/229x86/19 typed
+  PE fields, two native
+  integer FILD EBP slots
+  -120/-124, original
+  double qword gravity,
+  staged float motion,
+  original sprite3E/
+  38D/80 and Cloud
+  signed-byte expression.
+  Current normal VC7.1
+  father 45,169B/
+  12,783x86; all 19
+  PE offsets and 228
+  native opcode/width
+  pairs correct; current
+  last 2F0 short epilogue
+  JMP makes **825B**,
+  missing original 3B
+  correctly uncredited.
+  Adding true 2F0 after
+  four 2E7..2EA states
+  naturally FIXES previous
+  2EA 552B short-JMP:
+  all FOUR prior sources
+  now complete original
+  555B/167x86 shapes
+  with only authentic
+  far giant JMP operand
+  negatives. Two false
+  whole source controls
+  compiled/rejected.
+  All 73 prior cases,
+  901B packed DATA and
+  native getter checked.
+  [F898 physical native PE](SCRIPTED_FIGHTER_NATIVE_2F0_F898.md).
 - **F897 four 2E7..2EA 555B/167x86/15 PE fields each, final short-JMP honesty:**
   Four real staged sprite3E
   signed facing*65 float
