@@ -149,35 +149,22 @@ unmatched. Important true original callable extents:
 | 0050A580 | 81,539 | Giant state-advance original source reconstruction |
 | 0045DD70 | 60,999 | Giant state-advance original source reconstruction |
 
-[F939 third actor real paired 0x5D/0x5E source](THIRD_FIGHTER_NATIVE_PAIR_5D5E_F939.md):
-on top of original 004AC040 F938's newly
-sourced 0x59, **two additional actual
-337B/101-x86 action0x5D/0x5E bodies**
-restore actor-specific stage and float
-conditions. All 202 ordered original
-mnemonics/widths and **16 true PE
-fields** align; 61 native GPR roles
-per action still differ in the
-**16,956-B partial whole-parent C++**.
-All 151 original afterRET label fields
-and 522 nonfield DATA bytes checked.
-Still NONEXACT.
-
-[F938 third 82KB original actor: recovered real 0x59 source](THIRD_FIGHTER_REAL_BOUNCE_F938.md):
-independent original 004AC040 state 0x59 at
-004ADEFA..004AE05E is **356B/95 x86/16 original
-PE targets**. A new tracked complete (but still
-partially stubbed) VC7.1 father fixture replaces
-its previous 15B two-instruction marker with real
-stage3 bounce C++; the entire original 82KB giant
-is still NONEXACT. The natural source emitted
-**16,312B/4,280 x86**. Native original 0x58 stays
-strict in the selected variant; the separate
-postincrement-loop control also repairs next
-0x59's 19 GPR-role errors but regresses 0x58
-by 1 mnemonic/2 widths. All 151 afterRET table
-labels and 522 data nonfield bytes independently
-checked against the PE.
+[F941 third 82KB original actor real 0x5F](THIRD_FIGHTER_FACING_F941.md):
+native 004AE300..004AE390 is now real
+**144 B/44 x86/3 original PE fields**,
+and all **44 GPR roles** match natural
+C++ in the incomplete source father.
+Existing [F939](THIRD_FIGHTER_NATIVE_PAIR_5D5E_F939.md)
+restored two 337B/101-x86 adjacent
+0x5D/0x5E bodies (16 PE fields; 61
+wrong GPR roles each); [F938](THIRD_FIGHTER_REAL_BOUNCE_F938.md)
+restored 0x59 (356B/95x86/16 fields).
+Growing whole partial father now emits
+**17,086 B/4,520 x86** against original
+82,796B/22,721 x86. Complete game
+function NONEXACT; 151 native
+afterRET labels/522 nonfield DATA bytes
+verified. Continue 0x60/0x61 next.
 
 [F934/F937 strict native 0x58 controls](FIGHTER_STRICT_PREDECESSOR_LIMIT_F937.md):
 49 additional complete 58KB normal VC7.1
