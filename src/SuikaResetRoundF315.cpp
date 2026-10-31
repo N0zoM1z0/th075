@@ -1,3 +1,4 @@
+#include "FighterScriptCounterWindowF1022.hpp"
 // Physical fighter-offset view only; inherited game Round reset is borrowed.
 class SuikaRoundF315 {
 public:
@@ -11,8 +12,8 @@ void SuikaRoundF315::ResetRound()
 {
     W(0xefc)=0;
     W(0xefe)=0;
-    W(0xf00)=0;
-    W(0xf02)=0;
+    F1022_SCRIPT(this).counterAtF00=0;
+    F1022_SCRIPT(this).counterAtF02=0;
     W(0xf04)=0;
     W(0xf06)=0;
     W(0xefa)=0;

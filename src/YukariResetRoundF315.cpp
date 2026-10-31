@@ -1,3 +1,4 @@
+#include "FighterScriptCounterWindowF1022.hpp"
 // The code is a complete native-observed fighter round reset, not a claim to
 // reconstruct the entire parent fighter private object class or its callee.
 class YukariRoundF315 {
@@ -8,8 +9,8 @@ public:
 #define W(offset) (*reinterpret_cast<unsigned short*>(reinterpret_cast<unsigned char*>(this)+(offset)))
 void YukariRoundF315::ResetRound()
 {
-    W(0xf00)=0;
-    W(0xf02)=0;
+    F1022_SCRIPT(this).counterAtF00=0;
+    F1022_SCRIPT(this).counterAtF02=0;
     W(0xf04)=0;
     W(0xf06)=0;
     W(0xf08)=0;

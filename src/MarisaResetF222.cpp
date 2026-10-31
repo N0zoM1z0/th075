@@ -1,3 +1,4 @@
+#include "FighterScriptCounterWindowF1022.hpp"
 #include "FighterVirtualActionsF159.hpp"
 // Physical script-defined field view only: no complete owner allocation.
 // R050 original x87: FILD dword stack signed index; FDIV dword [0x659308].
@@ -16,8 +17,8 @@ typedef char VerifyMarisaRecord28F222[(sizeof(MarisaRecordF222)==28)?1:-1];
 #define REC(index) (reinterpret_cast<MarisaRecordF222*>(reinterpret_cast<unsigned char*>(this)+0x1018)[index])
 void MarisaRoundF222::ResetRound()
 {
-    W(0xf00)=0;
-    W(0xf02)=0;
+    F1022_SCRIPT(this).counterAtF00=0;
+    F1022_SCRIPT(this).counterAtF02=0;
     W(0xf04)=0;
     W(0xf06)=0;
     W(0xf08)=0;

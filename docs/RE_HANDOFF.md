@@ -389,6 +389,17 @@ labels +21; restored both,
 **4/4 and 5/5 original
 whole controls exact**.
 
+[F1022 adjacent original script WORD counters](FIGHTER_SCRIPT_COUNTER_ADJACENT_NATIVE_F1022.md):
+real +0xF00/+0xF02 16-bit
+native fields typed across
+11 original reset source TUs.
+**46/46 whole functions cold
+exact**, 4,772 PREVIOUSLY
+accepted original CODE B.
+All adjacent F159 functions
+and ten character resets
+recompiled, no COFF regression.
+
 ## 5. Exact acceptance, storage, and end-of-session checks
 
 Read [AGENTS.md](../AGENTS.md), [workflow](RE_WORKFLOW.md)

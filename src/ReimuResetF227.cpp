@@ -1,3 +1,4 @@
+#include "FighterScriptCounterWindowF1022.hpp"
 #include "FighterVirtualActionsF159.hpp"
 // Borrowed pointer receiver and 16 observed first-stage halfword fields.
 class ReimuRoundF227 {
@@ -7,8 +8,8 @@ public:
 #define HALF(off) (*reinterpret_cast<unsigned short*>(reinterpret_cast<unsigned char*>(this)+(off)))
 void ReimuRoundF227::ResetRound()
 {
-    HALF(0xf00)=0;
-    HALF(0xf02)=0;
+    F1022_SCRIPT(this).counterAtF00=0;
+    F1022_SCRIPT(this).counterAtF02=0;
     HALF(0xf04)=0;
     HALF(0xf06)=0;
     HALF(0xf08)=0;

@@ -1,3 +1,4 @@
+#include "FighterScriptCounterWindowF1022.hpp"
 #include "FighterComboBorrowedF1006.hpp"
 #include "FighterVitalBorrowedF999.hpp"
 #include "FighterRoundOutcomeBytesF992.hpp"
@@ -60,8 +61,8 @@ void SakuyaFighterActionsF159::ResetRound()
     WORD(0xEFC) = 0;
     WORD(0xEFE) = 0;
     WORD(0xF16) = 0;
-    WORD(0xF00) = 0;
-    WORD(0xF02) = 0;
+    F1022_SCRIPT(this).counterAtF00 = 0;
+    F1022_SCRIPT(this).counterAtF02 = 0;
     WORD(0xF04) = 0;
     WORD(0xF06) = 0;
     WORD(0xF08) = 0;

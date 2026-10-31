@@ -1,3 +1,4 @@
+#include "FighterScriptCounterWindowF1022.hpp"
 #include "FighterVirtualActionsF159.hpp"
 // Physical field receiver, not a complete reconstructed fighter object.
 class YoumuSubcomponentF224 {
@@ -15,8 +16,8 @@ void YoumuRoundF224::ResetRound()
     HALF(0xefe)=0;
     HALF(0xefa)=0;
     HALF(0xf14)=0;
-    HALF(0xf00)=0;
-    HALF(0xf02)=0;
+    F1022_SCRIPT(this).counterAtF00=0;
+    F1022_SCRIPT(this).counterAtF02=0;
     HALF(0xf04)=0;
     HALF(0xf06)=0;
     HALF(0xf08)=0;
