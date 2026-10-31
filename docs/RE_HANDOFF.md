@@ -352,6 +352,17 @@ across three original source TUs**.
 two signed bytes +0x16AC4/5 remain
 11/11 cold exact, 1,238 existing B.
 
+[F967 native profile index reuse in six more source objects](PROGRESS_SELECTION_CROSS_OWNER_F967.md):
+two genuine signed-byte profile keys
++0x16AC4/5 now shared by record
+leaves, knockout/card, progress
+counter, memcpy restore and options.
+Canonical affected **12/12 whole
+functions cold exact, 2,460 existing
+CODE B across six source objects**.
+F954 previously typed the same
+native pair in two other objects.
+
 ## 5. Exact acceptance, storage, and end-of-session checks
 
 Read [AGENTS.md](../AGENTS.md), [workflow](RE_WORKFLOW.md)

@@ -1,3 +1,4 @@
+#include "ProgressSelectionKeysF954.hpp"
 #include "KnockoutProgressF172.hpp"
 #include "BattleCombat.hpp"
 #include "FighterResourceParameters452B30.hpp"
@@ -12,7 +13,7 @@ extern unsigned int g_KnockoutAccumulationAt0067160C;
 #define FIRST(type, offset) (*reinterpret_cast<type*>(FIELD(unsigned char*, 0x44) + (offset)))
 #define SECOND(type, offset) (*reinterpret_cast<type*>(FIELD(unsigned char*, 0x48) + (offset)))
 #define SECOND_ARRAY(type, offset) reinterpret_cast<type*>(FIELD(unsigned char*, 0x48) + (offset))
-#define CARD_ARRAY(type, offset) reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + FIELD(signed char, 0x16AC4) * 0x17F0 + (offset))
+#define CARD_ARRAY(type, offset) reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + F954_PROGRESS_KEYS(this).fighterAt16AC4 * 0x17F0 + (offset))
 #define CARD_RECORDS reinterpret_cast<CardProgressF172*>(&g_BattleRecords)
 
 void CardProgressF172::MarkCardFlag(signed char key)

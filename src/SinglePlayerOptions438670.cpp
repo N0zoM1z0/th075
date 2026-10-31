@@ -1,3 +1,4 @@
+#include "ProgressSelectionKeysF954.hpp"
 #include "SinglePlayerOptions438670.hpp"
 
 #define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<char*>(this) + (offset)))
@@ -32,8 +33,8 @@ void SinglePlayerOptions438670::RenderOptions() {
 
 signed char ProgressCard438A80::GetSelectedValue() {
     return *reinterpret_cast<signed char*>(reinterpret_cast<char*>(this)
-        + FIELD(signed char, 0x16AC4) * 0x17F0
-        + FIELD(signed char, 0x16AC5) * 0x5FC + 0x556);
+        + F954_PROGRESS_KEYS(this).fighterAt16AC4 * 0x17F0
+        + F954_PROGRESS_KEYS(this).difficultyAt16AC5 * 0x5FC + 0x556);
 }
 
 #undef VALUE
