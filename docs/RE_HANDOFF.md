@@ -330,6 +330,16 @@ all 979 functions:
   **30 integer-zero / 6 float-initializer complete native constructors**,
   total **5,531 existing bytes**, 36/36 exact, 2 source objects.
 
+[F946 adjacent native AI signed-short state](FIGHTER_AI_ADJACENT_SHORT_FIELDS_F946.md):
+8 complete giant AI sources (68,786 already
+accepted native bytes) now share a
+**genuine +0x512/+0x514/+0x516
+six-byte signed-short tail view**;
+canonical affected-unit replay **8/8
+whole exact across two objects**.
+The independent +0x511 command byte
+remains F940's adjacent one-byte view.
+
 [F940 shared AI/priority input command byte](FIGHTER_COMMAND_BYTE_SHARED_F940.md):
 9 affected whole original functions, **69,846
 existing CODE B, 9/9 cold exact** after

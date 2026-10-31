@@ -1,4 +1,5 @@
 #include "FighterCommandByteF940.hpp"
+#include "FighterAIShortFieldsF946.hpp"
 #include "CharacterAIPolicy.hpp"
 
 #define FIELD(type, offset) (*reinterpret_cast<type *>(reinterpret_cast<u8 *>(this) + offset))
@@ -19,22 +20,22 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
     AISeparation distance;
     distance.x = AbsFloatAt00412D90(OPPONENT_FLOAT(0x44) - FLOAT(0x44));
     distance.y = AbsFloatAt00412D90(OPPONENT_FLOAT(0x48) - FLOAT(0x48));
-    --FIELD(short, 0x512);
+    --F946_AI_FIELDS_AT512(this).countdownAt512;
     if (FIELD(short, 0x60) > 49 && FIELD(short, 0x60) < 150) {
-        FIELD(short, 0x514) = 0;
-        FIELD(short, 0x512) = 0;
+        F946_AI_FIELDS_AT512(this).modeAt514 = 0;
+        F946_AI_FIELDS_AT512(this).countdownAt512 = 0;
     }
-    if (FIELD(short, 0x514) == 1) {
-        if (FIELD(short, 0x512) > 0) {
+    if (F946_AI_FIELDS_AT512(this).modeAt514 == 1) {
+        if (F946_AI_FIELDS_AT512(this).countdownAt512 > 0) {
             FIELD(int, 0x4F0) = 5;
         } else {
-            FIELD(short, 0x514) = 0;
+            F946_AI_FIELDS_AT512(this).modeAt514 = 0;
         }
         return;
     }
-    if (FIELD(short, 0x514) == 2) {
+    if (F946_AI_FIELDS_AT512(this).modeAt514 == 2) {
         if (FIELD(short, 0x60) == 391) {
-            FIELD(short, 0x514) = 0;
+            F946_AI_FIELDS_AT512(this).modeAt514 = 0;
             return;
         }
         if (FIELD(short, 0x60) == 200) {
@@ -47,9 +48,9 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
             return;
         }
     }
-    if (FIELD(short, 0x514) == 3) {
+    if (F946_AI_FIELDS_AT512(this).modeAt514 == 3) {
         if (FIELD(short, 0x60) == 390) {
-            FIELD(short, 0x514) = 0;
+            F946_AI_FIELDS_AT512(this).modeAt514 = 0;
             return;
         }
         if (FIELD(short, 0x60) == 200) {
@@ -62,9 +63,9 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
             return;
         }
     }
-    if (FIELD(short, 0x514) == 4) {
+    if (F946_AI_FIELDS_AT512(this).modeAt514 == 4) {
         if (FIELD(short, 0x60) == 392) {
-            FIELD(short, 0x514) = 0;
+            F946_AI_FIELDS_AT512(this).modeAt514 = 0;
             return;
         }
         if (FIELD(short, 0x60) == 200) {
@@ -78,9 +79,9 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
             return;
         }
     }
-    if (FIELD(short, 0x514) == 5) {
+    if (F946_AI_FIELDS_AT512(this).modeAt514 == 5) {
         if (FIELD(short, 0x60) == 393) {
-            FIELD(short, 0x514) = 0;
+            F946_AI_FIELDS_AT512(this).modeAt514 = 0;
             return;
         }
         if (FIELD(short, 0x60) == 200) {
@@ -94,11 +95,11 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
             return;
         }
     }
-    if (FIELD(short, 0x514) == 6) {
-        if (FIELD(short, 0x512) > 0) {
+    if (F946_AI_FIELDS_AT512(this).modeAt514 == 6) {
+        if (F946_AI_FIELDS_AT512(this).countdownAt512 > 0) {
             FIELD(int, 0x4E8) = 5;
         } else {
-            FIELD(short, 0x514) = 0;
+            F946_AI_FIELDS_AT512(this).modeAt514 = 0;
         }
         return;
     }
@@ -276,8 +277,8 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
         if (FIELD(short, 0x60) == 307 &&
             rand() < 10000 &&
             FIELD(short, 0x3B0) > 250) {
-            FIELD(short, 0x512) = ChooseIntegerRange(0, 45);
-            FIELD(short, 0x514) = 6;
+            F946_AI_FIELDS_AT512(this).countdownAt512 = ChooseIntegerRange(0, 45);
+            F946_AI_FIELDS_AT512(this).modeAt514 = 6;
             FIELD(int, 0x4F0) = 1;
             return;
         }
@@ -312,8 +313,8 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
             FIELD(short, 0x60) == 307 &&
             rand() < 5000 &&
             FIELD(short, 0x3B0) > 300) {
-            FIELD(short, 0x512) = ChooseIntegerRange(0, 30);
-            FIELD(short, 0x514) = 1;
+            F946_AI_FIELDS_AT512(this).countdownAt512 = ChooseIntegerRange(0, 30);
+            F946_AI_FIELDS_AT512(this).modeAt514 = 1;
             FIELD(int, 0x4F0) = 1;
             return;
         }
@@ -384,12 +385,12 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
         }
         if (FIELD(short, 0x60) == 301 &&
             rand() < 1000) {
-            FIELD(short, 0x514) = 3;
+            F946_AI_FIELDS_AT512(this).modeAt514 = 3;
             return;
         }
         if (FIELD(short, 0x60) == 301 &&
             rand() < 1000) {
-            FIELD(short, 0x514) = 5;
+            F946_AI_FIELDS_AT512(this).modeAt514 = 5;
             return;
         }
         if (FIELD(short, 0x60) == 302 &&
@@ -400,17 +401,17 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
         }
         if (FIELD(short, 0x60) == 302 &&
             rand() < 1000) {
-            FIELD(short, 0x514) = 3;
+            F946_AI_FIELDS_AT512(this).modeAt514 = 3;
             return;
         }
         if (FIELD(short, 0x60) == 302 &&
             rand() < 1000) {
-            FIELD(short, 0x514) = 5;
+            F946_AI_FIELDS_AT512(this).modeAt514 = 5;
             return;
         }
         if (FIELD(short, 0x60) == 302 &&
             rand() < 1000) {
-            FIELD(short, 0x514) = 4;
+            F946_AI_FIELDS_AT512(this).modeAt514 = 4;
             return;
         }
         if (distance.x < 100.0f &&
@@ -424,16 +425,16 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
             FIELD(short, 0x60) == 303 &&
             rand() < 5000 &&
             FIELD(short, 0x3B0) > 300) {
-            FIELD(short, 0x512) = ChooseIntegerRange(0, 30);
-            FIELD(short, 0x514) = 1;
+            F946_AI_FIELDS_AT512(this).countdownAt512 = ChooseIntegerRange(0, 30);
+            F946_AI_FIELDS_AT512(this).modeAt514 = 1;
             FIELD(int, 0x4F0) = 1;
             return;
         }
         if (FIELD(short, 0x60) == 308 &&
             rand() < 10000 &&
             FIELD(short, 0x3B0) > 300) {
-            FIELD(short, 0x512) = ChooseIntegerRange(0, 30);
-            FIELD(short, 0x514) = 1;
+            F946_AI_FIELDS_AT512(this).countdownAt512 = ChooseIntegerRange(0, 30);
+            F946_AI_FIELDS_AT512(this).modeAt514 = 1;
             FIELD(int, 0x4F0) = 1;
             return;
         }
@@ -457,8 +458,8 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
     if (static_cast<float>(rand()) < FIELD(short, 0x3B0) * 0.8f + 0.0f &&
         distance.x > 320.0f &&
         FIELD(short, 0x3B0) > 350) {
-        FIELD(short, 0x512) = ChooseIntegerRange(0, 45);
-        FIELD(short, 0x514) = 1;
+        F946_AI_FIELDS_AT512(this).countdownAt512 = ChooseIntegerRange(0, 45);
+        F946_AI_FIELDS_AT512(this).modeAt514 = 1;
         FIELD(int, 0x4F0) = 1;
         if (rand() < 1000) FIELD(int, 0x4DC) = FIELD(signed char, 0x66);
         if (rand() < 1000) FIELD(int, 0x4E0) = 1;
@@ -468,8 +469,8 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
         distance.x > 560.0f &&
         FIELD(short, 0x3B0) > 250 &&
         distance.y < 100.0f) {
-        FIELD(short, 0x514) = 6;
-        FIELD(short, 0x512) = ChooseIntegerRange(0, 45);
+        F946_AI_FIELDS_AT512(this).modeAt514 = 6;
+        F946_AI_FIELDS_AT512(this).countdownAt512 = ChooseIntegerRange(0, 45);
         FIELD(int, 0x4E8) = 1;
         if (rand() < 2000) FIELD(int, 0x4DC) = FIELD(signed char, 0x66);
         if (rand() < 2000) FIELD(int, 0x4E0) = 1;
@@ -570,28 +571,28 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
         if (distance.x > 200.0f &&
             distance.x < 400.0f &&
             rand() < 600) {
-            FIELD(short, 0x514) = 3;
+            F946_AI_FIELDS_AT512(this).modeAt514 = 3;
             return;
         }
         if (OPPONENT_FLOAT(0x48) == 0.0f &&
             distance.x > 100.0f &&
             distance.x < 500.0f &&
             rand() < 100) {
-            FIELD(short, 0x514) = 2;
+            F946_AI_FIELDS_AT512(this).modeAt514 = 2;
             return;
         }
         if (OPPONENT_FLOAT(0x48) == 0.0f &&
             distance.x > 200.0f &&
             distance.x < 500.0f &&
             rand() < 600) {
-            FIELD(short, 0x514) = 4;
+            F946_AI_FIELDS_AT512(this).modeAt514 = 4;
             return;
         }
         if (OPPONENT_FLOAT(0x48) == 0.0f &&
             distance.x > 300.0f &&
             distance.x < 500.0f &&
             rand() < 250) {
-            FIELD(short, 0x514) = 5;
+            F946_AI_FIELDS_AT512(this).modeAt514 = 5;
             return;
         }
     }
