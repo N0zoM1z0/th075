@@ -216,7 +216,7 @@ real width differences remain.
 | Original callable whole function | Native CODE B | Most useful evidence |
 | --- | ---: | --- |
 | 0041CE50 ArchiveCatalog destructor | 171 | [F900](ARCHIVE_REAL_GROUPED_LIFETIMES_F900.md): 25 complete VC7.1 sources; best 108/115 nonfield original bytes, wrong EBP lifetimes |
-| 0043B0B0 Scene virtual destructor | 248 | [F889](SCENE_MIXED_REAL_FREE_POINTER_OWNERS_F889.md): 29 real whole-source layouts; best 191/200 original nonfield bytes |
+| 0043B0B0 Scene virtual destructor | 248 | [F1015](SCENE_THREE_FREE_DECLARATION_ORDER_F1015.md): 13 complete 3-owner aggregate declaration-order controls, best 191/200 nonfield bytes; texture EBP ownership still wrong |
 | 00602A60 WinMain | 2,987 | [F911](WINMAIN_REAL_MAIN_BEFORE_SCENE_F911.md): 32 complete real owner-layout sources; best 2,984 emitted CODE B and 645/654 native x86 widths, but still wrong EBP storage |
 
 Together they are **3,406 CODE bytes**, not exact.
