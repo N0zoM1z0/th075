@@ -284,6 +284,34 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   slots remain wrong. No
   accepted whole CODE.
   [F864 physical proof](SCENE_THREE_REAL_NAMED_POINTERS_F864.md).
+- **F902 native 1FD owner+60 typed short/float Y genuine lvalues:**
+  14 complete normal
+  VC7.1 original fighter
+  parent C++ variants.
+  Twelve typed status
+  short+60/floatY+48,
+  const and equivalent
+  owner lvalues retain
+  original parent
+  46,754B/13,230 x86
+  and 1FD 385B/107x86
+  with one original
+  6B CMP ECX,0x95
+  still wrongly emitted
+  as 5B CMP EAX,0x95.
+  All 9 native 1FD PE
+  refs/targets checked.
+  Two genuinely used
+  owner pointer/reference
+  aliases add instructions:
+  whole 46,760B/13,231
+  and 46,761B/13,232.
+  Never truncate these
+  false source cases to
+  compare with original
+  386B/107x86. Whole
+  giant still NONEXACT.
+  [F902 original PE proof](SCRIPTED_FIGHTER_1FD_TYPED_OWNER_LVALUES_F902.md).
 - **F901 native complete 31B/31C tail and full 13230-x86 opcode-width audit:**
   The original fighter
   is 46,755B/13,230x86;

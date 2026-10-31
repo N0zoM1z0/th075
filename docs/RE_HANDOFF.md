@@ -1,6 +1,6 @@
 # TH075 — ACTIVE reconstruction agent handoff
 
-**Verified snapshot: 2026-10-31, current F780 exact ledger; F865 complete five-case region and F864 Scene locals.**
+**Verified snapshot: 2026-10-31, F780 canonical exact ledger unchanged; F901 complete fighter x86 width/PE audit, F902 typed owner1FD, F900 independent Archive.**
 This is the **short working queue**, not the chronological research log.
 Original Japanese PE and the live configuration **always outrank historical
 prose, old case-level exact labels, class names or inferred layouts**.
@@ -3164,6 +3164,46 @@ scripts/repo-python scripts/verify-scripted-fighter-tail31b-31c-f901.py.
 Whole original fighter
 still NONEXACT; NO
 internal case exact credit.
+
+**F902 actual original 1FD owner+60 typed lvalue complete-parent negative proof:**
+native real 1FD
+**386 complete inner
+CODE B/107x86/nine
+original PE fields**,
+true original ordinal99
+6B CMP ECX,0x95,
+normal source 5B
+CMP EAX,0x95.
+Fourteen full pinned
+VC7.1 /Od C++ real
+borrowed owner+48 float
+Y, signed short+60
+typed member pointer
+or used reference
+variants compiled.
+TWELVE generate same
+full 46,754B/
+13,230x86 parent
+and 385B/107x86
+1FD case, same
+native one-byte CMP
+deficit; all nine
+actual native PE
+fields physically
+verified. TWO real
+used pointer/reference
+aliases generate
+extra true instructions:
+full 46,760B/13,231
+or 46,761B/13,232,
+cannot crop to original
+107-x86 case. No
+force-register hacks
+or accepted exact CODE.
+[F902 current original 1FD typed owner source negatives](SCRIPTED_FIGHTER_1FD_TYPED_OWNER_LVALUES_F902.md);
+scripts/repo-python scripts/verify-scripted-fighter-owner-lvalues-1fd-f902.py.
+Original whole 46,755B
+fighter remains NONEXACT.
 
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
