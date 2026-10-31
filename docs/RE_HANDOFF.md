@@ -297,6 +297,19 @@ guessing full vendor ownership. Canonical **2/2
 whole-function exact cold replays /445 existing
 CODE bytes**; no all-unit replay.
 
+[F933 actual typed background-stage initial fields](BACKGROUND_STAGE_THREE_NATIVE_FIELDS_F933.md):
+36 independently accepted original stage constructors
+across F376/F377 share the genuine receiver +0x0C,
++0x10,+0x14 state-field offsets, but NOT one
+source-type/value grammar: **30 real integer-zero
+constructors and six original 640.0f/100.0f/100.0f
+floating initializers**. Both actual borrowed
+12-byte field views now replace repetitive raw
+offset writes in the two tracked sources. Affected
+only, full canonical cold replay: **36/36 exact,
+5,531 already accepted original CODE bytes**
+preserved across two source objects.
+
 ## 5. Exact acceptance, storage, and end-of-session checks
 
 Read [AGENTS.md](../AGENTS.md), [workflow](RE_WORKFLOW.md)
