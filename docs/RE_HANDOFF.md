@@ -126,7 +126,7 @@ unmatched. Important true original callable extents:
 
 | Original start | Native CODE B | Current lead |
 | --- | ---: | --- |
-| 00543210 | 58,294 + 943 separate afterRET DATA | [F917 selected native signed burst X](FIGHTER_WHOLE_BURST_NATIVE_FSUBR_F917.md): all 16,471 native/source mnemonics now align; 3 genuine width errors remain |
+| 00543210 | 58,294 + 943 separate afterRET DATA | [F1025](FIGHTER_58KB_ALL_NATIVE_PE_TARGETS_F1025.md): **1,697/1,697 native physical external PE targets checked**, 16,471 mnemonic aligned, three widths and 1,741 GPR roles remain |
 | 004AC040 | 82,796 + 1,126 separate afterRET DATA | [F938](THIRD_FIGHTER_REAL_BOUNCE_F938.md): full source probe now includes real 0x59 (356B/95 x86/16 PE targets) instead of a marker; entire 82KB remains NONEXACT |
 | 0050A580 | 81,539 | Giant state-advance original source reconstruction |
 | 0045DD70 | 60,999 | Giant state-advance original source reconstruction |
@@ -151,16 +151,9 @@ real CC is present. Original whole
 true saved-this EBP and 0x720
 frame are not reconstructed.
 
-[F1023 original 2BC–2BE native GPR grammar](THIRD_FIGHTER_2BC_2BE_GPR_GRAMMARS_F1023.md):
-20 ENTIRE 82KB VC7.1
-parents against native PE;
-145 original physical fields,
-151 afterRET DIR32/522 DATA.
-2BC/2BD/2BE GPR wrong still
-128/125/125; 2BD ADD width
-remains. One real F00 reorder
-regresses four widths. Keep
-native strict original source.
+[F1023 original 2BC–2BE](THIRD_FIGHTER_2BC_2BE_GPR_GRAMMARS_F1023.md):
+20 full native VC7.1 trials,
+125 wrong 2BE GPR remain.
 
 [F1021 original 58/59 native loop](THIRD_FIGHTER_NATIVE_58_59_FULL_GPR_CONTROLS_F1021.md):
 10 whole-source native controls.
