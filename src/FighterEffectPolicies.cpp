@@ -1,3 +1,4 @@
+#include "FighterEffectBorrowedFieldsF973.hpp"
 #include "FighterEffectPolicies.hpp"
 
 #define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
@@ -5,8 +6,8 @@
 void FighterEffectPoliciesF135::SpawnBattleEffect(short effect, float x, float y,
                                                  signed char facing, signed char layer)
 {
-    FIELD(BattleEffectQueueF135*, 0x2EC)->Spawn(effect, x, y, facing, layer,
-        0, 0, &FIELD(float, 0x314), 0, 0);
+    F973_EFFECT_TAIL(this, BattleEffectQueueF135).queuePointerAt2EC->Spawn(effect, x, y, facing, layer,
+        0, 0, &F973_EFFECT_PARAMETER(this).firstFloatAt314, 0, 0);
 }
 
 void FighterEffectPoliciesF135::SpawnTrackedEffect(short effect, float x, float y,
@@ -14,18 +15,18 @@ void FighterEffectPoliciesF135::SpawnTrackedEffect(short effect, float x, float 
                                                   unsigned char linked, unsigned char mode)
 {
     if (linked != 0) {
-        FIELD(BattleEffectQueueF135*, 0x2EC)->Spawn(effect, x, y, facing, layer,
-            0, 0, &FIELD(float, 0x314), &FIELD(unsigned char, 0x2F0), mode);
+        F973_EFFECT_TAIL(this, BattleEffectQueueF135).queuePointerAt2EC->Spawn(effect, x, y, facing, layer,
+            0, 0, &F973_EFFECT_PARAMETER(this).firstFloatAt314, &F973_EFFECT_TAIL(this, BattleEffectQueueF135).transformFirstByteAt2F0, mode);
     } else {
-        FIELD(BattleEffectQueueF135*, 0x2EC)->Spawn(effect, x, y, facing, layer,
-            0, 0, &FIELD(float, 0x314), 0, mode);
+        F973_EFFECT_TAIL(this, BattleEffectQueueF135).queuePointerAt2EC->Spawn(effect, x, y, facing, layer,
+            0, 0, &F973_EFFECT_PARAMETER(this).firstFloatAt314, 0, mode);
     }
 }
 
 void FighterEffectPoliciesF135::SpawnAuxEffect(short effect, float x, float y,
                                               signed char facing, signed char layer)
 {
-    g_AuxiliaryEffectsF135.Spawn(effect, x, y, facing, layer, 0, 0, &FIELD(float, 0x314));
+    g_AuxiliaryEffectsF135.Spawn(effect, x, y, facing, layer, 0, 0, &F973_EFFECT_PARAMETER(this).firstFloatAt314);
 }
 
 void FighterEffectPoliciesF135::PlaySound(short sound)

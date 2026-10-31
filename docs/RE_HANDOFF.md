@@ -365,6 +365,16 @@ CODE B across six source objects**.
 F954 previously typed the same
 native pair in two other objects.
 
+[F973 real native fighter effect parameter/pointer views](FIGHTER_EFFECT_BORROWED_FIELDS_F973.md):
+two independent effect source objects
+share genuine pointer +0x2EC,
+transform first byte +0x2F0
+and float param address +0x314.
+Affected **8/8 complete native
+functions cold exact, 730 existing
+CODE B**. VC7.1 templated
+offsetof limitation is documented.
+
 ## 5. Exact acceptance, storage, and end-of-session checks
 
 Read [AGENTS.md](../AGENTS.md), [workflow](RE_WORKFLOW.md)
