@@ -3205,6 +3205,46 @@ scripts/repo-python scripts/verify-scripted-fighter-owner-lvalues-1fd-f902.py.
 Original whole 46,755B
 fighter remains NONEXACT.
 
+**F903 original mode63 29 complete typed C++ source controls:**
+native mode63 has
+417B/109x86/7 real PE
+fields. 29 fully compiled
+fighter VC7.1 source
+variants with actual
+owner+60 typed signed
+short, actor stage, key
+and short-circuit boolean
+access. 27 unchanged
+46,754B/13,230x86
+parent source and 417B/
+109x86 case, but TRUE
+two CMP register/width
+differences at native
+case ord38/61 and one
+original physical PE
+field at case +185
+shifted to source +184
+ordinal48. Crucially,
+stage>0 spelled >=1
+produces WHOLE source
+46,755B (native whole
+LENGTH!) but mode63
+becomes WRONG 418B/
+109x86. Never accept
+whole length-only result
+as exact. Another real
+key comparison source
+generates 421B mode63
+and 46,758B parent.
+All seven original PE
+targets independently
+rechecked in selected
+whole C++ objects.
+[F903 original PE owner/short-circuit proof](SCRIPTED_FIGHTER_MODE63_TYPED_GPR_F903.md);
+scripts/repo-python scripts/verify-scripted-fighter-mode63-typed-f903.py.
+Entire original 46,755B
+fighter still NONEXACT.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin

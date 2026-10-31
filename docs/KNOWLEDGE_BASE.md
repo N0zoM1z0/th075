@@ -284,6 +284,32 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   slots remain wrong. No
   accepted whole CODE.
   [F864 physical proof](SCENE_THREE_REAL_NAMED_POINTERS_F864.md).
+- **F903 29 native mode63 typed borrowed-owner and short-circuit C++ controls:**
+  Real original 417B/
+  109x86/7 PE fields.
+  In 27 full normal
+  VC7.1 source variants
+  the case size stays
+  417B but original
+  CMP width/roles at
+  ord38/61 differ;
+  original ordinal48
+  PE REL32 field at
+  +185 is source+184.
+  Two other equivalent
+  C++ predicates change
+  real instruction sizes;
+  one even makes whole
+  generated father exactly
+  46,755B yet mode63
+  WRONG 418B. Never
+  accept length-only
+  exact results. All
+  seven genuine PE
+  targets independently
+  checked in original
+  whole C++ COFF.
+  [F903 PE evidence](SCRIPTED_FIGHTER_MODE63_TYPED_GPR_F903.md).
 - **F902 native 1FD owner+60 typed short/float Y genuine lvalues:**
   14 complete normal
   VC7.1 original fighter
