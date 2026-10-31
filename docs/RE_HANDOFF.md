@@ -166,20 +166,20 @@ real CC is present. Original whole
 true saved-this EBP and 0x720
 frame are not reconstructed.
 
-[F978 authentic original 82KB dual five-shot 1A2](THIRD_FIGHTER_DUAL_FIVE_SHOT_F978.md):
-tracked full-partial father **35,751B/
-9,799 x86**, true 1A2 1,142B/309
-x86/24 PE targets, 0 mnemonic/
-width errors, 171 wrong GPR.
-Two real mode==2/otherwise paths
-each issue five sprite0x344
-shots, retaining original branches.
-[F977 genuine native 1A1 ESI loop](THIRD_FIGHTER_RANDOM_LOOP_1A1_F977.md)
-570B/151x86/12 PE; naturally
-saves ESI, earlier 191 x87 width
-errors 8→4. [F976 1A0 native loops](THIRD_FIGHTER_RANDOM_LOOP_F976.md)
-570B/148x86/12 PE, real Y-before-RNG
-order; original giant NONEXACT.
+[F979 native 82KB 1A3/1A4 random loops](THIRD_FIGHTER_RANDOM_LOOPS_1A3_1A4_F979.md):
+tracked full-partial father **36,871B/
+10,093 x86**; original 1A3=556B/147,
+1A4=570B/151, 22 true PE targets,
+zero wrong mnemonic/width positions,
+67/71 GPR errors. Original stage0
+has NO Reset call; action completion
+is 9. [F978 dual five-shot 1A2](THIRD_FIGHTER_DUAL_FIVE_SHOT_F978.md)
+original 1,142B/309x86/24 PE fields
+with ten authentic sprite0x344 calls.
+[F977 real 1A1 ESI loop](THIRD_FIGHTER_RANDOM_LOOP_1A1_F977.md)
+and [F976 real 1A0](THIRD_FIGHTER_RANDOM_LOOP_F976.md)
+restore previous 191 x87 width debt
+12→8→4; whole giant NONEXACT.
 
 [F975 19D/19E/19F](THIRD_FIGHTER_STAGES19D19F_F975.md)
 native 400B/97,475B/128,
