@@ -166,27 +166,24 @@ real CC is present. Original whole
 true saved-this EBP and 0x720
 frame are not reconstructed.
 
-[F964 third original 82KB stages 135/136](THIRD_FIGHTER_STAGE135136_F964.md):
-new TRACKED partial whole father C++
-emits **24,566B/6,746 x86**, adding
-native 135=487B/137x86/12 typed PE
-targets (source481B; 2 wrong
-original -0xA4 x87 stack widths,
-89 GPR errors) and 136=451B/
-134x86/11 fields (source451B,
-0 mnemonic/width differences,
-84 GPR errors). Actual 136 native
-float test is equality, not >.
-Native 136→186 has NO afterRET
-jump-table label: 134 x86 terminus
-before 186 marker/real 187 anchor.
-[F963 original 133/134](THIRD_FIGHTER_STAGE133134_F963.md)
-restored 282B/84+516B/152 with
-19 native PE fields (53/98 wrong GPR).
-[F961 continuous 12C–130](THIRD_FIGHTER_STAGE12F130_F961.md)
-has 1,168B/342x86/31 true PE fields,
-all native GPR roles. Entire original
-82,796B fighter NONEXACT.
+[F965 82KB original native 186/187](THIRD_FIGHTER_STAGE186187_F965.md):
+new TRACKED partial normal VC7.1 father
+**25,242B/6,950 x86**, two true cases
+186=277B/84x86/7 PE fields and
+187=429B/124x86/11 PE fields;
+zero wrong mnemonic/width positions,
+but 53/78 wrong original GPR roles.
+186 has NO separate afterRET table
+label; genuine 136 451B/134-x86
+terminus determines its source start.
+[F964 135/136](THIRD_FIGHTER_STAGE135136_F964.md):
+487B/137 and 451B/134, 23 PE fields;
+135 has two real EBP−0xA4 widths wrong,
+136 original float branch is equality.
+[F963 133/134](THIRD_FIGHTER_STAGE133134_F963.md)
+and [F961 contiguous 12C–130](THIRD_FIGHTER_STAGE12F130_F961.md)
+remain native PE source-backed.
+Complete 82,796B giant NONEXACT.
 
 [F957 native CA→CB GPR negatives](THIRD_FIGHTER_CA_PRECEDES_CB_GPR_F957.md):
 30 complete partial parent trials did
