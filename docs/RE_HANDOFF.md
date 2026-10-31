@@ -166,26 +166,27 @@ real CC is present. Original whole
 true saved-this EBP and 0x720
 frame are not reconstructed.
 
-[F970 third 82KB original 194/195](THIRD_FIGHTER_STAGES194195_F970.md):
-new TRACKED cumulative partial C++
-parent **28,868B/7,910 x86**, adding
-two original **644B/168x86** volleys
-with 11+11 true PE targets and
-zero mnemonic/width differences;
-118 genuine GPR errors each.
-[F969 192 mixed FIADD/FILD](THIRD_FIGHTER_STAGE192_NATIVE_F969.md):
-original 732B/177x86, source
-same B/x86/11 PE fields with
-three original FIADD and six
-FILD integer scratch operations;
-121 GPR errors and wrong EBP.
-[F968 190/191 triple volleys](THIRD_FIGHTER_STAGES190191_F968.md):
-two 597B/147x86, 22 PE fields,
-twelve native EBP width errors
-per case. [F966 188/189](THIRD_FIGHTER_STAGE188189_F966.md)
-and [F965 186/187](THIRD_FIGHTER_STAGE186187_F965.md)
-also native source-backed. Entire
-82,796-B original remains NONEXACT.
+[F971 true 82KB original 196/197/198](THIRD_FIGHTER_FIVE_SHOT_F971.md):
+new TRACKED cumulative C++ partial
+father **30,344B/8,342 x86**,
+adds **three true 507B/146-x86
+five-shot original game states**,
+all 438 original mnemonic/width
+roles and **45 actual native PE
+fields** verified. Each has 77
+GPR errors; original deep x87
+temporary EBP−0x114..−0x14C
+not yet owned by current source.
+[F970 194/195](THIRD_FIGHTER_STAGES194195_F970.md):
+two 644B/168-x86 native volleys,
+22 real PE fields, 118 wrong
+GPR roles each.
+[F969 192 FIADD/FILD volley](THIRD_FIGHTER_STAGE192_NATIVE_F969.md):
+732B/177-x86/11 PE fields;
+[F968 190/191](THIRD_FIGHTER_STAGES190191_F968.md)
+two 597B/147 x86/11 PE each.
+Complete original 82,796B
+fighter remains NONEXACT.
 
 [F957 native CA→CB GPR negatives](THIRD_FIGHTER_CA_PRECEDES_CB_GPR_F957.md):
 30 complete partial parent trials did
