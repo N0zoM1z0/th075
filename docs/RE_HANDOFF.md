@@ -2950,6 +2950,58 @@ COFF parent, 1FD and
 DATA and common getter.
 [F895 original 2E4 PE receipt](SCRIPTED_FIGHTER_PHYSICAL_2E4_F895.md).
 
+**F897 original 2E7..2EA FOUR native 555B/167-x86 barrage cases:**
+original physical 2E7 at
+52B8EB, 2E8 at52BB16,
+2E9 at52BD41, 2EA at
+52BF6C; next PHYSICAL
+case after 2EA is 2F0
+at52C197, NOT numeric
+2EB default. EACH native
+**555 CODE B/167 x86/
+15 real typed PE fields**,
+four genuinely used FILD
+EBP slots -110/-114/
+-118/-11C, native stage3
+facing*65 float sprite3E,
+stage2 two real __ftol2
+calls original6406AC
+and sprite33D, stage9
+sprite38B in 2E7/2E8
+but sprite38C in
+2E9/2EA, stage11
+trajectory10/raw7F.
+F897 one complete parent
+**44,353 source CODE B/
+12,556 x86** from F896
+42,184/11,896.
+2E7/2E8/2E9 full native
+555B exact opcode/widths
+apart from original far
+giant JMP operand bytes.
+**2EA current selected
+source has NONNATIVE
+last short 2B JMP vs
+original 5B**: total
+552B/167 x86, 15 PE
+fields before it correct.
+Do NOT mask missing three
+bytes or claim exact.
+Adding real original next
+2F0 naturally makes 2EA
+five-byte JMP; requires
+separate actual verification.
+All 73 previous native
+case sources and 901B
+packed DATA tables,
+getter true PE refs
+rechecked. Original
+46755B fighter still
+NONEXACT, no internal
+case exact acceptance.
+[F897 native PE proof](SCRIPTED_FIGHTER_FOUR_2E7_2EA_F897.md);
+scripts/repo-python scripts/verify-scripted-fighter-four2e7-2ea-f897.py.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin

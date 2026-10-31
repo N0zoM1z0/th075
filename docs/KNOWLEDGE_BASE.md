@@ -284,6 +284,34 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   slots remain wrong. No
   accepted whole CODE.
   [F864 physical proof](SCENE_THREE_REAL_NAMED_POINTERS_F864.md).
+- **F897 four 2E7..2EA 555B/167x86/15 PE fields each, final short-JMP honesty:**
+  Four real staged sprite3E
+  signed facing*65 float
+  FILD temps naturally
+  EBP -110/-114/-118/-11C.
+  Stage2 double __ftol2
+  converts to shortF00/F02,
+  native sprite33D; stage9
+  sprite38B 2E7/2E8 vs
+  38C 2E9/2EA. New
+  entire source 44,353B/
+  12,556x86: first THREE
+  555B original source
+  geometries correct except
+  two real giant JMP
+  operand byte pairs.
+  **Fourth 2EA source
+  currently 552B**, last
+  original 5B near JMP
+  shortened to 2B because
+  next real 2F0 not yet
+  integrated; NEVER claim
+  exact truncated case.
+  All 60 original PE
+  operands verified and
+  73 prior original cases
+  plus 901B tables checked.
+  [F897 PE](SCRIPTED_FIGHTER_FOUR_2E7_2EA_F897.md).
 - **F896 two complete original 2E5/2E6 random cascade sibling cases:**
   each 374B/102 original
   x86/12 actual physical
