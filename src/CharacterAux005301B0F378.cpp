@@ -1,3 +1,4 @@
+#include "FighterActionTimerPairF1027.hpp"
 // Independently recovered complete 1,008-byte native character auxiliary
 // state controller. It deliberately preserves the second explicit
 // else-if (mode==3) comparison: VC7.1 emits native re-test and CFG.
@@ -32,14 +33,14 @@ extern signed char g_CharacterSpecialModeAt006714B4;
 #define OPPONENT_FIELD(T,o) (*reinterpret_cast<T*>(reinterpret_cast<unsigned char*>(FIELD(void*,0x2E8))+(o)))
 #define QUEUE (*reinterpret_cast<ObservedEffectQueueF378*>(reinterpret_cast<unsigned char*>(this)+0xFEC))
 void CharacterAux005301B0F378::UpdateSpecial() {
-    if (FIELD(short,0x82)==0 && FIELD(short,0x3B8)==0) {
+    if (F1027_TIMERS(this).timerAt82==0 && FIELD(short,0x3B8)==0) {
         ObservedInputSnapshotF378 snapshot;
         snapshot.action=FIELD(short,0x60);
         snapshot.guard=FIELD(short,0x62);
         snapshot.x=FLOAT(0x44);
         snapshot.y=FLOAT(0x48);
         snapshot.facing=FIELD(signed char,0x66);
-        snapshot.bearing=FIELD(short,0x80);
+        snapshot.bearing=F1027_TIMERS(this).wordAt80;
         QUEUE.AddSnapshot(&snapshot);
         if (QUEUE.Count()>10) QUEUE.PruneOld();
     }

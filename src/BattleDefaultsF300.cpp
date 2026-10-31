@@ -1,3 +1,4 @@
+#include "FighterActionTimerPairF1027.hpp"
 // Native-observed FighterBase ctor and derived vtable installation; only
 // explicit independently observed +0x4C..0x98 native zero fields here.
 class NativeFighterBaseF300 {
@@ -13,9 +14,9 @@ public:
 #define FIELD(type,offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this)+(offset)))
 BattleObjectDefaultsF300::BattleObjectDefaultsF300()
 {
- FIELD(short,0x80)=0;
+ F1027_TIMERS(this).wordAt80=0;
  FIELD(unsigned int,0x7c)=0;
- FIELD(short,0x82)=0;
+ F1027_TIMERS(this).timerAt82=0;
  FIELD(unsigned int,0x8c)=0;
  FIELD(unsigned int,0x90)=0;
  FIELD(unsigned int,0x94)=0;

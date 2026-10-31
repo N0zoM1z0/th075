@@ -1,3 +1,4 @@
+#include "FighterActionTimerPairF1027.hpp"
 #include "FighterScriptCounterWindowF1022.hpp"
 #include "FighterComboBorrowedF1006.hpp"
 #include "FighterVitalBorrowedF999.hpp"
@@ -141,13 +142,13 @@ void FighterBaseActionsF159::ResetRound()
     F1006_COMBO(this).countAt3C4 = 0;
     F1006_COMBO(this).damageAt3C6 = 0;
     FIELD(float, 0x3C0) = 1.0f;
-    FIELD(short, 0x80) = 0;
+    F1027_TIMERS(this).wordAt80 = 0;
     FIELD(unsigned int, 0x7C) = 0;
     FIELD(short, 0x60) = 0;
     FIELD(short, 0x62) = 0;
     FIELD(short, 0x64) = 0;
     reinterpret_cast<FighterAnimationReset453D80*>(this)->BindAnimation();
-    FIELD(short, 0x82) = 0;
+    F1027_TIMERS(this).timerAt82 = 0;
     FIELD(short, 0x3B8) = 0;
     FIELD(short, 0x3BA) = 0;
     FIELD(short, 0x8A) = 0;

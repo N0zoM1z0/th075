@@ -1,3 +1,4 @@
+#include "FighterActionTimerPairF1027.hpp"
 #include "BattleCollision.hpp"
 #include "BattleCombatResponses.hpp"
 #include "GameLeafHelpers.hpp"
@@ -8,9 +9,9 @@
 void BattleCombatResponses::ApplyImpact(CombatActor *attack, CombatActor *attacker, CombatActor *defender)
 {
     FIELD(int, attack, 0x7C) = 2;
-    --FIELD(short, attack, 0x80);
-    FIELD(short, attack, 0x82) = FRAME(short, attack, 0x20);
-    FIELD(short, defender, 0x82) = FRAME(short, attack, 0x22);
+    --F1027_TIMERS(attack).wordAt80;
+    F1027_TIMERS(attack).timerAt82 = FRAME(short, attack, 0x20);
+    F1027_TIMERS(defender).timerAt82 = FRAME(short, attack, 0x22);
     FIELD(unsigned long, defender, 0x94) = FRAME(unsigned long, attack, 0x2C);
     FIELD(unsigned long, defender, 0x98) = FRAME(unsigned long, attack, 0x30);
     if (FIELD(short, defender, 0x324) <= 0) FIELD(short, defender, 0x324) = 1;

@@ -144,42 +144,26 @@ unmatched. Important true original callable extents:
 | 0050A580 | 81,539 | Giant state-advance original source reconstruction |
 | 0045DD70 | 60,999 | Giant state-advance original source reconstruction |
 
-[F955 three-state original 82KB CC/CD/CE phase](THIRD_FIGHTER_CE_NATIVE_PHASE_F955.md):
-original CE 394B/115x86/9 PE targets
-now naturally authored. CE's GPR roles
-improve **72 wrong→0** if real
-preceding CC+CD C++ is present.
-[F956 downstream CF/D0 GPR recovery](THIRD_FIGHTER_POST_CE_GPR_PHASE_F956.md):
-unchanged original CF/D0 native x86
-roles improve **18/35 wrong→0/0**
-when either actual CE or actual
-CC+CD predecessor source is compiled
-within the same partial father.
-[F953 original CC/CD](THIRD_FIGHTER_CC_CD_NATIVE_PHASE_F953.md):
-two 435B/128-x86/11 PE target
-cases; CD GPR roles likewise
-improve **77 wrong→0** when
-real CC is present. Original whole
-82,796B fighter is NONEXACT;
-true saved-this EBP and 0x720
-frame are not reconstructed.
+[F955 native CC/CD/CE chain](THIRD_FIGHTER_CE_NATIVE_PHASE_F955.md):
+true original action and
+cross-case GPR phase proof;
+[CF/D0 downstream](THIRD_FIGHTER_POST_CE_GPR_PHASE_F956.md)
+and [CC/CD](THIRD_FIGHTER_CC_CD_NATIVE_PHASE_F953.md)
+proofs preserved. Full fighter
+still NONEXACT.
 
-[F1023 original 2BC–2BE](THIRD_FIGHTER_2BC_2BE_GPR_GRAMMARS_F1023.md):
-20 full native VC7.1 trials,
-125 wrong 2BE GPR remain.
+[F1023 82KB 2BC/BE GPR review](THIRD_FIGHTER_2BC_2BE_GPR_GRAMMARS_F1023.md):
+20 full native 82KB
+controls negative.
 
-[F1021 original 58/59 native loop](THIRD_FIGHTER_NATIVE_58_59_FULL_GPR_CONTROLS_F1021.md):
-10 whole-source native controls.
-Strict 58 exact GPR/width;
-59 retains 19 GPR errors.
-Postincrement fixes59 but
-regresses58 and whole source.
+[F1021 82KB native 58/59](THIRD_FIGHTER_NATIVE_58_59_FULL_GPR_CONTROLS_F1021.md):
+strict loop remains,
+register phase nonexact.
 
-[F1020 complete 82KB geometry](THIRD_FIGHTER_SHARED_REAL_RING_LOCAL_F1020.md):
-82,796B/22,721x86 original
-CODE/frame/this recovered,
-12 wrong widths and 6,958
-wrong GPR roles remain.
+[F1020 82KB native geometry](THIRD_FIGHTER_SHARED_REAL_RING_LOCAL_F1020.md):
+82,796B/22,721 x86,
+frame and this native;
+12 widths/6,958 GPR wrong.
 
 [F975 original native stages](THIRD_FIGHTER_STAGES19D19F_F975.md):
 19D/19E/19F source recovered.
@@ -399,6 +383,19 @@ accepted original CODE B.
 All adjacent F159 functions
 and ten character resets
 recompiled, no COFF regression.
+
+[F1027 native action/timer WORD pair](FIGHTER_NATIVE_ACTION_TIMER_PAIR_F1027.md):
+signed actor +0x80/+0x82
+typed across six original
+collision, reset, render,
+timer and auxiliary source
+objects, **46/46 whole
+cold exact, 10,262 B
+previously accepted CODE**.
+Two larger Combat source
+TUs strictly shifted local
+COFF $L symbols +21; both
+restored to prior exact.
 
 ## 5. Exact acceptance, storage, and end-of-session checks
 

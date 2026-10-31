@@ -1,3 +1,4 @@
+#include "FighterActionTimerPairF1027.hpp"
 #include "FighterVitalBorrowedF999.hpp"
 #include "FighterFadeBorrowedF986.hpp"
 #include "FighterGaugeBorrowedF980.hpp"
@@ -10,7 +11,7 @@ void FrameActor::UpdateCounters()
     // Opponent freeze suspends counters but not view bounds and the frame count.
     if (OPPONENT(short, 0x3BA) > 0) goto updateViewBounds;
     {
-        if (SELF(short, 0x82) > 0) --SELF(short, 0x82);
+        if (F1027_TIMERS(this).timerAt82 > 0) --F1027_TIMERS(this).timerAt82;
         else if (SELF(short, 0x3CC) > 0) --SELF(short, 0x3CC);
         SELF(float, 0x490) = 0.0f;
         OPPONENT(float, 0x490) = 0.0f;

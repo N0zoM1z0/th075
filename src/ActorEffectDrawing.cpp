@@ -1,3 +1,4 @@
+#include "FighterActionTimerPairF1027.hpp"
 #include "SpriteDraw40CA80.hpp"
 #include "SpriteTransform.hpp"
 #include "GameLeafHelpers.hpp"
@@ -41,8 +42,8 @@ void FighterRender453F70::Render() {
     SpriteQuad40CA80 transformedQuad;
     cameraHorizontal = g_RenderCameraX - 160.0f;
     cameraY = g_RenderCameraY;
-    if (FIELD(short, 0x82) > 0 && reinterpret_cast<FighterState*>(this)->IsState50To149())
-        cameraHorizontal += 2 - (FIELD(short, 0x82) % 2) * 4;
+    if (F1027_TIMERS(this).timerAt82 > 0 && reinterpret_cast<FighterState*>(this)->IsState50To149())
+        cameraHorizontal += 2 - (F1027_TIMERS(this).timerAt82 % 2) * 4;
     DRAWING->GetTextureRect(FRAME(short, 6), &textureRect);
     TRANSFORM(transformedQuad)->BuildQuadFromRect(&textureRect);
     if (FRAME(void*, 8) != 0) {
