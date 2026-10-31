@@ -154,27 +154,23 @@ real CC is present. Original whole
 true saved-this EBP and 0x720
 frame are not reconstructed.
 
-[F990 original 82KB 259 FSUBR volley](THIRD_FIGHTER_STAGE259_F990.md):
-tracked whole-shaped partial fighter
-**50,000B/13,836 x86**. Original
-259 **845B/212 x86/15 native PE
-fields**, source 844B/212 x86;
-0 mnemonic, 3 original ADD width
-errors at local ordinals34/96/127,
-137 wrong GPR. Eight natural angle
-grammars all leave same deficits.
-Source expands frame 0x30C→0x334.
-[F989 true 258 five-shot](THIRD_FIGHTER_STAGE258_F989.md):
-834B/212 x86/15 PE; 0 wrong
-mnemonics/widths. Original prior
-191 source x87 widths are now
-**all matched** after genuine
-parent stack growth, but 191
-GPR/EBP and whole PE remain wrong.
-[F988 255–257](THIRD_FIGHTER_STAGES255257_F988.md):
-682 original CODE B/199 x86/18
-typed native PE fields.
-Entire 82,796B original NONEXACT.
+[F991 native original 82KB 25A](THIRD_FIGHTER_STAGE25A_F991.md):
+tracked cumulative partial source
+**50,620B/14,000 x86**. Original
+25A 635B/166x86/15 PE fields,
+all native mnemonic/width positions
+aligned, 97 GPR differences.
+Five genuine fixed 0x325 shots
+(angles 10/5/0/5/10), animation
+0xFA, frame 0x334→0x348.
+[F990 native 259](THIRD_FIGHTER_STAGE259_F990.md):
+original 845B/212x86, 15 PE
+targets; source 844B, three
+wrong ADD widths, 137 GPR.
+[F989 native 258](THIRD_FIGHTER_STAGE258_F989.md):
+834B/212x86, 15 actual PE
+fields, width/mnemonics aligned.
+Whole 82KB father NONEXACT.
 
 [F975 19D/19E/19F](THIRD_FIGHTER_STAGES19D19F_F975.md)
 native 400B/97,475B/128,
