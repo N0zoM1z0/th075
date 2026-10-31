@@ -162,25 +162,22 @@ real CC is present. Original whole
 true saved-this EBP and 0x720
 frame are not reconstructed.
 
-[F983 original 82KB 1F8/1F9](THIRD_FIGHTER_NATIVE_FSUBR_1F8_1F9_F983.md):
-tracked complete-partial VC7.1 father
-**42,330B/11,653 x86**. Two
-original **1,168B/339 and
-1,167B/339** inner cases,
-**56 native PE targets** verified.
-F917 typed borrowed real X
-recovers twelve genuine
-IMUL/FILD/FSUBR six-shot chains;
-**0 wrong mnemonic**, one
-CMP-register width per state,
-174/168 GPR mismatches. Native
-six-shot Y global is 00659490
-(not guessed 00659270).
-[F982 native 1F6/1F7](THIRD_FIGHTER_STAGES_1F6_1F7_F982.md):
-777B/215 each with 44 typed PE
-targets. [F981 1F4/1F5](THIRD_FIGHTER_STAGES_1F4_1F5_F981.md):
-830B/232 each, 46 original fields.
-Whole original 82KB NONEXACT.
+[F984 real 82KB 1FA](THIRD_FIGHTER_NEAR_NATIVE_STAGE1FA_F984.md):
+tracked partial fighter **43,483B/
+11,990 x86**; authentic 1FA
+**1,168B/339x86/28 original PE
+fields**, zero wrong mnemonic/
+widths, just **6 wrong GPR roles**
+(original ordinals 327-333).
+[F983 1F8/1F9](THIRD_FIGHTER_NATIVE_FSUBR_1F8_1F9_F983.md)
+has twelve true IMUL/FILD/FSUBR
+chains, 56 original PE fields,
+only one CMP width per handler,
+but GPR roles still nonnative.
+[F982 1F6/1F7](THIRD_FIGHTER_STAGES_1F6_1F7_F982.md)
+and [F981 1F4/1F5](THIRD_FIGHTER_STAGES_1F4_1F5_F981.md)
+remain independently source-backed.
+Whole original 82,796B NONEXACT.
 
 [F975 19D/19E/19F](THIRD_FIGHTER_STAGES19D19F_F975.md)
 native 400B/97,475B/128,
