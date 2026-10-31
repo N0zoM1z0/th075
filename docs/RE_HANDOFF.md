@@ -151,43 +151,36 @@ real CC is present. Original whole
 true saved-this EBP and 0x720
 frame are not reconstructed.
 
-[F1021 82KB native 58/59 GPR controls](THIRD_FIGHTER_NATIVE_58_59_FULL_GPR_CONTROLS_F1021.md):
-TEN whole-shaped native
-82KB sources tested. Strict
-0x58 469B/135x86 has zero
-mnemonic/width/GPR errors,
-following 0x59 has 19 GPR
-errors. Postincrement fixes
-0x59 but regresses 0x58
-(1 mnemonic,2 width,40 GPR)
-and whole 6,958→6,979
-GPR differences. Other
-native C++ variants negative.
+[F1023 original 2BC–2BE native GPR grammar](THIRD_FIGHTER_2BC_2BE_GPR_GRAMMARS_F1023.md):
+20 ENTIRE 82KB VC7.1
+parents against native PE;
+145 original physical fields,
+151 afterRET DIR32/522 DATA.
+2BC/2BD/2BE GPR wrong still
+128/125/125; 2BD ADD width
+remains. One real F00 reorder
+regresses four widths. Keep
+native strict original source.
 
-[F1020 native 82KB complete source geometry](THIRD_FIGHTER_SHARED_REAL_RING_LOCAL_F1020.md):
-tracked original-shaped father now
-**82,796B/22,721 x86** =
-EXACT original CODE length and
-original entire x86 COUNT.
-Native **frame0x720, saved
-this EBP−0x64** restored.
-Real original 2DB two 36-shot
-rings both use EBP−0x40
-ONE genuine int shot local;
-separate source for locals
-had shifted all later slots
-4B and added 6 opcode bytes.
-All **22,721 original mnemonic
-ordinals align**, but **12
-widths and 6,958 GPR-role
-positions still wrong**.
-[F1019 native 2EF/2F0](THIRD_FIGHTER_PAIRED_ARC_2EF_2F0_F1019.md):
-two 2,229B/573x86 cases,
-160 real PE fields, zero
-mnemonic/width/GPR errors.
-Original whole fighter
-still NONEXACT; accepted
-CODE remains unchanged.
+[F1021 original 58/59 native loop](THIRD_FIGHTER_NATIVE_58_59_FULL_GPR_CONTROLS_F1021.md):
+10 whole-source native controls.
+Strict 58 exact GPR/width;
+59 retains 19 GPR errors.
+Postincrement fixes59 but
+regresses58 and whole source.
+
+[F1020 entire original 82KB geometry](THIRD_FIGHTER_SHARED_REAL_RING_LOCAL_F1020.md):
+native source CODE **82,796B,
+22,721 x86**, frame0x720,
+this EBP−0x64, all native
+mnemonics, afterRET data.
+Shared 2DB ring-counter fixes
+real 4B native stack owner.
+**12 widths/6,958 GPR roles**
+still wrong. Whole NONEXACT.
+[F1019 native 2EF/2F0](THIRD_FIGHTER_PAIRED_ARC_2EF_2F0_F1019.md)
+each 2,229B/573x86/80 PE
+matched internal opcode roles.
 
 [F975 original native stages](THIRD_FIGHTER_STAGES19D19F_F975.md):
 19D/19E/19F source recovered.
