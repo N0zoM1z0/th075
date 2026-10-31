@@ -185,6 +185,15 @@ matched internal opcode roles.
 [F975 original native stages](THIRD_FIGHTER_STAGES19D19F_F975.md):
 19D/19E/19F source recovered.
 
+[F1025 separate original 58KB giant](SECOND_GIANT_NATIVE_MODE63_GPR_F1025.md):
+10 entire 58KB native VC7.1
+mode63 grammars; frame0x218
+already correct. 3 true CMP
+width errors remain; source
+58,293B vs native58,294B.
+7 PE fields and afterRET
+156 labels/319 DATA verified.
+
 ## 4. All three remaining independent small/medium originals
 
 | Original callable whole function | Native CODE B | Most useful evidence |
