@@ -43,6 +43,10 @@ plus 522 DATA nonfield bytes**.
 | Original afterRET DIR32/nonfield | 151/522 | **151/522** |
 | Entire original 82KB callable exact | NO | **NO** |
 
+The six remaining wrong GPR roles are identified in the bounded
+whole-source original PE receipt; 1FA is not a separate accepted
+complete callable despite its 333 matching GPR positions.
+
 The source uses the independently established borrowed original X
 view and PE-correct burst Y global 00659490, not a guessed historical
 complete class or copied original machine bytes. It preserves the

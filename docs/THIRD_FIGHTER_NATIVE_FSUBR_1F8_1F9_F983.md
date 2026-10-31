@@ -32,7 +32,7 @@ FSUBR this+0x44** sequences. Those errors repeated twelve
 times across the two cases, creating **30 incorrect ordered
 mnemonics per case**.
 
-Eight full-parent natural C++ float value-category experiments
+Five full-parent natural C++ X-expression variants
 reused the already independently verified F917 *borrowed original X*
 view rather than assuming a complete fighter type. With
 
@@ -94,7 +94,9 @@ Reproduce only the two affected complete partial father sources:
 
 Original PE and object compiler evidence plus negative controls are
 retained under ignored .analysis/f983-third-original-proof/,
-.analysis/f983-third-1f8/grammar/ and
+.analysis/f983-third-1f8/x87_variants.log,
+.analysis/f983-third-1f8/x87_variants.py,
+.analysis/f983-third-1f8/opacity_variants.py and
 .analysis/f983-third-1f8/opacity-variants.json.
 
 **New exact entire callable GAME functions: zero.
