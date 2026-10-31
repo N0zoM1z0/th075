@@ -223,6 +223,15 @@ tracked whole 340B/125-x86 original leaf remains
 **1/1 canonical cold exact** with all 11 existing
 actual PE/COFF references verified. No new exact credit.
 
+[F922 common borrowed texture-entry field](TEXTURE_SHARED_NATIVE_ENTRY_F922.md):
+independently re-decoded native byte+0x28 palette flag
+at 0040C602 (Refresh) and 0040C912 (GetTexture);
+both source units now share one offset-checked incomplete
+entry view, retaining original source semantics. **Only
+the two affected 340B and 162B entire native functions
+were freshly cold-replayed, 2/2 exact /502 previously
+accepted CODE bytes**. No corpus-wide replay.
+
 ## 5. Exact acceptance, storage, and end-of-session checks
 
 Read [AGENTS.md](../AGENTS.md), [workflow](RE_WORKFLOW.md)

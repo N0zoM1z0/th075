@@ -1,4 +1,5 @@
 #include "SpriteDraw40CA80.hpp"
+#include "TextureEntryBorrowedF922.hpp"
 
 // Pointer-only count/handle/refresh interfaces; complete owner layouts unknown.
 class TextureEntryCount40C8C0 { public: unsigned int Size(); };
@@ -15,7 +16,7 @@ IDirect3DTexture8* SpriteTextures40CA80::GetTexture(int index) {
     static int cachedIndex = index;
     if (index < 0 || index >= static_cast<int>(COUNT->Size()))
         return 0;
-    if (*reinterpret_cast<unsigned char*>(reinterpret_cast<char*>(ENTRIES->At(index)) + 0x28)) {
+    if (reinterpret_cast<const NativeSpriteEntryViewF920*>(ENTRIES->At(index))->paletteFlagAt28) {
         if (cachedIndex != index) {
             PALETTE->Refresh(index);
             cachedIndex = index;
