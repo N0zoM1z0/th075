@@ -151,23 +151,27 @@ real CC is present. Original whole
 true saved-this EBP and 0x720
 frame are not reconstructed.
 
-[F991 native original 82KB 25A](THIRD_FIGHTER_STAGE25A_F991.md):
-tracked cumulative partial source
-**50,620B/14,000 x86**. Original
-25A 635B/166x86/15 PE fields,
-all native mnemonic/width positions
-aligned, 97 GPR differences.
-Five genuine fixed 0x325 shots
-(angles 10/5/0/5/10), animation
-0xFA, frame 0x334→0x348.
-[F990 native 259](THIRD_FIGHTER_STAGE259_F990.md):
-original 845B/212x86, 15 PE
-targets; source 844B, three
-wrong ADD widths, 137 GPR.
-[F989 native 258](THIRD_FIGHTER_STAGE258_F989.md):
-834B/212x86, 15 actual PE
-fields, width/mnemonics aligned.
-Whole 82KB father NONEXACT.
+[F993 original 82KB 25F/260 ten-shot loops](THIRD_FIGHTER_TEN_SHOT_25F_260_F993.md):
+tracked cumulative partial VC7.1
+fighter **51,534B/14,224 x86**;
+two original 466B/114-x86
+ten-shot cases with **18 native
+typed PE targets**, all **228
+original mnemonic, width AND
+GPR roles matched**. True
+source int loops, distinct native
+EBP−0x30/−0x34 counters,
+sprite0x346/0x347, float
+00658044 motion global.
+Original whole frame 0x720
+and receiver−0x64 still wrong.
+[F991 true original 25A](THIRD_FIGHTER_STAGE25A_F991.md):
+635B/166x86/15 native PE;
+[F990 original 259](THIRD_FIGHTER_STAGE259_F990.md)
+845B/212x86, 15 PE, three
+ADD widths wrong; [F989 258](THIRD_FIGHTER_STAGE258_F989.md)
+834B/212x86/15 PE aligned.
+Whole original 82KB NONEXACT.
 
 [F975 19D/19E/19F](THIRD_FIGHTER_STAGES19D19F_F975.md)
 native 400B/97,475B/128,
@@ -192,21 +196,17 @@ variants also failed to fix CB GPR.
 and earlier [F943](THIRD_FIGHTER_NATIVE_SELECTOR_F943.md)
 remain native PE source-backed.
 
-[F937 58KB strict 0x58 predecessor](FIGHTER_STRICT_PREDECESSOR_LIMIT_F937.md):
-49 complete fighter source variants
-did not repair the native next-state
-register phase without 0x58 regressions.
+[F937 preceding native register phase](FIGHTER_STRICT_PREDECESSOR_LIMIT_F937.md):
+49 complete 58KB actor variants
+did not repair later GPR roles.
 
-[F931 58KB native following register phase](FIGHTER_FOLLOWING_BOUNCE_REGISTER_PHASE_F931.md):
-real post-increment ten-shot loop
-repairs next 0x59 GPR 19→0,
-regresses preceding 0x58.
-Whole father NONEXACT.
+[F931 native 58KB register phase](FIGHTER_FOLLOWING_BOUNCE_REGISTER_PHASE_F931.md):
+real loop fixes next 0x59 GPR
+19→0; regresses preceding 0x58.
 
-[F926 58KB mode63 register negatives](FIGHTER_REGISTER_OWNER_GRAMMAR_F926.md):
-38+24 complete natural source
-controls failed to fix native 0x59
-and 0x63 GPR roles; no exact credit.
+[F926 58KB register negatives](FIGHTER_REGISTER_OWNER_GRAMMAR_F926.md):
+full-native owner grammar trials
+did not repair GPR register phase.
 
 [F917 58KB projectile-X x87 source recovery](FIGHTER_WHOLE_BURST_NATIVE_FSUBR_F917.md):
 four real original IMUL/FILD/FSUBR
