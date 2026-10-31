@@ -166,27 +166,25 @@ real CC is present. Original whole
 true saved-this EBP and 0x720
 frame are not reconstructed.
 
-[F966 original 82KB 188/189](THIRD_FIGHTER_STAGE188189_F966.md):
+[F968 original 82KB 190/191 triple volleys](THIRD_FIGHTER_STAGES190191_F968.md):
 new TRACKED complete partial father
-source **25,798B/7,113 x86**,
-adding original **188:372B/106x86/
-11 PE targets** and **189:214B/
-61x86/6 fields**, with native
-mnemonics and widths all aligned.
-188 has real FUCOMPP equality and
-nested stage6→stage4 check. GPR
-roles still wrong at 63/38 sites.
-[F965 genuine 186/187](THIRD_FIGHTER_STAGE186187_F965.md):
-277B/84 +429B/124, 18 native
-PE fields, GPR errors 53/78.
-Physical 186 lacks native afterRET
-label; source uses real 136 ending.
-[F964 original 135/136](THIRD_FIGHTER_STAGE135136_F964.md),
-[F963 original 133/134](THIRD_FIGHTER_STAGE133134_F963.md),
-[F961 original 12C–130](THIRD_FIGHTER_STAGE12F130_F961.md)
-remain native PE source-backed.
-Complete original 82,796B giant
-remains NONEXACT.
+**26,893B/7,403 x86**, adding
+two true original 597B/147-x86
+game handlers (11+11 actual PE
+targets). All 294 native mnemonics
+align, but each case has twelve
+real x87 temp-width deficits,
+36 fewer source bytes and 94
+wrong GPR roles. Original native
+EBP−0xA8..−0xD4 temp owners still
+not recovered. [F966 188/189](THIRD_FIGHTER_STAGE188189_F966.md)
+source backs 372B/106 +214B/61
+with 17 true PE targets;
+[F965 186/187](THIRD_FIGHTER_STAGE186187_F965.md)
+backs 277B/84 +429B/124
+with 18 true PE targets and
+native missing 186 afterRET label.
+Original whole 82,796B NONEXACT.
 
 [F957 native CA→CB GPR negatives](THIRD_FIGHTER_CA_PRECEDES_CB_GPR_F957.md):
 30 complete partial parent trials did
