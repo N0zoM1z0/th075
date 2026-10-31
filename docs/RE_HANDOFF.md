@@ -232,6 +232,16 @@ the two affected 340B and 162B entire native functions
 were freshly cold-replayed, 2/2 exact /502 previously
 accepted CODE bytes**. No corpus-wide replay.
 
+[F925 shared native TextureManager element and mode](TEXTURE_MANAGER_SHARED_REAL_ELEMENT_F925.md):
+0040B000 and 0040B110 each construct/destruct a
+physically observed 44-byte element and read/write
+the real byte at receiver+0x4C. Two duplicated
+original-shaped type declarations are unified into
+a partial borrowed mode/element header, without
+guessing full vendor ownership. Canonical **2/2
+whole-function exact cold replays /445 existing
+CODE bytes**; no all-unit replay.
+
 ## 5. Exact acceptance, storage, and end-of-session checks
 
 Read [AGENTS.md](../AGENTS.md), [workflow](RE_WORKFLOW.md)
