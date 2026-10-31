@@ -151,6 +151,16 @@ Use the targeted source-only reproductions:
     scripts/repo-python scripts/verify-winmain-stage-live-context-f904.py
     scripts/repo-python scripts/verify-winmain-leading-live-context-f904.py
 
+[F914/F915 original WinMain frame/slot probe](WINMAIN_NATIVE_FRAME_FIRST_SCENE_OWNER_F914.md):
+19 full source member models and 30 declaration/member placement controls
+tested the genuinely used first scene pointer. A complete alternative
+now recovers the **original 0x278 frame and all three original
+HWND=-0x188 / currentScene=-0x184 / path=-0x180 EBP slots**.
+However its real first-scene pointer temp moves from original
+-0x19C to -0x7C, leaving **643/654 matching x86 widths**;
+the F911 645/654 alternate remains the best width geometry.
+Whole startup is **NONEXACT**.
+
 [F911 live main-before-scene ownership](WINMAIN_REAL_MAIN_BEFORE_SCENE_F911.md):
 32 full source live-owner layout variants narrowed the native HWND
 adjacency. The selected tracked *whole* WinMain now emits **2,984
