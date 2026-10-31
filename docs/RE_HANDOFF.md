@@ -61,6 +61,19 @@ packed afterRET jump tables of **901 DATA B**. Latest selected
 complete normal pinned VC7.1 source generates **46,754 CODE B/
 13,230 x86**, plus the separate 901 DATA B. **NOT exact.**
 
+[F1026 complete 46KB external PE proof](FIGHTER_46KB_ALL_NATIVE_PE_TARGETS_F1026.md):
+fresh full 005214B0 normal
+VC7.1 source compile; all
+**1,341/1,341 original
+nonlocal PE call/global fields**
+correct, 1,311 address-named
+and 30 real __ftol2; 11
+CODE-local and 139 afterRET
+DIR32 plus 345 literal DATA.
+Five native widths still wrong,
+whole 46,755B original remains
+NONEXACT.
+
 [F901 whole-native x86/PE audit](SCRIPTED_FIGHTER_COMPLETE_TAIL_AND_WIDTH_AUDIT_F901.md):
 scripts/repo-python scripts/verify-scripted-fighter-tail31b-31c-f901.py
 
@@ -162,18 +175,11 @@ Strict 58 exact GPR/width;
 Postincrement fixes59 but
 regresses58 and whole source.
 
-[F1020 entire original 82KB geometry](THIRD_FIGHTER_SHARED_REAL_RING_LOCAL_F1020.md):
-native source CODE **82,796B,
-22,721 x86**, frame0x720,
-this EBP−0x64, all native
-mnemonics, afterRET data.
-Shared 2DB ring-counter fixes
-real 4B native stack owner.
-**12 widths/6,958 GPR roles**
-still wrong. Whole NONEXACT.
-[F1019 native 2EF/2F0](THIRD_FIGHTER_PAIRED_ARC_2EF_2F0_F1019.md)
-each 2,229B/573x86/80 PE
-matched internal opcode roles.
+[F1020 complete 82KB geometry](THIRD_FIGHTER_SHARED_REAL_RING_LOCAL_F1020.md):
+82,796B/22,721x86 original
+CODE/frame/this recovered,
+12 wrong widths and 6,958
+wrong GPR roles remain.
 
 [F975 original native stages](THIRD_FIGHTER_STAGES19D19F_F975.md):
 19D/19E/19F source recovered.
