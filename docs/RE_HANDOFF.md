@@ -151,27 +151,23 @@ real CC is present. Original whole
 true saved-this EBP and 0x720
 frame are not reconstructed.
 
-[F995 original 82KB full-circle 25B](THIRD_FIGHTER_FULL_CIRCLE_25B_F995.md):
-tracked partial source now
-**55,916B/15,371 x86**,
-adds real original 25B
-**3,693B/957x86/77 typed PE
-fields**, 36 physical shots
-with original angles 0..350,
-all native mnemonics and
-widths correct, 577 GPR
-roles wrong. Genuine owner
-growth frame0x380→0x410
-**regresses following GPR
-phase**: [F993 25F/260](THIRD_FIGHTER_TEN_SHOT_25F_260_F993.md)
-0→73/73 and [F994 261/262](THIRD_FIGHTER_TEN_SHOT_261_262_F994.md)
-0→65/65 wrong GPR roles;
-their original mnemonic/widths
-and 34 PE fields still match.
-Four natural scope/typed-X
-whole-source controls negative.
-Original full 82,796B
-callable remains NONEXACT.
+[F996 original 82KB nine-shot 25C](THIRD_FIGHTER_NINE_SHOT_25C_F996.md):
+tracked source now **56,944B/
+15,640 x86**, original 25C
+**1,043B/271 x86/23 typed PE
+fields**; native nine 0x342
+angles -28..28 by 7, all
+mnemonic/widths matched, 162
+GPR roles wrong. Source frame
+0x410→0x434, previous adjacent
+GPR phase debts unchanged.
+[F995 native full-circle 25B](THIRD_FIGHTER_FULL_CIRCLE_25B_F995.md):
+real 3,693B/957x86/77 PE,
+36 native original 0..350
+shots, all original mnemonics/
+widths. Original giant NONEXACT;
+four following ten-shot states
+still have 73/73/65/65 GPR debts.
 
 [F975 19D/19E/19F](THIRD_FIGHTER_STAGES19D19F_F975.md)
 native 400B/97,475B/128,
