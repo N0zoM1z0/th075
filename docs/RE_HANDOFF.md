@@ -166,17 +166,18 @@ real CC is present. Original whole
 true saved-this EBP and 0x720
 frame are not reconstructed.
 
-[F958 selected 82KB partial father and native 12C/12D](THIRD_FIGHTER_STAGE12C12D_F958.md):
-new TRACKED cumulative whole C++ parent
-source emits **22,012B/5,975 x86**,
-restoring original 12C=207B/59 and
-12D=219B/61 with 12 real PE fields,
-**ZERO mnemonic/width/GPR differences**.
-Original 12C has NO afterRET table entry:
-source boundary grounded via actual
-D2 251B/74-x86 terminus and real
-12D successor label. Entire original
-82,796-B game giant still NONEXACT.
+[F959 tracked 82KB partial parent, original 12C/12D/12E](THIRD_FIGHTER_STAGE12E_F959.md):
+new TRACKED cumulative C++ emits
+**22,267B/6,055 x86**. Original
+12C=207B/59, 12D=219B/61, 12E=
+270B/82, all **202 native mnemonic/
+width/GPR positions aligned and
+19 genuine PE targets verified**.
+Native 12C has no afterRET label;
+[F958 boundary proof](THIRD_FIGHTER_STAGE12C12D_F958.md)
+uses actual D2 251B terminus.
+Whole 82,796B original NONEXACT.
+
 [F957 CA→CB source controls](THIRD_FIGHTER_CA_PRECEDES_CB_GPR_F957.md):
 30 real complete parent variants failed
 to improve CB's 79 wrong GPR roles.
