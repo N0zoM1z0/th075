@@ -307,63 +307,25 @@ Original WinMain has 654 x86, 123 CALLs and a separate
 **/GX-**. /GX wrongly generates extra exception-handling
 instructions and must not be used as a native comparison.
 
-[F913 typed stage-counter adjacency](BACKGROUND_COUNTER_TYPED_ADJACENCY_F913.md):
-11 independent formerly exact background animation callbacks
-(**463 original native CODE B**) now use a naturally typed,
-two-member signed 32-bit +0x68/+0x6C borrowed window in
-the tracked implementation. The original complete owner layout
-remains unknown; *only the affected eleven whole units* were
-cold-replayed **11/11 exact**, preserving accepted coverage.
+## 4a. Exact-preserving source semantics — affected-unit replays ONLY
 
-[F919 three real signed-short AnimationState fields](ANIMATION_COUNTERS_TYPED_NATIVE_F919.md):
-the original 0040FAC0/0040FB00/0040FB40 physical complete
-functions prove a single +0x60/+0x62/+0x64 short-counter
-window. Replaced three independent raw casts with a typed
-six-byte borrowed view and cold-replayed **only the affected
-three whole functions: 3/3 exact, 151 existing native CODE B
-preserved**. The full AnimationState owner remains unknown.
+These changes improve real observed C++ field/owner semantics in
+already-accepted whole native functions. **No new exact CODE credit**.
+Consult the linked original-PE documentation rather than replaying
+all 979 functions:
 
-[F920 texture entry native borrowed fields](TEXTURE_ENTRY_TYPED_BORROWED_F920.md):
-the entire already accepted original 0040C590
-`TexturePalette40C8C0::Refresh` now uses typed
-member reads at observed offsets +0/+4/+8/+0xC/+0x28
-instead of five unrelated raw offset casts. Ten
-full VC7.1 C++ variants were tested; the new
-tracked whole 340B/125-x86 original leaf remains
-**1/1 canonical cold exact** with all 11 existing
-actual PE/COFF references verified. No new exact credit.
-
-[F922 common borrowed texture-entry field](TEXTURE_SHARED_NATIVE_ENTRY_F922.md):
-independently re-decoded native byte+0x28 palette flag
-at 0040C602 (Refresh) and 0040C912 (GetTexture);
-both source units now share one offset-checked incomplete
-entry view, retaining original source semantics. **Only
-the two affected 340B and 162B entire native functions
-were freshly cold-replayed, 2/2 exact /502 previously
-accepted CODE bytes**. No corpus-wide replay.
-
-[F925 shared native TextureManager element and mode](TEXTURE_MANAGER_SHARED_REAL_ELEMENT_F925.md):
-0040B000 and 0040B110 each construct/destruct a
-physically observed 44-byte element and read/write
-the real byte at receiver+0x4C. Two duplicated
-original-shaped type declarations are unified into
-a partial borrowed mode/element header, without
-guessing full vendor ownership. Canonical **2/2
-whole-function exact cold replays /445 existing
-CODE bytes**; no all-unit replay.
-
-[F933 actual typed background-stage initial fields](BACKGROUND_STAGE_THREE_NATIVE_FIELDS_F933.md):
-36 independently accepted original stage constructors
-across F376/F377 share the genuine receiver +0x0C,
-+0x10,+0x14 state-field offsets, but NOT one
-source-type/value grammar: **30 real integer-zero
-constructors and six original 640.0f/100.0f/100.0f
-floating initializers**. Both actual borrowed
-12-byte field views now replace repetitive raw
-offset writes in the two tracked sources. Affected
-only, full canonical cold replay: **36/36 exact,
-5,531 already accepted original CODE bytes**
-preserved across two source objects.
+- [F913 background tick/frame adjacency](BACKGROUND_COUNTER_TYPED_ADJACENCY_F913.md):
+  11 complete callbacks, **463 previously accepted native bytes**, 11/11 exact.
+- [F919 AnimationState three signed short counters](ANIMATION_COUNTERS_TYPED_NATIVE_F919.md):
+  3 complete callbacks, **151 existing bytes**, 3/3 exact.
+- [F920/F922 shared texture-entry flag and typed metadata](TEXTURE_SHARED_NATIVE_ENTRY_F922.md):
+  2 complete original functions, **502 existing bytes**, 2/2 exact;
+  [F920's five-field original entry evidence](TEXTURE_ENTRY_TYPED_BORROWED_F920.md).
+- [F925 shared TextureManager 44B element and mode](TEXTURE_MANAGER_SHARED_REAL_ELEMENT_F925.md):
+  2 complete original allocators, **445 existing bytes**, 2/2 exact.
+- [F933 two real BackgroundStage field grammars](BACKGROUND_STAGE_THREE_NATIVE_FIELDS_F933.md):
+  **30 integer-zero / 6 float-initializer complete native constructors**,
+  total **5,531 existing bytes**, 36/36 exact, 2 source objects.
 
 ## 5. Exact acceptance, storage, and end-of-session checks
 

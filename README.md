@@ -80,7 +80,14 @@ exclude several trivial loop/argument spellings.
 It and the other 20 giant originals remain nonexact. Large original
 functions **004AC040** (82,796 B), **0050A580** (81,539 B),
 and **0045DD70** (60,999 B) must not be neglected in favor
-of leaf-only reconstruction.
+of leaf-only reconstruction. The
+[F938 third original fighter source](docs/THIRD_FIGHTER_REAL_BOUNCE_F938.md)
+now replaces an original **004AC040** action0x59 marker
+with actual **356B/95 x86/16 native PE field** C++ inside
+a still-partial 82KB giant parent. A preceding-loop
+postincrement control again fixes all 19 following-case
+GPR mismatches, but breaks native 0x58. No giant
+whole function is newly byte-exact.
 
 The three independent nonexact whole-function targets are
 **0041CE50** (Archive destructor, 171 B),
