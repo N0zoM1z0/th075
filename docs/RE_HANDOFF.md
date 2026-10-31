@@ -141,7 +141,7 @@ is evidence for switch structure, not source provenance.
 | --- | ---: | --- |
 | 0041CE50 ArchiveCatalog destructor | 171 | [F900](ARCHIVE_REAL_GROUPED_LIFETIMES_F900.md): 25 complete VC7.1 sources; best 108/115 nonfield original bytes, wrong EBP lifetimes |
 | 0043B0B0 Scene virtual destructor | 248 | [F889](SCENE_MIXED_REAL_FREE_POINTER_OWNERS_F889.md): 29 real whole-source layouts; best 191/200 original nonfield bytes |
-| 00602A60 WinMain | 2,987 | [F904](WINMAIN_REAL_STAGE_OWNER_LIFETIMES_F904.md): 43 complete /GX- WinMain sources; 633/654 native x86 widths but wrong scene/path EBP |
+| 00602A60 WinMain | 2,987 | [F911](WINMAIN_REAL_MAIN_BEFORE_SCENE_F911.md): 32 complete real owner-layout sources; best 2,984 emitted CODE B and 645/654 native x86 widths, but still wrong EBP storage |
 
 Together they are **3,406 CODE bytes**, not exact.
 Use the targeted source-only reproductions:
@@ -174,6 +174,14 @@ Original WinMain has 654 x86, 123 CALLs and a separate
 60B afterRET 15-scene table; its native flags require
 **/GX-**. /GX wrongly generates extra exception-handling
 instructions and must not be used as a native comparison.
+
+[F913 typed stage-counter adjacency](BACKGROUND_COUNTER_TYPED_ADJACENCY_F913.md):
+11 independent formerly exact background animation callbacks
+(**463 original native CODE B**) now use a naturally typed,
+two-member signed 32-bit +0x68/+0x6C borrowed window in
+the tracked implementation. The original complete owner layout
+remains unknown; *only the affected eleven whole units* were
+cold-replayed **11/11 exact**, preserving accepted coverage.
 
 ## 5. Exact acceptance, storage, and end-of-session checks
 

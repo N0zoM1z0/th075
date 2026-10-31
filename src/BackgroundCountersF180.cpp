@@ -1,7 +1,19 @@
 #include "BackgroundCountersF180.hpp"
 
-#define COUNTER (*reinterpret_cast<int*>(reinterpret_cast<unsigned char*>(this) + 0x68))
-#define FRAME (*reinterpret_cast<int*>(reinterpret_cast<unsigned char*>(this) + 0x6C))
+// Original game stage callback receiver has two directly adjacent signed
+// 32-bit animation state counters at offsets 0x68 and 0x6C. This is a
+// *borrowed tail view* only: the full background object type is unknown
+// and must not be allocated or embedded via this small view.
+struct BackgroundCounterWindowF913 {
+    int animationTick;
+    int animationFrame;
+};
+typedef char BackgroundCounterWindowF913SizeIs8[
+    (sizeof(BackgroundCounterWindowF913) == 8) ? 1 : -1
+];
+#define COUNTERS (*reinterpret_cast<BackgroundCounterWindowF913*>(reinterpret_cast<unsigned char*>(this) + 0x68))
+#define COUNTER (COUNTERS.animationTick)
+#define FRAME (COUNTERS.animationFrame)
 
 void BackgroundCountersF180::AdvanceAt00449EC0()
 {
@@ -75,3 +87,4 @@ void BackgroundCountersF180::AdvanceAt0044E3A0()
 
 #undef FRAME
 #undef COUNTER
+#undef COUNTERS
