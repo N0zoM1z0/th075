@@ -284,6 +284,35 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   slots remain wrong. No
   accepted whole CODE.
   [F864 physical proof](SCENE_THREE_REAL_NAMED_POINTERS_F864.md).
+- **F877 original 200 six-stage owner wave x87 FSUBR source:**
+  native full 634B/177x86/
+  ten real physical PE
+  fields inside current
+  complete **31,997B/
+  8,974-x86** fighter.
+  Six real FILD native
+  slots -9C/-A0/-A4/
+  -A8/-AC/-B0, owner
+  stage actions and
+  stage4 facing byte copy.
+  Bare X-float(facing*26)
+  makes FISUB (nonnative);
+  true borrowed actor X
+  lvalue emits original
+  FILD then FSUBR member.
+  Both whole sources
+  independently compiled.
+  All PE fields/opcodes/
+  widths correct, 131
+  GPR +four giant JMP
+  bytes still nonexact.
+  Earlier 49 real game
+  cases and five 901B
+  jump tables rechecked,
+  1FD one-byte CMP negative
+  retained. No accepted
+  whole callable CODE credit.
+  [F877 native source proof](SCRIPTED_FIGHTER_OWNER_WAVE_200_F877.md).
 - **F876 standalone Archive original 171B inline-helper source lifetime negatives:**
   ten complete VC7.1 /Od
   /Ob0 normal destructor

@@ -2175,6 +2175,50 @@ operand byte differences.
 scripts/repo-python scripts/verify-scripted-fighter-owner-stages-1ff-f875.py.
 Whole original 46,755B remains NONEXACT.
 
+**F877 original fighter 200 six-stage owner wave and real FILD/FSUBR grammar:**
+original case200 at 00528D4D
+**634 native inner B/177 x86/
+10 real typed PE call fields**.
+Stages0..5 associate owner+2E8
+action64 and update owner+44
+via facing multipliers 74/
+46/23/13/-6/26, with six
+naturally allocated FILD
+temp slots **EBP-0x9C/
+-A0/-A4/-A8/-AC/-B0**.
+Stage4 also physically
+copies facing byte to owner+66.
+At stage5 naive F32(44)-float
+(facing*26) produces wrong
+VC7.1 FISUB, despite same
+634B/177-x86/10 PE ref counts.
+True observed borrowed actor
+X LEFT LVALUE produces original
+FILD integer then FSUBR
+member+44 (3B), exact native
+x87 opcode/width grammar;
+wrong version is freshly
+compiled and rejected.
+New complete VC7.1 parent
+**31,997 callable CODE B/
+8,974 x86** (F875 31,378/
+8,799), all 10 native PE
+targets and complete case
+opcode/width positions verified.
+**131 true GPR operand bytes**
+plus four enclosing-giant JMP
+operand bytes +95/+96,+630/+631
+remain nonexact. All 49 earlier
+native case sources including
+1FD 1B CMP negative and
+all five original packed 901B
+switch DATA tables checked;
+shared getter four genuine
+GPR negatives retained.
+[F877 original x87 and PE proof](SCRIPTED_FIGHTER_OWNER_WAVE_200_F877.md);
+scripts/repo-python scripts/verify-scripted-fighter-owner-wave-200-f877.py.
+Whole original 46,755B giant NONEXACT.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin
