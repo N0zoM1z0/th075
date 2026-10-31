@@ -2829,6 +2829,43 @@ new authored exact CODE.
 [F876 whole Archive original PE audit](ARCHIVE_INLINE_RETURN_BOUNDARIES_F876.md);
 scripts/repo-python scripts/verify-archive-inline-return-boundaries-f876.py.
 
+**F882 real independent Scene 248B destructor: texture owner local vs true PE fields:**
+17 new COMPLETE normal pinned
+VC7.1 /Od /GX sources with
+actually used texture pointer
+locals, const/volatile and
+references, four-field cleanup
+aggregate containing original
+texture and all 3 real CRT
+free pointers. Original
+native **248B/75 x86/
+12 physical PE fields**.
+Two genuine 248B/75
+source variants still
+**191/200 native nonfield**
+with 9 real EBP byte errors.
+3 early texture owner locals
+generate 251B/76x86,
+TEN scoped/four-field
+owner sources 254B/77x86,
+two references 256B/78x86.
+Notably four-field actual
+texture SECOND-LAST recovers
+native ordinal26 texture
+store **EBP-0x14**,
+BUT delete receiver becomes
+-0x24, 2 extra MOV, whole
+254B/77x86 and last six
+original PE fields shift +6:
+this is NOT whole exact.
+All genuine CRT free and
+texture delete effects are
+preserved; no fake locals
+or cropped PE match.
+[F882 full Scene native tradeoff](SCENE_TEXTURE_OWNER_LIFETIME_F882.md);
+scripts/repo-python scripts/verify-scene-texture-ownership-f882.py.
+Original Scene still NONEXACT.
+
 ## 4. Attribution, validation, research and storage
 
 - **Original authored ≠ compiler/library ≠ unknown**. The 95 unknown

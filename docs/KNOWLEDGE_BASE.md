@@ -284,6 +284,32 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   slots remain wrong. No
   accepted whole CODE.
   [F864 physical proof](SCENE_THREE_REAL_NAMED_POINTERS_F864.md).
+- **F882 original independent 248B Scene texture pointer ownership:**
+  17 genuinely used
+  complete VC7.1 /GX
+  C++ destructors against
+  248B/75 x86/12 original
+  physical PE fields.
+  Actual four-field local
+  aggregate with texture
+  second-last restores
+  texture operand EBP-0x14
+  but moves delete receiver
+  to -0x24, inserts two
+  real MOV instructions,
+  makes 254B/77 x86
+  and shifts six authentic
+  native PE fields +6B.
+  Only baseline and typed
+  texture-lvalue source
+  keep full original
+  248B/75x86, both
+  191/200 nonfield bytes,
+  nine original EBP slot
+  mismatches. Whole Scene
+  still NONEXACT, zero
+  accepted exact CODE.
+  [F882 original PE evidence](SCENE_TEXTURE_OWNER_LIFETIME_F882.md).
 - **F881 original 258 narrow facing and mixed float-X/raw-Y projectile:**
   actual native 206B/
   60 x86/six genuine
