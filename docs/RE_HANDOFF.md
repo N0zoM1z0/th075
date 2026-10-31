@@ -166,26 +166,28 @@ real CC is present. Original whole
 true saved-this EBP and 0x720
 frame are not reconstructed.
 
-[F975 native 82KB 19D/19E/19F](THIRD_FIGHTER_STAGES19D19F_F975.md):
-TRACKED partial father **33,488B/
-9,195 x86**, three genuine
-source-backed original game cases
-**400B/97x86,475B/128x86,
-478B/128x86** with 31 native
-typed PE targets and ALL ordered
-mnemonic/width roles matched.
-Native 19D x87 FIADD and 19E/19F
-angle SHL/XOR-or-MOV/SUB/FILD
-were independently verified;
-65/84/84 GPR errors remain.
-[F974 19B/19C single shots](THIRD_FIGHTER_SINGLE_SHOT_F974.md):
-two 355B/87x86/7 PE, 56 GPR
-errors each. [F972 199/19A
-five-shot motion](THIRD_FIGHTER_FIVE_SHOT_MOTION_F972.md):
-two native 593B/170-x86/19 PE,
-correct x87 owner FLD/FMUL.
-Entire original 82,796B fighter
-still NONEXACT.
+[F976 third 82KB native random 1A0 loops](THIRD_FIGHTER_RANDOM_LOOP_F976.md):
+TRACKED cumulative partial C++
+**34,055B/9,341 x86**. Native
+1A0 5/8 real random-shot loops
+570B/148x86/12 actual PE
+targets now all mnemonic/width
+matched after fixing Y-base
+before Rand20 source evaluation.
+66 original GPR roles remain
+wrong. Real parent stack grows
+0x144→0x16C, moves saved `this`
+EBP−0x10→−0x18 and repairs
+**four native x87 widths in
+preceding 191** (12 wrong→8);
+original parent 0x720 and
+EBP−0x64 still absent.
+[F975 19D/19E/19F](THIRD_FIGHTER_STAGES19D19F_F975.md)
+native 400B/97,475B/128,
+478B/128 with 31 PE targets,
+0 mnemonic/width errors.
+Complete original 82,796B
+fighter remains NONEXACT.
 
 [F957 native CA→CB GPR negatives](THIRD_FIGHTER_CA_PRECEDES_CB_GPR_F957.md):
 30 complete partial parent trials did
