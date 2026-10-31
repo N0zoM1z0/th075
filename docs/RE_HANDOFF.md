@@ -149,25 +149,24 @@ unmatched. Important true original callable extents:
 | 0050A580 | 81,539 | Giant state-advance original source reconstruction |
 | 0045DD70 | 60,999 | Giant state-advance original source reconstruction |
 
-[F942 third 82KB actor authentic 0x60/0x61](THIRD_FIGHTER_NATIVE_VOLLEY_F942.md):
-each original resource/volley action
-is **553B/158 x86/10 PE fields**.
-Both have **ZERO native mnemonic,
-width and GPR-role differences** in
-an 18,161-B/4,832-x86 growing partial
-whole-parent source, but `this` EBP
-and raw original machine operands
-remain nonexact. Original afterRET
-1,126B/151 local labels and 522
-nonfield DATA bytes verified.
+[F943 third 82KB actor true 0x62 selector](THIRD_FIGHTER_NATIVE_SELECTOR_F943.md):
+the real transition 004AE7E2..004AE839
+is **87B/25 x86/4 original PE targets**,
+now source-reconstructed in the growing
+**18,234B/4,855-x86 partial parent**.
+[F942 0x60/0x61](THIRD_FIGHTER_NATIVE_VOLLEY_F942.md)
+restored 2×553B/158x86/10 PE fields
+with **ZERO original GPR/mnemonic/width
+differences** in their internal source;
 [F941 0x5F](THIRD_FIGHTER_FACING_F941.md)
-adds 144B/44x86 and **zero GPR
-role differences**; [F939 0x5D/5E](THIRD_FIGHTER_NATIVE_PAIR_5D5E_F939.md)
-adds 674B/202x86, 16 PE fields;
-[F938 0x59](THIRD_FIGHTER_REAL_BOUNCE_F938.md)
-adds 356B/95x86, 16 PE fields.
-The **82,796B original giant
-remains NONEXACT**; continue 0x62+.
+added 144B/44x86 all GPR matching;
+[F939 0x5D/5E](THIRD_FIGHTER_NATIVE_PAIR_5D5E_F939.md)
+and [F938 0x59](THIRD_FIGHTER_REAL_BOUNCE_F938.md)
+complete the preceding real chain.
+Native `this` EBP is still wrong; all
+**82,796 original callable CODE bytes
+remain NONEXACT**. AfterRET original
+1,126B/151 DIR32/522 nonfield B checked.
 
 [F934/F937 strict native 0x58 controls](FIGHTER_STRICT_PREDECESSOR_LIMIT_F937.md):
 49 additional complete 58KB normal VC7.1
