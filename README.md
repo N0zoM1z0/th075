@@ -10,7 +10,7 @@ Only original, attributable, byte-identical **whole callable functions**
 earn canonical exact CODE credit. An internal case, original PE-similar
 mnemonic stream or matching total source length is not acceptance.
 
-## Current verified status (2026-10-31, F937 research / F780 exact ledger)
+## Current verified status (2026-10-31, F1029 research / 979 exact ledger)
 
 | Property | Grounded result |
 | --- | --- |
@@ -51,53 +51,47 @@ Research performed against an earlier partial fighter or
 an old compiler context remains useful evidence but must not
 be asserted as the current whole-function result.
 
-### Do substantial work on big Boss functions and small originals
+### Work on the entire giant Boss functions **and** complete small originals
 
-The major research target **005214B0** has **46,755 original CODE B /
-13,230 original x86**, plus 901 separate packed afterRET DATA B.
-The currently selected normal VC7.1 source emits
-**46,754 B /13,230 x86**. While all original native
-mnemonics line up, **five opcode widths**, **443 original-absolute
-PE field offsets** and many real register roles remain wrong.
-[F901 whole-fighter source/PE audit](docs/SCRIPTED_FIGHTER_COMPLETE_TAIL_AND_WIDTH_AUDIT_F901.md)
-establishes the strict baseline. The newer
-[F932 cross-actor register-phase result](docs/SCRIPTED_FIGHTER_CROSS_BOSS_LOOP_REGISTER_PHASE_F932.md)
-shows that one natural preceding ten-shot loop grammar
-restores the next 0x59 state from 19 wrong GPR roles to
-zero, BUT introduces a native 0x58 opcode and two
-width regressions. **The whole fighter is NOT exact.**
+Three large original fighters now have independent **whole-function**
+original PE destination audits. Their normal VC7.1 C++ is promising,
+but **none is accepted exact**:
 
-The original **00543210** fighter is another 58,294-B whole giant
-with 943 separately owned afterRET DATA B. The
-[F917 actual native projectile-X source recovery](docs/FIGHTER_WHOLE_BURST_NATIVE_FSUBR_F917.md)
-now matches all 16,471 native x86 mnemonic ordinals and restores
-four original positive IMUL / FSUBR sequences in the full parent,
-but **three real width and many GPR/PE field mismatches remain**.
-The [F931 preceding-loop source lead](docs/FIGHTER_FOLLOWING_BOUNCE_REGISTER_PHASE_F931.md)
-fixes all next-state 0x59 GPR operands but regresses native 0x58;
-[F937 strict predecessor controls](docs/FIGHTER_STRICT_PREDECESSOR_LIMIT_F937.md)
-exclude several trivial loop/argument spellings.
-It and the other 20 giant originals remain nonexact. Large original
-functions **004AC040** (82,796 B), **0050A580** (81,539 B),
-and **0045DD70** (60,999 B) must not be neglected in favor
-of leaf-only reconstruction. The
-[F938 third original fighter source](docs/THIRD_FIGHTER_REAL_BOUNCE_F938.md)
-now replaces an original **004AC040** action0x59 marker
-with actual **356B/95 x86/16 native PE field** C++ inside
-a still-partial 82KB giant parent. A preceding-loop
-postincrement control again fixes all 19 following-case
-GPR mismatches, but breaks native 0x58. No giant
-whole function is newly byte-exact.
+| Native whole Boss | Current partial whole-source geometry | Physical original external PE target evidence |
+| --- | --- | ---: |
+| `004AC040` 82,796B | **82,796B/22,721 x86**, native frame and saved this; still **12 width /6,958 GPR** defects | [F1028](docs/THIRD_FIGHTER_WHOLE_82KB_PE_TARGETS_F1028.md): **2,191/2,191** |
+| `00543210` 58,294B | **58,293B/16,471 x86**; still **3 width /1,741 GPR** defects | [F1025](docs/FIGHTER_58KB_ALL_NATIVE_PE_TARGETS_F1025.md): **1,697/1,697** |
+| `005214B0` 46,755B | **46,754B/13,230 x86**; still **5 native width** defects | [F1026](docs/FIGHTER_46KB_ALL_NATIVE_PE_TARGETS_F1026.md): **1,341/1,341** |
 
-The three independent nonexact whole-function targets are
-**0041CE50** (Archive destructor, 171 B),
-**0043B0B0** (Scene destructor, 248 B) and
-**00602A60** (WinMain, 2,987 B). The latest real
-lifetime/ABI experiments are
-[F936 Archive](docs/ARCHIVE_NATIVE_LOOP_VALUE_CATEGORIES_F936.md),
-[F889 Scene](docs/SCENE_MIXED_REAL_FREE_POINTER_OWNERS_F889.md),
-and [F927 WinMain](docs/WINMAIN_REAL_USED_GAP_NEGATIVES_F927.md).
-All three remain nonexact, despite fully compiled C++ experiments.
+These **5,229** physical native PE targets are genuine call/global
+addresses, **not** proof that the whole machine bytes, GPR allocation,
+jump displacements or COFF field positions match. Specifically,
+F1020's [native 82KB frame/counter correction](docs/THIRD_FIGHTER_SHARED_REAL_RING_LOCAL_F1020.md)
+recovered one real shared 2DB shot-loop variable, while
+[F1029](docs/THIRD_FIGHTER_NATIVE_259_ANGLE_GPR_F1029.md) rules out
+eight angle-expression spellings without improving the remaining
+register phase. The **81,539B `0050A580`** and **60,999B
+`0045DD70`** whole originals, plus the other 18 large originals,
+must also be attacked seriously; the
+[original dispatch manifest](config/fighter-boss-dispatch-fingerprints.json)
+provides the true extents and jump DATA owners.
+
+Three complete smaller original authored functions are still
+nonexact: **`0041CE50`** Archive destructor (**171B**),
+**`0043B0B0`** Scene virtual destructor (**248B**),
+and **`00602A60`** WinMain (**2,987B**). Their latest
+native stack/owner evidence is [F936 Archive](docs/ARCHIVE_NATIVE_LOOP_VALUE_CATEGORIES_F936.md),
+[F1015 Scene](docs/SCENE_THREE_FREE_DECLARATION_ORDER_F1015.md),
+and [F914/F911 WinMain](docs/WINMAIN_NATIVE_FRAME_FIRST_SCENE_OWNER_F914.md).
+All three still need original full-function byte equality.
+
+Already accepted leaf/code semantics are also actively improved:
+[F1022 script WORDs](docs/FIGHTER_SCRIPT_COUNTER_ADJACENT_NATIVE_F1022.md)
+**46/46 whole cold exact**;
+[F1024 animation counters](docs/FIGHTER_ANIMATION_PHASE_WINDOW_F1024.md)
+**9/9**; [F1027 action/timer WORDs](docs/FIGHTER_NATIVE_ACTION_TIMER_PAIR_F1027.md)
+**46/46**. These bytes were accepted before those type improvements,
+so no duplicate authored CODE credit is due.
 
 ## Safe reconstruction workflow
 

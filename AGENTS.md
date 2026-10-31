@@ -24,7 +24,15 @@ candidates have now all been accepted in F755–F780. Remaining origin-
 unknown candidates require independent attribution; an exact source-
 generated machine function does not itself prove authored ownership.
 Start with the live cohort in `docs/RE_HANDOFF.md`; historical experiments
-must not override current evidence. **Only cold-replay new/affected units**,
+must not override current evidence. The F1020 normal 82KB
+original-shaped `probes/FighterWhole004AC040F1020.cpp` matches the
+original **CODE length/instruction count, 0x720 frame and saved-this
+slot**, but still has **12 wrong widths and 6,958 wrong GPR roles**.
+The 46KB F901 and 58KB F917 local native research parents remain
+nonexact too. F1025/F1026/F1028 certify their genuine *external PE
+destination addresses*, NOT original relocation offsets or full
+callable equality. Current 22 giant + 3 small whole backlog remains.
+Never restart at obsolete F938 marker-only giant source. **Only cold-replay new/affected units**,
 never all units. Keep compiler builds serial. Remove only obsolete reproducible
 outputs, preserving evidence, manifests, sources, inputs and shared tools.
 Write repository documentation, comments, and handoffs in English. Preserve

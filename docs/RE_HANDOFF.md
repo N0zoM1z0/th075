@@ -1,449 +1,204 @@
-# TH075 — CURRENT reconstruction agent handoff
+# TH075 — active reconstruction handoff (2026-10-31, F1029)
 
-**Current evidence checkpoint: 2026-10-31, F960.** This is the short
-working queue, NOT a chronological research journal. Native original PE
-and live exact/origin manifests outrank historical C++ guesses and
-older F-series reports. The former long handoff, with its original
-research preserved and links repaired, is the
-[frozen pre-cleanup F781–F906 snapshot](history/RE_HANDOFF_F781_THROUGH_F906_PRE_CLEANUP_2026-10-31.md).
-Other historical handoffs:
+**Use this document for the live queue.** Read [AGENTS.md](../AGENTS.md),
+[the build/evidence workflow](RE_WORKFLOW.md) and
+[storage recovery instructions](STORAGE_HYGIENE.md). Original Japanese PE,
+the live origin/exact manifests, and freshly rebuilt normal VC7.1 objects
+**override old F-series prose**. No simultaneous agent owns dirty files:
+inspect, finish and commit the current worktree.
+
+Long research and failed intermediate snapshots are historical, not current:
+[frozen F781–F906 handoff](history/RE_HANDOFF_F781_THROUGH_F906_PRE_CLEANUP_2026-10-31.md),
 [F653–F753](history/RE_HANDOFF_F653_THROUGH_F753_2026-10-30.md),
 [F598–F652](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md),
-[F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md).
-The [knowledge base](KNOWLEDGE_BASE.md) contains historical experiments.
+[F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md),
+and the [chronological knowledge base](KNOWLEDGE_BASE.md).
+Keep these evidence records; do not silently rewrite historical measurements.
 
 ## 1. Original native PE and complete-function exactness
 
-| Verified item | Current value |
+| Verified live status | Original evidence |
 | --- | --- |
-| Native original | Japanese TH075 v1.11 resources/th075.exe |
-| SHA-256 | bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98 |
-| Provisional candidates / origin unknown | 4,351 / 95 |
-| Independently authored originals | **1,004** |
-| Accepted exact whole functions | **979 functions / 979 exact units** |
-| Accepted native CODE | **868,243 original CODE bytes** |
-| Reviewed authored denominator | **1,973,704** |
-| Reviewed exact coverage | **43.99%** |
-| Conservative coverage | **43.91%** |
-| Authored still nonexact | **25 authored functions remain nonexact** |
-| Giant backlog | **22 large original state advances**, **1,102,055 CODE bytes** |
-| Non-giant authored backlog | **3 other original small/medium whole functions**, **3,406 CODE bytes** |
-| Uncredited unknown provenance | 95 candidates, 3,420 CODE B |
+| Pinned original | Japanese TH075 v1.11, `resources/th075.exe` |
+| SHA-256 | `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98` |
+| Original candidates / unresolved provenance | **4,351 / 95** (3,420 uncredited original CODE B) |
+| Independently authored original functions | **1,004** |
+| Accepted complete exact callables | **979 functions / 979 exact units** |
+| Accepted exact CODE | **868,243 original CODE bytes** |
+| Reviewed original authored denominator | **1,973,704** CODE B |
+| Reviewed / conservative exact coverage | **43.99%** / **43.91%** |
+| Authored backlog | **25 authored functions remain nonexact** |
+| Large original backlog | **22 large original state advances**, **1,102,055 CODE bytes** |
+| Other entire original backlog | **3 other original small/medium whole functions**, **3,406 CODE bytes** |
 
-**The 98% goal is not met.** The canonical exact ledger accepts only
-complete original callable functions, never internal switch cases,
-afterRET jump data or origins still marked unknown.
-The historical "25 pending plus 11 more" count was superseded by
-eleven whole exact acceptances F755–F780. There are **25 total**
-remaining authored original functions, not 27 or 36.
-Use [independent origins](../config/function-origins.csv),
-[original candidates](../config/functions.csv) and
-[whole match units](../config/match-units.toml), not old prose.
+**98% is not achieved.** Original owner decisions come from
+[function-origins.csv](../config/function-origins.csv), not provisional
+`functions.csv.owner` or old “25 plus 11 more” counts.
+The 11 newly attributed complete functions were accepted in F755–F780.
+The 95 still-unknown origins cannot be credited from identical emitted
+bytes without independent historical source attribution.
 
-Fast preflight — no all-unit cold replay:
+**Strict acceptance:** byte-identical *entire original callable* plus
+all genuine physical COFF PE fields and native authored provenance,
+then targeted `scripts/repo-python scripts/replay-exact-units.py --unit NAME`.
+A matching internal switch case, 16,471/22,721 mnemonic stream, source
+CODE length, afterRET DATA, or successful compiler build is **not** exact.
+
+## 2. Primary large Boss — original 005214B0 (46KB)
+
+Original **46,755 callable CODE B /13,230 x86**, with **seven**
+physical jump dispatches and **901 separately owned afterRET DATA B**
+(139 DIR32 labels, 345 literal nonfield B). The F901
+complete C++ source `.analysis/f901-fighter-31b/Boss005214B0-F901-whole.cpp`
+is a **local research file**, not accepted source; normal pinned VC7.1
+emits **46,754B /13,230 x86** and all original mnemonic positions,
+but **five native widths** remain wrong (whole ordinals
+2885/2908 action0x63, 8455 action1FD, 8986 action252, 9130 action254).
+Source physical COFF and GPR allocations still differ.
+
+- [F1026 entire original PE audit](FIGHTER_46KB_ALL_NATIVE_PE_TARGETS_F1026.md):
+  **1,341/1,341 true external destinations**, including 30 `__ftol2`,
+  plus 11 CODE-local and all afterRET DATA fields. Reproduce only
+  `scripts/repo-python scripts/verify-fighter-whole-46kb-pe-targets-f1026.py`.
+- [F901 13,230-instruction/physical width audit](SCRIPTED_FIGHTER_COMPLETE_TAIL_AND_WIDTH_AUDIT_F901.md):
+  five real width errors, 443 source absolute nonoriginal COFF offsets.
+- [F906 first GPR divergence](FIGHTER_FIRST_GPR_DIVERGENCE_F906.md),
+  [F903 real mode63 controls](SCRIPTED_FIGHTER_MODE63_TYPED_GPR_F903.md),
+  [F932 cross-actor ten-shot loop negative](SCRIPTED_FIGHTER_CROSS_BOSS_LOOP_REGISTER_PHASE_F932.md):
+  a postincrement loop restores next0x59 GPR phase but *regresses*
+  preceding0x58. Never adopt it solely for the next state.
+
+**Next:** recover native two-case register phase without losing original
+0x58 code, then five widths and *physical* COFF sites.
+Do not mistake correct external destinations for correct source offsets.
+
+## 3. Other large Boss functions — current priority
+
+| Native whole function | Original CODE/x86, separate DATA | Latest complete, independently checked baseline |
+| --- | --- | --- |
+| `004AC040` | **82,796B /22,721 x86**, 1,126 afterRET B | [F1020 native full-frame owner](THIRD_FIGHTER_SHARED_REAL_RING_LOCAL_F1020.md); [F1028 entire PE fields](THIRD_FIGHTER_WHOLE_82KB_PE_TARGETS_F1028.md) |
+| `00543210` | **58,294B /16,471 x86**, 943 afterRET B | [F917 genuine projectile-X](FIGHTER_WHOLE_BURST_NATIVE_FSUBR_F917.md); [F1025 entire PE fields](FIGHTER_58KB_ALL_NATIVE_PE_TARGETS_F1025.md) |
+| `0050A580` | **81,539B /17,435 x86**, 567 afterRET B | [F569 genuine sparse-switch guard](CHARACTEROBJECT_SINGLE_SWITCH_F569.md); full body not exact |
+| `0045DD70` | **60,999B** | Still pending original full-source reconstruction |
+
+The other giant originals remain open too; do not focus exclusively
+on these four. [Original giant/dispatch manifest](../config/fighter-boss-dispatch-fingerprints.json)
+and [actual function provenance](../config/function-origins.csv)
+are authoritative for each CODE extent and owned afterRET DATA.
+
+**82KB original 004AC040:** selected tracked original-shaped
+[normal C++ F1020 parent](../probes/FighterWhole004AC040F1020.cpp)
+emits **82,796B /22,721 x86**, genuine frame `0x720`,
+saved receiver `EBP-0x64`, and *all original mnemonic positions*.
+The true source fix was ONE shared 2DB 36-shot loop counter, not
+a dummy local. [F1028](THIRD_FIGHTER_WHOLE_82KB_PE_TARGETS_F1028.md)
+checks **2,191/2,191 original external PE targets**,
+10 CODE-local and 151 afterRET DIR32 fields and 522 literal DATA B.
+**Still NONEXACT:** 12 widths, **6,958 GPR-role positions** and
+physical relocation/branch geometry remain wrong. Known focused leads:
+[F1021 original 0x58/0x59 strict-loop controls](THIRD_FIGHTER_NATIVE_58_59_FULL_GPR_CONTROLS_F1021.md),
+[F1023 2BC/2BD/2BE GPR allocation](THIRD_FIGHTER_2BC_2BE_GPR_GRAMMARS_F1023.md),
+[F1029 0x259 five-shot angle expression negatives](THIRD_FIGHTER_NATIVE_259_ANGLE_GPR_F1029.md).
+All used *entire* normal 82KB source compilations; avoid repeating
+their ruled-out C++ spellings. The next meaningful advance is source
+lifetime/register phase simultaneously compatible with neighboring
+native states, not case marker proliferation. The original afterRET
+table and game actions remain one giant callable, never independent
+accepted functions.
+
+**58KB original 00543210:** F917 selected local
+`.analysis/f917-native-burst-x87-verified/F917-borrowed-real-X.cpp`
+emits **58,293B /16,471 x86**, preserves native frame `0x218`
+and all original mnemonic positions. [F1025](FIGHTER_58KB_ALL_NATIVE_PE_TARGETS_F1025.md)
+rechecks **1,697/1,697 physical external PE targets**,
+156 actual afterRET DIR32 labels and 319 nonfield bytes.
+**Still NONEXACT:** original 0x63 has three mismatched widths
+(whole ordinals 2934,2977,3000), **1,741 GPR-role errors**.
+[F1025 58KB mode63 whole-parent controls](SECOND_GIANT_NATIVE_MODE63_GPR_F1025.md)
+tested 10 normal VC7.1 variants without fixing the true native CMP
+roles; check the original PE, not stale hypotheses.
+
+**81KB single-switch 0050A580:** the F569 one-switch diagnostic
+verifies the original 17-instruction parent guard, signed cooldown,
+92 physical DIR32 table slots and 199 sparse bytes, **not** the
+81,539B full body. Targeted entrypoint:
+`scripts/repo-python scripts/verify-characterobject-single-switch-source.py --boss 0x0050A580`.
+Old F13x–F148 full drafting/source traces are preserved under
+`.analysis/character-move-4ac040/`, the frozen history and the
+restorable native archives; they are **not** a newly accepted
+82KB or 81KB whole game function.
+
+## 4. All three remaining independent small/medium originals
+
+| Original native full callable | Real size | Current truth and best next lead |
+| --- | ---: | --- |
+| `0041CE50` ArchiveCatalog destructor | **171B/51 x86** | [F936 real index/delete/filename control](ARCHIVE_NATIVE_LOOP_VALUE_CATEGORIES_F936.md); 14 physical PE fields, **108/115 nonfield bytes** matched; three real EBP temp slots permuted. [F900 live-owner controls](ARCHIVE_REAL_GROUPED_LIFETIMES_F900.md) negative |
+| `0043B0B0` Scene virtual destructor | **248B/75 x86** | [F1015 three genuine free-owner slot controls](SCENE_THREE_FREE_DECLARATION_ORDER_F1015.md); 12 real PE fields, **191/200 nonfield bytes** matched, original texture/delete EBP owners still different |
+| `00602A60` WinMain | **2,987B/654 x86** | [F911 selected live-source grammar](WINMAIN_REAL_MAIN_BEFORE_SCENE_F911.md) emits **2,984B /654 x86**; **645/654 original widths** correct. [F914 slot recovery](WINMAIN_NATIVE_FRAME_FIRST_SCENE_OWNER_F914.md) recovers native frame/three EBP slots but regresses width matches; [F927 used-gap controls](WINMAIN_REAL_USED_GAP_NEGATIVES_F927.md) negative. Original 60B afterRET scene table is NOT CODE |
+
+All **3,406 original CODE B remain nonexact**. Work on full
+171/248/2,987-byte native callables, not cropped snippets.
+The WinMain original compiler flag is `/GX-`; `/GX`
+changes EH machinery and is not original. For Archive/Scene
+the genuine C++ pointer lifetimes, not branch-byte patches,
+must fix their still-wrong EBP assignments.
+
+## 5. Exact-preserving C++ type/owner work
+
+These are **previously credited bytes**, not new acceptance.
+When modifying any translation unit or header, replay **ALL**
+already exact units in that affected source object; COFF `$L`
+and `$SG` numbering can change merely from an include.
+
+| Current source/ABI evidence | Targeted native whole-unit replay |
+| --- | --- |
+| [F1022 actor script WORDs +0xF00/+0xF02](FIGHTER_SCRIPT_COUNTER_ADJACENT_NATIVE_F1022.md) | **46/46** in 11 objects, 4,772 previously accepted B |
+| [F1024 signed stage/frame WORDs +0x62/+0x64](FIGHTER_ANIMATION_PHASE_WINDOW_F1024.md) | **9/9** in 8 objects, 11,573 previously accepted B; giant 31KB TU explicitly restored after `$L` renumbering |
+| [F1027 action/timer WORDs +0x80/+0x82](FIGHTER_NATIVE_ACTION_TIMER_PAIR_F1027.md) | **46/46** in 6 objects, 10,262 previously accepted B; two large combat TUs restored |
+| [F946 AI adjacent signed shorts +0x512/514/516](FIGHTER_AI_ADJACENT_SHORT_FIELDS_F946.md) | **8/8** real whole AI functions, 68,786 previously accepted B |
+| [F999 native health signed WORDs](FIGHTER_NATIVE_VITAL_SHORT_WINDOW_F999.md) | **47/47**, 6,640 previously accepted B |
+| [F1006 native combo signed WORDs](FIGHTER_COMBO_NATIVE_SHORTS_F1006.md) | **42/42**, 4,755 previously accepted B |
+| [F992 native fighter result bytes](FIGHTER_ROUND_RESULT_BYTE_WINDOW_F992.md) | **45/45**, 4,191 previously accepted B |
+
+Older accepted field/ABI controls remain in
+[the historical experiment index](KNOWLEDGE_BASE.md).
+A header-looking improvement that changes a compiler-local
+COFF symbol is not exact even if every nonrelocation byte matches.
+
+## 6. Agent operating checklist / storage
+
+**Preflight, no whole corpus replay:**
 
     git status --short --branch
-    git log -5 --oneline
     scripts/repo-python scripts/verify-target.py
     scripts/repo-python scripts/validate-tracking.py --require-target
     scripts/repo-python scripts/report-reconstruction-status.py --summary
     scripts/repo-python scripts/audit-active-handoff.py
     scripts/repo-python scripts/ghidra.py check
 
-One worker owns all dirty edits: inspect and continue them.
-Every substantial milestone gets a gpt-web: xxx commit; do several
-commits per substantive session. Never replay all 979 exact units.
+Use `scripts/repo-python` and the pinned original SHA;
+run Wine/VC7.1 headless and serial. Only
+`scripts/repo-python scripts/replay-exact-units.py --unit NAME`
+for **affected or newly accepted whole callables**.
+Do not run a 979-function cold replay.
+Do not assume historical source or naming establishes authorship,
+or import/patch the original Ghidra project. Save substantial
+verified work in **several `gpt-web: ...` commits** and deal with
+dirty files directly. `git diff --check`, source/manifest
+consistency and a clean final worktree matter.
 
-## 2. Primary large Boss: real original 005214B0
-
-Original: **46,755 callable CODE B/13,230 x86** and five separate
-packed afterRET jump tables of **901 DATA B**. Latest selected
-complete normal pinned VC7.1 source generates **46,754 CODE B/
-13,230 x86**, plus the separate 901 DATA B. **NOT exact.**
-
-[F1026 complete 46KB external PE proof](FIGHTER_46KB_ALL_NATIVE_PE_TARGETS_F1026.md):
-fresh full 005214B0 normal
-VC7.1 source compile; all
-**1,341/1,341 original
-nonlocal PE call/global fields**
-correct, 1,311 address-named
-and 30 real __ftol2; 11
-CODE-local and 139 afterRET
-DIR32 plus 345 literal DATA.
-Five native widths still wrong,
-whole 46,755B original remains
-NONEXACT.
-
-[F901 whole-native x86/PE audit](SCRIPTED_FIGHTER_COMPLETE_TAIL_AND_WIDTH_AUDIT_F901.md):
-scripts/repo-python scripts/verify-scripted-fighter-tail31b-31c-f901.py
-
-- All 13,230 original instruction mnemonics align by ordinal.
-  **Five original instruction widths differ**: whole ordinals
-  2885 and 2908 (original action0x63), 8455 (1FD),
-  8986 (252), and 9130 (254). The net one-byte shortfall
-  does NOT mean only one original machine-code byte is wrong.
-- 1,352 generated CODE COFF fields; **909** lie at identical
-  original absolute offsets, **443 are shifted**.
-  For 79 sourced original case interiors, 797 original
-  physical PE call/global targets are verified, yet 424
-  source fields move absolutely and twelve also move
-  relative to action252/254. Never relocation-mask shifted fields.
-- [F932 register-phase cross-actor negative](SCRIPTED_FIGHTER_CROSS_BOSS_LOOP_REGISTER_PHASE_F932.md):
-  real 0x58 loop repairs following
-  0x59 GPR roles but regresses
-  preceding native mnemonics/widths.
-
-[F909 pre59 negatives](FIGHTER_PRE59_REGISTER_PHASE_F909.md):
-27 whole-source native trials
-did not fix subsequent GPR roles.
-
-- [F906 first GPR divergence](FIGHTER_FIRST_GPR_DIVERGENCE_F906.md):
-  whole 46KB case 0x59 at native 0052327A/ordinal2103.
-  2,736 GPR-role errors remain; 33 full source variants negative.
-
-- [F903 genuine 46KB mode63](SCRIPTED_FIGHTER_MODE63_TYPED_GPR_F903.md):
-  29 full-source owner controls negative;
-  matching whole length alone regresses
-  original 417B/109-x86 case width.
-
-- [F902 1FD](SCRIPTED_FIGHTER_1FD_TYPED_OWNER_LVALUES_F902.md):
-  fourteen real owner-access models failed to recover
-  original six-byte CMP ECX,0x95; source uses five-byte CMP EAX.
-- [F905 252/254](SCRIPTED_FIGHTER_BYTE_REG_PHASE_F905.md):
-  54 complete-source variations failed to restore original
-  SUB DL/CL/AL sequence or twelve native PE field positions.
-- F901 recovered actual 31B (248B/74 x86/8 fields),
-  31C (219B/63 x86/7 fields) and earlier 2F8
-  (1,151B/316 x86/28 fields) including true native
-  shared tail jumps; they are still **internal cases**,
-  never separate accepted whole callable functions.
-
-**Next work:** the original 0x58 32-bit for-loop is strict
-in the current whole 005214B0 parent, yet its next original
-0x59 uses 19 wrong GPR roles. F932 demonstrates that real
-postincrement-while loop grammar restores ALL 0x59 roles
-but regresses 0x58 by one mnemonic/two widths in both
-the 46KB and the independent 58KB father. Recover a
-genuine original C++ lowering that makes BOTH adjacent
-cases native simultaneously, then tackle the remaining
-five whole-fighter width differences and shifted PE
-relocations. Do not use a nonnative loop only to fix
-the next state. Rebuild affected full parents through
-the F931/F932 original-backed scripts; if previous
-private sources are absent, regenerate with F901/F917.
-
-## 3. Other genuinely large original functions
-
-The other **20 large original state-advance functions** also remain
-unmatched. Important true original callable extents:
-
-| Original start | Native CODE B | Current lead |
-| --- | ---: | --- |
-| 00543210 | 58,294 + 943 separate afterRET DATA | [F1025](FIGHTER_58KB_ALL_NATIVE_PE_TARGETS_F1025.md): **1,697/1,697 native physical external PE targets checked**, 16,471 mnemonic aligned, three widths and 1,741 GPR roles remain |
-| 004AC040 | 82,796 + 1,126 separate afterRET DATA | [F1028](THIRD_FIGHTER_WHOLE_82KB_PE_TARGETS_F1028.md): full CODE/x86/frame/this geometry matched; **2,191/2,191 original external PE targets**, 12 widths and 6,958 GPR errors remain |
-| 0050A580 | 81,539 | Giant state-advance original source reconstruction |
-| 0045DD70 | 60,999 | Giant state-advance original source reconstruction |
-
-[F955 native CC/CD/CE chain](THIRD_FIGHTER_CE_NATIVE_PHASE_F955.md):
-true original action and
-cross-case GPR phase proof;
-[CF/D0 downstream](THIRD_FIGHTER_POST_CE_GPR_PHASE_F956.md)
-and [CC/CD](THIRD_FIGHTER_CC_CD_NATIVE_PHASE_F953.md)
-proofs preserved. Full fighter
-still NONEXACT.
-
-[F1029 native 82KB action259 angle controls](THIRD_FIGHTER_NATIVE_259_ANGLE_GPR_F1029.md):
-EIGHT whole original-shaped
-82KB C++ builds, all native
-15 PE fields and 151 DIR32.
-Real 259 845B/212x86,
-source 844B, 3 ADD widths
-and 137 GPR roles wrong.
-True const signed F02,
-integer/float math order
-and cast grammar all negative.
-
-[F1023 82KB 2BC/BE GPR review](THIRD_FIGHTER_2BC_2BE_GPR_GRAMMARS_F1023.md):
-20 full native 82KB
-controls negative.
-
-[F1021 native 58/59](THIRD_FIGHTER_NATIVE_58_59_FULL_GPR_CONTROLS_F1021.md):
-ten original GPR
-grammar controls negative.
-
-[F1020 82KB native geometry](THIRD_FIGHTER_SHARED_REAL_RING_LOCAL_F1020.md):
-82,796B/22,721 x86,
-frame and this native;
-12 widths/6,958 GPR wrong.
-
-[F975 original native stages](THIRD_FIGHTER_STAGES19D19F_F975.md):
-19D/19E/19F source recovered.
-
-[F1025 separate original 58KB giant](SECOND_GIANT_NATIVE_MODE63_GPR_F1025.md):
-10 entire 58KB native VC7.1
-mode63 grammars; frame0x218
-already correct. 3 true CMP
-width errors remain; source
-58,293B vs native58,294B.
-7 PE fields and afterRET
-156 labels/319 DATA verified.
-
-## 4. All three remaining independent small/medium originals
-
-| Original callable whole function | Native CODE B | Most useful evidence |
-| --- | ---: | --- |
-| 0041CE50 ArchiveCatalog destructor | 171 | [F900](ARCHIVE_REAL_GROUPED_LIFETIMES_F900.md): 25 complete VC7.1 sources; best 108/115 nonfield original bytes, wrong EBP lifetimes |
-| 0043B0B0 Scene virtual destructor | 248 | [F1015](SCENE_THREE_FREE_DECLARATION_ORDER_F1015.md): 13 complete 3-owner aggregate declaration-order controls, best 191/200 nonfield bytes; texture EBP ownership still wrong |
-| 00602A60 WinMain | 2,987 | [F911](WINMAIN_REAL_MAIN_BEFORE_SCENE_F911.md): 32 complete real owner-layout sources; best 2,984 emitted CODE B and 645/654 native x86 widths, but still wrong EBP storage |
-
-Together they are **3,406 CODE bytes**, not exact.
-Use the targeted source-only reproductions:
-
-    scripts/repo-python scripts/verify-archive-grouped-live-owners-f900.py
-    scripts/repo-python scripts/verify-scene-mixed-owner-slots-f889.py
-    scripts/repo-python scripts/verify-winmain-stage-live-context-f904.py
-    scripts/repo-python scripts/verify-winmain-leading-live-context-f904.py
-
-[F921/F927 real WinMain used-gap hypothesis](WINMAIN_REAL_USED_GAP_NEGATIVES_F927.md):
-66 full normal VC7.1 WinMain sources test a
-genuinely used firstScene pointer and the real
-event/directory/windowWidth/windowHeight members
-ahead of HWND/scene/path. All 66 keep 654 x86
-mnemonics and 60B afterRET DATA, but none restores
-the original firstScene=-0x19C with actual HWND
-=-0x188, scene=-0x184, path=-0x180. A four-full-
-source tracked PE verifier confirms 16 actual
-constructor mappings and 15 native table entries.
-This **negative does not supersede F914's separate
-three-slot recovery**. Whole WinMain remains nonexact.
-
-[F935/F936 native Archive pointer owner controls](ARCHIVE_NATIVE_LOOP_VALUE_CATEGORIES_F936.md):
-32 independently compiled complete 171B
-ArchiveCatalog destructor grammar sources
-vary real unsigned index loop, filename
-reference/value category and scalar delete.
-Twenty-six still match only **108/115**
-actual original nonfield bytes and retain
-resource/delete/filename EBP **-0x10/
--0x0C/-0x08** rather than native
-**-0x0C/-0x08/-0x10**; other candidates
-regress. Portable verifier re-checks all 14
-native PE call/global fields in seven
-complete original-shaped sources. The
-171B whole function is NONEXACT.
-
-[F914/F915 original WinMain frame/slot probe](WINMAIN_NATIVE_FRAME_FIRST_SCENE_OWNER_F914.md):
-19 full source member models and 30 declaration/member placement controls
-tested the genuinely used first scene pointer. A complete alternative
-now recovers the **original 0x278 frame and all three original
-HWND=-0x188 / currentScene=-0x184 / path=-0x180 EBP slots**.
-However its real first-scene pointer temp moves from original
--0x19C to -0x7C, leaving **643/654 matching x86 widths**;
-the F911 645/654 alternate remains the best width geometry.
-Whole startup is **NONEXACT**.
-
-[F911 live main-before-scene ownership](WINMAIN_REAL_MAIN_BEFORE_SCENE_F911.md):
-32 full source live-owner layout variants narrowed the native HWND
-adjacency. The selected tracked *whole* WinMain now emits **2,984
-CODE B /654 x86** and **645/654 original instruction widths**;
-16 original ctor allocations and 15 native switch dispatch targets
-remain correct. Nine genuine widths still differ (five graphics,
-four cleanup local addresses); all original absolute EBP owner
-offsets and full PE fields still need reconstruction.
-**WinMain is NONEXACT.**
-
-[F910 physical original scene switch reconstruction](WINMAIN_ORIGINAL_SWITCH_PHYSICAL_ORDER_F910.md):
-the native afterRET jump table proves **case 4 is emitted physically
-before cases 0–3**, despite numeric dispatch order. A complete new
-tracked WinMain source now matches **all 16 original allocation
-sizes/constructor pairings**, all 15 case-index/physical-instruction
-table mappings, and **637/654 original x86 widths** (up from
-F904's 633/654). It still emits **2,960 rather than 2,987 native
-CODE B**; the independent full WinMain remains NONEXACT.
-
-Original WinMain has 654 x86, 123 CALLs and a separate
-60B afterRET 15-scene table; its native flags require
-**/GX-**. /GX wrongly generates extra exception-handling
-instructions and must not be used as a native comparison.
-
-## 4a. Exact-preserving source semantics — affected-unit replays ONLY
-
-These changes improve real observed C++ field/owner semantics in
-already-accepted whole native functions. **No new exact CODE credit**.
-Consult the linked original-PE documentation rather than replaying
-all 979 functions:
-
-- [F913 background tick/frame adjacency](BACKGROUND_COUNTER_TYPED_ADJACENCY_F913.md):
-  11 complete callbacks, **463 previously accepted native bytes**, 11/11 exact.
-- [F919 AnimationState three signed short counters](ANIMATION_COUNTERS_TYPED_NATIVE_F919.md):
-  3 complete callbacks, **151 existing bytes**, 3/3 exact.
-- [F920/F922 shared texture-entry flag and typed metadata](TEXTURE_SHARED_NATIVE_ENTRY_F922.md):
-  2 complete original functions, **502 existing bytes**, 2/2 exact;
-  [F920's five-field original entry evidence](TEXTURE_ENTRY_TYPED_BORROWED_F920.md).
-- [F925 shared TextureManager 44B element and mode](TEXTURE_MANAGER_SHARED_REAL_ELEMENT_F925.md):
-  2 complete original allocators, **445 existing bytes**, 2/2 exact.
-- [F933 two real BackgroundStage field grammars](BACKGROUND_STAGE_THREE_NATIVE_FIELDS_F933.md):
-  **30 integer-zero / 6 float-initializer complete native constructors**,
-  total **5,531 existing bytes**, 36/36 exact, 2 source objects.
-
-[F946 real adjacent fighter AI shorts](FIGHTER_AI_ADJACENT_SHORT_FIELDS_F946.md):
-8 already exact AI functions (68,786 CODE B)
-retain **8/8 canonical cold exact** after
-type-checking signed shorts at +0x512/514/516.
-[F940 adjacent +0x511 byte](FIGHTER_COMMAND_BYTE_SHARED_F940.md):
-9 affected original functions (69,846 B)
-still 9/9 exact; polling input kept unchanged
-after evidence of `$SG` symbol renumbering.
-
-[F960 native fighter notice/HUD borrowed fields](FIGHTER_NOTICE_BORROWED_NATIVE_F960.md):
-true +0x6E7/6E8/6E9 notice bytes,
-+0x6EA/6EC signed motion shorts,
-+0x6F0/6F2/6F4/6F6 state shorts;
-+0x6F6 render reads LOW BYTE
-(not the full 16-bit written field).
-**14/14 affected complete original
-functions remain cold exact,
-1,663 existing original CODE B
-across three original source TUs**.
-[F954 signed profile selectors](PROGRESS_SELECTION_SIGNED_BYTE_FIELDS_F954.md):
-two signed bytes +0x16AC4/5 remain
-11/11 cold exact, 1,238 existing B.
-
-[F967 native profile index reuse in six more source objects](PROGRESS_SELECTION_CROSS_OWNER_F967.md):
-two genuine signed-byte profile keys
-+0x16AC4/5 now shared by record
-leaves, knockout/card, progress
-counter, memcpy restore and options.
-Canonical affected **12/12 whole
-functions cold exact, 2,460 existing
-CODE B across six source objects**.
-F954 previously typed the same
-native pair in two other objects.
-
-[F973 real native fighter effect parameter/pointer views](FIGHTER_EFFECT_BORROWED_FIELDS_F973.md):
-two independent effect source objects
-share genuine pointer +0x2EC,
-transform first byte +0x2F0
-and float param address +0x314.
-Affected **8/8 complete native
-functions cold exact, 730 existing
-CODE B**. VC7.1 templated
-offsetof limitation is documented.
-
-[F980 native gauge](FIGHTER_GAUGE_NATIVE_SIGNED_SHORTS_F980.md):
-13 whole exact, 4,031
-already accepted B.
-
-[F986 native fade byte pair](FIGHTER_FADE_SHARED_BYTES_F986.md):
-actor+0x538/+0x539 unsigned
-BYTE across five original objects,
-**43/43 cold-exact full functions,
-6,185 previously accepted B**.
-
-[F992 native fighter result bytes](FIGHTER_ROUND_RESULT_BYTE_WINDOW_F992.md):
-signed/unsigned+0x3CE,
-unsigned+0x3CF. 45/45 whole
-cold exact; 4,191 existing B.
-Three large COFF $L controls
-restored and cold exact.
-
-[F999 native adjacent current/recoverable health](FIGHTER_NATIVE_VITAL_SHORT_WINDOW_F999.md):
-signed WORD actor +0x324/+0x326
-now borrowed across five original
-source objects. All **47/47
-affected whole callables cold
-exact**, preserving **6,640
-PREVIOUSLY accepted CODE B**
-including many small leafs and
-large frame/gauge controllers.
-
-[F1006 original combo shorts](FIGHTER_COMBO_NATIVE_SHORTS_F1006.md):
-native fighter signed WORDs
-+0x3C4/+0x3C6 typed in three
-original source objects. Final
-**42/42 whole cold exact,
-4,755 PREVIOUSLY accepted B**.
-Two large combat source TUs
-would shift native COFF $L
-labels +21; restored both,
-**4/4 and 5/5 original
-whole controls exact**.
-
-[F1024 native animation stage/frame WORDs](FIGHTER_ANIMATION_PHASE_WINDOW_F1024.md):
-borrowed signed shorts+0x62
-and+0x64 typed across eight
-native source objects; **9/9
-whole cold exact, 11,573
-PREVIOUSLY accepted B**.
-Original 31,352B actor
-auxiliary controller must keep
-old source: header alone
-shifts 72 COFF $L symbols
-+21 despite all 27,980
-native nonfield CODE B
-unchanged. Giant source
-restored, no accepted regression.
-
-[F1022 adjacent original script WORD counters](FIGHTER_SCRIPT_COUNTER_ADJACENT_NATIVE_F1022.md):
-real +0xF00/+0xF02 16-bit
-native fields typed across
-11 original reset source TUs.
-**46/46 whole functions cold
-exact**, 4,772 PREVIOUSLY
-accepted original CODE B.
-All adjacent F159 functions
-and ten character resets
-recompiled, no COFF regression.
-
-[F1027 native action/timer WORD pair](FIGHTER_NATIVE_ACTION_TIMER_PAIR_F1027.md):
-signed actor +0x80/+0x82
-typed across six original
-collision, reset, render,
-timer and auxiliary source
-objects, **46/46 whole
-cold exact, 10,262 B
-previously accepted CODE**.
-Two larger Combat source
-TUs strictly shifted local
-COFF $L symbols +21; both
-restored to prior exact.
-
-## 5. Exact acceptance, storage, and end-of-session checks
-
-Read [AGENTS.md](../AGENTS.md), [workflow](RE_WORKFLOW.md)
-and [storage hygiene](STORAGE_HYGIENE.md). Full original
-callable byte equality requires the original PE boundary,
-correct native ABI and physical zero-addend COFF relocation
-positions/targets, natural pinned VC7.1 C++ source,
-and independent authored origin. Whole accepted source
-unit replay ONLY when the new/affected whole function
-is eligible:
-
-    scripts/repo-python scripts/replay-exact-units.py --unit UNIT_NAME
-
-Keep the original EXE, Wine/VC7.1 prefix, Ghidra,
-accepted matching objects, configs, original receipts
-and local compressed history archives. The F907 script
-scripts/archive-recent-probe-objects-f907.py safely restores
-individual SHA256-original F650–F906 research OBJ/PDB copies
-from the machine-local archive; 4,712 files were compacted,
-reclaiming 220,205,684 bytes net. F908 safe two-week-horizon
-Git GC and generated Python bytecode cleanup reclaimed another
-129,222,294 bytes; combined measured recovery is 349,427,978 bytes.
-The
-scripts/archive-frozen-giant-traces.py helper recovers
-SHA256-verified archived historical original traces.
-Do not remove the only copy of any private research
-or treat Git-ignored archives as remotely backed up.
-
-After affected-unit verification, run only the light checks:
-
-    scripts/repo-python scripts/validate-tracking.py --require-target
-    scripts/repo-python scripts/audit-active-handoff.py
-    scripts/repo-python scripts/update-progress.py --check
-    scripts/repo-python scripts/ci.py
-    git diff --check
-    git status --short --branch
-
-No full exact-unit cold replay, no default push. Commit
-substantial work as gpt-web: xxx and handle all dirty files.
+**Storage:** preserve the user-supplied original EXE,
+`build/matching/`, existing Wine/VC7.1/Ghidra,
+source and target/COFF evidence. The SHA256-verified
+`.analysis/cache-archives/` archives are local, **not Git-backed**:
+retain both archive and index; restore only the individual
+historical OBJ/PDB/ASM/LOG needed by a targeted verifier.
+See [storage hygiene and restore commands](STORAGE_HYGIENE.md):
+for frozen F133–F166 native compiler traces use
+`scripts/repo-python scripts/archive-frozen-giant-traces.py --verify`
+and `--restore ORIGINAL_RELATIVE_PATH`. Historical F650–F906
+research OBJ/PDB are individually restorable through
+`scripts/repo-python scripts/archive-recent-probe-objects-f907.py --family binaries --restore ORIGINAL_RELATIVE_PATH`.
+Never assume an ignored archive is backed up by a Git commit.
+Never delete unrecognized ignored research or the only
+copy of original native/compiler evidence.
