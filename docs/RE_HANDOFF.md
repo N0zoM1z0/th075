@@ -151,6 +151,15 @@ Use the targeted source-only reproductions:
     scripts/repo-python scripts/verify-winmain-stage-live-context-f904.py
     scripts/repo-python scripts/verify-winmain-leading-live-context-f904.py
 
+[F910 physical original scene switch reconstruction](WINMAIN_ORIGINAL_SWITCH_PHYSICAL_ORDER_F910.md):
+the native afterRET jump table proves **case 4 is emitted physically
+before cases 0–3**, despite numeric dispatch order. A complete new
+tracked WinMain source now matches **all 16 original allocation
+sizes/constructor pairings**, all 15 case-index/physical-instruction
+table mappings, and **637/654 original x86 widths** (up from
+F904's 633/654). It still emits **2,960 rather than 2,987 native
+CODE B**; the independent full WinMain remains NONEXACT.
+
 Original WinMain has 654 x86, 123 CALLs and a separate
 60B afterRET 15-scene table; its native flags require
 **/GX-**. /GX wrongly generates extra exception-handling
