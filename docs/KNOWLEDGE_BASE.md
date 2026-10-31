@@ -284,6 +284,35 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   slots remain wrong. No
   accepted whole CODE.
   [F864 physical proof](SCENE_THREE_REAL_NAMED_POINTERS_F864.md).
+- **F879 original 252/253/254 native byte decrement GPR phase:**
+  native full case sizes
+  260/260/224B, source
+  259/260/225B: the
+  SAME total 744B conceals
+  wrong whole original PE
+  relocation positions in
+  252(-1) and 254(+1)!
+  Native byte SUB DL/CL/AL
+  vs compiler AL/DL/CL.
+  Original 252/253
+  +3B6/+7C motion
+  special handling;
+  254 lacks it. All three
+  have actual stage5 floatY
+  sprite37 native global
+  657888 and owner+EFA reset.
+  Current 253 260B/72x86/
+  six genuine PE fields
+  geometry correct but
+  47 GPR +two giant JMP
+  bytes NONEXACT.
+  New whole source
+  32,948B/9,253x86,
+  earlier 51 native cases
+  and all five original
+  901B packed DATA
+  tables physically checked.
+  [F879 native proof](SCRIPTED_FIGHTER_STAGE_252_254_F879.md).
 - **F878 original game 201 genuine separate stage5 tests/physical PE gravity:**
   267B/80-x86/eight
   true native PE fields

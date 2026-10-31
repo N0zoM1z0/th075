@@ -2260,6 +2260,43 @@ scripts/repo-python scripts/verify-scripted-fighter-stage-201-f878.py.
 Full 46,755B giant NONEXACT,
 zero new accepted callable CODE.
 
+**F879 actual native 252/253/254 original byte-decrement and false 744B aggregate equality:**
+original three separate inner cases
+**260/260/224 CODE B, 72/72/63x86,
+six physical PE fields EACH**.
+Real stage0 BYTE+0x366 decrement,
+stage5 sprite37 with native float
+Y global00657888 and owner+EFA
+reset. Original 252/253 additionally
+check +3B6/+7C and set+3B0=1000;
+254 does NOT. Bare unsigned byte
+assignment emits wrong MOVZX r32,
+native prefix decrement produces
+MOV/SUB r8, but current VC7.1 GPR
+phase AL/DL/CL differs from original
+DL/CL/AL. Source complete cases
+**259/260/225 B**, exactly
+744B total LIKE original
+260+260+224, but source
+PE operand fields in 252/254
+are shifted -1/+1; these full
+cases are NOT exact!
+Only current 253 260B/72x86
+has all six original PE offsets
+aligned, still 47 authentic GPR
+and two giant JMP byte negatives.
+New whole generated source
+**32,948 CODE B/9,253x86**
+(F878 32,249/9,052).
+Prior 51 native game cases,
+all five original 901B afterRET
+tables and getter four actual
+GPR operand byte errors checked.
+[F879 original PE proof](SCRIPTED_FIGHTER_STAGE_252_254_F879.md);
+scripts/repo-python scripts/verify-scripted-fighter-stage-252-254-f879.py.
+Original 46,755B giant NONEXACT,
+no split-case credit.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin
