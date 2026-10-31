@@ -1,6 +1,7 @@
 # TH075 local storage hygiene and lossless recovery
 
-**Updated 2026-10-31, F907 local reversible probe-binary compaction.**
+**Updated 2026-10-31, F908 safe Git maintenance / Python bytecode cleanup,
+after F907 reversible probe-binary compaction.**
 This is a storage report and **lossless local recovery recipe**, NOT
 permission to remove original PE, C++/COFF research evidence, active
 work, matching objects, or unrecognized dirty changes. The archives,
@@ -12,7 +13,39 @@ instructions ARE tracked, but a fresh clone will not contain the
 archives. Historical F597 and older JSON/PDB/CI archives are still
 available and independently restorable.
 
-## Latest F907: 4,712 regenerable VC7.1 OBJ/PDB files losslessly archived
+## F908: normal Git-object maintenance and disposable Python bytecode cache
+
+After the F907 SHA256 archive and committed recovery tool, a normal
+**git gc --prune=2.weeks.ago** was executed with a standard two-week
+retention horizon, no reflog reset, force-prune, branch rewrite or
+history rewriting. **git fsck --connectivity-only --no-progress**
+exited successfully (reporting only ordinary dangling blobs).
+All live Git refs, history and unpushed commits remained intact.
+
+| Generated local cache | Before | After | Reclaimed |
+| --- | ---: | ---: | ---: |
+| .git/ standard object storage | 140,288,349 B | 23,731,416 B | **116,556,933 B** |
+| scripts/tests Python bytecode | 583 generated pyc files | removed, regenerate on demand | **12,665,361 file bytes** |
+
+Only generated Python **.pyc/.pyo** files were removed from
+scripts/__pycache__ and tests/__pycache__ after confirming neither
+contains source or other data. They regenerate automatically when
+later verification imports them. No actual authored Python source,
+unit test, original PE, native research or compiler object was removed
+by this small bytecode-cache cleanup. Filesystem directory accounting
+may differ slightly from the exact file byte totals.
+
+**Combined F907 archive + F908 maintenance net measured recovery:**
+**349,427,978 bytes (333.24 MiB)**, including the F907 archive
+and its original-path SHA256 receipt. This changes NO original
+reconstruction exact credit or native artifact provenance.
+Do not run git gc concurrently with a separate Git writer. Current
+work is single-worker; a future worker should inspect Git status and
+preserve all dirty edits first.
+
+---
+
+## F907: 4,712 regenerable VC7.1 OBJ/PDB files losslessly archived
 
 The 2026-10-31 executed cleanup selected **only** loose Git-ignored
 research binaries under .analysis/f650-* through .analysis/f906-*,

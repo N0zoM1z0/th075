@@ -168,7 +168,10 @@ and local compressed history archives. The F907 script
 scripts/archive-recent-probe-objects-f907.py safely restores
 individual SHA256-original F650–F906 research OBJ/PDB copies
 from the machine-local archive; 4,712 files were compacted,
-reclaiming 220,205,684 original loose bytes net. The
+reclaiming 220,205,684 bytes net. F908 safe two-week-horizon
+Git GC and generated Python bytecode cleanup reclaimed another
+129,222,294 bytes; combined measured recovery is 349,427,978 bytes.
+The
 scripts/archive-frozen-giant-traces.py helper recovers
 SHA256-verified archived historical original traces.
 Do not remove the only copy of any private research

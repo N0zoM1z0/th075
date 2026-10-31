@@ -119,7 +119,11 @@ accepted matching objects, source, manifests, and
 uncredited original PE receipts must be preserved.
 F907 additionally archived **4,712 regenerable historical
 VC7.1 OBJ/PDB research copies**, recovering **220,205,684 bytes**
-net after whole-archive SHA256 verification. The locally
+net after whole-archive SHA256 verification. Safe standard Git
+object maintenance reclaimed another **116,556,933 bytes**, and
+pure regenerated Python bytecode cleanup recovered **12,665,361 bytes**.
+All three changes together reclaimed **349,427,978 B (333.24 MiB)**.
+The locally
 ignored archive must be retained; restore individual old binaries
 through scripts/archive-recent-probe-objects-f907.py.
 Older loose machine-generated diagnostics were

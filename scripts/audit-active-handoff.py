@@ -120,6 +120,10 @@ def main() -> None:
     expect(Path(ROOT / 'docs/STORAGE_HYGIENE.md').exists() and
            'docs/STORAGE_HYGIENE.md' in readme,
            'Storage recovery link missing')
+    expect(Path(ROOT / 'scripts/archive-recent-probe-objects-f907.py').exists()
+           and 'archive-recent-probe-objects-f907.py' in readme
+           and 'archive-recent-probe-objects-f907.py' in text_file('docs/STORAGE_HYGIENE.md'),
+           'Latest SHA256-indexed original probe-binary recovery tooling/link missing')
     # A former 149-KB "ACTIVE" handoff is now an explicitly dated
     # historical snapshot. Do not let old incomplete-parent counts
     # become the README/current start-again workflow by accident.
