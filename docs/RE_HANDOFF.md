@@ -149,6 +149,20 @@ unmatched. Important true original callable extents:
 | 0050A580 | 81,539 | Giant state-advance original source reconstruction |
 | 0045DD70 | 60,999 | Giant state-advance original source reconstruction |
 
+[F939 third actor real paired 0x5D/0x5E source](THIRD_FIGHTER_NATIVE_PAIR_5D5E_F939.md):
+on top of original 004AC040 F938's newly
+sourced 0x59, **two additional actual
+337B/101-x86 action0x5D/0x5E bodies**
+restore actor-specific stage and float
+conditions. All 202 ordered original
+mnemonics/widths and **16 true PE
+fields** align; 61 native GPR roles
+per action still differ in the
+**16,956-B partial whole-parent C++**.
+All 151 original afterRET label fields
+and 522 nonfield DATA bytes checked.
+Still NONEXACT.
+
 [F938 third 82KB original actor: recovered real 0x59 source](THIRD_FIGHTER_REAL_BOUNCE_F938.md):
 independent original 004AC040 state 0x59 at
 004ADEFA..004AE05E is **356B/95 x86/16 original
