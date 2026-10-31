@@ -127,6 +127,22 @@ unmatched. Important true original callable extents:
 | 0050A580 | 81,539 | Giant state-advance original source reconstruction |
 | 0045DD70 | 60,999 | Giant state-advance original source reconstruction |
 
+[F929/F930/F931 preceding real ten-shot-loop register phase](FIGHTER_FOLLOWING_BOUNCE_REGISTER_PHASE_F931.md):
+54 whole 58KB fighter C++ controls show a new
+causal compiler lead. A genuine 32-bit local loop
+using while (burst++<10) yields the NEXT original
+0x59 case as **356 B/95 x86/16 true physical
+PE targets and ZERO wrong original GPR roles or
+nonfield/nonshared-tail operand bytes**, previously
+19 each, within a whole 58,293-B compiled father.
+However the preceding native 0x58 **regresses by
+one mnemonic and two widths**: the strict original
+for-loop of F917 remains selected. The bounded
+two-complete-parent F931 checker records this
+tradeoff and verifies the whole 943B afterRET DATA.
+Next: recover BOTH adjacent cases in one genuine
+native parent. Entire 58KB function is NONEXACT.
+
 [F923/F924/F926 full-fighter register-owner controls](FIGHTER_REGISTER_OWNER_GRAMMAR_F926.md):
 **38 + 24 complete VC7.1 whole-father sources** test real
 actor 0x59 and opponent 0x63 signed-stage/float
