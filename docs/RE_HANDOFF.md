@@ -151,23 +151,30 @@ real CC is present. Original whole
 true saved-this EBP and 0x720
 frame are not reconstructed.
 
-[F1004 original 82KB mode-cadence 2E5](THIRD_FIGHTER_NATIVE_CADENCE_2E5_F1004.md):
-tracked original-shaped partial
-**64,810B/17,756 x86**.
-Native 2E5 **765B/199x86/
-14 original PE fields**, zero
-wrong mnemonic, width, GPR.
-Genuine signed mode global
-006714D0 and randomized
-short+0x516, two FILD/FSUBR
-0x387 shots. [F1002 2C0/2C1](THIRD_FIGHTER_STAGES_2C0_2C1_F1002.md)
-and [F1003 2C2/2C3](THIRD_FIGHTER_STAGES_2C2_2C3_F1003.md)
-still have **555 correct original
-GPR roles and 56 PE targets**.
-[F1001 2BC/2BD](THIRD_FIGHTER_STAGES_2BC_2BD_F1001.md)
-retains one native ADD width
-difference. Entire original
-82KB parent NONEXACT.
+[F1005 original mode-storm 2E6](THIRD_FIGHTER_MODE_STORM_2E6_F1005.md):
+tracked partial father now
+**66,877B/18,344 x86**. True
+native original 2E6 2,058B/
+590 x86 with **47 PE fields**.
+All **590 native mnemonic and
+GPR roles aligned**; one
+shared-tail JMP width at last
+ordinal 589 (original near5B,
+partial short2B). Four
+native signed mode loops:
+12/20/30/40 true 0x387 shots,
+plus original randomized0x33E
+and six distinct 0x338..0x33D
+effects. Original borrowed F752
+actor/opponent X view restores
+true FCOMP memory; raw pointers
+emitted extra FLD/FCOMPP.
+[F1004 native 2E5](THIRD_FIGHTER_NATIVE_CADENCE_2E5_F1004.md):
+765B/199 x86/14 PE; 0 wrong
+mnemonic/width/GPR. Previous
+2C0..2C3 keep 555 matching
+GPR roles. Whole 82,796B
+original callable NONEXACT.
 
 [F975 19D/19E/19F](THIRD_FIGHTER_STAGES19D19F_F975.md)
 native 400B/97,475B/128,
