@@ -370,19 +370,12 @@ BYTE across five original objects,
 **43/43 cold-exact full functions,
 6,185 previously accepted B**.
 
-[F992 native result-byte signed/unsigned view](FIGHTER_ROUND_RESULT_BYTE_WINDOW_F992.md):
-physical actor +0x3CE signed
-read/unsigned write union,
-adjacent +0x3CF unsigned byte.
-Final changed cohort **45/45
-whole functions cold exact,
-4,191 PREVIOUSLY accepted B**
-over three original sources.
-Three large combat/state functions
-showed strict $L-label identity
-regressions; original grammar
-restored, **3/3 independent
-whole control replays exact**.
+[F992 native fighter result bytes](FIGHTER_ROUND_RESULT_BYTE_WINDOW_F992.md):
+signed/unsigned+0x3CE,
+unsigned+0x3CF. 45/45 whole
+cold exact; 4,191 existing B.
+Three large COFF $L controls
+restored and cold exact.
 
 [F999 native adjacent current/recoverable health](FIGHTER_NATIVE_VITAL_SHORT_WINDOW_F999.md):
 signed WORD actor +0x324/+0x326
@@ -393,6 +386,18 @@ exact**, preserving **6,640
 PREVIOUSLY accepted CODE B**
 including many small leafs and
 large frame/gauge controllers.
+
+[F1006 original combo shorts](FIGHTER_COMBO_NATIVE_SHORTS_F1006.md):
+native fighter signed WORDs
++0x3C4/+0x3C6 typed in three
+original source objects. Final
+**42/42 whole cold exact,
+4,755 PREVIOUSLY accepted B**.
+Two large combat source TUs
+would shift native COFF $L
+labels +21; restored both,
+**4/4 and 5/5 original
+whole controls exact**.
 
 ## 5. Exact acceptance, storage, and end-of-session checks
 

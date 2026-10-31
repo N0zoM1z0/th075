@@ -1,3 +1,4 @@
+#include "FighterComboBorrowedF1006.hpp"
 #include "FighterVitalBorrowedF999.hpp"
 #include "FighterGaugeBorrowedF980.hpp"
 #include "FighterOpponentGaugeF170.hpp"
@@ -23,11 +24,11 @@ void FighterOpponentGaugeF170::ApplyOpponentGaugeChange(
             (OTHER(short, 0x328) / 4.0f / 10000.0f + 0.75));
     }
     if (OTHER(short, 0x60) < 50 || OTHER(short, 0x60) >= 143) {
-        FIELD(short, 0x3C4) = 0;
-        FIELD(short, 0x3C6) = 0;
+        F1006_COMBO(this).countAt3C4 = 0;
+        F1006_COMBO(this).damageAt3C6 = 0;
         FLOAT(0x3C0) = 1.0f;
     }
-    FIELD(short, 0x3C6) += change;
+    F1006_COMBO(this).damageAt3C6 += change;
     F999_VITAL(FIELD(unsigned char*, 0x2E8)).currentAt324 -= change;
     if (F999_VITAL(FIELD(unsigned char*, 0x2E8)).currentAt324 <= 0)
         F999_VITAL(FIELD(unsigned char*, 0x2E8)).currentAt324 = 0;
@@ -38,7 +39,7 @@ void FighterOpponentGaugeF170::ApplyOpponentGaugeChange(
     }
     if (OTHER(short, 0x3A0) > 0 || OTHER(unsigned char, 0x39C) != 0)
         F999_VITAL(FIELD(unsigned char*, 0x2E8)).recoverableAt326 = F999_VITAL(FIELD(unsigned char*, 0x2E8)).currentAt324;
-    FIELD(short, 0x3C4) += count;
+    F1006_COMBO(this).countAt3C4 += count;
     FLOAT(0x3C0) = (multiplier / 100.0f) * FLOAT(0x3C0);
 }
 

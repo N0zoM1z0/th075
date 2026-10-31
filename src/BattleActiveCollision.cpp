@@ -1,3 +1,4 @@
+#include "FighterComboBorrowedF1006.hpp"
 #include <deque>
 #include "BattleActiveCollision.hpp"
 #include "GameLeafHelpers.hpp"
@@ -50,8 +51,8 @@ void BattleActiveCollision::ResolveActiveCollisions()
     reinterpret_cast<BattleCollisionDispatch *>(this)->ResolveAttackHitboxes(ACTOR(0), ACTOR(0), ACTOR(1));
     FIELD(ComboDisplay *, this, 0x58) = DISPLAY(1);
     reinterpret_cast<BattleCollisionDispatch *>(this)->ResolveAttackHitboxes(ACTOR(1), ACTOR(1), ACTOR(0));
-    DISPLAY(0)->UpdateCounter(FIELD(short, ACTOR(0), 0x3C4), FIELD(short, ACTOR(0), 0x3C6), static_cast<short>(FIELD(float, ACTOR(0), 0x3C0) * 1000.0f));
-    DISPLAY(1)->UpdateCounter(FIELD(short, ACTOR(1), 0x3C4), FIELD(short, ACTOR(1), 0x3C6), static_cast<short>(FIELD(float, ACTOR(1), 0x3C0) * 1000.0f));
+    DISPLAY(0)->UpdateCounter(F1006_COMBO(ACTOR(0)).countAt3C4, F1006_COMBO(ACTOR(0)).damageAt3C6, static_cast<short>(FIELD(float, ACTOR(0), 0x3C0) * 1000.0f));
+    DISPLAY(1)->UpdateCounter(F1006_COMBO(ACTOR(1)).countAt3C4, F1006_COMBO(ACTOR(1)).damageAt3C6, static_cast<short>(FIELD(float, ACTOR(1), 0x3C0) * 1000.0f));
 }
 
 #define FRAME(type, actor, offset) FIELD(type, FIELD(void *, actor, 0xAC), offset)

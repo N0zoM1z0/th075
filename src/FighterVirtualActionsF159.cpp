@@ -1,3 +1,4 @@
+#include "FighterComboBorrowedF1006.hpp"
 #include "FighterVitalBorrowedF999.hpp"
 #include "FighterRoundOutcomeBytesF992.hpp"
 #include "FighterFadeBorrowedF986.hpp"
@@ -136,8 +137,8 @@ void FighterBaseActionsF159::ResetRound()
     FIELD(unsigned char, 0x3AC) = 0;
     FIELD(unsigned char, 0x3AD) = 0;
     FIELD(unsigned char, 0x3AE) = 0;
-    FIELD(short, 0x3C4) = 0;
-    FIELD(short, 0x3C6) = 0;
+    F1006_COMBO(this).countAt3C4 = 0;
+    F1006_COMBO(this).damageAt3C6 = 0;
     FIELD(float, 0x3C0) = 1.0f;
     FIELD(short, 0x80) = 0;
     FIELD(unsigned int, 0x7C) = 0;
