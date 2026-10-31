@@ -2377,6 +2377,52 @@ scripts/repo-python scripts/verify-scripted-fighter-floatx-258-f881.py.
 Whole 46,755B giant remains
 NONEXACT; no split-case CODE.
 
+**F883 IMPORTANT corrected actual original handler259 physical boundary:**
+numeric successor 25A
+points to native common
+DEFAULT at 0052CB25,
+so numeric subtraction
+incorrectly makes 259
+appear **13,279B**.
+The next real PHYSICAL
+original handler is
+**action2BC at 00529814**,
+therefore actual
+259 starts 00529746,
+ends 00529813 and
+owns only **206 native
+inner B/60 x86/six
+physically typed PE calls**.
+This is an inner switch
+interval, NOT a new
+callable whole function.
+Native state2 sprite34D,
+real FILD EBP-0xB8 floatX/
+raw integer Y, then
+0046D000(0x1F4),
+Prepare5 and giant
+shared exit recovered.
+One complete VC7.1 parent
+**33,987 CODE B/9,568 x86**
+(F881 33,796/9,510),
+all six actual PE fields/
+opcode widths match.
+**34 authentic GPR bytes**
+plus two original
+enclosing giant JMP bytes
+still nonexact. All 58
+preceding source-backed
+native case interiors and
+five original 901B packed
+afterRET jump DATA
+tables verified. Native
+getter retains four true
+GPR byte negatives.
+[F883 physical native handler boundary evidence](SCRIPTED_FIGHTER_PHYSICAL_259_F883.md);
+scripts/repo-python scripts/verify-scripted-fighter-physical259-f883.py.
+Entire original 46,755B
+giant remains NONEXACT.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin

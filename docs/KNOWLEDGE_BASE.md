@@ -284,6 +284,34 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   slots remain wrong. No
   accepted whole CODE.
   [F864 physical proof](SCENE_THREE_REAL_NAMED_POINTERS_F864.md).
+- **F883 physical original 259 handler next is action2BC, NOT numeric 25A:**
+  25A is a DEFAULT
+  handler at 52CB25;
+  next actual physical
+  native case after
+  259 at 529746 is
+  2BC at 529814.
+  Actual 259 is
+  206B/60-x86/six
+  true PE calls, NOT
+  numerically inferred
+  13,279B. True sprite34D,
+  facing*80 FILD scratch
+  EBP-0xB8, native 46D000
+  animation1F4 and
+  Prepare5 reproduced.
+  Whole source 33,987B/
+  9,568 x86; 58 earlier
+  PE-backed original
+  game states, five
+  901B packed DATA
+  tables rechecked.
+  Still 34 true GPR
+  and two original
+  giant JMP bytes wrong.
+  No independent callable
+  original exact CODE.
+  [F883 native boundary evidence](SCRIPTED_FIGHTER_PHYSICAL_259_F883.md).
 - **F882 original independent 248B Scene texture pointer ownership:**
   17 genuinely used
   complete VC7.1 /GX
