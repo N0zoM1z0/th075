@@ -149,24 +149,24 @@ unmatched. Important true original callable extents:
 | 0050A580 | 81,539 | Giant state-advance original source reconstruction |
 | 0045DD70 | 60,999 | Giant state-advance original source reconstruction |
 
-[F943 third 82KB actor true 0x62 selector](THIRD_FIGHTER_NATIVE_SELECTOR_F943.md):
-the real transition 004AE7E2..004AE839
-is **87B/25 x86/4 original PE targets**,
-now source-reconstructed in the growing
-**18,234B/4,855-x86 partial parent**.
-[F942 0x60/0x61](THIRD_FIGHTER_NATIVE_VOLLEY_F942.md)
-restored 2×553B/158x86/10 PE fields
-with **ZERO original GPR/mnemonic/width
-differences** in their internal source;
-[F941 0x5F](THIRD_FIGHTER_FACING_F941.md)
-added 144B/44x86 all GPR matching;
+[F947 third 82KB original CF/D0](THIRD_FIGHTER_FALL_REFLECT_F947.md):
+two genuine original **114B/30-x86 and
+195B/60-x86** fall/reflect handlers now
+source-reconstructed inside **18,513-B
+partial** 004AC040 parent; 4+6 native
+typed PE targets and true afterRET
+151 DIR32/522 nonfield DATA checked.
+[F943 original 0x62](THIRD_FIGHTER_NATIVE_SELECTOR_F943.md):
+87B/25-x86/4 PE calls.
+[F942 original 0x60/61](THIRD_FIGHTER_NATIVE_VOLLEY_F942.md):
+2×553B/158-x86/10 PE targets, native
+GPR roles matched. [F941 0x5F](THIRD_FIGHTER_FACING_F941.md)
+144B/44-x86/3 PE with 0 wrong GPR.
 [F939 0x5D/5E](THIRD_FIGHTER_NATIVE_PAIR_5D5E_F939.md)
 and [F938 0x59](THIRD_FIGHTER_REAL_BOUNCE_F938.md)
-complete the preceding real chain.
-Native `this` EBP is still wrong; all
-**82,796 original callable CODE bytes
-remain NONEXACT**. AfterRET original
-1,126B/151 DIR32/522 nonfield B checked.
+also source-backed. Complete original
+82,796-B giant **NONEXACT**; CF/D0
+GPR and native this EBP still wrong.
 
 [F934/F937 strict native 0x58 controls](FIGHTER_STRICT_PREDECESSOR_LIMIT_F937.md):
 49 additional complete 58KB normal VC7.1
@@ -330,23 +330,14 @@ all 979 functions:
   **30 integer-zero / 6 float-initializer complete native constructors**,
   total **5,531 existing bytes**, 36/36 exact, 2 source objects.
 
-[F946 adjacent native AI signed-short state](FIGHTER_AI_ADJACENT_SHORT_FIELDS_F946.md):
-8 complete giant AI sources (68,786 already
-accepted native bytes) now share a
-**genuine +0x512/+0x514/+0x516
-six-byte signed-short tail view**;
-canonical affected-unit replay **8/8
-whole exact across two objects**.
-The independent +0x511 command byte
-remains F940's adjacent one-byte view.
-
-[F940 shared AI/priority input command byte](FIGHTER_COMMAND_BYTE_SHARED_F940.md):
-9 affected whole original functions, **69,846
-existing CODE B, 9/9 cold exact** after
-typing receiver+0x511. Input polling
-retained original raw source because the
-new type renumbered real `$SG` COFF
-string relocation symbols.
+[F946 real adjacent fighter AI shorts](FIGHTER_AI_ADJACENT_SHORT_FIELDS_F946.md):
+8 already exact AI functions (68,786 CODE B)
+retain **8/8 canonical cold exact** after
+type-checking signed shorts at +0x512/514/516.
+[F940 adjacent +0x511 byte](FIGHTER_COMMAND_BYTE_SHARED_F940.md):
+9 affected original functions (69,846 B)
+still 9/9 exact; polling input kept unchanged
+after evidence of `$SG` symbol renumbering.
 
 ## 5. Exact acceptance, storage, and end-of-session checks
 
