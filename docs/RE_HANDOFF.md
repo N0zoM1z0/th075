@@ -2727,6 +2727,59 @@ scripts/repo-python scripts/verify-scripted-fighter-transition2c3-f891.py.
 Whole 46,755B original
 remains NONEXACT.
 
+**F892 original game 2DB native 556B borrowed-owner distance and guarded random:**
+physical 0052AD8F..0052AFBA
+**556 native complete inner
+CODE B/162x86/13 true PE
+call/global fields**.
+Stage2..9 actual distance
+Abs412D90 of ownerX-
+actorX with BOTH genuine
+borrowed float X lvalues
+evaluated in native order,
+then aux10/early entire
+giant return. Current
+action completion guards
+BOTH SetAction0 and actual
+random30..60 via 455580
+and short+516 store; an
+unguarded source wrongly
+changed actual JNE target
+even with same CODE size.
+Stage10 once-only shortF00,
+stage15 real sprite80 floatX
+FILD EBP-0x108 plus
+sprite336 integer coords,
+stage16 height17.5.
+Current entire VC7.1
+fighter **39,907 callable
+CODE B/11,247x86**
+(F891 39,366/11,087);
+all original 162
+opcode/width positions
+and 13 true PE fields
+physically match.
+**ZERO genuine GPR/internal
+Jcc wrong B**, only four
+original enclosing full
+giant JMP displacement B
++166/+167,+552/+553
+still differ. Two false
+whole source versions
+(genuine x87 operand order,
+wrong random conditional)
+compiled/rejected. All
+67 earlier original game
+interiors, five 901B
+packed afterRET DATA
+tables and shared getter
+34/34 nonfield verified.
+[F892 physical original native PE proof](SCRIPTED_FIGHTER_NATIVE_STAGE_2DB_F892.md);
+scripts/repo-python scripts/verify-scripted-fighter-stage2db-f892.py.
+Whole original 46,755B
+giant NONEXACT, no
+split case CODE credit.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin

@@ -284,6 +284,60 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   slots remain wrong. No
   accepted whole CODE.
   [F864 physical proof](SCENE_THREE_REAL_NAMED_POINTERS_F864.md).
+- **F892 original 2DB 556B/162x86 borrowed-owner distance and guarded random:**
+  native 556B/162 x86/
+  13 real physical PE
+  fields inside current
+  39,907B/11,247-x86
+  whole VC7.1 fighter.
+  Genuine ownerX-thisX
+  both borrowed lvalues
+  preserve actual original
+  MOV owner, MOV actor,
+  FLD owner, FSUB actor
+  x87 order. Native float
+  Abs helper412D90 and
+  RandomBoundary455580
+  with short+516 update
+  inside getter completion
+  guard, not unconditional.
+  Stage15 sprite80 FILD
+  EBP-0x108 and sprite336.
+  Two false same-length
+  whole source controls
+  compiled/rejected.
+  Only four original far
+  giant JMP bytes wrong,
+  zero GPR/local CFG.
+  Prior 67 real game cases,
+  five 901B afterRET tables
+  and getter 34/34 native
+  nonfield bytes reverified.
+  [F892 native PE proof](SCRIPTED_FIGHTER_NATIVE_STAGE_2DB_F892.md).
+- **F891 original 2C3 69B/20x86/4 PE calls and whole getter GPR context:**
+  native real field+4E0
+  zero selects SetAction0
+  versus SetAction1 after
+  Reset/getter completion,
+  full inner 69B/20x86
+  source correct except
+  two genuine enclosing
+  giant far-JMP bytes.
+  Inverting branch or using
+  wrong field+4DC retains
+  exact length but wrong
+  native bytes, tested.
+  Adding actual short 2C3
+  rotated previous common
+  getter GPR allocation
+  from F890 34/34 to
+  F891 30/34 original
+  nonfield bytes, then
+  F892 returned 34/34.
+  Never freeze register
+  phase across whole-parent
+  C++ code changes.
+  [F891 native proof](SCRIPTED_FIGHTER_NATIVE_2C3_F891.md).
 - **F890 complex original 2C2 2274B whole inner source, eight real unrolled projectile phases:**
   native 0052A468 2,274B/
   608 x86/50 physically
