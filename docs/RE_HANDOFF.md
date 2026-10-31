@@ -151,31 +151,28 @@ real CC is present. Original whole
 true saved-this EBP and 0x720
 frame are not reconstructed.
 
-[F1009 original 82KB rebound 2FB](THIRD_FIGHTER_REBOUND_2FB_F1009.md):
-tracked PARTIAL fighter **70,201B/
-19,261 x86**. Native2FB
-**1,428B/411 x86/33 original PE
-fields**; source1,425B/411,
-all mnemonic and GPR roles
-match, only final near-vs-short
-shared JMP width differs.
-Genuine random 0x33E, six
-separate 0x338..0x33D shots,
-stage8 bounds and original
-opponent X FCOMP memory.
-**Natural 2FB repairs prior
-[F1007 2FA](THIRD_FIGHTER_TRAJECTORY_2FA_F1007.md)
+[F1011 original 82KB mode loops 302](THIRD_FIGHTER_MODES_302_JUMP_RECOVERY_F1011.md):
+tracked PARTIAL father now
+**71,250B/19,538 x86**.
+Native action302 **1,033B/
+279x86/25 original PE
+targets**; source1,030B,
+all mnemonic/GPR roles aligned,
+only final shared near-JMP
+width not yet original.
+True mode0/1/2/3 loops
+10/12/15/20 sprite0x389
+shots, step36/30/24/18.
+**Real 302 repairs preceding
+[F1009 2FB](THIRD_FIGHTER_REBOUND_2FB_F1009.md)
 last shared-tail JMP width:**
-2FA now **672B/186x86 all
-mnemonic, width and GPR roles**.
-[F1008 native 2F9](THIRD_FIGHTER_RANDOM_2F9_REGISTER_PHASE_F1008.md):
-1,254B/326x86/33 PE all
-GPR roles aligned; [F1005
-2E6](THIRD_FIGHTER_MODE_STORM_2E6_F1005.md):
-2,058B/590x86/47 PE all
-mnemonic/width/GPR aligned.
-Whole original 82KB
-callable remains NONEXACT.
+2FB now native **1,428B/
+411x86, 0 wrong mnemonic,
+width, GPR roles, 33 PE**.
+[F1008 2F9](THIRD_FIGHTER_RANDOM_2F9_REGISTER_PHASE_F1008.md)
+and [F1007 2FA](THIRD_FIGHTER_TRAJECTORY_2FA_F1007.md)
+also preserve native GPR.
+Whole original 82KB NONEXACT.
 
 [F975 19D/19E/19F](THIRD_FIGHTER_STAGES19D19F_F975.md)
 native 400B/97,475B/128,
