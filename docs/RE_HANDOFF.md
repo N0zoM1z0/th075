@@ -151,30 +151,27 @@ real CC is present. Original whole
 true saved-this EBP and 0x720
 frame are not reconstructed.
 
-[F1016 native original 82KB double ring 2DB](THIRD_FIGHTER_TWO_RINGS_2DB_F1016.md):
+[F1017 native 82KB double-volley 2BE](THIRD_FIGHTER_STAGE_2BE_NATIVE_VOLLEYS_F1017.md):
 tracked PARTIAL father now
-**74,630B/20,496 x86**.
-Original 2DB **1,894B/
-548x86/38 physical PE
-targets** with ALL native
-mnemonic, width and GPR
-roles aligned. Two ordinary
-36-shot sprite0x385 loops,
-10-degree spacing, real
-float speed5 then10,
-native Y global00659460;
-real stage6 six sprites
-0x338..0x33D, opacity,
-ground, random and FCOMP
-facing. Prior/following
-12 real states retain all
-GPR roles and PE fields.
-[F1014 native default](THIRD_FIGHTER_ACTUAL_DEFAULT_TAIL_F1014.md):
-42B/13x86/3 PE and
-distinct 5B shared epilogue
-match; [F1013 final 31B/31C](THIRD_FIGHTER_REAL_FINAL_31B_31C_F1013.md)
-139 native x86/16 PE also
-aligned. Whole 82KB NONEXACT.
+**76,222B/20,965 x86**.
+Original 2BE **1,607B/
+471x86/50 physical PE
+targets** with all original
+mnemonic and widths aligned,
+**125 GPR roles still wrong**.
+Real original stage4
+sprite0x73, five stage15..23
+two-shot volleys with
+0x321+RandBoolean and0x33F,
+native Y global0065908C.
+Previous/later real case
+GPR roles and PE targets
+unchanged. [F1016 true
+double-ring2DB](THIRD_FIGHTER_TWO_RINGS_2DB_F1016.md)
+1,894B/548 x86/38 PE
+has all positional GPR
+roles aligned. Entire game
+82,796B still NONEXACT.
 
 [F975 19D/19E/19F](THIRD_FIGHTER_STAGES19D19F_F975.md)
 native 400B/97,475B/128,
