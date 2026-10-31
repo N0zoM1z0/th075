@@ -2641,6 +2641,50 @@ NONEXACT.
 [F888 original PE proof](SCRIPTED_FIGHTER_NATIVE_2C0_2C1_F888.md);
 scripts/repo-python scripts/verify-scripted-fighter-2c0-2c1-f888.py.
 
+**F890 major original 2C2 FULL 2,274B native stage/multi-shot recovery:**
+real original 0052A468..0052AD49
+has **2,274 complete inner CODE B/
+608 x86/50 physically typed PE
+field operands**, and EIGHT real
+F00 phases0..7 containing actual
+sprite34A/329 paired shot cases,
+true owner float X/Y and 13 x87
+FILD scratch EBP -D4..-104. Native
+stage8 one-shot is INSIDE outer
+stage<9/frame0 branch, not outside:
+wrong yet same-size full source
+has native Jcc operand byte errors
++334/+335,+349/+350. Real owner
+float X evaluated BEFORE integer
+facing multiplication required.
+One new complete normal VC7.1
+parent **39,312 callable CODE B/
+11,069 x86** (F888 37,053/
+10,463) physically reproduces
+all 608 original x86 opcode/
+width positions, ALL FIFTY
+physical PE original offsets/
+types/real targets and **ONLY
+FOUR genuine enclosing parent
+far epilogue JMP wrong bytes**
++175/+176,+2270/+2271, with
+zero other register/branch
+errors. Wrong nesting and
+wrong actual source operand
+evaluation controls both
+compiled as full normal parents
+and rejected. All 65 previous
+original game-state interiors,
+five native 901B packed switch
+DATA tables, native shared
+getter 34/34 nonfield plus
+3 actual PE calls verified.
+[F890 2274B physical original PE proof](SCRIPTED_FIGHTER_FULL_NATIVE_2C2_F890.md);
+scripts/repo-python scripts/verify-scripted-fighter-full2c2-f890.py.
+Whole original 46,755B
+still NONEXACT, no internal
+case callable CODE credit.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin

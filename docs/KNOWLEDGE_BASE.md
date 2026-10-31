@@ -284,6 +284,41 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   slots remain wrong. No
   accepted whole CODE.
   [F864 physical proof](SCENE_THREE_REAL_NAMED_POINTERS_F864.md).
+- **F890 complex original 2C2 2274B whole inner source, eight real unrolled projectile phases:**
+  native 0052A468 2,274B/
+  608 x86/50 physically
+  typed original PE fields
+  in new whole 39,312B/
+  11,069x86 fighter. Original
+  F00 phases0..7 and
+  stage8 nested inside
+  stage<9 outer condition;
+  13 true FILD temporary
+  EBP slots -D4..-104.
+  Genuine borrowed owner
+  X left-lvalue BEFORE
+  facing conversion
+  restores x87 opcode
+  order. Wrong stage8
+  outer scope retains
+  equal 2274B/608-x86/
+  50 field counts but
+  changes native Jcc
+  target operands; separately
+  compiled/rejected. Native
+  selected has only FOUR
+  original far giant JMP
+  bytes different (175/176,
+  2270/2271), ZERO GPR/
+  inner CFG differences.
+  All 65 preceding original
+  cases, five 901B packed
+  afterRET tables and native
+  getter 34/34 nonfield
+  bytes plus 3 calls verified.
+  Whole original 46755B
+  still nonexact.
+  [F890 original physical PE proof](SCRIPTED_FIGHTER_FULL_NATIVE_2C2_F890.md).
 - **F889 independent Scene 248B/75x86 real 1+2/2+1 free locals:**
   29 complete normal VC7.1
   /Od /GX authored
