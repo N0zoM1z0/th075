@@ -284,6 +284,29 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   slots remain wrong. No
   accepted whole CODE.
   [F864 physical proof](SCENE_THREE_REAL_NAMED_POINTERS_F864.md).
+- **F885 original 2BD 855B early borrowed-owner X copy and 24 PE fields:**
+  full 855 native CODE B/
+  239x86/24 typed original
+  PE call/global operands in
+  one full current 35,615B/
+  10,031-x86 fighter parent.
+  Real stage2BC-like one-shot
+  must sprite346 BEFORE
+  PrepareD, then action2C2,
+  Reset, owner X copy and
+  direct original giant exit.
+  Stage5 Prepare17 BEFORE
+  correction, sprite74 via
+  FILD -C4/FSUBR, stage7
+  PrepareB and stage8
+  height30/FILD -C8 sprite80.
+  **149 GPR +4 enclosing
+  original JMP bytes** still
+  nonexact. All 60 preceding
+  native cases/901B original
+  afterRET tables/getter PE
+  destinations rechecked.
+  [F885 native PE proof](SCRIPTED_FIGHTER_NATIVE_STAGE_2BD_F885.md).
 - **F884 original complex giant 2BC full 803B staged movement and x87:**
   entire original handler
   803B/228x86/22

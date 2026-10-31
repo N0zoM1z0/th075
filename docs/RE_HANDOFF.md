@@ -2474,6 +2474,42 @@ Entire original 46,755B giant
 still NONEXACT, zero
 split-case CODE credit.
 
+**F885 original 2BD complete 855B associated-owner early exit and native FILD:**
+actual original 00529B37..00529E8D
+is **855 inner CODE B/239 x86/
+24 physical original PE fields**.
+Native 2BD differs from 2BC:
+one-shot first sprite346 THEN
+PrepareD, action2C2/Reset,
+copy borrowed owner+2E8 X to
+current X and EARLY enclosing
+giant return. Stage5 original
+Prepare17 BEFORE float+36C
+correction, sprite74 (not73),
+FILD EBP-0xC4 then FSUBR.
+Stage7 PrepareB, stage8
+height30 and FILD EBP-0xC8
+sprite80, second real enclosing
+giant return. New complete
+VC7.1 parent **35,615 callable
+CODE B/10,031 x86** (F884
+34,775B/9,794 x86). Every
+original 239 mnemonic/width
+and 24 genuine PE fields/
+targets fully checked; still
+**149 real GPR operand bytes
+and four giant final JMP bytes**
++382/+383,+851/+852 wrong.
+All 60 preceding original
+physical native game cases,
+five packed 901B afterRET
+tables and 46B getter honest
+GPR negatives revalidated.
+[F885 original 2BD PE proof](SCRIPTED_FIGHTER_NATIVE_STAGE_2BD_F885.md);
+scripts/repo-python scripts/verify-scripted-fighter-stage2bd-f885.py.
+Whole original 46,755B
+fighter still NONEXACT.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin
