@@ -151,27 +151,23 @@ real CC is present. Original whole
 true saved-this EBP and 0x720
 frame are not reconstructed.
 
-[F993 original 82KB 25F/260 ten-shot loops](THIRD_FIGHTER_TEN_SHOT_25F_260_F993.md):
-tracked cumulative partial VC7.1
-fighter **51,534B/14,224 x86**;
-two original 466B/114-x86
-ten-shot cases with **18 native
-typed PE targets**, all **228
-original mnemonic, width AND
-GPR roles matched**. True
-source int loops, distinct native
-EBP−0x30/−0x34 counters,
-sprite0x346/0x347, float
-00658044 motion global.
-Original whole frame 0x720
-and receiver−0x64 still wrong.
-[F991 true original 25A](THIRD_FIGHTER_STAGE25A_F991.md):
-635B/166x86/15 native PE;
-[F990 original 259](THIRD_FIGHTER_STAGE259_F990.md)
-845B/212x86, 15 PE, three
-ADD widths wrong; [F989 258](THIRD_FIGHTER_STAGE258_F989.md)
-834B/212x86/15 PE aligned.
-Whole original 82KB NONEXACT.
+[F994 original 82KB 261/262 ten-shot loops](THIRD_FIGHTER_TEN_SHOT_261_262_F994.md):
+tracked partial VC7.1 father
+**52,238B/14,416 x86**,
+original 261/262 each
+361B/98 x86/8 genuine PE.
+**0 wrong mnemonic, width,
+GPR roles** for both; prior
+[F993 25F/260](THIRD_FIGHTER_TEN_SHOT_25F_260_F993.md)
+466B/114x86/9 PE each also
+retains **zero GPR errors**
+across complete whole parent.
+Total four ten-shot cases
+**424 native x86 roles align,
+34 physical PE targets verified**.
+Real source frame 0x380
+vs native 0x720; exact
+whole function still NONEXACT.
 
 [F975 19D/19E/19F](THIRD_FIGHTER_STAGES19D19F_F975.md)
 native 400B/97,475B/128,
