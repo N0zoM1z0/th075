@@ -166,20 +166,22 @@ real CC is present. Original whole
 true saved-this EBP and 0x720
 frame are not reconstructed.
 
-[F961 selected 82KB partial parent, original 12C–130](THIRD_FIGHTER_STAGE12F130_F961.md):
-new cumulative normal VC7.1 C++
-father emits **22,709B/6,191 x86**,
-restoring true 12F=207B/59 and
-130=265B/81 (12 typed PE targets).
-Together with previous
-[F959 12C/D/E](THIRD_FIGHTER_STAGE12E_F959.md),
-**five consecutive original handlers
-have 1,168B/342 original x86 roles
-and 31 native PE targets verified**.
-Original 12C is NOT in afterRET
-table; [F958 D2 boundary proof](THIRD_FIGHTER_STAGE12C12D_F958.md)
-guards that ownership. Real original
-82,796B giant remains NONEXACT.
+[F962 real original 82KB stage131](THIRD_FIGHTER_STAGE131_NATIVE_F962.md):
+new TRACKED partial parent C++ emits
+**22,896B/6,247 x86**, adding
+real 131 **202B/58 x86/5 native PE
+targets**. Its mnemonic/width roles
+match but **36 wrong original GPR
+roles** persist (first ordinal0);
+28 whole-parent grammar alternatives
+failed to improve them.
+[F961 consecutive 12C–130](THIRD_FIGHTER_STAGE12F130_F961.md):
+native **1,168B/342x86/31
+genuine PE targets** all original
+GPR/mnemonic/width roles aligned.
+Native 12C has NO afterRET label;
+[F958 original D2 boundary proof](THIRD_FIGHTER_STAGE12C12D_F958.md).
+Original entire 82,796B giant NONEXACT.
 
 [F957 native CA→CB GPR negatives](THIRD_FIGHTER_CA_PRECEDES_CB_GPR_F957.md):
 30 complete partial parent trials did
