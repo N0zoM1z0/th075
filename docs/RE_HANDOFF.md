@@ -2423,6 +2423,57 @@ scripts/repo-python scripts/verify-scripted-fighter-physical259-f883.py.
 Entire original 46,755B
 giant remains NONEXACT.
 
+**F884 MAJOR native giant 2BC full 803B complicated staged handler:**
+original physical game 2BC
+00529814..00529B36 is
+**803 complete native inner
+CODE B/228 x86/22 physical
+PE call/global fields**.
+Real stage>8 **DOUBLE qword**
+gravity global657D00,
+stage7/9 opposite float
+motion, actual once-only
+SHORT F00 increment and
+seven-arg sprite346 via
+native 453B50, stage5
+0x36C correction and
+sprite73 via FILD EBP-BC
+then genuine FSUBR
+actor floatX, stage7/8
+two FLOAT motion parameters
+at 40FBB0, stage8 floatX
+sprite80 FILD EBP-C0
+and original animation1F4.
+One newly compiled entire
+VC7.1 parent **34,775
+callable CODE B/9,794x86**
+(F883 33,987/9,568).
+All 228 original opcode/
+width positions and all
+22 actual PE types/targets
+verified. Two independently
+compiled WRONG full sources
+(equal-length FISUB instead
+of FSUBR, or short-counter
+wrong 802B) are REJECTED.
+**142 real GPR bytes and
+two original whole-giant
+JMP bytes +799/+800**
+remain nonexact.
+All 59 preceding original
+native game states incl 1FD
+CMP negative, 252/254 one-byte
+PE shifts and corrected
+259 physical boundary, all
+five 901B packed afterRET
+tables and getter four
+honest GPR errors rechecked.
+[F884 803B original PE proof](SCRIPTED_FIGHTER_NATIVE_COMPLEX_2BC_F884.md);
+scripts/repo-python scripts/verify-scripted-fighter-stage2bc-f884.py.
+Entire original 46,755B giant
+still NONEXACT, zero
+split-case CODE credit.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin

@@ -284,6 +284,36 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   slots remain wrong. No
   accepted whole CODE.
   [F864 physical proof](SCENE_THREE_REAL_NAMED_POINTERS_F864.md).
+- **F884 original complex giant 2BC full 803B staged movement and x87:**
+  entire original handler
+  803B/228x86/22
+  physically typed original
+  PE fields in whole new
+  34,775B/9,794x86 fighter.
+  Native stage>8 DOUBLE
+  qword gravity657D00,
+  stage7/9 opposite flight
+  changes, once-only 16-bit
+  F00 ++, real seven-arg
+  sprite346 via 453B50,
+  stage5 FILD EBP-BC then
+  FSUBR member X sprite73,
+  stage8 FILD EBP-C0
+  mixed-coordinate sprite80
+  and float,float,int
+  movement at 40FBB0.
+  Nonnative same-length
+  FISUB and dword counter
+  802B compiled/rejected.
+  Native 142 actual GPR
+  and two giant epilogue
+  JMP bytes still differ.
+  59 previous game case
+  originals and five 901B
+  packed DATA tables
+  rechecked. No whole
+  exact CODE credit.
+  [F884 original 803B PE evidence](SCRIPTED_FIGHTER_NATIVE_COMPLEX_2BC_F884.md).
 - **F883 physical original 259 handler next is action2BC, NOT numeric 25A:**
   25A is a DEFAULT
   handler at 52CB25;
