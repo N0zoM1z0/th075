@@ -151,27 +151,30 @@ real CC is present. Original whole
 true saved-this EBP and 0x720
 frame are not reconstructed.
 
-[F1018 actual original 82KB triple-volley 2BF](THIRD_FIGHTER_NATIVE_TRIPLE_VOLLEY_2BF_F1018.md):
-tracked PARTIAL father now
-**78,374B/21,579 x86**.
-Native2BF **2,167B/616x86/
-65 physical typed PE**,
-all original mnemonic, width
-and GPR roles aligned. Five
-distinct stage15/17/19/21/23
-triple shots (0x322+bool,
-0x340, 0x341), true facing×640
-FILD/FSUBR world X and
-Y+0065784C−Rand(0,400).
-Prior [F1017 real 2BE](THIRD_FIGHTER_STAGE_2BE_NATIVE_VOLLEYS_F1017.md)
-1,607B/471x86/50 PE has
-0 wrong mnemonic/width, but
-**125 native GPR roles remain
-wrong** even after 2BF.
-All later original case roles
-and PE fields stay aligned.
-Whole original 82,796B
-callable still NONEXACT.
+[F1019 actual original 2EF/2F0 arcs](THIRD_FIGHTER_PAIRED_ARC_2EF_2F0_F1019.md):
+tracked whole-shaped PARTIAL
+**82,802B/22,721 x86** vs
+original **82,796B/22,721
+x86**. Each native 2EF/2F0
+**2,229B/573x86/80 PE**,
+all real mnemonic/width/GPR
+positions aligned. Correct
+nested stage23 counter,
+real raw32 angle ABI to
+0040FB70, const borrowed
+speed+0x50 restores original
+FLD global00658264 / FADD
+actor. Full afterRET 151
+DIR32/522 nonfield DATA
+verified. **WHOLE NONEXACT:**
+6 excess CODE B, frame0x724
+vs original0x720, saved this
+EBP−0x68 vs native−0x64,
+prior [F1017 2BE](THIRD_FIGHTER_STAGE_2BE_NATIVE_VOLLEYS_F1017.md)
+125 GPR role errors.
+[F1018 real 2BF](THIRD_FIGHTER_NATIVE_TRIPLE_VOLLEY_2BF_F1018.md)
+2,167B/616x86/65 PE keeps
+all native register roles.
 
 [F975 19D/19E/19F](THIRD_FIGHTER_STAGES19D19F_F975.md)
 native 400B/97,475B/128,
