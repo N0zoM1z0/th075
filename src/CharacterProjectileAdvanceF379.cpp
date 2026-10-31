@@ -1,3 +1,4 @@
+#include "FighterAnimationPhaseBorrowedF1024.hpp"
 // R067 original complete 855-byte character-specific projectile controller.
 // Observed original projectile-owner positional arguments are passed by
 // their exact 32-bit float bits, avoiding unintended x87 conversions.
@@ -32,7 +33,7 @@ extern const float g_ProjectScaleF379At00659454;
 void CharacterProjectileF379::Advance() {
     if (FIELD(int,0x7C)==5) {
         Destroy();
-    } else if (OWNER_FIELD(short,0x60)>49 && OWNER_FIELD(short,0x60)<150 && FIELD(short,0x62)<2) {
+    } else if (OWNER_FIELD(short,0x60)>49 && OWNER_FIELD(short,0x60)<150 && F1024_PHASE(this).stageAt62<2) {
         Destroy();
         for(int i=0;i<1;++i) {
             OWNER->SpawnProjectile(996,FIELD(unsigned int,0x44),FIELD(unsigned int,0x48),1,1);
@@ -42,7 +43,7 @@ void CharacterProjectileF379::Advance() {
             OWNER->SpawnProjectile(995,FIELD(unsigned int,0x44),FIELD(unsigned int,0x48),1,1);
         }
     } else {
-        if (FIELD(short,0x62)==0 && FIELD(short,0x64)==0) {
+        if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
             FIELD(short,0xDA)=static_cast<short>(FLOAT(0xC8));
             FIELD(short,0xDC)=static_cast<short>(FLOAT(0xCC));
             TriggerInteraction(0,0,0);
@@ -56,17 +57,17 @@ void CharacterProjectileF379::Advance() {
             FIELD(unsigned char,0x14)=255;
             FLOAT(0x30)=AngleAt00483300(FIELD(unsigned int,0x54),FIELD(unsigned int,0x50))/g_AngleUnitAt00657828;
         }
-        if ((FIELD(int,0x7C)==1 || FIELD(int,0x7C)==2 || FIELD(int,0x7C)==4 || FIELD(int,0x7C)==6) && FIELD(short,0x62)<2) {
+        if ((FIELD(int,0x7C)==1 || FIELD(int,0x7C)==2 || FIELD(int,0x7C)==4 || FIELD(int,0x7C)==6) && F1024_PHASE(this).stageAt62<2) {
             SetMode(2);
             FLOAT(0x50)=0.0f;
             FLOAT(0x54)=0.0f;
         } else {
-            if (FIELD(short,0x62)<2) {
+            if (F1024_PHASE(this).stageAt62<2) {
                 SetPolarVelocity(static_cast<float>(FIELD(short,0xDC)),static_cast<float>(FIELD(short,0xDA))*g_PolarScaleAt00658044);
                 FLOAT(0x44)=static_cast<float>(FIELD(signed char,0x66))*FLOAT(0x50)+FLOAT(0x44);
                 *reinterpret_cast<float*>(reinterpret_cast<unsigned char*>(this)+0x48)=*reinterpret_cast<float*>(reinterpret_cast<unsigned char*>(this)+0x48)-*reinterpret_cast<float*>(reinterpret_cast<unsigned char*>(this)+0x54);
             }
-            if(FIELD(short,0x62)==2) {
+            if(F1024_PHASE(this).stageAt62==2) {
                 FLOAT(0x1C)=FLOAT(0x1C)*g_ProjectScaleF379At00659454;
                 FIELD(unsigned int,0x20)=FIELD(unsigned int,0x1C);
             }

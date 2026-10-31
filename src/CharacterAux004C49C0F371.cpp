@@ -1,3 +1,4 @@
+#include "FighterAnimationPhaseBorrowedF1024.hpp"
 // Complete original R049 1757-byte character auxiliary state controller.
 // The distinct active-round/two-mode actions and 30/70/57-facing effect
 // offsets are independently observed in this original. The opponent call
@@ -56,7 +57,7 @@ void CharacterAux004C49C0F371::AdvanceAuxiliary() {
             OPPONENT_FIELD(unsigned char,0x10)=0x82;
         }
     }
-    if (FIELD(short, 0x60) > 149 && FIELD(short, 0x60) < 154 && FIELD(short,0x62)==0 && FIELD(short,0x64)==0 && FIELD(short,0xF0A)==0) {
+    if (FIELD(short, 0x60) > 149 && FIELD(short, 0x60) < 154 && F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0 && FIELD(short,0xF0A)==0) {
             FIELD(short, 0x2F6) = 0;
             FIELD(short, 0x2F8) = 0;
             FIELD(short, 0x2FA) = 0;
@@ -72,7 +73,7 @@ void CharacterAux004C49C0F371::AdvanceAuxiliary() {
             SpawnTrackedEffect(817, FIELD(signed char, 0x66) * 30 + FLOAT(0x44), FLOAT(0x48) + 94.0f, FIELD(signed char, 0x66), 1, 1);
             FIELD(short, 0xF0A) = 1;
         }
-    if (FIELD(short, 0x60) > 153 && FIELD(short, 0x60) < 158 && FIELD(short,0x62)==0 && FIELD(short,0x64)==0 && FIELD(short,0xF0A)==0) {
+    if (FIELD(short, 0x60) > 153 && FIELD(short, 0x60) < 158 && F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0 && FIELD(short,0xF0A)==0) {
             FIELD(short, 0x2F6) = 0;
             FIELD(short, 0x2F8) = 0;
             FIELD(short, 0x2FA) = 0;
@@ -88,7 +89,7 @@ void CharacterAux004C49C0F371::AdvanceAuxiliary() {
             SpawnTrackedEffect(817, FIELD(signed char, 0x66) * 70 + FLOAT(0x44), FLOAT(0x48) + 60.0f, FIELD(signed char, 0x66), 1, 1);
             FIELD(short, 0xF0A) = 1;
         }
-    if (FIELD(short, 0x60) == 158 && FIELD(short,0x62)==0 && FIELD(short,0x64)==0 && FIELD(short,0xF0A)==0) {
+    if (FIELD(short, 0x60) == 158 && F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0 && FIELD(short,0xF0A)==0) {
             FIELD(short, 0x2F6) = 0;
             FIELD(short, 0x2F8) = 0;
             FIELD(short, 0x2FA) = 0;

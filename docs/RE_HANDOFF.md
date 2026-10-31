@@ -151,22 +151,6 @@ real CC is present. Original whole
 true saved-this EBP and 0x720
 frame are not reconstructed.
 
-[F1021 FULL native-frame register-phase controls](THIRD_FIGHTER_FULL_NATIVE_LOOP_PHASE_F1021.md):
-10 complete 82KB normal VC7.1
-original-shaped fathers tested.
-First wrong GPR ordinal2180
-is true original 0x59 start
-004ADEFA. Strict native0x58
-469B/135x86/0 wrong roles;
-next0x59 still 19 wrong GPR.
-Postincrement while repairs0x59
-to 0 wrong but regresses0x58
-1 mnemonic/2 widths/40 GPR
-and WHOLE 6,958→6,979
-GPR defects. Other genuine
-scope/typed borrowed controls
-negative. Keep strict original.
-
 [F1021 82KB native 58/59 GPR controls](THIRD_FIGHTER_NATIVE_58_59_FULL_GPR_CONTROLS_F1021.md):
 TEN whole-shaped native
 82KB sources tested. Strict
@@ -388,6 +372,21 @@ would shift native COFF $L
 labels +21; restored both,
 **4/4 and 5/5 original
 whole controls exact**.
+
+[F1024 native animation stage/frame WORDs](FIGHTER_ANIMATION_PHASE_WINDOW_F1024.md):
+borrowed signed shorts+0x62
+and+0x64 typed across eight
+native source objects; **9/9
+whole cold exact, 11,573
+PREVIOUSLY accepted B**.
+Original 31,352B actor
+auxiliary controller must keep
+old source: header alone
+shifts 72 COFF $L symbols
++21 despite all 27,980
+native nonfield CODE B
+unchanged. Giant source
+restored, no accepted regression.
 
 [F1022 adjacent original script WORD counters](FIGHTER_SCRIPT_COUNTER_ADJACENT_NATIVE_F1022.md):
 real +0xF00/+0xF02 16-bit

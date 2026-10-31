@@ -1,3 +1,4 @@
+#include "FighterAnimationPhaseBorrowedF1024.hpp"
 #include <windows.h>
 #include <new>
 // Physical borrowed native vector/deque interface. Class identities and
@@ -45,8 +46,8 @@ void EffectOwnerF281::SpawnConfiguredAuxObject(short pattern,DWORD x,DWORD y,
         ITEMS->push_back(empty);
         *ITEMS->back()=new EffectSpawnedF281(this);
         FIELD(short,0x60)=pattern;
-        FIELD(short,0x62)=0;
-        FIELD(short,0x64)=0;
+        F1024_PHASE(*ITEMS->back()).stageAt62=0;
+        F1024_PHASE(*ITEMS->back()).frameAt64=0;
         FIELD(DWORD,0x44)=x;
         FIELD(DWORD,0x48)=y;
         FIELD(unsigned char,0x66)=kind;

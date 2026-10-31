@@ -1,3 +1,4 @@
+#include "FighterAnimationPhaseBorrowedF1024.hpp"
 #include "AnimationProgress40FA30.hpp"
 #include "CharacterAuxAction.hpp"
 #include "CharacterAIPolicy.hpp"
@@ -31,7 +32,7 @@ extern int g_AI507B20Countdown;
 
 void AuxiliaryActor4A80F0::Update()
 {
-    if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+    if (F1024_PHASE(this).stageAt62 == 0 && F1024_PHASE(this).frameAt64 == 0) {
         FIELD(short, 0xD8) = 0;
         FIELD(short, 0xDA) = 0;
         FIELD(short, 0xDC) = 0;
@@ -72,8 +73,8 @@ void AuxiliaryActor4A80F0::Update()
         OWNER(short, 0xF30) = static_cast<short>(FIELD_FLOAT(0x48));
     }
     if ((OWNER(short, 0x60) == 709 || OWNER(short, 0x60) == 710) &&
-        OWNER(short, 0x62) == 5 && OWNER(short, 0x64) == 0 &&
-        FIELD(short, 0xDC) == 0 && FIELD(short, 0x62) == 1 &&
+        F1024_PHASE(FIELD(void*, 0xE4)).stageAt62 == 5 && F1024_PHASE(FIELD(void*, 0xE4)).frameAt64 == 0 &&
+        FIELD(short, 0xDC) == 0 && F1024_PHASE(this).stageAt62 == 1 &&
         ((FIELD(short, 0x60) == 833 && OWNER(short, 0xF16) == 6) ||
          (FIELD(short, 0x60) == 832 && OWNER(short, 0xF16) == 5) ||
          (FIELD(short, 0x60) == 831 && OWNER(short, 0xF16) == 4) ||
@@ -89,8 +90,8 @@ void AuxiliaryActor4A80F0::Update()
         --OWNER(short, 0xF16);
     }
     if ((OWNER(short, 0x60) == 716 || OWNER(short, 0x60) == 717) &&
-        OWNER(short, 0x62) == 5 && OWNER(short, 0x64) == 0 &&
-        (FIELD(short, 0x62) == 1 || FIELD(short, 0x62) == 2) &&
+        F1024_PHASE(FIELD(void*, 0xE4)).stageAt62 == 5 && F1024_PHASE(FIELD(void*, 0xE4)).frameAt64 == 0 &&
+        (F1024_PHASE(this).stageAt62 == 1 || F1024_PHASE(this).stageAt62 == 2) &&
         ((FIELD(short, 0x60) == 833 && OWNER(short, 0xF16) == 6) ||
          (FIELD(short, 0x60) == 832 && OWNER(short, 0xF16) == 5) ||
          (FIELD(short, 0x60) == 831 && OWNER(short, 0xF16) == 4) ||
@@ -105,8 +106,8 @@ void AuxiliaryActor4A80F0::Update()
     if (OWNER(short, 0xF12) == 2) {
         SPAWN(836, FIELD_FLOAT(0x44), FIELD_FLOAT(0x48), 1, 0);
     }
-    if (OWNER(short, 0xF12) == 99 && FIELD(short, 0x62) < 7 && FIELD(short, 0xDC) == 0) RESET(7);
-    if (OWNER(short, 0xF12) == 3 && FIELD(short, 0x62) < 2) RESET(2);
+    if (OWNER(short, 0xF12) == 99 && F1024_PHASE(this).stageAt62 < 7 && FIELD(short, 0xDC) == 0) RESET(7);
+    if (OWNER(short, 0xF12) == 3 && F1024_PHASE(this).stageAt62 < 2) RESET(2);
     FIELD(short, 0xD8) = static_cast<short>((OWNER(short, 0xF10) - 180) + FIELD_FLOAT(0xC8));
     if (FIELD(short, 0xD8) > 180) FIELD(short, 0xD8) -= 360;
     if (FIELD(short, 0xD8) < -180) FIELD(short, 0xD8) += 360;
@@ -114,14 +115,14 @@ void AuxiliaryActor4A80F0::Update()
     if (OWNER(short, 0xF12) != 6 && OWNER(signed char, 0x39D) > 1 && FIELD(short, 0xDA) > 120) FIELD(short, 0xDA) = 120;
     if (OWNER(signed char, 0x39D) == 1 && FIELD(short, 0xDA) > 140) FIELD(short, 0xDA) = 140;
     if (OWNER(short, 0xF12) == 6 && FIELD(short, 0xDA) > 180) FIELD(short, 0xDA) = 180;
-    if (FIELD(short, 0x62) == 1) {
+    if (F1024_PHASE(this).stageAt62 == 1) {
         POLAR(FIELD(short, 0xD8), FIELD(short, 0xDA));
         FIELD_FLOAT(0x44) = static_cast<int>(OWNER(short, 0xF0C) + FIELD(signed char, 0x66) * FIELD_FLOAT(0x50));
         FIELD_FLOAT(0x48) = static_cast<int>(OWNER(short, 0xF0E) + FIELD_FLOAT(0x54));
         FIELD(short, 0x80) = 1;
         FIELD(int, 0x7C) = 0;
     }
-    if (FIELD(short, 0x62) == 2 && OWNER(short, 0xF12) == 3 && FIELD(short, 0xDC) == 0) {
+    if (F1024_PHASE(this).stageAt62 == 2 && OWNER(short, 0xF12) == 3 && FIELD(short, 0xDC) == 0) {
         POLAR(FIELD(short, 0xD8), FIELD(short, 0xDA));
         FIELD_FLOAT(0x44) = static_cast<int>(OWNER(short, 0xF0C) + FIELD(signed char, 0x66) * FIELD_FLOAT(0x50));
         FIELD_FLOAT(0x48) = static_cast<int>(OWNER(short, 0xF0E) + FIELD_FLOAT(0x54));
@@ -132,7 +133,7 @@ void AuxiliaryActor4A80F0::Update()
             FIELD(int, 0x7C) = 0;
         }
     }
-    if (FIELD(short, 0x62) == 2 && FIELD(short, 0xDC) > 0) {
+    if (F1024_PHASE(this).stageAt62 == 2 && FIELD(short, 0xDC) > 0) {
         POLAR(FIELD(short, 0xDE), FIELD(short, 0xDC) * 0.5f + 5.0f);
         ++FIELD(short, 0xDC);
         FIELD(short, 0xE0) = 1;
@@ -145,7 +146,7 @@ void AuxiliaryActor4A80F0::Update()
             FIELD(int, 0x7C) = 0;
         }
     }
-    if (FIELD(short, 0x62) == 3) {
+    if (F1024_PHASE(this).stageAt62 == 3) {
         POLAR(FIELD(short, 0xD8), FIELD(short, 0xDA));
         FIELD_FLOAT(0x44) = static_cast<int>(OWNER(short, 0xF0C) + FIELD(signed char, 0x66) * FIELD_FLOAT(0x50));
         FIELD_FLOAT(0x48) = static_cast<int>(OWNER(short, 0xF0E) + FIELD_FLOAT(0x54));
@@ -159,24 +160,24 @@ void AuxiliaryActor4A80F0::Update()
         ++FIELD(short, 0xDC);
         FIELD(short, 0xE0) = 1;
     }
-    if (FIELD(short, 0x62) == 4) {
+    if (F1024_PHASE(this).stageAt62 == 4) {
         if (FIELD(short, 0xDC) == 1) SPAWN(841, OWNER(signed char, 0x66) * 20 + FIELD_FLOAT(0x44), FIELD_FLOAT(0x48), OWNER(signed char, 0x66), 1);
         if (FIELD(short, 0xDC) > 120 || FIELD(int, 0x7C) == 4 || (FIELD(int, 0x7C) != 0 && FIELD(int, 0x7C) != 4 && FIELD(int, 0x7C) != 5 && FIELD(int, 0x7C) != 6)) { RESET(7); return; }
         ++FIELD(short, 0xDC);
     }
-    if (FIELD(short, 0x62) == 7) FIELD(unsigned char, 0x11) = FIELD(unsigned char, 0x11) - 25;
+    if (F1024_PHASE(this).stageAt62 == 7) FIELD(unsigned char, 0x11) = FIELD(unsigned char, 0x11) - 25;
     if (OWNER(short, 0xF12) == 6) SPAWN(843, FIELD_FLOAT(0x44), FIELD_FLOAT(0x48), 1, 1);
     if (reinterpret_cast<AnimationProgress40FA30*>(this)->AdvanceNestedFrame() == FIELD(short, 0x70)) {
         reinterpret_cast<BattleEffect*>(this)->ClearField74();
         if (FIELD(short, 0xDC) == 0) --OWNER(short, 0xF14);
         if (FIELD(short, 0xE0) == 0) --OWNER(short, 0xF16);
     } else {
-        if (FIELD(short, 0x62) == 2 && FIELD(short, 0x64) == 0) RESET(1);
-        if (FIELD(short, 0x62) == 3 && FIELD(short, 0x64) == 0) RESET(2);
-        if (FIELD(short, 0x62) == 4 && FIELD(short, 0x64) == 0) RESET(3);
-        if (FIELD(short, 0x62) == 5 && FIELD(short, 0x64) == 0) RESET(4);
-        if (FIELD(short, 0x62) == 6 && FIELD(short, 0x64) == 0) RESET(5);
-        if (FIELD(short, 0x62) == 7 && FIELD(short, 0x64) == 0) RESET(6);
+        if (F1024_PHASE(this).stageAt62 == 2 && F1024_PHASE(this).frameAt64 == 0) RESET(1);
+        if (F1024_PHASE(this).stageAt62 == 3 && F1024_PHASE(this).frameAt64 == 0) RESET(2);
+        if (F1024_PHASE(this).stageAt62 == 4 && F1024_PHASE(this).frameAt64 == 0) RESET(3);
+        if (F1024_PHASE(this).stageAt62 == 5 && F1024_PHASE(this).frameAt64 == 0) RESET(4);
+        if (F1024_PHASE(this).stageAt62 == 6 && F1024_PHASE(this).frameAt64 == 0) RESET(5);
+        if (F1024_PHASE(this).stageAt62 == 7 && F1024_PHASE(this).frameAt64 == 0) RESET(6);
     }
 }
 

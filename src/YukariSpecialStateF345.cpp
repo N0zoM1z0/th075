@@ -1,3 +1,4 @@
+#include "FighterAnimationPhaseBorrowedF1024.hpp"
 // Borrowed fighter receiver and effect spawner ABI; the complete fighter class
 // (including parent/derived layouts) is not instantiated or asserted here.
 // The two field-access macro expressions intentionally retain the exact form
@@ -22,7 +23,7 @@ void YukariSpecialF345::UpdateSpecialState() {
         FIELD(short, 0xF12) = -180;
     if (FLOAT(0x50) == 0.0f && FIELD(signed char, 0x3AC) > 0)
         FIELD(signed char, 0x3AC) = 0;
-    if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0 && FIELD(short, 0xF0A) == 0) {
+    if (F1024_PHASE(this).stageAt62 == 0 && F1024_PHASE(this).frameAt64 == 0 && FIELD(short, 0xF0A) == 0) {
         if (FIELD(short, 0x60) > 149 && FIELD(short, 0x60) < 154) {
             SpawnTrackedEffect(830, FIELD(signed char, 0x66)*57 + FLOAT(0x44), FLOAT(0x48) + 94.0f, FIELD(signed char, 0x66), 1, 1);
             FIELD(short, 0xF0A) = 1;
