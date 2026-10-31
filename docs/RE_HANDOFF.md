@@ -151,29 +151,25 @@ real CC is present. Original whole
 true saved-this EBP and 0x720
 frame are not reconstructed.
 
-[F1001 late 82KB 2BC/2BD](THIRD_FIGHTER_STAGES_2BC_2BD_F1001.md):
-tracked partial father now
-**62,063B/17,012 x86**.
-Real original 2BC **755B/199x86/
-15 true PE fields**, all native
-mnemonic/widths aligned;
-2BD **742B/196x86/15 PE**,
-source743B, one ADD-width
-defect ordinal133. Initial
-stage3 shot Y PE global
-**00659284**, later double
-shots **0065836C** — independently
-verified, earlier hypothesis wrong.
-8 natural 2BD signed integer
-grammars fail to repair width.
-[F998 25E](THIRD_FIGHTER_NINE_SHOT_25E_F998.md)
-882B/236x86/24 PE; real
-25E regresses following
-GPR phase 73/73/65/65.
-[F997 25D](THIRD_FIGHTER_FULL_CIRCLE_25D_REGISTER_RECOVERY_F997.md)
-2,799B/749x86/78 PE first
-repaired these GPR roles.
-Full original 82KB NONEXACT.
+[F1002 native 82KB 2C0/2C1](THIRD_FIGHTER_STAGES_2C0_2C1_F1002.md):
+tracked partial father now **63,053B/
+17,284 x86**. Native original
+2C0=498B/135x86/14 PE and
+2C1=522B/141x86/14 PE;
+**all 276 mnemonic, width,
+GPR roles match**, all 28 PE
+destinations independently checked.
+Real mixed RAW-X/float-Y
+seven-argument sprite effects,
+native stage5 ordering/counts.
+[F1001 2BC/2BD](THIRD_FIGHTER_STAGES_2BC_2BD_F1001.md):
+original 755B/199 and 742B/196,
+30 real PE targets. 2BD one
+ADD width at ordinal133 wrong;
+distinct true first/late Y
+global targets 00659284/
+0065836C. Complete original
+82,796B father NONEXACT.
 
 [F975 19D/19E/19F](THIRD_FIGHTER_STAGES19D19F_F975.md)
 native 400B/97,475B/128,
