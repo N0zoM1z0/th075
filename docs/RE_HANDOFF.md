@@ -146,19 +146,21 @@ unmatched. Important true original callable extents:
 | 0050A580 | 81,539 | Giant state-advance original source reconstruction |
 | 0045DD70 | 60,999 | Giant state-advance original source reconstruction |
 
-[F953 third original 82KB CC/CD phase](THIRD_FIGHTER_CC_CD_NATIVE_PHASE_F953.md):
-two consecutive authentic 435B/128-x86
-original handlers each with **11 genuine
-PE-targeted fields**, now natural C++
-inside 21,237-B partial parent.
-**CD has 77 wrong GPR roles when only
-CD is source-backed, but 0 wrong GPR
-roles when real preceding CC is also
-source-backed.** CC still 77 wrong.
-All native mnemonics and widths
-match both entire case interiors,
-but actual `this` EBP and entire
-82KB giant remain NONEXACT.
+[F955 three-state original 82KB CC/CD/CE phase](THIRD_FIGHTER_CE_NATIVE_PHASE_F955.md):
+original CE 394B/115x86/9 PE targets
+now naturally authored. CE's GPR roles
+improve **72 wrong→0** if true
+preceding CC+CD C++ is present in
+the same 21,616B partial father.
+[F953 original CC/CD](THIRD_FIGHTER_CC_CD_NATIVE_PHASE_F953.md):
+two 435B/128-x86/11 PE target
+cases; CD GPR roles likewise
+improve **77 wrong→0** when
+real CC is present. Original whole
+82,796B fighter is NONEXACT;
+true saved-this EBP and 0x720
+frame are not reconstructed.
+
 [F952 CB register-phase negatives](THIRD_FIGHTER_CB_REGISTER_PHASE_F952.md):
 28 whole-parent variants did not
 repair CB 79 wrong GPR roles.
