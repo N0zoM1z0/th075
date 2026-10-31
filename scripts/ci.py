@@ -10,6 +10,7 @@ EXACT_TESTS = (
     "test_function_workflow.py",
     "test_exact_checkpoint.py",
     "test_status_goal.py",
+    "test_probe_archive_allowlist_f907.py",
 )
 
 

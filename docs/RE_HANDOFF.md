@@ -164,7 +164,11 @@ is eligible:
 
 Keep the original EXE, Wine/VC7.1 prefix, Ghidra,
 accepted matching objects, configs, original receipts
-and local compressed history archives. The
+and local compressed history archives. The F907 script
+scripts/archive-recent-probe-objects-f907.py safely restores
+individual SHA256-original F650–F906 research OBJ/PDB copies
+from the machine-local archive; 4,712 files were compacted,
+reclaiming 220,205,684 original loose bytes net. The
 scripts/archive-frozen-giant-traces.py helper recovers
 SHA256-verified archived historical original traces.
 Do not remove the only copy of any private research

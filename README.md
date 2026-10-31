@@ -117,6 +117,11 @@ checkpoints, not Oracle acceptance; no push is assumed.
 The original EXE, VC7.1/Wine prefix, Ghidra project,
 accepted matching objects, source, manifests, and
 uncredited original PE receipts must be preserved.
+F907 additionally archived **4,712 regenerable historical
+VC7.1 OBJ/PDB research copies**, recovering **220,205,684 bytes**
+net after whole-archive SHA256 verification. The locally
+ignored archive must be retained; restore individual old binaries
+through scripts/archive-recent-probe-objects-f907.py.
 Older loose machine-generated diagnostics were
 compressed into **local, ignored, SHA256-verified
 archives**: they are **not included in Git clones**.

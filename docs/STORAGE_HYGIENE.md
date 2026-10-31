@@ -1,6 +1,6 @@
 # TH075 local storage hygiene and lossless recovery
 
-**Updated 2026-10-30, after F754 frozen-giant-trace compaction and active-document reconciliation.**
+**Updated 2026-10-31, F907 local reversible probe-binary compaction.**
 This is a storage report and **lossless local recovery recipe**, NOT
 permission to remove original PE, C++/COFF research evidence, active
 work, matching objects, or unrecognized dirty changes. The archives,
@@ -12,7 +12,59 @@ instructions ARE tracked, but a fresh clone will not contain the
 archives. Historical F597 and older JSON/PDB/CI archives are still
 available and independently restorable.
 
-## Latest F754 cleanup: 1,931 SHA256-recoverable frozen giant ASM/COD/LOG files
+## Latest F907: 4,712 regenerable VC7.1 OBJ/PDB files losslessly archived
+
+The 2026-10-31 executed cleanup selected **only** loose Git-ignored
+research binaries under .analysis/f650-* through .analysis/f906-*,
+with filename extensions OBJ or PDB. The latest selected giant object
+.analysis/f901-fighter-31b/Boss005214B0-F901-whole.obj was **excluded**.
+All original game/source files, original native PE, normal VC7.1/Wine,
+H184 protected objects, Ghidra, accepted build/matching, generated C++
+and all JSON research receipts remain untouched.
+
+| Actual archived source evidence | Measured value |
+| --- | ---: |
+| Regenerable complete source-probe OBJ/PDB files | **4,712** |
+| All original loose file bytes, verified before removal | **267,798,945 B** |
+| New local compressed archive | **46,739,344 B** |
+| Original-path/size/SHA256 JSON receipt | **853,917 B** |
+| **Net disk reclaimed (including the receipt)** | **220,205,684 B (210.00 MiB)** |
+
+New SHA256-verified, **machine-local and NOT in Git**:
+
+- .analysis/cache-archives/f650-f906-regenerable-obj-pdb-2026-10-31.tar.gz
+- .analysis/cache-archives/f650-f906-regenerable-obj-pdb-2026-10-31-receipt.json
+
+Archive file SHA256:
+8a1902225b45854f9c6c7810071b97b6ecd4f04c3013a126b1bc7f9a3661c982.
+Every original member was hashed on disk, packed, **stream-verified
+against its original SHA256 while the loose copy remained intact**, and
+all original files were rechecked again before unlinking. The archive
+was then independently verified after deletion. A real original
+F900 baseline OBJ was restored to its exact old path, its SHA256
+checked independently, and the identical restored duplicate was
+safely re-compacted, leaving the original compressed evidence intact.
+
+F907 tracking/recovery script (preserved in Git):
+
+    scripts/repo-python scripts/archive-recent-probe-objects-f907.py --family binaries --plan
+    scripts/repo-python scripts/archive-recent-probe-objects-f907.py --family binaries --verify
+    scripts/repo-python scripts/archive-recent-probe-objects-f907.py --family binaries --restore .analysis/f900-archive-grouped-locals/baseline.obj
+    scripts/repo-python scripts/archive-recent-probe-objects-f907.py --family binaries --recompact-restored .analysis/f900-archive-grouped-locals/baseline.obj
+
+**Do not rerun --archive while the archive and receipt exist.** It
+refuses replacement. If an older source experiment needs its original
+OBJ/PDB at the old location, restore only that SHA256-verified file.
+Recompiling a source after cleanup can generate a different OBJ or
+PDB at an archived path; verification preserves that new loose copy,
+and restoration/recompaction refuses to overwrite or delete modified
+research. A fresh Git clone contains the script, NOT the local
+archive or receipt; back them up before cleaning/moving the worktree.
+No native original exact function byte credit changed.
+
+---
+
+## Earlier F754 cleanup: 1,931 SHA256-recoverable frozen giant ASM/COD/LOG files
 
 **Actual executed archive:** frozen generated text traces from original
 historical investigations in only two allowlisted local directories:

@@ -143,6 +143,16 @@ or verifier changes. Documentation-only changes need `git diff --check`.
   archived path: archive `--verify` still works but reports the
   changed loose copy. Both `--restore` and `--recompact-restored`
   reject overwriting/removing that newly generated research file.
+  **F907 now supersedes the F694 time-specific claim that all F650+
+  PDBs remain loose:** 4,712 eligible regenerable F650–F906 OBJ/PDB
+  copies have been compressed with a SHA256 receipt, then their loose
+  copies removed only after exhaustive archive validation. Current F901
+  selected whole OBJ, normal CPP and JSON PE receipts, source code,
+  matching build, Ghidra and Wine remain protected. Restore only an
+  individual historical original binary when needed using
+  scripts/archive-recent-probe-objects-f907.py --family binaries --restore
+  ORIGINAL_RELATIVE_PATH. The new archive and index are *local*, not in Git.
+  See docs/STORAGE_HYGIENE.md for exact local retention requirements.
   F754 additionally SHA256-verified, compressed and removed only
   **1,931 frozen f133–f166 giant generated `.asm/.cod/.log` traces**,
   reclaiming **86,614,259 bytes net** including full per-path receipt.
