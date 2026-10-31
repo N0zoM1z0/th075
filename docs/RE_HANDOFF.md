@@ -127,6 +127,17 @@ unmatched. Important true original callable extents:
 | 0050A580 | 81,539 | Giant state-advance original source reconstruction |
 | 0045DD70 | 60,999 | Giant state-advance original source reconstruction |
 
+[F923/F924/F926 full-fighter register-owner controls](FIGHTER_REGISTER_OWNER_GRAMMAR_F926.md):
+**38 + 24 complete VC7.1 whole-father sources** test real
+actor 0x59 and opponent 0x63 signed-stage/float
+lvalue grammars. None improves the first GPR mismatch
+at whole ordinal 2198 (original 00545109, nineteen
+wrong roles in action0x59) or fixes the three native
+0x63 CMP register-width roles. A portable 10-whole-
+source bounded verifier records the negative result.
+**The 58KB original remains NONEXACT**; no partial
+case or total-size credit.
+
 [F916/F917 whole-parent x87 improvement](FIGHTER_WHOLE_BURST_NATIVE_FSUBR_F917.md):
 original 00543210's four real projectile-X calculations at
 native x86 ordinals 11765/11970/12328/12528 now use a
