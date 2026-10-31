@@ -166,14 +166,21 @@ real CC is present. Original whole
 true saved-this EBP and 0x720
 frame are not reconstructed.
 
-[F957 original CA→CB register phase tests](THIRD_FIGHTER_CA_PRECEDES_CB_GPR_F957.md):
-30 successfully compiled full partial
-father sources modify genuine preceding
-CA types, loops and bullet expressions.
-**NONE** improves the following
-native CB's 79 GPR differences;
-nine tracked complete parent controls
-reproduce PE/GPR and afterRET checks.
+[F958 selected 82KB partial father and native 12C/12D](THIRD_FIGHTER_STAGE12C12D_F958.md):
+new TRACKED cumulative whole C++ parent
+source emits **22,012B/5,975 x86**,
+restoring original 12C=207B/59 and
+12D=219B/61 with 12 real PE fields,
+**ZERO mnemonic/width/GPR differences**.
+Original 12C has NO afterRET table entry:
+source boundary grounded via actual
+D2 251B/74-x86 terminus and real
+12D successor label. Entire original
+82,796-B game giant still NONEXACT.
+[F957 CA→CB source controls](THIRD_FIGHTER_CA_PRECEDES_CB_GPR_F957.md):
+30 real complete parent variants failed
+to improve CB's 79 wrong GPR roles.
+
 [F952 local CB grammar negatives](THIRD_FIGHTER_CB_REGISTER_PHASE_F952.md):
 28 separate natural whole-parent
 variants also failed to fix CB GPR.
