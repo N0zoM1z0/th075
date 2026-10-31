@@ -284,6 +284,53 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   slots remain wrong. No
   accepted whole CODE.
   [F864 physical proof](SCENE_THREE_REAL_NAMED_POINTERS_F864.md).
+- **F894 actual original 2DD physical boundary and full EAX random-return ABI:**
+  Numeric 2DE maps to
+  common DEFAULT 52CB25
+  and falsely suggests
+  6358B as 2DD CODE;
+  actual next physical
+  state is 2E4 at 52B466.
+  Original 2DD complete
+  535B/153x86/14 physical
+  PE fields. Native stage3
+  random455580 returns
+  actual EAX int, stores
+  FILD stack EBP-0x10C,
+  adds global6592A0.
+  Incorrect short return
+  generates MOVSX,
+  538B/154x86 nonnative.
+  New whole father 41,072B/
+  11,584x86, four real
+  giant epilogue JMP bytes
+  remain, all 69 prior game
+  cases and five packed
+  901B tables verified.
+  [F894 original physical proof](SCRIPTED_FIGHTER_PHYSICAL_2DD_F894.md).
+- **F893 actual original 2DC 660B/188-x86/17 original PE fields:**
+  Ground contact native
+  POS48+POS54 <= ground
+  triggers aux24 and whole
+  fighter exit; sprite33B
+  stage2 and sprite338
+  stage13, random0..30
+  guarded by getter match,
+  stage15 speed15/height12.5
+  and stage24 aux22.
+  Full parent 40,552B/
+  11,433x86, only four
+  authentic giant JMP
+  operand bytes differ;
+  three false equal-size
+  full VC7.1 sources
+  independently rejected.
+  Original 68 previous
+  native cases and all
+  five 901B packed tables
+  verified. Whole fighter
+  NONEXACT.
+  [F893 native PE proof](SCRIPTED_FIGHTER_NATIVE_STAGE_2DC_F893.md).
 - **F892 original 2DB 556B/162x86 borrowed-owner distance and guarded random:**
   native 556B/162 x86/
   13 real physical PE

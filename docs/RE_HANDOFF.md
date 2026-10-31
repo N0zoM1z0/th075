@@ -2831,6 +2831,54 @@ scripts/repo-python scripts/verify-scripted-fighter-stage2dc-f893.py.
 Whole original 46,755B
 fighter remains NONEXACT.
 
+**F894 original fighter 2DD PHYSICAL bound and 455580 real EAX return:**
+numeric successor 2DE is
+DEFAULT 0052CB25, falsely
+implying **6358B 2DD**;
+real next PHYSICAL native
+2E4 starts 0052B466,
+so actual 2DD is
+**0052B24F..0052B465,
+535 inner CODE B/153x86/
+14 true physical PE fields**.
+Stage3 actual int-return
+RandomBoundary455580(0,6)
+writes FULL 32-bit EAX
+into native FILD temporary
+**EBP-0x10C**, adds
+float global006592A0
+to height, uses sprite7F
+and speed16; stage18
+sprite335/Prepare4,
+stage26 aux24. Stage>Y
+contact native <= ground
+with float00659090 and
+aux26/whole giant exit.
+Wrong borrowed SHORT return
+instead emits MOVSX and
+**538B/154x86** nonnative
+entire inner case, verified.
+New one full VC7.1 parent
+**41,072 callable CODE B/
+11,584x86** (F893
+40,552/11,433), native
+535B/153x86/14 PE fields
+all correct and only FOUR
+whole giant far-JMP bytes
++246/+247,+531/+532
+different, zero inner GPR
+or branch errors.
+Previous 69 original
+game-state interiors,
+five packed 901B afterRET
+DATA tables and shared
+getter four genuine
+GPR errors verified.
+[F894 true original PE physical source](SCRIPTED_FIGHTER_PHYSICAL_2DD_F894.md);
+scripts/repo-python scripts/verify-scripted-fighter-physical2dd-f894.py.
+Original whole 46,755B
+fighter still NONEXACT.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin
