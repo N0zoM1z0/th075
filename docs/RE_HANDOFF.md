@@ -3063,6 +3063,42 @@ scripts/repo-python scripts/verify-scripted-fighter-stage2f0-f898.py.
 Full original 46,755B
 fighter still NONEXACT.
 
+**F899 actual original 2F8 complete handler geometry:**
+original 0052C4D3
+**1,151 native CODE B /
+316 x86/28 real typed
+PE fields**. Current whole
+VC7.1 source **46,308
+callable CODE B/13,097
+x86**; all native PE
+fields, opcodes and first
+315 instruction widths
+restored. Last source
+JMP still short 2B vs
+native 5B: source
+1,148B, three absent
+original bytes NOT masked
+or credited. Actual
+intermediate x87 stack
+slots -128/-12C/-130/
+-134/-138 confirmed.
+Adding true 2F8 naturally
+restores preceding 2F0
+to original **828B/
+229x86/19 fields**.
+Two same-size false
+source controls compiled
+and rejected; previous
+78 original native game
+case interiors, five
+packed 901B afterRET
+DATA tables and common
+getter 34/34 nonfield
+rechecked. Whole original
+46,755B giant NONEXACT.
+[F899 original physical evidence](SCRIPTED_FIGHTER_NATIVE_2F8_F899.md);
+scripts/repo-python scripts/verify-scripted-fighter-stage2f8-f899.py.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin

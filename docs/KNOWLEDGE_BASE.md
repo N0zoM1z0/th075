@@ -284,6 +284,35 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   slots remain wrong. No
   accepted whole CODE.
   [F864 physical proof](SCENE_THREE_REAL_NAMED_POINTERS_F864.md).
+- **F899 original 2F8 native 1151B and previous 2F0 restoration:**
+  Real 2F8 1,151
+  CODE B/316 x86/
+  28 original physical
+  PE fields. New full
+  compiler source
+  46,308B/13,097
+  x86. Last actual
+  2F8 source 1,148B:
+  native 5B JMP relaxes
+  to a 2B short JMP;
+  three native bytes
+  uncredited. Five
+  real numeric/float
+  stack temporaries
+  -128/-12C/-130/
+  -134/-138 verified.
+  Previous 2F0 naturally
+  becomes complete 828B
+  native geometry with
+  19 PE fields. All
+  78 prior native cases,
+  five packed 901B
+  tables and shared
+  getter 34/34 original
+  nonfield bytes checked.
+  Original whole giant
+  still NONEXACT.
+  [F899 original PE](SCRIPTED_FIGHTER_NATIVE_2F8_F899.md).
 - **F898 native physical 2F0 828B/229x86 staged double gravity and physical 2EA repair:**
   Actual original 2F0
   828B/229x86/19 typed
