@@ -284,6 +284,31 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   slots remain wrong. No
   accepted whole CODE.
   [F864 physical proof](SCENE_THREE_REAL_NAMED_POINTERS_F864.md).
+- **F887 native 2BF original fully shaped 473B/138x86/15 PE fields:**
+  actual stage0 writes
+  short+80=0x63 THEN =1,
+  stage2 native sprite74/
+  33D and two __ftol2
+  calls to original6406AC.
+  One complete normal
+  VC7.1 source 36,519B/
+  10,301x86; physical
+  2BF has ZERO GPR or
+  stack nonfield errors,
+  ONLY two true original
+  far-epilogue giant JMP
+  displacement bytes differ.
+  15 PE destinations and
+  original branch geometry
+  independently verified.
+  62 earlier native cases/
+  five afterRET 901B packed
+  tables and getter real
+  GPR negatives rechecked.
+  STILL whole original
+  46,755B NONEXACT, no
+  internal case CODE credit.
+  [F887 original PE proof](SCRIPTED_FIGHTER_NATIVE_2BF_F887.md).
 - **F886 original 2BE native 461B C++ float-to-short conversion and raw Y:**
   whole real 461B/136
   x86/15 physical PE

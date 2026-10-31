@@ -2558,6 +2558,42 @@ scripts/repo-python scripts/verify-scripted-fighter-stage2be-f886.py.
 Original 46,755B giant
 still NONEXACT.
 
+**F887 native original 2BF high-quality whole-inner game source:**
+original 0052A05B..0052A233
+**473B/138x86/15 true PE fields**.
+Stage0 writes actual short+80
+**0x63 THEN 1**, stage2
+sprite74 and33D, two real
+__ftol2 -> original006406AC;
+stage10 Prepare7, stage11
+trajectory10.0f. One current
+normal VC7.1 whole fighter
+emits **36,519 callable
+CODE B/10,301x86** (F886
+36,061/10,165). 2BF has
+ZERO original nonrelocation
+GPR/stack wrong bytes:
+ONLY **TWO enclosing giant
+epilogue JMP field bytes**
++469/+470 differ, original
+far tail0052CB4F. All 15
+physical original PE fields
+and all 138 native opcode/
+width/relative positions
+verified. Wrong omission
+of first short80 store
+produces nonnative geometry.
+All 62 previous original
+case interiors, five packed
+901B afterRET tables and
+46B getter true GPR negative
+rechecked. STILL NO
+independent exact credit:
+whole original 46,755B
+callable fighter NONEXACT.
+[F887 actual original physical PE proof](SCRIPTED_FIGHTER_NATIVE_2BF_F887.md);
+scripts/repo-python scripts/verify-scripted-fighter-2bf-f887.py.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin
