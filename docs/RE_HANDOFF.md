@@ -145,9 +145,25 @@ unmatched. Important true original callable extents:
 | Original start | Native CODE B | Current lead |
 | --- | ---: | --- |
 | 00543210 | 58,294 + 943 separate afterRET DATA | [F917 selected native signed burst X](FIGHTER_WHOLE_BURST_NATIVE_FSUBR_F917.md): all 16,471 native/source mnemonics now align; 3 genuine width errors remain |
-| 004AC040 | 82,796 | Giant state-advance original source reconstruction |
+| 004AC040 | 82,796 + 1,126 separate afterRET DATA | [F938](THIRD_FIGHTER_REAL_BOUNCE_F938.md): full source probe now includes real 0x59 (356B/95 x86/16 PE targets) instead of a marker; entire 82KB remains NONEXACT |
 | 0050A580 | 81,539 | Giant state-advance original source reconstruction |
 | 0045DD70 | 60,999 | Giant state-advance original source reconstruction |
+
+[F938 third 82KB original actor: recovered real 0x59 source](THIRD_FIGHTER_REAL_BOUNCE_F938.md):
+independent original 004AC040 state 0x59 at
+004ADEFA..004AE05E is **356B/95 x86/16 original
+PE targets**. A new tracked complete (but still
+partially stubbed) VC7.1 father fixture replaces
+its previous 15B two-instruction marker with real
+stage3 bounce C++; the entire original 82KB giant
+is still NONEXACT. The natural source emitted
+**16,312B/4,280 x86**. Native original 0x58 stays
+strict in the selected variant; the separate
+postincrement-loop control also repairs next
+0x59's 19 GPR-role errors but regresses 0x58
+by 1 mnemonic/2 widths. All 151 afterRET table
+labels and 522 data nonfield bytes independently
+checked against the PE.
 
 [F934/F937 strict native 0x58 controls](FIGHTER_STRICT_PREDECESSOR_LIMIT_F937.md):
 49 additional complete 58KB normal VC7.1
