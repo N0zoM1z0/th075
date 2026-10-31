@@ -1,3 +1,4 @@
+#include "FighterVitalBorrowedF999.hpp"
 #include "FighterRoundOutcomeBytesF992.hpp"
 #include "ProgressSelectionKeysF954.hpp"
 #include "KnockoutProgressF172.hpp"
@@ -39,7 +40,7 @@ void CardProgressF172::SetCardValue(signed char key, int value)
 
 void KnockoutResolutionF172::ResolveKnockout()
 {
-    if (SECOND(short, 0x324) <= 0) {
+    if (F999_VITAL(FIELD(unsigned char*, 0x48)).currentAt324 <= 0) {
         F992_OUTCOME(FIELD(unsigned char*, 0x44)).outcomeAt3CE.unsignedAt3CE = 0;
         F992_OUTCOME(FIELD(unsigned char*, 0x48)).outcomeAt3CE.unsignedAt3CE = 1;
         if (SECOND(int, 0x3A4) > 0) {
@@ -72,16 +73,16 @@ void KnockoutResolutionF172::ResolveKnockout()
         SECOND(unsigned char, 0x39C) = 0;
         SECOND(signed char, 0x39D)--;
         F992_OUTCOME(FIELD(unsigned char*, 0x48)).continuationAt3CF = 0;
-        SECOND(short, 0x326) = 0;
+        F999_VITAL(FIELD(unsigned char*, 0x48)).recoverableAt326 = 0;
         FIRST(unsigned char, 0x464) = 1;
-        if (FIRST(short, 0x324) <= 0)
-            FIRST(short, 0x324) = 1;
+        if (F999_VITAL(FIELD(unsigned char*, 0x44)).currentAt324 <= 0)
+            F999_VITAL(FIELD(unsigned char*, 0x44)).currentAt324 = 1;
         if (SECOND(signed char, 0x39D) > 0) {
             FIELD(unsigned char, 0x18) = 9;
             FIELD(int, 0xC) = 147;
             if (SECOND_ARRAY(signed char, 0x32B)[SECOND(signed char, 0x39D)] == 0) {
-                SECOND(short, 0x324) = SECOND_ARRAY(short, 0x33E)[SECOND(signed char, 0x39D)];
-                SECOND(short, 0x326) = SECOND_ARRAY(short, 0x33E)[SECOND(signed char, 0x39D)];
+                F999_VITAL(FIELD(unsigned char*, 0x48)).currentAt324 = SECOND_ARRAY(short, 0x33E)[SECOND(signed char, 0x39D)];
+                F999_VITAL(FIELD(unsigned char*, 0x48)).recoverableAt326 = SECOND_ARRAY(short, 0x33E)[SECOND(signed char, 0x39D)];
                 SECOND(int, 0x3A8) = 0;
             }
         } else {
@@ -89,8 +90,8 @@ void KnockoutResolutionF172::ResolveKnockout()
             FIELD(int, 0xC) = 180;
             FIELD(short, 0x1A) = 60;
         }
-    } else if (FIRST(short, 0x324) <= 0) {
-        SECOND(short, 0x326) = SECOND_ARRAY(short, 0x33E)[SECOND(signed char, 0x39D)];
+    } else if (F999_VITAL(FIELD(unsigned char*, 0x44)).currentAt324 <= 0) {
+        F999_VITAL(FIELD(unsigned char*, 0x48)).recoverableAt326 = SECOND_ARRAY(short, 0x33E)[SECOND(signed char, 0x39D)];
         FIRST(short, 0x3A0) = 0;
         FIRST(unsigned char, 0x39C) = 0;
         FIRST(signed char, 0x39D)--;
@@ -99,8 +100,8 @@ void KnockoutResolutionF172::ResolveKnockout()
         F992_OUTCOME(FIELD(unsigned char*, 0x44)).continuationAt3CF = 0;
         FIRST(unsigned char, 0x464) = 0;
         if (FIRST(signed char, 0x39D) != 0) {
-            FIRST(short, 0x326) = 10000;
-            FIRST(short, 0x324) = 10000;
+            F999_VITAL(FIELD(unsigned char*, 0x44)).recoverableAt326 = 10000;
+            F999_VITAL(FIELD(unsigned char*, 0x44)).currentAt324 = 10000;
             FIELD(unsigned char, 0x18) = 10;
             FIELD(int, 0xC) = 300;
             FIELD(short, 0x1A) = 60;

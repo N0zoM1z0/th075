@@ -201,21 +201,16 @@ remain native PE source-backed.
 49 complete 58KB actor variants
 did not repair later GPR roles.
 
-[F931 native 58KB register phase](FIGHTER_FOLLOWING_BOUNCE_REGISTER_PHASE_F931.md):
-real loop fixes next 0x59 GPR
-19→0; regresses preceding 0x58.
+[F931 58KB GPR phase](FIGHTER_FOLLOWING_BOUNCE_REGISTER_PHASE_F931.md):
+real loop cross-case negative.
 
 [F926 58KB register negatives](FIGHTER_REGISTER_OWNER_GRAMMAR_F926.md):
 full-native owner grammar trials
 did not repair GPR register phase.
 
-[F917 58KB projectile-X x87 source recovery](FIGHTER_WHOLE_BURST_NATIVE_FSUBR_F917.md):
-four real original IMUL/FILD/FSUBR
-sequences now byte-correct, and
-all 16,471 whole-parent mnemonics
-align. Three native width and
-many real GPR/PE differences
-persist; entire giant NONEXACT.
+[F917 native 58KB signed X](FIGHTER_WHOLE_BURST_NATIVE_FSUBR_F917.md):
+all mnemonic roles align, three
+real width differences remain.
 
 ## 4. All three remaining independent small/medium originals
 
@@ -359,25 +354,19 @@ functions cold exact, 730 existing
 CODE B**. VC7.1 templated
 offsetof limitation is documented.
 
-[F980 original five fighter-gauge short fields](FIGHTER_GAUGE_NATIVE_SIGNED_SHORTS_F980.md):
-typed native signed shorts +0x3B0/
-3B2/3B4/3B6/3B8 in four original
-source objects; 944B hit-response
-retains proven source after typed
-version changed exact COFF $L labels.
-Full final affected/control cohort
-**13/13 whole functions cold exact,
-4,031 PREVIOUSLY accepted B**.
+[F980 native fighter gauge words](FIGHTER_GAUGE_NATIVE_SIGNED_SHORTS_F980.md):
+five signed short fields
++0x3B0..0x3B8 validated;
+**13/13 whole cold exact,
+4,031 previously accepted B**.
+One large hit-response must
+retain native COFF $L labels.
 
-[F986 original two-byte fighter fade window](FIGHTER_FADE_SHARED_BYTES_F986.md):
-original unsigned actor bytes
-+0x538/+0x539 now shared across
-five original source objects.
-**43/43 complete native original
-functions cold exact**, preserving
-**6,185 previously accepted CODE B**,
-including full battle renderer,
-large timer and virtual actions.
+[F986 native fade byte pair](FIGHTER_FADE_SHARED_BYTES_F986.md):
+actor+0x538/+0x539 unsigned
+BYTE across five original objects,
+**43/43 cold-exact full functions,
+6,185 previously accepted B**.
 
 [F992 native result-byte signed/unsigned view](FIGHTER_ROUND_RESULT_BYTE_WINDOW_F992.md):
 physical actor +0x3CE signed
@@ -392,6 +381,16 @@ showed strict $L-label identity
 regressions; original grammar
 restored, **3/3 independent
 whole control replays exact**.
+
+[F999 native adjacent current/recoverable health](FIGHTER_NATIVE_VITAL_SHORT_WINDOW_F999.md):
+signed WORD actor +0x324/+0x326
+now borrowed across five original
+source objects. All **47/47
+affected whole callables cold
+exact**, preserving **6,640
+PREVIOUSLY accepted CODE B**
+including many small leafs and
+large frame/gauge controllers.
 
 ## 5. Exact acceptance, storage, and end-of-session checks
 

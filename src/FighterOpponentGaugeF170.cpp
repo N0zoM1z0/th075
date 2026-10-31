@@ -1,3 +1,4 @@
+#include "FighterVitalBorrowedF999.hpp"
 #include "FighterGaugeBorrowedF980.hpp"
 #include "FighterOpponentGaugeF170.hpp"
 #include "BattleCombat.hpp"
@@ -27,16 +28,16 @@ void FighterOpponentGaugeF170::ApplyOpponentGaugeChange(
         FLOAT(0x3C0) = 1.0f;
     }
     FIELD(short, 0x3C6) += change;
-    OTHER(short, 0x324) -= change;
-    if (OTHER(short, 0x324) <= 0)
-        OTHER(short, 0x324) = 0;
+    F999_VITAL(FIELD(unsigned char*, 0x2E8)).currentAt324 -= change;
+    if (F999_VITAL(FIELD(unsigned char*, 0x2E8)).currentAt324 <= 0)
+        F999_VITAL(FIELD(unsigned char*, 0x2E8)).currentAt324 = 0;
     if (OTHER(short, 0x3A0) > 0) {
-        OTHER(short, 0x326) -= change;
+        F999_VITAL(FIELD(unsigned char*, 0x2E8)).recoverableAt326 -= change;
     } else {
-        OTHER(short, 0x326) -= change * (0.75 - F980_GAUGE(FIELD(unsigned char*, 0x2E8)).meterAt3B0 * 0.25 / 1000.0);
+        F999_VITAL(FIELD(unsigned char*, 0x2E8)).recoverableAt326 -= change * (0.75 - F980_GAUGE(FIELD(unsigned char*, 0x2E8)).meterAt3B0 * 0.25 / 1000.0);
     }
     if (OTHER(short, 0x3A0) > 0 || OTHER(unsigned char, 0x39C) != 0)
-        OTHER(short, 0x326) = OTHER(short, 0x324);
+        F999_VITAL(FIELD(unsigned char*, 0x2E8)).recoverableAt326 = F999_VITAL(FIELD(unsigned char*, 0x2E8)).currentAt324;
     FIELD(short, 0x3C4) += count;
     FLOAT(0x3C0) = (multiplier / 100.0f) * FLOAT(0x3C0);
 }

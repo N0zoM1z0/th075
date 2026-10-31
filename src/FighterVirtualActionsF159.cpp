@@ -1,3 +1,4 @@
+#include "FighterVitalBorrowedF999.hpp"
 #include "FighterRoundOutcomeBytesF992.hpp"
 #include "FighterFadeBorrowedF986.hpp"
 #include <string.h>
@@ -174,8 +175,8 @@ void FighterBaseActionsF159::ResetRound()
     FIELD(unsigned char, 0x39D) = 2;
     FIELD(unsigned int, 0x3A8) = 0;
     FIELD(unsigned int, 0x3A4) = 0;
-    FIELD(short, 0x324) = 10000;
-    FIELD(short, 0x326) = 10000;
+    F999_VITAL(this).currentAt324 = 10000;
+    F999_VITAL(this).recoverableAt326 = 10000;
     FIELD(unsigned char, 0x52C) = 0;
     FIELD(unsigned char, 0x52D) = 0;
     FIELD(unsigned char, 0x52F) = 0;

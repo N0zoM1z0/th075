@@ -1,3 +1,4 @@
+#include "FighterVitalBorrowedF999.hpp"
 #include "FighterRoundOutcomeBytesF992.hpp"
 #include "RoundEndHudF173.hpp"
 #include "CameraUpdate4126C0.hpp"
@@ -9,14 +10,14 @@
 
 void RoundEndF173::EnterRoundEnd()
 {
-    if (FIRST(short, 0x324) <= 0 || SECOND(short, 0x324) <= 0) {
+    if (F999_VITAL(FIELD(unsigned char*, 0x44)).currentAt324 <= 0 || F999_VITAL(FIELD(unsigned char*, 0x48)).currentAt324 <= 0) {
         FIRST(short, 0x3A0) = 0;
         SECOND(short, 0x3A0) = 0;
         FIRST(unsigned char, 0x39C) = 0;
         SECOND(unsigned char, 0x39C) = 0;
         FIELD(short, 0x1A) = 60;
-        if (FIRST(short, 0x324) <= 0) {
-            if (SECOND(short, 0x324) <= 0) {
+        if (F999_VITAL(FIELD(unsigned char*, 0x44)).currentAt324 <= 0) {
+            if (F999_VITAL(FIELD(unsigned char*, 0x48)).currentAt324 <= 0) {
                 FIRST(signed char, 0x39D) = 1;
                 SECOND(signed char, 0x39D) = 1;
                 FIELD(unsigned char, 0x18) = 2;
@@ -32,8 +33,8 @@ void RoundEndF173::EnterRoundEnd()
                 F992_OUTCOME(FIELD(unsigned char*, 0x48)).outcomeAt3CE.unsignedAt3CE = 0;
                 FIELD(short, 0x1A) = 60;
                 if (FIRST(signed char, 0x39D) != 0) {
-                    FIRST(short, 0x326) = 10000;
-                    FIRST(short, 0x324) = 10000;
+                    F999_VITAL(FIELD(unsigned char*, 0x44)).recoverableAt326 = 10000;
+                    F999_VITAL(FIELD(unsigned char*, 0x44)).currentAt324 = 10000;
                     FIELD(unsigned char, 0x18) = 2;
                     FIELD(int, 0xC) = 300;
                 } else {
@@ -42,14 +43,14 @@ void RoundEndF173::EnterRoundEnd()
                     FIELD(int, 0xC) = 180;
                 }
             }
-        } else if (SECOND(short, 0x324) <= 0) {
+        } else if (F999_VITAL(FIELD(unsigned char*, 0x48)).currentAt324 <= 0) {
             SECOND(signed char, 0x39D)--;
             F992_OUTCOME(FIELD(unsigned char*, 0x48)).continuationAt3CF = 0;
             F992_OUTCOME(FIELD(unsigned char*, 0x44)).outcomeAt3CE.unsignedAt3CE = 0;
             F992_OUTCOME(FIELD(unsigned char*, 0x48)).outcomeAt3CE.unsignedAt3CE = 1;
             if (SECOND(signed char, 0x39D) != 0) {
-                SECOND(short, 0x326) = 10000;
-                SECOND(short, 0x324) = 10000;
+                F999_VITAL(FIELD(unsigned char*, 0x48)).recoverableAt326 = 10000;
+                F999_VITAL(FIELD(unsigned char*, 0x48)).currentAt324 = 10000;
                 FIELD(unsigned char, 0x18) = 2;
                 FIELD(int, 0xC) = 300;
             } else {

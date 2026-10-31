@@ -1,3 +1,4 @@
+#include "FighterVitalBorrowedF999.hpp"
 #include "FighterFadeBorrowedF986.hpp"
 #include "FighterGaugeBorrowedF980.hpp"
 #include "CombatTimers.hpp"
@@ -48,8 +49,8 @@ void FrameActor::UpdateCounters()
         if (SELF(float, 0x368) > 1000.0f) SELF(float, 0x368) = 1000.0f;
         if (g_CombatMode == 3 && SELF(signed char, 0x2CD) != 0) SELF(float, 0x36C) = 900.0f;
         if (g_CombatMode != 3 || SELF(signed char, 0x2CD) == 0) {
-            if (SELF(short, 0x3A0) > 0 && SELF(short, 0x326) > SELF(short, 0x324)) SELF(short, 0x324) += 100;
-            if (SELF(short, 0x326) < SELF(short, 0x324)) SELF(short, 0x324) = SELF(short, 0x326);
+            if (SELF(short, 0x3A0) > 0 && F999_VITAL(this).recoverableAt326 > F999_VITAL(this).currentAt324) F999_VITAL(this).currentAt324 += 100;
+            if (F999_VITAL(this).recoverableAt326 < F999_VITAL(this).currentAt324) F999_VITAL(this).currentAt324 = F999_VITAL(this).recoverableAt326;
         }
         if (F980_GAUGE(this).cooldownAt3B6 > 0) {
             F980_GAUGE(this).cooldownAt3B6 -= 2;
@@ -71,8 +72,8 @@ void FrameActor::UpdateCounters()
         F980_GAUGE(this).previousAt3B2 = F980_GAUGE(this).meterAt3B0;
     }
 updateViewBounds:
-    if (SELF(short, 0x324) < 0) SELF(short, 0x324) = 0;
-    if (SELF(short, 0x326) < 0) SELF(short, 0x326) = 0;
+    if (F999_VITAL(this).currentAt324 < 0) F999_VITAL(this).currentAt324 = 0;
+    if (F999_VITAL(this).recoverableAt326 < 0) F999_VITAL(this).recoverableAt326 = 0;
     if (SELF(int, 0x47C) > 0) --SELF(int, 0x47C);
     if (SELF(signed char, 0x484) > 0) --SELF(signed char, 0x484);
     if (F986_FADE(this).fadeAlphaAt538 > 0) F986_FADE(this).fadeAlphaAt538 -= 3;
