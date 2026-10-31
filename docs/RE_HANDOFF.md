@@ -3287,6 +3287,41 @@ scripts/repo-python scripts/verify-scripted-fighter-byte-decrement-f905.py.
 No exact callable giant
 or internal case credit.
 
+**F906 real first native fighter GPR-role difference:**
+Original whole 005214B0
+46,755 CODE B/13,230 x86;
+selected source 46,754 B/
+13,230 x86. First wrong
+register operand is
+**whole x86 ordinal 2103,
+native 0052327A, game
+action 0x59**; first
+2,103 preceding native
+register operands agree
+but are not asserted
+whole-code exact.
+Native 0x59 is 356 B/
+95 x86/16 real PE
+call/global fields (both
+genuine __ftol2 calls
+at 006406AC checked).
+Original x86 mnemonics/
+widths agree but
+**19 GPR operands differ
+in action0x59**, and
+2,736 instruction GPR
+roles differ across the
+current complete parent.
+33 real VC7.1 /Od
+full-fighter alternatives
+were compiled, 29 retained
+13,230 x86, none improved
+19/2,736 wrong GPR roles.
+No interior/whole exact
+CODE acceptance.
+[F906 original PE GPR proof](FIGHTER_FIRST_GPR_DIVERGENCE_F906.md);
+scripts/repo-python scripts/verify-scripted-fighter-first-gpr-f906.py.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin

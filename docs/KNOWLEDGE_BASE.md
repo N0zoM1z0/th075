@@ -284,6 +284,33 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   slots remain wrong. No
   accepted whole CODE.
   [F864 physical proof](SCENE_THREE_REAL_NAMED_POINTERS_F864.md).
+- **F906 first whole-fighter native GPR mismatch:**
+  Original 46,755B/
+  13,230-x86 fighter
+  vs generated 46,754B/
+  13,230 x86. First
+  wrong register role
+  is original ordinal
+  **2103** at native
+  0052327A, real game
+  state0x59. First 2,103
+  register roles agree
+  but no whole-code
+  exactness is claimed.
+  Native 0x59 is 356B/
+  95x86/16 original
+  physical PE fields
+  including two genuine
+  __ftol2 calls.
+  It retains 19 wrong
+  GPR instruction operands;
+  entire current parent
+  has 2,736 wrong GPR
+  roles. 33 complete
+  genuine VC7.1 source
+  variations compiled,
+  no improvement.
+  [F906 original PE proof](FIGHTER_FIRST_GPR_DIVERGENCE_F906.md).
 - **F905 original native 252/253/254 short byte-SUB register phase:**
   Native 260/260/224B,
   72/72/63-x86, true
