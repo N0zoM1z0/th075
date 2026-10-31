@@ -3130,6 +3130,40 @@ or cropped PE match.
 scripts/repo-python scripts/verify-scene-texture-ownership-f882.py.
 Original Scene still NONEXACT.
 
+**F889 independent authored small Scene destructor: 29 whole real free-parameter ownership models:**
+normal VC7.1 /Od /GX
+original 0043B0B0
+248B/75x86/12 physical
+PE fields. Twenty-eight
+true *used* mixed 1+2
+or 2+1 cleanup member
+and named pointer ownership
+C++ forms across four
+declaration timings,
+register and pointer
+volatile variants tested.
+ALL 29 full sources compile
+to correct 248B/75x86/
+12 physical PE field
+offsets/callee targets.
+But ALL mixed versions
+yield only **189/200**
+original nonrelocation
+bytes, baseline 3-field
+aggregate **191/200**.
+Texture/delete temp slots
+remain -20/-1C instead
+of native -14/-10,
+and first CRT free gets
+two additional genuinely
+wrong stack bytes.
+Thus mixed live cleanup
+ownership hypothesis is
+DISPROVEN, no whole exact
+Scene function or CODE.
+[F889 whole small original PE experiments](SCENE_MIXED_REAL_FREE_POINTER_OWNERS_F889.md);
+scripts/repo-python scripts/verify-scene-mixed-owner-slots-f889.py.
+
 ## 4. Attribution, validation, research and storage
 
 - **Original authored ≠ compiler/library ≠ unknown**. The 95 unknown

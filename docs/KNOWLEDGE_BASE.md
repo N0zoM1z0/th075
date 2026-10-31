@@ -284,6 +284,33 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   slots remain wrong. No
   accepted whole CODE.
   [F864 physical proof](SCENE_THREE_REAL_NAMED_POINTERS_F864.md).
+- **F889 independent Scene 248B/75x86 real 1+2/2+1 free locals:**
+  29 complete normal VC7.1
+  /Od /GX authored
+  destructor C++ sources;
+  28 genuine mixed
+  aggregate/named-pointer
+  models use all three
+  original free member
+  values and preserve
+  true clock/texture/base
+  cleanup behavior.
+  All 29 retain the
+  original 12 physical
+  PE field offsets/types
+  and actual destinations.
+  The 28 mixed models
+  worsen native nonfield
+  from baseline 191/200
+  to **189/200** with
+  two more true stack
+  bytes wrong, while
+  native texture/deleter
+  EBP -14/-10 remain
+  source -20/-1C.
+  No whole exact credit,
+  no mass replay.
+  [F889 original evidence](SCENE_MIXED_REAL_FREE_POINTER_OWNERS_F889.md).
 - **F888 original 2C0/2C1 guarded sprite345 and shared getter register restoration:**
   Native 288B/85x86/
   11 PE fields and 276B/
