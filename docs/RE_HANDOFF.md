@@ -152,13 +152,24 @@ and [CC/CD](THIRD_FIGHTER_CC_CD_NATIVE_PHASE_F953.md)
 proofs preserved. Full fighter
 still NONEXACT.
 
+[F1029 native 82KB action259 angle controls](THIRD_FIGHTER_NATIVE_259_ANGLE_GPR_F1029.md):
+EIGHT whole original-shaped
+82KB C++ builds, all native
+15 PE fields and 151 DIR32.
+Real 259 845B/212x86,
+source 844B, 3 ADD widths
+and 137 GPR roles wrong.
+True const signed F02,
+integer/float math order
+and cast grammar all negative.
+
 [F1023 82KB 2BC/BE GPR review](THIRD_FIGHTER_2BC_2BE_GPR_GRAMMARS_F1023.md):
 20 full native 82KB
 controls negative.
 
-[F1021 82KB native 58/59](THIRD_FIGHTER_NATIVE_58_59_FULL_GPR_CONTROLS_F1021.md):
-strict loop remains,
-register phase nonexact.
+[F1021 native 58/59](THIRD_FIGHTER_NATIVE_58_59_FULL_GPR_CONTROLS_F1021.md):
+ten original GPR
+grammar controls negative.
 
 [F1020 82KB native geometry](THIRD_FIGHTER_SHARED_REAL_RING_LOCAL_F1020.md):
 82,796B/22,721 x86,
