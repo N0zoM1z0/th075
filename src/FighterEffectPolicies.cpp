@@ -1,3 +1,4 @@
+#include "FighterGaugeBorrowedF980.hpp"
 #include "FighterEffectBorrowedFieldsF973.hpp"
 #include "FighterEffectPolicies.hpp"
 
@@ -41,14 +42,14 @@ void FighterEffectPoliciesF135::PlaySharedSound(short sound)
 
 void FighterEffectPoliciesF135::UpdateGaugeTimer(int amount)
 {
-    if (FIELD(short, 0x3B6) > 0) {
-        FIELD(short, 0x3B6) = 1000;
+    if (F980_GAUGE(this).cooldownAt3B6 > 0) {
+        F980_GAUGE(this).cooldownAt3B6 = 1000;
     } else {
-        FIELD(short, 0x3B0) = FIELD(short, 0x3B0) - amount;
-        if (FIELD(short, 0x3B0) <= 0 && FIELD(short, 0x3B6) <= 0) {
+        F980_GAUGE(this).meterAt3B0 = F980_GAUGE(this).meterAt3B0 - amount;
+        if (F980_GAUGE(this).meterAt3B0 <= 0 && F980_GAUGE(this).cooldownAt3B6 <= 0) {
             PlaySharedSound(43);
-            FIELD(short, 0x3B0) = 0;
-            FIELD(short, 0x3B6) = 1000;
+            F980_GAUGE(this).meterAt3B0 = 0;
+            F980_GAUGE(this).cooldownAt3B6 = 1000;
         }
     }
 }

@@ -1,3 +1,4 @@
+#include "FighterGaugeBorrowedF980.hpp"
 #include "FighterOpponentGaugeF170.hpp"
 #include "BattleCombat.hpp"
 
@@ -32,7 +33,7 @@ void FighterOpponentGaugeF170::ApplyOpponentGaugeChange(
     if (OTHER(short, 0x3A0) > 0) {
         OTHER(short, 0x326) -= change;
     } else {
-        OTHER(short, 0x326) -= change * (0.75 - OTHER(short, 0x3B0) * 0.25 / 1000.0);
+        OTHER(short, 0x326) -= change * (0.75 - F980_GAUGE(FIELD(unsigned char*, 0x2E8)).meterAt3B0 * 0.25 / 1000.0);
     }
     if (OTHER(short, 0x3A0) > 0 || OTHER(unsigned char, 0x39C) != 0)
         OTHER(short, 0x326) = OTHER(short, 0x324);

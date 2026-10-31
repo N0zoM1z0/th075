@@ -1,3 +1,4 @@
+#include "FighterGaugeBorrowedF980.hpp"
 #include "CombatTimers.hpp"
 #define FIELD(type, object, offset) (*reinterpret_cast<type *>(reinterpret_cast<unsigned char *>(object) + offset))
 #define SELF(type, offset) FIELD(type, this, offset)
@@ -49,24 +50,24 @@ void FrameActor::UpdateCounters()
             if (SELF(short, 0x3A0) > 0 && SELF(short, 0x326) > SELF(short, 0x324)) SELF(short, 0x324) += 100;
             if (SELF(short, 0x326) < SELF(short, 0x324)) SELF(short, 0x324) = SELF(short, 0x326);
         }
-        if (SELF(short, 0x3B6) > 0) {
-            SELF(short, 0x3B6) -= 2;
-            SELF(short, 0x3B0) = 0;
-            if (SELF(short, 0x3B6) <= 0) {
+        if (F980_GAUGE(this).cooldownAt3B6 > 0) {
+            F980_GAUGE(this).cooldownAt3B6 -= 2;
+            F980_GAUGE(this).meterAt3B0 = 0;
+            if (F980_GAUGE(this).cooldownAt3B6 <= 0) {
                 reinterpret_cast<CombatTimerActor *>(this)->PlaySharedSound(47);
-                SELF(short, 0x3B0) = 1000;
+                F980_GAUGE(this).meterAt3B0 = 1000;
             }
-        } else if (SELF(short, 0x3B0) < SELF(short, 0x3B2)) {
-            SELF(short, 0x3B4) = 60;
-        } else if (SELF(short, 0x3B4) > 0) {
-            --SELF(short, 0x3B4);
+        } else if (F980_GAUGE(this).meterAt3B0 < F980_GAUGE(this).previousAt3B2) {
+            F980_GAUGE(this).waitAt3B4 = 60;
+        } else if (F980_GAUGE(this).waitAt3B4 > 0) {
+            --F980_GAUGE(this).waitAt3B4;
         } else {
             if ((!reinterpret_cast<CombatTimerActor *>(this)->IsState150To199() ||
-                (SELF(short, 0x60) != 209 && SELF(short, 0x60) != 210)) && SELF(short, 0x3B4) == 0)
-                SELF(short, 0x3B0) += 3;
-            if (SELF(short, 0x3B0) > 1000) SELF(short, 0x3B0) = 1000;
+                (SELF(short, 0x60) != 209 && SELF(short, 0x60) != 210)) && F980_GAUGE(this).waitAt3B4 == 0)
+                F980_GAUGE(this).meterAt3B0 += 3;
+            if (F980_GAUGE(this).meterAt3B0 > 1000) F980_GAUGE(this).meterAt3B0 = 1000;
         }
-        SELF(short, 0x3B2) = SELF(short, 0x3B0);
+        F980_GAUGE(this).previousAt3B2 = F980_GAUGE(this).meterAt3B0;
     }
 updateViewBounds:
     if (SELF(short, 0x324) < 0) SELF(short, 0x324) = 0;

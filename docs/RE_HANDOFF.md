@@ -94,14 +94,10 @@ Next: simultaneous native 0x58 + 0x59 grammar.
 27 full VC7.1 parent variations did
 not repair 0x59's register phase.
 
-- [F906 first true GPR divergence](FIGHTER_FIRST_GPR_DIVERGENCE_F906.md):
-  whole x86 ordinal **2103**, original address **0052327A**,
-  case **0x59**. Currently **2,736 instruction GPR-role
-  mismatches** in the complete father; 0x59 alone has 19
-  GPR-role differences (356B/95 x86/16 real PE fields).
-  33 full VC7.1 source variations did not improve them.
-  Targeted reproducer:
-  scripts/repo-python scripts/verify-scripted-fighter-first-gpr-f906.py
+- [F906 first GPR divergence](FIGHTER_FIRST_GPR_DIVERGENCE_F906.md):
+  whole 46KB case 0x59 at native 0052327A/ordinal2103.
+  2,736 GPR-role errors remain; 33 full source variants negative.
+
 - [F903 0x63](SCRIPTED_FIGHTER_MODE63_TYPED_GPR_F903.md):
   original 417B/109 x86; 29 C++ alternatives failed to
   restore native CMP roles/widths. Source PE field at
@@ -166,20 +162,17 @@ real CC is present. Original whole
 true saved-this EBP and 0x720
 frame are not reconstructed.
 
-[F979 native 82KB 1A3/1A4 random loops](THIRD_FIGHTER_RANDOM_LOOPS_1A3_1A4_F979.md):
-tracked full-partial father **36,871B/
-10,093 x86**; original 1A3=556B/147,
-1A4=570B/151, 22 true PE targets,
-zero wrong mnemonic/width positions,
-67/71 GPR errors. Original stage0
-has NO Reset call; action completion
-is 9. [F978 dual five-shot 1A2](THIRD_FIGHTER_DUAL_FIVE_SHOT_F978.md)
-original 1,142B/309x86/24 PE fields
-with ten authentic sprite0x344 calls.
-[F977 real 1A1 ESI loop](THIRD_FIGHTER_RANDOM_LOOP_1A1_F977.md)
+[F979 original 82KB 1A3/1A4](THIRD_FIGHTER_RANDOM_LOOPS_1A3_1A4_F979.md):
+tracked partial father 36,871B/10,093
+x86, real original 556B/147 and
+570B/151 cases; 22 true PE targets,
+0 mnemonic/width errors, 67/71 GPR
+errors. [F978 dual five-shot 1A2](THIRD_FIGHTER_DUAL_FIVE_SHOT_F978.md):
+1,142B/309 x86, 24 real PE fields.
+[F977 real 1A1](THIRD_FIGHTER_RANDOM_LOOP_1A1_F977.md)
 and [F976 real 1A0](THIRD_FIGHTER_RANDOM_LOOP_F976.md)
-restore previous 191 x87 width debt
-12→8→4; whole giant NONEXACT.
+recover ESI save and prior 191 widths.
+Whole original giant NONEXACT.
 
 [F975 19D/19E/19F](THIRD_FIGHTER_STAGES19D19F_F975.md)
 native 400B/97,475B/128,
@@ -188,11 +181,9 @@ native 400B/97,475B/128,
 Complete original 82,796B
 fighter remains NONEXACT.
 
-[F957 native CA→CB GPR negatives](THIRD_FIGHTER_CA_PRECEDES_CB_GPR_F957.md):
-30 complete partial parent trials did
-not improve CB's 79 wrong GPR
-roles; next focus genuine parent
-stack and ownership.
+[F957 preceding CA negative](THIRD_FIGHTER_CA_PRECEDES_CB_GPR_F957.md):
+30 full-parent variants did not fix
+following CB's 79 GPR errors.
 
 [F952 local CB grammar negatives](THIRD_FIGHTER_CB_REGISTER_PHASE_F952.md):
 28 separate natural whole-parent
@@ -372,6 +363,16 @@ Affected **8/8 complete native
 functions cold exact, 730 existing
 CODE B**. VC7.1 templated
 offsetof limitation is documented.
+
+[F980 original five fighter-gauge short fields](FIGHTER_GAUGE_NATIVE_SIGNED_SHORTS_F980.md):
+typed native signed shorts +0x3B0/
+3B2/3B4/3B6/3B8 in four original
+source objects; 944B hit-response
+retains proven source after typed
+version changed exact COFF $L labels.
+Full final affected/control cohort
+**13/13 whole functions cold exact,
+4,031 PREVIOUSLY accepted B**.
 
 ## 5. Exact acceptance, storage, and end-of-session checks
 
