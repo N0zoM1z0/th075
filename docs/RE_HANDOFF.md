@@ -151,29 +151,23 @@ real CC is present. Original whole
 true saved-this EBP and 0x720
 frame are not reconstructed.
 
-[F1003 original 82KB 2C2/2C3](THIRD_FIGHTER_STAGES_2C2_2C3_F1003.md):
-tracked partial father now
-**64,060B/17,559 x86**.
-Real original 2C2 **515B/138x86/
-14 PE** and 2C3 **522B/141x86/
-14 PE**; zero wrong mnemonic,
-width or GPR operand roles.
-Original 2C2 setter/shot occurs
-INSIDE animation completion
-branch and jumps to shared tail.
-[F1002 earlier 2C0/2C1](THIRD_FIGHTER_STAGES_2C0_2C1_F1002.md)
-498B/135 and 522B/141,
-**28 typed PE**, all original
-GPR roles still match. Four
-consecutive native cases now
-**555 complete x86 GPR-role
-positions and 56 actual PE
-targets aligned**. [F1001 real
-2BC/2BD](THIRD_FIGHTER_STAGES_2BC_2BD_F1001.md)
-earlier 755B/199 and 742B/196,
-30 PE fields; 2BD one ADD width
-wrong. Whole original 82KB
-fighter remains NONEXACT.
+[F1004 original 82KB mode-cadence 2E5](THIRD_FIGHTER_NATIVE_CADENCE_2E5_F1004.md):
+tracked original-shaped partial
+**64,810B/17,756 x86**.
+Native 2E5 **765B/199x86/
+14 original PE fields**, zero
+wrong mnemonic, width, GPR.
+Genuine signed mode global
+006714D0 and randomized
+short+0x516, two FILD/FSUBR
+0x387 shots. [F1002 2C0/2C1](THIRD_FIGHTER_STAGES_2C0_2C1_F1002.md)
+and [F1003 2C2/2C3](THIRD_FIGHTER_STAGES_2C2_2C3_F1003.md)
+still have **555 correct original
+GPR roles and 56 PE targets**.
+[F1001 2BC/2BD](THIRD_FIGHTER_STAGES_2BC_2BD_F1001.md)
+retains one native ADD width
+difference. Entire original
+82KB parent NONEXACT.
 
 [F975 19D/19E/19F](THIRD_FIGHTER_STAGES19D19F_F975.md)
 native 400B/97,475B/128,
