@@ -151,26 +151,30 @@ real CC is present. Original whole
 true saved-this EBP and 0x720
 frame are not reconstructed.
 
-[F1014 true original 82KB default and tail](THIRD_FIGHTER_ACTUAL_DEFAULT_TAIL_F1014.md):
-tracked original-shaped partial
-**72,739B/19,950 x86**.
-Actual default004C037D..004C03A7
-**42B/13x86/3 native PE**,
-all mnemonic/width/GPR roles
-match; true separate
-**5B/4x86 shared epilogue**
-is independently verified at
-004C03A7..004C03AC.
-AfterRET 151 DIR32 labels
-and 522 nonfield bytes exact.
-[F1013 original final 31B/31C](THIRD_FIGHTER_REAL_FINAL_31B_31C_F1013.md):
-257B/76 and 219B/63,
-16 native PE fields, all
-mnemonic/width/GPR aligned.
-[F1012 original 303](THIRD_FIGHTER_NATIVE_303_X87_F1012.md):
-1,014B/267 x86/29 PE all
-positional roles aligned.
-Whole 82,796B still NONEXACT.
+[F1016 native original 82KB double ring 2DB](THIRD_FIGHTER_TWO_RINGS_2DB_F1016.md):
+tracked PARTIAL father now
+**74,630B/20,496 x86**.
+Original 2DB **1,894B/
+548x86/38 physical PE
+targets** with ALL native
+mnemonic, width and GPR
+roles aligned. Two ordinary
+36-shot sprite0x385 loops,
+10-degree spacing, real
+float speed5 then10,
+native Y global00659460;
+real stage6 six sprites
+0x338..0x33D, opacity,
+ground, random and FCOMP
+facing. Prior/following
+12 real states retain all
+GPR roles and PE fields.
+[F1014 native default](THIRD_FIGHTER_ACTUAL_DEFAULT_TAIL_F1014.md):
+42B/13x86/3 PE and
+distinct 5B shared epilogue
+match; [F1013 final 31B/31C](THIRD_FIGHTER_REAL_FINAL_31B_31C_F1013.md)
+139 native x86/16 PE also
+aligned. Whole 82KB NONEXACT.
 
 [F975 19D/19E/19F](THIRD_FIGHTER_STAGES19D19F_F975.md)
 native 400B/97,475B/128,
