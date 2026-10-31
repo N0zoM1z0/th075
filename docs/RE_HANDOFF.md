@@ -151,23 +151,27 @@ real CC is present. Original whole
 true saved-this EBP and 0x720
 frame are not reconstructed.
 
-[F994 original 82KB 261/262 ten-shot loops](THIRD_FIGHTER_TEN_SHOT_261_262_F994.md):
-tracked partial VC7.1 father
-**52,238B/14,416 x86**,
-original 261/262 each
-361B/98 x86/8 genuine PE.
-**0 wrong mnemonic, width,
-GPR roles** for both; prior
-[F993 25F/260](THIRD_FIGHTER_TEN_SHOT_25F_260_F993.md)
-466B/114x86/9 PE each also
-retains **zero GPR errors**
-across complete whole parent.
-Total four ten-shot cases
-**424 native x86 roles align,
-34 physical PE targets verified**.
-Real source frame 0x380
-vs native 0x720; exact
-whole function still NONEXACT.
+[F995 original 82KB full-circle 25B](THIRD_FIGHTER_FULL_CIRCLE_25B_F995.md):
+tracked partial source now
+**55,916B/15,371 x86**,
+adds real original 25B
+**3,693B/957x86/77 typed PE
+fields**, 36 physical shots
+with original angles 0..350,
+all native mnemonics and
+widths correct, 577 GPR
+roles wrong. Genuine owner
+growth frame0x380→0x410
+**regresses following GPR
+phase**: [F993 25F/260](THIRD_FIGHTER_TEN_SHOT_25F_260_F993.md)
+0→73/73 and [F994 261/262](THIRD_FIGHTER_TEN_SHOT_261_262_F994.md)
+0→65/65 wrong GPR roles;
+their original mnemonic/widths
+and 34 PE fields still match.
+Four natural scope/typed-X
+whole-source controls negative.
+Original full 82,796B
+callable remains NONEXACT.
 
 [F975 19D/19E/19F](THIRD_FIGHTER_STAGES19D19F_F975.md)
 native 400B/97,475B/128,
