@@ -75,12 +75,10 @@ scripts/repo-python scripts/verify-scripted-fighter-tail31b-31c-f901.py
   physical PE call/global targets are verified, yet 424
   source fields move absolutely and twelve also move
   relative to action252/254. Never relocation-mask shifted fields.
-- [F932 native 0x59 register phase](SCRIPTED_FIGHTER_CROSS_BOSS_LOOP_REGISTER_PHASE_F932.md):
-  true preceding ten-shot postincrement loop
-  fixes the following 0x59's 19 wrong
-  GPR roles, but regresses original 0x58
-  by one mnemonic and two widths; complete
-  46KB parent remains NONEXACT.
+- [F932 register-phase cross-actor negative](SCRIPTED_FIGHTER_CROSS_BOSS_LOOP_REGISTER_PHASE_F932.md):
+  real 0x58 loop repairs following
+  0x59 GPR roles but regresses
+  preceding native mnemonics/widths.
 
 [F909 pre59 negatives](FIGHTER_PRE59_REGISTER_PHASE_F909.md):
 27 whole-source native trials
@@ -90,12 +88,11 @@ did not fix subsequent GPR roles.
   whole 46KB case 0x59 at native 0052327A/ordinal2103.
   2,736 GPR-role errors remain; 33 full source variants negative.
 
-- [F903 0x63](SCRIPTED_FIGHTER_MODE63_TYPED_GPR_F903.md):
-  original 417B/109 x86; 29 C++ alternatives failed to
-  restore native CMP roles/widths. Source PE field at
-  case+184 is originally at case+185. One source makes
-  the whole father 46,755 B but incorrectly grows case63
-  to 418B. **A matching total length is not exactness.**
+- [F903 genuine 46KB mode63](SCRIPTED_FIGHTER_MODE63_TYPED_GPR_F903.md):
+  29 full-source owner controls negative;
+  matching whole length alone regresses
+  original 417B/109-x86 case width.
+
 - [F902 1FD](SCRIPTED_FIGHTER_1FD_TYPED_OWNER_LVALUES_F902.md):
   fourteen real owner-access models failed to recover
   original six-byte CMP ECX,0x95; source uses five-byte CMP EAX.
@@ -200,12 +197,11 @@ remain native PE source-backed.
 did not repair the native next-state
 register phase without 0x58 regressions.
 
-[F931 58KB original preceding-loop GPR phase](FIGHTER_FOLLOWING_BOUNCE_REGISTER_PHASE_F931.md):
-real `while (burst++<10)` moves next
-0x59 GPR errors **19→0**, but regresses
-original preceding 0x58 by one
-mnemonic/two widths. Not an exact
-native whole father.
+[F931 58KB native following register phase](FIGHTER_FOLLOWING_BOUNCE_REGISTER_PHASE_F931.md):
+real post-increment ten-shot loop
+repairs next 0x59 GPR 19→0,
+regresses preceding 0x58.
+Whole father NONEXACT.
 
 [F926 58KB mode63 register negatives](FIGHTER_REGISTER_OWNER_GRAMMAR_F926.md):
 38+24 complete natural source
@@ -381,6 +377,20 @@ functions cold exact**, preserving
 **6,185 previously accepted CODE B**,
 including full battle renderer,
 large timer and virtual actions.
+
+[F992 native result-byte signed/unsigned view](FIGHTER_ROUND_RESULT_BYTE_WINDOW_F992.md):
+physical actor +0x3CE signed
+read/unsigned write union,
+adjacent +0x3CF unsigned byte.
+Final changed cohort **45/45
+whole functions cold exact,
+4,191 PREVIOUSLY accepted B**
+over three original sources.
+Three large combat/state functions
+showed strict $L-label identity
+regressions; original grammar
+restored, **3/3 independent
+whole control replays exact**.
 
 ## 5. Exact acceptance, storage, and end-of-session checks
 

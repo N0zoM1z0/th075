@@ -1,3 +1,4 @@
+#include "FighterRoundOutcomeBytesF992.hpp"
 #include "ProgressSelectionKeysF954.hpp"
 #include "KnockoutProgressF172.hpp"
 #include "BattleCombat.hpp"
@@ -39,8 +40,8 @@ void CardProgressF172::SetCardValue(signed char key, int value)
 void KnockoutResolutionF172::ResolveKnockout()
 {
     if (SECOND(short, 0x324) <= 0) {
-        FIRST(unsigned char, 0x3CE) = 0;
-        SECOND(unsigned char, 0x3CE) = 1;
+        F992_OUTCOME(FIELD(unsigned char*, 0x44)).outcomeAt3CE.unsignedAt3CE = 0;
+        F992_OUTCOME(FIELD(unsigned char*, 0x48)).outcomeAt3CE.unsignedAt3CE = 1;
         if (SECOND(int, 0x3A4) > 0) {
             if (g_FrameClockMode == 1) {
                 if (FIRST(unsigned char, 0x464) != 0)
@@ -70,7 +71,7 @@ void KnockoutResolutionF172::ResolveKnockout()
         FIRST(unsigned char, 0x39C) = 0;
         SECOND(unsigned char, 0x39C) = 0;
         SECOND(signed char, 0x39D)--;
-        SECOND(unsigned char, 0x3CF) = 0;
+        F992_OUTCOME(FIELD(unsigned char*, 0x48)).continuationAt3CF = 0;
         SECOND(short, 0x326) = 0;
         FIRST(unsigned char, 0x464) = 1;
         if (FIRST(short, 0x324) <= 0)
@@ -93,9 +94,9 @@ void KnockoutResolutionF172::ResolveKnockout()
         FIRST(short, 0x3A0) = 0;
         FIRST(unsigned char, 0x39C) = 0;
         FIRST(signed char, 0x39D)--;
-        FIRST(unsigned char, 0x3CE) = 1;
-        SECOND(unsigned char, 0x3CE) = 0;
-        FIRST(unsigned char, 0x3CF) = 0;
+        F992_OUTCOME(FIELD(unsigned char*, 0x44)).outcomeAt3CE.unsignedAt3CE = 1;
+        F992_OUTCOME(FIELD(unsigned char*, 0x48)).outcomeAt3CE.unsignedAt3CE = 0;
+        F992_OUTCOME(FIELD(unsigned char*, 0x44)).continuationAt3CF = 0;
         FIRST(unsigned char, 0x464) = 0;
         if (FIRST(signed char, 0x39D) != 0) {
             FIRST(short, 0x326) = 10000;

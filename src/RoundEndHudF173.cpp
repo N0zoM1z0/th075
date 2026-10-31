@@ -1,3 +1,4 @@
+#include "FighterRoundOutcomeBytesF992.hpp"
 #include "RoundEndHudF173.hpp"
 #include "CameraUpdate4126C0.hpp"
 
@@ -19,16 +20,16 @@ void RoundEndF173::EnterRoundEnd()
                 FIRST(signed char, 0x39D) = 1;
                 SECOND(signed char, 0x39D) = 1;
                 FIELD(unsigned char, 0x18) = 2;
-                FIRST(unsigned char, 0x3CF) = 0;
-                SECOND(unsigned char, 0x3CF) = 0;
-                FIRST(unsigned char, 0x3CE) = 1;
-                SECOND(unsigned char, 0x3CE) = 1;
+                F992_OUTCOME(FIELD(unsigned char*, 0x44)).continuationAt3CF = 0;
+                F992_OUTCOME(FIELD(unsigned char*, 0x48)).continuationAt3CF = 0;
+                F992_OUTCOME(FIELD(unsigned char*, 0x44)).outcomeAt3CE.unsignedAt3CE = 1;
+                F992_OUTCOME(FIELD(unsigned char*, 0x48)).outcomeAt3CE.unsignedAt3CE = 1;
                 FIELD(int, 0xC) = 300;
             } else {
                 FIRST(signed char, 0x39D)--;
-                FIRST(unsigned char, 0x3CF) = 0;
-                FIRST(unsigned char, 0x3CE) = 1;
-                SECOND(unsigned char, 0x3CE) = 0;
+                F992_OUTCOME(FIELD(unsigned char*, 0x44)).continuationAt3CF = 0;
+                F992_OUTCOME(FIELD(unsigned char*, 0x44)).outcomeAt3CE.unsignedAt3CE = 1;
+                F992_OUTCOME(FIELD(unsigned char*, 0x48)).outcomeAt3CE.unsignedAt3CE = 0;
                 FIELD(short, 0x1A) = 60;
                 if (FIRST(signed char, 0x39D) != 0) {
                     FIRST(short, 0x326) = 10000;
@@ -43,9 +44,9 @@ void RoundEndF173::EnterRoundEnd()
             }
         } else if (SECOND(short, 0x324) <= 0) {
             SECOND(signed char, 0x39D)--;
-            SECOND(unsigned char, 0x3CF) = 0;
-            FIRST(unsigned char, 0x3CE) = 0;
-            SECOND(unsigned char, 0x3CE) = 1;
+            F992_OUTCOME(FIELD(unsigned char*, 0x48)).continuationAt3CF = 0;
+            F992_OUTCOME(FIELD(unsigned char*, 0x44)).outcomeAt3CE.unsignedAt3CE = 0;
+            F992_OUTCOME(FIELD(unsigned char*, 0x48)).outcomeAt3CE.unsignedAt3CE = 1;
             if (SECOND(signed char, 0x39D) != 0) {
                 SECOND(short, 0x326) = 10000;
                 SECOND(short, 0x324) = 10000;

@@ -1,3 +1,4 @@
+#include "FighterRoundOutcomeBytesF992.hpp"
 #include "FighterFadeBorrowedF986.hpp"
 #include <string.h>
 #include "FighterAnimationReset453D80.hpp"
@@ -165,8 +166,8 @@ void FighterBaseActionsF159::ResetRound()
     FIELD(float, 0x9C) = 1.0f;
     FIELD(float, 0xA0) = 1.0f;
     F986_FADE(this).fadeAlphaAt538 = 0;
-    FIELD(unsigned char, 0x3CE) = 0;
-    FIELD(unsigned char, 0x3CF) = 1;
+    F992_OUTCOME(this).outcomeAt3CE.unsignedAt3CE = 0;
+    F992_OUTCOME(this).continuationAt3CF = 1;
     reinterpret_cast<RoundResetInputCountsF159*>(reinterpret_cast<unsigned char*>(this) + 0x494)->ClearHeldCounts();
     FIELD(RoundResetEffectsF159*, 0x2EC)->DeleteFourLists();
     FIELD(unsigned char, 0x366) = 2;
