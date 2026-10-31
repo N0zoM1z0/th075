@@ -284,6 +284,33 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   slots remain wrong. No
   accepted whole CODE.
   [F864 physical proof](SCENE_THREE_REAL_NAMED_POINTERS_F864.md).
+- **F874 real 1FD/1FE borrowed owner CFG and register width:**
+  original 1FD 386B/107-x86
+  and 1FE 392B/107-x86,
+  nine real PE fields each,
+  owner pointer this+2E8
+  with different real
+  action66/Reset call order.
+  Original stage/Y test
+  MUST zero +0x80 when
+  stage is inside 50..149;
+  old nested-if skipped this.
+  Correct combined condition
+  JLE ordinal100 to status0
+  ordinal104 now checked.
+  Entire current parent
+  30,860B/8,652 x86;
+  1FE original 392B grammar
+  correct with 66 GPR and
+  four original giant JMP
+  byte negatives. 1FD still
+  385B source vs 386B
+  original due native CMP
+  ECX,0x95 6B versus
+  source EAX 5B at ordinal99.
+  Both nonexact, zero whole
+  callable CODE accepted.
+  [F874 original source proof](SCRIPTED_FIGHTER_BORROWED_OWNER_1FD_1FE_F874.md).
 - **F873 real 1FB/1FC two physics-before-stage0 recovery states:**
   each original 253B/
   70-x86/six original

@@ -2099,6 +2099,47 @@ Whole original 46,755B
 still NONEXACT, zero
 split-case exact CODE.
 
+**F874 genuine original 1FD/1FE borrowed owner and actual CFG fix:**
+original game 1FD **386B/107 x86/
+nine true PE fields** and 1FE
+**392B/107 x86/nine PE fields**
+access real this+2E8 actor. 1FD
+sets owner action66 BEFORE Reset;
+1FE resets owner THEN action66.
+Owner floatY equality with
+global0065782C and stage<50/
+>149 must have one combined
+condition: native ordinal100
+JLE targets **status=0 ordinal104**.
+Previous nested-if source wrongly
+skipped status reset for in-range
+owner stage, despite same length.
+This game semantic bug is fixed
+and original CFG x86 targets asserted.
+A new entire VC7.1 parent emits
+**30,860 CODE B/8,652 x86**
+(F873 30,110/8,442). Original
+1FE now matches all 392 native
+B/107-x86 widths and nine fields,
+but **66 true GPR +4 giant
+final-JMP bytes** still differ.
+Original 1FD source remains
+**385B vs native 386B**:
+VC7.1 CMP EAX,149=5B,
+native CMP ECX,149=6B at
+ordinal99. All nine genuine
+physical original PE fields and
+real CFG are correct but **NO
+original 1FD exact credit**.
+All previous 46 native case
+source interiors and five
+901B packed DATA tables
+rechecked, common getter four
+authentic GPR operand negatives.
+[F874 original owner PE/CFG proof](SCRIPTED_FIGHTER_BORROWED_OWNER_1FD_1FE_F874.md);
+scripts/repo-python scripts/verify-scripted-fighter-owner-dual-f874.py.
+Whole 46,755B original still NONEXACT.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin
