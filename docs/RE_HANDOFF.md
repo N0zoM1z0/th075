@@ -166,9 +166,18 @@ real CC is present. Original whole
 true saved-this EBP and 0x720
 frame are not reconstructed.
 
-[F952 CB register-phase negatives](THIRD_FIGHTER_CB_REGISTER_PHASE_F952.md):
-28 whole-parent variants did not
-repair CB 79 wrong GPR roles.
+[F957 original CA→CB register phase tests](THIRD_FIGHTER_CA_PRECEDES_CB_GPR_F957.md):
+30 successfully compiled full partial
+father sources modify genuine preceding
+CA types, loops and bullet expressions.
+**NONE** improves the following
+native CB's 79 GPR differences;
+nine tracked complete parent controls
+reproduce PE/GPR and afterRET checks.
+[F952 local CB grammar negatives](THIRD_FIGHTER_CB_REGISTER_PHASE_F952.md):
+28 separate natural whole-parent
+variants also failed to fix CB GPR.
+
 [F951 CB](THIRD_FIGHTER_FOURWAY_CB_F951.md),
 [F950 CA](THIRD_FIGHTER_FOURWAY_CA_F950.md),
 [F949 C9](THIRD_FIGHTER_FOURWAY_C9_F949.md),
@@ -177,22 +186,10 @@ repair CB 79 wrong GPR roles.
 and earlier [F943](THIRD_FIGHTER_NATIVE_SELECTOR_F943.md)
 remain native PE source-backed.
 
-[F934/F937 strict native 0x58 controls](FIGHTER_STRICT_PREDECESSOR_LIMIT_F937.md):
-49 additional complete 58KB normal VC7.1
-source experiments vary real for-loop and
-true projectile parameter value categories.
-**36** preserve original 0x58's full 135
-x86 mnemonic, width and GPR roles, but
-**ALL 36 retain 19 wrong native 0x59 GPR
-roles**. The seven-source original-PE
-verifier checks original 0x58/0x59's
-17+16 physical fields and entire original
-943B separate afterRET DATA. The prior
-F931 postincrement-while source's 0x59
-improvement is genuine but its 0x58
-regression remains. Neither whole father
-is exact; aim for a truly simultaneous
-original 0x58/0x59 source grammar.
+[F937 58KB strict 0x58 predecessor](FIGHTER_STRICT_PREDECESSOR_LIMIT_F937.md):
+49 complete fighter source variants
+did not repair the native next-state
+register phase without 0x58 regressions.
 
 [F929/F930/F931 preceding real ten-shot-loop register phase](FIGHTER_FOLLOWING_BOUNCE_REGISTER_PHASE_F931.md):
 54 whole 58KB fighter C++ controls show a new
