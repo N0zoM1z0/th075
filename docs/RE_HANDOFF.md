@@ -2685,6 +2685,48 @@ Whole original 46,755B
 still NONEXACT, no internal
 case callable CODE credit.
 
+**F891 original 2C3 independent game-state interior and getter phase sensitivity:**
+original 0052AD4A..0052AD8E
+**69 native inner CODE B/
+20 x86/four real PE calls**.
+True Reset, getter animation
+completion and actual
+dword this+4E0 zero test
+chooses SetAction0 vs1.
+Correct normal VC7.1
+source has ZERO original
+local branch/GPR wrong B,
+only two enclosing giant
+JMP operand bytes +65/+66.
+Two whole normal source
+controls invert conditional
+or access wrong field+4DC:
+equal 69B/20x86 but
+genuinely wrong original
+operand B, rejected.
+New whole parent **39,366
+callable CODE B/11,087x86**
+(F890 39,312/11,069).
+IMPORTANT expanding source
+with native short case2C3
+AGAIN rotates VC7.1
+common getter GPR phase:
+F890 getter 34/34
+original nonfield B;
+F891 getter **30/34**
+with original four
+GPR wrong bytes
++10/+12/+16/+19.
+All 66 previous actual
+native state interiors,
+five 901B packed afterRET
+tables and three getter
+original PE calls verified.
+[F891 original native proof](SCRIPTED_FIGHTER_NATIVE_2C3_F891.md);
+scripts/repo-python scripts/verify-scripted-fighter-transition2c3-f891.py.
+Whole 46,755B original
+remains NONEXACT.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin
