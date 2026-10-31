@@ -2510,6 +2510,54 @@ scripts/repo-python scripts/verify-scripted-fighter-stage2bd-f885.py.
 Whole original 46,755B
 fighter still NONEXACT.
 
+**F886 real original 2BE native float->SHORT helper and integer-Y sprite:**
+native 00529E8E..0052A05A
+**461 complete inner CODE B/
+136x86/15 genuine physical
+original PE call/global fields**.
+State0 Reset and +80=6,
+stage2 correction/floatX
+sprite73 then TWO genuine
+(float -> signed short)
+C++ __ftol2 conversions
+that resolve to original
+helper **006406AC** in
+both real native PE calls,
+writing +F00/+F02.
+Subsequent sprite33C
+through 453B50 uses
+RAW integer Y, unlike
+earlier 2BD floating Y;
+false float method formal
+adds FILD/FSTP and produces
+**464B/137-x86** nonnative
+case, independently compiled.
+Stage10 native animation1F4
+and Prepare6, stage11
+InitTrajectory5 and raw7F.
+Current full VC7.1
+source **36,061 callable
+CODE B/10,165 x86**
+(F885 35,615/10,031).
+All original 136 instruction
+opcodes/widths and 15
+original physical PE fields
+matched. 48 true GPR
+operand bytes plus two
+original giant final JMP
+byte offsets +457/+458
+remain nonexact.
+All 61 previous actual
+original game case interiors,
+all five packed 901B
+afterRET tables and
+common getter four genuine
+GPR negatives rechecked.
+[F886 true original source](SCRIPTED_FIGHTER_NATIVE_STAGE_2BE_F886.md);
+scripts/repo-python scripts/verify-scripted-fighter-stage2be-f886.py.
+Original 46,755B giant
+still NONEXACT.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin

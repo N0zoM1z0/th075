@@ -284,6 +284,36 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   slots remain wrong. No
   accepted whole CODE.
   [F864 physical proof](SCENE_THREE_REAL_NAMED_POINTERS_F864.md).
+- **F886 original 2BE native 461B C++ float-to-short conversion and raw Y:**
+  whole real 461B/136
+  x86/15 physical PE
+  fields in new entire
+  36,061B/10,165-x86
+  fighter. Native source
+  two float-to-short casts
+  emit __ftol2 calls whose
+  true PE destinations
+  BOTH are original
+  0x6406AC. Stage2
+  sprite33C needs RAW
+  integer Y through
+  453B50; floating Y
+  adds FILD/FSTP and
+  makes whole case
+  nonnative 464B/137x86.
+  Correct call order,
+  stage10 animation1F4/
+  Prepare6 and stage11
+  trajectory5/raw7F
+  recovered. Still
+  48 GPR +2 actual giant
+  JMP byte negatives.
+  Earlier 61 physical
+  original game cases
+  and five packed 901B
+  tables checked. No
+  new exact whole CODE.
+  [F886 original PE proof](SCRIPTED_FIGHTER_NATIVE_STAGE_2BE_F886.md).
 - **F885 original 2BD 855B early borrowed-owner X copy and 24 PE fields:**
   full 855 native CODE B/
   239x86/24 typed original
