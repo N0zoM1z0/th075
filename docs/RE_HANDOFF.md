@@ -166,27 +166,20 @@ real CC is present. Original whole
 true saved-this EBP and 0x720
 frame are not reconstructed.
 
-[F977 original 82KB native random 1A1 loops](THIRD_FIGHTER_RANDOM_LOOP_1A1_F977.md):
-TRACKED normal partial fighter
-now **34,624B/9,492 x86**.
-Real 1A1 random 5/8-shot
-source 570B/151x86/12 native
-PE fields, all original ordered
-mnemonics/widths; genuine
-**ESI saving across Rand calls**
-now appears in parent prologue.
-Real whole parent frame grows
-0x16C→0x194, saved receiver
-moves EBP−0x18→−0x20;
-earlier native 191 widths
-wrong **8→4** (four repaired).
-[F976 native 1A0](THIRD_FIGHTER_RANDOM_LOOP_F976.md)
-570B/148x86/12 PE fields
-with original Y-base-before-Rand
-evaluation, prior 191 widths
-12→8; 66 GPR roles still
-wrong. Whole original 82,796B
-fighter remains NONEXACT.
+[F978 authentic original 82KB dual five-shot 1A2](THIRD_FIGHTER_DUAL_FIVE_SHOT_F978.md):
+tracked full-partial father **35,751B/
+9,799 x86**, true 1A2 1,142B/309
+x86/24 PE targets, 0 mnemonic/
+width errors, 171 wrong GPR.
+Two real mode==2/otherwise paths
+each issue five sprite0x344
+shots, retaining original branches.
+[F977 genuine native 1A1 ESI loop](THIRD_FIGHTER_RANDOM_LOOP_1A1_F977.md)
+570B/151x86/12 PE; naturally
+saves ESI, earlier 191 x87 width
+errors 8→4. [F976 1A0 native loops](THIRD_FIGHTER_RANDOM_LOOP_F976.md)
+570B/148x86/12 PE, real Y-before-RNG
+order; original giant NONEXACT.
 
 [F975 19D/19E/19F](THIRD_FIGHTER_STAGES19D19F_F975.md)
 native 400B/97,475B/128,
