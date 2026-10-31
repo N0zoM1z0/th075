@@ -64,7 +64,12 @@ and [F906 first GPR mismatch at 0052327A](docs/FIGHTER_FIRST_GPR_DIVERGENCE_F906
 are the best next steps. **The whole fighter is NOT exact.**
 
 The original **00543210** fighter is another 58,294-B whole giant
-with 943 separately owned afterRET DATA B; it and the
+with 943 separately owned afterRET DATA B. The
+[F917 actual native projectile-X source recovery](docs/FIGHTER_WHOLE_BURST_NATIVE_FSUBR_F917.md)
+now matches all 16,471 native x86 mnemonic ordinals and restores
+four original positive IMUL / FSUBR sequences in the full parent,
+but **three real width and many GPR/PE field mismatches remain**.
+It and the
 other 20 giant originals remain nonexact. Large original
 functions **004AC040** (82,796 B), **0050A580** (81,539 B),
 and **0045DD70** (60,999 B) must not be neglected in favor

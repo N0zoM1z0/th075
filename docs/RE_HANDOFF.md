@@ -122,10 +122,22 @@ unmatched. Important true original callable extents:
 
 | Original start | Native CODE B | Current lead |
 | --- | ---: | --- |
-| 00543210 | 58,294 + 943 separate afterRET DATA | [F781 selected shared getter](FIGHTER_EARLY_SHARED_GETTER_F781.md) |
+| 00543210 | 58,294 + 943 separate afterRET DATA | [F917 selected native signed burst X](FIGHTER_WHOLE_BURST_NATIVE_FSUBR_F917.md): all 16,471 native/source mnemonics now align; 3 genuine width errors remain |
 | 004AC040 | 82,796 | Giant state-advance original source reconstruction |
 | 0050A580 | 81,539 | Giant state-advance original source reconstruction |
 | 0045DD70 | 60,999 | Giant state-advance original source reconstruction |
+
+[F916/F917 whole-parent x87 improvement](FIGHTER_WHOLE_BURST_NATIVE_FSUBR_F917.md):
+original 00543210's four real projectile-X calculations at
+native x86 ordinals 11765/11970/12328/12528 now use a
+**borrowed typed +0x44 float lvalue**, positive signed integer
+IMUL and genuine original x87 FSUBR. In freshly compiled
+58KB whole parents, all **16,471 original instruction mnemonics**
+align and the four **six-instruction native projectile sequences
+are byte-identical**; exactly eight original-relevant source
+opcode/immediate bytes improved. Three original width mismatches
+and many real GPR/absolute relocation differences persist;
+**no whole exact or extra credited CODE**.
 
 These original functions remain nonexact despite local case
 research. Older 58KB parent sizes in the
