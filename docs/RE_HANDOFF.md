@@ -140,7 +140,7 @@ unmatched. Important true original callable extents:
 | Original start | Native CODE B | Current lead |
 | --- | ---: | --- |
 | 00543210 | 58,294 + 943 separate afterRET DATA | [F1025](FIGHTER_58KB_ALL_NATIVE_PE_TARGETS_F1025.md): **1,697/1,697 native physical external PE targets checked**, 16,471 mnemonic aligned, three widths and 1,741 GPR roles remain |
-| 004AC040 | 82,796 + 1,126 separate afterRET DATA | [F938](THIRD_FIGHTER_REAL_BOUNCE_F938.md): full source probe now includes real 0x59 (356B/95 x86/16 PE targets) instead of a marker; entire 82KB remains NONEXACT |
+| 004AC040 | 82,796 + 1,126 separate afterRET DATA | [F1028](THIRD_FIGHTER_WHOLE_82KB_PE_TARGETS_F1028.md): full CODE/x86/frame/this geometry matched; **2,191/2,191 original external PE targets**, 12 widths and 6,958 GPR errors remain |
 | 0050A580 | 81,539 | Giant state-advance original source reconstruction |
 | 0045DD70 | 60,999 | Giant state-advance original source reconstruction |
 
