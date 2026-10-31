@@ -151,26 +151,31 @@ real CC is present. Original whole
 true saved-this EBP and 0x720
 frame are not reconstructed.
 
-[F1007 real original trajectory 2FA](THIRD_FIGHTER_TRAJECTORY_2FA_F1007.md):
-tracked 82KB PARTIAL father
-**67,546B/18,528 x86**.
-Native original 2FA 672B/186x86/
-18 typed PE; source669B,
-all mnemonic roles, one final
-shared-tail JMP width and 113
-GPR differences. True random
-horizontal motion, ground and
-dual world-X facing boundaries.
-**Natural F1007 restores prior
-[F1005 original mode-storm 2E6](THIRD_FIGHTER_MODE_STORM_2E6_F1005.md)
-last near JMP width:** 2E6
-now **2,058B/590 x86 with
-0 wrong mnemonic, width, GPR**
-and 47 true PE targets.
-[F1004 native 2E5](THIRD_FIGHTER_NATIVE_CADENCE_2E5_F1004.md):
-765B/199x86/14 PE with all
-GPR roles correct. Complete
-original 82,796B father NONEXACT.
+[F1008 original 82KB random volleys 2F9](THIRD_FIGHTER_RANDOM_2F9_REGISTER_PHASE_F1008.md):
+tracked PARTIAL father now
+**68,785B/18,852 x86**.
+Native 2F9 **1,254B/326x86,
+33 genuine PE targets**,
+all native mnemonic, width
+and GPR roles correct.
+Real mode-dependent 0x38B
+and seven-arg 0x38A shots,
+random X globals 006593D0
+and 00658370; stage5
+opponent-motion side effects.
+**F1008 restores following
+[F1007 2FA](THIRD_FIGHTER_TRAJECTORY_2FA_F1007.md)
+GPR roles 113 wrong→0**
+without altering 2FA source;
+2FA retains ONE last shared
+JMP width mismatch.
+[F1005 2E6](THIRD_FIGHTER_MODE_STORM_2E6_F1005.md)
+2,058B/590 x86/47 PE and
+[F1004 2E5](THIRD_FIGHTER_NATIVE_CADENCE_2E5_F1004.md)
+765B/199 x86/14 PE retain
+0 GPR/mnemonic/width errors.
+Complete 82,796B original
+father remains NONEXACT.
 
 [F975 19D/19E/19F](THIRD_FIGHTER_STAGES19D19F_F975.md)
 native 400B/97,475B/128,
@@ -199,8 +204,9 @@ remain native PE source-backed.
 49 complete 58KB actor variants
 did not repair later GPR roles.
 
-[F931 58KB GPR phase](FIGHTER_FOLLOWING_BOUNCE_REGISTER_PHASE_F931.md):
-real loop cross-case negative.
+[F931 native GPR phase](FIGHTER_FOLLOWING_BOUNCE_REGISTER_PHASE_F931.md):
+original 58KB parent loop control
+regresses predecessor.
 
 [F926 58KB register negatives](FIGHTER_REGISTER_OWNER_GRAMMAR_F926.md):
 full-native owner grammar trials
@@ -352,13 +358,9 @@ functions cold exact, 730 existing
 CODE B**. VC7.1 templated
 offsetof limitation is documented.
 
-[F980 native fighter gauge words](FIGHTER_GAUGE_NATIVE_SIGNED_SHORTS_F980.md):
-five signed short fields
-+0x3B0..0x3B8 validated;
-**13/13 whole cold exact,
-4,031 previously accepted B**.
-One large hit-response must
-retain native COFF $L labels.
+[F980 native gauge](FIGHTER_GAUGE_NATIVE_SIGNED_SHORTS_F980.md):
+13 whole exact, 4,031
+already accepted B.
 
 [F986 native fade byte pair](FIGHTER_FADE_SHARED_BYTES_F986.md):
 actor+0x538/+0x539 unsigned
