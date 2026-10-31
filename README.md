@@ -130,6 +130,17 @@ checkpoints, not Oracle acceptance; no push is assumed.
 The original EXE, VC7.1/Wine prefix, Ghidra project,
 accepted matching objects, source, manifests, and
 uncredited original PE receipts must be preserved.
+F1031 also losslessly SHA256-archived **1,749 newer
+F907–F1018 historical research OBJ/PDB copies**, recovering
+**93,546,883 bytes net (≈89.21 MiB)** after fully
+verifying the archive before and after loose-file removal.
+The current F917/F901/F1020 whole native parents,
+recent experiments, original game evidence and all
+previous archive indexes remain protected. Recover a
+single older original binary with
+`scripts/repo-python scripts/archive-recent-probe-objects-f1031.py --family binaries --restore ORIGINAL_RELATIVE_PATH`.
+See the [verified F1031 archival receipt and safety rules](docs/STORAGE_HYGIENE.md).
+
 F907 additionally archived **4,712 regenerable historical
 VC7.1 OBJ/PDB research copies**, recovering **220,205,684 bytes**
 net after whole-archive SHA256 verification. Safe standard Git

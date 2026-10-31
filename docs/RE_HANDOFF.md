@@ -200,5 +200,10 @@ and `--restore ORIGINAL_RELATIVE_PATH`. Historical F650–F906
 research OBJ/PDB are individually restorable through
 `scripts/repo-python scripts/archive-recent-probe-objects-f907.py --family binaries --restore ORIGINAL_RELATIVE_PATH`.
 Never assume an ignored archive is backed up by a Git commit.
+The [F1031 SHA256-recoverable F907–F1018 binary archive](STORAGE_HYGIENE.md)
+preserves **1,749 former original loose research OBJ/PDB**
+and reclaimed **93,546,883 bytes net**. Verify with
+`scripts/repo-python scripts/archive-recent-probe-objects-f1031.py --family binaries --verify`.
+The new archive and receipt are local, not Git-backed.
 Never delete unrecognized ignored research or the only
 copy of original native/compiler evidence.

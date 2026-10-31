@@ -1,7 +1,8 @@
 # TH075 local storage hygiene and lossless recovery
 
-**Updated 2026-10-31, F908 safe Git maintenance / Python bytecode cleanup,
-after F907 reversible probe-binary compaction.**
+**Updated 2026-10-31, F1031 new SHA256-preserved research binary
+compaction; F907/F908 archives and their original measurements remain
+independently recoverable.**
 This is a storage report and **lossless local recovery recipe**, NOT
 permission to remove original PE, C++/COFF research evidence, active
 work, matching objects, or unrecognized dirty changes. The archives,
@@ -12,6 +13,74 @@ moving/cleaning the worktree. The restore/verify tooling and these
 instructions ARE tracked, but a fresh clone will not contain the
 archives. Historical F597 and older JSON/PDB/CI archives are still
 available and independently restorable.
+
+## F1031 — Executed new historical F907–F1018 OBJ/PDB compaction
+
+The 2026-10-31 local inventory found **1,749** newly loose,
+ordinary pinned VC7.1 historical experiment OBJ/PDB files across
+F907–F1018 research folders. The
+[separate, narrowly allowlisted F1031 archiver](../scripts/archive-recent-probe-objects-f1031.py)
+does **not** alter F907's prior archive, receipt, or recovery code.
+These are regenerable compiler by-products, not original PE,
+unique source, native-origin evidence, imported COFF metadata
+or current live whole-fighter parent objects.
+
+| Executed measured F1031 preservation action | Bytes |
+| --- | ---: |
+| Original 1,749 whole loose research OBJ/PDB files | **117,845,545** |
+| New machine-local `.tar.gz` archive | **23,990,438** |
+| New original-path/size/SHA256 JSON receipt | **308,224** |
+| **Net reclaimed after archive and receipt** | **93,546,883 B (≈89.21 MiB)** |
+
+All 1,749 loose originals were individually SHA256-hashed
+as written to the new archive, all original archive members
+were re-read and hashed **while the loose originals still
+existed**, and the entire archive was independently verified
+again **after removal**. This was a verified executed
+operation, not a cleanup proposal. The safety plan
+subsequently reports **zero** eligible loose files.
+
+A genuine originally archived research binary
+`.analysis/f909-pre59-register-phase/baseline.obj`
+was restored, verified against the **original per-file
+SHA256**, then safely re-compacted only after proving
+the loose file was still byte-identical. The original
+archive was verified yet again after the test.
+The new exact archive SHA256 is
+`ef4580bc6abcc78ad5788538dec93d97f135c8a68c3e10fdadadd8802622e7b0`.
+
+New ignored, **not Git-backed** original files:
+
+- `.analysis/cache-archives/f907-f1018-history-obj-pdb-2026-10-31.tar.gz`
+- `.analysis/cache-archives/f907-f1018-history-obj-pdb-2026-10-31-receipt.json`
+
+Directly usable commands for a next agent:
+
+    scripts/repo-python scripts/archive-recent-probe-objects-f1031.py --family binaries --plan
+    scripts/repo-python scripts/archive-recent-probe-objects-f1031.py --family binaries --verify
+    scripts/repo-python scripts/archive-recent-probe-objects-f1031.py --family binaries --restore .analysis/f909-pre59-register-phase/baseline.obj
+    scripts/repo-python scripts/archive-recent-probe-objects-f1031.py --family binaries --recompact-restored .analysis/f909-pre59-register-phase/baseline.obj
+
+Do not rerun `--archive` when the archive/receipt already
+exist: the script explicitly refuses replacement. Both
+`--restore` and `--recompact-restored` reject changed
+regenerated files; all symlink/path traversal targets
+are forbidden. Preserve both local archive and receipt
+before transferring or deleting this checkout.
+
+**Explicitly excluded, untouched:** all accepted
+`build/matching/`; original Japanese `th075.exe`;
+Wine/VC7.1; Ghidra; `.analysis/cache-archives/` and all
+F907/prior archives; F917 58KB selected and F781
+baseline OBJ; F901 complete 46KB selected OBJ;
+F1020 selected 82KB and current F1019–F1029 proof
+outputs; F911/F915 active WinMain owner controls;
+F1018 active predecessor native proof; H184 protected
+objects; source CPP/HPP/INC, original case/PE JSON
+records, logs, text traces, hashes and PDB source
+provenance. No native exact CODE ledger changed.
+
+---
 
 ## F908: normal Git-object maintenance and disposable Python bytecode cache
 

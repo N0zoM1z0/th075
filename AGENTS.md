@@ -151,6 +151,18 @@ or verifier changes. Documentation-only changes need `git diff --check`.
   archived path: archive `--verify` still works but reports the
   changed loose copy. Both `--restore` and `--recompact-restored`
   reject overwriting/removing that newly generated research file.
+  **F1031 additionally supersedes any claim that all F907–F1018
+  research OBJ/PDB are loose.** It SHA256-indexed and losslessly
+  archived 1,749 additional regenerable historical binaries,
+  reclaiming 93,546,883 bytes net while preserving the selected
+  F917, F901, F1020 parents, recent F1019–F1029 research, all
+  original/native C++ and PE receipts. The machine-local
+  `.analysis/cache-archives/f907-f1018-history-obj-pdb-2026-10-31.tar.gz`
+  and its `-receipt.json` MUST be kept together. Restore one original
+  via `scripts/archive-recent-probe-objects-f1031.py --family binaries
+  --restore ORIGINAL_RELATIVE_PATH`. Do not confuse local archives
+  with Git-backed source/evidence.
+
   **F907 now supersedes the F694 time-specific claim that all F650+
   PDBs remain loose:** 4,712 eligible regenerable F650–F906 OBJ/PDB
   copies have been compressed with a SHA256 receipt, then their loose
