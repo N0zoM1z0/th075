@@ -3099,6 +3099,72 @@ rechecked. Whole original
 [F899 original physical evidence](SCRIPTED_FIGHTER_NATIVE_2F8_F899.md);
 scripts/repo-python scripts/verify-scripted-fighter-stage2f8-f899.py.
 
+**F901 near-full fighter x86 audit and actual 31B/31C tail proof:**
+Original Japanese fighter
+005214B0 **46,755 callable
+CODE B/13,230 native
+x86**; current normal
+VC7.1 parent **46,754
+B/13,230 x86** plus
+five native 901B packed
+afterRET DATA tables.
+ALL 13,230 instruction
+MNEMONICS agree; FIVE
+original opcode WIDTHS
+still wrong: whole ordinals
+2885,2908 (native0x63),
+8455 (native1FD),
+8986 (native252),9130
+(native254). Net one
+missing native CODE B
+does NOT mean full exact:
+source 1,352 CODE COFF
+relocations only 909 at
+identical original absolute
+positions, **443 shifted**,
+and authentic earlier GPR
+operand differences remain.
+79 previous actual sourced
+game states reaudited by
+current PE physical native
+x86 ordinal (NEVER freeze
+old-register errors);
+ALL 797 source-backed
+native call/global PE
+destinations match, but
+424 absolute and twelve
+case-relative 252/254
+source fields shifted.
+Actual native 31B
+248B/74x86/8 physical
+PE refs and 31C
+219B/63x86/7 refs
+now each ZERO original
+nonfield byte errors,
+including genuine original
+epilogue JMP operands.
+31C native ends REAL
+two-byte EB2A short,
+NOT a five-byte JMP.
+Adding authentic 31B/31C
+naturally restores prior
+2F8 to full 1,151B/
+316x86/28 PE fields with
+zero original nonfield
+byte errors. Three equal
+length false game
+sources compiled/rejected.
+Shared getter 34/34
+original nonfield plus
+three PE calls and
+all five original packed
+901B tables reverified.
+[F901 current original PE native whole audit](SCRIPTED_FIGHTER_COMPLETE_TAIL_AND_WIDTH_AUDIT_F901.md);
+scripts/repo-python scripts/verify-scripted-fighter-tail31b-31c-f901.py.
+Whole original fighter
+still NONEXACT; NO
+internal case exact credit.
+
 The other **20 large original state-advance functions** also remain
 unmatched, including the 82,796-B `004AC040`, 81,539-B `0050A580`
 and 60,999-B `0045DD70`. Their complete original extents and origin

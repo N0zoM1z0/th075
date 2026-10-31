@@ -284,6 +284,79 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   slots remain wrong. No
   accepted whole CODE.
   [F864 physical proof](SCENE_THREE_REAL_NAMED_POINTERS_F864.md).
+- **F901 native complete 31B/31C tail and full 13230-x86 opcode-width audit:**
+  The original fighter
+  is 46,755B/13,230x86;
+  new complete normal
+  VC7.1 parent 46,754B/
+  13,230x86. ALL native
+  mnemonics agree. FIVE
+  real instruction width
+  negatives at whole x86
+  ord2885,2908 (0x63),
+  8455 (1FD), 8986 (252)
+  and 9130 (254), net
+  original one missing B.
+  1,352 whole source
+  code COFF field sites,
+  only 909 native absolute
+  positions equal, 443
+  shifted; no exact
+  full callable claim.
+  Original 79 prior
+  source-backed states
+  contain 797/797 source
+  real PE destinations
+  verified; 424 absolute
+  offsets shifted, 12
+  case-relative fields
+  shifted in 252/254.
+  Original 31B full
+  248B/74x86/8 PE and
+  31C 219B/63x86/7
+  PE are zero original
+  nonrelocation wrong B
+  including native final
+  JMP. 31C original JMP
+  is REAL short EB2A.
+  Adding both repairs
+  prior 2F8 to original
+  1,151B/316x86/28 PE
+  full source shape.
+  Three equal-size wrong
+  game controls rejected.
+  All five 901B packed
+  afterRET native DATA
+  and getter 34/34
+  original nonfield
+  rechecked. Still no
+  independently callable
+  whole exact CODE credit.
+  [F901 physical PE whole proof](SCRIPTED_FIGHTER_COMPLETE_TAIL_AND_WIDTH_AUDIT_F901.md).
+- **F900 real independent ArchiveCatalog 171B destructor grouped live-owner test:**
+  25 complete pinned
+  VC7.1 normal sources
+  with actual grouped
+  delete/filename/index
+  object lifetime use.
+  Only baseline and
+  filename-only member
+  generate native-sized
+  171B/51x86/14 PE
+  fields, still only
+  108/115 and 102/115
+  original nonfield
+  matching. Remaining
+  23 genuinely used
+  paired/triple/union
+  owner source variants
+  emit 177B/53x86.
+  Original resource/
+  delete/filename EBP
+  -C/-8/-10 not recovered,
+  entire authored small
+  function NONEXACT.
+  [F900 PE](ARCHIVE_REAL_GROUPED_LIFETIMES_F900.md).
 - **F899 original 2F8 native 1151B and previous 2F0 restoration:**
   Real 2F8 1,151
   CODE B/316 x86/
