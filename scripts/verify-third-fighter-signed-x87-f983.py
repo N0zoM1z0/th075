@@ -43,7 +43,7 @@ for state in ('1F8','1F9'):
   assert n[start+1].op_str.endswith(', 7')
   assert n[start+5].op_str.endswith('+ 0x44]')
  assert n[64].mnemonic=='cmp' and n[64].op_str.endswith(', 0xeb')
- assert n[125].op_str=='dword ptr [0x658264]'
+ assert n[125].mnemonic=='fsub' and n[125].op_str=='dword ptr [0x658264]'
  assert n[193].op_str=='0x453b50'
  assert n[298].op_str=='0x453b50'
  assert n[303].op_str=='0x40fbb0'
