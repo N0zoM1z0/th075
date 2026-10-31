@@ -3805,6 +3805,50 @@ whole CODE credit.
 [F900 complete original Archive evidence](ARCHIVE_REAL_GROUPED_LIFETIMES_F900.md);
 scripts/repo-python scripts/verify-archive-grouped-live-owners-f900.py.
 
+**F904 separate authored 2,987B WinMain genuine scene-state/owner lifetime experiments:**
+Original WinMain 00602A60
+**2,987 complete CODE
+B/654x86**, 123 native
+CALLs, and 60 original
+afterRET fifteen-scene
+jump-table DATA.
+43 total normal VC7.1
+/Od /GX- whole C++
+source variants: 30
+real sceneState/
+previousState 16-bit
+locals, firstScene
+owner, MSG, width/height
+groupings and 13
+legitimate leading-field
+reorderings. Incorrect
+initial /GX generated
+749-x86 EH code,
+DISCARDED; all 43
+recompiled with native
+/GX-. All source complete
+functions retain 654
+x86 mnemonics and 173
+COFF source fields,
+60 afterRET DATA.
+Best legitimate two
+short state grouping
+improves original x86
+instruction WIDTH
+matching **619/654
+to 633/654**, current
+whole 2960B vs native
+2987B. But original
+scene/path EBP -184/
+-180 not recovered
+(source -180/-17C);
+all whole source
+models still NONEXACT,
+no accepted game CODE.
+[F904 original whole WinMain source controls](WINMAIN_REAL_STAGE_OWNER_LIFETIMES_F904.md);
+scripts/repo-python scripts/verify-winmain-stage-live-context-f904.py;
+scripts/repo-python scripts/verify-winmain-leading-live-context-f904.py.
+
 ## 4. Attribution, validation, research and storage
 
 - **Original authored ≠ compiler/library ≠ unknown**. The 95 unknown
