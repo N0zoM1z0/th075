@@ -162,22 +162,25 @@ real CC is present. Original whole
 true saved-this EBP and 0x720
 frame are not reconstructed.
 
-[F984 real 82KB 1FA](THIRD_FIGHTER_NEAR_NATIVE_STAGE1FA_F984.md):
-tracked partial fighter **43,483B/
-11,990 x86**; authentic 1FA
-**1,168B/339x86/28 original PE
-fields**, zero wrong mnemonic/
-widths, just **6 wrong GPR roles**
-(original ordinals 327-333).
-[F983 1F8/1F9](THIRD_FIGHTER_NATIVE_FSUBR_1F8_1F9_F983.md)
-has twelve true IMUL/FILD/FSUBR
-chains, 56 original PE fields,
-only one CMP width per handler,
-but GPR roles still nonnative.
-[F982 1F6/1F7](THIRD_FIGHTER_STAGES_1F6_1F7_F982.md)
-and [F981 1F4/1F5](THIRD_FIGHTER_STAGES_1F4_1F5_F981.md)
-remain independently source-backed.
-Whole original 82,796B NONEXACT.
+[F985 native original 82KB 1FB/1FC/1FD](THIRD_FIGHTER_STORM_STAGES1FB1FD_F985.md):
+new tracked cumulative partial father
+**47,016B/13,022 x86**, real states
+1FB=1,193B/346x86,
+1FC=1,192B/346,
+1FD=1,193B/346;
+**84 actual PE targets** verified.
+All 1,038 native mnemonic roles
+match, wrong widths **1/1/0**,
+GPR errors 180 each. Stage9–12
+landing, six FSUBR shots and
+animation0xC8 are real original
+game logic.
+[F984 1FA near-native](THIRD_FIGHTER_NEAR_NATIVE_STAGE1FA_F984.md):
+1,168B/339x86/28 PE; 6 wrong
+GPR roles. [F983 1F8/1F9](THIRD_FIGHTER_NATIVE_FSUBR_1F8_1F9_F983.md):
+twelve FILD/FSUBR chains; true
+Y global 00659490. Complete
+82,796B callable NONEXACT.
 
 [F975 19D/19E/19F](THIRD_FIGHTER_STAGES19D19F_F975.md)
 native 400B/97,475B/128,
