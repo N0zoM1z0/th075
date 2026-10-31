@@ -154,25 +154,26 @@ real CC is present. Original whole
 true saved-this EBP and 0x720
 frame are not reconstructed.
 
-[F987 native 82KB fighter 252/253/254](THIRD_FIGHTER_STAGES252254_F987.md):
-tracked giant partial father **47,715B/
-13,223 x86**. Native original
-252=260B/72, 253=259B/72,
-254=225B/63; all 207 mnemonics
-align and 18 true PE targets
-verified. Wrong widths 1/1/0,
-GPR errors 47/47/40. Real
-prefix unsigned-byte decrement
-restores native MOV/SUB/MOV;
-native 254 has NO separate
-afterRET label.
-[F985 storm 1FB/FC/FD](THIRD_FIGHTER_STORM_STAGES1FB1FD_F985.md):
-1,038 original x86 mnemonics,
-84 PE fields, widths 1/1/0.
-[F984 1FA](THIRD_FIGHTER_NEAR_NATIVE_STAGE1FA_F984.md):
-1,168B/339x86/28 PE fields,
-only 6 wrong GPR roles.
-Whole original fighter NONEXACT.
+[F988 original 82KB states 255/256/257](THIRD_FIGHTER_STAGES255257_F988.md):
+tracked cumulative fighter C++ now
+**48,352B/13,416 x86**. Three
+authentic game handlers
+258B/75,176B/52,248B/72;
+18 native PE targets verified,
+all original mnemonic/width
+positions aligned, GPR 46/32/46
+wrong. Native 255 alone prepares
+action0x21; 256 lacks stage8
+auxiliary action.
+[F987 native 252/253/254](THIRD_FIGHTER_STAGES252254_F987.md):
+260B/72,259B/72,225B/63;
+18 real PE fields, original
+254 NO separate afterRET label;
+x86 wrong widths 1/1/0.
+[F985 native storm1FB/FC/FD](THIRD_FIGHTER_STORM_STAGES1FB1FD_F985.md)
+restores 1,038 source mnemonics
+and 84 native PE fields. Whole
+82,796B original NONEXACT.
 
 [F975 19D/19E/19F](THIRD_FIGHTER_STAGES19D19F_F975.md)
 native 400B/97,475B/128,
