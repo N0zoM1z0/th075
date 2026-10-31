@@ -174,6 +174,19 @@ Use the targeted source-only reproductions:
     scripts/repo-python scripts/verify-winmain-stage-live-context-f904.py
     scripts/repo-python scripts/verify-winmain-leading-live-context-f904.py
 
+[F921/F927 real WinMain used-gap hypothesis](WINMAIN_REAL_USED_GAP_NEGATIVES_F927.md):
+66 full normal VC7.1 WinMain sources test a
+genuinely used firstScene pointer and the real
+event/directory/windowWidth/windowHeight members
+ahead of HWND/scene/path. All 66 keep 654 x86
+mnemonics and 60B afterRET DATA, but none restores
+the original firstScene=-0x19C with actual HWND
+=-0x188, scene=-0x184, path=-0x180. A four-full-
+source tracked PE verifier confirms 16 actual
+constructor mappings and 15 native table entries.
+This **negative does not supersede F914's separate
+three-slot recovery**. Whole WinMain remains nonexact.
+
 [F914/F915 original WinMain frame/slot probe](WINMAIN_NATIVE_FRAME_FIRST_SCENE_OWNER_F914.md):
 19 full source member models and 30 declaration/member placement controls
 tested the genuinely used first scene pointer. A complete alternative
