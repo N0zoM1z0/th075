@@ -151,26 +151,26 @@ real CC is present. Original whole
 true saved-this EBP and 0x720
 frame are not reconstructed.
 
-[F1013 original 82KB final 31B/31C](THIRD_FIGHTER_REAL_FINAL_31B_31C_F1013.md):
-tracked PARTIAL father now
-**72,707B/19,938 x86**.
-Real native 31B **257B/76x86/
-9 PE** and 31C **219B/63x86/
-7 PE**: all 139 mnemonic/
-width/GPR roles aligned.
-31B true shot0x3E5, 31C
-native signed state and BYTE
-+0x3CF=1; 16 external PE
-targets and afterRET table.
-Natural real final game cases
-also repair previous
-[F1012 original 303](THIRD_FIGHTER_NATIVE_303_X87_F1012.md)
-terminal near shared JMP:
-303 now **1,014B/267x86,
-0 wrong mnem/width/GPR**,
-29 physical PE targets.
-Original whole 82,796B
-callable still NONEXACT.
+[F1014 true original 82KB default and tail](THIRD_FIGHTER_ACTUAL_DEFAULT_TAIL_F1014.md):
+tracked original-shaped partial
+**72,739B/19,950 x86**.
+Actual default004C037D..004C03A7
+**42B/13x86/3 native PE**,
+all mnemonic/width/GPR roles
+match; true separate
+**5B/4x86 shared epilogue**
+is independently verified at
+004C03A7..004C03AC.
+AfterRET 151 DIR32 labels
+and 522 nonfield bytes exact.
+[F1013 original final 31B/31C](THIRD_FIGHTER_REAL_FINAL_31B_31C_F1013.md):
+257B/76 and 219B/63,
+16 native PE fields, all
+mnemonic/width/GPR aligned.
+[F1012 original 303](THIRD_FIGHTER_NATIVE_303_X87_F1012.md):
+1,014B/267 x86/29 PE all
+positional roles aligned.
+Whole 82,796B still NONEXACT.
 
 [F975 19D/19E/19F](THIRD_FIGHTER_STAGES19D19F_F975.md)
 native 400B/97,475B/128,
