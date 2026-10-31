@@ -151,30 +151,30 @@ real CC is present. Original whole
 true saved-this EBP and 0x720
 frame are not reconstructed.
 
-[F1019 actual original 2EF/2F0 arcs](THIRD_FIGHTER_PAIRED_ARC_2EF_2F0_F1019.md):
-tracked whole-shaped PARTIAL
-**82,802B/22,721 x86** vs
-original **82,796B/22,721
-x86**. Each native 2EF/2F0
-**2,229B/573x86/80 PE**,
-all real mnemonic/width/GPR
-positions aligned. Correct
-nested stage23 counter,
-real raw32 angle ABI to
-0040FB70, const borrowed
-speed+0x50 restores original
-FLD global00658264 / FADD
-actor. Full afterRET 151
-DIR32/522 nonfield DATA
-verified. **WHOLE NONEXACT:**
-6 excess CODE B, frame0x724
-vs original0x720, saved this
-EBP−0x68 vs native−0x64,
-prior [F1017 2BE](THIRD_FIGHTER_STAGE_2BE_NATIVE_VOLLEYS_F1017.md)
-125 GPR role errors.
-[F1018 real 2BF](THIRD_FIGHTER_NATIVE_TRIPLE_VOLLEY_2BF_F1018.md)
-2,167B/616x86/65 PE keeps
-all native register roles.
+[F1020 native 82KB complete source geometry](THIRD_FIGHTER_SHARED_REAL_RING_LOCAL_F1020.md):
+tracked original-shaped father now
+**82,796B/22,721 x86** =
+EXACT original CODE length and
+original entire x86 COUNT.
+Native **frame0x720, saved
+this EBP−0x64** restored.
+Real original 2DB two 36-shot
+rings both use EBP−0x40
+ONE genuine int shot local;
+separate source for locals
+had shifted all later slots
+4B and added 6 opcode bytes.
+All **22,721 original mnemonic
+ordinals align**, but **12
+widths and 6,958 GPR-role
+positions still wrong**.
+[F1019 native 2EF/2F0](THIRD_FIGHTER_PAIRED_ARC_2EF_2F0_F1019.md):
+two 2,229B/573x86 cases,
+160 real PE fields, zero
+mnemonic/width/GPR errors.
+Original whole fighter
+still NONEXACT; accepted
+CODE remains unchanged.
 
 [F975 19D/19E/19F](THIRD_FIGHTER_STAGES19D19F_F975.md)
 native 400B/97,475B/128,
