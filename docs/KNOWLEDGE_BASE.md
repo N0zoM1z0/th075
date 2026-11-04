@@ -1,12 +1,18 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-10-31 (F906 source audit):**
-The live whole-function original fighter context is documented in
-[the current short handoff](RE_HANDOFF.md), with F901/F906 native x86
-evidence. This chronological document is historical and intentionally
-retains obsolete intermediate source sizes for provenance.
-The previous detailed active handoff through F906 is
-[archived with restored local links](history/RE_HANDOFF_F781_THROUGH_F906_PRE_CLEANUP_2026-10-31.md).
+**Maintenance annotation, updated 2026-11-04 (F1144 agent transfer):**
+The **current authoritative** pinned-original whole-function evidence,
+unresolved 81KB Boss CFG (13 branch-target discrepancies), 979 accepted
+whole exact functions, and safe local storage/restore instructions are
+in the [live agent handoff](RE_HANDOFF.md) and
+[storage hygiene guide](STORAGE_HYGIENE.md). This chronological
+journal is **historical**: all dated F-series source dimensions and
+"most recent" claims below refer to their original test checkpoints,
+not today's worktree. The old F906 and F1142 handoffs are preserved in
+[the F781–F906 snapshot](history/RE_HANDOFF_F781_THROUGH_F906_PRE_CLEANUP_2026-10-31.md)
+and [the F1142 snapshot](history/RE_HANDOFF_AS_OF_F1142_PRE_HANDOFF_2026-11-04.md).
+Original PE, independent origin ledger and current VC7.1 builds always
+supersede a historical source hypothesis.
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function
@@ -49,7 +55,7 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
   relocations. Original action 0x63 still has 706B against
   generated 705B and wrong CMP register widths [18,61,84].
   [F782 source-level negative controls](FIGHTER_MODE63_BORROWED_VIEWS_F782.md).
-- **Most recent giant validation context is F781**: the original
+- **Historical F781 giant validation checkpoint (not current)**: the original
   `005515BA` shared getter is reached by *exactly four* actual
   native early action 0/2/4/5 JMPs. F781 restores one real 8-B
   native call and a 2-B skip under native four-way control flow;

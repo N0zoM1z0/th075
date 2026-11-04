@@ -22,6 +22,7 @@ import importlib.util
 from pathlib import Path
 import re
 import sys
+import tarfile
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / 'scripts/archive-recent-probe-objects-f1031.py'
@@ -88,7 +89,10 @@ archiver.gather = gather
 
 if __name__ == '__main__':
     try:
+        print('F1144: using the independently verified F1031 SHA256 archive/restore engine. '
+              'Engine diagnostic prefixes say F1031; the actual archive and receipt '
+              'have independent F1144 identities.', flush=True)
         archiver.main()
-    except (RuntimeError, OSError, ValueError) as exc:
+    except (RuntimeError, OSError, ValueError, tarfile.TarError) as exc:
         print(f'F1144 safe local compaction FAILED: {exc}', file=sys.stderr)
         raise SystemExit(1)

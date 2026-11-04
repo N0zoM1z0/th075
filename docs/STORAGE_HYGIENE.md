@@ -87,6 +87,44 @@ credit is unchanged**.
 
 ---
 
+## F1145 — Executed normal Git maintenance and disposable Python cache cleanup
+
+Following the F1144 hash-verified research-binary compaction and after
+committing all current original source/document changes, the checkout's
+normal **`git gc --prune=2.weeks.ago`** was performed once. It did not
+rewrite or force-delete any branch/reflog: ordinary two-week unreachable
+object retention remained active and the three new handoff commits
+were intact. **`git fsck --connectivity-only --no-progress` succeeded
+both before and after GC** (ordinary dangling blobs were reported, not
+connectivity failures). Actual Git directory bytes measured by `du -sb`:
+
+| Reproducible Git storage check | File/directory bytes |
+| --- | ---: |
+| `.git` before normal GC | **38,326,758 B** |
+| `.git` after normal GC | **25,978,240 B** |
+| **Net Git directory bytes saved** | **12,348,518 B** |
+
+Next, only ordinary, safely disposable CPython bytecode caches under
+tracked `scripts/` and `tests/` were selected. Every selected file
+was an ordinary nonsymlink `.pyc`/`.pyo` inside an actual
+`__pycache__/` directory, with no other file types present. **Eight
+ordinary cache files (159,841 bytes)** were removed. Python may
+regenerate bytecode on subsequent research calls; there is no effect
+on source C++, original PE, COFF objects, archives or exact progress.
+
+**Combined new F1144/F1145 file-byte savings:** 32,524,192 B from
+authenticated OBJ/PDB compaction + 12,348,518 B from normal Git GC
++ 159,841 B of temporary Python bytecode = **45,032,551 bytes
+(42.95 MiB)** reclaimed in executed local operations. These are
+file/directory byte measurements, not a guaranteed filesystem block
+allocation delta, and do not modify the game's reconstruction ledger.
+Never reclaim disk space by deleting the SHA256-indexed machine-local
+archive or its receipt, the user-supplied original, VC7.1/Wine,
+Ghidra, protected current whole-parent objects or accepted matching
+objects. Subsequent normal builds and Python imports recreate caches.
+
+---
+
 ## F1031 — Executed new historical F907–F1018 OBJ/PDB compaction
 
 The 2026-10-31 local inventory found **1,749** newly loose,

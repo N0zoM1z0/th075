@@ -168,7 +168,10 @@ config/provenance, and archives under `.analysis/cache-archives/`.
 **Archive bytes are Git-ignored and NOT backed up by a fresh clone.**
 F1144 losslessly SHA256-archived **673 regenerable OBJ/PDB research
 files** into 6,453,751 archive B plus 117,927 receipt B, reclaiming
-**32,524,192 file bytes net**. The tracked
+**32,524,192 file bytes net**. Normal two-week-retention
+Git GC additionally saved **12,348,518 bytes**, and the narrow Python
+bytecode cleanup reclaimed **159,841 bytes**. See F1145 in the storage
+guide for integrity checks. The tracked
 [`F1144 restore/verify tool`](../scripts/archive-post-f1031-probe-binaries-f1144.py)
 recovers exact historical paths once the **machine-local archive and
 receipt** accompany the handoff. See [storage hygiene](STORAGE_HYGIENE.md).
