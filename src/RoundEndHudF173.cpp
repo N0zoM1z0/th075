@@ -2,6 +2,7 @@
 #include "FighterRoundOutcomeBytesF992.hpp"
 #include "RoundEndHudF173.hpp"
 #include "CameraUpdate4126C0.hpp"
+#include "ComboHudWindowF1060.hpp"
 
 #define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
 #define FIRST(type, offset) (*reinterpret_cast<type*>(FIELD(unsigned char*, 0x44) + (offset)))
@@ -70,24 +71,24 @@ void ModeCounterF173::IncrementModeCounter(signed char category, signed char key
 ComboCounterF173::ComboCounterF173(void* texture, signed char side)
 {
     FIELD(void*, 0) = texture;
-    FIELD(signed char, 0xB) = side;
-    FIELD(unsigned char, 0xA) = 0;
-    FIELD(short, 4) = 0;
-    FIELD(float, 0x10) = -200.0f;
+    F1060_HUD(this).sideAt0B = side;
+    F1060_HUD(this).opacityAt0A = 0;
+    F1060_HUD(this).countAt04 = 0;
+    F1060_HUD(this).verticalAt10 = -200.0f;
 }
 
 void ComboCounterF173::UpdateComboCounter(short count, short value, short extra)
 {
-    if (count > FIELD(short, 4) || count == 1) {
-        FIELD(unsigned char, 0xA) = 255;
-        FIELD(short, 4) = count;
-        FIELD(short, 6) = value;
-        FIELD(short, 8) = extra;
-        FIELD(short, 0xC) = 60;
-        if (FIELD(short, 4) == 2) {
-            FIELD(short, 0xE) = 90;
-            FIELD(float, 0x10) = -CameraSineAt0040D940(
-                float(FIELD(short, 0xE)) * 0.01745328866f) * 200.0f;
+    if (count > F1060_HUD(this).countAt04 || count == 1) {
+        F1060_HUD(this).opacityAt0A = 255;
+        F1060_HUD(this).countAt04 = count;
+        F1060_HUD(this).damageAt06 = value;
+        F1060_HUD(this).ratioAt08 = extra;
+        F1060_HUD(this).holdAt0C = 60;
+        if (F1060_HUD(this).countAt04 == 2) {
+            F1060_HUD(this).phaseAt0E = 90;
+            F1060_HUD(this).verticalAt10 = -CameraSineAt0040D940(
+                float(F1060_HUD(this).phaseAt0E) * 0.01745328866f) * 200.0f;
         }
     }
 }

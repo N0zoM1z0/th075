@@ -180,6 +180,8 @@ F1056: [native collision bounding RECT plus genuine fighter vitals/axis fields](
 
 F1056: [physical battle collision RECT/actor borrowed windows](BATTLE_COLLISION_BORROWED_NATIVE_F1056.md) recover original in-place `this+0x34..0x40` bounds, signed health current/recoverable WORDs and actor X/Y position references. All **5/5** affected native complete BattleCollision.cpp units remain strict exact (**855/855 already accepted bytes**), not new CODE credit.
 
+F1060: [physical 16-byte native Combo HUD borrowed window](COMBO_HUD_BORROW_WINDOW_F1060.md) gives actual names to count/damage/ratio/alpha/side/hold/phase/vertical HUD fields without assuming a full historical owner. The one affected RoundEndHud object cold-replayed **4/4 exact whole native functions** (878 previously credited CODE B); no corpus replay.
+
 ## 6. Agent operating checklist / storage
 
 **Preflight, no whole corpus replay:**

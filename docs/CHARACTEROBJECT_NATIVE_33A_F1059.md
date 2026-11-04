@@ -90,7 +90,7 @@ original state interiors** covering **15,470 actual native original
 CODE B /3,309 native x86**, with **3,309/3,309 ordered original
 mnemonics and GPR roles** and **270/270 original physically typed
 PE nonlocal fields verified**. The source's compiled restored inner
-case CODE bytes total 12,226, not 15,470, because the original
+case CODE bytes total 12,245, not 15,470, because the original
 wide stack and branch widths remain different.
 
 None of these 23 states is an original independent callable, and
