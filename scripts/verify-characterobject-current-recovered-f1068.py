@@ -464,6 +464,56 @@ x86total=sum(row['original_native_x86'] for row in rows)
 src_total=sum(row['current_source_interior_CODE_B'] for row in rows)
 fields_total=sum(len(row['native_physically_correct_PE_call_global_fields']) for row in rows)
 assert (original_total,x86total,fields_total)==(46518,10086,771)
+# Additional REAL original C++ interiors, deliberately kept separately
+# PROVISIONAL: their native mnemonics, scalar immediates and physical PE
+# destinations match, but whole-parent GPR phases are NOT native yet.
+# Do not inflate the exact/recovered counts or mask GPR-role debt.
+provisional_native_fields={0x358:11,0x359:2,0x35a:3,0x35b:13,0x35c:6}
+provisional_rows=[]
+for act,expected_field_count in provisional_native_fields.items():
+ ix=orig_sparse[act-0x320]
+ start,stop=orig_dense[ix],orig_dense[ix+1]
+ N=[x for x in NWHOLE if start<=x.address<stop]
+ lo,hi=T[ix]['local_symbol_offset'],T[ix+1]['local_symbol_offset']
+ S=[x for x in I if lo<=x.address<hi]
+ assert N and S and len(N)==len(S) and N[0].address==start
+ assert all(a.mnemonic==b.mnemonic for a,b in zip(N,S)),hex(act)
+ fs=[r for r in refs if lo<=r['offset']<hi and r['local_symbol_offset'] is None]
+ assert len(fs)==expected_field_count,(hex(act),len(fs),expected_field_count)
+ ordinals=set()
+ for r in fs:
+  assert r['type'] in ('REL32','DIR32') and r['addend']==0
+  j=next(j for j,x in enumerate(S) if x.address<=r['offset']<x.address+x.size)
+  d=r['offset']-S[j].address
+  assert d+4<=N[j].size,(hex(act),j,'source relocation not original instruction')
+  p=N[j].address+d
+  v=int.from_bytes(rd.pe_bytes_at(P,p,4),'little',signed=r['type']=='REL32')
+  target=p+4+v if r['type']=='REL32' else v
+  m=re.search(r'At([0-9A-Fa-f]{8})',r['symbol'])
+  expected=int(m.group(1),16) if m else 0x6406ac if r['symbol']=='__ftol2' else None
+  assert expected==target,(hex(act),j,r['symbol'],hex(target),hex(expected or 0))
+  ordinals.add(j)
+ scalars=0
+ for j,(n,q) in enumerate(zip(N,S)):
+  if j in ordinals or n.mnemonic=='call' or n.mnemonic.startswith('j'):
+   continue
+  a,b=scalar.search(n.op_str),scalar.search(q.op_str)
+  if a or b:
+   assert a is not None and b is not None and a.group(1)==b.group(1),(
+       hex(act),j,'native scalar differs',n.op_str,q.op_str)
+   scalars+=1
+ gpr_match=sum(roles(a)==roles(b) for a,b in zip(N,S))
+ assert gpr_match<len(N),(hex(act),'not eligible as provisional if GPR exact')
+ row={'action':hex(act),'original_inner_CODE_B':stop-start,
+      'native_x86':len(N),'source_inner_CODE_B':hi-lo,
+      'matching_mnemonics':len(N),'matching_instruction_widths':sum(a.size==b.size for a,b in zip(N,S)),
+      'matching_GPR_roles':gpr_match,'physically_correct_PE_external_fields':len(fs),
+      'matching_original_native_nonrelocated_scalars':scalars,
+      'original_entire_81KB_callable_exact':False,'interior_phase_verified':False}
+ provisional_rows.append(row)
+ print(hex(act),'PROVISIONAL original',stop-start,'B/',len(N),'x86:',
+       'MN',len(N),'GPR',gpr_match,'PE',len(fs),'scalar',scalars,flush=True)
+assert len(provisional_rows)==5
 summary={'original_Boss':'0x0050A580','original_whole_CODE_B':81539,
  'original_whole_x86':17435,'selected_partial_source_CODE_B':end,'selected_partial_source_x86':len(I),
  'source_partial_afterRET_DATA_B':567,'original_recovered_independent_case_interior_count':len(rows),
@@ -475,6 +525,8 @@ summary={'original_Boss':'0x0050A580','original_whole_CODE_B':81539,
  'total_generated_inner_case_source_CODE_B':src_total,
  'original_92_DIR32_native_jump_partitions_equal':True,'original_199_sparse_bytes_equal':True,
  'original_81KB_whole_function_exact':False,'new_exact_original_whole_CODE_B':0,
- 'all_979_cold_replay':False,'native_states':rows}
+ 'all_979_cold_replay':False,'native_states':rows,
+ 'additional_original_native_provisional_interiors':provisional_rows,
+ 'provisional_CASES_NOT_counted_as_recovered_or_exact':len(provisional_rows)}
 (O/'verified-summary.json').write_text(json.dumps(summary,indent=2)+'\n')
 print('F1098 LIVE 54 original game action interiors: original',original_total,'CODE B /',x86total,'x86, native mnemonic+GPR',x86total,'/',x86total,'and genuine PE nonlocal',fields_total,'/',fields_total,'. Current partial source',end,'B /',len(I),'x86, NOT exact whole 81KB; accepted new original bytes 0.')

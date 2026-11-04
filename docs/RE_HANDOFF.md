@@ -122,20 +122,21 @@ rechecks **1,697/1,697 physical external PE targets**,
 tested 10 normal VC7.1 variants without fixing the true native CMP
 roles; check the original PE, not stale hypotheses.
 
-**81KB single-switch 0050A580:** [F1098 real original
-`0x357` parent-facing ×120 and Y=120.0f](CHARACTEROBJECT_NATIVE_357_F1098.md)
-now covers **54 real game-state interiors /46,518 original native
-CODE B /10,086 original mnemonic+GPR positions /771 genuine
-physical PE fields /1,895 scalar-immediate positions**.
-The actual 357 is 622B/131x86 with original `TEST AH,5; JP`,
-parent action 0x189 and native action completion. Current partial
-source **38,034 CODE B/10,206 x86** vs authentic **81,539B /
-17,435 x86**, preserving 567 native afterRET sparse DATA.
-**Whole original GAME callable NONEXACT; zero newly accepted exact
-original CODE.** Preceding [F1097 real 0x356](CHARACTEROBJECT_NATIVE_356_F1097.md)
-and [F1095 0x355](CHARACTEROBJECT_NATIVE_355_F1095.md)
-retain their original PE validations. Run the [live one-parent
-native PE verifier](../scripts/verify-characterobject-current-recovered-f1068.py).
+**81KB single-switch 0050A580:** [F1103 genuine original
+`0x358..0x35C` source, provisional GPR phase](CHARACTEROBJECT_NATIVE_358_TO_35C_PROVISIONAL_F1103.md)
+adds FIVE real game-case C++ interiors (2,313 original native B/499
+x86), with **499/499 native mnemonic positions, 35/35 native PE
+nonlocal destinations and 100/100 scalar immediates**, but only
+**161/499 original GPR roles**. Twelve natural complete parent C++
+grammar variants did not repair the mismatch. **Keep these five
+PROVISIONAL**, not exact or fully source-recovered. The prior
+[F1098 native 0x357](CHARACTEROBJECT_NATIVE_357_F1098.md) and other
+**54 strict cases retain 46,518 original native CODE B/10,086
+matching mnemonic+GPR slots/771 PE fields/1,895 scalar immediates**.
+Current whole partial source **49,493 CODE B/10,695 x86**, original
+**81,539B/17,435 x86** and native afterRET 567B DATA verified.
+**Original whole GAME remains NONEXACT; zero new accepted exact
+CODE.** Use only [live one-parent native PE validator](../scripts/verify-characterobject-current-recovered-f1068.py).
 
 ## 4. All three remaining independent small/medium originals
 
