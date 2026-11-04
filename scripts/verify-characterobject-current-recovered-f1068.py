@@ -39,9 +39,9 @@ required_fields={
  0x337:3,0x338:12,0x339:10,0x33a:18,
  0x33b:33,0x33c:5,0x33d:33,0x33e:5,0x33f:33,
  0x340:5,0x341:33,0x342:5,0x343:33,0x344:5,0x345:3,
- 0x346:34,0x347:10,0x348:9,0x349:7,0x34a:7,0x34b:6,0x34c:18,0x34d:18,0x34e:18,0x34f:18,0x350:18,0x351:15,0x352:6,0x353:3,0x354:14,0x355:20,0x356:14,0x357:7,
+ 0x346:34,0x347:10,0x348:9,0x349:7,0x34a:7,0x34b:6,0x34c:18,0x34d:18,0x34e:18,0x34f:18,0x350:18,0x351:15,0x352:6,0x353:3,0x354:14,0x355:20,0x356:14,0x357:7,0x35f:2,
 }
-assert len(required_fields)==54 and sum(required_fields.values())==771
+assert len(required_fields)==55 and sum(required_fields.values())==773
 src=R/'probes/CharacterObjectWhole0050A580F1044.cpp'
 source=src.read_text()
 # Native state imports, not fake marker labels, must actually be represented.
@@ -71,6 +71,7 @@ for token in ('#include "CharacterObjectBoss330F1068.inc"',
  '#include "CharacterObjectBoss355F1095.inc"',
  '#include "CharacterObjectBoss356F1097.inc"',
  '#include "CharacterObjectBoss357F1098.inc"',
+ '#include "CharacterObjectBoss35FF1105.inc"',
  '#include "CharacterObjectBoss335F1064.inc"',
  '#include "CharacterObjectBoss333334F1065.inc"',
  '#include "CharacterObjectBoss338F1062.inc"',
@@ -463,12 +464,12 @@ original_total=sum(row['original_interior_CODE_B'] for row in rows)
 x86total=sum(row['original_native_x86'] for row in rows)
 src_total=sum(row['current_source_interior_CODE_B'] for row in rows)
 fields_total=sum(len(row['native_physically_correct_PE_call_global_fields']) for row in rows)
-assert (original_total,x86total,fields_total)==(46518,10086,771)
+assert (original_total,x86total,fields_total)==(46562,10096,773)
 # Additional REAL original C++ interiors, deliberately kept separately
 # PROVISIONAL: their native mnemonics, scalar immediates and physical PE
 # destinations match, but whole-parent GPR phases are NOT native yet.
 # Do not inflate the exact/recovered counts or mask GPR-role debt.
-provisional_native_fields={0x358:11,0x359:2,0x35a:3,0x35b:13,0x35c:6,0x35d:7,0x35f:2}
+provisional_native_fields={0x358:11,0x359:2,0x35a:3,0x35b:13,0x35c:6,0x35d:7,0x35e:28}
 provisional_rows=[]
 for act,expected_field_count in provisional_native_fields.items():
  ix=orig_sparse[act-0x320]
@@ -529,4 +530,4 @@ summary={'original_Boss':'0x0050A580','original_whole_CODE_B':81539,
  'additional_original_native_provisional_interiors':provisional_rows,
  'provisional_CASES_NOT_counted_as_recovered_or_exact':len(provisional_rows)}
 (O/'verified-summary.json').write_text(json.dumps(summary,indent=2)+'\n')
-print('F1098 LIVE 54 original game action interiors: original',original_total,'CODE B /',x86total,'x86, native mnemonic+GPR',x86total,'/',x86total,'and genuine PE nonlocal',fields_total,'/',fields_total,'. Current partial source',end,'B /',len(I),'x86, NOT exact whole 81KB; accepted new original bytes 0.')
+print('F1107 LIVE 55 original game action interiors: original',original_total,'CODE B /',x86total,'x86, native mnemonic+GPR',x86total,'/',x86total,'and genuine PE nonlocal',fields_total,'/',fields_total,'. Current partial source',end,'B /',len(I),'x86, NOT exact whole 81KB; accepted new original bytes 0.')
