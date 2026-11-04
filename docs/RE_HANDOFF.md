@@ -122,21 +122,21 @@ rechecks **1,697/1,697 physical external PE targets**,
 tested 10 normal VC7.1 variants without fixing the true native CMP
 roles; check the original PE, not stale hypotheses.
 
-**81KB single-switch 0050A580:** [F1108 genuine native
-`0x360/0x361` motion states](CHARACTEROBJECT_NATIVE_360_361_F1108.md)
-restore two original 952B/206-x86 interiors with **412/412 original
-mnemonic+GPR roles, 30/30 physical PE fields and distinct native
-0x365/0x366 projectile IDs**. Each still has four real stack-counter
-width errors. The live verifier now covers **57 strict native
-interiors /48,466 original CODE B /10,508 original x86 mnemonic+GPR
-roles /803 physical PE fields /1,963 scalar-immediate values**.
-Seven other C++ cases remain provisional (4,310 original CODE B
-/916 x86, **469/916 GPR roles**); see [F1107 original 0x35E](CHARACTEROBJECT_NATIVE_35E_F1107.md)
-and [F1103 358–35C](CHARACTEROBJECT_NATIVE_358_TO_35C_PROVISIONAL_F1103.md).
-The selected partial whole C++ is **53,396B /11,524 x86** vs full
-original **81,539B /17,435 x86**, with 567 afterRET DATA.
-**Whole original game NONEXACT; zero newly accepted exact CODE**.
-Recheck only [live whole-parent original PE](../scripts/verify-characterobject-current-recovered-f1068.py).
+**81KB single-switch 0050A580:** [F1109 real original
+`0x362/363/364` states](CHARACTEROBJECT_NATIVE_362_TO_364_F1109.md)
+restore three actual original 206-x86 interiors, with **618/618 native
+mnemonics+GPR roles and 45/45 PE external fields**, spawning real
+0x367/368/369. All **206 widths** match in 363/364, but source
+stack displacements differ (NOT exact). The live verifier now checks
+**60 strictly role-matched interiors /51,345 original CODE B /
+11,126 x86 mnemonic+GPR positions /848 PE fields /2,065 scalar
+immediate values**. Seven other C++ cases remain provisional
+(4,310 original B/916 x86, 469 GPR roles); see [F1107 original
+0x35E](CHARACTEROBJECT_NATIVE_35E_F1107.md). Current partial source
+**56,242B /12,136 x86** versus authentic **81,539B /17,435
+x86**, original 567 afterRET DATA. **Original whole NONEXACT;
+new accepted whole CODE 0 B.** Recheck only [live original PE
+one-parent verifier](../scripts/verify-characterobject-current-recovered-f1068.py).
 
 ## 4. All three remaining independent small/medium originals
 

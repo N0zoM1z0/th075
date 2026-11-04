@@ -1,7 +1,8 @@
-// F1108: original Japanese native actions 0x360 and 0x361,
-// 00516D10..005170C8 / 005170C8..00517480 respectively:
-// each a distinct 952 original CODE B /206 native x86 in ONE
-// incomplete NONEXACT 81KB game callable. NEXT_ID is 0x365/0x366.
+// F1108/F1109: five separate original Japanese native actions 0x360..0x364.
+// Source is one genuine repeated game-logic family, instantiated at five
+// distinct physical PE switch entries inside ONE NONEXACT 81KB callable.
+// Original each 206 x86, but native CODE width is 952/952/951/964/964 B.
+// NEXT_ID must retain 0x365/0x366/0x367/0x368/0x369 respectively.
 case F1108_CASE: {
     if (PARENT_FIELD(signed short,0x60)>0x31 &&
         PARENT_FIELD(signed short,0x60)<0x96 &&

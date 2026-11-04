@@ -1,5 +1,7 @@
 # F1108 — Two original 952B/206-x86 states 0x360 and 0x361; separate 0x365/0x366 projectile and complete native GPR phase
 
+**Historical F1108 checkpoint:** the same genuine repeated source family has since reconstructed [F1109 three additional original states 0x362–0x364](CHARACTEROBJECT_NATIVE_362_TO_364_F1109.md), with 60 strict inner states now live. The 57-case/53,396B partial source geometry below refers to earlier F1108; original 360/361 PE evidence still passes.
+
 The SHA-pinned Japanese TH075 1.11 original contains ONE independently
 authored `CharacterObject::Advance` at `0050A580`, **81,539 native
 original CODE B /17,435 x86**, followed by 567 separately owned
