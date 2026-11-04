@@ -122,19 +122,21 @@ rechecks **1,697/1,697 physical external PE targets**,
 tested 10 normal VC7.1 variants without fixing the true native CMP
 roles; check the original PE, not stale hypotheses.
 
-**81KB single-switch 0050A580:** [F1088 authentic native
-`0x34F` 0x363 projectile and distinct parent guards](CHARACTEROBJECT_NATIVE_34F_F1088.md)
-adds genuine source for **46 original game-state interiors /39,408
-native CODE B /8,565 native x86 mnemonic+GPR matches /674
-physically original PE call/global fields /1,588 scalar immediate
-positions**. Original 34F (1,216B/263x86, all 18 physical PE fields)
-launches eight `0x363` objects for parent `0x194/4`,`0x263/5`,
-`0x264/5`, distinct from [F1087 0x34E](CHARACTEROBJECT_NATIVE_34E_F1087.md)
-0x362/other guards. The live [one-parent original-PE verifier](../scripts/verify-characterobject-current-recovered-f1068.py)
-compiles just the current partial function **32,425 CODE B /8,701
-x86** against original **81,539B /17,435 x86**, with genuine
-92 DIR32/199 sparse afterRET DATA preserved. **The whole original
-81KB game callable remains NONEXACT; new exact original CODE 0B.**
+**81KB single-switch 0050A580:** [F1089 genuine native
+`0x350` 0x364 eight-shot action](CHARACTEROBJECT_NATIVE_350_F1089.md)
+adds real parent combinations `0x192/4`,`0x260/4`,`0x261/4`,`0x262/4`
+within **47 genuine original game-state interiors /40,671 native CODE
+B /8,838 original x86 mnemonic+GPR positions /692 genuine original
+PE fields /1,636 nonrelocated scalar immediates**. Original 350 is
+1,263B/273x86, all 18 physical PE targets verified. The [live
+one-parent original PE verifier](../scripts/verify-characterobject-current-recovered-f1068.py)
+compiles the selected partial C++ **33,457 CODE B /8,972 x86**
+against the original **81,539B /17,435 x86**, preserving genuine
+92 DIR32/199 sparse afterRET DATA. Earlier [F1088 native 0x34F](CHARACTEROBJECT_NATIVE_34F_F1088.md)
+and [F1087 original 0x34E](CHARACTEROBJECT_NATIVE_34E_F1087.md)
+retain their independent source-accurate projectile IDs.
+**The original entire 81KB callable remains NONEXACT; new accepted
+original CODE = 0B.**
 
 ## 4. All three remaining independent small/medium originals
 
@@ -188,8 +190,6 @@ F1056: [native collision bounding RECT plus genuine fighter vitals/axis fields](
 F1060: [physical 16-byte native Combo HUD borrowed window](COMBO_HUD_BORROW_WINDOW_F1060.md) gives actual names to count/damage/ratio/alpha/side/hold/phase/vertical HUD fields without assuming a full historical owner. The one affected RoundEndHud object cold-replayed **4/4 exact whole native functions** (878 previously credited CODE B); no corpus replay.
 
 F1063: [two real actor/HUD pointer arrays plus native action/health borrowed fields](ACTIVE_COLLISION_ACTOR_PAIRS_F1063.md) now ties the original +0x44/+0x48 and +0x50/+0x54 pointers to their actual two-member borrowed windows, and restores the independent +0x80 action WORD and +0x324 health usages. The entire affected `BattleActiveCollision.cpp` translation unit cold-replayed **5/5 exact whole original callables** (**2,045 previously credited CODE B**); no corpus replay.
-
-F1067: [flash bar native health/X-Y/flags typed borrow](BATTLE_DAMAGE_FLASH_NATIVE_FIELDS_F1067.md): one complete 1,081B `RenderFlash` retained **1/1 exact** after four scoped cold compiles; no other object or corpus replay.
 
 F1072: [physically native combat response flash span, action/timer WORDs and 4-int collision-bound borrow](BATTLE_RESPONSE_NATIVE_BORROW_GRAMMAR_F1072.md) preserves **5/5 exact whole callables, 3,073 previously accepted CODE B**. New C++ struct/header experiments changed strict `$L` labels despite unchanged CODE and were rejected; selected no-new-type scalar window preserved exact COFF.
 

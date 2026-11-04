@@ -1,5 +1,7 @@
 # F1088 — Original 0x34F 1,216B action, real 0x363 shots and distinct parent-stage guards
 
+**Historical F1088 checkpoint:** the current parent also includes real [F1089 native `0x350`](CHARACTEROBJECT_NATIVE_350_F1089.md), which launches eight `0x364` with distinct parent action/phase guards. The older 46-state partial-parent frame and sizes below refer to the previous checkpoint; 34F original PE proof remains valid.
+
 The SHA-pinned Japanese TH075 v1.11 original contains ONE independently
 authored `CharacterObject::Advance` at `0050A580`: **81,539 CODE B /
 17,435 native x86**, plus its separately owned 567B afterRET sparse
