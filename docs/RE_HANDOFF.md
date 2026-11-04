@@ -188,8 +188,6 @@ F1053: [native x87 facing leaf lvalue source grammar](COMBAT_FACING_LVALUE_GRAMM
 
 F1056: [native collision bounding RECT plus genuine fighter vitals/axis fields](COLLISION_NATIVE_RECT_AND_VITALS_F1056.md) replaces raw casts for 20 bounds, original adjacent +0x324/+0x326 WORDs and 6 original X/Y coordinate reads. The affected `BattleCollision.cpp` object cold-replayed **5/5 entire original functions exact** (**855 previously credited bytes**), with no other source objects or corpus replay.
 
-F1056: [physical battle collision RECT/actor borrowed windows](BATTLE_COLLISION_BORROWED_NATIVE_F1056.md) recover original in-place `this+0x34..0x40` bounds, signed health current/recoverable WORDs and actor X/Y position references. All **5/5** affected native complete BattleCollision.cpp units remain strict exact (**855/855 already accepted bytes**), not new CODE credit.
-
 F1060: [physical 16-byte native Combo HUD borrowed window](COMBO_HUD_BORROW_WINDOW_F1060.md) gives actual names to count/damage/ratio/alpha/side/hold/phase/vertical HUD fields without assuming a full historical owner. The one affected RoundEndHud object cold-replayed **4/4 exact whole native functions** (878 previously credited CODE B); no corpus replay.
 
 F1063: [two real actor/HUD pointer arrays plus native action/health borrowed fields](ACTIVE_COLLISION_ACTOR_PAIRS_F1063.md) now ties the original +0x44/+0x48 and +0x50/+0x54 pointers to their actual two-member borrowed windows, and restores the independent +0x80 action WORD and +0x324 health usages. The entire affected `BattleActiveCollision.cpp` translation unit cold-replayed **5/5 exact whole original callables** (**2,045 previously credited CODE B**); no corpus replay.
@@ -199,6 +197,8 @@ F1067: [flash bar native health/X-Y/flags typed borrow](BATTLE_DAMAGE_FLASH_NATI
 F1072: [physically native combat response flash span, action/timer WORDs and 4-int collision-bound borrow](BATTLE_RESPONSE_NATIVE_BORROW_GRAMMAR_F1072.md) preserves **5/5 exact whole callables, 3,073 previously accepted CODE B**. New C++ struct/header experiments changed strict `$L` labels despite unchanged CODE and were rejected; selected no-new-type scalar window preserved exact COFF.
 
 F1079: [real collision-frame flags, action WORD and four native bounds](BATTLE_COLLISION_DISPATCH_BORROW_F1079.md) preserves **3/3 strict original whole functions exact (1,990 previously credited CODE B)** after one-object cold replay.
+
+F1084: [native two-fighter vital WORDs in whole 9,841B Battle HUD](BATTLE_HUD_NATIVE_VITALS_F1084.md) replaces **24** raw signed health/recoverable casts with independently original F999 fields, preserving **1/1 full native 9,841B exact** after one scoped cold replay; no new exact credit.
 
 ## 6. Agent operating checklist / storage
 

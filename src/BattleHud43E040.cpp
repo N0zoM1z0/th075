@@ -1,4 +1,5 @@
 #include "BattleHud43E040.hpp"
+#include "FighterVitalBorrowedF999.hpp"
 
 #define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<char*>(this) + (offset)))
 #define FLOAT(offset) *reinterpret_cast<float*>(reinterpret_cast<char*>(this) + (offset))
@@ -52,24 +53,24 @@ void BattleHud43E040::RenderHud() {
             if (FLOAT(0x8C) != 0.0f)
                 QUAD->Translate(0.0f, FLOAT(0x8C), 0.0f);
             DRAWING->DrawQuad(0, &packet, &region, D3DCOLOR_ARGB(g_SequenceByteAt0066C239, 128, 128, 128));
-            SetRect(&region, 866 - LEFT(short, 0x326) * 225 / 10000, 21, 866, 32);
-            packet.BuildQuad(float(256 - LEFT(short, 0x326) * 225 / 10000), 27.0f, 256.0f, 38.0f);
+            SetRect(&region, 866 - F999_VITAL(FIELD(char*, 0x44)).recoverableAt326 * 225 / 10000, 21, 866, 32);
+            packet.BuildQuad(float(256 - F999_VITAL(FIELD(char*, 0x44)).recoverableAt326 * 225 / 10000), 27.0f, 256.0f, 38.0f);
             if (FLOAT(0x8C) != 0.0f)
                 QUAD->Translate(0.0f, FLOAT(0x8C), 0.0f);
             DRAWING->DrawQuad(0, &packet, &region, color);
-            SetRect(&region, 865 - LEFT(short, 0x324) * 225 / 10000, 236, 865, 247);
-            packet.BuildQuad(float(256 - LEFT(short, 0x324) * 225 / 10000), 27.0f, 256.0f, 38.0f);
+            SetRect(&region, 865 - F999_VITAL(FIELD(char*, 0x44)).currentAt324 * 225 / 10000, 236, 865, 247);
+            packet.BuildQuad(float(256 - F999_VITAL(FIELD(char*, 0x44)).currentAt324 * 225 / 10000), 27.0f, 256.0f, 38.0f);
             if (FLOAT(0x8C) != 0.0f)
                 QUAD->Translate(0.0f, FLOAT(0x8C), 0.0f);
             DRAWING->DrawQuad(0, &packet, &region, color);
         } else {
-            SetRect(&region, 866 - LEFT(short, 0x326) * 225 / 10000, 21, 866, 32);
-            packet.BuildQuad(float(256 - LEFT(short, 0x326) * 225 / 10000), 27.0f, 256.0f, 38.0f);
+            SetRect(&region, 866 - F999_VITAL(FIELD(char*, 0x44)).recoverableAt326 * 225 / 10000, 21, 866, 32);
+            packet.BuildQuad(float(256 - F999_VITAL(FIELD(char*, 0x44)).recoverableAt326 * 225 / 10000), 27.0f, 256.0f, 38.0f);
             if (FLOAT(0x8C) != 0.0f)
                 QUAD->Translate(0.0f, FLOAT(0x8C), 0.0f);
             DRAWING->DrawQuad(0, &packet, &region, color);
-            SetRect(&region, 866 - LEFT(short, 0x324) * 225 / 10000, 10, 866, 21);
-            packet.BuildQuad(float(256 - LEFT(short, 0x324) * 225 / 10000), 27.0f, 256.0f, 38.0f);
+            SetRect(&region, 866 - F999_VITAL(FIELD(char*, 0x44)).currentAt324 * 225 / 10000, 10, 866, 21);
+            packet.BuildQuad(float(256 - F999_VITAL(FIELD(char*, 0x44)).currentAt324 * 225 / 10000), 27.0f, 256.0f, 38.0f);
             if (FLOAT(0x8C) != 0.0f)
                 QUAD->Translate(0.0f, FLOAT(0x8C), 0.0f);
             DRAWING->DrawQuad(0, &packet, &region, D3DCOLOR_ARGB(g_SequenceByteAt0066C239,
@@ -80,8 +81,8 @@ void BattleHud43E040::RenderHud() {
             switch (reinterpret_cast<signed char*>(FIELD(char*, 0x48) + 0x32A)[RIGHT(signed char, 0x39D)]) {
             case 0:
                 if (FIELD(signed char, 0x18) == 9 || FIELD(signed char, 0x18) == 10) {
-                    SetRect(&region, 866 - RIGHT(short, 0x326) * 225 / reinterpret_cast<short*>(FIELD(char*, 0x48) + 0x33E)[RIGHT(signed char, 0x39D)], 10, 866, 21);
-                    packet.BuildQuad(float(RIGHT(short, 0x326) * 56 / reinterpret_cast<short*>(FIELD(char*, 0x48) + 0x33E)[RIGHT(signed char, 0x39D)] + 384), 27.0f, 384.0f, 38.0f);
+                    SetRect(&region, 866 - F999_VITAL(FIELD(char*, 0x48)).recoverableAt326 * 225 / reinterpret_cast<short*>(FIELD(char*, 0x48) + 0x33E)[RIGHT(signed char, 0x39D)], 10, 866, 21);
+                    packet.BuildQuad(float(F999_VITAL(FIELD(char*, 0x48)).recoverableAt326 * 56 / reinterpret_cast<short*>(FIELD(char*, 0x48) + 0x33E)[RIGHT(signed char, 0x39D)] + 384), 27.0f, 384.0f, 38.0f);
                 } else {
                     SetRect(&region, 641, 10, 866, 21);
                     packet.BuildQuad(440.0f, 27.0f, 384.0f, 38.0f);
@@ -89,22 +90,22 @@ void BattleHud43E040::RenderHud() {
                 if (FLOAT(0x8C) != 0.0f)
                     QUAD->Translate(0.0f, FLOAT(0x8C), 0.0f);
                 DRAWING->DrawQuad(0, &packet, &region, color);
-                SetRect(&region, 865 - RIGHT(short, 0x324) * 225 / reinterpret_cast<short*>(FIELD(char*, 0x48) + 0x33E)[RIGHT(signed char, 0x39D)], 236, 865, 247);
-                packet.BuildQuad(float(RIGHT(short, 0x324) * 169 / reinterpret_cast<short*>(FIELD(char*, 0x48) + 0x33E)[RIGHT(signed char, 0x39D)] + 440), 27.0f, 440.0f, 38.0f);
+                SetRect(&region, 865 - F999_VITAL(FIELD(char*, 0x48)).currentAt324 * 225 / reinterpret_cast<short*>(FIELD(char*, 0x48) + 0x33E)[RIGHT(signed char, 0x39D)], 236, 865, 247);
+                packet.BuildQuad(float(F999_VITAL(FIELD(char*, 0x48)).currentAt324 * 169 / reinterpret_cast<short*>(FIELD(char*, 0x48) + 0x33E)[RIGHT(signed char, 0x39D)] + 440), 27.0f, 440.0f, 38.0f);
                 if (FLOAT(0x8C) != 0.0f)
                     QUAD->Translate(0.0f, FLOAT(0x8C), 0.0f);
                 DRAWING->DrawQuad(0, &packet, &region, color);
                 break;
             case 1:
-                SetRect(&region, 866 - RIGHT(short, 0x324) * 225 / reinterpret_cast<short*>(FIELD(char*, 0x48) + 0x33E)[RIGHT(signed char, 0x39D)], 10, 866, 21);
-                packet.BuildQuad(float(RIGHT(short, 0x324) * 56 / reinterpret_cast<short*>(FIELD(char*, 0x48) + 0x33E)[RIGHT(signed char, 0x39D)] + 384), 27.0f, 384.0f, 38.0f);
+                SetRect(&region, 866 - F999_VITAL(FIELD(char*, 0x48)).currentAt324 * 225 / reinterpret_cast<short*>(FIELD(char*, 0x48) + 0x33E)[RIGHT(signed char, 0x39D)], 10, 866, 21);
+                packet.BuildQuad(float(F999_VITAL(FIELD(char*, 0x48)).currentAt324 * 56 / reinterpret_cast<short*>(FIELD(char*, 0x48) + 0x33E)[RIGHT(signed char, 0x39D)] + 384), 27.0f, 384.0f, 38.0f);
                 if (FLOAT(0x8C) != 0.0f)
                     QUAD->Translate(0.0f, FLOAT(0x8C), 0.0f);
                 DRAWING->DrawQuad(0, &packet, &region, color);
                 break;
             case 2:
-                SetRect(&region, 866 - RIGHT(short, 0x324) * 225 / reinterpret_cast<short*>(FIELD(char*, 0x48) + 0x33E)[RIGHT(signed char, 0x39D)], 10, 866, 21);
-                packet.BuildQuad(float(RIGHT(short, 0x324) * 225 / reinterpret_cast<short*>(FIELD(char*, 0x48) + 0x33E)[RIGHT(signed char, 0x39D)] + 384), 27.0f, 384.0f, 38.0f);
+                SetRect(&region, 866 - F999_VITAL(FIELD(char*, 0x48)).currentAt324 * 225 / reinterpret_cast<short*>(FIELD(char*, 0x48) + 0x33E)[RIGHT(signed char, 0x39D)], 10, 866, 21);
+                packet.BuildQuad(float(F999_VITAL(FIELD(char*, 0x48)).currentAt324 * 225 / reinterpret_cast<short*>(FIELD(char*, 0x48) + 0x33E)[RIGHT(signed char, 0x39D)] + 384), 27.0f, 384.0f, 38.0f);
                 if (FLOAT(0x8C) != 0.0f)
                     QUAD->Translate(0.0f, FLOAT(0x8C), 0.0f);
                 DRAWING->DrawQuad(0, &packet, &region, color);
@@ -116,24 +117,24 @@ void BattleHud43E040::RenderHud() {
             if (FLOAT(0x8C) != 0.0f)
                 QUAD->Translate(0.0f, FLOAT(0x8C), 0.0f);
             DRAWING->DrawQuad(0, &packet, &region, D3DCOLOR_ARGB(g_SequenceByteAt0066C239, 128, 128, 128));
-            SetRect(&region, 866 - RIGHT(short, 0x326) * 225 / 10000, 21, 866, 32);
-            packet.BuildQuad(float(RIGHT(short, 0x326) * 225 / 10000 + 384), 27.0f, 384.0f, 38.0f);
+            SetRect(&region, 866 - F999_VITAL(FIELD(char*, 0x48)).recoverableAt326 * 225 / 10000, 21, 866, 32);
+            packet.BuildQuad(float(F999_VITAL(FIELD(char*, 0x48)).recoverableAt326 * 225 / 10000 + 384), 27.0f, 384.0f, 38.0f);
             if (FLOAT(0x8C) != 0.0f)
                 QUAD->Translate(0.0f, FLOAT(0x8C), 0.0f);
             DRAWING->DrawQuad(0, &packet, &region, color);
-            SetRect(&region, 865 - RIGHT(short, 0x324) * 225 / 10000, 236, 865, 247);
-            packet.BuildQuad(float(RIGHT(short, 0x324) * 225 / 10000 + 384), 27.0f, 384.0f, 38.0f);
+            SetRect(&region, 865 - F999_VITAL(FIELD(char*, 0x48)).currentAt324 * 225 / 10000, 236, 865, 247);
+            packet.BuildQuad(float(F999_VITAL(FIELD(char*, 0x48)).currentAt324 * 225 / 10000 + 384), 27.0f, 384.0f, 38.0f);
             if (FLOAT(0x8C) != 0.0f)
                 QUAD->Translate(0.0f, FLOAT(0x8C), 0.0f);
             DRAWING->DrawQuad(0, &packet, &region, color);
         } else {
-            SetRect(&region, 866 - RIGHT(short, 0x326) * 225 / 10000, 21, 866, 32);
-            packet.BuildQuad(float(RIGHT(short, 0x326) * 225 / 10000 + 384), 27.0f, 384.0f, 38.0f);
+            SetRect(&region, 866 - F999_VITAL(FIELD(char*, 0x48)).recoverableAt326 * 225 / 10000, 21, 866, 32);
+            packet.BuildQuad(float(F999_VITAL(FIELD(char*, 0x48)).recoverableAt326 * 225 / 10000 + 384), 27.0f, 384.0f, 38.0f);
             if (FLOAT(0x8C) != 0.0f)
                 QUAD->Translate(0.0f, FLOAT(0x8C), 0.0f);
             DRAWING->DrawQuad(0, &packet, &region, color);
-            SetRect(&region, 866 - RIGHT(short, 0x324) * 225 / 10000, 10, 866, 21);
-            packet.BuildQuad(float(RIGHT(short, 0x324) * 225 / 10000 + 384), 27.0f, 384.0f, 38.0f);
+            SetRect(&region, 866 - F999_VITAL(FIELD(char*, 0x48)).currentAt324 * 225 / 10000, 10, 866, 21);
+            packet.BuildQuad(float(F999_VITAL(FIELD(char*, 0x48)).currentAt324 * 225 / 10000 + 384), 27.0f, 384.0f, 38.0f);
             if (FLOAT(0x8C) != 0.0f)
                 QUAD->Translate(0.0f, FLOAT(0x8C), 0.0f);
             DRAWING->DrawQuad(0, &packet, &region, D3DCOLOR_ARGB(g_SequenceByteAt0066C239,
