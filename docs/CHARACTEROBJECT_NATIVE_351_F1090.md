@@ -1,5 +1,7 @@
 # F1090 — Original game case 0x351: 1,091B, seven-argument 0x352 spawn and native float threshold
 
+**Historical F1090 checkpoint:** current parent additionally restores genuine [F1092 0x352/353](CHARACTEROBJECT_NATIVE_352_353_F1092.md), so older 48-state/34,304B source totals below are historical. Original 351 PE fields and >= threshold still pass in live source.
+
 The pinned Japanese TH075 1.11 original has ONE `CharacterObject::Advance`
 callable at `0050A580`, comprising **81,539 original CODE B /17,435
 x86** plus genuine 567B afterRET jump/sparse DATA. F1090 restores

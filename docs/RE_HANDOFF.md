@@ -122,20 +122,20 @@ rechecks **1,697/1,697 physical external PE targets**,
 tested 10 normal VC7.1 variants without fixing the true native CMP
 roles; check the original PE, not stale hypotheses.
 
-**81KB single-switch 0050A580:** [F1090 real native `0x351`
-1,091B/246x86 game action](CHARACTEROBJECT_NATIVE_351_F1090.md)
-restores real seven-argument projectile `0x352` through 00453B50,
-original signed-facing X, and exact x87 `TEST AH,1` equality behavior.
-The live one-parent Japanese original-PE verifier now checks **48
-true original game state interiors /41,762 native original CODE B /
-9,084 x86 mnemonic+GPR positions /707 physically original PE
-call/global targets /1,685 nonrelocated scalar immediates**.
-Current C++ partial whole **34,304B /9,216 x86** vs authentic
-complete **81,539B /17,435 x86**, 567 afterRET switch DATA verified.
-**Original whole GAME callable NONEXACT; no new accepted exact original
-CODE.** [F1089 0x350](CHARACTEROBJECT_NATIVE_350_F1089.md) and prior
-states remain verified. Run only the [live whole-parent native PE
-checker](../scripts/verify-characterobject-current-recovered-f1068.py).
+**81KB single-switch 0050A580:** [F1092 real `0x352` and
+`0x353` native fade/animation states](CHARACTEROBJECT_NATIVE_352_353_F1092.md)
+now recover **50 genuine original game-state interiors /42,205
+native CODE B /9,183 original x86 mnemonic+GPR positions /716
+physically original PE fields /1,707 native scalar-immediate slots**.
+Original 0x352 is 288B/64x86 (0.5f scales, 20 alpha fade), original
+0x353 is 155B/35x86 (1.0f reset and action expiry); both compile in
+ONE source and retain exact physical original PE destinations.
+The preceding [F1090 0x351](CHARACTEROBJECT_NATIVE_351_F1090.md)
+has native >= threshold, correct seven-argument 0x352 spawn and
+15 original PE fields. Current partial C++ **34,615B /9,311 x86**
+vs original **81,539B /17,435 x86**, with original 92 DIR32/199
+sparse afterRET DATA. **Original whole NONEXACT, zero newly accepted
+whole CODE.** Run only [live one-parent PE verifier](../scripts/verify-characterobject-current-recovered-f1068.py).
 
 ## 4. All three remaining independent small/medium originals
 
