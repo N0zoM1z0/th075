@@ -122,20 +122,19 @@ rechecks **1,697/1,697 physical external PE targets**,
 tested 10 normal VC7.1 variants without fixing the true native CMP
 roles; check the original PE, not stale hypotheses.
 
-**81KB single-switch 0050A580:** [F1088 actual original
-`0x34F` 1,216B/263x86](CHARACTEROBJECT_NATIVE_34F_F1088.md)
-recovers **46 real original game-state interiors /39,408 original
-native CODE B /8,565 original x86 mnemonic+GPR roles /674 genuine
-original physical PE fields /1,588 scalar-immediate slots**.
-The 34F game checks `(0x194,4)/(0x263,5)/(0x264,5)` parent states
-and fires eight real `0x363` objects in an original 45° loop,
-distinct from [F1087 34E](CHARACTEROBJECT_NATIVE_34E_F1087.md) and
-[F1086 34D](CHARACTEROBJECT_NATIVE_34D_F1086.md).
-Current partial C++ **32,425 CODE B /8,701 x86** versus authentic
-complete **81,539B /17,435 x86** and original 567B switch DATA.
-**Whole original callable NONEXACT, newly accepted exact CODE 0B.**
-Use [live original full-parent PE check](../scripts/verify-characterobject-current-recovered-f1068.py)
-rather than historical source dimensions.
+**81KB single-switch 0050A580:** [F1088 authentic native
+`0x34F` 0x363 projectile and distinct parent guards](CHARACTEROBJECT_NATIVE_34F_F1088.md)
+adds genuine source for **46 original game-state interiors /39,408
+native CODE B /8,565 native x86 mnemonic+GPR matches /674
+physically original PE call/global fields /1,588 scalar immediate
+positions**. Original 34F (1,216B/263x86, all 18 physical PE fields)
+launches eight `0x363` objects for parent `0x194/4`,`0x263/5`,
+`0x264/5`, distinct from [F1087 0x34E](CHARACTEROBJECT_NATIVE_34E_F1087.md)
+0x362/other guards. The live [one-parent original-PE verifier](../scripts/verify-characterobject-current-recovered-f1068.py)
+compiles just the current partial function **32,425 CODE B /8,701
+x86** against original **81,539B /17,435 x86**, with genuine
+92 DIR32/199 sparse afterRET DATA preserved. **The whole original
+81KB game callable remains NONEXACT; new exact original CODE 0B.**
 
 ## 4. All three remaining independent small/medium originals
 

@@ -1,5 +1,7 @@
 # F1087 — Original 1,216B state 0x34E, native parent combinations and eight 0x362 shots
 
+**Historical F1087 checkpoint:** [F1088 actual `0x34F`](CHARACTEROBJECT_NATIVE_34F_F1088.md) is now also present, with separately verified `0x363` eight-shot projectile and different parent action phases. The live verifier has 46 real cases and the latest partial-parent geometry; figures below refer to the earlier 45-state checkpoint.
+
 **Historical F1087 checkpoint:** the live parent now also restores authentic [F1088 0x34F](CHARACTEROBJECT_NATIVE_34F_F1088.md). Previous 45-state/31,430B partial source figures below are for the earlier checkpoint, while original 34E 18/18 PE targets remain verified.
 
 The pinned Japanese TH075 1.11 original contains ONE authored
