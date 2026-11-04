@@ -168,6 +168,8 @@ Older accepted field/ABI controls remain in
 A header-looking improvement that changes a compiler-local
 COFF symbol is not exact even if every nonrelocation byte matches.
 
+F1036: [native frame/actor collision countdown WORD pair](FRAME_ACTOR_COLLISION_COUNTDOWN_F1036.md) now restores the genuine signed +0x3B8/+0x3BA relationship in frame and actor calls. The one affected object was cold-replayed **8/8 whole exact** (1,967 original previously accepted bytes); no new acceptance or full replay.
+
 ## 6. Agent operating checklist / storage
 
 **Preflight, no whole corpus replay:**

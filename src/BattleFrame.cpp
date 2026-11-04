@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include "Graphics.hpp"
 #include "BattleFrame.hpp"
+#include "FrameActorCollisionCountdownF1036.hpp"
 #define FIELD(type, object, offset) (*reinterpret_cast<type *>(reinterpret_cast<unsigned char *>(object) + offset))
 #define PLAYER(offset) FIELD(FrameActor *, this, offset)
 #define EFFECTS(offset) FIELD(FrameEffectOwner *, PLAYER(offset), 0x2EC)
@@ -79,14 +80,14 @@ void BattleFrame::UpdatePlayerCounters()
 {
     PLAYER(0x44)->UpdateCounters();
     PLAYER(0x48)->UpdateCounters();
-    FIELD(short, PLAYER(0x44), 0x3BA) = FIELD(short, PLAYER(0x44), 0x3B8);
-    FIELD(short, PLAYER(0x48), 0x3BA) = FIELD(short, PLAYER(0x48), 0x3B8);
-    if (FIELD(short, PLAYER(0x44), 0x3B8) > 0) --FIELD(short, PLAYER(0x44), 0x3B8);
-    if (FIELD(short, PLAYER(0x48), 0x3B8) > 0) --FIELD(short, PLAYER(0x48), 0x3B8);
+    F1036_COLLISION(PLAYER(0x44)).previousCountdown = F1036_COLLISION(PLAYER(0x44)).activeCountdown;
+    F1036_COLLISION(PLAYER(0x48)).previousCountdown = F1036_COLLISION(PLAYER(0x48)).activeCountdown;
+    if (F1036_COLLISION(PLAYER(0x44)).activeCountdown > 0) --F1036_COLLISION(PLAYER(0x44)).activeCountdown;
+    if (F1036_COLLISION(PLAYER(0x48)).activeCountdown > 0) --F1036_COLLISION(PLAYER(0x48)).activeCountdown;
 }
 void FrameActor::AdvanceGuardedState()
 {
-    if (FIELD(short, this, 0x82) == 0 && FIELD(short, FIELD(void *, this, 0x2E8), 0x3B8) == 0) {
+    if (FIELD(short, this, 0x82) == 0 && F1036_COLLISION(FIELD(void *, this, 0x2E8)).activeCountdown == 0) {
         if (FIELD(short, this, 0x60) < 50) Slot8();
         if (FIELD(short, this, 0x60) >= 50 && FIELD(short, this, 0x60) < 150 && FIELD(float, this, 0x48) > 0.0f)
             ChooseAction();
@@ -95,7 +96,7 @@ void FrameActor::AdvanceGuardedState()
 }
 void FrameActor::AdvancePosition()
 {
-    if (FIELD(short, this, 0x82) == 0 && FIELD(short, FIELD(void *, this, 0x2E8), 0x3B8) == 0) {
+    if (FIELD(short, this, 0x82) == 0 && F1036_COLLISION(FIELD(void *, this, 0x2E8)).activeCountdown == 0) {
         if ((CheckHorizontalLimits() * FIELD(signed char, this, 0x66)) *
             (*reinterpret_cast<float *>(reinterpret_cast<unsigned char *>(this) + 0x50) + *reinterpret_cast<float *>(reinterpret_cast<unsigned char *>(this) + 0x488) + *reinterpret_cast<float *>(reinterpret_cast<unsigned char *>(FIELD(void *, this, 0x2E8)) + 0x490)) >= 0.0f)
             *reinterpret_cast<float *>(reinterpret_cast<unsigned char *>(this) + 0x44) += FIELD(signed char, this, 0x66) *
