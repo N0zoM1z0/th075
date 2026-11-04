@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""F1065: two original 249-x86 game action interiors, ONE nonexact 81KB Boss.
+"""F1065/F1066: three original 249-x86 game action interiors, ONE nonexact 81KB Boss.
 
 Cold-compile the entire current original-shaped 0050A580 C++ partial parent.
 Read original SHA-pinned Japanese whole 81KB PE, check genuine 92 original
@@ -29,8 +29,8 @@ assert len(native_index)==199 and hashlib.sha256(data[:368]).hexdigest()==boss['
 SRC=R/'probes/CharacterObjectWhole0050A580F1044.cpp'
 s=SRC.read_text();frag=(R/'probes/CharacterObjectBoss333334F1065.inc').read_text()
 assert frag.count('case F1065_ACTION:')==1 and frag.count('shot<8')==1 and 'g_FighterProbeMarker' not in frag
-for st in ('333','334'):
- assert s.count(f'#define F1065_ACTION 0x{st}\n#include "CharacterObjectBoss333334F1065.inc"\n#undef F1065_ACTION')==1
+for st,value in [('333','30.0f'),('334','0.0f'),('336','-30.0f')]:
+ assert s.count(f'#define F1065_ACTION 0x{st}\n#define F1066_INITIAL_ANGLE {value}\n#include "CharacterObjectBoss333334F1065.inc"\n#undef F1066_INITIAL_ANGLE\n#undef F1065_ACTION')==1
 E=os.environ.copy();E.pop('DISPLAY',None);E.pop('WAYLAND_DISPLAY',None)
 E['WINEPREFIX']=str(R/'.analysis/vc71-wine');E['WINEDLLOVERRIDES']='winex11.drv,winewayland.drv,winemac.drv=d;winemenubuilder.exe=d'
 obj=O/'full-current-partial-parent.obj'
@@ -43,15 +43,15 @@ for x in D.disasm(code,0):
  I.append(x)
  if x.mnemonic=='ret':break
 end=I[-1].address+I[-1].size
-assert (end,len(I),len(code)-end,len(refs))==(16864,4404,567,490)
-assert I[2].op_str=='esp, 0xdc' and I[3].op_str=='dword ptr [ebp - 0x44], ecx'
+assert (end,len(I),len(code)-end,len(refs))==(17809,4651,567,503)
+assert I[2].op_str=='esp, 0xe8' and I[3].op_str=='dword ptr [ebp - 0x48], ecx'
 T=sorted([r for r in refs if r['offset']>=end],key=lambda r:r['offset'])
 assert len(T)==92 and all(r['offset']==end+4*i and r['type']=='DIR32' and r['addend']==0 and r['local_symbol_offset'] is not None for i,r in enumerate(T))
 assert code[end+368:]==native_index
 assert all((native_labels[i]==native_labels[j])==(T[i]['local_symbol_offset']==T[j]['local_symbol_offset']) for i in range(92) for j in range(92))
 RX=re.compile(r'\b(?:[er]?(?:ax|bx|cx|dx|si|di|sp|bp)|[abcd]h|[abcd]l)\b')
 role=lambda x:tuple(RX.findall(x.op_str))
-statuses=[('333',0x50d929,0x50ddcf,1190,943,167),('334',0x50ddcf,0x50e274,1189,945,166)]
+statuses=[('333',0x50d929,0x50ddcf,1190,943,167),('334',0x50ddcf,0x50e274,1189,942,167),('336',0x50e518,0x50e9c0,1192,945,167)]
 rows=[]
 for state,a,b,nativesize,sourcesize,expect_widths in statuses:
  slot=native_index[int(state,16)-0x320]
@@ -79,6 +79,12 @@ for state,a,b,nativesize,sourcesize,expect_widths in statuses:
   assert N[i].mnemonic=='call' if r['type']=='REL32' else ('0x'+format(dest,'x') in N[i].op_str)
   fields.append({'original_ordinal':i,'original_PE_field':hex(native_field),'kind':r['type'],'PE_destination':hex(dest),'source_symbol':r['symbol']})
  assert sum(f['kind']=='REL32' for f in fields)==10 and sum(f['kind']=='DIR32' for f in fields)==4
+ # The ORIGINAL three native motion float immediates are NOT synonyms:
+ # 333=+30, 334=0, 336=-30. An earlier source treated 334 as +30,
+ # which matched mnemonics/PE field targets but was semantically WRONG.
+ expected_imm={'333':'0x41f00000','334':'0','336':'0xc1f00000'}[state]
+ assert N[105].mnemonic=='push' and N[105].op_str==expected_imm
+ assert S[105].mnemonic=='push' and S[105].op_str==expected_imm,(state,S[105].op_str,expected_imm)
  rows.append({'action':state,'original_native_CODE_B':nativesize,'original_native_x86':249,
               'natural_partial_source_CODE_B':sourcesize,'natural_source_x86':249,
               'original_matching_mnemonics':249,'original_matching_GPR':249,
@@ -86,7 +92,7 @@ for state,a,b,nativesize,sourcesize,expect_widths in statuses:
               'true_original_physical_PE_nonlocal_fields':fields,'one_original_whole_exact':False})
  print(state,'original',nativesize,'B/249 x86 source',sourcesize,'B/249; native mnemonic 249/249, GPR 249/249, width',expect_widths,'/249; physical PE fields 14/14',flush=True)
 # Preserve truth about following state and current incomplete compiler phase.
-for st,a,b,role_expected in [('335',0x50e274,0x50e518,149),('337',0x50e9c0,0x50ea5b,13),('338',0x50ea5b,0x50ed70,56)]:
+for st,a,b,role_expected in [('335',0x50e274,0x50e518,149),('337',0x50e9c0,0x50ea5b,35),('338',0x50ea5b,0x50ed70,175)]:
  ix=native_index[int(st,16)-0x320]
  N=[x for x in Nwhole if a<=x.address<b]
  S=[x for x in I if T[ix]['local_symbol_offset']<=x.address<T[ix+1]['local_symbol_offset']]
@@ -95,13 +101,13 @@ for st,a,b,role_expected in [('335',0x50e274,0x50e518,149),('337',0x50e9c0,0x50e
  assert sum(role(n)==role(s) for n,s in zip(N,S))==role_expected,(st,role_expected)
 summary={'original_one_81KB_boss':'0x0050A580','original_whole_CODE_B':81539,'original_whole_x86':17435,
  'source_current_partial_parent_CODE_B':end,'source_partial_parent_x86':len(I),
- 'two_new_original_native_game_state_CODE_B':2379,'two_new_native_x86':498,
- 'two_correct_original_external_PE_target_count':28,
+ 'three_real_original_native_game_state_CODE_B':3571,'three_real_original_native_x86':747,
+ 'three_correct_original_external_PE_target_count':42,
  'following_335_original_GPR_matching':149,
- 'following_337_original_GPR_matching':13,
- 'following_338_original_GPR_matching':56,
+ 'following_337_original_GPR_matching':35,
+ 'following_338_original_GPR_matching':175,
  'original_92_DIR32_jump_partitions_preserved':True,'original_199_sparse_bytes_preserved':True,
  'whole_original_callable_exact':False,'newly_accepted_exact_original_GAME_CODE_B':0,
  'full_979_unit_cold_replay':False,'cases':rows}
 (O/'verified-summary.json').write_text(json.dumps(summary,indent=2)+'\n')
-print('F1065 two authentic 333/334 2,379 native game CODE B/498 native x86; all original mnemonic+GPR and 28 physical PE targets verified. Full 81KB original still NONEXACT.')
+print('F1066: authentic 333/334/336 3,571 native original game CODE B/747 original x86; +30/0/-30 physical instruction immediates, all native mnemonics/GPR and 42 physical PE targets verified. Full 81KB original still NONEXACT.')

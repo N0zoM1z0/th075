@@ -1,5 +1,7 @@
 # F1065 — Two genuine 249-x86 CharacterObject actions, eight-shot native loop
 
+**Corrected by [F1066](CHARACTEROBJECT_NATIVE_336_AND_IMMEDIATES_F1066.md):** this historical F1065 checkpoint missed the real original `0x334` argument at x86 ordinal 105: it is **0.0f**, not +30.0f. The current tracked C++ and original-PE verifier now check **+30.0f for 0x333, 0.0f for 0x334, −30.0f for 0x336** and the real 0x336 action restores downstream register roles. The partial-source size and following GPR totals below are historical, not current.
+
 The pinned Japanese TH075 v1.11 original `CharacterObject::Advance` is
 ONE independently authored **81,539 CODE-byte /17,435-x86** game
 callable at `0050A580`, followed by 567 separately owned switch DATA

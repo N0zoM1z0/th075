@@ -1,3 +1,6 @@
+// F1065/F1066: independent native actions 0x333, 0x334, and 0x336.
+// Initial signed float at the real motion call is +30.0 for 333/334,
+// -30.0 for 336; all three keep the authentic native game calls.
 // F1065: independent native actions 0x333 and 0x334, physical original
 // 0050D929..0050DDCF and 0050DDCF..0050E274, 249 x86 each.
 // Shared C++ gameplay grammar, distinct native switch entries, never two
@@ -36,7 +39,7 @@ case F1065_ACTION: {
         SELF_FIELD(signed short,0x80)=0;
         SELF_FIELD(int,0x7C)=0;
     }
-    SetNativeTwoFloatsAt0040FB70(30.0f,
+    SetNativeTwoFloatsAt0040FB70(F1066_INITIAL_ANGLE,
         float(SELF_FIELD(signed short,0xDC))*g_F1057_SpeedScaleAt006590B4);
     SELF_FIELD(signed short,0xDC)=short(SELF_FIELD(signed short,0xDC)-6);
     if (SELF_FIELD(signed short,0xDC)<20)

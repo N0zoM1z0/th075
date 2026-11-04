@@ -42,8 +42,8 @@ for x in D.disasm(code,0):
  I.append(x)
  if x.mnemonic=='ret':break
 end=I[-1].address+I[-1].size
-assert (end,len(I),len(code)-end,len(refs))==(14970,3910,567,464)
-assert I[2].op_str=='esp, 0xc4' and I[3].op_str=='dword ptr [ebp - 0x3c], ecx'
+assert (end,len(I),len(code)-end,len(refs))==(17809,4651,567,503)
+assert I[2].op_str=='esp, 0xe8' and I[3].op_str=='dword ptr [ebp - 0x48], ecx'
 T=sorted([r for r in refs if r['offset']>=end],key=lambda r:r['offset'])
 assert len(T)==92 and all(r['offset']==end+4*i and r['type']=='DIR32' and r['addend']==0 and r['local_symbol_offset'] is not None for i,r in enumerate(T))
 assert code[end+368:]==original_sparse
@@ -51,7 +51,7 @@ assert all((original_dense[i]==original_dense[j])==(T[i]['local_symbol_offset']=
 RX=re.compile(r'\b(?:[er]?(?:ax|bx|cx|dx|si|di|sp|bp)|[abcd]h|[abcd]l)\b')
 role=lambda x:tuple(RX.findall(x.op_str))
 cases=[('338',0x50ea5b,0x50ed70,789,175,638,12,125,10),
-       ('339',0x50ed70,0x50ef5f,495,101,367,10,59,4)]
+       ('339',0x50ed70,0x50ef5f,495,101,379,10,63,4)]
 rows=[]
 for label,start,stop,size,count,source_size,physical_fields,source_correct_widths,real_calls in cases:
  ix=original_sparse[int(label,16)-0x320]

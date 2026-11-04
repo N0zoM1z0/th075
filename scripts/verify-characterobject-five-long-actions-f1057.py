@@ -29,7 +29,7 @@ base=(R/'probes/CharacterObjectWhole0050A580F1044.cpp').read_text()
 fragment=(R/'probes/CharacterObjectBossLongF1057.inc').read_text()
 assert fragment.count('case F1057_CASE:')==1 and fragment.count('F1057_NEXT_CASE')==1
 assert fragment.count('F1057_FloatAtan2At00483300')==1 and fragment.count('g_F1055_FadeScaleAt006598A4')==2
-cases=[('33b',0x50f25a,0x50f9ce,0x33c,1529,276),('33d',0x50faca,0x51023e,0x33e,1547,282),
+cases=[('33b',0x50f25a,0x50f9ce,0x33c,1547,282),('33d',0x50faca,0x51023e,0x33e,1547,282),
  ('33f',0x51033a,0x510aae,0x340,1547,282),('341',0x510baa,0x51131e,0x342,1547,282),
  ('343',0x51141a,0x511b8e,0x344,1547,282)]
 for action,st,stop,next_action,expectlen,widths in cases:
@@ -48,8 +48,8 @@ for x in D.disasm(code,0):
  I.append(x)
  if x.mnemonic=='ret':break
 end=I[-1].address+I[-1].size
-assert (end,len(I),len(code)-end,len(refs))==(14970,3910,567,464)
-assert I[2].op_str=='esp, 0xc4' and I[3].op_str=='dword ptr [ebp - 0x3c], ecx'
+assert (end,len(I),len(code)-end,len(refs))==(17809,4651,567,503)
+assert I[2].op_str=='esp, 0xe8' and I[3].op_str=='dword ptr [ebp - 0x48], ecx'
 T=sorted([r for r in refs if r['offset']>=end],key=lambda r:r['offset'])
 assert len(T)==92 and all(r['type']=='DIR32' and r['offset']==end+4*j and r['addend']==0 and r['local_symbol_offset'] is not None for j,r in enumerate(T))
 assert code[end+368:]==original_map

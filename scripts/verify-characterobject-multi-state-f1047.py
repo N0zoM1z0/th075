@@ -43,7 +43,7 @@ for x in D.disasm(code,0):
  I.append(x)
  if x.mnemonic=='ret':break
 end=I[-1].address+I[-1].size
-assert (end,len(I),len(code)-end,len(refs))==(14970,3910,DATA,464)
+assert (end,len(I),len(code)-end,len(refs))==(17809,4651,DATA,503)
 S=sorted([r for r in refs if r['offset']>=end],key=lambda x:x['offset'])
 assert len(S)==92 and all(r['offset']==end+4*i and r['type']=='DIR32' and r['addend']==0 and r['local_symbol_offset'] is not None for i,r in enumerate(S))
 assert code[end+368:end+567]==native_sparse
@@ -56,12 +56,12 @@ def original_wide_stack_to_real_shallow_stack(original,source):
  # This partial original-shaped function has not yet restored the
  # genuinely large whole-parent 0x3A0 stack. The original saved this
  # at -0xAC and its real integer-to-float scratch at -0xB4/B8/BC;
- # after real F1057 states, C++ places those same used values 0x78
- # bytes shallower, with saved receiver at -0x34.
+ # with real 333/334/336 states, current source saves this at -0x48,
+ # and all these genuine older borrow windows shift by exactly 0x64.
  a=re.search(r'\[ebp - (0x[0-9a-f]+|[0-9]+)\]',original.op_str)
  b=re.search(r'\[ebp - (0x[0-9a-f]+|[0-9]+)\]',source.op_str)
  return (a is not None and b is not None and
-         int(a.group(1),0)-int(b.group(1),0)==0x70)
+         int(a.group(1),0)-int(b.group(1),0)==0x64)
 cases=[('320',0x0050A658,0x0050A80F,91,6,91),
        ('321',0x0050A80F,0x0050AC27,229,19,229),
        ('322',0x0050AC27,0x0050AD46,56,4,56),

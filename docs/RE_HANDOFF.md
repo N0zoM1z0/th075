@@ -122,12 +122,23 @@ rechecks **1,697/1,697 physical external PE targets**,
 tested 10 normal VC7.1 variants without fixing the true native CMP
 roles; check the original PE, not stale hypotheses.
 
-**81KB single-switch 0050A580:** [F1065 genuine `0x333/0x334` eight-shot loops](CHARACTEROBJECT_NATIVE_333_334_F1065.md) add **2,379 native original state CODE B /498 original x86 /28/28 physical PE external fields**. The partial parent currently has **28 game state interiors /19,809 original CODE B /4,232 x86 mnemonics /332 original external targets**, with 3,843/4,232 native GPR roles matching. Both new 249-x86 states have 249/249 mnemonic+GPR roles, and the following [F1064 authentic 0x335](CHARACTEROBJECT_NATIVE_335_F1064.md) improves to 149/149 GPR. **The unreconstructed 0x336 remains a marker** and causes later GPR-phase regressions; investigate its original source, do not roll back genuine game behavior. Complete game callable **81,539 CODE B /17,435 x86** remains NONEXACT and no new complete-callable exact bytes were credited. [F1052 real 0x325 loop](CHARACTEROBJECT_NATIVE_325_32F_F1052.md) still establishes the 10 earlier complete states at **776/776 GPR**. The whole original 81KB is NONEXACT, and current partial prototype remains 4,373B/1,050 x86 with other marker handlers. Its complete original 81KB parent remains NONEXACT, while the full-source prototype still has other marker handlers and an undersized stack frame. The original 0x320 F1045 source alone has 91/91 GPR roles. Its current 0x320 source case is 335B and the giant still has marker-only other actions and EBP/width debt; **the whole 81,539B remains NONEXACT**. The earlier F569 one-switch diagnostic verifies the original 17-instruction parent guard, signed cooldown, 92 physical DIR32 table slots and 199 sparse bytes, **not** the 81,539B full body. Targeted entrypoint:
-`scripts/repo-python scripts/verify-characterobject-single-switch-source.py --boss 0x0050A580`.
-Old F13x–F148 full drafting/source traces are preserved under
-`.analysis/character-move-4ac040/`, the frozen history and the
-restorable native archives; they are **not** a newly accepted
-82KB or 81KB whole game function.
+**81KB single-switch 0050A580:** [F1066 authentic native
+`0x333/0x334/0x336` and +30/0/−30 float inputs](CHARACTEROBJECT_NATIVE_336_AND_IMMEDIATES_F1066.md)
+recovers **29 genuine original game-state interiors**, covering **21,001
+original native CODE B /4,481 native x86 mnemonic/GPR roles /346
+physically original PE external fields**. The current tracked one-switch
+[C++ parent](../probes/CharacterObjectWhole0050A580F1044.cpp) emits
+**17,809 CODE B /4,651 x86** versus original **81,539B /17,435 x86**,
+with correct 92-entry sparse DIR32 and 199 index DATA but many marker
+cases and a smaller `ESP 0xE8` frame. **The original whole callable
+remains NONEXACT; new accepted original CODE = 0B.** Genuine prior
+cross-state sources: [F1064 `0x335`](CHARACTEROBJECT_NATIVE_335_F1064.md),
+[F1062 `0x338/0x339`](CHARACTEROBJECT_NATIVE_338_339_F1062.md),
+[F1057 five long actions](CHARACTEROBJECT_FIVE_LONG_ACTIONS_F1057.md)
+and [F1058 original x87 Y operand order](CHARACTEROBJECT_NATIVE_Y_LVALUE_F1058.md).
+Original sparse-switch provenance: [F569](CHARACTEROBJECT_SINGLE_SWITCH_F569.md).
+Do not promote state-local instruction matches to exact original callable
+credit or replace real gameplay with synthetic GPR-phase markers.
 
 ## 4. All three remaining independent small/medium originals
 

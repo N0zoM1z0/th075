@@ -41,8 +41,8 @@ for x in D.disasm(code,0):
  I.append(x)
  if x.mnemonic=='ret':break
 end=I[-1].address+I[-1].size
-assert (end,len(I),len(code)-end,len(refs))==(14970,3910,567,464)
-assert I[2].op_str=='esp, 0xc4' and I[3].op_str=='dword ptr [ebp - 0x3c], ecx'
+assert (end,len(I),len(code)-end,len(refs))==(17809,4651,567,503)
+assert I[2].op_str=='esp, 0xe8' and I[3].op_str=='dword ptr [ebp - 0x48], ecx'
 T=sorted((r for r in refs if r['offset']>=end),key=lambda r:r['offset'])
 assert len(T)==92 and all(r['type']=='DIR32' and r['offset']==end+4*j and r['addend']==0 and r['local_symbol_offset'] is not None for j,r in enumerate(T))
 assert code[end+368:]==native_sparse
@@ -58,7 +58,7 @@ roles=lambda x:tuple(rx.findall(x.op_str))
 assert all(x.mnemonic==y.mnemonic for x,y in zip(N,S))
 wrong_w=[j for j,(x,y) in enumerate(zip(N,S)) if x.size!=y.size]
 wrong_g=[j for j,(x,y) in enumerate(zip(N,S)) if roles(x)!=roles(y)]
-assert len(wrong_w)==46 and len(wrong_g)==92
+assert len(wrong_w)==46 and len(wrong_g)==0
 assert sum(N[j].size-S[j].size for j in wrong_w)==676-536
 real=[r for r in refs if lo<=r['offset']<hi and r['local_symbol_offset'] is None]
 assert len(real)==12
@@ -96,4 +96,4 @@ summary={'original_whole_game':'0x0050A580','original_whole_CODE_B':81539,'origi
  'selected_partial_parent_x86':len(I),'following_real_six_states_all_GPR_equal':True,
  'whole_original_GAME_callable_exact':False,'new_accepted_original_CODE_B':0,'mass_cold_replay':False}
 (O/'verified-summary.json').write_text(json.dumps(summary,indent=2)+'\n')
-print('F1064 real native 0x335: original 676B/149 x86, selected inner source 536B/149 x86; native 149/149 mnemonic, 57/149 GPR, 103/149 width; 12/12 true original PE external fields. Following six real state GPR phases all preserved. Whole 81KB still NONEXACT.')
+print('F1064 real native 0x335: original 676B/149 x86, selected inner source 536B/149 x86; native 149/149 mnemonic+GPR, 103/149 width; 12/12 true original PE external fields. Following six real state GPR phases all preserved. Whole 81KB still NONEXACT.')

@@ -74,13 +74,21 @@ void FighterSwitchF569_Boss0050A580::Advance() {
         case 0x331: g_FighterProbeMarker = 818; break;
 #include "CharacterObjectBoss332F1047.inc"
 #define F1065_ACTION 0x333
+#define F1066_INITIAL_ANGLE 30.0f
 #include "CharacterObjectBoss333334F1065.inc"
+#undef F1066_INITIAL_ANGLE
 #undef F1065_ACTION
 #define F1065_ACTION 0x334
+#define F1066_INITIAL_ANGLE 0.0f
 #include "CharacterObjectBoss333334F1065.inc"
+#undef F1066_INITIAL_ANGLE
 #undef F1065_ACTION
 #include "CharacterObjectBoss335F1064.inc"
-        case 0x336: g_FighterProbeMarker = 823; break;
+#define F1065_ACTION 0x336
+#define F1066_INITIAL_ANGLE -30.0f
+#include "CharacterObjectBoss333334F1065.inc"
+#undef F1066_INITIAL_ANGLE
+#undef F1065_ACTION
 #include "CharacterObjectBoss337F1054.inc"
 #include "CharacterObjectBoss338F1062.inc"
 #include "CharacterObjectBoss339F1061.inc"

@@ -1,5 +1,7 @@
 # F1064 — Four-shot original 0x335 gameplay and its real 676B native case
 
+**Live native source update:** [F1066](CHARACTEROBJECT_NATIVE_336_AND_IMMEDIATES_F1066.md) restores authentic 0x333/334/336 eight-shot source. Consequently the currently recompiled original 0x335 has **149/149** native GPR-role matches rather than this historical pre-0x333/0x334 F1064 checkpoint's 57/149. Original 12/12 PE field proof remains correct; the selected partial whole-source dimensions below are historical.
+
 The pinned Japanese TH075 1.11 original game contains **one**
 `CharacterObject::Advance` at `0050A580` with **81,539 original
 callable CODE B /17,435 native x86**, plus 567 separately owned

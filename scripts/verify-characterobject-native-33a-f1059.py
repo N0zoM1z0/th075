@@ -45,8 +45,8 @@ for x in D.disasm(code,0):
  I.append(x)
  if x.mnemonic=='ret':break
 end=I[-1].address+I[-1].size
-assert (end,len(I),len(code)-end,len(refs))==(14970,3910,567,464)
-assert I[2].op_str=='esp, 0xc4' and I[3].op_str=='dword ptr [ebp - 0x3c], ecx'
+assert (end,len(I),len(code)-end,len(refs))==(17809,4651,567,503)
+assert I[2].op_str=='esp, 0xe8' and I[3].op_str=='dword ptr [ebp - 0x48], ecx'
 table=sorted([r for r in refs if r['offset']>=end],key=lambda r:r['offset'])
 assert len(table)==92 and all(r['offset']==end+4*k and r['type']=='DIR32' and r['addend']==0 and r['local_symbol_offset'] is not None for k,r in enumerate(table))
 assert code[end+368:end+567]==original_index
@@ -55,12 +55,12 @@ slot=original_index[0x33a-0x320]
 assert original_dense[slot]==a and original_dense[slot+1]==b
 lo,hi=table[slot]['local_symbol_offset'],table[slot+1]['local_symbol_offset']
 S=[x for x in I if lo<=x.address<hi]
-assert (hi-lo,len(S))==(586,168)
+assert (hi-lo,len(S))==(610,168)
 RX=re.compile(r'\b(?:[er]?(?:ax|bx|cx|dx|si|di|sp|bp)|[abcd]h|[abcd]l)\b')
 role=lambda x:tuple(RX.findall(x.op_str))
 assert all(x.mnemonic==y.mnemonic and role(x)==role(y) for x,y in zip(native,S))
 wd=[i for i,(x,y) in enumerate(zip(native,S)) if x.size!=y.size]
-assert len(wd)==59 and sum(native[i].size-S[i].size for i in wd)==a*-0+763-586
+assert len(wd)==51 and sum(native[i].size-S[i].size for i in wd)==763-610
 refs_in=sorted((r for r in refs if lo<=r['offset']<hi and r['local_symbol_offset'] is None),key=lambda r:r['offset'])
 assert len(refs_in)==18
 fields=[]
@@ -98,7 +98,7 @@ for state,na,nb,expected in neighbor_cases:
 summary={'original_parent':'0x0050A580','original_whole_CODE_B':81539,'native_whole_x86':17435,
  'original_33a_start':'0x0050EF5F','original_33a_end':'0x0050F25A',
  'original_33a_native_CODE_B':763,'native_original_33a_x86':168,
- 'source_natural_33a_CODE_B':586,'source_33a_x86':168,
+ 'source_natural_33a_CODE_B':610,'source_33a_x86':168,
  'original_x86_mnemonics_matching':168,'original_x86_GPR_matching':168,
  'original_x86_widths_matching':168-len(wd),'original_true_external_PE_fields_verified':fields,
  'following_real_case_GPR_phase':following,
@@ -106,4 +106,4 @@ summary={'original_parent':'0x0050A580','original_whole_CODE_B':81539,'native_wh
  'original_92_afterRET_label_equivalence_preserved':True,'original_199_sparse_map_bytes_preserved':True,
  'original_whole_GAME_callable_exact':False,'newly_accepted_whole_CODE_B':0,'mass_cold_replay':False}
 (O/'verified-summary.json').write_text(json.dumps(summary,indent=2)+'\n')
-print('F1059: genuine native 33A 763B/168 x86; selected partial C++ 586B/168 x86; 168/168 original mnemonics+GPR, 18/18 physical original PE fields; 11 following real states now 100% original GPR. Whole 81KB remains NONEXACT.')
+print('F1059: genuine native 33A 763B/168 x86; selected partial C++ 610B/168 x86; 168/168 original mnemonics+GPR, 18/18 physical original PE fields; 11 following real states now 100% original GPR. Whole 81KB remains NONEXACT.')
