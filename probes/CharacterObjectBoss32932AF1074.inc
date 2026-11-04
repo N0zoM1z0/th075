@@ -59,9 +59,11 @@ case F1074_CASE: {
         reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70( \
             0x33A,SELF_FIELD(unsigned int,0x44),SELF_FIELD(unsigned int,0x48), \
             SELF_FIELD(signed char,0x66),1)
-        // Actual original has 16 independently emitted CALLs,
+        // Actual original has one 0x339 plus fifteen 0x33A direct CALLs,
         // not a loop with a synthetic local counter.
-        F1074_SPAWN_33A(); F1074_SPAWN_33A();
+        reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
+            0x339,SELF_FIELD(unsigned int,0x44),SELF_FIELD(unsigned int,0x48),
+            SELF_FIELD(signed char,0x66),1); F1074_SPAWN_33A();
         F1074_SPAWN_33A(); F1074_SPAWN_33A();
         F1074_SPAWN_33A(); F1074_SPAWN_33A();
         F1074_SPAWN_33A(); F1074_SPAWN_33A();

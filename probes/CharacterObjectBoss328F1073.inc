@@ -54,12 +54,14 @@ case 0x328: {
         NativeParentExpiredAt0045B830();
         reinterpret_cast<F1051Grandparent*>(PARENT)->InitTrajectoryAt00453E60(5.0f);
         reinterpret_cast<F1051Grandparent*>(PARENT)->NativePrepareAt00453D40(1);
-        // Original PE has sixteen separate CALLs, not a compiler loop.
+        // Real PE has 16 separate CALLs: one 0x339 then 15 0x33A; not a loop.
 #define F1073_SPAWN_33A() \
         reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70( \
             0x33A,SELF_FIELD(unsigned int,0x44),SELF_FIELD(unsigned int,0x48), \
             SELF_FIELD(signed char,0x66),1)
-        F1073_SPAWN_33A(); F1073_SPAWN_33A();
+        reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
+            0x339,SELF_FIELD(unsigned int,0x44),SELF_FIELD(unsigned int,0x48),
+            SELF_FIELD(signed char,0x66),1); F1073_SPAWN_33A();
         F1073_SPAWN_33A(); F1073_SPAWN_33A();
         F1073_SPAWN_33A(); F1073_SPAWN_33A();
         F1073_SPAWN_33A(); F1073_SPAWN_33A();

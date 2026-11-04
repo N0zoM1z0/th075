@@ -1,4 +1,6 @@
-# F1073/F1074 — Three genuine 1.7–1.8KB projectile states and 48 native unrolled 0x33A launches
+# F1073/F1074 — Three genuine 1.7–1.8KB projectile states and 48 native unrolled 0x339/0x33A launches
+
+**F1077 corrected actual projectile IDs:** original PE ordinal 209 in `0x328` and ordinal 187 in `0x329/0x32A` each push `0x339`, not `0x33A`; the next 15 unrolled calls push `0x33A`. The first tracked F1074 source mistakenly used 16×`0x33A` even though mnemonics, GPR roles and 107/107 PE external fields matched. [F1077 original scalar-literal audit](CHARACTEROBJECT_NATIVE_SCALAR_IMMEDIATES_F1077.md) now detects and prevents this error.
 
 **Historical F1074 checkpoint:** after restoring genuine [F1076 0x346/0x347](CHARACTEROBJECT_NATIVE_346_347_F1076.md), live whole-parent geometry and native coverage are now 38 states. The three F1074 state PE field and opcode proofs are still valid; 36-state compiler dimensions below are the earlier checkpoint.
 
@@ -45,10 +47,12 @@ Original normal VC7.1 argument evaluation actually computes the
 On the true state/ground condition, source calls original
 `0045B830`, original parent `00453E60(5.0f)` and original parent
 `00453D40(1)`, then emits **sixteen separate original native calls
-per action** to `00453A70`, each spawning a genuine `0x33A` object
+per action** to `00453A70`: the first spawns `0x339`, then
+15 spawn `0x33A` objects
 with actor X/Y and facing. They are **unrolled in the authentic
 native PE, not a runtime for-loop**; the normal C++ source uses a
-repeated inline-expression macro with sixteen real call statements
+one explicit `0x339` call and fifteen direct `0x33A` macro
+expansions
 in each independent switch handler. These are **48 authentic direct
 call statements across three cases**, not synthetic stack fillers.
 
@@ -104,7 +108,8 @@ For the three new game cases, actual original verified evidence:
 Each action's 19 original spawn calls consist of the real ten-shot
 loop's **one** physical `00453A70` call site, **one** extra parent
 projectile call, **one** random 0x32B spawn, and **sixteen** separately
-unrolled 0x33A calls. Every PE physical field must be at the same
+unrolled original calls (first `0x339`, then 15 `0x33A`).
+Every PE physical field must be at the same
 original instruction ordinal as the selected source's relocation:
 matching names or first-byte lengths without physical target
 verification are insufficient. Original raw angle and float

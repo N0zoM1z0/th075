@@ -110,6 +110,22 @@ for action,expected_count in required_fields.items():
   assert N[j].mnemonic=='call' if r['type']=='REL32' else ('0x'+format(actual,'x') in N[j].op_str)
   pe.append({'x86_ordinal':j,'original_PE_field':hex(p),'kind':r['type'],
              'original_native_PE_target':hex(actual),'source_symbol':r['symbol']})
+ # Compare non-relocation native literal *values* in every real case.
+ # Correct mnemonic/GPR/PE targets alone previously allowed a mistaken
+ # +30.0f in the actual 0x334 source (original 0.0f).
+ # Exclude branch displacements and the PE field ordinals already audited.
+ scalar=re.compile(r'(?:,\s*|^)(0x[0-9a-f]+|-?\d+)$')
+ field_ordinals={f['x86_ordinal'] for f in pe}
+ original_scalar_imm_count=0
+ for k,(n,emitted) in enumerate(zip(N,S)):
+  if k in field_ordinals or n.mnemonic=='call' or n.mnemonic.startswith('j'):
+   continue
+  ni=scalar.search(n.op_str)
+  si=scalar.search(emitted.op_str)
+  if ni or si:
+   assert ni is not None and si is not None and ni.group(1)==si.group(1),(
+      hex(action),k,n.mnemonic,n.op_str,emitted.mnemonic,emitted.op_str)
+   original_scalar_imm_count+=1
  if action in (0x333,0x334,0x336):
   immediate={0x333:'0x41f00000',0x334:'0',0x336:'0xc1f00000'}[action]
   assert N[105].mnemonic==S[105].mnemonic=='push' and N[105].op_str==S[105].op_str==immediate
@@ -150,9 +166,25 @@ for action,expected_count in required_fields.items():
    assert N[106].op_str==S[106].op_str and speed in N[106].op_str
    spawn_ordinals=list(range(190,401,14))
    assert len(spawn_ordinals)==16
+  # Native actor type for the FIRST unrolled projectile is 0x339,
+  # followed by exactly fifteen 0x33A calls. Older source incorrectly
+  # used 0x33A all sixteen times while matching 100% x86 mnemonic/GPR
+  # and all physical PE relocation fields.
+  spawn_ids=[209+14*k for k in range(16)] if action==0x328 else [187+14*k for k in range(16)]
+  expected_ids=['0x339']+['0x33a']*15
+  assert [N[i].mnemonic for i in spawn_ids]==['push']*16
+  assert [S[i].mnemonic for i in spawn_ids]==['push']*16
+  assert [N[i].op_str for i in spawn_ids]==expected_ids
+  assert [S[i].op_str for i in spawn_ids]==expected_ids,(hex(action),'original projectile IDs regressed')
   assert all(N[i].mnemonic==S[i].mnemonic=='call' for i in spawn_ordinals)
   assert all(any(field['x86_ordinal']==i and field['original_native_PE_target']=='0x453a70'
                  for field in pe) for i in spawn_ordinals)
+  # Earlier source had all sixteen correct physical CALL sites, but used
+  # the WRONG initial action ID. Pinned PE requires 0x339 first,
+  # followed by precisely fifteen 0x33A literal IDs, in EVERY state.
+  assert all(N[i-3].mnemonic==S[i-3].mnemonic=='push' and
+             N[i-3].op_str==S[i-3].op_str==('0x339' if j==0 else '0x33a')
+             for j,i in enumerate(spawn_ordinals))
   # Always spawned random 0x32B before the original status/landing
   # condition; two native 0x455580 calls compute its true X/Y.
   rng=(154,165) if action==0x328 else (140,151)
@@ -197,6 +229,7 @@ for action,expected_count in required_fields.items():
   'original_native_x86':len(N),'source_x86':len(S),
   'matching_mnemonics':len(N),'matching_GPR_roles':len(N),
   'matching_x86_widths':sum(a.size==b.size for a,b in zip(N,S)),
+  'native_scalar_immediate_ordinals_verified':original_scalar_imm_count,
   'native_physically_correct_PE_call_global_fields':pe,
   'one_original_whole_function_exact':False})
  print(hex(action),'native',hi_orig-lo_orig,'B/',len(N),'x86; selected source',hi-lo,'B;',len(pe),'real PE fields',flush=True)
@@ -213,6 +246,7 @@ summary={'original_Boss':'0x0050A580','original_whole_CODE_B':81539,
  'total_recovered_native_original_x86':x86total,
  'total_native_mnemonics_and_GPR_roles_matching':x86total,
  'total_original_PE_nonlocal_fields_physically_verified':fields_total,
+ 'total_native_nonrelocated_scalar_immediates_verified':sum(r['native_scalar_immediate_ordinals_verified'] for r in rows),
  'total_generated_inner_case_source_CODE_B':src_total,
  'original_92_DIR32_native_jump_partitions_equal':True,'original_199_sparse_bytes_equal':True,
  'original_81KB_whole_function_exact':False,'new_exact_original_whole_CODE_B':0,
