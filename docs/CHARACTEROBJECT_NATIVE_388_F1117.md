@@ -1,5 +1,7 @@
 # F1117 — Real original action 0x388, 748B/160 x86: native 60.0f reset and unordered-aware JNP ground transition
 
+**Historical F1117 checkpoint:** current source now additionally restores [F1118 real native 0x389](CHARACTEROBJECT_NATIVE_389_F1118.md), so the 70-case/71,400B whole-source dimensions below are the earlier checkpoint; native 388 160/160 widths and 14/14 PE fields still match.
+
 Pinned Japanese TH075 v1.11 contains one independently authored original `CharacterObject::Advance` at `0050A580`, **81,539 original CODE B /17,435 x86** plus 567 actual afterRET switch DATA bytes. F1117 restores true game action **`0x388` at `0051B89F..0051BB8B`, 748 native original CODE B /160 x86**, inside the still-NONEXACT original-shaped whole C++ parent. It is not a separate exact-original callable.
 
 Original gameplay checks actual parent+0x3A0 health, authentic +0x7C hit-status six and signed +0x80 countdown, and at stage/frame (0,0) invokes `0040FBB0(0,60.0f,0)`, sets both scales to 1.0f, four alpha bytes 0xFF, countdown +0x80=1, status+0x7C zero, real Y velocity **22.5f**, and calls parent `00453D40(3)` plus real `00453A70` to launch native game action **`0x345`**. It advances actual Y by velocity, then stage 1 increases +0x30 angle by original `00657878`, decreases real Y velocity by original `0065747C`, and clamps it at zero on the native `0065782C` ground threshold.
