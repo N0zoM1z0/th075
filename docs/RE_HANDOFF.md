@@ -189,6 +189,8 @@ F1096: [native two-side HUD float and signed name-group pairs](BATTLE_STATUS_NAT
 
 F1106: [109 real fighter/side-HUD/overlay float borrows](FRAME_DEPENDENCIES_NATIVE_BORROW_WINDOWS_F1106.md) preserve 3/3 full original native exact (4,169B) after scoped cold replays; not newly accepted bytes.
 
+F1134: [127 genuine original HUD/fighter slide/style/health/gauge/charge/shade field borrows](BATTLE_HUD_NATIVE_BORROW_F1134.md) preserve the **complete 9,841B BattleHud RenderHud 1/1 strict original exact** after four targeted cold builds and whole original COFF check; zero new coverage.
+
 ## 6. Agent operating checklist / storage
 
 **Preflight, no whole corpus replay:**
