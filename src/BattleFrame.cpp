@@ -2,6 +2,7 @@
 #include "Graphics.hpp"
 #include "BattleFrame.hpp"
 #include "FrameActorCollisionCountdownF1036.hpp"
+#include "FrameActorMotionPairsF1037.hpp"
 #define FIELD(type, object, offset) (*reinterpret_cast<type *>(reinterpret_cast<unsigned char *>(object) + offset))
 #define PLAYER(offset) FIELD(FrameActor *, this, offset)
 #define EFFECTS(offset) FIELD(FrameEffectOwner *, PLAYER(offset), 0x2EC)
@@ -89,7 +90,7 @@ void FrameActor::AdvanceGuardedState()
 {
     if (FIELD(short, this, 0x82) == 0 && F1036_COLLISION(FIELD(void *, this, 0x2E8)).activeCountdown == 0) {
         if (FIELD(short, this, 0x60) < 50) Slot8();
-        if (FIELD(short, this, 0x60) >= 50 && FIELD(short, this, 0x60) < 150 && FIELD(float, this, 0x48) > 0.0f)
+        if (FIELD(short, this, 0x60) >= 50 && FIELD(short, this, 0x60) < 150 && F1037_POSITION(this).yPosition > 0.0f)
             ChooseAction();
         Slot10();
     }
@@ -98,22 +99,22 @@ void FrameActor::AdvancePosition()
 {
     if (FIELD(short, this, 0x82) == 0 && F1036_COLLISION(FIELD(void *, this, 0x2E8)).activeCountdown == 0) {
         if ((CheckHorizontalLimits() * FIELD(signed char, this, 0x66)) *
-            (*reinterpret_cast<float *>(reinterpret_cast<unsigned char *>(this) + 0x50) + *reinterpret_cast<float *>(reinterpret_cast<unsigned char *>(this) + 0x488) + *reinterpret_cast<float *>(reinterpret_cast<unsigned char *>(FIELD(void *, this, 0x2E8)) + 0x490)) >= 0.0f)
-            *reinterpret_cast<float *>(reinterpret_cast<unsigned char *>(this) + 0x44) += FIELD(signed char, this, 0x66) *
-                (*reinterpret_cast<float *>(reinterpret_cast<unsigned char *>(this) + 0x50) + *reinterpret_cast<float *>(reinterpret_cast<unsigned char *>(this) + 0x488) + *reinterpret_cast<float *>(reinterpret_cast<unsigned char *>(FIELD(void *, this, 0x2E8)) + 0x490));
-        if (*reinterpret_cast<float *>(reinterpret_cast<unsigned char *>(this) + 0x44) < 40.0f) *reinterpret_cast<float *>(reinterpret_cast<unsigned char *>(this) + 0x44) = 40.0f;
-        if (*reinterpret_cast<float *>(reinterpret_cast<unsigned char *>(this) + 0x44) > 1240.0f) *reinterpret_cast<float *>(reinterpret_cast<unsigned char *>(this) + 0x44) = 1240.0f;
-        *reinterpret_cast<float *>(reinterpret_cast<unsigned char *>(this) + 0x48) += *reinterpret_cast<float *>(reinterpret_cast<unsigned char *>(this) + 0x54);
-        if (*reinterpret_cast<float *>(reinterpret_cast<unsigned char *>(this) + 0x48) < 0.0f) *reinterpret_cast<float *>(reinterpret_cast<unsigned char *>(this) + 0x48) = 0.0f;
+            (F1037_MOTION(this).xMotion + *reinterpret_cast<float *>(reinterpret_cast<unsigned char *>(this) + 0x488) + *reinterpret_cast<float *>(reinterpret_cast<unsigned char *>(FIELD(void *, this, 0x2E8)) + 0x490)) >= 0.0f)
+            F1037_POSITION(this).xPosition += FIELD(signed char, this, 0x66) *
+                (F1037_MOTION(this).xMotion + *reinterpret_cast<float *>(reinterpret_cast<unsigned char *>(this) + 0x488) + *reinterpret_cast<float *>(reinterpret_cast<unsigned char *>(FIELD(void *, this, 0x2E8)) + 0x490));
+        if (F1037_POSITION(this).xPosition < 40.0f) F1037_POSITION(this).xPosition = 40.0f;
+        if (F1037_POSITION(this).xPosition > 1240.0f) F1037_POSITION(this).xPosition = 1240.0f;
+        F1037_POSITION(this).yPosition += F1037_MOTION(this).yMotion;
+        if (F1037_POSITION(this).yPosition < 0.0f) F1037_POSITION(this).yPosition = 0.0f;
     }
 }
 
 signed char FrameActor::CheckHorizontalLimits()
 {
-    if (*reinterpret_cast<float *>(reinterpret_cast<unsigned char *>(this) + 0x44) - 40.0f <= 0.0f ||
-        *reinterpret_cast<float *>(reinterpret_cast<unsigned char *>(FIELD(void *, this, 0x2E8)) + 0x44) - *reinterpret_cast<float *>(reinterpret_cast<unsigned char *>(this) + 0x44) > 880.0f) return 1;
-    if (*reinterpret_cast<float *>(reinterpret_cast<unsigned char *>(this) + 0x44) + 40.0f >= 1280.0f ||
-        *reinterpret_cast<float *>(reinterpret_cast<unsigned char *>(this) + 0x44) - *reinterpret_cast<float *>(reinterpret_cast<unsigned char *>(FIELD(void *, this, 0x2E8)) + 0x44) > 880.0f) return -1;
+    if (F1037_POSITION(this).xPosition - 40.0f <= 0.0f ||
+        F1037_POSITION(FIELD(void *, this, 0x2E8)).xPosition - F1037_POSITION(this).xPosition > 880.0f) return 1;
+    if (F1037_POSITION(this).xPosition + 40.0f >= 1280.0f ||
+        F1037_POSITION(this).xPosition - F1037_POSITION(FIELD(void *, this, 0x2E8)).xPosition > 880.0f) return -1;
     return 0;
 }
 void FrameActor::ChooseAction()
@@ -121,7 +122,7 @@ void FrameActor::ChooseAction()
     if (FIELD(unsigned long, FIELD(void *, this, 0x74), 0x3C) & 0x100000) return;
     if (FIELD(short, this, 0x324) <= 0) return;
     if (FIELD(short, this, 0x3C8) > 0) {
-        if (FIELD(float, this, 0x48) > 0.0f) --FIELD(short, this, 0x3C8);
+        if (F1037_POSITION(this).yPosition > 0.0f) --FIELD(short, this, 0x3C8);
     } else if (FIELD(signed char, this, 0x2CD) != 0 && g_CombatMode == 5 && FIELD(signed char, this, 0x52E) == 0) {
         if (rand() % 2) reinterpret_cast<CombatActor *>(this)->ResetPrimaryCounters(180);
         else reinterpret_cast<CombatActor *>(this)->ResetPrimaryCounters(181);

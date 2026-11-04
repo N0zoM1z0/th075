@@ -170,6 +170,8 @@ COFF symbol is not exact even if every nonrelocation byte matches.
 
 F1036: [native frame/actor collision countdown WORD pair](FRAME_ACTOR_COLLISION_COUNTDOWN_F1036.md) now restores the genuine signed +0x3B8/+0x3BA relationship in frame and actor calls. The one affected object was cold-replayed **8/8 whole exact** (1,967 original previously accepted bytes); no new acceptance or full replay.
 
+F1037: [paired actor position/motion float windows](FRAME_ACTOR_MOTION_PAIRS_F1037.md) recover genuine X/Y borrowed fields at +0x44/+0x48 and +0x50/+0x54 in core actor movement, collision limits and action selection. All **8/8** affected entire functions remain exact after one-object cold replay (the same 1,967 previously credited bytes; not new credit).
+
 ## 6. Agent operating checklist / storage
 
 **Preflight, no whole corpus replay:**
