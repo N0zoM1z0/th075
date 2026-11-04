@@ -59,6 +59,8 @@ extern float g_F1095_LowerYAt00659894;
 extern float g_F1095_UpperYAt00659890;
 extern float g_F1101_RightAt00659424;
 extern float g_F1101_LeftAt0065924C;
+extern float g_F1110_NativeSpeedAt006578C0;
+extern float g_F1110_NativeBaseAt00657CF8;
 
 extern float __cdecl F1057_FloatAtan2At00483300(float,float);
 
@@ -221,11 +223,27 @@ void FighterSwitchF569_Boss0050A580::Advance() {
 #include "CharacterObjectBoss360361F1108.inc"
 #undef F1108_NEXT_ID
 #undef F1108_CASE
-        case 0x365: g_FighterProbeMarker = 870; break;
-        case 0x366: g_FighterProbeMarker = 871; break;
-        case 0x367: g_FighterProbeMarker = 872; break;
-        case 0x368: g_FighterProbeMarker = 873; break;
-        case 0x369: g_FighterProbeMarker = 874; break;
+#include "CharacterObjectBoss365F1110.inc"
+#define F1110_CASE 0x366
+#define F1110_NEXT_ACTION 0x33E
+#include "CharacterObjectBoss365369F1110.inc"
+#undef F1110_NEXT_ACTION
+#undef F1110_CASE
+#define F1110_CASE 0x367
+#define F1110_NEXT_ACTION 0x340
+#include "CharacterObjectBoss365369F1110.inc"
+#undef F1110_NEXT_ACTION
+#undef F1110_CASE
+#define F1110_CASE 0x368
+#define F1110_NEXT_ACTION 0x342
+#include "CharacterObjectBoss365369F1110.inc"
+#undef F1110_NEXT_ACTION
+#undef F1110_CASE
+#define F1110_CASE 0x369
+#define F1110_NEXT_ACTION 0x344
+#include "CharacterObjectBoss365369F1110.inc"
+#undef F1110_NEXT_ACTION
+#undef F1110_CASE
         case 0x384: g_FighterProbeMarker = 901; break;
         case 0x385: g_FighterProbeMarker = 902; break;
         case 0x386: g_FighterProbeMarker = 903; break;
