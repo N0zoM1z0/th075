@@ -182,6 +182,8 @@ F1056: [physical battle collision RECT/actor borrowed windows](BATTLE_COLLISION_
 
 F1060: [physical 16-byte native Combo HUD borrowed window](COMBO_HUD_BORROW_WINDOW_F1060.md) gives actual names to count/damage/ratio/alpha/side/hold/phase/vertical HUD fields without assuming a full historical owner. The one affected RoundEndHud object cold-replayed **4/4 exact whole native functions** (878 previously credited CODE B); no corpus replay.
 
+F1063: [two real actor/HUD pointer arrays plus native action/health borrowed fields](ACTIVE_COLLISION_ACTOR_PAIRS_F1063.md) now ties the original +0x44/+0x48 and +0x50/+0x54 pointers to their actual two-member borrowed windows, and restores the independent +0x80 action WORD and +0x324 health usages. The entire affected `BattleActiveCollision.cpp` translation unit cold-replayed **5/5 exact whole original callables** (**2,045 previously credited CODE B**); no corpus replay.
+
 ## 6. Agent operating checklist / storage
 
 **Preflight, no whole corpus replay:**
