@@ -1,5 +1,7 @@
 # F1118 — Original 0x389, genuine randomized trajectory, double scale and 0x33C projectile: 1,111B/238 x86
 
+**Historical F1118 checkpoint:** the current one-switch source also restores original [F1119 0x38A](CHARACTEROBJECT_NATIVE_38A_F1119.md); prior 71-state/72,496B source dimensions below are historical. Original 0x389 238/238 native widths and 24/24 PE fields remain verified.
+
 The pinned Japanese TH075 v1.11 game contains one original authored `CharacterObject::Advance` at `0050A580`: **81,539 original CODE B/17,435 x86**, with 567 separate afterRET sparse-switch DATA. F1118 reconstructs genuine inner native game action **`0x389` at `0051BB8B..0051BFE2`, 1,111 original CODE B/238 x86** inside that still-incomplete single C++ parent. It is NOT a new exact original callable.
 
 Original gameplay checks four actual native arena boundaries `0065925C/00659258/006583B4/00658374`, then status+0x7C==5 expiry. At stage/frame zero it resets motion with `0040FBB0`, sets native countdown+0x80 and status+0x7C, both scales to 1.0f and alpha bytes to 0xFF. It initializes real signed action WORDs: speed+0xD8 **`RandomBoundaryAt00455580(0,300)+200`**; direction+0xDA **`Random(0,50)+45`**; limit+0xDC **`Random(0,15)+5`**; it calls native `0040FB70` with direction and speed scaled by original float **006590B4**.
