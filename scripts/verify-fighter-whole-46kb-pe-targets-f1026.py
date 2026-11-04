@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """F1026: original 46KB Boss 005214B0 all 1341 nonlocal PE targets.
 
-Freshly build ONLY the tracked complete original-shaped F901
+Freshly build ONLY the tracked complete original-shaped F1040
 normal VC7.1 fighter source. Independently map every non-local
 source COFF REL32/DIR32 field to original Japanese PE native
 x86 ordinal/physical field offset; compare source AtHEX target
@@ -16,8 +16,8 @@ from capstone import Cs,CS_ARCH_X86,CS_MODE_32
 import bisect,importlib.util,json,os,re,subprocess,sys,collections
 R=Path(__file__).resolve().parents[1]
 O=R/'.analysis/f1026-whole-46kb-original-PE';O.mkdir(parents=True,exist_ok=True)
-cpp=R/'.analysis/f901-fighter-31b/Boss005214B0-F901-whole.cpp'
-assert cpp.is_file(),'first regenerate only the F901 affected whole father using verify-scripted-fighter-tail31b-31c-f901.py'
+cpp=R/'probes/FighterWhole005214B0F1040.cpp'
+assert cpp.is_file(), 'tracked complete original-shaped F1040 source is missing'
 obj=O/'native-F901-recompiled.obj'
 E=os.environ.copy();E.pop('DISPLAY',None);E.pop('WAYLAND_DISPLAY',None)
 E['WINEPREFIX']=str(R/'.analysis/vc71-wine')

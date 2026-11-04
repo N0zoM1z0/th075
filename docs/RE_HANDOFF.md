@@ -48,14 +48,15 @@ CODE length, afterRET DATA, or successful compiler build is **not** exact.
 
 Original **46,755 callable CODE B /13,230 x86**, with **seven**
 physical jump dispatches and **901 separately owned afterRET DATA B**
-(139 DIR32 labels, 345 literal nonfield B). The F901
-complete C++ source `.analysis/f901-fighter-31b/Boss005214B0-F901-whole.cpp`
-is a **local research file**, not accepted source; normal pinned VC7.1
+(139 DIR32 labels, 345 literal nonfield B). The [F1040 tracked complete original-shaped C++ source](../probes/FighterWhole005214B0F1040.cpp)
+was adopted verbatim from the previously ignored F901 local research input
+and is **still not accepted exact**; normal pinned VC7.1
 emits **46,754B /13,230 x86** and all original mnemonic positions,
 but **five native widths** remain wrong (whole ordinals
 2885/2908 action0x63, 8455 action1FD, 8986 action252, 9130 action254).
 Source physical COFF and GPR allocations still differ.
 
+- [F1040 entire 46KB source retained in Git](FIGHTER_46KB_TRACKED_COMPLETE_F1040.md): pinned normal compile and original PE field proof, still five wrong widths and NONEXACT.
 - [F1026 entire original PE audit](FIGHTER_46KB_ALL_NATIVE_PE_TARGETS_F1026.md):
   **1,341/1,341 true external destinations**, including 30 `__ftol2`,
   plus 11 CODE-local and all afterRET DATA fields. Reproduce only
