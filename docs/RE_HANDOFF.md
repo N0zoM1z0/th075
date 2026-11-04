@@ -191,7 +191,9 @@ F1106: [native frame field borrows](FRAME_DEPENDENCIES_NATIVE_BORROW_WINDOWS_F11
 
 F1134: [127 native HUD field borrows](BATTLE_HUD_NATIVE_BORROW_F1134.md) keep **9,841B full original HUD strict exact**.
 
-F1135: [531 native X/Y position and motion lvalues in complete 31KB auxiliary switch](CHARACTER_AUX_ACTION_NATIVE_AXES_F1135.md) preserve **1/1 complete original 31,352B strict exact**, including all original COFF `$L` labels; rejected new struct/<stddef.h> renumbered labels.
+F1135: [531 original auxiliary axes](CHARACTER_AUX_ACTION_NATIVE_AXES_F1135.md) retain **1/1 whole 31,352B strict exact**.
+
+F1136: [484 signed stage/frame/animation/tick borrowed WORD uses](CHARACTER_AUX_ACTION_NATIVE_PHASE_F1136.md) retain **1/1 whole 31,352B original exact**, including 913 physical COFF fields and all `$L` labels; F1135 also retains 531 float-axis borrows.
 
 ## 6. Agent operating checklist / storage
 
