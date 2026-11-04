@@ -1,5 +1,7 @@
 # F1095 — Native original 0x355, real ten-shot projectile and two-way vertical velocity phases
 
+**Historical F1095 checkpoint:** the live source now also contains genuine [F1097 native 0x356](CHARACTEROBJECT_NATIVE_356_F1097.md). The earlier 52-state/36,587B parent totals below refer to that valid checkpoint, while original 355 20/20 PE fields remain verified.
+
 Pinned Japanese TH075 1.11 has ONE authored original `CharacterObject::Advance`
 callable at `0050A580` (**81,539 native CODE B /17,435 x86**) and
 567 separately owned afterRET switch DATA bytes. F1095 restores original
