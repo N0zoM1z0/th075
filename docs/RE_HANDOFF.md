@@ -122,22 +122,23 @@ rechecks **1,697/1,697 physical external PE targets**,
 tested 10 normal VC7.1 variants without fixing the true native CMP
 roles; check the original PE, not stale hypotheses.
 
-**81KB single-switch 0050A580:** [F1074 authentic `0x328/0x329/0x32A`
-long original actions](CHARACTEROBJECT_NATIVE_328_329_32A_F1074.md)
-now recover **36 actual original game-state interiors /30,413 native
-CODE B /6,634 native x86 mnemonic+GPR roles /529 physically verified
-PE nonlocal targets**. Each new long state retains ten-shot loop,
-original random 0x32B and **16 physically separate 0x33A CALLs**;
-native initial 13.0/20.0/10.0f values and 92 afterRET DIR32/199
-sparse bytes are checked against the actual Japanese PE. The
-[live one-parent original PE verifier](../scripts/verify-characterobject-current-recovered-f1068.py)
-only builds the changed whole partial C++ source, currently
-**25,234 CODE B/6,790 x86** versus original **81,539B /17,435 x86**.
-**The 81KB original whole callable is still NONEXACT, zero new
-accepted game bytes.** [F1071 real 0x323/0x324](CHARACTEROBJECT_NATIVE_323_324_F1071.md)
-and [F1069 triple parent Y](CHARACTEROBJECT_NATIVE_331_F1069.md)
-remain original PE-backed source. Do not treat interior switch-case
-matching as exact separate callables.
+**81KB single-switch 0050A580:** [F1076 true native
+`0x346/0x347` stage/trajectory states](CHARACTEROBJECT_NATIVE_346_347_F1076.md)
+recover **38 independent original switch-case interiors /32,592
+original native CODE B /7,100 original x86 mnemonic+GPR positions /
+573 physically correct original PE targets**. Original 0x346
+restores 365 genuine x86 including stage-2 parent angle and native
+CRT conversion; its real gameplay restores following 0x347 from
+30/101 to **101/101 GPR** with its distinct rate/25 facing value.
+The [live current one-parent original PE verifier](../scripts/verify-characterobject-current-recovered-f1068.py)
+only compiles the affected partial parent, currently **26,974 CODE
+B/7,252 x86** against original **81,539B/17,435 x86**; authentic
+92 DIR32/199 sparse DATA bytes remain verified. **Whole original
+GAME callable is NONEXACT, zero new accepted original CODE**.
+Earlier [F1074 three unrolled projectile states](CHARACTEROBJECT_NATIVE_328_329_32A_F1074.md)
+and [F1071 original 0x323/0x324](CHARACTEROBJECT_NATIVE_323_324_F1071.md)
+remain PE-verified; do not count switch interiors as independent
+whole original exact callables.
 
 ## 4. All three remaining independent small/medium originals
 

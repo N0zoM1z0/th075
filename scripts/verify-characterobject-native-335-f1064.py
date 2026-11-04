@@ -41,8 +41,8 @@ for x in D.disasm(code,0):
  I.append(x)
  if x.mnemonic=='ret':break
 end=I[-1].address+I[-1].size
-assert (end,len(I),len(code)-end,len(refs))==(25234,6790,567,679)
-assert I[2].op_str=='esp, 0x140' and I[3].op_str=='dword ptr [ebp - 0x5c], ecx'
+assert (end,len(I),len(code)-end,len(refs))==(26974,7252,567,721)
+assert I[2].op_str=='esp, 0x178' and I[3].op_str=='dword ptr [ebp - 0x60], ecx'
 T=sorted((r for r in refs if r['offset']>=end),key=lambda r:r['offset'])
 assert len(T)==92 and all(r['type']=='DIR32' and r['offset']==end+4*j and r['addend']==0 and r['local_symbol_offset'] is not None for j,r in enumerate(T))
 assert code[end+368:]==native_sparse

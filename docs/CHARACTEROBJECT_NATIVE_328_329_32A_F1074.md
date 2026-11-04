@@ -1,5 +1,7 @@
 # F1073/F1074 — Three genuine 1.7–1.8KB projectile states and 48 native unrolled 0x33A launches
 
+**Historical F1074 checkpoint:** after restoring genuine [F1076 0x346/0x347](CHARACTEROBJECT_NATIVE_346_347_F1076.md), live whole-parent geometry and native coverage are now 38 states. The three F1074 state PE field and opcode proofs are still valid; 36-state compiler dimensions below are the earlier checkpoint.
+
 The independently authored pinned Japanese TH075 v1.11 game has ONE
 `CharacterObject::Advance` original callable at **0050A580**:
 **81,539 native original CODE B /17,435 x86** with **567 separately
