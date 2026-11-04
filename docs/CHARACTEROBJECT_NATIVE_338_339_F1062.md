@@ -1,5 +1,7 @@
 # F1061/F1062 — Native 13-shot `0x338` and 101-x86 `0x339` restore their adjacent Boss GPR cycle
 
+**Historical F1062 snapshot:** the live whole partial source has since gained authentic [F1064 0x335 four-shot gameplay](CHARACTEROBJECT_NATIVE_335_F1064.md). The previous 25-state/14,437B compiler source totals below are for this earlier checkpoint; all original 0x338/0x339 physical PE and GPR results remain valid in the current source.
+
 The independently original Japanese TH075 1.11 game has **one**
 81,539 original CODE B /17,435-x86 `CharacterObject::Advance` callable
 at `0050A580`, with 567 separate afterRET sparse-switch DATA bytes.
