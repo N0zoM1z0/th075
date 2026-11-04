@@ -26,9 +26,11 @@ case 0x387: {
         SELF_FIELD(float,0x30)=float(RandomBoundaryAt00455580(0,0x167));
         F1037_MOTION(this).xMotion=float(RandomBoundaryAt00455580(0,16)-8);
         F1037_MOTION(this).yMotion=float(RandomBoundaryAt00455580(0,6)+12);
-        F1037_MOTION(this).yMotion=F1037_MOTION(this).yMotion-g_F1116_YOffsetAt00659888;
-        SELF_FIELD(float,0x30)=SELF_FIELD(float,0x30)+g_F1116_AngleOffsetAt0065786C;
     }
+    // The native stage-zero guard jumps to ordinal 92: BOTH the
+    // velocity decrement and angle nudge run on every frame.
+    F1037_MOTION(this).yMotion=F1037_MOTION(this).yMotion-g_F1116_YOffsetAt00659888;
+    SELF_FIELD(float,0x30)=SELF_FIELD(float,0x30)+g_F1116_AngleOffsetAt0065786C;
     F1037_POSITION(this).xPosition=float(SELF_FIELD(signed char,0x66))*F1037_MOTION(this).xMotion+F1037_POSITION(this).xPosition;
     F1037_POSITION(this).yPosition=F1037_POSITION(this).yPosition+F1037_MOTION(this).yMotion;
     if (F1024_PHASE(this).stageAt62==1) {

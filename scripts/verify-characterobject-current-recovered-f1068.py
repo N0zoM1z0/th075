@@ -11,6 +11,7 @@ Never count case-local agreement as independent byte-exact original callable.
 from pathlib import Path
 from capstone import Cs,CS_ARCH_X86,CS_MODE_32
 import hashlib,importlib.util,json,os,re,subprocess,sys
+from bisect import bisect_right
 R=Path(__file__).resolve().parents[1]
 O=R/'.analysis/f1068-boss-live-all-native';O.mkdir(parents=True,exist_ok=True)
 sp=importlib.util.spec_from_file_location('f1068reader',R/'scripts/compare-coff-function.py')
@@ -114,6 +115,60 @@ assert len(code)-end==567 and end>0  # One NORMAL partial C++ parent; may exceed
 T=sorted([r for r in refs if r['offset']>=end],key=lambda r:r['offset'])
 assert len(T)==92 and all(r['type']=='DIR32' and r['offset']==end+4*j and r['addend']==0 and r['local_symbol_offset'] is not None for j,r in enumerate(T))
 assert code[end+368:]==orig_sparse
+# F1140: Physical original PE control flow is not proven by identical
+# x86 mnemonic/GPR/width sequences. Compare each actual direct jump
+# destination to the corresponding GLOBAL x86 ordinal in the entire
+# original callable. The candidate and original must have the same
+# complete 17,435 instruction count, not a conveniently cropped case.
+assert len(I)==len(NWHOLE)==17435
+assert [n.mnemonic for n in I]==[n.mnemonic for n in NWHOLE]
+native_instruction_by_address={n.address:k for k,n in enumerate(NWHOLE)}
+source_instruction_by_address={n.address:k for k,n in enumerate(I)}
+physical_original_branch_positions=0
+native_branch_target_debt=[]
+for k,(native,emitted) in enumerate(zip(NWHOLE,I)):
+ if not native.mnemonic.startswith('j'):
+  continue
+ if not (re.fullmatch(r'0x[0-9a-f]+',native.op_str) and
+         re.fullmatch(r'0x[0-9a-f]+',emitted.op_str)):
+  continue
+ orig_target=native_instruction_by_address.get(int(native.op_str,16))
+ src_target=source_instruction_by_address.get(int(emitted.op_str,16))
+ assert orig_target is not None and src_target is not None,(k,native.op_str,emitted.op_str)
+ physical_original_branch_positions+=1
+ if orig_target!=src_target:
+  slot=bisect_right(orig_dense,native.address)-1
+  assert 0<=slot<=91
+  case_ordinal=k-native_instruction_by_address[orig_dense[slot]]
+  native_branch_target_debt.append({'jump_global_ordinal':k,
+      'physical_switch_slot':slot,'case_ordinal':case_ordinal,
+      'original_target_global_ordinal':orig_target,
+      'source_target_global_ordinal':src_target})
+assert physical_original_branch_positions==1834,physical_original_branch_positions
+# These are not waived as exact or correctness: all 16 remain true
+# unresolved source CFG target differences. Explicitly enumerate
+# them to reject any *additional* source control-flow regression.
+remaining_native_branch_keys={(0x330,166),(0x346,271),
+ (0x35d,13),(0x35d,17),(0x35e,155),(0x388,117),(0x389,101),
+ (0x391,124),(0x391,130),(0x3e3,43),(0x3e3,163),
+ (0x3e4,43),(0x3e4,179),(0x3e4,204),(0x3e4,214),(0x3e4,232)}
+actual_debt_keys={(row['physical_switch_slot'],row['case_ordinal'])
+                  for row in native_branch_target_debt}
+expected_debt_keys={(orig_sparse[action-0x320],ordinal)
+                    for action,ordinal in remaining_native_branch_keys}
+assert actual_debt_keys==expected_debt_keys,(
+   'original PE control-flow target debt changed',actual_debt_keys^expected_debt_keys)
+# Genuine recovered branch targets in original 0x387 must now bypass
+# only the initialization, not its later every-frame gravity/angle.
+original_387_index=native_instruction_by_address[orig_dense[orig_sparse[0x387-0x320]]]
+for local in (38,42):
+ n=NWHOLE[original_387_index+local];q=I[original_387_index+local]
+ assert n.mnemonic==q.mnemonic=='jne'
+ assert native_instruction_by_address[int(n.op_str,16)]-original_387_index==92
+ assert source_instruction_by_address[int(q.op_str,16)]-original_387_index==92
+print('F1140 WHOLE native control-flow audit:',physical_original_branch_positions,
+      'real direct PE-local jumps, original 0x387 stage/velocity guards corrected;',
+      len(native_branch_target_debt),'other native branch target debts remain',flush=True)
 assert all((orig_dense[i]==orig_dense[j])==(T[i]['local_symbol_offset']==T[j]['local_symbol_offset']) for i in range(92) for j in range(92))
 RX=re.compile(r'\b(?:[er]?(?:ax|bx|cx|dx|si|di|sp|bp)|[abcd]h|[abcd]l)\b')
 roles=lambda x:tuple(RX.findall(x.op_str))
@@ -834,6 +889,8 @@ summary={'original_Boss':'0x0050A580','original_whole_CODE_B':81539,
  'original_81KB_whole_function_exact':False,'new_exact_original_whole_CODE_B':0,
  'all_979_cold_replay':False,'native_states':rows,
  'additional_original_native_provisional_interiors':provisional_rows,
- 'provisional_CASES_NOT_counted_as_recovered_or_exact':len(provisional_rows)}
+ 'provisional_CASES_NOT_counted_as_recovered_or_exact':len(provisional_rows),
+ 'whole_native_original_direct_jumps_audited':physical_original_branch_positions,
+ 'remaining_nonexact_native_branch_target_mismatches':native_branch_target_debt}
 (O/'verified-summary.json').write_text(json.dumps(summary,indent=2)+'\n')
 print('F1132 LIVE 82 original game action interiors: original',original_total,'CODE B /',x86total,'x86, native mnemonic+GPR',x86total,'/',x86total,'and genuine PE nonlocal',fields_total,'/',fields_total,'. Current partial source',end,'B /',len(I),'x86, NOT exact whole 81KB; accepted new original bytes 0.')
