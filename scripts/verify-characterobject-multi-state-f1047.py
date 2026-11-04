@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""F1047/F1050 check seven recovered *interior* game states of one 81KB Boss.
+"""F1047/F1051 check eight recovered *interior* game states of one 81KB Boss.
 
 Cold compile only the tracked complete one-switch original-shaped parent
 prototype (other actions remain markers). Independently read original PE
 whole 81KB CODE and original full 567B afterRET DATA, all 92 native DIR32
-label partitions, original 199 physical sparse map bytes, all 397 native
-instruction mnemonic ordinals and the 27 true external PE destinations.
+label partitions, original 199 physical sparse map bytes, all 626 native
+instruction mnemonic ordinals and the 46 true external PE destinations.
 The original whole callable remains NONEXACT and receives zero credit.
 """
 from pathlib import Path
@@ -43,7 +43,7 @@ for x in D.disasm(code,0):
  I.append(x)
  if x.mnemonic=='ret':break
 end=I[-1].address+I[-1].size
-assert (end,len(I),len(code)-end,len(refs))==(2849,611,DATA,206)
+assert (end,len(I),len(code)-end,len(refs))==(3649,838,DATA,224)
 S=sorted([r for r in refs if r['offset']>=end],key=lambda x:x['offset'])
 assert len(S)==92 and all(r['offset']==end+4*i and r['type']=='DIR32' and r['addend']==0 and r['local_symbol_offset'] is not None for i,r in enumerate(S))
 assert code[end+368:end+567]==native_sparse
@@ -53,12 +53,13 @@ assert all((original_labels[i]==original_labels[j])==(S[i]['local_symbol_offset'
 rx=re.compile(r'\b(?:[er]?(?:ax|bx|cx|dx|si|di|sp|bp)|[abcd]h|[abcd]l)\b')
 roles=lambda x:tuple(rx.findall(x.op_str))
 cases=[('320',0x0050A658,0x0050A80F,91,6,91),
-       ('322',0x0050AC27,0x0050AD46,56,4,18),
-       ('32b',0x0050CCC3,0x0050CD7A,39,3,39),
-       ('32c',0x0050CD7A,0x0050CE97,63,4,63),
-       ('32d',0x0050CE97,0x0050CF7A,50,3,50),
-       ('32e',0x0050CF7A,0x0050D097,63,4,63),
-       ('332',0x0050D88E,0x0050D929,35,3,35)]
+       ('321',0x0050A80F,0x0050AC27,229,19,229),
+       ('322',0x0050AC27,0x0050AD46,56,4,56),
+       ('32b',0x0050CCC3,0x0050CD7A,39,3,13),
+       ('32c',0x0050CD7A,0x0050CE97,63,4,19),
+       ('32d',0x0050CE97,0x0050CF7A,50,3,14),
+       ('32e',0x0050CF7A,0x0050D097,63,4,19),
+       ('332',0x0050D88E,0x0050D929,35,3,13)]
 rows=[]
 for text,start,stop,count,fields,gpr in cases:
  act=int(text,16);action_slot=native_sparse[act-0x320]
@@ -73,22 +74,33 @@ for text,start,stop,count,fields,gpr in cases:
  wrong_w=[i for i,(n,s) in enumerate(zip(orig_seq,seq)) if n.size!=s.size]
  wrong_g=[i for i,(n,s) in enumerate(zip(orig_seq,seq)) if roles(n)!=roles(s)]
  assert wrong_m==[] and count-len(wrong_g)==gpr,(text,len(wrong_g))
- if text in ('32b','32c','32d','32e','332'):
+ if text in ('32b','32d','332'):
   # The independently recorded complete native case geometry proves
   # every remaining width miss is exclusively the genuine EBP-0xAC
   # saved-this slot versus the partial-parent EBP-4 slot. It is not
   # an expression-width, missing opcode or external-PE relocation bug.
   assert all(orig_seq[j].size-seq[j].size==3
              and 'ebp - 0xac' in orig_seq[j].op_str
-             and 'ebp - 4' in seq[j].op_str for j in wrong_w)
+             and 'ebp - 8' in seq[j].op_str for j in wrong_w)
   assert stop-start-(hi-lo)==3*len(wrong_w)
+ if text in ('32c','32e'):
+  # Parent-source GPR phase after restored real 0x321 changes this
+  # CMP's true operand role. Unlike saved-this EBP displacement, the
+  # compiler uses a six-byte CMP EDX whereas native used five-byte EAX.
+  assert [j for j in wrong_w if orig_seq[j].size-seq[j].size!=3]==[8]
+  assert orig_seq[8].op_str=='eax, 0x131' and seq[8].op_str=='edx, 0x131'
+  assert orig_seq[8].size==5 and seq[8].size==6
+  assert all(orig_seq[j].size-seq[j].size==3
+             and 'ebp - 0xac' in orig_seq[j].op_str
+             and 'ebp - 8' in seq[j].op_str for j in wrong_w if j!=8)
+  assert stop-start-(hi-lo)==3*(len(wrong_w)-1)-1
  actual_fields=[r for r in refs if lo<=r['offset']<hi and r['local_symbol_offset'] is None]
  assert len(actual_fields)==fields
  native_fields=[]
  for i,n in enumerate(orig_seq):
   if n.mnemonic=='call' and n.op_str.startswith('0x'):
    native_fields.append((i,'REL32',n.address+1,int(n.op_str,16)))
-  elif (n.mnemonic in ('fsub','fcomp','fadd','fld','fmul') and re.search(r'\[0x([0-9a-f]+)\]',n.op_str)):
+  elif (n.mnemonic in ('fsub','fcomp','fadd','fld','fmul','fdiv') and re.search(r'\[0x([0-9a-f]+)\]',n.op_str)):
    add=int(re.search(r'\[0x([0-9a-f]+)\]',n.op_str).group(1),16)
    native_fields.append((i,'DIR32',n.address+n.size-4,add))
  assert len(native_fields)==fields,(text,native_fields,fields)
@@ -113,18 +125,18 @@ for text,start,stop,count,fields,gpr in cases:
   'original_native_physical_PE_fields_verified':typed_matches,
   'original_whole_boss_exact':False})
  print(f'{text}: original {stop-start}B/{count} x86, natural partial parent {hi-lo}B/{count} x86; original mnemonic {count}/{count}, width {count-len(wrong_w)}/{count}, GPR {count-len(wrong_g)}/{count}, physical PE {len(typed_matches)}/{fields}',flush=True)
-assert sum(x['original_and_source_x86_count'] for x in rows)==397
-assert sum(len(x['original_native_physical_PE_fields_verified']) for x in rows)==27
-assert sum(x['original_natively_owned_CODE_B'] for x in rows)==1861
-assert sum(x['source_inner_CODE_B'] for x in rows)==1431
+assert sum(x['original_and_source_x86_count'] for x in rows)==626
+assert sum(len(x['original_native_physical_PE_fields_verified']) for x in rows)==46
+assert sum(x['original_natively_owned_CODE_B'] for x in rows)==2909
+assert sum(x['source_inner_CODE_B'] for x in rows)==2246
 (O/'verified-summary.json').write_text(json.dumps({'original_sha256':hashlib.sha256(orig).hexdigest(),
  'original_Boss':'0x0050A580','original_whole_CODE_B':CODE,'original_whole_x86':17435,
  'current_partial_marker_filled_source_B':end,'current_partial_marker_filled_source_x86':len(I),
- 'recovered_original_game_states':['320','322','32b','32c','32d','32e','332'],
- 'recovered_native_inner_CODE_B_not_new_exact':1861,'recovered_inner_original_x86_mnemonics_correct':397,
- 'recovered_true_native_physical_PE_external_targets_correct':27,
+ 'recovered_original_game_states':['320','321','322','32b','32c','32d','32e','332'],
+ 'recovered_native_inner_CODE_B_not_new_exact':2909,'recovered_inner_original_x86_mnemonics_correct':626,
+ 'recovered_true_native_physical_PE_external_targets_correct':46,
  'all_92_original_case_label_equalities_preserved':True,
  'original_199_sparse_index_map_bytes_identical':True,'original_567_afterRET_DATA_B_preserved':True,
  'original_whole_function_exact':False,'new_accepted_exact_whole_GAME_CODE_B':0,
  'remaining_switch_actions_marker_probes':True,'all_979_cold_replay':False,'cases':rows},indent=2)+'\n')
-print('F1047: whole 81KB native original remains NONEXACT. Real C++ source recovered 7 states /1861 original interior bytes /397 original x86 mnemonic slots with all 27 physical PE field identities; still not separate exact callable or whole function.')
+print('F1047: whole 81KB native original remains NONEXACT. Real C++ source recovered 8 states /2909 original interior bytes /626 original x86 mnemonic slots with all 46 physical PE field identities; still not separate exact callable or whole function.')

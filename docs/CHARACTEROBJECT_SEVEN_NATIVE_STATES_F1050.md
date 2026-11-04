@@ -1,5 +1,7 @@
 # F1050 — Two separate, complete source-backed native 0x32C and 0x32E game states
 
+**Historical F1050 seven-state snapshot:** the live parent is now documented at [F1051](CHARACTEROBJECT_NATIVE_321_F1051.md). The previous seven-state register and CODE totals below are not the current whole-source compiler snapshot.
+
 The pinned Japanese TH075 v1.11 original game has an 81,539B/17,435-x86
 single-switch CharacterObject `Advance` callable at **0050A580**.
 It remains largely source-incomplete and **NONEXACT**. The original

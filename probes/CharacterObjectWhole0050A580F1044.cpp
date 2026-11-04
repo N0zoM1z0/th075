@@ -1,15 +1,22 @@
 #include "FrameActorMotionPairsF1037.hpp"
 // F539 natural switch *probe*, not original fighter source or CODE credit.
 // This file is regenerable from the original PE under ignored .analysis.
-class FighterSwitchF569_Boss0050A580 { public: void Advance(); void NativeParentExpiredAt0045B830(); void SetNativeMotionAt0040FBB0(int,int,int); short GetNativeActionAt0040FA30(); void SetAuxActionAt0040FB40(int); };
+class FighterSwitchF569_Boss0050A580 { public: void Advance(); void NativeParentExpiredAt0045B830(); void SetNativeMotionAt0040FBB0(int,int,int); short GetNativeActionAt0040FA30(); void SetAuxActionAt0040FB40(int); void SetNativeActionAt0040FAC0(int); };
+class F1051Grandparent { public: void NativePrepareAt00453D40(int); void SpawnObjectAt00453A70(int,unsigned int,unsigned int,signed char,int); void SpawnProjectileAt00453C80(int,unsigned int,unsigned int,signed char,int); void InitTrajectoryAt00453E60(float); };
 extern unsigned int g_FighterProbeMarker;
 extern float g_F1044_GravityAt0065747C;
 extern float g_F1044_GroundAt0065782C;
+extern float g_F1051_ScaleStepAt00658348;
+extern float g_F1051_ScaleCeilingAt0065747C;
+extern float g_F1051_TrajectoryUpperAt006590C4;
+extern float g_F1051_TrajectoryLowerAt00658290;
 #define RAW reinterpret_cast<char*>(this)
 #define I16(off) *reinterpret_cast<signed short*>(RAW+(off))
 #define OWNER (*reinterpret_cast<char**>(RAW+0x2E8))
 #define PARENT (*reinterpret_cast<char**>(RAW+0xE4))
 #define PARENT_FIELD(type,off) (*reinterpret_cast<type*>(PARENT+(off)))
+#define PARENT_GRANDPARENT (*reinterpret_cast<char**>(PARENT+0x2E8))
+#define PARENT_GRANDPARENT_FIELD(type,off) (*reinterpret_cast<type*>(PARENT_GRANDPARENT+(off)))
 #define SELF_FIELD(type,off) (*reinterpret_cast<type*>(RAW+(off)))
 void FighterSwitchF569_Boss0050A580::Advance() {
     if (*reinterpret_cast<signed short*>(
@@ -26,7 +33,7 @@ void FighterSwitchF569_Boss0050A580::Advance() {
     }
     switch (I16(0x60)) {
 #include "CharacterObjectBoss320NativeF1045.inc"
-        case 0x321: g_FighterProbeMarker = 802; break;
+#include "CharacterObjectBoss321F1051.inc"
 #include "CharacterObjectBoss322F1046.inc"
         case 0x323: g_FighterProbeMarker = 804; break;
         case 0x324: g_FighterProbeMarker = 805; break;
@@ -120,6 +127,8 @@ void FighterSwitchF569_Boss0050A580::Advance() {
     }
 }
 #undef SELF_FIELD
+#undef PARENT_GRANDPARENT_FIELD
+#undef PARENT_GRANDPARENT
 #undef PARENT_FIELD
 #undef PARENT
 #undef OWNER
