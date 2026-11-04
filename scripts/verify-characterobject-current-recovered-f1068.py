@@ -39,9 +39,9 @@ required_fields={
  0x337:3,0x338:12,0x339:10,0x33a:18,
  0x33b:33,0x33c:5,0x33d:33,0x33e:5,0x33f:33,
  0x340:5,0x341:33,0x342:5,0x343:33,0x344:5,0x345:3,
- 0x346:34,0x347:10,0x348:9,0x349:7,0x34a:7,0x34b:6,0x34c:18,0x34d:18,0x34e:18,0x34f:18,0x350:18,0x351:15,0x352:6,0x353:3,0x354:14,0x355:20,0x356:14,0x357:7,0x35f:2,0x360:15,0x361:15,0x362:15,0x363:15,0x364:15,0x365:32,0x366:32,0x367:32,0x368:32,0x369:32,0x384:24,0x385:10,0x386:22,0x387:17,0x388:14,0x389:24,0x38a:18,0x38b:16,
+ 0x346:34,0x347:10,0x348:9,0x349:7,0x34a:7,0x34b:6,0x34c:18,0x34d:18,0x34e:18,0x34f:18,0x350:18,0x351:15,0x352:6,0x353:3,0x354:14,0x355:20,0x356:14,0x357:7,0x35f:2,0x360:15,0x361:15,0x362:15,0x363:15,0x364:15,0x365:32,0x366:32,0x367:32,0x368:32,0x369:32,0x384:24,0x385:10,0x386:22,0x387:17,0x388:14,0x389:24,0x38a:18,0x38b:16,0x38c:4,0x38e:8,0x38f:3,
 }
-assert len(required_fields)==73 and sum(required_fields.values())==1153
+assert len(required_fields)==76 and sum(required_fields.values())==1168
 src=R/'probes/CharacterObjectWhole0050A580F1044.cpp'
 source=src.read_text()
 # Native state imports, not fake marker labels, must actually be represented.
@@ -83,6 +83,9 @@ for token in ('#include "CharacterObjectBoss330F1068.inc"',
  '#include "CharacterObjectBoss389F1118.inc"',
  '#include "CharacterObjectBoss38AF1119.inc"',
  '#include "CharacterObjectBoss38BF1120.inc"',
+ '#include "CharacterObjectBoss38CF1121.inc"',
+ '#include "CharacterObjectBoss38EF1122.inc"',
+ '#include "CharacterObjectBoss38FF1123.inc"',
  '#include "CharacterObjectBoss335F1064.inc"',
  '#include "CharacterObjectBoss333334F1065.inc"',
  '#include "CharacterObjectBoss338F1062.inc"',
@@ -275,6 +278,34 @@ for action,expected_count in required_fields.items():
   assert N[83].mnemonic==S[83].mnemonic=='mov'
   assert N[83].op_str==S[83].op_str and '0xc2200000' in N[83].op_str
   assert any(f['x86_ordinal']==42 and f['original_native_PE_target']=='0x658e80' for f in pe)
+ if action==0x38c:
+  # Actual 38C must FLD native actor+0x50 before FADD global
+  # 00659090; the first source had the global/actor roles reversed.
+  assert len(N)==52 and all(n.size==q.size for n,q in zip(N,S))
+  assert N[28].mnemonic==S[28].mnemonic=='fld'
+  assert '+ 0x50' in N[28].op_str and '+ 0x50' in S[28].op_str
+  assert N[29].mnemonic==S[29].mnemonic=='fadd'
+  assert any(f['x86_ordinal']==29 and f['original_native_PE_target']=='0x659090' for f in pe)
+ if action==0x38e:
+  # Native 38E copies own DWORD +0xC8 into x-motion +0x50,
+  # then physically spawns 38F and bounds actor X with two
+  # original globals. End uses ONE common return.
+  assert len(N)==91 and all(n.size==q.size for n,q in zip(N,S))
+  assert N[40].mnemonic==S[40].mnemonic=='push'
+  assert N[40].op_str==S[40].op_str=='0x38f'
+  assert N[79].mnemonic==S[79].mnemonic=='lea'
+  assert N[79].op_str==S[79].op_str
+  for k,dest in ((46,'0x659424'),(52,'0x65924c'),(78,'0x6714d0')):
+   assert any(f['x86_ordinal']==k and f['original_native_PE_target']==dest for f in pe)
+ if action==0x38f:
+  # Original 38F has an authentic five-byte terminal JMP to
+  # original 81KB-wide common tail, but the source can still
+  # emit a shorter two-byte JMP until surrounding game states
+  # are restored. No false instruction-width exactness credit.
+  assert len(N)==32 and sum(a.size==b.size for a,b in zip(N,S))==31
+  assert N[31].mnemonic==S[31].mnemonic=='jmp'
+  assert N[31].size==5 and S[31].size==2
+  assert any(f['x86_ordinal']==23 and f['original_native_PE_target']=='0x40fa30' for f in pe)
  if action==0x38b:
   # Actual original speed step uses actor+0x50 first, then
   # 00657478 global (x87 FLD followed by FADD, ordinal 101/102).
@@ -637,7 +668,7 @@ original_total=sum(row['original_interior_CODE_B'] for row in rows)
 x86total=sum(row['original_native_x86'] for row in rows)
 src_total=sum(row['current_source_interior_CODE_B'] for row in rows)
 fields_total=sum(len(row['native_physically_correct_PE_call_global_fields']) for row in rows)
-assert (original_total,x86total,fields_total)==(69887,14989,1153)
+assert (original_total,x86total,fields_total)==(70684,15164,1168)
 # Additional REAL original C++ interiors, deliberately kept separately
 # PROVISIONAL: their native mnemonics, scalar immediates and physical PE
 # destinations match, but whole-parent GPR phases are NOT native yet.
@@ -703,4 +734,4 @@ summary={'original_Boss':'0x0050A580','original_whole_CODE_B':81539,
  'additional_original_native_provisional_interiors':provisional_rows,
  'provisional_CASES_NOT_counted_as_recovered_or_exact':len(provisional_rows)}
 (O/'verified-summary.json').write_text(json.dumps(summary,indent=2)+'\n')
-print('F1120 LIVE 73 original game action interiors: original',original_total,'CODE B /',x86total,'x86, native mnemonic+GPR',x86total,'/',x86total,'and genuine PE nonlocal',fields_total,'/',fields_total,'. Current partial source',end,'B /',len(I),'x86, NOT exact whole 81KB; accepted new original bytes 0.')
+print('F1123 LIVE 76 original game action interiors: original',original_total,'CODE B /',x86total,'x86, native mnemonic+GPR',x86total,'/',x86total,'and genuine PE nonlocal',fields_total,'/',fields_total,'. Current partial source',end,'B /',len(I),'x86, NOT exact whole 81KB; accepted new original bytes 0.')

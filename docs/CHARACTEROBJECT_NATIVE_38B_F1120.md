@@ -1,5 +1,7 @@
 # F1120 — Real original 0x38B, 1,088-byte 226-x86 braking and acceleration phases; actor-first x87 global
 
+**Historical F1120 checkpoint:** the current giant C++ also restores [F1123 0x38C/38E/38F](CHARACTEROBJECT_NATIVE_38C_38E_38F_F1123.md). The earlier 73-case/74,589B whole-source dimensions below refer to the preceding checkpoint; original 38B 226/226 widths and 16/16 PE physical fields remain valid.
+
 The original SHA-pinned Japanese TH075 v1.11 `CharacterObject::Advance` is ONE 81,539-byte/17,435-x86 whole authored game function at `0050A580` with a genuine 567-byte afterRET switch table. F1120 restores its actual **`0x38B` game-state interior** at original PE `0051C3ED..0051C82D`, **1,088 native CODE B /226 x86**, into the existing ordinary VC7.1 original-shaped C++ parent, not as an independent exact callable.
 
 Original game behavior checks four genuine X/Y arena bounds and expires out-of-bounds actors through real `0045B830`. Stage/frame-zero initializes motion, two **0.1f** scale floats, alpha bytes **0/255/255/128**, X velocity **20.0f**, signed +0xD8/+0xDA/+0xDC, collision status and countdown. While original +0xDC==0, it decreases native X velocity by **00659090**; a genuine x87 threshold comparison to **0065747C** clamps speed to **1.0f** and changes +0xDC to 1. At +0xDC in (0,30) the phase increments, and above 29 the original **00657478** global is added to X velocity.
