@@ -1,5 +1,7 @@
 # F1126–F1128 — Real original 0x391 pursuit provisional, 0x392 animation and 0x393 alternating random 0x391 spawns
 
+**Historical F1128 checkpoint:** current giant parent now restores [F1132 authentic 0x3E3–3E6](CHARACTEROBJECT_NATIVE_3E3_3E6_F1132.md), leaving 0x391 uncredited and increasing strict case count from 79 to 82. The 79-case/78,309B source dimensions below were the earlier checkpoint; the 0x391 two incorrect original FUCOMPP physical PE fields remain unresolved.
+
 SHA-pinned Japanese TH075 1.11 contains ONE original authored `CharacterObject::Advance` at `0050A580`, **81,539 original CODE B /17,435 native x86** with separate 567B afterRET jump/sparse DATA bytes. F1126–F1128 restore genuine original C++ game logic inside this **still-NONEXACT whole original callable**. These switch entries are not newly exact independently authored callables.
 
 ## 0x391 — substantial real gameplay reconstructed, but original x87 COFF debt retained

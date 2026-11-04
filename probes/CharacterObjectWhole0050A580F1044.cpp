@@ -1,7 +1,7 @@
 #include "FrameActorMotionPairsF1037.hpp"
 // F539 natural switch *probe*, not original fighter source or CODE credit.
 // This file is regenerable from the original PE under ignored .analysis.
-class FighterSwitchF569_Boss0050A580 { public: void Advance(); void NativeParentExpiredAt0045B830(); void SetNativeMotionAt0040FBB0(int,float,int); short GetNativeActionAt0040FA30(); void SetAuxActionAt0040FB40(int); void SetNativeActionAt0040FAC0(int); void SetNativeTwoFloatsAt0040FB70(float,float); void SetNativeAngleBitsAt0040FB70(unsigned int,float); int RandomBoundaryAt00455580(int,int); };
+class FighterSwitchF569_Boss0050A580 { public: void Advance(); void NativeParentExpiredAt0045B830(); void NativeHitAt0045B860(int); void SetNativeMotionAt0040FBB0(int,float,int); short GetNativeActionAt0040FA30(); void SetAuxActionAt0040FB40(int); void SetNativeActionAt0040FAC0(int); void SetNativeTwoFloatsAt0040FB70(float,float); void SetNativeAngleBitsAt0040FB70(unsigned int,float); int RandomBoundaryAt00455580(int,int); };
 class F1051Grandparent { public: void NativePrepareAt00453D40(int); void SpawnObjectAt00453A70(int,unsigned int,unsigned int,signed char,int); void SpawnObjectAt00453A70(int,float,float,signed char,int); void SpawnProjectileAt00453C80(int,unsigned int,unsigned int,signed char,int); void InitTrajectoryAt00453E60(float); void SpawnSevenAt00453B50(int,unsigned int,unsigned int,char,int,int,int); void StartAnimationAt0046D000(int); };
 extern unsigned int g_FighterProbeMarker;
 extern float g_F1044_GravityAt0065747C;
@@ -63,11 +63,16 @@ extern float g_F1110_NativeSpeedAt006578C0;
 extern float g_F1110_NativeBaseAt00657CF8;
 extern signed char g_F1113_DifficultyAt006714D0;
 extern float g_F1113_DivisorAt0065988C;
+extern float g_F1057_SpeedBaseAt006590BC;
 extern float g_F1120_XBrakingAt00659090;
 extern float g_F1125_YUpperAt00657884;
 extern float g_F1126_XDistanceAt00657850;
 extern float g_F1126_RightAt00659884;
 extern float g_F1126_LeftAt006595E4;
+extern float g_F1131_LeftHitAt00659230;
+extern float g_F1131_TopHitAt006590A8;
+extern float g_F1131_BottomHitAt00658268;
+extern double g_F1132_DoubleAt00659228;
 extern float g_F1114_RandomOffsetAt00659094;
 extern float g_F1114_FadeAt00659240;
 extern double g_F1115_RandomDoubleAt006583B8;
@@ -273,10 +278,10 @@ void FighterSwitchF569_Boss0050A580::Advance() {
 #include "CharacterObjectBoss391F1126.inc"
 #include "CharacterObjectBoss392F1127.inc"
 #include "CharacterObjectBoss393F1128.inc"
-        case 0x3E3: g_FighterProbeMarker = 996; break;
-        case 0x3E4: g_FighterProbeMarker = 997; break;
-        case 0x3E5: g_FighterProbeMarker = 998; break;
-        case 0x3E6: g_FighterProbeMarker = 999; break;
+#include "CharacterObjectBoss3E3F1131.inc"
+#include "CharacterObjectBoss3E4F1132.inc"
+#include "CharacterObjectBoss3E5F1130.inc"
+#include "CharacterObjectBoss3E6F1129.inc"
         default: g_FighterProbeMarker = 0;
     }
 }
