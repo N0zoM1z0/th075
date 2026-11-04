@@ -109,15 +109,14 @@ native states, not case marker proliferation. The original afterRET
 table and game actions remain one giant callable, never independent
 accepted functions.
 
-**58KB original 00543210:** F917 selected local
-`.analysis/f917-native-burst-x87-verified/F917-borrowed-real-X.cpp`
-emits **58,293B /16,471 x86**, preserves native frame `0x218`
+**58KB original 00543210:** [F1041 complete tracked C++ source](../probes/FighterWhole00543210F1041.cpp)
+is the verbatim F917 best native-shaped parent. It emits **58,293B /16,471 x86**, preserves native frame `0x218`
 and all original mnemonic positions. [F1025](FIGHTER_58KB_ALL_NATIVE_PE_TARGETS_F1025.md)
 rechecks **1,697/1,697 physical external PE targets**,
 156 actual afterRET DIR32 labels and 319 nonfield bytes.
 **Still NONEXACT:** original 0x63 has three mismatched widths
 (whole ordinals 2934,2977,3000), **1,741 GPR-role errors**.
-[F1025 58KB mode63 whole-parent controls](SECOND_GIANT_NATIVE_MODE63_GPR_F1025.md)
+[F1041 full 58KB tracked-source native proof](FIGHTER_58KB_TRACKED_COMPLETE_F1041.md) and [F1025 58KB mode63 whole-parent controls](SECOND_GIANT_NATIVE_MODE63_GPR_F1025.md)
 tested 10 normal VC7.1 variants without fixing the true native CMP
 roles; check the original PE, not stale hypotheses.
 

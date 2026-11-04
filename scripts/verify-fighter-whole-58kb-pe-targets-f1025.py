@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """F1025: verify EVERY typed nonlocal original 58KB giant PE target.
 
-Fresh-build the two original-shaped F781/F917 58KB VC7.1
-normal sources using the canonical F917 original-float-X native
-verifier. Independently check the WHOLE physical Japanese
+Fresh-build ONLY the tracked best original-shaped F1041 58KB VC7.1
+normal source. The historical F781/F917 candidate comparison remains
+reproducible via verify-fighter-native-burst-x87-f917.py. Independently check the WHOLE physical Japanese
 00543210 original PE, all 16471 ordered x86, all physical
 genuine typed zero-addend 1697/1697 nonlocal original
 COFF call/global relocation targets, 10 code local refs,
@@ -21,10 +21,13 @@ O=R/'.analysis/f1025-original-58kb-pe';O.mkdir(parents=True,exist_ok=True)
 E=os.environ.copy();E.pop('DISPLAY',None);E.pop('WAYLAND_DISPLAY',None)
 E['WINEPREFIX']=str(R/'.analysis/vc71-wine')
 E['WINEDLLOVERRIDES']='winex11.drv,winewayland.drv,winemac.drv=d;winemenubuilder.exe=d'
-cp=subprocess.run([str(R/'scripts/repo-python'),
- str(R/'scripts/verify-fighter-native-burst-x87-f917.py')],
- cwd=R,env=E,capture_output=True,text=True,timeout=1150)
-(O/'F917-fresh-complete-parents.log').write_text(cp.stdout+cp.stderr)
+cpp=R/'probes/FighterWhole00543210F1041.cpp'
+assert cpp.is_file(), 'the complete tracked 58KB fighter C++ source is missing'
+obj=O/'F1041-tracked-best-complete.obj'
+cp=subprocess.run([str(R/'scripts/compile-probe.sh'),str(cpp),str(obj),
+ '/Od','/Ob0','/Gy','/GR-','/GX-','/GS','/Zi','/I','src','/I','probes'],
+ cwd=R,env=E,capture_output=True,text=True,timeout=350)
+(O/'F1041-fresh-complete-VC71.log').write_text(cp.stdout+cp.stderr)
 assert cp.returncode==0,(cp.stdout+cp.stderr)[-950:]
 sp=importlib.util.spec_from_file_location('f1025read',R/'scripts/compare-coff-function.py')
 rd=importlib.util.module_from_spec(sp);sys.modules[sp.name]=rd;sp.loader.exec_module(rd)
@@ -33,9 +36,7 @@ BASE=0x543210;CODE=58294;X86=16471;AFTER=943
 raw=rd.pe_bytes_at(PE,BASE,CODE)
 native=list(D.disasm(raw,BASE))
 assert len(native)==X86 and native[-1].address+native[-1].size==BASE+CODE
-sources={
- 'F781-before-native-x87':R/'.analysis/f917-native-burst-x87-verified/F781-original-source-control.obj',
- 'F917-native-positive-x87':R/'.analysis/f917-native-burst-x87-verified/F917-borrowed-real-X.obj'}
+sources={'F1041-tracked-selected-native-x87':obj}
 rgs=re.compile(r'\b(?:[er]?(?:ax|bx|cx|dx|si|di|sp|bp)|[abcd]h|[abcd]l)\b')
 roles=lambda i:tuple(rgs.findall(i.op_str))
 f759sp=importlib.util.spec_from_file_location('f1025f759',R/'scripts/verify-fighter-four-directional-c8-f759.py')
@@ -109,10 +110,9 @@ for label,obj in sources.items():
    'all typed original external PE',len(orig_targets),
    'wrong native mnemonic',len(badm),'width',len(badw),
    'GPR',len(badg),flush=True)
- if label=='F917-native-positive-x87':
+ if label=='F1041-tracked-selected-native-x87':
   (O/'real-original-PE-fields.json').write_text(json.dumps(orig_targets,indent=2)+'\n')
-assert rows['F781-before-native-x87']['wrong_native_mnemonic_ordinals']==[11765,11970,12328,12528]
-best=rows['F917-native-positive-x87']
+best=rows['F1041-tracked-selected-native-x87']
 assert best['wrong_native_mnemonic_ordinals']==[]
 assert best['wrong_native_width_ordinals']==[2934,2977,3000]
 assert best['wrong_native_GPR_roles_count']==1741
