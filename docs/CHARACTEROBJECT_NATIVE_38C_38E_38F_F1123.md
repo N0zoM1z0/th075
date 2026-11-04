@@ -1,5 +1,7 @@
 # F1121–F1123 — Three real original 0x38C/0x38E/0x38F states; 797 native B/175 x86 and 15 actual PE fields
 
+**Historical F1123 checkpoint:** the [F1125 native 0x390](CHARACTEROBJECT_NATIVE_390_F1125.md) now extends the current parent and makes the earlier 38F 2-byte short terminal JMP into the actual original **5-byte long JMP** (32/32 widths). The source widths 38F 151B and 76-state/75,344B numbers below describe the earlier F1123 snapshot, not current geometry.
+
 The SHA-pinned Japanese TH075 1.11 original has ONE authored `CharacterObject::Advance` at `0050A580`: **81,539 whole CODE B /17,435 x86**, followed by 567 genuine afterRET switch DATA bytes. F1121–F1123 restore three separate original switch-state interiors in the SAME incomplete normal pinned VC7.1 whole-parent C++ source, not independently accepted exact original functions.
 
 | Physical original state | Real PE interval | Original native CODE/x86 | Current source CODE/x86 | Matching mnemonic/GPR roles | Actual original PE fields |

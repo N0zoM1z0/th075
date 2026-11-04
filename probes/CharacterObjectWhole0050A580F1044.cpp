@@ -64,6 +64,7 @@ extern float g_F1110_NativeBaseAt00657CF8;
 extern signed char g_F1113_DifficultyAt006714D0;
 extern float g_F1113_DivisorAt0065988C;
 extern float g_F1120_XBrakingAt00659090;
+extern float g_F1125_YUpperAt00657884;
 extern float g_F1114_RandomOffsetAt00659094;
 extern float g_F1114_FadeAt00659240;
 extern double g_F1115_RandomDoubleAt006583B8;
@@ -265,7 +266,7 @@ void FighterSwitchF569_Boss0050A580::Advance() {
 #include "CharacterObjectBoss38CF1121.inc"
 #include "CharacterObjectBoss38EF1122.inc"
 #include "CharacterObjectBoss38FF1123.inc"
-        case 0x390: g_FighterProbeMarker = 913; break;
+#include "CharacterObjectBoss390F1125.inc"
         case 0x391: g_FighterProbeMarker = 914; break;
         case 0x392: g_FighterProbeMarker = 915; break;
         case 0x393: g_FighterProbeMarker = 916; break;
