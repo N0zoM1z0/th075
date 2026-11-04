@@ -47,8 +47,10 @@ case 0x330: {
     if (F1024_PHASE(this).stageAt62==2) {
         F1037_MOTION(this).yMotion=F1037_MOTION(this).yMotion-g_F1059_ScaleRatioAt00657478;
         F1037_POSITION(this).yPosition=F1037_POSITION(this).yPosition+F1037_MOTION(this).yMotion;
-        if (!(F1037_POSITION(this).yPosition+F1037_MOTION(this).yMotion<=g_F1044_GroundAt0065782C) &&
-            SELF_FIELD(int,0x7C)!=0 && SELF_FIELD(int,0x7C)!=6) {
+        // Real native 0x330 TEST AH,0x41; JNP enters impact handling
+        // directly, then checks collision status 0/6 on the other path.
+        if (F1037_POSITION(this).yPosition+F1037_MOTION(this).yMotion<=g_F1044_GroundAt0065782C ||
+            (SELF_FIELD(int,0x7C)!=0 && SELF_FIELD(int,0x7C)!=6)) {
             F1037_MOTION(this).yMotion=0.0f;
             SetAuxActionAt0040FB40(3);
             reinterpret_cast<F1051Grandparent*>(PARENT)->NativePrepareAt00453D40(5);
