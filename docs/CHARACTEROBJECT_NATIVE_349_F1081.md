@@ -1,5 +1,7 @@
 # F1081 — Real action 0x349, native parent-X DWORD copy and parent-Y-first x87
 
+**Historical F1081 checkpoint:** the current source has since gained [F1082 real 0x34A](CHARACTEROBJECT_NATIVE_34A_F1082.md). The previous 40-state/27,780B partial source figures below are historical, not current; original 349 native 94/94 and 7/7 PE fields remain verified.
+
 The SHA-pinned Japanese TH075 1.11 original includes **one**
 `CharacterObject::Advance` at `0050A580`, original **81,539
 CODE B /17,435 x86** and separate 567 afterRET sparse-switch
