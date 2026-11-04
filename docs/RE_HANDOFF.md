@@ -122,20 +122,20 @@ rechecks **1,697/1,697 physical external PE targets**,
 tested 10 normal VC7.1 variants without fixing the true native CMP
 roles; check the original PE, not stale hypotheses.
 
-**81KB single-switch 0050A580:** [F1085 genuine
-`0x34C` eight-shot/parent-health gameplay](CHARACTEROBJECT_NATIVE_34C_F1085.md)
-restores **43 original state interiors /35,805 native CODE B /
-7,786 x86 mnemonic+GPR roles /620 PE external fields /1,452
-scalar immediates**. This real 1,266B/273-x86 action has 8 native
-`0x360` shots and physical actor Y first `FLD; FMUL [00657F74]`.
-Original case **273/273 x86 +GPR, 18/18 physically original PE
-fields**. [F1084 native Battle HUD vitals](BATTLE_HUD_NATIVE_VITALS_F1084.md)
-keeps one complete 9,841B function exact. Current whole source
-**29,479B /7,928 x86**, original **81,539B /17,435 x86**;
-original 92 DIR32/199 sparse DATA retained. **Whole Boss
-NONEXACT; new exact original CODE 0B.** Use [live full-parent
-PE verifier](../scripts/verify-characterobject-current-recovered-f1068.py).
-
+**81KB single-switch 0050A580:** [F1085 genuine original
+`0x34C` eight-`0x360`-shot game state](CHARACTEROBJECT_NATIVE_34C_F1085.md)
+now covers **43 independently original game-state interiors /35,805
+native original CODE B /7,786 original x86 mnemonic+GPR positions /
+620 genuine physical PE fields /1,452 scalar-immediate slots**.
+Original 34C has 1,266 native B/273 x86, real parent/target health
+checks and original actor-first `FLD velocityY; FMUL [00657F74]`.
+Current whole partial source **29,479B /7,928 x86** vs original
+**81,539B /17,435 x86**, authentic 92 DIR32/199 sparse DATA remain;
+**whole original GAME callable NONEXACT, new accepted exact CODE 0B**.
+Use the [one-parent live native PE verifier](../scripts/verify-characterobject-current-recovered-f1068.py),
+not old cropped case source geometry. [F1083 0x34B](CHARACTEROBJECT_NATIVE_34B_F1083.md)
+and [F1082 0x34A](CHARACTEROBJECT_NATIVE_34A_F1082.md)
+remain separately original-PE verified.
 
 ## 4. All three remaining independent small/medium originals
 
