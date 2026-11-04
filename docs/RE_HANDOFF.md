@@ -178,6 +178,8 @@ F1053: [native x87 facing leaf lvalue source grammar](COMBAT_FACING_LVALUE_GRAMM
 
 F1056: [native collision bounding RECT plus genuine fighter vitals/axis fields](COLLISION_NATIVE_RECT_AND_VITALS_F1056.md) replaces raw casts for 20 bounds, original adjacent +0x324/+0x326 WORDs and 6 original X/Y coordinate reads. The affected `BattleCollision.cpp` object cold-replayed **5/5 entire original functions exact** (**855 previously credited bytes**), with no other source objects or corpus replay.
 
+F1056: [physical battle collision RECT/actor borrowed windows](BATTLE_COLLISION_BORROWED_NATIVE_F1056.md) recover original in-place `this+0x34..0x40` bounds, signed health current/recoverable WORDs and actor X/Y position references. All **5/5** affected native complete BattleCollision.cpp units remain strict exact (**855/855 already accepted bytes**), not new CODE credit.
+
 ## 6. Agent operating checklist / storage
 
 **Preflight, no whole corpus replay:**
