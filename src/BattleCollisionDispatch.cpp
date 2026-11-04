@@ -1,23 +1,30 @@
 #include "BattleCollisionDispatch.hpp"
 #include "GameLeafHelpers.hpp"
+#include "FighterActionTimerPairF1027.hpp"
 
 // Observed scalar views, without complete owner layouts.
 #define FIELD(type, object, offset) (*reinterpret_cast<type *>(reinterpret_cast<unsigned char *>(object) + offset))
 #define RECORD(type, actor, pointer, offset) FIELD(type, FIELD(void *, actor, pointer), offset)
 #define FRAME(type, actor, offset) RECORD(type, actor, 0xAC, offset)
 #define SEQUENCE(actor, frame, offset) (*reinterpret_cast<CollisionRectSequence *>(reinterpret_cast<unsigned char *>(FIELD(void *, actor, frame)) + offset))
+// Native battle collision owner+0x34 is four actual signed Win32 RECT
+// boundary DWORDs; this is only a borrowed window, not a new owner.
+#define F1079_BOUNDS(owner) (*reinterpret_cast<RECT*>(reinterpret_cast<unsigned char*>(owner)+0x34))
+// Actual attack/collision FRAME record bitflags (32-bit at +0x3C/+0x40).
+#define F1079_ATTACK_FLAGS(actor) FRAME(unsigned long, actor, 0x40)
+#define F1079_DEFENSE_FLAGS(actor) FRAME(unsigned long, actor, 0x3C)
 void BattleCollisionDispatch::ResolveAttackHitboxes(CombatActor *attack, CombatActor *attacker, CombatActor *defender)
 {
-    if (FIELD(int, attack, 0xA8) != 0 || FIELD(short, attack, 0x80) <= 0) return;
+    if (FIELD(int, attack, 0xA8) != 0 || F1027_TIMERS(attack).wordAt80 <= 0) return;
     if (reinterpret_cast<FighterState *>(defender)->IsGroundedStateWindow()) return;
-    if (!(FRAME(unsigned long, attack, 0x40) & 0x400000)) {
+    if (!(F1079_ATTACK_FLAGS(attack) & 0x400000)) {
         if (FIELD(short, defender, 0x84) != 0) return;
-        if (FRAME(unsigned long, defender, 0x3C) & 0x2000) return;
+        if (F1079_DEFENSE_FLAGS(defender) & 0x2000) return;
     }
-    if ((FRAME(unsigned long, attack, 0x40) & 0x80) > 0) {
+    if ((F1079_ATTACK_FLAGS(attack) & 0x80) > 0) {
         if (FIELD(short, defender, 0x86) > 0) return;
-        if (FRAME(unsigned long, defender, 0x3C) & 0x800) return;
-        if (FRAME(unsigned long, defender, 0x3C) & 0x1000) return;
+        if (F1079_DEFENSE_FLAGS(defender) & 0x800) return;
+        if (F1079_DEFENSE_FLAGS(defender) & 0x1000) return;
     }
     RECT bodyRectangle;
     RECT attackBounds[4];
@@ -44,7 +51,7 @@ void BattleCollisionDispatch::ResolveAttackHitboxes(CombatActor *attack, CombatA
         }
     }
     if (hit) {
-        FIELD(signed char, defender, 0x3BE) = !(FRAME(unsigned long, attack, 0x40) & 0x400000);
+        FIELD(signed char, defender, 0x3BE) = !(F1079_ATTACK_FLAGS(attack) & 0x400000);
         if (ResolveSpecialHit(attack, attacker, defender)) return;
         if (reinterpret_cast<BattleCombat *>(this)->ApplyConditionalHit(attack, attacker, defender)) return;
         if (ResolveContact(attack, attacker, defender)) return;
@@ -58,8 +65,8 @@ void BattleCollisionDispatch::ResolveAttackHitboxes(CombatActor *attack, CombatA
 
 void BattleCollisionDispatch::ResolveBodyContact(CombatActor *first, CombatActor *second)
 {
-    if (FIELD(int, first, 0xA8) != 0 || FIELD(short, first, 0x80) <= 0) return;
-    if (FIELD(int, second, 0xA8) != 0 || FIELD(short, second, 0x80) <= 0) return;
+    if (FIELD(int, first, 0xA8) != 0 || F1027_TIMERS(first).wordAt80 <= 0) return;
+    if (FIELD(int, second, 0xA8) != 0 || F1027_TIMERS(second).wordAt80 <= 0) return;
     if (RECORD(short, first, 0xB0, 0x10) == 0) return;
     if (RECORD(short, second, 0xB0, 0x10) == 0) return;
     int i;
@@ -83,9 +90,9 @@ void BattleCollisionDispatch::ResolveBodyContact(CombatActor *first, CombatActor
         }
     }
     if (hit) {
-        FIELD(float, second, 0x8C) = (FIELD(int, this, 0x34) + FIELD(int, this, 0x3C)) / 2.0f;
+        FIELD(float, second, 0x8C) = (F1079_BOUNDS(this).left + F1079_BOUNDS(this).right) / 2.0f;
         FIELD(unsigned long, first, 0x8C) = FIELD(unsigned long, second, 0x8C);
-        FIELD(float, second, 0x90) = (FIELD(int, this, 0x38) + FIELD(int, this, 0x40)) / 2.0f;
+        FIELD(float, second, 0x90) = (F1079_BOUNDS(this).top + F1079_BOUNDS(this).bottom) / 2.0f;
         FIELD(unsigned long, first, 0x90) = FIELD(unsigned long, second, 0x90);
         if (RECORD(short, first, 0x78, 0x12) >= RECORD(short, second, 0x78, 0x10) ||
             RECORD(short, second, 0x78, 0x12) >= RECORD(short, first, 0x78, 0x10)) {
@@ -94,11 +101,11 @@ void BattleCollisionDispatch::ResolveBodyContact(CombatActor *first, CombatActor
         } else {
             if (RECORD(short, first, 0x78, 0x10) <= RECORD(short, second, 0x78, 0x10)) {
                 FIELD(int, first, 0x7C) = 4;
-                --FIELD(short, first, 0x80);
+                --F1027_TIMERS(first).wordAt80;
             }
             if (RECORD(short, first, 0x78, 0x10) >= RECORD(short, second, 0x78, 0x10)) {
                 FIELD(int, second, 0x7C) = 4;
-                --FIELD(short, second, 0x80);
+                --F1027_TIMERS(second).wordAt80;
             }
         }
     }
@@ -114,3 +121,7 @@ void CollisionActor::SaveCollisionFields()
     FIELD(unsigned char, this, 0xC0) = FIELD(unsigned char, this, 0x66);
     FIELD(short, this, 0xB4) = FIELD(short, this, 0x60);
 }
+
+#undef F1079_BOUNDS
+#undef F1079_ATTACK_FLAGS
+#undef F1079_DEFENSE_FLAGS

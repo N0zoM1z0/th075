@@ -123,7 +123,7 @@ tested 10 normal VC7.1 variants without fixing the true native CMP
 roles; check the original PE, not stale hypotheses.
 
 **81KB single-switch 0050A580:** [F1077 corrected real
-`0x339/0x33A` projectile IDs](CHARACTEROBJECT_NATIVE_SCALAR_IMMEDIATES_F1077.md)
+`0x339/0x33A` projectile IDs](CHARACTEROBJECT_SPAWN_IMMEDIATE_PROOF_F1077.md)
 now additionally validates **1,321/1,321 original nonrelocated scalar
 immediates** across **38 native real state interiors /32,592 original
 CODE B /7,100 x86 mnemonic+GPR positions /573 original PE fields**.
@@ -196,6 +196,8 @@ F1063: [two real actor/HUD pointer arrays plus native action/health borrowed fie
 F1067: [flash bar native health/X-Y/flags typed borrow](BATTLE_DAMAGE_FLASH_NATIVE_FIELDS_F1067.md): one complete 1,081B `RenderFlash` retained **1/1 exact** after four scoped cold compiles; no other object or corpus replay.
 
 F1072: [physically native combat response flash span, action/timer WORDs and 4-int collision-bound borrow](BATTLE_RESPONSE_NATIVE_BORROW_GRAMMAR_F1072.md) preserves **5/5 exact whole callables, 3,073 previously accepted CODE B**. New C++ struct/header experiments changed strict `$L` labels despite unchanged CODE and were rejected; selected no-new-type scalar window preserved exact COFF.
+
+F1079: [real collision-frame flags, action WORD and four native bounds](BATTLE_COLLISION_DISPATCH_BORROW_F1079.md) preserves **3/3 strict original whole functions exact (1,990 previously credited CODE B)** after one-object cold replay.
 
 ## 6. Agent operating checklist / storage
 
