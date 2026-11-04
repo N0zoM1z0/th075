@@ -1,5 +1,7 @@
 # F1052 — Real 0x325 three-shot loop restores downstream GPR phase; 0x32F DWORD owner copy
 
+**Historical F1052 ten-state checkpoint:** the live parent has since gained authentic native [0x337 and 0x345 states](CHARACTEROBJECT_NATIVE_337_345_F1054.md). The ten-state byte/role totals below remain valid *for those ten original cases*, but not as the current entire source coverage total.
+
 The SHA-pinned Japanese TH075 v1.11 `CharacterObject::Advance` at
 `0050A580` remains one independently authored **NONEXACT 81,539-byte /
 17,435-x86** callable with 567 separate afterRET jump DATA bytes.
