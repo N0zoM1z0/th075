@@ -73,7 +73,7 @@ Source physical COFF and GPR allocations still differ.
 0x58 code, then five widths and *physical* COFF sites.
 Do not mistake correct external destinations for correct source offsets.
 
-F1042: [true adjacent signed animation stage/frame WORDs in both tracked complete 46KB and 58KB parents](FIGHTER_BOSS_PHASE_BORROW_F1042.md). Across 19 + 91 real field accesses, **both whole generated CODE+DATA images and all physical COFF fields/targets remained identical**, with only internal `$L` renumbering. Both giants still nonexact.
+F1042: [46/58KB phase borrows](FIGHTER_BOSS_PHASE_BORROW_F1042.md) preserve physical CODE/DATA/COFF, both NONEXACT.
 
 ## 3. Other large Boss functions — current priority
 
@@ -122,7 +122,7 @@ rechecks **1,697/1,697 physical external PE targets**,
 tested 10 normal VC7.1 variants without fixing the true native CMP
 roles; check the original PE, not stale hypotheses.
 
-**81KB single-switch 0050A580:** [F1133 authentic whole-Boss default branch](CHARACTEROBJECT_WHOLE_NATIVE_DEFAULT_F1133.md) corrects a fake marker into the real **`0040FA30` default call** (verified 1/1 physical original PE REL32). The selected whole C++ now emits **17,435/17,435 original x86 mnemonics by entire count**, **81,560 CODE B** vs **81,539 original B** (21B excess), saved this `EBP-0xDC` vs native `EBP-0xAC`; **NOT exact**. [F1132 real native 0x3E3–3E6 tail](CHARACTEROBJECT_NATIVE_3E3_3E6_F1132.md) verifies **82 strict real original case interiors /75,260 original CODE B /16,090 native x86 mnemonic+GPR roles /1,246 original PE fields /2,964 scalar positions**, eight GPR-provisional plus uncredited 0x391 FUCOMPP debt. Original 567B postRET DATA unchanged. **Whole original NONEXACT; 0 new accepted exact original CODE.** Recheck via [live one-parent PE verifier](../scripts/verify-characterobject-current-recovered-f1068.py).
+**81KB single-switch 0050A580:** [F1141 native 0x388 ground-or-status branch](CHARACTEROBJECT_NATIVE_388_OR_BRANCH_F1141.md) fixes original `JNP` target **124** versus prior wrong **134**, preserving 160/160 original case MN/GPR/width. [F1140 full original CFG audit](CHARACTEROBJECT_ORIGINAL_WHOLE_CFG_AUDIT_F1140.md) checks **1,834 direct native branch targets**, with **15 real target mismatches still unresolved**; earlier 0x387 gravity/angle init CFG fixed. [F1138 phase/gauge borrow](CHARACTEROBJECT_WHOLE_NATIVE_PHASE_GAUGE_F1138.md) types **358 native fields** across 72 active files while preserving the selected 82,127B CODE+DATA and 1,449 physical COFF fields. Current source **81,560B/17,435 x86** versus real original **81,539B/17,435 x86**, original 567 afterRET switch DATA. **82 strict inner states /75,260 original CODE B /16,090 original x86 MN+GPR /1,246 PE fields /2,964 scalars**, 8 GPR-provisional plus separate 0x391 x87 debt. **Whole original remains NONEXACT; 0 new exact CODE.** [Scoped PE verifier](../scripts/verify-characterobject-current-recovered-f1068.py).
 
 ## 4. All three remaining independent small/medium originals
 
@@ -193,7 +193,9 @@ F1134: [127 native HUD field borrows](BATTLE_HUD_NATIVE_BORROW_F1134.md) keep **
 
 F1135: [531 original auxiliary axes](CHARACTER_AUX_ACTION_NATIVE_AXES_F1135.md) retain **1/1 whole 31,352B strict exact**.
 
-F1136: [484 signed stage/frame/animation/tick borrowed WORD uses](CHARACTER_AUX_ACTION_NATIVE_PHASE_F1136.md) retain **1/1 whole 31,352B original exact**, including 913 physical COFF fields and all `$L` labels; F1135 also retains 531 float-axis borrows.
+F1136: [484 auxiliary phase WORDs](CHARACTER_AUX_ACTION_NATIVE_PHASE_F1136.md) keep **1/1 whole 31,352B exact**.
+
+F1139: [318 aux scale/rotation floats](CHARACTER_AUX_ACTION_NATIVE_TRANSFORM_F1139.md) keep **1/1 full 31,352B exact**; F1135/36/39 together type **1,333 original source lvalues**.
 
 ## 6. Agent operating checklist / storage
 

@@ -36,13 +36,14 @@ case 0x388: {
     if (F1024_PHASE(this).stageAt62==2) {
         F1037_MOTION(this).yMotion=F1037_MOTION(this).yMotion-g_F1059_ScaleRatioAt00657478;
         F1037_POSITION(this).yPosition=F1037_POSITION(this).yPosition+F1037_MOTION(this).yMotion;
-        if (!(F1037_POSITION(this).yPosition+F1037_MOTION(this).yMotion<=g_F1044_GroundAt0065782C)) {
-            if (SELF_FIELD(int,0x7C)!=0 && SELF_FIELD(int,0x7C)!=6) {
-                F1037_MOTION(this).yMotion=0.0f;
-                SetAuxActionAt0040FB40(3);
-                reinterpret_cast<F1051Grandparent*>(PARENT)->NativePrepareAt00453D40(5);
-                return;
-            }
+        // Native TEST AH,0x41; JNP jumps straight INTO the hit
+        // body. Otherwise, only then consult native status 0/6.
+        if (F1037_POSITION(this).yPosition+F1037_MOTION(this).yMotion<=g_F1044_GroundAt0065782C ||
+            (SELF_FIELD(int,0x7C)!=0 && SELF_FIELD(int,0x7C)!=6)) {
+            F1037_MOTION(this).yMotion=0.0f;
+            SetAuxActionAt0040FB40(3);
+            reinterpret_cast<F1051Grandparent*>(PARENT)->NativePrepareAt00453D40(5);
+            return;
         }
     }
     if (GetNativeActionAt0040FA30()==SELF_FIELD(signed short,0x70))

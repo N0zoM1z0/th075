@@ -145,11 +145,11 @@ for k,(native,emitted) in enumerate(zip(NWHOLE,I)):
       'original_target_global_ordinal':orig_target,
       'source_target_global_ordinal':src_target})
 assert physical_original_branch_positions==1834,physical_original_branch_positions
-# These are not waived as exact or correctness: all 16 remain true
+# These are not waived as exact or correctness: all 15 remain true
 # unresolved source CFG target differences. Explicitly enumerate
 # them to reject any *additional* source control-flow regression.
 remaining_native_branch_keys={(0x330,166),(0x346,271),
- (0x35d,13),(0x35d,17),(0x35e,155),(0x388,117),(0x389,101),
+ (0x35d,13),(0x35d,17),(0x35e,155),(0x389,101),
  (0x391,124),(0x391,130),(0x3e3,43),(0x3e3,163),
  (0x3e4,43),(0x3e4,179),(0x3e4,204),(0x3e4,214),(0x3e4,232)}
 actual_debt_keys={(row['physical_switch_slot'],row['case_ordinal'])
@@ -166,6 +166,14 @@ for local in (38,42):
  assert n.mnemonic==q.mnemonic=='jne'
  assert native_instruction_by_address[int(n.op_str,16)]-original_387_index==92
  assert source_instruction_by_address[int(q.op_str,16)]-original_387_index==92
+# F1141: original 388 signed stage-2 landing FPU JNP must ENTER the
+# body at ordinal 124, while status 0 or 6 skip to ordinal 134.
+original_388_index=native_instruction_by_address[orig_dense[orig_sparse[0x388-0x320]]]
+for ord,expected in ((117,124),(120,134),(123,134)):
+ n=NWHOLE[original_388_index+ord];q=I[original_388_index+ord]
+ assert n.mnemonic==q.mnemonic and n.mnemonic in ('jnp','je')
+ assert native_instruction_by_address[int(n.op_str,16)]-original_388_index==expected
+ assert source_instruction_by_address[int(q.op_str,16)]-original_388_index==expected
 print('F1140 WHOLE native control-flow audit:',physical_original_branch_positions,
       'real direct PE-local jumps, original 0x387 stage/velocity guards corrected;',
       len(native_branch_target_debt),'other native branch target debts remain',flush=True)

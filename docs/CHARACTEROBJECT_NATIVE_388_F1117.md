@@ -1,5 +1,7 @@
 # F1117 — Real original action 0x388, 748B/160 x86: native 60.0f reset and unordered-aware JNP ground transition
 
+**Historical branch-topology correction:** [F1141 original native CFG](CHARACTEROBJECT_NATIVE_388_OR_BRANCH_F1141.md) proves the `TEST AH,0x41; JNP` must target impact ordinal 124 (rather than 134), using a short-circuit OR with real collision status checks. The earlier nested-AND C++ had correct mnemonics but incorrect game behavior.
+
 **Historical F1117 checkpoint:** current source now additionally restores [F1118 real native 0x389](CHARACTEROBJECT_NATIVE_389_F1118.md), so the 70-case/71,400B whole-source dimensions below are the earlier checkpoint; native 388 160/160 widths and 14/14 PE fields still match.
 
 Pinned Japanese TH075 v1.11 contains one independently authored original `CharacterObject::Advance` at `0050A580`, **81,539 original CODE B /17,435 x86** plus 567 actual afterRET switch DATA bytes. F1117 restores true game action **`0x388` at `0051B89F..0051BB8B`, 748 native original CODE B /160 x86**, inside the still-NONEXACT original-shaped whole C++ parent. It is not a separate exact-original callable.

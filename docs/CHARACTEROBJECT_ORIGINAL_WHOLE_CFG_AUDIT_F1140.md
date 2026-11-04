@@ -1,5 +1,7 @@
 # F1140 — Original 81KB FighterSwitch physical branch-target audit and native 0x387 per-frame gravity/angle correction
 
+**Historical F1140 checkpoint:** [F1141 original 0x388 ground/status OR recovery](CHARACTEROBJECT_NATIVE_388_OR_BRANCH_F1141.md) has now corrected another true branch target, from native ordinal 134 to 124. The 16 outstanding branch mismatches below were true at F1140; the live current count is 15.
+
 Pinned original Japanese TH075 v1.11 contains one authored `CharacterObject::Advance` at `0050A580`, **81,539 native original CODE B /17,435 original x86** and genuine 567B afterRET switch DATA. The natural C++ partial whole `probes/CharacterObjectWhole0050A580F1044.cpp` currently generates **81,560 CODE B /17,435 x86**, but this is **NONEXACT**, not newly accepted original function CODE. Earlier actual recovery established 82 strict-role-matched and 8 provisional inner states plus uncredited 0x391.
 
 ## Instruction-mnemonic matches did not prove true native control flow
