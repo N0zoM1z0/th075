@@ -122,22 +122,7 @@ rechecks **1,697/1,697 physical external PE targets**,
 tested 10 normal VC7.1 variants without fixing the true native CMP
 roles; check the original PE, not stale hypotheses.
 
-**81KB single-switch 0050A580:** [F1111 genuine native
-`0x366–0x369` homing-angle action family](CHARACTEROBJECT_NATIVE_366_369_F1111.md)
-restores **four original 2,214B/452-x86 cases** with **1,808/1,808
-ordered mnemonics, GPR positions and x86 widths**, **128/128
-original physical PE fields**, **312/312 scalar immediates**, and
-real `0x33E/340/342/344` projectiles. Together with [F1110 real
-`0x365`](CHARACTEROBJECT_NATIVE_365_F1110.md), the native 5-case
-family spans **11,070 native original CODE B** with full original
-width/mnemonic/GPR positions. Live original-PE verification covers
-**65 strict original case interiors /62,415 native CODE B /13,386
-native x86 positions /1,008 original PE fields /2,455 scalar
-immediates**; seven other cases remain GPR-provisional. Current
-partial C++ emits **67,237B/14,386 x86** versus original full
-**81,539B/17,435 x86**, real 567B afterRET DATA.
-**Original whole callable still NONEXACT, 0B new accepted CODE.**
-Reproduce only [live one-parent original PE](../scripts/verify-characterobject-current-recovered-f1068.py).
+**81KB single-switch 0050A580:** [F1113 real `0x384` landing and projectile burst](CHARACTEROBJECT_NATIVE_384_F1113.md) restores 1,267B/277-x86 original inner gameplay with **277/277 mnemonics/GPR roles/instruction widths, 24/24 original PE fields and 58/58 scalar immediates**. Original difficulty >0 and >1 are TWO independent gates; initial nested source was wrong even though external PE fields matched. Current live parent proof covers **66 strict real case interiors /63,682 original CODE B /13,663 original x86 roles /1,032 PE fields /2,513 scalar immediates**. Seven more cases remain provisional. Current parent emits **68,489B /14,661 x86** versus full original **81,539B /17,435 x86** plus 567 original afterRET DATA; **whole original still NONEXACT and 0B new accepted exact CODE**. See [F1111 native 366–369](CHARACTEROBJECT_NATIVE_366_369_F1111.md) and [live PE verifier](../scripts/verify-characterobject-current-recovered-f1068.py).
 
 ## 4. All three remaining independent small/medium originals
 

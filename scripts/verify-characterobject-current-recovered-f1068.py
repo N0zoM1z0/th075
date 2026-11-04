@@ -39,9 +39,9 @@ required_fields={
  0x337:3,0x338:12,0x339:10,0x33a:18,
  0x33b:33,0x33c:5,0x33d:33,0x33e:5,0x33f:33,
  0x340:5,0x341:33,0x342:5,0x343:33,0x344:5,0x345:3,
- 0x346:34,0x347:10,0x348:9,0x349:7,0x34a:7,0x34b:6,0x34c:18,0x34d:18,0x34e:18,0x34f:18,0x350:18,0x351:15,0x352:6,0x353:3,0x354:14,0x355:20,0x356:14,0x357:7,0x35f:2,0x360:15,0x361:15,0x362:15,0x363:15,0x364:15,0x365:32,0x366:32,0x367:32,0x368:32,0x369:32,
+ 0x346:34,0x347:10,0x348:9,0x349:7,0x34a:7,0x34b:6,0x34c:18,0x34d:18,0x34e:18,0x34f:18,0x350:18,0x351:15,0x352:6,0x353:3,0x354:14,0x355:20,0x356:14,0x357:7,0x35f:2,0x360:15,0x361:15,0x362:15,0x363:15,0x364:15,0x365:32,0x366:32,0x367:32,0x368:32,0x369:32,0x384:24,
 }
-assert len(required_fields)==65 and sum(required_fields.values())==1008
+assert len(required_fields)==66 and sum(required_fields.values())==1032
 src=R/'probes/CharacterObjectWhole0050A580F1044.cpp'
 source=src.read_text()
 # Native state imports, not fake marker labels, must actually be represented.
@@ -75,6 +75,7 @@ for token in ('#include "CharacterObjectBoss330F1068.inc"',
  '#include "CharacterObjectBoss360361F1108.inc"',
  '#include "CharacterObjectBoss365F1110.inc"',
  '#include "CharacterObjectBoss366369F1111.inc"',
+ '#include "CharacterObjectBoss384F1113.inc"',
  '#include "CharacterObjectBoss335F1064.inc"',
  '#include "CharacterObjectBoss333334F1065.inc"',
  '#include "CharacterObjectBoss338F1062.inc"',
@@ -267,6 +268,26 @@ for action,expected_count in required_fields.items():
   assert N[83].mnemonic==S[83].mnemonic=='mov'
   assert N[83].op_str==S[83].op_str and '0xc2200000' in N[83].op_str
   assert any(f['x86_ordinal']==42 and f['original_native_PE_target']=='0x658e80' for f in pe)
+ if action==0x384:
+  # Original game difficulty tests are TWO independent branches,
+  # not one nested branch. The source initially matched all 277
+  # mnemonics/GPR/24 real PE fields but 277 instruction widths
+  # failed at the first long JLE, and low difficulty behavior was
+  # wrong. The physically native independent branches restore all.
+  assert len(N)==277 and all(n.size==q.size for n,q in zip(N,S))
+  assert N[100].mnemonic==S[100].mnemonic=='jle' and N[100].size==S[100].size==2
+  assert N[130].mnemonic==S[130].mnemonic=='jle'
+  assert N[95].mnemonic==S[95].mnemonic=='push'
+  assert N[95].op_str==S[95].op_str=='0x385'
+  for k,imm in ((112,'0x38e'),(124,'0x38e'),(142,'0x38e'),(154,'0x38e'),
+                (168,'0x347'),(189,'0x33a')):
+   assert N[k].mnemonic==S[k].mnemonic=='push'
+   assert N[k].op_str==S[k].op_str==imm,(k,imm)
+  assert N[177].mnemonic==S[177].mnemonic=='cmp'
+  assert N[177].op_str.endswith(', 0xf') and S[177].op_str.endswith(', 0xf')
+  assert any(f['x86_ordinal']==98 and f['original_native_PE_target']=='0x6714d0' for f in pe)
+  assert any(f['x86_ordinal']==128 and f['original_native_PE_target']=='0x6714d0' for f in pe)
+  assert any(f['x86_ordinal']==225 and f['original_native_PE_target']=='0x65988c' for f in pe)
  if action in (0x365,0x366,0x367,0x368,0x369):
   # Real original 2,214B case has 452 native x86 and retains
   # every original width/GPR role, including parent-facing
@@ -494,7 +515,7 @@ original_total=sum(row['original_interior_CODE_B'] for row in rows)
 x86total=sum(row['original_native_x86'] for row in rows)
 src_total=sum(row['current_source_interior_CODE_B'] for row in rows)
 fields_total=sum(len(row['native_physically_correct_PE_call_global_fields']) for row in rows)
-assert (original_total,x86total,fields_total)==(62415,13386,1008)
+assert (original_total,x86total,fields_total)==(63682,13663,1032)
 # Additional REAL original C++ interiors, deliberately kept separately
 # PROVISIONAL: their native mnemonics, scalar immediates and physical PE
 # destinations match, but whole-parent GPR phases are NOT native yet.
@@ -560,4 +581,4 @@ summary={'original_Boss':'0x0050A580','original_whole_CODE_B':81539,
  'additional_original_native_provisional_interiors':provisional_rows,
  'provisional_CASES_NOT_counted_as_recovered_or_exact':len(provisional_rows)}
 (O/'verified-summary.json').write_text(json.dumps(summary,indent=2)+'\n')
-print('F1111 LIVE 65 original game action interiors: original',original_total,'CODE B /',x86total,'x86, native mnemonic+GPR',x86total,'/',x86total,'and genuine PE nonlocal',fields_total,'/',fields_total,'. Current partial source',end,'B /',len(I),'x86, NOT exact whole 81KB; accepted new original bytes 0.')
+print('F1113 LIVE 66 original game action interiors: original',original_total,'CODE B /',x86total,'x86, native mnemonic+GPR',x86total,'/',x86total,'and genuine PE nonlocal',fields_total,'/',fields_total,'. Current partial source',end,'B /',len(I),'x86, NOT exact whole 81KB; accepted new original bytes 0.')
