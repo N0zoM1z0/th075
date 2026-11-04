@@ -1,4 +1,6 @@
 #include "FighterAnimationPhaseBorrowedF1024.hpp"
+#include "AuxiliaryActorWordWindowF1124.hpp"
+#include "FrameActorMotionPairsF1037.hpp"
 #include "AnimationProgress40FA30.hpp"
 #include "CharacterAuxAction.hpp"
 #include "CharacterAIPolicy.hpp"
@@ -33,11 +35,11 @@ extern int g_AI507B20Countdown;
 void AuxiliaryActor4A80F0::Update()
 {
     if (F1024_PHASE(this).stageAt62 == 0 && F1024_PHASE(this).frameAt64 == 0) {
-        FIELD(short, 0xD8) = 0;
-        FIELD(short, 0xDA) = 0;
-        FIELD(short, 0xDC) = 0;
-        FIELD(short, 0xDE) = 0;
-        FIELD(short, 0xE0) = 0;
+        F1124_AUX_WORDS(this).stageAngleAtD8 = 0;
+        F1124_AUX_WORDS(this).stageSpeedAtDA = 0;
+        F1124_AUX_WORDS(this).responseAtDC = 0;
+        F1124_AUX_WORDS(this).targetAngleAtDE = 0;
+        F1124_AUX_WORDS(this).spareAtE0 = 0;
         reinterpret_cast<SpriteTransform40FBB0*>(this)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
         FIELD(short, 0x80) = 1;
         FIELD(int, 0x7C) = 0;
@@ -49,42 +51,42 @@ void AuxiliaryActor4A80F0::Update()
         FIELD(unsigned char, 0x14) = 255;
     }
     if (FIELD(short, 0x60) == 828) {
-        OWNER(short, 0xF1A) = static_cast<short>(FIELD_FLOAT(0x44));
-        OWNER(short, 0xF26) = static_cast<short>(FIELD_FLOAT(0x48));
+        OWNER(short, 0xF1A) = static_cast<short>(F1037_POSITION(this).xPosition);
+        OWNER(short, 0xF26) = static_cast<short>(F1037_POSITION(this).yPosition);
     }
     if (FIELD(short, 0x60) == 829) {
-        OWNER(short, 0xF1C) = static_cast<short>(FIELD_FLOAT(0x44));
-        OWNER(short, 0xF28) = static_cast<short>(FIELD_FLOAT(0x48));
+        OWNER(short, 0xF1C) = static_cast<short>(F1037_POSITION(this).xPosition);
+        OWNER(short, 0xF28) = static_cast<short>(F1037_POSITION(this).yPosition);
     }
     if (FIELD(short, 0x60) == 830) {
-        OWNER(short, 0xF1E) = static_cast<short>(FIELD_FLOAT(0x44));
-        OWNER(short, 0xF2A) = static_cast<short>(FIELD_FLOAT(0x48));
+        OWNER(short, 0xF1E) = static_cast<short>(F1037_POSITION(this).xPosition);
+        OWNER(short, 0xF2A) = static_cast<short>(F1037_POSITION(this).yPosition);
     }
     if (FIELD(short, 0x60) == 831) {
-        OWNER(short, 0xF20) = static_cast<short>(FIELD_FLOAT(0x44));
-        OWNER(short, 0xF2C) = static_cast<short>(FIELD_FLOAT(0x48));
+        OWNER(short, 0xF20) = static_cast<short>(F1037_POSITION(this).xPosition);
+        OWNER(short, 0xF2C) = static_cast<short>(F1037_POSITION(this).yPosition);
     }
     if (FIELD(short, 0x60) == 832) {
-        OWNER(short, 0xF22) = static_cast<short>(FIELD_FLOAT(0x44));
-        OWNER(short, 0xF2E) = static_cast<short>(FIELD_FLOAT(0x48));
+        OWNER(short, 0xF22) = static_cast<short>(F1037_POSITION(this).xPosition);
+        OWNER(short, 0xF2E) = static_cast<short>(F1037_POSITION(this).yPosition);
     }
     if (FIELD(short, 0x60) == 833) {
-        OWNER(short, 0xF24) = static_cast<short>(FIELD_FLOAT(0x44));
-        OWNER(short, 0xF30) = static_cast<short>(FIELD_FLOAT(0x48));
+        OWNER(short, 0xF24) = static_cast<short>(F1037_POSITION(this).xPosition);
+        OWNER(short, 0xF30) = static_cast<short>(F1037_POSITION(this).yPosition);
     }
     if ((OWNER(short, 0x60) == 709 || OWNER(short, 0x60) == 710) &&
         F1024_PHASE(FIELD(void*, 0xE4)).stageAt62 == 5 && F1024_PHASE(FIELD(void*, 0xE4)).frameAt64 == 0 &&
-        FIELD(short, 0xDC) == 0 && F1024_PHASE(this).stageAt62 == 1 &&
+        F1124_AUX_WORDS(this).responseAtDC == 0 && F1024_PHASE(this).stageAt62 == 1 &&
         ((FIELD(short, 0x60) == 833 && OWNER(short, 0xF16) == 6) ||
          (FIELD(short, 0x60) == 832 && OWNER(short, 0xF16) == 5) ||
          (FIELD(short, 0x60) == 831 && OWNER(short, 0xF16) == 4) ||
          (FIELD(short, 0x60) == 830 && OWNER(short, 0xF16) == 3) ||
          (FIELD(short, 0x60) == 829 && OWNER(short, 0xF16) == 2) ||
          (FIELD(short, 0x60) == 828 && OWNER(short, 0xF16) == 1))) {
-        FIELD(short, 0xDC) = 1;
-        FIELD(short, 0xDE) = static_cast<short>(AngleAt00483300(
-            OTHER_FLOAT(0x48) + 100.0f - FIELD_FLOAT(0x48),
-            (OTHER_FLOAT(0x44) - FIELD_FLOAT(0x44)) * FIELD(signed char, 0x66)) / 0.017453288659453392f);
+        F1124_AUX_WORDS(this).responseAtDC = 1;
+        F1124_AUX_WORDS(this).targetAngleAtDE = static_cast<short>(AngleAt00483300(
+            OTHER_FLOAT(0x48) + 100.0f - F1037_POSITION(this).yPosition,
+            (OTHER_FLOAT(0x44) - F1037_POSITION(this).xPosition) * FIELD(signed char, 0x66)) / 0.017453288659453392f);
         RESET(2);
         --OWNER(short, 0xF14);
         --OWNER(short, 0xF16);
@@ -100,46 +102,46 @@ void AuxiliaryActor4A80F0::Update()
          (FIELD(short, 0x60) == 828 && OWNER(short, 0xF16) == 1))) {
         RESET(3);
         --OWNER(short, 0xF16);
-        FIELD_FLOAT(0x50) = 0.0f;
-        FIELD_FLOAT(0x54) = 0.0f;
+        F1037_MOTION(this).xMotion = 0.0f;
+        F1037_MOTION(this).yMotion = 0.0f;
     }
     if (OWNER(short, 0xF12) == 2) {
-        SPAWN(836, FIELD_FLOAT(0x44), FIELD_FLOAT(0x48), 1, 0);
+        SPAWN(836, F1037_POSITION(this).xPosition, F1037_POSITION(this).yPosition, 1, 0);
     }
-    if (OWNER(short, 0xF12) == 99 && F1024_PHASE(this).stageAt62 < 7 && FIELD(short, 0xDC) == 0) RESET(7);
+    if (OWNER(short, 0xF12) == 99 && F1024_PHASE(this).stageAt62 < 7 && F1124_AUX_WORDS(this).responseAtDC == 0) RESET(7);
     if (OWNER(short, 0xF12) == 3 && F1024_PHASE(this).stageAt62 < 2) RESET(2);
-    FIELD(short, 0xD8) = static_cast<short>((OWNER(short, 0xF10) - 180) + FIELD_FLOAT(0xC8));
-    if (FIELD(short, 0xD8) > 180) FIELD(short, 0xD8) -= 360;
-    if (FIELD(short, 0xD8) < -180) FIELD(short, 0xD8) += 360;
-    FIELD(short, 0xDA) += 5;
-    if (OWNER(short, 0xF12) != 6 && OWNER(signed char, 0x39D) > 1 && FIELD(short, 0xDA) > 120) FIELD(short, 0xDA) = 120;
-    if (OWNER(signed char, 0x39D) == 1 && FIELD(short, 0xDA) > 140) FIELD(short, 0xDA) = 140;
-    if (OWNER(short, 0xF12) == 6 && FIELD(short, 0xDA) > 180) FIELD(short, 0xDA) = 180;
+    F1124_AUX_WORDS(this).stageAngleAtD8 = static_cast<short>((OWNER(short, 0xF10) - 180) + FIELD_FLOAT(0xC8));
+    if (F1124_AUX_WORDS(this).stageAngleAtD8 > 180) F1124_AUX_WORDS(this).stageAngleAtD8 -= 360;
+    if (F1124_AUX_WORDS(this).stageAngleAtD8 < -180) F1124_AUX_WORDS(this).stageAngleAtD8 += 360;
+    F1124_AUX_WORDS(this).stageSpeedAtDA += 5;
+    if (OWNER(short, 0xF12) != 6 && OWNER(signed char, 0x39D) > 1 && F1124_AUX_WORDS(this).stageSpeedAtDA > 120) F1124_AUX_WORDS(this).stageSpeedAtDA = 120;
+    if (OWNER(signed char, 0x39D) == 1 && F1124_AUX_WORDS(this).stageSpeedAtDA > 140) F1124_AUX_WORDS(this).stageSpeedAtDA = 140;
+    if (OWNER(short, 0xF12) == 6 && F1124_AUX_WORDS(this).stageSpeedAtDA > 180) F1124_AUX_WORDS(this).stageSpeedAtDA = 180;
     if (F1024_PHASE(this).stageAt62 == 1) {
-        POLAR(FIELD(short, 0xD8), FIELD(short, 0xDA));
-        FIELD_FLOAT(0x44) = static_cast<int>(OWNER(short, 0xF0C) + FIELD(signed char, 0x66) * FIELD_FLOAT(0x50));
-        FIELD_FLOAT(0x48) = static_cast<int>(OWNER(short, 0xF0E) + FIELD_FLOAT(0x54));
+        POLAR(F1124_AUX_WORDS(this).stageAngleAtD8, F1124_AUX_WORDS(this).stageSpeedAtDA);
+        F1037_POSITION(this).xPosition = static_cast<int>(OWNER(short, 0xF0C) + FIELD(signed char, 0x66) * F1037_MOTION(this).xMotion);
+        F1037_POSITION(this).yPosition = static_cast<int>(OWNER(short, 0xF0E) + F1037_MOTION(this).yMotion);
         FIELD(short, 0x80) = 1;
         FIELD(int, 0x7C) = 0;
     }
-    if (F1024_PHASE(this).stageAt62 == 2 && OWNER(short, 0xF12) == 3 && FIELD(short, 0xDC) == 0) {
-        POLAR(FIELD(short, 0xD8), FIELD(short, 0xDA));
-        FIELD_FLOAT(0x44) = static_cast<int>(OWNER(short, 0xF0C) + FIELD(signed char, 0x66) * FIELD_FLOAT(0x50));
-        FIELD_FLOAT(0x48) = static_cast<int>(OWNER(short, 0xF0E) + FIELD_FLOAT(0x54));
-        SPAWN(836, FIELD_FLOAT(0x44), FIELD_FLOAT(0x48), 1, 0);
+    if (F1024_PHASE(this).stageAt62 == 2 && OWNER(short, 0xF12) == 3 && F1124_AUX_WORDS(this).responseAtDC == 0) {
+        POLAR(F1124_AUX_WORDS(this).stageAngleAtD8, F1124_AUX_WORDS(this).stageSpeedAtDA);
+        F1037_POSITION(this).xPosition = static_cast<int>(OWNER(short, 0xF0C) + FIELD(signed char, 0x66) * F1037_MOTION(this).xMotion);
+        F1037_POSITION(this).yPosition = static_cast<int>(OWNER(short, 0xF0E) + F1037_MOTION(this).yMotion);
+        SPAWN(836, F1037_POSITION(this).xPosition, F1037_POSITION(this).yPosition, 1, 0);
         if (FIELD(int, 0x7C) != 0 && FIELD(int, 0x7C) != 4 && FIELD(int, 0x7C) != 5 && FIELD(int, 0x7C) != 6) { RESET(7); return; }
         if (FIELD(int, 0x7C) == 4 || FIELD(int, 0x7C) == 5 || FIELD(int, 0x7C) == 6) {
             FIELD(short, 0x80) = 1;
             FIELD(int, 0x7C) = 0;
         }
     }
-    if (F1024_PHASE(this).stageAt62 == 2 && FIELD(short, 0xDC) > 0) {
-        POLAR(FIELD(short, 0xDE), FIELD(short, 0xDC) * 0.5f + 5.0f);
-        ++FIELD(short, 0xDC);
-        FIELD(short, 0xE0) = 1;
-        FIELD_FLOAT(0x44) = FIELD(signed char, 0x66) * FIELD_FLOAT(0x50) + FIELD_FLOAT(0x44);
-        FIELD_FLOAT(0x48) = FIELD_FLOAT(0x48) - FIELD_FLOAT(0x54);
-        SPAWN(836, FIELD_FLOAT(0x44), FIELD_FLOAT(0x48), 1, 0);
+    if (F1024_PHASE(this).stageAt62 == 2 && F1124_AUX_WORDS(this).responseAtDC > 0) {
+        POLAR(F1124_AUX_WORDS(this).targetAngleAtDE, F1124_AUX_WORDS(this).responseAtDC * 0.5f + 5.0f);
+        ++F1124_AUX_WORDS(this).responseAtDC;
+        F1124_AUX_WORDS(this).spareAtE0 = 1;
+        F1037_POSITION(this).xPosition = FIELD(signed char, 0x66) * F1037_MOTION(this).xMotion + F1037_POSITION(this).xPosition;
+        F1037_POSITION(this).yPosition = F1037_POSITION(this).yPosition - F1037_MOTION(this).yMotion;
+        SPAWN(836, F1037_POSITION(this).xPosition, F1037_POSITION(this).yPosition, 1, 0);
         if (FIELD(int, 0x7C) == 4 || (FIELD(int, 0x7C) != 0 && FIELD(int, 0x7C) != 4 && FIELD(int, 0x7C) != 5 && FIELD(int, 0x7C) != 6)) { RESET(7); return; }
         if (FIELD(int, 0x7C) == 5 || FIELD(int, 0x7C) == 6) {
             FIELD(short, 0x80) = 1;
@@ -147,30 +149,30 @@ void AuxiliaryActor4A80F0::Update()
         }
     }
     if (F1024_PHASE(this).stageAt62 == 3) {
-        POLAR(FIELD(short, 0xD8), FIELD(short, 0xDA));
-        FIELD_FLOAT(0x44) = static_cast<int>(OWNER(short, 0xF0C) + FIELD(signed char, 0x66) * FIELD_FLOAT(0x50));
-        FIELD_FLOAT(0x48) = static_cast<int>(OWNER(short, 0xF0E) + FIELD_FLOAT(0x54));
+        POLAR(F1124_AUX_WORDS(this).stageAngleAtD8, F1124_AUX_WORDS(this).stageSpeedAtDA);
+        F1037_POSITION(this).xPosition = static_cast<int>(OWNER(short, 0xF0C) + FIELD(signed char, 0x66) * F1037_MOTION(this).xMotion);
+        F1037_POSITION(this).yPosition = static_cast<int>(OWNER(short, 0xF0E) + F1037_MOTION(this).yMotion);
         OWNER_FLOAT(0x314) = FIELD(short, 0x60) - 828;
-        if (FIELD(short, 0xDC) == 0) SPAWN(841, OWNER(signed char, 0x66) * 20 + FIELD_FLOAT(0x44), FIELD_FLOAT(0x48), OWNER(signed char, 0x66), 1);
-        if (FIELD(short, 0xDC) > 120 || FIELD(int, 0x7C) == 4 || (FIELD(int, 0x7C) != 0 && FIELD(int, 0x7C) != 4 && FIELD(int, 0x7C) != 5 && FIELD(int, 0x7C) != 6)) {
+        if (F1124_AUX_WORDS(this).responseAtDC == 0) SPAWN(841, OWNER(signed char, 0x66) * 20 + F1037_POSITION(this).xPosition, F1037_POSITION(this).yPosition, OWNER(signed char, 0x66), 1);
+        if (F1124_AUX_WORDS(this).responseAtDC > 120 || FIELD(int, 0x7C) == 4 || (FIELD(int, 0x7C) != 0 && FIELD(int, 0x7C) != 4 && FIELD(int, 0x7C) != 5 && FIELD(int, 0x7C) != 6)) {
             RESET(7);
-            FIELD(short, 0xDC) = 0;
+            F1124_AUX_WORDS(this).responseAtDC = 0;
             return;
         }
-        ++FIELD(short, 0xDC);
-        FIELD(short, 0xE0) = 1;
+        ++F1124_AUX_WORDS(this).responseAtDC;
+        F1124_AUX_WORDS(this).spareAtE0 = 1;
     }
     if (F1024_PHASE(this).stageAt62 == 4) {
-        if (FIELD(short, 0xDC) == 1) SPAWN(841, OWNER(signed char, 0x66) * 20 + FIELD_FLOAT(0x44), FIELD_FLOAT(0x48), OWNER(signed char, 0x66), 1);
-        if (FIELD(short, 0xDC) > 120 || FIELD(int, 0x7C) == 4 || (FIELD(int, 0x7C) != 0 && FIELD(int, 0x7C) != 4 && FIELD(int, 0x7C) != 5 && FIELD(int, 0x7C) != 6)) { RESET(7); return; }
-        ++FIELD(short, 0xDC);
+        if (F1124_AUX_WORDS(this).responseAtDC == 1) SPAWN(841, OWNER(signed char, 0x66) * 20 + F1037_POSITION(this).xPosition, F1037_POSITION(this).yPosition, OWNER(signed char, 0x66), 1);
+        if (F1124_AUX_WORDS(this).responseAtDC > 120 || FIELD(int, 0x7C) == 4 || (FIELD(int, 0x7C) != 0 && FIELD(int, 0x7C) != 4 && FIELD(int, 0x7C) != 5 && FIELD(int, 0x7C) != 6)) { RESET(7); return; }
+        ++F1124_AUX_WORDS(this).responseAtDC;
     }
     if (F1024_PHASE(this).stageAt62 == 7) FIELD(unsigned char, 0x11) = FIELD(unsigned char, 0x11) - 25;
-    if (OWNER(short, 0xF12) == 6) SPAWN(843, FIELD_FLOAT(0x44), FIELD_FLOAT(0x48), 1, 1);
+    if (OWNER(short, 0xF12) == 6) SPAWN(843, F1037_POSITION(this).xPosition, F1037_POSITION(this).yPosition, 1, 1);
     if (reinterpret_cast<AnimationProgress40FA30*>(this)->AdvanceNestedFrame() == FIELD(short, 0x70)) {
         reinterpret_cast<BattleEffect*>(this)->ClearField74();
-        if (FIELD(short, 0xDC) == 0) --OWNER(short, 0xF14);
-        if (FIELD(short, 0xE0) == 0) --OWNER(short, 0xF16);
+        if (F1124_AUX_WORDS(this).responseAtDC == 0) --OWNER(short, 0xF14);
+        if (F1124_AUX_WORDS(this).spareAtE0 == 0) --OWNER(short, 0xF16);
     } else {
         if (F1024_PHASE(this).stageAt62 == 2 && F1024_PHASE(this).frameAt64 == 0) RESET(1);
         if (F1024_PHASE(this).stageAt62 == 3 && F1024_PHASE(this).frameAt64 == 0) RESET(2);
