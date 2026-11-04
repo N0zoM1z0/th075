@@ -12,6 +12,11 @@
 #define ComboCount(actor) FIELD(short, actor, 0x3C4)
 #define ComboDamage(actor) FIELD(short, actor, 0x3C6)
 #define ComboRate(actor) FIELD(float, actor, 0x3C0)
+// Native signed 16-bit flash bar length is at original actor+0x3C8.
+#define FlashBarSpanF1072(actor) FIELD(short, actor, 0x3C8)
+// These are two independently observed adjacent native signed WORDs.
+#define ActionWordF1072(actor) FIELD(short, actor, 0x80)
+#define TimerWordF1072(actor) FIELD(short, actor, 0x82)
 
 bool BattleCombatResponses::ApplyHitResponse(CombatActor *attack, CombatActor *attacker, CombatActor *defender)
 {
@@ -102,9 +107,9 @@ bool BattleCombatResponses::ApplyAttackHit(CombatActor *attack, CombatActor *att
     defender->ResetPrimaryCounters(140);
     defender->ClearByte40();
     FIELD(int, attack, 0x7C) = 1;
-    --FIELD(short, attack, 0x80);
-    FIELD(short, attack, 0x82) = FRAME(short, attack, 0x1C);
-    FIELD(short, defender, 0x82) = FRAME(short, attack, 0x1E);
+    --ActionWordF1072(attack);
+    TimerWordF1072(attack) = FRAME(short, attack, 0x1C);
+    TimerWordF1072(defender) = FRAME(short, attack, 0x1E);
     FIELD(unsigned long, defender, 0x94) = FRAME(unsigned long, attack, 0x2C);
     FIELD(unsigned long, defender, 0x98) = FRAME(unsigned long, attack, 0x30);
     if (FIELD(signed char, attacker, 0x3CE) == 0)
@@ -136,7 +141,7 @@ bool BattleCombatResponses::ApplyAttackHit(CombatActor *attack, CombatActor *att
         static_cast<short>(ComboRate(attacker) * 1000.0f));
     Meter(attacker) += FRAME(short, attack, 0x24);
     if (Meter(attacker) > 2000.0f) Meter(attacker) = 2000.0f;
-    FIELD(short, defender, 0x3C8) = FRAME(short, attack, 0x1A);
+    FlashBarSpanF1072(defender) = FRAME(short, attack, 0x1A);
     defender->UpdateFacingFromOpponent();
     reinterpret_cast<BattleCombat *>(this)->SpawnMidpointEffect(FRAME(short, attack, 0x36), FIELD(unsigned char, attack, 0x66));
     g_SoundBank->Play(FRAME(short, attack, 0x34));
@@ -155,9 +160,9 @@ void BattleCombatResponses::ApplyGuardHit(CombatActor *attack, CombatActor *atta
     defender->ResetPrimaryCounters(140);
     defender->ClearByte40();
     FIELD(int, attack, 0x7C) = 1;
-    --FIELD(short, attack, 0x80);
-    FIELD(short, attack, 0x82) = FRAME(short, attack, 0x1C);
-    FIELD(short, defender, 0x82) = FRAME(short, attack, 0x1E);
+    --ActionWordF1072(attack);
+    TimerWordF1072(attack) = FRAME(short, attack, 0x1C);
+    TimerWordF1072(defender) = FRAME(short, attack, 0x1E);
     FIELD(unsigned long, defender, 0x94) = FRAME(unsigned long, attack, 0x2C);
     FIELD(unsigned long, defender, 0x98) = FRAME(unsigned long, attack, 0x30);
     ++ComboCount(attacker);
@@ -174,7 +179,7 @@ void BattleCombatResponses::ApplyGuardHit(CombatActor *attack, CombatActor *atta
         RecoverableHealth(defender) = Health(defender);
     Meter(attacker) += FRAME(short, attack, 0x24);
     if (Meter(attacker) > 2000.0f) Meter(attacker) = 2000.0f;
-    FIELD(short, defender, 0x3C8) = FRAME(short, attack, 0x1A);
+    FlashBarSpanF1072(defender) = FRAME(short, attack, 0x1A);
     defender->UpdateFacingFromOpponent();
     reinterpret_cast<BattleCombat *>(this)->SpawnMidpointEffect(FRAME(short, attack, 0x36), FIELD(unsigned char, attack, 0x66));
     g_SoundBank->Play(FRAME(short, attack, 0x34));
@@ -189,20 +194,29 @@ void BattleCombat::ApplyReactionMode(CombatActor *attack, CombatActor *attacker,
     case 71: case 72: case 74: case 77:
         FIELD(float, defender, 0x94) *= 1.25f;
         FIELD(float, defender, 0x98) *= 1.25f;
-        FIELD(short, defender, 0x3C8) = FIELD(short, defender, 0x3C8) << 1; break;
+        FlashBarSpanF1072(defender) = FlashBarSpanF1072(defender) << 1; break;
     case 73:
-        FIELD(short, defender, 0x3C8) = 32767;
+        FlashBarSpanF1072(defender) = 32767;
         defender->ResetPrimaryCounters(88); break;
     case 75: case 81: case 83: case 86: case 87:
-        FIELD(short, defender, 0x3C8) = FIELD(short, defender, 0x3C8) << 1; break;
+        FlashBarSpanF1072(defender) = FlashBarSpanF1072(defender) << 1; break;
     }
     g_SoundBank->Play(25);
     SpawnMidpointEffect(54, FIELD(unsigned char, attack, 0x66));
 }
+// Four consecutive original native signed-32bit collision bounds.
+// Raw borrowed array avoids proposing a guessed original owner class.
+#define CombatBoundsF1072(owner) (reinterpret_cast<int*>(reinterpret_cast<unsigned char*>(owner)+0x34))
 void BattleCombat::SpawnMidpointEffect(short effect, unsigned char direction)
 {
     g_CombatEffects.Spawn(effect,
-        (FIELD(int, this, 0x34) + FIELD(int, this, 0x3C)) / 2.0f,
-        (FIELD(int, this, 0x38) + FIELD(int, this, 0x40)) / 2.0f,
+        (CombatBoundsF1072(this)[0] + CombatBoundsF1072(this)[2]) / 2.0f,
+        (CombatBoundsF1072(this)[1] + CombatBoundsF1072(this)[3]) / 2.0f,
         direction, 1, 0, 0);
 }
+
+#undef CombatBoundsF1072
+#undef FlashBarSpanF1072
+
+#undef TimerWordF1072
+#undef ActionWordF1072

@@ -198,6 +198,8 @@ F1063: [two real actor/HUD pointer arrays plus native action/health borrowed fie
 
 F1067: [flash bar native health/X-Y/flags typed borrow](BATTLE_DAMAGE_FLASH_NATIVE_FIELDS_F1067.md): one complete 1,081B `RenderFlash` retained **1/1 exact** after four scoped cold compiles; no other object or corpus replay.
 
+F1072: [physically native combat response flash span, action/timer WORDs and 4-int collision-bound borrow](BATTLE_RESPONSE_NATIVE_BORROW_GRAMMAR_F1072.md) preserves **5/5 exact whole callables, 3,073 previously accepted CODE B**. New C++ struct/header experiments changed strict `$L` labels despite unchanged CODE and were rejected; selected no-new-type scalar window preserved exact COFF.
+
 ## 6. Agent operating checklist / storage
 
 **Preflight, no whole corpus replay:**
