@@ -98,6 +98,7 @@ checks **2,191/2,191 original external PE targets**,
 physical relocation/branch geometry remain wrong. Known focused leads:
 [F1021 original 0x58/0x59 strict-loop controls](THIRD_FIGHTER_NATIVE_58_59_FULL_GPR_CONTROLS_F1021.md),
 [F1033 full 82KB 0x59 field/condition grammar controls](THIRD_FIGHTER_NATIVE_BOUNCE59_GRAMMAR_F1033.md),
+[F1038 selected 82KB fighter stage/frame borrowed pair](THIRD_FIGHTER_PHASE_BORROW_F1038.md),
 [F1023 2BC/2BD/2BE GPR allocation](THIRD_FIGHTER_2BC_2BE_GPR_GRAMMARS_F1023.md),
 [F1029 0x259 five-shot angle expression negatives](THIRD_FIGHTER_NATIVE_259_ANGLE_GPR_F1029.md).
 All used *entire* normal 82KB source compilations; avoid repeating

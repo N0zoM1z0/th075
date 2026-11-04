@@ -1,4 +1,5 @@
 #include "FighterProjectileXViewF917.hpp"
+#include "FighterAnimationPhaseBorrowedF1024.hpp"
 // F1020 selected GROWING natural C++ original-shaped whole-parent fighter.
  // 82KB original GAME is NONEXACT: real cases restored from F938-F958
  // with their true C++ native game calls, still many original markers;
@@ -200,12 +201,12 @@ void FighterSwitchF598_Boss004AC040::Advance() {
         case 0x4: POS = 6.0f; break;
         case 0x5: POS = -6.0f; break;
         case 0x6:
-            if (S16(0x62) == 0 && S16(0x64) == 0 &&
+            if (F1024_PHASE(this).stageAt62 == 0 && F1024_PHASE(this).frameAt64 == 0 &&
                     (U8(0x511) == 3 || FLAG > 0)) {
                 SetNativeActionAt40FAC0(0xCC);
                 return;
             }
-            if (S16(0x62) == 0 && FLAG == 0)
+            if (F1024_PHASE(this).stageAt62 == 0 && FLAG == 0)
                 ResetAt453E20();
             if (POS48 > g_ThresholdAt0065782C) {
                 POS54 = POS54 - POS5C;
@@ -216,30 +217,30 @@ void FighterSwitchF598_Boss004AC040::Advance() {
                     return;
                 }
             }
-            if (S16(0x62) == 4 && POS54 < g_ExtraThresholdAt00657D14)
+            if (F1024_PHASE(this).stageAt62 == 4 && POS54 < g_ExtraThresholdAt00657D14)
                 SetAuxActionAt40FB40(5);
-            ++S16(0x64);
-            if (S16(0x64) >= S16(0x72)) {
-                S16(0x64) = 0;
-                ++S16(0x62);
-                if (S16(0x62) == 2) {
+            ++F1024_PHASE(this).frameAt64;
+            if (F1024_PHASE(this).frameAt64 >= S16(0x72)) {
+                F1024_PHASE(this).frameAt64 = 0;
+                ++F1024_PHASE(this).stageAt62;
+                if (F1024_PHASE(this).stageAt62 == 2) {
                     POS = 0.0f;
                     POS54 = 15.0f;
                     POS5C = 0.7f;
                     FLAG = 0;
                 }
-                if (S16(0x62) >= S16(0x70))
-                    S16(0x62) -= 2;
+                if (F1024_PHASE(this).stageAt62 >= S16(0x70))
+                    F1024_PHASE(this).stageAt62 -= 2;
                 NativeVirtualFrameAdvance();
             }
             break;
         case 0x7:
-            if (S16(0x62) == 0 && S16(0x64) == 0 &&
+            if (F1024_PHASE(this).stageAt62 == 0 && F1024_PHASE(this).frameAt64 == 0 &&
                     (U8(0x511) == 5 || FLAG > 0)) {
                 SetNativeActionAt40FAC0(0xCD);
                 return;
             }
-            if (S16(0x62) == 0 && FLAG == 0)
+            if (F1024_PHASE(this).stageAt62 == 0 && FLAG == 0)
                 ResetAt453E20();
             if (POS48 > g_ThresholdAt0065782C) {
                 POS54 = POS54 - POS5C;
@@ -250,30 +251,30 @@ void FighterSwitchF598_Boss004AC040::Advance() {
                     return;
                 }
             }
-            if (S16(0x62) == 4 && POS54 < g_ExtraThresholdAt00657D14)
+            if (F1024_PHASE(this).stageAt62 == 4 && POS54 < g_ExtraThresholdAt00657D14)
                 SetAuxActionAt40FB40(5);
-            ++S16(0x64);
-            if (S16(0x64) >= S16(0x72)) {
-                S16(0x64) = 0;
-                ++S16(0x62);
-                if (S16(0x62) == 2) {
+            ++F1024_PHASE(this).frameAt64;
+            if (F1024_PHASE(this).frameAt64 >= S16(0x72)) {
+                F1024_PHASE(this).frameAt64 = 0;
+                ++F1024_PHASE(this).stageAt62;
+                if (F1024_PHASE(this).stageAt62 == 2) {
                     FLAG = 0;
                     POS = 5.0f;
                     POS54 = 15.0f;
                     POS5C = 0.7f;
                 }
-                if (S16(0x62) >= S16(0x70))
-                    S16(0x62) -= 2;
+                if (F1024_PHASE(this).stageAt62 >= S16(0x70))
+                    F1024_PHASE(this).stageAt62 -= 2;
                 NativeVirtualFrameAdvance();
             }
             break;
         case 0x8:
-            if (S16(0x62) == 0 && S16(0x64) == 0 &&
+            if (F1024_PHASE(this).stageAt62 == 0 && F1024_PHASE(this).frameAt64 == 0 &&
                     (U8(0x511) == 4 || FLAG > 0)) {
                 SetNativeActionAt40FAC0(0xCE);
                 return;
             }
-            if (S16(0x62) == 0 && FLAG == 0)
+            if (F1024_PHASE(this).stageAt62 == 0 && FLAG == 0)
                 ResetAt453E20();
             if (POS48 > g_ThresholdAt0065782C) {
                 POS54 = POS54 - POS5C;
@@ -284,18 +285,18 @@ void FighterSwitchF598_Boss004AC040::Advance() {
                     return;
                 }
             }
-            ++S16(0x64);
-            if (S16(0x64) >= S16(0x72)) {
-                S16(0x64) = 0;
-                ++S16(0x62);
-                if (S16(0x62) == 2) {
+            ++F1024_PHASE(this).frameAt64;
+            if (F1024_PHASE(this).frameAt64 >= S16(0x72)) {
+                F1024_PHASE(this).frameAt64 = 0;
+                ++F1024_PHASE(this).stageAt62;
+                if (F1024_PHASE(this).stageAt62 == 2) {
                     FLAG = 0;
                     POS = -4.0f;
                     POS54 = 15.0f;
                     POS5C = 0.7f;
                 }
-                if (S16(0x62) >= S16(0x70))
-                    S16(0x62) -= 2;
+                if (F1024_PHASE(this).stageAt62 >= S16(0x70))
+                    F1024_PHASE(this).stageAt62 -= 2;
                 NativeVirtualFrameAdvance();
             }
             break;
@@ -314,7 +315,7 @@ void FighterSwitchF598_Boss004AC040::Advance() {
         }
         break;
         case 0xA:
-            if (I16(0x62) == 0 && I16(0x64) == 0)
+            if (F1024_PHASE(this).stageAt62 == 0 && F1024_PHASE(this).frameAt64 == 0)
                 PrepareActionAt453D60(30);
             ResetAt453E20();
             if (GetNativeActionAt40FA30() == I16(0x70)) {
