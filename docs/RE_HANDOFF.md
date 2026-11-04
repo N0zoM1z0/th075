@@ -122,20 +122,19 @@ rechecks **1,697/1,697 physical external PE targets**,
 tested 10 normal VC7.1 variants without fixing the true native CMP
 roles; check the original PE, not stale hypotheses.
 
-**81KB single-switch 0050A580:** [F1085 genuine original
-`0x34C` eight-`0x360`-shot game state](CHARACTEROBJECT_NATIVE_34C_F1085.md)
-now covers **43 independently original game-state interiors /35,805
-native original CODE B /7,786 original x86 mnemonic+GPR positions /
-620 genuine physical PE fields /1,452 scalar-immediate slots**.
-Original 34C has 1,266 native B/273 x86, real parent/target health
-checks and original actor-first `FLD velocityY; FMUL [00657F74]`.
-Current whole partial source **29,479B /7,928 x86** vs original
-**81,539B /17,435 x86**, authentic 92 DIR32/199 sparse DATA remain;
-**whole original GAME callable NONEXACT, new accepted exact CODE 0B**.
-Use the [one-parent live native PE verifier](../scripts/verify-characterobject-current-recovered-f1068.py),
-not old cropped case source geometry. [F1083 0x34B](CHARACTEROBJECT_NATIVE_34B_F1083.md)
-and [F1082 0x34A](CHARACTEROBJECT_NATIVE_34A_F1082.md)
-remain separately original-PE verified.
+**81KB single-switch 0050A580:** [F1086 genuine `0x34D`
+eight-`0x361`-shot source](CHARACTEROBJECT_NATIVE_34D_F1086.md)
+now covers **44 original game-state interiors /36,976 native CODE B
+/8,039 native mnemonic+GPR positions /638 physically original PE
+fields /1,496 scalar-immediate slots**. Real original action 34D
+is 1,171B/253x86, with correct original actor-first Y velocity
+FMUL at native ordinal 61, stage transitions and eight 0x361
+shots; compare genuine [F1085 0x34C](CHARACTEROBJECT_NATIVE_34C_F1085.md)
+with different original parent cases/0x360 shots. Current whole
+partial C++ is **30,435B /8,179 x86**, original **81,539B /
+17,435 x86** with real afterRET 92 DIR32/199 sparse DATA.
+**Whole original GAME callable still NONEXACT, no new accepted
+original exact CODE.** Use only [live whole-parent PE proof](../scripts/verify-characterobject-current-recovered-f1068.py).
 
 ## 4. All three remaining independent small/medium originals
 

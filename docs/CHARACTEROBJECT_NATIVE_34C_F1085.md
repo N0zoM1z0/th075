@@ -1,5 +1,7 @@
 # F1085 — Original 1,266B action 0x34C, eight real 0x360 shots and actor-first velocity x87
 
+**Historical F1085 source checkpoint:** restoring authentic [F1086 0x34D](CHARACTEROBJECT_NATIVE_34D_F1086.md) has since expanded the live parent to 44 cases. Earlier 43-case/29,479B numbers below describe that source state; original 34C 18/18 PE fields remain verified.
+
 Pinned Japanese TH075 v1.11 has **one** original authored
 `CharacterObject::Advance` at `0050A580`: **81,539 original
 CODE B /17,435 native x86**, followed by **567 independent afterRET
