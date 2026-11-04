@@ -197,6 +197,8 @@ F1079: [real collision-frame flags, action WORD and four native bounds](BATTLE_C
 
 F1084: [native two-fighter vital WORDs in whole 9,841B Battle HUD](BATTLE_HUD_NATIVE_VITALS_F1084.md) replaces **24** raw signed health/recoverable casts with independently original F999 fields, preserving **1/1 full native 9,841B exact** after one scoped cold replay; no new exact credit.
 
+F1086: [native 12B animation binding window for two complete 149B leaves](ANIMATION_BINDING_NATIVE_WINDOW_F1086.md) gives typed action-frame/row/duration/count slots at +0x70/+0x72/+0x74/+0x78; **2/2 full 149B leaf functions (298 previously accepted bytes) remain strict exact**, with original pointer/row implementations preserved.
+
 ## 6. Agent operating checklist / storage
 
 **Preflight, no whole corpus replay:**
