@@ -122,21 +122,21 @@ rechecks **1,697/1,697 physical external PE targets**,
 tested 10 normal VC7.1 variants without fixing the true native CMP
 roles; check the original PE, not stale hypotheses.
 
-**81KB single-switch 0050A580:** [F1089 genuine native
-`0x350` 0x364 eight-shot action](CHARACTEROBJECT_NATIVE_350_F1089.md)
-adds real parent combinations `0x192/4`,`0x260/4`,`0x261/4`,`0x262/4`
-within **47 genuine original game-state interiors /40,671 native CODE
-B /8,838 original x86 mnemonic+GPR positions /692 genuine original
-PE fields /1,636 nonrelocated scalar immediates**. Original 350 is
-1,263B/273x86, all 18 physical PE targets verified. The [live
-one-parent original PE verifier](../scripts/verify-characterobject-current-recovered-f1068.py)
-compiles the selected partial C++ **33,457 CODE B /8,972 x86**
-against the original **81,539B /17,435 x86**, preserving genuine
-92 DIR32/199 sparse afterRET DATA. Earlier [F1088 native 0x34F](CHARACTEROBJECT_NATIVE_34F_F1088.md)
-and [F1087 original 0x34E](CHARACTEROBJECT_NATIVE_34E_F1087.md)
-retain their independent source-accurate projectile IDs.
-**The original entire 81KB callable remains NONEXACT; new accepted
-original CODE = 0B.**
+**81KB single-switch 0050A580:** [F1089 genuine original
+`0x350` eight `0x364` shots](CHARACTEROBJECT_NATIVE_350_F1089.md)
+now represents **47 real game-state interiors /40,671 original native
+CODE B /8,838 original x86 mnemonic+GPR positions /692 physical
+original PE call/global targets /1,636 scalar-immediate slots**.
+Original 350's distinct four parent triggers `(0x192,4)` and
+`(0x260/261/262,4)` control native eight-step 45° shots of 0x364,
+whereas earlier [F1088 0x34F](CHARACTEROBJECT_NATIVE_34F_F1088.md)
+uses 0x363 and [F1087 0x34E](CHARACTEROBJECT_NATIVE_34E_F1087.md)
+uses 0x362. Current C++ source **33,457 CODE B /8,972 x86**
+versus original **81,539B /17,435 x86**, real 92 DIR32/199
+sparse DATA retained. **Whole original game callable NONEXACT;
+zero newly accepted original whole CODE.** Use the
+[live native one-parent PE verifier](../scripts/verify-characterobject-current-recovered-f1068.py)
+not old source geometry.
 
 ## 4. All three remaining independent small/medium originals
 

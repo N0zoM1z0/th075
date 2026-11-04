@@ -55,13 +55,13 @@ rx=re.compile(r'\b(?:[er]?(?:ax|bx|cx|dx|si|di|sp|bp)|[abcd]h|[abcd]l)\b')
 role=lambda x:tuple(rx.findall(x.op_str))
 lo,hi=table[1]['local_symbol_offset'],table[2]['local_symbol_offset']
 S=[x for x in I if lo<=x.address<hi]
-assert (hi-lo,len(S))==(813,229)
+assert (hi-lo,len(S))==(819,229)
 wrong_m=[j for j,(n,s) in enumerate(zip(native,S)) if n.mnemonic!=s.mnemonic]
 wrong_w=[j for j,(n,s) in enumerate(zip(native,S)) if n.size!=s.size]
 wrong_g=[j for j,(n,s) in enumerate(zip(native,S)) if role(n)!=role(s)]
 assert not wrong_m and not wrong_g
-assert len(wrong_w)==77 and {native[j].size-S[j].size for j in wrong_w}=={3,4}
-assert sum(native[j].size-S[j].size for j in wrong_w)==1048-813
+assert len(wrong_w)==75 and {native[j].size-S[j].size for j in wrong_w}=={3,4}
+assert sum(native[j].size-S[j].size for j in wrong_w)==1048-819
 nonlocal_relocs=[r for r in refs if lo<=r['offset']<hi and r['local_symbol_offset'] is None]
 assert len(nonlocal_relocs)==19
 real=[]
@@ -87,7 +87,7 @@ next_S=[x for x in I if next_lo<=x.address<next_hi]
 assert len(next_N)==len(next_S)==56
 assert all(x.mnemonic==y.mnemonic and role(x)==role(y) for x,y in zip(next_N,next_S))
 summary={'real_original_whole_Boss':'0x0050A580','original_full_whole_CODE_B':81539,'original_whole_x86':17435,'real_321_original_start':'0x0050A80F','real_321_original_end':'0x0050AC27',
- 'original_321_native_CODE_B':1048,'original_321_native_x86':229,'current_partial_source_321_CODE_B':813,
+ 'original_321_native_CODE_B':1048,'original_321_native_x86':229,'current_partial_source_321_CODE_B':819,
  'current_full_partial_parent_CODE_B':end,'current_full_partial_parent_x86':len(I),
  'native_321_mnemonics_equal':229,'native_321_GPR_roles_equal':229,
  'native_321_instruction_widths_equal':229-len(wrong_w),
@@ -97,4 +97,4 @@ summary={'real_original_whole_Boss':'0x0050A580','original_full_whole_CODE_B':81
  'native_92_afterRET_DIR32_equivalence_partition_preserved':True,'native_199_sparse_bytes_preserved':True,
  'whole_game_function_exact':False,'new_accepted_exact_whole_CODE_B':0,'mass_cold_replay':False}
 (O/'verified-summary.json').write_text(json.dumps(summary,indent=2)+'\n')
-print('F1051 native entire 0x321: 1048 original CODE B/229 x86; selected C++ 813B/229 x86; exact 229/229 mnemonics +229/229 GPR; 19/19 physical original external PE fields; source width 152/229. Following 0x322 now 56/56 GPR. Whole 81KB STILL NONEXACT.')
+print('F1051 native entire 0x321: 1048 original CODE B/229 x86; selected C++ 819B/229 x86; exact 229/229 mnemonics +229/229 GPR; 19/19 physical original external PE fields; source width 154/229. Following 0x322 now 56/56 GPR. Whole 81KB STILL NONEXACT.')
