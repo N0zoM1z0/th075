@@ -122,21 +122,21 @@ rechecks **1,697/1,697 physical external PE targets**,
 tested 10 normal VC7.1 variants without fixing the true native CMP
 roles; check the original PE, not stale hypotheses.
 
-**81KB single-switch 0050A580:** [F1077 corrected real
-`0x339/0x33A` projectile IDs](CHARACTEROBJECT_SPAWN_IMMEDIATE_PROOF_F1077.md)
-now additionally validates **1,321/1,321 original nonrelocated scalar
-immediates** across **38 native real state interiors /32,592 original
-CODE B /7,100 x86 mnemonic+GPR positions /573 original PE fields**.
-The source used to spawn sixteen `0x33A` objects in each of the real
-0x328/329/32A unrolled call families; **original PE shows one `0x339`
-then fifteen `0x33A`**, now genuinely fixed in C++. The [live one-parent
-PE verifier](../scripts/verify-characterobject-current-recovered-f1068.py)
-only builds the changed whole C++ parent (**26,974B/7,252 x86**)
-versus the original **81,539B/17,435 x86**. Authentic 92 DIR32/199
-sparse DATA remains verified; **whole original GAME callable is still
-NONEXACT, zero newly accepted exact original CODE**. See [F1076 real
-`0x346/0x347`](CHARACTEROBJECT_NATIVE_346_347_F1076.md) and [F1074
-three projectile states](CHARACTEROBJECT_NATIVE_328_329_32A_F1074.md).
+**81KB single-switch 0050A580:** [F1080 genuine original
+`0x348` parent-motion state](CHARACTEROBJECT_NATIVE_348_F1080.md)
+restores native 621B/132x86 with **132/132 mnemonic+GPR and 9/9
+physical PE fields**, including authentic `FLD [006590A8]; FMUL
+[actor+C8]` order after 12 whole-parent float-source variants.
+The live original-PE parent verifier now checks **39 real original
+state interiors /33,213 native CODE B /7,232 x86 mnemonic+GPR /
+582 genuine PE fields /1,344 scalar immediates** plus real 92
+DIR32/199 sparse afterRET DATA. Current C++ partial whole parent is
+**27,457B /7,382 x86**, original **81,539B /17,435 x86**.
+**Original whole game callable NONEXACT; zero newly accepted exact
+whole CODE.** Earlier [F1076 authentic 346/347](CHARACTEROBJECT_NATIVE_346_347_F1076.md)
+and [F1077 corrected projectile literals](CHARACTEROBJECT_SPAWN_IMMEDIATE_PROOF_F1077.md)
+remain PE-backed. Always use the [live one-parent verifier](../scripts/verify-characterobject-current-recovered-f1068.py).
+
 
 ## 4. All three remaining independent small/medium originals
 
