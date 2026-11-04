@@ -122,20 +122,21 @@ rechecks **1,697/1,697 physical external PE targets**,
 tested 10 normal VC7.1 variants without fixing the true native CMP
 roles; check the original PE, not stale hypotheses.
 
-**81KB single-switch 0050A580:** [F1092 real `0x352` and
-`0x353` native fade/animation states](CHARACTEROBJECT_NATIVE_352_353_F1092.md)
-now recover **50 genuine original game-state interiors /42,205
-native CODE B /9,183 original x86 mnemonic+GPR positions /716
-physically original PE fields /1,707 native scalar-immediate slots**.
-Original 0x352 is 288B/64x86 (0.5f scales, 20 alpha fade), original
-0x353 is 155B/35x86 (1.0f reset and action expiry); both compile in
-ONE source and retain exact physical original PE destinations.
-The preceding [F1090 0x351](CHARACTEROBJECT_NATIVE_351_F1090.md)
-has native >= threshold, correct seven-argument 0x352 spawn and
-15 original PE fields. Current partial C++ **34,615B /9,311 x86**
-vs original **81,539B /17,435 x86**, with original 92 DIR32/199
-sparse afterRET DATA. **Original whole NONEXACT, zero newly accepted
-whole CODE.** Run only [live one-parent PE verifier](../scripts/verify-characterobject-current-recovered-f1068.py).
+**81KB single-switch 0050A580:** [F1093 actual native `0x354`
+eight-shot action](CHARACTEROBJECT_NATIVE_354_F1093.md) restores
+**1,203 native CODE B/251x86**, both original `TEST AH,5; JP`
+float comparisons and source actor-first `FLD velocityY; FADD
+[006583F8]`, all **14/14 original PE fields**.
+Live one-parent verification now covers **51 genuine original states
+/43,408 native CODE B /9,434 native x86 mnemonic+GPR positions /
+730 original physical PE fields /1,759 scalar-immediate slots**.
+Current partial one-switch C++ **35,569 B /9,560 x86** vs authentic
+**81,539B /17,435 x86** with genuine 567 afterRET sparse DATA;
+**whole original still NONEXACT; 0 new accepted original CODE**.
+The real preceding [F1090 `0x351`](CHARACTEROBJECT_NATIVE_351_F1090.md)
+and [F1092 `0x352/353`](CHARACTEROBJECT_NATIVE_352_353_F1092.md)
+remain independently PE-backed. Run only [live partial-parent native
+verifier](../scripts/verify-characterobject-current-recovered-f1068.py).
 
 ## 4. All three remaining independent small/medium originals
 

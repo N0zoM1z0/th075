@@ -1,5 +1,7 @@
 # F1091/F1092 — Genuine original 0x352 288B fade, 0x353 155B terminal animation
 
+**Historical F1092 checkpoint:** current parent now also restores [F1093 0x354](CHARACTEROBJECT_NATIVE_354_F1093.md). The earlier 50-state/34,615B source metrics below are historical; original 352/353 PE fields still verify.
+
 The SHA-pinned Japanese TH075 1.11 original has ONE authored
 `CharacterObject::Advance` callable at `0050A580` with **81,539
 original CODE B /17,435 native x86** and independent original 567B

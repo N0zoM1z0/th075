@@ -43,7 +43,7 @@ for x in D.disasm(code,0):
  I.append(x)
  if x.mnemonic=='ret':break
 end=I[-1].address+I[-1].size
-assert (end,len(I),len(code)-end,len(refs))==(34615,9311,DATA,852)
+assert (end,len(I),len(code)-end,len(refs))==(35569,9560,DATA,865)
 S=sorted([r for r in refs if r['offset']>=end],key=lambda x:x['offset'])
 assert len(S)==92 and all(r['offset']==end+4*i and r['type']=='DIR32' and r['addend']==0 and r['local_symbol_offset'] is not None for i,r in enumerate(S))
 assert code[end+368:end+567]==native_sparse
@@ -61,7 +61,7 @@ def original_wide_stack_to_real_shallow_stack(original,source):
  a=re.search(r'\[ebp - (0x[0-9a-f]+|[0-9]+)\]',original.op_str)
  b=re.search(r'\[ebp - (0x[0-9a-f]+|[0-9]+)\]',source.op_str)
  return (a is not None and b is not None and
-         int(a.group(1),0)-int(b.group(1),0)==0x38)
+         int(a.group(1),0)-int(b.group(1),0)==0x34)
 cases=[('320',0x0050A658,0x0050A80F,91,6,91),
        ('321',0x0050A80F,0x0050AC27,229,19,229),
        ('322',0x0050AC27,0x0050AD46,56,4,56),
@@ -140,7 +140,7 @@ for text,start,stop,count,fields,gpr in cases:
 assert sum(x['original_and_source_x86_count'] for x in rows)==1131
 assert sum(len(x['original_native_physical_PE_fields_verified']) for x in rows)==87
 assert sum(x['original_natively_owned_CODE_B'] for x in rows)==5167
-assert sum(x['source_inner_CODE_B'] for x in rows)==3996
+assert sum(x['source_inner_CODE_B'] for x in rows)==4002
 (O/'verified-summary.json').write_text(json.dumps({'original_sha256':hashlib.sha256(orig).hexdigest(),
  'original_Boss':'0x0050A580','original_whole_CODE_B':CODE,'original_whole_x86':17435,
  'current_partial_marker_filled_source_B':end,'current_partial_marker_filled_source_x86':len(I),
