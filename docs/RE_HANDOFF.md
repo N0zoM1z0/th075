@@ -176,6 +176,8 @@ F1049: [typed native background timeline receiver](BACKGROUND_TIMELINE_BORROW_F1
 
 F1053: [native x87 facing leaf lvalue source grammar](COMBAT_FACING_LVALUE_GRAMMAR_F1053.md) names the real two actors' float X views in the complete 130B facing leaf. Unlike the initially rejected parenthesized expression (`FLD/FLD/FCOMPP`), the selected natural unparenthesized lvalue preserves native `FLD/FCOMP`. The affected `BattleCombat.cpp` source was **4/4 full cold exact** (4,283 previously credited CODE B); both large hit functions' strict COFF `$L` labels remain unchanged.
 
+F1056: [native collision bounding RECT plus genuine fighter vitals/axis fields](COLLISION_NATIVE_RECT_AND_VITALS_F1056.md) replaces raw casts for 20 bounds, original adjacent +0x324/+0x326 WORDs and 6 original X/Y coordinate reads. The affected `BattleCollision.cpp` object cold-replayed **5/5 entire original functions exact** (**855 previously credited bytes**), with no other source objects or corpus replay.
+
 ## 6. Agent operating checklist / storage
 
 **Preflight, no whole corpus replay:**
