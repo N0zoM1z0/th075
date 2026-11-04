@@ -45,8 +45,8 @@ for x in D.disasm(code,0):
  I.append(x)
  if x.mnemonic=='ret':break
 end=I[-1].address+I[-1].size
-assert (end,len(I),len(code)-end,len(refs))==(13426,3491,567,433)
-assert I[2].op_str=='esp, 0xa4' and I[3].op_str=='dword ptr [ebp - 0x34], ecx'
+assert (end,len(I),len(code)-end,len(refs))==(14437,3763,567,453)
+assert I[2].op_str=='esp, 0xbc' and I[3].op_str=='dword ptr [ebp - 0x38], ecx'
 table=sorted([r for r in refs if r['offset']>=end],key=lambda r:r['offset'])
 assert len(table)==92 and all(r['offset']==end+4*k and r['type']=='DIR32' and r['addend']==0 and r['local_symbol_offset'] is not None for k,r in enumerate(table))
 assert code[end+368:end+567]==original_index

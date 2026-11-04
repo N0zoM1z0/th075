@@ -1,5 +1,7 @@
 # F1059 — Real 763B action 0x33A restores native GPR phase in eleven following states
 
+**Historical F1059 source checkpoint:** Later [F1062](CHARACTEROBJECT_NATIVE_338_339_F1062.md) restores both real preceding states 0x338/0x339, including the authentic 13-shot loop. Current whole-partial source grows to 14,437B/3,763 x86 with saved receiver EBP-0x38. F1059's original 0x33A mnemonic/GPR/PE field proof still passes; earlier 13,426B/3,491 source sizes below refer to the previous parent checkpoint.
+
 The pinned Japanese TH075 1.11 has one original authored
 `CharacterObject::Advance` callable at `0050A580` (**81,539 original
 CODE B / 17,435 x86**) followed by **567 original afterRET switch DATA

@@ -95,7 +95,7 @@ for label,alternate in variants.items():
 (O/'results.json').write_text(json.dumps(rows,indent=2)+'\n')
 assert len(rows)==len(variants)==12
 assert all('compiler_error' not in r for r in rows)
-assert all(r['whole_partial_source_CODE_B']==13426 and r['whole_partial_source_x86']==3491 for r in rows)
+assert all(r['whole_partial_source_CODE_B']==14437 and r['whole_partial_source_x86']==3763 for r in rows)
 assert all(x['matching_native_mnemonics']==402 and x['actual_source_external_COFF_fields']==33
            for r in rows for x in r['five_original_state_field_status'].values())
 physically_complete=[r for r in rows if all(x['correct_original_physically_positioned_PE_targets']==33

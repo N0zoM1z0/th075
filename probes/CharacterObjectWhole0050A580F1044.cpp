@@ -27,6 +27,10 @@ extern float g_F1059_ScaleRatioAt00657478;
 extern float g_F1059_ScaleFadeAt006598A8;
 extern float g_F1059_UpperBoundAt00657884;
 extern float g_F1059_LowerBoundAt0065924C;
+extern float g_F1061_CeilingAt006583FC;
+extern float g_F1061_StepAt0065972C;
+extern float g_F1061_OffsetAt00658354;
+extern float g_F1062_ScaleStepAt006583F8;
 
 extern float __cdecl F1057_FloatAtan2At00483300(float,float);
 
@@ -74,8 +78,8 @@ void FighterSwitchF569_Boss0050A580::Advance() {
         case 0x335: g_FighterProbeMarker = 822; break;
         case 0x336: g_FighterProbeMarker = 823; break;
 #include "CharacterObjectBoss337F1054.inc"
-        case 0x338: g_FighterProbeMarker = 825; break;
-        case 0x339: g_FighterProbeMarker = 826; break;
+#include "CharacterObjectBoss338F1062.inc"
+#include "CharacterObjectBoss339F1061.inc"
 #include "CharacterObjectBoss33AF1059.inc"
 #define F1057_CASE 0x33B
 #define F1057_NEXT_CASE 0x33C
