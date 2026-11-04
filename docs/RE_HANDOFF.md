@@ -122,21 +122,19 @@ rechecks **1,697/1,697 physical external PE targets**,
 tested 10 normal VC7.1 variants without fixing the true native CMP
 roles; check the original PE, not stale hypotheses.
 
-**81KB single-switch 0050A580:** [F1080 genuine original
-`0x348` parent-motion state](CHARACTEROBJECT_NATIVE_348_F1080.md)
-restores native 621B/132x86 with **132/132 mnemonic+GPR and 9/9
-physical PE fields**, including authentic `FLD [006590A8]; FMUL
-[actor+C8]` order after 12 whole-parent float-source variants.
-The live original-PE parent verifier now checks **39 real original
-state interiors /33,213 native CODE B /7,232 x86 mnemonic+GPR /
-582 genuine PE fields /1,344 scalar immediates** plus real 92
-DIR32/199 sparse afterRET DATA. Current C++ partial whole parent is
-**27,457B /7,382 x86**, original **81,539B /17,435 x86**.
-**Original whole game callable NONEXACT; zero newly accepted exact
-whole CODE.** Earlier [F1076 authentic 346/347](CHARACTEROBJECT_NATIVE_346_347_F1076.md)
-and [F1077 corrected projectile literals](CHARACTEROBJECT_SPAWN_IMMEDIATE_PROOF_F1077.md)
-remain PE-backed. Always use the [live one-parent verifier](../scripts/verify-characterobject-current-recovered-f1068.py).
-
+**81KB single-switch 0050A580:** [F1081 real `0x349`
+parent-X DWORD and Y-first x87](CHARACTEROBJECT_NATIVE_349_F1081.md)
+recovers **40 native original game-state interiors /33,641 original
+CODE B /7,326 original x86 mnemonic+GPR positions /589 physical
+PE external fields /1,363 scalar-immediate slots**. The real 349
+uses original `FLD [parent+48]; FADD [00658268]`, verified after
+12 complete-source C++ alternatives. The [F1080 original 0x348](CHARACTEROBJECT_NATIVE_348_F1080.md)
+global-first x87 remains original-PE verified. Current C++ partial
+whole is **27,780B /7,474 x86**, authentic original **81,539B /
+17,435 x86**, original 92 DIR32/199 sparse afterRET preserved;
+**whole original GAME callable NONEXACT; zero newly accepted exact
+original CODE**. Use [live whole-parent PE and scalar verifier](../scripts/verify-characterobject-current-recovered-f1068.py),
+not old experiments' fixed partial CODE size.
 
 ## 4. All three remaining independent small/medium originals
 

@@ -1,5 +1,7 @@
 # F1080 — Original 621B action 0x348, authentic global-first x87 and stage-1 parent transition
 
+**Historical F1080 checkpoint:** the current parent now additionally recovers genuine [F1081 `0x349`](CHARACTEROBJECT_NATIVE_349_F1081.md). The older 39-state/27,457B partial source numbers below refer to the F1080 checkpoint; the actual 0x348 native 9/9 original PE fields and 132/132 x86 still pass in the live 40-state source.
+
 TH075 Japanese 1.11 has ONE original authored `CharacterObject::Advance`
 callable at `0050A580`: **81,539 original CODE B /17,435 x86** and
 567 separate afterRET jump/sparse DATA B. The original whole is
