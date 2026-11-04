@@ -73,6 +73,8 @@ Source physical COFF and GPR allocations still differ.
 0x58 code, then five widths and *physical* COFF sites.
 Do not mistake correct external destinations for correct source offsets.
 
+F1042: [true adjacent signed animation stage/frame WORDs in both tracked complete 46KB and 58KB parents](FIGHTER_BOSS_PHASE_BORROW_F1042.md). Across 19 + 91 real field accesses, **both whole generated CODE+DATA images and all physical COFF fields/targets remained identical**, with only internal `$L` renumbering. Both giants still nonexact.
+
 ## 3. Other large Boss functions — current priority
 
 | Native whole function | Original CODE/x86, separate DATA | Latest complete, independently checked baseline |

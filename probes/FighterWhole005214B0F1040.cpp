@@ -1,3 +1,4 @@
+#include "FighterAnimationPhaseBorrowedF1024.hpp"
 extern float g_F898ShotYAt0065839C;
 extern signed char g_CloudOpponentAt006714D0;
 extern float g_F895AbsThresholdAt006591F4;
@@ -170,14 +171,14 @@ void FighterSwitchF598_Boss005214B0::Advance() {
         case 0x4: POS = 3.0f; goto native_script_shared_getter;
         case 0x5: POS = -3.0f; goto native_script_shared_getter;
         case 0x6:
-            if (S16(0x62) == 0 && S16(0x64) == 0 &&
+            if (F1024_PHASE(this).stageAt62 == 0 && F1024_PHASE(this).frameAt64 == 0 &&
                     (U8(0x511) == 3 || FLAG > 0)) {
                 SetNativeActionAt40FAC0(0xCC);
                 return;
             }
-            if (S16(0x62) == 0 && FLAG == 0)
+            if (F1024_PHASE(this).stageAt62 == 0 && FLAG == 0)
                 ResetAt453E20();
-            if (S16(0x62) > 2) {
+            if (F1024_PHASE(this).stageAt62 > 2) {
                 POS54 = POS54 - POS5C;
                 if (POS48 + POS54 <= g_ThresholdAt0065782C) {
                     SetNativeActionAt40FAC0(10);
@@ -186,11 +187,11 @@ void FighterSwitchF598_Boss005214B0::Advance() {
                     return;
                 }
             }
-            if (S16(0x62) == 4 && POS54 < g_ExtraThresholdAt00657D14)
+            if (F1024_PHASE(this).stageAt62 == 4 && POS54 < g_ExtraThresholdAt00657D14)
                 SetAuxActionAt40FB40(5);
             if (GetNativeActionAt40FA30() == I16(0x70))
                 SetAuxActionAt40FB40(11);
-            if (S16(0x62) == 3 && S16(0x64) == 0) {
+            if (F1024_PHASE(this).stageAt62 == 3 && F1024_PHASE(this).frameAt64 == 0) {
                 POS = 0.0f;
                 POS54 = 16.0f;
                 POS5C = 0.8f;
@@ -198,14 +199,14 @@ void FighterSwitchF598_Boss005214B0::Advance() {
             }
             break;
         case 0x7:
-            if (S16(0x62) == 0 && S16(0x64) == 0 &&
+            if (F1024_PHASE(this).stageAt62 == 0 && F1024_PHASE(this).frameAt64 == 0 &&
                     (U8(0x511) == 5 || FLAG > 0)) {
                 SetNativeActionAt40FAC0(0xCD);
                 return;
             }
-            if (S16(0x62) == 0 && FLAG == 0)
+            if (F1024_PHASE(this).stageAt62 == 0 && FLAG == 0)
                 ResetAt453E20();
-            if (S16(0x62) > 2) {
+            if (F1024_PHASE(this).stageAt62 > 2) {
                 POS54 = POS54 - POS5C;
                 if (POS48 + POS54 <= g_ThresholdAt0065782C) {
                     SetNativeActionAt40FAC0(10);
@@ -216,7 +217,7 @@ void FighterSwitchF598_Boss005214B0::Advance() {
             }
             if (GetNativeActionAt40FA30() == I16(0x70))
                 SetNativeActionAt40FAC0(9);
-            if (S16(0x62) == 3 && S16(0x64) == 0) {
+            if (F1024_PHASE(this).stageAt62 == 3 && F1024_PHASE(this).frameAt64 == 0) {
                 POS = 5.5f;
                 POS54 = 16.0f;
                 POS5C = 0.8f;
@@ -224,14 +225,14 @@ void FighterSwitchF598_Boss005214B0::Advance() {
             }
             break;
         case 0x8:
-            if (S16(0x62) == 0 && S16(0x64) == 0 &&
+            if (F1024_PHASE(this).stageAt62 == 0 && F1024_PHASE(this).frameAt64 == 0 &&
                     (U8(0x511) == 4 || FLAG > 0)) {
                 SetNativeActionAt40FAC0(0xCE);
                 return;
             }
-            if (S16(0x62) == 0 && FLAG == 0)
+            if (F1024_PHASE(this).stageAt62 == 0 && FLAG == 0)
                 ResetAt453E20();
-            if (S16(0x62) > 2) {
+            if (F1024_PHASE(this).stageAt62 > 2) {
                 POS54 = POS54 - POS5C;
                 if (POS48 + POS54 <= g_ThresholdAt0065782C) {
                     SetNativeActionAt40FAC0(10);
@@ -242,7 +243,7 @@ void FighterSwitchF598_Boss005214B0::Advance() {
             }
             if (GetNativeActionAt40FA30() == I16(0x70))
                 SetAuxActionAt40FB40(13);
-            if (S16(0x62) == 3 && S16(0x64) == 0) {
+            if (F1024_PHASE(this).stageAt62 == 3 && F1024_PHASE(this).frameAt64 == 0) {
                 POS = -5.5f;
                 POS54 = 16.0f;
                 POS5C = 0.8f;
