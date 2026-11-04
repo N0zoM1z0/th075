@@ -1,7 +1,7 @@
 #include "FrameActorMotionPairsF1037.hpp"
 // F539 natural switch *probe*, not original fighter source or CODE credit.
 // This file is regenerable from the original PE under ignored .analysis.
-class FighterSwitchF569_Boss0050A580 { public: void Advance(); void NativeParentExpiredAt0045B830(); void SetNativeMotionAt0040FBB0(int,float,int); short GetNativeActionAt0040FA30(); void SetAuxActionAt0040FB40(int); void SetNativeActionAt0040FAC0(int); void SetNativeTwoFloatsAt0040FB70(float,float); int RandomBoundaryAt00455580(int,int); };
+class FighterSwitchF569_Boss0050A580 { public: void Advance(); void NativeParentExpiredAt0045B830(); void SetNativeMotionAt0040FBB0(int,float,int); short GetNativeActionAt0040FA30(); void SetAuxActionAt0040FB40(int); void SetNativeActionAt0040FAC0(int); void SetNativeTwoFloatsAt0040FB70(float,float); void SetNativeAngleBitsAt0040FB70(unsigned int,float); int RandomBoundaryAt00455580(int,int); };
 class F1051Grandparent { public: void NativePrepareAt00453D40(int); void SpawnObjectAt00453A70(int,unsigned int,unsigned int,signed char,int); void SpawnProjectileAt00453C80(int,unsigned int,unsigned int,signed char,int); void InitTrajectoryAt00453E60(float); };
 extern unsigned int g_FighterProbeMarker;
 extern float g_F1044_GravityAt0065747C;
@@ -34,6 +34,9 @@ extern float g_F1062_ScaleStepAt006583F8;
 extern float g_F1068_ActionSpeedAt00657878;
 extern float g_F1069_ParentYFirstAt00659138;
 extern float g_F1069_ParentYSecondAt00658264;
+extern float g_F1070_InitSpeedAt00657858;
+extern float g_F1070_AnimSpeedAt006592A4;
+extern float g_F1070_FadeScaleAt00659454;
 
 extern float __cdecl F1057_FloatAtan2At00483300(float,float);
 
@@ -62,8 +65,8 @@ void FighterSwitchF569_Boss0050A580::Advance() {
 #include "CharacterObjectBoss320NativeF1045.inc"
 #include "CharacterObjectBoss321F1051.inc"
 #include "CharacterObjectBoss322F1046.inc"
-        case 0x323: g_FighterProbeMarker = 804; break;
-        case 0x324: g_FighterProbeMarker = 805; break;
+#include "CharacterObjectBoss323F1070.inc"
+#include "CharacterObjectBoss324F1071.inc"
 #include "CharacterObjectBoss325F1052.inc"
         case 0x328: g_FighterProbeMarker = 809; break;
         case 0x329: g_FighterProbeMarker = 810; break;

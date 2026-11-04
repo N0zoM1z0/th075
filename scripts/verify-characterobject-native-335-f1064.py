@@ -41,8 +41,8 @@ for x in D.disasm(code,0):
  I.append(x)
  if x.mnemonic=='ret':break
 end=I[-1].address+I[-1].size
-assert (end,len(I),len(code)-end,len(refs))==(19232,5041,567,526)
-assert I[2].op_str=='esp, 0xf8' and I[3].op_str=='dword ptr [ebp - 0x4c], ecx'
+assert (end,len(I),len(code)-end,len(refs))==(21045,5535,567,575)
+assert I[2].op_str=='esp, 0x110' and I[3].op_str=='dword ptr [ebp - 0x50], ecx'
 T=sorted((r for r in refs if r['offset']>=end),key=lambda r:r['offset'])
 assert len(T)==92 and all(r['type']=='DIR32' and r['offset']==end+4*j and r['addend']==0 and r['local_symbol_offset'] is not None for j,r in enumerate(T))
 assert code[end+368:]==native_sparse
@@ -52,14 +52,14 @@ slot=native_sparse[0x335-0x320];assert native_label[slot]==start and native_labe
 N=[x for x in original_x86 if start<=x.address<stop]
 lo,hi=T[slot]['local_symbol_offset'],T[slot+1]['local_symbol_offset']
 S=[x for x in I if lo<=x.address<hi]
-assert (len(N),len(S),stop-start,hi-lo)==(149,149,676,536)
+assert (len(N),len(S),stop-start,hi-lo)==(149,149,676,542)
 rx=re.compile(r'\b(?:[er]?(?:ax|bx|cx|dx|si|di|sp|bp)|[abcd]h|[abcd]l)\b')
 roles=lambda x:tuple(rx.findall(x.op_str))
 assert all(x.mnemonic==y.mnemonic for x,y in zip(N,S))
 wrong_w=[j for j,(x,y) in enumerate(zip(N,S)) if x.size!=y.size]
 wrong_g=[j for j,(x,y) in enumerate(zip(N,S)) if roles(x)!=roles(y)]
-assert len(wrong_w)==46 and len(wrong_g)==0
-assert sum(N[j].size-S[j].size for j in wrong_w)==676-536
+assert len(wrong_w)==44 and len(wrong_g)==0
+assert sum(N[j].size-S[j].size for j in wrong_w)==676-542
 real=[r for r in refs if lo<=r['offset']<hi and r['local_symbol_offset'] is None]
 assert len(real)==12
 proof=[]
@@ -89,11 +89,11 @@ for name,a,b,count in following:
  assert all(x.mnemonic==y.mnemonic and roles(x)==roles(y) for x,y in zip(na,so)),name
 summary={'original_whole_game':'0x0050A580','original_whole_CODE_B':81539,'original_whole_x86':17435,
  'original_335_native_interval':['0x0050E274','0x0050E518'],'original_335_native_CODE_B':676,'native_335_x86':149,
- 'current_partial_source_case_CODE_B':536,'source_335_x86':149,'original_matching_mnemonics':149,
+ 'current_partial_source_case_CODE_B':542,'source_335_x86':149,'original_matching_mnemonics':149,
  'original_matching_widths':149-len(wrong_w),'original_matching_GPR_roles':149-len(wrong_g),
  'original_physical_PE_fields_verified':proof,'original_92_DIR32_switch_partitions_identical':True,
  'original_199_sparse_map_bytes_identical':True,'selected_partial_parent_CODE_B':end,
  'selected_partial_parent_x86':len(I),'following_real_six_states_all_GPR_equal':True,
  'whole_original_GAME_callable_exact':False,'new_accepted_original_CODE_B':0,'mass_cold_replay':False}
 (O/'verified-summary.json').write_text(json.dumps(summary,indent=2)+'\n')
-print('F1064 real native 0x335: original 676B/149 x86, selected inner source 536B/149 x86; native 149/149 mnemonic+GPR, 103/149 width; 12/12 true original PE external fields. Following six real state GPR phases all preserved. Whole 81KB still NONEXACT.')
+print('F1064 real native 0x335: original 676B/149 x86, selected inner source 542B/149 x86; native 149/149 mnemonic+GPR, 105/149 width; 12/12 true original PE external fields. Following six real state GPR phases all preserved. Whole 81KB still NONEXACT.')

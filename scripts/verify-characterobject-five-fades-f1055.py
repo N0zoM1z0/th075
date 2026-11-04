@@ -46,7 +46,7 @@ for x in D.disasm(code,0):
  I.append(x)
  if x.mnemonic=='ret':break
 end=I[-1].address+I[-1].size
-assert (end,len(I),len(code)-end,len(refs))==(19232,5041,567,526)
+assert (end,len(I),len(code)-end,len(refs))==(21045,5535,567,575)
 T=sorted([r for r in refs if r['offset']>=end],key=lambda x:x['offset'])
 assert len(T)==92 and all(r['type']=='DIR32' and r['offset']==end+4*i and r['addend']==0 and r['local_symbol_offset'] is not None for i,r in enumerate(T))
 assert code[end+368:]==mapbytes
@@ -69,7 +69,7 @@ for action,start,stop,expected_gpr in cases:
  assert not wrong_m and len(wrong_w)==20 and len(wrong_g)==57-expected_gpr,(action,wrong_m,wrong_w,wrong_g)
  # All 20 width mismatches are the same real wide saved-this stack
  # operand, not a forbidden trick or an ignored unknown byte.
- assert all(a.size-b.size==3 and '[ebp - 0xac]' in a.op_str and '[ebp - 0x4c]' in b.op_str
+ assert all(a.size-b.size==3 and '[ebp - 0xac]' in a.op_str and '[ebp - 0x50]' in b.op_str
   for j in wrong_w for a,b in [(N[j],S[j])])
  actual=[r for r in refs if lo<=r['offset']<hi and r['local_symbol_offset'] is None]
  assert len(actual)==5

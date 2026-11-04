@@ -122,23 +122,24 @@ rechecks **1,697/1,697 physical external PE targets**,
 tested 10 normal VC7.1 variants without fixing the true native CMP
 roles; check the original PE, not stale hypotheses.
 
-**81KB single-switch 0050A580:** [F1069 original `0x331`
-three parent-Y motions](CHARACTEROBJECT_NATIVE_331_F1069.md) now
-recovers **31 original inner game states /22,813 native CODE B /4,875
-original x86 mnemonic+GPR positions /371 physically original PE
-external targets**. Original 0x331 (852B/185 x86) uses three
-real Y globals `00659138/00658264/00657888`; 185/185 native
-mnemonic+GPR and 9/9 true physical PE targets are checked.
-The [live current-parent verifier](../scripts/verify-characterobject-current-recovered-f1068.py)
-builds only the affected whole C++ parent and verifies every recovered
-state against the actual Japanese PE. Source **19,232B/5,041 x86**
-versus original **81,539B/17,435 x86**; 92 DIR32 and 199 native
-sparse DATA bytes are preserved, but other game state handlers remain
-markers and full frame/width geometry is nonexact. **Original whole
-GAME callable NONEXACT; newly accepted whole CODE 0B.** Prior
-[F1068 native 0x330](CHARACTEROBJECT_NATIVE_330_LIVE_PROOF_F1068.md)
-and [F1066 +30/0/−30 inputs](CHARACTEROBJECT_NATIVE_336_AND_IMMEDIATES_F1066.md)
-remain targeted sources and original-PE proof.
+**81KB single-switch 0050A580:** [F1071 real adjacent
+`0x323/0x324` original actions](CHARACTEROBJECT_NATIVE_323_324_F1071.md)
+now restore source for **33 genuine original game-state interiors /
+25,131 native original CODE B /5,373 x86 mnemonic+GPR positions /
+422 physically original nonlocal PE call/global targets**. The
+real original +0xC8 angle uses DWORD bit-preserving MOV/PUSH (not
+an extra x87 FLD/FSTP), and native `0x324` has a real three-shot
+loop and `TEST AH,0x41; JP` landing transition; following 0x325
+returns to 100/100 native GPR roles. The [live one-parent original
+PE verifier](../scripts/verify-characterobject-current-recovered-f1068.py)
+recompiles the single affected source. Current partial C++ function
+**21,045B /5,535 x86** against original **81,539B /17,435 x86**.
+Original 92 DIR32/sparse 199B afterRET partitions remain verified.
+**Full 81KB original GAME callable NONEXACT; no newly accepted
+exact CODE**. [Prior F1069 triple parent-Y action](CHARACTEROBJECT_NATIVE_331_F1069.md)
+and [F1066 original +30/0/−30](CHARACTEROBJECT_NATIVE_336_AND_IMMEDIATES_F1066.md)
+remain historical scoped evidence. Do not promote case-local matches
+to independent original exact callable functions.
 
 ## 4. All three remaining independent small/medium originals
 

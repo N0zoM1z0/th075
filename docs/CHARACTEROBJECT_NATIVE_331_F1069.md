@@ -1,5 +1,7 @@
 # F1069 — Original 852B action `0x331` and its three actual parent-Y offsets
 
+**Historical F1069 checkpoint:** the live partial parent has since gained genuine original [F1071 `0x323/0x324` gameplay](CHARACTEROBJECT_NATIVE_323_324_F1071.md), correcting `0x325` GPR phase. The live verifier now audits 33 real states and current source geometry; numbers below are for this earlier 31-state source snapshot. The original F1069 PE fields and 331 gameplay still verify.
+
 The independently authored Japanese TH075 1.11 original
 `CharacterObject::Advance` at `0050A580` is ONE **81,539 original
 CODE B /17,435-x86** callable, followed by separately owned

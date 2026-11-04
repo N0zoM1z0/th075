@@ -32,14 +32,14 @@ assert hashlib.sha256(orig_sparse).hexdigest()==B['tables'][0]['map_sha']
 # Every listed game case has genuine original behavior in the tracked C++.
 # Counts prevent a missing original external call from becoming a false pass.
 required_fields={
- 0x320:6,0x321:19,0x322:4,0x325:7,
+ 0x320:6,0x321:19,0x322:4,0x323:24,0x324:27,0x325:7,
  0x32b:3,0x32c:4,0x32d:3,0x32e:4,0x32f:3,
  0x330:16,0x331:9,0x332:3,0x333:14,0x334:14,0x335:12,0x336:14,
  0x337:3,0x338:12,0x339:10,0x33a:18,
  0x33b:33,0x33c:5,0x33d:33,0x33e:5,0x33f:33,
  0x340:5,0x341:33,0x342:5,0x343:33,0x344:5,0x345:3,
 }
-assert len(required_fields)==31 and sum(required_fields.values())==371
+assert len(required_fields)==33 and sum(required_fields.values())==422
 src=R/'probes/CharacterObjectWhole0050A580F1044.cpp'
 source=src.read_text()
 # Native state imports, not fake marker labels, must actually be represented.
@@ -47,6 +47,8 @@ for act in required_fields:
  assert not re.search(r'case\s+0x'+format(act,'X')+r'\s*:\s*g_FighterProbeMarker',source,re.I),hex(act)
 for token in ('#include "CharacterObjectBoss330F1068.inc"',
  '#include "CharacterObjectBoss331F1069.inc"',
+ '#include "CharacterObjectBoss323F1070.inc"',
+ '#include "CharacterObjectBoss324F1071.inc"',
  '#include "CharacterObjectBoss335F1064.inc"',
  '#include "CharacterObjectBoss333334F1065.inc"',
  '#include "CharacterObjectBoss338F1062.inc"',
@@ -105,6 +107,23 @@ for action,expected_count in required_fields.items():
  if action in (0x333,0x334,0x336):
   immediate={0x333:'0x41f00000',0x334:'0',0x336:'0xc1f00000'}[action]
   assert N[105].mnemonic==S[105].mnemonic=='push' and N[105].op_str==S[105].op_str==immediate
+ if action==0x323:
+  # Actual original +0xC8 native *raw-bit* angle is directly forwarded
+  # in a DWORD MOV/PUSH rather than reloaded/stored through x87.
+  for mov_at,push_at in ((34,35),(79,80)):
+   assert N[mov_at].mnemonic==S[mov_at].mnemonic=='mov'
+   assert '+ 0xc8' in N[mov_at].op_str and '+ 0xc8' in S[mov_at].op_str
+   assert N[push_at].mnemonic==S[push_at].mnemonic=='push'
+ if action==0x324:
+  # Real stage-0 15.0f float bit-pattern, original +C8 MOV/PUSH and
+  # native unordered-ground comparison TEST AH,41 ; JP skip transition.
+  assert N[82].mnemonic==S[82].mnemonic=='push'
+  assert N[82].op_str==S[82].op_str=='0x41700000'
+  assert N[84].mnemonic==S[84].mnemonic=='mov'
+  assert N[85].mnemonic==S[85].mnemonic=='push'
+  assert N[174].mnemonic==S[174].mnemonic=='test'
+  assert N[174].op_str==S[174].op_str=='ah, 0x41'
+  assert N[175].mnemonic==S[175].mnemonic=='jp'
  if action==0x331:
   # Original actual 50.0f +0x2C initialization and the three separate
   # parent Y displacements are immediate/physical-value native evidence.
@@ -133,7 +152,7 @@ original_total=sum(row['original_interior_CODE_B'] for row in rows)
 x86total=sum(row['original_native_x86'] for row in rows)
 src_total=sum(row['current_source_interior_CODE_B'] for row in rows)
 fields_total=sum(len(row['native_physically_correct_PE_call_global_fields']) for row in rows)
-assert (original_total,x86total,fields_total)==(22813,4875,371)
+assert (original_total,x86total,fields_total)==(25131,5373,422)
 summary={'original_Boss':'0x0050A580','original_whole_CODE_B':81539,
  'original_whole_x86':17435,'selected_partial_source_CODE_B':end,'selected_partial_source_x86':len(I),
  'source_partial_afterRET_DATA_B':567,'original_recovered_independent_case_interior_count':len(rows),
@@ -146,4 +165,4 @@ summary={'original_Boss':'0x0050A580','original_whole_CODE_B':81539,
  'original_81KB_whole_function_exact':False,'new_exact_original_whole_CODE_B':0,
  'all_979_cold_replay':False,'native_states':rows}
 (O/'verified-summary.json').write_text(json.dumps(summary,indent=2)+'\n')
-print('F1069 LIVE 31 original game action interiors: original',original_total,'CODE B /',x86total,'x86, native mnemonic+GPR',x86total,'/',x86total,'and genuine PE nonlocal',fields_total,'/',fields_total,'. Current partial source',end,'B /',len(I),'x86, NOT exact whole 81KB; accepted new original bytes 0.')
+print('F1071 LIVE 33 original game action interiors: original',original_total,'CODE B /',x86total,'x86, native mnemonic+GPR',x86total,'/',x86total,'and genuine PE nonlocal',fields_total,'/',fields_total,'. Current partial source',end,'B /',len(I),'x86, NOT exact whole 81KB; accepted new original bytes 0.')
