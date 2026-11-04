@@ -10,6 +10,15 @@
 #define LINE SELF(signed char, 0x5E)
 #define STATE_TEXT (reinterpret_cast<const char *>(PLAYER(WINNER)) + 0x53B + LINE * 200)
 #define MAX_HEALTH (reinterpret_cast<short *>(reinterpret_cast<unsigned char *>(PLAYER(1)) + 0x33E)[ACTOR(signed char, 1, 0x39D)])
+// Original signed fighter life WORDs, round float pair and actor X/Y.
+// Keep native offset borrows as macros in this TU: new C++ struct
+// definitions modify original MSVC7.1 switch $L symbol identities.
+#define F1112_LIFE_CURRENT(actor) (*reinterpret_cast<short *>(reinterpret_cast<unsigned char *>(actor) + 0x324))
+#define F1112_LIFE_RECOVERABLE(actor) (*reinterpret_cast<short *>(reinterpret_cast<unsigned char *>(actor) + 0x326))
+#define F1112_ROUND_FIRST(actor) (*reinterpret_cast<float *>(reinterpret_cast<unsigned char *>(actor) + 0x368))
+#define F1112_ROUND_SECOND(actor) (*reinterpret_cast<float *>(reinterpret_cast<unsigned char *>(actor) + 0x36C))
+#define F1112_ACTOR_X(actor) (*reinterpret_cast<float *>(reinterpret_cast<unsigned char *>(actor) + 0x44))
+#define F1112_ACTOR_Y(actor) (*reinterpret_cast<float *>(reinterpret_cast<unsigned char *>(actor) + 0x48))
 short BattleFrame::AdvanceState()
 {
     int i, j, k, resetPlayer;
@@ -56,13 +65,13 @@ short BattleFrame::AdvanceState()
         }
         if (TIMER <= 145) {
             for (i = 0; i < 2; ++i) {
-                ACTOR(short, i, 0x326) += 600;
-                if (ACTOR(short, i, 0x326) >= 10000) {
-                    ACTOR(short, i, 0x326) = 10000;
-                    ACTOR(short, i, 0x324) += 200;
-                    if (ACTOR(short, i, 0x324) >= 10000) ACTOR(short, i, 0x324) = 10000;
+                F1112_LIFE_RECOVERABLE(PLAYER(i)) += 600;
+                if (F1112_LIFE_RECOVERABLE(PLAYER(i)) >= 10000) {
+                    F1112_LIFE_RECOVERABLE(PLAYER(i)) = 10000;
+                    F1112_LIFE_CURRENT(PLAYER(i)) += 200;
+                    if (F1112_LIFE_CURRENT(PLAYER(i)) >= 10000) F1112_LIFE_CURRENT(PLAYER(i)) = 10000;
                 }
-                ACTOR(float, i, 0x368) = 0.0f; ACTOR(float, i, 0x36C) = 0.0f;
+                F1112_ROUND_FIRST(PLAYER(i)) = 0.0f; F1112_ROUND_SECOND(PLAYER(i)) = 0.0f;
                 ACTOR(short, i, 0x3B0) = 1000; ACTOR(short, i, 0x3B6) = 0;
             }
         }
@@ -133,19 +142,19 @@ short BattleFrame::AdvanceState()
         if (TIMER == 150) NOTICE->SetNotice(0);
         if (TIMER <= 145) {
             if (ACTOR(signed char, 0, 0x3CE)) {
-                ACTOR(short, 0, 0x326) += 600; ACTOR(short, 0, 0x324) += 200;
-                if (ACTOR(short, 0, 0x326) > 10000) ACTOR(short, 0, 0x326) = 10000;
-                if (ACTOR(short, 0, 0x324) > 10000) ACTOR(short, 0, 0x324) = 10000;
-                ACTOR(float, 0, 0x368) = 0.0f; ACTOR(short, 0, 0x3B0) = 1000; ACTOR(short, 0, 0x3B6) = 0; ACTOR(signed char, 0, 0x366) = 2;
+                F1112_LIFE_RECOVERABLE(PLAYER(0)) += 600; F1112_LIFE_CURRENT(PLAYER(0)) += 200;
+                if (F1112_LIFE_RECOVERABLE(PLAYER(0)) > 10000) F1112_LIFE_RECOVERABLE(PLAYER(0)) = 10000;
+                if (F1112_LIFE_CURRENT(PLAYER(0)) > 10000) F1112_LIFE_CURRENT(PLAYER(0)) = 10000;
+                F1112_ROUND_FIRST(PLAYER(0)) = 0.0f; ACTOR(short, 0, 0x3B0) = 1000; ACTOR(short, 0, 0x3B6) = 0; ACTOR(signed char, 0, 0x366) = 2;
             }
             if (ACTOR(signed char, 1, 0x3CE)) {
-                ACTOR(short, 1, 0x326) += 600;
-                if (ACTOR(short, 1, 0x326) >= MAX_HEALTH) {
-                    ACTOR(short, 1, 0x326) = MAX_HEALTH;
-                    ACTOR(short, 1, 0x324) += 200;
-                    if (ACTOR(short, 1, 0x324) > MAX_HEALTH) ACTOR(short, 1, 0x324) = MAX_HEALTH;
+                F1112_LIFE_RECOVERABLE(PLAYER(1)) += 600;
+                if (F1112_LIFE_RECOVERABLE(PLAYER(1)) >= MAX_HEALTH) {
+                    F1112_LIFE_RECOVERABLE(PLAYER(1)) = MAX_HEALTH;
+                    F1112_LIFE_CURRENT(PLAYER(1)) += 200;
+                    if (F1112_LIFE_CURRENT(PLAYER(1)) > MAX_HEALTH) F1112_LIFE_CURRENT(PLAYER(1)) = MAX_HEALTH;
                 }
-                ACTOR(float, 1, 0x368) = 0.0f; ACTOR(float, 1, 0x36C) = 900.0f;
+                F1112_ROUND_FIRST(PLAYER(1)) = 0.0f; F1112_ROUND_SECOND(PLAYER(1)) = 900.0f;
                 ACTOR(short, 1, 0x3B0) = 1000; ACTOR(short, 1, 0x3B6) = 0; ACTOR(signed char, 0, 0x39C) = 0;
             }
         }
@@ -189,12 +198,12 @@ short BattleFrame::AdvanceState()
                 for (resetPlayer = 0; resetPlayer < 2; ++resetPlayer) {
                     PLAYER(resetPlayer)->Slot6();
                     ACTOR(signed char, resetPlayer, 0x3CE) = 1;
-                    ACTOR(float, resetPlayer, 0x44) = static_cast<float>(resetPlayer * 320 + 480);
-                    ACTOR(float, resetPlayer, 0x48) = 0.0f;
+                    F1112_ACTOR_X(PLAYER(resetPlayer)) = static_cast<float>(resetPlayer * 320 + 480);
+                    F1112_ACTOR_Y(PLAYER(resetPlayer)) = 0.0f;
                 }
                 ACTOR(signed char, 0, 0x39D) = 2; ACTOR(signed char, 1, 0x39D) = ACTOR(signed char, 1, 0x39E);
-                ACTOR(short, 1, 0x326) = 1;
-                ACTOR(short, 1, 0x326) = MAX_HEALTH;
+                F1112_LIFE_RECOVERABLE(PLAYER(1)) = 1;
+                F1112_LIFE_RECOVERABLE(PLAYER(1)) = MAX_HEALTH;
                 reinterpret_cast<StateEffects *>(&g_CombatEffects)->ReleaseEntries();
                 g_StateStageTotal = 0;
                 for (resetPlayer = 1; resetPlayer <= ACTOR(signed char, 1, 0x39E); ++resetPlayer)
@@ -219,8 +228,8 @@ short BattleFrame::AdvanceState()
     if (g_CombatMode == 5) {
         for (j = 0; j < 2; ++j) {
             if (ACTOR(short, j, 0x60) < 50) {
-                ACTOR(short, j, 0x324) = 10000; ACTOR(short, j, 0x326) = 10000;
-                ACTOR(float, j, 0x36C) = static_cast<float>(ACTOR(signed char, 1, 0x52D) * 100);
+                F1112_LIFE_CURRENT(PLAYER(j)) = 10000; F1112_LIFE_RECOVERABLE(PLAYER(j)) = 10000;
+                F1112_ROUND_SECOND(PLAYER(j)) = static_cast<float>(ACTOR(signed char, 1, 0x52D) * 100);
                 ACTOR(signed char, j, 0x39C) = 0; ACTOR(signed char, j, 0x366) = 2;
             }
         }
@@ -248,3 +257,9 @@ short BattleFrame::AdvanceState()
     }
     return 0;
 }
+#undef F1112_LIFE_CURRENT
+#undef F1112_LIFE_RECOVERABLE
+#undef F1112_ROUND_FIRST
+#undef F1112_ROUND_SECOND
+#undef F1112_ACTOR_X
+#undef F1112_ACTOR_Y
