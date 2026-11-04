@@ -122,19 +122,20 @@ rechecks **1,697/1,697 physical external PE targets**,
 tested 10 normal VC7.1 variants without fixing the true native CMP
 roles; check the original PE, not stale hypotheses.
 
-**81KB single-switch 0050A580:** [F1087 genuine original
-`0x34E` eight-`0x362`-shot source](CHARACTEROBJECT_NATIVE_34E_F1087.md)
-now covers **45 real state interiors /38,192 original native CODE
-B /8,302 native x86 mnemonic+GPR positions /656 physically original
-PE fields /1,542 scalar-immediate slots**. This distinct native
-case checks parent states `(0x195,4)/(0x1F4,14)/(0x1F5,14)` and
-runs an eight-shot 45° parent +0x314 loop with projectile ID 0x362;
-see [F1086 real 0x34D](CHARACTEROBJECT_NATIVE_34D_F1086.md) for
-its different two parent combinations and 0x361 projectile.
-Selected parent **31,430B /8,440 x86** vs original **81,539B /
-17,435 x86**, 567B authentic afterRET switch DATA verified.
-**Original whole GAME callable NONEXACT; zero newly accepted
-original exact CODE.** Use [live original PE proof](../scripts/verify-characterobject-current-recovered-f1068.py).
+**81KB single-switch 0050A580:** [F1088 actual original
+`0x34F` 1,216B/263x86](CHARACTEROBJECT_NATIVE_34F_F1088.md)
+recovers **46 real original game-state interiors /39,408 original
+native CODE B /8,565 original x86 mnemonic+GPR roles /674 genuine
+original physical PE fields /1,588 scalar-immediate slots**.
+The 34F game checks `(0x194,4)/(0x263,5)/(0x264,5)` parent states
+and fires eight real `0x363` objects in an original 45° loop,
+distinct from [F1087 34E](CHARACTEROBJECT_NATIVE_34E_F1087.md) and
+[F1086 34D](CHARACTEROBJECT_NATIVE_34D_F1086.md).
+Current partial C++ **32,425 CODE B /8,701 x86** versus authentic
+complete **81,539B /17,435 x86** and original 567B switch DATA.
+**Whole original callable NONEXACT, newly accepted exact CODE 0B.**
+Use [live original full-parent PE check](../scripts/verify-characterobject-current-recovered-f1068.py)
+rather than historical source dimensions.
 
 ## 4. All three remaining independent small/medium originals
 

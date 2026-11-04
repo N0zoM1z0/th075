@@ -1,5 +1,7 @@
 # F1087 — Original 1,216B state 0x34E, native parent combinations and eight 0x362 shots
 
+**Historical F1087 checkpoint:** the live parent now also restores authentic [F1088 0x34F](CHARACTEROBJECT_NATIVE_34F_F1088.md). Previous 45-state/31,430B partial source figures below are for the earlier checkpoint, while original 34E 18/18 PE targets remain verified.
+
 The pinned Japanese TH075 1.11 original contains ONE authored
 `CharacterObject::Advance` at `0050A580` (81,539 native original
 CODE B /17,435 x86), plus separate authentic 567B sparse-switch

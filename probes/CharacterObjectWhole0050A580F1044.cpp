@@ -173,7 +173,7 @@ void FighterSwitchF569_Boss0050A580::Advance() {
 #include "CharacterObjectBoss34CF1085.inc"
 #include "CharacterObjectBoss34DF1086.inc"
 #include "CharacterObjectBoss34EF1087.inc"
-        case 0x34F: g_FighterProbeMarker = 848; break;
+#include "CharacterObjectBoss34FF1088.inc"
         case 0x350: g_FighterProbeMarker = 849; break;
         case 0x351: g_FighterProbeMarker = 850; break;
         case 0x352: g_FighterProbeMarker = 851; break;
