@@ -1,5 +1,7 @@
 # F1051 — Authentic 1,048B action `0x321` restores following `0x322` GPR phase
 
+**Historical F1051 checkpoint:** later [F1052](CHARACTEROBJECT_NATIVE_325_32F_F1052.md) restores real 0x325 gameplay and all ten currently reconstructed states now match native GPR roles. The below seven/eight-state register regression and 3,649B partial-source numbers describe this prior step, not current compiler output.
+
 The pinned Japanese TH075 v1.11 original CharacterObject::Advance at
 `0050A580` remains one NONEXACT **81,539 CODE B / 17,435 x86** callable
 with 567 separate afterRET DATA bytes. F1051 reconstructs its genuine
