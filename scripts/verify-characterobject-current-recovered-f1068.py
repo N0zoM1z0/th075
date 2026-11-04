@@ -145,11 +145,11 @@ for k,(native,emitted) in enumerate(zip(NWHOLE,I)):
       'original_target_global_ordinal':orig_target,
       'source_target_global_ordinal':src_target})
 assert physical_original_branch_positions==1834,physical_original_branch_positions
-# These are not waived as exact or correctness: all 14 remain true
+# These are not waived as exact or correctness: all 13 remain true
 # unresolved source CFG target differences. Explicitly enumerate
 # them to reject any *additional* source control-flow regression.
 remaining_native_branch_keys={(0x346,271),
- (0x35d,13),(0x35d,17),(0x35e,155),(0x389,101),
+ (0x35d,13),(0x35d,17),(0x35e,155),
  (0x391,124),(0x391,130),(0x3e3,43),(0x3e3,163),
  (0x3e4,43),(0x3e4,179),(0x3e4,204),(0x3e4,214),(0x3e4,232)}
 actual_debt_keys={(row['physical_switch_slot'],row['case_ordinal'])
@@ -166,6 +166,13 @@ for local in (38,42):
  assert n.mnemonic==q.mnemonic=='jne'
  assert native_instruction_by_address[int(n.op_str,16)]-original_387_index==92
  assert source_instruction_by_address[int(q.op_str,16)]-original_387_index==92
+# F1143: Native 0x389 stage>1 guard at case ordinal 101 must
+# bypass speed+0xD8 decay/clamp, reaching ordinal 161, NOT 146.
+original_389_index=native_instruction_by_address[orig_dense[orig_sparse[0x389-0x320]]]
+n=NWHOLE[original_389_index+101];q=I[original_389_index+101]
+assert n.mnemonic==q.mnemonic=='jg'
+assert native_instruction_by_address[int(n.op_str,16)]-original_389_index==161
+assert source_instruction_by_address[int(q.op_str,16)]-original_389_index==161
 # F1142: Original 330 has the SAME true native OR policy:
 # its FPU JNP lands at impact body ordinal 173, while status==0/6
 # jump past the body to ordinal 183. Prior C++ used the wrong AND.
@@ -910,4 +917,4 @@ summary={'original_Boss':'0x0050A580','original_whole_CODE_B':81539,
  'whole_native_original_direct_jumps_audited':physical_original_branch_positions,
  'remaining_nonexact_native_branch_target_mismatches':native_branch_target_debt}
 (O/'verified-summary.json').write_text(json.dumps(summary,indent=2)+'\n')
-print('F1132 LIVE 82 original game action interiors: original',original_total,'CODE B /',x86total,'x86, native mnemonic+GPR',x86total,'/',x86total,'and genuine PE nonlocal',fields_total,'/',fields_total,'. Current partial source',end,'B /',len(I),'x86, NOT exact whole 81KB; accepted new original bytes 0.')
+print('F1143 LIVE 82 original game action interiors: original',original_total,'CODE B /',x86total,'x86, native mnemonic+GPR',x86total,'/',x86total,'and genuine PE nonlocal',fields_total,'/',fields_total,'. Current partial source',end,'B /',len(I),'x86, NOT exact whole 81KB; accepted new original bytes 0.')

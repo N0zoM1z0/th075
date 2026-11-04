@@ -40,10 +40,12 @@ case 0x389: {
         int random=RandomBoundaryAt00455580(0,4)-2;
         SELF_FIELD(float,0x1C)=float(double(random)*g_F1057_RandomDoubleAt00658A20+g_F1057_RandomBaseAt00657D00);
         SELF_FIELD(unsigned int,0x20)=SELF_FIELD(unsigned int,0x1C);
+        // Native ordinal-101 JG skips the entire signed-speed decay:
+        // only action stages <=1 decrement/clamp speed +0xD8.
+        SELF_FIELD(signed short,0xD8)=short(SELF_FIELD(signed short,0xD8)-15);
+        if (SELF_FIELD(signed short,0xD8)<SELF_FIELD(signed short,0xDC))
+            SELF_FIELD(signed short,0xD8)=SELF_FIELD(signed short,0xDC);
     }
-    SELF_FIELD(signed short,0xD8)=short(SELF_FIELD(signed short,0xD8)-15);
-    if (SELF_FIELD(signed short,0xD8)<SELF_FIELD(signed short,0xDC))
-        SELF_FIELD(signed short,0xD8)=SELF_FIELD(signed short,0xDC);
     F1037_POSITION(this).xPosition=float(SELF_FIELD(signed char,0x66))*F1037_MOTION(this).xMotion+F1037_POSITION(this).xPosition;
     F1037_POSITION(this).yPosition=F1037_POSITION(this).yPosition-F1037_MOTION(this).yMotion;
     if (SELF_FIELD(int,0x7C)!=0 && SELF_FIELD(int,0x7C)!=6 && F1024_PHASE(this).stageAt62==1) {
