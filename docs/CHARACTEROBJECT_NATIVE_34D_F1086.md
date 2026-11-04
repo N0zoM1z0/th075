@@ -1,5 +1,7 @@
 # F1086 — Real original 0x34D, 1,171B/253 native x86 and eight 0x361 projectile shots
 
+**Historical F1086 checkpoint:** current parent now restores authentic [F1087 0x34E](CHARACTEROBJECT_NATIVE_34E_F1087.md). Earlier 44-state/30,435B partial-source dimensions are historical; native F1086 34D PE evidence remains verified.
+
 Pinned Japanese TH075 1.11 has one independently authored original
 `CharacterObject::Advance` callable at `0050A580`, **81,539 original
 CODE B /17,435 x86** with 567 separately owned afterRET switch DATA.

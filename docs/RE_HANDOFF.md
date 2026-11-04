@@ -122,19 +122,19 @@ rechecks **1,697/1,697 physical external PE targets**,
 tested 10 normal VC7.1 variants without fixing the true native CMP
 roles; check the original PE, not stale hypotheses.
 
-**81KB single-switch 0050A580:** [F1086 genuine `0x34D`
-eight-`0x361`-shot source](CHARACTEROBJECT_NATIVE_34D_F1086.md)
-now covers **44 original game-state interiors /36,976 native CODE B
-/8,039 native mnemonic+GPR positions /638 physically original PE
-fields /1,496 scalar-immediate slots**. Real original action 34D
-is 1,171B/253x86, with correct original actor-first Y velocity
-FMUL at native ordinal 61, stage transitions and eight 0x361
-shots; compare genuine [F1085 0x34C](CHARACTEROBJECT_NATIVE_34C_F1085.md)
-with different original parent cases/0x360 shots. Current whole
-partial C++ is **30,435B /8,179 x86**, original **81,539B /
-17,435 x86** with real afterRET 92 DIR32/199 sparse DATA.
-**Whole original GAME callable still NONEXACT, no new accepted
-original exact CODE.** Use only [live whole-parent PE proof](../scripts/verify-characterobject-current-recovered-f1068.py).
+**81KB single-switch 0050A580:** [F1087 genuine original
+`0x34E` eight-`0x362`-shot source](CHARACTEROBJECT_NATIVE_34E_F1087.md)
+now covers **45 real state interiors /38,192 original native CODE
+B /8,302 native x86 mnemonic+GPR positions /656 physically original
+PE fields /1,542 scalar-immediate slots**. This distinct native
+case checks parent states `(0x195,4)/(0x1F4,14)/(0x1F5,14)` and
+runs an eight-shot 45° parent +0x314 loop with projectile ID 0x362;
+see [F1086 real 0x34D](CHARACTEROBJECT_NATIVE_34D_F1086.md) for
+its different two parent combinations and 0x361 projectile.
+Selected parent **31,430B /8,440 x86** vs original **81,539B /
+17,435 x86**, 567B authentic afterRET switch DATA verified.
+**Original whole GAME callable NONEXACT; zero newly accepted
+original exact CODE.** Use [live original PE proof](../scripts/verify-characterobject-current-recovered-f1068.py).
 
 ## 4. All three remaining independent small/medium originals
 
