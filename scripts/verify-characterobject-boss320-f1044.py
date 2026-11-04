@@ -183,6 +183,6 @@ selected_cpp=base.replace(anchor,'#include "native-borrowed-coordinate-both.inc"
 assert (O/'native-borrowed-coordinate-both.cpp').read_text()==selected_cpp
 selected_obj=O/'native-borrowed-coordinate-both.obj'
 selected_code,selected_refs=rd.object_function(selected_obj,'?Advance@FighterSwitchF569_Boss0050A580@@QAEXXZ')
-assert len(selected_code)==12836+567 and len(selected_refs)==416
+assert len(selected_code)==13426+567 and len(selected_refs)==433
 
 print('F1044 native CharacterObject 81KB one-switch source expanded with genuine complete 0x320 case, original whole remains mostly placeholder and nonexact.')

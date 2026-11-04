@@ -44,7 +44,7 @@ for x in D.disasm(code,0):
  I.append(x)
  if x.mnemonic=='ret':break
 end=I[-1].address+I[-1].size
-assert (end,len(I),len(code)-end,len(refs))==(12836,3325,567,416)
+assert (end,len(I),len(code)-end,len(refs))==(13426,3491,567,433)
 table=sorted([r for r in refs if r['offset']>=end],key=lambda r:r['offset'])
 assert len(table)==92 and all(r['offset']==end+4*j and r['type']=='DIR32' and r['addend']==0 and r['local_symbol_offset'] is not None for j,r in enumerate(table))
 assert code[end+368:]==original_sparse

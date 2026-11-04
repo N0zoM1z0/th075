@@ -29,9 +29,9 @@ base=(R/'probes/CharacterObjectWhole0050A580F1044.cpp').read_text()
 fragment=(R/'probes/CharacterObjectBossLongF1057.inc').read_text()
 assert fragment.count('case F1057_CASE:')==1 and fragment.count('F1057_NEXT_CASE')==1
 assert fragment.count('F1057_FloatAtan2At00483300')==1 and fragment.count('g_F1055_FadeScaleAt006598A4')==2
-cases=[('33b',0x50f25a,0x50f9ce,0x33c,1524,273),('33d',0x50faca,0x51023e,0x33e,1524,273),
- ('33f',0x51033a,0x510aae,0x340,1524,273),('341',0x510baa,0x51131e,0x342,1530,275),
- ('343',0x51141a,0x511b8e,0x344,1548,281)]
+cases=[('33b',0x50f25a,0x50f9ce,0x33c,1523,274),('33d',0x50faca,0x51023e,0x33e,1523,274),
+ ('33f',0x51033a,0x510aae,0x340,1529,276),('341',0x510baa,0x51131e,0x342,1547,282),
+ ('343',0x51141a,0x511b8e,0x344,1547,282)]
 for action,st,stop,next_action,expectlen,widths in cases:
  src=(f'#define F1057_CASE 0x{action.upper()}\n#define F1057_NEXT_CASE 0x{next_action:X}\n'
   '#include "CharacterObjectBossLongF1057.inc"\n#undef F1057_NEXT_CASE\n#undef F1057_CASE')
@@ -48,8 +48,8 @@ for x in D.disasm(code,0):
  I.append(x)
  if x.mnemonic=='ret':break
 end=I[-1].address+I[-1].size
-assert (end,len(I),len(code)-end,len(refs))==(12836,3325,567,416)
-assert I[2].op_str=='esp, 0x94' and I[3].op_str=='dword ptr [ebp - 0x34], ecx'
+assert (end,len(I),len(code)-end,len(refs))==(13426,3491,567,433)
+assert I[2].op_str=='esp, 0xa4' and I[3].op_str=='dword ptr [ebp - 0x34], ecx'
 T=sorted([r for r in refs if r['offset']>=end],key=lambda r:r['offset'])
 assert len(T)==92 and all(r['type']=='DIR32' and r['offset']==end+4*j and r['addend']==0 and r['local_symbol_offset'] is not None for j,r in enumerate(T))
 assert code[end+368:]==original_map
@@ -67,7 +67,7 @@ for action,start,stop,next_action,expectlen,expected_width in cases:
  badm=[j for j,(n,s) in enumerate(zip(orig,S)) if n.mnemonic!=s.mnemonic]
  badw=[j for j,(n,s) in enumerate(zip(orig,S)) if n.size!=s.size]
  badg=[j for j,(n,s) in enumerate(zip(orig,S)) if roles(n)!=roles(s)]
- assert not badm and len(badg)==269 and 402-len(badw)==expected_width
+ assert not badm and not badg and 402-len(badw)==expected_width
  if previous is not None:
   baseins=previous
   assert all(n.mnemonic==x.mnemonic and n.size==x.size and roles(n)==roles(x) for n,x in zip(baseins,orig))
@@ -94,9 +94,9 @@ for action,start,stop,next_action,expectlen,expected_width in cases:
  rows.append({'action':action,'original_native_interior_CODE_B':stop-start,'original_native_x86':402,
   'source_compiled_inner_CODE_B':hi-lo,'source_compiled_inner_x86':len(S),
   'native_mnemonics_equal':402,'native_widths_equal':expected_width,
-  'native_GPR_roles_equal':133,'real_original_PE_external_fields':fields,
+  'native_GPR_roles_equal':402,'real_original_PE_external_fields':fields,
   'original_entire_whole_Boss_exact':False})
- print(action,'original 1908B/402 x86, source',hi-lo,'B/402 x86; native mnemonic 402/402, width',expected_width,'/402, GPR 133/402; true original external fields 33/33',flush=True)
+ print(action,'original 1908B/402 x86, source',hi-lo,'B/402 x86; native mnemonic 402/402, width',expected_width,'/402, GPR 402/402; true original external fields 33/33',flush=True)
 assert sum(r['original_native_interior_CODE_B'] for r in rows)==9540
 assert sum(len(r['real_original_PE_external_fields']) for r in rows)==165
 (O/'verified-summary.json').write_text(json.dumps({'native_one_original_Boss':'0x0050A580',

@@ -43,7 +43,7 @@ for x in D.disasm(code,0):
  I.append(x)
  if x.mnemonic=='ret':break
 end=I[-1].address+I[-1].size
-assert (end,len(I),len(code)-end,len(refs))==(12836,3325,DATA,416)
+assert (end,len(I),len(code)-end,len(refs))==(13426,3491,DATA,433)
 S=sorted([r for r in refs if r['offset']>=end],key=lambda x:x['offset'])
 assert len(S)==92 and all(r['offset']==end+4*i and r['type']=='DIR32' and r['addend']==0 and r['local_symbol_offset'] is not None for i,r in enumerate(S))
 assert code[end+368:end+567]==native_sparse
@@ -73,12 +73,12 @@ cases=[('320',0x0050A658,0x0050A80F,91,6,91),
        ('32f',0x0050D097,0x0050D17A,50,3,50),
        ('332',0x0050D88E,0x0050D929,35,3,35),
        ('337',0x0050E9C0,0x0050EA5B,35,3,35),
-       ('33c',0x0050F9CE,0x0050FACA,57,5,17),
-       ('33e',0x0051023E,0x0051033A,57,5,17),
-       ('340',0x00510AAE,0x00510BAA,57,5,17),
-       ('342',0x0051131E,0x0051141A,57,5,17),
-       ('344',0x00511B8E,0x00511C8A,57,5,17),
-       ('345',0x00511C8A,0x00511D25,35,3,13)]
+       ('33c',0x0050F9CE,0x0050FACA,57,5,57),
+       ('33e',0x0051023E,0x0051033A,57,5,57),
+       ('340',0x00510AAE,0x00510BAA,57,5,57),
+       ('342',0x0051131E,0x0051141A,57,5,57),
+       ('344',0x00511B8E,0x00511C8A,57,5,57),
+       ('345',0x00511C8A,0x00511D25,35,3,35)]
 rows=[]
 for text,start,stop,count,fields,gpr in cases:
  act=int(text,16);action_slot=native_sparse[act-0x320]

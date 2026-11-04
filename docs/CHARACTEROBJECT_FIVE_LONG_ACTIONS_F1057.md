@@ -1,5 +1,7 @@
 # F1057 — Five independently native 1,908B/402-x86 CharacterObject game states
 
+**Historical F1057 compiler-phase snapshot:** Restoring the actual [F1059 0x33A state](CHARACTEROBJECT_NATIVE_33A_F1059.md) restores 402/402 original GPR roles in all five long action sources. The previous 133/402 register phase and 12,836B partial source in this note are historically correct for the earlier incomplete parent, not for the current live source. Original PE targets remain 165/165.
+
 The pinned Japanese TH075 v1.11 original has **one** authored
 CharacterObject::Advance game callable at `0050A580`: **81,539 original
 CODE B /17,435 x86** followed by 567 separately owned sparse switch

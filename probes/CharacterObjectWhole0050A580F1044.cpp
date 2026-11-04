@@ -22,6 +22,12 @@ extern float g_F1057_SpeedBaseAt00657CBC;
 extern double g_F1057_RandomDoubleAt00658A20;
 extern double g_F1057_RandomBaseAt00657D00;
 extern float g_F1057_NudgeAt00657480;
+extern float g_F1059_ScaleBaseAt006590B4;
+extern float g_F1059_ScaleRatioAt00657478;
+extern float g_F1059_ScaleFadeAt006598A8;
+extern float g_F1059_UpperBoundAt00657884;
+extern float g_F1059_LowerBoundAt0065924C;
+
 extern float __cdecl F1057_FloatAtan2At00483300(float,float);
 
 #define RAW reinterpret_cast<char*>(this)
@@ -70,7 +76,7 @@ void FighterSwitchF569_Boss0050A580::Advance() {
 #include "CharacterObjectBoss337F1054.inc"
         case 0x338: g_FighterProbeMarker = 825; break;
         case 0x339: g_FighterProbeMarker = 826; break;
-        case 0x33A: g_FighterProbeMarker = 827; break;
+#include "CharacterObjectBoss33AF1059.inc"
 #define F1057_CASE 0x33B
 #define F1057_NEXT_CASE 0x33C
 #include "CharacterObjectBossLongF1057.inc"

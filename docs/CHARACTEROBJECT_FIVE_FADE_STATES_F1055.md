@@ -1,5 +1,7 @@
 # F1055 — Five original fade actions, real x87 order, downstream 0x345 GPR restoration
 
+**Live-phase correction:** Restoring genuine [F1059 native 0x33A](CHARACTEROBJECT_NATIVE_33A_F1059.md) and the five F1057 long states recovers all five fade case GPR roles to 57/57 and 0x345 to 35/35. Prior reduced register-phase measurements remain a historical result of an incomplete C++ parent; original PE fields stay 25/25.
+
 **Historical F1055 five-fade checkpoint:** the live partial parent has since gained five genuine [F1057 402-x86 long states](CHARACTEROBJECT_FIVE_LONG_ACTIONS_F1057.md), changing downstream compiler register phase. The original F1055 case mnemonics and PE call/global fields remain valid, but the 0x33E/0x344 and 0x345 GPR results below describe the earlier smaller C++ source only. Current live source values are measured in F1057.
 
 Pinned Japanese TH075 v1.11 has one independently authored

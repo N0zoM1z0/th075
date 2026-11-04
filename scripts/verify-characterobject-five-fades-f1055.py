@@ -46,15 +46,15 @@ for x in D.disasm(code,0):
  I.append(x)
  if x.mnemonic=='ret':break
 end=I[-1].address+I[-1].size
-assert (end,len(I),len(code)-end,len(refs))==(12836,3325,567,416)
+assert (end,len(I),len(code)-end,len(refs))==(13426,3491,567,433)
 T=sorted([r for r in refs if r['offset']>=end],key=lambda x:x['offset'])
 assert len(T)==92 and all(r['type']=='DIR32' and r['offset']==end+4*i and r['addend']==0 and r['local_symbol_offset'] is not None for i,r in enumerate(T))
 assert code[end+368:]==mapbytes
 assert all((dense[i]==dense[j])==(T[i]['local_symbol_offset']==T[j]['local_symbol_offset']) for i in range(92) for j in range(92))
 RX=re.compile(r'\b(?:[er]?(?:ax|bx|cx|dx|si|di|sp|bp)|[abcd]h|[abcd]l)\b')
 role=lambda x:tuple(RX.findall(x.op_str))
-cases=[('33c',0x50f9ce,0x50faca,17),('33e',0x51023e,0x51033a,17),
- ('340',0x510aae,0x510baa,17),('342',0x51131e,0x51141a,17),('344',0x511b8e,0x511c8a,17)]
+cases=[('33c',0x50f9ce,0x50faca,57),('33e',0x51023e,0x51033a,57),
+ ('340',0x510aae,0x510baa,57),('342',0x51131e,0x51141a,57),('344',0x511b8e,0x511c8a,57)]
 rows=[]
 for action,start,stop,expected_gpr in cases:
  slot=mapbytes[int(action,16)-0x320]
@@ -97,13 +97,13 @@ lo,hi=T[35]['local_symbol_offset'],T[36]['local_symbol_offset']
 N=[x for x in original_ins if 0x511c8a<=x.address<0x511d25]
 S=[x for x in I if lo<=x.address<hi]
 assert len(N)==len(S)==35 and all(a.mnemonic==b.mnemonic for a,b in zip(N,S))
-assert sum(role(a)==role(b) for a,b in zip(N,S))==13
+assert sum(role(a)==role(b) for a,b in zip(N,S))==35
 summary={'original_single_whole_boss':'0x0050A580','real_original_whole_CODE_B':81539,'real_original_whole_x86':17435,
  'current_source_partial_whole_CODE_B':end,'current_source_partial_whole_x86':len(I),
  'new_actual_original_fade_cases':len(rows),'new_real_original_state_CODE_B':sum(r['native_CODE_B'] for r in rows),
  'new_real_original_state_x86':sum(r['native_x86'] for r in rows),'original_external_PE_fields_verified':25,
  'original_all_92_jump_DIR32_partition_match':True,'original_all_199_sparse_BYTES_equal':True,
- 'following_345_original_x86_GPR_match':13,'not_yet_exact_original_whole':True,
+ 'following_345_original_x86_GPR_match':35,'not_yet_exact_original_whole':True,
  'new_accepted_exact_whole_CODE_B':0,'mass_cold_replay':False,'cases':rows}
 (O/'verified-summary.json').write_text(json.dumps(summary,indent=2)+'\n')
 print('F1055 five authentic state interiors, real 1,260 original native CODE B, 285 native x86 and 25 real PE fields recovered as C++; trailing original 0x345 GPR 35/35. The one 81KB whole remains NONEXACT.')
