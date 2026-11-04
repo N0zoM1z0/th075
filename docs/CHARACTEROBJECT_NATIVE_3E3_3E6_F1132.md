@@ -1,5 +1,7 @@
 # F1129–F1132 — Four original 0x3E3..0x3E6 tail actions; real hit/meter policy, 82 PE-verified strict interiors
 
+**Historical F1132 checkpoint:** the native `default:` handler has since been restored in [F1133 complete original instruction count](CHARACTEROBJECT_WHOLE_NATIVE_DEFAULT_F1133.md), so the 81,559B/17,434-x86 source geometry below is the preceding valid checkpoint. Original 82-case strict evidence and eight GPR-provisional states remain verified.
+
 The SHA-pinned Japanese TH075 1.11 executable has **one** independently authored original `CharacterObject::Advance` at `0050A580`, **81,539 original whole CODE B /17,435 native x86**, followed by **567 original afterRET switch DATA bytes**. F1129–F1132 reconstruct four *distinct physical game-state interiors* inside the same ordinary pinned-VC7.1 **NONEXACT whole parent**, not four newly exact standalone game functions. Preexisting dirty C++ for the tail was inspected and continued, including a substantive original-control-flow correction.
 
 ## Actual native original gameplay

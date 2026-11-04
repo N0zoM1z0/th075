@@ -117,6 +117,26 @@ assert code[end+368:]==orig_sparse
 assert all((orig_dense[i]==orig_dense[j])==(T[i]['local_symbol_offset']==T[j]['local_symbol_offset']) for i in range(92) for j in range(92))
 RX=re.compile(r'\b(?:[er]?(?:ax|bx|cx|dx|si|di|sp|bp)|[abcd]h|[abcd]l)\b')
 roles=lambda x:tuple(RX.findall(x.op_str))
+# The original default case is not inert. It ACTUALLY calls the native
+# 0040FA30 action getter and shares the original post-switch epilogue.
+# Previous source used a synthetic g_FighterProbeMarker=0 instead and
+# omitted one genuine x86 instruction. Validate the whole native
+# physical common-tail and REL32 call, not just sparse-table labels.
+orig_default=[n for n in NWHOLE if n.address>=orig_dense[91]]
+src_default=[n for n in I if n.address>=T[91]['local_symbol_offset']]
+assert [n.mnemonic for n in orig_default]==['mov','call','mov','pop','ret']
+assert [n.mnemonic for n in src_default]==[n.mnemonic for n in orig_default]
+assert [roles(n) for n in orig_default]==[roles(n) for n in src_default]
+assert orig_default[1].address==orig_default[0].address+orig_default[0].size
+orig_rel=orig_default[1].address+1
+orig_disp=int.from_bytes(rd.pe_bytes_at(P,orig_rel,4),'little',signed=True)
+assert orig_rel+4+orig_disp==0x40fa30
+src_tail_pe=[r for r in refs if T[91]['local_symbol_offset']<=r['offset']<end and r['local_symbol_offset'] is None]
+assert len(src_tail_pe)==1
+assert src_tail_pe[0]['type']=='REL32' and src_tail_pe[0]['addend']==0
+assert src_tail_pe[0]['offset']==src_default[1].address+1
+assert 'GetNativeActionAt0040FA30' in src_tail_pe[0]['symbol']
+assert not re.search(r'default\s*:\s*g_FighterProbeMarker',source)
 known=[];rows=[]
 for action,expected_count in required_fields.items():
  ix=orig_sparse[action-0x320]
