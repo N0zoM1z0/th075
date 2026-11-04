@@ -39,9 +39,9 @@ required_fields={
  0x337:3,0x338:12,0x339:10,0x33a:18,
  0x33b:33,0x33c:5,0x33d:33,0x33e:5,0x33f:33,
  0x340:5,0x341:33,0x342:5,0x343:33,0x344:5,0x345:3,
- 0x346:34,0x347:10,0x348:9,0x349:7,0x34a:7,0x34b:6,0x34c:18,0x34d:18,0x34e:18,0x34f:18,0x350:18,
+ 0x346:34,0x347:10,0x348:9,0x349:7,0x34a:7,0x34b:6,0x34c:18,0x34d:18,0x34e:18,0x34f:18,0x350:18,0x351:15,
 }
-assert len(required_fields)==47 and sum(required_fields.values())==692
+assert len(required_fields)==48 and sum(required_fields.values())==707
 src=R/'probes/CharacterObjectWhole0050A580F1044.cpp'
 source=src.read_text()
 # Native state imports, not fake marker labels, must actually be represented.
@@ -64,6 +64,7 @@ for token in ('#include "CharacterObjectBoss330F1068.inc"',
  '#include "CharacterObjectBoss34EF1087.inc"',
  '#include "CharacterObjectBoss34FF1088.inc"',
  '#include "CharacterObjectBoss350F1089.inc"',
+ '#include "CharacterObjectBoss351F1090.inc"',
  '#include "CharacterObjectBoss335F1064.inc"',
  '#include "CharacterObjectBoss333334F1065.inc"',
  '#include "CharacterObjectBoss338F1062.inc"',
@@ -256,6 +257,22 @@ for action,expected_count in required_fields.items():
   assert N[83].mnemonic==S[83].mnemonic=='mov'
   assert N[83].op_str==S[83].op_str and '0xc2200000' in N[83].op_str
   assert any(f['x86_ordinal']==42 and f['original_native_PE_target']=='0x658e80' for f in pe)
+ if action==0x351:
+  # First actual parent-facing x87 int*20 addition, native 6..11
+  # scale behavior, physical seven-argument projectile 0x352 and
+  # actual original stage 16 parent 0x2BF gate, not guessed phase.
+  assert N[5].mnemonic==S[5].mnemonic=='imul'
+  assert N[5].op_str==S[5].op_str and '0x14' in N[5].op_str
+  assert N[86].op_str==S[86].op_str=='ah, 1'
+  assert N[123].mnemonic==S[123].mnemonic=='push'
+  assert N[123].op_str==S[123].op_str=='0x33a'
+  assert N[146].mnemonic==S[146].mnemonic=='cmp'
+  assert N[146].op_str==S[146].op_str and '0x23' in N[146].op_str
+  assert N[160].mnemonic==S[160].mnemonic=='push'
+  assert N[160].op_str==S[160].op_str=='0x352'
+  assert any(f['x86_ordinal']==163 and f['original_native_PE_target']=='0x453b50' for f in pe)
+  assert N[230].mnemonic==S[230].mnemonic=='cmp'
+  assert N[230].op_str==S[230].op_str and '0x2bf' in N[230].op_str
  if action==0x350:
   # The genuinely distinct original 0x350 combines four native
   # parent triggers, including 0x192/4 and 0x260/4 through 0x262/4.
@@ -357,7 +374,7 @@ original_total=sum(row['original_interior_CODE_B'] for row in rows)
 x86total=sum(row['original_native_x86'] for row in rows)
 src_total=sum(row['current_source_interior_CODE_B'] for row in rows)
 fields_total=sum(len(row['native_physically_correct_PE_call_global_fields']) for row in rows)
-assert (original_total,x86total,fields_total)==(40671,8838,692)
+assert (original_total,x86total,fields_total)==(41762,9084,707)
 summary={'original_Boss':'0x0050A580','original_whole_CODE_B':81539,
  'original_whole_x86':17435,'selected_partial_source_CODE_B':end,'selected_partial_source_x86':len(I),
  'source_partial_afterRET_DATA_B':567,'original_recovered_independent_case_interior_count':len(rows),
@@ -371,4 +388,4 @@ summary={'original_Boss':'0x0050A580','original_whole_CODE_B':81539,
  'original_81KB_whole_function_exact':False,'new_exact_original_whole_CODE_B':0,
  'all_979_cold_replay':False,'native_states':rows}
 (O/'verified-summary.json').write_text(json.dumps(summary,indent=2)+'\n')
-print('F1089 LIVE 47 original game action interiors: original',original_total,'CODE B /',x86total,'x86, native mnemonic+GPR',x86total,'/',x86total,'and genuine PE nonlocal',fields_total,'/',fields_total,'. Current partial source',end,'B /',len(I),'x86, NOT exact whole 81KB; accepted new original bytes 0.')
+print('F1090 LIVE 48 original game action interiors: original',original_total,'CODE B /',x86total,'x86, native mnemonic+GPR',x86total,'/',x86total,'and genuine PE nonlocal',fields_total,'/',fields_total,'. Current partial source',end,'B /',len(I),'x86, NOT exact whole 81KB; accepted new original bytes 0.')

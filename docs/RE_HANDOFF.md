@@ -122,21 +122,20 @@ rechecks **1,697/1,697 physical external PE targets**,
 tested 10 normal VC7.1 variants without fixing the true native CMP
 roles; check the original PE, not stale hypotheses.
 
-**81KB single-switch 0050A580:** [F1089 genuine original
-`0x350` eight `0x364` shots](CHARACTEROBJECT_NATIVE_350_F1089.md)
-now represents **47 real game-state interiors /40,671 original native
-CODE B /8,838 original x86 mnemonic+GPR positions /692 physical
-original PE call/global targets /1,636 scalar-immediate slots**.
-Original 350's distinct four parent triggers `(0x192,4)` and
-`(0x260/261/262,4)` control native eight-step 45° shots of 0x364,
-whereas earlier [F1088 0x34F](CHARACTEROBJECT_NATIVE_34F_F1088.md)
-uses 0x363 and [F1087 0x34E](CHARACTEROBJECT_NATIVE_34E_F1087.md)
-uses 0x362. Current C++ source **33,457 CODE B /8,972 x86**
-versus original **81,539B /17,435 x86**, real 92 DIR32/199
-sparse DATA retained. **Whole original game callable NONEXACT;
-zero newly accepted original whole CODE.** Use the
-[live native one-parent PE verifier](../scripts/verify-characterobject-current-recovered-f1068.py)
-not old source geometry.
+**81KB single-switch 0050A580:** [F1090 real native `0x351`
+1,091B/246x86 game action](CHARACTEROBJECT_NATIVE_351_F1090.md)
+restores real seven-argument projectile `0x352` through 00453B50,
+original signed-facing X, and exact x87 `TEST AH,1` equality behavior.
+The live one-parent Japanese original-PE verifier now checks **48
+true original game state interiors /41,762 native original CODE B /
+9,084 x86 mnemonic+GPR positions /707 physically original PE
+call/global targets /1,685 nonrelocated scalar immediates**.
+Current C++ partial whole **34,304B /9,216 x86** vs authentic
+complete **81,539B /17,435 x86**, 567 afterRET switch DATA verified.
+**Original whole GAME callable NONEXACT; no new accepted exact original
+CODE.** [F1089 0x350](CHARACTEROBJECT_NATIVE_350_F1089.md) and prior
+states remain verified. Run only the [live whole-parent native PE
+checker](../scripts/verify-characterobject-current-recovered-f1068.py).
 
 ## 4. All three remaining independent small/medium originals
 

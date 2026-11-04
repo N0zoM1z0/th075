@@ -1,5 +1,7 @@
 # F1089 — Real original 1,263B 0x350: four parent actions, eight 0x364 projectile shots
 
+**Historical F1089 checkpoint:** the live parent now additionally restores [F1090 0x351](CHARACTEROBJECT_NATIVE_351_F1090.md); previous 47-state/33,457B partial source totals below are historical, and original 350 PE fields remain verified.
+
 Pinned Japanese TH075 1.11 has ONE authored original game callable
 `CharacterObject::Advance` at `0050A580`: **81,539 native CODE B /
 17,435 x86**, followed by 567 independently owned sparse-switch

@@ -2,7 +2,7 @@
 // F539 natural switch *probe*, not original fighter source or CODE credit.
 // This file is regenerable from the original PE under ignored .analysis.
 class FighterSwitchF569_Boss0050A580 { public: void Advance(); void NativeParentExpiredAt0045B830(); void SetNativeMotionAt0040FBB0(int,float,int); short GetNativeActionAt0040FA30(); void SetAuxActionAt0040FB40(int); void SetNativeActionAt0040FAC0(int); void SetNativeTwoFloatsAt0040FB70(float,float); void SetNativeAngleBitsAt0040FB70(unsigned int,float); int RandomBoundaryAt00455580(int,int); };
-class F1051Grandparent { public: void NativePrepareAt00453D40(int); void SpawnObjectAt00453A70(int,unsigned int,unsigned int,signed char,int); void SpawnObjectAt00453A70(int,float,float,signed char,int); void SpawnProjectileAt00453C80(int,unsigned int,unsigned int,signed char,int); void InitTrajectoryAt00453E60(float); };
+class F1051Grandparent { public: void NativePrepareAt00453D40(int); void SpawnObjectAt00453A70(int,unsigned int,unsigned int,signed char,int); void SpawnObjectAt00453A70(int,float,float,signed char,int); void SpawnProjectileAt00453C80(int,unsigned int,unsigned int,signed char,int); void InitTrajectoryAt00453E60(float); void SpawnSevenAt00453B50(int,unsigned int,unsigned int,char,int,int,int); };
 extern unsigned int g_FighterProbeMarker;
 extern float g_F1044_GravityAt0065747C;
 extern float g_F1044_GroundAt0065782C;
@@ -175,7 +175,7 @@ void FighterSwitchF569_Boss0050A580::Advance() {
 #include "CharacterObjectBoss34EF1087.inc"
 #include "CharacterObjectBoss34FF1088.inc"
 #include "CharacterObjectBoss350F1089.inc"
-        case 0x351: g_FighterProbeMarker = 850; break;
+#include "CharacterObjectBoss351F1090.inc"
         case 0x352: g_FighterProbeMarker = 851; break;
         case 0x353: g_FighterProbeMarker = 852; break;
         case 0x354: g_FighterProbeMarker = 853; break;
