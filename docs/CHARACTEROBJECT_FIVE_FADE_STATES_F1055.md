@@ -1,5 +1,7 @@
 # F1055 — Five original fade actions, real x87 order, downstream 0x345 GPR restoration
 
+**Historical F1055 five-fade checkpoint:** the live partial parent has since gained five genuine [F1057 402-x86 long states](CHARACTEROBJECT_FIVE_LONG_ACTIONS_F1057.md), changing downstream compiler register phase. The original F1055 case mnemonics and PE call/global fields remain valid, but the 0x33E/0x344 and 0x345 GPR results below describe the earlier smaller C++ source only. Current live source values are measured in F1057.
+
 Pinned Japanese TH075 v1.11 has one independently authored
 CharacterObject `Advance` at `0050A580`: **81,539 original callable
 CODE B /17,435 x86**, plus **567 separate afterRET DATA B**. This

@@ -1,7 +1,7 @@
 #include "FrameActorMotionPairsF1037.hpp"
 // F539 natural switch *probe*, not original fighter source or CODE credit.
 // This file is regenerable from the original PE under ignored .analysis.
-class FighterSwitchF569_Boss0050A580 { public: void Advance(); void NativeParentExpiredAt0045B830(); void SetNativeMotionAt0040FBB0(int,int,int); short GetNativeActionAt0040FA30(); void SetAuxActionAt0040FB40(int); void SetNativeActionAt0040FAC0(int); };
+class FighterSwitchF569_Boss0050A580 { public: void Advance(); void NativeParentExpiredAt0045B830(); void SetNativeMotionAt0040FBB0(int,int,int); short GetNativeActionAt0040FA30(); void SetAuxActionAt0040FB40(int); void SetNativeActionAt0040FAC0(int); void SetNativeTwoFloatsAt0040FB70(float,float); int RandomBoundaryAt00455580(int,int); };
 class F1051Grandparent { public: void NativePrepareAt00453D40(int); void SpawnObjectAt00453A70(int,unsigned int,unsigned int,signed char,int); void SpawnProjectileAt00453C80(int,unsigned int,unsigned int,signed char,int); void InitTrajectoryAt00453E60(float); };
 extern unsigned int g_FighterProbeMarker;
 extern float g_F1044_GravityAt0065747C;
@@ -11,6 +11,19 @@ extern float g_F1051_ScaleCeilingAt0065747C;
 extern float g_F1051_TrajectoryUpperAt006590C4;
 extern float g_F1051_TrajectoryLowerAt00658290;
 extern float g_F1055_FadeScaleAt006598A4;
+extern float g_F1057_RightBoundAt0065925C;
+extern float g_F1057_LeftBoundAt00659258;
+extern float g_F1057_UpperBoundAt006583B4;
+extern float g_F1057_LowerBoundAt00658374;
+extern float g_F1057_YOffsetAt00657888;
+extern float g_F1057_AngleDivAt00657828;
+extern float g_F1057_SpeedScaleAt006590B4;
+extern float g_F1057_SpeedBaseAt00657CBC;
+extern double g_F1057_RandomDoubleAt00658A20;
+extern double g_F1057_RandomBaseAt00657D00;
+extern float g_F1057_NudgeAt00657480;
+extern float __cdecl F1057_FloatAtan2At00483300(float,float);
+
 #define RAW reinterpret_cast<char*>(this)
 #define I16(off) *reinterpret_cast<signed short*>(RAW+(off))
 #define OWNER (*reinterpret_cast<char**>(RAW+0x2E8))
@@ -58,23 +71,43 @@ void FighterSwitchF569_Boss0050A580::Advance() {
         case 0x338: g_FighterProbeMarker = 825; break;
         case 0x339: g_FighterProbeMarker = 826; break;
         case 0x33A: g_FighterProbeMarker = 827; break;
-        case 0x33B: g_FighterProbeMarker = 828; break;
+#define F1057_CASE 0x33B
+#define F1057_NEXT_CASE 0x33C
+#include "CharacterObjectBossLongF1057.inc"
+#undef F1057_NEXT_CASE
+#undef F1057_CASE
 #define F1055_CASE 0x33C
 #include "CharacterObjectBossFadeF1055.inc"
 #undef F1055_CASE
-        case 0x33D: g_FighterProbeMarker = 830; break;
+#define F1057_CASE 0x33D
+#define F1057_NEXT_CASE 0x33E
+#include "CharacterObjectBossLongF1057.inc"
+#undef F1057_NEXT_CASE
+#undef F1057_CASE
 #define F1055_CASE 0x33E
 #include "CharacterObjectBossFadeF1055.inc"
 #undef F1055_CASE
-        case 0x33F: g_FighterProbeMarker = 832; break;
+#define F1057_CASE 0x33F
+#define F1057_NEXT_CASE 0x340
+#include "CharacterObjectBossLongF1057.inc"
+#undef F1057_NEXT_CASE
+#undef F1057_CASE
 #define F1055_CASE 0x340
 #include "CharacterObjectBossFadeF1055.inc"
 #undef F1055_CASE
-        case 0x341: g_FighterProbeMarker = 834; break;
+#define F1057_CASE 0x341
+#define F1057_NEXT_CASE 0x342
+#include "CharacterObjectBossLongF1057.inc"
+#undef F1057_NEXT_CASE
+#undef F1057_CASE
 #define F1055_CASE 0x342
 #include "CharacterObjectBossFadeF1055.inc"
 #undef F1055_CASE
-        case 0x343: g_FighterProbeMarker = 836; break;
+#define F1057_CASE 0x343
+#define F1057_NEXT_CASE 0x344
+#include "CharacterObjectBossLongF1057.inc"
+#undef F1057_NEXT_CASE
+#undef F1057_CASE
 #define F1055_CASE 0x344
 #include "CharacterObjectBossFadeF1055.inc"
 #undef F1055_CASE

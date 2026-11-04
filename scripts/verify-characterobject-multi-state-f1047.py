@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""F1047/F1055 check seventeen recovered *interior* game states of one 81KB Boss.
+"""F1047/F1057 check seventeen already recovered states while the whole partial parent now includes five real 402-x86 long cases.
 
 Cold compile only the tracked complete one-switch original-shaped parent
 prototype (other actions remain markers). Independently read original PE
@@ -43,7 +43,7 @@ for x in D.disasm(code,0):
  I.append(x)
  if x.mnemonic=='ret':break
 end=I[-1].address+I[-1].size
-assert (end,len(I),len(code)-end,len(refs))==(5258,1325,DATA,256)
+assert (end,len(I),len(code)-end,len(refs))==(12836,3325,DATA,416)
 S=sorted([r for r in refs if r['offset']>=end],key=lambda x:x['offset'])
 assert len(S)==92 and all(r['offset']==end+4*i and r['type']=='DIR32' and r['addend']==0 and r['local_symbol_offset'] is not None for i,r in enumerate(S))
 assert code[end+368:end+567]==native_sparse
@@ -56,11 +56,12 @@ def original_wide_stack_to_real_shallow_stack(original,source):
  # This partial original-shaped function has not yet restored the
  # genuinely large whole-parent 0x3A0 stack. The original saved this
  # at -0xAC and its real integer-to-float scratch at -0xB4/B8/BC;
- # ordinary C++ places those same genuinely used values at -C/-14/18/1C.
+ # after real F1057 states, C++ places those same used values 0x78
+ # bytes shallower, with saved receiver at -0x34.
  a=re.search(r'\[ebp - (0x[0-9a-f]+|[0-9]+)\]',original.op_str)
  b=re.search(r'\[ebp - (0x[0-9a-f]+|[0-9]+)\]',source.op_str)
  return (a is not None and b is not None and
-         int(a.group(1),0)-int(b.group(1),0)==0xa0)
+         int(a.group(1),0)-int(b.group(1),0)==0x78)
 cases=[('320',0x0050A658,0x0050A80F,91,6,91),
        ('321',0x0050A80F,0x0050AC27,229,19,229),
        ('322',0x0050AC27,0x0050AD46,56,4,56),
@@ -73,11 +74,11 @@ cases=[('320',0x0050A658,0x0050A80F,91,6,91),
        ('332',0x0050D88E,0x0050D929,35,3,35),
        ('337',0x0050E9C0,0x0050EA5B,35,3,35),
        ('33c',0x0050F9CE,0x0050FACA,57,5,17),
-       ('33e',0x0051023E,0x0051033A,57,5,57),
+       ('33e',0x0051023E,0x0051033A,57,5,17),
        ('340',0x00510AAE,0x00510BAA,57,5,17),
        ('342',0x0051131E,0x0051141A,57,5,17),
-       ('344',0x00511B8E,0x00511C8A,57,5,57),
-       ('345',0x00511C8A,0x00511D25,35,3,35)]
+       ('344',0x00511B8E,0x00511C8A,57,5,17),
+       ('345',0x00511C8A,0x00511D25,35,3,13)]
 rows=[]
 for text,start,stop,count,fields,gpr in cases:
  act=int(text,16);action_slot=native_sparse[act-0x320]
