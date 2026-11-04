@@ -71,6 +71,15 @@ for text,start,stop,count,fields,gpr in cases:
  wrong_w=[i for i,(n,s) in enumerate(zip(orig_seq,seq)) if n.size!=s.size]
  wrong_g=[i for i,(n,s) in enumerate(zip(orig_seq,seq)) if roles(n)!=roles(s)]
  assert wrong_m==[] and count-len(wrong_g)==gpr,(text,len(wrong_g))
+ if text in ('32b','32d','332'):
+  # The independently recorded complete native case geometry proves
+  # every remaining width miss is exclusively the genuine EBP-0xAC
+  # saved-this slot versus the partial-parent EBP-4 slot. It is not
+  # an expression-width, missing opcode or external-PE relocation bug.
+  assert all(orig_seq[j].size-seq[j].size==3
+             and 'ebp - 0xac' in orig_seq[j].op_str
+             and 'ebp - 4' in seq[j].op_str for j in wrong_w)
+  assert stop-start-(hi-lo)==3*len(wrong_w)
  actual_fields=[r for r in refs if lo<=r['offset']<hi and r['local_symbol_offset'] is None]
  assert len(actual_fields)==fields
  native_fields=[]

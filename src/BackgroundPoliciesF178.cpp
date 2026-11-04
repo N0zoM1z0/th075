@@ -1,5 +1,6 @@
 #include "BackgroundPoliciesF178.hpp"
 #include "SpriteTransform.hpp"
+#include "BackgroundTimelineBorrowF1049.hpp"
 
 void BackgroundPoliciesF178::ApplyTransformAt00449CE0(SpriteQuad40CA80* destination,
     DWORD* color, SpriteQuad40CA80* source)
@@ -32,9 +33,9 @@ void BackgroundPoliciesF178::DrawSidePairAt0044A5C0()
 {
     int x = static_cast<int>(g_CombatViewOffsetX + 160.0f);
     int y = static_cast<int>(g_CombatViewOffsetY);
-    reinterpret_cast<TimelineDrawing438D00*>(reinterpret_cast<unsigned char*>(this) + 0x18)->DrawSprite(
+    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
         0, float(x - 30), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
-    reinterpret_cast<TimelineDrawing438D00*>(reinterpret_cast<unsigned char*>(this) + 0x18)->DrawSprite(
+    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
         1, float(x + 670), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
 }
 
@@ -51,9 +52,9 @@ void BackgroundPoliciesF178::DrawSidePairAt0044A7F0()
 {
     int x = static_cast<int>(g_CombatViewOffsetX + 160.0f);
     int y = static_cast<int>(g_CombatViewOffsetY);
-    reinterpret_cast<TimelineDrawing438D00*>(reinterpret_cast<unsigned char*>(this) + 0x18)->DrawSprite(
+    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
         0, float(x - 30), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
-    reinterpret_cast<TimelineDrawing438D00*>(reinterpret_cast<unsigned char*>(this) + 0x18)->DrawSprite(
+    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
         1, float(x + 670), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
 }
 
@@ -70,9 +71,9 @@ void BackgroundPoliciesF178::DrawSidePairAt0044AA20()
 {
     int x = static_cast<int>(g_CombatViewOffsetX + 160.0f);
     int y = static_cast<int>(g_CombatViewOffsetY);
-    reinterpret_cast<TimelineDrawing438D00*>(reinterpret_cast<unsigned char*>(this) + 0x18)->DrawSprite(
+    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
         0, float(x - 30), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
-    reinterpret_cast<TimelineDrawing438D00*>(reinterpret_cast<unsigned char*>(this) + 0x18)->DrawSprite(
+    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
         1, float(x + 670), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
 }
 
@@ -107,9 +108,9 @@ void BackgroundPoliciesF178::DrawSidePairAt0044B190()
 {
     int x = static_cast<int>(g_CombatViewOffsetX + 160.0f);
     int y = static_cast<int>(g_CombatViewOffsetY);
-    reinterpret_cast<TimelineDrawing438D00*>(reinterpret_cast<unsigned char*>(this) + 0x18)->DrawSprite(
+    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
         0, float(x - 30), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
-    reinterpret_cast<TimelineDrawing438D00*>(reinterpret_cast<unsigned char*>(this) + 0x18)->DrawSprite(
+    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
         1, float(x + 670), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
 }
 
@@ -126,9 +127,9 @@ void BackgroundPoliciesF178::DrawSidePairAt0044B3C0()
 {
     int x = static_cast<int>(g_CombatViewOffsetX + 160.0f);
     int y = static_cast<int>(g_CombatViewOffsetY);
-    reinterpret_cast<TimelineDrawing438D00*>(reinterpret_cast<unsigned char*>(this) + 0x18)->DrawSprite(
+    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
         0, float(x - 30), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
-    reinterpret_cast<TimelineDrawing438D00*>(reinterpret_cast<unsigned char*>(this) + 0x18)->DrawSprite(
+    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
         1, float(x + 670), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
 }
 
@@ -172,9 +173,9 @@ void BackgroundPoliciesF178::DrawSidePairAt0044C560()
 {
     int x = static_cast<int>(g_CombatViewOffsetX + 160.0f);
     int y = static_cast<int>(g_CombatViewOffsetY);
-    reinterpret_cast<TimelineDrawing438D00*>(reinterpret_cast<unsigned char*>(this) + 0x18)->DrawSprite(
+    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
         0, float(x - 30), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
-    reinterpret_cast<TimelineDrawing438D00*>(reinterpret_cast<unsigned char*>(this) + 0x18)->DrawSprite(
+    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
         1, float(x + 670), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
 }
 
@@ -191,9 +192,9 @@ void BackgroundPoliciesF178::DrawSidePairAt0044C7A0()
 {
     int x = static_cast<int>(g_CombatViewOffsetX + 160.0f);
     int y = static_cast<int>(g_CombatViewOffsetY);
-    reinterpret_cast<TimelineDrawing438D00*>(reinterpret_cast<unsigned char*>(this) + 0x18)->DrawSprite(
+    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
         0, float(x - 30), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
-    reinterpret_cast<TimelineDrawing438D00*>(reinterpret_cast<unsigned char*>(this) + 0x18)->DrawSprite(
+    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
         1, float(x + 670), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
 }
 
@@ -210,9 +211,9 @@ void BackgroundPoliciesF178::DrawSidePairAt0044C9E0()
 {
     int x = static_cast<int>(g_CombatViewOffsetX + 160.0f);
     int y = static_cast<int>(g_CombatViewOffsetY);
-    reinterpret_cast<TimelineDrawing438D00*>(reinterpret_cast<unsigned char*>(this) + 0x18)->DrawSprite(
+    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
         0, float(x - 30), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
-    reinterpret_cast<TimelineDrawing438D00*>(reinterpret_cast<unsigned char*>(this) + 0x18)->DrawSprite(
+    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
         1, float(x + 670), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
 }
 
@@ -247,9 +248,9 @@ void BackgroundPoliciesF178::DrawSidePairAt0044D160()
 {
     int x = static_cast<int>(g_CombatViewOffsetX + 160.0f);
     int y = static_cast<int>(g_CombatViewOffsetY);
-    reinterpret_cast<TimelineDrawing438D00*>(reinterpret_cast<unsigned char*>(this) + 0x18)->DrawSprite(
+    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
         0, float(x - 30), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
-    reinterpret_cast<TimelineDrawing438D00*>(reinterpret_cast<unsigned char*>(this) + 0x18)->DrawSprite(
+    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
         1, float(x + 670), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
 }
 
@@ -266,9 +267,9 @@ void BackgroundPoliciesF178::DrawSidePairAt0044D3A0()
 {
     int x = static_cast<int>(g_CombatViewOffsetX + 160.0f);
     int y = static_cast<int>(g_CombatViewOffsetY);
-    reinterpret_cast<TimelineDrawing438D00*>(reinterpret_cast<unsigned char*>(this) + 0x18)->DrawSprite(
+    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
         0, float(x - 30), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
-    reinterpret_cast<TimelineDrawing438D00*>(reinterpret_cast<unsigned char*>(this) + 0x18)->DrawSprite(
+    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
         1, float(x + 670), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
 }
 
@@ -303,9 +304,9 @@ void BackgroundPoliciesF178::DrawSidePairAt0044DF20()
 {
     int x = static_cast<int>(g_CombatViewOffsetX + 160.0f);
     int y = static_cast<int>(g_CombatViewOffsetY);
-    reinterpret_cast<TimelineDrawing438D00*>(reinterpret_cast<unsigned char*>(this) + 0x18)->DrawSprite(
+    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
         0, float(x - 30), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
-    reinterpret_cast<TimelineDrawing438D00*>(reinterpret_cast<unsigned char*>(this) + 0x18)->DrawSprite(
+    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
         1, float(x + 670), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
 }
 
@@ -322,9 +323,9 @@ void BackgroundPoliciesF178::DrawSidePairAt0044E160()
 {
     int x = static_cast<int>(g_CombatViewOffsetX + 160.0f);
     int y = static_cast<int>(g_CombatViewOffsetY);
-    reinterpret_cast<TimelineDrawing438D00*>(reinterpret_cast<unsigned char*>(this) + 0x18)->DrawSprite(
+    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
         0, float(x - 30), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
-    reinterpret_cast<TimelineDrawing438D00*>(reinterpret_cast<unsigned char*>(this) + 0x18)->DrawSprite(
+    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
         1, float(x + 670), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
 }
 
@@ -359,9 +360,9 @@ void BackgroundPoliciesF178::DrawSidePairAt0044F3B0()
 {
     int x = static_cast<int>(g_CombatViewOffsetX + 160.0f);
     int y = static_cast<int>(g_CombatViewOffsetY);
-    reinterpret_cast<TimelineDrawing438D00*>(reinterpret_cast<unsigned char*>(this) + 0x18)->DrawSprite(
+    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
         0, float(x - 30), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
-    reinterpret_cast<TimelineDrawing438D00*>(reinterpret_cast<unsigned char*>(this) + 0x18)->DrawSprite(
+    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
         1, float(x + 670), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
 }
 
@@ -378,9 +379,9 @@ void BackgroundPoliciesF178::DrawSidePairAt0044F5F0()
 {
     int x = static_cast<int>(g_CombatViewOffsetX + 160.0f);
     int y = static_cast<int>(g_CombatViewOffsetY);
-    reinterpret_cast<TimelineDrawing438D00*>(reinterpret_cast<unsigned char*>(this) + 0x18)->DrawSprite(
+    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
         0, float(x - 30), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
-    reinterpret_cast<TimelineDrawing438D00*>(reinterpret_cast<unsigned char*>(this) + 0x18)->DrawSprite(
+    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
         1, float(x + 670), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
 }
 
@@ -406,9 +407,9 @@ void BackgroundPoliciesF178::DrawSidePairAt004501A0()
 {
     int x = static_cast<int>(g_CombatViewOffsetX + 160.0f);
     int y = static_cast<int>(g_CombatViewOffsetY);
-    reinterpret_cast<TimelineDrawing438D00*>(reinterpret_cast<unsigned char*>(this) + 0x18)->DrawSprite(
+    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
         0, float(x - 30), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
-    reinterpret_cast<TimelineDrawing438D00*>(reinterpret_cast<unsigned char*>(this) + 0x18)->DrawSprite(
+    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
         1, float(x + 670), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
 }
 
@@ -434,9 +435,9 @@ void BackgroundPoliciesF178::DrawSidePairAt00450990()
 {
     int x = static_cast<int>(g_CombatViewOffsetX + 160.0f);
     int y = static_cast<int>(g_CombatViewOffsetY);
-    reinterpret_cast<TimelineDrawing438D00*>(reinterpret_cast<unsigned char*>(this) + 0x18)->DrawSprite(
+    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
         0, float(x - 30), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
-    reinterpret_cast<TimelineDrawing438D00*>(reinterpret_cast<unsigned char*>(this) + 0x18)->DrawSprite(
+    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
         1, float(x + 670), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
 }
 
@@ -462,9 +463,9 @@ void BackgroundPoliciesF178::DrawSidePairAt004511E0()
 {
     int x = static_cast<int>(g_CombatViewOffsetX + 160.0f);
     int y = static_cast<int>(g_CombatViewOffsetY);
-    reinterpret_cast<TimelineDrawing438D00*>(reinterpret_cast<unsigned char*>(this) + 0x18)->DrawSprite(
+    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
         0, float(x - 30), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
-    reinterpret_cast<TimelineDrawing438D00*>(reinterpret_cast<unsigned char*>(this) + 0x18)->DrawSprite(
+    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
         1, float(x + 670), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
 }
 
@@ -490,9 +491,9 @@ void BackgroundPoliciesF178::DrawSidePairAt00451D20()
 {
     int x = static_cast<int>(g_CombatViewOffsetX + 160.0f);
     int y = static_cast<int>(g_CombatViewOffsetY);
-    reinterpret_cast<TimelineDrawing438D00*>(reinterpret_cast<unsigned char*>(this) + 0x18)->DrawSprite(
+    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
         0, float(x - 30), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
-    reinterpret_cast<TimelineDrawing438D00*>(reinterpret_cast<unsigned char*>(this) + 0x18)->DrawSprite(
+    F1049_BACKGROUND_TIMELINE(this).DrawSprite(
         1, float(x + 670), float(y + 240), 0xFFFFFFFF, 350.0f, 620.0f, 1.0f, 0.0f, 0);
 }
 

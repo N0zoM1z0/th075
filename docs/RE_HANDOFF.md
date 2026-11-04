@@ -172,6 +172,8 @@ F1036: [native frame/actor collision countdown WORD pair](FRAME_ACTOR_COLLISION_
 
 F1037: [paired actor position/motion float windows](FRAME_ACTOR_MOTION_PAIRS_F1037.md) recover genuine X/Y borrowed fields at +0x44/+0x48 and +0x50/+0x54 in core actor movement, collision limits and action selection. All **8/8** affected entire functions remain exact after one-object cold replay (the same 1,967 previously credited bytes; not new credit).
 
+F1049: [typed native background timeline receiver](BACKGROUND_TIMELINE_BORROW_F1049.md) replaces 36 raw `this+0x18` drawing calls with a true borrowed call interface. The single affected native source object was cold-replayed **54/54 exact** (**6,612 previously credited original bytes**); not new whole-function credit.
+
 ## 6. Agent operating checklist / storage
 
 **Preflight, no whole corpus replay:**

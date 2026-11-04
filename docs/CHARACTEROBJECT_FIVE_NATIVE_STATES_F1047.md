@@ -29,6 +29,8 @@ natural original control flow, not independent callable functions:
   behavior, the subsequent whole-source register phase also
   recovered all **35/35** native GPR roles.
 
+Independent later full-native controls confirmed that, for the `0x32B`, `0x32D` and `0x332` sources, **every remaining width mismatch is exactly a three-byte `EBP-0xAC` versus `EBP-4` saved-receiver displacement**. There are 14, 17 and 12 such native/partial-frame width differences respectively. The tracked multi-state verifier now asserts this physical fact rather than merely counting wrong widths.
+
 The original whole 81KB function remains much larger than this
 partial prototype. The chosen original game action-to-physical-
 handler mapping is not invented from source order: `F1047`
