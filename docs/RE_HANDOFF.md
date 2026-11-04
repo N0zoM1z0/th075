@@ -183,7 +183,7 @@ F1037: [paired actor position/motion float windows](FRAME_ACTOR_MOTION_PAIRS_F10
 
 F1049: [typed native background timeline receiver](BACKGROUND_TIMELINE_BORROW_F1049.md) replaces 36 raw `this+0x18` drawing calls with a true borrowed call interface. The single affected native source object was cold-replayed **54/54 exact** (**6,612 previously credited original bytes**); not new whole-function credit.
 
-F1053: [native x87 facing leaf lvalue source grammar](COMBAT_FACING_LVALUE_GRAMMAR_F1053.md) names the real two actors' float X views in the complete 130B facing leaf. Unlike the initially rejected parenthesized expression (`FLD/FLD/FCOMPP`), the selected natural unparenthesized lvalue preserves native `FLD/FCOMP`. The affected `BattleCombat.cpp` source was **4/4 full cold exact** (4,283 previously credited CODE B); both large hit functions' strict COFF `$L` labels remain unchanged.
+F1053: [native x87 facing lvalues](COMBAT_FACING_LVALUE_GRAMMAR_F1053.md) preserve 4/4 full native BattleCombat exact callables (4,283B); the original `FLD/FCOMP` order and strict `$L` COFF labels remain intact.
 
 F1056: [native collision bounding RECT plus genuine fighter vitals/axis fields](COLLISION_NATIVE_RECT_AND_VITALS_F1056.md) replaces raw casts for 20 bounds, original adjacent +0x324/+0x326 WORDs and 6 original X/Y coordinate reads. The affected `BattleCollision.cpp` object cold-replayed **5/5 entire original functions exact** (**855 previously credited bytes**), with no other source objects or corpus replay.
 
@@ -198,6 +198,8 @@ F1079: [real collision-frame flags, action WORD and four native bounds](BATTLE_C
 F1084: [native two-fighter vital WORDs in whole 9,841B Battle HUD](BATTLE_HUD_NATIVE_VITALS_F1084.md) replaces **24** raw signed health/recoverable casts with independently original F999 fields, preserving **1/1 full native 9,841B exact** after one scoped cold replay; no new exact credit.
 
 F1086: [native 12B animation binding window for two complete 149B leaves](ANIMATION_BINDING_NATIVE_WINDOW_F1086.md) gives typed action-frame/row/duration/count slots at +0x70/+0x72/+0x74/+0x78; **2/2 full 149B leaf functions (298 previously accepted bytes) remain strict exact**, with original pointer/row implementations preserved.
+
+F1096: [native two-side HUD float and signed name-group pairs](BATTLE_STATUS_NATIVE_SIDES_F1096.md) restore 45 actual float side accesses and two signed selector-group WORDs; the complete **3,510B BattleStatus RenderStatus** remains **1/1 strict cold exact**, no new coverage.
 
 ## 6. Agent operating checklist / storage
 
