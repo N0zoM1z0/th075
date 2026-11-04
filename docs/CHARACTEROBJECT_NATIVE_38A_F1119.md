@@ -1,5 +1,7 @@
 # F1119 — Original 0x38A, 1,035-byte twin fifteen-shot landing action and real 0065747C threshold
 
+**Historical F1119 checkpoint:** the live source now adds [F1120 0x38B](CHARACTEROBJECT_NATIVE_38B_F1120.md), so the 72-case/73,516B source dimensions below are previous figures. Original 38A 226/226 native widths, GPR and 18/18 PE fields remain verified.
+
 The SHA-pinned Japanese TH075 1.11 executable contains **one** authored original `CharacterObject::Advance` at `0050A580`, with **81,539 whole-original CODE bytes /17,435 native x86**, plus 567 real afterRET switch DATA bytes. F1119 reconstructs an additional genuinely independent game-state **interior**, `0x38A` at `0051BFE2..0051C3ED`, **1,035 original CODE B /226 x86**, in the one still-NONEXACT whole parent. This is not an independently accepted complete original callable.
 
 The action checks actual signed parent +0x3A0 health, initializes the native stage/frame, signed +0x80, +0x7C, +0xD8, two scale floats, four opacity bytes and native X/Y velocity via real `0040FBB0`. Stages below six add original **00658348** to both scales and compare against native **0065747C**, individually clamping to 2.0f. Stages above five use native x87 `TEST AH,0x41; JP` to check next frame Y/velocity against original `0065782C`. On impact it zeroes velocity, calls parent `00453D40(11)`, invokes own `0040FAC0(0x385)`, spawns native **`0x347`**, then performs **two genuinely separate fifteen-iteration source loops** spawning original `0x33A` and `0x389`. It finishes the impact by invoking real parent `00453E60(5.0f)`.
