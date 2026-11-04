@@ -122,24 +122,23 @@ rechecks **1,697/1,697 physical external PE targets**,
 tested 10 normal VC7.1 variants without fixing the true native CMP
 roles; check the original PE, not stale hypotheses.
 
-**81KB single-switch 0050A580:** [F1068 real `0x330` and
-live whole-parent original-PE validator](CHARACTEROBJECT_NATIVE_330_LIVE_PROOF_F1068.md)
-now verifies **30 real game-state interiors /21,961 original state CODE
-B /4,690 original mnemonic+GPR positions /362 genuine physical PE
-external call/global targets**. The real 0x330 C++ includes five-shot
-projectile loop, float **60.0f** and authentic `TEST AH,0x41; JNP` x87
-branch. All 30 state cases are compared against original PE within
-**ONE** partial C++ parent. It emits **18,564B /4,858 x86**, versus
-original **81,539B /17,435 x86**, with 92 DIR32 and 199 original sparse
-DATA bytes preserved. **Whole original remains NONEXACT; zero new
-accepted callable CODE.** Genuine earlier sources: [F1066 true
-+30/0/−30 inputs](CHARACTEROBJECT_NATIVE_336_AND_IMMEDIATES_F1066.md),
-[F1062 13-shot loop](CHARACTEROBJECT_NATIVE_338_339_F1062.md),
-[F1057 five 402-x86 big actions](CHARACTEROBJECT_FIVE_LONG_ACTIONS_F1057.md),
-[F569 sparse dispatch](CHARACTEROBJECT_SINGLE_SWITCH_F569.md).
-Use the live F1068 aggregate validator rather than relying on stale
-hardcoded prior partial-source geometry. Do not assign internal case
-matches individual exact original function credit.
+**81KB single-switch 0050A580:** [F1069 original `0x331`
+three parent-Y motions](CHARACTEROBJECT_NATIVE_331_F1069.md) now
+recovers **31 original inner game states /22,813 native CODE B /4,875
+original x86 mnemonic+GPR positions /371 physically original PE
+external targets**. Original 0x331 (852B/185 x86) uses three
+real Y globals `00659138/00658264/00657888`; 185/185 native
+mnemonic+GPR and 9/9 true physical PE targets are checked.
+The [live current-parent verifier](../scripts/verify-characterobject-current-recovered-f1068.py)
+builds only the affected whole C++ parent and verifies every recovered
+state against the actual Japanese PE. Source **19,232B/5,041 x86**
+versus original **81,539B/17,435 x86**; 92 DIR32 and 199 native
+sparse DATA bytes are preserved, but other game state handlers remain
+markers and full frame/width geometry is nonexact. **Original whole
+GAME callable NONEXACT; newly accepted whole CODE 0B.** Prior
+[F1068 native 0x330](CHARACTEROBJECT_NATIVE_330_LIVE_PROOF_F1068.md)
+and [F1066 +30/0/−30 inputs](CHARACTEROBJECT_NATIVE_336_AND_IMMEDIATES_F1066.md)
+remain targeted sources and original-PE proof.
 
 ## 4. All three remaining independent small/medium originals
 

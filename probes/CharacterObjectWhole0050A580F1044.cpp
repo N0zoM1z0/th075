@@ -32,6 +32,8 @@ extern float g_F1061_StepAt0065972C;
 extern float g_F1061_OffsetAt00658354;
 extern float g_F1062_ScaleStepAt006583F8;
 extern float g_F1068_ActionSpeedAt00657878;
+extern float g_F1069_ParentYFirstAt00659138;
+extern float g_F1069_ParentYSecondAt00658264;
 
 extern float __cdecl F1057_FloatAtan2At00483300(float,float);
 
@@ -72,7 +74,7 @@ void FighterSwitchF569_Boss0050A580::Advance() {
 #include "CharacterObjectBoss32EF1050.inc"
 #include "CharacterObjectBoss32FF1052.inc"
 #include "CharacterObjectBoss330F1068.inc"
-        case 0x331: g_FighterProbeMarker = 818; break;
+#include "CharacterObjectBoss331F1069.inc"
 #include "CharacterObjectBoss332F1047.inc"
 #define F1065_ACTION 0x333
 #define F1066_INITIAL_ANGLE 30.0f

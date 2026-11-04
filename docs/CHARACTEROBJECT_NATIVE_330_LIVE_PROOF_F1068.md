@@ -1,5 +1,7 @@
 # F1068 — Real 960B action `0x330` and a live, full-parent original-PE verifier for 30 game states
 
+**Historical F1068 checkpoint:** genuine [F1069 original `0x331`](CHARACTEROBJECT_NATIVE_331_F1069.md) has since been restored. The live verifier now audits **31** recovered states (not the earlier 30) with current parent geometry. Original 0x330 x87 JNP and all 16 physical PE fields remain correct; figures below describe this older bounded checkpoint.
+
 The original pinned Japanese TH075 v1.11 game contains **one**
 independently authored `CharacterObject::Advance` at `0050A580`:
 **81,539 original CODE B /17,435 x86**, followed by authentic
