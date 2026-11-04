@@ -185,11 +185,13 @@ F1084: [native two-fighter vital WORDs in whole 9,841B Battle HUD](BATTLE_HUD_NA
 
 F1086: [native 12B animation binding window for two complete 149B leaves](ANIMATION_BINDING_NATIVE_WINDOW_F1086.md) gives typed action-frame/row/duration/count slots at +0x70/+0x72/+0x74/+0x78; **2/2 full 149B leaf functions (298 previously accepted bytes) remain strict exact**, with original pointer/row implementations preserved.
 
-F1096: [native two-side HUD float and signed name-group pairs](BATTLE_STATUS_NATIVE_SIDES_F1096.md) restore 45 actual float side accesses and two signed selector-group WORDs; the complete **3,510B BattleStatus RenderStatus** remains **1/1 strict cold exact**, no new coverage.
+F1096: [HUD native side fields](BATTLE_STATUS_NATIVE_SIDES_F1096.md) retain **1/1 whole 3,510B original exact**.
 
-F1106: [109 real fighter/side-HUD/overlay float borrows](FRAME_DEPENDENCIES_NATIVE_BORROW_WINDOWS_F1106.md) preserve 3/3 full original native exact (4,169B) after scoped cold replays; not newly accepted bytes.
+F1106: [native frame field borrows](FRAME_DEPENDENCIES_NATIVE_BORROW_WINDOWS_F1106.md) retain **3/3 whole original exact, 4,169B**.
 
-F1134: [127 genuine original HUD/fighter slide/style/health/gauge/charge/shade field borrows](BATTLE_HUD_NATIVE_BORROW_F1134.md) preserve the **complete 9,841B BattleHud RenderHud 1/1 strict original exact** after four targeted cold builds and whole original COFF check; zero new coverage.
+F1134: [127 native HUD field borrows](BATTLE_HUD_NATIVE_BORROW_F1134.md) keep **9,841B full original HUD strict exact**.
+
+F1135: [531 native X/Y position and motion lvalues in complete 31KB auxiliary switch](CHARACTER_AUX_ACTION_NATIVE_AXES_F1135.md) preserve **1/1 complete original 31,352B strict exact**, including all original COFF `$L` labels; rejected new struct/<stddef.h> renumbered labels.
 
 ## 6. Agent operating checklist / storage
 

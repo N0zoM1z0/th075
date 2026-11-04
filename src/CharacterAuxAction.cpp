@@ -1,5 +1,13 @@
 #include "CharacterAuxAction.hpp"
 
+// Borrow the four real actor axes without introducing new C++ struct
+// declarations into the VC7.1 switch translation unit. Definitions of
+// complete types before the function change original $L label identities.
+#define F1135_POSITION_X() FLOAT(0x44)
+#define F1135_POSITION_Y() FLOAT(0x48)
+#define F1135_MOTION_X() FLOAT(0x50)
+#define F1135_MOTION_Y() FLOAT(0x54)
+
 #define FIELD(type, offset) (*reinterpret_cast<type *>(reinterpret_cast<unsigned char *>(this) + offset))
 #define FLOAT(offset) *reinterpret_cast<float *>(reinterpret_cast<unsigned char *>(this) + offset)
 
@@ -50,18 +58,18 @@ void CharacterAuxObject::AdvanceActionAt005FAE30()
             FIELD(short, 0x74) = 0;
         }
         if (FIELD(short, 0x62) == 1 && FIELD(short, 0x64) == 0) {
-            SpawnPeer(101, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(102, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(102, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(102, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(102, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(102, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(102, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(102, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(102, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(102, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(102, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(102, FLOAT(0x44), FLOAT(0x48), 1, 1);
+            SpawnPeer(101, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(102, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(102, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(102, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(102, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(102, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(102, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(102, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(102, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(102, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(102, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(102, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
         }
         ++FIELD(short, 0x74);
         FLOAT(0x1C) += (0.3f - FIELD(short, 0x74) * 0.035f);
@@ -93,22 +101,22 @@ void CharacterAuxObject::AdvanceActionAt005FAE30()
             FIELD(short, 0x74) = 0;
         }
         if (FIELD(short, 0x62) == 1 && FIELD(short, 0x64) == 0) {
-            SpawnPeer(103, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
+            SpawnPeer(103, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
         }
         ++FIELD(short, 0x74);
         FLOAT(0x1C) += (0.3f - FIELD(short, 0x74) * 0.035f);
@@ -138,20 +146,20 @@ void CharacterAuxObject::AdvanceActionAt005FAE30()
             FIELD(short, 0x74) = 0;
         }
         if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
         }
         FLOAT(0x1C) += 0.5f - FIELD(short, 0x74) * 0.035f;
         FLOAT(0x20) *= 0.75f;
@@ -181,20 +189,20 @@ void CharacterAuxObject::AdvanceActionAt005FAE30()
             FIELD(short, 0x74) = 0;
         }
         if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
         }
         FLOAT(0x1C) += 0.5f - FIELD(short, 0x74) * 0.035f;
         FLOAT(0x20) *= 0.75f;
@@ -224,20 +232,20 @@ void CharacterAuxObject::AdvanceActionAt005FAE30()
             FIELD(short, 0x74) = 0;
         }
         if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
         }
         FLOAT(0x1C) += 0.5f - FIELD(short, 0x74) * 0.035f;
         FLOAT(0x20) *= 0.75f;
@@ -267,20 +275,20 @@ void CharacterAuxObject::AdvanceActionAt005FAE30()
             FIELD(short, 0x74) = 0;
         }
         if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
         }
         FLOAT(0x1C) += 0.5f - FIELD(short, 0x74) * 0.035f;
         FLOAT(0x20) *= 0.75f;
@@ -309,16 +317,16 @@ void CharacterAuxObject::AdvanceActionAt005FAE30()
             FIELD(short, 0x74) = 0;
         }
         if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
-            SpawnPeer(138, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
+            SpawnPeer(138, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
         }
         ++FIELD(short, 0x74);
         if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField8();
@@ -335,22 +343,22 @@ void CharacterAuxObject::AdvanceActionAt005FAE30()
             FIELD(short, 0x74) = 0;
         }
         if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
-            SpawnPeer(105, FLOAT(0x44) - FIELD(signed char, 0x66) * 60, FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
+            SpawnPeer(105, F1135_POSITION_X() - FIELD(signed char, 0x66) * 60, F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
         }
         ++FIELD(short, 0x74);
         FLOAT(0x1C) += (0.3f - FIELD(short, 0x74) * 0.02f);
@@ -379,17 +387,17 @@ void CharacterAuxObject::AdvanceActionAt005FAE30()
             FIELD(short, 0x74) = 0;
         }
         if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
-            SpawnPeer(139, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(140, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
+            SpawnPeer(139, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(140, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
         }
         FLOAT(0x1C) += (0.2f - FIELD(short, 0x74) * 0.02f) * ((0.2f - FIELD(short, 0x74) * 0.02f) > 0.0f);
         FLOAT(0x20) += (0.2f - FIELD(short, 0x74) * 0.02f) * ((0.2f - FIELD(short, 0x74) * 0.02f) > 0.0f);
@@ -419,14 +427,14 @@ void CharacterAuxObject::AdvanceActionAt005FAE30()
             FIELD(short, 0x74) = 0;
         }
         if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
         }
         ++FIELD(short, 0x74);
         FLOAT(0x1C) += (0.2f - FIELD(short, 0x74) * 0.02f) * ((0.2f - FIELD(short, 0x74) * 0.02f) > 0.0f);
@@ -456,14 +464,14 @@ void CharacterAuxObject::AdvanceActionAt005FAE30()
             FIELD(short, 0x74) = 0;
         }
         if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
-            SpawnPeer(105, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(105, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(105, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(105, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(105, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(105, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(105, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(105, FLOAT(0x44), FLOAT(0x48), 1, 1);
+            SpawnPeer(105, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(105, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(105, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(105, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(105, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(105, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(105, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(105, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
         }
         ++FIELD(short, 0x74);
         FLOAT(0x1C) += (0.2f - FIELD(short, 0x74) * 0.02f) * ((0.2f - FIELD(short, 0x74) * 0.02f) > 0.0f);
@@ -482,57 +490,57 @@ void CharacterAuxObject::AdvanceActionAt005FAE30()
         break;
     case 52:
         if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
-            SpawnPeer(107, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(107, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(107, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(107, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(107, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(107, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(107, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(107, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(107, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(107, FLOAT(0x44), FLOAT(0x48), 1, 1);
+            SpawnPeer(107, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(107, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(107, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(107, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(107, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(107, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(107, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(107, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(107, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(107, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
         }
         if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField8();
         break;
     case 53:
         if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
-            SpawnPeer(108, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(109, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(110, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(110, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(110, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(110, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(110, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(110, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(110, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(110, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(104, FLOAT(0x44), FLOAT(0x48), 1, 1);
+            SpawnPeer(108, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(109, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(110, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(110, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(110, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(110, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(110, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(110, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(110, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(110, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(104, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
         }
         if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField8();
         break;
     case 54:
         if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
-            SpawnPeer(137, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(111, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(111, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(111, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(111, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(111, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(111, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(111, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(111, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(111, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(111, FLOAT(0x44), FLOAT(0x48), 1, 1);
+            SpawnPeer(137, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(111, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(111, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(111, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(111, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(111, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(111, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(111, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(111, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(111, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(111, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
         }
         if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField8();
         break;
@@ -548,22 +556,22 @@ void CharacterAuxObject::AdvanceActionAt005FAE30()
             FIELD(short, 0x74) = 0;
         }
         if (FIELD(short, 0x62) == 1 && FIELD(short, 0x64) == 0) {
-            SpawnPeer(112, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(113, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(114, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(114, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(114, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(114, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(114, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(114, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(114, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(114, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(114, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(114, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(114, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(114, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(114, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(114, FLOAT(0x44), FLOAT(0x48), 1, 1);
+            SpawnPeer(112, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(113, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(114, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(114, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(114, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(114, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(114, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(114, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(114, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(114, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(114, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(114, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(114, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(114, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(114, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(114, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
         }
         ++FIELD(short, 0x74);
         FLOAT(0x1C) += (0.5f - FIELD(short, 0x74) * 0.035f) * ((0.5f - FIELD(short, 0x74) * 0.035f) > 0.0f);
@@ -590,13 +598,13 @@ void CharacterAuxObject::AdvanceActionAt005FAE30()
             FIELD(unsigned char, 0x13) = 255;
             FIELD(unsigned char, 0x14) = 255;
             FIELD(short, 0x74) = 0;
-            SpawnPeer(57, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(57, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(57, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(57, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(57, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(57, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(57, FLOAT(0x44), FLOAT(0x48), 1, 1);
+            SpawnPeer(57, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(57, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(57, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(57, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(57, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(57, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(57, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
         }
         ++FIELD(short, 0x74);
         FLOAT(0x1C) += (0.5f - FIELD(short, 0x74) * 0.05f) * ((0.5f - FIELD(short, 0x74) * 0.05f) > 0.0f) + 0.05f;
@@ -623,11 +631,11 @@ void CharacterAuxObject::AdvanceActionAt005FAE30()
             FIELD(unsigned char, 0x12) = 255;
             FIELD(unsigned char, 0x13) = 255;
             FIELD(unsigned char, 0x14) = 255;
-            FLOAT(0x30) = AngleAt00483300(FLOAT(0x54), FLOAT(0x50)) / 0.017453288659453392f;
+            FLOAT(0x30) = AngleAt00483300(F1135_MOTION_Y(), F1135_MOTION_X()) / 0.017453288659453392f;
             FIELD(short, 0x74) = 0;
         }
-        FLOAT(0x44) += FLOAT(0x50);
-        FLOAT(0x48) -= FLOAT(0x54);
+        F1135_POSITION_X() += F1135_MOTION_X();
+        F1135_POSITION_Y() -= F1135_MOTION_Y();
         ++FIELD(short, 0x74);
         if (FIELD(short, 0x62) > 0) {
             FLOAT(0x1C) += 0.1f;
@@ -681,7 +689,7 @@ void CharacterAuxObject::AdvanceActionAt005FAE30()
             FIELD(short, 0x74) = static_cast<short>(ChooseIntegerRange(0, 359));
             FLOAT(0x80) = FIELD(short, 0x74) + 180;
             SetPolarVelocity(FIELD(short, 0x74), 500.0f);
-            SpawnPeer(63, FLOAT(0x44) + FLOAT(0x50), FLOAT(0x48) + FLOAT(0x54), 1, 1);
+            SpawnPeer(63, F1135_POSITION_X() + F1135_MOTION_X(), F1135_POSITION_Y() + F1135_MOTION_Y(), 1, 1);
         }
         ++FIELD(short, 0x74);
         FLOAT(0x1C) -= 0.03f;
@@ -729,8 +737,8 @@ void CharacterAuxObject::AdvanceActionAt005FAE30()
             }
         }
         FLOAT(0x30) += 5.0f;
-        FLOAT(0x44) += FLOAT(0x50);
-        FLOAT(0x48) += FLOAT(0x54);
+        F1135_POSITION_X() += F1135_MOTION_X();
+        F1135_POSITION_Y() += F1135_MOTION_Y();
         FLOAT(0x1C) -= 0.033f;
         FLOAT(0x20) -= 0.033f;
         if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField8();
@@ -747,7 +755,7 @@ void CharacterAuxObject::AdvanceActionAt005FAE30()
             FIELD(short, 0x74) = static_cast<short>(ChooseIntegerRange(0, 359));
             FLOAT(0x80) = FIELD(short, 0x74) + 180;
             SetPolarVelocity(FIELD(short, 0x74), 500.0f);
-            SpawnPeer(65, FLOAT(0x44) + FLOAT(0x50), FLOAT(0x48) + FLOAT(0x54), 1, 1);
+            SpawnPeer(65, F1135_POSITION_X() + F1135_MOTION_X(), F1135_POSITION_Y() + F1135_MOTION_Y(), 1, 1);
         }
         ++FIELD(short, 0x74);
         FLOAT(0x1C) -= 0.03f;
@@ -795,8 +803,8 @@ void CharacterAuxObject::AdvanceActionAt005FAE30()
             }
         }
         FLOAT(0x30) += 5.0f;
-        FLOAT(0x44) += FLOAT(0x50);
-        FLOAT(0x48) += FLOAT(0x54);
+        F1135_POSITION_X() += F1135_MOTION_X();
+        F1135_POSITION_Y() += F1135_MOTION_Y();
         FLOAT(0x1C) -= 0.033f;
         FLOAT(0x20) -= 0.033f;
         if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField8();
@@ -813,8 +821,8 @@ void CharacterAuxObject::AdvanceActionAt005FAE30()
             FIELD(unsigned char, 0x14) = 255;
             FIELD(short, 0x74) = 0;
         }
-        FLOAT(0x44) += FLOAT(0x50);
-        FLOAT(0x48) += FLOAT(0x54);
+        F1135_POSITION_X() += F1135_MOTION_X();
+        F1135_POSITION_Y() += F1135_MOTION_Y();
         ++FIELD(short, 0x74);
         FLOAT(0x1C) *= 0.85f;
         FLOAT(0x20) *= 0.85f;
@@ -866,8 +874,8 @@ void CharacterAuxObject::AdvanceActionAt005FAE30()
         }
         FIELD(short, 0x74) = static_cast<short>(FIELD(short, 0x74) * 0.95f);
         SetPolarVelocity(FIELD(short, 0x76), FIELD(short, 0x74) * 0.01f);
-        FLOAT(0x44) += FLOAT(0x50);
-        FLOAT(0x48) += FLOAT(0x54);
+        F1135_POSITION_X() += F1135_MOTION_X();
+        F1135_POSITION_Y() += F1135_MOTION_Y();
         FLOAT(0x30) += 5.0f;
         if (FIELD(short, 0x64) > 5) {
             if (FIELD(unsigned char, 0x11) > 10) {
@@ -916,11 +924,11 @@ void CharacterAuxObject::AdvanceActionAt005FAE30()
             FIELD(unsigned char, 0x12) = 255;
             FIELD(unsigned char, 0x13) = 255;
             FIELD(unsigned char, 0x14) = 255;
-            FLOAT(0x30) = AngleAt00483300(FLOAT(0x54), FLOAT(0x50)) / 0.017453288659453392f;
+            FLOAT(0x30) = AngleAt00483300(F1135_MOTION_Y(), F1135_MOTION_X()) / 0.017453288659453392f;
             FIELD(short, 0x74) = 0;
         }
-        FLOAT(0x44) += FLOAT(0x50);
-        FLOAT(0x48) -= FLOAT(0x54);
+        F1135_POSITION_X() += F1135_MOTION_X();
+        F1135_POSITION_Y() -= F1135_MOTION_Y();
         ++FIELD(short, 0x74);
         if (FIELD(short, 0x62) > 0) {
             FLOAT(0x20) *= 0.85f;
@@ -945,11 +953,11 @@ void CharacterAuxObject::AdvanceActionAt005FAE30()
             FIELD(unsigned char, 0x12) = 255;
             FIELD(unsigned char, 0x13) = 255;
             FIELD(unsigned char, 0x14) = 255;
-            FLOAT(0x30) = AngleAt00483300(FLOAT(0x54), FLOAT(0x50)) / 0.017453288659453392f;
+            FLOAT(0x30) = AngleAt00483300(F1135_MOTION_Y(), F1135_MOTION_X()) / 0.017453288659453392f;
             FIELD(short, 0x74) = 0;
         }
-        FLOAT(0x44) += FLOAT(0x50);
-        FLOAT(0x48) -= FLOAT(0x54);
+        F1135_POSITION_X() += F1135_MOTION_X();
+        F1135_POSITION_Y() -= F1135_MOTION_Y();
         ++FIELD(short, 0x74);
         if (FIELD(short, 0x62) > 0) {
             FLOAT(0x20) *= 0.85f;
@@ -1006,8 +1014,8 @@ void CharacterAuxObject::AdvanceActionAt005FAE30()
         }
         FIELD(short, 0x74) = static_cast<short>(FIELD(short, 0x74) * 0.96f);
         SetPolarVelocity(FIELD(short, 0x76), FIELD(short, 0x74) * 0.01f);
-        FLOAT(0x44) += FLOAT(0x50);
-        FLOAT(0x48) += FLOAT(0x54);
+        F1135_POSITION_X() += F1135_MOTION_X();
+        F1135_POSITION_Y() += F1135_MOTION_Y();
         if (FIELD(short, 0x64) > 2) {
             FLOAT(0x1C) *= 0.85f;
             FLOAT(0x20) *= 0.85f;
@@ -1094,8 +1102,8 @@ void CharacterAuxObject::AdvanceActionAt005FAE30()
         }
         FIELD(short, 0x74) = static_cast<short>(FIELD(short, 0x74) * 0.97f);
         SetPolarVelocity(FIELD(short, 0x76) - 180, FIELD(short, 0x74) * 0.01f);
-        FLOAT(0x44) += FLOAT(0x50);
-        FLOAT(0x48) += FLOAT(0x54);
+        F1135_POSITION_X() += F1135_MOTION_X();
+        F1135_POSITION_Y() += F1135_MOTION_Y();
         FLOAT(0x20) += 0.05f;
         if (FIELD(short, 0x64) > 15) {
             if (FIELD(unsigned char, 0x11) < 10) {
@@ -1121,12 +1129,12 @@ void CharacterAuxObject::AdvanceActionAt005FAE30()
             SetPolarVelocity(ChooseIntegerRange(-155, -25), ChooseIntegerRange(100, 250) * 0.1f);
             FLOAT(0x30) = ChooseIntegerRange(0, 360);
         }
-        FLOAT(0x54) -= 0.75f;
-        FLOAT(0x44) += FLOAT(0x50);
-        FLOAT(0x48) += FLOAT(0x54);
+        F1135_MOTION_Y() -= 0.75f;
+        F1135_POSITION_X() += F1135_MOTION_X();
+        F1135_POSITION_Y() += F1135_MOTION_Y();
         FLOAT(0x30) += 5.0f;
-        if (FLOAT(0x48) < 40.0f && FLOAT(0x54) < 0.0f && ChooseIntegerRange(0, 100) < 10) {
-            FLOAT(0x54) = -FLOAT(0x54);
+        if (F1135_POSITION_Y() < 40.0f && F1135_MOTION_Y() < 0.0f && ChooseIntegerRange(0, 100) < 10) {
+            F1135_MOTION_Y() = -F1135_MOTION_Y();
         }
         if (FIELD(short, 0x62) > 0) {
             if (FIELD(unsigned char, 0x11) < 10) {
@@ -1206,8 +1214,8 @@ void CharacterAuxObject::AdvanceActionAt005FAE30()
         }
         FIELD(short, 0x74) = static_cast<short>(FIELD(short, 0x74) * 0.9f);
         SetPolarVelocity(FIELD(short, 0x76) - 180, FIELD(short, 0x74) * 0.01f);
-        FLOAT(0x44) += FLOAT(0x50);
-        FLOAT(0x48) += FLOAT(0x54);
+        F1135_POSITION_X() += F1135_MOTION_X();
+        F1135_POSITION_Y() += F1135_MOTION_Y();
         if (FIELD(short, 0x64) > 20) {
             FLOAT(0x1C) *= 0.9f;
             FLOAT(0x20) *= 0.9f;
@@ -1233,12 +1241,12 @@ void CharacterAuxObject::AdvanceActionAt005FAE30()
             FIELD(unsigned char, 0x14) = 255;
             FIELD(short, 0x74) = 0;
             for (int particle = 0; particle < 25; ++particle)
-                SpawnPeer(122, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(141, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(142, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(143, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(144, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(145, FLOAT(0x44), FLOAT(0x48), 1, 1);
+                SpawnPeer(122, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(141, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(142, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(143, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(144, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(145, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
         }
         if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField8();
         break;
@@ -1252,27 +1260,27 @@ void CharacterAuxObject::AdvanceActionAt005FAE30()
             FIELD(unsigned char, 0x13) = 255;
             FIELD(unsigned char, 0x14) = 255;
             FIELD(short, 0x74) = 0;
-            SpawnPeer(131, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(132, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(133, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(134, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(134, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(134, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(134, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(134, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(134, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(134, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(134, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(134, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(134, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(134, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(134, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(135, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(135, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(136, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(136, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(136, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            SpawnPeer(136, FLOAT(0x44), FLOAT(0x48), 1, 1);
+            SpawnPeer(131, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(132, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(133, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(134, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(134, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(134, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(134, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(134, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(134, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(134, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(134, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(134, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(134, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(134, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(134, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(135, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(135, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(136, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(136, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(136, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
+            SpawnPeer(136, F1135_POSITION_X(), F1135_POSITION_Y(), 1, 1);
         }
         if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField8();
         break;
@@ -1404,11 +1412,11 @@ void CharacterAuxObject::AdvanceActionAt005FAE30()
             FIELD(unsigned char, 0x12) = 255;
             FIELD(unsigned char, 0x13) = 255;
             FIELD(unsigned char, 0x14) = 255;
-            FLOAT(0x30) = AngleAt00483300(FLOAT(0x54), FLOAT(0x50)) / 0.017453288659453392f;
+            FLOAT(0x30) = AngleAt00483300(F1135_MOTION_Y(), F1135_MOTION_X()) / 0.017453288659453392f;
             FIELD(short, 0x74) = 0;
         }
-        FLOAT(0x44) += FLOAT(0x50);
-        FLOAT(0x48) -= FLOAT(0x54);
+        F1135_POSITION_X() += F1135_MOTION_X();
+        F1135_POSITION_Y() -= F1135_MOTION_Y();
         ++FIELD(short, 0x74);
         if (FIELD(short, 0x62) > 0) {
             FLOAT(0x1C) += 0.3f;
@@ -1658,11 +1666,11 @@ void CharacterAuxObject::AdvanceActionAt005FAE30()
             FIELD(unsigned char, 0x12) = 255;
             FIELD(unsigned char, 0x13) = 255;
             FIELD(unsigned char, 0x14) = 255;
-            FLOAT(0x30) = AngleAt00483300(FLOAT(0x54), FLOAT(0x50)) / 0.017453288659453392f;
+            FLOAT(0x30) = AngleAt00483300(F1135_MOTION_Y(), F1135_MOTION_X()) / 0.017453288659453392f;
             FIELD(short, 0x74) = 0;
         }
-        FLOAT(0x44) += FLOAT(0x50);
-        FLOAT(0x48) -= FLOAT(0x54);
+        F1135_POSITION_X() += F1135_MOTION_X();
+        F1135_POSITION_Y() -= F1135_MOTION_Y();
         ++FIELD(short, 0x74);
         if (FIELD(short, 0x62) > 0) {
             FLOAT(0x1C) += 0.1f;
@@ -1981,3 +1989,8 @@ void CharacterAuxObject::AdvanceActionAt005FAE30()
         break;
     }
 }
+
+#undef F1135_POSITION_X
+#undef F1135_POSITION_Y
+#undef F1135_MOTION_X
+#undef F1135_MOTION_Y
