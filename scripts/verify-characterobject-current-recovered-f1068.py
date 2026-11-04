@@ -39,9 +39,9 @@ required_fields={
  0x337:3,0x338:12,0x339:10,0x33a:18,
  0x33b:33,0x33c:5,0x33d:33,0x33e:5,0x33f:33,
  0x340:5,0x341:33,0x342:5,0x343:33,0x344:5,0x345:3,
- 0x346:34,0x347:10,0x348:9,0x349:7,0x34a:7,0x34b:6,
+ 0x346:34,0x347:10,0x348:9,0x349:7,0x34a:7,0x34b:6,0x34c:18,
 }
-assert len(required_fields)==42 and sum(required_fields.values())==602
+assert len(required_fields)==43 and sum(required_fields.values())==620
 src=R/'probes/CharacterObjectWhole0050A580F1044.cpp'
 source=src.read_text()
 # Native state imports, not fake marker labels, must actually be represented.
@@ -59,6 +59,7 @@ for token in ('#include "CharacterObjectBoss330F1068.inc"',
  '#include "CharacterObjectBoss349F1081.inc"',
  '#include "CharacterObjectBoss34AF1082.inc"',
  '#include "CharacterObjectBoss34BF1083.inc"',
+ '#include "CharacterObjectBoss34CF1085.inc"',
  '#include "CharacterObjectBoss335F1064.inc"',
  '#include "CharacterObjectBoss333334F1065.inc"',
  '#include "CharacterObjectBoss338F1062.inc"',
@@ -251,6 +252,22 @@ for action,expected_count in required_fields.items():
   assert N[83].mnemonic==S[83].mnemonic=='mov'
   assert N[83].op_str==S[83].op_str and '0xc2200000' in N[83].op_str
   assert any(f['x86_ordinal']==42 and f['original_native_PE_target']=='0x658e80' for f in pe)
+ if action==0x34c:
+  # Native real x87 field/velocity order, 8-shot loop of 0x360
+  # and the actual original parent-owned trajectory float +0x314.
+  assert N[45].mnemonic==S[45].mnemonic=='fld'
+  assert any(f['x86_ordinal']==45 and f['original_native_PE_target']=='0x65989c' for f in pe)
+  assert N[60].mnemonic==S[60].mnemonic=='fld'
+  assert '+ 0x54' in N[60].op_str and '+ 0x54' in S[60].op_str
+  assert N[61].mnemonic==S[61].mnemonic=='fmul'
+  assert any(f['x86_ordinal']==61 and f['original_native_PE_target']=='0x657f74' for f in pe)
+  assert N[169].mnemonic==S[169].mnemonic=='cmp'
+  assert N[172].mnemonic==S[172].mnemonic=='imul'
+  assert N[172].op_str==S[172].op_str and '0x2d' in N[172].op_str
+  assert N[192].mnemonic==S[192].mnemonic=='call'
+  assert any(f['x86_ordinal']==192 and f['original_native_PE_target']=='0x453a70' for f in pe)
+  assert N[189].mnemonic==S[189].mnemonic=='push'
+  assert N[189].op_str==S[189].op_str=='0x360'
  if action==0x347:
   # Actual signed facing*25 and two original x87 FMUL/FSUBR/FADD
   # independent fade tracks, distinct from the similar 0x339 source.
@@ -287,7 +304,7 @@ original_total=sum(row['original_interior_CODE_B'] for row in rows)
 x86total=sum(row['original_native_x86'] for row in rows)
 src_total=sum(row['current_source_interior_CODE_B'] for row in rows)
 fields_total=sum(len(row['native_physically_correct_PE_call_global_fields']) for row in rows)
-assert (original_total,x86total,fields_total)==(34539,7513,602)
+assert (original_total,x86total,fields_total)==(35805,7786,620)
 summary={'original_Boss':'0x0050A580','original_whole_CODE_B':81539,
  'original_whole_x86':17435,'selected_partial_source_CODE_B':end,'selected_partial_source_x86':len(I),
  'source_partial_afterRET_DATA_B':567,'original_recovered_independent_case_interior_count':len(rows),
@@ -301,4 +318,4 @@ summary={'original_Boss':'0x0050A580','original_whole_CODE_B':81539,
  'original_81KB_whole_function_exact':False,'new_exact_original_whole_CODE_B':0,
  'all_979_cold_replay':False,'native_states':rows}
 (O/'verified-summary.json').write_text(json.dumps(summary,indent=2)+'\n')
-print('F1083 LIVE 42 original game action interiors: original',original_total,'CODE B /',x86total,'x86, native mnemonic+GPR',x86total,'/',x86total,'and genuine PE nonlocal',fields_total,'/',fields_total,'. Current partial source',end,'B /',len(I),'x86, NOT exact whole 81KB; accepted new original bytes 0.')
+print('F1085 LIVE 43 original game action interiors: original',original_total,'CODE B /',x86total,'x86, native mnemonic+GPR',x86total,'/',x86total,'and genuine PE nonlocal',fields_total,'/',fields_total,'. Current partial source',end,'B /',len(I),'x86, NOT exact whole 81KB; accepted new original bytes 0.')

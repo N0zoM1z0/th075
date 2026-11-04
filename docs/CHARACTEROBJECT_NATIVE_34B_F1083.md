@@ -1,5 +1,7 @@
 # F1083 — Native 0x34B (412B/85 x86), actual float-ground comparison and -40.0f stage velocity
 
+**Historical F1083 source checkpoint:** after [F1085](CHARACTEROBJECT_NATIVE_34C_F1085.md) the live parent also includes real 0x34C gameplay, and current source geometry is 43 states. The 42-state/28,444B figures below were correct for that earlier partial-parent checkpoint, while the original 0x34B 85/85 native instructions and 6/6 physical PE fields remain valid.
+
 The original SHA-pinned Japanese TH075 v1.11 game has one
 `CharacterObject::Advance` at **0050A580**, containing **81,539
 original CODE B /17,435 native x86**, plus genuine 567 separate
