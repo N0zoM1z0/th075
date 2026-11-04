@@ -1,5 +1,7 @@
 # F1113 — Real original 0x384, 1,267B/277-x86 landing burst with two independent difficulty branches
 
+**Historical F1113 checkpoint:** the current parent now also recovers [F1114 authentic 0x385](CHARACTEROBJECT_NATIVE_385_F1114.md). The original 384 277/277 mnemonic/GPR/width and 24/24 PE field checks remain valid; 66-case/68,489B source geometry below is the earlier snapshot.
+
 The pinned Japanese TH075 v1.11 original has **one** `CharacterObject::Advance` callable at `0050A580`, **81,539 original CODE B /17,435 native x86**, followed by genuine 567B afterRET jump/sparse DATA. Native action **`0x384` is physically `0051AAFD..0051AFF0`, 1,267 original CODE B /277 x86**, now genuinely implemented as one C++ inner case of that still-NONEXACT parent.
 
 Original behavior: real parent signed +0x3A0 loss expires the actor; stage/frame zero resets `0040FBB0` motion, own +0x80 countdown, +0x7C status, +0xD8 timer, both scales, opacity and velocities. Stages below 6 add native float **00658348** to X/Y scales, clamping each to **2.0f** against real global **00657480**. Stages beyond 5 check actual `actorY+velocityY` against original ground **0065782C** using the native x87 `TEST AH,0x41; JP` ordered comparison. On landing it zeroes Y/X velocities, calls actual parent `00453D40(11)` and native `0040FAC0(0x385)`, and performs the authentic **difficulty-dependent projectile burst**.
