@@ -6,7 +6,7 @@
 case F1108_CASE: {
     if (PARENT_FIELD(signed short,0x60)>0x31 &&
         PARENT_FIELD(signed short,0x60)<0x96 &&
-        SELF_FIELD(signed short,0x62)<2) {
+        F1024_PHASE(this).stageAt62<2) {
         NativeParentExpiredAt0045B830();
         for (int shot=0;shot<2;++shot)
             reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
@@ -18,7 +18,7 @@ case F1108_CASE: {
         }
         return;
     }
-    if (SELF_FIELD(signed short,0x62)==0 && SELF_FIELD(signed short,0x64)==0 &&
+    if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0 &&
         SELF_FIELD(signed short,0xD8)==0) {
         SetNativeMotionAt0040FBB0(0,0.0f,0);
         SELF_FIELD(float,0x1C)=1.0f;
@@ -35,7 +35,7 @@ case F1108_CASE: {
     }
     F1037_POSITION(this).xPosition=float(SELF_FIELD(signed char,0x66))*F1037_MOTION(this).xMotion+F1037_POSITION(this).xPosition;
     F1037_POSITION(this).yPosition=F1037_POSITION(this).yPosition-F1037_MOTION(this).yMotion;
-    if (SELF_FIELD(signed short,0x62)==0) {
+    if (F1024_PHASE(this).stageAt62==0) {
         SetNativeAngleBitsAt0040FB70(SELF_FIELD(unsigned int,0xC8),
             float(SELF_FIELD(signed short,0xD8)));
         --SELF_FIELD(signed short,0xD8);

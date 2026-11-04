@@ -2,7 +2,7 @@
 // character Object action interiors. Repeated C++ grammar: actual separate
 // switch cases, no whole-game exact credit, native scaling and alpha fade.
 case F1055_CASE: {
-    if (SELF_FIELD(signed short,0x62)==0 && SELF_FIELD(signed short,0x64)==0) {
+    if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
         SetNativeMotionAt0040FBB0(0,0,0);
         SELF_FIELD(float,0x1C)=1.0f;
         SELF_FIELD(float,0x20)=1.0f;

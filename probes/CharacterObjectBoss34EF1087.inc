@@ -1,7 +1,7 @@
 // F1087: genuine original Japanese 0x34E game action, native
 // 005136C8..00513B88 (1216 CODE B/263 x86) in ONE nonexact boss.
 case 0x34E: {
-    if (SELF_FIELD(signed short,0x62)==0 && SELF_FIELD(signed short,0x64)==0) {
+    if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
         SetNativeMotionAt0040FBB0(0,0.0f,0);
         SELF_FIELD(int,0x7C)=0;
         SELF_FIELD(float,0x1C)=1.0f;
@@ -27,13 +27,13 @@ case 0x34E: {
     if ((PARENT_GRANDPARENT_FIELD(signed short,0x324)<=0 ||
         PARENT_FIELD(signed short,0x324)<=0 ||
         PARENT_FIELD(signed short,0x3A0)<=0) &&
-        SELF_FIELD(signed short,0x62)<2)
+        F1024_PHASE(this).stageAt62<2)
         SetAuxActionAt0040FB40(2);
     if (PARENT_FIELD(signed short,0x60)==0x2C1 &&
         PARENT_FIELD(signed short,0x62)==2 &&
-        SELF_FIELD(signed short,0x62)<2)
+        F1024_PHASE(this).stageAt62<2)
         SetAuxActionAt0040FB40(2);
-    if (SELF_FIELD(signed short,0x62)==0) {
+    if (F1024_PHASE(this).stageAt62==0) {
         if ((PARENT_FIELD(signed short,0x60)==0x195 && PARENT_FIELD(signed short,0x62)==4) ||
             (PARENT_FIELD(signed short,0x60)==0x1F4 && PARENT_FIELD(signed short,0x62)==14) ||
             (PARENT_FIELD(signed short,0x60)==0x1F5 && PARENT_FIELD(signed short,0x62)==14)) {
@@ -47,7 +47,7 @@ case 0x34E: {
             reinterpret_cast<F1051Grandparent*>(PARENT)->NativePrepareAt00453D40(4);
         }
     }
-    if (SELF_FIELD(signed short,0x62)>1) {
+    if (F1024_PHASE(this).stageAt62>1) {
         if (SELF_FIELD(unsigned char,0x11)>10)
             SELF_FIELD(unsigned char,0x11)-=10;
         else {
@@ -55,7 +55,7 @@ case 0x34E: {
             return;
         }
     }
-    if (SELF_FIELD(signed short,0x62)==1 &&
+    if (F1024_PHASE(this).stageAt62==1 &&
         PARENT_FIELD(signed short,0x60)==0x2C1 &&
         PARENT_FIELD(signed short,0x62)==3) {
         SetAuxActionAt0040FB40(0);
@@ -66,7 +66,7 @@ case 0x34E: {
         NativeParentExpiredAt0045B830();
         return;
     }
-    if (SELF_FIELD(signed short,0x62)==2 && SELF_FIELD(signed short,0x64)==0) {
+    if (F1024_PHASE(this).stageAt62==2 && F1024_PHASE(this).frameAt64==0) {
         SetAuxActionAt0040FB40(0);
         PARENT_FIELD(float,0x36C)=PARENT_FIELD(float,0x36C)-g_F1085_LastYAt006592A4;
         reinterpret_cast<F1051Grandparent*>(PARENT)->NativePrepareAt00453D40(20);

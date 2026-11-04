@@ -3,7 +3,7 @@
 case 0x325: {
     if (PARENT_FIELD(signed short,0x60)>49 &&
         PARENT_FIELD(signed short,0x60)<150 &&
-        SELF_FIELD(signed short,0x62)<2) {
+        F1024_PHASE(this).stageAt62<2) {
         NativeParentExpiredAt0045B830();
         for (int shot=0;shot<3;++shot) {
             reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
@@ -16,7 +16,7 @@ case 0x325: {
         }
         return;
     }
-    if (SELF_FIELD(signed short,0x62)==0 && SELF_FIELD(signed short,0x64)==0) {
+    if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
         SetNativeMotionAt0040FBB0(0,0,0);
         SELF_FIELD(float,0x1C)=1.0f;
         SELF_FIELD(float,0x20)=1.0f;

@@ -13,7 +13,7 @@ case 0x389: {
         NativeParentExpiredAt0045B830();
         return;
     }
-    if (SELF_FIELD(signed short,0x62)==0 && SELF_FIELD(signed short,0x64)==0) {
+    if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
         SetNativeMotionAt0040FBB0(0,0.0f,0);
         SELF_FIELD(signed short,0x80)=1;
         SELF_FIELD(int,0x7C)=0;
@@ -30,7 +30,7 @@ case 0x389: {
             float(SELF_FIELD(signed short,0xDA)),
             float(SELF_FIELD(signed short,0xD8))*g_F1057_SpeedScaleAt006590B4);
     }
-    if (SELF_FIELD(signed short,0x62)<=1) {
+    if (F1024_PHASE(this).stageAt62<=1) {
         SetNativeTwoFloatsAt0040FB70(
             float(SELF_FIELD(signed short,0xDA)),
             float(SELF_FIELD(signed short,0xD8))*g_F1057_SpeedScaleAt006590B4);
@@ -46,7 +46,7 @@ case 0x389: {
         SELF_FIELD(signed short,0xD8)=SELF_FIELD(signed short,0xDC);
     F1037_POSITION(this).xPosition=float(SELF_FIELD(signed char,0x66))*F1037_MOTION(this).xMotion+F1037_POSITION(this).xPosition;
     F1037_POSITION(this).yPosition=F1037_POSITION(this).yPosition-F1037_MOTION(this).yMotion;
-    if (SELF_FIELD(int,0x7C)!=0 && SELF_FIELD(int,0x7C)!=6 && SELF_FIELD(signed short,0x62)==1) {
+    if (SELF_FIELD(int,0x7C)!=0 && SELF_FIELD(int,0x7C)!=6 && F1024_PHASE(this).stageAt62==1) {
         F1037_MOTION(this).xMotion=0.0f;
         F1037_MOTION(this).yMotion=0.0f;
         SetAuxActionAt0040FB40(2);
@@ -54,7 +54,7 @@ case 0x389: {
         SELF_FIELD(float,0x20)=2.5f;
         return;
     }
-    if (SELF_FIELD(signed short,0x62)>1) {
+    if (F1024_PHASE(this).stageAt62>1) {
         SELF_FIELD(float,0x1C)=SELF_FIELD(float,0x1C)*g_F1055_FadeScaleAt006598A4;
         SELF_FIELD(float,0x20)=SELF_FIELD(float,0x20)*g_F1055_FadeScaleAt006598A4;
         if (SELF_FIELD(unsigned char,0x11)>=25)

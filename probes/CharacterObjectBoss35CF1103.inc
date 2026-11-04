@@ -1,7 +1,7 @@
 // F1103 original Japanese 0x35C, native 005163BA..00516517:
 // 349 CODE B /72 x86 in ONE still-NONEXACT 81KB parent.
 case 0x35C: {
-    if (SELF_FIELD(signed short,0x62)==0 && SELF_FIELD(signed short,0x64)==0) {
+    if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
         SetNativeMotionAt0040FBB0(0,0.0f,0);
         SELF_FIELD(signed short,0x80)=99;
         SELF_FIELD(int,0x7C)=0;
@@ -17,7 +17,7 @@ case 0x35C: {
     }
     SELF_FIELD(float,0x1C)=SELF_FIELD(float,0x1C)+g_F1057_SpeedScaleAt006590B4;
     SELF_FIELD(float,0x20)=SELF_FIELD(float,0x20)+g_F1057_SpeedScaleAt006590B4;
-    if (SELF_FIELD(signed short,0x62)>0) {
+    if (F1024_PHASE(this).stageAt62>0) {
         if (SELF_FIELD(unsigned char,0x11)>15)
             SELF_FIELD(unsigned char,0x11)-=10;
         else {

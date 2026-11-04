@@ -4,7 +4,7 @@ case 0x3E5: {
     SELF_FIELD(unsigned int,0x44)=PARENT_FIELD(unsigned int,0x44);
     F1037_POSITION(this).yPosition=0.0f;
     SELF_FIELD(signed short,0x8A)=1;
-    if (SELF_FIELD(signed short,0x62)==0 && SELF_FIELD(signed short,0x64)==0) {
+    if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
         SetNativeMotionAt0040FBB0(0,0.0f,0);
         SELF_FIELD(float,0x1C)=3.0f;
         SELF_FIELD(float,0x20)=3.0f;

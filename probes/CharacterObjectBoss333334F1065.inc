@@ -8,7 +8,7 @@
 case F1065_ACTION: {
     if (PARENT_FIELD(signed short,0x60)>0x45 &&
         PARENT_FIELD(signed short,0x60)<0x96 &&
-        SELF_FIELD(signed short,0x62)<0x17) {
+        F1024_PHASE(this).stageAt62<0x17) {
         NativeParentExpiredAt0045B830();
         for (int shot=0;shot<8;++shot) {
             reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
@@ -25,7 +25,7 @@ case F1065_ACTION: {
         NativeParentExpiredAt0045B830();
         return;
     }
-    if (SELF_FIELD(signed short,0x62)==0 && SELF_FIELD(signed short,0x64)==0) {
+    if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
         SetNativeMotionAt0040FBB0(0,0,0);
         SELF_FIELD(float,0x1C)=0.1f;
         SELF_FIELD(float,0x20)=0.1f;
@@ -67,7 +67,7 @@ case F1065_ACTION: {
     F1037_POSITION(this).xPosition=float(SELF_FIELD(signed char,0x66))*F1037_MOTION(this).xMotion + F1037_POSITION(this).xPosition;
     F1037_POSITION(this).yPosition=F1037_POSITION(this).yPosition-F1037_MOTION(this).yMotion;
     if (SELF_FIELD(signed short,0x80)==0 &&
-        SELF_FIELD(signed short,0x62)<0x17 && SELF_FIELD(signed short,0xD8)>0) {
+        F1024_PHASE(this).stageAt62<0x17 && SELF_FIELD(signed short,0xD8)>0) {
         SetAuxActionAt0040FB40(0x17);
         return;
     }
@@ -75,7 +75,7 @@ case F1065_ACTION: {
         NativeParentExpiredAt0045B830();
         return;
     }
-    if (SELF_FIELD(signed short,0x62)==0x17 && SELF_FIELD(signed short,0x64)==0 &&
+    if (F1024_PHASE(this).stageAt62==0x17 && F1024_PHASE(this).frameAt64==0 &&
         SELF_FIELD(signed short,0xDA)<0) {
         SetAuxActionAt0040FB40(1);
         ++SELF_FIELD(signed short,0xDA);

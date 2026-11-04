@@ -1,7 +1,7 @@
 // F1080 real original Japanese action 0x348: PE 005125A8..00512815,
 // 621 native CODE B / 132 x86 inside ONE still nonexact 81KB game callable.
 case 0x348: {
-    if (SELF_FIELD(signed short,0x62)==0 && SELF_FIELD(signed short,0x64)==0) {
+    if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
         SetNativeMotionAt0040FBB0(0,0.0f,0);
         SELF_FIELD(int,0x7C)=0;
         SELF_FIELD(float,0x1C)=1.0f;
@@ -23,13 +23,13 @@ case 0x348: {
     F1037_POSITION(this).xPosition=F1037_MOTION(this).xMotion+F1037_POSITION(PARENT).xPosition;
     F1037_POSITION(this).yPosition=F1037_MOTION(this).yMotion+F1037_POSITION(PARENT).yPosition+g_F1057_YOffsetAt00657888;
     SELF_FIELD(float,0x30)=SELF_FIELD(float,0x30)+g_F1080_AngleIncreaseAt00657850;
-    if (SELF_FIELD(signed short,0x62)==1) {
+    if (F1024_PHASE(this).stageAt62==1) {
         if (PARENT_FIELD(signed short,0x60)!=0x2BE ||
             (PARENT_FIELD(signed short,0x60)==0x2BE &&
              PARENT_FIELD(signed short,0x62)>8))
             SetAuxActionAt0040FB40(2);
     }
-    if (SELF_FIELD(signed short,0x62)>1) {
+    if (F1024_PHASE(this).stageAt62>1) {
         if (SELF_FIELD(unsigned char,0x11)>25)
             SELF_FIELD(unsigned char,0x11)-=25;
         else {

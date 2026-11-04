@@ -2,7 +2,7 @@
 // 005123B9..005125A8, original 495 CODE B /101 ordered x86.
 // This is an INNER state inside ONE nonexact original 81KB Boss.
 case 0x347: {
-    if (SELF_FIELD(signed short,0x62)==0 && SELF_FIELD(signed short,0x64)==0) {
+    if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
         SetNativeMotionAt0040FBB0(0,0,0);
         SELF_FIELD(float,0x1C)=0.5f;
         SELF_FIELD(float,0x20)=0.5f;
@@ -25,7 +25,7 @@ case 0x347: {
             float(SELF_FIELD(signed short,0xD8))*g_F1075_StepAt006598A0 *
             int(SELF_FIELD(signed short,0xD8)<10)) +
         g_F1061_OffsetAt00658354 + SELF_FIELD(float,0x20);
-    if (SELF_FIELD(signed short,0x62)>1) {
+    if (F1024_PHASE(this).stageAt62>1) {
         if (SELF_FIELD(unsigned char,0x11)>20)
             SELF_FIELD(unsigned char,0x11)-=20;
         else {

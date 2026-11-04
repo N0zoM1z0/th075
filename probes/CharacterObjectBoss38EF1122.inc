@@ -5,11 +5,11 @@ case 0x38E: {
         NativeParentExpiredAt0045B830();
         return;
     }
-    if (SELF_FIELD(signed short,0x62)==0 && SELF_FIELD(signed short,0x64)==0) {
+    if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
         SELF_FIELD(signed short,0xD8)=0;
         SELF_FIELD(unsigned int,0x50)=SELF_FIELD(unsigned int,0xC8);
     }
-    if (SELF_FIELD(signed short,0x62)==1 && SELF_FIELD(signed short,0x64)==0)
+    if (F1024_PHASE(this).stageAt62==1 && F1024_PHASE(this).frameAt64==0)
         reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
             0x38F,SELF_FIELD(unsigned int,0x44),SELF_FIELD(unsigned int,0x48),
             SELF_FIELD(signed char,0x66),1);

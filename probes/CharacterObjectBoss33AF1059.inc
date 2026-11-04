@@ -1,7 +1,7 @@
 // F1059 genuine Japanese native 0050EF5F..0050F25A (763 CODE B /168 x86).
 // This is one INNER action in the ONE still-NONEXACT 81KB CharacterObject.
 case 0x33A: {
-    if (SELF_FIELD(signed short,0x62)==0 && SELF_FIELD(signed short,0x64)==0) {
+    if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
         SetNativeMotionAt0040FBB0(0,0,0);
         SELF_FIELD(signed short,0x80)=1;
         SELF_FIELD(int,0x7C)=0;
@@ -31,7 +31,7 @@ case 0x33A: {
         NativeParentExpiredAt0045B830();
         return;
     }
-    if (SELF_FIELD(signed short,0x62)>1) {
+    if (F1024_PHASE(this).stageAt62>1) {
         if (SELF_FIELD(unsigned char,0x11)>=10)
             SELF_FIELD(unsigned char,0x11)-=10;
         else

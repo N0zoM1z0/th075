@@ -5,7 +5,7 @@ case 0x323: {
         NativeParentExpiredAt0045B830();
         return;
     }
-    if (SELF_FIELD(signed short,0x62)==0 && SELF_FIELD(signed short,0x64)==0) {
+    if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
         SetNativeMotionAt0040FBB0(0,0,0);
         SELF_FIELD(signed short,0x80)=1;
         SELF_FIELD(int,0x7C)=0;
@@ -23,7 +23,7 @@ case 0x323: {
             F1037_MOTION(this).yMotion,F1037_MOTION(this).xMotion)/g_F1057_AngleDivAt00657828;
     }
     ++SELF_FIELD(signed short,0xD8);
-    if (SELF_FIELD(signed short,0x62)<2) {
+    if (F1024_PHASE(this).stageAt62<2) {
         SetNativeAngleBitsAt0040FB70(SELF_FIELD(unsigned int,0xC8),
             float(SELF_FIELD(signed short,0xD8))*g_F1057_SpeedScaleAt006590B4+
             g_F1070_AnimSpeedAt006592A4);
@@ -36,7 +36,7 @@ case 0x323: {
         SELF_FIELD(int,0x7C)=0;
         ++SELF_FIELD(signed short,0x80);
     }
-    if (SELF_FIELD(int,0x7C)!=0 && SELF_FIELD(signed short,0x62)==1) {
+    if (SELF_FIELD(int,0x7C)!=0 && F1024_PHASE(this).stageAt62==1) {
         SetAuxActionAt0040FB40(2);
         SELF_FIELD(float,0x1C)=4.0f;
         SELF_FIELD(float,0x20)=4.0f;
@@ -53,7 +53,7 @@ case 0x323: {
         NativeParentExpiredAt0045B830();
         return;
     }
-    if (SELF_FIELD(signed short,0x62)>1) {
+    if (F1024_PHASE(this).stageAt62>1) {
         if (SELF_FIELD(unsigned char,0x11)>=25) {
             SELF_FIELD(unsigned char,0x11)-=25;
             SELF_FIELD(unsigned char,0x12)-=25;

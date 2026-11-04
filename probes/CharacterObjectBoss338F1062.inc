@@ -19,7 +19,7 @@ case 0x338: {
         NativeParentExpiredAt0045B830();
         return;
     }
-    if (SELF_FIELD(signed short,0x62)==0 && SELF_FIELD(signed short,0x64)==0) {
+    if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
         SetNativeMotionAt0040FBB0(0,0,0);
         SELF_FIELD(float,0x1C)=0.0f;
         SELF_FIELD(float,0x20)=0.0f;
@@ -31,11 +31,11 @@ case 0x338: {
         SELF_FIELD(signed short,0x80)=5;
         SELF_FIELD(int,0x7C)=0;
     }
-    if (SELF_FIELD(signed short,0x62)==1) {
+    if (F1024_PHASE(this).stageAt62==1) {
         SELF_FIELD(float,0x1C)=SELF_FIELD(float,0x1C)+g_F1062_ScaleStepAt006583F8;
         SELF_FIELD(float,0x20)=SELF_FIELD(float,0x20)+g_F1062_ScaleStepAt006583F8;
     }
-    if (SELF_FIELD(signed short,0x62)==2 && SELF_FIELD(signed short,0x64)==0)
+    if (F1024_PHASE(this).stageAt62==2 && F1024_PHASE(this).frameAt64==0)
         reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
             0x337,SELF_FIELD(unsigned int,0x44),SELF_FIELD(unsigned int,0x48),
             SELF_FIELD(signed char,0x66),1);
@@ -49,7 +49,7 @@ case 0x338: {
         NativeParentExpiredAt0045B830();
         return;
     }
-    if (SELF_FIELD(signed short,0x62)==2 && SELF_FIELD(signed short,0x64)==0)
+    if (F1024_PHASE(this).stageAt62==2 && F1024_PHASE(this).frameAt64==0)
         reinterpret_cast<F1051Grandparent*>(PARENT)->NativePrepareAt00453D40(8);
     return;
 }

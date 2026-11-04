@@ -1,6 +1,6 @@
 // F1054: Real native action 0x337, original 155B/35 x86; one 81KB parent.
 case 0x337: {
-    if (SELF_FIELD(signed short,0x62) == 0 && SELF_FIELD(signed short,0x64) == 0) {
+    if (F1024_PHASE(this).stageAt62 == 0 && F1024_PHASE(this).frameAt64 == 0) {
         SetNativeMotionAt0040FBB0(0,0,0);
         SELF_FIELD(float,0x1C) = 1.0f;
         SELF_FIELD(float,0x20) = 1.0f;

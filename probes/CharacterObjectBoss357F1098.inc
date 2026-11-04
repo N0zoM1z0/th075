@@ -3,16 +3,16 @@
 case 0x357: {
     if (PARENT_FIELD(signed short,0x60)>0x31 &&
         PARENT_FIELD(signed short,0x60)<0x96 &&
-        SELF_FIELD(signed short,0x62)<0x17) {
+        F1024_PHASE(this).stageAt62<0x17) {
         SetAuxActionAt0040FB40(0x17);
         return;
     }
-    if (PARENT_FIELD(signed short,0x60)==0x189 && SELF_FIELD(signed short,0x62)<0x17) {
+    if (PARENT_FIELD(signed short,0x60)==0x189 && F1024_PHASE(this).stageAt62<0x17) {
         F1037_POSITION(this).xPosition=F1037_POSITION(PARENT).xPosition+
             float(SELF_FIELD(signed char,0x66)*120);
         F1037_POSITION(this).yPosition=120.0f;
     }
-    if (SELF_FIELD(signed short,0x62)==0 && SELF_FIELD(signed short,0x64)==0) {
+    if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
         SetNativeMotionAt0040FBB0(0,0.0f,0);
         SELF_FIELD(float,0x1C)=0.1f;
         SELF_FIELD(float,0x20)=0.1f;

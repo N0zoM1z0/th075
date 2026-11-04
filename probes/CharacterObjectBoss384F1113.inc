@@ -5,7 +5,7 @@ case 0x384: {
         NativeParentExpiredAt0045B830();
         return;
     }
-    if (SELF_FIELD(signed short,0x62)==0 && SELF_FIELD(signed short,0x64)==0) {
+    if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
         SetNativeMotionAt0040FBB0(0,0.0f,0);
         SELF_FIELD(signed short,0x80)=1;
         SELF_FIELD(int,0x7C)=0;
@@ -19,7 +19,7 @@ case 0x384: {
         F1037_MOTION(this).xMotion=0.0f;
         F1037_MOTION(this).yMotion=0.0f;
     }
-    if (SELF_FIELD(signed short,0x62)<6) {
+    if (F1024_PHASE(this).stageAt62<6) {
         SELF_FIELD(float,0x1C)=SELF_FIELD(float,0x1C)+g_F1051_ScaleStepAt00658348;
         SELF_FIELD(float,0x20)=SELF_FIELD(float,0x20)+g_F1051_ScaleStepAt00658348;
         if (SELF_FIELD(float,0x1C)>g_F1057_NudgeAt00657480)
@@ -27,7 +27,7 @@ case 0x384: {
         if (SELF_FIELD(float,0x20)>g_F1057_NudgeAt00657480)
             SELF_FIELD(float,0x20)=2.0f;
     }
-    if (SELF_FIELD(signed short,0x62)>5) {
+    if (F1024_PHASE(this).stageAt62>5) {
         if (F1037_POSITION(this).yPosition+F1037_MOTION(this).yMotion<=g_F1044_GroundAt0065782C) {
             F1037_POSITION(this).yPosition=0.0f;
             F1037_MOTION(this).yMotion=0.0f;
@@ -57,8 +57,8 @@ case 0x384: {
             return;
         }
     }
-    if (PARENT_FIELD(signed short,0x62)==9 && SELF_FIELD(signed short,0x62)<6) {
-        SetAuxActionAt0040FB40(SELF_FIELD(signed short,0x62)+5);
+    if (PARENT_FIELD(signed short,0x62)==9 && F1024_PHASE(this).stageAt62<6) {
+        SetAuxActionAt0040FB40(F1024_PHASE(this).stageAt62+5);
         F1037_MOTION(this).xMotion=float(SELF_FIELD(signed char,0x66)) *
             (F1037_POSITION(PARENT_GRANDPARENT).xPosition-F1037_POSITION(this).xPosition)/g_F1113_DivisorAt0065988C;
         if (F1037_MOTION(this).xMotion<g_F1051_TrajectoryLowerAt00658290)
@@ -71,7 +71,7 @@ case 0x384: {
         SetAuxActionAt0040FB40(6);
         return;
     }
-    if (SELF_FIELD(signed short,0x62)==6 && SELF_FIELD(signed short,0x64)==0)
+    if (F1024_PHASE(this).stageAt62==6 && F1024_PHASE(this).frameAt64==0)
         SetAuxActionAt0040FB40(1);
     return;
 }

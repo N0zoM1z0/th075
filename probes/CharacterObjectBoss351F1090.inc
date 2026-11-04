@@ -3,7 +3,7 @@
 case 0x351: {
     F1037_POSITION(this).xPosition = F1037_POSITION(PARENT).xPosition+float(PARENT_FIELD(signed char,0x66)*20);
     ++SELF_FIELD(signed short,0xDA);
-    if (SELF_FIELD(signed short,0x62)==0 && SELF_FIELD(signed short,0x64)==0) {
+    if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
         SetNativeMotionAt0040FBB0(0,0.0f,0);
         SELF_FIELD(signed short,0x80)=99;
         SELF_FIELD(int,0x7C)=0;
@@ -18,25 +18,25 @@ case 0x351: {
         F1037_MOTION(this).xMotion=0.0f;
         F1037_MOTION(this).yMotion=-1.0f;
     }
-    if (PARENT_FIELD(signed short,0x62)>6 && SELF_FIELD(signed short,0x62)<6) {
-        SetAuxActionAt0040FB40(SELF_FIELD(signed short,0x62)+5);
+    if (PARENT_FIELD(signed short,0x62)>6 && F1024_PHASE(this).stageAt62<6) {
+        SetAuxActionAt0040FB40(F1024_PHASE(this).stageAt62+5);
         reinterpret_cast<F1051Grandparent*>(PARENT)->NativePrepareAt00453D40(15);
     }
-    if (SELF_FIELD(signed short,0x62)>5 && SELF_FIELD(signed short,0x62)<11) {
+    if (F1024_PHASE(this).stageAt62>5 && F1024_PHASE(this).stageAt62<11) {
         F1037_MOTION(this).yMotion=0.0f;
         if (SELF_FIELD(float,0x1C)>=g_F1070_InitSpeedAt00657858) {
-            SetAuxActionAt0040FB40(SELF_FIELD(signed short,0x62)+5);
+            SetAuxActionAt0040FB40(F1024_PHASE(this).stageAt62+5);
             return;
         }
         SELF_FIELD(float,0x1C)=SELF_FIELD(float,0x1C)+g_F1057_NudgeAt00657480;
         SELF_FIELD(float,0x20)=SELF_FIELD(float,0x20)+g_F1057_NudgeAt00657480;
     }
-    if (SELF_FIELD(signed short,0x62)>10 && SELF_FIELD(signed short,0x62)<16) {
+    if (F1024_PHASE(this).stageAt62>10 && F1024_PHASE(this).stageAt62<16) {
         reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
             0x33A,SELF_FIELD(unsigned int,0x44),SELF_FIELD(unsigned int,0x48),
             SELF_FIELD(signed char,0x66),1);
     }
-    if (SELF_FIELD(signed short,0x62)>15) {
+    if (F1024_PHASE(this).stageAt62>15) {
         if (SELF_FIELD(unsigned char,0x11)>5)
             SELF_FIELD(unsigned char,0x11)-=5;
         else {
@@ -55,12 +55,12 @@ case 0x351: {
         SetAuxActionAt0040FB40(16);
         return;
     }
-    if (SELF_FIELD(signed short,0x64)==0) SELF_FIELD(int,0x7C)=0;
-    if (SELF_FIELD(signed short,0x62)==6 && SELF_FIELD(signed short,0x64)==0)
+    if (F1024_PHASE(this).frameAt64==0) SELF_FIELD(int,0x7C)=0;
+    if (F1024_PHASE(this).stageAt62==6 && F1024_PHASE(this).frameAt64==0)
         SetAuxActionAt0040FB40(1);
-    if (SELF_FIELD(signed short,0x62)==11 && SELF_FIELD(signed short,0x64)==0)
+    if (F1024_PHASE(this).stageAt62==11 && F1024_PHASE(this).frameAt64==0)
         SetAuxActionAt0040FB40(6);
-    if (SELF_FIELD(signed short,0x62)==16 && SELF_FIELD(signed short,0x64)==0 &&
+    if (F1024_PHASE(this).stageAt62==16 && F1024_PHASE(this).frameAt64==0 &&
         PARENT_FIELD(signed short,0x60)==0x2BF && PARENT_FIELD(signed short,0x62)>6 && PARENT_FIELD(signed short,0x62)<9) {
         SetAuxActionAt0040FB40(11);
     }

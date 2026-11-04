@@ -1,4 +1,6 @@
 #include "FrameActorMotionPairsF1037.hpp"
+#include "FighterAnimationPhaseBorrowedF1024.hpp"
+#include "FighterGaugeBorrowedF980.hpp"
 // Native original-shaped TH075 CharacterObject whole switch C++ candidate.
 // Original source/owner layout and the entire 81KB machine function remain NONEXACT;
 // all genuine case/default gameplay is sourced from independent original PE evidence.

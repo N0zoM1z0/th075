@@ -25,7 +25,7 @@ case 0x35E: {
         NativeParentExpiredAt0045B830();
         return;
     }
-    if (SELF_FIELD(signed short,0x62)==0 && SELF_FIELD(signed short,0x64)==0) {
+    if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
         SetNativeMotionAt0040FBB0(0,0.0f,0);
         SELF_FIELD(signed short,0x80)=1;
         SELF_FIELD(int,0x7C)=0;
@@ -44,7 +44,7 @@ case 0x35E: {
         SetNativeTwoFloatsAt0040FB70(float(SELF_FIELD(signed short,0xDC)),
             float(SELF_FIELD(signed short,0xD8))*g_F1057_SpeedScaleAt006590B4);
     }
-    if (SELF_FIELD(signed short,0x62)>0) {
+    if (F1024_PHASE(this).stageAt62>0) {
         if (SELF_FIELD(signed short,0x80)==0) {
             NativeParentExpiredAt0045B830();
             reinterpret_cast<F1051Grandparent*>(PARENT)->NativePrepareAt00453D40(1);

@@ -4,7 +4,7 @@ case 0x34A: {
     SELF_FIELD(unsigned int,0x44)=PARENT_FIELD(unsigned int,0x44);
     SELF_FIELD(float,0x48)=0.0f;
     SELF_FIELD(signed short,0x8A)=1;
-    if (SELF_FIELD(signed short,0x62)==0 && SELF_FIELD(signed short,0x64)==0) {
+    if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
         SetNativeMotionAt0040FBB0(0,0.0f,0);
         SELF_FIELD(float,0x1C)=2.5f;
         SELF_FIELD(float,0x20)=2.5f;
@@ -18,7 +18,7 @@ case 0x34A: {
         SELF_FIELD(float,0x28)=-80.0f;
         reinterpret_cast<F1051Grandparent*>(PARENT)->NativePrepareAt00453D40(0x10);
     }
-    if (SELF_FIELD(signed short,0x62)==1) {
+    if (F1024_PHASE(this).stageAt62==1) {
         // The original compares parent action +0x60 with 0x2C0, then
         // checks the parent's distinct +0x62 WORD against 0x2C0 and 6.
         // Do not collapse this to a simpler presumed stage condition.
@@ -29,7 +29,7 @@ case 0x34A: {
             return;
         }
     }
-    if (SELF_FIELD(signed short,0x62)==2) {
+    if (F1024_PHASE(this).stageAt62==2) {
         if (SELF_FIELD(unsigned char,0x11)>15)
             SELF_FIELD(unsigned char,0x11)-=15;
         else {

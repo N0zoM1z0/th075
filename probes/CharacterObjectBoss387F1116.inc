@@ -12,7 +12,7 @@ case 0x387: {
         NativeParentExpiredAt0045B830();
         return;
     }
-    if (SELF_FIELD(signed short,0x62)==0 && SELF_FIELD(signed short,0x64)==0) {
+    if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
         SetNativeMotionAt0040FBB0(0,0.0f,0);
         SELF_FIELD(signed short,0x80)=1;
         SELF_FIELD(int,0x7C)=0;
@@ -31,14 +31,14 @@ case 0x387: {
     }
     F1037_POSITION(this).xPosition=float(SELF_FIELD(signed char,0x66))*F1037_MOTION(this).xMotion+F1037_POSITION(this).xPosition;
     F1037_POSITION(this).yPosition=F1037_POSITION(this).yPosition+F1037_MOTION(this).yMotion;
-    if (SELF_FIELD(signed short,0x62)==1) {
+    if (F1024_PHASE(this).stageAt62==1) {
         if (F1037_POSITION(this).yPosition+F1037_MOTION(this).yMotion<=g_F1044_GroundAt0065782C) {
             SetAuxActionAt0040FB40(2);
             F1037_MOTION(this).yMotion=-F1037_MOTION(this).yMotion;
             F1037_POSITION(this).yPosition=0.0f;
         }
     }
-    if (SELF_FIELD(signed short,0x62)==2) {
+    if (F1024_PHASE(this).stageAt62==2) {
         if (SELF_FIELD(unsigned char,0x11)>15)
             SELF_FIELD(unsigned char,0x11)-=15;
         else {
