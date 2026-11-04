@@ -122,21 +122,22 @@ rechecks **1,697/1,697 physical external PE targets**,
 tested 10 normal VC7.1 variants without fixing the true native CMP
 roles; check the original PE, not stale hypotheses.
 
-**81KB single-switch 0050A580:** [F1103 genuine original
-`0x358..0x35C` source, provisional GPR phase](CHARACTEROBJECT_NATIVE_358_TO_35C_PROVISIONAL_F1103.md)
-adds FIVE real game-case C++ interiors (2,313 original native B/499
-x86), with **499/499 native mnemonic positions, 35/35 native PE
-nonlocal destinations and 100/100 scalar immediates**, but only
-**161/499 original GPR roles**. Twelve natural complete parent C++
-grammar variants did not repair the mismatch. **Keep these five
-PROVISIONAL**, not exact or fully source-recovered. The prior
-[F1098 native 0x357](CHARACTEROBJECT_NATIVE_357_F1098.md) and other
-**54 strict cases retain 46,518 original native CODE B/10,086
-matching mnemonic+GPR slots/771 PE fields/1,895 scalar immediates**.
-Current whole partial source **49,493 CODE B/10,695 x86**, original
-**81,539B/17,435 x86** and native afterRET 567B DATA verified.
-**Original whole GAME remains NONEXACT; zero new accepted exact
-CODE.** Use only [live one-parent native PE validator](../scripts/verify-characterobject-current-recovered-f1068.py).
+**81KB single-switch 0050A580:** [F1105 genuine original
+`0x35D` randomized projectile and `0x35F` terminal](CHARACTEROBJECT_NATIVE_35D_35F_PROVISIONAL_F1105.md)
+restore two additional real inner C++ handlers (347 original B/77
+x86, **9/9 original PE fields**), with native `FLD [actor+44]; FADD
+[00657888]` plus `00455580` random spawn of 0x330. These two and the
+[F1103 0x358..35C five handlers](CHARACTEROBJECT_NATIVE_358_TO_35C_PROVISIONAL_F1103.md)
+remain **SEVEN PROVISIONAL original game states** (2,660 native B/576
+mnemonics, **199/576 GPR roles**, **44/44 PE fields**). They are
+EXCLUDED from strict recovery totals. Earlier [F1098 original
+0x357](CHARACTEROBJECT_NATIVE_357_F1098.md) and 53 others retain
+**54 STRICT recovered interiors /46,518 original CODE B /10,086
+GPR+mnemonic positions /771 genuine PE fields /1,895 scalar
+immediate positions**. Current whole partial C++ **49,806B /10,768
+x86**, original whole **81,539B /17,435 x86**, native afterRET
+567B DATA. **Whole game callable NONEXACT; zero new accepted exact
+CODE**. Use [live one-parent original PE verifier](../scripts/verify-characterobject-current-recovered-f1068.py).
 
 ## 4. All three remaining independent small/medium originals
 

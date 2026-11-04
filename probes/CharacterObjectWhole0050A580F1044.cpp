@@ -2,7 +2,7 @@
 // F539 natural switch *probe*, not original fighter source or CODE credit.
 // This file is regenerable from the original PE under ignored .analysis.
 class FighterSwitchF569_Boss0050A580 { public: void Advance(); void NativeParentExpiredAt0045B830(); void SetNativeMotionAt0040FBB0(int,float,int); short GetNativeActionAt0040FA30(); void SetAuxActionAt0040FB40(int); void SetNativeActionAt0040FAC0(int); void SetNativeTwoFloatsAt0040FB70(float,float); void SetNativeAngleBitsAt0040FB70(unsigned int,float); int RandomBoundaryAt00455580(int,int); };
-class F1051Grandparent { public: void NativePrepareAt00453D40(int); void SpawnObjectAt00453A70(int,unsigned int,unsigned int,signed char,int); void SpawnObjectAt00453A70(int,float,float,signed char,int); void SpawnProjectileAt00453C80(int,unsigned int,unsigned int,signed char,int); void InitTrajectoryAt00453E60(float); void SpawnSevenAt00453B50(int,unsigned int,unsigned int,char,int,int,int); };
+class F1051Grandparent { public: void NativePrepareAt00453D40(int); void SpawnObjectAt00453A70(int,unsigned int,unsigned int,signed char,int); void SpawnObjectAt00453A70(int,float,float,signed char,int); void SpawnProjectileAt00453C80(int,unsigned int,unsigned int,signed char,int); void InitTrajectoryAt00453E60(float); void SpawnSevenAt00453B50(int,unsigned int,unsigned int,char,int,int,int); void StartAnimationAt0046D000(int); };
 extern unsigned int g_FighterProbeMarker;
 extern float g_F1044_GravityAt0065747C;
 extern float g_F1044_GroundAt0065782C;
@@ -193,9 +193,9 @@ void FighterSwitchF569_Boss0050A580::Advance() {
 #include "CharacterObjectBoss35AF1100.inc"
 #include "CharacterObjectBoss35BF1102.inc"
 #include "CharacterObjectBoss35CF1103.inc"
-        case 0x35D: g_FighterProbeMarker = 862; break;
+#include "CharacterObjectBoss35DF1104.inc"
         case 0x35E: g_FighterProbeMarker = 863; break;
-        case 0x35F: g_FighterProbeMarker = 864; break;
+#include "CharacterObjectBoss35FF1105.inc"
         case 0x360: g_FighterProbeMarker = 865; break;
         case 0x361: g_FighterProbeMarker = 866; break;
         case 0x362: g_FighterProbeMarker = 867; break;

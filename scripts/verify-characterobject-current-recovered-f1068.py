@@ -468,7 +468,7 @@ assert (original_total,x86total,fields_total)==(46518,10086,771)
 # PROVISIONAL: their native mnemonics, scalar immediates and physical PE
 # destinations match, but whole-parent GPR phases are NOT native yet.
 # Do not inflate the exact/recovered counts or mask GPR-role debt.
-provisional_native_fields={0x358:11,0x359:2,0x35a:3,0x35b:13,0x35c:6}
+provisional_native_fields={0x358:11,0x359:2,0x35a:3,0x35b:13,0x35c:6,0x35d:7,0x35f:2}
 provisional_rows=[]
 for act,expected_field_count in provisional_native_fields.items():
  ix=orig_sparse[act-0x320]
@@ -513,7 +513,7 @@ for act,expected_field_count in provisional_native_fields.items():
  provisional_rows.append(row)
  print(hex(act),'PROVISIONAL original',stop-start,'B/',len(N),'x86:',
        'MN',len(N),'GPR',gpr_match,'PE',len(fs),'scalar',scalars,flush=True)
-assert len(provisional_rows)==5
+assert len(provisional_rows)==7
 summary={'original_Boss':'0x0050A580','original_whole_CODE_B':81539,
  'original_whole_x86':17435,'selected_partial_source_CODE_B':end,'selected_partial_source_x86':len(I),
  'source_partial_afterRET_DATA_B':567,'original_recovered_independent_case_interior_count':len(rows),
