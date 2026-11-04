@@ -1,5 +1,7 @@
 # F1116 — Real 0x387 random flying shard, native bounce/opacity: 752B/167 x86 all original widths and PE fields
 
+**Historical F1116 checkpoint:** live source now also includes [F1117 actual 0x388](CHARACTEROBJECT_NATIVE_388_F1117.md). The 69-state/70,667B partial C++ metrics below are from the earlier snapshot; original 387 167/167 widths and 17/17 PE fields still pass in the current 70-state source.
+
 The pinned Japanese TH075 1.11 original game has one authored `CharacterObject::Advance` at `0050A580`, **81,539 native original CODE B /17,435 x86** with genuine 567B afterRET sparse-switch data. F1116 restores original inner case `0x387` at **`0051B5AF..0051B89F`**, **752 native CODE B /167 x86**, in that still-incomplete one-switch C++ parent. This is a real original game-state interior, NOT a new independently exact original function.
 
 Original 0x387 checks four physical arena boundaries `0065925C/00659258/006583B4/00658374`, then signed parent+0x3A0 loss, with authentic `0045B830` expiry on failure. At stage/frame zero it calls native `0040FBB0` motion reset, sets countdown +0x80=1, status+0x7C=0, direction +0xD8=0, scales to 1.0f, alpha bytes to 0xFF; generates **three real independent random values** using original `00455580`: angle+0x30 is `Random(0,0x167)`, X velocity is `float(Random(0,16)-8)`, Y velocity is `float(Random(0,6)+12)-00659888`. It then adds original angular offset **0065786C** to +0x30.
