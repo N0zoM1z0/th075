@@ -174,6 +174,8 @@ F1037: [paired actor position/motion float windows](FRAME_ACTOR_MOTION_PAIRS_F10
 
 F1049: [typed native background timeline receiver](BACKGROUND_TIMELINE_BORROW_F1049.md) replaces 36 raw `this+0x18` drawing calls with a true borrowed call interface. The single affected native source object was cold-replayed **54/54 exact** (**6,612 previously credited original bytes**); not new whole-function credit.
 
+F1053: [native x87 facing leaf lvalue source grammar](COMBAT_FACING_LVALUE_GRAMMAR_F1053.md) names the real two actors' float X views in the complete 130B facing leaf. Unlike the initially rejected parenthesized expression (`FLD/FLD/FCOMPP`), the selected natural unparenthesized lvalue preserves native `FLD/FCOMP`. The affected `BattleCombat.cpp` source was **4/4 full cold exact** (4,283 previously credited CODE B); both large hit functions' strict COFF `$L` labels remain unchanged.
+
 ## 6. Agent operating checklist / storage
 
 **Preflight, no whole corpus replay:**

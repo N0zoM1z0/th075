@@ -232,19 +232,25 @@ short CombatActor::CalculateDamage(CombatActor *attack)
     }
 }
 
+// Native this+0x44 and native other actor reached through +0x2E8.
+// Direct borrowed expression names preserve old compiler AST exactly.
+#define F1053_SELF_X *reinterpret_cast<float *>(reinterpret_cast<unsigned char *>(this) + 0x44)
+#define F1053_OTHER_X *reinterpret_cast<float *>(reinterpret_cast<unsigned char *>( \
+            *reinterpret_cast<void **>(reinterpret_cast<unsigned char *>(this) + 0x2E8)) + 0x44)
 bool CombatActor::UpdateFacingFromOpponent()
 {
     signed char previous = FIELD(signed char, this, 0x66);
-    if (*reinterpret_cast<float *>(reinterpret_cast<unsigned char *>(this) + 0x44) <
-        *reinterpret_cast<float *>(reinterpret_cast<unsigned char *>(
-            *reinterpret_cast<void **>(reinterpret_cast<unsigned char *>(this) + 0x2E8)) + 0x44)) {
+    if (F1053_SELF_X <
+        F1053_OTHER_X) {
         FIELD(signed char, this, 0x66) = 1;
         return FIELD(signed char, this, 0x66) != previous;
-    } else if (*reinterpret_cast<float *>(reinterpret_cast<unsigned char *>(this) + 0x44) >
-        *reinterpret_cast<float *>(reinterpret_cast<unsigned char *>(
-            *reinterpret_cast<void **>(reinterpret_cast<unsigned char *>(this) + 0x2E8)) + 0x44)) {
+    } else if (F1053_SELF_X >
+        F1053_OTHER_X) {
         FIELD(signed char, this, 0x66) = -1;
         return FIELD(signed char, this, 0x66) != previous;
     }
     return false;
 }
+
+#undef F1053_OTHER_X
+#undef F1053_SELF_X
