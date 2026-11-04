@@ -1,5 +1,7 @@
 # F1054 — Two more original CharacterObject action handlers with native call/field proof
 
+**Historical F1054 twelve-state checkpoint:** the current C++ parent now includes five additional [F1055 native fade states](CHARACTEROBJECT_FIVE_FADE_STATES_F1055.md). This also restores 0x345 GPR roles to 35/35. The twelve-state GPR/source-byte numbers below are the prior bounded snapshot, not the current whole-source result.
+
 The pinned Japanese TH075 v1.11 **81,539B / 17,435-x86** complete
 CharacterObject Advance at `0050A580` is still NONEXACT. Its one native
 sparse switch owns 92 afterRET DIR32 jump entries and 199 original

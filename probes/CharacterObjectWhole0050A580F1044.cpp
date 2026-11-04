@@ -10,6 +10,7 @@ extern float g_F1051_ScaleStepAt00658348;
 extern float g_F1051_ScaleCeilingAt0065747C;
 extern float g_F1051_TrajectoryUpperAt006590C4;
 extern float g_F1051_TrajectoryLowerAt00658290;
+extern float g_F1055_FadeScaleAt006598A4;
 #define RAW reinterpret_cast<char*>(this)
 #define I16(off) *reinterpret_cast<signed short*>(RAW+(off))
 #define OWNER (*reinterpret_cast<char**>(RAW+0x2E8))
@@ -58,15 +59,25 @@ void FighterSwitchF569_Boss0050A580::Advance() {
         case 0x339: g_FighterProbeMarker = 826; break;
         case 0x33A: g_FighterProbeMarker = 827; break;
         case 0x33B: g_FighterProbeMarker = 828; break;
-        case 0x33C: g_FighterProbeMarker = 829; break;
+#define F1055_CASE 0x33C
+#include "CharacterObjectBossFadeF1055.inc"
+#undef F1055_CASE
         case 0x33D: g_FighterProbeMarker = 830; break;
-        case 0x33E: g_FighterProbeMarker = 831; break;
+#define F1055_CASE 0x33E
+#include "CharacterObjectBossFadeF1055.inc"
+#undef F1055_CASE
         case 0x33F: g_FighterProbeMarker = 832; break;
-        case 0x340: g_FighterProbeMarker = 833; break;
+#define F1055_CASE 0x340
+#include "CharacterObjectBossFadeF1055.inc"
+#undef F1055_CASE
         case 0x341: g_FighterProbeMarker = 834; break;
-        case 0x342: g_FighterProbeMarker = 835; break;
+#define F1055_CASE 0x342
+#include "CharacterObjectBossFadeF1055.inc"
+#undef F1055_CASE
         case 0x343: g_FighterProbeMarker = 836; break;
-        case 0x344: g_FighterProbeMarker = 837; break;
+#define F1055_CASE 0x344
+#include "CharacterObjectBossFadeF1055.inc"
+#undef F1055_CASE
 #include "CharacterObjectBoss345F1054.inc"
         case 0x346: g_FighterProbeMarker = 839; break;
         case 0x347: g_FighterProbeMarker = 840; break;
