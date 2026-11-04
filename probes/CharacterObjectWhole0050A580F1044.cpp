@@ -224,26 +224,26 @@ void FighterSwitchF569_Boss0050A580::Advance() {
 #undef F1108_NEXT_ID
 #undef F1108_CASE
 #include "CharacterObjectBoss365F1110.inc"
-#define F1110_CASE 0x366
-#define F1110_NEXT_ACTION 0x33E
-#include "CharacterObjectBoss365369F1110.inc"
-#undef F1110_NEXT_ACTION
-#undef F1110_CASE
-#define F1110_CASE 0x367
-#define F1110_NEXT_ACTION 0x340
-#include "CharacterObjectBoss365369F1110.inc"
-#undef F1110_NEXT_ACTION
-#undef F1110_CASE
-#define F1110_CASE 0x368
-#define F1110_NEXT_ACTION 0x342
-#include "CharacterObjectBoss365369F1110.inc"
-#undef F1110_NEXT_ACTION
-#undef F1110_CASE
-#define F1110_CASE 0x369
-#define F1110_NEXT_ACTION 0x344
-#include "CharacterObjectBoss365369F1110.inc"
-#undef F1110_NEXT_ACTION
-#undef F1110_CASE
+#define F1111_CASE 0x366
+#define F1111_NEXT_ACTION 0x33E
+#include "CharacterObjectBoss366369F1111.inc"
+#undef F1111_NEXT_ACTION
+#undef F1111_CASE
+#define F1111_CASE 0x367
+#define F1111_NEXT_ACTION 0x340
+#include "CharacterObjectBoss366369F1111.inc"
+#undef F1111_NEXT_ACTION
+#undef F1111_CASE
+#define F1111_CASE 0x368
+#define F1111_NEXT_ACTION 0x342
+#include "CharacterObjectBoss366369F1111.inc"
+#undef F1111_NEXT_ACTION
+#undef F1111_CASE
+#define F1111_CASE 0x369
+#define F1111_NEXT_ACTION 0x344
+#include "CharacterObjectBoss366369F1111.inc"
+#undef F1111_NEXT_ACTION
+#undef F1111_CASE
         case 0x384: g_FighterProbeMarker = 901; break;
         case 0x385: g_FighterProbeMarker = 902; break;
         case 0x386: g_FighterProbeMarker = 903; break;

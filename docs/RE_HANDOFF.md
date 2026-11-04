@@ -122,19 +122,22 @@ rechecks **1,697/1,697 physical external PE targets**,
 tested 10 normal VC7.1 variants without fixing the true native CMP
 roles; check the original PE, not stale hypotheses.
 
-**81KB single-switch 0050A580:** [F1110 original `0x365`
-2,214B homing fighter case](CHARACTEROBJECT_NATIVE_365_F1110.md)
-restores **452/452 native x86 mnemonics, GPR roles and instruction
-widths**, **32/32 true physical original PE fields**, **78/78
-scalar immediates**, real `0x33C` spawn and signed-angle wrap.
-The one-parent live verifier now covers **61 strict original inner
-states /53,559 original CODE B /11,578 matching native x86 /
-880 PE fields /2,143 scalar slots**. Seven other source-authored
-states remain provisional. Current partial parent **58,441 CODE B /
-12,586 x86** versus original whole **81,539B /17,435 x86**
-with real 567 postRET switch DATA. **Original complete callable
-NONEXACT; accepted new original whole-game CODE 0B.**
-Reproduce with [live one-parent native PE verifier](../scripts/verify-characterobject-current-recovered-f1068.py).
+**81KB single-switch 0050A580:** [F1111 genuine native
+`0x366–0x369` homing-angle action family](CHARACTEROBJECT_NATIVE_366_369_F1111.md)
+restores **four original 2,214B/452-x86 cases** with **1,808/1,808
+ordered mnemonics, GPR positions and x86 widths**, **128/128
+original physical PE fields**, **312/312 scalar immediates**, and
+real `0x33E/340/342/344` projectiles. Together with [F1110 real
+`0x365`](CHARACTEROBJECT_NATIVE_365_F1110.md), the native 5-case
+family spans **11,070 native original CODE B** with full original
+width/mnemonic/GPR positions. Live original-PE verification covers
+**65 strict original case interiors /62,415 native CODE B /13,386
+native x86 positions /1,008 original PE fields /2,455 scalar
+immediates**; seven other cases remain GPR-provisional. Current
+partial C++ emits **67,237B/14,386 x86** versus original full
+**81,539B/17,435 x86**, real 567B afterRET DATA.
+**Original whole callable still NONEXACT, 0B new accepted CODE.**
+Reproduce only [live one-parent original PE](../scripts/verify-characterobject-current-recovered-f1068.py).
 
 ## 4. All three remaining independent small/medium originals
 

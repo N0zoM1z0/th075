@@ -1,5 +1,7 @@
 # F1110 — Real native 0x365, full 2,214B/452-x86 homing action with all original widths, registers and PE fields
 
+**Historical F1110 checkpoint:** four original full-length [F1111 0x366–0x369](CHARACTEROBJECT_NATIVE_366_369_F1111.md) cases now join the same native family. Older 61-case/58,441B partial parent measurements below describe the F1110 source snapshot; actual 365 has retained 452/452 original widths/GPRs and 32/32 native physical PE fields in the live 65-case parent.
+
 The SHA-pinned Japanese TH075 v1.11 original contains **one**
 `CharacterObject::Advance` at `0050A580` (**81,539 original callable
 CODE B /17,435 native x86** plus 567 separately owned afterRET
