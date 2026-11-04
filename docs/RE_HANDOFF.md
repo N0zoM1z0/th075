@@ -122,20 +122,22 @@ rechecks **1,697/1,697 physical external PE targets**,
 tested 10 normal VC7.1 variants without fixing the true native CMP
 roles; check the original PE, not stale hypotheses.
 
-**81KB single-switch 0050A580:** [F1082 genuine original
-`0x34A` sprite/parent action](CHARACTEROBJECT_NATIVE_34A_F1082.md)
-recovers **41 real game-state interiors /34,127 native original CODE
-B /7,428 x86 mnemonic+GPR positions /596 physical original PE
-fields /1,387 scalar-immediate positions**. Original 0x34A is
-486B/102 x86, authentic two terminal JMPs and original 0x2C0
-parent-action/phase checks; all 102 mnemonics+GPR and 7 original
-PE targets verified. [F1081 original 0x349](CHARACTEROBJECT_NATIVE_349_F1081.md)
+**81KB single-switch 0050A580:** [F1083 real `0x34B` stage
+15/Y-velocity gameplay](CHARACTEROBJECT_NATIVE_34B_F1083.md)
+recovers **42 original game-state interiors /34,539 native CODE
+B /7,513 original mnemonic+GPR positions /602 physically original
+PE external targets /1,404 scalar-immediate positions**.
+The native 0x34B x87 ground check is `TEST AH,0x41; JNE` and stage
+15 Y velocity becomes bit-exact −40.0f. The [F1082 original
+0x34A](CHARACTEROBJECT_NATIVE_34A_F1082.md) has authentic separate
+return paths; [F1081 original 0x349](CHARACTEROBJECT_NATIVE_349_F1081.md)
 and [F1080 original 0x348](CHARACTEROBJECT_NATIVE_348_F1080.md)
-remain independently PE-backed. The live one-parent verifier
-`../scripts/verify-characterobject-current-recovered-f1068.py`
-compiles only this source, **28,148B /7,574 x86** versus original
-**81,539B /17,435 x86**. Original 92 DIR32/199 sparse DATA
-preserved; **whole original NONEXACT, newly accepted CODE 0B**.
+have independently original x87 field positions. Current partial
+whole C++ emits **28,444B /7,657 x86** vs original
+**81,539B /17,435 x86**, genuine 92 DIR32/199 sparse DATA
+preserved. **Original 81KB whole still NONEXACT; newly accepted
+original CODE 0B.** Re-run only [live whole-parent original PE
+verifier](../scripts/verify-characterobject-current-recovered-f1068.py).
 
 ## 4. All three remaining independent small/medium originals
 

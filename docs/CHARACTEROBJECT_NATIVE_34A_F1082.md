@@ -1,5 +1,7 @@
 # F1082 — Original 486B action 0x34A: real 0x2C0 parent guards, stage fade and two return paths
 
+**Historical F1082 checkpoint:** the current partial C++ parent now adds [F1083 original 0x34B](CHARACTEROBJECT_NATIVE_34B_F1083.md). The native PE 0x34A evidence remains valid, but 41-state/28,148B numbers below refer to the older source snapshot; use the live 42-state verifier for current dimensions.
+
 The independently pinned Japanese TH075 1.11 game has **one** authored
 `CharacterObject::Advance` at `0050A580`, original **81,539 CODE B /
 17,435 x86**, plus genuine 567 separate afterRET jump/sparse DATA B.
