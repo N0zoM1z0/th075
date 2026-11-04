@@ -4,10 +4,16 @@
 Do not use archived H184 no-active-goal instructions. Current priorities and
 the handoff clean-state snapshot are in [RE_HANDOFF.md](RE_HANDOFF.md).
 Historical documents and tentative Ghidra labels are **not proof**.
-The current strongest complete *nonexact* giant parents are
-82KB `probes/FighterWhole004AC040F1020.cpp` (original-length
+The current full original-shaped *nonexact* giant parents include
+`probes/CharacterObjectWhole0050A580F1044.cpp` (**81,560B/17,435 x86
+against original 81,539B/17,435 x86**, 13 physical original branch
+target errors, 8 provisional native GPR case intervals and wrong stack
+frame), 82KB `probes/FighterWhole004AC040F1020.cpp` (original-length
 CODE/frame but 12 width and 6,958 GPR-role errors), plus local
-58KB F917 and 46KB F901 source probes. See original whole
+58KB F917 and 46KB F901 source probes. The 81KB original whole
+case verifier is `scripts/verify-characterobject-current-recovered-f1068.py`.
+A mnemonic-identical giant still needs original native **branch target
+ordinals** checked, not only instruction/GPR patterns or PE globals. See original whole
 [82KB](THIRD_FIGHTER_WHOLE_82KB_PE_TARGETS_F1028.md),
 [58KB](FIGHTER_58KB_ALL_NATIVE_PE_TARGETS_F1025.md) and
 [46KB](FIGHTER_46KB_ALL_NATIVE_PE_TARGETS_F1026.md)

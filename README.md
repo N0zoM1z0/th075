@@ -10,7 +10,7 @@ Only original, attributable, byte-identical **whole callable functions**
 earn canonical exact CODE credit. An internal case, original PE-similar
 mnemonic stream or matching total source length is not acceptance.
 
-## Current verified status (2026-10-31, F1029 research / 979 exact ledger)
+## Current verified status (2026-11-04, F1144 handoff / 979 exact ledger)
 
 | Property | Grounded result |
 | --- | --- |
@@ -37,8 +37,9 @@ always outrank historical F-series prose.
 
 ## Start here: current task queue
 
-The [**short active agent handoff**](docs/RE_HANDOFF.md) provides
-the latest evidence, unresolved original x86 differences, all
+The [**current agent handoff**](docs/RE_HANDOFF.md) provides
+the latest VERIFIED evidence, 13 currently unresolved physical
+branch targets inside the 81KB Boss, all
 25 remaining whole-function targets and targeted reproductions.
 The [source workflow](docs/RE_WORKFLOW.md), [AGENTS.md](AGENTS.md),
 and [storage and recovery policy](docs/STORAGE_HYGIENE.md) apply
@@ -70,9 +71,13 @@ F1020's [native 82KB frame/counter correction](docs/THIRD_FIGHTER_SHARED_REAL_RI
 recovered one real shared 2DB shot-loop variable, while
 [F1029](docs/THIRD_FIGHTER_NATIVE_259_ANGLE_GPR_F1029.md) rules out
 eight angle-expression spellings without improving the remaining
-register phase. The **81,539B `0050A580`** and **60,999B
-`0045DD70`** whole originals, plus the other 18 large originals,
-must also be attacked seriously; the
+register phase. The **81,539B `0050A580`** has now reached an original-shaped
+**81,560B/17,435-x86** C++ parent, with **13 incorrect physical
+branch targets, 8 GPR-provisional states, wrong native frame, and
+FUCOMPP debt**. It is still **NONEXACT**; see the
+[updated giant handoff](docs/RE_HANDOFF.md).
+The **60,999B `0045DD70`** and other giant originals must also be
+attacked seriously; the
 [original dispatch manifest](config/fighter-boss-dispatch-fingerprints.json)
 provides the true extents and jump DATA owners.
 
