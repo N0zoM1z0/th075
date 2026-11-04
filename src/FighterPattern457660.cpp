@@ -56,9 +56,7 @@ class FighterPattern457660 { public: void Load(); };
 #define NAME (reinterpret_cast<const char*>(this) + 196)
 #define SLOTS reinterpret_cast<PatternSlots457660*>(reinterpret_cast<char*>(this) + 1128)
 #define FRAME (SLOTS->At(patternId)->At(index))
-#define EXT_BYTE(off) (*reinterpret_cast<BYTE*>(reinterpret_cast<char*>(FRAME.extension) + (off)))
-#define EXT_SHORT(off) (*reinterpret_cast<short*>(reinterpret_cast<char*>(FRAME.extension) + (off)))
-#define EXT_FLOAT(off) (*reinterpret_cast<float*>(reinterpret_cast<char*>(FRAME.extension) + (off)))
+#define EXTENSION (*reinterpret_cast<FighterPatternExtensionBorrowF1035*>(FRAME.extension))
 
 void FighterPattern457660::Load() {
     unsigned int nRectangles;
@@ -107,25 +105,28 @@ void FighterPattern457660::Load() {
             } else if (frameType == 1) {
                 FRAME.simple = 0;
             } else if (frameType == 2) {
+                // Declare this borrowed type at its real use site. Earlier
+                // native filename literals keep their original COFF symbols.
+#include "FighterPatternExtensionBorrowF1035.hpp"
                 FRAME.ResetExtension();
-                ReadFile(sourceFile, &EXT_SHORT(0), 2, &nRead, 0);
-                ReadFile(sourceFile, &EXT_BYTE(1), 1, &nRead, 0);
-                ReadFile(sourceFile, &EXT_BYTE(2), 1, &nRead, 0);
-                ReadFile(sourceFile, &EXT_BYTE(3), 1, &nRead, 0);
-                ReadFile(sourceFile, &EXT_BYTE(4), 1, &nRead, 0);
+                ReadFile(sourceFile, &EXTENSION.firstWord.wordAt00, 2, &nRead, 0);
+                ReadFile(sourceFile, &EXTENSION.firstWord.flagBytesAt00[1], 1, &nRead, 0);
+                ReadFile(sourceFile, &EXTENSION.byteAt02, 1, &nRead, 0);
+                ReadFile(sourceFile, &EXTENSION.byteAt03, 1, &nRead, 0);
+                ReadFile(sourceFile, &EXTENSION.byteAt04, 1, &nRead, 0);
                 ReadFile(sourceFile, &packedValue, 2, &nRead, 0);
-                EXT_FLOAT(12) = packedValue * 0.01f;
-                EXT_FLOAT(16) = packedValue * 0.01f;
-                EXT_FLOAT(20) = packedValue * 0.01f;
-                ReadFile(sourceFile, &EXT_SHORT(6), 2, &nRead, 0);
-                ReadFile(sourceFile, &EXT_SHORT(8), 2, &nRead, 0);
-                ReadFile(sourceFile, &EXT_SHORT(10), 2, &nRead, 0);
+                EXTENSION.scaledAt0C = packedValue * 0.01f;
+                EXTENSION.scaledAt10 = packedValue * 0.01f;
+                EXTENSION.scaledAt14 = packedValue * 0.01f;
+                ReadFile(sourceFile, &EXTENSION.wordAt06, 2, &nRead, 0);
+                ReadFile(sourceFile, &EXTENSION.wordAt08, 2, &nRead, 0);
+                ReadFile(sourceFile, &EXTENSION.wordAt0A, 2, &nRead, 0);
                 ReadFile(sourceFile, &packedValue, 2, &nRead, 0);
-                EXT_FLOAT(24) = static_cast<float>(packedValue);
+                EXTENSION.valueAt18 = static_cast<float>(packedValue);
                 ReadFile(sourceFile, &packedValue, 2, &nRead, 0);
-                EXT_FLOAT(28) = static_cast<float>(packedValue);
+                EXTENSION.valueAt1C = static_cast<float>(packedValue);
                 ReadFile(sourceFile, &packedValue, 2, &nRead, 0);
-                EXT_FLOAT(32) = static_cast<float>(packedValue);
+                EXTENSION.valueAt20 = static_cast<float>(packedValue);
             }
             ReadFile(sourceFile, &FRAME.field16, 2, &nRead, 0);
             ReadFile(sourceFile, &packedValue, 2, &nRead, 0);
@@ -164,9 +165,7 @@ void FighterPattern457660::Load() {
     }
 }
 
-#undef EXT_FLOAT
-#undef EXT_SHORT
-#undef EXT_BYTE
+#undef EXTENSION
 #undef FRAME
 #undef SLOTS
 #undef NAME

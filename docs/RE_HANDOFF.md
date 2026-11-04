@@ -145,6 +145,8 @@ must fix their still-wrong EBP assignments.
 
 ## 5. Exact-preserving C++ type/owner work
 
+New F1035: [fighter pattern .pat extension typed borrow](FIGHTER_PATTERN_EXTENSION_BORROW_F1035.md) preserves the **entire 3,696B** original loader `00457660` (targeted 1/1 exact) while recovering the native overlapping WORD/BYTE and six floats. VC7.1 `$SG` identity required placing the borrowed definition at its first use, not at TU scope. No new authored CODE credit.
+
 These are **previously credited bytes**, not new acceptance.
 When modifying any translation unit or header, replay **ALL**
 already exact units in that affected source object; COFF `$L`
