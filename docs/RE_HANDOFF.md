@@ -133,7 +133,7 @@ restorable native archives; they are **not** a newly accepted
 
 | Original native full callable | Real size | Current truth and best next lead |
 | --- | ---: | --- |
-| `0041CE50` ArchiveCatalog destructor | **171B/51 x86** | [F936 real index/delete/filename control](ARCHIVE_NATIVE_LOOP_VALUE_CATEGORIES_F936.md); 14 physical PE fields, **108/115 nonfield bytes** matched; three real EBP temp slots permuted. [F900 live-owner controls](ARCHIVE_REAL_GROUPED_LIFETIMES_F900.md) negative |
+| `0041CE50` ArchiveCatalog destructor | **171B/51 x86** | [F936 real index/delete/filename control](ARCHIVE_NATIVE_LOOP_VALUE_CATEGORIES_F936.md); 14 physical PE fields, **108/115 nonfield bytes** matched; three real EBP temp slots permuted. [F900 live-owner controls](ARCHIVE_REAL_GROUPED_LIFETIMES_F900.md) negative; [F1034 original-list At return-value categories](ARCHIVE_NATIVE_RETURN_CATEGORIES_F1034.md) also negative |
 | `0043B0B0` Scene virtual destructor | **248B/75 x86** | [F1015 three genuine free-owner slot controls](SCENE_THREE_FREE_DECLARATION_ORDER_F1015.md); 12 real PE fields, **191/200 nonfield bytes** matched, original texture/delete EBP owners still different |
 | `00602A60` WinMain | **2,987B/654 x86** | [F911 selected live-source grammar](WINMAIN_REAL_MAIN_BEFORE_SCENE_F911.md) emits **2,984B /654 x86**; **645/654 original widths** correct. [F914 slot recovery](WINMAIN_NATIVE_FRAME_FIRST_SCENE_OWNER_F914.md) recovers native frame/three EBP slots but regresses width matches; [F927 used-gap controls](WINMAIN_REAL_USED_GAP_NEGATIVES_F927.md) negative. Original 60B afterRET scene table is NOT CODE |
 
