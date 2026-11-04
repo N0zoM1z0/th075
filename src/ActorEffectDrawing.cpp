@@ -1,4 +1,6 @@
 #include "FighterActionTimerPairF1027.hpp"
+#include "FrameActorMotionPairsF1037.hpp"
+#include "FighterRenderTransformWindowF1094.hpp"
 #include "SpriteDraw40CA80.hpp"
 #include "SpriteTransform.hpp"
 #include "GameLeafHelpers.hpp"
@@ -70,18 +72,18 @@ void FighterRender453F70::Render() {
     }
     if (FIELD(unsigned char, 0x40) != 0) {
         if (FIELD(unsigned char, 0x10) & 0x80) DRAWING->SetPixelShaderMode(0);
-        TRANSFORM(transformedQuad)->ScaleQuad(FIELD(signed char, 0x66) * (FRAME(short, 0) + FLOAT(0x34)),
-            FRAME(short, 2) - FLOAT(0x38), FLOAT(0x3C), FLOAT(0x1C), FLOAT(0x20), FLOAT(0x24));
-        TRANSFORM(transformedQuad)->RotateQuad(FIELD(signed char, 0x66) * (FRAME(short, 0) + FLOAT(0x34)),
-            FRAME(short, 2) - FLOAT(0x38), FLOAT(0x3C), FLOAT(0x28), FLOAT(0x2C), FIELD(signed char, 0x66) * FLOAT(0x30));
+        TRANSFORM(transformedQuad)->ScaleQuad(FIELD(signed char, 0x66) * (FRAME(short, 0) + F1094_TRANSFORM(this).pivotXAt34),
+            FRAME(short, 2) - F1094_TRANSFORM(this).pivotYAt38, F1094_TRANSFORM(this).pivotZAt3C, F1094_TRANSFORM(this).scaleXAt1C, F1094_TRANSFORM(this).scaleYAt20, F1094_TRANSFORM(this).scaleZAt24);
+        TRANSFORM(transformedQuad)->RotateQuad(FIELD(signed char, 0x66) * (FRAME(short, 0) + F1094_TRANSFORM(this).pivotXAt34),
+            FRAME(short, 2) - F1094_TRANSFORM(this).pivotYAt38, F1094_TRANSFORM(this).pivotZAt3C, F1094_TRANSFORM(this).rotationXAt28, F1094_TRANSFORM(this).rotationYAt2C, FIELD(signed char, 0x66) * F1094_TRANSFORM(this).rotationZAt30);
         spriteOffset.x = FIELD(short, 0x16);
         spriteOffset.y = FIELD(short, 0x18);
         spriteOffset.z = FIELD(short, 0x1A);
         drawColor = D3DCOLOR_ARGB(FIELD(unsigned char, 0x11), FIELD(unsigned char, 0x12), FIELD(unsigned char, 0x13), FIELD(unsigned char, 0x14));
     }
-    TRANSFORM(transformedQuad)->TranslateQuad(FLOAT(0x44) - FIELD(signed char, 0x66) * FRAME(short, 0), -FLOAT(0x48) - FRAME(short, 2), 0);
+    TRANSFORM(transformedQuad)->TranslateQuad(F1037_POSITION(this).xPosition - FIELD(signed char, 0x66) * FRAME(short, 0), -F1037_POSITION(this).yPosition - FRAME(short, 2), 0);
     if (g_RenderByte0067161C == 0) {
-        HISTORY->AppendElement(FRAME(short, 6), FLOAT(0x44), FLOAT(0x48), transformedQuad, spriteOffset, drawColor, 1);
+        HISTORY->AppendElement(FRAME(short, 6), F1037_POSITION(this).xPosition, F1037_POSITION(this).yPosition, transformedQuad, spriteOffset, drawColor, 1);
         if (g_RenderByte0066C237 != 0 && FIELD(int, 0x47C) <= 0) {
             HISTORY->RemoveFrontIfPresent();
             HISTORY->RemoveFrontIfPresent();
