@@ -122,29 +122,27 @@ rechecks **1,697/1,697 physical external PE targets**,
 tested 10 normal VC7.1 variants without fixing the true native CMP
 roles; check the original PE, not stale hypotheses.
 
-**81KB single-switch 0050A580:** [F1076 true native
-`0x346/0x347` stage/trajectory states](CHARACTEROBJECT_NATIVE_346_347_F1076.md)
-recover **38 independent original switch-case interiors /32,592
-original native CODE B /7,100 original x86 mnemonic+GPR positions /
-573 physically correct original PE targets**. Original 0x346
-restores 365 genuine x86 including stage-2 parent angle and native
-CRT conversion; its real gameplay restores following 0x347 from
-30/101 to **101/101 GPR** with its distinct rate/25 facing value.
-The [live current one-parent original PE verifier](../scripts/verify-characterobject-current-recovered-f1068.py)
-only compiles the affected partial parent, currently **26,974 CODE
-B/7,252 x86** against original **81,539B/17,435 x86**; authentic
-92 DIR32/199 sparse DATA bytes remain verified. **Whole original
-GAME callable is NONEXACT, zero new accepted original CODE**.
-Earlier [F1074 three unrolled projectile states](CHARACTEROBJECT_NATIVE_328_329_32A_F1074.md)
-and [F1071 original 0x323/0x324](CHARACTEROBJECT_NATIVE_323_324_F1071.md)
-remain PE-verified; do not count switch interiors as independent
-whole original exact callables.
+**81KB single-switch 0050A580:** [F1077 corrected real
+`0x339/0x33A` projectile IDs](CHARACTEROBJECT_NATIVE_SCALAR_IMMEDIATES_F1077.md)
+now additionally validates **1,321/1,321 original nonrelocated scalar
+immediates** across **38 native real state interiors /32,592 original
+CODE B /7,100 x86 mnemonic+GPR positions /573 original PE fields**.
+The source used to spawn sixteen `0x33A` objects in each of the real
+0x328/329/32A unrolled call families; **original PE shows one `0x339`
+then fifteen `0x33A`**, now genuinely fixed in C++. The [live one-parent
+PE verifier](../scripts/verify-characterobject-current-recovered-f1068.py)
+only builds the changed whole C++ parent (**26,974B/7,252 x86**)
+versus the original **81,539B/17,435 x86**. Authentic 92 DIR32/199
+sparse DATA remains verified; **whole original GAME callable is still
+NONEXACT, zero newly accepted exact original CODE**. See [F1076 real
+`0x346/0x347`](CHARACTEROBJECT_NATIVE_346_347_F1076.md) and [F1074
+three projectile states](CHARACTEROBJECT_NATIVE_328_329_32A_F1074.md).
 
 ## 4. All three remaining independent small/medium originals
 
 | Original native full callable | Real size | Current truth and best next lead |
 | --- | ---: | --- |
-| `0041CE50` ArchiveCatalog destructor | **171B/51 x86** | [F936 real index/delete/filename control](ARCHIVE_NATIVE_LOOP_VALUE_CATEGORIES_F936.md); 14 physical PE fields, **108/115 nonfield bytes** matched; three real EBP temp slots permuted. [F900 live-owner controls](ARCHIVE_REAL_GROUPED_LIFETIMES_F900.md) negative; [F1034 original-list At return-value categories](ARCHIVE_NATIVE_RETURN_CATEGORIES_F1034.md) also negative |
+| `0041CE50` ArchiveCatalog destructor | **171B/51 x86** | [F936 real index/delete/filename control](ARCHIVE_NATIVE_LOOP_VALUE_CATEGORIES_F936.md); 14 physical PE fields, **108/115 nonfield bytes** matched; three real EBP temp slots permuted. [F900 live-owner controls](ARCHIVE_REAL_GROUPED_LIFETIMES_F900.md) negative; [F1034 original-list At return-value categories](ARCHIVE_NATIVE_RETURN_CATEGORIES_F1034.md) and [F1078 twenty new complete element/reference owner tests](ARCHIVE_TRUE_ELEMENT_LIFETIMES_F1078.md) negative (six candidates 108/115) |
 | `0043B0B0` Scene virtual destructor | **248B/75 x86** | [F1015 three genuine free-owner slot controls](SCENE_THREE_FREE_DECLARATION_ORDER_F1015.md); [F1048 27 real texture/resource union lifetimes](SCENE_REUSED_TEXTURE_LIFETIMES_F1048.md) also nonnative 254B/77x86; 12 real PE fields, **191/200 nonfield bytes** matched, original texture/delete EBP owners still different |
 | `00602A60` WinMain | **2,987B/654 x86** | [F911 selected live-source grammar](WINMAIN_REAL_MAIN_BEFORE_SCENE_F911.md) emits **2,984B /654 x86**; **645/654 original widths** correct. [F914 slot recovery](WINMAIN_NATIVE_FRAME_FIRST_SCENE_OWNER_F914.md) recovers native frame/three EBP slots but regresses width matches; [F927 used-gap controls](WINMAIN_REAL_USED_GAP_NEGATIVES_F927.md) negative; [F1043 20 true Graphics member RAII owners](WINMAIN_GRAPHICS_OWNER_GRAMMARS_F1043.md) disproven by changed native constructor/destructor calls and 653/654 x86. Original 60B afterRET scene table is NOT CODE |
 

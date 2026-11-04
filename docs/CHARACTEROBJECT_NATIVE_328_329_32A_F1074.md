@@ -1,6 +1,6 @@
 # F1073/F1074 — Three genuine 1.7–1.8KB projectile states and 48 native unrolled 0x339/0x33A launches
 
-**F1077 corrected actual projectile IDs:** original PE ordinal 209 in `0x328` and ordinal 187 in `0x329/0x32A` each push `0x339`, not `0x33A`; the next 15 unrolled calls push `0x33A`. The first tracked F1074 source mistakenly used 16×`0x33A` even though mnemonics, GPR roles and 107/107 PE external fields matched. [F1077 original scalar-literal audit](CHARACTEROBJECT_NATIVE_SCALAR_IMMEDIATES_F1077.md) now detects and prevents this error.
+**F1077 corrected actual projectile IDs:** original PE ordinal 209 in `0x328` and ordinal 187 in `0x329/0x32A` each push `0x339`, not `0x33A`; the next 15 unrolled calls push `0x33A`. The first tracked F1074 source mistakenly used 16×`0x33A` even though mnemonics, GPR roles and 107/107 PE external fields matched. [F1077 original scalar-literal audit](CHARACTEROBJECT_SPAWN_IMMEDIATE_PROOF_F1077.md) now detects and prevents this error.
 
 **Historical F1074 checkpoint:** after restoring genuine [F1076 0x346/0x347](CHARACTEROBJECT_NATIVE_346_347_F1076.md), live whole-parent geometry and native coverage are now 38 states. The three F1074 state PE field and opcode proofs are still valid; 36-state compiler dimensions below are the earlier checkpoint.
 
