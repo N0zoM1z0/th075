@@ -1,5 +1,7 @@
 # F1097 — Distinct original 0x356: −7.5f vertical launch and real 00657F74 acceleration
 
+**Historical F1097 checkpoint:** current parent also includes [F1098 authentic 0x357](CHARACTEROBJECT_NATIVE_357_F1098.md). The 53-state/37,550B partial source metrics below are an earlier valid snapshot; the original 356 14/14 PE fields and initial −7.5f remain verified.
+
 The SHA-pinned Japanese TH075 1.11 executable has ONE original
 `CharacterObject::Advance` callable at `0050A580`: **81,539 native
 original CODE B /17,435 x86** and 567 genuine separate afterRET

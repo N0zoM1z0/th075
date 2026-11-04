@@ -122,19 +122,20 @@ rechecks **1,697/1,697 physical external PE targets**,
 tested 10 normal VC7.1 variants without fixing the true native CMP
 roles; check the original PE, not stale hypotheses.
 
-**81KB single-switch 0050A580:** [F1097 authentic
-`0x356`/−7.5f native vertical state](CHARACTEROBJECT_NATIVE_356_F1097.md)
-now represents **53 original game-state interiors /45,896 native
-original CODE B /9,955 original x86 mnemonic+GPR positions /
-764 physical original PE targets /1,868 scalar-immediate slots**.
-The native 0x356 (1,203B/251x86) launches with Y=−7.5f and uses
-`FLD [actor+54]; FADD [00657F74]`, distinct from [F1093 native
-0x354](CHARACTEROBJECT_NATIVE_354_F1093.md) with global 006583F8;
-all 14 original 356 PE fields match. Current partial parent
-**37,550B /10,077 x86** versus authentic **81,539B /17,435 x86**
-and genuine 567 afterRET sparse DATA. **Original entire game callable
-NONEXACT; newly accepted whole CODE 0 B.** Verify via the [one-parent
-original PE check](../scripts/verify-characterobject-current-recovered-f1068.py).
+**81KB single-switch 0050A580:** [F1098 real original
+`0x357` parent-facing ×120 and Y=120.0f](CHARACTEROBJECT_NATIVE_357_F1098.md)
+now covers **54 real game-state interiors /46,518 original native
+CODE B /10,086 original mnemonic+GPR positions /771 genuine
+physical PE fields /1,895 scalar-immediate positions**.
+The actual 357 is 622B/131x86 with original `TEST AH,5; JP`,
+parent action 0x189 and native action completion. Current partial
+source **38,034 CODE B/10,206 x86** vs authentic **81,539B /
+17,435 x86**, preserving 567 native afterRET sparse DATA.
+**Whole original GAME callable NONEXACT; zero newly accepted exact
+original CODE.** Preceding [F1097 real 0x356](CHARACTEROBJECT_NATIVE_356_F1097.md)
+and [F1095 0x355](CHARACTEROBJECT_NATIVE_355_F1095.md)
+retain their original PE validations. Run the [live one-parent
+native PE verifier](../scripts/verify-characterobject-current-recovered-f1068.py).
 
 ## 4. All three remaining independent small/medium originals
 
