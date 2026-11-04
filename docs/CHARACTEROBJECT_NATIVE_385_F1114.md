@@ -1,5 +1,7 @@
 # F1114 — Original 0x385 random scale and stage-3 retry: 557B/114 x86, all native widths and PE fields
 
+**Historical F1114 checkpoint:** current one-parent source additionally recovers [F1115 original 0x386](CHARACTEROBJECT_NATIVE_386_F1115.md). Native 385 114/114 widths and 10/10 real PE destinations remain verified; the 67-case/69,031B partial parent dimensions below are the earlier snapshot.
+
 Pinned Japanese TH075 1.11 has ONE original 81,539-byte `CharacterObject::Advance` at `0050A580` with 17,435 x86 and genuine 567B afterRET sparse-switch DATA. This change reconstructs physical native action **`0x385` at `0051AFF0..0051B21D`, 557 original CODE B /114 native x86**, as a real inner C++ case. It is **not an independently exact original callable**.
 
 Original `0x385` checks signed parent+0x3A0 loss, expires via `0045B830`, increments signed +0x80 countdown when collision/status+0x7C==6 and clears the status, and at initial stage/frame (0,0) performs real `0040FBB0` motion reset, sets signed +0x80 to 1, +0xD8 zero, X/Y scale to **1.0f/2.0f**, all four alpha bytes 0xFF and orientation+0x30 **15.0f**.

@@ -39,9 +39,9 @@ required_fields={
  0x337:3,0x338:12,0x339:10,0x33a:18,
  0x33b:33,0x33c:5,0x33d:33,0x33e:5,0x33f:33,
  0x340:5,0x341:33,0x342:5,0x343:33,0x344:5,0x345:3,
- 0x346:34,0x347:10,0x348:9,0x349:7,0x34a:7,0x34b:6,0x34c:18,0x34d:18,0x34e:18,0x34f:18,0x350:18,0x351:15,0x352:6,0x353:3,0x354:14,0x355:20,0x356:14,0x357:7,0x35f:2,0x360:15,0x361:15,0x362:15,0x363:15,0x364:15,0x365:32,0x366:32,0x367:32,0x368:32,0x369:32,0x384:24,0x385:10,
+ 0x346:34,0x347:10,0x348:9,0x349:7,0x34a:7,0x34b:6,0x34c:18,0x34d:18,0x34e:18,0x34f:18,0x350:18,0x351:15,0x352:6,0x353:3,0x354:14,0x355:20,0x356:14,0x357:7,0x35f:2,0x360:15,0x361:15,0x362:15,0x363:15,0x364:15,0x365:32,0x366:32,0x367:32,0x368:32,0x369:32,0x384:24,0x385:10,0x386:22,
 }
-assert len(required_fields)==67 and sum(required_fields.values())==1042
+assert len(required_fields)==68 and sum(required_fields.values())==1064
 src=R/'probes/CharacterObjectWhole0050A580F1044.cpp'
 source=src.read_text()
 # Native state imports, not fake marker labels, must actually be represented.
@@ -77,6 +77,7 @@ for token in ('#include "CharacterObjectBoss330F1068.inc"',
  '#include "CharacterObjectBoss366369F1111.inc"',
  '#include "CharacterObjectBoss384F1113.inc"',
  '#include "CharacterObjectBoss385F1114.inc"',
+ '#include "CharacterObjectBoss386F1115.inc"',
  '#include "CharacterObjectBoss335F1064.inc"',
  '#include "CharacterObjectBoss333334F1065.inc"',
  '#include "CharacterObjectBoss338F1062.inc"',
@@ -269,6 +270,25 @@ for action,expected_count in required_fields.items():
   assert N[83].mnemonic==S[83].mnemonic=='mov'
   assert N[83].op_str==S[83].op_str and '0xc2200000' in N[83].op_str
   assert any(f['x86_ordinal']==42 and f['original_native_PE_target']=='0x658e80' for f in pe)
+ if action==0x386:
+  # Native stage 1 uses FILD random(0,4), float 6590B4 and
+  # DOUBLE 6583B8, then genuine 412D90 absolute distance.
+  # Completion calls 453E60(10) and spawns 12 real 0x387
+  # projectiles with independent random Y and X offsets.
+  assert len(N)==195 and all(n.size==q.size for n,q in zip(N,S))
+  assert any(f['x86_ordinal']==81 and f['original_native_PE_target']=='0x6583b8' for f in pe)
+  assert any(f['x86_ordinal']==96 and f['original_native_PE_target']=='0x412d90' for f in pe)
+  assert any(f['x86_ordinal']==164 and f['original_native_PE_target']=='0x658264' for f in pe)
+  assert N[163].mnemonic==S[163].mnemonic=='fld'
+  assert '+ 0x44' in N[163].op_str and '+ 0x44' in S[163].op_str
+  assert N[164].mnemonic==S[164].mnemonic=='fadd'
+  assert N[148].mnemonic==S[148].mnemonic=='cmp'
+  assert N[148].op_str.endswith(', 0xc') and S[148].op_str.endswith(', 0xc')
+  for k,imm in ((154,'0x140'),(166,'0x50'),(175,'0x387')):
+   assert N[k].mnemonic==S[k].mnemonic=='push'
+   assert N[k].op_str==S[k].op_str==imm
+  assert all(any(f['x86_ordinal']==k and f['original_native_PE_target']=='0x455580' for f in pe)
+             for k in (77,157,169))
  if action==0x385:
   # Genuine 385 used scale X 1.0/Y 2.0, degree 15.0,
   # stage 2 random x87 with real additive 00659094 and
@@ -530,7 +550,7 @@ original_total=sum(row['original_interior_CODE_B'] for row in rows)
 x86total=sum(row['original_native_x86'] for row in rows)
 src_total=sum(row['current_source_interior_CODE_B'] for row in rows)
 fields_total=sum(len(row['native_physically_correct_PE_call_global_fields']) for row in rows)
-assert (original_total,x86total,fields_total)==(64239,13777,1042)
+assert (original_total,x86total,fields_total)==(65153,13972,1064)
 # Additional REAL original C++ interiors, deliberately kept separately
 # PROVISIONAL: their native mnemonics, scalar immediates and physical PE
 # destinations match, but whole-parent GPR phases are NOT native yet.
@@ -596,4 +616,4 @@ summary={'original_Boss':'0x0050A580','original_whole_CODE_B':81539,
  'additional_original_native_provisional_interiors':provisional_rows,
  'provisional_CASES_NOT_counted_as_recovered_or_exact':len(provisional_rows)}
 (O/'verified-summary.json').write_text(json.dumps(summary,indent=2)+'\n')
-print('F1114 LIVE 67 original game action interiors: original',original_total,'CODE B /',x86total,'x86, native mnemonic+GPR',x86total,'/',x86total,'and genuine PE nonlocal',fields_total,'/',fields_total,'. Current partial source',end,'B /',len(I),'x86, NOT exact whole 81KB; accepted new original bytes 0.')
+print('F1115 LIVE 68 original game action interiors: original',original_total,'CODE B /',x86total,'x86, native mnemonic+GPR',x86total,'/',x86total,'and genuine PE nonlocal',fields_total,'/',fields_total,'. Current partial source',end,'B /',len(I),'x86, NOT exact whole 81KB; accepted new original bytes 0.')
