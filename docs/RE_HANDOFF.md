@@ -122,10 +122,7 @@ rechecks **1,697/1,697 physical external PE targets**,
 tested 10 normal VC7.1 variants without fixing the true native CMP
 roles; check the original PE, not stale hypotheses.
 
-**81KB single-switch 0050A580:** the F569 one-switch diagnostic
-verifies the original 17-instruction parent guard, signed cooldown,
-92 physical DIR32 table slots and 199 sparse bytes, **not** the
-81,539B full body. Targeted entrypoint:
+**81KB single-switch 0050A580:** [F1044–F1045 new real native action 0x320](CHARACTEROBJECT_BOSS320_SOURCE_F1045.md) now restores 91/91 original x86 mnemonics and GPR roles for the 439B native `0x320` game behavior, including all six physical external targets. Its current source case is 335B and the giant still has marker-only other actions and EBP/width debt; **the whole 81,539B remains NONEXACT**. The earlier F569 one-switch diagnostic verifies the original 17-instruction parent guard, signed cooldown, 92 physical DIR32 table slots and 199 sparse bytes, **not** the 81,539B full body. Targeted entrypoint:
 `scripts/repo-python scripts/verify-characterobject-single-switch-source.py --boss 0x0050A580`.
 Old F13x–F148 full drafting/source traces are preserved under
 `.analysis/character-move-4ac040/`, the frozen history and the
