@@ -1,5 +1,7 @@
 # F1093 — Authentic original 0x354, 1,203B/251-x86 eight-shot actor and genuine x87 parity branches
 
+**Historical F1093 checkpoint:** the current original-shaped partial parent now additionally includes [F1095 `0x355`](CHARACTEROBJECT_NATIVE_355_F1095.md), so the 51-state/35,569B source figures below describe an earlier valid parent. Original 354 PE fields and FPU branch proof still pass.
+
 The pinned Japanese TH075 1.11 original contains ONE independently
 authored `CharacterObject::Advance` at `0050A580` (**81,539 native
 CODE B /17,435 x86**) followed by genuine 567 separately owned
