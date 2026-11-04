@@ -1,5 +1,7 @@
 # F1107 — Real 1,694-byte 0x35E homing angle pursuit, independent post-update branch, 35F GPR phase recovered
 
+**Historical F1107 checkpoint:** the current one-switch parent has since restored [F1108 native 0x360/0x361](CHARACTEROBJECT_NATIVE_360_361_F1108.md), raising the strict original-inner cohort to 57. The 55-case/51,498B whole-parent source sizes below are the earlier valid snapshot, not the current compiler geometry.
+
 The SHA-pinned Japanese TH075 1.11 original has ONE authored
 `CharacterObject::Advance` at `0050A580`: **81,539 original CODE
 B /17,435 native x86** and 567 genuine separate afterRET switch

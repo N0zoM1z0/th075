@@ -122,22 +122,21 @@ rechecks **1,697/1,697 physical external PE targets**,
 tested 10 normal VC7.1 variants without fixing the true native CMP
 roles; check the original PE, not stale hypotheses.
 
-**81KB single-switch 0050A580:** [F1105 genuine original
-`0x35D` randomized projectile and `0x35F` terminal](CHARACTEROBJECT_NATIVE_35D_35F_PROVISIONAL_F1105.md)
-restore two additional real inner C++ handlers (347 original B/77
-x86, **9/9 original PE fields**), with native `FLD [actor+44]; FADD
-[00657888]` plus `00455580` random spawn of 0x330. These two and the
-[F1103 0x358..35C five handlers](CHARACTEROBJECT_NATIVE_358_TO_35C_PROVISIONAL_F1103.md)
-remain **SEVEN PROVISIONAL original game states** (2,660 native B/576
-mnemonics, **199/576 GPR roles**, **44/44 PE fields**). They are
-EXCLUDED from strict recovery totals. Earlier [F1098 original
-0x357](CHARACTEROBJECT_NATIVE_357_F1098.md) and 53 others retain
-**54 STRICT recovered interiors /46,518 original CODE B /10,086
-GPR+mnemonic positions /771 genuine PE fields /1,895 scalar
-immediate positions**. Current whole partial C++ **49,806B /10,768
-x86**, original whole **81,539B /17,435 x86**, native afterRET
-567B DATA. **Whole game callable NONEXACT; zero new accepted exact
-CODE**. Use [live one-parent original PE verifier](../scripts/verify-characterobject-current-recovered-f1068.py).
+**81KB single-switch 0050A580:** [F1108 genuine native
+`0x360/0x361` motion states](CHARACTEROBJECT_NATIVE_360_361_F1108.md)
+restore two original 952B/206-x86 interiors with **412/412 original
+mnemonic+GPR roles, 30/30 physical PE fields and distinct native
+0x365/0x366 projectile IDs**. Each still has four real stack-counter
+width errors. The live verifier now covers **57 strict native
+interiors /48,466 original CODE B /10,508 original x86 mnemonic+GPR
+roles /803 physical PE fields /1,963 scalar-immediate values**.
+Seven other C++ cases remain provisional (4,310 original CODE B
+/916 x86, **469/916 GPR roles**); see [F1107 original 0x35E](CHARACTEROBJECT_NATIVE_35E_F1107.md)
+and [F1103 358–35C](CHARACTEROBJECT_NATIVE_358_TO_35C_PROVISIONAL_F1103.md).
+The selected partial whole C++ is **53,396B /11,524 x86** vs full
+original **81,539B /17,435 x86**, with 567 afterRET DATA.
+**Whole original game NONEXACT; zero newly accepted exact CODE**.
+Recheck only [live whole-parent original PE](../scripts/verify-characterobject-current-recovered-f1068.py).
 
 ## 4. All three remaining independent small/medium originals
 
@@ -186,7 +185,7 @@ F1049: [typed native background timeline receiver](BACKGROUND_TIMELINE_BORROW_F1
 
 F1053: [native x87 facing lvalues](COMBAT_FACING_LVALUE_GRAMMAR_F1053.md) preserve 4/4 full native BattleCombat exact callables (4,283B); the original `FLD/FCOMP` order and strict `$L` COFF labels remain intact.
 
-F1056: [native collision bounding RECT plus genuine fighter vitals/axis fields](COLLISION_NATIVE_RECT_AND_VITALS_F1056.md) replaces raw casts for 20 bounds, original adjacent +0x324/+0x326 WORDs and 6 original X/Y coordinate reads. The affected `BattleCollision.cpp` object cold-replayed **5/5 entire original functions exact** (**855 previously credited bytes**), with no other source objects or corpus replay.
+F1056: [native collision bounds/vitals](COLLISION_NATIVE_RECT_AND_VITALS_F1056.md) preserve 5/5 whole original exact (855B).
 
 F1060: [physical 16-byte native Combo HUD borrowed window](COMBO_HUD_BORROW_WINDOW_F1060.md) gives actual names to count/damage/ratio/alpha/side/hold/phase/vertical HUD fields without assuming a full historical owner. The one affected RoundEndHud object cold-replayed **4/4 exact whole native functions** (878 previously credited CODE B); no corpus replay.
 
@@ -201,6 +200,8 @@ F1084: [native two-fighter vital WORDs in whole 9,841B Battle HUD](BATTLE_HUD_NA
 F1086: [native 12B animation binding window for two complete 149B leaves](ANIMATION_BINDING_NATIVE_WINDOW_F1086.md) gives typed action-frame/row/duration/count slots at +0x70/+0x72/+0x74/+0x78; **2/2 full 149B leaf functions (298 previously accepted bytes) remain strict exact**, with original pointer/row implementations preserved.
 
 F1096: [native two-side HUD float and signed name-group pairs](BATTLE_STATUS_NATIVE_SIDES_F1096.md) restore 45 actual float side accesses and two signed selector-group WORDs; the complete **3,510B BattleStatus RenderStatus** remains **1/1 strict cold exact**, no new coverage.
+
+F1106: [109 real fighter/side-HUD/overlay float borrows](FRAME_DEPENDENCIES_NATIVE_BORROW_WINDOWS_F1106.md) preserve 3/3 full original native exact (4,169B) after scoped cold replays; not newly accepted bytes.
 
 ## 6. Agent operating checklist / storage
 
