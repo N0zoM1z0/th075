@@ -1,5 +1,7 @@
 # F1066 — Real 0x336 eight-shot action restores GPR phase and corrects the 0x334 float parameter
 
+**Historical F1066 checkpoint:** the live parent now additionally recovers the real [F1068 960B action 0x330](CHARACTEROBJECT_NATIVE_330_LIVE_PROOF_F1068.md). Use its full-current-parent PE verifier for latest source geometry and all 30 game states. The 29-state/17,809B source figures below describe the earlier valid F1066 bounded proof, not current dimensions.
+
 The pinned Japanese TH075 1.11 original has **one** independently
 original `CharacterObject::Advance` callable at `0050A580`,
 **81,539 original CODE B /17,435 x86**, with separate authentic

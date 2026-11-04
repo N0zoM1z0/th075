@@ -122,23 +122,24 @@ rechecks **1,697/1,697 physical external PE targets**,
 tested 10 normal VC7.1 variants without fixing the true native CMP
 roles; check the original PE, not stale hypotheses.
 
-**81KB single-switch 0050A580:** [F1066 authentic native
-`0x333/0x334/0x336` and +30/0/−30 float inputs](CHARACTEROBJECT_NATIVE_336_AND_IMMEDIATES_F1066.md)
-recovers **29 genuine original game-state interiors**, covering **21,001
-original native CODE B /4,481 native x86 mnemonic/GPR roles /346
-physically original PE external fields**. The current tracked one-switch
-[C++ parent](../probes/CharacterObjectWhole0050A580F1044.cpp) emits
-**17,809 CODE B /4,651 x86** versus original **81,539B /17,435 x86**,
-with correct 92-entry sparse DIR32 and 199 index DATA but many marker
-cases and a smaller `ESP 0xE8` frame. **The original whole callable
-remains NONEXACT; new accepted original CODE = 0B.** Genuine prior
-cross-state sources: [F1064 `0x335`](CHARACTEROBJECT_NATIVE_335_F1064.md),
-[F1062 `0x338/0x339`](CHARACTEROBJECT_NATIVE_338_339_F1062.md),
-[F1057 five long actions](CHARACTEROBJECT_FIVE_LONG_ACTIONS_F1057.md)
-and [F1058 original x87 Y operand order](CHARACTEROBJECT_NATIVE_Y_LVALUE_F1058.md).
-Original sparse-switch provenance: [F569](CHARACTEROBJECT_SINGLE_SWITCH_F569.md).
-Do not promote state-local instruction matches to exact original callable
-credit or replace real gameplay with synthetic GPR-phase markers.
+**81KB single-switch 0050A580:** [F1068 real `0x330` and
+live whole-parent original-PE validator](CHARACTEROBJECT_NATIVE_330_LIVE_PROOF_F1068.md)
+now verifies **30 real game-state interiors /21,961 original state CODE
+B /4,690 original mnemonic+GPR positions /362 genuine physical PE
+external call/global targets**. The real 0x330 C++ includes five-shot
+projectile loop, float **60.0f** and authentic `TEST AH,0x41; JNP` x87
+branch. All 30 state cases are compared against original PE within
+**ONE** partial C++ parent. It emits **18,564B /4,858 x86**, versus
+original **81,539B /17,435 x86**, with 92 DIR32 and 199 original sparse
+DATA bytes preserved. **Whole original remains NONEXACT; zero new
+accepted callable CODE.** Genuine earlier sources: [F1066 true
++30/0/−30 inputs](CHARACTEROBJECT_NATIVE_336_AND_IMMEDIATES_F1066.md),
+[F1062 13-shot loop](CHARACTEROBJECT_NATIVE_338_339_F1062.md),
+[F1057 five 402-x86 big actions](CHARACTEROBJECT_FIVE_LONG_ACTIONS_F1057.md),
+[F569 sparse dispatch](CHARACTEROBJECT_SINGLE_SWITCH_F569.md).
+Use the live F1068 aggregate validator rather than relying on stale
+hardcoded prior partial-source geometry. Do not assign internal case
+matches individual exact original function credit.
 
 ## 4. All three remaining independent small/medium originals
 

@@ -1,7 +1,7 @@
 #include "FrameActorMotionPairsF1037.hpp"
 // F539 natural switch *probe*, not original fighter source or CODE credit.
 // This file is regenerable from the original PE under ignored .analysis.
-class FighterSwitchF569_Boss0050A580 { public: void Advance(); void NativeParentExpiredAt0045B830(); void SetNativeMotionAt0040FBB0(int,int,int); short GetNativeActionAt0040FA30(); void SetAuxActionAt0040FB40(int); void SetNativeActionAt0040FAC0(int); void SetNativeTwoFloatsAt0040FB70(float,float); int RandomBoundaryAt00455580(int,int); };
+class FighterSwitchF569_Boss0050A580 { public: void Advance(); void NativeParentExpiredAt0045B830(); void SetNativeMotionAt0040FBB0(int,float,int); short GetNativeActionAt0040FA30(); void SetAuxActionAt0040FB40(int); void SetNativeActionAt0040FAC0(int); void SetNativeTwoFloatsAt0040FB70(float,float); int RandomBoundaryAt00455580(int,int); };
 class F1051Grandparent { public: void NativePrepareAt00453D40(int); void SpawnObjectAt00453A70(int,unsigned int,unsigned int,signed char,int); void SpawnProjectileAt00453C80(int,unsigned int,unsigned int,signed char,int); void InitTrajectoryAt00453E60(float); };
 extern unsigned int g_FighterProbeMarker;
 extern float g_F1044_GravityAt0065747C;
@@ -31,6 +31,7 @@ extern float g_F1061_CeilingAt006583FC;
 extern float g_F1061_StepAt0065972C;
 extern float g_F1061_OffsetAt00658354;
 extern float g_F1062_ScaleStepAt006583F8;
+extern float g_F1068_ActionSpeedAt00657878;
 
 extern float __cdecl F1057_FloatAtan2At00483300(float,float);
 
@@ -70,7 +71,7 @@ void FighterSwitchF569_Boss0050A580::Advance() {
 #include "CharacterObjectBoss32DF1047.inc"
 #include "CharacterObjectBoss32EF1050.inc"
 #include "CharacterObjectBoss32FF1052.inc"
-        case 0x330: g_FighterProbeMarker = 817; break;
+#include "CharacterObjectBoss330F1068.inc"
         case 0x331: g_FighterProbeMarker = 818; break;
 #include "CharacterObjectBoss332F1047.inc"
 #define F1065_ACTION 0x333
