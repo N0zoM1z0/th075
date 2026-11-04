@@ -43,7 +43,9 @@ branch targets inside the 81KB Boss, all
 25 remaining whole-function targets and targeted reproductions.
 The [source workflow](docs/RE_WORKFLOW.md), [AGENTS.md](AGENTS.md),
 and [storage and recovery policy](docs/STORAGE_HYGIENE.md) apply
-to every session. The [knowledge base](docs/KNOWLEDGE_BASE.md)
+to every session. The F1144 local SHA256 archive preserves 673 older
+research OBJ/PDB files and saves 31.02 MiB net; **the Git-ignored
+archive plus receipt must travel with a full workspace handoff**. The [knowledge base](docs/KNOWLEDGE_BASE.md)
 is a historical experiment journal, **not** a live status report.
 
 The old detailed handoff through F906 was frozen as a

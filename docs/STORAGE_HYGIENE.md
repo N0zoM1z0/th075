@@ -1,8 +1,8 @@
 # TH075 local storage hygiene and lossless recovery
 
-**Updated 2026-10-31, F1031 new SHA256-preserved research binary
-compaction; F907/F908 archives and their original measurements remain
-independently recoverable.**
+**Updated 2026-11-04, F1144 new SHA256-preserved F1030–F1132 research
+binary compaction.** Earlier F907/F908/F1031 archive measurements remain
+historical and independently recoverable; do not mix their receipts.
 This is a storage report and **lossless local recovery recipe**, NOT
 permission to remove original PE, C++/COFF research evidence, active
 work, matching objects, or unrecognized dirty changes. The archives,
@@ -13,6 +13,79 @@ moving/cleaning the worktree. The restore/verify tooling and these
 instructions ARE tracked, but a fresh clone will not contain the
 archives. Historical F597 and older JSON/PDB/CI archives are still
 available and independently restorable.
+
+## F1144 — Executed reversible F1030–F1132 OBJ/PDB compaction
+
+The current 2026-11-04 storage inventory found 673 **loose, regenerable
+research OBJ/PDB compiler outputs** under narrowly allowlisted ignored
+`.analysis/f1030-*` through `.analysis/f1132-*` experiment directories.
+These are *not* the source C++, original executable, original PE/COFF
+research JSON, PDB source documents, compiler/PE diagnostics, current
+selected whole Boss proof objects, accepted matching objects or the
+VC7.1/Wine/Ghidra toolchain. The tracked
+[`F1144 recovery script`](../scripts/archive-post-f1031-probe-binaries-f1144.py)
+reuses the audited F1031 per-file SHA256 archive/receipt/restore
+implementation, but has an **independent archive identity** and a
+new explicit source-range allowlist. It protects the active
+`.analysis/f1068-boss-live-all-native/` and 0x391 FUCOMPP research,
+recent 3E3/3E5 proof inputs and selected `.analysis/f1138-*` parent;
+no relevant Git source/config/provenance or original game byte was edited.
+
+| Executed F1144 operation | Exact bytes |
+| --- | ---: |
+| Loose eligible research OBJ/PDB removed only after verification | **673 files, 39,095,870 B** |
+| New machine-local `tar.gz` archive | **6,453,751 B** |
+| Original path/size/SHA256 JSON receipt | **117,927 B** |
+| **Net file bytes reclaimed** | **32,524,192 B (31.02 MiB)** |
+
+Both new local files must be preserved *together* in any transfer of
+the **full repository environment**. They are ignored by Git and
+**will not exist in a fresh clone**, even after pushing tracked commits:
+
+- `.analysis/cache-archives/f1030-f1132-research-obj-pdb-2026-11-04.tar.gz`
+- `.analysis/cache-archives/f1030-f1132-research-obj-pdb-2026-11-04-receipt.json`
+
+Pinned local archive SHA256:
+`dabbbeb49db71ec67b14b802bb85170e722724fa0fd35d76f9eb11c9007ff83d`.
+Receipt SHA256:
+`8fd7285c867d733723a160f1530e2616654993f0ebacd24814a80abe6a572f8a`.
+
+**All 673 input files** were independently SHA256-hashed, packed with
+original path/byte size/individual digest, re-read and rehashed while
+each loose original still existed, then checked *again* after its
+original file was removed. A further fresh verification succeeded:
+**673/673 archived member SHA256 hashes and exact byte sizes passed**.
+The restore path was exercised with a real native OBJ and its original
+SHA256 verified, and `--recompact-restored` removed only that
+unchanged duplicate. No loose eligible F1144 files now remain.
+
+Use the following **only when the local archive and receipt have been
+copied to the next agent's machine or preserved in its workspace**:
+
+    scripts/repo-python scripts/archive-post-f1031-probe-binaries-f1144.py --family binaries --plan
+    scripts/repo-python scripts/archive-post-f1031-probe-binaries-f1144.py --family binaries --verify
+    scripts/repo-python scripts/archive-post-f1031-probe-binaries-f1144.py --family binaries --restore .analysis/f1044-object-320/boss320.obj
+    scripts/repo-python scripts/archive-post-f1031-probe-binaries-f1144.py --family binaries --recompact-restored .analysis/f1044-object-320/boss320.obj
+
+Use `--restore` for any exact relative path in the receipt, never
+extract an unaudited tar member by hand. A changed regenerated loose
+file is **not overwritten or deleted** on restore/recompact. Do not
+rerun `--archive` when the archive/receipt already exist (explicit
+refusal), and never delete the archive or receipt to save storage.
+If a new clone has no ignored archive, recompile selected historical
+sources locally with the pinned native toolchain; the tracked program
+alone cannot supply machine-local archived bytes.
+
+The earlier [F1031 archiver](../scripts/archive-recent-probe-objects-f1031.py)
+and [F907 archiver](../scripts/archive-recent-probe-objects-f907.py)
+were each independently reverified after this operation. F907 found
+four older *changed/regenerated* loose files and correctly retained
+them; their archived originals still verify byte-for-byte. The
+current targeted 81KB Boss verifier remains runnable, and all 979
+accepted matching-unit objects remain available. **Exact game CODE
+credit is unchanged**.
+
+---
 
 ## F1031 — Executed new historical F907–F1018 OBJ/PDB compaction
 

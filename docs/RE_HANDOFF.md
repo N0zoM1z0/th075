@@ -161,13 +161,19 @@ identity, not mnemonic count alone, is the acceptance standard.
 
 ## 6. Storage, source recovery and safe next-agent checklist
 
-Preserve `resources/th075.exe`, `.analysis/vc71-wine/`, all current exact
-`build/matching/`, Ghidra, current original PE/COFF reference objects,
-tracked C++/scripts/config/provenance, and SHA256-indexed archives under
-`.analysis/cache-archives/`. **The archives are machine-local, Git-ignored,
-not backed up by a fresh clone**. See [storage hygiene and restore
-commands](STORAGE_HYGIENE.md). Historical full research evidence and
-older handoffs remain available in [history](history/).
+Preserve `resources/th075.exe`, `.analysis/vc71-wine/`, all accepted
+`build/matching/`, Ghidra, the **live `.analysis/f1068-boss-live-all-native/`
+OBJ/JSON**, all original PE/COFF reference files, tracked C++/scripts/
+config/provenance, and archives under `.analysis/cache-archives/`.
+**Archive bytes are Git-ignored and NOT backed up by a fresh clone.**
+F1144 losslessly SHA256-archived **673 regenerable OBJ/PDB research
+files** into 6,453,751 archive B plus 117,927 receipt B, reclaiming
+**32,524,192 file bytes net**. The tracked
+[`F1144 restore/verify tool`](../scripts/archive-post-f1031-probe-binaries-f1144.py)
+recovers exact historical paths once the **machine-local archive and
+receipt** accompany the handoff. See [storage hygiene](STORAGE_HYGIENE.md).
+Historical full research evidence and older handoffs are indexed in
+[history](history/).
 
 Before editing, run:
 
