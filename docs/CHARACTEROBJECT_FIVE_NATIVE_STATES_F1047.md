@@ -1,5 +1,10 @@
 # F1046–F1047 — Five authentic game states in the 81KB CharacterObject Boss
 
+**Historical F1047 five-state checkpoint:** The currently tracked full source and
+its verifier have advanced to [F1050 seven-state results](CHARACTEROBJECT_SEVEN_NATIVE_STATES_F1050.md).
+The numbers below describe the earlier bounded F1047 measurement and are
+not the latest whole-source prototype totals.
+
 This work continues original Japanese TH075 v1.11 single-switch
 `CharacterObject::Advance` at **0050A580**: 81,539 original CODE bytes
 and 17,435 x86 instructions, followed by 567 independently owned
