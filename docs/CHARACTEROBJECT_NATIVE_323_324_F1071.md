@@ -1,5 +1,7 @@
 # F1070/F1071 — Real 0x323 and 0x324 projectile/physics states, native x87 branch and raw-angle stack ABI
 
+**Historical F1071 checkpoint:** Later [F1074](CHARACTEROBJECT_NATIVE_328_329_32A_F1074.md) restored 0x328/0x329/0x32A long projectile states and the live PE verifier now covers **36** cases. The 33-case/21,045B parent figures below represent this earlier valid source checkpoint, not the current live source geometry; native F1071 323/324 PE fields remain exact.
+
 The SHA-pinned Japanese TH075 v1.11 original game has ONE authored
 `CharacterObject::Advance` at **0050A580**, original **81,539 callable
 CODE B /17,435 x86**, followed by **567 separate afterRET sparse-switch

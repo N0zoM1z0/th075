@@ -2,7 +2,7 @@
 // F539 natural switch *probe*, not original fighter source or CODE credit.
 // This file is regenerable from the original PE under ignored .analysis.
 class FighterSwitchF569_Boss0050A580 { public: void Advance(); void NativeParentExpiredAt0045B830(); void SetNativeMotionAt0040FBB0(int,float,int); short GetNativeActionAt0040FA30(); void SetAuxActionAt0040FB40(int); void SetNativeActionAt0040FAC0(int); void SetNativeTwoFloatsAt0040FB70(float,float); void SetNativeAngleBitsAt0040FB70(unsigned int,float); int RandomBoundaryAt00455580(int,int); };
-class F1051Grandparent { public: void NativePrepareAt00453D40(int); void SpawnObjectAt00453A70(int,unsigned int,unsigned int,signed char,int); void SpawnProjectileAt00453C80(int,unsigned int,unsigned int,signed char,int); void InitTrajectoryAt00453E60(float); };
+class F1051Grandparent { public: void NativePrepareAt00453D40(int); void SpawnObjectAt00453A70(int,unsigned int,unsigned int,signed char,int); void SpawnObjectAt00453A70(int,float,float,signed char,int); void SpawnProjectileAt00453C80(int,unsigned int,unsigned int,signed char,int); void InitTrajectoryAt00453E60(float); };
 extern unsigned int g_FighterProbeMarker;
 extern float g_F1044_GravityAt0065747C;
 extern float g_F1044_GroundAt0065782C;
@@ -68,9 +68,17 @@ void FighterSwitchF569_Boss0050A580::Advance() {
 #include "CharacterObjectBoss323F1070.inc"
 #include "CharacterObjectBoss324F1071.inc"
 #include "CharacterObjectBoss325F1052.inc"
-        case 0x328: g_FighterProbeMarker = 809; break;
-        case 0x329: g_FighterProbeMarker = 810; break;
-        case 0x32A: g_FighterProbeMarker = 811; break;
+#include "CharacterObjectBoss328F1073.inc"
+#define F1074_CASE 0x329
+#define F1074_X_SPEED 20.0f
+#include "CharacterObjectBoss32932AF1074.inc"
+#undef F1074_X_SPEED
+#undef F1074_CASE
+#define F1074_CASE 0x32A
+#define F1074_X_SPEED 10.0f
+#include "CharacterObjectBoss32932AF1074.inc"
+#undef F1074_X_SPEED
+#undef F1074_CASE
 #include "CharacterObjectBoss32BF1047.inc"
 #include "CharacterObjectBoss32CF1050.inc"
 #include "CharacterObjectBoss32DF1047.inc"

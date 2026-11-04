@@ -122,24 +122,22 @@ rechecks **1,697/1,697 physical external PE targets**,
 tested 10 normal VC7.1 variants without fixing the true native CMP
 roles; check the original PE, not stale hypotheses.
 
-**81KB single-switch 0050A580:** [F1071 real adjacent
-`0x323/0x324` original actions](CHARACTEROBJECT_NATIVE_323_324_F1071.md)
-now restore source for **33 genuine original game-state interiors /
-25,131 native original CODE B /5,373 x86 mnemonic+GPR positions /
-422 physically original nonlocal PE call/global targets**. The
-real original +0xC8 angle uses DWORD bit-preserving MOV/PUSH (not
-an extra x87 FLD/FSTP), and native `0x324` has a real three-shot
-loop and `TEST AH,0x41; JP` landing transition; following 0x325
-returns to 100/100 native GPR roles. The [live one-parent original
-PE verifier](../scripts/verify-characterobject-current-recovered-f1068.py)
-recompiles the single affected source. Current partial C++ function
-**21,045B /5,535 x86** against original **81,539B /17,435 x86**.
-Original 92 DIR32/sparse 199B afterRET partitions remain verified.
-**Full 81KB original GAME callable NONEXACT; no newly accepted
-exact CODE**. [Prior F1069 triple parent-Y action](CHARACTEROBJECT_NATIVE_331_F1069.md)
-and [F1066 original +30/0/−30](CHARACTEROBJECT_NATIVE_336_AND_IMMEDIATES_F1066.md)
-remain historical scoped evidence. Do not promote case-local matches
-to independent original exact callable functions.
+**81KB single-switch 0050A580:** [F1074 authentic `0x328/0x329/0x32A`
+long original actions](CHARACTEROBJECT_NATIVE_328_329_32A_F1074.md)
+now recover **36 actual original game-state interiors /30,413 native
+CODE B /6,634 native x86 mnemonic+GPR roles /529 physically verified
+PE nonlocal targets**. Each new long state retains ten-shot loop,
+original random 0x32B and **16 physically separate 0x33A CALLs**;
+native initial 13.0/20.0/10.0f values and 92 afterRET DIR32/199
+sparse bytes are checked against the actual Japanese PE. The
+[live one-parent original PE verifier](../scripts/verify-characterobject-current-recovered-f1068.py)
+only builds the changed whole partial C++ source, currently
+**25,234 CODE B/6,790 x86** versus original **81,539B /17,435 x86**.
+**The 81KB original whole callable is still NONEXACT, zero new
+accepted game bytes.** [F1071 real 0x323/0x324](CHARACTEROBJECT_NATIVE_323_324_F1071.md)
+and [F1069 triple parent Y](CHARACTEROBJECT_NATIVE_331_F1069.md)
+remain original PE-backed source. Do not treat interior switch-case
+matching as exact separate callables.
 
 ## 4. All three remaining independent small/medium originals
 
