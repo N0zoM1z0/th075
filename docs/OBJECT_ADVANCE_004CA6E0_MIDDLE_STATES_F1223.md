@@ -76,3 +76,7 @@ rejected treating829 as identical; its pre-review script is preserved, and
 no object was produced from that failed preparation. No accepted input,
 origin or canonical infrastructure changes. No full CI, full cold replay,
 origin retest or per-function test is added or run.
+
+F1224 supersedes these partial dimensions: all805–811 are now written,
+reaching35/55 states and22,951B/6,088 x86. See the
+[projectile-phase proof](OBJECT_ADVANCE_004CA6E0_PROJECTILES_F1224.md).

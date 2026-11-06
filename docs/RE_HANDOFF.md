@@ -1,4 +1,4 @@
-# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1223)
+# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1224)
 
 **Start here.** Continue all dirty work; there are no other active sessions.
 Work on both large/core and smaller authored originals. Use local commits
@@ -193,12 +193,13 @@ no whole exact credit. All other parents and unknown origins stay preserved.
 
 New incomplete 42KB source:
 [`probes/CharacterObjectActions004CA6E0F1222.cpp`](../probes/CharacterObjectActions004CA6E0F1222.cpp).
-F1223 has28/55 states; selected14,079B/3,760 x86, frame0x194 vsnative0x288,
-original this-4 and ESI. All written operand diagnostics agree;
-prefix/800–804 have zero raw GPR/EBP/width debt. Still27 states:
-805–811,830–839,901,903–911. Selected `.analysis/f1223-object-4ca6e0-middle/debris.obj`,
+F1224 has35/55 states; selected22,951B/6,088 x86, frame0x1D8 vsnative0x288,
+original this-4/ESI. All written operand diagnostics agree; prefix/800–807/
+812–829 have zero raw GPR/EBP/width debt. 808–811 retain32/117/117/181 GPR,
+first004CCBD7/whole2526; postfix increment control is negative. Still20 states:
+830–839,901,903–911. Selected `.analysis/f1224-object-4ca6e0-projectiles/flight.obj`,
 immutable CPP/HPP/listing/diagnostics/verified-summary.json.
-[F1223 proof](OBJECT_ADVANCE_004CA6E0_MIDDLE_STATES_F1223.md). Continue this
+[F1224 proof](OBJECT_ADVANCE_004CA6E0_PROJECTILES_F1224.md). Continue this
 same body; all42,511 original B remain pending.
 
 All other giant authored originals remain open; use the

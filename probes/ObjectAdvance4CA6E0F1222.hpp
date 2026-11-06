@@ -5,6 +5,7 @@
 // never instantiate or embed these incomplete receiver views.
 class OwnerActor4CA6E0F1222 {
 public:
+    void PlaySoundAt00453D40(short);
     void SpawnEffect(short, float, float, signed char, signed char);
     void SpawnTrackedEffectAt00453AC0(short, float, float, signed char, signed char, unsigned char);
 };

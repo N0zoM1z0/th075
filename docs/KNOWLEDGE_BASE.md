@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1223):**
+**Maintenance annotation, updated 2026-11-06 (F1224):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -479,6 +479,19 @@ actual Range(0,10)-5 versus824–828's Range(0,6)-3. Twenty-seven states
 remain; selected `.analysis/f1223-object-4ca6e0-middle/debris.obj`, immutable
 CPP/HPP/listing/diagnostics and verified-summary.json remain. All42,511 CODE B
 stay pending; no full CI/corpus replay or accepted-source changes.
+
+F1224 adds all805–811 to004CA6E0:8,797 original interior B/2,328 x86,
+now35/55 states and22,757 written original interior B. Fresh flight.obj emits
+22,951B/6,088 x86, frame0x1D8 vsnative0x288; all written mnemonic/operand
+diagnostics pass. Prefix/800–807/812–829 have zero raw GPR/EBP/width debt;
+808–811 retain32/117/117/181 GPR differences, first004CCBD7/whole2526 after
+808's D8 increment. Postfix increment is byte-identical negative evidence.
+[Native projectile proof](OBJECT_ADVANCE_004CA6E0_PROJECTILES_F1224.md)
+records distinct one-/two-bounce policies, four original x87 operand-order
+corrections, actual owner400–405 forced transition, speed17.5 and repeated
+follow/phase guards. Selected private `.analysis/f1224-object-4ca6e0-projectiles/flight.obj`,
+immutable CPP/HPP/listing/diagnostics and verified-summary.json remain.
+Twenty actual states remain; no whole exact credit, full CI or corpus replay.
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function
