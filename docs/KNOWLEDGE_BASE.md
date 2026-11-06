@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1239):**
+**Maintenance annotation, updated 2026-11-06 (F1240):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -12,7 +12,10 @@ not today's worktree. The old F906 and F1142 handoffs are preserved in
 [the F781–F906 snapshot](history/RE_HANDOFF_F781_THROUGH_F906_PRE_CLEANUP_2026-10-31.md)
 and [the F1142 snapshot](history/RE_HANDOFF_AS_OF_F1142_PRE_HANDOFF_2026-11-04.md).
 Original PE, independent origin ledger and current VC7.1 builds always
-supersede a historical source hypothesis.
+supersede a historical source hypothesis. The F1240 handoff indexes thirteen
+complete but nonexact giant research bodies and nine still-incomplete ones.
+Historical partial-parent sizes, old queue counts and rejected controls apply
+only to their recorded checkpoints; they do not invalidate later verified work.
 
 F1146 corrects the original 0x346 status-2-or-4 transition, verified by
 one complete parent cold build and all 1,834 direct branch targets.

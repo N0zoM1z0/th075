@@ -10,7 +10,7 @@ Only original, attributable, byte-identical **whole callable functions**
 earn canonical exact CODE credit. An internal case, original PE-similar
 mnemonic stream or matching total source length is not acceptance.
 
-## Current verified status (2026-11-06, F1171 / 982 exact ledger)
+## Current verified status (2026-11-06, F1171 exact ledger / F1240 handoff)
 
 | Property | Grounded result |
 | --- | --- |
@@ -43,9 +43,10 @@ the latest verified evidence, all 1,834 direct Boss branch targets and all
 targets with targeted reproductions.
 The [source workflow](docs/RE_WORKFLOW.md), [AGENTS.md](AGENTS.md),
 and [storage and recovery policy](docs/STORAGE_HYGIENE.md) apply
-to every session. The F1144 local SHA256 archive preserves 673 older
-research OBJ/PDB files and saves 31.02 MiB net; **the Git-ignored
-archive plus receipt must travel with a full workspace handoff**. The [knowledge base](docs/KNOWLEDGE_BASE.md)
+to every session. F1240 compacted 517 obsolete compiler outputs, saving
+46.11 MiB net, with every archived member SHA256-verified. Original native
+disassembly and selected parents remain loose. **Git-ignored archives and
+receipts must travel with a full workspace handoff**. The [knowledge base](docs/KNOWLEDGE_BASE.md)
 is a historical experiment journal, **not** a live status report.
 
 The old detailed handoff through F906 was frozen as a
@@ -54,17 +55,20 @@ Research performed against an earlier partial fighter or
 an old compiler context remains useful evidence but must not
 be asserted as the current whole-function result.
 
-### Work on the entire giant Boss functions **and** complete small originals
+### Continue the complete giant research parents
 
-Three large original fighters now have independent **whole-function**
-original PE destination audits. Their normal VC7.1 C++ is promising,
-but **none is accepted exact**:
+Thirteen of the 22 pending giants now have complete tracked C++ research
+bodies; nine still need complete bodies. Every pending giant remains NONEXACT.
+The [current handoff](docs/RE_HANDOFF.md) indexes all selected sources,
+objects, native proofs and register/width debt, including the latest complete
+43KB `0057D580` parent. The three fighters below retain independent
+whole-function PE destination audits:
 
-| Native whole Boss | Current partial whole-source geometry | Physical original external PE target evidence |
+| Native whole Boss | Current complete research-source geometry | Physical original external PE target evidence |
 | --- | --- | ---: |
 | `004AC040` 82,796B | **82,796B/22,721 x86**, native frame and saved this; still **12 width /6,958 GPR** defects | [F1028](docs/THIRD_FIGHTER_WHOLE_82KB_PE_TARGETS_F1028.md): **2,191/2,191** |
 | `00543210` 58,294B | **58,293B/16,471 x86**; still **3 width /1,741 GPR** defects | [F1025](docs/FIGHTER_58KB_ALL_NATIVE_PE_TARGETS_F1025.md): **1,697/1,697** |
-| `005214B0` 46,755B | **46,754B/13,230 x86**; still **5 native width** defects | [F1026](docs/FIGHTER_46KB_ALL_NATIVE_PE_TARGETS_F1026.md): **1,341/1,341** |
+| `005214B0` 46,755B | **46,754B/13,230 x86**; still **5 width /2,736 GPR** defects | [F1026](docs/FIGHTER_46KB_ALL_NATIVE_PE_TARGETS_F1026.md): **1,341/1,341** |
 
 These **5,229** physical native PE targets are genuine call/global
 addresses, **not** proof that the whole machine bytes, GPR allocation,
@@ -128,7 +132,7 @@ need a targeted canonical replay:
 
     scripts/repo-python scripts/replay-exact-units.py --unit UNIT_NAME
 
-Do **not** run all 979 exact units as a cold replay.
+Cold-replay only new or affected units; do **not** replay the entire exact corpus.
 For normal source experiments use the current unit's
 targeted verifier linked from [the handoff](docs/RE_HANDOFF.md).
 No fake stack locals, forced assembly register patches,
@@ -140,38 +144,20 @@ checkpoints, not Oracle acceptance; no push is assumed.
 
 ## Storage, original evidence and recoverability
 
-The original EXE, VC7.1/Wine prefix, Ghidra project,
-accepted matching objects, source, manifests, and
-uncredited original PE receipts must be preserved.
-F1031 also losslessly SHA256-archived **1,749 newer
-F907–F1018 historical research OBJ/PDB copies**, recovering
-**93,546,883 bytes net (≈89.21 MiB)** after fully
-verifying the archive before and after loose-file removal.
-The current F917/F901/F1020 whole native parents,
-recent experiments, original game evidence and all
-previous archive indexes remain protected. Recover a
-single older original binary with
-`scripts/repo-python scripts/archive-recent-probe-objects-f1031.py --family binaries --restore ORIGINAL_RELATIVE_PATH`.
-See the [verified F1031 archival receipt and safety rules](docs/STORAGE_HYGIENE.md).
-A further **92 automatically regenerable CPython bytecode caches**
-(2,228,154 file bytes) were safely cleared from scripts/tests.
-Combined new F1031/F1032 measured file-byte savings:
-**95,775,037 B**. Future Python execution may regenerate them.
+Preserve the original EXE, VC7.1/Wine, Ghidra, accepted matching objects,
+source/manifests, native evidence, selected research parents and every
+archive/receipt. F1240 compacted 473 frozen OBJ/PDB files and 44 generated
+listings from F1133–F1230 after complete per-member SHA256 verification.
+All 91 original native disassembly views included in the first listing batch
+were restored and verified loose; they are excluded from further compaction.
+Net archival savings are **48,351,068 B (46.11 MiB)**.
 
-F907 additionally archived **4,712 regenerable historical
-VC7.1 OBJ/PDB research copies**, recovering **220,205,684 bytes**
-net after whole-archive SHA256 verification. Safe standard Git
-object maintenance reclaimed another **116,556,933 bytes**, and
-pure regenerated Python bytecode cleanup recovered **12,665,361 bytes**.
-All three changes together reclaimed **349,427,978 B (333.24 MiB)**.
-The locally
-ignored archive must be retained; restore individual old binaries
-through scripts/archive-recent-probe-objects-f907.py.
-Older loose machine-generated diagnostics were
-compressed into **local, ignored, SHA256-verified
-archives**: they are **not included in Git clones**.
-Use [storage hygiene and exact recovery](docs/STORAGE_HYGIENE.md)
-and scripts/archive-frozen-giant-traces.py to verify or
-restore individual original historical traces.
-Do not delete the only local copy of compressed
+Use the [current recovery script](scripts/archive-handoff-outputs-f1240.py)
+and [storage guide](docs/STORAGE_HYGIENE.md) for exact identities and commands.
+Older archives retain their own recovery tools, including
+[scripts/archive-recent-probe-objects-f907.py](scripts/archive-recent-probe-objects-f907.py)
+and [scripts/archive-frozen-giant-traces.py](scripts/archive-frozen-giant-traces.py).
+The archive and adjacent receipt are **machine-local, Git-ignored evidence**;
+a fresh clone does not include them. Transfer the existing environment or copy
+these files independently. Never delete the only local copy of compressed
 research or compiler/PE provenance evidence.

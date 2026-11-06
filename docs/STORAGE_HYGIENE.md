@@ -1,8 +1,9 @@
 # TH075 local storage hygiene and lossless recovery
 
-**Updated 2026-11-04, F1144 new SHA256-preserved F1030–F1132 research
-binary compaction.** Earlier F907/F908/F1031 archive measurements remain
-historical and independently recoverable; do not mix their receipts.
+**Updated 2026-11-06, F1240 handoff cleanup.** The new report below
+records the executed F1133–F1230 compaction. Earlier campaign measurements
+are historical checkpoints, not cumulative current loose-file inventories.
+Keep every archive paired with its own receipt and recovery tool.
 This is a storage report and **lossless local recovery recipe**, NOT
 permission to remove original PE, C++/COFF research evidence, active
 work, matching objects, or unrecognized dirty changes. The archives,
@@ -14,9 +15,80 @@ instructions ARE tracked, but a fresh clone will not contain the
 archives. Historical F597 and older JSON/PDB/CI archives are still
 available and independently restorable.
 
+## F1240 — Executed handoff cleanup of frozen compiler outputs
+
+The [F1240 adapter](../scripts/archive-handoff-outputs-f1240.py) reuses the
+unchanged F1031 SHA256 archive/restore engine with independent archive identities.
+Only the explicit `.analysis/f1133-*` through `.analysis/f1230-*` epoch is
+considered. Current parent/proof directories are excluded wholesale; all F1231+
+research, `build/`, source, JSON/log receipts, native inputs, accepted matching
+objects, H184, Wine, Ghidra, shared tools and previous archives remain preserved.
+The current selected parent paths are indexed in [the handoff](RE_HANDOFF.md).
+
+| Executed operation | File bytes |
+| --- | ---: |
+| Frozen research OBJ/PDB compacted | 473 files /37,880,160 B |
+| OBJ/PDB archive /receipt | 7,875,103 /84,904 B |
+| **Net OBJ/PDB savings** | **29,920,153 B** |
+| Obsolete generated COFF ASM listings compacted | 44 files /21,585,449 B |
+| Listing archive /receipt, including retained native-view backup copies | 3,130,929 /23,605 B |
+| **Net listing savings after restoring all native views** | **18,430,915 B** |
+| **Combined archival savings** | **48,351,068 B (46.11 MiB)** |
+
+**Native disassembly remains loose.** The initial listing selection also
+included 91 `native-*.asm` original disassembly views (528,011 B). All 91 were
+restored byte-for-byte and independently verified against their original hashes.
+The archive retains those backup entries, so its135 members comprise 44 compacted
+generated listings plus91 restored originals. `--plan`/`--archive` now exclude
+native views, and `--recompact-restored` refuses them. `--verify`/`--restore`
+continue supporting all 135 original entries. File extensions alone cannot
+distinguish original disassembly from obsolete generated compiler output.
+
+Each input was SHA256-hashed; every archived member was independently read and
+verified before removing loose copies, then verified again afterwards. A real
+OBJ and generated listing were restored and recompact-verified. Native-view
+recompaction was explicitly refused. Both plans now select zero remaining loose
+outputs. A separate before/after hash inventory confirms **all 5,763 protected
+files /350,040,835 B are unchanged**, including selected current parent/proof
+contexts, all `build/`, older archives and the pinned target. Private receipts
+and the restoration log remain in `.analysis/f1240-handoff-cleanup/`.
+
+Preserve these **four Git-ignored files** during a workspace transfer:
+
+- `.analysis/cache-archives/f1133-f1230-frozen-obj-pdb-2026-11-06.tar.gz`
+- `.analysis/cache-archives/f1133-f1230-frozen-obj-pdb-2026-11-06-receipt.json`
+- `.analysis/cache-archives/f1133-f1230-frozen-asm-cod-2026-11-06.tar.gz`
+- `.analysis/cache-archives/f1133-f1230-frozen-asm-cod-2026-11-06-receipt.json`
+
+| Local file | SHA256 |
+| --- | --- |
+| OBJ/PDB archive | `d8a8a4b24e0023b023656a4b7ac298b7868ec8fa11da42e34fb37e01050a352e` |
+| OBJ/PDB receipt | `aa01b3ed849c956c37ae28386cd57fa6e9e1f4d706667620e97a301156191e76` |
+| Listing archive | `29a48752e4aefcb74b9cda1312b0fb706c06c0d86a7e161569c07914cdb242fd` |
+| Listing receipt | `ef44fe0bed65fb19ab63de8720ae6bd777fe5a36c05f6f3a6473b55a123d3a10` |
+
+Commands use each exact relative original path from its authenticated receipt:
+
+    scripts/repo-python scripts/archive-handoff-outputs-f1240.py --family binaries --plan
+    scripts/repo-python scripts/archive-handoff-outputs-f1240.py --family binaries --verify
+    scripts/repo-python scripts/archive-handoff-outputs-f1240.py --family listings --verify
+    scripts/repo-python scripts/archive-handoff-outputs-f1240.py --family binaries --restore .analysis/f1133-default-native/native-default.obj
+    scripts/repo-python scripts/archive-handoff-outputs-f1240.py --family listings --restore .analysis/f1211-object-536400-recovery/burst.asm
+
+After inspecting a restored generated output, use `--recompact-restored PATH`
+with the same family; it removes only a byte-identical restored duplicate.
+Never overwrite a changed regenerated file or rerun `--archive` over an existing
+archive/receipt. The generic engine's diagnostic prefix/description says
+F1031/OBJ/PDB; the F1240 adapter's family, archive identity, receipt and the
+report above identify the actual contents. Neither game progress nor canonical
+acceptance/comparison infrastructure changed; no corpus replay or full CI was run.
+These savings measure file bytes for the stated operation, not filesystem blocks.
+
+---
+
 ## F1144 — Executed reversible F1030–F1132 OBJ/PDB compaction
 
-The current 2026-11-04 storage inventory found 673 **loose, regenerable
+The F1144 inventory on 2026-11-04 found 673 **loose, regenerable
 research OBJ/PDB compiler outputs** under narrowly allowlisted ignored
 `.analysis/f1030-*` through `.analysis/f1132-*` experiment directories.
 These are *not* the source C++, original executable, original PE/COFF
@@ -81,8 +153,9 @@ and [F907 archiver](../scripts/archive-recent-probe-objects-f907.py)
 were each independently reverified after this operation. F907 found
 four older *changed/regenerated* loose files and correctly retained
 them; their archived originals still verify byte-for-byte. The
-current targeted 81KB Boss verifier remains runnable, and all 979
-accepted matching-unit objects remain available. **Exact game CODE
+then-current targeted 81KB Boss verifier remained runnable, and all979
+matching-unit objects accepted at F1144 remained available. The current
+accepted count and parents are in [the live handoff](RE_HANDOFF.md). **Exact game CODE
 credit is unchanged**.
 
 ---
@@ -437,7 +510,8 @@ PDB appears, `--plan` may list it; `--archive` refuses to overwrite
 the already authenticated tar/receipt. Never force-delete newly
 regenerated research data simply to repeat an earlier compaction.
 
-**Not touched:** original pinned `th075.exe`; Wine/VC7.1 prefix;
+**Not touched by F694 (historical inventory; later F907/F1031/F1144/F1240
+compactions supersede its loose-output claims):** original pinned `th075.exe`; Wine/VC7.1 prefix;
 Ghidra project; H184's **15** original protected PDB/object pairs
 (**all 30 SHA256s rechecked**); all accepted `build/matching/` and
 `build/probes/*.obj`; all active F650+ PDBs; R260–R268

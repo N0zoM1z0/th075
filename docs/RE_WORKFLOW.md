@@ -1,26 +1,19 @@
 # TH075 complete-function reconstruction workflow
 
-**Current task:** continue both big/core functions and small leaves.
-Do not use archived H184 no-active-goal instructions. Current priorities and
-the handoff clean-state snapshot are in [RE_HANDOFF.md](RE_HANDOFF.md).
-Historical documents and tentative Ghidra labels are **not proof**.
-The current full original-shaped *nonexact* giant parents include
-`probes/CharacterObjectWhole0050A580F1044.cpp` (**81,542B/17,435 x86
-against original 81,539B/17,435 x86**, all 1,834 native direct branch targets aligned, original frame/all EBP
-slots recovered, but 8 provisional native GPR case intervals (522 wrong GPR
-positions /5 wrong widths)), 82KB `probes/FighterWhole004AC040F1020.cpp` (original-length
-CODE/frame but 12 width and 6,958 GPR-role errors), plus local
-58KB F917 and 46KB F901 source probes. The 81KB original whole
-case verifier is `scripts/verify-characterobject-current-recovered-f1068.py`.
-A mnemonic-identical giant still needs original native **branch target
-ordinals** checked, not only instruction/GPR patterns or PE globals. See original whole
-[82KB](THIRD_FIGHTER_WHOLE_82KB_PE_TARGETS_F1028.md),
-[58KB](FIGHTER_58KB_ALL_NATIVE_PE_TARGETS_F1025.md) and
-[46KB](FIGHTER_46KB_ALL_NATIVE_PE_TARGETS_F1026.md)
-PE-destination audits. External targets matching original PE
-do **not** imply correct physical COFF field offsets or byte-exact
-original source. Do not use older partial-parent descriptions
-as a reason to reimplement already recovered fighter cases.
+Use the [current handoff](RE_HANDOFF.md) for live priorities, selected objects,
+compiler profiles and remaining debt. There are 22 independently authored
+nonexact giants and no independently authored smaller backlog. Thirteen giants
+have complete tracked research bodies; the other nine retain native/partial
+source evidence. Complete source is not complete exactness. Continue the
+selected current parent rather than historical marker-only or partial sources.
+
+The 81KB parent has all 1,834 native direct branches, original frame/stack slots
+and 391 x87 fields recovered; 522 GPR positions/five widths still differ.
+The original-length 82KB parent retains 6,958 GPR/twelve width differences.
+Current tracked 58KB/46KB parents supersede their selected F917/F901 historical
+baselines while preserving them. Whole external PE destination audits alone do
+not prove physical source relocation offsets, instruction widths or callable
+byte equality. Historical documents and tentative Ghidra labels remain leads.
 
 ## 1. Start safely
 
@@ -161,56 +154,33 @@ commit promptly, then update the **concise** active
 archival docs. Git commits are local checkpoints, **not external
 Oracle acceptance**. Never claim an unavailable push succeeded.
 
-## 6. Keep evidence and save space **without losing it**
+## 6. Keep evidence and save space without losing it
 
-**F754 documented backlog correction:** the true author-origin backlog
-was **36 complete unmatched authored functions** at F754 from
-`config/function-origins.csv` (22 large + 14 small/medium); after F755, F758, F760, F765, F766, F769, F770, F775 and F776
-the live queue is **27 (22 large + 5 small/medium)**, not the
-25 `owner=authored` rows selected by the old active audit. The
-[current handoff](RE_HANDOFF.md) contains the current complete
-small/medium queue, and the former 1,289-line F653–F753 handoff
-is preserved [in frozen history](history/RE_HANDOFF_F653_THROUGH_F753_2026-10-30.md).
-Use the updated `audit-active-handoff.py` to cross-check every address.
+Use [STORAGE_HYGIENE.md](STORAGE_HYGIENE.md) for the executed storage campaigns,
+exact archive identities, per-member SHA256 receipts and restore commands.
+Historical counts in those dated reports describe their original checkpoints;
+current authored ownership and backlog come from `config/function-origins.csv`
+and the status reporter. Never count the incomplete `functions.csv.owner`
+annotation as the authored queue.
 
-**F754 local storage recovery:** 1,931 generated old giant
-f133–f166 `.asm/.cod/.log` traces were archived with independent
-original-path SHA256s; net **86,614,259 bytes** saved. Original
-source/COFF/PDB/JSON/current giant or exact units were not removed.
-Restore only a needed original via `scripts/repo-python
-scripts/archive-frozen-giant-traces.py --restore ORIGINAL_PATH` and
-check the manifest with `--verify`. These tar+index files are
-**local ignored evidence**, not present in a fresh Git clone.
-See [STORAGE_HYGIENE.md](STORAGE_HYGIENE.md).
+Preserve the pinned original PE, `.analysis/vc71-wine/`, `ghidra-project/`,
+shared `.tools/`, accepted source/config/manifests and `build/matching/`, H184,
+original native views, selected current whole-parent objects and meaningful
+negative source experiments. Inspect and finish all dirty work before cleanup.
+Only explicitly reviewed obsolete generated outputs are eligible for lossless
+compaction: hash every original, verify all archived members before removing
+loose duplicates, and verify again afterwards. File extensions alone do not
+establish provenance; native disassembly and generated compiler listings can
+both use `.asm`.
 
-Preserve the pinned Japanese original PE, `.analysis/vc71-wine/` VC7.1
-prefix, `ghidra-project/`, `.tools/`, all accepted source/config/manifest
-and `build/matching/` objects, all original native/COFF/whole-function
-evidence and meaningful negative C++ source experiments. **Never skip or
-reset dirty work.** Repeated historical snapshots may be moved to
-SHA256-verified, individually reversible archives; do not mistake old
-ignored JSON backups for the frozen live adoption manifest.
+F1240's [narrow archiver](../scripts/archive-handoff-outputs-f1240.py) preserves
+selected parent/proof directories and all F1231+ work. F1144/F1031/F907 and older
+archives retain independent identities and restore tools; never overwrite or
+merge their receipts. For original frozen giant traces use
+`scripts/repo-python scripts/archive-frozen-giant-traces.py --restore ORIGINAL_PATH`.
 
-On 2026-10-29, **135 old parent/adoption snapshots** (649,802,039 bytes)
-were losslessly compacted to adjacent `.json.zst` archives (35,694,113
-bytes), with SHA256 index under `.analysis/cache-archives/`. Restore one:
-
-```bash
-scripts/repo-python scripts/archive-historical-analysis.py --restore .analysis/f180-background-counters/parent-and-seed.json
-```
-
-A second **1,002 unprotected old probe PDBs** (71,393,280 bytes) were
-losslessly archived to the SHA256-verified 2026-10-29 tar.gz batch; the
-previous 2,031-PDB 2026-10-28 archive remains intact. Check the adjacent
-per-file receipts before restoring. **All 15 H184-protected original
-PDB/COFF pairs are still directly present and byte-verified; all
-`build/probes/*.obj` are still present.** Only actual cold-replayed
-new/changed units should ever rebuild. Full details and safe recovery:
-[STORAGE_HYGIENE.md](STORAGE_HYGIENE.md). Another narrowly frozen,
-original-SHA256-indexed **219 historical generated JSON diagnostics**
-were compressed to four ignored tar.zst archives (≈244.66 MiB net
-reclaimed); recover individual original scan/survey/whole-diagnostic
-JSON paths via `scripts/repo-python scripts/archive-redundant-diagnostics.py
---restore .analysis/ORIGINAL_PATH.json` as documented there. The
-historical F-series negative C++ sources and original boss
-decompilations remain preserved.
+Every archive/index in `.analysis/cache-archives/` is local and Git-ignored.
+A fresh clone, commit or push does not transfer these files. Keep each archive
+with its receipt and transfer the existing private environment when handing off
+to another machine. Never delete the only copy of compressed research evidence
+or replace a changed regenerated loose file with an archived original.

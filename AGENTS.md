@@ -172,6 +172,19 @@ or verifier changes. Documentation-only changes need `git diff --check`.
   --restore ORIGINAL_RELATIVE_PATH`. Do not confuse local archives
   with Git-backed source/evidence.
 
+  **F1240 supersedes loose-output assumptions for frozen F1133–F1230
+  experiments:** 473 OBJ/PDB and 44 generated COFF listings were
+  losslessly compacted, saving 48,351,068 file bytes net. Selected
+  current parent/proof directories and all F1231+ research remain loose.
+  All 91 original `native-*.asm` views initially included in the listing
+  batch were restored and SHA256-verified; preserve those loose views.
+  File extensions alone do not establish compiler-output provenance.
+  Use `scripts/repo-python scripts/archive-handoff-outputs-f1240.py
+  --family binaries|listings --verify` or `--restore ORIGINAL_RELATIVE_PATH`.
+  Keep both `f1133-f1230-frozen-*-2026-11-06.tar.gz` archives with their
+  separate `-receipt.json` files under `.analysis/cache-archives/`.
+  These files are ignored by Git and must accompany a full handoff.
+
   **F907 now supersedes the F694 time-specific claim that all F650+
   PDBs remain loose:** 4,712 eligible regenerable F650–F906 OBJ/PDB
   copies have been compressed with a SHA256 receipt, then their loose

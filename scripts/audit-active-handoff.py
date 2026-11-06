@@ -45,10 +45,9 @@ def check_local_markdown_links(relative_path: str) -> None:
 def main() -> None:
     with (ROOT / 'config/functions.csv').open(newline='') as f:
         rows = list(csv.DictReader(f))
-    # `functions.csv.owner` only identifies the 25 historically investigated
-    # negative cases; after F776, 2 further independently authored
-    # small/medium rows retain blank owner while source is still missing.
-    # Authorship is authoritative in function-origins.csv, NOT this field.
+    # `functions.csv.owner` is an incomplete historical annotation.
+    # Determine authorship from function-origins.csv, including owner-blank
+    # candidates; never infer the live backlog from that annotation.
     with (ROOT / 'config/function-origins.csv').open(newline='') as f:
         origins = {x['address']:x for x in csv.DictReader(f)}
     expect(all(x['address'] in origins for x in rows),
