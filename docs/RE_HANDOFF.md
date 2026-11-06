@@ -202,7 +202,9 @@ and hash-verified loose; they are excluded from further compaction. All source,
 JSON/log/native inputs, selected parents above, F1231+ research, accepted
 `build/matching/`, original PE, Wine, Ghidra and prior archives remain preserved.
 Use [`archive-handoff-outputs-f1240.py`](../scripts/archive-handoff-outputs-f1240.py)
-and the measured [storage/recovery report](STORAGE_HYGIENE.md). Every archive
+and the measured [storage/recovery report](STORAGE_HYGIENE.md). Archival savings
+are 46.11 MiB; ordinary Git GC/cache cleanup brings the measured operations to
+79.33 MiB. Git connectivity checks pass before/after GC. Every archive
 and adjacent receipt under `.analysis/cache-archives/` is **Git-ignored**:
 a fresh clone or pushed tracked commit does not transfer them. Hand over the
 existing checkout, or copy the full private environment plus archives/receipts.

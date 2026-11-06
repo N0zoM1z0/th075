@@ -150,7 +150,8 @@ archive/receipt. F1240 compacted 473 frozen OBJ/PDB files and 44 generated
 listings from F1133–F1230 after complete per-member SHA256 verification.
 All 91 original native disassembly views included in the first listing batch
 were restored and verified loose; they are excluded from further compaction.
-Net archival savings are **48,351,068 B (46.11 MiB)**.
+Net archival savings are **48,351,068 B (46.11 MiB)**. Normal Git GC and disposable
+Python cache cleanup bring measured F1240 savings to **79.33 MiB**.
 
 Use the [current recovery script](scripts/archive-handoff-outputs-f1240.py)
 and [storage guide](docs/STORAGE_HYGIENE.md) for exact identities and commands.

@@ -86,6 +86,32 @@ These savings measure file bytes for the stated operation, not filesystem blocks
 
 ---
 
+## F1240 — Normal Git maintenance and disposable cache cleanup
+
+After committing the source checkpoint and handoff cleanup, normal
+`git gc --prune=2.weeks.ago` compacted Git objects. HEAD remained
+`5284c91e13747ff76abc9581c445ce1976b68d5f` throughout; branches/reflogs were not rewritten or
+force-expired. `git fsck --connectivity-only --no-progress` passed before
+and after maintenance. Private logs and measurements remain under
+`.analysis/f1240-handoff-cleanup/`.
+
+| Executed maintenance | File/directory bytes |
+| --- | ---: |
+| `.git` before normal GC (`du -sb`) | 60,640,261 B |
+| `.git` after normal GC | 25,994,884 B |
+| **Net Git savings** | **34,645,377 B** |
+| Disposable script/test Python caches removed | 13 files /191,532 B |
+| **Combined F1240 operations, including archival savings** | **83,187,977 B (79.33 MiB)** |
+
+Only ordinary nonsymlink `.pyc`/`.pyo` files in actual `scripts/` or `tests/`
+`__pycache__/` directories were removed, after verifying those directories
+contained no other file types. Python can regenerate these caches. The combined
+number sums the measured operations; later commits/imports create some new
+bytes, and it is not a filesystem-block or cumulative historical-savings claim.
+All reconstruction counts and original evidence remain unchanged.
+
+---
+
 ## F1144 — Executed reversible F1030–F1132 OBJ/PDB compaction
 
 The F1144 inventory on 2026-11-04 found 673 **loose, regenerable
