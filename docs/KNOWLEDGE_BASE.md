@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1238):**
+**Maintenance annotation, updated 2026-11-06 (F1239):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -667,6 +667,22 @@ builds, immutable sources, inputs and both diagnostics; actual OBJ/PDB under
 `build/probes/f1238-object-57d580/`. Private epilogue parsing now recognizes
 POP ESI before MOV ESP; canonical infrastructure is unchanged. No accepted
 input/header/origin/ledger change, full CI, canonical replay or new tests.
+
+F1239 completes all70 states of `0057D580`, adding25 intervals/15,366B/4,097 x86.
+Selected whole emits43,849B/11,694 x86 vsoriginal43,845B. Frame378h/this-40h/ESI
+and all3,929 EBP positions agree; mnemonic/non-GPR/stack debt0. All1,162 direct
+target ordinals,972 CODE destinations and71 dense ordinals/198 sparse bytes
+agree, with full482B DATA extent. **914 GPR/6 width differences remain** in
+837–838/903–904/911–919/995 opening; first00583489/whole6565, last00587806/11161,
+all widths in838. No register cause is claimed. A swapped-equality837 control
+moves the limit read before the frame-progress call and worsens debt; reject
+and preserve it. Selected source is restored. [Complete-parent proof](OBJECT_ADVANCE_0057D580_COMPLETE_PARENT_F1239.md)
+and `.analysis/f1239-object-57d580-remaining/verified-summary.json` retain all
+five serial builds, full native observations, whole audits and the negative.
+Real extern DWORD/byte views and existing MathLookup float/cdecl declarations
+preserve actual storage/call contracts without defining owners/globals.
+All43,845 original CODE B remain pending; no accepted input/header/origin/
+ledger/infrastructure change, full CI, canonical replay or new tests.
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function

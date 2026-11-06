@@ -1,7 +1,9 @@
 # F1237 — native-backed initial source for 0057D580
 
-Current continuation: [F1238](OBJECT_ADVANCE_0057D580_ALL_INDICES_F1238.md)
-writes 45/70 states and restores every real index slot and the ESI save.
+Current continuation: [F1239](OBJECT_ADVANCE_0057D580_COMPLETE_PARENT_F1239.md)
+writes all 70 states and audits the entire original, still NONEXACT.
+[F1238](OBJECT_ADVANCE_0057D580_ALL_INDICES_F1238.md) restores every real index
+slot and the ESI save.
 The 32-state dimensions and hashes below describe the preserved F1237 stage.
 
 `probes/CharacterObjectActions0057D580F1237.cpp` writes **32 of 70** actual

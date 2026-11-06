@@ -1,5 +1,9 @@
 # F1238 — 45 states, all real indices and ESI recovery in 0057D580
 
+Current continuation: [F1239 complete-parent audit](OBJECT_ADVANCE_0057D580_COMPLETE_PARENT_F1239.md)
+writes all 70 states and restores the entire native frame/stack, but still
+has 914 GPR /six width differences. The 45-state figures below are historical.
+
 The existing [F1237 research source](OBJECT_ADVANCE_0057D580_INITIAL_PARENT_F1237.md)
 now writes **45/70** real nondefault states of original 0057D580. Thirteen
 new states add **9,596 native CODE B /2,583 x86**: 812, 816–817, 820–826,

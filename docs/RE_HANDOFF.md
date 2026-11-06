@@ -1,4 +1,4 @@
-# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1238)
+# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1239)
 
 **Start here.** Continue all dirty work; there are no other active sessions.
 Work on both large/core and smaller authored originals. Use local commits
@@ -220,19 +220,19 @@ identical entire CODE/DATA/all943 COFF records to F1235. [F1236 proof](OBJECT_AD
 owner evidence remain. All43,599B stay pending; continue this complete body.
 
 
-Current incomplete 43KB parent:
+Current complete 43KB source:
 [`probes/CharacterObjectActions0057D580F1237.cpp`](../probes/CharacterObjectActions0057D580F1237.cpp),
-`ObjectAdvance57D580F1237.hpp`. F1238 writes45/70 states (native28,288B/7,548 x86).
-Selected28,476B/7,597 x86, frame23Ch vsnative378h. All15 genuine index slots/
-67 raw references, this-40h and savedESI are restored without padding. All45
-regions pass diagnostic mnemonic/operand shapes; GPR/unfinished temporary-stack
-normalization is NOT exact evidence. Written800–830 raw GPR/EBP/width debt0.
-25 states remain; continue831, then835–840/845/847 and late states.
-Selected `.analysis/f1238-object-57d580-loops/descendants.cpp/hpp/obj/asm`, source
-and named-index diagnostics/`verified-summary.json`; actual OBJ/PDB under
-`build/probes/f1238-object-57d580/`. [F1238 proof](OBJECT_ADVANCE_0057D580_ALL_INDICES_F1238.md)
-retains four new serial builds; F1237 retains full original/owner evidence.
-All43,845 original B remain pending; accepted inputs/canonical ledgers unchanged.
+`ObjectAdvance57D580F1237.hpp`. F1239 writesall70 states. Selected43,849B/11,694 x86
+vsnative43,845B. Frame378h/this-40h/ESI and all3,929 EBP positions agree; all1,162
+direct targets,972 CODE destinations,71 dense ordinals/198 sparse bytes agree.
+Owned DATA extent482B. **914 GPR/6 widths remain**, only837–838/903–904/911–919/
+995 opening; first00583489/whole6565, last00587806/11161. Allsix widths in838.
+837 swapped equality reads the limit before the call and worsens debt; rejected.
+Selected `.analysis/f1239-object-57d580-remaining/complete.cpp/hpp/obj/asm`, both
+diagnostics/named-index proof/`verified-summary.json`; `whole-audit.py [OBJ]`.
+Actual OBJ/PDB: `build/probes/f1239-object-57d580/`. [F1239 proof](OBJECT_ADVANCE_0057D580_COMPLETE_PARENT_F1239.md)
+retains five builds/control; F1237 native/owner evidence remains. Continue this
+complete body; all43,845B remain pending. Destinations are not physical offsets.
 
 All other giant authored originals remain open; use the
 [actual giant dispatch manifest](../config/fighter-boss-dispatch-fingerprints.json)
