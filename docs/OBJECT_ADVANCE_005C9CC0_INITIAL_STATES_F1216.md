@@ -1,5 +1,7 @@
 # F1216 — recover original 005C9CC0 initial states and real loops
 
+F1217 continues the same body to30/67 states; see [middle-state evidence](OBJECT_ADVANCE_005C9CC0_MIDDLE_STATES_F1217.md). The measurements below describe the frozen F1216 checkpoint.
+
 The new [natural C++ body](../probes/CharacterObjectActions005C9CC0F1216.cpp)
 contains **13 of 67 nondefault states**: 800–806, 835, 901, 902 and 995–997.
 The original 43,501B callable remains incomplete and NONEXACT; **all original

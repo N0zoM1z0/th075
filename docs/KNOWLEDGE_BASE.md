@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1216):**
+**Maintenance annotation, updated 2026-11-06 (F1217):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -411,6 +411,15 @@ zero raw GPR debt. Source7,168B/1,925 x86, frame0x80/this-18h remains incomplete
 againstnative0x470/this-4Ch; 54 states remain, all43,501 original CODE B pending.
 No accepted inputs/origins change; all prior complete parents/archives remain.
 [Original loop, boundary and source evidence](OBJECT_ADVANCE_005C9CC0_INITIAL_STATES_F1216.md).
+
+F1217 adds807–823 to005C9CC0, reaching30/67 states and eleven actual loop
+indices throughEBP-2Ch. All written instruction/operand diagnostics agree;
+prefix/through823 have zero raw GPR debt. Source18,815B/4,962 x86,
+frame0x200/this-30h remains incomplete againstnative0x470/-4Ch. Original
+817/820 FLD identifies both captured relative offsets; all ten owner-phase
+attachment branches, release exits, 810 boolean floating multiply and real
+loops are retained. Thirty-seven states and all43,501 CODE B remain pending.
+[Source and physical evidence](OBJECT_ADVANCE_005C9CC0_MIDDLE_STATES_F1217.md).
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function

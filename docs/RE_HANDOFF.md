@@ -1,4 +1,4 @@
-# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1216)
+# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1217)
 
 **Start here.** Continue all dirty work; there are no other active sessions.
 Work on both large/core and smaller authored originals. Use local commits
@@ -192,13 +192,13 @@ identity is not original relocation-offset equality. Retained source controls ar
 Continue register debt in this complete body; never count interiors as exact.
 New incomplete 43KB source:
 [`probes/CharacterObjectActions005C9CC0F1216.cpp`](../probes/CharacterObjectActions005C9CC0F1216.cpp).
-F1216 recovers13/67 states (800–806/835/901/902/995–997), five actual loop
-indices atnativeEBP-4..-14h; 54 states remain. Fresh7,168B/1,925 x86,
-frame0x80/this-18h vsnative0x470/-4Ch. All written operand diagnostics agree;
-prefix/through835 have zero raw GPR debt. [F1216 proof](OBJECT_ADVANCE_005C9CC0_INITIAL_STATES_F1216.md).
-Selected `.analysis/f1216-object-5c9cc0-recovery/reviewed.obj`, snapshots,
-listing, diagnostic and `verified-summary.json`. Continue807 onward in this
-body; incomplete states earn zero exact credit. All complete parents stay live.
+F1217 recovers30/67 states, including807–823 and eleven real loop indices
+throughEBP-2Ch; 37 remain unwritten. Fresh18,815B/4,962 x86, frame0x200 /
+this-30h vsnative0x470/-4Ch. All written operand diagnostics agree;
+prefix/through823 have zero raw GPR debt. [F1217 proof](OBJECT_ADVANCE_005C9CC0_MIDDLE_STATES_F1217.md).
+Selected `.analysis/f1217-object-5c9cc0-middle/attachment.obj`, immutable
+CPP/HPP, listing, diagnostic and `verified-summary.json`. Continue824 onward
+in this body; no exact credit. All complete parents stay live.
 
 All other giant authored originals remain open; use the
 [actual giant dispatch manifest](../config/fighter-boss-dispatch-fingerprints.json)

@@ -7,6 +7,7 @@ class OwnerActor5C9CC0F1216 {
 public:
     void SpawnEffect(short, float, float, signed char, signed char);
     void PlaySoundAt00453D40(short);
+    void PlaySharedSoundAt00453D60(short);
     void SetCameraShakeAt00453E60(float);
 };
 
@@ -25,3 +26,4 @@ public:
 };
 
 float __cdecl AngleAt00483300(float, float);
+float __cdecl AbsFloatAt00412D90(float);
