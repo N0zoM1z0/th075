@@ -396,6 +396,12 @@ conversion and 916's observed positive2.0 equality are retained. Equivalent
 scope and borrowed-window controls emit identical bytes/bindings. All39,999B
 stay pending; [complete source and residual map](OBJECT_ADVANCE_00536400_COMPLETE_PARENT_F1214.md).
 
+F1215's complete 00536400 zero-argument, void return-call and commuted
+comparison controls emit identical F1214 CODE/DATA/reference bindings.
+The verified F1214 source is restored unchanged; no exact bytes or accepted
+inputs change. Retain the local failed-preparation/duplicate-build receipt
+without counting it as another source control. [Negative evidence and paths](OBJECT_ADVANCE_00536400_COMPLETE_PARENT_F1214.md).
+
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function
 ledger or the new-agent work queue. Old F-series headings with words like

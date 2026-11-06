@@ -101,7 +101,7 @@ Build only this affected parent. Preserve [F1138's phase/meter borrow proof](CHA
 | **`005214B0`** 46,755B/13,230 x86, 901 DATA | F1197 source 46,754B/13,230 x86; native frame/this/all 4,133 EBP positions; **2,736 GPR /5 widths** | [F1197 whole CFG proof](FIGHTER_46KB_WHOLE_CFG_F1197.md): all 1,522 direct targets, 1,352 CODE fields and 139 dense destinations; NONEXACT |
 | **`0045DD70`** 60,999B/16,837 x86 | Live F1193 complete source **61,000B/16,837 x86 (+1B)**; original frame/saved-this/all 5,444 EBP slots; **6,311 GPR positions /5 widths** | [F1192 complete stack/CFG/PE proof](REIMU_WHOLE_STACK_CFG_F1192.md), [F1193 native WORD parameters](REIMU_WORD_ABI_REGISTER_BOUNDARY_F1193.md): all 1,684 direct targets, 1,682 CODE fields, 142 actual dense destinations; NONEXACT |
 | **`0055AC80`** 28,432B/7,653 x86 | F1194 continues the complete F167 source: **28,438B/7,653 x86 (+6B)**; original frame/this/all 2,511 EBP positions; **726 GPR positions /6 widths** | [F1194 whole native proof](OBJECT_ADVANCE_0055AC80_WHOLE_F1194.md): all 859 direct targets, 638 CODE fields and 58 dense destinations; NONEXACT |
-| **`00536400`** 39,999B/10,573 x86, 467 DATA | **F1214 complete source, NONEXACT**: 39,997B/10,573 x86; history +66/66 states, original frame0x2A0/all3,469 EBP slots; 913 GPR/10 width debt | [F1214 whole-parent proof](OBJECT_ADVANCE_00536400_COMPLETE_PARENT_F1214.md); partial source, zero exact credit |
+| **`00536400`** 39,999B/10,573 x86, 467 DATA | **F1214 complete source, NONEXACT**: 39,997B/10,573 x86; history +66/66 states, original frame0x2A0/all3,469 EBP slots; 913 GPR/10 width debt | [F1214 whole-parent proof](OBJECT_ADVANCE_00536400_COMPLETE_PARENT_F1214.md); zero exact credit |
 
 Current 33KB source:
 [`probes/CharacterObjectActionsF572.cpp`](../probes/CharacterObjectActionsF572.cpp).
@@ -190,8 +190,8 @@ entries/199 sparse bytes agree. **913 GPR/10 width differences remain** in
 Selected `.analysis/f1214-object-536400-complete/current.obj`, `current.asm`,
 immutable `current.cpp`/`current.hpp`, both current diagnostic JSONs and
 `verified-summary.json`; `whole-audit.py [OBJ]` checks this parent. Destination
-identity is not original relocation-offset equality. Scope/action-window
-controls are byte-identical negatives. [F1214 proof](OBJECT_ADVANCE_00536400_COMPLETE_PARENT_F1214.md).
+identity is not original relocation-offset equality. Scope/window/zero-argument/return-call/comparison
+controls are identical negatives. [F1214 proof](OBJECT_ADVANCE_00536400_COMPLETE_PARENT_F1214.md).
 Continue register debt in this complete body; never count interiors as exact.
 No marker/padding fixes. F1210's named-health-local trial fails3,162 EBP
 positions in the 34KB parent; its bounded member scan proves no full layout.

@@ -101,6 +101,16 @@ CODE/DATA/reference bindings. The extra action-window declaration is not
 adopted; the simpler reviewed parent is retained. These are negative source
 controls, not new exact evidence or general absence proofs.
 
+F1215 additionally checks integer-zero transform arguments, a void
+`return EnableTransform(...)` exit and commuted constant/owner comparisons
+at the two initial divergences. All three complete builds emit identical
+CODE/DATA and native reference bindings; none reduces the 913 GPR/10 width
+debt. The F1214 source is restored unchanged. Sources, serial headless build
+logs, objects, complete audits and `verified-summary.json` remain under
+`.analysis/f1215-object-536400-call-exit/`. One duplicate build after a failed
+source-preparation assertion is explicitly excluded, with its error receipt;
+it is not an additional source control. Do not repeat these negative trials.
+
 `.analysis/f1214-object-536400-complete/` retains the F1213 source/header,
 all new stages and logs, and selected immutable **current.cpp/current.hpp**,
 **current.obj/current.asm**, `current-source-diagnostic.json`,
