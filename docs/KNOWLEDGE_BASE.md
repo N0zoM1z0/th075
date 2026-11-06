@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1209):**
+**Maintenance annotation, updated 2026-11-06 (F1211):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -343,6 +343,27 @@ repeated. Original constructor-chain leaves 458650/458670 remain unknown.
 [Native virtual facet and complete negative evidence](OBJECT_ADVANCE_005EB520_VIRTUAL_ABI_F1209.md).
 Only this nonexact research TU is affected; no accepted inputs or origins
 change, no exact credit, full CI, corpus replay or per-function tests.
+
+F1211 writes the actual history relay and **22/66 native states** for R048
+00536400 into one new C++ research body. Native <800 behavior preserves the
+owner F12/F10/9C mode path, actual list-front history at FEC, conditional
+counter restores, three-counter reset and coordinate/facing bit copies.
+State 912's genuine split loop and history pointer recover original named
+slots **EBP-8 /EBP-4**, plus saved-this **EBP-0xC**, without dummy locals.
+Current incomplete build: **8,101 CODE /2,159 x86, frame0x74 vsnative0x2A0**,
+23 dense entries vs67, same 199B sparse extent. All 44 unwritten selectors
+remain pending. The prefix177 and written state intervals pass explicit
+GPR/negative-stack-elided operand diagnostics, not physical acceptance.
+Prefix has zero raw GPR/EBP debt; case800's 215 x86 have zero raw GPR/EBP/
+width debt. Other actual residuals remain. All **39,999 original CODE B**
+stay unaccepted. [History, real loop and source evidence](OBJECT_ADVANCE_00536400_HISTORY_AND_CASES_F1211.md).
+F1210's used-health-local candidate in complete 005EB520 wrongly changes
+3,162 EBP positions without reducing 135 GPR debt; reject. Its refined
+11-method/1,987-positive-access scan establishes no complete leading layout.
+The corrected method-body inventory detects all 543 candidates' actual probe
+marker stores; its previous word-only count was insufficient. These bounded
+heuristics do not prove universal source absence. All complete live parents,
+accepted units and 95 unknown origins remain unchanged; no full CI/replay.
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function

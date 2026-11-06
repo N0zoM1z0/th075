@@ -1,4 +1,4 @@
-# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1209)
+# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1211)
 
 **Start here.** Continue all dirty work; there are no other active sessions.
 Work on both large/core and smaller authored originals. Use local commits
@@ -60,32 +60,21 @@ Single source/whole-parent verifier:
 | Actual direct intra-function branches audited by native target ordinal | **1,834** | **all 1,834 destinations match** |
 | **Whole original callable accepted exact** | — | **NO** |
 
-The 83 strict cases **are interior evidence, not accepted independent
-functions**. F1140–F1148 restore the actual scopes and all direct targets;
-the [complete CFG proof](CHARACTEROBJECT_NATIVE_ALL_DIRECT_CFG_F1148.md)
-indexes the current native conditions. The
-[3E3/3E4 hit/return proof](CHARACTEROBJECT_NATIVE_HIT_RETURNS_CFG_F1147.md)
-supersedes F1132's positive-cooldown continuation interpretation.
+The 83 strict cases are interiors, not accepted independent functions.
+F1140–F1148 restore the [complete direct CFG](CHARACTEROBJECT_NATIVE_ALL_DIRECT_CFG_F1148.md)
+and the [3E3/3E4 hit/return scopes](CHARACTEROBJECT_NATIVE_HIT_RETURNS_CFG_F1147.md),
+superseding the old positive-cooldown continuation interpretation.
+F1149 resolves both 391 FUCOMPP load orders: 29 PE fields /277 x86;
+[typed x87 proof](CHARACTEROBJECT_NATIVE_391_TRANSFORM_X87_F1149.md).
+F1150 recovers frame/this/all EBP slots through genuine temporaries and one
+used 38A loop index; [stack proof](CHARACTEROBJECT_NATIVE_ALL_STACK_SLOTS_F1150.md).
+F1158 verifies every non-GPR operand, all 1,357 CODE fields and 92 dense
+ordinals; [whole operand proof](CHARACTEROBJECT_WHOLE_OPERAND_PROOF_F1158.md).
+F1181 aligns seven narrow declarations /six native callees, retaining all
+82,109 CODE+DATA bytes and 1,449 field shapes (202 symbol renames).
+Keep raw coordinate/angle DWORD transport: the float-lvalue trial adds 329
+instructions. [Native parameter proof](CHARACTEROBJECT_NATIVE_EFFECT_ABI_F1181.md).
 
-The live parent verifier independently requires **zero mismatches across
-all 1,834 original direct jump target ordinals**. This proves those direct
-edges, not original stack slots, GPR roles or
-whole-function byte equality. F1149 resolves both original `0x391` FUCOMPP load orders using the existing
-borrowed transform field, verified across all 29 PE fields and 277 native
-mnemonic/GPR/width positions; see [typed x87 source proof](CHARACTEROBJECT_NATIVE_391_TRANSFORM_X87_F1149.md).
-F1150 recovers the original frame and all EBP stack offsets through genuine
-expression temporaries and a shared 38A loop index; see [native stack proof](CHARACTEROBJECT_NATIVE_ALL_STACK_SLOTS_F1150.md).
-F1158 verifies the complete operand grammar and all 1,357 CODE field destinations,
-plus the true native instruction destination of each of the 92 dense entries.
-The two helper parameter views now agree with the existing exact helper sources,
-without changing emitted CODE/DATA or physical field geometry;
-[whole operand and indirect-target proof](CHARACTEROBJECT_WHOLE_OPERAND_PROOF_F1158.md).
-F1181 reconciles seven narrow effect/sound parameter declarations (six native
-callees), preserving all **82,109 candidate CODE+DATA bytes** and all 1,449
-physical COFF field shapes. The 202 changed decorated names retain their
-native destinations. Raw coordinate/angle DWORD transport is deliberately
-preserved: a float-lvalue argument experiment adds 329 instructions and is
-rejected. [Native parameter/transport proof](CHARACTEROBJECT_NATIVE_EFFECT_ABI_F1181.md).
 Remaining work is original GPR roles in 358–35E and 3E6, with five instruction
 width differences in 35B/35E/3E6. The source is only 3B longer but remains NONEXACT.
 [F1128's x87 negatives](CHARACTEROBJECT_NATIVE_391_392_393_F1128.md)
@@ -112,6 +101,7 @@ Build only this affected parent. Preserve [F1138's phase/meter borrow proof](CHA
 | **`005214B0`** 46,755B/13,230 x86, 901 DATA | F1197 source 46,754B/13,230 x86; native frame/this/all 4,133 EBP positions; **2,736 GPR /5 widths** | [F1197 whole CFG proof](FIGHTER_46KB_WHOLE_CFG_F1197.md): all 1,522 direct targets, 1,352 CODE fields and 139 dense destinations; NONEXACT |
 | **`0045DD70`** 60,999B/16,837 x86 | Live F1193 complete source **61,000B/16,837 x86 (+1B)**; original frame/saved-this/all 5,444 EBP slots; **6,311 GPR positions /5 widths** | [F1192 complete stack/CFG/PE proof](REIMU_WHOLE_STACK_CFG_F1192.md), [F1193 native WORD parameters](REIMU_WORD_ABI_REGISTER_BOUNDARY_F1193.md): all 1,684 direct targets, 1,682 CODE fields, 142 actual dense destinations; NONEXACT |
 | **`0055AC80`** 28,432B/7,653 x86 | F1194 continues the complete F167 source: **28,438B/7,653 x86 (+6B)**; original frame/this/all 2,511 EBP positions; **726 GPR positions /6 widths** | [F1194 whole native proof](OBJECT_ADVANCE_0055AC80_WHOLE_F1194.md): all 859 direct targets, 638 CODE fields and 58 dense destinations; NONEXACT |
+| **`00536400`** 39,999B/10,573 x86, 467 DATA | **F1211 unfinished**: 8,101B/2,159 x86; history relay +22/66 real states, 44 unwritten; correct this/record/index slots, wrong frame 0x74 vs0x2A0 | [Native history/case proof](OBJECT_ADVANCE_00536400_HISTORY_AND_CASES_F1211.md); partial source, zero exact credit |
 
 Current 33KB source:
 [`probes/CharacterObjectActionsF572.cpp`](../probes/CharacterObjectActionsF572.cpp).
@@ -145,33 +135,25 @@ at `.analysis/f1201-82kb-first-register/native-state-debt.json` still applies:
 
 Current 58KB source:
 [`probes/FighterWhole00543210F1041.cpp`](../probes/FighterWhole00543210F1041.cpp).
-F1196 restores 253 ordinary exits and five real operands; all whole CFG,
-stack and non-GPR operands agree. Keep the getter inside the switch: only
-0/2/4/5 enter 005515BA; ordinary exits reach 005515C2. Frame 0x218 /this
-EBP-0x44 agree. Selected proof: `.analysis/f1196-58kb-whole-cfg/tracked.obj`
-and `whole-audit.py`; F1025 cold-builds only this parent for PE/DATA checks.
-Remaining **1,741 GPR /three widths in 63**; whole exactness is unproved.
+F1196 restores 253 exits/five operands. Only 0/2/4/5 enter getter005515BA;
+ordinary exits reach005515C2. Selected `.analysis/f1196-58kb-whole-cfg/tracked.obj`
+and `whole-audit.py`; F1025 verifies only this parent's PE/DATA. All stack/
+CFG/non-GPR operands agree; **1,741 GPR /three widths in63** remain.
 
 Current 46KB source:
 [`probes/FighterWhole005214B0F1040.cpp`](../probes/FighterWhole005214B0F1040.cpp).
-F1197 restores 56 ordinary exits to 0052CB4F and three 18B guard targets.
-The post-subaction-6 +80/+7C resets belong inside stage7/frame0/counter<2.
-Keep the shared getter inside the switch; only 0/2/4/5 enter 0052CB47.
-Frame 0x138 /this EBP-0x10, every stack/non-GPR operand and all native
-targets agree. Selected proof: `.analysis/f1197-46kb-whole-cfg/tracked.obj`
-and `whole-audit.py`; F1026 cold-builds this parent for PE/DATA checks.
-Remaining **2,736 GPR /five widths in 63/1FD/252/254**; NONEXACT.
+F1197 restores 56 ordinary exits0052CB4F and three18B guards. The post-action6
+resets stay inside stage7/frame0/counter<2; only 0/2/4/5 enter getter0052CB47.
+Selected `.analysis/f1197-46kb-whole-cfg/tracked.obj`, `whole-audit.py`;
+F1026 verifies scoped PE/DATA. **2,736 GPR /five widths in63/1FD/252/254**.
 
 Current Reimu source:
 [`probes/FighterWhole0045DD70F1183.cpp`](../probes/FighterWhole0045DD70F1183.cpp).
-All cases/default and the inside-switch getter are real. Frame 0x380 /
-this EBP-0x34 agree; full native properties are in the table/proofs above.
-Current object: `.analysis/f1193-reimu-register-boundary/adopted.obj`;
-audit: `.analysis/f1192-reimu-final-states/whole-audit.py OBJ`.
-Remaining **6,311 GPR /five widths**; first divergence 59 at
-0045FDA9 /ordinal2,292. Preserve F1193's native short parameters and
-inside-switch getter. F1193 access/guard controls plus F792/F793 are
-retained negatives. All 60,999 original CODE bytes remain pending.
+All real cases/default/getter and native frame/stack remain as above.
+Selected `.analysis/f1193-reimu-register-boundary/adopted.obj`;
+audit `.analysis/f1192-reimu-final-states/whole-audit.py OBJ`.
+**6,311 GPR /five widths**; first59 at0045FDA9 /ordinal2,292. Preserve
+F1193 short parameters/getter. F1193 and F792/F793 negatives stay excluded.
 
 Current `0055AC80` source:
 [`probes/CharacterObjectWhole0055AC80F1194.cpp`](../probes/CharacterObjectWhole0055AC80F1194.cpp),
@@ -197,6 +179,23 @@ profile. [F1209 proof](OBJECT_ADVANCE_005EB520_VIRTUAL_ABI_F1209.md) retains
 F1208's eight identical-code controls and two wrong-shape candidates; do not
 repeat. No full leading layout is inferred. All 34,434 original CODE B pending.
 Earlier forward-branch bytes can differ despite correct target ordinals.
+
+New incomplete 40KB source:
+[`probes/CharacterObjectActions00536400F1211.cpp`](../probes/CharacterObjectActions00536400F1211.cpp),
+`ObjectAdvance536400F1211.hpp`. The complete <800 history relay and 22 actual
+states are written; **44 native cases remain unwritten**. Never accept this
+partial body or count interiors. Genuine history pointer /burst loop index
+recover **EBP-4 /EBP-8 /this EBP-0xC**; frame remains 0x74 vsnative0x2A0.
+Selected `.analysis/f1211-object-536400-recovery/current.obj`, `current.asm`,
+`current-source-diagnostic.json`, `verified-summary.json`; `diagnose-source.py STEM`
+is a local partial diagnostic, not acceptance. All written operand shapes
+agree after explicit GPR/stack elision; real residuals remain. Prefix177 has
+zero raw GPR/EBP debt; case800's 215 x86 also have zero width debt. Keep one
+body and the real loop. Continue missing 801–811/900-series from native
+intervals; preserve all eight complete parents above. No marker/padding fixes.
+F1210's named-health-local control fails 3,162 EBP positions in the 34KB
+parent; its bounded leading-field scan does not prove a full object prefix.
+[Detailed evidence and retained paths](OBJECT_ADVANCE_00536400_HISTORY_AND_CASES_F1211.md).
 
 F1206 deduplicates F756/F773's 33KB comma/typed-window controls; F1205's
 fresh evidence is valid but those ideas are not all new. A valid stage-4
