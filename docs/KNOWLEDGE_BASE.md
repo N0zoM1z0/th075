@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1213):**
+**Maintenance annotation, updated 2026-11-06 (F1214):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -384,6 +384,17 @@ retain441 GPR/3 width differences. Source emits29,536B/7,833 x86, frame0x214;
 Native FLD resolves 835/839 parameter inputs to selfC8/CC; the gravity is0.4,
 not a decompiler guess. Distinct unrolled effects, sound/gauge/spawn order,
 short increments and exits remain. [F1213 source and evidence](OBJECT_ADVANCE_00536400_MIDDLE_STATES_F1213.md).
+
+F1214 completes all66 states and the history/default in the single 00536400
+parent. Fresh source39,997B/10,573 x86 recovers nativeframe0x2A0 and every
+3,469 EBP operand; all967 direct targets,871 actual CODE destinations and67
+dense/199 sparse dispatch fields agree. **913 GPR/10 width differences remain**
+in12 states; first005392F8/whole3223/state829 instruction61. No non-GPR, CFG,
+stack or reference-destination debt remains; offsets/displacements are still
+nonexact. Distinct health/difficulty/landing exits, random ordering, selfC8
+conversion and 916's observed positive2.0 equality are retained. Equivalent
+scope and borrowed-window controls emit identical bytes/bindings. All39,999B
+stay pending; [complete source and residual map](OBJECT_ADVANCE_00536400_COMPLETE_PARENT_F1214.md).
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function

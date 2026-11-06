@@ -1,5 +1,7 @@
 # F1211 — native history relay and 22 actual states toward whole 00536400
 
+F1214 now supplies the complete natural parent; see [current whole-function evidence](OBJECT_ADVANCE_00536400_COMPLETE_PARENT_F1214.md). The F1211 measurements below are historical.
+
 F1212 continues the same body with native 801–811 and a freshly built
 33-state checkpoint. Its [early-state evidence](OBJECT_ADVANCE_00536400_EARLY_STATES_F1212.md)
 supersedes this dated checkpoint's selected object and current dimensions.

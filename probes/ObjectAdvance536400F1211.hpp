@@ -21,6 +21,7 @@ public:
 class OwnerActor536400F1211 {
 public:
     void SpawnEffect(short, float, float, signed char, signed char);
+    void SpawnAuxEffectAt00453C80(short, float, float, signed char, signed char);
     void UpdateGaugeAt0046D000(int);
     void PlaySharedSoundAt00453D60(short);
     void PlaySoundAt00453D40(short);
@@ -46,3 +47,5 @@ public:
 };
 
 float __cdecl AngleAt00483300(float, float);
+
+float __cdecl AbsFloatAt00412D90(float);

@@ -1,5 +1,7 @@
 # F1213 — recover the middle 00536400 states
 
+F1214 completes all66 states and restores the original frame/all stack slots; see [complete-parent evidence](OBJECT_ADVANCE_00536400_COMPLETE_PARENT_F1214.md). Dimensions below describe the frozen F1213 checkpoint.
+
 The [single natural C++ source](../probes/CharacterObjectActions00536400F1211.cpp)
 now contains the history relay and **50 of 66 nondefault states**. This adds
 828, 829, 832, 834–837, 839, 842, 843 and 845–851 to F1212. The remaining
