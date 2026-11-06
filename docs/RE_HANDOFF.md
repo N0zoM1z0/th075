@@ -1,15 +1,12 @@
-# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1204)
+# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1205)
 
-**Start here.** Work on both large/core original functions and smaller entire
-original functions. The user requests meaningful **multiple local commits** named
-`gpt-web: ...`, wants all dirty work continued rather than discarded, and forbids
-a complete 982-unit cold replay. Read [AGENTS.md](../AGENTS.md),
-[the whole-function build workflow](RE_WORKFLOW.md), and
-[storage and recovery](STORAGE_HYGIENE.md). The original Japanese PE,
-`config/function-origins.csv`, exact `config/match-units.toml`, current
-pinned-VC7.1 source builds and local Git status supersede all past F-series
-research prose. **Do not infer completion, exactness, or original ownership
-from an internal native case, mnemonic count, or identical source bytes.**
+**Start here.** Continue all dirty work; there are no other active sessions.
+Work on both large/core and smaller authored originals. Use local commits
+named `gpt-web: ...`; never replay the complete 982-unit corpus.
+Read [AGENTS.md](../AGENTS.md), [workflow](RE_WORKFLOW.md) and
+[storage/recovery](STORAGE_HYGIENE.md). Current pinned target, ledgers and
+fresh source evidence supersede historical labels. Inner cases, mapped
+names and compiler output alone prove neither whole exactness nor ownership.
 
 ## 1. Original native PE and complete-function exactness
 
@@ -91,40 +88,44 @@ preserved: a float-lvalue argument experiment adds 329 instructions and is
 rejected. [Native parameter/transport proof](CHARACTEROBJECT_NATIVE_EFFECT_ABI_F1181.md).
 Remaining work is original GPR roles in 358–35E and 3E6, with five instruction
 width differences in 35B/35E/3E6. The source is only 3B longer but remains NONEXACT.
-Earlier [F1128 attempts](CHARACTEROBJECT_NATIVE_391_392_393_F1128.md)
-remain negative historical evidence, not a current x87 blocker. `0x3E6` retained **105/105 native mnemonics and 9/9 PE fields**
-but only **30/105 native GPR positions**. Ten isolated 3E6 and eleven
-preceding 3E5 full-parent grammar tests were unsuccessful (retained
-under ignored `.analysis/f1137-*`). Four additional typed-parent-action /preceding
-transform-assignment full-parent probes after F1150 likewise leave all 522
-GPR differences unchanged (`.analysis/f1151-native-gpr-types/`); those
-negative sources are retained and were not adopted.
-
-F1194 also rules out nesting the first 358/3E6 conjunction guards: all
-82,109 candidate CODE+DATA bytes and 1,449 field shapes remain identical,
-with the same 522 GPR /five-width debt. This is another bounded negative
-control, retained under `.analysis/f1194-native-guard-topology/`.
+[F1128's x87 negatives](CHARACTEROBJECT_NATIVE_391_392_393_F1128.md)
+are superseded by F1149. Current 3E6 keeps 105 mnemonics /nine PE fields
+but only 30 matching GPR positions. Retained negatives: ten 3E6 and eleven
+preceding 3E5 grammars (`.analysis/f1137-*`), four typed/transform-assignment
+controls (`.analysis/f1151-native-gpr-types/`), and F1194's nested 358/3E6
+guards. None reduces the 522 GPR /five-width debt; do not repeat them.
 
 **Reproduction:**
 
     scripts/repo-python scripts/verify-characterobject-current-recovered-f1068.py
 
-No need to replay all 982 exact units. This cold-rebuilds ONLY the
-one affected partial Boss source. F1138 introduced 358 genuine phase
-and meter borrows in 72 action files while keeping **82,127/82,127
-selected CODE+DATA bytes** and **1,449 physical COFF offsets/targets**;
-94 *compiler-local `$L` names* changed. That is **NOT original whole
-CODE/COFF exactness**. See [F1138 source borrow](CHARACTEROBJECT_WHOLE_NATIVE_PHASE_GAUGE_F1138.md).
+This builds only the affected parent. F1138's earlier 358 phase/meter
+borrows preserved its selected CODE/DATA and COFF geometry; that is not
+whole exactness. Keep the [source-borrow evidence](CHARACTEROBJECT_WHOLE_NATIVE_PHASE_GAUGE_F1138.md)
+and all current native proofs above. No full 982-unit replay.
 
 ## 3. Other large original functions — do not abandon them
 
 | Actual original complete callable | Current original-shaped normal C++ research | Local scoped proof |
 | --- | --- | --- |
+| **`004EBDA0`** 33,293B/8,789 x86, 438 DATA | F1205 fresh complete F572–F596 source: original frame 0x1FC /this EBP-0x40, all 3,005 EBP; **133 GPR /zero width differences** | [F1205 full native proof](OBJECT_ADVANCE_004EBDA0_WHOLE_F1205.md): all 885 direct targets, 622 CODE fields, 60 dense targets; 137 nonfield bytes remain; NONEXACT |
 | **`004AC040`** 82,796B/22,721 x86, 1,126 afterRET DATA | F1203 same length/count; frame 0x720 /this EBP-0x64, all 7,432 EBP positions; **6,958 GPR /12 widths**; all direct CFG/non-GPR operands agree | [F1200 all direct CFG proof](THIRD_FIGHTER_ALL_DIRECT_CFG_F1200.md): all 1,927 direct targets, 2,201 CODE fields and 151 dense ordinals agree; NONEXACT |
 | **`00543210`** 58,294B/16,471 x86, 943 DATA | F1196 live tracked source 58,293B/16,471 x86; native frame/this/all 5,119 EBP positions; **3 widths, 1,741 GPR positions** | [F1196 whole CFG/operand proof](FIGHTER_58KB_WHOLE_CFG_OPERANDS_F1196.md): all 1,905 direct targets, 1,707 CODE fields and 156 dense destinations; NONEXACT |
 | **`005214B0`** 46,755B/13,230 x86, 901 DATA | F1197 source 46,754B/13,230 x86; native frame/this/all 4,133 EBP positions; **2,736 GPR /5 widths** | [F1197 whole CFG proof](FIGHTER_46KB_WHOLE_CFG_F1197.md): all 1,522 direct targets, 1,352 CODE fields and 139 dense destinations; NONEXACT |
 | **`0045DD70`** 60,999B/16,837 x86 | Live F1193 complete source **61,000B/16,837 x86 (+1B)**; original frame/saved-this/all 5,444 EBP slots; **6,311 GPR positions /5 widths** | [F1192 complete stack/CFG/PE proof](REIMU_WHOLE_STACK_CFG_F1192.md), [F1193 native WORD parameters](REIMU_WORD_ABI_REGISTER_BOUNDARY_F1193.md): all 1,684 direct targets, 1,682 CODE fields, 142 actual dense destinations; NONEXACT |
 | **`0055AC80`** 28,432B/7,653 x86 | F1194 continues the complete F167 source: **28,438B/7,653 x86 (+6B)**; original frame/this/all 2,511 EBP positions; **726 GPR positions /6 widths** | [F1194 whole native proof](OBJECT_ADVANCE_0055AC80_WHOLE_F1194.md): all 859 direct targets, 638 CODE fields and 58 dense destinations; NONEXACT |
+
+Current 33KB source:
+[`probes/CharacterObjectActionsF572.cpp`](../probes/CharacterObjectActionsF572.cpp).
+It already contains every real case/default; do not restart F569 markers.
+F1205 cold-verifies all 8,789 original offsets/widths, full CFG/stack/non-GPR
+operands and all 682 physical COFF bindings. **137 bytes /133 GPR** remain:
+38D=45, 38E=64, 3E3=24 (first31 instructions only). First divergence:
+**004F344C /whole8,076 /38D91**. Fresh selected object:
+`.analysis/f1205-object-4ebda0-recovery/before.obj`; `whole-audit.py OBJ`
+and `verified-summary.json` there. Use **/GX-**. Six new controls do not
+improve; preserve F594's 23 negatives too. No candidate adopted; all
+33,293 original CODE bytes remain pending. Keep this complete parent live.
 
 Current 82KB source:
 [`probes/FighterWhole004AC040F1020.cpp`](../probes/FighterWhole004AC040F1020.cpp).
@@ -163,19 +164,16 @@ targets agree. Selected proof: `.analysis/f1197-46kb-whole-cfg/tracked.obj`
 and `whole-audit.py`; F1026 cold-builds this parent for PE/DATA checks.
 Remaining **2,736 GPR /five widths in 63/1FD/252/254**; NONEXACT.
 
-Current Reimu source: [`probes/FighterWhole0045DD70F1183.cpp`](../probes/FighterWhole0045DD70F1183.cpp).
-All real cases/default and the four-entry inside-switch getter are present.
-Native frame 0x380 /this EBP-0x34, all 5,444 EBP positions, 1,684 direct
-branches, 1,682 CODE fields, 142 dense entries and 1,090B DATA agree.
-Remaining **6,311 GPR /five widths**; first GPR divergence is 59 at
-0045FDA9 /ordinal 2,292. F1193 adopts native short helper parameters;
-all CODE+DATA and field shapes stay unchanged. Current object:
-`.analysis/f1193-reimu-register-boundary/adopted.obj`; scoped verifier:
-`.analysis/f1192-reimu-final-states/whole-audit.py OBJ`.
-Preserve the inside-switch getter. F1193 bare/captured/borrowed-access
-and guard controls, plus F792/F793, are retained negatives; do not repeat.
-See the linked F1192/F1193 proofs above. All 60,999 original bytes remain
-pending; whole NONEXACT.
+Current Reimu source:
+[`probes/FighterWhole0045DD70F1183.cpp`](../probes/FighterWhole0045DD70F1183.cpp).
+All cases/default and the inside-switch getter are real. Frame 0x380 /
+this EBP-0x34 agree; full native properties are in the table/proofs above.
+Current object: `.analysis/f1193-reimu-register-boundary/adopted.obj`;
+audit: `.analysis/f1192-reimu-final-states/whole-audit.py OBJ`.
+Remaining **6,311 GPR /five widths**; first divergence 59 at
+0045FDA9 /ordinal2,292. Preserve F1193's native short parameters and
+inside-switch getter. F1193 access/guard controls plus F792/F793 are
+retained negatives. All 60,999 original CODE bytes remain pending.
 
 Current `0055AC80` source is
 [`probes/CharacterObjectWhole0055AC80F1194.cpp`](../probes/CharacterObjectWhole0055AC80F1194.cpp),

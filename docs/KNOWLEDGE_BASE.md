@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1204):**
+**Maintenance annotation, updated 2026-11-06 (F1205):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -296,6 +296,21 @@ credit or accepted input change. Current object is the F1203 tracked object.
 F1204's 25B actual F135 receiver borrowing also preserves all bytes/field
 shapes, changing 36 external and 161 compiler-local names at unchanged
 offsets, with no GPR gain; that candidate is not adopted. No CI/corpus replay.
+
+F1205 resumes actual complete F572–F596 33KB 004EBDA0 source, preserving
+all real cases instead of restarting the obsolete F569 marker skeleton.
+A fresh /GX- build confirms all 8,789 native offsets/widths, frame 0x1FC /
+this EBP-0x40, all 3,005 EBP positions, 885 direct destinations, 622 CODE
+fields and 60 dense targets with full 438B DATA. Every one of 682 physical
+COFF bindings is checked; 132 source symbols resolve consistently. Whole
+comparison still differs in **137 nonfield bytes /133 GPR positions**:
+38D=45, 38E=64, 3E3=24, with zero width or other operand/CFG debt.
+[Fresh whole original proof](OBJECT_ADVANCE_004EBDA0_WHOLE_F1205.md).
+The first difference is 004F344C /whole8,076 /38D91. Six new whole-parent
+scale/phase/profile/arithmetic controls do not improve. Original source is
+unchanged; fresh selected before.obj/audit/bindings and all negative sources
+are preserved locally. No exact credit, origin change, accepted input change,
+full CI or corpus replay.
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function
