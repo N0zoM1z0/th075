@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1229):**
+**Maintenance annotation, updated 2026-11-06 (F1230):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -547,6 +547,13 @@ immutable stages and `verified-summary.json` remain in
 `.analysis/f1229-object-4ca6e0-codegen-controls/`.
 [Complete-parent evidence](OBJECT_ADVANCE_004CA6E0_COMPLETE_PARENT_F1227.md).
 No new exact bytes, origin change, CI or canonical replay.
+
+F1230 rejects two further first808 bound controls: indexed coordinate access
+keeps complete CODE/DATA/COFF shapes and all 447 GPR/12 width differences;
+commuting the literal reverses x87 operands and changes the native status
+test/branch. All source/object diagnostics remain in
+`.analysis/f1230-object-4ca6e0-coordinate-access/verified-summary.json`.
+The selected source/header are byte-restored; no new exact credit.
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function

@@ -138,3 +138,12 @@ All four immutable CPP/HPP/OBJ/ASM/build-log stages and diagnostics remain in
 COFF comparisons in `verified-summary.json`. The selected tracked CPP/HPP are
 byte-restored to F1227. No accepted input, ledger, origin or canonical tooling
 changes; no whole exact credit, CI, corpus replay or new per-function tests.
+
+F1230 also rejects two first-bound controls. Indexed float-pointer access
+retains complete CODE/DATA and all COFF shapes, with 49 local-label reference
+renames; the 447 GPR/12 width debt remains. Commuting the literal comparison
+reverses the native FLD/FCOMP operands and changes TEST AH,41h/JE to AH,5/JNP.
+It is rejected independently of register roles. Sources, fresh serial objects,
+listings, diagnostics and actual COFF comparisons remain under
+`.analysis/f1230-object-4ca6e0-coordinate-access/verified-summary.json` and
+adjacent files. The tracked source/header remain byte-restored to F1227.

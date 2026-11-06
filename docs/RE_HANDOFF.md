@@ -1,4 +1,4 @@
-# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1229)
+# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1230)
 
 **Start here.** Continue all dirty work; there are no other active sessions.
 Work on both large/core and smaller authored originals. Use local commits
@@ -197,7 +197,7 @@ F1227 has all55 states; selected42,515B/11,201 x86 vsnative42,511B; original
 frame0x288/this-4/ESI/all3,717 EBP operands. All1,014 direct targets,873 CODE
 destinations,56 dense ordinals/198 sparse bytes agree. **447 GPR/12 widths**
 remain only in808–811, first004CCBD7/whole2526. Increment/boundary controls,
-`/G7`, comma condition and integer/double bounds are negative (F1224/28/29).
+`/G7`, comma, indexed/commuted and integer/double bounds are negative (F1224/28–30).
 906 compound update fixes LEA. Selected
 `.analysis/f1227-object-4ca6e0-complete/compound-counter.obj`, immutable CPP/HPP,
 listing/both diagnostics/verified-summary.json; `whole-audit.py [OBJ]`.
