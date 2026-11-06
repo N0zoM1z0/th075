@@ -1,5 +1,10 @@
 # F1188 — Reimu seven original 1F4–1FB charge and leap policies
 
+**Historical F1188 checkpoint:** F1189 extends the same parent to
+46,890B/12,933 x86, preserving all 106 prior nonmarker physical intervals.
+[Current special-action proof](REIMU_SPECIAL_ATTACKS_F1189.md). The dimensions
+below describe commit `597e1af0`.
+
 The live one-body `probes/FighterWhole0045DD70F1183.cpp` replaces seven
 more markers with `ReimuChargedAttacksF1188.inc` and its native-policy
 fragments. The independently R063-authored original **0045DD70 remains

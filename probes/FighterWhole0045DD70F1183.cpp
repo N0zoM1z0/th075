@@ -4,6 +4,7 @@
 // Preserve independently reviewed current bodies and all six table groups.
 class FighterSwitchF598_Boss0045DD70 { public: void SetMotionStateAt40FBB0(int,float,int); void SetMotionFloatAt40FBB0(float,float,float); void ResetMotionAt40FC50(); void SpawnDirectedAt453A70(int,int,int,char,int); void SpawnWithFloatAt453A70(int,int,float,char,int); void SpawnFloatXYAt453A70(int,float,float,char,int); void InitTrajectoryAt453E60(float); virtual void NativeVirtualFrameAdvance(); void Advance(); int SelectRangeAt455580(int,int); void PlaySoundAt453D40(short); void ResetAt453E20(); void PrepareActionAt453D60(int); void StartAnimationAt46D000(int); void SpawnAt453C80(int,float,float,char,int); void SpawnMixedAt453C80(int,int,float,char,int); void SpawnRawXYAt453C80(int,int,int,char,int); void ConfigureStormAt454BC0(int,unsigned char,unsigned int); short GetNativeActionAt40FA30(); void SetNativeActionAt40FAC0(int); signed char ContactAt454EE0(); void SetAuxActionAt40FB40(int); };
 extern unsigned int g_FighterProbeMarker;
+extern float g_ReimuSpecialYAt0065908C;
 extern float g_ReimuChargeFallAt00659094;
 extern float g_ReimuRepeatDragAt00659090;
 extern float g_ReimuLeapDragAt006583FC;
@@ -628,21 +629,7 @@ case 0x48: {
 #include "ReimuScriptedAttacksF1186.inc"
 #include "ReimuScriptedCombosF1187.inc"
 #include "ReimuChargedAttacksF1188.inc"
-        case 0x252: g_FighterProbeMarker = 595; break;
-        case 0x253: g_FighterProbeMarker = 596; break;
-        case 0x254: g_FighterProbeMarker = 597; break;
-        case 0x258: g_FighterProbeMarker = 601; break;
-        case 0x259: g_FighterProbeMarker = 602; break;
-        case 0x25A: g_FighterProbeMarker = 603; break;
-        case 0x25B: g_FighterProbeMarker = 604; break;
-        case 0x25C: g_FighterProbeMarker = 605; break;
-        case 0x25D: g_FighterProbeMarker = 606; break;
-        case 0x25E: g_FighterProbeMarker = 607; break;
-        case 0x25F: g_FighterProbeMarker = 608; break;
-        case 0x260: g_FighterProbeMarker = 609; break;
-        case 0x261: g_FighterProbeMarker = 610; break;
-        case 0x262: g_FighterProbeMarker = 611; break;
-        case 0x263: g_FighterProbeMarker = 612; break;
+#include "ReimuSpecialAttacksF1189.inc"
         case 0x2BC: g_FighterProbeMarker = 701; break;
         case 0x2BD: g_FighterProbeMarker = 702; break;
         case 0x2BE: g_FighterProbeMarker = 703; break;
