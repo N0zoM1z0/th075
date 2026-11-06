@@ -127,3 +127,9 @@ Immutable before/source/header/object/listing/log stages and actual COFF
 comparisons are retained in `.analysis/f1220-object-5c9cc0-scalar-types/`,
 with `verified-summary.json`. Selected source/header are byte-restored to
 F1219; no additional cold replay, origin test or full CI is warranted.
+
+F1221 rules out joining initialization and phase1 with `else if`: the new
+ordinary C++ control emits43,504B/11,448 x86 and adds one original-absent JMP
+in918 (185 versus184 instructions). Selected separate-if source/header are
+restored. The fresh source/object/listing/diagnostic/summary remain under
+`.analysis/f1221-object-5c9cc0-phase-chain/`; no whole exact credit.

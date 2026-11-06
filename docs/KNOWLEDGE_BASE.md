@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1220):**
+**Maintenance annotation, updated 2026-11-06 (F1222):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -449,6 +449,24 @@ first native GPR divergence; the selected F1219 source/header are restored.
 `.analysis/f1220-object-5c9cc0-scalar-types/verified-summary.json` retain the
 negative evidence. Same935 GPR/one width debt and zero new exact bytes;
 no accepted inputs, ledgers or canonical infrastructure change.
+
+F1221 rejects adjacent-phase `else if` in005C9CC0: it adds one original-absent
+JMP/one x86, emitting43,504B instead of selected43,502B. Selected source is
+restored; `.analysis/f1221-object-5c9cc0-phase-chain/` preserves the evidence.
+
+F1222 starts the next R048-authored original004CA6E0 from fresh native and
+read-only Ghidra evidence, preserving the exact146B constructor/vtable witness.
+The same new C++ body has12/55 states, representing5,978 original interior B/
+1,574 x86 without whole exact credit. Fresh reviewed.obj emits6,097B/1,623 x86,
+frame0x68 versus native0x288, original this-4 and naturally generated ESI.
+All written mnemonic/operand diagnostics pass; prefix/800–802 have zero raw
+GPR/EBP debt, and800–802/812–814 have zero raw GPR/EBP/width debt. 43 states
+remain, and all42,511 original CODE B stay pending. [Native/source proof](OBJECT_ADVANCE_004CA6E0_INITIAL_STATES_F1222.md)
+records distinct effect/rotation/alpha behavior and physical owner-F16/60.0f
+variants. Selected private `.analysis/f1222-object-4ca6e0-recovery/reviewed.obj`,
+immutable CPP/HPP, listing, local diagnostic and verified-summary.json remain.
+Only the affected draft was built; all ten complete parents,982 accepted
+units,95 unknown origins and archives remain; no full CI or corpus replay.
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function

@@ -1,4 +1,4 @@
-# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1220)
+# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1222)
 
 **Start here.** Continue all dirty work; there are no other active sessions.
 Work on both large/core and smaller authored originals. Use local commits
@@ -73,14 +73,10 @@ F1181 aligns seven narrow declarations /six native callees, retaining all
 Keep raw coordinate/angle DWORD transport: the float-lvalue trial adds 329
 instructions. [Native parameter proof](CHARACTEROBJECT_NATIVE_EFFECT_ABI_F1181.md).
 
-Remaining work is original GPR roles in 358–35E and 3E6, with five instruction
-width differences in 35B/35E/3E6. The source is only 3B longer but remains NONEXACT.
-[F1128's x87 negatives](CHARACTEROBJECT_NATIVE_391_392_393_F1128.md)
-are superseded by F1149. Current 3E6 keeps 105 mnemonics /nine PE fields
-but only 30 matching GPR positions. Retained negatives: ten 3E6 and eleven
-preceding 3E5 grammars (`.analysis/f1137-*`), four typed/transform-assignment
-controls (`.analysis/f1151-native-gpr-types/`), and F1194's nested 358/3E6
-guards. None reduces the 522 GPR /five-width debt; do not repeat them.
+Remaining **522 GPR /five widths** are in358–35E/3E6. F1149 supersedes
+[F1128](CHARACTEROBJECT_NATIVE_391_392_393_F1128.md). Retain rejected
+F1137 grammars (`.analysis/f1137-*`), F1151 typed/assignment controls
+(`.analysis/f1151-native-gpr-types/`) and F1194 nested guards; do not repeat.
 
 **Reproduction:**
 
@@ -104,32 +100,27 @@ Build only this affected parent. Preserve [F1138's phase/meter borrow proof](CHA
 Current 33KB source:
 [`probes/CharacterObjectActionsF572.cpp`](../probes/CharacterObjectActionsF572.cpp).
 It already contains every real case/default; do not restart F569 markers.
-F1205 cold-verifies all 8,789 original offsets/widths, full CFG/stack/non-GPR
-operands and all 682 physical COFF bindings. **137 bytes /133 GPR** remain:
-38D=45, 38E=64, 3E3=24 (first31 instructions only). First divergence:
-**004F344C /whole8,076 /38D91**. Fresh selected object:
-`.analysis/f1205-object-4ebda0-recovery/before.obj`; `whole-audit.py OBJ`
-and `verified-summary.json` there. Use **/GX-**. Six fresh controls do not
-improve; preserve F594/F756/F773 negatives too. No candidate adopted; all
-33,293 original CODE bytes remain pending. Keep this complete parent live.
+F1205 verifies all8,789 native offsets/widths, CFG/stack/non-GPR operands and
+all682 COFF bindings. **137 bytes /133 GPR** remain:38D45/38E64/3E3first31=24.
+First **004F344C /whole8,076 /38D91**. Selected
+`.analysis/f1205-object-4ebda0-recovery/before.obj`; `whole-audit.py OBJ`,
+`verified-summary.json`; **/GX-**. [F1205 proof](OBJECT_ADVANCE_004EBDA0_WHOLE_F1205.md)
+preserves F594/F756/F773 and six new negatives. All33,293 original B pending.
 
 Current 82KB source:
 [`probes/FighterWhole004AC040F1020.cpp`](../probes/FighterWhole004AC040F1020.cpp).
 F1198 restores the inside-switch four-entry shared getter/default skip;
 F1199 fixes 26 operands; F1200 fixes all 45 interior direct targets.
-F1203 reconciles **16 declarations /10 accepted native callees**: effect/
-sound IDs, facing/layer/flags, counters, scalar and command parameters.
-All 83,922 candidate CODE+DATA bytes /2,352 field shapes stay unchanged;
-823 external names change. Raw-coordinate DWORD transport is preserved.
-[Native interface proof](THIRD_FIGHTER_NATIVE_CALL_ABI_F1203.md).
+F1203 reconciles16 declarations/10 accepted callees; all83,922 candidate
+CODE+DATA bytes and2,352 field shapes stay unchanged. Preserve raw DWORD
+coordinate transport; [native interface proof](THIRD_FIGHTER_NATIVE_CALL_ABI_F1203.md).
 Fresh selected object: `.analysis/f1203-third-native-call-abi/tracked.obj`;
 `whole-audit.py` there verifies all CFG/non-GPR/EBP operands. F1028 builds
 only this parent using **/GX**. Remaining **6,958 GPR /12 widths**;
 first divergence **004ADEFA /ordinal 2,180**. Equal length is not exactness.
-F1201/F1202's six controls and F1204's 25B typed-receiver control do not
-repair GPR phase. Do not repeat them. The [native state debt map](THIRD_FIGHTER_REGISTER_DEBT_MAP_F1202.md)
-at `.analysis/f1201-82kb-first-register/native-state-debt.json` still applies:
-**25B 577 /25D 477 GPR**, vs 59's 19. Preserve their real 36-call bodies.
+F1201/F1202/F1204 controls are rejected; do not repeat. Preserve the
+[native debt map](THIRD_FIGHTER_REGISTER_DEBT_MAP_F1202.md) and original
+36-call bodies: `.analysis/f1201-82kb-first-register/native-state-debt.json`.
 
 Current 58KB source:
 [`probes/FighterWhole00543210F1041.cpp`](../probes/FighterWhole00543210F1041.cpp).
@@ -147,7 +138,6 @@ F1026 verifies scoped PE/DATA. **2,736 GPR /five widths in63/1FD/252/254**.
 
 Current Reimu source:
 [`probes/FighterWhole0045DD70F1183.cpp`](../probes/FighterWhole0045DD70F1183.cpp).
-All real cases/default/getter and native frame/stack remain as above.
 Selected `.analysis/f1193-reimu-register-boundary/adopted.obj`;
 audit `.analysis/f1192-reimu-final-states/whole-audit.py OBJ`.
 **6,311 GPR /five widths**; first59 at0045FDA9 /ordinal2,292. Preserve
@@ -166,16 +156,15 @@ R233 454C00/454F70 still lack owner witnesses; no new rebuild or promotion.
 Current 34KB source:
 [`probes/CharacterObjectWhole005EB520F1207.cpp`](../probes/CharacterObjectWhole005EB520F1207.cpp)
 and `ObjectAdvance5EB520F1207.hpp`. Complete F061 active07 body: all 60
-states/default. F1209 proves **virtual slot 1**, with native slot-0 animation
-binding, original constructor/vtable and `[vptr+4]` queue dispatch. The member
-symbol is now **?AdvanceAction@ObjectActor5EB520Draft@@UAEXXZ**; CODE/DATA and
-all 806 binding shapes/destinations stay unchanged (63 local-label renames).
+states/default. F1209 proves virtual slot1 with original ctor/vtable/queue dispatch;
+`?AdvanceAction@ObjectActor5EB520Draft@@UAEXXZ`. CODE/DATA and806 binding
+shapes/destinations stay unchanged (63 local-label renames).
 **135 GPR /six widths** remain only in 998, first **005F3904 /ordinal9,200**.
 Selected `.analysis/f1209-object-5eb520-virtual-abi/tracked.obj`; `whole-audit.py OBJ`,
 `verified-summary.json`, fresh physical receipts there. Use recorded **/GX-**
 profile. [F1209 proof](OBJECT_ADVANCE_005EB520_VIRTUAL_ABI_F1209.md) retains
 F1208's eight identical-code controls and two wrong-shape candidates; do not
-repeat. No full leading layout is inferred. All 34,434 original CODE B pending.
+repeat. All34,434 original CODE B remain pending.
 Earlier forward-branch bytes can differ despite correct target ordinals.
 
 Current complete 40KB source:
@@ -199,8 +188,17 @@ first005D2558/whole9213; sole width005D2841/whole9411 in919.
 Selected `.analysis/f1219-object-5c9cc0-late/native-order.obj`, immutable CPP/HPP,
 listing, both diagnostics and `verified-summary.json`; `whole-audit.py [OBJ]`.
 [F1219 whole proof](OBJECT_ADVANCE_005C9CC0_COMPLETE_PARENT_F1219.md) records
-all final25 states and eleven rejected controls. Continue this complete body;
+all final25 states and twelve rejected controls. Continue this complete body;
 no whole exact credit. All other parents and unknown origins stay preserved.
+
+New incomplete 42KB source:
+[`probes/CharacterObjectActions004CA6E0F1222.cpp`](../probes/CharacterObjectActions004CA6E0F1222.cpp).
+F1222 has12/55 states; reviewed6,097B/1,623 x86, frame0x68 vsnative0x288,
+original this-4 and genuine ESI. All written operand diagnostics agree;
+800–802/812–814 have zero raw GPR/EBP/width debt. 43 states remain.
+Selected `.analysis/f1222-object-4ca6e0-recovery/reviewed.obj`, immutable
+CPP/HPP, listing, diagnostic/verified-summary.json. [F1222 proof](OBJECT_ADVANCE_004CA6E0_INITIAL_STATES_F1222.md).
+Continue this same body; all42,511 original B remain pending.
 
 All other giant authored originals remain open; use the
 [actual giant dispatch manifest](../config/fighter-boss-dispatch-fingerprints.json)
