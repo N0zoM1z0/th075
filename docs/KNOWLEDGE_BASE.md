@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1200):**
+**Maintenance annotation, updated 2026-11-06 (F1202):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -268,6 +268,20 @@ same, with 45 generated local names changed at unchanged offsets.
 Whole NONEXACT: **6,958 GPR /12 widths** remain; first divergence is
 004ADEFA /whole ordinal 2,180 (native EAX vs source EDX). No new accepted
 bytes, accepted input change, full CI or corpus replay.
+
+F1201/F1202 retain six additional whole 82KB controls without adoption.
+/G7, actual 58 epilogue returns and 259 discarded postfix short counters
+are CODE+DATA/COFF identical; 59 constant literals preserve all bytes with
+symbol-only COFF changes. Landing-else creates one wrong direct destination;
+compound short counters lose two bytes but add two mnemonic/two width errors.
+All retain the same **6,958 GPR difference ordinals**. No exact-byte gain.
+[Native debt map and bounded negatives](THIRD_FIGHTER_REGISTER_DEBT_MAP_F1202.md).
+A static interpretation of the pinned dispatch over all 65,536 short inputs
+finds 152 entry destinations: 147 dense targets plus five direct midpoints.
+The 155 physical intervals cover every native instruction and attribute all
+6,958 GPR /12 width differences. Largest groups are 25B=577 and 25D=477;
+first 59 has only 19. Current source/object remains F1200, every canonical
+accepted input and all 95 unknown origins unchanged; no CI or corpus replay.
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function

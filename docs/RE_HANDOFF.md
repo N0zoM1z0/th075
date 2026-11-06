@@ -1,4 +1,4 @@
-# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1200)
+# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1202)
 
 **Start here.** Work on both large/core original functions and smaller entire
 original functions. The user requests meaningful **multiple local commits** named
@@ -138,6 +138,13 @@ All 2,352 COFF field shapes/addends/destinations remain unchanged;
 45 local names change, offsets preserved. Remaining **6,958 GPR /12 widths**;
 first divergence **004ADEFA /whole ordinal 2,180**, native EAX vs source EDX.
 Equal total CODE length is not exactness. Continue from this corrected parent.
+F1201/F1202's six whole-parent controls do not reduce GPR debt; landing-else
+adds a wrong branch and compound short counters regress mnemonics/widths.
+[Bounded controls and native debt map](THIRD_FIGHTER_REGISTER_DEBT_MAP_F1202.md).
+The local `native-state-debt.json` under `.analysis/f1201-82kb-first-register/`
+attributes every debt row across 152 native entries (full signed-short domain).
+Largest remaining groups: **25B 577 /25D 477 GPR**, vs 59's 19. Preserve
+those real 36-call bodies and consult the map before another local experiment.
 
 Current 58KB source:
 [`probes/FighterWhole00543210F1041.cpp`](../probes/FighterWhole00543210F1041.cpp).
