@@ -1,5 +1,8 @@
 # F1233 — all early states of 005A1600 written
 
+Historical partial stage; [F1234](OBJECT_ADVANCE_005A1600_LATE_STATES_F1234.md)
+continues the live parent to67 states. All F1233 evidence is retained.
+
 The live research source `probes/CharacterObjectActions005A1600F1231.cpp`
 now writes **50/76** real nondefault states. This extends
 [F1232](OBJECT_ADVANCE_005A1600_MIDDLE_STATES_F1232.md) with **827–844**:

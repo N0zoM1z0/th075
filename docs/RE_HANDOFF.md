@@ -1,4 +1,4 @@
-# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1233)
+# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1234)
 
 **Start here.** Continue all dirty work; there are no other active sessions.
 Work on both large/core and smaller authored originals. Use local commits
@@ -204,16 +204,16 @@ complete body; all42,511 original B remain pending.
 
 Current incomplete 43KB source:
 [`probes/CharacterObjectActions005A1600F1231.cpp`](../probes/CharacterObjectActions005A1600F1231.cpp),
-`ObjectAdvance5A1600F1231.hpp`. F1233 writes50/76 states:
-800–811/813–844/988/989/995–997/999, with four genuine reward loops.
-Fresh26,741B/7,200 x86 matches written mnemonic/local-branch/normalized operands;
-**all50 written states have zero raw GPR debt**. Four widths remain in819/820
-MOV/FILD slots8B above native;2,343 raw EBP positions differ. Two real indices
-and all26 states900–925 remain unwritten; do not pad or optimize missing-context
-registers. Native43,599B/frame21Ch/this-1Ch remain pending; partial frame108h/this-14h.
-Selected `.analysis/f1233-object-5a1600-final-early/charged.cpp/hpp/obj/asm`,
-source diagnostic/width map/`verified-summary.json`; [F1233 proof](OBJECT_ADVANCE_005A1600_FINAL_EARLY_F1233.md).
-F1231 retains original/owner evidence. Continue900 onward; no whole exact credit.
+`ObjectAdvance5A1600F1231.hpp`. F1234 writes67/76 states:
+800–811/813–844/900–916/988/989/995–997/999, with five genuine user loops.
+Fresh35,595B/9,593 x86 matches written mnemonic/local-branch/normalized operands;
+**1,101 GPR/19 width/3,125 EBP differences remain**, first005A88A8/state909 ordinal0.
+Its cause is unproved; earlier written states have zero raw GPR debt.
+**917–925 and one real user index remain unwritten**; do not pad or count interiors.
+Native43,599B/frame21Ch/this-1Ch remain pending; partial frame178h/this-18h.
+Selected `.analysis/f1234-object-5a1600-late/reviewed.cpp/hpp/obj/asm`, source
+diagnostic/actual debt/`verified-summary.json`; [F1234 proof](OBJECT_ADVANCE_005A1600_LATE_STATES_F1234.md).
+F1231 retains original/owner evidence. Continue917 onward; no whole exact credit.
 
 All other giant authored originals remain open; use the
 [actual giant dispatch manifest](../config/fighter-boss-dispatch-fingerprints.json)
