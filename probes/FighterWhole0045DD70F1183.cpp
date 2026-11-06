@@ -2,10 +2,15 @@
 // F652 native D1/D2 source. The complete 60,999B callable is NONEXACT.
 // Missing states remain explicit research markers and earn no CODE credit.
 // Preserve independently reviewed current bodies and all six table groups.
-class FighterSwitchF598_Boss0045DD70 { public: void SetMotionStateAt40FBB0(int,float,int); void ResetMotionAt40FC50(); void SpawnDirectedAt453A70(int,int,int,char,int); void SpawnWithFloatAt453A70(int,int,float,char,int); void SpawnFloatXYAt453A70(int,float,float,char,int); void InitTrajectoryAt453E60(float); virtual void NativeVirtualFrameAdvance(); void Advance(); void ResetAt453E20(); void PrepareActionAt453D60(int); void StartAnimationAt46D000(int); void SpawnAt453C80(int,float,float,char,int); short GetNativeActionAt40FA30(); void SetNativeActionAt40FAC0(int); signed char ContactAt454EE0(); void SetAuxActionAt40FB40(int); };
+class FighterSwitchF598_Boss0045DD70 { public: void SetMotionStateAt40FBB0(int,float,int); void SetMotionFloatAt40FBB0(float,float,float); void ResetMotionAt40FC50(); void SpawnDirectedAt453A70(int,int,int,char,int); void SpawnWithFloatAt453A70(int,int,float,char,int); void SpawnFloatXYAt453A70(int,float,float,char,int); void InitTrajectoryAt453E60(float); virtual void NativeVirtualFrameAdvance(); void Advance(); void ResetAt453E20(); void PrepareActionAt453D60(int); void StartAnimationAt46D000(int); void SpawnAt453C80(int,float,float,char,int); short GetNativeActionAt40FA30(); void SetNativeActionAt40FAC0(int); signed char ContactAt454EE0(); void SetAuxActionAt40FB40(int); };
 extern unsigned int g_FighterProbeMarker;
 extern float g_ThresholdAt0065782C;
 extern float g_ReimuShotYAt006590A4;
+extern float g_ReimuRotationStepAt00657858;
+extern float g_ReimuBounceXAt006590BC;
+extern float g_ReimuBounceYAt00658044;
+extern float g_ReimuRecoveryScaleAt006590B8;
+extern signed char g_ModeAt006714B4;
 extern float g_ReimuAirDragAt00658348;
 extern float g_ReimuGroundDragAt00658350;
 extern float g_ReimuLateDragAt006581E0;
@@ -361,13 +366,13 @@ case 0x48: {
 #undef F614_STAGE1_SPAWN
 #undef F614_PROJECTILE
 #undef F614_SIDE
-        case 0x59: g_FighterProbeMarker = 90; break;
-        case 0x5D: g_FighterProbeMarker = 94; break;
-        case 0x5E: g_FighterProbeMarker = 95; break;
-        case 0x5F: g_FighterProbeMarker = 96; break;
-        case 0x61: g_FighterProbeMarker = 98; break;
-        case 0x62: g_FighterProbeMarker = 99; break;
-        case 0x63: g_FighterProbeMarker = 100; break;
+#include "ReimuEarlyRecoveryStatesF1184.inc"
+
+
+
+
+
+
 #define F628_CASE 0x8C
 #define F628_COUNTER 0xF00
 #define F628_START_POS -11.0f

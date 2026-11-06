@@ -1,5 +1,11 @@
 # F1183 — Reimu 60KB parent: eleven actual falling/recovery states
 
+**Historical F1183 source checkpoint:** F1184 subsequently extends the same
+tracked parent to 21,723B/5,881 x86 and 73 nondefault markers;
+[current source/CFG proof](REIMU_EARLY_RECOVERY_STATES_F1184.md).
+The dimensions, hashes and old/new prefix comparison below describe commit
+`9d2c157b`, before those additional earlier states changed the compiler frame.
+
 The live normal C++ research parent for the independently R063-authored
 original `0045DD70` is now
 `probes/FighterWhole0045DD70F1183.cpp`, continued from the existing local

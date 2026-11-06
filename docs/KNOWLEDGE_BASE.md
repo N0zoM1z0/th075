@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1183):**
+**Maintenance annotation, updated 2026-11-06 (F1184):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -79,6 +79,14 @@ destination checked. All 53 previous real prefix handlers are preserved.
 [Source and native proof](REIMU_FALLING_STATES_F1183.md) records the genuine
 stage-3/stage-5 contradictory path, Reimu-only effect offsets and remaining
 623 GPR positions plus frame/stack debt. Whole exact credit remains zero.
+
+F1184 restores seven more Reimu states (59–63): 2,545 native interior bytes,
+713 x86 and 58 external fields. 5F/61 recover all GPR roles/widths; a real
+61 completion-else scope correction restores its original local exit target.
+[Native early-recovery proof](REIMU_EARLY_RECOVERY_STATES_F1184.md).
+The same tracked parent now emits 21,723B/5,881 x86 with 73 nondefault
+markers, still NONEXACT. Combined F1183/F1184 source progress is 18 native
+states /6,074 original interior B /1,714 x86 /149 fields, not new exact credit.
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function
