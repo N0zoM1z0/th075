@@ -77,3 +77,7 @@ F1216. Continue the 25 actual 900-series states in this body; nine other
 complete research parents, accepted units and every local archive remain.
 Validation is limited to this affected draft and target/tracking/handoff;
 no full CI, corpus replay, origin retest or per-function test is run.
+
+F1219 supersedes the incomplete-parent dimensions above: all67 states are now
+written, with original frame/all EBP slots recovered; the complete function
+still has935 GPR/one width differences. See the [whole native audit](OBJECT_ADVANCE_005C9CC0_COMPLETE_PARENT_F1219.md).

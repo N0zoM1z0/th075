@@ -1,4 +1,4 @@
-# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1218)
+# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1219)
 
 **Start here.** Continue all dirty work; there are no other active sessions.
 Work on both large/core and smaller authored originals. Use local commits
@@ -188,24 +188,25 @@ entries/199 sparse bytes agree. **913 GPR/10 width differences remain** in
 Selected `.analysis/f1214-object-536400-complete/current.obj`, `current.asm`,
 immutable `current.cpp`/`current.hpp`, both current diagnostic JSONs and
 `verified-summary.json`; `whole-audit.py [OBJ]` checks this parent. Destination
-identity is not original relocation-offset equality. Retained source controls are negative. [F1214 proof](OBJECT_ADVANCE_00536400_COMPLETE_PARENT_F1214.md).
+identity is not original relocation-offset equality. [F1214 proof](OBJECT_ADVANCE_00536400_COMPLETE_PARENT_F1214.md).
 Continue register debt in this complete body; never count interiors as exact.
-New incomplete 43KB source:
+Current complete 43KB source:
 [`probes/CharacterObjectActions005C9CC0F1216.cpp`](../probes/CharacterObjectActions005C9CC0F1216.cpp).
-F1218 recovers42/67 states and all18 real loop indices EBP-4..-48h, restoring
-native this-4Ch. Fresh26,725B/7,043 x86, frame0x2C4 vsnative0x470;25 states
-remain unwritten. All written operand diagnostics agree. Prefix/through850
-have **zero raw GPR/EBP/width debt**. [F1218 proof](OBJECT_ADVANCE_005C9CC0_PHASE_EFFECTS_F1218.md).
-Selected `.analysis/f1218-object-5c9cc0-phase-effects/reviewed.obj`, immutable
-CPP/HPP, listing, diagnostic and `verified-summary.json`. Continue the25 actual
-900-series states in this body; no exact credit. All complete parents stay live.
+F1219 has all67 states, 43,502B/11,447 x86 vsnative43,501B; original frame0x470,
+this-4Ch/all3,971 EBP operands. All1,001 direct targets,923 CODE destinations,
+68 dense ordinals/198 sparse bytes agree. **935 GPR/one width remain** in918–929;
+first005D2558/whole9213; sole width005D2841/whole9411 in919.
+Selected `.analysis/f1219-object-5c9cc0-late/native-order.obj`, immutable CPP/HPP,
+listing, both diagnostics and `verified-summary.json`; `whole-audit.py [OBJ]`.
+[F1219 whole proof](OBJECT_ADVANCE_005C9CC0_COMPLETE_PARENT_F1219.md) records
+all final25 states and eight rejected controls. Continue this complete body;
+no whole exact credit. All other parents and unknown origins stay preserved.
 
 All other giant authored originals remain open; use the
 [actual giant dispatch manifest](../config/fighter-boss-dispatch-fingerprints.json)
 and [authored origin decisions](../config/function-origins.csv).
 F1025/1026/1028 certify **external game PE destinations**, not
-physical relocation sites or entire byte exactness. The old F917/F901
-source is not automatically current acceptance. Older original research is preserved in the [F1142 handoff
+physical relocation sites or entire byte exactness. Older research is preserved in the [F1142 handoff
 snapshot](history/RE_HANDOFF_AS_OF_F1142_PRE_HANDOFF_2026-11-04.md)
 and the complete [F781–F906 frozen historical handoff](history/RE_HANDOFF_F781_THROUGH_F906_PRE_CLEANUP_2026-10-31.md).
 Former repeated giant traces can be recovered with the tracked

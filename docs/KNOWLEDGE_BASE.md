@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1218):**
+**Maintenance annotation, updated 2026-11-06 (F1219):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -429,6 +429,17 @@ incomplete versusnative0x470. The native notification call at45B850 remains
 unclassified and uncredited; original four-byte argument/RET4 is retained.
 All25 remaining states and43,501 original CODE B stay pending; no accepted
 input changes. [Native phase/effect and stack proof](OBJECT_ADVANCE_005C9CC0_PHASE_EFFECTS_F1218.md).
+
+F1219 completes all67 states of original005C9CC0 in the same source, restoring
+native frame0x470/this-4Ch/all3,971 EBP operands naturally. Fresh output is
+43,502B/11,447 x86 vsnative43,501B; all1,001 direct targets,923 CODE references,
+68 dense ordinals and198 sparse bytes agree. **935 GPR/one width remain** in
+918–929, first005D2558/whole9213; the sole width is919's CMP at005D2841.
+[Complete native proof](OBJECT_ADVANCE_005C9CC0_COMPLETE_PARENT_F1219.md)
+records final25 behaviors, retained eight negative controls and selected
+`.analysis/f1219-object-5c9cc0-late/native-order.obj`/whole audit/receipts.
+All43,501 original CODE bytes remain pending; accepted counts and origins
+stay unchanged. No full CI, corpus replay or per-function tests.
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function
