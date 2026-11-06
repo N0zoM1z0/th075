@@ -145,12 +145,10 @@ for k,(native,emitted) in enumerate(zip(NWHOLE,I)):
       'original_target_global_ordinal':orig_target,
       'source_target_global_ordinal':src_target})
 assert physical_original_branch_positions==1834,physical_original_branch_positions
-# These are not waived as exact or correctness: all 5 remain true
-# unresolved source CFG target differences. Explicitly enumerate
-# them to reject any *additional* source control-flow regression.
-remaining_native_branch_keys={
- (0x35d,13),(0x35d,17),(0x35e,155),
- (0x391,124),(0x391,130)}
+# No original direct branch-target debt remains after the native
+# 35D/35E scope and independent 391 reflection corrections. Frame,
+# GPR, x87 physical fields and other whole-byte debt remain NONEXACT.
+remaining_native_branch_keys=set()
 actual_debt_keys={(row['physical_switch_slot'],row['case_ordinal'])
                   for row in native_branch_target_debt}
 expected_debt_keys={(orig_sparse[action-0x320],ordinal)

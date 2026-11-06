@@ -1,4 +1,4 @@
-# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1147)
+# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1148)
 
 **Start here.** Work on both large/core original functions and smaller entire
 original functions. The user requests meaningful **multiple local commits** named
@@ -47,7 +47,7 @@ Single source/whole-parent verifier:
 
 | Independently checked property | Original PE | Current partial C++ |
 | --- | ---: | ---: |
-| Entire callable CODE | **81,539B** | **81,568B** (**+29B**) |
+| Entire callable CODE | **81,539B** | **81,572B** (**+33B**) |
 | Entire native x86 instruction count | **17,435** | **17,435** |
 | Actual saved-this stack slot | **EBP-0xAC** | **EBP-0xDC** (wrong) |
 | Actual frame allocation | **ESP 0x3A0** | **ESP 0x3A4** (wrong) |
@@ -57,7 +57,7 @@ Single source/whole-parent verifier:
 | Original scalar immediate positions in those cases | **2,964** | **2,964** |
 | Explicit GPR-provisional case intervals | — | **8 cases:** `0x358–0x35E` and `0x3E6` |
 | Separate uncredited x87 case | — | **`0x391`**, 2 incorrect physical `FUCOMPP` fields, 4 GPR-role differences |
-| Actual direct intra-function branches audited by native target ordinal | **1,834** | **5 incorrect CFG destinations remain** |
+| Actual direct intra-function branches audited by native target ordinal | **1,834** | **all 1,834 destinations match** |
 | **Whole original callable accepted exact** | — | **NO** |
 
 The 82 strict cases **are interior evidence, not 82 accepted independent
@@ -75,21 +75,16 @@ F1147 restores the original 3E3/3E4 stage-zero polar update, shared hit
 callback and terminal hit/cooldown paths; [native hit CFG proof](CHARACTEROBJECT_NATIVE_HIT_RETURNS_CFG_F1147.md)
 supersedes the F1132 claim that positive cooldown continues through meter recovery.
 
-**The 5 remaining *physical original branch-target* differences** are
-mapped by original game action and local x86 ordinal below. This is the
-current complete, verified debt set, not a list of permitted exact-match
-exceptions:
+**F1148 clears all remaining physical direct branch-target differences:**
+`0x35D` guards its +0xD8 increment with stage 1/frame 0; `0x35E`
+executes the final polar velocity call every frame; `0x391` checks both
+reflection directions independently inside the scale/difficulty guard.
+See [native scope/independent-reflection proof](CHARACTEROBJECT_NATIVE_ALL_DIRECT_CFG_F1148.md).
 
-| Original state | Wrong native branch ordinals | First next step |
-| --- | --- | --- |
-| `0x35D` | **13, 17** | Correct stage/frame guarded projectile sequencing; GPR also provisional |
-| `0x35E` | **155** | Correct original later-stage homing branch; GPR also provisional |
-| `0x391` | **124, 130** | Correct target-aim/float-branch CFG together with the 2 `FUCOMPP` PE fields |
-
-**Important:** the live parent verifier re-checks the exact set of all
-1,834 original jump target ordinals and independently requires these 5
-explicit debts; new mismatches fail. Its JSON result is under ignored
-`.analysis/f1068-boss-live-all-native/verified-summary.json`. Consult
+The live parent verifier independently requires **zero mismatches across
+all 1,834 original direct jump target ordinals**. This proves those direct
+edges, not original stack slots, GPR roles, external fields in 391 or
+whole-function byte equality. Consult
 [original native 0x391 attempts](CHARACTEROBJECT_NATIVE_391_392_393_F1128.md)
 before retrying; 12 plus 12 natural float grammar variants already
 failed. `0x3E6` retained **105/105 native mnemonics and 9/9 PE fields**

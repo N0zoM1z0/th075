@@ -1,8 +1,8 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1147):**
+**Maintenance annotation, updated 2026-11-06 (F1148):**
 The **current authoritative** pinned-original whole-function evidence,
-unresolved 81KB Boss CFG (5 branch-target discrepancies), 979 accepted
+81KB Boss CFG (all 1,834 direct branch targets now match), 979 accepted
 whole exact functions, and safe local storage/restore instructions are
 in the [live agent handoff](RE_HANDOFF.md) and
 [storage hygiene guide](STORAGE_HYGIENE.md). This chronological
@@ -22,6 +22,9 @@ F1147 restores seven more native 3E3/3E4 branch targets and all their
 instruction widths. Positive cooldown returns before meter recovery;
 [original PE hit/return evidence](CHARACTEROBJECT_NATIVE_HIT_RETURNS_CFG_F1147.md)
 corrects the historical F1132 interpretation.
+F1148 clears all 1,834 direct branch targets, preserving the strict and
+provisional cohorts; [native CFG proof](CHARACTEROBJECT_NATIVE_ALL_DIRECT_CFG_F1148.md)
+records the remaining 35D/35E scopes and independent 391 reflection.
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function

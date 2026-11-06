@@ -4,6 +4,12 @@
 
 The SHA-pinned Japanese TH075 1.11 executable has **one** independently authored original `CharacterObject::Advance` at `0050A580`, **81,539 original whole CODE B /17,435 native x86**, followed by **567 original afterRET switch DATA bytes**. F1129–F1132 reconstruct four *distinct physical game-state interiors* inside the same ordinary pinned-VC7.1 **NONEXACT whole parent**, not four newly exact standalone game functions. Preexisting dirty C++ for the tail was inspected and continued, including a substantive original-control-flow correction.
 
+**F1147 correction:** the earlier claim below that positive +0x3B6 cooldown
+continues into the meter policy was wrong. Independent original branch targets
+prove a shared terminal return; the stage-zero polar update and common hit
+callback/return scopes also needed correction. See
+[F1147 original PE proof](CHARACTEROBJECT_NATIVE_HIT_RETURNS_CFG_F1147.md).
+
 ## Actual native original gameplay
 
 **0x3E3** (original `0051D70F..0051DAE8`, **985B/200 x86**) starts facing+0x66=1, stage-zero scale/opacity/motion and signed +0xD8 random degree `Random(0,360)-180`, with +0xDA speed 15. Stage zero decrements/clamps +0xDA to minimum 3. Original `0040FB70` uses native signed angle and scaled speed `00659090`; stage one uses true `00483300` atan2 relative to actual grandparent position plus `00657888` Y offset, `00657828` angle conversion and original CRT `006406AC`, then invokes another `0040FB70(angle,20.0f)`. Four real independent x87 X/Y grandparent-distance tests compare against **0065786C/00659230/006590A8/00658268**. On hit, it calls `0045B830`, increments original grandparent+0x366 hit byte up to two, otherwise increments its native +0x2D0 score by **0x4E20** and calls authentic `0045B860(0x2E)`. It continues original X/Y motion and `0040FA30` completion/`0040FB40(1)`.

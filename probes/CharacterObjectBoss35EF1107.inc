@@ -84,9 +84,9 @@ case 0x35E: {
                     SELF_FIELD(signed short,0xDC)=short(SELF_FIELD(signed short,0xDC)+360);
             }
         }
-        SetNativeTwoFloatsAt0040FB70(float(SELF_FIELD(signed short,0xDC)),
-            float(SELF_FIELD(signed short,0xD8))*g_F1057_SpeedScaleAt006590B4);
     }
+    SetNativeTwoFloatsAt0040FB70(float(SELF_FIELD(signed short,0xDC)),
+        float(SELF_FIELD(signed short,0xD8))*g_F1057_SpeedScaleAt006590B4);
     F1037_POSITION(this).xPosition=float(SELF_FIELD(signed char,0x66))*F1037_MOTION(this).xMotion+F1037_POSITION(this).xPosition;
     F1037_POSITION(this).yPosition=F1037_POSITION(this).yPosition-F1037_MOTION(this).yMotion;
     if (GetNativeActionAt0040FA30()==SELF_FIELD(signed short,0x70))

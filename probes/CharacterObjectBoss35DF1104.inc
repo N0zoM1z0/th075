@@ -10,8 +10,8 @@ case 0x35D: {
             (*(&F1037_POSITION(this).xPosition))+g_F1057_YOffsetAt00657888-
                 float(RandomBoundaryAt00455580(0,200)),
             0.0f,SELF_FIELD(signed char,0x66),1);
+        ++SELF_FIELD(signed short,0xD8);
     }
-    ++SELF_FIELD(signed short,0xD8);
     if (GetNativeActionAt0040FA30()==SELF_FIELD(signed short,0x70)) {
         if (SELF_FIELD(signed short,0xD8)<5)
             SetAuxActionAt0040FB40(1);

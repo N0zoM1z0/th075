@@ -43,10 +43,10 @@ case 0x391: {
         if (F1037_MOTION(this).xMotion>g_F1044_GroundAt0065782C &&
             F1037_POSITION(this).xPosition>g_F1083_YBoundAt00658E80) {
             F1037_MOTION(this).xMotion=-F1037_MOTION(this).xMotion;
-            if (F1037_MOTION(this).xMotion<g_F1044_GroundAt0065782C &&
-                F1037_POSITION(this).xPosition<g_F1044_GroundAt0065782C)
-                F1037_MOTION(this).xMotion=-F1037_MOTION(this).xMotion;
         }
+        if (F1037_MOTION(this).xMotion<g_F1044_GroundAt0065782C &&
+            F1037_POSITION(this).xPosition<g_F1044_GroundAt0065782C)
+            F1037_MOTION(this).xMotion=-F1037_MOTION(this).xMotion;
     }
     if (SELF_FIELD(signed short,0xDA)==0 &&
         (*(&SELF_FIELD(float,0x1C)))==g_F1051_ScaleCeilingAt0065747C) {
