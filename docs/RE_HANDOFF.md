@@ -1,4 +1,4 @@
-# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1194)
+# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1195)
 
 **Start here.** Work on both large/core original functions and smaller entire
 original functions. The user requests meaningful **multiple local commits** named
@@ -180,6 +180,16 @@ Its 430B owned DATA includes 198 exact sparse bytes. GPR debt is limited to
 widths account for all +6 source bytes. The current object and scoped audit
 are `.analysis/f1194-remilia-whole-recovery/tracked.obj` and `audit.py`.
 All original 28,432 bytes remain unaccepted and counted.
+
+F1195 verifies that state 389's first **59** instructions already agree;
+the first GPR divergence is the post-initialization join, not its entry.
+Motion-zero chaining and explicit DWORD-zero views preserve all 28,868
+candidate CODE+DATA bytes and all 696 COFF records. A conditional-break
+initialization block adds four instructions and is rejected. These controls
+and the older 04–24 initialization spellings are negative evidence, not
+new leads to repeat; [F1195 boundary proof](OBJECT_ADVANCE_0055AC80_JOIN_NEGATIVES_F1195.md).
+R233's 454C00/454F70 leaves still lack independent owner witnesses after
+read-only reference checks; neither origin is promoted or source recompiled.
 
 All other giant authored originals remain open; use the
 [actual giant dispatch manifest](../config/fighter-boss-dispatch-fingerprints.json)

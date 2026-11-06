@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1194):**
+**Maintenance annotation, updated 2026-11-06 (F1195):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -200,6 +200,15 @@ The 430B owned DATA includes 198 exact sparse bytes. Remaining debt is
 for +6B. [Whole native/source continuation proof](OBJECT_ADVANCE_0055AC80_WHOLE_F1194.md).
 A separate nested-guard control in the live 81KB parent is byte-identical
 and unadopted. No new exact credit, corpus replay or canonical test changes.
+
+F1195 localizes 0055AC80's first GPR divergence to state 389's initializer
+join after 59 matching entry instructions. Motion-zero chaining and raw
+DWORD-zero views preserve all candidate bytes/696 COFF records; a guarded
+one-pass block adds four instructions and is rejected. The complete live
+parent remains 726 GPR /six-width NONEXACT. R233-held 454C00/454F70 have
+no new independent owner witness after read-only context checks and remain
+unknown. [Bounded join/origin negative evidence](OBJECT_ADVANCE_0055AC80_JOIN_NEGATIVES_F1195.md).
+No source adoption, exact credit, full CI or corpus replay.
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function
