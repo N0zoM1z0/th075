@@ -1,4 +1,4 @@
-# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1236)
+# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1237)
 
 **Start here.** Continue all dirty work; there are no other active sessions.
 Work on both large/core and smaller authored originals. Use local commits
@@ -218,6 +218,20 @@ both diagnostics/`verified-summary.json`/`register-cycle-observation.json`;
 identical entire CODE/DATA/all943 COFF records to F1235. [F1236 proof](OBJECT_ADVANCE_005A1600_REGISTER_BOUNDARY_F1236.md);
 [F1235 full native proof](OBJECT_ADVANCE_005A1600_COMPLETE_PARENT_F1235.md)/F1231
 owner evidence remain. All43,599B stay pending; continue this complete body.
+
+
+New incomplete 43KB parent:
+[`probes/CharacterObjectActions0057D580F1237.cpp`](../probes/CharacterObjectActions0057D580F1237.cpp),
+`ObjectAdvance57D580F1237.hpp`. F1237 writes32/70 states (native18,692B/4,965 x86).
+Selected18,839B/5,012 x86, frame13Ch/this-24h vsnative378h/this-40h/savedESI.
+All32 written regions pass mnemonic/operand diagnostics with GPR/negative-stack
+normalization; NOT byte exact. 38 states remain. Eight real indices are written;
+other seven belong to812/816/817/822/825/830/834. Continue these actual branches,
+never add padding. `.analysis/f1237-object-57d580-recovery/late-combat.cpp/hpp/obj/asm`,
+source diagnostic/`verified-summary.json`; actual OBJ/PDB under
+`build/probes/f1237-object-57d580/`. [F1237 proof](OBJECT_ADVANCE_0057D580_INITIAL_PARENT_F1237.md)
+retains native full CODE/DATA/ctor/vtable, all seven builds and real-index inputs.
+All43,845 original B remain pending; canonical ledgers/accepted inputs unchanged.
 
 All other giant authored originals remain open; use the
 [actual giant dispatch manifest](../config/fighter-boss-dispatch-fingerprints.json)

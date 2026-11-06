@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1236):**
+**Maintenance annotation, updated 2026-11-06 (F1237):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -631,6 +631,24 @@ field destinations/owned tables still agree, and all43,599B remain pending.
 `.analysis/f1236-object-5a1600-loop-scope/verified-summary.json` retain all five
 builds, controls and raw cycle observation. No accepted input/header/origin/
 ledger/infrastructure change, full CI, canonical replay or new tests.
+
+F1237 starts normal source for R048-authored `0057D580`, **32/70** real states,
+whose original physical intervals total18,692B/4,965 x86. Fresh full research
+translation unit emits18,839B/5,012 x86, frame13Ch/this-24h; original is43,845B/
+11,694 x86, frame378h/this-40h/savedESI. All32 written regions have matching
+instruction counts, mnemonic sequences and diagnostic operand shapes after
+GPR/negative-stack normalization; this is NOT exact evidence. Native data
+confirms all15 real index slots; eight are written, missing seven are in812/
+816/817/822/825/830/834. Original constructor/vtable proves virtualslot1 without
+asserting a full owner layout. Actual constants, 808/843 service order, 810/842
+promoted versus word decrements and x87 operand order are restored. Seven serial
+builds and immutable stages remain under `.analysis/f1237-object-57d580-recovery/`;
+OBJ/PDB live under `build/probes/f1237-object-57d580/`. [Initial-parent proof](OBJECT_ADVANCE_0057D580_INITIAL_PARENT_F1237.md)
+retains hashes, full native extents/owned tables, control flow, callee/constant
+inputs and limitations. All43,845 original CODE B remain pending. No accepted
+input/header/origin/ledger/infrastructure change, full CI, canonical replay or
+new tests. Earlier005A1600 native helper-contract reads support no ABI change
+and remain under `.analysis/f1237-object-5a1600-call-boundary/`.
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function
