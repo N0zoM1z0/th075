@@ -1,4 +1,4 @@
-# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1212)
+# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1213)
 
 **Start here.** Continue all dirty work; there are no other active sessions.
 Work on both large/core and smaller authored originals. Use local commits
@@ -101,7 +101,7 @@ Build only this affected parent. Preserve [F1138's phase/meter borrow proof](CHA
 | **`005214B0`** 46,755B/13,230 x86, 901 DATA | F1197 source 46,754B/13,230 x86; native frame/this/all 4,133 EBP positions; **2,736 GPR /5 widths** | [F1197 whole CFG proof](FIGHTER_46KB_WHOLE_CFG_F1197.md): all 1,522 direct targets, 1,352 CODE fields and 139 dense destinations; NONEXACT |
 | **`0045DD70`** 60,999B/16,837 x86 | Live F1193 complete source **61,000B/16,837 x86 (+1B)**; original frame/saved-this/all 5,444 EBP slots; **6,311 GPR positions /5 widths** | [F1192 complete stack/CFG/PE proof](REIMU_WHOLE_STACK_CFG_F1192.md), [F1193 native WORD parameters](REIMU_WORD_ABI_REGISTER_BOUNDARY_F1193.md): all 1,684 direct targets, 1,682 CODE fields, 142 actual dense destinations; NONEXACT |
 | **`0055AC80`** 28,432B/7,653 x86 | F1194 continues the complete F167 source: **28,438B/7,653 x86 (+6B)**; original frame/this/all 2,511 EBP positions; **726 GPR positions /6 widths** | [F1194 whole native proof](OBJECT_ADVANCE_0055AC80_WHOLE_F1194.md): all 859 direct targets, 638 CODE fields and 58 dense destinations; NONEXACT |
-| **`00536400`** 39,999B/10,573 x86, 467 DATA | **F1212 unfinished**: 16,603B/4,402 x86; history relay +33/66 real states, 33 unwritten; correct named slots, wrong frame0x124 vs0x2A0 | [F1212 native state proof](OBJECT_ADVANCE_00536400_EARLY_STATES_F1212.md); partial source, zero exact credit |
+| **`00536400`** 39,999B/10,573 x86, 467 DATA | **F1213 unfinished**: 29,536B/7,833 x86; history relay +50/66 real states, 16 unwritten; correct named slots, wrong frame0x214 vs0x2A0 | [F1213 native state proof](OBJECT_ADVANCE_00536400_MIDDLE_STATES_F1213.md); partial source, zero exact credit |
 
 Current 33KB source:
 [`probes/CharacterObjectActionsF572.cpp`](../probes/CharacterObjectActionsF572.cpp).
@@ -182,17 +182,17 @@ Earlier forward-branch bytes can differ despite correct target ordinals.
 
 New incomplete 40KB source:
 [`probes/CharacterObjectActions00536400F1211.cpp`](../probes/CharacterObjectActions00536400F1211.cpp),
-`ObjectAdvance536400F1211.hpp`. F1212 has history relay +33 actual states;
-**33 native cases remain unwritten**. Never accept this partial body or count
-interiors. Genuine record/index/this slots are **EBP-4 /EBP-8 /EBP-0xC**;
-frame0x124 remains wrong vsnative0x2A0. Selected
-`.analysis/f1212-object-536400-801-811/current.obj`, `current.asm`, immutable
-`current.cpp`/`current.hpp`, `current-source-diagnostic.json`, `verified-summary.json`.
-Local `diagnose-source.py STEM` is partial research, not acceptance. All written
-operand shapes agree after explicit GPR/stack elision. Prefix and every actual
-interval through827 now have **zero raw GPR/EBP/width debt**; later residuals
-remain. [F1212 native proof](OBJECT_ADVANCE_00536400_EARLY_STATES_F1212.md).
-Continue missing middle/900-series in this body; keep all complete parents.
+`ObjectAdvance536400F1211.hpp`. F1213 has history relay +50 actual states;
+**16 native cases remain unwritten**: 900–911/913–916. Never accept interiors.
+Real history/index/this slots are **EBP-4 /EBP-8 /EBP-0xC**;
+frame0x214 remains wrong vsnative0x2A0. Selected
+`.analysis/f1213-object-536400-middle/reviewed.obj`, `reviewed.asm`, immutable
+`reviewed.cpp`/`reviewed.hpp`, `reviewed-source-diagnostic.json`, `verified-summary.json`.
+Local `diagnose-source.py STEM` is partial research. All written operand shapes
+agree under GPR/stack elision. Through851 all raw EBP operands agree;
+prefix/through828 and836–851 also have zero raw GPR/width debt. 829–835 retain
+441 GPR/3 width differences. [Native proof](OBJECT_ADVANCE_00536400_MIDDLE_STATES_F1213.md).
+Continue the missing 900-series in this body; preserve all complete parents.
 No marker/padding fixes. F1210's named-health-local trial fails3,162 EBP
 positions in the 34KB parent; its bounded member scan proves no full layout.
 [F1210/F1211 history evidence](OBJECT_ADVANCE_00536400_HISTORY_AND_CASES_F1211.md).

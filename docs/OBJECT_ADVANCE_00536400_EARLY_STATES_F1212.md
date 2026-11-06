@@ -1,5 +1,7 @@
 # F1212 — restore original 801–811 behavior in 00536400
 
+F1213 continues this source to 50/66 states; see [middle-state evidence](OBJECT_ADVANCE_00536400_MIDDLE_STATES_F1213.md). The dimensions below describe the frozen F1212 checkpoint.
+
 The same [natural C++ body](../probes/CharacterObjectActions00536400F1211.cpp)
 now contains **33 of 66 nondefault states**, adding the actual 801–811 logic
 to F1211's history relay and states. No marker bodies or synthetic locals are

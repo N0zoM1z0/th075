@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1212):**
+**Maintenance annotation, updated 2026-11-06 (F1213):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -375,6 +375,15 @@ no forward displacement or whole exactness is inferred. Native callback ABI,
 indexed-pointer evaluation, integer/float operand order and unsigned >0 fade
 predicate are independently reconciled. [F1212 detailed evidence](OBJECT_ADVANCE_00536400_EARLY_STATES_F1212.md).
 All39,999 original CODE bytes remain pending; accepted inputs/origins unchanged.
+
+F1213 adds 17 genuine middle states to 00536400, reaching **50/66**. All
+written mnemonic/operand diagnostics agree; all native EBP operands through851
+agree. Prefix/through828 and836–851 have zero raw GPR/width debt; 829–835
+retain441 GPR/3 width differences. Source emits29,536B/7,833 x86, frame0x214;
+16 later states remain unwritten, all39,999 original CODE bytes still pending.
+Native FLD resolves 835/839 parameter inputs to selfC8/CC; the gravity is0.4,
+not a decompiler guess. Distinct unrolled effects, sound/gauge/spawn order,
+short increments and exits remain. [F1213 source and evidence](OBJECT_ADVANCE_00536400_MIDDLE_STATES_F1213.md).
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function
