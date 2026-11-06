@@ -32,19 +32,19 @@ case 0x2F9: {
                     - float(RandAt455580(0,560)),
                 float(RandAt455580(0,250)+(S16(0xF06)>50)*250),
                 *reinterpret_cast<signed char*>(RAW+0x66),1);
+        if (S16(0x62)==9 && S16(0x64)==0 && g_F1004_ModeAt006714D0>1)
+            SpawnSevenFloatAt453B50(0x38A,
+                F32(0x44)+g_F1008_CenterXAt006593D0
+                    - float(RandAt455580(0,480)),
+                float(RandAt455580(0,200)+(S16(0xF06)>50)*200),
+                *reinterpret_cast<signed char*>(RAW+0x66),1,0,1);
+        if (S16(0x62)==10 && S16(0x64)==0 && g_F1004_ModeAt006714D0>2)
+            SpawnSevenFloatAt453B50(0x38A,
+                F32(0x44)+g_F1008_AlternateXAt00658370
+                    - float(RandAt455580(0,560)),
+                float(RandAt455580(0,250)+(S16(0xF06)>50)*250),
+                *reinterpret_cast<signed char*>(RAW+0x66),1,0,1);
     }
-    if (S16(0x62)==9 && S16(0x64)==0 && g_F1004_ModeAt006714D0>1)
-        SpawnSevenFloatAt453B50(0x38A,
-            F32(0x44)+g_F1008_CenterXAt006593D0
-                - float(RandAt455580(0,480)),
-            float(RandAt455580(0,200)+(S16(0xF06)>50)*200),
-            *reinterpret_cast<signed char*>(RAW+0x66),1,0,1);
-    if (S16(0x62)==10 && S16(0x64)==0 && g_F1004_ModeAt006714D0>2)
-        SpawnSevenFloatAt453B50(0x38A,
-            F32(0x44)+g_F1008_AlternateXAt00658370
-                - float(RandAt455580(0,560)),
-            float(RandAt455580(0,250)+(S16(0xF06)>50)*250),
-            *reinterpret_cast<signed char*>(RAW+0x66),1,0,1);
     if (GetNativeActionAt40FA30()==S16(0x70)) {
         SetNativeActionAt40FAC0(0);
         S16(0x516)=static_cast<short>(180-g_F1004_ModeAt006714D0*20);

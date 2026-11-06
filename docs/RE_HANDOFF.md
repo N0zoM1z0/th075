@@ -1,4 +1,4 @@
-# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1199)
+# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1200)
 
 **Start here.** Work on both large/core original functions and smaller entire
 original functions. The user requests meaningful **multiple local commits** named
@@ -120,7 +120,7 @@ CODE/COFF exactness**. See [F1138 source borrow](CHARACTEROBJECT_WHOLE_NATIVE_PH
 
 | Actual original complete callable | Current original-shaped normal C++ research | Local scoped proof |
 | --- | --- | --- |
-| **`004AC040`** 82,796B/22,721 x86, 1,126 afterRET DATA | F1199 same length/count; frame 0x720 /this EBP-0x64, all 7,432 EBP positions; **6,958 GPR /12 widths, 45 CFG differences; non-GPR operands agree** | [F1199 native operand proof](THIRD_FIGHTER_NATIVE_OPERANDS_F1199.md): all 2,201 CODE targets and 151 dense ordinals agree; NONEXACT |
+| **`004AC040`** 82,796B/22,721 x86, 1,126 afterRET DATA | F1200 same length/count; frame 0x720 /this EBP-0x64, all 7,432 EBP positions; **6,958 GPR /12 widths**; all direct CFG/non-GPR operands agree | [F1200 all direct CFG proof](THIRD_FIGHTER_ALL_DIRECT_CFG_F1200.md): all 1,927 direct targets, 2,201 CODE fields and 151 dense ordinals agree; NONEXACT |
 | **`00543210`** 58,294B/16,471 x86, 943 DATA | F1196 live tracked source 58,293B/16,471 x86; native frame/this/all 5,119 EBP positions; **3 widths, 1,741 GPR positions** | [F1196 whole CFG/operand proof](FIGHTER_58KB_WHOLE_CFG_OPERANDS_F1196.md): all 1,905 direct targets, 1,707 CODE fields and 156 dense destinations; NONEXACT |
 | **`005214B0`** 46,755B/13,230 x86, 901 DATA | F1197 source 46,754B/13,230 x86; native frame/this/all 4,133 EBP positions; **2,736 GPR /5 widths** | [F1197 whole CFG proof](FIGHTER_46KB_WHOLE_CFG_F1197.md): all 1,522 direct targets, 1,352 CODE fields and 139 dense destinations; NONEXACT |
 | **`0045DD70`** 60,999B/16,837 x86 | Live F1193 complete source **61,000B/16,837 x86 (+1B)**; original frame/saved-this/all 5,444 EBP slots; **6,311 GPR positions /5 widths** | [F1192 complete stack/CFG/PE proof](REIMU_WHOLE_STACK_CFG_F1192.md), [F1193 native WORD parameters](REIMU_WORD_ABI_REGISTER_BOUNDARY_F1193.md): all 1,684 direct targets, 1,682 CODE fields, 142 actual dense destinations; NONEXACT |
@@ -128,16 +128,16 @@ CODE/COFF exactness**. See [F1138 source borrow](CHARACTEROBJECT_WHOLE_NATIVE_PH
 
 Current 82KB source:
 [`probes/FighterWhole004AC040F1020.cpp`](../probes/FighterWhole004AC040F1020.cpp).
-F1198 restores four early jumps to shared getter 004C039F and the default
-skip at 004C0391; only five branch-displacement bytes change. Keep the
-getter inside the switch. Selected profile includes **/GX**, not /GX-.
-F1199 restores all 26 non-GPR operands (17 strict x87 comparisons and
-nine random-angle constants); all 2,352 COFF records stay unchanged.
-Fresh proof: `.analysis/f1199-82kb-native-operands/tracked.obj` and
-`whole-audit.py`; F1028 cold-builds this parent for PE/DATA checks.
-Next review F1198 `remaining-native-actions.json`: **45 interior branch
-differences** remain, beyond 6,958 GPR /12 widths.
-Equal total CODE length is not exactness. No markers remain in real cases.
+F1198 restores four early shared-getter entries/default skip; keep the
+getter inside the switch. F1199 fixes 26 operands. F1200 restores all
+45 remaining direct targets through actual cooldown, fade, clamp and
+getter/cadence guard scopes. All whole CFG/non-GPR/EBP operands agree.
+Fresh proof: `.analysis/f1200-82kb-native-cfg/tracked.obj` and
+`whole-audit.py`; F1028 cold-builds only this parent using **/GX**.
+All 2,352 COFF field shapes/addends/destinations remain unchanged;
+45 local names change, offsets preserved. Remaining **6,958 GPR /12 widths**;
+first divergence **004ADEFA /whole ordinal 2,180**, native EAX vs source EDX.
+Equal total CODE length is not exactness. Continue from this corrected parent.
 
 Current 58KB source:
 [`probes/FighterWhole00543210F1041.cpp`](../probes/FighterWhole00543210F1041.cpp).

@@ -41,9 +41,10 @@ case 0x12D: {
             FLAG=0;
         }
     }
-    if (GetNativeActionAt40FA30()==S16(0x70))
+    if (GetNativeActionAt40FA30()==S16(0x70)) {
         SetNativeActionAt40FAC0(0);
-    S16(0xF00)=0;
+        S16(0xF00)=0;
+    }
     if (S16(0x62)==4 && S16(0x64)==0)
         PrepareActionAt453D60(0x1C);
     break;

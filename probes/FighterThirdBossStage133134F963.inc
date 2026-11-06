@@ -38,12 +38,11 @@ case 0x134: {
         S16(0x80)=1;
         I32(0x7C)=0;
     }
-    if (POS>g_ThresholdAt0065782C) {
+    if (POS>g_ThresholdAt0065782C)
         POS=POS-g_SubtractAt00657478;
-        if (POS<g_StopThresholdAt00657480 &&
-            POS48>g_ThresholdAt0065782C)
-            POS=2.0f;
-    }
+    if (POS<g_StopThresholdAt00657480 &&
+        POS48>g_ThresholdAt0065782C)
+        POS=2.0f;
     if (POS48>g_ThresholdAt0065782C && S16(0x62)<14) {
         POS54=POS54-POS5C;
         if (POS54+POS48<=g_ThresholdAt0065782C) {

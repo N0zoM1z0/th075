@@ -14,13 +14,14 @@ case 0x1FA: {
     if (S16(0x62)==6 || S16(0x62)==7) {
         if (U8(0x11)>30)
             U8(0x11)=U8(0x11)-30;
-        else
+        else {
             U8(0x11)=0;
-        SetAuxActionAt40FB40(8);
-        POS=120.0f;
-        POS54=10.0f;
-        POS5C=0.4f;
-        break;
+            SetAuxActionAt40FB40(8);
+            POS=120.0f;
+            POS54=10.0f;
+            POS5C=0.4f;
+            break;
+        }
     }
     if (S16(0x62)==9 || S16(0x62)==10) {
         POS54=POS54-POS5C;

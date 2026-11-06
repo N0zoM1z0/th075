@@ -24,8 +24,8 @@ case 0x19B: {
             *reinterpret_cast<signed char*>(RAW+0x66),1);
         S16(0xF00)=2;
         ++S16(0xF02);
-        --S16(0xF00);
     }
+    --S16(0xF00);
     if (GetNativeActionAt40FA30()==S16(0x70))
         SetNativeActionAt40FAC0(0);
     break;
@@ -49,8 +49,8 @@ case 0x19C: {
             *reinterpret_cast<signed char*>(RAW+0x66),1);
         S16(0xF00)=2;
         ++S16(0xF02);
-        --S16(0xF00);
     }
+    --S16(0xF00);
     if (GetNativeActionAt40FA30()==S16(0x70))
         SetNativeActionAt40FAC0(0);
     break;

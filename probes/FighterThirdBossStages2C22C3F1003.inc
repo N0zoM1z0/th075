@@ -60,11 +60,12 @@ case 0x2C3: {
     }
     if (S16(0x62)>5)
         S16(0xF0C)=300;
-    if (GetNativeActionAt40FA30()==S16(0x70))
+    if (GetNativeActionAt40FA30()==S16(0x70)) {
         SetNativeActionAt40FAC0(0);
-    SpawnSevenRawXFloatYAt453B50(0x32F,I32(0x44),
-        (*(&POS48))+g_ContactProjectionAt00657888,
-        1,1,0,1);
+        SpawnSevenRawXFloatYAt453B50(0x32F,I32(0x44),
+            (*(&POS48))+g_ContactProjectionAt00657888,
+            1,1,0,1);
+    }
     if (S16(0x62)==5 && S16(0x64)==0) {
         if (S16(0xF02)<4) {
             ++S16(0xF02);

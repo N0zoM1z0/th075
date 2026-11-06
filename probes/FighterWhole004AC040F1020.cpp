@@ -1,9 +1,9 @@
 #include "FighterProjectileXViewF917.hpp"
 #include "FighterAnimationPhaseBorrowedF1024.hpp"
-// F1199 complete original-shaped 004AC040 parent, continued from F1020.
+// F1200 complete original-shaped 004AC040 parent, continued from F1020.
 // Native frame 0x720, saved-this and all EBP operands are verified.
-// Shared early getter/default exits and non-GPR operands are restored. CFG debt
-// and 6958 GPR positions /12 widths still make the whole callable NONEXACT.
+// All direct branch targets and non-GPR operands are verified. Remaining
+// 6958 GPR positions /12 widths still make the whole callable NONEXACT.
 class FighterSwitchF598_Boss004AC040 { public: void SpawnDirectedAt453A70(int,int,int,char,int); void SpawnFloatXYAt453A70(int,float,float,char,int); void SpawnWithFloatAt453A70(int,int,float,char,int); void SetMotionStateAt40FBB0(int,float,int); void ResetMotionAt40FC50(); void InitTrajectoryAt453E60(float); void ApplyAt453E80(int); void BeginStateAt454A70(int); void RefreshStateAt452B30(); virtual void NativeVirtualFrameAdvance(); void Advance(); void ResetAt453E20(); void SetAngleAt40FB70(float,float); void SetAngleBitsAt40FB70(int,float); void PrepareActionAt453D60(int); void PrepareActionAt453D40(int); void StartAnimationAt46D000(int); void SpawnAt453C80(int,float,float,char,int); void SpawnMixedAt453C80(int,int,float,char,int); void ConfigureStormAt454BC0(int,int,int); void SpawnRawAt453C80(int,int,int,char,int); void SpawnSevenAt453B50(int,int,int,char,int,int,int); void SpawnSevenFloatAt453B50(int,float,float,char,int,int,int); void SpawnSevenRawXFloatYAt453B50(int,int,float,char,int,int,int); int RandAt455580(int,int); short GetNativeActionAt40FA30(); void SetNativeActionAt40FAC0(int); signed char ContactAt454EE0(); void SetAuxActionAt40FB40(int); };
 extern unsigned int g_FighterProbeMarker;
 extern signed char g_F1004_ModeAt006714D0;

@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1199):**
+**Maintenance annotation, updated 2026-11-06 (F1200):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -255,6 +255,19 @@ CODE/DATA geometry, references and debt rows are otherwise unchanged.
 Fresh /GX source remains 82,796B/22,721 x86, with **45 branch-target,
 6,958 GPR-role and twelve width differences**. No exact credit, accepted
 input change, full CI or corpus replay. Next work is the F1198 branch list.
+
+F1200 repairs all 45 remaining 82KB 004AC040 direct branch destinations:
+ten unconditional cooldown decrements, two stage-gated decrements, three
+fade-else scopes, getter/reset/sprite/cadence scopes, independent 134 clamp
+and the original outer 2F9 shot block. The complete fresh /GX audit now
+verifies **all 1,927 direct targets**, all non-GPR/EBP operands, 2,201 CODE
+references, 151 dense ordinals and full owned DATA. Only 48 candidate branch-
+displacement bytes change; 2,352 COFF shapes/addends/destinations stay the
+same, with 45 generated local names changed at unchanged offsets.
+[All direct CFG proof](THIRD_FIGHTER_ALL_DIRECT_CFG_F1200.md).
+Whole NONEXACT: **6,958 GPR /12 widths** remain; first divergence is
+004ADEFA /whole ordinal 2,180 (native EAX vs source EDX). No new accepted
+bytes, accepted input change, full CI or corpus replay.
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function
