@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1214):**
+**Maintenance annotation, updated 2026-11-06 (F1216):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -401,6 +401,16 @@ comparison controls emit identical F1214 CODE/DATA/reference bindings.
 The verified F1214 source is restored unchanged; no exact bytes or accepted
 inputs change. Retain the local failed-preparation/duplicate-build receipt
 without counting it as another source control. [Negative evidence and paths](OBJECT_ADVANCE_00536400_COMPLETE_PARENT_F1214.md).
+
+F1216 opens the genuine R048-authored 005C9CC0 advance from its full43,501B/
+11,447-x86 original. Its exact F422 constructor and actual659F14 vtable pin
+virtual slot1 without asserting a complete owner. One natural body recovers
+13/67 states, including five actual cancellation/burst indices at EBP-4..-14h;
+all written instruction/operand diagnostics agree. Prefix/through835 have
+zero raw GPR debt. Source7,168B/1,925 x86, frame0x80/this-18h remains incomplete
+againstnative0x470/this-4Ch; 54 states remain, all43,501 original CODE B pending.
+No accepted inputs/origins change; all prior complete parents/archives remain.
+[Original loop, boundary and source evidence](OBJECT_ADVANCE_005C9CC0_INITIAL_STATES_F1216.md).
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function

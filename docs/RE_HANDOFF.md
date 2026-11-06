@@ -28,11 +28,9 @@ reviewed denominator **1,973,704**, coverage **44.16%** / **44.09%** conservativ
 **0 other original small/medium whole functions** (**0 CODE bytes**).
 Read the live ledger rather than inferring coverage from research cases.
 
-**No recently recovered Boss *inner state* has independently added an
-accepted whole-function exact unit.** Source refactors of already accepted
-functions also add zero new exact bytes. Do not count the 95 origin-unknown
-candidates as authored without independent evidence. Read the current ledger
-with `scripts/repo-python scripts/report-reconstruction-status.py --summary`.
+Interior states and accepted-source refactors earn no new exact CODE.
+Origin-unknown candidates remain uncredited without independent attribution.
+Use the canonical status reporter in the preflight checklist below.
 
 ## 2. Primary large Boss — original 0050A580 (81KB)
 
@@ -190,8 +188,7 @@ entries/199 sparse bytes agree. **913 GPR/10 width differences remain** in
 Selected `.analysis/f1214-object-536400-complete/current.obj`, `current.asm`,
 immutable `current.cpp`/`current.hpp`, both current diagnostic JSONs and
 `verified-summary.json`; `whole-audit.py [OBJ]` checks this parent. Destination
-identity is not original relocation-offset equality. Scope/window/zero-argument/return-call/comparison
-controls are identical negatives. [F1214 proof](OBJECT_ADVANCE_00536400_COMPLETE_PARENT_F1214.md).
+identity is not original relocation-offset equality. Retained source controls are negative. [F1214 proof](OBJECT_ADVANCE_00536400_COMPLETE_PARENT_F1214.md).
 Continue register debt in this complete body; never count interiors as exact.
 New incomplete 43KB source:
 [`probes/CharacterObjectActions005C9CC0F1216.cpp`](../probes/CharacterObjectActions005C9CC0F1216.cpp).
