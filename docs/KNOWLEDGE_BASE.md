@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1192):**
+**Maintenance annotation, updated 2026-11-06 (F1193):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -179,6 +179,16 @@ An after-switch return trampoline and three reversed x87 expressions were
 rejected; the label inside the switch restores original exits. Whole source
 remains NONEXACT: 6,311 GPR positions /five widths, earliest state 59 at
 0045FDA9. No accepted bytes, mass replay or new test suite.
+
+F1193 reconciles the live Reimu caller's 40FAC0/40FB40/453D60 parameters
+to the independently accepted signed-short callees. All 62,090 CODE+DATA
+bytes and 1,824 field shapes remain unchanged; 337 decorated external names
+retain their native destinations. Five bounded first-divergence controls
+provide no GPR improvement: stage/capture/counter variants are byte-identical,
+borrowed rotation worsens x87 ordering, and a flat guard adds an instruction.
+[Native WORD ABI and negative evidence](REIMU_WORD_ABI_REGISTER_BOUNDARY_F1193.md).
+The complete parent remains 61,000B/16,837 x86, with all stack/CFG/PE targets
+verified but 6,311 GPR /five-width debt. No new exact credit or mass replay.
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function

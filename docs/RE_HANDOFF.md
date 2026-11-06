@@ -1,4 +1,4 @@
-# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1192)
+# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1193)
 
 **Start here.** Work on both large/core original functions and smaller entire
 original functions. The user requests meaningful **multiple local commits** named
@@ -133,7 +133,7 @@ CODE/COFF exactness**. See [F1138 source borrow](CHARACTEROBJECT_WHOLE_NATIVE_PH
 | **`004AC040`** 82,796B/22,721 x86, 1,126 afterRET DATA | 82,796B/22,721 x86, original saved-this and frame; **12 wrong widths, 6,958 GPR positions** | [F1028 native PE targets](THIRD_FIGHTER_WHOLE_82KB_PE_TARGETS_F1028.md), 2,191 external targets |
 | **`00543210`** 58,294B/16,471 x86, 943 DATA | 58,293B/16,471 x86; **3 widths, 1,741 GPR positions** | [F1025 native PE targets](FIGHTER_58KB_ALL_NATIVE_PE_TARGETS_F1025.md), 1,697 targets |
 | **`005214B0`** 46,755B/13,230 x86, 901 DATA | 46,754B/13,230 x86; **5 widths**, original physical COFF/GPR wrong | [F1026 native PE targets](FIGHTER_46KB_ALL_NATIVE_PE_TARGETS_F1026.md), 1,341 targets |
-| **`0045DD70`** 60,999B/16,837 x86 | Live F1192 complete source **61,000B/16,837 x86 (+1B)**; original frame/saved-this/all 5,444 EBP slots; **6,311 GPR positions /5 widths** | [F1192 complete stack/CFG/PE proof](REIMU_WHOLE_STACK_CFG_F1192.md): all 1,684 direct targets, 1,682 CODE fields, 142 actual dense destinations; NONEXACT |
+| **`0045DD70`** 60,999B/16,837 x86 | Live F1193 complete source **61,000B/16,837 x86 (+1B)**; original frame/saved-this/all 5,444 EBP slots; **6,311 GPR positions /5 widths** | [F1192 complete stack/CFG/PE proof](REIMU_WHOLE_STACK_CFG_F1192.md), [F1193 native WORD parameters](REIMU_WORD_ABI_REGISTER_BOUNDARY_F1193.md): all 1,684 direct targets, 1,682 CODE fields, 142 actual dense destinations; NONEXACT |
 
 Current Reimu source: [`probes/FighterWhole0045DD70F1183.cpp`](../probes/FighterWhole0045DD70F1183.cpp),
 continued from F652/F1183. **All case/default markers are removed.** The
@@ -147,8 +147,15 @@ dense-entry instruction ordinals agree. Owned DATA is 1,090B, including
 
 Remaining Reimu debt: **6,311 GPR positions /5 widths**, in 63's three
 EAX CMP encodings and 252/254's two AL SUB encodings. The first GPR
-mismatch is state **59 at 0045FDA9** (whole ordinal 2,292); investigate
-that boundary and preceding 58 source/actual helper parameter views.
+mismatch is state **59 at 0045FDA9** (whole ordinal 2,292).
+F1193 reconciles 40FAC0/40FB40/453D60 to independently accepted **short**
+parameters: all 62,090 CODE+DATA bytes and 1,824 field shapes are unchanged;
+337 changed external symbols retain native destinations. The current object
+is `.analysis/f1193-reimu-register-boundary/adopted.obj`.
+Bare stage access, explicit int captures and borrowed counter stores leave
+all bytes unchanged; borrowed rotation worsens x87/width debt and a flat guard
+adds an instruction. These bounded controls, plus historical F792/F793
+predecessor controls, are negative evidence; do not repeat them as new leads.
 The local `.analysis/f1192-reimu-final-states/whole-audit.py` diagnoses
 only an explicitly selected fresh whole object. Preserve the correct
 inside-switch shared getter label: an after-switch return trampoline
