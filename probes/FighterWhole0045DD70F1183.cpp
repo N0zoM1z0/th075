@@ -2,8 +2,12 @@
 // F652 native D1/D2 source. The complete 60,999B callable is NONEXACT.
 // Missing states remain explicit research markers and earn no CODE credit.
 // Preserve independently reviewed current bodies and all six table groups.
-class FighterSwitchF598_Boss0045DD70 { public: void SetMotionStateAt40FBB0(int,float,int); void SetMotionFloatAt40FBB0(float,float,float); void ResetMotionAt40FC50(); void SpawnDirectedAt453A70(int,int,int,char,int); void SpawnWithFloatAt453A70(int,int,float,char,int); void SpawnFloatXYAt453A70(int,float,float,char,int); void InitTrajectoryAt453E60(float); virtual void NativeVirtualFrameAdvance(); void Advance(); int SelectRangeAt455580(int,int); void PlaySoundAt453D40(short); void ResetAt453E20(); void PrepareActionAt453D60(int); void StartAnimationAt46D000(int); void SpawnAt453C80(int,float,float,char,int); void SpawnMixedAt453C80(int,int,float,char,int); void SpawnRawXYAt453C80(int,int,int,char,int); void ConfigureStormAt454BC0(int,unsigned char,unsigned int); short GetNativeActionAt40FA30(); void SetNativeActionAt40FAC0(int); signed char ContactAt454EE0(); void SetAuxActionAt40FB40(int); };
+class FighterSwitchF598_Boss0045DD70 { public: void SetMotionStateAt40FBB0(int,float,int); void SetMotionFloatAt40FBB0(float,float,float); void ResetMotionAt40FC50(); void SpawnDirectedAt453A70(int,int,int,char,int); void SpawnWithFloatAt453A70(int,int,float,char,int); void SpawnFloatXYAt453A70(int,float,float,char,int); void InitTrajectoryAt453E60(float); virtual void NativeVirtualFrameAdvance(); void Advance(); void SetNonnegativeWordAt453E80(short); void SpawnTrackedAt453B50(short,float,float,signed char,signed char,unsigned char,unsigned char); void SpawnFloatXAt453A70(int,float,int,char,int); int SelectRangeAt455580(int,int); void PlaySoundAt453D40(short); void ResetAt453E20(); void PrepareActionAt453D60(int); void StartAnimationAt46D000(int); void SpawnAt453C80(int,float,float,char,int); void SpawnMixedAt453C80(int,int,float,char,int); void SpawnRawXYAt453C80(int,int,int,char,int); void ConfigureStormAt454BC0(int,unsigned char,unsigned int); short GetNativeActionAt40FA30(); void SetNativeActionAt40FAC0(int); signed char ContactAt454EE0(); void SetAuxActionAt40FB40(int); };
 extern unsigned int g_FighterProbeMarker;
+extern float g_ReimuMeterTrailYAt0065835C;
+extern float g_ReimuMeterNearYAt00659088;
+extern float g_ReimuMeterInitialYAt00659084;
+extern float g_ReimuMeterShotYAt00659080;
 extern float g_ReimuSpecialYAt0065908C;
 extern float g_ReimuChargeFallAt00659094;
 extern float g_ReimuRepeatDragAt00659090;
@@ -630,14 +634,7 @@ case 0x48: {
 #include "ReimuScriptedCombosF1187.inc"
 #include "ReimuChargedAttacksF1188.inc"
 #include "ReimuSpecialAttacksF1189.inc"
-        case 0x2BC: g_FighterProbeMarker = 701; break;
-        case 0x2BD: g_FighterProbeMarker = 702; break;
-        case 0x2BE: g_FighterProbeMarker = 703; break;
-        case 0x2BF: g_FighterProbeMarker = 704; break;
-        case 0x2C0: g_FighterProbeMarker = 705; break;
-        case 0x2C1: g_FighterProbeMarker = 706; break;
-        case 0x2C2: g_FighterProbeMarker = 707; break;
-        case 0x2C3: g_FighterProbeMarker = 708; break;
+#include "ReimuMeterAttacksF1190.inc"
         case 0x2D0: g_FighterProbeMarker = 721; break;
         case 0x2D1: g_FighterProbeMarker = 722; break;
         case 0x2D2: g_FighterProbeMarker = 723; break;

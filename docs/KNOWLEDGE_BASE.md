@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1189):**
+**Maintenance annotation, updated 2026-11-06 (F1190):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -142,6 +142,18 @@ angles and actual no-sound/preparation 260 behavior are preserved.
 All 106 prior nonmarker intervals retain their results. Parent emits
 46,890B/12,933 x86, frame 0x21C /saved-this EBP-0xC, 22 nondefault
 markers. Recent 68 interiors total 32,048B/8,866 x86/817 fields; zero
+whole exact credit and no full CI/corpus replay.
+
+F1190 restores eight Reimu 2BC–2C3 states: 5,381 native interior bytes /
+1,529 x86 /149 fields. Counts, mnemonics, widths, non-GPR operands,
+actual branch destinations and physical fields agree; 880 GPR positions
+and stack slots remain wrong. A real X-lvalue correction restores native
+FILD/FSUBR instead of equal-length FLD/FISUB in four states. The selector's
+==1/<0x43 tests, differing repeat limits, genuine 2C3 sound 6 and air
+landing returns are retained. [Native meter/effect proof](REIMU_METER_ATTACKS_F1190.md).
+All 121 prior nonmarker intervals retain their results. Parent emits
+52,151B/14,446 x86, frame 0x284 /saved-this EBP-0xC, 14 nondefault
+markers. Recent 76 interiors total 37,429B/10,395 x86/966 fields; zero
 whole exact credit and no full CI/corpus replay.
 
 **Earlier F754 documentation/storage review (2026-10-30):**

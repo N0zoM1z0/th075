@@ -1,5 +1,10 @@
 # F1189 — Reimu fifteen original 252–263 special-action states
 
+**Historical F1189 checkpoint:** F1190 extends the same parent to
+52,151B/14,446 x86, preserving all 121 prior nonmarker physical intervals.
+[Current meter/effect proof](REIMU_METER_ATTACKS_F1190.md). The dimensions
+below describe commit `65be8b4e`.
+
 The one-body `probes/FighterWhole0045DD70F1183.cpp` now includes
 `ReimuSpecialAttacksF1189.inc` and its shared native-policy fragments.
 The complete independently R063-authored **60,999B/16,837-x86** original
