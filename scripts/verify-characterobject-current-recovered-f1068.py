@@ -145,10 +145,10 @@ for k,(native,emitted) in enumerate(zip(NWHOLE,I)):
       'original_target_global_ordinal':orig_target,
       'source_target_global_ordinal':src_target})
 assert physical_original_branch_positions==1834,physical_original_branch_positions
-# These are not waived as exact or correctness: all 13 remain true
+# These are not waived as exact or correctness: all 12 remain true
 # unresolved source CFG target differences. Explicitly enumerate
 # them to reject any *additional* source control-flow regression.
-remaining_native_branch_keys={(0x346,271),
+remaining_native_branch_keys={
  (0x35d,13),(0x35d,17),(0x35e,155),
  (0x391,124),(0x391,130),(0x3e3,43),(0x3e3,163),
  (0x3e4,43),(0x3e4,179),(0x3e4,204),(0x3e4,214),(0x3e4,232)}
@@ -917,4 +917,4 @@ summary={'original_Boss':'0x0050A580','original_whole_CODE_B':81539,
  'whole_native_original_direct_jumps_audited':physical_original_branch_positions,
  'remaining_nonexact_native_branch_target_mismatches':native_branch_target_debt}
 (O/'verified-summary.json').write_text(json.dumps(summary,indent=2)+'\n')
-print('F1143 LIVE 82 original game action interiors: original',original_total,'CODE B /',x86total,'x86, native mnemonic+GPR',x86total,'/',x86total,'and genuine PE nonlocal',fields_total,'/',fields_total,'. Current partial source',end,'B /',len(I),'x86, NOT exact whole 81KB; accepted new original bytes 0.')
+print('LIVE 82 original game action interiors: original',original_total,'CODE B /',x86total,'x86, native mnemonic+GPR',x86total,'/',x86total,'and genuine PE nonlocal',fields_total,'/',fields_total,'. Current partial source',end,'B /',len(I),'x86, NOT exact whole 81KB; accepted new original bytes 0.')

@@ -1,4 +1,4 @@
-# TH075 — CURRENT AGENT HANDOFF (2026-11-04, F1144)
+# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1146)
 
 **Start here.** Work on both large/core original functions and smaller entire
 original functions. The user requests meaningful **multiple local commits** named
@@ -57,7 +57,7 @@ Single source/whole-parent verifier:
 | Original scalar immediate positions in those cases | **2,964** | **2,964** |
 | Explicit GPR-provisional case intervals | — | **8 cases:** `0x358–0x35E` and `0x3E6` |
 | Separate uncredited x87 case | — | **`0x391`**, 2 incorrect physical `FUCOMPP` fields, 4 GPR-role differences |
-| Actual direct intra-function branches audited by native target ordinal | **1,834** | **13 incorrect CFG destinations remain** |
+| Actual direct intra-function branches audited by native target ordinal | **1,834** | **12 incorrect CFG destinations remain** |
 | **Whole original callable accepted exact** | — | **NO** |
 
 The 82 strict cases **are interior evidence, not 82 accepted independent
@@ -69,14 +69,16 @@ Read [F1140 full original CFG proof](CHARACTEROBJECT_ORIGINAL_WHOLE_CFG_AUDIT_F1
 [F1143 latest stage-speed correction](CHARACTEROBJECT_NATIVE_389_STAGE_SPEED_CFG_F1143.md)
 and [F1132 native tail](CHARACTEROBJECT_NATIVE_3E3_3E6_F1132.md).
 
-**The 13 remaining *physical original branch-target* differences** are
+F1146 also restores the original `0x346` status-2-or-4 stage transition;
+see [native status CFG proof](CHARACTEROBJECT_NATIVE_346_STATUS_CFG_F1146.md).
+
+**The 12 remaining *physical original branch-target* differences** are
 mapped by original game action and local x86 ordinal below. This is the
 current complete, verified debt set, not a list of permitted exact-match
 exceptions:
 
 | Original state | Wrong native branch ordinals | First next step |
 | --- | --- | --- |
-| `0x346` | **271** | Restore original status branch into the correct native body |
 | `0x35D` | **13, 17** | Correct stage/frame guarded projectile sequencing; GPR also provisional |
 | `0x35E` | **155** | Correct original later-stage homing branch; GPR also provisional |
 | `0x391` | **124, 130** | Correct target-aim/float-branch CFG together with the 2 `FUCOMPP` PE fields |
@@ -84,7 +86,7 @@ exceptions:
 | `0x3E4` | **43, 179, 204, 214, 232** | Repair independent meter/hit outcome branches, preserve prior 3B6/3B0 fix |
 
 **Important:** the live parent verifier re-checks the exact set of all
-1,834 original jump target ordinals and independently requires these 13
+1,834 original jump target ordinals and independently requires these 12
 explicit debts; new mismatches fail. Its JSON result is under ignored
 `.analysis/f1068-boss-live-all-native/verified-summary.json`. Consult
 [original native 0x391 attempts](CHARACTEROBJECT_NATIVE_391_392_393_F1128.md)

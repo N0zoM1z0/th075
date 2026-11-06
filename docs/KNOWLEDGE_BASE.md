@@ -1,8 +1,8 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-04 (F1144 agent transfer):**
+**Maintenance annotation, updated 2026-11-06 (F1146):**
 The **current authoritative** pinned-original whole-function evidence,
-unresolved 81KB Boss CFG (13 branch-target discrepancies), 979 accepted
+unresolved 81KB Boss CFG (12 branch-target discrepancies), 979 accepted
 whole exact functions, and safe local storage/restore instructions are
 in the [live agent handoff](RE_HANDOFF.md) and
 [storage hygiene guide](STORAGE_HYGIENE.md). This chronological
@@ -13,6 +13,11 @@ not today's worktree. The old F906 and F1142 handoffs are preserved in
 and [the F1142 snapshot](history/RE_HANDOFF_AS_OF_F1142_PRE_HANDOFF_2026-11-04.md).
 Original PE, independent origin ledger and current VC7.1 builds always
 supersede a historical source hypothesis.
+
+F1146 corrects the original 0x346 status-2-or-4 transition, verified by
+one complete parent cold build and all 1,834 direct branch targets.
+See [native status CFG evidence](CHARACTEROBJECT_NATIVE_346_STATUS_CFG_F1146.md).
+No new whole-function exact bytes are claimed.
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function

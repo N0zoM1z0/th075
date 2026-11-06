@@ -71,7 +71,7 @@ case 0x346: {
             return;
         }
     }
-    if (SELF_FIELD(int,0x7C)!=2 && SELF_FIELD(int,0x7C)==4 && F1024_PHASE(this).stageAt62==2) {
+    if ((SELF_FIELD(int,0x7C)==2 || SELF_FIELD(int,0x7C)==4) && F1024_PHASE(this).stageAt62==2) {
         SetAuxActionAt0040FB40(3);
         return;
     }
