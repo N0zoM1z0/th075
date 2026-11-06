@@ -1,4 +1,5 @@
 // F1207 restores the complete F061 active07 natural C++ research parent.
+// F1209 reconciles its real virtual slot 1 with native vtable/dispatch evidence.
 // Original: 005EB520, 34,434 CODE bytes / 9,378 x86; 443 owned DATA bytes.
 // NONEXACT: 135 GPR positions / six widths remain, all in state 998.
 // Profile: /Od /Ob0 /Gy /GR- /GX- /Zi /I src, pinned VC7.1 build 3077.

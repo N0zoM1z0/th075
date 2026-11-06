@@ -8,7 +8,11 @@ public:
 
 class ObjectActor5EB520Draft {
 public:
-    void AdvanceAction();
+    // Original vtable 0065A04C, stored by constructor 005EB490:
+    // slot 0 is 0045B880, slot 1 is 005EB520. This is a borrowed
+    // virtual prefix, not a complete owner; never instantiate or embed it.
+    virtual void BindAnimationAt0045B880();
+    virtual void AdvanceAction();
     short AdvanceNestedFrame();
     void ResetSecondaryCounters(short);
     void SetPolarVelocity(float, float);

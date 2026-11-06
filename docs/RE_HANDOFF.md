@@ -1,4 +1,4 @@
-# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1207)
+# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1209)
 
 **Start here.** Continue all dirty work; there are no other active sessions.
 Work on both large/core and smaller authored originals. Use local commits
@@ -99,17 +99,14 @@ guards. None reduces the 522 GPR /five-width debt; do not repeat them.
 
     scripts/repo-python scripts/verify-characterobject-current-recovered-f1068.py
 
-This builds only the affected parent. F1138's earlier 358 phase/meter
-borrows preserved its selected CODE/DATA and COFF geometry; that is not
-whole exactness. Keep the [source-borrow evidence](CHARACTEROBJECT_WHOLE_NATIVE_PHASE_GAUGE_F1138.md)
-and all current native proofs above. No full 982-unit replay.
+Build only this affected parent. Preserve [F1138's phase/meter borrow proof](CHARACTEROBJECT_WHOLE_NATIVE_PHASE_GAUGE_F1138.md); it adds no whole exact credit.
 
 ## 3. Other large original functions — do not abandon them
 
 | Actual original complete callable | Current original-shaped normal C++ research | Local scoped proof |
 | --- | --- | --- |
 | **`004EBDA0`** 33,293B/8,789 x86, 438 DATA | F1205 fresh complete F572–F596 source: original frame 0x1FC /this EBP-0x40, all 3,005 EBP; **133 GPR /zero width differences** | [F1205 full native proof](OBJECT_ADVANCE_004EBDA0_WHOLE_F1205.md): all 885 direct targets, 622 CODE fields, 60 dense targets; 137 nonfield bytes remain; NONEXACT |
-| **`005EB520`** 34,434B/9,378 x86, 443 DATA | F1207 tracked complete F061 active07 source: 34,436B /same count, frame 0x210 /this EBP-4, all 3,170 EBP; **135 GPR /six widths**, all state 998 | [F1207 full native proof](OBJECT_ADVANCE_005EB520_WHOLE_F1207.md): all 901 direct targets, 745 CODE fields, 61 dense targets /199 sparse bytes; NONEXACT |
+| **`005EB520`** 34,434B/9,378 x86, 443 DATA | F1209 tracked complete F061 active07 source: 34,436B /same count, frame 0x210 /this EBP-4, all 3,170 EBP; **135 GPR /six widths**, all state 998 | [F1209 native virtual/whole proof](OBJECT_ADVANCE_005EB520_VIRTUAL_ABI_F1209.md): all 901 direct targets, 745 CODE fields, 61 dense targets /199 sparse bytes; NONEXACT |
 | **`004AC040`** 82,796B/22,721 x86, 1,126 afterRET DATA | F1203 same length/count; frame 0x720 /this EBP-0x64, all 7,432 EBP positions; **6,958 GPR /12 widths**; all direct CFG/non-GPR operands agree | [F1200 all direct CFG proof](THIRD_FIGHTER_ALL_DIRECT_CFG_F1200.md): all 1,927 direct targets, 2,201 CODE fields and 151 dense ordinals agree; NONEXACT |
 | **`00543210`** 58,294B/16,471 x86, 943 DATA | F1196 live tracked source 58,293B/16,471 x86; native frame/this/all 5,119 EBP positions; **3 widths, 1,741 GPR positions** | [F1196 whole CFG/operand proof](FIGHTER_58KB_WHOLE_CFG_OPERANDS_F1196.md): all 1,905 direct targets, 1,707 CODE fields and 156 dense destinations; NONEXACT |
 | **`005214B0`** 46,755B/13,230 x86, 901 DATA | F1197 source 46,754B/13,230 x86; native frame/this/all 4,133 EBP positions; **2,736 GPR /5 widths** | [F1197 whole CFG proof](FIGHTER_46KB_WHOLE_CFG_F1197.md): all 1,522 direct targets, 1,352 CODE fields and 139 dense destinations; NONEXACT |
@@ -188,15 +185,18 @@ R233 454C00/454F70 still lack owner witnesses; no new rebuild or promotion.
 
 Current 34KB source:
 [`probes/CharacterObjectWhole005EB520F1207.cpp`](../probes/CharacterObjectWhole005EB520F1207.cpp)
-and `ObjectAdvance5EB520F1207.hpp`. F1207 recovers the complete F061 active07
-parent, all 60 real states/default, with fresh full native proof. All 806
-physical bindings /actual COFF payloads and PE permissions are checked.
+and `ObjectAdvance5EB520F1207.hpp`. Complete F061 active07 body: all 60
+states/default. F1209 proves **virtual slot 1**, with native slot-0 animation
+binding, original constructor/vtable and `[vptr+4]` queue dispatch. The member
+symbol is now **?AdvanceAction@ObjectActor5EB520Draft@@UAEXXZ**; CODE/DATA and
+all 806 binding shapes/destinations stay unchanged (63 local-label renames).
 **135 GPR /six widths** remain only in 998, first **005F3904 /ordinal9,200**.
-Selected `.analysis/f1207-object-5eb520-recovery/tracked.obj`; `whole-audit.py OBJ`,
-`verified-summary.json`, fresh F061 physical receipts there. Use **/GX-**
-and its recorded profile. Four new controls preserve all CODE/DATA; no gain.
-All 34,434 original CODE bytes remain pending. Earlier forward-branch raw
-bytes can differ despite correct target ordinals. Do not count inner states.
+Selected `.analysis/f1209-object-5eb520-virtual-abi/tracked.obj`; `whole-audit.py OBJ`,
+`verified-summary.json`, fresh physical receipts there. Use recorded **/GX-**
+profile. [F1209 proof](OBJECT_ADVANCE_005EB520_VIRTUAL_ABI_F1209.md) retains
+F1208's eight identical-code controls and two wrong-shape candidates; do not
+repeat. No full leading layout is inferred. All 34,434 original CODE B pending.
+Earlier forward-branch bytes can differ despite correct target ordinals.
 
 F1206 deduplicates F756/F773's 33KB comma/typed-window controls; F1205's
 fresh evidence is valid but those ideas are not all new. A valid stage-4

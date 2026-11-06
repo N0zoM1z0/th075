@@ -1,5 +1,10 @@
 # F1207 — recover the complete 34KB 005EB520 research parent
 
+F1209 subsequently reconciles the real virtual slot-1 interface, preserving
+all CODE/DATA and physical bindings. Its [native virtual proof and F1208
+negative controls](OBJECT_ADVANCE_005EB520_VIRTUAL_ABI_F1209.md) supersede
+this checkpoint's nonvirtual source symbol and selected object path.
+
 The complete F061 `active07` source is now tracked as
 [`CharacterObjectWhole005EB520F1207.cpp`](../probes/CharacterObjectWhole005EB520F1207.cpp)
 with its [borrowed receiver interfaces](../probes/ObjectAdvance5EB520F1207.hpp).

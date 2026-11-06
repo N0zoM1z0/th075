@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1207):**
+**Maintenance annotation, updated 2026-11-06 (F1209):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -329,6 +329,20 @@ expression without gain; a valid nested stage-4 switch (historical attempt
 failed compilation) produces wrong frame/count and is rejected on shape.
 Bounded source-inventory regexes are leads, not proof of absent full drafts.
 No exact/origin/accepted-input changes; 982 /871,649B remain, 22 giants pending.
+
+F1209 reconciles 005EB520's real **virtual slot 1**, after independently
+reading the 005EB490 constructor's vptr store, five original table entries
+at 0065A04C and exact F137's `[vptr+4]` queue dispatch at 0045BE27. The first
+two slots are now truthful borrowed declarations; no owner is instantiated,
+embedded or assigned a fabricated full prefix. The fresh tracked object
+preserves all 34,879 CODE+DATA bytes and 806 binding shapes/destinations;
+63 compiler-local labels change with its **UAEXXZ** virtual symbol. Whole
+native GPR/width debt remains **135 /six**. F1208's eight unchanged-code
+controls and two wrong-shape candidates are retained and should not be
+repeated. Original constructor-chain leaves 458650/458670 remain unknown.
+[Native virtual facet and complete negative evidence](OBJECT_ADVANCE_005EB520_VIRTUAL_ABI_F1209.md).
+Only this nonexact research TU is affected; no accepted inputs or origins
+change, no exact credit, full CI, corpus replay or per-function tests.
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function
