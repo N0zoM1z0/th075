@@ -1,5 +1,10 @@
 # F1015 — Native 248B Scene virtual destructor, three authentic free-pointer owner orders
 
+**F1157 supersession:** the complete original virtual destructor is now
+accepted cold exact using scalar deletion of the three native new-allocated
+HUD objects. These earlier free-based negative sources remain preserved;
+see [whole original F1157 proof](BATTLE_SCENE_TYPED_DELETE_EXACT_F1157.md).
+
 The SHA-pinned Japanese TH075 v1.11 authored original
 Scene virtual destructor at **0043B0B0..0043B1A8**
 is one complete **248 CODE B/75 x86** function, including

@@ -13,7 +13,7 @@ from pathlib import Path
 import tomllib
 
 ROOT = Path(__file__).resolve().parents[1]
-MANIFEST_SHA256 = "9a346b8b59a12a98285b26e2dbc91454ed5337fa05ef016aa188662a1de85c7b"
+MANIFEST_SHA256 = "67f0b89156bb2c08025707ee14a026602c1af15ecf7806a35265707e07427da8"
 
 
 def digest(data):

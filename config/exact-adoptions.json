@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377; F378; F379; F386; F389; F391; F392; F393; F394; F395; F403; F407; F414; F415; F421; F422; F427; F428; F429; F430; F431; F432; F435; F437; F440; F445; F446; F447; F448; F454; F458; F459; F460; F461; F463; F465; F467; F468; F469; F474; F479; F481; F484; F485; F488; F489; F490-F492; F494; F496; F499; F504; F514; F516; F535; F536; F555; F755; F758; F760; F765; F766; F769; F770; F775; F776; F779; F780; F1155",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182; F183; F184; F185; F186; F187; F188; F190; F191; F192; F193; F194; F195; F196; F197; F198; F199; F201; F202; F203; F204; F205; F206; F207; F211; F212; F213; F214; F217; F218; F220; F221; F222; F223; F224; F225; F226; F227; F228; F229; F230; F231; F234; F235; F238; F239; F240; F241; F242; F243; F244; F245; F246; F247; F248; F251; F252; F253; F256; F257; F258; F259; F260; F261; F262; F263; F264; F265; F266; F267; F268; F269; F271; F272; F273; F274; F278; F279; F281; F282; F283; F284; F285; F286; F287; F288; F292; F293; F294; F300; F301; F303; F304; F309; F311; F315; F314; F317; F318; F319; F320; F324; F325; F326; F328; F334; F335; F337; F338; F339; F340; F341; F342; F345; F346; F347; F348; F353; F354; F361; F362; F363; F364; F366; F365; F370; F371; F374; F375; F376; F377; F378; F379; F386; F389; F391; F392; F393; F394; F395; F403; F407; F414; F415; F421; F422; F427; F428; F429; F430; F431; F432; F435; F437; F440; F445; F446; F447; F448; F454; F458; F459; F460; F461; F463; F465; F467; F468; F469; F474; F479; F481; F484; F485; F488; F489; F490-F492; F494; F496; F499; F504; F514; F516; F535; F536; F555; F755; F758; F760; F765; F766; F769; F770; F775; F776; F779; F780; F1155; F1156; F1157",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "b7d804046fee0c45a7ee82cf67f11294f47a4460dcd21415e15671d07c290cc4"
+      "current_sha256": "71c30f9232822846e879f21d41c769347eaa8749e15d9ed58ad5c22d38b02aaf"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "95c88b0b33c3a2b893cd821ab33b72ad56db282b1b3f8a52c6e43f1d7d44b51b"
+      "current_sha256": "665b622b62fbc46fba2e9aeec1b577978d1ade8b4dbde40f4e05ca20c9e016db"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "72b86e712eb1b1509188f8c9a99f56889eef1cfa98482d845af8ae757259b4fb"
+      "current_sha256": "cec319f5c6a8f133590bdb6c1f07810fe1f562b2e08d2709a876b242e2cdf1db"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "00851690e1e41061e61c581b2bd78d426f462dcba9e9c85fd9358308422bdc0e"
+      "current_sha256": "78b76d9e13b80b3e1fea5ca7722d0d010f9fd8845c7dfd1a625053f3adcd3276"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "78813b5bcd1983dca91ceaf629712898f5e66d2392cbeb8ba9e9c0cc5883905a"
+      "current_sha256": "49ecf398a441b021959a668a08ab736e1d1865c1a0f608aa30caab4190f8be78"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -39420,6 +39420,50 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R053"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0043B0B0",
+        "size": "248",
+        "span_end": "0x0043B1A7",
+        "current_name": "FUN_0043b0b0",
+        "proposed_name": "SceneObject::ReleaseAt0043B0B0",
+        "module": "SceneObject",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R054; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x0043B0B0",
+        "size": "248",
+        "span_end": "0x0043B1A7",
+        "current_name": "FUN_0043b0b0",
+        "proposed_name": "SceneObject::ReleaseAt0043B0B0",
+        "module": "SceneObject",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "BattleSceneF200::~BattleSceneF200()",
+        "is_thunk": "false",
+        "source_file": "src/BattleSceneReleaseF1157.cpp",
+        "evidence": "R054; full body hash, complete decoded CFG and local game-specific behavior reviewed; F1157; scripts/repo-python scripts/replay-exact-units.py --unit battle-scene-release-0043b0b0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F1157: entire original 0043B0B0..0043B1A7 248 CODE bytes/75 x86, complete virtual destructor EH/vtable/base lifetime, all 12 physical source fields and actual PE destinations. The independently authored R054 origin is unchanged. Cold-exact original constructor 0043AD10 allocates texture manager +8, digit atlas +4C and combo counters +50/+54 through ordinary new. Genuine scalar deletion of the three trivially destroyed HUD pointers produces native compiler temporaries -18/-1C/-20, allowing texture resource/receiver temps -14/-10; the historical three-field free-based cleanup aggregate rotated these slots. Real original mode condition with literal nonzero 4, setter 00423C60, texture scalar deleting destructor 00425460, three scalar deallocations at 00640F15, native virtual base destructor 00431F40 and EH handler 00655B86/vtable 00658334 remain preserved. All 200 nonfield bytes and 12 field positions/types/symbols/zero addends match, canonical one-unit cold replay 1/1 exact. Borrowed base boundary and pointer-only interfaces do not establish complete private owner or HUD layouts. No fake locals, forced offsets, ABI alias, assembly, masked stack differences, cropped function, callee/compiler code double credit or full-corpus replay."
+      },
+      "origin": {
+        "address": "0x0043B0B0",
+        "origin": "authored",
+        "subsystem": "SceneObject",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R054"
       }
     }
   ],
@@ -217813,6 +217857,99 @@
           "target": 4317008
         }
       ]
+    },
+    "battle-scene-release-0043b0b0": {
+      "source": "src/BattleSceneReleaseF1157.cpp",
+      "object": "build/matching/BattleSceneReleaseF1157.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi"
+      ],
+      "functions": [
+        "SceneObject::ReleaseAt0043B0B0"
+      ],
+      "symbol": "??1BattleSceneF200@@UAE@XZ",
+      "target_address": 4436144,
+      "size": 248,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??1BattleSceneF200@@UAE@XZ",
+          "target": 6642566
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 35,
+          "type": "DIR32",
+          "symbol": "??_7BattleSceneF200@@6B@",
+          "target": 6652724
+        },
+        {
+          "offset": 49,
+          "type": "DIR32",
+          "symbol": "?g_FrameClockModeAt0066C238@@3CA",
+          "target": 6734392
+        },
+        {
+          "offset": 70,
+          "type": "REL32",
+          "symbol": "?SetClampedGameValue@StateValueF200@@YAXH@Z",
+          "target": 4340832
+        },
+        {
+          "offset": 113,
+          "type": "REL32",
+          "symbol": "??_GTextureManagerF200@@QAEPAXI@Z",
+          "target": 4346976
+        },
+        {
+          "offset": 152,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "target": 6557461
+        },
+        {
+          "offset": 182,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "target": 6557461
+        },
+        {
+          "offset": 212,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "target": 6557461
+        },
+        {
+          "offset": 230,
+          "type": "REL32",
+          "symbol": "??1SceneBaseF200@@UAE@XZ",
+          "target": 4398912
+        },
+        {
+          "offset": 240,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -217824,23 +217961,23 @@
     "src/SpriteTransform.hpp": "494e0bcfd24a6e65fc71545e75177ba2301d3b420f57ec179d85b7ba7e60cb60",
     "src/MathLookup.cpp": "1f47723438ad85c21830a7cc0ec968bcfdebfdbd91481d3e7b453daec2f15490",
     "src/MathLookup.hpp": "4c77cb7084c8bd1cc948a7ae419b6d587502b1cb3ca411977b84966962c40480",
-    "src/BattleCombat.cpp": "165d70a16d00fd6a0e01b1322a15fa6e26b29799a7460d943fbaecebb4c44ec0",
+    "src/BattleCombat.cpp": "f4a2f9788488c4d9282a0d5e8a6da0776834bdeb3e6aa3b1504add1dfea2cbf2",
     "src/BattleCombat.hpp": "444da7e618e72d2b37a51fc6a4b59dfc5a6fbbcc441ab156280b08cdf9b8ed11",
-    "src/BattleCombatResponses.cpp": "a774cab385a74748b7c1a53b3139d1ffbb489f8bd32e83a2e446082bad787cc3",
+    "src/BattleCombatResponses.cpp": "0bf7d969f1b1538de639da735080a50677eb8542c0ca5d733ff4df9fb0319620",
     "src/BattleCombatResponses.hpp": "a41939fa4c8285741fcd7f84eeb624a7c2400a77569e9971c962d0afe60482f1",
-    "src/BattleCollision.cpp": "a2b859779c6399f0852239cb85c8518ec3cffe924b19709d2d0bd48a1f149a1e",
+    "src/BattleCollision.cpp": "c4c059979ff8a858e954fa408bfd9b409202ef4315d9bb9fddc663fd2274ebc6",
     "src/BattleCollision.hpp": "021f4d749dd8f91350741e0cfd5461f2b42453c5462246030f29e66c4b0c03f7",
-    "src/BattleCollisionDispatch.cpp": "76b35ef4b834be509f52c15ad9f2a6c49f722e98d5c9f1c80b2103321b902671",
+    "src/BattleCollisionDispatch.cpp": "58a6ed52cb095c56374afa871a9942f9259bd39126a29dd8b0f25ffd27b49694",
     "src/BattleCollisionDispatch.hpp": "f5cbbd6947c87b8eb5f37834aa2b1c4263810211223070fa63d396ecb3244e06",
-    "src/BattleActiveCollision.cpp": "f0658e8b1411b6dbc36e9861b9c7ece599e83a5714c7c9f14ade829b3946c729",
+    "src/BattleActiveCollision.cpp": "73f3b65dbec79b6ef8d8c53c5168455d8d1637d2e1c4f5a85c4ae4d24aa0a491",
     "src/BattleActiveCollision.hpp": "9cf31bdded9a7482f0e88a0b739a1e0abe0b4d979c1f7f866d212d2019c62458",
-    "src/BattleFrame.cpp": "593fcdc263e8367d43ea7af1caafe4759cb86497faeed5b39139f370840bd61e",
+    "src/BattleFrame.cpp": "878d39110ddaed781233ed5049b8f013063aacd6932325767c97de4cd9b0d9ff",
     "src/BattleFrame.hpp": "d2f8dc50734b2faaeddc0a4aee0f3c36e0999d9546b32337d9bbaf054ad505e6",
-    "src/CombatTimers.cpp": "9c9dc62c177dfd14a332346489fc22207b18b50708c73dce50103b5795ce39fb",
+    "src/CombatTimers.cpp": "bc31c7c8bc0161aea6d7d8435fc6fc92d1fd9437f2f626bfae15d020411a146d",
     "src/CombatTimers.hpp": "84de08601645aa1614f50db451272007d322206d3c6a8d29f69b486b615decdf",
-    "src/BattleStateMachine.cpp": "3e5301777fab76174cefc2de7f8165b3ef7a6a2a3baf9d4752cec44e7ba99849",
+    "src/BattleStateMachine.cpp": "7bf9bb5a51707915804cd58210445e27f1b3f01139acec40153e7c983452cc23",
     "src/BattleStateMachine.hpp": "5b5417740123f9394dd53b7d56bef75d9fccc16154161d8716d82c2bb18b8b66",
-    "src/BattleFrameDependencies.cpp": "4fa8206fffebf25706a85338a208219f1e2ab3c67bc2e4f191107f7f946f00be",
+    "src/BattleFrameDependencies.cpp": "5ebee9f768e4848fcc33599939e9441e59642b95e5239299d376bcb41fcbb0b9",
     "src/BattleFrameDependencies.hpp": "c7ff7f8705f9b9fedd182bc96a40d5f2ebfc2d0f568eff7cb2f25f22612d8f77",
     "src/ReimuActionDispatch.cpp": "fe35b9a8725f4d389fc80162924cf22ba3e1e65181ca9abca417ca318ea432d8",
     "src/ReimuActionDispatch.hpp": "ef56922f2244777f7ccd0ada1f46bc30774b3326fcdeeedd02b9b69c95a1deb5",
@@ -217864,7 +218001,7 @@
     "src/CharacterActionDispatch5E2310.hpp": "9983c91f8cca08117c68046658ad5720fa25079ac67c4be9fdb26c9db52e7ceb",
     "src/CharacterActionDispatch52D230.cpp": "43591627166d50edc133ff325dead56fbd78092a236ae2de37db799fc49b15d3",
     "src/CharacterActionDispatch52D230.hpp": "27bdd15f23b4423ae8ca3e50b0dad3186dc428b1c658826c5f61b674c1102284",
-    "src/CharacterAIPolicy.cpp": "8f42e7b88d33b7dd1e1dc500853dd0ac16f89d5c8f4ab4c98892bd0244877af8",
+    "src/CharacterAIPolicy.cpp": "b20b60a9eaf29714256db6dfab26824bfa8b888f2dd23894695146121e325acd",
     "src/CharacterAIPolicy.hpp": "0af6b525f3213e8408c84820ef7def0085d1e47c1165ea835515c3b0ad99cfd4",
     "src/CharacterAI4C6B50.cpp": "f6a4e4e5eb03f2090417001d50be9636acfe8c2f03a5ef702cc105326cf520d5",
     "src/CharacterAI4C6B50.hpp": "748be6ea28f8e61ecdca748610b8eab68005545fcbd6d71c617a72be19e057bf",
@@ -217874,7 +218011,7 @@
     "src/CharacterAI532950.hpp": "9aef35ca13509af79a85c3896350464ef451ddf3b008974c21084101736f37a9",
     "src/CharacterAI499030.cpp": "140b23147a35981fafbffd37b25b50acc0ee64c7e666b44d72f1025facd6337e",
     "src/CharacterAI499030.hpp": "80b92e7aa9e386284cd34bd0b034ca1d1202aeb163d4d70b88c69ce5d96f9cd3",
-    "src/CharacterAICardPolicy.cpp": "54e18aa40b564875ed253bfe4b132ea47ca4ad0ae7ef279da8afd5532d64ea30",
+    "src/CharacterAICardPolicy.cpp": "db3a78bbf9c30dde6fe3bd31bfe518b699177f9ee984258310ea578d77773795",
     "src/CharacterAICardPolicy.hpp": "2e3b745345b13d2850d8ce90048b39c0554f8b9a189b39a39e2d18ff1236c4a1",
     "src/CharacterAI5086E0.cpp": "494a003f3c58284b0e3c9a2bae88190e8b8b959286a3f7329568705c7072e41e",
     "src/CharacterAI5086E0.hpp": "0b6bb7faf09dc851654d524a803061437e3392cbbea1642e2797211a8fa71340",
@@ -217916,7 +218053,7 @@
     "src/CharacterSequence5D4890.hpp": "2aa276538f3009133b9ced815e982549a56c7c71e0cb678e0f33b82332bb6791",
     "src/MeilingSequence.cpp": "60c2ed2d7868a02575ad380ae10ca613d13be99d17ea1d0a0cda68f5cf052b8c",
     "src/MeilingSequence.hpp": "7a1e1da37dcebb3d87c0359e1296cc350e9db27abc186b907d0b5a80407f791e",
-    "src/CharacterAuxAction.cpp": "a7e8dd830200ee1fc6ba3ee5f45890143111ecba86cba9dd57205b42ab1bca60",
+    "src/CharacterAuxAction.cpp": "45bc5b7a2a71432519ea2dc59102d5c7ae0fe94cc4c1cf838ac7e29af9afd958",
     "src/CharacterAuxAction.hpp": "38ef5c338cb021190b6e63f6bf8037653619d36f818348972c6af2aa4ddf17db",
     "src/CharacterAux5E5500.cpp": "6fbb43847a42ffe529ce714c9e9341f045983feb9f2686b0b4223bca15a188be",
     "src/CharacterAux5E5500.hpp": "4690972ccb7f46952c133f87039198e67b7780d11358f09f4cb03893d0142c38",
@@ -217926,7 +218063,7 @@
     "src/CharacterSpecial5E68C0.hpp": "33e5cfde35e9e3e95e043a2825fac04039b22601b3e892241259435708018278",
     "src/CharacterInput5E6F70.cpp": "bcc03c960eecbcbd0f210e5ff953db7a25c66c6b0e1d3bd225e0c49b4be9e545",
     "src/CharacterInput5E6F70.hpp": "753cafed55615cd323b4f3377e6fc2a3de0fc02c6c65ee20725bfd551d10e589",
-    "src/AnimationProgress40FA30.cpp": "e9635f9524f392025e5b852fa4139bfc44dac08d5fd81fa67d2f18108c988e39",
+    "src/AnimationProgress40FA30.cpp": "3230b420d68eb8b5f73c952fc1679ba0d6660afea3c26733daffedde2ac5f6c9",
     "src/AnimationProgress40FA30.hpp": "58aae71e9204dbf6862e02d7184cae507a6207218a30208a97d7a1b285b6eb7e",
     "src/SpriteTransform40FBB0.cpp": "fcb3b65d2ff28aa54ca8063d55e3f01e77a5c5b9e48a8671b749fcdd1e85322f",
     "src/SpriteTransform40FBB0.hpp": "424fcbf027fa8d1954cf5ea61c1ed40fc2a094e505868624858a4220eafe0077",
@@ -217940,11 +218077,11 @@
     "src/CameraUpdate4126C0.hpp": "d931097a0c8b01171ae54f75b6993c1b736d70e484b1f8c69f5fa00f2d896266",
     "src/CameraInputs412660.cpp": "d1375e001a91f3e837e77b883f961f9e55aa03021715323b188dd2339c147341",
     "src/CameraInputs412660.hpp": "bb3f56a6982921b2c11df6ef8f9150a6b02e4c2f1ef6f599d50f7c93524d95dc",
-    "src/BattleRender43D9D0.cpp": "566ab440c2a6f03387e38d55253af218bdd4a30a094f5c2159536ed32dc7ebdc",
+    "src/BattleRender43D9D0.cpp": "0c82b3c8c59d42d054c8e68499e640e950c12686886c663dbdcb6851d26d40ac",
     "src/BattleRender43D9D0.hpp": "c6e3e132b3ea5ea5d4b30337705e80e808c181e7f700ae73bf6e66904b18bb6c",
-    "src/BattleHud43E040.cpp": "3f0f02eb16aa57227d4bcfb257be5ef423fc81c75ddac86edda580b30aea94d0",
+    "src/BattleHud43E040.cpp": "44b78c54ae5281f50f4b3c9698c97a474b66fe34de6c238b07e91c3c873dca02",
     "src/BattleHud43E040.hpp": "2d202fb01826209a109b33ddb74bd24e81c14535618e0054b6430867a28efede",
-    "src/BattleStatus440B50.cpp": "862ecec74dbaf1f12e79c5f7201c5a4d566c505a70b14358096febf482cbe24a",
+    "src/BattleStatus440B50.cpp": "333aff6bc8024f3a0c33aa75688516e1c490827a30416130e0b26455fd6190ea",
     "src/BattleStatus440B50.hpp": "24ff83c5f1ce65965f656f71f2f6b98b2db09a21cddf33405184ae3fa5a7f155",
     "src/BattleTimeline447340.cpp": "00efbc605d9e4a50b0dbc80323fb28112d13aa4d22f5e46c5ded773d775d4a1e",
     "src/BattleTimeline447340.hpp": "314bb2b2ad7a3895fdd1d019fa697d66e56540aca9e85003bb6a387d84411b43",
@@ -217952,7 +218089,7 @@
     "src/BattleEndOverlay441910.hpp": "aa656fc5e09759d5197ca5af2abb4ba0322491ea78f66440bd9635a52779684a",
     "src/BattleModeFive448710.cpp": "11bbb3754414aaea32a30579b3fdbbdff6d151cb7cfdcca54d238d0246c79a22",
     "src/BattleModeFive448710.hpp": "e4139141b76c0a3b66af6f301d2b700f79c82d0615f43cf5d7de6c6dfa36a1a1",
-    "src/BattleDamageFlash4406C0.cpp": "6ee4fee1d9a6d0f23dc635ef418fcb0298ec876be67ba3d0f11888dbcf7c98dd",
+    "src/BattleDamageFlash4406C0.cpp": "615f9f5a48816f1556cacd93b7a659c2831e36343bca73b198ef39b7a72873ae",
     "src/BattleDamageFlash4406C0.hpp": "838d70caf830dcefb4e098cd63d02d731584214fafee71b7d501382ac6993b03",
     "src/BattleRoundBanner441EA0.cpp": "a2ec910381f9b453f2545bf54c7e6bad057d3e2d4ee4c5754e20038b1c832891",
     "src/BattleRoundBanner441EA0.hpp": "6eaf4877b415af28586c2988dfbe33eadac62c466cc4569eecd9a8afee212418",
@@ -217964,7 +218101,7 @@
     "src/CharacterSelectCards437380.hpp": "cd61f5ae6dd182f0ec7f555c5d123dcb46620bcffba47eae485608bdff2ea1bd",
     "src/CharacterSelectOptions438240.cpp": "9de58160ddbbad8d974285514e732dc0fb953dcbc622996d71d1c037170c90af",
     "src/CharacterSelectOptions438240.hpp": "97b41d20c8f684d38aa901d1ebe89052068e1cc6aa48f69ceee8a005c214a6d9",
-    "src/SinglePlayerOptions438670.cpp": "8a3c5f676f5797a6dc3519dcd7217f31a38690318a9c3fd75fd8a2489379ab6f",
+    "src/SinglePlayerOptions438670.cpp": "3ccf8e8aa94d6d3d0baf94c068c177735a52e2407e2ac4e0022d04d54b642784",
     "src/SinglePlayerOptions438670.hpp": "3896269e2591aec6147d0fc817475825b927eac117207dcb87958add72913541",
     "src/SelectionInput4388D0.cpp": "381a1d8fa3510e4118afb0e892f509d669c8c33d9be747b7f074896c3bcb3353",
     "src/SelectionInput4388D0.hpp": "0b8a31f293919acc446b3f0ea968d01e3d18bef111bab35a8f7bfbeecf270e17",
@@ -217974,8 +218111,8 @@
     "src/StaffTimeline438D00.hpp": "ebdd78627785a482ec7131a6c30e37ac62ac0470a5ede780501787e427e65f27",
     "src/SpriteDraw40CA80.cpp": "27c461e578eb8b620f9bb4da7284c018116c6d4a2d9a8e54a836f8dbf5e44690",
     "src/SpriteDraw40CA80.hpp": "4737e5ca9d8b9fd2ac950b9922d7362c3c7be089b0763b5d04704d974a196c59",
-    "src/TextureHandle40C8C0.cpp": "6e9314474a373f1c6c7fbcbf2c2dc0e8401082e8e0c59070ba529b0d2e4fc67d",
-    "src/TexturePalette40C590.cpp": "7780bb6e9515d52c0b7260a049c81f9fb580d54c06c60c569a3ebbe971c11b24",
+    "src/TextureHandle40C8C0.cpp": "27193adfc37311cce0442e27e22cdd51d89068c6f361b62fcf0edaf83e01b24b",
+    "src/TexturePalette40C590.cpp": "55f09553ff1c82e09a26ab59fab76c28ade2aa2ddf77c4902ff7813bdcab1787",
     "src/BitmapUpload41B990.cpp": "00356d849581850141dc74fb53a494ed9d93f5b475a37f7ac740a73892279726",
     "src/TextureUpload40C730.cpp": "456c2025c3a60dedc5f84b3e59ee2a673aca226f424238a075f59c7caf59b6de",
     "src/TextureUpload40C730.hpp": "8b15a1211eadbf3cac823e8e2f11e0b7b2612b789da74ac9d90deb6542a8fcdd",
@@ -217988,7 +218125,7 @@
     "src/TexturePackLoad40B7C0.cpp": "bb6050c110cb78571781b01dea2f433662a3350711ba0efc2e2efe9912c08a9d",
     "src/TexturePackArchive40BBA0.cpp": "9ed8e435429f338d2913058218ab52f0e135f026f850c3279bb520716d5287d5",
     "src/BitmapLifecycle41A2D0.cpp": "f43ec01820efb559f4635c4f47fe8ac1c4df039f7031dee5528b41c7391808b3",
-    "src/FighterPattern457660.cpp": "0edc3f9e386aee8582d890f3f05fc56a0074d2e3a7846e3f4f8e30c5eda90d28",
+    "src/FighterPattern457660.cpp": "b679f59d6d1071e790861169bff87676f30cb812d379b27721d410dbdf75ec3f",
     "src/ResourceStreams4205F0.cpp": "0029e629ae0bfa329560cae21a9949290493f535ab33fa6953d44633cd55660e",
     "src/ScriptParser420880.cpp": "a0eb138c71032b2a42cb50909ff1445a1126938d53ba4309e0807c9cab41c018",
     "src/SharedSound406610.cpp": "5e9f9df41a067126fc6a564c3be63dfb54040597c73b082735aca27d7d9c7492",
@@ -218002,39 +218139,39 @@
     "src/CharacterSpecialFamily.cpp": "fc21b655302eb03b0847ded6c455dcaf09b80a3f6c1a644ecffdee2c3d9bce08",
     "src/OpeningTimeline4277A0.cpp": "d9bdbfc315dd70ff3a098a91dc3f090374ddd7cddb5ed8d6d97bed4d2e4aa8eb",
     "src/MenuSceneDrawing.cpp": "85fe3cff149508ab2d04819fe5692b92164f47a8ce32e7a25a5cf5556077b1d1",
-    "src/ActorAuxiliary.cpp": "ab5091dc5418b320123e69506bc5e3560e5dd5cb3b80de3c0543f6fef1bd0ebc",
+    "src/ActorAuxiliary.cpp": "4b1978228d1476e45a9265f11bd654c57c71cf22f23dc39724544344925e9432",
     "src/CharacterSpecial507040.cpp": "9bd8616ec07499d7289fad5a3181a5fbb9b198b669882bafdf7b4d00aede03bc",
     "src/CharacterStageRendering.cpp": "ed535950f738b8dbacd2dd7c24e50fc95717f5ce2ad0ac6c9b66921b6d414512",
     "src/CharacterInputPollingFamily.cpp": "b9f89f4f2ae74e20863230d18367880ba6b38ef50c76f8135a21eee0e41f690a",
     "src/SettingsReplayDrawing.cpp": "bcb093bd71d078587b0d9a7164059facff17980e39a414ed4383f21762094224",
     "src/ReplayTextHelpers.cpp": "f9347ed26883f98787719637ff6b84c65448454101dc132b6d6dad06c5e30562",
-    "src/ActorEffectDrawing.cpp": "15763e88c3a2954829ca8379e7e561e3f09115395bf7fa688e87c69d38b61866",
+    "src/ActorEffectDrawing.cpp": "6972a45ffc7b4c23b7e3ce3c391f276b1e8f115842048d5eb166f1cae0df94ab",
     "src/BattleEffectRendering.cpp": "cb89e0245680962f87070e610b6ca773c07492841a81fc99f897602681e8b719",
     "src/SceneTransitionLayers.cpp": "ab9533d301679bd885ed8ad5b63534accc9cd8d586cdb7f48a5af67e867fab70",
     "src/SpriteNameDrawing.cpp": "e3d606f56002233d0f2a16c6ece7b6b187a97682d22e507c9ed432d121815b00",
     "src/SelectionControl.cpp": "5b37fe94876723c4b6258b3c4f45754a2c40419b8d5ff190d5f319cf070fb322",
     "src/SceneSelection.cpp": "f9fb9aab4058e8bb44fa313652f330693b15969dfbedcc92c902d9b8b87b3d14",
-    "src/FighterEffectPolicies.cpp": "3b87b986628fda7e3add6f2b46b3c284634466caf92f79c0a8efd75aa00d9a1f",
+    "src/FighterEffectPolicies.cpp": "25cfcca6ee0446ca89fe23b7265f8276aa67b06f5d8beaa52cad35c1a6b7b79f",
     "src/FighterEffectPolicies.hpp": "fd05d43e870cbf1fb47f06d617c6364eedbad567c7e80e26522e597b6c23e8b9",
     "src/BattleEffectSpawner.cpp": "73ddd4688532a0a230d799a4d27f8a59b4261df06b700bdda3b97064dc05a740",
     "src/BattleEffectSpawner.hpp": "e182c18329a16e431cde26334322399708a9b4c3f0d8e796446ed895c0e99da0",
     "src/TransformRecordF136.hpp": "63c226c416bcee0037669d17d2a75615a09cda238003807569dda0c1767a7387",
     "src/BattleEffectAdvance.cpp": "a9952766422741ee4c30f05ad26174ec502da97e97f2c2dcab83eef23962a036",
     "src/BattleEffectAdvance.hpp": "014b6f77b3cf86d68f7f125765ca720e406a03326136c2a03dde5def1f3228f0",
-    "src/BattleAnimationBinding.cpp": "4fe0c7435331db89c5ac66f22446c9243594a50a625d42e1348ccc7cb0d0aaaa",
+    "src/BattleAnimationBinding.cpp": "62a776b958ab1ed39553c3c4faa02cc1568ff0d7da9b79b4c2b3c4d495f7ad24",
     "src/BattleAnimationBinding.hpp": "e6de169dedfc283725216c33615c40e7d4a5cc62f947f6b69da3aea25619f52a",
     "src/FighterMotionClear453E20.cpp": "535a432759f2b060ddbe8d0d35b30d567bd89706cc91cbef8afc1045844a08fe",
     "src/FighterMotionClear453E20.hpp": "5722c3e176b17a433a516cfe145d9347a7e702fdffc61dc135ec0ab1af2fb0a4",
-    "src/FighterMoveScalarHelpers.cpp": "c4a4ca0a7c0cbd0f288f4fcde8449cdbd8951a7f12ac00e08a8d73af4690b559",
+    "src/FighterMoveScalarHelpers.cpp": "5ce5963e5de77448719335e7cb069cda327f3aada486200f3da81251acba6e8f",
     "src/FighterMoveScalarHelpers.hpp": "81f87eba2a4fd8286a96873113f01ebf016cbc776653d442c45f41a63fbef033",
     "src/FighterCommandSelection454BC0.cpp": "a79391694d0fff264869a3738f8d63615f0f08a21ba5199a1d4f23b81afcce73",
     "src/FighterCommandSelection454BC0.hpp": "4241ea3d3e68145f9fd763796b7ba09176e169615423adb29eada8882249f012",
     "src/FighterResourceParameters452B30.cpp": "bea685ae555b9ccc26347d031646002f2edf05ce2d92095757f86a7dec0568a7",
     "src/FighterResourceParameters452B30.hpp": "8d089f86d65a9c87193d9bee76e45f89f48a10039b0462d9344f01b0c5783d76",
-    "src/FighterAnimationReset453D80.cpp": "eb7ee9987a7041ffd459d3adcce9fa62372f6459b6ea6a41f7030180539ab8f8",
+    "src/FighterAnimationReset453D80.cpp": "8146838d219de0964560e4c35556e311d08925ba110c0dbe9f0b0629da3df901",
     "src/FighterAnimationReset453D80.hpp": "b870bf983b337d8495ddbb1d3a1765cfdc09f9ec4c0e155925b94a742b5c4319",
-    "src/ProfileSelection454D00.cpp": "862ac22dfa8014eb5c4375c2683d80a1c6f6cea913627b3c0932a0d2f10f3ec0",
-    "src/FighterVirtualActionsF159.cpp": "89a9a17fea1ddf2f984a27c5fa8bdbb4d195cc70b8ff8df3e23cfd35b0a865e1",
+    "src/ProfileSelection454D00.cpp": "247ff6b351370f4ead6b551cd19e383d730cc1c8d21ed3b5dd963b5195b949c7",
+    "src/FighterVirtualActionsF159.cpp": "220c240e9d7526958de86a91a49a9ed3fee78ad55c88113c5e36844f131a5ff7",
     "src/FighterVirtualActionsF159.hpp": "95419c0758a1176858c6e0c61f24ae4cc44160364b21e0ea32fc68c60dd2d73c",
     "src/FighterMovementSelection451EB0.cpp": "dfbef003a722f521b33882d89bea1ffeb2e884b936311f91c8c2e5df0f1c52a4",
     "src/FighterEffectCleanup45BA30.cpp": "b4fe1520fdfa02e84938880bac7915e1e58535ae8b21db51c855ccf95549b9a6",
@@ -218042,7 +218179,7 @@
     "src/EffectManagerLifetimeF161.hpp": "8ca19a2058469d8d7423d1a9b798640137e4005c674fcc04b1216c23ea3e4ef9",
     "src/EffectDispatchF162.cpp": "c3f6357c36710c4f199d278208724a307068952306fc20e95516c6f042b23210",
     "src/EffectDispatchF162.hpp": "d9807c6f5b425eb968a7530518c2cc373e32c2e03ae2071daade9b1e0c082911",
-    "src/FighterOverlayDrawingF163.cpp": "f18f6f9280b80a5c37bc81f53e649d0651f8f0129c093adb6a6c5122626354d5",
+    "src/FighterOverlayDrawingF163.cpp": "035f66cd5ccc1e51e943e67cb05af5ceb7bedb1b67345f64fa9d1ba72a9ba102",
     "src/FighterOverlayDrawingF163.hpp": "8d1730ab3c636e2897121fa326ee69bd038b24acc84eef547b94c16384bb0e4f",
     "src/FighterCameraOffsetF162.cpp": "2410154181589db866619709f42a314bd816f0dccf9523443b9f57e48133762c",
     "src/FighterCameraOffsetF162.hpp": "89300dc00fe300daa5d0ac790c94127f5445516efbf5bcd40b4e32e03dd4eca1",
@@ -218054,17 +218191,17 @@
     "src/FighterMode5DirectionF167.hpp": "f117129d3b67a89e1028ad5d6ffb6d7c3bd71542a085a1248f15190992d091b4",
     "src/BattleMode5OptionsF168.cpp": "e7d98934c5ee75ce521d0b5a6487cd054f2f6b841d6196b9484c78ba5e05ede6",
     "src/BattleMode5OptionsF168.hpp": "79f5b7bb24d286b9af3439d02268ebbf06b3075025d655142c752ec9acc4d29c",
-    "src/FighterTrackedEffectsF169.cpp": "69f95f182667f2034fb92c34c71a0069974860b476d79142532ad9b1b63180d1",
+    "src/FighterTrackedEffectsF169.cpp": "2636b957815d7f6a3664065775dd0d00d3d97337e2eedfd507c1bc9492726ab1",
     "src/FighterTrackedEffectsF169.hpp": "07b71fb757c13001ce1e2a87cad47ec6b9dd44a50fea6658bdb04f95d0994fa9",
-    "src/FighterOpponentGaugeF170.cpp": "69e75b0c96fab3214e26f5bfd0d28b1beb076f41de79bda8f7c3c836889e686e",
+    "src/FighterOpponentGaugeF170.cpp": "bd9fc1b4b25be285d870782ea8c23b71dd51e746ae8591fd50d4431044515845",
     "src/FighterOpponentGaugeF170.hpp": "6cb549cf37b8a03a539f6a552301c07eeaec2b29815cba4b1a0793442a2c3577",
     "src/BindingRoundF171.cpp": "fb51cd4873badf3c6e3de5cfdeb4c90d1874823912613ec26ec7d8abf78f9d98",
     "src/BindingRoundF171.hpp": "b7b3631f098e9c8de58851a78673ae9441b42698fd2aeaf39a21b80d527eac94",
-    "src/KnockoutProgressF172.cpp": "01dcce215a5787e5d402eebdaaee5df5a96c77eb29ce9d4f40c1bd3c1c43bdd9",
+    "src/KnockoutProgressF172.cpp": "33e62dfb9b61e6c5042b5087585113d8b55b928a6685ba6211e46f8459088c2b",
     "src/KnockoutProgressF172.hpp": "6774f2ae3c2d7e3593750e5e870b06709225ec1145827b8eaffd49d1e922a67e",
-    "src/RoundEndHudF173.cpp": "d9318dea4a66f7c5d20d004ecf9cf27fc22259f410d28a5e43cf11cd957c0843",
+    "src/RoundEndHudF173.cpp": "0fb200296ad811cb09510e245a74d7b47a1d098c66c75c2543a2ba022ffe6a5c",
     "src/RoundEndHudF173.hpp": "c9e4bf04f82ec9ed0536a5b86be99c829bcd04a6a1374b5c5854e6d16eb56522",
-    "src/ProgressPauseF174.cpp": "53d721a676f3f238699db408eeb7d5fa1ec03fbe74103839e81d8a370a1e5391",
+    "src/ProgressPauseF174.cpp": "e34c572f124375a216843769384a45fec6b960da0c3e6a85862a3abb954dd277",
     "src/ProgressPauseF174.hpp": "df634eb3fef11a058175c9fc4914cf9e0ad10dbc3727a008e135707429dfec7b",
     "src/PauseDebugF175.cpp": "d55c768ece85df35c55a3d79759dc371ab82731de99030c27c954c33afb79298",
     "src/PauseDebugF175.hpp": "dce030ba35ecc3289d27399b577cbf1525f446bde4c94474015a1ccff65d8472",
@@ -218072,11 +218209,11 @@
     "src/LeafRenderF176.hpp": "e6dc33ad1eff0e1a1bc0392931ce33f02356c330a13369c35233349ca793e2f5",
     "src/DigitAtlasesF177.cpp": "40924a104a35327474555175a987d1ca8d9b682efe0495b70123c956879e5c9d",
     "src/DigitAtlasesF177.hpp": "c950e752a4a7d70efdb3a33df7a75840000209b753ab8b50e3e7f889acb11e7a",
-    "src/BackgroundPoliciesF178.cpp": "42b312511f30275f3a9ea042816f0376408e793a6b8f1f73cfa84b20dc89934a",
+    "src/BackgroundPoliciesF178.cpp": "5eda01e94a0f9a6dc08ca90ec50f79abd9f71c5327cd7cfbf1dea9fbef5f1633",
     "src/BackgroundPoliciesF178.hpp": "faa84f217d7c6a96b58484b7afe58ae2c4b278bc8dd2da5f82a699294f530746",
     "src/RenderBackgroundF179.cpp": "1c56d74e4e69c07fbdf91ab0d77e159a330a36cc874aec756c8382d5f20d8bad",
     "src/RenderBackgroundF179.hpp": "c8555b5ba8ec256188bc286d5def36885ffc672b09bd48df22ff7fdab5a5ea33",
-    "src/BackgroundCountersF180.cpp": "5a7e31712872aa7cf308283eeffaac689b7a75cf71bcd4ce459b94120e1c1580",
+    "src/BackgroundCountersF180.cpp": "184a57681dc8bc56b3baf69f95451baf9312b4a6eea73859b8e2bd28f2ac9e43",
     "src/BackgroundCountersF180.hpp": "0a23a71a99de83b69fcb444e930a1c66c42ecbe9464e4b484aaccdbbc7913bf4",
     "src/TimedSpriteF181.cpp": "20d4cb93afc5e81121f841db0fafb0247020845fc5f4b16dc75344b511dc5591",
     "src/TimedSpriteF181.hpp": "2bac4a6ace5d47cfed548587307039fc2fd7c07de804f4496e2ac04de7406092",
@@ -218112,7 +218249,7 @@
     "src/BitmapDirectoryFormatF207.cpp": "e2771d4a3f4bac7020450606ddb662df5117a38a6f86fd232c89d1e2f651306e",
     "src/SpriteGeometryF211.cpp": "96eb5c00de88988ec801e345acaff291e5d1051ee5061286199d563a44e28249",
     "src/GameGlobalsSoundF212.cpp": "b46abe80b7e64f50690bc2b790dcff489fe2164059f7f16a26c98b4e52333b7a",
-    "src/ProgressRecordLeavesF213.cpp": "ceda7159d3227e09dc78868026f5437ee89c509574c53617a8d61d68252f1b1e",
+    "src/ProgressRecordLeavesF213.cpp": "041102ef136133808379cc175c77be9e4ccad5486a8820057e20b85d89a096ea",
     "src/ProgressDefaultsF214.cpp": "8f2c97420d9a47c2000b7ab5632a47cfeb8b165dac57135aa51521c3f50ebdca",
     "src/ArchiveLookupF217.cpp": "5de3a9f7b2fe6d42ce6be9f1e3e9e1b8b249d6d132d6d939836e015df8832aad",
     "src/ArchiveSeekF217.cpp": "9d94b169c93b9f5ba08dc2bfe7d44b96b7e61df9ce9dc690f47d97f2bbd09e5c",
@@ -218121,18 +218258,18 @@
     "src/ReplayPathF218.cpp": "f73615bb149067efcd5312c607790a78ca880b4694a5bd64f56774ad4e3572d6",
     "src/ReplayQueuePoliciesF220.cpp": "5a16185a7ca74fab1d8e4bb3279a0dece2b9322a84fb3daad8df9e61f4d28b5b",
     "src/SelectionResetF221.cpp": "293044670ba86da2384c7e81126bdf4ba7a99364400e42dc95b567e3a8da7640",
-    "src/MarisaResetF222.cpp": "1bda46532c2653e4592ba3844f8a8cfa1de29218c46ef367783c9c60a1f4af9d",
+    "src/MarisaResetF222.cpp": "631333dc7c41e7cb1298c9308193f644470561ec06850269fabbd81140852d2a",
     "src/MarisaInitF223.cpp": "d0061974124a22f9134a3918dc1d7e22ab75a873763c604e90bdae0f5146dcd2",
     "src/MarisaOwnedF223.cpp": "ac74937b6465e57d633c83a1d7e4484bd8068b7b6f030809c2d282fdfc395ea7",
     "src/YoumuInitF223.cpp": "b01ad6c36bbaf7db888418a6f5298f17706aa2973b372e4ebf9c13b58d3c426e",
     "src/YoumuOwnedF224.cpp": "fa22ce1defb84aa61cec89068913f4627ab884d29b8749c32afc4d9181ca1c85",
-    "src/YoumuResetF224.cpp": "1f6e7e591a4da122df9eb0822b6d5cd9cf8ac09cb3e8dbf6309d4a27e7370a26",
+    "src/YoumuResetF224.cpp": "393077f796bf25fc25efb3048baa9ec9cd099f93f5bc2fd61a0c534c9a497195",
     "src/CharacterSelectInitF225.cpp": "ee10126ec6ce2f673790cafc361097cebedd429e822ac2d7ece0d3b173add89e",
     "src/ReplayBrowserSelectionF226.cpp": "944ade508638fe15e8a84983279289be6adb5a0c06ec59a54aa25ef3394a5c52",
     "src/ReimuOwnedF227.cpp": "8f0dc09c5206d12974b60bd55a876a9c7a1d1a778980df3617c78b330ed21e0f",
-    "src/ReimuResetF227.cpp": "d9dcc8a844bfa39152756b8cc635367e72a1648da08a6affa585e7494bcf3ecd",
+    "src/ReimuResetF227.cpp": "7a8cf9805184d2fa996b0465320677eaa6f1305bc6963c78b415461ce3fc7b2e",
     "src/AliceOwnedF227.cpp": "a954cbe8485fa9167bb3b17ff95c5819507b1e63e30dfd8c4f24b848628ed619",
-    "src/AliceResetF227.cpp": "84c063ec343aa1726bf545a2c3a8b72d4e2929ec02bbe2a187ed692e0d1bea8e",
+    "src/AliceResetF227.cpp": "f5eec486ae5e7a55511066e3a5c31108b980fc72d8e35a1b9d99c508cf8c16a1",
     "src/CharacterSelectChoiceF226.cpp": "6ecdd0f1e51af3e1878359d8b2c92eaacecb4dbba392a4c4c716d8452011776e",
     "src/CharacterSelectConfirmF228.cpp": "27033f3f8d02d11e291df37f21a69199077a59003640dc88f1f84df14b394a92",
     "src/CharacterSelectAdvanceF229.cpp": "ce6f896d5b2d521691cae92be6bed32bb465e5cfe01a15c3316134ece4e2d841",
@@ -218177,17 +218314,17 @@
     "src/GraphicsProjectedQuadF271.cpp": "f718c8852aadcd587435e7399e8a7506c639c03e9ef6f81adcced910a3c2a2f5",
     "src/CardLoadEncodedF272.cpp": "cc95f850ddf87c0f2bae5ac8d93fdca014fa3bab1f01979324ec5e72c4ce7f70",
     "src/CardLoadPlainF273.cpp": "2e452d54afe8778c944e6179788db61765c31be6372ad922fce3ea97655b5544",
-    "src/ProgressSelectionF274.cpp": "e7413da91314a425e0dead117f844dc66607bcefad8846c9b378302832da8814",
+    "src/ProgressSelectionF274.cpp": "2fc26e064ec4963254988e664d241ab036328582fc08e5cc5a9b3a831eb2c757",
     "src/FighterPatternChoiceF278.cpp": "17681212fe7a15b23f4133b5b18996abd868b092b4872e694e72066e98453320",
     "src/PatternCountF279.cpp": "469cc3b3a62aa907c8142a8b46469fb848ea7d5503dbfbce4fac91e1c5b2d2b0",
     "src/PatternAccessorsF279.cpp": "1ccfde755df5f90ab455c28bec906e0ea1204b792477ee6174e03d413130ef52",
-    "src/EffectSpawnF281.cpp": "91b496c05eeb84a5b8c7b49e2b1e5b2a972407e8a45030af2867fe1cdd3c851c",
+    "src/EffectSpawnF281.cpp": "90cbf923a9f43a9b613cf410d16dac71e21dbd3f61361fa8ea494c2d3150b7e3",
     "src/FighterLoadResourcesF282.cpp": "b7a72f994709ee4296cd9cf69ff00d74ecab0efca7f92ce460f39044d724cf40",
     "src/NoticeModeF283.cpp": "13a9a9467c042dad450a829eb54df898fdf8b39af99906568a99a3bde4c55249",
     "src/CommandListCtorF283.cpp": "e2adaeef8ee45d8f1eb209b0df7bace14e87c23bc6bcac672ac54975379d6179",
-    "src/EffectChildCtorF283.cpp": "47116500628a210f2e46edaedfe0b2a40b82bc80dcc1cf5a3186923a63ad5142",
+    "src/EffectChildCtorF283.cpp": "858556ba3e1effca9a06b4646c19095016e4976746996a28817b834ac2e045d1",
     "src/FighterReleaseResourcesF284.cpp": "739e04d91affc8ea3b2fbfe33a6a3ce0598b4b6a68643bd44a0650abf953698b",
-    "src/EffectSpawnF285.cpp": "cfdbfcca829528b4b5bf79d2a5e6222660d51f0c822a71ff6e406c8e87085224",
+    "src/EffectSpawnF285.cpp": "a56b59c11a54cbaa2caee56c1aa5ffc2bed14d7ad077002916492b3986b04ff3",
     "src/FighterStageResourceF286.cpp": "4800489b9832cff455bf6d86de64b2b95a90d7b6968517d20db8250c18856e46",
     "src/FighterInitializeF287.cpp": "dada3c895cfdbbde3af53074192e1c14985470e956edbd6743990bf7458ec5c2",
     "src/BattleEndInitF288.cpp": "fa77e5db010f5de26aa3b06bc75019a57f9aadea3c3810448b68eed8ce353005",
@@ -218197,7 +218334,7 @@
     "src/FontDecodeF293.cpp": "126802bfe6d42acba6a9b6f7f9a015a39122225b87711410bc487ddcd5dde9a5",
     "src/FontReleaseF293.cpp": "aa4e58134c92b1e170faa5e886ba7f7336d55795ca739bb3eeb2c0d0430cb283",
     "src/EffectsLoadPatternCatalogF294.cpp": "0803db0a51df551a543b833e800fcecf0c13b4293ef93b911adab5e507e24a26",
-    "src/BattleDefaultsF300.cpp": "229d5ced877ed7fb5abf447c86983bf5164073411b20d013fdf34a880acff887",
+    "src/BattleDefaultsF300.cpp": "a4724868c74f36d82a8d772b0abb4070644d258c0de356141bf4d37cc97b9818",
     "src/FighterNoticeLevelsF301.cpp": "b11973afc56745c6ee0d68ffaa4593518e5e8496353a142a243319b282650037",
     "src/BattleInputPackDirectionF303.cpp": "2519ed193b50acd82de339b29cf33458d205ffc9f38b445925a232b7b6d37f09",
     "src/StaticEffectReleaseF304.cpp": "b1e00f04e929c50fa1601c3d0d1f4275ced2c49d1b4d8f41bdd22aa122c25eac",
@@ -218210,12 +218347,12 @@
     "src/MeilingInitF311.cpp": "b5797a3b5c110452bae9be6720a8c4eb7fa4eacbc7107f6063123baaca94cf0c",
     "src/RemiliaInitF311.cpp": "83b98a0fb8630b3af7f5c9574fca057fdd1898e958330ecb0213001c5f6c0d30",
     "src/YuyukoInitF311.cpp": "d47862160d537edced6be8a9decac46816a3846cbcc69b440a239ff21de6c193",
-    "src/YukariResetRoundF315.cpp": "89cf3851d7bdd27640191b4f864e75af5a0bed9036bc629552e413e6d8ab5f4e",
-    "src/SuikaResetRoundF315.cpp": "aaaa446df2c1bad027eb0e0fa6203cdd1a304b6c6e417acffe80d0f87b6e8eae",
-    "src/PatchouliResetF314.cpp": "f745aa4c6fcb8fdfea4023caeb27c21f4bc1ff6122bd03e3cf25b3de77d9d2ad",
-    "src/RemiliaResetF314.cpp": "0d4e5cf7335b03b559bc7e7022f61316de8c7c9a35e22b0ff75f6a890cdcb184",
-    "src/YuyukoResetF314.cpp": "2d9203a95c2f3b81d41c670578bfed2d34452a3c2b7e3bc461ddbd8ea234e372",
-    "src/MeilingResetF314.cpp": "c13619e2a4c1eded6de5da384cd29a0a553afdc898fe61c7641605bb2aefeabc",
+    "src/YukariResetRoundF315.cpp": "2f8034ac8aef0abbe7c1a24ff200ec9d296019ea82e23a623ea9de212c59f655",
+    "src/SuikaResetRoundF315.cpp": "769a545cbdf90c7dcd7ca054c69f627f69e93121fb0f74ed1778e3b8ad00af75",
+    "src/PatchouliResetF314.cpp": "2847aed42a46aae58f4730507efdeed27ac167734b4278718ae40f3aba2065b9",
+    "src/RemiliaResetF314.cpp": "708d76a4174609336be33488832ff74848ae7e3b460634afd7ad6c976605e316",
+    "src/YuyukoResetF314.cpp": "4358596da5f1d48abff2ff80a4d2b4553227b0b0cd2aacbfcc702718963543ae",
+    "src/MeilingResetF314.cpp": "994bf73a4ee298893b2b7ee0c60beec1a84b3958bc7d4efc6b5b9a21524048c8",
     "src/FontRenderTextureF317.cpp": "c1d5ab5a7ada6c9d7cf645af5ccd0e67fc1badc45604cbeba5e23f14a2f53762",
     "src/FontLoadGlyphOutlineF318.cpp": "9bae4786b51c5af3301114ac780b319bd6b49456f80ed5d88da840d9e7f80962",
     "src/FontRasterizeTextF319.cpp": "147eec7e26fcced365cae82c80117c097c4f23288fdba85e6055a7b2ec9c5250",
@@ -218235,7 +218372,7 @@
     "src/ArchiveSeekF340.cpp": "89119e3b6f1a9a48b24e1af7faa24820c6af21e7ae3c0a7931124a2a84616604",
     "src/ArchiveCatalogCloseF341.cpp": "0dc6b6924512d380e3678e5db308d80b1a3da8a0d2d3ce65dbe4dc8e91c893a1",
     "src/ArchiveAppendFileF342.cpp": "ed2c5da2520350066a290d6edb588f10e207d2ed1be3b0a11a67f15f02b7324b",
-    "src/YukariSpecialStateF345.cpp": "0b05778ecf2e1227bdbef2518fc7f7d078cf163c863130f652c207299f13fe85",
+    "src/YukariSpecialStateF345.cpp": "2a78c5b9ede50af136b342b154256ddb62130b35a741c0db0547c926224f0839",
     "src/CharacterSelectCancelF346.cpp": "70fa2a01ff96b85567ef2cf13d450fd82ad26a7dc1a9e1a41a8776461f2ad7a3",
     "src/SpriteSequenceRenderF347.cpp": "53c34a8444f292a2066efdc366e7451dda4d08075968584606ba8bebc7bc9fa7",
     "src/SuikaSpecialStateF348.cpp": "ba8a07827d115f0bc3e1485337b3cb3715f9580db08f3c61f6c009725fdc6ef4",
@@ -218247,14 +218384,14 @@
     "src/CharacterAux00577750F364.cpp": "d622c770a3742770cbabc0fee26ab27e83d94e1f79718111008c6033fa97101c",
     "src/BackgroundBlendF366.cpp": "67eb5c71a0b74068ae00834e89f4a4a2687190fc496371ede49e48b074073019",
     "src/CharacterAux00505A60F365.cpp": "d35f8fb61f7fbc5c435542654014485d75830ec7ef5fddb4944eea7089099e2b",
-    "src/CharacterInputPriorityF370.cpp": "b14d4e44d4deca55594997d95b646da36c5f509e3d8dccb4e559cc1e1a40025e",
-    "src/CharacterAux004C49C0F371.cpp": "7ef8f3890dbd37f07e2026b85b814c3f6a5218e2851b592fb47f40f5ef09a79a",
+    "src/CharacterInputPriorityF370.cpp": "9a52527e3138ec064f8549f6fc405698fe5d387db1fd33ca69e41f01e90308ab",
+    "src/CharacterAux004C49C0F371.cpp": "d507873d02dbcc3aabf607c381850d51a6576ab3545c6ce42d8f0cef08143abe",
     "src/FighterSpecialVariantsF374.cpp": "0e560e3a6c3e4cd00165bc7a335537ac07d1f70a955d3ff725f107a6607e4f87",
     "src/ProgressRankInsertF375.cpp": "f2f4bcd45c409b53d3849abc16f07262148ca875156388b234f1f864799462de",
-    "src/BackgroundLoadPairF376.cpp": "50bff1fe99326d234edcfe6669fa2152ff8b1ddfae58c69077c3a8779c86ba78",
-    "src/BackgroundLoadFamilyF377.cpp": "a805a521ba3c0dab860094d89b4c0d3b4863a928c19da6c03767a940ab2d490c",
-    "src/CharacterAux005301B0F378.cpp": "ddd6bbe7ee7bc941070700e913c964b6ce922dd3b20b9fb1eaec75e11bbd2bd3",
-    "src/CharacterProjectileAdvanceF379.cpp": "2131d50467472c69717c8aa4def9aa0cc778f6664905a85cc0e2000b70a10787",
+    "src/BackgroundLoadPairF376.cpp": "e9e0bc54afc7cf2d020a40fc9aef44645d93df46639f7ad62152f7fa883ddf74",
+    "src/BackgroundLoadFamilyF377.cpp": "4a82c1e7a525144ebbf9fa406ec71beb610bdbbbf40683185095b8cdbdbb25b7",
+    "src/CharacterAux005301B0F378.cpp": "aa919b623d87d89a0d45c9a3c6e670eb0f4e35d804ba3ce9e14e350cfb8b7cdb",
+    "src/CharacterProjectileAdvanceF379.cpp": "471c0507617bfc3eac35ce0773af4e79966efb3bedcdf208430cc7601fd7db2a",
     "src/BattleStateApplySequenceF386.cpp": "81aa09bcda53ef6c4c434b3325733dc020c88466ba8d8eba2da38188cb1e580e",
     "src/BattleStageLoadBossF389.cpp": "d44b33d27b9d18c67c030f8d5b5e406e4c45bd8f400e4a70d7c3ce99386af6cb",
     "src/AliceSpecialStateF391.cpp": "bcbb7650d3335fe2914937e906a1e94103a06c73cf1c33c816fb65df64f0d1ad",
@@ -218262,10 +218399,10 @@
     "src/CharacterIntegerRandomRangesF393.cpp": "b5e901d91ceef1b05ca61f168d782a95ee0610d3ab18271b9659660a3e9b3b8e",
     "src/GameProgressUnlockBitsF394.cpp": "ac30c27c93c77225a9389bd4a86655ff24187eaf26d65b9e818bc1509b95daa3",
     "src/AuxEffectSelectedDispatchF395.cpp": "0cbd2ae1f2c059f545dd09db30e6580321fe0f50a6c4233dacde2a9b2fac72fe",
-    "src/ProfileSelectionLoadWorkingF403.cpp": "7d8271d8fed37e0a84f112711d748c00418639dd2b456827fb39dc0d089152af",
+    "src/ProfileSelectionLoadWorkingF403.cpp": "36c4fc51d378d191038091b7e62125706b94be45a7d4fa1c7ecd51ea86016c92",
     "src/BattleCharacterLoadBossF407.cpp": "e65da241f5d380d959407f5fed6a4828b08d90d203a54044a75dd96eafc8edcb",
     "src/StaticReplayQueueCtorF414.cpp": "b42a979fcb1d5968e025889f54811c87c56ebaa5a5efe080f7bc1afed799a45a",
-    "src/FighterNoticeSetDrawF415.cpp": "c6bf9bf808a6c4fd58b17c72076a82442546a67b3084e107113541cbfe0fb994",
+    "src/FighterNoticeSetDrawF415.cpp": "b78b0ae0d75a685c008bedab1fc740b83df8a3dd26a0c108f93d364f965bc03f",
     "src/FighterActionProcessF421.cpp": "7e7c63efc0583b519499a653a315f29b0651ebd49a993f00221e0af49afdc9d8",
     "src/CharacterObjectConstructorsF422.cpp": "100c6617346f039498b9ab74c9e9b0d33746089f68ac5a6bd3ed25f8b441c465",
     "src/StaticResourceQueuesDtorF427.cpp": "7801f0737c651cf020ad8f10a3cadd47dbb01e481126fc236b2ecd50cc4fd854",
@@ -218308,7 +218445,7 @@
     "src/StaffRollSceneAdvanceF504.cpp": "1a763436fb174268e32529c05efafbaa48db36900c06ec8773eb14495a7ea42c",
     "src/ReplaySceneDrawSaveFilenameF514.cpp": "d099f7f42417ddea11461800f3f72d922a8acb93bbfcf758ba448d7012470369",
     "src/NameEntryResultRankGlyphLabelsF516.cpp": "4238fa12b9a18e00178200247d07032aaa22280f4dea13724c4e649acfc70343",
-    "src/GameProgressIncrementSelectedRecordF535.cpp": "f4c50afa0d9757ed393b07b43f526b4c4055c58726c0ade432dcb1cb765b98d5",
+    "src/GameProgressIncrementSelectedRecordF535.cpp": "eb69a5035768df2f2ac5a71fca7d38e08be0eda9f81dd7262084c1bc88ec17ea",
     "src/CombatCoordinateViewF536.cpp": "becd508325947b864bd675dbea69d0786c08159172065a3e8e3ca0a6e53af81c",
     "src/FontLeadByteF555.cpp": "7c1955f33daa3157d34d5c618e71cc37099a79df3dcd0b3f1d6633f7c97c03ce",
     "src/AudioStreamReleaseF755.cpp": "0637b975d4ed59afbfb7545c4f557a7edf6beb9b4576388d6c194fcd4ba6a9d3",
@@ -218316,12 +218453,771 @@
     "src/AudioQueueArchiveF760.cpp": "1d5c208d51c1687608ac40fefe37c8f31cca578ca06969ca714e6f34511005c4",
     "src/SpriteOpaqueDrawF765.cpp": "a16ec956c73132b3363ebd243325db263d487ecb31d38f3b115c4374c272baa0",
     "src/SpriteOpaqueMirroredF766.cpp": "2b42336c919f0ba19f7972356547a996538270f78d3a197d58c4032951000531",
-    "src/TextureSlotsF769.cpp": "57424af2507b89bcd8d0e053b303caf44317aeea2539515041dd44398b500819",
-    "src/TextureSharedF770.cpp": "23f3cd82b22ee2394e1d3b2c17c100267fb32cea1e25317b756ebaec4c22fb84",
+    "src/TextureSlotsF769.cpp": "aec9966707409dc66142a5450bb447a10b96bd0c37360979b97fc37f95c4b1e8",
+    "src/TextureSharedF770.cpp": "2a299f0cf33533137ddeb07528c12b9819e53062fa9750b0c7e817518a9a8039",
     "src/SpriteScaledDrawF775.cpp": "a1ea269184620c974e3facae718f8ae988dd7562c27b4e31417df27824be289d",
     "src/SpriteVariantDrawF776.cpp": "2107c6b10b22a8c28c38811829fa17e7f3091e24301246f6d486876febed2f85",
     "src/SpriteProjectedQuadF779.cpp": "37c14802b59a31e32de9c285f5727c1ca8a229c16b2d85a3edc5d6728c342118",
     "src/SpriteOrdinaryQuadF780.cpp": "7e82a66c7eb4017f9d008a33ec5168680aaea34d51a20c7e75d0d369b9cb8557",
-    "src/ArchiveCatalogReleaseF1155.cpp": "de8d557f89093be32fa43ab9e9eb3bb84c5ea47a9dd7ebbf3a8c727645adf178"
-  }
+    "src/ArchiveCatalogReleaseF1155.cpp": "de8d557f89093be32fa43ab9e9eb3bb84c5ea47a9dd7ebbf3a8c727645adf178",
+    "src/BattleSceneReleaseF1157.cpp": "0c2c5b9303d4ad3bfc0b8e52864bdcefcf1ff5b8347cc3d1e4d791c21e3cd325",
+    "src/ActiveCollisionPairsF1063.hpp": "99db328382099d9dbbfb539efd380a72a47967b646d3dfa59cbd916ef9f23c80",
+    "src/AnimationBindingWindowF1086.hpp": "7fe442333ac76c0820f2f7321e4114e23944302fcb40faebd44ead9fc272974f",
+    "src/AuxiliaryActorWordWindowF1124.hpp": "07bb37ee8e1ab7e1b2f2f029ecea90a0eac026d88f88f03ee5b660d0fdae3eb5",
+    "src/BackgroundStageStateF933.hpp": "ae24be35e3581429eaebb73c5091c39b08d463b3003e324e3c9b317f1aca23cb",
+    "src/BackgroundTimelineBorrowF1049.hpp": "25bd65433b02ede08bbbcad78aa478d18d0a5be7d11055ac7f4dddc77d5174c8",
+    "src/BattleHudBorrowedViewsF1134.hpp": "b78999580310f926dccfa08ac88cc4fedcbf7f28018d0e4c934a038bdb7b0c46",
+    "src/BattleStatusFloatPairF1096.hpp": "2ab99b7ee3f684f2a8c1b8a90c0ea2a1473ab8a6a75e7d3a3175eb74f5d0f0e6",
+    "src/ComboHudWindowF1060.hpp": "f188221de1a7c4485422c224d930264d5b7ebe55704862a6117f580127cd49e2",
+    "src/FighterAIShortFieldsF946.hpp": "69229b62493bcb85df2b0e060e6c62c8e56151354849efd93dafd75bfd9952f9",
+    "src/FighterActionTimerPairF1027.hpp": "f54cfb98860f71d5f0696ac7c74e465c9183966600077c516432d1cbaf133a28",
+    "src/FighterAnimationPhaseBorrowedF1024.hpp": "7fe97056ff743f0274bb029a39a1b1af07395f7a8cbb749d23e705323613c1ce",
+    "src/FighterComboBorrowedF1006.hpp": "1ba2cf4ebd5d27fcef8e4ebfb4e6410cd7ff8f1b5b25e0695a252991340b5359",
+    "src/FighterCommandByteF940.hpp": "8672319e47a73d7b1e4899f6ed2e2c3202079a91afd7c297445ce75b0e2651fc",
+    "src/FighterEffectBorrowedFieldsF973.hpp": "f7300af18d96538750056694f47b5731e9aaecbb1ca7a80a13522f49f69caa46",
+    "src/FighterFadeBorrowedF986.hpp": "be05700537a3194e47d3570a6e02aaf7d6ac3f35b69cd84cd2e23dd5d2b678aa",
+    "src/FighterGaugeBorrowedF980.hpp": "cdabe2c6920490e850f6fe57cadda8047034d32bc9278e97fb1fe3bd5b294034",
+    "src/FighterNoticeBorrowedF960.hpp": "e976db866417ddd27cc982825cc719fc995e0f338d11b731d3559bfa33206caf",
+    "src/FighterPatternExtensionBorrowF1035.hpp": "8b87c10898275eee67dc53f4d14f28fb367e26f4ab158805a597815995b0701f",
+    "src/FighterRenderTransformWindowF1094.hpp": "7062cd2d2fd5cb6f6ef327610bc257aae75874cc0d735a79c7294e2a765dc361",
+    "src/FighterRoundOutcomeBytesF992.hpp": "5b1839fd915d80893b8ce7c695a40a005a8caa5cdd152c043153c94a1c5d9f01",
+    "src/FighterScriptCounterWindowF1022.hpp": "fffd63074f4fafb5ab788c9ff65355ba7dac41f4dd9416ca8a317681fe967ccf",
+    "src/FighterVitalBorrowedF999.hpp": "e52d6770526656edf5e7222728f43d1f684a33eb9646e14bb329a3c60ce54e1b",
+    "src/FlashGaugeBorrowF1067.hpp": "621f8cef4c8ac2c99ba651924b9e1e9d28d751b80cbae3d7e5e381c677d821fb",
+    "src/FrameActorCollisionCountdownF1036.hpp": "80235f6dd6665b148daf0dbfacbed74ac1d2955a75afbbf44978b9c8a4231618",
+    "src/FrameActorMotionPairsF1037.hpp": "9d339f16df99f584634cde52c6242001387dafe97438246bad67096d43f92616",
+    "src/ProgressSelectionKeysF954.hpp": "e3a4d8506627e38d3405dc1af279f79c469b67bf9e1a99e44cfb1657821d98d2",
+    "src/StateOverlayFloatWindowF1106.hpp": "c0ffb5a1fff2a32ab736de6e649a98f28aa9c8b59a2a6c24a57f9d1d0a445708",
+    "src/TextureEntryBorrowedF922.hpp": "ff9cbdb0b8067fec9805f295c76225e5817edd474edd4a9503b434d15dd6e325",
+    "src/TextureManagerBorrowedF925.hpp": "294baaf9b1abed5da4f2f350fb8cfa05db00d18d2dad9434f6881f062c089a4e",
+    "src/GamePolicyHelpers.cpp": "6d8ff0c5e29f5cef3bb986039ac222a485a129b80fd77102e0004e939bd6f5a4"
+  },
+  "source_revision_batches": [
+    {
+      "batch": "F1156",
+      "reason": "Reconcile historical accepted source improvements after cold replay of every affected exact unit; preserve previous and current hashes.",
+      "source_revisions": [
+        {
+          "path": "src/BattleCombat.cpp",
+          "previous_sha256": "165d70a16d00fd6a0e01b1322a15fa6e26b29799a7460d943fbaecebb4c44ec0",
+          "current_sha256": "f4a2f9788488c4d9282a0d5e8a6da0776834bdeb3e6aa3b1504add1dfea2cbf2"
+        },
+        {
+          "path": "src/BattleCombatResponses.cpp",
+          "previous_sha256": "a774cab385a74748b7c1a53b3139d1ffbb489f8bd32e83a2e446082bad787cc3",
+          "current_sha256": "0bf7d969f1b1538de639da735080a50677eb8542c0ca5d733ff4df9fb0319620"
+        },
+        {
+          "path": "src/BattleCollision.cpp",
+          "previous_sha256": "a2b859779c6399f0852239cb85c8518ec3cffe924b19709d2d0bd48a1f149a1e",
+          "current_sha256": "c4c059979ff8a858e954fa408bfd9b409202ef4315d9bb9fddc663fd2274ebc6"
+        },
+        {
+          "path": "src/BattleCollisionDispatch.cpp",
+          "previous_sha256": "76b35ef4b834be509f52c15ad9f2a6c49f722e98d5c9f1c80b2103321b902671",
+          "current_sha256": "58a6ed52cb095c56374afa871a9942f9259bd39126a29dd8b0f25ffd27b49694"
+        },
+        {
+          "path": "src/BattleActiveCollision.cpp",
+          "previous_sha256": "f0658e8b1411b6dbc36e9861b9c7ece599e83a5714c7c9f14ade829b3946c729",
+          "current_sha256": "73f3b65dbec79b6ef8d8c53c5168455d8d1637d2e1c4f5a85c4ae4d24aa0a491"
+        },
+        {
+          "path": "src/BattleFrame.cpp",
+          "previous_sha256": "593fcdc263e8367d43ea7af1caafe4759cb86497faeed5b39139f370840bd61e",
+          "current_sha256": "878d39110ddaed781233ed5049b8f013063aacd6932325767c97de4cd9b0d9ff"
+        },
+        {
+          "path": "src/CombatTimers.cpp",
+          "previous_sha256": "9c9dc62c177dfd14a332346489fc22207b18b50708c73dce50103b5795ce39fb",
+          "current_sha256": "bc31c7c8bc0161aea6d7d8435fc6fc92d1fd9437f2f626bfae15d020411a146d"
+        },
+        {
+          "path": "src/BattleStateMachine.cpp",
+          "previous_sha256": "3e5301777fab76174cefc2de7f8165b3ef7a6a2a3baf9d4752cec44e7ba99849",
+          "current_sha256": "7bf9bb5a51707915804cd58210445e27f1b3f01139acec40153e7c983452cc23"
+        },
+        {
+          "path": "src/BattleFrameDependencies.cpp",
+          "previous_sha256": "4fa8206fffebf25706a85338a208219f1e2ab3c67bc2e4f191107f7f946f00be",
+          "current_sha256": "5ebee9f768e4848fcc33599939e9441e59642b95e5239299d376bcb41fcbb0b9"
+        },
+        {
+          "path": "src/CharacterAIPolicy.cpp",
+          "previous_sha256": "8f42e7b88d33b7dd1e1dc500853dd0ac16f89d5c8f4ab4c98892bd0244877af8",
+          "current_sha256": "b20b60a9eaf29714256db6dfab26824bfa8b888f2dd23894695146121e325acd"
+        },
+        {
+          "path": "src/CharacterAICardPolicy.cpp",
+          "previous_sha256": "54e18aa40b564875ed253bfe4b132ea47ca4ad0ae7ef279da8afd5532d64ea30",
+          "current_sha256": "db3a78bbf9c30dde6fe3bd31bfe518b699177f9ee984258310ea578d77773795"
+        },
+        {
+          "path": "src/CharacterAuxAction.cpp",
+          "previous_sha256": "a7e8dd830200ee1fc6ba3ee5f45890143111ecba86cba9dd57205b42ab1bca60",
+          "current_sha256": "45bc5b7a2a71432519ea2dc59102d5c7ae0fe94cc4c1cf838ac7e29af9afd958"
+        },
+        {
+          "path": "src/AnimationProgress40FA30.cpp",
+          "previous_sha256": "e9635f9524f392025e5b852fa4139bfc44dac08d5fd81fa67d2f18108c988e39",
+          "current_sha256": "3230b420d68eb8b5f73c952fc1679ba0d6660afea3c26733daffedde2ac5f6c9"
+        },
+        {
+          "path": "src/BattleRender43D9D0.cpp",
+          "previous_sha256": "566ab440c2a6f03387e38d55253af218bdd4a30a094f5c2159536ed32dc7ebdc",
+          "current_sha256": "0c82b3c8c59d42d054c8e68499e640e950c12686886c663dbdcb6851d26d40ac"
+        },
+        {
+          "path": "src/BattleHud43E040.cpp",
+          "previous_sha256": "3f0f02eb16aa57227d4bcfb257be5ef423fc81c75ddac86edda580b30aea94d0",
+          "current_sha256": "44b78c54ae5281f50f4b3c9698c97a474b66fe34de6c238b07e91c3c873dca02"
+        },
+        {
+          "path": "src/BattleStatus440B50.cpp",
+          "previous_sha256": "862ecec74dbaf1f12e79c5f7201c5a4d566c505a70b14358096febf482cbe24a",
+          "current_sha256": "333aff6bc8024f3a0c33aa75688516e1c490827a30416130e0b26455fd6190ea"
+        },
+        {
+          "path": "src/BattleDamageFlash4406C0.cpp",
+          "previous_sha256": "6ee4fee1d9a6d0f23dc635ef418fcb0298ec876be67ba3d0f11888dbcf7c98dd",
+          "current_sha256": "615f9f5a48816f1556cacd93b7a659c2831e36343bca73b198ef39b7a72873ae"
+        },
+        {
+          "path": "src/SinglePlayerOptions438670.cpp",
+          "previous_sha256": "8a3c5f676f5797a6dc3519dcd7217f31a38690318a9c3fd75fd8a2489379ab6f",
+          "current_sha256": "3ccf8e8aa94d6d3d0baf94c068c177735a52e2407e2ac4e0022d04d54b642784"
+        },
+        {
+          "path": "src/TextureHandle40C8C0.cpp",
+          "previous_sha256": "6e9314474a373f1c6c7fbcbf2c2dc0e8401082e8e0c59070ba529b0d2e4fc67d",
+          "current_sha256": "27193adfc37311cce0442e27e22cdd51d89068c6f361b62fcf0edaf83e01b24b"
+        },
+        {
+          "path": "src/TexturePalette40C590.cpp",
+          "previous_sha256": "7780bb6e9515d52c0b7260a049c81f9fb580d54c06c60c569a3ebbe971c11b24",
+          "current_sha256": "55f09553ff1c82e09a26ab59fab76c28ade2aa2ddf77c4902ff7813bdcab1787"
+        },
+        {
+          "path": "src/FighterPattern457660.cpp",
+          "previous_sha256": "0edc3f9e386aee8582d890f3f05fc56a0074d2e3a7846e3f4f8e30c5eda90d28",
+          "current_sha256": "b679f59d6d1071e790861169bff87676f30cb812d379b27721d410dbdf75ec3f"
+        },
+        {
+          "path": "src/ActorAuxiliary.cpp",
+          "previous_sha256": "ab5091dc5418b320123e69506bc5e3560e5dd5cb3b80de3c0543f6fef1bd0ebc",
+          "current_sha256": "4b1978228d1476e45a9265f11bd654c57c71cf22f23dc39724544344925e9432"
+        },
+        {
+          "path": "src/ActorEffectDrawing.cpp",
+          "previous_sha256": "15763e88c3a2954829ca8379e7e561e3f09115395bf7fa688e87c69d38b61866",
+          "current_sha256": "6972a45ffc7b4c23b7e3ce3c391f276b1e8f115842048d5eb166f1cae0df94ab"
+        },
+        {
+          "path": "src/FighterEffectPolicies.cpp",
+          "previous_sha256": "3b87b986628fda7e3add6f2b46b3c284634466caf92f79c0a8efd75aa00d9a1f",
+          "current_sha256": "25cfcca6ee0446ca89fe23b7265f8276aa67b06f5d8beaa52cad35c1a6b7b79f"
+        },
+        {
+          "path": "src/BattleAnimationBinding.cpp",
+          "previous_sha256": "4fe0c7435331db89c5ac66f22446c9243594a50a625d42e1348ccc7cb0d0aaaa",
+          "current_sha256": "62a776b958ab1ed39553c3c4faa02cc1568ff0d7da9b79b4c2b3c4d495f7ad24"
+        },
+        {
+          "path": "src/FighterMoveScalarHelpers.cpp",
+          "previous_sha256": "c4a4ca0a7c0cbd0f288f4fcde8449cdbd8951a7f12ac00e08a8d73af4690b559",
+          "current_sha256": "5ce5963e5de77448719335e7cb069cda327f3aada486200f3da81251acba6e8f"
+        },
+        {
+          "path": "src/FighterAnimationReset453D80.cpp",
+          "previous_sha256": "eb7ee9987a7041ffd459d3adcce9fa62372f6459b6ea6a41f7030180539ab8f8",
+          "current_sha256": "8146838d219de0964560e4c35556e311d08925ba110c0dbe9f0b0629da3df901"
+        },
+        {
+          "path": "src/ProfileSelection454D00.cpp",
+          "previous_sha256": "862ac22dfa8014eb5c4375c2683d80a1c6f6cea913627b3c0932a0d2f10f3ec0",
+          "current_sha256": "247ff6b351370f4ead6b551cd19e383d730cc1c8d21ed3b5dd963b5195b949c7"
+        },
+        {
+          "path": "src/FighterVirtualActionsF159.cpp",
+          "previous_sha256": "89a9a17fea1ddf2f984a27c5fa8bdbb4d195cc70b8ff8df3e23cfd35b0a865e1",
+          "current_sha256": "220c240e9d7526958de86a91a49a9ed3fee78ad55c88113c5e36844f131a5ff7"
+        },
+        {
+          "path": "src/FighterOverlayDrawingF163.cpp",
+          "previous_sha256": "f18f6f9280b80a5c37bc81f53e649d0651f8f0129c093adb6a6c5122626354d5",
+          "current_sha256": "035f66cd5ccc1e51e943e67cb05af5ceb7bedb1b67345f64fa9d1ba72a9ba102"
+        },
+        {
+          "path": "src/FighterTrackedEffectsF169.cpp",
+          "previous_sha256": "69f95f182667f2034fb92c34c71a0069974860b476d79142532ad9b1b63180d1",
+          "current_sha256": "2636b957815d7f6a3664065775dd0d00d3d97337e2eedfd507c1bc9492726ab1"
+        },
+        {
+          "path": "src/FighterOpponentGaugeF170.cpp",
+          "previous_sha256": "69e75b0c96fab3214e26f5bfd0d28b1beb076f41de79bda8f7c3c836889e686e",
+          "current_sha256": "bd9fc1b4b25be285d870782ea8c23b71dd51e746ae8591fd50d4431044515845"
+        },
+        {
+          "path": "src/KnockoutProgressF172.cpp",
+          "previous_sha256": "01dcce215a5787e5d402eebdaaee5df5a96c77eb29ce9d4f40c1bd3c1c43bdd9",
+          "current_sha256": "33e62dfb9b61e6c5042b5087585113d8b55b928a6685ba6211e46f8459088c2b"
+        },
+        {
+          "path": "src/RoundEndHudF173.cpp",
+          "previous_sha256": "d9318dea4a66f7c5d20d004ecf9cf27fc22259f410d28a5e43cf11cd957c0843",
+          "current_sha256": "0fb200296ad811cb09510e245a74d7b47a1d098c66c75c2543a2ba022ffe6a5c"
+        },
+        {
+          "path": "src/ProgressPauseF174.cpp",
+          "previous_sha256": "53d721a676f3f238699db408eeb7d5fa1ec03fbe74103839e81d8a370a1e5391",
+          "current_sha256": "e34c572f124375a216843769384a45fec6b960da0c3e6a85862a3abb954dd277"
+        },
+        {
+          "path": "src/BackgroundPoliciesF178.cpp",
+          "previous_sha256": "42b312511f30275f3a9ea042816f0376408e793a6b8f1f73cfa84b20dc89934a",
+          "current_sha256": "5eda01e94a0f9a6dc08ca90ec50f79abd9f71c5327cd7cfbf1dea9fbef5f1633"
+        },
+        {
+          "path": "src/BackgroundCountersF180.cpp",
+          "previous_sha256": "5a7e31712872aa7cf308283eeffaac689b7a75cf71bcd4ce459b94120e1c1580",
+          "current_sha256": "184a57681dc8bc56b3baf69f95451baf9312b4a6eea73859b8e2bd28f2ac9e43"
+        },
+        {
+          "path": "src/ProgressRecordLeavesF213.cpp",
+          "previous_sha256": "ceda7159d3227e09dc78868026f5437ee89c509574c53617a8d61d68252f1b1e",
+          "current_sha256": "041102ef136133808379cc175c77be9e4ccad5486a8820057e20b85d89a096ea"
+        },
+        {
+          "path": "src/MarisaResetF222.cpp",
+          "previous_sha256": "1bda46532c2653e4592ba3844f8a8cfa1de29218c46ef367783c9c60a1f4af9d",
+          "current_sha256": "631333dc7c41e7cb1298c9308193f644470561ec06850269fabbd81140852d2a"
+        },
+        {
+          "path": "src/YoumuResetF224.cpp",
+          "previous_sha256": "1f6e7e591a4da122df9eb0822b6d5cd9cf8ac09cb3e8dbf6309d4a27e7370a26",
+          "current_sha256": "393077f796bf25fc25efb3048baa9ec9cd099f93f5bc2fd61a0c534c9a497195"
+        },
+        {
+          "path": "src/ReimuResetF227.cpp",
+          "previous_sha256": "d9dcc8a844bfa39152756b8cc635367e72a1648da08a6affa585e7494bcf3ecd",
+          "current_sha256": "7a8cf9805184d2fa996b0465320677eaa6f1305bc6963c78b415461ce3fc7b2e"
+        },
+        {
+          "path": "src/AliceResetF227.cpp",
+          "previous_sha256": "84c063ec343aa1726bf545a2c3a8b72d4e2929ec02bbe2a187ed692e0d1bea8e",
+          "current_sha256": "f5eec486ae5e7a55511066e3a5c31108b980fc72d8e35a1b9d99c508cf8c16a1"
+        },
+        {
+          "path": "src/ProgressSelectionF274.cpp",
+          "previous_sha256": "e7413da91314a425e0dead117f844dc66607bcefad8846c9b378302832da8814",
+          "current_sha256": "2fc26e064ec4963254988e664d241ab036328582fc08e5cc5a9b3a831eb2c757"
+        },
+        {
+          "path": "src/EffectSpawnF281.cpp",
+          "previous_sha256": "91b496c05eeb84a5b8c7b49e2b1e5b2a972407e8a45030af2867fe1cdd3c851c",
+          "current_sha256": "90cbf923a9f43a9b613cf410d16dac71e21dbd3f61361fa8ea494c2d3150b7e3"
+        },
+        {
+          "path": "src/EffectChildCtorF283.cpp",
+          "previous_sha256": "47116500628a210f2e46edaedfe0b2a40b82bc80dcc1cf5a3186923a63ad5142",
+          "current_sha256": "858556ba3e1effca9a06b4646c19095016e4976746996a28817b834ac2e045d1"
+        },
+        {
+          "path": "src/EffectSpawnF285.cpp",
+          "previous_sha256": "cfdbfcca829528b4b5bf79d2a5e6222660d51f0c822a71ff6e406c8e87085224",
+          "current_sha256": "a56b59c11a54cbaa2caee56c1aa5ffc2bed14d7ad077002916492b3986b04ff3"
+        },
+        {
+          "path": "src/BattleDefaultsF300.cpp",
+          "previous_sha256": "229d5ced877ed7fb5abf447c86983bf5164073411b20d013fdf34a880acff887",
+          "current_sha256": "a4724868c74f36d82a8d772b0abb4070644d258c0de356141bf4d37cc97b9818"
+        },
+        {
+          "path": "src/YukariResetRoundF315.cpp",
+          "previous_sha256": "89cf3851d7bdd27640191b4f864e75af5a0bed9036bc629552e413e6d8ab5f4e",
+          "current_sha256": "2f8034ac8aef0abbe7c1a24ff200ec9d296019ea82e23a623ea9de212c59f655"
+        },
+        {
+          "path": "src/SuikaResetRoundF315.cpp",
+          "previous_sha256": "aaaa446df2c1bad027eb0e0fa6203cdd1a304b6c6e417acffe80d0f87b6e8eae",
+          "current_sha256": "769a545cbdf90c7dcd7ca054c69f627f69e93121fb0f74ed1778e3b8ad00af75"
+        },
+        {
+          "path": "src/PatchouliResetF314.cpp",
+          "previous_sha256": "f745aa4c6fcb8fdfea4023caeb27c21f4bc1ff6122bd03e3cf25b3de77d9d2ad",
+          "current_sha256": "2847aed42a46aae58f4730507efdeed27ac167734b4278718ae40f3aba2065b9"
+        },
+        {
+          "path": "src/RemiliaResetF314.cpp",
+          "previous_sha256": "0d4e5cf7335b03b559bc7e7022f61316de8c7c9a35e22b0ff75f6a890cdcb184",
+          "current_sha256": "708d76a4174609336be33488832ff74848ae7e3b460634afd7ad6c976605e316"
+        },
+        {
+          "path": "src/YuyukoResetF314.cpp",
+          "previous_sha256": "2d9203a95c2f3b81d41c670578bfed2d34452a3c2b7e3bc461ddbd8ea234e372",
+          "current_sha256": "4358596da5f1d48abff2ff80a4d2b4553227b0b0cd2aacbfcc702718963543ae"
+        },
+        {
+          "path": "src/MeilingResetF314.cpp",
+          "previous_sha256": "c13619e2a4c1eded6de5da384cd29a0a553afdc898fe61c7641605bb2aefeabc",
+          "current_sha256": "994bf73a4ee298893b2b7ee0c60beec1a84b3958bc7d4efc6b5b9a21524048c8"
+        },
+        {
+          "path": "src/YukariSpecialStateF345.cpp",
+          "previous_sha256": "0b05778ecf2e1227bdbef2518fc7f7d078cf163c863130f652c207299f13fe85",
+          "current_sha256": "2a78c5b9ede50af136b342b154256ddb62130b35a741c0db0547c926224f0839"
+        },
+        {
+          "path": "src/CharacterInputPriorityF370.cpp",
+          "previous_sha256": "b14d4e44d4deca55594997d95b646da36c5f509e3d8dccb4e559cc1e1a40025e",
+          "current_sha256": "9a52527e3138ec064f8549f6fc405698fe5d387db1fd33ca69e41f01e90308ab"
+        },
+        {
+          "path": "src/CharacterAux004C49C0F371.cpp",
+          "previous_sha256": "7ef8f3890dbd37f07e2026b85b814c3f6a5218e2851b592fb47f40f5ef09a79a",
+          "current_sha256": "d507873d02dbcc3aabf607c381850d51a6576ab3545c6ce42d8f0cef08143abe"
+        },
+        {
+          "path": "src/BackgroundLoadPairF376.cpp",
+          "previous_sha256": "50bff1fe99326d234edcfe6669fa2152ff8b1ddfae58c69077c3a8779c86ba78",
+          "current_sha256": "e9e0bc54afc7cf2d020a40fc9aef44645d93df46639f7ad62152f7fa883ddf74"
+        },
+        {
+          "path": "src/BackgroundLoadFamilyF377.cpp",
+          "previous_sha256": "a805a521ba3c0dab860094d89b4c0d3b4863a928c19da6c03767a940ab2d490c",
+          "current_sha256": "4a82c1e7a525144ebbf9fa406ec71beb610bdbbbf40683185095b8cdbdbb25b7"
+        },
+        {
+          "path": "src/CharacterAux005301B0F378.cpp",
+          "previous_sha256": "ddd6bbe7ee7bc941070700e913c964b6ce922dd3b20b9fb1eaec75e11bbd2bd3",
+          "current_sha256": "aa919b623d87d89a0d45c9a3c6e670eb0f4e35d804ba3ce9e14e350cfb8b7cdb"
+        },
+        {
+          "path": "src/CharacterProjectileAdvanceF379.cpp",
+          "previous_sha256": "2131d50467472c69717c8aa4def9aa0cc778f6664905a85cc0e2000b70a10787",
+          "current_sha256": "471c0507617bfc3eac35ce0773af4e79966efb3bedcdf208430cc7601fd7db2a"
+        },
+        {
+          "path": "src/ProfileSelectionLoadWorkingF403.cpp",
+          "previous_sha256": "7d8271d8fed37e0a84f112711d748c00418639dd2b456827fb39dc0d089152af",
+          "current_sha256": "36c4fc51d378d191038091b7e62125706b94be45a7d4fa1c7ecd51ea86016c92"
+        },
+        {
+          "path": "src/FighterNoticeSetDrawF415.cpp",
+          "previous_sha256": "c6bf9bf808a6c4fd58b17c72076a82442546a67b3084e107113541cbfe0fb994",
+          "current_sha256": "b78b0ae0d75a685c008bedab1fc740b83df8a3dd26a0c108f93d364f965bc03f"
+        },
+        {
+          "path": "src/GameProgressIncrementSelectedRecordF535.cpp",
+          "previous_sha256": "f4c50afa0d9757ed393b07b43f526b4c4055c58726c0ade432dcb1cb765b98d5",
+          "current_sha256": "eb69a5035768df2f2ac5a71fca7d38e08be0eda9f81dd7262084c1bc88ec17ea"
+        },
+        {
+          "path": "src/TextureSlotsF769.cpp",
+          "previous_sha256": "57424af2507b89bcd8d0e053b303caf44317aeea2539515041dd44398b500819",
+          "current_sha256": "aec9966707409dc66142a5450bb447a10b96bd0c37360979b97fc37f95c4b1e8"
+        },
+        {
+          "path": "src/TextureSharedF770.cpp",
+          "previous_sha256": "23f3cd82b22ee2394e1d3b2c17c100267fb32cea1e25317b756ebaec4c22fb84",
+          "current_sha256": "2a299f0cf33533137ddeb07528c12b9819e53062fa9750b0c7e817518a9a8039"
+        }
+      ],
+      "cold_replayed_units": [
+        "alice-fighter-reset-round-004e2e10",
+        "animation-progress-0040fa30",
+        "auxiliary-actor-update-004a80f0",
+        "background-copy-dark-0044d910",
+        "background-copy-dark-0044ddc0",
+        "background-copy-light-00450040",
+        "background-copy-light-00451bc0",
+        "background-counter-00449ec0",
+        "background-counter-0044b600",
+        "background-counter-0044bb20",
+        "background-counter-0044c040",
+        "background-counter-0044d5e0",
+        "background-counter-0044da70",
+        "background-counter-0044e3a0",
+        "background-counter-0044f830",
+        "background-counter-004503e0",
+        "background-counter-00450bd0",
+        "background-counter-00451420",
+        "background-side-pair-0044a5c0",
+        "background-side-pair-0044a7f0",
+        "background-side-pair-0044aa20",
+        "background-side-pair-0044b190",
+        "background-side-pair-0044b3c0",
+        "background-side-pair-0044c560",
+        "background-side-pair-0044c7a0",
+        "background-side-pair-0044c9e0",
+        "background-side-pair-0044d160",
+        "background-side-pair-0044d3a0",
+        "background-side-pair-0044df20",
+        "background-side-pair-0044e160",
+        "background-side-pair-0044f3b0",
+        "background-side-pair-0044f5f0",
+        "background-side-pair-004501a0",
+        "background-side-pair-00450990",
+        "background-side-pair-004511e0",
+        "background-side-pair-00451d20",
+        "background-stage-load-bg00a-00449aa0",
+        "background-stage-load-bg00b-00449e10",
+        "background-stage-load-bg00c-0044a230",
+        "background-stage-load-bg00x-0044a520",
+        "background-stage-load-bg00y-0044a750",
+        "background-stage-load-bg00z-0044a980",
+        "background-stage-load-bg01a-0044abb0",
+        "background-stage-load-bg01b-0044ae50",
+        "background-stage-load-bg01x-0044b0f0",
+        "background-stage-load-bg01y-0044b320",
+        "background-stage-load-bg02a-0044b550",
+        "background-stage-load-bg02b-0044ba70",
+        "background-stage-load-bg02c-0044bf90",
+        "background-stage-load-bg02x-0044c4b0",
+        "background-stage-load-bg02y-0044c6f0",
+        "background-stage-load-bg02z-0044c930",
+        "background-stage-load-bg03a-0044cb70",
+        "background-stage-load-bg03b-0044ce10",
+        "background-stage-load-bg03x-0044d0b0",
+        "background-stage-load-bg03y-0044d2f0",
+        "background-stage-load-bg04a-0044d530",
+        "background-stage-load-bg04b-0044d9c0",
+        "background-stage-load-bg04x-0044de70",
+        "background-stage-load-bg04y-0044e0b0",
+        "background-stage-load-bg05a-0044e2f0",
+        "background-stage-load-bg05b-0044e810",
+        "background-stage-load-bg05x-0044f300",
+        "background-stage-load-bg05y-0044f540",
+        "background-stage-load-bg06a-0044f780",
+        "background-stage-load-bg06x-004500f0",
+        "background-stage-load-bg07a-00450330",
+        "background-stage-load-bg07x-004508e0",
+        "background-stage-load-bg08a-00450b20",
+        "background-stage-load-bg08x-00451130",
+        "background-stage-load-bg09a-00451370",
+        "background-stage-load-bg09x-00451c70",
+        "background-transform-00449ce0",
+        "background-transform-0044a180",
+        "background-transform-0044a470",
+        "background-transform-0044a6a0",
+        "background-transform-0044a8d0",
+        "background-transform-0044ab00",
+        "background-transform-0044ada0",
+        "background-transform-0044b040",
+        "background-transform-0044b270",
+        "background-transform-0044b4a0",
+        "background-transform-0044b9c0",
+        "background-transform-0044bee0",
+        "background-transform-0044c400",
+        "background-transform-0044c640",
+        "background-transform-0044c880",
+        "background-transform-0044cac0",
+        "background-transform-0044cd60",
+        "background-transform-0044d000",
+        "background-transform-0044d240",
+        "background-transform-0044d480",
+        "background-transform-0044e000",
+        "background-transform-0044e240",
+        "background-transform-0044e760",
+        "background-transform-0044f250",
+        "background-transform-0044f490",
+        "background-transform-0044f6d0",
+        "background-transform-00450280",
+        "background-transform-00450830",
+        "background-transform-00450a70",
+        "background-transform-00451080",
+        "background-transform-004512c0",
+        "background-transform-00451e00",
+        "battle-active-resolve-collisions",
+        "battle-animation-bind-0045b880",
+        "battle-collision-clear-bounds",
+        "battle-collision-include-pair",
+        "battle-collision-resolve-attack-hitboxes",
+        "battle-collision-resolve-body-contact",
+        "battle-collision-resolve-contact",
+        "battle-collision-resolve-guard",
+        "battle-collision-resolve-special-hit",
+        "battle-collision-test-overlap",
+        "battle-collision-transform-bounds",
+        "battle-combat-apply-attack-hit",
+        "battle-combat-apply-conditional-hit",
+        "battle-combat-apply-guard-hit",
+        "battle-combat-apply-hit",
+        "battle-combat-apply-hit-response",
+        "battle-combat-apply-impact",
+        "battle-combat-apply-reaction-mode",
+        "battle-combat-spawn-midpoint-effect",
+        "battle-damage-flash-004406c0",
+        "battle-enter-round-end-0043cdb0",
+        "battle-frame-advance-state",
+        "battle-frame-present",
+        "battle-frame-resolve-body-separation",
+        "battle-frame-resolve-round-end-mode",
+        "battle-frame-update",
+        "battle-frame-update-player-counters",
+        "battle-hud-draw-selected-notice",
+        "battle-hud-render-0043e040",
+        "battle-object-initialize-defaults-0045b760",
+        "battle-poll-pause-shortcut-004456f0",
+        "battle-render-frame-0043d9d0",
+        "battle-resolve-knockout-0043c930",
+        "battle-state-start-hit-sequence",
+        "battle-status-render-00440b50",
+        "battle-update-player-effects-00445830",
+        "character-ai-00472890",
+        "character-ai-00474b40",
+        "character-ai-004e7de0",
+        "character-ai-00579650",
+        "character-ai-0059d240",
+        "character-ai-005c5d10",
+        "character-ai-005e7370",
+        "character-ai-005e9620",
+        "character-ai-policy-00507b20",
+        "character-aux-action-005fae30",
+        "character-aux-active-opponent-special-004c49c0",
+        "character-aux-object-initialize-005fab10",
+        "character-aux-queue-and-mode-effects-005301b0",
+        "character-input-priority-controller-00532520",
+        "character-projectile-advance-004f4170",
+        "collision-actor-save-collision-fields",
+        "combat-actor-calculate-damage",
+        "combat-actor-update-facing",
+        "effect-render-pattern08-0044e930",
+        "effects-spawn-aux-object-005f78b0",
+        "effects-spawn-configured-aux-object-005f7aa0",
+        "fighter-aux-effect-forwarder-f135",
+        "fighter-battle-effect-forwarder-f135",
+        "fighter-begin-fade-parameters-00454a70",
+        "fighter-begin-notice-transition",
+        "fighter-bind-animation-00453d80",
+        "fighter-clear-auxiliary-words-00453a10",
+        "fighter-configure-notice-text",
+        "fighter-draw-facing-sprite-004549c0",
+        "fighter-forward-base-action-0046d2d0",
+        "fighter-forward-base-action-00493440",
+        "fighter-forward-base-action-004c0aa0",
+        "fighter-forward-base-action-004e2ef0",
+        "fighter-forward-base-action-00502420",
+        "fighter-forward-base-action-0052d200",
+        "fighter-forward-base-action-00551bd0",
+        "fighter-forward-base-action-00574340",
+        "fighter-forward-base-action-00597630",
+        "fighter-forward-base-action-005c0d40",
+        "fighter-forward-base-action-005e22e0",
+        "fighter-gauge-timer-f135",
+        "fighter-initialize-notice",
+        "fighter-is-grounded-state-window",
+        "fighter-is-state-50-to-149",
+        "fighter-no-op-slot18-0046d2f0",
+        "fighter-no-op-slot18-00493460",
+        "fighter-no-op-slot18-004c0ac0",
+        "fighter-no-op-slot18-004e2f10",
+        "fighter-no-op-slot18-00502440",
+        "fighter-no-op-slot18-0052d220",
+        "fighter-no-op-slot18-00551bf0",
+        "fighter-no-op-slot18-00574360",
+        "fighter-no-op-slot18-00597650",
+        "fighter-no-op-slot18-005c0d60",
+        "fighter-no-op-slot18-005e2300",
+        "fighter-no-op-slot9-00472450",
+        "fighter-no-op-slot9-004c66a0",
+        "fighter-no-op-slot9-004e79a0",
+        "fighter-no-op-slot9-00507690",
+        "fighter-no-op-slot9-00531bc0",
+        "fighter-no-op-slot9-00556f40",
+        "fighter-no-op-slot9-005791c0",
+        "fighter-no-op-slot9-0059cd40",
+        "fighter-no-op-slot9-005c5920",
+        "fighter-no-op-slot9-005e6f10",
+        "fighter-opponent-gauge-change-00452c10",
+        "fighter-owner-sound-forwarder-f135",
+        "fighter-pattern-load-00457660",
+        "fighter-render-00453f70",
+        "fighter-render-fade-overlay-00454aa0",
+        "fighter-render-notice-0045d5d0",
+        "fighter-render-side-effect-00454840",
+        "fighter-reset-round-00457010",
+        "fighter-set-nonnegative-word-00453e80",
+        "fighter-set-notice-fields-0045cd70",
+        "fighter-shared-sound-forwarder-f135",
+        "fighter-spawn-tracked-effect-00453ac0",
+        "fighter-spawn-tracked-effect-flags-00453be0",
+        "fighter-tracked-effect-forwarder-f135",
+        "frame-actor-advance-guarded-state",
+        "frame-actor-advance-position",
+        "frame-actor-check-horizontal-limits",
+        "frame-actor-choose-action",
+        "frame-actor-update-counters",
+        "game-progress-increment-selected-record-00425130",
+        "hud-combo-constructor-0043d490",
+        "hud-update-combo-counter-0043d4d0",
+        "input-clear-held-counts-004071a0",
+        "marisa-fighter-reset-round-00493130",
+        "meiling-fighter-reset-round-005e21f0",
+        "patchouli-fighter-reset-round-00502340",
+        "profile-increment-counter-00454d00",
+        "profile-selection-load-working-eight-00416e80",
+        "profile-selection-store-working-eight-00416e20",
+        "progress-card-value-00438a80",
+        "progress-get-card-value-0043d460",
+        "progress-get-selected-value12-00445290",
+        "progress-get-selected-value8-00445250",
+        "progress-increment-card-counter-0043d3e0",
+        "progress-increment-mode-counter-0043d360",
+        "progress-mark-card-flag-0043d430",
+        "progress-read-selected-word268-00441fe0",
+        "progress-read-selected-word394-00442010",
+        "progress-record-increment-selected-count-0041a270",
+        "progress-record-raise-selected-value-0041a1d0",
+        "progress-records-selected-address-0041a240",
+        "progress-records-set-selection-0041a1a0",
+        "progress-set-card-value-0043d3b0",
+        "progress-set-selected-value12-00445210",
+        "progress-set-selected-value8-004451d0",
+        "reimu-fighter-reset-round-0046d1e0",
+        "remilia-fighter-reset-round-00551b20",
+        "sakuya-reset-round-004c09a0",
+        "single-player-options-00438670",
+        "sprite-scene-copy-vector",
+        "sprite-scene-dispatch-global-draw",
+        "state-frame-advance-overlay",
+        "state-frame-update-transition",
+        "suika-fighter-reset-round-005c0c30",
+        "text-rasterizer-decode-hex-digit",
+        "texture-manager-allocate-shared-native-0040b000",
+        "texture-manager-allocate-slots-native-0040b110",
+        "texture-palette-refresh-0040c590",
+        "texture-resolve-0040c8c0",
+        "youmu-fighter-reset-round-0052d110",
+        "yukari-fighter-reset-round-00597500",
+        "yukari-fighter-update-special-state-0059b490",
+        "yuyuko-fighter-reset-round-00574290"
+      ],
+      "replay_result": "exact",
+      "evidence": "docs/ACCEPTED_SOURCE_PIN_RECONCILIATION_F1156.md",
+      "newly_pinned_inputs": [
+        {
+          "path": "src/ActiveCollisionPairsF1063.hpp",
+          "sha256": "99db328382099d9dbbfb539efd380a72a47967b646d3dfa59cbd916ef9f23c80"
+        },
+        {
+          "path": "src/AnimationBindingWindowF1086.hpp",
+          "sha256": "7fe442333ac76c0820f2f7321e4114e23944302fcb40faebd44ead9fc272974f"
+        },
+        {
+          "path": "src/AuxiliaryActorWordWindowF1124.hpp",
+          "sha256": "07bb37ee8e1ab7e1b2f2f029ecea90a0eac026d88f88f03ee5b660d0fdae3eb5"
+        },
+        {
+          "path": "src/BackgroundStageStateF933.hpp",
+          "sha256": "ae24be35e3581429eaebb73c5091c39b08d463b3003e324e3c9b317f1aca23cb"
+        },
+        {
+          "path": "src/BackgroundTimelineBorrowF1049.hpp",
+          "sha256": "25bd65433b02ede08bbbcad78aa478d18d0a5be7d11055ac7f4dddc77d5174c8"
+        },
+        {
+          "path": "src/BattleHudBorrowedViewsF1134.hpp",
+          "sha256": "b78999580310f926dccfa08ac88cc4fedcbf7f28018d0e4c934a038bdb7b0c46"
+        },
+        {
+          "path": "src/BattleStatusFloatPairF1096.hpp",
+          "sha256": "2ab99b7ee3f684f2a8c1b8a90c0ea2a1473ab8a6a75e7d3a3175eb74f5d0f0e6"
+        },
+        {
+          "path": "src/ComboHudWindowF1060.hpp",
+          "sha256": "f188221de1a7c4485422c224d930264d5b7ebe55704862a6117f580127cd49e2"
+        },
+        {
+          "path": "src/FighterAIShortFieldsF946.hpp",
+          "sha256": "69229b62493bcb85df2b0e060e6c62c8e56151354849efd93dafd75bfd9952f9"
+        },
+        {
+          "path": "src/FighterActionTimerPairF1027.hpp",
+          "sha256": "f54cfb98860f71d5f0696ac7c74e465c9183966600077c516432d1cbaf133a28"
+        },
+        {
+          "path": "src/FighterAnimationPhaseBorrowedF1024.hpp",
+          "sha256": "7fe97056ff743f0274bb029a39a1b1af07395f7a8cbb749d23e705323613c1ce"
+        },
+        {
+          "path": "src/FighterComboBorrowedF1006.hpp",
+          "sha256": "1ba2cf4ebd5d27fcef8e4ebfb4e6410cd7ff8f1b5b25e0695a252991340b5359"
+        },
+        {
+          "path": "src/FighterCommandByteF940.hpp",
+          "sha256": "8672319e47a73d7b1e4899f6ed2e2c3202079a91afd7c297445ce75b0e2651fc"
+        },
+        {
+          "path": "src/FighterEffectBorrowedFieldsF973.hpp",
+          "sha256": "f7300af18d96538750056694f47b5731e9aaecbb1ca7a80a13522f49f69caa46"
+        },
+        {
+          "path": "src/FighterFadeBorrowedF986.hpp",
+          "sha256": "be05700537a3194e47d3570a6e02aaf7d6ac3f35b69cd84cd2e23dd5d2b678aa"
+        },
+        {
+          "path": "src/FighterGaugeBorrowedF980.hpp",
+          "sha256": "cdabe2c6920490e850f6fe57cadda8047034d32bc9278e97fb1fe3bd5b294034"
+        },
+        {
+          "path": "src/FighterNoticeBorrowedF960.hpp",
+          "sha256": "e976db866417ddd27cc982825cc719fc995e0f338d11b731d3559bfa33206caf"
+        },
+        {
+          "path": "src/FighterPatternExtensionBorrowF1035.hpp",
+          "sha256": "8b87c10898275eee67dc53f4d14f28fb367e26f4ab158805a597815995b0701f"
+        },
+        {
+          "path": "src/FighterRenderTransformWindowF1094.hpp",
+          "sha256": "7062cd2d2fd5cb6f6ef327610bc257aae75874cc0d735a79c7294e2a765dc361"
+        },
+        {
+          "path": "src/FighterRoundOutcomeBytesF992.hpp",
+          "sha256": "5b1839fd915d80893b8ce7c695a40a005a8caa5cdd152c043153c94a1c5d9f01"
+        },
+        {
+          "path": "src/FighterScriptCounterWindowF1022.hpp",
+          "sha256": "fffd63074f4fafb5ab788c9ff65355ba7dac41f4dd9416ca8a317681fe967ccf"
+        },
+        {
+          "path": "src/FighterVitalBorrowedF999.hpp",
+          "sha256": "e52d6770526656edf5e7222728f43d1f684a33eb9646e14bb329a3c60ce54e1b"
+        },
+        {
+          "path": "src/FlashGaugeBorrowF1067.hpp",
+          "sha256": "621f8cef4c8ac2c99ba651924b9e1e9d28d751b80cbae3d7e5e381c677d821fb"
+        },
+        {
+          "path": "src/FrameActorCollisionCountdownF1036.hpp",
+          "sha256": "80235f6dd6665b148daf0dbfacbed74ac1d2955a75afbbf44978b9c8a4231618"
+        },
+        {
+          "path": "src/FrameActorMotionPairsF1037.hpp",
+          "sha256": "9d339f16df99f584634cde52c6242001387dafe97438246bad67096d43f92616"
+        },
+        {
+          "path": "src/ProgressSelectionKeysF954.hpp",
+          "sha256": "e3a4d8506627e38d3405dc1af279f79c469b67bf9e1a99e44cfb1657821d98d2"
+        },
+        {
+          "path": "src/StateOverlayFloatWindowF1106.hpp",
+          "sha256": "c0ffb5a1fff2a32ab736de6e649a98f28aa9c8b59a2a6c24a57f9d1d0a445708"
+        },
+        {
+          "path": "src/TextureEntryBorrowedF922.hpp",
+          "sha256": "ff9cbdb0b8067fec9805f295c76225e5817edd474edd4a9503b434d15dd6e325"
+        },
+        {
+          "path": "src/TextureManagerBorrowedF925.hpp",
+          "sha256": "294baaf9b1abed5da4f2f350fb8cfa05db00d18d2dad9434f6881f062c089a4e"
+        },
+        {
+          "path": "src/GamePolicyHelpers.cpp",
+          "sha256": "6d8ff0c5e29f5cef3bb986039ac222a485a129b80fd77102e0004e939bd6f5a4"
+        }
+      ],
+      "cold_replayed_object_count": 66
+    }
+  ]
 }

@@ -1,5 +1,10 @@
 # F1048 — Texture/resource sequential union ownership does not restore the full original Scene destructor
 
+**F1157 supersession:** the complete original virtual destructor is now
+accepted cold exact using scalar deletion of the three native new-allocated
+HUD objects. These earlier free-based negative sources remain preserved;
+see [whole original F1157 proof](BATTLE_SCENE_TYPED_DELETE_EXACT_F1157.md).
+
 The SHA-pinned Japanese TH075 v1.11 original independently authored
 virtual Scene destructor at **0043B0B0** is one whole **248B /75 x86**
 callable, including its real EH prologue, texture scalar deleting

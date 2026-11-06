@@ -936,3 +936,4 @@ address,name,module,confidence,evidence
 0x0040CA20,SpriteDrawingF751::DrawProjectedQuad,SpriteDrawing,inferred,"R011; F779; original 92 complete native CODE B/34 x86/two original PE/COFF refs, selected one-unit cold exact; true 4B aligned 132B quad copy"
 0x0040C9A0,SpriteDrawingF780::DrawQuad,SpriteDrawing,inferred,"R011; F780; whole 115 CODE B/37 x86/four real typed PE call targets; 132B borrowed quad plus two native saved prior lookup results; original owner/name provisional"
 0x0041CE50,ArchiveCatalog::Release,ArchiveCatalog,inferred,"R053; F1155; full 171B/51 x86/14 PE fields, scalar resource and new[]-paired filename deletion; one-unit cold exact; original private names/layout provisional"
+0x0043B0B0,SceneObject::ReleaseAt0043B0B0,SceneObject,inferred,"R054; F1157; full 248B/75 x86/12 fields, native virtual EH and typed texture/HUD deletion; one-unit cold exact; private layouts provisional"

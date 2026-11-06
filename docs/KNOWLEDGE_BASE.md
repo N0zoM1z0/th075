@@ -1,8 +1,8 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1155):**
+**Maintenance annotation, updated 2026-11-06 (F1157):**
 The **current authoritative** pinned-original whole-function evidence,
-81KB Boss CFG (all 1,834 direct branch targets now match), 980 accepted
+81KB Boss CFG (all 1,834 direct branch targets now match), 981 accepted
 whole exact functions, and safe local storage/restore instructions are
 in the [live agent handoff](RE_HANDOFF.md) and
 [storage hygiene guide](STORAGE_HYGIENE.md). This chronological
@@ -41,6 +41,14 @@ all 14 physical fields cold exact, by using new[]-paired filename deletion.
 The old named-filename/free premise caused the stack-slot rotation;
 [complete original proof](ARCHIVE_CATALOG_ARRAY_DELETE_EXACT_F1155.md).
 
+F1156 reconciles 65 stale source pins, retaining their previous hashes and
+adding 29 borrowed-header/current-helper pins after **268 affected-unit cold
+exact comparisons across 66 objects**. No full-corpus replay or source reset;
+[verified reconciliation](ACCEPTED_SOURCE_PIN_RECONCILIATION_F1156.md).
+F1157 accepts the complete 248B/75-x86 virtual BattleScene destructor,
+all 12 real fields, using scalar deletion of the three actual HUD objects;
+[original whole-function proof](BATTLE_SCENE_TYPED_DELETE_EXACT_F1157.md).
+
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function
 ledger or the new-agent work queue. Old F-series headings with words like
@@ -56,16 +64,16 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
 
 ## Current verified original-game status (one short snapshot)
 
-- **980 cold-exact source-present functions**, **868,414 original authored
-  CODE bytes**, **44.00% reviewed authored coverage** and **43.92%
+- **981 cold-exact source-present functions**, **868,662 original authored
+  CODE bytes**, **44.01% reviewed authored coverage** and **43.94%
   conservative coverage** of native original CODE. The independently
   reviewed authored provenance cohort has **1,004** candidates, so
-  **24 authored whole functions remain NONEXACT**: **22** large
-  (1,102,055 original CODE B) plus **2** small/medium
-  (3,235 CODE B). The older **25**-function subset counted only
+  **23 authored whole functions remain NONEXACT**: **22** large
+  (1,102,055 original CODE B) plus **1** small/medium
+  (2,987 CODE B). The older **25**-function subset counted only
   `config/functions.csv.owner=authored` unfinished rows and omitted
   11 independently authored, formerly owner-blank small/medium targets,
-  of which F755, F758, F760, F765, F766, F769, F770, F775, F776, F779 and F780 have accepted all eleven. See [both current smaller addresses](RE_HANDOFF.md).
+  of which F755, F758, F760, F765, F766, F769, F770, F775, F776, F779 and F780 have accepted all eleven. See [current remaining smaller address](RE_HANDOFF.md).
 - **95 original candidates /3,420 CODE bytes** have separately
   unresolved provenance; even a whole byte-exact C++ source does not
   permit reclassification or accepted authored CODE without independent

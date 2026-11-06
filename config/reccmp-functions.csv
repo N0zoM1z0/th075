@@ -979,3 +979,4 @@ SpriteDrawingF776::DrawVariant,0x0040CEF0,function
 SpriteDrawingF751::DrawProjectedQuad,0x0040CA20,function
 SpriteDrawingF780::DrawQuad,0x0040C9A0,function
 ArchiveCatalog::Release,0x0041CE50,function
+SceneObject::ReleaseAt0043B0B0,0x0043B0B0,function
