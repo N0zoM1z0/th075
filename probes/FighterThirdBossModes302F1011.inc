@@ -18,12 +18,12 @@ case 0x302: {
         S16(0xF04)=0;
         S16(0xF08)=g_F1004_ModeAt006714D0+2;
     }
-    if (S16(0x62)<13 && POS48>=g_ThresholdAt0065782C) {
+    if (S16(0x62)<13 && POS48>g_ThresholdAt0065782C) {
         POS54=POS54-POS5C;
-        if (POS54<=g_AnimationDeltaAt0065747C)
+        if (POS54<g_AnimationDeltaAt0065747C)
             POS54=1.0f;
     }
-    if (S16(0x62)>12 && POS48>=g_ThresholdAt0065782C) {
+    if (S16(0x62)>12 && POS48>g_ThresholdAt0065782C) {
         POS54=POS54-POS5C;
         if (POS48+POS54<=g_ThresholdAt0065782C) {
             POS48=0.0f;

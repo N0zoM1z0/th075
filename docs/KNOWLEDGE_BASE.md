@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1198):**
+**Maintenance annotation, updated 2026-11-06 (F1199):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -245,6 +245,16 @@ and 26 non-GPR operand differences**, alongside 6,958 GPR /12 widths.
 Those rows are retained by native action in the local remaining-differences
 receipt; the old F1028 PE-target proof did not certify these properties.
 Whole NONEXACT; accepted totals unchanged; no CI or corpus replay.
+
+F1199 repairs all 26 outstanding non-GPR operands in live 82KB 004AC040:
+17 strict native x87 comparisons and nine 2EF/2F0 random-angle subtraction
+constants. Actual FLD/FADD/FCOMP order and TEST/branch masks are reread.
+[Whole native operand proof](THIRD_FIGHTER_NATIVE_OPERANDS_F1199.md).
+Only 26 candidate immediate bytes change; all 2,352 COFF records, stack,
+CODE/DATA geometry, references and debt rows are otherwise unchanged.
+Fresh /GX source remains 82,796B/22,721 x86, with **45 branch-target,
+6,958 GPR-role and twelve width differences**. No exact credit, accepted
+input change, full CI or corpus replay. Next work is the F1198 branch list.
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function

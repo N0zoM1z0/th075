@@ -97,7 +97,7 @@ case 0x2FB: {
         if (F32(0x44)<g_F1009_LeftAt0065787C)
             POS=float((RandAt455580(0,180)+90) *
                 (*reinterpret_cast<signed char*>(RAW+0x66)));
-        if (F32(0x44)>=g_F1009_RightAt0065920C)
+        if (F32(0x44)>g_F1009_RightAt0065920C)
             POS=float(-(RandAt455580(0,180)+90) *
                 (*reinterpret_cast<signed char*>(RAW+0x66)));
         POS54=3.0f;

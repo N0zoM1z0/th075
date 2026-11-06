@@ -17,7 +17,7 @@ case 0x2BE: {
         ResetAt453E20();
         S16(0x80)=99;
     }
-    if (POS48>=g_ThresholdAt0065782C && S16(0x62)>23) {
+    if (POS48>g_ThresholdAt0065782C && S16(0x62)>23) {
         POS54=POS54-POS5C;
         if (POS48+POS54<=g_ThresholdAt0065782C && S16(0x62)<34) {
             SetAuxActionAt40FB40(34);

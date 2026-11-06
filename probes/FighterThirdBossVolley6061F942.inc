@@ -73,7 +73,7 @@
             }
             if (S16(0x62)>2 && S16(0x62)<6) {
                 POS54=POS54-POS5C;
-                if (POS54+POS48<=g_ThresholdAt0065782C) {
+                if (POS54+POS48<g_ThresholdAt0065782C) {
                     POS48=0.0f;
                     ResetAt453E20();
                     SetAuxActionAt40FB40(6);

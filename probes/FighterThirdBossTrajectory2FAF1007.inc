@@ -19,7 +19,7 @@ case 0x2FA: {
         S16(0xF06)=0;
         S16(0xF08)=g_F1004_ModeAt006714D0+2;
     }
-    if (POS48>=g_ThresholdAt0065782C) {
+    if (POS48>g_ThresholdAt0065782C) {
         POS54=POS54-POS5C;
         if (POS48+POS54<=g_ThresholdAt0065782C) {
             SetAuxActionAt40FB40(15);
@@ -47,7 +47,7 @@ case 0x2FA: {
         POS5C=0.5f;
         POS=float(RandAt455580(0,6)+12);
         if ((*reinterpret_cast<signed char*>(RAW+0x66)==1 &&
-             F32(0x44)>=g_F1007_RightBoundAt0065945C) ||
+             F32(0x44)>g_F1007_RightBoundAt0065945C) ||
             (*reinterpret_cast<signed char*>(RAW+0x66)==-1 &&
              F32(0x44)<g_ContactProjectionAt00657888))
             POS=-POS;

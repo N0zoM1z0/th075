@@ -46,7 +46,7 @@ case 0x2E6: {
             U8(0x11)=255;
     }
     if (S16(0x62)>13 && S16(0x62)<19) {
-        if (POS48>=g_ThresholdAt0065782C) {
+        if (POS48>g_ThresholdAt0065782C) {
             POS54=POS54-POS5C;
             if (POS48+POS54<=g_ThresholdAt0065782C) {
                 U8(0x11)=255;

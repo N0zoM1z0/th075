@@ -25,9 +25,9 @@ case 0x2EF: {
         ResetAt453E20();
         S16(0x80)=99;
     }
-    if (POS48>=g_ThresholdAt0065782C && S16(0x62)<22)
+    if (POS48>g_ThresholdAt0065782C && S16(0x62)<22)
         POS54=POS54-g_F747_BounceYAt00658044;
-    if (POS48>=g_ThresholdAt0065782C && S16(0x62)>23) {
+    if (POS48>g_ThresholdAt0065782C && S16(0x62)>23) {
         POS54=POS54-POS5C;
         if (POS48+POS54<=g_ThresholdAt0065782C && S16(0x62)<34) {
             SetAuxActionAt40FB40(34);
@@ -67,7 +67,7 @@ case 0x2EF: {
     if (S16(0x62)==17 && S16(0x64)==0) {
         S16(0xF00)=static_cast<short>(POS*g_ContactProjectionAt00657888);
         S16(0xF02)=static_cast<short>(F32(0x54)*g_ContactProjectionAt00657888);
-        F32(0x314)=float(RandAt455580(0,100)-70);
+        F32(0x314)=float(RandAt455580(0,100)-50);
         F32(0x318)=float(RandAt455580(0,10)+5);
         SetAngleBitsAt40FB70(I32(0x314),100.0f);
         SpawnFloatXYAt453A70(0x38F,
@@ -83,7 +83,7 @@ case 0x2EF: {
     if (S16(0x62)==19 && S16(0x64)==0) {
         S16(0xF00)=static_cast<short>(POS*g_ContactProjectionAt00657888);
         S16(0xF02)=static_cast<short>(F32(0x54)*g_ContactProjectionAt00657888);
-        F32(0x314)=float(RandAt455580(0,100)-70);
+        F32(0x314)=float(RandAt455580(0,100)-50);
         F32(0x318)=float(RandAt455580(0,10)+5);
         SetAngleBitsAt40FB70(I32(0x314),100.0f);
         SpawnFloatXYAt453A70(0x38F,
@@ -99,7 +99,7 @@ case 0x2EF: {
     if (S16(0x62)==21 && S16(0x64)==0) {
         S16(0xF00)=static_cast<short>(POS*g_ContactProjectionAt00657888);
         S16(0xF02)=static_cast<short>(F32(0x54)*g_ContactProjectionAt00657888);
-        F32(0x314)=float(RandAt455580(0,100)-70);
+        F32(0x314)=float(RandAt455580(0,100)-50);
         F32(0x318)=float(RandAt455580(0,10)+5);
         SetAngleBitsAt40FB70(I32(0x314),100.0f);
         SpawnFloatXYAt453A70(0x38F,
@@ -115,7 +115,7 @@ case 0x2EF: {
     if (S16(0x62)==23 && S16(0x64)==0) {
         S16(0xF00)=static_cast<short>(POS*g_ContactProjectionAt00657888);
         S16(0xF02)=static_cast<short>(F32(0x54)*g_ContactProjectionAt00657888);
-        F32(0x314)=float(RandAt455580(0,100)-70);
+        F32(0x314)=float(RandAt455580(0,100)-50);
         F32(0x318)=float(RandAt455580(0,10)+5);
         SetAngleBitsAt40FB70(I32(0x314),100.0f);
         SpawnFloatXYAt453A70(0x38F,
@@ -147,9 +147,9 @@ case 0x2F0: {
         ResetAt453E20();
         S16(0x80)=99;
     }
-    if (POS48>=g_ThresholdAt0065782C && S16(0x62)<22)
+    if (POS48>g_ThresholdAt0065782C && S16(0x62)<22)
         POS54=POS54-g_F1019_FallAt00658354;
-    if (POS48>=g_ThresholdAt0065782C && S16(0x62)>23) {
+    if (POS48>g_ThresholdAt0065782C && S16(0x62)>23) {
         POS54=POS54-POS5C;
         if (POS48+POS54<=g_ThresholdAt0065782C && S16(0x62)<34) {
             SetAuxActionAt40FB40(34);
@@ -173,7 +173,7 @@ case 0x2F0: {
     if (S16(0x62)==15 && S16(0x64)==0) {
         S16(0xF00)=static_cast<short>(POS*g_ContactProjectionAt00657888);
         S16(0xF02)=static_cast<short>(F32(0x54)*g_ContactProjectionAt00657888);
-        F32(0x314)=float(RandAt455580(0,100)-50);
+        F32(0x314)=float(RandAt455580(0,100)-70);
         F32(0x318)=float(RandAt455580(0,10)+5);
         SetAngleBitsAt40FB70(I32(0x314),100.0f);
         SpawnFloatXYAt453A70(0x38F,
@@ -189,7 +189,7 @@ case 0x2F0: {
     if (S16(0x62)==17 && S16(0x64)==0) {
         S16(0xF00)=static_cast<short>(POS*g_ContactProjectionAt00657888);
         S16(0xF02)=static_cast<short>(F32(0x54)*g_ContactProjectionAt00657888);
-        F32(0x314)=float(RandAt455580(0,100)-50);
+        F32(0x314)=float(RandAt455580(0,100)-70);
         F32(0x318)=float(RandAt455580(0,10)+5);
         SetAngleBitsAt40FB70(I32(0x314),100.0f);
         SpawnFloatXYAt453A70(0x38F,
@@ -205,7 +205,7 @@ case 0x2F0: {
     if (S16(0x62)==19 && S16(0x64)==0) {
         S16(0xF00)=static_cast<short>(POS*g_ContactProjectionAt00657888);
         S16(0xF02)=static_cast<short>(F32(0x54)*g_ContactProjectionAt00657888);
-        F32(0x314)=float(RandAt455580(0,100)-50);
+        F32(0x314)=float(RandAt455580(0,100)-70);
         F32(0x318)=float(RandAt455580(0,10)+5);
         SetAngleBitsAt40FB70(I32(0x314),100.0f);
         SpawnFloatXYAt453A70(0x38F,
@@ -221,7 +221,7 @@ case 0x2F0: {
     if (S16(0x62)==21 && S16(0x64)==0) {
         S16(0xF00)=static_cast<short>(POS*g_ContactProjectionAt00657888);
         S16(0xF02)=static_cast<short>(F32(0x54)*g_ContactProjectionAt00657888);
-        F32(0x314)=float(RandAt455580(0,100)-50);
+        F32(0x314)=float(RandAt455580(0,100)-70);
         F32(0x318)=float(RandAt455580(0,10)+5);
         SetAngleBitsAt40FB70(I32(0x314),100.0f);
         SpawnFloatXYAt453A70(0x38F,
@@ -237,7 +237,7 @@ case 0x2F0: {
     if (S16(0x62)==23 && S16(0x64)==0) {
         S16(0xF00)=static_cast<short>(POS*g_ContactProjectionAt00657888);
         S16(0xF02)=static_cast<short>(F32(0x54)*g_ContactProjectionAt00657888);
-        F32(0x314)=float(RandAt455580(0,100)-50);
+        F32(0x314)=float(RandAt455580(0,100)-70);
         F32(0x318)=float(RandAt455580(0,10)+5);
         SetAngleBitsAt40FB70(I32(0x314),100.0f);
         SpawnFloatXYAt453A70(0x38F,
