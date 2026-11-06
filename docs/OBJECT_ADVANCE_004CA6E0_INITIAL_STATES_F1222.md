@@ -92,3 +92,7 @@ in v2 evidence. No source markers, fake locals, padding, assembly, target
 code arrays, alternate bodies, accepted inputs or canonical infrastructure
 are added. Continue the remaining43 states in this same body. Only this
 new draft was compiled; no full CI, corpus replay or per-function test.
+
+F1223 supersedes the partial dimensions above: the same body now has28/55
+states and14,079B/3,760 x86, retaining original this/ESI; see the
+[middle-state proof](OBJECT_ADVANCE_004CA6E0_MIDDLE_STATES_F1223.md).

@@ -1,4 +1,4 @@
-# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1222)
+# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1223)
 
 **Start here.** Continue all dirty work; there are no other active sessions.
 Work on both large/core and smaller authored originals. Use local commits
@@ -193,12 +193,13 @@ no whole exact credit. All other parents and unknown origins stay preserved.
 
 New incomplete 42KB source:
 [`probes/CharacterObjectActions004CA6E0F1222.cpp`](../probes/CharacterObjectActions004CA6E0F1222.cpp).
-F1222 has12/55 states; reviewed6,097B/1,623 x86, frame0x68 vsnative0x288,
-original this-4 and genuine ESI. All written operand diagnostics agree;
-800–802/812–814 have zero raw GPR/EBP/width debt. 43 states remain.
-Selected `.analysis/f1222-object-4ca6e0-recovery/reviewed.obj`, immutable
-CPP/HPP, listing, diagnostic/verified-summary.json. [F1222 proof](OBJECT_ADVANCE_004CA6E0_INITIAL_STATES_F1222.md).
-Continue this same body; all42,511 original B remain pending.
+F1223 has28/55 states; selected14,079B/3,760 x86, frame0x194 vsnative0x288,
+original this-4 and ESI. All written operand diagnostics agree;
+prefix/800–804 have zero raw GPR/EBP/width debt. Still27 states:
+805–811,830–839,901,903–911. Selected `.analysis/f1223-object-4ca6e0-middle/debris.obj`,
+immutable CPP/HPP/listing/diagnostics/verified-summary.json.
+[F1223 proof](OBJECT_ADVANCE_004CA6E0_MIDDLE_STATES_F1223.md). Continue this
+same body; all42,511 original B remain pending.
 
 All other giant authored originals remain open; use the
 [actual giant dispatch manifest](../config/fighter-boss-dispatch-fingerprints.json)

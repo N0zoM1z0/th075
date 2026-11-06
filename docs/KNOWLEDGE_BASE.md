@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1222):**
+**Maintenance annotation, updated 2026-11-06 (F1223):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -467,6 +467,18 @@ variants. Selected private `.analysis/f1222-object-4ca6e0-recovery/reviewed.obj`
 immutable CPP/HPP, listing, local diagnostic and verified-summary.json remain.
 Only the affected draft was built; all ten complete parents,982 accepted
 units,95 unknown origins and archives remain; no full CI or corpus replay.
+
+F1223 adds803/815–829 to the same004CA6E0 body:16 states/7,982 original
+interior B/2,137 x86, now28/55 states and13,960 written original interior B.
+Fresh selected debris.obj emits14,079B/3,760 x86, frame0x194 vsnative0x288;
+all written mnemonic/operand diagnostics pass. Prefix/800–804 have zero raw
+GPR/EBP/width debt, while full frame/branch bytes and later register/temporary
+positions remain pending. [Middle-state proof](OBJECT_ADVANCE_004CA6E0_MIDDLE_STATES_F1223.md)
+records independent owner F0C/F10 counters, attachment offsets and829's
+actual Range(0,10)-5 versus824–828's Range(0,6)-3. Twenty-seven states
+remain; selected `.analysis/f1223-object-4ca6e0-middle/debris.obj`, immutable
+CPP/HPP/listing/diagnostics and verified-summary.json remain. All42,511 CODE B
+stay pending; no full CI/corpus replay or accepted-source changes.
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function
