@@ -1,7 +1,10 @@
 # F1183 — Reimu 60KB parent: eleven actual falling/recovery states
 
-**Historical F1183 source checkpoint:** F1184 subsequently extends the same
-tracked parent to 21,723B/5,881 x86 and 73 nondefault markers;
+**Historical F1183 source checkpoint:** F1185 now clears the 623 GPR
+differences below through genuine additional earlier states; see
+[the current command-state proof](REIMU_COMMAND_STATES_F1185.md).
+F1184 previously extended the same
+tracked parent to 21,723B/5,881 x86 and 72 nondefault markers;
 [current source/CFG proof](REIMU_EARLY_RECOVERY_STATES_F1184.md).
 The dimensions, hashes and old/new prefix comparison below describe commit
 `9d2c157b`, before those additional earlier states changed the compiler frame.
@@ -82,7 +85,7 @@ The 136 branch keeps its separate later brake constant and stage-4 speed
 These new interiors still contain **623 wrong GPR positions**, and native
 stack operands remain wrong. The current source frame is **0x24**, with
 saved-this **EBP-8**, versus original **0x380 /EBP-0x34**. Source-local
-integer-to-float scratch slots also differ. There are still **80 nondefault
+integer-to-float scratch slots also differ. There are still **79 nondefault
 marker statements** in the parent, plus its old default marker and incomplete
 native common tail. The original full callable is nowhere near accepted exact.
 All pending original bytes remain in the conservative denominator.

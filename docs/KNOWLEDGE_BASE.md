@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1184):**
+**Maintenance annotation, updated 2026-11-06 (F1185):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -84,9 +84,19 @@ F1184 restores seven more Reimu states (59–63): 2,545 native interior bytes,
 713 x86 and 58 external fields. 5F/61 recover all GPR roles/widths; a real
 61 completion-else scope correction restores its original local exit target.
 [Native early-recovery proof](REIMU_EARLY_RECOVERY_STATES_F1184.md).
-The same tracked parent now emits 21,723B/5,881 x86 with 73 nondefault
+The same tracked parent now emits 21,723B/5,881 x86 with 72 nondefault
 markers, still NONEXACT. Combined F1183/F1184 source progress is 18 native
 states /6,074 original interior B /1,714 x86 /149 fields, not new exact credit.
+
+F1185 restores nine Reimu C8–D0 command/motion states: 3,379 original
+interior bytes /981 x86 /90 actual fields. All GPR roles, widths,
+non-GPR operands, branch destinations and external fields agree; the
+remaining eleven 12C–136 GPR differences also disappear in this parent.
+[Native command-state proof](REIMU_COMMAND_STATES_F1185.md) records the
+actor-specific collision/repeat rules and 8-to-9 brake policy. The parent
+emits 24,967B/6,844 x86, with frame 0x40 /saved-this EBP-0xC still wrong
+and 63 nondefault markers. Combined new interiors span 9,453B/2,695 x86
+and 239 fields; these are not whole exact credit.
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function
@@ -6522,7 +6532,7 @@ independently decoded across their actual original Japanese PE extents:
 | Function, native start/end | Original CODE | Native x86 instructions | Nonrelocation bytes | Authentic physical COFF fields | Complete original CODE SHA256 |
 | --- | ---: | ---: | ---: | ---: | --- |
 | YukariFighter::ResetRound `00597500..00597626` | 295 | 55 | 291/291 | 1 (native `00457010`) | `524ad563a04a58001bcc5d56ce3c09a0fd89e28ebd7780758947758b2d67fc8c` |
-| SuikaFighter::ResetRound `005C0C30..005C0D34` | 261 | 49 | 249/249 | 3 (two globals, native `00457010`) | `edc6787d3634e9baaf52dbf596228022973b2c3d081a454bb02a49b30aee8d16` |
+| SuikaFighter::ResetRound `005C0C30..005C0D34` | 261 | 49 | 249/239 | 3 (two globals, native `00457010`) | `edc6787d3634e9baaf52dbf596228022973b2c3d081a454bb02a49b30aee8d16` |
 
 Full independent original Ghidra decompilation/native machine code, first
 meaningful complete VC7.1 C++ sources, COFF exact proof and only-two-unit
@@ -6620,7 +6630,7 @@ without claiming private original FighterState source layout.
 
 The persisted worktree already contained noncommitted F315 Yukari
 (295 bytes, 291/291 nonfield, 1 genuine REL32) and Suika (261 bytes,
-249/249 nonfield, 2 true original global DIR32 and 1 base-reset REL32)
+249/239 nonfield, 2 true original global DIR32 and 1 base-reset REL32)
 source/tracking from the same reconstruction workflow. Instead of
 ignoring/abandoning them or rewriting them blindly, independently
 rechecked their complete original native original PE 55/49 instructions
@@ -13334,7 +13344,7 @@ int +0x4DC, and on either sign tests FOUR unsigned 32-bit fields
 `+0x4E8/+0x4EC/+0x4F0/+0x4F4` using **logical OR of >0**.
 Native early `JA` edges enter the short counter store; the fourth
 `JBE` skips it. Initial C++ with three `==0 &&` predicates matched
-65-x86/249-byte geometry but got the actual PE branch targets wrong.
+65-x86/239-byte geometry but got the actual PE branch targets wrong.
 Correct native four-way `||` C++ produces strict 65/65 original
 GPR/x87/CFG operand roles, 4 real physically typed PE/COFF call
 refs each in two newly compiled giant sources: native `00564BE0`
@@ -14885,7 +14895,7 @@ Initial meaningful `Next()/NextPtr()` C++ method source added
 non-native calls; inline pointer-to-link variants initially yielded
 257 B/108 x86, but original semantic C++ termination
 `while (*cursor && *cursor != this)` naturally emitted the
-**full original 249/249 linked PE machine CODE bytes /104 native x86**.
+**full original 249/239 linked PE machine CODE bytes /104 native x86**.
 Original source class names and author remain UNKNOWN despite one
 registered direct original CALL; this is NOT a new authored exact
 match unit. Historical whole source-backed uncredited cohort grows
@@ -16498,7 +16508,7 @@ mnemonic positions from old raw-offset casts. Nonfield/nonparent-tail
 real operand differences improve **119→111** with all opcode/width
 positions correct and all 17 typed PE/COFF reference destinations
 independently verified. The 111 real GPR/EBP operand bytes remain
-**NONEXACT**. Prior 2F8/2F9/2FA originals still have 166/249/156
+**NONEXACT**. Prior 2F8/2F9/2FA originals still have 166/239/156
 native operand differences in the same full parent; original 943-B
 afterRET jump DATA, 156 actual DIR32 refs and 319/319 other data
 bytes remain correct. The full boss generates 58,261 of original

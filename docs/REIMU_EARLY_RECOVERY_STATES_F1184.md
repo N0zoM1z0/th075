@@ -1,5 +1,12 @@
 # F1184 — Reimu seven early recovery states and the original 61 exit scope
 
+**Historical F1184 checkpoint:** F1185 extends this same source to
+24,967B/6,844 x86 and 63 nondefault markers, and clears the later eleven
+12C–136 GPR differences. See [the current native command-state proof](REIMU_COMMAND_STATES_F1185.md).
+The dimensions below describe commit `bac6c2a0`. A direct F1185 recount
+corrects the former 73-nondefault claim: that count included default;
+the F1184 checkpoint had 72 nondefault markers and one default store.
+
 The live `probes/FighterWhole0045DD70F1183.cpp` now includes
 `ReimuEarlyRecoveryStatesF1184.inc` in place of seven earlier markers.
 The independently R063-authored original remains **NONEXACT**. This
@@ -74,7 +81,7 @@ live dense-label identities and 522 sparse DATA bytes are rechecked in
 the latest object. These totals are **interior reconstruction evidence,
 not original whole-function accepted bytes**.
 
-There are still **73 nondefault marker statements**, the default marker,
+There are still **72 nondefault marker statements**, the default marker,
 and missing original common-tail behavior. The earliest remaining source
 group is **C8–D0**, followed by 186 and later attack states. Continue this
 tracked parent rather than regenerating an older F652 partial selection.
