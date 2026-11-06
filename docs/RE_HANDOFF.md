@@ -1,4 +1,4 @@
-# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1214)
+# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1216)
 
 **Start here.** Continue all dirty work; there are no other active sessions.
 Work on both large/core and smaller authored originals. Use local commits
@@ -193,14 +193,15 @@ immutable `current.cpp`/`current.hpp`, both current diagnostic JSONs and
 identity is not original relocation-offset equality. Scope/window/zero-argument/return-call/comparison
 controls are identical negatives. [F1214 proof](OBJECT_ADVANCE_00536400_COMPLETE_PARENT_F1214.md).
 Continue register debt in this complete body; never count interiors as exact.
-No marker/padding fixes. F1210's named-health-local trial fails3,162 EBP
-positions in the 34KB parent; its bounded member scan proves no full layout.
-[F1210/F1211 history evidence](OBJECT_ADVANCE_00536400_HISTORY_AND_CASES_F1211.md).
-
-F1206 deduplicates F756/F773's 33KB comma/typed-window controls; F1205's
-fresh evidence is valid but those ideas are not all new. A valid stage-4
-switch emits 33,305B /8,791 x86 and wrong frame 0x200: reject on shape.
-[Details and retained paths](OBJECT_ADVANCE_005EB520_WHOLE_F1207.md).
+New incomplete 43KB source:
+[`probes/CharacterObjectActions005C9CC0F1216.cpp`](../probes/CharacterObjectActions005C9CC0F1216.cpp).
+F1216 recovers13/67 states (800–806/835/901/902/995–997), five actual loop
+indices atnativeEBP-4..-14h; 54 states remain. Fresh7,168B/1,925 x86,
+frame0x80/this-18h vsnative0x470/-4Ch. All written operand diagnostics agree;
+prefix/through835 have zero raw GPR debt. [F1216 proof](OBJECT_ADVANCE_005C9CC0_INITIAL_STATES_F1216.md).
+Selected `.analysis/f1216-object-5c9cc0-recovery/reviewed.obj`, snapshots,
+listing, diagnostic and `verified-summary.json`. Continue807 onward in this
+body; incomplete states earn zero exact credit. All complete parents stay live.
 
 All other giant authored originals remain open; use the
 [actual giant dispatch manifest](../config/fighter-boss-dispatch-fingerprints.json)
