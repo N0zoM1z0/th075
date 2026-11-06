@@ -1,4 +1,4 @@
-# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1237)
+# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1238)
 
 **Start here.** Continue all dirty work; there are no other active sessions.
 Work on both large/core and smaller authored originals. Use local commits
@@ -220,18 +220,19 @@ identical entire CODE/DATA/all943 COFF records to F1235. [F1236 proof](OBJECT_AD
 owner evidence remain. All43,599B stay pending; continue this complete body.
 
 
-New incomplete 43KB parent:
+Current incomplete 43KB parent:
 [`probes/CharacterObjectActions0057D580F1237.cpp`](../probes/CharacterObjectActions0057D580F1237.cpp),
-`ObjectAdvance57D580F1237.hpp`. F1237 writes32/70 states (native18,692B/4,965 x86).
-Selected18,839B/5,012 x86, frame13Ch/this-24h vsnative378h/this-40h/savedESI.
-All32 written regions pass mnemonic/operand diagnostics with GPR/negative-stack
-normalization; NOT byte exact. 38 states remain. Eight real indices are written;
-other seven belong to812/816/817/822/825/830/834. Continue these actual branches,
-never add padding. `.analysis/f1237-object-57d580-recovery/late-combat.cpp/hpp/obj/asm`,
-source diagnostic/`verified-summary.json`; actual OBJ/PDB under
-`build/probes/f1237-object-57d580/`. [F1237 proof](OBJECT_ADVANCE_0057D580_INITIAL_PARENT_F1237.md)
-retains native full CODE/DATA/ctor/vtable, all seven builds and real-index inputs.
-All43,845 original B remain pending; canonical ledgers/accepted inputs unchanged.
+`ObjectAdvance57D580F1237.hpp`. F1238 writes45/70 states (native28,288B/7,548 x86).
+Selected28,476B/7,597 x86, frame23Ch vsnative378h. All15 genuine index slots/
+67 raw references, this-40h and savedESI are restored without padding. All45
+regions pass diagnostic mnemonic/operand shapes; GPR/unfinished temporary-stack
+normalization is NOT exact evidence. Written800–830 raw GPR/EBP/width debt0.
+25 states remain; continue831, then835–840/845/847 and late states.
+Selected `.analysis/f1238-object-57d580-loops/descendants.cpp/hpp/obj/asm`, source
+and named-index diagnostics/`verified-summary.json`; actual OBJ/PDB under
+`build/probes/f1238-object-57d580/`. [F1238 proof](OBJECT_ADVANCE_0057D580_ALL_INDICES_F1238.md)
+retains four new serial builds; F1237 retains full original/owner evidence.
+All43,845 original B remain pending; accepted inputs/canonical ledgers unchanged.
 
 All other giant authored originals remain open; use the
 [actual giant dispatch manifest](../config/fighter-boss-dispatch-fingerprints.json)

@@ -1,5 +1,9 @@
 # F1237 — native-backed initial source for 0057D580
 
+Current continuation: [F1238](OBJECT_ADVANCE_0057D580_ALL_INDICES_F1238.md)
+writes 45/70 states and restores every real index slot and the ESI save.
+The 32-state dimensions and hashes below describe the preserved F1237 stage.
+
 `probes/CharacterObjectActions0057D580F1237.cpp` writes **32 of 70** actual
 nondefault states, the observed entry guards and default, in one C++ body.
 It is an **incomplete, NONEXACT research parent**. Unwritten states currently

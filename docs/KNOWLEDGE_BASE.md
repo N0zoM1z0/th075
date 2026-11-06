@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1237):**
+**Maintenance annotation, updated 2026-11-06 (F1238):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -649,6 +649,24 @@ inputs and limitations. All43,845 original CODE B remain pending. No accepted
 input/header/origin/ledger/infrastructure change, full CI, canonical replay or
 new tests. Earlier005A1600 native helper-contract reads support no ABI change
 and remain under `.analysis/f1237-object-5a1600-call-boundary/`.
+
+F1238 adds13 native states of `0057D580`, 9,596B/2,583 x86, reaching45/70.
+The seven missing real loop variables restore original this-40h; every one
+of67 references across all15 index slots agrees in raw offset/ordinal/operand
+position/width. Native905's three integer products live across RecordedRange
+calls naturally restore PUSH/POP ESI. Selected incomplete source emits28,476B/
+7,597 x86, frame23Ch vsoriginal378h. All45 written regions pass diagnostic
+mnemonic/operand shapes, with GPR/unfinished temporary-stack normalization;
+this is NOT exact evidence. Written800–830 raw GPR/EBP/width positions also
+agree. 25 states remain; all43,845 original CODE B stay pending. Native policy
+includes one-iteration collision loops, distinct burst/event order, DWORD0.25
+plus QWORD1.0 arithmetic, phase38 hit/fade behavior and difficulty-dependent
+spawning. [Index/ESI proof](OBJECT_ADVANCE_0057D580_ALL_INDICES_F1238.md) and
+`.analysis/f1238-object-57d580-loops/verified-summary.json` retain four serial
+builds, immutable sources, inputs and both diagnostics; actual OBJ/PDB under
+`build/probes/f1238-object-57d580/`. Private epilogue parsing now recognizes
+POP ESI before MOV ESP; canonical infrastructure is unchanged. No accepted
+input/header/origin/ledger change, full CI, canonical replay or new tests.
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function
