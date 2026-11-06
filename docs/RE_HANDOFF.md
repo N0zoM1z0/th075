@@ -1,4 +1,4 @@
-# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1149)
+# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1150)
 
 **Start here.** Work on both large/core original functions and smaller entire
 original functions. The user requests meaningful **multiple local commits** named
@@ -47,10 +47,12 @@ Single source/whole-parent verifier:
 
 | Independently checked property | Original PE | Current partial C++ |
 | --- | ---: | ---: |
-| Entire callable CODE | **81,539B** | **81,572B** (**+33B**) |
+| Entire callable CODE | **81,539B** | **81,542B** (**+3B**) |
 | Entire native x86 instruction count | **17,435** | **17,435** |
-| Actual saved-this stack slot | **EBP-0xAC** | **EBP-0xDC** (wrong) |
-| Actual frame allocation | **ESP 0x3A0** | **ESP 0x3A4** (wrong) |
+| Actual saved-this stack slot | **EBP-0xAC** | **EBP-0xAC** (verified) |
+| Actual frame allocation | **ESP 0x3A0** | **ESP 0x3A0** (verified) |
+| Native EBP stack operand positions | **5,717** | **5,717/5,717** |
+| Whole native GPR-role /width debt | **17,435 x86** | **522 wrong GPR positions /5 wrong widths** |
 | Owned separately afterRET switch DATA | **567B** | **567B** (verified) |
 | Strict original inner case intervals | — | **83 cases; 76,519 original CODE B /16,367 native x86 mnemonic+GPR matches** |
 | Original physical external PE fields in those 83 cases | **1,275** | **1,275/1,275** |
@@ -60,7 +62,7 @@ Single source/whole-parent verifier:
 | Actual direct intra-function branches audited by native target ordinal | **1,834** | **all 1,834 destinations match** |
 | **Whole original callable accepted exact** | — | **NO** |
 
-The 83 strict cases **are interior evidence, not 82 accepted independent
+The 83 strict cases **are interior evidence, not 83 accepted independent
 functions**, and even correct mnemonics/GPR/widths do not prove branch CFG.
 The F1140–F1143 audit has corrected real gameplay control flow for `0x387`
 (per-frame gravity and angle), `0x388` and `0x330` (native ground/status
@@ -87,11 +89,18 @@ edges, not original stack slots, GPR roles or
 whole-function byte equality. F1149 resolves both original `0x391` FUCOMPP load orders using the existing
 borrowed transform field, verified across all 29 PE fields and 277 native
 mnemonic/GPR/width positions; see [typed x87 source proof](CHARACTEROBJECT_NATIVE_391_TRANSFORM_X87_F1149.md).
+F1150 recovers the original frame and all EBP stack offsets through genuine
+expression temporaries and a shared 38A loop index; see [native stack proof](CHARACTEROBJECT_NATIVE_ALL_STACK_SLOTS_F1150.md).
+Remaining work is original GPR roles in 358–35E and 3E6, with five instruction
+width differences in 35B/35E/3E6. The source is only 3B longer but remains NONEXACT.
 Earlier [F1128 attempts](CHARACTEROBJECT_NATIVE_391_392_393_F1128.md)
 remain negative historical evidence, not a current x87 blocker. `0x3E6` retained **105/105 native mnemonics and 9/9 PE fields**
 but only **30/105 native GPR positions**. Ten isolated 3E6 and eleven
 preceding 3E5 full-parent grammar tests were unsuccessful (retained
-under ignored `.analysis/f1137-*`).
+under ignored `.analysis/f1137-*`). Four additional typed-parent-action /preceding
+transform-assignment full-parent probes after F1150 likewise leave all 522
+GPR differences unchanged (`.analysis/f1151-native-gpr-types/`); those
+negative sources are retained and were not adopted.
 
 **Reproduction:**
 

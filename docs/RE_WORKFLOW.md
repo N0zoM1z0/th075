@@ -5,9 +5,10 @@ Do not use archived H184 no-active-goal instructions. Current priorities and
 the handoff clean-state snapshot are in [RE_HANDOFF.md](RE_HANDOFF.md).
 Historical documents and tentative Ghidra labels are **not proof**.
 The current full original-shaped *nonexact* giant parents include
-`probes/CharacterObjectWhole0050A580F1044.cpp` (**81,572B/17,435 x86
-against original 81,539B/17,435 x86**, all 1,834 native direct branch targets aligned, 8 provisional native GPR case intervals and wrong stack
-frame), 82KB `probes/FighterWhole004AC040F1020.cpp` (original-length
+`probes/CharacterObjectWhole0050A580F1044.cpp` (**81,542B/17,435 x86
+against original 81,539B/17,435 x86**, all 1,834 native direct branch targets aligned, original frame/all EBP
+slots recovered, but 8 provisional native GPR case intervals (522 wrong GPR
+positions /5 wrong widths)), 82KB `probes/FighterWhole004AC040F1020.cpp` (original-length
 CODE/frame but 12 width and 6,958 GPR-role errors), plus local
 58KB F917 and 46KB F901 source probes. The 81KB original whole
 case verifier is `scripts/verify-characterobject-current-recovered-f1068.py`.

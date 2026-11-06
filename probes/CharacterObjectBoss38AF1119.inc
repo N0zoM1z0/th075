@@ -36,10 +36,11 @@ case 0x38A: {
             SetNativeActionAt0040FAC0(0x385);
             reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
                 0x347,SELF_FIELD(unsigned int,0x44),SELF_FIELD(unsigned int,0x48),SELF_FIELD(signed char,0x66),1);
-            for (int shot=0;shot<15;++shot)
+            int shot;
+            for (shot=0;shot<15;++shot)
                 reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
                     0x33A,SELF_FIELD(unsigned int,0x44),SELF_FIELD(unsigned int,0x48),SELF_FIELD(signed char,0x66),1);
-            for (int shot=0;shot<15;++shot)
+            for (shot=0;shot<15;++shot)
                 reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
                     0x389,SELF_FIELD(unsigned int,0x44),SELF_FIELD(unsigned int,0x48),SELF_FIELD(signed char,0x66),1);
             reinterpret_cast<F1051Grandparent*>(PARENT)->InitTrajectoryAt00453E60(5.0f);

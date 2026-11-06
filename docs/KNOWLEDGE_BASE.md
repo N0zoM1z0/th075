@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1149):**
+**Maintenance annotation, updated 2026-11-06 (F1150):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 979 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -28,6 +28,13 @@ records the remaining 35D/35E scopes and independent 391 reflection.
 F1149 resolves both 391 FUCOMPP physical load fields through the existing
 transform-member window. The strict cohort is now 83 interiors, still no
 new whole exact callable; [typed x87 proof](CHARACTEROBJECT_NATIVE_391_TRANSFORM_X87_F1149.md).
+F1150 restores original frame 0x3A0, saved-this EBP-0xAC and all 5,717
+EBP operand positions, reducing whole CODE to 81,542B (+3).
+[Native temporary/index proof](CHARACTEROBJECT_NATIVE_ALL_STACK_SLOTS_F1150.md)
+records 522 remaining GPR-role and five width differences.
+Four subsequent complete-parent typed-action/transform-assignment probes
+retain the same GPR debt; negative C++/COFF/logs are preserved under
+`.analysis/f1151-native-gpr-types/` without replacing the verified F1150 parent.
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function

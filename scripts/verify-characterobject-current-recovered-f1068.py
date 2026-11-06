@@ -124,6 +124,16 @@ assert code[end+368:]==orig_sparse
 # complete 17,435 instruction count, not a conveniently cropped case.
 assert len(I)==len(NWHOLE)==17435
 assert [n.mnemonic for n in I]==[n.mnemonic for n in NWHOLE]
+# F1150: native expression temporaries and the actually reused 38A
+# loop index recover the original frame and EVERY EBP stack displacement.
+# GPR-role and full-byte debt must still be checked independently below.
+assert I[2].op_str==NWHOLE[2].op_str=='esp, 0x3a0'
+stack_operand=re.compile(r'\[ebp(?:\s+[+-]\s+(?:0x[0-9a-f]+|\d+))?\]')
+native_stack_positions=0
+for k,(n,q) in enumerate(zip(NWHOLE,I)):
+ a,b=stack_operand.findall(n.op_str),stack_operand.findall(q.op_str)
+ assert a==b,(k,'original EBP displacement differs',n.op_str,q.op_str)
+ native_stack_positions+=len(a)
 native_instruction_by_address={n.address:k for k,n in enumerate(NWHOLE)}
 source_instruction_by_address={n.address:k for k,n in enumerate(I)}
 physical_original_branch_positions=0
@@ -913,6 +923,8 @@ summary={'original_Boss':'0x0050A580','original_whole_CODE_B':81539,
  'additional_original_native_provisional_interiors':provisional_rows,
  'provisional_CASES_NOT_counted_as_recovered_or_exact':len(provisional_rows),
  'whole_native_original_direct_jumps_audited':physical_original_branch_positions,
+ 'whole_native_EBP_stack_operand_positions_verified':native_stack_positions,
+ 'original_frame_and_all_EBP_displacements_equal':True,
  'remaining_nonexact_native_branch_target_mismatches':native_branch_target_debt}
 (O/'verified-summary.json').write_text(json.dumps(summary,indent=2)+'\n')
 print('LIVE',len(rows),'original game action interiors: original',original_total,'CODE B /',x86total,'x86, native mnemonic+GPR',x86total,'/',x86total,'and genuine PE nonlocal',fields_total,'/',fields_total,'. Current partial source',end,'B /',len(I),'x86, NOT exact whole 81KB; accepted new original bytes 0.')
