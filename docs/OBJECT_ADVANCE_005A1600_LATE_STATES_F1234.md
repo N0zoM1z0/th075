@@ -1,5 +1,8 @@
 # F1234 — native-backed states 900–916 in 005A1600
 
+Historical partial stage; [F1235](OBJECT_ADVANCE_005A1600_COMPLETE_PARENT_F1235.md)
+completes all76 states. All F1234 evidence is retained; the whole is nonexact.
+
 The live source `probes/CharacterObjectActions005A1600F1231.cpp` now writes
 **67/76** real nondefault states. This extends
 [F1233](OBJECT_ADVANCE_005A1600_FINAL_EARLY_F1233.md) with **900–916**:

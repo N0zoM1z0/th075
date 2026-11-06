@@ -1,4 +1,4 @@
-# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1234)
+# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1235)
 
 **Start here.** Continue all dirty work; there are no other active sessions.
 Work on both large/core and smaller authored originals. Use local commits
@@ -202,18 +202,19 @@ listing/both diagnostics/verified-summary.json; `whole-audit.py [OBJ]`.
 [F1227 proof](OBJECT_ADVANCE_004CA6E0_COMPLETE_PARENT_F1227.md). Continue this
 complete body; all42,511 original B remain pending.
 
-Current incomplete 43KB source:
+Current complete 43KB source:
 [`probes/CharacterObjectActions005A1600F1231.cpp`](../probes/CharacterObjectActions005A1600F1231.cpp),
-`ObjectAdvance5A1600F1231.hpp`. F1234 writes67/76 states:
-800–811/813–844/900–916/988/989/995–997/999, with five genuine user loops.
-Fresh35,595B/9,593 x86 matches written mnemonic/local-branch/normalized operands;
-**1,101 GPR/19 width/3,125 EBP differences remain**, first005A88A8/state909 ordinal0.
-Its cause is unproved; earlier written states have zero raw GPR debt.
-**917–925 and one real user index remain unwritten**; do not pad or count interiors.
-Native43,599B/frame21Ch/this-1Ch remain pending; partial frame178h/this-18h.
-Selected `.analysis/f1234-object-5a1600-late/reviewed.cpp/hpp/obj/asm`, source
-diagnostic/actual debt/`verified-summary.json`; [F1234 proof](OBJECT_ADVANCE_005A1600_LATE_STATES_F1234.md).
-F1231 retains original/owner evidence. Continue917 onward; no whole exact credit.
+`ObjectAdvance5A1600F1231.hpp`. F1235 has all76 states and six real indices;
+selected43,596B/11,620 x86 vsnative43,599B. Original frame21Ch/this-1Ch and all
+3,814 EBP positions agree. All1,196 direct targets,866 CODE destinations,
+77 dense ordinals/200 sparse bytes agree; mnemonic/non-GPR/EBP debt0.
+**613 GPR/11 widths remain**, only909–917's opening, first005A88A8/whole7965,
+last005A95C7/whole8879. Cause unproved; all43,599B remain pending.
+Postfix/explicit assignment for908 loop are identical-code negative controls.
+Selected `.analysis/f1235-object-5a1600-complete/complete.cpp/hpp/obj/asm`,
+both diagnostics/`verified-summary.json`; `whole-audit.py [OBJ]`.
+[F1235 proof](OBJECT_ADVANCE_005A1600_COMPLETE_PARENT_F1235.md); F1231 retains
+original/owner evidence. Continue register debt in this complete body; no exact credit.
 
 All other giant authored originals remain open; use the
 [actual giant dispatch manifest](../config/fighter-boss-dispatch-fingerprints.json)

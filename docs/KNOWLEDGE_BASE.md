@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1234):**
+**Maintenance annotation, updated 2026-11-06 (F1235):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -603,6 +603,20 @@ all 43,599 original B stay pending. [Late-state proof](OBJECT_ADVANCE_005A1600_L
 and `.analysis/f1234-object-5a1600-late/verified-summary.json` retain three serial
 builds, immutable source/COFF and actual debt. No accepted input/header/origin/
 ledger change, full CI, corpus replay or new exact credit.
+
+F1235 completes all 76 states of `005A1600`. Final nine intervals add 7,999B/2,027
+x86; selected whole emits 43,596B/11,620 x86 against original 43,599B/11,620.
+The sixth real loop recovers frame 21Ch/this-1Ch and all 3,814 raw EBP positions.
+All 1,196 direct targets, 866 CODE destinations and 77 dense ordinals/200 sparse
+bytes agree; mnemonic/non-GPR/stack debt 0. **613 GPR/11 widths remain**, only
+909–917's opening, first 005A88A8/whole7965 and last 005A95C7/whole8879.
+Original 43,599B remain pending. Native corrections include 918's owner-first
+FILD/FADDP and 920's self-coordinate conversions. Both 908 loop postfix/explicit
+assignment controls preserve complete CODE/DATA and all 943 COFF records and
+are rejected. Selected source is byte-restored. [Whole-parent proof](OBJECT_ADVANCE_005A1600_COMPLETE_PARENT_F1235.md)
+and `.analysis/f1235-object-5a1600-complete/verified-summary.json` retain all
+four serial builds and whole diagnostics. No accepted input/header/origin/
+ledger/canonical infrastructure change, full CI, corpus replay or exact credit.
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function
