@@ -979,3 +979,4 @@ SpriteDrawingF751::DrawProjectedQuad
 SpriteDrawingF780::DrawQuad
 ArchiveCatalog::Release
 SceneObject::ReleaseAt0043B0B0
+GameApplication::RunAt00602A60

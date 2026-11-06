@@ -17,7 +17,7 @@ the historical R268 checkpoint and every later verified adoption. The 95
 unresolved origins remain unknown; they do not block reconstruction of
 independently reviewed authored functions. Include all pending bytes in the conservative goal denominator.
 For the still-unmatched authored backlog, count provenance via
-`config/function-origins.csv` (currently 23 = 22 giant + 1
+`config/function-origins.csv` (currently 22 = 22 giant + 0
 small/medium), not by assuming every unknown candidate is authored.
 The 11 independently authored, formerly owner-blank copy/audio/sprite
 candidates have now all been accepted in F755–F780. Remaining origin-
@@ -39,7 +39,8 @@ The 46KB F901 and 58KB F917 local native research parents remain
 nonexact too. F1025/F1026/F1028 certify their genuine *external PE
 destination addresses*, NOT original relocation offsets or full
 callable equality. F1155/F1157 accepted the complete ArchiveCatalog and BattleScene destructors;
-current backlog is 22 giant functions plus WinMain.
+F1171 accepted complete WinMain (2,987 CODE + 60 owned DATA bytes/173 fields);
+current authored backlog is 22 giant functions, with no smaller originals pending.
 Never restart at obsolete F938 marker-only giant source. **Only cold-replay new/affected units**,
 never all units. Keep compiler builds serial. Remove only obsolete reproducible
 outputs, preserving evidence, manifests, sources, inputs and shared tools.

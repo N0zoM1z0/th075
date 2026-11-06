@@ -1,8 +1,8 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1158):**
+**Maintenance annotation, updated 2026-11-06 (F1171):**
 The **current authoritative** pinned-original whole-function evidence,
-81KB Boss CFG (all 1,834 direct branch targets now match), 981 accepted
+81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
 in the [live agent handoff](RE_HANDOFF.md) and
 [storage hygiene guide](STORAGE_HYGIENE.md). This chronological
@@ -55,6 +55,15 @@ Two helper parameter views are aligned without changing CODE/DATA;
 [whole native operand proof](CHARACTEROBJECT_WHOLE_OPERAND_PROOF_F1158.md).
 The remaining 522 GPR positions/five widths are still unaccepted debt.
 
+F1171 accepts the complete **2,987B/654-x86 WinMain `00602A60`**, all
+173 fields and 60B scene DATA, after canonical one-unit cold replay.
+Root-scope real resources and used const-reference construction values recover
+all native stack slots; thirteen stale data labels and eight separate OK-string
+addresses are reconciled. [Whole original proof](WINMAIN_WHOLE_EXACT_F1171.md).
+The current ledger has 982 exact originals /871,649 CODE bytes; all 22 remaining
+authored whole functions are giants. Historical WinMain negatives remain
+true only for their recorded parents and do not override this acceptance.
+
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function
 ledger or the new-agent work queue. Old F-series headings with words like
@@ -70,13 +79,13 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
 
 ## Current verified original-game status (one short snapshot)
 
-- **981 cold-exact source-present functions**, **868,662 original authored
-  CODE bytes**, **44.01% reviewed authored coverage** and **43.94%
+- **982 cold-exact source-present functions**, **871,649 original authored
+  CODE bytes**, **44.16% reviewed authored coverage** and **44.09%
   conservative coverage** of native original CODE. The independently
   reviewed authored provenance cohort has **1,004** candidates, so
-  **23 authored whole functions remain NONEXACT**: **22** large
-  (1,102,055 original CODE B) plus **1** small/medium
-  (2,987 CODE B). The older **25**-function subset counted only
+  **22 authored whole functions remain NONEXACT**: **22** large
+  (1,102,055 original CODE B) plus **0** small/medium
+  (0 CODE B). The older **25**-function subset counted only
   `config/functions.csv.owner=authored` unfinished rows and omitted
   11 independently authored, formerly owner-blank small/medium targets,
   of which F755, F758, F760, F765, F766, F769, F770, F775, F776, F779 and F780 have accepted all eleven. See [current remaining smaller address](RE_HANDOFF.md).

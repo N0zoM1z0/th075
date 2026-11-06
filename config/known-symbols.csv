@@ -937,3 +937,4 @@ address,name,module,confidence,evidence
 0x0040C9A0,SpriteDrawingF780::DrawQuad,SpriteDrawing,inferred,"R011; F780; whole 115 CODE B/37 x86/four real typed PE call targets; 132B borrowed quad plus two native saved prior lookup results; original owner/name provisional"
 0x0041CE50,ArchiveCatalog::Release,ArchiveCatalog,inferred,"R053; F1155; full 171B/51 x86/14 PE fields, scalar resource and new[]-paired filename deletion; one-unit cold exact; original private names/layout provisional"
 0x0043B0B0,SceneObject::ReleaseAt0043B0B0,SceneObject,inferred,"R054; F1157; full 248B/75 x86/12 fields, native virtual EH and typed texture/HUD deletion; one-unit cold exact; private layouts provisional"
+0x00602A60,GameApplication::RunAt00602A60,GameApplication,inferred,R113; F1171; whole original WinMain 2987 CODE plus 60 owned DATA bytes/654 x86/173 fields; canonical one-unit cold exact; scene names/private field meanings provisional
