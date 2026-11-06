@@ -1,18 +1,9 @@
 #include "FighterProjectileXViewF917.hpp"
 #include "FighterAnimationPhaseBorrowedF1024.hpp"
-// F1020 selected GROWING natural C++ original-shaped whole-parent fighter.
- // 82KB original GAME is NONEXACT: real cases restored from F938-F958
- // with their true C++ native game calls, still many original markers;
- // original full 0x720 stack frame and EBP this have not been restored.
- // Original whole callable exact CODE credit is ZERO.
- // F938 original full-function source PROBE,
-// deliberately NONEXACT. The 0x59 game case is now real native-observed
-// C++ rather than the historical placeholder in F652. Numerous other
-// cases remain explicit markers. Never credit the parent as whole exact.
-// Its original includes / stage variants are retained for independent
-// full-VC7.1 recompilation and original-PE case verification.
-// F539 natural switch *probe*, not original fighter source or CODE credit.
-// This file is regenerable from the original PE under ignored .analysis.
+// F1198 complete original-shaped 004AC040 parent, continued from F1020.
+// Native frame 0x720, saved-this and all EBP operands are verified.
+// Shared early getter/default exits are restored. Interior CFG/operand debt
+// and 6958 GPR positions /12 widths still make the whole callable NONEXACT.
 class FighterSwitchF598_Boss004AC040 { public: void SpawnDirectedAt453A70(int,int,int,char,int); void SpawnFloatXYAt453A70(int,float,float,char,int); void SpawnWithFloatAt453A70(int,int,float,char,int); void SetMotionStateAt40FBB0(int,float,int); void ResetMotionAt40FC50(); void InitTrajectoryAt453E60(float); void ApplyAt453E80(int); void BeginStateAt454A70(int); void RefreshStateAt452B30(); virtual void NativeVirtualFrameAdvance(); void Advance(); void ResetAt453E20(); void SetAngleAt40FB70(float,float); void SetAngleBitsAt40FB70(int,float); void PrepareActionAt453D60(int); void PrepareActionAt453D40(int); void StartAnimationAt46D000(int); void SpawnAt453C80(int,float,float,char,int); void SpawnMixedAt453C80(int,int,float,char,int); void ConfigureStormAt454BC0(int,int,int); void SpawnRawAt453C80(int,int,int,char,int); void SpawnSevenAt453B50(int,int,int,char,int,int,int); void SpawnSevenFloatAt453B50(int,float,float,char,int,int,int); void SpawnSevenRawXFloatYAt453B50(int,int,float,char,int,int,int); int RandAt455580(int,int); short GetNativeActionAt40FA30(); void SetNativeActionAt40FAC0(int); signed char ContactAt454EE0(); void SetAuxActionAt40FB40(int); };
 extern unsigned int g_FighterProbeMarker;
 extern signed char g_F1004_ModeAt006714D0;
@@ -133,7 +124,7 @@ void FighterSwitchF598_Boss004AC040::Advance() {
                     }
                 }
             }
-            break;
+            goto native_third_shared_getter;
         case 0x1:
             if (FLAG == 0) {
                 ResetAt453E20();
@@ -175,7 +166,7 @@ void FighterSwitchF598_Boss004AC040::Advance() {
                     }
                 }
             }
-            break;
+            goto native_third_shared_getter;
         case 0x3:
             if (FLAG == 0) {
                 ResetAt453E20();
@@ -198,8 +189,8 @@ void FighterSwitchF598_Boss004AC040::Advance() {
             if (GetNativeActionAt40FA30() == I16(0x70))
                 SetNativeActionAt40FAC0(0);
             break;
-        case 0x4: POS = 6.0f; break;
-        case 0x5: POS = -6.0f; break;
+        case 0x4: POS = 6.0f; goto native_third_shared_getter;
+        case 0x5: POS = -6.0f; goto native_third_shared_getter;
         case 0x6:
             if (F1024_PHASE(this).stageAt62 == 0 && F1024_PHASE(this).frameAt64 == 0 &&
                     (U8(0x511) == 3 || FLAG > 0)) {
@@ -705,9 +696,8 @@ void FighterSwitchF598_Boss004AC040::Advance() {
         default:
             if (GetNativeActionAt40FA30()==S16(0x70))
                 SetNativeActionAt40FAC0(0);
-            else
-                GetNativeActionAt40FA30();
             break;
+#include "FighterThirdSharedGetter004AC040F1198.inc"
     }
 }
 #undef OWNER

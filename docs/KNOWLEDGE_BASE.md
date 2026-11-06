@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1197):**
+**Maintenance annotation, updated 2026-11-06 (F1198):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -231,6 +231,20 @@ all non-GPR operands agree. All 1,491 COFF records are unchanged.
 [Whole original CFG proof](FIGHTER_46KB_WHOLE_CFG_F1197.md).
 The 46,754B/13,230-x86 source remains NONEXACT: 2,736 GPR /five widths.
 Only the affected parent is cold-built; no new exact credit or corpus replay.
+
+F1198 restores 82KB 004AC040's shared getter reachability: four real
+0/2/4/5 exits now enter 004C039F, while default's JNE skips the extra call.
+Only five candidate branch-displacement bytes change. A fresh selected /GX
+build retains original 82,796B/22,721 x86, frame 0x720 /this EBP-0x64,
+all 7,432 EBP positions, 2,201 CODE destinations, 151 dense ordinals and
+1,126B DATA. All 2,352 COFF field shapes/addends/destinations agree;
+160 compiler-local names change with unchanged offsets.
+[Shared tail CFG proof](THIRD_FIGHTER_SHARED_TAIL_CFG_F1198.md).
+The complete native audit also exposes still-unfixed **45 interior CFG
+and 26 non-GPR operand differences**, alongside 6,958 GPR /12 widths.
+Those rows are retained by native action in the local remaining-differences
+receipt; the old F1028 PE-target proof did not certify these properties.
+Whole NONEXACT; accepted totals unchanged; no CI or corpus replay.
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function
