@@ -1,9 +1,12 @@
 // F1183 live whole original 0045DD70 parent, continued from the existing
 // F652 native D1/D2 source. The complete 60,999B callable is NONEXACT.
-// Missing states remain explicit research markers and earn no CODE credit.
+// All original state bodies are sourced; whole stack/GPR/CFG validation is pending.
 // Preserve independently reviewed current bodies and all six table groups.
-class FighterSwitchF598_Boss0045DD70 { public: void SetMotionStateAt40FBB0(int,float,int); void SetMotionFloatAt40FBB0(float,float,float); void ResetMotionAt40FC50(); void SpawnDirectedAt453A70(int,int,int,char,int); void SpawnWithFloatAt453A70(int,int,float,char,int); void SpawnFloatXYAt453A70(int,float,float,char,int); void InitTrajectoryAt453E60(float); virtual void NativeVirtualFrameAdvance(); void Advance(); void SetNonnegativeWordAt453E80(short); void SpawnTrackedAt453B50(short,float,float,signed char,signed char,unsigned char,unsigned char); void SpawnFloatXAt453A70(int,float,int,char,int); int SelectRangeAt455580(int,int); void PlaySoundAt453D40(short); void ResetAt453E20(); void PrepareActionAt453D60(int); void StartAnimationAt46D000(int); void SpawnAt453C80(int,float,float,char,int); void SpawnMixedAt453C80(int,int,float,char,int); void SpawnRawXYAt453C80(int,int,int,char,int); void ConfigureStormAt454BC0(int,unsigned char,unsigned int); short GetNativeActionAt40FA30(); void SetNativeActionAt40FAC0(int); signed char ContactAt454EE0(); void SetAuxActionAt40FB40(int); };
-extern unsigned int g_FighterProbeMarker;
+class FighterSwitchF598_Boss0045DD70 { public: void SetMotionStateAt40FBB0(int,float,int); void SetMotionFloatAt40FBB0(float,float,float); void ResetMotionAt40FC50(); void SpawnDirectedAt453A70(int,int,int,char,int); void SpawnWithFloatAt453A70(int,int,float,char,int); void SpawnFloatXYAt453A70(int,float,float,char,int); void InitTrajectoryAt453E60(float); virtual void NativeVirtualFrameAdvance(); void Advance(); void BeginFadeParametersAt454A70(unsigned char); void SelectResourceParametersAt452B30(); void SetNonnegativeWordAt453E80(short); void SpawnTrackedAt453B50(short,float,float,signed char,signed char,unsigned char,unsigned char); void SpawnFloatXAt453A70(int,float,int,char,int); int SelectRangeAt455580(int,int); void PlaySoundAt453D40(short); void ResetAt453E20(); void PrepareActionAt453D60(int); void StartAnimationAt46D000(int); void SpawnAt453C80(int,float,float,char,int); void SpawnMixedAt453C80(int,int,float,char,int); void SpawnRawXYAt453C80(int,int,int,char,int); void ConfigureStormAt454BC0(int,unsigned char,unsigned int); short GetNativeActionAt40FA30(); void SetNativeActionAt40FAC0(int); signed char ContactAt454EE0(); void SetAuxActionAt40FB40(int); };
+extern float g_ReimuStormFallAt00658044;
+extern float g_ReimuWarpSpreadAt006583B4;
+extern float g_ReimuWarpSpeedAt00657CF8;
+extern float g_ReimuArenaCenterAt00657884;
 extern signed char g_ReimuRepeatSettingAt006714D0;
 extern float g_ReimuReverseDriftAt0065907C;
 extern float g_ReimuRandomLiftAt00657850;
@@ -87,7 +90,7 @@ void FighterSwitchF598_Boss0045DD70::Advance() {
                     }
                 }
             }
-            break;
+            goto native_shared_getter;
         case 0x1:
             if (FLAG == 0) {
                 ResetAt453E20();
@@ -129,7 +132,7 @@ void FighterSwitchF598_Boss0045DD70::Advance() {
                     }
                 }
             }
-            break;
+            goto native_shared_getter;
         case 0x3:
             if (FLAG == 0) {
                 ResetAt453E20();
@@ -152,8 +155,8 @@ void FighterSwitchF598_Boss0045DD70::Advance() {
             if (GetNativeActionAt40FA30() == I16(0x70))
                 SetNativeActionAt40FAC0(0);
             break;
-        case 0x4: POS = 4.5f; break;
-        case 0x5: POS = -4.5f; break;
+        case 0x4: POS = 4.5f; goto native_shared_getter;
+        case 0x5: POS = -4.5f; goto native_shared_getter;
         case 0x6:
             if (S16(0x62) == 0 && S16(0x64) == 0 &&
                     (U8(0x511) == 3 || FLAG > 0)) {
@@ -639,15 +642,16 @@ case 0x48: {
 #include "ReimuSpecialAttacksF1189.inc"
 #include "ReimuMeterAttacksF1190.inc"
 #include "ReimuCounterTailF1191.inc"
-        case 0x2DB: g_FighterProbeMarker = 732; break;
+#include "ReimuRingStormF1192.inc"
 #include "ReimuDriftTimerF1191.inc"
-        case 0x2EF: g_FighterProbeMarker = 752; break;
+#include "ReimuRandomWarpF1192.inc"
 #include "ReimuDifficultyShotF1191.inc"
-        case 0x303: g_FighterProbeMarker = 772; break;
-        case 0x304: g_FighterProbeMarker = 773; break;
-        case 0x31B: g_FighterProbeMarker = 796; break;
-        case 0x31C: g_FighterProbeMarker = 797; break;
-        default: g_FighterProbeMarker = 0;
+#include "ReimuResourceLoopsF1192.inc"
+#include "ReimuFinalEffectsF1192.inc"
+        default:
+            if (GetNativeActionAt40FA30()==S16(0x70)) SetNativeActionAt40FAC0(0);
+            break;
+#include "ReimuSharedGetterTailF1192.inc"
     }
 }
 #undef OWNER

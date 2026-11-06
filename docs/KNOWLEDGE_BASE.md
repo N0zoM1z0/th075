@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1191):**
+**Maintenance annotation, updated 2026-11-06 (F1192):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -166,6 +166,19 @@ nonmarker intervals and all 144 native physical handler orders are preserved.
 Parent 56,273B/15,547 x86, frame 0x2FC /saved-this EBP-0xC, six remaining
 case markers plus default/common-tail debt. Recent 84 interiors total
 41,656B/11,512 x86/1,066 fields; no whole exact credit or full replay.
+
+F1192 removes all Reimu case/default markers and restores the real four-entry
+shared getter. The last six states add 4,708 native interior bytes /1,288
+x86 /124 fields. Ten actual loop indices naturally recover original frame
+0x380, saved-this EBP-0x34 and all 5,444 EBP positions. The entire parent
+now emits 61,000B versus native 60,999, with all 16,837 mnemonics, all
+1,684 direct native branch targets, non-GPR operands, 1,682 CODE fields,
+144 physical handler orders and 142 dense native instruction destinations
+verified. [Complete stack/CFG/PE proof](REIMU_WHOLE_STACK_CFG_F1192.md).
+An after-switch return trampoline and three reversed x87 expressions were
+rejected; the label inside the switch restores original exits. Whole source
+remains NONEXACT: 6,311 GPR positions /five widths, earliest state 59 at
+0045FDA9. No accepted bytes, mass replay or new test suite.
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function

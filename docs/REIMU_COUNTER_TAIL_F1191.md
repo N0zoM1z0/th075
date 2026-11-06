@@ -1,5 +1,10 @@
 # F1191 — Reimu eight counter/drift/timer states in native physical order
 
+**Historical F1191 checkpoint:** F1192 removes all remaining markers,
+restores original frame/all stack slots and whole CFG/PE destinations;
+[current full-parent proof](REIMU_WHOLE_STACK_CFG_F1192.md). The dimensions
+below describe commit `b3291a60`.
+
 The same one-body `probes/FighterWhole0045DD70F1183.cpp` now restores
 2D0–2D3, 2DF/2E0, 2E5 and 2F9 through the F1191 counter/drift/timer
 fragments. Original **0045DD70 remains NONEXACT**, 60,999B/16,837 x86.

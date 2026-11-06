@@ -1,4 +1,4 @@
-# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1191)
+# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1192)
 
 **Start here.** Work on both large/core original functions and smaller entire
 original functions. The user requests meaningful **multiple local commits** named
@@ -133,20 +133,28 @@ CODE/COFF exactness**. See [F1138 source borrow](CHARACTEROBJECT_WHOLE_NATIVE_PH
 | **`004AC040`** 82,796B/22,721 x86, 1,126 afterRET DATA | 82,796B/22,721 x86, original saved-this and frame; **12 wrong widths, 6,958 GPR positions** | [F1028 native PE targets](THIRD_FIGHTER_WHOLE_82KB_PE_TARGETS_F1028.md), 2,191 external targets |
 | **`00543210`** 58,294B/16,471 x86, 943 DATA | 58,293B/16,471 x86; **3 widths, 1,741 GPR positions** | [F1025 native PE targets](FIGHTER_58KB_ALL_NATIVE_PE_TARGETS_F1025.md), 1,697 targets |
 | **`005214B0`** 46,755B/13,230 x86, 901 DATA | 46,754B/13,230 x86; **5 widths**, original physical COFF/GPR wrong | [F1026 native PE targets](FIGHTER_46KB_ALL_NATIVE_PE_TARGETS_F1026.md), 1,341 targets |
-| **`0045DD70`** 60,999B/16,837 x86 | Live F1183–F1191 partial parent **56,273B/15,547 x86**; six nondefault markers, frame/stack/GPR wrong | [F1191 counter/drift/timer states](REIMU_COUNTER_TAIL_F1191.md), [F1190](REIMU_METER_ATTACKS_F1190.md), [F1189](REIMU_SPECIAL_ATTACKS_F1189.md), [F1188](REIMU_CHARGED_ATTACKS_F1188.md), [F1187](REIMU_SCRIPTED_COMBOS_F1187.md), plus [F1186](REIMU_SCRIPTED_ATTACKS_F1186.md)/[F1185](REIMU_COMMAND_STATES_F1185.md)/[F1184](REIMU_EARLY_RECOVERY_STATES_F1184.md)/[F1183](REIMU_FALLING_STATES_F1183.md): 11,512 x86 /1,066 fields; no whole exact |
+| **`0045DD70`** 60,999B/16,837 x86 | Live F1192 complete source **61,000B/16,837 x86 (+1B)**; original frame/saved-this/all 5,444 EBP slots; **6,311 GPR positions /5 widths** | [F1192 complete stack/CFG/PE proof](REIMU_WHOLE_STACK_CFG_F1192.md): all 1,684 direct targets, 1,682 CODE fields, 142 actual dense destinations; NONEXACT |
 
 Current Reimu source: [`probes/FighterWhole0045DD70F1183.cpp`](../probes/FighterWhole0045DD70F1183.cpp),
-continued from the retained F652 D1/D2 source. Eighty-four real states
-replace old markers, covering 41,656 original interior bytes /11,512 x86
-and 1,066 physical external fields. Every mnemonic, branch target, non-GPR
-operand and external field agrees in this recent cohort. Latest 2F9 matches
-all GPR roles but its return JMP is short while later states remain markers.
-The recent cohort still has 5,509 GPR positions, 26 widths and stack debt.
-All 129 previous nonmarker intervals and all 144 physical handler orderings
-are preserved. **No whole exact callable is added.** Finish the six states
-**2DB, 2EF, 303, 304, 31B and 31C**, then the native shared getter tail.
-Keep six-case/default/common-tail debt explicit; do not count this partial
-56KB source as the original whole.
+continued from F652/F1183. **All case/default markers are removed.** The
+last six 2DB/2EF/303/304/31B/31C states and four-entry shared getter are
+sourced. Ten genuine loop indices recover original **frame 0x380,
+saved-this EBP-0x34 and all 5,444 EBP operands**. Every whole mnemonic,
+non-GPR operand, all **1,684 direct branch target ordinals**, **1,682 CODE
+field destinations**, all 144 physical handler orders and all 142 actual
+dense-entry instruction ordinals agree. Owned DATA is 1,090B, including
+522 sparse bytes. These are original whole observations, not exact credit.
+
+Remaining Reimu debt: **6,311 GPR positions /5 widths**, in 63's three
+EAX CMP encodings and 252/254's two AL SUB encodings. The first GPR
+mismatch is state **59 at 0045FDA9** (whole ordinal 2,292); investigate
+that boundary and preceding 58 source/actual helper parameter views.
+The local `.analysis/f1192-reimu-final-states/whole-audit.py` diagnoses
+only an explicitly selected fresh whole object. Preserve the correct
+inside-switch shared getter label: an after-switch return trampoline
+matches counts but gives wrong original ordinary-exit destinations.
+**The complete original still is NONEXACT and adds no accepted bytes.**
+All original 60,999 pending bytes remain counted; no all-unit replay.
 
 All other giant authored originals remain open; use the
 [actual giant dispatch manifest](../config/fighter-boss-dispatch-fingerprints.json)
