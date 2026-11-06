@@ -1,7 +1,8 @@
 #include "FighterAnimationPhaseBorrowedF1024.hpp"
 #include "FighterProjectileXViewF917.hpp"
-// F539 natural switch *probe*, not original fighter source or CODE credit.
-// This file is regenerable from the original PE under ignored .analysis.
+// F1196 complete original-shaped 00543210 parent, continued from F917/F1041.
+// Native stack, CFG and reference destinations agree; 1741 GPR positions
+// and three instruction widths remain NONEXACT. No whole CODE credit.
 class FighterSwitchF598_Boss00543210 { public: void SpawnDirectedAt453A70(int,int,int,char,int); void SpawnWithFloatAt453A70(int,int,float,char,int); void SpawnFloatXRawYAt453A70(int,float,int,char,int); void SpawnFloatXYAt453A70(int,float,float,char,int); void SpawnRawXYAt453C80(int,int,int,char,int); void SpawnMixedAt453C80(int,int,float,char,int); void SpawnSevenAt453B50(int,int,int,char,int,int,int); void PrepareActionAt453D40(int); void SetMotionStateAt40FBB0(int,float,int); void MotionAt40FB70(float,float); void ResetMotionAt40FC50(); void InitTrajectoryAt453E60(float); int RandomBoundaryAt455580(int,int); void InitTrajectoryAt453E80(int); virtual void NativeVirtualFrameAdvance(); void Advance(); void ResetAt453E20(); void PrepareActionAt453D60(int); void SubactionAt454A70(int); void ConfigureStormAt454BC0(int,int,int); void SubactionAt452B30(); void StartAnimationAt46D000(int); void SpawnAt453C80(int,float,float,char,int); short GetNativeActionAt40FA30(); void SetNativeActionAt40FAC0(int); signed char ContactAt454EE0(); void SetAuxActionAt40FB40(int); };
 extern unsigned int g_FighterProbeMarker;
 extern signed char g_ModeAt006714B4;
@@ -987,8 +988,8 @@ void FighterSwitchF598_Boss00543210::Advance() {
 #include "FighterTerminalShotF681.inc"
 #include "FighterTerminalCounterF674.inc"
 #include "FighterNativeDefaultF778.inc"
+#include "FighterSharedGetterTail00543210F1196.inc"
     }
-#include "FighterEarlySharedGetterTailF781.inc"
 }
 #undef OWNER
 #undef I16

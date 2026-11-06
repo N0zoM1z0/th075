@@ -1,5 +1,11 @@
 # F1041 — Preserve the complete 58KB original-shaped Fighter in Git
 
+**Current continuation:** F1196 corrects the live tracked parent's shared-tail
+scope, all 253 ordinary exit targets and five non-GPR operands; see the
+[whole CFG/operand proof](FIGHTER_58KB_WHOLE_CFG_OPERANDS_F1196.md).
+The SHA256 below records the original F1041 adoption, not today's source.
+The complete callable remains NONEXACT with 1,741 GPR /three-width debt.
+
 The independently authored Japanese TH075 v1.11 fighter `Advance`
 `00543210` remains one **nonexact 58,294-byte / 16,471 x86** original
 callable, followed by 943 separately owned switch DATA bytes.

@@ -26,7 +26,7 @@
             }
             if (S16(0x62)==3) {
                 POS54=POS54-POS5C;
-                if (POS54+POS48<=g_ThresholdAt0065782C) {
+                if (POS54+POS48<g_ThresholdAt0065782C) {
                     POS48=0.0f;
                     ResetAt453E20();
                     SetAuxActionAt40FB40(4);
@@ -67,7 +67,7 @@
             }
             if (S16(0x62)>3 && S16(0x62)<5) {
                 POS54=POS54-POS5C;
-                if (POS54+POS48<=g_ThresholdAt0065782C) {
+                if (POS54+POS48<g_ThresholdAt0065782C) {
                     POS48=0.0f;
                     ResetAt453E20();
                     SetAuxActionAt40FB40(5);

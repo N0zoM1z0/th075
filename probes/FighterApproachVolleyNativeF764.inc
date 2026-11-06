@@ -35,7 +35,7 @@
                         && *reinterpret_cast<signed char*>(RAW+0x66)==-1)))
                     || ((F32(0x2D8)+g_F699_SideOffsetAt00657874)>=reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44
                         && *reinterpret_cast<signed char*>(RAW+0x66)==1)
-                    || ((F32(0x2DC)-g_F699_SideOffsetAt00657874)<reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44
+                    || ((F32(0x2DC)-g_F699_SideOffsetAt00657874)<=reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44
                         && *reinterpret_cast<signed char*>(RAW+0x66)==-1)) {
                     SetAuxActionAt40FB40(10);
                     ResetAt453E20();

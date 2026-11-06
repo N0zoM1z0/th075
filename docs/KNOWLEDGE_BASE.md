@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1195):**
+**Maintenance annotation, updated 2026-11-06 (F1196):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -209,6 +209,18 @@ parent remains 726 GPR /six-width NONEXACT. R233-held 454C00/454F70 have
 no new independent owner witness after read-only context checks and remain
 unknown. [Bounded join/origin negative evidence](OBJECT_ADVANCE_0055AC80_JOIN_NEGATIVES_F1195.md).
 No source adoption, exact credit, full CI or corpus replay.
+
+F1196 fixes the live 58KB 00543210 parent's 253 ordinary branch targets
+by moving the four-entry shared getter inside its switch. It corrects five
+real operands: strict landing in 60/61, strict X clamp in 2DC, 20.0f rather
+than 10.0f at 2F0's 453E60 call, and inclusive left-side comparison in 2FA.
+The fresh whole audit now verifies all 1,905 direct targets, all non-GPR
+operands, native frame 0x218 /this EBP-0x44, all 5,119 EBP positions,
+1,707 CODE fields and 156 dense native target ordinals. All 1,863 COFF
+records remain unchanged. [Whole CFG/operand proof](FIGHTER_58KB_WHOLE_CFG_OPERANDS_F1196.md).
+The 58,293B/16,471-x86 source remains NONEXACT with 1,741 GPR /three widths.
+Two 28KB motion-layout controls are byte-identical; `/Op` changes frame and
+instruction count and is rejected. No accepted bytes or corpus replay.
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function

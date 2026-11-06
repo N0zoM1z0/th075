@@ -1,4 +1,4 @@
-# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1195)
+# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1196)
 
 **Start here.** Work on both large/core original functions and smaller entire
 original functions. The user requests meaningful **multiple local commits** named
@@ -64,26 +64,12 @@ Single source/whole-parent verifier:
 | Actual direct intra-function branches audited by native target ordinal | **1,834** | **all 1,834 destinations match** |
 | **Whole original callable accepted exact** | — | **NO** |
 
-The 83 strict cases **are interior evidence, not 83 accepted independent
-functions**, and even correct mnemonics/GPR/widths do not prove branch CFG.
-The F1140–F1143 audit has corrected real gameplay control flow for `0x387`
-(per-frame gravity and angle), `0x388` and `0x330` (native ground/status
-short-circuit OR), and `0x389` (speed decay only in stages<=1).
-Read [F1140 full original CFG proof](CHARACTEROBJECT_ORIGINAL_WHOLE_CFG_AUDIT_F1140.md),
-[F1143 latest stage-speed correction](CHARACTEROBJECT_NATIVE_389_STAGE_SPEED_CFG_F1143.md)
-and [F1132 native tail](CHARACTEROBJECT_NATIVE_3E3_3E6_F1132.md).
-
-F1146 also restores the original `0x346` status-2-or-4 stage transition;
-see [native status CFG proof](CHARACTEROBJECT_NATIVE_346_STATUS_CFG_F1146.md).
-F1147 restores the original 3E3/3E4 stage-zero polar update, shared hit
-callback and terminal hit/cooldown paths; [native hit CFG proof](CHARACTEROBJECT_NATIVE_HIT_RETURNS_CFG_F1147.md)
-supersedes the F1132 claim that positive cooldown continues through meter recovery.
-
-**F1148 clears all remaining physical direct branch-target differences:**
-`0x35D` guards its +0xD8 increment with stage 1/frame 0; `0x35E`
-executes the final polar velocity call every frame; `0x391` checks both
-reflection directions independently inside the scale/difficulty guard.
-See [native scope/independent-reflection proof](CHARACTEROBJECT_NATIVE_ALL_DIRECT_CFG_F1148.md).
+The 83 strict cases **are interior evidence, not accepted independent
+functions**. F1140–F1148 restore the actual scopes and all direct targets;
+the [complete CFG proof](CHARACTEROBJECT_NATIVE_ALL_DIRECT_CFG_F1148.md)
+indexes the current native conditions. The
+[3E3/3E4 hit/return proof](CHARACTEROBJECT_NATIVE_HIT_RETURNS_CFG_F1147.md)
+supersedes F1132's positive-cooldown continuation interpretation.
 
 The live parent verifier independently requires **zero mismatches across
 all 1,834 original direct jump target ordinals**. This proves those direct
@@ -136,10 +122,26 @@ CODE/COFF exactness**. See [F1138 source borrow](CHARACTEROBJECT_WHOLE_NATIVE_PH
 | Actual original complete callable | Current original-shaped normal C++ research | Local scoped proof |
 | --- | --- | --- |
 | **`004AC040`** 82,796B/22,721 x86, 1,126 afterRET DATA | 82,796B/22,721 x86, original saved-this and frame; **12 wrong widths, 6,958 GPR positions** | [F1028 native PE targets](THIRD_FIGHTER_WHOLE_82KB_PE_TARGETS_F1028.md), 2,191 external targets |
-| **`00543210`** 58,294B/16,471 x86, 943 DATA | 58,293B/16,471 x86; **3 widths, 1,741 GPR positions** | [F1025 native PE targets](FIGHTER_58KB_ALL_NATIVE_PE_TARGETS_F1025.md), 1,697 targets |
+| **`00543210`** 58,294B/16,471 x86, 943 DATA | F1196 live tracked source 58,293B/16,471 x86; native frame/this/all 5,119 EBP positions; **3 widths, 1,741 GPR positions** | [F1196 whole CFG/operand proof](FIGHTER_58KB_WHOLE_CFG_OPERANDS_F1196.md): all 1,905 direct targets, 1,707 CODE fields and 156 dense destinations; NONEXACT |
 | **`005214B0`** 46,755B/13,230 x86, 901 DATA | 46,754B/13,230 x86; **5 widths**, original physical COFF/GPR wrong | [F1026 native PE targets](FIGHTER_46KB_ALL_NATIVE_PE_TARGETS_F1026.md), 1,341 targets |
 | **`0045DD70`** 60,999B/16,837 x86 | Live F1193 complete source **61,000B/16,837 x86 (+1B)**; original frame/saved-this/all 5,444 EBP slots; **6,311 GPR positions /5 widths** | [F1192 complete stack/CFG/PE proof](REIMU_WHOLE_STACK_CFG_F1192.md), [F1193 native WORD parameters](REIMU_WORD_ABI_REGISTER_BOUNDARY_F1193.md): all 1,684 direct targets, 1,682 CODE fields, 142 actual dense destinations; NONEXACT |
 | **`0055AC80`** 28,432B/7,653 x86 | F1194 continues the complete F167 source: **28,438B/7,653 x86 (+6B)**; original frame/this/all 2,511 EBP positions; **726 GPR positions /6 widths** | [F1194 whole native proof](OBJECT_ADVANCE_0055AC80_WHOLE_F1194.md): all 859 direct targets, 638 CODE fields and 58 dense destinations; NONEXACT |
+
+Current 58KB source is
+[`probes/FighterWhole00543210F1041.cpp`](../probes/FighterWhole00543210F1041.cpp).
+F1196 moves the genuine shared-getter label inside the switch, restoring
+**253** ordinary branch targets directly to native epilogue 005515C2.
+Only actions 0/2/4/5 enter getter 005515BA. It also restores strict ground
+tests in 60/61, strict X clamp in 2DC, native 20.0f argument in 2F0 and
+inclusive left-side boundary in 2FA. Every whole non-GPR operand, all
+1,905 direct jumps, all 5,119 EBP positions and all 1,707 CODE references
+now agree; frame 0x218 /saved-this EBP-0x44 and full 943B DATA agree too.
+Remaining debt is **1,741 GPR /three CMP widths in 63**. The selected object
+and scoped audit are `.analysis/f1196-58kb-whole-cfg/tracked.obj` and
+`whole-audit.py`. The unchanged F1025 verifier cold-builds only this parent
+and checks PE fields/DATA; use the scoped audit for whole CFG/operands.
+Do not restore the historical after-switch return trampoline or claim
+F1025's external-target proof alone establishes whole exactness.
 
 Current Reimu source: [`probes/FighterWhole0045DD70F1183.cpp`](../probes/FighterWhole0045DD70F1183.cpp),
 continued from F652/F1183. **All case/default markers are removed.** The
@@ -181,15 +183,12 @@ widths account for all +6 source bytes. The current object and scoped audit
 are `.analysis/f1194-remilia-whole-recovery/tracked.obj` and `audit.py`.
 All original 28,432 bytes remain unaccepted and counted.
 
-F1195 verifies that state 389's first **59** instructions already agree;
-the first GPR divergence is the post-initialization join, not its entry.
-Motion-zero chaining and explicit DWORD-zero views preserve all 28,868
-candidate CODE+DATA bytes and all 696 COFF records. A conditional-break
-initialization block adds four instructions and is rejected. These controls
-and the older 04–24 initialization spellings are negative evidence, not
-new leads to repeat; [F1195 boundary proof](OBJECT_ADVANCE_0055AC80_JOIN_NEGATIVES_F1195.md).
-R233's 454C00/454F70 leaves still lack independent owner witnesses after
-read-only reference checks; neither origin is promoted or source recompiled.
+State 389's first **59** instructions agree; the divergence starts at its
+initializer join. F1195/F1196's chaining, DWORD, array/member and guarded-block
+controls are negative; `/Op` wrongly changes frame/instruction count. See
+[retained controls](OBJECT_ADVANCE_0055AC80_JOIN_NEGATIVES_F1195.md) and F1196;
+do not repeat them or the old 04–24 spellings. R233's 454C00/454F70 leaves
+still lack owner witnesses and remain unknown without another source rebuild.
 
 All other giant authored originals remain open; use the
 [actual giant dispatch manifest](../config/fighter-boss-dispatch-fingerprints.json)

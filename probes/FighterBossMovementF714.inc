@@ -35,7 +35,7 @@
             }
             if (S16(0x62)>3 && POS>g_ThresholdAt0065782C) {
                 POS=POS-g_F714_DecelerationAt0065747C;
-                if (POS<=g_ThresholdAt0065782C)
+                if (POS<g_ThresholdAt0065782C)
                     POS=0.0f;
             }
             if (GetNativeActionAt40FA30()==S16(0x70)) {

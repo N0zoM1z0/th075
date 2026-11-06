@@ -79,7 +79,7 @@
                             (*(&F32(0x44)))-g_BurstXAt006590A8,
                             0xC2480000,*reinterpret_cast<signed char*>(RAW+0x66),1);
                     }
-                    InitTrajectoryAt453E60(10.0f);
+                    InitTrajectoryAt453E60(20.0f);
                     PrepareActionAt453D40(20);
                 }
             }
