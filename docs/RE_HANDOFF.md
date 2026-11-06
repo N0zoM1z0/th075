@@ -1,4 +1,4 @@
-# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1171)
+# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1181)
 
 **Start here.** Work on both large/core original functions and smaller entire
 original functions. The user requests meaningful **multiple local commits** named
@@ -98,6 +98,12 @@ plus the true native instruction destination of each of the 92 dense entries.
 The two helper parameter views now agree with the existing exact helper sources,
 without changing emitted CODE/DATA or physical field geometry;
 [whole operand and indirect-target proof](CHARACTEROBJECT_WHOLE_OPERAND_PROOF_F1158.md).
+F1181 reconciles seven narrow effect/sound parameter declarations (six native
+callees), preserving all **82,109 candidate CODE+DATA bytes** and all 1,449
+physical COFF field shapes. The 202 changed decorated names retain their
+native destinations. Raw coordinate/angle DWORD transport is deliberately
+preserved: a float-lvalue argument experiment adds 329 instructions and is
+rejected. [Native parameter/transport proof](CHARACTEROBJECT_NATIVE_EFFECT_ABI_F1181.md).
 Remaining work is original GPR roles in 358–35E and 3E6, with five instruction
 width differences in 35B/35E/3E6. The source is only 3B longer but remains NONEXACT.
 Earlier [F1128 attempts](CHARACTEROBJECT_NATIVE_391_392_393_F1128.md)

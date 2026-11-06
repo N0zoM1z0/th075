@@ -5,8 +5,14 @@
 // Native original-shaped TH075 CharacterObject whole switch C++ candidate.
 // Original source/owner layout and the entire 81KB machine function remain NONEXACT;
 // all genuine case/default gameplay is sourced from independent original PE evidence.
-class FighterSwitchF569_Boss0050A580 { public: void Advance(); void NativeParentExpiredAt0045B830(); void NativeHitAt0045B860(int); void SetNativeMotionAt0040FBB0(float,float,float); short GetNativeActionAt0040FA30(); void SetAuxActionAt0040FB40(short); void SetNativeActionAt0040FAC0(int); void SetNativeTwoFloatsAt0040FB70(float,float); void SetNativeAngleBitsAt0040FB70(unsigned int,float); int RandomBoundaryAt00455580(int,int); };
-class F1051Grandparent { public: void NativePrepareAt00453D40(int); void SpawnObjectAt00453A70(int,unsigned int,unsigned int,signed char,int); void SpawnObjectAt00453A70(int,float,float,signed char,int); void SpawnProjectileAt00453C80(int,unsigned int,unsigned int,signed char,int); void InitTrajectoryAt00453E60(float); void SpawnSevenAt00453B50(int,unsigned int,unsigned int,char,int,int,int); void StartAnimationAt0046D000(int); };
+class FighterSwitchF569_Boss0050A580 { public: void Advance(); void NativeParentExpiredAt0045B830(); void NativeHitAt0045B860(short); void SetNativeMotionAt0040FBB0(float,float,float); short GetNativeActionAt0040FA30(); void SetAuxActionAt0040FB40(short); void SetNativeActionAt0040FAC0(short); void SetNativeTwoFloatsAt0040FB70(float,float); void SetNativeAngleBitsAt0040FB70(unsigned int,float); int RandomBoundaryAt00455580(int,int); };
+// F1181: effect/sound IDs and layer/link/mode parameters use the native
+// low-word/low-byte contract witnessed by the independently exact callees.
+// Coordinate/angle DWORD overloads deliberately preserve the original raw
+// MOV/PUSH bit transport into four-byte float slots. A float-compatible
+// callee body does not recover its original C++ declaration: replacing
+// these raw reads with implicit numeric float conversion is incorrect.
+class F1051Grandparent { public: void NativePrepareAt00453D40(short); void SpawnObjectAt00453A70(short,unsigned int,unsigned int,signed char,signed char); void SpawnObjectAt00453A70(short,float,float,signed char,signed char); void SpawnProjectileAt00453C80(short,unsigned int,unsigned int,signed char,signed char); void InitTrajectoryAt00453E60(float); void SpawnSevenAt00453B50(short,unsigned int,unsigned int,signed char,signed char,unsigned char,unsigned char); void StartAnimationAt0046D000(int); };
 extern float g_F1044_GravityAt0065747C;
 extern float g_F1044_GroundAt0065782C;
 extern float g_F1051_ScaleStepAt00658348;

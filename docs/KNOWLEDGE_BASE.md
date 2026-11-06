@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1171):**
+**Maintenance annotation, updated 2026-11-06 (F1181):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -63,6 +63,14 @@ addresses are reconciled. [Whole original proof](WINMAIN_WHOLE_EXACT_F1171.md).
 The current ledger has 982 exact originals /871,649 CODE bytes; all 22 remaining
 authored whole functions are giants. Historical WinMain negatives remain
 true only for their recorded parents and do not override this acceptance.
+
+F1181 reconciles seven effect/sound parameter views in the live 81KB parent,
+with all 82,109 previous candidate bytes and 1,449 physical field shapes
+unchanged. All 202 changed decorated symbols retain native targets.
+The raw float-representation transport is independently preserved; typed
+float argument lowering adds 329 x86 and is rejected.
+[Complete caller/parameter proof](CHARACTEROBJECT_NATIVE_EFFECT_ABI_F1181.md).
+No new exact whole CODE: the same 522 GPR/five-width debt remains.
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function
