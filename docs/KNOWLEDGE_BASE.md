@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1230):**
+**Maintenance annotation, updated 2026-11-06 (F1231):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -554,6 +554,18 @@ commuting the literal reverses x87 operands and changes the native status
 test/branch. All source/object diagnostics remain in
 `.analysis/f1230-object-4ca6e0-coordinate-access/verified-summary.json`.
 The selected source/header are byte-restored; no new exact credit.
+
+F1231 begins normal source for original `005A1600`: **17/76** real states,
+800–810/988/989/995–997/999, including two genuine reward loops. Fresh source
+emits 7,813B/2,070 x86; all written mnemonic/local-branch/normalized operand
+shapes agree, but raw 50 GPR/21 width/657 EBP positions differ and 59 states are
+unwritten. Original frame 0x21C/this-1Ch and all 43,599B remain pending; partial
+source has frame 60h/this-Ch. Native checks correct 804's scale<=1.0f gate and
+999's 35.0f decrement. Original full CODE/DATA/constructor/vtable hashes,
+immutable sources/objects and diagnostics remain in
+`.analysis/f1231-object-5a1600-recovery/verified-summary.json`.
+[Initial-parent evidence](OBJECT_ADVANCE_005A1600_INITIAL_PARENT_F1231.md).
+No accepted input/ledger/origin change, CI, corpus replay or new exact credit.
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function

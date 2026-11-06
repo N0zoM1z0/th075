@@ -1,4 +1,4 @@
-# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1230)
+# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1231)
 
 **Start here.** Continue all dirty work; there are no other active sessions.
 Work on both large/core and smaller authored originals. Use local commits
@@ -86,16 +86,14 @@ Build only this affected parent. Preserve [F1138's phase/meter borrow proof](CHA
 
 ## 3. Other large original functions — do not abandon them
 
-| Actual original complete callable | Current original-shaped normal C++ research | Local scoped proof |
-| --- | --- | --- |
-| **`004EBDA0`** 33,293B/8,789 x86, 438 DATA | F1205 fresh complete F572–F596 source: original frame 0x1FC /this EBP-0x40, all 3,005 EBP; **133 GPR /zero width differences** | [F1205 full native proof](OBJECT_ADVANCE_004EBDA0_WHOLE_F1205.md): all 885 direct targets, 622 CODE fields, 60 dense targets; 137 nonfield bytes remain; NONEXACT |
-| **`005EB520`** 34,434B/9,378 x86, 443 DATA | F1209 tracked complete F061 active07 source: 34,436B /same count, frame 0x210 /this EBP-4, all 3,170 EBP; **135 GPR /six widths**, all state 998 | [F1209 native virtual/whole proof](OBJECT_ADVANCE_005EB520_VIRTUAL_ABI_F1209.md): all 901 direct targets, 745 CODE fields, 61 dense targets /199 sparse bytes; NONEXACT |
-| **`004AC040`** 82,796B/22,721 x86, 1,126 afterRET DATA | F1203 same length/count; frame 0x720 /this EBP-0x64, all 7,432 EBP positions; **6,958 GPR /12 widths**; all direct CFG/non-GPR operands agree | [F1200 all direct CFG proof](THIRD_FIGHTER_ALL_DIRECT_CFG_F1200.md): all 1,927 direct targets, 2,201 CODE fields and 151 dense ordinals agree; NONEXACT |
-| **`00543210`** 58,294B/16,471 x86, 943 DATA | F1196 live tracked source 58,293B/16,471 x86; native frame/this/all 5,119 EBP positions; **3 widths, 1,741 GPR positions** | [F1196 whole CFG/operand proof](FIGHTER_58KB_WHOLE_CFG_OPERANDS_F1196.md): all 1,905 direct targets, 1,707 CODE fields and 156 dense destinations; NONEXACT |
-| **`005214B0`** 46,755B/13,230 x86, 901 DATA | F1197 source 46,754B/13,230 x86; native frame/this/all 4,133 EBP positions; **2,736 GPR /5 widths** | [F1197 whole CFG proof](FIGHTER_46KB_WHOLE_CFG_F1197.md): all 1,522 direct targets, 1,352 CODE fields and 139 dense destinations; NONEXACT |
-| **`0045DD70`** 60,999B/16,837 x86 | Live F1193 complete source **61,000B/16,837 x86 (+1B)**; original frame/saved-this/all 5,444 EBP slots; **6,311 GPR positions /5 widths** | [F1192 complete stack/CFG/PE proof](REIMU_WHOLE_STACK_CFG_F1192.md), [F1193 native WORD parameters](REIMU_WORD_ABI_REGISTER_BOUNDARY_F1193.md): all 1,684 direct targets, 1,682 CODE fields, 142 actual dense destinations; NONEXACT |
-| **`0055AC80`** 28,432B/7,653 x86 | F1194 continues the complete F167 source: **28,438B/7,653 x86 (+6B)**; original frame/this/all 2,511 EBP positions; **726 GPR positions /6 widths** | [F1194 whole native proof](OBJECT_ADVANCE_0055AC80_WHOLE_F1194.md): all 859 direct targets, 638 CODE fields and 58 dense destinations; NONEXACT |
-| **`00536400`** 39,999B/10,573 x86, 467 DATA | **F1214 complete source, NONEXACT**: 39,997B/10,573 x86; history +66/66 states, original frame0x2A0/all3,469 EBP slots; 913 GPR/10 width debt | [F1214 whole-parent proof](OBJECT_ADVANCE_00536400_COMPLETE_PARENT_F1214.md); zero exact credit |
+The current research parents and retained evidence follow. The
+[native dispatch manifest](../config/fighter-boss-dispatch-fingerprints.json)
+pins every original extent; detailed whole proofs remain linked below.
+Retained CFG/operand proofs: [82KB](THIRD_FIGHTER_ALL_DIRECT_CFG_F1200.md),
+[58KB](FIGHTER_58KB_WHOLE_CFG_OPERANDS_F1196.md),
+[46KB](FIGHTER_46KB_WHOLE_CFG_F1197.md),
+[Reimu](REIMU_WHOLE_STACK_CFG_F1192.md),
+[28KB](OBJECT_ADVANCE_0055AC80_WHOLE_F1194.md).
 
 Current 33KB source:
 [`probes/CharacterObjectActionsF572.cpp`](../probes/CharacterObjectActionsF572.cpp).
@@ -203,6 +201,17 @@ remain only in808–811, first004CCBD7/whole2526. Increment/boundary controls,
 listing/both diagnostics/verified-summary.json; `whole-audit.py [OBJ]`.
 [F1227 proof](OBJECT_ADVANCE_004CA6E0_COMPLETE_PARENT_F1227.md). Continue this
 complete body; all42,511 original B remain pending.
+
+Current incomplete 43KB source:
+[`probes/CharacterObjectActions005A1600F1231.cpp`](../probes/CharacterObjectActions005A1600F1231.cpp),
+`ObjectAdvance5A1600F1231.hpp`. F1231 writes17/76 states:
+800–810/988/989/995–997/999, with two genuine reward loops. Fresh7,813B/2,070
+x86 matches written mnemonic/local-branch/normalized operand shapes only;
+raw50 GPR/21 width/657 EBP differences,59 states unwritten. Native43,599B,
+frame21Ch/this-1Ch remain pending; partial frame60h/this-Ch.
+Selected `.analysis/f1231-object-5a1600-recovery/reviewed.cpp/hpp/obj/asm`,
+source diagnostic and `verified-summary.json`; [F1231 proof](OBJECT_ADVANCE_005A1600_INITIAL_PARENT_F1231.md).
+Continue811 onward in this source, not F569 markers. No exact credit.
 
 All other giant authored originals remain open; use the
 [actual giant dispatch manifest](../config/fighter-boss-dispatch-fingerprints.json)
