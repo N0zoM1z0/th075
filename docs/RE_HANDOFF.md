@@ -1,4 +1,4 @@
-# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1202)
+# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1204)
 
 **Start here.** Work on both large/core original functions and smaller entire
 original functions. The user requests meaningful **multiple local commits** named
@@ -120,7 +120,7 @@ CODE/COFF exactness**. See [F1138 source borrow](CHARACTEROBJECT_WHOLE_NATIVE_PH
 
 | Actual original complete callable | Current original-shaped normal C++ research | Local scoped proof |
 | --- | --- | --- |
-| **`004AC040`** 82,796B/22,721 x86, 1,126 afterRET DATA | F1200 same length/count; frame 0x720 /this EBP-0x64, all 7,432 EBP positions; **6,958 GPR /12 widths**; all direct CFG/non-GPR operands agree | [F1200 all direct CFG proof](THIRD_FIGHTER_ALL_DIRECT_CFG_F1200.md): all 1,927 direct targets, 2,201 CODE fields and 151 dense ordinals agree; NONEXACT |
+| **`004AC040`** 82,796B/22,721 x86, 1,126 afterRET DATA | F1203 same length/count; frame 0x720 /this EBP-0x64, all 7,432 EBP positions; **6,958 GPR /12 widths**; all direct CFG/non-GPR operands agree | [F1200 all direct CFG proof](THIRD_FIGHTER_ALL_DIRECT_CFG_F1200.md): all 1,927 direct targets, 2,201 CODE fields and 151 dense ordinals agree; NONEXACT |
 | **`00543210`** 58,294B/16,471 x86, 943 DATA | F1196 live tracked source 58,293B/16,471 x86; native frame/this/all 5,119 EBP positions; **3 widths, 1,741 GPR positions** | [F1196 whole CFG/operand proof](FIGHTER_58KB_WHOLE_CFG_OPERANDS_F1196.md): all 1,905 direct targets, 1,707 CODE fields and 156 dense destinations; NONEXACT |
 | **`005214B0`** 46,755B/13,230 x86, 901 DATA | F1197 source 46,754B/13,230 x86; native frame/this/all 4,133 EBP positions; **2,736 GPR /5 widths** | [F1197 whole CFG proof](FIGHTER_46KB_WHOLE_CFG_F1197.md): all 1,522 direct targets, 1,352 CODE fields and 139 dense destinations; NONEXACT |
 | **`0045DD70`** 60,999B/16,837 x86 | Live F1193 complete source **61,000B/16,837 x86 (+1B)**; original frame/saved-this/all 5,444 EBP slots; **6,311 GPR positions /5 widths** | [F1192 complete stack/CFG/PE proof](REIMU_WHOLE_STACK_CFG_F1192.md), [F1193 native WORD parameters](REIMU_WORD_ABI_REGISTER_BOUNDARY_F1193.md): all 1,684 direct targets, 1,682 CODE fields, 142 actual dense destinations; NONEXACT |
@@ -128,23 +128,21 @@ CODE/COFF exactness**. See [F1138 source borrow](CHARACTEROBJECT_WHOLE_NATIVE_PH
 
 Current 82KB source:
 [`probes/FighterWhole004AC040F1020.cpp`](../probes/FighterWhole004AC040F1020.cpp).
-F1198 restores four early shared-getter entries/default skip; keep the
-getter inside the switch. F1199 fixes 26 operands. F1200 restores all
-45 remaining direct targets through actual cooldown, fade, clamp and
-getter/cadence guard scopes. All whole CFG/non-GPR/EBP operands agree.
-Fresh proof: `.analysis/f1200-82kb-native-cfg/tracked.obj` and
-`whole-audit.py`; F1028 cold-builds only this parent using **/GX**.
-All 2,352 COFF field shapes/addends/destinations remain unchanged;
-45 local names change, offsets preserved. Remaining **6,958 GPR /12 widths**;
-first divergence **004ADEFA /whole ordinal 2,180**, native EAX vs source EDX.
-Equal total CODE length is not exactness. Continue from this corrected parent.
-F1201/F1202's six whole-parent controls do not reduce GPR debt; landing-else
-adds a wrong branch and compound short counters regress mnemonics/widths.
-[Bounded controls and native debt map](THIRD_FIGHTER_REGISTER_DEBT_MAP_F1202.md).
-The local `native-state-debt.json` under `.analysis/f1201-82kb-first-register/`
-attributes every debt row across 152 native entries (full signed-short domain).
-Largest remaining groups: **25B 577 /25D 477 GPR**, vs 59's 19. Preserve
-those real 36-call bodies and consult the map before another local experiment.
+F1198 restores the inside-switch four-entry shared getter/default skip;
+F1199 fixes 26 operands; F1200 fixes all 45 interior direct targets.
+F1203 reconciles **16 declarations /10 accepted native callees**: effect/
+sound IDs, facing/layer/flags, counters, scalar and command parameters.
+All 83,922 candidate CODE+DATA bytes /2,352 field shapes stay unchanged;
+823 external names change. Raw-coordinate DWORD transport is preserved.
+[Native interface proof](THIRD_FIGHTER_NATIVE_CALL_ABI_F1203.md).
+Fresh selected object: `.analysis/f1203-third-native-call-abi/tracked.obj`;
+`whole-audit.py` there verifies all CFG/non-GPR/EBP operands. F1028 builds
+only this parent using **/GX**. Remaining **6,958 GPR /12 widths**;
+first divergence **004ADEFA /ordinal 2,180**. Equal length is not exactness.
+F1201/F1202's six controls and F1204's 25B typed-receiver control do not
+repair GPR phase. Do not repeat them. The [native state debt map](THIRD_FIGHTER_REGISTER_DEBT_MAP_F1202.md)
+at `.analysis/f1201-82kb-first-register/native-state-debt.json` still applies:
+**25B 577 /25D 477 GPR**, vs 59's 19. Preserve their real 36-call bodies.
 
 Current 58KB source:
 [`probes/FighterWhole00543210F1041.cpp`](../probes/FighterWhole00543210F1041.cpp).

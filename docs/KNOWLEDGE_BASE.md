@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1202):**
+**Maintenance annotation, updated 2026-11-06 (F1204):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -282,6 +282,20 @@ The 155 physical intervals cover every native instruction and attribute all
 6,958 GPR /12 width differences. Largest groups are 25B=577 and 25D=477;
 first 59 has only 19. Current source/object remains F1200, every canonical
 accepted input and all 95 unknown origins unchanged; no CI or corpus replay.
+
+F1203 reconciles sixteen live 82KB caller declarations against ten already
+accepted native callees: short effect/sound/counter/scalar IDs, byte facing/
+layer/flags/fade mode, and the actual command mask. Every native callee body
+and stack argument width is reread; raw-coordinate DWORD transport stays.
+[Native call interface proof](THIRD_FIGHTER_NATIVE_CALL_ABI_F1203.md).
+All 83,922 candidate CODE+DATA bytes and 2,352 COFF field shapes/addends/
+destinations are unchanged; 823 external decorated names change. Fresh /GX
+whole proof retains all native CFG/non-GPR/stack/DATA properties and the
+same **6,958 GPR /12 width debt**. This is interface correction, no new exact
+credit or accepted input change. Current object is the F1203 tracked object.
+F1204's 25B actual F135 receiver borrowing also preserves all bytes/field
+shapes, changing 36 external and 161 compiler-local names at unchanged
+offsets, with no GPR gain; that candidate is not adopted. No CI/corpus replay.
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function
