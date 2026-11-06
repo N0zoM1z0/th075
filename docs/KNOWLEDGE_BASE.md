@@ -1,8 +1,8 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1146):**
+**Maintenance annotation, updated 2026-11-06 (F1147):**
 The **current authoritative** pinned-original whole-function evidence,
-unresolved 81KB Boss CFG (12 branch-target discrepancies), 979 accepted
+unresolved 81KB Boss CFG (5 branch-target discrepancies), 979 accepted
 whole exact functions, and safe local storage/restore instructions are
 in the [live agent handoff](RE_HANDOFF.md) and
 [storage hygiene guide](STORAGE_HYGIENE.md). This chronological
@@ -18,6 +18,10 @@ F1146 corrects the original 0x346 status-2-or-4 transition, verified by
 one complete parent cold build and all 1,834 direct branch targets.
 See [native status CFG evidence](CHARACTEROBJECT_NATIVE_346_STATUS_CFG_F1146.md).
 No new whole-function exact bytes are claimed.
+F1147 restores seven more native 3E3/3E4 branch targets and all their
+instruction widths. Positive cooldown returns before meter recovery;
+[original PE hit/return evidence](CHARACTEROBJECT_NATIVE_HIT_RETURNS_CFG_F1147.md)
+corrects the historical F1132 interpretation.
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function

@@ -145,13 +145,12 @@ for k,(native,emitted) in enumerate(zip(NWHOLE,I)):
       'original_target_global_ordinal':orig_target,
       'source_target_global_ordinal':src_target})
 assert physical_original_branch_positions==1834,physical_original_branch_positions
-# These are not waived as exact or correctness: all 12 remain true
+# These are not waived as exact or correctness: all 5 remain true
 # unresolved source CFG target differences. Explicitly enumerate
 # them to reject any *additional* source control-flow regression.
 remaining_native_branch_keys={
  (0x35d,13),(0x35d,17),(0x35e,155),
- (0x391,124),(0x391,130),(0x3e3,43),(0x3e3,163),
- (0x3e4,43),(0x3e4,179),(0x3e4,204),(0x3e4,214),(0x3e4,232)}
+ (0x391,124),(0x391,130)}
 actual_debt_keys={(row['physical_switch_slot'],row['case_ordinal'])
                   for row in native_branch_target_debt}
 expected_debt_keys={(orig_sparse[action-0x320],ordinal)
@@ -388,24 +387,23 @@ for action,expected_count in required_fields.items():
   # The native 200-x86 state keeps +0x66 facing=1,
   # real 00483300 atan2/grandparent thresholds, original
   # +0x366 byte and +0x2D0 score, 45B860 hit action 0x2E.
-  # Original one JNE at ordinal 43 is LONG; current partial
-  # C++ emits short. Do not call this byte-exact.
-  assert len(N)==200 and sum(n.size==q.size for n,q in zip(N,S))==199
+  # Stage-zero polar update and shared hit callback now restore
+  # the native long JNE and all widths, not whole-function exactness.
+  assert len(N)==200 and all(n.size==q.size for n,q in zip(N,S))
   assert N[43].mnemonic==S[43].mnemonic=='jne'
-  assert N[43].size==6 and S[43].size==2
+  assert N[43].size==S[43].size==6
   for k,target in ((34,'0x455580'),(69,'0x40fb70'),(91,'0x483300'),
                    (94,'0x6406ac'),(147,'0x45b830'),(175,'0x45b860')):
    assert any(f['x86_ordinal']==k and f['original_native_PE_target']==target for f in pe)
   assert N[173].mnemonic==S[173].mnemonic=='push'
   assert N[173].op_str==S[173].op_str=='0x2e'
  if action==0x3e4:
-  # The actual original meter-and-hit state is NOT an exclusive
-  # `if(3B6>0) else {meter3B0}`: after 3B6>5 decrement it
-  # CONTINUES through the real 3B0 policy. This fixes a true
-  # gameplay source bug and an extra generated terminal JMP.
-  assert len(N)==261 and sum(n.size==q.size for n,q in zip(N,S))==260
+  # Native positive cooldown returns after either update; every
+  # successful hit returns before motion. Full branch targets are
+  # checked above, including shared return ordinals 188 and 237.
+  assert len(N)==261 and all(n.size==q.size for n,q in zip(N,S))
   assert N[43].mnemonic==S[43].mnemonic=='jne'
-  assert N[43].size==6 and S[43].size==2
+  assert N[43].size==S[43].size==6
   assert N[179].mnemonic==S[179].mnemonic=='jmp'
   assert N[187].mnemonic==S[187].mnemonic=='mov'
   assert N[188].mnemonic==S[188].mnemonic=='jmp'

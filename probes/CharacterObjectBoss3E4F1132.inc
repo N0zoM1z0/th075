@@ -19,9 +19,9 @@ case 0x3E4: {
         --SELF_FIELD(signed short,0xDA);
         if (SELF_FIELD(signed short,0xDA)<3)
             SELF_FIELD(signed short,0xDA)=3;
+        SetNativeTwoFloatsAt0040FB70(float(SELF_FIELD(signed short,0xD8)),
+            float(SELF_FIELD(signed short,0xDA))*g_F1120_XBrakingAt00659090);
     }
-    SetNativeTwoFloatsAt0040FB70(float(SELF_FIELD(signed short,0xD8)),
-        float(SELF_FIELD(signed short,0xDA))*g_F1120_XBrakingAt00659090);
     if (F1024_PHASE(this).stageAt62==1) {
         SELF_FIELD(signed short,0xD8)=short(F1057_FloatAtan2At00483300(
             (*(&F1037_POSITION(PARENT_GRANDPARENT).yPosition))+g_F1057_YOffsetAt00657888-F1037_POSITION(this).yPosition,
@@ -42,27 +42,25 @@ case 0x3E4: {
                 else {
                     F980_GAUGE(PARENT_GRANDPARENT).cooldownAt3B6=0;
                     F980_GAUGE(PARENT_GRANDPARENT).meterAt3B0=1000;
-                    return;
+                }
+                return;
+            }
+            // A positive cooldown returns after either update. Only
+            // a nonpositive cooldown reaches the meter policy.
+            if (F980_GAUGE(PARENT_GRANDPARENT).meterAt3B0<990)
+                F980_GAUGE(PARENT_GRANDPARENT).meterAt3B0=
+                    short(F980_GAUGE(PARENT_GRANDPARENT).meterAt3B0+10);
+            else {
+                F980_GAUGE(PARENT_GRANDPARENT).meterAt3B0=1000;
+                if (PARENT_GRANDPARENT_FIELD(unsigned char,0x39C)==0) {
+                    if (PARENT_GRANDPARENT_FIELD(float,0x36C)<g_F1132_DoubleAt00659228)
+                        PARENT_GRANDPARENT_FIELD(float,0x36C)=
+                            (*(&PARENT_GRANDPARENT_FIELD(float,0x36C)))+g_F1059_ScaleRatioAt00657478;
+                    else
+                        PARENT_GRANDPARENT_FIELD(float,0x36C)=900.0f;
                 }
             }
-            // The original PE continues to the native 0x3B0 meter
-            // policy even after subtracting five from 0x3B6.
-            // This is deliberately NOT an exclusive else branch.
-            if (F980_GAUGE(PARENT_GRANDPARENT).meterAt3B0<990)
-                    F980_GAUGE(PARENT_GRANDPARENT).meterAt3B0=
-                        short(F980_GAUGE(PARENT_GRANDPARENT).meterAt3B0+10);
-                else {
-                    F980_GAUGE(PARENT_GRANDPARENT).meterAt3B0=1000;
-                    if (PARENT_GRANDPARENT_FIELD(unsigned char,0x39C)==0) {
-                        if (PARENT_GRANDPARENT_FIELD(float,0x36C)<g_F1132_DoubleAt00659228)
-                            PARENT_GRANDPARENT_FIELD(float,0x36C)=
-                                (*(&PARENT_GRANDPARENT_FIELD(float,0x36C)))+g_F1059_ScaleRatioAt00657478;
-                        else {
-                            PARENT_GRANDPARENT_FIELD(float,0x36C)=900.0f;
-                            return;
-                        }
-                    }
-                }
+            return;
         }
     }
     F1037_POSITION(this).xPosition=F1037_POSITION(this).xPosition+F1037_MOTION(this).xMotion;

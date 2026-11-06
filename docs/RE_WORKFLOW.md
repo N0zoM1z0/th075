@@ -5,8 +5,8 @@ Do not use archived H184 no-active-goal instructions. Current priorities and
 the handoff clean-state snapshot are in [RE_HANDOFF.md](RE_HANDOFF.md).
 Historical documents and tentative Ghidra labels are **not proof**.
 The current full original-shaped *nonexact* giant parents include
-`probes/CharacterObjectWhole0050A580F1044.cpp` (**81,560B/17,435 x86
-against original 81,539B/17,435 x86**, 12 physical original branch
+`probes/CharacterObjectWhole0050A580F1044.cpp` (**81,568B/17,435 x86
+against original 81,539B/17,435 x86**, 5 physical original branch
 target errors, 8 provisional native GPR case intervals and wrong stack
 frame), 82KB `probes/FighterWhole004AC040F1020.cpp` (original-length
 CODE/frame but 12 width and 6,958 GPR-role errors), plus local

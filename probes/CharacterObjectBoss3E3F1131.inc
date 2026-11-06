@@ -19,9 +19,9 @@ case 0x3E3: {
         --SELF_FIELD(signed short,0xDA);
         if (SELF_FIELD(signed short,0xDA)<3)
             SELF_FIELD(signed short,0xDA)=3;
+        SetNativeTwoFloatsAt0040FB70(float(SELF_FIELD(signed short,0xD8)),
+            float(SELF_FIELD(signed short,0xDA))*g_F1120_XBrakingAt00659090);
     }
-    SetNativeTwoFloatsAt0040FB70(float(SELF_FIELD(signed short,0xD8)),
-        float(SELF_FIELD(signed short,0xDA))*g_F1120_XBrakingAt00659090);
     if (F1024_PHASE(this).stageAt62==1) {
         SELF_FIELD(signed short,0xD8)=short(F1057_FloatAtan2At00483300(
             (*(&F1037_POSITION(PARENT_GRANDPARENT).yPosition))+g_F1057_YOffsetAt00657888-F1037_POSITION(this).yPosition,
@@ -37,9 +37,9 @@ case 0x3E3: {
                 ++PARENT_GRANDPARENT_FIELD(signed char,0x366);
             else {
                 PARENT_GRANDPARENT_FIELD(int,0x2D0)+=0x4E20;
-                NativeHitAt0045B860(0x2E);
-                return;
             }
+            NativeHitAt0045B860(0x2E);
+            return;
         }
     }
     F1037_POSITION(this).xPosition=F1037_POSITION(this).xPosition+F1037_MOTION(this).xMotion;
