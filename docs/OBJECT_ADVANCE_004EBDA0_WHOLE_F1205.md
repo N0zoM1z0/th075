@@ -71,9 +71,9 @@ current debt. F594's 23 scalar-expression negatives were inspected rather
 than rerun. The new cold evidence supports the old 137-byte residual and
 adds a complete native EBP/direct-CFG/dense-ordinal audit.
 
-## Six bounded complete-parent controls
+## Six freshly built complete-parent controls
 
-| New meaningful source/profile candidate | Complete observed outcome | Decision |
+| Source/profile candidate | Complete observed outcome | Decision |
 | --- | --- | --- |
 | Eight-byte two-float scale view in 38D/38E | 138 GPR /six width differences; reverses three x87 member/global operand orders and invalidates three field geometries | Reject |
 | Same scale view with explicit addressed member lvalues | All CODE+DATA bytes identical to selected source; 133 GPR remain | No adoption |
@@ -88,6 +88,13 @@ byte array is introduced. The addressed scale form restores the original
 member-first x87 operand order but does not fix the following register phase.
 The header-induced compiler-local symbol renaming does not change field
 offsets, addends or destinations in the byte-preserving controls.
+
+F1206 subsequently found F756/F773's later historical records. F773 already
+tested related stage/color windows, so these ideas are not all novel; the
+fresh F1205 builds and complete audits remain valid. F1206's comma expression
+also repeats F756 and leaves 133 GPR differences. Its successfully compiled
+nested stage-4 switch has the wrong frame/count and is rejected. See the
+[F1206/F1207 continuation](OBJECT_ADVANCE_005EB520_WHOLE_F1207.md).
 
 ## Retained evidence and handoff
 

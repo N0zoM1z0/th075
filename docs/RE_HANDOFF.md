@@ -1,4 +1,4 @@
-# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1205)
+# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1207)
 
 **Start here.** Continue all dirty work; there are no other active sessions.
 Work on both large/core and smaller authored originals. Use local commits
@@ -109,6 +109,7 @@ and all current native proofs above. No full 982-unit replay.
 | Actual original complete callable | Current original-shaped normal C++ research | Local scoped proof |
 | --- | --- | --- |
 | **`004EBDA0`** 33,293B/8,789 x86, 438 DATA | F1205 fresh complete F572–F596 source: original frame 0x1FC /this EBP-0x40, all 3,005 EBP; **133 GPR /zero width differences** | [F1205 full native proof](OBJECT_ADVANCE_004EBDA0_WHOLE_F1205.md): all 885 direct targets, 622 CODE fields, 60 dense targets; 137 nonfield bytes remain; NONEXACT |
+| **`005EB520`** 34,434B/9,378 x86, 443 DATA | F1207 tracked complete F061 active07 source: 34,436B /same count, frame 0x210 /this EBP-4, all 3,170 EBP; **135 GPR /six widths**, all state 998 | [F1207 full native proof](OBJECT_ADVANCE_005EB520_WHOLE_F1207.md): all 901 direct targets, 745 CODE fields, 61 dense targets /199 sparse bytes; NONEXACT |
 | **`004AC040`** 82,796B/22,721 x86, 1,126 afterRET DATA | F1203 same length/count; frame 0x720 /this EBP-0x64, all 7,432 EBP positions; **6,958 GPR /12 widths**; all direct CFG/non-GPR operands agree | [F1200 all direct CFG proof](THIRD_FIGHTER_ALL_DIRECT_CFG_F1200.md): all 1,927 direct targets, 2,201 CODE fields and 151 dense ordinals agree; NONEXACT |
 | **`00543210`** 58,294B/16,471 x86, 943 DATA | F1196 live tracked source 58,293B/16,471 x86; native frame/this/all 5,119 EBP positions; **3 widths, 1,741 GPR positions** | [F1196 whole CFG/operand proof](FIGHTER_58KB_WHOLE_CFG_OPERANDS_F1196.md): all 1,905 direct targets, 1,707 CODE fields and 156 dense destinations; NONEXACT |
 | **`005214B0`** 46,755B/13,230 x86, 901 DATA | F1197 source 46,754B/13,230 x86; native frame/this/all 4,133 EBP positions; **2,736 GPR /5 widths** | [F1197 whole CFG proof](FIGHTER_46KB_WHOLE_CFG_F1197.md): all 1,522 direct targets, 1,352 CODE fields and 139 dense destinations; NONEXACT |
@@ -123,8 +124,8 @@ operands and all 682 physical COFF bindings. **137 bytes /133 GPR** remain:
 38D=45, 38E=64, 3E3=24 (first31 instructions only). First divergence:
 **004F344C /whole8,076 /38D91**. Fresh selected object:
 `.analysis/f1205-object-4ebda0-recovery/before.obj`; `whole-audit.py OBJ`
-and `verified-summary.json` there. Use **/GX-**. Six new controls do not
-improve; preserve F594's 23 negatives too. No candidate adopted; all
+and `verified-summary.json` there. Use **/GX-**. Six fresh controls do not
+improve; preserve F594/F756/F773 negatives too. No candidate adopted; all
 33,293 original CODE bytes remain pending. Keep this complete parent live.
 
 Current 82KB source:
@@ -175,24 +176,32 @@ Remaining **6,311 GPR /five widths**; first divergence 59 at
 inside-switch getter. F1193 access/guard controls plus F792/F793 are
 retained negatives. All 60,999 original CODE bytes remain pending.
 
-Current `0055AC80` source is
+Current `0055AC80` source:
 [`probes/CharacterObjectWhole0055AC80F1194.cpp`](../probes/CharacterObjectWhole0055AC80F1194.cpp),
-continued from the actual complete F167 normal C++ draft. All 57 real states
-and default are present; do not replace it with the F569 marker skeleton.
-Frame 0x19C, saved-this EBP-0x24, every stack operand, all 859 direct branches,
-638 CODE references and 58 dense entry ordinals agree with the original.
-Its 430B owned DATA includes 198 exact sparse bytes. GPR debt is limited to
-389–392, beginning **0055F711 /whole ordinal 5,225**; the six remaining CMP
-widths account for all +6 source bytes. The current object and scoped audit
-are `.analysis/f1194-remilia-whole-recovery/tracked.obj` and `audit.py`.
-All original 28,432 bytes remain unaccepted and counted.
+continued from complete F167. All 57 states/default remain; frame 0x19C /
+this EBP-0x24, stack/CFG/fields/DATA agree as above. Selected object/audit:
+`.analysis/f1194-remilia-whole-recovery/tracked.obj`, `audit.py`.
+Remaining **726 GPR /six widths**, 389–392; first **0055F711 /ordinal5,225**.
+F1195/F1196 chaining/DWORD/array/member/guard controls are negative; /Op
+breaks frame/count. [Retained controls](OBJECT_ADVANCE_0055AC80_JOIN_NEGATIVES_F1195.md).
+R233 454C00/454F70 still lack owner witnesses; no new rebuild or promotion.
 
-State 389's first **59** instructions agree; the divergence starts at its
-initializer join. F1195/F1196's chaining, DWORD, array/member and guarded-block
-controls are negative; `/Op` wrongly changes frame/instruction count. See
-[retained controls](OBJECT_ADVANCE_0055AC80_JOIN_NEGATIVES_F1195.md) and F1196;
-do not repeat them or the old 04–24 spellings. R233's 454C00/454F70 leaves
-still lack owner witnesses and remain unknown without another source rebuild.
+Current 34KB source:
+[`probes/CharacterObjectWhole005EB520F1207.cpp`](../probes/CharacterObjectWhole005EB520F1207.cpp)
+and `ObjectAdvance5EB520F1207.hpp`. F1207 recovers the complete F061 active07
+parent, all 60 real states/default, with fresh full native proof. All 806
+physical bindings /actual COFF payloads and PE permissions are checked.
+**135 GPR /six widths** remain only in 998, first **005F3904 /ordinal9,200**.
+Selected `.analysis/f1207-object-5eb520-recovery/tracked.obj`; `whole-audit.py OBJ`,
+`verified-summary.json`, fresh F061 physical receipts there. Use **/GX-**
+and its recorded profile. Four new controls preserve all CODE/DATA; no gain.
+All 34,434 original CODE bytes remain pending. Earlier forward-branch raw
+bytes can differ despite correct target ordinals. Do not count inner states.
+
+F1206 deduplicates F756/F773's 33KB comma/typed-window controls; F1205's
+fresh evidence is valid but those ideas are not all new. A valid stage-4
+switch emits 33,305B /8,791 x86 and wrong frame 0x200: reject on shape.
+[Details and retained paths](OBJECT_ADVANCE_005EB520_WHOLE_F1207.md).
 
 All other giant authored originals remain open; use the
 [actual giant dispatch manifest](../config/fighter-boss-dispatch-fingerprints.json)
@@ -218,13 +227,8 @@ F1171 accepts the complete **2,987B/654-x86 WinMain `00602A60`**, all
 173 physical fields and the complete 60B after-RET scene table, through
 canonical **1/1 cold exact**. The new canonical source is
 [`src/WinMainF1171.cpp`](../src/WinMainF1171.cpp); [whole-function proof](WINMAIN_WHOLE_EXACT_F1171.md).
-All independently authored smaller originals are now accepted. The remaining
-queue consists of the 22 giant functions above; do not reopen F911/F914
-as the current WinMain parent. Their negative evidence remains historical.
-No dummy locals, altered path capacity, assembly, cropped extent or
-structural-only acceptance was used.
-
-Reproduce only this new unit when its inputs change:
+All independently authored smaller originals are accepted; 22 giants remain.
+Do not reopen F911/F914 as the WinMain parent. Replay WinMain only when affected:
 
     scripts/repo-python scripts/replay-exact-units.py --unit game-application-run-00602a60
 
@@ -237,19 +241,14 @@ Do not repeat these completed replays without a new affected input change.
 
 ## 5. Previously accepted entire native leaf functions, source improved
 
-Accepted whole-source maintenance adds no new exact CODE. Current examples:
+Accepted source maintenance adds no exact CODE. Preserve the cold receipts:
 [CharacterAuxAction](CHARACTER_AUX_ACTION_NATIVE_TRANSFORM_F1139.md),
 [Battle HUD](BATTLE_HUD_NATIVE_BORROW_F1134.md),
 [AuxiliaryActor](AUXILIARY_ACTOR_NATIVE_BORROW_F1124.md),
-[BattleState](BATTLE_STATE_NATIVE_BORROW_MACROS_F1112.md) and
+[BattleState](BATTLE_STATE_NATIVE_BORROW_MACROS_F1112.md),
 [frame dependencies](FRAME_DEPENDENCIES_NATIVE_BORROW_WINDOWS_F1106.md).
-Their full cold-exact receipts remain authoritative.
-
-Replay all accepted units in an affected translation unit, never the whole
-registry. Header changes can rename VC7.1 `$L`/`$SG` symbols; complete original
-COFF identity matters alongside CODE bytes. For example:
-
-    scripts/repo-python scripts/replay-exact-units.py --unit character-aux-action-005fae30
+Replay every affected unit in a changed translation unit only. Header edits
+can rename VC7.1 local COFF symbols; CODE equality alone is insufficient.
 
 ## 6. Storage, source recovery and safe next-agent checklist
 
@@ -258,15 +257,9 @@ Preserve `resources/th075.exe`, `.analysis/vc71-wine/`, all accepted
 OBJ/JSON**, all original PE/COFF reference files, tracked C++/scripts/
 config/provenance, and archives under `.analysis/cache-archives/`.
 **Archive bytes are Git-ignored and NOT backed up by a fresh clone.**
-F1144 losslessly SHA256-archived **673 regenerable OBJ/PDB research
-files** into 6,453,751 archive B plus 117,927 receipt B, reclaiming
-**32,524,192 file bytes net**. Normal two-week-retention
-Git GC additionally saved **12,348,518 bytes**, and the narrow Python
-bytecode cleanup reclaimed **159,841 bytes**. See F1145 in the storage
-guide for integrity checks. The tracked
-[`F1144 restore/verify tool`](../scripts/archive-post-f1031-probe-binaries-f1144.py)
-recovers exact historical paths once the **machine-local archive and
-receipt** accompany the handoff. See [storage hygiene](STORAGE_HYGIENE.md).
+The machine-local F1144 archive/receipt preserves 673 historical binaries;
+use the [`F1144 restore/verify tool`](../scripts/archive-post-f1031-probe-binaries-f1144.py)
+and [storage hygiene](STORAGE_HYGIENE.md). Never discard archives/receipts.
 Historical full research evidence and older handoffs are indexed in
 [history](history/).
 

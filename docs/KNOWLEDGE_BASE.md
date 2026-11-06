@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1205):**
+**Maintenance annotation, updated 2026-11-06 (F1207):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -306,11 +306,29 @@ COFF bindings is checked; 132 source symbols resolve consistently. Whole
 comparison still differs in **137 nonfield bytes /133 GPR positions**:
 38D=45, 38E=64, 3E3=24, with zero width or other operand/CFG debt.
 [Fresh whole original proof](OBJECT_ADVANCE_004EBDA0_WHOLE_F1205.md).
-The first difference is 004F344C /whole8,076 /38D91. Six new whole-parent
+The first difference is 004F344C /whole8,076 /38D91. Six freshly built whole-parent
 scale/phase/profile/arithmetic controls do not improve. Original source is
 unchanged; fresh selected before.obj/audit/bindings and all negative sources
 are preserved locally. No exact credit, origin change, accepted input change,
 full CI or corpus replay.
+
+F1206/F1207 recovers the complete F061 active07 34KB **005EB520** parent
+into tracked natural C++, with all 60 real states/default. Fresh original
+and tracked builds preserve all emitted CODE/DATA and function relocation records:
+34,436B /9,378 x86, native frame 0x210 /this EBP-4 and all 3,170 EBP,
+901 direct targets, 745 CODE fields, 61 dense entries and 199 sparse bytes.
+All 806 actual COFF fields/payloads/PE permissions are rechecked. Remaining
+**135 GPR /six widths**, all 998, first 005F3904 /whole9,200. Earlier forward
+branch bytes can differ through moved destinations; no partial exact credit.
+Four new byte-view/subscript/angle controls emit identical CODE/DATA and
+bindings; historical F061 negatives were inspected without rebuilding.
+[Complete restored parent and scoped proof](OBJECT_ADVANCE_005EB520_WHOLE_F1207.md).
+F1206 also finds F756/F773's related 33KB negatives: F1205's builds are
+fresh but its window ideas are not all new. F1206 repeats F756's comma
+expression without gain; a valid nested stage-4 switch (historical attempt
+failed compilation) produces wrong frame/count and is rejected on shape.
+Bounded source-inventory regexes are leads, not proof of absent full drafts.
+No exact/origin/accepted-input changes; 982 /871,649B remain, 22 giants pending.
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function
