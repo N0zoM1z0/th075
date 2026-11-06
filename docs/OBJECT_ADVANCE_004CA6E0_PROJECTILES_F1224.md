@@ -87,3 +87,7 @@ diagnostics and `verified-summary.json`. Ghidra target preflight passed via
 the existing read-only wrapper. No accepted source, origin ledger, match
 manifest or canonical infrastructure changes; no full CI, corpus replay,
 origin retest or new per-function test is required or run.
+
+F1225 supersedes these partial dimensions:830–835 are also written, now
+41/55 states and25,883B/6,864 x86. See the
+[phase/effect proof](OBJECT_ADVANCE_004CA6E0_PHASE_EFFECTS_F1225.md).

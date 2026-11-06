@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1224):**
+**Maintenance annotation, updated 2026-11-06 (F1225):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -492,6 +492,18 @@ corrections, actual owner400–405 forced transition, speed17.5 and repeated
 follow/phase guards. Selected private `.analysis/f1224-object-4ca6e0-projectiles/flight.obj`,
 immutable CPP/HPP/listing/diagnostics and verified-summary.json remain.
 Twenty actual states remain; no whole exact credit, full CI or corpus replay.
+
+F1225 adds830–835 to the same004CA6E0 body:2,931 original interior B/776 x86,
+now41/55 states and25,688 written original interior B. Fresh phases.obj emits
+25,883B/6,864 x86, frame0x208 vsnative0x288; all written operand diagnostics
+pass, and all six new states have zero raw GPR/EBP/width debt. [Phase/effect proof](OBJECT_ADVANCE_004CA6E0_PHASE_EFFECTS_F1225.md)
+records distinct831/832 random ranges/speeds/repeat limits, actual833 scale
+factor0.98,834's continuing hit-reset path/three996 effects, and835's native
+three-byte wrapping fade without transform enable. Selected private
+`.analysis/f1225-object-4ca6e0-phase-effects/phases.obj`, immutable CPP/HPP,
+listing/diagnostic/verified-summary.json remain. Fourteen states remain;
+all42,511 original CODE B stay pending. No accepted input or infrastructure
+change, full CI, corpus replay or per-function test.
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function

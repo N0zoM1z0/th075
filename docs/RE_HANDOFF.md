@@ -1,4 +1,4 @@
-# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1224)
+# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1225)
 
 **Start here.** Continue all dirty work; there are no other active sessions.
 Work on both large/core and smaller authored originals. Use local commits
@@ -193,13 +193,13 @@ no whole exact credit. All other parents and unknown origins stay preserved.
 
 New incomplete 42KB source:
 [`probes/CharacterObjectActions004CA6E0F1222.cpp`](../probes/CharacterObjectActions004CA6E0F1222.cpp).
-F1224 has35/55 states; selected22,951B/6,088 x86, frame0x1D8 vsnative0x288,
+F1225 has41/55 states; selected25,883B/6,864 x86, frame0x208 vsnative0x288,
 original this-4/ESI. All written operand diagnostics agree; prefix/800–807/
-812–829 have zero raw GPR/EBP/width debt. 808–811 retain32/117/117/181 GPR,
-first004CCBD7/whole2526; postfix increment control is negative. Still20 states:
-830–839,901,903–911. Selected `.analysis/f1224-object-4ca6e0-projectiles/flight.obj`,
+812–835 have zero raw GPR/EBP/width debt. 808–811 retain32/117/117/181 GPR,
+first004CCBD7/whole2526; postfix increment control is negative. Still14 states:
+836–839,901,903–911. Selected `.analysis/f1225-object-4ca6e0-phase-effects/phases.obj`,
 immutable CPP/HPP/listing/diagnostics/verified-summary.json.
-[F1224 proof](OBJECT_ADVANCE_004CA6E0_PROJECTILES_F1224.md). Continue this
+[F1225 proof](OBJECT_ADVANCE_004CA6E0_PHASE_EFFECTS_F1225.md). Continue this
 same body; all42,511 original B remain pending.
 
 All other giant authored originals remain open; use the
