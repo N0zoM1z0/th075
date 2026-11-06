@@ -1,5 +1,7 @@
 # F1217 — recover original 005C9CC0 states 807–823
 
+F1218 continues this body to42/67 states and restores the original this slot; see [phase/effect evidence](OBJECT_ADVANCE_005C9CC0_PHASE_EFFECTS_F1218.md). The dimensions below describe the frozen F1217 checkpoint.
+
 The [single natural C++ body](../probes/CharacterObjectActions005C9CC0F1216.cpp)
 now contains **30 of 67 nondefault states**. This adds the original 807–823
 logic to F1216. **37 states remain unwritten**; all **43,501 original CODE B**

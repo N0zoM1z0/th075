@@ -1,4 +1,4 @@
-# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1217)
+# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1218)
 
 **Start here.** Continue all dirty work; there are no other active sessions.
 Work on both large/core and smaller authored originals. Use local commits
@@ -192,13 +192,13 @@ identity is not original relocation-offset equality. Retained source controls ar
 Continue register debt in this complete body; never count interiors as exact.
 New incomplete 43KB source:
 [`probes/CharacterObjectActions005C9CC0F1216.cpp`](../probes/CharacterObjectActions005C9CC0F1216.cpp).
-F1217 recovers30/67 states, including807–823 and eleven real loop indices
-throughEBP-2Ch; 37 remain unwritten. Fresh18,815B/4,962 x86, frame0x200 /
-this-30h vsnative0x470/-4Ch. All written operand diagnostics agree;
-prefix/through823 have zero raw GPR debt. [F1217 proof](OBJECT_ADVANCE_005C9CC0_MIDDLE_STATES_F1217.md).
-Selected `.analysis/f1217-object-5c9cc0-middle/attachment.obj`, immutable
-CPP/HPP, listing, diagnostic and `verified-summary.json`. Continue824 onward
-in this body; no exact credit. All complete parents stay live.
+F1218 recovers42/67 states and all18 real loop indices EBP-4..-48h, restoring
+native this-4Ch. Fresh26,725B/7,043 x86, frame0x2C4 vsnative0x470;25 states
+remain unwritten. All written operand diagnostics agree. Prefix/through850
+have **zero raw GPR/EBP/width debt**. [F1218 proof](OBJECT_ADVANCE_005C9CC0_PHASE_EFFECTS_F1218.md).
+Selected `.analysis/f1218-object-5c9cc0-phase-effects/reviewed.obj`, immutable
+CPP/HPP, listing, diagnostic and `verified-summary.json`. Continue the25 actual
+900-series states in this body; no exact credit. All complete parents stay live.
 
 All other giant authored originals remain open; use the
 [actual giant dispatch manifest](../config/fighter-boss-dispatch-fingerprints.json)

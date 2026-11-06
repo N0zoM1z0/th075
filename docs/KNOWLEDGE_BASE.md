@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1217):**
+**Maintenance annotation, updated 2026-11-06 (F1218):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -420,6 +420,15 @@ frame0x200/this-30h remains incomplete againstnative0x470/-4Ch. Original
 attachment branches, release exits, 810 boolean floating multiply and real
 loops are retained. Thirty-seven states and all43,501 CODE B remain pending.
 [Source and physical evidence](OBJECT_ADVANCE_005C9CC0_MIDDLE_STATES_F1217.md).
+
+F1218 adds824–834/850 to005C9CC0, reaching42/67 states. All18 used native
+loop indices now occupyEBP-4..-48h and naturally restore original this-4Ch.
+Every written instruction/operand diagnostic agrees; prefix/through850 have
+zero raw GPR/EBP/width debt. Source26,725B/7,043 x86, frame0x2C4 remains
+incomplete versusnative0x470. The native notification call at45B850 remains
+unclassified and uncredited; original four-byte argument/RET4 is retained.
+All25 remaining states and43,501 original CODE B stay pending; no accepted
+input changes. [Native phase/effect and stack proof](OBJECT_ADVANCE_005C9CC0_PHASE_EFFECTS_F1218.md).
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function

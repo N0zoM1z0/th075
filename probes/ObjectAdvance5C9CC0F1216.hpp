@@ -23,6 +23,9 @@ public:
     int RecordedRange(int, int);
     void ClearField74();
     void PlaySharedSound(short);
+    // Native 0045B850 is an empty receiver call with RET 4; the observed
+    // caller passes integer 1. Its original parameter typedef is unknown.
+    void UnknownAt0045B850(int);
 };
 
 float __cdecl AngleAt00483300(float, float);
