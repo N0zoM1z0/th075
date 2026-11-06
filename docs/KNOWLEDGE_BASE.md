@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1181):**
+**Maintenance annotation, updated 2026-11-06 (F1183):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -71,6 +71,14 @@ The raw float-representation transport is independently preserved; typed
 float argument lowering adds 329 x86 and is rejected.
 [Complete caller/parameter proof](CHARACTEROBJECT_NATIVE_EFFECT_ABI_F1181.md).
 No new exact whole CODE: the same 522 GPR/five-width debt remains.
+
+F1183 continues the existing 60KB Reimu F652 parent in tracked source,
+restoring all eleven 12C–136 native states: 3,529 original interior bytes,
+1,001 mnemonic/width positions, 91 real fields and every actual branch
+destination checked. All 53 previous real prefix handlers are preserved.
+[Source and native proof](REIMU_FALLING_STATES_F1183.md) records the genuine
+stage-3/stage-5 contradictory path, Reimu-only effect offsets and remaining
+623 GPR positions plus frame/stack debt. Whole exact credit remains zero.
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function
