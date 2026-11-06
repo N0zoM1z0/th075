@@ -111,3 +111,14 @@ Continue the register debt in this complete body. Only zero-difference
 canonical affected-unit cold replay can accept the whole function. No accepted
 input, origin/tracking ledger or canonical infrastructure change, full CI,
 corpus replay, origin retest or per-function test is introduced.
+
+F1228 independently rejects three further controls at the first808 register
+boundary. `D8 += 1` produces a wrong MOVSX/32-bit ADD in place of the native
+16-bit increment, with449 GPR/13 width differences. A commuted borrowed
+006583D8 constant predicate reverses the x87 operands/status test; its natural
+operand order restores identical CODE/DATA and COFF shapes, but leaves all447
+GPR/12 width differences. The selected source/header are byte-restored.
+Sources, fresh objects/listings/logs, whole audits and actual COFF comparisons
+remain in `.analysis/f1228-object-4ca6e0-increment-forms/verified-summary.json`
+and adjacent files. These controls do not explain the register phase and
+should not be repeated. No new exact bytes, CI or canonical replay.

@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1227):**
+**Maintenance annotation, updated 2026-11-06 (F1228):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -528,6 +528,15 @@ counter update recovering the original LEA base/index order. Selected private
 listing, both whole/source diagnostics and verified-summary.json remain.
 All42,511 original CODE B stay pending; no accepted inputs, origin/tracking
 ledgers or canonical infrastructure change, full CI or corpus replay.
+
+F1228 rejects808 compound increment and two borrowed-boundary predicates:
+`D8 +=1` changes native16-bit arithmetic to MOVSX/32-bit ADD; commuted global
+comparison reverses x87 operands. Natural-order global comparison is identical
+in CODE/DATA/COFF shapes and leaves447 GPR/12 width debt. Selected F1227
+source/header are byte-restored. [Complete-parent proof](OBJECT_ADVANCE_004CA6E0_COMPLETE_PARENT_F1227.md)
+and `.analysis/f1228-object-4ca6e0-increment-forms/verified-summary.json` retain
+all three fresh compiler/COFF controls. No accepted input or canonical change,
+full CI, corpus replay or new exact credit.
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function
