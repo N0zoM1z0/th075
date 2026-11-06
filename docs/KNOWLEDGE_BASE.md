@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1225):**
+**Maintenance annotation, updated 2026-11-06 (F1226):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -502,6 +502,17 @@ factor0.98,834's continuing hit-reset path/three996 effects, and835's native
 three-byte wrapping fade without transform enable. Selected private
 `.analysis/f1225-object-4ca6e0-phase-effects/phases.obj`, immutable CPP/HPP,
 listing/diagnostic/verified-summary.json remain. Fourteen states remain;
+all42,511 original CODE B stay pending. No accepted input or infrastructure
+change, full CI, corpus replay or per-function test.
+
+F1226 adds836–839 to004CA6E0:6,147 original interior B/1,615 x86, now45/55
+states and31,835 written original interior B. Fresh early-reviewed.obj emits
+32,030B/8,479 x86, frame0x238 vsnative0x288; all written operand diagnostics
+pass and all four new states have zero raw GPR/EBP/width debt. [Native/source proof](OBJECT_ADVANCE_004CA6E0_FINAL_EARLY_STATES_F1226.md)
+records distinct836/837 hit and reflection paths, full838/839 effect packets,
+actual NEG-then-ADD random velocities and839's facing negation. Selected
+`.analysis/f1226-object-4ca6e0-final-early/early-reviewed.obj`, immutable CPP/HPP,
+listing/diagnostics/verified-summary.json remain. Only901/903–911 are unwritten;
 all42,511 original CODE B stay pending. No accepted input or infrastructure
 change, full CI, corpus replay or per-function test.
 

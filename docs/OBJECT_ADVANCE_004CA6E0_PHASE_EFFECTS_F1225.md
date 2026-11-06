@@ -58,3 +58,7 @@ fresh **phases.obj/asm**, compiler log, local source diagnostic and
 locals, padding, assembly, source markers, alternate bodies, added defenses,
 canonical infrastructure edits, full CI, corpus replay, origin retest or
 per-function test is introduced.
+
+F1226 supersedes the partial dimensions above:836–839 are now written,
+reaching45/55 states and32,030B/8,479 x86, with all four new raw GPR/EBP/width
+debts zero. See the [native/source proof](OBJECT_ADVANCE_004CA6E0_FINAL_EARLY_STATES_F1226.md).
