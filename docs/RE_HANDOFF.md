@@ -1,9 +1,9 @@
-# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1150)
+# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1155)
 
 **Start here.** Work on both large/core original functions and smaller entire
 original functions. The user requests meaningful **multiple local commits** named
 `gpt-web: ...`, wants all dirty work continued rather than discarded, and forbids
-a complete 979-unit cold replay. Read [AGENTS.md](../AGENTS.md),
+a complete 980-unit cold replay. Read [AGENTS.md](../AGENTS.md),
 [the whole-function build workflow](RE_WORKFLOW.md), and
 [storage and recovery](STORAGE_HYGIENE.md). The original Japanese PE,
 `config/function-origins.csv`, exact `config/match-units.toml`, current
@@ -19,17 +19,17 @@ from an internal native case, mnemonic count, or identical source bytes.**
 | Target SHA-256 | `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98` |
 | Provisional original function candidates / origin unknown | **4,351 /95** (3,420 uncredited CODE B) |
 | Independently attributed original authored functions | **1,004** |
-| **Accepted complete original exact callables** | **979 units, 868,243 original CODE B** |
-| Reviewed authored byte exactness | **868,243/1,973,704 = 43.99%**; conservative **43.91%** |
-| **Whole authored originals remaining NONEXACT** | **25 =22 giant (1,102,055B) +3 other (3,406B)** |
+| **Accepted complete original exact callables** | **980 units, 868,414 original CODE B** |
+| Reviewed authored byte exactness | **868,414/1,973,704 = 44.00%**; conservative **43.92%** |
+| **Whole authored originals remaining NONEXACT** | **24 =22 giant (1,102,055B) +2 other (3,235B)** |
 | Completion objective | 98% authored CODE target **NOT achieved** |
 
-**Canonical summary:** **979 functions / 979 exact units** have
-**868,243 original CODE bytes** accepted; **1,004** independently
-authored originals are attributed, and **25 authored functions remain nonexact**: **22 large original state advances** (**1,102,055 CODE bytes**) plus **3 other original small/medium whole functions**
-(**3,406 CODE bytes**). The independently reviewed original authored
+**Canonical summary:** **980 functions / 980 exact units** have
+**868,414 original CODE bytes** accepted; **1,004** independently
+authored originals are attributed, and **24 authored functions remain nonexact**: **22 large original state advances** (**1,102,055 CODE bytes**) plus **2 other original small/medium whole functions**
+(**3,235 CODE bytes**). The independently reviewed original authored
 size denominator is **1,973,704** CODE B; accepted coverage is
-**43.99%** (conservative **43.91%**). These numbers must be read from
+**44.00%** (conservative **43.92%**). These numbers must be read from
 the live ledger rather than maintained by hand.
 
 **No recently recovered Boss *inner state* has independently added an
@@ -106,7 +106,7 @@ negative sources are retained and were not adopted.
 
     scripts/repo-python scripts/verify-characterobject-current-recovered-f1068.py
 
-No need to replay all 979 exact units. This cold-rebuilds ONLY the
+No need to replay all 980 exact units. This cold-rebuilds ONLY the
 one affected partial Boss source. F1138 introduced 358 genuine phase
 and meter borrows in 72 action files while keeping **82,127/82,127
 selected CODE+DATA bytes** and **1,449 physical COFF offsets/targets**;
@@ -134,16 +134,19 @@ Former repeated giant traces can be recovered with the tracked
 [`scripts/archive-frozen-giant-traces.py`](../scripts/archive-frozen-giant-traces.py)
 using [storage instructions](STORAGE_HYGIENE.md).
 
-## 4. All three remaining independent smaller whole originals
+## 4. Remaining independent smaller whole originals
+
+F1155 accepted the complete 171B ArchiveCatalog destructor `0041CE50`,
+including all 14 real fields, by restoring new[]-paired filename deletion.
+See [whole destructor cold-exact proof](ARCHIVE_CATALOG_ARRAY_DELETE_EXACT_F1155.md).
 
 | Complete original | Real native evidence and next meaningful attack |
 | --- | --- |
-| `0041CE50` ArchiveCatalog nonvirtual destructor **171B /51 x86** | Natural candidate **171B/51 x86**, correct 14 physical PE fields, but only **108/115 nonfield bytes** match. Original genuine pointer stack roles resource `EBP-0xC`, deleting receiver `-0x8`, filename `-0x10`; source cyclically rotates all three. Previous return categories [F1034](ARCHIVE_NATIVE_RETURN_CATEGORIES_F1034.md) and genuine owner lifetimes [F1078](ARCHIVE_TRUE_ELEMENT_LIFETIMES_F1078.md) negative. |
 | `0043B0B0` Scene virtual destructor **248B /75 x86** | Genuine 12 PE fields; nearest 248B native shape only **191/200 nonfield bytes**. Actual texture/delete locals differ; [F1015](SCENE_THREE_FREE_DECLARATION_ORDER_F1015.md), [F1048](SCENE_REUSED_TEXTURE_LIFETIMES_F1048.md) negative. |
 | `00602A60` WinMain **2,987B /654 x86** | Selected F911 natural source **2,984B/654 x86; 645/654 native widths**. F914 restores original frame/three pointer slots at width cost. Original 60B afterRET scene table is DATA, not code. [F911](WINMAIN_REAL_MAIN_BEFORE_SCENE_F911.md), [F914](WINMAIN_NATIVE_FRAME_FIRST_SCENE_OWNER_F914.md). |
 
 Do NOT artificially patch stack offsets, force dummy locals, add
-assembler or crop callables to earn coverage. **All three are NONEXACT**.
+assembler or crop callables to earn coverage. **Both remain NONEXACT**.
 
 ## 5. Previously accepted entire native leaf functions, source improved
 
@@ -199,6 +202,6 @@ For a **Boss-only** change, run only the affected whole-parent verifier;
 for a **leaf** change, cold replay only that leaf and all other exact
 units in the same source object. Record what passed and what remains
 unresolved. After meaningful progress, commit with `gpt-web: ...`.
-Do not run a full 979-unit cold replay. Git commits remain local without
+Do not run a full 980-unit cold replay. Git commits remain local without
 network push; hand off the checkout or transfer/push through an
 external authorized mechanism.

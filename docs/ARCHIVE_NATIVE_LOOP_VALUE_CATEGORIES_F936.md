@@ -1,5 +1,10 @@
 # F935–F936 — The 171-byte Archive destructor's temporary rotation is not the loop spelling
 
+**F1155 supersession:** this original whole destructor is now accepted cold
+exact with array deletion of registered names, paired with the original
+`new char[]`. These earlier free-based negative sources remain preserved;
+see [complete F1155 proof](ARCHIVE_CATALOG_ARRAY_DELETE_EXACT_F1155.md).
+
 Target is the SHA-pinned Japanese TH075 v1.11 original
 ArchiveCatalog nonvirtual destructor **0041CE50**.
 This is one complete **171 CODE B/51 x86/14 physically

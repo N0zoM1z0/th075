@@ -168,7 +168,7 @@ was **36 complete unmatched authored functions** at F754 from
 `config/function-origins.csv` (22 large + 14 small/medium); after F755, F758, F760, F765, F766, F769, F770, F775 and F776
 the live queue is **27 (22 large + 5 small/medium)**, not the
 25 `owner=authored` rows selected by the old active audit. The
-[current handoff](RE_HANDOFF.md) contains the entire 5-function
+[current handoff](RE_HANDOFF.md) contains the current complete
 small/medium queue, and the former 1,289-line F653–F753 handoff
 is preserved [in frozen history](history/RE_HANDOFF_F653_THROUGH_F753_2026-10-30.md).
 Use the updated `audit-active-handoff.py` to cross-check every address.

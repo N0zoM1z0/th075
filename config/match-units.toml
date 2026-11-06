@@ -61114,3 +61114,30 @@ relocations = [
  { offset = 0x4F, type = "REL32", symbol = "?GetTexture@SpriteDrawingF780@@QAEPAUIDirect3DTexture8@@H@Z", target = 0x0040C8C0 },
  { offset = 0x64, type = "REL32", symbol = "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z", target = 0x004029F0 },
 ]
+
+# F1155: complete original 171-B/51-x86 last-user registry destructor.
+# Scalar resource delete and new[]-paired filename deletion, all 14 PE fields.
+[units.archive-catalog-release-0041ce50]
+source = "src/ArchiveCatalogReleaseF1155.cpp"
+object = "build/matching/ArchiveCatalogReleaseF1155.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi"]
+functions = ["ArchiveCatalog::Release"]
+symbol = "??1ArchiveCatalogF343@@QAE@XZ"
+target_address = 0x0041CE50
+size = 171
+relocations = [
+ { offset = 0xA, type = "DIR32", symbol = "?g_ArchiveUseCountAt0068BE04@@3IA", target = 0x0068BE04 },
+ { offset = 0x12, type = "DIR32", symbol = "?g_ArchiveUseCountAt0068BE04@@3IA", target = 0x0068BE04 },
+ { offset = 0x2F, type = "DIR32", symbol = "?g_ArchiveNamesAt0068BE1C@@3VArchiveNamesF343@@A", target = 0x0068BE1C },
+ { offset = 0x34, type = "REL32", symbol = "?Size@ArchiveNamesF343@@QAEIXZ", target = 0x0041DD50 },
+ { offset = 0x42, type = "DIR32", symbol = "?g_ArchiveResourcesAt0068BE08@@3VArchiveResourcesF343@@A", target = 0x0068BE08 },
+ { offset = 0x47, type = "REL32", symbol = "?At@ArchiveResourcesF343@@QAEPAPAVArchiveResourceF343@@I@Z", target = 0x0041DB40 },
+ { offset = 0x62, type = "REL32", symbol = "??_GArchiveResourceF343@@QAEPAXI@Z", target = 0x0041D8C0 },
+ { offset = 0x77, type = "DIR32", symbol = "?g_ArchiveNamesAt0068BE1C@@3VArchiveNamesF343@@A", target = 0x0068BE1C },
+ { offset = 0x7C, type = "REL32", symbol = "?At@ArchiveNamesF343@@QAEPAPADI@Z", target = 0x0041DDC0 },
+ { offset = 0x8A, type = "REL32", symbol = "??_V@YAXPAX@Z", target = 0x0064169D },
+ { offset = 0x94, type = "DIR32", symbol = "?g_ArchiveResourcesAt0068BE08@@3VArchiveResourcesF343@@A", target = 0x0068BE08 },
+ { offset = 0x99, type = "REL32", symbol = "?Clear@ArchiveResourcesF343@@QAEXXZ", target = 0x0041DCD0 },
+ { offset = 0x9E, type = "DIR32", symbol = "?g_ArchiveNamesAt0068BE1C@@3VArchiveNamesF343@@A", target = 0x0068BE1C },
+ { offset = 0xA3, type = "REL32", symbol = "?Clear@ArchiveNamesF343@@QAEXXZ", target = 0x0041DF50 },
+]

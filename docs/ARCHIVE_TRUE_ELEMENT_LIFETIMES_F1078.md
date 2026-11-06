@@ -1,5 +1,10 @@
 # F1078 — Twenty fresh whole-original ArchiveCatalog destructor value/lifetime experiments
 
+**F1155 supersession:** this original whole destructor is now accepted cold
+exact with array deletion of registered names, paired with the original
+`new char[]`. These earlier free-based negative sources remain preserved;
+see [complete F1155 proof](ARCHIVE_CATALOG_ARRAY_DELETE_EXACT_F1155.md).
+
 The pinned Japanese TH075 1.11 game has one original **171 CODE B /
 51-x86 nonvirtual ArchiveCatalog destructor at 0041CE50**. It
 remains **NONEXACT**, unlike the independently accepted 979 whole

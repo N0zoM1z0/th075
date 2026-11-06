@@ -1,8 +1,8 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1150):**
+**Maintenance annotation, updated 2026-11-06 (F1155):**
 The **current authoritative** pinned-original whole-function evidence,
-81KB Boss CFG (all 1,834 direct branch targets now match), 979 accepted
+81KB Boss CFG (all 1,834 direct branch targets now match), 980 accepted
 whole exact functions, and safe local storage/restore instructions are
 in the [live agent handoff](RE_HANDOFF.md) and
 [storage hygiene guide](STORAGE_HYGIENE.md). This chronological
@@ -36,6 +36,11 @@ Four subsequent complete-parent typed-action/transform-assignment probes
 retain the same GPR debt; negative C++/COFF/logs are preserved under
 `.analysis/f1151-native-gpr-types/` without replacing the verified F1150 parent.
 
+F1155 accepts the full 171B/51-x86 ArchiveCatalog destructor 0041CE50,
+all 14 physical fields cold exact, by using new[]-paired filename deletion.
+The old named-filename/free premise caused the stack-slot rotation;
+[complete original proof](ARCHIVE_CATALOG_ARRAY_DELETE_EXACT_F1155.md).
+
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function
 ledger or the new-agent work queue. Old F-series headings with words like
@@ -51,16 +56,16 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
 
 ## Current verified original-game status (one short snapshot)
 
-- **979 cold-exact source-present functions**, **868,243 original authored
-  CODE bytes**, **43.99% reviewed authored coverage** and **43.91%
+- **980 cold-exact source-present functions**, **868,414 original authored
+  CODE bytes**, **44.00% reviewed authored coverage** and **43.92%
   conservative coverage** of native original CODE. The independently
   reviewed authored provenance cohort has **1,004** candidates, so
-  **25 authored whole functions remain NONEXACT**: **22** large
-  (1,102,055 original CODE B) plus **3** small/medium
-  (3,406 CODE B). The older **25**-function subset counted only
+  **24 authored whole functions remain NONEXACT**: **22** large
+  (1,102,055 original CODE B) plus **2** small/medium
+  (3,235 CODE B). The older **25**-function subset counted only
   `config/functions.csv.owner=authored` unfinished rows and omitted
   11 independently authored, formerly owner-blank small/medium targets,
-  of which F755, F758, F760, F765, F766, F769, F770, F775, F776, F779 and F780 have accepted all eleven. See [all 3 current addresses](RE_HANDOFF.md).
+  of which F755, F758, F760, F765, F766, F769, F770, F775, F776, F779 and F780 have accepted all eleven. See [both current smaller addresses](RE_HANDOFF.md).
 - **95 original candidates /3,420 CODE bytes** have separately
   unresolved provenance; even a whole byte-exact C++ source does not
   permit reclassification or accepted authored CODE without independent

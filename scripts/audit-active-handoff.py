@@ -136,7 +136,7 @@ def main() -> None:
            'Active navigation must retain the lossless historical handoff')
     expect('## 1. Original native PE and complete-function exactness' in handoff
            and '## 2. Primary large Boss' in handoff
-           and '## 4. All three remaining independent' in handoff,
+           and '## 4. Remaining independent smaller whole originals' in handoff,
            'Live handoff must explain current giant/small work separately')
     expect(len(handoff) < 20_000,
            'Agent-facing handoff has regrown into a stale historical experiment journal')

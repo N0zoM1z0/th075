@@ -10,7 +10,7 @@ Only original, attributable, byte-identical **whole callable functions**
 earn canonical exact CODE credit. An internal case, original PE-similar
 mnemonic stream or matching total source length is not acceptance.
 
-## Current verified status (2026-11-04, F1144 handoff / 979 exact ledger)
+## Current verified status (2026-11-06, F1155 / 980 exact ledger)
 
 | Property | Grounded result |
 | --- | --- |
@@ -19,17 +19,17 @@ mnemonic stream or matching total source length is not acceptance.
 | Original PE image base / file bytes | 0x00400000 / 2,576,384 |
 | Provisional native candidates | 4,351 |
 | Independently source-attributed original authored functions | 1,004 |
-| Complete accepted exact native function units | **979 / 979** |
-| Accepted entire callable original CODE | **868,243** B |
-| Reviewed authored-byte coverage | **43.99%** of **1,973,704** B |
-| Conservative authored coverage | **43.91%** |
-| Original authored functions still NONEXACT | **25**: **22** large original state advances (1,102,055 B) plus **3** small/medium original functions (3,406 B) |
+| Complete accepted exact native function units | **980 / 980** |
+| Accepted entire callable original CODE | **868,414** B |
+| Reviewed authored-byte coverage | **44.00%** of **1,973,704** B |
+| Conservative authored coverage | **43.92%** |
+| Original authored functions still NONEXACT | **24**: **22** large original state advances (1,102,055 B) plus **2** small/medium original functions (3,235 B) |
 | Original origin-unknown candidate rows | 95 (3,420 uncredited CODE B) |
 
 The 98% authored-byte goal is **NOT met**. Previously confusing
 "25 pending plus 11" counts belong to older source-origin
 checkpoints: the additional eleven were accepted through F780.
-There are currently **25 total** nonexact attributed originals,
+There are currently **24 total** nonexact attributed originals,
 not 27 or 36. The original PE, independent provenance decisions,
 whole [exact match units](config/match-units.toml) and
 live [reconstruction report](scripts/report-reconstruction-status.py)
@@ -38,9 +38,9 @@ always outrank historical F-series prose.
 ## Start here: current task queue
 
 The [**current agent handoff**](docs/RE_HANDOFF.md) provides
-the latest VERIFIED evidence, 13 currently unresolved physical
-branch targets inside the 81KB Boss, all
-25 remaining whole-function targets and targeted reproductions.
+the latest verified evidence, all 1,834 direct Boss branch targets and all
+5,717 native EBP operands recovered, and the 24 remaining whole-function
+targets with targeted reproductions.
 The [source workflow](docs/RE_WORKFLOW.md), [AGENTS.md](AGENTS.md),
 and [storage and recovery policy](docs/STORAGE_HYGIENE.md) apply
 to every session. The F1144 local SHA256 archive preserves 673 older
@@ -74,23 +74,24 @@ recovered one real shared 2DB shot-loop variable, while
 [F1029](docs/THIRD_FIGHTER_NATIVE_259_ANGLE_GPR_F1029.md) rules out
 eight angle-expression spellings without improving the remaining
 register phase. The **81,539B `0050A580`** has now reached an original-shaped
-**81,560B/17,435-x86** C++ parent, with **13 incorrect physical
-branch targets, 8 GPR-provisional states, wrong native frame, and
-FUCOMPP debt**. It is still **NONEXACT**; see the
+**81,542B/17,435-x86** C++ parent, with original frame/stack slots,
+both 391 x87 load fields and every direct branch target recovered, but
+**522 GPR-role /5 width differences** in eight provisional states.
+It is still **NONEXACT**; see the
 [updated giant handoff](docs/RE_HANDOFF.md).
 The **60,999B `0045DD70`** and other giant originals must also be
 attacked seriously; the
 [original dispatch manifest](config/fighter-boss-dispatch-fingerprints.json)
 provides the true extents and jump DATA owners.
 
-Three complete smaller original authored functions are still
-nonexact: **`0041CE50`** Archive destructor (**171B**),
-**`0043B0B0`** Scene virtual destructor (**248B**),
-and **`00602A60`** WinMain (**2,987B**). Their latest
-native stack/owner evidence is [F936 Archive](docs/ARCHIVE_NATIVE_LOOP_VALUE_CATEGORIES_F936.md),
-[F1015 Scene](docs/SCENE_THREE_FREE_DECLARATION_ORDER_F1015.md),
-and [F914/F911 WinMain](docs/WINMAIN_NATIVE_FRAME_FIRST_SCENE_OWNER_F914.md).
-All three still need original full-function byte equality.
+Two complete smaller original authored functions remain nonexact:
+**`0043B0B0`** Scene virtual destructor (**248B**) and **`00602A60`**
+WinMain (**2,987B**). Current evidence is
+[F1015 Scene](docs/SCENE_THREE_FREE_DECLARATION_ORDER_F1015.md) and
+[F914/F911 WinMain](docs/WINMAIN_NATIVE_FRAME_FIRST_SCENE_OWNER_F914.md).
+F1155 accepted the entire **171B `0041CE50` Archive destructor**, resolving
+its native stack slots through new[]-paired filename deletion;
+[complete cold-exact evidence](docs/ARCHIVE_CATALOG_ARRAY_DELETE_EXACT_F1155.md).
 
 Already accepted leaf/code semantics are also actively improved:
 [F1022 script WORDs](docs/FIGHTER_SCRIPT_COUNTER_ADJACENT_NATIVE_F1022.md)

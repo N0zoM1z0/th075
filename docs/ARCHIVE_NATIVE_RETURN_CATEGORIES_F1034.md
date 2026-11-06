@@ -1,5 +1,10 @@
 # F1034 — The native ArchiveCatalog destructor does not depend on At() value-category declarations
 
+**F1155 supersession:** this original whole destructor is now accepted cold
+exact with array deletion of registered names, paired with the original
+`new char[]`. These earlier free-based negative sources remain preserved;
+see [complete F1155 proof](ARCHIVE_CATALOG_ARRAY_DELETE_EXACT_F1155.md).
+
 The original pinned Japanese TH075 1.11 independently authored
 `0041CE50` ArchiveCatalog nonvirtual destructor is one **171-byte / 51-x86**
 complete callable. The original PE contains 14 real physical external
