@@ -1,5 +1,10 @@
 # F1185 — Reimu C8–D0 command and motion states
 
+**Historical F1185 checkpoint:** F1186 extends the same parent to
+29,020B/7,980 x86, preserving all 80 prior nonmarker physical intervals.
+See [the current scripted-attack proof](REIMU_SCRIPTED_ATTACKS_F1186.md).
+The dimensions below describe commit `0bbfeaf7`.
+
 The same live `probes/FighterWhole0045DD70F1183.cpp` replaces nine
 markers with normal C++ in `ReimuCommandStatesF1185.inc` and its three
 parameterized `ReimuComplexMotionF1185.inc` bodies. The independently

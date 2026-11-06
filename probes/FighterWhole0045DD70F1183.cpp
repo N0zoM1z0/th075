@@ -2,8 +2,10 @@
 // F652 native D1/D2 source. The complete 60,999B callable is NONEXACT.
 // Missing states remain explicit research markers and earn no CODE credit.
 // Preserve independently reviewed current bodies and all six table groups.
-class FighterSwitchF598_Boss0045DD70 { public: void SetMotionStateAt40FBB0(int,float,int); void SetMotionFloatAt40FBB0(float,float,float); void ResetMotionAt40FC50(); void SpawnDirectedAt453A70(int,int,int,char,int); void SpawnWithFloatAt453A70(int,int,float,char,int); void SpawnFloatXYAt453A70(int,float,float,char,int); void InitTrajectoryAt453E60(float); virtual void NativeVirtualFrameAdvance(); void Advance(); void ResetAt453E20(); void PrepareActionAt453D60(int); void StartAnimationAt46D000(int); void SpawnAt453C80(int,float,float,char,int); void SpawnMixedAt453C80(int,int,float,char,int); void SpawnRawXYAt453C80(int,int,int,char,int); void ConfigureStormAt454BC0(int,unsigned char,unsigned int); short GetNativeActionAt40FA30(); void SetNativeActionAt40FAC0(int); signed char ContactAt454EE0(); void SetAuxActionAt40FB40(int); };
+class FighterSwitchF598_Boss0045DD70 { public: void SetMotionStateAt40FBB0(int,float,int); void SetMotionFloatAt40FBB0(float,float,float); void ResetMotionAt40FC50(); void SpawnDirectedAt453A70(int,int,int,char,int); void SpawnWithFloatAt453A70(int,int,float,char,int); void SpawnFloatXYAt453A70(int,float,float,char,int); void InitTrajectoryAt453E60(float); virtual void NativeVirtualFrameAdvance(); void Advance(); void PlaySoundAt453D40(short); void ResetAt453E20(); void PrepareActionAt453D60(int); void StartAnimationAt46D000(int); void SpawnAt453C80(int,float,float,char,int); void SpawnMixedAt453C80(int,int,float,char,int); void SpawnRawXYAt453C80(int,int,int,char,int); void ConfigureStormAt454BC0(int,unsigned char,unsigned int); short GetNativeActionAt40FA30(); void SetNativeActionAt40FAC0(int); signed char ContactAt454EE0(); void SetAuxActionAt40FB40(int); };
 extern unsigned int g_FighterProbeMarker;
+extern float g_ReimuLowVolleyYAt006590A0;
+extern float g_ReimuHighVolleyYAt0065909C;
 extern float g_ThresholdAt0065782C;
 extern float g_ExtraThresholdAt00657D14;
 extern float g_ReimuC8BrakeAt00657D70;
@@ -618,13 +620,7 @@ case 0x48: {
 
 
 
-        case 0x186: g_FighterProbeMarker = 391; break;
-        case 0x187: g_FighterProbeMarker = 392; break;
-        case 0x188: g_FighterProbeMarker = 393; break;
-        case 0x189: g_FighterProbeMarker = 394; break;
-        case 0x190: g_FighterProbeMarker = 401; break;
-        case 0x191: g_FighterProbeMarker = 402; break;
-        case 0x192: g_FighterProbeMarker = 403; break;
+#include "ReimuScriptedAttacksF1186.inc"
         case 0x194: g_FighterProbeMarker = 405; break;
         case 0x195: g_FighterProbeMarker = 406; break;
         case 0x196: g_FighterProbeMarker = 407; break;

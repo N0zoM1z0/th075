@@ -1,4 +1,4 @@
-# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1185)
+# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1186)
 
 **Start here.** Work on both large/core original functions and smaller entire
 original functions. The user requests meaningful **multiple local commits** named
@@ -133,19 +133,20 @@ CODE/COFF exactness**. See [F1138 source borrow](CHARACTEROBJECT_WHOLE_NATIVE_PH
 | **`004AC040`** 82,796B/22,721 x86, 1,126 afterRET DATA | 82,796B/22,721 x86, original saved-this and frame; **12 wrong widths, 6,958 GPR positions** | [F1028 native PE targets](THIRD_FIGHTER_WHOLE_82KB_PE_TARGETS_F1028.md), 2,191 external targets |
 | **`00543210`** 58,294B/16,471 x86, 943 DATA | 58,293B/16,471 x86; **3 widths, 1,741 GPR positions** | [F1025 native PE targets](FIGHTER_58KB_ALL_NATIVE_PE_TARGETS_F1025.md), 1,697 targets |
 | **`005214B0`** 46,755B/13,230 x86, 901 DATA | 46,754B/13,230 x86; **5 widths**, original physical COFF/GPR wrong | [F1026 native PE targets](FIGHTER_46KB_ALL_NATIVE_PE_TARGETS_F1026.md), 1,341 targets |
-| **`0045DD70`** 60,999B/16,837 x86 | Live F1183–F1185 partial parent **24,967B/6,844 x86**; 63 nondefault markers, frame/stack/GPR still wrong | [F1185 new C8–D0 bodies](REIMU_COMMAND_STATES_F1185.md), [F1184 59–63](REIMU_EARLY_RECOVERY_STATES_F1184.md) and [F1183 12C–136](REIMU_FALLING_STATES_F1183.md): 2,695 x86 /239 fields; no whole exact |
+| **`0045DD70`** 60,999B/16,837 x86 | Live F1183–F1186 partial parent **29,020B/7,980 x86**; 56 nondefault markers, frame/stack/GPR still wrong | [F1186 new 186–192 attacks](REIMU_SCRIPTED_ATTACKS_F1186.md), plus earlier [F1185](REIMU_COMMAND_STATES_F1185.md)/[F1184](REIMU_EARLY_RECOVERY_STATES_F1184.md)/[F1183](REIMU_FALLING_STATES_F1183.md): 3,845 x86 /340 fields; no whole exact |
 
 Current Reimu source: [`probes/FighterWhole0045DD70F1183.cpp`](../probes/FighterWhole0045DD70F1183.cpp),
-continued from the retained F652 D1/D2 source. Twenty-seven real states
-replace old markers, covering 9,453 original interior bytes /2,695 x86
-and 239 physical external fields. Every branch target and non-GPR operand
-agrees. All nine C8–D0 states and eleven 12C–136 states now also match
-GPR roles and widths; 5F/61 retain that agreement. Native frame/stack and
-earlier GPR debt remain; **no whole exact callable is added**. F1184's
-61 completion-else correction is retained. The next missing source is
-**186 and later attack states**. Keep the default/common-tail and
-63-marker debt explicit; do not promote this partial 24KB parent as the
-original 60KB whole.
+continued from the retained F652 D1/D2 source. Thirty-four real states
+replace old markers, covering 13,668 original interior bytes /3,845 x86
+and 340 physical external fields. Every mnemonic, branch target, non-GPR
+operand and actual external field agrees. All nine C8–D0 and eleven
+12C–136 states also match GPR roles/widths, as do 5F/61. The new seven
+186–192 states retain 695 GPR differences and 20 genuine MOV/FILD stack
+width differences; frame/stack remain wrong. All 80 previously nonmarker
+intervals are preserved. **No whole exact callable is added.** Continue
+with **194 and later attack states**, preserving the 61 completion-else
+correction. Keep the default/common-tail and 56-marker debt explicit;
+do not promote this partial 29KB parent as the original 60KB whole.
 
 All other giant authored originals remain open; use the
 [actual giant dispatch manifest](../config/fighter-boss-dispatch-fingerprints.json)

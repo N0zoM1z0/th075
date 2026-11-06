@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1185):**
+**Maintenance annotation, updated 2026-11-06 (F1186):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -97,6 +97,18 @@ actor-specific collision/repeat rules and 8-to-9 brake policy. The parent
 emits 24,967B/6,844 x86, with frame 0x40 /saved-this EBP-0xC still wrong
 and 63 nondefault markers. Combined new interiors span 9,453B/2,695 x86
 and 239 fields; these are not whole exact credit.
+
+F1186 restores seven Reimu 186–192 attack states: 4,215 original interior
+bytes /1,150 x86 /101 actual fields. All mnemonics, non-GPR operands,
+branch targets and physical fields agree; 695 GPR positions and 20 actual
+MOV/FILD stack widths remain wrong. The native 190/191 two five-shot
+sequences retain per-shot angle/speed writes, unsigned resource guard,
+repeat limits and actor-specific coordinates. Plain ground-field equality
+corrects reversed x87 loads in 187/189. [Native scripted-attack proof](REIMU_SCRIPTED_ATTACKS_F1186.md).
+All 80 earlier nonmarker physical intervals retain their prior diagnostic
+results. The parent is now 29,020B/7,980 x86, frame 0x90 /saved-this
+EBP-0xC still wrong, 56 nondefault markers. Combined newly sourced states
+span 13,668B/3,845 x86/340 fields, with zero whole exact credit.
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function
