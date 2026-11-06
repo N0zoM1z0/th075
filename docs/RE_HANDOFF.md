@@ -1,4 +1,4 @@
-# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1231)
+# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1232)
 
 **Start here.** Continue all dirty work; there are no other active sessions.
 Work on both large/core and smaller authored originals. Use local commits
@@ -204,14 +204,16 @@ complete body; all42,511 original B remain pending.
 
 Current incomplete 43KB source:
 [`probes/CharacterObjectActions005A1600F1231.cpp`](../probes/CharacterObjectActions005A1600F1231.cpp),
-`ObjectAdvance5A1600F1231.hpp`. F1231 writes17/76 states:
-800–810/988/989/995–997/999, with two genuine reward loops. Fresh7,813B/2,070
-x86 matches written mnemonic/local-branch/normalized operand shapes only;
-raw50 GPR/21 width/657 EBP differences,59 states unwritten. Native43,599B,
-frame21Ch/this-1Ch remain pending; partial frame60h/this-Ch.
-Selected `.analysis/f1231-object-5a1600-recovery/reviewed.cpp/hpp/obj/asm`,
-source diagnostic and `verified-summary.json`; [F1231 proof](OBJECT_ADVANCE_005A1600_INITIAL_PARENT_F1231.md).
-Continue811 onward in this source, not F569 markers. No exact credit.
+`ObjectAdvance5A1600F1231.hpp`. F1232 writes32/76 states:
+800–811/813–826/988/989/995–997/999, with two genuine reward loops.
+Fresh19,399B/5,218 x86 matches written mnemonic/local-branch/normalized operands
+only; raw527 GPR/14 width/1,685 EBP differences,44 states unwritten.
+All26 written800–826 states have zero raw GPR debt; eight widths are temporary
+slot displacements16B above native. Four real loop indices remain unwritten;
+do not pad. Native43,599B/frame21Ch/this-1Ch remain pending; partial frameACh/this-Ch.
+Selected `.analysis/f1232-object-5a1600-middle/orbit.cpp/hpp/obj/asm`, source
+diagnostic/width map/`verified-summary.json`; [F1232 proof](OBJECT_ADVANCE_005A1600_MIDDLE_STATES_F1232.md).
+F1231 retains full original/owner evidence. Continue827 onward, not F569 markers.
 
 All other giant authored originals remain open; use the
 [actual giant dispatch manifest](../config/fighter-boss-dispatch-fingerprints.json)

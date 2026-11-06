@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1231):**
+**Maintenance annotation, updated 2026-11-06 (F1232):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -566,6 +566,18 @@ immutable sources/objects and diagnostics remain in
 `.analysis/f1231-object-5a1600-recovery/verified-summary.json`.
 [Initial-parent evidence](OBJECT_ADVANCE_005A1600_INITIAL_PARENT_F1231.md).
 No accepted input/ledger/origin change, CI, corpus replay or new exact credit.
+
+F1232 continues `005A1600` to **32/76** real states by adding 811/813–826,
+11,543 native CODE B/3,148 x86. The selected partial parent emits 19,399B/5,218
+x86, frame ACh/this-Ch; all written mnemonic/local-branch/normalized operand
+shapes agree. Raw 527 GPR/14 width/1,685 EBP positions still differ; 44 states
+remain unwritten. All 26 written 800–826 states have zero raw GPR debt; their
+eight widths are actual temporary-slot disp8/disp32 differences, 16 bytes
+above native positions. Four genuine loop indices are still in missing states.
+All original 43,599B remain pending. [Middle-state proof](OBJECT_ADVANCE_005A1600_MIDDLE_STATES_F1232.md)
+and `.analysis/f1232-object-5a1600-middle/verified-summary.json` retain two
+serial builds, native constants/related-state differences and immutable stages.
+No accepted input, origin, full CI, corpus replay or new exact credit.
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function

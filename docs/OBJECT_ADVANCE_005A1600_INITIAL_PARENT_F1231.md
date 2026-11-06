@@ -1,5 +1,8 @@
 # F1231 — initial native-backed source for 005A1600
 
+Historical initial stage; [F1232](OBJECT_ADVANCE_005A1600_MIDDLE_STATES_F1232.md)
+continues the live partial parent to 32 states. All F1231 evidence is retained.
+
 The new research parent writes **17 of 76** real nondefault states in
 `probes/CharacterObjectActions005A1600F1231.cpp`, using the borrowed interfaces
 in `probes/ObjectAdvance5A1600F1231.hpp`. It is incomplete and NONEXACT.
