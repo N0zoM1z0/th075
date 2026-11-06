@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1232):**
+**Maintenance annotation, updated 2026-11-06 (F1233):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -578,6 +578,19 @@ All original 43,599B remain pending. [Middle-state proof](OBJECT_ADVANCE_005A160
 and `.analysis/f1232-object-5a1600-middle/verified-summary.json` retain two
 serial builds, native constants/related-state differences and immutable stages.
 No accepted input, origin, full CI, corpus replay or new exact credit.
+
+F1233 writes all early `005A1600` states 827–844, reaching **50/76** real states.
+New complete native intervals total 7,334B/1,982 x86; selected partial parent
+emits 26,741B/7,200 x86, frame 108h/this-14h. **All 50 written states have zero raw
+GPR debt**, while four MOV/FILD widths and 2,343 EBP positions still differ.
+The third/fourth genuine reward loops move the remaining 819/820 temporary
+displacements from 16B to 8B above native. Two real indices and all 26 states
+900–925 remain unwritten; all 43,599 original CODE B stay pending. Native
+constants preserve 829's QWORD 0.25 versus DWORD 0.25f and 834/836's NEG/SUB75.
+[Final early-state proof](OBJECT_ADVANCE_005A1600_FINAL_EARLY_F1233.md) and
+`.analysis/f1233-object-5a1600-final-early/verified-summary.json` retain the
+two serial builds, source snapshots, COFF and all diagnostics. No accepted
+input/header/origin/ledger change, full CI, corpus replay or exact credit.
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function

@@ -1,4 +1,4 @@
-# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1232)
+# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1233)
 
 **Start here.** Continue all dirty work; there are no other active sessions.
 Work on both large/core and smaller authored originals. Use local commits
@@ -204,16 +204,16 @@ complete body; all42,511 original B remain pending.
 
 Current incomplete 43KB source:
 [`probes/CharacterObjectActions005A1600F1231.cpp`](../probes/CharacterObjectActions005A1600F1231.cpp),
-`ObjectAdvance5A1600F1231.hpp`. F1232 writes32/76 states:
-800–811/813–826/988/989/995–997/999, with two genuine reward loops.
-Fresh19,399B/5,218 x86 matches written mnemonic/local-branch/normalized operands
-only; raw527 GPR/14 width/1,685 EBP differences,44 states unwritten.
-All26 written800–826 states have zero raw GPR debt; eight widths are temporary
-slot displacements16B above native. Four real loop indices remain unwritten;
-do not pad. Native43,599B/frame21Ch/this-1Ch remain pending; partial frameACh/this-Ch.
-Selected `.analysis/f1232-object-5a1600-middle/orbit.cpp/hpp/obj/asm`, source
-diagnostic/width map/`verified-summary.json`; [F1232 proof](OBJECT_ADVANCE_005A1600_MIDDLE_STATES_F1232.md).
-F1231 retains full original/owner evidence. Continue827 onward, not F569 markers.
+`ObjectAdvance5A1600F1231.hpp`. F1233 writes50/76 states:
+800–811/813–844/988/989/995–997/999, with four genuine reward loops.
+Fresh26,741B/7,200 x86 matches written mnemonic/local-branch/normalized operands;
+**all50 written states have zero raw GPR debt**. Four widths remain in819/820
+MOV/FILD slots8B above native;2,343 raw EBP positions differ. Two real indices
+and all26 states900–925 remain unwritten; do not pad or optimize missing-context
+registers. Native43,599B/frame21Ch/this-1Ch remain pending; partial frame108h/this-14h.
+Selected `.analysis/f1233-object-5a1600-final-early/charged.cpp/hpp/obj/asm`,
+source diagnostic/width map/`verified-summary.json`; [F1233 proof](OBJECT_ADVANCE_005A1600_FINAL_EARLY_F1233.md).
+F1231 retains original/owner evidence. Continue900 onward; no whole exact credit.
 
 All other giant authored originals remain open; use the
 [actual giant dispatch manifest](../config/fighter-boss-dispatch-fingerprints.json)

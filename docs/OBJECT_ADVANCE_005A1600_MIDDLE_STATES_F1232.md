@@ -1,5 +1,8 @@
 # F1232 — native-backed middle states in 005A1600
 
+Historical partial stage; [F1233](OBJECT_ADVANCE_005A1600_FINAL_EARLY_F1233.md)
+continues the live source to 50 states. All F1232 evidence is retained.
+
 The live partial parent in `probes/CharacterObjectActions005A1600F1231.cpp`
 now writes **32 of 76** nondefault states, adding **811 and 813–826** to
 [F1231](OBJECT_ADVANCE_005A1600_INITIAL_PARENT_F1231.md). These fifteen complete
