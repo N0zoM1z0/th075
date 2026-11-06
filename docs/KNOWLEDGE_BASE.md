@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1228):**
+**Maintenance annotation, updated 2026-11-06 (F1229):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -537,6 +537,16 @@ source/header are byte-restored. [Complete-parent proof](OBJECT_ADVANCE_004CA6E0
 and `.analysis/f1228-object-4ca6e0-increment-forms/verified-summary.json` retain
 all three fresh compiler/COFF controls. No accepted input or canonical change,
 full CI, corpus replay or new exact credit.
+
+F1229 rejects `004CA6E0` `/G7`, comma-connected 808 increment/condition and
+integer `2000` bound: complete CODE/DATA and all COFF shapes/names remain identical
+to F1227, with 447 GPR/12 width debt. Double `2000.0` produces a wrong QWORD FCOMP
+at native `004CCBDD` and leaves the same register debt. Independent literal
+payload checks reject it. Selected source/header are byte-restored; all four
+immutable stages and `verified-summary.json` remain in
+`.analysis/f1229-object-4ca6e0-codegen-controls/`.
+[Complete-parent evidence](OBJECT_ADVANCE_004CA6E0_COMPLETE_PARENT_F1227.md).
+No new exact bytes, origin change, CI or canonical replay.
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function

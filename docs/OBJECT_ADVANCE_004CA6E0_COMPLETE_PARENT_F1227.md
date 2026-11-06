@@ -122,3 +122,19 @@ Sources, fresh objects/listings/logs, whole audits and actual COFF comparisons
 remain in `.analysis/f1228-object-4ca6e0-increment-forms/verified-summary.json`
 and adjacent files. These controls do not explain the register phase and
 should not be repeated. No new exact bytes, CI or canonical replay.
+
+F1229 rejects four further controls, built serially with pinned VC7.1. Adding
+`/G7`, connecting the real 808 increment to its first bound via a comma
+expression, and using integer `2000` each preserve the entire selected CODE/DATA,
+all COFF relocation shapes and every reference name. They retain 447 GPR/12
+width differences. The double `2000.0` form changes one opcode byte: native
+`004CCBDD` uses FCOMP DWORD with float bits `0000fa44`, while the source uses FCOMP
+QWORD with actual COFF bits `0000000000409f40`. The whole literal verifier rejects
+that mismatch; independent source diagnostics confirm one additional operand
+debt and unchanged GPR/width counts. None explains the register phase.
+
+All four immutable CPP/HPP/OBJ/ASM/build-log stages and diagnostics remain in
+`.analysis/f1229-object-4ca6e0-codegen-controls/`, with actual CODE/DATA and
+COFF comparisons in `verified-summary.json`. The selected tracked CPP/HPP are
+byte-restored to F1227. No accepted input, ledger, origin or canonical tooling
+changes; no whole exact credit, CI, corpus replay or new per-function tests.
