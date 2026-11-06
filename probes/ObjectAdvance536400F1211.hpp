@@ -22,6 +22,9 @@ class OwnerActor536400F1211 {
 public:
     void SpawnEffect(short, float, float, signed char, signed char);
     void UpdateGaugeAt0046D000(int);
+    void PlaySharedSoundAt00453D60(short);
+    void PlaySoundAt00453D40(short);
+    void SpawnTrackedEffectAt00453B50(short, float, float, signed char, signed char, unsigned char, unsigned char);
 };
 
 // Native vtable 006599D4, installed by the exact 00536360 constructor.

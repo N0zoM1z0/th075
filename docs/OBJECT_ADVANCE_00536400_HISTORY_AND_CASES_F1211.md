@@ -1,5 +1,9 @@
 # F1211 — native history relay and 22 actual states toward whole 00536400
 
+F1212 continues the same body with native 801–811 and a freshly built
+33-state checkpoint. Its [early-state evidence](OBJECT_ADVANCE_00536400_EARLY_STATES_F1212.md)
+supersedes this dated checkpoint's selected object and current dimensions.
+
 [`CharacterObjectActions00536400F1211.cpp`](../probes/CharacterObjectActions00536400F1211.cpp)
 contains the original history-controlled path and 22 reviewed nondefault states
 in one natural C++ body. Its [receiver/history views](../probes/ObjectAdvance536400F1211.hpp)

@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1211):**
+**Maintenance annotation, updated 2026-11-06 (F1212):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -364,6 +364,17 @@ The corrected method-body inventory detects all 543 candidates' actual probe
 marker stores; its previous word-only count was insufficient. These bounded
 heuristics do not prove universal source absence. All complete live parents,
 accepted units and 95 unknown origins remain unchanged; no full CI/replay.
+
+F1212 adds real 801–811 behavior to the same 00536400 body: owner-following
+slashes, three distinct aimed projectiles, native cancellation/effect order,
+clone mode/difficulty transitions and signed-facing pursuit. The current
+**16,603B /4,402-x86**, frame0x124 source still lacks **33 of66 states**.
+All written operand shapes agree under explicit GPR/stack elision. Prefix
+and every actual interval through827 now have **zero raw GPR/EBP/width debt**;
+no forward displacement or whole exactness is inferred. Native callback ABI,
+indexed-pointer evaluation, integer/float operand order and unsigned >0 fade
+predicate are independently reconciled. [F1212 detailed evidence](OBJECT_ADVANCE_00536400_EARLY_STATES_F1212.md).
+All39,999 original CODE bytes remain pending; accepted inputs/origins unchanged.
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function
