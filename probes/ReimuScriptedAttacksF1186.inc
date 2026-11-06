@@ -96,6 +96,7 @@ case 0x189: {
 #define R1186_ANGLE1 -10.0f
 #define R1186_ANGLE2 0.0f
 #define R1186_ANGLE3 10.0f
+#define R1186_ANGLE4 20.0f
 #define R1186_X_OFFSET 114
 #define R1186_Y_OFFSET g_ReimuLowVolleyYAt006590A0
 #include "ReimuFiveShotAttackF1186.inc"
@@ -104,6 +105,7 @@ case 0x189: {
 #undef R1186_ANGLE1
 #undef R1186_ANGLE2
 #undef R1186_ANGLE3
+#undef R1186_ANGLE4
 #undef R1186_X_OFFSET
 #undef R1186_Y_OFFSET
 #define R1186_ACTION 0x191
@@ -111,6 +113,7 @@ case 0x189: {
 #define R1186_ANGLE1 50.0f
 #define R1186_ANGLE2 40.0f
 #define R1186_ANGLE3 30.0f
+#define R1186_ANGLE4 20.0f
 #define R1186_X_OFFSET 90
 #define R1186_Y_OFFSET g_ReimuHighVolleyYAt0065909C
 #include "ReimuFiveShotAttackF1186.inc"
@@ -119,6 +122,7 @@ case 0x189: {
 #undef R1186_ANGLE1
 #undef R1186_ANGLE2
 #undef R1186_ANGLE3
+#undef R1186_ANGLE4
 #undef R1186_X_OFFSET
 #undef R1186_Y_OFFSET
 case 0x192: {

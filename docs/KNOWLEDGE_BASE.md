@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1186):**
+**Maintenance annotation, updated 2026-11-06 (F1187):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -109,6 +109,17 @@ All 80 earlier nonmarker physical intervals retain their prior diagnostic
 results. The parent is now 29,020B/7,980 x86, frame 0x90 /saved-this
 EBP-0xC still wrong, 56 nondefault markers. Combined newly sourced states
 span 13,668B/3,845 x86/340 fields, with zero whole exact credit.
+
+F1187 restores twelve Reimu 194–1A1 attack states: 8,102 original
+interior bytes /2,160 x86 /212 fields. All counts, mnemonics, widths,
+non-GPR operands, native branch destinations and physical field targets
+agree, with 1,227 GPR positions and stack slots still wrong. The true
+19C animations 30/20/30 and 1A0 ranges 10/4/4, biases 5/2/2 and
+animations 30/30/20 remain distinct. [Native combo proof](REIMU_SCRIPTED_COMBOS_F1187.md).
+All 87 prior nonmarker intervals retain their diagnostic results. Parent
+36,942B/10,116 x86, frame 0x178 /saved-this EBP-0xC, 44 nondefault
+markers; recent 46 interiors total 21,770B/6,005 x86/552 fields. No new
+whole exact credit and no full CI/corpus replay.
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function

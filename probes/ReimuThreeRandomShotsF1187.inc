@@ -1,0 +1,30 @@
+    if (S16(0x62)==R1187_FIRST_STAGE && S16(0x64)==0) {
+#define R1187_ANGLE_BIAS R1187_ANGLE_BIAS0
+#define R1187_UPPER R1187_UPPER0
+#define R1187_ANIMATION R1187_ANIMATION0
+#include "ReimuRandomShotCommandF1187.inc"
+#undef R1187_ANGLE_BIAS
+#undef R1187_UPPER
+#undef R1187_ANIMATION
+    }
+    if (S16(0x62)==R1187_FIRST_STAGE+1 && S16(0x64)==0) {
+#define R1187_ANGLE_BIAS R1187_ANGLE_BIAS1
+#define R1187_UPPER R1187_UPPER1
+#define R1187_ANIMATION R1187_ANIMATION1
+#include "ReimuRandomShotCommandF1187.inc"
+#undef R1187_ANGLE_BIAS
+#undef R1187_UPPER
+#undef R1187_ANIMATION
+    }
+    if (S16(0x62)==R1187_FIRST_STAGE+2 && S16(0x64)==0 && S16(0xF00)<R1187_REPEAT_LIMIT &&
+        *reinterpret_cast<unsigned int*>(RAW+R1187_RESOURCE)>0) {
+#define R1187_ANGLE_BIAS R1187_ANGLE_BIAS2
+#define R1187_UPPER R1187_UPPER2
+#define R1187_ANIMATION R1187_ANIMATION2
+#include "ReimuRandomShotCommandF1187.inc"
+#undef R1187_ANGLE_BIAS
+#undef R1187_UPPER
+#undef R1187_ANIMATION
+        ++S16(0xF00);
+        SetAuxActionAt40FB40(R1187_FIRST_STAGE);
+    }

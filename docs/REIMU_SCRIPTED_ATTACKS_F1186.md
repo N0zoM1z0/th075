@@ -1,5 +1,10 @@
 # F1186 — Reimu seven original scripted attacks, 186–192
 
+**Historical F1186 checkpoint:** F1187 extends the same parent to
+36,942B/10,116 x86, preserving all 87 prior nonmarker physical intervals.
+[Current combo proof](REIMU_SCRIPTED_COMBOS_F1187.md). The dimensions below
+describe commit `ceaee1fe`.
+
 The live one-body `probes/FighterWhole0045DD70F1183.cpp` now includes
 `ReimuScriptedAttacksF1186.inc` and its two five-shot source fragments.
 Seven more markers are replaced by actual Reimu behavior. The complete
