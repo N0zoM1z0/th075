@@ -1,5 +1,11 @@
 # F1040 — Retain the complete original-shaped 46KB Fighter as tracked C++
 
+**Current continuation:** F1197 restores 56 ordinary exit targets and the
+three original 18B guard destinations; see the
+[whole CFG/stack/operand proof](FIGHTER_46KB_WHOLE_CFG_F1197.md).
+The SHA256 below records the original F1040 adoption, not today's source.
+The whole callable remains NONEXACT with 2,736 GPR /five-width debt.
+
 The original Japanese TH075 1.11 authored Fighter `Advance` at
 `005214B0` is a **single** nonexact callable: **46,755 original CODE
 bytes / 13,230 x86**, followed by **901 separately owned DATA bytes**.

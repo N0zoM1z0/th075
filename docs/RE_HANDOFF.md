@@ -1,4 +1,4 @@
-# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1196)
+# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1197)
 
 **Start here.** Work on both large/core original functions and smaller entire
 original functions. The user requests meaningful **multiple local commits** named
@@ -24,13 +24,12 @@ from an internal native case, mnemonic count, or identical source bytes.**
 | **Whole authored originals remaining NONEXACT** | **22 =22 giant (1,102,055B) +0 other (0B)** |
 | Completion objective | 98% authored CODE target **NOT achieved** |
 
-**Canonical summary:** **982 functions / 982 exact units** have
-**871,649 original CODE bytes** accepted; **1,004** independently
-authored originals are attributed, and **22 authored functions remain nonexact**: **22 large original state advances** (**1,102,055 CODE bytes**) plus **0 other original small/medium whole functions**
-(**0 CODE bytes**). The independently reviewed original authored
-size denominator is **1,973,704** CODE B; accepted coverage is
-**44.16%** (conservative **44.09%**). These numbers must be read from
-the live ledger rather than maintained by hand.
+**982 functions / 982 exact units**, **871,649 original CODE bytes**;
+reviewed denominator **1,973,704**, coverage **44.16%** / **44.09%** conservative.
+**1,004** authored originals; **22 authored functions remain nonexact**:
+**22 large original state advances** (**1,102,055 CODE bytes**) and
+**0 other original small/medium whole functions** (**0 CODE bytes**).
+Read the live ledger rather than inferring coverage from research cases.
 
 **No recently recovered Boss *inner state* has independently added an
 accepted whole-function exact unit.** Source refactors of already accepted
@@ -123,25 +122,28 @@ CODE/COFF exactness**. See [F1138 source borrow](CHARACTEROBJECT_WHOLE_NATIVE_PH
 | --- | --- | --- |
 | **`004AC040`** 82,796B/22,721 x86, 1,126 afterRET DATA | 82,796B/22,721 x86, original saved-this and frame; **12 wrong widths, 6,958 GPR positions** | [F1028 native PE targets](THIRD_FIGHTER_WHOLE_82KB_PE_TARGETS_F1028.md), 2,191 external targets |
 | **`00543210`** 58,294B/16,471 x86, 943 DATA | F1196 live tracked source 58,293B/16,471 x86; native frame/this/all 5,119 EBP positions; **3 widths, 1,741 GPR positions** | [F1196 whole CFG/operand proof](FIGHTER_58KB_WHOLE_CFG_OPERANDS_F1196.md): all 1,905 direct targets, 1,707 CODE fields and 156 dense destinations; NONEXACT |
-| **`005214B0`** 46,755B/13,230 x86, 901 DATA | 46,754B/13,230 x86; **5 widths**, original physical COFF/GPR wrong | [F1026 native PE targets](FIGHTER_46KB_ALL_NATIVE_PE_TARGETS_F1026.md), 1,341 targets |
+| **`005214B0`** 46,755B/13,230 x86, 901 DATA | F1197 source 46,754B/13,230 x86; native frame/this/all 4,133 EBP positions; **2,736 GPR /5 widths** | [F1197 whole CFG proof](FIGHTER_46KB_WHOLE_CFG_F1197.md): all 1,522 direct targets, 1,352 CODE fields and 139 dense destinations; NONEXACT |
 | **`0045DD70`** 60,999B/16,837 x86 | Live F1193 complete source **61,000B/16,837 x86 (+1B)**; original frame/saved-this/all 5,444 EBP slots; **6,311 GPR positions /5 widths** | [F1192 complete stack/CFG/PE proof](REIMU_WHOLE_STACK_CFG_F1192.md), [F1193 native WORD parameters](REIMU_WORD_ABI_REGISTER_BOUNDARY_F1193.md): all 1,684 direct targets, 1,682 CODE fields, 142 actual dense destinations; NONEXACT |
 | **`0055AC80`** 28,432B/7,653 x86 | F1194 continues the complete F167 source: **28,438B/7,653 x86 (+6B)**; original frame/this/all 2,511 EBP positions; **726 GPR positions /6 widths** | [F1194 whole native proof](OBJECT_ADVANCE_0055AC80_WHOLE_F1194.md): all 859 direct targets, 638 CODE fields and 58 dense destinations; NONEXACT |
 
-Current 58KB source is
+Current 58KB source:
 [`probes/FighterWhole00543210F1041.cpp`](../probes/FighterWhole00543210F1041.cpp).
-F1196 moves the genuine shared-getter label inside the switch, restoring
-**253** ordinary branch targets directly to native epilogue 005515C2.
-Only actions 0/2/4/5 enter getter 005515BA. It also restores strict ground
-tests in 60/61, strict X clamp in 2DC, native 20.0f argument in 2F0 and
-inclusive left-side boundary in 2FA. Every whole non-GPR operand, all
-1,905 direct jumps, all 5,119 EBP positions and all 1,707 CODE references
-now agree; frame 0x218 /saved-this EBP-0x44 and full 943B DATA agree too.
-Remaining debt is **1,741 GPR /three CMP widths in 63**. The selected object
-and scoped audit are `.analysis/f1196-58kb-whole-cfg/tracked.obj` and
-`whole-audit.py`. The unchanged F1025 verifier cold-builds only this parent
-and checks PE fields/DATA; use the scoped audit for whole CFG/operands.
-Do not restore the historical after-switch return trampoline or claim
-F1025's external-target proof alone establishes whole exactness.
+F1196 restores 253 ordinary exits and five real operands; all whole CFG,
+stack and non-GPR operands agree. Keep the getter inside the switch: only
+0/2/4/5 enter 005515BA; ordinary exits reach 005515C2. Frame 0x218 /this
+EBP-0x44 agree. Selected proof: `.analysis/f1196-58kb-whole-cfg/tracked.obj`
+and `whole-audit.py`; F1025 cold-builds only this parent for PE/DATA checks.
+Remaining **1,741 GPR /three widths in 63**; whole exactness is unproved.
+
+Current 46KB source:
+[`probes/FighterWhole005214B0F1040.cpp`](../probes/FighterWhole005214B0F1040.cpp).
+F1197 restores 56 ordinary exits to 0052CB4F and three 18B guard targets.
+The post-subaction-6 +80/+7C resets belong inside stage7/frame0/counter<2.
+Keep the shared getter inside the switch; only 0/2/4/5 enter 0052CB47.
+Frame 0x138 /this EBP-0x10, every stack/non-GPR operand and all native
+targets agree. Selected proof: `.analysis/f1197-46kb-whole-cfg/tracked.obj`
+and `whole-audit.py`; F1026 cold-builds this parent for PE/DATA checks.
+Remaining **2,736 GPR /five widths in 63/1FD/252/254**; NONEXACT.
 
 Current Reimu source: [`probes/FighterWhole0045DD70F1183.cpp`](../probes/FighterWhole0045DD70F1183.cpp),
 continued from F652/F1183. **All case/default markers are removed.** The
@@ -233,25 +235,19 @@ Do not repeat these completed replays without a new affected input change.
 
 ## 5. Previously accepted entire native leaf functions, source improved
 
-The following are *real C++ maintenance/layout reconstruction* but preserve
-**previously credited CODE**; not new exact original bytes:
+Accepted whole-source maintenance adds no new exact CODE. Current examples:
+[CharacterAuxAction](CHARACTER_AUX_ACTION_NATIVE_TRANSFORM_F1139.md),
+[Battle HUD](BATTLE_HUD_NATIVE_BORROW_F1134.md),
+[AuxiliaryActor](AUXILIARY_ACTOR_NATIVE_BORROW_F1124.md),
+[BattleState](BATTLE_STATE_NATIVE_BORROW_MACROS_F1112.md) and
+[frame dependencies](FRAME_DEPENDENCIES_NATIVE_BORROW_WINDOWS_F1106.md).
+Their full cold-exact receipts remain authoritative.
 
-| Recent original source cleanup | Complete original cold-replay result |
-| --- | --- |
-| [F1135/F1136/F1139 CharacterAuxAction](CHARACTER_AUX_ACTION_NATIVE_TRANSFORM_F1139.md), **1,333 named field accesses** in 31KB switch | **1/1 full exact, 31,352 original B**, full physical COFF + native `$L` |
-| [F1134 Battle HUD](BATTLE_HUD_NATIVE_BORROW_F1134.md), 127 native typed field accesses | **1/1 full exact, 9,841 original B** |
-| [F1124 AuxiliaryActor](AUXILIARY_ACTOR_NATIVE_BORROW_F1124.md), 89 native typed fields | **2/2 complete exact, 6,935 original B** |
-| [F1112 BattleState](BATTLE_STATE_NATIVE_BORROW_MACROS_F1112.md), 27 native actor fields | **1/1 complete exact, 4,764 original B** |
-| [F1106 frame dependency](FRAME_DEPENDENCIES_NATIVE_BORROW_WINDOWS_F1106.md), 109 native float accesses | **3/3 complete exact, 4,169 original B** |
-
-Only replay **all exact units in an affected translation unit**, e.g.:
+Replay all accepted units in an affected translation unit, never the whole
+registry. Header changes can rename VC7.1 `$L`/`$SG` symbols; complete original
+COFF identity matters alongside CODE bytes. For example:
 
     scripts/repo-python scripts/replay-exact-units.py --unit character-aux-action-005fae30
-    scripts/repo-python scripts/replay-exact-units.py --unit battle-hud-render-0043e040
-
-VC7.1 can change `$L`/`$SG` local symbols merely because a header
-introduces a struct or `<stddef.h>`. The complete original COFF
-identity, not mnemonic count alone, is the acceptance standard.
 
 ## 6. Storage, source recovery and safe next-agent checklist
 

@@ -20,9 +20,9 @@ case 0x18B: {
     if (S16(0x62)==7 && S16(0x64)==0 && S16(0xF00)<2) {
         ++S16(0xF00);
         SetAuxActionAt40FB40(6);
+        S16(0x80)=1;
+        I32(0x7C)=0;
     }
-    S16(0x80)=1;
-    I32(0x7C)=0;
     if (S16(0x62)==6 && S16(0x64)==0) {
         SpawnFloatXYAt453A70(0x328,
             float((*reinterpret_cast<signed char*>(RAW+0x66))*128)+F32(0x44),

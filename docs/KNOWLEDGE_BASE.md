@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1196):**
+**Maintenance annotation, updated 2026-11-06 (F1197):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -221,6 +221,16 @@ records remain unchanged. [Whole CFG/operand proof](FIGHTER_58KB_WHOLE_CFG_OPERA
 The 58,293B/16,471-x86 source remains NONEXACT with 1,741 GPR /three widths.
 Two 28KB motion-layout controls are byte-identical; `/Op` changes frame and
 instruction count and is rejected. No accepted bytes or corpus replay.
+
+F1197 restores all 1,522 native direct targets in 46KB 005214B0. Moving
+the shared getter inside the switch fixes 56 ordinary exits; the two post-
+subaction-6 writes to +80/+7C now stay inside 18B's actual stage7/frame0/
+counter<2 guard, fixing three original conditional destinations. All 4,133
+EBP positions, 1,352 CODE fields, 139 dense target ordinals, 901B DATA and
+all non-GPR operands agree. All 1,491 COFF records are unchanged.
+[Whole original CFG proof](FIGHTER_46KB_WHOLE_CFG_F1197.md).
+The 46,754B/13,230-x86 source remains NONEXACT: 2,736 GPR /five widths.
+Only the affected parent is cold-built; no new exact credit or corpus replay.
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function
