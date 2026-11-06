@@ -1,5 +1,10 @@
 # F1190 — Reimu eight original 2BC–2C3 meter/effect states
 
+**Historical F1190 checkpoint:** F1191 extends the same parent to
+56,273B/15,547 x86, preserving all 129 prior nonmarker intervals.
+[Current counter-tail proof](REIMU_COUNTER_TAIL_F1191.md). The dimensions
+below describe commit `cf929a4a`.
+
 The one-body `probes/FighterWhole0045DD70F1183.cpp` now includes
 `ReimuMeterAttacksF1190.inc` and its native-policy fragments. The complete
 R063-authored **60,999B/16,837-x86** original remains **NONEXACT**;

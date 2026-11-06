@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1190):**
+**Maintenance annotation, updated 2026-11-06 (F1191):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -155,6 +155,17 @@ All 121 prior nonmarker intervals retain their results. Parent emits
 52,151B/14,446 x86, frame 0x284 /saved-this EBP-0xC, 14 nondefault
 markers. Recent 76 interiors total 37,429B/10,395 x86/966 fields; zero
 whole exact credit and no full CI/corpus replay.
+
+F1191 restores eight Reimu counter/drift/timer states: 4,227 native
+interior bytes /1,117 x86 /100 fields. Counts, mnemonics, non-GPR operands,
+branches and fields agree. 2F9 matches all GPR roles, with one still-short
+return JMP while six later markers remain; other new widths agree. The
+actual -6 drift constant and four distinct integer angle formulas remain.
+[Native counter-tail proof](REIMU_COUNTER_TAIL_F1191.md). All 129 prior
+nonmarker intervals and all 144 native physical handler orders are preserved.
+Parent 56,273B/15,547 x86, frame 0x2FC /saved-this EBP-0xC, six remaining
+case markers plus default/common-tail debt. Recent 84 interiors total
+41,656B/11,512 x86/1,066 fields; no whole exact credit or full replay.
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function

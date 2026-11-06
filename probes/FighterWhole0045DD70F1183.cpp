@@ -4,6 +4,9 @@
 // Preserve independently reviewed current bodies and all six table groups.
 class FighterSwitchF598_Boss0045DD70 { public: void SetMotionStateAt40FBB0(int,float,int); void SetMotionFloatAt40FBB0(float,float,float); void ResetMotionAt40FC50(); void SpawnDirectedAt453A70(int,int,int,char,int); void SpawnWithFloatAt453A70(int,int,float,char,int); void SpawnFloatXYAt453A70(int,float,float,char,int); void InitTrajectoryAt453E60(float); virtual void NativeVirtualFrameAdvance(); void Advance(); void SetNonnegativeWordAt453E80(short); void SpawnTrackedAt453B50(short,float,float,signed char,signed char,unsigned char,unsigned char); void SpawnFloatXAt453A70(int,float,int,char,int); int SelectRangeAt455580(int,int); void PlaySoundAt453D40(short); void ResetAt453E20(); void PrepareActionAt453D60(int); void StartAnimationAt46D000(int); void SpawnAt453C80(int,float,float,char,int); void SpawnMixedAt453C80(int,int,float,char,int); void SpawnRawXYAt453C80(int,int,int,char,int); void ConfigureStormAt454BC0(int,unsigned char,unsigned int); short GetNativeActionAt40FA30(); void SetNativeActionAt40FAC0(int); signed char ContactAt454EE0(); void SetAuxActionAt40FB40(int); };
 extern unsigned int g_FighterProbeMarker;
+extern signed char g_ReimuRepeatSettingAt006714D0;
+extern float g_ReimuReverseDriftAt0065907C;
+extern float g_ReimuRandomLiftAt00657850;
 extern float g_ReimuMeterTrailYAt0065835C;
 extern float g_ReimuMeterNearYAt00659088;
 extern float g_ReimuMeterInitialYAt00659084;
@@ -635,16 +638,11 @@ case 0x48: {
 #include "ReimuChargedAttacksF1188.inc"
 #include "ReimuSpecialAttacksF1189.inc"
 #include "ReimuMeterAttacksF1190.inc"
-        case 0x2D0: g_FighterProbeMarker = 721; break;
-        case 0x2D1: g_FighterProbeMarker = 722; break;
-        case 0x2D2: g_FighterProbeMarker = 723; break;
-        case 0x2D3: g_FighterProbeMarker = 724; break;
+#include "ReimuCounterTailF1191.inc"
         case 0x2DB: g_FighterProbeMarker = 732; break;
-        case 0x2DF: g_FighterProbeMarker = 736; break;
-        case 0x2E0: g_FighterProbeMarker = 737; break;
-        case 0x2E5: g_FighterProbeMarker = 742; break;
+#include "ReimuDriftTimerF1191.inc"
         case 0x2EF: g_FighterProbeMarker = 752; break;
-        case 0x2F9: g_FighterProbeMarker = 762; break;
+#include "ReimuDifficultyShotF1191.inc"
         case 0x303: g_FighterProbeMarker = 772; break;
         case 0x304: g_FighterProbeMarker = 773; break;
         case 0x31B: g_FighterProbeMarker = 796; break;
