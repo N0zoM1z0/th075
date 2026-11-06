@@ -1,5 +1,10 @@
 # F1235 — complete normal source for 005A1600, still nonexact
 
+Current continuation: [F1236 register boundary controls](OBJECT_ADVANCE_005A1600_REGISTER_BOUNDARY_F1236.md)
+retains two clearer float assignments with identical whole CODE/DATA and COFF
+records, records five new controls and identifies a uniform register cycle.
+The F1235 source/object hashes below describe the preserved historical baseline.
+
 `probes/CharacterObjectActions005A1600F1231.cpp` now writes **all 76 real
 nondefault states**, the original guards and default, in one natural C++ body.
 The final 917–925 intervals add **7,999 native CODE bytes /2,027 instructions**

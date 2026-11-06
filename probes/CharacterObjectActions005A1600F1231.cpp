@@ -2008,7 +2008,7 @@ void ObjectActor5A1600F1231::AdvanceAction()
 
     case 909:
         if (OWNER(short, 0x60) == 741 && OWNER(short, 0x62) < 12) {
-            FIELD(unsigned int, 0x44) = OWNER(unsigned int, 0x44);
+            FLOAT(0x44) = OWNER_FLOAT(0x44);
             FLOAT(0x48) = OWNER_FLOAT(0x48) + 100.0f;
         }
         if (OWNER(short, 0x3A0) <= 0) { ClearField74(); return; }
@@ -2021,7 +2021,7 @@ void ObjectActor5A1600F1231::AdvanceAction()
                 FIELD(unsigned char, 0x12) = 255;
                 FIELD(unsigned char, 0x13) = 255;
                 FIELD(unsigned char, 0x14) = 255;
-                FIELD(unsigned int, 0x30) = FIELD(unsigned int, 0xC8);
+                FLOAT(0x30) = FLOAT(0xC8);
             }
             if (OWNER(short, 0x60) != 741 || (OWNER(short, 0x60) == 741 && OWNER(short, 0x62) > 11)) {
                 if (FIELD(unsigned char, 0x11) > 10) FIELD(unsigned char, 0x11) -= 10;

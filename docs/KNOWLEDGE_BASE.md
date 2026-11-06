@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1235):**
+**Maintenance annotation, updated 2026-11-06 (F1236):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -617,6 +617,20 @@ are rejected. Selected source is byte-restored. [Whole-parent proof](OBJECT_ADVA
 and `.analysis/f1235-object-5a1600-complete/verified-summary.json` retain all
 four serial builds and whole diagnostics. No accepted input/header/origin/
 ledger/canonical infrastructure change, full CI, corpus replay or exact credit.
+
+F1236 cold-builds five complete `005A1600` controls. Moving all six used loop
+indices to function scope exchanges 835/837 slots and adds 20 EBP differences;
+908 final return, 909 nested condition and scoped index naming do not reduce
+613 GPR/11 width debt. Two natural float copies are retained with identical
+entire CODE/DATA and all 943 COFF records to F1235. All 790 differing register
+operands at the 613 positions follow the same source-to-native EAX→ECX→EDX→EAX
+cycle, from whole7965 through8879; the cause remains unknown. No register
+renaming is accepted as exact evidence. The complete frame/stack/CFG/native
+field destinations/owned tables still agree, and all43,599B remain pending.
+[Boundary proof](OBJECT_ADVANCE_005A1600_REGISTER_BOUNDARY_F1236.md) and
+`.analysis/f1236-object-5a1600-loop-scope/verified-summary.json` retain all five
+builds, controls and raw cycle observation. No accepted input/header/origin/
+ledger/infrastructure change, full CI, canonical replay or new tests.
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function

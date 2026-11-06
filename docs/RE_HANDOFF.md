@@ -1,4 +1,4 @@
-# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1235)
+# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1236)
 
 **Start here.** Continue all dirty work; there are no other active sessions.
 Work on both large/core and smaller authored originals. Use local commits
@@ -204,17 +204,20 @@ complete body; all42,511 original B remain pending.
 
 Current complete 43KB source:
 [`probes/CharacterObjectActions005A1600F1231.cpp`](../probes/CharacterObjectActions005A1600F1231.cpp),
-`ObjectAdvance5A1600F1231.hpp`. F1235 has all76 states and six real indices;
-selected43,596B/11,620 x86 vsnative43,599B. Original frame21Ch/this-1Ch and all
-3,814 EBP positions agree. All1,196 direct targets,866 CODE destinations,
-77 dense ordinals/200 sparse bytes agree; mnemonic/non-GPR/EBP debt0.
-**613 GPR/11 widths remain**, only909–917's opening, first005A88A8/whole7965,
-last005A95C7/whole8879. Cause unproved; all43,599B remain pending.
-Postfix/explicit assignment for908 loop are identical-code negative controls.
-Selected `.analysis/f1235-object-5a1600-complete/complete.cpp/hpp/obj/asm`,
-both diagnostics/`verified-summary.json`; `whole-audit.py [OBJ]`.
-[F1235 proof](OBJECT_ADVANCE_005A1600_COMPLETE_PARENT_F1235.md); F1231 retains
-original/owner evidence. Continue register debt in this complete body; no exact credit.
+`ObjectAdvance5A1600F1231.hpp`. All76 states/six real indices; selected43,596B/
+11,620 x86 vsnative43,599B. Frame21Ch/this-1Ch and all3,814 EBP positions agree;
+all1,196 direct targets,866 CODE destinations,77 dense ordinals/200 sparse bytes
+agree. **613 GPR/11 widths remain**, only909–917's opening, first005A88A8/whole7965,
+last005A95C7/whole8879. F1236 finds all790 differing register operands share the
+EAX→ECX→EDX→EAX cycle; cause unproved. Scope movement adds20 wrong EBP operands;
+908 return,909 nested condition, float copies and scoped index renaming do not
+reduce GPR debt. F1235 postfix/explicit loop updates also failed. Preserve these
+controls. Selected `.analysis/f1236-object-5a1600-loop-scope/float-copy909.cpp/hpp/obj/asm`,
+both diagnostics/`verified-summary.json`/`register-cycle-observation.json`;
+`whole-audit.py [OBJ]`. Only two natural float assignments are retained, with
+identical entire CODE/DATA/all943 COFF records to F1235. [F1236 proof](OBJECT_ADVANCE_005A1600_REGISTER_BOUNDARY_F1236.md);
+[F1235 full native proof](OBJECT_ADVANCE_005A1600_COMPLETE_PARENT_F1235.md)/F1231
+owner evidence remain. All43,599B stay pending; continue this complete body.
 
 All other giant authored originals remain open; use the
 [actual giant dispatch manifest](../config/fighter-boss-dispatch-fingerprints.json)
