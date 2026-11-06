@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1219):**
+**Maintenance annotation, updated 2026-11-06 (F1220):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -440,6 +440,15 @@ records final25 behaviors, retained eight negative controls and selected
 `.analysis/f1219-object-5c9cc0-late/native-order.obj`/whole audit/receipts.
 All43,501 original CODE bytes remain pending; accepted counts and origins
 stay unchanged. No full CI, corpus replay or per-function tests.
+
+F1220 rules out three918 clamp-predicate variants: integer1 is identical in
+full CODE/DATA/all991 COFF shapes/names; double1.0 changes FCOMP width/target;
+commuted float comparison changes x87 order/status test. All preserve the
+first native GPR divergence; the selected F1219 source/header are restored.
+[Whole-parent proof](OBJECT_ADVANCE_005C9CC0_COMPLETE_PARENT_F1219.md) and
+`.analysis/f1220-object-5c9cc0-scalar-types/verified-summary.json` retain the
+negative evidence. Same935 GPR/one width debt and zero new exact bytes;
+no accepted inputs, ledgers or canonical infrastructure change.
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function

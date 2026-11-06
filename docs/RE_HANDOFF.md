@@ -1,4 +1,4 @@
-# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1219)
+# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1220)
 
 **Start here.** Continue all dirty work; there are no other active sessions.
 Work on both large/core and smaller authored originals. Use local commits
@@ -199,7 +199,7 @@ first005D2558/whole9213; sole width005D2841/whole9411 in919.
 Selected `.analysis/f1219-object-5c9cc0-late/native-order.obj`, immutable CPP/HPP,
 listing, both diagnostics and `verified-summary.json`; `whole-audit.py [OBJ]`.
 [F1219 whole proof](OBJECT_ADVANCE_005C9CC0_COMPLETE_PARENT_F1219.md) records
-all final25 states and eight rejected controls. Continue this complete body;
+all final25 states and eleven rejected controls. Continue this complete body;
 no whole exact credit. All other parents and unknown origins stay preserved.
 
 All other giant authored originals remain open; use the

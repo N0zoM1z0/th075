@@ -117,3 +117,13 @@ matching reference destinations does not certify original relocation offsets.
 Only a complete canonical unit with zero differences after affected-unit
 cold replay can be accepted. No full CI, corpus replay, new per-function
 test, origin retest, accepted-source edit or helper definition is added.
+
+F1220 further checks only918's clamp predicate. Integer literal1 emits
+identical full CODE/DATA and all991 COFF shapes/names versus the selected
+parent, retaining935 GPR/one width debt. Double1.0 changes the native DWORD
+FCOMP to QWORD; commuted `1.0f < scale` reverses load order and changes the
+status test. Both are rejected, and none repairs the first GPR divergence.
+Immutable before/source/header/object/listing/log stages and actual COFF
+comparisons are retained in `.analysis/f1220-object-5c9cc0-scalar-types/`,
+with `verified-summary.json`. Selected source/header are byte-restored to
+F1219; no additional cold replay, origin test or full CI is warranted.
