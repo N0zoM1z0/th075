@@ -203,6 +203,11 @@ print('F1140 WHOLE native control-flow audit:',physical_original_branch_position
       'real direct PE-local jumps, original 0x387 stage/velocity guards corrected;',
       len(native_branch_target_debt),'other native branch target debts remain',flush=True)
 assert all((orig_dense[i]==orig_dense[j])==(T[i]['local_symbol_offset']==T[j]['local_symbol_offset']) for i in range(92) for j in range(92))
+# Check the actual instruction destination of every dense-table entry,
+# not only whether pairs of entries alias the same source label.
+assert all(native_instruction_by_address[target]==
+           source_instruction_by_address[r['local_symbol_offset']]
+           for target,r in zip(orig_dense,T))
 RX=re.compile(r'\b(?:[er]?(?:ax|bx|cx|dx|si|di|sp|bp)|[abcd]h|[abcd]l)\b')
 roles=lambda x:tuple(RX.findall(x.op_str))
 # The original default case is not inert. It ACTUALLY calls the native
@@ -225,6 +230,62 @@ assert src_tail_pe[0]['type']=='REL32' and src_tail_pe[0]['addend']==0
 assert src_tail_pe[0]['offset']==src_default[1].address+1
 assert 'GetNativeActionAt0040FA30' in src_tail_pe[0]['symbol']
 assert not re.search(r'default\s*:\s*g_FighterProbeMarker',source)
+# F1154: audit the complete callable operand grammar, including memory
+# displacements and every CODE relocation, rather than just selected cases.
+# Resolve relocations in an in-memory candidate copy; the PE and COFF stay
+# untouched. GPR identity normalization diagnoses remaining debt and NEVER
+# permits whole-function exact credit.
+linked_source=bytearray(code[:end])
+source_offsets=[q.address for q in I]
+whole_native_fields=[]
+for r in refs:
+ if r['offset']>=end:
+  continue
+ k=bisect_right(source_offsets,r['offset'])-1
+ delta=r['offset']-I[k].address
+ assert r['type'] in ('REL32','DIR32') and r['addend']==0
+ assert delta+4<=NWHOLE[k].size,(k,'whole CODE field geometry differs')
+ field=NWHOLE[k].address+delta
+ value=int.from_bytes(rd.pe_bytes_at(P,field,4),'little',signed=r['type']=='REL32')
+ actual=field+4+value if r['type']=='REL32' else value
+ if r['local_symbol_offset'] is not None:
+  offset=r['local_symbol_offset']
+  expected=(NWHOLE[source_instruction_by_address[offset]].address if offset<end
+            else B['address']+B['size']+offset-end)
+ else:
+  m=re.search(r'At([0-9A-Fa-f]{8})',r['symbol'])
+  expected=int(m.group(1),16) if m else 0x6406ac if r['symbol']=='__ftol2' else None
+ assert expected is not None and actual==expected,(k,r['symbol'],actual,expected)
+ linked=expected-(B['address']+r['offset']+4) if r['type']=='REL32' else expected
+ linked_source[r['offset']:r['offset']+4]=(linked&0xffffffff).to_bytes(4,'little')
+ whole_native_fields.append({'global_x86_ordinal':k,'original_PE_field':hex(field),
+  'kind':r['type'],'source_symbol':r['symbol'],'original_PE_destination':hex(actual)})
+linked_x86=list(D.disasm(linked_source,B['address']))
+assert len(linked_x86)==len(NWHOLE)
+scratch=re.compile(r'\b(eax|ecx|edx|ax|cx|dx|al|cl|dl)\b')
+def without_scratch_identity(operand):
+ return scratch.sub(lambda m:'GPR'+str(32 if m[0].startswith('e') else
+                                      8 if m[0].endswith('l') else 16),operand)
+whole_GPR_debt=[]
+whole_width_debt=[]
+for k,(n,q) in enumerate(zip(NWHOLE,linked_x86)):
+ assert n.mnemonic==q.mnemonic
+ if n.size!=q.size:
+  whole_width_debt.append(k)
+ if n.mnemonic.startswith('j') and re.fullmatch(r'0x[0-9a-f]+',n.op_str):
+  continue  # All actual destinations were independently checked above.
+ assert without_scratch_identity(n.op_str)==without_scratch_identity(q.op_str),(
+    k,'whole non-GPR operand differs',n.mnemonic,n.op_str,q.op_str)
+ if n.op_str!=q.op_str:
+  whole_GPR_debt.append({'global_x86_ordinal':k,'mnemonic':n.mnemonic,
+                        'original_operand':n.op_str,'source_operand':q.op_str})
+(O/'whole-native-operands.json').write_text(json.dumps({
+ 'original_whole_CODE_B':B['size'],'candidate_whole_CODE_B':end,
+ 'whole_CODE_fields':whole_native_fields,'remaining_GPR_operand_debt':whole_GPR_debt,
+ 'remaining_wrong_width_ordinals':whole_width_debt,'whole_callable_exact':False},indent=2)+'\n')
+print('WHOLE operand audit:',len(whole_native_fields),'original CODE fields,',
+      len(whole_GPR_debt),'wrong GPR positions,',len(whole_width_debt),
+      'wrong widths; no other operand differences',flush=True)
 known=[];rows=[]
 for action,expected_count in required_fields.items():
  ix=orig_sparse[action-0x320]
@@ -918,6 +979,7 @@ summary={'original_Boss':'0x0050A580','original_whole_CODE_B':81539,
  'total_native_nonrelocated_scalar_immediates_verified':sum(r['native_scalar_immediate_ordinals_verified'] for r in rows),
  'total_generated_inner_case_source_CODE_B':src_total,
  'original_92_DIR32_native_jump_partitions_equal':True,'original_199_sparse_bytes_equal':True,
+ 'original_92_DIR32_native_jump_target_ordinals_equal':True,
  'original_81KB_whole_function_exact':False,'new_exact_original_whole_CODE_B':0,
  'all_979_cold_replay':False,'native_states':rows,
  'additional_original_native_provisional_interiors':provisional_rows,
@@ -925,6 +987,10 @@ summary={'original_Boss':'0x0050A580','original_whole_CODE_B':81539,
  'whole_native_original_direct_jumps_audited':physical_original_branch_positions,
  'whole_native_EBP_stack_operand_positions_verified':native_stack_positions,
  'original_frame_and_all_EBP_displacements_equal':True,
+ 'whole_native_CODE_fields_verified':len(whole_native_fields),
+ 'whole_non_GPR_operands_and_all_direct_targets_verified':True,
+ 'whole_remaining_wrong_GPR_instruction_positions':len(whole_GPR_debt),
+ 'whole_remaining_wrong_width_global_ordinals':whole_width_debt,
  'remaining_nonexact_native_branch_target_mismatches':native_branch_target_debt}
 (O/'verified-summary.json').write_text(json.dumps(summary,indent=2)+'\n')
 print('LIVE',len(rows),'original game action interiors: original',original_total,'CODE B /',x86total,'x86, native mnemonic+GPR',x86total,'/',x86total,'and genuine PE nonlocal',fields_total,'/',fields_total,'. Current partial source',end,'B /',len(I),'x86, NOT exact whole 81KB; accepted new original bytes 0.')

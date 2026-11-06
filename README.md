@@ -10,7 +10,7 @@ Only original, attributable, byte-identical **whole callable functions**
 earn canonical exact CODE credit. An internal case, original PE-similar
 mnemonic stream or matching total source length is not acceptance.
 
-## Current verified status (2026-11-06, F1157 / 981 exact ledger)
+## Current verified status (2026-11-06, F1158 / 981 exact ledger)
 
 | Property | Grounded result |
 | --- | --- |
@@ -77,6 +77,8 @@ register phase. The **81,539B `0050A580`** has now reached an original-shaped
 **81,542B/17,435-x86** C++ parent, with original frame/stack slots,
 both 391 x87 load fields and every direct branch target recovered, but
 **522 GPR-role /5 width differences** in eight provisional states.
+All 1,357 whole CODE reference destinations and all 92 actual table targets
+are now checked; [complete operand proof](docs/CHARACTEROBJECT_WHOLE_OPERAND_PROOF_F1158.md).
 It is still **NONEXACT**; see the
 [updated giant handoff](docs/RE_HANDOFF.md).
 The **60,999B `0045DD70`** and other giant originals must also be

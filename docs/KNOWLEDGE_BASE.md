@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1157):**
+**Maintenance annotation, updated 2026-11-06 (F1158):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 981 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -48,6 +48,12 @@ exact comparisons across 66 objects**. No full-corpus replay or source reset;
 F1157 accepts the complete 248B/75-x86 virtual BattleScene destructor,
 all 12 real fields, using scalar deletion of the three actual HUD objects;
 [original whole-function proof](BATTLE_SCENE_TYPED_DELETE_EXACT_F1157.md).
+
+F1158 independently checks all 1,357 whole CODE references and every
+non-GPR operand, plus all 92 dense-table native instruction destinations.
+Two helper parameter views are aligned without changing CODE/DATA;
+[whole native operand proof](CHARACTEROBJECT_WHOLE_OPERAND_PROOF_F1158.md).
+The remaining 522 GPR positions/five widths are still unaccepted debt.
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function
