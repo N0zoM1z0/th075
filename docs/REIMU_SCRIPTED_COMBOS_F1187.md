@@ -1,5 +1,10 @@
 # F1187 — Reimu twelve original 194–1A1 attack states
 
+**Historical F1187 checkpoint:** F1188 extends the same parent to
+41,335B/11,379 x86, preserving all 99 prior nonmarker physical intervals.
+[Current charge/leap proof](REIMU_CHARGED_ATTACKS_F1188.md). The dimensions
+below describe commit `50630ef1`.
+
 The live one-body `probes/FighterWhole0045DD70F1183.cpp` now includes
 `ReimuScriptedCombosF1187.inc` and its genuine shared shot/policy fragments.
 The complete R063-authored **60,999B/16,837-x86** original remains

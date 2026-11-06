@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1187):**
+**Maintenance annotation, updated 2026-11-06 (F1188):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -120,6 +120,17 @@ All 87 prior nonmarker intervals retain their diagnostic results. Parent
 36,942B/10,116 x86, frame 0x178 /saved-this EBP-0xC, 44 nondefault
 markers; recent 46 interiors total 21,770B/6,005 x86/552 fields. No new
 whole exact credit and no full CI/corpus replay.
+
+F1188 restores seven Reimu 1F4–1FB states: 4,498 original interior
+bytes /1,277 x86 /106 fields. All interval lengths, mnemonics, widths,
+non-GPR operands, native branch targets and physical fields agree;
+873 GPR positions and stack slots remain wrong. Strict immediate landing
+returns in 1F4/1F6/1F7 differ from the continuing non-strict 1F5/1F8
+landing paths, which retain SetAux-before-counter order. [Native charge/leap proof](REIMU_CHARGED_ATTACKS_F1188.md).
+All 99 prior nonmarker intervals retain their results. Parent emits
+41,335B/11,379 x86, frame 0x18C /saved-this EBP-0xC, 37 nondefault
+markers. Recent 53 interiors total 26,268B/7,282 x86/658 fields, with
+zero whole exact credit and no full CI/corpus replay.
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function

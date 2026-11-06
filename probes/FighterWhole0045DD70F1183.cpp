@@ -4,6 +4,9 @@
 // Preserve independently reviewed current bodies and all six table groups.
 class FighterSwitchF598_Boss0045DD70 { public: void SetMotionStateAt40FBB0(int,float,int); void SetMotionFloatAt40FBB0(float,float,float); void ResetMotionAt40FC50(); void SpawnDirectedAt453A70(int,int,int,char,int); void SpawnWithFloatAt453A70(int,int,float,char,int); void SpawnFloatXYAt453A70(int,float,float,char,int); void InitTrajectoryAt453E60(float); virtual void NativeVirtualFrameAdvance(); void Advance(); int SelectRangeAt455580(int,int); void PlaySoundAt453D40(short); void ResetAt453E20(); void PrepareActionAt453D60(int); void StartAnimationAt46D000(int); void SpawnAt453C80(int,float,float,char,int); void SpawnMixedAt453C80(int,int,float,char,int); void SpawnRawXYAt453C80(int,int,int,char,int); void ConfigureStormAt454BC0(int,unsigned char,unsigned int); short GetNativeActionAt40FA30(); void SetNativeActionAt40FAC0(int); signed char ContactAt454EE0(); void SetAuxActionAt40FB40(int); };
 extern unsigned int g_FighterProbeMarker;
+extern float g_ReimuChargeFallAt00659094;
+extern float g_ReimuRepeatDragAt00659090;
+extern float g_ReimuLeapDragAt006583FC;
 extern float g_ReimuAirVolleyYAt00659098;
 extern float g_ReimuDownVolleyYAt0065826C;
 extern float g_ReimuLowVolleyYAt006590A0;
@@ -624,13 +627,7 @@ case 0x48: {
 
 #include "ReimuScriptedAttacksF1186.inc"
 #include "ReimuScriptedCombosF1187.inc"
-        case 0x1F4: g_FighterProbeMarker = 501; break;
-        case 0x1F5: g_FighterProbeMarker = 502; break;
-        case 0x1F6: g_FighterProbeMarker = 503; break;
-        case 0x1F7: g_FighterProbeMarker = 504; break;
-        case 0x1F8: g_FighterProbeMarker = 505; break;
-        case 0x1FA: g_FighterProbeMarker = 507; break;
-        case 0x1FB: g_FighterProbeMarker = 508; break;
+#include "ReimuChargedAttacksF1188.inc"
         case 0x252: g_FighterProbeMarker = 595; break;
         case 0x253: g_FighterProbeMarker = 596; break;
         case 0x254: g_FighterProbeMarker = 597; break;
