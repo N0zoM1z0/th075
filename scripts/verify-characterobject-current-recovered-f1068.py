@@ -42,7 +42,8 @@ required_fields={
  0x340:5,0x341:33,0x342:5,0x343:33,0x344:5,0x345:3,
  0x346:34,0x347:10,0x348:9,0x349:7,0x34a:7,0x34b:6,0x34c:18,0x34d:18,0x34e:18,0x34f:18,0x350:18,0x351:15,0x352:6,0x353:3,0x354:14,0x355:20,0x356:14,0x357:7,0x35f:2,0x360:15,0x361:15,0x362:15,0x363:15,0x364:15,0x365:32,0x366:32,0x367:32,0x368:32,0x369:32,0x384:24,0x385:10,0x386:22,0x387:17,0x388:14,0x389:24,0x38a:18,0x38b:16,0x38c:4,0x38e:8,0x38f:3,0x390:24,0x392:4,0x393:9,0x3e3:17,0x3e4:19,0x3e5:5,
 }
-assert len(required_fields)==82 and sum(required_fields.values())==1246
+required_fields[0x391]=29
+assert len(required_fields)==83 and sum(required_fields.values())==1275
 src=R/'probes/CharacterObjectWhole0050A580F1044.cpp'
 source=src.read_text()
 # Native state imports, not fake marker labels, must actually be represented.
@@ -88,6 +89,7 @@ for token in ('#include "CharacterObjectBoss330F1068.inc"',
  '#include "CharacterObjectBoss38EF1122.inc"',
  '#include "CharacterObjectBoss38FF1123.inc"',
  '#include "CharacterObjectBoss390F1125.inc"',
+ '#include "CharacterObjectBoss391F1126.inc"',
  '#include "CharacterObjectBoss392F1127.inc"',
  '#include "CharacterObjectBoss393F1128.inc"',
  '#include "CharacterObjectBoss3E3F1131.inc"',
@@ -845,7 +847,7 @@ original_total=sum(row['original_interior_CODE_B'] for row in rows)
 x86total=sum(row['original_native_x86'] for row in rows)
 src_total=sum(row['current_source_interior_CODE_B'] for row in rows)
 fields_total=sum(len(row['native_physically_correct_PE_call_global_fields']) for row in rows)
-assert (original_total,x86total,fields_total)==(75260,16090,1246)
+assert (original_total,x86total,fields_total)==(76519,16367,1275)
 # Additional REAL original C++ interiors, deliberately kept separately
 # PROVISIONAL: their native mnemonics, scalar immediates and physical PE
 # destinations match, but whole-parent GPR phases are NOT native yet.
@@ -913,4 +915,4 @@ summary={'original_Boss':'0x0050A580','original_whole_CODE_B':81539,
  'whole_native_original_direct_jumps_audited':physical_original_branch_positions,
  'remaining_nonexact_native_branch_target_mismatches':native_branch_target_debt}
 (O/'verified-summary.json').write_text(json.dumps(summary,indent=2)+'\n')
-print('LIVE 82 original game action interiors: original',original_total,'CODE B /',x86total,'x86, native mnemonic+GPR',x86total,'/',x86total,'and genuine PE nonlocal',fields_total,'/',fields_total,'. Current partial source',end,'B /',len(I),'x86, NOT exact whole 81KB; accepted new original bytes 0.')
+print('LIVE',len(rows),'original game action interiors: original',original_total,'CODE B /',x86total,'x86, native mnemonic+GPR',x86total,'/',x86total,'and genuine PE nonlocal',fields_total,'/',fields_total,'. Current partial source',end,'B /',len(I),'x86, NOT exact whole 81KB; accepted new original bytes 0.')

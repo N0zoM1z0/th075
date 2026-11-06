@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1148):**
+**Maintenance annotation, updated 2026-11-06 (F1149):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 979 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -25,6 +25,9 @@ corrects the historical F1132 interpretation.
 F1148 clears all 1,834 direct branch targets, preserving the strict and
 provisional cohorts; [native CFG proof](CHARACTEROBJECT_NATIVE_ALL_DIRECT_CFG_F1148.md)
 records the remaining 35D/35E scopes and independent 391 reflection.
+F1149 resolves both 391 FUCOMPP physical load fields through the existing
+transform-member window. The strict cohort is now 83 interiors, still no
+new whole exact callable; [typed x87 proof](CHARACTEROBJECT_NATIVE_391_TRANSFORM_X87_F1149.md).
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function

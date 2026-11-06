@@ -1,4 +1,4 @@
-# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1148)
+# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1149)
 
 **Start here.** Work on both large/core original functions and smaller entire
 original functions. The user requests meaningful **multiple local commits** named
@@ -52,15 +52,15 @@ Single source/whole-parent verifier:
 | Actual saved-this stack slot | **EBP-0xAC** | **EBP-0xDC** (wrong) |
 | Actual frame allocation | **ESP 0x3A0** | **ESP 0x3A4** (wrong) |
 | Owned separately afterRET switch DATA | **567B** | **567B** (verified) |
-| Strict original inner case intervals | — | **82 cases; 75,260 original CODE B /16,090 native x86 mnemonic+GPR matches** |
-| Original physical external PE fields in those 82 cases | **1,246** | **1,246/1,246** |
-| Original scalar immediate positions in those cases | **2,964** | **2,964** |
+| Strict original inner case intervals | — | **83 cases; 76,519 original CODE B /16,367 native x86 mnemonic+GPR matches** |
+| Original physical external PE fields in those 83 cases | **1,275** | **1,275/1,275** |
+| Original scalar immediate positions in those cases | **3,013** | **3,013** |
 | Explicit GPR-provisional case intervals | — | **8 cases:** `0x358–0x35E` and `0x3E6` |
-| Separate uncredited x87 case | — | **`0x391`**, 2 incorrect physical `FUCOMPP` fields, 4 GPR-role differences |
+| Original `0x391` x87 equality loads | **29 external PE fields /277 x86** | **all PE fields, mnemonic/GPR/width positions verified** |
 | Actual direct intra-function branches audited by native target ordinal | **1,834** | **all 1,834 destinations match** |
 | **Whole original callable accepted exact** | — | **NO** |
 
-The 82 strict cases **are interior evidence, not 82 accepted independent
+The 83 strict cases **are interior evidence, not 82 accepted independent
 functions**, and even correct mnemonics/GPR/widths do not prove branch CFG.
 The F1140–F1143 audit has corrected real gameplay control flow for `0x387`
 (per-frame gravity and angle), `0x388` and `0x330` (native ground/status
@@ -83,11 +83,12 @@ See [native scope/independent-reflection proof](CHARACTEROBJECT_NATIVE_ALL_DIREC
 
 The live parent verifier independently requires **zero mismatches across
 all 1,834 original direct jump target ordinals**. This proves those direct
-edges, not original stack slots, GPR roles, external fields in 391 or
-whole-function byte equality. Consult
-[original native 0x391 attempts](CHARACTEROBJECT_NATIVE_391_392_393_F1128.md)
-before retrying; 12 plus 12 natural float grammar variants already
-failed. `0x3E6` retained **105/105 native mnemonics and 9/9 PE fields**
+edges, not original stack slots, GPR roles or
+whole-function byte equality. F1149 resolves both original `0x391` FUCOMPP load orders using the existing
+borrowed transform field, verified across all 29 PE fields and 277 native
+mnemonic/GPR/width positions; see [typed x87 source proof](CHARACTEROBJECT_NATIVE_391_TRANSFORM_X87_F1149.md).
+Earlier [F1128 attempts](CHARACTEROBJECT_NATIVE_391_392_393_F1128.md)
+remain negative historical evidence, not a current x87 blocker. `0x3E6` retained **105/105 native mnemonics and 9/9 PE fields**
 but only **30/105 native GPR positions**. Ten isolated 3E6 and eleven
 preceding 3E5 full-parent grammar tests were unsuccessful (retained
 under ignored `.analysis/f1137-*`).

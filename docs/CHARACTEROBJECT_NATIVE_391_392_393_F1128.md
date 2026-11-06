@@ -4,6 +4,12 @@
 
 SHA-pinned Japanese TH075 1.11 contains ONE original authored `CharacterObject::Advance` at `0050A580`, **81,539 original CODE B /17,435 native x86** with separate 567B afterRET jump/sparse DATA bytes. F1126–F1128 restore genuine original C++ game logic inside this **still-NONEXACT whole original callable**. These switch entries are not newly exact independently authored callables.
 
+**F1149 supersession:** both original FUCOMPP load fields are now reproduced
+by the existing typed transform-member access, with all 277 mnemonic/GPR/width
+positions and all 29 external PE fields verified in the complete parent.
+See [F1149 current proof](CHARACTEROBJECT_NATIVE_391_TRANSFORM_X87_F1149.md).
+The negative results below remain valid for their recorded source forms.
+
 ## 0x391 — substantial real gameplay reconstructed, but original x87 COFF debt retained
 
 Native original 0x391 at `0051CF28..0051D413` is **1,259 original CODE B /277 x86**. Its current ordinary VC7.1 C++ implements native signed parent+0x3A0 expiry, stage-zero motion, random Y speed **00659890 − float(Random(0,9))**, native signed +0xD8/+0xDA/+0xDC phases, paired scale growth, Y-motion oscillation with real **006583F8/00659894/00659890** globals, and original difficulty-dependent signed facing reflection. The rare actual native **two float-equality `FUCOMPP` checks** enable original target pursuit only under the physically observed scale threshold. Correct game target choice checks *grandparent Y below actor Y*, and true `00412D90` absolute X separation, then sets native +0xDA=1, X/Y speed 0/−30. When descending through original ground `0065782C`, it expires and spawns genuine `0x392` at Y=0, then checks real X bounds **00659884/006595E4**, advances native Y and facing X, and handles stage 31 transition.
