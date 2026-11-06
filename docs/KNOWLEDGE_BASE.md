@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1193):**
+**Maintenance annotation, updated 2026-11-06 (F1194):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -189,6 +189,17 @@ borrowed rotation worsens x87 ordering, and a flat guard adds an instruction.
 [Native WORD ABI and negative evidence](REIMU_WORD_ABI_REGISTER_BOUNDARY_F1193.md).
 The complete parent remains 61,000B/16,837 x86, with all stack/CFG/PE targets
 verified but 6,311 GPR /five-width debt. No new exact credit or mass replay.
+
+F1194 continues the existing complete F167 normal C++ `0055AC80` source
+in a tracked live parent, preserving all 57 state bodies/default. A fresh
+whole build emits 28,438B/7,653 x86 versus original 28,432B, with original
+frame 0x19C, saved-this EBP-0x24, all 2,511 EBP positions, all 859 direct
+branch destinations, 638 CODE fields and 58 dense target ordinals verified.
+The 430B owned DATA includes 198 exact sparse bytes. Remaining debt is
+726 GPR positions in 389–392 and six EAX-versus-EDX CMP widths, accounting
+for +6B. [Whole native/source continuation proof](OBJECT_ADVANCE_0055AC80_WHOLE_F1194.md).
+A separate nested-guard control in the live 81KB parent is byte-identical
+and unadopted. No new exact credit, corpus replay or canonical test changes.
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function

@@ -1,4 +1,4 @@
-# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1193)
+# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1194)
 
 **Start here.** Work on both large/core original functions and smaller entire
 original functions. The user requests meaningful **multiple local commits** named
@@ -115,6 +115,11 @@ transform-assignment full-parent probes after F1150 likewise leave all 522
 GPR differences unchanged (`.analysis/f1151-native-gpr-types/`); those
 negative sources are retained and were not adopted.
 
+F1194 also rules out nesting the first 358/3E6 conjunction guards: all
+82,109 candidate CODE+DATA bytes and 1,449 field shapes remain identical,
+with the same 522 GPR /five-width debt. This is another bounded negative
+control, retained under `.analysis/f1194-native-guard-topology/`.
+
 **Reproduction:**
 
     scripts/repo-python scripts/verify-characterobject-current-recovered-f1068.py
@@ -134,6 +139,7 @@ CODE/COFF exactness**. See [F1138 source borrow](CHARACTEROBJECT_WHOLE_NATIVE_PH
 | **`00543210`** 58,294B/16,471 x86, 943 DATA | 58,293B/16,471 x86; **3 widths, 1,741 GPR positions** | [F1025 native PE targets](FIGHTER_58KB_ALL_NATIVE_PE_TARGETS_F1025.md), 1,697 targets |
 | **`005214B0`** 46,755B/13,230 x86, 901 DATA | 46,754B/13,230 x86; **5 widths**, original physical COFF/GPR wrong | [F1026 native PE targets](FIGHTER_46KB_ALL_NATIVE_PE_TARGETS_F1026.md), 1,341 targets |
 | **`0045DD70`** 60,999B/16,837 x86 | Live F1193 complete source **61,000B/16,837 x86 (+1B)**; original frame/saved-this/all 5,444 EBP slots; **6,311 GPR positions /5 widths** | [F1192 complete stack/CFG/PE proof](REIMU_WHOLE_STACK_CFG_F1192.md), [F1193 native WORD parameters](REIMU_WORD_ABI_REGISTER_BOUNDARY_F1193.md): all 1,684 direct targets, 1,682 CODE fields, 142 actual dense destinations; NONEXACT |
+| **`0055AC80`** 28,432B/7,653 x86 | F1194 continues the complete F167 source: **28,438B/7,653 x86 (+6B)**; original frame/this/all 2,511 EBP positions; **726 GPR positions /6 widths** | [F1194 whole native proof](OBJECT_ADVANCE_0055AC80_WHOLE_F1194.md): all 859 direct targets, 638 CODE fields and 58 dense destinations; NONEXACT |
 
 Current Reimu source: [`probes/FighterWhole0045DD70F1183.cpp`](../probes/FighterWhole0045DD70F1183.cpp),
 continued from F652/F1183. **All case/default markers are removed.** The
@@ -162,6 +168,18 @@ inside-switch shared getter label: an after-switch return trampoline
 matches counts but gives wrong original ordinary-exit destinations.
 **The complete original still is NONEXACT and adds no accepted bytes.**
 All original 60,999 pending bytes remain counted; no all-unit replay.
+
+Current `0055AC80` source is
+[`probes/CharacterObjectWhole0055AC80F1194.cpp`](../probes/CharacterObjectWhole0055AC80F1194.cpp),
+continued from the actual complete F167 normal C++ draft. All 57 real states
+and default are present; do not replace it with the F569 marker skeleton.
+Frame 0x19C, saved-this EBP-0x24, every stack operand, all 859 direct branches,
+638 CODE references and 58 dense entry ordinals agree with the original.
+Its 430B owned DATA includes 198 exact sparse bytes. GPR debt is limited to
+389–392, beginning **0055F711 /whole ordinal 5,225**; the six remaining CMP
+widths account for all +6 source bytes. The current object and scoped audit
+are `.analysis/f1194-remilia-whole-recovery/tracked.obj` and `audit.py`.
+All original 28,432 bytes remain unaccepted and counted.
 
 All other giant authored originals remain open; use the
 [actual giant dispatch manifest](../config/fighter-boss-dispatch-fingerprints.json)
