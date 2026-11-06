@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1226):**
+**Maintenance annotation, updated 2026-11-06 (F1227):**
 The **current authoritative** pinned-original whole-function evidence,
 81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
 whole exact functions, and safe local storage/restore instructions are
@@ -515,6 +515,19 @@ actual NEG-then-ADD random velocities and839's facing negation. Selected
 listing/diagnostics/verified-summary.json remain. Only901/903–911 are unwritten;
 all42,511 original CODE B stay pending. No accepted input or infrastructure
 change, full CI, corpus replay or per-function test.
+
+F1227 completes all55 states of004CA6E0. Fresh selected compound-counter.obj
+emits42,515B/11,201 x86 vsnative42,511B, original frame0x288/this-4/ESI and
+all3,717 EBP operands. All1,014 direct targets,873 CODE reference destinations,
+56 dense ordinals and198 sparse bytes agree. **447 GPR/12 widths remain**
+only in808–811, first004CCBD7/whole2526. [Complete native audit](OBJECT_ADVANCE_004CA6E0_COMPLETE_PARENT_F1227.md)
+records exact equality versus nonpositive health guards, mixed float/double
+constant bits, full reflection/effect behavior and906's natural compound
+counter update recovering the original LEA base/index order. Selected private
+`.analysis/f1227-object-4ca6e0-complete/compound-counter.obj`, immutable CPP/HPP,
+listing, both whole/source diagnostics and verified-summary.json remain.
+All42,511 original CODE B stay pending; no accepted inputs, origin/tracking
+ledgers or canonical infrastructure change, full CI or corpus replay.
 
 **Earlier F754 documentation/storage review (2026-10-30):**
 This file is **historical** research evidence, not the live function

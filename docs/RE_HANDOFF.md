@@ -1,4 +1,4 @@
-# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1226)
+# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1227)
 
 **Start here.** Continue all dirty work; there are no other active sessions.
 Work on both large/core and smaller authored originals. Use local commits
@@ -191,16 +191,17 @@ listing, both diagnostics and `verified-summary.json`; `whole-audit.py [OBJ]`.
 all final25 states and twelve rejected controls. Continue this complete body;
 no whole exact credit. All other parents and unknown origins stay preserved.
 
-New incomplete 42KB source:
+Current complete 42KB source:
 [`probes/CharacterObjectActions004CA6E0F1222.cpp`](../probes/CharacterObjectActions004CA6E0F1222.cpp).
-F1226 has45/55 states; selected32,030B/8,479 x86, frame0x238 vsnative0x288,
-original this-4/ESI. All written operand diagnostics agree; prefix/800–807/
-812–839 have zero raw GPR/EBP/width debt. 808–811 retain32/117/117/181 GPR,
-first004CCBD7/whole2526; postfix increment control is negative. Still10 states:
-901,903–911. Selected `.analysis/f1226-object-4ca6e0-final-early/early-reviewed.obj`,
-immutable CPP/HPP/listing/diagnostics/verified-summary.json.
-[F1226 proof](OBJECT_ADVANCE_004CA6E0_FINAL_EARLY_STATES_F1226.md). Continue this
-same body; all42,511 original B remain pending.
+F1227 has all55 states; selected42,515B/11,201 x86 vsnative42,511B; original
+frame0x288/this-4/ESI/all3,717 EBP operands. All1,014 direct targets,873 CODE
+destinations,56 dense ordinals/198 sparse bytes agree. **447 GPR/12 widths**
+remain only in808–811, first004CCBD7/whole2526. Postfix increment is negative;
+906 LEA is fixed by natural compound update. Selected
+`.analysis/f1227-object-4ca6e0-complete/compound-counter.obj`, immutable CPP/HPP,
+listing/both diagnostics/verified-summary.json; `whole-audit.py [OBJ]`.
+[F1227 proof](OBJECT_ADVANCE_004CA6E0_COMPLETE_PARENT_F1227.md). Continue this
+complete body; all42,511 original B remain pending.
 
 All other giant authored originals remain open; use the
 [actual giant dispatch manifest](../config/fighter-boss-dispatch-fingerprints.json)

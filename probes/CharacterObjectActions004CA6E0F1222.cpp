@@ -1,5 +1,5 @@
-// Incomplete research toward original 004CA6E0 (42,511 CODE bytes).
-// Only reviewed states are present; this is NONEXACT and not a replacement.
+// Complete research source for original 004CA6E0 (42,511 CODE bytes).
+// All native states are written; still NONEXACT and not an accepted replacement.
 #include "ObjectAdvance4CA6E0F1222.hpp"
 
 #define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
@@ -11,6 +11,7 @@
 #define OWNER_ACTOR reinterpret_cast<OwnerActor4CA6E0F1222*>(FIELD(void*, 0xE4))
 
 extern float g_F1211_AngleDivAt00657828;
+extern signed char g_F1212_DifficultyAt006714D0;
 
 void ObjectActor4CA6E0F1222::AdvanceAction()
 {
@@ -1682,6 +1683,584 @@ void ObjectActor4CA6E0F1222::AdvanceAction()
                     if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
                     if (FIELD(short, 0x62) == 2 && FIELD(short, 0x64) == 0) FIELD(signed char, 0x66) = -FIELD(signed char, 0x66);
                 }
+            }
+        }
+        break;
+
+    case 901:
+        if (OWNER(short, 0x3A0) == 0) { ClearField74(); return; }
+        else {
+            if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0 && FIELD(short, 0xD8) == 0) {
+                EnableTransform(0.0f, 0.0f, 0.0f);
+                FLOAT(0x1C) = 1.0f;
+                FLOAT(0x20) = 1.0f;
+                FIELD(unsigned char, 0x11) = 255;
+                FIELD(unsigned char, 0x12) = 255;
+                FIELD(unsigned char, 0x13) = 255;
+                FIELD(unsigned char, 0x14) = 255;
+                FIELD(int, 0x7C) = 0;
+                FIELD(short, 0x80) = 1;
+                FLOAT(0x50) = 0.0f;
+                FLOAT(0x54) = 0.0f;
+            }
+            FLOAT(0x44) = FIELD(signed char, 0x66) * FLOAT(0x50) + FLOAT(0x44);
+            FLOAT(0x48) -= FLOAT(0x54);
+            ++FIELD(short, 0xD8);
+            if (FIELD(short, 0x62) < 5) {
+                SetPolarVelocity(FLOAT(0xC8), FLOAT(0xCC));
+                FLOAT(0x30) = AngleAt00483300(FLOAT(0x54), FLOAT(0x50)) / g_F1211_AngleDivAt00657828;
+                OWNER_FLOAT(0x310) = AngleAt00483300(FLOAT(0x54), FLOAT(0x50)) / g_F1211_AngleDivAt00657828;
+                OWNER(unsigned char, 0x2F0) = 0;
+                OWNER(short, 0x2F6) = 0;
+                OWNER(short, 0x2F8) = 0;
+                OWNER(short, 0x2FA) = 0;
+                OWNER_FLOAT(0x2FC) = 1.0f;
+                OWNER_FLOAT(0x300) = 1.0f;
+                OWNER(unsigned char, 0x2F1) = 255;
+                OWNER(unsigned char, 0x2F2) = 255;
+                OWNER(unsigned char, 0x2F3) = 255;
+                OWNER(unsigned char, 0x2F4) = 255;
+                OWNER_FLOAT(0x308) = 0.0f;
+                OWNER_FLOAT(0x30C) = 0.0f;
+            }
+            if (FIELD(int, 0x7C) == 6) FIELD(short, 0x80) = 1;
+            if ((FIELD(int, 0x7C) == 2 || FIELD(int, 0x7C) == 4) && FIELD(short, 0x62) < 5) {
+                ResetSecondaryCounters(6);
+                return;
+            }
+            else if (FLOAT(0x44) > 1400.0f || FLOAT(0x44) < -160.0f || FLOAT(0x48) > 1000.0f || FLOAT(0x48) < -160.0f) { ClearField74(); return; }
+            else {
+                if (FIELD(short, 0x62) == 6 && FIELD(short, 0x64) == 0) {
+                    FLOAT(0x50) = -FLOAT(0x50) * 0.25;
+                    FLOAT(0x54) = -14.0f;
+                }
+                if (FIELD(short, 0x62) == 6) {
+                    FLOAT(0x54) += 0.5f;
+                    FLOAT(0x30) += 40.0f;
+                }
+                if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+                if (FIELD(short, 0x62) == 5 && FIELD(short, 0x64) == 0) ResetSecondaryCounters(1);
+                if (FIELD(short, 0x62) == 7 && FIELD(short, 0x64) == 0) ResetSecondaryCounters(6);
+            }
+        }
+        break;
+
+    case 903:
+        if (OWNER(short, 0x3A0) <= 0) { ClearField74(); return; }
+        else {
+            if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+                FIELD(short, 0xD8) = 0;
+                FIELD(short, 0xDA) = 0;
+                FIELD(short, 0xDC) = 0;
+                EnableTransform(0.0f, 0.0f, 0.0f);
+                FLOAT(0x1C) = 1.0f;
+                FLOAT(0x20) = 1.0f;
+                FIELD(unsigned char, 0x11) = 0;
+                FIELD(unsigned char, 0x12) = 255;
+                FIELD(unsigned char, 0x13) = 255;
+                FIELD(unsigned char, 0x14) = 255;
+            }
+            if (FIELD(short, 0x62) == 2 && FIELD(short, 0x64) == 0 && FIELD(short, 0xD8) == 0) {
+                FIELD(short, 0x80) = 1;
+                FIELD(int, 0x7C) = 0;
+                FIELD(short, 0xDC) = static_cast<short>(AngleAt00483300(OPPONENT_FLOAT(0x48) + 100.0f - FLOAT(0x48),
+                    (OPPONENT_FLOAT(0x44) - FLOAT(0x44)) * FIELD(signed char, 0x66)) / g_F1211_AngleDivAt00657828);
+                ++FIELD(short, 0xD8);
+            }
+            if (FIELD(short, 0x62) < 2) {
+                FLOAT(0x30) += 15.0f;
+                SetPolarVelocity(FLOAT(0xC8), 4.5f);
+            }
+            if (FIELD(short, 0x62) > 1) {
+                ++FIELD(short, 0xDA);
+                SetPolarVelocity(FIELD(short, 0xDC), FIELD(short, 0xDA));
+                FLOAT(0x30) = AngleAt00483300(FLOAT(0x54), FLOAT(0x50)) / g_F1211_AngleDivAt00657828;
+                FLOAT(0x1C) += 0.5f;
+            }
+            FLOAT(0x44) = FIELD(signed char, 0x66) * FLOAT(0x50) + FLOAT(0x44);
+            FLOAT(0x48) -= FLOAT(0x54);
+            if (FLOAT(0x44) > 1600.0f || FLOAT(0x44) < -400.0f || FLOAT(0x48) > 1400.0f || FLOAT(0x48) < -400.0f) {
+                ClearField74();
+                return;
+            }
+            else {
+                if (AdvanceNestedFrame() == FIELD(short, 0x70)) ResetSecondaryCounters(2);
+                if (FIELD(short, 0x62) == 1 && FIELD(short, 0x64) == 0) FIELD(unsigned char, 0x11) = 255;
+            }
+        }
+        break;
+
+    case 904:
+        if (OWNER(short, 0x3A0) <= 0) { ClearField74(); return; }
+        else {
+            if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+                FLOAT(0xCC) = 15.0f;
+                EnableTransform(0.0f, 0.0f, 0.0f);
+                SetPolarVelocity(FLOAT(0xC8), FLOAT(0xCC));
+                FLOAT(0x30) = AngleAt00483300(FLOAT(0x54), FLOAT(0x50)) / g_F1211_AngleDivAt00657828;
+                FLOAT(0x1C) = 1.0f;
+                FLOAT(0x20) = 1.0f;
+                FIELD(unsigned char, 0x11) = 255;
+                FIELD(unsigned char, 0x12) = 255;
+                FIELD(unsigned char, 0x13) = 255;
+                FIELD(unsigned char, 0x14) = 255;
+                FIELD(int, 0x7C) = 0;
+                FIELD(short, 0x80) = 1;
+                FIELD(short, 0xDA) = 0;
+            }
+            if (FIELD(int, 0x7C) != 0) FIELD(unsigned char, 0x11) = 128;
+            else FIELD(unsigned char, 0x11) = 255;
+            FLOAT(0x44) = FIELD(signed char, 0x66) * FLOAT(0x50) + FLOAT(0x44);
+            FLOAT(0x48) -= FLOAT(0x54);
+            ++FIELD(short, 0xD8);
+            if (FIELD(short, 0xD8) > 5) FIELD(short, 0xD8) = 5;
+            if (FIELD(short, 0x62) == 1) {
+                SetPolarVelocity(FLOAT(0xC8), FLOAT(0xCC));
+                FLOAT(0x30) = AngleAt00483300(FLOAT(0x54), FLOAT(0x50)) / g_F1211_AngleDivAt00657828;
+                if (FIELD(int, 0x7C) == 0) {
+                    OWNER(unsigned int, 0x314) = FIELD(unsigned int, 0x30);
+                    OWNER_FLOAT(0x318) = FIELD(short, 0xD8);
+                    OWNER_ACTOR->SpawnEffect(812, FLOAT(0x44), FLOAT(0x48), FIELD(signed char, 0x66), 1);
+                    OWNER_FLOAT(0x310) = AngleAt00483300(FLOAT(0x54), FLOAT(0x50)) / g_F1211_AngleDivAt00657828;
+                    OWNER(unsigned char, 0x2F0) = 0;
+                    OWNER(short, 0x2F6) = 0;
+                    OWNER(short, 0x2F8) = 0;
+                    OWNER(short, 0x2FA) = 0;
+                    OWNER_FLOAT(0x2FC) = 1.0f;
+                    OWNER_FLOAT(0x300) = 1.0f;
+                    OWNER(unsigned char, 0x2F1) = 255;
+                    OWNER(unsigned char, 0x2F2) = 255;
+                    OWNER(unsigned char, 0x2F3) = 255;
+                    OWNER(unsigned char, 0x2F4) = 255;
+                    OWNER_FLOAT(0x308) = 0.0f;
+                    OWNER_FLOAT(0x30C) = 0.0f;
+                    OWNER_ACTOR->SpawnTrackedEffectAt00453AC0(813, FLOAT(0x44), FLOAT(0x48), FIELD(signed char, 0x66), 0, 1);
+                }
+                if (FLOAT(0x48) > OWNER_FLOAT(0x2E0) && FIELD(short, 0xDA) < 1 && FLOAT(0x54) < 0.0f) {
+                    OWNER_ACTOR->PlaySoundAt00453D40(11);
+                    FLOAT(0xC8) = -FLOAT(0xC8);
+                    ++FIELD(short, 0xDA);
+                    FIELD(int, 0x7C) = 0;
+                    FIELD(short, 0x80) = 1;
+                    FLOAT(0xCC) = 4.0f;
+                }
+                if (FLOAT(0x48) < 0.0f && FIELD(short, 0xDA) < 1 && FLOAT(0x54) > 0.0f) {
+                    OWNER_ACTOR->PlaySoundAt00453D40(11);
+                    FLOAT(0xC8) = -FLOAT(0xC8);
+                    ++FIELD(short, 0xDA);
+                    FIELD(int, 0x7C) = 0;
+                    FIELD(short, 0x80) = 1;
+                    FLOAT(0xCC) = 4.0f;
+                }
+                if (FLOAT(0x44) < OWNER_FLOAT(0x2D8) && FIELD(short, 0xDA) < 1 &&
+                    ((FIELD(signed char, 0x66) == -1 && FLOAT(0x50) > 0.0f) ||
+                     (FIELD(signed char, 0x66) == 1 && FLOAT(0x50) < 0.0f))) {
+                    OWNER_ACTOR->PlaySoundAt00453D40(11);
+                    if (FLOAT(0xC8) > 0.0f) FLOAT(0xC8) = 180.0f - FLOAT(0xC8);
+                    if (FLOAT(0xC8) < 0.0f) FLOAT(0xC8) = -180.0f - FLOAT(0xC8);
+                    ++FIELD(short, 0xDA);
+                    FIELD(int, 0x7C) = 0;
+                    FIELD(short, 0x80) = 1;
+                    FLOAT(0xCC) = 4.0f;
+                }
+                if (FLOAT(0x44) > OWNER_FLOAT(0x2DC) && FIELD(short, 0xDA) < 1 &&
+                    ((FIELD(signed char, 0x66) == -1 && FLOAT(0x50) < 0.0f) ||
+                     (FIELD(signed char, 0x66) == 1 && FLOAT(0x50) > 0.0f))) {
+                    OWNER_ACTOR->PlaySoundAt00453D40(11);
+                    if (FLOAT(0xC8) > 0.0f) FLOAT(0xC8) = 180.0f - FLOAT(0xC8);
+                    if (FLOAT(0xC8) < 0.0f) FLOAT(0xC8) = -180.0f - FLOAT(0xC8);
+                    ++FIELD(short, 0xDA);
+                    FIELD(int, 0x7C) = 0;
+                    FIELD(short, 0x80) = 1;
+                    FLOAT(0xCC) = 4.0f;
+                }
+            }
+            if ((FIELD(int, 0x7C) == 2 || FIELD(int, 0x7C) == 4) && FIELD(short, 0x62) == 1) {
+                ResetSecondaryCounters(2);
+                return;
+            }
+            else if (FLOAT(0x44) > 1400.0f || FLOAT(0x44) < -160.0f || FLOAT(0x48) > 1000.0f || FLOAT(0x48) < -160.0f) { ClearField74(); return; }
+            else {
+                if (FIELD(short, 0x62) == 2 && FIELD(short, 0x64) == 0) {
+                    FLOAT(0x50) = -FLOAT(0x50) * 0.25;
+                    FLOAT(0x54) = -14.0f;
+                }
+                if (FIELD(short, 0x62) == 2) {
+                    FLOAT(0x54) += 0.5f;
+                    FLOAT(0x30) += 40.0f;
+                }
+                if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+            }
+        }
+        break;
+
+    case 905:
+        if (OWNER(short, 0x3A0) <= 0) { ClearField74(); return; }
+        else {
+            if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+                EnableTransform(0.0f, 0.0f, 0.0f);
+                SetPolarVelocity(FLOAT(0xC8), FLOAT(0xCC));
+                FLOAT(0x30) = AngleAt00483300(FLOAT(0x54), FLOAT(0x50)) / g_F1211_AngleDivAt00657828;
+                FLOAT(0x1C) = 1.0f;
+                FLOAT(0x20) = 1.0f;
+                FIELD(unsigned char, 0x11) = 255;
+                FIELD(unsigned char, 0x12) = 255;
+                FIELD(unsigned char, 0x13) = 255;
+                FIELD(unsigned char, 0x14) = 255;
+                FIELD(int, 0x7C) = 0;
+                FIELD(short, 0x80) = 1;
+                FIELD(short, 0xDA) = 0;
+            }
+            if (FIELD(int, 0x7C) != 0) FIELD(unsigned char, 0x11) = 128;
+            else FIELD(unsigned char, 0x11) = 255;
+            FLOAT(0x44) = FIELD(signed char, 0x66) * FLOAT(0x50) + FLOAT(0x44);
+            FLOAT(0x48) -= FLOAT(0x54);
+            ++FIELD(short, 0xD8);
+            if (FIELD(short, 0xD8) > 5) FIELD(short, 0xD8) = 5;
+            if (FIELD(short, 0x62) == 1) {
+                SetPolarVelocity(FLOAT(0xC8), FLOAT(0xCC));
+                FLOAT(0x30) = AngleAt00483300(FLOAT(0x54), FLOAT(0x50)) / g_F1211_AngleDivAt00657828;
+                if (FIELD(int, 0x7C) == 0) {
+                    OWNER(unsigned int, 0x314) = FIELD(unsigned int, 0x30);
+                    OWNER_FLOAT(0x318) = FIELD(short, 0xD8);
+                    OWNER_ACTOR->SpawnEffect(812, FLOAT(0x44), FLOAT(0x48), FIELD(signed char, 0x66), 1);
+                    OWNER_FLOAT(0x310) = AngleAt00483300(FLOAT(0x54), FLOAT(0x50)) / g_F1211_AngleDivAt00657828;
+                    OWNER(unsigned char, 0x2F0) = 0;
+                    OWNER(short, 0x2F6) = 0;
+                    OWNER(short, 0x2F8) = 0;
+                    OWNER(short, 0x2FA) = 0;
+                    OWNER_FLOAT(0x2FC) = 1.0f;
+                    OWNER_FLOAT(0x300) = 1.0f;
+                    OWNER(unsigned char, 0x2F1) = 255;
+                    OWNER(unsigned char, 0x2F2) = 255;
+                    OWNER(unsigned char, 0x2F3) = 255;
+                    OWNER(unsigned char, 0x2F4) = 255;
+                    OWNER_FLOAT(0x308) = 0.0f;
+                    OWNER_FLOAT(0x30C) = 0.0f;
+                    OWNER_ACTOR->SpawnTrackedEffectAt00453AC0(813, FLOAT(0x44), FLOAT(0x48), FIELD(signed char, 0x66), 0, 1);
+                }
+                if (FLOAT(0x48) > OWNER_FLOAT(0x2E0) && FIELD(short, 0xDA) < 2 && FLOAT(0x54) < 0.0f) {
+                    OWNER_ACTOR->PlaySoundAt00453D40(11);
+                    FLOAT(0xC8) = -FLOAT(0xC8);
+                    ++FIELD(short, 0xDA);
+                    FIELD(int, 0x7C) = 0;
+                    FIELD(short, 0x80) = 1;
+                }
+                if (FLOAT(0x48) < 0.0f && FIELD(short, 0xDA) < 2 && FLOAT(0x54) > 0.0f) {
+                    OWNER_ACTOR->PlaySoundAt00453D40(11);
+                    FLOAT(0xC8) = -FLOAT(0xC8);
+                    ++FIELD(short, 0xDA);
+                    FIELD(int, 0x7C) = 0;
+                    FIELD(short, 0x80) = 1;
+                }
+                if (FLOAT(0x44) < OWNER_FLOAT(0x2D8) && FIELD(short, 0xDA) < 2 &&
+                    ((FIELD(signed char, 0x66) == -1 && FLOAT(0x50) > 0.0f) ||
+                     (FIELD(signed char, 0x66) == 1 && FLOAT(0x50) < 0.0f))) {
+                    OWNER_ACTOR->PlaySoundAt00453D40(11);
+                    if (FLOAT(0xC8) > 0.0f) FLOAT(0xC8) = 180.0f - FLOAT(0xC8);
+                    if (FLOAT(0xC8) < 0.0f) FLOAT(0xC8) = -180.0f - FLOAT(0xC8);
+                    ++FIELD(short, 0xDA);
+                    FIELD(int, 0x7C) = 0;
+                    FIELD(short, 0x80) = 1;
+                }
+                if (FLOAT(0x44) > OWNER_FLOAT(0x2DC) && FIELD(short, 0xDA) < 2 &&
+                    ((FIELD(signed char, 0x66) == -1 && FLOAT(0x50) < 0.0f) ||
+                     (FIELD(signed char, 0x66) == 1 && FLOAT(0x50) > 0.0f))) {
+                    OWNER_ACTOR->PlaySoundAt00453D40(11);
+                    if (FLOAT(0xC8) > 0.0f) FLOAT(0xC8) = 180.0f - FLOAT(0xC8);
+                    if (FLOAT(0xC8) < 0.0f) FLOAT(0xC8) = -180.0f - FLOAT(0xC8);
+                    ++FIELD(short, 0xDA);
+                    FIELD(int, 0x7C) = 0;
+                    FIELD(short, 0x80) = 1;
+                }
+            }
+            if ((FIELD(int, 0x7C) == 2 || FIELD(int, 0x7C) == 4) && FIELD(short, 0x62) == 1) {
+                ResetSecondaryCounters(2);
+                return;
+            }
+            else if (FLOAT(0x44) > 1400.0f || FLOAT(0x44) < -160.0f || FLOAT(0x48) > 1000.0f || FLOAT(0x48) < -160.0f) { ClearField74(); return; }
+            else {
+                if (FIELD(short, 0x62) == 2 && FIELD(short, 0x64) == 0) {
+                    FLOAT(0x50) = -FLOAT(0x50) * 0.25;
+                    FLOAT(0x54) = -14.0f;
+                }
+                if (FIELD(short, 0x62) == 2) {
+                    FLOAT(0x54) += 0.5f;
+                    FLOAT(0x30) += 40.0f;
+                }
+                if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+            }
+        }
+        break;
+
+    case 906:
+        if (OWNER(short, 0x3A0) <= 0) { ClearField74(); return; }
+        else {
+            if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+                EnableTransform(0.0f, 0.0f, 0.0f);
+                FLOAT(0x1C) = 1.0f;
+                FLOAT(0x20) = 1.0f;
+                FIELD(unsigned char, 0x11) = 255;
+                FIELD(unsigned char, 0x12) = 255;
+                FIELD(unsigned char, 0x13) = 255;
+                FIELD(unsigned char, 0x14) = 255;
+                FIELD(short, 0x8A) = 0;
+                FIELD(int, 0x7C) = 0;
+                FIELD(short, 0x80) = 1;
+                FIELD(short, 0xDC) = 5;
+                FIELD(short, 0xDA) = RecordedRange(0, 30) - 15;
+                FIELD(short, 0xD8) = RecordedRange(0, 50);
+                SetPolarVelocity(FIELD(short, 0xDA), FIELD(short, 0xDC) * 0.01f);
+                FLOAT(0x30) = AngleAt00483300(FLOAT(0x54), FLOAT(0x50)) / g_F1211_AngleDivAt00657828;
+                FLOAT(0x50) = 0.0f;
+                FLOAT(0x54) = 0.0f;
+            }
+            SetPolarVelocity(FIELD(short, 0xDA), FIELD(short, 0xDC) * 0.01f);
+            FIELD(short, 0xDC) += 5 + FIELD(short, 0xD8);
+            FLOAT(0x44) = FIELD(signed char, 0x66) * FLOAT(0x50) + FLOAT(0x44);
+            FLOAT(0x48) -= FLOAT(0x54);
+            if (FIELD(short, 0x80) == 0 && FIELD(short, 0x62) < 5) { ResetSecondaryCounters(6); return; }
+            else if (FLOAT(0x44) > 1320.0f || FLOAT(0x44) < -40.0f || FLOAT(0x48) > 1000.0f || FLOAT(0x48) < -160.0f) { ClearField74(); return; }
+            else {
+                if (FIELD(short, 0x62) == 6) {
+                    if (FIELD(unsigned char, 0x11) > 20) FIELD(unsigned char, 0x11) -= 20;
+                    else { ClearField74(); return; }
+                }
+                if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+                if (FIELD(short, 0x62) == 5 && FIELD(short, 0x64) == 0) ResetSecondaryCounters(1);
+            }
+        }
+        break;
+
+    case 907:
+        if (OWNER(short, 0x3A0) <= 0) { ClearField74(); return; }
+        else {
+            if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+                EnableTransform(0.0f, 0.0f, 0.0f);
+                FLOAT(0x1C) = 1.0f;
+                FLOAT(0x20) = 1.0f;
+                FIELD(unsigned char, 0x11) = 255;
+                FIELD(unsigned char, 0x12) = 255;
+                FIELD(unsigned char, 0x13) = 255;
+                FIELD(unsigned char, 0x14) = 255;
+                FIELD(int, 0x7C) = 0;
+                FIELD(short, 0x80) = 1;
+                FIELD(short, 0xD8) = RecordedRange(0, 50);
+                FLOAT(0x50) = 0.0f;
+                FLOAT(0x54) = 0.0f;
+            }
+            FLOAT(0x50) = FIELD(short, 0xD8) * 0.01 + 0.05f + FLOAT(0x50);
+            FLOAT(0x44) = FIELD(signed char, 0x66) * FLOAT(0x50) + FLOAT(0x44);
+            FLOAT(0x48) -= FLOAT(0x54);
+            if (FIELD(short, 0x80) == 0 && FIELD(short, 0x62) < 5) { ResetSecondaryCounters(6); return; }
+            else if (FLOAT(0x44) > 1320.0f || FLOAT(0x44) < -40.0f || FLOAT(0x48) > 1000.0f || FLOAT(0x48) < -160.0f) { ClearField74(); return; }
+            else {
+                if (FIELD(short, 0x62) == 6) {
+                    if (FIELD(unsigned char, 0x11) > 20) FIELD(unsigned char, 0x11) -= 20;
+                    else { ClearField74(); return; }
+                }
+                if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+                if (FIELD(short, 0x62) == 5 && FIELD(short, 0x64) == 0) ResetSecondaryCounters(1);
+            }
+        }
+        break;
+
+    case 908:
+        if (OWNER(short, 0x3A0) <= 0) { ClearField74(); return; }
+        else {
+            if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+                EnableTransform(0.0f, 0.0f, 0.0f);
+                FLOAT(0x1C) = 1.0f;
+                FLOAT(0x20) = 1.0f;
+                FIELD(unsigned char, 0x11) = 255;
+                FIELD(unsigned char, 0x12) = 255;
+                FIELD(unsigned char, 0x13) = 255;
+                FIELD(unsigned char, 0x14) = 255;
+                FIELD(int, 0x7C) = 0;
+                FIELD(short, 0x80) = 1;
+                FIELD(short, 0xD8) = RecordedRange(0, 50);
+                FLOAT(0x50) = 0.0f;
+                FLOAT(0x54) = 0.0f;
+            }
+            FLOAT(0x50) = FIELD(short, 0xD8) * 0.01 + 0.05f + FLOAT(0x50);
+            FLOAT(0x44) = FIELD(signed char, 0x66) * FLOAT(0x50) + FLOAT(0x44);
+            FLOAT(0x48) -= FLOAT(0x54);
+            if (FIELD(short, 0x80) == 0 && FIELD(short, 0x62) < 5) { ResetSecondaryCounters(6); return; }
+            else if (FLOAT(0x44) > 1320.0f || FLOAT(0x44) < -40.0f || FLOAT(0x48) > 1000.0f || FLOAT(0x48) < -160.0f) { ClearField74(); return; }
+            else {
+                if (FIELD(short, 0x62) == 6) {
+                    if (FIELD(unsigned char, 0x11) > 20) FIELD(unsigned char, 0x11) -= 20;
+                    else { ClearField74(); return; }
+                }
+                if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+                if (FIELD(short, 0x62) == 5 && FIELD(short, 0x64) == 0) ResetSecondaryCounters(1);
+            }
+        }
+        break;
+
+    case 909:
+        if (OWNER(short, 0x3A0) <= 0) { ClearField74(); return; }
+        else {
+            if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+                EnableTransform(0.0f, 0.0f, 0.0f);
+                FLOAT(0x1C) = 1.0f;
+                FLOAT(0x20) = 1.0f;
+                FIELD(unsigned char, 0x11) = 255;
+                FIELD(unsigned char, 0x12) = 255;
+                FIELD(unsigned char, 0x13) = 255;
+                FIELD(unsigned char, 0x14) = 255;
+                FIELD(int, 0x7C) = 0;
+                FIELD(short, 0x80) = 1;
+                FLOAT(0x50) = 0.0f;
+                FLOAT(0x54) = 0.0f;
+            }
+            FLOAT(0x44) = FIELD(signed char, 0x66) * FLOAT(0x50) + FLOAT(0x44);
+            FLOAT(0x48) -= FLOAT(0x54);
+            ++FIELD(short, 0xD8);
+            if (FIELD(short, 0x62) < 5) {
+                SetPolarVelocity(FLOAT(0xC8), FLOAT(0xCC));
+                FLOAT(0x30) = AngleAt00483300(FLOAT(0x54), FLOAT(0x50)) / g_F1211_AngleDivAt00657828;
+                OWNER_FLOAT(0x310) = AngleAt00483300(FLOAT(0x54), FLOAT(0x50)) / g_F1211_AngleDivAt00657828;
+                OWNER(unsigned char, 0x2F0) = 0;
+                OWNER(short, 0x2F6) = 0;
+                OWNER(short, 0x2F8) = 0;
+                OWNER(short, 0x2FA) = 0;
+                OWNER_FLOAT(0x2FC) = 1.0f;
+                OWNER_FLOAT(0x300) = 1.0f;
+                OWNER(unsigned char, 0x2F1) = 255;
+                OWNER(unsigned char, 0x2F2) = 255;
+                OWNER(unsigned char, 0x2F3) = 255;
+                OWNER(unsigned char, 0x2F4) = 255;
+                OWNER_FLOAT(0x308) = 0.0f;
+                OWNER_FLOAT(0x30C) = 0.0f;
+                OWNER_ACTOR->SpawnTrackedEffectAt00453AC0(813, FLOAT(0x44), FLOAT(0x48), FIELD(signed char, 0x66), 0, 1);
+            }
+            if ((FIELD(int, 0x7C) == 2 || FIELD(int, 0x7C) == 4) && FIELD(short, 0x62) < 5) {
+                ResetSecondaryCounters(6);
+                return;
+            }
+            else if (FLOAT(0x44) > 1400.0f || FLOAT(0x44) < -160.0f || FLOAT(0x48) > 1000.0f || FLOAT(0x48) < -160.0f) { ClearField74(); return; }
+            else {
+                if (FIELD(short, 0x62) == 6 && FIELD(short, 0x64) == 0) {
+                    FLOAT(0x50) = -FLOAT(0x50) * 0.25;
+                    FLOAT(0x54) = -14.0f;
+                }
+                if (FIELD(short, 0x62) == 6) {
+                    FLOAT(0x54) += 0.5f;
+                    FLOAT(0x30) += 40.0f;
+                }
+                if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+                if (FIELD(short, 0x62) == 5 && FIELD(short, 0x64) == 0) ResetSecondaryCounters(1);
+                if (FIELD(short, 0x62) == 7 && FIELD(short, 0x64) == 0) ResetSecondaryCounters(6);
+            }
+        }
+        break;
+
+    case 910:
+        if (OWNER(short, 0x3A0) <= 0) { ClearField74(); return; }
+        else {
+            if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) FIELD(short, 0xD8) = 0;
+            if (FIELD(short, 0x62) == 1 && FIELD(short, 0x64) == 0) {
+                OWNER(unsigned int, 0x314) = FIELD(unsigned int, 0xC8);
+                OWNER_FLOAT(0x318) = 10.0f;
+                OWNER_ACTOR->SpawnEffect(909, FLOAT(0x44), FLOAT(0x48), FIELD(signed char, 0x66), 1);
+            }
+            if (AdvanceNestedFrame() == FIELD(short, 0x70)) {
+                if (FIELD(short, 0xD8) < g_F1212_DifficultyAt006714D0 * 2 + 1) {
+                    ResetSecondaryCounters(1);
+                    ++FIELD(short, 0xD8);
+                    return;
+                }
+                else ClearField74();
+            }
+        }
+        break;
+
+    case 911:
+        if (OWNER(short, 0x3A0) <= 0) { ClearField74(); return; }
+        else {
+            if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+                EnableTransform(0.0f, 0.0f, 0.0f);
+                FLOAT(0x1C) = 1.0f;
+                FLOAT(0x20) = 1.0f;
+                FIELD(unsigned char, 0x11) = 255;
+                FIELD(unsigned char, 0x12) = 255;
+                FIELD(unsigned char, 0x13) = 255;
+                FIELD(unsigned char, 0x14) = 255;
+                FIELD(int, 0x7C) = 0;
+                FIELD(short, 0x80) = 1;
+                FIELD(short, 0xDA) = 0;
+                FLOAT(0x50) = 0.0f;
+                FLOAT(0x54) = 0.0f;
+            }
+            FLOAT(0x44) = FIELD(signed char, 0x66) * FLOAT(0x50) + FLOAT(0x44);
+            FLOAT(0x48) -= FLOAT(0x54);
+            ++FIELD(short, 0xD8);
+            if (FIELD(short, 0x62) < 5) {
+                if (FLOAT(0x48) > OWNER_FLOAT(0x2E0) && FIELD(short, 0xDA) < g_F1212_DifficultyAt006714D0 && FLOAT(0x54) < 0.0f) {
+                    OWNER_ACTOR->PlaySoundAt00453D40(11);
+                    FLOAT(0xC8) = -FLOAT(0xC8);
+                    ++FIELD(short, 0xDA);
+                    FIELD(int, 0x7C) = 0;
+                    FIELD(short, 0x80) = 1;
+                }
+                if (FLOAT(0x44) < OWNER_FLOAT(0x2D8) && FIELD(short, 0xDA) < g_F1212_DifficultyAt006714D0 &&
+                    ((FIELD(signed char, 0x66) == -1 && FLOAT(0x50) > 0.0f) ||
+                     (FIELD(signed char, 0x66) == 1 && FLOAT(0x50) < 0.0f))) {
+                    OWNER_ACTOR->PlaySoundAt00453D40(11);
+                    if (FLOAT(0xC8) > 0.0f) FLOAT(0xC8) = 180.0f - FLOAT(0xC8);
+                    if (FLOAT(0xC8) < 0.0f) FLOAT(0xC8) = -180.0f - FLOAT(0xC8);
+                    ++FIELD(short, 0xDA);
+                    FIELD(int, 0x7C) = 0;
+                    FIELD(short, 0x80) = 1;
+                }
+                if (FLOAT(0x44) > OWNER_FLOAT(0x2DC) && FIELD(short, 0xDA) < g_F1212_DifficultyAt006714D0 &&
+                    ((FIELD(signed char, 0x66) == -1 && FLOAT(0x50) < 0.0f) ||
+                     (FIELD(signed char, 0x66) == 1 && FLOAT(0x50) > 0.0f))) {
+                    OWNER_ACTOR->PlaySoundAt00453D40(11);
+                    if (FLOAT(0xC8) > 0.0f) FLOAT(0xC8) = 180.0f - FLOAT(0xC8);
+                    if (FLOAT(0xC8) < 0.0f) FLOAT(0xC8) = -180.0f - FLOAT(0xC8);
+                    ++FIELD(short, 0xDA);
+                    FIELD(int, 0x7C) = 0;
+                    FIELD(short, 0x80) = 1;
+                }
+                SetPolarVelocity(FLOAT(0xC8), FLOAT(0xCC));
+                FLOAT(0x30) = AngleAt00483300(FLOAT(0x54), FLOAT(0x50)) / g_F1211_AngleDivAt00657828;
+                OWNER_FLOAT(0x310) = AngleAt00483300(FLOAT(0x54), FLOAT(0x50)) / g_F1211_AngleDivAt00657828;
+                OWNER(unsigned char, 0x2F0) = 0;
+                OWNER(short, 0x2F6) = 0;
+                OWNER(short, 0x2F8) = 0;
+                OWNER(short, 0x2FA) = 0;
+                OWNER_FLOAT(0x2FC) = 1.0f;
+                OWNER_FLOAT(0x300) = 1.0f;
+                OWNER(unsigned char, 0x2F1) = 255;
+                OWNER(unsigned char, 0x2F2) = 255;
+                OWNER(unsigned char, 0x2F3) = 255;
+                OWNER(unsigned char, 0x2F4) = 255;
+                OWNER_FLOAT(0x308) = 0.0f;
+                OWNER_FLOAT(0x30C) = 0.0f;
+                OWNER_ACTOR->SpawnTrackedEffectAt00453AC0(813, FLOAT(0x44), FLOAT(0x48), FIELD(signed char, 0x66), 0, 1);
+                OWNER(unsigned int, 0x314) = FIELD(unsigned int, 0x30);
+                OWNER(unsigned int, 0x318) = FIELD(unsigned int, 0xCC);
+                OWNER_ACTOR->SpawnEffect(812, FLOAT(0x44), FLOAT(0x48), FIELD(signed char, 0x66), 1);
+            }
+            if ((FIELD(int, 0x7C) == 2 || FIELD(int, 0x7C) == 4 || FIELD(int, 0x7C) == 6) && FIELD(short, 0x62) < 5) {
+                ResetSecondaryCounters(6);
+                return;
+            }
+            else if (FLOAT(0x44) > 1400.0f || FLOAT(0x44) < -160.0f || FLOAT(0x48) > 1000.0f || FLOAT(0x48) < -160.0f) { ClearField74(); return; }
+            else {
+                if (FIELD(short, 0x62) == 6 && FIELD(short, 0x64) == 0) {
+                    FLOAT(0x50) = -FLOAT(0x50) * 0.25;
+                    FLOAT(0x54) = -14.0f;
+                }
+                if (FIELD(short, 0x62) == 6) {
+                    FLOAT(0x54) += 0.5f;
+                    FLOAT(0x30) += 40.0f;
+                }
+                if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+                if (FIELD(short, 0x62) == 5 && FIELD(short, 0x64) == 0) ResetSecondaryCounters(1);
+                if (FIELD(short, 0x62) == 7 && FIELD(short, 0x64) == 0) ResetSecondaryCounters(6);
             }
         }
         break;

@@ -55,3 +55,7 @@ source diagnostics and `verified-summary.json`. Header and all accepted
 inputs, origins and canonical infrastructure are unchanged. Existing Ghidra
 read-only target preflight passed; no full CI, corpus replay, origin retest
 or per-function test was required or run.
+
+F1227 supersedes these partial dimensions: all55 states are written; original
+frame/all EBP slots are recovered. Whole CODE42,515B/11,201 x86 still has447
+GPR/12 width differences. See the [complete native audit](OBJECT_ADVANCE_004CA6E0_COMPLETE_PARENT_F1227.md).
