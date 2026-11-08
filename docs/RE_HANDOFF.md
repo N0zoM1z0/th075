@@ -1,5 +1,11 @@
 # TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1240)
 
+> Current workflow: follow the **Highest priority** section in `AGENTS.md`.
+> Prefer affected exact comparisons and useful Markdown knowledge. Ordinary
+> notes do not require full CI, native replay or document-hash/pin refreshes.
+> Older broad validation instructions apply only when their impact is relevant.
+
+
 Read [AGENTS.md](../AGENTS.md), [workflow](RE_WORKFLOW.md) and
 [storage/recovery](STORAGE_HYGIENE.md). The handoff cleanup preserves F1239's
 complete `0057D580` source; no new exact acceptance is claimed. The user reports

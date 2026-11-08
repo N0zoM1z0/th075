@@ -1,5 +1,7 @@
 # 東方萃夢想 ～ Immaterial and Missing Power
 
+Agent workflow: follow the highest-priority requirements in [AGENTS.md](AGENTS.md). Use affected exact checks and searchable Markdown knowledge; ordinary notes do not require full CI or replay.
+
 <p align="center"><img src="resources/title-screen.png" width="640" alt="User-supplied TH075 title screen"></p>
 <p align="center"><img src="resources/progress.svg" alt="Original authored-byte reconstruction progress"></p>
 
