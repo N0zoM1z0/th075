@@ -13,6 +13,10 @@ import subprocess
 import sys
 import tomllib
 
+# The pinned repository Python uses -I; add only this trusted script directory.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from shared_runtime import command as shared_command
+
 
 ROOT = Path(__file__).resolve().parents[1]
 PROJECT_DIR = ROOT / "ghidra-project"
@@ -234,7 +238,7 @@ def inventory_args(pe: dict[str, object], destination: Path | None = None) -> li
 def run_headless(arguments: list[str], required_marker: str, operation_marker: str | None = None) -> None:
     ghidra_home, analyzer = find_analyzer()
     command = [
-        str(analyzer),
+        *shared_command("ghidra"),
         str(PROJECT_DIR),
         PROJECT_NAME,
         *arguments,
