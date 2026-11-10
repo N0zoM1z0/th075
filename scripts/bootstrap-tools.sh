@@ -54,8 +54,14 @@ for name, key in [('cl.exe', 'compiler_sha256'), ('link.exe', 'linker_sha256'),
         raise SystemExit('tool identity mismatch: ' + name)
 print('Locked compiler/linker identities OK')
 PY
+mkdir -p "$repo_root/.analysis"
+legacy_prefix="$repo_root/.analysis/vc71-wine"
+if [[ ! -e "$legacy_prefix" && ! -L "$legacy_prefix" ]]; then
+  ln -s ../.tools/wine "$legacy_prefix"
+fi
 cd -- "$bridge"
 npm ci --ignore-scripts
 npm run typecheck
 npm test
 npm run build
+npm prune --omit=dev --ignore-scripts --no-audit --no-fund

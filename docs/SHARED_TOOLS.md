@@ -37,6 +37,14 @@ Use existing headless/Xvfb compiler wrappers where required. Historical
 verifier recipes naming system Wine retain the same shared binary and their
 recorded game-specific prefix/profile.
 
+TH075 currently uses the 32-bit `.tools/wine` prefix. The legacy
+`.analysis/vc71-wine` path links to it, so older local recipes use the same
+TH075 state. Other games keep their own writable prefixes.
+
+The private MCP bridge runs from `dist/` with production dependencies only.
+Use its locked `npm ci --omit=dev --ignore-scripts` installation for runtime;
+install development dependencies again only when rebuilding or testing the bridge.
+
 Read-only source access to other registered games remains available through
 Factory for cross-reference. Shared tools do not grant writes to their mutable
 state. Ordinary analysis and source browsing do not require a full replay.
