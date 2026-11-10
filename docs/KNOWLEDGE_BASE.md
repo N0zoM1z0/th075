@@ -1,21 +1,11 @@
 # TH075 reconstruction knowledge base — chronological historical evidence
 
-**Maintenance annotation, updated 2026-11-06 (F1240):**
-The **current authoritative** pinned-original whole-function evidence,
-81KB Boss CFG (all 1,834 direct branch targets now match), 982 accepted
-whole exact functions, and safe local storage/restore instructions are
-in the [live agent handoff](RE_HANDOFF.md) and
-[storage hygiene guide](STORAGE_HYGIENE.md). This chronological
-journal is **historical**: all dated F-series source dimensions and
-"most recent" claims below refer to their original test checkpoints,
-not today's worktree. The old F906 and F1142 handoffs are preserved in
-[the F781–F906 snapshot](history/RE_HANDOFF_F781_THROUGH_F906_PRE_CLEANUP_2026-10-31.md)
-and [the F1142 snapshot](history/RE_HANDOFF_AS_OF_F1142_PRE_HANDOFF_2026-11-04.md).
-Original PE, independent origin ledger and current VC7.1 builds always
-supersede a historical source hypothesis. The F1240 handoff indexes thirteen
-complete but nonexact giant research bodies and nine still-incomplete ones.
-Historical partial-parent sizes, old queue counts and rejected controls apply
-only to their recorded checkpoints; they do not invalidate later verified work.
+Current parents, blockers and compiler settings are in the
+[live handoff](RE_HANDOFF.md). Dated observations below apply to their recorded
+source/compiler context. Use the original PE, canonical origin/match ledgers
+and current complete comparisons to resolve conflicting historical claims.
+Historical trial outputs may have been discarded; retain the findings and
+reproduce a comparison from current source when it is needed.
 
 F1146 corrects the original 0x346 status-2-or-4 transition, verified by
 one complete parent cold build and all 1,834 direct branch targets.
@@ -412,7 +402,7 @@ virtual slot1 without asserting a complete owner. One natural body recovers
 all written instruction/operand diagnostics agree. Prefix/through835 have
 zero raw GPR debt. Source7,168B/1,925 x86, frame0x80/this-18h remains incomplete
 againstnative0x470/this-4Ch; 54 states remain, all43,501 original CODE B pending.
-No accepted inputs/origins change; all prior complete parents/archives remain.
+No accepted inputs or origins change.
 [Original loop, boundary and source evidence](OBJECT_ADVANCE_005C9CC0_INITIAL_STATES_F1216.md).
 
 F1217 adds807–823 to005C9CC0, reaching30/67 states and eleven actual loop
@@ -469,7 +459,7 @@ records distinct effect/rotation/alpha behavior and physical owner-F16/60.0f
 variants. Selected private `.analysis/f1222-object-4ca6e0-recovery/reviewed.obj`,
 immutable CPP/HPP, listing, local diagnostic and verified-summary.json remain.
 Only the affected draft was built; all ten complete parents,982 accepted
-units,95 unknown origins and archives remain; no full CI or corpus replay.
+units and 95 unknown origins remain; no full CI or corpus replay.
 
 F1223 adds803/815–829 to the same004CA6E0 body:16 states/7,982 original
 interior B/2,137 x86, now28/55 states and13,960 written original interior B.
@@ -687,19 +677,6 @@ preserve actual storage/call contracts without defining owners/globals.
 All43,845 original CODE B remain pending; no accepted input/header/origin/
 ledger/infrastructure change, full CI, canonical replay or new tests.
 
-**Earlier F754 documentation/storage review (2026-10-30):**
-This file is **historical** research evidence, not the live function
-ledger or the new-agent work queue. Old F-series headings with words like
-"latest", "still pending", "strict", "no credit", "current" or counts
-such as 943/25 refer to **their original research parent or date only**.
-Original native PE and actual reviewed origin/source/match manifests win
-if these historical notes differ. Start from the concise
-[active agent handoff](RE_HANDOFF.md) and [current README](../README.md).
-The historical 1,289-line F653–F753 handoff was preserved
-[with restored local Markdown links](history/RE_HANDOFF_F653_THROUGH_F753_2026-10-30.md);
-older [F598–F652](history/RE_HANDOFF_F598_THROUGH_F652_2026-10-29.md)
-and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
-
 ## Current verified original-game status (one short snapshot)
 
 - **982 cold-exact source-present functions**, **871,649 original authored
@@ -868,10 +845,7 @@ and [F540–F596](history/RE_HANDOFF_F540_THROUGH_F596.md) remain frozen.
 - Historical accepted targets such as F339 archive, F326 replay, F319
   font and F347 SpriteSequence rendering **stay accepted**. Ignore
   earlier provisional negatives that were superseded by their later
-  canonical cold-replay acceptance. Clone-local verified archives of
-  obsolete generated text traces/JSON/PDB/logs and recovery procedures
-  are documented in [storage hygiene](STORAGE_HYGIENE.md); original
-  sources, PE, Ghidra, Wine and accepted objects were preserved.
+  canonical cold-replay acceptance.
 
 - **F798 Archive native four-owner temporary allocation:**
   nine full 171B original destructor source controls
@@ -3928,42 +3902,16 @@ in the exact adoption manifest.
 
 ## Retained failures and method boundaries
 
-Retain 14 frozen prior objects plus F184, all 14 F157 probes, both F159 traces
-and 40 protected groups. Full 004AC040, 0050A580 and 0055AC80 drafts still fail
-complete comparison. Their detailed closed controls remain in the archives and
-private receipts; read them before another scope/profile/type/name experiment.
-The old F176 440-byte probe stays negative evidence even though F181 accepts
-the same native function through another complete 446-byte object.
+Scope, profile, type and name experiments apply to their recorded parent.
+Check the current handoff before repeating a closed control. F176's 440-byte
+probe failed; F181 accepted the same native function through a complete
+446-byte object.
 
 R103 camera 453EB0 remains unaccepted. R231 unread camera stores, R065 445A00's
 write-only local and R054 455B30's 28-byte clear need supported source-purpose
 explanations; no unused locals, arrays or padding. Options switches need owned-
 table comparison. The 43AD10 EH constructor needs real allocation/layout/lifetime
 evidence; no pasted EH bytes or invented complete owners.
-
-## Cleanup and historical evidence
-
-Wine lowercases PDB names. Compare paths case-insensitively before treating a
-PDB as unpaired or unprotected. H184 losslessly archived 480 old unpaired PDBs,
-checked every full member hash, then removed their original outputs. Live object
-companions, all objects, sources, profiles and evidence remain. The local archive
-manifest permits restoring any individual original path. No frozen origin or
-evidence file changed.
-
-The complete former documents are preserved **byte-for-byte** in
-[knowledge through F183](history/KNOWLEDGE_BASE_THROUGH_F183.md) and
-[handoff through F183](history/RE_HANDOFF_THROUGH_F183.md). Original titles,
-filenames, strings, observations and unknowns remain. Archived goal-state and
-next-task commands are historical; current user instructions, AGENTS.md and the
-handoff govern. Historical relative links were written from docs/. Earlier
-[F148 knowledge](history/KNOWLEDGE_BASE_THROUGH_F148.md),
-[F148 handoff](history/RE_HANDOFF_THROUGH_F148.md) and origin histories are unchanged.
-
-**Preserve this workspace when switching agents.** Private artifacts, target and
-project are not in a Git clone. Preserve shared tools and private service/auth
-settings. Stay headless, use scripts/repo-python and the existing Ghidra wrapper
-without REA, cold-replay only new/affected units and keep compilers serial.
-
 
 ## F224: independently cold-exact Youmu-owned allocation and round reset
 
@@ -15496,39 +15444,6 @@ pending, official 943/862,726 authored whole CODE unchanged.
 No mass replay.
 
 
-## F694: local reversible historical native research cache cleanup
-
-Verified original Japanese target and current native/author ledger
-remain **943 accepted whole authored functions /862,726 original CODE
-B, 43.71% reviewed**, plus 95 unresolved provenance candidates.
-This is **storage hygiene**, zero new exact matches or source credit.
-
-A tracked strict archive/restore script now handles two carefully
-allowlisted old *generated-file* families:
-(1) **1,457 unprotected older F500–F649 probe PDB files /
-82,939,904 original bytes**; (2) **303 pre-R260 historical root CI
-logs /60,857,730 original bytes**. It independently verified
-**all 1,760 original file paths, sizes and per-member SHA256** in
-its new ignored private tar.gz archives **BEFORE** removing any
-loose copies, again **AFTER** deletion, and successfully tested
-one-file restore/recompact for each. New receipts include original
-SHA256, original relative path and archive digest. Net storage
-reclaimed **133,952,872 bytes (127.75 MiB)**, beyond earlier
-2026-10-29 lossless JSON/PDB/CI compression and Git GC.
-
-**Protected throughout:** H184 all 15 OBJ+PDB pairs (all 30 original
-SHA256 values independently verified), pinned `th075.exe`, Wine/
-VC7.1 compiler, Ghidra project, accepted whole match objects,
-all current F650+ PDB, R260+ checkpoint CI output and ALL C++,
-native ASM/INC, PE-backed JSON, source and COFF OBJ files.
-Private archives are **Git-ignored and cannot be restored from a
-fresh Git clone** unless transferred independently. Actual restore
-examples, `--plan/--verify` and precise safety exclusions:
-[Current storage maintenance](STORAGE_HYGIENE.md),
-`scripts/repo-python scripts/archive-redundant-native-research.py
---family pdb --verify`. **No mass cold replay.**
-
-
 ## F695: recovered real F689–F693 negative evidence; corrected current agent handoff
 
 The real `004EBDA0` original (33,293 CODE B/438 separate afterRET
@@ -15558,9 +15473,7 @@ marked **historical**; actual live 95 still-unknown provenance rows
 are defined only by `config/function-origins.csv`. The separate
 **85 source-backed complete UNKNOWN functions/1,949 original CODE B**
 remain uncredited, while **943/862,726 authored whole exact** and
-43.71% reviewed coverage remain unchanged. F694's archived
-historical generated PDB/CI files remain independently verified and
-restorable. No all-943 cold replay or new exact acceptance.
+43.71% reviewed coverage remain unchanged. No new exact acceptance.
 
 
 ## F696: recovered entire 0x2FB grounded-volley source in the actual 58KB fighter parent

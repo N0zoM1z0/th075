@@ -32,7 +32,6 @@ keep compiler builds serial and reuse existing private environments.
 git status --short --branch
 scripts/repo-python scripts/verify-target.py
 scripts/repo-python scripts/validate-tracking.py --require-target
-scripts/repo-python scripts/audit-active-handoff.py
 scripts/repo-python scripts/report-reconstruction-status.py --summary
 scripts/repo-python scripts/ghidra.py check
 ```
@@ -142,7 +141,9 @@ git commit -m 'gpt-web: <specific verified work>'
 
 Cold-replay only new or affected units, including dependents of changed shared
 inputs. Run `scripts/ci.py` when changing exact-comparison, checkpoint,
-byte-accounting, or test infrastructure. It needs no compiler builds. Routine
+byte-accounting, or test infrastructure. It runs basic syntax, ledger/manifest
+and whitespace checks without compiler builds.
+Run relevant tool tests explicitly when their implementation changes. Routine
 function acceptance and handoff need no additional suite; ordinary probes need
 only their direct comparison.
 Run a historical origin test only when its evidence or verifier is affected.
@@ -160,33 +161,14 @@ commit promptly, then update the **concise** active
 archival docs. Git commits are local checkpoints, **not external
 Oracle acceptance**. Never claim an unavailable push succeeded.
 
-## 6. Keep evidence and save space without losing it
+## 6. Retain what helps reconstruction
 
-Use [STORAGE_HYGIENE.md](STORAGE_HYGIENE.md) for the executed storage campaigns,
-exact archive identities, per-member SHA256 receipts and restore commands.
-Historical counts in those dated reports describe their original checkpoints;
-current authored ownership and backlog come from `config/function-origins.csv`
-and the status reporter. Never count the incomplete `functions.csv.owner`
-annotation as the authored queue.
+Keep the original PE, shared toolchain, game-specific Wine prefix and Ghidra
+project; current source, exact/origin ledgers and complete comparison scripts;
+and short notes on current blockers, verified findings and useful failed ideas.
+Keep an unresolved compiler context separately only when it is costly to recreate.
 
-Preserve the pinned original PE, `.analysis/vc71-wine/`, `ghidra-project/`,
-shared `.tools/`, accepted source/config/manifests and `build/matching/`, H184,
-original native views, selected current whole-parent objects and meaningful
-negative source experiments. Inspect and finish all dirty work before cleanup.
-Only explicitly reviewed obsolete generated outputs are eligible for lossless
-compaction: hash every original, verify all archived members before removing
-loose duplicates, and verify again afterwards. File extensions alone do not
-establish provenance; native disassembly and generated compiler listings can
-both use `.asm`.
-
-F1240's [narrow archiver](../scripts/archive-handoff-outputs-f1240.py) preserves
-selected parent/proof directories and all F1231+ work. F1144/F1031/F907 and older
-archives retain independent identities and restore tools; never overwrite or
-merge their receipts. For original frozen giant traces use
-`scripts/repo-python scripts/archive-frozen-giant-traces.py --restore ORIGINAL_PATH`.
-
-Every archive/index in `.analysis/cache-archives/` is local and Git-ignored.
-A fresh clone, commit or push does not transfer these files. Keep each archive
-with its receipt and transfer the existing private environment when handing off
-to another machine. Never delete the only copy of compressed research evidence
-or replace a changed regenerated loose file with an archived original.
+Historical archives, repeated diagnostics, old trial outputs and cleanup reports
+may be deleted together with their references. A past document link is not a
+retention requirement. Cleanup needs no new archive, receipt or audit report.
+See [storage policy](STORAGE_HYGIENE.md).

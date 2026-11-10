@@ -1,4 +1,4 @@
-# TH075 — CURRENT AGENT HANDOFF (2026-11-06, F1240)
+# TH075 — CURRENT AGENT HANDOFF (2026-11-10; research through F1239)
 
 > Current workflow: follow the **Highest priority** section in `AGENTS.md`.
 > Prefer affected exact comparisons and useful Markdown knowledge. Ordinary
@@ -7,8 +7,8 @@
 
 
 Read [AGENTS.md](../AGENTS.md), [workflow](RE_WORKFLOW.md) and
-[storage/recovery](STORAGE_HYGIENE.md). The handoff cleanup preserves F1239's
-complete `0057D580` source; no new exact acceptance is claimed. The user reports
+[storage policy](STORAGE_HYGIENE.md). Continue F1239's complete `0057D580` source.
+The user reports
 no other active sessions. Inspect and continue all dirty work if any appears;
 never reset it or attribute it to another worker. Use local `gpt-web: ...` commits,
 serial compiler builds, the existing Ghidra wrapper, and `scripts/repo-python`.
@@ -96,7 +96,9 @@ profile, selected source snapshot and rejected controls.
 | 005A1600 | [F1231 source](../probes/CharacterObjectActions005A1600F1231.cpp), [F1236 proof](OBJECT_ADVANCE_005A1600_REGISTER_BOUNDARY_F1236.md) | 43,599 →43,596 /11,620 | 613 /11 |
 | 0057D580 | [F1237 source](../probes/CharacterObjectActions0057D580F1237.cpp), [F1239 proof](OBJECT_ADVANCE_0057D580_COMPLETE_PARENT_F1239.md) | 43,845 →43,849 /11,694 | 914 /6 |
 
-Selected private objects and whole diagnostics are **preserved loose**:
+Selected diagnostic paths from the research notes follow. Some private audit
+directories are absent in this checkout; use the tracked source and linked
+proof to rebuild the affected parent when needed:
 
 | Original | Directory below `.analysis/` | Selected OBJ /whole diagnostic |
 | --- | --- | --- |
@@ -116,8 +118,8 @@ Selected private objects and whole diagnostics are **preserved loose**:
 These diagnostic scripts normally take `[OBJ]`; consult their recorded
 invocations. Do not rebuild all parents. Use recorded per-unit flags:
 004AC040 requires **/GX**; 005EB520 uses **/GX- without explicit /GS**.
-Selected source hashes/snapshots, original/native inputs and JSON receipts
-remain available. F1025/F1026/F1028 certify external PE destinations,
+Use the tracked source and recorded compiler settings for new comparisons.
+F1025/F1026/F1028 certify external PE destinations,
 not physical source relocation offsets or full callable equality.
 
 **Resume boundaries and known negatives:**
@@ -127,7 +129,7 @@ not physical source relocation offsets or full callable equality.
   [debt map](THIRD_FIGHTER_REGISTER_DEBT_MAP_F1202.md) retains native36-call bodies.
 - **00543210 /005214B0:** preserve getter-only 0/2/4/5 entries and ordinary
   post-getter exits. Debt is respectively63 and 63/1FD/252/254. All current
-  stack/CFG/non-GPR operands agree; old F917/F901 parents remain protected.
+  stack/CFG/non-GPR operands agree; F917/F901 are historical baselines.
 - **0045DD70:** first 59 at0045FDA9 /whole2292; keep F1193 short parameters/getter.
   F1193 and F792/F793 negatives do not override the complete current parent.
 - **0055AC80:** debt 389–392, first 0055F711 /whole5225. Chaining, DWORD/array/
@@ -156,8 +158,7 @@ not physical source relocation offsets or full callable equality.
   call and worsens native order/debt; rejected. Selected source is restored
   byte-for-byte to `complete.cpp`, SHA256
   `293d8a165e563b3fc08fe218247b4914b588e160552b50b695c8765bd165c7a8`.
-  Actual OBJ/PDB live in `build/probes/f1239-object-57d580/`; private OBJ links
-  point there. Keep F1237 native/owner and F1238 loop evidence too.
+  Selected OBJ/PDB live in `build/probes/f1239-object-57d580/`. Keep F1237 native/owner and F1238 loop evidence too.
 
 The other **nine independently authored giants lack complete tracked research
 bodies**: objects **00476A40 (50,915B),0049C8F0 (46,596B)**; fighters
@@ -190,7 +191,6 @@ Run from the repository root before reconstruction edits:
     scripts/repo-python scripts/verify-target.py
     scripts/repo-python scripts/validate-tracking.py --require-target
     scripts/repo-python scripts/report-reconstruction-status.py --summary
-    scripts/repo-python scripts/audit-active-handoff.py
     scripts/repo-python scripts/ghidra.py check
 
 For research changes, build/audit only the affected whole parent. Exact
@@ -201,26 +201,12 @@ comparison/checkpoint/byte-accounting/test infrastructure. Preserve truthful
 natural C++, one source body, complete extents and every relocation. No assembly,
 fake locals, padding or instantiated incomplete owners.
 
-**Storage and private evidence:** F1240 compacts only frozen F1133–F1230
-OBJ/PDB and generated COFF listings outside selected proof directories.
-All 91 native disassembly views from the initial listing batch are restored
-and hash-verified loose; they are excluded from further compaction. All source,
-JSON/log/native inputs, selected parents above, F1231+ research, accepted
-`build/matching/`, original PE, Wine, Ghidra and prior archives remain preserved.
-Use [`archive-handoff-outputs-f1240.py`](../scripts/archive-handoff-outputs-f1240.py)
-and the measured [storage/recovery report](STORAGE_HYGIENE.md). Archival savings
-are 46.11 MiB; ordinary Git GC/cache cleanup brings the measured operations to
-79.33 MiB. Git connectivity checks pass before/after GC. Every archive
-and adjacent receipt under `.analysis/cache-archives/` is **Git-ignored**:
-a fresh clone or pushed tracked commit does not transfer them. Hand over the
-existing checkout, or copy the full private environment plus archives/receipts.
-Do not publish game binaries, tools, private settings, or generated decompiles.
+Keep the original PE, shared toolchain, game-specific Wine prefix, Ghidra
+project, current sources/ledgers and selected unresolved compiler contexts.
+Delete obsolete trial outputs, duplicate diagnostics, historical archives and
+cleanup reports with their references; no new cleanup receipts are needed.
+See [storage policy](STORAGE_HYGIENE.md). Do not publish private inputs/settings.
 
-Detailed historical evidence is linked from proofs and the
-[knowledge journal](KNOWLEDGE_BASE.md). Older handoffs are frozen in
-[F1142](history/RE_HANDOFF_AS_OF_F1142_PRE_HANDOFF_2026-11-04.md) and
-[F781–F906](history/RE_HANDOFF_F781_THROUGH_F906_PRE_CLEANUP_2026-10-31.md).
-Old giant traces remain individually recoverable through
-[`archive-frozen-giant-traces.py`](../scripts/archive-frozen-giant-traces.py).
-Historical dimensions/negative controls apply to their recorded parents.
-Local commits are checkpoints; no network push or external acceptance is implied.
+Use the [knowledge journal](KNOWLEDGE_BASE.md) and linked proofs for verified
+findings and failed approaches. Exactness is established by a fresh complete
+comparison of the affected unit. Local commits are checkpoints.

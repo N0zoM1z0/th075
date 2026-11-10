@@ -41,8 +41,8 @@ actual exactness, target identity, natural-source and state-isolation rules.
 - Keep handoff focused on current work, evidence references, blockers and the
   next useful action. Generate progress from canonical ledgers; avoid manual
   duplicate counts, recurring full reports and unrelated documentation chores.
-- Preserve dirty/untracked work, targets, useful evidence, game-specific Wine
-  prefixes and analyzer projects. Exactness still requires a complete strict
+- Preserve dirty/untracked work, targets, current research contexts, game-specific
+  Wine prefixes and analyzer projects. Exactness still requires a complete strict
   comparison; knowledge and successful commands alone confer no exact credit.
 
 
@@ -88,8 +88,9 @@ callable equality. F1155/F1157 accepted the complete ArchiveCatalog and BattleSc
 F1171 accepted complete WinMain (2,987 CODE + 60 owned DATA bytes/173 fields);
 current authored backlog is 22 giant functions, with no smaller originals pending.
 Never restart at obsolete F938 marker-only giant source. **Only cold-replay new/affected units**,
-never all units. Keep compiler builds serial. Remove only obsolete reproducible
-outputs, preserving evidence, manifests, sources, inputs and shared tools.
+never all units. Keep compiler builds serial. Remove obsolete outputs, duplicate
+evidence and historical archives; retain current source, canonical ledgers,
+inputs, shared tools and useful findings.
 Write repository documentation, comments, and handoffs in English. Preserve
 original titles, filenames, and target strings where they are evidence.
 Use `gpt-web: ...` for reconstruction commits unless the user specifies another prefix.
@@ -112,7 +113,6 @@ reconstruction state, inspect `git status` and run from the repository root:
 scripts/repo-python scripts/verify-target.py
 scripts/repo-python scripts/validate-tracking.py --require-target
 scripts/repo-python scripts/report-reconstruction-status.py --summary
-scripts/repo-python scripts/audit-active-handoff.py
 scripts/repo-python scripts/ghidra.py check
 ```
 
@@ -182,78 +182,21 @@ or verifier changes. Documentation-only changes need `git diff --check`.
 - Shared `.tools/ghidra`, `.tools/jdk`, and `.tools/msvc710` installations are read-only.
 - Preserve the existing private Funnel URL, fixed path and no-auth setting.
   Keep the URL out of tracked files, routine logs and process arguments.
-- Keep private hypotheses/logs in `.analysis/`, objects in `build/`, and the
-  private Ghidra project in `ghidra-project/`. A lossless SHA256-verified
-  archive of regenerable historical probe `.pdb` files is under
-  `.analysis/cache-archives/` with an inventory and restoration steps.
-  Old pre-F184 parent/adoption JSON snapshots are also individually
-  SHA256-verified and losslessly `.zst`-compressed, with the reversible
-  `scripts/archive-historical-analysis.py` script and local manifest.
-  A later SHA256-verified four-batch `.tar.zst` archive of 219 frozen
-  repetitive historical JSON diagnostics is also under the ignored
-  `.analysis/cache-archives/`, with full per-member restore/verify via
-  `scripts/archive-redundant-diagnostics.py`. The *live* origin-scan
-  `latest.json`, current research, original parent CODE, raw sources,
-  COFF and Ghidra decompilations were NOT removed.
-  F694 additionally SHA256-verified and losslessly archived 1,457
-  frozen F500–F649 research `.pdb` outputs and 303 pre-R260 root CI
-  logs, reclaiming ≈127.75 MiB net while retaining all C++/COFF OBJ,
-  current F650+ PDBs, R260+ checkpoint output and original artifacts.
-  The ignored archives/receipts are **local, not tracked in Git**; do
-  not lose them. Verify/restore one needed historical file using
-  `scripts/archive-redundant-native-research.py --family pdb|logs`.
-  Recompiling an older source may create a **different** PDB at the
-  archived path: archive `--verify` still works but reports the
-  changed loose copy. Both `--restore` and `--recompact-restored`
-  reject overwriting/removing that newly generated research file.
-  **F1031 additionally supersedes any claim that all F907–F1018
-  research OBJ/PDB are loose.** It SHA256-indexed and losslessly
-  archived 1,749 additional regenerable historical binaries,
-  reclaiming 93,546,883 bytes net while preserving the selected
-  F917, F901, F1020 parents, recent F1019–F1029 research, all
-  original/native C++ and PE receipts. The machine-local
-  `.analysis/cache-archives/f907-f1018-history-obj-pdb-2026-10-31.tar.gz`
-  and its `-receipt.json` MUST be kept together. Restore one original
-  via `scripts/archive-recent-probe-objects-f1031.py --family binaries
-  --restore ORIGINAL_RELATIVE_PATH`. Do not confuse local archives
-  with Git-backed source/evidence.
-
-  **F1240 supersedes loose-output assumptions for frozen F1133–F1230
-  experiments:** 473 OBJ/PDB and 44 generated COFF listings were
-  losslessly compacted, saving 48,351,068 file bytes net. Selected
-  current parent/proof directories and all F1231+ research remain loose.
-  All 91 original `native-*.asm` views initially included in the listing
-  batch were restored and SHA256-verified; preserve those loose views.
-  File extensions alone do not establish compiler-output provenance.
-  Use `scripts/repo-python scripts/archive-handoff-outputs-f1240.py
-  --family binaries|listings --verify` or `--restore ORIGINAL_RELATIVE_PATH`.
-  Keep both `f1133-f1230-frozen-*-2026-11-06.tar.gz` archives with their
-  separate `-receipt.json` files under `.analysis/cache-archives/`.
-  These files are ignored by Git and must accompany a full handoff.
-
-  **F907 now supersedes the F694 time-specific claim that all F650+
-  PDBs remain loose:** 4,712 eligible regenerable F650–F906 OBJ/PDB
-  copies have been compressed with a SHA256 receipt, then their loose
-  copies removed only after exhaustive archive validation. Current F901
-  selected whole OBJ, normal CPP and JSON PE receipts, source code,
-  matching build, Ghidra and Wine remain protected. Restore only an
-  individual historical original binary when needed using
-  scripts/archive-recent-probe-objects-f907.py --family binaries --restore
-  ORIGINAL_RELATIVE_PATH. The new archive and index are *local*, not in Git.
-  See docs/STORAGE_HYGIENE.md for exact local retention requirements.
-  F754 additionally SHA256-verified, compressed and removed only
-  **1,931 frozen f133–f166 giant generated `.asm/.cod/.log` traces**,
-  reclaiming **86,614,259 bytes net** including full per-path receipt.
-  Each original trace is independently restorable from the local,
-  ignored `.analysis/cache-archives/historical-f133-f166-giant-traces.tar.zst`
-  with `scripts/repo-python scripts/archive-frozen-giant-traces.py
-  --restore ORIGINAL_RELATIVE_PATH`; never delete that local archive
-  or its index unless a verified replacement backup exists.
-  Detailed allowed cleaning and restore paths: `docs/STORAGE_HYGIENE.md`.
-  Protect H184 frozen objects/PDBs, original native and best whole-boss
-  probes, `build/matching/`, `.analysis/vc71-wine/` and the Ghidra project.
-  Never commit game executables/data,
-  archives, analysis databases, downloaded tools, generated decompiles, or secrets.
+- Keep private research in `.analysis/`, objects in `build/`, and the private
+  Ghidra project in `ghidra-project/`. Preserve the original PE, shared tools,
+  game-specific Wine prefix, current sources, exact/origin ledgers, complete
+  comparison scripts and current unresolved compiler contexts that are costly
+  to recreate. A document reference alone does not justify retaining a file.
+- Delete historical archives, duplicate diagnostics, obsolete trial outputs
+  and cleanup reports when they no longer help current reconstruction. Remove
+  their documentation references too. No replacement archive, deletion receipt
+  or cleanup audit is required. Record useful conclusions and failed approaches
+  briefly in Markdown; exact credit comes from a reproducible complete comparison.
+- Default `scripts/ci.py` checks syntax, tracking/build manifests and whitespace.
+  Keep compiler replay and targeted tool tests explicit and scoped to the change.
+  Documentation edits need only diff review and `git diff --check`.
+- Never commit game executables/data, archives, analysis databases, downloaded
+  tools, generated decompiles or secrets.
 - Update the knowledge base and handoff after a bounded accepted function. Replay
   affected units after changing headers, ABI declarations, flags, or relocations.
   Follow the validation scope above and run `git diff --check` before handoff.

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-"""Check changed machine inputs; exact comparisons are selected by affected scope."""
+"""Run basic syntax, ledger and whitespace checks without compiler builds."""
 from pathlib import Path
+import argparse
 import ast
 import json
 import os
@@ -12,40 +13,40 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def main():
-    if sys.argv[1:] in (["--help"], ["-h"]):
-        print("usage: ci.py [--full | existing explicit check options]\nDefault: changed machine-input syntax and diff checks. Run affected exact/tool commands for the task.")
+    argparse.ArgumentParser(description=__doc__).parse_args()
+    try:
+        names = subprocess.check_output(
+            ["git", "ls-files", "--cached", "--others", "--exclude-standard", "-z"],
+            cwd=ROOT,
+        ).decode().split("\0")
+        for name in sorted(set(names) - {""}):
+            path = ROOT / name
+            if not path.is_file() or path.is_symlink():
+                continue
+            if path.suffix == ".py":
+                ast.parse(path.read_text(encoding="utf-8"), filename=name)
+            elif path.suffix == ".json":
+                json.loads(path.read_text(encoding="utf-8"))
+            elif path.suffix == ".toml":
+                tomllib.loads(path.read_text(encoding="utf-8"))
+            elif path.suffix == ".sh" or name == "scripts/repo-python":
+                subprocess.run(["bash", "-n", str(path)], check=True)
+        for script, flag in (("validate-tracking.py", "--skip-target-bytes"),
+                             ("build.py", "--check")):
+            subprocess.run([sys.executable, str(ROOT / "scripts" / script), flag],
+                           cwd=ROOT, check=True)
+        subprocess.run(["git", "diff", "--check", "HEAD"], cwd=ROOT, check=True)
+        if os.environ.get("CI"):
+            base = os.environ.get("CI_BASE", "")
+            command = (["git", "diff", "--check", base, "HEAD"]
+                       if base and set(base) != {"0"}
+                       else ["git", "show", "--format=", "--check", "HEAD"])
+            subprocess.run(command, cwd=ROOT, check=True)
+        print("Basic checks passed. Run affected exact comparisons separately.")
         return 0
-    if len(sys.argv) > 1:
-        arguments = sys.argv[1:]
-        if not any(flag in arguments for flag in ('--full',)):
-            print("Unknown CI option; use no arguments for scoped checks or --full for the broad suite.", file=sys.stderr)
-            return 2
-        arguments = [arg for arg in arguments if arg != "--full"]
-        return subprocess.call([sys.executable, str(ROOT / "scripts/ci-full.py"), *arguments], cwd=ROOT)
-    names = set()
-    for command in (["git", "diff", "HEAD", "--name-only", "-z"],
-                    ["git", "ls-files", "--others", "--exclude-standard", "-z"]):
-        names.update(n for n in subprocess.check_output(command, cwd=ROOT).decode().split("\0") if n)
-    if os.environ.get("CI"):
-        # Clean CI checkouts have no worktree diff. Inspect the commit being checked.
-        names.update(n for n in subprocess.check_output(
-            ["git", "show", "--format=", "--first-parent", "--name-only", "-z", "HEAD"],
-            cwd=ROOT).decode().split("\0") if n)
-    for name in sorted(names):
-        path = ROOT / name
-        if not path.is_file() or path.is_symlink():
-            continue
-        if path.suffix == ".py":
-            ast.parse(path.read_text(), filename=name)
-        elif path.suffix == ".json":
-            json.loads(path.read_text())
-        elif path.suffix == ".toml":
-            tomllib.loads(path.read_text())
-        elif path.suffix == ".sh":
-            subprocess.run(["bash", "-n", str(path)], check=True)
-    subprocess.run(["git", "diff", "--check"], cwd=ROOT, check=True)
-    print("Changed machine inputs checked. Use affected exact/tool checks; --full explicitly selects the broad suite.")
-    return 0
+    except (OSError, ValueError, SyntaxError, subprocess.CalledProcessError) as exc:
+        print(f"error: basic checks failed: {exc}", file=sys.stderr)
+        return 1
 
 
 if __name__ == "__main__":

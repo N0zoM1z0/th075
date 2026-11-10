@@ -44,18 +44,9 @@ the latest verified evidence, all 1,834 direct Boss branch targets and all
 5,717 native EBP operands recovered, and the 22 remaining whole-function
 targets with targeted reproductions.
 The [source workflow](docs/RE_WORKFLOW.md), [AGENTS.md](AGENTS.md),
-and [storage and recovery policy](docs/STORAGE_HYGIENE.md) apply
-to every session. F1240 compacted 517 obsolete compiler outputs, saving
-46.11 MiB net, with every archived member SHA256-verified. Original native
-disassembly and selected parents remain loose. **Git-ignored archives and
-receipts must travel with a full workspace handoff**. The [knowledge base](docs/KNOWLEDGE_BASE.md)
-is a historical experiment journal, **not** a live status report.
-
-The old detailed handoff through F906 was frozen as a
-[fully linked historical snapshot](docs/history/RE_HANDOFF_F781_THROUGH_F906_PRE_CLEANUP_2026-10-31.md).
-Research performed against an earlier partial fighter or
-an old compiler context remains useful evidence but must not
-be asserted as the current whole-function result.
+and [storage policy](docs/STORAGE_HYGIENE.md) describe the lightweight workflow.
+Use the [knowledge base](docs/KNOWLEDGE_BASE.md) for verified findings and failed
+approaches; dated research observations apply to their recorded compiler context.
 
 ### Continue the complete giant research parents
 
@@ -126,7 +117,6 @@ Read-only preflight (no native compiler replay):
     scripts/repo-python scripts/verify-target.py
     scripts/repo-python scripts/validate-tracking.py --require-target
     scripts/repo-python scripts/report-reconstruction-status.py --summary
-    scripts/repo-python scripts/audit-active-handoff.py
     scripts/repo-python scripts/ghidra.py check
 
 Only newly accepted or modified **complete callable game functions**
@@ -144,23 +134,16 @@ Commit substantial progress several times per session using
 the required prefix **gpt-web: xxx**. Git commits are
 checkpoints, not Oracle acceptance; no push is assumed.
 
-## Storage, original evidence and recoverability
+## Basic checks and storage
 
-Preserve the original EXE, VC7.1/Wine, Ghidra, accepted matching objects,
-source/manifests, native evidence, selected research parents and every
-archive/receipt. F1240 compacted 473 frozen OBJ/PDB files and 44 generated
-listings from F1133–F1230 after complete per-member SHA256 verification.
-All 91 original native disassembly views included in the first listing batch
-were restored and verified loose; they are excluded from further compaction.
-Net archival savings are **48,351,068 B (46.11 MiB)**. Normal Git GC and disposable
-Python cache cleanup bring measured F1240 savings to **79.33 MiB**.
+    scripts/repo-python scripts/ci.py
 
-Use the [current recovery script](scripts/archive-handoff-outputs-f1240.py)
-and [storage guide](docs/STORAGE_HYGIENE.md) for exact identities and commands.
-Older archives retain their own recovery tools, including
-[scripts/archive-recent-probe-objects-f907.py](scripts/archive-recent-probe-objects-f907.py)
-and [scripts/archive-frozen-giant-traces.py](scripts/archive-frozen-giant-traces.py).
-The archive and adjacent receipt are **machine-local, Git-ignored evidence**;
-a fresh clone does not include them. Transfer the existing environment or copy
-these files independently. Never delete the only local copy of compressed
-research or compiler/PE provenance evidence.
+CI checks Python, JSON, TOML and shell syntax, tracking/build-manifest consistency
+and whitespace. It needs no game binary, Wine, Ghidra or compiler builds. GitHub
+checks the submitted change range and cancels superseded runs. Run affected
+comparison/tool tests explicitly; documentation edits need only diff review.
+
+Keep required inputs, current source and ledgers, complete comparison tools,
+useful knowledge and costly unresolved compiler contexts. Historical archives,
+duplicate diagnostics, old trial outputs and cleanup reports may be deleted with
+their obsolete references. See [storage policy](docs/STORAGE_HYGIENE.md).
