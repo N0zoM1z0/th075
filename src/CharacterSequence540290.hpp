@@ -1,10 +1,9 @@
 #ifndef TH075_CHARACTER_SEQUENCE_540290_HPP
 #define TH075_CHARACTER_SEQUENCE_540290_HPP
+#include "Fighter.hpp"
 #include "BattleStateMachine.hpp"
 
-// Declaration-only view of existing receivers. Never construct or embed it.
-// Original identity, declarations and complete owner layout remain unknown.
-class CharacterSequence540290 {
+class CharacterSequence540290 : public Fighter {
 public:
     void AdvanceSequence();
     void SetNoticeMode(unsigned char mode);
@@ -15,6 +14,23 @@ public:
     void ClearNoticeTransition();
     void AdvanceNoticeLevels();
     void ResetPrimaryCounters(short state);
+public:
+    // Character-specific fields after the shared Fighter layout.
+    unsigned char unknownF10[0xF18 - 0xF10];
+    float fieldF18;
+    float fieldF1C;
+    float fieldF20;
+    float fieldF24;
+    unsigned char unknownF28[0xF40 - 0xF28];
+    float fieldF40;
+    float fieldF44;
+    float fieldF48;
+    float fieldF4C;
+    unsigned char unknownF50[0xFE0 - 0xF50];
+    unsigned char fieldFE0;
+    unsigned char fieldFE1;
+    unsigned char fieldFE2;
+    unsigned char fieldFE3;
 };
 namespace SequenceCamera { void SetOverride(unsigned char enabled, float x, float y, float zoom); }
 namespace SequenceAudio { void Stop(); }

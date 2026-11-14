@@ -7,6 +7,44 @@ and current complete comparisons to resolve conflicting historical claims.
 Historical trial outputs may have been discarded; retain the findings and
 reproduce a comparison from current source when it is needed.
 
+## Shared Fighter layout replaces raw offsets (2026-11-14)
+
+`src/Fighter.hpp` now declares the fighter object once, with named members
+for 0x000–0xF0F, and every fighter method class derives from it. In 53
+classes across 52 files, `FIELD(type, 0xNNN)`, `FLOAT`, `OPPONENT*`, `OTHER`
+and `RECORD` were replaced by members. All 73 affected units cold-replay
+exact under their recorded VC7.1 profiles. Member access, an `opponent->`
+pointer, embedded sub-objects (`script`, `sequenceSlots`, `inputBindings`)
+and arrays emit the same bytes as the reinterpret-cast forms. The one
+comment claiming a macro spelling was needed for x87 order (Yukari F345)
+did not hold.
+
+Layout facts found along the way:
+
+- +0xF10 onward differs per character (short in some, float in others), so
+  each character class declares its own members after `sizeof(Fighter)`.
+- The controller binding block is embedded at +0x494. Its `SetBindings`
+  copies 40 bytes at +4 and clears 28 at +0x2C, so it spans 0x48 bytes and
+  ends exactly where `inputX` (+0x4DC) begins.
+- Held input sits at +0x4DC–0x4F4 (X, Y, ?, A, B, C, D) and a buffered copy
+  at +0x4F8–0x50C. `ATTACK_A` is `inputA == 1 || bufferedA > 0`.
+- `RecordRoundFields` fills arrays at 0x32A, 0x33E, 0x370 and 0x384 (20
+  entries each) and at 0x3D0, 0x400 and 0x430 (12 each). The array starts
+  tile exactly. It raises +0x39D to the highest index, so +0x39D is not a
+  "selected card" as an old `CARD_TYPE` macro name suggested.
+- +0x74/+0x78 point to the current frame record (`flags` at +0x3C, bit 0x20
+  gates action changes) and the current sequence record (`priority` +0x12;
+  candidates from `sequenceSlots.At()` (004420B0) compare `targetPriority`
+  +0x10).
+- Effect objects (the giant `CharacterObject` parents) use +0x10…+0x7C with
+  the same widths as fighters, so both probably share an `Actor` base. That
+  is the next layout to factor out.
+
+Pitfalls: a parameter named like a new member shadows it (`BindOpponent`
+compiled to `opponent = opponent`), and the replay caught it. VC7 `$L`/`$SG`
+counters change with source text, so the comparator no longer pins their
+names; local labels are still checked by destination.
+
 F1146 corrects the original 0x346 status-2-or-4 transition, verified by
 one complete parent cold build and all 1,834 direct branch targets.
 See native status CFG evidence.

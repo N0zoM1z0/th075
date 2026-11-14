@@ -1,9 +1,9 @@
 #pragma once
 
+#include "Fighter.hpp"
 #include <deque>
 
-// Call-only receiver view; do not instantiate or embed the incomplete owner.
-class FighterHitResponseF164 {
+class FighterHitResponseF164 : public Fighter {
 public:
     bool IsState150To199();
     bool IsState95To99();

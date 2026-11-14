@@ -4,31 +4,27 @@
 
 namespace Input { extern unsigned char g_JoystickCount; }
 
-#define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
-#define OTHER(type, offset) (*reinterpret_cast<type*>(FIELD(unsigned char*, 0x2E8) + (offset)))
-#define OTHER_ARRAY(type, offset, index) reinterpret_cast<type*>(FIELD(unsigned char*, 0x2E8) + (offset))[index]
 
 void InputBindingsF171::SetBindings(const void* source)
 {
-    memcpy(reinterpret_cast<unsigned char*>(this) + 4, source, 40);
-    if (FIELD(signed char, 4) >= Input::g_JoystickCount) {
+    memcpy(&device, source, 40);
+    if (device >= Input::g_JoystickCount) {
         // Original CP932 message: パッドが見つかりません
         Input::ShowError("\x83\x70\x83\x62\x83\x68\x82\xaa\x8c\xa9\x82\xc2\x82\xa9\x82\xe8\x82\xdc\x82\xb9\x82\xf1");
-        memset(reinterpret_cast<unsigned char*>(this) + 4, 0, 40);
-        FIELD(signed char, 4) = -1;
+        memset(&device, 0, 40);
+        device = -1;
     }
-    memset(reinterpret_cast<unsigned char*>(this) + 0x2C, 0, 28);
+    memset(state, 0, 28);
 }
 
 void FighterBindingRoundF171::SetBindings(const void* source)
 {
-    reinterpret_cast<InputBindingsF171*>(reinterpret_cast<unsigned char*>(this) + 0x494)
-        ->SetBindings(source);
+    inputBindings.SetBindings(source);
 }
 
-void FighterBindingRoundF171::BindOpponent(void* opponent)
+void FighterBindingRoundF171::BindOpponent(void* other)
 {
-    FIELD(void*, 0x2E8) = opponent;
+    opponent = static_cast<Fighter*>(other);
 }
 
 void FighterBindingRoundF171::RecordRoundFields(
@@ -36,27 +32,23 @@ void FighterBindingRoundF171::RecordRoundFields(
     unsigned char third, unsigned int payloadA, unsigned int payloadB,
     unsigned int payloadC)
 {
-    if (OTHER(signed char, 0x39D) < index)
-        OTHER(signed char, 0x39D) = index;
+    if (opponent->field39D < index)
+        opponent->field39D = index;
     if (index == 1) {
-        OTHER(short, 0x33E) = value;
-        OTHER(unsigned char, 0x32A) = first;
-        OTHER(unsigned char, 0x384) = second;
-        OTHER(unsigned char, 0x370) = third;
-        OTHER(unsigned int, 0x3D0) = payloadA;
-        OTHER(unsigned int, 0x400) = payloadB;
-        OTHER(unsigned int, 0x430) = payloadC;
+        opponent->field33E[0] = value;
+        opponent->field32A[0] = first;
+        opponent->field384[0] = second;
+        reinterpret_cast<unsigned char&>(opponent->field370[0]) = third;
+        opponent->field3D0[0] = payloadA;
+        opponent->field400[0] = payloadB;
+        opponent->field430[0] = payloadC;
     }
-    OTHER_ARRAY(short, 0x33E, index) = value;
-    OTHER_ARRAY(unsigned char, 0x32A, index) = first;
-    OTHER_ARRAY(unsigned char, 0x384, index) = second;
-    OTHER_ARRAY(unsigned char, 0x370, index) = third;
-    OTHER_ARRAY(unsigned int, 0x3D0, index) = payloadA;
-    OTHER_ARRAY(unsigned int, 0x400, index) = payloadB;
-    OTHER_ARRAY(unsigned int, 0x430, index) = payloadC;
-    OTHER(signed char, 0x39E) = OTHER(signed char, 0x39D);
+    opponent->field33E[index] = value;
+    opponent->field32A[index] = first;
+    opponent->field384[index] = second;
+    opponent->field370[index] = third;
+    opponent->field3D0[index] = payloadA;
+    opponent->field400[index] = payloadB;
+    opponent->field430[index] = payloadC;
+    opponent->field39E = opponent->field39D;
 }
-
-#undef OTHER_ARRAY
-#undef OTHER
-#undef FIELD

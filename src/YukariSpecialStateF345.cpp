@@ -1,51 +1,47 @@
+#include "Fighter.hpp"
 #include "FighterAnimationPhaseBorrowedF1024.hpp"
-// Borrowed fighter receiver and effect spawner ABI; the complete fighter class
-// (including parent/derived layouts) is not instantiated or asserted here.
-// The two field-access macro expressions intentionally retain the exact form
-// of independently cold-exact F062 CharacterAux5E5500: VC7.1 selects a
-// different x87 comparison evaluation order for a superficially equivalent
-// nested FIELD(float,...) macro, although the C++ lvalue is identical.
-// The step/threshold and Yukari-only counters here are native independently
-// verified, not copied from F062.
-class YukariSpecialF345 {
+// Yukari's special-state counters. The step/threshold logic and the
+// Yukari-only fields F12/F32 were verified against the original; the
+// distance checks share their shape with CharacterAux5E5500 (F062).
+class YukariSpecialF345 : public Fighter {
 public:
     void UpdateSpecialState();
     void SpawnTrackedEffect(short, float, float, signed char, signed char, unsigned char);
+public:
+    // Character-specific fields after the shared Fighter layout.
+    unsigned char unknownF10[0xF12 - 0xF10];
+    short fieldF12;
+    unsigned char unknownF14[0xF32 - 0xF14];
+    short fieldF32;
 };
-#define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
-#define FLOAT(offset) *reinterpret_cast<float*>(reinterpret_cast<unsigned char*>(this) + (offset))
-#define OPPONENT_FLOAT(offset) *reinterpret_cast<float*>(reinterpret_cast<unsigned char*>(FIELD(void*, 0x2E8)) + (offset))
 
 void YukariSpecialF345::UpdateSpecialState() {
-    if (FIELD(short, 0x3B8) == 0)
-        FIELD(short, 0xF12) = FIELD(short, 0xF12) + 2;
-    if (FIELD(short, 0xF12) >= 180)
-        FIELD(short, 0xF12) = -180;
-    if (FLOAT(0x50) == 0.0f && FIELD(signed char, 0x3AC) > 0)
-        FIELD(signed char, 0x3AC) = 0;
-    if (F1024_PHASE(this).stageAt62 == 0 && F1024_PHASE(this).frameAt64 == 0 && FIELD(short, 0xF0A) == 0) {
-        if (FIELD(short, 0x60) > 149 && FIELD(short, 0x60) < 154) {
-            SpawnTrackedEffect(830, FIELD(signed char, 0x66)*57 + FLOAT(0x44), FLOAT(0x48) + 94.0f, FIELD(signed char, 0x66), 1, 1);
-            FIELD(short, 0xF0A) = 1;
+    if (field3B8 == 0)
+        fieldF12 = fieldF12 + 2;
+    if (fieldF12 >= 180)
+        fieldF12 = -180;
+    if (velocityX == 0.0f && field3AC > 0)
+        field3AC = 0;
+    if (F1024_PHASE(this).stageAt62 == 0 && F1024_PHASE(this).frameAt64 == 0 && fieldF0A == 0) {
+        if (action > 149 && action < 154) {
+            SpawnTrackedEffect(830, facing*57 + x, y + 94.0f, facing, 1, 1);
+            fieldF0A = 1;
         }
-        if (FIELD(short, 0x60) > 153 && FIELD(short, 0x60) < 158) {
-            SpawnTrackedEffect(830, FIELD(signed char, 0x66)*57 + FLOAT(0x44), FLOAT(0x48) + 60.0f, FIELD(signed char, 0x66), 1, 1);
-            FIELD(short, 0xF0A) = 1;
+        if (action > 153 && action < 158) {
+            SpawnTrackedEffect(830, facing*57 + x, y + 60.0f, facing, 1, 1);
+            fieldF0A = 1;
         }
-        if (FIELD(short, 0x60) == 158) {
-            SpawnTrackedEffect(830, FIELD(signed char, 0x66)*57 + FLOAT(0x44), FLOAT(0x48) + 100.0f, FIELD(signed char, 0x66), 1, 1);
-            FIELD(short, 0xF0A) = 1;
+        if (action == 158) {
+            SpawnTrackedEffect(830, facing*57 + x, y + 100.0f, facing, 1, 1);
+            fieldF0A = 1;
         }
     }
-    if (FLOAT(0x44)-OPPONENT_FLOAT(0x44) > 540.0f || FLOAT(0x44)-OPPONENT_FLOAT(0x44) < -540.0f)
-        FIELD(short, 0xF32)=60;
-    if (FLOAT(0x44)-OPPONENT_FLOAT(0x44) > 320.0f || FLOAT(0x44)-OPPONENT_FLOAT(0x44) < -320.0f) {
-        FIELD(short, 0xF32)=FIELD(short, 0xF32)+1;
-        if (FIELD(short, 0xF32)>60) FIELD(short, 0xF32)=60;
+    if (x-opponent->x > 540.0f || x-opponent->x < -540.0f)
+        fieldF32=60;
+    if (x-opponent->x > 320.0f || x-opponent->x < -320.0f) {
+        fieldF32=fieldF32+1;
+        if (fieldF32>60) fieldF32=60;
     } else {
-        FIELD(short, 0xF32)=0;
+        fieldF32=0;
     }
 }
-#undef OPPONENT_FLOAT
-#undef FLOAT
-#undef FIELD

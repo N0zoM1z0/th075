@@ -1,15 +1,11 @@
 #include "CharacterAI49B070.hpp"
 
-#define FIELD(type, offset) (*reinterpret_cast<type *>(reinterpret_cast<u8 *>(this) + offset))
-#define FLOAT(offset) *reinterpret_cast<float *>(reinterpret_cast<u8 *>(this) + offset)
-#define OPPONENT(type, offset) (*reinterpret_cast<type *>(reinterpret_cast<u8 *>(FIELD(void *, 0x2E8)) + offset))
-#define OPPONENT_FLOAT(offset) *reinterpret_cast<float *>(reinterpret_cast<u8 *>(FIELD(void *, 0x2E8)) + offset)
-#define OPPONENT_GUARD reinterpret_cast<FighterState *>(FIELD(void *, 0x2E8))->IsState50To149()
-#define FORWARD_COMMAND (2 - (FIELD(signed char, 0x66) == 1))
-#define AIR_FORWARD_COMMAND (2 - (FIELD(signed char, 0x66) == -1))
-#define AIR_BACK_COMMAND (1 + (FIELD(signed char, 0x66) == -1))
+#define OPPONENT_GUARD reinterpret_cast<FighterState *>(opponent)->IsState50To149()
+#define FORWARD_COMMAND (2 - (facing == 1))
+#define AIR_FORWARD_COMMAND (2 - (facing == -1))
+#define AIR_BACK_COMMAND (1 + (facing == -1))
 
-#define CARD_TYPE FIELD(signed char, 0x370 + FIELD(signed char, 0x39D))
+#define CARD_TYPE field370[field39D]
 
 // Source-defined local value; the original target declaration is unknown.
 // Both observed floating components are used; this is not an owner layout.
@@ -18,420 +14,420 @@ struct AISeparation49B070 { float x, y; };
 void CharacterAI49B070::ChooseAction()
 {
     AISeparation49B070 distance;
-    distance.x = AbsFloatAt00412D90(OPPONENT_FLOAT(0x44) - FLOAT(0x44));
-    distance.y = AbsFloatAt00412D90(OPPONENT_FLOAT(0x48) - FLOAT(0x48));
-    --FIELD(short, 0x512);
-    --FIELD(short, 0x516);
-    if (FIELD(short, 0x60) > 49 &&
-        FIELD(short, 0x60) < 150) {
-        if (FIELD(short, 0x516) < 0) FIELD(short, 0x516) = ChooseIntegerRange(30, 90);
-        FIELD(short, 0x514) = 0;
-        FIELD(short, 0x512) = 0;
-        if (ChooseIntegerRange(0, 100) < 50) FIELD(int, 0x4DC) = 1;
-        else FIELD(int, 0x4DC) = -1;
-        if (ChooseIntegerRange(0, 100) < 5) FIELD(int, 0x4E8) = 1;
+    distance.x = AbsFloatAt00412D90(opponent->x - x);
+    distance.y = AbsFloatAt00412D90(opponent->y - y);
+    --aiWaitTimer;
+    --field516;
+    if (action > 49 &&
+        action < 150) {
+        if (field516 < 0) field516 = ChooseIntegerRange(30, 90);
+        aiStep = 0;
+        aiWaitTimer = 0;
+        if (ChooseIntegerRange(0, 100) < 50) inputX = 1;
+        else inputX = -1;
+        if (ChooseIntegerRange(0, 100) < 5) inputA = 1;
         return;
     }
-    if (FIELD(short, 0x516) < 0 && CARD_TYPE == 3 && FIELD(short, 0x3A0) > 0) {
-        FIELD(u8, 0x511) = 230;
+    if (field516 < 0 && CARD_TYPE == 3 && field3A0 > 0) {
+        aiCommand = 230;
         return;
     }
-    if (FIELD(short, 0x516) < 0 && CARD_TYPE == 2 && FIELD(short, 0x3A0) > 0) {
+    if (field516 < 0 && CARD_TYPE == 2 && field3A0 > 0) {
         if (ChooseIntegerRange(0, 100) < 10) {
-            FIELD(u8, 0x511) = 225;
+            aiCommand = 225;
             return;
         }
-        FIELD(u8, 0x511) = 220;
-        if (g_StateRepeatLevelAt006714D0 == 3) FIELD(u8, 0x511) = 221;
+        aiCommand = 220;
+        if (g_StateRepeatLevelAt006714D0 == 3) aiCommand = 221;
         return;
     }
-    if (FIELD(short, 0x516) < 0 && CARD_TYPE == 1 && FIELD(short, 0x3A0) > 0) {
+    if (field516 < 0 && CARD_TYPE == 1 && field3A0 > 0) {
         if (ChooseIntegerRange(0, 100) < 50) {
-            FIELD(u8, 0x511) = 210;
+            aiCommand = 210;
             return;
         }
-        FIELD(u8, 0x511) = 211;
+        aiCommand = 211;
         return;
     }
-    if (CARD_TYPE == 0 && FIELD(short, 0x3A0) > 0) {
-        FIELD(u8, 0x511) = 200;
+    if (CARD_TYPE == 0 && field3A0 > 0) {
+        aiCommand = 200;
         return;
     }
-    if (FIELD(short, 0x514) == 1) {
-        if (FIELD(short, 0x512) > 0) {
-            FIELD(int, 0x4F0) = 5;
+    if (aiStep == 1) {
+        if (aiWaitTimer > 0) {
+            inputC = 5;
         } else {
-            FIELD(short, 0x514) = 0;
+            aiStep = 0;
         }
         return;
     }
-    if (FIELD(short, 0x514) == 2) {
-        if (FIELD(short, 0x60) == 391) {
-            FIELD(short, 0x514) = 0;
+    if (aiStep == 2) {
+        if (action == 391) {
+            aiStep = 0;
             return;
         }
-        if (FIELD(short, 0x60) == 200) {
-            FIELD(int, 0x4DC) = FIELD(signed char, 0x66);
-            FIELD(int, 0x4EC) = 1;
+        if (action == 200) {
+            inputX = facing;
+            inputB = 1;
             return;
         }
-        if (FIELD(short, 0x60) != 200) {
-            FIELD(u8, 0x511) = FORWARD_COMMAND;
-            return;
-        }
-    }
-    if (FIELD(short, 0x514) == 3) {
-        if (FIELD(short, 0x60) == 390) {
-            FIELD(short, 0x514) = 0;
-            return;
-        }
-        if (FIELD(short, 0x60) == 200) {
-            FIELD(int, 0x4DC) = FIELD(signed char, 0x66);
-            FIELD(int, 0x4E8) = 1;
-            return;
-        }
-        if (FIELD(short, 0x60) != 200) {
-            FIELD(u8, 0x511) = FORWARD_COMMAND;
+        if (action != 200) {
+            aiCommand = FORWARD_COMMAND;
             return;
         }
     }
-    if (FIELD(short, 0x514) == 4) {
-        if (FIELD(short, 0x60) == 392) {
-            FIELD(short, 0x514) = 0;
+    if (aiStep == 3) {
+        if (action == 390) {
+            aiStep = 0;
             return;
         }
-        if (FIELD(short, 0x60) == 200) {
-            FIELD(int, 0x4DC) = FIELD(signed char, 0x66);
-            FIELD(int, 0x4E8) = 1;
-            FIELD(int, 0x4E0) = 1;
+        if (action == 200) {
+            inputX = facing;
+            inputA = 1;
             return;
         }
-        if (FIELD(short, 0x60) != 200) {
-            FIELD(u8, 0x511) = FORWARD_COMMAND;
-            return;
-        }
-    }
-    if (FIELD(short, 0x514) == 5) {
-        if (FIELD(short, 0x60) == 393) {
-            FIELD(short, 0x514) = 0;
-            return;
-        }
-        if (FIELD(short, 0x60) == 200) {
-            FIELD(int, 0x4DC) = FIELD(signed char, 0x66);
-            FIELD(int, 0x4EC) = 1;
-            FIELD(int, 0x4E0) = 1;
-            return;
-        }
-        if (FIELD(short, 0x60) != 200) {
-            FIELD(u8, 0x511) = FORWARD_COMMAND;
+        if (action != 200) {
+            aiCommand = FORWARD_COMMAND;
             return;
         }
     }
-    if ((FIELD(short, 0x60) > 399 && FIELD(short, 0x60) < 500) ||
-        (FIELD(short, 0x60) > 599 && FIELD(short, 0x60) < 700)) {
+    if (aiStep == 4) {
+        if (action == 392) {
+            aiStep = 0;
+            return;
+        }
+        if (action == 200) {
+            inputX = facing;
+            inputA = 1;
+            inputY = 1;
+            return;
+        }
+        if (action != 200) {
+            aiCommand = FORWARD_COMMAND;
+            return;
+        }
+    }
+    if (aiStep == 5) {
+        if (action == 393) {
+            aiStep = 0;
+            return;
+        }
+        if (action == 200) {
+            inputX = facing;
+            inputB = 1;
+            inputY = 1;
+            return;
+        }
+        if (action != 200) {
+            aiCommand = FORWARD_COMMAND;
+            return;
+        }
+    }
+    if ((action > 399 && action < 500) ||
+        (action > 599 && action < 700)) {
         if (distance.x > 0.0f) {
-            if (FLOAT(0x48) == 0.0f) {
+            if (y == 0.0f) {
                 if (rand() < 4000) {
-                    FIELD(u8, 0x511) = 3;
+                    aiCommand = 3;
                     return;
                 }
                 if (rand() < 4000) {
-                    FIELD(u8, 0x511) = 4;
+                    aiCommand = 4;
                     return;
                 }
                 if (rand() < 4000) {
-                    FIELD(u8, 0x511) = 5;
-                    return;
-                }
-            }
-            if (FLOAT(0x48) > 0.0f) {
-                if (rand() < 4000) {
-                    FIELD(u8, 0x511) = AIR_BACK_COMMAND;
-                    return;
-                }
-                if (rand() < 4000) {
-                    FIELD(u8, 0x511) = AIR_FORWARD_COMMAND;
+                    aiCommand = 5;
                     return;
                 }
             }
+            if (y > 0.0f) {
+                if (rand() < 4000) {
+                    aiCommand = AIR_BACK_COMMAND;
+                    return;
+                }
+                if (rand() < 4000) {
+                    aiCommand = AIR_FORWARD_COMMAND;
+                    return;
+                }
+            }
         }
-        if (FIELD(short, 0x60) > 399 && FIELD(short, 0x60) < 500 &&
-            distance.x < 300.0f && FIELD(short, 0x3B0) > 500 && rand() < 100) {
-            FIELD(u8, 0x511) = 50;
+        if (action > 399 && action < 500 &&
+            distance.x < 300.0f && meter > 500 && rand() < 100) {
+            aiCommand = 50;
             return;
         }
-        if (FIELD(short, 0x60) > 399 && FIELD(short, 0x60) < 500 &&
-            distance.x > 600.0f && distance.x < 900.0f && FIELD(short, 0x3B0) > 500 && rand() < 100) {
-            FIELD(u8, 0x511) = 51;
+        if (action > 399 && action < 500 &&
+            distance.x > 600.0f && distance.x < 900.0f && meter > 500 && rand() < 100) {
+            aiCommand = 51;
             return;
         }
-        if (FIELD(short, 0x60) > 399 && FIELD(short, 0x60) < 500 &&
+        if (action > 399 && action < 500 &&
             distance.x < 450.0f && rand() < 200) {
-            FIELD(u8, 0x511) = 20;
+            aiCommand = 20;
             return;
         }
-        if (FIELD(short, 0x60) > 399 && FIELD(short, 0x60) < 500 &&
+        if (action > 399 && action < 500 &&
             distance.x > 300.0f && distance.x < 700.0f && rand() < 100) {
-            FIELD(u8, 0x511) = 21;
+            aiCommand = 21;
             return;
         }
     }
-    if (OPPONENT_GUARD && (OPPONENT(short, 0x60) < 93 || OPPONENT(short, 0x60) > 99)) {
+    if (OPPONENT_GUARD && (opponent->action < 93 || opponent->action > 99)) {
         if (distance.x < 60.0f && rand() < 10000) {
-            FIELD(int, 0x4E8) = 1;
+            inputA = 1;
             return;
         }
-        if (FIELD(short, 0x60) == 307 && rand() < 10000 && FIELD(short, 0x3B0) > 250) {
-            FIELD(short, 0x512) = ChooseIntegerRange(0, 45);
-            FIELD(short, 0x514) = 1;
-            FIELD(int, 0x4F0) = 1;
+        if (action == 307 && rand() < 10000 && meter > 250) {
+            aiWaitTimer = ChooseIntegerRange(0, 45);
+            aiStep = 1;
+            inputC = 1;
             return;
         }
-        if (FIELD(short, 0x60) == 307 && rand() < 10000) {
-            FIELD(u8, 0x511) = 20;
+        if (action == 307 && rand() < 10000) {
+            aiCommand = 20;
             return;
         }
-        if (distance.x < 200.0f && (FIELD(short, 0x60) == 301 || FIELD(short, 0x60) == 308) && rand() < 20000) {
-            FIELD(u8, 0x511) = 20;
+        if (distance.x < 200.0f && (action == 301 || action == 308) && rand() < 20000) {
+            aiCommand = 20;
             return;
         }
-        if (distance.x < 100.0f && (FIELD(short, 0x60) == 301 || FIELD(short, 0x60) == 308) &&
-            rand() < 5000 && FIELD(int, 0x7C) == 1) {
-            FIELD(u8, 0x511) = 31;
+        if (distance.x < 100.0f && (action == 301 || action == 308) &&
+            rand() < 5000 && field07C == 1) {
+            aiCommand = 31;
             return;
         }
-        if (FIELD(short, 0x60) == 300 && rand() < 20000 && distance.x < 80.0f) {
-            FIELD(int, 0x4E8) = 1;
+        if (action == 300 && rand() < 20000 && distance.x < 80.0f) {
+            inputA = 1;
             return;
         }
-        if (FIELD(short, 0x60) == 300 && rand() < 20000) {
-            FIELD(int, 0x4EC) = 1;
-            FIELD(int, 0x4DC) = FIELD(signed char, 0x66);
+        if (action == 300 && rand() < 20000) {
+            inputB = 1;
+            inputX = facing;
             return;
         }
-        if (FIELD(short, 0x60) == 300 && rand() < 1000) {
-            FIELD(int, 0x4E8) = 1;
-            FIELD(int, 0x4DC) = FIELD(signed char, 0x66);
+        if (action == 300 && rand() < 1000) {
+            inputA = 1;
+            inputX = facing;
             return;
         }
-        if (FIELD(short, 0x60) == 301 && rand() < 1000) {
-            FIELD(int, 0x4E8) = 1;
-            FIELD(int, 0x4DC) = FIELD(signed char, 0x66);
+        if (action == 301 && rand() < 1000) {
+            inputA = 1;
+            inputX = facing;
             return;
         }
-        if (FIELD(short, 0x60) == 301 && rand() < 500) {
-            FIELD(u8, 0x511) = 100;
+        if (action == 301 && rand() < 500) {
+            aiCommand = 100;
             return;
         }
-        if (distance.x > 150.0f && FIELD(short, 0x60) == 301 && rand() < 500) {
-            FIELD(u8, 0x511) = 101;
+        if (distance.x > 150.0f && action == 301 && rand() < 500) {
+            aiCommand = 101;
             return;
         }
-        if (distance.x < 150.0f && FIELD(short, 0x60) == 301 && rand() < 10000) {
-            FIELD(int, 0x4EC) = 1;
-            FIELD(int, 0x4DC) = FIELD(signed char, 0x66);
+        if (distance.x < 150.0f && action == 301 && rand() < 10000) {
+            inputB = 1;
+            inputX = facing;
             return;
         }
-        if (FIELD(short, 0x60) == 301 && rand() < 3000) {
-            FIELD(short, 0x514) = 2;
+        if (action == 301 && rand() < 3000) {
+            aiStep = 2;
             return;
         }
-        if (distance.x < 100.0f && FIELD(short, 0x60) == 303 && rand() < 15000) {
-            FIELD(int, 0x4EC) = 1;
-            FIELD(int, 0x4DC) = FIELD(signed char, 0x66);
+        if (distance.x < 100.0f && action == 303 && rand() < 15000) {
+            inputB = 1;
+            inputX = facing;
             return;
         }
-        if (distance.x < 100.0f && FIELD(short, 0x60) == 303 && rand() < 5000 && FIELD(short, 0x3B0) > 300) {
-            FIELD(short, 0x512) = ChooseIntegerRange(0, 30);
-            FIELD(short, 0x514) = 1;
-            FIELD(int, 0x4F0) = 1;
+        if (distance.x < 100.0f && action == 303 && rand() < 5000 && meter > 300) {
+            aiWaitTimer = ChooseIntegerRange(0, 30);
+            aiStep = 1;
+            inputC = 1;
             return;
         }
-        if (FIELD(short, 0x60) == 303 && rand() < 500) {
-            FIELD(u8, 0x511) = 100;
+        if (action == 303 && rand() < 500) {
+            aiCommand = 100;
             return;
         }
-        if (distance.x > 150.0f && FIELD(short, 0x60) == 303 && rand() < 300) {
-            FIELD(u8, 0x511) = 101;
+        if (distance.x > 150.0f && action == 303 && rand() < 300) {
+            aiCommand = 101;
             return;
         }
-        if (FIELD(short, 0x60) == 308 && rand() < 10000 && FIELD(short, 0x3B0) > 300) {
-            FIELD(short, 0x512) = ChooseIntegerRange(0, 30);
-            FIELD(short, 0x514) = 1;
-            FIELD(int, 0x4F0) = 1;
+        if (action == 308 && rand() < 10000 && meter > 300) {
+            aiWaitTimer = ChooseIntegerRange(0, 30);
+            aiStep = 1;
+            inputC = 1;
             return;
         }
-        if (FIELD(short, 0x60) == 308 && rand() < 600) {
-            FIELD(u8, 0x511) = 100;
+        if (action == 308 && rand() < 600) {
+            aiCommand = 100;
             return;
         }
-        if (distance.x > 150.0f && FIELD(short, 0x60) == 308 && rand() < 600) {
-            FIELD(u8, 0x511) = 101;
+        if (distance.x > 150.0f && action == 308 && rand() < 600) {
+            aiCommand = 101;
             return;
         }
-        if (FIELD(short, 0x60) == 308 && rand() < 10000 && FIELD(short, 0x3B0) > 300) {
-            FIELD(u8, 0x511) = 50;
+        if (action == 308 && rand() < 10000 && meter > 300) {
+            aiCommand = 50;
             return;
         }
-        if (FIELD(short, 0x60) == 308 && rand() < 500) {
-            FIELD(u8, 0x511) = 20;
+        if (action == 308 && rand() < 500) {
+            aiCommand = 20;
             return;
         }
     }
-    if (static_cast<float>(rand()) < FIELD(short, 0x3B0) * 0.8f + 0.0f &&
-        distance.x > 320.0f && FIELD(short, 0x3B0) > 350) {
-        FIELD(short, 0x512) = ChooseIntegerRange(0, 45);
-        FIELD(short, 0x514) = 1;
-        FIELD(int, 0x4F0) = 1;
-        if (rand() < 16000) FIELD(int, 0x4DC) = FIELD(signed char, 0x66);
-        if (rand() < 16000) FIELD(int, 0x4E0) = 1;
+    if (static_cast<float>(rand()) < meter * 0.8f + 0.0f &&
+        distance.x > 320.0f && meter > 350) {
+        aiWaitTimer = ChooseIntegerRange(0, 45);
+        aiStep = 1;
+        inputC = 1;
+        if (rand() < 16000) inputX = facing;
+        if (rand() < 16000) inputY = 1;
         return;
     }
-    if (static_cast<float>(rand()) < FIELD(short, 0x3B0) * 0.5f + 0.0f &&
-        distance.x > 560.0f && FIELD(short, 0x3B0) > 250 && distance.y < 100.0f) {
-        FIELD(int, 0x4E8) = 1;
+    if (static_cast<float>(rand()) < meter * 0.5f + 0.0f &&
+        distance.x > 560.0f && meter > 250 && distance.y < 100.0f) {
+        inputA = 1;
         return;
     }
-    if (static_cast<float>(rand()) < FIELD(short, 0x3B0) * 0.1f + 0.0f &&
-        distance.x > 560.0f && FIELD(short, 0x3B0) > 250) {
-        FIELD(int, 0x4EC) = 1;
-        if (rand() < 10000) FIELD(int, 0x4DC) = FIELD(signed char, 0x66);
+    if (static_cast<float>(rand()) < meter * 0.1f + 0.0f &&
+        distance.x > 560.0f && meter > 250) {
+        inputB = 1;
+        if (rand() < 10000) inputX = facing;
         return;
     }
-    if (rand() < 50) FIELD(int, 0x4E0) = -1;
-    if (FLOAT(0x48) == 0.0f) {
+    if (rand() < 50) inputY = -1;
+    if (y == 0.0f) {
         if (rand() < 500) {
-            FIELD(u8, 0x511) = 3;
+            aiCommand = 3;
             return;
         }
         if (rand() < 500) {
-            FIELD(u8, 0x511) = 4;
+            aiCommand = 4;
             return;
         }
         if (distance.x > 400.0f &&
             rand() < 500) {
-            FIELD(u8, 0x511) = 5;
+            aiCommand = 5;
             return;
         }
     }
-    if (FLOAT(0x48) > 0.0f) {
+    if (y > 0.0f) {
         if (rand() < 1000) {
-            FIELD(u8, 0x511) = AIR_BACK_COMMAND;
+            aiCommand = AIR_BACK_COMMAND;
             return;
         }
         if (rand() < 1000) {
-            FIELD(u8, 0x511) = AIR_FORWARD_COMMAND;
+            aiCommand = AIR_FORWARD_COMMAND;
             return;
         }
     }
     if (distance.x > 120.0f &&
         rand() < 100) {
-        FIELD(int, 0x4DC) = FIELD(signed char, 0x66);
-        if (rand() < 18000) FIELD(int, 0x4DC) = 0;
-        FIELD(int, 0x4E0) = -1;
+        inputX = facing;
+        if (rand() < 18000) inputX = 0;
+        inputY = -1;
         return;
     }
     if (distance.x > 120.0f &&
-        FLOAT(0x48) > 0.0f &&
+        y > 0.0f &&
         rand() < 300) {
-        FIELD(u8, 0x511) = FIELD(u8, 0x511) = AIR_BACK_COMMAND;
+        aiCommand = aiCommand = AIR_BACK_COMMAND;
         return;
     }
     if (distance.x > 350.0f &&
-        FLOAT(0x48) == 0.0f &&
+        y == 0.0f &&
         rand() < 100) {
-        FIELD(u8, 0x511) = FIELD(u8, 0x511) = AIR_BACK_COMMAND;
+        aiCommand = aiCommand = AIR_BACK_COMMAND;
         return;
     }
     if (distance.x < 100.0f &&
         rand() < 10) {
-        FIELD(u8, 0x511) = FIELD(u8, 0x511) = AIR_FORWARD_COMMAND;
+        aiCommand = aiCommand = AIR_FORWARD_COMMAND;
         return;
     }
-    if (FLOAT(0x48) == 0.0f && (OPPONENT(short, 0x60) < 93 || OPPONENT(short, 0x60) > 99)) {
+    if (y == 0.0f && (opponent->action < 93 || opponent->action > 99)) {
         if (distance.x < 80.0f && rand() < 5000) {
-            FIELD(int, 0x4E8) = 1;
-            FIELD(int, 0x4E0) = rand() > 20000;
-            if (OPPONENT_FLOAT(0x48) > 0.0f) FIELD(int, 0x4E0) = 0;
+            inputA = 1;
+            inputY = rand() > 20000;
+            if (opponent->y > 0.0f) inputY = 0;
             return;
         }
         if (distance.x < 80.0f && rand() < 2000) {
-            FIELD(int, 0x4EC) = 1;
-            FIELD(int, 0x4E0) = 0;
+            inputB = 1;
+            inputY = 0;
             return;
         }
         if (distance.x < 140.0f && rand() < 2000) {
-            FIELD(int, 0x4EC) = 1;
-            FIELD(int, 0x4E0) = rand() > 20000;
-            if (OPPONENT_FLOAT(0x48) > 0.0f) FIELD(int, 0x4E0) = 0;
+            inputB = 1;
+            inputY = rand() > 20000;
+            if (opponent->y > 0.0f) inputY = 0;
             return;
         }
-        if (distance.x < 120.0f && distance.x > 60.0f && OPPONENT_FLOAT(0x48) == 0.0f && rand() < 200) {
-            FIELD(int, 0x4EC) = 1;
-            FIELD(int, 0x4DC) = FIELD(signed char, 0x66);
+        if (distance.x < 120.0f && distance.x > 60.0f && opponent->y == 0.0f && rand() < 200) {
+            inputB = 1;
+            inputX = facing;
             return;
         }
         if (distance.x > 60.0f && distance.x < 240.0f && rand() < 400) {
-            FIELD(int, 0x4E8) = 1;
-            FIELD(int, 0x4DC) = FIELD(signed char, 0x66);
+            inputA = 1;
+            inputX = facing;
             return;
         }
         if (distance.x > 200.0f && distance.x < 400.0f && rand() < 400) {
-            FIELD(short, 0x514) = 3;
+            aiStep = 3;
             return;
         }
-        if (OPPONENT_FLOAT(0x48) == 0.0f && distance.x > 200.0f && distance.x < 400.0f && rand() < 400) {
-            FIELD(short, 0x514) = 4;
+        if (opponent->y == 0.0f && distance.x > 200.0f && distance.x < 400.0f && rand() < 400) {
+            aiStep = 4;
             return;
         }
-        if (OPPONENT_FLOAT(0x48) == 0.0f && distance.x > 300.0f && distance.x < 500.0f && rand() < 100) {
-            FIELD(short, 0x514) = 5;
+        if (opponent->y == 0.0f && distance.x > 300.0f && distance.x < 500.0f && rand() < 100) {
+            aiStep = 5;
             return;
         }
     }
-    if (FLOAT(0x48) > 0.0f && (OPPONENT(short, 0x60) < 93 || OPPONENT(short, 0x60) > 99)) {
+    if (y > 0.0f && (opponent->action < 93 || opponent->action > 99)) {
         if (distance.x < 150.0f && rand() < 2000 && distance.y < 300.0f &&
-            distance.y > 100.0f && FLOAT(0x48) > OPPONENT_FLOAT(0x48)) {
-            FIELD(int, 0x4E8) = 1;
+            distance.y > 100.0f && y > opponent->y) {
+            inputA = 1;
             return;
         }
         if (distance.x < 200.0f && rand() < 6000 && distance.y < 250.0f && distance.y > 80.0f) {
-            FIELD(int, 0x4EC) = 1;
-            FIELD(int, 0x4E0) = 0;
+            inputB = 1;
+            inputY = 0;
             return;
         }
     }
     if (distance.y < 150.0f && distance.x < 110.0f && rand() < 600 &&
-        OPPONENT(short, 0x60) != 93 && OPPONENT(short, 0x60) != 94) {
-        FIELD(u8, 0x511) = 30;
+        opponent->action != 93 && opponent->action != 94) {
+        aiCommand = 30;
         return;
     }
     if (distance.x > 100.0f && distance.x < 240.0f && rand() < 200) {
-        FIELD(u8, 0x511) = 100;
+        aiCommand = 100;
         return;
     }
-    if (distance.x > 100.0f && distance.x < 250.0f && OPPONENT_FLOAT(0x48) == 0.0f && rand() < 200) {
-        FIELD(u8, 0x511) = 101;
+    if (distance.x > 100.0f && distance.x < 250.0f && opponent->y == 0.0f && rand() < 200) {
+        aiCommand = 101;
         return;
     }
-    if (distance.x > 560.0f && rand() < 200 && FIELD(short, 0x3B0) > 350) {
-        FIELD(u8, 0x511) = 51;
+    if (distance.x > 560.0f && rand() < 200 && meter > 350) {
+        aiCommand = 51;
         return;
     }
     if (distance.y < 250.0f && distance.y > 100.0f && distance.x < 200.0f && rand() < 100 &&
-        OPPONENT(short, 0x60) != 93 && OPPONENT(short, 0x60) != 94) {
-        FIELD(u8, 0x511) = 31;
+        opponent->action != 93 && opponent->action != 94) {
+        aiCommand = 31;
         return;
     }
     if (distance.y < 150.0f && distance.x > 200.0f && rand() < 1000) {
-        FIELD(u8, 0x511) = 20;
+        aiCommand = 20;
         return;
     }
     if (countdown > 0) {
-        FIELD(int, 0x4DC) = 1;
+        inputX = 1;
         --countdown;
     } else if (countdown < 0) {
-        FIELD(int, 0x4DC) = -1;
+        inputX = -1;
         ++countdown;
     } else {
         countdown = (rand() % 90 + 10) * (1 - 2 * (rand() % 2));

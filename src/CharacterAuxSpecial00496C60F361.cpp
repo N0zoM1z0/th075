@@ -1,86 +1,84 @@
+#include "Fighter.hpp"
 // F361: independently native-observed 1,027-byte character special effect
 // controller. Like the already exact F062, this uses the same inherited
 // effect-spawner ABI, but its effect 817, scale 1.0f, linked flag zero and
 // +0xF32 distance counter are independently verified for THIS target.
 // Declaration-only receiver view: full original fighter layout is unknown.
-class CharacterAuxRunAt00496C60F361 {
+class CharacterAuxRunAt00496C60F361 : public Fighter {
 public:
     void AdvanceSpecialEffect();
     void SpawnTrackedEffect(short, float, float, signed char, signed char, unsigned char);
+public:
+    // Character-specific fields after the shared Fighter layout.
+    unsigned char unknownF10[0xF32 - 0xF10];
+    short fieldF32;
 };
 
 
-#define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
-#define FLOAT(offset) *reinterpret_cast<float*>(reinterpret_cast<unsigned char*>(this) + (offset))
-#define OPPONENT_FLOAT(offset) *reinterpret_cast<float*>(reinterpret_cast<unsigned char*>(FIELD(void*, 0x2E8)) + (offset))
 
 // Names are provisional. Only these field accesses and receiver ABI are observed.
 void CharacterAuxRunAt00496C60F361::AdvanceSpecialEffect() {
-    if (FLOAT(0x50) == 0.0f && FIELD(signed char, 0x3AC) > 0) {
-        FIELD(signed char, 0x3AC) = 0;
+    if (velocityX == 0.0f && field3AC > 0) {
+        field3AC = 0;
     }
-    if (FIELD(short, 0xF0A) != 1) {
-        if (FIELD(short, 0x60) > 149 && FIELD(short, 0x60) < 154) {
-            FIELD(short, 0x2F6) = 0;
-            FIELD(short, 0x2F8) = 0;
-            FIELD(short, 0x2FA) = 0;
-            FLOAT(0x2FC) = 1.0f;
-            FLOAT(0x300) = 1.0f;
-            FIELD(unsigned char, 0x2F1) = 255;
-            FIELD(unsigned char, 0x2F2) = 255;
-            FIELD(unsigned char, 0x2F3) = 255;
-            FIELD(unsigned char, 0x2F4) = 255;
-            FLOAT(0x308) = 0.0f;
-            FLOAT(0x30C) = 50.0f;
-            FLOAT(0x310) = 0.0f;
-            SpawnTrackedEffect(817, FIELD(signed char, 0x66) * 57 + FLOAT(0x44), FLOAT(0x48) + 94.0f, FIELD(signed char, 0x66), 1, 0);
-            FIELD(short, 0xF0A) = 1;
+    if (fieldF0A != 1) {
+        if (action > 149 && action < 154) {
+            field2F6 = 0;
+            field2F8 = 0;
+            field2FA = 0;
+            field2FC = 1.0f;
+            field300 = 1.0f;
+            field2F1 = 255;
+            field2F2 = 255;
+            field2F3 = 255;
+            field2F4 = 255;
+            field308 = 0.0f;
+            field30C = 50.0f;
+            field310 = 0.0f;
+            SpawnTrackedEffect(817, facing * 57 + x, y + 94.0f, facing, 1, 0);
+            fieldF0A = 1;
         }
-        if (FIELD(short, 0x60) > 153 && FIELD(short, 0x60) < 158) {
-            FIELD(short, 0x2F6) = 0;
-            FIELD(short, 0x2F8) = 0;
-            FIELD(short, 0x2FA) = 0;
-            FLOAT(0x2FC) = 1.0f;
-            FLOAT(0x300) = 1.0f;
-            FIELD(unsigned char, 0x2F1) = 255;
-            FIELD(unsigned char, 0x2F2) = 255;
-            FIELD(unsigned char, 0x2F3) = 255;
-            FIELD(unsigned char, 0x2F4) = 255;
-            FLOAT(0x308) = 0.0f;
-            FLOAT(0x30C) = 50.0f;
-            FLOAT(0x310) = 0.0f;
-            SpawnTrackedEffect(817, FIELD(signed char, 0x66) * 57 + FLOAT(0x44), FLOAT(0x48) + 60.0f, FIELD(signed char, 0x66), 1, 0);
-            FIELD(short, 0xF0A) = 1;
+        if (action > 153 && action < 158) {
+            field2F6 = 0;
+            field2F8 = 0;
+            field2FA = 0;
+            field2FC = 1.0f;
+            field300 = 1.0f;
+            field2F1 = 255;
+            field2F2 = 255;
+            field2F3 = 255;
+            field2F4 = 255;
+            field308 = 0.0f;
+            field30C = 50.0f;
+            field310 = 0.0f;
+            SpawnTrackedEffect(817, facing * 57 + x, y + 60.0f, facing, 1, 0);
+            fieldF0A = 1;
         }
-        if (FIELD(short, 0x60) == 158) {
-            FIELD(short, 0x2F6) = 0;
-            FIELD(short, 0x2F8) = 0;
-            FIELD(short, 0x2FA) = 0;
-            FLOAT(0x2FC) = 1.0f;
-            FLOAT(0x300) = 1.0f;
-            FIELD(unsigned char, 0x2F1) = 255;
-            FIELD(unsigned char, 0x2F2) = 255;
-            FIELD(unsigned char, 0x2F3) = 255;
-            FIELD(unsigned char, 0x2F4) = 255;
-            FLOAT(0x308) = 0.0f;
-            FLOAT(0x30C) = 50.0f;
-            FLOAT(0x310) = 0.0f;
-            SpawnTrackedEffect(817, FIELD(signed char, 0x66) * 57 + FLOAT(0x44), FLOAT(0x48) + 100.0f, FIELD(signed char, 0x66), 1, 0);
-            FIELD(short, 0xF0A) = 1;
+        if (action == 158) {
+            field2F6 = 0;
+            field2F8 = 0;
+            field2FA = 0;
+            field2FC = 1.0f;
+            field300 = 1.0f;
+            field2F1 = 255;
+            field2F2 = 255;
+            field2F3 = 255;
+            field2F4 = 255;
+            field308 = 0.0f;
+            field30C = 50.0f;
+            field310 = 0.0f;
+            SpawnTrackedEffect(817, facing * 57 + x, y + 100.0f, facing, 1, 0);
+            fieldF0A = 1;
         }
     }
-    if (FLOAT(0x44) - OPPONENT_FLOAT(0x44) > 540.0f || FLOAT(0x44) - OPPONENT_FLOAT(0x44) < -540.0f) {
-        FIELD(short, 0xF32) = 60;
+    if (x - opponent->x > 540.0f || x - opponent->x < -540.0f) {
+        fieldF32 = 60;
     }
-    if (FLOAT(0x44) - OPPONENT_FLOAT(0x44) > 320.0f || FLOAT(0x44) - OPPONENT_FLOAT(0x44) < -320.0f) {
-        FIELD(short, 0xF32) = FIELD(short, 0xF32) + 1;
-        if (FIELD(short, 0xF32) > 60) FIELD(short, 0xF32) = 60;
+    if (x - opponent->x > 320.0f || x - opponent->x < -320.0f) {
+        fieldF32 = fieldF32 + 1;
+        if (fieldF32 > 60) fieldF32 = 60;
     }
     else {
-        FIELD(short, 0xF32) = 0;
+        fieldF32 = 0;
     }
 }
-
-#undef OPPONENT_FLOAT
-#undef FLOAT
-#undef FIELD

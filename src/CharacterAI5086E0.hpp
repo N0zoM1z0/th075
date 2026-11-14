@@ -1,9 +1,9 @@
 #ifndef TH075_CHARACTER_AI_5086E0_HPP
 #define TH075_CHARACTER_AI_5086E0_HPP
+#include "Fighter.hpp"
 #include "CharacterAIPolicy.hpp"
 
-// Pointer-only receiver view; never construct or embed an owner object.
-class CharacterAI5086E0 {
+class CharacterAI5086E0 : public Fighter {
 public:
     void ChooseAction();
     int ChooseIntegerRange(int lower, int upper);

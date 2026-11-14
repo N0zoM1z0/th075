@@ -1,3 +1,4 @@
+#include "Fighter.hpp"
 #include "FighterActionTimerPairF1027.hpp"
 // Independently recovered complete 1,008-byte native character auxiliary
 // state controller. It deliberately preserves the second explicit
@@ -21,69 +22,66 @@ public:
     unsigned int Count();
     void PruneOld();
 };
-class CharacterAux005301B0F378 {
+class CharacterAux005301B0F378 : public Fighter {
 public:
     void UpdateSpecial();
     void SpawnTrackedEffect(short,float,float,signed char,signed char,unsigned char);
+public:
+    // Character-specific fields after the shared Fighter layout.
+    short fieldF10;
+    unsigned char unknownF12[0xF14 - 0xF12];
+    short fieldF14;
 };
 extern signed char g_CharacterSpecialModeAt006714B4;
-#define FIELD(T,o) (*reinterpret_cast<T*>(reinterpret_cast<unsigned char*>(this)+(o)))
-#define FLOAT(o) *reinterpret_cast<float*>(reinterpret_cast<unsigned char*>(this)+(o))
-#define OPPONENT_FLOAT(o) *reinterpret_cast<float*>(reinterpret_cast<unsigned char*>(FIELD(void*,0x2E8))+(o))
-#define OPPONENT_FIELD(T,o) (*reinterpret_cast<T*>(reinterpret_cast<unsigned char*>(FIELD(void*,0x2E8))+(o)))
 #define QUEUE (*reinterpret_cast<ObservedEffectQueueF378*>(reinterpret_cast<unsigned char*>(this)+0xFEC))
 void CharacterAux005301B0F378::UpdateSpecial() {
-    if (F1027_TIMERS(this).timerAt82==0 && FIELD(short,0x3B8)==0) {
+    if (F1027_TIMERS(this).timerAt82==0 && field3B8==0) {
         ObservedInputSnapshotF378 snapshot;
-        snapshot.action=FIELD(short,0x60);
-        snapshot.guard=FIELD(short,0x62);
-        snapshot.x=FLOAT(0x44);
-        snapshot.y=FLOAT(0x48);
-        snapshot.facing=FIELD(signed char,0x66);
+        snapshot.action=action;
+        snapshot.guard=field062;
+        snapshot.x=x;
+        snapshot.y=y;
+        snapshot.facing=facing;
         snapshot.bearing=F1027_TIMERS(this).wordAt80;
         QUEUE.AddSnapshot(&snapshot);
         if (QUEUE.Count()>10) QUEUE.PruneOld();
     }
-    if (FIELD(short,0xF10)>0) --FIELD(short,0xF10);
-    if (FLOAT(0x50)==0.0f && FIELD(signed char,0x3AC)>0) FIELD(signed char,0x3AC)=0;
-    if (FIELD(short,0xF0E)==0) {
-        FIELD(short,0x2F6)=0;
-        FIELD(short,0x2F8)=0;
-        FIELD(short,0x2FA)=0;
-        FLOAT(0x2FC)=1.0f;
-        FLOAT(0x300)=1.0f;
-        FIELD(unsigned char,0x2F1)=255;
-        FIELD(unsigned char,0x2F2)=255;
-        FIELD(unsigned char,0x2F3)=255;
-        FIELD(unsigned char,0x2F4)=255;
+    if (fieldF10>0) --fieldF10;
+    if (velocityX==0.0f && field3AC>0) field3AC=0;
+    if (fieldF0E==0) {
+        field2F6=0;
+        field2F8=0;
+        field2FA=0;
+        field2FC=1.0f;
+        field300=1.0f;
+        field2F1=255;
+        field2F2=255;
+        field2F3=255;
+        field2F4=255;
         if (g_CharacterSpecialModeAt006714B4 != 3) {
-            SpawnTrackedEffect(810,FLOAT(0x44),FLOAT(0x48)+100.0f,FIELD(signed char,0x66),1,1);
-            ++FIELD(short,0xF0E);
+            SpawnTrackedEffect(810,x,y+100.0f,facing,1,1);
+            ++fieldF0E;
         } else if (g_CharacterSpecialModeAt006714B4 == 3) {
-            if (FIELD(short,0xF0C)==1) {
-                SpawnTrackedEffect(810,FLOAT(0x44),FLOAT(0x48)+100.0f,FIELD(signed char,0x66),1,1);
-                ++FIELD(short,0xF0E);
+            if (fieldF0C==1) {
+                SpawnTrackedEffect(810,x,y+100.0f,facing,1,1);
+                ++fieldF0E;
             }
-            if (FIELD(signed char,0x2CD)!=0 && OPPONENT_FIELD(unsigned char,0x6EF)!=0 && FIELD(short,0xF0C)==0) {
-                SpawnTrackedEffect(810,FLOAT(0x44),FLOAT(0x48)+100.0f,FIELD(signed char,0x66),1,1);
-                ++FIELD(short,0xF0E);
-                FIELD(short,0xF0C)=1;
+            if (field2CD!=0 && opponent->field6EF!=0 && fieldF0C==0) {
+                SpawnTrackedEffect(810,x,y+100.0f,facing,1,1);
+                ++fieldF0E;
+                fieldF0C=1;
             }
-            if (FIELD(signed char,0x2CD)==0 && FIELD(unsigned char,0x6EF)!=0 && FIELD(short,0xF0C)==0) {
-                SpawnTrackedEffect(810,FLOAT(0x44),FLOAT(0x48)+100.0f,FIELD(signed char,0x66),1,1);
-                ++FIELD(short,0xF0E);
-                FIELD(short,0xF0C)=1;
+            if (field2CD==0 && field6EF!=0 && fieldF0C==0) {
+                SpawnTrackedEffect(810,x,y+100.0f,facing,1,1);
+                ++fieldF0E;
+                fieldF0C=1;
             }
         }
     }
-    if (FLOAT(0x44)-OPPONENT_FLOAT(0x44)>540.0f || FLOAT(0x44)-OPPONENT_FLOAT(0x44)<-540.0f) FIELD(short,0xF14)=60;
-    if (FLOAT(0x44)-OPPONENT_FLOAT(0x44)>320.0f || FLOAT(0x44)-OPPONENT_FLOAT(0x44)<-320.0f) {
-        FIELD(short,0xF14)=FIELD(short,0xF14)+1;
-        if (FIELD(short,0xF14)>60) FIELD(short,0xF14)=60;
-    } else FIELD(short,0xF14)=0;
+    if (x-opponent->x>540.0f || x-opponent->x<-540.0f) fieldF14=60;
+    if (x-opponent->x>320.0f || x-opponent->x<-320.0f) {
+        fieldF14=fieldF14+1;
+        if (fieldF14>60) fieldF14=60;
+    } else fieldF14=0;
 }
 #undef QUEUE
-#undef OPPONENT_FIELD
-#undef OPPONENT_FLOAT
-#undef FLOAT
-#undef FIELD

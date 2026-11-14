@@ -14,6 +14,26 @@ never reset it or attribute it to another worker. Use local `gpt-web: ...` commi
 serial compiler builds, the existing Ghidra wrapper, and `scripts/repo-python`.
 Do not use REA or replay the entire exact corpus.
 
+## 0. Current work: readable layouts before new matching
+
+The user asked to clear readability debt before the 100% push. Done so far:
+obsolete probes/verifiers/notes removed, hash-freshness pins replaced by
+replay and target checks, and the shared [`Fighter`](../src/Fighter.hpp)
+layout adopted by 53 fighter classes (all 73 affected units cold exact).
+Next, in order:
+
+1. Convert the "borrowed window" headers (`src/*Borrow*.hpp`, for example
+   `F1024_PHASE(this).stageAt62`) to `Fighter` members.
+2. Factor an `Actor` base out of `Fighter` (+0x10…+0x7C are shared with
+   effect objects) and give the `CharacterObject` effect class its own
+   layout; then convert the remaining 3,433 `FIELD(` uses in `src/`
+   (down from 14,292) and the 8,540 in the giant research parents.
+3. Replace per-function shell class names (`CharacterAI499030`, …) with
+   real classes once their methods are grouped by character.
+
+Convert with named members only. Rename parameters that would shadow a
+member, and cold-replay every unit whose source or header changed.
+
 ## 1. Original native PE and complete-function exactness
 
 Pinned target: user-supplied Japanese TH075 v1.11 `resources/th075.exe`, SHA256

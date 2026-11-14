@@ -1,11 +1,10 @@
 #ifndef TH075_CHARACTER_ACTION_DISPATCH_574370_HPP
 #define TH075_CHARACTER_ACTION_DISPATCH_574370_HPP
 
+#include "Fighter.hpp"
 #include "ReimuActionDispatch.hpp"
 
-// Pointer-only ABI view. Original character identity and complete owner layout
-// remain unknown. Do not instantiate or embed this owner.
-class CharacterAction574370 {
+class CharacterAction574370 : public Fighter {
 public:
     void DispatchActions();
     void PackDirectionBits();

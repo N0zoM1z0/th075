@@ -1,76 +1,69 @@
 #include "CharacterAux5E5500.hpp"
 
-#define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
-#define FLOAT(offset) *reinterpret_cast<float*>(reinterpret_cast<unsigned char*>(this) + (offset))
-#define OPPONENT_FLOAT(offset) *reinterpret_cast<float*>(reinterpret_cast<unsigned char*>(FIELD(void*, 0x2E8)) + (offset))
 
 // Names are provisional. Only these field accesses and receiver ABI are observed.
 void CharacterAux5E5500::AdvanceAuxiliary() {
-    if (FLOAT(0x50) == 0.0f && FIELD(signed char, 0x3AC) > 0) {
-        FIELD(signed char, 0x3AC) = 0;
+    if (velocityX == 0.0f && field3AC > 0) {
+        field3AC = 0;
     }
-    if (FIELD(short, 0xF0A) != 1) {
-        if (FIELD(short, 0x60) > 149 && FIELD(short, 0x60) < 154) {
-            FIELD(short, 0x2F6) = 0;
-            FIELD(short, 0x2F8) = 0;
-            FIELD(short, 0x2FA) = 0;
-            FLOAT(0x2FC) = 0.75f;
-            FLOAT(0x300) = 0.75f;
-            FIELD(unsigned char, 0x2F1) = 255;
-            FIELD(unsigned char, 0x2F2) = 255;
-            FIELD(unsigned char, 0x2F3) = 255;
-            FIELD(unsigned char, 0x2F4) = 255;
-            FLOAT(0x308) = 0.0f;
-            FLOAT(0x30C) = 50.0f;
-            FLOAT(0x310) = 0.0f;
-            SpawnTrackedEffect(998, FIELD(signed char, 0x66) * 57 + FLOAT(0x44), FLOAT(0x48) + 94.0f, FIELD(signed char, 0x66), 1, 1);
-            FIELD(short, 0xF0A) = 1;
+    if (fieldF0A != 1) {
+        if (action > 149 && action < 154) {
+            field2F6 = 0;
+            field2F8 = 0;
+            field2FA = 0;
+            field2FC = 0.75f;
+            field300 = 0.75f;
+            field2F1 = 255;
+            field2F2 = 255;
+            field2F3 = 255;
+            field2F4 = 255;
+            field308 = 0.0f;
+            field30C = 50.0f;
+            field310 = 0.0f;
+            SpawnTrackedEffect(998, facing * 57 + x, y + 94.0f, facing, 1, 1);
+            fieldF0A = 1;
         }
-        if (FIELD(short, 0x60) > 153 && FIELD(short, 0x60) < 158) {
-            FIELD(short, 0x2F6) = 0;
-            FIELD(short, 0x2F8) = 0;
-            FIELD(short, 0x2FA) = 0;
-            FLOAT(0x2FC) = 0.75f;
-            FLOAT(0x300) = 0.75f;
-            FIELD(unsigned char, 0x2F1) = 255;
-            FIELD(unsigned char, 0x2F2) = 255;
-            FIELD(unsigned char, 0x2F3) = 255;
-            FIELD(unsigned char, 0x2F4) = 255;
-            FLOAT(0x308) = 0.0f;
-            FLOAT(0x30C) = 50.0f;
-            FLOAT(0x310) = 0.0f;
-            SpawnTrackedEffect(998, FIELD(signed char, 0x66) * 57 + FLOAT(0x44), FLOAT(0x48) + 60.0f, FIELD(signed char, 0x66), 1, 1);
-            FIELD(short, 0xF0A) = 1;
+        if (action > 153 && action < 158) {
+            field2F6 = 0;
+            field2F8 = 0;
+            field2FA = 0;
+            field2FC = 0.75f;
+            field300 = 0.75f;
+            field2F1 = 255;
+            field2F2 = 255;
+            field2F3 = 255;
+            field2F4 = 255;
+            field308 = 0.0f;
+            field30C = 50.0f;
+            field310 = 0.0f;
+            SpawnTrackedEffect(998, facing * 57 + x, y + 60.0f, facing, 1, 1);
+            fieldF0A = 1;
         }
-        if (FIELD(short, 0x60) == 158) {
-            FIELD(short, 0x2F6) = 0;
-            FIELD(short, 0x2F8) = 0;
-            FIELD(short, 0x2FA) = 0;
-            FLOAT(0x2FC) = 0.75f;
-            FLOAT(0x300) = 0.75f;
-            FIELD(unsigned char, 0x2F1) = 255;
-            FIELD(unsigned char, 0x2F2) = 255;
-            FIELD(unsigned char, 0x2F3) = 255;
-            FIELD(unsigned char, 0x2F4) = 255;
-            FLOAT(0x308) = 0.0f;
-            FLOAT(0x30C) = 50.0f;
-            FLOAT(0x310) = 0.0f;
-            SpawnTrackedEffect(998, FIELD(signed char, 0x66) * 57 + FLOAT(0x44), FLOAT(0x48) + 100.0f, FIELD(signed char, 0x66), 1, 1);
-            FIELD(short, 0xF0A) = 1;
+        if (action == 158) {
+            field2F6 = 0;
+            field2F8 = 0;
+            field2FA = 0;
+            field2FC = 0.75f;
+            field300 = 0.75f;
+            field2F1 = 255;
+            field2F2 = 255;
+            field2F3 = 255;
+            field2F4 = 255;
+            field308 = 0.0f;
+            field30C = 50.0f;
+            field310 = 0.0f;
+            SpawnTrackedEffect(998, facing * 57 + x, y + 100.0f, facing, 1, 1);
+            fieldF0A = 1;
         }
     }
-    if (FLOAT(0x44) - OPPONENT_FLOAT(0x44) > 540.0f || FLOAT(0x44) - OPPONENT_FLOAT(0x44) < -540.0f) {
-        FIELD(short, 0xF2A) = 60;
+    if (x - opponent->x > 540.0f || x - opponent->x < -540.0f) {
+        fieldF2A = 60;
     }
-    if (FLOAT(0x44) - OPPONENT_FLOAT(0x44) > 320.0f || FLOAT(0x44) - OPPONENT_FLOAT(0x44) < -320.0f) {
-        FIELD(short, 0xF2A) = FIELD(short, 0xF2A) + 1;
-        if (FIELD(short, 0xF2A) > 60) FIELD(short, 0xF2A) = 60;
+    if (x - opponent->x > 320.0f || x - opponent->x < -320.0f) {
+        fieldF2A = fieldF2A + 1;
+        if (fieldF2A > 60) fieldF2A = 60;
     }
     else {
-        FIELD(short, 0xF2A) = 0;
+        fieldF2A = 0;
     }
 }
-
-#undef OPPONENT_FLOAT
-#undef FLOAT
-#undef FIELD
