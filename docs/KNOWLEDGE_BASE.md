@@ -9,11 +9,11 @@ reproduce a comparison from current source when it is needed.
 
 F1146 corrects the original 0x346 status-2-or-4 transition, verified by
 one complete parent cold build and all 1,834 direct branch targets.
-See [native status CFG evidence](CHARACTEROBJECT_NATIVE_346_STATUS_CFG_F1146.md).
+See native status CFG evidence.
 No new whole-function exact bytes are claimed.
 F1147 restores seven more native 3E3/3E4 branch targets and all their
 instruction widths. Positive cooldown returns before meter recovery;
-[original PE hit/return evidence](CHARACTEROBJECT_NATIVE_HIT_RETURNS_CFG_F1147.md)
+original PE hit/return evidence
 corrects the historical F1132 interpretation.
 F1148 clears all 1,834 direct branch targets, preserving the strict and
 provisional cohorts; [native CFG proof](CHARACTEROBJECT_NATIVE_ALL_DIRECT_CFG_F1148.md)
@@ -69,14 +69,14 @@ F1183 continues the existing 60KB Reimu F652 parent in tracked source,
 restoring all eleven 12C–136 native states: 3,529 original interior bytes,
 1,001 mnemonic/width positions, 91 real fields and every actual branch
 destination checked. All 53 previous real prefix handlers are preserved.
-[Source and native proof](REIMU_FALLING_STATES_F1183.md) records the genuine
+Source and native proof records the genuine
 stage-3/stage-5 contradictory path, Reimu-only effect offsets and remaining
 623 GPR positions plus frame/stack debt. Whole exact credit remains zero.
 
 F1184 restores seven more Reimu states (59–63): 2,545 native interior bytes,
 713 x86 and 58 external fields. 5F/61 recover all GPR roles/widths; a real
 61 completion-else scope correction restores its original local exit target.
-[Native early-recovery proof](REIMU_EARLY_RECOVERY_STATES_F1184.md).
+Native early-recovery proof.
 The same tracked parent now emits 21,723B/5,881 x86 with 72 nondefault
 markers, still NONEXACT. Combined F1183/F1184 source progress is 18 native
 states /6,074 original interior B /1,714 x86 /149 fields, not new exact credit.
@@ -85,7 +85,7 @@ F1185 restores nine Reimu C8–D0 command/motion states: 3,379 original
 interior bytes /981 x86 /90 actual fields. All GPR roles, widths,
 non-GPR operands, branch destinations and external fields agree; the
 remaining eleven 12C–136 GPR differences also disappear in this parent.
-[Native command-state proof](REIMU_COMMAND_STATES_F1185.md) records the
+Native command-state proof records the
 actor-specific collision/repeat rules and 8-to-9 brake policy. The parent
 emits 24,967B/6,844 x86, with frame 0x40 /saved-this EBP-0xC still wrong
 and 63 nondefault markers. Combined new interiors span 9,453B/2,695 x86
@@ -97,7 +97,7 @@ branch targets and physical fields agree; 695 GPR positions and 20 actual
 MOV/FILD stack widths remain wrong. The native 190/191 two five-shot
 sequences retain per-shot angle/speed writes, unsigned resource guard,
 repeat limits and actor-specific coordinates. Plain ground-field equality
-corrects reversed x87 loads in 187/189. [Native scripted-attack proof](REIMU_SCRIPTED_ATTACKS_F1186.md).
+corrects reversed x87 loads in 187/189. Native scripted-attack proof.
 All 80 earlier nonmarker physical intervals retain their prior diagnostic
 results. The parent is now 29,020B/7,980 x86, frame 0x90 /saved-this
 EBP-0xC still wrong, 56 nondefault markers. Combined newly sourced states
@@ -108,7 +108,7 @@ interior bytes /2,160 x86 /212 fields. All counts, mnemonics, widths,
 non-GPR operands, native branch destinations and physical field targets
 agree, with 1,227 GPR positions and stack slots still wrong. The true
 19C animations 30/20/30 and 1A0 ranges 10/4/4, biases 5/2/2 and
-animations 30/30/20 remain distinct. [Native combo proof](REIMU_SCRIPTED_COMBOS_F1187.md).
+animations 30/30/20 remain distinct. Native combo proof.
 All 87 prior nonmarker intervals retain their diagnostic results. Parent
 36,942B/10,116 x86, frame 0x178 /saved-this EBP-0xC, 44 nondefault
 markers; recent 46 interiors total 21,770B/6,005 x86/552 fields. No new
@@ -119,7 +119,7 @@ bytes /1,277 x86 /106 fields. All interval lengths, mnemonics, widths,
 non-GPR operands, native branch targets and physical fields agree;
 873 GPR positions and stack slots remain wrong. Strict immediate landing
 returns in 1F4/1F6/1F7 differ from the continuing non-strict 1F5/1F8
-landing paths, which retain SetAux-before-counter order. [Native charge/leap proof](REIMU_CHARGED_ATTACKS_F1188.md).
+landing paths, which retain SetAux-before-counter order. Native charge/leap proof.
 All 99 prior nonmarker intervals retain their results. Parent emits
 41,335B/11,379 x86, frame 0x18C /saved-this EBP-0xC, 37 nondefault
 markers. Recent 53 interiors total 26,268B/7,282 x86/658 fields, with
@@ -131,7 +131,7 @@ branch targets and physical fields agree. Two AL-dependent decrement
 widths, 922 GPR positions and stack slots remain wrong. Distinct 252/253
 physical bodies, ground/air firing/query order, ±70 versus ±60 six-shot
 angles and actual no-sound/preparation 260 behavior are preserved.
-[Native special-action proof](REIMU_SPECIAL_ATTACKS_F1189.md).
+Native special-action proof.
 All 106 prior nonmarker intervals retain their results. Parent emits
 46,890B/12,933 x86, frame 0x21C /saved-this EBP-0xC, 22 nondefault
 markers. Recent 68 interiors total 32,048B/8,866 x86/817 fields; zero
@@ -143,7 +143,7 @@ actual branch destinations and physical fields agree; 880 GPR positions
 and stack slots remain wrong. A real X-lvalue correction restores native
 FILD/FSUBR instead of equal-length FLD/FISUB in four states. The selector's
 ==1/<0x43 tests, differing repeat limits, genuine 2C3 sound 6 and air
-landing returns are retained. [Native meter/effect proof](REIMU_METER_ATTACKS_F1190.md).
+landing returns are retained. Native meter/effect proof.
 All 121 prior nonmarker intervals retain their results. Parent emits
 52,151B/14,446 x86, frame 0x284 /saved-this EBP-0xC, 14 nondefault
 markers. Recent 76 interiors total 37,429B/10,395 x86/966 fields; zero
@@ -154,7 +154,7 @@ interior bytes /1,117 x86 /100 fields. Counts, mnemonics, non-GPR operands,
 branches and fields agree. 2F9 matches all GPR roles, with one still-short
 return JMP while six later markers remain; other new widths agree. The
 actual -6 drift constant and four distinct integer angle formulas remain.
-[Native counter-tail proof](REIMU_COUNTER_TAIL_F1191.md). All 129 prior
+Native counter-tail proof. All 129 prior
 nonmarker intervals and all 144 native physical handler orders are preserved.
 Parent 56,273B/15,547 x86, frame 0x2FC /saved-this EBP-0xC, six remaining
 case markers plus default/common-tail debt. Recent 84 interiors total
@@ -179,7 +179,7 @@ bytes and 1,824 field shapes remain unchanged; 337 decorated external names
 retain their native destinations. Five bounded first-divergence controls
 provide no GPR improvement: stage/capture/counter variants are byte-identical,
 borrowed rotation worsens x87 ordering, and a flat guard adds an instruction.
-[Native WORD ABI and negative evidence](REIMU_WORD_ABI_REGISTER_BOUNDARY_F1193.md).
+Native WORD ABI and negative evidence.
 The complete parent remains 61,000B/16,837 x86, with all stack/CFG/PE targets
 verified but 6,311 GPR /five-width debt. No new exact credit or mass replay.
 
@@ -232,7 +232,7 @@ build retains original 82,796B/22,721 x86, frame 0x720 /this EBP-0x64,
 all 7,432 EBP positions, 2,201 CODE destinations, 151 dense ordinals and
 1,126B DATA. All 2,352 COFF field shapes/addends/destinations agree;
 160 compiler-local names change with unchanged offsets.
-[Shared tail CFG proof](THIRD_FIGHTER_SHARED_TAIL_CFG_F1198.md).
+Shared tail CFG proof.
 The complete native audit also exposes still-unfixed **45 interior CFG
 and 26 non-GPR operand differences**, alongside 6,958 GPR /12 widths.
 Those rows are retained by native action in the local remaining-differences
@@ -242,7 +242,7 @@ Whole NONEXACT; accepted totals unchanged; no CI or corpus replay.
 F1199 repairs all 26 outstanding non-GPR operands in live 82KB 004AC040:
 17 strict native x87 comparisons and nine 2EF/2F0 random-angle subtraction
 constants. Actual FLD/FADD/FCOMP order and TEST/branch masks are reread.
-[Whole native operand proof](THIRD_FIGHTER_NATIVE_OPERANDS_F1199.md).
+Whole native operand proof.
 Only 26 candidate immediate bytes change; all 2,352 COFF records, stack,
 CODE/DATA geometry, references and debt rows are otherwise unchanged.
 Fresh /GX source remains 82,796B/22,721 x86, with **45 branch-target,
@@ -257,7 +257,7 @@ verifies **all 1,927 direct targets**, all non-GPR/EBP operands, 2,201 CODE
 references, 151 dense ordinals and full owned DATA. Only 48 candidate branch-
 displacement bytes change; 2,352 COFF shapes/addends/destinations stay the
 same, with 45 generated local names changed at unchanged offsets.
-[All direct CFG proof](THIRD_FIGHTER_ALL_DIRECT_CFG_F1200.md).
+All direct CFG proof.
 Whole NONEXACT: **6,958 GPR /12 widths** remain; first divergence is
 004ADEFA /whole ordinal 2,180 (native EAX vs source EDX). No new accepted
 bytes, accepted input change, full CI or corpus replay.
@@ -704,7 +704,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   the complete 58KB COFF CODE/DATA with 1,863 same physical
   relocations. Original action 0x63 still has 706B against
   generated 705B and wrong CMP register widths [18,61,84].
-  [F782 source-level negative controls](FIGHTER_MODE63_BORROWED_VIEWS_F782.md).
+  F782 source-level negative controls.
 - **Historical F781 giant validation checkpoint (not current)**: the original
   `005515BA` shared getter is reached by *exactly four* actual
   native early action 0/2/4/5 JMPs. F781 restores one real 8-B
@@ -716,14 +716,14 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   four real wrong GPR bytes), early 058/059/060/061/063 native
   cases and 943-B afterRET switch DATA. **Not exact**; 0x63
   still has an original register-width byte shortfall.
-  [F781 four-entry original native proof](FIGHTER_EARLY_SHARED_GETTER_F781.md).
+  F781 four-entry original native proof.
   Historical **F778**: original shared
   `00551598` switch fallback genuinely handles 239 native action IDs
   and now emits all native **32-B/10-x86** conditional reset grammar
   with two authentic PE/COFF call targets, reducing full fighter
   length deficit from 33 to **11 CODE B**. Four genuine GPR bytes,
   one original `0x63` width byte, and ten original tail CODE bytes
-  remain NONEXACT. [F778 PE native proof](FIGHTER_NATIVE_DEFAULT_F778.md).
+  remain NONEXACT. F778 PE native proof.
   Historical **F777** validation context (negative
   original-source regression guard, not a newly exact boss): a fresh
   current whole-parent C++ build checks complete original action 0x58
@@ -732,31 +732,31 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   and three real wrong register-width CMPs. All 68 genuine PE/COFF
   fields and whole 943-B afterRET DATA checked; prior F626 strict
   applies only to its older compiler context.
-  [F777 original register audit](FIGHTER_CURRENT_REGISTER_PHASE_AUDIT_F777.md).
+  F777 original register audit.
   Historical **F771** source context: original 2FB
   647-B/181-x86/17 physical PE/COFF fields now has no wrong
   opcode/width positions, after using actual typed borrowed X and
   opponent Y float members. Real operand bytes improve 119→111;
-  original 58KB boss remains NONEXACT. [F771 entire-source proof](FIGHTER_GROUNDED_VOLLEY_TYPED_F771.md).
+  original 58KB boss remains NONEXACT. F771 entire-source proof.
   Historical **F768** source context: native fighter
   2F8 928 CODE B/252 original x86/23 real PE fields now have zero
   wrong opcode/widths, via observed actor `+0x44` float member
   correctly emitting native signed-integer-first `FILD;FSUBR`.
   Real nonfield operand mismatches improve 182→166; giant remains
-  NONEXACT. [F768 original PE proof](FIGHTER_STORM_VOLLEY_TYPED_F768.md).
+  NONEXACT. F768 original PE proof.
   Historical **F767** source context: original fighter
   internal 2F9 1,367-B/381-x86/34 original PE-field game source now
   has zero mnemonic/width differences after correcting true opponent
   and actor X/Y borrowed float evaluation. Physical nonfield operand
   mismatches fall 265→249; still NONEXACT whole 58KB boss.
-  [F767 whole parent PE proof](FIGHTER_STORM_ANGLE_TYPED_F767.md).
+  F767 whole parent PE proof.
   Historical **F764** source context: original fighter
   2FA now emits 971 B/279 x86/31 genuine native PE/COFF fields
   with all original mnemonic/width positions restored by six
   authentic x87/borrowed float source corrections. **156 original
   operand machine bytes still differ**, so the entire 58KB boss
   remains NONEXACT, source 58,261/58,294 native CODE B.
-  [F764 native whole-parent proof](FIGHTER_APPROACH_VOLLEY_NATIVE_F764.md).
+  F764 native whole-parent proof.
   Earlier **F763** source context: original 00543210
   action 2DB now reproduces 1,024 complete original internal CODE B,
   290 x86 and 34 physical PE/COFF fields with no nonfield byte
@@ -764,7 +764,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   side-edge and absolute-distance predicates plus borrowed actor X
   correct both native status flags and GPR/x87 register order. The
   complete parent emits 58,269/58,294 native CODE B, still NONEXACT.
-  [F763 PE/COFF proof](FIGHTER_APPROACH_NATIVE_F763.md).
+  F763 PE/COFF proof.
   Earlier **F762** context: the true 58,294-B
   fighter original now emits 58,277 B in one complete C++ parent.
   Three complete original game actions 1F6/1F7/1F8 now produce 3,833
@@ -772,7 +772,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   original nontail bytes. Original source Contact short-circuit and two
   real borrowed +0x44 floating members restore FCOMP/MOV/FLD grammar.
   The enclosing giant stays NONEXACT; 943-B afterRET DATA unchanged.
-  [F762 native original proof](FIGHTER_TYPED_RETURN_CROSS_CASE_F762.md).
+  F762 native original proof.
   Historical **F760** source context, building on F759/F752:
   original fighter CC/CD/CE is now natural C++ in the complete
   58KB parent, recovering 1,264 genuine CODE B/371 x86/31 typed
@@ -780,7 +780,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   Eight later whole-case contexts including original 190 are now
   nonfield-exact outside their genuine shared-tail JMPs, with 121
   original whole-parent CODE bytes still missing.
-  [F760 original physical whole-parent proof](FIGHTER_COMPLEX_STAGE_CC_CE_F760.md).
+  F760 original physical whole-parent proof.
   The prior **F759** snapshot is still historical:
   original fighter `00543210` four action placeholders `C8–CB` now
   restored in the complete VC7.1 C++ parent with **1,804 original
@@ -788,60 +788,60 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   nonfield differences except original external parent-tail JMPs.
   Four real FILD locals recover 16 native stack bytes for downstream
   cases; parent remains NONEXACT.
-  [Original F759 whole-parent proof](FIGHTER_C8_CB_WHOLE_PARENT_F759.md).
+  Original F759 whole-parent proof.
   Prior F752 original context:
   original `00543210` 05D/05E direct memory `FCOMP` grammar restored
   from real borrowed actor/opponent `+0x44` typed fields in one entire
   native-shaped VC7.1 parent, with original saved `this EBP−0x44`.
   These are still *internal switch-case source, NOT accepted whole
   game-function CODE*. Source 059 and 060/061 GPR differences remain.
-  Reproduce from [F752 native/PE proof](FIGHTER_BORROWED_POSITION_F752.md).
+  Reproduce from F752 native/PE proof.
 - **The currently most recent exact whole function is F780**, original
   R011 ordinary sprite quad `0040C9A0`: complete 115 original CODE B,
   37 native x86, four physically verified typed PE/COFF calls
   including excluded native STL size helper; 1/1 targeted cold exact.
-  [F780 full native source evidence](SPRITE_ORDINARY_QUAD_NATIVE_F780.md).
+  F780 full native source evidence.
   Historical **F779** was original
   `0040CA20` projected textured quad, 92 complete CODE B/34 native x86
   and two original REL32 calls, verified by one-unit cold replay.
   Explicit four-byte alignment of a real 132-B borrowed quad copy
   gives native `sub esp,88h` instead of a speculative padding slot.
-  [F779 native source and physical proof](SPRITE_PROJECTED_QUAD_NATIVE_F779.md).
+  F779 native source and physical proof.
   Historical **F776** is original
   R011 variant/mode sprite `0040CEF0`, 994 full native CODE B/269
   x86 and 15 genuine typed PE fields, 1/1 selected cold exact.
-  [F776 complete original source proof](SPRITE_VARIANT_NATIVE_F776.md).
+  F776 complete original source proof.
   Historical **F775** original
   R011 scaled/rotated sprite `0040D2E0`, 970 original CODE B/257 x86
   and 14 native PE/COFF fields, 1/1 selected cold exact.
-  [F775 complete original proof](SPRITE_SCALED_NATIVE_F775.md).
+  F775 complete original proof.
   Historical **F770** original
   R017 shared texture allocator `0040B000` 261 native CODE B/79 x86
   and 11 physical PE fields, 1/1 selected cold exact.
-  [F770 original PE/COFF and lexical lifetime proof](TEXTURE_MANAGER_SHARED_NATIVE_F770.md).
+  F770 original PE/COFF and lexical lifetime proof.
   Historical **F769** original
   R017 texture slot allocator `0040B110`, 184 CODE B/56 x86/8 true
   PE fields, 1/1 cold exact after restoring real 44-B local element.
-  [F769 original whole PE proof](TEXTURE_MANAGER_SLOTS_NATIVE_F769.md).
+  F769 original whole PE proof.
   Previous F766 original
   R011 mirrored opaque sprite `0040D6B0`, **212 CODE B/66 native x86
   /6 genuine original PE fields**, selected 1/1 cold exact.
-  [F766 original mirror full proof](SPRITE_OPAQUE_MIRRORED_F766.md).
+  F766 original mirror full proof.
   The previous F765 original R011 SpriteDrawing opaque `0040D790` with **171 native CODE B,
   52 x86, 6 physical PE/COFF fields**, 1/1 selected cold exact.
-  [F765 original whole source/lifetime proof](SPRITE_OPAQUE_NATIVE_F765.md).
+  F765 original whole source/lifetime proof.
   The preceding F760 original R016-authored audio archive entry queue `00407B80` with **283 native
   CODE B /76 original x86 /27 PE/COFF fields** and one-unit cold exact.
-  [F760 archive-entry whole original proof](AUDIO_QUEUE_ARCHIVE_ENTRY_F760.md).
+  F760 archive-entry whole original proof.
   Paired F758 original R016-authored audio file queue `00407A50` with **289 native CODE B, 77
   x86 and 26 genuine physical PE/COFF fields**, one-unit cold exact.
-  [F758 original source/lifetime/PE proof](AUDIO_QUEUE_FILE_F758.md).
+  F758 original source/lifetime/PE proof.
   Paired F755 original R015-authored audio client destructor `00407270` with **292 CODE B / 82
   native x86 / 24 physical PE relocations** and one-unit cold replay.
-  [F755 whole original proof](AUDIO_STREAM_CLIENT_RELEASE_F755.md). Paired F753
+  F755 whole original proof. Paired F753
   original R015-authored AudioStream `004071C0` 161 B/42 x86/18 original COFF
   fields with true `/GX` EH lifetime and independently checked
-  cleanup/unwind carriers. [F753 whole original proof](AUDIO_STREAM_CLIENT_ACQUIRE_F753.md).
+  cleanup/unwind carriers. F753 whole original proof.
 - Historical accepted targets such as F339 archive, F326 replay, F319
   font and F347 SpriteSequence rendering **stay accepted**. Ignore
   earlier provisional negatives that were superseded by their later
@@ -858,7 +858,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   alternatives remain 102 or 108/115 nonfield
   matched after all 14 original PE refs checked.
   None accepted exact.
-  [F798 full native teardown evidence](ARCHIVE_NATIVE_LOOP_TEARDOWN_F798.md).
+  F798 full native teardown evidence.
 - **F818 complete Scene destructor typed-owner negative proof:**
   seven original-shaped VC7.1 full
   0043B0B0 248B authored destructor
@@ -874,7 +874,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   adds 6B/2-x86 and wrong native frame
   saved-this slot. Entire 248B remains
   nonexact, no credited original CODE.
-  [F818 original PE typed-view result](SCENE_COMPLETE_BORROWED_OWNER_F818.md).
+  F818 original PE typed-view result.
 - **F844 actual native original grounded 0x130 in current 46KB fighter:**
   real original 202B/58 x86/5
   physical PE fields, not other
@@ -892,7 +892,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   Shared default still four actual
   GPR differences, whole native
   giant NONEXACT.
-  [F844 selected original physical PE](SCRIPTED_FIGHTER_GROUNDED_130_F844.md).
+  F844 selected original physical PE.
 - **F865 original 1A0 final separate state of five-case 980B switch region:**
   real 235B/67-x86/5 original
   physical PE fields with
@@ -926,7 +926,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   GPR negatives checked.
   No accepted whole callable
   exact CODE credit.
-  [F865 original whole-source PE proof](SCRIPTED_FIGHTER_GROUND_SCALE_1A0_F865.md).
+  F865 original whole-source PE proof.
 - **F864 full original 248B Scene named resource free locals:**
   twelve complete VC7.1 /GX
   source experiments test real
@@ -944,7 +944,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   Original five EBP temp
   slots remain wrong. No
   accepted whole CODE.
-  [F864 physical proof](SCENE_THREE_REAL_NAMED_POINTERS_F864.md).
+  F864 physical proof.
 - **F906 first whole-fighter native GPR mismatch:**
   Original 46,755B/
   13,230-x86 fighter
@@ -971,7 +971,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   genuine VC7.1 source
   variations compiled,
   no improvement.
-  [F906 original PE proof](FIGHTER_FIRST_GPR_DIVERGENCE_F906.md).
+  F906 original PE proof.
 - **F905 original native 252/253/254 short byte-SUB register phase:**
   Native 260/260/224B,
   72/72/63-x86, true
@@ -996,7 +996,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   six -1B and 254 six
   +1B original PE
   fields stay shifted.
-  [F905 original PE proof](SCRIPTED_FIGHTER_BYTE_REG_PHASE_F905.md).
+  F905 original PE proof.
 - **F904 authored WinMain scene/short stage lifetime grouped source controls:**
   43 complete original
   startup sources using
@@ -1018,7 +1018,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   still source -180/-17C
   and full authored
   WinMain NONEXACT.
-  [F904 WinMain native research](WINMAIN_REAL_STAGE_OWNER_LIFETIMES_F904.md).
+  F904 WinMain native research.
 - **F903 29 native mode63 typed borrowed-owner and short-circuit C++ controls:**
   Real original 417B/
   109x86/7 PE fields.
@@ -1044,7 +1044,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   targets independently
   checked in original
   whole C++ COFF.
-  [F903 PE evidence](SCRIPTED_FIGHTER_MODE63_TYPED_GPR_F903.md).
+  F903 PE evidence.
 - **F902 native 1FD owner+60 typed short/float Y genuine lvalues:**
   14 complete normal
   VC7.1 original fighter
@@ -1072,7 +1072,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   compare with original
   386B/107x86. Whole
   giant still NONEXACT.
-  [F902 original PE proof](SCRIPTED_FIGHTER_1FD_TYPED_OWNER_LVALUES_F902.md).
+  F902 original PE proof.
 - **F901 native complete 31B/31C tail and full 13230-x86 opcode-width audit:**
   The original fighter
   is 46,755B/13,230x86;
@@ -1121,7 +1121,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   rechecked. Still no
   independently callable
   whole exact CODE credit.
-  [F901 physical PE whole proof](SCRIPTED_FIGHTER_COMPLETE_TAIL_AND_WIDTH_AUDIT_F901.md).
+  F901 physical PE whole proof.
 - **F900 real independent ArchiveCatalog 171B destructor grouped live-owner test:**
   25 complete pinned
   VC7.1 normal sources
@@ -1145,7 +1145,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   -C/-8/-10 not recovered,
   entire authored small
   function NONEXACT.
-  [F900 PE](ARCHIVE_REAL_GROUPED_LIFETIMES_F900.md).
+  F900 PE.
 - **F899 original 2F8 native 1151B and previous 2F0 restoration:**
   Real 2F8 1,151
   CODE B/316 x86/
@@ -1174,7 +1174,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   nonfield bytes checked.
   Original whole giant
   still NONEXACT.
-  [F899 original PE](SCRIPTED_FIGHTER_NATIVE_2F8_F899.md).
+  F899 original PE.
 - **F898 native physical 2F0 828B/229x86 staged double gravity and physical 2EA repair:**
   Actual original 2F0
   828B/229x86/19 typed
@@ -1211,7 +1211,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   All 73 prior cases,
   901B packed DATA and
   native getter checked.
-  [F898 physical native PE](SCRIPTED_FIGHTER_NATIVE_2F0_F898.md).
+  F898 physical native PE.
 - **F897 four 2E7..2EA 555B/167x86/15 PE fields each, final short-JMP honesty:**
   Four real staged sprite3E
   signed facing*65 float
@@ -1239,7 +1239,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   operands verified and
   73 prior original cases
   plus 901B tables checked.
-  [F897 PE](SCRIPTED_FIGHTER_FOUR_2E7_2EA_F897.md).
+  F897 PE.
 - **F896 two complete original 2E5/2E6 random cascade sibling cases:**
   each 374B/102 original
   x86/12 actual physical
@@ -1268,7 +1268,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   901B packed DATA tables
   checked; original getter
   30/34 nonrelocation B.
-  [F896 original PE](SCRIPTED_FIGHTER_PAIRED_2E5_2E6_F896.md).
+  F896 original PE.
 - **F895 native original 2E4 409B/114x86/11 typed PE fields:**
   Borrowed ownerX-thisX
   true float Abs412D90
@@ -1288,7 +1288,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   original inner cases and
   901B packed DATA tables;
   whole fighter NONEXACT.
-  [F895 original PE](SCRIPTED_FIGHTER_PHYSICAL_2E4_F895.md).
+  F895 original PE.
 - **F894 actual original 2DD physical boundary and full EAX random-return ABI:**
   Numeric 2DE maps to
   common DEFAULT 52CB25
@@ -1312,7 +1312,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   remain, all 69 prior game
   cases and five packed
   901B tables verified.
-  [F894 original physical proof](SCRIPTED_FIGHTER_PHYSICAL_2DD_F894.md).
+  F894 original physical proof.
 - **F893 actual original 2DC 660B/188-x86/17 original PE fields:**
   Ground contact native
   POS48+POS54 <= ground
@@ -1335,7 +1335,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   five 901B packed tables
   verified. Whole fighter
   NONEXACT.
-  [F893 native PE proof](SCRIPTED_FIGHTER_NATIVE_STAGE_2DC_F893.md).
+  F893 native PE proof.
 - **F892 original 2DB 556B/162x86 borrowed-owner distance and guarded random:**
   native 556B/162 x86/
   13 real physical PE
@@ -1365,7 +1365,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   five 901B afterRET tables
   and getter 34/34 native
   nonfield bytes reverified.
-  [F892 native PE proof](SCRIPTED_FIGHTER_NATIVE_STAGE_2DB_F892.md).
+  F892 native PE proof.
 - **F891 original 2C3 69B/20x86/4 PE calls and whole getter GPR context:**
   native real field+4E0
   zero selects SetAction0
@@ -1389,7 +1389,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   Never freeze register
   phase across whole-parent
   C++ code changes.
-  [F891 native proof](SCRIPTED_FIGHTER_NATIVE_2C3_F891.md).
+  F891 native proof.
 - **F890 complex original 2C2 2274B whole inner source, eight real unrolled projectile phases:**
   native 0052A468 2,274B/
   608 x86/50 physically
@@ -1424,7 +1424,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   bytes plus 3 calls verified.
   Whole original 46755B
   still nonexact.
-  [F890 original physical PE proof](SCRIPTED_FIGHTER_FULL_NATIVE_2C2_F890.md).
+  F890 original physical PE proof.
 - **F889 independent Scene 248B/75x86 real 1+2/2+1 free locals:**
   29 complete normal VC7.1
   /Od /GX authored
@@ -1451,7 +1451,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   source -20/-1C.
   No whole exact credit,
   no mass replay.
-  [F889 original evidence](SCENE_MIXED_REAL_FREE_POINTER_OWNERS_F889.md).
+  F889 original evidence.
 - **F888 original 2C0/2C1 guarded sprite345 and shared getter register restoration:**
   Native 288B/85x86/
   11 PE fields and 276B/
@@ -1485,7 +1485,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   physically verified.
   Still NO whole exact
   giant CODE credited.
-  [F888 native source proof](SCRIPTED_FIGHTER_NATIVE_2C0_2C1_F888.md).
+  F888 native source proof.
 - **F887 native 2BF original fully shaped 473B/138x86/15 PE fields:**
   actual stage0 writes
   short+80=0x63 THEN =1,
@@ -1510,7 +1510,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   STILL whole original
   46,755B NONEXACT, no
   internal case CODE credit.
-  [F887 original PE proof](SCRIPTED_FIGHTER_NATIVE_2BF_F887.md).
+  F887 original PE proof.
 - **F886 original 2BE native 461B C++ float-to-short conversion and raw Y:**
   whole real 461B/136
   x86/15 physical PE
@@ -1540,7 +1540,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   and five packed 901B
   tables checked. No
   new exact whole CODE.
-  [F886 original PE proof](SCRIPTED_FIGHTER_NATIVE_STAGE_2BE_F886.md).
+  F886 original PE proof.
 - **F885 original 2BD 855B early borrowed-owner X copy and 24 PE fields:**
   full 855 native CODE B/
   239x86/24 typed original
@@ -1563,7 +1563,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   native cases/901B original
   afterRET tables/getter PE
   destinations rechecked.
-  [F885 native PE proof](SCRIPTED_FIGHTER_NATIVE_STAGE_2BD_F885.md).
+  F885 native PE proof.
 - **F884 original complex giant 2BC full 803B staged movement and x87:**
   entire original handler
   803B/228x86/22
@@ -1593,7 +1593,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   packed DATA tables
   rechecked. No whole
   exact CODE credit.
-  [F884 original 803B PE evidence](SCRIPTED_FIGHTER_NATIVE_COMPLEX_2BC_F884.md).
+  F884 original 803B PE evidence.
 - **F883 physical original 259 handler next is action2BC, NOT numeric 25A:**
   25A is a DEFAULT
   handler at 52CB25;
@@ -1621,7 +1621,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   giant JMP bytes wrong.
   No independent callable
   original exact CODE.
-  [F883 native boundary evidence](SCRIPTED_FIGHTER_PHYSICAL_259_F883.md).
+  F883 native boundary evidence.
 - **F882 original independent 248B Scene texture pointer ownership:**
   17 genuinely used
   complete VC7.1 /GX
@@ -1647,7 +1647,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   mismatches. Whole Scene
   still NONEXACT, zero
   accepted exact CODE.
-  [F882 original PE evidence](SCENE_TEXTURE_OWNER_LIFETIME_F882.md).
+  F882 original PE evidence.
 - **F881 original 258 narrow facing and mixed float-X/raw-Y projectile:**
   actual native 206B/
   60 x86/six genuine
@@ -1676,7 +1676,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   negatives rechecked.
   No original whole exact
   CODE credit.
-  [F881 native PE evidence](SCRIPTED_FIGHTER_FLOATX_258_F881.md).
+  F881 native PE evidence.
 - **F880 original consecutive 255/256/257 native 16-bit stage8 auxiliary:**
   complete original
   258/186/258B, 75/55/75
@@ -1699,7 +1699,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   GPR errors rechecked.
   Original entire fighter
   still NONEXACT.
-  [F880 native proof](SCRIPTED_FIGHTER_STAGE255_257_F880.md).
+  F880 native proof.
 - **F879 original 252/253/254 native byte decrement GPR phase:**
   native full case sizes
   260/260/224B, source
@@ -1728,7 +1728,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   and all five original
   901B packed DATA
   tables physically checked.
-  [F879 native proof](SCRIPTED_FIGHTER_STAGE_252_254_F879.md).
+  F879 native proof.
 - **F878 original game 201 genuine separate stage5 tests/physical PE gravity:**
   267B/80-x86/eight
   true native PE fields
@@ -1755,7 +1755,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   and five original 901B
   packed tables verified.
   No exact whole CODE.
-  [F878 native evidence](SCRIPTED_FIGHTER_STAGE_201_F878.md).
+  F878 native evidence.
 - **F877 original 200 six-stage owner wave x87 FSUBR source:**
   native full 634B/177x86/
   ten real physical PE
@@ -1784,7 +1784,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   1FD one-byte CMP negative
   retained. No accepted
   whole callable CODE credit.
-  [F877 native source proof](SCRIPTED_FIGHTER_OWNER_WAVE_200_F877.md).
+  F877 native source proof.
 - **F876 standalone Archive original 171B inline-helper source lifetime negatives:**
   ten complete VC7.1 /Od
   /Ob0 normal destructor
@@ -1810,7 +1810,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   stack locations. Still
   NONEXACT independent
   original authored CODE.
-  [F876 native PE proof](ARCHIVE_INLINE_RETURN_BOUNDARIES_F876.md).
+  F876 native PE proof.
 - **F875 original 1FF six associated-owner stage actions:**
   full 533B/149 x86/
   nine true PE calls in
@@ -1832,7 +1832,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   CMP defect plus all five
   901B packed tables checked.
   No accepted exact whole CODE.
-  [F875 original PE proof](SCRIPTED_FIGHTER_OWNER_STAGES_1FF_F875.md).
+  F875 original PE proof.
 - **F874 real 1FD/1FE borrowed owner CFG and register width:**
   original 1FD 386B/107-x86
   and 1FE 392B/107-x86,
@@ -1859,7 +1859,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   source EAX 5B at ordinal99.
   Both nonexact, zero whole
   callable CODE accepted.
-  [F874 original source proof](SCRIPTED_FIGHTER_BORROWED_OWNER_1FD_1FE_F874.md).
+  F874 original source proof.
 - **F873 real 1FB/1FC two physics-before-stage0 recovery states:**
   each original 253B/
   70-x86/six original
@@ -1886,7 +1886,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   tables and getter
   34/34 nonrelocation
   bytes rechecked.
-  [F873 native proof](SCRIPTED_FIGHTER_RECOVERY_PAIR_1FB_1FC_F873.md).
+  F873 native proof.
 - **F872 real 1F9/1FA native float volley pair:**
   each original 227B/65x86/
   seven typed physical PE
@@ -1913,7 +1913,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   physically verified,
   native getter 34/34
   nonfield bytes +3 calls.
-  [F872 real PE proof](SCRIPTED_FIGHTER_FLOAT_VOLLEY_PAIR_1F9_1FA_F872.md).
+  F872 real PE proof.
 - **F871 raw original PE xrefs of three whole C++ byte-exact unknown-origin leaves:**
   native 4135F0 40B,
   454C00 24B and
@@ -1940,7 +1940,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   unproven. Keep all three
   unknown/review, zero
   new accepted whole CODE.
-  [F871 full original PE source proof](UNKNOWN_LEAF_STATIC_PE_CALLER_AUDIT_F871.md).
+  F871 full original PE source proof.
 - **F870 genuine 1F8 nested global-first FUCOMPP:**
   469 native B/143 x86/
   15 physically typed PE
@@ -1963,7 +1963,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   901B packed DATA tables
   and shared getter 34/34
   nonfield bytes are verified.
-  [F870 native x87 source](SCRIPTED_FIGHTER_NESTED_FUCOMPP_1F8_F870.md).
+  F870 native x87 source.
 - **F869 original 1F7 stage4–6 conditional action and sprite337:**
   complete original 307B/90-x86/
   11 native PE fields inside
@@ -1983,7 +1983,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   and getter four true GPR
   negatives rechecked. Still
   nonexact whole callable CODE.
-  [F869 original PE proof](SCRIPTED_FIGHTER_CONDITIONAL_1F7_F869.md).
+  F869 original PE proof.
 - **F868 original 1F6 special U8 stage guard and native mixed-coordinate projectile:**
   actual 372B/111 x86/12
   physical PE fields in
@@ -2011,7 +2011,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   34/34 nonfield bytes
   rechecked. No original
   whole-callable exact CODE.
-  [F868 physical proof](SCRIPTED_FIGHTER_CONDITIONAL_1F6_F868.md).
+  F868 physical proof.
 - **F867 real original 1F5 multi-stage 628B fighter state:**
   628B/195 original x86/
   17 genuine PE original fields
@@ -2036,7 +2036,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   34/34 native nonfield
   bytes +3 PE calls verified.
   No accepted exact whole CODE.
-  [F867 physical proof](SCRIPTED_FIGHTER_STAGED_1F5_F867.md).
+  F867 physical proof.
 - **F866 true native 1F4 448B double projectile and narrow facing parameter:**
   original 448B/136 x86/
   14 physically typed PE
@@ -2059,7 +2059,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   All 37 earlier native original
   game cases and five packed
   901B afterRET tables checked.
-  [F866 native source](SCRIPTED_FIGHTER_DOUBLE_PROJECTILE_1F4_F866.md).
+  F866 native source.
 - **F865 native 1A0 original x87 float multiply and physically correct DIR32 fields:**
   235B/67-x86/five native
   original PE fields in full
@@ -2079,7 +2079,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   and 46B getter real GPR
   negatives remain checked.
   No accepted callable exact CODE.
-  [F865 original physical PE proof](SCRIPTED_FIGHTER_SUSTAIN_1A0_F865.md).
+  F865 original physical PE proof.
 - **F864 independently callable Scene 248B destructor, three real named free pointer locals:**
   twelve complete VC7.1 source
   candidates: original 248B/
@@ -2098,7 +2098,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   -0x14/-0x10 slots remain
   unrecovered. No standalone
   original exact CODE credit.
-  [F864 strict native Scene proof](SCENE_THREE_REAL_NAMED_RELEASE_F864.md).
+  F864 strict native Scene proof.
 - **F863 actual 19C/19E short state pair in one giant parent:**
   two distinct original
   122B/35-x86/3-PE-call
@@ -2120,7 +2120,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   are not independent
   callable leaf functions,
   no exact CODE credit.
-  [F863 physical source](SCRIPTED_FIGHTER_SHORT_19C_19E_F863.md).
+  F863 physical source.
 - **F862 full 19A native grounded/float-source and strict cropped-false-positive:**
   actual 302B/86 x86/eight
   original PE fields in
@@ -2141,7 +2141,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   Earlier 33 genuine source
   case PE fields and all five
   901B tables reverified.
-  [F862 original case proof](SCRIPTED_FIGHTER_STAGE_19A_F862.md).
+  F862 original case proof.
 - **F861 native original 198 first of five distinct 980B-region switch states:**
   physical first state is
   199B/60-x86/7 genuine
@@ -2167,7 +2167,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   nonrelocation bytes +
   3 true PE calls recovered.
   Still nonexact whole.
-  [F861 physical source](SCRIPTED_FIGHTER_STAGE_198_F861.md).
+  F861 physical source.
 - **F860 native 196 float shot with actual original callback order:**
   199B/60-x86/seven physically
   typed PE fields restored in
@@ -2186,7 +2186,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   Previous 31 original case
   sources and five afterRET
   901B tables rechecked.
-  [F860 original PE proof](SCRIPTED_FIGHTER_STAGE_196_F860.md).
+  F860 original PE proof.
 - **F859 native 194 ground return and invalid sibling Reset discovery:**
   real full original 297B/
   86-x86/7 PE fields vs
@@ -2208,7 +2208,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   native cases and five 901B
   DATA tables checked; no
   adopted exact whole CODE.
-  [F859 target proof](SCRIPTED_FIGHTER_GROUND_194_F859.md).
+  F859 target proof.
 - **F858 selected actor 192 current native stage4 sprite:**
   original full 217B/64 x86/
   6 genuine PE call fields in one
@@ -2226,7 +2226,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   rechecked; current getter four
   real GPR byte negatives. No
   accepted original whole CODE.
-  [F858 real source proof](SCRIPTED_FIGHTER_STAGE_192_F858.md).
+  F858 real source proof.
 - **F857 original fighter 191 signed-float projectile:**
   true 166B/53-x86/five physical
   original PE fields in one full
@@ -2247,7 +2247,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   Getter 46B 34/34 original
   nonrelocation plus 3 PE calls.
   No accepted whole callable CODE.
-  [F857 native source proof](SCRIPTED_FIGHTER_FLOATSHOT_191_F857.md).
+  F857 native source proof.
 - **F856 original 190 stage3 sprite and original CALL order:**
   217 native B/64-x86/6 real
   original PE call fields in
@@ -2269,7 +2269,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   getter again 34/34 native
   nonrelocation bytes +3 calls.
   Whole giant NONEXACT.
-  [F856 true native source](SCRIPTED_FIGHTER_STAGE_190_F856.md).
+  F856 true native source.
 - **F855 original 18B stage7 volley and native GPR phase:**
   real whole 353B/99-x86/
   7 physical PE fields inside
@@ -2289,7 +2289,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   cases and five packed 901B
   tables rechecked. No adopted
   whole callable CODE credit.
-  [F855 native source](SCRIPTED_FIGHTER_VOLLEY_18B_F855.md).
+  F855 native source.
 - **F854 small authored original Archive 171B delete value categories:**
   sixteen original whole C++ TUs
   with genuine used resource
@@ -2305,7 +2305,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   177B/53 x86, two more
   183/185B, nonnative whole.
   No exact callable CODE credited.
-  [F854 original PE proof](ARCHIVE_NATIVE_RESOURCE_VALUE_CATEGORIES_F854.md).
+  F854 original PE proof.
 - **F853 current 18A x87 float source operand order:**
   250 original B/71 x86/six
   native PE fields in one full
@@ -2320,7 +2320,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   GPR-affected and 20 older
   PE-backed cases plus five 901B
   packed DATA tables rechecked.
-  [F853 original PE proof](SCRIPTED_FIGHTER_FLOATSHOT_18A_F853.md).
+  F853 original PE proof.
 - **F852 actual 0x189 native x87 bounce:**
   entire native 381B/107 x86/11
   original PE fields in one
@@ -2340,7 +2340,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   and five packed 901B tables
   checked. No accepted callable
   entire original CODE.
-  [F852 original selected PE proof](SCRIPTED_FIGHTER_BOUNCE_189_F852.md).
+  F852 original selected PE proof.
 - **F851 real original 188 ground state:**
   native 214B/61-x86/6 real typed
   PE fields, source actor transition
@@ -2358,7 +2358,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   and five 901B packed tables
   remain verified; no whole-code
   exact credit.
-  [F851 native PE source proof](SCRIPTED_FIGHTER_GROUND_188_F851.md).
+  F851 native PE source proof.
 - **F850 real 186/187 grounded game actions in current fighter:**
   original 250B/74 x86/7
   physical PE fields and
@@ -2381,7 +2381,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   34/34 nonrelocation bytes
   plus 3 PE calls recovered.
   Whole giant still nonexact.
-  [F850 PE source proof](SCRIPTED_FIGHTER_GROUND_186187_F850.md).
+  F850 PE source proof.
 - **F849 original 0x136 physical ground/sprite and GPR negative:**
   native real 321B/95 x86/ten
   typed original PE fields in
@@ -2402,7 +2402,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   tables and default's four true
   register negative bytes checked.
   No exact whole-function CODE.
-  [F849 native PE/register proof](SCRIPTED_FIGHTER_GROUND_PHYSICS_136_F849.md).
+  F849 native PE/register proof.
 - **F848 original 248B Scene destructor resource member access controls:**
   ten complete pinned VC7.1 /GX
   destructor source builds. Five
@@ -2417,7 +2417,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   253–281B and 13–18 PE fields.
   Native five temp slots remain wrong,
   no accepted exact authored CODE.
-  [F848 native owner proof](SCENE_REAL_RESOURCE_MEMBER_ACCESS_F848.md).
+  F848 native owner proof.
 - **F847 native 134/135 original projectile cases:**
   each 278B/82 x86/seven
   genuine physical PE fields in
@@ -2433,7 +2433,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   **34/34 nonrelocation bytes**
   and three PE calls preserved,
   plus five 901B jump tables.
-  [F847 physical original PE proof](SCRIPTED_FIGHTER_PROJECTILES_134135_F847.md).
+  F847 physical original PE proof.
 - **F846 original 0x133 side-step restores full native default GPR:**
   270 whole native inner B/78 x86/6
   original PE fields in one selected
@@ -2451,7 +2451,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   plus 3 real PE calls, naturally
   from new preceding gameplay source.
   Whole original giant NONEXACT.
-  [F846 game PE proof](SCRIPTED_FIGHTER_SIDESTEP_133_F846.md).
+  F846 game PE proof.
 - **F845 original fighter 0x131 grounded recovery:**
   independently bounded real 202B/
   58-x86/5 genuine original PE fields
@@ -2466,7 +2466,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   12C-12F, eleven C8-D2 native
   cases and 5 packed 901B tables.
   Entire original remains nonexact.
-  [F845 actor native proof](SCRIPTED_FIGHTER_GROUNDED_131_F845.md).
+  F845 actor native proof.
 - **F844 original actor 0x130 grounded recovery:**
   selected native 202B/58-x86/5
   original physical PE fields in
@@ -2482,7 +2482,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   The 46B default retains four
   honest non-PE GPR byte negatives;
   no whole original exact credit.
-  [F844 native source](SCRIPTED_FIGHTER_GROUNDED_130_F844.md).
+  F844 native source.
 - **F843 actual selected actor 12F native recovery:**
   complete original 207B/59 x86/six real
   original PE fields, not the other
@@ -2497,7 +2497,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   Only 2 original giant-epilogue
   JMP machine bytes differ in 12F.
   No full callable exact CODE credit.
-  [F843 physical game case](SCRIPTED_FIGHTER_FALLING_12F_F843.md).
+  F843 physical game case.
 - **F842 real 12C/12D/12E original falling recovery in growing fighter:**
   selected actor original 207/219/207 native
   interior B, 59/61/59 x86, six original
@@ -2513,7 +2513,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   rechecked. 46B default getter rotates
   back to four original GPR byte differences.
   No independent original callable CODE credit.
-  [F842 physical target proof](SCRIPTED_FIGHTER_FALLING_RECOVERY_F842.md).
+  F842 physical target proof.
 - **F841 selected original CE completes complex CC/CD/CE trio:**
   full native 387B/113 x86/8
   genuine PE fields within new
@@ -2531,7 +2531,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   nonrelocation and five 901B
   packed tables reverified.
   Original giant still NONEXACT.
-  [F841 selected native source proof](SCRIPTED_FIGHTER_COMPLEX_CE_F841.md).
+  F841 selected native source proof.
 - **F840 selected original CD stage/collision source:**
   387B/113 x86/8 physical original
   PE references recovered in one
@@ -2547,7 +2547,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   default 46B 34/34 plus five
   901B packed tables rechecked.
   Entire original still NONEXACT.
-  [F840 native game PE proof](SCRIPTED_FIGHTER_COMPLEX_CD_F840.md).
+  F840 native game PE proof.
 - **F839 selected original CC fixes old source virtual-call CFG:**
   native 428B/126 x86/10 actual
   PE fields reconstructed in whole
@@ -2565,7 +2565,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   46B default 34/34 nonrelocation
   and 901B packed DATA checked.
   Giant nonexact.
-  [F839 native PE reconstruction](SCRIPTED_FIGHTER_COMPLEX_CC_F839.md).
+  F839 native PE reconstruction.
 - **F838 actual full Scene object release declaration and member order:**
   eight original 248B/75-x86/12
   physical PE-field normal VC7.1
@@ -2579,7 +2579,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   but worsens to 189/200; native
   texture/deleting temp slots
   remain wrong. No exact CODE.
-  [F838 true native PE proof](SCENE_RELEASE_DECLARATION_F838.md).
+  F838 true native PE proof.
 - **F837 selected complete original CB restores four downstream native register phases:**
   actual native 496B/141 x86/12
   physical original PE fields; true
@@ -2597,7 +2597,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   Five native 901B packed afterRET
   jump tables reverified. Original
   entire 46KB game still NONEXACT.
-  [F837 physical PE source proof](SCRIPTED_FIGHTER_FOURWAY_CB_F837.md).
+  F837 physical PE source proof.
 - **F836 actual original 0xCA in 46KB actor:**
   418B/121 x86/11 true physical PE
   references, NOT other actor F759
@@ -2612,7 +2612,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   rotates default getter 4 native
   nonfield GPR bytes again. Giant still
   NONEXACT, zero callable CODE credit.
-  [F836 native full source](SCRIPTED_FIGHTER_FOURWAY_CA_F836.md).
+  F836 native full source.
 - **F835 complete original 171B Archive lexical scopes:**
   15 genuine whole VC7.1 original destructor
   probes. Thirteen nested/split source
@@ -2624,7 +2624,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   declared before loop worsens to 102/115;
   used reference adds 8B/3 x86, nonnative
   whole source. No accepted exact CODE.
-  [F835 original PE lifetime proof](ARCHIVE_LEXICAL_SCOPES_F835.md).
+  F835 original PE lifetime proof.
 - **F834 major 46KB giant native C8 case and five downstream GPR recoveries:**
   actual original 657-B/190-x86/17-real-PE-field
   C8 restored with natural ++signed-short native
@@ -2644,7 +2644,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   jump tables independently verified from new COFF.
   Whole 46,755B game NONEXACT, zero callable exact
   case or DATA adoption.
-  [F834 full PE proof](SCRIPTED_FIGHTER_FULL_C8_F834.md).
+  F834 full PE proof.
 - **F833 selected 0xC9 original 46KB storm case:**
   true native 279B/86-x86/11 typed
   original PE fields in one new
@@ -2658,7 +2658,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   still differ while original C8 is
   missing; earlier CF/D0/D1/D2 and
   901B afterRET DATA rechecked.
-  [F833 target proof](SCRIPTED_FIGHTER_FOURWAY_C9_F833.md).
+  F833 target proof.
 - **F832 original actor-specific D1/D2 resource shots:**
   199B/59 x86/8 true PE fields and
   251B/74 x86/10 fields in a full
@@ -2675,7 +2675,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   Source has 32/46 genuine unmasked
   D1/D2 byte negatives; whole giant
   NONEXACT, no callable CODE credit.
-  [F832 current actual native game proof](SCRIPTED_FIGHTER_RESOURCE_SHOTS_F832.md).
+  F832 current actual native game proof.
 - **F831 actual 0xCF falling state in one scripted 46KB fighter:**
   114 true native inner B/30 x86/4
   physical PE fields added in a
@@ -2688,7 +2688,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   **34/34 original unrelocation bytes**
   and three true PE calls without
   forcing registers. Giant nonexact.
-  [F831 original case PE proof](SCRIPTED_FIGHTER_FALL_CF_F831.md).
+  F831 original case PE proof.
 - **F830 actual whole fighter native 0xD0 reflection:**
   195 complete original CODE B/60 x86/6 typed
   physical PE fields added in a new 17,856B/
@@ -2697,7 +2697,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   genuine final epilogue JMP byte pairs remain
   wrong; original D0 now rotates shared default
   GPR allocation to four actual byte differences.
-  [F830 original-source proof](SCRIPTED_FIGHTER_REFLECT_D0_F830.md).
+  F830 original-source proof.
 - **F829 B4/B5 original restart states in one growing 46KB fighter:**
   native original 2x215B/60 x86/8
   physical PE fields in a new
@@ -2711,7 +2711,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   **34/34 real nonrelocation bytes**
   plus true PE REL32 calls rechecked.
   Giant NONEXACT, no callable CODE credit.
-  [F829 target proof](SCRIPTED_FIGHTER_MOTION_RESTART_F829.md).
+  F829 target proof.
 - **F828 original ArchiveCatalog complete 171B source storage review:**
   15 complete original-shaped 51-x86/14-native-PE-field
   builds. Thirteen genuine register/volatile/
@@ -2723,7 +2723,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   reducing to 106/115. Actual PE resource,
   delete receiver, filename EBP permutation
   unchanged; no authored exact CODE.
-  [F828 whole Archive physical evidence](ARCHIVE_USED_STORAGE_CLASS_F828.md).
+  F828 whole Archive physical evidence.
 - **F827 46KB original projectile actions naturally restore native suffix:**
   real A7/A8 each **350B/97 x86/12 genuine
   native PE fields** in one newly built
@@ -2739,7 +2739,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   from REAL preceding source context.
   Prior A3-A5/9 timers/9E and 901B
   DATA checked, whole fighter nonexact.
-  [F827 original PE physical proof](SCRIPTED_FIGHTER_PROJECTILES_F827.md).
+  F827 original PE physical proof.
 - **F826 real original counter-free A3/A4/A5 landing actions:**
   three new native whole interior states
   264B/71 x86/9 physical typed PE fields
@@ -2751,7 +2751,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   by two honest original whole-game
   epilogue JMP bytes at 260/261.
   No accepted whole callable CODE.
-  [F826 physical source](SCRIPTED_FIGHTER_NO_COUNTER_F826.md).
+  F826 physical source.
 - **F825 original scripted fighter 9F/A0/A1 in same new parent:**
   3 native whole inner 276B/73 x86/9-field
   timer cases with real actor initial heights
@@ -2762,7 +2762,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   epilogue JMP bytes only. Actual 9E and
   901B afterRET DATA preserved; no
   whole callable exact CODE accepted.
-  [F825 target-native proof](SCRIPTED_FIGHTER_LAST_TIMERS_F825.md).
+  F825 target-native proof.
 - **F824 original fighter native 0x9E ground boost:**
   243 complete original inner B/66 x86/8 typed
   physical native PE fields rebuilt in the same
@@ -2774,7 +2774,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   202/203 and 239/240. Prior six real timers,
   91/8C-90 and shifted mode63 PE field
   rechecked; no independent callable exact CODE.
-  [F824 native PE proof](SCRIPTED_FIGHTER_GROUND_BOOST_F824.md).
+  F824 native PE proof.
 - **F823 six complete original timer cases in new 46KB fighter parent:**
   9B and 9C join previous 96/97/98/9A in a
   **14,848B/3,912-x86** source parent. Each
@@ -2785,7 +2785,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   Original 0x91/8C-90/0x63 and 901B
   packed DATA also checked. No accepted
   original whole callable CODE credit.
-  [F823 original PE proof](SCRIPTED_FIGHTER_LANDING_PAIR_F823.md).
+  F823 original PE proof.
 - **F822 four true 276-B timer-landing cases in whole fighter:**
   original 0x96/0x97/0x98/0x9A = **1,104
   genuine original CODE B, 292 x86 and 36
@@ -2798,7 +2798,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   operand bytes, NOT independent exact CODE.
   Earlier arc/landings/mode63 and native
   EBP-0x10 context reverified.
-  [F822 complete PE source proof](SCRIPTED_FIGHTER_TIMED_LANDINGS_F822.md).
+  F822 complete PE source proof.
 - **F821 real 0x91 arc game state joins the growing 46KB fighter:**
   native 288B/78 x86/12 true original PE
   call/global/CRT fields in one new
@@ -2811,7 +2811,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   bytes wrong, native shared fallback
   four GPR bytes wrong. Zero callable
   exact game credit.
-  [F821 real PE arc source](SCRIPTED_FIGHTER_ARC91_F821.md).
+  F821 real PE arc source.
 - **F820 current 46KB giant three original landing cases and relocated-field warning:**
   authentic 8C/8F/90 native landing states each
   289B/80 x86/8 original PE fields, all
@@ -2826,7 +2826,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   source-only mask count 143 is diagnostic,
   conservative source/native PE union yields
   **142 wrong /388 comparable B**.
-  [F820 full target physical audit](SCRIPTED_FIGHTER_LANDINGS_F820.md).
+  F820 full target physical audit.
 - **F819 original scripted fighter 0x63 source, rechecked in longer parent:**
   native 00523C9D..00523E3D is 417B/109 x86/7 actual PE fields.
   Extended 005214B0 source emits 12,187 callable B; original
@@ -2838,7 +2838,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   safe native/source PE union yields 142 wrong
   out of 388 nonfield bytes, despite earlier F626 short
   parent success. No game-case fragment gets callable CODE credit.
-  [F819 native whole-parent physical proof](SCRIPTED_FIGHTER_MODE63_CONTEXT_F819.md).
+  F819 native whole-parent physical proof.
 - **F818 original Scene typed borrowed owner fields do not fix stack:**
   seven complete authored 248-B destructor builds.
   Actual typed borrowed texture this+8 and CRT-free
@@ -2848,7 +2848,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   Naming a truly used view adds two instructions,
   254 B/77 x86, with wrong saved-this frame.
   No new callable exact credit.
-  [F818 whole native proof](SCENE_BORROWED_OWNER_FIELDS_F818.md).
+  F818 whole native proof.
 - **F817 real fighter case0x62 changes downstream native default registers:**
   actual 249B/65-x86/4 authentic PE-field
   resource selector source joins the same
@@ -2862,7 +2862,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   default rotates four nonrelocation GPR
   bytes (10/12/16/19) again. No 46KB
   whole function exact credit.
-  [F817 PE source context](SCRIPTED_FIGHTER_RESOURCE_SELECTOR_F817.md).
+  F817 PE source context.
 - **F816 whole fighter native saved-this FRAME and default tail recovered:**
   real original 0x60/61 each 586B/169-x86/11
   original PE references, actual ten-shot used
@@ -2877,7 +2877,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   Only original parent-external JMP relative
   bytes differ in newly sourced 0x5F/60/61;
   full 46KB giant remains nonexact.
-  [F816 pinned original PE proof](SCRIPTED_FIGHTER_RESOURCE_VOLLEYS_F816.md).
+  F816 pinned original PE proof.
 - **F815 true scripted fighter 0x5F facing source:**
   original 00523680 complete 144B/44 x86/3
   native PE calls integrated in one 10,409B
@@ -2890,7 +2890,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   13 honest register displacement bytes,
   plus 2 legitimate parent-tail JMP
   displacement bytes. No whole exact
-  callable CODE. [F815 native PE result](SCRIPTED_FIGHTER_FACING_F815.md).
+  callable CODE. F815 native PE result.
 - **F814 original fighter 5D/5E compiler context and false GPR win:**
   both 337B/101-x86/8-original-PE-field
   air-transition cases integrated after
@@ -2904,7 +2904,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   ordinals and adding a nonnative POP ESI
   (47-B/17-x86 suffix versus original
   46-B/16-x86). No case or giant accepted
-  exact CODE. [F814 native false-win proof](SCRIPTED_FIGHTER_AIR_CONTEXT_F814.md).
+  exact CODE. F814 native false-win proof.
 - **F813 scripted giant action0x59 real actor-specific source:**
   original 005214B0 case59 is 356B/95-x86/16
   real native typed PE fields, with stage
@@ -2917,7 +2917,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   native entry JMPs rechecked. 57 real
   unmasked case bytes and eight native tail
   bytes remain nonexact. No whole-game credit.
-  [F813 original PE/source stage3](SCRIPTED_FIGHTER_STAGE3_BOUNCE_F813.md).
+  F813 original PE/source stage3.
 - **F812 native ten-burst frame evidence:**
   F614's whole 469B/135-x86/17-PE-field
   original fighter action 0x58 joined 29
@@ -2931,7 +2931,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   default GPR operands. Four honest source
   EBP-8 vs native EBP-0x10 bytes remain
   different, full 46KB giant NONEXACT.
-  [F812 original native source result](SCRIPTED_FIGHTER_TEN_BURST_FRAME_F812.md).
+  F812 original native source result.
 - **F811 scripted 46KB giant recovery next-case/third GPR phase:**
   full original 285B/74-x86/14-native-PE-field
   0x4C recovery source now follows the complete
@@ -2949,7 +2949,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   saved-this EBP bytes are wrong in
   the suffix, no artificial register
   forcing or accepted giant credit.
-  [F811 real native PE/state proof](SCRIPTED_FIGHTER_RECOVERY_GPR_PHASE_F811.md).
+  F811 real native PE/state proof.
 - **F810 46KB giant actual bounce action0x4A and GPR phase:**
   fresh whole `005214B0` source integrates
   complete real 434B/119-x86/19-PE-field
@@ -2965,7 +2965,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   from four actual EBP slot negatives.
   No original split-case or whole exact
   CODE accepted.
-  [F810 full parent register phase](SCRIPTED_FIGHTER_BOUNCE_GPR_PHASE_F810.md).
+  F810 full parent register phase.
 - **F809 Scene 248-B authored destructor lifetimes:**
   nine new fully compiled VC7.1 virtual/EH source
   candidates independently reproduce both original
@@ -2979,7 +2979,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   All real 12 native PE fields checked only
   for equal-size candidates; no whole exact
   or accepted CODE.
-  [F809 original PE/source lifetime tradeoff](SCENE_NATIVE_FREE_TEMP_LIFETIMES_F809.md).
+  F809 original PE/source lifetime tradeoff.
 - **F808 native source restores GPR phase in 46KB original fighter:**
   adding the true full 350B/99-x86/15-COFF
   original action `0x49` to the same full
@@ -2994,7 +2994,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   GPR roles; 46B tail now differs ONLY
   in four real EBP saved-this displacement
   bytes. Whole 46,755-B giant still
-  nonexact and uncredited. [F808 physical native register restoration](SCRIPTED_FIGHTER_LANDING_RESTORES_GPR_F808.md).
+  nonexact and uncredited. F808 physical native register restoration.
 - **F807 46KB real source integration and GPR phase:**
   same original `005214B0` now has original
   0x46/47/48 whole inner cases (994 native B/
@@ -3010,7 +3010,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   EBP displacement negatives in the tail;
   actual original 46KB giant remains
   nonexact, no split-case credit.
-  [F807 new complete original source proof](SCRIPTED_FIGHTER_EXPANDED_NATIVE_ACTIONS_F807.md).
+  F807 new complete original source proof.
 - **F806 real previously artificial scripted 46KB fighter suffix:**
   four genuine native early action0/2/4/5 entry
   jumps and **46B/16 x86** full native fallback/getter
@@ -3021,7 +3021,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   Only four honest EBP saved-receiver stack
   bytes differ in the new suffix; full giant
   still 46,755 original vs 6,868 current source,
-  not accepted CODE. [F806 original physical native shared getter](SCRIPTED_FIGHTER_SHARED_GETTER_F806.md).
+  not accepted CODE. F806 original physical native shared getter.
 - **F805 formerly unclassified native 24B reset leaf:**
   original `00454C00` entire **24 B/9 x86**
   has a genuine `this+0x47C` 32-bit zero write
@@ -3032,7 +3032,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   Original nominal field type, historical owner
   and attribution remain unknown/review:
   no credited authored CODE.
-  [F805 full source/PE proof](UNKNOWN_DWORD_RESET_NATIVE_F805.md).
+  F805 full source/PE proof.
 - **F803 58KB shared default guard source grammar:** 15
   independent entire `00543210` native parent VC7.1
   compiles test true fallback getter/stage comparison.
@@ -3043,7 +3043,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   variants change genuine native control/size; all
   original 46B tail PE calls reverified. Zero
   original whole exact game CODE earned.
-  [F803 original native fallback proof](FIGHTER_SHARED_DEFAULT_GRAMMAR_F803.md).
+  F803 original native fallback proof.
 - **F802 33KB giant physical-relocation pitfall:** 22
   whole native-shaped VC7.1 stage-four grammar source builds;
   17 preserve all original **682** physical PE fields and
@@ -3053,7 +3053,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   blindly ignoring candidate relocation operands gives
   invalid exactness evidence. Source-count equality
   is not target-PE relocation identity.
-  [F802 native physical target proof](CHARACTEROBJECT_STAGE4_RELOCATION_AUDIT_F802.md).
+  F802 native physical target proof.
 - **F801 current 58KB fighter action-history source result:**
   eight actual entire `0x00543210` source builds with
   physically observed owner pointer `+0x2E8`,
@@ -3065,7 +3065,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   checked. True original 0x63 width/register
   differences [18,61,84] persist, zero whole
   boss CODE credited.
-  [F801 complete native typed-view comparison](FIGHTER_BORROWED_ACTION_HISTORY_F801.md).
+  F801 complete native typed-view comparison.
 - **F799 two complete PE source-matched origin-unknown leaves:**
   original `004135F0` writes three borrowed owner fields
   in **40/40 complete native bytes/16 x86**; original
@@ -3076,7 +3076,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   `!=0` changes the second to 29 B and is not original.
   Both original provenance rows remain unknown/review,
   **71 source-matched bytes, zero accepted authored credit**.
-  [F799 physical original source](UNKNOWN_OWNER_FIELD_LEAVES_F799.md).
+  F799 physical original source.
 - **F800 33KB original giant lexical-scope negative proof:**
   eleven complete native-shaped VC7.1 parents, varying
   actual 0x38B/38C/38D/38E/3E3/3E4 switch-case
@@ -3085,7 +3085,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   relocations. The 137 real nonfield byte differences
   remain; lexical braces alone are not the missing
   register phase.
-  [F800 full machine-code/source proof](CHARACTEROBJECT_LEXICAL_SCOPE_F800.md).
+  F800 full machine-code/source proof.
 - **F795 original WinMain physical runtime layout:** true PE
   EBP stack locations for Graphics/created HWND/current
   Scene/module path form a consecutive sequence at
@@ -3096,7 +3096,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   recreate real scene/path owner placement. The 2,993-B
   near-length source has only 590/654 true native
   x86 widths and must not be accepted.
-  [F795 original PE-backed source controls](WINMAIN_PHYSICAL_WINDOW_CONTEXT_F795.md).
+  F795 original PE-backed source controls.
 - **F794 independent second 33KB giant source controls:**
   ten whole `004EBDA0` game source builds explore
   actually used native four-byte color/stage field
@@ -3107,7 +3107,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   bytes wrong; reordering stage short-circuit
   worsens to 152 original machine-byte differences.
   No formal whole-case or callable game exact credit.
-  [F794 full native source study](CHARACTEROBJECT_COLOR_REGISTER_PHASE_F794.md).
+  F794 full native source study.
 - **F793 original fighter 0x58 predecessor register-phase audit:**
   ten whole 58KB VC7.1 original-shaped parent compiles
   prove eight meaningful native-equivalent source
@@ -3118,7 +3118,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   also without correcting 0x59. Physical original
   17/16 typed references, 46B shared getter and
   943B postRET original DATA checked. No exact
-  giant accepted. [F793 original native PE/source proof](FIGHTER_BURST_PREDECESSOR_PHASE_F793.md).
+  giant accepted. F793 original native PE/source proof.
 - **F792 whole original fighter action-0x59 owner-phase test:**
   eight newly compiled 58KB parents recheck original 356B/95-x86
   native 0x59 plus 16 genuine PE/COFF relocations, original
@@ -3128,7 +3128,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   position-sum order regresses to **21**, with no formal giant
   callable CODE credit. The *latest* parent uses F781/F792,
   not the historical F752 whole code.
-  [F792 original physical comparison](FIGHTER_BOUNCE_OWNER_PHASE_F792.md).
+  F792 original physical comparison.
 - **F791 Archive and Scene resource owner lifetime checks:**
   complete original authored 171B Archive destructor and
   248B Scene destructor were separately decoded against
@@ -3137,7 +3137,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   produces wrong 177/183B source; Scene remains only
   191/200 nonfield bytes best despite all 12 original
   native PE relocations. No premature exact credit.
-  [F791 source and native negative proof](ARCHIVE_SCENE_RESOURCE_OWNER_LIFETIMES_F791.md).
+  F791 source and native negative proof.
 - **F790 seven fresh whole fighter compilations:** source
   stage comparisons and mode-63 short-circuit controls confirm
   the original 58,294B/16,471-x86 giant still emits
@@ -3149,7 +3149,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   case to 712B. All 15 case-63 real PE fields, earlier
   early-action physical mismatches and 943B switch DATA
   checked; zero whole exact CODE credited.
-  [F790 full native source controls](FIGHTER_MODE63_CONTROLFLOW_F790.md).
+  F790 full native source controls.
 - **F789 independent historical-provenance ambiguity:** explicit
   **and** compiler-implicit whole native C++ copy methods both
   reproduce original `004591E0` 417B and `0045AAE0`
@@ -3157,7 +3157,7 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   Exact source-generated bytes are therefore not sufficient
   to decide historical authored/compiler ownership. Both
   remain unknown and uncredited.
-  [F789 explicit/implicit proof](COMPOSITE_COPY_PROVENANCE_AMBIGUITY_F789.md).
+  F789 explicit/implicit proof.
 - **F788 original unknown-origin copy construction:** natural
   nontrivial 16B composite header destructor recovers the
   missing physical EH state for `004591E0`, now
@@ -3166,14 +3166,14 @@ ledger/infrastructure change, full CI, canonical replay or new tests.
   nested-copy calls). Together with F787, both related
   source-shaped whole functions match their original bytes
   while historical provenance remains unknown/uncredited.
-  [F788 EH/source proof](COMPOSITE_IMPLICIT_CONSTRUCTOR_F788.md).
+  F788 EH/source proof.
 - **F787 original unknown-origin 368B assignment reconstruction:**
   a full genuinely implicit VC7.1 composite operator= matches
   `0045AAE0` (118/118 x86, 360/360 nonfield bytes, two
   real PE-relocated STL calls), but codegen does **not** establish
   historical authored/implicit ownership. Original candidate
   remains unknown, **zero official authored exact credit**.
-  [F787 full native comparison](COMPOSITE_IMPLICIT_ASSIGNMENT_F787.md).
+  F787 full native comparison.
 ## How to read the historical sections
 
 The older "Current validation policy", "authoritative state" and old
@@ -11702,7 +11702,7 @@ EBP-0x88 needs disp32 in all fourteen loads, adding exactly 42 bytes.
 This is a concrete compiler/layout constraint for subsequent **whole
 boss** natural C++ reconstruction. Every real per-boss case SHA256 and
 physical original boundary is recorded in
-[the F538 eleven-case study](FIGHTER_ACTION_ZERO_NATIVE_LAYOUT.md),
+the F538 eleven-case study,
 and is verified in the updated
 `scripts/repo-python scripts/report-fighter-action-handlers.py` original
 PE-only runner. The 7,152-row F537 action index SHA256 is unchanged.
@@ -11779,7 +11779,7 @@ EBP-0x88: fourteen disp32 reads explain +42 genuine bytes, and the
 isolated small probe does not manufacture an owner frame or fake padding.
 The natural C++ action-zero source for other ten emits 180 original-length
 bytes, still not relocation/stack-exact inside the complete original
-fighter. See [F541 eleven-giant case-codegen study](FIGHTER_ACTIONZERO_FAMILY_CODEGEN.md)
+fighter. See F541 eleven-giant case-codegen study
 and changed-only reproducer
 `scripts/repo-python scripts/verify-fighter-actionzero-natural-source.py`.
 **No full boss reconstructed, no new exact CODE/DATA credit, no all-unit
@@ -11805,7 +11805,7 @@ operand roles, 121/121 physically genuine typed case relocations**,
 1,607 correct native-style DWORD COFF refs/whole-table target partitions,
 4,502 byte-identical original sparse action indexes and 10,930 original
 post-RET DATA-layout bytes. Source semantics and precise per-boss table
-are at [F542 action-one study](FIGHTER_ACTIONONE_FAMILY_CODEGEN.md),
+are at F542 action-one study,
 replayed *only for selected new probes* with
 `scripts/repo-python scripts/verify-fighter-actionone-natural-source.py`.
 **No giant whole-function exactness, no credited partial CODE/DATA, no
@@ -11833,7 +11833,7 @@ handler-partition equivalence also agree. The **9,146** original CODE
 bytes of these six-case inner subranges remain part of 613,391 giant
 whole-function bytes, **NOT accepted partial function CODE**. Full
 per-boss evidence and reproducer:
-[the F545 natural six-case source study](FIGHTER_OPENING_SIX_CASES_CODEGEN.md)
+the F545 natural six-case source study
 and `scripts/repo-python scripts/verify-fighter-opening-actions-natural-source.py`.
 No whole boss exact, all-unit cold replay or external Oracle claim.
 
@@ -11893,7 +11893,7 @@ for by 13 genuine widened owner EBP-0x88 loads. The eleven cases contain
 fighters, with zero separate exact credit. All eleven per-boss original
 switch-table equivalence partitions, **1,607 DWORD COFF fields**, 4,502
 original sparse index bytes and complete 10,930 after-RET DATA shape
-remain checked. Read [F547 codegen evidence](FIGHTER_ACTIONNINE_FAMILY_CODEGEN.md)
+remain checked. Read F547 codegen evidence
 and reproduce only affected compiler probes with
 `scripts/repo-python scripts/verify-fighter-actionnine-natural-source.py`.
 No full cold replay, giant exact CODE or external Oracle receipt.
@@ -11920,7 +11920,7 @@ indirect vtbl[0] call sites. Their physical switch data includes
 422 valid native-style DWORD COFF fields, 1,323 literal original
 sparse index bytes, 3,011 original post-RET DATA-layout bytes and all
 destination equivalence partitions. Complete source-based witness:
-[F548 fighter action-six study](FIGHTER_ACTION_SIX_FAMILY_CODEGEN.md),
+F548 fighter action-six study,
 with `scripts/repo-python scripts/verify-fighter-action-six-natural-source.py`
 for affected-only native+compiler proof. These are parts of still-unmatched
 153,511 giant CODE bytes: **no source-accepted 1,086 internal CODE bytes**,
@@ -11944,7 +11944,7 @@ call fields**, 1,607 authentic native-style DWORD table references and
 4,502 byte-identical native sparse bytes. GPR identity only matches 6/11;
 all 11 retain receiver/thiscall dataflow and roles. The exceptional
 `00564BE0` is 87 versus 69 candidate bytes due to 6 original disp32
-EBP-0x88 reads. See [F549 complete native action-ten case study](FIGHTER_ACTIONTEN_NATIVE_CPP.md)
+EBP-0x88 reads. See F549 complete native action-ten case study
 and `scripts/repo-python scripts/verify-fighter-actionten-natural-source.py`.
 **1,065 original interior CODE bytes, not a whole boss/function exact
 match; no new accepted CODE/DATA, full cold replay or Oracle receipt.**
@@ -11969,7 +11969,7 @@ still-unmatched 153,511 CODE of the three whole bosses, not three exact
 independent functions. Reproduce with
 `scripts/repo-python scripts/verify-fighter-action-seven-natural-source.py`;
 full native source audit:
-[F551 two-case study](FIGHTER_ACTIONSEVEN_NATIVE_CPP.md). No credited CODE,
+F551 two-case study. No credited CODE,
 full cold replay or Oracle receipt.
 
 
@@ -11988,7 +11988,7 @@ Three newly rebuilt selected native C++ TUs now check **complete actions
 jump refs, 1,323 literal original sparse indexes and full original
 3,011 after-RET DATA-shape bytes. The 3,248 inner-case CODE bytes remain
 inside the 153,511-byte unmatched original giant functions. See
-[F553 whole-native action-eight study](FIGHTER_ACTIONEIGHT_NATIVE_CPP.md)
+F553 whole-native action-eight study
 and `scripts/repo-python scripts/verify-fighter-action-eight-natural-source.py`.
 No new exact CODE/DATA, all-unit replay or external Oracle acceptance.
 
@@ -12017,7 +12017,7 @@ cold replay `--unit font-surface-shift-jis-lead-byte-0041ca30` returned
 **1/1 exact**. Current origin review decreases from 96 to 95 functions;
 full authored exact accepted units increase from 942 to 943 and CODE from
 862,649 to 862,726. No partial code, fake data, all-unit replay or external
-Oracle receipt. See [F555 original-provenance review](FONT_SHIFTJIS_LEAD_BYTE_F555.md).
+Oracle receipt. See F555 original-provenance review.
 
 
 ## F556: 117-insn/403-byte native actor cases in two independent fighter giants
@@ -12038,7 +12038,7 @@ physical COFF fields** including genuine extra-stage call/global refs,
 314 original-style physical DWORD switch relocations and 934 byte-identical
 original sparse indexes. Whole original giant CODE remains unmatched;
 1,612 inner-case bytes and 2,190 after-RET DATA-layout bytes are *not*
-new accepted CODE/DATA. [Full F556 native C++ study](FIGHTER_EXTRA_STAGE_SOURCE_F556.md),
+new accepted CODE/DATA. Full F556 native C++ study,
 reproducible one-boss verifier
 `scripts/repo-python scripts/verify-fighter-extra-stage-action-source.py`.
 No all-unit replay, fake exactness or external Oracle receipt.
@@ -12064,7 +12064,7 @@ because 37 EBP-0x88 owner reloads grow +3 bytes each and one `JL` grows
 without source padding. The four **1,802 inner original CODE bytes** are
 still part of 120,166 whole-boss unmatched CODE, not independently exact.
 Detailed original native/COFF proof is at
-[F557 natural 115-insn study](FIGHTER_STAGE_NO_FLAG_F557.md), reproducible
+F557 natural 115-insn study, reproducible
 by `scripts/repo-python scripts/verify-fighter-stage-no-flag-source.py`.
 No full cold replay, fabricated byte match or external Oracle receipt.
 
@@ -12088,7 +12088,7 @@ jump fields and 934 literal original sparse-byte maps. All **2,336 native
 interior CODE bytes** remain part of **133,531 nonexact complete original
 fighter CODE bytes**; 2,190 original after-RET DATA bytes remain separate.
 Full original evidence and affected-only source reproducer:
-[F558 action-eight C++ study](FIGHTER_EXTRA_STAGE_EIGHT_F558.md),
+F558 action-eight C++ study,
 `scripts/repo-python scripts/verify-fighter-extra-stage-action-eight.py`.
 No exact credit, full cold replay or external Oracle receipt.
 
@@ -12110,7 +12110,7 @@ receiver loads** (+102 native bytes) and a long JL (+4 native bytes),
 explaining the entire **458-versus-352-byte** native/probe difference
 without padding. Reproducer:
 `scripts/repo-python scripts/verify-fighter-wide-action-eight-source.py`
-and [F559 native action-eight study](FIGHTER_WIDE_ACTION_EIGHT_F559.md).
+and F559 native action-eight study.
 All **1,474 inner original CODE bytes** remain within the giant
 nonexact 61,872-byte parent; no split-unit exactness, DATA credit,
 full all-unit cold replay or external Oracle acceptance.
@@ -12134,7 +12134,7 @@ field partitions and 319 identical original sparse bytes, with separate
 and its complete negative-to-positive controls are kept in ignored
 `.analysis/f560-543210-action-eight/`; tracked whole original verifier:
 `scripts/repo-python scripts/verify-fighter-precontact-stage-action-eight.py`,
-[full F560 117-insn study](FIGHTER_PRECONTACT_ACTION_EIGHT_F560.md).
+full F560 117-insn study.
 The 1,189 complete inner-case CODE bytes remain part of an unmatched
 whole boss, **not independently exact source**. No new exact CODE/DATA,
 no all-unit replay or external Oracle acceptance.
@@ -12156,7 +12156,7 @@ branch instructions**, **20/20 native typed COFF call/global fields**,
 140 physical switch DWORD reference partitions and 409 original sparse
 index bytes (969 original after-RET DATA-layout bytes separately).
 Reproducer `scripts/repo-python scripts/verify-fighter-split-stage-4d7e70.py`,
-[F562 original-backed C++ study](FIGHTER_SPLIT_STAGE_F562.md).
+F562 original-backed C++ study.
 The 1,097 native interior CODE bytes remain within one wholly unmatched
 43,601-byte original boss; no full or split exact source credit, no
 all-unit cold replay or external Oracle receipt.
@@ -12214,7 +12214,7 @@ virtual method, **305 native-style switch DWORD fields**, repeated/default
 handler partitions and **822 literal original compressed index bytes**.
 The full 2,042 after-RET DATA-shape bytes are separate from CODE.
 Complete native research and reproduction:
-[F563 conditional-override study](FIGHTER_FLAG_OVERRIDE_SOURCE_F563.md)
+F563 conditional-override study
 and `scripts/repo-python scripts/verify-fighter-conditional-override-actions.py`.
 The **2,440 original internal CODE bytes** are not independently exact
 functions and remain within **115,827 unmatched whole-fighter CODE bytes**.
@@ -12238,7 +12238,7 @@ allocations for these two fighters where earlier isolated probes did
 not, showing that the enclosing C++ case structure affects compiler
 register layout. Later action labels remain diagnostic-only marker
 stores: the **115,827 complete original giant CODE bytes are still
-unmatched**. [F564 source integration](FIGHTER_INTEGRATED_ELEVEN_CASES_F564.md);
+unmatched**. F564 source integration;
 reproducer scripts/repo-python scripts/verify-fighter-integrated-opening-switch.py.
 No split/whole CODE credit, all-unit cold replay or external Oracle.
 
@@ -12262,7 +12262,7 @@ byte-identical sparse index bytes. The 911 native inner CODE bytes
 remain part of 46,755 completely unmatched original CODE bytes;
 901 after-RET DATA bytes remain separate. Reproducer:
 scripts/repo-python scripts/verify-fighter-scripted-stage-actions.py;
-[F565 scripted-state source](FIGHTER_SCRIPTED_STAGE_F565.md).
+F565 scripted-state source.
 No whole/subfunction exact credit, all-unit replay or external Oracle.
 
 ## F566: eleven authentic native game actions integrated in 005214B0
@@ -12281,7 +12281,7 @@ That is **1,938 internal native CODE bytes**, still included in
 **46,755 wholly unmatched giant original CODE bytes**, never split/
 whole exact credit. Remaining case labels are clearly diagnostic-only
 markers. Original after-RET DATA remain 901 separate bytes.
-F566 study: [source integration](FIGHTER_INTEGRATED_SCRIPTED_F566.md);
+F566 study: source integration;
 affected-only reproducible command
 scripts/repo-python scripts/verify-fighter-integrated-scripted-switch.py.
 No full cold replay or external Oracle receipt.
@@ -12316,7 +12316,7 @@ typed COFF fields**, all 1,607 original switch DWORD destinations,
 bytes. Their **613,391 entire original giant CODE bytes are still
 unmatched**, and all later source action labels remain test-only
 markers. Complete live report
-[F567 whole cohort integration](FIGHTER_ALL_MULTISWITCH_INTEGRATION_F567.md)
+F567 whole cohort integration
 and affected-only repro
 scripts/repo-python scripts/verify-fighter-all-multiswitch-opening-cases.py.
 No split/whole exact credit, all-unit cold replay or external Oracle.
@@ -12334,7 +12334,7 @@ rejects nonzero candidate COFF addends (re-tested on Reimu and
 wide-frame 00564BE0). The previously dirty alternative and its full
 source audit logs are preserved under ignored
 .analysis/f567-integrated-fighters/ as independently verified controls.
-[F568 original-PE addend control](FIGHTER_COFF_ADDEND_CONTROL_F568.md).
+F568 original-PE addend control.
 No giant whole/split exactness, no full cold replay or Oracle receipt.
 
 ## F569: native CharacterObject early guards and entire 11 compressed source switches
@@ -12362,7 +12362,7 @@ COFF DWORD handler refs, 2,185 literal native sparse bytes,
 The 741 unique case IDs are **diagnostic marker stores**, not
 real restored game-action bodies. The full 488,664 whole original
 CODE bytes remain unmatched, with no extra exact source/bytes.
-See [F569 one-switch native original study](CHARACTEROBJECT_SINGLE_SWITCH_F569.md)
+See F569 one-switch native original study
 and
 scripts/repo-python scripts/verify-characterobject-single-switch-source.py.
 No full all-unit replay or external Oracle receipt.
@@ -12393,7 +12393,7 @@ inference remains necessary, not compiler-byte patching.
 Complete independent comparison logs/source remain preserved under
 .analysis/f570-archive-cxx-lifetimes/ and
 .analysis/f571-scene-aggregate-lifetimes/. See
-[F570/F571 destructor negative source matrix](DESTRUCTOR_LIFETIME_CONTROLS_F570_F571.md).
+F570/F571 destructor negative source matrix.
 No new exact CODE/DATA or full cold replay.
 
 
@@ -12423,7 +12423,7 @@ bytes and 61/61 authentic typed COFF fields** match, with 60
 original-style dense DWORD switch fields, 198 byte-identical
 sparse-index bytes, and separate 438 after-RET DATA-layout bytes.
 Tracked natural C++ [F572 source](../probes/CharacterObjectActionsF572.cpp)
-and [native study](CHARACTEROBJECT_FIRST_TEN_NATIVE_CASES_F572.md),
+and native study,
 affected-only reproducer:
 `scripts/repo-python scripts/verify-characterobject-action-family-f572.py`.
 **The full 33,293 original boss is nonexact; inner CODE is not new
@@ -12463,7 +12463,7 @@ and **80 genuine typed zero-addend COFF fields**, whole original
 These inner bytes remain part of the **33,293 wholly nonexact
 giant**; no split/whole CODE credit, full replay or external Oracle.
 Full original-source study:
-[CharacterObject F573 x87 case](CHARACTEROBJECT_X87_ACTION32A_F573.md).
+CharacterObject F573 x87 case.
 
 
 ## F574: further original action 0x32B/0x32C in CharacterObject 004EBDA0
@@ -12492,7 +12492,7 @@ compressed index bytes and 438 native after-RET DATA-layout bytes.
 The complete **33,293-byte giant still is NOT CODE-exact**;
 no independent partial function or DATA credit. Verified reproducibly
 by `scripts/repo-python scripts/verify-characterobject-following-actions-f574.py`;
-[full F574 native case study](CHARACTEROBJECT_STAGE_CURVE_F574.md).
+full F574 native case study.
 No all-unit replay or external Oracle acceptance.
 
 
@@ -12517,7 +12517,7 @@ zero-addend COFF references**, all 60 original-style dense jump
 fields, 198 literal compressed map bytes and 438 distinct native
 DATA layout bytes; both new cases strictly match original GPR/
 x87/order/length. F573/F574 two read-only swaps stay explicitly
-not byte-order exact. Detailed [F575 native study](CHARACTEROBJECT_FADE_ACTIONS_F575.md),
+not byte-order exact. Detailed F575 native study,
 local-only reproducer:
 `scripts/repo-python scripts/verify-characterobject-fade-actions-f575.py`.
 **The giant 33,293-byte original CODE remains NONEXACT**, no
@@ -12551,7 +12551,7 @@ Original 0x32F is the default sparse entry, not a real function.
 No complete whole `004EBDA0` original CODE credit, no cold all-unit
 replay, no external Oracle. Reproducer:
 `scripts/repo-python scripts/verify-characterobject-fire-actions-f576.py`;
-[F576 original fire-state reconstruction](CHARACTEROBJECT_FIRE_STATES_F576.md).
+F576 original fire-state reconstruction.
 
 
 ## F577: original CharacterObject signed facing reversal in action0x332
@@ -12577,7 +12577,7 @@ all 60 original DWORD sparse handlers and 198 byte-identical map
 bytes; 438 original after-RET DATA bytes stay separate. The entire
 33,293-byte giant is not exact; no split original CODE credit,
 all-unit cold replay or Oracle receipt. Full study:
-[F577 direction reversal](CHARACTEROBJECT_DIRECTION_REVERSAL_F577.md),
+F577 direction reversal,
 reproducer `scripts/repo-python scripts/verify-characterobject-direction-reversal-f577.py`.
 
 
@@ -12615,7 +12615,7 @@ bytes, all 178 authentic typed COFF fields, all 60 physical switch
 DWORD labels, 198 literal original compressed bytes and 438
 separate after-RET DATA-layout bytes.
 Reproducer `scripts/repo-python scripts/verify-characterobject-contact-stage-f578.py`;
-[F578 contact-stage source study](CHARACTEROBJECT_CONTACT_STAGE_F578.md).
+F578 contact-stage source study.
 No standalone split/whole CODE credit, all-unit cold replay or Oracle.
 
 
@@ -12643,7 +12643,7 @@ No additional read-only instruction swaps; existing F573/F574/F578
 source swap exceptions and F576 EBP frame widths remain explicit.
 Reproducer:
 `scripts/repo-python scripts/verify-characterobject-fade-spawns-f579.py`;
-[F579 native effect/fade source](CHARACTEROBJECT_FADE_SPAWNS_F579.md).
+F579 native effect/fade source.
 Original **entire 33,293-byte fighter still nonexact**; no
 split/whole exact CODE/DATA or all-unit cold replay/Oracle acceptance.
 
@@ -12679,7 +12679,7 @@ single selected VC7.1 source, with 60 original dense handler refs,
 198 exact native sparse bytes and distinct 438 after-RET DATA.
 The whole original giant is still nonexact; internal case CODE
 is NOT independently exact/accepted, no full replay/Oracle.
-[F580 four full game-action study](CHARACTEROBJECT_FOUR_ACTIONS_F580.md),
+F580 four full game-action study,
 reproducer `scripts/repo-python scripts/verify-characterobject-four-next-actions-f580.py`.
 
 
@@ -12706,7 +12706,7 @@ original switch DATA (438 separate after-RET layout bytes).
 **The whole 33,293 CODE bytes remain nonexact**, with no
 independent inner function credit. Reproducer
 `scripts/repo-python scripts/verify-characterobject-parent-scatter-f581.py`;
-[F581 source study](CHARACTEROBJECT_PARENT_SCATTER_F581.md).
+F581 source study.
 
 The small 171-byte original `0041CE50` archive RAII destructor
 was also retested under pinned VC7.1 /GX- with 14 actual C++
@@ -12748,7 +12748,7 @@ same natural C++ now implements **29 real original case bodies,
 DWORD refs and 198 literal compressed index bytes plus 438 after-RET
 DATA-layout bytes. The 33,293-byte original complete giant still
 NOT exact and no internal case earns independent credit.
-[F582 original source study](CHARACTEROBJECT_ABSOLUTE_MOTION_F582.md),
+F582 original source study,
 reproducer `scripts/repo-python scripts/verify-characterobject-abs-motion-f582.py`.
 No all-unit cold replay or external Oracle acceptance.
 
@@ -12780,7 +12780,7 @@ Original giant 33,293 whole CODE remains nonexact; the cases are
 not independently original exact functions and no all-unit replay
 or external Oracle was run. Selected verification script
 `scripts/repo-python scripts/verify-characterobject-state-leaves-f583.py`;
-[F583 source study](CHARACTEROBJECT_STATE_LEAVES_F583.md).
+F583 source study.
 
 
 ## F584: original whole archive resource destructor delete-expression controls
@@ -12804,7 +12804,7 @@ No source hack/padding/physical byte graft, no newly exact CODE.
 Tracked independent source-only reproducer:
 `scripts/repo-python scripts/verify-archive-delete-expressions-f584.py`
 with baseline `probes/ArchiveCatalogNativeLifetimeF584.cpp`;
-[F584 complete original RAII destructor proof](ARCHIVE_DELETE_EXPRESSION_CONTROLS_F584.md).
+F584 complete original RAII destructor proof.
 The true original lexical owner/automatic lifetime still needs
 recovery. Zero full cold replay or external Oracle acceptance.
 
@@ -12842,7 +12842,7 @@ physical jump-table DWORD fields and 198 exact sparse-index
 bytes, 438 separate after-RET native DATA-layout bytes.
 Original whole 33,293-byte fighter still not exact; no
 standalone inner CODE credit or full all-unit cold replay/Oracle.
-[F585 trajectory source study](CHARACTEROBJECT_TRAJECTORY_F585.md),
+F585 trajectory source study,
 reproducer `scripts/repo-python scripts/verify-characterobject-five-trajectory-actions-f585.py`.
 
 
@@ -12885,7 +12885,7 @@ The **whole 33,293 native giant is not exact** and inner bodies
 cannot be accepted as standalone functions; no all-unit cold replay
 or external Oracle. Reproducer
 `scripts/repo-python scripts/verify-characterobject-late-stage-actions-f586.py`;
-[F586 original late-stage source audit](CHARACTEROBJECT_LATE_STAGES_F586.md).
+F586 original late-stage source audit.
 
 
 ## F587: full 397-instruction CharacterObject 0x34C and zero new EBP width gap in action0x331
@@ -12923,7 +12923,7 @@ compressed bytes, 438 distinct after-RET DATA-layout bytes.
 The entire original **33,293-byte giant remains nonexact**.
 No standalone action/whole CODE credit, all-unit replay or Oracle.
 Reproducer `scripts/repo-python scripts/verify-characterobject-four-way-event-f587.py`,
-[F587 original four-state source study](CHARACTEROBJECT_FOUR_WAY_EVENT_F587.md).
+F587 original four-state source study.
 
 
 ## F588: three strict native game stages and real original EBP temp location identity
@@ -12964,7 +12964,7 @@ COFF fields**, plus all 60 original switch DWORD COFF handlers,
 Original entire giant remains NONEXACT, no independent case CODE
 credit or all-unit cold replay/Oracle. Reproducer
 `scripts/repo-python scripts/verify-characterobject-three-late-actions-f588.py`;
-[F588 full native x87 stage source](CHARACTEROBJECT_THREE_NATIVE_STAGES_F588.md).
+F588 full native x87 stage source.
 
 
 ## F589: entire 248-byte SceneObject virtual destructor texture-delete controls
@@ -12992,7 +12992,7 @@ with the same EBP offsets; three instead emit 267/272 bytes.
 Zero whole/source exact credit. Reproducer
 `scripts/repo-python scripts/verify-scene-texture-delete-f589.py`,
 source-only fixture `probes/BattleSceneTextureDeleteF589.cpp`,
-[F589 original scene EH/delete study](SCENE_TEXTURE_DELETE_CONTROLS_F589.md).
+F589 original scene EH/delete study.
 Original resource ownership/lifetime, not a superficial cast,
 remains to be reconstructed. No all-unit replay or Oracle.
 
@@ -13029,7 +13029,7 @@ bytes. Complete 33,293-byte boss remains **NONEXACT**, no split
 case or whole CODE/DATA credit, no cold all-unit replay/Oracle.
 Reproducer:
 `scripts/repo-python scripts/verify-characterobject-guarded-stages-f590.py`,
-[F590 original guarded cases study](CHARACTEROBJECT_GUARDED_STAGES_F590.md).
+F590 original guarded cases study.
 
 
 ## F591: actual 0x385/0x386/0x387 native actor fade branches
@@ -13058,7 +13058,7 @@ still NONEXACT, inner cases do not count as standalone functions,
 no all-unit cold replay/Oracle.
 Source/verifier:
 `scripts/repo-python scripts/verify-characterobject-stage-fades-f591.py`,
-[F591 original stage fade study](CHARACTEROBJECT_STAGE_FADES_F591.md).
+F591 original stage fade study.
 
 
 ## F592: five original entire x87 angle/trajectory game states and real external ABI
@@ -13096,7 +13096,7 @@ all 60 original physical first-switch handler DWORDs,
 DATA. The whole original 33,293-byte giant stays nonexact.
 Reproducer
 `scripts/repo-python scripts/verify-characterobject-five-complex-actions-f592.py`,
-[F592 source/physical COFF study](CHARACTEROBJECT_COMPLEX_AIM_F592.md).
+F592 source/physical COFF study.
 No full cold replay, independent CODE credit or external Oracle.
 
 
@@ -13266,7 +13266,7 @@ in `.analysis/f598-native-register-investigation/` and
 `.analysis/f598-archive-declaration/`. Targeted original/source
 reproducer `scripts/repo-python
 scripts/verify-fighter-singleton-contact-f598.py --boss 0x004F7130`;
-full detail [F598 giant and small original source study](FIGHTER_SINGLETON_CONTACT_F598.md).
+full detail F598 giant and small original source study.
 
 
 ## F599: two entire native record-copy functions match ordinary compiler-generated C++
@@ -13297,7 +13297,7 @@ special members. Both original functions stay `unknown` origin,
 `unclassified` CODE and **ZERO official authored exact credit**.
 Real C++ source `probes/Record116ImplicitCopyF599.cpp`; targeted
 verifier `scripts/repo-python scripts/verify-record116-implicit-copies-f599.py
---with-negative-gxoff`; [full F599 special-member study](RECORD116_IMPLICIT_COPY_ORIGIN_F599.md).
+--with-negative-gxoff`; full F599 special-member study.
 No all-unit cold replay or external Oracle.
 
 
@@ -13328,7 +13328,7 @@ not 143 whole functions: ZERO new original whole author CODE exact
 credit, no split case adoption and no full 943-unit cold replay.
 Tracked targeted probe
 `scripts/repo-python scripts/verify-fighter-indexed-contact51-f600.py
---boss 0x004F7130`; [F600 original native case](FIGHTER_INDEXED_CONTACT51_F600.md).
+--boss 0x004F7130`; F600 original native case.
 
 
 ## F600: true follow-on contact states across eleven *whole* giant original fighter functions
@@ -13350,7 +13350,7 @@ not 0. Every case is inside its authentic still-incomplete giant.
 Together with F598 earlier actions this is 253 PE-backed inner cases/
 55,234 noncredited original CODE bytes, **zero newly accepted authored
 whole function bytes**, no all-unit cold replay or external Oracle.
-Detailed original evidence [F600 second contact switch](FIGHTER_ADDITIONAL_CONTACT_F600.md)
+Detailed original evidence F600 second contact switch
 and targeted compiler proof `scripts/repo-python scripts/verify-fighter-additional-contact-f600.py --boss 0x004F7130`.
 
 
@@ -13370,8 +13370,8 @@ the PE** before compiling under VC7.1. No address→guessed-field
 exception remains in source generation; full native x86 roles/field
 COFF/switch DATA remain verified after each targeted compilation.
 Reproducer `scripts/repo-python scripts/verify-fighter-additional-contact-f600.py
---boss 0x005AEEC0`; [F600 original-index source with new F601
-owner-attestation](FIGHTER_ADDITIONAL_CONTACT_F600.md). Whole original
+--boss 0x005AEEC0`; F600 original-index source with new F601
+owner-attestation. Whole original
 giant NONEXACT; zero new official accepted authored CODE, no full cold
 replay.
 
@@ -13393,8 +13393,8 @@ adapter provenance; both leaf origins remain `unknown` with no new
 authored whole-exact CODE credit. The separate out-of-line CRT owner
 remains library. Source `probes/FloatAtan2AdaptersF601.cpp`, full
 original-backed targeted verifier `scripts/repo-python
-scripts/verify-float-atan2-adapters-f601.py`; [F601 whole x86 and
-real relocation research](FLOAT_ATAN2_ADAPTERS_F601.md).
+scripts/verify-float-atan2-adapters-f601.py`; F601 whole x86 and
+real relocation research.
 
 New independent whole-native negative resource-lifetime experiments
 in ignored `.analysis/f601-archive-reference/`,
@@ -13428,7 +13428,7 @@ on top of prior 253 game case subranges; all nine whole originals
 remain nonexact and the two other 131-instruction action0x46 owners
 remain undone. Source `probes/FighterTrajectoryContact46F602.inc`,
 selected local proof `scripts/repo-python scripts/verify-fighter-trajectory46-f602.py
---boss 0x004F7130`; [F602 original 0x46 study](FIGHTER_TRAJECTORY_ACTION46_F602.md).
+--boss 0x004F7130`; F602 original 0x46 study.
 No new independent/whole exact authored CODE or all-unit cold replay.
 
 
@@ -13452,7 +13452,7 @@ original fighters. New F603 original internal source: **2 cases,
 fields**. Across F598/F600/F602/F603: **264 inner original action
 bodies / 59,629 internal CODE bytes**, all embedded in eleven
 still NONEXACT gigantic game functions, zero adopted authored CODE
-or full cold replay. [F603 native call/flag/codegen evidence](FIGHTER_TRAJECTORY_SPAWN_F603.md);
+or full cold replay. F603 native call/flag/codegen evidence;
 targeted `scripts/repo-python scripts/verify-fighter-trajectory-spawn-f603.py --boss 0x0045DD70`.
 
 
@@ -13474,7 +13474,7 @@ exact credit or full cold replay. Tracked source:
 `probes/SceneFlagAndCounterLeavesF604.cpp`; selected positive and
 negative reproducer `scripts/repo-python
 scripts/verify-scene-flag-counter-leaves-f604.py --negative-predicate`,
-[F604 original bit-test and provenance](SCENE_FLAG_COUNTER_LEAVES_F604.md).
+F604 original bit-test and provenance.
 
 Additional complete 171-byte original archive destructor source-only
 trials under ignored `.analysis/f604-archive-compiler-local-layout/`
@@ -13506,7 +13506,7 @@ The other original fighters `0045DD70`/`0058AF60` need separate
 NONEXACT. Cumulative 282 source-backed original **internal** cases/
 65,385 CODE bytes are **not** 282 separate complete-function matches;
 official 943/862,726 accepted authored CODE unchanged.
-[Full original F605 evidence](FIGHTER_TRAJECTORY_FOLLOWUPS_F605.md),
+Full original F605 evidence,
 `probes/FighterTrajectoryFollowupsF605.inc`, targeted
 `scripts/repo-python scripts/verify-fighter-trajectory-followups-f605.py
 --boss 0x004F7130`. No 943-unit cold replay or Oracle acceptance.
@@ -13533,7 +13533,7 @@ jump DATA. With F605, all 22 true original 0x47/48 case subranges
 (1,973 x86 roles, 7,251 original native CODE bytes, 289 typed fields)
 are source-backed; with earlier giant case proofs 286 original
 **internal** actions/66,880 original inner CODE bytes, NO whole-giant
-exactness or independent case credit. [F606 exact PE/order evidence](FIGHTER_TRAJECTORY_FOLLOWUP_SPAWNS_F606.md),
+exactness or independent case credit. F606 exact PE/order evidence,
 `probes/FighterTrajectoryFollowupSpawnF606.inc`,
 `probes/FighterTrajectoryFollowupLateSpawnF606.inc`; targeted
 `scripts/repo-python scripts/verify-fighter-trajectory-followup-spawns-f606.py --boss 0x0058AF60`.
@@ -13562,7 +13562,7 @@ object. F607 adds **9 genuine internal cases /891 original x86 roles
 F598–F607 total 295 source-backed inner cases /70,121 original CODE
 bytes. These are NOT complete whole-function adoptions; the other
 two real 118-instruction action0x49 owner variants and full giant
-CODE remain nonexact. [F607 original PE+source proof](FIGHTER_TRAJECTORY_LANDING_F607.md),
+CODE remain nonexact. F607 original PE+source proof,
 targeted `scripts/repo-python scripts/verify-fighter-trajectory-landing-f607.py --boss 0x004F7130`.
 No full all-unit cold replay; official 943/862,726 authored exact unchanged.
 
@@ -13585,8 +13585,8 @@ CODE bytes/32 genuine COFF refs**; with F607 all 11 native action0x49
 cases are source-backed (1,127 native roles/4,081 inner CODE/167
 fields). F598–F608 total **297 inner cases/70,961 original CODE
 bytes** while the entire giants remain NONEXACT and no independent
-new authored CODE exactness is granted. [Original F608 physical
-study](FIGHTER_TRAJECTORY_LANDING_SPAWN_F608.md),
+new authored CODE exactness is granted. Original F608 physical
+study,
 `probes/FighterTrajectoryLandingSpawnF608.inc`, targeted
 `scripts/repo-python scripts/verify-fighter-trajectory-landing-spawn-f608.py --boss 0x0058AF60`.
 No all-unit cold replay, no external Oracle receipt.
@@ -13608,7 +13608,7 @@ const/casts and pointer lvalues. Every variant emits the full
 mere signedness, `for` spelling and simple lexical casts as the
 remaining compiler stack-allocation cause; no fabricated locals,
 partial acceptance or all-unit cold replay.
-[Original F609 analysis](ARCHIVE_DESTRUCTOR_SOURCE_TYPES_F609.md),
+Original F609 analysis,
 selected `scripts/repo-python scripts/verify-archive-source-types-f609.py --case signed-index`.
 Official whole authored exact units remain 943/862,726 native CODE bytes.
 
@@ -13633,7 +13633,7 @@ F610 adds **9 actual inner cases /1,071 real x86 instruction roles /
 COFF refs**; F598–F610 studied **306** native inner case bodies/
 74,989 original interior CODE bytes, not independent complete exact
 functions. The other 2 giant action0x4A native 165-instruction spawn
-variants remain open. [Original case/PE/codegen F610 study](FIGHTER_TRAJECTORY_BOUNCE_F610.md)
+variants remain open. Original case/PE/codegen F610 study
 and selected `scripts/repo-python scripts/verify-fighter-trajectory-bounce-f610.py --boss 0x004F7130`.
 No all-unit cold replay; authored exact 943/862,726 unchanged.
 
@@ -13656,7 +13656,7 @@ source-backed, 1,401 true native x86 roles/5,206 original internal CODE
 bytes/213 genuine typed fields. Overall F598–F611 studied 308 native
 case interiors /76,167 original internal CODE bytes, **zero new whole
 exact authored code**, no full cold replay or Oracle acceptance.
-[F611 original PE/native source evidence](FIGHTER_TRAJECTORY_BOUNCE_SPAWN_F611.md),
+F611 original PE/native source evidence,
 selected `scripts/repo-python scripts/verify-fighter-trajectory-bounce-spawn-f611.py --boss 0x0058AF60`.
 
 
@@ -13675,7 +13675,7 @@ change in any full-size form, so casts, pointee type, const/volatile
 and straightforward free-value array ordering cannot explain the
 source allocation mismatch. No fake padding or machine byte graft,
 no accepted new authored whole CODE or 943-unit cold replay.
-[Native original F612 investigation](SCENE_DESTRUCTOR_POINTER_TYPES_F612.md),
+Native original F612 investigation,
 selected `scripts/repo-python scripts/verify-scene-freed-pointer-types-f612.py --case int-pointer`.
 Official exact authored ledger remains 943/862,726 original CODE bytes.
 
@@ -13702,7 +13702,7 @@ original internal CODE bytes/154 actual physical typed COFF fields**.
 F598–F613 cumulatively documents **319 native action interiors/
 79,377 source-backed original internal CODE bytes**; all 11 whole
 parents NONEXACT, no accepted whole-function authored CODE or full cold
-replay. [F613 genuine source/PE proof](FIGHTER_TRAJECTORY_RECOVERY_F613.md),
+replay. F613 genuine source/PE proof,
 selected `scripts/repo-python scripts/verify-fighter-trajectory-recovery-f613.py --boss 0x004F7130`.
 
 
@@ -13731,8 +13731,8 @@ Python single-line `if` suite; checking original source compiler
 output revealed and fixed this before strict acceptance.
 F598–F614 total: **330 real native case interiors /84,787 source-backed
 original internal CODE bytes**, still NO whole-giant exact credit,
-no all-unit cold replay/Oracle acceptance. [F614 source and real PE
-case evidence](FIGHTER_TRAJECTORY_BURST_F614.md),
+no all-unit cold replay/Oracle acceptance. F614 source and real PE
+case evidence,
 selected `scripts/repo-python scripts/verify-fighter-trajectory-burst-f614.py --boss 0x0045DD70`.
 
 
@@ -13757,8 +13757,8 @@ whole source is 2,930 bytes; another matches 627/654 native x86
 instruction widths but source has 3,026 bytes. These prove why
 matching isolated physical stack slots or mnemonic sequences is
 insufficient. Zero accepted complete authored function CODE, no
-invented source padding/all-unit cold replay. [F615 full source
-experiment/provenance](WINMAIN_LOCAL_OBJECT_LAYOUT_F615.md),
+invented source padding/all-unit cold replay. F615 full source
+experiment/provenance,
 selected `scripts/repo-python scripts/verify-winmain-local-layout-f615.py --case msg-before-app-plus-all-hwnd-event-int`.
 
 
@@ -13781,8 +13781,8 @@ ctor callers, and two actual base ctor callers (one derived, one
 authored). **This proves game use but not historical author-vs-
 generated source origin**; all three remain 95-member original
 `unknown` origin review, no 88-byte authored exact credit or whole
-vtable ownership claim. [F616 complete original C++ alternatives
-and typed PE/COFF evidence](NATIVE_GAME_CONSTRUCTORS_F616.md),
+vtable ownership claim. F616 complete original C++ alternatives
+and typed PE/COFF evidence,
 `probes/NativeGameConstructorsF616.cpp`,
 `probes/NativeGameConstructorsImplicitF616.cpp`, targeted
 `scripts/repo-python scripts/verify-native-game-constructors-f616.py`.
@@ -13811,8 +13811,8 @@ All 30 previously reconstructed original action cases and afterRET
 packed DATA are rechecked in each affected whole-parent source TU.
 Cumulative strict interior source study F598–F617: **336 cases /
 86,902 native inner CODE bytes**, NOT independent whole exact CODE
-and NOT credited authored source. [Actual original F617 source/negative
-research](FIGHTER_AIR_TRANSITION_F617.md),
+and NOT credited authored source. Actual original F617 source/negative
+research,
 `scripts/repo-python scripts/verify-fighter-air-transition-f617.py --boss 0x0045DD70`,
 `--negative-actor`. Official authored whole-exact 943/862,726 unchanged,
 no full all-unit cold replay or external Oracle.
@@ -13837,7 +13837,7 @@ provenance or whole native vtable DATA contents: the original
 `00449DE0` remains `unknown`/`review` and receives no new authored
 exact credit. Along with F616, four 133-byte total whole original
 constructors are source-backed but uncredited pending provenance.
-[F618 actual original background ctor evidence](BACKGROUND_OWNER_CONSTRUCTOR_F618.md),
+F618 actual original background ctor evidence,
 reproducible `scripts/repo-python scripts/verify-background-owner-constructor-f618.py`.
 No full 943-unit cold replay and official 943/862,726 authored exact
 unchanged.
@@ -13866,8 +13866,8 @@ only **one STRICT source-backed 144-byte original inner game case**
 and explicitly preserves the negative multi-case compiler context;
 none of the enclosing 005AEEC0 giant is fully native exact.
 F598–F620 now 337 strict internal case subranges/87,046 original
-inner CODE bytes, NOT whole-function acceptance. [F620 original
-native positive+negative source proof](FIGHTER_SIMPLE_AIR_CONTEXT_F620.md),
+inner CODE bytes, NOT whole-function acceptance. F620 original
+native positive+negative source proof,
 targeted `scripts/repo-python scripts/verify-fighter-facing5f-f620.py
 --negative-context`. Official 943/862,726 authored complete exact
 ledger unchanged; no all-unit cold replay/Oracle claim.
@@ -13899,7 +13899,7 @@ DATA and case0/F614 selected regressions preserved. F598–F622
 strict source-backed interior 339 cases/87,607 original native
 CODE bytes; enclosing entire giants NONEXACT, no whole-function
 credit, original 943/862,726 exact authored coverage unchanged.
-[F622 actual PE semantic and compiler proof](FIGHTER_COUNTER_DISPATCH_F622.md),
+F622 actual PE semantic and compiler proof,
 selected `scripts/repo-python scripts/verify-fighter-counter-dispatch-f622.py --boss 0x005AEEC0`.
 
 
@@ -13930,7 +13930,7 @@ OBJ via strict F622/F614 original PE verifiers. Overall F598–F624
 has **341 strictly source-backed original internal action subranges /
 88,614 original native inner CODE bytes**, not simultaneously
 complete entire giants, no accepted additional whole authored CODE.
-[F624 actual original 0x63 source/boundary/typed field proof](FIGHTER_MODE_EVENT_ACTION63_F624.md),
+F624 actual original 0x63 source/boundary/typed field proof,
 selected `scripts/repo-python scripts/verify-fighter-mode63-f624.py --boss 0x00564BE0`.
 Official 943/862,726 authored exact unchanged; no 943-unit cold replay.
 
@@ -13960,7 +13960,7 @@ Original source lifetime/ordering context must be recovered without
 fake temps or byte grafts. Reproduce two bounded original source
 negative proofs with `scripts/repo-python scripts/verify-destructor-direct-free-f625.py
 --which archive` and `--which scene`.
-[Full original PE/COFF investigation](DESTRUCTOR_DIRECT_FREE_LIFETIMES_F625.md).
+Full original PE/COFF investigation.
 Official authored exact whole CODE 943/862,726 remains unchanged;
 no all-unit cold replay or external Oracle acceptance.
 
@@ -13996,7 +13996,7 @@ x86 roles/2,085 original internal native CODE bytes/35 physical
 COFF fields**, cum F598–F626 **346 original inner case bodies /
 90,699 original native inner CODE bytes**. All containing fighters
 and separate authored complete destructors remain NONEXACT.
-[F626 actual original PE/multi-case context evidence](FIGHTER_MODE_EVENT_BASIC_F626.md),
+F626 actual original PE/multi-case context evidence,
 targeted `scripts/repo-python scripts/verify-fighter-mode63-basic-f626.py --boss 0x004AC040`,
 `--negative-actor 0x0058AF60`. Official authored whole exact
 943/862,726 unchanged, no full 943-unit cold replay.
@@ -14026,7 +14026,7 @@ interior case /138 x86 roles/534 original inner CODE bytes/8 fields**,
 cumulative F598–F627 **347 original native case bodies/91,233
 internal CODE bytes**, all nested in nonexact giant function sources;
 official 943/862,726 whole authored exact unchanged.
-[Original F627 source/PE and negative owner evidence](FIGHTER_MODE_PRIORITY_F627.md),
+Original F627 source/PE and negative owner evidence,
 `scripts/repo-python scripts/verify-fighter-mode63-priority-f627.py
 --negative-actor`. No all-unit cold replay.
 
@@ -14059,7 +14059,7 @@ studied **371 original strict game-case interiors/98,385 original
 internal CODE bytes**, still zero accepted new whole-game authored
 functions or original executable edits; official exact 943/862,726
 unchanged, no full all-unit cold replay or Oracle receipt.
-[F628 original native source/x87/negative evidence](FIGHTER_JUMP_LANDINGS_F628.md),
+F628 original native source/x87/negative evidence,
 targeted `scripts/repo-python scripts/verify-fighter-jump-landings-f628.py --boss 0x00564BE0`.
 
 
@@ -14087,7 +14087,7 @@ have separately different 105-x86 projectile version. F598–F629
 strict research now 379 case interiors/100,764 native original
 inner CODE bytes, no newly accepted authored exact units, official
 943/862,726 unchanged and no full all-unit cold replay.
-[F629 original native case proof](FIGHTER_ARC_ACTION91_F629.md),
+F629 original native case proof,
 `scripts/repo-python scripts/verify-fighter-arc91-f629.py --boss 0x005AEEC0`.
 
 
@@ -14124,7 +14124,7 @@ strict interior source study **390 real action cases /103,890
 original native inner CODE bytes**, not independently callable
 complete exact function credits. Official 943/862,726 whole-authored
 match ledger unchanged; no 943-unit all-unit cold replay.
-[F631 actual PE/native timer and predecessor negative case proof](FIGHTER_LANDING_TIMER_F631.md),
+F631 actual PE/native timer and predecessor negative case proof,
 targeted `scripts/repo-python scripts/verify-fighter-landing-timer96-f631.py --boss 0x0058AF60`.
 
 
@@ -14144,7 +14144,7 @@ original nonfield bytes; texture/delete EBP locals still wrongly
 `−0x20/−0x1C` rather than native `−0x14/−0x10`.
 Original whole functions still NONEXACT; this is a negative VC7.1
 expression/lifetime constraint, not a new authored match or fake
-compiler-stack layout trick. [F632 original full source/PE experiment](DESTRUCTOR_FREE_ASSIGNMENT_F632.md),
+compiler-stack layout trick. F632 original full source/PE experiment,
 selected `scripts/repo-python scripts/verify-destructor-free-assignment-f632.py --case scene-three-assignment-args`.
 Official 943/862,726 complete authored exact unchanged; no all-unit
 cold replay.
@@ -14177,7 +14177,7 @@ silently accepted. F598–F633 total **423 strict source-backed real
 original game case interiors/113,268 original inner CODE bytes**,
 NOT new fully exact authored whole functions. Official
 943/862,726 exact unchanged; no all-unit cold replay/Oracle.
-[F633 actual PE, typed COFF and C++ case proof](FIGHTER_LANDING_SIBLINGS_F633.md),
+F633 actual PE, typed COFF and C++ case proof,
 selected `scripts/repo-python scripts/verify-fighter-landing-siblings-f633.py --boss 0x00564BE0`.
 
 
@@ -14198,7 +14198,7 @@ Nevertheless, code-generation identity and actual game callers
 cannot determine historical explicit-vs-generated class method
 origin: all three original `function-origins.csv` rows remain
 **unknown/review**, no 41-byte authored exact acceptance or class
-layout conjecture. [F634 real whole-function/PE-call proof](GAME_OBJECT_ACCESSOR_LEAVES_F634.md),
+layout conjecture. F634 real whole-function/PE-call proof,
 targeted `scripts/repo-python scripts/verify-game-object-leaves-f634.py`.
 Official 943/862,726 accepted authored whole CODE unchanged,
 no all-unit cold replay.
@@ -14226,7 +14226,7 @@ first 31 roles of `0x3E3`. Changing float constant writes to an
 identical raw integer bit representation did **not** alter native
 GPR lifetime allocation under the pinned VC7.1 profile. All 25
 are genuinely NONEXACT; tracked F596 best source unchanged.
-[F635 entire original PE/COFF compiler study](CHARACTEROBJECT_TYPED_MEMBER_CONTROLS_F635.md),
+F635 entire original PE/COFF compiler study,
 selected `scripts/repo-python scripts/verify-characterobject-typed-member-f635.py --case 38d-zero-velocity-as-bits`.
 No accepted whole/split CODE credit; official 943/862,726 whole
 exact unchanged and no all-unit cold replay.
@@ -14254,8 +14254,8 @@ F628 three landing cases, native mode0x63 if strict, F614 thirty
 old source cases and all original afterRET packed switch DATA.
 F598–F636 now **445 strictly source-backed original game-case
 interiors/119,520 original native inner CODE bytes**, no new whole
-fighter exact/accepted authored CODE. [F636 full original PE/native
-source study](FIGHTER_LANDING_PAIR_F636.md), targeted
+fighter exact/accepted authored CODE. F636 full original PE/native
+source study, targeted
 `scripts/repo-python scripts/verify-fighter-landing-pair-f636.py --boss 0x0058AF60`.
 Official 943/862,726 exact authored unchanged; no all-unit cold
 replay or external Oracle acceptance.
@@ -14290,7 +14290,7 @@ contexts remain honestly nonexact. F598–F637 bounded study now
 **456 strict original internal action case bodies/122,280 original
 inner CODE bytes**, NOT accepted complete game functions; official
 943/862,726 whole-authored exact unchanged, no full cold replay.
-[F637 original PE/x87/COFF source proof](FIGHTER_GROUND_BOOST_F637.md),
+F637 original PE/x87/COFF source proof,
 selected `scripts/repo-python scripts/verify-fighter-ground-boost-f637.py --boss 0x005D73C0`.
 
 
@@ -14317,8 +14317,8 @@ historical explicitly written-vs-generated source origin: all four
 remain `unknown`/`review`, no accepted authored exact CODE credit.
 Combined separate F616/F618/F634/F638 fully source-backed
 origin-unknown whole originals: **11 distinct functions /287 native
-CODE bytes**, all uncredited. [F638 original PE/vtable/constructor
-physical target and caller proofs](GAME_INHERITANCE_CONSTRUCTORS_F638.md),
+CODE bytes**, all uncredited. F638 original PE/vtable/constructor
+physical target and caller proofs,
 rebuild `scripts/repo-python scripts/verify-game-inheritance-constructors-f638.py`.
 Official 943/862,726 whole-authored exact unchanged; no full
 all-unit cold replay or external Oracle receipt.
@@ -14350,8 +14350,8 @@ F628 three landings, original mode63 when strict, previous F614
 jump DATA; F629/F630 original register cycles still marked negative.
 F598–F639 total **489 strictly source-backed original internal
 case bodies/131,586 original native CODE bytes**, no newly accepted
-whole giant/whole authored exact code. [F639 actual native PE/whole
-source proofs](FIGHTER_LAST_LANDINGS_F639.md), targeted
+whole giant/whole authored exact code. F639 actual native PE/whole
+source proofs, targeted
 `scripts/repo-python scripts/verify-fighter-last-landings-f639.py --boss 0x0058AF60`.
 Formal whole exact ledger 943/862,726 unchanged, no all-unit cold replay.
 
@@ -14380,8 +14380,8 @@ historical C++ original signature (float vs int) or explicit author
 vs generated/library source: **all 12 stay `unknown`/`review`, no
 accepted authored exact credit**. Combined F616/F618/F634/F638/F640
 origin-unknown full source study **23 native whole functions/
-490 original native CODE bytes**, all uncredited. [F640 original
-whole PE/C++/call provenance](GAME_CALL_FORWARDERS_F640.md),
+490 original native CODE bytes**, all uncredited. F640 original
+whole PE/C++/call provenance,
 selected `scripts/repo-python scripts/verify-game-call-forwarders-f640.py`.
 Official authored 943/862,726 whole exact unchanged, no all-unit
 cold replay/Oracle.
@@ -14410,7 +14410,7 @@ F614 thirty previous cases and entire afterRET packed switch DATA,
 while previously unmatched original 0x91 register cycles remain
 nonexact. F598–F641 strict interior research totals **522 real
 original case bodies/140,487 original inner CODE bytes**, not
-accepted whole authored exact functions. [F641 native case proof](FIGHTER_NO_COUNTER_LANDINGS_F641.md),
+accepted whole authored exact functions. F641 native case proof,
 reproducible `scripts/repo-python scripts/verify-fighter-no-counter-landings-f641.py --boss 0x0058AF60`.
 Official 943/862,726 whole authored exact unchanged; no full cold replay.
 
@@ -14446,8 +14446,8 @@ complete separately owned afterRET packed jump DATA.
 F598–F642 strictly source-backed original game-case interiors
 **544/148,405 native original inner CODE bytes**, *not* accepted
 whole functions; 943/862,726 whole authored exact remains unchanged,
-no 943-unit cold replay. [F642 original PE/natural C++ and real
-scratch width evidence](FIGHTER_PROJECTILE_LAUNCH_F642.md),
+no 943-unit cold replay. F642 original PE/natural C++ and real
+scratch width evidence,
 selected `scripts/repo-python scripts/verify-fighter-projectile-launch-f642.py --boss 0x004AC040`.
 
 
@@ -14472,8 +14472,8 @@ source owners remain `unknown`/`review`: machine-code or game-call
 identity cannot establish explicit authored versus generated/library
 wrappers. Combined source-backed entire origin-unknown whole functions
 F616/F618/F634/F638/F640/F644 are **29/658 actual native CODE
-bytes**, all uncredited. [F644 complete native source and original
-field/caller proof](GAME_FLOAT_MATH_ADAPTERS_F644.md), targeted
+bytes**, all uncredited. F644 complete native source and original
+field/caller proof, targeted
 `scripts/repo-python scripts/verify-game-float-math-adapters-f644.py`.
 Official authored exact remains 943/862,726; no full cold replay.
 
@@ -14505,8 +14505,8 @@ original 30 game action grammars and full separately owned
 original afterRET jump DATA, while prior native register negatives
 remain honestly nonexact. F598–F645 strict interior study totals
 **566 cases/153,255 original native inner CODE bytes**, no accepted
-new authored whole-function exact CODE. [F645 original PE and
-natural C++ proof](FIGHTER_MOTION_RESTART_F645.md), targeted
+new authored whole-function exact CODE. F645 original PE and
+natural C++ proof, targeted
 `scripts/repo-python scripts/verify-fighter-motion-restart-f645.py --boss 0x00564BE0`.
 Official authored whole exact 943/862,726 remains unchanged; no
 all-unit cold replay or external Oracle receipt.
@@ -14533,7 +14533,7 @@ compiler/library origin. All eight retain `unknown/review`, zero
 new accepted authored CODE. Whole origin-pending source study
 F616/F618/F634/F638/F640/F644/F648 now **37 original complete
 functions/819 actual native original CODE bytes**, all uncredited.
-[F648 original physical full-byte/source and caller evidence](GAME_STATE_FORWARD_LEAVES_F648.md),
+F648 original physical full-byte/source and caller evidence,
 selected `scripts/repo-python scripts/verify-game-state-forward-leaves-f648.py`.
 Formal 943/862,726 authored exact remains unchanged; no all-unit cold replay.
 
@@ -14567,7 +14567,7 @@ natural C++ lvalue/float/condition variants failed to resolve it.
 x86 roles/756 original uncredited inner CODE B/22 PE/COFF refs**.
 F598–F647 bounded case study **570 strict original inner cases /
 154,011 original native inner CODE bytes**, NOT accepted whole
-functions. [F646/F647 actual original PE and source/negative proof](FIGHTER_FALL_REFLECT_F646_F647.md),
+functions. F646/F647 actual original PE and source/negative proof,
 `scripts/repo-python scripts/verify-fighter-fall-reflect-f646.py --boss 0x00543210`.
 Official 943/862,726 accepted authored whole CODE unchanged, no
 943-unit cold replay or external Oracle.
@@ -14596,8 +14596,8 @@ Previously F595 independently matched `004135F0` 40/40B field
 setter and is NOT counted again as F650. F616/F618/F634/F638/
 F640/F644/F648/F650 recent distinct whole unknown study **39
 functions/889 original CODE bytes**, or **40/929** including
-separate F595, all uncredited. [F650 complete linked native
-PE/COFF/VC7.1 and call graph proof](GAME_COM_VIRTUAL_RELEASE_F650.md),
+separate F595, all uncredited. F650 complete linked native
+PE/COFF/VC7.1 and call graph proof,
 targeted `scripts/repo-python scripts/verify-game-virtual-release-f650.py`.
 Formal accepted authored whole exact 943/862,726 unchanged;
 no full 943-unit cold replay.
@@ -14631,7 +14631,7 @@ Eight other real actor D1/D2 source candidates remain 28 and
 `00564BE0` lack actual D1/D2 physical handlers. No false credit.
 F598–F652 strictly source-backed case study **572 genuine original
 interiors/154,461 original inner CODE bytes**, not accepted whole
-functions. [F651/F652 native PE, typed COFF and source proof](FIGHTER_RESOURCE_SHOTS_F651_F652.md),
+functions. F651/F652 native PE, typed COFF and source proof,
 `scripts/repo-python scripts/verify-fighter-resource-shots-f651.py`.
 Official 943/862,726 whole-authored exact unchanged; no all-unit replay.
 
@@ -14660,8 +14660,8 @@ mismatches**. These are NOT strict case interiors, not exact
 whole-giant CODE, no acceptance or total credit. Bounded strict
 F598–F652 remains **572 original native case interiors /154,461
 original internal CODE bytes**; accepted authored whole exact
-943/862,726 unchanged. [F649 original whole source CC negative
-compiler proof](FIGHTER_COMPLEX_STAGE_CC_F649.md),
+943/862,726 unchanged. F649 original whole source CC negative
+compiler proof,
 `scripts/repo-python scripts/verify-fighter-complex-stage-cc-f649.py`.
 No all-unit cold replay.
 
@@ -14684,7 +14684,7 @@ rechecked in the **same newly compiled** fighter. Net newly strict
 now **575 strict original internal case bodies /155,094 uncredited
 native CODE bytes** across giant research. 22 whole giant parents
 remain NONEXACT, all 943/862,726 independently accepted whole function
-figures unchanged. [Full original proof](FIGHTER_FALLING_RECOVERY_F653.md),
+figures unchanged. Full original proof,
 `scripts/repo-python scripts/verify-fighter-falling-recovery-f653.py`.
 No 943-unit replay.
 
@@ -14705,7 +14705,7 @@ original post-RET jump DATA. F598–F654 **577 strict native case
 interiors /155,643 uncredited original CODE bytes**, with **nine
 consecutive cases /563 original x86 /1,941 internal CODE B /60 real
 PE/COFF fields** in this one giant. No whole giant or new independent
-authored function is accepted. [F654 complete proof](FIGHTER_FALLING_FINISH_F654.md),
+authored function is accepted. F654 complete proof,
 `scripts/repo-python scripts/verify-fighter-falling-finish-f654.py`.
 No 943-unit full cold replay.
 
@@ -14728,7 +14728,7 @@ origin, no authored exact credits. Separate F595 and F616–F655
 source-backed unknown research cohort is now **47 distinct complete
 original native functions /1,002 CODE bytes**, all uncredited;
 95 historical uncertain provenance rows remain unchanged.
-[F655 complete original proof](GAME_UNATTRIBUTED_LEAVES_F655.md),
+F655 complete original proof,
 `scripts/repo-python scripts/verify-game-unattributed-leaves-f655.py`.
 No all-unit cold replay.
 
@@ -14755,7 +14755,7 @@ newly compiled giant. All 14 consecutive physical cases now have
 strict inner case cohort reaches **582 /157,127 original internal
 CODE bytes**, still **zero independently whole-exact giant
 function acceptance**. The authored 943/862,726 formal exact ledger
-is unchanged. [Native F656 source and proof](FIGHTER_LATE_STAGES_F656.md),
+is unchanged. Native F656 source and proof,
 `scripts/repo-python scripts/verify-fighter-late-stages-f656.py`.
 No 943-unit all-unit cold replay.
 
@@ -14784,7 +14784,7 @@ has **17 strict, not uninterrupted** internal stages (4,192 B /1,209
 x86 /115 original fields), because case 186 is a genuine unresolved
 gap. All 22 original whole giants remain NONEXACT and formal
 943/862,726 original whole authored exact ledger unchanged.
-[F657 genuine case proof](FIGHTER_MOTION_CONTINUATION_F657.md),
+F657 genuine case proof,
 `scripts/repo-python scripts/verify-fighter-motion-continuation-f657.py`.
 No mass replay.
 
@@ -14808,7 +14808,7 @@ CODE bytes now grows to **66 independently source-backed complete
 original functions /1,183 native CODE bytes**; all **95 historical
 origin-unknown native candidate rows remain uncredited** and formal
 accepted authored ledger **943 /862,726** is unchanged.
-[Full native F658 proof](GAME_UNATTRIBUTED_SIMPLE_LEAVES_F658.md),
+Full native F658 proof,
 `scripts/repo-python scripts/verify-game-unattributed-simple-leaves-f658.py`.
 No all-unit cold replay.
 
@@ -14827,7 +14827,7 @@ seven whole 171-byte ArchiveCatalog authored destructor C++ filename
 lifetime experiments verify five unchanged **108/115** originals and
 two degraded **102/115**, with original EBP resource/delete/filename
 slots still wrong. None is whole-exact or accepted; no fake C++ locals.
-[Giant and destructor original native F659/F660 negative detail](GIANT_REGISTER_AND_ARCHIVE_LIFETIME_NEGATIVES_F659_F660.md).
+Giant and destructor original native F659/F660 negative detail.
 
 ## F661: source-backed original fighter projectile 18A/18B with physical EBP nonmatches
 
@@ -14848,7 +14848,7 @@ backed fighter inner case total remains **585 /157,894 native CODE
 bytes** (not including these 615 new nonstrict source-backed bytes).
 All 22 original whole giants remain NONEXACT, 943/862,726 authored
 whole-function exact unchanged.
-[Full F661 original native/source proof](FIGHTER_MOTION_SHOTS_F661.md),
+Full F661 original native/source proof,
 `scripts/repo-python scripts/verify-fighter-motion-shots-f661.py`.
 No 943-unit mass replay.
 
@@ -14878,7 +14878,7 @@ Across all F598–F664 fighter research **587 strict case interiors /
 158,673 original internal native CODE B**, all uncredited until
 respective whole giant exactness. Official whole-authored original
 943 functions/862,726 CODE B ledger unchanged.
-[Original complete PE/source proof](FIGHTER_SPECIAL_STAGE_F664.md),
+Original complete PE/source proof,
 `scripts/repo-python scripts/verify-fighter-special-stage-f664.py`.
 No 943-unit all-unit cold replay.
 
@@ -14900,7 +14900,7 @@ functions and all 95 historical still-origin-unknown candidates
 remain uncredited. F665 increases the research-only whole-source
 unknown cohort from **66/1,183 original B** to **70/1,259 original B**,
 without any accepted authored whole-function code change.
-[F665 original PE/COFF proof](GAME_NATIVE_FORWARDER_LEAVES_F665.md),
+F665 original PE/COFF proof,
 `scripts/repo-python scripts/verify-game-native-forwarder-leaves-f665.py`.
 No all-unit cold replay.
 
@@ -14926,8 +14926,8 @@ never conflate results from these two different parent source variants
 or promote either to entire historical parent exact. The new F666
 verifier also rechecks the 17 prior independently strict case interiors,
 186/18A/18B genuine negative controls and all afterRET switch DATA in
-that newly compiled alternate parent. [Native context proof and
-limits](FIGHTER_PRECEDING_STAGE_PHASE_F666.md),
+that newly compiled alternate parent. Native context proof and
+limits,
 `scripts/repo-python scripts/verify-fighter-preceding-stage-controls-f666.py`.
 No new strict case or authored whole-function exact credit. Formal
 943/862,726 original authored whole exact and F598–F666 587/158,673
@@ -14955,7 +14955,7 @@ interiors /1,644 x86 /5,715 original CODE B /150 true COFF fields**,
 but still NONEXACT and no independent entire-function credit. Across
 F598–F668 research **590 context-strict cases /159,417 original
 native internal CODE bytes** remain uncredited; F666's source phase
-context caveat still applies. [F668 full original PE proof](FIGHTER_COUNTER_SPECIAL_F668.md),
+context caveat still applies. F668 full original PE proof,
 `scripts/repo-python scripts/verify-fighter-counter-special-f668.py`.
 No all-unit cold replay.
 
@@ -14983,7 +14983,7 @@ Across F598–F669 this is **593 context-strict original case bodies /
 160,089 uncredited native CODE bytes**. F666 earlier historical
 source-phase warning remains, no original whole giant is exact and
 formal authored 943/862,726 exact CODE ledger unchanged.
-[Original full-parent F669 proof](FIGHTER_POST_COUNTER_F669.md),
+Original full-parent F669 proof,
 `scripts/repo-python scripts/verify-fighter-post-counter-f669.py`.
 No 943-unit replay.
 
@@ -15004,7 +15004,7 @@ All 95 original source-unknown candidates still remain uncredited.
 F595–F670 source-backed unknown cohort now **71 distinct complete
 originals /1,285 whole CODE bytes** (F670 +26 bytes); formal accepted
 whole-authored exact ledger still **943/862,726 CODE bytes**.
-[Full original native PE/COFF proof](GAME_NATIVE_SCOPED_LIFETIME_F670.md),
+Full original native PE/COFF proof,
 `scripts/repo-python scripts/verify-game-native-scoped-lifetime-f670.py`.
 No mass cold replay.
 
@@ -15030,7 +15030,7 @@ rechecked in the **same newly compiled parent**. The source-backed
 selected giant strict cohort remains 25/6,387 original internal
 CODE B; aggregate strict research F598–F671 remains **593 /160,089
 uncredited native CODE B**. No whole authored exact change from
-943/862,726. [Original F671 full native/source proof](FIGHTER_FOUR_SHOT_BARRAGE_F671.md),
+943/862,726. Original F671 full native/source proof,
 `scripts/repo-python scripts/verify-fighter-four-shot-barrage-f671.py`.
 No full 943-unit cold replay.
 
@@ -15059,7 +15059,7 @@ x86 /7,079 original CODE B /187 genuine source fields**. Aggregate
 F598–F673 source-backed native fighter research now **594 strict
 case interiors /160,781 uncredited original CODE bytes**. Formal
 authored accepted whole-function ledger still **943/862,726 CODE B**.
-[F673 entire parent physical proof](FIGHTER_GROUND_WAVE_F673.md),
+F673 entire parent physical proof,
 `scripts/repo-python scripts/verify-fighter-ground-wave-f673.py`.
 No full 943-unit replay or whole giant acceptance.
 
@@ -15087,7 +15087,7 @@ complete original afterRET switch DATA. The selected giant now has
 207 real native PE/COFF fields**, but still NONEXACT as a whole.
 Research total F598–F674 **595 strict original inner cases /161,569
 uncredited original CODE bytes**, whole-authored 943/862,726 unchanged.
-[F674 native x86 and true COFF proof](FIGHTER_CLOUD_RAIN_F674.md),
+F674 native x86 and true COFF proof,
 `scripts/repo-python scripts/verify-fighter-cloud-rain-f674.py`.
 No whole 943-unit replay.
 
@@ -15115,7 +15115,7 @@ all original EBP negative controls, complete afterRET jump DATA,
 and real native 2BC remains strictly matched even when the five
 natural 259..25D source bodies are restored. F674 strict 2EF exists
 in a different parent source context; don't merge its acceptance
-without retesting. [F672 authentic original source/negative proof](FIGHTER_EIGHT_SHOT_AND_FOLLOW_F672.md),
+without retesting. F672 authentic original source/negative proof,
 `scripts/repo-python scripts/verify-fighter-eight-shot-and-follow-f672.py`.
 F598–F674 strict research remains **595 /161,569 native inner CODE B**;
 formal authored 943/862,726 unchanged. No mass replay.
@@ -15140,8 +15140,8 @@ currently classified authored, but no historical class/source author
 identity is proved. All 95 original provenance-unknown candidates
 remain uncredited. Whole source-backed unknown-origin research cohort
 F595–F675 now **75 distinct complete native functions /1,405 original
-CODE B**, zero new accepted authored CODE. [F675 actual PE/COFF
-whole-byte proof](SDK_NATIVE_STATE_CONSTRUCTORS_F675.md),
+CODE B**, zero new accepted authored CODE. F675 actual PE/COFF
+whole-byte proof,
 `scripts/repo-python scripts/verify-sdk-native-state-constructors-f675.py`.
 No mass replay.
 
@@ -15176,8 +15176,8 @@ now **28 contextual strict original inner cases /2,335 x86 /
 F598–F676 cumulative research **596 contextual strict case interiors
 /161,788 uncredited native original CODE bytes**. All enclosing
 22 giants still NONEXACT and formal authored entire 943/862,726
-original CODE B unchanged. [F676 original PE/COFF and separate
-context proofs](FIGHTER_CLOUD_BURST_F676.md),
+original CODE B unchanged. F676 original PE/COFF and separate
+context proofs,
 `scripts/repo-python scripts/verify-fighter-cloud-burst-f676.py`.
 No all-unit cold replay.
 
@@ -15202,7 +15202,7 @@ research 75/1,405B becomes **76 distinct whole original source-backed
 unknown-origin functions /1,509 genuine CODE bytes**, all uncredited.
 All 95 source-unknown candidates remain pending; formal authored
 whole exact remains 943/862,726 original CODE B.
-[F677 entire original native PE/COFF proof](SDK_NATIVE_BULK_STATE_CTOR_F677.md),
+F677 entire original native PE/COFF proof,
 `scripts/repo-python scripts/verify-sdk-native-bulk-state-ctor-f677.py`.
 No full 943-unit cold replay.
 
@@ -15228,7 +15228,7 @@ authored callers. All five original source origins remain UNKNOWN;
 F595–F680 research-only whole unknown cohort now **81 distinct
 originals /1,559 actual CODE B**, uncredited. Formal 943/862,726
 accepted whole-authored CODE remains unchanged.
-[F680 entire original linked PE/COFF proof](SDK_NATIVE_HELPER_LEAVES_F680.md),
+F680 entire original linked PE/COFF proof,
 `scripts/repo-python scripts/verify-sdk-native-helper-leaves-f680.py`.
 No full cold replay.
 
@@ -15271,7 +15271,7 @@ original CODE B /222 true fields**; aggregate F598–F681 research
 internal CODE bytes**, still uncredited. The whole giant and all 22
 original fighter whole parents remain NONEXACT; formal accepted
 whole-authored ledger still 943/862,726 CODE bytes.
-[F681 selected original PE/COFF source/receiver-role proof](FIGHTER_STORM_TERMINAL_F681.md),
+F681 selected original PE/COFF source/receiver-role proof,
 `scripts/repo-python scripts/verify-fighter-storm-terminal-f681.py`.
 No full 943-unit cold replay.
 
@@ -15299,7 +15299,7 @@ matching geometry as whole exact. Original resource/delete/filename
 temp allocation remains unexplained. Reproducible source/COFF/PDB
 and logs are retained under ignored `.analysis/f682-archive-resource-lifetime/`
 and `.analysis/f683-archive-name-types/`.
-[Complete original target F682/F683 negative matrix](ARCHIVE_RESOURCE_FILENAME_LIFETIMES_F682_F683.md).
+Complete original target F682/F683 negative matrix.
 Zero authored exact CODE change; official whole 943/862,726 B and
 giant whole-nonexact status remain unchanged; no full cold replay.
 
@@ -15335,8 +15335,8 @@ that separate verified parent. Never sum strict credit across these
 incompatible source contexts or claim full giant exact. F598–F684
 cumulative research **597 strictly source-backed original inner
 cases/162,036 uncredited original native CODE bytes**, unchanged;
-formal whole-authored 943/862,726 remains. [Original full-parent
-F684 source and negative physical proof](FIGHTER_ANGLE_STORM_F684.md),
+formal whole-authored 943/862,726 remains. Original full-parent
+F684 source and negative physical proof,
 `scripts/repo-python scripts/verify-fighter-angle-storm-f684.py`.
 No mass replay.
 
@@ -15357,8 +15357,8 @@ source-backed *whole* origin-unknown function, bringing uncredited
 F595–F686 research to **82 distinct original whole functions /
 1,578 original native CODE B**. All 95 original provenance-unknown
 candidate ledger entries remain excluded; formal game-authored entire
-exact still 943/862,726 CODE B. [F686 whole original native PE/
-COFF link proof](SDK_NATIVE_VTABLE_DESTRUCTOR_F686.md),
+exact still 943/862,726 CODE B. F686 whole original native PE/
+COFF link proof,
 `scripts/repo-python scripts/verify-sdk-native-vtable-destructor-f686.py`.
 No all-unit cold replay.
 
@@ -15411,7 +15411,7 @@ None matches original 73 B/23 x86 or real EBP/EH ownership; all
 remain NONEXACT, zero game-authored or origin-unknown new whole
 function credit. Original source/U unwind code at 00656B2C must
 be investigated before further source acceptance.
-[F688 selected original PE/VC7.1 EH negative evidence](SDK_EH_DERIVED_DESTRUCTOR_NEGATIVE_F688.md).
+F688 selected original PE/VC7.1 EH negative evidence.
 Private reproducible probes in ignored `.analysis/f688-eh-derived-dtor/`;
 no all-unit cold replay.
 
@@ -15465,8 +15465,8 @@ aggregate variant is **invalid as source padding**, not a valid
 reconstruction hypothesis. F693 verification script was attempted
 when the tool disconnected but was **never written/committed**;
 future agents must use the real existing F596/F589 targeted source
-verifiers instead. [Grounded original 28+10 complete negative matrix
-and first native GPR difference](CHARACTEROBJECT_SCENE_PHASE_NEGATIVES_F689_F693.md).
+verifiers instead. Grounded original 28+10 complete negative matrix
+and first native GPR difference.
 
 The original R263 `ORIGIN_PENDING_REVIEW.md` ledger table is clearly
 marked **historical**; actual live 95 still-unknown provenance rows
@@ -15496,7 +15496,7 @@ rechecks all prior **27 strict *nonterminal* context cases**, authentic
 known negative cases, the 236 genuinely differing roles in 2F9, and
 original whole 943-byte afterRET DATA in the **same new parent**. A natural
 angle-lvalue source alternative failed to change original MOV/FLD order.
-[Actual original PE, exact COFF field and stack-ownership proof](FIGHTER_GROUNDED_VOLLEY_F696.md);
+Actual original PE, exact COFF field and stack-ownership proof;
 `scripts/repo-python scripts/verify-fighter-grounded-volley-f696.py`.
 Formal authored whole-function exact coverage is unchanged: **943 whole
 functions /862,726 CODE bytes (43.71% reviewed)**. No 943-unit replay.
@@ -15517,7 +15517,7 @@ index-local displacement. The native real resource/delete/filename
 slots are still **`-0xC/-0x8/-0x10`**; **0/18** full function exact.
 This excludes a plausible direct container return-reference or simple
 aggregate-lifetime explanation without fake local reservations.
-[Original PE and actual full COFF negatives](ARCHIVE_AGGREGATE_AND_REFERENCE_NEGATIVES_F697_F698.md);
+Original PE and actual full COFF negatives;
 reproducible ignored local scripts and original objects in
 `.analysis/f697-archive-aggregate-lifetime/` and
 `.analysis/f698-archive-return-reference/` remain saved. No exact
@@ -15546,8 +15546,8 @@ New upstream source changes F696 downstream real `2FB` from **635 to
 actual prior 27 strict nonterminal case bodies and complete original
 943-byte after-RET switch DATA were freshly rechecked in the new parent.
 F684 verification now explicitly supports a real following source `2FA`,
-not just its original placeholder. [Actual physical original evidence
-and source-context negative proof](FIGHTER_APPROACH_VOLLEY_F699.md).
+not just its original placeholder. Actual physical original evidence
+and source-context negative proof.
 Reproduce with `scripts/repo-python scripts/verify-fighter-approach-volley-f699.py`.
 **Zero new independent whole-function accepted CODE; 943/862,726 unchanged.**
 
@@ -15566,7 +15566,7 @@ additional authentic instructions (**251/254/255 B**); **two** separate
 freed-pointer local models retain full **248/75/12** but regress to
 **189/200** and still allocate all five EBP slots incorrectly.
 No exact match, no fake locals, no 943-unit cold replay.
-[Native slots and complete ten-candidate COFF evidence](SCENE_TEXTURE_OWNER_LIFETIMES_F700.md);
+Native slots and complete ten-candidate COFF evidence;
 reproducible ignored local C++ research under
 `.analysis/f700-scene-texture-owner/`.
 
@@ -15594,8 +15594,8 @@ The actual 302 integer loop context shifts previous full generated
 381/281/181 real x86 and all 34/31/17 original typed PE/COFF fields.
 F701 independently rechecks these along with previous 27 strict
 nonterminal original cases and the **complete 943-byte afterRET DATA**
-in one fresh entire parent. Read [complete native/COFF and honest
-lifetime negative](FIGHTER_FOUR_TIER_VOLLEY_F701.md) and reproduce:
+in one fresh entire parent. Read complete native/COFF and honest
+lifetime negative and reproduce:
 `scripts/repo-python scripts/verify-fighter-four-tier-volley-f701.py`.
 No all-943 cold replay, 943/862726 authored exact baseline unchanged.
 
@@ -15618,7 +15618,7 @@ true used aggregates move the scene/path pair to `−0x180/−0x17C`
 four bytes**, proving declaration count/aggregate grouping alone
 does not reproduce original VC7.1 lifetime layout. This is not an
 independently exact full function or source proven original class.
-[Complete native/source controls and preserved negatives](WINMAIN_USED_OBJECT_CONTEXT_NEGATIVES_F702_F704.md);
+Complete native/source controls and preserved negatives;
 local `.analysis/f702-*`, `.analysis/f703-*`, `.analysis/f704-*`.
 Unchanged exact authored ledger 943/862726, no cold all-unit replay.
 
@@ -15656,8 +15656,8 @@ scopes × two real VC7.1 profiles** for the whole unknown-origin
 emit 69 B/22 with missing genuine EH state-zero and saved-ESI owner;
 O2/GX variants emit 88 B/24 with different `FS:[0]` prologue.
 None exactly matches native; unknown provenance remains uncredited.
-[F706 full parent and machine-width proof](FIGHTER_COMBINED_STORM_CONTEXT_F706.md),
-[F705/F707 actual whole source negative matrix](CHARACTEROBJECT_PHASE_AND_SDK_EH_CONTROLS_F705_F707.md).
+F706 full parent and machine-width proof,
+F705/F707 actual whole source negative matrix.
 No all-unit cold replay, 943/862,726 full authored exact unchanged.
 
 
@@ -15678,7 +15678,7 @@ is strict or exact, no whole-function credit. Seven genuine arithmetic
 compiler controls retained. One same whole 58KB original-shaped parent
 checks both real cases, preceding real F706 259–25D, later F701
 2F8–302, previous 27 context-strict cases and all 943 native
-afterRET DATA bytes. [Complete physical original/native negative](FIGHTER_TWIN_BURST_F708.md),
+afterRET DATA bytes. Complete physical original/native negative,
 reproduce `scripts/repo-python scripts/verify-fighter-twin-burst-f708.py`.
 No all-unit cold replay; 943/862726 accepted authored unchanged.
 
@@ -15702,7 +15702,7 @@ variants naturally fixes native three-way stack allocation. Local
 actual SRC/OBJ/compiler/original PE/COFF receipts are retained under
 ignored `.analysis/f709-archive-loop-and-filename/` and
 `.analysis/f710-archive-used-iterator-context/`.
-[Whole native code and 12-source honest negative matrix](ARCHIVE_INDEX_FILENAME_OWNER_NEGATIVES_F709_F710.md).
+Whole native code and 12-source honest negative matrix.
 Zero newly accepted exact authored function CODE; no all-unit replay.
 
 Reproducible selected entire 171-B native C++ experiment generator is now
@@ -15732,8 +15732,8 @@ original game actions survive in this new source context; actual
 original parent isolated 88 2EF GPR mismatches; both 144. Seven
 additional whole-parent C++ expression variations did not recover
 this phase, two changed real original opcode order. No fake code
-padding or uncredited inner-case adoption. [Native evidence and honest
-regression](FIGHTER_FALLING_RADIALS_F711.md);
+padding or uncredited inner-case adoption. Native evidence and honest
+regression;
 `scripts/repo-python scripts/verify-fighter-falling-radials-f711.py`.
 No 943-unit full cold replay, official 943/862726 whole-source ledger
 unchanged.
@@ -15763,8 +15763,8 @@ Two portable tracked full-original selected verifiers support `--case`
 and `--all` only affected small source TUs:
 `scripts/verify-derived-eh-this-capture-f712.py` and
 `scripts/verify-scene-pair-scalar-owners-f713.py`. Original native PE,
-source alternative evidence and actual compiler receipts: [full
-physical negative matrix](SCENE_PAIRED_RESOURCE_AND_EH_THIS_CAPTURE_NEGATIVES_F712_F713.md).
+source alternative evidence and actual compiler receipts: full
+physical negative matrix.
 No fake locals, 943-unit full replay or authored exact CODE credit.
 
 
@@ -15793,7 +15793,7 @@ without any new independently callable byte-exact whole function.
 Same newly generated full parent rechecks prior real actions, previous
 26 still-strict internal cases, new 2EF 144 + 2F0/2F1 175/170
 native GPR negatives and all 943-B original afterRET DATA.
-[Complete physical original PE/COFF and honest nonexactness](FIGHTER_COMPLEX_MOVEMENT_F714_F715.md);
+Complete physical original PE/COFF and honest nonexactness;
 `verify-fighter-complex-movement-f714-f715.py` targeted one-parent rebuild.
 No all-943 cold replay, 943/862726 authored exact ledger unchanged.
 
@@ -15825,7 +15825,7 @@ nested `if` branch chains and actual edge comparators. All preserve
 **1,042 B/297 x86** instead of 1,024 native B/290 x86 and also
 regress from F715 closer 1,032/292. No x87/branch/GPR exactness
 gain. Preserve closer tracked F714/F715 source and original native
-negative comparison. [Physical original and full compiler results](ARCHIVE_RAII_OWNER_AND_FIGHTER_EDGE_CONTROLS_F716_F717.md).
+negative comparison. Physical original and full compiler results.
 No exact whole-function credit, no EXE changes, no full 943 cold replay.
 
 
@@ -15852,7 +15852,7 @@ In the SAME newly compiled parent, previous true source-backed
 later 2F8–302, the 26 still-strict earlier nonterminal cases,
 real 2EF/2F0/2F1 GPR negatives and all 943 independent original
 afterRET DATA bytes were rechecked.
-[F718 entire original PE/source and physical EBP evidence](FIGHTER_DOUBLE_VOLLEY_F718.md).
+F718 entire original PE/source and physical EBP evidence.
 `scripts/repo-python scripts/verify-fighter-double-volley-f718.py`.
 Whole authored exact ledger unchanged at 943/862726, no cold all-unit replay.
 
@@ -15878,7 +15878,7 @@ None fixes native three-way compiler temporary allocation or gains
 whole-function exactness. Tracked portable selected native-source
 verifier `scripts/verify-archive-loop-local-lifetimes-f719.py`
 supports `--case` and `--all` **only twelve affected source TUs**.
-[Actual entire PE/compiler and original stack negative](ARCHIVE_LOOP_LOCAL_LIFETIME_F719.md).
+Actual entire PE/compiler and original stack negative.
 No all-unit cold replay; authored exact 943/862726 unchanged.
 
 
@@ -15907,7 +15907,7 @@ cases** in this new entire parent. 2F0/2F1 still 147/170 real
 GPR negatives, separate original 943-B afterRET DATA rechecked
 in the SAME parent. No accepted whole-function CODE; authored
 943/862726 (43.71%) unchanged, no all-unit cold replay.
-[Original physical fields, EBP and restored GPR proof](FIGHTER_LATE_STORM_F720_F721.md).
+Original physical fields, EBP and restored GPR proof.
 `scripts/repo-python scripts/verify-fighter-late-storm-f720-f721.py`.
 
 
@@ -15939,7 +15939,7 @@ survive. All previous physical case fields and the whole independent
 NEW full parent. Authentic other register and EBP differences
 remain; **no exact whole fighter CODE accepted**. Source, original
 physical evidence and new contexts:
-[F722 full original native-order proof](FIGHTER_EARLY_PAIR_NATIVE_ORDER_F722.md),
+F722 full original native-order proof,
 `scripts/repo-python scripts/verify-fighter-native-order-f722.py`.
 Old F708/F711/F714/F718/F720 targeted checkers accept optional new
 source starts/physical EBP shifts but retain original-source default
@@ -15966,7 +15966,7 @@ Thus source loop grammar alone cannot restore native lifetime.
 Portable selected entire PE verifier:
 `scripts/repo-python scripts/verify-archive-loop-structure-f723.py --case for-postincrement`,
 optional `--all` only 12 affected small TUs.
-[All original machine-code comparisons and honest negatives](ARCHIVE_LOOP_CFG_NEGATIVES_F723.md).
+All original machine-code comparisons and honest negatives.
 No new exact authored function CODE, no full 943-unit replay.
 
 
@@ -15995,7 +15995,7 @@ adds three genuinely used x87 local lifetimes; the compiler
 strict original nonterminal action bodies and original complete
 943-byte afterRET switch DATA rechecked in SAME fresh giant.
 No new byte-exact independently authored whole function.
-[F724 full native original PE/COFF and honest source-local negatives](FIGHTER_FOLLOWUP_BURST_F724.md);
+F724 full native original PE/COFF and honest source-local negatives;
 `scripts/repo-python scripts/verify-fighter-followup-burst-f724.py`.
 No full cold replay, 943/862726 accepted authored exact unchanged.
 
@@ -16027,8 +16027,8 @@ in this F728 C++ parent**; an exhaustive current strict count is not
 established. Independently verified *ALL 943 original afterRET DATA*:
 156 physical native/source `DIR32` switch relocations target actual
 instruction boundaries, and the remaining **319/319 original nonfield
-sparse-map bytes equal**. [Full original native physical and nonexact
-F728 evidence](FIGHTER_RANDOM_ARCS_F728.md); reproduce with
+sparse-map bytes equal**. Full original native physical and nonexact
+F728 evidence; reproduce with
 `scripts/repo-python scripts/verify-fighter-random-arcs-f728.py`.
 No new whole-game byte-exact CODE, 943/862726 ledger unchanged.
 
@@ -16058,7 +16058,7 @@ nonfield bytes; original texture and scalar delete EBP temps are
 Scene source. Portable full PE native selected-case verifier
 `scripts/verify-scene-array-owner-f727.py` defaults to one real
 original destructor source, optional `--all` only 12 affected TUs.
-[Complete original PE and negative machine-code evidence](SCENE_ARRAY_AND_GIANT_ALPHA_NEGATIVES_F726_F727.md).
+Complete original PE and negative machine-code evidence.
 No full 943-unit replay, 943/862726 authored ledger unchanged.
 
 
@@ -16082,7 +16082,7 @@ full source parent still exhibits 200/201 67/85 register regressions,
 2EF zero, and **156 original/source true afterRET DIR32 entries plus
 319/319 original sparse bytes** independently rechecked. No 27-strict
 context count inherited; no independently authored byte-exact CODE.
-[Complete F729 physical PE and genuine x87 negative](FIGHTER_RETURN_BOUNDARY_F729.md),
+Complete F729 physical PE and genuine x87 negative,
 `scripts/repo-python scripts/verify-fighter-return-boundary-f729.py`.
 
 
@@ -16104,7 +16104,7 @@ used locals (e.g. `−0x24/−0x20` or `−0x2C/−0x28`). Matching
 position equivalence. Portable selected entire small function
 verifier `scripts/verify-scene-borrowed-resource-f730.py`
 defaults to one source, `--all` only ten affected TUs.
-[Original whole PE/EH and actual source-negative matrix](SCENE_BORROWED_RESOURCE_VIEW_NEGATIVES_F730.md).
+Original whole PE/EH and actual source-negative matrix.
 No native byte-exact authored CODE acceptance, no full cold replay.
 
 
@@ -16136,8 +16136,8 @@ of 27 inherited strict or byte-identical full 58KB game CODE.
 All 45 new physical native PE/COFF fields, previous original
 1F4–1F7 bounded source negatives and whole 943B afterRET DATA
 (156 real native/source DIR32 targets, 319/319 other original bytes)
-rechecked together. [Complete original PE/whole VC7.1 source and
-GPR-phase proof](FIGHTER_AIM_RETURN_F731.md), portable
+rechecked together. Complete original PE/whole VC7.1 source and
+GPR-phase proof, portable
 `scripts/repo-python scripts/verify-fighter-aim-return-f731.py`.
 No full cold 943-unit replay, 943/862726 reviewed exact unchanged.
 
@@ -16170,7 +16170,7 @@ stage bodies are inserted; original 2EF remains GPR strict.
 Earlier real 1F4–1F8, 943 original independent afterRET bytes,
 156 native/source DIR32 valid labels and 319/319 original sparse
 bytes all rechecked together. Historical F666 unchanged.
-[Complete physical original/same-parent source and stage comparisons](FIGHTER_FOLLOWING_NATIVE_F732.md),
+Complete physical original/same-parent source and stage comparisons,
 `scripts/repo-python scripts/verify-fighter-following-native-f732.py`.
 No all-943-unit replay; whole-function exact 943/862726 unchanged.
 
@@ -16196,8 +16196,8 @@ union source storage as a simple solution to original three-way
 `resource−0xC/deleteReceiver−8/filename−0x10` slot rotation.
 Portable original native 171-B/51-x86 complete-source verifier
 `scripts/verify-archive-shared-state-f733.py` defaults to 1 and
-`--all` compiles only 22 affected C++ TUs. [All real machine-code
-and physical COFF evidence](ARCHIVE_SHARED_USED_STATE_F733.md).
+`--all` compiles only 22 affected C++ TUs. All real machine-code
+and physical COFF evidence.
 ZERO exact new whole-game CODE, no full 943-unit cold replay.
 
 
@@ -16227,8 +16227,8 @@ source-context machine geometry/typed fields rechecked in this
 new whole parent; entire original afterRET **943-B DATA**, 156
 actual DIR32 native/source x86 labels and other **319/319
 native bytes** verified in the same newly built parent. Historical
-source-context strict counts not inherited. [F734 original physical
-PE/COFF and actual EBP negative](FIGHTER_EIGHT_ROUND_F734.md),
+source-context strict counts not inherited. F734 original physical
+PE/COFF and actual EBP negative,
 `scripts/repo-python scripts/verify-fighter-eight-round-f734.py`.
 No all-943 cold replay; 943/862726 whole-game exact ledger unchanged.
 
@@ -16254,7 +16254,7 @@ all-943 old-unit replay. Formal full authored ledger MOVES
 **943→949 functions; 862,726→862,861 original CODE B; reviewed
 43.71%→43.72%**, conservative stays 43.64%. Historical F732–F734
 large-boss and Scene/Archive negative contexts remain NONEXACT.
-[Full native/source proof and exact unit names](THIN_AUTHORED_FORWARDERS_F735.md).
+Full native/source proof and exact unit names.
 
 
 ## F736: six more actual original authored whole functions cold-exact, 302 CODE B ADOPTED
@@ -16281,7 +16281,7 @@ not cold-replayed en masse. Formal authored exact snapshot now
 classification unchanged, historical names/layouts provisional,
 no callee CODE double credit. 22 giants and three other complete
 nonexact WinMain/Scene/Archive original functions remain pending.
-[Complete original PE/COFF, new unit names and targeted replay](SMALL_AUTHORED_ORIGINAL_LEAVES_F736.md).
+Complete original PE/COFF, new unit names and targeted replay.
 
 
 ## F737: true native 194/195 eight-shot grounded source naturally restores multiple compiler register phases
@@ -16309,7 +16309,7 @@ full physically bounded original case interiors** in the SAME
 fresh parent. Native offsets and complete 58KB still wrong, no
 credit for internal source. Entire 943-B original postRET DATA,
 156 physical DIR32 labels and 319/319 original other bytes checked.
-[F737 complete original PE, real source and GPR/EBP proof](FIGHTER_EIGHT_GROUND_F737.md),
+F737 complete original PE, real source and GPR/EBP proof,
 `scripts/repo-python scripts/verify-fighter-eight-ground-f737.py`.
 Official 955 authored exact whole/863163 original CODE unchanged.
 
@@ -16338,7 +16338,7 @@ beyond observed slots. Authored original ledger **955→957 whole
 functions, 863,163→863,280 CODE B, 43.73→43.74% reviewed,
 conservative 43.66% unchanged**. All original giant/Scene/WinMain/
 Archive outstanding functions remain NONEXACT.
-[Whole PE/COFF and wrong-branch source evidence](RECORD_PREFIX_WHOLE_EXACT_F738.md).
+Whole PE/COFF and wrong-branch source evidence.
 
 
 ## F739: four complete authored nested-vector EH game lifetimes canonical cold-exact
@@ -16364,7 +16364,7 @@ function CODE coverage. Formal authored whole ledger
 **957→961, 863,280→863,592 native CODE B, 43.74→43.75%
 reviewed, 43.66→43.68% conservative**. No original private
 class-layout claim, 22 giants/three ownership lifetimes still
-NONEXACT. [Complete native EH carrier audit and exact units](RECORD_VECTOR_EH_EXACT_F739.md).
+NONEXACT. Complete native EH carrier audit and exact units.
 
 
 ## F740: real complete 196/197/198 original fighter C++ and newly observed native GPR phase regressions
@@ -16399,8 +16399,8 @@ counts apply only to that earlier entire parent; cannot inherit.
 Full original 190–195, selected 13 native previous contexts and
 all **943B original afterRET DATA** (156 actual native/source
 DIR32 x86 label targets and 319/319 sparse bytes) rechecked in
-new full parent. [Original PE/COFF, actual source, exact negative
-fields](FIGHTER_REPEATED_SHOT_F740.md),
+new full parent. Original PE/COFF, actual source, exact negative
+fields,
 `scripts/repo-python scripts/verify-fighter-repeat-shot-f740.py`.
 Formal authored exact 961/863592 original CODE unchanged.
 
@@ -16426,7 +16426,7 @@ local references** all correct. Carriers and callees not credited
 as callable game CODE, private source class names unproved.
 New whole-authored ledger **961→963, 863,592→863,853 original
 CODE B, 43.75→43.77% reviewed and 43.68→43.69% conservative**.
-[Complete original PE/COFF+EH evidence and two exact units](NESTED_RECORD_WHOLE_EH_F741.md).
+Complete original PE/COFF+EH evidence and two exact units.
 
 
 ## F742: actual original R015-authored 00406DB0 InputMapping whole 60B COLD EXACT
@@ -16447,7 +16447,7 @@ No callee code or vendor CRT functions recredited. Formal original
 whole authored ledger **963→964 functions, 863,853→863,913 CODE B,
 43.77% reviewed unchanged to two decimals, conservative
 43.69→43.70%**. No all-963 cold replay or giant CODE acceptance.
-[Exact original PE and targeted canonical replay](INPUT_MAPPING_INIT_NATIVE_F742.md).
+Exact original PE and targeted canonical replay.
 
 
 ## F743: four real original late-early fighter cases 19C/19E/1A0/1A1 recovered in one giant
@@ -16475,7 +16475,7 @@ rechecked in SAME C++ source, with GPR regressions 1F4/1F5 71/71,
 post-RET switch DATA, 156 typed real DIR32/native x86 label targets
 and 319/319 remaining sparse native bytes verified. No standalone
 original CODE credit, 964/863913 ledger unchanged, no mass replay.
-[True full PE and original compiler negatives](FIGHTER_LATER_EARLY_F743.md),
+True full PE and original compiler negatives,
 `scripts/repo-python scripts/verify-fighter-later-early-f743.py`.
 
 
@@ -16508,8 +16508,8 @@ BUT x87 EBP real original `−0xB8..−0xD4` vs compiler
 byte-exact, no new formal CODE credit. Original 199/19D/19F
 shared default 00551598, not new functions. Entire 943B native
 postRET DATA, all 156 physical DIR32 instruction targets and
-319/319 sparse bytes verified. [Full F744 PE/COFF and native
-compiler-phase evidence](FIGHTER_DOUBLE_REPEAT_F744.md),
+319/319 sparse bytes verified. Full F744 PE/COFF and native
+compiler-phase evidence,
 `scripts/repo-python scripts/verify-fighter-double-repeat-f744.py`.
 964/863913 formal authored whole exact unchanged, no full replay.
 
@@ -16535,7 +16535,7 @@ Adjacent exact R103 authored Set/Test source F394 unchanged.
 Formal authored ledger **964→965 whole exact, 863913→864024
 original CODE B, 43.77→43.78% reviewed**, conservative 43.70%
 unchanged; no all-old-unit replay or giant whole-CODE credit.
-[Complete original native signed math and negative controls](GAME_PROGRESS_CLEAR_UNLOCK_F745.md).
+Complete original native signed math and negative controls.
 
 
 ## F746: native original BG05b authored entire 94-B counter function COLD EXACT
@@ -16553,7 +16553,7 @@ identical. One new original whole-function unit cold-replayed
 old 965 exact units not cold-replayed. Native formally accepted
 **965→966 exact whole functions, 864,024→864,118 original CODE B,
 43.78% reviewed, 43.70→43.71% conservative**.
-[Original physical PE and exact unit](BACKGROUND_BG05B_TIMER_F746.md).
+Original physical PE and exact unit.
 
 
 ## F747–F749: six authentic giant resource actions restore original whole-fighter saved-this EBP−0x44
@@ -16586,7 +16586,7 @@ real target symbols/kinds/addends and actual current source
 owners, with known 05D/05E last call ordinal shift honestly
 recorded. Full original 943B afterRET DATA, 156 genuinely typed
 DIR32 native/source x86 targets and 319/319 sparse bytes checked.
-[Actual whole PE/COFF source+positive frame+negative grammar](FIGHTER_EARLY_RESOURCE_STACK_F747_F749.md),
+Actual whole PE/COFF source+positive frame+negative grammar,
 `scripts/repo-python scripts/verify-fighter-early-resource-f749.py`.
 Official 966 exact whole authored/864118 original CODE unchanged.
 
@@ -16610,7 +16610,7 @@ fields** equal. Only 1 new whole game-function cold replay unit
 all STL library callee origins preserved, no whole class private
 layout asserted. Native authored snapshot **967 whole functions,
 864,219 native CODE B, 43.79% reviewed and 43.71% conservative**.
-[Full original PE/COFF ABI and selected replay](CHARACTER_AUX_FRAME_SELECTION_F750.md).
+Full original PE/COFF ABI and selected replay.
 
 
 ## F752: true borrowed actor AND opponent position member types recover native 05D/05E direct FCOMP
@@ -16642,7 +16642,7 @@ source and native EBP scratch, 27 earlier source-backed original
 whole-case contexts and full 943B native postRET DATA/156 DIR32
 x86 labels/319 equal sparse bytes in SAME fresh 58KB parent.
 F749 raw-pointer negative default remains independently testable.
-[Full original fighter x87 comparison and actual source](FIGHTER_BORROWED_POSITION_F752.md).
+Full original fighter x87 comparison and actual source.
 Formal 967/864219 whole authored exact original CODE unchanged.
 
 
@@ -16668,7 +16668,7 @@ Historical name/private object layout provisional, original R015
 game-authored evidence unchanged. Formal exact ledger
 **967→968 original authored entire functions, 864,219→864,380
 CODE B, reviewed 43.79%, conservative 43.71→43.72%**; no
-mass cold replay. [Actual original PE EH/COFF receipt and unit](AUDIO_STREAM_CLIENT_ACQUIRE_F753.md).
+mass cold replay. Actual original PE EH/COFF receipt and unit.
 
 
 ## F755: complete original authored AudioStream client 00407270 cold-exact
@@ -16693,7 +16693,7 @@ produced 294 source bytes (negative); the accepted 292-byte source uses
 a normal borrowed cleanup interface, not a guessed full private owner.
 Official 968→**969** original complete authored matches,
 864,380→**864,672** CODE B, reviewed **43.81%**, conservative **43.73%**.
-See [full F755 physical proof](AUDIO_STREAM_CLIENT_RELEASE_F755.md).
+See full F755 physical proof.
 
 
 ## F758: source-backed 64-byte native AudioStream record enables original file queue exact
@@ -16714,7 +16714,7 @@ opaque DWORD storage triggered *extra* nonnative `/GS` cookie bytes,
 so historical private record field meanings remain unknown.
 Official 969→**970 exact whole authored**, 864,672→**864,961 original
 CODE B**, reviewed **43.82%**, conservative **43.75%**. No corpus cold
-replay. [Complete original PE and compiler proof](AUDIO_QUEUE_FILE_F758.md).
+replay. Complete original PE and compiler proof.
 
 
 ## F759: original fighter 00543210 C8–CB native complete case sources
@@ -16755,7 +16755,7 @@ No all-unit cold replay; **no independent giant case/whole-function
 exact credit**. The 33KB `004EBDA0` boss remains nonexact (137 original
 nonfield differences); F756/F757 negative source experiments cannot
 be confused with code matching. Detailed source and original PE proof:
-[F759 four-action whole-parent research](FIGHTER_C8_CB_WHOLE_PARENT_F759.md).
+F759 four-action whole-parent research.
 
 
 ## F759: fighter whole-parent C8–CB native source and nine downstream FILD slots
@@ -16775,7 +16775,7 @@ MOV/FILD stack placements in **nine later actions** (18A/18B,
 `EBP−0x90` vs emitted `−0x80` discrepancy without fake locals.
 Full original afterRET 943 B, 156 genuine DIR32 and 319/319 sparse
 nonfield bytes verified. One whole affected TU was compiled; no
-970-unit cold replay. [Original physical proof and full reproducer](FIGHTER_FOUR_DIRECTIONAL_NATIVE_F759.md).
+970-unit cold replay. Original physical proof and full reproducer.
 
 
 ## F760: original CC/CD/CE fighter source makes 190 full-native register phase exact
@@ -16796,7 +16796,7 @@ Whole boss currently emits **58,173/58,294 CODE B**, remaining deficit
 121 B; true 943-B afterRET dispatch DATA also checked (156 real DIR32
 and 319/319 other bytes). Original whole authored game CODE exact
 credit remains **970 functions /864,961 bytes**; no massive replay.
-[Full native PE, COFF and one-parent reproduction](FIGHTER_COMPLEX_STAGE_CC_CE_F760.md).
+Full native PE, COFF and one-parent reproduction.
 
 
 ## F760: Audio archive-entry queue 00407B80 whole 283B cold exact
@@ -16815,7 +16815,7 @@ selected cold source build **1/1 exact**, without replaying previous
 Official 970→**971** authored entire functions, 864,961→**865,244
 original CODE bytes**, reviewed **43.84%**, conservative **43.76%**.
 Pending authored: 22 giant +11 non-giant; 98% still incomplete.
-[Full native queue ownership and PE evidence](AUDIO_QUEUE_ARCHIVE_ENTRY_F760.md).
+Full native queue ownership and PE evidence.
 
 
 ## F762: 05F true source plus full native 1F6, 1F7, 1F8 and actor X members
@@ -16838,7 +16838,7 @@ nonexact GPR/CFG machine bytes; source 2DB/2FA x87 phases remain
 nonexact. **No independent split-case CODE credit**; accepted 971
 whole authored functions /865,244 CODE B unchanged. One affected TU
 only, no all-unit cold replay.
-[Complete F762 native verification](FIGHTER_TYPED_RETURN_CROSS_CASE_F762.md).
+Complete F762 native verification.
 
 
 ## F763: original 2DB x87 predicates and borrowed actor X restore entire state
@@ -16858,7 +16858,7 @@ TU verifies old complete C8–CE/1F6–1F8 native source and full separate
 58,269 of 58,294 native CODE B, still NONEXACT. Historical 2FA is
 still eight extra source bytes/two extra x87 instructions. Formal
 whole-authored CODE remains 971/865,244, no extra case credit or mass
-cold replay. [Full native F763 proof](FIGHTER_APPROACH_NATIVE_F763.md).
+cold replay. Full native F763 proof.
 
 
 ## F764: six real 2FA float source errors and native opcode geometry
@@ -16877,7 +16877,7 @@ all former F763/1F6–1F8/C8–CE complete native cases, independent
 943B afterRET DATA and 156 original DIR32 fields reverified in the
 ONE affected C++ TU. No all-971 cold replay and no new official
 whole-authored game CODE credit; live exact remains 971/865,244.
-[Full F764 original and reproducible compiler evidence](FIGHTER_APPROACH_VOLLEY_NATIVE_F764.md).
+Full F764 original and reproducible compiler evidence.
 
 
 ## F765: full original 0040D790 SpriteDrawing opaque render 171B cold exact
@@ -16897,7 +16897,7 @@ under selected **1/1 exact cold replay**. Formal 971→**972** exact
 whole functions, 865,244→**865,415 native authored CODE B**, 43.85%
 reviewed/43.77% conservative. Whole 22 giants and ten other authored
 small/medium remain NONEXACT; no all-unit cold replay.
-[Complete original native physical proof](SPRITE_OPAQUE_NATIVE_F765.md).
+Complete original native physical proof.
 
 
 ## F766: original 0040D6B0 212B mirrored opaque SpriteDrawing cold exact
@@ -16916,7 +16916,7 @@ constructor 0040DB50 and final render 004029F0. Selected **1/1 exact** 212-byte 
 replay. Official 972→**973** source-present whole authored exact,
 865,415→**865,627** CODE B, reviewed 43.86% / conservative 43.78%,
 22 giant +9 other nonexact.
-[F766 complete original PE and COFF proof](SPRITE_OPAQUE_MIRRORED_F766.md).
+F766 complete original PE and COFF proof.
 
 
 ## F767: original 2F9 x87 angle source order restored in one full fighter
@@ -16935,7 +16935,7 @@ unchanged at 156 real wrong bytes; whole native 58,294-B fighter source
 emits 58,261 B. Original after-RET 943B DATA remains separate and
 reverified. No split-case CODE credit, no all-unit cold replay: formal
 whole-authored CODE remains 973 exact functions /865,627 original bytes.
-[Full F767 actual original whole-parent evidence](FIGHTER_STORM_ANGLE_TYPED_F767.md).
+Full F767 actual original whole-parent evidence.
 
 
 ## F768: original 2F8 integer-FPU actor X math restored in entire fighter
@@ -16954,7 +16954,7 @@ parent retains F767 2F9 249 wrong, F764 2FA 156 wrong, strict earlier
 real C8–CE/1F6–1F8/2DB source, and whole 943-B original afterRET
 DATA. Whole 00543210 source remains 58,261/58,294 native CODE B
 NONEXACT, official 973 game-function exact ledger unchanged.
-[Complete F768 original source and target verifier](FIGHTER_STORM_VOLLEY_TYPED_F768.md).
+Complete F768 original source and target verifier.
 
 
 ## F769: native 44-byte texture slot element and full 0040B110 cold exact
@@ -16974,7 +16974,7 @@ unused locals, original target modifications or VC7 vendor CODE credit.
 Official 973→**974** whole authored exact functions, 865,627→
 **865,811** native CODE B, reviewed **43.87%**, conservative
 **43.79%**; 22 giants plus 8 small/medium still not exact.
-[Complete F769 native lifetime and PE proof](TEXTURE_MANAGER_SLOTS_NATIVE_F769.md).
+Complete F769 native lifetime and PE proof.
 
 
 ## F770: original 0040B000 shared texture allocation and two real used zero/index lifetimes
@@ -16996,7 +16996,7 @@ not fake padding. Exact ledger 974→**975 authored complete**,
 865,811→**866,072 native CODE bytes**, reviewed **43.88%** and
 conservative **43.80%**. Still 22 giant plus 7 other original whole
 functions nonexact. No mass cold replay, original target changes,
-or vendor-code double count. [Full PE proof](TEXTURE_MANAGER_SHARED_NATIVE_F770.md).
+or vendor-code double count. Full PE proof.
 
 
 ## F771: native 2FB angle MOV/FLD source order in whole 58KB fighter
@@ -17016,7 +17016,7 @@ afterRET jump DATA, 156 actual DIR32 refs and 319/319 other data
 bytes remain correct. The full boss generates 58,261 of original
 58,294 CODE B; no independently callable game CODE is newly accepted.
 Formal exact still **975 functions /866,072 original authored CODE
-bytes**, no mass cold replay. [F771 full PE evidence](FIGHTER_GROUNDED_VOLLEY_TYPED_F771.md).
+bytes**, no mass cold replay. F771 full PE evidence.
 
 
 ## F775: 0040D2E0 original scaled/rotated SpriteDrawing whole 970B cold exact
@@ -17036,7 +17036,7 @@ under one new affected whole unit. Official authored 975→**976** whole
 functions, 866,072→**867,042** game CODE bytes, reviewed **43.93%**,
 conservative **43.85%**. Still 22 giant plus six small/medium whole
 authored original nonexact; no all-unit cold replay.
-[Full original R011 PE/COFF proof](SPRITE_SCALED_NATIVE_F775.md).
+Full original R011 PE/COFF proof.
 
 
 ## F776: original SpriteDrawing variant 0040CEF0 whole 994-B cold exact
@@ -17057,7 +17057,7 @@ nonfield bytes and all 15 native PE fields**. One selected cold unit
 credit. Formal whole-authored source advances 976→**977 functions**,
 867,042→**868,036 CODE B**, reviewed **43.98%**, conservative
 **43.90%**. Still 22 giant plus five small/medium original callable
-functions nonexact. [Full original PE proof](SPRITE_VARIANT_NATIVE_F776.md).
+functions nonexact. Full original PE proof.
 
 
 ## F777: remeasure actual current fighter giant registers, guard against stale strictness
@@ -17080,7 +17080,7 @@ Thirteen real 0x59 C++ semantics and eight R015 0x38D typed
 member controls had no positive exact results. Whole current
 00543210 still emits 58,261/58,294 native CODE B, NONEXACT.
 No new original whole CODE is credited, no full accepted-unit cold
-replay. [F777 complete physical original evidence](FIGHTER_CURRENT_REGISTER_PHASE_AUDIT_F777.md).
+replay. F777 complete physical original evidence.
 
 
 ## F778: genuine 239-action default handler fixes 00543210 common tail
@@ -17103,7 +17103,7 @@ extra call. Source remains original-game NONEXACT; 943 separate
 native after-RET DATA bytes, 156 real DIR32 and 319/319 other bytes
 reverified, as are the actual C8–CE/1F6–1F8/2DB/2F8–2FB cases.
 Zero new whole game exact credit (977/868,036 unchanged), no mass
-cold replay. [F778 original PE and full-parent source](FIGHTER_NATIVE_DEFAULT_F778.md).
+cold replay. F778 original PE and full-parent source.
 
 
 ## F779: recover whole 0040CA20 projected-quad copy with native four-byte alignment
@@ -17164,4 +17164,4 @@ function both decode to 16,471 x86; native 0x63 has three real
 register-width CMP differences leaving 1 B short, and many other
 authentic GPR differences remain. The 943-B afterRET table is
 separately checked; zero new callable exact CODE is credited.
-[Detailed physical evidence](FIGHTER_EARLY_SHARED_GETTER_F781.md).
+Detailed physical evidence.
