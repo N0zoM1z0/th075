@@ -59,6 +59,30 @@ classes that declare virtual functions themselves (`FrameActor`,
 yet; deriving shifts every member by 4. Making `Actor` polymorphic needs the
 real slot order from the PE vtables.
 
+The vtables give the real class structure (`.analysis/layout-tools/vtables.json`
+dumps them from the PE). Each of the 11 character constructors installs a
+20-slot fighter table (Alice 00659608, Reimu 006590D8, …), and each character
+object constructor a 5-slot table (Reimu object 00659210, …):
+
+- Fighter slots 0, 2, 3 and 4 are shared: 00453D80 `BindAnimation`,
+  00453F70 fighter render, 00410350 sprite-node render, 00410A00 mirrored
+  render. Object tables share slots 3–4 and have their own 0 and 2.
+- Slot 1 is the per-character `Advance`. **The 22 remaining giant originals
+  are exactly slot 1 of these 22 tables**: 11 fighter advances (0045DD70
+  Reimu, 004D7E70 Alice, …) and 11 object advances (00476A40 Reimu, …).
+- Fighter slots 5–19 are per character: 6 `ResetRound`, 7 `CreateOwnedObject`,
+  10 `DispatchActions`, 11 and 12 the two AI routines (`CharacterAI…` and the
+  card policy), 13 `PollCommands`, 14 `SelectSpecialVariant`, 15 stage/special
+  configuration, 16 `AdvanceSequence`, 17 stage render, 19 the special-state
+  update. `FrameActor`'s `Advance`/`AdvanceMode7`/`FinishFrame` are slots 1/16/19.
+
+So most per-function shell classes (`CharacterAI4E7DE0`, `CharacterSequence4F44D0`,
+`CharacterInput4E7A00`, …) are virtual overrides of one character class
+(`AliceFighter`). A polymorphic `Actor` with these slots, character classes
+overriding them, and per-character names replacing the shells is the next
+structural step. Mangled names of the overrides change from `Q` to `U`, so
+their manifest symbols must be updated after a cold replay proves the bytes.
+
 Pitfalls: a parameter named like a new member shadows it (`BindOpponent`
 compiled to `opponent = opponent`), and the replay caught it. VC7 `$L`/`$SG`
 counters change with source text, so the comparator no longer pins their

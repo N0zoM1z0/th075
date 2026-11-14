@@ -23,10 +23,11 @@ replay and target checks, and shared [`Actor`](../src/Actor.hpp) and
 affected units cold exact). `FIELD(` uses in `src/` fell from 14,292 to
 3,103. Next, in order:
 
-1. Make `Actor` polymorphic. Fighters carry a vtable at +0 (`FrameActor`
-   declares 21 slots); read the slot order from the PE vtables (for example
-   `FighterState` 00658FE8, `??_7AliceCtorF309`) so that `FrameActor`,
-   `AnimationProgress40FA30` and `BattleObjectDefaultsF300` can derive too.
+1. Make `Actor` polymorphic with the 5 shared slots and `Fighter` with slots
+   5–19 (see the vtable entry in the knowledge base: the 22 giants are slot 1
+   of the 11 fighter and 11 object tables). Then `FrameActor` and the other
+   virtual classes can derive, and per-function shells become per-character
+   overrides (update their manifest symbols `Q`→`U` after replay).
 2. Convert window and `FIELD` uses whose receiver is not `this` (HUD,
    collision, knockout code holding fighter pointers) to typed `Fighter*`
    access, then delete the remaining 16 window headers.
