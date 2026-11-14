@@ -35,6 +35,24 @@ public:
 // every character; character classes declare their own members from 0xF10.
 class Fighter : public Actor {
 public:
+    // Fighter vtable slots 5-19. The base table (00658FE8) implements only
+    // slots 6 and 8; the rest are _purecall and per character.
+    virtual void VirtualSlot5() = 0;      // 44-byte compiler function per character
+    virtual void ResetRound();            // slot 6, base 00457010
+    virtual void CreateOwnedObject(void** object) = 0;  // slot 7, typed per character
+    virtual void ForwardBaseAction();     // slot 8, base 00451EB0
+    virtual void RenderChain() = 0;       // slot 9
+    virtual void DispatchActions() = 0;   // slot 10
+    virtual void ChooseAction() = 0;      // slot 11
+    virtual void ChooseCardAction() = 0;  // slot 12
+    virtual void PollCommands() = 0;      // slot 13
+    virtual void SelectVariant() = 0;     // slot 14
+    virtual void ConfigureStage() = 0;    // slot 15
+    virtual void AdvanceSequence() = 0;   // slot 16
+    virtual void RenderStage(signed char mode) = 0;  // slot 17
+    virtual void NoOpSlot18() = 0;        // slot 18
+    virtual void AdvanceAuxiliary() = 0;  // slot 19
+
     unsigned char unknown0A8[0x0AC - 0x0A8];
     void* field0AC;                     // +0x0AC
     unsigned char unknown0B0[0x0E4 - 0x0B0];

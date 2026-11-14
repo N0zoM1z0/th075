@@ -86,6 +86,6 @@ void MarisaRoundF222::ResetRound()
        REC(i*2+1).phase=static_cast<float>(i)/g_MarisaSequenceScaleAt00659308;
        REC(i*2+1).tail=1.0f;
     }
-    reinterpret_cast<FighterBaseActionsF159*>(this)->ResetRound();
+    reinterpret_cast<FighterBaseActionsF159*>(this)->FighterBaseActionsF159::ResetRound();
 }
 #undef REC

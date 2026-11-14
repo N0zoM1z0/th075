@@ -32,6 +32,6 @@ void YoumuRoundF224::ResetRound()
     reinterpret_cast<unsigned short&>(aiWaitTimer)=0;
     reinterpret_cast<unsigned short&>(aiStep)=0;
     reinterpret_cast<unsigned short&>(aiCardTimer)=0;
-    reinterpret_cast<FighterBaseActionsF159*>(this)->ResetRound();
+    reinterpret_cast<FighterBaseActionsF159*>(this)->FighterBaseActionsF159::ResetRound();
     reinterpret_cast<YoumuSubcomponentF224*>(reinterpret_cast<unsigned char*>(this)+0xfec)->ResetRound();
 }

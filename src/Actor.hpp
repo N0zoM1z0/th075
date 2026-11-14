@@ -17,13 +17,22 @@ struct FighterSequenceInfo {
 };
 
 // Common head of every animated battle object: fighters, their projectiles
-// and effect objects use 0x00-0xA7 with the same field widths. Derived
-// classes add their own members from 0xA8. unknownNNN regions are unobserved;
+// and effect objects use 0x00-0xA7 with the same field widths and share
+// vtable slots 0-4 (the vtable pointer is at +0). Derived classes add their
+// own members from 0xA8. unknownNNN regions are unobserved;
 // fieldNNN members are observed but not yet understood. The full object size
 // is unknown, so these classes are only reached through the game's pointers.
 class Actor {
 public:
-    unsigned char unknown000[0x004 - 0x000];
+    // Slots shared by fighter and object vtables. Advance is pure in the
+    // base fighter table (00658FE8 slot 1 is _purecall); each class's
+    // per-frame state machine overrides it.
+    virtual void BindAnimation();         // slot 0, fighters: 00453D80
+    virtual void Advance() = 0;           // slot 1
+    virtual void Render();                // slot 2, fighters: 00453F70
+    virtual void RenderNode();            // slot 3, 00410350
+    virtual void RenderMirroredNode();    // slot 4, 00410A00
+
     signed char field004;               // +0x004
     unsigned char unknown005[0x010 - 0x005];
     unsigned char field010;             // +0x010

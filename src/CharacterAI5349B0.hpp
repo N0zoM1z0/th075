@@ -5,7 +5,7 @@
 
 class CharacterAI5349B0 : public Fighter {
 public:
-    void ChooseAction();
+    void ChooseCardAction();
     int ChooseIntegerRange(int lower, int upper);
     // Distinct observed recording/replay policy at 0x00455580.
     int ChooseRecordedIntegerRange(int lower, int upper);

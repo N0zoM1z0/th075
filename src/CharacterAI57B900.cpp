@@ -12,7 +12,7 @@
 // Both observed floating components are used; this is not an owner layout.
 struct AISeparation57B900 { float x, y; };
 
-void CharacterAI57B900::ChooseAction()
+void CharacterAI57B900::ChooseCardAction()
 {
     AISeparation57B900 distance;
     distance.x = AbsFloatAt00412D90(opponent->x - x);

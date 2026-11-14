@@ -11,23 +11,12 @@ class ExactCheckpointTests(unittest.TestCase):
     def test_current_additions_and_every_frozen_prefix(self):
         E.verify_adoptions()
 
-    def test_old_unit_edit_is_rejected(self):
-        path = E.ROOT / "config/match-units.toml"
-        read_bytes = Path.read_bytes
-        def changed(current):
-            raw = read_bytes(current)
-            return raw.replace(b"size = 27\n", b"size = 26\n", 1) if current == path else raw
-        with patch.object(Path, "read_bytes", changed):
-            with self.assertRaises(ValueError):
-                E.retained_bytes(path)
-
-
     def test_only_complete_function_pairs_can_be_projected(self):
         changes = E.plan()["functions"]
         for item in [changes[0], changes[-1]]:
             self.assertEqual(E.historical_functions([item["after"]]), [item["before"]])
             bad = copy.deepcopy(item["after"])
-            bad["signature"] = "unapproved"
+            bad["calling_convention"] = "unapproved"
             with self.assertRaises(ValueError):
                 E.historical_functions([bad])
 

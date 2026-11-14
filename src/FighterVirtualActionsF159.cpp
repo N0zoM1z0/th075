@@ -72,7 +72,7 @@ void SakuyaFighterActionsF159::ResetRound()
     reinterpret_cast<unsigned short&>(aiStep) = 0;
     reinterpret_cast<unsigned short&>(aiCardTimer) = 0;
     fieldF16 = 0;
-    reinterpret_cast<FighterBaseActionsF159*>(this)->ResetRound();
+    reinterpret_cast<FighterBaseActionsF159*>(this)->FighterBaseActionsF159::ResetRound();
 }
 
 

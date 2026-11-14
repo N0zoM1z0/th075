@@ -8,7 +8,7 @@ extern signed char g_StateRepeatLevelAt006714D0;
 
 class CharacterAI49B070 : public Fighter {
 public:
-    void ChooseAction();
+    void ChooseCardAction();
     int ChooseIntegerRange(int lower, int upper);
     // Observed signed dword view; the original declaration and owner are unknown.
     static int countdown;

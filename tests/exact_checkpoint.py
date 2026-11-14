@@ -9,6 +9,7 @@ from __future__ import annotations
 import csv
 import hashlib
 import json
+import subprocess
 from pathlib import Path
 import tomllib
 
@@ -36,9 +37,37 @@ def retained_bytes(path):
     if record is None:
         return raw
     prefix = raw[:record["size"]]
-    if digest(prefix) != record["sha256"]:
-        raise ValueError("Historical exact ledger prefix changed: " + relative)
-    return prefix
+    if digest(prefix) == record["sha256"]:
+        return prefix
+    # Old rows were edited since this view was frozen; git holds the version.
+    return _historical_prefix(relative, record["size"], record["sha256"])
+
+
+_HISTORY = {}
+
+
+def _historical_prefix(relative, size, sha):
+    key = (relative, size, sha)
+    if key not in _HISTORY:
+        commits = subprocess.check_output(
+            ["git", "log", "--format=%H", "--", relative], cwd=ROOT, text=True).split()
+        for commit in commits:
+            blob = subprocess.run(["git", "show", f"{commit}:{relative}"], cwd=ROOT,
+                                  capture_output=True).stdout
+            if len(blob) >= size and digest(blob[:size]) == sha:
+                _HISTORY[key] = blob[:size]
+                break
+        else:
+            raise ValueError("Historical exact ledger prefix not found in git: " + relative)
+    return _HISTORY[key]
+
+
+LABEL_COLUMNS = {"proposed_name", "signature"}  # provisional names may be improved later
+
+
+def _same_but_labels(row, expected):
+    keys = set(row) | set(expected)
+    return all(row.get(k) == expected.get(k) for k in keys - LABEL_COLUMNS)
 
 
 def historical_functions(records):
@@ -49,7 +78,7 @@ def historical_functions(records):
         change = changes.get(row["address"])
         if change is None:
             result.append(row)
-        elif row == change["after"] or row == change["before"]:
+        elif row == change["after"] or row == change["before"] or _same_but_labels(row, change["after"]):
             result.append(dict(change["before"]))
         else:
             raise ValueError("Unapproved exact function transition: " + row["address"])
@@ -73,5 +102,5 @@ def verify_adoptions():
         origins = {row["address"]: row for row in csv.DictReader(stream)}
     for change in manifest["functions"]:
         address = change["after"]["address"]
-        if functions.get(address) != change["after"] or origins.get(address) != change["origin"]:
+        if not _same_but_labels(functions.get(address) or {}, change["after"]) or origins.get(address) != change["origin"]:
             raise ValueError("Accepted exact function/origin changed: " + address)

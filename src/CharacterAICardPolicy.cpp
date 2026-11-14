@@ -14,7 +14,7 @@
 // Both observed floating components are used; this is not an owner layout.
 struct AICardSeparation { float x, y; };
 
-template<class Policy> void CharacterAICardPolicy<Policy>::ChooseAction()
+template<class Policy> void CharacterAICardPolicy<Policy>::ChooseCardAction()
 {
     AICardSeparation distance;
     distance.x = AbsFloatAt00412D90(opponent->x - x);
@@ -654,5 +654,5 @@ template<class Policy> void CharacterAICardPolicy<Policy>::ChooseAction()
     }
 }
 
-template void CharacterAICardPolicy<AI474B40CardPolicy>::ChooseAction();
-template void CharacterAICardPolicy<AI5E9620CardPolicy>::ChooseAction();
+template void CharacterAICardPolicy<AI474B40CardPolicy>::ChooseCardAction();
+template void CharacterAICardPolicy<AI5E9620CardPolicy>::ChooseCardAction();
