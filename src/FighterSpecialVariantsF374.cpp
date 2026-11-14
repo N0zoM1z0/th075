@@ -1,3 +1,4 @@
+#include "AliceFighter.hpp"
 // Complete real 10-case mode switch shared by eleven original fighter routines.
 // Each independently retains its original seven semantic variant IDs.
 // A 40-byte native switch table is compared in each routine, NOT CODE credited.
@@ -40,8 +41,7 @@ void SakuyaFighterSpecialVariantF374::SelectVariant() {
   case 7:case 8:case 9:case 10: MODE=9;break;
   }
 }
-class AliceFighterSpecialVariantF374 {public:void SelectVariant();};
-void AliceFighterSpecialVariantF374::SelectVariant() {
+void AliceFighter::SelectVariant() {
   switch(g_SelectedEffectModeAt0067161E) {
   case 1: MODE=1;break;
   case 2: MODE=0;break;

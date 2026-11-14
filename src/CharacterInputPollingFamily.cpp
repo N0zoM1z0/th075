@@ -1,9 +1,9 @@
+#include "AliceFighter.hpp"
 // Eight independent native input policies; private owners are pointer-only.
 // Original names, types and complete layouts remain provisional.
 class CharacterInput4724B0 { public: void PollCommands(); signed char MatchInputPattern(const char*, signed char, signed char); };
 class CharacterInput498BE0 { public: void PollCommands(); signed char MatchInputPattern(const char*, signed char, signed char); };
 class CharacterInput4C6700 { public: void PollCommands(); signed char MatchInputPattern(const char*, signed char, signed char); };
-class CharacterInput4E7A00 { public: void PollCommands(); signed char MatchInputPattern(const char*, signed char, signed char); };
 class CharacterInput556FA0 { public: void PollCommands(); signed char MatchInputPattern(const char*, signed char, signed char); };
 class CharacterInput579220 { public: void PollCommands(); signed char MatchInputPattern(const char*, signed char, signed char); };
 class CharacterInput59CDA0 { public: void PollCommands(); signed char MatchInputPattern(const char*, signed char, signed char); };
@@ -185,7 +185,7 @@ void CharacterInput4C6700::PollCommands() {
         COMMAND = 2;
 }
 
-void CharacterInput4E7A00::PollCommands() {
+void AliceFighter::PollCommands() {
     COMMAND = 0;
     if (MatchInputPattern("236236D", 7, 30))
         COMMAND = 113;

@@ -1,5 +1,6 @@
 #pragma once
 
+#include "AliceFighter.hpp"
 #include "Fighter.hpp"
 class FighterBaseActionsF159 : public Fighter {
 public:
@@ -31,12 +32,6 @@ public:
     unsigned short fieldF12;
     unsigned short fieldF14;
     unsigned short fieldF16;
-};
-class AliceFighterActionsF159 {
-public:
-    void ForwardBaseAction();
-    void NoOpSlot9();
-    void NoOpSlot18();
 };
 class PatchouliFighterActionsF159 {
 public:

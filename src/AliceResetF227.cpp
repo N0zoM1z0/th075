@@ -1,15 +1,7 @@
+#include "AliceFighter.hpp"
 #include "Fighter.hpp"
 #include "FighterVirtualActionsF159.hpp"
-class AliceRoundF227 : public Fighter {
-public:
-    void ResetRound();
-public:
-    // Fields after the shared Fighter layout.
-    unsigned short fieldF10;
-    unsigned short fieldF12;
-    unsigned short fieldF14;
-};
-void AliceRoundF227::ResetRound()
+void AliceFighter::ResetRound()
 {
     reinterpret_cast<unsigned short&>(sequenceTimer)=0;
     fieldEFE=0;

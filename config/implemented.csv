@@ -114,7 +114,7 @@ CharacterAction551C00::DispatchActions
 CharacterAction493470::DispatchActions
 CharacterAction502450::DispatchActions
 CharacterAction574370::DispatchActions
-CharacterAction4E2F20::DispatchActions
+AliceFighter::DispatchActions
 CharacterAction5C0D70::DispatchActions
 CharacterAction5E2310::DispatchActions
 CharacterAction52D230::DispatchActions
@@ -132,7 +132,7 @@ CharacterAI474B40::ChooseAction
 CharacterAI5E9620::ChooseAction
 CharacterAI5086E0::ChooseCardAction
 CharacterAI558F50::ChooseCardAction
-CharacterAI4EA090::ChooseCardAction
+AliceFighter::ChooseCardAction
 CharacterAI5C7FC0::ChooseCardAction
 CharacterAI57B900::ChooseCardAction
 CharacterAI557380::ChooseAction
@@ -142,7 +142,7 @@ CharacterAI49B070::ChooseCardAction
 CharacterSequence4A9050::AdvanceSequence
 CharacterSequence483350::AdvanceSequence
 CharacterSequence4D4EA0::AdvanceSequence
-CharacterSequence4F44D0::AdvanceSequence
+AliceFighter::AdvanceSequence
 CharacterSequence51E640::AdvanceSequence
 CharacterSequence540290::AdvanceSequence
 CharacterSequence561D40::AdvanceSequence
@@ -268,7 +268,7 @@ CharacterStageRendererF122<StageRender5C52D0Policy>::Render
 CharacterInput4724B0::PollCommands
 CharacterInput498BE0::PollCommands
 CharacterInput4C6700::PollCommands
-CharacterInput4E7A00::PollCommands
+AliceFighter::PollCommands
 CharacterInput556FA0::PollCommands
 CharacterInput579220::PollCommands
 CharacterInput59CDA0::PollCommands

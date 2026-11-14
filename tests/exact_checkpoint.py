@@ -62,7 +62,7 @@ def _historical_prefix(relative, size, sha):
     return _HISTORY[key]
 
 
-LABEL_COLUMNS = {"proposed_name", "signature"}  # provisional names may be improved later
+LABEL_COLUMNS = {"proposed_name", "signature", "notes"}  # provisional names may be improved later
 
 
 def _same_but_labels(row, expected):

@@ -10,45 +10,45 @@ void owner::ForwardBaseAction() \
     reinterpret_cast<FighterBaseActionsF159*>(this)->SelectMovementAnimation(); \
 }
 
-#define DEFINE_NO_OP(owner, slot) \
-void owner::NoOpSlot##slot() \
+#define DEFINE_EMPTY(owner, method) \
+void owner::method() \
 { \
 }
 
 DEFINE_FORWARD(ReimuFighterActionsF159)
-DEFINE_NO_OP(ReimuFighterActionsF159, 9)
-DEFINE_NO_OP(ReimuFighterActionsF159, 18)
+DEFINE_EMPTY(ReimuFighterActionsF159, NoOpSlot9)
+DEFINE_EMPTY(ReimuFighterActionsF159, NoOpSlot18)
 DEFINE_FORWARD(MarisaFighterActionsF159)
-DEFINE_NO_OP(MarisaFighterActionsF159, 18)
+DEFINE_EMPTY(MarisaFighterActionsF159, NoOpSlot18)
 DEFINE_FORWARD(SakuyaFighterActionsF159)
-DEFINE_NO_OP(SakuyaFighterActionsF159, 9)
-DEFINE_NO_OP(SakuyaFighterActionsF159, 18)
-DEFINE_FORWARD(AliceFighterActionsF159)
-DEFINE_NO_OP(AliceFighterActionsF159, 9)
-DEFINE_NO_OP(AliceFighterActionsF159, 18)
+DEFINE_EMPTY(SakuyaFighterActionsF159, NoOpSlot9)
+DEFINE_EMPTY(SakuyaFighterActionsF159, NoOpSlot18)
+DEFINE_FORWARD(AliceFighter)
+DEFINE_EMPTY(AliceFighter, RenderChain)
+DEFINE_EMPTY(AliceFighter, NoOpSlot18)
 DEFINE_FORWARD(PatchouliFighterActionsF159)
-DEFINE_NO_OP(PatchouliFighterActionsF159, 9)
-DEFINE_NO_OP(PatchouliFighterActionsF159, 18)
+DEFINE_EMPTY(PatchouliFighterActionsF159, NoOpSlot9)
+DEFINE_EMPTY(PatchouliFighterActionsF159, NoOpSlot18)
 DEFINE_FORWARD(YoumuFighterActionsF159)
-DEFINE_NO_OP(YoumuFighterActionsF159, 9)
-DEFINE_NO_OP(YoumuFighterActionsF159, 18)
+DEFINE_EMPTY(YoumuFighterActionsF159, NoOpSlot9)
+DEFINE_EMPTY(YoumuFighterActionsF159, NoOpSlot18)
 DEFINE_FORWARD(RemiliaFighterActionsF159)
-DEFINE_NO_OP(RemiliaFighterActionsF159, 9)
-DEFINE_NO_OP(RemiliaFighterActionsF159, 18)
+DEFINE_EMPTY(RemiliaFighterActionsF159, NoOpSlot9)
+DEFINE_EMPTY(RemiliaFighterActionsF159, NoOpSlot18)
 DEFINE_FORWARD(YuyukoFighterActionsF159)
-DEFINE_NO_OP(YuyukoFighterActionsF159, 9)
-DEFINE_NO_OP(YuyukoFighterActionsF159, 18)
+DEFINE_EMPTY(YuyukoFighterActionsF159, NoOpSlot9)
+DEFINE_EMPTY(YuyukoFighterActionsF159, NoOpSlot18)
 DEFINE_FORWARD(YukariFighterActionsF159)
-DEFINE_NO_OP(YukariFighterActionsF159, 9)
-DEFINE_NO_OP(YukariFighterActionsF159, 18)
+DEFINE_EMPTY(YukariFighterActionsF159, NoOpSlot9)
+DEFINE_EMPTY(YukariFighterActionsF159, NoOpSlot18)
 DEFINE_FORWARD(SuikaFighterActionsF159)
-DEFINE_NO_OP(SuikaFighterActionsF159, 9)
-DEFINE_NO_OP(SuikaFighterActionsF159, 18)
+DEFINE_EMPTY(SuikaFighterActionsF159, NoOpSlot9)
+DEFINE_EMPTY(SuikaFighterActionsF159, NoOpSlot18)
 DEFINE_FORWARD(MeilingFighterActionsF159)
-DEFINE_NO_OP(MeilingFighterActionsF159, 9)
-DEFINE_NO_OP(MeilingFighterActionsF159, 18)
+DEFINE_EMPTY(MeilingFighterActionsF159, NoOpSlot9)
+DEFINE_EMPTY(MeilingFighterActionsF159, NoOpSlot18)
 
-#undef DEFINE_NO_OP
+#undef DEFINE_EMPTY
 #undef DEFINE_FORWARD
 
 void SakuyaFighterActionsF159::ResetRound()

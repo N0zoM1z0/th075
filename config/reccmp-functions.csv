@@ -115,7 +115,7 @@ CharacterAction551C00::DispatchActions,0x00551C00,function
 CharacterAction493470::DispatchActions,0x00493470,function
 CharacterAction502450::DispatchActions,0x00502450,function
 CharacterAction574370::DispatchActions,0x00574370,function
-CharacterAction4E2F20::DispatchActions,0x004E2F20,function
+AliceFighter::DispatchActions,0x004E2F20,function
 CharacterAction5C0D70::DispatchActions,0x005C0D70,function
 CharacterAction5E2310::DispatchActions,0x005E2310,function
 CharacterAction52D230::DispatchActions,0x0052D230,function
@@ -133,7 +133,7 @@ CharacterAI474B40::ChooseAction,0x00474B40,function
 CharacterAI5E9620::ChooseAction,0x005E9620,function
 CharacterAI5086E0::ChooseCardAction,0x005086E0,function
 CharacterAI558F50::ChooseCardAction,0x00558F50,function
-CharacterAI4EA090::ChooseCardAction,0x004EA090,function
+AliceFighter::ChooseCardAction,0x004EA090,function
 CharacterAI5C7FC0::ChooseCardAction,0x005C7FC0,function
 CharacterAI57B900::ChooseCardAction,0x0057B900,function
 CharacterAI557380::ChooseAction,0x00557380,function
@@ -143,7 +143,7 @@ CharacterAI49B070::ChooseCardAction,0x0049B070,function
 CharacterSequence4A9050::AdvanceSequence,0x004A9050,function
 CharacterSequence483350::AdvanceSequence,0x00483350,function
 CharacterSequence4D4EA0::AdvanceSequence,0x004D4EA0,function
-CharacterSequence4F44D0::AdvanceSequence,0x004F44D0,function
+AliceFighter::AdvanceSequence,0x004F44D0,function
 CharacterSequence51E640::AdvanceSequence,0x0051E640,function
 CharacterSequence540290::AdvanceSequence,0x00540290,function
 CharacterSequence561D40::AdvanceSequence,0x00561D40,function
@@ -269,7 +269,7 @@ CharacterStageRendererF122<StageRender5C52D0Policy>::Render,0x005C52D0,function
 CharacterInput4724B0::PollCommands,0x004724B0,function
 CharacterInput498BE0::PollCommands,0x00498BE0,function
 CharacterInput4C6700::PollCommands,0x004C6700,function
-CharacterInput4E7A00::PollCommands,0x004E7A00,function
+AliceFighter::PollCommands,0x004E7A00,function
 CharacterInput556FA0::PollCommands,0x00556FA0,function
 CharacterInput579220::PollCommands,0x00579220,function
 CharacterInput59CDA0::PollCommands,0x0059CDA0,function
