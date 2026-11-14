@@ -100,6 +100,23 @@ class ExactComparisonTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "local relocation destination differs"):
             self.compare()
 
+    def rename_relocated_symbol(self, name: bytes):
+        path = self.root / "build/probe.obj"
+        data = bytearray(path.read_bytes())
+        data[112:120] = name.ljust(8, b"\0")
+        path.write_bytes(data)
+
+    def test_compiler_label_counter_is_not_pinned(self):
+        self.define_local_destination(5)
+        self.rename_relocated_symbol(b"$L12")
+        self.write_manifest(relocations='[{ offset = 1, type = "DIR32", symbol = "$L99", target = 0x401005 }]')
+        self.assertEqual(self.compare()["result"], "exact")
+
+    def test_named_relocation_symbol_is_still_pinned(self):
+        self.write_manifest(relocations='[{ offset = 1, type = "DIR32", symbol = "_h", target = 0x12345678 }]')
+        with self.assertRaisesRegex(ValueError, "relocations differ"):
+            self.compare()
+
     def test_local_label_outside_function_is_rejected(self):
         self.define_local_destination(7)
         with self.assertRaisesRegex(ValueError, "outside the function extent"):

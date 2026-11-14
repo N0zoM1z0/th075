@@ -19,106 +19,108 @@ class FighterActionF410 {public:
   void ClearNoticeTransition();
   void SetNoticeFields(signed char value,unsigned char enabled,unsigned char alpha);
   void RenderNotice(void* text,unsigned char red,unsigned char green,unsigned char blue,unsigned char highlighted);
+
+  unsigned char unknown000[0x2E8];
+  FighterActionF410* opponent;              // +0x2E8
+  unsigned char unknown2EC[0x4E4 - 0x2EC];
+  int inputMode;                            // +0x4E4
+  unsigned char unknown4E8[0x6E6 - 0x4E8];
+  signed char noticeState;                  // +0x6E6
+  unsigned char unknown6E7[0x6F0 - 0x6E7];
+  short scriptId;                           // +0x6F0
+  short scriptBitMask;                      // +0x6F2
+  short scriptIndex;                        // +0x6F4
+  short scriptStep;                         // +0x6F6
+  unsigned char scriptByte6F8;              // +0x6F8
+  unsigned char unknown6F9;
+  short scriptWord6FA;                      // +0x6FA
+  short scriptWord6FC;                      // +0x6FC
+  unsigned char unknown6FE[0x714 - 0x6FE];
+  FighterScriptAccessorF410 script;         // +0x714
 };
 extern signed char g_ActionLastIndexAt0066C24F;
 extern signed char g_ActionLastBitAt0066C24E;
 extern unsigned char g_InputCanCancelAt00671632;
 extern void SelectStageAt00419CB0(int);
 extern void RebuildStageAt00419DF0();
-#define FIELD(T,o) (*reinterpret_cast<T*>(reinterpret_cast<unsigned char*>(this)+(o)))
-#define SCRIPT (*reinterpret_cast<FighterScriptAccessorF410*>(reinterpret_cast<unsigned char*>(this)+0x714))
-#define OPPONENT (*reinterpret_cast<FighterActionF410*>(FIELD(void*,0x2E8)))
-#define OPPFIELD(T,o) (*reinterpret_cast<T*>(reinterpret_cast<unsigned char*>(FIELD(void*,0x2E8))+(o)))
-#define SCRIPTID FIELD(short,0x6F0)
-#define SCRIPTINDEX FIELD(short,0x6F4)
-#define SCRIPTSTEP FIELD(short,0x6F6)
-#define BITMASK FIELD(short,0x6F2)
 unsigned char FighterActionF410::ProcessAction() {
   signed char mask,number,bit;
-  if(SCRIPTINDEX>=SCRIPT.CountPatternEntries(SCRIPTID) || SCRIPTINDEX<0) {
+  if(scriptIndex>=script.CountPatternEntries(scriptId) || scriptIndex<0) {
       g_ActionLastIndexAt0066C24F=-1;g_ActionLastBitAt0066C24E=-1;return 1;
   }
-  if(g_ActionLastIndexAt0066C24F!=SCRIPTINDEX || g_ActionLastBitAt0066C24E!=SCRIPTSTEP) {
-    switch(SCRIPT.GetByteField(SCRIPTID,SCRIPTINDEX)) {
+  if(g_ActionLastIndexAt0066C24F!=scriptIndex || g_ActionLastBitAt0066C24E!=scriptStep) {
+    switch(script.GetByteField(scriptId,scriptIndex)) {
       case 0:
-        if(SCRIPT.GetWordField(SCRIPTID,SCRIPTINDEX)<0) {
+        if(script.GetWordField(scriptId,scriptIndex)<0) {
           ClearNoticeTransition();
-          RenderNotice(SCRIPT.GetDwordField(SCRIPTID,SCRIPTINDEX),120,120,255,static_cast<unsigned char>((g_ActionLastBitAt0066C24E!=SCRIPTSTEP && g_ActionLastIndexAt0066C24F==SCRIPTINDEX)));
+          RenderNotice(script.GetDwordField(scriptId,scriptIndex),120,120,255,static_cast<unsigned char>((g_ActionLastBitAt0066C24E!=scriptStep && g_ActionLastIndexAt0066C24F==scriptIndex)));
         } else {
-          FIELD(unsigned char,0x6E6)=1;
-          SetNoticeFields(SCRIPT.GetWordField(SCRIPTID,SCRIPTINDEX),1,255);
-          RenderNotice(SCRIPT.GetDwordField(SCRIPTID,SCRIPTINDEX),120,120,255,static_cast<unsigned char>((g_ActionLastBitAt0066C24E!=SCRIPTSTEP && g_ActionLastIndexAt0066C24F==SCRIPTINDEX)));
-          if(OPPFIELD(signed char,0x6E6)>0) {
-            OPPFIELD(unsigned char,0x6E6)=2;
-            OPPONENT.SetNoticeFields(-1,0,128);
+          noticeState=1;
+          SetNoticeFields(script.GetWordField(scriptId,scriptIndex),1,255);
+          RenderNotice(script.GetDwordField(scriptId,scriptIndex),120,120,255,static_cast<unsigned char>((g_ActionLastBitAt0066C24E!=scriptStep && g_ActionLastIndexAt0066C24F==scriptIndex)));
+          if(opponent->noticeState>0) {
+            opponent->noticeState=2;
+            opponent->SetNoticeFields(-1,0,128);
           }
         }
         break;
       case 1:
-        if(SCRIPT.GetWordField(SCRIPTID,SCRIPTINDEX)<0) {
-          OPPONENT.ClearNoticeTransition();
-          RenderNotice(SCRIPT.GetDwordField(SCRIPTID,SCRIPTINDEX),255,120,120,static_cast<unsigned char>((g_ActionLastBitAt0066C24E!=SCRIPTSTEP && g_ActionLastIndexAt0066C24F==SCRIPTINDEX)));
+        if(script.GetWordField(scriptId,scriptIndex)<0) {
+          opponent->ClearNoticeTransition();
+          RenderNotice(script.GetDwordField(scriptId,scriptIndex),255,120,120,static_cast<unsigned char>((g_ActionLastBitAt0066C24E!=scriptStep && g_ActionLastIndexAt0066C24F==scriptIndex)));
         } else {
-          OPPFIELD(unsigned char,0x6E6)=1;
-          OPPONENT.SetNoticeFields(SCRIPT.GetWordField(SCRIPTID,SCRIPTINDEX),1,255);
-          RenderNotice(SCRIPT.GetDwordField(SCRIPTID,SCRIPTINDEX),255,120,120,static_cast<unsigned char>((g_ActionLastBitAt0066C24E!=SCRIPTSTEP && g_ActionLastIndexAt0066C24F==SCRIPTINDEX)));
-          if(FIELD(signed char,0x6E6)>0) {
-            FIELD(unsigned char,0x6E6)=2;
+          opponent->noticeState=1;
+          opponent->SetNoticeFields(script.GetWordField(scriptId,scriptIndex),1,255);
+          RenderNotice(script.GetDwordField(scriptId,scriptIndex),255,120,120,static_cast<unsigned char>((g_ActionLastBitAt0066C24E!=scriptStep && g_ActionLastIndexAt0066C24F==scriptIndex)));
+          if(noticeState>0) {
+            noticeState=2;
             SetNoticeFields(-1,0,128);
           }
         }
         break;
       case 2: {
-          RenderNotice(SCRIPT.GetDwordField(SCRIPTID,SCRIPTINDEX),120,255,120,static_cast<unsigned char>((g_ActionLastBitAt0066C24E!=SCRIPTSTEP && g_ActionLastIndexAt0066C24F==SCRIPTINDEX)));
+          RenderNotice(script.GetDwordField(scriptId,scriptIndex),120,255,120,static_cast<unsigned char>((g_ActionLastBitAt0066C24E!=scriptStep && g_ActionLastIndexAt0066C24F==scriptIndex)));
         }break;
-      case 10: FIELD(unsigned char,0x6F8)=static_cast<unsigned char>(SCRIPT.GetWordField(SCRIPTID,SCRIPTINDEX));break;
+      case 10: scriptByte6F8=static_cast<unsigned char>(script.GetWordField(scriptId,scriptIndex));break;
       case 11:
-          SelectStageAt00419CB0(SCRIPT.GetWordField(SCRIPTID,SCRIPTINDEX));
+          SelectStageAt00419CB0(script.GetWordField(scriptId,scriptIndex));
           RebuildStageAt00419DF0();
           break;
-      case 12: FIELD(short,0x6FA)=SCRIPT.GetWordField(SCRIPTID,SCRIPTINDEX);break;
-      case 13: FIELD(short,0x6FC)=SCRIPT.GetWordField(SCRIPTID,SCRIPTINDEX);break;
+      case 12: scriptWord6FA=script.GetWordField(scriptId,scriptIndex);break;
+      case 13: scriptWord6FC=script.GetWordField(scriptId,scriptIndex);break;
       case 14: {
-          BITMASK=SCRIPT.GetWordField(SCRIPTID,SCRIPTINDEX);
-          if(BITMASK>0) {
-              SCRIPTSTEP=1;
+          scriptBitMask=script.GetWordField(scriptId,scriptIndex);
+          if(scriptBitMask>0) {
+              scriptStep=1;
               mask=1;
-              while(!(BITMASK & mask)) { ++SCRIPTSTEP; mask<<=1; }
-              BITMASK-=mask;
-          } else SCRIPTSTEP=5;
+              while(!(scriptBitMask & mask)) { ++scriptStep; mask<<=1; }
+              scriptBitMask-=mask;
+          } else scriptStep=5;
         }break;
       }
-    g_ActionLastIndexAt0066C24F=static_cast<signed char>(SCRIPTINDEX);
-    g_ActionLastBitAt0066C24E=static_cast<signed char>(SCRIPTSTEP);
+    g_ActionLastIndexAt0066C24F=static_cast<signed char>(scriptIndex);
+    g_ActionLastBitAt0066C24E=static_cast<signed char>(scriptStep);
   }
-  if(SCRIPT.GetByteField(SCRIPTID,SCRIPTINDEX)>=10) {
-    ++SCRIPTINDEX;
-    if(SCRIPTINDEX==SCRIPT.CountPatternEntries(SCRIPTID)) {
+  if(script.GetByteField(scriptId,scriptIndex)>=10) {
+    ++scriptIndex;
+    if(scriptIndex==script.CountPatternEntries(scriptId)) {
       g_ActionLastIndexAt0066C24F=-1;g_ActionLastBitAt0066C24E=-1;return 1;
     }
-  } else if (FIELD(int,0x4E4)==1 || g_InputCanCancelAt00671632) {
-    if(BITMASK>0) {
+  } else if (inputMode==1 || g_InputCanCancelAt00671632) {
+    if(scriptBitMask>0) {
       bit=1;
       number=1;
-      while(!(BITMASK & bit)) { ++number; bit<<=1; }
-      SCRIPTSTEP=number;
-      BITMASK-=bit;
-      if(BITMASK==0) SCRIPTSTEP=5;
+      while(!(scriptBitMask & bit)) { ++number; bit<<=1; }
+      scriptStep=number;
+      scriptBitMask-=bit;
+      if(scriptBitMask==0) scriptStep=5;
     } else {
-      SCRIPTSTEP=5;
-      ++SCRIPTINDEX;
-      if(SCRIPTINDEX==SCRIPT.CountPatternEntries(SCRIPTID)) {
+      scriptStep=5;
+      ++scriptIndex;
+      if(scriptIndex==script.CountPatternEntries(scriptId)) {
         g_ActionLastIndexAt0066C24F=-1;g_ActionLastBitAt0066C24E=-1;return 1;
       }
     }
   }
   return 0;
 }
-#undef BITMASK
-#undef SCRIPTSTEP
-#undef SCRIPTINDEX
-#undef SCRIPTID
-#undef OPPFIELD
-#undef OPPONENT
-#undef SCRIPT
-#undef FIELD

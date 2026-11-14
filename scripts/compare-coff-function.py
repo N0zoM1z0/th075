@@ -12,6 +12,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
 from pathlib import Path
 import struct
 import tomllib
@@ -241,6 +242,19 @@ def compare(path: Path, symbol: str, address: int, expected_size: int) -> dict[s
     }
 
 
+COMPILER_COUNTER_SYMBOL = re.compile(r"\$(L|SG)[0-9]+")
+
+
+def relocation_symbol_key(symbol: str) -> str:
+    """Drop VC7 label/string counters; they change with unrelated source text.
+
+    Local labels are still checked by destination below, and every relocation
+    keeps its offset, type and manifest target.
+    """
+    match = COMPILER_COUNTER_SYMBOL.fullmatch(symbol)
+    return f"${match.group(1)}#" if match else symbol
+
+
 def compare_unit(name: str) -> dict[str, object]:
     with UNITS_MANIFEST.open("rb") as stream:
         manifest = tomllib.load(stream)
@@ -291,10 +305,11 @@ def compare_unit(name: str) -> dict[str, object]:
             }
         )
     actual_key = sorted(
-        (int(row["offset"]), int(row["type_id"]), str(row["symbol"])) for row in actual
+        (int(row["offset"]), int(row["type_id"]), relocation_symbol_key(str(row["symbol"])))
+        for row in actual
     )
     expected_key = sorted(
-        (int(row["offset"]), int(row["type_id"]), str(row["symbol"]))
+        (int(row["offset"]), int(row["type_id"]), relocation_symbol_key(str(row["symbol"])))
         for row in normalized_expected
     )
     if actual_key != expected_key:
@@ -305,7 +320,8 @@ def compare_unit(name: str) -> dict[str, object]:
         offset = int(relocation["offset"])
         actual_relocation = next(row for row in actual
                                  if row["offset"] == offset
-                                 and row["symbol"] == relocation["symbol"]
+                                 and relocation_symbol_key(row["symbol"])
+                                 == relocation_symbol_key(relocation["symbol"])
                                  and row["type_id"] == relocation["type_id"])
         local_symbol_offset = actual_relocation["local_symbol_offset"]
         if local_symbol_offset is not None:
