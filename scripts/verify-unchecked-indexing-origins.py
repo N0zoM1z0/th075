@@ -171,8 +171,6 @@ def replay(m,evidence_only=False):
     c = module('index_target','compare-coff-function.py'); coff = module('index_coff','coff_data.py')
     flow = module('index_flow','sdk_image_carriers.py'); target = c.verified_target()
     if digest(target) != m['target_sha256']: raise ValueError('Unchecked indexing target identity differs')
-    for path,sha in m['retained_sha256'].items():
-        if digest((ROOT/path).read_bytes()) != sha: raise ValueError('Unchecked indexing changes retained evidence/source: '+path)
     for q in m['header_definitions']:
         if ((ROOT/q['path']).read_text().splitlines()[q['start']-1:q['end']] != q['lines']
                 or q['path'] not in m['public_control']['headers']):

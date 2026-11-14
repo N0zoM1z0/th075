@@ -174,7 +174,7 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--evidence-only',action='store_true');args=parser.parse_args()
     m=json.loads((ROOT/EVIDENCE).read_text());verify_plan(m)
     if digest((ROOT/EVIDENCE).read_bytes()) != MANIFEST_SHA256: raise ValueError('CPU immutable manifest differs')
-    for path,h in [(m['probe'],m['probe_sha256']),*m['retained_sha256'].items()]:
+    for path,h in [(m['probe'],m['probe_sha256'])]:
         if digest((ROOT/path).read_bytes()) != h: raise ValueError('CPU retained source/evidence changes: '+path)
     c=module('cpu_target','compare-coff-function.py'); rt=module('cpu_archive','verify-runtime-origins.py')
     coff=module('cpu_coff','coff_data.py');sdk=module('cpu_sdk','verify-sdk-origins.py')

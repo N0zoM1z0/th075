@@ -44,7 +44,7 @@ def pending_ledger_matches(p,function,origin):
 def main():
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--evidence-only',action='store_true');args=parser.parse_args()
     m=json.loads((ROOT/EVIDENCE).read_text());verify_plan(m)
-    for path,h in [(EVIDENCE,MANIFEST_SHA256),*m['retained_sha256'].items()]:
+    for path,h in [(EVIDENCE,MANIFEST_SHA256)]:
         if BASE.digest((ROOT/path).read_bytes())!=h:raise ValueError('SDK debug immutable evidence differs: '+path)
     # Same retained source/ABI inputs: replay the complete R184 source archive graph
     # and original SDK typed short-owner evidence, without repeating cold chains.

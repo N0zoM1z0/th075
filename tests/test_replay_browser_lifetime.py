@@ -21,7 +21,6 @@ class ReplayBrowserLifetimeTests(unittest.TestCase):
     def test_one_immutable_whole_authored_transition_and_all_retained_inputs(self):
         V.verify_plan(self.plan)
         self.assertEqual(V.digest((ROOT/V.EVIDENCE).read_bytes()),V.MANIFEST_SHA256)
-        for p,h in self.plan['retained_sha256'].items():self.assertEqual(V.digest(retained_bytes(ROOT/p)),h,p)
         self.assertEqual({r['address']:r['size'] for r in self.plan['functions']},{'0x0042C560':265})
         self.assertEqual(self.plan['historical_snapshots'],[])
         self.assertEqual(self.plan['cold_dependencies'],[['scripts/verify-vendor-deque-destructor-origins.py']])

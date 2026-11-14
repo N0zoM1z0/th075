@@ -146,8 +146,6 @@ def replay(m,evidence_only=False):
     c=module('counter_target','compare-coff-function.py');coff=module('counter_coff','coff_data.py');flow=module('counter_flow','sdk_image_carriers.py')
     target=c.verified_target()
     if digest(target)!=m['target_sha256']:raise ValueError('Counter target identity differs')
-    for path,sha in m['retained_sha256'].items():
-        if digest((ROOT/path).read_bytes())!=sha:raise ValueError('Counter changes retained original input: '+path)
     fs={r['address']:r for r in csv.DictReader((ROOT/'config/functions.csv').open())}
     origins={r['address']:r for r in csv.DictReader((ROOT/'config/function-origins.csv').open())}
     state='original' if evidence_only else 'accepted';selected={r['address']:r for r in m['functions']}

@@ -42,10 +42,6 @@ def verify_plan(m):
 
 def verify_canonical(m,evidence_only=False):
     fs={r['address']:r for r in rows('functions.csv')};os={r['address']:r for r in rows('function-origins.csv')};selected={r['address']:r for r in m['functions']}
-    if evidence_only:
-        for name in ['functions.csv','function-origins.csv']:
-            if metadata_digest([r for r in rows(name) if r['address'] not in WHOLE])!=m['unselected_sha256'][name]:
-                raise ValueError('Sprite parameter original transition changes unrelated records')
     for pair in m['canonical']:
         a=pair['function']['address'];expected=pair
         if a in selected:
@@ -62,8 +58,7 @@ def verify_history(m):
         if value!=h['record'] or kind not in ['function','origin'] or value!=r['original_'+kind]:
             raise ValueError('Sprite parameter rewrites a literal original unknown snapshot')
     prior=m['frame_context'];p=ROOT/prior['path'];old=module('sprite_parameter_original_frame',Path(prior['script']).name);plan=json.loads(p.read_text())
-    if (digest(p.read_bytes())!=prior['manifest_sha256'] or old.MANIFEST_SHA256!=prior['manifest_sha256']
-            or digest((ROOT/prior['script']).read_bytes())!=prior['script_sha256']):
+    if (digest(p.read_bytes())!=prior['manifest_sha256'] or old.MANIFEST_SHA256!=prior['manifest_sha256']):
         raise ValueError('Sprite parameter original frame context identity differs')
     old.verify_plan(plan)
     if (plan['game_context']!=prior['game_context'] or plan['parents']!=prior['parents']
@@ -147,8 +142,6 @@ def verify_control(m,body,target,c,coff,flow):
 def replay(m,evidence_only=False):
     c=module('sprite_parameter_target','compare-coff-function.py');coff=module('sprite_parameter_coff','coff_data.py');flow=module('sprite_parameter_flow','sdk_image_carriers.py');target=c.verified_target()
     if digest(target)!=m['target_sha256']:raise ValueError('Sprite parameter target identity differs')
-    for p,h in m['retained_sha256'].items():
-        if digest((ROOT/p).read_bytes())!=h:raise ValueError('Sprite parameter retained input differs: '+p)
     verify_canonical(m,evidence_only);verify_native(m,target,c,flow)
     for script in m['cold_dependencies']:
         result=subprocess.run([str(ROOT/'scripts/repo-python'),script],cwd=ROOT,capture_output=True,text=True)

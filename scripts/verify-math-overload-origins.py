@@ -100,7 +100,7 @@ def accepted_snapshot(snapshot,function,origin):
 def main():
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--evidence-only',action='store_true');args=parser.parse_args()
     m=manifest();verify_plan(m)
-    for path,expected in [('config/math-overload-origin-evidence.json',MANIFEST_SHA256),(m['probe'],m['probe_sha256']),*m['retained_sha256'].items(),
+    for path,expected in [('config/math-overload-origin-evidence.json',MANIFEST_SHA256),(m['probe'],m['probe_sha256']),
                 (m['abs_expression_control']['probe'],m['abs_expression_control']['probe_sha256'])]:
         if digest((ROOT/path).read_bytes())!=expected:raise ValueError('math overload immutable source/prior evidence differs: '+path)
     c=module('math_target','compare-coff-function.py');coff=module('math_coff','coff_data.py')

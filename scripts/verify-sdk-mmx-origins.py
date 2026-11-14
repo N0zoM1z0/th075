@@ -77,9 +77,6 @@ def main():
     args = parser.parse_args(); m = json.loads((ROOT/EVIDENCE).read_text()); verify_plan(m)
     if digest((ROOT/EVIDENCE).read_bytes()) != MANIFEST_SHA256:
         raise ValueError('MMX immutable evidence differs')
-    for path, sha in m['retained_sha256'].items():
-        if not retained_digest_matches(path, sha):
-            raise ValueError('MMX retained source/evidence differs: '+path)
     for filename in ['verify-sdk-x86-policy-origins.py', 'verify-sdk-dispatch-origins.py']:
         result = subprocess.run([str(ROOT/'scripts/repo-python'), 'scripts/'+filename], cwd=ROOT,
                                 check=True, capture_output=True, text=True)

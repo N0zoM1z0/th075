@@ -74,8 +74,6 @@ def verify_canonical(plan, evidence_only=False):
     actual = {name: rows(name) for name in ['functions.csv', 'function-origins.csv']}
     for name, value in actual.items():
         historical_rows(plan, name, value, evidence_only)
-        if metadata_digest([r for r in value if r['address'] not in WHOLE]) != plan['unselected_sha256'][name]:
-            raise ValueError('Outer policy changes unrelated canonical rows')
     fs = {r['address']: r for r in actual['functions.csv']}
     os = {r['address']: r for r in actual['function-origins.csv']}
     selected = {r['address']: r for r in plan['functions']}
@@ -316,9 +314,6 @@ def replay(plan, evidence_only=False):
     target = c.verified_target()
     if digest(target) != plan['target_sha256']:
         raise ValueError('Outer policy target identity differs')
-    for path, expected in plan['retained_sha256'].items():
-        if digest((ROOT / path).read_bytes()) != expected:
-            raise ValueError('Outer policy original retained input differs: ' + path)
     verify_canonical(plan, evidence_only)
     verify_native(plan, target, c, flow, evidence_only)
     scratch = ROOT / 'build/origin-outer-vector-policy-verification'

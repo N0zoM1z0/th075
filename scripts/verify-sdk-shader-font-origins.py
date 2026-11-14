@@ -126,7 +126,7 @@ def check_public(body,emission,flow):
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--evidence-only',action='store_true');args=p.parse_args()
     m=json.loads((ROOT/EVIDENCE).read_text());verify_plan(m)
-    for path,sha in [(EVIDENCE,MANIFEST_SHA256),(m['public_control']['probe'],m['public_control']['probe_sha256']),*m['retained_sha256'].items()]:
+    for path,sha in [(EVIDENCE,MANIFEST_SHA256),(m['public_control']['probe'],m['public_control']['probe_sha256'])]:
         if digest((ROOT/path).read_bytes())!=sha:
             raise ValueError('Shader/font immutable source or retained provenance differs: '+path)
     # Shared replay independently reopens every source owner and all genuine

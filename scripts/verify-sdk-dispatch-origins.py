@@ -116,9 +116,6 @@ def main():
     m = json.loads((ROOT/EVIDENCE).read_text()); verify_plan(m)
     if digest((ROOT/EVIDENCE).read_bytes()) != MANIFEST_SHA256:
         raise ValueError('SDK dispatch immutable evidence differs')
-    for path, sha in m['retained_sha256'].items():
-        if digest((ROOT/path).read_bytes()) != sha:
-            raise ValueError('SDK dispatch retained source/evidence differs: '+path)
     c = module('dispatch_coff', 'compare-coff-function.py'); coff = module('dispatch_data', 'coff_data.py')
     rt = module('dispatch_archive', 'verify-runtime-origins.py')
     cr = module('dispatch_code', 'sdk_code_carriers.py'); extra = module('dispatch_sections', 'sdk_x3d_carriers.py')

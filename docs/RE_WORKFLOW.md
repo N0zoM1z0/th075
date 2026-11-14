@@ -121,10 +121,10 @@ authored origin already supported independently.
 
 Update `config/functions.csv` (source/match state), then
 `implemented.csv`, `matches.csv`, `reccmp-functions.csv`,
-`known-symbols.csv`, `exact-adoptions.json`, the manifest
-SHA256 in `tests/exact_checkpoint.py`, and the progress card.
-Preserve original before/after ledger and origin entries and all
-canonical source hashes. Do **not** count other callees, data,
+`known-symbols.csv` and the progress card. Append rows; do not
+rewrite earlier ledger rows, which older origin verifiers read as
+frozen prefixes. Source hashes are not pinned: the cold replay is the
+evidence, so readable source edits stay possible. Do **not** count other callees, data,
 CRT/SDK code, EH helpers, or functions with uncertain ownership.
 
 ## 5. Validate, commit and hand off

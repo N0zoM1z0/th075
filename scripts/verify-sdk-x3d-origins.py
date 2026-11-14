@@ -113,8 +113,6 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--evidence-only',action='store_true');args=parser.parse_args()
     m=json.loads((ROOT/EVIDENCE).read_text());verify_plan(m)
     if digest((ROOT/EVIDENCE).read_bytes())!=MANIFEST_SHA256:raise ValueError('3DNow immutable manifest differs')
-    for path,sha in m['retained_sha256'].items():
-        if digest((ROOT/path).read_bytes())!=sha:raise ValueError('3DNow retained source/evidence differs: '+path)
     c=module('x3d_coff','compare-coff-function.py');coff=module('x3d_data','coff_data.py')
     rt=module('x3d_archive','verify-runtime-origins.py');sdk=module('x3d_sdk','verify-sdk-origins.py')
     carrier=module('x3d_carriers','sdk_code_carriers.py');extra=module('x3d_tables','sdk_x3d_carriers.py')

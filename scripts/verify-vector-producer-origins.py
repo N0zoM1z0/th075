@@ -156,7 +156,7 @@ def preserved_snapshot(row,function,origin):
 def main():
     parser = argparse.ArgumentParser(description=__doc__); parser.add_argument('--evidence-only',action='store_true'); args = parser.parse_args()
     m = manifest(); verify_plan(m)
-    for path,expected in [('config/vector-producer-origin-evidence.json',MANIFEST_SHA256),(m['probe'],m['probe_sha256']),*m['retained_sha256'].items()]:
+    for path,expected in [('config/vector-producer-origin-evidence.json',MANIFEST_SHA256),(m['probe'],m['probe_sha256'])]:
         if digest((ROOT/path).read_bytes()) != expected:
             raise ValueError('vector producer immutable probe/prior evidence differs: '+path)
     c = module('producer_target','compare-coff-function.py'); coff = module('producer_coff','coff_data.py')

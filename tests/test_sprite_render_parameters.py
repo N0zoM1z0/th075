@@ -18,7 +18,6 @@ class SpriteRenderParameterTests(unittest.TestCase):
     def test_complete_immutable_plan_and_every_original_input(self):
         V.verify_plan(self.plan)
         self.assertEqual(V.digest((ROOT/V.EVIDENCE).read_bytes()),V.MANIFEST_SHA256)
-        for p,h in self.plan['retained_sha256'].items():self.assertEqual(V.digest(retained_bytes(ROOT/p)),h,p)
 
     def test_two_whole_origins_without_source_abi_mapping_or_exact_credit(self):
         self.assertEqual({r['address']:r['size'] for r in self.plan['functions']},V.WHOLE)

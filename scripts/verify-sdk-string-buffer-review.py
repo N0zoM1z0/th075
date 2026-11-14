@@ -309,9 +309,6 @@ def main():
         raise ValueError('immutable unresolved review manifest differs')
     plan = json.loads(path.read_text())
     verify_scope(plan)
-    for path, sha in plan['retained_sha256'].items():
-        if digest((ROOT / path).read_bytes()) != sha:
-            raise ValueError('retained independent source proof differs: ' + path)
     for name, expected in plan['canonical_sha256'].items():
         if PRIOR.metadata_digest(rows(name)) != expected:
             raise ValueError('unresolved review changes canonical state: ' + name)

@@ -61,10 +61,6 @@ def verify_plan(m):
 
 def verify_canonical(m,evidence_only=False):
     fs={r['address']:r for r in rows('functions.csv')};os={r['address']:r for r in rows('function-origins.csv')};selected={r['address']:r for r in m['functions']}
-    if evidence_only:
-        for name in ['functions.csv','function-origins.csv']:
-            if metadata_digest([r for r in rows(name) if r['address'] not in WHOLE])!=m['unselected_sha256'][name]:
-                raise ValueError('Browser lifetime original transition changes unrelated records')
     for pair in m['canonical']:
         a=pair['function']['address'];expected=pair
         if a in selected:
@@ -142,8 +138,6 @@ def verify_control(m,body,target,c,coff,flow):
 def replay(m,evidence_only=False):
     c=module('browser_lifetime_target','compare-coff-function.py');coff=module('browser_lifetime_coff','coff_data.py');flow=module('browser_lifetime_flow','sdk_image_carriers.py');target=c.verified_target()
     if digest(target)!=m['target_sha256']:raise ValueError('Browser lifetime target identity differs')
-    for p,h in m['retained_sha256'].items():
-        if digest((ROOT/p).read_bytes())!=h:raise ValueError('Browser lifetime retained input differs: '+p)
     verify_canonical(m,evidence_only);verify_native(m,target,c,flow)
     for command in m['cold_dependencies']:
         r=subprocess.run([str(ROOT/'scripts/repo-python'),*command],cwd=ROOT,capture_output=True,text=True)

@@ -161,7 +161,7 @@ def link(data, control, catalog, comparison):
 def main():
     parser = argparse.ArgumentParser(description=__doc__); parser.add_argument('--evidence-only',action='store_true')
     args = parser.parse_args(); m = manifest(); verify_plan(m)
-    for path,expected in [('config/vector-endpoint-origin-evidence.json',MANIFEST_SHA256),(m['probe'],m['probe_sha256']),*m['retained_sha256'].items()]:
+    for path,expected in [('config/vector-endpoint-origin-evidence.json',MANIFEST_SHA256),(m['probe'],m['probe_sha256'])]:
         if PAIRED.digest((ROOT/path).read_bytes()) != expected:
             raise ValueError('vector endpoint immutable source/prior evidence differs: ' + path)
     c = module('vector_endpoint_target','compare-coff-function.py'); coff = module('vector_endpoint_coff','coff_data.py')

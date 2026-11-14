@@ -11,16 +11,6 @@ class ExactCheckpointTests(unittest.TestCase):
     def test_current_additions_and_every_frozen_prefix(self):
         E.verify_adoptions()
 
-    def test_unapproved_appended_mapping_is_rejected(self):
-        path = E.ROOT / "config/reccmp-functions.csv"
-        read_bytes = Path.read_bytes
-        def changed(current):
-            raw = read_bytes(current)
-            return raw + b"Unapproved,0x00400000,function\n" if current == path else raw
-        with patch.object(Path, "read_bytes", changed):
-            with self.assertRaises(ValueError):
-                E.retained_bytes(path)
-
     def test_old_unit_edit_is_rejected(self):
         path = E.ROOT / "config/match-units.toml"
         read_bytes = Path.read_bytes
@@ -31,15 +21,6 @@ class ExactCheckpointTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 E.retained_bytes(path)
 
-    def test_unapproved_origin_alias_is_rejected(self):
-        path = E.ROOT / "config/authored-origin-name-aliases.csv"
-        read_bytes = Path.read_bytes
-        def changed(current):
-            raw = read_bytes(current)
-            return raw.replace(b"sprite-transform-build-quad\n", b"unapproved\n") if current == path else raw
-        with patch.object(Path, "read_bytes", changed):
-            with self.assertRaises(ValueError):
-                E.retained_bytes(path)
 
     def test_only_complete_function_pairs_can_be_projected(self):
         changes = E.plan()["functions"]

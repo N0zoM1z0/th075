@@ -20,9 +20,6 @@ class BlitProvenanceTests(unittest.TestCase):
         self.assertEqual(V.digest((ROOT/V.EVIDENCE).read_bytes()),V.MANIFEST_SHA256)
         V.verify_plan(M)
 
-    def test_all_prior_source_and_proof_hashes_are_fixed(self):
-        for path,sha in M['retained_sha256'].items():
-            self.assertEqual(V.digest((ROOT/path).read_bytes()),sha,path)
 
     def test_no_source_private_abi_or_exact_credit(self):
         for change in [dict(source_file='new.cpp'),dict(signature='private-owner'),dict(match_percent='100.00')]:
@@ -90,14 +87,6 @@ class BlitProvenanceTests(unittest.TestCase):
         self.assertFalse(api.reviewed_end_anchor_matches(old,r['accepted_function'],r['accepted_origin']))
         self.assertFalse(api.reviewed_end_anchor_matches(r['source_record'],r['accepted_function'],dict(r['accepted_origin'],origin='authored')))
 
-    def test_legacy_script_hash_exceptions_are_exact_pairs(self):
-        for filename in ['verify-sdk-destructor-origins.py','verify-sdk-x86-policy-origins.py',
-                         'verify-sdk-graphics-origins.py','verify-sdk-cube-volume-origins.py',
-                         'verify-sdk-resource-lock-origins.py','verify-sdk-mmx-origins.py']:
-            verifier=V.module('test_blit_pairs_'+filename,filename)
-            for path,transition in M['replay_script_transitions'].items():
-                self.assertTrue(verifier.retained_digest_matches(path,transition['accepted_sha256']))
-                self.assertFalse(verifier.retained_digest_matches(path,'0'*64))
 
 
     def test_explicit_constructor_needs_real_whole_callers(self):

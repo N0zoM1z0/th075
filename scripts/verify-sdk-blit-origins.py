@@ -174,7 +174,7 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--evidence-only',action='store_true')
     args=parser.parse_args();m=json.loads((ROOT/EVIDENCE).read_text());verify_plan(m)
     controls=[m['public_control'],m['constructor_control']]
-    for path,sha in [(EVIDENCE,MANIFEST_SHA256),*[(q['probe'],q['probe_sha256']) for q in controls],*m['retained_sha256'].items()]:
+    for path,sha in [(EVIDENCE,MANIFEST_SHA256),*[(q['probe'],q['probe_sha256']) for q in controls]]:
         if digest((ROOT/path).read_bytes())!=sha:raise ValueError('Blit immutable complete source/provenance differs: '+path)
     # Preserve the complete old floor carrier and all historical source evidence.
     for filename in ['verify-floor-math-origins.py','verify-sdk-x86-policy-origins.py','verify-sdk-mmx-origins.py','verify-sdk-resource-lock-origins.py']:

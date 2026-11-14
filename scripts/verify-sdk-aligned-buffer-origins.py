@@ -118,8 +118,6 @@ def replay(m,evidence_only=False):
     flow = module('aligned_flow','sdk_image_carriers.py'); extra = module('aligned_source_sections','sdk_x3d_carriers.py')
     rt = module('aligned_archive','verify-runtime-origins.py'); target = c.verified_target()
     if digest(target) != m['target_sha256']: raise ValueError('Aligned buffer target identity differs')
-    for path,sha in m['retained_sha256'].items():
-        if digest((ROOT/path).read_bytes()) != sha: raise ValueError('Aligned buffer changes retained input: '+path)
     fs = {q['address']:q for q in rows('functions.csv')}; origins = {q['address']:q for q in rows('function-origins.csv')}
     selected = m['functions'][0]; state = 'original' if evidence_only else 'accepted'
     for q in m['canonical']:

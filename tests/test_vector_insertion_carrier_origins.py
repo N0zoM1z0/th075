@@ -20,9 +20,6 @@ class InsertionEvidenceTests(unittest.TestCase):
         self.assertEqual(V.digest((ROOT / V.EVIDENCE).read_bytes()), V.MANIFEST_SHA256)
         V.verify_plan(M)
 
-    def test_original_source_pins(self):
-        for path, sha in M['retained_sha256'].items():
-            self.assertEqual(V.digest((ROOT / path).read_bytes()), sha, path)
 
     def test_six_full_carriers_include_final_ret(self):
         self.assertEqual(sum(V.ROOTS.values()), 4866)

@@ -208,18 +208,15 @@ def replay_retained(m, key, evidence_only=False):
         if fs[a] != row[state + '_function'] or origins[a] != row[state + '_origin']:
             raise ValueError('Vector endpoint retained replay loses checked successor state')
     descriptor = m['retained_replays'][key]
-    for path, sha in [(descriptor['script'], descriptor['script_sha256']),
-                      (descriptor['path'], descriptor['manifest_sha256'])]:
-        if digest((ROOT/path).read_bytes()) != sha:
-            raise ValueError('Vector endpoint retained verifier/source identity differs')
+    if digest((ROOT/descriptor['path']).read_bytes()) != descriptor['manifest_sha256']:
+        raise ValueError('Vector endpoint retained evidence identity differs')
     old = module('endpoint_retained_' + key, Path(descriptor['script']).name)
     original = json.loads((ROOT/descriptor['path']).read_text())
     old.verify_plan(original)
     if old.EVIDENCE != descriptor['path'] or old.MANIFEST_SHA256 != descriptor['manifest_sha256']:
         raise ValueError('Vector endpoint retained entry identity differs')
     control = original['public_control']
-    for path, sha in [(control['probe'], control['probe_sha256']),
-                      *original['retained_sha256'].items()]:
+    for path, sha in [(control['probe'], control['probe_sha256'])]:
         if digest((ROOT/path).read_bytes()) != sha:
             raise ValueError('Vector endpoint retains changed original source inputs: ' + path)
     projected = project_retained(m, key, original, evidence_only)
@@ -249,8 +246,6 @@ def replay(m,evidence_only=False):
     c = module('ends_target','compare-coff-function.py'); coff = module('ends_coff','coff_data.py')
     flow = module('ends_flow','sdk_image_carriers.py'); target = c.verified_target()
     if digest(target) != m['target_sha256']: raise ValueError('Vector endpoint target identity differs')
-    for path,sha in m['retained_sha256'].items():
-        if digest((ROOT/path).read_bytes()) != sha: raise ValueError('Vector endpoint changes retained evidence/source: '+path)
     for q in m['header_definitions']:
         if ((ROOT/q['path']).read_text().splitlines()[q['start']-1:q['end']] != q['lines']
                 or q['path'] not in m['public_control']['headers']):

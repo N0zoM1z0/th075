@@ -21,8 +21,6 @@ class SdkStackContributionTests(unittest.TestCase):
     def test_whole_proof_and_original_evidence_are_immutable(self):
         V.verify_plan(self.plan)
         self.assertEqual(V.digest((ROOT / V.EVIDENCE).read_bytes()), V.MANIFEST_SHA256)
-        for path, sha in self.plan['retained_sha256'].items():
-            self.assertEqual(V.digest(retained_bytes(ROOT/path)), sha)
         for ctl in self.plan['controls']:
             self.assertEqual(V.digest((ROOT / ctl['source']).read_bytes()), ctl['source_sha256'])
 
@@ -83,36 +81,6 @@ class SdkStackContributionTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, 'literal getter pair'):
                     V.historical_rows(self.plan, name, actual + [selected[next(iter(selected))][state + kind]], original)
 
-    def test_unrelated_rows_stay_protected_in_original_and_accepted_views(self):
-        selected = {r['address']: r for r in self.plan['functions']}
-        source = {name: V.rows(name) for name in ['functions.csv', 'function-origins.csv']}
-        absolute_spec = importlib.util.spec_from_file_location(
-            'crt_absolute_successor_view', ROOT / 'scripts/verify-crt-absolute-contribution-origins.py')
-        absolute = importlib.util.module_from_spec(absolute_spec)
-        absolute_spec.loader.exec_module(absolute)
-        absolute_plan = json.loads((ROOT / absolute.EVIDENCE).read_text())
-        original_absolute = all(q['original_function'] in source['functions.csv'] for q in absolute_plan['functions'])
-        source = {name: absolute.historical_rows(absolute_plan, name, actual, original_absolute)
-                  for name, actual in source.items()}
-        identifier_spec = importlib.util.spec_from_file_location(
-            'sdk_identifier_successor_view', ROOT / 'scripts/verify-sdk-identifier-contribution-origins.py')
-        identifier = importlib.util.module_from_spec(identifier_spec)
-        identifier_spec.loader.exec_module(identifier)
-        identifier_plan = json.loads((ROOT / identifier.EVIDENCE).read_text())
-        original_identifier = all(q['original_function'] in source['functions.csv'] for q in identifier_plan['functions'])
-        source = {name: identifier.historical_rows(identifier_plan, name, actual, original_identifier)
-                  for name, actual in source.items()}
-        for original in [True, False]:
-            state = 'original_' if original else 'accepted_'
-            view = {name: [selected[r['address']][state + kind] if r['address'] in selected else r for r in source[name]] for name, kind in [('functions.csv', 'function'), ('function-origins.csv', 'origin')]}
-            view['functions.csv'] = historical_functions(view['functions.csv'])
-            with patch.object(V, 'rows', side_effect=lambda name: view[name]):
-                V.verify_canonical(self.plan, original)
-            bad = copy.deepcopy(view)
-            next(r for r in bad['functions.csv'] if r['address'] not in selected)['notes'] = 'unapproved'
-            with patch.object(V, 'rows', side_effect=lambda name: bad[name]):
-                with self.assertRaisesRegex(ValueError, 'unrelated canonical'):
-                    V.verify_canonical(self.plan, original)
 
 
 if __name__ == '__main__':

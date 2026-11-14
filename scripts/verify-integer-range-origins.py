@@ -135,8 +135,6 @@ def replay(m,evidence_only=False):
     c=module('range_target','compare-coff-function.py');coff=module('range_coff','coff_data.py')
     flow=module('range_flow','sdk_image_carriers.py');target=c.verified_target()
     if digest(target)!=m['target_sha256']:raise ValueError('Range target identity differs')
-    for path,sha in m['retained_sha256'].items():
-        if digest((ROOT/path).read_bytes())!=sha:raise ValueError('Range changes original input: '+path)
     fs={r['address']:r for r in rows('functions.csv')}
     origins={r['address']:r for r in rows('function-origins.csv')}
     selected={r['address']:r for r in m['functions']};state='original' if evidence_only else 'accepted'

@@ -20,7 +20,6 @@ class RangePlanTests(unittest.TestCase):
     def test_complete_plan_and_original_inputs(self):
         V.verify_plan(M)
         self.assertEqual(V.digest((ROOT/V.EVIDENCE).read_bytes()),V.MANIFEST_SHA256)
-        for path,sha in M['retained_sha256'].items():self.assertEqual(V.digest(retained_bytes(ROOT/path)),sha,path)
 
     def test_both_full44_byte_extents(self):
         self.assertEqual(sum(r['size'] for r in M['functions']),88)

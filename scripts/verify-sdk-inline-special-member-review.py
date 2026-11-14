@@ -129,9 +129,6 @@ def main():
         raise ValueError('immutable complete inline special-member evidence differs')
     plan = json.loads(path.read_text())
     verify_scope(plan)
-    for p, sha in plan['retained_sha256'].items():
-        if V.digest((ROOT / p).read_bytes()) != sha:
-            raise ValueError('retained complete source/declaration proof differs: ' + p)
     for n, sha in plan['canonical_sha256'].items():
         if V.PRIOR.metadata_digest(V.rows(n)) != sha:
             raise ValueError('inline review alters canonical state')

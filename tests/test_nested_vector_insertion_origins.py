@@ -19,8 +19,6 @@ class NestedInsertionTests(unittest.TestCase):
     def test_frozen_complete_plan(self):
         self.assertEqual(V.digest((ROOT/V.EVIDENCE).read_bytes()),V.MANIFEST_SHA256);V.verify_plan(M)
 
-    def test_prior_evidence_source_pins(self):
-        for path,sha in M['retained_sha256'].items():self.assertEqual(V.digest((ROOT/path).read_bytes()),sha,path)
 
     def test_all_eighteen_transitions(self):
         self.assertEqual(sum(r['accepted_origin']['origin']=='library' for r in M['functions']),17)

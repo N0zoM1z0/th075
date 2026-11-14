@@ -159,8 +159,6 @@ def replay(m,evidence_only=False):
     ar=module('string_archive','verify-runtime-origins.py');extent=module('string_extent','verify-vendor-record-origins.py')
     target=c.verified_target()
     if digest(target)!=m['target_sha256']:raise ValueError('String target identity differs')
-    for path,sha in m['retained_sha256'].items():
-        if digest((ROOT/path).read_bytes())!=sha:raise ValueError('String changes retained original evidence/input: '+path)
     functions={r['address']:r for r in csv.DictReader((ROOT/'config/functions.csv').open())}
     origins={r['address']:r for r in csv.DictReader((ROOT/'config/function-origins.csv').open())}
     selected={r['address']:r for r in m['functions']};state='original' if evidence_only else 'accepted'

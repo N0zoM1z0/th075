@@ -186,7 +186,7 @@ def replay(m,evidence_only=False):
 def main():
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--evidence-only',action='store_true')
     args=parser.parse_args();m=json.loads((ROOT/EVIDENCE).read_text());verify_plan(m)
-    for path,sha in [(EVIDENCE,MANIFEST_SHA256),*m['retained_sha256'].items()]:
+    for path,sha in [(EVIDENCE,MANIFEST_SHA256)]:
         if digest((ROOT/path).read_bytes())!=sha:raise ValueError('PolarVelocity immutable evidence/source differs: '+path)
     replay(m,args.evidence_only)
     print('R217 origins OK: complete authored polar-velocity57/RET8; six whole authored contexts5122/six actual float argument and receiver sequences; '

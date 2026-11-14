@@ -113,8 +113,6 @@ def verify_canonical(plan, evidence_only=False):
     for name in ['functions.csv', 'function-origins.csv']:
         actual = rows(name)
         historical_rows(plan, name, actual, evidence_only)
-        if metadata_digest([r for r in actual if r['address'] not in WHOLE]) != plan['unselected_sha256'][name]:
-            raise ValueError('Identifier changes unrelated canonical rows')
     fs, origins = ({r['address']: r for r in rows(n)} for n in ['functions.csv', 'function-origins.csv'])
     for r in [r for u in plan['units'] for r in u['code']] + plan['protected_pairs']:
         f = r['function']
@@ -149,9 +147,6 @@ def verify_native(plan):
     target = c.verified_target()
     if digest(target) != plan['target_sha256']:
         raise ValueError('Identifier target identity differs')
-    for path, sha in plan['retained_sha256'].items():
-        if digest((ROOT / path).read_bytes()) != sha:
-            raise ValueError('Identifier retained original proof differs: ' + path)
     archive = (ROOT / plan['archive']).read_bytes()
     if digest(archive) != plan['archive_sha256']:
         raise ValueError('Identifier source archive differs')

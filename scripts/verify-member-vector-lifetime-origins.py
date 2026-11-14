@@ -77,9 +77,6 @@ def verify_canonical(plan, evidence_only=False):
     fs = {r['address']: r for r in rows('functions.csv')}
     os = {r['address']: r for r in rows('function-origins.csv')}
     selected = {r['address']: r for r in plan['functions']}
-    for name in ['functions.csv', 'function-origins.csv']:
-        if metadata_digest([r for r in rows(name) if r['address'] not in WHOLE]) != plan['unselected_sha256'][name]:
-            raise ValueError('Member vector changes unrelated canonical rows')
     for pair in plan['canonical']:
         a = pair['function']['address']
         expected = pair
@@ -345,9 +342,6 @@ def replay(plan, evidence_only=False):
     target = c.verified_target()
     if digest(target) != plan['target_sha256']:
         raise ValueError('Member vector target identity differs')
-    for path, value in plan['retained_sha256'].items():
-        if digest((ROOT / path).read_bytes()) != value:
-            raise ValueError('Member vector original retained input differs: ' + path)
     verify_canonical(plan, evidence_only)
     verify_native(plan, target, c, flow)
     scratch = ROOT / 'build/origin-member-vector-lifetime-verification'

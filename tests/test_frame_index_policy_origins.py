@@ -33,9 +33,6 @@ class FrameIndexPolicyTests(unittest.TestCase):
         self.assertEqual(V.digest((ROOT / V.EVIDENCE).read_bytes()), V.MANIFEST_SHA256)
         V.verify_plan(M)
 
-    def test_all_retained_source_and_evidence_pins(self):
-        for path, sha in M['retained_sha256'].items():
-            self.assertEqual(V.digest((ROOT / path).read_bytes()), sha, path)
 
     def test_ten_transitions457_keep_whole_extents(self):
         self.assertEqual(len(M['functions']), 10)

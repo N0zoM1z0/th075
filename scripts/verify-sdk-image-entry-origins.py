@@ -136,7 +136,7 @@ def check_peers(m,c,coff):
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--evidence-only',action='store_true');args=p.parse_args()
     m=json.loads((ROOT/EVIDENCE).read_text());verify_plan(m)
-    for path,sha in [(EVIDENCE,MANIFEST_SHA256),(m['public_control']['probe'],m['public_control']['probe_sha256']),*m['retained_sha256'].items()]:
+    for path,sha in [(EVIDENCE,MANIFEST_SHA256),(m['public_control']['probe'],m['public_control']['probe_sha256'])]:
         if digest((ROOT/path).read_bytes())!=sha:
             raise ValueError('Image entry immutable source or retained provenance differs: '+path)
     BASE.replay(m,args.evidence_only)

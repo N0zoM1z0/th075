@@ -181,7 +181,7 @@ def replay(m, evidence_only=False):
 def main():
     parser = argparse.ArgumentParser(description=__doc__); parser.add_argument('--evidence-only', action='store_true')
     args = parser.parse_args(); m = json.loads((ROOT / EVIDENCE).read_text()); verify_plan(m)
-    for path, sha in [(EVIDENCE, MANIFEST_SHA256), (m['public_control']['probe'], m['public_control']['probe_sha256']), *m['retained_sha256'].items()]:
+    for path, sha in [(EVIDENCE, MANIFEST_SHA256), (m['public_control']['probe'], m['public_control']['probe_sha256'])]:
         if digest((ROOT / path).read_bytes()) != sha: raise ValueError('Initialization immutable source/evidence differs: ' + path)
     replay(m, args.evidence_only)
     print('R210 origins OK: two authored initialization policies192; complete generic/default controls145/47/93/81/104; '

@@ -27,6 +27,10 @@ actual exactness, target identity, natural-source and state-isolation rules.
   Bind exact evidence to executable inputs and relevant verification settings.
   Keep Git metadata as provenance. A document genuinely consumed by a build
   remains a build input. Never edit historical receipts to manufacture a pass.
+  Do not pin SHA-256s of tracked sources, verifier scripts or canonical ledgers
+  in tests or verifiers: exactness is the cold replay, origin evidence is the
+  target-byte check, and Git records history. Hashes of the target PE and of
+  frozen evidence JSON are fine.
 - Plain Markdown is sufficient for knowledge: record the finding, applicable
   target/compiler/scope, evidence links, useful failed attempts and open
   questions. No mandatory JSON conversion, promotion workflow or test per note.
@@ -142,9 +146,16 @@ scripts/repo-python scripts/ghidra.py check
 - Use one source body. Do not introduce `DIFFBUILD` or `TH075_MATCH_EXACT`
   conditional bodies/layouts. TH095's historical source splits and narrowly
   authorized assembly exceptions are not inherited here.
-- Names may remain provisional even when emitted bytes match. A partial class
-  interface does not establish the complete object layout; do not instantiate or
-  embed an incomplete reconstructed owner.
+- Names may remain provisional even when emitted bytes match.
+- Declare object layouts as shared named classes (for example one `Fighter`
+  layout reused by every fighter method) with named members, and `unknownNNN[]`
+  byte arrays for regions nobody has observed yet. Such gap members document the
+  layout; they are not padding to force a comparison. Do not use raw
+  `FIELD(type, offset)` / `reinterpret_cast<T*>((char*)this + 0xNNN)` access in
+  new or edited source: name the member once in the shared layout instead.
+  A layout whose total size is unproven must never be constructed, embedded by
+  value or used with `sizeof`; access it only through the real `this` or a
+  pointer the original code holds.
 
 ## Validation scope
 

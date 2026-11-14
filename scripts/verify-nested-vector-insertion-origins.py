@@ -171,7 +171,7 @@ def replay(m,evidence_only=False):
 def main():
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--evidence-only',action='store_true')
     args=parser.parse_args();m=json.loads((ROOT/EVIDENCE).read_text());verify_plan(m)
-    for path,sha in [(EVIDENCE,MANIFEST_SHA256),(m['public_control']['probe'],m['public_control']['probe_sha256']),*m['retained_sha256'].items()]:
+    for path,sha in [(EVIDENCE,MANIFEST_SHA256),(m['public_control']['probe'],m['public_control']['probe_sha256'])]:
         if digest((ROOT/path).read_bytes())!=sha:raise ValueError('Nested insertion immutable source/evidence differs: '+path)
     replay(m,args.evidence_only)
     print('R209 origins OK: 17 library entries across eight whole public policies2812 and nine recovery interiors; '

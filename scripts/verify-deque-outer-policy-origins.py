@@ -66,8 +66,6 @@ def verify_canonical(plan, evidence_only=False):
     actual = {name: rows(name) for name in ['functions.csv', 'function-origins.csv']}
     for name, value in actual.items():
         historical_rows(plan, name, value, evidence_only)
-        if metadata_digest([r for r in value if r['address'] not in WHOLE]) != plan['unselected_sha256'][name]:
-            raise ValueError('Deque outer changes unrelated canonical rows')
     fs = {r['address']: r for r in actual['functions.csv']}
     os = {r['address']: r for r in actual['function-origins.csv']}
     for pair in plan['canonical']:
@@ -286,9 +284,6 @@ def replay(plan, evidence_only=False):
         raise ValueError('Deque outer target differs')
     verify_plan(plan)
     verify_canonical(plan, evidence_only)
-    for path, sha in plan['retained_sha256'].items():
-        if digest((ROOT / path).read_bytes()) != sha:
-            raise ValueError('Deque outer retained source/provenance differs: ' + path)
     verify_native(plan, target, c, flow)
     for ctl in plan['controls']:
         command = [str(ROOT / 'scripts/compile-probe.sh'), str(ROOT / ctl['probe']), str(ROOT / ctl['object']), *ctl['profile']]

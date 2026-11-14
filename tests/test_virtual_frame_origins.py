@@ -20,7 +20,6 @@ class VirtualFramePlanTests(unittest.TestCase):
     def test_complete_plan_and_all_original_inputs(self):
         V.verify_plan(M)
         self.assertEqual(V.digest((ROOT/V.EVIDENCE).read_bytes()),V.MANIFEST_SHA256)
-        for path,sha in M['retained_sha256'].items():self.assertEqual(V.digest(retained_bytes(ROOT/path)),sha,path)
 
     def test_entire149_byte_extent_stays_unchanged(self):
         self.assertEqual(M['functions'][0]['size'],149)

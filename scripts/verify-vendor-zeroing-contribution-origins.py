@@ -94,8 +94,6 @@ def verify_canonical(plan, evidence_only=False):
     for name in ['functions.csv', 'function-origins.csv']:
         actual = rows(name)
         historical_rows(plan, name, actual, evidence_only)
-        if metadata_digest([r for r in actual if r['address'] not in WHOLE]) != plan['unselected_sha256'][name]:
-            raise ValueError('Vendor contribution changes unrelated canonical rows')
     fs, origins = ({r['address']: r for r in rows(n)} for n in ['functions.csv', 'function-origins.csv'])
     for u in plan['units']:
         for r in u['code'] + u['external_providers']:

@@ -61,10 +61,6 @@ def verify_plan(m):
 
 def verify_canonical(m,evidence_only=False):
     fs={r['address']:r for r in rows('functions.csv')};os={r['address']:r for r in rows('function-origins.csv')};selected={r['address']:r for r in m['functions']}
-    if evidence_only:
-        for name in ['functions.csv','function-origins.csv']:
-            if metadata_digest([r for r in rows(name) if r['address'] not in WHOLE])!=m['unselected_sha256'][name]:
-                raise ValueError('Row deletion original transition changes unrelated records')
     for pair in m['canonical']:
         a=pair['function']['address'];expected=pair
         if a in selected:
@@ -137,8 +133,6 @@ def verify_control(m,body,target,c,coff,flow):
 def replay(m,evidence_only=False):
     c=module('row_deletion_target','compare-coff-function.py');coff=module('row_deletion_coff','coff_data.py');flow=module('row_deletion_flow','sdk_image_carriers.py');target=c.verified_target()
     if digest(target)!=m['target_sha256']:raise ValueError('Row deletion target identity differs')
-    for p,h in m['retained_sha256'].items():
-        if digest((ROOT/p).read_bytes())!=h:raise ValueError('Row deletion retained input differs: '+p)
     verify_canonical(m,evidence_only);verify_native(m,target,c,flow)
     code="import importlib.util;from pathlib import Path;p=Path('scripts/verify-sdk-row-deleting-helper-origins.py');s=importlib.util.spec_from_file_location('retained_row',p);v=importlib.util.module_from_spec(s);s.loader.exec_module(v);v.replay_retained("+repr(evidence_only)+")"
     result=subprocess.run([str(ROOT/'scripts/repo-python'),'-c',code],cwd=ROOT,capture_output=True,text=True)
@@ -195,7 +189,7 @@ def replay_retained(evidence_only=False):
     m=json.loads((ROOT/EVIDENCE).read_text());verify_plan(m)
     if digest((ROOT/EVIDENCE).read_bytes())!=MANIFEST_SHA256:raise ValueError('Row deletion manifest identity differs')
     verify_canonical(m,evidence_only);scope=m['retained_scope'];path=ROOT/scope['path'];old=module('row_retained_R198',Path(scope['script']).name);plan=json.loads(path.read_text())
-    if digest(path.read_bytes())!=scope['manifest_sha256'] or old.MANIFEST_SHA256!=scope['manifest_sha256'] or digest((ROOT/scope['script']).read_bytes())!=scope['script_sha256']:raise ValueError('Row deletion old complete script/manifest differs')
+    if digest(path.read_bytes())!=scope['manifest_sha256'] or old.MANIFEST_SHA256!=scope['manifest_sha256']:raise ValueError('Row deletion old complete script/manifest differs')
     old.verify_plan(plan);record=m['functions'][0];source=next(r for r in plan['sections'] if r['base']==record['address'])
     if (source['function'],source['origin'])!=(record['original_function'],record['original_origin']):raise ValueError('Row deletion old literal unknown pair differs')
     original_csv=old.csv

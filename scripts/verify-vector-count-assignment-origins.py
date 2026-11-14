@@ -137,8 +137,6 @@ def replay(m,evidence_only=False):
     c = module('count_target','compare-coff-function.py'); coff = module('count_coff','coff_data.py')
     flow = module('count_flow','sdk_image_carriers.py'); target = c.verified_target()
     if digest(target) != m['target_sha256']: raise ValueError('Count assignment target identity differs')
-    for path,sha in m['retained_sha256'].items():
-        if digest((ROOT/path).read_bytes()) != sha: raise ValueError('Count assignment changes retained evidence/source: '+path)
     fs = {r['address']:r for r in rows('functions.csv')}; origins = {r['address']:r for r in rows('function-origins.csv')}
     selected = {r['address']:r for r in m['functions']}; state = 'original' if evidence_only else 'accepted'
     for q in m['canonical']:

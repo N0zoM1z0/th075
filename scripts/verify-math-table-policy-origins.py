@@ -117,7 +117,7 @@ def verify_table_span(target,span):
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--evidence-only',action='store_true');args=parser.parse_args();m=manifest();verify_plan(m)
-    for path,expected in [(EVIDENCE,MANIFEST_SHA256),(m['probe'],m['probe_sha256']),*m['retained_sha256'].items()]:
+    for path,expected in [(EVIDENCE,MANIFEST_SHA256),(m['probe'],m['probe_sha256'])]:
         if digest((ROOT/path).read_bytes())!=expected:raise ValueError('math table immutable source/prior evidence differs: '+path)
     c=module('math_table_target','compare-coff-function.py');coff=module('math_table_coff','coff_data.py');cfg=module('math_table_cfg','verify-authored-origins.py');extent=module('math_table_extent','verify-vendor-record-origins.py');target=c.verified_target();rows=cfg.rows
     functions={r['address']:r for r in rows('functions.csv')};origins={r['address']:r for r in rows('function-origins.csv')};authored={r['address']:r for r in rows('authored-origin-evidence.csv')};records={r['address']:r for r in m['functions']};decoder=Cs(CS_ARCH_X86,CS_MODE_32)

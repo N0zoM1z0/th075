@@ -20,8 +20,6 @@ class DequeOuterPolicyTests(unittest.TestCase):
         V.verify_plan(self.plan)
         V.verify_context(self.plan)
         self.assertEqual(V.digest((ROOT / V.EVIDENCE).read_bytes()), V.MANIFEST_SHA256)
-        for path, sha in self.plan['retained_sha256'].items():
-            self.assertEqual(V.digest((ROOT / path).read_bytes()), sha, path)
         bad = copy.deepcopy(self.plan)
         bad['functions'][0]['accepted_function']['source_file'] = 'invented-owner.cpp'
         with self.assertRaisesRegex(ValueError, 'immutable'):

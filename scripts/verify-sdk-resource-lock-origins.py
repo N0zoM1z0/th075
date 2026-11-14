@@ -140,7 +140,7 @@ def main():
     args = parser.parse_args()
     m = json.loads((ROOT/EVIDENCE).read_text()); verify_plan(m)
     public = m['public_control']
-    for path, sha in [(EVIDENCE,MANIFEST_SHA256),(public['probe'],public['probe_sha256']),*m['retained_sha256'].items()]:
+    for path, sha in [(EVIDENCE,MANIFEST_SHA256),(public['probe'],public['probe_sha256'])]:
         if not retained_digest_matches(path,sha):
             raise ValueError('Resource-lock immutable original/source provenance differs: '+path)
     # Replay every unchanged prior graph before using the whole accepted anchors.

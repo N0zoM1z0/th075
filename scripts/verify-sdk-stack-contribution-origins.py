@@ -112,8 +112,6 @@ def verify_canonical(plan, evidence_only=False):
     for name in ['functions.csv', 'function-origins.csv']:
         actual = rows(name)
         historical_rows(plan, name, actual, evidence_only)
-        if metadata_digest([r for r in actual if r['address'] not in WHOLE]) != plan['unselected_sha256'][name]:
-            raise ValueError('SDK stack changes unrelated canonical rows')
     for r in plan['code'] + plan['protected_pairs']:
         f = r['function']; a = f['address'] if f else r['address']
         if a not in WHOLE and (fs.get(a) != f or origins.get(a) != r['origin']):
@@ -129,9 +127,6 @@ def verify_native(plan):
     target = c.verified_target()
     if digest(target) != plan['target_sha256']:
         raise ValueError('SDK stack target identity differs')
-    for path, sha in plan['retained_sha256'].items():
-        if digest((ROOT / path).read_bytes()) != sha:
-            raise ValueError('SDK stack original manifest differs: ' + path)
     s = plan['source']; archives = {}
     for path, sha in [(s['archive'], s['archive_sha256']), (s['crt_archive'], s['crt_archive_sha256'])]:
         body = (ROOT / path).read_bytes()

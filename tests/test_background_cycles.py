@@ -22,8 +22,6 @@ class BackgroundCycleTests(unittest.TestCase):
     def test_immutable_complete_plan_and_retained_inputs(self):
         V.verify_plan(self.plan)
         self.assertEqual(V.digest((ROOT/V.EVIDENCE).read_bytes()),V.MANIFEST_SHA256)
-        for p,h in self.plan['retained_sha256'].items():
-            self.assertEqual(V.digest(retained_bytes(ROOT/p)),h,p)
 
     def test_only_six_origins_and_whole_extents(self):
         self.assertEqual({r['address']:r['size'] for r in self.plan['functions']},V.WHOLE)

@@ -202,7 +202,7 @@ def replay(m,evidence_only=False):
 def main():
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--evidence-only',action='store_true')
     args=parser.parse_args();m=json.loads((ROOT/EVIDENCE).read_text());verify_plan(m)
-    for path,sha in [(EVIDENCE,MANIFEST_SHA256),*m['retained_sha256'].items()]:
+    for path,sha in [(EVIDENCE,MANIFEST_SHA256)]:
         if digest((ROOT/path).read_bytes())!=sha:raise ValueError('ListRecovery immutable original evidence/probe differs: '+path)
     replay(m,args.evidence_only)
     print('R218 origins OK: four source-owned list recovery interiors236 in unchanged complete parents223/189/186/186; '

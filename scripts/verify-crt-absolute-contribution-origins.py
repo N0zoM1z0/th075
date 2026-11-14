@@ -105,8 +105,6 @@ def verify_canonical(plan, evidence_only=False):
     for name in ['functions.csv', 'function-origins.csv']:
         actual = rows(name)
         historical_rows(plan, name, actual, evidence_only)
-        if metadata_digest([r for r in actual if r['address'] not in WHOLE]) != plan['unselected_sha256'][name]:
-            raise ValueError('CRT abs changes unrelated canonical rows')
     fs, origins = ({r['address']: r for r in rows(n)} for n in ['functions.csv', 'function-origins.csv'])
     if '0x00641DB5' in fs or '0x00641DB5' in origins:
         raise ValueError('CRT abs adds an auxiliary candidate')
@@ -135,9 +133,6 @@ def verify_native(plan):
     target = c.verified_target()
     if digest(target) != plan['target_sha256']:
         raise ValueError('CRT abs target identity differs')
-    for path, sha in plan['retained_sha256'].items():
-        if digest((ROOT / path).read_bytes()) != sha:
-            raise ValueError('CRT abs retained original proof differs: ' + path)
     source = plan['source']; archive = (ROOT / source['archive']).read_bytes()
     if digest(archive) != source['archive_sha256']:
         raise ValueError('CRT abs source archive differs')

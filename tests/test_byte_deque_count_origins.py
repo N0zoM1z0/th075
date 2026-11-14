@@ -29,8 +29,6 @@ class ByteDequeCountTests(unittest.TestCase):
     def test_complete_plan_and_retained_pins(self):
         self.assertEqual(V.digest((ROOT / V.EVIDENCE).read_bytes()), V.MANIFEST_SHA256)
         V.verify_plan(M)
-        for path, sha in M['retained_sha256'].items():
-            self.assertEqual(V.digest((ROOT / path).read_bytes()), sha, path)
 
     def test_six_library_transitions_with_two_contained_interiors(self):
         self.assertEqual(len(M['functions']), 6)

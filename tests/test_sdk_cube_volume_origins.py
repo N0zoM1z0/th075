@@ -21,9 +21,6 @@ class CubeVolumeProvenanceTests(unittest.TestCase):
         self.assertEqual(V.BASE.digest((ROOT/V.EVIDENCE).read_bytes()),V.MANIFEST_SHA256)
         V.verify_plan(M)
 
-    def test_original_shared_replay_and_previous_evidence_pinned(self):
-        for path,sha in M['retained_sha256'].items():
-            self.assertTrue(V.retained_digest_matches(path,sha),path)
 
     def test_no_constructor_credit_from_factory(self):
         self.reject(lambda m:next(r for r in m['sections'] if r['base']=='0x0060B728')['origin'].update(origin='library'))

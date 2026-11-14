@@ -295,7 +295,7 @@ def retained_digest_matches(path,expected):
 def main():
     parser=argparse.ArgumentParser(description=__doc__); parser.add_argument('--evidence-only',action='store_true')
     args=parser.parse_args(); m=json.loads((ROOT/EVIDENCE).read_text()); verify_plan(m)
-    for path,sha in [(EVIDENCE,MANIFEST_SHA256),(m['probe'],m['probe_sha256']),*m['retained_sha256'].items()]:
+    for path,sha in [(EVIDENCE,MANIFEST_SHA256),(m['probe'],m['probe_sha256'])]:
         if not retained_digest_matches(path,sha):
             raise ValueError('Graphics SDK immutable source/evidence differs: '+path)
     for filename in ['verify-sdk-interface-origins.py','verify-sdk-debug-parent-origins.py',

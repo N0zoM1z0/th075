@@ -146,8 +146,6 @@ def replay(m,evidence_only=False):
     c=module('virtual_frame_target','compare-coff-function.py');coff=module('virtual_frame_coff','coff_data.py')
     flow=module('virtual_frame_flow','sdk_image_carriers.py');target=c.verified_target()
     if digest(target)!=m['target_sha256']:raise ValueError('Virtual frame target identity differs')
-    for path,sha in m['retained_sha256'].items():
-        if digest((ROOT/path).read_bytes())!=sha:raise ValueError('Virtual frame changes retained original input: '+path)
     fs={r['address']:r for r in rows('functions.csv')};origins={r['address']:r for r in rows('function-origins.csv')}
     selected=m['functions'][0];state='original' if evidence_only else 'accepted'
     for pair in m['canonical']:

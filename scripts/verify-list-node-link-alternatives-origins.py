@@ -114,8 +114,7 @@ def replay(m):
 
 def main():
     m = json.loads((ROOT / EVIDENCE).read_text()); verify_plan(m)
-    for path, sha in [(EVIDENCE, MANIFEST_SHA256), (m['public_control']['probe'], m['public_control']['probe_sha256']),
-                      *m['retained_sha256'].items()]:
+    for path, sha in [(EVIDENCE, MANIFEST_SHA256), (m['public_control']['probe'], m['public_control']['probe_sha256'])]:
         if digest((ROOT / path).read_bytes()) != sha:
             raise ValueError('Node immutable source/evidence differs: ' + path)
     replay(m)

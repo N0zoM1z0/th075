@@ -129,7 +129,7 @@ def reviewed_destructor_anchor_matches(old,function,origin):
 def main():
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--evidence-only',action='store_true');args=parser.parse_args()
     m=json.loads((ROOT/EVIDENCE).read_text());verify_plan(m)
-    for path,h in [(EVIDENCE,MANIFEST_SHA256),(m['probe'],m['probe_sha256']),*m['retained_sha256'].items()]:
+    for path,h in [(EVIDENCE,MANIFEST_SHA256),(m['probe'],m['probe_sha256'])]:
         if digest((ROOT/path).read_bytes())!=h:raise ValueError('SDK interface immutable prior/source evidence differs: '+path)
     c=module('interface_target','compare-coff-function.py');rt=module('interface_archive','verify-runtime-origins.py');coff=module('interface_coff','coff_data.py');sdk=module('interface_cfg','verify-sdk-origins.py')
     geometry=module('interface_geometry','verify-compiler-origins.py');weak=module('interface_weak','verify-standard-exception-origins.py');inventory=module('interface_inventory','verify-sdk-dependency-origins.py').PAIRED.BUFFER.inventory

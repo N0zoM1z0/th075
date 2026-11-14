@@ -52,10 +52,6 @@ def verify_plan(m):
 def verify_canonical(m,evidence_only=False):
     fs={r['address']:r for r in rows('functions.csv')};origins={r['address']:r for r in rows('function-origins.csv')}
     selected=m['functions'][0];state='original' if evidence_only else 'accepted'
-    if evidence_only:
-        for name in ['functions.csv','function-origins.csv']:
-            if metadata_digest([r for r in rows(name) if r['address'] not in WHOLE])!=m['unselected_sha256'][name]:
-                raise ValueError('Scene value original transition changes unrelated records')
     for pair in m['canonical']:
         a=pair['function']['address'];expected=pair
         if a==selected['address']:expected=dict(function=selected[state+'_function'],origin=selected[state+'_origin'])
@@ -153,8 +149,6 @@ def replay(m,evidence_only=False):
     c=module('shared_target','compare-coff-function.py');coff=module('shared_coff','coff_data.py');flow=module('shared_flow','sdk_image_carriers.py')
     target=c.verified_target()
     if digest(target)!=m['target_sha256']:raise ValueError('Scene value target identity differs')
-    for path,sha in m['retained_sha256'].items():
-        if digest((ROOT/path).read_bytes())!=sha:raise ValueError('Scene value changes retained input: '+path)
     verify_canonical(m,evidence_only);verify_native(m,target,c,flow)
     ctl=m['public_control'];scratch=ROOT/'build/origin-scene-shared-value-verification';scratch.mkdir(parents=True,exist_ok=True)
     with tempfile.TemporaryDirectory(dir=scratch) as temp:

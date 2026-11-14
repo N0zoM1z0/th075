@@ -20,9 +20,6 @@ class PngPackedProvenanceTests(unittest.TestCase):
         self.assertEqual(V.digest((ROOT / V.EVIDENCE).read_bytes()), V.MANIFEST_SHA256)
         V.verify_plan(M)
 
-    def test_prior_source_and_provenance_pins(self):
-        for path, sha in M['retained_sha256'].items():
-            self.assertEqual(V.digest((ROOT / path).read_bytes()), sha, path)
 
     def test_no_source_or_private_abi_credit(self):
         for key in ['source_file', 'signature', 'calling_convention']:

@@ -141,7 +141,7 @@ def accepted_snapshot(snapshot,function,origin):
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--evidence-only',action='store_true');args=parser.parse_args();m=manifest();verify_plan(m)
-    for path,expected in [('config/sdk-dependency-origin-evidence.json',MANIFEST_SHA256),(m['probe'],m['probe_sha256']),*m['retained_sha256'].items()]:
+    for path,expected in [('config/sdk-dependency-origin-evidence.json',MANIFEST_SHA256),(m['probe'],m['probe_sha256'])]:
         if digest((ROOT/path).read_bytes())!=expected:raise ValueError('SDK dependency immutable probe/prior evidence differs: '+path)
     c=module('sdk_target','compare-coff-function.py');coff=module('sdk_coff','coff_data.py');extent=module('sdk_extent','verify-vendor-record-origins.py')
     cfg=module('sdk_cfg','verify-authored-origins.py');eh=module('sdk_eh','compiler_eh.py');target=c.verified_target();rows=PAIRED.BUFFER.PRIOR.PRIOR.rows

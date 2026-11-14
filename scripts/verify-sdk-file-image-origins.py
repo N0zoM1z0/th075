@@ -202,7 +202,7 @@ def main():
     parser.add_argument('--evidence-only',action='store_true')
     parser.add_argument('--replay-dependencies',action='store_true',help='Cold-replay every retained complete provenance graph serially.')
     args=parser.parse_args();m=json.loads((ROOT/EVIDENCE).read_text());verify_plan(m)
-    for path,h in [(EVIDENCE,MANIFEST_SHA256),*m['retained_sha256'].items()]:
+    for path,h in [(EVIDENCE,MANIFEST_SHA256)]:
         if digest((ROOT/path).read_bytes())!=h:raise ValueError('SDK immutable evidence differs: '+path)
     replay_manifest(m,args.evidence_only)
     if args.replay_dependencies:

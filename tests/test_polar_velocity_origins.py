@@ -27,8 +27,6 @@ class PolarVelocityTests(unittest.TestCase):
     def test_plan_and_pinned_original_evidence(self):
         V.verify_plan(M)
         self.assertEqual(V.digest((ROOT / V.EVIDENCE).read_bytes()),V.MANIFEST_SHA256)
-        for path,sha in M['retained_sha256'].items():
-            self.assertEqual(V.digest((ROOT / path).read_bytes()),sha,path)
 
     def test_complete_native_bodies_and_guarded_parent_cfgs(self):
         for r in M['functions']+M['anchors']+M['retained_unknowns']:

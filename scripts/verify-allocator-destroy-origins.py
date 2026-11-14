@@ -104,7 +104,7 @@ def accepted_snapshot(snapshot,function,origin):
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--evidence-only',action='store_true');args=parser.parse_args();m=manifest();verify_plan(m)
-    for path,expected in [('config/allocator-destroy-origin-evidence.json',MANIFEST_SHA256),(m['probe'],m['probe_sha256']),*m['retained_sha256'].items()]:
+    for path,expected in [('config/allocator-destroy-origin-evidence.json',MANIFEST_SHA256),(m['probe'],m['probe_sha256'])]:
         if digest((ROOT/path).read_bytes())!=expected:raise ValueError('allocator destruction immutable source/prior evidence differs: '+path)
     c=module('allocator_target','compare-coff-function.py');coff=module('allocator_coff','coff_data.py');extent=module('allocator_extent','verify-vendor-record-origins.py');cfg=module('allocator_cfg','verify-authored-origins.py')
     target=c.verified_target();rows=PAIRED.BUFFER.PRIOR.PRIOR.rows

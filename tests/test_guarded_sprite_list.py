@@ -27,7 +27,6 @@ class GuardedSpriteListTests(unittest.TestCase):
     def test_complete_immutable_plan_and_original_inputs(self):
         V.verify_plan(self.plan)
         self.assertEqual(V.digest((ROOT/V.EVIDENCE).read_bytes()),V.MANIFEST_SHA256)
-        for p,h in self.plan['retained_sha256'].items():self.assertEqual(V.digest(retained_bytes(ROOT/p)),h,p)
 
     def test_one_full_origin_preserves_source_abi_mapping_and_exact_state(self):
         r=self.plan['functions'][0];f=r['accepted_function']

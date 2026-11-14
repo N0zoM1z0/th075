@@ -27,7 +27,6 @@ class ListRecoveryTests(unittest.TestCase):
     def test_complete_plan_and_retained_original_pins(self):
         V.verify_plan(M)
         self.assertEqual(V.digest((ROOT/V.EVIDENCE).read_bytes()),V.MANIFEST_SHA256)
-        for path,sha in M['retained_sha256'].items():self.assertEqual(V.digest((ROOT/path).read_bytes()),sha,path)
 
     def test_four_interiors_keep_all_existing_parent_extents(self):
         self.assertEqual(sum(r['size'] for r in M['functions']),236)

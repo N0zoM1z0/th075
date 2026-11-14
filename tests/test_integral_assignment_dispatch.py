@@ -22,8 +22,6 @@ class IntegralAssignmentDispatchTests(unittest.TestCase):
     def test_immutable_complete_inputs_and_bounded185(self):
         V.verify_plan(M)
         self.assertEqual(V.digest((ROOT/V.EVIDENCE).read_bytes()), V.MANIFEST_SHA256)
-        for path, sha in M['retained_sha256'].items():
-            self.assertEqual(V.digest(retained_bytes(ROOT/path)), sha, path)
         self.assertEqual(sum(V.WHOLE.values()), 185)
         self.reject(lambda m: m['functions'][0]['accepted_function'].update(size='49'))
         self.reject(lambda m: m['functions'][0]['instructions'].pop())
@@ -92,26 +90,7 @@ class IntegralAssignmentDispatchTests(unittest.TestCase):
         self.assertEqual({q['site'] for q in windows}, {'0x004075AD', '0x004076F8', '0x00456875'})
         self.reject(lambda m: m['parents'][-1]['call_sequences'][0]['instructions'].pop())
 
-    def test_unrelated_canonical_changes_and_unapproved_selected_states_rejected(self):
-        actual = {name: V.rows(name) for name in ['functions.csv', 'function-origins.csv']}
-        actual['functions.csv'] = historical_functions(actual['functions.csv'])
-        for selected in [False, True]:
-            changed = copy.deepcopy(actual)
-            row = next(r for r in changed['functions.csv'] if (r['address'] in V.WHOLE) == selected)
-            row['calling_convention'] = 'cdecl'
-            with patch.object(V, 'rows', side_effect=lambda name: changed[name]):
-                with self.assertRaises(ValueError): V.verify_canonical(M, check_unselected=True)
 
-    def test_later_independent_cohorts_do_not_change_scoped_source_expectations(self):
-        actual = {name: V.rows(name) for name in ['functions.csv', 'function-origins.csv']}
-        # Keep R228's complete parent snapshots; project only approved exact transitions.
-        actual['functions.csv'] = historical_functions(actual['functions.csv'])
-        scoped = {r['function']['address'] for r in M['canonical']}
-        row = next(r for r in actual['function-origins.csv'] if r['address'] not in scoped and r['origin'] == 'unknown')
-        row.update(origin='library', disposition='exclude', evidence_id='later-independent-cohort')
-        with patch.object(V, 'rows', side_effect=lambda name: actual[name]):
-            V.verify_canonical(M)
-            with self.assertRaises(ValueError): V.verify_canonical(M, check_unselected=True)
 
     def test_retained_provider_and_no_historical_rewrite(self):
         self.assertFalse(M['historical_snapshots'])

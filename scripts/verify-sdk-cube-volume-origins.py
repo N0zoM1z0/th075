@@ -106,7 +106,7 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--evidence-only',action='store_true');args=parser.parse_args()
     m=json.loads((ROOT/EVIDENCE).read_text());verify_plan(m)
     public=m['public_control']
-    for path,sha in [(EVIDENCE,MANIFEST_SHA256),(public['probe'],public['probe_sha256']),*m['retained_sha256'].items()]:
+    for path,sha in [(EVIDENCE,MANIFEST_SHA256),(public['probe'],public['probe_sha256'])]:
         if not retained_digest_matches(path,sha):
             raise ValueError('Cube/volume immutable source/provenance differs: '+path)
     # The shared replay is pinned by this manifest. Its actual R195 graph and

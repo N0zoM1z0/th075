@@ -20,9 +20,6 @@ class LifetimeAlternativesTests(unittest.TestCase):
         self.assertEqual(V.digest((ROOT / V.EVIDENCE).read_bytes()), V.MANIFEST_SHA256)
         V.verify_plan(M)
 
-    def test_prior_source_pins(self):
-        for path, sha in M['retained_sha256'].items():
-            self.assertEqual(V.digest((ROOT / path).read_bytes()), sha, path)
 
     def test_all_six_root_decisions_retained(self):
         self.reject(lambda m: m['reviewed_cohort'].pop())

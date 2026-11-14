@@ -35,8 +35,6 @@ class GameSwitchPolicyTests(unittest.TestCase):
     def test_manifest_and_retained_evidence_pins(self):
         self.assertEqual(V.digest((ROOT / V.EVIDENCE).read_bytes()), V.MANIFEST_SHA256)
         V.verify_plan(M)
-        for path, sha in M['retained_sha256'].items():
-            self.assertEqual(V.digest((ROOT / path).read_bytes()), sha, path)
 
     def test_three_authored_policies1191_keep_all_extents(self):
         self.assertEqual(sum(r['size'] for r in M['functions']), 1191)

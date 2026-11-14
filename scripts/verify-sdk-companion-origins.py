@@ -68,9 +68,6 @@ def main():
     m = json.loads((ROOT/EVIDENCE).read_text()); verify_plan(m)
     if digest((ROOT/EVIDENCE).read_bytes()) != MANIFEST_SHA256:
         raise ValueError('SDK companion immutable evidence differs')
-    for path, sha in m['retained_sha256'].items():
-        if digest((ROOT/path).read_bytes()) != sha:
-            raise ValueError('SDK companion retained evidence/source differs: '+path)
     # Reopen the full independent graph, including every callback, initial image and prior anchor.
     result = subprocess.run([str(ROOT/'scripts/repo-python'), 'scripts/verify-sdk-dispatch-origins.py'],
                             cwd=ROOT, check=True, capture_output=True, text=True)

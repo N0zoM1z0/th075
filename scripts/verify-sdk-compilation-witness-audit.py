@@ -205,9 +205,6 @@ def main():
         raise ValueError('immutable complete SDK compilation witness audit differs')
     plan = json.loads(path.read_text())
     verify_scope(plan)
-    for path, sha in plan['retained_sha256'].items():
-        if V.digest((ROOT / path).read_bytes()) != sha:
-            raise ValueError('retained original source/control proof differs: ' + path)
     functions, origins = ({r['address']: r for r in V.rows(n)} for n in ['functions.csv', 'function-origins.csv'])
     for name, sha in plan['canonical_sha256'].items():
         if V.PRIOR.metadata_digest(V.rows(name)) != sha:

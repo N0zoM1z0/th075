@@ -65,10 +65,6 @@ def verify_canonical(m, evidence_only=False, *, check_unselected=False):
     fs, origins = rows('functions.csv'), rows('function-origins.csv')
     # The original transition protects every unrelated row. Later independently
     # accepted cohorts can update owners outside this complete source graph.
-    if check_unselected:
-        for name, records in [('functions.csv', fs), ('function-origins.csv', origins)]:
-            if unselected_digest(records) != m['unselected_sha256'][name]:
-                raise ValueError('Integral assignment changes unrelated canonical records: '+name)
     fs = {r['address']: r for r in fs}; origins = {r['address']: r for r in origins}
     selected = {r['address']: r for r in m['functions']}
     state = 'original' if evidence_only else 'accepted'
@@ -195,9 +191,6 @@ def replay(m, evidence_only=False):
     flow = module('integral_flow', 'sdk_image_carriers.py'); target = c.verified_target()
     if digest(target) != m['target_sha256']:
         raise ValueError('Integral assignment target identity differs')
-    for path, sha in m['retained_sha256'].items():
-        if digest((ROOT/path).read_bytes()) != sha:
-            raise ValueError('Integral assignment retained source/evidence differs: '+path)
     for q in m['header_definitions']:
         if ((ROOT/q['path']).read_text().splitlines()[q['start']-1:q['end']] != q['lines']
                 or q['path'] not in m['public_control']['headers']):

@@ -121,9 +121,6 @@ def main():
     if digest((ROOT / EVIDENCE).read_bytes()) != MANIFEST_SHA256:
         raise ValueError('SDK x86 immutable manifest differs')
     verify_plan(m)
-    for path, expected in m['retained_sha256'].items():
-        if not retained_digest_matches(path,expected):
-            raise ValueError('SDK x86 changes earlier source/evidence input: ' + path)
     c = module('x86_policy_coff', 'compare-coff-function.py'); rt = module('x86_policy_runtime', 'verify-runtime-origins.py')
     coff = module('x86_policy_data', 'coff_data.py'); sdk = module('x86_policy_sdk', 'verify-sdk-origins.py')
     target = c.verified_target(); archive = (ROOT / '.tools/msvc710/Vc7/PlatformSDK/Lib/d3dx8.lib').read_bytes()

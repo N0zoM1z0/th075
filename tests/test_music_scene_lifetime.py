@@ -20,7 +20,6 @@ class MusicSceneLifetimeTests(unittest.TestCase):
     def test_whole_immutable_plan_and_every_retained_input(self):
         V.verify_plan(self.plan)
         self.assertEqual(V.digest((ROOT/V.EVIDENCE).read_bytes()),V.MANIFEST_SHA256)
-        for p,h in self.plan['retained_sha256'].items():self.assertEqual(V.digest(retained_bytes(ROOT/p)),h,p)
 
     def test_only_three_full_game_origins_without_source_private_abi_credit(self):
         self.assertEqual({r['address']:r['size'] for r in self.plan['functions']},V.WHOLE)

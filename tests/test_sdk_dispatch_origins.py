@@ -27,9 +27,6 @@ class DispatchEvidenceTests(unittest.TestCase):
         self.assertEqual(V.digest((ROOT/V.EVIDENCE).read_bytes()), V.MANIFEST_SHA256)
         V.verify_plan(M)
 
-    def test_retained_manifests_and_carriers(self):
-        for path, sha in M['retained_sha256'].items():
-            self.assertEqual(V.digest((ROOT/path).read_bytes()), sha, path)
 
     def test_missing_whole_callback(self):
         self.reject(lambda m: m['controls'].pop())

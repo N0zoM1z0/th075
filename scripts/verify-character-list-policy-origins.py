@@ -129,7 +129,7 @@ def verify_negative(raw,linked,actual,row):
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--evidence-only',action='store_true');args=parser.parse_args();m=manifest();verify_plan(m)
-    for path,expected in [(EVIDENCE,MANIFEST_SHA256),(m['probe'],m['probe_sha256']),*m['retained_sha256'].items()]:
+    for path,expected in [(EVIDENCE,MANIFEST_SHA256),(m['probe'],m['probe_sha256'])]:
         if digest((ROOT/path).read_bytes())!=expected:raise ValueError('character_list immutable source/prior evidence differs: '+path)
     c=module('character_list_target','compare-coff-function.py');coff=module('character_list_coff','coff_data.py');cfg=module('character_list_cfg','verify-authored-origins.py')
     extent=module('character_list_extent','verify-vendor-record-origins.py');eh=module('character_list_eh','compiler_eh.py');target=c.verified_target();rows=cfg.rows

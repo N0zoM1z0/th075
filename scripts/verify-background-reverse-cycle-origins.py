@@ -198,10 +198,6 @@ def verify_control(m,body,c,coff,flow):
 def verify_canonical(m,evidence_only=False):
     fs={r['address']:r for r in rows('functions.csv')}; origins={r['address']:r for r in rows('function-origins.csv')}
     selected={r['address']:r for r in m['functions']};state='original' if evidence_only else 'accepted'
-    if evidence_only:
-        for name in ['functions.csv','function-origins.csv']:
-            if metadata_digest([r for r in rows(name) if r['address'] not in selected]) != m['unselected_sha256'][name]:
-                raise ValueError('Cycle original transition changes unrelated rows')
     for pair in m['canonical']:
         a=pair['function']['address'];expected=pair
         if a in selected:expected=dict(function=selected[a][state+'_function'],origin=selected[a][state+'_origin'])
@@ -213,8 +209,6 @@ def replay(m,evidence_only=False):
     c=module('cycle_target','compare-coff-function.py');coff=module('cycle_coff','coff_data.py');flow=module('cycle_flow','sdk_image_carriers.py')
     target=c.verified_target()
     if digest(target) != m['target_sha256']:raise ValueError('Cycle target identity differs')
-    for path,sha in m['retained_sha256'].items():
-        if digest((ROOT/path).read_bytes()) != sha:raise ValueError('Cycle retained source/evidence differs: '+path)
     verify_canonical(m,evidence_only);verify_native(m,target,c,flow)
     control=m['public_control'];scratch=ROOT/'build/origin-background-reverse-cycle-verification';scratch.mkdir(parents=True,exist_ok=True)
     with tempfile.TemporaryDirectory(dir=scratch) as temp:
