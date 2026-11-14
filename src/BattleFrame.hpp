@@ -1,26 +1,17 @@
 #ifndef TH075_BATTLE_FRAME_HPP
 #define TH075_BATTLE_FRAME_HPP
+#include "Fighter.hpp"
 #include "BattleActiveCollision.hpp"
 #include "GameLeafHelpers.hpp"
 // Partial receiver-only interfaces. Never instantiate or embed these views.
 // Slot names preserve observed indices; unused declarations do not establish
 // original signatures. Only the observed parameterless slots are invoked.
-class FrameActor {
+class FrameActor : public Fighter {
 public:
-    virtual void Slot0();
-    virtual void Advance();
-    virtual void Slot2(); virtual void Slot3(); virtual void Slot4();
-    virtual void Slot5(); virtual void Slot6(); virtual void Slot7();
-    virtual void Slot8(); virtual void Slot9(); virtual void Slot10();
-    virtual void Slot11(); virtual void Slot12(); virtual void Slot13();
-    virtual void Slot14(); virtual void Slot15();
-    virtual void AdvanceMode7();
-    virtual void Slot17(); virtual void Slot18();
-    virtual void FinishFrame();
     void AdvanceGuardedState();
     void AdvancePosition();
     void UpdateCounters();
-    void ChooseAction();
+    void ChooseFrameAction();
     signed char CheckHorizontalLimits();
 };
 class FrameEffectOwner { public: void AdvanceAll(); };

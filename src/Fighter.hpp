@@ -60,7 +60,11 @@ public:
     unsigned char unknown0E8[0x2CC - 0x0E8];
     signed char field2CC;               // +0x2CC
     signed char field2CD;               // +0x2CD
-    unsigned char unknown2CE[0x2E8 - 0x2CE];
+    unsigned char unknown2CE[0x2D8 - 0x2CE];
+    float field2D8;                     // +0x2D8
+    float field2DC;                     // +0x2DC
+    float field2E0;                     // +0x2E0
+    float field2E4;                     // +0x2E4
     Fighter* opponent;                  // +0x2E8 the other player
     void* field2EC;                     // +0x2EC
     unsigned char unknown2F0[0x2F1 - 0x2F0];

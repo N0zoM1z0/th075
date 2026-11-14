@@ -2153,7 +2153,7 @@ target_address = 0x004521A0
 size = 132
 relocations = [
   { offset = 0x62, type = "DIR32", symbol = "__real@00000000", target = 0x0065782C },
-  { offset = 0x71, type = "REL32", symbol = "?ChooseAction@FrameActor@@QAEXXZ", target = 0x00452360 },
+  { offset = 0x71, type = "REL32", symbol = "?ChooseFrameAction@FrameActor@@QAEXXZ", target = 0x00452360 },
 ]
 
 [units.frame-actor-advance-position]
@@ -2193,8 +2193,8 @@ relocations = [
 source = "src/BattleFrame.cpp"
 object = "build/matching/BattleFrame.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
-functions = ["FrameActor::ChooseAction"]
-symbol = "?ChooseAction@FrameActor@@QAEXXZ"
+functions = ["FrameActor::ChooseFrameAction"]
+symbol = "?ChooseFrameAction@FrameActor@@QAEXXZ"
 target_address = 0x00452360
 size = 304
 relocations = [

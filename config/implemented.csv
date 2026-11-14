@@ -101,7 +101,7 @@ BattleFrame::UpdatePlayerCounters
 FrameActor::AdvanceGuardedState
 FrameActor::AdvancePosition
 FrameActor::CheckHorizontalLimits
-FrameActor::ChooseAction
+FrameActor::ChooseFrameAction
 FrameActor::UpdateCounters
 BattleFrame::AdvanceState
 BattleFrame::ResolveBodySeparation

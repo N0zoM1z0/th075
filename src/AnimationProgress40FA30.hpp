@@ -1,8 +1,7 @@
 #pragma once
 
-// Declaration-only receiver view; never construct or embed this partial owner.
-class AnimationProgress40FA30 {
+#include "Actor.hpp"
+class AnimationProgress40FA30 : public Actor {
 public:
-    virtual void OnSecondaryCounterReset();
     short AdvanceNestedFrame();
 };

@@ -1,22 +1,18 @@
-#include "FighterAnimationPhaseBorrowedF1024.hpp"
 #include "AnimationProgress40FA30.hpp"
 
-#define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
 
 short AnimationProgress40FA30::AdvanceNestedFrame() {
-    ++F1024_PHASE(this).frameAt64;
-    if (F1024_PHASE(this).frameAt64 >= FIELD(short, 0x72)) {
-        F1024_PHASE(this).frameAt64 = 0;
-        ++F1024_PHASE(this).stageAt62;
-        if (F1024_PHASE(this).stageAt62 >= FIELD(short, 0x70)) {
-            F1024_PHASE(this).stageAt62 = 0;
-            OnSecondaryCounterReset();
-            return FIELD(short, 0x70);
+    ++animationFrame;
+    if (animationFrame >= field072) {
+        animationFrame = 0;
+        ++animationStage;
+        if (animationStage >= field070) {
+            animationStage = 0;
+            BindAnimation();
+            return field070;
         }
-        OnSecondaryCounterReset();
-        return F1024_PHASE(this).stageAt62;
+        BindAnimation();
+        return animationStage;
     }
     return 0;
 }
-
-#undef FIELD

@@ -196,7 +196,7 @@ short BattleFrame::AdvanceState()
                 ACTOR(int, 1, 0x3A4) = 0; ACTOR(int, 1, 0x3A8) = 0;
                 ACTOR(short, 1, 0x3A0) = 0; ACTOR(signed char, 1, 0x39C) = 0;
                 for (resetPlayer = 0; resetPlayer < 2; ++resetPlayer) {
-                    PLAYER(resetPlayer)->Slot6();
+                    PLAYER(resetPlayer)->ResetRound();
                     ACTOR(signed char, resetPlayer, 0x3CE) = 1;
                     F1112_ACTOR_X(PLAYER(resetPlayer)) = static_cast<float>(resetPlayer * 320 + 480);
                     F1112_ACTOR_Y(PLAYER(resetPlayer)) = 0.0f;

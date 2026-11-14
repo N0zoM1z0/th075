@@ -18,27 +18,26 @@ Do not use REA or replay the entire exact corpus.
 
 The user asked to clear readability debt before the 100% push. Done so far:
 obsolete probes/verifiers/notes removed, hash-freshness pins replaced by
-replay and target checks, and shared [`Actor`](../src/Actor.hpp) and
-[`Fighter`](../src/Fighter.hpp) layouts adopted by 75 classes (all 233
-affected units cold exact). `FIELD(` uses in `src/` fell from 14,292 to
-3,103. Next, in order:
+replay and target checks, and polymorphic [`Actor`](../src/Actor.hpp) and
+[`Fighter`](../src/Fighter.hpp) layouts with the PE vtable slots adopted by
+77 classes (all 233 affected units cold exact). `FIELD(` uses in `src/`
+fell from 14,292 to 3,043. Next, in order:
 
-1. Make `Actor` polymorphic with the 5 shared slots and `Fighter` with slots
-   5–19 (see the vtable entry in the knowledge base: the 22 giants are slot 1
-   of the 11 fighter and 11 object tables). Then `FrameActor` and the other
-   virtual classes can derive, and per-function shells become per-character
-   overrides (update their manifest symbols `Q`→`U` after replay).
+1. Merge each character's override shells into one class (`AliceFighter`,
+   …). The vtables map them cleanly: every character owns 9–11 shells whose
+   methods are all its slots (see the knowledge base). Mangled names change
+   with the class name, so update manifest symbols after a cold replay.
 2. Convert window and `FIELD` uses whose receiver is not `this` (HUD,
    collision, knockout code holding fighter pointers) to typed `Fighter*`
-   access, then delete the remaining 16 window headers.
-3. Give the `CharacterObject` effect class a layout on top of `Actor` and
-   convert the remaining `FIELD(` uses and the giant research parents.
-4. Replace per-function shell class names (`CharacterAI499030`, …) with
-   real classes once their methods are grouped by character.
+   access, then delete the remaining window headers.
+3. Give the `CharacterObject` effect class a layout on top of `Actor` (its
+   5-slot tables share slots 3–4) and convert the remaining `FIELD(` uses
+   and the giant research parents; the 22 giants are slot 1 overrides.
 
-Convert with named members only and cold-replay every unit whose source or
-header changed. The conversion tools are in `.analysis/layout-tools/`
-(`pipeline2.sh` rebuilds the conversion from commit c16d67ed).
+Convert with named members only and cold-replay every unit whose source,
+header or manifest entry changed. The conversion tools are in
+`.analysis/layout-tools/` (`pipeline2.sh` rebuilds the conversion from
+commit c16d67ed; `affected.py REV` lists units to replay).
 
 ## 1. Original native PE and complete-function exactness
 
