@@ -1,23 +1,8 @@
+#include "YukariFighter.hpp"
 #include "Fighter.hpp"
 // The code is a complete native-observed fighter round reset, not a claim to
 // reconstruct the entire parent fighter private object class or its callee.
-class YukariRoundF315 : public Fighter {
-public:
-    void ResetBaseRound();
-    void ResetRound();
-public:
-    // Fields after the shared Fighter layout.
-    unsigned short fieldF10;
-    unsigned short fieldF12;
-    unsigned short fieldF14;
-    unsigned short fieldF16;
-    unsigned short fieldF18;
-    unsigned short fieldF1A;
-    unsigned char unknownF1C[0xF30 - 0xF1C];
-    unsigned short fieldF30;
-    unsigned short fieldF32;
-};
-void YukariRoundF315::ResetRound()
+void YukariFighter::ResetRound()
 {
     scriptCounterF00=0;
     scriptCounterF02=0;

@@ -31,7 +31,7 @@
 #define ATTACK_C (reinterpret_cast<unsigned long&>(inputC) == 1 || bufferedC > 0)
 #define FORWARD_MOTION (facing * inputX > 0 || facing * bufferedX > 0)
 #define DISTANT_FROM_OPPONENT(upper, lower) (x - opponent->x > upper || x - opponent->x < lower)
-void CharacterAction502450::DispatchActions()
+void PatchouliFighter::DispatchActions()
 {
     if (aiCommand == 205 &&
         y == 0.0f &&

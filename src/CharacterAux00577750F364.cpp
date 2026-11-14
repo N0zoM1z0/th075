@@ -1,23 +1,16 @@
+#include "YuyukoFighter.hpp"
 #include "Fighter.hpp"
 // F364: original independent 1121-byte character auxiliary controller,
 // with native signed F0E +2 counter and wrap at >=360, then three
 // action-specific effect 899 spawns and F10 distance counter. This is
 // not a claim about the full fighter/auxiliary private owner class.
 // Declaration-only receiver view, only observed fields and calls.
-class CharacterAux00577750F364 : public Fighter {
-public:
-    void AdvanceAuxiliary();
-    void SpawnTrackedEffect(short, float, float, signed char, signed char, unsigned char);
-public:
-    // Fields after the shared Fighter layout.
-    short fieldF10;
-};
 
 
 #define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
 
 // Names are provisional. Only these field accesses and receiver ABI are observed.
-void CharacterAux00577750F364::AdvanceAuxiliary() {
+void YuyukoFighter::AdvanceAuxiliary() {
     if (velocityX == 0.0f && field3AC > 0) {
         field3AC = 0;
     }

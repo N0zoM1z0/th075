@@ -1,4 +1,5 @@
 #pragma once
+#include "MeilingFighter.hpp"
 #include <d3dx8.h>
 #include <stddef.h>
 
@@ -30,8 +31,4 @@ public:
 class RenderDrawing5E68C0 {
 public:
     void DrawQuad(int, const RenderQuadPacket5E68C0*, const RECT*, DWORD);
-};
-class CharacterSpecial5E68C0 {
-public:
-    void RenderStage(signed char);
 };

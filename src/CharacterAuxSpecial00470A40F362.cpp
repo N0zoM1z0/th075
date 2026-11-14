@@ -1,3 +1,4 @@
+#include "ReimuFighter.hpp"
 #include "Fighter.hpp"
 // R049-authored complete native 1,027-byte controller at 00470A40.
 // The compiled nonrelocation stream is genuinely identical to F062;
@@ -5,21 +6,12 @@
 // original function address. This independent original extent receives
 // distinct credit, not reuse of F062 bytes or any new callee credit.
 // Declaration-only receiver view; full character owner layout unknown.
-class CharacterAuxRunAt00470A40F362 : public Fighter {
-public:
-    void AdvanceAuxiliarySpecial();
-    void SpawnTrackedEffect(short, float, float, signed char, signed char, unsigned char);
-public:
-    // Fields after the shared Fighter layout.
-    unsigned char unknownF10[0xF2A - 0xF10];
-    short fieldF2A;
-};
 
 
 #define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
 
 // Names are provisional. Only these field accesses and receiver ABI are observed.
-void CharacterAuxRunAt00470A40F362::AdvanceAuxiliarySpecial() {
+void ReimuFighter::AdvanceAuxiliary() {
     if (velocityX == 0.0f && field3AC > 0) {
         field3AC = 0;
     }

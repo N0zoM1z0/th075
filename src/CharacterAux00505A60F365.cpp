@@ -1,3 +1,4 @@
+#include "PatchouliFighter.hpp"
 #include "Fighter.hpp"
 // F365: independently checked COMPLETE native 1,576-byte extended character special effect
 // controller. Like the already exact F062, this uses the same inherited
@@ -9,24 +10,13 @@
 // += (not a semantically equivalent ordinary assignment). The direction
 // boolean is naturally inlined, not stored in an invented helper local.
 // Declaration-only receiver view: full original fighter layout is unknown.
-class CharacterAux00505A60F365 : public Fighter {
-public:
-    void UpdateAuxiliary();
-    void SpawnTrackedEffect(short, float, float, signed char, signed char, unsigned char);
-    int Rand(int,int);
-    void SpawnProjectile(int,float,float,unsigned char,int);
-public:
-    // Fields after the shared Fighter layout.
-    short fieldF10;
-    short fieldF12;
-};
 
 
 #define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
 
 extern const float g_SpecialPowerStepAt006590B4;
 // Names are provisional. Only these field accesses and receiver ABI are observed.
-void CharacterAux00505A60F365::UpdateAuxiliary() {
+void PatchouliFighter::AdvanceAuxiliary() {
     if (velocityX == 0.0f && field3AC > 0) {
         field3AC = 0;
     }

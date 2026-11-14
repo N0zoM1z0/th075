@@ -1,13 +1,8 @@
+#include "ReimuFighter.hpp"
 #include "GameLeafHelpers.hpp"
 
 // Pointer-only actor view; full layouts and original role names are unknown.
 // Never instantiate or embed this owner or its borrowed AnimationState.
-class CharacterSpecial470F00 {
-public:
-    void ConfigureStage();
-    void RecordRoundFields(signed char, short, signed char, signed char,
-                           signed char, int, int, int);
-};
 namespace CameraStage470F00 {
     void __cdecl SetOverride(unsigned char, float, float, float);
     void __cdecl Snap();
@@ -21,7 +16,7 @@ extern signed char stageIntroCharacter;
 #define OTHER_ACTOR ACTOR_FIELD(AnimationState*, 0x2E8)
 #define OTHER_FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<char*>(OTHER_ACTOR) + offset))
 
-void CharacterSpecial470F00::ConfigureStage() {
+void ReimuFighter::ConfigureStage() {
     switch (specialStage) {
     case 1:
         OTHER_FIELD(int, 0x460) = 50000;

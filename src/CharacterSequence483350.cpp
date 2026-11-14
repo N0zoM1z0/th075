@@ -1,9 +1,9 @@
 #include "CharacterSequence483350.hpp"
 
 #define FIELD(type, offset) (*reinterpret_cast<type *>(reinterpret_cast<unsigned char *>(this) + offset))
-#define OPPONENT_ACTOR static_cast<CharacterSequence483350*>(opponent)
+#define OPPONENT_ACTOR static_cast<ReimuFighter*>(opponent)
 
-void CharacterSequence483350::AdvanceSequence()
+void ReimuFighter::AdvanceSequence()
 {
     switch (sequencePhase) {
     case 0:

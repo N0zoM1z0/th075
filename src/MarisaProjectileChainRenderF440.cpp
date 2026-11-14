@@ -1,3 +1,4 @@
+#include "MarisaFighter.hpp"
 #include "SpriteDraw40CA80.hpp"
 #include "SpriteTransform.hpp"
 #include "CameraUpdate4126C0.hpp"
@@ -47,12 +48,11 @@ struct NativeMarisaStateF358 {
     short angle;
     __declspec(align(4)) short radius;
 };
-class MarisaAuxF356 {public: void RenderChain();};
 #define FLOAT(o) *reinterpret_cast<float*>(reinterpret_cast<unsigned char*>(this)+(o))
 #define FIELD(T,o) (*reinterpret_cast<T*>(reinterpret_cast<unsigned char*>(this)+(o)))
 #define DRAWER reinterpret_cast<MarisaRendererF356*>(FIELD(void*,4))
 #define REC(i) (reinterpret_cast<MarisaParticleF356*>(reinterpret_cast<unsigned char*>(this)+0x1018)[(i)])
-void MarisaAuxF356::RenderChain() {
+void MarisaFighter::RenderChain() {
     if (!FIELD(unsigned char,0x1006)) return;
     NativeMarisaStateF358 state;
     state.quad.Construct();

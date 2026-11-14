@@ -1,3 +1,4 @@
+#include "SuikaFighter.hpp"
 #include <windows.h>
 // Native-bounded borrowed state only. Original random/gfx and sound method
 // bodies, full fighter layout and owned objects are all external.
@@ -12,12 +13,6 @@ extern const float g_LeftLimitAt00659130;
 extern const float g_OuterRightAt0065787C;
 extern const float g_OuterLeftAt00657880;
 class SuikaSoundF313 {public: void Play(int index);};
-class SuikaSpecialF313 {
-public:
-    int Rand(int min,int max);
-    void SpawnProjectile(int pattern,float x,float y,unsigned char direction,int group);
-    void UpdateSpecialState();
-};
 #define F(T,off) (*reinterpret_cast<T*>(reinterpret_cast<unsigned char*>(this)+(off)))
 #define O(T,off) (*reinterpret_cast<T*>(reinterpret_cast<unsigned char*>(F(void*,0x2e8))+(off)))
 
@@ -28,7 +23,7 @@ public:
  (OPPONENT_FLOAT(0x44)+20.0f)-static_cast<float>(Rand(0,40)), \
  (O(float,0x48)+g_SpawnYOffsetAt00657858)+static_cast<float>(Rand(0,100)), \
  F(unsigned char,0x66),1)
-void SuikaSpecialF313::UpdateSpecialState()
+void SuikaFighter::AdvanceAuxiliary()
 {
     if (FLOAT(0x50)==0.0f && F(signed char,0x3ac)>0)
         F(unsigned char,0x3ac)=0;

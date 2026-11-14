@@ -1,21 +1,11 @@
+#include "YukariFighter.hpp"
 #include "Fighter.hpp"
 // Yukari's special-state counters. The step/threshold logic and the
 // Yukari-only fields F12/F32 were verified against the original; the
-// distance checks share their shape with CharacterAux5E5500 (F062).
-class YukariSpecialF345 : public Fighter {
-public:
-    void UpdateSpecialState();
-    void SpawnTrackedEffect(short, float, float, signed char, signed char, unsigned char);
-public:
-    // Fields after the shared Fighter layout.
-    unsigned char unknownF10[0xF12 - 0xF10];
-    short fieldF12;
-    unsigned char unknownF14[0xF32 - 0xF14];
-    short fieldF32;
-};
+// distance checks share their shape with MeilingFighter (F062).
 #define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
 
-void YukariSpecialF345::UpdateSpecialState() {
+void YukariFighter::AdvanceAuxiliary() {
     if (field3B8 == 0)
         fieldF12 = fieldF12 + 2;
     if (fieldF12 >= 180)

@@ -1,7 +1,7 @@
+#include "RemiliaFighter.hpp"
 #include "Fighter.hpp"
 #include "FighterVirtualActionsF159.hpp"
-class RemiliaRoundF314 : public Fighter {public: void ResetRound();};
-void RemiliaRoundF314::ResetRound()
+void RemiliaFighter::ResetRound()
 {
     reinterpret_cast<unsigned short&>(sequenceTimer)=0;
     fieldEFE=0;

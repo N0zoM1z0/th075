@@ -12,7 +12,7 @@
 // Both observed floating components are used; this is not an owner layout.
 struct AISeparation558F50 { float x, y; };
 
-void CharacterAI558F50::ChooseCardAction()
+void RemiliaFighter::ChooseCardAction()
 {
     AISeparation558F50 distance;
     distance.x = AbsFloatAt00412D90(opponent->x - x);
@@ -85,14 +85,14 @@ void CharacterAI558F50::ChooseCardAction()
             aiCommand = aiCommand = AIR_FORWARD_COMMAND;
             return;
         }
-        if (countdown > 0) {
+        if (cardCountdown > 0) {
             inputX = 1;
-            --countdown;
-        } else if (countdown < 0) {
+            --cardCountdown;
+        } else if (cardCountdown < 0) {
             inputX = -1;
-            ++countdown;
+            ++cardCountdown;
         } else {
-            countdown = (rand() % 90 + 10) * (1 - 2 * (rand() % 2));
+            cardCountdown = (rand() % 90 + 10) * (1 - 2 * (rand() % 2));
         }
         return;
     }
@@ -546,13 +546,13 @@ void CharacterAI558F50::ChooseCardAction()
         aiCommand = 11;
         return;
     }
-    if (countdown > 0) {
+    if (cardCountdown > 0) {
         inputX = 1;
-        --countdown;
-    } else if (countdown < 0) {
+        --cardCountdown;
+    } else if (cardCountdown < 0) {
         inputX = -1;
-        ++countdown;
+        ++cardCountdown;
     } else {
-        countdown = (rand() % 90 + 10) * (1 - 2 * (rand() % 2));
+        cardCountdown = (rand() % 90 + 10) * (1 - 2 * (rand() % 2));
     }
 }

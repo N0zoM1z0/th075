@@ -1,31 +1,9 @@
+#include "MarisaFighter.hpp"
 #include "Fighter.hpp"
 #include "FighterVirtualActionsF159.hpp"
 // Physical script-defined field view only: no complete owner allocation.
 // R050 original x87: FILD dword stack signed index; FDIV dword [0x659308].
 extern const float g_MarisaSequenceScaleAt00659308;
-class MarisaRoundF222 : public Fighter {public: void ResetRound();public:
-    // Fields after the shared Fighter layout.
-    unsigned short fieldF10;
-    unsigned short fieldF12;
-    unsigned short fieldF14;
-    unsigned short fieldF16;
-    unsigned short fieldF18;
-    unsigned short fieldF1A;
-    unsigned short fieldF1C;
-    unsigned short fieldF1E;
-    unsigned short fieldF20;
-    unsigned short fieldF22;
-    unsigned short fieldF24;
-    unsigned short fieldF26;
-    unsigned short fieldF28;
-    unsigned short fieldF2A;
-    unsigned short fieldF2C;
-    unsigned short fieldF2E;
-    unsigned short fieldF30;
-    unsigned short fieldF32;
-    unsigned char unknownF34[0x1006 - 0xF34];
-    unsigned char field1006;
-};
 struct MarisaRecordF222 {
     unsigned int x,y,z;
     float alpha;
@@ -35,7 +13,7 @@ struct MarisaRecordF222 {
 };
 typedef char VerifyMarisaRecord28F222[(sizeof(MarisaRecordF222)==28)?1:-1];
 #define REC(index) (reinterpret_cast<MarisaRecordF222*>(reinterpret_cast<unsigned char*>(this)+0x1018)[index])
-void MarisaRoundF222::ResetRound()
+void MarisaFighter::ResetRound()
 {
     scriptCounterF00=0;
     scriptCounterF02=0;

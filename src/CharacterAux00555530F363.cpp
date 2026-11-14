@@ -1,20 +1,16 @@
+#include "RemiliaFighter.hpp"
 #include "Fighter.hpp"
 // F363: original character special-effect policy with distance threshold
 // checks before the action-window effect spawns (unlike F062/F361).
 // Native effect 850, +0xF0C distance counter and 1.0f scale are specific
 // to this 1,028-byte original body, not assumptions from a shared class.
 // Declaration-only receiver view; complete owner layout unknown.
-class CharacterAux00555530F363 : public Fighter {
-public:
-    void AdvanceAuxiliary();
-    void SpawnTrackedEffect(short, float, float, signed char, signed char, unsigned char);
-};
 
 
 #define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
 
 // Names are provisional. Only these field accesses and receiver ABI are observed.
-void CharacterAux00555530F363::AdvanceAuxiliary() {
+void RemiliaFighter::AdvanceAuxiliary() {
     if (velocityX == 0.0f && field3AC > 0) {
         field3AC = 0;
     }

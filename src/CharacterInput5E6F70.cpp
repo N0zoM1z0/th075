@@ -2,7 +2,7 @@
 
 #define COMMAND (*reinterpret_cast<unsigned char*>(reinterpret_cast<char*>(this) + 0x511))
 
-void CharacterInput5E6F70::PollCommands() {
+void MeilingFighter::PollCommands() {
     COMMAND = 0;
     if (MatchInputPattern("236236D", 7, 30))
         COMMAND = 113;

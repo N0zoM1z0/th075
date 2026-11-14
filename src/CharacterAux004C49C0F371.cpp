@@ -1,3 +1,4 @@
+#include "SakuyaFighter.hpp"
 #include "Fighter.hpp"
 // Complete original R049 1757-byte character auxiliary state controller.
 // The distinct active-round/two-mode actions and 30/70/57-facing effect
@@ -5,21 +6,9 @@
 // interface, inherited effect spawner and round-sound APIs are borrowed.
 // Source uses actual native branch direction and a native short predecrement;
 // no unused storage, full owner layout or invented control paths.
-class CharacterAux004C49C0F371 : public Fighter {public:
- void AdvanceAuxiliary();
- void SpawnTrackedEffect(short,float,float,signed char,signed char,unsigned char);
- void EnableRoundSound(int);
- void InterruptSpecial(int);
-public:
-    // Fields after the shared Fighter layout.
-    short fieldF10;
-    short fieldF12;
-    unsigned char unknownF14[0xF16 - 0xF14];
-    short fieldF16;
-};
 class OpponentControlF371 {public: void TriggerBlockedAction(int,int,int);};
 #define FIELD(type,offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this)+(offset)))
-void CharacterAux004C49C0F371::AdvanceAuxiliary() {
+void SakuyaFighter::AdvanceAuxiliary() {
     if(velocityX==0.0f && field3AC>0) field3AC=0;
     if(fieldF0C>0) {
         if(fieldF0E<=0) { EnableRoundSound(1);fieldF0E=1; }

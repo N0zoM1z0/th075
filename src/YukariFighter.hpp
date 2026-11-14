@@ -1,0 +1,64 @@
+#ifndef TH075_YUKARI_FIGHTER_HPP
+#define TH075_YUKARI_FIGHTER_HPP
+#include "Fighter.hpp"
+class YukariOwnedObjectF469;
+
+// Yukari's fighter: vtable Yukari ctor F309 at 0x00659CC0.
+// Slot overrides use the Fighter slot names; the rest are helpers.
+class YukariFighter : public Fighter {
+public:
+    void ChooseCardAction();
+    int ChooseIntegerRange(int lower, int upper);
+    static int cardCountdown;
+    void DispatchActions();
+    void PackDirectionBits();
+    void ResetPrimaryCounters(short state);
+    void ClearAuxiliaryInput();
+    void EnableTransform(float x, float y, float z);
+    void PollCommands();
+    signed char MatchInputPattern(const char*, signed char, signed char);
+    void AdvanceSequence();
+    void SetNoticeMode(unsigned char mode);
+    void InitializeNotice(short notice);
+    unsigned char ProcessNotice();
+    void ConfigureNoticeText(unsigned char enabled);
+    void BeginNoticeTransition(unsigned char notice, unsigned char direction);
+    void ClearNoticeTransition();
+    void AdvanceNoticeLevels();
+    void ForwardBaseAction();
+    void RenderChain();
+    void NoOpSlot18();
+    void CreateOwnedObject(YukariOwnedObjectF469** out);
+    void SelectVariant();
+    void ResetBaseRound();
+    void ResetRound();
+    void AdvanceAuxiliary();
+    void SpawnTrackedEffect(short, float, float, signed char, signed char, unsigned char);
+
+    // Fields after the shared Fighter layout.
+    short fieldF10;
+    short fieldF12;
+    short fieldF14;
+    short fieldF16;
+    short fieldF18;
+    short fieldF1A;
+    unsigned char unknownF1C[0xF30 - 0xF1C];
+    short fieldF30;
+    short fieldF32;
+    float fieldF34;
+    float fieldF38;
+    float fieldF3C;
+    float fieldF40;
+    unsigned char unknownF44[0xF5C - 0xF44];
+    float fieldF5C;
+    float fieldF60;
+    float fieldF64;
+    float fieldF68;
+    unsigned char unknownF6C[0xFFC - 0xF6C];
+    unsigned char fieldFFC;
+    unsigned char fieldFFD;
+    unsigned char fieldFFE;
+    unsigned char fieldFFF;
+};
+
+#endif

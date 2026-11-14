@@ -1,37 +1,9 @@
 #ifndef TH075_CHARACTER_SEQUENCE_5882B0_HPP
 #define TH075_CHARACTER_SEQUENCE_5882B0_HPP
+#include "YuyukoFighter.hpp"
 #include "Fighter.hpp"
 #include "BattleStateMachine.hpp"
 
-class CharacterSequence5882B0 : public Fighter {
-public:
-    void AdvanceSequence();
-    void SetNoticeMode(unsigned char mode);
-    void InitializeNotice(short notice);
-    unsigned char ProcessNotice();
-    void ConfigureNoticeText(unsigned char enabled);
-    void BeginNoticeTransition(unsigned char notice, unsigned char direction);
-    void ClearNoticeTransition();
-    void AdvanceNoticeLevels();
-    void ResetPrimaryCounters(short state);
-public:
-    // Fields after the shared Fighter layout.
-    unsigned char unknownF10[0xF14 - 0xF10];
-    float fieldF14;
-    float fieldF18;
-    float fieldF1C;
-    float fieldF20;
-    unsigned char unknownF24[0xF3C - 0xF24];
-    float fieldF3C;
-    float fieldF40;
-    float fieldF44;
-    float fieldF48;
-    unsigned char unknownF4C[0xFDC - 0xF4C];
-    unsigned char fieldFDC;
-    unsigned char fieldFDD;
-    unsigned char fieldFDE;
-    unsigned char fieldFDF;
-};
 namespace SequenceCamera { void SetOverride(unsigned char enabled, float x, float y, float zoom); }
 namespace SequenceAudio { void Stop(); }
 namespace SequenceStage { void Load(); }

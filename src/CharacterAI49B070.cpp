@@ -12,7 +12,7 @@
 // Both observed floating components are used; this is not an owner layout.
 struct AISeparation49B070 { float x, y; };
 
-void CharacterAI49B070::ChooseCardAction()
+void MarisaFighter::ChooseCardAction()
 {
     AISeparation49B070 distance;
     distance.x = AbsFloatAt00412D90(opponent->x - x);
@@ -424,13 +424,13 @@ void CharacterAI49B070::ChooseCardAction()
         aiCommand = 20;
         return;
     }
-    if (countdown > 0) {
+    if (cardCountdown > 0) {
         inputX = 1;
-        --countdown;
-    } else if (countdown < 0) {
+        --cardCountdown;
+    } else if (cardCountdown < 0) {
         inputX = -1;
-        ++countdown;
+        ++cardCountdown;
     } else {
-        countdown = (rand() % 90 + 10) * (1 - 2 * (rand() % 2));
+        cardCountdown = (rand() % 90 + 10) * (1 - 2 * (rand() % 2));
     }
 }

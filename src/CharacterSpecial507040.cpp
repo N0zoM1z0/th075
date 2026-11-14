@@ -1,14 +1,9 @@
+#include "PatchouliFighter.hpp"
 #include "SpriteDraw40CA80.hpp"
 #include "SpriteTransform.hpp"
 
 // Private owners are pointer-only; their complete layouts remain unknown.
-class CharacterSpecial507040 { public: void Render(signed char stage); };
 class QuadDrawingF121 { public: void DrawQuad(int, const SpriteQuad40CA80&, const RECT*, DWORD); };
-class CharacterInput5076F0 {
-public:
-    void PollCommands();
-    signed char MatchInputPattern(const char*, signed char, signed char);
-};
 
 #define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<char*>(this) + (offset)))
 #define FLOAT(offset) *reinterpret_cast<float*>(reinterpret_cast<char*>(this) + (offset))
@@ -16,7 +11,7 @@ public:
 #define QUAD_DRAWING reinterpret_cast<QuadDrawingF121*>(FIELD(void*, 0x700))
 #define TRANSFORM(value) reinterpret_cast<SpriteTransform*>(&(value))
 
-void CharacterSpecial507040::Render(signed char stage)
+void PatchouliFighter::RenderStage(signed char stage)
 {
     SpriteQuad40CA80 quadValue;
     RECT region;
@@ -75,7 +70,7 @@ void CharacterSpecial507040::Render(signed char stage)
 
 #define COMMAND (*reinterpret_cast<unsigned char*>(reinterpret_cast<char*>(this) + 0x511))
 
-void CharacterInput5076F0::PollCommands() {
+void PatchouliFighter::PollCommands() {
     COMMAND = 0;
     if (MatchInputPattern("236236D", 7, 30))
         COMMAND = 113;

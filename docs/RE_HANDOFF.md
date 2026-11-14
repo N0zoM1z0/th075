@@ -23,10 +23,12 @@ replay and target checks, and polymorphic [`Actor`](../src/Actor.hpp) and
 77 classes (all 233 affected units cold exact). `FIELD(` uses in `src/`
 fell from 14,292 to 3,043. Next, in order:
 
-1. Merge each character's override shells into one class (`AliceFighter`,
-   …). The vtables map them cleanly: every character owns 9–11 shells whose
-   methods are all its slots (see the knowledge base). Mangled names change
-   with the class name, so update manifest symbols after a cold replay.
+1. Per-character fighter classes are done (`src/<Character>Fighter.hpp`).
+   Shared helpers still declared in each of them (`PackDirectionBits`,
+   notice helpers, `ResetPrimaryCounters`) are base `Fighter` methods; move
+   them once their single addresses are confirmed. The shared templates
+   (`CharacterAIPolicy<>`, `CharacterAICardPolicy<>`, the stage renderer)
+   and `CharacterSpecialFamily` still stand in for per-character code.
 2. Convert window and `FIELD` uses whose receiver is not `this` (HUD,
    collision, knockout code holding fighter pointers) to typed `Fighter*`
    access, then delete the remaining window headers.

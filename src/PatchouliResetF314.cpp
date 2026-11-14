@@ -1,11 +1,7 @@
+#include "PatchouliFighter.hpp"
 #include "Fighter.hpp"
 #include "FighterVirtualActionsF159.hpp"
-class PatchouliRoundF314 : public Fighter {public: void ResetRound();public:
-    // Fields after the shared Fighter layout.
-    unsigned short fieldF10;
-    unsigned short fieldF12;
-};
-void PatchouliRoundF314::ResetRound()
+void PatchouliFighter::ResetRound()
 {
     scriptCounterF00=0;
     scriptCounterF02=0;

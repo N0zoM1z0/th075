@@ -1,24 +1,16 @@
+#include "MarisaFighter.hpp"
 #include "Fighter.hpp"
 // F361: independently native-observed 1,027-byte character special effect
 // controller. Like the already exact F062, this uses the same inherited
 // effect-spawner ABI, but its effect 817, scale 1.0f, linked flag zero and
 // +0xF32 distance counter are independently verified for THIS target.
 // Declaration-only receiver view: full original fighter layout is unknown.
-class CharacterAuxRunAt00496C60F361 : public Fighter {
-public:
-    void AdvanceSpecialEffect();
-    void SpawnTrackedEffect(short, float, float, signed char, signed char, unsigned char);
-public:
-    // Fields after the shared Fighter layout.
-    unsigned char unknownF10[0xF32 - 0xF10];
-    short fieldF32;
-};
 
 
 #define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
 
 // Names are provisional. Only these field accesses and receiver ABI are observed.
-void CharacterAuxRunAt00496C60F361::AdvanceSpecialEffect() {
+void MarisaFighter::AdvanceAuxiliary() {
     if (velocityX == 0.0f && field3AC > 0) {
         field3AC = 0;
     }

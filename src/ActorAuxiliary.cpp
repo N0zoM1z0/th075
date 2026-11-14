@@ -1,3 +1,4 @@
+#include "PatchouliFighter.hpp"
 #include "Fighter.hpp"
 #include "Actor.hpp"
 #include "FighterAnimationPhaseBorrowedF1024.hpp"
@@ -26,10 +27,6 @@ public:
 class EffectEmitterF120 {
 public:
     void Spawn(short effect, float x, float y, signed char facing, signed char layer);
-};
-class CharacterAI507B20 : public Fighter {
-public:
-    void ChooseAction();
 };
 extern int g_AI507B20Countdown;
 
@@ -208,7 +205,7 @@ void AuxiliaryActor4A80F0::Update()
 // the vertical component is computed but not subsequently read by this policy.
 struct AISeparation507B20 { float x, y; };
 
-void CharacterAI507B20::ChooseAction()
+void PatchouliFighter::ChooseAction()
 {
     AISeparation507B20 distance;
     distance.x = AbsFloatAt00412D90(opponent->x - x);

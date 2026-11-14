@@ -1,3 +1,13 @@
+#include "MeilingFighter.hpp"
+#include "SuikaFighter.hpp"
+#include "YukariFighter.hpp"
+#include "YuyukoFighter.hpp"
+#include "RemiliaFighter.hpp"
+#include "YoumuFighter.hpp"
+#include "PatchouliFighter.hpp"
+#include "SakuyaFighter.hpp"
+#include "MarisaFighter.hpp"
+#include "ReimuFighter.hpp"
 #include "AliceFighter.hpp"
 // Complete real 10-case mode switch shared by eleven original fighter routines.
 // Each independently retains its original seven semantic variant IDs.
@@ -5,8 +15,7 @@
 // Only borrowed +0x6E5 field and selected-effect-mode global are observed.
 extern signed char g_SelectedEffectModeAt0067161E;
 #define MODE (*reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char*>(this)+0x6E5))
-class ReimuFighterSpecialVariantF374 {public:void SelectVariant();};
-void ReimuFighterSpecialVariantF374::SelectVariant() {
+void ReimuFighter::SelectVariant() {
   switch(g_SelectedEffectModeAt0067161E) {
   case 1: MODE=1;break;
   case 2: MODE=3;break;
@@ -17,8 +26,7 @@ void ReimuFighterSpecialVariantF374::SelectVariant() {
   case 7:case 8:case 9:case 10: MODE=9;break;
   }
 }
-class MarisaFighterSpecialVariantF374 {public:void SelectVariant();};
-void MarisaFighterSpecialVariantF374::SelectVariant() {
+void MarisaFighter::SelectVariant() {
   switch(g_SelectedEffectModeAt0067161E) {
   case 1: MODE=3;break;
   case 2: MODE=2;break;
@@ -29,8 +37,7 @@ void MarisaFighterSpecialVariantF374::SelectVariant() {
   case 7:case 8:case 9:case 10: MODE=9;break;
   }
 }
-class SakuyaFighterSpecialVariantF374 {public:void SelectVariant();};
-void SakuyaFighterSpecialVariantF374::SelectVariant() {
+void SakuyaFighter::SelectVariant() {
   switch(g_SelectedEffectModeAt0067161E) {
   case 1: MODE=0;break;
   case 2: MODE=3;break;
@@ -52,8 +59,7 @@ void AliceFighter::SelectVariant() {
   case 7:case 8:case 9:case 10: MODE=9;break;
   }
 }
-class PatchouliFighterSpecialVariantF374 {public:void SelectVariant();};
-void PatchouliFighterSpecialVariantF374::SelectVariant() {
+void PatchouliFighter::SelectVariant() {
   switch(g_SelectedEffectModeAt0067161E) {
   case 1: MODE=1;break;
   case 2: MODE=2;break;
@@ -64,8 +70,7 @@ void PatchouliFighterSpecialVariantF374::SelectVariant() {
   case 7:case 8:case 9:case 10: MODE=9;break;
   }
 }
-class YoumuFighterSpecialVariantF374 {public:void SelectVariant();};
-void YoumuFighterSpecialVariantF374::SelectVariant() {
+void YoumuFighter::SelectVariant() {
   switch(g_SelectedEffectModeAt0067161E) {
   case 1: MODE=0;break;
   case 2: MODE=1;break;
@@ -76,8 +81,7 @@ void YoumuFighterSpecialVariantF374::SelectVariant() {
   case 7:case 8:case 9:case 10: MODE=9;break;
   }
 }
-class RemiliaFighterSpecialVariantF374 {public:void SelectVariant();};
-void RemiliaFighterSpecialVariantF374::SelectVariant() {
+void RemiliaFighter::SelectVariant() {
   switch(g_SelectedEffectModeAt0067161E) {
   case 1: MODE=2;break;
   case 2: MODE=1;break;
@@ -88,8 +92,7 @@ void RemiliaFighterSpecialVariantF374::SelectVariant() {
   case 7:case 8:case 9:case 10: MODE=9;break;
   }
 }
-class YuyukoFighterSpecialVariantF374 {public:void SelectVariant();};
-void YuyukoFighterSpecialVariantF374::SelectVariant() {
+void YuyukoFighter::SelectVariant() {
   switch(g_SelectedEffectModeAt0067161E) {
   case 1: MODE=5;break;
   case 2: MODE=1;break;
@@ -100,8 +103,7 @@ void YuyukoFighterSpecialVariantF374::SelectVariant() {
   case 7:case 8:case 9:case 10: MODE=9;break;
   }
 }
-class YukariFighterSpecialVariantF374 {public:void SelectVariant();};
-void YukariFighterSpecialVariantF374::SelectVariant() {
+void YukariFighter::SelectVariant() {
   switch(g_SelectedEffectModeAt0067161E) {
   case 1: MODE=6;break;
   case 2: MODE=3;break;
@@ -112,8 +114,7 @@ void YukariFighterSpecialVariantF374::SelectVariant() {
   case 7:case 8:case 9:case 10: MODE=9;break;
   }
 }
-class SuikaFighterSpecialVariantF374 {public:void SelectVariant();};
-void SuikaFighterSpecialVariantF374::SelectVariant() {
+void SuikaFighter::SelectVariant() {
   switch(g_SelectedEffectModeAt0067161E) {
   case 1: MODE=2;break;
   case 2: MODE=3;break;
@@ -124,8 +125,7 @@ void SuikaFighterSpecialVariantF374::SelectVariant() {
   case 7:case 8:case 9:case 10: MODE=0;break;
   }
 }
-class MeilingFighterSpecialVariantF374 {public:void SelectVariant();};
-void MeilingFighterSpecialVariantF374::SelectVariant() {
+void MeilingFighter::SelectVariant() {
   switch(g_SelectedEffectModeAt0067161E) {
   case 1: MODE=1;break;
   case 2: MODE=3;break;

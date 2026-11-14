@@ -1,17 +1,17 @@
+#include "SuikaFighter.hpp"
+#include "YukariFighter.hpp"
+#include "YuyukoFighter.hpp"
+#include "RemiliaFighter.hpp"
+#include "SakuyaFighter.hpp"
+#include "MarisaFighter.hpp"
+#include "ReimuFighter.hpp"
 #include "AliceFighter.hpp"
 // Eight independent native input policies; private owners are pointer-only.
 // Original names, types and complete layouts remain provisional.
-class CharacterInput4724B0 { public: void PollCommands(); signed char MatchInputPattern(const char*, signed char, signed char); };
-class CharacterInput498BE0 { public: void PollCommands(); signed char MatchInputPattern(const char*, signed char, signed char); };
-class CharacterInput4C6700 { public: void PollCommands(); signed char MatchInputPattern(const char*, signed char, signed char); };
-class CharacterInput556FA0 { public: void PollCommands(); signed char MatchInputPattern(const char*, signed char, signed char); };
-class CharacterInput579220 { public: void PollCommands(); signed char MatchInputPattern(const char*, signed char, signed char); };
-class CharacterInput59CDA0 { public: void PollCommands(); signed char MatchInputPattern(const char*, signed char, signed char); };
-class CharacterInput5C5980 { public: void PollCommands(); signed char MatchInputPattern(const char*, signed char, signed char); };
 
 #define COMMAND (*reinterpret_cast<unsigned char*>(reinterpret_cast<char*>(this) + 0x511))
 
-void CharacterInput4724B0::PollCommands() {
+void ReimuFighter::PollCommands() {
     COMMAND = 0;
     if (MatchInputPattern("421B", 4, 15))
         COMMAND = 41;
@@ -65,7 +65,7 @@ void CharacterInput4724B0::PollCommands() {
         COMMAND = 3;
 }
 
-void CharacterInput498BE0::PollCommands() {
+void MarisaFighter::PollCommands() {
     COMMAND = 0;
     if (MatchInputPattern("236236D", 7, 30))
         COMMAND = 113;
@@ -125,7 +125,7 @@ void CharacterInput498BE0::PollCommands() {
         COMMAND = 2;
 }
 
-void CharacterInput4C6700::PollCommands() {
+void SakuyaFighter::PollCommands() {
     COMMAND = 0;
     if (MatchInputPattern("236236D", 7, 30))
         COMMAND = 113;
@@ -239,7 +239,7 @@ void AliceFighter::PollCommands() {
         COMMAND = 2;
 }
 
-void CharacterInput556FA0::PollCommands() {
+void RemiliaFighter::PollCommands() {
     COMMAND = 0;
     if (MatchInputPattern("236236D", 7, 30))
         COMMAND = 113;
@@ -293,7 +293,7 @@ void CharacterInput556FA0::PollCommands() {
         COMMAND = 2;
 }
 
-void CharacterInput579220::PollCommands() {
+void YuyukoFighter::PollCommands() {
     COMMAND = 0;
     if (MatchInputPattern("236236D", 7, 30))
         COMMAND = 113;
@@ -351,7 +351,7 @@ void CharacterInput579220::PollCommands() {
         COMMAND = 2;
 }
 
-void CharacterInput59CDA0::PollCommands() {
+void YukariFighter::PollCommands() {
     COMMAND = 0;
     if (MatchInputPattern("421C", 4, 15))
         COMMAND = 42;
@@ -415,7 +415,7 @@ void CharacterInput59CDA0::PollCommands() {
         COMMAND = 2;
 }
 
-void CharacterInput5C5980::PollCommands() {
+void SuikaFighter::PollCommands() {
     COMMAND = 0;
     if (MatchInputPattern("236D", 4, 15))
         COMMAND = 13;

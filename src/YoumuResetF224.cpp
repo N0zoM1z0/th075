@@ -1,3 +1,4 @@
+#include "YoumuFighter.hpp"
 #include "Fighter.hpp"
 #include "FighterVirtualActionsF159.hpp"
 // Physical field receiver, not a complete reconstructed fighter object.
@@ -5,16 +6,7 @@ class YoumuSubcomponentF224 {
 public:
     void ResetRound();
 };
-class YoumuRoundF224 : public Fighter {
-public:
-    void ResetRound();
-public:
-    // Fields after the shared Fighter layout.
-    unsigned short fieldF10;
-    unsigned short fieldF12;
-    unsigned short fieldF14;
-};
-void YoumuRoundF224::ResetRound()
+void YoumuFighter::ResetRound()
 {
     reinterpret_cast<unsigned short&>(sequenceTimer)=0;
     fieldEFE=0;

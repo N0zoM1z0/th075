@@ -1,9 +1,9 @@
 #include "CharacterSequence4D4EA0.hpp"
 
 #define FIELD(type, offset) (*reinterpret_cast<type *>(reinterpret_cast<unsigned char *>(this) + offset))
-#define OPPONENT_ACTOR static_cast<CharacterSequence4D4EA0*>(opponent)
+#define OPPONENT_ACTOR static_cast<SakuyaFighter*>(opponent)
 
-void CharacterSequence4D4EA0::AdvanceSequence()
+void SakuyaFighter::AdvanceSequence()
 {
     switch (sequencePhase) {
     case 0:

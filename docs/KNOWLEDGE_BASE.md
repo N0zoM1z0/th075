@@ -76,12 +76,17 @@ object constructor a 5-slot table (Reimu object 00659210, …):
   configuration, 16 `AdvanceSequence`, 17 stage render, 19 the special-state
   update. `FrameActor`'s `Advance`/`AdvanceMode7`/`FinishFrame` are slots 1/16/19.
 
-So most per-function shell classes (`CharacterAI4E7DE0`, `CharacterSequence4F44D0`,
-`CharacterInput4E7A00`, …) are virtual overrides of one character class
-(`AliceFighter`). A polymorphic `Actor` with these slots, character classes
-overriding them, and per-character names replacing the shells is the next
-structural step. Mangled names of the overrides change from `Q` to `U`, so
-their manifest symbols must be updated after a cold replay proves the bytes.
+Those per-function shell classes (`CharacterAI4E7DE0`, `CharacterSequence4F44D0`,
+`CharacterInput4E7A00`, …) were virtual overrides of one character class. They
+are now merged into `src/<Character>Fighter.hpp` (11 classes), each deriving
+from the polymorphic `Fighter`, with every override under its slot name.
+Slot 11 is `ChooseAction` and slot 12 `ChooseCardAction` (Reimu's slot 12 is
+the `CharacterAICardPolicy` template); where both AI routines keep a static
+countdown, they are `actionCountdown` and `cardCountdown`. Overrides mangle as
+`U…`, and calls to a base implementation through a cast must be qualified
+(`X::ResetRound()`) to stay direct, as in the original. Exactness cannot
+tell a correctly named override from a wrongly attributed one, so every
+override was checked against the vtable slot before renaming.
 
 Pitfalls: a parameter named like a new member shadows it (`BindOpponent`
 compiled to `opponent = opponent`), and the replay caught it. VC7 `$L`/`$SG`

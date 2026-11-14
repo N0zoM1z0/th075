@@ -1,18 +1,7 @@
+#include "ReimuFighter.hpp"
 #include "Fighter.hpp"
 #include "FighterVirtualActionsF159.hpp"
-class ReimuRoundF227 : public Fighter {
-public:
-    void ResetRound();
-public:
-    // Fields after the shared Fighter layout.
-    unsigned char unknownF10[0xF22 - 0xF10];
-    unsigned short fieldF22;
-    unsigned short fieldF24;
-    unsigned short fieldF26;
-    unsigned short fieldF28;
-    unsigned short fieldF2A;
-};
-void ReimuRoundF227::ResetRound()
+void ReimuFighter::ResetRound()
 {
     scriptCounterF00=0;
     scriptCounterF02=0;

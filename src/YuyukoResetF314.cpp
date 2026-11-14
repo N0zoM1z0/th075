@@ -1,7 +1,7 @@
+#include "YuyukoFighter.hpp"
 #include "Fighter.hpp"
 #include "FighterVirtualActionsF159.hpp"
-class YuyukoRoundF314 : public Fighter {public: void ResetRound();};
-void YuyukoRoundF314::ResetRound()
+void YuyukoFighter::ResetRound()
 {
     reinterpret_cast<unsigned short&>(sequenceTimer)=0;
     fieldEFE=0;

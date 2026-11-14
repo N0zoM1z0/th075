@@ -3,7 +3,7 @@
 #define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
 #define OPPONENT_ACTOR reinterpret_cast<StageOpponent5E59C0*>(opponent)
 
-void CharacterSpecial5E59C0::InitializeStage() {
+void MeilingFighter::ConfigureStage() {
     switch (g_NoticeSelection) {
     case 1:
         opponent->field460 = 50000;

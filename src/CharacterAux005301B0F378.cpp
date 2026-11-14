@@ -1,3 +1,4 @@
+#include "YoumuFighter.hpp"
 #include "Fighter.hpp"
 // Independently recovered complete 1,008-byte native character auxiliary
 // state controller. It deliberately preserves the second explicit
@@ -21,20 +22,10 @@ public:
     unsigned int Count();
     void PruneOld();
 };
-class CharacterAux005301B0F378 : public Fighter {
-public:
-    void UpdateSpecial();
-    void SpawnTrackedEffect(short,float,float,signed char,signed char,unsigned char);
-public:
-    // Fields after the shared Fighter layout.
-    short fieldF10;
-    unsigned char unknownF12[0xF14 - 0xF12];
-    short fieldF14;
-};
 extern signed char g_CharacterSpecialModeAt006714B4;
 #define FIELD(T,o) (*reinterpret_cast<T*>(reinterpret_cast<unsigned char*>(this)+(o)))
 #define QUEUE (*reinterpret_cast<ObservedEffectQueueF378*>(reinterpret_cast<unsigned char*>(this)+0xFEC))
-void CharacterAux005301B0F378::UpdateSpecial() {
+void YoumuFighter::AdvanceAuxiliary() {
     if (field082==0 && field3B8==0) {
         ObservedInputSnapshotF378 snapshot;
         snapshot.action=action;

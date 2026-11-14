@@ -5,7 +5,7 @@
 #define TEXTURE reinterpret_cast<RenderTexture5E68C0*>(FIELD(void*, 4))
 #define DRAWING reinterpret_cast<RenderDrawing5E68C0*>(FIELD(void*, 0x700))
 
-void CharacterSpecial5E68C0::RenderStage(signed char stage) {
+void MeilingFighter::RenderStage(signed char stage) {
     RenderQuadPacket5E68C0 sprite;
     switch (stage) {
         RECT rect;

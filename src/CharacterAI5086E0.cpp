@@ -12,7 +12,7 @@
 // Both observed floating components are used; this is not an owner layout.
 struct AISeparation5086E0 { float x, y; };
 
-void CharacterAI5086E0::ChooseCardAction()
+void PatchouliFighter::ChooseCardAction()
 {
     AISeparation5086E0 distance;
     distance.x = AbsFloatAt00412D90(opponent->x - x);
@@ -656,13 +656,13 @@ void CharacterAI5086E0::ChooseCardAction()
         aiCommand = 21;
         return;
     }
-    if (countdown > 0) {
+    if (cardCountdown > 0) {
         inputX = 1;
-        --countdown;
-    } else if (countdown < 0) {
+        --cardCountdown;
+    } else if (cardCountdown < 0) {
         inputX = -1;
-        ++countdown;
+        ++cardCountdown;
     } else {
-        countdown = (rand() % 90 + 10) * (1 - 2 * (rand() % 2));
+        cardCountdown = (rand() % 90 + 10) * (1 - 2 * (rand() % 2));
     }
 }
