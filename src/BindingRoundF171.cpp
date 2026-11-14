@@ -35,7 +35,7 @@ void FighterBindingRoundF171::RecordRoundFields(
     if (opponent->field39D < index)
         opponent->field39D = index;
     if (index == 1) {
-        opponent->field33E[0] = value;
+        opponent->healthLimits[0] = value;
         opponent->field32A[0] = first;
         opponent->field384[0] = second;
         reinterpret_cast<unsigned char&>(opponent->field370[0]) = third;
@@ -43,7 +43,7 @@ void FighterBindingRoundF171::RecordRoundFields(
         opponent->field400[0] = payloadB;
         opponent->field430[0] = payloadC;
     }
-    opponent->field33E[index] = value;
+    opponent->healthLimits[index] = value;
     opponent->field32A[index] = first;
     opponent->field384[index] = second;
     opponent->field370[index] = third;

@@ -1,6 +1,7 @@
 #include "CharacterAI499030.hpp"
 
-#define OPPONENT_GUARD reinterpret_cast<FighterState *>(opponent)->IsState50To149()
+#define FIELD(type, offset) (*reinterpret_cast<type *>(reinterpret_cast<u8 *>(this) + offset))
+#define OPPONENT_GUARD static_cast<FighterState*>(opponent)->IsState50To149()
 #define FORWARD_COMMAND (2 - (facing == 1))
 #define AIR_FORWARD_COMMAND (2 - (facing == -1))
 #define AIR_BACK_COMMAND (1 + (facing == -1))
@@ -106,7 +107,7 @@ void CharacterAI499030::ChooseAction()
         }
     }
     if (field36C > 100.0f) {
-        if (field324 < 4000 &&
+        if (health < 4000 &&
             distance.x > 560.0f &&
             rand() < 50 &&
             field39C == 0 &&
@@ -114,7 +115,7 @@ void CharacterAI499030::ChooseAction()
             aiCommand = 103;
             return;
         }
-        if (field324 < 4000 &&
+        if (health < 4000 &&
             rand() < 5 &&
             field39C == 0 &&
             field3A0 <= 0) {
@@ -122,7 +123,7 @@ void CharacterAI499030::ChooseAction()
             return;
         }
         if (OPPONENT_GUARD &&
-            field324 < 3000 &&
+            health < 3000 &&
             field39C == 0 &&
             field3A0 <= 0) {
             aiCommand = 103;
@@ -195,7 +196,7 @@ void CharacterAI499030::ChooseAction()
             rand() < 10000 &&
             field3A0 > 0 &&
             field36C >= 100.0f &&
-            aiSelectors[1] == 1 &&
+            field398[1] == 1 &&
             field39D == 1) {
             aiCommand = 13;
             return;
@@ -204,7 +205,7 @@ void CharacterAI499030::ChooseAction()
             rand() < 10000 &&
             field3A0 > 0 &&
             field36C >= 100.0f &&
-            aiSelectors[1] == 1 &&
+            field398[1] == 1 &&
             field39D == 2) {
             aiCommand = 13;
             return;
@@ -213,7 +214,7 @@ void CharacterAI499030::ChooseAction()
             rand() < 10000 &&
             field3A0 > 0 &&
             field36C >= 100.0f &&
-            aiSelectors[1] == 2 &&
+            field398[1] == 2 &&
             field39D == 1) {
             if (fieldF14 == 0) {
                 aiCommand = 13;
@@ -227,7 +228,7 @@ void CharacterAI499030::ChooseAction()
             rand() < 10000 &&
             field3A0 > 0 &&
             field36C >= 100.0f &&
-            aiSelectors[1] == 2 &&
+            field398[1] == 2 &&
             field39D == 2) {
             if (fieldF14 == 0) {
                 aiCommand = 13;
@@ -241,7 +242,7 @@ void CharacterAI499030::ChooseAction()
             rand() < 10000 &&
             field3A0 > 0 &&
             field36C >= 100.0f &&
-            aiSelectors[1] == 0 &&
+            field398[1] == 0 &&
             field39D == 1) {
             aiCommand = 13;
             return;
@@ -250,7 +251,7 @@ void CharacterAI499030::ChooseAction()
             rand() < 10000 &&
             field3A0 > 0 &&
             field36C >= 100.0f &&
-            aiSelectors[1] == 0 &&
+            field398[1] == 0 &&
             field39D == 2) {
             aiCommand = 13;
             return;
@@ -544,7 +545,7 @@ void CharacterAI499030::ChooseAction()
         distance.x > 200.0f &&
         field3A0 > 0 &&
         field36C >= 100.0f &&
-        aiSelectors[1] == 2 &&
+        field398[1] == 2 &&
         field39D == 1 &&
         fieldF14 == 0) {
         aiCommand = 13;
@@ -553,7 +554,7 @@ void CharacterAI499030::ChooseAction()
     if (rand() < 1000 &&
         field3A0 > 0 &&
         field36C >= 100.0f &&
-        aiSelectors[1] == 2 &&
+        field398[1] == 2 &&
         field39D == 1) {
         aiCommand = 13;
         return;
@@ -561,7 +562,7 @@ void CharacterAI499030::ChooseAction()
     if (rand() < 1000 &&
         field3A0 > 0 &&
         field36C >= 100.0f &&
-        aiSelectors[1] == 2 &&
+        field398[1] == 2 &&
         field39D == 1) {
         aiCommand = 23;
         return;
@@ -569,7 +570,7 @@ void CharacterAI499030::ChooseAction()
     if (rand() < 1000 &&
         field3A0 > 0 &&
         field36C >= 100.0f &&
-        aiSelectors[1] == 1 &&
+        field398[1] == 1 &&
         field39D == 1) {
         aiCommand = 13;
         return;
@@ -577,7 +578,7 @@ void CharacterAI499030::ChooseAction()
     if (rand() < (opponent->action > 299) * 500 + 50 &&
         field3A0 > 0 &&
         field36C >= 100.0f &&
-        aiSelectors[1] == 0 &&
+        field398[1] == 0 &&
         field39D == 1) {
         aiCommand = 13;
         return;
@@ -586,7 +587,7 @@ void CharacterAI499030::ChooseAction()
         distance.x > 200.0f &&
         field3A0 > 0 &&
         field36C >= 100.0f &&
-        aiSelectors[0] == 2 &&
+        field398[0] == 2 &&
         field39D == 2 &&
         fieldF14 == 0) {
         aiCommand = 13;
@@ -595,7 +596,7 @@ void CharacterAI499030::ChooseAction()
     if (rand() < 2000 &&
         field3A0 > 0 &&
         field36C >= 100.0f &&
-        aiSelectors[1] == 2 &&
+        field398[1] == 2 &&
         field39D == 2) {
         aiCommand = 13;
         return;
@@ -603,7 +604,7 @@ void CharacterAI499030::ChooseAction()
     if (rand() < 2000 &&
         field3A0 > 0 &&
         field36C >= 100.0f &&
-        aiSelectors[1] == 2 &&
+        field398[1] == 2 &&
         field39D == 2) {
         aiCommand = 23;
         return;
@@ -611,7 +612,7 @@ void CharacterAI499030::ChooseAction()
     if (rand() < (opponent->action > 299) * 500 + 50 &&
         field3A0 > 0 &&
         field36C >= 100.0f &&
-        aiSelectors[0] == 0 &&
+        field398[0] == 0 &&
         field39D == 2) {
         aiCommand = 13;
         return;
@@ -619,7 +620,7 @@ void CharacterAI499030::ChooseAction()
     if (rand() < 500 &&
         field3A0 > 0 &&
         field36C >= 100.0f &&
-        aiSelectors[0] == 1 &&
+        field398[0] == 1 &&
         field39D == 2 &&
         distance.y < 100.0f) {
         aiCommand = 13;

@@ -1,6 +1,7 @@
 #include "CharacterAI558F50.hpp"
 
-#define OPPONENT_GUARD reinterpret_cast<FighterState *>(opponent)->IsState50To149()
+#define FIELD(type, offset) (*reinterpret_cast<type *>(reinterpret_cast<u8 *>(this) + offset))
+#define OPPONENT_GUARD static_cast<FighterState*>(opponent)->IsState50To149()
 #define FORWARD_COMMAND (2 - (facing == 1))
 #define AIR_FORWARD_COMMAND (2 - (facing == -1))
 #define AIR_BACK_COMMAND (1 + (facing == -1))
@@ -20,7 +21,7 @@ void CharacterAI558F50::ChooseAction()
     if (action > 49 &&
         action < 150 &&
         CARD_TYPE != 4) {
-        if (field516 < 0) field516 = ChooseIntegerRange(30, 90);
+        if (aiCardTimer < 0) aiCardTimer = ChooseIntegerRange(30, 90);
         aiStep = 0;
         aiWaitTimer = 0;
         if (ChooseIntegerRange(0, 100) < 50) inputX = 1;
@@ -29,8 +30,8 @@ void CharacterAI558F50::ChooseAction()
         return;
     }
     if (CARD_TYPE == 4 && field3A0 > 0) {
-        --field516;
-        if (field516 <= 0) {
+        --aiCardTimer;
+        if (aiCardTimer <= 0) {
             aiCommand = 240;
             return;
         }
@@ -96,22 +97,22 @@ void CharacterAI558F50::ChooseAction()
         return;
     }
     if (CARD_TYPE == 3 && field3A0 > 0) {
-        --field516;
+        --aiCardTimer;
         if (ChooseIntegerRange(0, 100) < 10) {
             aiCommand = ChooseIntegerRange(0, 2) + 205;
             if (x < 320.0f) aiCommand = 205 + (facing == -1);
             if (x > 960.0f) aiCommand = 206 - (facing == -1);
             return;
         }
-        if (field516 <= 0 && distance.x > 320.0f && ChooseIntegerRange(0, 100) < 50) {
+        if (aiCardTimer <= 0 && distance.x > 320.0f && ChooseIntegerRange(0, 100) < 50) {
             aiCommand = 230;
             return;
         }
-        if (field516 <= 0 && ChooseIntegerRange(0, 100) < 30) {
+        if (aiCardTimer <= 0 && ChooseIntegerRange(0, 100) < 30) {
             aiCommand = 231;
             return;
         }
-        if (field516 <= 0) {
+        if (aiCardTimer <= 0) {
             aiCommand = 232;
         } else {
             if (ChooseIntegerRange(0, 100) < 100) {
@@ -123,22 +124,22 @@ void CharacterAI558F50::ChooseAction()
         }
     }
     if (CARD_TYPE == 2 && field3A0 > 0) {
-        --field516;
+        --aiCardTimer;
         if (ChooseIntegerRange(0, 100) < 10) {
             aiCommand = ChooseIntegerRange(0, 2) + 205;
             if (x < 320.0f) aiCommand = 205 + (facing == -1);
             if (x > 960.0f) aiCommand = 206 - (facing == -1);
             return;
         }
-        if (field516 <= 0 && distance.x < 200.0f && ChooseIntegerRange(0, 100) < 50) {
+        if (aiCardTimer <= 0 && distance.x < 200.0f && ChooseIntegerRange(0, 100) < 50) {
             aiCommand = 221;
             return;
         }
-        if (field516 <= 0 && ChooseIntegerRange(0, 100) < 30) {
+        if (aiCardTimer <= 0 && ChooseIntegerRange(0, 100) < 30) {
             aiCommand = 222;
             return;
         }
-        if (field516 <= 0) {
+        if (aiCardTimer <= 0) {
             aiCommand = 220;
         } else {
             if (ChooseIntegerRange(0, 100) < 100) {
@@ -150,14 +151,14 @@ void CharacterAI558F50::ChooseAction()
         }
     }
     if (CARD_TYPE == 1 && field3A0 > 0) {
-        --field516;
+        --aiCardTimer;
         if (ChooseIntegerRange(0, 100) < 10) {
             aiCommand = ChooseIntegerRange(0, 2) + 205;
             if (x < 320.0f) aiCommand = 205 + (facing == -1);
             if (x > 960.0f) aiCommand = 206 - (facing == -1);
             return;
         }
-        if (field516 <= 0) {
+        if (aiCardTimer <= 0) {
             aiCommand = 210;
         } else {
             if (ChooseIntegerRange(0, 100) < 5) {
@@ -168,7 +169,7 @@ void CharacterAI558F50::ChooseAction()
             }
         }
     }
-    if (CARD_TYPE == 0 && field3A0 > 0 && --field516 <= 0) {
+    if (CARD_TYPE == 0 && field3A0 > 0 && --aiCardTimer <= 0) {
         if (distance.x < 480.0f && ChooseIntegerRange(0, 100) < 10) {
             aiCommand = 201;
             return;

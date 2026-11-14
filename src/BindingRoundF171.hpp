@@ -1,6 +1,6 @@
 #pragma once
-#include "Fighter.hpp"
 
+#include "Fighter.hpp"
 // Record values keep their observed carrier widths; the original parameter
 // types are not known.
 class FighterBindingRoundF171 : public Fighter {

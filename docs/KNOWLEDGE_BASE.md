@@ -9,11 +9,13 @@ reproduce a comparison from current source when it is needed.
 
 ## Shared Fighter layout replaces raw offsets (2026-11-14)
 
-`src/Fighter.hpp` now declares the fighter object once, with named members
-for 0x000–0xF0F, and every fighter method class derives from it. In 53
-classes across 52 files, `FIELD(type, 0xNNN)`, `FLOAT`, `OPPONENT*`, `OTHER`
-and `RECORD` were replaced by members. All 73 affected units cold-replay
-exact under their recorded VC7.1 profiles. Member access, an `opponent->`
+`src/Actor.hpp` declares the head shared by every animated battle object
+(0x000–0x0A7) and `src/Fighter.hpp` the fighter on top of it (0x0A8–0xF0F).
+72 fighter classes and 3 actor-level classes derive from them. Raw
+`FIELD(type, 0xNNN)`, `FLOAT`, `OPPONENT*`, `OTHER`, `RECORD`, ad-hoc
+`this+offset` helpers and the borrowed-window macros on `this` became
+members. All 233 affected units cold-replay exact under their recorded
+VC7.1 profiles. Member access, an `opponent->`
 pointer, embedded sub-objects (`script`, `sequenceSlots`, `inputBindings`)
 and arrays emit the same bytes as the reinterpret-cast forms. The one
 comment claiming a macro spelling was needed for x87 order (Yukari F345)
@@ -39,6 +41,23 @@ Layout facts found along the way:
 - Effect objects (the giant `CharacterObject` parents) use +0x10…+0x7C with
   the same widths as fighters, so both probably share an `Actor` base. That
   is the next layout to factor out.
+
+VC7.1 at `/Od` orders x87 operands by expression shape: in
+`scaleX = scaleX * g` it loads the global first, but in
+`scaleX = (scaleX) * g` it loads the field first, as the original does
+(CharacterProjectileF379, 004F4170). An old `FLOAT(off)` macro that wrapped
+its expansion in parentheses therefore produced different code from an
+unwrapped one. When a converted float product stops matching, try
+parenthesising the operand the original loads first.
+
+The fighter is polymorphic: `FrameActor` declares 21 virtual slots
+(`Advance`, `AdvanceMode7`, `FinishFrame`, …), so the vtable pointer sits at
++0 and `Actor`'s first field at +0x04. `Actor` is still declared without
+virtual functions (`unknown000[4]` stands for the vtable pointer), so
+classes that declare virtual functions themselves (`FrameActor`,
+`AnimationProgress40FA30`, `BattleObjectDefaultsF300`) cannot derive from it
+yet; deriving shifts every member by 4. Making `Actor` polymorphic needs the
+real slot order from the PE vtables.
 
 Pitfalls: a parameter named like a new member shadows it (`BindOpponent`
 compiled to `opponent = opponent`), and the replay caught it. VC7 `$L`/`$SG`

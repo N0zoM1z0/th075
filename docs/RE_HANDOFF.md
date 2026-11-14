@@ -18,21 +18,26 @@ Do not use REA or replay the entire exact corpus.
 
 The user asked to clear readability debt before the 100% push. Done so far:
 obsolete probes/verifiers/notes removed, hash-freshness pins replaced by
-replay and target checks, and the shared [`Fighter`](../src/Fighter.hpp)
-layout adopted by 53 fighter classes (all 73 affected units cold exact).
-Next, in order:
+replay and target checks, and shared [`Actor`](../src/Actor.hpp) and
+[`Fighter`](../src/Fighter.hpp) layouts adopted by 75 classes (all 233
+affected units cold exact). `FIELD(` uses in `src/` fell from 14,292 to
+3,103. Next, in order:
 
-1. Convert the "borrowed window" headers (`src/*Borrow*.hpp`, for example
-   `F1024_PHASE(this).stageAt62`) to `Fighter` members.
-2. Factor an `Actor` base out of `Fighter` (+0x10…+0x7C are shared with
-   effect objects) and give the `CharacterObject` effect class its own
-   layout; then convert the remaining 3,433 `FIELD(` uses in `src/`
-   (down from 14,292) and the 8,540 in the giant research parents.
-3. Replace per-function shell class names (`CharacterAI499030`, …) with
+1. Make `Actor` polymorphic. Fighters carry a vtable at +0 (`FrameActor`
+   declares 21 slots); read the slot order from the PE vtables (for example
+   `FighterState` 00658FE8, `??_7AliceCtorF309`) so that `FrameActor`,
+   `AnimationProgress40FA30` and `BattleObjectDefaultsF300` can derive too.
+2. Convert window and `FIELD` uses whose receiver is not `this` (HUD,
+   collision, knockout code holding fighter pointers) to typed `Fighter*`
+   access, then delete the remaining 16 window headers.
+3. Give the `CharacterObject` effect class a layout on top of `Actor` and
+   convert the remaining `FIELD(` uses and the giant research parents.
+4. Replace per-function shell class names (`CharacterAI499030`, …) with
    real classes once their methods are grouped by character.
 
-Convert with named members only. Rename parameters that would shadow a
-member, and cold-replay every unit whose source or header changed.
+Convert with named members only and cold-replay every unit whose source or
+header changed. The conversion tools are in `.analysis/layout-tools/`
+(`pipeline2.sh` rebuilds the conversion from commit c16d67ed).
 
 ## 1. Original native PE and complete-function exactness
 

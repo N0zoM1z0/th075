@@ -1,5 +1,4 @@
 #include "Fighter.hpp"
-#include "FighterActionTimerPairF1027.hpp"
 // Independently recovered complete 1,008-byte native character auxiliary
 // state controller. It deliberately preserves the second explicit
 // else-if (mode==3) comparison: VC7.1 emits native re-test and CFG.
@@ -27,22 +26,23 @@ public:
     void UpdateSpecial();
     void SpawnTrackedEffect(short,float,float,signed char,signed char,unsigned char);
 public:
-    // Character-specific fields after the shared Fighter layout.
+    // Fields after the shared Fighter layout.
     short fieldF10;
     unsigned char unknownF12[0xF14 - 0xF12];
     short fieldF14;
 };
 extern signed char g_CharacterSpecialModeAt006714B4;
+#define FIELD(T,o) (*reinterpret_cast<T*>(reinterpret_cast<unsigned char*>(this)+(o)))
 #define QUEUE (*reinterpret_cast<ObservedEffectQueueF378*>(reinterpret_cast<unsigned char*>(this)+0xFEC))
 void CharacterAux005301B0F378::UpdateSpecial() {
-    if (F1027_TIMERS(this).timerAt82==0 && field3B8==0) {
+    if (field082==0 && field3B8==0) {
         ObservedInputSnapshotF378 snapshot;
         snapshot.action=action;
-        snapshot.guard=field062;
+        snapshot.guard=animationStage;
         snapshot.x=x;
         snapshot.y=y;
         snapshot.facing=facing;
-        snapshot.bearing=F1027_TIMERS(this).wordAt80;
+        snapshot.bearing=field080;
         QUEUE.AddSnapshot(&snapshot);
         if (QUEUE.Count()>10) QUEUE.PruneOld();
     }
@@ -85,3 +85,4 @@ void CharacterAux005301B0F378::UpdateSpecial() {
     } else fieldF14=0;
 }
 #undef QUEUE
+#undef FIELD

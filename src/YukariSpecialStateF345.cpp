@@ -1,5 +1,4 @@
 #include "Fighter.hpp"
-#include "FighterAnimationPhaseBorrowedF1024.hpp"
 // Yukari's special-state counters. The step/threshold logic and the
 // Yukari-only fields F12/F32 were verified against the original; the
 // distance checks share their shape with CharacterAux5E5500 (F062).
@@ -8,12 +7,13 @@ public:
     void UpdateSpecialState();
     void SpawnTrackedEffect(short, float, float, signed char, signed char, unsigned char);
 public:
-    // Character-specific fields after the shared Fighter layout.
+    // Fields after the shared Fighter layout.
     unsigned char unknownF10[0xF12 - 0xF10];
     short fieldF12;
     unsigned char unknownF14[0xF32 - 0xF14];
     short fieldF32;
 };
+#define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
 
 void YukariSpecialF345::UpdateSpecialState() {
     if (field3B8 == 0)
@@ -22,7 +22,7 @@ void YukariSpecialF345::UpdateSpecialState() {
         fieldF12 = -180;
     if (velocityX == 0.0f && field3AC > 0)
         field3AC = 0;
-    if (F1024_PHASE(this).stageAt62 == 0 && F1024_PHASE(this).frameAt64 == 0 && fieldF0A == 0) {
+    if (animationStage == 0 && animationFrame == 0 && fieldF0A == 0) {
         if (action > 149 && action < 154) {
             SpawnTrackedEffect(830, facing*57 + x, y + 94.0f, facing, 1, 1);
             fieldF0A = 1;
@@ -45,3 +45,4 @@ void YukariSpecialF345::UpdateSpecialState() {
         fieldF32=0;
     }
 }
+#undef FIELD

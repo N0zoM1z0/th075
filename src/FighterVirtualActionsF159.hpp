@@ -1,9 +1,7 @@
 #pragma once
 
-// Call-only views of reviewed method bodies. The native vtable slots are
-// recorded separately; these declarations do not recover full owners or their
-// complete virtual interfaces. Never construct or embed these receiver views.
-class FighterBaseActionsF159 {
+#include "Fighter.hpp"
+class FighterBaseActionsF159 : public Fighter {
 public:
     void SelectMovementAnimation();
     void ClearAuxiliaryWords();
@@ -21,12 +19,18 @@ public:
     void ForwardBaseAction();
     void NoOpSlot18();
 };
-class SakuyaFighterActionsF159 {
+class SakuyaFighterActionsF159 : public Fighter {
 public:
     void ResetRound();
     void ForwardBaseAction();
     void NoOpSlot9();
     void NoOpSlot18();
+public:
+    // Fields after the shared Fighter layout.
+    unsigned short fieldF10;
+    unsigned short fieldF12;
+    unsigned short fieldF14;
+    unsigned short fieldF16;
 };
 class AliceFighterActionsF159 {
 public:

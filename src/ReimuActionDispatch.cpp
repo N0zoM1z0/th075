@@ -115,7 +115,7 @@ void ReimuFighter::DispatchActions()
         return;
     }
     if (aiCommand == 13 && field3A0 > 0 &&
-        field36C >= 100.0f && aiSelectors[1] == 0 &&
+        field36C >= 100.0f && field398[1] == 0 &&
         field39D == 1 && meter > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(701) &&
@@ -127,7 +127,7 @@ void ReimuFighter::DispatchActions()
     }
     if (aiCommand == 13 && y == 0.0f &&
         field3A0 > 0 && field36C >= 100.0f &&
-        aiSelectors[1] == 1 && field39D == 1 &&
+        field398[1] == 1 && field39D == 1 &&
         meter > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(703) &&
@@ -139,7 +139,7 @@ void ReimuFighter::DispatchActions()
     if (meter > 0 && fieldF22 == 0 &&
         aiCommand == 13 && y == 0.0f &&
         field3A0 > 0 && field36C >= 100.0f &&
-        aiSelectors[1] == 2 && field39D == 1 &&
+        field398[1] == 2 && field39D == 1 &&
         meter > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(705) &&
@@ -149,7 +149,7 @@ void ReimuFighter::DispatchActions()
         return;
     }
     if (aiCommand == 13 && field3A0 > 0 &&
-        field36C >= 100.0f && aiSelectors[0] == 0 &&
+        field36C >= 100.0f && field398[0] == 0 &&
         field39D == 2 &&
         (frameInfo->flags & 0x20) != 0 &&
         meter > 0 &&
@@ -162,7 +162,7 @@ void ReimuFighter::DispatchActions()
     }
     if (aiCommand == 13 && y == 0.0f &&
         field3A0 > 0 && field36C >= 100.0f &&
-        aiSelectors[0] == 1 && field39D == 2 &&
+        field398[0] == 1 && field39D == 2 &&
         (frameInfo->flags & 0x20) != 0 &&
         meter > 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(702) &&
@@ -173,7 +173,7 @@ void ReimuFighter::DispatchActions()
     }
     if (aiCommand == 13 && y == 0.0f &&
         field3A0 > 0 && field36C >= 100.0f &&
-        aiSelectors[0] == 2 && field39D == 2 &&
+        field398[0] == 2 && field39D == 2 &&
         (frameInfo->flags & 0x20) != 0 &&
         meter > 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(704) &&

@@ -1,6 +1,6 @@
-#include "Fighter.hpp"
 #pragma once
 
+#include "Fighter.hpp"
 // Declaration-only receiver views; never construct or embed these partial owners.
 class StageOpponent5E59C0 {
 public:
@@ -11,7 +11,7 @@ public:
     void InitializeStage();
     void RecordRoundFields(signed char, short, signed char, signed char, signed char, int, int, int);
 public:
-    // Character-specific fields after the shared Fighter layout.
+    // Fields after the shared Fighter layout.
     unsigned char unknownF10[0xFF4 - 0xF10];
     unsigned char fieldFF4;
     unsigned char fieldFF5;

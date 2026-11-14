@@ -1,10 +1,11 @@
 #include "Fighter.hpp"
 // Independently original R068-authored 256-byte Alice fighter special-state leaf.
 class AliceFighterUpdateF391 : public Fighter {public:void UpdateSpecialState();public:
-    // Character-specific fields after the shared Fighter layout.
+    // Fields after the shared Fighter layout.
     unsigned char unknownF10[0xF14 - 0xF10];
     short fieldF14;
 };
+#define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
 void AliceFighterUpdateF391::UpdateSpecialState() {
     if (velocityX == 0.0f && field3AC > 0) {
         field3AC = 0;
@@ -20,3 +21,4 @@ void AliceFighterUpdateF391::UpdateSpecialState() {
         fieldF14 = 0;
     }
 }
+#undef FIELD

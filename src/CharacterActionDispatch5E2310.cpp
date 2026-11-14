@@ -48,7 +48,7 @@ void CharacterAction5E2310::DispatchActions()
         y == 0.0f &&
         field3A0 > 0 &&
         field36C >= 100.0f &&
-        aiSelectors[1] == 0 &&
+        field398[1] == 0 &&
         field39D == 1 &&
         meter > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
@@ -62,7 +62,7 @@ void CharacterAction5E2310::DispatchActions()
         y == 0.0f &&
         field3A0 > 0 &&
         field36C >= 100.0f &&
-        aiSelectors[1] == 1 &&
+        field398[1] == 1 &&
         field39D == 1 &&
         meter > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
@@ -77,7 +77,7 @@ void CharacterAction5E2310::DispatchActions()
         y == 0.0f &&
         field3A0 > 0 &&
         field36C >= 100.0f &&
-        aiSelectors[1] == 2 &&
+        field398[1] == 2 &&
         field39D == 1 &&
         meter > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
@@ -91,7 +91,7 @@ void CharacterAction5E2310::DispatchActions()
         y == 0.0f &&
         field3A0 > 0 &&
         field36C >= 100.0f &&
-        aiSelectors[0] == 0 &&
+        field398[0] == 0 &&
         field39D == 2 &&
         (frameInfo->flags & 0x20) != 0 &&
         meter > 0 &&
@@ -106,7 +106,7 @@ void CharacterAction5E2310::DispatchActions()
         y == 0.0f &&
         field3A0 > 0 &&
         field36C >= 100.0f &&
-        aiSelectors[0] == 1 &&
+        field398[0] == 1 &&
         field39D == 2 &&
         (frameInfo->flags & 0x20) != 0 &&
         meter > 0 &&
@@ -120,7 +120,7 @@ void CharacterAction5E2310::DispatchActions()
         y == 0.0f &&
         field3A0 > 0 &&
         field36C >= 100.0f &&
-        aiSelectors[0] == 2 &&
+        field398[0] == 2 &&
         field39D == 2 &&
         (frameInfo->flags & 0x20) != 0 &&
         meter > 0 &&

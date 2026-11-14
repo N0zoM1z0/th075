@@ -15,7 +15,7 @@ public:
     void AdvanceNoticeLevels();
     void ResetPrimaryCounters(short state);
 public:
-    // Character-specific fields after the shared Fighter layout.
+    // Fields after the shared Fighter layout.
     float fieldF10;
     float fieldF14;
     float fieldF18;

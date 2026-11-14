@@ -1,5 +1,6 @@
 #include "CharacterAux5E5500.hpp"
 
+#define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
 
 // Names are provisional. Only these field accesses and receiver ABI are observed.
 void CharacterAux5E5500::AdvanceAuxiliary() {
@@ -67,3 +68,5 @@ void CharacterAux5E5500::AdvanceAuxiliary() {
         fieldF2A = 0;
     }
 }
+
+#undef FIELD

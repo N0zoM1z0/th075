@@ -1,5 +1,6 @@
 #include "MeilingSequence.hpp"
 
+#define FIELD(type, offset) (*reinterpret_cast<type *>(reinterpret_cast<unsigned char *>(this) + offset))
 #define OPPONENT_ACTOR static_cast<MeilingFighter*>(opponent)
 
 void MeilingFighter::DispatchSpecialStatesAt005F3D60()

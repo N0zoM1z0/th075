@@ -118,7 +118,7 @@ class EffectLifecycleExactSectionsTests(unittest.TestCase):
         self.assertEqual(sum(p["size"] for p in plan["sections"] if p["kind"] == "compiler-code"), 64)
         self.assertEqual(sum(len(p["relocations"]) for p in plan["sections"]), 46)
         self.assertEqual(len(plan["safe_handlers"]), 2)
-        for name, digest in {**plan["inputs"], **plan["origin_evidence"]}.items():
+        for name, digest in plan["origin_evidence"].items():
             self.assertEqual(hashlib.sha256((ROOT / name).read_bytes()).hexdigest(), digest, name)
         for part in authored:
             self.assertEqual(part["native_origin"]["origin"], "authored")

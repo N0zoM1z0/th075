@@ -1,12 +1,9 @@
-#include "FighterActionTimerPairF1027.hpp"
-#include "FrameActorMotionPairsF1037.hpp"
-#include "FighterRenderTransformWindowF1094.hpp"
+#include "Fighter.hpp"
 #include "SpriteDraw40CA80.hpp"
 #include "SpriteTransform.hpp"
 #include "GameLeafHelpers.hpp"
 
-// Pointer-only private interfaces; original identities/layouts are unknown.
-class FighterRender453F70 { public: void Render(); };
+class FighterRender453F70 : public Fighter { public: void Render(); };
 class FighterDrawingF126 {
 public:
     void GetTextureRect(int, RECT*);
@@ -25,13 +22,11 @@ extern float g_RenderCameraY;
 extern unsigned char g_RenderByte0067161C;
 extern unsigned char g_RenderByte0066C237;
 
-#define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<char*>(this) + (offset)))
-#define FLOAT(offset) *reinterpret_cast<float*>(reinterpret_cast<char*>(this) + (offset))
-#define FRAME(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<char*>(FIELD(void*, 0x74)) + (offset)))
+#define FRAME(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<char*>(frameInfo) + (offset)))
 #define POSE(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<char*>(FRAME(void*, 8)) + (offset)))
 #define POSE_FLOAT(offset) *reinterpret_cast<float*>(reinterpret_cast<char*>(FRAME(void*, 8)) + (offset))
-#define DRAWING reinterpret_cast<FighterDrawingF126*>(FIELD(void*, 4))
-#define HISTORY reinterpret_cast<FighterHistoryF126*>(FIELD(void*, 0x480))
+#define DRAWING reinterpret_cast<FighterDrawingF126*>(reinterpret_cast<void*&>(field004))
+#define HISTORY reinterpret_cast<FighterHistoryF126*>(field480)
 #define TRANSFORM(value) reinterpret_cast<SpriteTransform*>(&(value))
 
 // The history call copies a complete quad and SDK vector by value.
@@ -44,8 +39,8 @@ void FighterRender453F70::Render() {
     SpriteQuad40CA80 transformedQuad;
     cameraHorizontal = g_RenderCameraX - 160.0f;
     cameraY = g_RenderCameraY;
-    if (F1027_TIMERS(this).timerAt82 > 0 && reinterpret_cast<FighterState*>(this)->IsState50To149())
-        cameraHorizontal += 2 - (F1027_TIMERS(this).timerAt82 % 2) * 4;
+    if (field082 > 0 && reinterpret_cast<FighterState*>(this)->IsState50To149())
+        cameraHorizontal += 2 - (field082 % 2) * 4;
     DRAWING->GetTextureRect(FRAME(short, 6), &textureRect);
     TRANSFORM(transformedQuad)->BuildQuadFromRect(&textureRect);
     if (FRAME(void*, 8) != 0) {
@@ -56,7 +51,7 @@ void FighterRender453F70::Render() {
         }
         TRANSFORM(transformedQuad)->ScaleQuad(FRAME(short, 0), FRAME(short, 2), 0, POSE_FLOAT(12), POSE_FLOAT(16), POSE_FLOAT(20));
         TRANSFORM(transformedQuad)->RotateQuad(FRAME(short, 0), FRAME(short, 2), 0, POSE_FLOAT(24), POSE_FLOAT(28), POSE_FLOAT(32));
-        TRANSFORM(transformedQuad)->ScaleQuad(0, 0, 0, FIELD(signed char, 0x66), 1.0f, 1.0f);
+        TRANSFORM(transformedQuad)->ScaleQuad(0, 0, 0, facing, 1.0f, 1.0f);
         drawColor = D3DCOLOR_ARGB(POSE(unsigned char, 1), POSE(unsigned char, 2), POSE(unsigned char, 3), POSE(unsigned char, 4));
         spriteOffset.x = POSE(short, 6);
         spriteOffset.y = POSE(short, 8);
@@ -67,24 +62,24 @@ void FighterRender453F70::Render() {
         spriteOffset.z = 0.0f;
         DRAWING->SetBlendMode(0);
         if (FRAME(unsigned char, 12) != 0)
-            TRANSFORM(transformedQuad)->ScaleQuad(0, 0, 0, FIELD(signed char, 0x66) * 2, 2.0f, 2.0f);
+            TRANSFORM(transformedQuad)->ScaleQuad(0, 0, 0, facing * 2, 2.0f, 2.0f);
         drawColor = 0xFFFFFFFF;
     }
-    if (FIELD(unsigned char, 0x40) != 0) {
-        if (FIELD(unsigned char, 0x10) & 0x80) DRAWING->SetPixelShaderMode(0);
-        TRANSFORM(transformedQuad)->ScaleQuad(FIELD(signed char, 0x66) * (FRAME(short, 0) + F1094_TRANSFORM(this).pivotXAt34),
-            FRAME(short, 2) - F1094_TRANSFORM(this).pivotYAt38, F1094_TRANSFORM(this).pivotZAt3C, F1094_TRANSFORM(this).scaleXAt1C, F1094_TRANSFORM(this).scaleYAt20, F1094_TRANSFORM(this).scaleZAt24);
-        TRANSFORM(transformedQuad)->RotateQuad(FIELD(signed char, 0x66) * (FRAME(short, 0) + F1094_TRANSFORM(this).pivotXAt34),
-            FRAME(short, 2) - F1094_TRANSFORM(this).pivotYAt38, F1094_TRANSFORM(this).pivotZAt3C, F1094_TRANSFORM(this).rotationXAt28, F1094_TRANSFORM(this).rotationYAt2C, FIELD(signed char, 0x66) * F1094_TRANSFORM(this).rotationZAt30);
-        spriteOffset.x = FIELD(short, 0x16);
-        spriteOffset.y = FIELD(short, 0x18);
-        spriteOffset.z = FIELD(short, 0x1A);
-        drawColor = D3DCOLOR_ARGB(FIELD(unsigned char, 0x11), FIELD(unsigned char, 0x12), FIELD(unsigned char, 0x13), FIELD(unsigned char, 0x14));
+    if (field040 != 0) {
+        if (field010 & 0x80) DRAWING->SetPixelShaderMode(0);
+        TRANSFORM(transformedQuad)->ScaleQuad(facing * (FRAME(short, 0) + pivotX),
+            FRAME(short, 2) - pivotY, pivotZ, scaleX, scaleY, scaleZ);
+        TRANSFORM(transformedQuad)->RotateQuad(facing * (FRAME(short, 0) + pivotX),
+            FRAME(short, 2) - pivotY, pivotZ, rotationX, rotationY, facing * rotationZ);
+        spriteOffset.x = field016;
+        spriteOffset.y = field018;
+        spriteOffset.z = field01A;
+        drawColor = D3DCOLOR_ARGB(color[0], color[1], color[2], color[3]);
     }
-    TRANSFORM(transformedQuad)->TranslateQuad(F1037_POSITION(this).xPosition - FIELD(signed char, 0x66) * FRAME(short, 0), -F1037_POSITION(this).yPosition - FRAME(short, 2), 0);
+    TRANSFORM(transformedQuad)->TranslateQuad(x - facing * FRAME(short, 0), -y - FRAME(short, 2), 0);
     if (g_RenderByte0067161C == 0) {
-        HISTORY->AppendElement(FRAME(short, 6), F1037_POSITION(this).xPosition, F1037_POSITION(this).yPosition, transformedQuad, spriteOffset, drawColor, 1);
-        if (g_RenderByte0066C237 != 0 && FIELD(int, 0x47C) <= 0) {
+        HISTORY->AppendElement(FRAME(short, 6), x, y, transformedQuad, spriteOffset, drawColor, 1);
+        if (g_RenderByte0066C237 != 0 && field47C <= 0) {
             HISTORY->RemoveFrontIfPresent();
             HISTORY->RemoveFrontIfPresent();
         }
@@ -94,7 +89,7 @@ void FighterRender453F70::Render() {
         DRAWING->DrawProjectedQuad(FRAME(short, 6), transformedQuad, &textureRect, spriteOffset.x, spriteOffset.y, spriteOffset.z, drawColor);
     else
         DRAWING->DrawQuad(FRAME(short, 6), transformedQuad, &textureRect, drawColor);
-    if (FIELD(signed char, 0x484) > 0) {
+    if (field484 > 0) {
         DRAWING->SetBlendMode(2);
         if (spriteOffset.x != 0.0f || spriteOffset.y != 0.0f || spriteOffset.z != 0.0f)
             DRAWING->DrawProjectedQuad(FRAME(short, 6), transformedQuad, &textureRect, spriteOffset.x, spriteOffset.y, spriteOffset.z, drawColor);
@@ -110,8 +105,6 @@ void FighterRender453F70::Render() {
 #undef POSE_FLOAT
 #undef POSE
 #undef FRAME
-#undef FLOAT
-#undef FIELD
 
 // C sine entry and pointer-only drawing view; no private owner allocation.
 extern "C" double __cdecl sin(double);

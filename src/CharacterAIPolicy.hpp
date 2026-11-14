@@ -40,7 +40,7 @@ struct AI5E7370Policy {
 };
 
 // Per-character AI decision template. Each policy picks which of the two
-// Fighter::aiSelectors entries (0 = +0x398, 1 = +0x39A) a branch consults.
+// Fighter::field398 entries (0 = +0x398, 1 = +0x39A) a branch consults.
 template<class Policy> class CharacterAIPolicy : public Fighter {
 public:
     void ChooseAction();

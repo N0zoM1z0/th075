@@ -1,5 +1,4 @@
 #include "Fighter.hpp"
-#include "FighterAnimationPhaseBorrowedF1024.hpp"
 // Complete original R049 1757-byte character auxiliary state controller.
 // The distinct active-round/two-mode actions and 30/70/57-facing effect
 // offsets are independently observed in this original. The opponent call
@@ -12,13 +11,14 @@ class CharacterAux004C49C0F371 : public Fighter {public:
  void EnableRoundSound(int);
  void InterruptSpecial(int);
 public:
-    // Character-specific fields after the shared Fighter layout.
+    // Fields after the shared Fighter layout.
     short fieldF10;
     short fieldF12;
     unsigned char unknownF14[0xF16 - 0xF14];
     short fieldF16;
 };
 class OpponentControlF371 {public: void TriggerBlockedAction(int,int,int);};
+#define FIELD(type,offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this)+(offset)))
 void CharacterAux004C49C0F371::AdvanceAuxiliary() {
     if(velocityX==0.0f && field3AC>0) field3AC=0;
     if(fieldF0C>0) {
@@ -60,7 +60,7 @@ void CharacterAux004C49C0F371::AdvanceAuxiliary() {
             opponent->field010=0x82;
         }
     }
-    if (action > 149 && action < 154 && F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0 && fieldF0A==0) {
+    if (action > 149 && action < 154 && animationStage==0 && animationFrame==0 && fieldF0A==0) {
             field2F6 = 0;
             field2F8 = 0;
             field2FA = 0;
@@ -76,7 +76,7 @@ void CharacterAux004C49C0F371::AdvanceAuxiliary() {
             SpawnTrackedEffect(817, facing * 30 + x, y + 94.0f, facing, 1, 1);
             fieldF0A = 1;
         }
-    if (action > 153 && action < 158 && F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0 && fieldF0A==0) {
+    if (action > 153 && action < 158 && animationStage==0 && animationFrame==0 && fieldF0A==0) {
             field2F6 = 0;
             field2F8 = 0;
             field2FA = 0;
@@ -92,7 +92,7 @@ void CharacterAux004C49C0F371::AdvanceAuxiliary() {
             SpawnTrackedEffect(817, facing * 70 + x, y + 60.0f, facing, 1, 1);
             fieldF0A = 1;
         }
-    if (action == 158 && F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0 && fieldF0A==0) {
+    if (action == 158 && animationStage==0 && animationFrame==0 && fieldF0A==0) {
             field2F6 = 0;
             field2F8 = 0;
             field2FA = 0;
@@ -114,3 +114,4 @@ void CharacterAux004C49C0F371::AdvanceAuxiliary() {
         if(fieldF16>60) fieldF16=60;
     } else fieldF16=0;
 }
+#undef FIELD

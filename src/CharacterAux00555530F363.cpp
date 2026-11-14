@@ -11,6 +11,7 @@ public:
 };
 
 
+#define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
 
 // Names are provisional. Only these field accesses and receiver ABI are observed.
 void CharacterAux00555530F363::AdvanceAuxiliary() {
@@ -79,3 +80,5 @@ void CharacterAux00555530F363::AdvanceAuxiliary() {
     }
 
 }
+
+#undef FIELD

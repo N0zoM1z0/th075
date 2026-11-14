@@ -1,6 +1,7 @@
 #include "CharacterAI49B070.hpp"
 
-#define OPPONENT_GUARD reinterpret_cast<FighterState *>(opponent)->IsState50To149()
+#define FIELD(type, offset) (*reinterpret_cast<type *>(reinterpret_cast<u8 *>(this) + offset))
+#define OPPONENT_GUARD static_cast<FighterState*>(opponent)->IsState50To149()
 #define FORWARD_COMMAND (2 - (facing == 1))
 #define AIR_FORWARD_COMMAND (2 - (facing == -1))
 #define AIR_BACK_COMMAND (1 + (facing == -1))
@@ -17,10 +18,10 @@ void CharacterAI49B070::ChooseAction()
     distance.x = AbsFloatAt00412D90(opponent->x - x);
     distance.y = AbsFloatAt00412D90(opponent->y - y);
     --aiWaitTimer;
-    --field516;
+    --aiCardTimer;
     if (action > 49 &&
         action < 150) {
-        if (field516 < 0) field516 = ChooseIntegerRange(30, 90);
+        if (aiCardTimer < 0) aiCardTimer = ChooseIntegerRange(30, 90);
         aiStep = 0;
         aiWaitTimer = 0;
         if (ChooseIntegerRange(0, 100) < 50) inputX = 1;
@@ -28,11 +29,11 @@ void CharacterAI49B070::ChooseAction()
         if (ChooseIntegerRange(0, 100) < 5) inputA = 1;
         return;
     }
-    if (field516 < 0 && CARD_TYPE == 3 && field3A0 > 0) {
+    if (aiCardTimer < 0 && CARD_TYPE == 3 && field3A0 > 0) {
         aiCommand = 230;
         return;
     }
-    if (field516 < 0 && CARD_TYPE == 2 && field3A0 > 0) {
+    if (aiCardTimer < 0 && CARD_TYPE == 2 && field3A0 > 0) {
         if (ChooseIntegerRange(0, 100) < 10) {
             aiCommand = 225;
             return;
@@ -41,7 +42,7 @@ void CharacterAI49B070::ChooseAction()
         if (g_StateRepeatLevelAt006714D0 == 3) aiCommand = 221;
         return;
     }
-    if (field516 < 0 && CARD_TYPE == 1 && field3A0 > 0) {
+    if (aiCardTimer < 0 && CARD_TYPE == 1 && field3A0 > 0) {
         if (ChooseIntegerRange(0, 100) < 50) {
             aiCommand = 210;
             return;

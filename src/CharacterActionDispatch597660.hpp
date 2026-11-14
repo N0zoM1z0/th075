@@ -12,7 +12,7 @@ public:
     void ClearAuxiliaryInput();
     void EnableTransform(float x, float y, float z);
 public:
-    // Character-specific fields after the shared Fighter layout.
+    // Fields after the shared Fighter layout.
     short fieldF10;
 };
 

@@ -1,30 +1,32 @@
-#include "FighterScriptCounterWindowF1022.hpp"
+#include "Fighter.hpp"
 #include "FighterVirtualActionsF159.hpp"
-// Borrowed pointer receiver and 17 observed halfword fields.
-class AliceRoundF227 {
+class AliceRoundF227 : public Fighter {
 public:
     void ResetRound();
+public:
+    // Fields after the shared Fighter layout.
+    unsigned short fieldF10;
+    unsigned short fieldF12;
+    unsigned short fieldF14;
 };
-#define HALF(off) (*reinterpret_cast<unsigned short*>(reinterpret_cast<unsigned char*>(this)+(off)))
 void AliceRoundF227::ResetRound()
 {
-    HALF(0xefc)=0;
-    HALF(0xefe)=0;
-    HALF(0xefa)=0;
-    HALF(0xf14)=0;
-    F1022_SCRIPT(this).counterAtF00=0;
-    F1022_SCRIPT(this).counterAtF02=0;
-    HALF(0xf04)=0;
-    HALF(0xf06)=0;
-    HALF(0xf08)=0;
-    HALF(0xf0a)=0;
-    HALF(0xf0c)=0;
-    HALF(0xf0e)=0;
-    HALF(0xf10)=0;
-    HALF(0xf12)=0;
-    HALF(0x512)=0;
-    HALF(0x514)=0;
-    HALF(0x516)=0;
+    reinterpret_cast<unsigned short&>(sequenceTimer)=0;
+    fieldEFE=0;
+    fieldEFA=0;
+    fieldF14=0;
+    scriptCounterF00=0;
+    scriptCounterF02=0;
+    reinterpret_cast<unsigned short&>(fieldF04)=0;
+    fieldF06=0;
+    fieldF08=0;
+    reinterpret_cast<unsigned short&>(fieldF0A)=0;
+    reinterpret_cast<unsigned short&>(fieldF0C)=0;
+    reinterpret_cast<unsigned short&>(fieldF0E)=0;
+    fieldF10=0;
+    fieldF12=0;
+    reinterpret_cast<unsigned short&>(aiWaitTimer)=0;
+    reinterpret_cast<unsigned short&>(aiStep)=0;
+    reinterpret_cast<unsigned short&>(aiCardTimer)=0;
     reinterpret_cast<FighterBaseActionsF159*>(this)->ResetRound();
 }
-#undef HALF

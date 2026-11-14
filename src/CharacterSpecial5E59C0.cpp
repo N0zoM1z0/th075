@@ -1,5 +1,6 @@
 #include "CharacterSpecial5E59C0.hpp"
 
+#define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
 #define OPPONENT_ACTOR reinterpret_cast<StageOpponent5E59C0*>(opponent)
 
 void CharacterSpecial5E59C0::InitializeStage() {
@@ -182,3 +183,4 @@ void CharacterSpecial5E59C0::InitializeStage() {
 }
 
 #undef OPPONENT_ACTOR
+#undef FIELD

@@ -212,7 +212,7 @@ void CharacterAction551C00::DispatchActions()
         y == 0.0f &&
         field3A0 > 0 &&
         field36C >= 100.0f &&
-        aiSelectors[1] == 0 &&
+        field398[1] == 0 &&
         field39D == 1 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(705) &&
@@ -226,7 +226,7 @@ void CharacterAction551C00::DispatchActions()
         y == 0.0f &&
         field3A0 > 0 &&
         field36C >= 100.0f &&
-        aiSelectors[1] == 1 &&
+        field398[1] == 1 &&
         field39D == 1 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(708) &&
@@ -240,7 +240,7 @@ void CharacterAction551C00::DispatchActions()
         y == 0.0f &&
         field3A0 > 0 &&
         field36C >= 100.0f &&
-        aiSelectors[1] == 2 &&
+        field398[1] == 2 &&
         field39D == 1 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(709) &&
@@ -254,7 +254,7 @@ void CharacterAction551C00::DispatchActions()
         y == 0.0f &&
         field3A0 > 0 &&
         field36C >= 100.0f &&
-        aiSelectors[0] == 0 &&
+        field398[0] == 0 &&
         field39D == 2 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(700) &&
@@ -268,7 +268,7 @@ void CharacterAction551C00::DispatchActions()
         y == 0.0f &&
         field3A0 > 0 &&
         field36C >= 100.0f &&
-        aiSelectors[0] == 1 &&
+        field398[0] == 1 &&
         field39D == 2 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(703) &&
@@ -282,7 +282,7 @@ void CharacterAction551C00::DispatchActions()
         y == 0.0f &&
         field3A0 > 0 &&
         field36C >= 100.0f &&
-        aiSelectors[0] == 2 &&
+        field398[0] == 2 &&
         field39D == 2 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(704) &&
@@ -348,9 +348,9 @@ void CharacterAction551C00::DispatchActions()
         sequenceInfo->priority <= TARGET_PRIORITY(504) &&
         ACTION_CHANGE_ALLOWED) {
         PackDirectionBits();
-        fieldF00 = 0;
+        reinterpret_cast<short&>(scriptCounterF00) = 0;
         ResetPrimaryCounters(504);
-        if (y > 0.0f) fieldF00 = 1;
+        if (y > 0.0f) reinterpret_cast<short&>(scriptCounterF00) = 1;
         return;
     }
     if (aiCommand == 21 &&
@@ -360,9 +360,9 @@ void CharacterAction551C00::DispatchActions()
         sequenceInfo->priority <= TARGET_PRIORITY(503) &&
         ACTION_CHANGE_ALLOWED) {
         PackDirectionBits();
-        fieldF00 = 0;
+        reinterpret_cast<short&>(scriptCounterF00) = 0;
         ResetPrimaryCounters(503);
-        if (y > 0.0f) fieldF00 = 1;
+        if (y > 0.0f) reinterpret_cast<short&>(scriptCounterF00) = 1;
         return;
     }
     if (aiCommand == 20 &&
@@ -372,9 +372,9 @@ void CharacterAction551C00::DispatchActions()
         sequenceInfo->priority <= TARGET_PRIORITY(502) &&
         ACTION_CHANGE_ALLOWED) {
         PackDirectionBits();
-        fieldF00 = 0;
+        reinterpret_cast<short&>(scriptCounterF00) = 0;
         ResetPrimaryCounters(502);
-        if (y > 0.0f) fieldF00 = 1;
+        if (y > 0.0f) reinterpret_cast<short&>(scriptCounterF00) = 1;
         return;
     }
     if (aiCommand == 101 &&

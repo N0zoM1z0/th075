@@ -16,12 +16,13 @@ public:
     int Rand(int,int);
     void SpawnProjectile(int,float,float,unsigned char,int);
 public:
-    // Character-specific fields after the shared Fighter layout.
+    // Fields after the shared Fighter layout.
     short fieldF10;
     short fieldF12;
 };
 
 
+#define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
 
 extern const float g_SpecialPowerStepAt006590B4;
 // Names are provisional. Only these field accesses and receiver ABI are observed.
@@ -107,3 +108,5 @@ void CharacterAux00505A60F365::UpdateAuxiliary() {
         fieldF12 = 0;
     }
 }
+
+#undef FIELD

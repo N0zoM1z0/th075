@@ -9,11 +9,12 @@ public:
     void AdvanceAuxiliary();
     void SpawnTrackedEffect(short, float, float, signed char, signed char, unsigned char);
 public:
-    // Character-specific fields after the shared Fighter layout.
+    // Fields after the shared Fighter layout.
     short fieldF10;
 };
 
 
+#define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
 
 // Names are provisional. Only these field accesses and receiver ABI are observed.
 void CharacterAux00577750F364::AdvanceAuxiliary() {
@@ -87,3 +88,5 @@ void CharacterAux00577750F364::AdvanceAuxiliary() {
         fieldF10 = 0;
     }
 }
+
+#undef FIELD

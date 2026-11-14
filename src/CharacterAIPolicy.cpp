@@ -2,7 +2,8 @@
 #include "FighterAIShortFieldsF946.hpp"
 #include "CharacterAIPolicy.hpp"
 
-#define OPPONENT_GUARD reinterpret_cast<FighterState *>(opponent)->IsState50To149()
+#define FIELD(type, offset) (*reinterpret_cast<type *>(reinterpret_cast<u8 *>(this) + offset))
+#define OPPONENT_GUARD static_cast<FighterState*>(opponent)->IsState50To149()
 #define FORWARD_COMMAND (2 - (facing == 1))
 #define AIR_FORWARD_COMMAND (2 - (facing == -1))
 #define AIR_BACK_COMMAND (1 + (facing == -1))
@@ -16,22 +17,22 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
     AISeparation distance;
     distance.x = AbsFloatAt00412D90(opponent->x - x);
     distance.y = AbsFloatAt00412D90(opponent->y - y);
-    --F946_AI_FIELDS_AT512(this).countdownAt512;
+    --aiWaitTimer;
     if (action > 49 && action < 150) {
-        F946_AI_FIELDS_AT512(this).modeAt514 = 0;
-        F946_AI_FIELDS_AT512(this).countdownAt512 = 0;
+        aiStep = 0;
+        aiWaitTimer = 0;
     }
-    if (F946_AI_FIELDS_AT512(this).modeAt514 == 1) {
-        if (F946_AI_FIELDS_AT512(this).countdownAt512 > 0) {
+    if (aiStep == 1) {
+        if (aiWaitTimer > 0) {
             inputC = 5;
         } else {
-            F946_AI_FIELDS_AT512(this).modeAt514 = 0;
+            aiStep = 0;
         }
         return;
     }
-    if (F946_AI_FIELDS_AT512(this).modeAt514 == 2) {
+    if (aiStep == 2) {
         if (action == 391) {
-            F946_AI_FIELDS_AT512(this).modeAt514 = 0;
+            aiStep = 0;
             return;
         }
         if (action == 200) {
@@ -44,9 +45,9 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
             return;
         }
     }
-    if (F946_AI_FIELDS_AT512(this).modeAt514 == 3) {
+    if (aiStep == 3) {
         if (action == 390) {
-            F946_AI_FIELDS_AT512(this).modeAt514 = 0;
+            aiStep = 0;
             return;
         }
         if (action == 200) {
@@ -59,9 +60,9 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
             return;
         }
     }
-    if (F946_AI_FIELDS_AT512(this).modeAt514 == 4) {
+    if (aiStep == 4) {
         if (action == 392) {
-            F946_AI_FIELDS_AT512(this).modeAt514 = 0;
+            aiStep = 0;
             return;
         }
         if (action == 200) {
@@ -75,9 +76,9 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
             return;
         }
     }
-    if (F946_AI_FIELDS_AT512(this).modeAt514 == 5) {
+    if (aiStep == 5) {
         if (action == 393) {
-            F946_AI_FIELDS_AT512(this).modeAt514 = 0;
+            aiStep = 0;
             return;
         }
         if (action == 200) {
@@ -91,11 +92,11 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
             return;
         }
     }
-    if (F946_AI_FIELDS_AT512(this).modeAt514 == 6) {
-        if (F946_AI_FIELDS_AT512(this).countdownAt512 > 0) {
+    if (aiStep == 6) {
+        if (aiWaitTimer > 0) {
             inputA = 5;
         } else {
-            F946_AI_FIELDS_AT512(this).modeAt514 = 0;
+            aiStep = 0;
         }
         return;
     }
@@ -116,7 +117,7 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
         }
     }
     if (field36C > 100.0f) {
-        if (field324 < 4000 &&
+        if (health < 4000 &&
             distance.x > 560.0f &&
             rand() < 50 &&
             field39C == 0 &&
@@ -124,7 +125,7 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
             F940_COMMAND_AT511(this) = 103;
             return;
         }
-        if (field324 < 4000 &&
+        if (health < 4000 &&
             rand() < 5 &&
             field39C == 0 &&
             field3A0 <= 0) {
@@ -132,7 +133,7 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
             return;
         }
         if (OPPONENT_GUARD &&
-            field324 < 3000 &&
+            health < 3000 &&
             field39C == 0 &&
             field3A0 <= 0) {
             F940_COMMAND_AT511(this) = 103;
@@ -220,7 +221,7 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
             rand() < 10000 &&
             field3A0 > 0 &&
             field36C >= 100.0f &&
-            aiSelectors[Policy::firstSelector] == 1 &&
+            field398[Policy::firstSelector] == 1 &&
             field39D == Policy::firstMode) {
             F940_COMMAND_AT511(this) = 13;
             return;
@@ -229,7 +230,7 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
             rand() < 10000 &&
             field3A0 > 0 &&
             field36C >= 100.0f &&
-            aiSelectors[Policy::secondSelector] == 1 &&
+            field398[Policy::secondSelector] == 1 &&
             field39D == 2) {
             F940_COMMAND_AT511(this) = 13;
             return;
@@ -238,7 +239,7 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
             rand() < 10000 &&
             field3A0 > 0 &&
             field36C >= 100.0f &&
-            aiSelectors[1] == 2 &&
+            field398[1] == 2 &&
             field39D == 1) {
             F940_COMMAND_AT511(this) = 13;
             return;
@@ -247,7 +248,7 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
             rand() < 10000 &&
             field3A0 > 0 &&
             field36C >= 100.0f &&
-            aiSelectors[Policy::cancelSelector] == 2 &&
+            field398[Policy::cancelSelector] == 2 &&
             field39D == 2) {
             F940_COMMAND_AT511(this) = 13;
             return;
@@ -256,7 +257,7 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
             rand() < 10000 &&
             field3A0 > 0 &&
             field36C >= 100.0f &&
-            aiSelectors[1] == 0 &&
+            field398[1] == 0 &&
             field39D == 1) {
             F940_COMMAND_AT511(this) = 13;
             return;
@@ -265,7 +266,7 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
             rand() < 10000 &&
             field3A0 > 0 &&
             field36C >= 100.0f &&
-            aiSelectors[Policy::cancelSelector] == 0 &&
+            field398[Policy::cancelSelector] == 0 &&
             field39D == 2) {
             F940_COMMAND_AT511(this) = 13;
             return;
@@ -273,8 +274,8 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
         if (action == 307 &&
             rand() < 10000 &&
             meter > 250) {
-            F946_AI_FIELDS_AT512(this).countdownAt512 = ChooseIntegerRange(0, 45);
-            F946_AI_FIELDS_AT512(this).modeAt514 = 6;
+            aiWaitTimer = ChooseIntegerRange(0, 45);
+            aiStep = 6;
             inputC = 1;
             return;
         }
@@ -309,8 +310,8 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
             action == 307 &&
             rand() < 5000 &&
             meter > 300) {
-            F946_AI_FIELDS_AT512(this).countdownAt512 = ChooseIntegerRange(0, 30);
-            F946_AI_FIELDS_AT512(this).modeAt514 = 1;
+            aiWaitTimer = ChooseIntegerRange(0, 30);
+            aiStep = 1;
             inputC = 1;
             return;
         }
@@ -381,12 +382,12 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
         }
         if (action == 301 &&
             rand() < 1000) {
-            F946_AI_FIELDS_AT512(this).modeAt514 = 3;
+            aiStep = 3;
             return;
         }
         if (action == 301 &&
             rand() < 1000) {
-            F946_AI_FIELDS_AT512(this).modeAt514 = 5;
+            aiStep = 5;
             return;
         }
         if (action == 302 &&
@@ -397,17 +398,17 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
         }
         if (action == 302 &&
             rand() < 1000) {
-            F946_AI_FIELDS_AT512(this).modeAt514 = 3;
+            aiStep = 3;
             return;
         }
         if (action == 302 &&
             rand() < 1000) {
-            F946_AI_FIELDS_AT512(this).modeAt514 = 5;
+            aiStep = 5;
             return;
         }
         if (action == 302 &&
             rand() < 1000) {
-            F946_AI_FIELDS_AT512(this).modeAt514 = 4;
+            aiStep = 4;
             return;
         }
         if (distance.x < 100.0f &&
@@ -421,16 +422,16 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
             action == 303 &&
             rand() < 5000 &&
             meter > 300) {
-            F946_AI_FIELDS_AT512(this).countdownAt512 = ChooseIntegerRange(0, 30);
-            F946_AI_FIELDS_AT512(this).modeAt514 = 1;
+            aiWaitTimer = ChooseIntegerRange(0, 30);
+            aiStep = 1;
             inputC = 1;
             return;
         }
         if (action == 308 &&
             rand() < 10000 &&
             meter > 300) {
-            F946_AI_FIELDS_AT512(this).countdownAt512 = ChooseIntegerRange(0, 30);
-            F946_AI_FIELDS_AT512(this).modeAt514 = 1;
+            aiWaitTimer = ChooseIntegerRange(0, 30);
+            aiStep = 1;
             inputC = 1;
             return;
         }
@@ -454,8 +455,8 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
     if (static_cast<float>(rand()) < meter * 0.8f + 0.0f &&
         distance.x > 320.0f &&
         meter > 350) {
-        F946_AI_FIELDS_AT512(this).countdownAt512 = ChooseIntegerRange(0, 45);
-        F946_AI_FIELDS_AT512(this).modeAt514 = 1;
+        aiWaitTimer = ChooseIntegerRange(0, 45);
+        aiStep = 1;
         inputC = 1;
         if (rand() < 1000) inputX = facing;
         if (rand() < 1000) inputY = 1;
@@ -465,8 +466,8 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
         distance.x > 560.0f &&
         meter > 250 &&
         distance.y < 100.0f) {
-        F946_AI_FIELDS_AT512(this).modeAt514 = 6;
-        F946_AI_FIELDS_AT512(this).countdownAt512 = ChooseIntegerRange(0, 45);
+        aiStep = 6;
+        aiWaitTimer = ChooseIntegerRange(0, 45);
         inputA = 1;
         if (rand() < 2000) inputX = facing;
         if (rand() < 2000) inputY = 1;
@@ -567,28 +568,28 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
         if (distance.x > 200.0f &&
             distance.x < 400.0f &&
             rand() < 600) {
-            F946_AI_FIELDS_AT512(this).modeAt514 = 3;
+            aiStep = 3;
             return;
         }
         if (opponent->y == 0.0f &&
             distance.x > 100.0f &&
             distance.x < 500.0f &&
             rand() < 100) {
-            F946_AI_FIELDS_AT512(this).modeAt514 = 2;
+            aiStep = 2;
             return;
         }
         if (opponent->y == 0.0f &&
             distance.x > 200.0f &&
             distance.x < 500.0f &&
             rand() < 600) {
-            F946_AI_FIELDS_AT512(this).modeAt514 = 4;
+            aiStep = 4;
             return;
         }
         if (opponent->y == 0.0f &&
             distance.x > 300.0f &&
             distance.x < 500.0f &&
             rand() < 250) {
-            F946_AI_FIELDS_AT512(this).modeAt514 = 5;
+            aiStep = 5;
             return;
         }
     }
@@ -612,7 +613,7 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
     if (rand() < 1500 &&
         field3A0 > 0 &&
         field36C >= 100.0f &&
-        aiSelectors[1] == 2 &&
+        field398[1] == 2 &&
         field39D == 1) {
         F940_COMMAND_AT511(this) = 13;
         return;
@@ -621,7 +622,7 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
         distance.x < 350.0f &&
         field3A0 > 0 &&
         field36C >= 100.0f &&
-        aiSelectors[1] == 1 &&
+        field398[1] == 1 &&
         field39D == 1) {
         F940_COMMAND_AT511(this) = 13;
         return;
@@ -629,7 +630,7 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
     if (rand() < 1500 &&
         field3A0 > 0 &&
         field36C >= 100.0f &&
-        aiSelectors[1] == 0 &&
+        field398[1] == 0 &&
         field39D == 1) {
         F940_COMMAND_AT511(this) = 13;
         return;
@@ -638,7 +639,7 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
         distance.x < 300.0f &&
         field3A0 > 0 &&
         field36C >= 100.0f &&
-        aiSelectors[Policy::lateSelector] == 2 &&
+        field398[Policy::lateSelector] == 2 &&
         field39D == 2) {
         F940_COMMAND_AT511(this) = 13;
         return;
@@ -646,7 +647,7 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
     if (rand() < 1500 &&
         field3A0 > 0 &&
         field36C >= 100.0f &&
-        aiSelectors[0] == 0 &&
+        field398[0] == 0 &&
         field39D == 2) {
         F940_COMMAND_AT511(this) = 13;
         return;
@@ -655,7 +656,7 @@ template<class Policy> void CharacterAIPolicy<Policy>::ChooseAction()
         distance.x < 200.0f &&
         field3A0 > 0 &&
         field36C >= 100.0f &&
-        aiSelectors[0] == 1 &&
+        field398[0] == 1 &&
         field39D == 2) {
         F940_COMMAND_AT511(this) = 13;
         return;
@@ -743,4 +744,3 @@ template void CharacterAIPolicy<AI579650Policy>::ChooseAction();
 template void CharacterAIPolicy<AI59D240Policy>::ChooseAction();
 template void CharacterAIPolicy<AI5C5D10Policy>::ChooseAction();
 template void CharacterAIPolicy<AI5E7370Policy>::ChooseAction();
-

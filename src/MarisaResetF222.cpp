@@ -1,11 +1,31 @@
-#include "FighterScriptCounterWindowF1022.hpp"
+#include "Fighter.hpp"
 #include "FighterVirtualActionsF159.hpp"
 // Physical script-defined field view only: no complete owner allocation.
 // R050 original x87: FILD dword stack signed index; FDIV dword [0x659308].
 extern const float g_MarisaSequenceScaleAt00659308;
-class MarisaRoundF222 {public: void ResetRound();};
-#define W(off) (*reinterpret_cast<unsigned short*>(reinterpret_cast<unsigned char*>(this)+(off)))
-#define B(off) (*reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char*>(this)+(off)))
+class MarisaRoundF222 : public Fighter {public: void ResetRound();public:
+    // Fields after the shared Fighter layout.
+    unsigned short fieldF10;
+    unsigned short fieldF12;
+    unsigned short fieldF14;
+    unsigned short fieldF16;
+    unsigned short fieldF18;
+    unsigned short fieldF1A;
+    unsigned short fieldF1C;
+    unsigned short fieldF1E;
+    unsigned short fieldF20;
+    unsigned short fieldF22;
+    unsigned short fieldF24;
+    unsigned short fieldF26;
+    unsigned short fieldF28;
+    unsigned short fieldF2A;
+    unsigned short fieldF2C;
+    unsigned short fieldF2E;
+    unsigned short fieldF30;
+    unsigned short fieldF32;
+    unsigned char unknownF34[0x1006 - 0xF34];
+    unsigned char field1006;
+};
 struct MarisaRecordF222 {
     unsigned int x,y,z;
     float alpha;
@@ -17,39 +37,39 @@ typedef char VerifyMarisaRecord28F222[(sizeof(MarisaRecordF222)==28)?1:-1];
 #define REC(index) (reinterpret_cast<MarisaRecordF222*>(reinterpret_cast<unsigned char*>(this)+0x1018)[index])
 void MarisaRoundF222::ResetRound()
 {
-    F1022_SCRIPT(this).counterAtF00=0;
-    F1022_SCRIPT(this).counterAtF02=0;
-    W(0xf04)=0;
-    W(0xf06)=0;
-    W(0xf08)=0;
-    W(0xf0a)=0;
-    W(0xefc)=0;
-    W(0xefe)=0;
-    W(0xefa)=0;
-    W(0xf32)=0;
-    W(0xf0c)=0;
-    W(0xf0e)=0;
-    W(0xf10)=0;
-    W(0xf12)=0;
-    W(0xf14)=0;
-    W(0xf16)=0;
-    W(0xf18)=0;
-    W(0x512)=0;
-    W(0x514)=0;
-    W(0x516)=0;
-    W(0xf1a)=0;
-    W(0xf1c)=0;
-    W(0xf1e)=0;
-    W(0xf20)=0;
-    W(0xf22)=0;
-    W(0xf24)=0;
-    W(0xf26)=0;
-    W(0xf28)=0;
-    W(0xf2a)=0;
-    W(0xf2c)=0;
-    W(0xf2e)=0;
-    W(0xf30)=0;
-    B(0x1006)=0;
+    scriptCounterF00=0;
+    scriptCounterF02=0;
+    reinterpret_cast<unsigned short&>(fieldF04)=0;
+    fieldF06=0;
+    fieldF08=0;
+    reinterpret_cast<unsigned short&>(fieldF0A)=0;
+    reinterpret_cast<unsigned short&>(sequenceTimer)=0;
+    fieldEFE=0;
+    fieldEFA=0;
+    fieldF32=0;
+    reinterpret_cast<unsigned short&>(fieldF0C)=0;
+    reinterpret_cast<unsigned short&>(fieldF0E)=0;
+    fieldF10=0;
+    fieldF12=0;
+    fieldF14=0;
+    fieldF16=0;
+    fieldF18=0;
+    reinterpret_cast<unsigned short&>(aiWaitTimer)=0;
+    reinterpret_cast<unsigned short&>(aiStep)=0;
+    reinterpret_cast<unsigned short&>(aiCardTimer)=0;
+    fieldF1A=0;
+    fieldF1C=0;
+    fieldF1E=0;
+    fieldF20=0;
+    fieldF22=0;
+    fieldF24=0;
+    fieldF26=0;
+    fieldF28=0;
+    fieldF2A=0;
+    fieldF2C=0;
+    fieldF2E=0;
+    fieldF30=0;
+    field1006=0;
     for (int i=0;i<=36;++i) {
        REC(i*2).x=0;
        REC(i*2).y=0;
@@ -69,5 +89,3 @@ void MarisaRoundF222::ResetRound()
     reinterpret_cast<FighterBaseActionsF159*>(this)->ResetRound();
 }
 #undef REC
-#undef B
-#undef W

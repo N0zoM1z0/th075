@@ -1,6 +1,7 @@
 #ifndef TH075_GAME_LEAF_HELPERS_HPP
 #define TH075_GAME_LEAF_HELPERS_HPP
 
+#include "Fighter.hpp"
 typedef unsigned char u8;
 typedef unsigned long u32;
 
@@ -75,7 +76,7 @@ public:
     void ClearField74();
 };
 
-class FighterState {
+class FighterState : public Fighter {
 public:
     void DrawFacingSprite(short sprite, float position, int first, int second);
     bool IsState50To149();

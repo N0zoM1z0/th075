@@ -134,7 +134,7 @@ void CharacterAction5C0D70::DispatchActions()
         y == 0.0f &&
         field3A0 > 0 &&
         field36C >= 100.0f &&
-        aiSelectors[1] == 0 &&
+        field398[1] == 0 &&
         field39D == 1 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(720) &&
@@ -148,7 +148,7 @@ void CharacterAction5C0D70::DispatchActions()
         y == 0.0f &&
         field3A0 > 0 &&
         field36C >= 100.0f &&
-        aiSelectors[1] == 1 &&
+        field398[1] == 1 &&
         field39D == 1 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(722) &&
@@ -162,7 +162,7 @@ void CharacterAction5C0D70::DispatchActions()
         y == 0.0f &&
         field3A0 > 0 &&
         field36C >= 100.0f &&
-        aiSelectors[1] == 2 &&
+        field398[1] == 2 &&
         field39D == 1 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(724) &&
@@ -176,7 +176,7 @@ void CharacterAction5C0D70::DispatchActions()
         y == 0.0f &&
         field3A0 > 0 &&
         field36C >= 100.0f &&
-        aiSelectors[0] == 0 &&
+        field398[0] == 0 &&
         field39D == 2 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(700) &&
@@ -190,7 +190,7 @@ void CharacterAction5C0D70::DispatchActions()
         y == 0.0f &&
         field3A0 > 0 &&
         field36C >= 100.0f &&
-        aiSelectors[0] == 1 &&
+        field398[0] == 1 &&
         field39D == 2 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(702) &&
@@ -204,7 +204,7 @@ void CharacterAction5C0D70::DispatchActions()
         y == 0.0f &&
         field3A0 > 0 &&
         field36C >= 100.0f &&
-        aiSelectors[0] == 2 &&
+        field398[0] == 2 &&
         field39D == 2 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(704) &&

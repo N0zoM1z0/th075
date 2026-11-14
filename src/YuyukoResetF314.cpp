@@ -1,23 +1,20 @@
-#include "FighterScriptCounterWindowF1022.hpp"
+#include "Fighter.hpp"
 #include "FighterVirtualActionsF159.hpp"
-// Exact native-observed fighter short fields only; no full private layout.
-class YuyukoRoundF314 {public: void ResetRound();};
-#define HALF(off) (*reinterpret_cast<unsigned short*>(reinterpret_cast<unsigned char*>(this)+(off)))
+class YuyukoRoundF314 : public Fighter {public: void ResetRound();};
 void YuyukoRoundF314::ResetRound()
 {
-    HALF(0xefc)=0;
-    HALF(0xefe)=0;
-    F1022_SCRIPT(this).counterAtF00=0;
-    F1022_SCRIPT(this).counterAtF02=0;
-    HALF(0xf04)=0;
-    HALF(0xf06)=0;
-    HALF(0xf08)=0;
-    HALF(0xf0a)=0;
-    HALF(0xf0c)=0;
-    HALF(0xf0e)=0;
-    HALF(0x512)=0;
-    HALF(0x514)=0;
-    HALF(0x516)=0;
+    reinterpret_cast<unsigned short&>(sequenceTimer)=0;
+    fieldEFE=0;
+    scriptCounterF00=0;
+    scriptCounterF02=0;
+    reinterpret_cast<unsigned short&>(fieldF04)=0;
+    fieldF06=0;
+    fieldF08=0;
+    reinterpret_cast<unsigned short&>(fieldF0A)=0;
+    reinterpret_cast<unsigned short&>(fieldF0C)=0;
+    reinterpret_cast<unsigned short&>(fieldF0E)=0;
+    reinterpret_cast<unsigned short&>(aiWaitTimer)=0;
+    reinterpret_cast<unsigned short&>(aiStep)=0;
+    reinterpret_cast<unsigned short&>(aiCardTimer)=0;
     reinterpret_cast<FighterBaseActionsF159*>(this)->ResetRound();
 }
-#undef HALF

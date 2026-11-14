@@ -11,7 +11,7 @@ public:
     void ResetPrimaryCounters(short state);
     void ClearAuxiliaryInput();
 public:
-    // Character-specific fields after the shared Fighter layout.
+    // Fields after the shared Fighter layout.
     short fieldF10;
     short fieldF12;
     short fieldF14;

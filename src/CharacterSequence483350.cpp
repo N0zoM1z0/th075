@@ -1,5 +1,6 @@
 #include "CharacterSequence483350.hpp"
 
+#define FIELD(type, offset) (*reinterpret_cast<type *>(reinterpret_cast<unsigned char *>(this) + offset))
 #define OPPONENT_ACTOR static_cast<CharacterSequence483350*>(opponent)
 
 void CharacterSequence483350::AdvanceSequence()

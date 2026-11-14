@@ -1,6 +1,7 @@
 #ifndef TH075_FIGHTER_EFFECT_POLICIES_F135_HPP
 #define TH075_FIGHTER_EFFECT_POLICIES_F135_HPP
 
+#include "Fighter.hpp"
 // Declaration-only views of existing receivers. Names are provisional; these
 // interfaces establish neither complete owner layouts nor allocation sizes.
 // Never define, construct, copy, or embed instances of these private owners.
@@ -26,7 +27,7 @@ public:
 extern AuxiliaryEffectsF135 g_AuxiliaryEffectsF135;
 extern EffectSoundBankF135* g_SharedEffectSoundBankF135;
 
-class FighterEffectPoliciesF135 {
+class FighterEffectPoliciesF135 : public Fighter {
 public:
     void SpawnBattleEffect(short effect, float x, float y, signed char facing, signed char layer);
     void SpawnTrackedEffect(short effect, float x, float y, signed char facing, signed char layer,

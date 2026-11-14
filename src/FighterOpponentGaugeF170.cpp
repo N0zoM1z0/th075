@@ -1,9 +1,9 @@
-#include "FighterComboBorrowedF1006.hpp"
 #include "FighterVitalBorrowedF999.hpp"
 #include "FighterGaugeBorrowedF980.hpp"
 #include "FighterOpponentGaugeF170.hpp"
 #include "BattleCombat.hpp"
 
+#define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
 
 void FighterOpponentGaugeF170::ApplyOpponentGaugeChange(
     short base, short multiplier, short count)
@@ -21,11 +21,11 @@ void FighterOpponentGaugeF170::ApplyOpponentGaugeChange(
             (opponent->field328 / 4.0f / 10000.0f + 0.75));
     }
     if (opponent->action < 50 || opponent->action >= 143) {
-        F1006_COMBO(this).countAt3C4 = 0;
-        F1006_COMBO(this).damageAt3C6 = 0;
+        comboCount = 0;
+        comboDamage = 0;
         field3C0 = 1.0f;
     }
-    F1006_COMBO(this).damageAt3C6 += change;
+    comboDamage += change;
     F999_VITAL(reinterpret_cast<unsigned char*&>(opponent)).currentAt324 -= change;
     if (F999_VITAL(reinterpret_cast<unsigned char*&>(opponent)).currentAt324 <= 0)
         F999_VITAL(reinterpret_cast<unsigned char*&>(opponent)).currentAt324 = 0;
@@ -36,6 +36,8 @@ void FighterOpponentGaugeF170::ApplyOpponentGaugeChange(
     }
     if (opponent->field3A0 > 0 || opponent->field39C != 0)
         F999_VITAL(reinterpret_cast<unsigned char*&>(opponent)).recoverableAt326 = F999_VITAL(reinterpret_cast<unsigned char*&>(opponent)).currentAt324;
-    F1006_COMBO(this).countAt3C4 += count;
+    comboCount += count;
     field3C0 = (multiplier / 100.0f) * field3C0;
 }
+
+#undef FIELD
