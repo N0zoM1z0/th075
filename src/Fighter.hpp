@@ -249,7 +249,9 @@ public:
     unsigned char unknown6F9[0x6FA - 0x6F9];
     short field6FA;                     // +0x6FA
     short field6FC;                     // +0x6FC
-    unsigned char unknown6FE[0x705 - 0x6FE];
+    unsigned char unknown6FE[0x700 - 0x6FE];
+    void* stageDrawing;                 // +0x700 drawing context of the stage renderers
+    unsigned char unknown704[0x705 - 0x704];
     unsigned char field705[10];         // +0x705 per-character settings written by the constructors
     unsigned char unknown70F[0x713 - 0x70F];
     unsigned char field713;             // +0x713

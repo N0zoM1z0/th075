@@ -13,13 +13,13 @@ struct StageRender578B70Policy { enum { xBase = 0xF14, timerOffset = 0xEFE }; };
 struct StageRender59C6F0Policy { enum { xBase = 0xF34, timerOffset = 0xEFE }; };
 struct StageRender5C52D0Policy { enum { xBase = 0xF2C, timerOffset = 0xF2A }; };
 
-template<class Policy> class CharacterStageRendererF122 { public: void Render(signed char stage); };
+template<class Policy> class CharacterStageRendererF122 : public Fighter { public: void Render(signed char stage); };
 class QuadDrawingF122 { public: void DrawQuad(int, const SpriteQuad40CA80&, const RECT*, DWORD); };
 
 #define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<char*>(this) + (offset)))
 #define FLOAT(offset) *reinterpret_cast<float*>(reinterpret_cast<char*>(this) + (offset))
-#define DRAWING reinterpret_cast<TimelineDrawing438D00*>(FIELD(void*, 4))
-#define QUAD_DRAWING reinterpret_cast<QuadDrawingF122*>(FIELD(void*, 0x700))
+#define DRAWING reinterpret_cast<TimelineDrawing438D00*>(drawing)
+#define QUAD_DRAWING reinterpret_cast<QuadDrawingF122*>(stageDrawing)
 #define TRANSFORM(value) reinterpret_cast<SpriteTransform*>(&(value))
 
 template<class Policy>
