@@ -1,17 +1,11 @@
 #include <windows.h>
-// Only real physical font surface slots are borrowed, not a full owner.
-class FontConfigureF293 {
-public:
- void ConfigureText(DWORD x,DWORD y,unsigned char mode);
-};
-#define F(type,off) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this)+(off)))
-void FontConfigureF293::ConfigureText(DWORD x,DWORD y,unsigned char mode)
+#include "TextOverlay.hpp"
+void TextOverlay::ConfigureText(DWORD xBits,DWORD yBits,unsigned char mode)
 {
- F(DWORD,4)=x;
- F(DWORD,8)=y;
- F(DWORD,0x10)=0;
- F(unsigned char,0x15)=0;
- F(unsigned char,0x14)=0;
- F(unsigned char,0x25)=mode;
+ reinterpret_cast<DWORD&>(x)=xBits;
+ reinterpret_cast<DWORD&>(y)=yBits;
+ reinterpret_cast<DWORD&>(field010)=0;
+ field015=0;
+ field014=0;
+ this->mode=mode;
 }
-#undef F

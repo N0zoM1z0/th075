@@ -603,8 +603,8 @@ Effects::SpawnAuxObjectAt005F78B0,0x005F78B0,function
 Fighter::LoadStageResource,0x004584D0,function
 Fighter::Initialize,0x004567B0,function
 BattleEndScene::Initialize,0x00424E00,function
-OverlayText::DrawBox,0x00412EB0,function
-FontSurface::ConfigureTextAt00413420,0x00413420,function
+TextOverlay::DrawBox,0x00412EB0,function
+TextOverlay::ConfigureText,0x00413420,function
 Effects::LoadResourcesAt005F70E0,0x005F70E0,function
 FontSurface::DecodePackedTextUnitAt0041C9D0,0x0041C9D0,function
 FontSurface::ReleaseRasterResourcesAt0041C130,0x0041C130,function
@@ -628,7 +628,7 @@ PatchouliFighter::ResetRound,0x00502340,function
 RemiliaFighter::ResetRound,0x00551B20,function
 YuyukoFighter::ResetRound,0x00574290,function
 MeilingFighter::ResetRound,0x005E21F0,function
-FontSurface::RenderTextToTexture,0x00413460,function
+TextOverlay::RenderTextToTexture,0x00413460,function
 FontSurface::LoadGlyphOutline,0x0041C1B0,function
 FontSurface::RasterizeText,0x0041C2E0,function
 TextRasterizer::SelectFontAt0041C0D0,0x0041C0D0,function
