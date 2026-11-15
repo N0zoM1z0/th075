@@ -175,7 +175,7 @@ BattleScene::RenderDamageFlash,0x004406C0,function
 BattleScene::RenderRoundBanner,0x00441EA0,function
 DrawAtlasNumberAt00446B90,0x00446B90,function
 AtlasQuad446B90::AtlasQuad446B90,0x0040DA00,function
-HudCombo43E040::Render,0x0043D570,function
+ComboDisplay::Render,0x0043D570,function
 CharacterSelectCards437380::RenderCards,0x00437380,function
 CharacterSelectOptions438240::RenderOptions,0x00438240,function
 SinglePlayerOptions438670::RenderOptions,0x00438670,function
@@ -405,8 +405,8 @@ ProgressRecords::GetCardValue,0x0043D460,function
 ProgressRecords::SetCardValue,0x0043D3B0,function
 BattleScene::EnterRoundEnd,0x0043CDB0,function
 ProgressRecords::IncrementModeCounter,0x0043D360,function
-BattleHud::InitializeComboCounter,0x0043D490,function
-BattleHud::UpdateComboCounter,0x0043D4D0,function
+ComboDisplay::ComboDisplay,0x0043D490,function
+ComboDisplay::UpdateCounter,0x0043D4D0,function
 GameProgress::ReadSelectedWord268At00441FE0,0x00441FE0,function
 GameProgress::ReadSelectedWord394At00442010,0x00442010,function
 GameProgress::SetSelectedValue8At004451D0,0x004451D0,function
@@ -504,7 +504,7 @@ SceneBase::ReleaseGameGlobalsAt00431F40,0x00431F40,function
 GameGlobals::Initialize,0x00417210,function
 GameConfig::LoadIni,0x004192F0,function
 GameGlobals::Release,0x00417430,function
-BattleScene::Initialize,0x0043AD10,function
+BattleScene::BattleScene,0x0043AD10,function
 TitleScene::Initialize,0x0043A020,function
 TextureManager::Initialize,0x0040AD80,function
 TextureManager::AllocateUnformattedSlots,0x0040B1D0,function
@@ -979,5 +979,5 @@ SpriteDrawingF776::DrawVariant,0x0040CEF0,function
 SpriteDrawingF751::DrawProjectedQuad,0x0040CA20,function
 SpriteDrawingF780::DrawQuad,0x0040C9A0,function
 ArchiveCatalog::Release,0x0041CE50,function
-SceneObject::ReleaseAt0043B0B0,0x0043B0B0,function
+BattleScene::~BattleScene,0x0043B0B0,function
 GameApplication::RunAt00602A60,0x00602A60,function

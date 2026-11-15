@@ -2,7 +2,6 @@
 #include "FighterRoundOutcomeBytesF992.hpp"
 #include "RoundEndHudF173.hpp"
 #include "CameraUpdate4126C0.hpp"
-#include "ComboHudWindowF1060.hpp"
 
 #define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
 #define MODE_VALUES reinterpret_cast<int (*)[15]>(reinterpret_cast<unsigned char*>(this) + 0x16710)
@@ -66,27 +65,27 @@ void ModeCounterF173::IncrementModeCounter(signed char category, signed char key
     MODE_VALUES[category][key]++;
 }
 
-ComboCounterF173::ComboCounterF173(void* texture, signed char side)
+ComboDisplay::ComboDisplay(IDirect3DTexture8* texture, signed char side)
 {
-    FIELD(void*, 0) = texture;
-    F1060_HUD(this).sideAt0B = side;
-    F1060_HUD(this).opacityAt0A = 0;
-    F1060_HUD(this).countAt04 = 0;
-    F1060_HUD(this).verticalAt10 = -200.0f;
+    this->texture = texture;
+    this->side = side;
+    alpha = 0;
+    count = 0;
+    slide = -200.0f;
 }
 
-void ComboCounterF173::UpdateComboCounter(short count, short value, short extra)
+// A longer combo, or a new one, shows the counter and restarts its timers.
+void ComboDisplay::UpdateCounter(short count, short damage, short rate)
 {
-    if (count > F1060_HUD(this).countAt04 || count == 1) {
-        F1060_HUD(this).opacityAt0A = 255;
-        F1060_HUD(this).countAt04 = count;
-        F1060_HUD(this).damageAt06 = value;
-        F1060_HUD(this).ratioAt08 = extra;
-        F1060_HUD(this).holdAt0C = 60;
-        if (F1060_HUD(this).countAt04 == 2) {
-            F1060_HUD(this).phaseAt0E = 90;
-            F1060_HUD(this).verticalAt10 = -CameraSineAt0040D940(
-                float(F1060_HUD(this).phaseAt0E) * 0.01745328866f) * 200.0f;
+    if (count > this->count || count == 1) {
+        alpha = 255;
+        this->count = count;
+        this->damage = damage;
+        this->rate = rate;
+        hold = 60;
+        if (this->count == 2) {
+            phase = 90;
+            slide = -CameraSineAt0040D940(float(phase) * 0.01745328866f) * 200.0f;
         }
     }
 }

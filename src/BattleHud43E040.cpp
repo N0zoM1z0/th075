@@ -319,8 +319,8 @@ void BattleScene::RenderHud() {
             DrawAtlasNumberDefaultAt00446B60(637.0f, 439.0f - field08C, color, static_cast<int>(static_cast<short>(fighters[1]->field36C / 100.0f)), 10);
         }
     }
-    reinterpret_cast<HudCombo43E040*>(comboDisplays[0])->Render();
-    reinterpret_cast<HudCombo43E040*>(comboDisplays[1])->Render();
+    comboDisplays[0]->Render();
+    comboDisplays[1]->Render();
 }
 
 #undef QUAD

@@ -3,10 +3,41 @@
 #include <windows.h>
 #include "Fighter.hpp"
 
-// The combo counter shown for each side (allocated by the battle scene).
+struct IDirect3DTexture8;
+
+// Base of every scene: the vtable pointer and a shared counter at +4.
+class SceneBase {
+public:
+    SceneBase();
+    virtual ~SceneBase();               // 00431F40
+private:
+    unsigned int sharedCounter;
+};
+typedef char SceneBaseSize[sizeof(SceneBase) == 8 ? 1 : -1];
+
+// The combo counter shown for each side; the battle scene allocates 20 bytes.
 class ComboDisplay {
 public:
-    void UpdateCounter(short count, short damage, short rate);
+    ComboDisplay(IDirect3DTexture8* texture, signed char side);    // 0043D490
+    void UpdateCounter(short count, short damage, short rate);     // 0043D4D0
+    void Render();                                                 // 0043D570
+
+    IDirect3DTexture8* texture;         // +0x00
+    short count;                        // +0x04 hits in the combo
+    short damage;                       // +0x06
+    short rate;                         // +0x08 combo rate x1000
+    unsigned char alpha;                // +0x0A
+    signed char side;                   // +0x0B 1 on the left, -1 on the right
+    short hold;                         // +0x0C frames left before it fades
+    short phase;                        // +0x0E slide-in angle in degrees
+    float slide;                        // +0x10
+};
+typedef char ComboDisplaySize[sizeof(ComboDisplay) == 20 ? 1 : -1];
+
+// The digit atlas the HUD draws numbers with (a one-byte allocation).
+class DigitAtlas {
+public:
+    DigitAtlas(IDirect3DTexture8* digits, IDirect3DTexture8* small, IDirect3DTexture8* large);
 };
 class BattleRecords {
 public:
@@ -21,9 +52,10 @@ class CombatEffects { public: void Spawn(short, float, float, unsigned char, sig
 // The battle scene (vtable 00658334, constructor 0043AD10, destructor
 // 0043B0B0). Its methods run from 0043AD10 to 00449310. The full extent
 // is unknown, so the scene is only reached through the game's pointer.
-class BattleScene {
+class BattleScene : public SceneBase {
 public:
-    virtual ~BattleScene();                                         // slot 0
+    BattleScene();                                                  // 0043AD10
+    virtual ~BattleScene();                                         // slot 0, 0043B0B0
     virtual short Update();                                         // slot 1, 0043B1B0
     virtual void Render();                                          // slot 2, 0043D9D0
 
@@ -75,7 +107,6 @@ public:
     void TransformBounds(RECT *destination, const RECT *source, Actor *actor);
     int TestOverlap(const RECT *first, const RECT *second);
 
-    unsigned int field004;              // +0x004
     void* textures;                     // +0x008 the scene's texture manager
     unsigned long field00C;             // +0x00C frame timer
     unsigned long field010;             // +0x010
@@ -91,7 +122,7 @@ public:
     unsigned char unknown02C[0x034 - 0x02C];
     RECT hitBounds;                     // +0x034 overlap of the boxes that just hit
     Fighter* fighters[2];               // +0x044 the two fighters
-    void* digitAtlas;                   // +0x04C
+    DigitAtlas* digitAtlas;             // +0x04C
     ComboDisplay* comboDisplays[2];     // +0x050 each side's combo counter
     ComboDisplay* activeComboDisplay;   // +0x058 the attacker's counter while hits resolve
     signed char field05C;               // +0x05C
