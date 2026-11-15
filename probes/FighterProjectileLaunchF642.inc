@@ -2,9 +2,9 @@
 // Real floating from signed direction and signed short counter; this
 // is a case INSIDE one currently NONEXACT fighter giant function.
 case F642_CASE: {
-    field368=(field368)+g_AnimationDeltaAt0065747C;
-    if ((field368)>g_AnimationMaximumAt006583B4)
-        field368=1000.0f;
+    cardGauge=(cardGauge)+g_AnimationDeltaAt0065747C;
+    if ((cardGauge)>g_AnimationMaximumAt006583B4)
+        cardGauge=1000.0f;
     if (animationStage==0 && animationFrame==0) {
         StartAnimationAt46D000(0xFA);
         PrepareActionAt453D60(0x2C);

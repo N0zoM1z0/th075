@@ -39,7 +39,7 @@ case 0x2C0: {
             (*(&y))+g_F972_YAt00659284,
             facing,1);
         SpawnSevenFloatAt453B50(0x330,640.0f,320.0f,1,2,0,1);
-        fieldF10=meter;
+        fieldF10=spirit;
         fieldF12=1;
     }
     if ((animationStage)==11 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<4) {
@@ -81,7 +81,7 @@ case 0x2C1: {
             (*(&y))+g_F972_YAt00659284,
             facing,1);
         SpawnSevenFloatAt453B50(0x32E,640.0f,320.0f,1,2,0,1);
-        fieldF0C=meter;
+        fieldF0C=spirit;
         fieldF0E=0;
     }
     if ((animationStage)==11 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<4) {

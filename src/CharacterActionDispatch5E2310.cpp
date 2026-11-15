@@ -50,7 +50,7 @@ void MeilingFighter::DispatchActions()
         field36C >= 100.0f &&
         field398[1] == 0 &&
         field39D == 1 &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(701) &&
         ACTION_CHANGE_ALLOWED) {
@@ -64,7 +64,7 @@ void MeilingFighter::DispatchActions()
         field36C >= 100.0f &&
         field398[1] == 1 &&
         field39D == 1 &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(703) &&
         ACTION_CHANGE_ALLOWED) {
@@ -72,14 +72,14 @@ void MeilingFighter::DispatchActions()
         ResetPrimaryCounters(703);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
         field3A0 > 0 &&
         field36C >= 100.0f &&
         field398[1] == 2 &&
         field39D == 1 &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(706) &&
         ACTION_CHANGE_ALLOWED) {
@@ -94,7 +94,7 @@ void MeilingFighter::DispatchActions()
         field398[0] == 0 &&
         field39D == 2 &&
         (frameInfo->flags & 0x20) != 0 &&
-        meter > 0 &&
+        spirit > 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(700) &&
         ACTION_CHANGE_ALLOWED) {
         PackDirectionBits();
@@ -109,7 +109,7 @@ void MeilingFighter::DispatchActions()
         field398[0] == 1 &&
         field39D == 2 &&
         (frameInfo->flags & 0x20) != 0 &&
-        meter > 0 &&
+        spirit > 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(702) &&
         ACTION_CHANGE_ALLOWED) {
         PackDirectionBits();
@@ -123,7 +123,7 @@ void MeilingFighter::DispatchActions()
         field398[0] == 2 &&
         field39D == 2 &&
         (frameInfo->flags & 0x20) != 0 &&
-        meter > 0 &&
+        spirit > 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(704) &&
         ACTION_CHANGE_ALLOWED) {
         PackDirectionBits();
@@ -168,7 +168,7 @@ void MeilingFighter::DispatchActions()
     }
     if (aiCommand == 41 &&
         y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(509) &&
         ACTION_CHANGE_ALLOWED) {
@@ -178,7 +178,7 @@ void MeilingFighter::DispatchActions()
     }
     if (aiCommand == 40 &&
         y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(508) &&
         ACTION_CHANGE_ALLOWED) {
@@ -188,7 +188,7 @@ void MeilingFighter::DispatchActions()
     }
     if (aiCommand == 31 &&
         y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(507) &&
         ACTION_CHANGE_ALLOWED) {
@@ -198,7 +198,7 @@ void MeilingFighter::DispatchActions()
     }
     if (aiCommand == 30 &&
         y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(506) &&
         ACTION_CHANGE_ALLOWED) {
@@ -207,10 +207,10 @@ void MeilingFighter::DispatchActions()
         return;
     }
     if (aiCommand == 11 &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(501) &&
         ACTION_CHANGE_ALLOWED) {
         PackDirectionBits();
@@ -218,10 +218,10 @@ void MeilingFighter::DispatchActions()
         return;
     }
     if (aiCommand == 10 &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(500) &&
         ACTION_CHANGE_ALLOWED) {
         PackDirectionBits();
@@ -229,10 +229,10 @@ void MeilingFighter::DispatchActions()
         return;
     }
     if (aiCommand == 21 &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(603) &&
         ACTION_CHANGE_ALLOWED) {
         PackDirectionBits();
@@ -240,10 +240,10 @@ void MeilingFighter::DispatchActions()
         return;
     }
     if (aiCommand == 20 &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(602) &&
         ACTION_CHANGE_ALLOWED) {
         PackDirectionBits();
@@ -328,7 +328,7 @@ void MeilingFighter::DispatchActions()
             ClearAuxiliaryWords();
             return;
         }
-        if (ATTACK_A && meter > 0 &&
+        if (ATTACK_A && spirit > 0 &&
             (frameInfo->flags & 0x20) != 0 &&
             DISTANT_FROM_OPPONENT(360.0f, -360.0f) &&
             sequenceInfo->priority <= TARGET_PRIORITY(408) && ACTION_CHANGE_ALLOWED) {
@@ -350,7 +350,7 @@ void MeilingFighter::DispatchActions()
             ClearAuxiliaryWords();
             return;
         }
-        if (ATTACK_B && meter > 0 &&
+        if (ATTACK_B && spirit > 0 &&
             (frameInfo->flags & 0x20) != 0 &&
             DISTANT_FROM_OPPONENT(240.0f, -240.0f) &&
             sequenceInfo->priority <= TARGET_PRIORITY(414) && ACTION_CHANGE_ALLOWED) {
@@ -373,7 +373,7 @@ void MeilingFighter::DispatchActions()
             }
             return;
         }
-        if (ATTACK_C && meter > 0 &&
+        if (ATTACK_C && spirit > 0 &&
             (frameInfo->flags & 0x20) != 0 &&
             sequenceInfo->priority <= TARGET_PRIORITY(402) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(402);
@@ -389,7 +389,7 @@ void MeilingFighter::DispatchActions()
             return;
         }
         if (ATTACK_A && inputY == 0 && FORWARD_MOTION) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(320.0f, -320.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(407) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(407);
@@ -404,7 +404,7 @@ void MeilingFighter::DispatchActions()
             }
         }
         if (ATTACK_A) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(320.0f, -320.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(406) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(406);
@@ -440,7 +440,7 @@ void MeilingFighter::DispatchActions()
             return;
         }
         if (ATTACK_B && inputY == 0 && FORWARD_MOTION) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(240.0f, -240.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(412) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(412);
@@ -455,7 +455,7 @@ void MeilingFighter::DispatchActions()
             }
         }
         if (ATTACK_B) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(240.0f, -240.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(412) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(412);
@@ -485,7 +485,7 @@ void MeilingFighter::DispatchActions()
             }
         }
         if (ATTACK_C && (frameInfo->flags & 0x20) != 0 &&
-            meter > 0 &&
+            spirit > 0 &&
             sequenceInfo->priority <= TARGET_PRIORITY(400) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(400);
             ClearAuxiliaryWords();
@@ -494,7 +494,7 @@ void MeilingFighter::DispatchActions()
     }
     if (y > 0.0f) {
         if (ATTACK_A) {
-            if (FORWARD_MOTION && meter > 0 &&
+            if (FORWARD_MOTION && spirit > 0 &&
                 (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(360.0f, -360.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(411) && ACTION_CHANGE_ALLOWED) {
@@ -502,7 +502,7 @@ void MeilingFighter::DispatchActions()
                 ClearAuxiliaryWords();
                 return;
             }
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(360.0f, -360.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(410) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(410);
@@ -518,14 +518,14 @@ void MeilingFighter::DispatchActions()
         }
         if (ATTACK_B) {
             if ((inputY > 0 || bufferedY > 0) &&
-                meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+                spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(360.0f, -360.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(416) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(416);
                 ClearAuxiliaryWords();
                 return;
             }
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(360.0f, -360.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(416) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(416);
@@ -539,7 +539,7 @@ void MeilingFighter::DispatchActions()
                 return;
             }
         }
-        if (ATTACK_C && meter > 0 &&
+        if (ATTACK_C && spirit > 0 &&
             (frameInfo->flags & 0x20) != 0 &&
             sequenceInfo->priority <= TARGET_PRIORITY(404) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(404);

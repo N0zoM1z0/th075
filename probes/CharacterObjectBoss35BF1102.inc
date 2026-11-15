@@ -3,19 +3,19 @@
 case 0x35B: {
     if (owner->action>0x31 &&
         owner->action<0x96 &&
-        F1024_PHASE(this).stageAt62<0x17) {
+        animationStage<0x17) {
         ClearFrameInfo();
         for (int shot=0;shot<8;++shot)
-            reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
+            reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
                 0x3E4,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),1,1);
         if (reinterpret_cast<signed short&>(owner->fieldEFA)>25) {
             reinterpret_cast<signed short&>(owner->fieldEFA)=0;
-            reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
+            reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
                 0x3E3,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),1,1);
         }
         return;
     }
-    if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
+    if (animationStage==0 && animationFrame==0) {
         ResetTransform(0,0.0f,0);
         scaleX=0.1f;
         scaleY=0.1f;
@@ -23,15 +23,15 @@ case 0x35B: {
         color[1]=0xFF;
         color[2]=0xFF;
         color[3]=0xFF;
-        F1037_MOTION(this).xMotion=22.0f;
+        velocityX=22.0f;
         field0D8=0;
         field0DA=0;
         field080=0;
         field07C=0;
     }
-    F1037_MOTION(this).xMotion=F1037_MOTION(this).xMotion-g_F1093_XStepAt00658048;
-    if (F1037_MOTION(this).xMotion<g_F1051_ScaleCeilingAt0065747C)
-        F1037_MOTION(this).xMotion=1.0f;
+    velocityX=velocityX-g_F1093_XStepAt00658048;
+    if (velocityX<g_F1051_ScaleCeilingAt0065747C)
+        velocityX=1.0f;
     if (field0D8==0) {
         if (scaleX<g_F1051_ScaleCeilingAt0065747C) {
             scaleX=(scaleX)+g_F1057_SpeedScaleAt006590B4;
@@ -55,8 +55,8 @@ case 0x35B: {
         field07C=0;
     if (field07C!=0)
         field080=0;
-    F1037_POSITION(this).xPosition=float(facing)*F1037_MOTION(this).xMotion+F1037_POSITION(this).xPosition;
-    if (field080==0 && F1024_PHASE(this).stageAt62<0x17 &&
+    x=float(facing)*velocityX+x;
+    if (field080==0 && animationStage<0x17 &&
         field0D8>0) {
         ResetSecondaryCounter(0x17);
         return;
@@ -65,7 +65,7 @@ case 0x35B: {
         ClearFrameInfo();
         return;
     }
-    if (F1024_PHASE(this).stageAt62==0x17 && F1024_PHASE(this).frameAt64==0 &&
+    if (animationStage==0x17 && animationFrame==0 &&
         field0DA<1) {
         ResetSecondaryCounter(1);
         ++field0DA;

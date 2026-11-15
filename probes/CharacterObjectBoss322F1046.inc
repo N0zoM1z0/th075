@@ -9,7 +9,7 @@ case 0x322: {
         field07C = 0;
         field080 = 1;
     }
-    if (F1024_PHASE(this).stageAt62 == 0 && F1024_PHASE(this).frameAt64 == 0) {
+    if (animationStage == 0 && animationFrame == 0) {
         ResetTransform(0,0,0);
         field080 = 1;
         field07C = 0;

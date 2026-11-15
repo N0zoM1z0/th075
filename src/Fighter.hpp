@@ -42,6 +42,8 @@ public:
     signed char MatchInputPattern(const char*, signed char, signed char);  // 00455800
     void PackDirectionBits();                                       // 00455B30
     void RecordRoundFields(signed char, short, signed char, signed char, signed char, int, int, int);  // 004574D0
+    bool UpdateFacingFromOpponent();                                // 004550B0
+    short CalculateDamage(Actor* attack);                           // 00455640 damage this fighter's attack deals
     void SetNoticeMode(unsigned char mode);                         // 0045CD50
     void InitializeNotice(short notice);                            // 0045CDC0
     unsigned char ProcessAction();                                  // 0045CE10
@@ -100,15 +102,12 @@ public:
     virtual void NoOpSlot18() = 0;        // slot 18
     virtual void AdvanceAuxiliary() = 0;  // slot 19
 
-    unsigned char unknown0A8[0x0AC - 0x0A8];
-    void* field0AC;                     // +0x0AC
-    unsigned char unknown0B0[0x0C4 - 0x0B0];
     char name[0x104];                   // +0x0C4 character name, set by each constructor
     char tag[0x104];                    // +0x1C8 character tag, set by each constructor
     signed char field2CC;               // +0x2CC
     signed char field2CD;               // +0x2CD
     unsigned char unknown2CE[0x2D0 - 0x2CE];
-    int field2D0;                       // +0x2D0
+    int score;                          // +0x2D0 raised by 100-500 per hit
     unsigned char unknown2D4[0x2D8 - 0x2D4];
     float field2D8;                     // +0x2D8
     float field2DC;                     // +0x2DC
@@ -142,7 +141,7 @@ public:
     short healthLimits[20];             // +0x33E array lengths follow from where the next array starts
     signed char field366;               // +0x366
     unsigned char unknown367[0x368 - 0x367];
-    float field368;                     // +0x368
+    float cardGauge;                    // +0x368 filled by hits, capped at 2000
     float field36C;                     // +0x36C
     signed char field370[20];           // +0x370
     unsigned char field384[20];         // +0x384
@@ -159,16 +158,16 @@ public:
     signed char field3AD;               // +0x3AD
     unsigned char field3AE;             // +0x3AE
     unsigned char unknown3AF[0x3B0 - 0x3AF];
-    short meter;                        // +0x3B0
-    short meterPrevious;                // +0x3B2
-    short meterWait;                    // +0x3B4
-    short meterCooldown;                // +0x3B6
+    short spirit;                       // +0x3B0 specials need it; guarding drains it, at 0 a guard crush
+    short spiritPrevious;               // +0x3B2
+    short spiritWait;                   // +0x3B4
+    short spiritCooldown;               // +0x3B6
     short field3B8;                     // +0x3B8
     short field3BA;                     // +0x3BA
     short field3BC;                     // +0x3BC
     signed char field3BE;               // +0x3BE
     unsigned char unknown3BF[0x3C0 - 0x3BF];
-    float field3C0;                     // +0x3C0
+    float comboRate;                    // +0x3C0 damage scale; each hit multiplies it
     short comboCount;                   // +0x3C4
     short comboDamage;                  // +0x3C6
     short flashGauge;                   // +0x3C8
@@ -180,7 +179,7 @@ public:
     unsigned int field400[12];          // +0x400
     unsigned int field430[12];          // +0x430
     int field460;                       // +0x460
-    unsigned char unknown464[0x465 - 0x464];
+    unsigned char field464;             // +0x464 set while a knockout is being resolved
     unsigned char field465;             // +0x465
     unsigned char unknown466[0x468 - 0x466];
     ActionSequenceSlots sequenceSlots;  // +0x468 action sequences, indexed by action id
@@ -267,7 +266,7 @@ public:
 typedef char FighterLayoutCheck[(
     offsetof(Fighter, opponent) == 0x2E8 &&
     offsetof(Fighter, health) == 0x324 &&
-    offsetof(Fighter, meter) == 0x3B0 &&
+    offsetof(Fighter, spirit) == 0x3B0 &&
     offsetof(Fighter, inputBindings) == 0x494 &&
     offsetof(Fighter, inputX) == 0x4DC &&
     offsetof(Fighter, script) == 0x714 &&

@@ -1,30 +1,26 @@
 #include "BattleCollisionDispatch.hpp"
 #include "GameLeafHelpers.hpp"
-#include "FighterActionTimerPairF1027.hpp"
 
 // Observed scalar views, without complete owner layouts.
 #define FIELD(type, object, offset) (*reinterpret_cast<type *>(reinterpret_cast<unsigned char *>(object) + offset))
 #define RECORD(type, actor, pointer, offset) FIELD(type, FIELD(void *, actor, pointer), offset)
 #define FRAME(type, actor, offset) RECORD(type, actor, 0xAC, offset)
-#define SEQUENCE(actor, frame, offset) (*reinterpret_cast<CollisionRectSequence *>(reinterpret_cast<unsigned char *>(FIELD(void *, actor, frame)) + offset))
 // Native battle collision owner+0x34 is four actual signed Win32 RECT
 // boundary DWORDs; this is only a borrowed window, not a new owner.
 #define F1079_BOUNDS(owner) (*reinterpret_cast<RECT*>(reinterpret_cast<unsigned char*>(owner)+0x34))
 // Actual attack/collision FRAME record bitflags (32-bit at +0x3C/+0x40).
-#define F1079_ATTACK_FLAGS(actor) FRAME(unsigned long, actor, 0x40)
-#define F1079_DEFENSE_FLAGS(actor) FRAME(unsigned long, actor, 0x3C)
-void BattleCollisionDispatch::ResolveAttackHitboxes(CombatActor *attack, CombatActor *attacker, CombatActor *defender)
+void BattleCollisionDispatch::ResolveAttackHitboxes(Actor *attack, Fighter *attacker, Fighter *defender)
 {
-    if (FIELD(int, attack, 0xA8) != 0 || F1027_TIMERS(attack).wordAt80 <= 0) return;
-    if (reinterpret_cast<Fighter *>(defender)->IsGroundedStateWindow()) return;
-    if (!(F1079_ATTACK_FLAGS(attack) & 0x400000)) {
-        if (FIELD(short, defender, 0x84) != 0) return;
-        if (F1079_DEFENSE_FLAGS(defender) & 0x2000) return;
+    if (attack->savedField07C != 0 || attack->field080 <= 0) return;
+    if (defender->IsGroundedStateWindow()) return;
+    if (!(attack->savedFrameInfo->attackFlags & 0x400000)) {
+        if (defender->field084 != 0) return;
+        if (defender->savedFrameInfo->flags & 0x2000) return;
     }
-    if ((F1079_ATTACK_FLAGS(attack) & 0x80) > 0) {
-        if (FIELD(short, defender, 0x86) > 0) return;
-        if (F1079_DEFENSE_FLAGS(defender) & 0x800) return;
-        if (F1079_DEFENSE_FLAGS(defender) & 0x1000) return;
+    if ((attack->savedFrameInfo->attackFlags & 0x80) > 0) {
+        if (defender->field086 > 0) return;
+        if (defender->savedFrameInfo->flags & 0x800) return;
+        if (defender->savedFrameInfo->flags & 0x1000) return;
     }
     RECT bodyRectangle;
     RECT attackBounds[4];
@@ -33,13 +29,13 @@ void BattleCollisionDispatch::ResolveAttackHitboxes(CombatActor *attack, CombatA
     signed char attackSize, defenderCount;
     int i;
     int contacts[4][5];
-    attackSize = static_cast<signed char>(SEQUENCE(attack, 0xAC, 0x64).Size());
-    defenderCount = static_cast<signed char>(SEQUENCE(defender, 0xAC, 0x54).Size());
+    attackSize = static_cast<signed char>(attack->savedFrameInfo->hitBoxes.Size());
+    defenderCount = static_cast<signed char>(defender->savedFrameInfo->hurtBoxes.Size());
     for (i = 0; i < attackSize; ++i)
-        reinterpret_cast<BattleCollision *>(this)->TransformBounds(&attackBounds[i], &SEQUENCE(attack, 0xAC, 0x64).At(i), attack);
+        reinterpret_cast<BattleCollision *>(this)->TransformBounds(&attackBounds[i], &attack->savedFrameInfo->hitBoxes.At(i), attack);
     for (i = 0; i < defenderCount; ++i)
-        reinterpret_cast<BattleCollision *>(this)->TransformBounds(&defendBounds[i], &SEQUENCE(defender, 0xAC, 0x54).At(i), defender);
-    reinterpret_cast<BattleCollision *>(this)->TransformBounds(&bodyRectangle, &FRAME(RECT, defender, 0x44), defender);
+        reinterpret_cast<BattleCollision *>(this)->TransformBounds(&defendBounds[i], &defender->savedFrameInfo->hurtBoxes.At(i), defender);
+    reinterpret_cast<BattleCollision *>(this)->TransformBounds(&bodyRectangle, reinterpret_cast<RECT*>(defender->savedFrameInfo->bodyBox), defender);
     reinterpret_cast<BattleCollision *>(this)->ClearBounds();
     for (i = 0; i < attackSize; ++i) {
         for (int j = 0; j < defenderCount; ++j) {
@@ -51,11 +47,11 @@ void BattleCollisionDispatch::ResolveAttackHitboxes(CombatActor *attack, CombatA
         }
     }
     if (hit) {
-        FIELD(signed char, defender, 0x3BE) = !(F1079_ATTACK_FLAGS(attack) & 0x400000);
+        defender->field3BE = !(attack->savedFrameInfo->attackFlags & 0x400000);
         if (ResolveSpecialHit(attack, attacker, defender)) return;
         if (reinterpret_cast<BattleCombat *>(this)->ApplyConditionalHit(attack, attacker, defender)) return;
         if (ResolveContact(attack, attacker, defender)) return;
-        if (FIELD(signed char, defender, 0x3BE) == 0)
+        if (defender->field3BE == 0)
             if (ResolveGuard(attack, attacker, defender)) return;
         if (reinterpret_cast<BattleCombatResponses *>(this)->ApplyHitResponse(attack, attacker, defender)) return;
         if (reinterpret_cast<BattleCombatResponses *>(this)->ApplyAttackHit(attack, attacker, defender)) return;
@@ -63,23 +59,23 @@ void BattleCollisionDispatch::ResolveAttackHitboxes(CombatActor *attack, CombatA
     }
 }
 
-void BattleCollisionDispatch::ResolveBodyContact(CombatActor *first, CombatActor *second)
+void BattleCollisionDispatch::ResolveBodyContact(Actor *first, Actor *second)
 {
-    if (FIELD(int, first, 0xA8) != 0 || F1027_TIMERS(first).wordAt80 <= 0) return;
-    if (FIELD(int, second, 0xA8) != 0 || F1027_TIMERS(second).wordAt80 <= 0) return;
-    if (RECORD(short, first, 0xB0, 0x10) == 0) return;
-    if (RECORD(short, second, 0xB0, 0x10) == 0) return;
+    if (first->savedField07C != 0 || first->field080 <= 0) return;
+    if (second->savedField07C != 0 || second->field080 <= 0) return;
+    if (first->savedSequenceInfo->targetPriority == 0) return;
+    if (second->savedSequenceInfo->targetPriority == 0) return;
     int i;
     unsigned int hit = 0;
-    signed char countA = static_cast<signed char>(SEQUENCE(first, 0x74, 0x64).Size());
-    signed char countB = static_cast<signed char>(SEQUENCE(second, 0x74, 0x64).Size());
+    signed char countA = static_cast<signed char>(first->frameInfo->hitBoxes.Size());
+    signed char countB = static_cast<signed char>(second->frameInfo->hitBoxes.Size());
     RECT attackBounds[6], defendBounds[6];
     for (i = 0; i < countA; ++i)
-        reinterpret_cast<BattleCollision *>(this)->TransformBounds(&attackBounds[i], &SEQUENCE(first, 0x74, 0x64).At(i), first);
+        reinterpret_cast<BattleCollision *>(this)->TransformBounds(&attackBounds[i], &first->frameInfo->hitBoxes.At(i), first);
     for (i = 0; i < countB; ++i)
-        reinterpret_cast<BattleCollision *>(this)->TransformBounds(&defendBounds[i], &SEQUENCE(second, 0x74, 0x64).At(i), second);
-    reinterpret_cast<BattleCollision *>(this)->TransformBounds(&attackBounds[countA], &RECORD(RECT, first, 0x74, 0x44), first);
-    reinterpret_cast<BattleCollision *>(this)->TransformBounds(&defendBounds[countB], &RECORD(RECT, second, 0x74, 0x44), second);
+        reinterpret_cast<BattleCollision *>(this)->TransformBounds(&defendBounds[i], &second->frameInfo->hitBoxes.At(i), second);
+    reinterpret_cast<BattleCollision *>(this)->TransformBounds(&attackBounds[countA], reinterpret_cast<RECT*>(first->frameInfo->bodyBox), first);
+    reinterpret_cast<BattleCollision *>(this)->TransformBounds(&defendBounds[countB], reinterpret_cast<RECT*>(second->frameInfo->bodyBox), second);
     reinterpret_cast<BattleCollision *>(this)->ClearBounds();
     for (i = 0; i <= countA; ++i) {
         for (int j = 0; j <= countB; ++j) {
@@ -90,36 +86,37 @@ void BattleCollisionDispatch::ResolveBodyContact(CombatActor *first, CombatActor
         }
     }
     if (hit) {
-        FIELD(float, second, 0x8C) = (F1079_BOUNDS(this).left + F1079_BOUNDS(this).right) / 2.0f;
-        FIELD(unsigned long, first, 0x8C) = FIELD(unsigned long, second, 0x8C);
-        FIELD(float, second, 0x90) = (F1079_BOUNDS(this).top + F1079_BOUNDS(this).bottom) / 2.0f;
-        FIELD(unsigned long, first, 0x90) = FIELD(unsigned long, second, 0x90);
-        if (RECORD(short, first, 0x78, 0x12) >= RECORD(short, second, 0x78, 0x10) ||
-            RECORD(short, second, 0x78, 0x12) >= RECORD(short, first, 0x78, 0x10)) {
-            FIELD(int, first, 0x7C) = 5;
-            FIELD(int, second, 0x7C) = 5;
+        second->field08C = (F1079_BOUNDS(this).left + F1079_BOUNDS(this).right) / 2.0f;
+        reinterpret_cast<unsigned long&>(first->field08C) = reinterpret_cast<unsigned long&>(second->field08C);
+        second->field090 = (F1079_BOUNDS(this).top + F1079_BOUNDS(this).bottom) / 2.0f;
+        reinterpret_cast<unsigned long&>(first->field090) = reinterpret_cast<unsigned long&>(second->field090);
+        if (first->sequenceInfo->priority >= second->sequenceInfo->targetPriority ||
+            second->sequenceInfo->priority >= first->sequenceInfo->targetPriority) {
+            first->field07C = 5;
+            second->field07C = 5;
         } else {
-            if (RECORD(short, first, 0x78, 0x10) <= RECORD(short, second, 0x78, 0x10)) {
-                FIELD(int, first, 0x7C) = 4;
-                --F1027_TIMERS(first).wordAt80;
+            if (first->sequenceInfo->targetPriority <= second->sequenceInfo->targetPriority) {
+                first->field07C = 4;
+                --first->field080;
             }
-            if (RECORD(short, first, 0x78, 0x10) >= RECORD(short, second, 0x78, 0x10)) {
-                FIELD(int, second, 0x7C) = 4;
-                --F1027_TIMERS(second).wordAt80;
+            if (first->sequenceInfo->targetPriority >= second->sequenceInfo->targetPriority) {
+                second->field07C = 4;
+                --second->field080;
             }
         }
     }
 }
 
-void CollisionActor::SaveCollisionFields()
+// Positions are copied as raw DWORDs, not as floats.
+void Actor::SaveCollisionFields()
 {
-    FIELD(unsigned long, this, 0xA8) = FIELD(unsigned long, this, 0x7C);
-    FIELD(unsigned long, this, 0xAC) = FIELD(unsigned long, this, 0x74);
-    FIELD(unsigned long, this, 0xB0) = FIELD(unsigned long, this, 0x78);
-    FIELD(unsigned long, this, 0xB8) = FIELD(unsigned long, this, 0x44);
-    FIELD(unsigned long, this, 0xBC) = FIELD(unsigned long, this, 0x48);
-    FIELD(unsigned char, this, 0xC0) = FIELD(unsigned char, this, 0x66);
-    FIELD(short, this, 0xB4) = FIELD(short, this, 0x60);
+    savedField07C = field07C;
+    savedFrameInfo = frameInfo;
+    savedSequenceInfo = sequenceInfo;
+    reinterpret_cast<unsigned long&>(savedX) = reinterpret_cast<unsigned long&>(x);
+    reinterpret_cast<unsigned long&>(savedY) = reinterpret_cast<unsigned long&>(y);
+    savedFacing = facing;
+    savedAction = action;
 }
 
 #undef F1079_BOUNDS

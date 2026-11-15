@@ -93,7 +93,7 @@ void PatchouliFighter::DispatchActions()
         ResetPrimaryCounters(795);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
         field3A0 > 0 &&
@@ -107,7 +107,7 @@ void PatchouliFighter::DispatchActions()
         ResetPrimaryCounters(703);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
         field3A0 > 0 &&
@@ -121,7 +121,7 @@ void PatchouliFighter::DispatchActions()
         ResetPrimaryCounters(704);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
         field3A0 > 0 &&
@@ -135,7 +135,7 @@ void PatchouliFighter::DispatchActions()
         ResetPrimaryCounters(705);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
         field3A0 > 0 &&
@@ -149,7 +149,7 @@ void PatchouliFighter::DispatchActions()
         ResetPrimaryCounters(700);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 13 &&
         field3A0 > 0 &&
         field36C >= 100.0f &&
@@ -162,7 +162,7 @@ void PatchouliFighter::DispatchActions()
         ResetPrimaryCounters(701);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
         field3A0 > 0 &&
@@ -214,7 +214,7 @@ void PatchouliFighter::DispatchActions()
     }
     if (aiCommand == 42 &&
         y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(610) &&
         ACTION_CHANGE_ALLOWED) {
@@ -224,7 +224,7 @@ void PatchouliFighter::DispatchActions()
     }
     if (aiCommand == 41 &&
         y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(609) &&
         ACTION_CHANGE_ALLOWED) {
@@ -234,7 +234,7 @@ void PatchouliFighter::DispatchActions()
     }
     if (aiCommand == 40 &&
         y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(608) &&
         ACTION_CHANGE_ALLOWED) {
@@ -244,7 +244,7 @@ void PatchouliFighter::DispatchActions()
     }
     if (aiCommand == 31 &&
         y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(501) &&
         ACTION_CHANGE_ALLOWED) {
@@ -254,7 +254,7 @@ void PatchouliFighter::DispatchActions()
     }
     if (aiCommand == 30 &&
         y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(500) &&
         ACTION_CHANGE_ALLOWED) {
@@ -264,7 +264,7 @@ void PatchouliFighter::DispatchActions()
     }
     if (aiCommand == 21 &&
         y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(612) &&
         ACTION_CHANGE_ALLOWED) {
@@ -274,7 +274,7 @@ void PatchouliFighter::DispatchActions()
     }
     if (aiCommand == 20 &&
         y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(611) &&
         ACTION_CHANGE_ALLOWED) {
@@ -283,7 +283,7 @@ void PatchouliFighter::DispatchActions()
         return;
     }
     if (aiCommand == 12 &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         y == 0.0f &&
         sequenceInfo->priority <= TARGET_PRIORITY(604) &&
@@ -293,7 +293,7 @@ void PatchouliFighter::DispatchActions()
         return;
     }
     if (aiCommand == 11 &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(601) &&
         ACTION_CHANGE_ALLOWED) {
@@ -306,7 +306,7 @@ void PatchouliFighter::DispatchActions()
         return;
     }
     if (aiCommand == 10 &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(600) &&
         ACTION_CHANGE_ALLOWED) {
@@ -395,7 +395,7 @@ void PatchouliFighter::DispatchActions()
             return;
         }
         if (ATTACK_A) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(320.0f, -320.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(408) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(408);
@@ -419,7 +419,7 @@ void PatchouliFighter::DispatchActions()
         }
         if (ATTACK_B) {
             if ((frameInfo->flags & 0x20) != 0 &&
-                DISTANT_FROM_OPPONENT(240.0f, -240.0f) && meter > 0 &&
+                DISTANT_FROM_OPPONENT(240.0f, -240.0f) && spirit > 0 &&
                 sequenceInfo->priority <= TARGET_PRIORITY(414) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(414);
                 ClearAuxiliaryWords();
@@ -433,7 +433,7 @@ void PatchouliFighter::DispatchActions()
             }
         }
         if (ATTACK_C && (frameInfo->flags & 0x20) != 0 &&
-            meter > 0 &&
+            spirit > 0 &&
             sequenceInfo->priority <= TARGET_PRIORITY(402) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(402);
             ClearAuxiliaryWords();
@@ -448,7 +448,7 @@ void PatchouliFighter::DispatchActions()
             return;
         }
         if (ATTACK_A && inputY == 0 && FORWARD_MOTION) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(480.0f, -480.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(307) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(307);
@@ -462,7 +462,7 @@ void PatchouliFighter::DispatchActions()
                 return;
             }
         }
-        if (ATTACK_A && inputY == 0 && meter > 0 &&
+        if (ATTACK_A && inputY == 0 && spirit > 0 &&
             (frameInfo->flags & 0x20) != 0 &&
             DISTANT_FROM_OPPONENT(320.0f, -320.0f) &&
             sequenceInfo->priority <= TARGET_PRIORITY(406) && ACTION_CHANGE_ALLOWED) {
@@ -484,7 +484,7 @@ void PatchouliFighter::DispatchActions()
             return;
         }
         if (ATTACK_B && inputY == 0 && FORWARD_MOTION) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(480.0f, -480.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(407) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(407);
@@ -500,7 +500,7 @@ void PatchouliFighter::DispatchActions()
         }
         if (ATTACK_B) {
             if ((frameInfo->flags & 0x20) != 0 &&
-                DISTANT_FROM_OPPONENT(400.0f, -400.0f) && meter > 0 &&
+                DISTANT_FROM_OPPONENT(400.0f, -400.0f) && spirit > 0 &&
                 sequenceInfo->priority <= TARGET_PRIORITY(412) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(412);
                 ClearAuxiliaryWords();
@@ -514,14 +514,14 @@ void PatchouliFighter::DispatchActions()
             }
         }
         if (ATTACK_C && inputY == 0 && FORWARD_MOTION &&
-            (frameInfo->flags & 0x20) != 0 && meter > 0 &&
+            (frameInfo->flags & 0x20) != 0 && spirit > 0 &&
             sequenceInfo->priority <= TARGET_PRIORITY(401) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(401);
             ClearAuxiliaryWords();
             return;
         }
         if (ATTACK_C && (frameInfo->flags & 0x20) != 0 &&
-            meter > 0 &&
+            spirit > 0 &&
             sequenceInfo->priority <= TARGET_PRIORITY(400) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(400);
             ClearAuxiliaryWords();
@@ -531,7 +531,7 @@ void PatchouliFighter::DispatchActions()
     if (y > 0.0f) {
         if (ATTACK_A) {
             if ((frameInfo->flags & 0x20) != 0 &&
-                DISTANT_FROM_OPPONENT(540.0f, -540.0f) && meter > 0 &&
+                DISTANT_FROM_OPPONENT(540.0f, -540.0f) && spirit > 0 &&
                 sequenceInfo->priority <= TARGET_PRIORITY(410) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(410);
                 ClearAuxiliaryWords();
@@ -560,14 +560,14 @@ void PatchouliFighter::DispatchActions()
         if (ATTACK_B) {
             if ((frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(460.0f, -460.0f) &&
-                (inputY > 0 || bufferedY > 0) && meter > 0 &&
+                (inputY > 0 || bufferedY > 0) && spirit > 0 &&
                 sequenceInfo->priority <= TARGET_PRIORITY(416) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(416);
                 ClearAuxiliaryWords();
                 return;
             }
             if ((frameInfo->flags & 0x20) != 0 &&
-                DISTANT_FROM_OPPONENT(460.0f, -460.0f) && meter > 0 &&
+                DISTANT_FROM_OPPONENT(460.0f, -460.0f) && spirit > 0 &&
                 sequenceInfo->priority <= TARGET_PRIORITY(417) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(417);
                 ClearAuxiliaryWords();
@@ -581,14 +581,14 @@ void PatchouliFighter::DispatchActions()
             }
         }
         if (ATTACK_C && (frameInfo->flags & 0x20) != 0 && FORWARD_MOTION &&
-            meter > 0 &&
+            spirit > 0 &&
             sequenceInfo->priority <= TARGET_PRIORITY(405) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(405);
             ClearAuxiliaryWords();
             return;
         }
         if (ATTACK_C && (frameInfo->flags & 0x20) != 0 &&
-            meter > 0 &&
+            spirit > 0 &&
             sequenceInfo->priority <= TARGET_PRIORITY(404) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(404);
             ClearAuxiliaryWords();

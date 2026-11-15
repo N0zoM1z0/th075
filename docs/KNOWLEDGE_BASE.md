@@ -16,8 +16,9 @@ record. Consult it only for the full history of a specific checkpoint.
 The PE vtables give the real hierarchy (`.analysis/layout-tools/vtables.json`
 dumps them):
 
-- `Actor` (`src/Actor.hpp`, 0x00–0xA7) is the base of every animated battle
-  object. Slots: 0 `BindAnimation` (fighters 00453D80), 1 `Advance` (pure),
+- `Actor` (`src/Actor.hpp`, 0x00–0xC3) is the base of every animated battle
+  object; its shared helpers (0040FA30–0040FC50 and 00455500) are in
+  `src/Actor.cpp`. Slots: 0 `BindAnimation` (fighters 00453D80), 1 `Advance` (pure),
   2 `Render` (fighters 00453F70), 3 `RenderNode` 00410350, 4
   `RenderMirroredNode` 00410A00. The vtable pointer is at +0.
 - `Fighter : Actor` (`src/Fighter.hpp`, up to 0xF0F, `sizeof` 0xF10).
@@ -80,10 +81,25 @@ a method.
   per-character bytes right after the shared layout (Reimu, Suika and
   Meiling +0xFF4, Remilia +0xFD8, Patchouli and Yuyuko +0xFDC, Sakuya, Alice
   and Youmu +0xFE0, Marisa and Yukari +0xFFC).
-- Classes such as `AnimationState`, `CombatActor` and `StageOpponent5E59C0`
-  are still separate pointer views of `Actor`. They call the same helpers
-  (`ResetPrimaryCounters` 0040FAC0 and its neighbours), which should
-  eventually become `Actor` members.
+- +0xA8–0xC3 is a collision snapshot that `Actor::SaveCollisionFields`
+  (00455500) copies each frame before hits are resolved: +0x7C, both record
+  pointers, the action, x and y (as raw DWORDs) and the facing. Hit tests
+  read the snapshot (`savedFrameInfo` etc.), not the live fields. It ends at
+  +0xC4, where `Fighter::name` and `CharacterObject::sequences` begin.
+- The frame record (`FighterFrameInfo`) holds the sprite origin, texture
+  index and a pose pointer (+0x00–0x0C, read by the renderers), the hit data
+  (+0x10 damage, +0x14 combo-rate factor, +0x1C/+0x1E attacker and defender
+  hit-stop, +0x24 card-gauge gain, +0x36 hit effect, +0x3C defence flags,
+  +0x40 attack flags) and the collision boxes (+0x44 body box, +0x54 hurt
+  boxes, +0x64 hit boxes, each a 16-byte vector of RECTs).
+- Fighter gauges: +0x3B0 `spirit` (specials need it, guarding drains it, at
+  0 the fighter is guard-crushed into state 143), +0x368 `cardGauge` (float,
+  filled by hits, capped at 2000), +0x3C0 `comboRate` (each hit multiplies
+  it by the frame's factor), +0x2D0 `score` (100–500 per hit). Older names
+  called +0x3B0 a meter.
+- In combat functions the attack is an `Actor` (fighter or object) and the
+  attacker and defender are `Fighter`s; `Fighter::CalculateDamage(attack)`
+  (00455640) is the attacker's damage against its opponent.
 
 ## VC7.1 `/Od` code generation
 

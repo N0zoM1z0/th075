@@ -3,16 +3,16 @@
 case 0x357: {
     if (owner->action>0x31 &&
         owner->action<0x96 &&
-        F1024_PHASE(this).stageAt62<0x17) {
+        animationStage<0x17) {
         ResetSecondaryCounter(0x17);
         return;
     }
-    if (owner->action==0x189 && F1024_PHASE(this).stageAt62<0x17) {
-        F1037_POSITION(this).xPosition=F1037_POSITION(PARENT).xPosition+
+    if (owner->action==0x189 && animationStage<0x17) {
+        x=owner->x+
             float(facing*120);
-        F1037_POSITION(this).yPosition=120.0f;
+        y=120.0f;
     }
-    if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
+    if (animationStage==0 && animationFrame==0) {
         ResetTransform(0,0.0f,0);
         scaleX=0.1f;
         scaleY=0.1f;

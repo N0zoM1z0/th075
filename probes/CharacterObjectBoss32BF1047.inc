@@ -1,6 +1,6 @@
 // Original 0050CCC3..0050CD7A: one actual action 0x32B (183B/39 x86).
 case 0x32B: {
-    if (F1024_PHASE(this).stageAt62 == 0 && F1024_PHASE(this).frameAt64 == 0) {
+    if (animationStage == 0 && animationFrame == 0) {
         ResetTransform(0,0,0);
         field080 = 1;
         field07C = 0;

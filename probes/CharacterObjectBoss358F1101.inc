@@ -3,34 +3,34 @@
 case 0x358: {
     if (owner->action>0x31 &&
         owner->action<0x96 &&
-        F1024_PHASE(this).stageAt62<0x17) {
+        animationStage<0x17) {
         ClearFrameInfo();
         for (int shot=0;shot<10;++shot)
-            reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
+            reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
                 0x3E4,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),1,1);
         if (reinterpret_cast<signed short&>(owner->fieldEFA)>25) {
             reinterpret_cast<signed short&>(owner->fieldEFA)=0;
-            reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
+            reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
                 0x3E3,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),1,1);
         }
         return;
     }
-    if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
+    if (animationStage==0 && animationFrame==0) {
         field0D8=0;
-        F1037_MOTION(this).xMotion=8.0f;
+        velocityX=8.0f;
     }
-    if (F1024_PHASE(this).stageAt62==1 && F1024_PHASE(this).frameAt64==0) {
-        reinterpret_cast<F1051Grandparent*>(PARENT)->NativePrepareAt00453D40(2);
-        reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
+    if (animationStage==1 && animationFrame==0) {
+        reinterpret_cast<F1051Grandparent*>(owner)->NativePrepareAt00453D40(2);
+        reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
             0x359,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),
             facing,1);
     }
-    if (F1037_POSITION(this).xPosition>g_F1101_RightAt00659424 ||
-        F1037_POSITION(this).xPosition<g_F1101_LeftAt0065924C) {
+    if (x>g_F1101_RightAt00659424 ||
+        x<g_F1101_LeftAt0065924C) {
         ClearFrameInfo();
         return;
     }
-    F1037_POSITION(this).xPosition=float(facing)*F1037_MOTION(this).xMotion+F1037_POSITION(this).xPosition;
+    x=float(facing)*velocityX+x;
     if (AdvanceNestedFrame()==field070) {
         if (field0D8<5) {
             ++field0D8;

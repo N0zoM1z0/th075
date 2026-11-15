@@ -94,7 +94,7 @@ void YoumuFighter::DispatchActions()
         ResetPrimaryCounters(795);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
         field3A0 > 0 &&
@@ -108,7 +108,7 @@ void YoumuFighter::DispatchActions()
         ResetPrimaryCounters(701);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
         field3A0 > 0 &&
@@ -122,7 +122,7 @@ void YoumuFighter::DispatchActions()
         ResetPrimaryCounters(703);
         return;
     }
-    if (meter > 250 &&
+    if (spirit > 250 &&
         fieldF12 == 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
@@ -138,7 +138,7 @@ void YoumuFighter::DispatchActions()
         ResetPrimaryCounters(705);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
         field3A0 > 0 &&
@@ -152,7 +152,7 @@ void YoumuFighter::DispatchActions()
         ResetPrimaryCounters(700);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
         field3A0 > 0 &&
@@ -166,7 +166,7 @@ void YoumuFighter::DispatchActions()
         ResetPrimaryCounters(702);
         return;
     }
-    if (meter > 250 &&
+    if (spirit > 250 &&
         fieldF12 == 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
@@ -220,7 +220,7 @@ void YoumuFighter::DispatchActions()
     }
     if (aiCommand == 50 &&
         y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(509) &&
         ACTION_CHANGE_ALLOWED) {
@@ -230,7 +230,7 @@ void YoumuFighter::DispatchActions()
     }
     if (aiCommand == 51 &&
         y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(510) &&
         ACTION_CHANGE_ALLOWED) {
@@ -240,7 +240,7 @@ void YoumuFighter::DispatchActions()
     }
     if (aiCommand == 31 &&
         y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(501) &&
         ACTION_CHANGE_ALLOWED) {
@@ -250,7 +250,7 @@ void YoumuFighter::DispatchActions()
     }
     if (aiCommand == 30 &&
         y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(500) &&
         ACTION_CHANGE_ALLOWED) {
@@ -261,7 +261,7 @@ void YoumuFighter::DispatchActions()
     if (aiCommand == 12 &&
         y == 0.0f &&
         (frameInfo->flags & 0x20) != 0 &&
-        meter > 0 &&
+        spirit > 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(600) &&
         ACTION_CHANGE_ALLOWED) {
         PackDirectionBits();
@@ -269,7 +269,7 @@ void YoumuFighter::DispatchActions()
         return;
     }
     if (aiCommand == 21 &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         y == 0.0f &&
         sequenceInfo->priority <= TARGET_PRIORITY(513) &&
@@ -279,7 +279,7 @@ void YoumuFighter::DispatchActions()
         return;
     }
     if (aiCommand == 20 &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         y == 0.0f &&
         sequenceInfo->priority <= TARGET_PRIORITY(502) &&
@@ -364,7 +364,7 @@ void YoumuFighter::DispatchActions()
             ClearAuxiliaryWords();
             return;
         }
-        if (ATTACK_A && meter > 0 &&
+        if (ATTACK_A && spirit > 0 &&
             (frameInfo->flags & 0x20) != 0 &&
             DISTANT_FROM_OPPONENT(320.0f, -320.0f) &&
             sequenceInfo->priority <= TARGET_PRIORITY(408) && ACTION_CHANGE_ALLOWED) {
@@ -385,7 +385,7 @@ void YoumuFighter::DispatchActions()
             ClearAuxiliaryWords();
             return;
         }
-        if (ATTACK_B && fieldF12 == 0 && meter > 0 &&
+        if (ATTACK_B && fieldF12 == 0 && spirit > 0 &&
             (frameInfo->flags & 0x20) != 0 &&
             DISTANT_FROM_OPPONENT(320.0f, -320.0f) &&
             sequenceInfo->priority <= TARGET_PRIORITY(414) && ACTION_CHANGE_ALLOWED) {
@@ -401,7 +401,7 @@ void YoumuFighter::DispatchActions()
             return;
         }
         if (ATTACK_C && (frameInfo->flags & 0x20) != 0 &&
-            meter > 0 &&
+            spirit > 0 &&
             sequenceInfo->priority <= TARGET_PRIORITY(402) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(402);
             ClearAuxiliaryWords();
@@ -415,7 +415,7 @@ void YoumuFighter::DispatchActions()
             ClearAuxiliaryWords();
             return;
         }
-        if (ATTACK_A && inputY == 0 && meter > 0 &&
+        if (ATTACK_A && inputY == 0 && spirit > 0 &&
             (frameInfo->flags & 0x20) != 0 &&
             DISTANT_FROM_OPPONENT(320.0f, -320.0f) &&
             sequenceInfo->priority <= TARGET_PRIORITY(406) && ACTION_CHANGE_ALLOWED) {
@@ -445,7 +445,7 @@ void YoumuFighter::DispatchActions()
             return;
         }
         if (ATTACK_B && inputY == 0 && fieldF12 == 0 &&
-            meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
             DISTANT_FROM_OPPONENT(320.0f, -320.0f) &&
             sequenceInfo->priority <= TARGET_PRIORITY(412) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(412);
@@ -466,7 +466,7 @@ void YoumuFighter::DispatchActions()
             return;
         }
         if (ATTACK_C && (frameInfo->flags & 0x20) != 0 &&
-            meter > 0 &&
+            spirit > 0 &&
             sequenceInfo->priority <= TARGET_PRIORITY(400) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(400);
             ClearAuxiliaryWords();
@@ -475,7 +475,7 @@ void YoumuFighter::DispatchActions()
     }
     if (y > 0.0f) {
         if (ATTACK_A && (frameInfo->flags & 0x20) != 0) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(320.0f, -320.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(410) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(410);
@@ -489,7 +489,7 @@ void YoumuFighter::DispatchActions()
             }
         }
         if (ATTACK_B) {
-            if (fieldF12 == 0 && meter > 0 &&
+            if (fieldF12 == 0 && spirit > 0 &&
                 (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(320.0f, -320.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(416) && ACTION_CHANGE_ALLOWED) {
@@ -505,7 +505,7 @@ void YoumuFighter::DispatchActions()
             }
         }
         if (ATTACK_C && (frameInfo->flags & 0x20) != 0 &&
-            meter > 0 &&
+            spirit > 0 &&
             sequenceInfo->priority <= TARGET_PRIORITY(404) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(404);
             ClearAuxiliaryWords();

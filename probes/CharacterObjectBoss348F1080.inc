@@ -1,7 +1,7 @@
 // F1080 real original Japanese action 0x348: PE 005125A8..00512815,
 // 621 native CODE B / 132 x86 inside ONE still nonexact 81KB game callable.
 case 0x348: {
-    if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
+    if (animationStage==0 && animationFrame==0) {
         ResetTransform(0,0.0f,0);
         field07C=0;
         scaleX=1.0f;
@@ -20,16 +20,16 @@ case 0x348: {
         field0D8=short(field0D8+20);
     if (field0D8>120)
         field0D8=120;
-    F1037_POSITION(this).xPosition=F1037_MOTION(this).xMotion+F1037_POSITION(PARENT).xPosition;
-    F1037_POSITION(this).yPosition=F1037_MOTION(this).yMotion+F1037_POSITION(PARENT).yPosition+g_F1057_YOffsetAt00657888;
+    x=velocityX+owner->x;
+    y=velocityY+owner->y+g_F1057_YOffsetAt00657888;
     rotationZ=(rotationZ)+g_F1080_AngleIncreaseAt00657850;
-    if (F1024_PHASE(this).stageAt62==1) {
+    if (animationStage==1) {
         if (owner->action!=0x2BE ||
             (owner->action==0x2BE &&
              owner->animationStage>8))
             ResetSecondaryCounter(2);
     }
-    if (F1024_PHASE(this).stageAt62>1) {
+    if (animationStage>1) {
         if (color[0]>25)
             color[0]-=25;
         else {

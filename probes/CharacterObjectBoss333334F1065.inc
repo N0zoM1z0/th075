@@ -8,15 +8,15 @@
 case F1065_ACTION: {
     if (owner->action>0x45 &&
         owner->action<0x96 &&
-        F1024_PHASE(this).stageAt62<0x17) {
+        animationStage<0x17) {
         ClearFrameInfo();
         for (int shot=0;shot<8;++shot) {
-            reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
+            reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
                 0x3E4, reinterpret_cast<unsigned int&>(x), reinterpret_cast<unsigned int&>(y), 1, 1);
         }
         if (reinterpret_cast<signed short&>(owner->fieldEFA)>25) {
             reinterpret_cast<signed short&>(owner->fieldEFA)=0;
-            reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
+            reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
                 0x3E3, reinterpret_cast<unsigned int&>(x), reinterpret_cast<unsigned int&>(y), 1, 1);
         }
         return;
@@ -25,7 +25,7 @@ case F1065_ACTION: {
         ClearFrameInfo();
         return;
     }
-    if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
+    if (animationStage==0 && animationFrame==0) {
         ResetTransform(0,0,0);
         scaleX=0.1f;
         scaleY=0.1f;
@@ -64,10 +64,10 @@ case F1065_ACTION: {
         field07C=0;
     if (field07C!=0)
         ++field0D8;
-    F1037_POSITION(this).xPosition=float(facing)*F1037_MOTION(this).xMotion + F1037_POSITION(this).xPosition;
-    F1037_POSITION(this).yPosition=F1037_POSITION(this).yPosition-F1037_MOTION(this).yMotion;
+    x=float(facing)*velocityX + x;
+    y=y-velocityY;
     if (field080==0 &&
-        F1024_PHASE(this).stageAt62<0x17 && field0D8>0) {
+        animationStage<0x17 && field0D8>0) {
         ResetSecondaryCounter(0x17);
         return;
     }
@@ -75,7 +75,7 @@ case F1065_ACTION: {
         ClearFrameInfo();
         return;
     }
-    if (F1024_PHASE(this).stageAt62==0x17 && F1024_PHASE(this).frameAt64==0 &&
+    if (animationStage==0x17 && animationFrame==0 &&
         field0DA<0) {
         ResetSecondaryCounter(1);
         ++field0DA;

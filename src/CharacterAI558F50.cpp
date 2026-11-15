@@ -243,7 +243,7 @@ void RemiliaFighter::ChooseCardAction()
         }
         if (action == 307 &&
             rand() < 10000 &&
-            meter > 250) {
+            spirit > 250) {
             aiCommand = 20;
             return;
         }
@@ -311,7 +311,7 @@ void RemiliaFighter::ChooseCardAction()
         }
         if (action == 301 &&
             rand() < 3000 &&
-            meter > 350) {
+            spirit > 350) {
             inputC = 1;
             return;
         }
@@ -348,7 +348,7 @@ void RemiliaFighter::ChooseCardAction()
         }
         if (action == 308 &&
             rand() < 10000 &&
-            meter > 250) {
+            spirit > 250) {
             aiCommand = 20;
             return;
         }
@@ -377,25 +377,25 @@ void RemiliaFighter::ChooseCardAction()
             return;
         }
     }
-    if (static_cast<float>(rand()) < meter * 0.8f + 0.0f &&
+    if (static_cast<float>(rand()) < spirit * 0.8f + 0.0f &&
         distance.x > 200.0f &&
-        meter > 350) {
+        spirit > 350) {
         inputC = 1;
         if (rand() < 2000) inputX = facing;
         if (rand() < 2000) inputY = 1;
         return;
     }
-    if (static_cast<float>(rand()) < meter * 0.5f + 0.0f &&
+    if (static_cast<float>(rand()) < spirit * 0.5f + 0.0f &&
         distance.x > 560.0f &&
-        meter > 750) {
+        spirit > 750) {
         inputA = 1;
         if (rand() < 4000) inputX = facing;
         if (rand() < 4000) inputY = 1;
         return;
     }
-    if (static_cast<float>(rand()) < meter * 0.5f + 0.0f &&
+    if (static_cast<float>(rand()) < spirit * 0.5f + 0.0f &&
         distance.x > 560.0f &&
-        meter > 750) {
+        spirit > 750) {
         inputB = 1;
         if (rand() < 15000) inputX = facing;
         return;
@@ -536,13 +536,13 @@ void RemiliaFighter::ChooseCardAction()
     }
     if (distance.x > 300.0f &&
         static_cast<float>(rand()) < 200.0f + distance.x &&
-        meter > 350) {
+        spirit > 350) {
         aiCommand = 10;
         return;
     }
     if (distance.x > 300.0f &&
         static_cast<float>(rand()) < distance.x * 0.3f + 100.0f &&
-        meter > 600) {
+        spirit > 600) {
         aiCommand = 11;
         return;
     }

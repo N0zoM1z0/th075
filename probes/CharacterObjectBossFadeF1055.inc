@@ -2,7 +2,7 @@
 // character Object action interiors. Repeated C++ grammar: actual separate
 // switch cases, no whole-game exact credit, native scaling and alpha fade.
 case F1055_CASE: {
-    if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
+    if (animationStage==0 && animationFrame==0) {
         ResetTransform(0,0,0);
         scaleX=1.0f;
         scaleY=1.0f;

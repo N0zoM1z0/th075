@@ -1,5 +1,4 @@
 #include "BattleFrameDependencies.hpp"
-#include "FrameActorMotionPairsF1037.hpp"
 #include "BattleStatusFloatPairF1096.hpp"
 #include "StateOverlayFloatWindowF1106.hpp"
 #define FIELD(type, object, offset) (*reinterpret_cast<type *>(reinterpret_cast<unsigned char *>(object) + offset))
@@ -8,8 +7,8 @@
 #define COLLISION reinterpret_cast<BattleCollision *>(this)
 void BattleFrame::ResolveBodySeparation()
 {
-    float vx1 = F1037_MOTION(PLAYER(0x44)).xMotion;
-    float secondSpeed = F1037_MOTION(PLAYER(0x48)).xMotion;
+    float vx1 = PLAYER(0x44)->velocityX;
+    float secondSpeed = PLAYER(0x48)->velocityX;
     float meanSpeed;
     signed char boundary[2];
     RECT firstBounds, bounds2;
@@ -26,55 +25,55 @@ void BattleFrame::ResolveBodySeparation()
     else if (boundary[1] == 1 && g_LeftBoundaryOwner < 0) g_LeftBoundaryOwner = 1;
     ACTOR(float, 0x44, 0x488) = 0.0f;
     ACTOR(float, 0x48, 0x488) = 0.0f;
-    COLLISION->TransformBounds(&firstBounds, reinterpret_cast<const RECT *>(reinterpret_cast<unsigned char *>(ACTOR(void *, 0x44, 0x74)) + 0x44), reinterpret_cast<CombatActor *>(PLAYER(0x44)));
-    COLLISION->TransformBounds(&bounds2, reinterpret_cast<const RECT *>(reinterpret_cast<unsigned char *>(ACTOR(void *, 0x48, 0x74)) + 0x44), reinterpret_cast<CombatActor *>(PLAYER(0x48)));
+    COLLISION->TransformBounds(&firstBounds, reinterpret_cast<const RECT *>(reinterpret_cast<unsigned char *>(ACTOR(void *, 0x44, 0x74)) + 0x44), reinterpret_cast<Actor *>(PLAYER(0x44)));
+    COLLISION->TransformBounds(&bounds2, reinterpret_cast<const RECT *>(reinterpret_cast<unsigned char *>(ACTOR(void *, 0x48, 0x74)) + 0x44), reinterpret_cast<Actor *>(PLAYER(0x48)));
     if (COLLISION->TestOverlap(&firstBounds, &bounds2)) {
         if (boundary[0] == -1 && g_RightBoundaryOwner == 0) {
-            F1037_POSITION(PLAYER(0x48)).xPosition -= bounds2.right - firstBounds.left - 1;
+            PLAYER(0x48)->x -= bounds2.right - firstBounds.left - 1;
             if (ACTOR(signed char, 0x44, 0x66) * vx1 + ACTOR(signed char, 0x48, 0x66) * secondSpeed > 0.0f && ACTOR(signed char, 0x48, 0x66) * secondSpeed > 0.0f) {
-                ACTOR(float, 0x44, 0x488) = -F1037_MOTION(PLAYER(0x44)).xMotion;
-                ACTOR(float, 0x48, 0x488) = -F1037_MOTION(PLAYER(0x48)).xMotion;
+                ACTOR(float, 0x44, 0x488) = -PLAYER(0x44)->velocityX;
+                ACTOR(float, 0x48, 0x488) = -PLAYER(0x48)->velocityX;
             }
         } else if (boundary[1] == -1 && g_RightBoundaryOwner == 1) {
-            F1037_POSITION(PLAYER(0x44)).xPosition -= firstBounds.right - bounds2.left - 1;
+            PLAYER(0x44)->x -= firstBounds.right - bounds2.left - 1;
             if (ACTOR(signed char, 0x44, 0x66) * vx1 + ACTOR(signed char, 0x48, 0x66) * secondSpeed > 0.0f && ACTOR(signed char, 0x44, 0x66) * vx1 > 0.0f) {
-                ACTOR(float, 0x44, 0x488) = -F1037_MOTION(PLAYER(0x44)).xMotion;
-                ACTOR(float, 0x48, 0x488) = -F1037_MOTION(PLAYER(0x48)).xMotion;
+                ACTOR(float, 0x44, 0x488) = -PLAYER(0x44)->velocityX;
+                ACTOR(float, 0x48, 0x488) = -PLAYER(0x48)->velocityX;
             }
         } else if (boundary[1] == 1 && g_LeftBoundaryOwner == 1) {
-            F1037_POSITION(PLAYER(0x44)).xPosition += bounds2.right - firstBounds.left - 1;
+            PLAYER(0x44)->x += bounds2.right - firstBounds.left - 1;
             if (ACTOR(signed char, 0x48, 0x66) * secondSpeed + ACTOR(signed char, 0x44, 0x66) * vx1 < 0.0f && ACTOR(signed char, 0x44, 0x66) * vx1 < 0.0f) {
-                ACTOR(float, 0x44, 0x488) = -F1037_MOTION(PLAYER(0x44)).xMotion;
-                ACTOR(float, 0x48, 0x488) = -F1037_MOTION(PLAYER(0x48)).xMotion;
+                ACTOR(float, 0x44, 0x488) = -PLAYER(0x44)->velocityX;
+                ACTOR(float, 0x48, 0x488) = -PLAYER(0x48)->velocityX;
             }
         } else if (boundary[0] == 1 && g_LeftBoundaryOwner == 0) {
-            F1037_POSITION(PLAYER(0x48)).xPosition += firstBounds.right - bounds2.left - 1;
+            PLAYER(0x48)->x += firstBounds.right - bounds2.left - 1;
             if (ACTOR(signed char, 0x44, 0x66) * vx1 + ACTOR(signed char, 0x48, 0x66) * secondSpeed < 0.0f && ACTOR(signed char, 0x48, 0x66) * secondSpeed < 0.0f) {
-                ACTOR(float, 0x44, 0x488) = -F1037_MOTION(PLAYER(0x44)).xMotion;
-                ACTOR(float, 0x48, 0x488) = -F1037_MOTION(PLAYER(0x48)).xMotion;
+                ACTOR(float, 0x44, 0x488) = -PLAYER(0x44)->velocityX;
+                ACTOR(float, 0x48, 0x488) = -PLAYER(0x48)->velocityX;
             }
         } else if (firstBounds.left + firstBounds.right > bounds2.left + bounds2.right ||
                    (firstBounds.left + firstBounds.right == bounds2.left + bounds2.right && firstBounds.top + firstBounds.bottom < bounds2.top + bounds2.bottom)) {
-            if (F1037_MOTION(PLAYER(0x44)).xMotion * ACTOR(signed char, 0x44, 0x66) <= F1037_MOTION(PLAYER(0x48)).xMotion * ACTOR(signed char, 0x48, 0x66)) {
+            if (PLAYER(0x44)->velocityX * ACTOR(signed char, 0x44, 0x66) <= PLAYER(0x48)->velocityX * ACTOR(signed char, 0x48, 0x66)) {
                 separationDistance = bounds2.right - firstBounds.left - 1;
-                F1037_POSITION(PLAYER(0x44)).xPosition += separationDistance / 2.0f;
-                F1037_POSITION(PLAYER(0x48)).xPosition -= separationDistance / 2.0f;
+                PLAYER(0x44)->x += separationDistance / 2.0f;
+                PLAYER(0x48)->x -= separationDistance / 2.0f;
                 meanSpeed = (ACTOR(signed char, 0x44, 0x66) * vx1 + ACTOR(signed char, 0x48, 0x66) * secondSpeed) / 2.0f;
                 vx1 = ACTOR(signed char, 0x44, 0x66) * meanSpeed;
                 secondSpeed = ACTOR(signed char, 0x48, 0x66) * meanSpeed;
-                ACTOR(float, 0x44, 0x488) = vx1 - F1037_MOTION(PLAYER(0x44)).xMotion;
-                ACTOR(float, 0x48, 0x488) = secondSpeed - F1037_MOTION(PLAYER(0x48)).xMotion;
+                ACTOR(float, 0x44, 0x488) = vx1 - PLAYER(0x44)->velocityX;
+                ACTOR(float, 0x48, 0x488) = secondSpeed - PLAYER(0x48)->velocityX;
             }
         } else {
-            if (F1037_MOTION(PLAYER(0x48)).xMotion * ACTOR(signed char, 0x48, 0x66) <= F1037_MOTION(PLAYER(0x44)).xMotion * ACTOR(signed char, 0x44, 0x66)) {
+            if (PLAYER(0x48)->velocityX * ACTOR(signed char, 0x48, 0x66) <= PLAYER(0x44)->velocityX * ACTOR(signed char, 0x44, 0x66)) {
                 separationDistance = firstBounds.right - bounds2.left - 1;
-                F1037_POSITION(PLAYER(0x44)).xPosition -= separationDistance / 2.0f;
-                F1037_POSITION(PLAYER(0x48)).xPosition += separationDistance / 2.0f;
+                PLAYER(0x44)->x -= separationDistance / 2.0f;
+                PLAYER(0x48)->x += separationDistance / 2.0f;
                 meanSpeed = (ACTOR(signed char, 0x44, 0x66) * vx1 + ACTOR(signed char, 0x48, 0x66) * secondSpeed) / 2.0f;
                 vx1 = ACTOR(signed char, 0x44, 0x66) * meanSpeed;
                 secondSpeed = ACTOR(signed char, 0x48, 0x66) * meanSpeed;
-                ACTOR(float, 0x44, 0x488) = vx1 - F1037_MOTION(PLAYER(0x44)).xMotion;
-                ACTOR(float, 0x48, 0x488) = secondSpeed - F1037_MOTION(PLAYER(0x48)).xMotion;
+                ACTOR(float, 0x44, 0x488) = vx1 - PLAYER(0x44)->velocityX;
+                ACTOR(float, 0x48, 0x488) = secondSpeed - PLAYER(0x48)->velocityX;
             }
         }
     }

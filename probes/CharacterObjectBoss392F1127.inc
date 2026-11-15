@@ -5,7 +5,7 @@ case 0x392: {
         ClearFrameInfo();
         return;
     }
-    if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
+    if (animationStage==0 && animationFrame==0) {
         ResetTransform(0,0.0f,0);
         scaleX=1.0f;
         scaleY=1.0f;

@@ -3,11 +3,11 @@
 // F652 native complete D2 resource shot with real x87 speed scaling.
 // Not a whole-function source match; this is an internal case.
 case 0xD2: {
-    if (meter<2) {
+    if (spirit<2) {
         SetNativeActionAt40FAC0(9);
         return;
     }
-    meter=meter-F652_DECAY;
+    spirit=spirit-F652_DECAY;
     if (animationStage==0 && animationFrame==0) {
 #if F652_SCALE_BEFORE
         velocityX=(velocityX)*g_BounceScaleAt00657F74;

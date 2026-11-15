@@ -2,7 +2,6 @@
 #include "GameLeafHelpers.hpp"
 #include "BattleCombat.hpp"
 
-#define UPDATE_FACING() reinterpret_cast<CombatActor*>(this)->UpdateFacingFromOpponent()
 
 void Fighter::ForwardBaseAction()
 {
@@ -15,7 +14,7 @@ void Fighter::ForwardBaseAction()
         action != 7 &&
         action != 8) {
         if (inputY < 0) {
-            UPDATE_FACING();
+            UpdateFacingFromOpponent();
             if (inputX == 0) {
                 if (reinterpret_cast<unsigned int&>(inputD) > 0) {
                     if (action != 204)
@@ -46,7 +45,7 @@ void Fighter::ForwardBaseAction()
                     ResetPrimaryCounters(2);
                 }
             } else if (inputX != 0) {
-                UPDATE_FACING();
+                UpdateFacingFromOpponent();
                 if (facing * inputX > 0) {
                     if (reinterpret_cast<unsigned int&>(inputD) > 0) {
                         if (action != 200)
@@ -71,9 +70,7 @@ void Fighter::ForwardBaseAction()
                     ResetPrimaryCounters(0);
                 }
             }
-            UPDATE_FACING();
+            UpdateFacingFromOpponent();
         }
     }
 }
-
-#undef UPDATE_FACING

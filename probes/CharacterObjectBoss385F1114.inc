@@ -9,7 +9,7 @@ case 0x385: {
         ++field080;
         field07C=0;
     }
-    if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
+    if (animationStage==0 && animationFrame==0) {
         ResetTransform(0,0.0f,0);
         field080=1;
         field07C=0;
@@ -22,16 +22,16 @@ case 0x385: {
         color[3]=0xFF;
         rotationZ=15.0f;
     }
-    if (F1024_PHASE(this).stageAt62==2) {
+    if (animationStage==2) {
         scaleX=float(RandomBoundaryAt00455580(0,6))*
             g_F1057_SpeedScaleAt006590B4+g_F1114_RandomOffsetAt00659094;
         scaleY=(*(&scaleX))+g_F1051_ScaleCeilingAt0065747C;
     }
-    if (F1024_PHASE(this).stageAt62>2)
+    if (animationStage>2)
         scaleX=(scaleX)*g_F1114_FadeAt00659240;
     if (AdvanceNestedFrame()==field070)
         ClearFrameInfo();
-    if (F1024_PHASE(this).stageAt62==3 && F1024_PHASE(this).frameAt64==0) {
+    if (animationStage==3 && animationFrame==0) {
         if (field0D8<9) {
             ++field0D8;
             ResetSecondaryCounter(2);

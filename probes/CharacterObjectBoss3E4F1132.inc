@@ -2,7 +2,7 @@
 // original 1335 CODE B/261 x86 inside ONE nonexact 81KB game callable.
 case 0x3E4: {
     facing=1;
-    if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
+    if (animationStage==0 && animationFrame==0) {
         ResetTransform(0,0.0f,0);
         scaleX=1.0f;
         scaleY=1.0f;
@@ -10,48 +10,48 @@ case 0x3E4: {
         color[1]=0xFF;
         color[2]=0xFF;
         color[3]=0xFF;
-        F1037_MOTION(this).xMotion=0.0f;
-        F1037_MOTION(this).yMotion=-1.0f;
+        velocityX=0.0f;
+        velocityY=-1.0f;
         field0D8=short(RandomBoundaryAt00455580(0,360)-180);
         field0DA=15;
     }
-    if (F1024_PHASE(this).stageAt62==0) {
+    if (animationStage==0) {
         --field0DA;
         if (field0DA<3)
             field0DA=3;
         SetPolarVelocity(float(field0D8),
             float(field0DA)*g_F1120_XBrakingAt00659090);
     }
-    if (F1024_PHASE(this).stageAt62==1) {
+    if (animationStage==1) {
         field0D8=short(F1057_FloatAtan2At00483300(
-            (*(&F1037_POSITION(PARENT_GRANDPARENT).yPosition))+g_F1057_YOffsetAt00657888-F1037_POSITION(this).yPosition,
-            F1037_POSITION(PARENT_GRANDPARENT).xPosition-F1037_POSITION(this).xPosition) /
+            (*(&owner->opponent->y))+g_F1057_YOffsetAt00657888-y,
+            owner->opponent->x-x) /
             g_F1057_AngleDivAt00657828);
         SetPolarVelocity(float(field0D8),20.0f);
-        if (F1037_POSITION(this).xPosition-F1037_POSITION(PARENT_GRANDPARENT).xPosition<g_F1115_DistanceAt0065786C &&
-            F1037_POSITION(this).xPosition-F1037_POSITION(PARENT_GRANDPARENT).xPosition>g_F1131_LeftHitAt00659230 &&
-            F1037_POSITION(this).yPosition-F1037_POSITION(PARENT_GRANDPARENT).yPosition<g_F1131_TopHitAt006590A8 &&
-            F1037_POSITION(this).yPosition-F1037_POSITION(PARENT_GRANDPARENT).yPosition>g_F1131_BottomHitAt00658268) {
+        if (x-owner->opponent->x<g_F1115_DistanceAt0065786C &&
+            x-owner->opponent->x>g_F1131_LeftHitAt00659230 &&
+            y-owner->opponent->y<g_F1131_TopHitAt006590A8 &&
+            y-owner->opponent->y>g_F1131_BottomHitAt00658268) {
             ++reinterpret_cast<signed short&>(owner->fieldEFA);
             NativeHitAt0045B860(0x2E);
             ClearFrameInfo();
-            if (F980_GAUGE(PARENT_GRANDPARENT).cooldownAt3B6>0) {
-                if (F980_GAUGE(PARENT_GRANDPARENT).cooldownAt3B6>5)
-                    F980_GAUGE(PARENT_GRANDPARENT).cooldownAt3B6=
-                        short(F980_GAUGE(PARENT_GRANDPARENT).cooldownAt3B6-5);
+            if (owner->opponent->spiritCooldown>0) {
+                if (owner->opponent->spiritCooldown>5)
+                    owner->opponent->spiritCooldown=
+                        short(owner->opponent->spiritCooldown-5);
                 else {
-                    F980_GAUGE(PARENT_GRANDPARENT).cooldownAt3B6=0;
-                    F980_GAUGE(PARENT_GRANDPARENT).meterAt3B0=1000;
+                    owner->opponent->spiritCooldown=0;
+                    owner->opponent->spirit=1000;
                 }
                 return;
             }
             // A positive cooldown returns after either update. Only
-            // a nonpositive cooldown reaches the meter policy.
-            if (F980_GAUGE(PARENT_GRANDPARENT).meterAt3B0<990)
-                F980_GAUGE(PARENT_GRANDPARENT).meterAt3B0=
-                    short(F980_GAUGE(PARENT_GRANDPARENT).meterAt3B0+10);
+            // a nonpositive cooldown reaches the spirit policy.
+            if (owner->opponent->spirit<990)
+                owner->opponent->spirit=
+                    short(owner->opponent->spirit+10);
             else {
-                F980_GAUGE(PARENT_GRANDPARENT).meterAt3B0=1000;
+                owner->opponent->spirit=1000;
                 if (owner->opponent->field39C==0) {
                     if (owner->opponent->field36C<g_F1132_DoubleAt00659228)
                         owner->opponent->field36C=
@@ -63,8 +63,8 @@ case 0x3E4: {
             return;
         }
     }
-    F1037_POSITION(this).xPosition=F1037_POSITION(this).xPosition+F1037_MOTION(this).xMotion;
-    F1037_POSITION(this).yPosition=F1037_POSITION(this).yPosition-F1037_MOTION(this).yMotion;
+    x=x+velocityX;
+    y=y-velocityY;
     if (AdvanceNestedFrame()==field070)
         ResetSecondaryCounter(1);
     return;

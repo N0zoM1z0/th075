@@ -162,7 +162,7 @@ case 802: {
         color[3] = 255;
         SetPolarVelocity(field0C8, field0CC);
     }
-    if (animationStage == 1 && animationFrame == 0 && owner->meter > 0) {
+    if (animationStage == 1 && animationFrame == 0 && owner->spirit > 0) {
         OWNER_VIEW(FighterEffectPoliciesF135)->UpdateGaugeTimer(15);
         OWNER_VIEW(FighterEffectPoliciesF135)->PlaySound(0);
         OWNER_VIEW(FighterEffectPoliciesF135)->SpawnBattleEffect(803, x, y, facing, 1);
@@ -191,7 +191,7 @@ case 802: {
         if (AdvanceNestedFrame() == field070)
             ClearFrameInfo();
         if (animationStage == 2 && animationFrame == 0 && owner->action == 600 &&
-            field0D8 < 3 && owner->meter > 0)
+            field0D8 < 3 && owner->spirit > 0)
             ResetSecondaryCounter(1);
     }
     return;
@@ -2120,7 +2120,7 @@ case 995:
             if (owner->opponent->field366 < 2)
                 owner->opponent->field366++;
             else
-                owner->opponent->field2D0 = owner->opponent->field2D0 + 20000;
+                owner->opponent->score = owner->opponent->score + 20000;
             SELF_VIEW(EffectSound45B860)->PlaySharedSound(46);
             return;
         }
@@ -2166,19 +2166,19 @@ case 996:
             reinterpret_cast<short&>(owner->fieldEFA)++;
             SELF_VIEW(EffectSound45B860)->PlaySharedSound(46);
             ClearFrameInfo();
-            if (owner->opponent->meterCooldown > 0) {
-                if (owner->opponent->meterCooldown > 5)
-                    owner->opponent->meterCooldown = owner->opponent->meterCooldown - 5;
+            if (owner->opponent->spiritCooldown > 0) {
+                if (owner->opponent->spiritCooldown > 5)
+                    owner->opponent->spiritCooldown = owner->opponent->spiritCooldown - 5;
                 else {
-                    owner->opponent->meterCooldown = 0;
-                    owner->opponent->meter = 1000;
+                    owner->opponent->spiritCooldown = 0;
+                    owner->opponent->spirit = 1000;
                 }
                 return;
             } else {
-                if (owner->opponent->meter < 990)
-                    owner->opponent->meter = owner->opponent->meter + 10;
+                if (owner->opponent->spirit < 990)
+                    owner->opponent->spirit = owner->opponent->spirit + 10;
                 else {
-                    owner->opponent->meter = 1000;
+                    owner->opponent->spirit = 1000;
                     if (owner->opponent->field39C == 0) {
                         if (owner->opponent->field36C < 998.9)
                             owner->opponent->field36C = owner->opponent->field36C + 0.5f;

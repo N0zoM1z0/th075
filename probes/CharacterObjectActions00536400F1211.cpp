@@ -4,7 +4,6 @@
 // an executable replacement or an accepted reconstruction unit.
 // See docs/OBJECT_ADVANCE_00536400_HISTORY_AND_CASES_F1211.md.
 #include "ObjectAdvance536400F1211.hpp"
-#include "FrameActorMotionPairsF1037.hpp"
 #include "FighterAnimationPhaseBorrowedF1024.hpp"
 
 #define OWNER_ACTOR reinterpret_cast<OwnerActor536400F1211*>(owner)
@@ -38,12 +37,12 @@ void ObjectActor536400F1211::Advance()
         if (owner->field39D == 1) {
             owner->field09C = 0.5f;
             OWNER_ACTOR->UpdateGaugeAt0046D000(5);
-            static_cast<YoumuFighter*>(owner)->fieldF10 = owner->meter;
+            static_cast<YoumuFighter*>(owner)->fieldF10 = owner->spirit;
         }
         if (owner->field39D == 2) {
             owner->field09C = 0.4f;
             OWNER_ACTOR->UpdateGaugeAt0046D000(7);
-            static_cast<YoumuFighter*>(owner)->fieldF10 = owner->meter;
+            static_cast<YoumuFighter*>(owner)->fieldF10 = owner->spirit;
         }
         if (static_cast<YoumuFighter*>(owner)->fieldF10 <= 0 || owner->field3A0 <= 0) {
             owner->field09C = 1.0f;
@@ -631,35 +630,35 @@ case 0x331: {
     reinterpret_cast<unsigned char&>(facing)=reinterpret_cast<unsigned char&>(owner->facing);
     if (owner->action>0x95 &&
         owner->action<0x9A &&
-        F1024_PHASE(this).stageAt62==0) {
-        F1037_POSITION(this).xPosition=F1037_POSITION(owner).xPosition+
+        animationStage==0) {
+        x=owner->x+
             float(facing*57);
-        F1037_POSITION(this).yPosition=(*(&F1037_POSITION(owner).yPosition))+
+        y=(*(&owner->y))+
             g_F1069_ParentYFirstAt00659138;
     }
     if (owner->action>0x99 &&
         owner->action<0x9E &&
-        F1024_PHASE(this).stageAt62==0) {
-        F1037_POSITION(this).xPosition=F1037_POSITION(owner).xPosition+
+        animationStage==0) {
+        x=owner->x+
             float(facing*57);
-        F1037_POSITION(this).yPosition=(*(&F1037_POSITION(owner).yPosition))+
+        y=(*(&owner->y))+
             g_F1069_ParentYSecondAt00658264;
     }
     if (owner->action==0x9E &&
-        F1024_PHASE(this).stageAt62==0) {
-        F1037_POSITION(this).xPosition=F1037_POSITION(owner).xPosition+
+        animationStage==0) {
+        x=owner->x+
             float(facing*57);
-        F1037_POSITION(this).yPosition=(*(&F1037_POSITION(owner).yPosition))+
+        y=(*(&owner->y))+
             g_F1057_YOffsetAt00657888;
     }
     if ((owner->action<0x96 ||
          owner->action>0x9E) &&
-        F1024_PHASE(this).stageAt62==0) {
+        animationStage==0) {
         ResetSecondaryCounter(1);
         owner->fieldF0A=0;
     }
-    if (F1024_PHASE(this).stageAt62==0 &&
-        F1024_PHASE(this).frameAt64==0 &&
+    if (animationStage==0 &&
+        animationFrame==0 &&
         field0D8==0) {
         ResetTransform(0,0.0f,0);
         scaleX=1.0f;
@@ -672,7 +671,7 @@ case 0x331: {
         field0D8=1;
     }
     rotationZ=(rotationZ)+g_F1057_NudgeAt00657480;
-    if (F1024_PHASE(this).stageAt62>0) {
+    if (animationStage>0) {
         if (color[0]>30)
             color[0]-=30;
         else
@@ -680,7 +679,7 @@ case 0x331: {
     }
     if (AdvanceNestedFrame()==field070)
         ClearFrameInfo();
-    if (F1024_PHASE(this).stageAt62==1 && F1024_PHASE(this).frameAt64==0)
+    if (animationStage==1 && animationFrame==0)
         ResetSecondaryCounter(0);
     return;
 }
@@ -2649,7 +2648,7 @@ case 0x331: {
                     ++owner->opponent->field366;
                 }
                 else {
-                    owner->opponent->field2D0 += 20000;
+                    owner->opponent->score += 20000;
                 }
                 PlaySharedSound(46);
                 return;
@@ -2689,21 +2688,21 @@ case 0x331: {
                 ++reinterpret_cast<short&>(owner->fieldEFA);
                 PlaySharedSound(46);
                 ClearFrameInfo();
-                if (owner->opponent->meterCooldown > 0) {
-                    if (owner->opponent->meterCooldown > 5) {
-                        owner->opponent->meterCooldown -= 5;
+                if (owner->opponent->spiritCooldown > 0) {
+                    if (owner->opponent->spiritCooldown > 5) {
+                        owner->opponent->spiritCooldown -= 5;
                     }
                     else {
-                        owner->opponent->meterCooldown = 0;
-                        owner->opponent->meter = 1000;
+                        owner->opponent->spiritCooldown = 0;
+                        owner->opponent->spirit = 1000;
                     }
                     return;
                 }
-                else if (owner->opponent->meter < 990) {
-                    owner->opponent->meter += 10;
+                else if (owner->opponent->spirit < 990) {
+                    owner->opponent->spirit += 10;
                 }
                 else {
-                    owner->opponent->meter = 1000;
+                    owner->opponent->spirit = 1000;
                     if (owner->opponent->field39C == 0) {
                         if (owner->opponent->field36C < 998.9) {
                             owner->opponent->field36C += 0.5f;
@@ -2757,13 +2756,13 @@ case 0x331: {
 case 0x3E6: {
     if (owner->action!=0xD1 &&
         owner->action!=0xD2 &&
-        F1024_PHASE(this).stageAt62<2) {
+        animationStage<2) {
         ResetSecondaryCounter(2);
         return;
     }
     reinterpret_cast<unsigned int&>(x)=reinterpret_cast<unsigned int&>(owner->x);
-    F1037_POSITION(this).yPosition=(*(&F1037_POSITION(owner).yPosition))+g_F1057_YOffsetAt00657888;
-    if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
+    y=(*(&owner->y))+g_F1057_YOffsetAt00657888;
+    if (animationStage==0 && animationFrame==0) {
         ResetTransform(0,0.0f,0);
         scaleX=1.0f;
         scaleY=1.0f;
@@ -2778,11 +2777,11 @@ case 0x3E6: {
     scaleX=(scaleX)-g_F1057_SpeedBaseAt006590BC;
     scaleY=(scaleY)-g_F1057_SpeedBaseAt006590BC;
     rotationZ=(rotationZ)+g_F1051_ScaleCeilingAt0065747C;
-    if (F1024_PHASE(this).stageAt62==2)
+    if (animationStage==2)
         color[0]=unsigned char(color[0]-12);
     if (AdvanceNestedFrame()==field070)
         ClearFrameInfo();
-    if (F1024_PHASE(this).stageAt62==2 && F1024_PHASE(this).frameAt64==0)
+    if (animationStage==2 && animationFrame==0)
         ResetSecondaryCounter(1);
     return;
 }

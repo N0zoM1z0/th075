@@ -5,7 +5,7 @@ case 0x391: {
         ClearFrameInfo();
         return;
     }
-    if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
+    if (animationStage==0 && animationFrame==0) {
         ResetTransform(0,0.0f,0);
         scaleX=0.0f;
         scaleY=0.0f;
@@ -13,8 +13,8 @@ case 0x391: {
         color[1]=0xFF;
         color[2]=0xFF;
         color[3]=0xFF;
-        F1037_MOTION(this).xMotion=3.0f;
-        F1037_MOTION(this).yMotion=g_F1095_UpperYAt00659890-float(RandomBoundaryAt00455580(0,9));
+        velocityX=3.0f;
+        velocityY=g_F1095_UpperYAt00659890-float(RandomBoundaryAt00455580(0,9));
         field0D8=0;
         field0DA=0;
         field0DC=0;
@@ -29,56 +29,56 @@ case 0x391: {
         scaleY=1.0f;
     }
     if (field0DC==0) {
-        F1037_MOTION(this).yMotion=F1037_MOTION(this).yMotion-g_F1062_ScaleStepAt006583F8;
-        if (F1037_MOTION(this).yMotion<g_F1095_LowerYAt00659894)
+        velocityY=velocityY-g_F1062_ScaleStepAt006583F8;
+        if (velocityY<g_F1095_LowerYAt00659894)
             field0DC=1;
     }
     if (field0DC==1) {
-        F1037_MOTION(this).yMotion=(*(&F1037_MOTION(this).yMotion))+g_F1062_ScaleStepAt006583F8;
-        if (F1037_MOTION(this).yMotion>g_F1095_UpperYAt00659890)
+        velocityY=(*(&velocityY))+g_F1062_ScaleStepAt006583F8;
+        if (velocityY>g_F1095_UpperYAt00659890)
             field0DC=0;
     }
-    if (F1094_TRANSFORM(this).scaleXAt1C==g_F1051_ScaleCeilingAt0065747C &&
+    if (scaleX==g_F1051_ScaleCeilingAt0065747C &&
         g_F1113_DifficultyAt006714D0>1) {
-        if (F1037_MOTION(this).xMotion>g_F1044_GroundAt0065782C &&
-            F1037_POSITION(this).xPosition>g_F1083_YBoundAt00658E80) {
-            F1037_MOTION(this).xMotion=-F1037_MOTION(this).xMotion;
+        if (velocityX>g_F1044_GroundAt0065782C &&
+            x>g_F1083_YBoundAt00658E80) {
+            velocityX=-velocityX;
         }
-        if (F1037_MOTION(this).xMotion<g_F1044_GroundAt0065782C &&
-            F1037_POSITION(this).xPosition<g_F1044_GroundAt0065782C)
-            F1037_MOTION(this).xMotion=-F1037_MOTION(this).xMotion;
+        if (velocityX<g_F1044_GroundAt0065782C &&
+            x<g_F1044_GroundAt0065782C)
+            velocityX=-velocityX;
     }
     if (field0DA==0 &&
-        F1094_TRANSFORM(this).scaleXAt1C==g_F1051_ScaleCeilingAt0065747C) {
-        if (F1037_POSITION(PARENT_GRANDPARENT).yPosition<F1037_POSITION(this).yPosition &&
-            F1115_AbsFloatAt00412D90(F1037_POSITION(this).xPosition-
-                F1037_POSITION(PARENT_GRANDPARENT).xPosition)<g_F1126_XDistanceAt00657850) {
+        scaleX==g_F1051_ScaleCeilingAt0065747C) {
+        if (owner->opponent->y<y &&
+            F1115_AbsFloatAt00412D90(x-
+                owner->opponent->x)<g_F1126_XDistanceAt00657850) {
             field0DA=1;
-            F1037_MOTION(this).xMotion=0.0f;
-            F1037_MOTION(this).yMotion=-30.0f;
+            velocityX=0.0f;
+            velocityY=-30.0f;
             scaleX=0.1f;
             scaleY=1.0f;
         }
     }
     if (field0DA==1) {
-        if (F1037_POSITION(this).yPosition+F1037_MOTION(this).yMotion<=g_F1044_GroundAt0065782C) {
+        if (y+velocityY<=g_F1044_GroundAt0065782C) {
             ClearFrameInfo();
-            reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
+            reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
                 0x392,reinterpret_cast<unsigned int&>(x),0,
                 facing,1);
             return;
         }
     }
-    if (F1037_POSITION(this).xPosition>g_F1126_RightAt00659884 ||
-        F1037_POSITION(this).xPosition<g_F1126_LeftAt006595E4) {
+    if (x>g_F1126_RightAt00659884 ||
+        x<g_F1126_LeftAt006595E4) {
         ClearFrameInfo();
         return;
     }
-    F1037_POSITION(this).yPosition=F1037_POSITION(this).yPosition+F1037_MOTION(this).yMotion;
-    F1037_POSITION(this).xPosition=float(facing)*F1037_MOTION(this).xMotion+F1037_POSITION(this).xPosition;
+    y=y+velocityY;
+    x=float(facing)*velocityX+x;
     if (AdvanceNestedFrame()==field070)
         ClearFrameInfo();
-    if (F1024_PHASE(this).stageAt62==0x1F && F1024_PHASE(this).frameAt64==0) {
+    if (animationStage==0x1F && animationFrame==0) {
         ResetSecondaryCounter(1);
         return;
     }

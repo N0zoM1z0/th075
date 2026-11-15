@@ -1,26 +1,23 @@
-#include "FighterVitalBorrowedF999.hpp"
 #include "FighterRoundOutcomeBytesF992.hpp"
 #include "RoundEndHudF173.hpp"
 #include "CameraUpdate4126C0.hpp"
 #include "ComboHudWindowF1060.hpp"
 
 #define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
-#define FIRST(type, offset) (*reinterpret_cast<type*>(field044 + (offset)))
-#define SECOND(type, offset) (*reinterpret_cast<type*>(field048 + (offset)))
 #define MODE_VALUES reinterpret_cast<int (*)[15]>(reinterpret_cast<unsigned char*>(this) + 0x16710)
 
 void RoundEndF173::EnterRoundEnd()
 {
-    if (F999_VITAL(field044).currentAt324 <= 0 || F999_VITAL(field048).currentAt324 <= 0) {
-        FIRST(short, 0x3A0) = 0;
-        SECOND(short, 0x3A0) = 0;
-        FIRST(unsigned char, 0x39C) = 0;
-        SECOND(unsigned char, 0x39C) = 0;
+    if (field044->health <= 0 || field048->health <= 0) {
+        field044->field3A0 = 0;
+        field048->field3A0 = 0;
+        field044->field39C = 0;
+        field048->field39C = 0;
         field01A = 60;
-        if (F999_VITAL(field044).currentAt324 <= 0) {
-            if (F999_VITAL(field048).currentAt324 <= 0) {
-                FIRST(signed char, 0x39D) = 1;
-                SECOND(signed char, 0x39D) = 1;
+        if (field044->health <= 0) {
+            if (field048->health <= 0) {
+                field044->field39D = 1;
+                field048->field39D = 1;
                 field018 = 2;
                 F992_OUTCOME(field044).continuationAt3CF = 0;
                 F992_OUTCOME(field048).continuationAt3CF = 0;
@@ -28,14 +25,14 @@ void RoundEndF173::EnterRoundEnd()
                 F992_OUTCOME(field048).outcomeAt3CE.unsignedAt3CE = 1;
                 field00C = 300;
             } else {
-                FIRST(signed char, 0x39D)--;
+                field044->field39D--;
                 F992_OUTCOME(field044).continuationAt3CF = 0;
                 F992_OUTCOME(field044).outcomeAt3CE.unsignedAt3CE = 1;
                 F992_OUTCOME(field048).outcomeAt3CE.unsignedAt3CE = 0;
                 field01A = 60;
-                if (FIRST(signed char, 0x39D) != 0) {
-                    F999_VITAL(field044).recoverableAt326 = 10000;
-                    F999_VITAL(field044).currentAt324 = 10000;
+                if (field044->field39D != 0) {
+                    field044->recoverableHealth = 10000;
+                    field044->health = 10000;
                     field018 = 2;
                     field00C = 300;
                 } else {
@@ -44,14 +41,14 @@ void RoundEndF173::EnterRoundEnd()
                     field00C = 180;
                 }
             }
-        } else if (F999_VITAL(field048).currentAt324 <= 0) {
-            SECOND(signed char, 0x39D)--;
+        } else if (field048->health <= 0) {
+            field048->field39D--;
             F992_OUTCOME(field048).continuationAt3CF = 0;
             F992_OUTCOME(field044).outcomeAt3CE.unsignedAt3CE = 0;
             F992_OUTCOME(field048).outcomeAt3CE.unsignedAt3CE = 1;
-            if (SECOND(signed char, 0x39D) != 0) {
-                F999_VITAL(field048).recoverableAt326 = 10000;
-                F999_VITAL(field048).currentAt324 = 10000;
+            if (field048->field39D != 0) {
+                field048->recoverableHealth = 10000;
+                field048->health = 10000;
                 field018 = 2;
                 field00C = 300;
             } else {
@@ -94,6 +91,4 @@ void ComboCounterF173::UpdateComboCounter(short count, short value, short extra)
 }
 
 #undef MODE_VALUES
-#undef SECOND
-#undef FIRST
 #undef FIELD

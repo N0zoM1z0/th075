@@ -1,11 +1,8 @@
-#include "FighterComboBorrowedF1006.hpp"
 #include "ActiveCollisionPairsF1063.hpp"
-#include "FighterActionTimerPairF1027.hpp"
-#include "FighterVitalBorrowedF999.hpp"
 #include <deque>
 #include "BattleActiveCollision.hpp"
 #include "GameLeafHelpers.hpp"
-typedef std::deque<CombatActor *> ActiveActors;
+typedef std::deque<Actor *> ActiveActors;
 typedef char CheckedDequeSize[sizeof(ActiveActors) == 20 ? 1 : -1];
 typedef char CheckedIteratorSize[sizeof(ActiveActors::iterator) == 8 ? 1 : -1];
 #define FIELD_AT(type, object, offset) (*reinterpret_cast<type *>(reinterpret_cast<unsigned char *>(object) + offset))
@@ -18,13 +15,13 @@ void BattleActiveCollision::ResolveActiveCollisions()
     ActiveActors::iterator it, cursor, other, end2;
     int i, j;
     for (i = 0; i < 2; ++i) {
-        reinterpret_cast<CollisionActor *>(ACTOR(i))->SaveCollisionFields();
-        FIELD_AT(short, ACTOR(i), 0x328) = F999_VITAL(ACTOR(i)).currentAt324;
+        ACTOR(i)->SaveCollisionFields();
+        ACTOR(i)->field328 = ACTOR(i)->health;
         for (j = 0; j < 2; ++j) {
             it = ACTIVE(ACTOR(i), j).begin();
             cursor = ACTIVE(ACTOR(i), j).end();
             for (; it != cursor; it++)
-                reinterpret_cast<CollisionActor *>(*it)->SaveCollisionFields();
+                (*it)->SaveCollisionFields();
         }
     }
     for (i = 0; i < 2; ++i) {
@@ -45,7 +42,7 @@ void BattleActiveCollision::ResolveActiveCollisions()
             it = ACTIVE(ACTOR(i), j).begin();
             cursor = ACTIVE(ACTOR(i), j).end();
             for (; it != cursor; it++) {
-                reinterpret_cast<CollisionActor *>(*it)->SaveCollisionFields();
+                (*it)->SaveCollisionFields();
                 reinterpret_cast<BattleCollisionDispatch *>(this)->ResolveAttackHitboxes(*it, ACTOR(i), ACTOR(1-i));
             }
         }
@@ -54,69 +51,68 @@ void BattleActiveCollision::ResolveActiveCollisions()
     reinterpret_cast<BattleCollisionDispatch *>(this)->ResolveAttackHitboxes(ACTOR(0), ACTOR(0), ACTOR(1));
     FIELD_AT(ComboDisplay *, this, 0x58) = DISPLAY(1);
     reinterpret_cast<BattleCollisionDispatch *>(this)->ResolveAttackHitboxes(ACTOR(1), ACTOR(1), ACTOR(0));
-    DISPLAY(0)->UpdateCounter(F1006_COMBO(ACTOR(0)).countAt3C4, F1006_COMBO(ACTOR(0)).damageAt3C6, static_cast<short>(FIELD_AT(float, ACTOR(0), 0x3C0) * 1000.0f));
-    DISPLAY(1)->UpdateCounter(F1006_COMBO(ACTOR(1)).countAt3C4, F1006_COMBO(ACTOR(1)).damageAt3C6, static_cast<short>(FIELD_AT(float, ACTOR(1), 0x3C0) * 1000.0f));
+    DISPLAY(0)->UpdateCounter(ACTOR(0)->comboCount, ACTOR(0)->comboDamage, static_cast<short>(ACTOR(0)->comboRate * 1000.0f));
+    DISPLAY(1)->UpdateCounter(ACTOR(1)->comboCount, ACTOR(1)->comboDamage, static_cast<short>(ACTOR(1)->comboRate * 1000.0f));
 }
 
-#define FRAME(type, actor, offset) FIELD_AT(type, FIELD_AT(void *, actor, 0xAC), offset)
 
 bool Fighter::IsState50To149()
 {
     return action >= 50 && action < 150;
 }
 
-bool BattleCollisionDispatch::ResolveGuard(CombatActor *attack, CombatActor *attacker, CombatActor *defender)
+bool BattleCollisionDispatch::ResolveGuard(Actor *attack, Fighter *attacker, Fighter *defender)
 {
-    if (!(FRAME(unsigned long, attack, 0x40) & 0x40000) &&
-        !reinterpret_cast<Fighter *>(defender)->IsState50To149() &&
-        (FIELD_AT(short, defender, 0x88) != 0 || (FRAME(unsigned long, defender, 0x3C) & 0x4000))) {
-        FIELD_AT(int, attack, 0x7C) = 6;
-        --F1027_TIMERS(attack).wordAt80;
-        FIELD_AT(float, defender, 0x36C) += 0.5f;
-        if (FIELD_AT(float, defender, 0x36C) > 900.0f) FIELD_AT(float, defender, 0x36C) = 900.0f;
-        reinterpret_cast<BattleCombat *>(this)->SpawnMidpointEffect(52, FIELD_AT(unsigned char, attack, 0x66));
+    if (!(attack->savedFrameInfo->attackFlags & 0x40000) &&
+        !defender->IsState50To149() &&
+        (defender->field088 != 0 || (defender->savedFrameInfo->flags & 0x4000))) {
+        attack->field07C = 6;
+        --attack->field080;
+        defender->field36C += 0.5f;
+        if (defender->field36C > 900.0f) defender->field36C = 900.0f;
+        reinterpret_cast<BattleCombat *>(this)->SpawnMidpointEffect(52, attack->facing);
         g_SoundBank->Play(37);
         return true;
     }
     return false;
 }
 
-bool BattleCollisionDispatch::ResolveSpecialHit(CombatActor *attack, CombatActor *attacker, CombatActor *defender)
+bool BattleCollisionDispatch::ResolveSpecialHit(Actor *attack, Fighter *attacker, Fighter *defender)
 {
-    if ((FRAME(unsigned long, attack, 0x40) & 0x2000) && (FRAME(unsigned long, defender, 0x3C) & 0x8000)) {
-        FIELD_AT(int, attack, 0x7C) = 3;
-        --F1027_TIMERS(attack).wordAt80;
-        FIELD_AT(int, defender, 0x7C) = 3;
+    if ((attack->savedFrameInfo->attackFlags & 0x2000) && (defender->savedFrameInfo->flags & 0x8000)) {
+        attack->field07C = 3;
+        --attack->field080;
+        defender->field07C = 3;
         return true;
     }
-    if ((FRAME(unsigned long, attack, 0x40) & 0x4000) && (FRAME(unsigned long, defender, 0x3C) & 0x10000)) {
-        FIELD_AT(int, attack, 0x7C) = 3;
-        --F1027_TIMERS(attack).wordAt80;
-        FIELD_AT(int, defender, 0x7C) = 3;
+    if ((attack->savedFrameInfo->attackFlags & 0x4000) && (defender->savedFrameInfo->flags & 0x10000)) {
+        attack->field07C = 3;
+        --attack->field080;
+        defender->field07C = 3;
         return true;
     }
-    if ((FRAME(unsigned long, attack, 0x40) & 0x8000) && (FRAME(unsigned long, defender, 0x3C) & 0x20000)) {
-        FIELD_AT(int, attack, 0x7C) = 3;
-        --F1027_TIMERS(attack).wordAt80;
-        FIELD_AT(int, defender, 0x7C) = 3;
+    if ((attack->savedFrameInfo->attackFlags & 0x8000) && (defender->savedFrameInfo->flags & 0x20000)) {
+        attack->field07C = 3;
+        --attack->field080;
+        defender->field07C = 3;
         return true;
     }
     return false;
 }
 
-bool BattleCollisionDispatch::ResolveContact(CombatActor *attack, CombatActor *attacker, CombatActor *defender)
+bool BattleCollisionDispatch::ResolveContact(Actor *attack, Fighter *attacker, Fighter *defender)
 {
-    if ((FRAME(unsigned long, attack, 0x40) & 2) && (FRAME(unsigned long, defender, 0x3C) & 0x200)) {
-        FIELD_AT(int, attack, 0x7C) = 3;
-        --F1027_TIMERS(attack).wordAt80;
-        reinterpret_cast<BattleCombat *>(this)->SpawnMidpointEffect(51, FIELD_AT(unsigned char, defender, 0x66));
+    if ((attack->savedFrameInfo->attackFlags & 2) && (defender->savedFrameInfo->flags & 0x200)) {
+        attack->field07C = 3;
+        --attack->field080;
+        reinterpret_cast<BattleCombat *>(this)->SpawnMidpointEffect(51, defender->facing);
         reinterpret_cast<BattleCombatResponses *>(this)->ApplyImpact(attack, attacker, defender);
         return true;
     }
-    if ((FRAME(unsigned long, attack, 0x40) & 4) && (FRAME(unsigned long, defender, 0x3C) & 0x400)) {
-        FIELD_AT(int, attack, 0x7C) = 3;
-        --F1027_TIMERS(attack).wordAt80;
-        reinterpret_cast<BattleCombat *>(this)->SpawnMidpointEffect(51, FIELD_AT(unsigned char, defender, 0x66));
+    if ((attack->savedFrameInfo->attackFlags & 4) && (defender->savedFrameInfo->flags & 0x400)) {
+        attack->field07C = 3;
+        --attack->field080;
+        reinterpret_cast<BattleCombat *>(this)->SpawnMidpointEffect(51, defender->facing);
         reinterpret_cast<BattleCombatResponses *>(this)->ApplyImpact(attack, attacker, defender);
         return true;
     }

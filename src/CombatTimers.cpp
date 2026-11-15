@@ -30,42 +30,42 @@ void Fighter::UpdateCounters()
                 if (reinterpret_cast<int&>(field3A8) < 0) reinterpret_cast<int&>(field3A8) = 0;
             }
         }
-        if (field368 > 0.0f && field39C == 0) {
+        if (cardGauge > 0.0f && field39C == 0) {
             if (field3A0 != 0) {
-                field368 -= 0.4f;
+                cardGauge -= 0.4f;
                 field36C += 0.02f;
             } else {
-                field368 -= 4.0f;
+                cardGauge -= 4.0f;
                 field36C += 0.2f;
             }
         }
         if (field36C < 0.0f) field36C = 0.0f;
         if (field36C > 900.0f) field36C = 900.0f;
-        if (field368 < 0.0f) field368 = 0.0f;
-        if (field368 > 1000.0f) field368 = 1000.0f;
+        if (cardGauge < 0.0f) cardGauge = 0.0f;
+        if (cardGauge > 1000.0f) cardGauge = 1000.0f;
         if (g_CombatMode == 3 && field2CD != 0) field36C = 900.0f;
         if (g_CombatMode != 3 || field2CD == 0) {
             if (field3A0 > 0 && recoverableHealth > health) health += 100;
             if (recoverableHealth < health) health = recoverableHealth;
         }
-        if (meterCooldown > 0) {
-            meterCooldown -= 2;
-            meter = 0;
-            if (meterCooldown <= 0) {
+        if (spiritCooldown > 0) {
+            spiritCooldown -= 2;
+            spirit = 0;
+            if (spiritCooldown <= 0) {
                 reinterpret_cast<CombatTimerActor *>(this)->PlaySharedSound(47);
-                meter = 1000;
+                spirit = 1000;
             }
-        } else if (meter < meterPrevious) {
-            meterWait = 60;
-        } else if (meterWait > 0) {
-            --meterWait;
+        } else if (spirit < spiritPrevious) {
+            spiritWait = 60;
+        } else if (spiritWait > 0) {
+            --spiritWait;
         } else {
             if ((!reinterpret_cast<CombatTimerActor *>(this)->IsState150To199() ||
-                (action != 209 && action != 210)) && meterWait == 0)
-                meter += 3;
-            if (meter > 1000) meter = 1000;
+                (action != 209 && action != 210)) && spiritWait == 0)
+                spirit += 3;
+            if (spirit > 1000) spirit = 1000;
         }
-        meterPrevious = meter;
+        spiritPrevious = spirit;
     }
 updateViewBounds:
     if (health < 0) health = 0;

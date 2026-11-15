@@ -1,9 +1,6 @@
 #include "CharacterObject.hpp"
 #include "PatchouliFighter.hpp"
-#include "FrameActorMotionPairsF1037.hpp"
 #include "FighterAnimationPhaseBorrowedF1024.hpp"
-#include "FighterGaugeBorrowedF980.hpp"
-#include "FighterRenderTransformWindowF1094.hpp"
 // Native original-shaped TH075 CharacterObject whole switch C++ candidate.
 // Original source/owner layout and the entire 81KB machine function remain NONEXACT;
 // all genuine case/default gameplay is sourced from independent original PE evidence.
@@ -96,8 +93,6 @@ extern float __cdecl F1057_FloatAtan2At00483300(float,float);
 
 #define RAW reinterpret_cast<char*>(this)
 #define I16(off) *reinterpret_cast<signed short*>(RAW+(off))
-#define PARENT (*reinterpret_cast<char**>(RAW+0xE4))
-#define PARENT_GRANDPARENT (*reinterpret_cast<char**>(PARENT+0x2E8))
 void FighterSwitchF569_Boss0050A580::Advance() {
     if (*reinterpret_cast<signed short*>(
             *reinterpret_cast<char**>(
@@ -292,7 +287,5 @@ void FighterSwitchF569_Boss0050A580::Advance() {
         default: AdvanceNestedFrame();
     }
 }
-#undef PARENT_GRANDPARENT
-#undef PARENT
 #undef I16
 #undef RAW

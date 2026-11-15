@@ -32,19 +32,24 @@ Done so far:
 - The per-checkpoint research notes and the 115 partial-state verifiers were
   removed. Their findings are summarised in GIANTS.md and the knowledge base;
   the full text is in Git history (`git show 430a06a4:docs/<NOTE>.md`).
+- `Actor` now covers 0x00–0xC3, including the collision snapshot at
+  +0xA8 and the frame-record layout; its helpers live in `src/Actor.cpp`.
+  The combat code uses `Actor`/`Fighter` pointers instead of the old
+  `CombatActor`/`AnimationState` views, and most borrowed-window macros
+  (`F999_VITAL`, `F1037_POSITION`, …) became members.
 
 Next steps:
 
-1. Remaining raw offsets in `src/` (about 1,400 sites in 207 files). The
-   combat code (`BattleCombat*.cpp`, `BattleCollision*.cpp`,
-   `CharacterSpecial5E68C0.cpp`, …) uses pointer views such as
-   `CombatActor`, `AnimationState` and `StageOpponent5E59C0` that are really
-   `Actor` or `Fighter`; merge them, which also renames the helpers at
-   0040FAC0 onward to `Actor` members. +0xAC is an `Actor`-level copy of
-   the frame record taken at a hit (`FighterFrameInfo*`; damage at +0x10,
-   hit-stop shorts at +0x1C/+0x1E). Scene and HUD classes (result, title,
-   battle constructor, menus) need their own layouts from all of their
-   methods' accesses.
+1. Remaining raw offsets in `src/` (about 1,200 sites in 200 files). Most
+   belong to classes that still need a layout: the battle manager (methods
+   spread over `BattleCombat`, `BattleState`, `BattleCollisionDispatch`, …,
+   all one object holding the two fighters at +0x44/+0x48), the battle
+   scene and HUD shells (ten classes repeat `field044`/`field048`), and the
+   result, title and menu scenes. Build each layout from all of its methods'
+   accesses and its constructor. The renderers at 0040FC70, 00410350 and
+   00410A00 are `CharacterObject::Render` and `Actor::RenderNode`/
+   `RenderMirroredNode` (vtable slots 2–4); +4 is a drawing pointer and +8
+   a frame-record pointer, not the `signed char` the layout declares.
 2. Rename the research parent classes to their character classes
    (`FighterSwitchF598_Boss0045DD70::Advance` is `ReimuFighter::Advance`).
 3. The giants' register debt: find the construct behind the anomalous
@@ -57,6 +62,8 @@ Next steps:
 - `.analysis/layout-tools/` (private): `affected.py REV` lists units affected
   by changed sources, headers or manifest entries; `replay_each.sh LIST OUT`
   replays them in one grouped call; `objsig.py A.obj B.obj [renames]` proves a
-  rewrite byte-identical; `rawize.py`, `objectize.py`, `stageize.py` and
-  `fighterize.py` convert raw accessors to members; `anomalies.py` lists
-  anomalous joins in an original.
+  rewrite byte-identical; `rawize.py`, `objectize.py`, `stageize.py`,
+  `fighterize.py`, `combatize.py` and `windows.py` convert raw accessors to
+  members; `relabel.py UNIT...` refreshes manifest symbol names after a
+  rename (offsets, types and targets must be unchanged); `anomalies.py`
+  lists anomalous joins in an original.

@@ -147,7 +147,7 @@ void SakuyaFighter::ChooseCardAction()
         if (action > 399 &&
             action < 500 &&
             distance.x < 300.0f &&
-            meter > 350 &&
+            spirit > 350 &&
             rand() < 500) {
             aiCommand = 20;
             return;
@@ -156,7 +156,7 @@ void SakuyaFighter::ChooseCardAction()
             action < 500 &&
             distance.x > 300.0f &&
             distance.x < 900.0f &&
-            meter > 350 &&
+            spirit > 350 &&
             rand() < 500) {
             aiCommand = 21;
             return;
@@ -185,7 +185,7 @@ void SakuyaFighter::ChooseCardAction()
         }
         if (action == 307 &&
             rand() < 10000 &&
-            meter > 250) {
+            spirit > 250) {
             inputC = 1;
             return;
         }
@@ -239,7 +239,7 @@ void SakuyaFighter::ChooseCardAction()
         }
         if (action == 301 &&
             rand() < 10000 &&
-            meter > 350) {
+            spirit > 350) {
             if (rand() < 2000) aiCommand = 10;
             if (rand() < 2000) aiCommand = 11;
             if (rand() < 2000) aiCommand = 20;
@@ -287,7 +287,7 @@ void SakuyaFighter::ChooseCardAction()
         }
         if (action == 303 &&
             rand() < 10000 &&
-            meter > 350) {
+            spirit > 350) {
             if (rand() < 2000) aiCommand = 10;
             if (rand() < 2000) aiCommand = 11;
             if (rand() < 2000) aiCommand = 20;
@@ -297,7 +297,7 @@ void SakuyaFighter::ChooseCardAction()
         }
         if (action == 308 &&
             rand() < 10000 &&
-            meter > 300) {
+            spirit > 300) {
             aiWaitTimer = ChooseIntegerRange(0, 30);
             aiStep = 1;
             inputC = 1;
@@ -316,7 +316,7 @@ void SakuyaFighter::ChooseCardAction()
         }
         if (action == 307 &&
             rand() < 10000 &&
-            meter > 350) {
+            spirit > 350) {
             if (rand() < 2000) aiCommand = 10;
             if (rand() < 2000) aiCommand = 11;
             if (rand() < 2000) aiCommand = 20;
@@ -336,25 +336,25 @@ void SakuyaFighter::ChooseCardAction()
             return;
         }
     }
-    if (static_cast<float>(rand()) < meter * 0.8f + 0.0f &&
+    if (static_cast<float>(rand()) < spirit * 0.8f + 0.0f &&
         distance.x > 200.0f &&
-        meter > 350) {
+        spirit > 350) {
         inputC = 1;
         if (rand() < 4000) inputX = facing;
         if (rand() < 4000) inputY = 1;
         return;
     }
-    if (static_cast<float>(rand()) < meter * 1.0f + 0.0f &&
+    if (static_cast<float>(rand()) < spirit * 1.0f + 0.0f &&
         distance.x > 560.0f &&
-        meter > 250) {
+        spirit > 250) {
         inputA = 1;
         if (rand() < 4000) inputX = facing;
         if (rand() < 4000) inputY = 1;
         return;
     }
-    if (static_cast<float>(rand()) < meter * 0.4f + 0.0f &&
+    if (static_cast<float>(rand()) < spirit * 0.4f + 0.0f &&
         distance.x > 560.0f &&
-        meter > 350) {
+        spirit > 350) {
         inputB = 1;
         if (rand() < 15000) inputX = facing;
         return;
@@ -510,19 +510,19 @@ void SakuyaFighter::ChooseCardAction()
     }
     if (distance.x > 200.0f &&
         rand() < 300 &&
-        meter > 350) {
+        spirit > 350) {
         aiCommand = 21;
         return;
     }
     if (distance.x < 200.0f &&
         rand() < 300 &&
-        meter > 350) {
+        spirit > 350) {
         aiCommand = 20;
         return;
     }
     if (distance.x > 200.0f &&
         rand() < 200 &&
-        meter > 350) {
+        spirit > 350) {
         aiCommand = 10;
         if (rand() > 25000) aiCommand = 11;
         return;

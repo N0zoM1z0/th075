@@ -116,7 +116,7 @@ void ReimuFighter::DispatchActions()
     }
     if (aiCommand == 13 && field3A0 > 0 &&
         field36C >= 100.0f && field398[1] == 0 &&
-        field39D == 1 && meter > 0 &&
+        field39D == 1 && spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(701) &&
         ACTION_CHANGE_ALLOWED) {
@@ -128,7 +128,7 @@ void ReimuFighter::DispatchActions()
     if (aiCommand == 13 && y == 0.0f &&
         field3A0 > 0 && field36C >= 100.0f &&
         field398[1] == 1 && field39D == 1 &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(703) &&
         ACTION_CHANGE_ALLOWED) {
@@ -136,11 +136,11 @@ void ReimuFighter::DispatchActions()
         ResetPrimaryCounters(703);
         return;
     }
-    if (meter > 0 && fieldF22 == 0 &&
+    if (spirit > 0 && fieldF22 == 0 &&
         aiCommand == 13 && y == 0.0f &&
         field3A0 > 0 && field36C >= 100.0f &&
         field398[1] == 2 && field39D == 1 &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(705) &&
         ACTION_CHANGE_ALLOWED) {
@@ -152,7 +152,7 @@ void ReimuFighter::DispatchActions()
         field36C >= 100.0f && field398[0] == 0 &&
         field39D == 2 &&
         (frameInfo->flags & 0x20) != 0 &&
-        meter > 0 &&
+        spirit > 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(700) &&
         ACTION_CHANGE_ALLOWED) {
         PackDirectionBits();
@@ -164,7 +164,7 @@ void ReimuFighter::DispatchActions()
         field3A0 > 0 && field36C >= 100.0f &&
         field398[0] == 1 && field39D == 2 &&
         (frameInfo->flags & 0x20) != 0 &&
-        meter > 0 &&
+        spirit > 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(702) &&
         ACTION_CHANGE_ALLOWED) {
         PackDirectionBits();
@@ -175,7 +175,7 @@ void ReimuFighter::DispatchActions()
         field3A0 > 0 && field36C >= 100.0f &&
         field398[0] == 2 && field39D == 2 &&
         (frameInfo->flags & 0x20) != 0 &&
-        meter > 0 &&
+        spirit > 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(704) &&
         ACTION_CHANGE_ALLOWED) {
         PackDirectionBits();
@@ -222,7 +222,7 @@ void ReimuFighter::DispatchActions()
     }
     if (aiCommand == 41 &&
         (frameInfo->flags & 0x20) != 0 &&
-        meter > 0 &&
+        spirit > 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(501) &&
         ACTION_CHANGE_ALLOWED) {
         PackDirectionBits();
@@ -232,7 +232,7 @@ void ReimuFighter::DispatchActions()
     }
     if (aiCommand == 40 &&
         (frameInfo->flags & 0x20) != 0 &&
-        meter > 0 &&
+        spirit > 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(500) &&
         ACTION_CHANGE_ALLOWED) {
         PackDirectionBits();
@@ -242,7 +242,7 @@ void ReimuFighter::DispatchActions()
     }
     if (aiCommand == 31 &&
         y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(507) &&
         ACTION_CHANGE_ALLOWED) {
@@ -252,7 +252,7 @@ void ReimuFighter::DispatchActions()
     }
     if (aiCommand == 30 &&
         y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(506) &&
         ACTION_CHANGE_ALLOWED) {
@@ -262,7 +262,7 @@ void ReimuFighter::DispatchActions()
     }
     if (aiCommand == 11 &&
         (frameInfo->flags & 0x20) != 0 &&
-        meter > 0 &&
+        spirit > 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(600) &&
         ACTION_CHANGE_ALLOWED) {
         PackDirectionBits();
@@ -272,7 +272,7 @@ void ReimuFighter::DispatchActions()
     }
     if (aiCommand == 10 &&
         (frameInfo->flags & 0x20) != 0 &&
-        meter > 0 &&
+        spirit > 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(600) &&
         ACTION_CHANGE_ALLOWED) {
         PackDirectionBits();
@@ -282,7 +282,7 @@ void ReimuFighter::DispatchActions()
     }
     if (aiCommand == 21 &&
         (frameInfo->flags & 0x20) != 0 &&
-        meter > 0 &&
+        spirit > 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(601) &&
         ACTION_CHANGE_ALLOWED) {
         PackDirectionBits();
@@ -292,7 +292,7 @@ void ReimuFighter::DispatchActions()
     }
     if (aiCommand == 20 &&
         (frameInfo->flags & 0x20) != 0 &&
-        meter > 0 &&
+        spirit > 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(600) &&
         ACTION_CHANGE_ALLOWED) {
         PackDirectionBits();
@@ -376,7 +376,7 @@ void ReimuFighter::DispatchActions()
             ClearAuxiliaryWords();
             return;
         }
-        if (ATTACK_A && meter > 0 &&
+        if (ATTACK_A && spirit > 0 &&
             (frameInfo->flags & 0x20) != 0 &&
             DISTANT_FROM_OPPONENT(480.0f, -480.0f) &&
             sequenceInfo->priority <= TARGET_PRIORITY(408) && ACTION_CHANGE_ALLOWED) {
@@ -397,7 +397,7 @@ void ReimuFighter::DispatchActions()
             ClearAuxiliaryWords();
             return;
         }
-        if (ATTACK_B && meter > 0 &&
+        if (ATTACK_B && spirit > 0 &&
             (frameInfo->flags & 0x20) != 0 &&
             DISTANT_FROM_OPPONENT(360.0f, -360.0f) &&
             sequenceInfo->priority <= TARGET_PRIORITY(414) && ACTION_CHANGE_ALLOWED) {
@@ -411,7 +411,7 @@ void ReimuFighter::DispatchActions()
             ClearAuxiliaryWords();
             return;
         }
-        if (ATTACK_C && meter > 0 &&
+        if (ATTACK_C && spirit > 0 &&
             (frameInfo->flags & 0x20) != 0 &&
             sequenceInfo->priority <= TARGET_PRIORITY(402) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(402);
@@ -427,7 +427,7 @@ void ReimuFighter::DispatchActions()
             return;
         }
         if (ATTACK_A && inputY == 0 && FORWARD_MOTION) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(320.0f, -320.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(407) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(407);
@@ -442,7 +442,7 @@ void ReimuFighter::DispatchActions()
             }
         }
         if (ATTACK_A) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(320.0f, -320.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(406) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(406);
@@ -465,7 +465,7 @@ void ReimuFighter::DispatchActions()
             return;
         }
         if (ATTACK_B && inputY == 0 && FORWARD_MOTION) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(320.0f, -320.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(412) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(412);
@@ -480,7 +480,7 @@ void ReimuFighter::DispatchActions()
             }
         }
         if (ATTACK_B) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(320.0f, -320.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(412) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(412);
@@ -495,14 +495,14 @@ void ReimuFighter::DispatchActions()
             }
         }
         if (ATTACK_C && inputY == 0 && FORWARD_MOTION &&
-            meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
             sequenceInfo->priority <= TARGET_PRIORITY(401) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(401);
             ClearAuxiliaryWords();
             return;
         }
         if (ATTACK_C && (frameInfo->flags & 0x20) != 0 &&
-            meter > 0 &&
+            spirit > 0 &&
             sequenceInfo->priority <= TARGET_PRIORITY(400) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(400);
             ClearAuxiliaryWords();
@@ -512,14 +512,14 @@ void ReimuFighter::DispatchActions()
     if (y > 0.0f) {
         if (ATTACK_A) {
             if ((inputY > 0 || bufferedY > 0) &&
-                meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+                spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(360.0f, -360.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(411) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(411);
                 ClearAuxiliaryWords();
                 return;
             }
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(480.0f, -480.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(410) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(410);
@@ -535,14 +535,14 @@ void ReimuFighter::DispatchActions()
         }
         if (ATTACK_B) {
             if ((inputY > 0 || bufferedY > 0) &&
-                meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+                spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(360.0f, -360.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(416) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(416);
                 ClearAuxiliaryWords();
                 return;
             }
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(360.0f, -360.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(416) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(416);
@@ -557,13 +557,13 @@ void ReimuFighter::DispatchActions()
             }
         }
         if (ATTACK_C && (inputY > 0 || bufferedY > 0) &&
-            meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
             sequenceInfo->priority <= TARGET_PRIORITY(405) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(405);
             ClearAuxiliaryWords();
             return;
         }
-        if (ATTACK_C && meter > 0 &&
+        if (ATTACK_C && spirit > 0 &&
             (frameInfo->flags & 0x20) != 0 &&
             sequenceInfo->priority <= TARGET_PRIORITY(404) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(404);

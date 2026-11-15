@@ -5,7 +5,7 @@ case 0x393: {
         ClearFrameInfo();
         return;
     }
-    if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
+    if (animationStage==0 && animationFrame==0) {
         ResetTransform(0,0.0f,0);
         field0D8=0;
         field0DA=0;
@@ -22,12 +22,12 @@ case 0x393: {
         if (field0D8<2-int(g_F1113_DifficultyAt006714D0))
             ++field0D8;
         else if (field0DA==0) {
-            reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
+            reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
                 0x391,0.0f,float(RandomBoundaryAt00455580(0,60)+380),1,1);
             field0DA=1;
             field0D8=0;
         } else {
-            reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
+            reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
                 0x391,1280.0f,float(RandomBoundaryAt00455580(0,120)+240),-1,1);
             field0DA=0;
             field0D8=0;

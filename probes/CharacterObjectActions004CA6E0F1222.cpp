@@ -2391,7 +2391,7 @@ void ObjectActor4CA6E0F1222::Advance()
                     ++owner->opponent->field366;
                 }
                 else {
-                    owner->opponent->field2D0 += 20000;
+                    owner->opponent->score += 20000;
                 }
                 PlaySharedSound(46);
                 return;
@@ -2431,21 +2431,21 @@ void ObjectActor4CA6E0F1222::Advance()
                 ++reinterpret_cast<short&>(owner->fieldEFA);
                 PlaySharedSound(46);
                 ClearFrameInfo();
-                if (owner->opponent->meterCooldown > 0) {
-                    if (owner->opponent->meterCooldown > 5) {
-                        owner->opponent->meterCooldown -= 5;
+                if (owner->opponent->spiritCooldown > 0) {
+                    if (owner->opponent->spiritCooldown > 5) {
+                        owner->opponent->spiritCooldown -= 5;
                     }
                     else {
-                        owner->opponent->meterCooldown = 0;
-                        owner->opponent->meter = 1000;
+                        owner->opponent->spiritCooldown = 0;
+                        owner->opponent->spirit = 1000;
                     }
                     return;
                 }
-                else if (owner->opponent->meter < 990) {
-                    owner->opponent->meter += 10;
+                else if (owner->opponent->spirit < 990) {
+                    owner->opponent->spirit += 10;
                 }
                 else {
-                    owner->opponent->meter = 1000;
+                    owner->opponent->spirit = 1000;
                     if (owner->opponent->field39C == 0) {
                         if (owner->opponent->field36C < 998.9) {
                             owner->opponent->field36C += 0.5f;

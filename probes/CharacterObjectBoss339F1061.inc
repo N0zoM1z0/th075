@@ -2,7 +2,7 @@
 // 0050ED70..0050EF5F, original 495 CODE B /101 ordered x86.
 // This is an INNER state inside ONE nonexact original 81KB Boss.
 case 0x339: {
-    if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
+    if (animationStage==0 && animationFrame==0) {
         ResetTransform(0,0,0);
         scaleX=0.5f;
         scaleY=0.5f;
@@ -25,7 +25,7 @@ case 0x339: {
             float(field0D8)*g_F1061_StepAt0065972C *
             int(field0D8<10)) +
         g_F1061_OffsetAt00658354 + scaleY;
-    if (F1024_PHASE(this).stageAt62>1) {
+    if (animationStage>1) {
         if (color[0]>20)
             color[0]-=20;
         else {

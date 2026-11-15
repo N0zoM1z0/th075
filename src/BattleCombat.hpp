@@ -1,15 +1,7 @@
 #ifndef TH075_BATTLE_COMBAT_HPP
 #define TH075_BATTLE_COMBAT_HPP
+#include "Fighter.hpp"
 
-// Partial receiver interfaces only. No original owner extent is established;
-// never instantiate or embed these views.
-class CombatActor {
-public:
-    void ResetPrimaryCounters(short state);
-    void ClearTransformFlag();
-    short CalculateDamage(CombatActor *attack);
-    bool UpdateFacingFromOpponent();
-};
 class ComboDisplay {
 public:
     void UpdateCounter(short count, short damage, short rate);
@@ -23,9 +15,9 @@ public:
 };
 class BattleCombat {
 public:
-    void ApplyHit(CombatActor *attack, CombatActor *attacker, CombatActor *defender);
-    bool ApplyConditionalHit(CombatActor *attack, CombatActor *attacker, CombatActor *defender);
-    void ApplyReactionMode(CombatActor *attack, CombatActor *attacker, CombatActor *defender);
+    void ApplyHit(Actor *attack, Fighter *attacker, Fighter *defender);
+    bool ApplyConditionalHit(Actor *attack, Fighter *attacker, Fighter *defender);
+    void ApplyReactionMode(Actor *attack, Fighter *attacker, Fighter *defender);
     void SpawnMidpointEffect(short effect, unsigned char direction);
 };
 extern signed char g_CombatMode;

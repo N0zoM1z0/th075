@@ -3,9 +3,9 @@
 // This is a case within a still NONEXACT huge fighter Advance(),
 // not an accepted whole original function or ASM byte substitution.
 case 0x9E: {
-    field368=(field368)+g_AnimationDeltaAt0065747C;
-    if ((field368)>g_AnimationMaximumAt006583B4)
-        field368=1000.0f;
+    cardGauge=(cardGauge)+g_AnimationDeltaAt0065747C;
+    if ((cardGauge)>g_AnimationMaximumAt006583B4)
+        cardGauge=1000.0f;
     if (animationStage==0 && animationFrame==0) {
 #if F637_EXTRA_FLAG && F637_EXTRA_BEFORE
         fieldF0A=0;

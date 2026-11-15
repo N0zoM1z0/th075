@@ -2,9 +2,9 @@
 // 502 native original CODE B /96 x86 inside ONE nonexact 81KB Boss.
 case 0x3E5: {
     reinterpret_cast<unsigned int&>(x)=reinterpret_cast<unsigned int&>(owner->x);
-    F1037_POSITION(this).yPosition=0.0f;
+    y=0.0f;
     field08A=1;
-    if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
+    if (animationStage==0 && animationFrame==0) {
         ResetTransform(0,0.0f,0);
         scaleX=3.0f;
         scaleY=3.0f;

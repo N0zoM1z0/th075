@@ -1,4 +1,4 @@
-// Actual Reimu 2BC..2C3 meter/effect policies in the single NONEXACT parent.
+// Actual Reimu 2BC..2C3 spirit/effect policies in the single NONEXACT parent.
 
 #define R1190_ACTION 0x2bc
 #define R1190_AIR 0

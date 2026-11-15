@@ -4,13 +4,13 @@
 case 0x3E6: {
     if (owner->action!=0xD1 &&
         owner->action!=0xD2 &&
-        F1024_PHASE(this).stageAt62<2) {
+        animationStage<2) {
         ResetSecondaryCounter(2);
         return;
     }
     reinterpret_cast<unsigned int&>(x)=reinterpret_cast<unsigned int&>(owner->x);
-    F1037_POSITION(this).yPosition=(*(&F1037_POSITION(PARENT).yPosition))+g_F1057_YOffsetAt00657888;
-    if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
+    y=(*(&owner->y))+g_F1057_YOffsetAt00657888;
+    if (animationStage==0 && animationFrame==0) {
         ResetTransform(0,0.0f,0);
         scaleX=1.0f;
         scaleY=1.0f;
@@ -25,11 +25,11 @@ case 0x3E6: {
     scaleX=(scaleX)-g_F1057_SpeedBaseAt006590BC;
     scaleY=(scaleY)-g_F1057_SpeedBaseAt006590BC;
     rotationZ=(rotationZ)+g_F1051_ScaleCeilingAt0065747C;
-    if (F1024_PHASE(this).stageAt62==2)
+    if (animationStage==2)
         color[0]=unsigned char(color[0]-12);
     if (AdvanceNestedFrame()==field070)
         ClearFrameInfo();
-    if (F1024_PHASE(this).stageAt62==2 && F1024_PHASE(this).frameAt64==0)
+    if (animationStage==2 && animationFrame==0)
         ResetSecondaryCounter(1);
     return;
 }

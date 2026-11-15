@@ -1,14 +1,14 @@
 // F1120: original Japanese 0x38B, PE 0051C3ED..0051C82D:
 // 1,088 original CODE B /226 native x86 in ONE NONEXACT 81KB Boss.
 case 0x38B: {
-    if (F1037_POSITION(this).xPosition>g_F1057_RightBoundAt0065925C ||
-        F1037_POSITION(this).xPosition<g_F1057_LeftBoundAt00659258 ||
-        F1037_POSITION(this).yPosition>g_F1057_UpperBoundAt006583B4 ||
-        F1037_POSITION(this).yPosition<g_F1057_LowerBoundAt00658374) {
+    if (x>g_F1057_RightBoundAt0065925C ||
+        x<g_F1057_LeftBoundAt00659258 ||
+        y>g_F1057_UpperBoundAt006583B4 ||
+        y<g_F1057_LowerBoundAt00658374) {
         ClearFrameInfo();
         return;
     }
-    if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
+    if (animationStage==0 && animationFrame==0) {
         ResetTransform(0,0.0f,0);
         scaleX=0.1f;
         scaleY=0.1f;
@@ -16,7 +16,7 @@ case 0x38B: {
         color[1]=0xFF;
         color[2]=0xFF;
         color[3]=0x80;
-        F1037_MOTION(this).xMotion=20.0f;
+        velocityX=20.0f;
         field0D8=0;
         field0DA=0;
         field0DC=0;
@@ -24,16 +24,16 @@ case 0x38B: {
         field07C=0;
     }
     if (field0DC==0) {
-        F1037_MOTION(this).xMotion=F1037_MOTION(this).xMotion-g_F1120_XBrakingAt00659090;
-        if (F1037_MOTION(this).xMotion<g_F1051_ScaleCeilingAt0065747C) {
-            F1037_MOTION(this).xMotion=1.0f;
+        velocityX=velocityX-g_F1120_XBrakingAt00659090;
+        if (velocityX<g_F1051_ScaleCeilingAt0065747C) {
+            velocityX=1.0f;
             field0DC=1;
         }
     }
     if (field0DC>0 && field0DC<30)
         ++field0DC;
     if (field0DC>29)
-        F1037_MOTION(this).xMotion=(*(&F1037_MOTION(this).xMotion))+g_F1059_ScaleRatioAt00657478;
+        velocityX=(*(&velocityX))+g_F1059_ScaleRatioAt00657478;
     if (field0D8==0) {
         if (scaleX<g_F1051_ScaleCeilingAt0065747C) {
             scaleX=(scaleX)+g_F1057_SpeedScaleAt006590B4;
@@ -60,8 +60,8 @@ case 0x38B: {
             field07C=0;
         }
     }
-    F1037_POSITION(this).xPosition=float(facing)*F1037_MOTION(this).xMotion+F1037_POSITION(this).xPosition;
-    if (field080==0 && F1024_PHASE(this).stageAt62<0x17 && field0D8>0) {
+    x=float(facing)*velocityX+x;
+    if (field080==0 && animationStage<0x17 && field0D8>0) {
         ResetSecondaryCounter(0x17);
         return;
     }
@@ -69,7 +69,7 @@ case 0x38B: {
         ClearFrameInfo();
         return;
     }
-    if (F1024_PHASE(this).stageAt62==0x17 && F1024_PHASE(this).frameAt64==0)
+    if (animationStage==0x17 && animationFrame==0)
         ResetSecondaryCounter(1);
     return;
 }

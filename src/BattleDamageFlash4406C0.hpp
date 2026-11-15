@@ -1,4 +1,5 @@
 #pragma once
+#include "Fighter.hpp"
 #include "BattleHud43E040.hpp"
 
 // Pointer-only AL predicate view; the complete native body returns 0/1 in AL.
@@ -9,6 +10,6 @@ class BattleDamageFlash4406C0 { public: void RenderFlash(); public:
     unsigned char unknown000[0x008 - 0x000];
     void* field008;
     unsigned char unknown00C[0x044 - 0x00C];
-    char* field044;
-    char* field048;
+    Fighter* field044;            // the two fighters
+    Fighter* field048;
 };

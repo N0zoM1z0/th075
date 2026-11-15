@@ -13,7 +13,7 @@ case 0x252: {
                 field3AC=0;
                 reinterpret_cast<signed short&>(scriptCounterF00)=0;
             }
-            if ((meterCooldown)==0 && field07C==1) meter=1000;
+            if ((spiritCooldown)==0 && field07C==1) spirit=1000;
             if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(0);
             if ((animationStage)==4 && (animationFrame)==0) {
                 SpawnMixedAt453C80(0x37,reinterpret_cast<int&>(x),
@@ -33,7 +33,7 @@ case 0x252: {
                 field3AC=0;
                 reinterpret_cast<signed short&>(scriptCounterF00)=0;
             }
-            if ((meterCooldown)==0 && field07C==1) meter=1000;
+            if ((spiritCooldown)==0 && field07C==1) spirit=1000;
             if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(0);
             if ((animationStage)==4 && (animationFrame)==0) {
                 SpawnMixedAt453C80(0x37,reinterpret_cast<int&>(x),

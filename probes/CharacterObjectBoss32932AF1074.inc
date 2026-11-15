@@ -8,24 +8,24 @@ case F1074_CASE: {
         owner->action<0x96) {
         ClearFrameInfo();
         for (int shot=0;shot<10;++shot) {
-            reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
+            reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
                 0x3E4,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),1,1);
         }
         if (reinterpret_cast<signed short&>(owner->fieldEFA)>25) {
             reinterpret_cast<signed short&>(owner->fieldEFA)=0;
-            reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
+            reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
                 0x3E3,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),1,1);
         }
         return;
     }
-    if (F1037_POSITION(this).xPosition>g_F1057_RightBoundAt0065925C ||
-        F1037_POSITION(this).xPosition<g_F1057_LeftBoundAt00659258 ||
-        F1037_POSITION(this).yPosition>g_F1057_UpperBoundAt006583B4 ||
-        F1037_POSITION(this).yPosition<g_F1057_LowerBoundAt00658374) {
+    if (x>g_F1057_RightBoundAt0065925C ||
+        x<g_F1057_LeftBoundAt00659258 ||
+        y>g_F1057_UpperBoundAt006583B4 ||
+        y<g_F1057_LowerBoundAt00658374) {
         ClearFrameInfo();
         return;
     }
-    if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
+    if (animationStage==0 && animationFrame==0) {
         ResetTransform(0,0.0f,0);
         scaleX=1.0f;
         scaleY=1.0f;
@@ -33,7 +33,7 @@ case F1074_CASE: {
         color[1]=0xFF;
         color[2]=0xFF;
         color[3]=0xFF;
-        F1037_MOTION(this).xMotion=F1074_X_SPEED;
+        velocityX=F1074_X_SPEED;
         field0D8=0;
         field080=1;
         field07C=0;
@@ -42,26 +42,26 @@ case F1074_CASE: {
         field07C=0;
         ++field080;
     }
-    F1037_POSITION(this).xPosition=float(facing)*F1037_MOTION(this).xMotion+F1037_POSITION(this).xPosition;
+    x=float(facing)*velocityX+x;
     // The real random-position spawn precedes the status-dependent
     // fourteen-register 16-shot unroll. The second nested random
     // argument is evaluated first under original MSVC7.1 /Od.
-    reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
+    reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
         0x32B,
-        float(RandomBoundaryAt00455580(0,60))+F1037_POSITION(this).xPosition-g_F1068_ActionSpeedAt00657878,
-        float(RandomBoundaryAt00455580(0,60))+F1037_POSITION(this).yPosition-g_F1068_ActionSpeedAt00657878,
+        float(RandomBoundaryAt00455580(0,60))+x-g_F1068_ActionSpeedAt00657878,
+        float(RandomBoundaryAt00455580(0,60))+y-g_F1068_ActionSpeedAt00657878,
         facing,0);
     if (field080==0) {
         ClearFrameInfo();
-        reinterpret_cast<F1051Grandparent*>(PARENT)->InitTrajectoryAt00453E60(5.0f);
-        reinterpret_cast<F1051Grandparent*>(PARENT)->NativePrepareAt00453D40(1);
+        reinterpret_cast<F1051Grandparent*>(owner)->InitTrajectoryAt00453E60(5.0f);
+        reinterpret_cast<F1051Grandparent*>(owner)->NativePrepareAt00453D40(1);
 #define F1074_SPAWN_33A() \
-        reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70( \
+        reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70( \
             0x33A,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y), \
             facing,1)
         // Actual original has one 0x339 plus fifteen 0x33A direct CALLs,
         // not a loop with a synthetic local counter.
-        reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
+        reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
             0x339,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),
             facing,1); F1074_SPAWN_33A();
         F1074_SPAWN_33A(); F1074_SPAWN_33A();

@@ -124,7 +124,7 @@ void YuyukoFighter::DispatchActions()
         }
     }
     if (y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         aiCommand == 13 &&
         field3A0 > 0 &&
         field36C >= 100.0f &&
@@ -139,7 +139,7 @@ void YuyukoFighter::DispatchActions()
         return;
     }
     if (y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         aiCommand == 13 &&
         field3A0 > 0 &&
         field36C >= 100.0f &&
@@ -154,7 +154,7 @@ void YuyukoFighter::DispatchActions()
         return;
     }
     if (y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         aiCommand == 13 &&
         field3A0 > 0 &&
         field36C >= 100.0f &&
@@ -168,7 +168,7 @@ void YuyukoFighter::DispatchActions()
         return;
     }
     if (y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         aiCommand == 13 &&
         field3A0 > 0 &&
         field36C >= 100.0f &&
@@ -183,7 +183,7 @@ void YuyukoFighter::DispatchActions()
         return;
     }
     if (y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         aiCommand == 13 &&
         field3A0 > 0 &&
         field36C >= 100.0f &&
@@ -198,7 +198,7 @@ void YuyukoFighter::DispatchActions()
         return;
     }
     if (y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         aiCommand == 13 &&
         field3A0 > 0 &&
         field36C >= 100.0f &&
@@ -214,7 +214,7 @@ void YuyukoFighter::DispatchActions()
     }
     if (aiCommand == 30 &&
         y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(611) &&
         ACTION_CHANGE_ALLOWED) {
@@ -224,7 +224,7 @@ void YuyukoFighter::DispatchActions()
     }
     if (aiCommand == 31 &&
         y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(612) &&
         ACTION_CHANGE_ALLOWED) {
@@ -234,7 +234,7 @@ void YuyukoFighter::DispatchActions()
     }
     if (aiCommand == 32 &&
         y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(613) &&
         ACTION_CHANGE_ALLOWED) {
@@ -244,7 +244,7 @@ void YuyukoFighter::DispatchActions()
     }
     if (aiCommand == 71 &&
         y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(501) &&
         ACTION_CHANGE_ALLOWED) {
@@ -254,7 +254,7 @@ void YuyukoFighter::DispatchActions()
     }
     if (aiCommand == 70 &&
         y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(500) &&
         ACTION_CHANGE_ALLOWED) {
@@ -263,7 +263,7 @@ void YuyukoFighter::DispatchActions()
         return;
     }
     if (aiCommand == 21 &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(608) &&
         ACTION_CHANGE_ALLOWED) {
@@ -273,7 +273,7 @@ void YuyukoFighter::DispatchActions()
         return;
     }
     if (aiCommand == 20 &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(607) &&
         ACTION_CHANGE_ALLOWED) {
@@ -283,7 +283,7 @@ void YuyukoFighter::DispatchActions()
         return;
     }
     if (aiCommand == 12 &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         y == 0.0f &&
         sequenceInfo->priority <= TARGET_PRIORITY(602) &&
@@ -293,7 +293,7 @@ void YuyukoFighter::DispatchActions()
         return;
     }
     if (aiCommand == 11 &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         y == 0.0f &&
         sequenceInfo->priority <= TARGET_PRIORITY(601) &&
@@ -303,7 +303,7 @@ void YuyukoFighter::DispatchActions()
         return;
     }
     if (aiCommand == 10 &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         y == 0.0f &&
         sequenceInfo->priority <= TARGET_PRIORITY(600) &&
@@ -389,7 +389,7 @@ void YuyukoFighter::DispatchActions()
             return;
         }
         if (ATTACK_A) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(420.0f, -420.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(407) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(407);
@@ -412,7 +412,7 @@ void YuyukoFighter::DispatchActions()
             return;
         }
         if (ATTACK_B) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(360.0f, -360.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(414) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(414);
@@ -426,7 +426,7 @@ void YuyukoFighter::DispatchActions()
                 return;
             }
         }
-        if (ATTACK_C && meter > 0 &&
+        if (ATTACK_C && spirit > 0 &&
             (frameInfo->flags & 0x20) != 0 &&
             sequenceInfo->priority <= TARGET_PRIORITY(402) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(402);
@@ -442,7 +442,7 @@ void YuyukoFighter::DispatchActions()
             return;
         }
         if (ATTACK_A && inputY == 0 && FORWARD_MOTION) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(480.0f, -480.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(406) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(406);
@@ -456,7 +456,7 @@ void YuyukoFighter::DispatchActions()
                 return;
             }
         }
-        if (ATTACK_A && meter > 0 &&
+        if (ATTACK_A && spirit > 0 &&
             (frameInfo->flags & 0x20) != 0 &&
             DISTANT_FROM_OPPONENT(420.0f, -420.0f) &&
             sequenceInfo->priority <= TARGET_PRIORITY(406) && ACTION_CHANGE_ALLOWED) {
@@ -478,7 +478,7 @@ void YuyukoFighter::DispatchActions()
             return;
         }
         if (ATTACK_B && inputY == 0 && FORWARD_MOTION) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(480.0f, -480.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(412) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(412);
@@ -493,7 +493,7 @@ void YuyukoFighter::DispatchActions()
             }
         }
         if (ATTACK_B) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(480.0f, -480.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(412) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(412);
@@ -508,14 +508,14 @@ void YuyukoFighter::DispatchActions()
             }
         }
         if (ATTACK_C && inputY == 0 && FORWARD_MOTION &&
-            (frameInfo->flags & 0x20) != 0 && meter > 0 &&
+            (frameInfo->flags & 0x20) != 0 && spirit > 0 &&
             sequenceInfo->priority <= TARGET_PRIORITY(401) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(401);
             ClearAuxiliaryWords();
             return;
         }
         if (ATTACK_C && (frameInfo->flags & 0x20) != 0 &&
-            meter > 0 &&
+            spirit > 0 &&
             sequenceInfo->priority <= TARGET_PRIORITY(400) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(400);
             ClearAuxiliaryWords();
@@ -524,7 +524,7 @@ void YuyukoFighter::DispatchActions()
     }
     if (y > 0.0f) {
         if (ATTACK_A) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(480.0f, -480.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(410) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(410);
@@ -539,7 +539,7 @@ void YuyukoFighter::DispatchActions()
             }
         }
         if (ATTACK_B) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(480.0f, -480.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(416) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(416);
@@ -554,7 +554,7 @@ void YuyukoFighter::DispatchActions()
             }
         }
         if (ATTACK_C && (frameInfo->flags & 0x20) != 0 &&
-            meter > 100 &&
+            spirit > 100 &&
             sequenceInfo->priority <= TARGET_PRIORITY(404) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(404);
             ClearAuxiliaryWords();

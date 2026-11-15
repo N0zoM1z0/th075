@@ -1,5 +1,3 @@
-#include "FighterVitalBorrowedF999.hpp"
-#include "FighterGaugeBorrowedF980.hpp"
 #include "FighterOpponentGaugeF170.hpp"
 #include "BattleCombat.hpp"
 
@@ -11,33 +9,33 @@ void Fighter::ApplyOpponentGaugeChange(
     short change;
     if (opponent->field2CD != 0 && g_CombatMode == 3) {
         change = static_cast<short>(base * field09C * field0A4 *
-            field0A0 * field3C0 *
+            field0A0 * comboRate *
             (opponent->field328 / 4.0f /
              reinterpret_cast<const short*>(reinterpret_cast<unsigned char*&>(opponent) + 0x33E)
                  [opponent->field39D] + 0.75));
     } else {
         change = static_cast<short>(base * field09C * field0A4 *
-            field0A0 * field3C0 *
+            field0A0 * comboRate *
             (opponent->field328 / 4.0f / 10000.0f + 0.75));
     }
     if (opponent->action < 50 || opponent->action >= 143) {
         comboCount = 0;
         comboDamage = 0;
-        field3C0 = 1.0f;
+        comboRate = 1.0f;
     }
     comboDamage += change;
-    F999_VITAL(reinterpret_cast<unsigned char*&>(opponent)).currentAt324 -= change;
-    if (F999_VITAL(reinterpret_cast<unsigned char*&>(opponent)).currentAt324 <= 0)
-        F999_VITAL(reinterpret_cast<unsigned char*&>(opponent)).currentAt324 = 0;
+    opponent->health -= change;
+    if (opponent->health <= 0)
+        opponent->health = 0;
     if (opponent->field3A0 > 0) {
-        F999_VITAL(reinterpret_cast<unsigned char*&>(opponent)).recoverableAt326 -= change;
+        opponent->recoverableHealth -= change;
     } else {
-        F999_VITAL(reinterpret_cast<unsigned char*&>(opponent)).recoverableAt326 -= change * (0.75 - F980_GAUGE(reinterpret_cast<unsigned char*&>(opponent)).meterAt3B0 * 0.25 / 1000.0);
+        opponent->recoverableHealth -= change * (0.75 - opponent->spirit * 0.25 / 1000.0);
     }
     if (opponent->field3A0 > 0 || opponent->field39C != 0)
-        F999_VITAL(reinterpret_cast<unsigned char*&>(opponent)).recoverableAt326 = F999_VITAL(reinterpret_cast<unsigned char*&>(opponent)).currentAt324;
+        opponent->recoverableHealth = opponent->health;
     comboCount += count;
-    field3C0 = (multiplier / 100.0f) * field3C0;
+    comboRate = (multiplier / 100.0f) * comboRate;
 }
 
 #undef FIELD

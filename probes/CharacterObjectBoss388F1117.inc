@@ -10,7 +10,7 @@ case 0x388: {
         ++field080;
         field07C=0;
     }
-    if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
+    if (animationStage==0 && animationFrame==0) {
         ResetTransform(0,60.0f,0);
         scaleX=1.0f;
         scaleY=1.0f;
@@ -20,37 +20,37 @@ case 0x388: {
         color[3]=0xFF;
         field080=1;
         field07C=0;
-        F1037_MOTION(this).yMotion=22.5f;
-        reinterpret_cast<F1051Grandparent*>(PARENT)->NativePrepareAt00453D40(3);
-        reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
+        velocityY=22.5f;
+        reinterpret_cast<F1051Grandparent*>(owner)->NativePrepareAt00453D40(3);
+        reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
             0x345,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),
             facing,1);
     }
-    F1037_POSITION(this).yPosition=F1037_POSITION(this).yPosition+F1037_MOTION(this).yMotion;
-    if (F1024_PHASE(this).stageAt62==1) {
+    y=y+velocityY;
+    if (animationStage==1) {
         rotationZ=(rotationZ)+g_F1068_ActionSpeedAt00657878;
-        F1037_MOTION(this).yMotion=F1037_MOTION(this).yMotion-g_F1051_ScaleCeilingAt0065747C;
-        if (F1037_MOTION(this).yMotion<g_F1044_GroundAt0065782C)
-            F1037_MOTION(this).yMotion=0.0f;
+        velocityY=velocityY-g_F1051_ScaleCeilingAt0065747C;
+        if (velocityY<g_F1044_GroundAt0065782C)
+            velocityY=0.0f;
     }
-    if (F1024_PHASE(this).stageAt62==2) {
-        F1037_MOTION(this).yMotion=F1037_MOTION(this).yMotion-g_F1059_ScaleRatioAt00657478;
-        F1037_POSITION(this).yPosition=F1037_POSITION(this).yPosition+F1037_MOTION(this).yMotion;
+    if (animationStage==2) {
+        velocityY=velocityY-g_F1059_ScaleRatioAt00657478;
+        y=y+velocityY;
         // Native TEST AH,0x41; JNP jumps straight INTO the hit
         // body. Otherwise, only then consult native status 0/6.
-        if (F1037_POSITION(this).yPosition+F1037_MOTION(this).yMotion<=g_F1044_GroundAt0065782C ||
+        if (y+velocityY<=g_F1044_GroundAt0065782C ||
             (field07C!=0 && field07C!=6)) {
-            F1037_MOTION(this).yMotion=0.0f;
+            velocityY=0.0f;
             ResetSecondaryCounter(3);
-            reinterpret_cast<F1051Grandparent*>(PARENT)->NativePrepareAt00453D40(5);
+            reinterpret_cast<F1051Grandparent*>(owner)->NativePrepareAt00453D40(5);
             return;
         }
     }
     if (AdvanceNestedFrame()==field070)
         ClearFrameInfo();
-    if (F1024_PHASE(this).stageAt62==2 && F1024_PHASE(this).frameAt64==0) {
-        reinterpret_cast<F1051Grandparent*>(PARENT)->NativePrepareAt00453D40(4);
-        F1037_MOTION(this).xMotion=-10.0f;
+    if (animationStage==2 && animationFrame==0) {
+        reinterpret_cast<F1051Grandparent*>(owner)->NativePrepareAt00453D40(4);
+        velocityX=-10.0f;
         rotationZ=0.0f;
     }
     return;

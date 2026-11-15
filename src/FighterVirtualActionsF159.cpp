@@ -120,12 +120,12 @@ void Fighter::ResetRound()
     field3BC = 0;
     field3CA = 0;
     field3CC = 0;
-    reinterpret_cast<unsigned int&>(field368) = 0;
+    reinterpret_cast<unsigned int&>(cardGauge) = 0;
     field36C = 0.0f;
-    meter = 1000;
-    meterPrevious = 1000;
-    meterWait = 0;
-    meterCooldown = 0;
+    spirit = 1000;
+    spiritPrevious = 1000;
+    spiritWait = 0;
+    spiritCooldown = 0;
     field3A0 = 0;
     field39C = 0;
     reinterpret_cast<unsigned char&>(field3AC) = 0;
@@ -133,7 +133,7 @@ void Fighter::ResetRound()
     field3AE = 0;
     comboCount = 0;
     comboDamage = 0;
-    field3C0 = 1.0f;
+    comboRate = 1.0f;
     field080 = 0;
     reinterpret_cast<unsigned int&>(field07C) = 0;
     action = 0;

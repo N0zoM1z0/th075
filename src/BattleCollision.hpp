@@ -7,7 +7,7 @@
 // RECT is a complete SDK coordinate value, not a reconstructed owner layout.
 class BattleCollision {
 public:
-    void TransformBounds(RECT *destination, const RECT *source, CombatActor *actor);
+    void TransformBounds(RECT *destination, const RECT *source, Actor *actor);
     int TestOverlap(const RECT *first, const RECT *second);
     void ClearBounds();
     void IncludePair(const RECT *first, const RECT *second);

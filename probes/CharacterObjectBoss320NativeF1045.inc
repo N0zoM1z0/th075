@@ -10,9 +10,9 @@ case 0x320: {
         ClearFrameInfo();
         return;
     }
-    x = F1037_POSITION(PARENT).xPosition + float(facing * 66);
-    if (F1024_PHASE(this).stageAt62 == 0 &&
-        F1024_PHASE(this).frameAt64 == 0) {
+    x = owner->x + float(facing * 66);
+    if (animationStage == 0 &&
+        animationFrame == 0) {
         ResetTransform(0,0,0);
         field080 = 1;
         field07C = 0;
@@ -25,7 +25,7 @@ case 0x320: {
         color[3] = 0xFF;
         velocityY = 10.0f;
     }
-    F1037_POSITION(this).yPosition = F1037_POSITION(this).yPosition + F1037_MOTION(this).yMotion;
+    y = y + velocityY;
     velocityY = (velocityY) - g_F1044_GravityAt0065747C;
     if (velocityY < g_F1044_GroundAt0065782C)
         velocityY = 0.0f;

@@ -10,7 +10,6 @@ public:
     CharacterObject();                  // 0045B760; object vtables have no destructor slot
     void ClearFrameInfo();              // 0045B830
 
-    unsigned char unknown0A8[0x0C4 - 0x0A8];
     ActionSequenceSlots* sequences;     // +0x0C4 the owner's sequence container (owner + 0x468)
     float field0C8;                     // +0x0C8
     float field0CC;                     // +0x0CC

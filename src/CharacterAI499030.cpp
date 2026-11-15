@@ -161,7 +161,7 @@ void MarisaFighter::ChooseAction()
         if (action > 399 &&
             action < 500 &&
             distance.x < 300.0f &&
-            meter > 500 &&
+            spirit > 500 &&
             rand() < 100) {
             aiCommand = 50;
             return;
@@ -170,7 +170,7 @@ void MarisaFighter::ChooseAction()
             action < 500 &&
             distance.x > 600.0f &&
             distance.x < 900.0f &&
-            meter > 500 &&
+            spirit > 500 &&
             rand() < 100) {
             aiCommand = 51;
             return;
@@ -263,7 +263,7 @@ void MarisaFighter::ChooseAction()
         }
         if (action == 307 &&
             rand() < 10000 &&
-            meter > 250) {
+            spirit > 250) {
             aiWaitTimer = ChooseIntegerRange(0, 45);
             aiStep = 1;
             inputC = 1;
@@ -344,7 +344,7 @@ void MarisaFighter::ChooseAction()
         if (distance.x < 100.0f &&
             action == 303 &&
             rand() < 5000 &&
-            meter > 300) {
+            spirit > 300) {
             aiWaitTimer = ChooseIntegerRange(0, 30);
             aiStep = 1;
             inputC = 1;
@@ -363,7 +363,7 @@ void MarisaFighter::ChooseAction()
         }
         if (action == 308 &&
             rand() < 10000 &&
-            meter > 300) {
+            spirit > 300) {
             aiWaitTimer = ChooseIntegerRange(0, 30);
             aiStep = 1;
             inputC = 1;
@@ -382,7 +382,7 @@ void MarisaFighter::ChooseAction()
         }
         if (action == 308 &&
             rand() < 10000 &&
-            meter > 300) {
+            spirit > 300) {
             aiCommand = 50;
             return;
         }
@@ -392,9 +392,9 @@ void MarisaFighter::ChooseAction()
             return;
         }
     }
-    if (static_cast<float>(rand()) < meter * 0.8f + 0.0f &&
+    if (static_cast<float>(rand()) < spirit * 0.8f + 0.0f &&
         distance.x > 320.0f &&
-        meter > 350) {
+        spirit > 350) {
         aiWaitTimer = ChooseIntegerRange(0, 45);
         aiStep = 1;
         inputC = 1;
@@ -402,16 +402,16 @@ void MarisaFighter::ChooseAction()
         if (rand() < 16000) inputY = 1;
         return;
     }
-    if (static_cast<float>(rand()) < meter * 0.5f + 0.0f &&
+    if (static_cast<float>(rand()) < spirit * 0.5f + 0.0f &&
         distance.x > 560.0f &&
-        meter > 250 &&
+        spirit > 250 &&
         distance.y < 100.0f) {
         inputA = 1;
         return;
     }
-    if (static_cast<float>(rand()) < meter * 0.1f + 0.0f &&
+    if (static_cast<float>(rand()) < spirit * 0.1f + 0.0f &&
         distance.x > 560.0f &&
-        meter > 250) {
+        spirit > 250) {
         inputB = 1;
         if (rand() < 10000) inputX = facing;
         return;
@@ -649,7 +649,7 @@ void MarisaFighter::ChooseAction()
     }
     if (distance.x > 560.0f &&
         rand() < 200 &&
-        meter > 350) {
+        spirit > 350) {
         aiCommand = 51;
         return;
     }

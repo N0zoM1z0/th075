@@ -1,4 +1,5 @@
 #pragma once
+#include "Fighter.hpp"
 
 // Call-only views of existing storage. Complete owner identities and indexed
 // extents remain unknown; never instantiate or embed these partial owners.
@@ -14,8 +15,8 @@ public:
     unsigned char unknown019[0x01A - 0x019];
     short field01A;
     unsigned char unknown01C[0x044 - 0x01C];
-    unsigned char* field044;
-    unsigned char* field048;
+    Fighter* field044;            // the two fighters
+    Fighter* field048;
     unsigned char unknown04C[0x05D - 0x04C];
     unsigned char field05D;
 };

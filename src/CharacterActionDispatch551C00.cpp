@@ -207,7 +207,7 @@ void RemiliaFighter::DispatchActions()
             return;
         }
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
         field3A0 > 0 &&
@@ -221,7 +221,7 @@ void RemiliaFighter::DispatchActions()
         ResetPrimaryCounters(705);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
         field3A0 > 0 &&
@@ -235,7 +235,7 @@ void RemiliaFighter::DispatchActions()
         ResetPrimaryCounters(708);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
         field3A0 > 0 &&
@@ -249,7 +249,7 @@ void RemiliaFighter::DispatchActions()
         ResetPrimaryCounters(709);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
         field3A0 > 0 &&
@@ -263,7 +263,7 @@ void RemiliaFighter::DispatchActions()
         ResetPrimaryCounters(700);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
         field3A0 > 0 &&
@@ -277,7 +277,7 @@ void RemiliaFighter::DispatchActions()
         ResetPrimaryCounters(703);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
         field3A0 > 0 &&
@@ -293,7 +293,7 @@ void RemiliaFighter::DispatchActions()
     }
     if (aiCommand == 31 &&
         y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(511) &&
         ACTION_CHANGE_ALLOWED) {
@@ -303,7 +303,7 @@ void RemiliaFighter::DispatchActions()
     }
     if (aiCommand == 30 &&
         y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(510) &&
         ACTION_CHANGE_ALLOWED) {
@@ -311,7 +311,7 @@ void RemiliaFighter::DispatchActions()
         ResetPrimaryCounters(510);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 12 &&
         y == 0.0f &&
         (frameInfo->flags & 0x20) != 0 &&
@@ -323,7 +323,7 @@ void RemiliaFighter::DispatchActions()
     }
     if (aiCommand == 11 &&
         y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(513) &&
         ACTION_CHANGE_ALLOWED) {
@@ -333,7 +333,7 @@ void RemiliaFighter::DispatchActions()
     }
     if (aiCommand == 10 &&
         y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(512) &&
         ACTION_CHANGE_ALLOWED) {
@@ -343,7 +343,7 @@ void RemiliaFighter::DispatchActions()
     }
     if (aiCommand == 22 &&
         y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(504) &&
         ACTION_CHANGE_ALLOWED) {
@@ -355,7 +355,7 @@ void RemiliaFighter::DispatchActions()
     }
     if (aiCommand == 21 &&
         y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(503) &&
         ACTION_CHANGE_ALLOWED) {
@@ -367,7 +367,7 @@ void RemiliaFighter::DispatchActions()
     }
     if (aiCommand == 20 &&
         y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(502) &&
         ACTION_CHANGE_ALLOWED) {
@@ -448,7 +448,7 @@ void RemiliaFighter::DispatchActions()
     }
     if (y == 0.0f && (inputY > 0 || bufferedY > 0)) {
         if (ATTACK_A) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(300.0f, -300.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(408) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(408);
@@ -463,7 +463,7 @@ void RemiliaFighter::DispatchActions()
             }
         }
         if (ATTACK_B) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(480.0f, -480.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(414) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(414);
@@ -477,7 +477,7 @@ void RemiliaFighter::DispatchActions()
                 return;
             }
         }
-        if (ATTACK_C && meter > 0 &&
+        if (ATTACK_C && spirit > 0 &&
             (frameInfo->flags & 0x20) != 0 &&
             sequenceInfo->priority <= TARGET_PRIORITY(402) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(402);
@@ -487,7 +487,7 @@ void RemiliaFighter::DispatchActions()
     }
     if (y == 0.0f && inputY == 0) {
         if (ATTACK_A && inputY == 0 && FORWARD_MOTION) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(320.0f, -320.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(407) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(407);
@@ -502,7 +502,7 @@ void RemiliaFighter::DispatchActions()
             }
         }
         if (ATTACK_A) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(320.0f, -320.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(406) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(406);
@@ -518,7 +518,7 @@ void RemiliaFighter::DispatchActions()
             }
         }
         if (ATTACK_B && inputY == 0 && FORWARD_MOTION) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(320.0f, -320.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(412) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(412);
@@ -533,7 +533,7 @@ void RemiliaFighter::DispatchActions()
             }
         }
         if (ATTACK_B) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(320.0f, -320.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(412) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(412);
@@ -548,13 +548,13 @@ void RemiliaFighter::DispatchActions()
             }
         }
         if (ATTACK_C && inputY == 0 && FORWARD_MOTION &&
-            meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
             sequenceInfo->priority <= TARGET_PRIORITY(401) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(401);
             ClearAuxiliaryWords();
             return;
         }
-        if (ATTACK_C && meter > 0 &&
+        if (ATTACK_C && spirit > 0 &&
             (frameInfo->flags & 0x20) != 0 &&
             sequenceInfo->priority <= TARGET_PRIORITY(400) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(400);
@@ -564,7 +564,7 @@ void RemiliaFighter::DispatchActions()
     }
     if (y > 0.0f) {
         if (ATTACK_A) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(480.0f, -480.0f) &&
                 (inputY > 0 || bufferedY > 0) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(411) && ACTION_CHANGE_ALLOWED) {
@@ -572,7 +572,7 @@ void RemiliaFighter::DispatchActions()
                 ClearAuxiliaryWords();
                 return;
             }
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(480.0f, -480.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(410) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(410);
@@ -587,7 +587,7 @@ void RemiliaFighter::DispatchActions()
             }
         }
         if (ATTACK_B) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(480.0f, -480.0f) &&
                 (inputY > 0 || bufferedY > 0) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(417) && ACTION_CHANGE_ALLOWED) {
@@ -595,7 +595,7 @@ void RemiliaFighter::DispatchActions()
                 ClearAuxiliaryWords();
                 return;
             }
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(480.0f, -480.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(416) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(416);
@@ -609,7 +609,7 @@ void RemiliaFighter::DispatchActions()
                 return;
             }
         }
-        if (ATTACK_C && meter > 0 &&
+        if (ATTACK_C && spirit > 0 &&
             (frameInfo->flags & 0x20) != 0 &&
             (inputY > 0 || bufferedY > 0) &&
             sequenceInfo->priority <= TARGET_PRIORITY(405) && ACTION_CHANGE_ALLOWED) {
@@ -617,7 +617,7 @@ void RemiliaFighter::DispatchActions()
             ClearAuxiliaryWords();
             return;
         }
-        if (ATTACK_C && meter > 0 &&
+        if (ATTACK_C && spirit > 0 &&
             (frameInfo->flags & 0x20) != 0 &&
             sequenceInfo->priority <= TARGET_PRIORITY(404) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(404);

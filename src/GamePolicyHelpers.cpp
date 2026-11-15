@@ -73,8 +73,8 @@ void Fighter::InitializeNotice(short value)
 
 void BattleState::StartHitSequence(Fighter *fighter, short value)
 {
-    fighter->meter = 0;
-    fighter->meterCooldown = 1000;
+    fighter->spirit = 0;
+    fighter->spiritCooldown = 1000;
     fighter->ResetPrimaryCounters(value);
     fighter->ClearTransformFlag();
     SpawnMidpointEffect(0x35, fighter->facing);

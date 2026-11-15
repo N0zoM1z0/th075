@@ -2,10 +2,10 @@
 // 0051BB8B..0051BFE2: 1111 CODE B/238 x86, within ONE
 // still-NONEXACT 81KB CharacterObject::Advance.
 case 0x389: {
-    if (F1037_POSITION(this).xPosition>g_F1057_RightBoundAt0065925C ||
-        F1037_POSITION(this).xPosition<g_F1057_LeftBoundAt00659258 ||
-        F1037_POSITION(this).yPosition>g_F1057_UpperBoundAt006583B4 ||
-        F1037_POSITION(this).yPosition<g_F1057_LowerBoundAt00658374) {
+    if (x>g_F1057_RightBoundAt0065925C ||
+        x<g_F1057_LeftBoundAt00659258 ||
+        y>g_F1057_UpperBoundAt006583B4 ||
+        y<g_F1057_LowerBoundAt00658374) {
         ClearFrameInfo();
         return;
     }
@@ -13,7 +13,7 @@ case 0x389: {
         ClearFrameInfo();
         return;
     }
-    if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
+    if (animationStage==0 && animationFrame==0) {
         ResetTransform(0,0.0f,0);
         field080=1;
         field07C=0;
@@ -30,11 +30,11 @@ case 0x389: {
             float(field0DA),
             float(field0D8)*g_F1057_SpeedScaleAt006590B4);
     }
-    if (F1024_PHASE(this).stageAt62<=1) {
+    if (animationStage<=1) {
         SetPolarVelocity(
             float(field0DA),
             float(field0D8)*g_F1057_SpeedScaleAt006590B4);
-        reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
+        reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
             0x33C,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),
             facing,1);
         scaleX=float(double(RandomBoundaryAt00455580(0,4)-2)*
@@ -46,17 +46,17 @@ case 0x389: {
         if (field0D8<field0DC)
             field0D8=field0DC;
     }
-    F1037_POSITION(this).xPosition=float(facing)*F1037_MOTION(this).xMotion+F1037_POSITION(this).xPosition;
-    F1037_POSITION(this).yPosition=F1037_POSITION(this).yPosition-F1037_MOTION(this).yMotion;
-    if (field07C!=0 && field07C!=6 && F1024_PHASE(this).stageAt62==1) {
-        F1037_MOTION(this).xMotion=0.0f;
-        F1037_MOTION(this).yMotion=0.0f;
+    x=float(facing)*velocityX+x;
+    y=y-velocityY;
+    if (field07C!=0 && field07C!=6 && animationStage==1) {
+        velocityX=0.0f;
+        velocityY=0.0f;
         ResetSecondaryCounter(2);
         scaleX=2.5f;
         scaleY=2.5f;
         return;
     }
-    if (F1024_PHASE(this).stageAt62>1) {
+    if (animationStage>1) {
         scaleX=(scaleX)*g_F1055_FadeScaleAt006598A4;
         scaleY=(scaleY)*g_F1055_FadeScaleAt006598A4;
         if (color[0]>=25)

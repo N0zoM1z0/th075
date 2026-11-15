@@ -1,5 +1,4 @@
 #include "FighterCommandByteF940.hpp"
-#include "FighterAIShortFieldsF946.hpp"
 #include "CharacterAICardPolicy.hpp"
 
 #define FIELD(type, offset) (*reinterpret_cast<type *>(reinterpret_cast<u8 *>(this) + offset))
@@ -192,7 +191,7 @@ template<class Policy> void CharacterAICardPolicy<Policy>::ChooseCardAction()
         if (action > 399 &&
             action < 500 &&
             distance.x < 300.0f &&
-            meter > 500 &&
+            spirit > 500 &&
             rand() < 100) {
             F940_COMMAND_AT511(this) = 20;
             return;
@@ -200,7 +199,7 @@ template<class Policy> void CharacterAICardPolicy<Policy>::ChooseCardAction()
         if (action > 399 &&
             action < 500 &&
             distance.x > 600.0f &&
-            meter > 500 &&
+            spirit > 500 &&
             rand() < 100) {
             F940_COMMAND_AT511(this) = 21;
             return;
@@ -208,7 +207,7 @@ template<class Policy> void CharacterAICardPolicy<Policy>::ChooseCardAction()
         if (action > 399 &&
             action < 500 &&
             distance.x < 300.0f &&
-            meter > 500 &&
+            spirit > 500 &&
             rand() < 100) {
             F940_COMMAND_AT511(this) = 10;
             return;
@@ -216,7 +215,7 @@ template<class Policy> void CharacterAICardPolicy<Policy>::ChooseCardAction()
         if (action > 399 &&
             action < 500 &&
             distance.x > 600.0f &&
-            meter > 500 &&
+            spirit > 500 &&
             rand() < 100) {
             F940_COMMAND_AT511(this) = 11;
             return;
@@ -240,7 +239,7 @@ template<class Policy> void CharacterAICardPolicy<Policy>::ChooseCardAction()
     if (OPPONENT_GUARD && (opponent->action < 93 || opponent->action > 99)) {
         if (action == 307 &&
             rand() < 10000 &&
-            meter > 250) {
+            spirit > 250) {
             aiWaitTimer = ChooseIntegerRange(0, 45);
             aiStep = 6;
             inputC = 1;
@@ -248,7 +247,7 @@ template<class Policy> void CharacterAICardPolicy<Policy>::ChooseCardAction()
         }
         if (action == 307 &&
             rand() < 1000 &&
-            meter > 500) {
+            spirit > 500) {
             F940_COMMAND_AT511(this) = 20;
             return;
         }
@@ -276,7 +275,7 @@ template<class Policy> void CharacterAICardPolicy<Policy>::ChooseCardAction()
         if (distance.x < 100.0f &&
             action == 307 &&
             rand() < 5000 &&
-            meter > 300) {
+            spirit > 300) {
             aiWaitTimer = ChooseIntegerRange(0, 30);
             aiStep = 1;
             inputC = 1;
@@ -388,7 +387,7 @@ template<class Policy> void CharacterAICardPolicy<Policy>::ChooseCardAction()
         if (distance.x < 100.0f &&
             action == 303 &&
             rand() < 5000 &&
-            meter > 300) {
+            spirit > 300) {
             aiWaitTimer = ChooseIntegerRange(0, 30);
             aiStep = 1;
             inputC = 1;
@@ -396,7 +395,7 @@ template<class Policy> void CharacterAICardPolicy<Policy>::ChooseCardAction()
         }
         if (action == 308 &&
             rand() < 10000 &&
-            meter > 300) {
+            spirit > 300) {
             aiWaitTimer = ChooseIntegerRange(0, 30);
             aiStep = 1;
             inputC = 1;
@@ -404,7 +403,7 @@ template<class Policy> void CharacterAICardPolicy<Policy>::ChooseCardAction()
         }
         if (action == 308 &&
             rand() < 10000 &&
-            meter > 300) {
+            spirit > 300) {
             F940_COMMAND_AT511(this) = 10;
             return;
         }
@@ -419,9 +418,9 @@ template<class Policy> void CharacterAICardPolicy<Policy>::ChooseCardAction()
             return;
         }
     }
-    if (static_cast<float>(rand()) < meter * 0.8f + 0.0f &&
+    if (static_cast<float>(rand()) < spirit * 0.8f + 0.0f &&
         distance.x > 320.0f &&
-        meter > 350) {
+        spirit > 350) {
         aiWaitTimer = ChooseIntegerRange(0, 45);
         aiStep = 1;
         inputC = 1;
@@ -429,9 +428,9 @@ template<class Policy> void CharacterAICardPolicy<Policy>::ChooseCardAction()
         if (rand() < 1000) inputY = 1;
         return;
     }
-    if (static_cast<float>(rand()) < meter * 1.0f + 0.0f &&
+    if (static_cast<float>(rand()) < spirit * 1.0f + 0.0f &&
         distance.x > 560.0f &&
-        meter > 250 &&
+        spirit > 250 &&
         distance.y < 100.0f) {
         aiStep = 6;
         aiWaitTimer = ChooseIntegerRange(0, 45);
@@ -440,9 +439,9 @@ template<class Policy> void CharacterAICardPolicy<Policy>::ChooseCardAction()
         if (rand() < 2000) inputY = 1;
         return;
     }
-    if (static_cast<float>(rand()) < meter * 0.5f + 0.0f &&
+    if (static_cast<float>(rand()) < spirit * 0.5f + 0.0f &&
         distance.x > 560.0f &&
-        meter > 250) {
+        spirit > 250) {
         inputB = 1;
         return;
     }
@@ -600,13 +599,13 @@ template<class Policy> void CharacterAICardPolicy<Policy>::ChooseCardAction()
     }
     if (distance.x > 350.0f &&
         rand() < 200 &&
-        meter > 350) {
+        spirit > 350) {
         F940_COMMAND_AT511(this) = 10;
         return;
     }
     if (distance.x > 350.0f &&
         rand() < 200 &&
-        meter > 350) {
+        spirit > 350) {
         F940_COMMAND_AT511(this) = 11;
         return;
     }
@@ -633,13 +632,13 @@ template<class Policy> void CharacterAICardPolicy<Policy>::ChooseCardAction()
     }
     if (distance.y < 150.0f &&
         distance.x > 200.0f &&
-        static_cast<float>(rand()) < meter * 0.1f) {
+        static_cast<float>(rand()) < spirit * 0.1f) {
         F940_COMMAND_AT511(this) = 20;
         return;
     }
     if (distance.y < 150.0f &&
         distance.x > 400.0f &&
-        static_cast<float>(rand()) < meter * 0.1f) {
+        static_cast<float>(rand()) < spirit * 0.1f) {
         F940_COMMAND_AT511(this) = 21;
         return;
     }

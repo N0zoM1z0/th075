@@ -5,7 +5,7 @@ case R1189_ACTION: {
         field080=1; field07C=0; field3AC=0; reinterpret_cast<signed short&>(scriptCounterF00)=0;
     }
 #if R1189_HAS_BONUS
-    if ((meterCooldown)==0 && field07C==1) meter=1000;
+    if ((spiritCooldown)==0 && field07C==1) spirit=1000;
 #endif
     if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(0);
     if ((animationStage)==5 && (animationFrame)==0) {

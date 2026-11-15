@@ -5,7 +5,7 @@ case 0x38A: {
         ClearFrameInfo();
         return;
     }
-    if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
+    if (animationStage==0 && animationFrame==0) {
         ResetTransform(0,0.0f,0);
         field080=1;
         field07C=0;
@@ -16,10 +16,10 @@ case 0x38A: {
         color[1]=0xFF;
         color[2]=0xFF;
         color[3]=0xFF;
-        F1037_MOTION(this).xMotion=0.0f;
-        F1037_MOTION(this).yMotion=0.0f;
+        velocityX=0.0f;
+        velocityY=0.0f;
     }
-    if (F1024_PHASE(this).stageAt62<6) {
+    if (animationStage<6) {
         scaleX=(scaleX)+g_F1051_ScaleStepAt00658348;
         scaleY=(scaleY)+g_F1051_ScaleStepAt00658348;
         if (scaleX>g_F1051_ScaleCeilingAt0065747C)
@@ -27,38 +27,38 @@ case 0x38A: {
         if (scaleY>g_F1051_ScaleCeilingAt0065747C)
             scaleY=2.0f;
     }
-    if (F1024_PHASE(this).stageAt62>5) {
-        if (F1037_POSITION(this).yPosition+F1037_MOTION(this).yMotion<=g_F1044_GroundAt0065782C) {
-            F1037_POSITION(this).yPosition=0.0f;
-            F1037_MOTION(this).yMotion=0.0f;
-            F1037_MOTION(this).xMotion=0.0f;
-            reinterpret_cast<F1051Grandparent*>(PARENT)->NativePrepareAt00453D40(11);
+    if (animationStage>5) {
+        if (y+velocityY<=g_F1044_GroundAt0065782C) {
+            y=0.0f;
+            velocityY=0.0f;
+            velocityX=0.0f;
+            reinterpret_cast<F1051Grandparent*>(owner)->NativePrepareAt00453D40(11);
             ResetPrimaryCounters(0x385);
-            reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
+            reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
                 0x347,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),facing,1);
             int shot;
             for (shot=0;shot<15;++shot)
-                reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
+                reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
                     0x33A,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),facing,1);
             for (shot=0;shot<15;++shot)
-                reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
+                reinterpret_cast<F1051Grandparent*>(owner)->SpawnObjectAt00453A70(
                     0x389,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),facing,1);
-            reinterpret_cast<F1051Grandparent*>(PARENT)->InitTrajectoryAt00453E60(5.0f);
+            reinterpret_cast<F1051Grandparent*>(owner)->InitTrajectoryAt00453E60(5.0f);
             return;
         }
     }
-    if (owner->animationStage==9 && F1024_PHASE(this).stageAt62<6) {
-        ResetSecondaryCounter(F1024_PHASE(this).stageAt62+5);
-        F1037_MOTION(this).xMotion=float(RandomBoundaryAt00455580(0,30)+10);
-        F1037_MOTION(this).yMotion=-20.0f;
+    if (owner->animationStage==9 && animationStage<6) {
+        ResetSecondaryCounter(animationStage+5);
+        velocityX=float(RandomBoundaryAt00455580(0,30)+10);
+        velocityY=-20.0f;
     }
-    F1037_POSITION(this).xPosition=float(facing)*F1037_MOTION(this).xMotion+F1037_POSITION(this).xPosition;
-    F1037_POSITION(this).yPosition=F1037_POSITION(this).yPosition+F1037_MOTION(this).yMotion;
+    x=float(facing)*velocityX+x;
+    y=y+velocityY;
     if (AdvanceNestedFrame()==field070) {
         ResetSecondaryCounter(6);
         return;
     }
-    if (F1024_PHASE(this).stageAt62==6 && F1024_PHASE(this).frameAt64==0)
+    if (animationStage==6 && animationFrame==0)
         ResetSecondaryCounter(1);
     return;
 }

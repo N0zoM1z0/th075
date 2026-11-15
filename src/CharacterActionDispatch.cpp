@@ -92,7 +92,7 @@ void SakuyaFighter::DispatchActions()
         ResetPrimaryCounters(795);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
         field3A0 > 0 &&
@@ -107,7 +107,7 @@ void SakuyaFighter::DispatchActions()
         ResetPrimaryCounters(701);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 23 &&
         y == 0.0f &&
         field3A0 > 0 &&
@@ -122,7 +122,7 @@ void SakuyaFighter::DispatchActions()
         ResetPrimaryCounters(707);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
         field3A0 > 0 &&
@@ -137,7 +137,7 @@ void SakuyaFighter::DispatchActions()
         ResetPrimaryCounters(706);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
         field3A0 > 0 &&
@@ -151,7 +151,7 @@ void SakuyaFighter::DispatchActions()
         ResetPrimaryCounters(703);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
         field3A0 > 0 &&
@@ -165,7 +165,7 @@ void SakuyaFighter::DispatchActions()
         ResetPrimaryCounters(700);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 23 &&
         y == 0.0f &&
         field3A0 > 0 &&
@@ -180,7 +180,7 @@ void SakuyaFighter::DispatchActions()
         ResetPrimaryCounters(705);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
         field3A0 > 0 &&
@@ -195,7 +195,7 @@ void SakuyaFighter::DispatchActions()
         ResetPrimaryCounters(704);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
         field3A0 > 0 &&
@@ -249,7 +249,7 @@ void SakuyaFighter::DispatchActions()
     }
     if (aiCommand == 42 &&
         y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(504) &&
         ACTION_CHANGE_ALLOWED) {
@@ -260,7 +260,7 @@ void SakuyaFighter::DispatchActions()
     }
     if (aiCommand == 41 &&
         y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(504) &&
         ACTION_CHANGE_ALLOWED) {
@@ -271,7 +271,7 @@ void SakuyaFighter::DispatchActions()
     }
     if (aiCommand == 40 &&
         y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(504) &&
         ACTION_CHANGE_ALLOWED) {
@@ -282,7 +282,7 @@ void SakuyaFighter::DispatchActions()
     }
     if (aiCommand == 31 &&
         fieldF12 == 0 &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         fieldF12 == 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(501) &&
@@ -292,7 +292,7 @@ void SakuyaFighter::DispatchActions()
         if (y > 0.0f) ResetPrimaryCounters(503);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 30 &&
         fieldF12 == 0 &&
         (frameInfo->flags & 0x20) != 0 &&
@@ -306,7 +306,7 @@ void SakuyaFighter::DispatchActions()
     if (aiCommand == 12 &&
         fieldF12 == 0 &&
         (frameInfo->flags & 0x20) != 0 &&
-        meter > 0 &&
+        spirit > 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(604) &&
         ACTION_CHANGE_ALLOWED) {
         PackDirectionBits();
@@ -317,7 +317,7 @@ void SakuyaFighter::DispatchActions()
     if (aiCommand == 11 &&
         fieldF12 == 0 &&
         (frameInfo->flags & 0x20) != 0 &&
-        meter > 0 &&
+        spirit > 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(608) &&
         ACTION_CHANGE_ALLOWED) {
         PackDirectionBits();
@@ -328,7 +328,7 @@ void SakuyaFighter::DispatchActions()
     if (aiCommand == 10 &&
         fieldF12 == 0 &&
         (frameInfo->flags & 0x20) != 0 &&
-        meter > 0 &&
+        spirit > 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(607) &&
         ACTION_CHANGE_ALLOWED) {
         PackDirectionBits();
@@ -340,7 +340,7 @@ void SakuyaFighter::DispatchActions()
         y == 0.0f &&
         fieldF12 == 0 &&
         (frameInfo->flags & 0x20) != 0 &&
-        meter > 0 &&
+        spirit > 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(601) &&
         ACTION_CHANGE_ALLOWED) {
         PackDirectionBits();
@@ -352,7 +352,7 @@ void SakuyaFighter::DispatchActions()
         y == 0.0f &&
         fieldF12 == 0 &&
         (frameInfo->flags & 0x20) != 0 &&
-        meter > 0 &&
+        spirit > 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(600) &&
         ACTION_CHANGE_ALLOWED) {
         PackDirectionBits();
@@ -439,7 +439,7 @@ void SakuyaFighter::DispatchActions()
             ClearAuxiliaryWords();
             return;
         }
-        if (ATTACK_A && meter > 0 &&
+        if (ATTACK_A && spirit > 0 &&
             (frameInfo->flags & 0x20) != 0 &&
             DISTANT_FROM_OPPONENT(320.0f, -320.0f) &&
             sequenceInfo->priority <= TARGET_PRIORITY(408) && ACTION_CHANGE_ALLOWED) {
@@ -463,7 +463,7 @@ void SakuyaFighter::DispatchActions()
             ClearAuxiliaryWords();
             return;
         }
-        if (ATTACK_B && meter > 0 &&
+        if (ATTACK_B && spirit > 0 &&
             (frameInfo->flags & 0x20) != 0 &&
             DISTANT_FROM_OPPONENT(320.0f, -320.0f) &&
             sequenceInfo->priority <= TARGET_PRIORITY(413) && ACTION_CHANGE_ALLOWED) {
@@ -480,7 +480,7 @@ void SakuyaFighter::DispatchActions()
             return;
         }
         if (ATTACK_C && (frameInfo->flags & 0x20) != 0 &&
-            meter > 0 &&
+            spirit > 0 &&
             sequenceInfo->priority <= TARGET_PRIORITY(402) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(402);
             if (fieldF12 != 0) ResetPrimaryCounters(418);
@@ -500,7 +500,7 @@ void SakuyaFighter::DispatchActions()
             return;
         }
         if (ATTACK_A &&
-            meter > 0 &&
+            spirit > 0 &&
             (frameInfo->flags & 0x20) != 0 &&
             DISTANT_FROM_OPPONENT(320.0f, -320.0f) &&
             FORWARD_MOTION &&
@@ -512,7 +512,7 @@ void SakuyaFighter::DispatchActions()
             return;
         }
         if (ATTACK_A &&
-            meter > 0 &&
+            spirit > 0 &&
             (frameInfo->flags & 0x20) != 0 &&
             DISTANT_FROM_OPPONENT(320.0f, -320.0f) &&
             sequenceInfo->priority <= TARGET_PRIORITY(406) &&
@@ -555,7 +555,7 @@ void SakuyaFighter::DispatchActions()
         if (ATTACK_B &&
             inputY == 0 &&
             FORWARD_MOTION &&
-            meter > 0 &&
+            spirit > 0 &&
             (frameInfo->flags & 0x20) != 0 &&
             DISTANT_FROM_OPPONENT(320.0f, -320.0f) &&
             sequenceInfo->priority <= TARGET_PRIORITY(412) &&
@@ -566,7 +566,7 @@ void SakuyaFighter::DispatchActions()
             return;
         }
         if (ATTACK_B &&
-            meter > 0 &&
+            spirit > 0 &&
             (frameInfo->flags & 0x20) != 0 &&
             DISTANT_FROM_OPPONENT(320.0f, -320.0f) &&
             sequenceInfo->priority <= TARGET_PRIORITY(411) &&
@@ -600,7 +600,7 @@ void SakuyaFighter::DispatchActions()
             inputY == 0 &&
             FORWARD_MOTION &&
             (frameInfo->flags & 0x20) != 0 &&
-            meter > 0 &&
+            spirit > 0 &&
             sequenceInfo->priority <= TARGET_PRIORITY(401) &&
             ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(401);
@@ -610,7 +610,7 @@ void SakuyaFighter::DispatchActions()
         }
         if (ATTACK_C &&
             (frameInfo->flags & 0x20) != 0 &&
-            meter > 0 &&
+            spirit > 0 &&
             sequenceInfo->priority <= TARGET_PRIORITY(400) &&
             ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(400);
@@ -621,7 +621,7 @@ void SakuyaFighter::DispatchActions()
     }
     if (y > 0.0f) {
         if (ATTACK_A &&
-            meter > 0 &&
+            spirit > 0 &&
             (frameInfo->flags & 0x20) != 0 &&
             DISTANT_FROM_OPPONENT(400.0f, -400.0f) &&
             (inputY > 0 || bufferedY > 0) &&
@@ -633,7 +633,7 @@ void SakuyaFighter::DispatchActions()
             return;
         }
         if (ATTACK_A &&
-            meter > 0 &&
+            spirit > 0 &&
             (frameInfo->flags & 0x20) != 0 &&
             DISTANT_FROM_OPPONENT(400.0f, -400.0f) &&
             sequenceInfo->priority <= TARGET_PRIORITY(409) &&
@@ -654,7 +654,7 @@ void SakuyaFighter::DispatchActions()
             return;
         }
         if (ATTACK_B &&
-            meter > 0 &&
+            spirit > 0 &&
             (frameInfo->flags & 0x20) != 0 &&
             DISTANT_FROM_OPPONENT(480.0f, -480.0f) &&
             (inputY > 0 || bufferedY > 0) &&
@@ -666,7 +666,7 @@ void SakuyaFighter::DispatchActions()
             return;
         }
         if (ATTACK_B &&
-            meter > 0 &&
+            spirit > 0 &&
             (frameInfo->flags & 0x20) != 0 &&
             DISTANT_FROM_OPPONENT(480.0f, -480.0f) &&
             sequenceInfo->priority <= TARGET_PRIORITY(414) &&
@@ -689,7 +689,7 @@ void SakuyaFighter::DispatchActions()
         if (ATTACK_C) {
             if (inputY > 0 &&
                 (frameInfo->flags & 0x20) != 0 &&
-                meter > 0 &&
+                spirit > 0 &&
                 sequenceInfo->priority <= TARGET_PRIORITY(405) &&
                 ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(405);
@@ -698,7 +698,7 @@ void SakuyaFighter::DispatchActions()
                 return;
             }
             if ((frameInfo->flags & 0x20) != 0 &&
-                meter > 0 &&
+                spirit > 0 &&
                 sequenceInfo->priority <= TARGET_PRIORITY(404) &&
                 ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(404);

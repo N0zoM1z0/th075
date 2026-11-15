@@ -2,10 +2,66 @@
 #define TH075_ACTOR_HPP
 #include <stddef.h>
 
-// Current animation frame record (Actor+0x74).
+struct tagRECT;   // RECT; defined by <windows.h> where it is needed
+
+// Pose record a frame points to (+0x08): blend mode, colour and transform.
+struct ActorPose {
+    unsigned char blendMode;  // +0x00
+    unsigned char color[4];   // +0x01 A, R, G, B
+    unsigned char unknown05[0x06 - 0x05];
+    short offsetX;            // +0x06
+    short offsetY;            // +0x08
+    short offsetZ;            // +0x0A
+    float scaleX;             // +0x0C
+    float scaleY;             // +0x10
+    float scaleZ;             // +0x14
+    float rotationX;          // +0x18
+    float rotationY;          // +0x1C
+    float rotationZ;          // +0x20
+};
+
+// The vector of collision boxes a frame carries (std::vector<RECT>, 16 bytes).
+class CollisionRectSequence {
+public:
+    unsigned int Size();
+    tagRECT &At(unsigned int index);
+private:
+    unsigned char storage[0x10];
+};
+
+// Animation frame record (Actor+0x74, and its collision snapshot at +0xAC).
 struct FighterFrameInfo {
-    unsigned char unknown00[0x3C];
-    unsigned long flags;      // +0x3C bit 0x20 is tested before action changes
+    short originX;            // +0x00 sprite origin
+    short originY;            // +0x02
+    unsigned char unknown04[0x06 - 0x04];
+    short textureIndex;       // +0x06
+    ActorPose* pose;          // +0x08
+    unsigned char field0C;    // +0x0C
+    unsigned char unknown0D[0x10 - 0x0D];
+    short damage;             // +0x10
+    unsigned char unknown12[0x14 - 0x12];
+    float comboRateScale;     // +0x14 multiplies the attacker's combo rate
+    short field18;            // +0x18
+    short field1A;            // +0x1A flash gauge given to the defender
+    short attackerHitStop;    // +0x1C
+    short defenderHitStop;    // +0x1E
+    short field20;            // +0x20
+    short field22;            // +0x22
+    short meterGain;          // +0x24
+    short field26;            // +0x26
+    short field28;            // +0x28
+    short field2A;            // +0x2A
+    unsigned long field2C;    // +0x2C copied to the defender's +0x94
+    unsigned long field30;    // +0x30 copied to the defender's +0x98
+    short field34;            // +0x34
+    short hitEffect;          // +0x36
+    signed char field38;      // +0x38
+    unsigned char unknown39[0x3C - 0x39];
+    unsigned long flags;      // +0x3C defence flags; bit 0x20 is tested before action changes
+    unsigned long attackFlags;// +0x40
+    long bodyBox[4];          // +0x44 RECT
+    CollisionRectSequence hurtBoxes;  // +0x54
+    CollisionRectSequence hitBoxes;   // +0x64
 };
 
 // Action sequence record (Actor+0x78 and the entries of Fighter::sequenceSlots).
@@ -17,9 +73,9 @@ struct FighterSequenceInfo {
 };
 
 // Common head of every animated battle object: fighters, their projectiles
-// and effect objects use 0x00-0xA7 with the same field widths and share
+// and effect objects use 0x00-0xC3 with the same field widths and share
 // vtable slots 0-4 (the vtable pointer is at +0). Derived classes add their
-// own members from 0xA8. unknownNNN regions are unobserved;
+// own members from 0xC4. unknownNNN regions are unobserved;
 // fieldNNN members are observed but not yet understood. The full object size
 // is unknown, so these classes are only reached through the game's pointers.
 class Actor {
@@ -32,6 +88,7 @@ public:
     void SetPolarVelocity(float angle, float speed);                // 0040FB70
     void ResetTransform(float pivotX, float pivotY, float pivotZ);  // 0040FBB0
     void ClearTransformFlag();                                      // 0040FC50
+    void SaveCollisionFields();                                     // 00455500 snapshot for the hit tests
 
     // Slots shared by fighter and object vtables. Advance is pure in the
     // base fighter table (00658FE8 slot 1 is _purecall); each class's
@@ -105,12 +162,24 @@ public:
     float field09C;                     // +0x09C
     float field0A0;                     // +0x0A0
     float field0A4;                     // +0x0A4
+    // Snapshot that SaveCollisionFields takes before collisions are resolved;
+    // hit tests read these rather than the live fields above.
+    int savedField07C;                  // +0x0A8 nonzero: this actor cannot hit
+    FighterFrameInfo* savedFrameInfo;   // +0x0AC
+    FighterSequenceInfo* savedSequenceInfo; // +0x0B0
+    short savedAction;                  // +0x0B4
+    unsigned char unknown0B6[0x0B8 - 0x0B6];
+    float savedX;                       // +0x0B8
+    float savedY;                       // +0x0BC
+    signed char savedFacing;            // +0x0C0
+    unsigned char unknown0C1[0x0C4 - 0x0C1];
 };
 
 typedef char ActorLayoutCheck[(
     offsetof(Actor, x) == 0x044 &&
     offsetof(Actor, action) == 0x060 &&
     offsetof(Actor, frameInfo) == 0x074 &&
-    sizeof(Actor) == 0x0A8) ? 1 : -1];
+    offsetof(Actor, savedFrameInfo) == 0x0AC &&
+    sizeof(Actor) == 0x0C4) ? 1 : -1];
 
 #endif

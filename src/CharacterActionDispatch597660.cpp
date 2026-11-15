@@ -180,7 +180,7 @@ void YukariFighter::DispatchActions()
             return;
         }
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
         field3A0 > 0 &&
@@ -195,7 +195,7 @@ void YukariFighter::DispatchActions()
         ResetTransform(0.0f, 0.0f, 0.0f);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
         field3A0 > 0 &&
@@ -211,7 +211,7 @@ void YukariFighter::DispatchActions()
         ResetTransform(0.0f, 0.0f, 0.0f);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 23 &&
         y == 0.0f &&
         field3A0 > 0 &&
@@ -227,7 +227,7 @@ void YukariFighter::DispatchActions()
         ResetTransform(0.0f, 0.0f, 0.0f);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
         field3A0 > 0 &&
@@ -242,7 +242,7 @@ void YukariFighter::DispatchActions()
         ResetTransform(0.0f, 0.0f, 0.0f);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
         field3A0 > 0 &&
@@ -257,7 +257,7 @@ void YukariFighter::DispatchActions()
         ResetTransform(0.0f, 0.0f, 0.0f);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
         field3A0 > 0 &&
@@ -273,7 +273,7 @@ void YukariFighter::DispatchActions()
         ResetTransform(0.0f, 0.0f, 0.0f);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
         field3A0 > 0 &&
@@ -288,7 +288,7 @@ void YukariFighter::DispatchActions()
         ResetTransform(0.0f, 0.0f, 0.0f);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 23 &&
         y == 0.0f &&
         field3A0 > 0 &&
@@ -306,7 +306,7 @@ void YukariFighter::DispatchActions()
     }
     if (aiCommand == 42 &&
         y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(505) &&
         ACTION_CHANGE_ALLOWED) {
@@ -316,7 +316,7 @@ void YukariFighter::DispatchActions()
     }
     if (aiCommand == 41 &&
         y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(504) &&
         ACTION_CHANGE_ALLOWED) {
@@ -326,7 +326,7 @@ void YukariFighter::DispatchActions()
     }
     if (aiCommand == 40 &&
         y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(503) &&
         ACTION_CHANGE_ALLOWED) {
@@ -336,7 +336,7 @@ void YukariFighter::DispatchActions()
     }
     if (aiCommand == 31 &&
         y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(501) &&
         ACTION_CHANGE_ALLOWED) {
@@ -346,7 +346,7 @@ void YukariFighter::DispatchActions()
     }
     if (aiCommand == 30 &&
         y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(500) &&
         ACTION_CHANGE_ALLOWED) {
@@ -356,7 +356,7 @@ void YukariFighter::DispatchActions()
     }
     if (aiCommand == 12 &&
         y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(604) &&
         ACTION_CHANGE_ALLOWED) {
@@ -366,7 +366,7 @@ void YukariFighter::DispatchActions()
     }
     if (aiCommand == 11 &&
         y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(603) &&
         ACTION_CHANGE_ALLOWED) {
@@ -376,7 +376,7 @@ void YukariFighter::DispatchActions()
     }
     if (aiCommand == 10 &&
         y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(602) &&
         ACTION_CHANGE_ALLOWED) {
@@ -385,7 +385,7 @@ void YukariFighter::DispatchActions()
         return;
     }
     if (aiCommand == 72 &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         y == 0.0f &&
         sequenceInfo->priority <= TARGET_PRIORITY(611) &&
@@ -395,7 +395,7 @@ void YukariFighter::DispatchActions()
         return;
     }
     if (aiCommand == 71 &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         y == 0.0f &&
         sequenceInfo->priority <= TARGET_PRIORITY(610) &&
@@ -405,7 +405,7 @@ void YukariFighter::DispatchActions()
         return;
     }
     if (aiCommand == 70 &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         y == 0.0f &&
         sequenceInfo->priority <= TARGET_PRIORITY(609) &&
@@ -415,7 +415,7 @@ void YukariFighter::DispatchActions()
         return;
     }
     if (aiCommand == 21 &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(601) &&
         ACTION_CHANGE_ALLOWED) {
@@ -425,7 +425,7 @@ void YukariFighter::DispatchActions()
         return;
     }
     if (aiCommand == 20 &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(600) &&
         ACTION_CHANGE_ALLOWED) {
@@ -511,7 +511,7 @@ void YukariFighter::DispatchActions()
             return;
         }
         if (ATTACK_A) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(320.0f, -320.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(408) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(408);
@@ -534,7 +534,7 @@ void YukariFighter::DispatchActions()
             return;
         }
         if (ATTACK_B) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(480.0f, -480.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(413) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(413);
@@ -548,7 +548,7 @@ void YukariFighter::DispatchActions()
                 return;
             }
         }
-        if (ATTACK_C && meter > 0 &&
+        if (ATTACK_C && spirit > 0 &&
             (frameInfo->flags & 0x20) != 0 &&
             sequenceInfo->priority <= TARGET_PRIORITY(402) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(402);
@@ -564,7 +564,7 @@ void YukariFighter::DispatchActions()
             return;
         }
         if (ATTACK_A && inputY == 0 && FORWARD_MOTION) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(420.0f, -420.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(406) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(406);
@@ -579,7 +579,7 @@ void YukariFighter::DispatchActions()
             }
         }
         if (ATTACK_A) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(320.0f, -320.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(406) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(406);
@@ -602,7 +602,7 @@ void YukariFighter::DispatchActions()
             return;
         }
         if (ATTACK_B && inputY == 0 && FORWARD_MOTION) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(480.0f, -480.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(411) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(411);
@@ -617,7 +617,7 @@ void YukariFighter::DispatchActions()
             }
         }
         if (ATTACK_B) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(480.0f, -480.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(411) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(411);
@@ -632,14 +632,14 @@ void YukariFighter::DispatchActions()
             }
         }
         if (ATTACK_C && inputY == 0 && FORWARD_MOTION &&
-            (frameInfo->flags & 0x20) != 0 && meter > 0 &&
+            (frameInfo->flags & 0x20) != 0 && spirit > 0 &&
             sequenceInfo->priority <= TARGET_PRIORITY(401) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(401);
             ClearAuxiliaryWords();
             return;
         }
         if (ATTACK_C && (frameInfo->flags & 0x20) != 0 &&
-            meter > 0 &&
+            spirit > 0 &&
             sequenceInfo->priority <= TARGET_PRIORITY(400) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(400);
             ClearAuxiliaryWords();
@@ -654,7 +654,7 @@ void YukariFighter::DispatchActions()
                 ClearAuxiliaryWords();
                 return;
             }
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(320.0f, -320.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(410) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(410);
@@ -669,7 +669,7 @@ void YukariFighter::DispatchActions()
             }
         }
         if (ATTACK_B) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(480.0f, -480.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(415) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(415);
@@ -685,14 +685,14 @@ void YukariFighter::DispatchActions()
             }
         }
         if (ATTACK_C && (inputY > 0 || bufferedY > 0) &&
-            (frameInfo->flags & 0x20) != 0 && meter > 100 &&
+            (frameInfo->flags & 0x20) != 0 && spirit > 100 &&
             sequenceInfo->priority <= TARGET_PRIORITY(405) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(405);
             ClearAuxiliaryWords();
             return;
         }
         if (ATTACK_C && (frameInfo->flags & 0x20) != 0 &&
-            meter > 100 &&
+            spirit > 100 &&
             sequenceInfo->priority <= TARGET_PRIORITY(404) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(404);
             ClearAuxiliaryWords();

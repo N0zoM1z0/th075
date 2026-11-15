@@ -129,7 +129,7 @@ void SuikaFighter::DispatchActions()
             return;
         }
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
         field3A0 > 0 &&
@@ -143,7 +143,7 @@ void SuikaFighter::DispatchActions()
         ResetPrimaryCounters(720);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
         field3A0 > 0 &&
@@ -157,7 +157,7 @@ void SuikaFighter::DispatchActions()
         ResetPrimaryCounters(722);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
         field3A0 > 0 &&
@@ -171,7 +171,7 @@ void SuikaFighter::DispatchActions()
         ResetPrimaryCounters(724);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
         field3A0 > 0 &&
@@ -185,7 +185,7 @@ void SuikaFighter::DispatchActions()
         ResetPrimaryCounters(700);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
         field3A0 > 0 &&
@@ -199,7 +199,7 @@ void SuikaFighter::DispatchActions()
         ResetPrimaryCounters(702);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
         field3A0 > 0 &&
@@ -216,7 +216,7 @@ void SuikaFighter::DispatchActions()
     if (aiCommand == 21 &&
         y == 0.0f &&
         (frameInfo->flags & 0x20) != 0 &&
-        meter > 0 &&
+        spirit > 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(601) &&
         ACTION_CHANGE_ALLOWED) {
         PackDirectionBits();
@@ -225,7 +225,7 @@ void SuikaFighter::DispatchActions()
     }
     if (aiCommand == 20 &&
         y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(600) &&
         ACTION_CHANGE_ALLOWED) {
@@ -236,7 +236,7 @@ void SuikaFighter::DispatchActions()
     if (aiCommand == 41 &&
         y == 0.0f &&
         (frameInfo->flags & 0x20) != 0 &&
-        meter > 0 &&
+        spirit > 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(603) &&
         ACTION_CHANGE_ALLOWED) {
         PackDirectionBits();
@@ -246,7 +246,7 @@ void SuikaFighter::DispatchActions()
     if (aiCommand == 40 &&
         y == 0.0f &&
         (frameInfo->flags & 0x20) != 0 &&
-        meter > 0 &&
+        spirit > 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(602) &&
         ACTION_CHANGE_ALLOWED) {
         PackDirectionBits();
@@ -255,7 +255,7 @@ void SuikaFighter::DispatchActions()
     }
     if (aiCommand == 11 &&
         (frameInfo->flags & 0x20) != 0 &&
-        meter > 0 &&
+        spirit > 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(501) &&
         ACTION_CHANGE_ALLOWED) {
         PackDirectionBits();
@@ -265,7 +265,7 @@ void SuikaFighter::DispatchActions()
     }
     if (aiCommand == 10 &&
         (frameInfo->flags & 0x20) != 0 &&
-        meter > 0 &&
+        spirit > 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(500) &&
         ACTION_CHANGE_ALLOWED) {
         PackDirectionBits();
@@ -350,7 +350,7 @@ void SuikaFighter::DispatchActions()
             return;
         }
         if (ATTACK_A) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(360.0f, -360.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(408) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(408);
@@ -372,7 +372,7 @@ void SuikaFighter::DispatchActions()
             return;
         }
         if (ATTACK_B) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(360.0f, -360.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(414) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(414);
@@ -386,7 +386,7 @@ void SuikaFighter::DispatchActions()
                 return;
             }
         }
-        if (ATTACK_C && meter > 0 &&
+        if (ATTACK_C && spirit > 0 &&
             (frameInfo->flags & 0x20) != 0 &&
             sequenceInfo->priority <= TARGET_PRIORITY(402) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(402);
@@ -402,7 +402,7 @@ void SuikaFighter::DispatchActions()
             return;
         }
         if (ATTACK_A && inputY == 0 && FORWARD_MOTION) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(360.0f, -360.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(407) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(407);
@@ -417,7 +417,7 @@ void SuikaFighter::DispatchActions()
             }
         }
         if (ATTACK_A) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(360.0f, -360.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(406) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(406);
@@ -439,7 +439,7 @@ void SuikaFighter::DispatchActions()
             return;
         }
         if (ATTACK_B && inputY == 0 && FORWARD_MOTION) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(420.0f, -420.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(412) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(412);
@@ -454,7 +454,7 @@ void SuikaFighter::DispatchActions()
             }
         }
         if (ATTACK_B) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(420.0f, -420.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(412) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(412);
@@ -468,14 +468,14 @@ void SuikaFighter::DispatchActions()
                 return;
             }
         }
-        if (ATTACK_C && FORWARD_MOTION && meter > 0 &&
+        if (ATTACK_C && FORWARD_MOTION && spirit > 0 &&
             (frameInfo->flags & 0x20) != 0 &&
             sequenceInfo->priority <= TARGET_PRIORITY(401) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(401);
             ClearAuxiliaryWords();
             return;
         }
-        if (ATTACK_C && meter > 0 &&
+        if (ATTACK_C && spirit > 0 &&
             (frameInfo->flags & 0x20) != 0 &&
             sequenceInfo->priority <= TARGET_PRIORITY(400) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(400);
@@ -485,7 +485,7 @@ void SuikaFighter::DispatchActions()
     }
     if (y > 0.0f) {
         if (ATTACK_A) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(400.0f, -400.0f) &&
                 (inputY > 0 || bufferedY > 0) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(411) && ACTION_CHANGE_ALLOWED) {
@@ -502,7 +502,7 @@ void SuikaFighter::DispatchActions()
             }
         }
         if (ATTACK_A) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(400.0f, -400.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(410) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(410);
@@ -517,7 +517,7 @@ void SuikaFighter::DispatchActions()
             }
         }
         if (ATTACK_B) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(360.0f, -360.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(416) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(416);
@@ -531,14 +531,14 @@ void SuikaFighter::DispatchActions()
                 return;
             }
         }
-        if (ATTACK_C && FORWARD_MOTION && meter > 0 &&
+        if (ATTACK_C && FORWARD_MOTION && spirit > 0 &&
             (frameInfo->flags & 0x20) != 0 &&
             sequenceInfo->priority <= TARGET_PRIORITY(405) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(405);
             ClearAuxiliaryWords();
             return;
         }
-        if (ATTACK_C && meter > 0 &&
+        if (ATTACK_C && spirit > 0 &&
             (frameInfo->flags & 0x20) != 0 &&
             sequenceInfo->priority <= TARGET_PRIORITY(404) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(404);

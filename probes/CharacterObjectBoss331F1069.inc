@@ -5,35 +5,35 @@ case 0x331: {
     reinterpret_cast<unsigned char&>(facing)=reinterpret_cast<unsigned char&>(owner->facing);
     if (owner->action>0x95 &&
         owner->action<0x9A &&
-        F1024_PHASE(this).stageAt62==0) {
-        F1037_POSITION(this).xPosition=F1037_POSITION(PARENT).xPosition+
+        animationStage==0) {
+        x=owner->x+
             float(facing*57);
-        F1037_POSITION(this).yPosition=(*(&F1037_POSITION(PARENT).yPosition))+
+        y=(*(&owner->y))+
             g_F1069_ParentYFirstAt00659138;
     }
     if (owner->action>0x99 &&
         owner->action<0x9E &&
-        F1024_PHASE(this).stageAt62==0) {
-        F1037_POSITION(this).xPosition=F1037_POSITION(PARENT).xPosition+
+        animationStage==0) {
+        x=owner->x+
             float(facing*57);
-        F1037_POSITION(this).yPosition=(*(&F1037_POSITION(PARENT).yPosition))+
+        y=(*(&owner->y))+
             g_F1069_ParentYSecondAt00658264;
     }
     if (owner->action==0x9E &&
-        F1024_PHASE(this).stageAt62==0) {
-        F1037_POSITION(this).xPosition=F1037_POSITION(PARENT).xPosition+
+        animationStage==0) {
+        x=owner->x+
             float(facing*57);
-        F1037_POSITION(this).yPosition=(*(&F1037_POSITION(PARENT).yPosition))+
+        y=(*(&owner->y))+
             g_F1057_YOffsetAt00657888;
     }
     if ((owner->action<0x96 ||
          owner->action>0x9E) &&
-        F1024_PHASE(this).stageAt62==0) {
+        animationStage==0) {
         ResetSecondaryCounter(1);
         owner->fieldF0A=0;
     }
-    if (F1024_PHASE(this).stageAt62==0 &&
-        F1024_PHASE(this).frameAt64==0 &&
+    if (animationStage==0 &&
+        animationFrame==0 &&
         field0D8==0) {
         ResetTransform(0,0.0f,0);
         scaleX=1.0f;
@@ -46,7 +46,7 @@ case 0x331: {
         field0D8=1;
     }
     rotationZ=(rotationZ)+g_F1057_NudgeAt00657480;
-    if (F1024_PHASE(this).stageAt62>0) {
+    if (animationStage>0) {
         if (color[0]>30)
             color[0]-=30;
         else
@@ -54,7 +54,7 @@ case 0x331: {
     }
     if (AdvanceNestedFrame()==field070)
         ClearFrameInfo();
-    if (F1024_PHASE(this).stageAt62==1 && F1024_PHASE(this).frameAt64==0)
+    if (animationStage==1 && animationFrame==0)
         ResetSecondaryCounter(0);
     return;
 }

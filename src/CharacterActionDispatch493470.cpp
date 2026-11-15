@@ -144,7 +144,7 @@ void MarisaFighter::DispatchActions()
             return;
         }
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
         field3A0 > 0 &&
@@ -158,7 +158,7 @@ void MarisaFighter::DispatchActions()
         ResetPrimaryCounters(712);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 13 &&
         field3A0 > 0 &&
         field36C >= 100.0f &&
@@ -171,7 +171,7 @@ void MarisaFighter::DispatchActions()
         ResetPrimaryCounters(704);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
         field3A0 > 0 &&
@@ -186,7 +186,7 @@ void MarisaFighter::DispatchActions()
         ResetPrimaryCounters(706);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
         fieldF14 == 6 &&
@@ -200,7 +200,7 @@ void MarisaFighter::DispatchActions()
         ResetPrimaryCounters(715);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 23 &&
         y == 0.0f &&
         fieldF12 == 1 &&
@@ -214,7 +214,7 @@ void MarisaFighter::DispatchActions()
         ResetPrimaryCounters(714);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
         field3A0 > 0 &&
@@ -228,7 +228,7 @@ void MarisaFighter::DispatchActions()
         ResetPrimaryCounters(700);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 13 &&
         field3A0 > 0 &&
         field36C >= 100.0f &&
@@ -241,7 +241,7 @@ void MarisaFighter::DispatchActions()
         ResetPrimaryCounters(703);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
         field3A0 > 0 &&
@@ -256,7 +256,7 @@ void MarisaFighter::DispatchActions()
         ResetPrimaryCounters(705);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
         fieldF14 == 4 &&
@@ -270,7 +270,7 @@ void MarisaFighter::DispatchActions()
         ResetPrimaryCounters(708);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 23 &&
         y == 0.0f &&
         fieldF12 == 1 &&
@@ -287,7 +287,7 @@ void MarisaFighter::DispatchActions()
     if (aiCommand == 51 &&
         y == 0.0f &&
         (frameInfo->flags & 0x20) != 0 &&
-        meter > 0 &&
+        spirit > 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(625) &&
         ACTION_CHANGE_ALLOWED) {
         PackDirectionBits();
@@ -297,7 +297,7 @@ void MarisaFighter::DispatchActions()
     if (aiCommand == 50 &&
         y == 0.0f &&
         (frameInfo->flags & 0x20) != 0 &&
-        meter > 0 &&
+        spirit > 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(624) &&
         ACTION_CHANGE_ALLOWED) {
         PackDirectionBits();
@@ -306,7 +306,7 @@ void MarisaFighter::DispatchActions()
     }
     if (aiCommand == 31 &&
         y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(501) &&
         ACTION_CHANGE_ALLOWED) {
@@ -316,7 +316,7 @@ void MarisaFighter::DispatchActions()
     }
     if (aiCommand == 30 &&
         y == 0.0f &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(500) &&
         ACTION_CHANGE_ALLOWED) {
@@ -325,7 +325,7 @@ void MarisaFighter::DispatchActions()
         return;
     }
     if (aiCommand == 21 &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         action != 526 &&
         sequenceInfo->priority <= TARGET_PRIORITY(525) &&
@@ -336,7 +336,7 @@ void MarisaFighter::DispatchActions()
         return;
     }
     if (aiCommand == 20 &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         action != 526 &&
         sequenceInfo->priority <= TARGET_PRIORITY(524) &&
@@ -423,7 +423,7 @@ void MarisaFighter::DispatchActions()
             return;
         }
         if (ATTACK_A) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(320.0f, -320.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(402) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(402);
@@ -446,7 +446,7 @@ void MarisaFighter::DispatchActions()
             return;
         }
         if (ATTACK_B) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(320.0f, -320.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(415) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(415);
@@ -460,7 +460,7 @@ void MarisaFighter::DispatchActions()
                 return;
             }
         }
-        if (ATTACK_C && meter > 0 &&
+        if (ATTACK_C && spirit > 0 &&
             (frameInfo->flags & 0x20) != 0 &&
             sequenceInfo->priority <= TARGET_PRIORITY(409) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(409);
@@ -476,7 +476,7 @@ void MarisaFighter::DispatchActions()
             return;
         }
         if (ATTACK_A && inputY == 0 && FORWARD_MOTION) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(360.0f, -360.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(400) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(400);
@@ -491,7 +491,7 @@ void MarisaFighter::DispatchActions()
             }
         }
         if (ATTACK_A) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(320.0f, -320.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(400) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(400);
@@ -514,7 +514,7 @@ void MarisaFighter::DispatchActions()
             return;
         }
         if (ATTACK_B && inputY == 0 && FORWARD_MOTION) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(320.0f, -320.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(413) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(413);
@@ -529,7 +529,7 @@ void MarisaFighter::DispatchActions()
             }
         }
         if (ATTACK_B) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(320.0f, -320.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(412) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(412);
@@ -544,14 +544,14 @@ void MarisaFighter::DispatchActions()
             }
         }
         if (ATTACK_C && inputY == 0 && FORWARD_MOTION &&
-            (frameInfo->flags & 0x20) != 0 && meter > 0 &&
+            (frameInfo->flags & 0x20) != 0 && spirit > 0 &&
             sequenceInfo->priority <= TARGET_PRIORITY(407) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(407);
             ClearAuxiliaryWords();
             return;
         }
         if (ATTACK_C && (frameInfo->flags & 0x20) != 0 &&
-            meter > 0 &&
+            spirit > 0 &&
             sequenceInfo->priority <= TARGET_PRIORITY(406) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(406);
             ClearAuxiliaryWords();
@@ -560,7 +560,7 @@ void MarisaFighter::DispatchActions()
     }
     if (y > 0.0f) {
         if (ATTACK_A) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(400.0f, -400.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(404) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(404);
@@ -576,14 +576,14 @@ void MarisaFighter::DispatchActions()
         }
         if (ATTACK_B) {
             if ((inputY > 0 || bufferedY > 0) &&
-                meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+                spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(360.0f, -360.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(417) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(417);
                 ClearAuxiliaryWords();
                 return;
             }
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(360.0f, -360.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(416) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(416);
@@ -598,14 +598,14 @@ void MarisaFighter::DispatchActions()
             }
         }
         if (ATTACK_C && (inputY > 0 || bufferedY > 0) &&
-            (frameInfo->flags & 0x20) != 0 && meter > 100 &&
+            (frameInfo->flags & 0x20) != 0 && spirit > 100 &&
             sequenceInfo->priority <= TARGET_PRIORITY(411) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(411);
             ClearAuxiliaryWords();
             return;
         }
         if (ATTACK_C && (frameInfo->flags & 0x20) != 0 &&
-            meter > 100 &&
+            spirit > 100 &&
             sequenceInfo->priority <= TARGET_PRIORITY(410) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(410);
             ClearAuxiliaryWords();

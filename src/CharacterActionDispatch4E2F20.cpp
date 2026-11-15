@@ -129,7 +129,7 @@ void AliceFighter::DispatchActions()
             return;
         }
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
         field3A0 > 0 &&
@@ -143,7 +143,7 @@ void AliceFighter::DispatchActions()
         ResetPrimaryCounters(703);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         fieldF12 == 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
@@ -158,7 +158,7 @@ void AliceFighter::DispatchActions()
         ResetPrimaryCounters(704);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
         field3A0 > 0 &&
@@ -172,7 +172,7 @@ void AliceFighter::DispatchActions()
         ResetPrimaryCounters(705);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
         field3A0 > 0 &&
@@ -186,7 +186,7 @@ void AliceFighter::DispatchActions()
         ResetPrimaryCounters(700);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         fieldF12 == 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
@@ -201,7 +201,7 @@ void AliceFighter::DispatchActions()
         ResetPrimaryCounters(701);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 13 &&
         y == 0.0f &&
         field3A0 > 0 &&
@@ -215,40 +215,40 @@ void AliceFighter::DispatchActions()
         ResetPrimaryCounters(702);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 22 &&
         y == 0.0f &&
         (frameInfo->flags & 0x20) != 0 &&
-        meter > 0 &&
+        spirit > 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(608) &&
         ACTION_CHANGE_ALLOWED) {
         PackDirectionBits();
         ResetPrimaryCounters(608);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 21 &&
         y == 0.0f &&
         (frameInfo->flags & 0x20) != 0 &&
-        meter > 0 &&
+        spirit > 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(607) &&
         ACTION_CHANGE_ALLOWED) {
         PackDirectionBits();
         ResetPrimaryCounters(607);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 20 &&
         y == 0.0f &&
         (frameInfo->flags & 0x20) != 0 &&
-        meter > 0 &&
+        spirit > 0 &&
         sequenceInfo->priority <= TARGET_PRIORITY(606) &&
         ACTION_CHANGE_ALLOWED) {
         PackDirectionBits();
         ResetPrimaryCounters(606);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 31 &&
         y == 0.0f &&
         (frameInfo->flags & 0x20) != 0 &&
@@ -258,7 +258,7 @@ void AliceFighter::DispatchActions()
         ResetPrimaryCounters(613);
         return;
     }
-    if (meter > 0 &&
+    if (spirit > 0 &&
         aiCommand == 30 &&
         y == 0.0f &&
         (frameInfo->flags & 0x20) != 0 &&
@@ -269,7 +269,7 @@ void AliceFighter::DispatchActions()
         return;
     }
     if (aiCommand == 12 &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         y == 0.0f &&
         sequenceInfo->priority <= TARGET_PRIORITY(602) &&
@@ -279,7 +279,7 @@ void AliceFighter::DispatchActions()
         return;
     }
     if (aiCommand == 11 &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         y == 0.0f &&
         sequenceInfo->priority <= TARGET_PRIORITY(601) &&
@@ -289,7 +289,7 @@ void AliceFighter::DispatchActions()
         return;
     }
     if (aiCommand == 10 &&
-        meter > 0 &&
+        spirit > 0 &&
         (frameInfo->flags & 0x20) != 0 &&
         y == 0.0f &&
         sequenceInfo->priority <= TARGET_PRIORITY(600) &&
@@ -375,7 +375,7 @@ void AliceFighter::DispatchActions()
             return;
         }
         if (ATTACK_A) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(460.0f, -460.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(410) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(410);
@@ -397,7 +397,7 @@ void AliceFighter::DispatchActions()
             return;
         }
         if (ATTACK_B) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(320.0f, -320.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(416) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(416);
@@ -411,7 +411,7 @@ void AliceFighter::DispatchActions()
                 return;
             }
         }
-        if (ATTACK_C && meter > 0 &&
+        if (ATTACK_C && spirit > 0 &&
             (frameInfo->flags & 0x20) != 0 &&
             sequenceInfo->priority <= TARGET_PRIORITY(402) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(402);
@@ -427,7 +427,7 @@ void AliceFighter::DispatchActions()
             return;
         }
         if (ATTACK_A && inputY == 0 && FORWARD_MOTION) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(480.0f, -480.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(408) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(408);
@@ -442,7 +442,7 @@ void AliceFighter::DispatchActions()
             }
         }
         if (ATTACK_A) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(480.0f, -480.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(408) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(408);
@@ -464,7 +464,7 @@ void AliceFighter::DispatchActions()
             return;
         }
         if (ATTACK_B && inputY == 0 && FORWARD_MOTION) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(320.0f, -320.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(415) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(415);
@@ -479,7 +479,7 @@ void AliceFighter::DispatchActions()
             }
         }
         if (ATTACK_B) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(320.0f, -320.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(414) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(414);
@@ -494,14 +494,14 @@ void AliceFighter::DispatchActions()
             }
         }
         if (ATTACK_C && inputY == 0 && FORWARD_MOTION &&
-            (frameInfo->flags & 0x20) != 0 && meter > 0 &&
+            (frameInfo->flags & 0x20) != 0 && spirit > 0 &&
             sequenceInfo->priority <= TARGET_PRIORITY(401) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(401);
             ClearAuxiliaryWords();
             return;
         }
         if (ATTACK_C && (frameInfo->flags & 0x20) != 0 &&
-            meter > 0 &&
+            spirit > 0 &&
             sequenceInfo->priority <= TARGET_PRIORITY(400) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(400);
             ClearAuxiliaryWords();
@@ -510,7 +510,7 @@ void AliceFighter::DispatchActions()
     }
     if (y > 0.0f) {
         if (ATTACK_A) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(520.0f, -520.0f) &&
                 (inputY > 0 || bufferedY > 0) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(413) && ACTION_CHANGE_ALLOWED) {
@@ -518,7 +518,7 @@ void AliceFighter::DispatchActions()
                 ClearAuxiliaryWords();
                 return;
             }
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(520.0f, -520.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(412) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(412);
@@ -533,7 +533,7 @@ void AliceFighter::DispatchActions()
             }
         }
         if (ATTACK_B) {
-            if (meter > 0 && (frameInfo->flags & 0x20) != 0 &&
+            if (spirit > 0 && (frameInfo->flags & 0x20) != 0 &&
                 DISTANT_FROM_OPPONENT(400.0f, -400.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(418) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(418);
@@ -548,14 +548,14 @@ void AliceFighter::DispatchActions()
             }
         }
         if (ATTACK_C && (inputY > 0 || bufferedY > 0) &&
-            (frameInfo->flags & 0x20) != 0 && meter > 0 &&
+            (frameInfo->flags & 0x20) != 0 && spirit > 0 &&
             sequenceInfo->priority <= TARGET_PRIORITY(404) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(404);
             ClearAuxiliaryWords();
             return;
         }
         if (ATTACK_C && (frameInfo->flags & 0x20) != 0 &&
-            meter > 0 &&
+            spirit > 0 &&
             sequenceInfo->priority <= TARGET_PRIORITY(407) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(407);
             ClearAuxiliaryWords();

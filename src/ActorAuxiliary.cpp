@@ -64,7 +64,7 @@ void AuxiliaryActor4A80F0::Update()
         OWNER(short, 0xF30) = static_cast<short>(y);
     }
     if ((OWNER(short, 0x60) == 709 || OWNER(short, 0x60) == 710) &&
-        F1024_PHASE(owner).stageAt62 == 5 && F1024_PHASE(owner).frameAt64 == 0 &&
+        owner->animationStage == 5 && owner->animationFrame == 0 &&
         field0DC == 0 && animationStage == 1 &&
         ((action == 833 && OWNER(short, 0xF16) == 6) ||
          (action == 832 && OWNER(short, 0xF16) == 5) ||
@@ -81,7 +81,7 @@ void AuxiliaryActor4A80F0::Update()
         --OWNER(short, 0xF16);
     }
     if ((OWNER(short, 0x60) == 716 || OWNER(short, 0x60) == 717) &&
-        F1024_PHASE(owner).stageAt62 == 5 && F1024_PHASE(owner).frameAt64 == 0 &&
+        owner->animationStage == 5 && owner->animationFrame == 0 &&
         (animationStage == 1 || animationStage == 2) &&
         ((action == 833 && OWNER(short, 0xF16) == 6) ||
          (action == 832 && OWNER(short, 0xF16) == 5) ||

@@ -1,6 +1,6 @@
 // F1054: Real native action 0x337, original 155B/35 x86; one 81KB parent.
 case 0x337: {
-    if (F1024_PHASE(this).stageAt62 == 0 && F1024_PHASE(this).frameAt64 == 0) {
+    if (animationStage == 0 && animationFrame == 0) {
         ResetTransform(0,0,0);
         scaleX = 1.0f;
         scaleY = 1.0f;

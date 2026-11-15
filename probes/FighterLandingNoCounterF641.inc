@@ -2,9 +2,9 @@
 // actions with NO trajectory counter reset, unlike the earlier F633
 // 73/75-x86 family. This is an inner case of a nonexact giant.
 case F641_CASE: {
-    field368=(field368)+g_AnimationDeltaAt0065747C;
-    if ((field368)>g_AnimationMaximumAt006583B4)
-        field368=1000.0f;
+    cardGauge=(cardGauge)+g_AnimationDeltaAt0065747C;
+    if ((cardGauge)>g_AnimationMaximumAt006583B4)
+        cardGauge=1000.0f;
     if (animationStage==0 && animationFrame==0) {
         velocityX=F641_START_HEIGHT;
         velocityY=0.0f;

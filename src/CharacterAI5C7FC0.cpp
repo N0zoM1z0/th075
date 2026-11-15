@@ -158,7 +158,7 @@ void SuikaFighter::ChooseCardAction()
         if (action > 399 &&
             action < 500 &&
             distance.x < 300.0f &&
-            meter > 500 &&
+            spirit > 500 &&
             rand() < 100) {
             aiCommand = 20;
             return;
@@ -166,7 +166,7 @@ void SuikaFighter::ChooseCardAction()
         if (action > 399 &&
             action < 500 &&
             distance.x > 600.0f &&
-            meter > 500 &&
+            spirit > 500 &&
             rand() < 100) {
             aiCommand = 21;
             return;
@@ -174,7 +174,7 @@ void SuikaFighter::ChooseCardAction()
         if (action > 399 &&
             action < 500 &&
             distance.x < 300.0f &&
-            meter > 500 &&
+            spirit > 500 &&
             rand() < 100) {
             aiCommand = 10;
             return;
@@ -182,7 +182,7 @@ void SuikaFighter::ChooseCardAction()
         if (action > 399 &&
             action < 500 &&
             distance.x > 600.0f &&
-            meter > 500 &&
+            spirit > 500 &&
             rand() < 100) {
             aiCommand = 11;
             return;
@@ -206,7 +206,7 @@ void SuikaFighter::ChooseCardAction()
     if (OPPONENT_GUARD && (opponent->action < 93 || opponent->action > 99)) {
         if (action == 307 &&
             rand() < 10000 &&
-            meter > 250) {
+            spirit > 250) {
             aiWaitTimer = ChooseIntegerRange(0, 45);
             aiStep = 6;
             inputC = 1;
@@ -214,7 +214,7 @@ void SuikaFighter::ChooseCardAction()
         }
         if (action == 307 &&
             rand() < 1000 &&
-            meter > 500) {
+            spirit > 500) {
             aiCommand = 20;
             return;
         }
@@ -242,7 +242,7 @@ void SuikaFighter::ChooseCardAction()
         if (distance.x < 100.0f &&
             action == 307 &&
             rand() < 5000 &&
-            meter > 300) {
+            spirit > 300) {
             aiWaitTimer = ChooseIntegerRange(0, 30);
             aiStep = 1;
             inputC = 1;
@@ -354,7 +354,7 @@ void SuikaFighter::ChooseCardAction()
         if (distance.x < 100.0f &&
             action == 303 &&
             rand() < 5000 &&
-            meter > 300) {
+            spirit > 300) {
             aiWaitTimer = ChooseIntegerRange(0, 30);
             aiStep = 1;
             inputC = 1;
@@ -362,7 +362,7 @@ void SuikaFighter::ChooseCardAction()
         }
         if (action == 308 &&
             rand() < 10000 &&
-            meter > 300) {
+            spirit > 300) {
             aiWaitTimer = ChooseIntegerRange(0, 30);
             aiStep = 1;
             inputC = 1;
@@ -370,7 +370,7 @@ void SuikaFighter::ChooseCardAction()
         }
         if (action == 308 &&
             rand() < 10000 &&
-            meter > 300) {
+            spirit > 300) {
             aiCommand = 10;
             return;
         }
@@ -385,9 +385,9 @@ void SuikaFighter::ChooseCardAction()
             return;
         }
     }
-    if (static_cast<float>(rand()) < meter * 0.8f + 0.0f &&
+    if (static_cast<float>(rand()) < spirit * 0.8f + 0.0f &&
         distance.x > 320.0f &&
-        meter > 350) {
+        spirit > 350) {
         aiWaitTimer = ChooseIntegerRange(0, 45);
         aiStep = 1;
         inputC = 1;
@@ -395,9 +395,9 @@ void SuikaFighter::ChooseCardAction()
         if (rand() < 1000) inputY = 1;
         return;
     }
-    if (static_cast<float>(rand()) < meter * 1.0f + 0.0f &&
+    if (static_cast<float>(rand()) < spirit * 1.0f + 0.0f &&
         distance.x > 560.0f &&
-        meter > 250 &&
+        spirit > 250 &&
         distance.y < 100.0f) {
         aiStep = 6;
         aiWaitTimer = ChooseIntegerRange(0, 45);
@@ -406,9 +406,9 @@ void SuikaFighter::ChooseCardAction()
         if (rand() < 2000) inputY = 1;
         return;
     }
-    if (static_cast<float>(rand()) < meter * 0.5f + 0.0f &&
+    if (static_cast<float>(rand()) < spirit * 0.5f + 0.0f &&
         distance.x > 560.0f &&
-        meter > 250) {
+        spirit > 250) {
         inputB = 1;
         return;
     }
@@ -566,13 +566,13 @@ void SuikaFighter::ChooseCardAction()
     }
     if (distance.x > 350.0f &&
         rand() < 200 &&
-        meter > 350) {
+        spirit > 350) {
         aiCommand = 10;
         return;
     }
     if (distance.x > 350.0f &&
         rand() < 200 &&
-        meter > 350) {
+        spirit > 350) {
         aiCommand = 11;
         return;
     }
@@ -599,13 +599,13 @@ void SuikaFighter::ChooseCardAction()
     }
     if (distance.y < 150.0f &&
         distance.x > 200.0f &&
-        static_cast<float>(rand()) < meter * 0.1f) {
+        static_cast<float>(rand()) < spirit * 0.1f) {
         aiCommand = 20;
         return;
     }
     if (distance.y < 150.0f &&
         distance.x > 400.0f &&
-        static_cast<float>(rand()) < meter * 0.1f) {
+        static_cast<float>(rand()) < spirit * 0.1f) {
         aiCommand = 21;
         return;
     }

@@ -14,14 +14,14 @@ void SakuyaFighter::AdvanceAuxiliary() {
         if(fieldF0E<=0) { EnableRoundSound(1);fieldF0E=1; }
         else { --fieldF0E; }
         field09C=0.75f;
-        fieldF0C=meter;
+        fieldF0C=spirit;
         if(action!=0x2C1 && action!=0x2C3) {
             if(field39D==2) {
-                if(meter>8) InterruptSpecial(8);
+                if(spirit>8) InterruptSpecial(8);
                 else fieldF0C=0;
             }
             if(field39D==1) {
-                if(meter>4) InterruptSpecial(4);
+                if(spirit>4) InterruptSpecial(4);
                 else fieldF0C=0;
             }
         }
@@ -35,14 +35,14 @@ void SakuyaFighter::AdvanceAuxiliary() {
             opponent->field010=0;
         }
         if(fieldF10>0 && action!=0x2C0 && action!=0x2C2) {
-            fieldF10=meter;
+            fieldF10=spirit;
             field3B8=2;
             if(field39D==2) {
-                if(meter>8) InterruptSpecial(8);
+                if(spirit>8) InterruptSpecial(8);
                 else fieldF10=0;
             }
             if(field39D==1) {
-                if(meter>5) InterruptSpecial(5);
+                if(spirit>5) InterruptSpecial(5);
                 else fieldF10=0;
             }
             reinterpret_cast<OpponentControlF371*>(opponent)->TriggerBlockedAction(0,0,0);

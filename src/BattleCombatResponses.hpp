@@ -6,10 +6,10 @@
 class CombatResponseActor { public: signed char ClassifyResponse(unsigned long flags); };
 class BattleCombatResponses {
 public:
- bool ApplyHitResponse(CombatActor *, CombatActor *, CombatActor *);
- bool ApplyAttackHit(CombatActor *, CombatActor *, CombatActor *);
- void ApplyGuardHit(CombatActor *, CombatActor *, CombatActor *);
- void ApplyImpact(CombatActor *, CombatActor *, CombatActor *);
+ bool ApplyHitResponse(Actor *, Fighter *, Fighter *);
+ bool ApplyAttackHit(Actor *, Fighter *, Fighter *);
+ void ApplyGuardHit(Actor *, Fighter *, Fighter *);
+ void ApplyImpact(Actor *, Fighter *, Fighter *);
 };
 class CombatEffects { public: void Spawn(short, float, float, unsigned char, signed char, unsigned char, unsigned char); };
 extern CombatEffects g_CombatEffects;

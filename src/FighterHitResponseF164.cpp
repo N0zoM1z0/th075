@@ -3,7 +3,6 @@
 #include <cstdlib>
 
 #define OPPONENT_X opponent->x
-#define FRAME_FLAGS (*reinterpret_cast<unsigned int*>(reinterpret_cast<unsigned char*>(field0AC) + 0x3C))
 
 bool Fighter::IsState150To199() {
     return action >= 150 && action < 200;
@@ -14,7 +13,7 @@ bool Fighter::IsState95To99() {
 }
 
 unsigned char Fighter::SelectHitResponse(unsigned int flags) {
-    if (!(FRAME_FLAGS & 0x10)) return 0;
+    if (!(savedFrameInfo->flags & 0x10)) return 0;
     if (flags & 0x10) return 0;
     if (field3BC > 0) return 0;
     if (field2CD != 0) {
@@ -62,11 +61,11 @@ unsigned char Fighter::SelectHitResponse(unsigned int flags) {
         if ((OPPONENT_X - x) * inputX > 0.0f || inputX == 0) return 0;
     }
 classifyResponse:
-    if (y > 0.0f || (FRAME_FLAGS & 4)) {
-        if ((flags & 8) && meter > 0) return 31;
+    if (y > 0.0f || (savedFrameInfo->flags & 4)) {
+        if ((flags & 8) && spirit > 0) return 31;
     } else {
         if (inputY > 0) {
-            if (meter > 0) {
+            if (spirit > 0) {
                 if (flags & 4) return 21;
                 return 22;
             } else {
@@ -75,7 +74,7 @@ classifyResponse:
                 return 0;
             }
         } else {
-            if (meter > 0) {
+            if (spirit > 0) {
                 if (flags & 2) return 11;
                 return 12;
             } else {
@@ -88,5 +87,4 @@ classifyResponse:
     return 0;
 }
 
-#undef FRAME_FLAGS
 #undef OPPONENT_X

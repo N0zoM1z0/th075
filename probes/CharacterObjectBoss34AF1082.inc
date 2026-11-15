@@ -4,7 +4,7 @@ case 0x34A: {
     reinterpret_cast<unsigned int&>(x)=reinterpret_cast<unsigned int&>(owner->x);
     y=0.0f;
     field08A=1;
-    if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
+    if (animationStage==0 && animationFrame==0) {
         ResetTransform(0,0.0f,0);
         scaleX=2.5f;
         scaleY=2.5f;
@@ -16,9 +16,9 @@ case 0x34A: {
         rotationY=0.0f;
         rotationZ=0.0f;
         rotationX=-80.0f;
-        reinterpret_cast<F1051Grandparent*>(PARENT)->NativePrepareAt00453D40(0x10);
+        reinterpret_cast<F1051Grandparent*>(owner)->NativePrepareAt00453D40(0x10);
     }
-    if (F1024_PHASE(this).stageAt62==1) {
+    if (animationStage==1) {
         // The original compares parent action +0x60 with 0x2C0, then
         // checks the parent's distinct +0x62 WORD against 0x2C0 and 6.
         // Do not collapse this to a simpler presumed stage condition.
@@ -29,7 +29,7 @@ case 0x34A: {
             return;
         }
     }
-    if (F1024_PHASE(this).stageAt62==2) {
+    if (animationStage==2) {
         if (color[0]>15)
             color[0]-=15;
         else {

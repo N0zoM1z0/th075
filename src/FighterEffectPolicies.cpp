@@ -41,14 +41,14 @@ void Fighter::PlaySharedSound(short sound)
 
 void ReimuFighter::UpdateGaugeTimer(int amount)
 {
-    if (meterCooldown > 0) {
-        meterCooldown = 1000;
+    if (spiritCooldown > 0) {
+        spiritCooldown = 1000;
     } else {
-        meter = meter - amount;
-        if (meter <= 0 && meterCooldown <= 0) {
+        spirit = spirit - amount;
+        if (spirit <= 0 && spiritCooldown <= 0) {
             PlaySharedSound(43);
-            meter = 0;
-            meterCooldown = 1000;
+            spirit = 0;
+            spiritCooldown = 1000;
         }
     }
 }

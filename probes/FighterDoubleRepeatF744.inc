@@ -37,7 +37,7 @@
             }
             if ((animationStage)==5 && (animationFrame)==0
                     && static_cast<unsigned int>(inputA)>0
-                    && (reinterpret_cast<signed short&>(scriptCounterF00))<6 && (meter)>0) {
+                    && (reinterpret_cast<signed short&>(scriptCounterF00))<6 && (spirit)>0) {
                 PrepareActionAt453D40(2);
                 field314=0.0f;
                 SpawnFloatXYAt453A70(0x330,
@@ -84,7 +84,7 @@
             }
             if ((animationStage)==5 && (animationFrame)==0
                     && static_cast<unsigned int>(inputA)>0
-                    && (reinterpret_cast<signed short&>(scriptCounterF00))<6 && (meter)>0) {
+                    && (reinterpret_cast<signed short&>(scriptCounterF00))<6 && (spirit)>0) {
                 PrepareActionAt453D40(2);
                 field314=-20.0f;
                 SpawnFloatXYAt453A70(0x330,

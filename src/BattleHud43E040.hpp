@@ -1,4 +1,5 @@
 #pragma once
+#include "Fighter.hpp"
 #include "CharacterSpecial5E68C0.hpp"
 #include "BattleRender43D9D0.hpp"
 
@@ -31,8 +32,8 @@ class BattleHud43E040 { public: void RenderHud(); public:
     unsigned char unknown00C[0x018 - 0x00C];
     signed char field018;
     unsigned char unknown019[0x044 - 0x019];
-    char* field044;
-    char* field048;
+    Fighter* field044;            // the two fighters
+    Fighter* field048;
     unsigned char unknown04C[0x050 - 0x04C];
     void* field050;
     void* field054;
