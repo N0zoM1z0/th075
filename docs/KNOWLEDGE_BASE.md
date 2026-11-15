@@ -157,6 +157,17 @@ while (0)` changes the cycle but adds instructions. The joins are not
 jump-table targets. Finding the construct that produces this state for
 identical code is the most promising lead for the giants.
 
+More precisely, every anomalous join takes the register state of the
+**first** conditional jump into it (for `A && B`, the state after testing
+`A`), while normal joins continue the fall-through; the same shapes occur
+many times in each giant and behave normally elsewhere (Remilia's object has
+nine velocity-reset joins, one anomalous). Our builds of the giants contain
+no such join at all, and among the 982 accepted units none shows the
+giant-like case (33 have unusual joins, all around `idiv` or other fixed
+registers). The positions share no instruction, label, jump, call or
+`this`-reload count. Nested `if (A) { if (B) … }` gives the same code and
+state as `A && B`.
+
 `reinterpret_cast<signed short&>(m)` on a `short` member is a no-op and
 emits identical code; 3,910 such casts left by the conversion were removed.
 
