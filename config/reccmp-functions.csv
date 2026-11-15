@@ -552,12 +552,12 @@ MusicRoomScene::RenderTrackCatalogText,0x00426670,function
 MusicRoomScene::RenderSelectedTitle,0x004268A0,function
 ResultScene::BuildCounterPage,0x00431350,function
 ResultScene::BuildRecordPage,0x00431070,function
-ResultScene::RenderCounters,0x0042EF10,function
+ResultScene::Render,0x0042EF10,function
 ResultScene::DrawDecimalDigits,0x0042F530,function
 SceneTransition::DispatchMode,0x00431F60,function
-ResultScene::Initialize,0x0042E640,function
-SceneController::AdvanceAt0042E8F0,0x0042E8F0,function
-ResultListScene::PollInput,0x0042F450,function
+ResultScene::ResultScene,0x0042E640,function
+ResultScene::Update,0x0042E8F0,function
+ResultScene::PollInput,0x0042F450,function
 NameEntryScene::UpdatePlayer,0x0042A340,function
 ProgressRecords::SaveScoreFile,0x004169E0,function
 ProgressRecords::LoadScoreFile,0x00416B10,function
@@ -571,7 +571,7 @@ ResultScene::LoadSelectedCharacterResources,0x00430EE0,function
 MusicRoom::EncodeCatalogFileAt00427300,0x00427300,function
 MusicRoom::LoadCatalogAt00426DD0,0x00426DD0,function
 ReplayRecords::LoadRecord,0x00413AC0,function
-ResultScene::PollInput,0x00430D80,function
+ResultScenePollF260::PollInput,0x00430D80,function
 MusicRoomRecord::InitializeAt00427430,0x00427430,function
 MusicRoomRecord::ReleaseBuffersAt00427470,0x00427470,function
 MusicRoomScene::Initialize,0x00425750,function
@@ -777,7 +777,7 @@ MeilingFighter::CreateOwnedObjectAt005E2170,0x005E2170,function
 OpeningScene::ReleaseResourcesAt004276B0,0x004276B0,function
 ReplayScene::ReleaseResourcesAt0042A2C0,0x0042A2C0,function
 NameEntryScene::ReleaseResourcesAt0042B300,0x0042B300,function
-ResultScene::ReleaseResourcesAt0042E870,0x0042E870,function
+ResultScene::~ResultScene,0x0042E870,function
 StaffRollScene::ReleaseResourcesAt00438BA0,0x00438BA0,function
 TitleScene::ReleaseResourcesAt0043A1E0,0x0043A1E0,function
 BackgroundStage::DestroyBG00aAt00449DC0,0x00449DC0,function

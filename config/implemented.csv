@@ -551,12 +551,12 @@ MusicRoomScene::RenderTrackCatalogText
 MusicRoomScene::RenderSelectedTitle
 ResultScene::BuildCounterPage
 ResultScene::BuildRecordPage
-ResultScene::RenderCounters
+ResultScene::Render
 ResultScene::DrawDecimalDigits
 SceneTransition::DispatchMode
-ResultScene::Initialize
-SceneController::AdvanceAt0042E8F0
-ResultListScene::PollInput
+ResultScene::ResultScene
+ResultScene::Update
+ResultScene::PollInput
 NameEntryScene::UpdatePlayer
 ProgressRecords::SaveScoreFile
 ProgressRecords::LoadScoreFile
@@ -570,7 +570,7 @@ ResultScene::LoadSelectedCharacterResources
 MusicRoom::EncodeCatalogFileAt00427300
 MusicRoom::LoadCatalogAt00426DD0
 ReplayRecords::LoadRecord
-ResultScene::PollInput
+ResultScenePollF260::PollInput
 MusicRoomRecord::InitializeAt00427430
 MusicRoomRecord::ReleaseBuffersAt00427470
 MusicRoomScene::Initialize
@@ -776,7 +776,7 @@ MeilingFighter::CreateOwnedObjectAt005E2170
 OpeningScene::ReleaseResourcesAt004276B0
 ReplayScene::ReleaseResourcesAt0042A2C0
 NameEntryScene::ReleaseResourcesAt0042B300
-ResultScene::ReleaseResourcesAt0042E870
+ResultScene::~ResultScene
 StaffRollScene::ReleaseResourcesAt00438BA0
 TitleScene::ReleaseResourcesAt0043A1E0
 BackgroundStage::DestroyBG00aAt00449DC0

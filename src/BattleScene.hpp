@@ -2,18 +2,10 @@
 #define TH075_BATTLE_SCENE_HPP
 #include <windows.h>
 #include "Fighter.hpp"
+#include "SceneBase.hpp"
 
 struct IDirect3DTexture8;
 
-// Base of every scene: the vtable pointer and a shared counter at +4.
-class SceneBase {
-public:
-    SceneBase();
-    virtual ~SceneBase();               // 00431F40
-private:
-    unsigned int sharedCounter;
-};
-typedef char SceneBaseSize[sizeof(SceneBase) == 8 ? 1 : -1];
 
 // The combo counter shown for each side; the battle scene allocates 20 bytes.
 class ComboDisplay {

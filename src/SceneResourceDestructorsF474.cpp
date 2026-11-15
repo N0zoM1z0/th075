@@ -1,5 +1,7 @@
-// Five independently original complete 127-byte scene resource destructors;
-// base scene and texture delete implementations are already borrowed.
+#include "ResultScene.hpp"
+
+// Five complete 127-byte scene destructors; the base scene and texture
+// destructors they call are already declared elsewhere.
 class NativeSceneBaseF474 {
   void* nativeConfiguration;
 public: NativeSceneBaseF474();virtual ~NativeSceneBaseF474();
@@ -17,10 +19,6 @@ class NameEntrySceneReleaseF474:public NativeSceneBaseF474 {
   SceneTextureF474* texture;
 public:NameEntrySceneReleaseF474();virtual ~NameEntrySceneReleaseF474();
 };
-class ResultSceneReleaseF474:public NativeSceneBaseF474 {
-  SceneTextureF474* texture;
-public:ResultSceneReleaseF474();virtual ~ResultSceneReleaseF474();
-};
 class StaffRollSceneReleaseF474:public NativeSceneBaseF474 {
   SceneTextureF474* texture;
 public:StaffRollSceneReleaseF474();virtual ~StaffRollSceneReleaseF474();
@@ -28,7 +26,7 @@ public:StaffRollSceneReleaseF474();virtual ~StaffRollSceneReleaseF474();
 OpeningSceneReleaseF474::~OpeningSceneReleaseF474() { if(texture) delete texture; }
 ReplaySceneReleaseF474::~ReplaySceneReleaseF474() { if(texture) delete texture; }
 NameEntrySceneReleaseF474::~NameEntrySceneReleaseF474() { if(texture) delete texture; }
-ResultSceneReleaseF474::~ResultSceneReleaseF474() { if(texture) delete texture; }
+ResultScene::~ResultScene() { if(textures) delete static_cast<SceneTextureF474*>(textures); }
 StaffRollSceneReleaseF474::~StaffRollSceneReleaseF474() { if(texture) delete texture; }
 
 // The real title-scene member at +0x38 is read before resource deletion.
