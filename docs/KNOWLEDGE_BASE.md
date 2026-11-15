@@ -128,6 +128,27 @@ match. Its methods run from 0043AD10 to 00449310, interleaved with a few
   attacker and defender are `Fighter`s; `Fighter::CalculateDamage(attack)`
   (00455640) is the attacker's damage against its opponent.
 
+## Game progress (save data)
+
+The progress object (`g_BattleRecords`, 26 methods on about 18 alias
+classes such as `ProgressRecordsF274`, `CardProgressF172`,
+`SelectedProgressF174`) has a regular layout:
+
+- 15 character blocks of 0x17F0 bytes from +0, each 4 difficulty blocks of
+  0x5FC bytes. A difficulty block ends with 10 ranked scores of 16 bytes at
+  +0x55C (8 name bytes, a DWORD, the score at +0xC; the lowest score sits
+  at +0x5F8). `ProgressRankingF375::InsertRankedScore` (00416EE0) works on
+  one difficulty block. +0x04 of a block counts selections and +0x556 is
+  read by the single-player options.
+- +0x16710: a 15×15 int table of mode counters; +0x16A94: 8 bytes (100
+  each by default); +0x16A9C: 40 bytes of unlock bits; +0x16AC4/+0x16AC5:
+  the selected fighter and difficulty; +0x16AC6: 256 bytes saved with the
+  scores.
+
+The sources combine the two strides in different orders (some multiply
+the difficulty first), so a nested-array declaration must be checked
+against each original before replacing the arithmetic.
+
 ## VC7.1 `/Od` code generation
 
 ### x87 operand order
