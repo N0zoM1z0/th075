@@ -48212,7 +48212,7 @@ target = 0x0046D000
 [[units.character-aux-active-opponent-special-004c49c0.relocations]]
 offset = 642
 type = "REL32"
-symbol = "?TriggerBlockedAction@OpponentControlF371@@QAEXHHH@Z"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
 target = 0x0040FBB0
 [[units.character-aux-active-opponent-special-004c49c0.relocations]]
 offset = 904

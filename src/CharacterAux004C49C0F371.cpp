@@ -6,7 +6,6 @@
 // interface, inherited effect spawner and round-sound APIs are borrowed.
 // Source uses actual native branch direction and a native short predecrement;
 // no unused storage, full owner layout or invented control paths.
-class OpponentControlF371 {public: void TriggerBlockedAction(int,int,int);};
 #define FIELD(type,offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this)+(offset)))
 void SakuyaFighter::AdvanceAuxiliary() {
     if(velocityX==0.0f && field3AC>0) field3AC=0;
@@ -45,7 +44,7 @@ void SakuyaFighter::AdvanceAuxiliary() {
                 if(spirit>5) InterruptSpecial(5);
                 else fieldF10=0;
             }
-            reinterpret_cast<OpponentControlF371*>(opponent)->TriggerBlockedAction(0,0,0);
+            opponent->ResetTransform(0,0,0);
             opponent->field010=0x82;
         }
     }
