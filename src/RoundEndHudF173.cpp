@@ -1,10 +1,10 @@
+#include "GameProgress.hpp"
 #include "BattleScene.hpp"
 #include "FighterRoundOutcomeBytesF992.hpp"
 #include "RoundEndHudF173.hpp"
 #include "CameraUpdate4126C0.hpp"
 
 #define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
-#define MODE_VALUES reinterpret_cast<int (*)[15]>(reinterpret_cast<unsigned char*>(this) + 0x16710)
 
 void BattleScene::EnterRoundEnd()
 {
@@ -60,9 +60,9 @@ void BattleScene::EnterRoundEnd()
     }
 }
 
-void ModeCounterF173::IncrementModeCounter(signed char category, signed char key)
+void GameProgress::IncrementModeCounter(signed char category, signed char key)
 {
-    MODE_VALUES[category][key]++;
+    modeCounts[category][key]++;
 }
 
 ComboDisplay::ComboDisplay(IDirect3DTexture8* texture, signed char side)
@@ -90,5 +90,4 @@ void ComboDisplay::UpdateCounter(short count, short damage, short rate)
     }
 }
 
-#undef MODE_VALUES
 #undef FIELD

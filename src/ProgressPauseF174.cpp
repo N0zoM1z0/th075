@@ -1,5 +1,5 @@
+#include "GameProgress.hpp"
 #include "BattleScene.hpp"
-#include "ProgressSelectionKeysF954.hpp"
 #include "ProgressPauseF174.hpp"
 #include "SelectionInput4388D0.hpp"
 #include "GameLeafHelpers.hpp"
@@ -8,38 +8,36 @@
 // Existing unsigned byte view, written from the observed scene pause byte.
 extern unsigned char g_RenderByte0067161C;
 
-#define PROGRESS_ARRAY(type, offset) reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + F954_PROGRESS_KEYS(this).fighterAt16AC4 * 0x17F0 + (offset))
-#define SELECTED_VALUE(offset) (*reinterpret_cast<int*>(reinterpret_cast<unsigned char*>(this) + F954_PROGRESS_KEYS(this).fighterAt16AC4 * 0x17F0 + (offset) + F954_PROGRESS_KEYS(this).difficultyAt16AC5 * 0x5FC))
 #define HELD_BUTTON reinterpret_cast<int*>(reinterpret_cast<unsigned char*>(&g_HeldInputAt00671664) + i * 0x48 + 8)[j]
 
-unsigned int SelectedProgressF174::ReadSelectedWord268(signed char key)
+unsigned int GameProgress::ReadSelectedWord268(signed char key)
 {
-    return PROGRESS_ARRAY(unsigned short, 0x268)[key];
+    return characters[selectedFighter].difficulties[0].cardCounters[key];
 }
 
-unsigned int SelectedProgressF174::ReadSelectedWord394(signed char key)
+unsigned int GameProgress::ReadSelectedWord394(signed char key)
 {
-    return PROGRESS_ARRAY(unsigned short, 0x394)[key];
+    return characters[selectedFighter].difficulties[0].cardCounters2[key];
 }
 
-void SelectedProgressF174::SetSelectedValue8(int value)
+void GameProgress::SetSelectedValue8(int value)
 {
-    SELECTED_VALUE(8) = value;
+    characters[selectedFighter].difficulties[selectedDifficulty].field008 = value;
 }
 
-void SelectedProgressF174::SetSelectedValue12(int value)
+void GameProgress::SetSelectedValue12(int value)
 {
-    SELECTED_VALUE(12) = value;
+    characters[selectedFighter].difficulties[selectedDifficulty].field00C = value;
 }
 
-int SelectedProgressF174::GetSelectedValue8()
+int GameProgress::GetSelectedValue8()
 {
-    return SELECTED_VALUE(8);
+    return characters[selectedFighter].difficulties[selectedDifficulty].field008;
 }
 
-int SelectedProgressF174::GetSelectedValue12()
+int GameProgress::GetSelectedValue12()
 {
-    return SELECTED_VALUE(12);
+    return characters[selectedFighter].difficulties[selectedDifficulty].field00C;
 }
 
 void BattleScene::PollPauseShortcut()
@@ -108,5 +106,3 @@ void BattleScene::UpdatePlayerEffects()
 }
 
 #undef HELD_BUTTON
-#undef SELECTED_VALUE
-#undef PROGRESS_ARRAY

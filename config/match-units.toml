@@ -17347,18 +17347,18 @@ relocations = [
   { offset = 0x70, type = "REL32", symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z", target = 0x00411500 },
   { offset = 0x90, type = "REL32", symbol = "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
   { offset = 0x95, type = "DIR32", symbol = "?g_BattleRecords@@3VBattleRecords@@A", target = 0x006718F8 },
-  { offset = 0x9A, type = "REL32", symbol = "?GetSelectedValue@ProgressCard438A80@@QAECXZ", target = 0x00438A80 },
+  { offset = 0x9A, type = "REL32", symbol = "?GetSelectedValue@GameProgress@@QAECXZ", target = 0x00438A80 },
   { offset = 0xBA, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
   { offset = 0xBF, type = "DIR32", symbol = "?g_BattleRecords@@3VBattleRecords@@A", target = 0x006718F8 },
-  { offset = 0xC4, type = "REL32", symbol = "?GetSelectedValue@ProgressCard438A80@@QAECXZ", target = 0x00438A80 },
+  { offset = 0xC4, type = "REL32", symbol = "?GetSelectedValue@GameProgress@@QAECXZ", target = 0x00438A80 },
   { offset = 0xEE, type = "REL32", symbol = "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z", target = 0x00427500 },
   { offset = 0x105, type = "REL32", symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z", target = 0x00411500 },
   { offset = 0x125, type = "REL32", symbol = "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
   { offset = 0x134, type = "DIR32", symbol = "?g_BattleRecords@@3VBattleRecords@@A", target = 0x006718F8 },
-  { offset = 0x139, type = "REL32", symbol = "?GetSelectedValue@ProgressCard438A80@@QAECXZ", target = 0x00438A80 },
+  { offset = 0x139, type = "REL32", symbol = "?GetSelectedValue@GameProgress@@QAECXZ", target = 0x00438A80 },
   { offset = 0x152, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
   { offset = 0x161, type = "DIR32", symbol = "?g_BattleRecords@@3VBattleRecords@@A", target = 0x006718F8 },
-  { offset = 0x166, type = "REL32", symbol = "?GetSelectedValue@ProgressCard438A80@@QAECXZ", target = 0x00438A80 },
+  { offset = 0x166, type = "REL32", symbol = "?GetSelectedValue@GameProgress@@QAECXZ", target = 0x00438A80 },
   { offset = 0x189, type = "REL32", symbol = "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z", target = 0x00427500 },
   { offset = 0x1A0, type = "REL32", symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z", target = 0x00411500 },
   { offset = 0x1C3, type = "REL32", symbol = "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
@@ -17372,8 +17372,8 @@ relocations = [
 source = "src/SinglePlayerOptions438670.cpp"
 object = "build/matching/SinglePlayerOptions438670.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
-functions = ["ProgressCard438A80::GetSelectedValue"]
-symbol = "?GetSelectedValue@ProgressCard438A80@@QAECXZ"
+functions = ["GameProgress::GetSelectedValue"]
+symbol = "?GetSelectedValue@GameProgress@@QAECXZ"
 target_address = 0x00438A80
 size = 53
 compare_size = 53
@@ -24620,7 +24620,7 @@ target = 0x006718F8
 [[units.fighter-resource-parameters-00452b30.relocations]]
 offset = 154
 type = "REL32"
-symbol = "?IncrementSelectedWordCounter@ProfileSelectionF155@@QAEXC@Z"
+symbol = "?IncrementSelectedWordCounter@GameProgress@@QAEXC@Z"
 target = 0x00454D00
 [[units.fighter-resource-parameters-00452b30.relocations]]
 offset = 171
@@ -24676,8 +24676,8 @@ target = 0x004420B0
 source = "src/ProfileSelection454D00.cpp"
 object = "build/matching/ProfileSelection454D00.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["ProfileSelectionF155::IncrementSelectedWordCounter"]
-symbol = "?IncrementSelectedWordCounter@ProfileSelectionF155@@QAEXC@Z"
+functions = ["GameProgress::IncrementSelectedWordCounter"]
+symbol = "?IncrementSelectedWordCounter@GameProgress@@QAEXC@Z"
 target_address = 0x00454D00
 size = 79
 relocations = []
@@ -26334,7 +26334,7 @@ target = 0x006718F8
 [[units.battle-resolve-knockout-0043c930.relocations]]
 offset = 140
 type = "REL32"
-symbol = "?MarkCardFlag@CardProgressF172@@QAEXC@Z"
+symbol = "?MarkCardFlag@GameProgress@@QAEXC@Z"
 target = 0x0043D430
 [[units.battle-resolve-knockout-0043c930.relocations]]
 offset = 172
@@ -26344,7 +26344,7 @@ target = 0x006718F8
 [[units.battle-resolve-knockout-0043c930.relocations]]
 offset = 177
 type = "REL32"
-symbol = "?IncrementCardCounter@CardProgressF172@@QAEXC@Z"
+symbol = "?IncrementCardCounter@GameProgress@@QAEXC@Z"
 target = 0x0043D3E0
 [[units.battle-resolve-knockout-0043c930.relocations]]
 offset = 215
@@ -26354,7 +26354,7 @@ target = 0x006718F8
 [[units.battle-resolve-knockout-0043c930.relocations]]
 offset = 220
 type = "REL32"
-symbol = "?GetCardValue@CardProgressF172@@QAEHC@Z"
+symbol = "?GetCardValue@GameProgress@@QAEHC@Z"
 target = 0x0043D460
 [[units.battle-resolve-knockout-0043c930.relocations]]
 offset = 273
@@ -26364,7 +26364,7 @@ target = 0x006718F8
 [[units.battle-resolve-knockout-0043c930.relocations]]
 offset = 278
 type = "REL32"
-symbol = "?SetCardValue@CardProgressF172@@QAEXCH@Z"
+symbol = "?SetCardValue@GameProgress@@QAEXCH@Z"
 target = 0x0043D3B0
 [[units.battle-resolve-knockout-0043c930.relocations]]
 offset = 290
@@ -26406,8 +26406,8 @@ target = 0x00671622
 source = "src/KnockoutProgressF172.cpp"
 object = "build/matching/KnockoutProgressF172.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["ProgressRecords::MarkCardFlag"]
-symbol = "?MarkCardFlag@CardProgressF172@@QAEXC@Z"
+functions = ["GameProgress::MarkCardFlag"]
+symbol = "?MarkCardFlag@GameProgress@@QAEXC@Z"
 target_address = 0x0043D430
 size = 44
 relocations = []
@@ -26416,8 +26416,8 @@ relocations = []
 source = "src/KnockoutProgressF172.cpp"
 object = "build/matching/KnockoutProgressF172.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["ProgressRecords::IncrementCardCounter"]
-symbol = "?IncrementCardCounter@CardProgressF172@@QAEXC@Z"
+functions = ["GameProgress::IncrementCardCounter"]
+symbol = "?IncrementCardCounter@GameProgress@@QAEXC@Z"
 target_address = 0x0043D3E0
 size = 79
 relocations = []
@@ -26426,8 +26426,8 @@ relocations = []
 source = "src/KnockoutProgressF172.cpp"
 object = "build/matching/KnockoutProgressF172.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["ProgressRecords::GetCardValue"]
-symbol = "?GetCardValue@CardProgressF172@@QAEHC@Z"
+functions = ["GameProgress::GetCardValue"]
+symbol = "?GetCardValue@GameProgress@@QAEHC@Z"
 target_address = 0x0043D460
 size = 40
 relocations = []
@@ -26436,8 +26436,8 @@ relocations = []
 source = "src/KnockoutProgressF172.cpp"
 object = "build/matching/KnockoutProgressF172.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["ProgressRecords::SetCardValue"]
-symbol = "?SetCardValue@CardProgressF172@@QAEXCH@Z"
+functions = ["GameProgress::SetCardValue"]
+symbol = "?SetCardValue@GameProgress@@QAEXCH@Z"
 target_address = 0x0043D3B0
 size = 43
 relocations = []
@@ -26456,8 +26456,8 @@ relocations = []
 source = "src/RoundEndHudF173.cpp"
 object = "build/matching/RoundEndHudF173.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["ProgressRecords::IncrementModeCounter"]
-symbol = "?IncrementModeCounter@ModeCounterF173@@QAEXCC@Z"
+functions = ["GameProgress::IncrementModeCounter"]
+symbol = "?IncrementModeCounter@GameProgress@@QAEXCC@Z"
 target_address = 0x0043D360
 size = 66
 relocations = []
@@ -26500,8 +26500,8 @@ target = 0x0065835C
 source = "src/ProgressPauseF174.cpp"
 object = "build/matching/ProgressPauseF174.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["GameProgress::ReadSelectedWord268At00441FE0"]
-symbol = "?ReadSelectedWord268@SelectedProgressF174@@QAEIC@Z"
+functions = ["GameProgress::ReadSelectedWord268"]
+symbol = "?ReadSelectedWord268@GameProgress@@QAEIC@Z"
 target_address = 0x00441FE0
 size = 44
 relocations = []
@@ -26510,8 +26510,8 @@ relocations = []
 source = "src/ProgressPauseF174.cpp"
 object = "build/matching/ProgressPauseF174.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["GameProgress::ReadSelectedWord394At00442010"]
-symbol = "?ReadSelectedWord394@SelectedProgressF174@@QAEIC@Z"
+functions = ["GameProgress::ReadSelectedWord394"]
+symbol = "?ReadSelectedWord394@GameProgress@@QAEIC@Z"
 target_address = 0x00442010
 size = 44
 relocations = []
@@ -26520,8 +26520,8 @@ relocations = []
 source = "src/ProgressPauseF174.cpp"
 object = "build/matching/ProgressPauseF174.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["GameProgress::SetSelectedValue8At004451D0"]
-symbol = "?SetSelectedValue8@SelectedProgressF174@@QAEXH@Z"
+functions = ["GameProgress::SetSelectedValue8"]
+symbol = "?SetSelectedValue8@GameProgress@@QAEXH@Z"
 target_address = 0x004451D0
 size = 55
 relocations = []
@@ -26530,8 +26530,8 @@ relocations = []
 source = "src/ProgressPauseF174.cpp"
 object = "build/matching/ProgressPauseF174.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["GameProgress::SetSelectedValue12At00445210"]
-symbol = "?SetSelectedValue12@SelectedProgressF174@@QAEXH@Z"
+functions = ["GameProgress::SetSelectedValue12"]
+symbol = "?SetSelectedValue12@GameProgress@@QAEXH@Z"
 target_address = 0x00445210
 size = 55
 relocations = []
@@ -26540,8 +26540,8 @@ relocations = []
 source = "src/ProgressPauseF174.cpp"
 object = "build/matching/ProgressPauseF174.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["GameProgress::GetSelectedValue8At00445250"]
-symbol = "?GetSelectedValue8@SelectedProgressF174@@QAEHXZ"
+functions = ["GameProgress::GetSelectedValue8"]
+symbol = "?GetSelectedValue8@GameProgress@@QAEHXZ"
 target_address = 0x00445250
 size = 50
 relocations = []
@@ -26550,8 +26550,8 @@ relocations = []
 source = "src/ProgressPauseF174.cpp"
 object = "build/matching/ProgressPauseF174.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["GameProgress::GetSelectedValue12At00445290"]
-symbol = "?GetSelectedValue12@SelectedProgressF174@@QAEHXZ"
+functions = ["GameProgress::GetSelectedValue12"]
+symbol = "?GetSelectedValue12@GameProgress@@QAEHXZ"
 target_address = 0x00445290
 size = 50
 relocations = []
@@ -36025,8 +36025,8 @@ target = 0x00000000
 source = "src/ProgressRecordLeavesF213.cpp"
 object = "build/matching/ProgressRecordLeavesF213.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["ProgressRecords::RaiseSelectedValue"]
-symbol = "?RaiseSelectedValue@ProgressRecordLeavesF213@@QAEXC@Z"
+functions = ["GameProgress::RaiseSelectedValue"]
+symbol = "?RaiseSelectedValue@GameProgress@@QAEXC@Z"
 target_address = 0x0041A1D0
 size = 109
 relocations = []
@@ -36035,8 +36035,8 @@ relocations = []
 source = "src/ProgressRecordLeavesF213.cpp"
 object = "build/matching/ProgressRecordLeavesF213.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["ProgressRecords::IncrementSelectedRecordCount"]
-symbol = "?IncrementSelectedRecordCount@ProgressRecordLeavesF213@@QAEXXZ"
+functions = ["GameProgress::IncrementSelectedRecordCount"]
+symbol = "?IncrementSelectedRecordCount@GameProgress@@QAEXXZ"
 target_address = 0x0041A270
 size = 90
 relocations = []
@@ -40234,8 +40234,8 @@ target = 0x004028F0
 source = "src/ProgressSaveF247.cpp"
 object = "build/matching/ProgressSaveF247.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["ProgressRecords::SaveScoreFile"]
-symbol = "?SaveScoreFile@ProgressSaveF247@@QAEXXZ"
+functions = ["GameProgress::SaveScoreFile"]
+symbol = "?SaveScoreFile@GameProgress@@QAEXXZ"
 target_address = 0x004169E0
 size = 297
 [[units.progress-records-save-score-file-004169e0.relocations]]
@@ -40299,8 +40299,8 @@ target = 0x00657138
 source = "src/ScoreLoadF248.cpp"
 object = "build/matching/ScoreLoadF248.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["ProgressRecords::LoadScoreFile"]
-symbol = "?LoadScoreFile@ScoreLoadF248@@QAEXXZ"
+functions = ["GameProgress::LoadScoreFile"]
+symbol = "?LoadScoreFile@GameProgress@@QAEXXZ"
 target_address = 0x00416B10
 size = 456
 [[units.progress-records-load-score-file-00416b10.relocations]]
@@ -42583,8 +42583,8 @@ target = 0x00640611
 source = "src/ProgressSelectionF274.cpp"
 object = "build/matching/ProgressSelectionF274.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["ProgressRecords::SetSelection"]
-symbol = "?SetSelection@ProgressRecordsF274@@QAEXCC@Z"
+functions = ["GameProgress::SetSelection"]
+symbol = "?SetSelection@GameProgress@@QAEXCC@Z"
 target_address = 0x0041A1A0
 size = 37
 relocations = []
@@ -42593,8 +42593,8 @@ relocations = []
 source = "src/ProgressSelectionF274.cpp"
 object = "build/matching/ProgressSelectionF274.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["ProgressRecords::GetSelectedRecordAddress"]
-symbol = "?GetSelectedRecordAddress@ProgressRecordsF274@@QAEPAXXZ"
+functions = ["GameProgress::GetSelectedRecordAddress"]
+symbol = "?GetSelectedRecordAddress@GameProgress@@QAEPAUProgressDifficulty@@XZ"
 target_address = 0x0041A240
 size = 48
 relocations = []
@@ -42603,8 +42603,8 @@ relocations = []
 source = "src/ProgressSelectionF274.cpp"
 object = "build/matching/ProgressSelectionF274.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["ProfileSelection::StoreWorkingEightBytesAt00416E20"]
-symbol = "?StoreWorkingEightBytes@ProgressRecordsF274@@QAEXC@Z"
+functions = ["GameProgress::StoreWorkingEightBytes"]
+symbol = "?StoreWorkingEightBytes@GameProgress@@QAEXC@Z"
 target_address = 0x00416E20
 size = 84
 [[units.profile-selection-store-working-eight-00416e20.relocations]]
@@ -53245,8 +53245,8 @@ target = 0x005F8400
 source = "src/ProfileSelectionLoadWorkingF403.cpp"
 object = "build/matching/ProfileSelectionLoadWorkingF403.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
-functions = ["ProfileSelection::LoadWorkingEightBytesAt00416E80"]
-symbol = "?LoadWorkingEightBytes@ProgressRecordsF403@@QAEXC@Z"
+functions = ["GameProgress::LoadWorkingEightBytes"]
+symbol = "?LoadWorkingEightBytes@GameProgress@@QAEXC@Z"
 target_address = 0x00416E80
 size = 85
 
@@ -60401,8 +60401,8 @@ target = 0x00640611
 source = "src/GameProgressIncrementSelectedRecordF535.cpp"
 object = "build/matching/GameProgressIncrementSelectedRecordF535.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["GameProgress::IncrementSelectedRecordAt00425130"]
-symbol = "?IncrementSelectedRecord@ProgressRecordCounterF478@@QAEXXZ"
+functions = ["GameProgress::IncrementSelectedRecord"]
+symbol = "?IncrementSelectedRecord@GameProgress@@QAEXXZ"
 target_address = 0x00425130
 size = 92
 relocations = []

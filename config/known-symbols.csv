@@ -161,7 +161,7 @@ address,name,module,confidence,evidence
 0x00437380,CharacterSelectCards437380::RenderCards,CharacterSelectCards437380,inferred,"F086; complete3769-byte/58-field canonical cold exact character-card renderer;825 instructions/50 branches/41 packets,actual two-side arrays/loop,byte conversion/atlas/color/short badge logic and complete packet scopes checked; R043 role retained by alias; original declarations/names/full owner layout unknown"
 0x00438240,CharacterSelectOptions438240::RenderOptions,CharacterSelectOptions438240,inferred,"F087; whole1072-byte/30-field canonical cold exact player options;255 instructions/6 branches/25 packets; complete packet and RECT scopes,signed and unsigned indexed byte reads and int-to-float spills; R041 role retained; original owner/declarations/names unknown"
 0x00438670,SinglePlayerOptions438670::RenderOptions,SinglePlayerOptions438670,inferred,F088; complete596-byte canonical cold exact; whole renderer/getter ABI and shared source reviewed; original layout/declarations/names unknown
-0x00438A80,ProgressCard438A80::GetSelectedValue,ProgressCard438A80,inferred,F088; complete53-byte canonical cold exact; whole renderer/getter ABI and shared source reviewed; original layout/declarations/names unknown
+0x00438A80,GameProgress::GetSelectedValue,ProgressCard438A80,inferred,F088; complete53-byte canonical cold exact; whole renderer/getter ABI and shared source reviewed; original layout/declarations/names unknown
 0x004388D0,SelectionInput4388D0::PollInput,SelectionInput4388D0,inferred,F089; complete346-byte canonical cold exact; whole input poll/key getter ABI and shared source reviewed; original layout/declarations/names unknown
 0x00407170,InputMapping4388D0::IsKeyDown,InputMapping4388D0,inferred,F089; complete38-byte canonical cold exact; whole input poll/key getter ABI and shared source reviewed; original layout/declarations/names unknown
 0x00406E80,InputMapping4388D0::UpdateHeldCounts,InputMapping4388D0,inferred,"F090; complete741-byte canonical cold exact; whole signed-device/axis/button behavior,vector-call ABI and existing header reviewed; original layout/declarations/names unknown"
@@ -319,7 +319,7 @@ address,name,module,confidence,evidence
 0x00454BC0,FighterCommandSelection454BC0::SetCommandSelection,FighterState,inferred,F154; whole canonical cold exact/actual saved-this stores and call contracts; original names and full owners unknown
 0x00452B30,FighterResourceParameters452B30::SelectResourceParameters,FighterState,inferred,F155; whole canonical cold exact/observed saved-this and no-argument call contract; original names and complete owner unknown
 0x00453D80,FighterAnimationReset453D80::BindAnimation,FighterBase,inferred,F156; whole canonical cold exact/native slot0 and saved-this binding policy; original names/complete owners unknown
-0x00454D00,ProfileSelectionF155::IncrementSelectedWordCounter,ProfileSelection,inferred,F158; complete canonical cold exact/signed indexed word-counter policy; original names/complete owner unknown
+0x00454D00,GameProgress::IncrementSelectedWordCounter,ProfileSelection,inferred,F158; complete canonical cold exact/signed indexed word-counter policy; original names/complete owner unknown
 0x0046D2D0,ReimuFighter::ForwardBaseActionAt0046D2D0,ReimuFighter,inferred,F159; complete canonical cold exact; explicit call-only source-symbol mapping; original role retained/full owner unknown
 0x0046D2F0,ReimuFighter::NoOpVirtualAt0046D2F0,ReimuFighter,inferred,F159; complete canonical cold exact; explicit call-only source-symbol mapping; original role retained/full owner unknown
 0x00472450,ReimuFighter::NoOpVirtualAt00472450,ReimuFighter,inferred,F159; complete canonical cold exact; explicit call-only source-symbol mapping; original role retained/full owner unknown
@@ -381,20 +381,20 @@ address,name,module,confidence,evidence
 0x004574B0,Fighter::BindOpponentAt004574B0,FighterState,inferred,F171; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x004574D0,BattleScene::RecordRoundFields,BattleState,inferred,F171; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x0043C930,BattleScene::ResolveKnockout,BattleScene,inferred,F172; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
-0x0043D430,ProgressRecords::MarkCardFlag,ProgressRecords,inferred,F172; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
-0x0043D3E0,ProgressRecords::IncrementCardCounter,ProgressRecords,inferred,F172; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
-0x0043D460,ProgressRecords::GetCardValue,ProgressRecords,inferred,F172; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
-0x0043D3B0,ProgressRecords::SetCardValue,ProgressRecords,inferred,F172; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x0043D430,GameProgress::MarkCardFlag,ProgressRecords,inferred,F172; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x0043D3E0,GameProgress::IncrementCardCounter,ProgressRecords,inferred,F172; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x0043D460,GameProgress::GetCardValue,ProgressRecords,inferred,F172; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x0043D3B0,GameProgress::SetCardValue,ProgressRecords,inferred,F172; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x0043CDB0,BattleScene::EnterRoundEnd,BattleScene,inferred,F173; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
-0x0043D360,ProgressRecords::IncrementModeCounter,ProgressRecords,inferred,F173; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x0043D360,GameProgress::IncrementModeCounter,ProgressRecords,inferred,F173; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x0043D490,ComboDisplay::ComboDisplay,BattleHud,inferred,F173; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x0043D4D0,ComboDisplay::UpdateCounter,BattleHud,inferred,F173; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
-0x00441FE0,GameProgress::ReadSelectedWord268At00441FE0,GameProgress,inferred,F174; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
-0x00442010,GameProgress::ReadSelectedWord394At00442010,GameProgress,inferred,F174; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
-0x004451D0,GameProgress::SetSelectedValue8At004451D0,GameProgress,inferred,F174; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
-0x00445210,GameProgress::SetSelectedValue12At00445210,GameProgress,inferred,F174; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
-0x00445250,GameProgress::GetSelectedValue8At00445250,GameProgress,inferred,F174; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
-0x00445290,GameProgress::GetSelectedValue12At00445290,GameProgress,inferred,F174; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x00441FE0,GameProgress::ReadSelectedWord268,GameProgress,inferred,F174; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x00442010,GameProgress::ReadSelectedWord394,GameProgress,inferred,F174; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x004451D0,GameProgress::SetSelectedValue8,GameProgress,inferred,F174; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x00445210,GameProgress::SetSelectedValue12,GameProgress,inferred,F174; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x00445250,GameProgress::GetSelectedValue8,GameProgress,inferred,F174; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x00445290,GameProgress::GetSelectedValue12,GameProgress,inferred,F174; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x004456F0,BattleScene::PollPauseShortcut,BattleScene,inferred,F174; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x00445830,BattleScene::UpdatePlayerEffects,BattleScene,inferred,F174; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x004461D0,BattleScene::HandlePauseMenu,BattleScene,inferred,F175; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
@@ -500,8 +500,8 @@ address,name,module,confidence,evidence
 0x0040B560,TextureManager::LoadBitmapDirectoryWithFormat,TextureManager,inferred,F207; full 575 byte bitmap directory variant cold exact including native STL iterator erase and 23 real fields; original nominal class and element types provisional
 0x0040DB50,SpriteGeometry::InitializeRectangleFromRect,SpriteGeometry,inferred,F211; 305-byte four-vertex constructor cold exact/9 real calls; original complete owner layout provisional
 0x004175A0,GameGlobals::InitializeSound,GameGlobals,inferred,F212; exact 334-byte sound initialization with three-stage EH; original allocation class identities provisional
-0x0041A1D0,ProgressRecords::RaiseSelectedValue,ProgressRecords,inferred,F213; complete 109-byte natural source cold exact; original full record layout unproven
-0x0041A270,ProgressRecords::IncrementSelectedRecordCount,ProgressRecords,inferred,F213; complete 90-byte natural source cold exact; original full record layout unproven
+0x0041A1D0,GameProgress::RaiseSelectedValue,ProgressRecords,inferred,F213; complete 109-byte natural source cold exact; original full record layout unproven
+0x0041A270,GameProgress::IncrementSelectedRecordCount,ProgressRecords,inferred,F213; complete 90-byte natural source cold exact; original full record layout unproven
 0x00416640,GameProgress::GameProgress,ProgressRecords,inferred,F214; whole 910-byte nested record defaults cold exact with 34 physical relocations; original owner layout unknown
 0x0041CF00,ResourceLookup::FindByNameAt0041CF00,DataArchive,inferred,F217; whole 113-byte natural source cold exact with 9 real relocations; original registry/iterator classes provisional
 0x0041D800,DataArchive::SeekNamedEntryWithSize,DataArchive,inferred,F217; whole 180-byte natural source cold exact with 10 real relocations; original registry/iterator classes provisional
@@ -541,8 +541,8 @@ address,name,module,confidence,evidence
 0x0042E8F0,ResultScene::Update,SceneController,inferred,F244; whole 1529-byte result stage controller plus 32-byte owned switch tables and all 74 native relocations cold exact; original nominal class owner unresolved
 0x0042F450,ResultScene::PollInput,ResultListScene,inferred,F245; whole 220 native bytes/21 true fields cold exact; original parent and input device layouts provisional
 0x0042A340,NameEntryScene::UpdatePlayer,NameEntryScene,inferred,F246; original full 541-byte name-entry controller and 11 actual relocations cold exact; original parent/progress class types provisional
-0x004169E0,ProgressRecords::SaveScoreFile,ProgressRecords,inferred,F247; native whole 297-byte save file and 11 real fields exact; original progress record full owner layout unknown
-0x00416B10,ProgressRecords::LoadScoreFile,ProgressRecords,inferred,"F248; whole 456 native score file reader, original short/long file formats and 15 original fields cold exact; full owner layout unknown"
+0x004169E0,GameProgress::SaveScoreFile,ProgressRecords,inferred,F247; native whole 297-byte save file and 11 real fields exact; original progress record full owner layout unknown
+0x00416B10,GameProgress::LoadScoreFile,ProgressRecords,inferred,"F248; whole 456 native score file reader, original short/long file formats and 15 original fields cold exact; full owner layout unknown"
 0x0042B380,NameEntryScene::UpdateShared,NameEntryScene,inferred,F251; complete 494-byte shared name entry controller and 16 native relocation fields cold exact; complete scene and progress types provisional
 0x00427180,MusicRoomScene::DrawNumber,MusicRoomScene,inferred,F253; independently whole 377-byte cold exact with 9 real COFF relocation fields; nominal parent layout unproven
 0x0042AE70,ReplayScene::DrawNumber,ReplayScene,inferred,F253; independently whole 377-byte cold exact with 9 real COFF relocation fields; nominal parent layout unproven
@@ -567,9 +567,9 @@ address,name,module,confidence,evidence
 0x00402D50,Graphics::DrawProjectedTexturedQuad,Graphics,inferred,"F271; entire 1185-byte native D3D8 projected four-vertex triangle-fan controller, 291 instructions and 37 genuine COFF fields cold-exact; original private class names not asserted"
 0x00431B60,CardList::LoadEncodedCharacterFile,CardList,inferred,F272; full 503-byte native encoded card list loader with exact original 260-byte path/decoder/newline/record allocation behavior and 15 COFF fields; full class identity unknown
 0x004319B0,CardList::LoadCharacterFile,CardList,inferred,"F273; entire 429-byte original plaintext CardList loader, original Win32 file/record parse with 16 genuine COFF relocations cold-exact; full scene owner identity provisional"
-0x0041A1A0,ProgressRecords::SetSelection,ProgressRecords,inferred,"F274; whole native 37-byte score selector/copy, 0 actual relocations cold-exact; complete private owner ABI unknown"
-0x0041A240,ProgressRecords::GetSelectedRecordAddress,ProgressRecords,inferred,"F274; whole native 48-byte score selector/copy, 0 actual relocations cold-exact; complete private owner ABI unknown"
-0x00416E20,ProfileSelection::StoreWorkingEightBytesAt00416E20,ProfileSelection,inferred,"F274; whole native 84-byte score selector/copy, 1 actual relocations cold-exact; complete private owner ABI unknown"
+0x0041A1A0,GameProgress::SetSelection,ProgressRecords,inferred,"F274; whole native 37-byte score selector/copy, 0 actual relocations cold-exact; complete private owner ABI unknown"
+0x0041A240,GameProgress::GetSelectedRecordAddress,ProgressRecords,inferred,"F274; whole native 48-byte score selector/copy, 0 actual relocations cold-exact; complete private owner ABI unknown"
+0x00416E20,GameProgress::StoreWorkingEightBytes,ProfileSelection,inferred,"F274; whole native 84-byte score selector/copy, 1 actual relocations cold-exact; complete private owner ABI unknown"
 0x0045D810,Fighter::ChoosePatternSequence,FighterState,inferred,F278; complete 1264-byte native fighter weighted pattern chooser with original two-phase scan/342 instructions/31 genuine relocations cold exact; full original PatternCatalog owner naming unproven
 0x0045DD00,FighterScript::CountPatternEntries,FighterScript,inferred,F279; complete 66-byte authored fighter pattern field/size helper; 2 true relocations cold exact; underlying deque bodies library
 0x00420530,FighterScript::GetByteFieldAt00420530,FighterScript,inferred,F279; complete 53-byte authored fighter pattern field/size helper; 2 true relocations cold exact; underlying deque bodies library
@@ -704,7 +704,7 @@ address,name,module,confidence,evidence
 0x00416CE0,GameProgress::SetUnlockBit,GameProgress,inferred,"F394; independent original complete 108-byte native signed progress bitset set, no external COFF refs, local cold exact; borrowed private owner"
 0x00416DC0,GameProgress::TestUnlockBit,GameProgress,inferred,"F394; independent original complete 93-byte native signed progress bitset test, no external COFF refs, local cold exact; borrowed private owner"
 0x005F7D00,AuxEffectManager::DispatchSelectedListAt005F7D00,AuxEffectManager,inferred,"F395; complete R109 original 114-byte selected side auxiliary iterator dispatch, 5 real COFF call fields and virtual child dispatch cold exact"
-0x00416E80,ProfileSelection::LoadWorkingEightBytesAt00416E80,ProfileSelection,inferred,"F403; full R180 85-byte native eight-byte selected record restore, signed selection strides, authentic memcpy REL32 cold exact; private layout unknown"
+0x00416E80,GameProgress::LoadWorkingEightBytes,ProfileSelection,inferred,"F403; full R180 85-byte native eight-byte selected record restore, signed selection strides, authentic memcpy REL32 cold exact; private layout unknown"
 0x004176F0,BattleLoader::LoadCharactersAt004176F0,BattleLoader,inferred,"F407; full 3232 original authored CODE with 11 fighter constructors, original 64-byte jump data, 234 real COFF fields including 16 switch targets and 18 genuine +4 fighter offsets, targeted cold exact"
 0x00413650,StaticResourceQueues::InitializeHandleAt00413650,StaticResourcePolicy,inferred,"F414; full native 132 game CODE, 8 real physical refs, targeted cold exact; borrowed class ABI"
 0x0045CD70,Fighter::SetNoticeFieldsAt0045CD70,FighterState,inferred,"F415; full native 75 game CODE, 0 real physical refs, targeted cold exact; borrowed class ABI"
@@ -921,7 +921,7 @@ address,name,module,confidence,evidence
 0x0042C270,ReplayScene::DrawSaveFilenameAt0042C270,ReplayScene,inferred,"F514; 303-byte exact original replay filename glyph rendering both branches, native /GS, 12 true PE COFF fields and targeted 1/1 cold exact"
 0x0042B110,NameEntryScene::DrawDecimalGlyphLabelAt0042B110,NameEntryScene,inferred,"F516; entire original 169-byte NameEntry rank label, 145/145 native nonfield bytes, 6 authentic physical COFF fields and targeted 2/2 cold exact"
 0x00431890,ResultScene::DrawRankLabelAt00431890,ResultScene,inferred,"F516; entire original 169-byte Result rank label, 145/145 native nonfield bytes, 6 authentic physical COFF fields and targeted 2/2 cold exact"
-0x00425130,GameProgress::IncrementSelectedRecordAt00425130,GameProgress,inferred,"F535; whole original 92 CODE/24 instructions, native postfix signed 2D stride increment, zero COFF fields, changed-only 1/1 cold exact"
+0x00425130,GameProgress::IncrementSelectedRecord,GameProgress,inferred,"F535; whole original 92 CODE/24 instructions, native postfix signed 2D stride increment, zero COFF fields, changed-only 1/1 cold exact"
 0x00455770,CombatCoordinateView::MapWorldToScreenAt00455770,CombatCoordinateView,inferred,"F536; complete native two-axis game transform, full 111 CODE and cold exact; owner/name provisional, no native callers"
 0x0041CA30,FontSurface::IsDoubleByteAt0041CA30,FontSurface,inferred,"F555; full original 77 CODE cold exact; only original caller 0041C9D0, 28 native insns, 0 COFF; original class identity and vendor provenance provisional"
 0x00407270,AudioStreamClientF755::~AudioStreamClientF755,AudioStream,inferred,"R015; F755; complete authored original 292 CODE, 82 x86, 24 native typed PE relocations and 1/1 cold replay; owner/name provisional"

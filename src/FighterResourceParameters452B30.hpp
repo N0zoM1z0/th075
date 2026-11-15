@@ -1,12 +1,5 @@
 #pragma once
 
-// Pointer-only interfaces; neither complete owner layout is established.
-// Do not construct or embed either owner.
-class ProfileSelectionF155 {
-public:
-    void IncrementSelectedWordCounter(signed char index);
-};
-
 class FighterResourceParameters452B30 {
 public:
     void SelectResourceParameters();

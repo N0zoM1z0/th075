@@ -1,4 +1,5 @@
 #include "FighterResourceParameters452B30.hpp"
+#include "GameProgress.hpp"
 
 void FighterResourceParameters452B30::SelectResourceParameters()
 {
@@ -10,7 +11,7 @@ void FighterResourceParameters452B30::SelectResourceParameters()
         field3A8 =
             reinterpret_cast<unsigned int*>(reinterpret_cast<unsigned char*>(this) + 0x400)[field39D];
         if (g_FrameClockMode == 1)
-            reinterpret_cast<ProfileSelectionF155*>(g_ProfileSelectionAt006718F8)->IncrementSelectedWordCounter(
+            reinterpret_cast<GameProgress*>(g_ProfileSelectionAt006718F8)->IncrementSelectedWordCounter(
                 reinterpret_cast<signed char*>(reinterpret_cast<unsigned char*>(this) + 0x384)[field39D]);
     } else {
         field3A0 = static_cast<short>(static_cast<int>(field36C * 8800.0f / 900.0f) + 1201);

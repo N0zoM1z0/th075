@@ -12,4 +12,3 @@ class SinglePlayerOptions438670 { public: void RenderOptions(); public:
     unsigned char unknown0EB[0x0EC - 0x0EB];
     signed char field0EC;
 };
-class ProgressCard438A80 { public: signed char GetSelectedValue(); };

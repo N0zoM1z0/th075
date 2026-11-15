@@ -145,9 +145,12 @@ classes such as `ProgressRecordsF274`, `CardProgressF172`,
   the selected fighter and difficulty; +0x16AC6: 256 bytes saved with the
   scores.
 
-The sources combine the two strides in different orders (some multiply
-the difficulty first), so a nested-array declaration must be checked
-against each original before replacing the arithmetic.
+`src/GameProgress.hpp` declares this layout and 33 of its methods.
+Nested indexing `characters[f].difficulties[d].x` compiles exactly like the
+left-to-right sum `this + f*0x17F0 + d*0x5FC + off`, but not like
+`this + (d*0x5FC + f*0x17F0)`: VC7.1 evaluates a parenthesized offset sum
+before adding the base, in a different instruction order.
+`IncrementSelectedRecordCount` (0041A270) needs that grouping and keeps it.
 
 ## VC7.1 `/Od` code generation
 

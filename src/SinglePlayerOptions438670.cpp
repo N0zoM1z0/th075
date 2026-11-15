@@ -1,9 +1,9 @@
-#include "ProgressSelectionKeysF954.hpp"
+#include "GameProgress.hpp"
 #include "SinglePlayerOptions438670.hpp"
 
 #define QUAD reinterpret_cast<SpriteTransform*>(&packet)
 #define DRAW field008
-#define VALUE reinterpret_cast<ProgressCard438A80*>(&g_BattleRecords)->GetSelectedValue()
+#define VALUE reinterpret_cast<GameProgress*>(&g_BattleRecords)->GetSelectedValue()
 
 void SinglePlayerOptions438670::RenderOptions() {
     if (field0EA == 0)
@@ -30,10 +30,8 @@ void SinglePlayerOptions438670::RenderOptions() {
     }
 }
 
-signed char ProgressCard438A80::GetSelectedValue() {
-    return *reinterpret_cast<signed char*>(reinterpret_cast<char*>(this)
-        + F954_PROGRESS_KEYS(this).fighterAt16AC4 * 0x17F0
-        + F954_PROGRESS_KEYS(this).difficultyAt16AC5 * 0x5FC + 0x556);
+signed char GameProgress::GetSelectedValue() {
+    return characters[selectedFighter].difficulties[selectedDifficulty].field556;
 }
 
 #undef VALUE

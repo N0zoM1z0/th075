@@ -1,4 +1,4 @@
-#include "ProgressSelectionKeysF954.hpp"
+#include "GameProgress.hpp"
 // Complete independently authored R103 GameProgress native 92-byte counter.
 // The true VC7.1 original is a *postfix increment* of an lvalue, not
 // prefix ++ or an explicit assignment. All preserve counter behavior
@@ -7,17 +7,6 @@
 // Signed fighter and difficulty selectors are observed at +0x16AC4/5;
 // owned record extents have original 0x17F0 and 0x5FC strides.
 // No complete private original owner type is asserted by this view.
-class ProgressRecordCounterF478 {
-public:void IncrementSelectedRecord();
-};
-#define RAW reinterpret_cast<unsigned char*>(this)
-#define FIGHTER F954_PROGRESS_KEYS(this).fighterAt16AC4
-#define DIFFICULTY F954_PROGRESS_KEYS(this).difficultyAt16AC5
-#define SELECTED_COUNT (*reinterpret_cast<unsigned int*>(RAW+FIGHTER*0x17F0+DIFFICULTY*0x5FC+4))
-void ProgressRecordCounterF478::IncrementSelectedRecord() {
-    SELECTED_COUNT++;
+void GameProgress::IncrementSelectedRecord() {
+    characters[selectedFighter].difficulties[selectedDifficulty].field004++;
 }
-#undef SELECTED_COUNT
-#undef DIFFICULTY
-#undef FIGHTER
-#undef RAW

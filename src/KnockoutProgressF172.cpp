@@ -1,5 +1,5 @@
+#include "GameProgress.hpp"
 #include "FighterRoundOutcomeBytesF992.hpp"
-#include "ProgressSelectionKeysF954.hpp"
 #include "KnockoutProgressF172.hpp"
 #include "BattleScene.hpp"
 #include "FighterResourceParameters452B30.hpp"
@@ -10,27 +10,26 @@ extern unsigned char g_SequenceCounterAt00671622;
 // Observed dword accumulation; original name and signedness remain unknown.
 extern unsigned int g_KnockoutAccumulationAt0067160C;
 
-#define CARD_ARRAY(type, offset) reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + F954_PROGRESS_KEYS(this).fighterAt16AC4 * 0x17F0 + (offset))
-#define CARD_RECORDS reinterpret_cast<CardProgressF172*>(&g_BattleRecords)
+#define CARD_RECORDS reinterpret_cast<GameProgress*>(&g_BattleRecords)
 
-void CardProgressF172::MarkCardFlag(signed char key)
+void GameProgress::MarkCardFlag(signed char key)
 {
-    CARD_ARRAY(unsigned char, 0x4C0)[key] = 1;
+    characters[selectedFighter].difficulties[0].cardFlags[key] = 1;
 }
 
-void CardProgressF172::IncrementCardCounter(signed char key)
+void GameProgress::IncrementCardCounter(signed char key)
 {
-    CARD_ARRAY(unsigned short, 0x268)[key]++;
+    characters[selectedFighter].difficulties[0].cardCounters[key]++;
 }
 
-int CardProgressF172::GetCardValue(signed char key)
+int GameProgress::GetCardValue(signed char key)
 {
-    return CARD_ARRAY(int, 0x10)[key];
+    return characters[selectedFighter].difficulties[0].cardValues[key];
 }
 
-void CardProgressF172::SetCardValue(signed char key, int value)
+void GameProgress::SetCardValue(signed char key, int value)
 {
-    CARD_ARRAY(int, 0x10)[key] = value;
+    characters[selectedFighter].difficulties[0].cardValues[key] = value;
 }
 
 void BattleScene::ResolveKnockout()
@@ -115,4 +114,3 @@ void BattleScene::ResolveKnockout()
 }
 
 #undef CARD_RECORDS
-#undef CARD_ARRAY
