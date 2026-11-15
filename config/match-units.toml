@@ -51493,12 +51493,12 @@ size = 855
 [[units.character-projectile-advance-004f4170.relocations]]
 offset = 22
 type = "REL32"
-symbol = "?Destroy@CharacterProjectileF379@@QAEXXZ"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
 target = 0x0045B830
 [[units.character-projectile-advance-004f4170.relocations]]
 offset = 97
 type = "REL32"
-symbol = "?Destroy@CharacterProjectileF379@@QAEXXZ"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
 target = 0x0045B830
 [[units.character-projectile-advance-004f4170.relocations]]
 offset = 158
@@ -51523,7 +51523,7 @@ target = 0x006406AC
 [[units.character-projectile-advance-004f4170.relocations]]
 offset = 333
 type = "REL32"
-symbol = "?TriggerInteraction@CharacterProjectileF379@@QAEXHHH@Z"
+symbol = "?ResetTransform@Actor@@QAEXMMM@Z"
 target = 0x0040FBB0
 [[units.character-projectile-advance-004f4170.relocations]]
 offset = 377
@@ -51533,7 +51533,7 @@ target = 0x00658044
 [[units.character-projectile-advance-004f4170.relocations]]
 offset = 409
 type = "REL32"
-symbol = "?SetPolarVelocity@CharacterProjectileF379@@QAEXMM@Z"
+symbol = "?SetPolarVelocity@Actor@@QAEXMM@Z"
 target = 0x0040FB70
 [[units.character-projectile-advance-004f4170.relocations]]
 offset = 476
@@ -51548,7 +51548,7 @@ target = 0x00657828
 [[units.character-projectile-advance-004f4170.relocations]]
 offset = 549
 type = "REL32"
-symbol = "?SetMode@CharacterProjectileF379@@QAEXH@Z"
+symbol = "?ResetSecondaryCounter@Actor@@QAEXF@Z"
 target = 0x0040FB40
 [[units.character-projectile-advance-004f4170.relocations]]
 offset = 608
@@ -51558,7 +51558,7 @@ target = 0x00658044
 [[units.character-projectile-advance-004f4170.relocations]]
 offset = 640
 type = "REL32"
-symbol = "?SetPolarVelocity@CharacterProjectileF379@@QAEXMM@Z"
+symbol = "?SetPolarVelocity@Actor@@QAEXMM@Z"
 target = 0x0040FB70
 [[units.character-projectile-advance-004f4170.relocations]]
 offset = 713
@@ -51588,17 +51588,17 @@ target = 0x006595EC
 [[units.character-projectile-advance-004f4170.relocations]]
 offset = 815
 type = "REL32"
-symbol = "?Destroy@CharacterProjectileF379@@QAEXXZ"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
 target = 0x0045B830
 [[units.character-projectile-advance-004f4170.relocations]]
 offset = 825
 type = "REL32"
-symbol = "?CheckCollision@CharacterProjectileF379@@QAEFXZ"
+symbol = "?AdvanceNestedFrame@Actor@@QAEFXZ"
 target = 0x0040FA30
 [[units.character-projectile-advance-004f4170.relocations]]
 offset = 847
 type = "REL32"
-symbol = "?Destroy@CharacterProjectileF379@@QAEXXZ"
+symbol = "?ClearFrameInfo@CharacterObject@@QAEXXZ"
 target = 0x0045B830
 
 

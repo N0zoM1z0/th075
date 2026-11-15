@@ -13,11 +13,6 @@ public:
 class CharacterProjectileF379 : public CharacterObject {
 public:
     void Advance();
-    void Destroy();
-    void TriggerInteraction(int,int,int);
-    void SetPolarVelocity(float angle,float speed);
-    void SetMode(int);
-    short CheckCollision();
 };
 extern float AngleAt00483300(unsigned int,unsigned int);
 extern const float g_PolarScaleAt00658044;
@@ -27,24 +22,23 @@ extern const float g_ProjectMaxXAt00659424;
 extern const float g_ProjectMaxYAt006583B4;
 extern const float g_ProjectScaleF379At00659454;
 #define OWNER (reinterpret_cast<CharacterFighterF379*>(owner))
-#define OWNER_FIELD(type,off) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(owner)+(off)))
 void CharacterProjectileF379::Advance() {
     if (field07C==5) {
-        Destroy();
-    } else if (OWNER_FIELD(short,0x60)>49 && OWNER_FIELD(short,0x60)<150 && animationStage<2) {
-        Destroy();
+        ClearFrameInfo();
+    } else if (owner->action>49 && owner->action<150 && animationStage<2) {
+        ClearFrameInfo();
         for(int i=0;i<1;++i) {
             OWNER->SpawnProjectile(996,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),1,1);
         }
-        if (OWNER_FIELD(short,0xEFA)>25) {
-            OWNER_FIELD(short,0xEFA)=0;
+        if (reinterpret_cast<short&>(owner->fieldEFA)>25) {
+            reinterpret_cast<short&>(owner->fieldEFA)=0;
             OWNER->SpawnProjectile(995,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),1,1);
         }
     } else {
         if (animationStage==0 && animationFrame==0) {
             field0DA=static_cast<short>(field0C8);
             field0DC=static_cast<short>(field0CC);
-            TriggerInteraction(0,0,0);
+            ResetTransform(0,0,0);
             field080=1;
             field07C=0;
             SetPolarVelocity(static_cast<float>(field0DC),static_cast<float>(field0DA)*g_PolarScaleAt00658044);
@@ -56,7 +50,7 @@ void CharacterProjectileF379::Advance() {
             rotationZ=AngleAt00483300(reinterpret_cast<unsigned int&>(velocityY),reinterpret_cast<unsigned int&>(velocityX))/g_AngleUnitAt00657828;
         }
         if ((field07C==1 || field07C==2 || field07C==4 || field07C==6) && animationStage<2) {
-            SetMode(2);
+            ResetSecondaryCounter(2);
             velocityX=0.0f;
             velocityY=0.0f;
         } else {
@@ -71,10 +65,9 @@ void CharacterProjectileF379::Advance() {
                 reinterpret_cast<unsigned int&>(scaleY)=reinterpret_cast<unsigned int&>(scaleX);
             }
             if(x>g_ProjectMaxXAt00659424 || x<g_ProjectMinXAt006595EC || y>g_ProjectMaxYAt006583B4 || y<g_ProjectMinXAt006595EC)
-                Destroy();
-            else if (CheckCollision()==field070) Destroy();
+                ClearFrameInfo();
+            else if (AdvanceNestedFrame()==field070) ClearFrameInfo();
         }
     }
 }
-#undef OWNER_FIELD
 #undef OWNER
