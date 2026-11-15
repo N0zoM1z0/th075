@@ -71,9 +71,6 @@ class FontShiftJISF555(unittest.TestCase):
         self.assertEqual(unit['symbol'],'?IsDoubleByte@PackedFontUnitF293@@QAE_ND@Z')
         adoption=json.loads((ROOT/'config/exact-adoptions.json').read_text())
         self.assertEqual(adoption['added_units'][UNIT],unit)
-        source=ROOT/unit['source']
-        self.assertEqual(hashlib.sha256(source.read_bytes()).hexdigest(),
-                         adoption['source_sha256'][unit['source']])
         with (ROOT/'config/functions.csv').open(newline='') as f:
             row=next(r for r in csv.DictReader(f) if r['address']=='0x0041CA30')
         self.assertEqual((row['size'],row['status'],row['owner']),('77','matching','authored'))

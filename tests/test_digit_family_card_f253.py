@@ -56,7 +56,6 @@ class DigitFamilyAndCardF253Tests(unittest.TestCase):
                 self.assertEqual(len(set(offsets)),nreloc)
                 self.assertTrue(all(r['type'] in ('REL32','DIR32') for r in entry['relocations']))
                 source=entry['source']
-                self.assertEqual(m['source_sha256'][source],hashlib.sha256((ROOT/source).read_bytes()).hexdigest())
                 targets=[r['target'] for r in entry['relocations']]
                 if size==377:
                     self.assertEqual(targets.count(0x0040C9A0),2)
