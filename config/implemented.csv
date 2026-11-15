@@ -167,9 +167,9 @@ CameraInputs412660::Initialize
 BattleScene::Render
 BattleScene::RenderHud
 BattleScene::RenderStatus
-BattleTimeline447340::RenderTimeline
+BattleScene::RenderOverlayTimeline
 BattleScene::RenderEndOverlay
-BattleModeFive448710::RenderMenu
+BattleScene::RenderModeFive
 BattleScene::RenderDamageFlash
 BattleScene::RenderRoundBanner
 DrawAtlasNumberAt00446B90
@@ -389,7 +389,7 @@ Fighter::IsState95To99At00455070
 BattleScene::SelectHitResponseAt00455140
 BattleInput::MatchSequenceAt00455800
 Fighter::ApplyMode5DirectionAt00454C20 [provisional]
-BattleScene::HandleMode5OptionsAt004483F0 [provisional]
+BattleScene::HandleMode5Options
 Fighter::SpawnTrackedEffectAt00453AC0
 Fighter::SpawnTrackedEffectAt00453BE0
 Fighter::ApplyOpponentGaugeChange

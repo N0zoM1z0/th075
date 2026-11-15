@@ -1,3 +1,4 @@
+#include "BattleScene.hpp"
 #include "BattleMode5OptionsF168.hpp"
 #include "GameLeafHelpers.hpp"
 #include "SelectionInput4388D0.hpp"
@@ -6,10 +7,8 @@
 // ownership and original int/long overload spelling for this complete wrapper.
 int __cdecl Unknown438A60(int value);
 
-#define FIRST(type, offset) (*reinterpret_cast<type*>(field044 + (offset)))
-#define SECOND(type, offset) (*reinterpret_cast<type*>(field048 + (offset)))
 
-void BattleMode5OptionsF168::HandleMode5Options()
+void BattleScene::HandleMode5Options()
 {
     if (field0A0 == 0)
         return;
@@ -17,32 +16,32 @@ void BattleMode5OptionsF168::HandleMode5Options()
     if (Unknown438A60(g_HeldInputAt00671664.counts[0]) == 1) {
         g_SoundBank->Play(39);
         signed char horizontal = *reinterpret_cast<signed char*>(&g_HeldInputAt00671664);
-        switch (field118) {
+        switch (reinterpret_cast<signed char&>(field118)) {
         case 0:
-            SECOND(signed char, 0x52C) = (SECOND(signed char, 0x52C) + 6 + horizontal) % 6;
+            reinterpret_cast<signed char&>(fighters[1]->field52C) = (reinterpret_cast<signed char&>(fighters[1]->field52C) + 6 + horizontal) % 6;
             break;
         case 1:
-            SECOND(signed char, 0x52D) = (SECOND(signed char, 0x52D) + 10 + horizontal) % 10;
+            reinterpret_cast<signed char&>(fighters[1]->field52D) = (reinterpret_cast<signed char&>(fighters[1]->field52D) + 10 + horizontal) % 10;
             break;
         case 2:
-            SECOND(signed char, 0x52F) = (SECOND(signed char, 0x52F) + 4 + horizontal) % 4;
+            fighters[1]->field52F = (fighters[1]->field52F + 4 + horizontal) % 4;
             break;
         case 3:
-            SECOND(signed char, 0x52E) = (SECOND(signed char, 0x52E) + 2 + horizontal) % 2;
+            reinterpret_cast<signed char&>(fighters[1]->field52E) = (reinterpret_cast<signed char&>(fighters[1]->field52E) + 2 + horizontal) % 2;
             break;
         case 4:
-            SECOND(signed char, 0x530) = (SECOND(signed char, 0x530) + 4 + horizontal) % 4;
+            reinterpret_cast<signed char&>(fighters[1]->field530) = (reinterpret_cast<signed char&>(fighters[1]->field530) + 4 + horizontal) % 4;
             break;
         case 5:
-            SECOND(signed char, 0x531) = (SECOND(signed char, 0x531) + 2 + horizontal) % 2;
+            reinterpret_cast<signed char&>(fighters[1]->field531) = (reinterpret_cast<signed char&>(fighters[1]->field531) + 2 + horizontal) % 2;
             break;
         }
     }
 
     if (g_HeldInputAt00671664.counts[2] == 1) {
-        switch (field118) {
+        switch (reinterpret_cast<signed char&>(field118)) {
         case 6:
-            FIRST(short, 0x3A0) = 1;
+            fighters[0]->field3A0 = 1;
             g_SoundBank->Play(45);
             break;
         case 7:
@@ -52,7 +51,7 @@ void BattleMode5OptionsF168::HandleMode5Options()
         case 8:
             field0A0 = 0;
             g_SoundBank->Play(45);
-            field018 = 6;
+            reinterpret_cast<unsigned char&>(field018) = 6;
             break;
         }
     }
@@ -60,16 +59,13 @@ void BattleMode5OptionsF168::HandleMode5Options()
         field0A0 = 0;
     if (g_HeldInputAt00671664.counts[1] == 1 || g_HeldInputAt006716AC.counts[1] == 1) {
         g_SoundBank->Play(39);
-        field118 = (field118 + 1) % 9;
+        reinterpret_cast<signed char&>(field118) = (reinterpret_cast<signed char&>(field118) + 1) % 9;
     }
     if (g_HeldInputAt00671664.counts[1] == -1 || g_HeldInputAt006716AC.counts[1] == -1) {
         g_SoundBank->Play(39);
-        field118 = (field118 + 8) % 9;
+        reinterpret_cast<signed char&>(field118) = (reinterpret_cast<signed char&>(field118) + 8) % 9;
     }
-    FIRST(signed char, 0x39D) = 2 - SECOND(signed char, 0x52C) / 3;
-    FIRST(short, 0x398) = SECOND(signed char, 0x52C) % 3;
-    FIRST(short, 0x39A) = SECOND(signed char, 0x52C) % 3;
+    fighters[0]->field39D = 2 - reinterpret_cast<signed char&>(fighters[1]->field52C) / 3;
+    fighters[0]->field398[0] = reinterpret_cast<signed char&>(fighters[1]->field52C) % 3;
+    fighters[0]->field398[1] = reinterpret_cast<signed char&>(fighters[1]->field52C) % 3;
 }
-
-#undef SECOND
-#undef FIRST

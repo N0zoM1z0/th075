@@ -63,7 +63,8 @@ public:
     void UpdatePlayerEffects();                                     // 00445830
     void ApplySequence();                                           // 00445A00
     void HandlePauseMenu();                                         // 004461D0
-    void OnCameraModeFive();                                        // 004480D0
+    void ProcessDebugKeys();                                        // 004480D0
+    void HandleMode5Options();                                      // 004483F0
     void SetNotice(unsigned char state);                            // 00446D60
     void AdvanceOverlay();                                          // 00446D80
     void ResolveBodySeparation();                                   // 00449310

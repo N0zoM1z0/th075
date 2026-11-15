@@ -1,28 +1,29 @@
+#include "BattleScene.hpp"
 #include "BattleTimeline447340.hpp"
 
-#define STYLE reinterpret_cast<RenderStyle43D9D0*>(field008)
-#define DRAWING reinterpret_cast<RenderDrawing5E68C0*>(field008)
+#define STYLE reinterpret_cast<RenderStyle43D9D0*>(textures)
+#define DRAWING reinterpret_cast<RenderDrawing5E68C0*>(textures)
 #define QUAD reinterpret_cast<HudQuadOperations43E040*>(&packet)
 #define ROTATION reinterpret_cast<TimelineQuadRotation447340*>(&packet)
 
-void BattleTimeline447340::RenderTimeline() {
+void BattleScene::RenderOverlayTimeline() {
     RenderQuadPacket5E68C0 packet;
     STYLE->SetDepthMode(0);
     STYLE->SetBlendMode(0);
-    switch (field064) {
+    switch (reinterpret_cast<signed char&>(field064)) {
         RECT rect;
     case 0:
-        SetRect(&rect, field010 * 5, 0, field010 * 5 + 640, 64);
+        SetRect(&rect, reinterpret_cast<int&>(field010) * 5, 0, reinterpret_cast<int&>(field010) * 5 + 640, 64);
         packet.BuildQuad(0.0f, 208.0f - field074, 640.0f, 272.0f - field074);
         DRAWING->DrawQuad(3, &packet, &rect, 0xFFFFFFFF);
-        SetRect(&rect, 0 - field010 * 5, 0, 640 - field010 * 5, 64);
+        SetRect(&rect, 0 - reinterpret_cast<int&>(field010) * 5, 0, 640 - reinterpret_cast<int&>(field010) * 5, 64);
         packet.BuildQuad(0.0f, 208.0f + field074, 640.0f, 272.0f + field074);
         DRAWING->DrawQuad(3, &packet, &rect, 0xFFFFFFFF);
-        SetRect(&rect, field010 * 5, 0, field010 * 5 + 480, 64);
+        SetRect(&rect, reinterpret_cast<int&>(field010) * 5, 0, reinterpret_cast<int&>(field010) * 5 + 480, 64);
         packet.BuildQuad(80.0f, 208.0f - field070, 560.0f, 272.0f - field070);
         ROTATION->Rotate(320.0f, 240.0f, 0.0f, 0.0f, 0.0f, 90.0f);
         DRAWING->DrawQuad(3, &packet, &rect, 0xFFFFFFFF);
-        SetRect(&rect, 0 - field010 * 5, 0, 480 - field010 * 5, 64);
+        SetRect(&rect, 0 - reinterpret_cast<int&>(field010) * 5, 0, 480 - reinterpret_cast<int&>(field010) * 5, 64);
         packet.BuildQuad(80.0f, 208.0f + field070, 560.0f, 272.0f + field070);
         ROTATION->Rotate(320.0f, 240.0f, 0.0f, 0.0f, 0.0f, 90.0f);
         DRAWING->DrawQuad(3, &packet, &rect, 0xFFFFFFFF);
@@ -76,17 +77,17 @@ void BattleTimeline447340::RenderTimeline() {
         }
         break;
     case 1:
-        SetRect(&rect, field010 * 5, 0, field010 * 5 + 640, 64);
+        SetRect(&rect, reinterpret_cast<int&>(field010) * 5, 0, reinterpret_cast<int&>(field010) * 5 + 640, 64);
         packet.BuildQuad(0.0f, 208.0f - field074, 640.0f, 272.0f - field074);
         DRAWING->DrawQuad(3, &packet, &rect, 0xFFFFFFFF);
-        SetRect(&rect, 0 - field010 * 5, 0, 640 - field010 * 5, 64);
+        SetRect(&rect, 0 - reinterpret_cast<int&>(field010) * 5, 0, 640 - reinterpret_cast<int&>(field010) * 5, 64);
         packet.BuildQuad(0.0f, 208.0f + field074, 640.0f, 272.0f + field074);
         DRAWING->DrawQuad(3, &packet, &rect, 0xFFFFFFFF);
-        SetRect(&rect, field010 * 5, 0, field010 * 5 + 480, 64);
+        SetRect(&rect, reinterpret_cast<int&>(field010) * 5, 0, reinterpret_cast<int&>(field010) * 5 + 480, 64);
         packet.BuildQuad(80.0f, 208.0f - field070, 560.0f, 272.0f - field070);
         ROTATION->Rotate(320.0f, 240.0f, 0.0f, 0.0f, 0.0f, 90.0f);
         DRAWING->DrawQuad(3, &packet, &rect, 0xFFFFFFFF);
-        SetRect(&rect, 0 - field010 * 5, 0, 480 - field010 * 5, 64);
+        SetRect(&rect, 0 - reinterpret_cast<int&>(field010) * 5, 0, 480 - reinterpret_cast<int&>(field010) * 5, 64);
         packet.BuildQuad(80.0f, 208.0f + field070, 560.0f, 272.0f + field070);
         ROTATION->Rotate(320.0f, 240.0f, 0.0f, 0.0f, 0.0f, 90.0f);
         DRAWING->DrawQuad(3, &packet, &rect, 0xFFFFFFFF);

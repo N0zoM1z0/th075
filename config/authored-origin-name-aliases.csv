@@ -113,9 +113,9 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x0043D9D0,BattleScene::RenderFrame,BattleScene::Render,R041,battle-render-frame-0043d9d0
 0x0043E040,BattleHud::Render,BattleScene::RenderHud,R040,battle-hud-render-0043e040
 0x00440B50,BattleHud::RenderStatusEffects,BattleScene::RenderStatus,R042,battle-status-render-00440b50
-0x00447340,BattleScene::RenderOverlayTimeline,BattleTimeline447340::RenderTimeline,R042,battle-overlay-timeline-00447340
+0x00447340,BattleScene::RenderOverlayTimeline,BattleScene::RenderOverlayTimeline,R042,battle-overlay-timeline-00447340
 0x00441910,BattleScene::RenderEndOverlay,BattleScene::RenderEndOverlay,R042,battle-end-overlay-00441910
-0x00448710,BattleScene::RenderPauseMenu,BattleModeFive448710::RenderMenu,R042,battle-mode-five-menu-00448710
+0x00448710,BattleScene::RenderPauseMenu,BattleScene::RenderModeFive,R042,battle-mode-five-menu-00448710
 0x004406C0,BattleScene::DrawDamageFlash,BattleScene::RenderDamageFlash,R042,battle-damage-flash-004406c0
 0x00441EA0,BattleScene::RenderRoundBanner,BattleScene::RenderRoundBanner,R045,battle-round-banner-00441ea0
 0x00446B90,BattleHud::DrawAtlasNumber,DrawAtlasNumberAt00446B90,R042,battle-atlas-number-00446b90

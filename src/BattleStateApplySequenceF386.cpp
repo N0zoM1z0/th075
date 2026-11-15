@@ -28,7 +28,7 @@ extern NativeKeyScannerF386 g_KeyScannerAt00671638;
 extern void NativeActionAt00423C60(int);
 void BattleScene::ApplySequence() {
     if(g_BattleModeAt006714B4==5) {
-        OnCameraModeFive();
+        ProcessDebugKeys();
     } else {
         if(g_ReplayModeAt0066C238==2) {
             if(g_ReplayEventsAt006718E0.Count()>0) {

@@ -168,9 +168,9 @@ CameraInputs412660::Initialize,0x00412660,function
 BattleScene::Render,0x0043D9D0,function
 BattleScene::RenderHud,0x0043E040,function
 BattleScene::RenderStatus,0x00440B50,function
-BattleTimeline447340::RenderTimeline,0x00447340,function
+BattleScene::RenderOverlayTimeline,0x00447340,function
 BattleScene::RenderEndOverlay,0x00441910,function
-BattleModeFive448710::RenderMenu,0x00448710,function
+BattleScene::RenderModeFive,0x00448710,function
 BattleScene::RenderDamageFlash,0x004406C0,function
 BattleScene::RenderRoundBanner,0x00441EA0,function
 DrawAtlasNumberAt00446B90,0x00446B90,function
@@ -390,7 +390,7 @@ Fighter::IsState95To99At00455070,0x00455070,function
 BattleScene::SelectHitResponseAt00455140,0x00455140,function
 BattleInput::MatchSequenceAt00455800,0x00455800,function
 Fighter::ApplyMode5DirectionAt00454C20 [provisional],0x00454C20,function
-BattleScene::HandleMode5OptionsAt004483F0 [provisional],0x004483F0,function
+BattleScene::HandleMode5Options,0x004483F0,function
 Fighter::SpawnTrackedEffectAt00453AC0,0x00453AC0,function
 Fighter::SpawnTrackedEffectAt00453BE0,0x00453BE0,function
 Fighter::ApplyOpponentGaugeChange,0x00452C10,function
