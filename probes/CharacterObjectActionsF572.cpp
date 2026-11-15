@@ -83,11 +83,6 @@ extern float gFadeAt0065825C;
 extern float gMotionDecelAt00657480;
 extern float gInitialClampAt00657D14;
 extern float AbsFloatAt00412D90(float value);
-#define I32(off) (*reinterpret_cast<int*>(RAW+(off)))
-#define F32(off) (*reinterpret_cast<float*>(RAW+(off)))
-#define S16(off) (*reinterpret_cast<signed short*>(RAW+(off)))
-#define U8(off) (*reinterpret_cast<unsigned char*>(RAW+(off)))
-#define S8(off) (*reinterpret_cast<signed char*>(RAW+(off)))
 #define PARENT (*reinterpret_cast<ParentEffectsF572**>(RAW+0xE4))
 #define PF32(off) (*reinterpret_cast<float*>(reinterpret_cast<char*>(PARENT)+(off)))
 #define PS8(off) (*reinterpret_cast<signed char*>(reinterpret_cast<char*>(PARENT)+(off)))
@@ -103,8 +98,6 @@ extern float AbsFloatAt00412D90(float value);
 
 extern unsigned int g_FighterProbeMarker;
 #define RAW reinterpret_cast<char*>(this)
-#define I16(off) *reinterpret_cast<signed short*>(RAW+(off))
-#define OWNER (*reinterpret_cast<char**>(RAW+0x2E8))
 void FighterSwitchF572_Boss004EBDA0::Advance() {
     if (*reinterpret_cast<signed short*>(
             *reinterpret_cast<char**>(
@@ -2630,6 +2623,4 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         default: GetStateAt40FA30();
     }
 }
-#undef OWNER
-#undef I16
 #undef RAW

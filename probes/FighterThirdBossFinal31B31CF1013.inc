@@ -47,7 +47,7 @@ case 0x31C: {
     if ((reinterpret_cast<signed short&>(animationStage))==21 && (reinterpret_cast<signed short&>(animationFrame))==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<8) {
         ++reinterpret_cast<signed short&>(scriptCounterF00);
         SetAuxActionAt40FB40(19);
-        U8(0x3CF)=1;
+        reinterpret_cast<unsigned char&>(field3CF)=1;
     }
     break;
 }

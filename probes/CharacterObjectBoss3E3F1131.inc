@@ -36,7 +36,7 @@ case 0x3E3: {
             if (owner->opponent->field366<2)
                 ++owner->opponent->field366;
             else {
-                PARENT_GRANDPARENT_FIELD(int,0x2D0)+=0x4E20;
+                owner->opponent->field2D0+=0x4E20;
             }
             NativeHitAt0045B860(0x2E);
             return;

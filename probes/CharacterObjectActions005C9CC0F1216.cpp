@@ -3,7 +3,6 @@
 // NONEXACT and is not an accepted executable replacement.
 #include "ObjectAdvance5C9CC0F1216.hpp"
 
-#define OPPONENT(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(owner->opponent) + (offset)))
 #define OWNER_ACTOR reinterpret_cast<OwnerActor5C9CC0F1216*>(owner)
 
 extern float g_F1057_NudgeAt00657480;
@@ -2662,7 +2661,7 @@ void ObjectActor5C9CC0F1216::Advance()
                     ++owner->opponent->field366;
                 }
                 else {
-                    OPPONENT(int, 0x2D0) += 20000;
+                    owner->opponent->field2D0 += 20000;
                 }
                 PlaySharedSound(46);
                 return;
@@ -2775,4 +2774,3 @@ void ObjectActor5C9CC0F1216::Advance()
 }
 
 #undef OWNER_ACTOR
-#undef OPPONENT

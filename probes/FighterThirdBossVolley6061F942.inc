@@ -41,7 +41,7 @@
             }
             if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
                 SetNativeActionAt40FAC0(0x62);
-                if (U8(0x3CF)==0)
+                if ((reinterpret_cast<unsigned char&>(field3CF))==0)
                     SetNativeActionAt40FAC0(0x63);
             } else if ((reinterpret_cast<signed short&>(animationStage))==3 && (reinterpret_cast<signed short&>(animationFrame))==0) {
                 velocityX=static_cast<float>(static_cast<int>(reinterpret_cast<signed short&>(scriptCounterF00)))*g_F748_SpeedScaleAt006590B8;
@@ -82,7 +82,7 @@
             }
             if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
                 SetNativeActionAt40FAC0(0x62);
-                if (U8(0x3CF)==0)
+                if ((reinterpret_cast<unsigned char&>(field3CF))==0)
                     SetNativeActionAt40FAC0(0x63);
             } else if ((reinterpret_cast<signed short&>(animationStage))==3 && (reinterpret_cast<signed short&>(animationFrame))==0) {
                 velocityX=static_cast<float>(static_cast<int>(reinterpret_cast<signed short&>(scriptCounterF00)))*g_F748_SpeedScaleAt006590B8;

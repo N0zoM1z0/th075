@@ -3,7 +3,6 @@
 #include "ObjectAdvance57D580F1237.hpp"
 #include "MathLookup.hpp"
 
-#define OPPONENT(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(owner->opponent) + (offset)))
 #define OWNER_ACTOR reinterpret_cast<OwnerActor57D580F1237*>(owner)
 
 extern float g_F1211_AngleDivAt00657828;
@@ -2453,7 +2452,7 @@ case 995:
                     ++owner->opponent->field366;
                 }
                 else {
-                    OPPONENT(int, 0x2D0) += 20000;
+                    owner->opponent->field2D0 += 20000;
                 }
                 PlaySharedSound(46);
                 return;
@@ -2567,4 +2566,3 @@ case 997:
 }
 
 #undef OWNER_ACTOR
-#undef OPPONENT

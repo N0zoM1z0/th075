@@ -17,7 +17,7 @@ case 0x33: {
             velocityX = 0.0f;
     }
     if (ContactAt454EE0() &&
-        *reinterpret_cast<signed char*>(RAW + 0x3BE)) {
+        field3BE) {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
     }
@@ -38,7 +38,7 @@ case 0x34: {
             velocityX = 0.0f;
     }
     if (ContactAt454EE0() &&
-        *reinterpret_cast<signed char*>(RAW + 0x3BE)) {
+        field3BE) {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
     }
@@ -60,7 +60,7 @@ case 0x35: {
             velocityX = 0.0f;
     }
     if (ContactAt454EE0() &&
-        *reinterpret_cast<signed char*>(RAW + 0x3BE)) {
+        field3BE) {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
     }
@@ -88,7 +88,7 @@ case 0x38: {
             velocityX = 0.0f;
     }
     if (ContactAt454EE0() &&
-        *reinterpret_cast<signed char*>(RAW + 0x3BE)) {
+        field3BE) {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
     }
@@ -109,7 +109,7 @@ case 0x39: {
             velocityX = 0.0f;
     }
     if (ContactAt454EE0() &&
-        *reinterpret_cast<signed char*>(RAW + 0x3BE)) {
+        field3BE) {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
     }
@@ -130,7 +130,7 @@ case 0x3A: {
             velocityX = 0.0f;
     }
     if (ContactAt454EE0() &&
-        *reinterpret_cast<signed char*>(RAW + 0x3BE)) {
+        field3BE) {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
     }
@@ -152,7 +152,7 @@ case 0x3B: {
             velocityX = 0.0f;
     }
     if (ContactAt454EE0() &&
-        *reinterpret_cast<signed char*>(RAW + 0x3BE)) {
+        field3BE) {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
     }
@@ -180,7 +180,7 @@ case 0x3E: {
             velocityX = 0.0f;
     }
     if (ContactAt454EE0() &&
-        *reinterpret_cast<signed char*>(RAW + 0x3BE)) {
+        field3BE) {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
     }
@@ -201,7 +201,7 @@ case 0x3F: {
             velocityX = 0.0f;
     }
     if (ContactAt454EE0() &&
-        *reinterpret_cast<signed char*>(RAW + 0x3BE)) {
+        field3BE) {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
     }
@@ -222,7 +222,7 @@ case 0x40: {
             velocityX = 0.0f;
     }
     if (ContactAt454EE0() &&
-        *reinterpret_cast<signed char*>(RAW + 0x3BE)) {
+        field3BE) {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
     }
@@ -244,7 +244,7 @@ case 0x41: {
             velocityX = 0.0f;
     }
     if (ContactAt454EE0() &&
-        *reinterpret_cast<signed char*>(RAW + 0x3BE)) {
+        field3BE) {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
     }

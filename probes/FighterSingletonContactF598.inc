@@ -13,7 +13,7 @@ case 0x32: {
             velocityX = 0.0f;
     }
     if (ContactAt454EE0() &&
-        *reinterpret_cast<signed char*>(RAW + 0x3BE)) {
+        field3BE) {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
     }

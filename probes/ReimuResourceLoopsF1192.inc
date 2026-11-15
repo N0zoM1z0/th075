@@ -11,7 +11,7 @@ case 0x303: {
         if ((reinterpret_cast<signed short&>(scriptCounterF00))<8) {
             ++reinterpret_cast<signed short&>(scriptCounterF00);
             SetAuxActionAt40FB40(15);
-            *reinterpret_cast<char*>(RAW+0x3CF)=1;
+            reinterpret_cast<char&>(field3CF)=1;
             break;
         }
         SetNativeActionAt40FAC0(0x304);
@@ -78,7 +78,7 @@ case 0x304: {
     if (opponent->health>0 && opponent->animationStage==2 &&
         opponent->field39D>0 && opponent->action==0x63) {
         reinterpret_cast<FighterSwitchF598_Boss0045DD70*>(opponent)->SetNativeActionAt40FAC0(0x5F);
-        *reinterpret_cast<char*>(OWNER+0x3CF)=1;
+        reinterpret_cast<char&>(opponent->field3CF)=1;
         break;
     }
     ++reinterpret_cast<signed short&>(scriptCounterF00);

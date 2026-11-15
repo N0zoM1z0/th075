@@ -1,4 +1,5 @@
 #include "CharacterObject.hpp"
+#include "PatchouliFighter.hpp"
 #include "FrameActorMotionPairsF1037.hpp"
 #include "FighterAnimationPhaseBorrowedF1024.hpp"
 #include "FighterGaugeBorrowedF980.hpp"
@@ -97,7 +98,6 @@ extern float __cdecl F1057_FloatAtan2At00483300(float,float);
 #define I16(off) *reinterpret_cast<signed short*>(RAW+(off))
 #define PARENT (*reinterpret_cast<char**>(RAW+0xE4))
 #define PARENT_GRANDPARENT (*reinterpret_cast<char**>(PARENT+0x2E8))
-#define PARENT_GRANDPARENT_FIELD(type,off) (*reinterpret_cast<type*>(PARENT_GRANDPARENT+(off)))
 void FighterSwitchF569_Boss0050A580::Advance() {
     if (*reinterpret_cast<signed short*>(
             *reinterpret_cast<char**>(
@@ -292,7 +292,6 @@ void FighterSwitchF569_Boss0050A580::Advance() {
         default: GetNativeActionAt0040FA30();
     }
 }
-#undef PARENT_GRANDPARENT_FIELD
 #undef PARENT_GRANDPARENT
 #undef PARENT
 #undef I16

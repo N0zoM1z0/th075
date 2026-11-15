@@ -73,7 +73,7 @@ case 0x31C: {
     if ((reinterpret_cast<signed short&>(animationStage))==24 && (reinterpret_cast<signed short&>(animationFrame))==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<8) {
         ++reinterpret_cast<signed short&>(scriptCounterF00);
         SetAuxActionAt40FB40(22);
-        *reinterpret_cast<char*>(RAW+0x3CF)=1;
+        reinterpret_cast<char&>(field3CF)=1;
     }
     break;
 }

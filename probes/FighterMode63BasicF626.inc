@@ -12,7 +12,7 @@ case 0x63: {
             field39D>0 &&
             reinterpret_cast<signed short&>(opponent->action)<150) {
             SetNativeActionAt40FAC0(0x5F);
-            *reinterpret_cast<signed char*>(RAW+0x3CF)=1;
+            field3CF=1;
             break;
         }
     } else {
@@ -40,7 +40,7 @@ case 0x63: {
             *reinterpret_cast<signed char*>(RAW+0x32A+
                 field39D)==0) {
             SetNativeActionAt40FAC0(0x5F);
-            *reinterpret_cast<signed char*>(RAW+0x3CF)=1;
+            field3CF=1;
             break;
         }
     }

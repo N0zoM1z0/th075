@@ -7,7 +7,6 @@
 // Interfaces below are borrowed receiver views; do not instantiate owners.
 #include "ObjectAdvance5EB520F1207.hpp"
 
-#define OPPONENT(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(owner->opponent) + (offset)))
 #define OWNER_ACTOR reinterpret_cast<OwnerActor5EB520Draft*>(owner)
 
 // The state labels and names describe observed behavior, not original identity.
@@ -2480,7 +2479,7 @@ void ObjectActor5EB520Draft::Advance() {
                     ++owner->opponent->field366;
                 }
                 else {
-                    OPPONENT(int, 0x2D0) += 20000;
+                    owner->opponent->field2D0 += 20000;
                 }
                 PlaySharedSound(46);
                 return;
@@ -2635,4 +2634,3 @@ void ObjectActor5EB520Draft::Advance() {
 }
 
 #undef OWNER_ACTOR
-#undef OPPONENT

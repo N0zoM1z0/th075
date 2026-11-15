@@ -2,7 +2,6 @@
 // All native states are written; still NONEXACT and not an accepted replacement.
 #include "ObjectAdvance5A1600F1231.hpp"
 
-#define OPPONENT(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(owner->opponent) + (offset)))
 #define OWNER_ACTOR reinterpret_cast<OwnerActor5A1600F1231*>(owner)
 
 extern float g_F1211_AngleDivAt00657828;
@@ -2703,7 +2702,7 @@ void ObjectActor5A1600F1231::Advance()
                     ++owner->opponent->field366;
                 }
                 else {
-                    OPPONENT(int, 0x2D0) += 20000;
+                    owner->opponent->field2D0 += 20000;
                 }
                 PlaySharedSound(46);
                 return;
@@ -2848,4 +2847,3 @@ void ObjectActor5A1600F1231::Advance()
 }
 
 #undef OWNER_ACTOR
-#undef OPPONENT

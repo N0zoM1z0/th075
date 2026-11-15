@@ -106,14 +106,16 @@ public:
     unsigned char unknown0E8[0x2CC - 0x0E8];
     signed char field2CC;               // +0x2CC
     signed char field2CD;               // +0x2CD
-    unsigned char unknown2CE[0x2D8 - 0x2CE];
+    unsigned char unknown2CE[0x2D0 - 0x2CE];
+    int field2D0;                       // +0x2D0
+    unsigned char unknown2D4[0x2D8 - 0x2D4];
     float field2D8;                     // +0x2D8
     float field2DC;                     // +0x2DC
     float field2E0;                     // +0x2E0
     float field2E4;                     // +0x2E4
     Fighter* opponent;                  // +0x2E8 the other player
     void* field2EC;                     // +0x2EC
-    unsigned char unknown2F0[0x2F1 - 0x2F0];
+    unsigned char field2F0;             // +0x2F0
     unsigned char field2F1;             // +0x2F1
     unsigned char field2F2;             // +0x2F2
     unsigned char field2F3;             // +0x2F3
@@ -163,14 +165,16 @@ public:
     short field3B8;                     // +0x3B8
     short field3BA;                     // +0x3BA
     short field3BC;                     // +0x3BC
-    unsigned char unknown3BE[0x3C0 - 0x3BE];
+    signed char field3BE;               // +0x3BE
+    unsigned char unknown3BF[0x3C0 - 0x3BF];
     float field3C0;                     // +0x3C0
     short comboCount;                   // +0x3C4
     short comboDamage;                  // +0x3C6
     short flashGauge;                   // +0x3C8
     short field3CA;                     // +0x3CA
     short field3CC;                     // +0x3CC
-    unsigned char unknown3CE[0x3D0 - 0x3CE];
+    unsigned char field3CE;             // +0x3CE round outcome (F992)
+    signed char field3CF;               // +0x3CF
     unsigned int field3D0[12];          // +0x3D0
     unsigned int field400[12];          // +0x400
     unsigned int field430[12];          // +0x430

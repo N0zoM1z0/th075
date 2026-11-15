@@ -15,7 +15,6 @@ float __cdecl Unknown483300(float first, float second);
 // Same observed signed-byte view used by the accepted response policy.
 extern signed char g_StateRepeatLevelAt006714D0;
 
-#define OWNER_OPPONENT(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*&>(owner->opponent) + (offset)))
 #define SELF_VIEW(type) reinterpret_cast<type*>(this)
 #define OWNER_VIEW(type) reinterpret_cast<type*>(owner)
 #undef PlaySound
@@ -2124,7 +2123,7 @@ case 995:
             if (owner->opponent->field366 < 2)
                 owner->opponent->field366++;
             else
-                OWNER_OPPONENT(int, 0x2D0) = OWNER_OPPONENT(int, 0x2D0) + 20000;
+                owner->opponent->field2D0 = owner->opponent->field2D0 + 20000;
             SELF_VIEW(EffectSound45B860)->PlaySharedSound(46);
             return;
         }
@@ -2240,4 +2239,3 @@ case 997:
 
 #undef OWNER_VIEW
 #undef SELF_VIEW
-#undef OWNER_OPPONENT

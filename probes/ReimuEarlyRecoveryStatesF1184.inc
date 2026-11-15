@@ -87,7 +87,7 @@ case 0x61: {
     }
     if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
         SetNativeActionAt40FAC0(0x62);
-        if (*reinterpret_cast<unsigned char*>(RAW+0x3CF)==0) SetNativeActionAt40FAC0(0x63);
+        if (reinterpret_cast<unsigned char&>(field3CF)==0) SetNativeActionAt40FAC0(0x63);
     } else {
         // Original 00460409 jumps over BOTH stage-specific updates.
         if ((reinterpret_cast<signed short&>(animationStage))==3 && (reinterpret_cast<signed short&>(animationFrame))==0) {

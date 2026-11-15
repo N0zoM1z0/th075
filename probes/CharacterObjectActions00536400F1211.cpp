@@ -7,7 +7,6 @@
 #include "FrameActorMotionPairsF1037.hpp"
 #include "FighterAnimationPhaseBorrowedF1024.hpp"
 
-#define OPPONENT(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(owner->opponent) + (offset)))
 #define OWNER_ACTOR reinterpret_cast<OwnerActor536400F1211*>(owner)
 #define OWNER_SELECTED_BYTE (*reinterpret_cast<signed char*>(reinterpret_cast<unsigned char*>(owner) + 0x370 + owner->field39D))
 #define HISTORY_LIST reinterpret_cast<ObjectHistoryListF1211*>(reinterpret_cast<unsigned char*>(owner) + 0xFEC)
@@ -2656,7 +2655,7 @@ case 0x331: {
                     ++owner->opponent->field366;
                 }
                 else {
-                    OPPONENT(int, 0x2D0) += 20000;
+                    owner->opponent->field2D0 += 20000;
                 }
                 PlaySharedSound(46);
                 return;
@@ -2808,4 +2807,3 @@ case 0x3E6: {
 #undef OWNER_SELECTED_BYTE
 #undef HISTORY_LIST
 #undef OWNER_ACTOR
-#undef OPPONENT

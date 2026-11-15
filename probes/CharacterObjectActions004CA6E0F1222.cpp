@@ -2,8 +2,6 @@
 // All native states are written; still NONEXACT and not an accepted replacement.
 #include "ObjectAdvance4CA6E0F1222.hpp"
 
-#define OWNER(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(owner) + (offset)))
-#define OPPONENT(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(owner->opponent) + (offset)))
 #define OWNER_ACTOR reinterpret_cast<OwnerActor4CA6E0F1222*>(owner)
 
 extern float g_F1211_AngleDivAt00657828;
@@ -51,7 +49,7 @@ void ObjectActor4CA6E0F1222::Advance()
                 SetPolarVelocity(field0C8, field0D8 * 0.5f + field0CC);
                 rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
                 owner->field310 = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
-                OWNER(unsigned char, 0x2F0) = 0;
+                owner->field2F0 = 0;
                 owner->field2F6 = 0;
                 owner->field2F8 = 0;
                 owner->field2FA = 0;
@@ -234,7 +232,7 @@ void ObjectActor4CA6E0F1222::Advance()
                 owner->field318 = field0D8;
                 OWNER_ACTOR->SpawnEffect(812, x, y, facing, 1);
                 owner->field310 = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
-                OWNER(unsigned char, 0x2F0) = 0;
+                owner->field2F0 = 0;
                 owner->field2F6 = 0;
                 owner->field2F8 = 0;
                 owner->field2FA = 0;
@@ -337,7 +335,7 @@ void ObjectActor4CA6E0F1222::Advance()
                 owner->field318 = field0D8;
                 OWNER_ACTOR->SpawnEffect(812, x, y, facing, 1);
                 owner->field310 = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
-                OWNER(unsigned char, 0x2F0) = 0;
+                owner->field2F0 = 0;
                 owner->field2F6 = 0;
                 owner->field2F8 = 0;
                 owner->field2FA = 0;
@@ -456,7 +454,7 @@ void ObjectActor4CA6E0F1222::Advance()
                     owner->field318 = field0D8;
                     OWNER_ACTOR->SpawnEffect(812, x, y, facing, 1);
                     owner->field310 = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
-                    OWNER(unsigned char, 0x2F0) = 0;
+                    owner->field2F0 = 0;
                     owner->field2F6 = 0;
                     owner->field2F8 = 0;
                     owner->field2FA = 0;
@@ -1275,7 +1273,7 @@ void ObjectActor4CA6E0F1222::Advance()
                 SetPolarVelocity(field0C8, field0CC);
                 rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
                 owner->field310 = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
-                OWNER(unsigned char, 0x2F0) = 0;
+                owner->field2F0 = 0;
                 owner->field2F6 = 0;
                 owner->field2F8 = 0;
                 owner->field2FA = 0;
@@ -1366,7 +1364,7 @@ void ObjectActor4CA6E0F1222::Advance()
                 rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
                 if (animationStage > 0) {
                     owner->field310 = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
-                    OWNER(unsigned char, 0x2F0) = 0;
+                    owner->field2F0 = 0;
                     owner->field2F6 = 0;
                     owner->field2F8 = 0;
                     owner->field2FA = 0;
@@ -1478,7 +1476,7 @@ void ObjectActor4CA6E0F1222::Advance()
                 }
                 if (animationStage > 0) {
                     owner->field310 = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
-                    OWNER(unsigned char, 0x2F0) = 0;
+                    owner->field2F0 = 0;
                     owner->field2F6 = 0;
                     owner->field2F8 = 0;
                     owner->field2FA = 0;
@@ -1571,7 +1569,7 @@ void ObjectActor4CA6E0F1222::Advance()
                     owner->field318 = field0D8;
                     OWNER_ACTOR->SpawnEffect(812, x, y, facing, 0);
                     owner->field310 = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
-                    OWNER(unsigned char, 0x2F0) = 0;
+                    owner->field2F0 = 0;
                     owner->field2F6 = 0;
                     owner->field2F8 = 0;
                     owner->field2FA = 0;
@@ -1651,7 +1649,7 @@ void ObjectActor4CA6E0F1222::Advance()
                     owner->field318 = field0D8;
                     OWNER_ACTOR->SpawnEffect(812, x, y, facing, 0);
                     owner->field310 = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
-                    OWNER(unsigned char, 0x2F0) = 0;
+                    owner->field2F0 = 0;
                     owner->field2F6 = 0;
                     owner->field2F8 = 0;
                     owner->field2FA = 0;
@@ -1706,7 +1704,7 @@ void ObjectActor4CA6E0F1222::Advance()
                 SetPolarVelocity(field0C8, field0CC);
                 rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
                 owner->field310 = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
-                OWNER(unsigned char, 0x2F0) = 0;
+                owner->field2F0 = 0;
                 owner->field2F6 = 0;
                 owner->field2F8 = 0;
                 owner->field2FA = 0;
@@ -1818,7 +1816,7 @@ void ObjectActor4CA6E0F1222::Advance()
                     owner->field318 = field0D8;
                     OWNER_ACTOR->SpawnEffect(812, x, y, facing, 1);
                     owner->field310 = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
-                    OWNER(unsigned char, 0x2F0) = 0;
+                    owner->field2F0 = 0;
                     owner->field2F6 = 0;
                     owner->field2F8 = 0;
                     owner->field2FA = 0;
@@ -1921,7 +1919,7 @@ void ObjectActor4CA6E0F1222::Advance()
                     owner->field318 = field0D8;
                     OWNER_ACTOR->SpawnEffect(812, x, y, facing, 1);
                     owner->field310 = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
-                    OWNER(unsigned char, 0x2F0) = 0;
+                    owner->field2F0 = 0;
                     owner->field2F6 = 0;
                     owner->field2F8 = 0;
                     owner->field2FA = 0;
@@ -2117,7 +2115,7 @@ void ObjectActor4CA6E0F1222::Advance()
                 SetPolarVelocity(field0C8, field0CC);
                 rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
                 owner->field310 = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
-                OWNER(unsigned char, 0x2F0) = 0;
+                owner->field2F0 = 0;
                 owner->field2F6 = 0;
                 owner->field2F8 = 0;
                 owner->field2FA = 0;
@@ -2223,7 +2221,7 @@ void ObjectActor4CA6E0F1222::Advance()
                 SetPolarVelocity(field0C8, field0CC);
                 rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
                 owner->field310 = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
-                OWNER(unsigned char, 0x2F0) = 0;
+                owner->field2F0 = 0;
                 owner->field2F6 = 0;
                 owner->field2F8 = 0;
                 owner->field2FA = 0;
@@ -2393,7 +2391,7 @@ void ObjectActor4CA6E0F1222::Advance()
                     ++owner->opponent->field366;
                 }
                 else {
-                    OPPONENT(int, 0x2D0) += 20000;
+                    owner->opponent->field2D0 += 20000;
                 }
                 PlaySharedSound(46);
                 return;
@@ -2503,5 +2501,3 @@ void ObjectActor4CA6E0F1222::Advance()
 }
 
 #undef OWNER_ACTOR
-#undef OPPONENT
-#undef OWNER

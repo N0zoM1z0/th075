@@ -71,17 +71,9 @@ extern float g_ExtraThresholdAt00657D14;
 extern float g_SubtractAt00657478;
 extern double g_RiseAt00658050;
 #define RAW reinterpret_cast<char*>(this)
-#define I32(off) *reinterpret_cast<int*>(RAW+(off))
 #define I16(off) *reinterpret_cast<signed short*>(RAW+(off))
-#define POS (*reinterpret_cast<float*>(RAW+0x50))
-#define POS48 *reinterpret_cast<float*>(RAW+0x48)
 #define F32(off) (*reinterpret_cast<float*>(RAW+(off)))
-#define POS54 *reinterpret_cast<float*>(RAW+0x54)
-#define POS5C *reinterpret_cast<float*>(RAW+0x5C)
-#define S16(off) (*reinterpret_cast<signed short*>(RAW+(off)))
 #define U8(off) (*reinterpret_cast<unsigned char*>(RAW+(off)))
-#define FLAG (*reinterpret_cast<signed char*>(RAW+0x3AC))
-#define OWNER (*reinterpret_cast<char**>(RAW+0x2E8))
 void FighterSwitchF598_Boss005214B0::Advance() {
     if (reinterpret_cast<signed short&>(field082) != 0 || reinterpret_cast<signed short&>(opponent->field3BA) != 0)
         return;
