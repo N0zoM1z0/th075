@@ -1,4 +1,4 @@
-#include "BattleCombat.hpp"
+#include "BattleScene.hpp"
 #include "GameLeafHelpers.hpp"
 
 // Typed views of independently observed fields, without guessed intervening
@@ -6,7 +6,7 @@
 #define FIELD(type, object, offset) \
     (*reinterpret_cast<type *>(reinterpret_cast<unsigned char *>(object) + offset))
 
-void BattleCombat::ApplyHit(Actor *attack, Fighter *attacker, Fighter *defender)
+void BattleScene::ApplyHit(Actor *attack, Fighter *attacker, Fighter *defender)
 {
     attack->field07C = 1;
     if (defender->action < 50 || defender->action >= 143) {
@@ -69,7 +69,7 @@ void BattleCombat::ApplyHit(Actor *attack, Fighter *attacker, Fighter *defender)
         }
     }
     if (defender->health <= 0) {
-        if (FIELD(signed char, this, 0x18) != 1)
+        if (field018 != 1)
             defender->health = 1;
         else {
             defender->health = 0;
@@ -86,7 +86,7 @@ void BattleCombat::ApplyHit(Actor *attack, Fighter *attacker, Fighter *defender)
         defender->recoverableHealth = defender->health;
     ++attacker->comboCount;
     attacker->comboRate *= attack->savedFrameInfo->comboRateScale;
-    FIELD(ComboDisplay *, this, 0x58)->UpdateCounter(attacker->comboCount, attacker->comboDamage,
+    activeComboDisplay->UpdateCounter(attacker->comboCount, attacker->comboDamage,
         static_cast<short>(attacker->comboRate * 1000.0f));
     defender->UpdateFacingFromOpponent();
     SpawnMidpointEffect(attack->savedFrameInfo->hitEffect, attack->facing);
@@ -109,7 +109,7 @@ void BattleCombat::ApplyHit(Actor *attack, Fighter *attacker, Fighter *defender)
     }
 }
 
-bool BattleCombat::ApplyConditionalHit(Actor *attack, Fighter *attacker, Fighter *defender)
+bool BattleScene::ApplyConditionalHit(Actor *attack, Fighter *attacker, Fighter *defender)
 {
     if (!(attack->savedFrameInfo->attackFlags & 0x20) &&
         ((defender->savedFrameInfo->flags & 0x80) ||
@@ -156,7 +156,7 @@ bool BattleCombat::ApplyConditionalHit(Actor *attack, Fighter *attacker, Fighter
             }
         }
         if (defender->health <= 0) {
-            if (FIELD(signed char, this, 0x18) != 1)
+            if (field018 != 1)
                 defender->health = 1;
             else {
                 defender->health = 0;
@@ -173,7 +173,7 @@ bool BattleCombat::ApplyConditionalHit(Actor *attack, Fighter *attacker, Fighter
             defender->recoverableHealth = defender->health;
         ++attacker->comboCount;
         attacker->comboRate *= attack->savedFrameInfo->comboRateScale;
-        FIELD(ComboDisplay *, this, 0x58)->UpdateCounter(attacker->comboCount, attacker->comboDamage,
+        activeComboDisplay->UpdateCounter(attacker->comboCount, attacker->comboDamage,
             static_cast<short>(attacker->comboRate * 1000.0f));
         attacker->cardGauge += attack->savedFrameInfo->meterGain;
         if (attacker->cardGauge > 2000.0f)

@@ -1,5 +1,5 @@
 #include "FighterHitResponseF164.hpp"
-#include "BattleCombat.hpp"
+extern signed char g_CombatMode;
 #include <cstdlib>
 
 #define OPPONENT_X opponent->x

@@ -1,7 +1,7 @@
 #ifndef TH075_BATTLE_FRAME_HPP
 #define TH075_BATTLE_FRAME_HPP
 #include "Fighter.hpp"
-#include "BattleActiveCollision.hpp"
+#include "BattleScene.hpp"
 #include "GameLeafHelpers.hpp"
 // Partial receiver-only interfaces. Never instantiate or embed these views.
 // Slot names preserve observed indices; unused declarations do not establish

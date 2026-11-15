@@ -1,6 +1,5 @@
 #include "FighterVirtualActionsF159.hpp"
 #include "GameLeafHelpers.hpp"
-#include "BattleCombat.hpp"
 
 
 void Fighter::ForwardBaseAction()

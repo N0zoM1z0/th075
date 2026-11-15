@@ -2,7 +2,7 @@
 #include "Graphics.hpp"
 #include "GraphicsDraw.hpp"
 #include "GameLeafHelpers.hpp"
-#include "BattleCombatResponses.hpp"
+#include "BattleScene.hpp"
 #include "CameraUpdate4126C0.hpp"
 #include <mmsystem.h>
 

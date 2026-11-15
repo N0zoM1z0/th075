@@ -1,4 +1,4 @@
-#include "BattleCombatResponses.hpp"
+#include "BattleScene.hpp"
 #include "GameLeafHelpers.hpp"
 
 // Typed views of independently observed fields, without guessed intervening
@@ -8,7 +8,7 @@
 // Native signed 16-bit flash bar length is at original actor+0x3C8.
 // These are two independently observed adjacent native signed WORDs.
 
-bool BattleCombatResponses::ApplyHitResponse(Actor *attack, Fighter *attacker, Fighter *defender)
+bool BattleScene::ApplyHitResponse(Actor *attack, Fighter *attacker, Fighter *defender)
 {
     signed char response = reinterpret_cast<CombatResponseActor *>(defender)->ClassifyResponse(attack->savedFrameInfo->attackFlags);
     if (response > 0) {
@@ -19,57 +19,57 @@ bool BattleCombatResponses::ApplyHitResponse(Actor *attack, Fighter *attacker, F
             if (defender->field3BE == 0)
                 defender->spirit -= attack->savedFrameInfo->damage / 4;
             if (defender->spirit <= 0)
-                reinterpret_cast<BattleState *>(this)->StartHitSequence(defender, 143);
+                StartHitSequence(defender, 143);
             else
                 defender->ResetPrimaryCounters(attack->savedFrameInfo->field38 + 150);
-            reinterpret_cast<BattleCombat *>(this)->SpawnMidpointEffect(50, defender->facing);
+            SpawnMidpointEffect(50, defender->facing);
             break;
         case 12:
             damage = attack->savedFrameInfo->field18;
             defender->spirit -= attack->savedFrameInfo->damage / 2;
             if (attack->savedFrameInfo->attackFlags & 0x80000) defender->spirit = 0;
             if (defender->spirit <= 0)
-                reinterpret_cast<BattleState *>(this)->StartHitSequence(defender, 143);
+                StartHitSequence(defender, 143);
             else
                 defender->ResetPrimaryCounters(attack->savedFrameInfo->field38 + 150);
-            reinterpret_cast<BattleCombat *>(this)->SpawnMidpointEffect(51, defender->facing);
+            SpawnMidpointEffect(51, defender->facing);
             break;
         case 13:
             damage = attack->savedFrameInfo->field18 + attack->savedFrameInfo->damage / 10;
             defender->ResetPrimaryCounters(attack->savedFrameInfo->field38 + 159);
-            reinterpret_cast<BattleCombat *>(this)->SpawnMidpointEffect(51, defender->facing);
+            SpawnMidpointEffect(51, defender->facing);
             break;
         case 21:
             damage = attack->savedFrameInfo->field18;
             if (defender->field3BE == 0)
                 defender->spirit -= attack->savedFrameInfo->damage / 4;
             if (defender->spirit <= 0)
-                reinterpret_cast<BattleState *>(this)->StartHitSequence(defender, 144);
+                StartHitSequence(defender, 144);
             else
                 defender->ResetPrimaryCounters(attack->savedFrameInfo->field38 + 154);
-            reinterpret_cast<BattleCombat *>(this)->SpawnMidpointEffect(50, defender->facing);
+            SpawnMidpointEffect(50, defender->facing);
             break;
         case 22:
             damage = attack->savedFrameInfo->field18;
             defender->spirit -= attack->savedFrameInfo->damage / 2;
             if (attack->savedFrameInfo->attackFlags & 0x80000) defender->spirit = 0;
             if (defender->spirit <= 0)
-                reinterpret_cast<BattleState *>(this)->StartHitSequence(defender, 144);
+                StartHitSequence(defender, 144);
             else
                 defender->ResetPrimaryCounters(attack->savedFrameInfo->field38 + 154);
-            reinterpret_cast<BattleCombat *>(this)->SpawnMidpointEffect(51, defender->facing);
+            SpawnMidpointEffect(51, defender->facing);
             break;
         case 23:
             damage = attack->savedFrameInfo->field18 + attack->savedFrameInfo->damage / 10;
             defender->ResetPrimaryCounters(attack->savedFrameInfo->field38 + 163);
-            reinterpret_cast<BattleCombat *>(this)->SpawnMidpointEffect(51, defender->facing);
+            SpawnMidpointEffect(51, defender->facing);
             break;
         case 31:
             damage = attack->savedFrameInfo->field18;
             defender->spirit -= attack->savedFrameInfo->damage / 4;
-            reinterpret_cast<BattleCombat *>(this)->SpawnMidpointEffect(50, defender->facing);
+            SpawnMidpointEffect(50, defender->facing);
             if (defender->spirit <= 0)
-                reinterpret_cast<BattleState *>(this)->StartHitSequence(defender, 145);
+                StartHitSequence(defender, 145);
             else
                 defender->ResetPrimaryCounters(158);
             break;
@@ -85,7 +85,7 @@ bool BattleCombatResponses::ApplyHitResponse(Actor *attack, Fighter *attacker, F
     return false;
 }
 
-bool BattleCombatResponses::ApplyAttackHit(Actor *attack, Fighter *attacker, Fighter *defender)
+bool BattleScene::ApplyAttackHit(Actor *attack, Fighter *attacker, Fighter *defender)
 {
     if ((!(attack->savedFrameInfo->attackFlags & 0x400) || !(defender->savedFrameInfo->flags & 0x40)) &&
         (attack->savedFrameInfo->attackFlags & 0x100000) && defender->y <= 0.0f) {
@@ -105,7 +105,7 @@ bool BattleCombatResponses::ApplyAttackHit(Actor *attack, Fighter *attacker, Fig
     if (reinterpret_cast<signed char&>(attacker->field3CE) == 0)
         defender->health -= attacker->CalculateDamage(attack);
     if (defender->health <= 0) {
-        if (FIELD(signed char, this, 0x18) != 1)
+        if (field018 != 1)
             defender->health = 1;
         else {
             defender->health = 0;
@@ -125,20 +125,20 @@ bool BattleCombatResponses::ApplyAttackHit(Actor *attack, Fighter *attacker, Fig
     ++attacker->comboCount;
     attacker->comboDamage += attacker->CalculateDamage(attack);
     attacker->comboRate *= attack->savedFrameInfo->comboRateScale;
-    FIELD(ComboDisplay *, this, 0x58)->UpdateCounter(attacker->comboCount, attacker->comboDamage,
+    activeComboDisplay->UpdateCounter(attacker->comboCount, attacker->comboDamage,
         static_cast<short>(attacker->comboRate * 1000.0f));
     attacker->cardGauge += attack->savedFrameInfo->meterGain;
     if (attacker->cardGauge > 2000.0f) attacker->cardGauge = 2000.0f;
     defender->flashGauge = attack->savedFrameInfo->field1A;
     defender->UpdateFacingFromOpponent();
-    reinterpret_cast<BattleCombat *>(this)->SpawnMidpointEffect(attack->savedFrameInfo->hitEffect, attack->facing);
+    SpawnMidpointEffect(attack->savedFrameInfo->hitEffect, attack->facing);
     g_SoundBank->Play(attack->savedFrameInfo->field34);
     return true;
     }
     return false;
 }
 
-void BattleCombatResponses::ApplyGuardHit(Actor *attack, Fighter *attacker, Fighter *defender)
+void BattleScene::ApplyGuardHit(Actor *attack, Fighter *attacker, Fighter *defender)
 {
     if (defender->action < 50 || defender->action >= 143) {
         attacker->comboCount = 0;
@@ -156,7 +156,7 @@ void BattleCombatResponses::ApplyGuardHit(Actor *attack, Fighter *attacker, Figh
     ++attacker->comboCount;
     attacker->comboDamage += attacker->CalculateDamage(attack) / 2;
     attacker->comboRate *= attack->savedFrameInfo->comboRateScale;
-    FIELD(ComboDisplay *, this, 0x58)->UpdateCounter(attacker->comboCount, attacker->comboDamage,
+    activeComboDisplay->UpdateCounter(attacker->comboCount, attacker->comboDamage,
         static_cast<short>(attacker->comboRate * 1000.0f / 2.0f));
     if (reinterpret_cast<signed char&>(attacker->field3CE) == 0)
         defender->health -= attacker->CalculateDamage(attack) / 2;
@@ -167,11 +167,11 @@ void BattleCombatResponses::ApplyGuardHit(Actor *attack, Fighter *attacker, Figh
     if (attacker->cardGauge > 2000.0f) attacker->cardGauge = 2000.0f;
     defender->flashGauge = attack->savedFrameInfo->field1A;
     defender->UpdateFacingFromOpponent();
-    reinterpret_cast<BattleCombat *>(this)->SpawnMidpointEffect(attack->savedFrameInfo->hitEffect, attack->facing);
+    SpawnMidpointEffect(attack->savedFrameInfo->hitEffect, attack->facing);
     g_SoundBank->Play(attack->savedFrameInfo->field34);
 }
 
-void BattleCombat::ApplyReactionMode(Actor *attack, Fighter *attacker, Fighter *defender)
+void BattleScene::ApplyReactionMode(Actor *attack, Fighter *attacker, Fighter *defender)
 {
     switch (defender->action) {
     case 50: case 51: case 52: case 56: case 57: case 58:
@@ -193,11 +193,11 @@ void BattleCombat::ApplyReactionMode(Actor *attack, Fighter *attacker, Fighter *
 // Four consecutive original native signed-32bit collision bounds.
 // Raw borrowed array avoids proposing a guessed original owner class.
 #define CombatBoundsF1072(owner) (reinterpret_cast<int*>(reinterpret_cast<unsigned char*>(owner)+0x34))
-void BattleCombat::SpawnMidpointEffect(short effect, unsigned char direction)
+void BattleScene::SpawnMidpointEffect(short effect, unsigned char direction)
 {
     g_CombatEffects.Spawn(effect,
-        (CombatBoundsF1072(this)[0] + CombatBoundsF1072(this)[2]) / 2.0f,
-        (CombatBoundsF1072(this)[1] + CombatBoundsF1072(this)[3]) / 2.0f,
+        (hitBounds.left + hitBounds.right) / 2.0f,
+        (hitBounds.top + hitBounds.bottom) / 2.0f,
         direction, 1, 0, 0);
 }
 
@@ -206,3 +206,13 @@ void BattleCombat::SpawnMidpointEffect(short effect, unsigned char direction)
 
 #undef TimerWordF1072
 #undef ActionWordF1072
+
+void BattleScene::StartHitSequence(Fighter *fighter, short value)
+{
+    fighter->spirit = 0;
+    fighter->spiritCooldown = 1000;
+    fighter->ResetPrimaryCounters(value);
+    fighter->ClearTransformFlag();
+    SpawnMidpointEffect(0x35, fighter->facing);
+    g_SoundBank->Play(0x26);
+}

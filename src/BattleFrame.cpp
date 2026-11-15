@@ -1,3 +1,4 @@
+#include "BattleScene.hpp"
 #include <stdlib.h>
 #include "Graphics.hpp"
 #include "BattleFrame.hpp"
@@ -29,7 +30,7 @@ short BattleFrame::UpdateFrame()
                 EFFECTS(0x44)->AdvanceAll();
                 EFFECTS(0x48)->AdvanceAll();
                 if (FIELD_AT(signed char, this, 0x18) != 4 && FIELD_AT(signed char, this, 0x18) != 9 && FIELD_AT(signed char, this, 0x18) != 0)
-                    reinterpret_cast<BattleActiveCollision *>(this)->ResolveActiveCollisions();
+                    reinterpret_cast<BattleScene *>(this)->ResolveActiveCollisions();
                 ResolveBodySeparation();
                 if (g_CombatMode != 5) ResolveRoundEndMode();
             }

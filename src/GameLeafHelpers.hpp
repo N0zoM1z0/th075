@@ -79,11 +79,6 @@ public:
     void DrawSelectedNotice();
 };
 
-class BattleState {
-public:
-    void SpawnMidpointEffect(int effect, u8 value);
-    void StartHitSequence(Fighter *fighter, short value);
-};
 
 class AuxEffect {
 public:

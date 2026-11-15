@@ -1,12 +1,11 @@
-#include "BattleCollision.hpp"
-#include "BattleCombatResponses.hpp"
+#include "BattleScene.hpp"
 #include "GameLeafHelpers.hpp"
 // Scalar views refer only to observed fields of existing objects.
 #define FIELD(type, object, offset) \
     (*reinterpret_cast<type *>(reinterpret_cast<unsigned char *>(object) + offset))
 // Native owner+0x34 is a 16-byte borrowed RECT window (not an allocated pointer).
 #define F1056_BOUNDS(owner) (*reinterpret_cast<RECT *>(reinterpret_cast<unsigned char *>(owner) + 0x34))
-void BattleCombatResponses::ApplyImpact(Actor *attack, Fighter *attacker, Fighter *defender)
+void BattleScene::ApplyImpact(Actor *attack, Fighter *attacker, Fighter *defender)
 {
     attack->field07C = 2;
     --attack->field080;
@@ -24,38 +23,38 @@ void BattleCombatResponses::ApplyImpact(Actor *attack, Fighter *attacker, Fighte
 }
 
 
-void BattleCollision::ClearBounds()
+void BattleScene::ClearBounds()
 {
-    F1056_BOUNDS(this).left = -10000;
-    F1056_BOUNDS(this).top = -10000;
-    F1056_BOUNDS(this).right = 10000;
-    F1056_BOUNDS(this).bottom = 10000;
+    hitBounds.left = -10000;
+    hitBounds.top = -10000;
+    hitBounds.right = 10000;
+    hitBounds.bottom = 10000;
 }
-void BattleCollision::IncludePair(const RECT *first, const RECT *second)
+void BattleScene::IncludePair(const RECT *first, const RECT *second)
 {
-    if (F1056_BOUNDS(this).left < first->left)
-        F1056_BOUNDS(this).left = first->left;
-    if (F1056_BOUNDS(this).left < second->left)
-        F1056_BOUNDS(this).left = second->left;
-    if (F1056_BOUNDS(this).top < first->top)
-        F1056_BOUNDS(this).top = first->top;
-    if (F1056_BOUNDS(this).top < second->top)
-        F1056_BOUNDS(this).top = second->top;
-    if (F1056_BOUNDS(this).right > first->right)
-        F1056_BOUNDS(this).right = first->right;
-    if (F1056_BOUNDS(this).right > second->right)
-        F1056_BOUNDS(this).right = second->right;
-    if (F1056_BOUNDS(this).bottom > first->bottom)
-        F1056_BOUNDS(this).bottom = first->bottom;
-    if (F1056_BOUNDS(this).bottom > second->bottom)
-        F1056_BOUNDS(this).bottom = second->bottom;
+    if (hitBounds.left < first->left)
+        hitBounds.left = first->left;
+    if (hitBounds.left < second->left)
+        hitBounds.left = second->left;
+    if (hitBounds.top < first->top)
+        hitBounds.top = first->top;
+    if (hitBounds.top < second->top)
+        hitBounds.top = second->top;
+    if (hitBounds.right > first->right)
+        hitBounds.right = first->right;
+    if (hitBounds.right > second->right)
+        hitBounds.right = second->right;
+    if (hitBounds.bottom > first->bottom)
+        hitBounds.bottom = first->bottom;
+    if (hitBounds.bottom > second->bottom)
+        hitBounds.bottom = second->bottom;
 }
-int BattleCollision::TestOverlap(const RECT *first, const RECT *second)
+int BattleScene::TestOverlap(const RECT *first, const RECT *second)
 {
     return ((second->left - first->right) & (first->left - second->right) &
             (second->top - first->bottom) & (first->top - second->bottom)) >> 31;
 }
-void BattleCollision::TransformBounds(RECT *destination, const RECT *source, Actor *actor)
+void BattleScene::TransformBounds(RECT *destination, const RECT *source, Actor *actor)
 {
     if (actor->facing == 1) {
         destination->left = static_cast<long>(CeilCollisionCoordinate(actor->x) + source->left);

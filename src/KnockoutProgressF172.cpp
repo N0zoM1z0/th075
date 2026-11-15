@@ -1,7 +1,7 @@
 #include "FighterRoundOutcomeBytesF992.hpp"
 #include "ProgressSelectionKeysF954.hpp"
 #include "KnockoutProgressF172.hpp"
-#include "BattleCombat.hpp"
+#include "BattleScene.hpp"
 #include "FighterResourceParameters452B30.hpp"
 
 // Existing byte storage keeps its canonical unsigned carrier. The continuation

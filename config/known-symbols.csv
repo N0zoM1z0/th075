@@ -55,27 +55,27 @@ address,name,module,confidence,evidence
 0x0041CB40,MathLookup::ReadCosTable,MathLookup,inferred,F011; complete cold exact replay and full target control flow; original names and class identity unknown
 0x0041CB70,MathLookup::ReadPhaseTable,MathLookup,inferred,F011; complete cold exact replay and full target control flow; original names and class identity unknown
 0x0041CBB0,MathLookup::ReadRatio,MathLookup,inferred,F011; complete cold exact replay and full target control flow; original names and class identity unknown
-0x004431D0,BattleCombat::ApplyHit,BattleState,inferred,F012; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
-0x00444850,BattleCombat::ApplyConditionalHit,BattleState,inferred,F012; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
+0x004431D0,BattleScene::ApplyHit,BattleState,inferred,F012; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
+0x00444850,BattleScene::ApplyConditionalHit,BattleState,inferred,F012; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
 0x00455640,Fighter::CalculateDamage,FighterState,inferred,F012; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
 0x004550B0,Fighter::UpdateFacingFromOpponent,FighterState,inferred,F012; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
-0x004439A0,BattleCombatResponses::ApplyHitResponse,BattleCombat,inferred,F013; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
-0x00444020,BattleCombatResponses::ApplyAttackHit,BattleCombat,inferred,F013; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
-0x004443B0,BattleCombatResponses::ApplyGuardHit,BattleCombat,inferred,F013; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
-0x00444650,BattleCombat::ApplyReactionMode,BattleState,inferred,F013; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
-0x004424E0,BattleCombat::SpawnMidpointEffect,EffectForwarders,inferred,F013; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
-0x00443E90,BattleCombatResponses::ApplyImpact,BattleCollision,inferred,F014; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
-0x00442540,BattleCollision::ClearBounds,BattleCollision,inferred,F014; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
-0x00442400,BattleCollision::IncludePair,BattleCollision,inferred,F014; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
-0x004492C0,BattleCollision::TestOverlap,BattleCollision,inferred,F014; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
-0x004491E0,BattleCollision::TransformBounds,BattleGeometry,inferred,F014; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
-0x00442A70,BattleCollisionDispatch::ResolveAttackHitboxes,BattleCombat,inferred,F015; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
-0x00442E40,BattleCollisionDispatch::ResolveBodyContact,BattleCombat,inferred,F015; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
+0x004439A0,BattleScene::ApplyHitResponse,BattleCombat,inferred,F013; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
+0x00444020,BattleScene::ApplyAttackHit,BattleCombat,inferred,F013; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
+0x004443B0,BattleScene::ApplyGuardHit,BattleCombat,inferred,F013; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
+0x00444650,BattleScene::ApplyReactionMode,BattleState,inferred,F013; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
+0x004424E0,BattleScene::SpawnMidpointEffect,EffectForwarders,inferred,F013; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
+0x00443E90,BattleScene::ApplyImpact,BattleCollision,inferred,F014; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
+0x00442540,BattleScene::ClearBounds,BattleCollision,inferred,F014; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
+0x00442400,BattleScene::IncludePair,BattleCollision,inferred,F014; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
+0x004492C0,BattleScene::TestOverlap,BattleCollision,inferred,F014; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
+0x004491E0,BattleScene::TransformBounds,BattleGeometry,inferred,F014; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
+0x00442A70,BattleScene::ResolveAttackHitboxes,BattleCombat,inferred,F015; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
+0x00442E40,BattleScene::ResolveBodyContact,BattleCombat,inferred,F015; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
 0x00455500,Actor::SaveCollisionFields,FighterState,inferred,F015; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
-0x00442580,BattleActiveCollision::ResolveActiveCollisions,BattleCombat,inferred,F016; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
-0x00444770,BattleCollisionDispatch::ResolveGuard,BattleCollision,inferred,F016; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
-0x00444FC0,BattleCollisionDispatch::ResolveSpecialHit,BattleCollision,inferred,F016; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
-0x004450E0,BattleCollisionDispatch::ResolveContact,BattleCollision,inferred,F016; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
+0x00442580,BattleScene::ResolveActiveCollisions,BattleCombat,inferred,F016; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
+0x00444770,BattleScene::ResolveGuard,BattleCollision,inferred,F016; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
+0x00444FC0,BattleScene::ResolveSpecialHit,BattleCollision,inferred,F016; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
+0x004450E0,BattleScene::ResolveContact,BattleCollision,inferred,F016; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
 0x00454F90,Fighter::IsState50To149,FighterState,inferred,F016; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
 0x0043B1B0,BattleFrame::UpdateFrame,BattleScene,inferred,F017; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
 0x0043B5D0,BattleFrame::Present,BattleScene,inferred,F017; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
@@ -369,7 +369,7 @@ address,name,module,confidence,evidence
 0x00453EB0,Fighter::AdjustCameraOffsetAt00453EB0,FighterState,inferred,F163; whole canonical cold exact; explicit call-only source-symbol map; original role and complete-owner unknowns retained
 0x00454FD0,Fighter::IsState150To199At00454FD0,FighterState,inferred,F164; whole canonical cold exact; explicit call-only source-symbol map; native role and complete-owner unknowns retained
 0x00455070,Fighter::IsState95To99At00455070,FighterState,inferred,F164; whole canonical cold exact; explicit call-only source-symbol map; native role and complete-owner unknowns retained
-0x00455140,BattleCombat::SelectHitResponseAt00455140,BattleCombat,inferred,F164; whole canonical cold exact; explicit call-only source-symbol map; native role and complete-owner unknowns retained
+0x00455140,BattleScene::SelectHitResponseAt00455140,BattleCombat,inferred,F164; whole canonical cold exact; explicit call-only source-symbol map; native role and complete-owner unknowns retained
 0x00455800,BattleInput::MatchSequenceAt00455800,BattleInput,inferred,F165; whole canonical cold exact; explicit call-only source-symbol map; native role and complete-owner unknowns retained
 0x00454C20,Fighter::ApplyMode5DirectionAt00454C20 [provisional],FighterState,inferred,F167; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x004483F0,BattleScene::HandleMode5OptionsAt004483F0 [provisional],BattleScene,inferred,F168; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
@@ -379,7 +379,7 @@ address,name,module,confidence,evidence
 0x00406E10,InputMapping::SetBindings,InputMapping,inferred,F171; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x00457490,Fighter::SetBindingsAt00457490,FighterState,inferred,F171; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x004574B0,Fighter::BindOpponentAt004574B0,FighterState,inferred,F171; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
-0x004574D0,BattleState::RecordRoundFields,BattleState,inferred,F171; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x004574D0,BattleScene::RecordRoundFields,BattleState,inferred,F171; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x0043C930,BattleScene::ResolveKnockout,BattleScene,inferred,F172; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x0043D430,ProgressRecords::MarkCardFlag,ProgressRecords,inferred,F172; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x0043D3E0,ProgressRecords::IncrementCardCounter,ProgressRecords,inferred,F172; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
@@ -695,7 +695,7 @@ address,name,module,confidence,evidence
 0x00451C70,BackgroundStage::LoadBG09x,BackgroundStage,inferred,"F377; full native original 151-byte stage-specific /GX constructor, genuine EH and original pack material paths, 11 physical COFF refs single affected cohort cold exact; private class layout not established"
 0x005301B0,CharacterAux::RunAt005301B0,CharacterAux,inferred,"F378; complete 1008-byte R049 queue snapshot/mode-driven four effect 810 spawns/plus F14 distance-state, 18 real COFF fields and original 266 instructions cold exact; borrowed owner"
 0x004F4170,CharacterProjectile::AdvanceAt004F4170,CharacterProjectile,inferred,"F379; whole authored 855-byte native character projectile state and owner-spawns, 22 COFF physical refs cold exact; private class layout unknown"
-0x00445A00,BattleState::ApplySequenceAt00445A00,BattleState,inferred,"F386; complete R065 1958-byte native input/replay controller with exact 28-byte post-RET switch table and all 120 genuine COFF refs; cold exact, private owner unknown"
+0x00445A00,BattleScene::ApplySequenceAt00445A00,BattleState,inferred,"F386; complete R065 1958-byte native input/replay controller with exact 28-byte post-RET switch table and all 120 genuine COFF refs; cold exact, private owner unknown"
 0x004183D0,BattleLoader::LoadStageAt004183D0,BattleLoader,inferred,"F389; entire 3765 authored CODE bytes/761 native insns and 92-byte post-RET table, original 36 constructor calls, observed size-only allocation carriers, all 170 original COFF refs cold exact; private layouts unproved"
 0x004E62A0,AliceFighter::UpdateSpecialStateAt004E62A0,AliceFighter,inferred,"F391; independently authored 256 original game CODE bytes and 5 physical refs cold exact, borrowed private class ABI"
 0x0041CE10,ArchiveCatalog::BeginUseAt0041CE10,ArchiveCatalog,inferred,"F392; independently authored 56 original game CODE bytes and 7 physical refs cold exact, borrowed private class ABI"

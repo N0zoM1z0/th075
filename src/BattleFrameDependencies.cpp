@@ -1,10 +1,11 @@
+#include "BattleScene.hpp"
 #include "BattleFrameDependencies.hpp"
 #include "BattleStatusFloatPairF1096.hpp"
 #include "StateOverlayFloatWindowF1106.hpp"
 #define FIELD(type, object, offset) (*reinterpret_cast<type *>(reinterpret_cast<unsigned char *>(object) + offset))
 #define PLAYER(offset) FIELD(Fighter *, this, offset)
 #define ACTOR(type, offset, field) FIELD(type, PLAYER(offset), field)
-#define COLLISION reinterpret_cast<BattleCollision *>(this)
+#define COLLISION reinterpret_cast<BattleScene *>(this)
 void BattleFrame::ResolveBodySeparation()
 {
     float vx1 = PLAYER(0x44)->velocityX;

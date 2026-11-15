@@ -70,13 +70,3 @@ void Fighter::InitializeNotice(short value)
     scriptStep = 5;
     ConfigureNoticeText(1);
 }
-
-void BattleState::StartHitSequence(Fighter *fighter, short value)
-{
-    fighter->spirit = 0;
-    fighter->spiritCooldown = 1000;
-    fighter->ResetPrimaryCounters(value);
-    fighter->ClearTransformFlag();
-    SpawnMidpointEffect(0x35, fighter->facing);
-    g_SoundBank->Play(0x26);
-}

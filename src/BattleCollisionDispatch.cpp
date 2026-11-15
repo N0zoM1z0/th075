@@ -1,4 +1,4 @@
-#include "BattleCollisionDispatch.hpp"
+#include "BattleScene.hpp"
 #include "GameLeafHelpers.hpp"
 
 // Observed scalar views, without complete owner layouts.
@@ -9,7 +9,7 @@
 // boundary DWORDs; this is only a borrowed window, not a new owner.
 #define F1079_BOUNDS(owner) (*reinterpret_cast<RECT*>(reinterpret_cast<unsigned char*>(owner)+0x34))
 // Actual attack/collision FRAME record bitflags (32-bit at +0x3C/+0x40).
-void BattleCollisionDispatch::ResolveAttackHitboxes(Actor *attack, Fighter *attacker, Fighter *defender)
+void BattleScene::ResolveAttackHitboxes(Actor *attack, Fighter *attacker, Fighter *defender)
 {
     if (attack->savedField07C != 0 || attack->field080 <= 0) return;
     if (defender->IsGroundedStateWindow()) return;
@@ -32,34 +32,34 @@ void BattleCollisionDispatch::ResolveAttackHitboxes(Actor *attack, Fighter *atta
     attackSize = static_cast<signed char>(attack->savedFrameInfo->hitBoxes.Size());
     defenderCount = static_cast<signed char>(defender->savedFrameInfo->hurtBoxes.Size());
     for (i = 0; i < attackSize; ++i)
-        reinterpret_cast<BattleCollision *>(this)->TransformBounds(&attackBounds[i], &attack->savedFrameInfo->hitBoxes.At(i), attack);
+        TransformBounds(&attackBounds[i], &attack->savedFrameInfo->hitBoxes.At(i), attack);
     for (i = 0; i < defenderCount; ++i)
-        reinterpret_cast<BattleCollision *>(this)->TransformBounds(&defendBounds[i], &defender->savedFrameInfo->hurtBoxes.At(i), defender);
-    reinterpret_cast<BattleCollision *>(this)->TransformBounds(&bodyRectangle, reinterpret_cast<RECT*>(defender->savedFrameInfo->bodyBox), defender);
-    reinterpret_cast<BattleCollision *>(this)->ClearBounds();
+        TransformBounds(&defendBounds[i], &defender->savedFrameInfo->hurtBoxes.At(i), defender);
+    TransformBounds(&bodyRectangle, reinterpret_cast<RECT*>(defender->savedFrameInfo->bodyBox), defender);
+    ClearBounds();
     for (i = 0; i < attackSize; ++i) {
         for (int j = 0; j < defenderCount; ++j) {
-            contacts[i][j] = reinterpret_cast<BattleCollision *>(this)->TestOverlap(&attackBounds[i], &defendBounds[j]);
+            contacts[i][j] = TestOverlap(&attackBounds[i], &defendBounds[j]);
             if (contacts[i][j]) {
                 hit |= 1;
-                reinterpret_cast<BattleCollision *>(this)->IncludePair(&attackBounds[i], &defendBounds[j]);
+                IncludePair(&attackBounds[i], &defendBounds[j]);
             }
         }
     }
     if (hit) {
         defender->field3BE = !(attack->savedFrameInfo->attackFlags & 0x400000);
         if (ResolveSpecialHit(attack, attacker, defender)) return;
-        if (reinterpret_cast<BattleCombat *>(this)->ApplyConditionalHit(attack, attacker, defender)) return;
+        if (ApplyConditionalHit(attack, attacker, defender)) return;
         if (ResolveContact(attack, attacker, defender)) return;
         if (defender->field3BE == 0)
             if (ResolveGuard(attack, attacker, defender)) return;
-        if (reinterpret_cast<BattleCombatResponses *>(this)->ApplyHitResponse(attack, attacker, defender)) return;
-        if (reinterpret_cast<BattleCombatResponses *>(this)->ApplyAttackHit(attack, attacker, defender)) return;
-        reinterpret_cast<BattleCombat *>(this)->ApplyHit(attack, attacker, defender);
+        if (ApplyHitResponse(attack, attacker, defender)) return;
+        if (ApplyAttackHit(attack, attacker, defender)) return;
+        ApplyHit(attack, attacker, defender);
     }
 }
 
-void BattleCollisionDispatch::ResolveBodyContact(Actor *first, Actor *second)
+void BattleScene::ResolveBodyContact(Actor *first, Actor *second)
 {
     if (first->savedField07C != 0 || first->field080 <= 0) return;
     if (second->savedField07C != 0 || second->field080 <= 0) return;
@@ -71,24 +71,24 @@ void BattleCollisionDispatch::ResolveBodyContact(Actor *first, Actor *second)
     signed char countB = static_cast<signed char>(second->frameInfo->hitBoxes.Size());
     RECT attackBounds[6], defendBounds[6];
     for (i = 0; i < countA; ++i)
-        reinterpret_cast<BattleCollision *>(this)->TransformBounds(&attackBounds[i], &first->frameInfo->hitBoxes.At(i), first);
+        TransformBounds(&attackBounds[i], &first->frameInfo->hitBoxes.At(i), first);
     for (i = 0; i < countB; ++i)
-        reinterpret_cast<BattleCollision *>(this)->TransformBounds(&defendBounds[i], &second->frameInfo->hitBoxes.At(i), second);
-    reinterpret_cast<BattleCollision *>(this)->TransformBounds(&attackBounds[countA], reinterpret_cast<RECT*>(first->frameInfo->bodyBox), first);
-    reinterpret_cast<BattleCollision *>(this)->TransformBounds(&defendBounds[countB], reinterpret_cast<RECT*>(second->frameInfo->bodyBox), second);
-    reinterpret_cast<BattleCollision *>(this)->ClearBounds();
+        TransformBounds(&defendBounds[i], &second->frameInfo->hitBoxes.At(i), second);
+    TransformBounds(&attackBounds[countA], reinterpret_cast<RECT*>(first->frameInfo->bodyBox), first);
+    TransformBounds(&defendBounds[countB], reinterpret_cast<RECT*>(second->frameInfo->bodyBox), second);
+    ClearBounds();
     for (i = 0; i <= countA; ++i) {
         for (int j = 0; j <= countB; ++j) {
-            if (reinterpret_cast<BattleCollision *>(this)->TestOverlap(&attackBounds[i], &defendBounds[j])) {
+            if (TestOverlap(&attackBounds[i], &defendBounds[j])) {
                 hit |= 1;
-                reinterpret_cast<BattleCollision *>(this)->IncludePair(&attackBounds[i], &defendBounds[j]);
+                IncludePair(&attackBounds[i], &defendBounds[j]);
             }
         }
     }
     if (hit) {
-        second->field08C = (F1079_BOUNDS(this).left + F1079_BOUNDS(this).right) / 2.0f;
+        second->field08C = (hitBounds.left + hitBounds.right) / 2.0f;
         reinterpret_cast<unsigned long&>(first->field08C) = reinterpret_cast<unsigned long&>(second->field08C);
-        second->field090 = (F1079_BOUNDS(this).top + F1079_BOUNDS(this).bottom) / 2.0f;
+        second->field090 = (hitBounds.top + hitBounds.bottom) / 2.0f;
         reinterpret_cast<unsigned long&>(first->field090) = reinterpret_cast<unsigned long&>(second->field090);
         if (first->sequenceInfo->priority >= second->sequenceInfo->targetPriority ||
             second->sequenceInfo->priority >= first->sequenceInfo->targetPriority) {

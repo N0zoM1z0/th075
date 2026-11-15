@@ -1,5 +1,5 @@
 #include "FighterOpponentGaugeF170.hpp"
-#include "BattleCombat.hpp"
+extern signed char g_CombatMode;
 
 #define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
 
