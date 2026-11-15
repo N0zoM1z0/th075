@@ -2,8 +2,21 @@
 #include "SpriteTransform.hpp"
 
 // Pointer-only entry views. Original identities and complete layouts unknown.
-class SceneRenderer4292E0 { public: void Draw(); };
-class ReplayBrowser42CA60 { public: void RenderList(); void DrawFilename(float, float, DWORD, const char*); void DrawNameGlyphs(float, float, DWORD, const signed char*); void DrawMetadataNumber(float, float, DWORD, int, int); };
+class SceneRenderer4292E0 { public: void Draw(); public:
+    // Observed fields; meanings not yet known.
+    unsigned char unknown000[0x00C - 0x000];
+    IDirect3DTexture8* field00C;
+    short field010;
+};
+class ReplayBrowser42CA60 { public: void RenderList(); void DrawFilename(float, float, DWORD, const char*); void DrawNameGlyphs(float, float, DWORD, const signed char*); void DrawMetadataNumber(float, float, DWORD, int, int); public:
+    // Observed fields; meanings not yet known.
+    unsigned char unknown000[0x048 - 0x000];
+    short field048;
+    short field04A;
+    unsigned char field04C;
+    unsigned char unknown04D[0x051 - 0x04D];
+    signed char field051;
+};
 class SceneQuadDrawingF124 { public: void DrawQuad(int, const SpriteQuad40CA80&, const RECT*, DWORD); };
 extern signed char g_SettingsDifficulty;
 extern unsigned char g_SettingsByte00671604;
@@ -17,7 +30,7 @@ extern signed char g_SettingsVolume006714B6;
 #define QUAD_DRAWING reinterpret_cast<SceneQuadDrawingF124*>(FIELD(void*, 8))
 #define TRANSFORM(value) reinterpret_cast<SpriteTransform*>(&(value))
 #define POSITIONS(value) reinterpret_cast<const float (*)[4]>(&(value))
-#define OPACITY FIELD(unsigned char, 0x14)
+#define OPACITY (*reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char*>(this) + 0x14))
 
 void SceneRenderer4292E0::Draw() {
     if (Graphics::BeginFrameValueAt00402660()) {
@@ -87,20 +100,20 @@ void SceneRenderer4292E0::Draw() {
         QUAD_DRAWING->DrawQuad(2, quadValue, &region, D3DCOLOR_ARGB(OPACITY, 255, 255, 255));
         SetRect(&region, 0, 96, 64, 128);
         TRANSFORM(quadValue)->BuildQuad(0, 0, 64.0f, 32.0f);
-        TRANSFORM(quadValue)->TranslateQuad(96.0f, static_cast<float>(FIELD(short, 0x10) * 32 + 64), 0);
+        TRANSFORM(quadValue)->TranslateQuad(96.0f, static_cast<float>(field010 * 32 + 64), 0);
         QUAD_DRAWING->DrawQuad(2, quadValue, &region, 0xFFFFFFFF);
         SetRect(&region, 0, 0, 500, 64);
         TRANSFORM(quadValue)->BuildQuadFromRect(&region);
         TRANSFORM(quadValue)->TranslateQuad(100.0f, 400.0f, 0);
-        Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, D3DCOLOR_ARGB(OPACITY, 0, 0, 0), FIELD(IDirect3DTexture8*, 12));
+        Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, D3DCOLOR_ARGB(OPACITY, 0, 0, 0), field00C);
         TRANSFORM(quadValue)->TranslateQuad(1.0f, 1.0f, 0);
-        Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, D3DCOLOR_ARGB(OPACITY, 0, 0, 0), FIELD(IDirect3DTexture8*, 12));
+        Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, D3DCOLOR_ARGB(OPACITY, 0, 0, 0), field00C);
         TRANSFORM(quadValue)->TranslateQuad(-1.0f, 1.0f, 0);
-        Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, D3DCOLOR_ARGB(OPACITY, 0, 0, 0), FIELD(IDirect3DTexture8*, 12));
+        Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, D3DCOLOR_ARGB(OPACITY, 0, 0, 0), field00C);
         TRANSFORM(quadValue)->TranslateQuad(-1.0f, -1.0f, 0);
-        Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, D3DCOLOR_ARGB(OPACITY, 0, 0, 0), FIELD(IDirect3DTexture8*, 12));
+        Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, D3DCOLOR_ARGB(OPACITY, 0, 0, 0), field00C);
         TRANSFORM(quadValue)->TranslateQuad(1.0f, -1.0f, 0);
-        Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, D3DCOLOR_ARGB(OPACITY, 255, 255, 255), FIELD(IDirect3DTexture8*, 12));
+        Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, D3DCOLOR_ARGB(OPACITY, 255, 255, 255), field00C);
         Graphics::EndFrame();
     }
 }
@@ -117,8 +130,8 @@ class ReplayRecordsF124 { public: void* At(unsigned int); };
 class ReplayModesF124 { public: unsigned char* At(unsigned int); };
 
 #define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<char*>(this) + (offset)))
-#define DRAWING reinterpret_cast<TimelineDrawing438D00*>(FIELD(void*, 8))
-#define QUAD_DRAWING reinterpret_cast<SceneQuadDrawingF124*>(FIELD(void*, 8))
+#define DRAWING reinterpret_cast<TimelineDrawing438D00*>((*reinterpret_cast<void**>(reinterpret_cast<unsigned char*>(this) + 0x8)))
+#define QUAD_DRAWING reinterpret_cast<SceneQuadDrawingF124*>((*reinterpret_cast<void**>(reinterpret_cast<unsigned char*>(this) + 0x8)))
 #define TRANSFORM(value) reinterpret_cast<SpriteTransform*>(&(value))
 #define FILES reinterpret_cast<ReplayFilesF124*>(reinterpret_cast<char*>(this) + 12)
 #define RECORDS reinterpret_cast<ReplayRecordsF124*>(reinterpret_cast<char*>(this) + 32)
@@ -148,13 +161,13 @@ void ReplayBrowser42CA60::RenderList() {
         TRANSFORM(quadValue)->BuildQuad(64.0f, 50.0f, 576.0f, 70.0f);
         QUAD_DRAWING->DrawQuad(1, quadValue, &region, 0xFFFFFFFF);
         pageRows = 10;
-        firstRow = (FIELD(short, 0x48) / 10) * 10;
-        if (FIELD(short, 0x48) / 10 == FILES->Size() / 10) pageRows = FILES->Size() % 10;
+        firstRow = (field048 / 10) * 10;
+        if (field048 / 10 == FILES->Size() / 10) pageRows = FILES->Size() % 10;
         for (recordIndex = 0; recordIndex < pageRows; recordIndex++) {
-            if (firstRow + recordIndex == FIELD(short, 0x48))
-                textTint = D3DCOLOR_ARGB(FIELD(unsigned char, 0x4C), 255, 255, 255);
+            if (firstRow + recordIndex == field048)
+                textTint = D3DCOLOR_ARGB(field04C, 255, 255, 255);
             else
-                textTint = D3DCOLOR_ARGB(FIELD(unsigned char, 0x4C) / 2, 255, 255, 255);
+                textTint = D3DCOLOR_ARGB(field04C / 2, 255, 255, 255);
             DrawFilename(50.0f, static_cast<float>(recordIndex * 24 + 80), textTint, *FILES->At(firstRow + recordIndex));
             DrawNameGlyphs(160.0f, static_cast<float>(recordIndex * 24 + 80), textTint, static_cast<signed char*>(RECORDS->At(firstRow + recordIndex)));
             DrawMetadataNumber(330.0f, static_cast<float>(recordIndex * 24 + 80), textTint, RECORD_BYTE(firstRow + recordIndex, 8), 2);
@@ -163,10 +176,10 @@ void ReplayBrowser42CA60::RenderList() {
             QUAD_DRAWING->DrawQuad(2, quadValue, &region, textTint);
             DrawMetadataNumber(370.0f, static_cast<float>(recordIndex * 24 + 80), textTint, RECORD_BYTE(firstRow + recordIndex, 9), 2);
             if (RECORD_BYTE(firstRow + recordIndex, 13) == 0) {
-                if (firstRow + recordIndex == FIELD(short, 0x48))
-                    shadowColor = D3DCOLOR_ARGB(FIELD(unsigned char, 0x4C), 192, 192, 192);
+                if (firstRow + recordIndex == field048)
+                    shadowColor = D3DCOLOR_ARGB(field04C, 192, 192, 192);
                 else
-                    shadowColor = D3DCOLOR_ARGB(FIELD(unsigned char, 0x4C) / 2, 192, 192, 192);
+                    shadowColor = D3DCOLOR_ARGB(field04C / 2, 192, 192, 192);
                 SetRect(&region, 0, *MODES->At(firstRow + recordIndex) * 20 + 20, 100, *MODES->At(firstRow + recordIndex) * 20 + 40);
                 TRANSFORM(quadValue)->BuildQuad(380.0f, static_cast<float>(recordIndex * 24 + 86), 480.0f, static_cast<float>(recordIndex * 24 + 100));
                 TRANSFORM(quadValue)->TranslateQuad(36.0f, 8.0f, 0);
@@ -179,9 +192,9 @@ void ReplayBrowser42CA60::RenderList() {
             TRANSFORM(quadValue)->BuildQuad(500.0f, static_cast<float>(recordIndex * 24 + 80), 580.0f, static_cast<float>(recordIndex * 24 + 100));
             QUAD_DRAWING->DrawQuad(1, quadValue, &region, textTint);
         }
-        if (FIELD(signed char, 0x51) == 1) {
-            for (selectionIndex = 0; selectionIndex < RECORD_BYTE(FIELD(short, 0x48), 14); selectionIndex++) {
-                if (FIELD(short, 0x4A) == selectionIndex) opacity = 255;
+        if (field051 == 1) {
+            for (selectionIndex = 0; selectionIndex < RECORD_BYTE(field048, 14); selectionIndex++) {
+                if (field04A == selectionIndex) opacity = 255;
                 else opacity = 128;
                 SetRect(&region, 100, selectionIndex * 17 + 224, 200, selectionIndex * 17 + 241);
                 TRANSFORM(quadValue)->BuildQuad(40.0f, static_cast<float>(selectionIndex * 20 + 320), 140.0f, static_cast<float>(selectionIndex * 20 + 337));

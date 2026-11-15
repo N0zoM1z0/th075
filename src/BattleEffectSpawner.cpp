@@ -1,9 +1,8 @@
 #include "BattleEffectSpawner.hpp"
 #include "TransformRecordF136.hpp"
 
-#define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
 #define NODE_FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(node) + (offset)))
-#define FACTORY_FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(FIELD(EffectFactoryF136*, 0)) + (offset)))
+#define FACTORY_FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(field000) + (offset)))
 
 void BattleEffectSpawnerF136::Spawn(short effect, float x, float y, signed char facing,
                                   signed char layer, unsigned char flagA,
@@ -11,7 +10,7 @@ void BattleEffectSpawnerF136::Spawn(short effect, float x, float y, signed char 
                                   const void* transform, unsigned char mode)
 {
     SpawnedEffectF136* node;
-    FIELD(EffectFactoryF136*, 0)->Acquire(&node);
+    field000->Acquire(&node);
     node->ResetPrimaryCounters(effect);
     NODE_FIELD(float, 0x44) = x;
     NODE_FIELD(float, 0x48) = y;
@@ -38,4 +37,3 @@ void BattleEffectSpawnerF136::Spawn(short effect, float x, float y, signed char 
 
 #undef FACTORY_FIELD
 #undef NODE_FIELD
-#undef FIELD

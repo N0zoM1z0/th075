@@ -14,9 +14,8 @@ extern unsigned char g_RoundSelectionAt006714CE;
 // is asserted; native comparisons/increments/stores establish this used view.
 extern unsigned int g_DebugKeyRepeatAt0068D618;
 
-#define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
-#define FIRST(type, offset) (*reinterpret_cast<type*>(FIELD(unsigned char*, 0x44) + (offset)))
-#define SECOND(type, offset) (*reinterpret_cast<type*>(FIELD(unsigned char*, 0x48) + (offset)))
+#define FIRST(type, offset) (*reinterpret_cast<type*>(field044 + (offset)))
+#define SECOND(type, offset) (*reinterpret_cast<type*>(field048 + (offset)))
 
 void PauseDebugF175::HandlePauseMenu()
 {
@@ -25,76 +24,76 @@ void PauseDebugF175::HandlePauseMenu()
     } else {
         if (g_HeldInputAt00671664.counts[2] == 1
             || g_HeldInputAt006716AC.counts[2] == 1) {
-            FIELD(unsigned char, 0xA0) = 0;
+            field0A0 = 0;
             g_SoundBank->Play(45);
-            switch (FIELD(signed char, 0x118)) {
+            switch (field118) {
             case 0:
-                if (FIELD(signed char, 0x18) == 12 && g_ContinueCountAt00671623 > 0) {
+                if (field018 == 12 && g_ContinueCountAt00671623 > 0) {
                     FIRST(signed char, 0x39D) = 2;
                     FIRST(unsigned long, 0x2D0) = 0;
                     g_ContinueCountAt00671623--;
                     g_ContinueUsedAt00671624 = 1;
                     g_SequenceCounterAt00671622 = 2;
-                    FIELD(unsigned char, 0x18) = 13;
-                    FIELD(int, 0xC) = 299;
+                    reinterpret_cast<unsigned char&>(field018) = 13;
+                    field00C = 299;
                 }
                 break;
             case 1:
-                if (FIELD(signed char, 0x18) == 12) {
+                if (field018 == 12) {
                     g_RoundSelectionAt006714CE = 0;
-                    FIELD(unsigned char, 0x18) = 14;
+                    reinterpret_cast<unsigned char&>(field018) = 14;
                     break;
                 }
-                FIELD(unsigned char, 0x18) = 6;
+                reinterpret_cast<unsigned char&>(field018) = 6;
                 break;
             case 2:
-                if (FIELD(signed char, 0x18) == 12) {
+                if (field018 == 12) {
                     g_RoundSelectionAt006714CE = 1;
-                    FIELD(unsigned char, 0x18) = 14;
+                    reinterpret_cast<unsigned char&>(field018) = 14;
                 } else {
-                    FIELD(unsigned char, 0x18) = 8;
+                    reinterpret_cast<unsigned char&>(field018) = 8;
                 }
                 break;
             }
         }
-        if (FIELD(signed char, 0x18) != 5 && FIELD(signed char, 0x18) != 12
+        if (field018 != 5 && field018 != 12
             && (g_HeldInputAt00671664.counts[3] == 1
                 || g_HeldInputAt006716AC.counts[3] == 1))
-            FIELD(unsigned char, 0xA0) = 0;
+            field0A0 = 0;
         if (g_HeldInputAt00671664.counts[1] == 1
             || g_HeldInputAt006716AC.counts[1] == 1) {
             g_SoundBank->Play(39);
-            FIELD(signed char, 0x118)++;
+            field118++;
         }
         if (g_HeldInputAt00671664.counts[1] == -1
             || g_HeldInputAt006716AC.counts[1] == -1) {
             g_SoundBank->Play(39);
-            FIELD(signed char, 0x118)--;
+            field118--;
         }
         if (g_InputReplayModeAt0066C238 == 2) {
-            if (FIELD(signed char, 0x118) < 0)
-                FIELD(signed char, 0x118) = 1;
-            if (FIELD(signed char, 0x118) > 1)
-                FIELD(signed char, 0x118) = 0;
+            if (field118 < 0)
+                field118 = 1;
+            if (field118 > 1)
+                field118 = 0;
         }
-        if (FIELD(signed char, 0x18) == 5) {
-            if (FIELD(signed char, 0x118) < 1)
-                FIELD(signed char, 0x118) = 2;
-            if (FIELD(signed char, 0x118) > 2)
-                FIELD(signed char, 0x118) = 1;
-        } else if (FIELD(signed char, 0x18) == 12 && g_ContinueCountAt00671623 == 0) {
-            FIELD(signed char, 0x118) = 1;
+        if (field018 == 5) {
+            if (field118 < 1)
+                field118 = 2;
+            if (field118 > 2)
+                field118 = 1;
+        } else if (field018 == 12 && g_ContinueCountAt00671623 == 0) {
+            field118 = 1;
         } else if (g_CombatMode == 3
-            && (g_ContinueUsedAt00671624 != 0 || FIELD(signed char, 0x18) == 7)) {
-            if (FIELD(signed char, 0x118) < 0)
-                FIELD(signed char, 0x118) = 1;
-            if (FIELD(signed char, 0x118) > 1)
-                FIELD(signed char, 0x118) = 0;
+            && (g_ContinueUsedAt00671624 != 0 || field018 == 7)) {
+            if (field118 < 0)
+                field118 = 1;
+            if (field118 > 1)
+                field118 = 0;
         } else {
-            if (FIELD(signed char, 0x118) < 0)
-                FIELD(signed char, 0x118) = 2;
-            if (FIELD(signed char, 0x118) > 2)
-                FIELD(signed char, 0x118) = 0;
+            if (field118 < 0)
+                field118 = 2;
+            if (field118 > 2)
+                field118 = 0;
         }
     }
 }
@@ -143,4 +142,3 @@ void PauseDebugF175::ProcessDebugKeys()
 
 #undef SECOND
 #undef FIRST
-#undef FIELD

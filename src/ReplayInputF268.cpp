@@ -25,35 +25,40 @@ namespace ReplayInputServiceF268 {
 class ReplayInputPollF268 {
 public:
     void PollInput();
+public:
+    // Observed fields; meanings not yet known.
+    unsigned char unknown000[0x04D - 0x000];
+    signed char field04D;
+    signed char field04E;
+    signed char field04F;
+    signed char field050;
 };
-#define FIELD(type,off) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this)+(off)))
 void ReplayInputPollF268::PollInput()
 {
     ReplayInputServiceF268::BeginFrame();
     ReplayInputServiceF268::EndFrame();
-    FIELD(signed char,0x4d)=0;
-    FIELD(signed char,0x4e)=0;
-    FIELD(signed char,0x4f)=0;
-    FIELD(signed char,0x50)=0;
+    field04D=0;
+    field04E=0;
+    field04F=0;
+    field050=0;
     g_ReplayInputPrimaryAt00671638.Poll();
     g_ReplayInputSecondaryAt00671680.Poll();
     if (g_ReplayPrimaryVerticalAt00671668==1 || g_ReplaySecondaryVerticalAt006716B0==1)
-        FIELD(signed char,0x4e)=1;
+        field04E=1;
     if (g_ReplayPrimaryVerticalAt00671668==-1 || g_ReplaySecondaryVerticalAt006716B0==-1)
-        FIELD(signed char,0x4e)=-1;
+        field04E=-1;
     if (g_ReplayPrimaryHorizontalAt00671664==1 || g_ReplaySecondaryHorizontalAt006716AC==1)
-        FIELD(signed char,0x4d)=1;
+        field04D=1;
     if (g_ReplayPrimaryHorizontalAt00671664==-1 || g_ReplaySecondaryHorizontalAt006716AC==-1)
-        FIELD(signed char,0x4d)=-1;
+        field04D=-1;
     if (g_ReplayPrimaryConfirmAt0067166C==1 || g_ReplaySecondaryConfirmAt006716B4==1)
-        FIELD(signed char,0x4f)=1;
+        field04F=1;
     if (g_ReplayPrimaryCancelAt00671670==1 || g_ReplaySecondaryCancelAt006716B8==1)
-        FIELD(signed char,0x50)=1;
+        field050=1;
     if (g_ReplayInputPrimaryAt00671638.IsHeld(1))
-        FIELD(signed char,0x50)=1;
+        field050=1;
     if (g_ReplayInputPrimaryAt00671638.IsHeld(0x1c)) {
         if (g_ReplayInputPrimaryAt00671638.IsHeld(0x38) || g_ReplayInputPrimaryAt00671638.IsHeld(0xb8))
             ReplayInputServiceF268::ToggleWindowMode();
     }
 }
-#undef FIELD

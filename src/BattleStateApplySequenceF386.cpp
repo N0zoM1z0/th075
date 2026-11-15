@@ -28,10 +28,20 @@ extern void NativeActionAt00423C60(int);
 class BattleStateF385 {public:
     void ApplySequence();
     void OnCameraModeFive();
+public:
+    // Observed fields; meanings not yet known.
+    unsigned char unknown000[0x014 - 0x000];
+    int field014;
+    unsigned char unknown018[0x01C - 0x018];
+    unsigned char field01C;
+    unsigned char unknown01D[0x044 - 0x01D];
+    void* field044;
+    void* field048;
+    unsigned char unknown04C[0x110 - 0x04C];
+    int field110;
 };
-#define FIELD(T,o) (*reinterpret_cast<T*>(reinterpret_cast<unsigned char*>(this)+(o)))
-#define LEFT(T,o) (*reinterpret_cast<T*>(reinterpret_cast<unsigned char*>(FIELD(void*,0x44))+(o)))
-#define RIGHT(T,o) (*reinterpret_cast<T*>(reinterpret_cast<unsigned char*>(FIELD(void*,0x48))+(o)))
+#define LEFT(T,o) (*reinterpret_cast<T*>(reinterpret_cast<unsigned char*>(field044)+(o)))
+#define RIGHT(T,o) (*reinterpret_cast<T*>(reinterpret_cast<unsigned char*>(field048)+(o)))
 void BattleStateF385::ApplySequence() {
     if(g_BattleModeAt006714B4==5) {
         OnCameraModeFive();
@@ -39,7 +49,7 @@ void BattleStateF385::ApplySequence() {
         if(g_ReplayModeAt0066C238==2) {
             if(g_ReplayEventsAt006718E0.Count()>0) {
                 int firstRecord=*g_ReplayEventsAt006718E0.Peek();
-                while(FIELD(int,0x14)==*g_ReplayEventsAt006718E0.Peek()) {
+                while(field014==*g_ReplayEventsAt006718E0.Peek()) {
                     g_ReplayEventsAt006718E0.Pop();
                     int command=*g_ReplayEventsAt006718E0.Peek();
                     g_ReplayEventsAt006718E0.Pop();
@@ -50,8 +60,8 @@ void BattleStateF385::ApplySequence() {
                         if(LEFT(signed char,0x39D)>1) --LEFT(signed char,0x39D);
                         if(RIGHT(signed char,0x39D)>1) --RIGHT(signed char,0x39D);
                         break;
-                    case 4: FIELD(unsigned char,0x1C)=0;break;
-                    case 5: FIELD(unsigned char,0x1C)=1;break;
+                    case 4: field01C=0;break;
+                    case 5: field01C=1;break;
                     case 6:
                         LEFT(float,0x36C)=LEFT(float,0x36C)+g_LevelStepAt00657850;
                         RIGHT(float,0x36C)=RIGHT(float,0x36C)+g_LevelStepAt00657850;
@@ -69,43 +79,43 @@ void BattleStateF385::ApplySequence() {
                 }
             }
         } else {
-            if(!g_KeyScannerAt00671638.CheckKey(0x3D)) FIELD(int,0x110)=0;
+            if(!g_KeyScannerAt00671638.CheckKey(0x3D)) field110=0;
             if(g_BattleModeAt006714B4!=3 && g_BattleModeAt006714B4!=4) {
                 if(g_KeyScannerAt00671638.CheckKey(0x3C)) {
                     if(g_ReplayModeAt0066C238==1) {
-                        g_ReplayEventsAt006718E0.Append(&FIELD(int,0x14));
+                        g_ReplayEventsAt006718E0.Append(&field014);
                         int action2=2;g_ReplayEventsAt006718E0.Append(&action2);
                     }
                     LEFT(signed char,0x39D)=2;RIGHT(signed char,0x39D)=2;
                 }
                 if(g_KeyScannerAt00671638.CheckKey(0x3D)) {
-                    if(FIELD(int,0x110)==0) {
+                    if(field110==0) {
                         if(g_ReplayModeAt0066C238==1) {
-                            g_ReplayEventsAt006718E0.Append(&FIELD(int,0x14));
+                            g_ReplayEventsAt006718E0.Append(&field014);
                             int action3=3;g_ReplayEventsAt006718E0.Append(&action3);
                         }
                         if(LEFT(signed char,0x39D)>1) --LEFT(signed char,0x39D);
                         if(RIGHT(signed char,0x39D)>1) --RIGHT(signed char,0x39D);
                     }
-                    FIELD(int,0x110)=FIELD(int,0x110)+1;
+                    field110=field110+1;
                 }
                 if(g_KeyScannerAt00671638.CheckKey(0x3E)) {
                     if(g_ReplayModeAt0066C238==1) {
-                        g_ReplayEventsAt006718E0.Append(&FIELD(int,0x14));
+                        g_ReplayEventsAt006718E0.Append(&field014);
                         int action4=4;g_ReplayEventsAt006718E0.Append(&action4);
                     }
-                    FIELD(unsigned char,0x1C)=0;
+                    field01C=0;
                 }
                 if(g_KeyScannerAt00671638.CheckKey(0x3F)) {
                     if(g_ReplayModeAt0066C238==1) {
-                        g_ReplayEventsAt006718E0.Append(&FIELD(int,0x14));
+                        g_ReplayEventsAt006718E0.Append(&field014);
                         int action5=5;g_ReplayEventsAt006718E0.Append(&action5);
                     }
-                    FIELD(unsigned char,0x1C)=1;
+                    field01C=1;
                 }
                 if(g_KeyScannerAt00671638.CheckKey(0x40)) {
                     if(g_ReplayModeAt0066C238==1) {
-                        g_ReplayEventsAt006718E0.Append(&FIELD(int,0x14));
+                        g_ReplayEventsAt006718E0.Append(&field014);
                         int action6=6;g_ReplayEventsAt006718E0.Append(&action6);
                     }
                     LEFT(float,0x36C)=LEFT(float,0x36C)+g_LevelStepAt00657850;
@@ -115,7 +125,7 @@ void BattleStateF385::ApplySequence() {
                 }
                 if(g_KeyScannerAt00671638.CheckKey(0x41)) {
                     if(g_ReplayModeAt0066C238==1) {
-                        g_ReplayEventsAt006718E0.Append(&FIELD(int,0x14));
+                        g_ReplayEventsAt006718E0.Append(&field014);
                         int action7=7;g_ReplayEventsAt006718E0.Append(&action7);
                     }
                     LEFT(float,0x36C)=LEFT(float,0x36C)-g_LevelStepAt00657850;
@@ -142,4 +152,3 @@ void BattleStateF385::ApplySequence() {
 }
 #undef RIGHT
 #undef LEFT
-#undef FIELD

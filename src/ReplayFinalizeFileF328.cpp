@@ -22,8 +22,10 @@ class ReplayFinalizeF218 {
 public:
     void FinalizeFile();
     void MakeArchivePath(char* output);
+public:
+    // Observed fields; meanings not yet known.
+    HANDLE field000;
 };
-#define FIELD(type,off) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this)+(off)))
 void ReplayFinalizeF218::FinalizeFile()
 {
     NativeFinalizeWorkF328 state;
@@ -31,20 +33,19 @@ void ReplayFinalizeF218::FinalizeFile()
     MakeArchivePath(state.path);
     io.output = CreateFileA(state.path,GENERIC_WRITE,0,0,CREATE_ALWAYS,FILE_ATTRIBUTE_NORMAL,0);
     WriteFile(io.output,reinterpret_cast<unsigned char*>(this)+0x108,0x3c,&state.written,0);
-    CloseHandle(FIELD(HANDLE,0));
-    FIELD(HANDLE,0) = CreateFileA(g_ReplayTemporaryFileAt00657904,
+    CloseHandle(field000);
+    field000 = CreateFileA(g_ReplayTemporaryFileAt00657904,
                      GENERIC_READ,0,0,OPEN_EXISTING,FILE_ATTRIBUTE_NORMAL,0);
-    io.size=GetFileSize(FIELD(HANDLE,0),0);
+    io.size=GetFileSize(field000,0);
     state.allocation = ::operator new(io.size);
     state.data = static_cast<char*>(state.allocation);
     for (io.i=0;io.i<io.size;++io.i) {
-        ReadFile(FIELD(HANDLE,0),state.data,1,&state.written,0);
+        ReadFile(field000,state.data,1,&state.written,0);
         WriteFile(io.output,state.data,1,&state.written,0);
     }
     state.releasedData = state.data;
     free(state.releasedData);
-    CloseHandle(FIELD(HANDLE,0));
-    FIELD(HANDLE,0) = 0;
+    CloseHandle(field000);
+    field000 = 0;
     CloseHandle(io.output);
 }
-#undef FIELD

@@ -1,13 +1,12 @@
 #include "ProgressSelectionKeysF954.hpp"
 #include "SinglePlayerOptions438670.hpp"
 
-#define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<char*>(this) + (offset)))
 #define QUAD reinterpret_cast<SpriteTransform*>(&packet)
-#define DRAW FIELD(RenderDrawing5E68C0*, 8)
+#define DRAW field008
 #define VALUE reinterpret_cast<ProgressCard438A80*>(&g_BattleRecords)->GetSelectedValue()
 
 void SinglePlayerOptions438670::RenderOptions() {
-    if (FIELD(signed char, 0xEA) == 0)
+    if (field0EA == 0)
         return;
     RenderQuadPacket5E68C0 packet;
     {
@@ -26,7 +25,7 @@ void SinglePlayerOptions438670::RenderOptions() {
         DRAW->DrawQuad(6, &packet, &region, 0xFF808080);
         SetRect(&region, 0, 224, 64, 256);
         packet.BuildQuad(0.0f, 0.0f, 64.0f, 32.0f);
-        QUAD->TranslateQuad(408.0f, float(FIELD(signed char, 0xEC) * 32 + 120), 0.0f);
+        QUAD->TranslateQuad(408.0f, float(field0EC * 32 + 120), 0.0f);
         DRAW->DrawQuad(6, &packet, &region, 0xFFFFFFFF);
     }
 }
@@ -40,4 +39,3 @@ signed char ProgressCard438A80::GetSelectedValue() {
 #undef VALUE
 #undef DRAW
 #undef QUAD
-#undef FIELD

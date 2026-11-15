@@ -20,28 +20,31 @@ namespace InputProcessF245 {
     void Second();
     void OpenSpecialMenu();
 }
-class ResultInputSceneF245 {public: void PollInput();};
-#define FIELD(type,offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this)+(offset)))
+class ResultInputSceneF245 {public: void PollInput();public:
+    // Observed fields; meanings not yet known.
+    unsigned char unknown000[0x00C - 0x000];
+    unsigned char field00C;
+    unsigned char field00D;
+};
 void ResultInputSceneF245::PollInput()
 {
     InputProcessF245::First();
     InputProcessF245::Second();
-    FIELD(unsigned char,0x0c)=0;
-    FIELD(unsigned char,0x0d)=0;
+    field00C=0;
+    field00D=0;
     g_ResultInputAt00671638.Update();
     g_ResultInputAltAt00671680.Update();
     if (g_ResultAcceptPrimaryAt0067166C==1 || g_ResultAcceptSecondAt006716B4==1)
-        FIELD(unsigned char,0x0c)=1;
+        field00C=1;
     if (g_ResultCancelPrimaryAt00671670==1 || g_ResultCancelSecondAt006716B8==1)
-        FIELD(unsigned char,0x0c)=1;
+        field00C=1;
     if (g_ResultChoicePrimaryAt00671674==1 || g_ResultChoiceSecondAt006716BC==1)
-        FIELD(unsigned char,0x0c)=1;
+        field00C=1;
     if (g_ResultSkipPrimaryAt00671678==1 || g_ResultSkipSecondAt006716C0==1)
-        FIELD(unsigned char,0x0c)=1;
+        field00C=1;
     if (g_ResultInputAt00671638.IsKeyDown(0x1c)) {
         if (g_ResultInputAt00671638.IsKeyDown(0x38) ||
             g_ResultInputAt00671638.IsKeyDown(0xb8))
             InputProcessF245::OpenSpecialMenu();
     }
 }
-#undef FIELD

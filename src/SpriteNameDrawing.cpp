@@ -134,7 +134,7 @@ void SpriteNodeF129::Render() {
 
 #define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<char*>(this) + (offset)))
 // Only pointer reads are exposed; the profile record and both owners are incomplete.
-#define SLOT_ADDRESS(offset) (reinterpret_cast<char*>(FIELD(void*, 0xC)) + (offset) + entry * 16)
+#define SLOT_ADDRESS(offset) (reinterpret_cast<char*>((*reinterpret_cast<void**>(reinterpret_cast<unsigned char*>(this) + 0xC))) + (offset) + entry * 16)
 #define SLOT(type, offset) (*reinterpret_cast<type*>(SLOT_ADDRESS(offset)))
 class NameDrawingF129 {
 public:
@@ -142,13 +142,21 @@ public:
     void SetBlendMode(int);
     void DrawQuad(int, const SpriteQuad40CA80&, const RECT*, DWORD);
 };
-#define NAME_DRAWING reinterpret_cast<NameDrawingF129*>(FIELD(void*, 8))
+#define NAME_DRAWING reinterpret_cast<NameDrawingF129*>((*reinterpret_cast<void**>(reinterpret_cast<unsigned char*>(this) + 0x8)))
 class NameEntryPlayerF129 {
 public:
     void Render();
     void DrawRank(float, float, DWORD, signed char);
     void DrawName(float, float, DWORD, const signed char*);
     void DrawNumber(float, float, DWORD, int, int);
+public:
+    // Observed fields; meanings not yet known.
+    unsigned char unknown000[0x010 - 0x000];
+    short field010;
+    short field012;
+    short field014;
+    unsigned char unknown016[0x120 - 0x016];
+    signed char field120;
 };
 class NameEntrySharedF129 {
 public:
@@ -156,6 +164,15 @@ public:
     void DrawFilename(float, float, DWORD, const char*);
     void DrawName(float, float, DWORD, const signed char*);
     void DrawNumber(float, float, DWORD, int, int);
+public:
+    // Observed fields; meanings not yet known.
+    unsigned char unknown000[0x00C - 0x000];
+    signed char field00C;
+    unsigned char unknown00D[0x00E - 0x00D];
+    short field00E;
+    short field010;
+    short field012;
+    short field014;
 };
 extern signed char g_NameSharedGlyphs[];
 extern signed char g_NameSharedCodeOne;
@@ -179,15 +196,15 @@ void NameEntryPlayerF129::Render() {
         SetRect(&textureRect, 0, 80, 500, 160);
         TRANSFORM(transformedQuad)->BuildQuad(70.0f, 300.0f, 570.0f, 380.0f);
         NAME_DRAWING->DrawQuad(2, transformedQuad, &textureRect, 0xFFFFFFFF);
-        SetRect(&textureRect, FIELD(short, 0x10) * 19, FIELD(short, 0x12) * 20 + 160,
-            FIELD(short, 0x10) * 19 + 19, FIELD(short, 0x12) * 20 + 180);
+        SetRect(&textureRect, field010 * 19, field012 * 20 + 160,
+            field010 * 19 + 19, field012 * 20 + 180);
         TRANSFORM(transformedQuad)->BuildQuad(0, 0, 19.0f, 20.0f);
         TRANSFORM(transformedQuad)->ScaleQuad(10.0f, 10.0f, 0, pulseScale, pulseScale, 1.0f);
-        TRANSFORM(transformedQuad)->TranslateQuad(FIELD(short, 0x10) * 19 + 70, FIELD(short, 0x12) * 20 + 300, 0);
+        TRANSFORM(transformedQuad)->TranslateQuad(field010 * 19 + 70, field012 * 20 + 300, 0);
         NAME_DRAWING->DrawQuad(2, transformedQuad, &textureRect, 0xFFFFFFFF);
         for (int entry = 0; entry < 10; ++entry) {
             DWORD rowColor;
-            if (entry != FIELD(signed char, 0x120)) rowColor = 0xFF808080;
+            if (entry != field120) rowColor = 0xFF808080;
             else rowColor = 0xFFFFFFFF;
             DrawRank(80.0f, entry * 20 + 80, rowColor, entry + 1);
             DrawName(160.0f, entry * 20 + 80, rowColor, reinterpret_cast<const signed char*>(SLOT_ADDRESS(0x55C)));
@@ -198,12 +215,12 @@ void NameEntryPlayerF129::Render() {
             DrawNumber(370.0f, entry * 20 + 80, rowColor, SLOT(signed char, 0x565), 2);
             DrawNumber(560.0f, entry * 20 + 80, rowColor, SLOT(int, 0x568), 0);
         }
-        if (FIELD(short, 0x14) < 8 && FIELD(short, 0x10) + FIELD(short, 0x12) * 26 != 92) {
-            SetRect(&textureRect, FIELD(short, 0x10) * 19, FIELD(short, 0x12) * 20 + 160,
-                FIELD(short, 0x10) * 19 + 19, FIELD(short, 0x12) * 20 + 180);
+        if (field014 < 8 && field010 + field012 * 26 != 92) {
+            SetRect(&textureRect, field010 * 19, field012 * 20 + 160,
+                field010 * 19 + 19, field012 * 20 + 180);
             TRANSFORM(transformedQuad)->BuildQuad(0, 0, 19.0f, 20.0f);
             TRANSFORM(transformedQuad)->ScaleQuad(10.0f, 10.0f, 0, pulseScale, pulseScale, 1.0f);
-            TRANSFORM(transformedQuad)->TranslateQuad(FIELD(short, 0x14) * 14 + 160, FIELD(signed char, 0x120) * 20 + 80, 0);
+            TRANSFORM(transformedQuad)->TranslateQuad(field014 * 14 + 160, field120 * 20 + 80, 0);
             NAME_DRAWING->DrawQuad(2, transformedQuad, &textureRect, 0xFFFFFFFF);
         }
         Graphics::EndFrame();
@@ -223,27 +240,27 @@ void NameEntrySharedF129::Render() {
         SetRect(&textureRect, 192, 160, 512, 192);
         TRANSFORM(transformedQuad)->BuildQuad(160.0f, 20.0f, 480.0f, 52.0f);
         NAME_DRAWING->DrawQuad(1, transformedQuad, &textureRect, 0xFFFFFFFF);
-        if (FIELD(signed char, 0xC) == 0) {
+        if (field00C == 0) {
             SetRect(&textureRect, 0, 80, 500, 160);
             TRANSFORM(transformedQuad)->BuildQuad(70.0f, 300.0f, 570.0f, 380.0f);
             NAME_DRAWING->DrawQuad(2, transformedQuad, &textureRect, 0xFFFFFFFF);
-            SetRect(&textureRect, FIELD(short, 0xE) * 19, FIELD(short, 0x10) * 20 + 160,
-                FIELD(short, 0xE) * 19 + 19, FIELD(short, 0x10) * 20 + 180);
+            SetRect(&textureRect, field00E * 19, field010 * 20 + 160,
+                field00E * 19 + 19, field010 * 20 + 180);
             TRANSFORM(transformedQuad)->BuildQuad(0, 0, 19.0f, 20.0f);
             TRANSFORM(transformedQuad)->ScaleQuad(10.0f, 10.0f, 0, pulseScale, pulseScale, 1.0f);
-            TRANSFORM(transformedQuad)->TranslateQuad(FIELD(short, 0xE) * 19 + 70, FIELD(short, 0x10) * 20 + 300, 0);
+            TRANSFORM(transformedQuad)->TranslateQuad(field00E * 19 + 70, field010 * 20 + 300, 0);
             NAME_DRAWING->DrawQuad(2, transformedQuad, &textureRect, 0xFFFFFFFF);
             SetRect(&textureRect, 0, 0, 512, 20);
             TRANSFORM(transformedQuad)->BuildQuad(64.0f, 100.0f, 576.0f, 120.0f);
             NAME_DRAWING->DrawQuad(1, transformedQuad, &textureRect, 0xFFFFFFFF);
             DrawFilename(50.0f, 130.0f, 0xFFFFFFFF, reinterpret_cast<const char*>(this) + 0x1C);
             DrawName(160.0f, 130.0f, 0xFFFFFFFF, g_NameSharedGlyphs);
-            if (FIELD(short, 0x12) < 8 && FIELD(short, 0xE) + FIELD(short, 0x10) * 26 != 92) {
-                SetRect(&textureRect, FIELD(short, 0xE) * 19, FIELD(short, 0x10) * 20 + 160,
-                    FIELD(short, 0xE) * 19 + 19, FIELD(short, 0x10) * 20 + 180);
+            if (field012 < 8 && field00E + field010 * 26 != 92) {
+                SetRect(&textureRect, field00E * 19, field010 * 20 + 160,
+                    field00E * 19 + 19, field010 * 20 + 180);
                 TRANSFORM(transformedQuad)->BuildQuad(0, 0, 19.0f, 20.0f);
                 TRANSFORM(transformedQuad)->ScaleQuad(10.0f, 10.0f, 0, pulseScale, pulseScale, 1.0f);
-                TRANSFORM(transformedQuad)->TranslateQuad(FIELD(short, 0x12) * 14 + 160, 130.0f, 0);
+                TRANSFORM(transformedQuad)->TranslateQuad(field012 * 14 + 160, 130.0f, 0);
                 NAME_DRAWING->DrawQuad(2, transformedQuad, &textureRect, 0xFFFFFFFF);
             }
             DrawNumber(330.0f, 130.0f, 0xFFFFFFFF, g_NameSharedCodeOne, 2);
@@ -267,7 +284,7 @@ void NameEntrySharedF129::Render() {
             SetRect(&textureRect, 200, 20, 460, 60);
             TRANSFORM(transformedQuad)->BuildQuad(190.0f, 200.0f, 450.0f, 240.0f);
             NAME_DRAWING->DrawQuad(1, transformedQuad, &textureRect, 0xFFFFFFFF);
-            if (FIELD(short, 0x14) == 0) SetRect(&textureRect, 320, 192, 448, 224);
+            if (field014 == 0) SetRect(&textureRect, 320, 192, 448, 224);
             else SetRect(&textureRect, 192, 192, 320, 224);
             TRANSFORM(transformedQuad)->BuildQuad(256.0f, 280.0f, 384.0f, 312.0f);
             NAME_DRAWING->DrawQuad(1, transformedQuad, &textureRect, 0xFFFFFFFF);

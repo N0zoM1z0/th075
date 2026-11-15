@@ -1,10 +1,9 @@
 #include "BattleEndOverlay441910.hpp"
 
-#define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<char*>(this) + (offset)))
-#define LEFT(type, offset) (*reinterpret_cast<type*>(FIELD(char*, 0x44) + (offset)))
-#define RIGHT(type, offset) (*reinterpret_cast<type*>(FIELD(char*, 0x48) + (offset)))
-#define STYLE reinterpret_cast<RenderStyle43D9D0*>(FIELD(void*, 8))
-#define DRAWING reinterpret_cast<RenderDrawing5E68C0*>(FIELD(void*, 8))
+#define LEFT(type, offset) (*reinterpret_cast<type*>(field044 + (offset)))
+#define RIGHT(type, offset) (*reinterpret_cast<type*>(field048 + (offset)))
+#define STYLE reinterpret_cast<RenderStyle43D9D0*>(field008)
+#define DRAWING reinterpret_cast<RenderDrawing5E68C0*>(field008)
 #define LEFT_DRAWING reinterpret_cast<RenderDrawing5E68C0*>(LEFT(void*, 0x534))
 #define RIGHT_DRAWING reinterpret_cast<RenderDrawing5E68C0*>(RIGHT(void*, 0x534))
 #define QUAD reinterpret_cast<HudQuadOperations43E040*>(&packet)
@@ -18,10 +17,10 @@ void BattleEndOverlay441910::RenderEndOverlay() {
             RECT rect;
             STYLE->SetBlendMode(0);
             SetRect(&rect, 0, 0, 640, 480);
-            Graphics::DrawFilledRectangle(&rect, D3DCOLOR_ARGB(FIELD(unsigned char, 0xA1), 0, 0, 0));
-            if (FIELD(unsigned char, 0xA1) < 50)
+            Graphics::DrawFilledRectangle(&rect, D3DCOLOR_ARGB(field0A1, 0, 0, 0));
+            if (field0A1 < 50)
                 return;
-            if (FIELD(unsigned char, 0xA0) == 0)
+            if (field0A0 == 0)
                 return;
             if (g_FrameClockMode != 2) {
                 SetRect(&rect, 0, 0, 256, 256);
@@ -39,7 +38,7 @@ void BattleEndOverlay441910::RenderEndOverlay() {
                     LEFT_DRAWING->DrawQuad(LEFT(signed char, 0x532) - 1, &packet, &rect, 0xFFFFFFFF);
                 }
             }
-            if (FIELD(signed char, 0x18) == 12 && g_StateContinueCount > 0) {
+            if (field018 == 12 && g_StateContinueCount > 0) {
                 SetRect(&rect, 288, 192, 512, 224);
                 packet.BuildQuad(176.0f, 230.0f, 400.0f, 262.0f);
                 DRAWING->DrawQuad(0, &packet, &rect, 0xFFFFFFFF);
@@ -47,20 +46,20 @@ void BattleEndOverlay441910::RenderEndOverlay() {
                 packet.BuildQuad(390.0f, 230.0f, 454.0f, 262.0f);
                 DRAWING->DrawQuad(0, &packet, &rect, 0xFFFFFFFF);
             }
-            if (FIELD(signed char, 0x18) != 5 &&
-                (FIELD(signed char, 0x18) != 12 || g_StateContinueCount != 0)) {
-                SetRect(&rect, 384, (FIELD(signed char, 0x118) != 0) * 32 + 128,
-                    512, (FIELD(signed char, 0x118) != 0) * 32 + 160);
+            if (field018 != 5 &&
+                (field018 != 12 || g_StateContinueCount != 0)) {
+                SetRect(&rect, 384, (field118 != 0) * 32 + 128,
+                    512, (field118 != 0) * 32 + 160);
                 packet.BuildQuad(256.0f, 140.0f, 384.0f, 172.0f);
                 DRAWING->DrawQuad(0, &packet, &rect, 0xFFFFFFFF);
             }
-            SetRect(&rect, 256, (FIELD(signed char, 0x118) != 1) * 32 + 128,
-                384, (FIELD(signed char, 0x118) != 1) * 32 + 160);
+            SetRect(&rect, 256, (field118 != 1) * 32 + 128,
+                384, (field118 != 1) * 32 + 160);
             packet.BuildQuad(256.0f, 170.0f, 384.0f, 202.0f);
             DRAWING->DrawQuad(0, &packet, &rect, 0xFFFFFFFF);
-            if (g_FrameClockMode != 2 && g_EndOverlayFlagAt00671624 == 0 && FIELD(signed char, 0x18) != 7) {
-                SetRect(&rect, 0, (FIELD(signed char, 0x118) != 2) * 32 + 128,
-                    256, (FIELD(signed char, 0x118) != 2) * 32 + 155);
+            if (g_FrameClockMode != 2 && g_EndOverlayFlagAt00671624 == 0 && field018 != 7) {
+                SetRect(&rect, 0, (field118 != 2) * 32 + 128,
+                    256, (field118 != 2) * 32 + 155);
                 packet.BuildQuad(192.0f, 200.0f, 448.0f, 227.0f);
                 DRAWING->DrawQuad(0, &packet, &rect, 0xFFFFFFFF);
             }
@@ -76,4 +75,3 @@ void BattleEndOverlay441910::RenderEndOverlay() {
 #undef STYLE
 #undef RIGHT
 #undef LEFT
-#undef FIELD

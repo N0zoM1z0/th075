@@ -13,11 +13,25 @@ struct GlyphFrameF318 {
     DWORD source0,source1,source2,source3;
 };
 typedef char AssertGlyphFrameF318[(sizeof(GlyphFrameF318)==64)?1:-1];
-class GlyphFontF318 {public: void LoadGlyphOutline(UINT codepoint);};
-#define FIELD(type,off) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this)+(off)))
+class GlyphFontF318 {public: void LoadGlyphOutline(UINT codepoint);public:
+    // Observed fields; meanings not yet known.
+    unsigned char unknown000[0x004 - 0x000];
+    HDC field004;
+    void* field008;
+    unsigned char unknown00C[0x014 - 0x00C];
+    void* field014;
+    unsigned char unknown018[0x01C - 0x018];
+    UINT field01C;
+    UINT field020;
+    unsigned long field024;
+    unsigned char unknown028[0x02C - 0x028];
+    LONG field02C;
+    LONG field030;
+    LONG field034;
+};
 void GlyphFontF318::LoadGlyphOutline(UINT codepoint)
 {
-    if (!FIELD(HDC,4) || !FIELD(void*,8)) return;
+    if (!field004 || !field008) return;
     GlyphFrameF318 frame;
     memset(&frame.metrics,0,sizeof(frame.metrics));
     frame.source2=0x00010000;
@@ -28,19 +42,18 @@ void GlyphFontF318::LoadGlyphOutline(UINT codepoint)
     reinterpret_cast<DWORD*>(&frame.transform)[1]=frame.source0;
     reinterpret_cast<DWORD*>(&frame.transform)[2]=frame.source3;
     reinterpret_cast<DWORD*>(&frame.transform)[3]=frame.source1;
-    frame.glyphSize=GetGlyphOutlineA(FIELD(HDC,4),codepoint,5,&frame.metrics,0,0,&frame.transform);
-    if (FIELD(void*,0x14)) {
-        frame.oldBuffer=FIELD(void*,0x14);
+    frame.glyphSize=GetGlyphOutlineA(field004,codepoint,5,&frame.metrics,0,0,&frame.transform);
+    if (field014) {
+        frame.oldBuffer=field014;
         free(frame.oldBuffer);
-        FIELD(void*,0x14)=0;
+        field014=0;
     }
     frame.allocatedBuffer=::operator new(frame.glyphSize);
-    FIELD(void*,0x14)=frame.allocatedBuffer;
-    GetGlyphOutlineA(FIELD(HDC,4),codepoint,5,&frame.metrics,frame.glyphSize,FIELD(void*,0x14),&frame.transform);
-    FIELD(UINT,0x20)=frame.metrics.gmBlackBoxX;
-    FIELD(UINT,0x1c)=frame.metrics.gmBlackBoxY;
-    FIELD(DWORD,0x24)=(frame.glyphSize/frame.metrics.gmBlackBoxY)&~3u;
-    FIELD(LONG,0x30)=frame.metrics.gmptGlyphOrigin.x;
-    FIELD(LONG,0x34)=FIELD(LONG,0x2c)-frame.metrics.gmptGlyphOrigin.y;
+    field014=frame.allocatedBuffer;
+    GetGlyphOutlineA(field004,codepoint,5,&frame.metrics,frame.glyphSize,field014,&frame.transform);
+    field020=frame.metrics.gmBlackBoxX;
+    field01C=frame.metrics.gmBlackBoxY;
+    field024=(frame.glyphSize/frame.metrics.gmBlackBoxY)&~3u;
+    field030=frame.metrics.gmptGlyphOrigin.x;
+    field034=field02C-frame.metrics.gmptGlyphOrigin.y;
 }
-#undef FIELD

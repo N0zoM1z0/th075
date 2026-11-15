@@ -24,9 +24,8 @@ extern signed char g_TitleRoundOptionAt006714AC[2];
 extern signed char g_TitleMiscOptionAt00671610[2];
 extern signed char g_TitleOtherOptionAt006714CC[2];
 
-#define FIELD(type, off) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (off)))
 #define FADE(i) (*reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char*>(this) + (i) + 0x24))
-#define MENU_INDEX FIELD(signed char, 0x38)
+#define MENU_INDEX field038
 #define SIDE_HELD(button, i) (*reinterpret_cast<int*>(reinterpret_cast<unsigned char*>(&g_HeldInputAt00671664) + (i) * 0x48 + (button) * 4))
 
 unsigned short TitleAdvanceF185::Advance()
@@ -37,7 +36,7 @@ unsigned short TitleAdvanceF185::Advance()
     Graphics::Present();
 
     for (i = 0; i < 2; ++i) {
-        if (SIDE_HELD(2, i) == 1 && FIELD(unsigned int, 0x0C) < 57000U) {
+        if (SIDE_HELD(2, i) == 1 && field00C < 57000U) {
             g_SelectActiveSideAt006714B8 = static_cast<signed char>(i);
             switch (MENU_INDEX) {
             case 0:
@@ -97,7 +96,7 @@ unsigned short TitleAdvanceF185::Advance()
             MENU_INDEX = 9;
         }
     }
-    if (FIELD(int, 0x1C) == 1) {
+    if (field01C == 1) {
         if (MENU_INDEX == 9) {
             DestroyWindow(g_TitleWindowAt00671608);
             return 2;
@@ -105,12 +104,12 @@ unsigned short TitleAdvanceF185::Advance()
         g_SoundBank->Play(40);
         MENU_INDEX = 9;
     }
-    if (FIELD(int, 0x18) == 1) {
+    if (field018 == 1) {
         g_SoundBank->Play(39);
         MENU_INDEX++;
         if (MENU_INDEX > 9)
             MENU_INDEX = 0;
-    } else if (FIELD(int, 0x18) == -1) {
+    } else if (field018 == -1) {
         g_SoundBank->Play(39);
         MENU_INDEX--;
         if (MENU_INDEX < 0)
@@ -123,18 +122,18 @@ unsigned short TitleAdvanceF185::Advance()
             else
                 FADE(i) = 0;
         } else {
-            FADE(i) = FIELD(unsigned char, 0x23);
+            FADE(i) = field023;
         }
     }
-    if (FIELD(unsigned char, 0x20) < 255)
-        FIELD(unsigned char, 0x20) += 10;
-    if (FIELD(unsigned char, 0x21) < 255 && FIELD(unsigned char, 0x20) > 150)
-        FIELD(unsigned char, 0x21) += 10;
-    if (FIELD(unsigned char, 0x22) < 255 && FIELD(unsigned char, 0x21) > 150)
-        FIELD(unsigned char, 0x22) += 10;
-    if (FIELD(unsigned char, 0x23) < 255 && FIELD(unsigned char, 0x22) > 150)
-        FIELD(unsigned char, 0x23) += 10;
-    if (FIELD(unsigned int, 0x0C) > 60000U) {
+    if (field020 < 255)
+        field020 += 10;
+    if (field021 < 255 && field020 > 150)
+        field021 += 10;
+    if (field022 < 255 && field021 > 150)
+        field022 += 10;
+    if (field023 < 255 && field022 > 150)
+        field023 += 10;
+    if (field00C > 60000U) {
       if (!g_TitleAttractSwitchAt00671633) {
         for (i = 0; i < 2; ++i) {
             g_StatePlayerIds[i] = static_cast<signed char>(rand() % 6);
@@ -154,11 +153,10 @@ unsigned short TitleAdvanceF185::Advance()
       AudioControlF185::ScheduleFade(-10000, -35, 1, 0);
       return 0x3304;
     }
-    FIELD(unsigned int, 0x0C) = timeGetTime() - FIELD(unsigned int, 0x10);
+    field00C = timeGetTime() - field010;
     return 2;
 }
 
 #undef SIDE_HELD
 #undef MENU_INDEX
 #undef FADE
-#undef FIELD

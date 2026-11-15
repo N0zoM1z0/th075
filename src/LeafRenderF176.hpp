@@ -4,6 +4,11 @@
 class HudNoticeF176 {
 public:
     void SetNoticeState(unsigned char state);
+public:
+    // Observed fields; meanings not yet known.
+    unsigned char unknown000[0x060 - 0x000];
+    int field060;
+    unsigned char field064;
 };
 class AuxiliaryForwardersF176 {
 public:
@@ -13,4 +18,8 @@ public:
     void SpawnConfiguredAuxEffect(short effect, float x, float y,
                                   signed char facing, signed char layer,
                                   unsigned char flagA, unsigned char flagB);
+public:
+    // Observed fields; meanings not yet known.
+    unsigned char unknown000[0x314 - 0x000];
+    float field314;
 };

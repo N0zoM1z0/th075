@@ -37,10 +37,15 @@ class TextureManagerF206 {
 public:
     void LoadBitmapDirectory(const char*);
     void Refresh(int index);
+public:
+    // Observed fields; meanings not yet known.
+    unsigned char unknown000[0x004 - 0x000];
+    unsigned long field004;
+    unsigned char unknown008[0x04C - 0x008];
+    unsigned char field04C;
 };
 #define ENTRIES reinterpret_cast<BitmapEntriesF206*>(reinterpret_cast<unsigned char*>(this)+8)
 #define HANDLES reinterpret_cast<BitmapHandlesF206*>(reinterpret_cast<unsigned char*>(this)+0x18)
-#define FIELD(type,off) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this)+(off)))
 #define ENTRY(type,off) (*reinterpret_cast<type*>(ENTRIES->At(work.index)+(off)))
 void TextureManagerF206::LoadBitmapDirectory(const char* baseDir)
 {
@@ -51,8 +56,8 @@ void TextureManagerF206::LoadBitmapDirectory(const char* baseDir)
     } work;
     work.total = ENTRIES->Size();
     for (work.index=0; work.index<work.total; ++work.index) {
-        ENTRY(unsigned char,0) = FIELD(unsigned char,0x4c);
-        ENTRY(DWORD,0x14) = FIELD(DWORD,4);
+        ENTRY(unsigned char,0) = field04C;
+        ENTRY(DWORD,0x14) = field004;
         sprintf(work.filename,g_BitmapFormatAt006577F4,baseDir,work.index);
         if (reinterpret_cast<BitmapEntryF206*>(ENTRIES->At(work.index))->LoadFile(work.filename)) {
             if (ENTRY(unsigned int,4)<256 && ENTRY(unsigned int,8)<256 &&
@@ -75,6 +80,5 @@ void TextureManagerF206::LoadBitmapDirectory(const char* baseDir)
     }
 }
 #undef ENTRY
-#undef FIELD
 #undef HANDLES
 #undef ENTRIES

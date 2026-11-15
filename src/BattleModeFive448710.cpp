@@ -1,10 +1,9 @@
 #include "BattleModeFive448710.hpp"
 
-#define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<char*>(this) + (offset)))
-#define RIGHT(type, offset) (*reinterpret_cast<type*>(FIELD(char*, 0x48) + (offset)))
-#define LEFT(type, offset) (*reinterpret_cast<type*>(FIELD(char*, 0x44) + (offset)))
-#define STYLE reinterpret_cast<RenderStyle43D9D0*>(FIELD(void*, 8))
-#define DRAWING reinterpret_cast<RenderDrawing5E68C0*>(FIELD(void*, 8))
+#define RIGHT(type, offset) (*reinterpret_cast<type*>(field048 + (offset)))
+#define LEFT(type, offset) (*reinterpret_cast<type*>(field044 + (offset)))
+#define STYLE reinterpret_cast<RenderStyle43D9D0*>(field008)
+#define DRAWING reinterpret_cast<RenderDrawing5E68C0*>(field008)
 #define PORTRAIT reinterpret_cast<RenderDrawing5E68C0*>(LEFT(void*, 0x534))
 #define QUAD reinterpret_cast<HudQuadOperations43E040*>(&packet)
 
@@ -16,11 +15,11 @@ void BattleModeFive448710::RenderMenu() {
         RECT region;
         STYLE->SetBlendMode(0);
         SetRect(&region, 0, 0, 640, 480);
-        Graphics::DrawFilledRectangle(&region, D3DCOLOR_ARGB(FIELD(unsigned char, 0xA1), 0, 0, 0));
-        if (FIELD(unsigned char, 0xA1) < 50)
+        Graphics::DrawFilledRectangle(&region, D3DCOLOR_ARGB(field0A1, 0, 0, 0));
+        if (field0A1 < 50)
             return;
         for (i = 0; i < 9; i = i + 1) {
-            if (i == FIELD(signed char, 0x118)) color = 0xFFFFFFFF;
+            if (i == field118) color = 0xFFFFFFFF;
             else color = 0xFF808080;
             SetRect(&region, 0, i * 24, 240, i * 24 + 24);
             packet.BuildQuadFromRect(&region);
@@ -126,4 +125,3 @@ void BattleModeFive448710::RenderMenu() {
 #undef STYLE
 #undef LEFT
 #undef RIGHT
-#undef FIELD

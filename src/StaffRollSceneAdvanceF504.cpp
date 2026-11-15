@@ -23,15 +23,19 @@ public:
     unsigned short Advance();
     void UpdateStaffControls();
     void TickStaffTime();
+public:
+    // Observed fields; meanings not yet known.
+    unsigned char unknown004[0x00C - 0x004];
+    unsigned int field00C;
+    unsigned int field010;
 };
-#define FIELD(T,o) (*reinterpret_cast<T*>(reinterpret_cast<unsigned char*>(this)+(o)))
 unsigned short StaffRollAdvanceF450::Advance() {
     UpdateStaffControls();
     AdvanceVirtual();
     BeforeStaffAdvanceAt004028F0();
     TickStaffTime();
     if (g_StaffRollPhaseAt0067166C==1) {
-        if (FIELD(unsigned int,0xC)>0x14C08 || FIELD(unsigned int,0xC)<0x13880) {
+        if (field00C>0x14C08 || field00C<0x13880) {
             SetStageAt00419CB0(40);
             ConfigureStaffViewportAt00407E60(-10000,-160,1,1);
             if (g_StaffRollFighterAt00671418) {
@@ -44,7 +48,6 @@ unsigned short StaffRollAdvanceF450::Advance() {
             return 0x1102;
         }
     }
-    FIELD(unsigned int,0xC)=timeGetTime()-FIELD(unsigned int,0x10);
+    field00C=timeGetTime()-field010;
     return 0xB;
 }
-#undef FIELD

@@ -5,59 +5,59 @@
 #include "ComboHudWindowF1060.hpp"
 
 #define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
-#define FIRST(type, offset) (*reinterpret_cast<type*>(FIELD(unsigned char*, 0x44) + (offset)))
-#define SECOND(type, offset) (*reinterpret_cast<type*>(FIELD(unsigned char*, 0x48) + (offset)))
+#define FIRST(type, offset) (*reinterpret_cast<type*>(field044 + (offset)))
+#define SECOND(type, offset) (*reinterpret_cast<type*>(field048 + (offset)))
 #define MODE_VALUES reinterpret_cast<int (*)[15]>(reinterpret_cast<unsigned char*>(this) + 0x16710)
 
 void RoundEndF173::EnterRoundEnd()
 {
-    if (F999_VITAL(FIELD(unsigned char*, 0x44)).currentAt324 <= 0 || F999_VITAL(FIELD(unsigned char*, 0x48)).currentAt324 <= 0) {
+    if (F999_VITAL(field044).currentAt324 <= 0 || F999_VITAL(field048).currentAt324 <= 0) {
         FIRST(short, 0x3A0) = 0;
         SECOND(short, 0x3A0) = 0;
         FIRST(unsigned char, 0x39C) = 0;
         SECOND(unsigned char, 0x39C) = 0;
-        FIELD(short, 0x1A) = 60;
-        if (F999_VITAL(FIELD(unsigned char*, 0x44)).currentAt324 <= 0) {
-            if (F999_VITAL(FIELD(unsigned char*, 0x48)).currentAt324 <= 0) {
+        field01A = 60;
+        if (F999_VITAL(field044).currentAt324 <= 0) {
+            if (F999_VITAL(field048).currentAt324 <= 0) {
                 FIRST(signed char, 0x39D) = 1;
                 SECOND(signed char, 0x39D) = 1;
-                FIELD(unsigned char, 0x18) = 2;
-                F992_OUTCOME(FIELD(unsigned char*, 0x44)).continuationAt3CF = 0;
-                F992_OUTCOME(FIELD(unsigned char*, 0x48)).continuationAt3CF = 0;
-                F992_OUTCOME(FIELD(unsigned char*, 0x44)).outcomeAt3CE.unsignedAt3CE = 1;
-                F992_OUTCOME(FIELD(unsigned char*, 0x48)).outcomeAt3CE.unsignedAt3CE = 1;
-                FIELD(int, 0xC) = 300;
+                field018 = 2;
+                F992_OUTCOME(field044).continuationAt3CF = 0;
+                F992_OUTCOME(field048).continuationAt3CF = 0;
+                F992_OUTCOME(field044).outcomeAt3CE.unsignedAt3CE = 1;
+                F992_OUTCOME(field048).outcomeAt3CE.unsignedAt3CE = 1;
+                field00C = 300;
             } else {
                 FIRST(signed char, 0x39D)--;
-                F992_OUTCOME(FIELD(unsigned char*, 0x44)).continuationAt3CF = 0;
-                F992_OUTCOME(FIELD(unsigned char*, 0x44)).outcomeAt3CE.unsignedAt3CE = 1;
-                F992_OUTCOME(FIELD(unsigned char*, 0x48)).outcomeAt3CE.unsignedAt3CE = 0;
-                FIELD(short, 0x1A) = 60;
+                F992_OUTCOME(field044).continuationAt3CF = 0;
+                F992_OUTCOME(field044).outcomeAt3CE.unsignedAt3CE = 1;
+                F992_OUTCOME(field048).outcomeAt3CE.unsignedAt3CE = 0;
+                field01A = 60;
                 if (FIRST(signed char, 0x39D) != 0) {
-                    F999_VITAL(FIELD(unsigned char*, 0x44)).recoverableAt326 = 10000;
-                    F999_VITAL(FIELD(unsigned char*, 0x44)).currentAt324 = 10000;
-                    FIELD(unsigned char, 0x18) = 2;
-                    FIELD(int, 0xC) = 300;
+                    F999_VITAL(field044).recoverableAt326 = 10000;
+                    F999_VITAL(field044).currentAt324 = 10000;
+                    field018 = 2;
+                    field00C = 300;
                 } else {
-                    FIELD(unsigned char, 0x5D) = 1;
-                    FIELD(unsigned char, 0x18) = 3;
-                    FIELD(int, 0xC) = 180;
+                    field05D = 1;
+                    field018 = 3;
+                    field00C = 180;
                 }
             }
-        } else if (F999_VITAL(FIELD(unsigned char*, 0x48)).currentAt324 <= 0) {
+        } else if (F999_VITAL(field048).currentAt324 <= 0) {
             SECOND(signed char, 0x39D)--;
-            F992_OUTCOME(FIELD(unsigned char*, 0x48)).continuationAt3CF = 0;
-            F992_OUTCOME(FIELD(unsigned char*, 0x44)).outcomeAt3CE.unsignedAt3CE = 0;
-            F992_OUTCOME(FIELD(unsigned char*, 0x48)).outcomeAt3CE.unsignedAt3CE = 1;
+            F992_OUTCOME(field048).continuationAt3CF = 0;
+            F992_OUTCOME(field044).outcomeAt3CE.unsignedAt3CE = 0;
+            F992_OUTCOME(field048).outcomeAt3CE.unsignedAt3CE = 1;
             if (SECOND(signed char, 0x39D) != 0) {
-                F999_VITAL(FIELD(unsigned char*, 0x48)).recoverableAt326 = 10000;
-                F999_VITAL(FIELD(unsigned char*, 0x48)).currentAt324 = 10000;
-                FIELD(unsigned char, 0x18) = 2;
-                FIELD(int, 0xC) = 300;
+                F999_VITAL(field048).recoverableAt326 = 10000;
+                F999_VITAL(field048).currentAt324 = 10000;
+                field018 = 2;
+                field00C = 300;
             } else {
-                FIELD(unsigned char, 0x5D) = 0;
-                FIELD(unsigned char, 0x18) = 3;
-                FIELD(int, 0xC) = 180;
+                field05D = 0;
+                field018 = 3;
+                field00C = 180;
             }
         }
     }

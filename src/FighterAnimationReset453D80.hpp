@@ -19,4 +19,11 @@ public:
 class FighterAnimationReset453D80 {
 public:
     virtual void BindAnimation(); // Observed slot0; no full vtable claim.
+public:
+    // Observed fields; meanings not yet known.
+    unsigned char unknown004[0x008 - 0x004];
+    AnimationFrameF156* field008;
+    unsigned char unknown00C[0x060 - 0x00C];
+    short field060;
+    short field062;
 };

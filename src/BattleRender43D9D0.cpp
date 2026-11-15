@@ -2,23 +2,22 @@
 #include "BattleRender43D9D0.hpp"
 
 #define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
-#define FLOAT(offset) *reinterpret_cast<float*>(reinterpret_cast<unsigned char*>(this) + (offset))
 #define ACTOR(offset) FIELD(RenderActor43D9D0*, offset)
 #define ACTOR_FIELD(type, actor, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(FIELD(void*, actor)) + (offset)))
-#define STYLE FIELD(RenderStyle43D9D0*, 0x08)
+#define STYLE field008
 #define LISTS(actor) ACTOR_FIELD(RenderLists43D9D0*, actor, 0x2EC)
 #define SEQUENCE(actor) ACTOR_FIELD(RenderSequence43D9D0*, actor, 0x480)
 #define AUX reinterpret_cast<RenderAux43D9D0*>(&g_CombatEffects)
 
 void BattleRender43D9D0::RenderFrame() {
-    if (FIELD(unsigned char, 0xA0) == 0 && FIELD(unsigned char, 0xA1) == 0) {
+    if (field0A0 == 0 && field0A1 == 0) {
         CameraUpdate4126C0::Advance();
-        if (FLOAT(0x9C) < 1.0f) {
-            if (FLOAT(0x9C) < 0.0f)
-                FLOAT(0x9C) = 0.0f;
-            FLOAT(0x9C) += 0.01f;
-            if (FLOAT(0x9C) > 1.0f)
-                FLOAT(0x9C) = 1.0f;
+        if (field09C < 1.0f) {
+            if (field09C < 0.0f)
+                field09C = 0.0f;
+            field09C += 0.01f;
+            if (field09C > 1.0f)
+                field09C = 1.0f;
         }
         if (ACTOR_FIELD(short, 0x48, 0x60) >= 300) {
             if (ACTOR_FIELD(short, 0x44, 0x60) < 300)
@@ -35,7 +34,7 @@ void BattleRender43D9D0::RenderFrame() {
         ((((320.0f - g_CombatViewSpan) * 0.0f) / 320.0f) * 280.0f) / 2.0f);
     if (BeginGraphicsFrameWithStatusAt00402660()) {
         if (g_FramePresentToggle) {
-            STYLE->SetColorMultiplier(FLOAT(0x9C));
+            STYLE->SetColorMultiplier(field09C);
             g_DrawDispatcher->Slot4();
             STYLE->SetDepthMode(0);
             STYLE->SetDepthMode(3);
@@ -70,7 +69,7 @@ void BattleRender43D9D0::RenderFrame() {
             LISTS(0x44)->DispatchSelected(1);
             LISTS(0x48)->DispatchSelected(1);
             AUX->DispatchSelected(1);
-            STYLE->SetColorMultiplier(FLOAT(0x9C));
+            STYLE->SetColorMultiplier(field09C);
             g_DrawDispatcher->Slot2();
             STYLE->SetColorMultiplier(1.0f);
             STYLE->SetDepthMode(0);
@@ -88,14 +87,14 @@ void BattleRender43D9D0::RenderFrame() {
         RenderHud();
         LISTS(0x44)->DispatchSelected(3);
         LISTS(0x48)->DispatchSelected(3);
-        if (F986_FADE(FIELD(void*, 0x44)).fadeAlphaAt538 > 0)
+        if (F986_FADE(field044).fadeAlphaAt538 > 0)
             ACTOR(0x44)->RenderFadeOverlay();
-        if (F986_FADE(FIELD(void*, 0x48)).fadeAlphaAt538 > 0)
+        if (F986_FADE(field048).fadeAlphaAt538 > 0)
             ACTOR(0x48)->RenderFadeOverlay();
         RenderStatusEffects();
-        if (FIELD(signed char, 0x18) == 5) {
+        if (field018 == 5) {
             reinterpret_cast<BattleHud*>(this)->DrawSelectedNotice();
-        } else if (FIELD(signed char, 0x18) == 7) {
+        } else if (field018 == 7) {
             if (ACTOR_FIELD(signed char, 0x44, 0x6E8) == 0) {
                 if (ACTOR_FIELD(signed char, 0x44, 0x6E7) >= 0)
                     ACTOR(0x44)->RenderSideEffect();
@@ -111,20 +110,20 @@ void BattleRender43D9D0::RenderFrame() {
                 g_TextRenderer->DrawBox();
             ACTOR(0x44)->RenderStage(g_NoticeSelection);
         }
-        if (FIELD(int, 0x60) > 0)
+        if (field060 > 0)
             RenderOverlayTimeline();
-        if (FIELD(int, 0x6C) > 0)
+        if (field06C > 0)
             RenderRoundBanner();
-        if (FIELD(unsigned char, 0xA1))
+        if (field0A1)
             RenderEndOverlay();
-        if (FIELD(DWORD, 0x28) + 1000U < timeGetTime()) {
-            FIELD(int, 0x20) = FIELD(int, 0x24);
-            FIELD(int, 0x24) = 0;
-            FIELD(DWORD, 0x28) = timeGetTime();
+        if (field028 + 1000U < timeGetTime()) {
+            field020 = field024;
+            field024 = 0;
+            field028 = timeGetTime();
         }
-        ++FIELD(int, 0x24);
+        ++field024;
         DrawAtlasNumberDefaultAt00446B60(640.0f, 0.0f, 0xFFFFFFFF,
-                                       FIELD(int, 0x20), 4);
+                                       field020, 4);
         Graphics::EndFrame();
     }
 }
@@ -135,5 +134,4 @@ void BattleRender43D9D0::RenderFrame() {
 #undef STYLE
 #undef ACTOR_FIELD
 #undef ACTOR
-#undef FLOAT
 #undef FIELD

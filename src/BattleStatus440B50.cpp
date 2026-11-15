@@ -2,11 +2,10 @@
 #include "BattleStatusFloatPairF1096.hpp"
 
 #define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<char*>(this) + (offset)))
-#define FLOAT(offset) *reinterpret_cast<float*>(reinterpret_cast<char*>(this) + (offset))
 #define ACTOR(type, offset) (*reinterpret_cast<type*>(FIELD(char*, 0x44 + i * 4) + (offset)))
-#define RIGHT(type, offset) (*reinterpret_cast<type*>(FIELD(char*, 0x48) + (offset)))
+#define RIGHT(type, offset) (*reinterpret_cast<type*>(field048 + (offset)))
 #define DIRECTORY reinterpret_cast<HudDirectory43E040*>(FIELD(char*, 0x44 + i * 4) + 0x468)
-#define DRAWING reinterpret_cast<RenderDrawing5E68C0*>(FIELD(void*, 8))
+#define DRAWING reinterpret_cast<RenderDrawing5E68C0*>(field008)
 #define ACTOR_DRAWING reinterpret_cast<RenderDrawing5E68C0*>(ACTOR(void*, 4))
 #define QUAD reinterpret_cast<HudQuadOperations43E040*>(&packet)
 #define RECORDS reinterpret_cast<StatusRecords440B50*>(&g_BattleRecords)
@@ -24,7 +23,7 @@ void BattleStatus440B50::RenderStatus() {
         for (i = 0; i < 2; i = i + 1) {
             if (ACTOR(short, 0x3A0) > 0) {
                 if (g_CombatMode == 3 && i == 1) {
-                    group = reinterpret_cast<signed char*>(FIELD(char*, 0x48) + 0x370)[RIGHT(signed char, 0x39D)] + 42;
+                    group = reinterpret_cast<signed char*>(field048 + 0x370)[RIGHT(signed char, 0x39D)] + 42;
                     nameSlide = float(DIRECTORY->At(group)->At(g_StateRepeatLevelAt006714D0 + 5)[0]);
                     texture = DIRECTORY->At(group)->At(g_StateRepeatLevelAt006714D0 + 5)[3];
                 } else {
@@ -113,5 +112,4 @@ void BattleStatus440B50::RenderStatus() {
 #undef DIRECTORY
 #undef RIGHT
 #undef ACTOR
-#undef FLOAT
 #undef FIELD

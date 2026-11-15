@@ -47,17 +47,24 @@ struct NativeSequenceStateF331 {
     NativeQuadCarrierF331 quad;
 };
 struct NativeScaleTripleF336 {float x,y,z;};
-class SpriteSequenceF261 { public: void RenderElements(); };
-#define FIELD(type,off) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this)+(off)))
+class SpriteSequenceF261 { public: void RenderElements(); public:
+    // Observed fields; meanings not yet known.
+    void* field000;
+    unsigned char unknown004[0x010 - 0x004];
+    signed char field010;
+    unsigned char unknown011[0x012 - 0x011];
+    short field012;
+    unsigned long field014;
+};
 #define REC(type,p,off) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(p)+(off)))
 #define LIST reinterpret_cast<SequenceListF261*>(reinterpret_cast<unsigned char*>(this)+4)
-#define DRAWER reinterpret_cast<SequenceRendererF261*>(FIELD(void*,0))
+#define DRAWER reinterpret_cast<SequenceRendererF261*>(field000)
 #define QUAD (*reinterpret_cast<SpriteQuad40CA80*>(&state.quad))
 #define TRANSLATE(q) reinterpret_cast<SpriteTransform*>(&(q))
 void SpriteSequenceF261::RenderElements()
 {
     if (!LIST->size()) return;
-    if (FIELD(signed char,0x10)<=0) return;
+    if (field010<=0) return;
     {
         SequenceIteratorF261 it=LIST->begin();
         NativeSequenceStateF331 state;
@@ -68,7 +75,7 @@ void SpriteSequenceF261::RenderElements()
         {
         state.counter=0;
         for (;it!=state.end;it++,++state.counter) {
-            if (state.counter%FIELD(signed char,0x10)==FIELD(signed char,0x10)-1) {
+            if (state.counter%field010==field010-1) {
 
                 DRAWER->GetTextureRect(REC(short,it.operator->(),0),&state.rect);
                 switch(REC(unsigned char,it.operator->(),0xa0)) {
@@ -77,8 +84,8 @@ void SpriteSequenceF261::RenderElements()
                 case 2: DRAWER->SetBlendMode(3); break;
                 }
                 QUAD=*reinterpret_cast<const SpriteQuad40CA80*>(it.operator->()+4);
-                state.tint=(((REC(DWORD,it.operator->(),0x9c)>>24)*state.counter)/FIELD(short,0x12)<<24)
-                    | (FIELD(DWORD,0x14)&REC(DWORD,it.operator->(),0x9c));
+                state.tint=(((REC(DWORD,it.operator->(),0x9c)>>24)*state.counter)/field012<<24)
+                    | (field014&REC(DWORD,it.operator->(),0x9c));
                 TRANSLATE(QUAD)->TranslateQuad(state.x,y+g_SequenceYOffsetAt00657830,0.0f);
                 if (reinterpret_cast<NativeScaleTripleF336*>(it.operator->()+0x90)->x!=0.0f ||
                     reinterpret_cast<NativeScaleTripleF336*>(it.operator->()+0x90)->y!=0.0f ||
@@ -94,7 +101,6 @@ void SpriteSequenceF261::RenderElements()
         }
     }
 }
-#undef FIELD
 #undef REC
 #undef LIST
 #undef DRAWER

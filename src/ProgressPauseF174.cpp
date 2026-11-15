@@ -7,7 +7,6 @@
 // Existing unsigned byte view, written from the observed scene pause byte.
 extern unsigned char g_RenderByte0067161C;
 
-#define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
 #define PROGRESS_ARRAY(type, offset) reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + F954_PROGRESS_KEYS(this).fighterAt16AC4 * 0x17F0 + (offset))
 #define SELECTED_VALUE(offset) (*reinterpret_cast<int*>(reinterpret_cast<unsigned char*>(this) + F954_PROGRESS_KEYS(this).fighterAt16AC4 * 0x17F0 + (offset) + F954_PROGRESS_KEYS(this).difficultyAt16AC5 * 0x5FC))
 #define PLAYER(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char**>(reinterpret_cast<unsigned char*>(this) + 0x44)[i] + (offset)))
@@ -56,22 +55,22 @@ void BattleInputF174::PollPauseShortcut()
             || g_InputMappingAt00671638.IsKeyDown(0xB8)))
         Graphics::ToggleWindowMode();
     if (g_InputMappingAt00671638.IsKeyDown(1))
-        FIELD(int, 0x114)++;
+        field114++;
     else
-        FIELD(int, 0x114) = 0;
-    if ((FIELD(int, 0x114) == 3
+        field114 = 0;
+    if ((field114 == 3
             || g_HeldInputAt00671664.counts[6] == 1
             || g_HeldInputAt006716AC.counts[6] == 1)
-        && FIELD(signed char, 0x18) != 5
-        && FIELD(signed char, 0x18) != 0
-        && FIELD(signed char, 0x18) != 7
+        && field018 != 5
+        && field018 != 0
+        && field018 != 7
         && g_CombatMode != 6) {
-        FIELD(unsigned char, 0xA0) = static_cast<int>(!FIELD(unsigned char, 0xA0));
-        if (FIELD(unsigned char, 0xA0) != 0)
-            FIELD(unsigned char, 0x118) = 0;
+        field0A0 = static_cast<int>(!field0A0);
+        if (field0A0 != 0)
+            field118 = 0;
         g_SoundBank->Play(48);
     }
-    g_RenderByte0067161C = FIELD(unsigned char, 0xA0);
+    g_RenderByte0067161C = field0A0;
 }
 
 void BattleInputF174::UpdatePlayerEffects()
@@ -80,19 +79,19 @@ void BattleInputF174::UpdatePlayerEffects()
     int j;
     for (i = 0; i < 2; i++) {
         CONTROL_PLAYER->UpdateControls();
-        if (FIELD(signed char, 0x18) != 1) {
+        if (field018 != 1) {
             PLAYER(int, 0x4E8) = 0;
             PLAYER(int, 0x4EC) = 0;
             PLAYER(int, 0x4F0) = 0;
             BASE_PLAYER->ClearAuxiliaryWords();
-            if (FIELD(signed char, 0x18) == 13
-                || FIELD(signed char, 0x18) == 11
-                || FIELD(signed char, 0x18) == 10
-                || FIELD(signed char, 0x18) == 3
-                || FIELD(signed char, 0x18) == 2
-                || FIELD(signed char, 0x18) == 0
-                || FIELD(signed char, 0x18) == 5
-                || FIELD(signed char, 0x18) == 7) {
+            if (field018 == 13
+                || field018 == 11
+                || field018 == 10
+                || field018 == 3
+                || field018 == 2
+                || field018 == 0
+                || field018 == 5
+                || field018 == 7) {
                 PLAYER(int, 0x4F4) = 0;
                 PLAYER(int, 0x4DC) = 0;
                 PLAYER(int, 0x4E0) = 0;
@@ -105,7 +104,7 @@ void BattleInputF174::UpdatePlayerEffects()
         }
         for (j = 0; j < 5; j++) {
             if (HELD_BUTTON != 0)
-                FIELD(int, 0x10C) = 3600;
+                field10C = 3600;
         }
     }
 }
@@ -116,4 +115,3 @@ void BattleInputF174::UpdatePlayerEffects()
 #undef PLAYER
 #undef SELECTED_VALUE
 #undef PROGRESS_ARRAY
-#undef FIELD

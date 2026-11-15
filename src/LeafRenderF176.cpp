@@ -2,7 +2,6 @@
 #include "BattleHud43E040.hpp"
 #include "FighterEffectPolicies.hpp"
 
-#define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
 
 void __cdecl DrawAtlasNumberDefaultAt00446B60(float x, float y, D3DCOLOR color,
                                              int number, signed char style)
@@ -12,8 +11,8 @@ void __cdecl DrawAtlasNumberDefaultAt00446B60(float x, float y, D3DCOLOR color,
 
 void HudNoticeF176::SetNoticeState(unsigned char state)
 {
-    FIELD(int, 0x60) = 150;
-    FIELD(unsigned char, 0x64) = state;
+    field060 = 150;
+    field064 = state;
 }
 
 void AuxiliaryForwardersF176::SpawnAuxEffect(short effect, float x, float y,
@@ -21,7 +20,7 @@ void AuxiliaryForwardersF176::SpawnAuxEffect(short effect, float x, float y,
                                              unsigned int)
 {
     g_AuxiliaryEffectsF135.Spawn(effect, x, y, facing, layer, 0, 0,
-                                &FIELD(float, 0x314));
+                                &field314);
 }
 
 void AuxiliaryForwardersF176::SpawnConfiguredAuxEffect(short effect, float x,
@@ -31,7 +30,5 @@ void AuxiliaryForwardersF176::SpawnConfiguredAuxEffect(short effect, float x,
                                                        unsigned char flagB)
 {
     g_AuxiliaryEffectsF135.Spawn(effect, x, y, facing, layer, flagA, flagB,
-                                &FIELD(float, 0x314));
+                                &field314);
 }
-
-#undef FIELD

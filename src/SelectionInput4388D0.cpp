@@ -7,10 +7,10 @@ void SelectionInput4388D0::PollInput() {
     Input::PollKeyboard();
     Input::PollJoysticks();
     g_InputMappingAt00671638.UpdateHeldCounts();
-    FIELD(HeldInputBlock4388D0, 12) = g_HeldInputAt00671664;
+    (*reinterpret_cast<HeldInputBlock4388D0*>(reinterpret_cast<unsigned char*>(this) + 0xC)) = g_HeldInputAt00671664;
     if (g_CombatMode != 3) {
         g_InputMappingAt00671680.UpdateHeldCounts();
-        FIELD(HeldInputBlock4388D0, 40) = g_HeldInputAt006716AC;
+        (*reinterpret_cast<HeldInputBlock4388D0*>(reinterpret_cast<unsigned char*>(this) + 0x28)) = g_HeldInputAt006716AC;
     }
     if (g_InputMappingAt00671638.IsKeyDown(0x1C)
         && (g_InputMappingAt00671638.IsKeyDown(0x38)
@@ -22,9 +22,9 @@ void SelectionInput4388D0::PollInput() {
         memset(SIDE_INPUT(g_SelectActiveSideAt006714B8), 0, 28);
     }
     if (g_InputMappingAt00671638.IsKeyDown(1))
-        FIELD(int, 0x4C) = FIELD(int, 0x4C) + 1;
+        field04C = field04C + 1;
     else
-        FIELD(int, 0x4C) = 0;
+        field04C = 0;
 }
 
 bool InputMapping4388D0::IsKeyDown(unsigned char key) {

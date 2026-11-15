@@ -5,7 +5,6 @@
 #include "SpriteTransform.hpp"
 #include <math.h>
 
-#define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
 
 // Call-only view of the existing drawing receiver at this+18.
 class TimedSpriteDrawingF181 {
@@ -34,7 +33,7 @@ void TimedSpriteF181::RenderTimedSprite()
     quad.third.y = 128.0f;
     quad.third.z = 0.0f;
     reinterpret_cast<SpriteTransform*>(&quad)->ScaleQuad(32.0f, 0.0f, 0.0f,
-        32.0f, static_cast<float>((sin((FIELD(int, 0x68) / 0.01745328866f) * 0.0005)
+        32.0f, static_cast<float>((sin((field068 / 0.01745328866f) * 0.0005)
                                   + 12.0) * 0.1), 1.0f);
     reinterpret_cast<SpriteTransform*>(&quad)->TranslateQuad(float(cameraHorizontal + 240), float(y + 388), 0.25f);
     reinterpret_cast<TimedSpriteDrawingF181*>(reinterpret_cast<unsigned char*>(this) + 0x18)->SetDepthMode(3);
@@ -43,5 +42,3 @@ void TimedSpriteF181::RenderTimedSprite()
     reinterpret_cast<TimedSpriteDrawingF181*>(reinterpret_cast<unsigned char*>(this) + 0x18)->DrawQuad(4, quad, &rectangle, 0xFFFFFFFF);
     reinterpret_cast<TimedSpriteDrawingF181*>(reinterpret_cast<unsigned char*>(this) + 0x18)->SetBlendMode(0);
 }
-
-#undef FIELD

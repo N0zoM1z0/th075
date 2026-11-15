@@ -2,7 +2,6 @@
 #include "SelectionInput4388D0.hpp"
 #include "GameLeafHelpers.hpp"
 
-#define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
 #define HELD(button) reinterpret_cast<int*>(reinterpret_cast<unsigned char*>(&g_HeldInputAt00671664) + i * 0x48)[button]
 
 void NameEntryInputF182::PollPlayerInput()
@@ -18,45 +17,45 @@ void NameEntryInputF182::PollPlayerInput()
     for (int i = 0; i < 2; i++) {
         if (HELD(0) == 1 || (HELD(0) % 6 == 1 && HELD(0) > 30)) {
             g_SoundBank->Play(39);
-            FIELD(short, 0x10)++;
+            field010++;
         }
         if (HELD(0) == -1 || (HELD(0) % 6 == -1 && HELD(0) < -30)) {
             g_SoundBank->Play(39);
-            FIELD(short, 0x10)--;
+            field010--;
         }
         if (HELD(1) == 1 || (HELD(1) % 6 == 1 && HELD(1) > 30)) {
             g_SoundBank->Play(39);
-            FIELD(short, 0x12)++;
+            field012++;
         }
         if (HELD(1) == -1 || (HELD(1) % 6 == -1 && HELD(1) < -30)) {
             g_SoundBank->Play(39);
-            FIELD(short, 0x12)--;
+            field012--;
         }
         if (HELD(6) == 1) {
-            FIELD(short, 0x10) = 14;
-            FIELD(short, 0x12) = 3;
+            field010 = 14;
+            field012 = 3;
         }
     }
     if (g_HeldInputAt00671664.counts[2] == 1 || g_HeldInputAt006716AC.counts[2] == 1)
-        FIELD(short, 0x16) = 1;
+        field016 = 1;
     else if (g_HeldInputAt00671664.counts[3] == 1 || g_HeldInputAt006716AC.counts[3] == 1)
-        FIELD(short, 0x16) = 2;
+        field016 = 2;
     else
-        FIELD(short, 0x16) = 0;
-    if (FIELD(short, 0x12) < 0)
-        FIELD(short, 0x12) = 3;
-    if (FIELD(short, 0x12) > 3)
-        FIELD(short, 0x12) = 0;
-    if (FIELD(short, 0x12) < 3) {
-        if (FIELD(short, 0x10) < 0)
-            FIELD(short, 0x10) = 25;
-        if (FIELD(short, 0x10) > 25)
-            FIELD(short, 0x10) = 0;
+        field016 = 0;
+    if (field012 < 0)
+        field012 = 3;
+    if (field012 > 3)
+        field012 = 0;
+    if (field012 < 3) {
+        if (field010 < 0)
+            field010 = 25;
+        if (field010 > 25)
+            field010 = 0;
     } else {
-        if (FIELD(short, 0x10) < 0)
-            FIELD(short, 0x10) = 14;
-        if (FIELD(short, 0x10) > 14)
-            FIELD(short, 0x10) = 14;
+        if (field010 < 0)
+            field010 = 14;
+        if (field010 > 14)
+            field010 = 14;
     }
 }
 
@@ -73,49 +72,48 @@ void NameEntryInputF182::PollSharedInput()
     for (int i = 0; i < 2; i++) {
         if (HELD(0) == 1 || (HELD(0) % 6 == 1 && HELD(0) > 30)) {
             g_SoundBank->Play(39);
-            FIELD(short, 0x0E)++;
-            FIELD(short, 0x14) = 1 - FIELD(short, 0x14);
+            field00E++;
+            field014 = 1 - field014;
         }
         if (HELD(0) == -1 || (HELD(0) % 6 == -1 && HELD(0) < -30)) {
             g_SoundBank->Play(39);
-            FIELD(short, 0x0E)--;
-            FIELD(short, 0x14) = 1 - FIELD(short, 0x14);
+            field00E--;
+            field014 = 1 - field014;
         }
         if (HELD(1) == 1 || (HELD(1) % 6 == 1 && HELD(1) > 30)) {
             g_SoundBank->Play(39);
-            FIELD(short, 0x10)++;
+            field010++;
         }
         if (HELD(1) == -1 || (HELD(1) % 6 == -1 && HELD(1) < -30)) {
             g_SoundBank->Play(39);
-            FIELD(short, 0x10)--;
+            field010--;
         }
         if (HELD(6) == 1) {
-            FIELD(short, 0x0E) = 14;
-            FIELD(short, 0x10) = 3;
+            field00E = 14;
+            field010 = 3;
         }
     }
     if (g_HeldInputAt00671664.counts[2] == 1 || g_HeldInputAt006716AC.counts[2] == 1)
-        FIELD(short, 0x16) = 1;
+        field016 = 1;
     else if (g_HeldInputAt00671664.counts[3] == 1 || g_HeldInputAt006716AC.counts[3] == 1)
-        FIELD(short, 0x16) = 2;
+        field016 = 2;
     else
-        FIELD(short, 0x16) = 0;
-    if (FIELD(short, 0x10) < 0)
-        FIELD(short, 0x10) = 3;
-    if (FIELD(short, 0x10) > 3)
-        FIELD(short, 0x10) = 0;
-    if (FIELD(short, 0x10) < 3) {
-        if (FIELD(short, 0x0E) < 0)
-            FIELD(short, 0x0E) = 25;
-        if (FIELD(short, 0x0E) > 25)
-            FIELD(short, 0x0E) = 0;
+        field016 = 0;
+    if (field010 < 0)
+        field010 = 3;
+    if (field010 > 3)
+        field010 = 0;
+    if (field010 < 3) {
+        if (field00E < 0)
+            field00E = 25;
+        if (field00E > 25)
+            field00E = 0;
     } else {
-        if (FIELD(short, 0x0E) < 0)
-            FIELD(short, 0x0E) = 14;
-        if (FIELD(short, 0x0E) > 14)
-            FIELD(short, 0x0E) = 14;
+        if (field00E < 0)
+            field00E = 14;
+        if (field00E > 14)
+            field00E = 14;
     }
 }
 
 #undef HELD
-#undef FIELD

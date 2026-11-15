@@ -30,23 +30,29 @@ typedef char GlyphSizeCheckF235[(sizeof(GlyphSurfaceF235)==56)?1:-1];
 extern const char g_MusicMissingTitleAt00657C32[];
 extern const char g_MusicTitleFormatAt00657C34[];
 extern const char g_MusicTitleFontAt00657C38[];
-class MusicTitleRenderF235 {public: void RenderSelectedTitle(signed char selected);};
+class MusicTitleRenderF235 {public: void RenderSelectedTitle(signed char selected);public:
+    // Observed fields; meanings not yet known.
+    unsigned char unknown000[0x014 - 0x000];
+    IDirect3DTexture8* field014;
+    unsigned char unknown018[0x3DC - 0x018];
+    signed char field3DC;
+};
 #define FIELD(type,off) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this)+(off)))
 #define RECORD(type,off) FIELD(type,(off)+selected*16)
 void MusicTitleRenderF235::RenderSelectedTitle(signed char selected)
 {
     char message[300];
-    if (selected<0 || FIELD(signed char,0x3dc)<=selected)
+    if (selected<0 || field3DC<=selected)
         strcpy(message,g_MusicMissingTitleAt00657C32);
     else
         sprintf(message,g_MusicTitleFormatAt00657C34,RECORD(const char*,0x24));
     D3DLOCKED_RECT locked;
-    if (FIELD(IDirect3DTexture8*,0x14)->LockRect(0,&locked,0,0)==D3D_OK) {
+    if (field014->LockRect(0,&locked,0,0)==D3D_OK) {
         GlyphSurfaceF235 *glyph = new GlyphSurfaceF235(0);
         glyph->ConfigureFont(g_MusicTitleFontAt00657C38,16,120,120,255);
         glyph->Rasterize(message,locked.pBits,512,32,560,0,2,4,40);
         delete glyph;
-        FIELD(IDirect3DTexture8*,0x14)->UnlockRect(0);
+        field014->UnlockRect(0);
     }
 }
 #undef RECORD

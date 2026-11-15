@@ -18,36 +18,48 @@ public:virtual void F0();virtual void F1();virtual void VAdvance();
 class OpeningSceneAdvanceF488:public SceneAdvanceBaseF488 {
 public:
  unsigned short Advance();void PollInput();
+public:
+    // Observed fields; meanings not yet known.
+    unsigned char unknown004[0x00C - 0x004];
+    unsigned int field00C;
+    unsigned int field010;
 };
 class LoadingSceneAdvanceF488:public SceneAdvanceBaseF488 {
 public:unsigned short Advance();
+public:
+    // Observed fields; meanings not yet known.
+    unsigned char unknown004[0x00C - 0x004];
+    unsigned char field00C;
 };
 class TimedSceneAdvanceF488:public SceneAdvanceBaseF488 {
 public:unsigned short Advance();void PollInput();
+public:
+    // Observed fields; meanings not yet known.
+    unsigned char unknown004[0x00C - 0x004];
+    unsigned short field00C;
 };
-#define FIELD(T,o) (*reinterpret_cast<T*>(reinterpret_cast<unsigned char*>(this)+(o)))
 unsigned short OpeningSceneAdvanceF488::Advance(){
  PollInput(); VAdvance(); NativeGraphicsBeforeAt004028F0();
  if(g_OpeningPhaseAt0067166C==1 || g_OpeningAlternateAt006716B4==1) return 0x2202;
- if(FIELD(unsigned int,0xC)>0xC15C) return 0xFF02;
- FIELD(unsigned int,0xC)=timeGetTime()-FIELD(unsigned int,0x10);
+ if(field00C>0xC15C) return 0xFF02;
+ field00C=timeGetTime()-field010;
  return 0xD;
 }
 unsigned short LoadingSceneAdvanceF488::Advance(){
  VAdvance();
- if(!FIELD(unsigned char,0xC)){
+ if(!field00C){
    LoadFightersAt004176F0();
    if(g_LoadModeAt006714B4==3 && g_LoadCharacterAt0067161E>=8)
       return 0x1108;
    LoadStageAt004183D0();
-   FIELD(unsigned char,0xC)=1;
+   field00C=1;
  }
  return 0x2000;
 }
 unsigned short TimedSceneAdvanceF488::Advance(){
  PollInput();VAdvance();NativeGraphicsBeforeAt004028F0();
- FIELD(unsigned short,0xC)++;
- if(FIELD(unsigned short,0xC)>180)return 0x220D;
+ field00C++;
+ if(field00C>180)return 0x220D;
  return 4;
 }
 extern void __cdecl JoystickTickAt00403E50();
@@ -69,4 +81,3 @@ void StaffRollSceneInputF488::PollSkipInput(){
  if(g_FirstInputAt00671638.CheckPressed(0x1C) && (g_FirstInputAt00671638.CheckPressed(0x38) || g_FirstInputAt00671638.CheckPressed(0xB8)))
    FullscreenToggleAt004018A0();
 }
-#undef FIELD

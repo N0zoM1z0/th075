@@ -67,12 +67,16 @@ class ReplayAppendF219 {
 public:
     void AppendRecord();
     void ClearQueues();
+public:
+    // Observed fields; meanings not yet known.
+    HANDLE field000;
+    unsigned char unknown004[0x116 - 0x004];
+    signed char field116;
 };
 #define FIELD(type,off) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this)+(off)))
-#define QUEUE(type,off) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this)+(off)))
 void ReplayAppendF219::AppendRecord()
 {
-    if (!FIELD(HANDLE,0)) return;
+    if (!field000) return;
     NativeAppendFrameF326 frame;
     frame.byteIndexBegin.Initialize();
     frame.byteIndexEnd.Initialize();
@@ -80,48 +84,47 @@ void ReplayAppendF219::AppendRecord()
     frame.wordIndexEnd.Initialize();
     frame.dwordHead.Initialize();
     frame.dwordIndexEnd.Initialize();
-    FIELD(DWORD,0x11c + 4*FIELD(signed char,0x116)) =
-        SetFilePointer(FIELD(HANDLE,0),0,0,FILE_CURRENT);
-    WriteFile(FIELD(HANDLE,0),reinterpret_cast<unsigned char*>(this)+0x144,1,&frame.written,0);
-    WriteFile(FIELD(HANDLE,0),reinterpret_cast<unsigned char*>(this)+0x145,1,&frame.written,0);
-    WriteFile(FIELD(HANDLE,0),reinterpret_cast<unsigned char*>(this)+0x146,1,&frame.written,0);
-    WriteFile(FIELD(HANDLE,0),reinterpret_cast<unsigned char*>(this)+0x147,1,&frame.written,0);
-    WriteFile(FIELD(HANDLE,0),reinterpret_cast<unsigned char*>(this)+0x148,1,&frame.written,0);
-    WriteFile(FIELD(HANDLE,0),reinterpret_cast<unsigned char*>(this)+0x149,1,&frame.written,0);
-    WriteFile(FIELD(HANDLE,0),reinterpret_cast<unsigned char*>(this)+0x14a,1,&frame.written,0);
-    WriteFile(FIELD(HANDLE,0),reinterpret_cast<unsigned char*>(this)+0x14c,2,&frame.written,0);
-    WriteFile(FIELD(HANDLE,0),reinterpret_cast<unsigned char*>(this)+0x14e,1,&frame.written,0);
-    WriteFile(FIELD(HANDLE,0),reinterpret_cast<unsigned char*>(this)+0x150,4,&frame.written,0);
-    frame.byteIndexBegin=QUEUE(ByteQueueF219,0x154).Begin();
-    frame.byteIndexEnd=QUEUE(ByteQueueF219,0x154).End();
-    frame.count=QUEUE(ByteQueueF219,0x154).Size();
-    WriteFile(FIELD(HANDLE,0),&frame.count,4,&frame.written,0);
+    FIELD(DWORD,0x11c + 4*field116) =
+        SetFilePointer(field000,0,0,FILE_CURRENT);
+    WriteFile(field000,reinterpret_cast<unsigned char*>(this)+0x144,1,&frame.written,0);
+    WriteFile(field000,reinterpret_cast<unsigned char*>(this)+0x145,1,&frame.written,0);
+    WriteFile(field000,reinterpret_cast<unsigned char*>(this)+0x146,1,&frame.written,0);
+    WriteFile(field000,reinterpret_cast<unsigned char*>(this)+0x147,1,&frame.written,0);
+    WriteFile(field000,reinterpret_cast<unsigned char*>(this)+0x148,1,&frame.written,0);
+    WriteFile(field000,reinterpret_cast<unsigned char*>(this)+0x149,1,&frame.written,0);
+    WriteFile(field000,reinterpret_cast<unsigned char*>(this)+0x14a,1,&frame.written,0);
+    WriteFile(field000,reinterpret_cast<unsigned char*>(this)+0x14c,2,&frame.written,0);
+    WriteFile(field000,reinterpret_cast<unsigned char*>(this)+0x14e,1,&frame.written,0);
+    WriteFile(field000,reinterpret_cast<unsigned char*>(this)+0x150,4,&frame.written,0);
+    frame.byteIndexBegin=(*reinterpret_cast<ByteQueueF219*>(reinterpret_cast<unsigned char*>(this) + 0x154)).Begin();
+    frame.byteIndexEnd=(*reinterpret_cast<ByteQueueF219*>(reinterpret_cast<unsigned char*>(this) + 0x154)).End();
+    frame.count=(*reinterpret_cast<ByteQueueF219*>(reinterpret_cast<unsigned char*>(this) + 0x154)).Size();
+    WriteFile(field000,&frame.count,4,&frame.written,0);
     for (; frame.byteIndexBegin!=frame.byteIndexEnd; frame.byteIndexBegin++) {
-        WriteFile(FIELD(HANDLE,0),&*frame.byteIndexBegin,1,&frame.written,0);
+        WriteFile(field000,&*frame.byteIndexBegin,1,&frame.written,0);
     }
-    frame.wordIndexBegin=QUEUE(WordQueueF219,0x168).Begin();
-    frame.wordIndexEnd=QUEUE(WordQueueF219,0x168).End();
-    frame.count=QUEUE(WordQueueF219,0x168).Size();
-    WriteFile(FIELD(HANDLE,0),&frame.count,4,&frame.written,0);
+    frame.wordIndexBegin=(*reinterpret_cast<WordQueueF219*>(reinterpret_cast<unsigned char*>(this) + 0x168)).Begin();
+    frame.wordIndexEnd=(*reinterpret_cast<WordQueueF219*>(reinterpret_cast<unsigned char*>(this) + 0x168)).End();
+    frame.count=(*reinterpret_cast<WordQueueF219*>(reinterpret_cast<unsigned char*>(this) + 0x168)).Size();
+    WriteFile(field000,&frame.count,4,&frame.written,0);
     for (; frame.wordIndexBegin!=frame.wordIndexEnd; frame.wordIndexBegin++) {
-        WriteFile(FIELD(HANDLE,0),&*frame.wordIndexBegin,2,&frame.written,0);
+        WriteFile(field000,&*frame.wordIndexBegin,2,&frame.written,0);
     }
-    frame.byteIndexBegin=QUEUE(ByteQueueF219,0x17c).Begin();
-    frame.byteIndexEnd=QUEUE(ByteQueueF219,0x17c).End();
-    frame.count=QUEUE(ByteQueueF219,0x17c).Size();
-    WriteFile(FIELD(HANDLE,0),&frame.count,4,&frame.written,0);
+    frame.byteIndexBegin=(*reinterpret_cast<ByteQueueF219*>(reinterpret_cast<unsigned char*>(this) + 0x17C)).Begin();
+    frame.byteIndexEnd=(*reinterpret_cast<ByteQueueF219*>(reinterpret_cast<unsigned char*>(this) + 0x17C)).End();
+    frame.count=(*reinterpret_cast<ByteQueueF219*>(reinterpret_cast<unsigned char*>(this) + 0x17C)).Size();
+    WriteFile(field000,&frame.count,4,&frame.written,0);
     for (; frame.byteIndexBegin!=frame.byteIndexEnd; frame.byteIndexBegin++) {
-        WriteFile(FIELD(HANDLE,0),&*frame.byteIndexBegin,1,&frame.written,0);
+        WriteFile(field000,&*frame.byteIndexBegin,1,&frame.written,0);
     }
-    frame.dwordHead=QUEUE(DwordQueueF219,0x190).Begin();
-    frame.dwordIndexEnd=QUEUE(DwordQueueF219,0x190).End();
-    frame.count=QUEUE(DwordQueueF219,0x190).Size();
-    WriteFile(FIELD(HANDLE,0),&frame.count,4,&frame.written,0);
+    frame.dwordHead=(*reinterpret_cast<DwordQueueF219*>(reinterpret_cast<unsigned char*>(this) + 0x190)).Begin();
+    frame.dwordIndexEnd=(*reinterpret_cast<DwordQueueF219*>(reinterpret_cast<unsigned char*>(this) + 0x190)).End();
+    frame.count=(*reinterpret_cast<DwordQueueF219*>(reinterpret_cast<unsigned char*>(this) + 0x190)).Size();
+    WriteFile(field000,&frame.count,4,&frame.written,0);
     for (; frame.dwordHead!=frame.dwordIndexEnd; frame.dwordHead++) {
-        WriteFile(FIELD(HANDLE,0),&*frame.dwordHead,4,&frame.written,0);
+        WriteFile(field000,&*frame.dwordHead,4,&frame.written,0);
     }
     ClearQueues();
-    ++FIELD(unsigned char,0x116);
+    ++reinterpret_cast<unsigned char&>(field116);
 }
-#undef QUEUE
 #undef FIELD

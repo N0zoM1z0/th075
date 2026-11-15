@@ -13,8 +13,11 @@ class ReplaySlotNumberF253 {
 public:
     void DrawNumber(float x, float y, DWORD color, int number,
                            int minDigits);
+public:
+    // Observed fields; meanings not yet known.
+    unsigned char unknown000[0x008 - 0x000];
+    void* field008;
 };
-#define FIELD(type,off) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this)+(off)))
 #define TRANSFORM(q) reinterpret_cast<SpriteTransform*>(&(q))
 void ReplaySlotNumberF253::DrawNumber(float x, float y, DWORD color,
                                         int number, int minDigits)
@@ -28,7 +31,7 @@ void ReplaySlotNumberF253::DrawNumber(float x, float y, DWORD color,
             while (minDigits > 0) {
                 SetRect(&rect, (remaining % 10) * 19, 40,
                         ((remaining % 10) * 19) + 19, 60);
-                reinterpret_cast<ReplaySlotNumberF253Drawer*>(FIELD(void*,8))->DrawQuad(2,quad,&rect,color);
+                reinterpret_cast<ReplaySlotNumberF253Drawer*>(field008)->DrawQuad(2,quad,&rect,color);
                 remaining=remaining/10;
                 TRANSFORM(quad)->TranslateQuad(-11.0f,0.0f,0.0f);
                 --minDigits;
@@ -37,7 +40,7 @@ void ReplaySlotNumberF253::DrawNumber(float x, float y, DWORD color,
             while (remaining >= 0) {
                 SetRect(&rect, (remaining % 10) * 19, 40,
                         ((remaining % 10) * 19) + 19, 60);
-                reinterpret_cast<ReplaySlotNumberF253Drawer*>(FIELD(void*,8))->DrawQuad(2,quad,&rect,color);
+                reinterpret_cast<ReplaySlotNumberF253Drawer*>(field008)->DrawQuad(2,quad,&rect,color);
                 if (remaining < 10)
                     remaining=-1;
                 else
@@ -49,4 +52,3 @@ void ReplaySlotNumberF253::DrawNumber(float x, float y, DWORD color,
     }
 }
 #undef TRANSFORM
-#undef FIELD

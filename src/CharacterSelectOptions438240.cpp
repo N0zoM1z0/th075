@@ -1,9 +1,8 @@
 #include "CharacterSelectOptions438240.hpp"
 
 #define SIDE(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<char*>(this) + i + (offset)))
-#define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<char*>(this) + (offset)))
 #define QUAD reinterpret_cast<SpriteTransform*>(&packet)
-#define DRAW FIELD(RenderDrawing5E68C0*, 8)
+#define DRAW field008
 
 void CharacterSelectOptions438240::RenderOptions() {
     RenderQuadPacket5E68C0 packet;
@@ -36,7 +35,7 @@ void CharacterSelectOptions438240::RenderOptions() {
                 SetRect(&region, 256, 832, 512, 1024);
                 packet.BuildQuad(0.0f, 0.0f, 256.0f, 192.0f);
                 QUAD->TranslateQuad(float(i * 320 + 32), 280.0f, 0.0f);
-                FIELD(RenderDrawing5E68C0*, 0x44)->DrawQuad(SIDE(signed char, 0xE0) * 2 + 1, &packet, &region, 0xFFFFFFFF);
+                field044->DrawQuad(SIDE(signed char, 0xE0) * 2 + 1, &packet, &region, 0xFFFFFFFF);
             }
         }
     }
@@ -44,5 +43,4 @@ void CharacterSelectOptions438240::RenderOptions() {
 
 #undef DRAW
 #undef QUAD
-#undef FIELD
 #undef SIDE

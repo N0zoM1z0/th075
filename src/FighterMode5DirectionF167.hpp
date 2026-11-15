@@ -18,4 +18,14 @@ public:
     virtual void UnknownSlot10();
     virtual void OnDirectionPolicy();
     void ApplyMode5Direction();
+public:
+    // Observed fields; meanings not yet known.
+    unsigned char unknown004[0x044 - 0x004];
+    float field044;
+    unsigned char unknown048[0x4DC - 0x048];
+    int field4DC;
+    int field4E0;
+    unsigned char unknown4E4[0x530 - 0x4E4];
+    signed char field530;
+    signed char field531;
 };

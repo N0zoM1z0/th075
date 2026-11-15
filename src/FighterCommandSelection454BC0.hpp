@@ -7,11 +7,22 @@ class SpriteSequenceParametersF154 {
 public:
     void SetSamplingMode(unsigned char mode);
     void SetColorMask(unsigned int mask);
+public:
+    // Observed fields; meanings not yet known.
+    unsigned char unknown000[0x010 - 0x000];
+    unsigned char field010;
+    unsigned char unknown011[0x014 - 0x011];
+    unsigned int field014;
 };
 
 class FighterCommandSelection454BC0 {
 public:
     void SetCommandSelection(int selection, unsigned char mode, unsigned int mask);
+public:
+    // Observed fields; meanings not yet known.
+    unsigned char unknown000[0x47C - 0x000];
+    int field47C;
+    SpriteSequenceParametersF154* field480;
 };
 
 #endif

@@ -18,30 +18,41 @@ class FontSpriteF317 {
 public:
     void RenderTextToTexture(const char* text,unsigned char r,unsigned char g,
            unsigned char b,unsigned char color,unsigned char depth,unsigned char restore);
+public:
+    // Observed fields; meanings not yet known.
+    IDirect3DTexture8* field000;
+    unsigned char unknown004[0x00C - 0x004];
+    unsigned char field00C;
+    unsigned char unknown00D[0x014 - 0x00D];
+    unsigned char field014;
+    unsigned char field015;
+    unsigned char unknown016[0x018 - 0x016];
+    FontGlyphRasterF317* field018;
+    float field01C;
+    float field020;
+    unsigned char field024;
 };
-#define FIELD(type,offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this)+(offset)))
 void FontSpriteF317::RenderTextToTexture(const char* text,unsigned char r,unsigned char g,
         unsigned char b,unsigned char color,unsigned char depth,unsigned char restore)
 {
     if (restore)
-        FIELD(unsigned char,0x15)=FIELD(unsigned char,0x14);
+        field015=field014;
     else
-        FIELD(unsigned char,0x15)=0;
+        field015=0;
     D3DLOCKED_RECT locked;
-    if (FIELD(IDirect3DTexture8*,0)->LockRect(0,&locked,0,0)==D3D_OK) {
+    if (field000->LockRect(0,&locked,0,0)==D3D_OK) {
         if (static_cast<signed char>(depth)>5) depth=5;
-        FIELD(unsigned char,0x24)=color;
-        FIELD(float,0x1c)=0.0f;
-        FIELD(float,0x20)=6.0f;
-        FIELD(FontGlyphRasterF317*,0x18)=new FontGlyphRasterF317(0);
-        FIELD(FontGlyphRasterF317*,0x18)->ConfigureTint(&g_FontRasterScaleAt006578B0,
-            FIELD(unsigned char,0x24),r,g,b);
-        FIELD(FontGlyphRasterF317*,0x18)->RasterizeText(text,locked.pBits,0x400,0x100,0x230,
-            static_cast<int>(FIELD(float,0x1c)),static_cast<int>(FIELD(float,0x20)),4,depth);
-        delete FIELD(FontGlyphRasterF317*,0x18);
-        FIELD(IDirect3DTexture8*,0)->UnlockRect(0);
-        FIELD(unsigned char,0x14)=depth;
+        field024=color;
+        field01C=0.0f;
+        field020=6.0f;
+        field018=new FontGlyphRasterF317(0);
+        field018->ConfigureTint(&g_FontRasterScaleAt006578B0,
+            field024,r,g,b);
+        field018->RasterizeText(text,locked.pBits,0x400,0x100,0x230,
+            static_cast<int>(field01C),static_cast<int>(field020),4,depth);
+        delete field018;
+        field000->UnlockRect(0);
+        field014=depth;
     }
-    FIELD(unsigned char,0x0c)=5;
+    field00C=5;
 }
-#undef FIELD

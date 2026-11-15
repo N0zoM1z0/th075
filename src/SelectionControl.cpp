@@ -3,7 +3,11 @@
 #include <stdlib.h>
 
 // Pointer-only interfaces. No complete scene/fighter/container layout is claimed.
-class SelectionUpdateF130 { public: void Update(signed char side); };
+class SelectionUpdateF130 { public: void Update(signed char side); public:
+    // Observed fields; meanings not yet known.
+    unsigned char unknown000[0x0E0 - 0x000];
+    signed char field0E0;
+};
 class SelectionSoundF130 { public: void Play(int); };
 class SelectionProgressF130 {
 public:
@@ -74,7 +78,7 @@ void SelectionUpdateF130::Update(signed char side) {
                 if (CHOICE == 6 && FIELD(unsigned char, 0x50 + CHOICE) == 0) --CHOICE;
             }
         }
-        PROGRESS->SetSelection(FIELD(signed char, 0xE0), g_SelectionDifficulty);
+        PROGRESS->SetSelection(field0E0, g_SelectionDifficulty);
     }
     if (HELD(0x14) == 1 || HELD(0x20) == 1 || AUTO_SELECT == 1) {
         g_SelectionSound->Play(45);
@@ -139,6 +143,39 @@ public:
     void UpdateControls();
     void ClearAuxiliaryWords();
     void ApplyMode5Direction();
+public:
+    // Observed fields; meanings not yet known.
+    unsigned char unknown004[0x060 - 0x004];
+    short field060;
+    unsigned char unknown062[0x066 - 0x062];
+    signed char field066;
+    unsigned char unknown067[0x2CD - 0x067];
+    signed char field2CD;
+    unsigned char unknown2CE[0x4C0 - 0x2CE];
+    int field4C0;
+    int field4C4;
+    int field4C8;
+    int field4CC;
+    int field4D0;
+    int field4D4;
+    unsigned char unknown4D8[0x4DC - 0x4D8];
+    int field4DC;
+    int field4E0;
+    int field4E4;
+    int field4E8;
+    int field4EC;
+    int field4F0;
+    int field4F4;
+    int field4F8;
+    int field4FC;
+    int field500;
+    int field504;
+    int field508;
+    int field50C;
+    signed char field510;
+    unsigned char field511;
+    unsigned char unknown512[0x516 - 0x512];
+    short field516;
 };
 #define PRESS reinterpret_cast<RecordedBytesF130*>(g_ControlRecordedPress)
 #define AUXILIARY reinterpret_cast<RecordedBytesF130*>(g_ControlRecordedAuxiliary)
@@ -148,139 +185,139 @@ public:
 void FighterControlsF130::UpdateControls() {
     unsigned char relativeBits = 0;
     unsigned char physicalInputBits = 0;
-    if (FIELD(signed char, 0x2CD) != 0) {
+    if (field2CD != 0) {
         ClearAuxiliaryWords();
-        FIELD(int, 0x4DC) = 0;
-        FIELD(int, 0x4E0) = 0;
-        FIELD(int, 0x4E8) = 0;
-        FIELD(int, 0x4EC) = 0;
-        FIELD(int, 0x4F0) = 0;
-        FIELD(int, 0x4F4) = 0;
-        FIELD(unsigned char, 0x511) = 0;
+        field4DC = 0;
+        field4E0 = 0;
+        field4E8 = 0;
+        field4EC = 0;
+        field4F0 = 0;
+        field4F4 = 0;
+        field511 = 0;
         if (g_FrameClockMode == 2) {
             if (PRESS->Count() > 0) { relativeBits = PRESS->Front(); PRESS->PopFront(); }
-            if (AUXILIARY->Count() > 0) { FIELD(unsigned char, 0x511) = AUXILIARY->Front(); AUXILIARY->PopFront(); }
-            if (SAMPLES->Count() > 0) { FIELD(short, 0x516) = SAMPLES->Front(); SAMPLES->PopFront(); }
-            if (relativeBits & 0x1) FIELD(int, 0x4DC) = -1;
-            if (relativeBits & 0x2) FIELD(int, 0x4DC) = 1;
-            if (relativeBits & 0x4) FIELD(int, 0x4E0) = -1;
-            if (relativeBits & 0x8) FIELD(int, 0x4E0) = 1;
-            if (relativeBits & 0x10) FIELD(int, 0x4E8) = 1;
-            if (relativeBits & 0x20) FIELD(int, 0x4EC) = 1;
-            if (relativeBits & 0x40) FIELD(int, 0x4F0) = 1;
-            if (relativeBits & 0x80) FIELD(int, 0x4F4) = 1;
+            if (AUXILIARY->Count() > 0) { field511 = AUXILIARY->Front(); AUXILIARY->PopFront(); }
+            if (SAMPLES->Count() > 0) { field516 = SAMPLES->Front(); SAMPLES->PopFront(); }
+            if (relativeBits & 0x1) field4DC = -1;
+            if (relativeBits & 0x2) field4DC = 1;
+            if (relativeBits & 0x4) field4E0 = -1;
+            if (relativeBits & 0x8) field4E0 = 1;
+            if (relativeBits & 0x10) field4E8 = 1;
+            if (relativeBits & 0x20) field4EC = 1;
+            if (relativeBits & 0x40) field4F0 = 1;
+            if (relativeBits & 0x80) field4F4 = 1;
         } else if (g_FrameClockMode == 1) {
             if (g_CombatMode == 3) UpdatePracticeDirections();
             else if (g_CombatMode == 5) ApplyMode5Direction();
             else UpdateOrdinaryDirections();
             if (g_SelectionDifficulty < 2 && rand() > (g_SelectionDifficulty * 3 + 1) * 2048) {
-                FIELD(int, 0x4E8) = 0;
-                FIELD(int, 0x4EC) = 0;
-                FIELD(int, 0x4F0) = 0;
-                FIELD(int, 0x4F4) = 0;
-                FIELD(unsigned char, 0x511) = 0;
+                field4E8 = 0;
+                field4EC = 0;
+                field4F0 = 0;
+                field4F4 = 0;
+                field511 = 0;
             }
-            if (FIELD(int, 0x4E8) != 0) FIELD(int, 0x4E8) = 1;
-            if (FIELD(int, 0x4EC) != 0) FIELD(int, 0x4EC) = 1;
-            if (FIELD(int, 0x4F0) != 0) FIELD(int, 0x4F0) = 1;
-            if (FIELD(int, 0x4F4) != 0) FIELD(int, 0x4F4) = 1;
-            relativeBits = FIELD(int, 0x4DC) < 0;
-            relativeBits |= static_cast<unsigned char>(FIELD(int, 0x4DC) > 0) << 1;
-            relativeBits |= static_cast<unsigned char>(FIELD(int, 0x4E0) < 0) << 2;
-            relativeBits |= static_cast<unsigned char>(FIELD(int, 0x4E0) > 0) << 3;
-            relativeBits |= static_cast<unsigned char>(FIELD(unsigned int, 0x4E8) > 0) << 4;
-            relativeBits |= static_cast<unsigned char>(FIELD(unsigned int, 0x4EC) > 0) << 5;
-            relativeBits |= static_cast<unsigned char>(FIELD(unsigned int, 0x4F0) > 0) << 6;
-            relativeBits |= static_cast<unsigned char>(FIELD(unsigned int, 0x4F4) > 0) << 7;
+            if (field4E8 != 0) field4E8 = 1;
+            if (field4EC != 0) field4EC = 1;
+            if (field4F0 != 0) field4F0 = 1;
+            if (field4F4 != 0) field4F4 = 1;
+            relativeBits = field4DC < 0;
+            relativeBits |= static_cast<unsigned char>(field4DC > 0) << 1;
+            relativeBits |= static_cast<unsigned char>(field4E0 < 0) << 2;
+            relativeBits |= static_cast<unsigned char>(field4E0 > 0) << 3;
+            relativeBits |= static_cast<unsigned char>(reinterpret_cast<unsigned int&>(field4E8) > 0) << 4;
+            relativeBits |= static_cast<unsigned char>(reinterpret_cast<unsigned int&>(field4EC) > 0) << 5;
+            relativeBits |= static_cast<unsigned char>(reinterpret_cast<unsigned int&>(field4F0) > 0) << 6;
+            relativeBits |= static_cast<unsigned char>(reinterpret_cast<unsigned int&>(field4F4) > 0) << 7;
             PRESS->PushBack(relativeBits);
-            AUXILIARY->PushBack(FIELD(unsigned char, 0x511));
-            SAMPLES->PushBack(FIELD(short, 0x516));
+            AUXILIARY->PushBack(field511);
+            SAMPLES->PushBack(field516);
         }
     } else {
         if (g_FrameClockMode == 2) {
             if (PRESS->Count() > 0) { physicalInputBits = PRESS->Front(); PRESS->PopFront(); }
             if (physicalInputBits & 0x1) {
-                if (FIELD(int, 0x4C0) > 0) FIELD(int, 0x4C0) = 0;
-                FIELD(int, 0x4C0) = FIELD(int, 0x4C0) - 1;
+                if (field4C0 > 0) field4C0 = 0;
+                field4C0 = field4C0 - 1;
             } else if (physicalInputBits & 0x2) {
-                if (FIELD(int, 0x4C0) < 0) FIELD(int, 0x4C0) = 0;
-                FIELD(int, 0x4C0) = FIELD(int, 0x4C0) + 1;
-            } else FIELD(int, 0x4C0) = 0;
+                if (field4C0 < 0) field4C0 = 0;
+                field4C0 = field4C0 + 1;
+            } else field4C0 = 0;
             if (physicalInputBits & 0x4) {
-                if (FIELD(int, 0x4C4) > 0) FIELD(int, 0x4C4) = 0;
-                FIELD(int, 0x4C4) = FIELD(int, 0x4C4) - 1;
+                if (field4C4 > 0) field4C4 = 0;
+                field4C4 = field4C4 - 1;
             } else if (physicalInputBits & 0x8) {
-                if (FIELD(int, 0x4C4) < 0) FIELD(int, 0x4C4) = 0;
-                FIELD(int, 0x4C4) = FIELD(int, 0x4C4) + 1;
-            } else FIELD(int, 0x4C4) = 0;
-            if (physicalInputBits & 0x10) FIELD(int, 0x4C8) = FIELD(int, 0x4C8) + 1;
-            else FIELD(int, 0x4C8) = 0;
-            if (physicalInputBits & 0x20) FIELD(int, 0x4CC) = FIELD(int, 0x4CC) + 1;
-            else FIELD(int, 0x4CC) = 0;
-            if (physicalInputBits & 0x40) FIELD(int, 0x4D0) = FIELD(int, 0x4D0) + 1;
-            else FIELD(int, 0x4D0) = 0;
-            if (physicalInputBits & 0x80) FIELD(int, 0x4D4) = FIELD(int, 0x4D4) + 1;
-            else FIELD(int, 0x4D4) = 0;
-            FIELD(int, 0x4DC) = FIELD(int, 0x4C0);
-            FIELD(int, 0x4E0) = FIELD(int, 0x4C4);
-            FIELD(int, 0x4E8) = FIELD(int, 0x4C8);
-            FIELD(int, 0x4EC) = FIELD(int, 0x4CC);
-            FIELD(int, 0x4F0) = FIELD(int, 0x4D0);
-            FIELD(int, 0x4F4) = FIELD(int, 0x4D4);
-            relativeBits = FIELD(signed char, 0x66) * FIELD(int, 0x4DC) < 0;
-            relativeBits |= static_cast<unsigned char>(FIELD(signed char, 0x66) * FIELD(int, 0x4DC) > 0) << 1;
-            relativeBits |= static_cast<unsigned char>(FIELD(int, 0x4E0) < 0) << 2;
-            relativeBits |= static_cast<unsigned char>(FIELD(int, 0x4E0) > 0) << 3;
-            relativeBits |= static_cast<unsigned char>(FIELD(int, 0x4E8) == 1) << 4;
-            relativeBits |= static_cast<unsigned char>(FIELD(int, 0x4EC) == 1) << 5;
-            relativeBits |= static_cast<unsigned char>(FIELD(int, 0x4F0) == 1) << 6;
-            relativeBits |= static_cast<unsigned char>(FIELD(int, 0x4F4) == 1) << 7;
+                if (field4C4 < 0) field4C4 = 0;
+                field4C4 = field4C4 + 1;
+            } else field4C4 = 0;
+            if (physicalInputBits & 0x10) field4C8 = field4C8 + 1;
+            else field4C8 = 0;
+            if (physicalInputBits & 0x20) field4CC = field4CC + 1;
+            else field4CC = 0;
+            if (physicalInputBits & 0x40) field4D0 = field4D0 + 1;
+            else field4D0 = 0;
+            if (physicalInputBits & 0x80) field4D4 = field4D4 + 1;
+            else field4D4 = 0;
+            field4DC = field4C0;
+            field4E0 = field4C4;
+            field4E8 = field4C8;
+            field4EC = field4CC;
+            field4F0 = field4D0;
+            field4F4 = field4D4;
+            relativeBits = field066 * field4DC < 0;
+            relativeBits |= static_cast<unsigned char>(field066 * field4DC > 0) << 1;
+            relativeBits |= static_cast<unsigned char>(field4E0 < 0) << 2;
+            relativeBits |= static_cast<unsigned char>(field4E0 > 0) << 3;
+            relativeBits |= static_cast<unsigned char>(field4E8 == 1) << 4;
+            relativeBits |= static_cast<unsigned char>(field4EC == 1) << 5;
+            relativeBits |= static_cast<unsigned char>(field4F0 == 1) << 6;
+            relativeBits |= static_cast<unsigned char>(field4F4 == 1) << 7;
         } else {
             INPUT_MAPPING->UpdateHeldCounts();
-            FIELD(int, 0x4DC) = FIELD(int, 0x4C0);
-            FIELD(int, 0x4E0) = FIELD(int, 0x4C4);
-            FIELD(int, 0x4E8) = FIELD(int, 0x4C8);
-            FIELD(int, 0x4EC) = FIELD(int, 0x4CC);
-            FIELD(int, 0x4F0) = FIELD(int, 0x4D0);
-            FIELD(int, 0x4F4) = FIELD(int, 0x4D4);
-            relativeBits = FIELD(signed char, 0x66) * FIELD(int, 0x4DC) < 0;
-            relativeBits |= static_cast<unsigned char>(FIELD(signed char, 0x66) * FIELD(int, 0x4DC) > 0) << 1;
-            relativeBits |= static_cast<unsigned char>(FIELD(int, 0x4E0) < 0) << 2;
-            relativeBits |= static_cast<unsigned char>(FIELD(int, 0x4E0) > 0) << 3;
-            physicalInputBits = FIELD(int, 0x4DC) < 0;
-            physicalInputBits |= static_cast<unsigned char>(FIELD(int, 0x4DC) > 0) << 1;
-            physicalInputBits |= static_cast<unsigned char>(FIELD(int, 0x4E0) < 0) << 2;
-            physicalInputBits |= static_cast<unsigned char>(FIELD(int, 0x4E0) > 0) << 3;
-            relativeBits |= static_cast<unsigned char>(FIELD(int, 0x4E8) == 1) << 4;
-            relativeBits |= static_cast<unsigned char>(FIELD(int, 0x4EC) == 1) << 5;
-            relativeBits |= static_cast<unsigned char>(FIELD(int, 0x4F0) == 1) << 6;
-            relativeBits |= static_cast<unsigned char>(FIELD(int, 0x4F4) == 1) << 7;
-            physicalInputBits |= static_cast<unsigned char>(FIELD(unsigned int, 0x4E8) > 0) << 4;
-            physicalInputBits |= static_cast<unsigned char>(FIELD(unsigned int, 0x4EC) > 0) << 5;
-            physicalInputBits |= static_cast<unsigned char>(FIELD(unsigned int, 0x4F0) > 0) << 6;
-            physicalInputBits |= static_cast<unsigned char>(FIELD(unsigned int, 0x4F4) > 0) << 7;
+            field4DC = field4C0;
+            field4E0 = field4C4;
+            field4E8 = field4C8;
+            field4EC = field4CC;
+            field4F0 = field4D0;
+            field4F4 = field4D4;
+            relativeBits = field066 * field4DC < 0;
+            relativeBits |= static_cast<unsigned char>(field066 * field4DC > 0) << 1;
+            relativeBits |= static_cast<unsigned char>(field4E0 < 0) << 2;
+            relativeBits |= static_cast<unsigned char>(field4E0 > 0) << 3;
+            physicalInputBits = field4DC < 0;
+            physicalInputBits |= static_cast<unsigned char>(field4DC > 0) << 1;
+            physicalInputBits |= static_cast<unsigned char>(field4E0 < 0) << 2;
+            physicalInputBits |= static_cast<unsigned char>(field4E0 > 0) << 3;
+            relativeBits |= static_cast<unsigned char>(field4E8 == 1) << 4;
+            relativeBits |= static_cast<unsigned char>(field4EC == 1) << 5;
+            relativeBits |= static_cast<unsigned char>(field4F0 == 1) << 6;
+            relativeBits |= static_cast<unsigned char>(field4F4 == 1) << 7;
+            physicalInputBits |= static_cast<unsigned char>(reinterpret_cast<unsigned int&>(field4E8) > 0) << 4;
+            physicalInputBits |= static_cast<unsigned char>(reinterpret_cast<unsigned int&>(field4EC) > 0) << 5;
+            physicalInputBits |= static_cast<unsigned char>(reinterpret_cast<unsigned int&>(field4F0) > 0) << 6;
+            physicalInputBits |= static_cast<unsigned char>(reinterpret_cast<unsigned int&>(field4F4) > 0) << 7;
             if (g_FrameClockMode == 1) PRESS->PushBack(physicalInputBits);
         }
-        if (FIELD(short, 0x60) >= 300 && (FIELD(int, 0x4E8) == 1 || FIELD(int, 0x4EC) == 1 || FIELD(int, 0x4F0) == 1 || FIELD(int, 0x4F4) == 1)) {
-            FIELD(signed char, 0x510) = 10;
-            FIELD(int, 0x4F8) = FIELD(int, 0x4DC);
-            FIELD(int, 0x4FC) = FIELD(int, 0x4E0);
-            FIELD(int, 0x500) = FIELD(int, 0x4E8) == 1;
-            FIELD(int, 0x504) = FIELD(int, 0x4EC) == 1;
-            FIELD(int, 0x508) = FIELD(int, 0x4F0) == 1;
-            FIELD(int, 0x50C) = FIELD(int, 0x4F4) == 1;
+        if (field060 >= 300 && (field4E8 == 1 || field4EC == 1 || field4F0 == 1 || field4F4 == 1)) {
+            field510 = 10;
+            field4F8 = field4DC;
+            field4FC = field4E0;
+            field500 = field4E8 == 1;
+            field504 = field4EC == 1;
+            field508 = field4F0 == 1;
+            field50C = field4F4 == 1;
         }
-        if (FIELD(short, 0x60) < 300 || FIELD(signed char, 0x510) <= 0) {
+        if (field060 < 300 || field510 <= 0) {
             ClearAuxiliaryWords();
-            FIELD(signed char, 0x510) = 0;
+            field510 = 0;
         }
-        if (FIELD(signed char, 0x510) > 0) --FIELD(signed char, 0x510);
+        if (field510 > 0) --field510;
         HISTORY->PushBack(relativeBits);
         HISTORY->PopFront();
         FinishInput();
     }
-    if (FIELD(signed char, 0x2CD) == 0) FIELD(int, 0x4E4) = FIELD(int, 0x4E8);
-    else FIELD(int, 0x4E4) = 0;
+    if (field2CD == 0) field4E4 = field4E8;
+    else field4E4 = 0;
 }
 #undef INPUT_MAPPING
 #undef HISTORY

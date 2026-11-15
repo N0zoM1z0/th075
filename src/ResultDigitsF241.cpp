@@ -13,8 +13,11 @@ class ResultDigitsF241 {
 public:
     void DrawDecimalDigits(float x, float y, DWORD color, int number,
                            signed char style, int minDigits);
+public:
+    // Observed fields; meanings not yet known.
+    unsigned char unknown000[0x008 - 0x000];
+    void* field008;
 };
-#define FIELD(type,off) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this)+(off)))
 #define TRANSFORM(q) reinterpret_cast<SpriteTransform*>(&(q))
 void ResultDigitsF241::DrawDecimalDigits(float x, float y, DWORD color,
                                         int number, signed char style, int minDigits)
@@ -28,7 +31,7 @@ void ResultDigitsF241::DrawDecimalDigits(float x, float y, DWORD color,
             while (minDigits > 0) {
                 SetRect(&rect, (remaining % 10) << 4, style * 20 + 0x80,
                         ((remaining % 10) << 4) + 0x10, style * 20 + 0x94);
-                reinterpret_cast<ResultDigitDrawerF241*>(FIELD(void*,8))->DrawQuad(2,quad,&rect,color);
+                reinterpret_cast<ResultDigitDrawerF241*>(field008)->DrawQuad(2,quad,&rect,color);
                 remaining=remaining/10;
                 TRANSFORM(quad)->TranslateQuad(-16.0f,0.0f,0.0f);
                 --minDigits;
@@ -37,7 +40,7 @@ void ResultDigitsF241::DrawDecimalDigits(float x, float y, DWORD color,
             while (remaining >= 0) {
                 SetRect(&rect, (remaining % 10) << 4, style * 20 + 0x80,
                         ((remaining % 10) << 4) + 0x10, style * 20 + 0x94);
-                reinterpret_cast<ResultDigitDrawerF241*>(FIELD(void*,8))->DrawQuad(2,quad,&rect,color);
+                reinterpret_cast<ResultDigitDrawerF241*>(field008)->DrawQuad(2,quad,&rect,color);
                 if (remaining < 10)
                     remaining=-1;
                 else
@@ -49,4 +52,3 @@ void ResultDigitsF241::DrawDecimalDigits(float x, float y, DWORD color,
     }
 }
 #undef TRANSFORM
-#undef FIELD

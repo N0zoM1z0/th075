@@ -33,6 +33,9 @@ public:
     void Spawn(short effect, float x, float y, signed char facing, signed char layer,
                unsigned char flagA, unsigned char flagB, const float* parameters,
                const void* transform, unsigned char mode);
+public:
+    // Observed fields; meanings not yet known.
+    EffectFactoryF136* field000;
 };
 
 #endif

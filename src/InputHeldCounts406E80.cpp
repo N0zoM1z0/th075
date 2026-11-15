@@ -4,9 +4,9 @@
 namespace Input { extern std::vector<DIJOYSTATE> g_JoystickStates; }
 
 #define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<char*>(this) + (offset)))
-#define DEVICE FIELD(signed char, 4)
-#define X FIELD(int, 0x2C)
-#define Y FIELD(int, 0x30)
+#define DEVICE field004
+#define X field02C
+#define Y field030
 #define BUTTON(type, base, index) FIELD(type, (base) + (index) * 4)
 
 void InputMapping4388D0::UpdateHeldCounts() {
@@ -40,22 +40,22 @@ void InputMapping4388D0::UpdateHeldCounts() {
                 BUTTON(int, 0x34, joystickButton) = 0;
         }
     } else {
-        if (Input::g_KeyboardState[FIELD(int, 8)] & 0x80) {
+        if (Input::g_KeyboardState[field008] & 0x80) {
             if (X > 0)
                 X = 0;
             X = X - 1;
-        } else if (Input::g_KeyboardState[FIELD(int, 12)] & 0x80) {
+        } else if (Input::g_KeyboardState[field00C] & 0x80) {
             if (X < 0)
                 X = 0;
             X = X + 1;
         } else {
             X = 0;
         }
-        if (Input::g_KeyboardState[FIELD(int, 16)] & 0x80) {
+        if (Input::g_KeyboardState[field010] & 0x80) {
             if (Y > 0)
                 Y = 0;
             Y = Y - 1;
-        } else if (Input::g_KeyboardState[FIELD(int, 20)] & 0x80) {
+        } else if (Input::g_KeyboardState[field014] & 0x80) {
             if (Y < 0)
                 Y = 0;
             Y = Y + 1;

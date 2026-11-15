@@ -13,9 +13,13 @@ class MusicArchiveF215 { public: HANDLE OpenEntry(const char* filename, DWORD* b
 namespace ArchiveLookupF215 { MusicArchiveF215* __cdecl FindDirectory(const char* directory); }
 extern const char g_MusicCatalogDirectoryAt00657C78[];
 extern const char g_MusicCatalogFilenameAt00657C80[];
-class MusicCatalogF215 {public: void LoadCatalog();};
+class MusicCatalogF215 {public: void LoadCatalog();public:
+    // Observed fields; meanings not yet known.
+    unsigned char unknown000[0x3DC - 0x000];
+    signed char field3DC;
+};
 #define FIELD(type,off) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this)+(off)))
-#define ENTRY(type,off) FIELD(type, 16*FIELD(signed char,0x3dc) + (off))
+#define ENTRY(type,off) FIELD(type, 16*field3DC + (off))
 void MusicCatalogF215::LoadCatalog()
 {
     HANDLE file;
@@ -56,7 +60,7 @@ void MusicCatalogF215::LoadCatalog()
         key+=delta;
         delta+='=';
     }
-    FIELD(signed char,0x3dc)=0;
+    field3DC=0;
     cursor=0;
     column=0;
     while (cursor<fileBytes) {
@@ -111,7 +115,7 @@ void MusicCatalogF215::LoadCatalog()
             }
             memcpy(ENTRY(char*,0x28),buffer+begin,last-begin);
             ENTRY(char*,0x28)[last-begin]=0;
-            ++FIELD(signed char,0x3dc);
+            ++field3DC;
             break;
         }
         if (buffer[cursor]=='\n') column=0;
