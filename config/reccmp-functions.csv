@@ -151,7 +151,7 @@ YuyukoFighter::AdvanceSequence,0x005882B0,function
 YukariFighter::AdvanceSequence,0x005AC250,function
 SuikaFighter::AdvanceSequence,0x005D4890,function
 MeilingFighter::AdvanceSequence,0x005F3D60,function
-CharacterAuxObject::AdvanceActionAt005FAE30,0x005FAE30,function
+CharacterAuxObject::Advance,0x005FAE30,function
 MeilingFighter::AdvanceAuxiliary,0x005E5500,function
 MeilingFighter::ConfigureStage,0x005E59C0,function
 MeilingFighter::RenderStage,0x005E68C0,function

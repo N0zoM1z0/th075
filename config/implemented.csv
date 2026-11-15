@@ -150,7 +150,7 @@ YuyukoFighter::AdvanceSequence
 YukariFighter::AdvanceSequence
 SuikaFighter::AdvanceSequence
 MeilingFighter::AdvanceSequence
-CharacterAuxObject::AdvanceActionAt005FAE30
+CharacterAuxObject::Advance
 MeilingFighter::AdvanceAuxiliary
 MeilingFighter::ConfigureStage
 MeilingFighter::RenderStage

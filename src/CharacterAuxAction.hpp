@@ -1,10 +1,10 @@
 #ifndef TH075_CHARACTER_AUX_ACTION_HPP
 #define TH075_CHARACTER_AUX_ACTION_HPP
-// Declaration-only receiver view; never construct or embed it.
-// Original identity, declarations and complete layout remain unknown.
-class CharacterAuxObject {
+#include "Actor.hpp"
+// Auxiliary effect object; its vtable (0065A0E0) puts Advance at slot 1.
+class CharacterAuxObject : public Actor {
 public:
-    void AdvanceActionAt005FAE30();
+    void Advance();
     short AdvanceNestedFrame();
     void ResetSecondaryCounters(short frame);
     void SetPolarVelocity(float angle, float speed);

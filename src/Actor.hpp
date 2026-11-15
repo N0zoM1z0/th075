@@ -69,8 +69,21 @@ public:
     unsigned char unknown067[0x070 - 0x067];
     short field070;                     // +0x070
     short field072;                     // +0x072
-    FighterFrameInfo* frameInfo;        // +0x074 current animation frame record
-    FighterSequenceInfo* sequenceInfo;  // +0x078 current action sequence record
+    // +0x074..0x07B is the animation binding that slot 0 maintains: fighters
+    // and character objects keep two record pointers here, auxiliary
+    // effects (CharacterAuxObject) keep four counters.
+    union {
+        struct {
+            FighterFrameInfo* frameInfo;        // +0x074 current animation frame record
+            FighterSequenceInfo* sequenceInfo;  // +0x078 current action sequence record
+        };
+        struct {
+            short field074;
+            short field076;
+            short field078;
+            short field07A;
+        };
+    };
     int field07C;                       // +0x07C
     short field080;                     // +0x080
     short field082;                     // +0x082 nonzero: skip this frame and count down
