@@ -40,16 +40,17 @@ Done so far:
 
 Next steps:
 
-1. Remaining raw offsets in `src/` (about 1,200 sites in 200 files). Most
-   belong to classes that still need a layout: the battle manager (methods
-   spread over `BattleCombat`, `BattleState`, `BattleCollisionDispatch`, …,
-   all one object holding the two fighters at +0x44/+0x48), the battle
-   scene and HUD shells (ten classes repeat `field044`/`field048`), and the
-   result, title and menu scenes. Build each layout from all of its methods'
-   accesses and its constructor. The battle scene's methods run from
-   0043AD10 to 00445A00 (vtable 00658334: slot 1 `BattleFrame::UpdateFrame`,
-   slot 2 `BattleRender43D9D0::RenderFrame`), interleaved with a few helpers
-   of the progress records and the combo counter.
+1. Remaining raw offsets in `src/` (about 800 sites in 190 files). Most
+   belong to scenes that still need a class. `BattleScene`, `ResultScene`
+   and the shared `SceneBase` (`src/SceneBase.hpp`) show the pattern: every
+   scene vtable has three slots (deleting destructor, `Update`, `Render`),
+   the constructor and destructor name the scene, and the methods between
+   them in address order are mostly the scene's. Thirteen scenes are left
+   (title, options, character select, replay browser, name entry, music
+   room, opening, logo, loading, staff roll, battle end, result list, and
+   the result selection). Watch for stale ledger labels: the character
+   select scene's `Render` is listed as `BattleScene::RenderBackground`
+   though its source is `RenderBackgroundF179`.
 2. Rename the research parent classes to their character classes
    (`FighterSwitchF598_Boss0045DD70::Advance` is `ReimuFighter::Advance`).
 3. The giants' register debt: find the construct behind the anomalous
