@@ -1,33 +1,23 @@
-#include "FighterActionTimerPairF1027.hpp"
-// Native-observed FighterBase ctor and derived vtable installation; only
-// explicit independently observed +0x4C..0x98 native zero fields here.
-class NativeFighterBaseF300 {
-public:
- NativeFighterBaseF300();
- virtual void Slot0();
-};
-class BattleObjectDefaultsF300 : public NativeFighterBaseF300 {
-public:
- BattleObjectDefaultsF300();
- virtual void Slot0();
-};
-#define FIELD(type,offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this)+(offset)))
-BattleObjectDefaultsF300::BattleObjectDefaultsF300()
+#include "CharacterObject.hpp"
+
+// The base object constructor (0045B760): the Actor constructor runs first,
+// then the object vtable (00659064) is installed and these fields cleared.
+// Float members are cleared with integer stores, as the original does.
+CharacterObject::CharacterObject()
 {
- F1027_TIMERS(this).wordAt80=0;
- FIELD(unsigned int,0x7c)=0;
- F1027_TIMERS(this).timerAt82=0;
- FIELD(unsigned int,0x8c)=0;
- FIELD(unsigned int,0x90)=0;
- FIELD(unsigned int,0x94)=0;
- FIELD(unsigned int,0x98)=0;
- FIELD(unsigned int,0x50)=0;
- FIELD(unsigned int,0x54)=0;
- FIELD(unsigned int,0x58)=0;
- FIELD(unsigned int,0x5c)=0;
- FIELD(unsigned int,0x4c)=0;
- FIELD(short,0x84)=0;
- FIELD(short,0x86)=0;
- FIELD(short,0x88)=0;
+    field080 = 0;
+    field07C = 0;
+    field082 = 0;
+    reinterpret_cast<unsigned int&>(field08C) = 0;
+    reinterpret_cast<unsigned int&>(field090) = 0;
+    field094 = 0;
+    field098 = 0;
+    reinterpret_cast<unsigned int&>(velocityX) = 0;
+    reinterpret_cast<unsigned int&>(velocityY) = 0;
+    field058 = 0;
+    reinterpret_cast<unsigned int&>(field05C) = 0;
+    reinterpret_cast<unsigned int&>(field04C) = 0;
+    field084 = 0;
+    field086 = 0;
+    field088 = 0;
 }
-#undef FIELD

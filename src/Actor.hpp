@@ -80,6 +80,8 @@ struct FighterSequenceInfo {
 // is unknown, so these classes are only reached through the game's pointers.
 class Actor {
 public:
+    Actor();                                                        // 00458650
+
     // Helpers shared by every actor (src/Actor.cpp).
     short AdvanceNestedFrame();                                     // 0040FA30
     void ResetPrimaryCounters(short state);                         // 0040FAC0
@@ -130,7 +132,9 @@ public:
     short animationStage;               // +0x062
     short animationFrame;               // +0x064
     signed char facing;                 // +0x066 +1 facing right, -1 facing left
-    unsigned char unknown067[0x06C - 0x067];
+    unsigned char field067;             // +0x067
+    unsigned char field068;             // +0x068
+    unsigned char unknown069[0x06C - 0x069];
     float field06C;                     // +0x06C
     short field070;                     // +0x070
     short field072;                     // +0x072

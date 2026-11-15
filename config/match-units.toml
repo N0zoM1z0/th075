@@ -42987,13 +42987,13 @@ source = "src/FighterLoadResourcesF282.cpp"
 object = "build/matching/FighterLoadResourcesF282.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
 functions = ["Fighter::LoadResources"]
-symbol = "?LoadResources@FighterLoadF282@@QAEXXZ"
+symbol = "?LoadResources@Fighter@@QAEXXZ"
 target_address = 0x00456B60
 size = 1186
 [[units.fighter-state-load-resources-00456b60.relocations]]
 offset = 6
 type = "DIR32"
-symbol = "__ehhandler$?LoadResources@FighterLoadF282@@QAEXXZ"
+symbol = "__ehhandler$?LoadResources@Fighter@@QAEXXZ"
 target = 0x00656155
 [[units.fighter-state-load-resources-00456b60.relocations]]
 offset = 12
@@ -43073,7 +43073,7 @@ target = 0x0041CC50
 [[units.fighter-state-load-resources-00456b60.relocations]]
 offset = 199
 type = "REL32"
-symbol = "?LoadPattern@FighterLoadF282@@QAEXXZ"
+symbol = "?LoadPattern@Fighter@@QAEXXZ"
 target = 0x00457660
 [[units.fighter-state-load-resources-00456b60.relocations]]
 offset = 204
@@ -43293,7 +43293,7 @@ target = 0x00410F30
 [[units.fighter-state-load-resources-00456b60.relocations]]
 offset = 1143
 type = "REL32"
-symbol = "?SetNoticeMode@FighterLoadF282@@QAEXH@Z"
+symbol = "?SetNoticeMode@Fighter@@QAEXE@Z"
 target = 0x0045CD50
 [[units.fighter-state-load-resources-00456b60.relocations]]
 offset = 1170
@@ -44783,19 +44783,19 @@ target = 0x00000000
 source = "src/BattleDefaultsF300.cpp"
 object = "build/matching/BattleDefaultsF300.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["BattleObject::InitializeDefaultsAt0045B760"]
-symbol = "??0BattleObjectDefaultsF300@@QAE@XZ"
+functions = ["CharacterObject::CharacterObject"]
+symbol = "??0CharacterObject@@QAE@XZ"
 target_address = 0x0045B760
 size = 203
 [[units.battle-object-initialize-defaults-0045b760.relocations]]
 offset = 11
 type = "REL32"
-symbol = "??0NativeFighterBaseF300@@QAE@XZ"
+symbol = "??0Actor@@QAE@XZ"
 target = 0x00458650
 [[units.battle-object-initialize-defaults-0045b760.relocations]]
 offset = 20
 type = "DIR32"
-symbol = "??_7BattleObjectDefaultsF300@@6B@"
+symbol = "??_7CharacterObject@@6B@"
 target = 0x00659064
 
 [units.fighter-state-advance-notice-levels-0045d710]

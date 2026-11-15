@@ -1,7 +1,6 @@
 #include "BattleScene.hpp"
 #include "BattleFrameDependencies.hpp"
 #include "BattleStatusFloatPairF1096.hpp"
-#define FIELD(type, object, offset) (*reinterpret_cast<type *>(reinterpret_cast<unsigned char *>(object) + offset))
 #define COLLISION reinterpret_cast<BattleScene *>(this)
 void BattleScene::ResolveBodySeparation()
 {
@@ -79,17 +78,15 @@ void BattleScene::ResolveBodySeparation()
 
 #include "BattleStateMachine.hpp"
 #define SLOT(type, offset) reinterpret_cast<type *>(reinterpret_cast<unsigned char *>(this) + offset)[i]
-#define INDEXED_PLAYER SLOT(Fighter *, 0x44)
-#define TIMER_FIELD(offset) FIELD(short, INDEXED_PLAYER, offset)
 void BattleScene::UpdateTransition()
 {
     int i;
     if (field09C > 0.33f && (fighters[0]->field3A0 > 0 || fighters[1]->field3A0 > 0))
         field09C -= 0.02f;
     for (i = 0; i < 2; ++i) {
-        if (TIMER_FIELD(0x3A0) > 0) {
-            if (TIMER_FIELD(0x3A2) < 80) {
-                if (TIMER_FIELD(0x3A2) == 0) {
+        if ((fighters[i]->field3A0) > 0) {
+            if ((fighters[i]->field3A2) < 80) {
+                if ((fighters[i]->field3A2) == 0) {
                     SLOT(unsigned char, 0xDC) = 15;
                     SLOT(unsigned char, 0xDE) = 5;
                     SLOT(unsigned char, 0xE0) = 5;
@@ -97,22 +94,22 @@ void BattleScene::UpdateTransition()
                     F1096_STATUS_FLOAT(this, 0x104, i) = 12.0f;
                     F1096_STATUS_FLOAT(this, 0xE4, i) = 7.0f;
                     F1096_STATUS_FLOAT(this, 0xFC, i) = 20.0f;
-                    SLOT(int, 0xEC) = TIMER_FIELD(0x3A0);
+                    SLOT(int, 0xEC) = (fighters[i]->field3A0);
                 }
-                if (F1096_STATUS_FLOAT(this, 0xFC, i) > 0.0f && TIMER_FIELD(0x3A2) >= 40) {
+                if (F1096_STATUS_FLOAT(this, 0xFC, i) > 0.0f && (fighters[i]->field3A2) >= 40) {
                     F1096_STATUS_FLOAT(this, 0xF4, i) -= F1096_STATUS_FLOAT(this, 0xFC, i);
                     F1096_STATUS_FLOAT(this, 0xFC, i) -= 0.75f;
                 }
                 if (SLOT(unsigned char, 0xDC) < 255) SLOT(unsigned char, 0xDC) += 12;
                 if (SLOT(unsigned char, 0xDE) < 255) SLOT(unsigned char, 0xDE) += 25;
-                if (SLOT(unsigned char, 0xE0) < 255 && TIMER_FIELD(0x3A2) >= 20) SLOT(unsigned char, 0xE0) += 25;
-                if (F1096_STATUS_FLOAT(this, 0x104, i) > 0.0f && TIMER_FIELD(0x3A2) >= 30) F1096_STATUS_FLOAT(this, 0x104, i) -= 1.2f;
+                if (SLOT(unsigned char, 0xE0) < 255 && (fighters[i]->field3A2) >= 20) SLOT(unsigned char, 0xE0) += 25;
+                if (F1096_STATUS_FLOAT(this, 0x104, i) > 0.0f && (fighters[i]->field3A2) >= 30) F1096_STATUS_FLOAT(this, 0x104, i) -= 1.2f;
                 if (F1096_STATUS_FLOAT(this, 0xE4, i) > 1.0f) {
                     F1096_STATUS_FLOAT(this, 0xE4, i) -= 0.2f;
                     if (F1096_STATUS_FLOAT(this, 0xE4, i) < 1.0f) F1096_STATUS_FLOAT(this, 0xE4, i) = 1.0f;
                 }
             }
-            ++TIMER_FIELD(0x3A2);
+            ++(fighters[i]->field3A2);
         }
     }
 }

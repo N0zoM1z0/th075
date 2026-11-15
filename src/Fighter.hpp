@@ -48,6 +48,8 @@ public:
     bool UpdateFacingFromOpponent();                                // 004550B0
     short CalculateDamage(Actor* attack);                           // 00455640 damage this fighter's attack deals
     void SetNoticeMode(unsigned char mode);                         // 0045CD50
+    void LoadResources();                                           // 00456B60
+    void LoadPattern();                                             // 00457660
     void InitializeNotice(short notice);                            // 0045CDC0
     unsigned char ProcessAction();                                  // 0045CE10
     void ConfigureNoticeText(unsigned char enabled);                // 0045D650
@@ -109,7 +111,8 @@ public:
     char tag[0x104];                    // +0x1C8 character tag, set by each constructor
     signed char field2CC;               // +0x2CC
     signed char field2CD;               // +0x2CD
-    unsigned char unknown2CE[0x2D0 - 0x2CE];
+    signed char field2CE;               // +0x2CE LoadResources loads field2CE + 1 texture pages
+    unsigned char unknown2CF[0x2D0 - 0x2CF];
     int score;                          // +0x2D0 raised by 100-500 per hit
     unsigned char unknown2D4[0x2D8 - 0x2D4];
     float field2D8;                     // +0x2D8
@@ -154,7 +157,7 @@ public:
     signed char field39E;               // +0x39E
     unsigned char unknown39F[0x3A0 - 0x39F];
     short field3A0;                     // +0x3A0
-    unsigned char unknown3A2[0x3A4 - 0x3A2];
+    short field3A2;                     // +0x3A2
     unsigned int field3A4;              // +0x3A4
     unsigned int field3A8;              // +0x3A8
     signed char field3AC;               // +0x3AC
@@ -230,7 +233,8 @@ public:
     signed char quoteLineCount;         // +0x53A lines in the win quote
     char quoteLines[2][200];            // +0x53B win quote text, one line each
     signed char quoteBadges[2];         // +0x6CB notice badge shown with each line
-    unsigned char unknown6CD[0x6E4 - 0x6CD];
+    unsigned char unknown6CD[0x6D0 - 0x6CD];
+    unsigned char sounds[0x6E4 - 0x6D0]; // +0x6D0 the fighter's sound bank
     signed char sequencePhase;          // +0x6E4
     unsigned char unknown6E5[0x6E6 - 0x6E5];
     signed char noticeState;            // +0x6E6

@@ -3,6 +3,18 @@
 #include "Fighter.hpp"
 class MarisaGeneratedF223;
 
+// One vertex of Marisa's projectile chain. The reset clears the position
+// with integer stores, the renderer reads it as floats.
+struct MarisaChainVertex {
+    union { float x; unsigned int rawX; };
+    union { float y; unsigned int rawY; };
+    union { float z; unsigned int rawZ; };
+    float alpha;
+    unsigned int flags;
+    float phase;
+    float tail;
+};
+
 // Marisa's fighter: vtable Marisa ctor F223 at 0x006592B8.
 // Slot overrides use the Fighter slot names; the rest are helpers.
 class MarisaFighter : public Fighter {
@@ -61,7 +73,14 @@ public:
     unsigned char fieldFFE;
     unsigned char fieldFFF;
     unsigned char unknown1000[0x1006 - 0x1000];
-    unsigned char field1006;
+    unsigned char field1006;            // nonzero while the chain is drawn
+    unsigned char unknown1007[0x1008 - 0x1007];
+    float field1008;
+    float field100C;
+    float field1010;
+    signed char field1014;
+    unsigned char unknown1015[0x1018 - 0x1015];
+    MarisaChainVertex chain[74];        // +0x1018 37 segments, two vertices each
 };
 
 #endif

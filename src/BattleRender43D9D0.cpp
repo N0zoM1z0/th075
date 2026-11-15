@@ -2,8 +2,6 @@
 #include "FighterFadeBorrowedF986.hpp"
 #include "BattleRender43D9D0.hpp"
 
-#define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
-#define ACTOR_FIELD(type, actor, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(FIELD(void*, actor)) + (offset)))
 #define STYLE reinterpret_cast<RenderStyle43D9D0*>(textures)
 #define AUX reinterpret_cast<RenderAux43D9D0*>(&g_CombatEffects)
 
@@ -17,10 +15,10 @@ void BattleScene::Render() {
             if (field09C > 1.0f)
                 field09C = 1.0f;
         }
-        if (ACTOR_FIELD(short, 0x48, 0x60) >= 300) {
-            if (ACTOR_FIELD(short, 0x44, 0x60) < 300)
+        if ((fighters[1]->action) >= 300) {
+            if ((fighters[0]->action) < 300)
                 g_RenderOrderAt0068C860 = 1;
-        } else if (ACTOR_FIELD(short, 0x44, 0x60) >= 300) {
+        } else if ((fighters[0]->action) >= 300) {
             g_RenderOrderAt0068C860 = 0;
         }
     }
@@ -93,18 +91,18 @@ void BattleScene::Render() {
         if (field018 == 5) {
             DrawSelectedNotice();
         } else if (field018 == 7) {
-            if (ACTOR_FIELD(signed char, 0x44, 0x6E8) == 0) {
-                if (ACTOR_FIELD(signed char, 0x44, 0x6E7) >= 0)
+            if ((reinterpret_cast<signed char&>(fighters[0]->noticeFirst)) == 0) {
+                if ((fighters[0]->noticeBadge) >= 0)
                     reinterpret_cast<RenderActor43D9D0*>(fighters[0])->RenderSideEffect();
-                if (ACTOR_FIELD(signed char, 0x48, 0x6E7) >= 0)
+                if ((fighters[1]->noticeBadge) >= 0)
                     reinterpret_cast<RenderActor43D9D0*>(fighters[1])->RenderSideEffect();
             } else {
-                if (ACTOR_FIELD(signed char, 0x48, 0x6E7) >= 0)
+                if ((fighters[1]->noticeBadge) >= 0)
                     reinterpret_cast<RenderActor43D9D0*>(fighters[1])->RenderSideEffect();
-                if (ACTOR_FIELD(signed char, 0x44, 0x6E7) >= 0)
+                if ((fighters[0]->noticeBadge) >= 0)
                     reinterpret_cast<RenderActor43D9D0*>(fighters[0])->RenderSideEffect();
             }
-            if (ACTOR_FIELD(unsigned char, 0x44, 0x6EE))
+            if ((fighters[0]->noticeEnabled))
                 g_TextRenderer->DrawBox();
             reinterpret_cast<RenderActor43D9D0*>(fighters[0])->RenderStage(g_NoticeSelection);
         }
@@ -128,5 +126,3 @@ void BattleScene::Render() {
 
 #undef AUX
 #undef STYLE
-#undef ACTOR_FIELD
-#undef FIELD

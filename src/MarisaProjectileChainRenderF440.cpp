@@ -7,7 +7,7 @@
 // Quad has 132 known rendered bytes but 136 physically owned bytes on this
 // stack; no private meaning is asserted for its four-byte untyped tail.
 // Genuine align(4) short radius recreates original EBP-4 physical slot.
-// An unparenthesized FLOAT(0x1010) lvalue recreates original x87 FLD
+// An unparenthesized field1010 lvalue recreates original x87 FLD
 // global-depth then FMUL fighter-field instruction evaluation order.
 // Borrowed receiver/texture/record field ABIs only, not full owner classes.
 // Borrowed receiver, texture manager, record fields and exact 132-byte quad.
@@ -17,13 +17,6 @@ public:
     void SetBlendMode(int mode);
     void DrawProjectileChain(int texture, const void* records, int count);
 };
-struct MarisaParticleF356 {
-    float x,y,z;
-    float alpha;
-    DWORD flags;
-    float phase, tail;
-};
-typedef char MarisaParticleSizeF356[(sizeof(MarisaParticleF356)==28)?1:-1];
 extern const float g_MarisaAngleStepAt00657828;
 extern const float g_MarisaAngleMultiplierAt00657850;
 extern const float g_MarisaParticleDepthAt006582E0;
@@ -48,12 +41,9 @@ struct NativeMarisaStateF358 {
     short angle;
     __declspec(align(4)) short radius;
 };
-#define FLOAT(o) *reinterpret_cast<float*>(reinterpret_cast<unsigned char*>(this)+(o))
-#define FIELD(T,o) (*reinterpret_cast<T*>(reinterpret_cast<unsigned char*>(this)+(o)))
-#define DRAWER reinterpret_cast<MarisaRendererF356*>(FIELD(void*,4))
-#define REC(i) (reinterpret_cast<MarisaParticleF356*>(reinterpret_cast<unsigned char*>(this)+0x1018)[(i)])
+#define DRAWER reinterpret_cast<MarisaRendererF356*>(drawing)
 void MarisaFighter::RenderChain() {
-    if (!FIELD(unsigned char,0x1006)) return;
+    if (!field1006) return;
     NativeMarisaStateF358 state;
     state.quad.Construct();
 #define quad (*reinterpret_cast<SpriteQuad40CA80*>(&state.quad))
@@ -72,32 +62,32 @@ void MarisaFighter::RenderChain() {
         phaseA=static_cast<short>(i*0x150%40-20);
         phaseB=static_cast<short>(i*0x104%60-30);
         angle=static_cast<short>(i*100);
-        radius=static_cast<short>(static_cast<float>(i*10+50)*FIELD(float,0x1010));
+        radius=static_cast<short>(static_cast<float>(i*10+50)*(field1010));
         for(j=0;j<36;++j) {
             quad.first.x=CameraCosineAt0040D900(float(j)*g_MarisaAngleStepAt00657828*g_MarisaAngleMultiplierAt00657850)*radius;
             quad.first.y=CameraSineAt0040D940(float(j)*g_MarisaAngleStepAt00657828*g_MarisaAngleMultiplierAt00657850)*radius;
             quad.first.z=0.0f;
             quad.fourth.x=CameraCosineAt0040D900(float(j)*g_MarisaAngleStepAt00657828*g_MarisaAngleMultiplierAt00657850)*radius;
             quad.fourth.y=CameraSineAt0040D940(float(j)*g_MarisaAngleStepAt00657828*g_MarisaAngleMultiplierAt00657850)*radius;
-            quad.fourth.z=g_MarisaParticleDepthAt006582E0*FLOAT(0x1010)/g_MarisaDepthDivisorAt00657480;
+            quad.fourth.z=g_MarisaParticleDepthAt006582E0*field1010/g_MarisaDepthDivisorAt00657480;
             reinterpret_cast<SpriteTransform*>(&quad)->RotateQuad(
               0.0f,0.0f,0.0f,
-              float(phaseA)+CameraSineAt0040D940(float(i*6)+float(FIELD(unsigned short,0xef8))/g_MarisaPhaseDivisorBAt0065788C)*g_MarisaPhaseMultiplierAt00657878,
-              float(phaseB+FIELD(signed char,0x66)*90)+CameraCosineAt0040D900(float(i*7)+float(FIELD(unsigned short,0xef8))/g_MarisaPhaseDivisorAAt00659310)*g_MarisaPhaseMultiplierAt00657878,
-              float(FIELD(unsigned short,0xef8)*5+i*5));
+              float(phaseA)+CameraSineAt0040D940(float(i*6)+float(reinterpret_cast<unsigned short&>(fieldEF8))/g_MarisaPhaseDivisorBAt0065788C)*g_MarisaPhaseMultiplierAt00657878,
+              float(phaseB+(facing)*90)+CameraCosineAt0040D900(float(i*7)+float(reinterpret_cast<unsigned short&>(fieldEF8))/g_MarisaPhaseDivisorAAt00659310)*g_MarisaPhaseMultiplierAt00657878,
+              float((reinterpret_cast<unsigned short&>(fieldEF8))*5+i*5));
             reinterpret_cast<SpriteTransform*>(&quad)->TranslateQuad(
-              float(FIELD(signed char,0x1014)*angle)+FIELD(float,0x1008),-FIELD(float,0x100c),0.0f);
+              float((field1014)*angle)+(field1008),-(field100C),0.0f);
             reinterpret_cast<SpriteTransform*>(&quad)->TranslateQuad(xShift,yOrigin+g_MarisaCameraOffsetYAt00657830,0.0f);
-            REC(j*2).x=quad.first.x;
-            REC(j*2).y=quad.first.y;
-            REC(j*2).z=quad.first.z;
-            REC(j*2+1).x=quad.fourth.x;
-            REC(j*2+1).y=quad.fourth.y;
-            REC(j*2+1).z=quad.fourth.z;
+            chain[j*2].x=quad.first.x;
+            chain[j*2].y=quad.first.y;
+            chain[j*2].z=quad.first.z;
+            chain[j*2+1].x=quad.fourth.x;
+            chain[j*2+1].y=quad.fourth.y;
+            chain[j*2+1].z=quad.fourth.z;
         }
-        REC(72).x=REC(0).x;REC(72).y=REC(0).y;REC(72).z=REC(0).z;
-        REC(73).x=REC(1).x;REC(73).y=REC(1).y;REC(73).z=REC(1).z;
-        DRAWER->DrawProjectileChain(0x277,&REC(0),0x4a);
+        chain[72].x=chain[0].x;chain[72].y=chain[0].y;chain[72].z=chain[0].z;
+        chain[73].x=chain[1].x;chain[73].y=chain[1].y;chain[73].z=chain[1].z;
+        DRAWER->DrawProjectileChain(0x277,&chain[0],0x4a);
     }
 }
 #undef radius
@@ -109,7 +99,4 @@ void MarisaFighter::RenderChain() {
 #undef yOrigin
 #undef xShift
 #undef quad
-#undef REC
 #undef DRAWER
-#undef FIELD
-#undef FLOAT

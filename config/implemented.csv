@@ -608,7 +608,7 @@ Effects::LoadResourcesAt005F70E0
 FontSurface::DecodePackedTextUnitAt0041C9D0
 FontSurface::ReleaseRasterResourcesAt0041C130
 Effects::LoadPatternCatalogAt005F71F0
-BattleObject::InitializeDefaultsAt0045B760
+CharacterObject::CharacterObject
 Fighter::AdvanceNoticeLevelsAt0045D710
 BattleInput::PackDirectionBits
 StaticBattleResources::ReleaseOwnedEntriesAt005F6FF0

@@ -2,9 +2,10 @@
 #include <stdio.h>
 #include <string.h>
 #include <new>
+#include "Fighter.hpp"
 
-// All game owner interfaces below are borrowed from actual calls and native
-// object allocation sizes; the complete original Fighter layout is unknown.
+// Interfaces of the objects a fighter loads; the 80- and 24-byte classes
+// carry the allocation sizes the original uses.
 class FighterSoundsF282 {public: void Load(const char* filename,const char* archive);};
 class FighterTextureF282 {
     unsigned char observedBytes[80];
@@ -48,66 +49,41 @@ extern const char g_SecondaryTextureArchiveAltAt00658F68[];
 extern const char g_SecondaryTextureArchiveDefaultAt00658F70[];
 extern const char g_ScriptFormatAt00658F78[];
 extern const char g_ScriptArchiveAt00658F94[];
-class FighterLoadF282 {
-public:
-    virtual void Slot0();
-    virtual void Slot1();
-    virtual void Slot2();
-    virtual void Slot3();
-    virtual void Slot4();
-    virtual void Slot5();
-    virtual void Slot6();
-    void LoadPattern();
-    void SetNoticeMode(int value);
-    void LoadResources();
-};
-#define RAW reinterpret_cast<unsigned char*>(this)
-#define FIELD(type,off) (*reinterpret_cast<type*>(RAW+(off)))
-#define NAME (reinterpret_cast<const char*>(RAW+0xc4))
-#define CHARACTER (reinterpret_cast<const char*>(RAW+0x1c8))
-#define SOUND (reinterpret_cast<FighterSoundsF282*>(RAW+0x6d0))
-#define SCRIPT (reinterpret_cast<FighterScriptsF282*>(RAW+0x714))
-void FighterLoadF282::LoadResources()
+void Fighter::LoadResources()
 {
     char filename[524];
     FighterLogF282::Append(g_LogSoundsAt00658E84);
-    sprintf(filename,g_SoundFileFormatAt00658E94,CHARACTER);
-    if (strcmp(NAME,g_CharacterMeilingAt00658EA4)==0)
-        SOUND->Load(filename,g_SoundArchiveMeilingAt00658EAC);
+    sprintf(filename,g_SoundFileFormatAt00658E94,tag);
+    if (strcmp(name,g_CharacterMeilingAt00658EA4)==0)
+        reinterpret_cast<FighterSoundsF282*>(sounds)->Load(filename,g_SoundArchiveMeilingAt00658EAC);
     else
-        SOUND->Load(filename,g_SoundArchiveDefaultAt00658EB4);
+        reinterpret_cast<FighterSoundsF282*>(sounds)->Load(filename,g_SoundArchiveDefaultAt00658EB4);
     FighterLogF282::Append(g_LogPatternsAt00658EBC);
     LoadPattern();
     FighterLogF282::Append(g_LogPicturesAt00658ED0);
-    FIELD(FighterTextureF282*,4)=new FighterTextureF282();
-    FIELD(FighterTextureF282*,0x534)=new FighterTextureF282();
-    FIELD(FighterTextureF282*,4)->AllocateSlots(FIELD(short,0x478));
-    sprintf(filename,g_MainTextureFormatAt00658EE4,CHARACTER);
-    if (strcmp(NAME,g_CharacterAliceAt00658EFC)==0 || strcmp(NAME,g_CharacterMeiling2At00658F04)==0)
-        FIELD(FighterTextureF282*,4)->Load(filename,FIELD(signed char,0x2ce)+1,g_MainTextureArchiveAltAt00658F0C);
+    drawing=new FighterTextureF282();
+    reinterpret_cast<FighterTextureF282*&>(field534)=new FighterTextureF282();
+    static_cast<FighterTextureF282*>(drawing)->AllocateSlots(reinterpret_cast<short&>(field478));
+    sprintf(filename,g_MainTextureFormatAt00658EE4,tag);
+    if (strcmp(name,g_CharacterAliceAt00658EFC)==0 || strcmp(name,g_CharacterMeiling2At00658F04)==0)
+        static_cast<FighterTextureF282*>(drawing)->Load(filename,field2CE+1,g_MainTextureArchiveAltAt00658F0C);
     else
-        FIELD(FighterTextureF282*,4)->Load(filename,FIELD(signed char,0x2ce)+1,g_MainTextureArchiveDefaultAt00658F14);
-    FIELD(FighterTextureF282*,0x534)->AllocateSlots(FIELD(signed char,0x532));
-    sprintf(filename,g_SecondaryTextureFormatAt00658F1C,CHARACTER);
-    if (strcmp(NAME,g_CharacterPatchouliAt00658F34)==0 ||
-        strcmp(NAME,g_CharacterYuyukoAt00658F40)==0 ||
-        strcmp(NAME,g_CharacterRemiliaAt00658F48)==0 ||
-        strcmp(NAME,g_CharacterYukariAt00658F50)==0 ||
-        strcmp(NAME,g_CharacterYoumuAt00658F58)==0 ||
-        strcmp(NAME,g_CharacterMeiling3At00658F60)==0)
-        FIELD(FighterTextureF282*,0x534)->LoadDefault(filename,g_SecondaryTextureArchiveAltAt00658F68);
+        static_cast<FighterTextureF282*>(drawing)->Load(filename,field2CE+1,g_MainTextureArchiveDefaultAt00658F14);
+    reinterpret_cast<FighterTextureF282*>(field534)->AllocateSlots(field532);
+    sprintf(filename,g_SecondaryTextureFormatAt00658F1C,tag);
+    if (strcmp(name,g_CharacterPatchouliAt00658F34)==0 ||
+        strcmp(name,g_CharacterYuyukoAt00658F40)==0 ||
+        strcmp(name,g_CharacterRemiliaAt00658F48)==0 ||
+        strcmp(name,g_CharacterYukariAt00658F50)==0 ||
+        strcmp(name,g_CharacterYoumuAt00658F58)==0 ||
+        strcmp(name,g_CharacterMeiling3At00658F60)==0)
+        reinterpret_cast<FighterTextureF282*>(field534)->LoadDefault(filename,g_SecondaryTextureArchiveAltAt00658F68);
     else
-        FIELD(FighterTextureF282*,0x534)->LoadDefault(filename,g_SecondaryTextureArchiveDefaultAt00658F70);
-    sprintf(filename,g_ScriptFormatAt00658F78,NAME,NAME);
-    SCRIPT->LoadFile(filename,2,0);
-    SCRIPT->LoadArchive(filename,g_ScriptArchiveAt00658F94);
-    FIELD(FighterCommandsF282*,0x480)=new FighterCommandsF282(FIELD(FighterTextureF282*,4));
+        reinterpret_cast<FighterTextureF282*>(field534)->LoadDefault(filename,g_SecondaryTextureArchiveDefaultAt00658F70);
+    sprintf(filename,g_ScriptFormatAt00658F78,name,name);
+    reinterpret_cast<FighterScriptsF282*>(&script)->LoadFile(filename,2,0);
+    reinterpret_cast<FighterScriptsF282*>(&script)->LoadArchive(filename,g_ScriptArchiveAt00658F94);
+    field480=new FighterCommandsF282(static_cast<FighterTextureF282*>(drawing));
     SetNoticeMode(0);
-    Slot6();
+    ResetRound();
 }
-#undef SCRIPT
-#undef SOUND
-#undef CHARACTER
-#undef NAME
-#undef FIELD
-#undef RAW
