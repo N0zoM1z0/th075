@@ -2,16 +2,16 @@
 case 0x32B: {
     if (F1024_PHASE(this).stageAt62 == 0 && F1024_PHASE(this).frameAt64 == 0) {
         SetNativeMotionAt0040FBB0(0,0,0);
-        SELF_FIELD(signed short,0x80) = 1;
-        SELF_FIELD(int,0x7C) = 0;
-        SELF_FIELD(float,0x1C) = 2.0f;
-        SELF_FIELD(float,0x20) = 2.0f;
-        SELF_FIELD(unsigned char,0x11) = 0xFF;
-        SELF_FIELD(unsigned char,0x12) = 0xFF;
-        SELF_FIELD(unsigned char,0x13) = 0xFF;
-        SELF_FIELD(unsigned char,0x14) = 0xFF;
+        reinterpret_cast<signed short&>(field080) = 1;
+        field07C = 0;
+        scaleX = 2.0f;
+        scaleY = 2.0f;
+        color[0] = 0xFF;
+        color[1] = 0xFF;
+        color[2] = 0xFF;
+        color[3] = 0xFF;
     }
-    if (GetNativeActionAt0040FA30() == SELF_FIELD(signed short,0x70))
+    if (GetNativeActionAt0040FA30() == reinterpret_cast<signed short&>(field070))
         NativeParentExpiredAt0045B830();
     return;
 }

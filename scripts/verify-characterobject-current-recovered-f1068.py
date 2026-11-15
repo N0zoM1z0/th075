@@ -107,7 +107,7 @@ obj=O/'all-recovered-current-full-parent.obj'
 cp=subprocess.run([str(R/'scripts/compile-probe.sh'),str(src),str(obj),'/Od','/Ob0','/Gy','/GR-','/GX-','/GS','/Zi','/I','src','/I','probes'],cwd=R,env=E,capture_output=True,text=True,timeout=380)
 (O/'all-recovered-current-full-parent.log').write_text(cp.stdout+cp.stderr)
 assert cp.returncode==0,(cp.stdout+cp.stderr)[-950:]
-code,refs=rd.object_function(obj,'?Advance@FighterSwitchF569_Boss0050A580@@QAEXXZ')
+code,refs=rd.object_function(obj,'?Advance@FighterSwitchF569_Boss0050A580@@UAEXXZ')
 I=[]
 for x in D.disasm(code,0):
  I.append(x)

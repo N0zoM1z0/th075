@@ -4,20 +4,20 @@
 case F1055_CASE: {
     if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
         SetNativeMotionAt0040FBB0(0,0,0);
-        SELF_FIELD(float,0x1C)=1.0f;
-        SELF_FIELD(float,0x20)=1.0f;
-        SELF_FIELD(unsigned char,0x11)=0xFF;
-        SELF_FIELD(unsigned char,0x12)=0xFF;
-        SELF_FIELD(unsigned char,0x13)=0xFF;
-        SELF_FIELD(unsigned char,0x14)=0xFF;
+        scaleX=1.0f;
+        scaleY=1.0f;
+        color[0]=0xFF;
+        color[1]=0xFF;
+        color[2]=0xFF;
+        color[3]=0xFF;
     }
-    SELF_FIELD(float,0x1C) = SELF_FIELD(float,0x1C) * g_F1055_FadeScaleAt006598A4;
-    SELF_FIELD(float,0x20) = SELF_FIELD(float,0x20) * g_F1055_FadeScaleAt006598A4;
-    if (SELF_FIELD(unsigned char,0x11) >= 20)
-        SELF_FIELD(unsigned char,0x11) -= 20;
+    scaleX = (scaleX) * g_F1055_FadeScaleAt006598A4;
+    scaleY = (scaleY) * g_F1055_FadeScaleAt006598A4;
+    if (color[0] >= 20)
+        color[0] -= 20;
     else
-        SELF_FIELD(unsigned char,0x11) = 0;
-    if (GetNativeActionAt0040FA30()==SELF_FIELD(signed short,0x70))
+        color[0] = 0;
+    if (GetNativeActionAt0040FA30()==reinterpret_cast<signed short&>(field070))
         NativeParentExpiredAt0045B830();
     return;
 }

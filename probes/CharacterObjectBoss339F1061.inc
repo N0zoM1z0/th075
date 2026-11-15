@@ -4,36 +4,36 @@
 case 0x339: {
     if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
         SetNativeMotionAt0040FBB0(0,0,0);
-        SELF_FIELD(float,0x1C)=0.5f;
-        SELF_FIELD(float,0x20)=0.5f;
-        SELF_FIELD(unsigned char,0x11)=0xFF;
-        SELF_FIELD(unsigned char,0x12)=0xFF;
-        SELF_FIELD(unsigned char,0x13)=0xFF;
-        SELF_FIELD(unsigned char,0x14)=0xFF;
-        SELF_FIELD(signed short,0x1A)=0x4E2;
-        SELF_FIELD(float,0x28)=-30.0f;
-        SELF_FIELD(float,0x2C)=float(int(SELF_FIELD(signed char,0x66)) * -45);
-        SELF_FIELD(signed short,0xD8)=0;
+        scaleX=0.5f;
+        scaleY=0.5f;
+        color[0]=0xFF;
+        color[1]=0xFF;
+        color[2]=0xFF;
+        color[3]=0xFF;
+        reinterpret_cast<signed short&>(field01A)=0x4E2;
+        rotationX=-30.0f;
+        rotationY=float(int(facing) * -45);
+        reinterpret_cast<signed short&>(field0D8)=0;
     }
-    SELF_FIELD(float,0x1C) =
+    scaleX =
         (g_F1061_CeilingAt006583FC -
-            float(SELF_FIELD(signed short,0xD8))*g_F1061_StepAt0065972C *
-            int(SELF_FIELD(signed short,0xD8)<10)) +
-        g_F1061_OffsetAt00658354 + SELF_FIELD(float,0x1C);
-    SELF_FIELD(float,0x20) =
+            float(reinterpret_cast<signed short&>(field0D8))*g_F1061_StepAt0065972C *
+            int(reinterpret_cast<signed short&>(field0D8)<10)) +
+        g_F1061_OffsetAt00658354 + scaleX;
+    scaleY =
         (g_F1061_CeilingAt006583FC -
-            float(SELF_FIELD(signed short,0xD8))*g_F1061_StepAt0065972C *
-            int(SELF_FIELD(signed short,0xD8)<10)) +
-        g_F1061_OffsetAt00658354 + SELF_FIELD(float,0x20);
+            float(reinterpret_cast<signed short&>(field0D8))*g_F1061_StepAt0065972C *
+            int(reinterpret_cast<signed short&>(field0D8)<10)) +
+        g_F1061_OffsetAt00658354 + scaleY;
     if (F1024_PHASE(this).stageAt62>1) {
-        if (SELF_FIELD(unsigned char,0x11)>20)
-            SELF_FIELD(unsigned char,0x11)-=20;
+        if (color[0]>20)
+            color[0]-=20;
         else {
             NativeParentExpiredAt0045B830();
             return;
         }
     }
-    if (GetNativeActionAt0040FA30()==SELF_FIELD(signed short,0x70))
+    if (GetNativeActionAt0040FA30()==reinterpret_cast<signed short&>(field070))
         NativeParentExpiredAt0045B830();
     return;
 }

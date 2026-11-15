@@ -1,3 +1,4 @@
+#include "CharacterObject.hpp"
 #include "FrameActorMotionPairsF1037.hpp"
 #include "FighterAnimationPhaseBorrowedF1024.hpp"
 #include "FighterGaugeBorrowedF980.hpp"
@@ -5,7 +6,7 @@
 // Native original-shaped TH075 CharacterObject whole switch C++ candidate.
 // Original source/owner layout and the entire 81KB machine function remain NONEXACT;
 // all genuine case/default gameplay is sourced from independent original PE evidence.
-class FighterSwitchF569_Boss0050A580 { public: void Advance(); void NativeParentExpiredAt0045B830(); void NativeHitAt0045B860(short); void SetNativeMotionAt0040FBB0(float,float,float); short GetNativeActionAt0040FA30(); void SetAuxActionAt0040FB40(short); void SetNativeActionAt0040FAC0(short); void SetNativeTwoFloatsAt0040FB70(float,float); void SetNativeAngleBitsAt0040FB70(unsigned int,float); int RandomBoundaryAt00455580(int,int); };
+class FighterSwitchF569_Boss0050A580 : public CharacterObject { public: void Advance(); void NativeParentExpiredAt0045B830(); void NativeHitAt0045B860(short); void SetNativeMotionAt0040FBB0(float,float,float); short GetNativeActionAt0040FA30(); void SetAuxActionAt0040FB40(short); void SetNativeActionAt0040FAC0(short); void SetNativeTwoFloatsAt0040FB70(float,float); void SetNativeAngleBitsAt0040FB70(unsigned int,float); int RandomBoundaryAt00455580(int,int); };
 // F1181: effect/sound IDs and layer/link/mode parameters use the native
 // low-word/low-byte contract witnessed by the independently exact callees.
 // Coordinate/angle DWORD overloads deliberately preserve the original raw
@@ -94,12 +95,9 @@ extern float __cdecl F1057_FloatAtan2At00483300(float,float);
 
 #define RAW reinterpret_cast<char*>(this)
 #define I16(off) *reinterpret_cast<signed short*>(RAW+(off))
-#define OWNER (*reinterpret_cast<char**>(RAW+0x2E8))
 #define PARENT (*reinterpret_cast<char**>(RAW+0xE4))
-#define PARENT_FIELD(type,off) (*reinterpret_cast<type*>(PARENT+(off)))
 #define PARENT_GRANDPARENT (*reinterpret_cast<char**>(PARENT+0x2E8))
 #define PARENT_GRANDPARENT_FIELD(type,off) (*reinterpret_cast<type*>(PARENT_GRANDPARENT+(off)))
-#define SELF_FIELD(type,off) (*reinterpret_cast<type*>(RAW+(off)))
 void FighterSwitchF569_Boss0050A580::Advance() {
     if (*reinterpret_cast<signed short*>(
             *reinterpret_cast<char**>(
@@ -294,11 +292,8 @@ void FighterSwitchF569_Boss0050A580::Advance() {
         default: GetNativeActionAt0040FA30();
     }
 }
-#undef SELF_FIELD
 #undef PARENT_GRANDPARENT_FIELD
 #undef PARENT_GRANDPARENT
-#undef PARENT_FIELD
 #undef PARENT
-#undef OWNER
 #undef I16
 #undef RAW

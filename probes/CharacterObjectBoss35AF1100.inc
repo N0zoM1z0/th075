@@ -3,10 +3,10 @@
 case 0x35A: {
     if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
         SetNativeMotionAt0040FBB0(0,0.0f,0);
-        SELF_FIELD(float,0x1C)=1.5f;
-        SELF_FIELD(float,0x20)=1.5f;
+        scaleX=1.5f;
+        scaleY=1.5f;
     }
-    if (GetNativeActionAt0040FA30()==SELF_FIELD(signed short,0x70))
+    if (GetNativeActionAt0040FA30()==reinterpret_cast<signed short&>(field070))
         NativeParentExpiredAt0045B830();
     return;
 }

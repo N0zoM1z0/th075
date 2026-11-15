@@ -4,32 +4,32 @@
 case 0x320: {
     // The actual original parent chain is this+E4. Its native action and
     // stage fields gate a real helper call before any local motion update.
-    if (PARENT_FIELD(signed short,0x60) != 0x2BC ||
-        (PARENT_FIELD(signed short,0x60) == 0x2BC &&
-         PARENT_FIELD(signed short,0x62) > 12)) {
+    if (reinterpret_cast<signed short&>(owner->action) != 0x2BC ||
+        (reinterpret_cast<signed short&>(owner->action) == 0x2BC &&
+         reinterpret_cast<signed short&>(owner->animationStage) > 12)) {
         NativeParentExpiredAt0045B830();
         return;
     }
-    SELF_FIELD(float,0x44) = F1037_POSITION(PARENT).xPosition + float(SELF_FIELD(signed char,0x66) * 66);
+    x = F1037_POSITION(PARENT).xPosition + float(facing * 66);
     if (F1024_PHASE(this).stageAt62 == 0 &&
         F1024_PHASE(this).frameAt64 == 0) {
         SetNativeMotionAt0040FBB0(0,0,0);
-        SELF_FIELD(signed short,0x80) = 1;
-        SELF_FIELD(int,0x7C) = 0;
-        SELF_FIELD(signed short,0xD8) = 0;
-        SELF_FIELD(float,0x1C) = 1.0f;
-        SELF_FIELD(float,0x20) = 1.0f;
-        SELF_FIELD(unsigned char,0x11) = 0xFF;
-        SELF_FIELD(unsigned char,0x12) = 0xFF;
-        SELF_FIELD(unsigned char,0x13) = 0xFF;
-        SELF_FIELD(unsigned char,0x14) = 0xFF;
-        SELF_FIELD(float,0x54) = 10.0f;
+        reinterpret_cast<signed short&>(field080) = 1;
+        field07C = 0;
+        reinterpret_cast<signed short&>(field0D8) = 0;
+        scaleX = 1.0f;
+        scaleY = 1.0f;
+        color[0] = 0xFF;
+        color[1] = 0xFF;
+        color[2] = 0xFF;
+        color[3] = 0xFF;
+        velocityY = 10.0f;
     }
     F1037_POSITION(this).yPosition = F1037_POSITION(this).yPosition + F1037_MOTION(this).yMotion;
-    SELF_FIELD(float,0x54) = SELF_FIELD(float,0x54) - g_F1044_GravityAt0065747C;
-    if (SELF_FIELD(float,0x54) < g_F1044_GroundAt0065782C)
-        SELF_FIELD(float,0x54) = 0.0f;
-    if (GetNativeActionAt0040FA30() == SELF_FIELD(signed short,0x70))
+    velocityY = (velocityY) - g_F1044_GravityAt0065747C;
+    if (velocityY < g_F1044_GroundAt0065782C)
+        velocityY = 0.0f;
+    if (GetNativeActionAt0040FA30() == reinterpret_cast<signed short&>(field070))
         SetAuxActionAt0040FB40(1);
     return;
 }

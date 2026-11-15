@@ -3,72 +3,72 @@
 case 0x34F: {
     if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
         SetNativeMotionAt0040FBB0(0,0.0f,0);
-        SELF_FIELD(int,0x7C)=0;
-        SELF_FIELD(float,0x1C)=1.0f;
-        SELF_FIELD(float,0x20)=1.0f;
-        SELF_FIELD(unsigned char,0x11)=0xFF;
-        SELF_FIELD(unsigned char,0x12)=0xFF;
-        SELF_FIELD(unsigned char,0x13)=0xFF;
-        SELF_FIELD(unsigned char,0x14)=0xFF;
-        if (SELF_FIELD(signed short,0xD8)!=140)
-            SELF_FIELD(signed short,0xD8)=0;
+        field07C=0;
+        scaleX=1.0f;
+        scaleY=1.0f;
+        color[0]=0xFF;
+        color[1]=0xFF;
+        color[2]=0xFF;
+        color[3]=0xFF;
+        if (reinterpret_cast<signed short&>(field0D8)!=140)
+            reinterpret_cast<signed short&>(field0D8)=0;
     }
     SetNativeTwoFloatsAt0040FB70(
-        float(PARENT_FIELD(signed short,0xF0C))+
-            g_F1085_ParentMultiplierAt0065989C*static_cast<const float&>(SELF_FIELD(float,0xC8)),
-        float(SELF_FIELD(signed short,0xD8)));
+        float(reinterpret_cast<signed short&>(owner->fieldF0C))+
+            g_F1085_ParentMultiplierAt0065989C*static_cast<const float&>(field0C8),
+        float(reinterpret_cast<signed short&>(field0D8)));
     F1037_POSITION(this).xPosition=F1037_MOTION(this).xMotion+F1037_POSITION(PARENT).xPosition;
     F1037_POSITION(this).yPosition=(*(&F1037_MOTION(this).yMotion))*g_F1085_ParentYMultiplierAt00657F74+
         F1037_POSITION(PARENT).yPosition+g_F1085_YOffsetAt0065835C;
-    if (SELF_FIELD(signed short,0xD8)<140)
-        SELF_FIELD(signed short,0xD8)=short(SELF_FIELD(signed short,0xD8)+5);
+    if (reinterpret_cast<signed short&>(field0D8)<140)
+        reinterpret_cast<signed short&>(field0D8)=short(reinterpret_cast<signed short&>(field0D8)+5);
     else
-        SELF_FIELD(signed short,0xD8)=140;
-    if ((PARENT_GRANDPARENT_FIELD(signed short,0x324)<=0 ||
-        PARENT_FIELD(signed short,0x324)<=0 ||
-        PARENT_FIELD(signed short,0x3A0)<=0) &&
+        reinterpret_cast<signed short&>(field0D8)=140;
+    if ((reinterpret_cast<signed short&>(owner->opponent->health)<=0 ||
+        reinterpret_cast<signed short&>(owner->health)<=0 ||
+        reinterpret_cast<signed short&>(owner->field3A0)<=0) &&
         F1024_PHASE(this).stageAt62<2)
         SetAuxActionAt0040FB40(2);
-    if (PARENT_FIELD(signed short,0x60)==0x2C1 &&
-        PARENT_FIELD(signed short,0x62)==2 &&
+    if (reinterpret_cast<signed short&>(owner->action)==0x2C1 &&
+        reinterpret_cast<signed short&>(owner->animationStage)==2 &&
         F1024_PHASE(this).stageAt62<2)
         SetAuxActionAt0040FB40(2);
     if (F1024_PHASE(this).stageAt62==0) {
-        if ((PARENT_FIELD(signed short,0x60)==0x194 && PARENT_FIELD(signed short,0x62)==4) ||
-            (PARENT_FIELD(signed short,0x60)==0x263 && PARENT_FIELD(signed short,0x62)==5) ||
-            (PARENT_FIELD(signed short,0x60)==0x264 && PARENT_FIELD(signed short,0x62)==5)) {
+        if ((reinterpret_cast<signed short&>(owner->action)==0x194 && reinterpret_cast<signed short&>(owner->animationStage)==4) ||
+            (reinterpret_cast<signed short&>(owner->action)==0x263 && reinterpret_cast<signed short&>(owner->animationStage)==5) ||
+            (reinterpret_cast<signed short&>(owner->action)==0x264 && reinterpret_cast<signed short&>(owner->animationStage)==5)) {
             for (int shot=0;shot<8;++shot) {
-                PARENT_FIELD(float,0x314)=float(shot*45);
+                owner->field314=float(shot*45);
                 reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
-                    0x363,SELF_FIELD(unsigned int,0x44),SELF_FIELD(unsigned int,0x48),
-                    PARENT_FIELD(signed char,0x66),1);
+                    0x363,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),
+                    owner->facing,1);
             }
             SetAuxActionAt0040FB40(2);
             reinterpret_cast<F1051Grandparent*>(PARENT)->NativePrepareAt00453D40(4);
         }
     }
     if (F1024_PHASE(this).stageAt62>1) {
-        if (SELF_FIELD(unsigned char,0x11)>10)
-            SELF_FIELD(unsigned char,0x11)-=10;
+        if (color[0]>10)
+            color[0]-=10;
         else {
             NativeParentExpiredAt0045B830();
             return;
         }
     }
     if (F1024_PHASE(this).stageAt62==1 &&
-        PARENT_FIELD(signed short,0x60)==0x2C1 &&
-        PARENT_FIELD(signed short,0x62)==3) {
+        reinterpret_cast<signed short&>(owner->action)==0x2C1 &&
+        reinterpret_cast<signed short&>(owner->animationStage)==3) {
         SetAuxActionAt0040FB40(0);
         reinterpret_cast<F1051Grandparent*>(PARENT)->NativePrepareAt00453D40(20);
         return;
     }
-    if (GetNativeActionAt0040FA30()==SELF_FIELD(signed short,0x70)) {
+    if (GetNativeActionAt0040FA30()==reinterpret_cast<signed short&>(field070)) {
         NativeParentExpiredAt0045B830();
         return;
     }
     if (F1024_PHASE(this).stageAt62==2 && F1024_PHASE(this).frameAt64==0) {
         SetAuxActionAt0040FB40(0);
-        PARENT_FIELD(float,0x36C)=PARENT_FIELD(float,0x36C)-g_F1085_LastYAt006592A4;
+        owner->field36C=(owner->field36C)-g_F1085_LastYAt006592A4;
         reinterpret_cast<F1051Grandparent*>(PARENT)->NativePrepareAt00453D40(20);
     }
     return;

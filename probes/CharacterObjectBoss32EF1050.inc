@@ -1,26 +1,26 @@
 // Pinned original native 0050CF7A..0050D097, action 0x32E, 285B/63 x86.
 // This remains an INNER state in one nonexact 81KB CharacterObject function.
 case 0x32E: {
-    SELF_FIELD(unsigned char,0x66) = PARENT_FIELD(unsigned char,0x66);
-    if (PARENT_FIELD(signed short,0x60) == 0x131) {
-        SELF_FIELD(unsigned int,0x44) = PARENT_FIELD(unsigned int,0x44);
-        SELF_FIELD(unsigned int,0x48) = PARENT_FIELD(unsigned int,0x48);
+    reinterpret_cast<unsigned char&>(facing) = reinterpret_cast<unsigned char&>(owner->facing);
+    if (reinterpret_cast<signed short&>(owner->action) == 0x131) {
+        reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
+        reinterpret_cast<unsigned int&>(y) = reinterpret_cast<unsigned int&>(owner->y);
     } else {
         NativeParentExpiredAt0045B830();
         return;
     }
     if (F1024_PHASE(this).stageAt62 == 0 &&
         F1024_PHASE(this).frameAt64 == 0 &&
-        SELF_FIELD(signed short,0xD8) == 0) {
+        reinterpret_cast<signed short&>(field0D8) == 0) {
         SetNativeMotionAt0040FBB0(0,0,0);
-        SELF_FIELD(float,0x1C) = 1.0f;
-        SELF_FIELD(float,0x20) = 1.0f;
-        SELF_FIELD(unsigned char,0x11) = 0xFF;
-        SELF_FIELD(unsigned char,0x12) = 0xFF;
-        SELF_FIELD(unsigned char,0x13) = 0xFF;
-        SELF_FIELD(unsigned char,0x14) = 0xFF;
+        scaleX = 1.0f;
+        scaleY = 1.0f;
+        color[0] = 0xFF;
+        color[1] = 0xFF;
+        color[2] = 0xFF;
+        color[3] = 0xFF;
     }
-    if (GetNativeActionAt0040FA30() == SELF_FIELD(signed short,0x70))
+    if (GetNativeActionAt0040FA30() == reinterpret_cast<signed short&>(field070))
         NativeParentExpiredAt0045B830();
     return;
 }

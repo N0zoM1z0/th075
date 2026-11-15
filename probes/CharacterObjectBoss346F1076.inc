@@ -1,77 +1,77 @@
 // F1076: genuine Japanese native 00511D25..005123B9 (1684B/365 x86).
 // Real 0x346 source inside ONE original 81KB CharacterObject, NONEXACT.
 case 0x346: {
-    if (SELF_FIELD(int,0x7C)==5) {
+    if (field07C==5) {
         NativeParentExpiredAt0045B830();
         return;
     }
-    if (PARENT_FIELD(signed short,0x60)>0x31 &&
-        PARENT_FIELD(signed short,0x60)<0x96 &&
+    if (reinterpret_cast<signed short&>(owner->action)>0x31 &&
+        reinterpret_cast<signed short&>(owner->action)<0x96 &&
         F1024_PHASE(this).stageAt62<5) {
         NativeParentExpiredAt0045B830();
         for (int shot=0;shot<3;++shot) {
             reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
-                0x3E4,SELF_FIELD(unsigned int,0x44),SELF_FIELD(unsigned int,0x48),1,1);
+                0x3E4,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),1,1);
         }
-        if (PARENT_FIELD(signed short,0xEFA)>25) {
-            PARENT_FIELD(signed short,0xEFA)=0;
+        if (reinterpret_cast<signed short&>(owner->fieldEFA)>25) {
+            reinterpret_cast<signed short&>(owner->fieldEFA)=0;
             reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
-                0x3E3,SELF_FIELD(unsigned int,0x44),SELF_FIELD(unsigned int,0x48),1,1);
+                0x3E3,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),1,1);
         }
         return;
     }
     if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0 &&
-        SELF_FIELD(signed short,0xD8)==0) {
+        reinterpret_cast<signed short&>(field0D8)==0) {
         SetNativeMotionAt0040FBB0(0,0.0f,0);
-        SELF_FIELD(float,0x1C)=1.0f;
-        SELF_FIELD(float,0x20)=1.0f;
-        SELF_FIELD(unsigned char,0x11)=0xFF;
-        SELF_FIELD(unsigned char,0x12)=0xFF;
-        SELF_FIELD(unsigned char,0x13)=0xFF;
-        SELF_FIELD(unsigned char,0x14)=0xFF;
-        SELF_FIELD(int,0x7C)=0;
-        SELF_FIELD(signed short,0x80)=1;
-        SELF_FIELD(signed short,0xD8)=15;
-        SetNativeAngleBitsAt0040FB70(SELF_FIELD(unsigned int,0xC8),
-                                    float(SELF_FIELD(signed short,0xD8)));
+        scaleX=1.0f;
+        scaleY=1.0f;
+        color[0]=0xFF;
+        color[1]=0xFF;
+        color[2]=0xFF;
+        color[3]=0xFF;
+        field07C=0;
+        reinterpret_cast<signed short&>(field080)=1;
+        reinterpret_cast<signed short&>(field0D8)=15;
+        SetNativeAngleBitsAt0040FB70(reinterpret_cast<unsigned int&>(field0C8),
+                                    float(reinterpret_cast<signed short&>(field0D8)));
     }
-    F1037_POSITION(this).xPosition=float(SELF_FIELD(signed char,0x66))*F1037_MOTION(this).xMotion+F1037_POSITION(this).xPosition;
+    F1037_POSITION(this).xPosition=float(facing)*F1037_MOTION(this).xMotion+F1037_POSITION(this).xPosition;
     F1037_POSITION(this).yPosition=F1037_POSITION(this).yPosition-F1037_MOTION(this).yMotion;
     if (F1024_PHASE(this).stageAt62==1) {
-        SetNativeAngleBitsAt0040FB70(SELF_FIELD(unsigned int,0xC8),
-                                    float(SELF_FIELD(signed short,0xD8)));
-        --SELF_FIELD(signed short,0xD8);
-        if (SELF_FIELD(signed short,0xD8)<0)
-            SELF_FIELD(signed short,0xD8)=0;
-        SELF_FIELD(float,0x30)=SELF_FIELD(float,0x30)+g_F1076_AngleNudgeAt00658294;
+        SetNativeAngleBitsAt0040FB70(reinterpret_cast<unsigned int&>(field0C8),
+                                    float(reinterpret_cast<signed short&>(field0D8)));
+        --reinterpret_cast<signed short&>(field0D8);
+        if (reinterpret_cast<signed short&>(field0D8)<0)
+            reinterpret_cast<signed short&>(field0D8)=0;
+        rotationZ=(rotationZ)+g_F1076_AngleNudgeAt00658294;
     }
     if (F1024_PHASE(this).stageAt62==2) {
-        ++SELF_FIELD(signed short,0xD8);
-        SELF_FIELD(float,0x1C)=SELF_FIELD(float,0x1C)+g_F1057_SpeedScaleAt006590B4;
-        SELF_FIELD(float,0x20)=SELF_FIELD(float,0x20)*g_F1076_ScaleMulAt00659450;
-        SetNativeTwoFloatsAt0040FB70(float(SELF_FIELD(signed short,0xDC)),
-                                     float(SELF_FIELD(signed short,0xD8)));
-        SELF_FIELD(float,0x30)=F1057_FloatAtan2At00483300(
+        ++reinterpret_cast<signed short&>(field0D8);
+        scaleX=(scaleX)+g_F1057_SpeedScaleAt006590B4;
+        scaleY=(scaleY)*g_F1076_ScaleMulAt00659450;
+        SetNativeTwoFloatsAt0040FB70(float(reinterpret_cast<signed short&>(field0DC)),
+                                     float(reinterpret_cast<signed short&>(field0D8)));
+        rotationZ=F1057_FloatAtan2At00483300(
             F1037_MOTION(this).yMotion,F1037_MOTION(this).xMotion)/g_F1057_AngleDivAt00657828;
-        PARENT_FIELD(float,0x310)=F1057_FloatAtan2At00483300(
+        owner->field310=F1057_FloatAtan2At00483300(
             F1037_MOTION(this).yMotion,F1037_MOTION(this).xMotion)/g_F1057_AngleDivAt00657828;
     }
     if (F1024_PHASE(this).stageAt62==3) {
-        ++SELF_FIELD(signed short,0xD8);
-        SELF_FIELD(float,0x1C)=SELF_FIELD(float,0x1C)+g_F1057_SpeedScaleAt006590B4;
-        SELF_FIELD(float,0x20)=SELF_FIELD(float,0x20)*g_F1076_ScaleMulAt00659450;
-        SetNativeTwoFloatsAt0040FB70(float(SELF_FIELD(signed short,0xDC)),
-                                     float(SELF_FIELD(signed short,0xD8)));
-        SELF_FIELD(float,0x30)=F1057_FloatAtan2At00483300(
+        ++reinterpret_cast<signed short&>(field0D8);
+        scaleX=(scaleX)+g_F1057_SpeedScaleAt006590B4;
+        scaleY=(scaleY)*g_F1076_ScaleMulAt00659450;
+        SetNativeTwoFloatsAt0040FB70(float(reinterpret_cast<signed short&>(field0DC)),
+                                     float(reinterpret_cast<signed short&>(field0D8)));
+        rotationZ=F1057_FloatAtan2At00483300(
             F1037_MOTION(this).yMotion,F1037_MOTION(this).xMotion)/g_F1057_AngleDivAt00657828;
-        if (SELF_FIELD(unsigned char,0x11)>10)
-            SELF_FIELD(unsigned char,0x11)-=10;
+        if (color[0]>10)
+            color[0]-=10;
         else {
             NativeParentExpiredAt0045B830();
             return;
         }
     }
-    if ((SELF_FIELD(int,0x7C)==2 || SELF_FIELD(int,0x7C)==4) && F1024_PHASE(this).stageAt62==2) {
+    if ((field07C==2 || field07C==4) && F1024_PHASE(this).stageAt62==2) {
         SetAuxActionAt0040FB40(3);
         return;
     }
@@ -82,12 +82,12 @@ case 0x346: {
         NativeParentExpiredAt0045B830();
         return;
     }
-    if (GetNativeActionAt0040FA30()==SELF_FIELD(signed short,0x70))
+    if (GetNativeActionAt0040FA30()==reinterpret_cast<signed short&>(field070))
         NativeParentExpiredAt0045B830();
     if (F1024_PHASE(this).stageAt62==2 && F1024_PHASE(this).frameAt64==0) {
-        SELF_FIELD(signed short,0xDC)=short(F1057_FloatAtan2At00483300(
+        reinterpret_cast<signed short&>(field0DC)=short(F1057_FloatAtan2At00483300(
           ((*(&F1037_POSITION(PARENT_GRANDPARENT).yPosition))+g_F1076_TargetYOffsetAt00658398-F1037_POSITION(this).yPosition),
-          (F1037_POSITION(PARENT_GRANDPARENT).xPosition-F1037_POSITION(this).xPosition)*int(SELF_FIELD(signed char,0x66))) /
+          (F1037_POSITION(PARENT_GRANDPARENT).xPosition-F1037_POSITION(this).xPosition)*int(facing)) /
           g_F1057_AngleDivAt00657828);
     }
     if (F1024_PHASE(this).stageAt62==3 && F1024_PHASE(this).frameAt64==0)
