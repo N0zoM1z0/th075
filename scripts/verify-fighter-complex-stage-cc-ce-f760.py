@@ -30,7 +30,7 @@ DOWNSTREAM={0x18A:(0x005490FD,0x005491FD,256,71,6),
             0x194:(0x0054967C,0x005497CB,335,92,7),
             0x195:(0x005497CB,0x0054991A,335,92,7),
             0x2D0:(0x0054E111,0x0054E2B1,416,120,15)}
-SYM='?Advance@FighterSwitchF598_Boss00543210@@QAEXXZ'
+SYM='?Advance@FighterSwitchF598_Boss00543210@@UAEXXZ'
 
 
 def need(ok,msg):

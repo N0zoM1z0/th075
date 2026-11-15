@@ -6,31 +6,31 @@
 // complete 151 native mnemonic+width roles, but 67 GPR mismatches.
 // Actual full original 82KB fighter remains NONEXACT, not case exact.
 case 0x1A1: {
-    if (S16(0x62)==0 && S16(0x64)==0) {
-        I32(0x7C)=1;
+    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        field07C=1;
         ResetAt453E20();
     }
-    if (GetNativeActionAt40FA30()==S16(0x70))
+    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
         SetNativeActionAt40FAC0(0);
-    if (S16(0x62)==5 && S16(0x64)==0) {
+    if ((reinterpret_cast<signed short&>(animationStage))==5 && (reinterpret_cast<signed short&>(animationFrame))==0) {
         PrepareActionAt453D40(0);
-        if (*reinterpret_cast<signed char*>(RAW+0x39D)==2) {
+        if (field39D==2) {
             for (int shot=0;shot<5;++shot) {
-                F32(0x314)=30.0f;
-                F32(0x318)=10.0f;
+                field314=30.0f;
+                field318=10.0f;
                 SpawnSevenFloatAt453B50(0x344,
-                    float((30-shot*10+RandAt455580(0,80))*(*reinterpret_cast<signed char*>(RAW+0x66)))+F32(0x44),
-                    ((*(&POS48))+g_F976_RandomYAt0065786C+shot*40)+float(RandAt455580(0,20)),
-                    *reinterpret_cast<signed char*>(RAW+0x66),1,0,1);
+                    float((30-shot*10+RandAt455580(0,80))*(facing))+(x),
+                    ((*(&y))+g_F976_RandomYAt0065786C+shot*40)+float(RandAt455580(0,20)),
+                    facing,1,0,1);
             }
         } else {
             for (int shot=0;shot<8;++shot) {
-                F32(0x314)=30.0f;
-                F32(0x318)=10.0f;
+                field314=30.0f;
+                field318=10.0f;
                 SpawnSevenFloatAt453B50(0x344,
-                    float((20-shot*10+RandAt455580(0,100))*(*reinterpret_cast<signed char*>(RAW+0x66)))+F32(0x44),
-                    ((*(&POS48))+g_F976_RandomYAt0065786C+shot*30)+float(RandAt455580(0,20)),
-                    *reinterpret_cast<signed char*>(RAW+0x66),1,0,1);
+                    float((20-shot*10+RandAt455580(0,100))*(facing))+(x),
+                    ((*(&y))+g_F976_RandomYAt0065786C+shot*30)+float(RandAt455580(0,20)),
+                    facing,1,0,1);
             }
         }
     }

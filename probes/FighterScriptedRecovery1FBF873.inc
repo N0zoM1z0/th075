@@ -2,25 +2,25 @@
 // Real height global658350, stage6 owner counters & POS15, independent game entry.
 // Enclosing whole giant remains nonexact; no split-case exact CODE.
 case 0x1FB: {
-    if (POS>g_ThresholdAt0065782C) {
-        POS=POS-g_F873GroundDropAt00658350;
-        if (POS<g_ThresholdAt0065782C)
-            POS=0.0f;
+    if ((velocityX)>g_ThresholdAt0065782C) {
+        velocityX=(velocityX)-g_F873GroundDropAt00658350;
+        if ((velocityX)<g_ThresholdAt0065782C)
+            velocityX=0.0f;
     }
-    if (S16(0x62)==0 && S16(0x64)==0) {
+    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
         ResetAt453E20();
-        S16(0x80)=1;
-        I32(0x7C)=0;
-        FLAG=0;
+        reinterpret_cast<signed short&>(field080)=1;
+        field07C=0;
+        field3AC=0;
     }
-    if (S16(0x62)==6 && S16(0x64)==0) {
-        S16(0x80)=1;
-        I32(0x7C)=0;
-        FLAG=0;
+    if ((reinterpret_cast<signed short&>(animationStage))==6 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        reinterpret_cast<signed short&>(field080)=1;
+        field07C=0;
+        field3AC=0;
     }
-    if (GetNativeActionAt40FA30()==S16(0x70))
+    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
         SetNativeActionAt40FAC0(0);
-    if (S16(0x62)==6 && S16(0x64)==0)
-        POS=15.0f;
+    if ((reinterpret_cast<signed short&>(animationStage))==6 && (reinterpret_cast<signed short&>(animationFrame))==0)
+        velocityX=15.0f;
     return;
 }

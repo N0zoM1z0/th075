@@ -29,7 +29,7 @@ ADDR=0x004EBDA0
 SRC=ROOT/'probes/CharacterObjectActionsF572.cpp'
 PREVIOUS=ROOT/'.analysis/f583-characterobject-state-leaves-source'
 OBJECT=PREVIOUS/'CharacterObjectF583.obj'
-SYMBOL='?Advance@FighterSwitchF572_Boss004EBDA0@@QAEXXZ'
+SYMBOL='?Advance@FighterSwitchF572_Boss004EBDA0@@UAEXXZ'
 ORIGINAL_CASES={0x34A:(0x34B,295,1093,18),0x34B:(0x34C,278,1012,17)}
 ORIGINAL_TYPES={
   0x0045B830:('REL32','ResetAt45B830'),

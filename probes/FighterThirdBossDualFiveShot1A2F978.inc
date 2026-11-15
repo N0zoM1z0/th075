@@ -7,76 +7,76 @@
 // Entire original 82KB fighter still NONEXACT. No byte grafting.
 // F978 physical original 004AC040 game action1A2: two 5-shot branches.
 case 0x1A2: {
-    if (S16(0x62)==0 && S16(0x64)==0) {
-        I32(0x7C)=1;
+    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        field07C=1;
         ResetAt453E20();
     }
-    if (GetNativeActionAt40FA30()==S16(0x70))
+    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
         SetNativeActionAt40FAC0(2);
-    if (S16(0x62)==5 && S16(0x64)==0) {
+    if ((reinterpret_cast<signed short&>(animationStage))==5 && (reinterpret_cast<signed short&>(animationFrame))==0) {
         PrepareActionAt453D40(0);
-        if (*reinterpret_cast<signed char*>(RAW+0x39D)==2) {
-            F32(0x314)=65.0f;
-            F32(0x318)=10.0f;
+        if (field39D==2) {
+            field314=65.0f;
+            field318=10.0f;
             SpawnSevenFloatAt453B50(0x344,
-                float((*reinterpret_cast<signed char*>(RAW+0x66))*47)+F32(0x44),
-                (*(&POS48))+g_F969_RoundY192At00658264,
-                *reinterpret_cast<signed char*>(RAW+0x66),1,0,1);
-            F32(0x314)=55.0f;
-            F32(0x318)=10.0f;
+                float((facing)*47)+(x),
+                (*(&y))+g_F969_RoundY192At00658264,
+                facing,1,0,1);
+            field314=55.0f;
+            field318=10.0f;
             SpawnSevenFloatAt453B50(0x344,
-                float((*reinterpret_cast<signed char*>(RAW+0x66))*47)+F32(0x44),
-                (*(&POS48))+g_F969_RoundY192At00658264,
-                *reinterpret_cast<signed char*>(RAW+0x66),1,0,1);
-            F32(0x314)=45.0f;
-            F32(0x318)=10.0f;
+                float((facing)*47)+(x),
+                (*(&y))+g_F969_RoundY192At00658264,
+                facing,1,0,1);
+            field314=45.0f;
+            field318=10.0f;
             SpawnSevenFloatAt453B50(0x344,
-                float((*reinterpret_cast<signed char*>(RAW+0x66))*47)+F32(0x44),
-                (*(&POS48))+g_F969_RoundY192At00658264,
-                *reinterpret_cast<signed char*>(RAW+0x66),1,0,1);
-            F32(0x314)=35.0f;
-            F32(0x318)=10.0f;
+                float((facing)*47)+(x),
+                (*(&y))+g_F969_RoundY192At00658264,
+                facing,1,0,1);
+            field314=35.0f;
+            field318=10.0f;
             SpawnSevenFloatAt453B50(0x344,
-                float((*reinterpret_cast<signed char*>(RAW+0x66))*47)+F32(0x44),
-                (*(&POS48))+g_F969_RoundY192At00658264,
-                *reinterpret_cast<signed char*>(RAW+0x66),1,0,1);
-            F32(0x314)=25.0f;
-            F32(0x318)=10.0f;
+                float((facing)*47)+(x),
+                (*(&y))+g_F969_RoundY192At00658264,
+                facing,1,0,1);
+            field314=25.0f;
+            field318=10.0f;
             SpawnSevenFloatAt453B50(0x344,
-                float((*reinterpret_cast<signed char*>(RAW+0x66))*47)+F32(0x44),
-                (*(&POS48))+g_F969_RoundY192At00658264,
-                *reinterpret_cast<signed char*>(RAW+0x66),1,0,1);
+                float((facing)*47)+(x),
+                (*(&y))+g_F969_RoundY192At00658264,
+                facing,1,0,1);
         } else {
-            F32(0x314)=65.0f;
-            F32(0x318)=10.0f;
+            field314=65.0f;
+            field318=10.0f;
             SpawnSevenFloatAt453B50(0x344,
-                float((*reinterpret_cast<signed char*>(RAW+0x66))*47)+F32(0x44),
-                (*(&POS48))+g_F969_RoundY192At00658264,
-                *reinterpret_cast<signed char*>(RAW+0x66),1,0,1);
-            F32(0x314)=55.0f;
-            F32(0x318)=10.0f;
+                float((facing)*47)+(x),
+                (*(&y))+g_F969_RoundY192At00658264,
+                facing,1,0,1);
+            field314=55.0f;
+            field318=10.0f;
             SpawnSevenFloatAt453B50(0x344,
-                float((*reinterpret_cast<signed char*>(RAW+0x66))*47)+F32(0x44),
-                (*(&POS48))+g_F969_RoundY192At00658264,
-                *reinterpret_cast<signed char*>(RAW+0x66),1,0,1);
-            F32(0x314)=45.0f;
-            F32(0x318)=10.0f;
+                float((facing)*47)+(x),
+                (*(&y))+g_F969_RoundY192At00658264,
+                facing,1,0,1);
+            field314=45.0f;
+            field318=10.0f;
             SpawnSevenFloatAt453B50(0x344,
-                float((*reinterpret_cast<signed char*>(RAW+0x66))*47)+F32(0x44),
-                (*(&POS48))+g_F969_RoundY192At00658264,
-                *reinterpret_cast<signed char*>(RAW+0x66),1,0,1);
-            F32(0x314)=35.0f;
-            F32(0x318)=10.0f;
+                float((facing)*47)+(x),
+                (*(&y))+g_F969_RoundY192At00658264,
+                facing,1,0,1);
+            field314=35.0f;
+            field318=10.0f;
             SpawnSevenFloatAt453B50(0x344,
-                float((*reinterpret_cast<signed char*>(RAW+0x66))*47)+F32(0x44),
-                (*(&POS48))+g_F969_RoundY192At00658264,
-                *reinterpret_cast<signed char*>(RAW+0x66),1,0,1);
-            F32(0x314)=25.0f;
-            F32(0x318)=10.0f;
+                float((facing)*47)+(x),
+                (*(&y))+g_F969_RoundY192At00658264,
+                facing,1,0,1);
+            field314=25.0f;
+            field318=10.0f;
             SpawnSevenFloatAt453B50(0x344,
-                float((*reinterpret_cast<signed char*>(RAW+0x66))*47)+F32(0x44),
-                (*(&POS48))+g_F969_RoundY192At00658264,
-                *reinterpret_cast<signed char*>(RAW+0x66),1,0,1);
+                float((facing)*47)+(x),
+                (*(&y))+g_F969_RoundY192At00658264,
+                facing,1,0,1);
         }
     }
     break;

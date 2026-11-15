@@ -7,66 +7,66 @@
 // The meaningful real stage6 counter loop shifts source saved-this
 // from EBP-8 to EBP-0xC. No fake locals, manual code or credit.
         case 0x2F8: {
-            if (S16(0x62)==0 && S16(0x64)==0) {
-                S16(0xF00)=0;
-                S16(0xF02)=0;
-                S16(0xF04)=0;
-                I32(0x7C)=1;
+            if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+                reinterpret_cast<signed short&>(scriptCounterF00)=0;
+                reinterpret_cast<signed short&>(scriptCounterF02)=0;
+                reinterpret_cast<signed short&>(fieldF04)=0;
+                field07C=1;
                 ResetAt453E20();
             }
-            if (S16(0x62)==2) {
-                ++S16(0xF02);
-                if (S16(0xF02)>4) {
+            if ((reinterpret_cast<signed short&>(animationStage))==2) {
+                ++reinterpret_cast<signed short&>(scriptCounterF02);
+                if ((reinterpret_cast<signed short&>(scriptCounterF02))>4) {
                     SpawnAt453C80(0x40,
-                        reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44-float(*reinterpret_cast<signed char*>(RAW+0x66)*3),
-                        (*(&POS48))+g_YPlusAt0065929C,1,1);
-                    S16(0xF02)=0;
+                        reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44-float(facing*3),
+                        (*(&y))+g_YPlusAt0065929C,1,1);
+                    reinterpret_cast<signed short&>(scriptCounterF02)=0;
                 }
             }
-            if (S16(0x62)==6 && S16(0x64)==0) {
+            if ((reinterpret_cast<signed short&>(animationStage))==6 && (reinterpret_cast<signed short&>(animationFrame))==0) {
                 PrepareActionAt453D40(0x12);
-                F32(0x314)=float(RandomBoundaryAt455580(0,40)-20);
+                field314=float(RandomBoundaryAt455580(0,40)-20);
                 SpawnFloatXYAt453A70(0x391,
-                    float(*reinterpret_cast<signed char*>(RAW+0x66)*36)+F32(0x44),
-                    (*(&POS48))+g_StormYAt0065948C,
-                    *reinterpret_cast<signed char*>(RAW+0x66),1);
+                    float(facing*36)+(x),
+                    (*(&y))+g_StormYAt0065948C,
+                    facing,1);
                 for (int i=0; i<static_cast<int>(g_CloudOpponentAt006714D0)*2+2; ++i)
                     SpawnFloatXYAt453A70(0x392,
-                        float(*reinterpret_cast<signed char*>(RAW+0x66)*36)+F32(0x44),
-                        (*(&POS48))+g_StormYAt0065948C,
-                        *reinterpret_cast<signed char*>(RAW+0x66),1);
+                        float(facing*36)+(x),
+                        (*(&y))+g_StormYAt0065948C,
+                        facing,1);
             }
-            if (GetNativeActionAt40FA30()==S16(0x70)) {
+            if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
                 SetNativeActionAt40FAC0(0);
-                S16(0x516)=RandomBoundaryAt455580(60,100)
+                reinterpret_cast<signed short&>(aiCardTimer)=RandomBoundaryAt455580(60,100)
                            -static_cast<int>(g_CloudOpponentAt006714D0)*20;
             }
-            if (S16(0x62)==2 && S16(0x64)==0) PrepareActionAt453D40(0x15);
-            if (S16(0x62)==3 && S16(0x64)==0) {
-                if (S16(0xF00)<3-static_cast<int>(g_CloudOpponentAt006714D0)) {
-                    ++S16(0xF00);
+            if ((reinterpret_cast<signed short&>(animationStage))==2 && (reinterpret_cast<signed short&>(animationFrame))==0) PrepareActionAt453D40(0x15);
+            if ((reinterpret_cast<signed short&>(animationStage))==3 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+                if ((reinterpret_cast<signed short&>(scriptCounterF00))<3-static_cast<int>(g_CloudOpponentAt006714D0)) {
+                    ++reinterpret_cast<signed short&>(scriptCounterF00);
                     SetAuxActionAt40FB40(2);
                     break;
                 }
-                S16(0xF00)=0;
+                reinterpret_cast<signed short&>(scriptCounterF00)=0;
             }
-            if (S16(0x62)==4 && S16(0x64)==0) {
-                if (S16(0xF00)<3-static_cast<int>(g_CloudOpponentAt006714D0)) {
-                    ++S16(0xF00);
+            if ((reinterpret_cast<signed short&>(animationStage))==4 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+                if ((reinterpret_cast<signed short&>(scriptCounterF00))<3-static_cast<int>(g_CloudOpponentAt006714D0)) {
+                    ++reinterpret_cast<signed short&>(scriptCounterF00);
                     SetAuxActionAt40FB40(3);
                     break;
                 }
-                S16(0xF00)=0;
+                reinterpret_cast<signed short&>(scriptCounterF00)=0;
             }
-            if (S16(0x62)==8 && S16(0x64)==0
-                && S16(0xF00)<static_cast<int>(g_CloudOpponentAt006714D0)+6) {
+            if ((reinterpret_cast<signed short&>(animationStage))==8 && (reinterpret_cast<signed short&>(animationFrame))==0
+                && (reinterpret_cast<signed short&>(scriptCounterF00))<static_cast<int>(g_CloudOpponentAt006714D0)+6) {
                 SetAuxActionAt40FB40(6);
-                ++S16(0xF00);
+                ++reinterpret_cast<signed short&>(scriptCounterF00);
             }
-            if (S16(0x62)==10 && S16(0x64)==0
-                && S16(0xF00)<10-static_cast<int>(g_CloudOpponentAt006714D0)) {
+            if ((reinterpret_cast<signed short&>(animationStage))==10 && (reinterpret_cast<signed short&>(animationFrame))==0
+                && (reinterpret_cast<signed short&>(scriptCounterF00))<10-static_cast<int>(g_CloudOpponentAt006714D0)) {
                 SetAuxActionAt40FB40(8);
-                ++S16(0xF00);
+                ++reinterpret_cast<signed short&>(scriptCounterF00);
             }
             break;
         }

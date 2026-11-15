@@ -5,21 +5,21 @@
  // This case is INTERNAL to a still NONEXACT 82KB original fighter.
 // Genuine original 004AC040 131: 202B/58x86, stage5 Prepare0x1D.
 case 0x131: {
-    POS54=POS54-POS5C;
-    if (POS48+POS54<=g_ThresholdAt0065782C) {
+    velocityY=velocityY-field05C;
+    if (y+velocityY<=g_ThresholdAt0065782C) {
         SetNativeActionAt40FAC0(0xA);
-        POS48=0.0f;
-        POS5C=0.0f;
-        POS54=0.0f;
+        y=0.0f;
+        field05C=0.0f;
+        velocityY=0.0f;
         break;
     }
-    if (S16(0x62)==0 && S16(0x64)==0) {
-        S16(0x80)=1;
-        I32(0x7C)=0;
+    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        reinterpret_cast<signed short&>(field080)=1;
+        field07C=0;
     }
-    if (GetNativeActionAt40FA30()==S16(0x70))
+    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
         SetNativeActionAt40FAC0(9);
-    if (S16(0x62)==5 && S16(0x64)==0)
+    if ((reinterpret_cast<signed short&>(animationStage))==5 && (reinterpret_cast<signed short&>(animationFrame))==0)
         PrepareActionAt453D60(0x1D);
     break;
 }

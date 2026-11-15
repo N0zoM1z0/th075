@@ -18,7 +18,7 @@ from capstone import Cs,CS_ARCH_X86,CS_MODE_32
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'.analysis/f764-approach-volley-whole'
 BASE=0x00543210
-SYM='?Advance@FighterSwitchF598_Boss00543210@@QAEXXZ'
+SYM='?Advance@FighterSwitchF598_Boss00543210@@UAEXXZ'
 ORIG=(0x005509CC,0x00550D97,971,279,31)
 
 

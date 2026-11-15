@@ -50,7 +50,7 @@ assert boss['dense_entries']==156 and boss['sparse_bytes']==319
 import bisect
 rows={}
 for label,obj in sources.items():
- code,refs=rd.object_function(obj,'?Advance@FighterSwitchF598_Boss00543210@@QAEXXZ')
+ code,refs=rd.object_function(obj,'?Advance@FighterSwitchF598_Boss00543210@@UAEXXZ')
  ins=[]
  for x in D.disasm(code,0):
   ins.append(x)

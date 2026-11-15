@@ -15,7 +15,7 @@ from capstone import Cs,CS_ARCH_X86,CS_MODE_32
 
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'.analysis/f768-fighter-storm-whole'
-SYM='?Advance@FighterSwitchF598_Boss00543210@@QAEXXZ'
+SYM='?Advance@FighterSwitchF598_Boss00543210@@UAEXXZ'
 CASE=(0x005500D5,0x00550475,928,252,23)
 
 

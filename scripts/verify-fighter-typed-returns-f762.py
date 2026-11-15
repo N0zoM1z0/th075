@@ -18,7 +18,7 @@ from capstone import Cs,CS_ARCH_X86,CS_MODE_32
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'.analysis/f762-typed-returns-whole'
 BASE=0x00543210
-SYM='?Advance@FighterSwitchF598_Boss00543210@@QAEXXZ'
+SYM='?Advance@FighterSwitchF598_Boss00543210@@UAEXXZ'
 ORIGINAL={0x1F6:(0x0054AB00,0x0054AF9D,1181,348,35),
           0x1F7:(0x0054AF9D,0x0054B43A,1181,348,35),
           0x1F8:(0x0054B43A,0x0054B9F9,1471,422,45)}

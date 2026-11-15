@@ -31,7 +31,7 @@ SOURCE=ROOT/'probes/CharacterObjectActionsF572.cpp'
 BASE=ROOT/'.analysis/f583-characterobject-state-leaves-source'
 OBJ=BASE/'CharacterObjectF583.obj'
 OUT=ROOT/'.analysis/f587-characterobject-four-way-source'
-SYMBOL='?Advance@FighterSwitchF572_Boss004EBDA0@@QAEXXZ'
+SYMBOL='?Advance@FighterSwitchF572_Boss004EBDA0@@UAEXXZ'
 CALLS={
     0x0045B830:('REL32','ResetAt45B830'),
     0x00453A70:('REL32','SpawnAt453A70'),

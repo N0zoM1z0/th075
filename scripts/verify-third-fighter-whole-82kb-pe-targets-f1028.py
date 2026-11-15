@@ -34,7 +34,7 @@ original=list(D.disasm(rd.pe_bytes_at(PE,BASE,NATIVE),BASE))
 assert len(original)==X86 and original[-1].address+original[-1].size==BASE+NATIVE
 assert original[2].op_str=='esp, 0x720'
 assert original[4].op_str=='dword ptr [ebp - 0x64], ecx'
-code,refs=rd.object_function(obj,'?Advance@FighterSwitchF598_Boss004AC040@@QAEXXZ')
+code,refs=rd.object_function(obj,'?Advance@FighterSwitchF598_Boss004AC040@@UAEXXZ')
 I=[]
 for ins in D.disasm(code,0):
  I.append(ins)

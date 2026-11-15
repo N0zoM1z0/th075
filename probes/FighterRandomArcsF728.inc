@@ -7,84 +7,84 @@
 // All four x87 intermediate stack owners remain NONEXACT in each case.
 // Full real float shot/motion/ground/action source, whole giant NONEXACT.
         case 0x1F4: {
-            if (S16(0x62)==0 && S16(0x64)==0) {
+            if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
                 ResetAt453E20();
-                S16(0x80)=1;
-                I32(0x7C)=0;
-                U8(0x3AC)=0;
+                reinterpret_cast<signed short&>(field080)=1;
+                field07C=0;
+                reinterpret_cast<unsigned char&>(field3AC)=0;
             }
-            if (RandomBoundaryAt455580(0,100)<40 && S16(0x62)>3 && S16(0x62)<8) {
+            if (RandomBoundaryAt455580(0,100)<40 && (reinterpret_cast<signed short&>(animationStage))>3 && (reinterpret_cast<signed short&>(animationStage))<8) {
                 SpawnFloatXYAt453A70(0x330,
-                    (F32(0x44)+g_F728_RandomOffsetXAt00657878)
+                    ((x)+g_F728_RandomOffsetXAt00657878)
                         -float(RandomBoundaryAt455580(0,60)),
-                    ((*(&POS48))+g_F728_RandomOffsetYAt00657858)
+                    ((*(&y))+g_F728_RandomOffsetYAt00657858)
                         +float(RandomBoundaryAt455580(0,140)),
-                    *reinterpret_cast<signed char*>(RAW+0x66),1);
+                    facing,1);
             }
-            if (POS>g_ThresholdAt0065782C) {
-                POS=POS-g_F728_PositiveDragAt006583FC;
-                if (POS<g_ThresholdAt0065782C)
-                    POS=0.0f;
+            if ((velocityX)>g_ThresholdAt0065782C) {
+                velocityX=(velocityX)-g_F728_PositiveDragAt006583FC;
+                if ((velocityX)<g_ThresholdAt0065782C)
+                    velocityX=0.0f;
             }
-            if (POS48>g_ThresholdAt0065782C) {
-                POS54=POS54-POS5C;
-                if (POS48+POS54<=g_ThresholdAt0065782C) {
+            if (y>g_ThresholdAt0065782C) {
+                velocityY=velocityY-field05C;
+                if (y+velocityY<=g_ThresholdAt0065782C) {
                     ResetAt453E20();
                     SetAuxActionAt40FB40(12);
-                    POS48=0.0f;
+                    y=0.0f;
                     break;
                 }
             }
-            if (GetNativeActionAt40FA30()==S16(0x70))
+            if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
                 SetNativeActionAt40FAC0(0);
-            if (S16(0x62)==4 && S16(0x64)==0) {
+            if ((reinterpret_cast<signed short&>(animationStage))==4 && (reinterpret_cast<signed short&>(animationFrame))==0) {
                 PrepareActionAt453D40(4);
-                POS=8.0f;
-                POS54=14.0f;
-                POS5C=0.8f;
+                velocityX=8.0f;
+                velocityY=14.0f;
+                field05C=0.8f;
             }
-            if (S16(0x62)==18 && S16(0x64)==0)
+            if ((reinterpret_cast<signed short&>(animationStage))==18 && (reinterpret_cast<signed short&>(animationFrame))==0)
                 SetAuxActionAt40FB40(16);
             break;
         }
         case 0x1F5: {
-            if (S16(0x62)==0 && S16(0x64)==0) {
+            if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
                 ResetAt453E20();
-                S16(0x80)=1;
-                I32(0x7C)=0;
-                U8(0x3AC)=0;
+                reinterpret_cast<signed short&>(field080)=1;
+                field07C=0;
+                reinterpret_cast<unsigned char&>(field3AC)=0;
             }
-            if (POS>g_ThresholdAt0065782C) {
-                POS=POS-g_F728_PositiveDrag2At00658058;
-                if (POS<g_ThresholdAt0065782C)
-                    POS=0.0f;
+            if ((velocityX)>g_ThresholdAt0065782C) {
+                velocityX=(velocityX)-g_F728_PositiveDrag2At00658058;
+                if ((velocityX)<g_ThresholdAt0065782C)
+                    velocityX=0.0f;
             }
-            if (RandomBoundaryAt455580(0,100)<40 && S16(0x62)>3 && S16(0x62)<8) {
+            if (RandomBoundaryAt455580(0,100)<40 && (reinterpret_cast<signed short&>(animationStage))>3 && (reinterpret_cast<signed short&>(animationStage))<8) {
                 SpawnFloatXYAt453A70(0x330,
-                    (F32(0x44)+g_F728_RandomOffsetXAt00657878)
+                    ((x)+g_F728_RandomOffsetXAt00657878)
                         -float(RandomBoundaryAt455580(0,60)),
-                    ((*(&POS48))+g_F728_RandomOffsetYAt00657858)
+                    ((*(&y))+g_F728_RandomOffsetYAt00657858)
                         +float(RandomBoundaryAt455580(0,140)),
-                    *reinterpret_cast<signed char*>(RAW+0x66),1);
+                    facing,1);
             }
-            if (POS48>g_ThresholdAt0065782C) {
-                POS54=POS54-POS5C;
-                if (POS48+POS54<=g_ThresholdAt0065782C) {
+            if (y>g_ThresholdAt0065782C) {
+                velocityY=velocityY-field05C;
+                if (y+velocityY<=g_ThresholdAt0065782C) {
                     ResetAt453E20();
                     SetAuxActionAt40FB40(12);
-                    POS48=0.0f;
+                    y=0.0f;
                     break;
                 }
             }
-            if (GetNativeActionAt40FA30()==S16(0x70))
+            if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
                 SetNativeActionAt40FAC0(0);
-            if (S16(0x62)==4 && S16(0x64)==0) {
+            if ((reinterpret_cast<signed short&>(animationStage))==4 && (reinterpret_cast<signed short&>(animationFrame))==0) {
                 PrepareActionAt453D40(4);
-                POS=18.0f;
-                POS54=16.0f;
-                POS5C=0.8f;
+                velocityX=18.0f;
+                velocityY=16.0f;
+                field05C=0.8f;
             }
-            if (S16(0x62)==12 && S16(0x64)==0)
+            if ((reinterpret_cast<signed short&>(animationStage))==12 && (reinterpret_cast<signed short&>(animationFrame))==0)
                 SetAuxActionAt40FB40(10);
             break;
         }

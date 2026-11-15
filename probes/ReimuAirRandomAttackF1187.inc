@@ -1,17 +1,17 @@
 case R1187_ACTION: {
-    if (S16(0x62)==0 && S16(0x64)==0) {
-        POS=POS*g_ProjectileFallAt006590B4;
-        POS54=(*(&POS54))*g_ProjectileFallAt006590B4;
-        I32(0x7C)=1;
-        S16(0xF00)=0;
+    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        velocityX=(velocityX)*g_ProjectileFallAt006590B4;
+        velocityY=(*(&velocityY))*g_ProjectileFallAt006590B4;
+        field07C=1;
+        reinterpret_cast<signed short&>(scriptCounterF00)=0;
     }
-    if (S16(0x62)>5) POS54=POS54-POS5C;
-    if (POS48+POS54<=g_ThresholdAt0065782C) {
+    if ((reinterpret_cast<signed short&>(animationStage))>5) velocityY=velocityY-field05C;
+    if (y+velocityY<=g_ThresholdAt0065782C) {
         SetNativeActionAt40FAC0(10);
-        POS48=0.0f; POS5C=0.0f; POS54=0.0f;
+        y=0.0f; field05C=0.0f; velocityY=0.0f;
         break;
     }
-    if (GetNativeActionAt40FA30()==S16(0x70)) SetNativeActionAt40FAC0(9);
+    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) SetNativeActionAt40FAC0(9);
 #include "ReimuThreeRandomShotsF1187.inc"
     break;
 }

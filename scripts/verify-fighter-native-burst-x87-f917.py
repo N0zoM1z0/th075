@@ -13,7 +13,7 @@ import importlib.util,json,os,sys,subprocess,re
 ROOT=Path(__file__).resolve().parents[1]
 O=ROOT/'.analysis/f917-native-burst-x87-verified';O.mkdir(parents=True,exist_ok=True)
 ADDR=0x00543210;ORIGINAL_SIZE=58294
-SYM='?Advance@FighterSwitchF598_Boss00543210@@QAEXXZ'
+SYM='?Advance@FighterSwitchF598_Boss00543210@@UAEXXZ'
 FOUR=(11765,11970,12328,12528)
 IMMEDIATE=(20,46,20,46)
 

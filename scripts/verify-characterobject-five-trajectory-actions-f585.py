@@ -28,7 +28,7 @@ CASES=(0x345,0x346,0x347,0x348,0x349)
 ENDS=(0x346,0x347,0x348,0x349,0x34A)
 PREVIOUS=ROOT/'.analysis/f583-characterobject-state-leaves-source'
 OBJECT=PREVIOUS/'CharacterObjectF583.obj'
-SYMBOL='?Advance@FighterSwitchF572_Boss004EBDA0@@QAEXXZ'
+SYMBOL='?Advance@FighterSwitchF572_Boss004EBDA0@@UAEXXZ'
 TYPED={
   0x0040FBB0:('REL32','ResetStateAt40FBB0'),
   0x0045B830:('REL32','ResetAt45B830'),

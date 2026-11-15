@@ -18,7 +18,7 @@ from capstone import Cs,CS_ARCH_X86,CS_MODE_32
 
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'.analysis/f759-fighter-c8-cb-original'
-SYMBOL='?Advance@FighterSwitchF598_Boss00543210@@QAEXXZ'
+SYMBOL='?Advance@FighterSwitchF598_Boss00543210@@UAEXXZ'
 BASE=0x00543210
 ORIGINAL={
   0xC8:(0x0054737F,0x0054756F,496,145,16,5,0x74),

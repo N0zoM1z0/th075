@@ -9,32 +9,32 @@
 // GPR roles still wrong in the incomplete 82KB parent. No exact credit.
 // F976 original 004AC040 real action 1A0 natural random 5/8 loop.
 case 0x1A0: {
-    if (S16(0x62)==0 && S16(0x64)==0) {
-        I32(0x7C)=1;
+    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        field07C=1;
         ResetAt453E20();
     }
-    --S16(0xF00);
-    if (GetNativeActionAt40FA30()==S16(0x70))
+    --reinterpret_cast<signed short&>(scriptCounterF00);
+    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
         SetNativeActionAt40FAC0(0);
-    if (S16(0x62)==5 && S16(0x64)==0) {
+    if ((reinterpret_cast<signed short&>(animationStage))==5 && (reinterpret_cast<signed short&>(animationFrame))==0) {
         PrepareActionAt453D40(0);
-        if (*reinterpret_cast<signed char*>(RAW+0x39D)==2) {
+        if (field39D==2) {
             for (int shot=0;shot<5;++shot) {
-                F32(0x314)=0.0f;
-                F32(0x318)=10.0f;
+                field314=0.0f;
+                field318=10.0f;
                 SpawnSevenFloatAt453B50(0x344,
-                    float((RandAt455580(0,80)+30)*(*reinterpret_cast<signed char*>(RAW+0x66)))+F32(0x44),
-                    ((*(&POS48))+g_F976_RandomYAt0065786C+shot*40)+float(RandAt455580(0,20)),
-                    *reinterpret_cast<signed char*>(RAW+0x66),1,0,1);
+                    float((RandAt455580(0,80)+30)*(facing))+(x),
+                    ((*(&y))+g_F976_RandomYAt0065786C+shot*40)+float(RandAt455580(0,20)),
+                    facing,1,0,1);
             }
         } else {
             for (int shot=0;shot<8;++shot) {
-                F32(0x314)=0.0f;
-                F32(0x318)=10.0f;
+                field314=0.0f;
+                field318=10.0f;
                 SpawnSevenFloatAt453B50(0x344,
-                    float((RandAt455580(0,100)+20)*(*reinterpret_cast<signed char*>(RAW+0x66)))+F32(0x44),
-                    ((*(&POS48))+g_F976_RandomYAt0065786C+shot*30)+float(RandAt455580(0,20)),
-                    *reinterpret_cast<signed char*>(RAW+0x66),1,0,1);
+                    float((RandAt455580(0,100)+20)*(facing))+(x),
+                    ((*(&y))+g_F976_RandomYAt0065786C+shot*30)+float(RandAt455580(0,20)),
+                    facing,1,0,1);
             }
         }
     }

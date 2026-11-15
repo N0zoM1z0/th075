@@ -4,40 +4,40 @@
 // Real state transition fires raw 0x3C projectile BEFORE writing
 // the new frame/trajectory values. Full 82KB parent remains NONEXACT.
 case 0xCC: {
-    if ((*(&POS48) == g_ThresholdAt0065782C) ||
-        POS54 > g_ThresholdAt0065782C) {
+    if ((*(&y) == g_ThresholdAt0065782C) ||
+        velocityY > g_ThresholdAt0065782C) {
         ConfigureStormAt454BC0(3,4,0xFF);
-        I16(0x88)=2;
+        reinterpret_cast<signed short&>(field088)=2;
     }
-    if (I16(0x62)==0 && FLAG==0)
+    if (reinterpret_cast<signed short&>(animationStage)==0 && (field3AC)==0)
         ResetAt453E20();
-    if (POS48>g_ThresholdAt0065782C) {
-        POS54=POS54-POS5C;
-        if (POS48+POS54<=g_ThresholdAt0065782C) {
+    if (y>g_ThresholdAt0065782C) {
+        velocityY=velocityY-field05C;
+        if (y+velocityY<=g_ThresholdAt0065782C) {
             SetNativeActionAt40FAC0(10);
-            POS48=0.0f;
+            y=0.0f;
             ResetAt453E20();
             break;
         }
     }
-    if (I16(0x62)==4 &&
-        POS54<g_ExtraThresholdAt00657D14)
+    if (reinterpret_cast<signed short&>(animationStage)==4 &&
+        velocityY<g_ExtraThresholdAt00657D14)
         SetAuxActionAt40FB40(5);
-    ++I16(0x64);
-    if (I16(0x64)>=I16(0x72)) {
-        I16(0x64)=0;
-        ++I16(0x62);
-        if (I16(0x62)==3) {
+    ++reinterpret_cast<signed short&>(animationFrame);
+    if (reinterpret_cast<signed short&>(animationFrame)>=reinterpret_cast<signed short&>(field072)) {
+        reinterpret_cast<signed short&>(animationFrame)=0;
+        ++reinterpret_cast<signed short&>(animationStage);
+        if (reinterpret_cast<signed short&>(animationStage)==3) {
             // Original native call before the actual motion values are reset.
-            SpawnRawAt453C80(0x3C,I32(0x44),I32(0x48),1,1);
-            POS=0.0f;
-            POS54=20.0f;
-            POS5C=0.7f;
-            FLAG=0;
+            SpawnRawAt453C80(0x3C,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),1,1);
+            velocityX=0.0f;
+            velocityY=20.0f;
+            field05C=0.7f;
+            field3AC=0;
         }
-        if (I16(0x62)>=I16(0x70))
-            I16(0x62)=I16(0x62)-2;
-        NativeVirtualFrameAdvance();
+        if (reinterpret_cast<signed short&>(animationStage)>=reinterpret_cast<signed short&>(field070))
+            reinterpret_cast<signed short&>(animationStage)=reinterpret_cast<signed short&>(animationStage)-2;
+        BindAnimation();
     }
     break;
 }

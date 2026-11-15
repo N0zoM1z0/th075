@@ -1,3 +1,5 @@
+#include "AliceFighter.hpp"
+#include "CharacterObject.hpp"
 // F572/F573/F574/F575/F576/F577/F578/F579/F580/F581/F582/F583/F585/F586/F587/F588/F590/F591/F592/F593/F596: selected natural VC7.1 source, original PE 004EBDA0.
 // Original entire 33,293-byte CODE + 438 post-RET DATA now have the
 // exact physical native layout and all 8,789 original x86 instruction
@@ -18,7 +20,7 @@ public:
     void SpawnMovedAt453A70(int kind, float x, int y, char first, int second);
     void SetupAt453E60(float);
 };
-class FighterSwitchF572_Boss004EBDA0 {
+class FighterSwitchF572_Boss004EBDA0 : public CharacterObject {
 public:
     void Advance();
     void ResetAt4F4170();
@@ -110,13 +112,13 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         return;
     if (*reinterpret_cast<signed short*>(
             *reinterpret_cast<char**>(RAW+0xE4)+0x3BA) != 0 &&
-            I16(0x8A) == 0)
+            reinterpret_cast<signed short&>(field08A) == 0)
         return;
-    if (I16(0x82) != 0) {
-        --I16(0x82);
+    if (reinterpret_cast<signed short&>(field082) != 0) {
+        --reinterpret_cast<signed short&>(field082);
         return;
     }
-    switch (I16(0x60)) {
+    switch (reinterpret_cast<signed short&>(action)) {
         case 0x320: ResetAt4F4170(); break;
         case 0x321: ResetAt4F4170(); break;
         case 0x322: ResetAt4F4170(); break;
@@ -125,235 +127,235 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         case 0x325: ResetAt4F4170(); break;
         case 0x326: ResetAt4F4170(); break;
         case 0x327: {
-    if (P16(0x60) > 0x45 && P16(0x60) < 0x96 && S16(0x62) < 5) {
+    if (P16(0x60) > 0x45 && P16(0x60) < 0x96 && (reinterpret_cast<signed short&>(animationStage)) < 5) {
         ResetAt45B830();
         for (int iteration=0; iteration<8; ++iteration)
-            PARENT->SpawnAt453A70(0x3E4, I32(0x44), I32(0x48), 1, 1);
+            PARENT->SpawnAt453A70(0x3E4, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
         if (P16(0xEFA) > 0x19) {
             P16(0xEFA) = 0;
-            PARENT->SpawnAt453A70(0x3E3, I32(0x44), I32(0x48), 1, 1);
+            PARENT->SpawnAt453A70(0x3E3, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
         }
         break;
     } else {
-        if (I32(0x7C) == 6) {
-            I32(0x7C) = 0;
-            S16(0x80) = 1;
+        if ((field07C) == 6) {
+            field07C = 0;
+            reinterpret_cast<signed short&>(field080) = 1;
         }
-        if (S16(0x62) == 0 && S16(0x64) == 0) {
-            S16(0xD8) = -30;
-            S16(0xDA) = 150;
-            S16(0xDC) = 0;
+        if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+            reinterpret_cast<signed short&>(field0D8) = -30;
+            reinterpret_cast<signed short&>(field0DA) = 150;
+            reinterpret_cast<signed short&>(field0DC) = 0;
             ResetStateAt40FBB0(0,0,0);
-            S16(0x80) = 4;
-            I32(0x7C) = 0;
-            F32(0x1C) = 1.0f;
-            F32(0x20) = 1.0f;
-            U8(0x11) = 0xFF;
-            U8(0x12) = 0xFF;
-            U8(0x13) = 0xFF;
-            U8(0x14) = 0xFF;
+            reinterpret_cast<signed short&>(field080) = 4;
+            field07C = 0;
+            scaleX = 1.0f;
+            scaleY = 1.0f;
+            color[0] = 0xFF;
+            color[1] = 0xFF;
+            color[2] = 0xFF;
+            color[3] = 0xFF;
         }
-        if (S16(0x62) == 1 && S16(0x64) == 0) {
-            PARENT->SpawnComputedAt453A70(0x371, I32(0x44),
-                                  F32(0x48) + gFloatAt00657850,
-                                  S8(0x66), 1);
+        if ((reinterpret_cast<signed short&>(animationStage)) == 1 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+            PARENT->SpawnComputedAt453A70(0x371, reinterpret_cast<int&>(x),
+                                  (y) + gFloatAt00657850,
+                                  facing, 1);
             PARENT->ModifyAt453D40(2);
         }
-        if (S16(0x62) == 0) {
-            MotionAt40FB70(static_cast<float>(S16(0xD8)),
-                            static_cast<float>(S16(0xDA))*gMulAt006590B4);
-            S16(0xDA) -= 5;
-            S16(0xD8) += 3;
-            F32(0x30) = F32(0x30) + gAddAt00659738;
-            if (S16(0xDA) <= 0) {
-                F32(0x50) = 0.0f;
-                F32(0x54) = 0.0f;
+        if ((reinterpret_cast<signed short&>(animationStage)) == 0) {
+            MotionAt40FB70(static_cast<float>(reinterpret_cast<signed short&>(field0D8)),
+                            static_cast<float>(reinterpret_cast<signed short&>(field0DA))*gMulAt006590B4);
+            reinterpret_cast<signed short&>(field0DA) -= 5;
+            reinterpret_cast<signed short&>(field0D8) += 3;
+            rotationZ = (rotationZ) + gAddAt00659738;
+            if ((reinterpret_cast<signed short&>(field0DA)) <= 0) {
+                velocityX = 0.0f;
+                velocityY = 0.0f;
                 SetStateAt40FB40(1);
-                F32(0x30) = 0.0f;
+                rotationZ = 0.0f;
                 break;
             }
         }
-        F32(0x44) += static_cast<float>(S8(0x66)) * F32(0x50);
-        F32(0x48) = *(&F32(0x48)) - *(&F32(0x54));
-        if (S16(0x62) < 5 && S16(0x80) == 0) {
-            SetStateAt40FB40(S16(0x62) + 4);
+        x += static_cast<float>(facing) * (velocityX);
+        y = *(&y) - *(&velocityY);
+        if ((reinterpret_cast<signed short&>(animationStage)) < 5 && (reinterpret_cast<signed short&>(field080)) == 0) {
+            SetStateAt40FB40((reinterpret_cast<signed short&>(animationStage)) + 4);
             break;
         }
-        if (S16(0x62) > 4) {
-            F32(0x1C) = static_cast<float>(F32(0x1C)*gMulDoubleAt00659730);
-            F32(0x20) = F32(0x20) + gAddAt006583FC;
-            if (U8(0x11) >= 10)
-                U8(0x11) -= 10;
+        if ((reinterpret_cast<signed short&>(animationStage)) > 4) {
+            scaleX = static_cast<float>((scaleX)*gMulDoubleAt00659730);
+            scaleY = (scaleY) + gAddAt006583FC;
+            if ((color[0]) >= 10)
+                color[0] -= 10;
             else {
                 ResetAt45B830();
                 break;
             }
         }
-        if (GetStateAt40FA30() == S16(0x70)) {
+        if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070))) {
             SetStateAt40FB40(5);
             break;
         }
-        if (S16(0x64) == 0)
-            I32(0x7C) = 0;
-        if (S16(0x62) == 5 && S16(0x64) == 0 && S16(0xDC) < 10) {
+        if ((reinterpret_cast<signed short&>(animationFrame)) == 0)
+            field07C = 0;
+        if ((reinterpret_cast<signed short&>(animationStage)) == 5 && (reinterpret_cast<signed short&>(animationFrame)) == 0 && (reinterpret_cast<signed short&>(field0DC)) < 10) {
             SetStateAt40FB40(1);
-            ++S16(0xDC);
+            ++reinterpret_cast<signed short&>(field0DC);
         }
     }
     break;
 }
         case 0x328: {
-    if (P16(0x60) > 0x45 && P16(0x60) < 0x96 && S16(0x62) < 5) {
+    if (P16(0x60) > 0x45 && P16(0x60) < 0x96 && (reinterpret_cast<signed short&>(animationStage)) < 5) {
         ResetAt45B830();
         for (int iteration=0; iteration<8; ++iteration)
-            PARENT->SpawnAt453A70(0x3E4, I32(0x44), I32(0x48), 1, 1);
+            PARENT->SpawnAt453A70(0x3E4, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
         if (P16(0xEFA) > 0x19) {
             P16(0xEFA) = 0;
-            PARENT->SpawnAt453A70(0x3E3, I32(0x44), I32(0x48), 1, 1);
+            PARENT->SpawnAt453A70(0x3E3, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
         }
         break;
     } else {
-        if (I32(0x7C) == 6) {
-            I32(0x7C) = 0;
-            S16(0x80) = 1;
+        if ((field07C) == 6) {
+            field07C = 0;
+            reinterpret_cast<signed short&>(field080) = 1;
         }
-        if (S16(0x62) == 0 && S16(0x64) == 0) {
-            S16(0xD8) = 70;
-            S16(0xDA) = 150;
-            S16(0xDC) = 0;
+        if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+            reinterpret_cast<signed short&>(field0D8) = 70;
+            reinterpret_cast<signed short&>(field0DA) = 150;
+            reinterpret_cast<signed short&>(field0DC) = 0;
             ResetStateAt40FBB0(0,0,0);
-            S16(0x80) = 4;
-            I32(0x7C) = 0;
-            F32(0x1C) = 1.0f;
-            F32(0x20) = 1.0f;
-            U8(0x11) = 0xFF;
-            U8(0x12) = 0xFF;
-            U8(0x13) = 0xFF;
-            U8(0x14) = 0xFF;
+            reinterpret_cast<signed short&>(field080) = 4;
+            field07C = 0;
+            scaleX = 1.0f;
+            scaleY = 1.0f;
+            color[0] = 0xFF;
+            color[1] = 0xFF;
+            color[2] = 0xFF;
+            color[3] = 0xFF;
         }
-        if (S16(0x62) == 1 && S16(0x64) == 0) {
-            PARENT->SpawnComputedAt453A70(0x371, I32(0x44),
-                                  F32(0x48) + gFloatAt00657850,
-                                  S8(0x66), 1);
+        if ((reinterpret_cast<signed short&>(animationStage)) == 1 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+            PARENT->SpawnComputedAt453A70(0x371, reinterpret_cast<int&>(x),
+                                  (y) + gFloatAt00657850,
+                                  facing, 1);
             PARENT->ModifyAt453D40(2);
         }
-        if (S16(0x62) == 0) {
-            MotionAt40FB70(static_cast<float>(S16(0xD8)),
-                            static_cast<float>(S16(0xDA))*gMulAt006590B4);
-            S16(0xDA) -= 5;
-            S16(0xD8) -= 2;
-            F32(0x30) = F32(0x30) + gAddAt00659738;
-            if (S16(0xDA) <= 0) {
-                F32(0x50) = 0.0f;
-                F32(0x54) = 0.0f;
+        if ((reinterpret_cast<signed short&>(animationStage)) == 0) {
+            MotionAt40FB70(static_cast<float>(reinterpret_cast<signed short&>(field0D8)),
+                            static_cast<float>(reinterpret_cast<signed short&>(field0DA))*gMulAt006590B4);
+            reinterpret_cast<signed short&>(field0DA) -= 5;
+            reinterpret_cast<signed short&>(field0D8) -= 2;
+            rotationZ = (rotationZ) + gAddAt00659738;
+            if ((reinterpret_cast<signed short&>(field0DA)) <= 0) {
+                velocityX = 0.0f;
+                velocityY = 0.0f;
                 SetStateAt40FB40(1);
-                F32(0x30) = 0.0f;
+                rotationZ = 0.0f;
                 break;
             }
         }
-        F32(0x44) += static_cast<float>(S8(0x66)) * F32(0x50);
-        F32(0x48) = *(&F32(0x48)) - *(&F32(0x54));
-        if (S16(0x62) < 5 && S16(0x80) == 0) {
-            SetStateAt40FB40(S16(0x62) + 4);
+        x += static_cast<float>(facing) * (velocityX);
+        y = *(&y) - *(&velocityY);
+        if ((reinterpret_cast<signed short&>(animationStage)) < 5 && (reinterpret_cast<signed short&>(field080)) == 0) {
+            SetStateAt40FB40((reinterpret_cast<signed short&>(animationStage)) + 4);
             break;
         }
-        if (S16(0x62) > 4) {
-            F32(0x1C) = static_cast<float>(F32(0x1C)*gMulDoubleAt00659730);
-            F32(0x20) = F32(0x20) + gAddAt006583FC;
-            if (U8(0x11) >= 10)
-                U8(0x11) -= 10;
+        if ((reinterpret_cast<signed short&>(animationStage)) > 4) {
+            scaleX = static_cast<float>((scaleX)*gMulDoubleAt00659730);
+            scaleY = (scaleY) + gAddAt006583FC;
+            if ((color[0]) >= 10)
+                color[0] -= 10;
             else {
                 ResetAt45B830();
                 break;
             }
         }
-        if (GetStateAt40FA30() == S16(0x70)) {
+        if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070))) {
             SetStateAt40FB40(5);
             break;
         }
-        if (S16(0x64) == 0)
-            I32(0x7C) = 0;
-        if (S16(0x62) == 5 && S16(0x64) == 0 && S16(0xDC) < 10) {
+        if ((reinterpret_cast<signed short&>(animationFrame)) == 0)
+            field07C = 0;
+        if ((reinterpret_cast<signed short&>(animationStage)) == 5 && (reinterpret_cast<signed short&>(animationFrame)) == 0 && (reinterpret_cast<signed short&>(field0DC)) < 10) {
             SetStateAt40FB40(1);
-            ++S16(0xDC);
+            ++reinterpret_cast<signed short&>(field0DC);
         }
     }
     break;
 }
         case 0x329: {
-    if (P16(0x60) > 0x45 && P16(0x60) < 0x96 && S16(0x62) < 5) {
+    if (P16(0x60) > 0x45 && P16(0x60) < 0x96 && (reinterpret_cast<signed short&>(animationStage)) < 5) {
         ResetAt45B830();
         for (int iteration=0; iteration<8; ++iteration)
-            PARENT->SpawnAt453A70(0x3E4, I32(0x44), I32(0x48), 1, 1);
+            PARENT->SpawnAt453A70(0x3E4, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
         if (P16(0xEFA) > 0x19) {
             P16(0xEFA) = 0;
-            PARENT->SpawnAt453A70(0x3E3, I32(0x44), I32(0x48), 1, 1);
+            PARENT->SpawnAt453A70(0x3E3, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
         }
         break;
     } else {
-        if (I32(0x7C) == 6) {
-            I32(0x7C) = 0;
-            S16(0x80) = 1;
+        if ((field07C) == 6) {
+            field07C = 0;
+            reinterpret_cast<signed short&>(field080) = 1;
         }
-        if (S16(0x62) == 0 && S16(0x64) == 0) {
-            S16(0xD8) = -30;
-            S16(0xDA) = 200;
-            S16(0xDC) = 0;
+        if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+            reinterpret_cast<signed short&>(field0D8) = -30;
+            reinterpret_cast<signed short&>(field0DA) = 200;
+            reinterpret_cast<signed short&>(field0DC) = 0;
             ResetStateAt40FBB0(0,0,0);
-            S16(0x80) = 4;
-            I32(0x7C) = 0;
-            F32(0x1C) = 1.0f;
-            F32(0x20) = 1.0f;
-            U8(0x11) = 0xFF;
-            U8(0x12) = 0xFF;
-            U8(0x13) = 0xFF;
-            U8(0x14) = 0xFF;
+            reinterpret_cast<signed short&>(field080) = 4;
+            field07C = 0;
+            scaleX = 1.0f;
+            scaleY = 1.0f;
+            color[0] = 0xFF;
+            color[1] = 0xFF;
+            color[2] = 0xFF;
+            color[3] = 0xFF;
         }
-        if (S16(0x62) == 1 && S16(0x64) == 0) {
-            PARENT->SpawnComputedAt453A70(0x371, I32(0x44),
-                                  F32(0x48) + gFloatAt00657850,
-                                  S8(0x66), 1);
+        if ((reinterpret_cast<signed short&>(animationStage)) == 1 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+            PARENT->SpawnComputedAt453A70(0x371, reinterpret_cast<int&>(x),
+                                  (y) + gFloatAt00657850,
+                                  facing, 1);
             PARENT->ModifyAt453D40(2);
         }
-        if (S16(0x62) == 0) {
-            MotionAt40FB70(static_cast<float>(S16(0xD8)),
-                            static_cast<float>(S16(0xDA))*gMulAt006590B4);
-            S16(0xDA) -= 5;
-            S16(0xD8) += 4;
-            F32(0x30) = F32(0x30) + gAddAt00659738;
-            if (S16(0xDA) <= 0) {
-                F32(0x50) = 0.0f;
-                F32(0x54) = 0.0f;
+        if ((reinterpret_cast<signed short&>(animationStage)) == 0) {
+            MotionAt40FB70(static_cast<float>(reinterpret_cast<signed short&>(field0D8)),
+                            static_cast<float>(reinterpret_cast<signed short&>(field0DA))*gMulAt006590B4);
+            reinterpret_cast<signed short&>(field0DA) -= 5;
+            reinterpret_cast<signed short&>(field0D8) += 4;
+            rotationZ = (rotationZ) + gAddAt00659738;
+            if ((reinterpret_cast<signed short&>(field0DA)) <= 0) {
+                velocityX = 0.0f;
+                velocityY = 0.0f;
                 SetStateAt40FB40(1);
-                F32(0x30) = 0.0f;
+                rotationZ = 0.0f;
                 break;
             }
         }
-        F32(0x44) += static_cast<float>(S8(0x66)) * F32(0x50);
-        F32(0x48) = *(&F32(0x48)) - *(&F32(0x54));
-        if (S16(0x62) < 5 && S16(0x80) == 0) {
-            SetStateAt40FB40(S16(0x62) + 4);
+        x += static_cast<float>(facing) * (velocityX);
+        y = *(&y) - *(&velocityY);
+        if ((reinterpret_cast<signed short&>(animationStage)) < 5 && (reinterpret_cast<signed short&>(field080)) == 0) {
+            SetStateAt40FB40((reinterpret_cast<signed short&>(animationStage)) + 4);
             break;
         }
-        if (S16(0x62) > 4) {
-            F32(0x1C) = static_cast<float>(F32(0x1C)*gMulDoubleAt00659730);
-            F32(0x20) = F32(0x20) + gAddAt006583FC;
-            if (U8(0x11) >= 10)
-                U8(0x11) -= 10;
+        if ((reinterpret_cast<signed short&>(animationStage)) > 4) {
+            scaleX = static_cast<float>((scaleX)*gMulDoubleAt00659730);
+            scaleY = (scaleY) + gAddAt006583FC;
+            if ((color[0]) >= 10)
+                color[0] -= 10;
             else {
                 ResetAt45B830();
                 break;
             }
         }
-        if (GetStateAt40FA30() == S16(0x70)) {
+        if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070))) {
             SetStateAt40FB40(5);
             break;
         }
-        if (S16(0x64) == 0)
-            I32(0x7C) = 0;
-        if (S16(0x62) == 5 && S16(0x64) == 0 && S16(0xDC) < 10) {
+        if ((reinterpret_cast<signed short&>(animationFrame)) == 0)
+            field07C = 0;
+        if ((reinterpret_cast<signed short&>(animationStage)) == 5 && (reinterpret_cast<signed short&>(animationFrame)) == 0 && (reinterpret_cast<signed short&>(field0DC)) < 10) {
             SetStateAt40FB40(1);
-            ++S16(0xDC);
+            ++reinterpret_cast<signed short&>(field0DC);
         }
     }
     break;
@@ -362,105 +364,105 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
     if (P16(0x60) > 0x31 && P16(0x60) < 0x96) {
         ResetAt45B830();
         for (int iteration=0; iteration<5; ++iteration)
-            PARENT->SpawnAt453A70(0x3E4, I32(0x44), I32(0x48), 1, 1);
+            PARENT->SpawnAt453A70(0x3E4, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
         if (P16(0xEFA) > 0x19) {
             P16(0xEFA) = 0;
-            PARENT->SpawnAt453A70(0x3E3, I32(0x44), I32(0x48), 1, 1);
+            PARENT->SpawnAt453A70(0x3E3, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
         }
         break;
     } else {
-        if (I32(0x7C) == 6) {
-            I32(0x7C) = 0;
-            S16(0x80) = 1;
+        if ((field07C) == 6) {
+            field07C = 0;
+            reinterpret_cast<signed short&>(field080) = 1;
         }
-        if (S16(0x62) == 0 && S16(0x64) == 0) {
+        if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
             ResetStateAt40FBB0(0,0,0);
-            S16(0x80) = 1;
-            I32(0x7C) = 0;
-            if (*(&F32(0xC8)) == gCompareAt0065782C) {
-                F32(0x50) = 5.0f;
-                F32(0x54) = 6.0f;
+            reinterpret_cast<signed short&>(field080) = 1;
+            field07C = 0;
+            if (*(&field0C8) == gCompareAt0065782C) {
+                velocityX = 5.0f;
+                velocityY = 6.0f;
             }
-            if (*(&F32(0xC8)) == gCompareAt0065747C) {
-                F32(0x50) = 3.0f;
-                F32(0x54) = 8.0f;
+            if (*(&field0C8) == gCompareAt0065747C) {
+                velocityX = 3.0f;
+                velocityY = 8.0f;
             }
-            if (*(&F32(0xC8)) == gCompareAt00657480) {
-                F32(0x50) = 1.0f;
-                F32(0x54) = 10.0f;
+            if (*(&field0C8) == gCompareAt00657480) {
+                velocityX = 1.0f;
+                velocityY = 10.0f;
             }
-            if (*(&F32(0xC8)) == gCompareAt00657CF8) {
-                F32(0x50) = -5.0f;
-                F32(0x54) = 6.0f;
+            if (*(&field0C8) == gCompareAt00657CF8) {
+                velocityX = -5.0f;
+                velocityY = 6.0f;
             }
-            if (*(&F32(0xC8)) == gCompareAt00657D14) {
-                F32(0x50) = -3.0f;
-                F32(0x54) = 8.0f;
+            if (*(&field0C8) == gCompareAt00657D14) {
+                velocityX = -3.0f;
+                velocityY = 8.0f;
             }
-            if (*(&F32(0xC8)) == gCompareAt00657874) {
-                F32(0x50) = -1.0f;
-                F32(0x54) = 10.0f;
+            if (*(&field0C8) == gCompareAt00657874) {
+                velocityX = -1.0f;
+                velocityY = 10.0f;
             }
-            F32(0x1C) = 1.0f;
-            F32(0x20) = 1.0f;
-            U8(0x11) = 0xFF;
-            U8(0x12) = 0xFF;
-            U8(0x13) = 0xFF;
-            U8(0x14) = 0xFF;
+            scaleX = 1.0f;
+            scaleY = 1.0f;
+            color[0] = 0xFF;
+            color[1] = 0xFF;
+            color[2] = 0xFF;
+            color[3] = 0xFF;
         }
-        F32(0x54) = F32(0x54) - gDropAt00658058;
-        F32(0x44) += static_cast<float>(S8(0x66)) * F32(0x50);
-        F32(0x48) = *(&F32(0x48)) + *(&F32(0x54));
-        if (S16(0x62) < 2) {
-            F32(0x30) = F32(0x30) + gLiftAt00657CC0;
-            if (*(&F32(0x48)) + *(&F32(0x54)) <= gCompareAt0065782C) {
-                PARENT->SpawnDirectedAt453A70(0x32B, I32(0x44), I32(0x48), S8(0x66), 1);
-                PARENT->SpawnDirectedAt453A70(0x32D, I32(0x44), I32(0x48), S8(0x66), 1);
+        velocityY = (velocityY) - gDropAt00658058;
+        x += static_cast<float>(facing) * (velocityX);
+        y = *(&y) + *(&velocityY);
+        if ((reinterpret_cast<signed short&>(animationStage)) < 2) {
+            rotationZ = (rotationZ) + gLiftAt00657CC0;
+            if (*(&y) + *(&velocityY) <= gCompareAt0065782C) {
+                PARENT->SpawnDirectedAt453A70(0x32B, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), facing, 1);
+                PARENT->SpawnDirectedAt453A70(0x32D, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), facing, 1);
                 PARENT->ModifyAt453D40(4);
                 SetActionAt40FAC0(0x33B);
-                F32(0x48) = 0.0f;
-                F32(0x54) = 0.0f;
-                F32(0x50) = 0.0f;
-                F32(0x30) = 0.0f;
+                y = 0.0f;
+                velocityY = 0.0f;
+                velocityX = 0.0f;
+                rotationZ = 0.0f;
                 break;
             }
         }
-        if (GetStateAt40FA30() == S16(0x70))
+        if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070)))
             SetStateAt40FB40(1);
     }
     break;
 }
         case 0x32B: {
-    if (S16(0x62) == 0 && S16(0x64) == 0) {
-        S16(0xD8) = 0;
+    if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+        reinterpret_cast<signed short&>(field0D8) = 0;
         ResetStateAt40FBB0(0,0,0);
-        S16(0x80) = 1;
-        I32(0x7C) = 0;
-        F32(0x54) = 0.0f;
-        F32(0x50) = 0.0f;
-        F32(0x1C) = 1.0f;
-        F32(0x20) = 1.0f;
-        U8(0x11) = 0xFF;
-        U8(0x12) = 0xFF;
-        U8(0x13) = 0xFF;
-        U8(0x14) = 0xFF;
-        I32(0x28) = 0;
-        I32(0x2C) = 0;
-        I32(0x30) = 0;
+        reinterpret_cast<signed short&>(field080) = 1;
+        field07C = 0;
+        velocityY = 0.0f;
+        velocityX = 0.0f;
+        scaleX = 1.0f;
+        scaleY = 1.0f;
+        color[0] = 0xFF;
+        color[1] = 0xFF;
+        color[2] = 0xFF;
+        color[3] = 0xFF;
+        reinterpret_cast<int&>(rotationX) = 0;
+        reinterpret_cast<int&>(rotationY) = 0;
+        reinterpret_cast<int&>(rotationZ) = 0;
         PARENT->SetupAt453E60(5.0f);
     }
-    F32(0x1C) = (float)(5 - S16(0x64)) * gCurveAt0065972C * (S16(0x64) < 5) + gStepAt00658044 + F32(0x1C);
-    F32(0x20) = (float)(5 - S16(0x64)) * gCurveAt0065972C * (S16(0x64) < 5) + gStepAt00658044 + F32(0x20);
-    if (S16(0x62) > 1) {
-        if (U8(0x11) >= 10)
-            U8(0x11) -= 10;
+    scaleX = (float)(5 - (reinterpret_cast<signed short&>(animationFrame))) * gCurveAt0065972C * ((reinterpret_cast<signed short&>(animationFrame)) < 5) + gStepAt00658044 + (scaleX);
+    scaleY = (float)(5 - (reinterpret_cast<signed short&>(animationFrame))) * gCurveAt0065972C * ((reinterpret_cast<signed short&>(animationFrame)) < 5) + gStepAt00658044 + (scaleY);
+    if ((reinterpret_cast<signed short&>(animationStage)) > 1) {
+        if ((color[0]) >= 10)
+            color[0] -= 10;
         else {
-            U8(0x11) = 0;
+            color[0] = 0;
             ResetAt45B830();
             break;
         }
     }
-    if (GetStateAt40FA30() == S16(0x70))
+    if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070)))
         ResetAt45B830();
     break;
 }
@@ -468,565 +470,565 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
     if (P16(0x60) > 0x31 && P16(0x60) < 0x96) {
         ResetAt45B830();
         for (int iteration=0; iteration<5; ++iteration)
-            PARENT->SpawnAt453A70(0x3E4, I32(0x44), I32(0x48), 1, 1);
+            PARENT->SpawnAt453A70(0x3E4, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
         if (P16(0xEFA) > 25) {
             P16(0xEFA) = 0;
-            PARENT->SpawnAt453A70(0x3E3, I32(0x44), I32(0x48), 1, 1);
+            PARENT->SpawnAt453A70(0x3E3, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
         }
         break;
     } else {
-        if (S16(0x62) == 0 && S16(0x64) == 0) {
+        if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
             ResetStateAt40FBB0(0,0,0);
-            S16(0x80) = 1;
-            I32(0x7C) = 0;
-            MotionRawAt40FB70(I32(0xC8),15.0f);
-            F32(0x1C) = 1.0f;
-            F32(0x20) = 1.0f;
-            U8(0x11) = 0xFF;
-            U8(0x12) = 0xFF;
-            U8(0x13) = 0xFF;
-            U8(0x14) = 0xFF;
+            reinterpret_cast<signed short&>(field080) = 1;
+            field07C = 0;
+            MotionRawAt40FB70(reinterpret_cast<int&>(field0C8),15.0f);
+            scaleX = 1.0f;
+            scaleY = 1.0f;
+            color[0] = 0xFF;
+            color[1] = 0xFF;
+            color[2] = 0xFF;
+            color[3] = 0xFF;
         }
-        F32(0x44) += static_cast<float>(S8(0x66)) * F32(0x50);
-        F32(0x48) = *(&F32(0x48)) + *(&F32(0x54));
-        if (S16(0x62) < 2) {
-            F32(0x30) = F32(0x30) + gLiftAt00657CC0;
-            if (*(&F32(0x48)) + *(&F32(0x54)) <= gCompareAt0065782C) {
+        x += static_cast<float>(facing) * (velocityX);
+        y = *(&y) + *(&velocityY);
+        if ((reinterpret_cast<signed short&>(animationStage)) < 2) {
+            rotationZ = (rotationZ) + gLiftAt00657CC0;
+            if (*(&y) + *(&velocityY) <= gCompareAt0065782C) {
                 PARENT->ModifyAt453D40(4);
-                PARENT->SpawnDirectedAt453A70(0x32B, I32(0x44), I32(0x48), S8(0x66), 1);
-                PARENT->SpawnDirectedAt453A70(0x32D, I32(0x44), I32(0x48), S8(0x66), 1);
+                PARENT->SpawnDirectedAt453A70(0x32B, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), facing, 1);
+                PARENT->SpawnDirectedAt453A70(0x32D, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), facing, 1);
                 SetActionAt40FAC0(0x33B);
-                F32(0x48) = 0.0f;
-                F32(0x54) = 0.0f;
-                F32(0x50) = 0.0f;
-                F32(0x30) = 0.0f;
+                y = 0.0f;
+                velocityY = 0.0f;
+                velocityX = 0.0f;
+                rotationZ = 0.0f;
                 break;
             }
         }
-        if (GetStateAt40FA30() == S16(0x70))
+        if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070)))
             SetStateAt40FB40(1);
     }
     break;
 }
         case 0x32D: {
-    if (S16(0x62) == 0 && S16(0x64) == 0) {
+    if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
         ResetStateAt40FBB0(0,0,0);
-        F32(0x1C) = 0.4f;
-        F32(0x20) = 0.4f;
-        U8(0x11) = 0xFF;
-        U8(0x12) = 0xFF;
-        U8(0x13) = 0xFF;
-        U8(0x14) = 0xFF;
-        S16(0x1A) = 0x4E2;
-        F32(0x28) = -75.0f;
+        scaleX = 0.4f;
+        scaleY = 0.4f;
+        color[0] = 0xFF;
+        color[1] = 0xFF;
+        color[2] = 0xFF;
+        color[3] = 0xFF;
+        reinterpret_cast<signed short&>(field01A) = 0x4E2;
+        rotationX = -75.0f;
     }
-    F32(0x1C) = F32(0x1C) + gFadeAt006583F8;
-    F32(0x20) = F32(0x20) + gFadeAt006583F8;
-    if (S16(0x62) > 1) {
-        if (U8(0x11) > 20)
-            U8(0x11) -= 20;
+    scaleX = (scaleX) + gFadeAt006583F8;
+    scaleY = (scaleY) + gFadeAt006583F8;
+    if ((reinterpret_cast<signed short&>(animationStage)) > 1) {
+        if ((color[0]) > 20)
+            color[0] -= 20;
         else {
             ResetAt45B830();
             break;
         }
     }
-    if (GetStateAt40FA30() == S16(0x70))
+    if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070)))
         ResetAt45B830();
     break;
 }
         case 0x32E: {
-    if (S16(0x62) == 0 && S16(0x64) == 0 && S16(0xD8) == 1) {
-        S16(0xD8) = 0;
+    if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0 && (reinterpret_cast<signed short&>(field0D8)) == 1) {
+        reinterpret_cast<signed short&>(field0D8) = 0;
         ResetStateAt40FBB0(0,0,0);
-        S16(0x80) = 1;
-        I32(0x7C) = 0;
-        F32(0x54) = 0.0f;
-        F32(0x50) = 0.0f;
-        F32(0x1C) = 0.5f;
-        F32(0x20) = 0.5f;
-        U8(0x11) = 0xFF;
-        U8(0x12) = 0xFF;
-        U8(0x13) = 0xFF;
-        U8(0x14) = 0xFF;
-        I32(0x28) = 0;
-        I32(0x2C) = 0;
-        I32(0x30) = 0;
+        reinterpret_cast<signed short&>(field080) = 1;
+        field07C = 0;
+        velocityY = 0.0f;
+        velocityX = 0.0f;
+        scaleX = 0.5f;
+        scaleY = 0.5f;
+        color[0] = 0xFF;
+        color[1] = 0xFF;
+        color[2] = 0xFF;
+        color[3] = 0xFF;
+        reinterpret_cast<int&>(rotationX) = 0;
+        reinterpret_cast<int&>(rotationY) = 0;
+        reinterpret_cast<int&>(rotationZ) = 0;
     }
-    F32(0x1C) = F32(0x1C) + gFadeAt00659428;
-    F32(0x20) = F32(0x20) + gFadeAt00659428;
-    U8(0x11) -= 10;
-    if (GetStateAt40FA30() == S16(0x70))
+    scaleX = (scaleX) + gFadeAt00659428;
+    scaleY = (scaleY) + gFadeAt00659428;
+    color[0] -= 10;
+    if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070)))
         ResetAt45B830();
     break;
 }
         case 0x330: {
-    if (P16(0x60) > 0x45 && P16(0x60) < 0x96 && S16(0x62) < 11) {
+    if (P16(0x60) > 0x45 && P16(0x60) < 0x96 && (reinterpret_cast<signed short&>(animationStage)) < 11) {
         ResetAt45B830();
         for (int iteration=0; iteration<8; ++iteration)
-            PARENT->SpawnAt453A70(0x3E4, I32(0x44), I32(0x48), 1, 1);
+            PARENT->SpawnAt453A70(0x3E4, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
         if (P16(0xEFA) > 25) {
             P16(0xEFA) = 0;
-            PARENT->SpawnAt453A70(0x3E3, I32(0x44), I32(0x48), 1, 1);
+            PARENT->SpawnAt453A70(0x3E3, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
         }
         break;
     } else {
-        if (I32(0x7C) == 6) {
-            I32(0x7C) = 0;
-            S16(0x80) = 1;
+        if ((field07C) == 6) {
+            field07C = 0;
+            reinterpret_cast<signed short&>(field080) = 1;
         }
-        if (S16(0x62) == 0 && S16(0x64) == 0) {
+        if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
             ResetStateAt40FBB0(0,0,0);
-            I32(0x7C) = 0;
-            F32(0x1C) = 1.0f;
-            F32(0x20) = 1.0f;
-            U8(0x11) = 0;
-            U8(0x12) = 0xFF;
-            U8(0x13) = 0xFF;
-            U8(0x14) = 0xFF;
-            F32(0x50) = -4.0f;
-            F32(0x54) = 6.0f;
+            field07C = 0;
+            scaleX = 1.0f;
+            scaleY = 1.0f;
+            color[0] = 0;
+            color[1] = 0xFF;
+            color[2] = 0xFF;
+            color[3] = 0xFF;
+            velocityX = -4.0f;
+            velocityY = 6.0f;
         }
-        F32(0x44) += static_cast<float>(S8(0x66)) * F32(0x50);
-        F32(0x48) = *(&F32(0x48)) + *(&F32(0x54));
-        if (S16(0x62) == 0) {
-            if (U8(0x11) <= 0xEB)
-                U8(0x11) += 20;
+        x += static_cast<float>(facing) * (velocityX);
+        y = *(&y) + *(&velocityY);
+        if ((reinterpret_cast<signed short&>(animationStage)) == 0) {
+            if ((color[0]) <= 0xEB)
+                color[0] += 20;
             else
-                U8(0x11) = 0xFF;
-            F32(0x30) = F32(0x30) + gAddAt00659738;
-            F32(0x54) = F32(0x54) - gAddAt006583FC;
+                color[0] = 0xFF;
+            rotationZ = (rotationZ) + gAddAt00659738;
+            velocityY = (velocityY) - gAddAt006583FC;
         }
-        if (S16(0x62) == 11) {
-            F32(0x1C) = static_cast<float>(F32(0x1C) * gMulDoubleAt00659730);
-            F32(0x20) = F32(0x20) + gAddAt006583FC;
-            if (U8(0x11) >= 10)
-                U8(0x11) -= 10;
+        if ((reinterpret_cast<signed short&>(animationStage)) == 11) {
+            scaleX = static_cast<float>((scaleX) * gMulDoubleAt00659730);
+            scaleY = (scaleY) + gAddAt006583FC;
+            if ((color[0]) >= 10)
+                color[0] -= 10;
             else {
                 ResetAt45B830();
                 break;
             }
         }
-        if (GetStateAt40FA30() == S16(0x70)) {
+        if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070))) {
             ResetAt45B830();
             break;
         }
-        if (S16(0x62) == 1 && S16(0x64) == 0) {
-            F32(0x50) = 0.0f;
-            F32(0x54) = 0.0f;
-            F32(0x30) = 0.0f;
+        if ((reinterpret_cast<signed short&>(animationStage)) == 1 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+            velocityX = 0.0f;
+            velocityY = 0.0f;
+            rotationZ = 0.0f;
         }
-        if (S16(0x62) == 6 && S16(0x64) == 0 && S16(0xDC) < 0) {
+        if ((reinterpret_cast<signed short&>(animationStage)) == 6 && (reinterpret_cast<signed short&>(animationFrame)) == 0 && (reinterpret_cast<signed short&>(field0DC)) < 0) {
             SetStateAt40FB40(2);
-            ++S16(0xDC);
+            ++reinterpret_cast<signed short&>(field0DC);
         }
-        if (S16(0x62) == 10 && S16(0x64) == 0 && S16(0xDA) < 6) {
-            ++S16(0xDA);
+        if ((reinterpret_cast<signed short&>(animationStage)) == 10 && (reinterpret_cast<signed short&>(animationFrame)) == 0 && (reinterpret_cast<signed short&>(field0DA)) < 6) {
+            ++reinterpret_cast<signed short&>(field0DA);
             SetStateAt40FB40(9);
         }
-        if (S16(0x62) == 9 && S16(0x64) == 0) {
+        if ((reinterpret_cast<signed short&>(animationStage)) == 9 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
             PF32(0x314) = 1200.0f;
             PF32(0x318) = static_cast<float>(RandomAt455580(0,10) - 5);
             PARENT->SpawnMovedAt453A70(0x320,
-                   static_cast<float>(S8(0x66) * 10) + F32(0x44),
-                   I32(0x48), U8(0x66), 1);
+                   static_cast<float>((facing) * 10) + (x),
+                   reinterpret_cast<int&>(y), reinterpret_cast<unsigned char&>(facing), 1);
             PARENT->ModifyAt453D40(6);
         }
     }
     break;
 }
         case 0x331: {
-    if (P16(0x60) > 0x45 && P16(0x60) < 0x96 && S16(0x62) < 11) {
+    if (P16(0x60) > 0x45 && P16(0x60) < 0x96 && (reinterpret_cast<signed short&>(animationStage)) < 11) {
         ResetAt45B830();
         for (int iteration=0; iteration<8; ++iteration)
-            PARENT->SpawnAt453A70(0x3E4, I32(0x44), I32(0x48), 1, 1);
+            PARENT->SpawnAt453A70(0x3E4, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
         if (P16(0xEFA) > 25) {
             P16(0xEFA) = 0;
-            PARENT->SpawnAt453A70(0x3E3, I32(0x44), I32(0x48), 1, 1);
+            PARENT->SpawnAt453A70(0x3E3, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
         }
         break;
     } else {
-        if (I32(0x7C) == 6) {
-            I32(0x7C) = 0;
-            S16(0x80) = 1;
+        if ((field07C) == 6) {
+            field07C = 0;
+            reinterpret_cast<signed short&>(field080) = 1;
         }
-        if (S16(0x62) == 0 && S16(0x64) == 0) {
+        if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
             ResetStateAt40FBB0(0,0,0);
-            I32(0x7C) = 0;
-            F32(0x1C) = 1.0f;
-            F32(0x20) = 1.0f;
-            U8(0x11) = 0;
-            U8(0x12) = 0xFF;
-            U8(0x13) = 0xFF;
-            U8(0x14) = 0xFF;
-            F32(0x50) = 3.0f;
-            F32(0x54) = 16.0f;
+            field07C = 0;
+            scaleX = 1.0f;
+            scaleY = 1.0f;
+            color[0] = 0;
+            color[1] = 0xFF;
+            color[2] = 0xFF;
+            color[3] = 0xFF;
+            velocityX = 3.0f;
+            velocityY = 16.0f;
         }
-        F32(0x44) += static_cast<float>(S8(0x66)) * F32(0x50);
-        F32(0x48) = *(&F32(0x48)) + *(&F32(0x54));
-        if (S16(0x62) == 0) {
-            if (U8(0x11) <= 0xEB)
-                U8(0x11) += 20;
+        x += static_cast<float>(facing) * (velocityX);
+        y = *(&y) + *(&velocityY);
+        if ((reinterpret_cast<signed short&>(animationStage)) == 0) {
+            if ((color[0]) <= 0xEB)
+                color[0] += 20;
             else
-                U8(0x11) = 0xFF;
-            F32(0x30) = F32(0x30) + gAddAt00659738;
-            F32(0x54) = F32(0x54) - gSubAt00659090;
+                color[0] = 0xFF;
+            rotationZ = (rotationZ) + gAddAt00659738;
+            velocityY = (velocityY) - gSubAt00659090;
         }
-        if (S16(0x62) == 11) {
-            F32(0x1C) = static_cast<float>(F32(0x1C) * gMulDoubleAt00659730);
-            F32(0x20) = F32(0x20) + gAddAt006583FC;
-            if (U8(0x11) >= 10)
-                U8(0x11) -= 10;
+        if ((reinterpret_cast<signed short&>(animationStage)) == 11) {
+            scaleX = static_cast<float>((scaleX) * gMulDoubleAt00659730);
+            scaleY = (scaleY) + gAddAt006583FC;
+            if ((color[0]) >= 10)
+                color[0] -= 10;
             else {
                 ResetAt45B830();
                 break;
             }
         }
-        if (GetStateAt40FA30() == S16(0x70)) {
+        if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070))) {
             ResetAt45B830();
             break;
         }
-        if (S16(0x62) == 1 && S16(0x64) == 0) {
-            F32(0x50) = 0.0f;
-            F32(0x54) = 0.0f;
-            F32(0x30) = 0.0f;
+        if ((reinterpret_cast<signed short&>(animationStage)) == 1 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+            velocityX = 0.0f;
+            velocityY = 0.0f;
+            rotationZ = 0.0f;
         }
-        if (S16(0x62) == 6 && S16(0x64) == 0 && S16(0xDC) < 0) {
+        if ((reinterpret_cast<signed short&>(animationStage)) == 6 && (reinterpret_cast<signed short&>(animationFrame)) == 0 && (reinterpret_cast<signed short&>(field0DC)) < 0) {
             SetStateAt40FB40(2);
-            ++S16(0xDC);
+            ++reinterpret_cast<signed short&>(field0DC);
         }
-        if (S16(0x62) == 10 && S16(0x64) == 0 && S16(0xDA) < 6) {
-            ++S16(0xDA);
+        if ((reinterpret_cast<signed short&>(animationStage)) == 10 && (reinterpret_cast<signed short&>(animationFrame)) == 0 && (reinterpret_cast<signed short&>(field0DA)) < 6) {
+            ++reinterpret_cast<signed short&>(field0DA);
             SetStateAt40FB40(9);
         }
-        if (S16(0x62) == 9 && S16(0x64) == 0) {
+        if ((reinterpret_cast<signed short&>(animationStage)) == 9 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
             PF32(0x314) = 1200.0f;
             PF32(0x318) = static_cast<float>(RandomAt455580(0,15) - 45);
             PARENT->SpawnMovedAt453A70(0x321,
-                   static_cast<float>(S8(0x66) * 10) + F32(0x44),
-                   I32(0x48), U8(0x66), 1);
+                   static_cast<float>((facing) * 10) + (x),
+                   reinterpret_cast<int&>(y), reinterpret_cast<unsigned char&>(facing), 1);
             PARENT->ModifyAt453D40(6);
         }
     }
     break;
 }
         case 0x332: {
-    if (P16(0x60) > 0x45 && P16(0x60) < 0x96 && S16(0x62) < 11) {
+    if (P16(0x60) > 0x45 && P16(0x60) < 0x96 && (reinterpret_cast<signed short&>(animationStage)) < 11) {
         ResetAt45B830();
         for (int iteration=0; iteration<8; ++iteration)
-            PARENT->SpawnAt453A70(0x3E4, I32(0x44), I32(0x48), 1, 1);
+            PARENT->SpawnAt453A70(0x3E4, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
         if (P16(0xEFA) > 25) {
             P16(0xEFA) = 0;
-            PARENT->SpawnAt453A70(0x3E3, I32(0x44), I32(0x48), 1, 1);
+            PARENT->SpawnAt453A70(0x3E3, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
         }
         break;
     } else {
-        if (I32(0x7C) == 6) {
-            I32(0x7C) = 0;
-            S16(0x80) = 1;
+        if ((field07C) == 6) {
+            field07C = 0;
+            reinterpret_cast<signed short&>(field080) = 1;
         }
-        if (S16(0x62) == 0 && S16(0x64) == 0) {
+        if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
             ResetStateAt40FBB0(0,0,0);
-            I32(0x7C) = 0;
-            F32(0x1C) = 1.0f;
-            F32(0x20) = 1.0f;
-            U8(0x11) = 0;
-            U8(0x12) = 0xFF;
-            U8(0x13) = 0xFF;
-            U8(0x14) = 0xFF;
-            F32(0x50) = 6.0f;
-            F32(0x54) = 4.5f;
+            field07C = 0;
+            scaleX = 1.0f;
+            scaleY = 1.0f;
+            color[0] = 0;
+            color[1] = 0xFF;
+            color[2] = 0xFF;
+            color[3] = 0xFF;
+            velocityX = 6.0f;
+            velocityY = 4.5f;
         }
-        F32(0x44) += static_cast<float>(S8(0x66)) * F32(0x50);
-        F32(0x48) = *(&F32(0x48)) + *(&F32(0x54));
-        if (S16(0x62) == 0) {
-            if (U8(0x11) <= 0xEB)
-                U8(0x11) += 20;
+        x += static_cast<float>(facing) * (velocityX);
+        y = *(&y) + *(&velocityY);
+        if ((reinterpret_cast<signed short&>(animationStage)) == 0) {
+            if ((color[0]) <= 0xEB)
+                color[0] += 20;
             else
-                U8(0x11) = 0xFF;
-            F32(0x30) = F32(0x30) + gAddAt00659738;
-            F32(0x54) = F32(0x54) - gAddAt006583FC;
+                color[0] = 0xFF;
+            rotationZ = (rotationZ) + gAddAt00659738;
+            velocityY = (velocityY) - gAddAt006583FC;
         }
-        if (S16(0x62) == 11) {
-            F32(0x1C) = static_cast<float>(F32(0x1C) * gMulDoubleAt00659730);
-            F32(0x20) = F32(0x20) + gAddAt006583FC;
-            if (U8(0x11) >= 10)
-                U8(0x11) -= 10;
+        if ((reinterpret_cast<signed short&>(animationStage)) == 11) {
+            scaleX = static_cast<float>((scaleX) * gMulDoubleAt00659730);
+            scaleY = (scaleY) + gAddAt006583FC;
+            if ((color[0]) >= 10)
+                color[0] -= 10;
             else {
                 ResetAt45B830();
                 break;
             }
         }
-        if (GetStateAt40FA30() == S16(0x70)) {
+        if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070))) {
             ResetAt45B830();
             break;
         }
-        if (S16(0x62) == 1 && S16(0x64) == 0) {
-            F32(0x50) = 0.0f;
-            F32(0x54) = 0.0f;
-            F32(0x30) = 0.0f;
-            S8(0x66) = -S8(0x66);
+        if ((reinterpret_cast<signed short&>(animationStage)) == 1 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+            velocityX = 0.0f;
+            velocityY = 0.0f;
+            rotationZ = 0.0f;
+            facing = -(facing);
         }
-        if (S16(0x62) == 6 && S16(0x64) == 0 && S16(0xDC) < 0) {
+        if ((reinterpret_cast<signed short&>(animationStage)) == 6 && (reinterpret_cast<signed short&>(animationFrame)) == 0 && (reinterpret_cast<signed short&>(field0DC)) < 0) {
             SetStateAt40FB40(2);
-            ++S16(0xDC);
+            ++reinterpret_cast<signed short&>(field0DC);
         }
-        if (S16(0x62) == 10 && S16(0x64) == 0 && S16(0xDA) < 6) {
-            ++S16(0xDA);
+        if ((reinterpret_cast<signed short&>(animationStage)) == 10 && (reinterpret_cast<signed short&>(animationFrame)) == 0 && (reinterpret_cast<signed short&>(field0DA)) < 6) {
+            ++reinterpret_cast<signed short&>(field0DA);
             SetStateAt40FB40(9);
         }
-        if (S16(0x62) == 9 && S16(0x64) == 0) {
+        if ((reinterpret_cast<signed short&>(animationStage)) == 9 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
             PF32(0x314) = 1200.0f;
             PF32(0x318) = static_cast<float>(RandomAt455580(0,10) - 5);
             PARENT->SpawnMovedAt453A70(0x322,
-                   static_cast<float>(S8(0x66) * 10) + F32(0x44),
-                   I32(0x48), U8(0x66), 1);
+                   static_cast<float>((facing) * 10) + (x),
+                   reinterpret_cast<int&>(y), reinterpret_cast<unsigned char&>(facing), 1);
             PARENT->ModifyAt453D40(6);
         }
     }
     break;
 }
         case 0x335: {
-    if (I32(0x7C) == 6) {
-        I32(0x7C) = 0;
-        S16(0x80) = 99;
+    if ((field07C) == 6) {
+        field07C = 0;
+        reinterpret_cast<signed short&>(field080) = 99;
     }
     if (P16(0x60) > 0x45 && P16(0x60) < 0x96 &&
-            S16(0x80) > 0 && S16(0x62) < 11) {
+            (reinterpret_cast<signed short&>(field080)) > 0 && (reinterpret_cast<signed short&>(animationStage)) < 11) {
         ResetAt45B830();
         for (int iteration=0; iteration<8; ++iteration)
-            PARENT->SpawnAt453A70(0x3E4, I32(0x44), I32(0x48), 1, 1);
+            PARENT->SpawnAt453A70(0x3E4, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
         if (P16(0xEFA) > 25) {
             P16(0xEFA) = 0;
-            PARENT->SpawnAt453A70(0x3E3, I32(0x44), I32(0x48), 1, 1);
+            PARENT->SpawnAt453A70(0x3E3, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
         }
         break;
     } else {
-        if (S16(0x62) == 0 && S16(0x64) == 0) {
-            S16(0xD8) = 0;
-            S16(0xDA) = 0;
-            S16(0xDC) = 0;
-            I32(0x7C) = 0;
-            S16(0x80) = 99;
+        if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+            reinterpret_cast<signed short&>(field0D8) = 0;
+            reinterpret_cast<signed short&>(field0DA) = 0;
+            reinterpret_cast<signed short&>(field0DC) = 0;
+            field07C = 0;
+            reinterpret_cast<signed short&>(field080) = 99;
             ResetStateAt40FBB0(0,0,0);
-            I32(0x7C) = 0;
-            F32(0x1C) = 1.0f;
-            F32(0x20) = 1.0f;
-            U8(0x11) = 0xFF;
-            U8(0x12) = 0xFF;
-            U8(0x13) = 0xFF;
-            U8(0x14) = 0xFF;
-            MotionRawAt40FB70(I32(0xC8),14.0f);
+            field07C = 0;
+            scaleX = 1.0f;
+            scaleY = 1.0f;
+            color[0] = 0xFF;
+            color[1] = 0xFF;
+            color[2] = 0xFF;
+            color[3] = 0xFF;
+            MotionRawAt40FB70(reinterpret_cast<int&>(field0C8),14.0f);
         }
-        if (S16(0x62) == 0) {
-            F32(0x30) = F32(0x30) + gGrowAt00657CBC;
-            F32(0x54) = F32(0x54) + gGrowAt00657478;
+        if ((reinterpret_cast<signed short&>(animationStage)) == 0) {
+            rotationZ = (rotationZ) + gGrowAt00657CBC;
+            velocityY = (velocityY) + gGrowAt00657478;
         }
-        F32(0x44) += static_cast<float>(S8(0x66)) * F32(0x50);
-        F32(0x48) = *(&F32(0x48)) - *(&F32(0x54));
-        if (S16(0x62) == 10 && *(&F32(0x48)) - *(&F32(0x54)) <= gCollisionAt00657888) {
-            F32(0x50) = 2.0f;
-            F32(0x54) = 2.0f;
+        x += static_cast<float>(facing) * (velocityX);
+        y = *(&y) - *(&velocityY);
+        if ((reinterpret_cast<signed short&>(animationStage)) == 10 && *(&y) - *(&velocityY) <= gCollisionAt00657888) {
+            velocityX = 2.0f;
+            velocityY = 2.0f;
             SetStateAt40FB40(11);
         }
-        if (S16(0x62) > 10 && S16(0xD8) > 2) {
-            F32(0x50) = 0.0f;
-            F32(0x54) = 0.0f;
-            F32(0x1C) = static_cast<float>(F32(0x1C) * gMulDoubleAt00659730);
-            F32(0x20) = F32(0x20) + gAddAt006583FC;
-            if (U8(0x11) >= 10)
-                U8(0x11) -= 10;
+        if ((reinterpret_cast<signed short&>(animationStage)) > 10 && (reinterpret_cast<signed short&>(field0D8)) > 2) {
+            velocityX = 0.0f;
+            velocityY = 0.0f;
+            scaleX = static_cast<float>((scaleX) * gMulDoubleAt00659730);
+            scaleY = (scaleY) + gAddAt006583FC;
+            if ((color[0]) >= 10)
+                color[0] -= 10;
             else {
                 ResetAt45B830();
                 break;
             }
         }
-        if (GetStateAt40FA30() == S16(0x70)) {
+        if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070))) {
             SetStateAt40FB40(10);
-            ++S16(0xD8);
+            ++reinterpret_cast<signed short&>(field0D8);
             break;
         }
-        if (S16(0x62) == 1 && S16(0x64) == 0) {
-            F32(0x50) = 0.0f;
-            F32(0x54) = 0.0f;
-            F32(0x30) = 0.0f;
+        if ((reinterpret_cast<signed short&>(animationStage)) == 1 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+            velocityX = 0.0f;
+            velocityY = 0.0f;
+            rotationZ = 0.0f;
         }
-        if (S16(0x62) == 6 && S16(0x64) == 0 &&
-                static_cast<float>(S16(0xDC)) < *(&gCompareAt0065782C) + *(&F32(0xCC))) {
+        if ((reinterpret_cast<signed short&>(animationStage)) == 6 && (reinterpret_cast<signed short&>(animationFrame)) == 0 &&
+                static_cast<float>(reinterpret_cast<signed short&>(field0DC)) < *(&gCompareAt0065782C) + *(&field0CC)) {
             SetStateAt40FB40(2);
-            ++S16(0xDC);
+            ++reinterpret_cast<signed short&>(field0DC);
         }
-        if (S16(0x62) == 10 && S16(0x64) == 0) {
+        if ((reinterpret_cast<signed short&>(animationStage)) == 10 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
             PARENT->ModifyAt453D40(16);
-            F32(0x50) = 18.0f;
-            F32(0x54) = 18.0f;
+            velocityX = 18.0f;
+            velocityY = 18.0f;
         }
     }
     break;
 }
         case 0x338: {
-    if (S16(0x62) == 0 && S16(0x64) == 0) {
-        S16(0xD8) = 0;
+    if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+        reinterpret_cast<signed short&>(field0D8) = 0;
         ResetStateAt40FBB0(0,0,0);
-        S16(0x80) = 1;
-        I32(0x7C) = 0;
-        F32(0x54) = 0.0f;
-        F32(0x50) = 0.0f;
-        F32(0x1C) = 1.0f;
-        F32(0x20) = 1.0f;
-        U8(0x11) = 0xFF;
-        U8(0x12) = 0xFF;
-        U8(0x13) = 0xFF;
-        U8(0x14) = 0xFF;
-        I32(0x28) = 0;
-        I32(0x2C) = 0;
-        I32(0x30) = 0;
+        reinterpret_cast<signed short&>(field080) = 1;
+        field07C = 0;
+        velocityY = 0.0f;
+        velocityX = 0.0f;
+        scaleX = 1.0f;
+        scaleY = 1.0f;
+        color[0] = 0xFF;
+        color[1] = 0xFF;
+        color[2] = 0xFF;
+        color[3] = 0xFF;
+        reinterpret_cast<int&>(rotationX) = 0;
+        reinterpret_cast<int&>(rotationY) = 0;
+        reinterpret_cast<int&>(rotationZ) = 0;
         PARENT->SetupAt453E60(10.0f);
-        PARENT->SpawnDirectedAt453A70(0x33A, I32(0x44), I32(0x48), S8(0x66), 1);
+        PARENT->SpawnDirectedAt453A70(0x33A, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), facing, 1);
     }
-    if (I32(0x7C) == 6) {
-        I32(0x7C) = 0;
-        ++S16(0x80);
+    if ((field07C) == 6) {
+        field07C = 0;
+        ++reinterpret_cast<signed short&>(field080);
     }
-    F32(0x1C) = F32(0x1C) + gFadeAt00659428;
-    F32(0x20) = F32(0x20) + gFadeAt00659428;
-    if (S16(0x62) > 1) {
-        if (U8(0x11) >= 20)
-            U8(0x11) -= 20;
+    scaleX = (scaleX) + gFadeAt00659428;
+    scaleY = (scaleY) + gFadeAt00659428;
+    if ((reinterpret_cast<signed short&>(animationStage)) > 1) {
+        if ((color[0]) >= 20)
+            color[0] -= 20;
         else {
-            U8(0x11) = 0;
+            color[0] = 0;
             ResetAt45B830();
             break;
         }
     }
-    if (GetStateAt40FA30() == S16(0x70))
+    if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070)))
         ResetAt45B830();
-    if (S16(0x62) == 2 && S16(0x64) == 0)
-        PARENT->SpawnDirectedAt453A70(0x339, I32(0x44), I32(0x48), S8(0x66), 1);
+    if ((reinterpret_cast<signed short&>(animationStage)) == 2 && (reinterpret_cast<signed short&>(animationFrame)) == 0)
+        PARENT->SpawnDirectedAt453A70(0x339, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), facing, 1);
     break;
 }
         case 0x339: {
-    if (S16(0x62) == 0 && S16(0x64) == 0) {
-        S16(0xD8) = 0;
+    if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+        reinterpret_cast<signed short&>(field0D8) = 0;
         ResetStateAt40FBB0(0,0,0);
-        S16(0x80) = 1;
-        I32(0x7C) = 0;
-        F32(0x54) = 0.0f;
-        F32(0x50) = 0.0f;
-        F32(0x1C) = 1.3f;
-        F32(0x20) = 1.3f;
-        U8(0x11) = 0xFF;
-        U8(0x12) = 0xFF;
-        U8(0x13) = 0xFF;
-        U8(0x14) = 0xFF;
-        I32(0x28) = 0;
-        I32(0x2C) = 0;
-        I32(0x30) = 0;
+        reinterpret_cast<signed short&>(field080) = 1;
+        field07C = 0;
+        velocityY = 0.0f;
+        velocityX = 0.0f;
+        scaleX = 1.3f;
+        scaleY = 1.3f;
+        color[0] = 0xFF;
+        color[1] = 0xFF;
+        color[2] = 0xFF;
+        color[3] = 0xFF;
+        reinterpret_cast<int&>(rotationX) = 0;
+        reinterpret_cast<int&>(rotationY) = 0;
+        reinterpret_cast<int&>(rotationZ) = 0;
     }
-    F32(0x1C) = F32(0x1C) + gFadeAt00659428;
-    F32(0x20) = F32(0x20) + gFadeAt00659428;
-    if (S16(0x62) > 1) {
-        if (U8(0x11) >= 40)
-            U8(0x11) -= 40;
+    scaleX = (scaleX) + gFadeAt00659428;
+    scaleY = (scaleY) + gFadeAt00659428;
+    if ((reinterpret_cast<signed short&>(animationStage)) > 1) {
+        if ((color[0]) >= 40)
+            color[0] -= 40;
         else {
-            U8(0x11) = 0;
+            color[0] = 0;
             ResetAt45B830();
             break;
         }
     }
-    if (GetStateAt40FA30() == S16(0x70))
+    if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070)))
         ResetAt45B830();
     break;
 }
         case 0x33A: {
-    if (S16(0x62) == 0 && S16(0x64) == 0) {
+    if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
         ResetStateAt40FBB0(0,0,0);
-        F32(0x1C) = 1.0f;
-        F32(0x20) = 1.0f;
-        U8(0x11) = 0xFF;
-        U8(0x12) = 0xFF;
-        U8(0x13) = 0xFF;
-        U8(0x14) = 0xFF;
-        S16(0x1A) = 0x4E2;
-        F32(0x28) = -75.0f;
+        scaleX = 1.0f;
+        scaleY = 1.0f;
+        color[0] = 0xFF;
+        color[1] = 0xFF;
+        color[2] = 0xFF;
+        color[3] = 0xFF;
+        reinterpret_cast<signed short&>(field01A) = 0x4E2;
+        rotationX = -75.0f;
     }
-    F32(0x1C) = F32(0x1C) + gAddAt006583FC;
-    F32(0x20) = F32(0x20) + gAddAt006583FC;
-    if (S16(0x62) > 1) {
-        if (U8(0x11) > 20)
-            U8(0x11) -= 20;
+    scaleX = (scaleX) + gAddAt006583FC;
+    scaleY = (scaleY) + gAddAt006583FC;
+    if ((reinterpret_cast<signed short&>(animationStage)) > 1) {
+        if ((color[0]) > 20)
+            color[0] -= 20;
         else {
             ResetAt45B830();
             break;
         }
     }
-    if (GetStateAt40FA30() == S16(0x70))
+    if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070)))
         ResetAt45B830();
     break;
 }
         case 0x33B: {
-    if (S16(0x62) == 0 && S16(0x64) == 0) {
+    if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
         ResetStateAt40FBB0(0,0,0);
-        F32(0x1C) = 1.0f;
-        F32(0x20) = 1.0f;
-        U8(0x11) = 0xFF;
-        U8(0x12) = 0xFF;
-        U8(0x13) = 0xFF;
-        U8(0x14) = 0xFF;
+        scaleX = 1.0f;
+        scaleY = 1.0f;
+        color[0] = 0xFF;
+        color[1] = 0xFF;
+        color[2] = 0xFF;
+        color[3] = 0xFF;
         MotionAt40FB70(-(static_cast<float>(RandomAt455580(0,45))
                 - gSubtractAt00659728 + gOffsetAt006581DC),18.0f);
     }
-    F32(0x44) += static_cast<float>(S8(0x66)) * F32(0x50);
-    F32(0x48) = *(&F32(0x48)) + *(&F32(0x54));
-    F32(0x54) = F32(0x54) - gVelocityDragAt00659454;
-    F32(0x30) = F32(0x30) + gGrowAt00657CBC;
-    if (F32(0x48) < gMaxPositionAt0065912C) {
+    x += static_cast<float>(facing) * (velocityX);
+    y = *(&y) + *(&velocityY);
+    velocityY = (velocityY) - gVelocityDragAt00659454;
+    rotationZ = (rotationZ) + gGrowAt00657CBC;
+    if ((y) < gMaxPositionAt0065912C) {
         ResetAt45B830();
         break;
     }
-    if (GetStateAt40FA30() == S16(0x70))
+    if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070)))
         ResetAt45B830();
     break;
 }
         case 0x33C: {
     if (P16(0x60) == 0x2BE) {
-        F32(0x44) = *(&PF32(0x44)) + static_cast<float>(S8(0x66) * 65);
-        F32(0x48) = PF32(0x48) + gStageOffsetAt006590AC;
+        x = *(&PF32(0x44)) + static_cast<float>((facing) * 65);
+        y = PF32(0x48) + gStageOffsetAt006590AC;
     }
     if (P16(0x60) != 0x2BE ||
             (P16(0x62) > 9 && P16(0x60) == 0x2BE)) {
-        if (S16(0xD8) == 0) {
-            S16(0xD8) = 1;
+        if ((reinterpret_cast<signed short&>(field0D8)) == 0) {
+            reinterpret_cast<signed short&>(field0D8) = 1;
             break;
         }
     }
-    if (S16(0x62) == 0 && S16(0x64) == 0) {
-        S16(0xD8) = 0;
+    if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+        reinterpret_cast<signed short&>(field0D8) = 0;
         ResetStateAt40FBB0(0,0,0);
-        I32(0x7C) = 0;
-        F32(0x1C) = 1.0f;
-        F32(0x20) = 1.0f;
-        U8(0x11) = 0;
-        U8(0x12) = 0xFF;
-        U8(0x13) = 0xFF;
-        U8(0x14) = 0xFF;
+        field07C = 0;
+        scaleX = 1.0f;
+        scaleY = 1.0f;
+        color[0] = 0;
+        color[1] = 0xFF;
+        color[2] = 0xFF;
+        color[3] = 0xFF;
     }
-    if (S16(0xD8) == 0) {
-        if (U8(0x11) <= 0xE1)
-            U8(0x11) += 30;
+    if ((reinterpret_cast<signed short&>(field0D8)) == 0) {
+        if ((color[0]) <= 0xE1)
+            color[0] += 30;
         else
-            U8(0x11) = 0xFF;
+            color[0] = 0xFF;
     }
-    if (S16(0xD8) == 1) {
-        F32(0x1C) = static_cast<float>(F32(0x1C) * gMulDoubleAt00659730);
-        F32(0x20) = F32(0x20) + gAddAt006583FC;
-        if (U8(0x11) >= 10)
-            U8(0x11) -= 10;
+    if ((reinterpret_cast<signed short&>(field0D8)) == 1) {
+        scaleX = static_cast<float>((scaleX) * gMulDoubleAt00659730);
+        scaleY = (scaleY) + gAddAt006583FC;
+        if ((color[0]) >= 10)
+            color[0] -= 10;
         else {
             ResetAt45B830();
             break;
         }
     }
-    if (GetStateAt40FA30() == S16(0x70)) {
+    if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070))) {
         SetStateAt40FB40(1);
         break;
     }
@@ -1034,44 +1036,44 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
 }
         case 0x33D: {
     if (P16(0x60) == 0x2C1) {
-        F32(0x44) = *(&PF32(0x44)) + static_cast<float>(S8(0x66) * 65);
-        F32(0x48) = PF32(0x48) + gStageOffsetAt006590AC;
+        x = *(&PF32(0x44)) + static_cast<float>((facing) * 65);
+        y = PF32(0x48) + gStageOffsetAt006590AC;
     }
     if (P16(0x60) != 0x2C1 ||
             (P16(0x62) > 9 && P16(0x60) == 0x2BE)) {
-        if (S16(0xD8) == 0) {
-            S16(0xD8) = 1;
+        if ((reinterpret_cast<signed short&>(field0D8)) == 0) {
+            reinterpret_cast<signed short&>(field0D8) = 1;
             break;
         }
     }
-    if (S16(0x62) == 0 && S16(0x64) == 0) {
-        S16(0xD8) = 0;
+    if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+        reinterpret_cast<signed short&>(field0D8) = 0;
         ResetStateAt40FBB0(0,0,0);
-        I32(0x7C) = 0;
-        F32(0x1C) = 1.0f;
-        F32(0x20) = 1.0f;
-        U8(0x11) = 0;
-        U8(0x12) = 0xFF;
-        U8(0x13) = 0xFF;
-        U8(0x14) = 0xFF;
+        field07C = 0;
+        scaleX = 1.0f;
+        scaleY = 1.0f;
+        color[0] = 0;
+        color[1] = 0xFF;
+        color[2] = 0xFF;
+        color[3] = 0xFF;
     }
-    if (S16(0xD8) == 0) {
-        if (U8(0x11) <= 0xE1)
-            U8(0x11) += 30;
+    if ((reinterpret_cast<signed short&>(field0D8)) == 0) {
+        if ((color[0]) <= 0xE1)
+            color[0] += 30;
         else
-            U8(0x11) = 0xFF;
+            color[0] = 0xFF;
     }
-    if (S16(0xD8) == 1) {
-        F32(0x1C) = static_cast<float>(F32(0x1C) * gMulDoubleAt00659730);
-        F32(0x20) = F32(0x20) + gAddAt006583FC;
-        if (U8(0x11) >= 10)
-            U8(0x11) -= 10;
+    if ((reinterpret_cast<signed short&>(field0D8)) == 1) {
+        scaleX = static_cast<float>((scaleX) * gMulDoubleAt00659730);
+        scaleY = (scaleY) + gAddAt006583FC;
+        if ((color[0]) >= 10)
+            color[0] -= 10;
         else {
             ResetAt45B830();
             break;
         }
     }
-    if (GetStateAt40FA30() == S16(0x70)) {
+    if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070))) {
         SetStateAt40FB40(1);
         break;
     }
@@ -1079,670 +1081,670 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
 }
         case 0x33E: {
     if (P16(0x60) == 0x2BE) {
-        F32(0x44) = *(&PF32(0x44)) + static_cast<float>(S8(0x66) * 140);
-        F32(0x48) = PF32(0x48) + gStageOffsetAt006590AC;
+        x = *(&PF32(0x44)) + static_cast<float>((facing) * 140);
+        y = PF32(0x48) + gStageOffsetAt006590AC;
     }
-    if (P16(0x60) != 0x2BE && S16(0x62) < 7) {
+    if (P16(0x60) != 0x2BE && (reinterpret_cast<signed short&>(animationStage)) < 7) {
         SetStateAt40FB40(7);
         break;
     }
-    if (S16(0x62) == 0 && S16(0x64) == 0) {
-        S16(0x80) = 1;
-        I32(0x7C) = 0;
-        if (S16(0xD8) != 1) {
+    if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+        reinterpret_cast<signed short&>(field080) = 1;
+        field07C = 0;
+        if ((reinterpret_cast<signed short&>(field0D8)) != 1) {
             ResetStateAt40FBB0(0,0,0);
-            F32(0x1C) = 1.5f;
-            F32(0x20) = 1.5f;
-            S16(0xD8) = 0;
-            U8(0x11) = 0xFF;
-            U8(0x12) = 0xFF;
-            U8(0x13) = 0xFF;
-            U8(0x14) = 0xFF;
-            S16(0x80) = 10;
+            scaleX = 1.5f;
+            scaleY = 1.5f;
+            reinterpret_cast<signed short&>(field0D8) = 0;
+            color[0] = 0xFF;
+            color[1] = 0xFF;
+            color[2] = 0xFF;
+            color[3] = 0xFF;
+            reinterpret_cast<signed short&>(field080) = 10;
         }
     }
-    if (S16(0x62) == 6)
-        F32(0x20) = static_cast<float>(RandomAt455580(0,4) - 2)
+    if ((reinterpret_cast<signed short&>(animationStage)) == 6)
+        scaleY = static_cast<float>(RandomAt455580(0,4) - 2)
                   * gScatterRateAt006578C0 + gScatterBaseAt006581E0;
-    if (S16(0x62) == 7)
-        F32(0x20) = F32(0x20) * gShrinkAt00659094;
-    if (GetStateAt40FA30() == S16(0x70))
+    if ((reinterpret_cast<signed short&>(animationStage)) == 7)
+        scaleY = (scaleY) * gShrinkAt00659094;
+    if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070)))
         ResetAt45B830();
-    if (S16(0x62) == 7 && S16(0x64) == 0 && S16(0xD8) < 10) {
+    if ((reinterpret_cast<signed short&>(animationStage)) == 7 && (reinterpret_cast<signed short&>(animationFrame)) == 0 && (reinterpret_cast<signed short&>(field0D8)) < 10) {
         SetStateAt40FB40(6);
-        I32(0x7C) = 0;
-        ++S16(0xD8);
+        field07C = 0;
+        ++reinterpret_cast<signed short&>(field0D8);
     }
     break;
 }
         case 0x33F: {
     if (P16(0x60) == 0x2C1) {
-        F32(0x44) = *(&PF32(0x44)) + static_cast<float>(S8(0x66) * 180);
-        F32(0x48) = PF32(0x48) + gStageOffsetAt006590AC;
+        x = *(&PF32(0x44)) + static_cast<float>((facing) * 180);
+        y = PF32(0x48) + gStageOffsetAt006590AC;
     }
-    if (P16(0x60) != 0x2C1 && S16(0x62) < 17) {
+    if (P16(0x60) != 0x2C1 && (reinterpret_cast<signed short&>(animationStage)) < 17) {
         SetStateAt40FB40(17);
         break;
     }
-    if (S16(0x62) == 0 && S16(0x64) == 0) {
-        I32(0x7C) = 0;
+    if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+        field07C = 0;
         ResetStateAt40FBB0(0,0,0);
-        F32(0x1C) = 2.0f;
-        F32(0x20) = 1.5f;
-        S16(0xD8) = 0;
-        U8(0x11) = 0xFF;
-        U8(0x12) = 0xFF;
-        U8(0x13) = 0xFF;
-        U8(0x14) = 0xFF;
-        S16(0x80) = 25;
+        scaleX = 2.0f;
+        scaleY = 1.5f;
+        reinterpret_cast<signed short&>(field0D8) = 0;
+        color[0] = 0xFF;
+        color[1] = 0xFF;
+        color[2] = 0xFF;
+        color[3] = 0xFF;
+        reinterpret_cast<signed short&>(field080) = 25;
     }
-    if (GetStateAt40FA30() == S16(0x70))
+    if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070)))
         ResetAt45B830();
-    if (S16(0x64) == 0)
-        I32(0x7C) = 0;
-    if (S16(0x62) == 13 && S16(0x64) == 0 && S16(0xD8) < 2) {
+    if ((reinterpret_cast<signed short&>(animationFrame)) == 0)
+        field07C = 0;
+    if ((reinterpret_cast<signed short&>(animationStage)) == 13 && (reinterpret_cast<signed short&>(animationFrame)) == 0 && (reinterpret_cast<signed short&>(field0D8)) < 2) {
         SetStateAt40FB40(6);
-        ++S16(0xD8);
+        ++reinterpret_cast<signed short&>(field0D8);
     }
     break;
 }
         case 0x340: {
-    if (I32(0x7C) == 6) {
-        I32(0x7C) = 0;
-        S16(0x80) = 1;
+    if ((field07C) == 6) {
+        field07C = 0;
+        reinterpret_cast<signed short&>(field080) = 1;
     }
-    if (S16(0x62) == 0 && S16(0x64) == 0) {
+    if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
         ResetStateAt40FBB0(0,0,0);
-        S16(0x80) = 1;
-        I32(0x7C) = 0;
-        F32(0x50) = AbsFloatAt00412D90(
+        reinterpret_cast<signed short&>(field080) = 1;
+        field07C = 0;
+        velocityX = AbsFloatAt00412D90(
             *(&PF32(0x44)) + static_cast<float>(PS8(0x66)*90) - PARENT_TARGET_X
         ) * gAbsScaleAt00659724;
-        if (F32(0x50) < gInitialClampAt00657D14)
-            F32(0x50) = 4.0f;
-        F32(0x54) = 20.0f;
-        F32(0x1C) = 1.0f;
-        F32(0x20) = 1.0f;
-        U8(0x11) = 0xFF;
-        U8(0x12) = 0xFF;
-        U8(0x13) = 0xFF;
-        U8(0x14) = 0xFF;
+        if ((velocityX) < gInitialClampAt00657D14)
+            velocityX = 4.0f;
+        velocityY = 20.0f;
+        scaleX = 1.0f;
+        scaleY = 1.0f;
+        color[0] = 0xFF;
+        color[1] = 0xFF;
+        color[2] = 0xFF;
+        color[3] = 0xFF;
     }
-    F32(0x54) = F32(0x54) - gMotionDecelAt00657480;
-    F32(0x44) += static_cast<float>(S8(0x66)) * F32(0x50);
-    F32(0x48) = *(&F32(0x48)) + *(&F32(0x54));
-    if (S16(0x62) < 2) {
-        F32(0x30) = F32(0x30) + gLiftAt00657CC0;
-        if (*(&F32(0x48)) + *(&F32(0x54)) <= gCompareAt0065782C) {
-            PARENT->SpawnDirectedAt453A70(0x338, I32(0x44), I32(0x48), S8(0x66), 1);
-            PARENT->SpawnDirectedAt453A70(0x33A, I32(0x44), I32(0x48), S8(0x66), 1);
+    velocityY = (velocityY) - gMotionDecelAt00657480;
+    x += static_cast<float>(facing) * (velocityX);
+    y = *(&y) + *(&velocityY);
+    if ((reinterpret_cast<signed short&>(animationStage)) < 2) {
+        rotationZ = (rotationZ) + gLiftAt00657CC0;
+        if (*(&y) + *(&velocityY) <= gCompareAt0065782C) {
+            PARENT->SpawnDirectedAt453A70(0x338, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), facing, 1);
+            PARENT->SpawnDirectedAt453A70(0x33A, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), facing, 1);
             PARENT->ModifyAt453D40(8);
             SetActionAt40FAC0(0x33B);
-            F32(0x48) = 0.0f;
-            F32(0x54) = 0.0f;
-            F32(0x50) = 0.0f;
-            F32(0x30) = 0.0f;
+            y = 0.0f;
+            velocityY = 0.0f;
+            velocityX = 0.0f;
+            rotationZ = 0.0f;
             break;
         }
     }
-    if (GetStateAt40FA30() == S16(0x70))
+    if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070)))
         SetStateAt40FB40(1);
     break;
 }
         case 0x341: {
-    if (I32(0x7C) == 6) {
-        I32(0x7C) = 0;
-        S16(0x80) = 1;
+    if ((field07C) == 6) {
+        field07C = 0;
+        reinterpret_cast<signed short&>(field080) = 1;
     }
-    if (S16(0x62) == 0 && S16(0x64) == 0) {
+    if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
         ResetStateAt40FBB0(0,0,0);
-        S16(0x80) = 1;
-        I32(0x7C) = 0;
-        F32(0x50) = AbsFloatAt00412D90(
+        reinterpret_cast<signed short&>(field080) = 1;
+        field07C = 0;
+        velocityX = AbsFloatAt00412D90(
             *(&PF32(0x44)) + static_cast<float>(PS8(0x66)*90) - PARENT_TARGET_X
         ) * gAbsScaleAt00659724;
-        if (F32(0x50) < gInitialClampAt00657D14)
-            F32(0x50) = 4.0f;
-        F32(0x54) = 20.0f;
-        F32(0x1C) = 1.0f;
-        F32(0x20) = 1.0f;
-        U8(0x11) = 0xFF;
-        U8(0x12) = 0xFF;
-        U8(0x13) = 0xFF;
-        U8(0x14) = 0xFF;
+        if ((velocityX) < gInitialClampAt00657D14)
+            velocityX = 4.0f;
+        velocityY = 20.0f;
+        scaleX = 1.0f;
+        scaleY = 1.0f;
+        color[0] = 0xFF;
+        color[1] = 0xFF;
+        color[2] = 0xFF;
+        color[3] = 0xFF;
     }
-    F32(0x54) = F32(0x54) - gMotionDecelAt00657480;
-    F32(0x44) += static_cast<float>(S8(0x66)) * F32(0x50);
-    F32(0x48) = *(&F32(0x48)) + *(&F32(0x54));
-    if (S16(0x62) < 2) {
-        F32(0x30) = F32(0x30) + gLiftAt00657CC0;
-        if (*(&F32(0x48)) + *(&F32(0x54)) <= gCompareAt0065782C) {
-            PARENT->SpawnDirectedAt453A70(0x342, I32(0x44), I32(0x48), S8(0x66), 1);
-            PARENT->SpawnDirectedAt453A70(0x344, I32(0x44), I32(0x48), S8(0x66), 1);
+    velocityY = (velocityY) - gMotionDecelAt00657480;
+    x += static_cast<float>(facing) * (velocityX);
+    y = *(&y) + *(&velocityY);
+    if ((reinterpret_cast<signed short&>(animationStage)) < 2) {
+        rotationZ = (rotationZ) + gLiftAt00657CC0;
+        if (*(&y) + *(&velocityY) <= gCompareAt0065782C) {
+            PARENT->SpawnDirectedAt453A70(0x342, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), facing, 1);
+            PARENT->SpawnDirectedAt453A70(0x344, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), facing, 1);
             PARENT->ModifyAt453D40(10);
             SetActionAt40FAC0(0x33B);
-            F32(0x48) = 0.0f;
-            F32(0x54) = 0.0f;
-            F32(0x50) = 0.0f;
-            F32(0x30) = 0.0f;
+            y = 0.0f;
+            velocityY = 0.0f;
+            velocityX = 0.0f;
+            rotationZ = 0.0f;
             break;
         }
     }
-    if (GetStateAt40FA30() == S16(0x70))
+    if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070)))
         SetStateAt40FB40(1);
     break;
 }
         case 0x342: {
-    if (S16(0x62) == 0 && S16(0x64) == 0) {
-        S16(0xD8) = 0;
+    if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+        reinterpret_cast<signed short&>(field0D8) = 0;
         ResetStateAt40FBB0(0,0,0);
-        S16(0x80) = 1;
-        I32(0x7C) = 0;
-        F32(0x54) = 0.0f;
-        F32(0x50) = 0.0f;
-        F32(0x1C) = 1.0f;
-        F32(0x20) = 1.0f;
-        U8(0x11) = 0xFF;
-        U8(0x12) = 0xFF;
-        U8(0x13) = 0xFF;
-        U8(0x14) = 0xFF;
-        I32(0x28) = 0;
-        I32(0x2C) = 0;
-        I32(0x30) = 0;
+        reinterpret_cast<signed short&>(field080) = 1;
+        field07C = 0;
+        velocityY = 0.0f;
+        velocityX = 0.0f;
+        scaleX = 1.0f;
+        scaleY = 1.0f;
+        color[0] = 0xFF;
+        color[1] = 0xFF;
+        color[2] = 0xFF;
+        color[3] = 0xFF;
+        reinterpret_cast<int&>(rotationX) = 0;
+        reinterpret_cast<int&>(rotationY) = 0;
+        reinterpret_cast<int&>(rotationZ) = 0;
         PARENT->SetupAt453E60(10.0f);
     }
-    if (I32(0x7C) == 6) {
-        I32(0x7C) = 0;
-        ++S16(0x80);
+    if ((field07C) == 6) {
+        field07C = 0;
+        ++reinterpret_cast<signed short&>(field080);
     }
-    if (S16(0x62) == 3 && S16(0x64) == 0)
-        PARENT->SpawnDirectedAt453A70(0x343, I32(0x44), I32(0x48), S8(0x66), 1);
-    if (GetStateAt40FA30() == S16(0x70))
+    if ((reinterpret_cast<signed short&>(animationStage)) == 3 && (reinterpret_cast<signed short&>(animationFrame)) == 0)
+        PARENT->SpawnDirectedAt453A70(0x343, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), facing, 1);
+    if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070)))
         ResetAt45B830();
     break;
 }
         case 0x343: {
-    if (S16(0x62) == 0 && S16(0x64) == 0) {
-        S16(0xD8) = 0;
+    if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+        reinterpret_cast<signed short&>(field0D8) = 0;
         ResetStateAt40FBB0(0,0,0);
-        S16(0x80) = 1;
-        I32(0x7C) = 0;
-        F32(0x54) = 0.0f;
-        F32(0x50) = 0.0f;
-        F32(0x1C) = 1.7f;
-        F32(0x20) = 1.7f;
-        U8(0x11) = 0xFF;
-        U8(0x12) = 0xFF;
-        U8(0x13) = 0xFF;
-        U8(0x14) = 0xFF;
-        I32(0x28) = 0;
-        I32(0x2C) = 0;
-        I32(0x30) = 0;
+        reinterpret_cast<signed short&>(field080) = 1;
+        field07C = 0;
+        velocityY = 0.0f;
+        velocityX = 0.0f;
+        scaleX = 1.7f;
+        scaleY = 1.7f;
+        color[0] = 0xFF;
+        color[1] = 0xFF;
+        color[2] = 0xFF;
+        color[3] = 0xFF;
+        reinterpret_cast<int&>(rotationX) = 0;
+        reinterpret_cast<int&>(rotationY) = 0;
+        reinterpret_cast<int&>(rotationZ) = 0;
     }
-    F32(0x1C) = F32(0x1C) + gFadeAt0065825C;
-    F32(0x20) = F32(0x20) + gFadeAt0065825C;
-    if (S16(0x62) > -1) {
-        if (U8(0x11) >= 20)
-            U8(0x11) -= 20;
+    scaleX = (scaleX) + gFadeAt0065825C;
+    scaleY = (scaleY) + gFadeAt0065825C;
+    if ((reinterpret_cast<signed short&>(animationStage)) > -1) {
+        if ((color[0]) >= 20)
+            color[0] -= 20;
         else {
-            U8(0x11) = 0;
+            color[0] = 0;
             ResetAt45B830();
             break;
         }
     }
-    if (GetStateAt40FA30() == S16(0x70))
+    if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070)))
         ResetAt45B830();
     break;
 }
         case 0x344: {
-    if (S16(0x62) == 0 && S16(0x64) == 0) {
+    if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
         ResetStateAt40FBB0(0,0,0);
-        F32(0x1C) = 1.0f;
-        F32(0x20) = 1.0f;
-        U8(0x11) = 0xFF;
-        U8(0x12) = 0xFF;
-        U8(0x13) = 0xFF;
-        U8(0x14) = 0xFF;
-        S16(0x1A) = 0x4E2;
-        F32(0x28) = -75.0f;
+        scaleX = 1.0f;
+        scaleY = 1.0f;
+        color[0] = 0xFF;
+        color[1] = 0xFF;
+        color[2] = 0xFF;
+        color[3] = 0xFF;
+        reinterpret_cast<signed short&>(field01A) = 0x4E2;
+        rotationX = -75.0f;
     }
-    F32(0x1C) = F32(0x1C) + gAddAt006583FC;
-    F32(0x20) = F32(0x20) + gAddAt006583FC;
-    if (S16(0x62) > 1) {
-        if (U8(0x11) > 20)
-            U8(0x11) -= 20;
+    scaleX = (scaleX) + gAddAt006583FC;
+    scaleY = (scaleY) + gAddAt006583FC;
+    if ((reinterpret_cast<signed short&>(animationStage)) > 1) {
+        if ((color[0]) > 20)
+            color[0] -= 20;
         else {
             ResetAt45B830();
             break;
         }
     }
-    if (GetStateAt40FA30() == S16(0x70))
+    if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070)))
         ResetAt45B830();
     break;
 }
         case 0x345: {
-    if (S16(0x62) == 0 && S16(0x64) == 0) {
+    if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
         ResetStateAt40FBB0(0,0,0);
-        F32(0x1C) = 1.0f;
-        F32(0x20) = 1.0f;
-        U8(0x11) = 0xFF;
-        U8(0x12) = 0xFF;
-        U8(0x13) = 0xFF;
-        U8(0x14) = 0xFF;
-        S16(0xD8) = 0;
-        S16(0xDA) = 0;
+        scaleX = 1.0f;
+        scaleY = 1.0f;
+        color[0] = 0xFF;
+        color[1] = 0xFF;
+        color[2] = 0xFF;
+        color[3] = 0xFF;
+        reinterpret_cast<signed short&>(field0D8) = 0;
+        reinterpret_cast<signed short&>(field0DA) = 0;
     }
-    if (S16(0x62) > 5) {
-        F32(0x44) += static_cast<float>(S8(0x66)) * F32(0x50);
-        F32(0x48) = *(&F32(0x48)) + *(&F32(0x54));
-        if (F32(0x44) > gBoundRightAt00659248 ||
-            F32(0x44) < gBoundLowerAt0065930C ||
-            F32(0x48) < gBoundLowerAt0065930C ||
-            F32(0x48) > gBoundUpperAt00658E80) {
+    if ((reinterpret_cast<signed short&>(animationStage)) > 5) {
+        x += static_cast<float>(facing) * (velocityX);
+        y = *(&y) + *(&velocityY);
+        if ((x) > gBoundRightAt00659248 ||
+            (x) < gBoundLowerAt0065930C ||
+            (y) < gBoundLowerAt0065930C ||
+            (y) > gBoundUpperAt00658E80) {
             ResetAt45B830();
             break;
         }
-        if (GetStateAt40FA30() == S16(0x70))
+        if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070)))
             SetStateAt40FB40(6);
         break;
     }
-    if (S16(0x62) == 1) {
-        F32(0x30) = F32(0x30) + gGrowAt00657CBC;
-        if (P16(0xF12) == 1 && S16(0x62) == 1 && P16(0xF12) == 1) {
+    if ((reinterpret_cast<signed short&>(animationStage)) == 1) {
+        rotationZ = (rotationZ) + gGrowAt00657CBC;
+        if (P16(0xF12) == 1 && (reinterpret_cast<signed short&>(animationStage)) == 1 && P16(0xF12) == 1) {
             SetStateAt40FB40(2);
-            S16(0x80) = 99;
-            F32(0x30) = 0.0f;
-            I32(0x7C) = 0;
+            reinterpret_cast<signed short&>(field080) = 99;
+            rotationZ = 0.0f;
+            field07C = 0;
             break;
         }
     }
     if (P16(0xF12) == 2) {
-        if (S16(0x62) < 6)
-            S16(0x62) += 4;
-        S16(0xDA) = 25;
-        MotionAt40FB70(static_cast<float>(S16(0xD8)),
-                       static_cast<float>(S16(0xDA)));
+        if ((reinterpret_cast<signed short&>(animationStage)) < 6)
+            reinterpret_cast<signed short&>(animationStage) += 4;
+        reinterpret_cast<signed short&>(field0DA) = 25;
+        MotionAt40FB70(static_cast<float>(reinterpret_cast<signed short&>(field0D8)),
+                       static_cast<float>(reinterpret_cast<signed short&>(field0DA)));
     }
-    if (S16(0x62) < 6 && P16(0xF12) < 2) {
-        S16(0xD8) = static_cast<short>(
-            static_cast<float>(P16(0xF10)-180) + F32(0xC8));
-        if (S16(0xD8) > 180) S16(0xD8) -= 360;
-        if (S16(0xD8) < -180) S16(0xD8) += 360;
-        MotionAt40FB70(static_cast<float>(S16(0xD8)),
-                       static_cast<float>(S16(0xDA)));
-        F32(0x44) = static_cast<int>(
-            P16(0xF0C) + S8(0x66)*F32(0x50));
-        F32(0x48) = static_cast<int>(
-            P16(0xF0E) + F32(0x54));
-        if (S16(0xDA) < 140) S16(0xDA) += 7;
-        if (S16(0xDA) > 140) S16(0xDA) = 140;
+    if ((reinterpret_cast<signed short&>(animationStage)) < 6 && P16(0xF12) < 2) {
+        reinterpret_cast<signed short&>(field0D8) = static_cast<short>(
+            static_cast<float>(P16(0xF10)-180) + (field0C8));
+        if ((reinterpret_cast<signed short&>(field0D8)) > 180) reinterpret_cast<signed short&>(field0D8) -= 360;
+        if ((reinterpret_cast<signed short&>(field0D8)) < -180) reinterpret_cast<signed short&>(field0D8) += 360;
+        MotionAt40FB70(static_cast<float>(reinterpret_cast<signed short&>(field0D8)),
+                       static_cast<float>(reinterpret_cast<signed short&>(field0DA)));
+        x = static_cast<int>(
+            P16(0xF0C) + (facing)*(velocityX));
+        y = static_cast<int>(
+            P16(0xF0E) + (velocityY));
+        if ((reinterpret_cast<signed short&>(field0DA)) < 140) reinterpret_cast<signed short&>(field0DA) += 7;
+        if ((reinterpret_cast<signed short&>(field0DA)) > 140) reinterpret_cast<signed short&>(field0DA) = 140;
     }
-    if (GetStateAt40FA30() == S16(0x70)) SetStateAt40FB40(6);
-    if (S16(0x62) == 2 && S16(0x64) == 0) SetStateAt40FB40(1);
-    if (S16(0x62) == 6 && S16(0x64) == 0 && P16(0xF12) == 1) {
+    if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070))) SetStateAt40FB40(6);
+    if ((reinterpret_cast<signed short&>(animationStage)) == 2 && (reinterpret_cast<signed short&>(animationFrame)) == 0) SetStateAt40FB40(1);
+    if ((reinterpret_cast<signed short&>(animationStage)) == 6 && (reinterpret_cast<signed short&>(animationFrame)) == 0 && P16(0xF12) == 1) {
         SetStateAt40FB40(2);
-        I32(0x7C) = 0;
+        field07C = 0;
     }
     break;
 }
         case 0x346: {
-    if (S16(0x62) == 0 && S16(0x64) == 0) {
+    if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
         ResetStateAt40FBB0(0,0,0);
-        F32(0x1C) = 1.0f;
-        F32(0x20) = 1.0f;
-        U8(0x11) = 0xFF;
-        U8(0x12) = 0xFF;
-        U8(0x13) = 0xFF;
-        U8(0x14) = 0xFF;
+        scaleX = 1.0f;
+        scaleY = 1.0f;
+        color[0] = 0xFF;
+        color[1] = 0xFF;
+        color[2] = 0xFF;
+        color[3] = 0xFF;
         P16(0xF10) = 0;
-        F32(0x50) = 25.0f;
+        velocityX = 25.0f;
     }
-    if (S16(0x62) < 2) {
+    if ((reinterpret_cast<signed short&>(animationStage)) < 2) {
         P16(0xF10) -= 3;
-        P16(0xF0C) = static_cast<short>(F32(0x44));
-        P16(0xF0E) = static_cast<short>(F32(0x48));
-        F32(0x50) = F32(0x50) - gCompareAt0065747C;
-        if (F32(0x50) < gCompareAt0065782C)
-            F32(0x50) = 0.0f;
+        P16(0xF0C) = static_cast<short>(x);
+        P16(0xF0E) = static_cast<short>(y);
+        velocityX = (velocityX) - gCompareAt0065747C;
+        if ((velocityX) < gCompareAt0065782C)
+            velocityX = 0.0f;
     }
-    F32(0x44) += static_cast<float>(S8(0x66)) * F32(0x50);
-    if (GetStateAt40FA30() == S16(0x70)) {
+    x += static_cast<float>(facing) * (velocityX);
+    if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070))) {
         ResetAt45B830();
         P16(0xF12) = 0;
     }
-    if (S16(0x62) == 1 && S16(0x64) == 0)
+    if ((reinterpret_cast<signed short&>(animationStage)) == 1 && (reinterpret_cast<signed short&>(animationFrame)) == 0)
         P16(0xF12) = 1;
-    if (S16(0x62) == 2 && S16(0x64) == 0)
+    if ((reinterpret_cast<signed short&>(animationStage)) == 2 && (reinterpret_cast<signed short&>(animationFrame)) == 0)
         P16(0xF12) = 2;
     break;
 }
         case 0x347: {
-    if (S16(0x62) == 0 && S16(0x64) == 0) {
+    if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
         ResetStateAt40FBB0(0,0,0);
-        F32(0x1C) = 1.0f;
-        F32(0x20) = 1.0f;
-        U8(0x11) = 0xFF;
-        U8(0x12) = 0xFF;
-        U8(0x13) = 0xFF;
-        U8(0x14) = 0xFF;
-        S16(0xD8) = 0;
-        S16(0xDA) = 0;
+        scaleX = 1.0f;
+        scaleY = 1.0f;
+        color[0] = 0xFF;
+        color[1] = 0xFF;
+        color[2] = 0xFF;
+        color[3] = 0xFF;
+        reinterpret_cast<signed short&>(field0D8) = 0;
+        reinterpret_cast<signed short&>(field0DA) = 0;
     }
-    if (S16(0x62) > 5) {
-        F32(0x44) += static_cast<float>(S8(0x66)) * F32(0x50);
-        F32(0x48) = *(&F32(0x48)) + *(&F32(0x54));
-        if (F32(0x44) > gBoundRightAt00659248 ||
-            F32(0x44) < gBoundLowerAt0065930C ||
-            F32(0x48) < gBoundLowerAt0065930C ||
-            F32(0x48) > gBoundUpperAt00658E80) {
+    if ((reinterpret_cast<signed short&>(animationStage)) > 5) {
+        x += static_cast<float>(facing) * (velocityX);
+        y = *(&y) + *(&velocityY);
+        if ((x) > gBoundRightAt00659248 ||
+            (x) < gBoundLowerAt0065930C ||
+            (y) < gBoundLowerAt0065930C ||
+            (y) > gBoundUpperAt00658E80) {
             ResetAt45B830();
             break;
         }
-        if (GetStateAt40FA30() == S16(0x70))
+        if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070)))
             SetStateAt40FB40(6);
         break;
     }
-    if (S16(0x62) == 1) {
-        F32(0x30) = F32(0x30) + gGrowAt00657CBC;
-        if (P16(0xF12) == 1 && S16(0x62) == 1 && P16(0xF12) == 1) {
+    if ((reinterpret_cast<signed short&>(animationStage)) == 1) {
+        rotationZ = (rotationZ) + gGrowAt00657CBC;
+        if (P16(0xF12) == 1 && (reinterpret_cast<signed short&>(animationStage)) == 1 && P16(0xF12) == 1) {
             SetStateAt40FB40(2);
-            S16(0x80) = 99;
-            F32(0x30) = 0.0f;
-            I32(0x7C) = 0;
+            reinterpret_cast<signed short&>(field080) = 99;
+            rotationZ = 0.0f;
+            field07C = 0;
             break;
         }
     }
     if (P16(0xF12) == 2) {
-        if (S16(0x62) < 6)
-            S16(0x62) += 4;
-        S16(0xDA) = 25;
-        MotionAt40FB70(static_cast<float>(S16(0xD8)),
-                       static_cast<float>(S16(0xDA)));
+        if ((reinterpret_cast<signed short&>(animationStage)) < 6)
+            reinterpret_cast<signed short&>(animationStage) += 4;
+        reinterpret_cast<signed short&>(field0DA) = 25;
+        MotionAt40FB70(static_cast<float>(reinterpret_cast<signed short&>(field0D8)),
+                       static_cast<float>(reinterpret_cast<signed short&>(field0DA)));
     }
-    if (S16(0x62) < 6 && P16(0xF12) < 2) {
-        S16(0xD8) = static_cast<short>(
-            static_cast<float>(P16(0xF10)-180) + F32(0xC8));
-        if (S16(0xD8) > 180) S16(0xD8) -= 360;
-        if (S16(0xD8) < -180) S16(0xD8) += 360;
-        MotionAt40FB70(static_cast<float>(S16(0xD8)),
-                       static_cast<float>(S16(0xDA)));
-        F32(0x44) = static_cast<int>(
-            P16(0xF0C) + S8(0x66)*F32(0x50));
-        F32(0x48) = static_cast<int>(
-            P16(0xF0E) + F32(0x54));
-        if (S16(0xDA) < 120) S16(0xDA) += 6;
-        if (S16(0xDA) > 120) S16(0xDA) = 120;
+    if ((reinterpret_cast<signed short&>(animationStage)) < 6 && P16(0xF12) < 2) {
+        reinterpret_cast<signed short&>(field0D8) = static_cast<short>(
+            static_cast<float>(P16(0xF10)-180) + (field0C8));
+        if ((reinterpret_cast<signed short&>(field0D8)) > 180) reinterpret_cast<signed short&>(field0D8) -= 360;
+        if ((reinterpret_cast<signed short&>(field0D8)) < -180) reinterpret_cast<signed short&>(field0D8) += 360;
+        MotionAt40FB70(static_cast<float>(reinterpret_cast<signed short&>(field0D8)),
+                       static_cast<float>(reinterpret_cast<signed short&>(field0DA)));
+        x = static_cast<int>(
+            P16(0xF0C) + (facing)*(velocityX));
+        y = static_cast<int>(
+            P16(0xF0E) + (velocityY));
+        if ((reinterpret_cast<signed short&>(field0DA)) < 120) reinterpret_cast<signed short&>(field0DA) += 6;
+        if ((reinterpret_cast<signed short&>(field0DA)) > 120) reinterpret_cast<signed short&>(field0DA) = 120;
     }
-    if (GetStateAt40FA30() == S16(0x70)) SetStateAt40FB40(6);
-    if (S16(0x62) == 2 && S16(0x64) == 0) SetStateAt40FB40(1);
-    if (S16(0x62) == 6 && S16(0x64) == 0 && P16(0xF12) == 1) {
+    if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070))) SetStateAt40FB40(6);
+    if ((reinterpret_cast<signed short&>(animationStage)) == 2 && (reinterpret_cast<signed short&>(animationFrame)) == 0) SetStateAt40FB40(1);
+    if ((reinterpret_cast<signed short&>(animationStage)) == 6 && (reinterpret_cast<signed short&>(animationFrame)) == 0 && P16(0xF12) == 1) {
         SetStateAt40FB40(2);
-        I32(0x7C) = 0;
+        field07C = 0;
     }
     break;
 }
         case 0x348: {
-    if (S16(0x62) == 0 && S16(0x64) == 0) {
+    if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
         ResetStateAt40FBB0(0,0,0);
-        F32(0x1C) = 1.0f;
-        F32(0x20) = 1.0f;
-        U8(0x11) = 0xFF;
-        U8(0x12) = 0xFF;
-        U8(0x13) = 0xFF;
-        U8(0x14) = 0xFF;
-        S16(0xD8) = 0;
-        S16(0xDA) = 0;
+        scaleX = 1.0f;
+        scaleY = 1.0f;
+        color[0] = 0xFF;
+        color[1] = 0xFF;
+        color[2] = 0xFF;
+        color[3] = 0xFF;
+        reinterpret_cast<signed short&>(field0D8) = 0;
+        reinterpret_cast<signed short&>(field0DA) = 0;
     }
-    if (S16(0x62) > 5) {
-        F32(0x44) += static_cast<float>(S8(0x66)) * F32(0x50);
-        F32(0x48) = *(&F32(0x48)) + *(&F32(0x54));
-        if (F32(0x44) > gBoundRightAt00659248 ||
-            F32(0x44) < gBoundLowerAt0065930C ||
-            F32(0x48) < gBoundLowerAt0065930C ||
-            F32(0x48) > gBoundUpperAt00658E80) {
+    if ((reinterpret_cast<signed short&>(animationStage)) > 5) {
+        x += static_cast<float>(facing) * (velocityX);
+        y = *(&y) + *(&velocityY);
+        if ((x) > gBoundRightAt00659248 ||
+            (x) < gBoundLowerAt0065930C ||
+            (y) < gBoundLowerAt0065930C ||
+            (y) > gBoundUpperAt00658E80) {
             ResetAt45B830();
             break;
         }
-        if (GetStateAt40FA30() == S16(0x70))
+        if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070)))
             SetStateAt40FB40(6);
         break;
     }
-    if (S16(0x62) == 1) {
-        F32(0x30) = F32(0x30) + gGrowAt00657CBC;
-        if (P16(0xF12) == 1 && S16(0x62) == 1 && P16(0xF12) == 1) {
+    if ((reinterpret_cast<signed short&>(animationStage)) == 1) {
+        rotationZ = (rotationZ) + gGrowAt00657CBC;
+        if (P16(0xF12) == 1 && (reinterpret_cast<signed short&>(animationStage)) == 1 && P16(0xF12) == 1) {
             SetStateAt40FB40(2);
-            S16(0x80) = 99;
-            F32(0x30) = 0.0f;
-            I32(0x7C) = 0;
+            reinterpret_cast<signed short&>(field080) = 99;
+            rotationZ = 0.0f;
+            field07C = 0;
             break;
         }
     }
     if (P16(0xF12) == 2) {
-        if (S16(0x62) < 6)
-            S16(0x62) += 4;
-        S16(0xDA) = 25;
-        MotionAt40FB70(static_cast<float>(-S16(0xD8) + 180),
-                       static_cast<float>(S16(0xDA)));
+        if ((reinterpret_cast<signed short&>(animationStage)) < 6)
+            reinterpret_cast<signed short&>(animationStage) += 4;
+        reinterpret_cast<signed short&>(field0DA) = 25;
+        MotionAt40FB70(static_cast<float>(-(reinterpret_cast<signed short&>(field0D8)) + 180),
+                       static_cast<float>(reinterpret_cast<signed short&>(field0DA)));
     }
-    if (S16(0x62) < 6 && P16(0xF12) < 2) {
-        S16(0xD8) = static_cast<short>(
-            static_cast<float>(P16(0xF10)-180) + F32(0xC8));
-        if (S16(0xD8) > 180) S16(0xD8) -= 360;
-        if (S16(0xD8) < -180) S16(0xD8) += 360;
-        MotionAt40FB70(static_cast<float>(-S16(0xD8)),
-                       static_cast<float>(S16(0xDA)));
-        F32(0x44) = static_cast<int>(
-            P16(0xF0C) + S8(0x66)*F32(0x50));
-        F32(0x48) = static_cast<int>(
-            P16(0xF0E) + F32(0x54));
-        if (S16(0xDA) < 200) S16(0xDA) += 10;
-        if (S16(0xDA) > 200) S16(0xDA) = 200;
+    if ((reinterpret_cast<signed short&>(animationStage)) < 6 && P16(0xF12) < 2) {
+        reinterpret_cast<signed short&>(field0D8) = static_cast<short>(
+            static_cast<float>(P16(0xF10)-180) + (field0C8));
+        if ((reinterpret_cast<signed short&>(field0D8)) > 180) reinterpret_cast<signed short&>(field0D8) -= 360;
+        if ((reinterpret_cast<signed short&>(field0D8)) < -180) reinterpret_cast<signed short&>(field0D8) += 360;
+        MotionAt40FB70(static_cast<float>(-(reinterpret_cast<signed short&>(field0D8))),
+                       static_cast<float>(reinterpret_cast<signed short&>(field0DA)));
+        x = static_cast<int>(
+            P16(0xF0C) + (facing)*(velocityX));
+        y = static_cast<int>(
+            P16(0xF0E) + (velocityY));
+        if ((reinterpret_cast<signed short&>(field0DA)) < 200) reinterpret_cast<signed short&>(field0DA) += 10;
+        if ((reinterpret_cast<signed short&>(field0DA)) > 200) reinterpret_cast<signed short&>(field0DA) = 200;
     }
-    if (GetStateAt40FA30() == S16(0x70)) SetStateAt40FB40(6);
-    if (S16(0x62) == 2 && S16(0x64) == 0) SetStateAt40FB40(1);
-    if (S16(0x62) == 6 && S16(0x64) == 0 && P16(0xF12) == 1) {
+    if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070))) SetStateAt40FB40(6);
+    if ((reinterpret_cast<signed short&>(animationStage)) == 2 && (reinterpret_cast<signed short&>(animationFrame)) == 0) SetStateAt40FB40(1);
+    if ((reinterpret_cast<signed short&>(animationStage)) == 6 && (reinterpret_cast<signed short&>(animationFrame)) == 0 && P16(0xF12) == 1) {
         SetStateAt40FB40(2);
-        I32(0x7C) = 0;
+        field07C = 0;
     }
     break;
 }
         case 0x349: {
-    if (S16(0x62) == 0 && S16(0x64) == 0) {
+    if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
         ResetStateAt40FBB0(0,0,0);
-        F32(0x1C) = 1.0f;
-        F32(0x20) = 1.0f;
-        U8(0x11) = 0xFF;
-        U8(0x12) = 0xFF;
-        U8(0x13) = 0xFF;
-        U8(0x14) = 0xFF;
+        scaleX = 1.0f;
+        scaleY = 1.0f;
+        color[0] = 0xFF;
+        color[1] = 0xFF;
+        color[2] = 0xFF;
+        color[3] = 0xFF;
         P16(0xF10) = 0;
-        F32(0x50) = 25.0f;
+        velocityX = 25.0f;
     }
-    if (S16(0x62) < 2) {
+    if ((reinterpret_cast<signed short&>(animationStage)) < 2) {
         P16(0xF10) -= 3;
-        P16(0xF0C) = static_cast<short>(F32(0x44));
-        P16(0xF0E) = static_cast<short>(F32(0x48));
-        F32(0x50) = F32(0x50) - gCompareAt0065747C;
-        if (F32(0x50) < gCompareAt0065782C)
-            F32(0x50) = 0.0f;
+        P16(0xF0C) = static_cast<short>(x);
+        P16(0xF0E) = static_cast<short>(y);
+        velocityX = (velocityX) - gCompareAt0065747C;
+        if ((velocityX) < gCompareAt0065782C)
+            velocityX = 0.0f;
     }
-    F32(0x44) += static_cast<float>(S8(0x66)) * F32(0x50);
-    if (GetStateAt40FA30() == S16(0x70)) {
+    x += static_cast<float>(facing) * (velocityX);
+    if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070))) {
         ResetAt45B830();
         P16(0xF12) = 0;
     }
-    if (S16(0x62) == 1 && S16(0x64) == 0)
+    if ((reinterpret_cast<signed short&>(animationStage)) == 1 && (reinterpret_cast<signed short&>(animationFrame)) == 0)
         P16(0xF12) = 1;
-    if (S16(0x62) == 2 && S16(0x64) == 0)
+    if ((reinterpret_cast<signed short&>(animationStage)) == 2 && (reinterpret_cast<signed short&>(animationFrame)) == 0)
         P16(0xF12) = 2;
     break;
 }
         case 0x34A: {
-    if (P16(0x60) > 0x45 && P16(0x60) < 0x96 && S16(0x62) < 11) {
+    if (P16(0x60) > 0x45 && P16(0x60) < 0x96 && (reinterpret_cast<signed short&>(animationStage)) < 11) {
         ResetAt45B830();
         for (int iteration=0; iteration<8; ++iteration)
-            PARENT->SpawnAt453A70(0x3E4, I32(0x44), I32(0x48), 1, 1);
+            PARENT->SpawnAt453A70(0x3E4, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
         if (P16(0xEFA) > 25) {
             P16(0xEFA) = 0;
-            PARENT->SpawnAt453A70(0x3E3, I32(0x44), I32(0x48), 1, 1);
+            PARENT->SpawnAt453A70(0x3E3, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
         }
         break;
     } else {
-        if (I32(0x7C) == 6) {
-            I32(0x7C) = 0;
-            S16(0x80) = 1;
+        if ((field07C) == 6) {
+            field07C = 0;
+            reinterpret_cast<signed short&>(field080) = 1;
         }
-        if (S16(0x62) == 0 && S16(0x64) == 0) {
+        if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
             ResetStateAt40FBB0(0,0,0);
-            I32(0x7C) = 0;
-            F32(0x1C) = 1.0f;
-            F32(0x20) = 1.0f;
-            U8(0x11) = 0;
-            U8(0x12) = 0xFF;
-            U8(0x13) = 0xFF;
-            U8(0x14) = 0xFF;
-            F32(0x50) = 3.0f;
-            F32(0x54) = -3.0f;
+            field07C = 0;
+            scaleX = 1.0f;
+            scaleY = 1.0f;
+            color[0] = 0;
+            color[1] = 0xFF;
+            color[2] = 0xFF;
+            color[3] = 0xFF;
+            velocityX = 3.0f;
+            velocityY = -3.0f;
         }
-        F32(0x44) += static_cast<float>(S8(0x66)) * F32(0x50);
-        F32(0x48) = *(&F32(0x48)) + *(&F32(0x54));
-        if (S16(0x62) == 0) {
-            if (U8(0x11) <= 0xEB)
-                U8(0x11) += 20;
+        x += static_cast<float>(facing) * (velocityX);
+        y = *(&y) + *(&velocityY);
+        if ((reinterpret_cast<signed short&>(animationStage)) == 0) {
+            if ((color[0]) <= 0xEB)
+                color[0] += 20;
             else
-                U8(0x11) = 0xFF;
-            F32(0x30) = F32(0x30) + gAddAt00659738;
-            F32(0x54) = F32(0x54) - gAddAt006583FC;
-            if (*(&F32(0x48)) + *(&F32(0x54)) <= gStageContactAt0065786C) {
-                F32(0x48) = 20.0f;
-                F32(0x54) = 0.0f;
-                F32(0x50) = 0.0f;
+                color[0] = 0xFF;
+            rotationZ = (rotationZ) + gAddAt00659738;
+            velocityY = (velocityY) - gAddAt006583FC;
+            if (*(&y) + *(&velocityY) <= gStageContactAt0065786C) {
+                y = 20.0f;
+                velocityY = 0.0f;
+                velocityX = 0.0f;
                 SetStateAt40FB40(1);
-                F32(0x30) = 0.0f;
-                U8(0x11) = 0xFF;
+                rotationZ = 0.0f;
+                color[0] = 0xFF;
                 break;
             }
         }
-        if (S16(0x62) == 11) {
-            F32(0x1C) = static_cast<float>(F32(0x1C) * gMulDoubleAt00659730);
-            F32(0x20) = F32(0x20) + gAddAt006583FC;
-            if (U8(0x11) >= 10)
-                U8(0x11) -= 10;
+        if ((reinterpret_cast<signed short&>(animationStage)) == 11) {
+            scaleX = static_cast<float>((scaleX) * gMulDoubleAt00659730);
+            scaleY = (scaleY) + gAddAt006583FC;
+            if ((color[0]) >= 10)
+                color[0] -= 10;
             else {
                 ResetAt45B830();
                 break;
             }
         }
-        if (GetStateAt40FA30() == S16(0x70)) {
+        if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070))) {
             ResetAt45B830();
             break;
         }
-        if (S16(0x62) == 1 && S16(0x64) == 0) {
-            F32(0x50) = 0.0f;
-            F32(0x54) = 0.0f;
-            F32(0x30) = 0.0f;
+        if ((reinterpret_cast<signed short&>(animationStage)) == 1 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+            velocityX = 0.0f;
+            velocityY = 0.0f;
+            rotationZ = 0.0f;
         }
-        if (S16(0x62) == 6 && S16(0x64) == 0 && S16(0xDC) < 1) {
+        if ((reinterpret_cast<signed short&>(animationStage)) == 6 && (reinterpret_cast<signed short&>(animationFrame)) == 0 && (reinterpret_cast<signed short&>(field0DC)) < 1) {
             SetStateAt40FB40(2);
-            ++S16(0xDC);
+            ++reinterpret_cast<signed short&>(field0DC);
         }
-        if (S16(0x62) == 10 && S16(0x64) == 0 && S16(0xDA) < 6) {
-            ++S16(0xDA);
+        if ((reinterpret_cast<signed short&>(animationStage)) == 10 && (reinterpret_cast<signed short&>(animationFrame)) == 0 && (reinterpret_cast<signed short&>(field0DA)) < 6) {
+            ++reinterpret_cast<signed short&>(field0DA);
             SetStateAt40FB40(9);
         }
-        if (S16(0x62) == 9 && S16(0x64) == 0) {
+        if ((reinterpret_cast<signed short&>(animationStage)) == 9 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
             PF32(0x314) = 1200.0f;
             PF32(0x318) = static_cast<float>(RandomAt455580(0,60));
             PARENT->SpawnMovedAt453A70(0x323,
-                   static_cast<float>(S8(0x66) * 10) + F32(0x44),
-                   I32(0x48), U8(0x66), 1);
+                   static_cast<float>((facing) * 10) + (x),
+                   reinterpret_cast<int&>(y), reinterpret_cast<unsigned char&>(facing), 1);
             PARENT->ModifyAt453D40(6);
         }
     }
     break;
 }
         case 0x34B: {
-    if (P16(0x60) > 0x45 && P16(0x60) < 0x96 && S16(0x62) < 11) {
+    if (P16(0x60) > 0x45 && P16(0x60) < 0x96 && (reinterpret_cast<signed short&>(animationStage)) < 11) {
         ResetAt45B830();
         for (int iteration=0; iteration<8; ++iteration)
-            PARENT->SpawnAt453A70(0x3E4, I32(0x44), I32(0x48), 1, 1);
+            PARENT->SpawnAt453A70(0x3E4, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
         if (P16(0xEFA) > 25) {
             P16(0xEFA) = 0;
-            PARENT->SpawnAt453A70(0x3E3, I32(0x44), I32(0x48), 1, 1);
+            PARENT->SpawnAt453A70(0x3E3, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
         }
         break;
     } else {
-        if (I32(0x7C) == 6) {
-            I32(0x7C) = 0;
-            S16(0x80) = 1;
+        if ((field07C) == 6) {
+            field07C = 0;
+            reinterpret_cast<signed short&>(field080) = 1;
         }
-        if (S16(0x62) == 0 && S16(0x64) == 0) {
+        if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
             ResetStateAt40FBB0(0,0,0);
-            I32(0x7C) = 0;
-            F32(0x1C) = 1.0f;
-            F32(0x20) = 1.0f;
-            U8(0x11) = 0;
-            U8(0x12) = 0xFF;
-            U8(0x13) = 0xFF;
-            U8(0x14) = 0xFF;
-            MotionRawPairAt40FB70(I32(0xCC), I32(0xC8));
+            field07C = 0;
+            scaleX = 1.0f;
+            scaleY = 1.0f;
+            color[0] = 0;
+            color[1] = 0xFF;
+            color[2] = 0xFF;
+            color[3] = 0xFF;
+            MotionRawPairAt40FB70(reinterpret_cast<int&>(field0CC), reinterpret_cast<int&>(field0C8));
         }
-        F32(0x44) += static_cast<float>(S8(0x66)) * F32(0x50);
-        F32(0x48) = *(&F32(0x48)) + *(&F32(0x54));
-        if (S16(0x62) == 0) {
-            if (U8(0x11) <= 0xEB)
-                U8(0x11) += 20;
+        x += static_cast<float>(facing) * (velocityX);
+        y = *(&y) + *(&velocityY);
+        if ((reinterpret_cast<signed short&>(animationStage)) == 0) {
+            if ((color[0]) <= 0xEB)
+                color[0] += 20;
             else
-                U8(0x11) = 0xFF;
-            F32(0x30) = F32(0x30) + gAddAt00659738;
-            F32(0x54) = F32(0x54) - gGrowAt00657478;
+                color[0] = 0xFF;
+            rotationZ = (rotationZ) + gAddAt00659738;
+            velocityY = (velocityY) - gGrowAt00657478;
         }
-        if (S16(0x62) == 11) {
-            F32(0x1C) = static_cast<float>(F32(0x1C) * gMulDoubleAt00659730);
-            F32(0x20) = F32(0x20) + gAddAt006583FC;
-            if (U8(0x11) >= 10)
-                U8(0x11) -= 10;
+        if ((reinterpret_cast<signed short&>(animationStage)) == 11) {
+            scaleX = static_cast<float>((scaleX) * gMulDoubleAt00659730);
+            scaleY = (scaleY) + gAddAt006583FC;
+            if ((color[0]) >= 10)
+                color[0] -= 10;
             else {
                 ResetAt45B830();
                 break;
             }
         }
-        if (GetStateAt40FA30() == S16(0x70)) {
+        if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070))) {
             ResetAt45B830();
             break;
         }
-        if (S16(0x62) == 1 && S16(0x64) == 0) {
-            F32(0x50) = 0.0f;
-            F32(0x54) = 0.0f;
-            F32(0x30) = 0.0f;
+        if ((reinterpret_cast<signed short&>(animationStage)) == 1 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+            velocityX = 0.0f;
+            velocityY = 0.0f;
+            rotationZ = 0.0f;
         }
-        if (S16(0x62) == 6 && S16(0x64) == 0 && S16(0xDC) < 0) {
+        if ((reinterpret_cast<signed short&>(animationStage)) == 6 && (reinterpret_cast<signed short&>(animationFrame)) == 0 && (reinterpret_cast<signed short&>(field0DC)) < 0) {
             SetStateAt40FB40(2);
-            ++S16(0xDC);
+            ++reinterpret_cast<signed short&>(field0DC);
         }
-        if (S16(0x62) == 10 && S16(0x64) == 0 && S16(0xDA) < 6) {
-            ++S16(0xDA);
+        if ((reinterpret_cast<signed short&>(animationStage)) == 10 && (reinterpret_cast<signed short&>(animationFrame)) == 0 && (reinterpret_cast<signed short&>(field0DA)) < 6) {
+            ++reinterpret_cast<signed short&>(field0DA);
             SetStateAt40FB40(9);
         }
-        if (S16(0x62) == 9 && S16(0x64) == 0) {
+        if ((reinterpret_cast<signed short&>(animationStage)) == 9 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
             PF32(0x314) = 1200.0f;
             PF32(0x318) = static_cast<float>(RandomAt455580(0,15) - 60);
             PARENT->SpawnMovedAt453A70(0x324,
-                   static_cast<float>(S8(0x66) * 10) + F32(0x44),
-                   I32(0x48), U8(0x66), 1);
+                   static_cast<float>((facing) * 10) + (x),
+                   reinterpret_cast<int&>(y), reinterpret_cast<unsigned char&>(facing), 1);
             PARENT->ModifyAt453D40(6);
         }
     }
     break;
 }
         case 0x34C: {
-    if (P16(0x60) > 0x45 && P16(0x60) < 0x96 && S16(0x62) < 5) {
+    if (P16(0x60) > 0x45 && P16(0x60) < 0x96 && (reinterpret_cast<signed short&>(animationStage)) < 5) {
         ResetAt45B830();
         for (int iteration=0; iteration<8; ++iteration)
-            PARENT->SpawnAt453A70(0x3E4,I32(0x44),I32(0x48),1,1);
+            PARENT->SpawnAt453A70(0x3E4,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),1,1);
         if (P16(0xEFA) > 25) {
             P16(0xEFA) = 0;
-            PARENT->SpawnAt453A70(0x3E3,I32(0x44),I32(0x48),1,1);
+            PARENT->SpawnAt453A70(0x3E3,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),1,1);
         }
         break;
     } else {
@@ -1750,74 +1752,74 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
             (P16(0x60) == 0x19C && P16(0x62) < 5) ||
             (P16(0x60) == 0x19A && P16(0x62) < 7) ||
             (P16(0x60) == 0x19D && P16(0x62) < 5)) {
-            F32(0x44) = *(&PF32(0x44)) + static_cast<float>(S8(0x66)*60);
-            F32(0x48) = PF32(0x48) + gParentYAt006590A8;
+            x = *(&PF32(0x44)) + static_cast<float>((facing)*60);
+            y = PF32(0x48) + gParentYAt006590A8;
             if (P16(0x60) == 0x19A)
-                F32(0x48) = PF32(0x48) + gParentYExtraAt00658264;
-        } else if (S16(0x62) < 5) {
+                y = PF32(0x48) + gParentYExtraAt00658264;
+        } else if ((reinterpret_cast<signed short&>(animationStage)) < 5) {
             SetStateAt40FB40(5);
             break;
         }
-        if (S16(0x62) == 0 && S16(0x64) == 0) {
+        if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
             ResetStateAt40FBB0(0,0,0);
-            I32(0x7C) = 0;
-            F32(0x1C) = 1.0f;
-            F32(0x20) = 1.0f;
-            U8(0x11) = 0xFF;
-            U8(0x12) = 0xFF;
-            U8(0x13) = 0xFF;
-            U8(0x14) = 0xFF;
-            S16(0xDA) = 0;
+            field07C = 0;
+            scaleX = 1.0f;
+            scaleY = 1.0f;
+            color[0] = 0xFF;
+            color[1] = 0xFF;
+            color[2] = 0xFF;
+            color[3] = 0xFF;
+            reinterpret_cast<signed short&>(field0DA) = 0;
         }
-        if (S16(0x62) == 5) {
-            F32(0x1C) = static_cast<float>(F32(0x1C)*gMulDoubleAt00659730);
-            F32(0x20) = F32(0x20) + gAddAt006583FC;
-            if (U8(0x11) >= 10)
-                U8(0x11) -= 10;
+        if ((reinterpret_cast<signed short&>(animationStage)) == 5) {
+            scaleX = static_cast<float>((scaleX)*gMulDoubleAt00659730);
+            scaleY = (scaleY) + gAddAt006583FC;
+            if ((color[0]) >= 10)
+                color[0] -= 10;
             else {
                 ResetAt45B830();
                 break;
             }
         }
-        if (GetStateAt40FA30() == S16(0x70)) {
+        if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070))) {
             ResetAt45B830();
             break;
         }
-        if (S16(0x62) == 4 && S16(0x64) == 0 && S16(0xDA) < 8) {
-            ++S16(0xDA);
+        if ((reinterpret_cast<signed short&>(animationStage)) == 4 && (reinterpret_cast<signed short&>(animationFrame)) == 0 && (reinterpret_cast<signed short&>(field0DA)) < 8) {
+            ++reinterpret_cast<signed short&>(field0DA);
             SetStateAt40FB40(3);
         }
-        if (S16(0x62) == 3 && S16(0x64) == 0) {
+        if ((reinterpret_cast<signed short&>(animationStage)) == 3 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
             if (P16(0x60) == 0x198) {
                 PF32(0x314) = 1000.0f;
                 PF32(0x318) = static_cast<float>(RandomAt455580(0,10) - 5);
                 PARENT->SpawnMovedAt453A70(0x322,
-                    static_cast<float>(S8(0x66)*10) + F32(0x44),
-                    I32(0x48), U8(0x66),1);
+                    static_cast<float>((facing)*10) + (x),
+                    reinterpret_cast<int&>(y), reinterpret_cast<unsigned char&>(facing),1);
                 PARENT->ModifyAt453D40(6);
             }
             if (P16(0x60) == 0x19A) {
                 PF32(0x314) = 1000.0f;
                 PF32(0x318) = static_cast<float>(RandomAt455580(0,10) + 30);
                 PARENT->SpawnMovedAt453A70(0x323,
-                    static_cast<float>(S8(0x66)*10) + F32(0x44),
-                    I32(0x48), U8(0x66),1);
+                    static_cast<float>((facing)*10) + (x),
+                    reinterpret_cast<int&>(y), reinterpret_cast<unsigned char&>(facing),1);
                 PARENT->ModifyAt453D40(6);
             }
             if (P16(0x60) == 0x19C) {
                 PF32(0x314) = 1000.0f;
                 PF32(0x318) = static_cast<float>(RandomAt455580(0,10) - 5);
                 PARENT->SpawnMovedAt453A70(0x324,
-                    static_cast<float>(S8(0x66)*10) + F32(0x44),
-                    I32(0x48), U8(0x66),1);
+                    static_cast<float>((facing)*10) + (x),
+                    reinterpret_cast<int&>(y), reinterpret_cast<unsigned char&>(facing),1);
                 PARENT->ModifyAt453D40(6);
             }
             if (P16(0x60) == 0x19D) {
                 PF32(0x314) = 1000.0f;
                 PF32(0x318) = static_cast<float>(-RandomAt455580(0,10) - 30);
                 PARENT->SpawnMovedAt453A70(0x325,
-                    static_cast<float>(S8(0x66)*10) + F32(0x44),
-                    I32(0x48), U8(0x66),1);
+                    static_cast<float>((facing)*10) + (x),
+                    reinterpret_cast<int&>(y), reinterpret_cast<unsigned char&>(facing),1);
                 PARENT->ModifyAt453D40(6);
             }
         }
@@ -1828,48 +1830,48 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
     if (P16(0x60) > 0x31 && P16(0x60) < 0x96) {
         ResetAt45B830();
         for (int iteration=0; iteration<5; ++iteration)
-            PARENT->SpawnAt453A70(0x3E4,I32(0x44),I32(0x48),1,1);
+            PARENT->SpawnAt453A70(0x3E4,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),1,1);
         if (P16(0xEFA) > 25) {
             P16(0xEFA)=0;
-            PARENT->SpawnAt453A70(0x3E3,I32(0x44),I32(0x48),1,1);
+            PARENT->SpawnAt453A70(0x3E3,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),1,1);
         }
         break;
     } else {
-        if (I32(0x7C)==6) {
-            I32(0x7C)=0;
-            S16(0x80)=1;
+        if ((field07C)==6) {
+            field07C=0;
+            reinterpret_cast<signed short&>(field080)=1;
         }
-        if (S16(0x62)==0 && S16(0x64)==0) {
+        if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
             ResetStateAt40FBB0(0,0,0);
-            S16(0x80)=1;
-            I32(0x7C)=0;
-            I32(0x50)=I32(0xC8);
-            I32(0x54)=I32(0xCC);
-            F32(0x1C)=1.0f;
-            F32(0x20)=1.0f;
-            U8(0x11)=0xFF;
-            U8(0x12)=0xFF;
-            U8(0x13)=0xFF;
-            U8(0x14)=0xFF;
+            reinterpret_cast<signed short&>(field080)=1;
+            field07C=0;
+            reinterpret_cast<int&>(velocityX)=reinterpret_cast<int&>(field0C8);
+            reinterpret_cast<int&>(velocityY)=reinterpret_cast<int&>(field0CC);
+            scaleX=1.0f;
+            scaleY=1.0f;
+            color[0]=0xFF;
+            color[1]=0xFF;
+            color[2]=0xFF;
+            color[3]=0xFF;
         }
-        F32(0x54) = F32(0x54) - gSubAt00659090;
-        F32(0x44) += static_cast<float>(S8(0x66))*F32(0x50);
-        F32(0x48) = *(&F32(0x48)) + *(&F32(0x54));
-        if (S16(0x62)<2) {
-            F32(0x30) = F32(0x30)+gLiftAt00657CC0;
-            if (*(&F32(0x48)) + *(&F32(0x54)) <= gCompareAt0065782C) {
+        velocityY = (velocityY) - gSubAt00659090;
+        x += static_cast<float>(facing)*(velocityX);
+        y = *(&y) + *(&velocityY);
+        if ((reinterpret_cast<signed short&>(animationStage))<2) {
+            rotationZ = (rotationZ)+gLiftAt00657CC0;
+            if (*(&y) + *(&velocityY) <= gCompareAt0065782C) {
                 PARENT->ModifyAt453D40(4);
-                PARENT->SpawnDirectedAt453A70(0x32B,I32(0x44),I32(0x48),S8(0x66),1);
-                PARENT->SpawnDirectedAt453A70(0x32D,I32(0x44),I32(0x48),S8(0x66),1);
+                PARENT->SpawnDirectedAt453A70(0x32B,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),facing,1);
+                PARENT->SpawnDirectedAt453A70(0x32D,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),facing,1);
                 SetActionAt40FAC0(0x33B);
-                F32(0x48)=0.0f;
-                F32(0x54)=0.0f;
-                F32(0x50)=0.0f;
-                F32(0x30)=0.0f;
+                y=0.0f;
+                velocityY=0.0f;
+                velocityX=0.0f;
+                rotationZ=0.0f;
                 break;
             }
         }
-        if (GetStateAt40FA30()==S16(0x70))
+        if (GetStateAt40FA30()==(reinterpret_cast<signed short&>(field070)))
             SetStateAt40FB40(1);
     }
     break;
@@ -1878,48 +1880,48 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
     if (P16(0x60)>0x31 && P16(0x60)<0x96) {
         ResetAt45B830();
         for (int iteration=0;iteration<4;++iteration)
-            PARENT->SpawnAt453A70(0x3E4,I32(0x44),I32(0x48),1,1);
+            PARENT->SpawnAt453A70(0x3E4,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),1,1);
         if (P16(0xEFA)>25) {
             P16(0xEFA)=0;
-            PARENT->SpawnAt453A70(0x3E3,I32(0x44),I32(0x48),1,1);
+            PARENT->SpawnAt453A70(0x3E3,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),1,1);
         }
         break;
     } else {
-        if (I32(0x7C)==6) {
-            I32(0x7C)=0;
-            S16(0x80)=1;
+        if ((field07C)==6) {
+            field07C=0;
+            reinterpret_cast<signed short&>(field080)=1;
         }
-        if (S16(0xD8)>2) {
-            F32(0x1C) = static_cast<float>(F32(0x1C)*gMulDoubleAt00659730);
-            F32(0x20) = F32(0x20)+gAddAt006583FC;
-            if (U8(0x11)>=10)
-                U8(0x11)-=10;
+        if ((reinterpret_cast<signed short&>(field0D8))>2) {
+            scaleX = static_cast<float>((scaleX)*gMulDoubleAt00659730);
+            scaleY = (scaleY)+gAddAt006583FC;
+            if ((color[0])>=10)
+                color[0]-=10;
             else {
                 ResetAt45B830();
                 break;
             }
         }
-        if (S16(0x62)==0 && S16(0x64)==0) {
+        if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
             ResetStateAt40FBB0(0,0,0);
 
-            F32(0x50)=20.0f;
-            F32(0x54)=0.0f;
-            S16(0xD8)=0;
-            F32(0x1C)=1.0f;
-            F32(0x20)=1.0f;
-            U8(0x11)=0xFF;
-            U8(0x12)=0xFF;
-            U8(0x13)=0xFF;
-            U8(0x14)=0xFF;
+            velocityX=20.0f;
+            velocityY=0.0f;
+            reinterpret_cast<signed short&>(field0D8)=0;
+            scaleX=1.0f;
+            scaleY=1.0f;
+            color[0]=0xFF;
+            color[1]=0xFF;
+            color[2]=0xFF;
+            color[3]=0xFF;
         }
-        F32(0x50) = F32(0x50)-gCompareAt0065747C;
-        if (F32(0x50)<gMotionDecelAt00657480)
-            F32(0x50)=2.0f;
-        F32(0x44) += static_cast<float>(S8(0x66))*F32(0x50);
-        F32(0x48) = *(&F32(0x48))+*(&F32(0x54));
-        if (GetStateAt40FA30()==S16(0x70)) {
+        velocityX = (velocityX)-gCompareAt0065747C;
+        if ((velocityX)<gMotionDecelAt00657480)
+            velocityX=2.0f;
+        x += static_cast<float>(facing)*(velocityX);
+        y = *(&y)+*(&velocityY);
+        if (GetStateAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
             SetStateAt40FB40(1);
-            ++S16(0xD8);
+            ++reinterpret_cast<signed short&>(field0D8);
         }
     }
     break;
@@ -1928,48 +1930,48 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
     if (P16(0x60)>0x31 && P16(0x60)<0x96) {
         ResetAt45B830();
         for (int iteration=0;iteration<4;++iteration)
-            PARENT->SpawnAt453A70(0x3E4,I32(0x44),I32(0x48),1,1);
+            PARENT->SpawnAt453A70(0x3E4,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),1,1);
         if (P16(0xEFA)>25) {
             P16(0xEFA)=0;
-            PARENT->SpawnAt453A70(0x3E3,I32(0x44),I32(0x48),1,1);
+            PARENT->SpawnAt453A70(0x3E3,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),1,1);
         }
         break;
     } else {
-        if (I32(0x7C)==6) {
-            I32(0x7C)=0;
-            S16(0x80)=1;
+        if ((field07C)==6) {
+            field07C=0;
+            reinterpret_cast<signed short&>(field080)=1;
         }
-        if (S16(0xD8)>1) {
-            F32(0x1C) = static_cast<float>(F32(0x1C)*gMulDoubleAt00659730);
-            F32(0x20) = F32(0x20)+gAddAt006583FC;
-            if (U8(0x11)>=10)
-                U8(0x11)-=10;
+        if ((reinterpret_cast<signed short&>(field0D8))>1) {
+            scaleX = static_cast<float>((scaleX)*gMulDoubleAt00659730);
+            scaleY = (scaleY)+gAddAt006583FC;
+            if ((color[0])>=10)
+                color[0]-=10;
             else {
                 ResetAt45B830();
                 break;
             }
         }
-        if (S16(0x62)==0 && S16(0x64)==0) {
+        if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
             ResetStateAt40FBB0(0,0,0);
 
-            F32(0x50)=20.0f;
-            F32(0x54)=0.0f;
-            S16(0xD8)=0;
-            I32(0x7C)=0;
-            S16(0x80)=1;
-            F32(0x1C)=1.0f;
-            F32(0x20)=1.0f;
-            U8(0x11)=0xFF;
-            U8(0x12)=0xFF;
-            U8(0x13)=0xFF;
-            U8(0x14)=0xFF;
+            velocityX=20.0f;
+            velocityY=0.0f;
+            reinterpret_cast<signed short&>(field0D8)=0;
+            field07C=0;
+            reinterpret_cast<signed short&>(field080)=1;
+            scaleX=1.0f;
+            scaleY=1.0f;
+            color[0]=0xFF;
+            color[1]=0xFF;
+            color[2]=0xFF;
+            color[3]=0xFF;
         }
-        F32(0x50) = F32(0x50)-gCompareAt0065747C;
-        if (F32(0x50)<gMotionDecelAt00657480)
-            F32(0x50)=2.0f;
-        F32(0x44) += static_cast<float>(S8(0x66))*F32(0x50);
-        F32(0x48) = *(&F32(0x48))+*(&F32(0x54));
-        if (GetStateAt40FA30()==S16(0x70)) {
+        velocityX = (velocityX)-gCompareAt0065747C;
+        if ((velocityX)<gMotionDecelAt00657480)
+            velocityX=2.0f;
+        x += static_cast<float>(facing)*(velocityX);
+        y = *(&y)+*(&velocityY);
+        if (GetStateAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
             ResetAt45B830();
         }
     }
@@ -1977,44 +1979,44 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
 }
         case 0x370: {
     if (P16(0x60)==0x133) {
-        F32(0x44) = *(&PF32(0x44)) + static_cast<float>(S8(0x66)*260);
-        F32(0x48) = PF32(0x48) + gParentYAt006590A0;
+        x = *(&PF32(0x44)) + static_cast<float>((facing)*260);
+        y = PF32(0x48) + gParentYAt006590A0;
     }
-    if (S16(0x62)==0 && S16(0x64)==0) {
+    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
         ResetStateAt40FBB0(0,0,0);
-        F32(0x1C)=1.0f;
-        F32(0x20)=1.0f;
-        U8(0x11)=0xFF;
-        U8(0x12)=0xFF;
-        U8(0x13)=0xFF;
-        U8(0x14)=0xFF;
+        scaleX=1.0f;
+        scaleY=1.0f;
+        color[0]=0xFF;
+        color[1]=0xFF;
+        color[2]=0xFF;
+        color[3]=0xFF;
     }
-    F32(0x1C) = F32(0x1C) + gAddAt006583FC;
-    F32(0x20) = F32(0x20) * gSubAt00659090;
-    if (U8(0x11)>20)
-        U8(0x11)-=20;
+    scaleX = (scaleX) + gAddAt006583FC;
+    scaleY = (scaleY) * gSubAt00659090;
+    if ((color[0])>20)
+        color[0]-=20;
     else {
         ResetAt45B830();
         break;
     }
-    if (GetStateAt40FA30()==S16(0x70))
+    if (GetStateAt40FA30()==(reinterpret_cast<signed short&>(field070)))
         ResetAt45B830();
     break;
 }
         case 0x371: {
-    if (S16(0x62)==0 && S16(0x64)==0) {
+    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
         ResetStateAt40FBB0(0,0,0);
-        F32(0x1C)=0.85f;
-        F32(0x20)=0.85f;
-        U8(0x11)=0xFF;
-        U8(0x12)=0xFF;
-        U8(0x13)=0xFF;
-        U8(0x14)=0xFF;
-        S16(0x1A)=0x4E2;
-        F32(0x28)=-65.0f;
+        scaleX=0.85f;
+        scaleY=0.85f;
+        color[0]=0xFF;
+        color[1]=0xFF;
+        color[2]=0xFF;
+        color[3]=0xFF;
+        reinterpret_cast<signed short&>(field01A)=0x4E2;
+        rotationX=-65.0f;
     }
-    F32(0x30) = F32(0x30)-gSubtractAt00659728;
-    if (GetStateAt40FA30()==S16(0x70))
+    rotationZ = (rotationZ)-gSubtractAt00659728;
+    if (GetStateAt40FA30()==(reinterpret_cast<signed short&>(field070)))
         ResetAt45B830();
     break;
 }
@@ -2023,36 +2025,36 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         ResetAt45B830();
         break;
     }
-    if (S16(0x62)==0 && S16(0x64)==0) {
+    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
         ResetStateAt40FBB0(0,0,0);
-        F32(0x1C)=1.0f;
-        F32(0x20)=1.0f;
-        U8(0x11)=0xFF;
-        U8(0x12)=0xFF;
-        U8(0x13)=0xFF;
-        U8(0x14)=0xFF;
-        F32(0x50) = F32(0xC8)*gMulAt006590B4;
-        F32(0x54) = F32(0xCC)*gMulAt006590B4;
+        scaleX=1.0f;
+        scaleY=1.0f;
+        color[0]=0xFF;
+        color[1]=0xFF;
+        color[2]=0xFF;
+        color[3]=0xFF;
+        velocityX = (field0C8)*gMulAt006590B4;
+        velocityY = (field0CC)*gMulAt006590B4;
     }
-    F32(0x54) = F32(0x54)-gDropAt00658058;
-    F32(0x44) += static_cast<float>(S8(0x66))*F32(0x50);
-    F32(0x48) = *(&F32(0x48)) + *(&F32(0x54));
-    if (S16(0x62)<2) {
-        F32(0x30) = F32(0x30)+gLiftAt00657CC0;
-        if (*(&F32(0x48)) + *(&F32(0x54)) <= gCompareAt0065782C) {
-            PARENT->SpawnDirectedAt453A70(0x388,I32(0x44),I32(0x48),S8(0x66),0);
+    velocityY = (velocityY)-gDropAt00658058;
+    x += static_cast<float>(facing)*(velocityX);
+    y = *(&y) + *(&velocityY);
+    if ((reinterpret_cast<signed short&>(animationStage))<2) {
+        rotationZ = (rotationZ)+gLiftAt00657CC0;
+        if (*(&y) + *(&velocityY) <= gCompareAt0065782C) {
+            PARENT->SpawnDirectedAt453A70(0x388,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),facing,0);
             PARENT->ModifyAt453D40(8);
             SetActionAt40FAC0(0x385);
             if (gGlobalActorCountAt006714D0>1)
                 SetActionAt40FAC0(0x38E);
-            F32(0x48)=0.0f;
-            F32(0x54)=0.0f;
-            F32(0x50)=0.0f;
-            F32(0x30)=0.0f;
+            y=0.0f;
+            velocityY=0.0f;
+            velocityX=0.0f;
+            rotationZ=0.0f;
             break;
         }
     }
-    if (GetStateAt40FA30()==S16(0x70))
+    if (GetStateAt40FA30()==(reinterpret_cast<signed short&>(field070)))
         SetStateAt40FB40(1);
     break;
 }
@@ -2061,44 +2063,44 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         ResetAt45B830();
         break;
     }
-    if (S16(0x62)==0 && S16(0x64)==0) {
-        S16(0xD8)=0;
+    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        reinterpret_cast<signed short&>(field0D8)=0;
         ResetStateAt40FBB0(0,0,0);
-        S16(0x80)=1;
-        I32(0x7C)=0;
-        F32(0x54)=0.0f;
-        F32(0x50)=0.0f;
-        F32(0x1C)=0.75f;
-        F32(0x20)=0.75f;
-        U8(0x11)=0xFF;
-        U8(0x12)=0xFF;
-        U8(0x13)=0xFF;
-        U8(0x14)=0xFF;
-        I32(0x28)=0;
-        I32(0x2C)=0;
-        I32(0x30)=0;
+        reinterpret_cast<signed short&>(field080)=1;
+        field07C=0;
+        velocityY=0.0f;
+        velocityX=0.0f;
+        scaleX=0.75f;
+        scaleY=0.75f;
+        color[0]=0xFF;
+        color[1]=0xFF;
+        color[2]=0xFF;
+        color[3]=0xFF;
+        reinterpret_cast<int&>(rotationX)=0;
+        reinterpret_cast<int&>(rotationY)=0;
+        reinterpret_cast<int&>(rotationZ)=0;
         PARENT->SetupAt453E60(5.0f);
-        PARENT->SpawnDirectedAt453A70(0x387,I32(0x44),I32(0x48),S8(0x66),1);
+        PARENT->SpawnDirectedAt453A70(0x387,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),facing,1);
     }
-    if (I32(0x7C)==6) {
-        I32(0x7C)=0;
-        ++S16(0x80);
+    if ((field07C)==6) {
+        field07C=0;
+        ++reinterpret_cast<signed short&>(field080);
     }
-    F32(0x1C) = F32(0x1C)+gAbsScaleAt00659724;
-    F32(0x20) = F32(0x20)+gAbsScaleAt00659724;
-    if (S16(0x62)>1) {
-        if (U8(0x11)>=40)
-            U8(0x11)-=40;
+    scaleX = (scaleX)+gAbsScaleAt00659724;
+    scaleY = (scaleY)+gAbsScaleAt00659724;
+    if ((reinterpret_cast<signed short&>(animationStage))>1) {
+        if ((color[0])>=40)
+            color[0]-=40;
         else {
-            U8(0x11)=0;
+            color[0]=0;
             ResetAt45B830();
             break;
         }
     }
-    if (GetStateAt40FA30()==S16(0x70))
+    if (GetStateAt40FA30()==(reinterpret_cast<signed short&>(field070)))
         ResetAt45B830();
-    if (S16(0x62)==2 && S16(0x64)==0)
-        PARENT->SpawnDirectedAt453A70(0x386,I32(0x44),I32(0x48),S8(0x66),1);
+    if ((reinterpret_cast<signed short&>(animationStage))==2 && (reinterpret_cast<signed short&>(animationFrame))==0)
+        PARENT->SpawnDirectedAt453A70(0x386,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),facing,1);
     break;
 }
         case 0x386: {
@@ -2106,33 +2108,33 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         ResetAt45B830();
         break;
     }
-    if (S16(0x62)==0 && S16(0x64)==0) {
-        S16(0xD8)=0;
+    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        reinterpret_cast<signed short&>(field0D8)=0;
         ResetStateAt40FBB0(0,0,0);
-        S16(0x80)=1;
-        I32(0x7C)=0;
-        F32(0x54)=0.0f;
-        F32(0x50)=0.0f;
-        F32(0x1C)=0.75f;
-        F32(0x20)=0.75f;
-        U8(0x11)=0xFF;
-        U8(0x12)=0xFF;
-        U8(0x13)=0xFF;
-        U8(0x14)=0xFF;
-        I32(0x28)=0;
-        I32(0x2C)=0;
-        I32(0x30)=0;
+        reinterpret_cast<signed short&>(field080)=1;
+        field07C=0;
+        velocityY=0.0f;
+        velocityX=0.0f;
+        scaleX=0.75f;
+        scaleY=0.75f;
+        color[0]=0xFF;
+        color[1]=0xFF;
+        color[2]=0xFF;
+        color[3]=0xFF;
+        reinterpret_cast<int&>(rotationX)=0;
+        reinterpret_cast<int&>(rotationY)=0;
+        reinterpret_cast<int&>(rotationZ)=0;
     }
-    F32(0x1C) = F32(0x1C)+gAbsScaleAt00659724;
-    F32(0x20) = F32(0x20)+gAbsScaleAt00659724;
-    if (U8(0x11)>=20)
-        U8(0x11)-=20;
+    scaleX = (scaleX)+gAbsScaleAt00659724;
+    scaleY = (scaleY)+gAbsScaleAt00659724;
+    if ((color[0])>=20)
+        color[0]-=20;
     else {
-        U8(0x11)=0;
+        color[0]=0;
         ResetAt45B830();
         break;
     }
-    if (GetStateAt40FA30()==S16(0x70))
+    if (GetStateAt40FA30()==(reinterpret_cast<signed short&>(field070)))
         ResetAt45B830();
     break;
 }
@@ -2141,28 +2143,28 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         ResetAt45B830();
         break;
     }
-    if (S16(0x62)==0 && S16(0x64)==0) {
+    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
         ResetStateAt40FBB0(0,0,0);
-        F32(0x1C)=0.75f;
-        F32(0x20)=0.75f;
-        U8(0x11)=0xFF;
-        U8(0x12)=0xFF;
-        U8(0x13)=0xFF;
-        U8(0x14)=0xFF;
-        S16(0x1A)=0x4E2;
-        F32(0x28)=-75.0f;
+        scaleX=0.75f;
+        scaleY=0.75f;
+        color[0]=0xFF;
+        color[1]=0xFF;
+        color[2]=0xFF;
+        color[3]=0xFF;
+        reinterpret_cast<signed short&>(field01A)=0x4E2;
+        rotationX=-75.0f;
     }
-    F32(0x1C) = F32(0x1C)+gFadeAt006583F8;
-    F32(0x20) = F32(0x20)+gFadeAt006583F8;
-    if (S16(0x62)>1) {
-        if (U8(0x11)>20)
-            U8(0x11)-=20;
+    scaleX = (scaleX)+gFadeAt006583F8;
+    scaleY = (scaleY)+gFadeAt006583F8;
+    if ((reinterpret_cast<signed short&>(animationStage))>1) {
+        if ((color[0])>20)
+            color[0]-=20;
         else {
             ResetAt45B830();
             break;
         }
     }
-    if (GetStateAt40FA30()==S16(0x70))
+    if (GetStateAt40FA30()==(reinterpret_cast<signed short&>(field070)))
         ResetAt45B830();
     break;
 }
@@ -2171,26 +2173,26 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         ResetAt45B830();
         break;
     }
-    if (S16(0x62)==0 && S16(0x64)==0) {
+    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
         ResetStateAt40FBB0(0,0,0);
-        F32(0x1C)=1.0f;
-        F32(0x20)=1.0f;
-        U8(0x11)=0xFF;
-        U8(0x12)=0xFF;
-        U8(0x13)=0xFF;
-        U8(0x14)=0xFF;
+        scaleX=1.0f;
+        scaleY=1.0f;
+        color[0]=0xFF;
+        color[1]=0xFF;
+        color[2]=0xFF;
+        color[3]=0xFF;
         MotionAt40FB70(-(static_cast<float>(RandomAt455580(0,45))
              - gSubtractAt00659728 + gOffsetAt006581DC),18.0f);
     }
-    F32(0x44) += static_cast<float>(S8(0x66))*F32(0x50);
-    F32(0x48) = *(&F32(0x48))+*(&F32(0x54));
-    F32(0x54) = F32(0x54)-gVelocityDragAt00659454;
-    F32(0x30) = F32(0x30)+gGrowAt00657CBC;
-    if (F32(0x48)<gMaxPositionAt0065912C) {
+    x += static_cast<float>(facing)*(velocityX);
+    y = *(&y)+*(&velocityY);
+    velocityY = (velocityY)-gVelocityDragAt00659454;
+    rotationZ = (rotationZ)+gGrowAt00657CBC;
+    if ((y)<gMaxPositionAt0065912C) {
         ResetAt45B830();
         break;
     }
-    if (GetStateAt40FA30()==S16(0x70))
+    if (GetStateAt40FA30()==(reinterpret_cast<signed short&>(field070)))
         ResetAt45B830();
     break;
 }
@@ -2199,58 +2201,58 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         ResetAt45B830();
         break;
     }
-    if (I32(0x7C)==6) {
-        I32(0x7C)=0;
-        S16(0x80)=1;
+    if ((field07C)==6) {
+        field07C=0;
+        reinterpret_cast<signed short&>(field080)=1;
     }
-    if (S16(0x62)==0 && S16(0x64)==0) {
-        S16(0xD8)=-30;
-        S16(0xDA)=150;
-        S16(0xDC)=0;
+    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        reinterpret_cast<signed short&>(field0D8)=-30;
+        reinterpret_cast<signed short&>(field0DA)=150;
+        reinterpret_cast<signed short&>(field0DC)=0;
         ResetStateAt40FBB0(0,0,0);
-        S16(0x80)=1;
-        I32(0x7C)=0;
-        F32(0x1C)=1.0f;
-        F32(0x20)=1.0f;
-        U8(0x11)=0;
-        U8(0x12)=0xFF;
-        U8(0x13)=0xFF;
-        U8(0x14)=0xFF;
+        reinterpret_cast<signed short&>(field080)=1;
+        field07C=0;
+        scaleX=1.0f;
+        scaleY=1.0f;
+        color[0]=0;
+        color[1]=0xFF;
+        color[2]=0xFF;
+        color[3]=0xFF;
     }
-    if (S16(0x62)==4 && S16(0x64)==0) {
-        PARENT->SpawnComputedAt453A70(0x371,I32(0x44),
-                    F32(0x48)+gFloatAt00657850,S8(0x66),1);
+    if ((reinterpret_cast<signed short&>(animationStage))==4 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        PARENT->SpawnComputedAt453A70(0x371,reinterpret_cast<int&>(x),
+                    (y)+gFloatAt00657850,facing,1);
         PARENT->ModifyAt453D40(2);
     }
-    if (S16(0x62)==0) {
-        if (U8(0x11)<225)
-            U8(0x11)+=30;
+    if ((reinterpret_cast<signed short&>(animationStage))==0) {
+        if ((color[0])<225)
+            color[0]+=30;
         else
-            U8(0x11)=0xFF;
+            color[0]=0xFF;
     }
-    if (S16(0x62)<8 && S16(0x80)==0) {
-        SetStateAt40FB40(S16(0x62)+4);
+    if ((reinterpret_cast<signed short&>(animationStage))<8 && (reinterpret_cast<signed short&>(field080))==0) {
+        SetStateAt40FB40((reinterpret_cast<signed short&>(animationStage))+4);
         break;
     }
-    if (S16(0x62)>7) {
-        F32(0x1C)=static_cast<float>(F32(0x1C)*gMulDoubleAt00659730);
-        F32(0x20)=F32(0x20)+gAddAt006583FC;
-        if (U8(0x11)>=10)
-            U8(0x11)-=10;
+    if ((reinterpret_cast<signed short&>(animationStage))>7) {
+        scaleX=static_cast<float>((scaleX)*gMulDoubleAt00659730);
+        scaleY=(scaleY)+gAddAt006583FC;
+        if ((color[0])>=10)
+            color[0]-=10;
         else {
             ResetAt45B830();
             break;
         }
     }
-    if (GetStateAt40FA30()==S16(0x70)) {
+    if (GetStateAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
         SetStateAt40FB40(8);
         break;
     }
-    if (S16(0x64)==0)
-        I32(0x7C)=0;
-    if (S16(0x62)==8 && S16(0x64)==0 && S16(0xDC)<5) {
+    if ((reinterpret_cast<signed short&>(animationFrame))==0)
+        field07C=0;
+    if ((reinterpret_cast<signed short&>(animationStage))==8 && (reinterpret_cast<signed short&>(animationFrame))==0 && (reinterpret_cast<signed short&>(field0DC))<5) {
         SetStateAt40FB40(4);
-        ++S16(0xDC);
+        ++reinterpret_cast<signed short&>(field0DC);
     }
     break;
 }
@@ -2259,53 +2261,53 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         ResetAt45B830();
         break;
     }
-    if (S16(0x62)==0 && S16(0x64)==0) {
+    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
         ResetStateAt40FBB0(0,0,0);
-        S16(0x80)=1;
-        I32(0x7C)=0;
-        F32(0x1C)=1.0f;
-        F32(0x20)=1.0f;
-        U8(0x11)=0;
-        U8(0x12)=0xFF;
-        U8(0x13)=0xFF;
-        U8(0x14)=0xFF;
-        S16(0xD8)=10;
-        S16(0xDA)=0;
-        S16(0xDE)=0;
-        S16(0xDC)=0;
+        reinterpret_cast<signed short&>(field080)=1;
+        field07C=0;
+        scaleX=1.0f;
+        scaleY=1.0f;
+        color[0]=0;
+        color[1]=0xFF;
+        color[2]=0xFF;
+        color[3]=0xFF;
+        reinterpret_cast<signed short&>(field0D8)=10;
+        reinterpret_cast<signed short&>(field0DA)=0;
+        reinterpret_cast<signed short&>(field0DE)=0;
+        reinterpret_cast<signed short&>(field0DC)=0;
     }
-    if (S16(0x62)==1 && S16(0x64)==0) {
-        PARENT->SpawnDirectedAt453A70(0x389,I32(0x44),I32(0x48),S8(0x66),1);
+    if ((reinterpret_cast<signed short&>(animationStage))==1 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        PARENT->SpawnDirectedAt453A70(0x389,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),facing,1);
     }
-    if (S16(0x62)>0) {
-        S16(0xDA) = static_cast<short>(AngleAt00483300(
-            *(&PARENT_TARGET_Y) - *(&F32(0x48)) + gCollisionAt00657888,
-            (*(&PARENT_TARGET_X) - *(&F32(0x44))) * S8(0x66)) / gAngleUnitAt00657828);
-        if (S16(0xDC)>S16(0xDA)) {
-            if (S16(0xDC)-S16(0xDA)<=180) {
-                S16(0xDC)-=2;
-                if (S16(0xDC)<-180) S16(0xDC)+=360;
+    if ((reinterpret_cast<signed short&>(animationStage))>0) {
+        reinterpret_cast<signed short&>(field0DA) = static_cast<short>(AngleAt00483300(
+            *(&PARENT_TARGET_Y) - *(&y) + gCollisionAt00657888,
+            (*(&PARENT_TARGET_X) - *(&x)) * (facing)) / gAngleUnitAt00657828);
+        if ((reinterpret_cast<signed short&>(field0DC))>(reinterpret_cast<signed short&>(field0DA))) {
+            if ((reinterpret_cast<signed short&>(field0DC))-(reinterpret_cast<signed short&>(field0DA))<=180) {
+                reinterpret_cast<signed short&>(field0DC)-=2;
+                if ((reinterpret_cast<signed short&>(field0DC))<-180) reinterpret_cast<signed short&>(field0DC)+=360;
             } else {
-                S16(0xDC)+=2;
-                if (S16(0xDC)>180) S16(0xDC)-=360;
+                reinterpret_cast<signed short&>(field0DC)+=2;
+                if ((reinterpret_cast<signed short&>(field0DC))>180) reinterpret_cast<signed short&>(field0DC)-=360;
             }
         }
-        if (S16(0xDC)<=S16(0xDA)) {
-            if (S16(0xDC)-S16(0xDA)>=-180) {
-                S16(0xDC)+=2;
-                if (S16(0xDC)>180) S16(0xDC)-=360;
+        if ((reinterpret_cast<signed short&>(field0DC))<=(reinterpret_cast<signed short&>(field0DA))) {
+            if ((reinterpret_cast<signed short&>(field0DC))-(reinterpret_cast<signed short&>(field0DA))>=-180) {
+                reinterpret_cast<signed short&>(field0DC)+=2;
+                if ((reinterpret_cast<signed short&>(field0DC))>180) reinterpret_cast<signed short&>(field0DC)-=360;
             } else {
-                S16(0xDC)-=2;
-                if (S16(0xDC)<-180) S16(0xDC)+=360;
+                reinterpret_cast<signed short&>(field0DC)-=2;
+                if ((reinterpret_cast<signed short&>(field0DC))<-180) reinterpret_cast<signed short&>(field0DC)+=360;
             }
         }
     }
-    MotionAt40FB70(static_cast<float>(S16(0xDC)),4.0f);
-    F32(0x44) += static_cast<float>(S8(0x66))*F32(0x50);
-    F32(0x48) = *(&F32(0x48)) - *(&F32(0x54));
-    if (GetStateAt40FA30()==S16(0x70)) {
-        if (S16(0xD8)<gGlobalActorCountAt006714D0*5+10) {
-            ++S16(0xD8);
+    MotionAt40FB70(static_cast<float>(reinterpret_cast<signed short&>(field0DC)),4.0f);
+    x += static_cast<float>(facing)*(velocityX);
+    y = *(&y) - *(&velocityY);
+    if (GetStateAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
+        if ((reinterpret_cast<signed short&>(field0D8))<gGlobalActorCountAt006714D0*5+10) {
+            ++reinterpret_cast<signed short&>(field0D8);
             SetStateAt40FB40(1);
             break;
         }
@@ -2319,67 +2321,67 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         ResetAt45B830();
         break;
     }
-    if (S16(0x62)==0 && S16(0x64)==0) {
+    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
         ResetStateAt40FBB0(0,0,0);
-        I32(0x7C)=0;
-        F32(0x1C)=1.0f;
-        F32(0x20)=1.0f;
-        U8(0x11)=0;
-        U8(0x12)=0xFF;
-        U8(0x13)=0xFF;
-        U8(0x14)=0xFF;
-        F32(0x50)=F32(0xC8)*gMulAt006590B4;
-        F32(0x54)=F32(0xCC)*gMulAt006590B4;
-        S16(0xD8)=static_cast<short>(RandomAt455580(-480,960));
+        field07C=0;
+        scaleX=1.0f;
+        scaleY=1.0f;
+        color[0]=0;
+        color[1]=0xFF;
+        color[2]=0xFF;
+        color[3]=0xFF;
+        velocityX=(field0C8)*gMulAt006590B4;
+        velocityY=(field0CC)*gMulAt006590B4;
+        reinterpret_cast<signed short&>(field0D8)=static_cast<short>(RandomAt455580(-480,960));
     }
-    F32(0x44) += static_cast<float>(S8(0x66))*F32(0x50);
-    F32(0x48) = *(&F32(0x48))+*(&F32(0x54));
-    if (S16(0x62)==0) {
-        if (U8(0x11)<=235)
-            U8(0x11)+=20;
+    x += static_cast<float>(facing)*(velocityX);
+    y = *(&y)+*(&velocityY);
+    if ((reinterpret_cast<signed short&>(animationStage))==0) {
+        if ((color[0])<=235)
+            color[0]+=20;
         else
-            U8(0x11)=0xFF;
-        F32(0x30)=F32(0x30)+gAddAt00659738;
-        F32(0x54)=F32(0x54)-gDropAt00658058;
+            color[0]=0xFF;
+        rotationZ=(rotationZ)+gAddAt00659738;
+        velocityY=(velocityY)-gDropAt00658058;
     }
-    if (S16(0x62)==12) {
-        F32(0x1C)=static_cast<float>(F32(0x1C)*gMulDoubleAt00659730);
-        F32(0x20)=F32(0x20)+gAddAt006583FC;
-        if (U8(0x11)>=10)
-            U8(0x11)-=10;
+    if ((reinterpret_cast<signed short&>(animationStage))==12) {
+        scaleX=static_cast<float>((scaleX)*gMulDoubleAt00659730);
+        scaleY=(scaleY)+gAddAt006583FC;
+        if ((color[0])>=10)
+            color[0]-=10;
         else {
             ResetAt45B830();
             break;
         }
     }
-    if (GetStateAt40FA30()==S16(0x70)) {
+    if (GetStateAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
         ResetAt45B830();
         break;
     }
-    if (S16(0x62)==1 && S16(0x64)==0) {
-        F32(0x50)=0.0f;
-        F32(0x54)=0.0f;
-        F32(0x30)=0.0f;
+    if ((reinterpret_cast<signed short&>(animationStage))==1 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        velocityX=0.0f;
+        velocityY=0.0f;
+        rotationZ=0.0f;
     }
-    if (S16(0x62)==6 && S16(0x64)==0 && S16(0xDC)<0) {
+    if ((reinterpret_cast<signed short&>(animationStage))==6 && (reinterpret_cast<signed short&>(animationFrame))==0 && (reinterpret_cast<signed short&>(field0DC))<0) {
         SetStateAt40FB40(2);
-        ++S16(0xDC);
+        ++reinterpret_cast<signed short&>(field0DC);
     }
-    if (S16(0x62)==8 && S16(0x64)==0) {
-        PF32(0x314)=static_cast<float>(S16(0xD8));
-        PI32(0x318)=I32(0x44);
-        PI32(0x31C)=I32(0x48);
-        PARENT->SpawnDirectedAt453A70(0x38C,I32(0x44),I32(0x48),S8(0x66),1);
+    if ((reinterpret_cast<signed short&>(animationStage))==8 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        PF32(0x314)=static_cast<float>(reinterpret_cast<signed short&>(field0D8));
+        PI32(0x318)=reinterpret_cast<int&>(x);
+        PI32(0x31C)=reinterpret_cast<int&>(y);
+        PARENT->SpawnDirectedAt453A70(0x38C,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),facing,1);
         PARENT->ModifyAt453D40(15);
     }
-    if (S16(0x62)==10 && S16(0x64)==0 && S16(0xDA)<6) {
-        ++S16(0xDA);
+    if ((reinterpret_cast<signed short&>(animationStage))==10 && (reinterpret_cast<signed short&>(animationFrame))==0 && (reinterpret_cast<signed short&>(field0DA))<6) {
+        ++reinterpret_cast<signed short&>(field0DA);
         SetStateAt40FB40(9);
     }
-    if (S16(0x62)==11 && S16(0x64)==0) {
+    if ((reinterpret_cast<signed short&>(animationStage))==11 && (reinterpret_cast<signed short&>(animationFrame))==0) {
         PARENT->SpawnMovedAt453A70(0x38D,
-            static_cast<float>(S16(0xD8)*S8(0x66)) + F32(0x44),
-            0,S8(0x66),1);
+            static_cast<float>((reinterpret_cast<signed short&>(field0D8))*(facing)) + (x),
+            0,facing,1);
         PARENT->ModifyAt453D40(8);
     }
     break;
@@ -2389,68 +2391,68 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         ResetAt45B830();
         break;
     }
-    if (S16(0x62)==0 && S16(0x64)==0) {
+    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
         ResetStateAt40FBB0(0,0,0);
-        F32(0x1C) = MagnitudeAt00428D20(
-            *(&F32(0xC8))* *(&F32(0xC8)) + *(&F32(0xD0))* *(&F32(0xD0)))
+        scaleX = MagnitudeAt00428D20(
+            *(&field0C8)* *(&field0C8) + *(&field0D0)* *(&field0D0))
             / gLengthDivisorAt006583A0 * gLengthFactorAt00659720;
-        F32(0x20)=1.0f;
-        U8(0x11)=0xFF;
-        U8(0x12)=0xFF;
-        U8(0x13)=0xFF;
-        U8(0x14)=0xFF;
-        F32(0x30) = AngleRawAt00483300(I32(0xD0),I32(0xC8)) / gAngleUnitAt00657828;
+        scaleY=1.0f;
+        color[0]=0xFF;
+        color[1]=0xFF;
+        color[2]=0xFF;
+        color[3]=0xFF;
+        rotationZ = AngleRawAt00483300(reinterpret_cast<int&>(field0D0),reinterpret_cast<int&>(field0C8)) / gAngleUnitAt00657828;
     }
-    F32(0x20)=static_cast<float>(F32(0x20)*gMulDoubleAt00659730);
-    if (GetStateAt40FA30()==S16(0x70))
+    scaleY=static_cast<float>((scaleY)*gMulDoubleAt00659730);
+    if (GetStateAt40FA30()==(reinterpret_cast<signed short&>(field070)))
         ResetAt45B830();
     break;
 }
         case 0x38D: {
-    if (S16(0x62)==0 && S16(0x64)==0) {
-        S16(0xD8)=0;
+    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        reinterpret_cast<signed short&>(field0D8)=0;
         ResetStateAt40FBB0(0,0,0);
-        S16(0x80)=1;
-        I32(0x7C)=0;
-        F32(0x54)=0.0f;
-        F32(0x50)=0.0f;
-        F32(0x1C)=0.25f;
-        F32(0x20)=1.0f;
-        U8(0x11)=0xFF;
-        U8(0x12)=0xFF;
-        U8(0x13)=0xFF;
-        U8(0x14)=0xFF;
-        I32(0x28)=0;
-        I32(0x2C)=0;
-        I32(0x30)=0;
+        reinterpret_cast<signed short&>(field080)=1;
+        field07C=0;
+        velocityY=0.0f;
+        velocityX=0.0f;
+        scaleX=0.25f;
+        scaleY=1.0f;
+        color[0]=0xFF;
+        color[1]=0xFF;
+        color[2]=0xFF;
+        color[3]=0xFF;
+        reinterpret_cast<int&>(rotationX)=0;
+        reinterpret_cast<int&>(rotationY)=0;
+        reinterpret_cast<int&>(rotationZ)=0;
         PARENT->SetupAt453E60(10.0f);
     }
-    if (I32(0x7C)==6) {
-        I32(0x7C)=0;
-        ++S16(0x80);
+    if ((field07C)==6) {
+        field07C=0;
+        ++reinterpret_cast<signed short&>(field080);
     }
-    if (S16(0x62)==3 && S16(0x64)==0)
-        PARENT->SpawnDirectedAt453A70(0x343,I32(0x44),I32(0x48),S8(0x66),1);
-    if (S16(0x62)<3) {
-        F32(0x1C)=F32(0x1C)+gFadeAt00659428;
-        F32(0x20)=F32(0x20)+gFadeAt00659428;
+    if ((reinterpret_cast<signed short&>(animationStage))==3 && (reinterpret_cast<signed short&>(animationFrame))==0)
+        PARENT->SpawnDirectedAt453A70(0x343,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),facing,1);
+    if ((reinterpret_cast<signed short&>(animationStage))<3) {
+        scaleX=(scaleX)+gFadeAt00659428;
+        scaleY=(scaleY)+gFadeAt00659428;
     }
-    if (S16(0x62)==4) {
-        F32(0x1C)=F32(0x1C)*gSubAt00659090;
-        if (U8(0x11)>=20) {
-            U8(0x11)-=20;
-            U8(0x12)-=20;
-            U8(0x13)-=20;
+    if ((reinterpret_cast<signed short&>(animationStage))==4) {
+        scaleX=(scaleX)*gSubAt00659090;
+        if ((color[0])>=20) {
+            color[0]-=20;
+            color[1]-=20;
+            color[2]-=20;
         } else {
-            U8(0x11)=0;
+            color[0]=0;
             ResetAt45B830();
             break;
         }
     }
-    if (GetStateAt40FA30()==S16(0x70))
+    if (GetStateAt40FA30()==(reinterpret_cast<signed short&>(field070)))
         ResetAt45B830();
-    if (S16(0x62)==4 && S16(0x64)==0 && S16(0xD8)<5) {
-        ++S16(0xD8);
+    if ((reinterpret_cast<signed short&>(animationStage))==4 && (reinterpret_cast<signed short&>(animationFrame))==0 && (reinterpret_cast<signed short&>(field0D8))<5) {
+        ++reinterpret_cast<signed short&>(field0D8);
         SetStateAt40FB40(3);
     }
     break;
@@ -2460,63 +2462,63 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         ResetAt45B830();
         break;
     }
-    if (S16(0x62)==0 && S16(0x64)==0) {
-        S16(0xD8)=0;
+    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        reinterpret_cast<signed short&>(field0D8)=0;
         ResetStateAt40FBB0(0,0,0);
-        S16(0x80)=1;
-        I32(0x7C)=0;
-        F32(0x54)=0.0f;
-        F32(0x50)=0.0f;
-        F32(0x1C)=0.75f;
-        F32(0x20)=1.0f;
-        U8(0x11)=0xFF;
-        U8(0x12)=0xFF;
-        U8(0x13)=0xFF;
-        U8(0x14)=0xFF;
-        I32(0x28)=0;
-        I32(0x2C)=0;
-        I32(0x30)=0;
+        reinterpret_cast<signed short&>(field080)=1;
+        field07C=0;
+        velocityY=0.0f;
+        velocityX=0.0f;
+        scaleX=0.75f;
+        scaleY=1.0f;
+        color[0]=0xFF;
+        color[1]=0xFF;
+        color[2]=0xFF;
+        color[3]=0xFF;
+        reinterpret_cast<int&>(rotationX)=0;
+        reinterpret_cast<int&>(rotationY)=0;
+        reinterpret_cast<int&>(rotationZ)=0;
         PARENT->SetupAt453E60(5.0f);
-        PARENT->SpawnDirectedAt453A70(0x387,I32(0x44),I32(0x48),S8(0x66),1);
+        PARENT->SpawnDirectedAt453A70(0x387,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),facing,1);
     }
-    if (I32(0x7C)==6) {
-        I32(0x7C)=0;
-        ++S16(0x80);
+    if ((field07C)==6) {
+        field07C=0;
+        ++reinterpret_cast<signed short&>(field080);
     }
-    if (GetStateAt40FA30()==S16(0x70))
+    if (GetStateAt40FA30()==(reinterpret_cast<signed short&>(field070)))
         ResetAt45B830();
     break;
 }
         case 0x3E3: {
-    S8(0x66)=1;
-    if (S16(0x62)==0 && S16(0x64)==0) {
+    facing=1;
+    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
         ResetStateAt40FBB0(0,0,0);
-        F32(0x1C)=1.0f;
-        F32(0x20)=1.0f;
-        U8(0x11)=0xFF;
-        U8(0x12)=0xFF;
-        U8(0x13)=0xFF;
-        U8(0x14)=0xFF;
-        F32(0x50)=0.0f;
-        F32(0x54)=-1.0f;
-        S16(0xD8)=static_cast<short>(RandomAt455580(0,360)-180);
-        S16(0xDA)=15;
+        scaleX=1.0f;
+        scaleY=1.0f;
+        color[0]=0xFF;
+        color[1]=0xFF;
+        color[2]=0xFF;
+        color[3]=0xFF;
+        velocityX=0.0f;
+        velocityY=-1.0f;
+        reinterpret_cast<signed short&>(field0D8)=static_cast<short>(RandomAt455580(0,360)-180);
+        reinterpret_cast<signed short&>(field0DA)=15;
     }
-    if (S16(0x62)==0) {
-        --S16(0xDA);
-        if (S16(0xDA)<3) S16(0xDA)=3;
-        MotionAt40FB70(static_cast<float>(S16(0xD8)),
-                       static_cast<float>(S16(0xDA))*gSubAt00659090);
+    if ((reinterpret_cast<signed short&>(animationStage))==0) {
+        --reinterpret_cast<signed short&>(field0DA);
+        if ((reinterpret_cast<signed short&>(field0DA))<3) reinterpret_cast<signed short&>(field0DA)=3;
+        MotionAt40FB70(static_cast<float>(reinterpret_cast<signed short&>(field0D8)),
+                       static_cast<float>(reinterpret_cast<signed short&>(field0DA))*gSubAt00659090);
     }
-    if (S16(0x62)==1) {
-        S16(0xD8)=static_cast<short>(AngleAt00483300(
-            PARENT_TARGET_Y + *(&gCollisionAt00657888) - F32(0x48),
-            *(&PARENT_TARGET_X)-*(&F32(0x44))) / gAngleUnitAt00657828);
-        MotionAt40FB70(static_cast<float>(S16(0xD8)),20.0f);
-        if ((*(&F32(0x44)) - *(&PARENT_TARGET_X) < gStageContactAt0065786C) &&
-            (*(&F32(0x44)) - *(&PARENT_TARGET_X) > gTouchMaxAt00659230) &&
-            (*(&F32(0x48)) - *(&PARENT_TARGET_Y) < gParentYAt006590A8) &&
-            (*(&F32(0x48)) - *(&PARENT_TARGET_Y) > gVerticalTouchMaxAt00658268)) {
+    if ((reinterpret_cast<signed short&>(animationStage))==1) {
+        reinterpret_cast<signed short&>(field0D8)=static_cast<short>(AngleAt00483300(
+            PARENT_TARGET_Y + *(&gCollisionAt00657888) - (y),
+            *(&PARENT_TARGET_X)-*(&x)) / gAngleUnitAt00657828);
+        MotionAt40FB70(static_cast<float>(reinterpret_cast<signed short&>(field0D8)),20.0f);
+        if ((*(&x) - *(&PARENT_TARGET_X) < gStageContactAt0065786C) &&
+            (*(&x) - *(&PARENT_TARGET_X) > gTouchMaxAt00659230) &&
+            (*(&y) - *(&PARENT_TARGET_Y) < gParentYAt006590A8) &&
+            (*(&y) - *(&PARENT_TARGET_Y) > gVerticalTouchMaxAt00658268)) {
             ResetAt45B830();
             if (PARENT_TARGET_S8(0x366)<2)
                 ++PARENT_TARGET_U8(0x366);
@@ -2526,42 +2528,42 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
             break;
         }
     }
-    F32(0x44)=*(&F32(0x44))+*(&F32(0x50));
-    F32(0x48)=*(&F32(0x48))-*(&F32(0x54));
-    if (GetStateAt40FA30()==S16(0x70))
+    x=*(&x)+*(&velocityX);
+    y=*(&y)-*(&velocityY);
+    if (GetStateAt40FA30()==(reinterpret_cast<signed short&>(field070)))
         SetStateAt40FB40(1);
     break;
 }
         case 0x3E4: {
-    S8(0x66)=1;
-    if (S16(0x62)==0 && S16(0x64)==0) {
+    facing=1;
+    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
         ResetStateAt40FBB0(0,0,0);
-        F32(0x1C)=1.0f;
-        F32(0x20)=1.0f;
-        U8(0x11)=0xFF;
-        U8(0x12)=0xFF;
-        U8(0x13)=0xFF;
-        U8(0x14)=0xFF;
-        F32(0x50)=0.0f;
-        F32(0x54)=-1.0f;
-        S16(0xD8)=static_cast<short>(RandomAt455580(0,360)-180);
-        S16(0xDA)=15;
+        scaleX=1.0f;
+        scaleY=1.0f;
+        color[0]=0xFF;
+        color[1]=0xFF;
+        color[2]=0xFF;
+        color[3]=0xFF;
+        velocityX=0.0f;
+        velocityY=-1.0f;
+        reinterpret_cast<signed short&>(field0D8)=static_cast<short>(RandomAt455580(0,360)-180);
+        reinterpret_cast<signed short&>(field0DA)=15;
     }
-    if (S16(0x62)==0) {
-        --S16(0xDA);
-        if (S16(0xDA)<3) S16(0xDA)=3;
-        MotionAt40FB70(static_cast<float>(S16(0xD8)),
-                       static_cast<float>(S16(0xDA))*gSubAt00659090);
+    if ((reinterpret_cast<signed short&>(animationStage))==0) {
+        --reinterpret_cast<signed short&>(field0DA);
+        if ((reinterpret_cast<signed short&>(field0DA))<3) reinterpret_cast<signed short&>(field0DA)=3;
+        MotionAt40FB70(static_cast<float>(reinterpret_cast<signed short&>(field0D8)),
+                       static_cast<float>(reinterpret_cast<signed short&>(field0DA))*gSubAt00659090);
     }
-    if (S16(0x62)==1) {
-        S16(0xD8)=static_cast<short>(AngleAt00483300(
-            PARENT_TARGET_Y + *(&gCollisionAt00657888) - F32(0x48),
-            *(&PARENT_TARGET_X)-*(&F32(0x44))) / gAngleUnitAt00657828);
-        MotionAt40FB70(static_cast<float>(S16(0xD8)),20.0f);
-        if ((*(&F32(0x44)) - *(&PARENT_TARGET_X) < gStageContactAt0065786C) &&
-            (*(&F32(0x44)) - *(&PARENT_TARGET_X) > gTouchMaxAt00659230) &&
-            (*(&F32(0x48)) - *(&PARENT_TARGET_Y) < gParentYAt006590A8) &&
-            (*(&F32(0x48)) - *(&PARENT_TARGET_Y) > gVerticalTouchMaxAt00658268)) {
+    if ((reinterpret_cast<signed short&>(animationStage))==1) {
+        reinterpret_cast<signed short&>(field0D8)=static_cast<short>(AngleAt00483300(
+            PARENT_TARGET_Y + *(&gCollisionAt00657888) - (y),
+            *(&PARENT_TARGET_X)-*(&x)) / gAngleUnitAt00657828);
+        MotionAt40FB70(static_cast<float>(reinterpret_cast<signed short&>(field0D8)),20.0f);
+        if ((*(&x) - *(&PARENT_TARGET_X) < gStageContactAt0065786C) &&
+            (*(&x) - *(&PARENT_TARGET_X) > gTouchMaxAt00659230) &&
+            (*(&y) - *(&PARENT_TARGET_Y) < gParentYAt006590A8) &&
+            (*(&y) - *(&PARENT_TARGET_Y) > gVerticalTouchMaxAt00658268)) {
             ++P16(0xEFA);
             ResetAt45B860(0x2E);
             ResetAt45B830();
@@ -2588,38 +2590,38 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
             break;
         }
     }
-    F32(0x44)=*(&F32(0x44))+*(&F32(0x50));
-    F32(0x48)=*(&F32(0x48))-*(&F32(0x54));
-    if (GetStateAt40FA30()==S16(0x70))
+    x=*(&x)+*(&velocityX);
+    y=*(&y)-*(&velocityY);
+    if (GetStateAt40FA30()==(reinterpret_cast<signed short&>(field070)))
         SetStateAt40FB40(1);
     break;
 }
         case 0x3E5: {
-    I32(0x44)=*reinterpret_cast<int*>(reinterpret_cast<char*>(PARENT)+0x44);
-    I32(0x48)=0;
-    S16(0x8A)=1;
-    if (S16(0x62)==0 && S16(0x64)==0) {
+    reinterpret_cast<int&>(x)=*reinterpret_cast<int*>(reinterpret_cast<char*>(PARENT)+0x44);
+    reinterpret_cast<int&>(y)=0;
+    reinterpret_cast<signed short&>(field08A)=1;
+    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
         ResetStateAt40FBB0(0,0,0);
-        F32(0x1C)=3.0f;
-        F32(0x20)=3.0f;
-        U8(0x11)=0xFF;
-        U8(0x12)=0xFF;
-        U8(0x13)=0xFF;
-        U8(0x14)=0xFF;
-        S16(0x1A)=0x4E2;
-        I32(0x2C)=0;
-        I32(0x30)=0;
-        F32(0x28)=-80.0f;
-        S16(0xD8)=P16(0x3A0);
+        scaleX=3.0f;
+        scaleY=3.0f;
+        color[0]=0xFF;
+        color[1]=0xFF;
+        color[2]=0xFF;
+        color[3]=0xFF;
+        reinterpret_cast<signed short&>(field01A)=0x4E2;
+        reinterpret_cast<int&>(rotationY)=0;
+        reinterpret_cast<int&>(rotationZ)=0;
+        rotationX=-80.0f;
+        reinterpret_cast<signed short&>(field0D8)=P16(0x3A0);
     }
     if (P16(0x3A0)<=0) {
         ResetAt45B830();
         break;
     }
-    F32(0x1C)=static_cast<float>(P16(0x3A0))/S16(0xD8)*2.0f;
-    F32(0x20)=static_cast<float>(P16(0x3A0))/S16(0xD8)*2.0f;
-    F32(0x30)=F32(0x30)+gCompareAt0065747C;
-    if (GetStateAt40FA30()==S16(0x70)) {
+    scaleX=static_cast<float>(P16(0x3A0))/(reinterpret_cast<signed short&>(field0D8))*2.0f;
+    scaleY=static_cast<float>(P16(0x3A0))/(reinterpret_cast<signed short&>(field0D8))*2.0f;
+    rotationZ=(rotationZ)+gCompareAt0065747C;
+    if (GetStateAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
         SetStateAt40FB40(9);
         break;
     }

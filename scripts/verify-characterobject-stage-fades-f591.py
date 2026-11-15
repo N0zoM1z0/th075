@@ -28,7 +28,7 @@ SRC=ROOT/'probes/CharacterObjectActionsF572.cpp'
 BASE=ROOT/'.analysis/f583-characterobject-state-leaves-source'
 OBJ=BASE/'CharacterObjectF583.obj'
 OUT=ROOT/'.analysis/f591-characterobject-stage-fades-source'
-SYMBOL='?Advance@FighterSwitchF572_Boss004EBDA0@@QAEXXZ'
+SYMBOL='?Advance@FighterSwitchF572_Boss004EBDA0@@UAEXXZ'
 STATES={0x385:(0x386,138,511,10),
         0x386:(0x387,84,330,7),
         0x387:(0x388,74,262,7)}

@@ -10,101 +10,101 @@
  // local ordinal133 remains nonnative, GPR roles differ.
 // F1001 original SHA-pinned Japanese 004AC040 action 0x2BC
 case 0x2BC: {
-    if (S16(0x62)==0 && S16(0x64)==0) {
-        S16(0xF00)=0;
-        I32(0x7C)=1;
+    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        reinterpret_cast<signed short&>(scriptCounterF00)=0;
+        field07C=1;
         ResetAt453E20();
-        S16(0xF00)=0;
-        S16(0xF02)=0;
-        S16(0xF04)=0;
-        S16(0xF06)=0;
+        reinterpret_cast<signed short&>(scriptCounterF00)=0;
+        reinterpret_cast<signed short&>(scriptCounterF02)=0;
+        reinterpret_cast<signed short&>(fieldF04)=0;
+        reinterpret_cast<signed short&>(fieldF06)=0;
     }
-    if (GetNativeActionAt40FA30()==S16(0x70))
+    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
         SetNativeActionAt40FAC0(0);
-    if (S16(0x62)==3 && S16(0x64)==0) {
+    if ((reinterpret_cast<signed short&>(animationStage))==3 && (reinterpret_cast<signed short&>(animationFrame))==0) {
         ApplyAt453E80(0x28);
         PrepareActionAt453D60(0x17);
-        F32(0x36C)=F32(0x36C)-g_ContactProjectionAt00657888;
+        field36C=(field36C)-g_ContactProjectionAt00657888;
         SpawnAt453C80(0x73,
             reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44
-                - float((*reinterpret_cast<signed char*>(RAW+0x66))*18),
-            (*(&POS48))+g_F972_YAt00659284,
-            *reinterpret_cast<signed char*>(RAW+0x66),1);
+                - float((facing)*18),
+            (*(&y))+g_F972_YAt00659284,
+            facing,1);
     }
-    if (S16(0xF04)>0)
-        --S16(0xF04);
-    if (S16(0x62)>4 && S16(0x62)<11 && S16(0xF04)==0 && S16(0xF02)<36) {
+    if ((reinterpret_cast<signed short&>(fieldF04))>0)
+        --reinterpret_cast<signed short&>(fieldF04);
+    if ((reinterpret_cast<signed short&>(animationStage))>4 && (reinterpret_cast<signed short&>(animationStage))<11 && (reinterpret_cast<signed short&>(fieldF04))==0 && (reinterpret_cast<signed short&>(scriptCounterF02))<36) {
         StartAnimationAt46D000(0xA);
-        F32(0x314)=float(S16(0xF02)*5);
+        field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*5);
         SpawnFloatXYAt453A70(0x323,
             reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44
-                - float((*reinterpret_cast<signed char*>(RAW+0x66))*16),
-            (*(&POS48))+g_F972_YAt0065836C,
-            *reinterpret_cast<signed char*>(RAW+0x66),1);
-        F32(0x314)=float(S16(0xF02)*5+180);
+                - float((facing)*16),
+            (*(&y))+g_F972_YAt0065836C,
+            facing,1);
+        field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*5+180);
         SpawnFloatXYAt453A70(0x323,
             reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44
-                - float((*reinterpret_cast<signed char*>(RAW+0x66))*16),
-            (*(&POS48))+g_F972_YAt0065836C,
-            *reinterpret_cast<signed char*>(RAW+0x66),1);
-        ++S16(0xF02);
-        ++S16(0xF04);
+                - float((facing)*16),
+            (*(&y))+g_F972_YAt0065836C,
+            facing,1);
+        ++reinterpret_cast<signed short&>(scriptCounterF02);
+        ++reinterpret_cast<signed short&>(fieldF04);
     }
-    if (S16(0x62)==5 && S16(0x64)==0)
+    if ((reinterpret_cast<signed short&>(animationStage))==5 && (reinterpret_cast<signed short&>(animationFrame))==0)
         PrepareActionAt453D40(5);
-    if (S16(0x62)==11 && S16(0x64)==0 && S16(0xF06)<5) {
+    if ((reinterpret_cast<signed short&>(animationStage))==11 && (reinterpret_cast<signed short&>(animationFrame))==0 && (reinterpret_cast<signed short&>(fieldF06))<5) {
         SetAuxActionAt40FB40(9);
-        ++S16(0xF06);
+        ++reinterpret_cast<signed short&>(fieldF06);
     }
     break;
 }
 // F1001 original SHA-pinned Japanese 004AC040 action 0x2BD
 case 0x2BD: {
-    if (S16(0x62)==0 && S16(0x64)==0) {
-        S16(0xF00)=0;
-        I32(0x7C)=1;
+    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        reinterpret_cast<signed short&>(scriptCounterF00)=0;
+        field07C=1;
         ResetAt453E20();
-        S16(0xF00)=0;
-        S16(0xF02)=0;
-        S16(0xF04)=0;
-        S16(0xF06)=0;
+        reinterpret_cast<signed short&>(scriptCounterF00)=0;
+        reinterpret_cast<signed short&>(scriptCounterF02)=0;
+        reinterpret_cast<signed short&>(fieldF04)=0;
+        reinterpret_cast<signed short&>(fieldF06)=0;
     }
-    if (GetNativeActionAt40FA30()==S16(0x70))
+    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
         SetNativeActionAt40FAC0(0);
-    if (S16(0x62)==3 && S16(0x64)==0) {
+    if ((reinterpret_cast<signed short&>(animationStage))==3 && (reinterpret_cast<signed short&>(animationFrame))==0) {
         ApplyAt453E80(0x28);
         PrepareActionAt453D60(0x17);
-        F32(0x36C)=F32(0x36C)-g_ContactProjectionAt00657888;
+        field36C=(field36C)-g_ContactProjectionAt00657888;
         SpawnAt453C80(0x74,
             reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44
-                - float((*reinterpret_cast<signed char*>(RAW+0x66))*18),
-            (*(&POS48))+g_F972_YAt00659284,
-            *reinterpret_cast<signed char*>(RAW+0x66),1);
+                - float((facing)*18),
+            (*(&y))+g_F972_YAt00659284,
+            facing,1);
     }
-    if (S16(0xF04)>0)
-        --S16(0xF04);
-    if (S16(0x62)>4 && S16(0x62)<11 && S16(0xF04)==0 && S16(0xF02)<72) {
-        S16(0xF14)=1;
+    if ((reinterpret_cast<signed short&>(fieldF04))>0)
+        --reinterpret_cast<signed short&>(fieldF04);
+    if ((reinterpret_cast<signed short&>(animationStage))>4 && (reinterpret_cast<signed short&>(animationStage))<11 && (reinterpret_cast<signed short&>(fieldF04))==0 && (reinterpret_cast<signed short&>(scriptCounterF02))<72) {
+        reinterpret_cast<signed short&>(fieldF14)=1;
         StartAnimationAt46D000(0xA);
-        F32(0x314)=float(S16(0xF02)*5);
+        field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*5);
         SpawnFloatXYAt453A70(0x32B,
             reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44
-                - float((*reinterpret_cast<signed char*>(RAW+0x66))*16),
-            (*(&POS48))+g_F972_YAt0065836C,
-            *reinterpret_cast<signed char*>(RAW+0x66),1);
-        F32(0x314)=float(S16(0xF02)*5+180);
+                - float((facing)*16),
+            (*(&y))+g_F972_YAt0065836C,
+            facing,1);
+        field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*5+180);
         SpawnFloatXYAt453A70(0x32B,
             reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44
-                - float((*reinterpret_cast<signed char*>(RAW+0x66))*16),
-            (*(&POS48))+g_F972_YAt0065836C,
-            *reinterpret_cast<signed char*>(RAW+0x66),1);
-        ++S16(0xF02);
+                - float((facing)*16),
+            (*(&y))+g_F972_YAt0065836C,
+            facing,1);
+        ++reinterpret_cast<signed short&>(scriptCounterF02);
     }
-    if (S16(0x62)==5 && S16(0x64)==0)
+    if ((reinterpret_cast<signed short&>(animationStage))==5 && (reinterpret_cast<signed short&>(animationFrame))==0)
         PrepareActionAt453D40(6);
-    if (S16(0x62)==11 && S16(0x64)==0 && S16(0xF06)<5) {
+    if ((reinterpret_cast<signed short&>(animationStage))==11 && (reinterpret_cast<signed short&>(animationFrame))==0 && (reinterpret_cast<signed short&>(fieldF06))<5) {
         SetAuxActionAt40FB40(9);
-        ++S16(0xF06);
+        ++reinterpret_cast<signed short&>(fieldF06);
     }
     break;
 }

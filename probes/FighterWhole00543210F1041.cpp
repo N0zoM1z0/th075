@@ -1,9 +1,10 @@
+#include "RemiliaFighter.hpp"
 #include "FighterAnimationPhaseBorrowedF1024.hpp"
 #include "FighterProjectileXViewF917.hpp"
 // F1196 complete original-shaped 00543210 parent, continued from F917/F1041.
 // Native stack, CFG and reference destinations agree; 1741 GPR positions
 // and three instruction widths remain NONEXACT. No whole CODE credit.
-class FighterSwitchF598_Boss00543210 { public: void SpawnDirectedAt453A70(int,int,int,char,int); void SpawnWithFloatAt453A70(int,int,float,char,int); void SpawnFloatXRawYAt453A70(int,float,int,char,int); void SpawnFloatXYAt453A70(int,float,float,char,int); void SpawnRawXYAt453C80(int,int,int,char,int); void SpawnMixedAt453C80(int,int,float,char,int); void SpawnSevenAt453B50(int,int,int,char,int,int,int); void PrepareActionAt453D40(int); void SetMotionStateAt40FBB0(int,float,int); void MotionAt40FB70(float,float); void ResetMotionAt40FC50(); void InitTrajectoryAt453E60(float); int RandomBoundaryAt455580(int,int); void InitTrajectoryAt453E80(int); virtual void NativeVirtualFrameAdvance(); void Advance(); void ResetAt453E20(); void PrepareActionAt453D60(int); void SubactionAt454A70(int); void ConfigureStormAt454BC0(int,int,int); void SubactionAt452B30(); void StartAnimationAt46D000(int); void SpawnAt453C80(int,float,float,char,int); short GetNativeActionAt40FA30(); void SetNativeActionAt40FAC0(int); signed char ContactAt454EE0(); void SetAuxActionAt40FB40(int); };
+class FighterSwitchF598_Boss00543210 : public RemiliaFighter { public: void SpawnDirectedAt453A70(int,int,int,char,int); void SpawnWithFloatAt453A70(int,int,float,char,int); void SpawnFloatXRawYAt453A70(int,float,int,char,int); void SpawnFloatXYAt453A70(int,float,float,char,int); void SpawnRawXYAt453C80(int,int,int,char,int); void SpawnMixedAt453C80(int,int,float,char,int); void SpawnSevenAt453B50(int,int,int,char,int,int,int); void PrepareActionAt453D40(int); void SetMotionStateAt40FBB0(int,float,int); void MotionAt40FB70(float,float); void ResetMotionAt40FC50(); void InitTrajectoryAt453E60(float); int RandomBoundaryAt455580(int,int); void InitTrajectoryAt453E80(int); void Advance(); void ResetAt453E20(); void PrepareActionAt453D60(int); void SubactionAt454A70(int); void ConfigureStormAt454BC0(int,int,int); void SubactionAt452B30(); void StartAnimationAt46D000(int); void SpawnAt453C80(int,float,float,char,int); short GetNativeActionAt40FA30(); void SetNativeActionAt40FAC0(int); signed char ContactAt454EE0(); void SetAuxActionAt40FB40(int); };
 extern unsigned int g_FighterProbeMarker;
 extern signed char g_ModeAt006714B4;
 extern float g_ThresholdAt0065782C;
@@ -106,215 +107,215 @@ extern double g_RiseAt00658050;
 #define OWNER (*reinterpret_cast<char**>(RAW+0x2E8))
 #include "FighterBorrowedXYViewF771.hpp"
 void FighterSwitchF598_Boss00543210::Advance() {
-    if (I16(0x82) != 0 || *reinterpret_cast<signed short*>(OWNER+0x3BA) != 0)
+    if (reinterpret_cast<signed short&>(field082) != 0 || reinterpret_cast<signed short&>(opponent->field3BA) != 0)
         return;
-    switch (I16(0x60)) {
+    switch (reinterpret_cast<signed short&>(action)) {
         case 0x0:
-            if (FLAG == 0) {
+            if ((field3AC) == 0) {
                 ResetAt453E20();
             } else {
-                if (POS > g_ThresholdAt0065782C) {
-                    POS -= g_SubtractAt00657478;
-                    if (POS < g_ThresholdAt0065782C) {
+                if ((velocityX) > g_ThresholdAt0065782C) {
+                    velocityX -= g_SubtractAt00657478;
+                    if ((velocityX) < g_ThresholdAt0065782C) {
                         ResetAt453E20();
-                        FLAG = 0;
+                        field3AC = 0;
                     }
                 }
-                if (POS < g_ThresholdAt0065782C) {
-                    POS += g_RiseAt00658050;
-                    if (POS > g_ThresholdAt0065782C) {
+                if ((velocityX) < g_ThresholdAt0065782C) {
+                    velocityX += g_RiseAt00658050;
+                    if ((velocityX) > g_ThresholdAt0065782C) {
                         ResetAt453E20();
-                        FLAG = 0;
+                        field3AC = 0;
                     }
                 }
             }
             goto native_shared_getter;
         case 0x1:
-            if (FLAG == 0) {
+            if ((field3AC) == 0) {
                 ResetAt453E20();
             } else {
-                if (POS > g_ThresholdAt0065782C) {
-                    POS -= g_SubtractAt00657478;
-                    if (POS < g_ThresholdAt0065782C) {
+                if ((velocityX) > g_ThresholdAt0065782C) {
+                    velocityX -= g_SubtractAt00657478;
+                    if ((velocityX) < g_ThresholdAt0065782C) {
                         ResetAt453E20();
-                        FLAG = 0;
+                        field3AC = 0;
                     }
                 }
-                if (POS < g_ThresholdAt0065782C) {
-                    POS += g_RiseAt00658050;
-                    if (POS > g_ThresholdAt0065782C) {
+                if ((velocityX) < g_ThresholdAt0065782C) {
+                    velocityX += g_RiseAt00658050;
+                    if ((velocityX) > g_ThresholdAt0065782C) {
                         ResetAt453E20();
-                        FLAG = 0;
+                        field3AC = 0;
                     }
                 }
             }
-            if (GetNativeActionAt40FA30() == I16(0x70))
+            if (GetNativeActionAt40FA30() == reinterpret_cast<signed short&>(field070))
                 SetNativeActionAt40FAC0(2);
             break;
         case 0x2:
-            if (FLAG == 0) {
+            if ((field3AC) == 0) {
                 ResetAt453E20();
             } else {
-                if (POS > g_ThresholdAt0065782C) {
-                    POS -= g_SubtractAt00657478;
-                    if (POS < g_ThresholdAt0065782C) {
+                if ((velocityX) > g_ThresholdAt0065782C) {
+                    velocityX -= g_SubtractAt00657478;
+                    if ((velocityX) < g_ThresholdAt0065782C) {
                         ResetAt453E20();
-                        FLAG = 0;
+                        field3AC = 0;
                     }
                 }
-                if (POS < g_ThresholdAt0065782C) {
-                    POS += g_RiseAt00658050;
-                    if (POS > g_ThresholdAt0065782C) {
+                if ((velocityX) < g_ThresholdAt0065782C) {
+                    velocityX += g_RiseAt00658050;
+                    if ((velocityX) > g_ThresholdAt0065782C) {
                         ResetAt453E20();
-                        FLAG = 0;
+                        field3AC = 0;
                     }
                 }
             }
             goto native_shared_getter;
         case 0x3:
-            if (FLAG == 0) {
+            if ((field3AC) == 0) {
                 ResetAt453E20();
             } else {
-                if (POS > g_ThresholdAt0065782C) {
-                    POS -= g_SubtractAt00657478;
-                    if (POS < g_ThresholdAt0065782C) {
+                if ((velocityX) > g_ThresholdAt0065782C) {
+                    velocityX -= g_SubtractAt00657478;
+                    if ((velocityX) < g_ThresholdAt0065782C) {
                         ResetAt453E20();
-                        FLAG = 0;
+                        field3AC = 0;
                     }
                 }
-                if (POS < g_ThresholdAt0065782C) {
-                    POS += g_RiseAt00658050;
-                    if (POS > g_ThresholdAt0065782C) {
+                if ((velocityX) < g_ThresholdAt0065782C) {
+                    velocityX += g_RiseAt00658050;
+                    if ((velocityX) > g_ThresholdAt0065782C) {
                         ResetAt453E20();
-                        FLAG = 0;
+                        field3AC = 0;
                     }
                 }
             }
-            if (GetNativeActionAt40FA30() == I16(0x70))
+            if (GetNativeActionAt40FA30() == reinterpret_cast<signed short&>(field070))
                 SetNativeActionAt40FAC0(0);
             break;
-        case 0x4: POS = 6.5f; goto native_shared_getter;
-        case 0x5: POS = -6.5f; goto native_shared_getter;
+        case 0x4: velocityX = 6.5f; goto native_shared_getter;
+        case 0x5: velocityX = -6.5f; goto native_shared_getter;
         case 0x6:
-            if (F1024_PHASE(this).stageAt62 == 0 && F1024_PHASE(this).frameAt64 == 0 &&
-                    (U8(0x511) == 3 || FLAG > 0)) {
+            if (animationStage == 0 && animationFrame == 0 &&
+                    ((aiCommand) == 3 || (field3AC) > 0)) {
                 SetNativeActionAt40FAC0(0xCC);
                 return;
             }
-            if (F1024_PHASE(this).stageAt62 == 0 && FLAG == 0)
+            if (animationStage == 0 && (field3AC) == 0)
                 ResetAt453E20();
-            if (POS48 > g_ThresholdAt0065782C) {
-                POS54 = POS54 - POS5C;
-                if (POS48 + POS54 <= g_ThresholdAt0065782C) {
+            if (y > g_ThresholdAt0065782C) {
+                velocityY = velocityY - field05C;
+                if (y + velocityY <= g_ThresholdAt0065782C) {
                     SetNativeActionAt40FAC0(10);
-                    POS48 = 0.0f;
+                    y = 0.0f;
                     ResetAt453E20();
                     return;
                 }
             }
-            if (F1024_PHASE(this).stageAt62 == 3 && POS54 < g_ExtraThresholdAt00657D14)
+            if (animationStage == 3 && velocityY < g_ExtraThresholdAt00657D14)
                 SetAuxActionAt40FB40(4);
-            ++F1024_PHASE(this).frameAt64;
-            if (F1024_PHASE(this).frameAt64 >= S16(0x72)) {
-                F1024_PHASE(this).frameAt64 = 0;
-                ++F1024_PHASE(this).stageAt62;
-                if (F1024_PHASE(this).stageAt62 == 3) {
-                    POS = 0.0f;
-                    POS54 = 19.0f;
-                    POS5C = 0.95f;
+            ++animationFrame;
+            if (animationFrame >= (reinterpret_cast<signed short&>(field072))) {
+                animationFrame = 0;
+                ++animationStage;
+                if (animationStage == 3) {
+                    velocityX = 0.0f;
+                    velocityY = 19.0f;
+                    field05C = 0.95f;
                 }
-                if (F1024_PHASE(this).stageAt62 >= S16(0x70))
-                    F1024_PHASE(this).stageAt62 -= 2;
-                NativeVirtualFrameAdvance();
+                if (animationStage >= (reinterpret_cast<signed short&>(field070)))
+                    animationStage -= 2;
+                BindAnimation();
             }
             break;
         case 0x7:
-            if (F1024_PHASE(this).stageAt62 == 0 && F1024_PHASE(this).frameAt64 == 0 &&
-                    (U8(0x511) == 5 || FLAG > 0)) {
+            if (animationStage == 0 && animationFrame == 0 &&
+                    ((aiCommand) == 5 || (field3AC) > 0)) {
                 SetNativeActionAt40FAC0(0xCD);
                 return;
             }
-            if (F1024_PHASE(this).stageAt62 == 0 && FLAG == 0)
+            if (animationStage == 0 && (field3AC) == 0)
                 ResetAt453E20();
-            if (POS48 > g_ThresholdAt0065782C) {
-                POS54 = POS54 - POS5C;
-                if (POS48 + POS54 <= g_ThresholdAt0065782C) {
+            if (y > g_ThresholdAt0065782C) {
+                velocityY = velocityY - field05C;
+                if (y + velocityY <= g_ThresholdAt0065782C) {
                     SetNativeActionAt40FAC0(10);
-                    POS48 = 0.0f;
+                    y = 0.0f;
                     ResetAt453E20();
                     return;
                 }
             }
-            if (F1024_PHASE(this).stageAt62 == 4 && POS54 < g_ExtraThresholdAt00657D14)
+            if (animationStage == 4 && velocityY < g_ExtraThresholdAt00657D14)
                 SetAuxActionAt40FB40(5);
-            ++F1024_PHASE(this).frameAt64;
-            if (F1024_PHASE(this).frameAt64 >= S16(0x72)) {
-                F1024_PHASE(this).frameAt64 = 0;
-                ++F1024_PHASE(this).stageAt62;
-                if (F1024_PHASE(this).stageAt62 == 3) {
-                    POS = 7.0f;
-                    POS54 = 18.0f;
-                    POS5C = 0.95f;
+            ++animationFrame;
+            if (animationFrame >= (reinterpret_cast<signed short&>(field072))) {
+                animationFrame = 0;
+                ++animationStage;
+                if (animationStage == 3) {
+                    velocityX = 7.0f;
+                    velocityY = 18.0f;
+                    field05C = 0.95f;
                 }
-                if (F1024_PHASE(this).stageAt62 >= S16(0x70))
-                    F1024_PHASE(this).stageAt62 -= 2;
-                NativeVirtualFrameAdvance();
+                if (animationStage >= (reinterpret_cast<signed short&>(field070)))
+                    animationStage -= 2;
+                BindAnimation();
             }
             break;
         case 0x8:
-            if (F1024_PHASE(this).stageAt62 == 0 && F1024_PHASE(this).frameAt64 == 0 &&
-                    (U8(0x511) == 4 || FLAG > 0)) {
+            if (animationStage == 0 && animationFrame == 0 &&
+                    ((aiCommand) == 4 || (field3AC) > 0)) {
                 SetNativeActionAt40FAC0(0xCE);
                 return;
             }
-            if (F1024_PHASE(this).stageAt62 == 0 && FLAG == 0)
+            if (animationStage == 0 && (field3AC) == 0)
                 ResetAt453E20();
-            if (F1024_PHASE(this).stageAt62 == 3 && POS54 < g_ExtraThresholdAt00657D14)
+            if (animationStage == 3 && velocityY < g_ExtraThresholdAt00657D14)
                 SetAuxActionAt40FB40(4);
-            if (POS48 > g_ThresholdAt0065782C) {
-                POS54 = POS54 - POS5C;
-                if (POS48 + POS54 <= g_ThresholdAt0065782C) {
+            if (y > g_ThresholdAt0065782C) {
+                velocityY = velocityY - field05C;
+                if (y + velocityY <= g_ThresholdAt0065782C) {
                     SetNativeActionAt40FAC0(10);
-                    POS48 = 0.0f;
+                    y = 0.0f;
                     ResetAt453E20();
                     return;
                 }
             }
-            ++F1024_PHASE(this).frameAt64;
-            if (F1024_PHASE(this).frameAt64 >= S16(0x72)) {
-                F1024_PHASE(this).frameAt64 = 0;
-                ++F1024_PHASE(this).stageAt62;
-                if (F1024_PHASE(this).stageAt62 == 3) {
-                    POS = -7.0f;
-                    FLAG = 0;
-                    POS54 = 18.0f;
-                    POS5C = 0.95f;
+            ++animationFrame;
+            if (animationFrame >= (reinterpret_cast<signed short&>(field072))) {
+                animationFrame = 0;
+                ++animationStage;
+                if (animationStage == 3) {
+                    velocityX = -7.0f;
+                    field3AC = 0;
+                    velocityY = 18.0f;
+                    field05C = 0.95f;
                 }
-                if (F1024_PHASE(this).stageAt62 >= S16(0x70))
-                    F1024_PHASE(this).stageAt62 -= 2;
-                NativeVirtualFrameAdvance();
+                if (animationStage >= (reinterpret_cast<signed short&>(field070)))
+                    animationStage -= 2;
+                BindAnimation();
             }
             break;
         case 0x9:
-        if (POS5C == g_ThresholdAt0065782C)
-            POS5C = 0.6f;
-        POS54 = POS54 - POS5C;
-        if (POS48 + POS54 <= g_ThresholdAt0065782C) {
+        if (field05C == g_ThresholdAt0065782C)
+            field05C = 0.6f;
+        velocityY = velocityY - field05C;
+        if (y + velocityY <= g_ThresholdAt0065782C) {
             SetNativeActionAt40FAC0(10);
-            POS48 = 0.0f;
+            y = 0.0f;
             ResetAt453E20();
             return;
         }
-        if (GetNativeActionAt40FA30() == I16(0x70)) {
+        if (GetNativeActionAt40FA30() == reinterpret_cast<signed short&>(field070)) {
             SetAuxActionAt40FB40(1);
         }
         break;
         case 0xA:
-            if (F1024_PHASE(this).stageAt62 == 0 && F1024_PHASE(this).frameAt64 == 0)
+            if (animationStage == 0 && animationFrame == 0)
                 PrepareActionAt453D60(30);
             ResetAt453E20();
-            if (GetNativeActionAt40FA30() == I16(0x70)) {
-                if (I32(0x4E0) == 0)
+            if (GetNativeActionAt40FA30() == reinterpret_cast<signed short&>(field070)) {
+                if (inputY == 0)
                     SetNativeActionAt40FAC0(3);
                 else
                     SetNativeActionAt40FAC0(2);
@@ -716,32 +717,32 @@ void FighterSwitchF598_Boss00543210::Advance() {
 
 #include "FighterGroundWaveF673.inc"
         case 0x2BF: {
-            if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
-                S16(0xF00)=0;
-                I32(0x7C)=1;
+            if (animationStage==0 && animationFrame==0) {
+                reinterpret_cast<signed short&>(scriptCounterF00)=0;
+                field07C=1;
                 ResetAt453E20();
-                F32(0x36C)=F32(0x36C)-g_ContactProjectionAt00657888;
+                field36C=(field36C)-g_ContactProjectionAt00657888;
                 InitTrajectoryAt453E80(40);
                 PrepareActionAt453D60(23);
                 PrepareActionAt453D40(9);
                 SpawnAt453C80(0x73,
-                    reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44-float(*reinterpret_cast<signed char*>(RAW+0x66)*20),
-                    (*(&POS48))+g_BurstXAt00659238,
-                    *reinterpret_cast<signed char*>(RAW+0x66),1);
-                SpawnSevenAt453B50(0x334,I32(0x44),I32(0x48),
-                    *reinterpret_cast<signed char*>(RAW+0x66),1,0,1);
+                    reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44-float(facing*20),
+                    (*(&y))+g_BurstXAt00659238,
+                    facing,1);
+                SpawnSevenAt453B50(0x334,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+                    facing,1,0,1);
             }
-            if (GetNativeActionAt40FA30()==S16(0x70))
+            if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
                 SetNativeActionAt40FAC0(0);
-            if (F1024_PHASE(this).stageAt62==12 && F1024_PHASE(this).frameAt64==0) {
+            if (animationStage==12 && animationFrame==0) {
                 SpawnFloatXYAt453A70(0x328,
-                    float(*reinterpret_cast<signed char*>(RAW+0x66)*65)+F32(0x44),
-                    (*(&POS48))+g_BarrageY1At006591EC,
-                    *reinterpret_cast<signed char*>(RAW+0x66),1);
+                    float(facing*65)+(x),
+                    (*(&y))+g_BarrageY1At006591EC,
+                    facing,1);
                 SpawnFloatXYAt453A70(0x33C,
-                    float(*reinterpret_cast<signed char*>(RAW+0x66)*65)+F32(0x44),
-                    (*(&POS48))+g_BarrageY1At006591EC,
-                    *reinterpret_cast<signed char*>(RAW+0x66),1);
+                    float(facing*65)+(x),
+                    (*(&y))+g_BarrageY1At006591EC,
+                    facing,1);
                 StartAnimationAt46D000(500);
                 PrepareActionAt453D40(10);
             }
@@ -755,145 +756,145 @@ void FighterSwitchF598_Boss00543210::Advance() {
 // to align the native FILD-before-X x87 order. Actual opcode/constant differ.
 // Entire 00543210 original function still NONEXACT, no case credit.
         case 0x2C0: {
-            if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
+            if (animationStage==0 && animationFrame==0) {
                 ResetAt453E20();
-                S16(0x80)=99;
-                I32(0x7C)=0;
-                U8(0x3AC)=0;
-                S16(0xF00)=0;
+                reinterpret_cast<signed short&>(field080)=99;
+                field07C=0;
+                reinterpret_cast<unsigned char&>(field3AC)=0;
+                reinterpret_cast<signed short&>(scriptCounterF00)=0;
             }
-            if (F1024_PHASE(this).stageAt62<25 && POS48>g_ThresholdAt0065782C && F1024_PHASE(this).stageAt62>15) {
-                POS=POS-g_F718_FallingDragAt00659090;
-                POS54=POS54-POS5C;
-                if (POS<g_F718_BounceMinAt00657CF8)
-                    POS=3.0f;
-                if (POS48+POS54<=g_ThresholdAt0065782C) {
+            if (animationStage<25 && y>g_ThresholdAt0065782C && animationStage>15) {
+                velocityX=(velocityX)-g_F718_FallingDragAt00659090;
+                velocityY=velocityY-field05C;
+                if ((velocityX)<g_F718_BounceMinAt00657CF8)
+                    velocityX=3.0f;
+                if (y+velocityY<=g_ThresholdAt0065782C) {
                     SetAuxActionAt40FB40(25);
-                    POS48=0.0f;
+                    y=0.0f;
                     ResetAt453E20();
                     break;
                 }
             }
-            if (GetNativeActionAt40FA30()==S16(0x70))
+            if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
                 SetNativeActionAt40FAC0(0);
-            if (F1024_PHASE(this).frameAt64==0)
-                I32(0x7C)=0;
-            if (F1024_PHASE(this).stageAt62==1 && F1024_PHASE(this).frameAt64==0) {
-                F32(0x36C)=F32(0x36C)-g_ContactProjectionAt00657888;
+            if (animationFrame==0)
+                field07C=0;
+            if (animationStage==1 && animationFrame==0) {
+                field36C=(field36C)-g_ContactProjectionAt00657888;
                 InitTrajectoryAt453E80(40);
                 PrepareActionAt453D60(23);
                 SpawnAt453C80(0x73,
-                    reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44-float(*reinterpret_cast<signed char*>(RAW+0x66)*46),
-                    (*(&POS48))+g_F722_BurstYAt0065826C,
-                    *reinterpret_cast<signed char*>(RAW+0x66),1);
+                    reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44-float(facing*46),
+                    (*(&y))+g_F722_BurstYAt0065826C,
+                    facing,1);
             }
-            if (F1024_PHASE(this).stageAt62==7 && F1024_PHASE(this).frameAt64==0) {
-                SpawnRawXYAt453C80(0x3C,I32(0x44),I32(0x48),
-                    *reinterpret_cast<signed char*>(RAW+0x66),1);
+            if (animationStage==7 && animationFrame==0) {
+                SpawnRawXYAt453C80(0x3C,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+                    facing,1);
                 PrepareActionAt453D40(11);
-                POS54=9.0f;
-                POS=20.0f;
+                velocityY=9.0f;
+                velocityX=20.0f;
                 StartAnimationAt46D000(500);
-                POS5C=0.8f;
+                field05C=0.8f;
             }
-            if (F1024_PHASE(this).stageAt62>6 && F1024_PHASE(this).stageAt62<15) {
+            if (animationStage>6 && animationStage<15) {
                 SpawnFloatXYAt453A70(0x329,
-                    float(*reinterpret_cast<signed char*>(RAW+0x66)*62)+F32(0x44),
-                    (*(&POS48))+g_F714_ShotYAt00657868,
-                    *reinterpret_cast<signed char*>(RAW+0x66),1);
+                    float(facing*62)+(x),
+                    (*(&y))+g_F714_ShotYAt00657868,
+                    facing,1);
             }
-            if (F1024_PHASE(this).stageAt62==15 && F1024_PHASE(this).frameAt64==0 && S16(0xF00)<3) {
+            if (animationStage==15 && animationFrame==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<3) {
                 SetAuxActionAt40FB40(11);
-                ++S16(0xF00);
+                ++reinterpret_cast<signed short&>(scriptCounterF00);
                 break;
             }
-            if (F1024_PHASE(this).stageAt62==25 && F1024_PHASE(this).frameAt64==0)
+            if (animationStage==25 && animationFrame==0)
                 SetAuxActionAt40FB40(23);
             break;
         }
         case 0x2C1: {
-            if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
-                S16(0xF00)=0;
-                I32(0x7C)=1;
+            if (animationStage==0 && animationFrame==0) {
+                reinterpret_cast<signed short&>(scriptCounterF00)=0;
+                field07C=1;
                 ResetAt453E20();
                 InitTrajectoryAt453E80(40);
                 PrepareActionAt453D60(23);
-                SpawnMixedAt453C80(0x74,I32(0x44),
-                    (*(&POS48))+g_ContactProjectionAt00657888,
-                    *reinterpret_cast<signed char*>(RAW+0x66),1);
-                F32(0x36C)=F32(0x36C)-g_ContactProjectionAt00657888;
+                SpawnMixedAt453C80(0x74,reinterpret_cast<int&>(x),
+                    (*(&y))+g_ContactProjectionAt00657888,
+                    facing,1);
+                field36C=(field36C)-g_ContactProjectionAt00657888;
             }
-            if (F1024_PHASE(this).stageAt62>3 && F1024_PHASE(this).stageAt62<11) {
-                POS54=POS54-g_F722_LowYAt00659A10;
-                if (POS54<g_ThresholdAt0065782C)
-                    POS54=0.0f;
+            if (animationStage>3 && animationStage<11) {
+                velocityY=velocityY-g_F722_LowYAt00659A10;
+                if (velocityY<g_ThresholdAt0065782C)
+                    velocityY=0.0f;
             }
-            if (F1024_PHASE(this).stageAt62>10 && F1024_PHASE(this).stageAt62<14) {
-                POS54=POS54-POS5C;
-                if (POS48+POS54<=g_ThresholdAt0065782C) {
+            if (animationStage>10 && animationStage<14) {
+                velocityY=velocityY-field05C;
+                if (y+velocityY<=g_ThresholdAt0065782C) {
                     SetAuxActionAt40FB40(14);
                     break;
                 }
             }
-            if (F1024_PHASE(this).stageAt62==5 && F1024_PHASE(this).frameAt64==0)
+            if (animationStage==5 && animationFrame==0)
                 InitTrajectoryAt453E60(5.0f);
-            if (GetNativeActionAt40FA30()==S16(0x70))
+            if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
                 SetNativeActionAt40FAC0(0);
-            if (F1024_PHASE(this).stageAt62==4 && F1024_PHASE(this).frameAt64==0) {
-                POS54=15.0f;
-                POS5C=0.85f;
+            if (animationStage==4 && animationFrame==0) {
+                velocityY=15.0f;
+                field05C=0.85f;
             }
-            if (F1024_PHASE(this).stageAt62==5 && F1024_PHASE(this).frameAt64==0) {
+            if (animationStage==5 && animationFrame==0) {
                 SpawnFloatXYAt453A70(0x32A,
-                    float(*reinterpret_cast<signed char*>(RAW+0x66)*40)+F32(0x44),
+                    float(facing*40)+(x),
                     10.0f,
-                    *reinterpret_cast<signed char*>(RAW+0x66),1);
-                SpawnDirectedAt453A70(0x340,I32(0x44),0,
-                    *reinterpret_cast<signed char*>(RAW+0x66),1);
+                    facing,1);
+                SpawnDirectedAt453A70(0x340,reinterpret_cast<int&>(x),0,
+                    facing,1);
                 StartAnimationAt46D000(500);
                 PrepareActionAt453D40(12);
             }
-            if (F1024_PHASE(this).stageAt62==8 && F1024_PHASE(this).frameAt64==0 && S16(0xF00)<12) {
+            if (animationStage==8 && animationFrame==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<12) {
                 SetAuxActionAt40FB40(5);
-                ++S16(0xF00);
+                ++reinterpret_cast<signed short&>(scriptCounterF00);
             }
-            if (F1024_PHASE(this).stageAt62==11 && F1024_PHASE(this).frameAt64==0 && S16(0xF00)<14) {
+            if (animationStage==11 && animationFrame==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<14) {
                 SetAuxActionAt40FB40(8);
-                ++S16(0xF00);
+                ++reinterpret_cast<signed short&>(scriptCounterF00);
             }
-            if (F1024_PHASE(this).stageAt62==14 && F1024_PHASE(this).frameAt64==0)
+            if (animationStage==14 && animationFrame==0)
                 SetAuxActionAt40FB40(12);
             break;
         }
 
         case 0x2C4: {
-            if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
-                S16(0xF00)=0;
-                I32(0x7C)=1;
+            if (animationStage==0 && animationFrame==0) {
+                reinterpret_cast<signed short&>(scriptCounterF00)=0;
+                field07C=1;
                 ResetAt453E20();
-                F32(0x36C)=F32(0x36C)-g_ContactProjectionAt00657888;
+                field36C=(field36C)-g_ContactProjectionAt00657888;
                 InitTrajectoryAt453E80(40);
                 PrepareActionAt453D60(23);
                 PrepareActionAt453D40(13);
                 SpawnAt453C80(0x74,
-                    reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44-float(*reinterpret_cast<signed char*>(RAW+0x66)*20),
-                    (*(&POS48))+g_BurstXAt00659238,
-                    *reinterpret_cast<signed char*>(RAW+0x66),1);
-                SpawnSevenAt453B50(0x334,I32(0x44),I32(0x48),
-                    *reinterpret_cast<signed char*>(RAW+0x66),1,0,1);
+                    reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44-float(facing*20),
+                    (*(&y))+g_BurstXAt00659238,
+                    facing,1);
+                SpawnSevenAt453B50(0x334,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+                    facing,1,0,1);
             }
-            if (GetNativeActionAt40FA30()==S16(0x70))
+            if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
                 SetNativeActionAt40FAC0(0);
-            if (F1024_PHASE(this).stageAt62==12 && F1024_PHASE(this).frameAt64==0) {
+            if (animationStage==12 && animationFrame==0) {
                 StartAnimationAt46D000(750);
                 SpawnFloatXYAt453A70(0x32B,
-                    float(*reinterpret_cast<signed char*>(RAW+0x66)*65)+F32(0x44),
-                    (*(&POS48))+g_BarrageY1At006591EC,
-                    *reinterpret_cast<signed char*>(RAW+0x66),1);
+                    float(facing*65)+(x),
+                    (*(&y))+g_BarrageY1At006591EC,
+                    facing,1);
                 SpawnFloatXYAt453A70(0x33D,
-                    float(*reinterpret_cast<signed char*>(RAW+0x66)*65)+F32(0x44),
-                    (*(&POS48))+g_BarrageY1At006591EC,
-                    *reinterpret_cast<signed char*>(RAW+0x66),1);
+                    float(facing*65)+(x),
+                    (*(&y))+g_BarrageY1At006591EC,
+                    facing,1);
                 PrepareActionAt453D40(14);
             }
             break;
@@ -908,63 +909,63 @@ void FighterSwitchF598_Boss00543210::Advance() {
 // 74 attack and trajectory, stage7 3C and 344 shots, stage15 loop.
 // All exactness claims require original full giant; this is NONEXACT.
         case 0x2C5: {
-            if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
+            if (animationStage==0 && animationFrame==0) {
                 ResetAt453E20();
-                S16(0x80)=99;
-                I32(0x7C)=0;
-                U8(0x3AC)=0;
-                S16(0xF00)=0;
+                reinterpret_cast<signed short&>(field080)=99;
+                field07C=0;
+                reinterpret_cast<unsigned char&>(field3AC)=0;
+                reinterpret_cast<signed short&>(scriptCounterF00)=0;
             }
-            if (F1024_PHASE(this).stageAt62<25 && POS48>g_ThresholdAt0065782C && F1024_PHASE(this).stageAt62>15) {
-                POS=POS-g_F718_FallingDragAt00659090;
-                POS54=POS54-POS5C;
-                if (POS<g_F718_BounceMinAt00657CF8)
-                    POS=3.0f;
-                if (POS48+POS54<=g_ThresholdAt0065782C) {
+            if (animationStage<25 && y>g_ThresholdAt0065782C && animationStage>15) {
+                velocityX=(velocityX)-g_F718_FallingDragAt00659090;
+                velocityY=velocityY-field05C;
+                if ((velocityX)<g_F718_BounceMinAt00657CF8)
+                    velocityX=3.0f;
+                if (y+velocityY<=g_ThresholdAt0065782C) {
                     SetAuxActionAt40FB40(25);
-                    POS48=0.0f;
+                    y=0.0f;
                     ResetAt453E20();
                     break;
                 }
             }
-            if (GetNativeActionAt40FA30()==S16(0x70))
+            if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
                 SetNativeActionAt40FAC0(0);
-            if (F1024_PHASE(this).frameAt64==0)
-                I32(0x7C)=0;
-            if (F1024_PHASE(this).stageAt62==1 && F1024_PHASE(this).frameAt64==0) {
+            if (animationFrame==0)
+                field07C=0;
+            if (animationStage==1 && animationFrame==0) {
                 InitTrajectoryAt453E80(40);
                 PrepareActionAt453D60(23);
                 SpawnAt453C80(0x74,
-                    reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44-float(*reinterpret_cast<signed char*>(RAW+0x66)*46),
-                    (*(&POS48))+g_F722_BurstYAt0065826C,
-                    *reinterpret_cast<signed char*>(RAW+0x66),1);
-                F32(0x36C)=F32(0x36C)-g_ContactProjectionAt00657888;
+                    reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44-float(facing*46),
+                    (*(&y))+g_F722_BurstYAt0065826C,
+                    facing,1);
+                field36C=(field36C)-g_ContactProjectionAt00657888;
             }
-            if (F1024_PHASE(this).stageAt62==7 && F1024_PHASE(this).frameAt64==0) {
-                SpawnRawXYAt453C80(0x3C,I32(0x44),I32(0x48),
-                    *reinterpret_cast<signed char*>(RAW+0x66),1);
+            if (animationStage==7 && animationFrame==0) {
+                SpawnRawXYAt453C80(0x3C,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+                    facing,1);
                 SpawnFloatXYAt453A70(0x344,
-                    float(*reinterpret_cast<signed char*>(RAW+0x66)*55)+F32(0x44),
-                    (*(&POS48))+g_F724_ShotYAt00659488,
-                    *reinterpret_cast<signed char*>(RAW+0x66),1);
+                    float(facing*55)+(x),
+                    (*(&y))+g_F724_ShotYAt00659488,
+                    facing,1);
                 StartAnimationAt46D000(500);
                 PrepareActionAt453D40(15);
-                POS54=10.5f;
-                POS=25.0f;
-                POS5C=0.8f;
+                velocityY=10.5f;
+                velocityX=25.0f;
+                field05C=0.8f;
             }
-            if (F1024_PHASE(this).stageAt62>6 && F1024_PHASE(this).stageAt62<15) {
+            if (animationStage>6 && animationStage<15) {
                 SpawnFloatXYAt453A70(0x32E,
-                    float(*reinterpret_cast<signed char*>(RAW+0x66)*62)+F32(0x44),
-                    (*(&POS48))+g_F714_ShotYAt00657868,
-                    *reinterpret_cast<signed char*>(RAW+0x66),1);
+                    float(facing*62)+(x),
+                    (*(&y))+g_F714_ShotYAt00657868,
+                    facing,1);
             }
-            if (F1024_PHASE(this).stageAt62==15 && F1024_PHASE(this).frameAt64==0 && S16(0xF00)<5) {
+            if (animationStage==15 && animationFrame==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<5) {
                 SetAuxActionAt40FB40(11);
-                ++S16(0xF00);
+                ++reinterpret_cast<signed short&>(scriptCounterF00);
                 break;
             }
-            if (F1024_PHASE(this).stageAt62==25 && F1024_PHASE(this).frameAt64==0)
+            if (animationStage==25 && animationFrame==0)
                 SetAuxActionAt40FB40(23);
             break;
         }
@@ -991,6 +992,6 @@ void FighterSwitchF598_Boss00543210::Advance() {
 #include "FighterSharedGetterTail00543210F1196.inc"
     }
 }
-#undef OWNER
+#undef opponent
 #undef I16
 #undef RAW

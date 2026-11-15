@@ -52,8 +52,8 @@ padding, ASM, a dummy local or forced register choice.
 
 ## Whole original 22,721-x86 proof
 
-The [independent complete-fighter verifier](../scripts/verify-third-fighter-shared-ring-counter-f1020.py)
-fresh-builds TWO TRACKED ENTIRE original-shaped normal
+A complete-fighter comparison (since retired, with the superseded F1019
+source; both remain in git history) fresh-built TWO TRACKED ENTIRE original-shaped normal
 VC7.1 82KB fathers, prior F1019 and real F1020,
 re-reads the independently SHA-pinned Japanese PE,
 and compares all **22,721 positional original
@@ -90,11 +90,6 @@ field positions and many intra-function JMP displacements
 also must match before any accepted whole original callable
 CODE credit. F1020 does NOT change config/matches.csv,
 match units or officially accepted authored coverage.
-
-Reproduce ONLY the two affected original-shaped
-whole-function sources:
-
-    scripts/repo-python scripts/verify-third-fighter-shared-ring-counter-f1020.py
 
 True PE receipts and normal VC7.1 C++/OBJ/PDB plus
 compiler logs are retained under ignored

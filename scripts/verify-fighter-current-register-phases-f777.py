@@ -16,7 +16,7 @@ from capstone import Cs,CS_ARCH_X86,CS_MODE_32
 
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'.analysis/f777-fighter-register-audit'
-SYM='?Advance@FighterSwitchF598_Boss00543210@@QAEXXZ'
+SYM='?Advance@FighterSwitchF598_Boss00543210@@UAEXXZ'
 ORIGINAL={
   0x58:(0x00544F34,0x00545109,469,135,17,0),
   0x59:(0x00545109,0x0054526D,356,95,16,19),

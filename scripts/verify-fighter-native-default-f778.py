@@ -18,7 +18,7 @@ from capstone import Cs,CS_ARCH_X86,CS_MODE_32
 
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'.analysis/f778-fighter-default-native-whole'
-SYM='?Advance@FighterSwitchF598_Boss00543210@@QAEXXZ'
+SYM='?Advance@FighterSwitchF598_Boss00543210@@UAEXXZ'
 NATIVE_BEGIN=0x00551598
 NATIVE_GUARD_END=0x005515B8
 NATIVE_END=0x005515C7

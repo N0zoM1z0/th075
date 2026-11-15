@@ -8,16 +8,16 @@
 // giant Advance(), real per-owner action transitions and independent
 // x87 direction tests. Case body is NOT a separately accepted function.
 case 0x5F: {
-    if (GetNativeActionAt40FA30()==I16(0x70)) {
+    if (GetNativeActionAt40FA30()==reinterpret_cast<signed short&>(field070)) {
         SetNativeActionAt40FAC0(F620_FIRST_ACTION);
-        if (I32(0x4E0)>0)
+        if (inputY>0)
             SetNativeActionAt40FAC0(F620_SECOND_ACTION);
     }
-    if (I16(0x62)==I16(0x70)-1) {
-        if (*(&F32(0x44))>*reinterpret_cast<float*>(OWNER+0x44))
-            *reinterpret_cast<signed char*>(RAW+0x66)=-1;
-        if (*(&F32(0x44))<*reinterpret_cast<float*>(OWNER+0x44))
-            *reinterpret_cast<signed char*>(RAW+0x66)=1;
+    if (reinterpret_cast<signed short&>(animationStage)==reinterpret_cast<signed short&>(field070)-1) {
+        if (*(&x)>opponent->x)
+            facing=-1;
+        if (*(&x)<opponent->x)
+            facing=1;
     }
     return;
 }

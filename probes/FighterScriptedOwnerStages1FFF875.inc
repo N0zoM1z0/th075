@@ -2,35 +2,35 @@
 // Five actual native FILD scratch slots; original owner+0x44 x87 updates.
 // Enclosing 46755B whole fighter still not exact; no inner exact credit.
 case 0x1FF: {
-    if (S16(0x62)==0 && S16(0x64)==0) {
+    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
         ResetAt453E20();
-        S16(0x80)=0;
-        I32(0x7C)=0;
-        FLAG=0;
+        reinterpret_cast<signed short&>(field080)=0;
+        field07C=0;
+        field3AC=0;
     }
-    if (GetNativeActionAt40FA30()==S16(0x70))
+    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
         SetNativeActionAt40FAC0(0);
-    if (S16(0x62)==1 && S16(0x64)==0) {
-        reinterpret_cast<FighterBorrowedOwnerF874*>(OWNER)->SetNativeActionAt40FAC0(0x64);
-        *reinterpret_cast<float*>(OWNER+0x44)=float((*reinterpret_cast<signed char*>(RAW+0x66))*74)+F32(0x44);
+    if ((reinterpret_cast<signed short&>(animationStage))==1 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        reinterpret_cast<FighterBorrowedOwnerF874*>(opponent)->SetNativeActionAt40FAC0(0x64);
+        opponent->x=float((facing)*74)+(x);
     }
-    if (S16(0x62)==2 && S16(0x64)==0) {
-        reinterpret_cast<FighterBorrowedOwnerF874*>(OWNER)->SetNativeActionAt40FAC0(0x64);
-        *reinterpret_cast<float*>(OWNER+0x44)=float((*reinterpret_cast<signed char*>(RAW+0x66))*40)+F32(0x44);
+    if ((reinterpret_cast<signed short&>(animationStage))==2 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        reinterpret_cast<FighterBorrowedOwnerF874*>(opponent)->SetNativeActionAt40FAC0(0x64);
+        opponent->x=float((facing)*40)+(x);
     }
-    if (S16(0x62)==3 && S16(0x64)==0) {
-        reinterpret_cast<FighterBorrowedOwnerF874*>(OWNER)->SetNativeActionAt40FAC0(0x64);
-        *reinterpret_cast<float*>(OWNER+0x44)=float((*reinterpret_cast<signed char*>(RAW+0x66))*36)+F32(0x44);
+    if ((reinterpret_cast<signed short&>(animationStage))==3 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        reinterpret_cast<FighterBorrowedOwnerF874*>(opponent)->SetNativeActionAt40FAC0(0x64);
+        opponent->x=float((facing)*36)+(x);
     }
-    if (S16(0x62)==4 && S16(0x64)==0) {
-        reinterpret_cast<FighterBorrowedOwnerF874*>(OWNER)->SetNativeActionAt40FAC0(0x64);
-        *reinterpret_cast<float*>(OWNER+0x44)=float((*reinterpret_cast<signed char*>(RAW+0x66))*33)+F32(0x44);
+    if ((reinterpret_cast<signed short&>(animationStage))==4 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        reinterpret_cast<FighterBorrowedOwnerF874*>(opponent)->SetNativeActionAt40FAC0(0x64);
+        opponent->x=float((facing)*33)+(x);
     }
-    if (S16(0x62)==5 && S16(0x64)==0) {
-        reinterpret_cast<FighterBorrowedOwnerF874*>(OWNER)->SetNativeActionAt40FAC0(0x64);
-        *reinterpret_cast<float*>(OWNER+0x44)=float((*reinterpret_cast<signed char*>(RAW+0x66))*32)+F32(0x44);
+    if ((reinterpret_cast<signed short&>(animationStage))==5 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        reinterpret_cast<FighterBorrowedOwnerF874*>(opponent)->SetNativeActionAt40FAC0(0x64);
+        opponent->x=float((facing)*32)+(x);
     }
-    if (S16(0x62)==6 && S16(0x64)==0)
-        reinterpret_cast<FighterBorrowedOwnerF874*>(OWNER)->SetNativeActionAt40FAC0(0x35);
+    if ((reinterpret_cast<signed short&>(animationStage))==6 && (reinterpret_cast<signed short&>(animationFrame))==0)
+        reinterpret_cast<FighterBorrowedOwnerF874*>(opponent)->SetNativeActionAt40FAC0(0x35);
     return;
 }

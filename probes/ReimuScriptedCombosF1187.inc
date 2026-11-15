@@ -231,15 +231,15 @@
 
 
 case 0x19D: {
-    if (S16(0x62)==0 && S16(0x64)==0) { I32(0x7C)=1; ResetAt453E20(); }
-    if (S16(0x62)==6 && S16(0x64)==0) {
-        F32(0x314)=-30.0f; F32(0x318)=8.0f;
-        SpawnFloatXYAt453A70(0x32C,float(*reinterpret_cast<signed char*>(RAW+0x66)*37)+F32(0x44),
-            (*(&POS48))+g_ReimuAirVolleyYAt00659098,*reinterpret_cast<char*>(RAW+0x66),1);
+    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) { field07C=1; ResetAt453E20(); }
+    if ((reinterpret_cast<signed short&>(animationStage))==6 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        field314=-30.0f; field318=8.0f;
+        SpawnFloatXYAt453A70(0x32C,float(facing*37)+(x),
+            (*(&y))+g_ReimuAirVolleyYAt00659098,reinterpret_cast<char&>(facing),1);
         PlaySoundAt453D40(1);
         StartAnimationAt46D000(200);
     }
-    if (GetNativeActionAt40FA30()==S16(0x70)) SetNativeActionAt40FAC0(0);
+    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) SetNativeActionAt40FAC0(0);
     break;
 }
 
@@ -288,21 +288,21 @@ case 0x19D: {
 
 
 case 0x1A1: {
-    if (POS48+POS54<=g_ThresholdAt0065782C) {
+    if (y+velocityY<=g_ThresholdAt0065782C) {
         SetNativeActionAt40FAC0(10);
-        POS48=0.0f; POS5C=0.0f; POS54=0.0f;
+        y=0.0f; field05C=0.0f; velocityY=0.0f;
         break;
     }
-    if (S16(0x62)==0 && S16(0x64)==0) {
-        POS=POS*g_ProjectileFallAt006590B4;
-        POS54=(*(&POS54))*g_ProjectileFallAt006590B4;
-        I32(0x7C)=1;
+    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        velocityX=(velocityX)*g_ProjectileFallAt006590B4;
+        velocityY=(*(&velocityY))*g_ProjectileFallAt006590B4;
+        field07C=1;
     }
-    if (GetNativeActionAt40FA30()==S16(0x70)) SetNativeActionAt40FAC0(9);
-    if (S16(0x62)==3 && S16(0x64)==0) {
-        F32(0x314)=30.0f; F32(0x318)=8.0f;
-        SpawnFloatXYAt453A70(0x32C,float(*reinterpret_cast<signed char*>(RAW+0x66)*12)+F32(0x44),
-            (*(&POS48))+g_ReimuCommandBackYAt006590A8,*reinterpret_cast<char*>(RAW+0x66),1);
+    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) SetNativeActionAt40FAC0(9);
+    if ((reinterpret_cast<signed short&>(animationStage))==3 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        field314=30.0f; field318=8.0f;
+        SpawnFloatXYAt453A70(0x32C,float(facing*12)+(x),
+            (*(&y))+g_ReimuCommandBackYAt006590A8,reinterpret_cast<char&>(facing),1);
         PlaySoundAt453D40(1);
         StartAnimationAt46D000(200);
     }

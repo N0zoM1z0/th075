@@ -42,7 +42,7 @@ SOURCE=ROOT/'probes/CharacterObjectActionsF572.cpp'
 BASE=ROOT/'.analysis/f591-characterobject-stage-fades-source'
 OBJ=BASE/'one-normal-Cpp-source.obj'
 OUT=ROOT/'.analysis/f593-characterobject-whole-source'
-SYMBOL='?Advance@FighterSwitchF572_Boss004EBDA0@@QAEXXZ'
+SYMBOL='?Advance@FighterSwitchF572_Boss004EBDA0@@UAEXXZ'
 # Correct original PE-bounded actions, including the physically last case
 # whose two short JMPs end before the original shared default handler.
 CASES={

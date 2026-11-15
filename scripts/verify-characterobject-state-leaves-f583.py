@@ -536,7 +536,7 @@ def main():
          hashlib.sha256(original_map).hexdigest()==tab['map_sha'],
          'actual original PE switch SHA controls do not match')
     obj=build_one()
-    code,refs=reader.object_function(obj,'?Advance@FighterSwitchF572_Boss004EBDA0@@QAEXXZ')
+    code,refs=reader.object_function(obj,'?Advance@FighterSwitchF572_Boss004EBDA0@@UAEXXZ')
     allins=[]
     for x in decoder.disasm(code,0):
         allins.append(x)

@@ -178,7 +178,7 @@ def main():
          hashlib.sha256(native_dense).hexdigest()==table['dense_sha'],
          'original pinned native sparse/handler DWORD SHA changed')
     obj=compile_one(SOURCE)
-    code,refs=m.object_function(obj,'?Advance@FighterSwitchF572_Boss004EBDA0@@QAEXXZ')
+    code,refs=m.object_function(obj,'?Advance@FighterSwitchF572_Boss004EBDA0@@UAEXXZ')
     instructions=[]
     for x in d.disasm(code,0):
         instructions.append(x)

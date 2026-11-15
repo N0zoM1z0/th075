@@ -6,39 +6,39 @@
 // Sprite33C needs actual RAW integer Y: floating formal adds nonnative FILD/FSTP.
 // Whole original game fighter NONEXACT; no split-case acceptance.
 case 0x2BF: {
-    if (S16(0x62)==0 && S16(0x64)==0) {
-        S16(0xF00)=0;
-        I32(0x7C)=0;
-        S16(0x80)=0x63;
-        S16(0x80)=1;
+    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        reinterpret_cast<signed short&>(scriptCounterF00)=0;
+        field07C=0;
+        reinterpret_cast<signed short&>(field080)=0x63;
+        reinterpret_cast<signed short&>(field080)=1;
         ResetAt453E20();
     }
-    if (GetNativeActionAt40FA30()==S16(0x70))
+    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
         SetNativeActionAt40FAC0(0);
-    if (S16(0x64)==0)
-        I32(0x7C)=0;
-    if (S16(0x62)==2 && S16(0x64)==0) {
+    if ((reinterpret_cast<signed short&>(animationFrame))==0)
+        field07C=0;
+    if ((reinterpret_cast<signed short&>(animationStage))==2 && (reinterpret_cast<signed short&>(animationFrame))==0) {
         AnimatePushAt453E80(0x28);
         PrepareActionAt453D60(0x17);
-        F32(0x36C)=F32(0x36C)-g_ContactProjectionAt00657888;
+        field36C=(field36C)-g_ContactProjectionAt00657888;
         SpawnAt453C80(0x74,
             reinterpret_cast<FighterBorrowedXViewF833*>(this)->xAt44-
-                float((*reinterpret_cast<signed char*>(RAW+0x66))*64),
-            (*(&POS48))+g_F884Stage5YAt00659470,
-            (*reinterpret_cast<signed char*>(RAW+0x66)),1);
-        S16(0xF00)=static_cast<signed short>(F32(0x44));
-        S16(0xF02)=static_cast<signed short>(F32(0x48));
-        SpawnExtraRawYAt453B50(0x33D,I32(0x44),I32(0x48),
-            (*reinterpret_cast<signed char*>(RAW+0x66)),1,0,1);
+                float((facing)*64),
+            (*(&y))+g_F884Stage5YAt00659470,
+            (facing),1);
+        reinterpret_cast<signed short&>(scriptCounterF00)=static_cast<signed short>(x);
+        reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<signed short>(y);
+        SpawnExtraRawYAt453B50(0x33D,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+            (facing),1,0,1);
     }
-    if (S16(0x62)==10 && S16(0x64)==0) {
+    if ((reinterpret_cast<signed short&>(animationStage))==10 && (reinterpret_cast<signed short&>(animationFrame))==0) {
         StartAnimationAt46D000(0x1F4);
         PrepareActionAt453D40(7);
     }
-    if (S16(0x62)==11 && S16(0x64)==0) {
+    if ((reinterpret_cast<signed short&>(animationStage))==11 && (reinterpret_cast<signed short&>(animationFrame))==0) {
         InitTrajectoryAt453E60(10.0f);
-        SpawnRawAt453C80(0x7F,I32(0x44),I32(0x48),
-            (*reinterpret_cast<signed char*>(RAW+0x66)),1);
+        SpawnRawAt453C80(0x7F,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+            (facing),1);
     }
     return;
 }

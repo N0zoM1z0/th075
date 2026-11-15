@@ -11,106 +11,106 @@
  // and width roles, 125 wrong GPR roles. Whole 82KB NONEXACT.
 // F1017 real original fighter action 2BE.
 case 0x2BE: {
-    if (S16(0x62)==0 && S16(0x64)==0) {
-        S16(0xF00)=0;
-        I32(0x7C)=0;
+    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        reinterpret_cast<signed short&>(scriptCounterF00)=0;
+        field07C=0;
         ResetAt453E20();
-        S16(0x80)=99;
+        reinterpret_cast<signed short&>(field080)=99;
     }
-    if (POS48>g_ThresholdAt0065782C && S16(0x62)>23) {
-        POS54=POS54-POS5C;
-        if (POS48+POS54<=g_ThresholdAt0065782C && S16(0x62)<34) {
+    if (y>g_ThresholdAt0065782C && (reinterpret_cast<signed short&>(animationStage))>23) {
+        velocityY=velocityY-field05C;
+        if (y+velocityY<=g_ThresholdAt0065782C && (reinterpret_cast<signed short&>(animationStage))<34) {
             SetAuxActionAt40FB40(34);
             ResetAt453E20();
-            POS48=0.0f;
+            y=0.0f;
             break;
         }
     }
-    if (S16(0x64)==0)
-        I32(0x7C)=0;
-    if (GetNativeActionAt40FA30()==S16(0x70))
+    if ((reinterpret_cast<signed short&>(animationFrame))==0)
+        field07C=0;
+    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
         SetNativeActionAt40FAC0(0);
-    if (S16(0x62)==4 && S16(0x64)==0) {
+    if ((reinterpret_cast<signed short&>(animationStage))==4 && (reinterpret_cast<signed short&>(animationFrame))==0) {
         ApplyAt453E80(40);
         PrepareActionAt453D60(0x17);
-        F32(0x36C)=F32(0x36C)-g_ContactProjectionAt00657888;
+        field36C=(field36C)-g_ContactProjectionAt00657888;
         SpawnAt453C80(0x73,
-            float((*reinterpret_cast<signed char*>(RAW+0x66))*30)+F32(0x44),
-            (*(&POS48))+g_F1017_StartYAt00658268,
-            *reinterpret_cast<signed char*>(RAW+0x66),1);
+            float((facing)*30)+(x),
+            (*(&y))+g_F1017_StartYAt00658268,
+            facing,1);
     }
-    if (S16(0x62)==13 && S16(0x64)==0) {
+    if ((reinterpret_cast<signed short&>(animationStage))==13 && (reinterpret_cast<signed short&>(animationFrame))==0) {
         PrepareActionAt453D40(7);
-        POS=0.5f;
-        POS54=1.0f;
-        POS5C=0.5f;
-        S16(0x84)=10;
+        velocityX=0.5f;
+        velocityY=1.0f;
+        field05C=0.5f;
+        reinterpret_cast<signed short&>(field084)=10;
     }
-    if (S16(0x62)==15 && S16(0x64)==0) {
+    if ((reinterpret_cast<signed short&>(animationStage))==15 && (reinterpret_cast<signed short&>(animationFrame))==0) {
         StartAnimationAt46D000(0xC);
         SpawnFloatXYAt453A70(0x321+(RandAt455580(0,100)>200),
-            float((*reinterpret_cast<signed char*>(RAW+0x66))*60)+F32(0x44),
-            (*(&POS48))+g_F1017_VolleyYAt0065908C,
-            *reinterpret_cast<signed char*>(RAW+0x66),1);
+            float((facing)*60)+(x),
+            (*(&y))+g_F1017_VolleyYAt0065908C,
+            facing,1);
         SpawnFloatXYAt453A70(0x33F,
-            float((*reinterpret_cast<signed char*>(RAW+0x66))*60)+F32(0x44),
-            (*(&POS48))+g_F1017_VolleyYAt0065908C,
-            *reinterpret_cast<signed char*>(RAW+0x66),1);
+            float((facing)*60)+(x),
+            (*(&y))+g_F1017_VolleyYAt0065908C,
+            facing,1);
         PrepareActionAt453D40(7);
     }
-    if (S16(0x62)==17 && S16(0x64)==0) {
+    if ((reinterpret_cast<signed short&>(animationStage))==17 && (reinterpret_cast<signed short&>(animationFrame))==0) {
         StartAnimationAt46D000(0xC);
         SpawnFloatXYAt453A70(0x321+(RandAt455580(0,100)>200),
-            float((*reinterpret_cast<signed char*>(RAW+0x66))*60)+F32(0x44),
-            (*(&POS48))+g_F1017_VolleyYAt0065908C,
-            *reinterpret_cast<signed char*>(RAW+0x66),1);
+            float((facing)*60)+(x),
+            (*(&y))+g_F1017_VolleyYAt0065908C,
+            facing,1);
         SpawnFloatXYAt453A70(0x33F,
-            float((*reinterpret_cast<signed char*>(RAW+0x66))*60)+F32(0x44),
-            (*(&POS48))+g_F1017_VolleyYAt0065908C,
-            *reinterpret_cast<signed char*>(RAW+0x66),1);
+            float((facing)*60)+(x),
+            (*(&y))+g_F1017_VolleyYAt0065908C,
+            facing,1);
         PrepareActionAt453D40(7);
     }
-    if (S16(0x62)==19 && S16(0x64)==0) {
+    if ((reinterpret_cast<signed short&>(animationStage))==19 && (reinterpret_cast<signed short&>(animationFrame))==0) {
         StartAnimationAt46D000(0xC);
         SpawnFloatXYAt453A70(0x321+(RandAt455580(0,100)>200),
-            float((*reinterpret_cast<signed char*>(RAW+0x66))*60)+F32(0x44),
-            (*(&POS48))+g_F1017_VolleyYAt0065908C,
-            *reinterpret_cast<signed char*>(RAW+0x66),1);
+            float((facing)*60)+(x),
+            (*(&y))+g_F1017_VolleyYAt0065908C,
+            facing,1);
         SpawnFloatXYAt453A70(0x33F,
-            float((*reinterpret_cast<signed char*>(RAW+0x66))*60)+F32(0x44),
-            (*(&POS48))+g_F1017_VolleyYAt0065908C,
-            *reinterpret_cast<signed char*>(RAW+0x66),1);
+            float((facing)*60)+(x),
+            (*(&y))+g_F1017_VolleyYAt0065908C,
+            facing,1);
         PrepareActionAt453D40(7);
     }
-    if (S16(0x62)==21 && S16(0x64)==0) {
+    if ((reinterpret_cast<signed short&>(animationStage))==21 && (reinterpret_cast<signed short&>(animationFrame))==0) {
         StartAnimationAt46D000(0xC);
         SpawnFloatXYAt453A70(0x321+(RandAt455580(0,100)>200),
-            float((*reinterpret_cast<signed char*>(RAW+0x66))*60)+F32(0x44),
-            (*(&POS48))+g_F1017_VolleyYAt0065908C,
-            *reinterpret_cast<signed char*>(RAW+0x66),1);
+            float((facing)*60)+(x),
+            (*(&y))+g_F1017_VolleyYAt0065908C,
+            facing,1);
         SpawnFloatXYAt453A70(0x33F,
-            float((*reinterpret_cast<signed char*>(RAW+0x66))*60)+F32(0x44),
-            (*(&POS48))+g_F1017_VolleyYAt0065908C,
-            *reinterpret_cast<signed char*>(RAW+0x66),1);
+            float((facing)*60)+(x),
+            (*(&y))+g_F1017_VolleyYAt0065908C,
+            facing,1);
         PrepareActionAt453D40(7);
     }
-    if (S16(0x62)==23 && S16(0x64)==0) {
+    if ((reinterpret_cast<signed short&>(animationStage))==23 && (reinterpret_cast<signed short&>(animationFrame))==0) {
         StartAnimationAt46D000(0xC);
         SpawnFloatXYAt453A70(0x321+(RandAt455580(0,100)>200),
-            float((*reinterpret_cast<signed char*>(RAW+0x66))*60)+F32(0x44),
-            (*(&POS48))+g_F1017_VolleyYAt0065908C,
-            *reinterpret_cast<signed char*>(RAW+0x66),1);
+            float((facing)*60)+(x),
+            (*(&y))+g_F1017_VolleyYAt0065908C,
+            facing,1);
         SpawnFloatXYAt453A70(0x33F,
-            float((*reinterpret_cast<signed char*>(RAW+0x66))*60)+F32(0x44),
-            (*(&POS48))+g_F1017_VolleyYAt0065908C,
-            *reinterpret_cast<signed char*>(RAW+0x66),1);
+            float((facing)*60)+(x),
+            (*(&y))+g_F1017_VolleyYAt0065908C,
+            facing,1);
         PrepareActionAt453D40(7);
-        if (S16(0xF00)<6) {
-            ++S16(0xF00);
+        if ((reinterpret_cast<signed short&>(scriptCounterF00))<6) {
+            ++reinterpret_cast<signed short&>(scriptCounterF00);
             SetAuxActionAt40FB40(15);
         }
     }
-    if (S16(0x62)==34 && S16(0x64)==0)
+    if ((reinterpret_cast<signed short&>(animationStage))==34 && (reinterpret_cast<signed short&>(animationFrame))==0)
         SetAuxActionAt40FB40(32);
     break;
 }

@@ -3,11 +3,11 @@
 // Authored as a real internal state in a still NONEXACT 82KB
 // original fighter parent; not a standalone game function.
         case 0x62: {
-            if (GetNativeActionAt40FA30()==S16(0x70)) {
+            if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
                 SetNativeActionAt40FAC0(0x5F);
-                if (S16(0xF00)==1)
+                if ((reinterpret_cast<signed short&>(scriptCounterF00))==1)
                     SetNativeActionAt40FAC0(0x5D);
-                if (S16(0xF00)==2)
+                if ((reinterpret_cast<signed short&>(scriptCounterF00))==2)
                     SetNativeActionAt40FAC0(0x5E);
             }
             break;

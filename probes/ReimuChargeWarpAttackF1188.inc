@@ -1,30 +1,30 @@
 case R1188_ACTION: {
-    if (S16(0x62)==0 && S16(0x64)==0) {
+    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
         ResetAt453E20();
-        S16(0x80)=1; I32(0x7C)=0; FLAG=0;
+        reinterpret_cast<signed short&>(field080)=1; field07C=0; field3AC=0;
     }
 #include "ReimuChargeTransformF1188.inc"
-    if (POS48>g_ThresholdAt0065782C && S16(0x62)<R1188_LAND_STAGE
+    if (y>g_ThresholdAt0065782C && (reinterpret_cast<signed short&>(animationStage))<R1188_LAND_STAGE
 #if R1188_HAS_GRAVITY_MIN
-        && S16(0x62)>3
+        && (reinterpret_cast<signed short&>(animationStage))>3
 #endif
-    ) POS54=POS54-g_ReimuChargeFallAt00659094;
-    if (S16(0x62)==R1188_LAND_STAGE || S16(0x62)==R1188_LAND_STAGE+1) {
-        if (POS48+POS54<g_ThresholdAt0065782C) {
-            POS48=0.0f; POS=0.0f; POS54=0.0f;
+    ) velocityY=velocityY-g_ReimuChargeFallAt00659094;
+    if ((reinterpret_cast<signed short&>(animationStage))==R1188_LAND_STAGE || (reinterpret_cast<signed short&>(animationStage))==R1188_LAND_STAGE+1) {
+        if (y+velocityY<g_ThresholdAt0065782C) {
+            y=0.0f; velocityX=0.0f; velocityY=0.0f;
             SetAuxActionAt40FB40(R1188_LAND_STAGE+2);
             break;
         }
     }
-    if (GetNativeActionAt40FA30()==S16(0x70)) SetNativeActionAt40FAC0(0);
-    if (S16(0x62)==R1188_RETURN_STAGE && S16(0x64)==0) {
-        F32(0x44)=*reinterpret_cast<float*>(OWNER+0x44)-float(*reinterpret_cast<signed char*>(RAW+0x66)*180);
-        POS48=150.0f; POS=6.0f; POS54=8.0f;
+    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) SetNativeActionAt40FAC0(0);
+    if ((reinterpret_cast<signed short&>(animationStage))==R1188_RETURN_STAGE && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        x=opponent->x-float(facing*180);
+        y=150.0f; velocityX=6.0f; velocityY=8.0f;
         PlaySoundAt453D40(2);
     }
-    if (S16(0x62)==R1188_LAND_STAGE-1 && S16(0x64)==0) {
-        POS=5.0f; POS54=-16.0f;
+    if ((reinterpret_cast<signed short&>(animationStage))==R1188_LAND_STAGE-1 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        velocityX=5.0f; velocityY=-16.0f;
     }
-    if (S16(0x62)==R1188_LAND_STAGE+2 && S16(0x64)==0) SetAuxActionAt40FB40(R1188_LAND_STAGE);
+    if ((reinterpret_cast<signed short&>(animationStage))==R1188_LAND_STAGE+2 && (reinterpret_cast<signed short&>(animationFrame))==0) SetAuxActionAt40FB40(R1188_LAND_STAGE);
     break;
 }

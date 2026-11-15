@@ -3,21 +3,21 @@
 // Physical PE shows prepare stage3, animation1C, action9.
 // Not independently callable whole original game CODE.
 case 0x130: {
-    POS54=POS54-POS5C;
-    if (POS48+POS54<=g_ThresholdAt0065782C) {
+    velocityY=velocityY-field05C;
+    if (y+velocityY<=g_ThresholdAt0065782C) {
         SetNativeActionAt40FAC0(0xA);
-        POS48=0.0f;
-        POS5C=0.0f;
-        POS54=0.0f;
+        y=0.0f;
+        field05C=0.0f;
+        velocityY=0.0f;
         return;
     }
-    if (S16(0x62)==0 && S16(0x64)==0) {
-        S16(0x80)=1;
-        I32(0x7C)=0;
+    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        reinterpret_cast<signed short&>(field080)=1;
+        field07C=0;
     }
-    if (GetNativeActionAt40FA30()==S16(0x70))
+    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
         SetNativeActionAt40FAC0(9);
-    if (S16(0x62)==3 && S16(0x64)==0)
+    if ((reinterpret_cast<signed short&>(animationStage))==3 && (reinterpret_cast<signed short&>(animationFrame))==0)
         PrepareActionAt453D60(0x1C);
     return;
 }

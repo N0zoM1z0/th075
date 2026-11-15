@@ -7,125 +7,125 @@
 // Entire 82KB game fighter remains NONEXACT, not inner-case exact.
 // F982 original native 004AC040 0x1F6 double-scaled fighter action
 case 0x1F6: {
-    if (S16(0x62)==0 && S16(0x64)==0) {
-        POS=POS*g_F982_Scale1F6At006583E0;
-        F32(0x54)=F32(0x54)*g_F982_Scale1F6At006583E0;
-        S16(0x80)=99;
-        I32(0x7C)=0;
-        FLAG=0;
-        S16(0xF00)=0;
-        S16(0xF02)=0;
+    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        velocityX=(velocityX)*g_F982_Scale1F6At006583E0;
+        velocityY=(velocityY)*g_F982_Scale1F6At006583E0;
+        reinterpret_cast<signed short&>(field080)=99;
+        field07C=0;
+        field3AC=0;
+        reinterpret_cast<signed short&>(scriptCounterF00)=0;
+        reinterpret_cast<signed short&>(scriptCounterF02)=0;
     }
-    if (S16(0x62)>3 && S16(0x62)<6) {
-        POS54=POS54-POS5C;
-        if (POS48+POS54<=g_ThresholdAt0065782C) {
+    if ((reinterpret_cast<signed short&>(animationStage))>3 && (reinterpret_cast<signed short&>(animationStage))<6) {
+        velocityY=velocityY-field05C;
+        if (y+velocityY<=g_ThresholdAt0065782C) {
             ResetAt453E20();
             SetAuxActionAt40FB40(6);
-            POS48=0.0f;
+            y=0.0f;
             break;
         }
     }
-    if (I32(0x7C)!=0) {
-        ++S16(0xF02);
-        if (S16(0xF02)>6) {
-            S16(0xF02)=0;
-            I32(0x7C)=0;
+    if (field07C!=0) {
+        ++reinterpret_cast<signed short&>(scriptCounterF02);
+        if ((reinterpret_cast<signed short&>(scriptCounterF02))>6) {
+            reinterpret_cast<signed short&>(scriptCounterF02)=0;
+            field07C=0;
         }
     }
-    if (GetNativeActionAt40FA30()==S16(0x70))
+    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
         SetNativeActionAt40FAC0(0);
-    if (S16(0x62)==2 && S16(0x64)==0) {
-        F32(0x314)=15.0f;
-        F32(0x318)=-20.0f;
-        F32(0x31C)=-60.0f;
+    if ((reinterpret_cast<signed short&>(animationStage))==2 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        field314=15.0f;
+        field318=-20.0f;
+        field31C=-60.0f;
         SpawnSevenFloatAt453B50(0x32A,
-            F32(0x44)+g_ThresholdAt0065782C,
-            (*(&POS48))+g_F981_YAt00659270,
-            *reinterpret_cast<signed char*>(RAW+0x66),1,0,1);
+            (x)+g_ThresholdAt0065782C,
+            (*(&y))+g_F981_YAt00659270,
+            facing,1,0,1);
         SpawnSevenFloatAt453B50(0x329,
-            F32(0x44)+g_ThresholdAt0065782C,
-            (*(&POS48))+g_F981_YAt00659270,
-            *reinterpret_cast<signed char*>(RAW+0x66),1,0,1);
-        F32(0x314)=10.0f;
-        F32(0x318)=-135.0f;
-        F32(0x31C)=-30.0f;
+            (x)+g_ThresholdAt0065782C,
+            (*(&y))+g_F981_YAt00659270,
+            facing,1,0,1);
+        field314=10.0f;
+        field318=-135.0f;
+        field31C=-30.0f;
         SpawnSevenFloatAt453B50(0x32A,
-            F32(0x44)+g_ThresholdAt0065782C,
-            (*(&POS48))+g_F981_YAt00659270,
-            *reinterpret_cast<signed char*>(RAW+0x66),1,0,1);
+            (x)+g_ThresholdAt0065782C,
+            (*(&y))+g_F981_YAt00659270,
+            facing,1,0,1);
         SpawnSevenFloatAt453B50(0x329,
-            F32(0x44)+g_ThresholdAt0065782C,
-            (*(&POS48))+g_F981_YAt00659270,
-            *reinterpret_cast<signed char*>(RAW+0x66),1,0,1);
+            (x)+g_ThresholdAt0065782C,
+            (*(&y))+g_F981_YAt00659270,
+            facing,1,0,1);
         PrepareActionAt453D40(3);
     }
-    if (S16(0x62)==4 && S16(0x64)==0 && S16(0xF00)<2) {
+    if ((reinterpret_cast<signed short&>(animationStage))==4 && (reinterpret_cast<signed short&>(animationFrame))==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<2) {
         SetAuxActionAt40FB40(2);
-        ++S16(0xF00);
+        ++reinterpret_cast<signed short&>(scriptCounterF00);
     }
-    if (S16(0x62)==6 && S16(0x64)==0)
+    if ((reinterpret_cast<signed short&>(animationStage))==6 && (reinterpret_cast<signed short&>(animationFrame))==0)
         SetAuxActionAt40FB40(5);
     break;
 }
 // F982 original native 004AC040 0x1F7 double-scaled fighter action
 case 0x1F7: {
-    if (S16(0x62)==0 && S16(0x64)==0) {
-        POS=POS*g_F982_Scale1F7At006584C8;
-        F32(0x54)=F32(0x54)*g_F982_Scale1F7At006584C8;
-        S16(0x80)=99;
-        I32(0x7C)=0;
-        FLAG=0;
-        S16(0xF00)=0;
-        S16(0xF02)=0;
+    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        velocityX=(velocityX)*g_F982_Scale1F7At006584C8;
+        velocityY=(velocityY)*g_F982_Scale1F7At006584C8;
+        reinterpret_cast<signed short&>(field080)=99;
+        field07C=0;
+        field3AC=0;
+        reinterpret_cast<signed short&>(scriptCounterF00)=0;
+        reinterpret_cast<signed short&>(scriptCounterF02)=0;
     }
-    if (S16(0x62)>3 && S16(0x62)<6) {
-        POS54=POS54-POS5C;
-        if (POS48+POS54<=g_ThresholdAt0065782C) {
+    if ((reinterpret_cast<signed short&>(animationStage))>3 && (reinterpret_cast<signed short&>(animationStage))<6) {
+        velocityY=velocityY-field05C;
+        if (y+velocityY<=g_ThresholdAt0065782C) {
             ResetAt453E20();
             SetAuxActionAt40FB40(6);
-            POS48=0.0f;
+            y=0.0f;
             break;
         }
     }
-    if (I32(0x7C)!=0) {
-        ++S16(0xF02);
-        if (S16(0xF02)>6) {
-            S16(0xF02)=0;
-            I32(0x7C)=0;
+    if (field07C!=0) {
+        ++reinterpret_cast<signed short&>(scriptCounterF02);
+        if ((reinterpret_cast<signed short&>(scriptCounterF02))>6) {
+            reinterpret_cast<signed short&>(scriptCounterF02)=0;
+            field07C=0;
         }
     }
-    if (GetNativeActionAt40FA30()==S16(0x70))
+    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
         SetNativeActionAt40FAC0(0);
-    if (S16(0x62)==2 && S16(0x64)==0) {
-        F32(0x314)=15.0f;
-        F32(0x318)=-20.0f;
-        F32(0x31C)=-60.0f;
+    if ((reinterpret_cast<signed short&>(animationStage))==2 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        field314=15.0f;
+        field318=-20.0f;
+        field31C=-60.0f;
         SpawnSevenFloatAt453B50(0x32A,
-            F32(0x44)+g_ThresholdAt0065782C,
-            (*(&POS48))+g_F981_YAt00659270,
-            *reinterpret_cast<signed char*>(RAW+0x66),1,0,1);
+            (x)+g_ThresholdAt0065782C,
+            (*(&y))+g_F981_YAt00659270,
+            facing,1,0,1);
         SpawnSevenFloatAt453B50(0x329,
-            F32(0x44)+g_ThresholdAt0065782C,
-            (*(&POS48))+g_F981_YAt00659270,
-            *reinterpret_cast<signed char*>(RAW+0x66),1,0,1);
-        F32(0x314)=10.0f;
-        F32(0x318)=-135.0f;
-        F32(0x31C)=-30.0f;
+            (x)+g_ThresholdAt0065782C,
+            (*(&y))+g_F981_YAt00659270,
+            facing,1,0,1);
+        field314=10.0f;
+        field318=-135.0f;
+        field31C=-30.0f;
         SpawnSevenFloatAt453B50(0x32A,
-            F32(0x44)+g_ThresholdAt0065782C,
-            (*(&POS48))+g_F981_YAt00659270,
-            *reinterpret_cast<signed char*>(RAW+0x66),1,0,1);
+            (x)+g_ThresholdAt0065782C,
+            (*(&y))+g_F981_YAt00659270,
+            facing,1,0,1);
         SpawnSevenFloatAt453B50(0x329,
-            F32(0x44)+g_ThresholdAt0065782C,
-            (*(&POS48))+g_F981_YAt00659270,
-            *reinterpret_cast<signed char*>(RAW+0x66),1,0,1);
+            (x)+g_ThresholdAt0065782C,
+            (*(&y))+g_F981_YAt00659270,
+            facing,1,0,1);
         PrepareActionAt453D40(3);
     }
-    if (S16(0x62)==4 && S16(0x64)==0 && S16(0xF00)<4) {
+    if ((reinterpret_cast<signed short&>(animationStage))==4 && (reinterpret_cast<signed short&>(animationFrame))==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<4) {
         SetAuxActionAt40FB40(2);
-        ++S16(0xF00);
+        ++reinterpret_cast<signed short&>(scriptCounterF00);
     }
-    if (S16(0x62)==6 && S16(0x64)==0)
+    if ((reinterpret_cast<signed short&>(animationStage))==6 && (reinterpret_cast<signed short&>(animationFrame))==0)
         SetAuxActionAt40FB40(5);
     break;
 }

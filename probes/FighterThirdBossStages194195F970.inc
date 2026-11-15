@@ -8,85 +8,85 @@
  // Original whole 82KB fighter and EBP temp owners still NONEXACT.
 // Native original Japanese TH075 fighter 004AC040 stage 0x194, 644B/168x86.
 case 0x194: {
-    if (S16(0x62)==0 && S16(0x64)==0) {
-        I32(0x7C)=1;
-        S16(0xF00)=0;
-        S16(0xF02)=0;
+    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        field07C=1;
+        reinterpret_cast<signed short&>(scriptCounterF00)=0;
+        reinterpret_cast<signed short&>(scriptCounterF02)=0;
     }
-    if (S16(0x62)>4 && S16(0xF00)<=0 && S16(0xF02)<5) {
+    if ((reinterpret_cast<signed short&>(animationStage))>4 && (reinterpret_cast<signed short&>(scriptCounterF00))<=0 && (reinterpret_cast<signed short&>(scriptCounterF02))<5) {
         PrepareActionAt453D40(0);
         StartAnimationAt46D000(0x28);
-        F32(0x314)=float(S16(0xF02)*4-8);
-        F32(0x318)=7.0f;
-        SpawnWithFloatAt453A70(0x320,I32(0x44),
-             (*(&POS48))+g_F970_YAt006590AC,
-             *reinterpret_cast<signed char*>(RAW+0x66),1);
-        F32(0x314)=float(S16(0xF02)*4-4);
-        F32(0x318)=7.0f;
-        SpawnWithFloatAt453A70(0x320,I32(0x44),
-             (*(&POS48))+g_F970_YAt006590AC,
-             *reinterpret_cast<signed char*>(RAW+0x66),1);
-        F32(0x314)=float(S16(0xF02)*4-12);
-        F32(0x318)=7.0f;
-        SpawnWithFloatAt453A70(0x320,I32(0x44),
-             (*(&POS48))+g_F970_YAt006590AC,
-             *reinterpret_cast<signed char*>(RAW+0x66),1);
-        S16(0xF00)=2;
-        ++S16(0xF02);
+        field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*4-8);
+        field318=7.0f;
+        SpawnWithFloatAt453A70(0x320,reinterpret_cast<int&>(x),
+             (*(&y))+g_F970_YAt006590AC,
+             facing,1);
+        field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*4-4);
+        field318=7.0f;
+        SpawnWithFloatAt453A70(0x320,reinterpret_cast<int&>(x),
+             (*(&y))+g_F970_YAt006590AC,
+             facing,1);
+        field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*4-12);
+        field318=7.0f;
+        SpawnWithFloatAt453A70(0x320,reinterpret_cast<int&>(x),
+             (*(&y))+g_F970_YAt006590AC,
+             facing,1);
+        reinterpret_cast<signed short&>(scriptCounterF00)=2;
+        ++reinterpret_cast<signed short&>(scriptCounterF02);
     }
-    --S16(0xF00);
-    POS54=POS54-POS5C;
-    if (GetNativeActionAt40FA30()==S16(0x70))
+    --reinterpret_cast<signed short&>(scriptCounterF00);
+    velocityY=velocityY-field05C;
+    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
         SetNativeActionAt40FAC0(9);
-    if (S16(0x62)==4 && S16(0x64)==0)
-        SpawnDirectedAt453A70(0x335,I32(0x44),I32(0x48),
-            *reinterpret_cast<signed char*>(RAW+0x66),1);
-    if (S16(0x62)==5 && S16(0x64)==0) {
-        POS=-6.0f;
-        POS54=9.0f;
-        POS5C=0.7f;
+    if ((reinterpret_cast<signed short&>(animationStage))==4 && (reinterpret_cast<signed short&>(animationFrame))==0)
+        SpawnDirectedAt453A70(0x335,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+            facing,1);
+    if ((reinterpret_cast<signed short&>(animationStage))==5 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        velocityX=-6.0f;
+        velocityY=9.0f;
+        field05C=0.7f;
     }
     break;
 }
 // Native original Japanese TH075 fighter 004AC040 stage 0x195, 644B/168x86.
 case 0x195: {
-    if (S16(0x62)==0 && S16(0x64)==0) {
-        I32(0x7C)=1;
-        S16(0xF00)=0;
-        S16(0xF02)=0;
+    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        field07C=1;
+        reinterpret_cast<signed short&>(scriptCounterF00)=0;
+        reinterpret_cast<signed short&>(scriptCounterF02)=0;
     }
-    if (S16(0x62)>4 && S16(0xF00)<=0 && S16(0xF02)<5) {
+    if ((reinterpret_cast<signed short&>(animationStage))>4 && (reinterpret_cast<signed short&>(scriptCounterF00))<=0 && (reinterpret_cast<signed short&>(scriptCounterF02))<5) {
         PrepareActionAt453D40(0);
         StartAnimationAt46D000(0x28);
-        F32(0x314)=float(S16(0xF02)*4-45);
-        F32(0x318)=7.0f;
-        SpawnWithFloatAt453A70(0x320,I32(0x44),
-             (*(&POS48))+g_F970_YAt006590AC,
-             *reinterpret_cast<signed char*>(RAW+0x66),1);
-        F32(0x314)=float(S16(0xF02)*4-41);
-        F32(0x318)=7.0f;
-        SpawnWithFloatAt453A70(0x320,I32(0x44),
-             (*(&POS48))+g_F970_YAt006590AC,
-             *reinterpret_cast<signed char*>(RAW+0x66),1);
-        F32(0x314)=float(S16(0xF02)*4-49);
-        F32(0x318)=7.0f;
-        SpawnWithFloatAt453A70(0x320,I32(0x44),
-             (*(&POS48))+g_F970_YAt006590AC,
-             *reinterpret_cast<signed char*>(RAW+0x66),1);
-        S16(0xF00)=2;
-        ++S16(0xF02);
+        field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*4-45);
+        field318=7.0f;
+        SpawnWithFloatAt453A70(0x320,reinterpret_cast<int&>(x),
+             (*(&y))+g_F970_YAt006590AC,
+             facing,1);
+        field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*4-41);
+        field318=7.0f;
+        SpawnWithFloatAt453A70(0x320,reinterpret_cast<int&>(x),
+             (*(&y))+g_F970_YAt006590AC,
+             facing,1);
+        field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*4-49);
+        field318=7.0f;
+        SpawnWithFloatAt453A70(0x320,reinterpret_cast<int&>(x),
+             (*(&y))+g_F970_YAt006590AC,
+             facing,1);
+        reinterpret_cast<signed short&>(scriptCounterF00)=2;
+        ++reinterpret_cast<signed short&>(scriptCounterF02);
     }
-    --S16(0xF00);
-    POS54=POS54-POS5C;
-    if (GetNativeActionAt40FA30()==S16(0x70))
+    --reinterpret_cast<signed short&>(scriptCounterF00);
+    velocityY=velocityY-field05C;
+    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
         SetNativeActionAt40FAC0(9);
-    if (S16(0x62)==4 && S16(0x64)==0)
-        SpawnDirectedAt453A70(0x335,I32(0x44),I32(0x48),
-            *reinterpret_cast<signed char*>(RAW+0x66),1);
-    if (S16(0x62)==5 && S16(0x64)==0) {
-        POS=-6.0f;
-        POS54=9.0f;
-        POS5C=0.7f;
+    if ((reinterpret_cast<signed short&>(animationStage))==4 && (reinterpret_cast<signed short&>(animationFrame))==0)
+        SpawnDirectedAt453A70(0x335,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
+            facing,1);
+    if ((reinterpret_cast<signed short&>(animationStage))==5 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        velocityX=-6.0f;
+        velocityY=9.0f;
+        field05C=0.7f;
     }
     break;
 }

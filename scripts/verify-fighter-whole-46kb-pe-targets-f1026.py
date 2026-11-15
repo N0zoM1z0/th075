@@ -33,7 +33,7 @@ D=Cs(CS_ARCH_X86,CS_MODE_32);PE=rd.verified_target()
 BASE=0x5214B0;NATIVE=46755;X86=13230;AFTER=901
 n=list(D.disasm(rd.pe_bytes_at(PE,BASE,NATIVE),BASE))
 assert len(n)==X86 and n[-1].address+n[-1].size==BASE+NATIVE
-code,refs=rd.object_function(obj,'?Advance@FighterSwitchF598_Boss005214B0@@QAEXXZ')
+code,refs=rd.object_function(obj,'?Advance@FighterSwitchF598_Boss005214B0@@UAEXXZ')
 i=[]
 for x in D.disasm(code,0):
  i.append(x)

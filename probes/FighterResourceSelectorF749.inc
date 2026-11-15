@@ -3,22 +3,22 @@
 // Natural real C++ resource-facing sign plus three actual action
 // transitions; an interior switch case, NOT an authored function.
         case 0x62: {
-            if (static_cast<int>(*reinterpret_cast<signed char*>(RAW+0x66)) * I32(0x4DC)>0
-                && (static_cast<unsigned int>(I32(0x4E8))>0
-                 || static_cast<unsigned int>(I32(0x4EC))>0
-                 || static_cast<unsigned int>(I32(0x4F0))>0
-                 || static_cast<unsigned int>(I32(0x4F4))>0))
-                S16(0xF00)=1;
-            if (static_cast<int>(*reinterpret_cast<signed char*>(RAW+0x66)) * I32(0x4DC)<0
-                && (static_cast<unsigned int>(I32(0x4E8))>0
-                 || static_cast<unsigned int>(I32(0x4EC))>0
-                 || static_cast<unsigned int>(I32(0x4F0))>0
-                 || static_cast<unsigned int>(I32(0x4F4))>0))
-                S16(0xF00)=2;
-            if (GetNativeActionAt40FA30()==S16(0x70)) {
+            if (static_cast<int>(facing) * inputX>0
+                && (static_cast<unsigned int>(inputA)>0
+                 || static_cast<unsigned int>(inputB)>0
+                 || static_cast<unsigned int>(inputC)>0
+                 || static_cast<unsigned int>(reinterpret_cast<int&>(inputD))>0))
+                reinterpret_cast<signed short&>(scriptCounterF00)=1;
+            if (static_cast<int>(facing) * inputX<0
+                && (static_cast<unsigned int>(inputA)>0
+                 || static_cast<unsigned int>(inputB)>0
+                 || static_cast<unsigned int>(inputC)>0
+                 || static_cast<unsigned int>(reinterpret_cast<int&>(inputD))>0))
+                reinterpret_cast<signed short&>(scriptCounterF00)=2;
+            if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
                 SetNativeActionAt40FAC0(0x5F);
-                if (S16(0xF00)==1) SetNativeActionAt40FAC0(0x5D);
-                if (S16(0xF00)==2) SetNativeActionAt40FAC0(0x5E);
+                if ((reinterpret_cast<signed short&>(scriptCounterF00))==1) SetNativeActionAt40FAC0(0x5D);
+                if ((reinterpret_cast<signed short&>(scriptCounterF00))==2) SetNativeActionAt40FAC0(0x5E);
             }
             break;
         }

@@ -174,7 +174,7 @@ def main():
          hashlib.sha256(sparse).hexdigest()==table['map_sha'],
          'native pinned Japanese dense/sparse source hashes invalid')
     obj=candidate_object()
-    code,relocs=m.object_function(obj,'?Advance@FighterSwitchF572_Boss004EBDA0@@QAEXXZ')
+    code,relocs=m.object_function(obj,'?Advance@FighterSwitchF572_Boss004EBDA0@@UAEXXZ')
     body=[]
     for x in decoder.disasm(code,0):
         body.append(x)

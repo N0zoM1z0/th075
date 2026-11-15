@@ -8,52 +8,52 @@
  // Original 82KB whole game father remains NONEXACT.
 // F989 original Japanese TH075 fighter 004AC040 action258
 case 0x258: {
-    if (S16(0x62)==0 && S16(0x64)==0) {
-        I32(0x7C)=1;
+    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        field07C=1;
         ResetAt453E20();
-        S16(0xF00)=0;
-        S16(0xF02)=0;
+        reinterpret_cast<signed short&>(scriptCounterF00)=0;
+        reinterpret_cast<signed short&>(scriptCounterF02)=0;
     }
-    if (S16(0x62)>4) {
-        if (S16(0xF02)<3 && S16(0xF00)<=0) {
+    if ((reinterpret_cast<signed short&>(animationStage))>4) {
+        if ((reinterpret_cast<signed short&>(scriptCounterF02))<3 && (reinterpret_cast<signed short&>(scriptCounterF00))<=0) {
             PrepareActionAt453D40(0);
-            F32(0x314)=float(S16(0xF02)*3+100);
-            F32(0x318)=10.0f;
+            field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*3+100);
+            field318=10.0f;
             SpawnFloatXYAt453A70(0x325,
-                float((*reinterpret_cast<signed char*>(RAW+0x66))*97)+F32(0x44),
-                (*(&POS48))+g_F971_YAt00659498,
-                *reinterpret_cast<signed char*>(RAW+0x66),1);
-            F32(0x314)=float(S16(0xF02)*3+95);
-            F32(0x318)=10.0f;
+                float((facing)*97)+(x),
+                (*(&y))+g_F971_YAt00659498,
+                facing,1);
+            field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*3+95);
+            field318=10.0f;
             SpawnFloatXYAt453A70(0x325,
-                float((*reinterpret_cast<signed char*>(RAW+0x66))*97)+F32(0x44),
-                (*(&POS48))+g_F971_YAt00659498,
-                *reinterpret_cast<signed char*>(RAW+0x66),1);
-            F32(0x314)=float(S16(0xF02)*3+90);
-            F32(0x318)=10.0f;
+                float((facing)*97)+(x),
+                (*(&y))+g_F971_YAt00659498,
+                facing,1);
+            field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*3+90);
+            field318=10.0f;
             SpawnFloatXYAt453A70(0x325,
-                float((*reinterpret_cast<signed char*>(RAW+0x66))*97)+F32(0x44),
-                (*(&POS48))+g_F971_YAt00659498,
-                *reinterpret_cast<signed char*>(RAW+0x66),1);
-            F32(0x314)=float(S16(0xF02)*3+85);
-            F32(0x318)=10.0f;
+                float((facing)*97)+(x),
+                (*(&y))+g_F971_YAt00659498,
+                facing,1);
+            field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*3+85);
+            field318=10.0f;
             SpawnFloatXYAt453A70(0x325,
-                float((*reinterpret_cast<signed char*>(RAW+0x66))*97)+F32(0x44),
-                (*(&POS48))+g_F971_YAt00659498,
-                *reinterpret_cast<signed char*>(RAW+0x66),1);
-            F32(0x314)=float(S16(0xF02)*3+80);
-            F32(0x318)=10.0f;
+                float((facing)*97)+(x),
+                (*(&y))+g_F971_YAt00659498,
+                facing,1);
+            field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*3+80);
+            field318=10.0f;
             SpawnFloatXYAt453A70(0x325,
-                float((*reinterpret_cast<signed char*>(RAW+0x66))*97)+F32(0x44),
-                (*(&POS48))+g_F971_YAt00659498,
-                *reinterpret_cast<signed char*>(RAW+0x66),1);
+                float((facing)*97)+(x),
+                (*(&y))+g_F971_YAt00659498,
+                facing,1);
             StartAnimationAt46D000(0x64);
-            ++S16(0xF02);
-            S16(0xF00)=3;
+            ++reinterpret_cast<signed short&>(scriptCounterF02);
+            reinterpret_cast<signed short&>(scriptCounterF00)=3;
         }
-        --S16(0xF00);
+        --reinterpret_cast<signed short&>(scriptCounterF00);
     }
-    if (GetNativeActionAt40FA30()==S16(0x70))
+    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
         SetNativeActionAt40FAC0(0);
     break;
 }

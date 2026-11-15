@@ -7,108 +7,108 @@
 // Neither case nor father is credited as a complete original game function.
 // F971 original 004AC040 native 0x196 is five real projectile calls.
 case 0x196: {
-    if (S16(0x62)==0 && S16(0x64)==0) {
-        I32(0x7C)=1;
+    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        field07C=1;
         ResetAt453E20();
     }
-    if (GetNativeActionAt40FA30()==S16(0x70))
+    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
         SetNativeActionAt40FAC0(0);
-    if (S16(0x62)==6 && S16(0x64)==0) {
+    if ((reinterpret_cast<signed short&>(animationStage))==6 && (reinterpret_cast<signed short&>(animationFrame))==0) {
         PrepareActionAt453D40(0);
-        F32(0x314)=0.0f;
-        F32(0x318)=20.0f;
+        field314=0.0f;
+        field318=20.0f;
         SpawnFloatXYAt453A70(0x328,
-            float((*reinterpret_cast<signed char*>(RAW+0x66))*39)+F32(0x44),
-            (*(&POS48))+g_F971_YAt00659494,
-            *reinterpret_cast<signed char*>(RAW+0x66),1);
+            float((facing)*39)+(x),
+            (*(&y))+g_F971_YAt00659494,
+            facing,1);
         SpawnFloatXYAt453A70(0x328,
-            float((*reinterpret_cast<signed char*>(RAW+0x66))*44)+F32(0x44),
-            (*(&POS48))+g_F971_YAt00659490,
-            *reinterpret_cast<signed char*>(RAW+0x66),1);
+            float((facing)*44)+(x),
+            (*(&y))+g_F971_YAt00659490,
+            facing,1);
         SpawnFloatXYAt453A70(0x328,
-            float((*reinterpret_cast<signed char*>(RAW+0x66))*49)+F32(0x44),
-            (*(&POS48))+g_F971_YAt00659294,
-            *reinterpret_cast<signed char*>(RAW+0x66),1);
+            float((facing)*49)+(x),
+            (*(&y))+g_F971_YAt00659294,
+            facing,1);
         SpawnFloatXYAt453A70(0x328,
-            float((*reinterpret_cast<signed char*>(RAW+0x66))*54)+F32(0x44),
-            (*(&POS48))+g_F971_YAt0065948C,
-            *reinterpret_cast<signed char*>(RAW+0x66),1);
+            float((facing)*54)+(x),
+            (*(&y))+g_F971_YAt0065948C,
+            facing,1);
         SpawnFloatXYAt453A70(0x328,
-            float((*reinterpret_cast<signed char*>(RAW+0x66))*59)+F32(0x44),
-            (*(&POS48))+g_F971_YAt00659488,
-            *reinterpret_cast<signed char*>(RAW+0x66),1);
+            float((facing)*59)+(x),
+            (*(&y))+g_F971_YAt00659488,
+            facing,1);
         StartAnimationAt46D000(0x96);
     }
     break;
 }
 // F971 original 004AC040 native 0x197 is five real projectile calls.
 case 0x197: {
-    if (S16(0x62)==0 && S16(0x64)==0) {
-        I32(0x7C)=1;
+    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        field07C=1;
         ResetAt453E20();
     }
-    if (GetNativeActionAt40FA30()==S16(0x70))
+    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
         SetNativeActionAt40FAC0(0);
-    if (S16(0x62)==5 && S16(0x64)==0) {
+    if ((reinterpret_cast<signed short&>(animationStage))==5 && (reinterpret_cast<signed short&>(animationFrame))==0) {
         PrepareActionAt453D40(0);
-        F32(0x314)=25.0f;
-        F32(0x318)=20.0f;
+        field314=25.0f;
+        field318=20.0f;
         SpawnFloatXYAt453A70(0x328,
-            float((*reinterpret_cast<signed char*>(RAW+0x66))*85)+F32(0x44),
-            (*(&POS48))+g_F971_YAt00659484,
-            *reinterpret_cast<signed char*>(RAW+0x66),1);
+            float((facing)*85)+(x),
+            (*(&y))+g_F971_YAt00659484,
+            facing,1);
         SpawnFloatXYAt453A70(0x328,
-            float((*reinterpret_cast<signed char*>(RAW+0x66))*91)+F32(0x44),
-            (*(&POS48))+g_F971_YAt00659480,
-            *reinterpret_cast<signed char*>(RAW+0x66),1);
+            float((facing)*91)+(x),
+            (*(&y))+g_F971_YAt00659480,
+            facing,1);
         SpawnFloatXYAt453A70(0x328,
-            float((*reinterpret_cast<signed char*>(RAW+0x66))*97)+F32(0x44),
-            (*(&POS48))+g_F971_YAt00659498,
-            *reinterpret_cast<signed char*>(RAW+0x66),1);
+            float((facing)*97)+(x),
+            (*(&y))+g_F971_YAt00659498,
+            facing,1);
         SpawnFloatXYAt453A70(0x328,
-            float((*reinterpret_cast<signed char*>(RAW+0x66))*103)+F32(0x44),
-            (*(&POS48))+g_F971_YAt0065947C,
-            *reinterpret_cast<signed char*>(RAW+0x66),1);
+            float((facing)*103)+(x),
+            (*(&y))+g_F971_YAt0065947C,
+            facing,1);
         SpawnFloatXYAt453A70(0x328,
-            float((*reinterpret_cast<signed char*>(RAW+0x66))*109)+F32(0x44),
-            (*(&POS48))+g_F971_YAt00659478,
-            *reinterpret_cast<signed char*>(RAW+0x66),1);
+            float((facing)*109)+(x),
+            (*(&y))+g_F971_YAt00659478,
+            facing,1);
         StartAnimationAt46D000(0x96);
     }
     break;
 }
 // F971 original 004AC040 native 0x198 is five real projectile calls.
 case 0x198: {
-    if (S16(0x62)==0 && S16(0x64)==0) {
-        I32(0x7C)=1;
+    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        field07C=1;
         ResetAt453E20();
     }
-    if (GetNativeActionAt40FA30()==S16(0x70))
+    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
         SetNativeActionAt40FAC0(2);
-    if (S16(0x62)==6 && S16(0x64)==0) {
+    if ((reinterpret_cast<signed short&>(animationStage))==6 && (reinterpret_cast<signed short&>(animationFrame))==0) {
         PrepareActionAt453D40(0);
-        F32(0x314)=0.0f;
-        F32(0x318)=20.0f;
+        field314=0.0f;
+        field318=20.0f;
         SpawnFloatXYAt453A70(0x328,
-            float((*reinterpret_cast<signed char*>(RAW+0x66))*92)+F32(0x44),
-            (*(&POS48))+g_F971_YAt0065826C,
-            *reinterpret_cast<signed char*>(RAW+0x66),1);
+            float((facing)*92)+(x),
+            (*(&y))+g_F971_YAt0065826C,
+            facing,1);
         SpawnFloatXYAt453A70(0x328,
-            float((*reinterpret_cast<signed char*>(RAW+0x66))*98)+F32(0x44),
-            (*(&POS48))+g_F971_YAt00658264,
-            *reinterpret_cast<signed char*>(RAW+0x66),1);
+            float((facing)*98)+(x),
+            (*(&y))+g_F971_YAt00658264,
+            facing,1);
         SpawnFloatXYAt453A70(0x328,
-            float((*reinterpret_cast<signed char*>(RAW+0x66))*104)+F32(0x44),
-            (*(&POS48))+g_F971_YAt00658294,
-            *reinterpret_cast<signed char*>(RAW+0x66),1);
+            float((facing)*104)+(x),
+            (*(&y))+g_F971_YAt00658294,
+            facing,1);
         SpawnFloatXYAt453A70(0x328,
-            float((*reinterpret_cast<signed char*>(RAW+0x66))*110)+F32(0x44),
-            (*(&POS48))+g_F971_YAt00657878,
-            *reinterpret_cast<signed char*>(RAW+0x66),1);
+            float((facing)*110)+(x),
+            (*(&y))+g_F971_YAt00657878,
+            facing,1);
         SpawnFloatXYAt453A70(0x328,
-            float((*reinterpret_cast<signed char*>(RAW+0x66))*116)+F32(0x44),
-            (*(&POS48))+g_F971_YAt00657CBC,
-            *reinterpret_cast<signed char*>(RAW+0x66),1);
+            float((facing)*116)+(x),
+            (*(&y))+g_F971_YAt00657CBC,
+            facing,1);
         StartAnimationAt46D000(0x96);
     }
     break;

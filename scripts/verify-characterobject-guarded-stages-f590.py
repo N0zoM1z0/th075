@@ -28,7 +28,7 @@ SRC=ROOT/'probes/CharacterObjectActionsF572.cpp'
 BASE=ROOT/'.analysis/f583-characterobject-state-leaves-source'
 OBJ=BASE/'CharacterObjectF583.obj'
 OUT=ROOT/'.analysis/f590-characterobject-guarded-source'
-SYMBOL='?Advance@FighterSwitchF572_Boss004EBDA0@@QAEXXZ'
+SYMBOL='?Advance@FighterSwitchF572_Boss004EBDA0@@UAEXXZ'
 STATES={0x370:(0x371,79,286,7),
         0x371:(0x384,44,156,4),
         0x384:(0x385,128,473,14)}

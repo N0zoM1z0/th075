@@ -8,91 +8,91 @@
 // CalculateAngleAt483300 / __ftol2 are native source ABI probes only.
 case 0x2F9: {
             ConfigureStormAt454BC0(3,4,0xFF0000);
-            if (S16(0x62)==0 && S16(0x64)==0) {
-                S16(0xF00)=0;
-                S16(0xF02)=0;
-                S16(0xF04)=0;
-                I32(0x7C)=1;
+            if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+                reinterpret_cast<signed short&>(scriptCounterF00)=0;
+                reinterpret_cast<signed short&>(scriptCounterF02)=0;
+                reinterpret_cast<signed short&>(fieldF04)=0;
+                field07C=1;
                 ResetAt453E20();
             }
-            if (S16(0x62)>1 && S16(0x62)<20) {
-                if (S16(0x62)>15 || S16(0x62)<10) {
-                    POS54=POS54-POS5C;
+            if ((reinterpret_cast<signed short&>(animationStage))>1 && (reinterpret_cast<signed short&>(animationStage))<20) {
+                if ((reinterpret_cast<signed short&>(animationStage))>15 || (reinterpret_cast<signed short&>(animationStage))<10) {
+                    velocityY=velocityY-field05C;
                 }
-                if (POS48+POS54<=g_ThresholdAt0065782C) {
+                if (y+velocityY<=g_ThresholdAt0065782C) {
                     SetAuxActionAt40FB40(0x14);
-                    POS48=0.0f;
+                    y=0.0f;
                     ResetAt453E20();
                     break;
                 }
             }
-            if (S16(0x62)==11 && S16(0x64)==0) {
+            if ((reinterpret_cast<signed short&>(animationStage))==11 && (reinterpret_cast<signed short&>(animationFrame))==0) {
                 PrepareActionAt453D40(0x12);
-                F32(0x314)=float(S16(0xF02)+S16(0xF00)*10);
+                field314=float((reinterpret_cast<signed short&>(scriptCounterF02))+(reinterpret_cast<signed short&>(scriptCounterF00))*10);
                 SpawnFloatXYAt453A70(0x391,
-                    float(*reinterpret_cast<signed char*>(RAW+0x66)*30)+F32(0x44),
-                    (*(&POS48))+g_StormAngleShotYAt00659A18,
-                    *reinterpret_cast<signed char*>(RAW+0x66),1);
+                    float(facing*30)+(x),
+                    (*(&y))+g_StormAngleShotYAt00659A18,
+                    facing,1);
                 for (int i=0;i<static_cast<int>(g_CloudOpponentAt006714D0)*2+4;++i)
                     SpawnFloatXYAt453A70(0x392,
-                        float(*reinterpret_cast<signed char*>(RAW+0x66)*30)+F32(0x44),
-                        (*(&POS48))+g_StormAngleShotYAt00659A18,
-                        *reinterpret_cast<signed char*>(RAW+0x66),1);
+                        float(facing*30)+(x),
+                        (*(&y))+g_StormAngleShotYAt00659A18,
+                        facing,1);
             }
-            if (S16(0x62)==14 && S16(0x64)==0) {
+            if ((reinterpret_cast<signed short&>(animationStage))==14 && (reinterpret_cast<signed short&>(animationFrame))==0) {
                 PrepareActionAt453D40(0x12);
-                F32(0x314)=float(S16(0xF02)-S16(0xF00)*10);
+                field314=float((reinterpret_cast<signed short&>(scriptCounterF02))-(reinterpret_cast<signed short&>(scriptCounterF00))*10);
                 SpawnFloatXYAt453A70(0x391,
-                    float(*reinterpret_cast<signed char*>(RAW+0x66)*30)+F32(0x44),
-                    (*(&POS48))+g_StormAngleShotYAt00659A18,
-                    *reinterpret_cast<signed char*>(RAW+0x66),1);
+                    float(facing*30)+(x),
+                    (*(&y))+g_StormAngleShotYAt00659A18,
+                    facing,1);
                 for (int i=0;i<static_cast<int>(g_CloudOpponentAt006714D0)*2+4;++i)
                     SpawnFloatXYAt453A70(0x392,
-                        float(*reinterpret_cast<signed char*>(RAW+0x66)*30)+F32(0x44),
-                        (*(&POS48))+g_StormAngleShotYAt00659A18,
-                        *reinterpret_cast<signed char*>(RAW+0x66),1);
+                        float(facing*30)+(x),
+                        (*(&y))+g_StormAngleShotYAt00659A18,
+                        facing,1);
             }
-            if (GetNativeActionAt40FA30()==S16(0x70)) {
+            if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
                 SetNativeActionAt40FAC0(0);
-                S16(0x516)=RandomBoundaryAt455580(60,100)
+                reinterpret_cast<signed short&>(aiCardTimer)=RandomBoundaryAt455580(60,100)
                        -static_cast<int>(g_CloudOpponentAt006714D0)*20;
             }
-            if (S16(0x62)==2 && S16(0x64)==0) {
-                POS54=12.5f;
-                POS=-8.0f;
-                POS5C=0.4f;
+            if ((reinterpret_cast<signed short&>(animationStage))==2 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+                velocityY=12.5f;
+                velocityX=-8.0f;
+                field05C=0.4f;
             }
-            if (S16(0x62)==10 && S16(0x64)==0) {
-                POS=(*(&POS))*g_StormMotionAt00658348;
-                POS54=(*(&POS54))*g_StormMotionAt00658348;
+            if ((reinterpret_cast<signed short&>(animationStage))==10 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+                velocityX=(*(&velocityX))*g_StormMotionAt00658348;
+                velocityY=(*(&velocityY))*g_StormMotionAt00658348;
             }
-            if (S16(0x62)==11 && S16(0x64)==0) {
-                S16(0xF02)=static_cast<short>(
+            if ((reinterpret_cast<signed short&>(animationStage))==11 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+                reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>(
                     CalculateAngleAt483300(
-                        (*(&(*reinterpret_cast<float*>(OWNER+0x48)))-*(&POS48)),
-                        ((reinterpret_cast<const FighterBorrowedXViewF752*>(OWNER)->xAt44-reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44))
-                           *static_cast<float>(*reinterpret_cast<signed char*>(RAW+0x66)))
+                        (*(&(opponent->y))-*(&y)),
+                        ((reinterpret_cast<const FighterBorrowedXViewF752*>(opponent)->xAt44-reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44))
+                           *static_cast<float>(facing))
                     /g_StormAngleDenominatorAt00657828);
             }
-            if (S16(0x62)==13 && S16(0x64)==0) {
-                if (S16(0xF00)<static_cast<int>(g_CloudOpponentAt006714D0)*2+1) {
+            if ((reinterpret_cast<signed short&>(animationStage))==13 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+                if ((reinterpret_cast<signed short&>(scriptCounterF00))<static_cast<int>(g_CloudOpponentAt006714D0)*2+1) {
                     SetAuxActionAt40FB40(0xB);
-                    ++S16(0xF00);
-                } else S16(0xF00)=0;
+                    ++reinterpret_cast<signed short&>(scriptCounterF00);
+                } else reinterpret_cast<signed short&>(scriptCounterF00)=0;
             }
-            if (S16(0x62)==14 && S16(0x64)==0) {
-                S16(0xF02)=static_cast<short>(
+            if ((reinterpret_cast<signed short&>(animationStage))==14 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+                reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>(
                     CalculateAngleAt483300(
-                        (*(&(*reinterpret_cast<float*>(OWNER+0x48)))-*(&POS48)),
-                        ((reinterpret_cast<const FighterBorrowedXViewF752*>(OWNER)->xAt44-reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44))
-                           *static_cast<float>(*reinterpret_cast<signed char*>(RAW+0x66)))
+                        (*(&(opponent->y))-*(&y)),
+                        ((reinterpret_cast<const FighterBorrowedXViewF752*>(opponent)->xAt44-reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44))
+                           *static_cast<float>(facing))
                     /g_StormAngleDenominatorAt00657828);
             }
-            if (S16(0x62)==16 && S16(0x64)==0
-                && S16(0xF00)<static_cast<int>(g_CloudOpponentAt006714D0)*2+1) {
+            if ((reinterpret_cast<signed short&>(animationStage))==16 && (reinterpret_cast<signed short&>(animationFrame))==0
+                && (reinterpret_cast<signed short&>(scriptCounterF00))<static_cast<int>(g_CloudOpponentAt006714D0)*2+1) {
                 SetAuxActionAt40FB40(14);
-                ++S16(0xF00);
+                ++reinterpret_cast<signed short&>(scriptCounterF00);
             }
-            if (S16(0x62)==20 && S16(0x64)==0) SetAuxActionAt40FB40(0x12);
+            if ((reinterpret_cast<signed short&>(animationStage))==20 && (reinterpret_cast<signed short&>(animationFrame))==0) SetAuxActionAt40FB40(0x12);
             break;
         }

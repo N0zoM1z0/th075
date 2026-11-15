@@ -4,68 +4,68 @@
 // Entire original fighter still NONEXACT; no independent function credit.
         case 0x2D0: {
             ConfigureStormAt454BC0(3,4,0xFF0000);
-            if (S16(0x62)==0 && S16(0x64)==0) {
-                POS=0.0f;
-                S16(0xF00)=0;
+            if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+                velocityX=0.0f;
+                reinterpret_cast<signed short&>(scriptCounterF00)=0;
             }
-            if (POS48>g_ThresholdAt0065782C && S16(0x62)<7) {
-                POS54=POS54-g_ApproachLowerAt00658290;
-                if (POS48+POS54<=g_ThresholdAt0065782C) {
-                    POS48=0.0f;
+            if (y>g_ThresholdAt0065782C && (reinterpret_cast<signed short&>(animationStage))<7) {
+                velocityY=velocityY-g_ApproachLowerAt00658290;
+                if (y+velocityY<=g_ThresholdAt0065782C) {
+                    y=0.0f;
                     ResetAt453E20();
                     SetAuxActionAt40FB40(7);
                     break;
                 }
             }
-            if (GetNativeActionAt40FA30()==S16(0x70)) {
+            if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
                 SetNativeActionAt40FAC0(0);
                 break;
             }
-            if (S16(0x62)==4 && S16(0x64)==0) {
-                POS=float(RandomBoundaryAt455580(0,15))+g_ApproachUpperAt006592A4;
-                POS54=40.0f;
-                POS5C=6.0f;
+            if ((reinterpret_cast<signed short&>(animationStage))==4 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+                velocityX=float(RandomBoundaryAt455580(0,15))+g_ApproachUpperAt006592A4;
+                velocityY=40.0f;
+                field05C=6.0f;
                 SpawnAt453C80(0x7D,
-                    float(*reinterpret_cast<signed char*>(RAW+0x66)*80)+F32(0x44),
-                    (*(&POS48))+g_EightShotY2At00658268,
-                    *reinterpret_cast<signed char*>(RAW+0x66),1);
-                SpawnMixedAt453C80(0x7E,I32(0x44),
-                    (*(&POS48))+g_EightShotY2At00658268,
-                    *reinterpret_cast<signed char*>(RAW+0x66),1);
+                    float(facing*80)+(x),
+                    (*(&y))+g_EightShotY2At00658268,
+                    facing,1);
+                SpawnMixedAt453C80(0x7E,reinterpret_cast<int&>(x),
+                    (*(&y))+g_EightShotY2At00658268,
+                    facing,1);
                 PrepareActionAt453D60(31);
             }
             break;
         }
         case 0x2D1: {
             ConfigureStormAt454BC0(3,4,0xFF);
-            if (S16(0x62)==0 && S16(0x64)==0) {
-                POS=0.0f;
-                S16(0xF00)=0;
+            if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+                velocityX=0.0f;
+                reinterpret_cast<signed short&>(scriptCounterF00)=0;
             }
-            if (POS48>g_ThresholdAt0065782C && S16(0x62)<6) {
-                POS54=POS54-g_ApproachLowerAt00658290;
-                if (POS48+POS54<=g_ThresholdAt0065782C) {
-                    POS48=0.0f;
+            if (y>g_ThresholdAt0065782C && (reinterpret_cast<signed short&>(animationStage))<6) {
+                velocityY=velocityY-g_ApproachLowerAt00658290;
+                if (y+velocityY<=g_ThresholdAt0065782C) {
+                    y=0.0f;
                     ResetAt453E20();
                     SetAuxActionAt40FB40(6);
                     break;
                 }
             }
-            if (GetNativeActionAt40FA30()==S16(0x70)) {
+            if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
                 SetNativeActionAt40FAC0(0);
                 break;
             }
-            if (S16(0x62)==3 && S16(0x64)==0) {
-                POS=g_F711_ReverseRandomAt00659A0C-float(RandomBoundaryAt455580(0,15));
-                POS54=40.0f;
-                POS5C=6.0f;
+            if ((reinterpret_cast<signed short&>(animationStage))==3 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+                velocityX=g_F711_ReverseRandomAt00659A0C-float(RandomBoundaryAt455580(0,15));
+                velocityY=40.0f;
+                field05C=6.0f;
                 SpawnAt453C80(0x7D,
-                    float(*reinterpret_cast<signed char*>(RAW+0x66)*80)+F32(0x44),
-                    (*(&POS48))+g_EightShotY2At00658268,
-                    *reinterpret_cast<signed char*>(RAW+0x66),1);
-                SpawnMixedAt453C80(0x7E,I32(0x44),
-                    (*(&POS48))+g_EightShotY2At00658268,
-                    *reinterpret_cast<signed char*>(RAW+0x66),1);
+                    float(facing*80)+(x),
+                    (*(&y))+g_EightShotY2At00658268,
+                    facing,1);
+                SpawnMixedAt453C80(0x7E,reinterpret_cast<int&>(x),
+                    (*(&y))+g_EightShotY2At00658268,
+                    facing,1);
                 PrepareActionAt453D60(31);
             }
             break;

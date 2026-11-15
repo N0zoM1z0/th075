@@ -7,49 +7,49 @@
 // Three physically wrong x86 widths are NOT to be hidden with padding,
 // manual ASM, fake locals, or separate-case 'exact' credit.
 case 0xC8: {
-    FLAG=1;
+    field3AC=1;
     ConfigureStormAt454BC0(3,4,0xFF);
-    if (S16(0x62)==0 && S16(0x64)==0) {
-        POS=0.0f;
-        S16(0xF00)=0;
+    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        velocityX=0.0f;
+        reinterpret_cast<signed short&>(scriptCounterF00)=0;
     }
-    if (POS>g_F948_C8UpperAt00657854) {
-        POS=POS-g_F948_C8DragAt00658350;
-        if (POS<g_F948_C8UpperAt00657854)
-            POS=11.0f;
+    if ((velocityX)>g_F948_C8UpperAt00657854) {
+        velocityX=(velocityX)-g_F948_C8DragAt00658350;
+        if ((velocityX)<g_F948_C8UpperAt00657854)
+            velocityX=11.0f;
     }
-    if (I32(0x4E0)<0) {
-        if (static_cast<int>(*reinterpret_cast<signed char*>(RAW+0x66))*I32(0x4DC)>0) {
+    if (inputY<0) {
+        if (static_cast<int>(facing)*inputX>0) {
             SetNativeActionAt40FAC0(0xCD);
             break;
         }
         SetNativeActionAt40FAC0(0xCC);
         break;
     }
-    if (S16(0xF00)>0 &&
-        static_cast<int>(*reinterpret_cast<signed char*>(RAW+0x66))*I32(0x4DC)<=0) {
+    if ((reinterpret_cast<signed short&>(scriptCounterF00))>0 &&
+        static_cast<int>(facing)*inputX<=0) {
         SetNativeActionAt40FAC0(0xCF);
         break;
     }
-    if (GetNativeActionAt40FA30()==S16(0x70)) {
-        if (static_cast<int>(*reinterpret_cast<signed char*>(RAW+0x66))*I32(0x4DC)>0 &&
-            S16(0xF00)<2) {
+    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
+        if (static_cast<int>(facing)*inputX>0 &&
+            (reinterpret_cast<signed short&>(scriptCounterF00))<2) {
             SetAuxActionAt40FB40(4);
-            ++S16(0xF00);
+            ++reinterpret_cast<signed short&>(scriptCounterF00);
             break;
         }
         SetNativeActionAt40FAC0(0xCF);
         break;
     }
-    if (S16(0x62)==3 && S16(0x64)==0) {
-        POS=14.5f;
+    if ((reinterpret_cast<signed short&>(animationStage))==3 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        velocityX=14.5f;
         SpawnAt453C80(0x7D,
-            float((*reinterpret_cast<signed char*>(RAW+0x66))*80)+F32(0x44),
-            (*(&POS48))+g_F948_C8VolleyYAt00658268,
-            *reinterpret_cast<signed char*>(RAW+0x66),1);
-        SpawnMixedAt453C80(0x7E,I32(0x44),
-            (*(&POS48))+g_F948_C8VolleyYAt00658268,
-            *reinterpret_cast<signed char*>(RAW+0x66),1);
+            float((facing)*80)+(x),
+            (*(&y))+g_F948_C8VolleyYAt00658268,
+            facing,1);
+        SpawnMixedAt453C80(0x7E,reinterpret_cast<int&>(x),
+            (*(&y))+g_F948_C8VolleyYAt00658268,
+            facing,1);
         PrepareActionAt453D60(31);
     }
     break;

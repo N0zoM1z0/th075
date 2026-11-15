@@ -60,7 +60,7 @@ for tag,fragment in cases.items():
  if cp.returncode:
   rows.append({'variant':tag,'compile_error':(cp.stdout+cp.stderr)[-500:]})
   print(tag,'COMPILER FAIL',(cp.stdout+cp.stderr)[-230:],flush=True);continue
- code,refs=rd.object_function(obj,'?Advance@FighterSwitchF598_Boss004AC040@@QAEXXZ')
+ code,refs=rd.object_function(obj,'?Advance@FighterSwitchF598_Boss004AC040@@UAEXXZ')
  I=[]
  for i in D.disasm(code,0):
   I.append(i)

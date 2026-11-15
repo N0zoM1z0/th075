@@ -2,22 +2,22 @@
 // Meaningful float+54 lvalue needed for native FLD member/ FMUL global widths.
 // Enclosing giant remains original GPR and full-parent-JMP nonexact.
 case 0x1A0: {
-    if (S16(0x62)==0 && S16(0x64)==0) {
-        S16(0x80)=1;
-        I32(0x7C)=0;
-        POS=POS*g_F865SustainScaleAt00658348;
-        POS54=(*(&POS54))*g_F865SustainScaleAt00658348;
+    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        reinterpret_cast<signed short&>(field080)=1;
+        field07C=0;
+        velocityX=(velocityX)*g_F865SustainScaleAt00658348;
+        velocityY=(*(&velocityY))*g_F865SustainScaleAt00658348;
     }
-    if (POS48+POS54<=g_ThresholdAt0065782C) {
-        POS=0.0f;
-        POS54=0.0f;
-        POS48=0.0f;
+    if (y+velocityY<=g_ThresholdAt0065782C) {
+        velocityX=0.0f;
+        velocityY=0.0f;
+        y=0.0f;
     }
-    if (S16(0x62)>3)
-        POS54=POS54-POS5C;
-    if (GetNativeActionAt40FA30()==S16(0x70))
+    if ((reinterpret_cast<signed short&>(animationStage))>3)
+        velocityY=velocityY-field05C;
+    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
         SetNativeActionAt40FAC0(9);
-    if (S16(0x62)==4 && S16(0x64)==0)
-        I32(0x7C)=1;
+    if ((reinterpret_cast<signed short&>(animationStage))==4 && (reinterpret_cast<signed short&>(animationFrame))==0)
+        field07C=1;
     return;
 }

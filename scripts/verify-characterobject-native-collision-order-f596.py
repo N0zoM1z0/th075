@@ -27,7 +27,7 @@ ROOT=Path(__file__).resolve().parents[1]
 SOURCE=ROOT/'probes/CharacterObjectActionsF572.cpp'
 OBJ=ROOT/'.analysis/f593-characterobject-whole-source/one-real-normal-VC71-source.obj'
 OUT=ROOT/'.analysis/f596-characterobject-native-collision-source'
-SYM='?Advance@FighterSwitchF572_Boss004EBDA0@@QAEXXZ'
+SYM='?Advance@FighterSwitchF572_Boss004EBDA0@@UAEXXZ'
 PAIRS={0x32A:(0x32B,186,187,1062,1063,248,932),
        0x32C:(0x32D,114,115,1350,1351,176,635),
        0x335:(0x338,146,147,2521,2522,269,1022)}
