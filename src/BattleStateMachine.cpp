@@ -1,7 +1,7 @@
 #include "BattleStateMachine.hpp"
 #define FIELD(type, object, offset) (*reinterpret_cast<type *>(reinterpret_cast<unsigned char *>(object) + offset))
 #define SELF(type, offset) FIELD(type, this, offset)
-#define PLAYER(i) (reinterpret_cast<FrameActor **>(reinterpret_cast<unsigned char *>(this) + 0x44)[i])
+#define PLAYER(i) (reinterpret_cast<Fighter **>(reinterpret_cast<unsigned char *>(this) + 0x44)[i])
 #define ACTOR(type, i, offset) FIELD(type, PLAYER(i), offset)
 #define STATE SELF(signed char, 0x18)
 #define TIMER SELF(unsigned long, 0x0C)

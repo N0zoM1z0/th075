@@ -11,18 +11,13 @@ public:
 };
 extern signed char g_BattleCharacterNumberAt0067161E;
 extern NoticeDrawingF414* g_NoticeRendererAt0067143C;
-class FighterNoticePairF414 : public Fighter {
-public:
-    void SetNoticeFields(signed char notice, unsigned char first, unsigned char second);
-    void RenderNotice(void* text,unsigned char r,unsigned char g,unsigned char b,unsigned char highlighted);
-};
-void FighterNoticePairF414::SetNoticeFields(signed char notice,unsigned char first,unsigned char second) {
+void Fighter::SetNoticeFields(signed char notice,unsigned char first,unsigned char second) {
     if(notice>=0 && notice<=field532)
         noticeBadge=notice;
     noticeFirst=first;
     noticeColor=second;
 }
-void FighterNoticePairF414::RenderNotice(void* text,unsigned char r,unsigned char g,unsigned char b,unsigned char highlighted) {
+void Fighter::RenderNotice(void* text,unsigned char r,unsigned char g,unsigned char b,unsigned char highlighted) {
     if(g_BattleCharacterNumberAt0067161E<8)
         g_NoticeRendererAt0067143C->DrawNotice(text,r,g,b,24,reinterpret_cast<unsigned char&>(scriptStep),highlighted);
     else

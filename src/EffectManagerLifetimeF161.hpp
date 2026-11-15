@@ -3,7 +3,7 @@
 
 #include <deque>
 
-class FighterBaseActionsF159;
+class Fighter;
 
 // Observed lifetime prefix only: bound fighter followed by four complete
 // vendor containers. Never construct or embed this view, infer a complete
@@ -11,14 +11,14 @@ class FighterBaseActionsF159;
 class EffectManagerLifetimeF161 {
 public:
     ~EffectManagerLifetimeF161();
-    void BindFighter(FighterBaseActionsF159* fighter);
+    void BindFighter(Fighter* fighter);
 
 private:
     EffectManagerLifetimeF161();
     EffectManagerLifetimeF161(const EffectManagerLifetimeF161&);
     EffectManagerLifetimeF161& operator=(const EffectManagerLifetimeF161&);
 
-    FighterBaseActionsF159* fighter_;
+    Fighter* fighter_;
     std::deque<void*> entries_[4];
 };
 

@@ -4,7 +4,7 @@
 #include "FrameActorCollisionCountdownF1036.hpp"
 #include "FrameActorMotionPairsF1037.hpp"
 #define FIELD_AT(type, object, offset) (*reinterpret_cast<type *>(reinterpret_cast<unsigned char *>(object) + offset))
-#define PLAYER(offset) FIELD_AT(FrameActor *, this, offset)
+#define PLAYER(offset) FIELD_AT(Fighter *, this, offset)
 #define EFFECTS(offset) FIELD_AT(FrameEffectOwner *, PLAYER(offset), 0x2EC)
 short BattleFrame::UpdateFrame()
 {
@@ -86,7 +86,7 @@ void BattleFrame::UpdatePlayerCounters()
     if (F1036_COLLISION(PLAYER(0x44)).activeCountdown > 0) --F1036_COLLISION(PLAYER(0x44)).activeCountdown;
     if (F1036_COLLISION(PLAYER(0x48)).activeCountdown > 0) --F1036_COLLISION(PLAYER(0x48)).activeCountdown;
 }
-void FrameActor::AdvanceGuardedState()
+void Fighter::AdvanceGuardedState()
 {
     if (field082 == 0 && F1036_COLLISION(opponent).activeCountdown == 0) {
         if (action < 50) ForwardBaseAction();
@@ -95,7 +95,7 @@ void FrameActor::AdvanceGuardedState()
         DispatchActions();
     }
 }
-void FrameActor::AdvancePosition()
+void Fighter::AdvancePosition()
 {
     if (field082 == 0 && F1036_COLLISION(opponent).activeCountdown == 0) {
         if ((CheckHorizontalLimits() * facing) *
@@ -109,7 +109,7 @@ void FrameActor::AdvancePosition()
     }
 }
 
-signed char FrameActor::CheckHorizontalLimits()
+signed char Fighter::CheckHorizontalLimits()
 {
     if (x - 40.0f <= 0.0f ||
         F1037_POSITION(opponent).xPosition - x > 880.0f) return 1;
@@ -117,7 +117,7 @@ signed char FrameActor::CheckHorizontalLimits()
         x - F1037_POSITION(opponent).xPosition > 880.0f) return -1;
     return 0;
 }
-void FrameActor::ChooseFrameAction()
+void Fighter::ChooseFrameAction()
 {
     if (FIELD_AT(unsigned long, frameInfo, 0x3C) & 0x100000) return;
     if (health <= 0) return;

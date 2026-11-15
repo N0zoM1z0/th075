@@ -17,17 +17,17 @@ void InputBindingsF171::SetBindings(const void* source)
     memset(state, 0, 28);
 }
 
-void FighterBindingRoundF171::SetBindings(const void* source)
+void Fighter::SetBindings(const void* source)
 {
     inputBindings.SetBindings(source);
 }
 
-void FighterBindingRoundF171::BindOpponent(void* other)
+void Fighter::BindOpponent(void* other)
 {
     opponent = static_cast<Fighter*>(other);
 }
 
-void FighterBindingRoundF171::RecordRoundFields(
+void Fighter::RecordRoundFields(
     signed char index, short value, unsigned char first, unsigned char second,
     unsigned char third, unsigned int payloadA, unsigned int payloadB,
     unsigned int payloadC)

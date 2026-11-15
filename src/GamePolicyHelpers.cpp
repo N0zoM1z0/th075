@@ -25,10 +25,10 @@ u8 TextRasterizer::DecodeHexDigit(u8 value)
 
 void BattleHud::DrawSelectedNotice()
 {
-    (*reinterpret_cast<FighterState **>(
+    (*reinterpret_cast<Fighter **>(
         reinterpret_cast<u8 *>(this) + 0x44 +
         *(reinterpret_cast<signed char *>(this) + 0x5D) * 4))->DrawFacingSprite(
-        F960_BADGE(*reinterpret_cast<FighterState **>(
+        F960_BADGE(*reinterpret_cast<Fighter **>(
                 reinterpret_cast<u8 *>(this) + 0x44 +
                 *(reinterpret_cast<signed char *>(this) + 0x5D) * 4)).noticeAt6E7,
         *reinterpret_cast<float *>(reinterpret_cast<u8 *>(this) + 0x90),
@@ -37,7 +37,7 @@ void BattleHud::DrawSelectedNotice()
     g_TextRenderer->DrawBox();
 }
 
-bool FighterState::IsGroundedStateWindow()
+bool Fighter::IsGroundedStateWindow()
 {
     return y > g_ZeroFloat
         && flashGauge == 0
@@ -45,7 +45,7 @@ bool FighterState::IsGroundedStateWindow()
         && (frameInfo->flags & 0x100000) == 0;
 }
 
-void FighterState::ConfigureNoticeText(u8 enabled)
+void Fighter::ConfigureNoticeText(u8 enabled)
 {
     if (enabled) {
         g_TextRenderer->ConfigureText(35.0f, 360.0f, g_NoticeSelection < 8);
@@ -55,14 +55,14 @@ void FighterState::ConfigureNoticeText(u8 enabled)
     }
 }
 
-void FighterState::BeginNoticeTransition(u8 notice, u8 direction)
+void Fighter::BeginNoticeTransition(u8 notice, u8 direction)
 {
     reinterpret_cast<unsigned char&>(noticeState) = 2 - direction;
     SetNoticeFields(notice, 1, direction * 0x7F + 0x80);
     noticeAxis = 0x10;
 }
 
-void FighterState::InitializeNotice(short value)
+void Fighter::InitializeNotice(short value)
 {
     scriptId = value;
     scriptIndex = 0;

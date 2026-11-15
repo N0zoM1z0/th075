@@ -60,7 +60,7 @@ void BattleActiveCollision::ResolveActiveCollisions()
 
 #define FRAME(type, actor, offset) FIELD_AT(type, FIELD_AT(void *, actor, 0xAC), offset)
 
-bool FighterState::IsState50To149()
+bool Fighter::IsState50To149()
 {
     return action >= 50 && action < 150;
 }
@@ -68,7 +68,7 @@ bool FighterState::IsState50To149()
 bool BattleCollisionDispatch::ResolveGuard(CombatActor *attack, CombatActor *attacker, CombatActor *defender)
 {
     if (!(FRAME(unsigned long, attack, 0x40) & 0x40000) &&
-        !reinterpret_cast<FighterState *>(defender)->IsState50To149() &&
+        !reinterpret_cast<Fighter *>(defender)->IsState50To149() &&
         (FIELD_AT(short, defender, 0x88) != 0 || (FRAME(unsigned long, defender, 0x3C) & 0x4000))) {
         FIELD_AT(int, attack, 0x7C) = 6;
         --F1027_TIMERS(attack).wordAt80;

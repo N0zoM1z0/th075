@@ -5,7 +5,7 @@
 // No original expression spelling or complete owner layout is inferred.
 #define OPPONENT_Y opponent->y
 
-void FighterCameraOffsetF162::AdjustCameraOffset(signed char alternate)
+void Fighter::AdjustCameraOffset(signed char alternate)
 {
     signed char direction;
     if (alternate == 0) {

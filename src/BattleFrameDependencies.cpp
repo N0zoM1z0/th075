@@ -3,7 +3,7 @@
 #include "BattleStatusFloatPairF1096.hpp"
 #include "StateOverlayFloatWindowF1106.hpp"
 #define FIELD(type, object, offset) (*reinterpret_cast<type *>(reinterpret_cast<unsigned char *>(object) + offset))
-#define PLAYER(offset) FIELD(FrameActor *, this, offset)
+#define PLAYER(offset) FIELD(Fighter *, this, offset)
 #define ACTOR(type, offset, field) FIELD(type, PLAYER(offset), field)
 #define COLLISION reinterpret_cast<BattleCollision *>(this)
 void BattleFrame::ResolveBodySeparation()
@@ -82,7 +82,7 @@ void BattleFrame::ResolveBodySeparation()
 
 #include "BattleStateMachine.hpp"
 #define SLOT(type, offset) reinterpret_cast<type *>(reinterpret_cast<unsigned char *>(this) + offset)[i]
-#define INDEXED_PLAYER SLOT(FrameActor *, 0x44)
+#define INDEXED_PLAYER SLOT(Fighter *, 0x44)
 #define TIMER_FIELD(offset) FIELD(short, INDEXED_PLAYER, offset)
 void StateFramePolicies::UpdateTransition()
 {

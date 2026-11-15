@@ -12,7 +12,7 @@ extern unsigned char g_RenderByte0067161C;
 #define SELECTED_VALUE(offset) (*reinterpret_cast<int*>(reinterpret_cast<unsigned char*>(this) + F954_PROGRESS_KEYS(this).fighterAt16AC4 * 0x17F0 + (offset) + F954_PROGRESS_KEYS(this).difficultyAt16AC5 * 0x5FC))
 #define PLAYER(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char**>(reinterpret_cast<unsigned char*>(this) + 0x44)[i] + (offset)))
 #define CONTROL_PLAYER reinterpret_cast<FighterControlCallsF174*>(reinterpret_cast<unsigned char**>(reinterpret_cast<unsigned char*>(this) + 0x44)[i])
-#define BASE_PLAYER reinterpret_cast<FighterBaseActionsF159*>(reinterpret_cast<unsigned char**>(reinterpret_cast<unsigned char*>(this) + 0x44)[i])
+#define BASE_PLAYER reinterpret_cast<Fighter*>(reinterpret_cast<unsigned char**>(reinterpret_cast<unsigned char*>(this) + 0x44)[i])
 #define HELD_BUTTON reinterpret_cast<int*>(reinterpret_cast<unsigned char*>(&g_HeldInputAt00671664) + i * 0x48 + 8)[j]
 
 unsigned int SelectedProgressF174::ReadSelectedWord268(signed char key)

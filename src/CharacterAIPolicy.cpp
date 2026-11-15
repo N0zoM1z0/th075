@@ -3,7 +3,7 @@
 #include "CharacterAIPolicy.hpp"
 
 #define FIELD(type, offset) (*reinterpret_cast<type *>(reinterpret_cast<u8 *>(this) + offset))
-#define OPPONENT_GUARD static_cast<FighterState*>(opponent)->IsState50To149()
+#define OPPONENT_GUARD static_cast<Fighter*>(opponent)->IsState50To149()
 #define FORWARD_COMMAND (2 - (facing == 1))
 #define AIR_FORWARD_COMMAND (2 - (facing == -1))
 #define AIR_BACK_COMMAND (1 + (facing == -1))

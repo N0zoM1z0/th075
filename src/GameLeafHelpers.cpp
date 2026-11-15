@@ -55,7 +55,7 @@ void BattleEffect::ClearField74()
     *reinterpret_cast<u32 *>(reinterpret_cast<u8 *>(this) + 0x74) = 0;
 }
 
-void FighterState::ClearNoticeTransition()
+void Fighter::ClearNoticeTransition()
 {
     *(reinterpret_cast<u8 *>(this) + 0x6E6) = 0;
 }

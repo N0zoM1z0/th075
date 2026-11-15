@@ -5,7 +5,7 @@
 
 #define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
 
-void FighterOpponentGaugeF170::ApplyOpponentGaugeChange(
+void Fighter::ApplyOpponentGaugeChange(
     short base, short multiplier, short count)
 {
     short change;

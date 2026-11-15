@@ -20,8 +20,8 @@ void YuyukoFighter::AdvanceSequence()
             fieldF48 = 280.0f;
             InitializeNotice(100);
             ConfigureNoticeText(0);
-            ProcessNotice();
-            ProcessNotice();
+            ProcessAction();
+            ProcessAction();
         }
         if (sequenceTimer >= 50) {
             fieldF14 += 0.25f;
@@ -72,7 +72,7 @@ void YuyukoFighter::AdvanceSequence()
         SetNoticeMode(5);
         break;
     case 5:
-        if (ProcessNotice()) {
+        if (ProcessAction()) {
             if (sequenceTimer == 0) {
                 ClearNoticeTransition();
                 OPPONENT_ACTOR->ClearNoticeTransition();
@@ -104,7 +104,7 @@ void YuyukoFighter::AdvanceSequence()
         ++sequenceTimer;
         break;
     case 7:
-        if (ProcessNotice()) {
+        if (ProcessAction()) {
             field6EF = 1;
             SetNoticeMode(10);
             field713 = 2;
@@ -124,8 +124,8 @@ void YuyukoFighter::AdvanceSequence()
             fieldF48 = 280.0f;
             InitializeNotice(101);
             ConfigureNoticeText(0);
-            ProcessNotice();
-            ProcessNotice();
+            ProcessAction();
+            ProcessAction();
         }
         if (sequenceTimer >= 50) {
             fieldF14 += 0.25f;
@@ -176,7 +176,7 @@ void YuyukoFighter::AdvanceSequence()
         SetNoticeMode(15);
         break;
     case 15:
-        if (ProcessNotice()) {
+        if (ProcessAction()) {
             if (sequenceTimer == 0) {
                 ClearNoticeTransition();
                 OPPONENT_ACTOR->ClearNoticeTransition();
@@ -208,7 +208,7 @@ void YuyukoFighter::AdvanceSequence()
         ++sequenceTimer;
         break;
     case 17:
-        if (ProcessNotice()) {
+        if (ProcessAction()) {
             field6EF = 1;
             SetNoticeMode(20);
             field713 = 3;
@@ -228,8 +228,8 @@ void YuyukoFighter::AdvanceSequence()
             fieldF48 = 280.0f;
             InitializeNotice(102);
             ConfigureNoticeText(0);
-            ProcessNotice();
-            ProcessNotice();
+            ProcessAction();
+            ProcessAction();
         }
         if (sequenceTimer >= 50) {
             fieldF14 += 0.25f;
@@ -288,7 +288,7 @@ void YuyukoFighter::AdvanceSequence()
         SetNoticeMode(25);
         break;
     case 25:
-        if (ProcessNotice()) {
+        if (ProcessAction()) {
             if (sequenceTimer == 0) {
                 ClearNoticeTransition();
                 OPPONENT_ACTOR->ClearNoticeTransition();
@@ -320,7 +320,7 @@ void YuyukoFighter::AdvanceSequence()
         ++sequenceTimer;
         break;
     case 27:
-        if (ProcessNotice()) {
+        if (ProcessAction()) {
             field6EF = 1;
             SetNoticeMode(30);
             field713 = 4;
@@ -341,8 +341,8 @@ void YuyukoFighter::AdvanceSequence()
             fieldF48 = 280.0f;
             InitializeNotice(103);
             ConfigureNoticeText(0);
-            ProcessNotice();
-            ProcessNotice();
+            ProcessAction();
+            ProcessAction();
         }
         if (sequenceTimer >= 50) {
             fieldF14 += 0.25f;
@@ -393,7 +393,7 @@ void YuyukoFighter::AdvanceSequence()
         SetNoticeMode(35);
         break;
     case 35:
-        if (ProcessNotice()) {
+        if (ProcessAction()) {
             if (sequenceTimer == 0) {
                 ClearNoticeTransition();
                 OPPONENT_ACTOR->ClearNoticeTransition();
@@ -425,7 +425,7 @@ void YuyukoFighter::AdvanceSequence()
         ++sequenceTimer;
         break;
     case 37:
-        if (ProcessNotice()) {
+        if (ProcessAction()) {
             field6EF = 1;
             SetNoticeMode(40);
             field713 = 5;
@@ -445,8 +445,8 @@ void YuyukoFighter::AdvanceSequence()
             fieldF48 = 280.0f;
             InitializeNotice(104);
             ConfigureNoticeText(0);
-            ProcessNotice();
-            ProcessNotice();
+            ProcessAction();
+            ProcessAction();
         }
         if (sequenceTimer >= 50) {
             fieldF14 += 0.25f;
@@ -512,7 +512,7 @@ void YuyukoFighter::AdvanceSequence()
         SetNoticeMode(45);
         break;
     case 45:
-        if (ProcessNotice()) {
+        if (ProcessAction()) {
             if (sequenceTimer == 0) {
                 ClearNoticeTransition();
                 OPPONENT_ACTOR->ClearNoticeTransition();
@@ -554,7 +554,7 @@ void YuyukoFighter::AdvanceSequence()
         ++sequenceTimer;
         break;
     case 47:
-        if (ProcessNotice()) {
+        if (ProcessAction()) {
             field6EF = 1;
             SetNoticeMode(50);
             field713 = 6;
@@ -574,8 +574,8 @@ void YuyukoFighter::AdvanceSequence()
             fieldF48 = 280.0f;
             InitializeNotice(105);
             ConfigureNoticeText(0);
-            ProcessNotice();
-            ProcessNotice();
+            ProcessAction();
+            ProcessAction();
         }
         if (sequenceTimer >= 50) {
             fieldF14 += 0.25f;
@@ -626,7 +626,7 @@ void YuyukoFighter::AdvanceSequence()
         SetNoticeMode(52);
         break;
     case 52:
-        if (ProcessNotice()) {
+        if (ProcessAction()) {
             SetNoticeMode(53);
             ClearNoticeTransition();
             OPPONENT_ACTOR->ClearNoticeTransition();
@@ -666,7 +666,7 @@ void YuyukoFighter::AdvanceSequence()
         SetNoticeMode(55);
         break;
     case 55:
-        if (ProcessNotice()) {
+        if (ProcessAction()) {
             if (sequenceTimer == 0) {
                 ClearNoticeTransition();
                 OPPONENT_ACTOR->ClearNoticeTransition();
@@ -708,7 +708,7 @@ void YuyukoFighter::AdvanceSequence()
         ++sequenceTimer;
         break;
     case 57:
-        if (ProcessNotice()) {
+        if (ProcessAction()) {
             field6EF = 1;
             SetNoticeMode(60);
             field713 = 7;
@@ -727,8 +727,8 @@ void YuyukoFighter::AdvanceSequence()
             sequenceTimer += 60;
             InitializeNotice(106);
             ConfigureNoticeText(0);
-            ProcessNotice();
-            ProcessNotice();
+            ProcessAction();
+            ProcessAction();
         }
         if (sequenceTimer >= 160) {
             fieldF14 += 0.25f;
@@ -779,7 +779,7 @@ void YuyukoFighter::AdvanceSequence()
         SetNoticeMode(63);
         break;
     case 63:
-        if (ProcessNotice()) {
+        if (ProcessAction()) {
             if (sequenceTimer == 0) {
                 ClearNoticeTransition();
                 OPPONENT_ACTOR->ClearNoticeTransition();
@@ -818,8 +818,8 @@ void YuyukoFighter::AdvanceSequence()
         g_StateFadeAlpha = 0;
         InitializeNotice(107);
         ConfigureNoticeText(0);
-        ProcessNotice();
-        ProcessNotice();
+        ProcessAction();
+        ProcessAction();
         SetNoticeMode(71);
         break;
     case 71:
@@ -835,7 +835,7 @@ void YuyukoFighter::AdvanceSequence()
         SetNoticeMode(73);
         break;
     case 73:
-        if (ProcessNotice()) {
+        if (ProcessAction()) {
             if (fieldFDC > 5) fieldFDC -= 5;
             else fieldFDC = 0;
             if (fieldFDC == 0) {
@@ -856,8 +856,8 @@ void YuyukoFighter::AdvanceSequence()
         g_StateFadeAlpha = 0;
         InitializeNotice(108);
         ConfigureNoticeText(0);
-        ProcessNotice();
-        ProcessNotice();
+        ProcessAction();
+        ProcessAction();
         SetNoticeMode(81);
         break;
     case 81:
@@ -873,7 +873,7 @@ void YuyukoFighter::AdvanceSequence()
         SetNoticeMode(83);
         break;
     case 83:
-        if (ProcessNotice()) {
+        if (ProcessAction()) {
             if (fieldFDC > 5) fieldFDC -= 5;
             else fieldFDC = 0;
             if (fieldFDC == 0) {
@@ -894,8 +894,8 @@ void YuyukoFighter::AdvanceSequence()
         g_StateFadeAlpha = 0;
         InitializeNotice(109);
         ConfigureNoticeText(0);
-        ProcessNotice();
-        ProcessNotice();
+        ProcessAction();
+        ProcessAction();
         SetNoticeMode(91);
         break;
     case 91:
@@ -909,7 +909,7 @@ void YuyukoFighter::AdvanceSequence()
         break;
     case 93:
         g_StateResetCounter = 0;
-        if (ProcessNotice()) {
+        if (ProcessAction()) {
             if (sequenceTimer == 0) {
                 if (g_StateFadeAlpha < 250) g_StateFadeAlpha += 5;
                 else {
@@ -941,7 +941,7 @@ void YuyukoFighter::AdvanceSequence()
         break;
     case 95:
         g_StateResetCounter = 0;
-        if (ProcessNotice()) {
+        if (ProcessAction()) {
             if (sequenceTimer == 0) {
                 if (g_StateFadeAlpha < 250) g_StateFadeAlpha += 5;
                 else {
@@ -971,9 +971,9 @@ void YuyukoFighter::AdvanceSequence()
         SetNoticeMode(97);
         break;
     case 97:
-        if (ProcessNotice()) {
+        if (ProcessAction()) {
             g_StateResetCounter = 0xFFFFFF;
-            if (ProcessNotice()) {
+            if (ProcessAction()) {
                 if (sequenceTimer == 0) {
                     SequenceAudio::Stop();
                     if (g_StateFadeAlpha < 252) g_StateFadeAlpha += 3;

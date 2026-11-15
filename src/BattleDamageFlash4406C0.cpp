@@ -8,8 +8,8 @@
 #define RIGHT(type, offset) (*reinterpret_cast<type*>(FIELD(char*, 0x48) + (offset)))
 #define LEFT_FLAGS F1067_FRAME_FLAGS(LEFT(char*, 0x74)).flagsAt3C
 #define RIGHT_FLAGS F1067_FRAME_FLAGS(RIGHT(char*, 0x74)).flagsAt3C
-#define LEFT_STATE reinterpret_cast<FighterState*>(FIELD(void*, 0x44))
-#define RIGHT_STATE reinterpret_cast<FighterState*>(FIELD(void*, 0x48))
+#define LEFT_STATE reinterpret_cast<Fighter*>(FIELD(void*, 0x44))
+#define RIGHT_STATE reinterpret_cast<Fighter*>(FIELD(void*, 0x48))
 #define LEFT_PREDICATE reinterpret_cast<FlashPredicate4406C0*>(FIELD(void*, 0x44))
 #define RIGHT_PREDICATE reinterpret_cast<FlashPredicate4406C0*>(FIELD(void*, 0x48))
 #define STYLE reinterpret_cast<RenderStyle43D9D0*>(FIELD(void*, 8))

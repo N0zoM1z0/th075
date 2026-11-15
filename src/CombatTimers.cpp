@@ -1,7 +1,7 @@
 #include "CombatTimers.hpp"
 #define FIELD_AT(type, object, offset) (*reinterpret_cast<type *>(reinterpret_cast<unsigned char *>(object) + offset))
 #define SELF(type, offset) FIELD_AT(type, this, offset)
-void FrameActor::UpdateCounters()
+void Fighter::UpdateCounters()
 {
     // Opponent freeze suspends counters but not view bounds and the frame count.
     if (opponent->field3BA > 0) goto updateViewBounds;

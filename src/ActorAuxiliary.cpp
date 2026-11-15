@@ -199,7 +199,7 @@ void AuxiliaryActor4A80F0::Update()
 #undef OWNER_FLOAT
 
 #define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
-#define OPPONENT_GUARD static_cast<FighterState*>(opponent)->IsState50To149()
+#define OPPONENT_GUARD static_cast<Fighter*>(opponent)->IsState50To149()
 
 // Independent two-component local value. Both stores are present in the target;
 // the vertical component is computed but not subsequently read by this policy.

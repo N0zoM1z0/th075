@@ -1,5 +1,5 @@
 // The only reconstructed state here is the three original fighter notice
-// bytes/shorts at their native locations; the whole FighterState is unknown.
+// bytes/shorts at their native locations; the whole Fighter is unknown.
 class FighterNoticeF300 {public: void AdvanceNoticeLevels();};
 #define FIELD(type,offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this)+(offset)))
 void FighterNoticeF300::AdvanceNoticeLevels()

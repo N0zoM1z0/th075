@@ -8,18 +8,12 @@
 // their native stack allocations after saved this and script-kind.
 // The full mode, notice, stage-change, event-bit, and original active-input
 // behavior was independently decoded before comparison.
-class FighterActionF410 : public Fighter {public:
-  unsigned char ProcessAction();
-  void ClearNoticeTransition();
-  void SetNoticeFields(signed char value,unsigned char enabled,unsigned char alpha);
-  void RenderNotice(void* text,unsigned char red,unsigned char green,unsigned char blue,unsigned char highlighted);
-};
 extern signed char g_ActionLastIndexAt0066C24F;
 extern signed char g_ActionLastBitAt0066C24E;
 extern unsigned char g_InputCanCancelAt00671632;
 extern void SelectStageAt00419CB0(int);
 extern void RebuildStageAt00419DF0();
-unsigned char FighterActionF410::ProcessAction() {
+unsigned char Fighter::ProcessAction() {
   signed char mask,number,bit;
   if(scriptIndex>=script.CountPatternEntries(scriptId) || scriptIndex<0) {
       g_ActionLastIndexAt0066C24F=-1;g_ActionLastBitAt0066C24E=-1;return 1;
@@ -36,17 +30,17 @@ unsigned char FighterActionF410::ProcessAction() {
           RenderNotice(script.GetDwordField(scriptId,scriptIndex),120,120,255,static_cast<unsigned char>((g_ActionLastBitAt0066C24E!=scriptStep && g_ActionLastIndexAt0066C24F==scriptIndex)));
           if(opponent->noticeState>0) {
             opponent->noticeState=2;
-            static_cast<FighterActionF410*>(opponent)->SetNoticeFields(-1,0,128);
+            static_cast<Fighter*>(opponent)->SetNoticeFields(-1,0,128);
           }
         }
         break;
       case 1:
         if(script.GetWordField(scriptId,scriptIndex)<0) {
-          static_cast<FighterActionF410*>(opponent)->ClearNoticeTransition();
+          static_cast<Fighter*>(opponent)->ClearNoticeTransition();
           RenderNotice(script.GetDwordField(scriptId,scriptIndex),255,120,120,static_cast<unsigned char>((g_ActionLastBitAt0066C24E!=scriptStep && g_ActionLastIndexAt0066C24F==scriptIndex)));
         } else {
           opponent->noticeState=1;
-          static_cast<FighterActionF410*>(opponent)->SetNoticeFields(script.GetWordField(scriptId,scriptIndex),1,255);
+          static_cast<Fighter*>(opponent)->SetNoticeFields(script.GetWordField(scriptId,scriptIndex),1,255);
           RenderNotice(script.GetDwordField(scriptId,scriptIndex),255,120,120,static_cast<unsigned char>((g_ActionLastBitAt0066C24E!=scriptStep && g_ActionLastIndexAt0066C24F==scriptIndex)));
           if(noticeState>0) {
             noticeState=2;

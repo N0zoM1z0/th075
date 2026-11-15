@@ -8,7 +8,7 @@ EffectManagerLifetimeF161::EffectManagerLifetimeF161()
     }
 }
 
-void EffectManagerLifetimeF161::BindFighter(FighterBaseActionsF159* fighter)
+void EffectManagerLifetimeF161::BindFighter(Fighter* fighter)
 {
     fighter_ = fighter;
 }

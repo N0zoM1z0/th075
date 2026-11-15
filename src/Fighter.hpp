@@ -24,6 +24,7 @@ public:
 class InputBindingsF171 {
 public:
     void SetBindings(const void* source);
+    void Render();                        // slot 2 override for every fighter, 00453F70
 
     unsigned char unknown00[0x04];
     signed char device;           // +0x04 joystick index, -1 when absent
@@ -36,18 +37,49 @@ public:
 class Fighter : public Actor {
 public:
     // Helpers every character calls at one shared address.
-    void ClearAuxiliaryInput();                                     // 00453A10
+    void ClearAuxiliaryWords();                                     // 00453A10
     int ChooseIntegerRange(int lower, int upper);                   // 00455610
     signed char MatchInputPattern(const char*, signed char, signed char);  // 00455800
     void PackDirectionBits();                                       // 00455B30
     void RecordRoundFields(signed char, short, signed char, signed char, signed char, int, int, int);  // 004574D0
     void SetNoticeMode(unsigned char mode);                         // 0045CD50
     void InitializeNotice(short notice);                            // 0045CDC0
-    unsigned char ProcessNotice();                                  // 0045CE10
+    unsigned char ProcessAction();                                  // 0045CE10
     void ConfigureNoticeText(unsigned char enabled);                // 0045D650
     void BeginNoticeTransition(unsigned char notice, unsigned char direction);  // 0045D6A0
     void ClearNoticeTransition();                                   // 0045D6F0
     void AdvanceNoticeLevels();                                     // 0045D710
+
+    // Base fighter methods (0x451EB0-0x45D710).
+    void SetBindings(const void* source);
+    void Render();                        // slot 2 override for every fighter, 00453F70
+    void SetNoticeFields(signed char value,unsigned char enabled,unsigned char alpha);
+    void RenderNotice(void* text,unsigned char red,unsigned char green,unsigned char blue,unsigned char highlighted);
+    void BindOpponent(void* other);
+    void RecordRoundFields(signed char index, short value, unsigned char first, unsigned char second, unsigned char third, unsigned int payloadA, unsigned int payloadB, unsigned int payloadC);
+    void AdjustCameraOffset(signed char alternate);
+    void SpawnBattleEffect(short effect, float x, float y, signed char facing, signed char layer);
+    void SpawnTrackedEffect(short effect, float x, float y, signed char facing, signed char layer, unsigned char linked, unsigned char mode);
+    void SpawnAuxEffect(short effect, float x, float y, signed char facing, signed char layer);
+    void PlaySound(short sound);
+    void PlaySharedSound(short sound);
+    bool IsState150To199();
+    bool IsState95To99();
+    unsigned char SelectHitResponse(unsigned int flags);
+    void SetNonnegativeWord(short value);
+    void BeginFadeParameters(unsigned char mode);
+    void ApplyOpponentGaugeChange(short base, short multiplier, short count);
+    void RenderSideEffect();
+    void DrawFacingSprite(short sprite, float position, float y, unsigned long color);
+    void RenderFadeOverlay();
+    void DrawFacingSprite(short sprite, float position, int first, int second);
+    bool IsState50To149();
+    bool IsGroundedStateWindow();
+    void AdvanceGuardedState();
+    void AdvancePosition();
+    void UpdateCounters();
+    void ChooseFrameAction();
+    signed char CheckHorizontalLimits();
 
     // Fighter vtable slots 5-19. The base table (00658FE8) implements only
     // slots 6 and 8; the rest are _purecall and per character.

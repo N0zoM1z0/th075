@@ -7,7 +7,7 @@
 #define DEFINE_FORWARD(owner) \
 void owner::ForwardBaseAction() \
 { \
-    reinterpret_cast<FighterBaseActionsF159*>(this)->SelectMovementAnimation(); \
+    reinterpret_cast<Fighter*>(this)->Fighter::ForwardBaseAction(); \
 }
 
 #define DEFINE_EMPTY(owner, method) \
@@ -72,11 +72,11 @@ void SakuyaFighter::ResetRound()
     reinterpret_cast<unsigned short&>(aiStep) = 0;
     reinterpret_cast<unsigned short&>(aiCardTimer) = 0;
     fieldF16 = 0;
-    reinterpret_cast<FighterBaseActionsF159*>(this)->FighterBaseActionsF159::ResetRound();
+    reinterpret_cast<Fighter*>(this)->Fighter::ResetRound();
 }
 
 
-void FighterBaseActionsF159::ClearAuxiliaryWords()
+void Fighter::ClearAuxiliaryWords()
 {
     reinterpret_cast<unsigned int&>(bufferedX) = 0;
     reinterpret_cast<unsigned int&>(bufferedY) = 0;
@@ -91,7 +91,7 @@ void RoundResetInputCountsF159::ClearHeldCounts()
     memset(reinterpret_cast<unsigned char*>(this) + 0x2C, 0, 0x1C);
 }
 
-void FighterBaseActionsF159::ResetRound()
+void Fighter::ResetRound()
 {
     reinterpret_cast<unsigned int&>(inputX) = 0;
     reinterpret_cast<unsigned int&>(inputY) = 0;

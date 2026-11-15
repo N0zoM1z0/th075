@@ -5,7 +5,7 @@
 #define RESET(state) reinterpret_cast<AnimationState*>(this)->ResetPrimaryCounters(state)
 #define UPDATE_FACING() reinterpret_cast<CombatActor*>(this)->UpdateFacingFromOpponent()
 
-void FighterBaseActionsF159::SelectMovementAnimation()
+void Fighter::ForwardBaseAction()
 {
     if (y <= 0.0f) {
         reinterpret_cast<unsigned char&>(field3AD) = 0;

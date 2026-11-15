@@ -436,7 +436,7 @@ void SakuyaFighter::DispatchActions()
             (frameInfo->flags & 0x20) != 0) {
             ResetPrimaryCounters(392);
             if (fieldF12 != 0) ResetPrimaryCounters(418);
-            ClearAuxiliaryInput();
+            ClearAuxiliaryWords();
             return;
         }
         if (ATTACK_A && meter > 0 &&
@@ -445,14 +445,14 @@ void SakuyaFighter::DispatchActions()
             sequenceInfo->priority <= TARGET_PRIORITY(408) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(408);
             if (fieldF12 != 0) ResetPrimaryCounters(418);
-            ClearAuxiliaryInput();
+            ClearAuxiliaryWords();
             return;
         }
         if (ATTACK_A && (frameInfo->flags & 0x20) != 0 &&
             sequenceInfo->priority <= TARGET_PRIORITY(302) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(302);
             if (fieldF12 != 0) ResetPrimaryCounters(418);
-            ClearAuxiliaryInput();
+            ClearAuxiliaryWords();
             return;
         }
         if ((reinterpret_cast<unsigned long&>(inputB) == 1 || bufferedA > 0) &&
@@ -460,7 +460,7 @@ void SakuyaFighter::DispatchActions()
             (frameInfo->flags & 0x20) != 0) {
             ResetPrimaryCounters(393);
             if (fieldF12 != 0) ResetPrimaryCounters(418);
-            ClearAuxiliaryInput();
+            ClearAuxiliaryWords();
             return;
         }
         if (ATTACK_B && meter > 0 &&
@@ -469,14 +469,14 @@ void SakuyaFighter::DispatchActions()
             sequenceInfo->priority <= TARGET_PRIORITY(413) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(413);
             if (fieldF12 != 0) ResetPrimaryCounters(418);
-            ClearAuxiliaryInput();
+            ClearAuxiliaryWords();
             return;
         }
         if (ATTACK_B && (frameInfo->flags & 0x20) != 0 &&
             sequenceInfo->priority <= TARGET_PRIORITY(303) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(303);
             if (fieldF12 != 0) ResetPrimaryCounters(418);
-            ClearAuxiliaryInput();
+            ClearAuxiliaryWords();
             return;
         }
         if (ATTACK_C && (frameInfo->flags & 0x20) != 0 &&
@@ -484,7 +484,7 @@ void SakuyaFighter::DispatchActions()
             sequenceInfo->priority <= TARGET_PRIORITY(402) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(402);
             if (fieldF12 != 0) ResetPrimaryCounters(418);
-            ClearAuxiliaryInput();
+            ClearAuxiliaryWords();
             return;
         }
     }
@@ -496,7 +496,7 @@ void SakuyaFighter::DispatchActions()
             (frameInfo->flags & 0x20) != 0) {
             ResetPrimaryCounters(390);
             if (fieldF12 != 0) ResetPrimaryCounters(417);
-            ClearAuxiliaryInput();
+            ClearAuxiliaryWords();
             return;
         }
         if (ATTACK_A &&
@@ -508,7 +508,7 @@ void SakuyaFighter::DispatchActions()
             ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(407);
             if (fieldF12 != 0) ResetPrimaryCounters(417);
-            ClearAuxiliaryInput();
+            ClearAuxiliaryWords();
             return;
         }
         if (ATTACK_A &&
@@ -519,7 +519,7 @@ void SakuyaFighter::DispatchActions()
             ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(406);
             if (fieldF12 != 0) ResetPrimaryCounters(416);
-            ClearAuxiliaryInput();
+            ClearAuxiliaryWords();
             return;
         }
         if (ATTACK_A &&
@@ -530,7 +530,7 @@ void SakuyaFighter::DispatchActions()
             ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(307);
             if (fieldF12 != 0) ResetPrimaryCounters(417);
-            ClearAuxiliaryInput();
+            ClearAuxiliaryWords();
             return;
         }
         if (ATTACK_A &&
@@ -539,7 +539,7 @@ void SakuyaFighter::DispatchActions()
             ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(300);
             if (fieldF12 != 0) ResetPrimaryCounters(416);
-            ClearAuxiliaryInput();
+            ClearAuxiliaryWords();
             return;
         }
         if ((reinterpret_cast<unsigned long&>(inputB) == 1 || bufferedA > 0) &&
@@ -549,7 +549,7 @@ void SakuyaFighter::DispatchActions()
             (frameInfo->flags & 0x20) != 0) {
             ResetPrimaryCounters(391);
             if (fieldF12 != 0) ResetPrimaryCounters(417);
-            ClearAuxiliaryInput();
+            ClearAuxiliaryWords();
             return;
         }
         if (ATTACK_B &&
@@ -562,7 +562,7 @@ void SakuyaFighter::DispatchActions()
             ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(412);
             if (fieldF12 != 0) ResetPrimaryCounters(417);
-            ClearAuxiliaryInput();
+            ClearAuxiliaryWords();
             return;
         }
         if (ATTACK_B &&
@@ -573,7 +573,7 @@ void SakuyaFighter::DispatchActions()
             ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(411);
             if (fieldF12 != 0) ResetPrimaryCounters(416);
-            ClearAuxiliaryInput();
+            ClearAuxiliaryWords();
             return;
         }
         if (ATTACK_B &&
@@ -584,7 +584,7 @@ void SakuyaFighter::DispatchActions()
             ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(308);
             if (fieldF12 != 0) ResetPrimaryCounters(417);
-            ClearAuxiliaryInput();
+            ClearAuxiliaryWords();
             return;
         }
         if (ATTACK_B &&
@@ -593,7 +593,7 @@ void SakuyaFighter::DispatchActions()
             ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(301);
             if (fieldF12 != 0) ResetPrimaryCounters(416);
-            ClearAuxiliaryInput();
+            ClearAuxiliaryWords();
             return;
         }
         if (ATTACK_C &&
@@ -605,7 +605,7 @@ void SakuyaFighter::DispatchActions()
             ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(401);
             if (fieldF12 != 0) ResetPrimaryCounters(417);
-            ClearAuxiliaryInput();
+            ClearAuxiliaryWords();
             return;
         }
         if (ATTACK_C &&
@@ -615,7 +615,7 @@ void SakuyaFighter::DispatchActions()
             ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(400);
             if (fieldF12 != 0) ResetPrimaryCounters(416);
-            ClearAuxiliaryInput();
+            ClearAuxiliaryWords();
             return;
         }
     }
@@ -629,7 +629,7 @@ void SakuyaFighter::DispatchActions()
             ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(410);
             if (fieldF12 != 0) ResetPrimaryCounters(420);
-            ClearAuxiliaryInput();
+            ClearAuxiliaryWords();
             return;
         }
         if (ATTACK_A &&
@@ -640,7 +640,7 @@ void SakuyaFighter::DispatchActions()
             ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(409);
             if (fieldF12 != 0) ResetPrimaryCounters(419);
-            ClearAuxiliaryInput();
+            ClearAuxiliaryWords();
             return;
         }
         if (ATTACK_A &&
@@ -650,7 +650,7 @@ void SakuyaFighter::DispatchActions()
             ResetPrimaryCounters(304);
             if (fieldF12 != 0) ResetPrimaryCounters(419);
             if (fieldF12 != 0 && (inputY > 0 || bufferedY > 0)) ResetPrimaryCounters(420);
-            ClearAuxiliaryInput();
+            ClearAuxiliaryWords();
             return;
         }
         if (ATTACK_B &&
@@ -662,7 +662,7 @@ void SakuyaFighter::DispatchActions()
             ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(415);
             if (fieldF12 != 0) ResetPrimaryCounters(420);
-            ClearAuxiliaryInput();
+            ClearAuxiliaryWords();
             return;
         }
         if (ATTACK_B &&
@@ -673,7 +673,7 @@ void SakuyaFighter::DispatchActions()
             ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(414);
             if (fieldF12 != 0) ResetPrimaryCounters(419);
-            ClearAuxiliaryInput();
+            ClearAuxiliaryWords();
             return;
         }
         if (ATTACK_B &&
@@ -683,7 +683,7 @@ void SakuyaFighter::DispatchActions()
             ResetPrimaryCounters(305);
             if (fieldF12 != 0) ResetPrimaryCounters(419);
             if (fieldF12 != 0 && (inputY > 0 || bufferedY > 0)) ResetPrimaryCounters(420);
-            ClearAuxiliaryInput();
+            ClearAuxiliaryWords();
             return;
         }
         if (ATTACK_C) {
@@ -694,7 +694,7 @@ void SakuyaFighter::DispatchActions()
                 ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(405);
                 if (fieldF12 != 0) ResetPrimaryCounters(420);
-                ClearAuxiliaryInput();
+                ClearAuxiliaryWords();
                 return;
             }
             if ((frameInfo->flags & 0x20) != 0 &&
@@ -703,7 +703,7 @@ void SakuyaFighter::DispatchActions()
                 ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(404);
                 if (fieldF12 != 0) ResetPrimaryCounters(419);
-                ClearAuxiliaryInput();
+                ClearAuxiliaryWords();
                 return;
             }
         }

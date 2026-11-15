@@ -3,7 +3,7 @@
 #include <new>
 
 // Only the physically verified stage texture pointer, fighter name and
-// stage-page bytes are represented. No full private FighterState is claimed.
+// stage-page bytes are represented. No full private Fighter is claimed.
 class FighterStageTextureF286 {
     unsigned char observedBytes[80];
 public:

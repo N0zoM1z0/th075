@@ -4,7 +4,7 @@
 #include <new>
 
 // All game owner interfaces below are borrowed from actual calls and native
-// object allocation sizes; the complete original FighterState layout is unknown.
+// object allocation sizes; the complete original Fighter layout is unknown.
 class FighterSoundsF282 {public: void Load(const char* filename,const char* archive);};
 class FighterTextureF282 {
     unsigned char observedBytes[80];

@@ -3,7 +3,6 @@
 #include "SpriteTransform.hpp"
 #include "GameLeafHelpers.hpp"
 
-class FighterRender453F70 : public Fighter { public: void Render(); };
 class FighterDrawingF126 {
 public:
     void GetTextureRect(int, RECT*);
@@ -30,7 +29,7 @@ extern unsigned char g_RenderByte0066C237;
 #define TRANSFORM(value) reinterpret_cast<SpriteTransform*>(&(value))
 
 // The history call copies a complete quad and SDK vector by value.
-void FighterRender453F70::Render() {
+void Fighter::Render() {
     RECT textureRect;
     D3DVECTOR spriteOffset;
     float cameraHorizontal;
@@ -39,7 +38,7 @@ void FighterRender453F70::Render() {
     SpriteQuad40CA80 transformedQuad;
     cameraHorizontal = g_RenderCameraX - 160.0f;
     cameraY = g_RenderCameraY;
-    if (field082 > 0 && reinterpret_cast<FighterState*>(this)->IsState50To149())
+    if (field082 > 0 && reinterpret_cast<Fighter*>(this)->IsState50To149())
         cameraHorizontal += 2 - (field082 % 2) * 4;
     DRAWING->GetTextureRect(FRAME(short, 6), &textureRect);
     TRANSFORM(transformedQuad)->BuildQuadFromRect(&textureRect);

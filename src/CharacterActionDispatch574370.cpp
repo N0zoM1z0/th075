@@ -385,7 +385,7 @@ void YuyukoFighter::DispatchActions()
         if (ATTACK_A && FORWARD_MOTION && action == 200 &&
             (frameInfo->flags & 0x20) != 0) {
             ResetPrimaryCounters(392);
-            ClearAuxiliaryInput();
+            ClearAuxiliaryWords();
             return;
         }
         if (ATTACK_A) {
@@ -393,14 +393,14 @@ void YuyukoFighter::DispatchActions()
                 DISTANT_FROM_OPPONENT(420.0f, -420.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(407) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(407);
-                ClearAuxiliaryInput();
+                ClearAuxiliaryWords();
                 return;
             }
             if ((frameInfo->flags & 0x20) != 0 &&
                 (sequenceInfo->priority <= TARGET_PRIORITY(302) || action == 302) &&
                 ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(302);
-                ClearAuxiliaryInput();
+                ClearAuxiliaryWords();
                 return;
             }
         }
@@ -408,7 +408,7 @@ void YuyukoFighter::DispatchActions()
             FORWARD_MOTION && action == 200 &&
             (frameInfo->flags & 0x20) != 0) {
             ResetPrimaryCounters(393);
-            ClearAuxiliaryInput();
+            ClearAuxiliaryWords();
             return;
         }
         if (ATTACK_B) {
@@ -416,13 +416,13 @@ void YuyukoFighter::DispatchActions()
                 DISTANT_FROM_OPPONENT(360.0f, -360.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(414) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(414);
-                ClearAuxiliaryInput();
+                ClearAuxiliaryWords();
                 return;
             }
             if ((frameInfo->flags & 0x20) != 0 &&
                 sequenceInfo->priority <= TARGET_PRIORITY(303) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(303);
-                ClearAuxiliaryInput();
+                ClearAuxiliaryWords();
                 return;
             }
         }
@@ -430,7 +430,7 @@ void YuyukoFighter::DispatchActions()
             (frameInfo->flags & 0x20) != 0 &&
             sequenceInfo->priority <= TARGET_PRIORITY(402) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(402);
-            ClearAuxiliaryInput();
+            ClearAuxiliaryWords();
             return;
         }
     }
@@ -438,7 +438,7 @@ void YuyukoFighter::DispatchActions()
         if (ATTACK_A && inputY == 0 && FORWARD_MOTION &&
             action == 200 && (frameInfo->flags & 0x20) != 0) {
             ResetPrimaryCounters(390);
-            ClearAuxiliaryInput();
+            ClearAuxiliaryWords();
             return;
         }
         if (ATTACK_A && inputY == 0 && FORWARD_MOTION) {
@@ -446,13 +446,13 @@ void YuyukoFighter::DispatchActions()
                 DISTANT_FROM_OPPONENT(480.0f, -480.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(406) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(406);
-                ClearAuxiliaryInput();
+                ClearAuxiliaryWords();
                 return;
             }
             if ((frameInfo->flags & 0x20) != 0 &&
                 sequenceInfo->priority <= TARGET_PRIORITY(307) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(307);
-                ClearAuxiliaryInput();
+                ClearAuxiliaryWords();
                 return;
             }
         }
@@ -461,20 +461,20 @@ void YuyukoFighter::DispatchActions()
             DISTANT_FROM_OPPONENT(420.0f, -420.0f) &&
             sequenceInfo->priority <= TARGET_PRIORITY(406) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(406);
-            ClearAuxiliaryInput();
+            ClearAuxiliaryWords();
             return;
         }
         if (ATTACK_A && (frameInfo->flags & 0x20) != 0 &&
             sequenceInfo->priority <= TARGET_PRIORITY(300) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(300);
-            ClearAuxiliaryInput();
+            ClearAuxiliaryWords();
             return;
         }
         if ((reinterpret_cast<unsigned long&>(inputB) == 1 || bufferedA > 0) &&
             inputY == 0 && FORWARD_MOTION && action == 200 &&
             (frameInfo->flags & 0x20) != 0) {
             ResetPrimaryCounters(391);
-            ClearAuxiliaryInput();
+            ClearAuxiliaryWords();
             return;
         }
         if (ATTACK_B && inputY == 0 && FORWARD_MOTION) {
@@ -482,13 +482,13 @@ void YuyukoFighter::DispatchActions()
                 DISTANT_FROM_OPPONENT(480.0f, -480.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(412) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(412);
-                ClearAuxiliaryInput();
+                ClearAuxiliaryWords();
                 return;
             }
             if ((frameInfo->flags & 0x20) != 0 &&
                 sequenceInfo->priority <= TARGET_PRIORITY(308) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(308);
-                ClearAuxiliaryInput();
+                ClearAuxiliaryWords();
                 return;
             }
         }
@@ -497,13 +497,13 @@ void YuyukoFighter::DispatchActions()
                 DISTANT_FROM_OPPONENT(480.0f, -480.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(412) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(412);
-                ClearAuxiliaryInput();
+                ClearAuxiliaryWords();
                 return;
             }
             if ((frameInfo->flags & 0x20) != 0 &&
                 sequenceInfo->priority <= TARGET_PRIORITY(301) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(301);
-                ClearAuxiliaryInput();
+                ClearAuxiliaryWords();
                 return;
             }
         }
@@ -511,14 +511,14 @@ void YuyukoFighter::DispatchActions()
             (frameInfo->flags & 0x20) != 0 && meter > 0 &&
             sequenceInfo->priority <= TARGET_PRIORITY(401) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(401);
-            ClearAuxiliaryInput();
+            ClearAuxiliaryWords();
             return;
         }
         if (ATTACK_C && (frameInfo->flags & 0x20) != 0 &&
             meter > 0 &&
             sequenceInfo->priority <= TARGET_PRIORITY(400) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(400);
-            ClearAuxiliaryInput();
+            ClearAuxiliaryWords();
             return;
         }
     }
@@ -528,13 +528,13 @@ void YuyukoFighter::DispatchActions()
                 DISTANT_FROM_OPPONENT(480.0f, -480.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(410) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(410);
-                ClearAuxiliaryInput();
+                ClearAuxiliaryWords();
                 return;
             }
             if ((frameInfo->flags & 0x20) != 0 &&
                 sequenceInfo->priority <= TARGET_PRIORITY(304) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(304);
-                ClearAuxiliaryInput();
+                ClearAuxiliaryWords();
                 return;
             }
         }
@@ -543,13 +543,13 @@ void YuyukoFighter::DispatchActions()
                 DISTANT_FROM_OPPONENT(480.0f, -480.0f) &&
                 sequenceInfo->priority <= TARGET_PRIORITY(416) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(416);
-                ClearAuxiliaryInput();
+                ClearAuxiliaryWords();
                 return;
             }
             if ((frameInfo->flags & 0x20) != 0 &&
                 sequenceInfo->priority <= TARGET_PRIORITY(305) && ACTION_CHANGE_ALLOWED) {
                 ResetPrimaryCounters(305);
-                ClearAuxiliaryInput();
+                ClearAuxiliaryWords();
                 return;
             }
         }
@@ -557,7 +557,7 @@ void YuyukoFighter::DispatchActions()
             meter > 100 &&
             sequenceInfo->priority <= TARGET_PRIORITY(404) && ACTION_CHANGE_ALLOWED) {
             ResetPrimaryCounters(404);
-            ClearAuxiliaryInput();
+            ClearAuxiliaryWords();
             return;
         }
         if (inputD > 0 || bufferedD > 0) {

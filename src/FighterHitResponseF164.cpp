@@ -5,15 +5,15 @@
 #define OPPONENT_X opponent->x
 #define FRAME_FLAGS (*reinterpret_cast<unsigned int*>(reinterpret_cast<unsigned char*>(field0AC) + 0x3C))
 
-bool FighterHitResponseF164::IsState150To199() {
+bool Fighter::IsState150To199() {
     return action >= 150 && action < 200;
 }
 
-bool FighterHitResponseF164::IsState95To99() {
+bool Fighter::IsState95To99() {
     return action >= 95 && action <= 99;
 }
 
-unsigned char FighterHitResponseF164::SelectHitResponse(unsigned int flags) {
+unsigned char Fighter::SelectHitResponse(unsigned int flags) {
     if (!(FRAME_FLAGS & 0x10)) return 0;
     if (flags & 0x10) return 0;
     if (field3BC > 0) return 0;

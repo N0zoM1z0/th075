@@ -16,7 +16,7 @@
 void BattleCollisionDispatch::ResolveAttackHitboxes(CombatActor *attack, CombatActor *attacker, CombatActor *defender)
 {
     if (FIELD(int, attack, 0xA8) != 0 || F1027_TIMERS(attack).wordAt80 <= 0) return;
-    if (reinterpret_cast<FighterState *>(defender)->IsGroundedStateWindow()) return;
+    if (reinterpret_cast<Fighter *>(defender)->IsGroundedStateWindow()) return;
     if (!(F1079_ATTACK_FLAGS(attack) & 0x400000)) {
         if (FIELD(short, defender, 0x84) != 0) return;
         if (F1079_DEFENSE_FLAGS(defender) & 0x2000) return;

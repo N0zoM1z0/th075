@@ -7,6 +7,7 @@ class ReimuGeneratedF227;
 // Slot overrides use the Fighter slot names; the rest are helpers.
 class ReimuFighter : public Fighter {
 public:
+    void UpdateGaugeTimer(int amount);
     void AdvanceAuxiliary();
     void SpawnTrackedEffect(short, float, float, signed char, signed char, unsigned char);
     void PollCommands();

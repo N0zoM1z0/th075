@@ -3,7 +3,7 @@
 
 #define DRAWING reinterpret_cast<TimelineDrawing438D00*&>(field534)
 
-void FighterOverlayDrawingF163::RenderSideEffect()
+void Fighter::RenderSideEffect()
 {
     if (field2CC == 0) {
         DRAWING->DrawSprite(noticeBadge,
@@ -22,7 +22,7 @@ void FighterOverlayDrawingF163::RenderSideEffect()
     }
 }
 
-void FighterOverlayDrawingF163::DrawFacingSprite(short sprite, float position, float y, DWORD color)
+void Fighter::DrawFacingSprite(short sprite, float position, float y, DWORD color)
 {
     if (field2CC == 0) {
         DRAWING->DrawSprite(sprite, 0.0f + position - 256.0f + 160.0f,
@@ -33,7 +33,7 @@ void FighterOverlayDrawingF163::DrawFacingSprite(short sprite, float position, f
     }
 }
 
-void FighterOverlayDrawingF163::RenderFadeOverlay()
+void Fighter::RenderFadeOverlay()
 {
     unsigned char alpha = 160 - abs(128 - fadeAlpha) * 5 / 4;
     if (field2CC == 0) {

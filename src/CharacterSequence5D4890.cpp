@@ -20,8 +20,8 @@ void SuikaFighter::AdvanceSequence()
             fieldF60 = 280.0f;
             InitializeNotice(100);
             ConfigureNoticeText(0);
-            ProcessNotice();
-            ProcessNotice();
+            ProcessAction();
+            ProcessAction();
         }
         if (fieldF28 >= 50) {
             fieldF2C += 0.25f;
@@ -72,7 +72,7 @@ void SuikaFighter::AdvanceSequence()
         SetNoticeMode(5);
         break;
     case 5:
-        if (ProcessNotice()) {
+        if (ProcessAction()) {
             if (fieldF28 == 0) {
                 ClearNoticeTransition();
                 OPPONENT_ACTOR->ClearNoticeTransition();
@@ -104,7 +104,7 @@ void SuikaFighter::AdvanceSequence()
         ++fieldF28;
         break;
     case 7:
-        if (ProcessNotice()) {
+        if (ProcessAction()) {
             field6EF = 1;
             SetNoticeMode(10);
             field713 = 2;
@@ -124,8 +124,8 @@ void SuikaFighter::AdvanceSequence()
             fieldF60 = 280.0f;
             InitializeNotice(101);
             ConfigureNoticeText(0);
-            ProcessNotice();
-            ProcessNotice();
+            ProcessAction();
+            ProcessAction();
         }
         if (fieldF28 >= 50) {
             fieldF2C += 0.25f;
@@ -176,7 +176,7 @@ void SuikaFighter::AdvanceSequence()
         SetNoticeMode(15);
         break;
     case 15:
-        if (ProcessNotice()) {
+        if (ProcessAction()) {
             if (fieldF28 == 0) {
                 ClearNoticeTransition();
                 OPPONENT_ACTOR->ClearNoticeTransition();
@@ -208,7 +208,7 @@ void SuikaFighter::AdvanceSequence()
         ++fieldF28;
         break;
     case 17:
-        if (ProcessNotice()) {
+        if (ProcessAction()) {
             field6EF = 1;
             SetNoticeMode(20);
             field713 = 3;
@@ -228,8 +228,8 @@ void SuikaFighter::AdvanceSequence()
             fieldF60 = 280.0f;
             InitializeNotice(102);
             ConfigureNoticeText(0);
-            ProcessNotice();
-            ProcessNotice();
+            ProcessAction();
+            ProcessAction();
         }
         if (fieldF28 >= 50) {
             fieldF2C += 0.25f;
@@ -280,7 +280,7 @@ void SuikaFighter::AdvanceSequence()
         SetNoticeMode(25);
         break;
     case 25:
-        if (ProcessNotice()) {
+        if (ProcessAction()) {
             if (fieldF28 == 0) {
                 ClearNoticeTransition();
                 OPPONENT_ACTOR->ClearNoticeTransition();
@@ -312,7 +312,7 @@ void SuikaFighter::AdvanceSequence()
         ++fieldF28;
         break;
     case 27:
-        if (ProcessNotice()) {
+        if (ProcessAction()) {
             field6EF = 1;
             SetNoticeMode(30);
             field713 = 4;
@@ -333,8 +333,8 @@ void SuikaFighter::AdvanceSequence()
             fieldF60 = 280.0f;
             InitializeNotice(103);
             ConfigureNoticeText(0);
-            ProcessNotice();
-            ProcessNotice();
+            ProcessAction();
+            ProcessAction();
         }
         if (fieldF28 >= 50) {
             fieldF2C += 0.25f;
@@ -385,7 +385,7 @@ void SuikaFighter::AdvanceSequence()
         SetNoticeMode(35);
         break;
     case 35:
-        if (ProcessNotice()) {
+        if (ProcessAction()) {
             if (fieldF28 == 0) {
                 ClearNoticeTransition();
                 OPPONENT_ACTOR->ClearNoticeTransition();
@@ -417,7 +417,7 @@ void SuikaFighter::AdvanceSequence()
         ++fieldF28;
         break;
     case 37:
-        if (ProcessNotice()) {
+        if (ProcessAction()) {
             field6EF = 1;
             SetNoticeMode(40);
             field713 = 5;
@@ -437,8 +437,8 @@ void SuikaFighter::AdvanceSequence()
             fieldF60 = 280.0f;
             InitializeNotice(104);
             ConfigureNoticeText(0);
-            ProcessNotice();
-            ProcessNotice();
+            ProcessAction();
+            ProcessAction();
         }
         if (fieldF28 >= 50) {
             fieldF2C += 0.25f;
@@ -482,7 +482,7 @@ void SuikaFighter::AdvanceSequence()
         SetNoticeMode(42);
         break;
     case 42:
-        if (ProcessNotice()) {
+        if (ProcessAction()) {
             SetNoticeMode(43);
             OPPONENT_ACTOR->ClearNoticeTransition();
         }
@@ -507,7 +507,7 @@ void SuikaFighter::AdvanceSequence()
         SetNoticeMode(45);
         break;
     case 45:
-        if (ProcessNotice()) {
+        if (ProcessAction()) {
             if (fieldF28 == 0) {
                 ClearNoticeTransition();
                 OPPONENT_ACTOR->ClearNoticeTransition();
@@ -539,7 +539,7 @@ void SuikaFighter::AdvanceSequence()
         ++fieldF28;
         break;
     case 47:
-        if (ProcessNotice()) {
+        if (ProcessAction()) {
             field6EF = 1;
             SetNoticeMode(50);
             field713 = 6;
@@ -559,8 +559,8 @@ void SuikaFighter::AdvanceSequence()
             fieldF60 = 280.0f;
             InitializeNotice(105);
             ConfigureNoticeText(0);
-            ProcessNotice();
-            ProcessNotice();
+            ProcessAction();
+            ProcessAction();
         }
         if (fieldF28 >= 50) {
             fieldF2C += 0.25f;
@@ -604,7 +604,7 @@ void SuikaFighter::AdvanceSequence()
         SetNoticeMode(52);
         break;
     case 52:
-        if (ProcessNotice()) {
+        if (ProcessAction()) {
             SetNoticeMode(53);
             OPPONENT_ACTOR->ClearNoticeTransition();
         }
@@ -629,7 +629,7 @@ void SuikaFighter::AdvanceSequence()
         SetNoticeMode(55);
         break;
     case 55:
-        if (ProcessNotice()) {
+        if (ProcessAction()) {
             if (fieldF28 == 0) {
                 ClearNoticeTransition();
                 OPPONENT_ACTOR->ClearNoticeTransition();
@@ -661,7 +661,7 @@ void SuikaFighter::AdvanceSequence()
         ++fieldF28;
         break;
     case 57:
-        if (ProcessNotice()) {
+        if (ProcessAction()) {
             field6EF = 1;
             SetNoticeMode(60);
             field713 = 7;
@@ -671,8 +671,8 @@ void SuikaFighter::AdvanceSequence()
         if (fieldF28 == 0) {
             InitializeNotice(106);
             ConfigureNoticeText(0);
-            ProcessNotice();
-            ProcessNotice();
+            ProcessAction();
+            ProcessAction();
             fieldF2C = -192.0f;
             fieldF54 = 160.0f;
             fieldF30 = -192.0f;
@@ -732,7 +732,7 @@ void SuikaFighter::AdvanceSequence()
         SetNoticeMode(63);
         break;
     case 63:
-        if (ProcessNotice()) {
+        if (ProcessAction()) {
             if (fieldF28 == 0) {
                 ClearNoticeTransition();
                 OPPONENT_ACTOR->ClearNoticeTransition();
@@ -773,8 +773,8 @@ void SuikaFighter::AdvanceSequence()
         g_StateFadeAlpha = 0;
         InitializeNotice(107);
         ConfigureNoticeText(0);
-        ProcessNotice();
-        ProcessNotice();
+        ProcessAction();
+        ProcessAction();
         SetNoticeMode(71);
         break;
     case 71:
@@ -790,7 +790,7 @@ void SuikaFighter::AdvanceSequence()
         SetNoticeMode(73);
         break;
     case 73:
-        if (ProcessNotice()) {
+        if (ProcessAction()) {
             if (fieldFF4 > 5) fieldFF4 -= 5;
             else fieldFF4 = 0;
             if (fieldFF4 == 0) {
@@ -811,8 +811,8 @@ void SuikaFighter::AdvanceSequence()
         g_StateFadeAlpha = 0;
         InitializeNotice(108);
         ConfigureNoticeText(0);
-        ProcessNotice();
-        ProcessNotice();
+        ProcessAction();
+        ProcessAction();
         SetNoticeMode(81);
         break;
     case 81:
@@ -828,7 +828,7 @@ void SuikaFighter::AdvanceSequence()
         SetNoticeMode(83);
         break;
     case 83:
-        if (ProcessNotice()) {
+        if (ProcessAction()) {
             if (fieldFF4 > 5) fieldFF4 -= 5;
             else fieldFF4 = 0;
             if (fieldFF4 == 0) {
@@ -849,8 +849,8 @@ void SuikaFighter::AdvanceSequence()
         g_StateFadeAlpha = 0;
         InitializeNotice(109);
         ConfigureNoticeText(0);
-        ProcessNotice();
-        ProcessNotice();
+        ProcessAction();
+        ProcessAction();
         SetNoticeMode(91);
         break;
     case 91:
@@ -864,7 +864,7 @@ void SuikaFighter::AdvanceSequence()
         break;
     case 93:
         g_StateResetCounter = 0;
-        if (ProcessNotice()) {
+        if (ProcessAction()) {
             if (fieldF28 == 0) {
                 if (g_StateFadeAlpha < 250) g_StateFadeAlpha += 5;
                 else {
@@ -896,7 +896,7 @@ void SuikaFighter::AdvanceSequence()
         break;
     case 95:
         g_StateResetCounter = 0;
-        if (ProcessNotice()) {
+        if (ProcessAction()) {
             if (fieldF28 == 0) {
                 if (g_StateFadeAlpha < 250) g_StateFadeAlpha += 5;
                 else {
@@ -926,9 +926,9 @@ void SuikaFighter::AdvanceSequence()
         SetNoticeMode(97);
         break;
     case 97:
-        if (ProcessNotice()) {
+        if (ProcessAction()) {
             g_StateResetCounter = 0xFFFFFF;
-            if (ProcessNotice()) {
+            if (ProcessAction()) {
                 if (fieldF28 == 0) {
                     SequenceAudio::Stop();
                     if (g_StateFadeAlpha < 252) g_StateFadeAlpha += 3;
