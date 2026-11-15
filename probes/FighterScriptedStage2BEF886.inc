@@ -3,17 +3,17 @@
 // Sprite33C needs actual RAW integer Y: floating formal adds nonnative FILD/FSTP.
 // Whole original game fighter NONEXACT; no split-case acceptance.
 case 0x2BE: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         field07C=0;
-        reinterpret_cast<signed short&>(field080)=6;
+        field080=6;
         ResetAt453E20();
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(0);
-    if ((reinterpret_cast<signed short&>(animationFrame))==0)
+    if ((animationFrame)==0)
         field07C=0;
-    if ((reinterpret_cast<signed short&>(animationStage))==2 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==2 && (animationFrame)==0) {
         AnimatePushAt453E80(0x28);
         PrepareActionAt453D60(0x17);
         field36C=(field36C)-g_ContactProjectionAt00657888;
@@ -27,11 +27,11 @@ case 0x2BE: {
         SpawnExtraRawYAt453B50(0x33C,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
             (facing),1,0,1);
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==10 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==10 && (animationFrame)==0) {
         StartAnimationAt46D000(0x1F4);
         PrepareActionAt453D40(6);
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==11 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==11 && (animationFrame)==0) {
         InitTrajectoryAt453E60(5.0f);
         SpawnRawAt453C80(0x7F,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
             (facing),1);

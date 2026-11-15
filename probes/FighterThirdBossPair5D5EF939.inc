@@ -14,7 +14,7 @@ typedef char FighterBorrowedXViewSizeF752[(sizeof(FighterBorrowedXViewF752)==0x4
 // 05D 0054526D..005453BE 337 B/101 x86;
 // 05E 005453BE..0054550F 337 B/101 x86.
         case 0x5D: {
-            if ((reinterpret_cast<signed short&>(animationStage))<12 && y>g_ThresholdAt0065782C) {
+            if ((animationStage)<12 && y>g_ThresholdAt0065782C) {
                 velocityY=velocityY-field05C;
                 if (y+velocityY<=g_ThresholdAt0065782C) {
                     y=0.0f;
@@ -23,28 +23,28 @@ typedef char FighterBorrowedXViewSizeF752[(sizeof(FighterBorrowedXViewF752)==0x4
                     break;
                 }
             }
-            if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
+            if (GetNativeActionAt40FA30()==(field070)) {
                 SetNativeActionAt40FAC0(0);
                 if (inputY>0)
                     SetNativeActionAt40FAC0(1);
             }
-            if ((reinterpret_cast<signed short&>(animationStage))==(reinterpret_cast<signed short&>(field070))-1) {
+            if ((animationStage)==(field070)-1) {
                 if (reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44>reinterpret_cast<const FighterBorrowedXViewF752*>(opponent)->xAt44)
                     facing=-1;
                 if (reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44<reinterpret_cast<const FighterBorrowedXViewF752*>(opponent)->xAt44)
                     facing=1;
             }
-            if ((reinterpret_cast<signed short&>(animationStage))==4 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+            if ((animationStage)==4 && (animationFrame)==0) {
                 velocityY=8.0f;
                 velocityX=12.5f;
                 field05C=0.7f;
             }
-            if ((reinterpret_cast<signed short&>(animationStage))==12 && (reinterpret_cast<signed short&>(animationFrame))==0)
+            if ((animationStage)==12 && (animationFrame)==0)
                 SetAuxActionAt40FB40(10);
             break;
         }
         case 0x5E: {
-            if ((reinterpret_cast<signed short&>(animationStage))<9 && y>g_ThresholdAt0065782C) {
+            if ((animationStage)<9 && y>g_ThresholdAt0065782C) {
                 velocityY=velocityY-field05C;
                 if (y+velocityY<=g_ThresholdAt0065782C) {
                     y=0.0f;
@@ -53,23 +53,23 @@ typedef char FighterBorrowedXViewSizeF752[(sizeof(FighterBorrowedXViewF752)==0x4
                     break;
                 }
             }
-            if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
+            if (GetNativeActionAt40FA30()==(field070)) {
                 SetNativeActionAt40FAC0(0);
                 if (inputY>0)
                     SetNativeActionAt40FAC0(1);
             }
-            if ((reinterpret_cast<signed short&>(animationStage))==(reinterpret_cast<signed short&>(field070))-1) {
+            if ((animationStage)==(field070)-1) {
                 if (reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44>reinterpret_cast<const FighterBorrowedXViewF752*>(opponent)->xAt44)
                     facing=-1;
                 if (reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44<reinterpret_cast<const FighterBorrowedXViewF752*>(opponent)->xAt44)
                     facing=1;
             }
-            if ((reinterpret_cast<signed short&>(animationStage))==6 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+            if ((animationStage)==6 && (animationFrame)==0) {
                 velocityY=8.0f;
                 velocityX=-12.5f;
                 field05C=0.7f;
             }
-            if ((reinterpret_cast<signed short&>(animationStage))==9 && (reinterpret_cast<signed short&>(animationFrame))==0)
+            if ((animationStage)==9 && (animationFrame)==0)
                 SetAuxActionAt40FB40(8);
             break;
         }

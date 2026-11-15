@@ -4,7 +4,7 @@
 // executable functions. The owning original may use different stage
 // thresholds, event parameters and counters (validated separately).
 case 0x46: {
-    if (reinterpret_cast<signed short&>(animationStage) == 0 && reinterpret_cast<signed short&>(animationFrame) == 0) {
+    if (animationStage == 0 && animationFrame == 0) {
         velocityX = -(reinterpret_cast<float&>(field094));
         velocityY = *(&velocityY) + *(&reinterpret_cast<float&>(field098));
         if (velocityY < TRAJECTORY_LOWER_THRESHOLD)
@@ -14,7 +14,7 @@ case 0x46: {
             velocityY = TRAJECTORY_MAXIMUM_SPEED;
         field07C = 0;
     }
-    if (reinterpret_cast<signed short&>(animationStage) == TRAJECTORY_STAGE_THRESHOLD && velocityY < g_StopThresholdAt00657480) {
+    if (animationStage == TRAJECTORY_STAGE_THRESHOLD && velocityY < g_StopThresholdAt00657480) {
         SetAuxActionAt40FB40(TRAJECTORY_EARLY_STATE);
         break;
     }
@@ -29,7 +29,7 @@ case 0x46: {
         PrepareActionAt453D60(0x16);
         break;
     }
-    if (GetNativeActionAt40FA30() == reinterpret_cast<signed short&>(field070))
+    if (GetNativeActionAt40FA30() == field070)
         SetAuxActionAt40FB40(TRAJECTORY_LATE_STATE);
     break;
 }

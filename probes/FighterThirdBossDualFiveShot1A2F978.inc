@@ -7,13 +7,13 @@
 // Entire original 82KB fighter still NONEXACT. No byte grafting.
 // F978 physical original 004AC040 game action1A2: two 5-shot branches.
 case 0x1A2: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
         ResetAt453E20();
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(2);
-    if ((reinterpret_cast<signed short&>(animationStage))==5 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==5 && (animationFrame)==0) {
         PrepareActionAt453D40(0);
         if (field39D==2) {
             field314=65.0f;

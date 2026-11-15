@@ -6,7 +6,7 @@
 // Source is natural VC7.1 C++; original PE controls comparison.
 
 case 0x33: {
-    if (reinterpret_cast<signed short&>(animationStage) == 0 && reinterpret_cast<signed short&>(animationFrame) == 0) {
+    if (animationStage == 0 && animationFrame == 0) {
         velocityX = -9.0f;
         velocityY = 0.0f;
         field07C = 0;
@@ -21,13 +21,13 @@ case 0x33: {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
     }
-    if (GetNativeActionAt40FA30() == reinterpret_cast<signed short&>(field070))
+    if (GetNativeActionAt40FA30() == field070)
         SetNativeActionAt40FAC0(0);
     break;
 }
 
 case 0x34: {
-    if (reinterpret_cast<signed short&>(animationStage) == 0 && reinterpret_cast<signed short&>(animationFrame) == 0) {
+    if (animationStage == 0 && animationFrame == 0) {
         velocityX = -12.0f;
         velocityY = 0.0f;
         field07C = 0;
@@ -42,13 +42,13 @@ case 0x34: {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
     }
-    if (GetNativeActionAt40FA30() == reinterpret_cast<signed short&>(field070))
+    if (GetNativeActionAt40FA30() == field070)
         SetNativeActionAt40FAC0(0);
     break;
 }
 
 case 0x35: {
-    if (reinterpret_cast<signed short&>(animationStage) == 0 && reinterpret_cast<signed short&>(animationFrame) == 0) {
+    if (animationStage == 0 && animationFrame == 0) {
         I16(CONTACT_STAGE_OFFSET) = 0;
         velocityX = -15.0f;
         velocityY = 0.0f;
@@ -64,12 +64,12 @@ case 0x35: {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
     }
-    if (GetNativeActionAt40FA30() == reinterpret_cast<signed short&>(field070)) {
+    if (GetNativeActionAt40FA30() == field070) {
         SetNativeActionAt40FAC0(0);
         I16(CONTACT_STAGE_OFFSET) = 0;
         break;
     }
-    if (reinterpret_cast<signed short&>(animationStage) == 7 && I16(CONTACT_STAGE_OFFSET) < 1) {
+    if (animationStage == 7 && I16(CONTACT_STAGE_OFFSET) < 1) {
         ++I16(CONTACT_STAGE_OFFSET);
         SetAuxActionAt40FB40(1);
     }
@@ -77,7 +77,7 @@ case 0x35: {
 }
 
 case 0x38: {
-    if (reinterpret_cast<signed short&>(animationStage) == 0 && reinterpret_cast<signed short&>(animationFrame) == 0) {
+    if (animationStage == 0 && animationFrame == 0) {
         velocityX = -8.0f;
         velocityY = 0.0f;
         field07C = 0;
@@ -92,13 +92,13 @@ case 0x38: {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
     }
-    if (GetNativeActionAt40FA30() == reinterpret_cast<signed short&>(field070))
+    if (GetNativeActionAt40FA30() == field070)
         SetNativeActionAt40FAC0(0);
     break;
 }
 
 case 0x39: {
-    if (reinterpret_cast<signed short&>(animationStage) == 0 && reinterpret_cast<signed short&>(animationFrame) == 0) {
+    if (animationStage == 0 && animationFrame == 0) {
         velocityX = -9.0f;
         velocityY = 0.0f;
         field07C = 0;
@@ -113,13 +113,13 @@ case 0x39: {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
     }
-    if (GetNativeActionAt40FA30() == reinterpret_cast<signed short&>(field070))
+    if (GetNativeActionAt40FA30() == field070)
         SetNativeActionAt40FAC0(0);
     break;
 }
 
 case 0x3A: {
-    if (reinterpret_cast<signed short&>(animationStage) == 0 && reinterpret_cast<signed short&>(animationFrame) == 0) {
+    if (animationStage == 0 && animationFrame == 0) {
         velocityX = -12.0f;
         velocityY = 0.0f;
         field07C = 0;
@@ -134,13 +134,13 @@ case 0x3A: {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
     }
-    if (GetNativeActionAt40FA30() == reinterpret_cast<signed short&>(field070))
+    if (GetNativeActionAt40FA30() == field070)
         SetNativeActionAt40FAC0(0);
     break;
 }
 
 case 0x3B: {
-    if (reinterpret_cast<signed short&>(animationStage) == 0 && reinterpret_cast<signed short&>(animationFrame) == 0) {
+    if (animationStage == 0 && animationFrame == 0) {
         I16(CONTACT_STAGE_OFFSET) = 0;
         velocityX = -15.0f;
         velocityY = 0.0f;
@@ -156,12 +156,12 @@ case 0x3B: {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
     }
-    if (GetNativeActionAt40FA30() == reinterpret_cast<signed short&>(field070)) {
+    if (GetNativeActionAt40FA30() == field070) {
         SetNativeActionAt40FAC0(0);
         I16(CONTACT_STAGE_OFFSET) = 0;
         break;
     }
-    if (reinterpret_cast<signed short&>(animationStage) == 7 && I16(CONTACT_STAGE_OFFSET) < 1) {
+    if (animationStage == 7 && I16(CONTACT_STAGE_OFFSET) < 1) {
         ++I16(CONTACT_STAGE_OFFSET);
         SetAuxActionAt40FB40(1);
     }
@@ -169,7 +169,7 @@ case 0x3B: {
 }
 
 case 0x3E: {
-    if (reinterpret_cast<signed short&>(animationStage) == 0 && reinterpret_cast<signed short&>(animationFrame) == 0) {
+    if (animationStage == 0 && animationFrame == 0) {
         velocityX = -8.0f;
         velocityY = 0.0f;
         field07C = 0;
@@ -184,13 +184,13 @@ case 0x3E: {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
     }
-    if (GetNativeActionAt40FA30() == reinterpret_cast<signed short&>(field070))
+    if (GetNativeActionAt40FA30() == field070)
         SetNativeActionAt40FAC0(2);
     break;
 }
 
 case 0x3F: {
-    if (reinterpret_cast<signed short&>(animationStage) == 0 && reinterpret_cast<signed short&>(animationFrame) == 0) {
+    if (animationStage == 0 && animationFrame == 0) {
         velocityX = -9.0f;
         velocityY = 0.0f;
         field07C = 0;
@@ -205,13 +205,13 @@ case 0x3F: {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
     }
-    if (GetNativeActionAt40FA30() == reinterpret_cast<signed short&>(field070))
+    if (GetNativeActionAt40FA30() == field070)
         SetNativeActionAt40FAC0(2);
     break;
 }
 
 case 0x40: {
-    if (reinterpret_cast<signed short&>(animationStage) == 0 && reinterpret_cast<signed short&>(animationFrame) == 0) {
+    if (animationStage == 0 && animationFrame == 0) {
         velocityX = -12.0f;
         velocityY = 0.0f;
         field07C = 0;
@@ -226,13 +226,13 @@ case 0x40: {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
     }
-    if (GetNativeActionAt40FA30() == reinterpret_cast<signed short&>(field070))
+    if (GetNativeActionAt40FA30() == field070)
         SetNativeActionAt40FAC0(2);
     break;
 }
 
 case 0x41: {
-    if (reinterpret_cast<signed short&>(animationStage) == 0 && reinterpret_cast<signed short&>(animationFrame) == 0) {
+    if (animationStage == 0 && animationFrame == 0) {
         I16(CONTACT_STAGE_OFFSET) = 0;
         velocityX = -15.0f;
         velocityY = 0.0f;
@@ -248,12 +248,12 @@ case 0x41: {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
     }
-    if (GetNativeActionAt40FA30() == reinterpret_cast<signed short&>(field070)) {
+    if (GetNativeActionAt40FA30() == field070) {
         SetNativeActionAt40FAC0(0);
         I16(CONTACT_STAGE_OFFSET) = 0;
         break;
     }
-    if (reinterpret_cast<signed short&>(animationStage) == 7 && I16(CONTACT_STAGE_OFFSET) < 1) {
+    if (animationStage == 7 && I16(CONTACT_STAGE_OFFSET) < 1) {
         ++I16(CONTACT_STAGE_OFFSET);
         SetAuxActionAt40FB40(1);
     }

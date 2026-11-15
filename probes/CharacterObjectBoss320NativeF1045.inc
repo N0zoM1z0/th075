@@ -4,9 +4,9 @@
 case 0x320: {
     // The actual original parent chain is this+E4. Its native action and
     // stage fields gate a real helper call before any local motion update.
-    if (reinterpret_cast<signed short&>(owner->action) != 0x2BC ||
-        (reinterpret_cast<signed short&>(owner->action) == 0x2BC &&
-         reinterpret_cast<signed short&>(owner->animationStage) > 12)) {
+    if (owner->action != 0x2BC ||
+        (owner->action == 0x2BC &&
+         owner->animationStage > 12)) {
         NativeParentExpiredAt0045B830();
         return;
     }
@@ -14,9 +14,9 @@ case 0x320: {
     if (F1024_PHASE(this).stageAt62 == 0 &&
         F1024_PHASE(this).frameAt64 == 0) {
         SetNativeMotionAt0040FBB0(0,0,0);
-        reinterpret_cast<signed short&>(field080) = 1;
+        field080 = 1;
         field07C = 0;
-        reinterpret_cast<signed short&>(field0D8) = 0;
+        field0D8 = 0;
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 0xFF;
@@ -29,7 +29,7 @@ case 0x320: {
     velocityY = (velocityY) - g_F1044_GravityAt0065747C;
     if (velocityY < g_F1044_GroundAt0065782C)
         velocityY = 0.0f;
-    if (GetNativeActionAt0040FA30() == reinterpret_cast<signed short&>(field070))
+    if (GetNativeActionAt0040FA30() == field070)
         SetAuxActionAt0040FB40(1);
     return;
 }

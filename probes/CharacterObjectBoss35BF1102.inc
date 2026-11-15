@@ -1,8 +1,8 @@
 // F1102 original Japanese 0x35B, native 00515F65..005163BA:
 // 1109 native CODE B /233 x86 in ONE still-NONEXACT 81KB parent.
 case 0x35B: {
-    if (reinterpret_cast<signed short&>(owner->action)>0x31 &&
-        reinterpret_cast<signed short&>(owner->action)<0x96 &&
+    if (owner->action>0x31 &&
+        owner->action<0x96 &&
         F1024_PHASE(this).stageAt62<0x17) {
         NativeParentExpiredAt0045B830();
         for (int shot=0;shot<8;++shot)
@@ -24,15 +24,15 @@ case 0x35B: {
         color[2]=0xFF;
         color[3]=0xFF;
         F1037_MOTION(this).xMotion=22.0f;
-        reinterpret_cast<signed short&>(field0D8)=0;
-        reinterpret_cast<signed short&>(field0DA)=0;
-        reinterpret_cast<signed short&>(field080)=0;
+        field0D8=0;
+        field0DA=0;
+        field080=0;
         field07C=0;
     }
     F1037_MOTION(this).xMotion=F1037_MOTION(this).xMotion-g_F1093_XStepAt00658048;
     if (F1037_MOTION(this).xMotion<g_F1051_ScaleCeilingAt0065747C)
         F1037_MOTION(this).xMotion=1.0f;
-    if (reinterpret_cast<signed short&>(field0D8)==0) {
+    if (field0D8==0) {
         if (scaleX<g_F1051_ScaleCeilingAt0065747C) {
             scaleX=(scaleX)+g_F1057_SpeedScaleAt006590B4;
             scaleY=(scaleY)+g_F1057_SpeedScaleAt006590B4;
@@ -42,33 +42,33 @@ case 0x35B: {
             scaleY=1.0f;
             color[0]=0xFF;
         }
-        if (color[0]==0xFF && reinterpret_cast<signed short&>(field0D8)==0) {
-            ++reinterpret_cast<signed short&>(field0D8);
-            reinterpret_cast<signed short&>(field080)=5;
+        if (color[0]==0xFF && field0D8==0) {
+            ++field0D8;
+            field080=5;
         }
     }
     if (field07C==6) {
         field07C=0;
-        ++reinterpret_cast<signed short&>(field080);
+        ++field080;
     }
-    if (field07C==4 && reinterpret_cast<signed short&>(field080)>0)
+    if (field07C==4 && field080>0)
         field07C=0;
     if (field07C!=0)
-        reinterpret_cast<signed short&>(field080)=0;
+        field080=0;
     F1037_POSITION(this).xPosition=float(facing)*F1037_MOTION(this).xMotion+F1037_POSITION(this).xPosition;
-    if (reinterpret_cast<signed short&>(field080)==0 && F1024_PHASE(this).stageAt62<0x17 &&
-        reinterpret_cast<signed short&>(field0D8)>0) {
+    if (field080==0 && F1024_PHASE(this).stageAt62<0x17 &&
+        field0D8>0) {
         SetAuxActionAt0040FB40(0x17);
         return;
     }
-    if (GetNativeActionAt0040FA30()==reinterpret_cast<signed short&>(field070)) {
+    if (GetNativeActionAt0040FA30()==field070) {
         NativeParentExpiredAt0045B830();
         return;
     }
     if (F1024_PHASE(this).stageAt62==0x17 && F1024_PHASE(this).frameAt64==0 &&
-        reinterpret_cast<signed short&>(field0DA)<1) {
+        field0DA<1) {
         SetAuxActionAt0040FB40(1);
-        ++reinterpret_cast<signed short&>(field0DA);
+        ++field0DA;
     }
     return;
 }

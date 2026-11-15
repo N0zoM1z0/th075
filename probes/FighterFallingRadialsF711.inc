@@ -4,11 +4,11 @@
 // Entire original fighter still NONEXACT; no independent function credit.
         case 0x2D0: {
             ConfigureStormAt454BC0(3,4,0xFF0000);
-            if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+            if ((animationStage)==0 && (animationFrame)==0) {
                 velocityX=0.0f;
                 reinterpret_cast<signed short&>(scriptCounterF00)=0;
             }
-            if (y>g_ThresholdAt0065782C && (reinterpret_cast<signed short&>(animationStage))<7) {
+            if (y>g_ThresholdAt0065782C && (animationStage)<7) {
                 velocityY=velocityY-g_ApproachLowerAt00658290;
                 if (y+velocityY<=g_ThresholdAt0065782C) {
                     y=0.0f;
@@ -17,11 +17,11 @@
                     break;
                 }
             }
-            if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
+            if (GetNativeActionAt40FA30()==(field070)) {
                 SetNativeActionAt40FAC0(0);
                 break;
             }
-            if ((reinterpret_cast<signed short&>(animationStage))==4 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+            if ((animationStage)==4 && (animationFrame)==0) {
                 velocityX=float(RandomBoundaryAt455580(0,15))+g_ApproachUpperAt006592A4;
                 velocityY=40.0f;
                 field05C=6.0f;
@@ -38,11 +38,11 @@
         }
         case 0x2D1: {
             ConfigureStormAt454BC0(3,4,0xFF);
-            if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+            if ((animationStage)==0 && (animationFrame)==0) {
                 velocityX=0.0f;
                 reinterpret_cast<signed short&>(scriptCounterF00)=0;
             }
-            if (y>g_ThresholdAt0065782C && (reinterpret_cast<signed short&>(animationStage))<6) {
+            if (y>g_ThresholdAt0065782C && (animationStage)<6) {
                 velocityY=velocityY-g_ApproachLowerAt00658290;
                 if (y+velocityY<=g_ThresholdAt0065782C) {
                     y=0.0f;
@@ -51,11 +51,11 @@
                     break;
                 }
             }
-            if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
+            if (GetNativeActionAt40FA30()==(field070)) {
                 SetNativeActionAt40FAC0(0);
                 break;
             }
-            if ((reinterpret_cast<signed short&>(animationStage))==3 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+            if ((animationStage)==3 && (animationFrame)==0) {
                 velocityX=g_F711_ReverseRandomAt00659A0C-float(RandomBoundaryAt455580(0,15));
                 velocityY=40.0f;
                 field05C=6.0f;

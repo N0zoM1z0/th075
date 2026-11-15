@@ -9,13 +9,13 @@
  // Original 82KB father still incomplete, no independent case credit.
 // F969 genuine original Japanese 004AC040 0x192 stage3 three-shot trial.
 case 0x192: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
         ResetAt453E20();
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         reinterpret_cast<signed short&>(scriptCounterF02)=0;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))>4 && (reinterpret_cast<signed short&>(scriptCounterF00))<=0 && (reinterpret_cast<signed short&>(scriptCounterF02))<5) {
+    if ((animationStage)>4 && (reinterpret_cast<signed short&>(scriptCounterF00))<=0 && (reinterpret_cast<signed short&>(scriptCounterF02))<5) {
         PrepareActionAt453D40(0);
         StartAnimationAt46D000(0x28);
         field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*4+45);
@@ -40,7 +40,7 @@ case 0x192: {
         ++reinterpret_cast<signed short&>(scriptCounterF02);
     }
     --reinterpret_cast<signed short&>(scriptCounterF00);
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(2);
     break;
 }

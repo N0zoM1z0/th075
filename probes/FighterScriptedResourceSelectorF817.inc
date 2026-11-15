@@ -22,7 +22,7 @@
                  || static_cast<unsigned int>(inputC)>0
                  || static_cast<unsigned int>(reinterpret_cast<int&>(inputD))>0))
                 reinterpret_cast<signed short&>(scriptCounterF00)=2;
-            if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
+            if (GetNativeActionAt40FA30()==(field070)) {
                 SetNativeActionAt40FAC0(0x5F);
                 if ((reinterpret_cast<signed short&>(scriptCounterF00))==1) SetNativeActionAt40FAC0(0x5D);
                 if ((reinterpret_cast<signed short&>(scriptCounterF00))==2) SetNativeActionAt40FAC0(0x5E);

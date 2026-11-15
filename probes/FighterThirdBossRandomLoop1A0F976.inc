@@ -9,14 +9,14 @@
 // GPR roles still wrong in the incomplete 82KB parent. No exact credit.
 // F976 original 004AC040 real action 1A0 natural random 5/8 loop.
 case 0x1A0: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
         ResetAt453E20();
     }
     --reinterpret_cast<signed short&>(scriptCounterF00);
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(0);
-    if ((reinterpret_cast<signed short&>(animationStage))==5 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==5 && (animationFrame)==0) {
         PrepareActionAt453D40(0);
         if (field39D==2) {
             for (int shot=0;shot<5;++shot) {

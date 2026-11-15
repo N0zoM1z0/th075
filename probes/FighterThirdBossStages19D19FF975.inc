@@ -9,13 +9,13 @@
  // This is ONLY internal game state source in NONEXACT 82KB father.
 // F975 true original Japanese 004AC040 19D stage, 400B/97 native x86.
 case 0x19D: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
         ResetAt453E20();
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         reinterpret_cast<signed short&>(scriptCounterF02)=0;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))>5 && (reinterpret_cast<signed short&>(scriptCounterF00))<=0 && (reinterpret_cast<signed short&>(scriptCounterF02))<5) {
+    if ((animationStage)>5 && (reinterpret_cast<signed short&>(scriptCounterF00))<=0 && (reinterpret_cast<signed short&>(scriptCounterF02))<5) {
         PrepareActionAt453D40(0);
         StartAnimationAt46D000(0x28);
         field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*4+55);
@@ -28,20 +28,20 @@ case 0x19D: {
         ++reinterpret_cast<signed short&>(scriptCounterF02);
     }
     --reinterpret_cast<signed short&>(scriptCounterF00);
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(2);
     break;
 }
 // F975 true original Japanese 004AC040 19E, float-scaled single native shot.
 case 0x19E: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         reinterpret_cast<signed short&>(scriptCounterF02)=0;
         velocityX=(velocityX)*g_F972_GravityAt00657F74;
         velocityY=(velocityY)*g_F972_GravityAt00657F74;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))>4 && (reinterpret_cast<signed short&>(scriptCounterF00))<=0 && (reinterpret_cast<signed short&>(scriptCounterF02))<5) {
+    if ((animationStage)>4 && (reinterpret_cast<signed short&>(scriptCounterF00))<=0 && (reinterpret_cast<signed short&>(scriptCounterF02))<5) {
         PrepareActionAt453D40(0);
         StartAnimationAt46D000(0x28);
         field314=float(0-(reinterpret_cast<signed short&>(scriptCounterF02))*4);
@@ -59,23 +59,23 @@ case 0x19E: {
         SetNativeActionAt40FAC0(0xA);
         break;
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(9);
-    if ((reinterpret_cast<signed short&>(animationStage))==4 && (reinterpret_cast<signed short&>(animationFrame))==0)
+    if ((animationStage)==4 && (animationFrame)==0)
         SpawnDirectedAt453A70(0x335,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
             facing,1);
     break;
 }
 // F975 true original Japanese 004AC040 19E, float-scaled single native shot.
 case 0x19F: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         reinterpret_cast<signed short&>(scriptCounterF02)=0;
         velocityX=(velocityX)*g_F972_GravityAt00657F74;
         velocityY=(velocityY)*g_F972_GravityAt00657F74;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))>4 && (reinterpret_cast<signed short&>(scriptCounterF00))<=0 && (reinterpret_cast<signed short&>(scriptCounterF02))<5) {
+    if ((animationStage)>4 && (reinterpret_cast<signed short&>(scriptCounterF00))<=0 && (reinterpret_cast<signed short&>(scriptCounterF02))<5) {
         PrepareActionAt453D40(0);
         StartAnimationAt46D000(0x28);
         field314=float(-45-(reinterpret_cast<signed short&>(scriptCounterF02))*4);
@@ -93,9 +93,9 @@ case 0x19F: {
         SetNativeActionAt40FAC0(0xA);
         break;
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(9);
-    if ((reinterpret_cast<signed short&>(animationStage))==4 && (reinterpret_cast<signed short&>(animationFrame))==0)
+    if ((animationStage)==4 && (animationFrame)==0)
         SpawnDirectedAt453A70(0x335,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
             facing,1);
     break;

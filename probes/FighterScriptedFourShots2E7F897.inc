@@ -3,13 +3,13 @@
 // because each truly used float projectile has an independent source case.
 // Whole 46,755B original father is NONEXACT. Do not credit split game CODE.
 case F897_CASE: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         field07C=0;
-        reinterpret_cast<signed short&>(field080)=0x63;
+        field080=0x63;
         ResetAt453E20();
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==3 && (reinterpret_cast<signed short&>(animationFrame))<30) {
+    if ((animationStage)==3 && (animationFrame)<30) {
         ++reinterpret_cast<signed short&>(scriptCounterF02);
         if ((reinterpret_cast<signed short&>(scriptCounterF02))>4) {
             SpawnAt453C80(0x3E,
@@ -19,27 +19,27 @@ case F897_CASE: {
             reinterpret_cast<signed short&>(scriptCounterF02)=0;
         }
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
+    if (GetNativeActionAt40FA30()==(field070)) {
         SetNativeActionAt40FAC0(0);
-        reinterpret_cast<signed short&>(aiCardTimer)=RandomBoundaryAt455580(0,60)+60-
+        aiCardTimer=RandomBoundaryAt455580(0,60)+60-
                       static_cast<int>(g_CloudOpponentAt006714D0);
         return;
     }
-    if ((reinterpret_cast<signed short&>(animationFrame))==0)
+    if ((animationFrame)==0)
         field07C=0;
-    if ((reinterpret_cast<signed short&>(animationStage))==2 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==2 && (animationFrame)==0) {
         PrepareActionAt453D60(0x17);
         reinterpret_cast<signed short&>(scriptCounterF00)=static_cast<signed short>(x);
         reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<signed short>(y);
         SpawnExtraRawYAt453B50(0x33D,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
             (facing),1,0,1);
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==9 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==9 && (animationFrame)==0) {
         SpawnExtraRawYAt453B50(F897_SECOND_SPRITE,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
             (facing),1,0,1);
         PrepareActionAt453D40(7);
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==11 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==11 && (animationFrame)==0) {
         InitTrajectoryAt453E60(10.0f);
         SpawnRawAt453C80(0x7F,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
             (facing),1);

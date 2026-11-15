@@ -3,38 +3,38 @@
 // Genuine gameplay inside ONE still nonexact 81KB original CharacterObject.
 case 0x331: {
     reinterpret_cast<unsigned char&>(facing)=reinterpret_cast<unsigned char&>(owner->facing);
-    if (reinterpret_cast<signed short&>(owner->action)>0x95 &&
-        reinterpret_cast<signed short&>(owner->action)<0x9A &&
+    if (owner->action>0x95 &&
+        owner->action<0x9A &&
         F1024_PHASE(this).stageAt62==0) {
         F1037_POSITION(this).xPosition=F1037_POSITION(PARENT).xPosition+
             float(facing*57);
         F1037_POSITION(this).yPosition=(*(&F1037_POSITION(PARENT).yPosition))+
             g_F1069_ParentYFirstAt00659138;
     }
-    if (reinterpret_cast<signed short&>(owner->action)>0x99 &&
-        reinterpret_cast<signed short&>(owner->action)<0x9E &&
+    if (owner->action>0x99 &&
+        owner->action<0x9E &&
         F1024_PHASE(this).stageAt62==0) {
         F1037_POSITION(this).xPosition=F1037_POSITION(PARENT).xPosition+
             float(facing*57);
         F1037_POSITION(this).yPosition=(*(&F1037_POSITION(PARENT).yPosition))+
             g_F1069_ParentYSecondAt00658264;
     }
-    if (reinterpret_cast<signed short&>(owner->action)==0x9E &&
+    if (owner->action==0x9E &&
         F1024_PHASE(this).stageAt62==0) {
         F1037_POSITION(this).xPosition=F1037_POSITION(PARENT).xPosition+
             float(facing*57);
         F1037_POSITION(this).yPosition=(*(&F1037_POSITION(PARENT).yPosition))+
             g_F1057_YOffsetAt00657888;
     }
-    if ((reinterpret_cast<signed short&>(owner->action)<0x96 ||
-         reinterpret_cast<signed short&>(owner->action)>0x9E) &&
+    if ((owner->action<0x96 ||
+         owner->action>0x9E) &&
         F1024_PHASE(this).stageAt62==0) {
         SetAuxActionAt0040FB40(1);
-        reinterpret_cast<signed short&>(owner->fieldF0A)=0;
+        owner->fieldF0A=0;
     }
     if (F1024_PHASE(this).stageAt62==0 &&
         F1024_PHASE(this).frameAt64==0 &&
-        reinterpret_cast<signed short&>(field0D8)==0) {
+        field0D8==0) {
         SetNativeMotionAt0040FBB0(0,0.0f,0);
         scaleX=1.0f;
         scaleY=1.0f;
@@ -43,7 +43,7 @@ case 0x331: {
         color[2]=0xFF;
         color[3]=0xFF;
         rotationY=50.0f;
-        reinterpret_cast<signed short&>(field0D8)=1;
+        field0D8=1;
     }
     rotationZ=(rotationZ)+g_F1057_NudgeAt00657480;
     if (F1024_PHASE(this).stageAt62>0) {
@@ -52,7 +52,7 @@ case 0x331: {
         else
             color[0]=0;
     }
-    if (GetNativeActionAt0040FA30()==reinterpret_cast<signed short&>(field070))
+    if (GetNativeActionAt0040FA30()==field070)
         NativeParentExpiredAt0045B830();
     if (F1024_PHASE(this).stageAt62==1 && F1024_PHASE(this).frameAt64==0)
         SetAuxActionAt0040FB40(0);

@@ -2,7 +2,7 @@
 case 0x32B: {
     if (F1024_PHASE(this).stageAt62 == 0 && F1024_PHASE(this).frameAt64 == 0) {
         SetNativeMotionAt0040FBB0(0,0,0);
-        reinterpret_cast<signed short&>(field080) = 1;
+        field080 = 1;
         field07C = 0;
         scaleX = 2.0f;
         scaleY = 2.0f;
@@ -11,7 +11,7 @@ case 0x32B: {
         color[2] = 0xFF;
         color[3] = 0xFF;
     }
-    if (GetNativeActionAt0040FA30() == reinterpret_cast<signed short&>(field070))
+    if (GetNativeActionAt0040FA30() == field070)
         NativeParentExpiredAt0045B830();
     return;
 }

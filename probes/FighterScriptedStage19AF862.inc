@@ -11,9 +11,9 @@ case 0x19A: {
         velocityY=0.0f;
         return;
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(9);
-    if ((reinterpret_cast<signed short&>(animationStage))==5 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==5 && (animationFrame)==0) {
         SpawnFloatXYAt453A70(0x352,
             float((facing)*60)+(x),
             (*(&y))+g_F701_VolleyYAt00658268,
@@ -24,7 +24,7 @@ case 0x19A: {
         velocityY=12.0f;
         field05C=0.65f;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==6 && (reinterpret_cast<signed short&>(animationFrame))==0)
+    if ((animationStage)==6 && (animationFrame)==0)
         field07C=1;
     return;
 }

@@ -9,15 +9,15 @@ case 0x386: {
         NativeParentExpiredAt0045B830();
         return;
     }
-    if (reinterpret_cast<signed short&>(owner->field3A0)<=0) {
+    if (owner->field3A0<=0) {
         NativeParentExpiredAt0045B830();
         return;
     }
     if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
         SetNativeMotionAt0040FBB0(0,0.0f,0);
-        reinterpret_cast<signed short&>(field080)=1;
+        field080=1;
         field07C=0;
-        reinterpret_cast<signed short&>(field0D8)=0;
+        field0D8=0;
         scaleX=1.0f;
         scaleY=1.0f;
         color[0]=0xFF;
@@ -43,7 +43,7 @@ case 0x386: {
     }
     F1037_POSITION(this).xPosition=float(facing)*F1037_MOTION(this).xMotion+F1037_POSITION(this).xPosition;
     F1037_POSITION(this).yPosition=F1037_POSITION(this).yPosition+F1037_MOTION(this).yMotion;
-    if (GetNativeActionAt0040FA30()==reinterpret_cast<signed short&>(field070)) {
+    if (GetNativeActionAt0040FA30()==field070) {
         reinterpret_cast<F1051Grandparent*>(PARENT)->InitTrajectoryAt00453E60(10.0f);
         for (int shot=0;shot<12;++shot) {
             reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(

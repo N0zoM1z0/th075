@@ -6,7 +6,7 @@ case F642_CASE: {
     field368=(field368)+g_AnimationDeltaAt0065747C;
     if ((field368)>g_AnimationMaximumAt006583B4)
         field368=1000.0f;
-    if (reinterpret_cast<signed short&>(animationStage)==0 && reinterpret_cast<signed short&>(animationFrame)==0) {
+    if (animationStage==0 && animationFrame==0) {
         StartAnimationAt46D000(0xFA);
         PrepareActionAt453D60(0x2C);
         I16(F642_COUNTER)=0xB4;
@@ -26,7 +26,7 @@ case F642_CASE: {
     field490=(-I16(F642_COUNTER))*g_ProjectileFallAt006590B4;
     if (I16(F642_COUNTER)>0)
         I16(F642_COUNTER)=I16(F642_COUNTER)-10;
-    if (GetNativeActionAt40FA30()==reinterpret_cast<signed short&>(field070))
+    if (GetNativeActionAt40FA30()==field070)
         SetNativeActionAt40FAC0(F642_NEXT_ACTION);
     return;
 }

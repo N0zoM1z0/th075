@@ -1,22 +1,22 @@
 // F850 current original native actor 0x187 natural falling/animation source.
 // Entire original game case, not an independent callable function.
 case 0x187: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         if ((field3AC)==0) ResetAt453E20();
-        reinterpret_cast<signed short&>(field080)=1;
+        field080=1;
         field07C=0;
         velocityX=12.5f;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))>0) {
+    if ((animationStage)>0) {
         velocityX=(velocityX)-g_AdditionalGravityAt00659090;
         if ((velocityX)<g_ThresholdAt0065782C) {
             velocityX=0.0f;
             field3AC=0;
         }
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(0);
-    if ((reinterpret_cast<signed short&>(animationStage))==3 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==3 && (animationFrame)==0) {
         PrepareActionAt453D60(0x1C);
 
     }

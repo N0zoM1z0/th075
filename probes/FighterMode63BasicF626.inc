@@ -8,17 +8,17 @@ case 0x63: {
     // the other three action transitions. This is NOT a simple if(mode).
     if (g_ModeAt006714B4 != 3 ||
         field2CD==0) {
-        if (reinterpret_cast<signed short&>(animationStage)==2 &&
+        if (animationStage==2 &&
             field39D>0 &&
-            reinterpret_cast<signed short&>(opponent->action)<150) {
+            opponent->action<150) {
             SetNativeActionAt40FAC0(0x5F);
             field3CF=1;
             break;
         }
     } else {
-        if (reinterpret_cast<signed short&>(animationStage)>1 &&
+        if (animationStage>1 &&
             field39D>0 &&
-            reinterpret_cast<signed short&>(opponent->action)<150 &&
+            opponent->action<150 &&
             *reinterpret_cast<signed char*>(RAW+0x32A+
                 field39D)==2) {
             SetNativeActionAt40FAC0(0x31C);
@@ -26,17 +26,17 @@ case 0x63: {
             // stage-two action ends immediately: no bonus offset+0x370.
             break;
         }
-        if (reinterpret_cast<signed short&>(animationStage)>0 &&
+        if (animationStage>0 &&
             field39D>0 &&
-            reinterpret_cast<signed short&>(opponent->action)<150 &&
+            opponent->action<150 &&
             *reinterpret_cast<signed char*>(RAW+0x32A+
                 field39D)==1) {
             SetNativeActionAt40FAC0(0x31C);
             break;
         }
-        if (reinterpret_cast<signed short&>(animationStage)>1 &&
+        if (animationStage>1 &&
             field39D>0 &&
-            reinterpret_cast<signed short&>(opponent->action)<150 &&
+            opponent->action<150 &&
             *reinterpret_cast<signed char*>(RAW+0x32A+
                 field39D)==0) {
             SetNativeActionAt40FAC0(0x5F);
@@ -44,7 +44,7 @@ case 0x63: {
             break;
         }
     }
-    if (GetNativeActionAt40FA30()==reinterpret_cast<signed short&>(field070))
+    if (GetNativeActionAt40FA30()==field070)
         SetAuxActionAt40FB40(2);
     break;
 }

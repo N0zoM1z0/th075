@@ -7,7 +7,7 @@
 case 0xC8: {
     ConfigureStormAt454BC0(3,4,0xFF);
     field3AC=1;
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         velocityX=0.0f;
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
     }
@@ -24,13 +24,13 @@ case 0xC8: {
         SetNativeActionAt40FAC0(0xCC);
         return;
     }
-    if ((reinterpret_cast<signed short&>(scriptCounterF00))>0 || (reinterpret_cast<signed short&>(animationStage))>5) {
+    if ((reinterpret_cast<signed short&>(scriptCounterF00))>0 || (animationStage)>5) {
         if ((facing)*inputX<=0) {
             SetNativeActionAt40FAC0(0xCF);
             return;
         }
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
+    if (GetNativeActionAt40FA30()==(field070)) {
         if ((facing)*inputX>0) {
             if ((reinterpret_cast<signed short&>(scriptCounterF00))<1) {
                 SetAuxActionAt40FB40(2);
@@ -41,13 +41,13 @@ case 0xC8: {
         SetNativeActionAt40FAC0(0xCF);
         return;
     }
-    if ((reinterpret_cast<signed short&>(animationFrame))==0 &&
+    if ((animationFrame)==0 &&
             (facing)*inputX<=0 &&
             (reinterpret_cast<signed short&>(scriptCounterF00))>0) {
         SetNativeActionAt40FAC0(0xCF);
         return;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==2 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==2 && (animationFrame)==0) {
         velocityX=11.5f;
         SpawnAt453C80(0x7D,
             float((facing)*80)+(x),
@@ -57,9 +57,9 @@ case 0xC8: {
             (*(&y))+g_F701_VolleyYAt00658268,
             (facing),1);
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==4 && (reinterpret_cast<signed short&>(animationFrame))==0)
+    if ((animationStage)==4 && (animationFrame)==0)
         PrepareActionAt453D40(15);
-    if ((reinterpret_cast<signed short&>(animationStage))==8 && (reinterpret_cast<signed short&>(animationFrame))==0)
+    if ((animationStage)==8 && (animationFrame)==0)
         PrepareActionAt453D40(16);
     return;
 }

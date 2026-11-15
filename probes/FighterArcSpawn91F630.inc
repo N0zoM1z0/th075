@@ -3,18 +3,18 @@
 // is absent from original regular 78-instruction F629 actors.
 // A full parent Advance() remains NONEXACT; this is not a new function.
 case 0x91: {
-    if (reinterpret_cast<signed short&>(animationStage)==0 && reinterpret_cast<signed short&>(animationFrame)==0) {
+    if (animationStage==0 && animationFrame==0) {
         velocityX=-10.0f;
         velocityY=14.0f;
         field05C=0.5f;
         field07C=0;
     }
-    if (reinterpret_cast<signed short&>(animationStage)==1 && reinterpret_cast<signed short&>(animationFrame)==0 && reinterpret_cast<signed short&>(fieldF0C)==0) {
-        reinterpret_cast<signed short&>(fieldF0C)=1;
+    if (animationStage==1 && animationFrame==0 && fieldF0C==0) {
+        fieldF0C=1;
         SpawnDirectedAt453A70(F630_PROJECTILE, reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
             facing,F630_SIDE);
     }
-    if (reinterpret_cast<signed short&>(animationStage)==F630_STAGE && velocityY<g_StopThresholdAt00657480) {
+    if (animationStage==F630_STAGE && velocityY<g_StopThresholdAt00657480) {
         SetAuxActionAt40FB40(F630_EARLY);
         break;
     }
@@ -28,7 +28,7 @@ case 0x91: {
         InitTrajectoryAt453E60(2.0f);
         break;
     }
-    if (GetNativeActionAt40FA30()==reinterpret_cast<signed short&>(field070))
+    if (GetNativeActionAt40FA30()==field070)
         SetAuxActionAt40FB40(F630_LATE);
     break;
 }

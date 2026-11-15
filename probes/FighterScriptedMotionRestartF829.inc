@@ -3,7 +3,7 @@
 // threshold transition. This is inside a giant fighter Advance()
 // whole source TU that remains NONEXACT, not a callable leaf.
 case F645_CASE: {
-    if (reinterpret_cast<signed short&>(animationStage)==0 && reinterpret_cast<signed short&>(animationFrame)==0) {
+    if (animationStage==0 && animationFrame==0) {
         ResetAt453E20();
         velocityX=F645_START_POS;
         velocityY=12.5f;
@@ -20,7 +20,7 @@ case F645_CASE: {
             return;
         }
     }
-    if (GetNativeActionAt40FA30()==reinterpret_cast<signed short&>(field070)) {
+    if (GetNativeActionAt40FA30()==field070) {
         SetAuxActionAt40FB40(F645_AUX_ACTION);
         return;
     }

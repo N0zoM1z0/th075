@@ -10,8 +10,8 @@ case F1111_CASE: {
         NativeParentExpiredAt0045B830();
         return;
     }
-    if (reinterpret_cast<signed short&>(owner->action)>0x31 &&
-        reinterpret_cast<signed short&>(owner->action)<0x96 &&
+    if (owner->action>0x31 &&
+        owner->action<0x96 &&
         F1024_PHASE(this).stageAt62<2) {
         NativeParentExpiredAt0045B830();
         for (int shot=0;shot<2;++shot)
@@ -30,7 +30,7 @@ case F1111_CASE: {
     }
     if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
         SetNativeMotionAt0040FBB0(0,0.0f,0);
-        reinterpret_cast<signed short&>(field080)=1;
+        field080=1;
         field07C=0;
         scaleX=1.0f;
         scaleY=1.0f;
@@ -38,44 +38,44 @@ case F1111_CASE: {
         color[1]=0xFF;
         color[2]=0xFF;
         color[3]=0xFF;
-        reinterpret_cast<signed short&>(field0D8)=60;
-        reinterpret_cast<signed short&>(field0DA)=0;
-        reinterpret_cast<signed short&>(field0DE)=0;
-        reinterpret_cast<signed short&>(field0DC)=0;
+        field0D8=60;
+        field0DA=0;
+        field0DE=0;
+        field0DC=0;
     }
     if (F1024_PHASE(this).stageAt62>0) {
-        reinterpret_cast<signed short&>(field0D8)=short(reinterpret_cast<signed short&>(field0D8)+2);
-        reinterpret_cast<signed short&>(field0DA)=short(F1057_FloatAtan2At00483300(
+        field0D8=short(field0D8+2);
+        field0DA=short(F1057_FloatAtan2At00483300(
             (F1037_POSITION(PARENT_GRANDPARENT).yPosition-F1037_POSITION(this).yPosition)+g_F1057_YOffsetAt00657888,
             (F1037_POSITION(PARENT_GRANDPARENT).xPosition-F1037_POSITION(this).xPosition)*int(facing)) /
             g_F1057_AngleDivAt00657828);
-        if (reinterpret_cast<signed short&>(field0DC)>reinterpret_cast<signed short&>(field0DA)) {
-            if (reinterpret_cast<signed short&>(field0DC)-reinterpret_cast<signed short&>(field0DA)<=180) {
-                reinterpret_cast<signed short&>(field0DC)=short(reinterpret_cast<signed short&>(field0DC)-2);
-                if (reinterpret_cast<signed short&>(field0DC)<-180)
-                    reinterpret_cast<signed short&>(field0DC)=short(reinterpret_cast<signed short&>(field0DC)+360);
+        if (field0DC>field0DA) {
+            if (field0DC-field0DA<=180) {
+                field0DC=short(field0DC-2);
+                if (field0DC<-180)
+                    field0DC=short(field0DC+360);
             } else {
-                reinterpret_cast<signed short&>(field0DC)=short(reinterpret_cast<signed short&>(field0DC)+2);
-                if (reinterpret_cast<signed short&>(field0DC)>180)
-                    reinterpret_cast<signed short&>(field0DC)=short(reinterpret_cast<signed short&>(field0DC)-360);
+                field0DC=short(field0DC+2);
+                if (field0DC>180)
+                    field0DC=short(field0DC-360);
             }
         }
         // The native PE independently checks the mutated +DC angle again.
-        if (reinterpret_cast<signed short&>(field0DC)<=reinterpret_cast<signed short&>(field0DA)) {
-            if (reinterpret_cast<signed short&>(field0DC)-reinterpret_cast<signed short&>(field0DA)>=-180) {
-                reinterpret_cast<signed short&>(field0DC)=short(reinterpret_cast<signed short&>(field0DC)+2);
-                if (reinterpret_cast<signed short&>(field0DC)>180)
-                    reinterpret_cast<signed short&>(field0DC)=short(reinterpret_cast<signed short&>(field0DC)-360);
+        if (field0DC<=field0DA) {
+            if (field0DC-field0DA>=-180) {
+                field0DC=short(field0DC+2);
+                if (field0DC>180)
+                    field0DC=short(field0DC-360);
             } else {
-                reinterpret_cast<signed short&>(field0DC)=short(reinterpret_cast<signed short&>(field0DC)-2);
-                if (reinterpret_cast<signed short&>(field0DC)<-180)
-                    reinterpret_cast<signed short&>(field0DC)=short(reinterpret_cast<signed short&>(field0DC)+360);
+                field0DC=short(field0DC-2);
+                if (field0DC<-180)
+                    field0DC=short(field0DC+360);
             }
         }
     }
     if (F1024_PHASE(this).stageAt62<=1) {
-        SetNativeTwoFloatsAt0040FB70(float(reinterpret_cast<signed short&>(field0DC)),
-            float(reinterpret_cast<signed short&>(field0D8))*g_F1110_NativeSpeedAt006578C0+g_F1110_NativeBaseAt00657CF8);
+        SetNativeTwoFloatsAt0040FB70(float(field0DC),
+            float(field0D8)*g_F1110_NativeSpeedAt006578C0+g_F1110_NativeBaseAt00657CF8);
         reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
             F1111_NEXT_ACTION,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),
             facing,1);
@@ -83,18 +83,18 @@ case F1111_CASE: {
             g_F1057_RandomDoubleAt00658A20+g_F1057_RandomBaseAt00657D00);
         reinterpret_cast<unsigned int&>(scaleY)=reinterpret_cast<unsigned int&>(scaleX);
     }
-    reinterpret_cast<signed short&>(field0D8)=short(reinterpret_cast<signed short&>(field0D8)+2);
-    if (F1024_PHASE(this).stageAt62>0 && reinterpret_cast<signed short&>(field0DA)<60) {
+    field0D8=short(field0D8+2);
+    if (F1024_PHASE(this).stageAt62>0 && field0DA<60) {
         if ((*(&F1037_POSITION(PARENT_GRANDPARENT).yPosition))+g_F1057_YOffsetAt00657888<F1037_POSITION(this).yPosition)
             field0C8=(field0C8)+g_F1057_NudgeAt00657480;
         if ((*(&F1037_POSITION(PARENT_GRANDPARENT).yPosition))+g_F1057_YOffsetAt00657888>F1037_POSITION(this).yPosition)
             field0C8=(field0C8)-g_F1057_NudgeAt00657480;
-        ++reinterpret_cast<signed short&>(field0DA);
+        ++field0DA;
     }
     F1037_POSITION(this).xPosition=float(facing)*F1037_MOTION(this).xMotion+F1037_POSITION(this).xPosition;
     F1037_POSITION(this).yPosition=F1037_POSITION(this).yPosition-F1037_MOTION(this).yMotion;
     if (field07C!=0 && field07C!=6 && F1024_PHASE(this).stageAt62==1) {
-        if (reinterpret_cast<signed short&>(field080)==0 || field07C!=4) {
+        if (field080==0 || field07C!=4) {
             F1037_MOTION(this).xMotion=0.0f;
             F1037_MOTION(this).yMotion=0.0f;
             SetAuxActionAt0040FB40(2);
@@ -102,7 +102,7 @@ case F1111_CASE: {
             scaleY=2.5f;
             return;
         }
-        if (reinterpret_cast<signed short&>(field080)>0 && field07C==4 && reinterpret_cast<signed short&>(field080)>0)
+        if (field080>0 && field07C==4 && field080>0)
             field07C=0;
     }
     if (F1024_PHASE(this).stageAt62>1) {
@@ -116,7 +116,7 @@ case F1111_CASE: {
             return;
         }
     }
-    if (GetNativeActionAt0040FA30()==reinterpret_cast<signed short&>(field070))
+    if (GetNativeActionAt0040FA30()==field070)
         NativeParentExpiredAt0045B830();
     if (F1024_PHASE(this).stageAt62==2 && F1024_PHASE(this).frameAt64==0)
         SetAuxActionAt0040FB40(1);

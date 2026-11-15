@@ -9,15 +9,15 @@
  // still not native: entire callable NONEXACT.
 // F1004 original Japanese 004AC040 2E5 native dual projectile cadence
 case 0x2E5: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         ResetAt453E20();
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         reinterpret_cast<signed short&>(scriptCounterF02)=0;
-        reinterpret_cast<signed short&>(fieldF04)=0;
+        fieldF04=0;
         reinterpret_cast<signed short&>(fieldF06)=0;
         reinterpret_cast<signed short&>(fieldF08)=g_F1004_ModeAt006714D0+2;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))>4 && (reinterpret_cast<signed short&>(animationStage))<11 && (reinterpret_cast<signed short&>(fieldF08))>0) {
+    if ((animationStage)>4 && (animationStage)<11 && (reinterpret_cast<signed short&>(fieldF08))>0) {
         --reinterpret_cast<signed short&>(fieldF06);
         if ((reinterpret_cast<signed short&>(fieldF06))>3-g_F1004_ModeAt006714D0) {
             field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*5);
@@ -39,20 +39,20 @@ case 0x2E5: {
             --reinterpret_cast<signed short&>(fieldF08);
         }
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
+    if (GetNativeActionAt40FA30()==(field070)) {
         SetNativeActionAt40FAC0(0);
-        reinterpret_cast<signed short&>(aiCardTimer)=static_cast<short>(
+        aiCardTimer=static_cast<short>(
             RandAt455580(60,120)-g_F1004_ModeAt006714D0*20);
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==4 && (reinterpret_cast<signed short&>(animationFrame))==0)
+    if ((animationStage)==4 && (animationFrame)==0)
         reinterpret_cast<signed short&>(fieldF06)=10;
-    if ((reinterpret_cast<signed short&>(animationStage))==5 && (reinterpret_cast<signed short&>(animationFrame))==0)
+    if ((animationStage)==5 && (animationFrame)==0)
         PrepareActionAt453D40(5);
-    if ((reinterpret_cast<signed short&>(animationStage))==11 && (reinterpret_cast<signed short&>(animationFrame))==0 && (reinterpret_cast<signed short&>(fieldF08))>0)
+    if ((animationStage)==11 && (animationFrame)==0 && (reinterpret_cast<signed short&>(fieldF08))>0)
         SetAuxActionAt40FB40(9);
-    if ((reinterpret_cast<signed short&>(animationStage))==13 && (reinterpret_cast<signed short&>(animationFrame))==0) {
-        ++reinterpret_cast<signed short&>(fieldF04);
-        if ((reinterpret_cast<signed short&>(fieldF04))<13)
+    if ((animationStage)==13 && (animationFrame)==0) {
+        ++fieldF04;
+        if ((fieldF04)<13)
             SetAuxActionAt40FB40(11);
     }
     break;

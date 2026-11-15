@@ -3,7 +3,7 @@
 case 0x34A: {
     reinterpret_cast<unsigned int&>(x)=reinterpret_cast<unsigned int&>(owner->x);
     y=0.0f;
-    reinterpret_cast<signed short&>(field08A)=1;
+    field08A=1;
     if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
         SetNativeMotionAt0040FBB0(0,0.0f,0);
         scaleX=2.5f;
@@ -12,7 +12,7 @@ case 0x34A: {
         color[1]=0xFF;
         color[2]=0xFF;
         color[3]=0xFF;
-        reinterpret_cast<signed short&>(field01A)=0x4E2;
+        field01A=0x4E2;
         rotationY=0.0f;
         rotationZ=0.0f;
         rotationX=-80.0f;
@@ -22,9 +22,9 @@ case 0x34A: {
         // The original compares parent action +0x60 with 0x2C0, then
         // checks the parent's distinct +0x62 WORD against 0x2C0 and 6.
         // Do not collapse this to a simpler presumed stage condition.
-        if (reinterpret_cast<signed short&>(owner->action)!=0x2C0 ||
-            (reinterpret_cast<signed short&>(owner->animationStage)==0x2C0 &&
-             reinterpret_cast<signed short&>(owner->animationStage)>6)) {
+        if (owner->action!=0x2C0 ||
+            (owner->animationStage==0x2C0 &&
+             owner->animationStage>6)) {
             SetAuxActionAt0040FB40(2);
             return;
         }
@@ -38,7 +38,7 @@ case 0x34A: {
         }
     }
     rotationZ=(rotationZ)+g_F1051_ScaleCeilingAt0065747C;
-    if (GetNativeActionAt0040FA30()==reinterpret_cast<signed short&>(field070)) {
+    if (GetNativeActionAt0040FA30()==field070) {
         NativeParentExpiredAt0045B830();
         return;
     }

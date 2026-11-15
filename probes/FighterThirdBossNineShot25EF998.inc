@@ -9,18 +9,18 @@
  // GPR phase from 0/0/0/0 to 73/73/65/65, but no x86 width debt.
 // F998 true original Japanese game fighter 004AC040 action25E
 case 0x25E: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         reinterpret_cast<signed short&>(scriptCounterF02)=0;
         velocityX=(velocityX)*g_F972_GravityAt00657F74;
         velocityY=(velocityY)*g_F972_GravityAt00657F74;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))>4)
+    if ((animationStage)>4)
         velocityY=velocityY-field05C;
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(9);
-    if ((reinterpret_cast<signed short&>(animationStage))==4 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==4 && (animationFrame)==0) {
         velocityX=-3.0f;
         velocityY=9.0f;
         field05C=0.7f;

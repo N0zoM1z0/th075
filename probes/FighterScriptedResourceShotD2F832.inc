@@ -3,12 +3,12 @@
 // F652 native complete D2 resource shot with real x87 speed scaling.
 // Not a whole-function source match; this is an internal case.
 case 0xD2: {
-    if (reinterpret_cast<signed short&>(meter)<2) {
+    if (meter<2) {
         SetNativeActionAt40FAC0(9);
         return;
     }
-    reinterpret_cast<signed short&>(meter)=reinterpret_cast<signed short&>(meter)-F652_DECAY;
-    if (reinterpret_cast<signed short&>(animationStage)==0 && reinterpret_cast<signed short&>(animationFrame)==0) {
+    meter=meter-F652_DECAY;
+    if (animationStage==0 && animationFrame==0) {
 #if F652_SCALE_BEFORE
         velocityX=(velocityX)*g_BounceScaleAt00657F74;
         velocityY=(velocityY)*g_BounceScaleAt00657F74;
@@ -26,7 +26,7 @@ case 0xD2: {
     // The original applies this x87 drag every frame, even outside
     // the stage/frame-zero projectile initialization path.
     velocityY=velocityY-(field05C)*g_BounceScaleAt00657F74;
-    if (GetNativeActionAt40FA30()==reinterpret_cast<signed short&>(field070)) {
+    if (GetNativeActionAt40FA30()==field070) {
         if (static_cast<unsigned int>(reinterpret_cast<int&>(inputD))>0)
             SetAuxActionAt40FB40(2);
         else

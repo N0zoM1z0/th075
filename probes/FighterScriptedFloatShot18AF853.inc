@@ -2,8 +2,8 @@
 // Genuine float Y left lvalue preserves original x87 width/order.
 // Incomplete giant source: original GPR and final-JMP differences remain.
 case 0x18A: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
-        reinterpret_cast<signed short&>(field080)=1;
+    if ((animationStage)==0 && (animationFrame)==0) {
+        field080=1;
         field07C=0;
         velocityX=15.0f;
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
@@ -13,9 +13,9 @@ case 0x18A: {
         velocityX=0.0f;
         field3AC=0;
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(0);
-    if ((reinterpret_cast<signed short&>(animationStage))==5 && (reinterpret_cast<signed short&>(animationFrame))==0)
+    if ((animationStage)==5 && (animationFrame)==0)
         SpawnFloatXYAt453A70(0x327,
             float((facing)*151)+(x),
             (*(&y))+g_F853OffsetYAt0065929C,

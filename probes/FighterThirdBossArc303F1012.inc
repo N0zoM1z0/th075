@@ -11,22 +11,22 @@
  // Whole original 82KB callable remains NONEXACT.
 // F1012 original Japanese game fighter 004AC040 state303.
 case 0x303: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         ResetAt453E20();
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         reinterpret_cast<signed short&>(scriptCounterF02)=0;
-        reinterpret_cast<signed short&>(fieldF04)=0;
+        fieldF04=0;
         if (RandAt455580(0,100)>50)
             reinterpret_cast<signed short&>(fieldF06)=5;
         else
             reinterpret_cast<signed short&>(fieldF06)=-5;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))<9 && y>g_ThresholdAt0065782C) {
+    if ((animationStage)<9 && y>g_ThresholdAt0065782C) {
         velocityY=velocityY-field05C;
         if (velocityY<g_AnimationDeltaAt0065747C)
             velocityY=1.0f;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))>8 && y>g_ThresholdAt0065782C) {
+    if ((animationStage)>8 && y>g_ThresholdAt0065782C) {
         velocityY=velocityY-field05C;
         if (y+velocityY<=g_ThresholdAt0065782C) {
             y=0.0f;
@@ -34,38 +34,38 @@ case 0x303: {
             SetAuxActionAt40FB40(11);
         }
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==7 || (reinterpret_cast<signed short&>(animationStage))==8) {
-        if ((reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==7 || (animationStage)==8) {
+        if ((animationFrame)==0) {
             ++reinterpret_cast<signed short&>(scriptCounterF00);
             if ((reinterpret_cast<signed short&>(scriptCounterF00))<g_F1004_ModeAt006714D0*5+10) {
                 PrepareActionAt453D40(0);
                 reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
                 reinterpret_cast<signed short&>(fieldF08)=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
-                field314=float(reinterpret_cast<signed short&>(fieldF04));
+                field314=float(fieldF04);
                 field318=10.0f;
-                SetAngleAt40FB70(float(reinterpret_cast<signed short&>(fieldF04)),100.0f);
+                SetAngleAt40FB70(float(fieldF04),100.0f);
                 SpawnFloatXYAt453A70(0x388,
                     float(facing)*(velocityX)+(x),
                     (*(&y))+g_F1012_ArcYAt006591EC-velocityY,
                     facing,1);
                 velocityX=float(reinterpret_cast<signed short&>(scriptCounterF02))*g_F747_BounceYAt00658044;
                 velocityY=float(reinterpret_cast<signed short&>(fieldF08))*g_F747_BounceYAt00658044;
-                reinterpret_cast<signed short&>(fieldF04)+=reinterpret_cast<signed short&>(fieldF06);
+                fieldF04+=reinterpret_cast<signed short&>(fieldF06);
             }
         }
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
+    if (GetNativeActionAt40FA30()==(field070)) {
         SetNativeActionAt40FAC0(0);
-        reinterpret_cast<signed short&>(aiCardTimer)=static_cast<short>(
+        aiCardTimer=static_cast<short>(
             RandAt455580(60,120)-g_F1004_ModeAt006714D0*20);
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==6 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==6 && (animationFrame)==0) {
         velocityX=0.0f;
         velocityY=6.5f;
         field05C=0.25f;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==7 && (reinterpret_cast<signed short&>(animationFrame))==0) {
-        reinterpret_cast<signed short&>(fieldF04)=static_cast<short>(
+    if ((animationStage)==7 && (animationFrame)==0) {
+        fieldF04=static_cast<short>(
             F1012_AngleAt00483300(
                 -((opponent->y)+
                     g_ContactProjectionAt00657888-y+
@@ -75,7 +75,7 @@ case 0x303: {
                     (facing))/
                 g_F1012_AngleDivisorAt00657828);
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==9 && (reinterpret_cast<signed short&>(animationFrame))==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<25)
+    if ((animationStage)==9 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<25)
         SetAuxActionAt40FB40(7);
     break;
 }

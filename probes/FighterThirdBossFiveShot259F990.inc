@@ -8,13 +8,13 @@
  // indices34/96/127 and 137 GPR roles remain wrong.
  // Whole original 82KB game callable NONEXACT.
 case 0x259: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
         ResetAt453E20();
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         reinterpret_cast<signed short&>(scriptCounterF02)=0;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))>4) {
+    if ((animationStage)>4) {
         if ((reinterpret_cast<signed short&>(scriptCounterF02))<3 && (reinterpret_cast<signed short&>(scriptCounterF00))<=0) {
             PrepareActionAt453D40(0);
             field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*3+145);
@@ -53,7 +53,7 @@ case 0x259: {
         }
         --reinterpret_cast<signed short&>(scriptCounterF00);
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(0);
     break;
 }

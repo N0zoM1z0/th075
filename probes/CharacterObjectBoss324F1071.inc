@@ -5,8 +5,8 @@ case 0x324: {
         NativeParentExpiredAt0045B830();
         return;
     }
-    if (reinterpret_cast<signed short&>(owner->action)>0x31 &&
-        reinterpret_cast<signed short&>(owner->action)<0x96 &&
+    if (owner->action>0x31 &&
+        owner->action<0x96 &&
         F1024_PHASE(this).stageAt62<2) {
         NativeParentExpiredAt0045B830();
         for (int shot=0;shot<3;++shot) {
@@ -22,9 +22,9 @@ case 0x324: {
     }
     if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
         SetNativeMotionAt0040FBB0(0,0.0f,0);
-        reinterpret_cast<signed short&>(field080)=1;
+        field080=1;
         field07C=0;
-        reinterpret_cast<signed short&>(field0D8)=0;
+        field0D8=0;
         SetNativeAngleBitsAt0040FB70(reinterpret_cast<unsigned int&>(field0C8),15.0f);
         scaleX=0.1f;
         scaleY=0.1f;
@@ -35,10 +35,10 @@ case 0x324: {
         rotationZ=F1057_FloatAtan2At00483300(
             F1037_MOTION(this).yMotion,F1037_MOTION(this).xMotion)/g_F1057_AngleDivAt00657828;
     }
-    ++reinterpret_cast<signed short&>(field0D8);
+    ++field0D8;
     if (F1024_PHASE(this).stageAt62<2) {
         SetNativeAngleBitsAt0040FB70(reinterpret_cast<unsigned int&>(field0C8),
-            float(reinterpret_cast<signed short&>(field0D8))*g_F1057_SpeedScaleAt006590B4+
+            float(field0D8)*g_F1057_SpeedScaleAt006590B4+
             g_F1068_ActionSpeedAt00657878);
         if (scaleX<g_F1051_ScaleCeilingAt0065747C) {
             scaleX=(scaleX)+g_F1057_SpeedScaleAt006590B4;
@@ -82,7 +82,7 @@ case 0x324: {
             return;
         }
     }
-    if (GetNativeActionAt0040FA30()==reinterpret_cast<signed short&>(field070))
+    if (GetNativeActionAt0040FA30()==field070)
         NativeParentExpiredAt0045B830();
     return;
 }

@@ -6,13 +6,13 @@
 // complete 151 native mnemonic+width roles, but 67 GPR mismatches.
 // Actual full original 82KB fighter remains NONEXACT, not case exact.
 case 0x1A1: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
         ResetAt453E20();
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(0);
-    if ((reinterpret_cast<signed short&>(animationStage))==5 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==5 && (animationFrame)==0) {
         PrepareActionAt453D40(0);
         if (field39D==2) {
             for (int shot=0;shot<5;++shot) {

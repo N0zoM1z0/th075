@@ -1,7 +1,7 @@
 // F607: original indexed fighter trajectory landing state 0x49.
 // Whole source remains a nonexact giant; this is an inner case only.
 case 0x49: {
-    if (reinterpret_cast<signed short&>(animationStage)==0 && reinterpret_cast<signed short&>(animationFrame)==0) {
+    if (animationStage==0 && animationFrame==0) {
         velocityX = -(reinterpret_cast<float&>(field094));
         reinterpret_cast<int&>(velocityY) = reinterpret_cast<int&>(field098);
         field05C = 0.8f;
@@ -17,9 +17,9 @@ case 0x49: {
         PrepareActionAt453D60(0x16);
         break;
     }
-    if (GetNativeActionAt40FA30()==reinterpret_cast<signed short&>(field070))
-        SetAuxActionAt40FB40(reinterpret_cast<signed short&>(animationStage)-1);
-    if (reinterpret_cast<signed short&>(animationStage)==1 && reinterpret_cast<signed short&>(animationFrame)==0 && velocityY != g_ThresholdAt0065782C) {
+    if (GetNativeActionAt40FA30()==field070)
+        SetAuxActionAt40FB40(animationStage-1);
+    if (animationStage==1 && animationFrame==0 && velocityY != g_ThresholdAt0065782C) {
         // Real VC7.1 left lvalue preserves original FLD global; FLD member.
         // Both branches exit this native case, not merely the nested if.
         if (*(&velocityX) == g_ThresholdAt0065782C) {

@@ -17,38 +17,38 @@
  // roles and original physical whole offsets still differ.
 // F1019 original Japanese TH075 native state0x2EF.
 case 0x2EF: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         reinterpret_cast<signed short&>(scriptCounterF02)=0;
-        reinterpret_cast<signed short&>(fieldF04)=0;
+        fieldF04=0;
         field07C=0;
         ResetAt453E20();
-        reinterpret_cast<signed short&>(field080)=99;
+        field080=99;
     }
-    if (y>g_ThresholdAt0065782C && (reinterpret_cast<signed short&>(animationStage))<22)
+    if (y>g_ThresholdAt0065782C && (animationStage)<22)
         velocityY=velocityY-g_F747_BounceYAt00658044;
-    if (y>g_ThresholdAt0065782C && (reinterpret_cast<signed short&>(animationStage))>23) {
+    if (y>g_ThresholdAt0065782C && (animationStage)>23) {
         velocityY=velocityY-field05C;
-        if (y+velocityY<=g_ThresholdAt0065782C && (reinterpret_cast<signed short&>(animationStage))<34) {
+        if (y+velocityY<=g_ThresholdAt0065782C && (animationStage)<34) {
             SetAuxActionAt40FB40(34);
             ResetAt453E20();
             y=0.0f;
             break;
         }
     }
-    if ((reinterpret_cast<signed short&>(animationFrame))==0)
+    if ((animationFrame)==0)
         field07C=0;
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
+    if (GetNativeActionAt40FA30()==(field070)) {
         SetNativeActionAt40FAC0(0);
-        reinterpret_cast<signed short&>(aiCardTimer)=static_cast<short>(RandAt455580(60,120));
+        aiCardTimer=static_cast<short>(RandAt455580(60,120));
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==13 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==13 && (animationFrame)==0) {
         PrepareActionAt453D40(7);
         velocityX=float(RandAt455580(0,6)-3);
         velocityY=1.5f;
         field05C=0.5f;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==15 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==15 && (animationFrame)==0) {
         reinterpret_cast<signed short&>(scriptCounterF00)=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
         reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
         field314=float(RandAt455580(0,100)-70);
@@ -64,7 +64,7 @@ case 0x2EF: {
         velocityY=float(reinterpret_cast<signed short&>(scriptCounterF02))*g_F747_BounceYAt00658044;
         PrepareActionAt453D40(7);
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==17 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==17 && (animationFrame)==0) {
         reinterpret_cast<signed short&>(scriptCounterF00)=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
         reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
         field314=float(RandAt455580(0,100)-50);
@@ -80,7 +80,7 @@ case 0x2EF: {
         velocityY=float(reinterpret_cast<signed short&>(scriptCounterF02))*g_F747_BounceYAt00658044;
         PrepareActionAt453D40(7);
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==19 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==19 && (animationFrame)==0) {
         reinterpret_cast<signed short&>(scriptCounterF00)=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
         reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
         field314=float(RandAt455580(0,100)-50);
@@ -96,7 +96,7 @@ case 0x2EF: {
         velocityY=float(reinterpret_cast<signed short&>(scriptCounterF02))*g_F747_BounceYAt00658044;
         PrepareActionAt453D40(7);
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==21 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==21 && (animationFrame)==0) {
         reinterpret_cast<signed short&>(scriptCounterF00)=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
         reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
         field314=float(RandAt455580(0,100)-50);
@@ -112,7 +112,7 @@ case 0x2EF: {
         velocityY=float(reinterpret_cast<signed short&>(scriptCounterF02))*g_F747_BounceYAt00658044;
         PrepareActionAt453D40(7);
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==23 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==23 && (animationFrame)==0) {
         reinterpret_cast<signed short&>(scriptCounterF00)=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
         reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
         field314=float(RandAt455580(0,100)-50);
@@ -127,50 +127,50 @@ case 0x2EF: {
         velocityX=float(reinterpret_cast<signed short&>(scriptCounterF00))*g_F747_BounceYAt00658044;
         velocityY=float(reinterpret_cast<signed short&>(scriptCounterF02))*g_F747_BounceYAt00658044;
         PrepareActionAt453D40(7);
-        if ((reinterpret_cast<signed short&>(fieldF04))<g_F1004_ModeAt006714D0*2+8) {
-            ++reinterpret_cast<signed short&>(fieldF04);
+        if ((fieldF04)<g_F1004_ModeAt006714D0*2+8) {
+            ++fieldF04;
             SetAuxActionAt40FB40(15);
         }
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==34 && (reinterpret_cast<signed short&>(animationFrame))==0)
+    if ((animationStage)==34 && (animationFrame)==0)
         SetAuxActionAt40FB40(32);
     break;
 }
 
 // F1019 original Japanese TH075 native state0x2F0.
 case 0x2F0: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         reinterpret_cast<signed short&>(scriptCounterF02)=0;
-        reinterpret_cast<signed short&>(fieldF04)=0;
+        fieldF04=0;
         field07C=0;
         ResetAt453E20();
-        reinterpret_cast<signed short&>(field080)=99;
+        field080=99;
     }
-    if (y>g_ThresholdAt0065782C && (reinterpret_cast<signed short&>(animationStage))<22)
+    if (y>g_ThresholdAt0065782C && (animationStage)<22)
         velocityY=velocityY-g_F1019_FallAt00658354;
-    if (y>g_ThresholdAt0065782C && (reinterpret_cast<signed short&>(animationStage))>23) {
+    if (y>g_ThresholdAt0065782C && (animationStage)>23) {
         velocityY=velocityY-field05C;
-        if (y+velocityY<=g_ThresholdAt0065782C && (reinterpret_cast<signed short&>(animationStage))<34) {
+        if (y+velocityY<=g_ThresholdAt0065782C && (animationStage)<34) {
             SetAuxActionAt40FB40(34);
             ResetAt453E20();
             y=0.0f;
             break;
         }
     }
-    if ((reinterpret_cast<signed short&>(animationFrame))==0)
+    if ((animationFrame)==0)
         field07C=0;
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
+    if (GetNativeActionAt40FA30()==(field070)) {
         SetNativeActionAt40FAC0(0);
-        reinterpret_cast<signed short&>(aiCardTimer)=static_cast<short>(RandAt455580(60,120));
+        aiCardTimer=static_cast<short>(RandAt455580(60,120));
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==13 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==13 && (animationFrame)==0) {
         PrepareActionAt453D40(7);
         velocityX=float(RandAt455580(0,6)-3);
         velocityY=3.5f;
         field05C=0.5f;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==15 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==15 && (animationFrame)==0) {
         reinterpret_cast<signed short&>(scriptCounterF00)=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
         reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
         field314=float(RandAt455580(0,100)-70);
@@ -186,7 +186,7 @@ case 0x2F0: {
         velocityY=float(reinterpret_cast<signed short&>(scriptCounterF02))*g_F747_BounceYAt00658044;
         PrepareActionAt453D40(7);
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==17 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==17 && (animationFrame)==0) {
         reinterpret_cast<signed short&>(scriptCounterF00)=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
         reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
         field314=float(RandAt455580(0,100)-70);
@@ -202,7 +202,7 @@ case 0x2F0: {
         velocityY=float(reinterpret_cast<signed short&>(scriptCounterF02))*g_F747_BounceYAt00658044;
         PrepareActionAt453D40(7);
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==19 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==19 && (animationFrame)==0) {
         reinterpret_cast<signed short&>(scriptCounterF00)=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
         reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
         field314=float(RandAt455580(0,100)-70);
@@ -218,7 +218,7 @@ case 0x2F0: {
         velocityY=float(reinterpret_cast<signed short&>(scriptCounterF02))*g_F747_BounceYAt00658044;
         PrepareActionAt453D40(7);
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==21 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==21 && (animationFrame)==0) {
         reinterpret_cast<signed short&>(scriptCounterF00)=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
         reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
         field314=float(RandAt455580(0,100)-70);
@@ -234,7 +234,7 @@ case 0x2F0: {
         velocityY=float(reinterpret_cast<signed short&>(scriptCounterF02))*g_F747_BounceYAt00658044;
         PrepareActionAt453D40(7);
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==23 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==23 && (animationFrame)==0) {
         reinterpret_cast<signed short&>(scriptCounterF00)=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
         reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((velocityY)*g_ContactProjectionAt00657888);
         field314=float(RandAt455580(0,100)-70);
@@ -249,12 +249,12 @@ case 0x2F0: {
         velocityX=float(reinterpret_cast<signed short&>(scriptCounterF00))*g_F747_BounceYAt00658044;
         velocityY=float(reinterpret_cast<signed short&>(scriptCounterF02))*g_F747_BounceYAt00658044;
         PrepareActionAt453D40(7);
-        if ((reinterpret_cast<signed short&>(fieldF04))<g_F1004_ModeAt006714D0*2+8) {
-            ++reinterpret_cast<signed short&>(fieldF04);
+        if ((fieldF04)<g_F1004_ModeAt006714D0*2+8) {
+            ++fieldF04;
             SetAuxActionAt40FB40(15);
         }
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==34 && (reinterpret_cast<signed short&>(animationFrame))==0)
+    if ((animationStage)==34 && (animationFrame)==0)
         SetAuxActionAt40FB40(32);
     break;
 }

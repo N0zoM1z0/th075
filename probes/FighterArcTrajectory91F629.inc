@@ -2,13 +2,13 @@
 // inside a huge incomplete fighter Advance(). Game case evidence,
 // not an independent original CODE function or accepted match unit.
 case 0x91: {
-    if (reinterpret_cast<signed short&>(animationStage)==0 && reinterpret_cast<signed short&>(animationFrame)==0) {
+    if (animationStage==0 && animationFrame==0) {
         velocityX=-10.0f;
         velocityY=14.0f;
         field05C=0.5f;
         field07C=0;
     }
-    if (reinterpret_cast<signed short&>(animationStage)==F629_STAGE && velocityY<g_StopThresholdAt00657480) {
+    if (animationStage==F629_STAGE && velocityY<g_StopThresholdAt00657480) {
         SetAuxActionAt40FB40(F629_EARLY);
         break;
     }
@@ -22,7 +22,7 @@ case 0x91: {
         InitTrajectoryAt453E60(2.0f);
         break;
     }
-    if (GetNativeActionAt40FA30()==reinterpret_cast<signed short&>(field070))
+    if (GetNativeActionAt40FA30()==field070)
         SetAuxActionAt40FB40(F629_LATE);
     break;
 }

@@ -1,8 +1,8 @@
 // F1101: native Japanese 00515C0E..00515E7F action 0x358,
 // 625 original CODE B/143 x86, within one still-NONEXACT 81KB owner.
 case 0x358: {
-    if (reinterpret_cast<signed short&>(owner->action)>0x31 &&
-        reinterpret_cast<signed short&>(owner->action)<0x96 &&
+    if (owner->action>0x31 &&
+        owner->action<0x96 &&
         F1024_PHASE(this).stageAt62<0x17) {
         NativeParentExpiredAt0045B830();
         for (int shot=0;shot<10;++shot)
@@ -16,7 +16,7 @@ case 0x358: {
         return;
     }
     if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
-        reinterpret_cast<signed short&>(field0D8)=0;
+        field0D8=0;
         F1037_MOTION(this).xMotion=8.0f;
     }
     if (F1024_PHASE(this).stageAt62==1 && F1024_PHASE(this).frameAt64==0) {
@@ -31,9 +31,9 @@ case 0x358: {
         return;
     }
     F1037_POSITION(this).xPosition=float(facing)*F1037_MOTION(this).xMotion+F1037_POSITION(this).xPosition;
-    if (GetNativeActionAt0040FA30()==reinterpret_cast<signed short&>(field070)) {
-        if (reinterpret_cast<signed short&>(field0D8)<5) {
-            ++reinterpret_cast<signed short&>(field0D8);
+    if (GetNativeActionAt0040FA30()==field070) {
+        if (field0D8<5) {
+            ++field0D8;
             SetAuxActionAt0040FB40(1);
         } else
             NativeParentExpiredAt0045B830();

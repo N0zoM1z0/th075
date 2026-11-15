@@ -6,16 +6,16 @@
  // 162 GPR positions differ, whole 82KB original NONEXACT.
 // F996 original Japanese fighter 004AC040 native action25C.
 case 0x25C: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
         ResetAt453E20();
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         reinterpret_cast<signed short&>(scriptCounterF02)=0;
     }
     --reinterpret_cast<signed short&>(scriptCounterF00);
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(0);
-    if ((reinterpret_cast<signed short&>(animationStage))==6 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==6 && (animationFrame)==0) {
         PrepareActionAt453D40(0);
         StartAnimationAt46D000(0xFA);
         field314=-28.0f;

@@ -7,13 +7,13 @@
 // The original game giant remains NONEXACT; no case-only credit.
 case 0xCA: {
     ConfigureStormAt454BC0(3,4,0xFF);
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         velocityX=0.0f;
         velocityY=0.0f;
         field05C=0.0f;
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==2 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==2 && (animationFrame)==0) {
         velocityX=11.0f;
         velocityY=5.0f;
         field05C=0.6f;
@@ -26,19 +26,19 @@ case 0xCA: {
             facing,1);
         PrepareActionAt453D60(31);
     }
-    if (y>g_ThresholdAt0065782C && (reinterpret_cast<signed short&>(animationStage))>1) {
+    if (y>g_ThresholdAt0065782C && (animationStage)>1) {
         velocityY=velocityY-field05C;
         if (velocityY+y<=g_ThresholdAt0065782C) {
             velocityX=0.0f;
             velocityY=0.0f;
             field05C=0.0f;
             y=0.0f;
-            reinterpret_cast<signed short&>(animationFrame)=0;
+            animationFrame=0;
             SetNativeActionAt40FAC0(0xA);
             break;
         }
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(9);
     break;
 }

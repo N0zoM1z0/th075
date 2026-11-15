@@ -5,7 +5,7 @@ case F641_CASE: {
     field368=(field368)+g_AnimationDeltaAt0065747C;
     if ((field368)>g_AnimationMaximumAt006583B4)
         field368=1000.0f;
-    if (reinterpret_cast<signed short&>(animationStage)==0 && reinterpret_cast<signed short&>(animationFrame)==0) {
+    if (animationStage==0 && animationFrame==0) {
         velocityX=F641_START_HEIGHT;
         velocityY=0.0f;
         field07C=0;
@@ -17,7 +17,7 @@ case F641_CASE: {
     }
     if (ContactAt454EE0() && field3BE)
         field490=(velocityX)*g_JumpReflectionAt006583E8;
-    if (GetNativeActionAt40FA30()==reinterpret_cast<signed short&>(field070))
+    if (GetNativeActionAt40FA30()==field070)
         SetNativeActionAt40FAC0(F641_NEXT_ACTION);
     break;
 }

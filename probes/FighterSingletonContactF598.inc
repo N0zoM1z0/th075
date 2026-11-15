@@ -2,7 +2,7 @@
 // Included inside the native 11-case switch; entire parent fighter remains
 // an incomplete diagnostic C++ probe until all later actions are rebuilt.
 case 0x32: {
-    if (reinterpret_cast<signed short&>(animationStage) == 0 && reinterpret_cast<signed short&>(animationFrame) == 0) {
+    if (animationStage == 0 && animationFrame == 0) {
         velocityX = -8.0f;
         velocityY = 0.0f;
         field07C = 0;
@@ -17,7 +17,7 @@ case 0x32: {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
     }
-    if (GetNativeActionAt40FA30() == reinterpret_cast<signed short&>(field070))
+    if (GetNativeActionAt40FA30() == field070)
         SetNativeActionAt40FAC0(0);
     break;
 }

@@ -1,7 +1,7 @@
 // F608: original native 118-instruction indexed action0x49 in two
 // special spawning fighter giants. Original whole boss remains NONEXACT.
 case 0x49: {
-    if (reinterpret_cast<signed short&>(animationStage)==0 && reinterpret_cast<signed short&>(animationFrame)==0) {
+    if (animationStage==0 && animationFrame==0) {
         velocityX = -(reinterpret_cast<float&>(field094));
         reinterpret_cast<int&>(velocityY) = reinterpret_cast<int&>(field098);
         field05C = 0.8f;
@@ -17,14 +17,14 @@ case 0x49: {
         PrepareActionAt453D60(0x16);
         break;
     }
-    if (GetNativeActionAt40FA30()==reinterpret_cast<signed short&>(field070))
-        SetAuxActionAt40FB40(reinterpret_cast<signed short&>(animationStage)-1);
-    if (reinterpret_cast<signed short&>(animationStage)==1 && reinterpret_cast<signed short&>(animationFrame)==0) {
+    if (GetNativeActionAt40FA30()==field070)
+        SetAuxActionAt40FB40(animationStage-1);
+    if (animationStage==1 && animationFrame==0) {
         // Actual 118-x86 native case has a once-only projectile branch
         // before its two original x87 equality tests. Keep it inside
         // the already established stage-one/frame-zero guard.
-        if (reinterpret_cast<signed short&>(fieldF0C)==0) {
-            reinterpret_cast<signed short&>(fieldF0C)=1;
+        if (fieldF0C==0) {
+            fieldF0C=1;
             SpawnDirectedAt453A70(F608_PROJECTILE,
                 reinterpret_cast<int&>(x), reinterpret_cast<int&>(y),
                 facing, F608_SIDE);

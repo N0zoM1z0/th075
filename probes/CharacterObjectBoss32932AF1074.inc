@@ -4,8 +4,8 @@
 // Parameter F1074_X_SPEED is authentic 20.0f versus 10.0f.
 // Both belong to ONE NONEXACT original 81KB CharacterObject Advance.
 case F1074_CASE: {
-    if (reinterpret_cast<signed short&>(owner->action)>0x31 &&
-        reinterpret_cast<signed short&>(owner->action)<0x96) {
+    if (owner->action>0x31 &&
+        owner->action<0x96) {
         NativeParentExpiredAt0045B830();
         for (int shot=0;shot<10;++shot) {
             reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
@@ -34,13 +34,13 @@ case F1074_CASE: {
         color[2]=0xFF;
         color[3]=0xFF;
         F1037_MOTION(this).xMotion=F1074_X_SPEED;
-        reinterpret_cast<signed short&>(field0D8)=0;
-        reinterpret_cast<signed short&>(field080)=1;
+        field0D8=0;
+        field080=1;
         field07C=0;
     }
     if (field07C==6) {
         field07C=0;
-        ++reinterpret_cast<signed short&>(field080);
+        ++field080;
     }
     F1037_POSITION(this).xPosition=float(facing)*F1037_MOTION(this).xMotion+F1037_POSITION(this).xPosition;
     // The real random-position spawn precedes the status-dependent
@@ -51,7 +51,7 @@ case F1074_CASE: {
         float(RandomBoundaryAt00455580(0,60))+F1037_POSITION(this).xPosition-g_F1068_ActionSpeedAt00657878,
         float(RandomBoundaryAt00455580(0,60))+F1037_POSITION(this).yPosition-g_F1068_ActionSpeedAt00657878,
         facing,0);
-    if (reinterpret_cast<signed short&>(field080)==0) {
+    if (field080==0) {
         NativeParentExpiredAt0045B830();
         reinterpret_cast<F1051Grandparent*>(PARENT)->InitTrajectoryAt00453E60(5.0f);
         reinterpret_cast<F1051Grandparent*>(PARENT)->NativePrepareAt00453D40(1);
@@ -74,7 +74,7 @@ case F1074_CASE: {
 #undef F1074_SPAWN_33A
         return;
     }
-    if (GetNativeActionAt0040FA30()==reinterpret_cast<signed short&>(field070))
+    if (GetNativeActionAt0040FA30()==field070)
         SetAuxActionAt0040FB40(1);
     return;
 }

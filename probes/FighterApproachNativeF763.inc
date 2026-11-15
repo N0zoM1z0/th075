@@ -7,14 +7,14 @@
 // distance, signed-direction random choice, 7D/7E shots and 2DF/2DC
 // transitions. Source is NONEXACT until entire original boss matches.
         case 0x2DB: {
-            if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+            if ((animationStage)==0 && (animationFrame)==0) {
                 ResetAt453E20();
-                reinterpret_cast<signed short&>(field080)=1;
+                field080=1;
                 field07C=0;
                 reinterpret_cast<unsigned char&>(field3AC)=0;
                 reinterpret_cast<signed short&>(scriptCounterF00)=0;
             }
-            if ((reinterpret_cast<signed short&>(animationStage))<10 && y>g_ThresholdAt0065782C && (reinterpret_cast<signed short&>(animationStage))>2) {
+            if ((animationStage)<10 && y>g_ThresholdAt0065782C && (animationStage)>2) {
                 velocityX=-30.0f;
                 velocityY=velocityY-g_JumpGroundCorrectionAt00658058;
                 if (y+velocityY<=g_ThresholdAt0065782C) {
@@ -24,13 +24,13 @@
                     break;
                 }
             }
-            if ((reinterpret_cast<signed short&>(animationStage))>9 && (reinterpret_cast<signed short&>(animationStage))<13 && !ContactAt454EE0()) {
+            if ((animationStage)>9 && (animationStage)<13 && !ContactAt454EE0()) {
                 if (facing==1)
                     x=(field2D8)+g_F699_SideOffsetAt00657874;
                 if (facing==-1)
                     x=(field2DC)-g_F699_SideOffsetAt00657874;
             }
-            if ((reinterpret_cast<signed short&>(animationStage))>7 && (reinterpret_cast<signed short&>(animationStage))<10 && y>g_ThresholdAt0065782C) {
+            if ((animationStage)>7 && (animationStage)<10 && y>g_ThresholdAt0065782C) {
                 if ((ContactAt454EE0() && (((x)<g_F699_SideEdgeAt00657884
                      && facing==1)
                     || ((x)>g_F699_SideEdgeAt00657884
@@ -44,7 +44,7 @@
                     break;
                 }
             }
-            if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
+            if (GetNativeActionAt40FA30()==(field070)) {
                 if ((reinterpret_cast<signed short&>(scriptCounterF00))<3-static_cast<int>(g_CloudOpponentAt006714D0)) {
                     ++reinterpret_cast<signed short&>(scriptCounterF00);
                     SetAuxActionAt40FB40(12);
@@ -61,7 +61,7 @@
                     SetNativeActionAt40FAC0(0x2DC);
                 break;
             }
-            if ((reinterpret_cast<signed short&>(animationStage))==3 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+            if ((animationStage)==3 && (animationFrame)==0) {
                 if (F699AbsAt00412D90(reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44-reinterpret_cast<const FighterBorrowedXViewF752*>(opponent)->xAt44)
                     <g_F699_DistanceAt0065787C) {
                     if (RandomBoundaryAt455580(0,100)<50)
@@ -81,7 +81,7 @@
                 velocityY=20.0f;
                 field05C=0.8f;
             }
-            if ((reinterpret_cast<signed short&>(animationStage))==10 && (reinterpret_cast<signed short&>(animationFrame))==0)
+            if ((animationStage)==10 && (animationFrame)==0)
                 SetAuxActionAt40FB40(8);
             break;
         }

@@ -113,6 +113,30 @@ are byte-identical. The x87 rule applies to statements too: `x = x + g`
 with a member `x` loads `g` first, so the original's field-first order needs
 `x = (x) + g` (three places in Youmu's 00536400).
 
+### Register rotation and the remaining giant debt (2026-11-15)
+
+At `/Od` VC7.1 reloads `this` from its stack slot for every member access
+and cycles the scratch register eax → ecx → edx → eax from one reload or
+loaded value to the next; the cycle continues across statements. The
+giants' remaining GPR debt is this cycle shifted: in Alice's object parent
+(004EBDA0, 133 positions, first #8076 at 004F344C) the build is exactly one
+step ahead of the original from that point on. There the original
+restarts at eax at the join after `if (animationStage < 3) { scaleX = … ;
+scaleY = … ; }`, the target of the `jge` from that test, while the build and
+every small reproduction (same statements, `else if`, extra braces,
+`goto`, `do {} while (0)`, comma expression, inverted test) continue the
+cycle. So the shift is decided by something outside the statement itself.
+Build flags were checked too: `/Z7`, `/RTC1`, `/Oy-` and `/GX` change
+nothing, and `/ZI` (Edit and Continue) restarts at eax at every statement
+but rewrites the whole function (6,297 mnemonic differences), so it is not
+the original's setting either. The only context found to alter the cycle
+so far is a surrounding `switch` case. `.analysis/layout-tools/gpr_debt.py`
+measures the debt directly against the PE (mnemonics, widths, GPR roles)
+without the per-parent audit directories.
+
+`reinterpret_cast<signed short&>(m)` on a `short` member is a no-op and
+emits identical code; 3,910 such casts left by the conversion were removed.
+
 Pitfalls: a parameter named like a new member shadows it (`BindOpponent`
 compiled to `opponent = opponent`), and the replay caught it. VC7 `$L`/`$SG`
 counters change with source text, so the comparator no longer pins their

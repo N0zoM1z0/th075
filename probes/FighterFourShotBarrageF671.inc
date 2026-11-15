@@ -4,11 +4,11 @@
 // conversion scratch pairs -0x114..-0x120 compile at -0x2C..-0x38.
 // This is not whole-giant or native-inner-case strict acceptance.
 case 0x258: {
-            if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+            if ((animationStage)==0 && (animationFrame)==0) {
                 field07C=1;
                 ResetAt453E20();
             }
-            if ((reinterpret_cast<signed short&>(animationStage))==4 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+            if ((animationStage)==4 && (animationFrame)==0) {
                 StartAnimationAt46D000(100);
                 field314=-110.0f;
                 field318=5.0f;
@@ -35,6 +35,6 @@ case 0x258: {
                     (*(&y))+g_ContactProjectionAt00657888,
                     facing,1);
             }
-            if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) SetNativeActionAt40FAC0(0);
+            if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(0);
             break;
         }

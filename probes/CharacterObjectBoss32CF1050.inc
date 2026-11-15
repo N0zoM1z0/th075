@@ -2,7 +2,7 @@
 // This remains an INNER state in one nonexact 81KB CharacterObject function.
 case 0x32C: {
     reinterpret_cast<unsigned char&>(facing) = reinterpret_cast<unsigned char&>(owner->facing);
-    if (reinterpret_cast<signed short&>(owner->action) == 0x131) {
+    if (owner->action == 0x131) {
         reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
         reinterpret_cast<unsigned int&>(y) = reinterpret_cast<unsigned int&>(owner->y);
     } else {
@@ -11,7 +11,7 @@ case 0x32C: {
     }
     if (F1024_PHASE(this).stageAt62 == 0 &&
         F1024_PHASE(this).frameAt64 == 0 &&
-        reinterpret_cast<signed short&>(field0D8) == 0) {
+        field0D8 == 0) {
         SetNativeMotionAt0040FBB0(0,0,0);
         scaleX = 1.0f;
         scaleY = 1.0f;
@@ -20,7 +20,7 @@ case 0x32C: {
         color[2] = 0xFF;
         color[3] = 0xFF;
     }
-    if (GetNativeActionAt0040FA30() == reinterpret_cast<signed short&>(field070))
+    if (GetNativeActionAt0040FA30() == field070)
         NativeParentExpiredAt0045B830();
     return;
 }

@@ -10,18 +10,18 @@
  // local ordinal133 remains nonnative, GPR roles differ.
 // F1001 original SHA-pinned Japanese 004AC040 action 0x2BC
 case 0x2BC: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         field07C=1;
         ResetAt453E20();
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         reinterpret_cast<signed short&>(scriptCounterF02)=0;
-        reinterpret_cast<signed short&>(fieldF04)=0;
+        fieldF04=0;
         reinterpret_cast<signed short&>(fieldF06)=0;
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(0);
-    if ((reinterpret_cast<signed short&>(animationStage))==3 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==3 && (animationFrame)==0) {
         ApplyAt453E80(0x28);
         PrepareActionAt453D60(0x17);
         field36C=(field36C)-g_ContactProjectionAt00657888;
@@ -31,9 +31,9 @@ case 0x2BC: {
             (*(&y))+g_F972_YAt00659284,
             facing,1);
     }
-    if ((reinterpret_cast<signed short&>(fieldF04))>0)
-        --reinterpret_cast<signed short&>(fieldF04);
-    if ((reinterpret_cast<signed short&>(animationStage))>4 && (reinterpret_cast<signed short&>(animationStage))<11 && (reinterpret_cast<signed short&>(fieldF04))==0 && (reinterpret_cast<signed short&>(scriptCounterF02))<36) {
+    if ((fieldF04)>0)
+        --fieldF04;
+    if ((animationStage)>4 && (animationStage)<11 && (fieldF04)==0 && (reinterpret_cast<signed short&>(scriptCounterF02))<36) {
         StartAnimationAt46D000(0xA);
         field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*5);
         SpawnFloatXYAt453A70(0x323,
@@ -48,11 +48,11 @@ case 0x2BC: {
             (*(&y))+g_F972_YAt0065836C,
             facing,1);
         ++reinterpret_cast<signed short&>(scriptCounterF02);
-        ++reinterpret_cast<signed short&>(fieldF04);
+        ++fieldF04;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==5 && (reinterpret_cast<signed short&>(animationFrame))==0)
+    if ((animationStage)==5 && (animationFrame)==0)
         PrepareActionAt453D40(5);
-    if ((reinterpret_cast<signed short&>(animationStage))==11 && (reinterpret_cast<signed short&>(animationFrame))==0 && (reinterpret_cast<signed short&>(fieldF06))<5) {
+    if ((animationStage)==11 && (animationFrame)==0 && (reinterpret_cast<signed short&>(fieldF06))<5) {
         SetAuxActionAt40FB40(9);
         ++reinterpret_cast<signed short&>(fieldF06);
     }
@@ -60,18 +60,18 @@ case 0x2BC: {
 }
 // F1001 original SHA-pinned Japanese 004AC040 action 0x2BD
 case 0x2BD: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         field07C=1;
         ResetAt453E20();
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         reinterpret_cast<signed short&>(scriptCounterF02)=0;
-        reinterpret_cast<signed short&>(fieldF04)=0;
+        fieldF04=0;
         reinterpret_cast<signed short&>(fieldF06)=0;
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(0);
-    if ((reinterpret_cast<signed short&>(animationStage))==3 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==3 && (animationFrame)==0) {
         ApplyAt453E80(0x28);
         PrepareActionAt453D60(0x17);
         field36C=(field36C)-g_ContactProjectionAt00657888;
@@ -81,10 +81,10 @@ case 0x2BD: {
             (*(&y))+g_F972_YAt00659284,
             facing,1);
     }
-    if ((reinterpret_cast<signed short&>(fieldF04))>0)
-        --reinterpret_cast<signed short&>(fieldF04);
-    if ((reinterpret_cast<signed short&>(animationStage))>4 && (reinterpret_cast<signed short&>(animationStage))<11 && (reinterpret_cast<signed short&>(fieldF04))==0 && (reinterpret_cast<signed short&>(scriptCounterF02))<72) {
-        reinterpret_cast<signed short&>(fieldF14)=1;
+    if ((fieldF04)>0)
+        --fieldF04;
+    if ((animationStage)>4 && (animationStage)<11 && (fieldF04)==0 && (reinterpret_cast<signed short&>(scriptCounterF02))<72) {
+        fieldF14=1;
         StartAnimationAt46D000(0xA);
         field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*5);
         SpawnFloatXYAt453A70(0x32B,
@@ -100,9 +100,9 @@ case 0x2BD: {
             facing,1);
         ++reinterpret_cast<signed short&>(scriptCounterF02);
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==5 && (reinterpret_cast<signed short&>(animationFrame))==0)
+    if ((animationStage)==5 && (animationFrame)==0)
         PrepareActionAt453D40(6);
-    if ((reinterpret_cast<signed short&>(animationStage))==11 && (reinterpret_cast<signed short&>(animationFrame))==0 && (reinterpret_cast<signed short&>(fieldF06))<5) {
+    if ((animationStage)==11 && (animationFrame)==0 && (reinterpret_cast<signed short&>(fieldF06))<5) {
         SetAuxActionAt40FB40(9);
         ++reinterpret_cast<signed short&>(fieldF06);
     }

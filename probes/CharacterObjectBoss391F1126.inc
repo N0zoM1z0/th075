@@ -1,7 +1,7 @@
 // F1126 genuine Japanese 0x391 at original PE 0051CF28..0051D413:
 // 1,259 native CODE B /277 x86 in one incomplete 81KB Boss.
 case 0x391: {
-    if (reinterpret_cast<signed short&>(owner->field3A0)<=0) {
+    if (owner->field3A0<=0) {
         NativeParentExpiredAt0045B830();
         return;
     }
@@ -15,10 +15,10 @@ case 0x391: {
         color[3]=0xFF;
         F1037_MOTION(this).xMotion=3.0f;
         F1037_MOTION(this).yMotion=g_F1095_UpperYAt00659890-float(RandomBoundaryAt00455580(0,9));
-        reinterpret_cast<signed short&>(field0D8)=0;
-        reinterpret_cast<signed short&>(field0DA)=0;
-        reinterpret_cast<signed short&>(field0DC)=0;
-        reinterpret_cast<signed short&>(field080)=0;
+        field0D8=0;
+        field0DA=0;
+        field0DC=0;
+        field080=0;
         field07C=0;
     }
     if (scaleX<g_F1051_ScaleCeilingAt0065747C) {
@@ -28,15 +28,15 @@ case 0x391: {
         scaleX=1.0f;
         scaleY=1.0f;
     }
-    if (reinterpret_cast<signed short&>(field0DC)==0) {
+    if (field0DC==0) {
         F1037_MOTION(this).yMotion=F1037_MOTION(this).yMotion-g_F1062_ScaleStepAt006583F8;
         if (F1037_MOTION(this).yMotion<g_F1095_LowerYAt00659894)
-            reinterpret_cast<signed short&>(field0DC)=1;
+            field0DC=1;
     }
-    if (reinterpret_cast<signed short&>(field0DC)==1) {
+    if (field0DC==1) {
         F1037_MOTION(this).yMotion=(*(&F1037_MOTION(this).yMotion))+g_F1062_ScaleStepAt006583F8;
         if (F1037_MOTION(this).yMotion>g_F1095_UpperYAt00659890)
-            reinterpret_cast<signed short&>(field0DC)=0;
+            field0DC=0;
     }
     if (F1094_TRANSFORM(this).scaleXAt1C==g_F1051_ScaleCeilingAt0065747C &&
         g_F1113_DifficultyAt006714D0>1) {
@@ -48,19 +48,19 @@ case 0x391: {
             F1037_POSITION(this).xPosition<g_F1044_GroundAt0065782C)
             F1037_MOTION(this).xMotion=-F1037_MOTION(this).xMotion;
     }
-    if (reinterpret_cast<signed short&>(field0DA)==0 &&
+    if (field0DA==0 &&
         F1094_TRANSFORM(this).scaleXAt1C==g_F1051_ScaleCeilingAt0065747C) {
         if (F1037_POSITION(PARENT_GRANDPARENT).yPosition<F1037_POSITION(this).yPosition &&
             F1115_AbsFloatAt00412D90(F1037_POSITION(this).xPosition-
                 F1037_POSITION(PARENT_GRANDPARENT).xPosition)<g_F1126_XDistanceAt00657850) {
-            reinterpret_cast<signed short&>(field0DA)=1;
+            field0DA=1;
             F1037_MOTION(this).xMotion=0.0f;
             F1037_MOTION(this).yMotion=-30.0f;
             scaleX=0.1f;
             scaleY=1.0f;
         }
     }
-    if (reinterpret_cast<signed short&>(field0DA)==1) {
+    if (field0DA==1) {
         if (F1037_POSITION(this).yPosition+F1037_MOTION(this).yMotion<=g_F1044_GroundAt0065782C) {
             NativeParentExpiredAt0045B830();
             reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
@@ -76,7 +76,7 @@ case 0x391: {
     }
     F1037_POSITION(this).yPosition=F1037_POSITION(this).yPosition+F1037_MOTION(this).yMotion;
     F1037_POSITION(this).xPosition=float(facing)*F1037_MOTION(this).xMotion+F1037_POSITION(this).xPosition;
-    if (GetNativeActionAt0040FA30()==reinterpret_cast<signed short&>(field070))
+    if (GetNativeActionAt0040FA30()==field070)
         NativeParentExpiredAt0045B830();
     if (F1024_PHASE(this).stageAt62==0x1F && F1024_PHASE(this).frameAt64==0) {
         SetAuxActionAt0040FB40(1);

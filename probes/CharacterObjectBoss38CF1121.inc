@@ -13,7 +13,7 @@ case 0x38C: {
     }
     F1037_MOTION(this).xMotion=(*(&F1037_MOTION(this).xMotion))+g_F1120_XBrakingAt00659090;
     F1037_POSITION(this).xPosition=float(facing)*F1037_MOTION(this).xMotion+F1037_POSITION(this).xPosition;
-    if (GetNativeActionAt0040FA30()==reinterpret_cast<signed short&>(field070))
+    if (GetNativeActionAt0040FA30()==field070)
         NativeParentExpiredAt0045B830();
     return;
 }

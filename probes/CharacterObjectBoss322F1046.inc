@@ -7,13 +7,13 @@ case 0x322: {
     }
     if (field07C == 6) {
         field07C = 0;
-        reinterpret_cast<signed short&>(field080) = 1;
+        field080 = 1;
     }
     if (F1024_PHASE(this).stageAt62 == 0 && F1024_PHASE(this).frameAt64 == 0) {
         SetNativeMotionAt0040FBB0(0,0,0);
-        reinterpret_cast<signed short&>(field080) = 1;
+        field080 = 1;
         field07C = 0;
-        reinterpret_cast<signed short&>(field0D8) = 0;
+        field0D8 = 0;
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 0xFF;
@@ -22,7 +22,7 @@ case 0x322: {
         color[3] = 0xFF;
         rotationZ = 15.0f;
     }
-    if (GetNativeActionAt0040FA30() == reinterpret_cast<signed short&>(field070))
+    if (GetNativeActionAt0040FA30() == field070)
         NativeParentExpiredAt0045B830();
     return;
 }

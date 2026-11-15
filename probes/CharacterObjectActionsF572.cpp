@@ -105,13 +105,13 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         return;
     if (*reinterpret_cast<signed short*>(
             *reinterpret_cast<char**>(RAW+0xE4)+0x3BA) != 0 &&
-            reinterpret_cast<signed short&>(field08A) == 0)
+            field08A == 0)
         return;
-    if (reinterpret_cast<signed short&>(field082) != 0) {
-        --reinterpret_cast<signed short&>(field082);
+    if (field082 != 0) {
+        --field082;
         return;
     }
-    switch (reinterpret_cast<signed short&>(action)) {
+    switch (action) {
         case 0x320: ResetAt4F4170(); break;
         case 0x321: ResetAt4F4170(); break;
         case 0x322: ResetAt4F4170(); break;
@@ -120,7 +120,7 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         case 0x325: ResetAt4F4170(); break;
         case 0x326: ResetAt4F4170(); break;
         case 0x327: {
-    if (P16(0x60) > 0x45 && P16(0x60) < 0x96 && (reinterpret_cast<signed short&>(animationStage)) < 5) {
+    if (P16(0x60) > 0x45 && P16(0x60) < 0x96 && (animationStage) < 5) {
         ResetAt45B830();
         for (int iteration=0; iteration<8; ++iteration)
             PARENT->SpawnAt453A70(0x3E4, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
@@ -132,14 +132,14 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
     } else {
         if ((field07C) == 6) {
             field07C = 0;
-            reinterpret_cast<signed short&>(field080) = 1;
+            field080 = 1;
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
-            reinterpret_cast<signed short&>(field0D8) = -30;
-            reinterpret_cast<signed short&>(field0DA) = 150;
-            reinterpret_cast<signed short&>(field0DC) = 0;
+        if ((animationStage) == 0 && (animationFrame) == 0) {
+            field0D8 = -30;
+            field0DA = 150;
+            field0DC = 0;
             ResetStateAt40FBB0(0,0,0);
-            reinterpret_cast<signed short&>(field080) = 4;
+            field080 = 4;
             field07C = 0;
             scaleX = 1.0f;
             scaleY = 1.0f;
@@ -148,19 +148,19 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
             color[2] = 0xFF;
             color[3] = 0xFF;
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) == 1 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+        if ((animationStage) == 1 && (animationFrame) == 0) {
             PARENT->SpawnComputedAt453A70(0x371, reinterpret_cast<int&>(x),
                                   (y) + gFloatAt00657850,
                                   facing, 1);
             PARENT->ModifyAt453D40(2);
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) == 0) {
-            MotionAt40FB70(static_cast<float>(reinterpret_cast<signed short&>(field0D8)),
-                            static_cast<float>(reinterpret_cast<signed short&>(field0DA))*gMulAt006590B4);
-            reinterpret_cast<signed short&>(field0DA) -= 5;
-            reinterpret_cast<signed short&>(field0D8) += 3;
+        if ((animationStage) == 0) {
+            MotionAt40FB70(static_cast<float>(field0D8),
+                            static_cast<float>(field0DA)*gMulAt006590B4);
+            field0DA -= 5;
+            field0D8 += 3;
             rotationZ = (rotationZ) + gAddAt00659738;
-            if ((reinterpret_cast<signed short&>(field0DA)) <= 0) {
+            if ((field0DA) <= 0) {
                 velocityX = 0.0f;
                 velocityY = 0.0f;
                 SetStateAt40FB40(1);
@@ -170,11 +170,11 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         }
         x += static_cast<float>(facing) * (velocityX);
         y = *(&y) - *(&velocityY);
-        if ((reinterpret_cast<signed short&>(animationStage)) < 5 && (reinterpret_cast<signed short&>(field080)) == 0) {
-            SetStateAt40FB40((reinterpret_cast<signed short&>(animationStage)) + 4);
+        if ((animationStage) < 5 && (field080) == 0) {
+            SetStateAt40FB40((animationStage) + 4);
             break;
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) > 4) {
+        if ((animationStage) > 4) {
             scaleX = static_cast<float>((scaleX)*gMulDoubleAt00659730);
             scaleY = (scaleY) + gAddAt006583FC;
             if ((color[0]) >= 10)
@@ -184,21 +184,21 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
                 break;
             }
         }
-        if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070))) {
+        if (GetStateAt40FA30() == (field070)) {
             SetStateAt40FB40(5);
             break;
         }
-        if ((reinterpret_cast<signed short&>(animationFrame)) == 0)
+        if ((animationFrame) == 0)
             field07C = 0;
-        if ((reinterpret_cast<signed short&>(animationStage)) == 5 && (reinterpret_cast<signed short&>(animationFrame)) == 0 && (reinterpret_cast<signed short&>(field0DC)) < 10) {
+        if ((animationStage) == 5 && (animationFrame) == 0 && (field0DC) < 10) {
             SetStateAt40FB40(1);
-            ++reinterpret_cast<signed short&>(field0DC);
+            ++field0DC;
         }
     }
     break;
 }
         case 0x328: {
-    if (P16(0x60) > 0x45 && P16(0x60) < 0x96 && (reinterpret_cast<signed short&>(animationStage)) < 5) {
+    if (P16(0x60) > 0x45 && P16(0x60) < 0x96 && (animationStage) < 5) {
         ResetAt45B830();
         for (int iteration=0; iteration<8; ++iteration)
             PARENT->SpawnAt453A70(0x3E4, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
@@ -210,14 +210,14 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
     } else {
         if ((field07C) == 6) {
             field07C = 0;
-            reinterpret_cast<signed short&>(field080) = 1;
+            field080 = 1;
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
-            reinterpret_cast<signed short&>(field0D8) = 70;
-            reinterpret_cast<signed short&>(field0DA) = 150;
-            reinterpret_cast<signed short&>(field0DC) = 0;
+        if ((animationStage) == 0 && (animationFrame) == 0) {
+            field0D8 = 70;
+            field0DA = 150;
+            field0DC = 0;
             ResetStateAt40FBB0(0,0,0);
-            reinterpret_cast<signed short&>(field080) = 4;
+            field080 = 4;
             field07C = 0;
             scaleX = 1.0f;
             scaleY = 1.0f;
@@ -226,19 +226,19 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
             color[2] = 0xFF;
             color[3] = 0xFF;
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) == 1 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+        if ((animationStage) == 1 && (animationFrame) == 0) {
             PARENT->SpawnComputedAt453A70(0x371, reinterpret_cast<int&>(x),
                                   (y) + gFloatAt00657850,
                                   facing, 1);
             PARENT->ModifyAt453D40(2);
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) == 0) {
-            MotionAt40FB70(static_cast<float>(reinterpret_cast<signed short&>(field0D8)),
-                            static_cast<float>(reinterpret_cast<signed short&>(field0DA))*gMulAt006590B4);
-            reinterpret_cast<signed short&>(field0DA) -= 5;
-            reinterpret_cast<signed short&>(field0D8) -= 2;
+        if ((animationStage) == 0) {
+            MotionAt40FB70(static_cast<float>(field0D8),
+                            static_cast<float>(field0DA)*gMulAt006590B4);
+            field0DA -= 5;
+            field0D8 -= 2;
             rotationZ = (rotationZ) + gAddAt00659738;
-            if ((reinterpret_cast<signed short&>(field0DA)) <= 0) {
+            if ((field0DA) <= 0) {
                 velocityX = 0.0f;
                 velocityY = 0.0f;
                 SetStateAt40FB40(1);
@@ -248,11 +248,11 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         }
         x += static_cast<float>(facing) * (velocityX);
         y = *(&y) - *(&velocityY);
-        if ((reinterpret_cast<signed short&>(animationStage)) < 5 && (reinterpret_cast<signed short&>(field080)) == 0) {
-            SetStateAt40FB40((reinterpret_cast<signed short&>(animationStage)) + 4);
+        if ((animationStage) < 5 && (field080) == 0) {
+            SetStateAt40FB40((animationStage) + 4);
             break;
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) > 4) {
+        if ((animationStage) > 4) {
             scaleX = static_cast<float>((scaleX)*gMulDoubleAt00659730);
             scaleY = (scaleY) + gAddAt006583FC;
             if ((color[0]) >= 10)
@@ -262,21 +262,21 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
                 break;
             }
         }
-        if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070))) {
+        if (GetStateAt40FA30() == (field070)) {
             SetStateAt40FB40(5);
             break;
         }
-        if ((reinterpret_cast<signed short&>(animationFrame)) == 0)
+        if ((animationFrame) == 0)
             field07C = 0;
-        if ((reinterpret_cast<signed short&>(animationStage)) == 5 && (reinterpret_cast<signed short&>(animationFrame)) == 0 && (reinterpret_cast<signed short&>(field0DC)) < 10) {
+        if ((animationStage) == 5 && (animationFrame) == 0 && (field0DC) < 10) {
             SetStateAt40FB40(1);
-            ++reinterpret_cast<signed short&>(field0DC);
+            ++field0DC;
         }
     }
     break;
 }
         case 0x329: {
-    if (P16(0x60) > 0x45 && P16(0x60) < 0x96 && (reinterpret_cast<signed short&>(animationStage)) < 5) {
+    if (P16(0x60) > 0x45 && P16(0x60) < 0x96 && (animationStage) < 5) {
         ResetAt45B830();
         for (int iteration=0; iteration<8; ++iteration)
             PARENT->SpawnAt453A70(0x3E4, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
@@ -288,14 +288,14 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
     } else {
         if ((field07C) == 6) {
             field07C = 0;
-            reinterpret_cast<signed short&>(field080) = 1;
+            field080 = 1;
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
-            reinterpret_cast<signed short&>(field0D8) = -30;
-            reinterpret_cast<signed short&>(field0DA) = 200;
-            reinterpret_cast<signed short&>(field0DC) = 0;
+        if ((animationStage) == 0 && (animationFrame) == 0) {
+            field0D8 = -30;
+            field0DA = 200;
+            field0DC = 0;
             ResetStateAt40FBB0(0,0,0);
-            reinterpret_cast<signed short&>(field080) = 4;
+            field080 = 4;
             field07C = 0;
             scaleX = 1.0f;
             scaleY = 1.0f;
@@ -304,19 +304,19 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
             color[2] = 0xFF;
             color[3] = 0xFF;
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) == 1 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+        if ((animationStage) == 1 && (animationFrame) == 0) {
             PARENT->SpawnComputedAt453A70(0x371, reinterpret_cast<int&>(x),
                                   (y) + gFloatAt00657850,
                                   facing, 1);
             PARENT->ModifyAt453D40(2);
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) == 0) {
-            MotionAt40FB70(static_cast<float>(reinterpret_cast<signed short&>(field0D8)),
-                            static_cast<float>(reinterpret_cast<signed short&>(field0DA))*gMulAt006590B4);
-            reinterpret_cast<signed short&>(field0DA) -= 5;
-            reinterpret_cast<signed short&>(field0D8) += 4;
+        if ((animationStage) == 0) {
+            MotionAt40FB70(static_cast<float>(field0D8),
+                            static_cast<float>(field0DA)*gMulAt006590B4);
+            field0DA -= 5;
+            field0D8 += 4;
             rotationZ = (rotationZ) + gAddAt00659738;
-            if ((reinterpret_cast<signed short&>(field0DA)) <= 0) {
+            if ((field0DA) <= 0) {
                 velocityX = 0.0f;
                 velocityY = 0.0f;
                 SetStateAt40FB40(1);
@@ -326,11 +326,11 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         }
         x += static_cast<float>(facing) * (velocityX);
         y = *(&y) - *(&velocityY);
-        if ((reinterpret_cast<signed short&>(animationStage)) < 5 && (reinterpret_cast<signed short&>(field080)) == 0) {
-            SetStateAt40FB40((reinterpret_cast<signed short&>(animationStage)) + 4);
+        if ((animationStage) < 5 && (field080) == 0) {
+            SetStateAt40FB40((animationStage) + 4);
             break;
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) > 4) {
+        if ((animationStage) > 4) {
             scaleX = static_cast<float>((scaleX)*gMulDoubleAt00659730);
             scaleY = (scaleY) + gAddAt006583FC;
             if ((color[0]) >= 10)
@@ -340,15 +340,15 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
                 break;
             }
         }
-        if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070))) {
+        if (GetStateAt40FA30() == (field070)) {
             SetStateAt40FB40(5);
             break;
         }
-        if ((reinterpret_cast<signed short&>(animationFrame)) == 0)
+        if ((animationFrame) == 0)
             field07C = 0;
-        if ((reinterpret_cast<signed short&>(animationStage)) == 5 && (reinterpret_cast<signed short&>(animationFrame)) == 0 && (reinterpret_cast<signed short&>(field0DC)) < 10) {
+        if ((animationStage) == 5 && (animationFrame) == 0 && (field0DC) < 10) {
             SetStateAt40FB40(1);
-            ++reinterpret_cast<signed short&>(field0DC);
+            ++field0DC;
         }
     }
     break;
@@ -366,11 +366,11 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
     } else {
         if ((field07C) == 6) {
             field07C = 0;
-            reinterpret_cast<signed short&>(field080) = 1;
+            field080 = 1;
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+        if ((animationStage) == 0 && (animationFrame) == 0) {
             ResetStateAt40FBB0(0,0,0);
-            reinterpret_cast<signed short&>(field080) = 1;
+            field080 = 1;
             field07C = 0;
             if (*(&field0C8) == gCompareAt0065782C) {
                 velocityX = 5.0f;
@@ -406,7 +406,7 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         velocityY = (velocityY) - gDropAt00658058;
         x += static_cast<float>(facing) * (velocityX);
         y = *(&y) + *(&velocityY);
-        if ((reinterpret_cast<signed short&>(animationStage)) < 2) {
+        if ((animationStage) < 2) {
             rotationZ = (rotationZ) + gLiftAt00657CC0;
             if (*(&y) + *(&velocityY) <= gCompareAt0065782C) {
                 PARENT->SpawnDirectedAt453A70(0x32B, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), facing, 1);
@@ -420,16 +420,16 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
                 break;
             }
         }
-        if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070)))
+        if (GetStateAt40FA30() == (field070))
             SetStateAt40FB40(1);
     }
     break;
 }
         case 0x32B: {
-    if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
-        reinterpret_cast<signed short&>(field0D8) = 0;
+    if ((animationStage) == 0 && (animationFrame) == 0) {
+        field0D8 = 0;
         ResetStateAt40FBB0(0,0,0);
-        reinterpret_cast<signed short&>(field080) = 1;
+        field080 = 1;
         field07C = 0;
         velocityY = 0.0f;
         velocityX = 0.0f;
@@ -444,9 +444,9 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         reinterpret_cast<int&>(rotationZ) = 0;
         PARENT->SetupAt453E60(5.0f);
     }
-    scaleX = (float)(5 - (reinterpret_cast<signed short&>(animationFrame))) * gCurveAt0065972C * ((reinterpret_cast<signed short&>(animationFrame)) < 5) + gStepAt00658044 + (scaleX);
-    scaleY = (float)(5 - (reinterpret_cast<signed short&>(animationFrame))) * gCurveAt0065972C * ((reinterpret_cast<signed short&>(animationFrame)) < 5) + gStepAt00658044 + (scaleY);
-    if ((reinterpret_cast<signed short&>(animationStage)) > 1) {
+    scaleX = (float)(5 - (animationFrame)) * gCurveAt0065972C * ((animationFrame) < 5) + gStepAt00658044 + (scaleX);
+    scaleY = (float)(5 - (animationFrame)) * gCurveAt0065972C * ((animationFrame) < 5) + gStepAt00658044 + (scaleY);
+    if ((animationStage) > 1) {
         if ((color[0]) >= 10)
             color[0] -= 10;
         else {
@@ -455,7 +455,7 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
             break;
         }
     }
-    if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070)))
+    if (GetStateAt40FA30() == (field070))
         ResetAt45B830();
     break;
 }
@@ -470,9 +470,9 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         }
         break;
     } else {
-        if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+        if ((animationStage) == 0 && (animationFrame) == 0) {
             ResetStateAt40FBB0(0,0,0);
-            reinterpret_cast<signed short&>(field080) = 1;
+            field080 = 1;
             field07C = 0;
             MotionRawAt40FB70(reinterpret_cast<int&>(field0C8),15.0f);
             scaleX = 1.0f;
@@ -484,7 +484,7 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         }
         x += static_cast<float>(facing) * (velocityX);
         y = *(&y) + *(&velocityY);
-        if ((reinterpret_cast<signed short&>(animationStage)) < 2) {
+        if ((animationStage) < 2) {
             rotationZ = (rotationZ) + gLiftAt00657CC0;
             if (*(&y) + *(&velocityY) <= gCompareAt0065782C) {
                 PARENT->ModifyAt453D40(4);
@@ -498,13 +498,13 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
                 break;
             }
         }
-        if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070)))
+        if (GetStateAt40FA30() == (field070))
             SetStateAt40FB40(1);
     }
     break;
 }
         case 0x32D: {
-    if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+    if ((animationStage) == 0 && (animationFrame) == 0) {
         ResetStateAt40FBB0(0,0,0);
         scaleX = 0.4f;
         scaleY = 0.4f;
@@ -512,12 +512,12 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         color[1] = 0xFF;
         color[2] = 0xFF;
         color[3] = 0xFF;
-        reinterpret_cast<signed short&>(field01A) = 0x4E2;
+        field01A = 0x4E2;
         rotationX = -75.0f;
     }
     scaleX = (scaleX) + gFadeAt006583F8;
     scaleY = (scaleY) + gFadeAt006583F8;
-    if ((reinterpret_cast<signed short&>(animationStage)) > 1) {
+    if ((animationStage) > 1) {
         if ((color[0]) > 20)
             color[0] -= 20;
         else {
@@ -525,15 +525,15 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
             break;
         }
     }
-    if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070)))
+    if (GetStateAt40FA30() == (field070))
         ResetAt45B830();
     break;
 }
         case 0x32E: {
-    if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0 && (reinterpret_cast<signed short&>(field0D8)) == 1) {
-        reinterpret_cast<signed short&>(field0D8) = 0;
+    if ((animationStage) == 0 && (animationFrame) == 0 && (field0D8) == 1) {
+        field0D8 = 0;
         ResetStateAt40FBB0(0,0,0);
-        reinterpret_cast<signed short&>(field080) = 1;
+        field080 = 1;
         field07C = 0;
         velocityY = 0.0f;
         velocityX = 0.0f;
@@ -550,12 +550,12 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
     scaleX = (scaleX) + gFadeAt00659428;
     scaleY = (scaleY) + gFadeAt00659428;
     color[0] -= 10;
-    if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070)))
+    if (GetStateAt40FA30() == (field070))
         ResetAt45B830();
     break;
 }
         case 0x330: {
-    if (P16(0x60) > 0x45 && P16(0x60) < 0x96 && (reinterpret_cast<signed short&>(animationStage)) < 11) {
+    if (P16(0x60) > 0x45 && P16(0x60) < 0x96 && (animationStage) < 11) {
         ResetAt45B830();
         for (int iteration=0; iteration<8; ++iteration)
             PARENT->SpawnAt453A70(0x3E4, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
@@ -567,9 +567,9 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
     } else {
         if ((field07C) == 6) {
             field07C = 0;
-            reinterpret_cast<signed short&>(field080) = 1;
+            field080 = 1;
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+        if ((animationStage) == 0 && (animationFrame) == 0) {
             ResetStateAt40FBB0(0,0,0);
             field07C = 0;
             scaleX = 1.0f;
@@ -583,7 +583,7 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         }
         x += static_cast<float>(facing) * (velocityX);
         y = *(&y) + *(&velocityY);
-        if ((reinterpret_cast<signed short&>(animationStage)) == 0) {
+        if ((animationStage) == 0) {
             if ((color[0]) <= 0xEB)
                 color[0] += 20;
             else
@@ -591,7 +591,7 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
             rotationZ = (rotationZ) + gAddAt00659738;
             velocityY = (velocityY) - gAddAt006583FC;
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) == 11) {
+        if ((animationStage) == 11) {
             scaleX = static_cast<float>((scaleX) * gMulDoubleAt00659730);
             scaleY = (scaleY) + gAddAt006583FC;
             if ((color[0]) >= 10)
@@ -601,24 +601,24 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
                 break;
             }
         }
-        if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070))) {
+        if (GetStateAt40FA30() == (field070)) {
             ResetAt45B830();
             break;
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) == 1 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+        if ((animationStage) == 1 && (animationFrame) == 0) {
             velocityX = 0.0f;
             velocityY = 0.0f;
             rotationZ = 0.0f;
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) == 6 && (reinterpret_cast<signed short&>(animationFrame)) == 0 && (reinterpret_cast<signed short&>(field0DC)) < 0) {
+        if ((animationStage) == 6 && (animationFrame) == 0 && (field0DC) < 0) {
             SetStateAt40FB40(2);
-            ++reinterpret_cast<signed short&>(field0DC);
+            ++field0DC;
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) == 10 && (reinterpret_cast<signed short&>(animationFrame)) == 0 && (reinterpret_cast<signed short&>(field0DA)) < 6) {
-            ++reinterpret_cast<signed short&>(field0DA);
+        if ((animationStage) == 10 && (animationFrame) == 0 && (field0DA) < 6) {
+            ++field0DA;
             SetStateAt40FB40(9);
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) == 9 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+        if ((animationStage) == 9 && (animationFrame) == 0) {
             PF32(0x314) = 1200.0f;
             PF32(0x318) = static_cast<float>(RandomAt455580(0,10) - 5);
             PARENT->SpawnMovedAt453A70(0x320,
@@ -630,7 +630,7 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
     break;
 }
         case 0x331: {
-    if (P16(0x60) > 0x45 && P16(0x60) < 0x96 && (reinterpret_cast<signed short&>(animationStage)) < 11) {
+    if (P16(0x60) > 0x45 && P16(0x60) < 0x96 && (animationStage) < 11) {
         ResetAt45B830();
         for (int iteration=0; iteration<8; ++iteration)
             PARENT->SpawnAt453A70(0x3E4, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
@@ -642,9 +642,9 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
     } else {
         if ((field07C) == 6) {
             field07C = 0;
-            reinterpret_cast<signed short&>(field080) = 1;
+            field080 = 1;
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+        if ((animationStage) == 0 && (animationFrame) == 0) {
             ResetStateAt40FBB0(0,0,0);
             field07C = 0;
             scaleX = 1.0f;
@@ -658,7 +658,7 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         }
         x += static_cast<float>(facing) * (velocityX);
         y = *(&y) + *(&velocityY);
-        if ((reinterpret_cast<signed short&>(animationStage)) == 0) {
+        if ((animationStage) == 0) {
             if ((color[0]) <= 0xEB)
                 color[0] += 20;
             else
@@ -666,7 +666,7 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
             rotationZ = (rotationZ) + gAddAt00659738;
             velocityY = (velocityY) - gSubAt00659090;
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) == 11) {
+        if ((animationStage) == 11) {
             scaleX = static_cast<float>((scaleX) * gMulDoubleAt00659730);
             scaleY = (scaleY) + gAddAt006583FC;
             if ((color[0]) >= 10)
@@ -676,24 +676,24 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
                 break;
             }
         }
-        if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070))) {
+        if (GetStateAt40FA30() == (field070)) {
             ResetAt45B830();
             break;
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) == 1 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+        if ((animationStage) == 1 && (animationFrame) == 0) {
             velocityX = 0.0f;
             velocityY = 0.0f;
             rotationZ = 0.0f;
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) == 6 && (reinterpret_cast<signed short&>(animationFrame)) == 0 && (reinterpret_cast<signed short&>(field0DC)) < 0) {
+        if ((animationStage) == 6 && (animationFrame) == 0 && (field0DC) < 0) {
             SetStateAt40FB40(2);
-            ++reinterpret_cast<signed short&>(field0DC);
+            ++field0DC;
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) == 10 && (reinterpret_cast<signed short&>(animationFrame)) == 0 && (reinterpret_cast<signed short&>(field0DA)) < 6) {
-            ++reinterpret_cast<signed short&>(field0DA);
+        if ((animationStage) == 10 && (animationFrame) == 0 && (field0DA) < 6) {
+            ++field0DA;
             SetStateAt40FB40(9);
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) == 9 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+        if ((animationStage) == 9 && (animationFrame) == 0) {
             PF32(0x314) = 1200.0f;
             PF32(0x318) = static_cast<float>(RandomAt455580(0,15) - 45);
             PARENT->SpawnMovedAt453A70(0x321,
@@ -705,7 +705,7 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
     break;
 }
         case 0x332: {
-    if (P16(0x60) > 0x45 && P16(0x60) < 0x96 && (reinterpret_cast<signed short&>(animationStage)) < 11) {
+    if (P16(0x60) > 0x45 && P16(0x60) < 0x96 && (animationStage) < 11) {
         ResetAt45B830();
         for (int iteration=0; iteration<8; ++iteration)
             PARENT->SpawnAt453A70(0x3E4, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
@@ -717,9 +717,9 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
     } else {
         if ((field07C) == 6) {
             field07C = 0;
-            reinterpret_cast<signed short&>(field080) = 1;
+            field080 = 1;
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+        if ((animationStage) == 0 && (animationFrame) == 0) {
             ResetStateAt40FBB0(0,0,0);
             field07C = 0;
             scaleX = 1.0f;
@@ -733,7 +733,7 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         }
         x += static_cast<float>(facing) * (velocityX);
         y = *(&y) + *(&velocityY);
-        if ((reinterpret_cast<signed short&>(animationStage)) == 0) {
+        if ((animationStage) == 0) {
             if ((color[0]) <= 0xEB)
                 color[0] += 20;
             else
@@ -741,7 +741,7 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
             rotationZ = (rotationZ) + gAddAt00659738;
             velocityY = (velocityY) - gAddAt006583FC;
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) == 11) {
+        if ((animationStage) == 11) {
             scaleX = static_cast<float>((scaleX) * gMulDoubleAt00659730);
             scaleY = (scaleY) + gAddAt006583FC;
             if ((color[0]) >= 10)
@@ -751,25 +751,25 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
                 break;
             }
         }
-        if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070))) {
+        if (GetStateAt40FA30() == (field070)) {
             ResetAt45B830();
             break;
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) == 1 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+        if ((animationStage) == 1 && (animationFrame) == 0) {
             velocityX = 0.0f;
             velocityY = 0.0f;
             rotationZ = 0.0f;
             facing = -(facing);
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) == 6 && (reinterpret_cast<signed short&>(animationFrame)) == 0 && (reinterpret_cast<signed short&>(field0DC)) < 0) {
+        if ((animationStage) == 6 && (animationFrame) == 0 && (field0DC) < 0) {
             SetStateAt40FB40(2);
-            ++reinterpret_cast<signed short&>(field0DC);
+            ++field0DC;
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) == 10 && (reinterpret_cast<signed short&>(animationFrame)) == 0 && (reinterpret_cast<signed short&>(field0DA)) < 6) {
-            ++reinterpret_cast<signed short&>(field0DA);
+        if ((animationStage) == 10 && (animationFrame) == 0 && (field0DA) < 6) {
+            ++field0DA;
             SetStateAt40FB40(9);
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) == 9 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+        if ((animationStage) == 9 && (animationFrame) == 0) {
             PF32(0x314) = 1200.0f;
             PF32(0x318) = static_cast<float>(RandomAt455580(0,10) - 5);
             PARENT->SpawnMovedAt453A70(0x322,
@@ -783,10 +783,10 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         case 0x335: {
     if ((field07C) == 6) {
         field07C = 0;
-        reinterpret_cast<signed short&>(field080) = 99;
+        field080 = 99;
     }
     if (P16(0x60) > 0x45 && P16(0x60) < 0x96 &&
-            (reinterpret_cast<signed short&>(field080)) > 0 && (reinterpret_cast<signed short&>(animationStage)) < 11) {
+            (field080) > 0 && (animationStage) < 11) {
         ResetAt45B830();
         for (int iteration=0; iteration<8; ++iteration)
             PARENT->SpawnAt453A70(0x3E4, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
@@ -796,12 +796,12 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         }
         break;
     } else {
-        if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
-            reinterpret_cast<signed short&>(field0D8) = 0;
-            reinterpret_cast<signed short&>(field0DA) = 0;
-            reinterpret_cast<signed short&>(field0DC) = 0;
+        if ((animationStage) == 0 && (animationFrame) == 0) {
+            field0D8 = 0;
+            field0DA = 0;
+            field0DC = 0;
             field07C = 0;
-            reinterpret_cast<signed short&>(field080) = 99;
+            field080 = 99;
             ResetStateAt40FBB0(0,0,0);
             field07C = 0;
             scaleX = 1.0f;
@@ -812,18 +812,18 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
             color[3] = 0xFF;
             MotionRawAt40FB70(reinterpret_cast<int&>(field0C8),14.0f);
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) == 0) {
+        if ((animationStage) == 0) {
             rotationZ = (rotationZ) + gGrowAt00657CBC;
             velocityY = (velocityY) + gGrowAt00657478;
         }
         x += static_cast<float>(facing) * (velocityX);
         y = *(&y) - *(&velocityY);
-        if ((reinterpret_cast<signed short&>(animationStage)) == 10 && *(&y) - *(&velocityY) <= gCollisionAt00657888) {
+        if ((animationStage) == 10 && *(&y) - *(&velocityY) <= gCollisionAt00657888) {
             velocityX = 2.0f;
             velocityY = 2.0f;
             SetStateAt40FB40(11);
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) > 10 && (reinterpret_cast<signed short&>(field0D8)) > 2) {
+        if ((animationStage) > 10 && (field0D8) > 2) {
             velocityX = 0.0f;
             velocityY = 0.0f;
             scaleX = static_cast<float>((scaleX) * gMulDoubleAt00659730);
@@ -835,22 +835,22 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
                 break;
             }
         }
-        if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070))) {
+        if (GetStateAt40FA30() == (field070)) {
             SetStateAt40FB40(10);
-            ++reinterpret_cast<signed short&>(field0D8);
+            ++field0D8;
             break;
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) == 1 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+        if ((animationStage) == 1 && (animationFrame) == 0) {
             velocityX = 0.0f;
             velocityY = 0.0f;
             rotationZ = 0.0f;
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) == 6 && (reinterpret_cast<signed short&>(animationFrame)) == 0 &&
-                static_cast<float>(reinterpret_cast<signed short&>(field0DC)) < *(&gCompareAt0065782C) + *(&field0CC)) {
+        if ((animationStage) == 6 && (animationFrame) == 0 &&
+                static_cast<float>(field0DC) < *(&gCompareAt0065782C) + *(&field0CC)) {
             SetStateAt40FB40(2);
-            ++reinterpret_cast<signed short&>(field0DC);
+            ++field0DC;
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) == 10 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+        if ((animationStage) == 10 && (animationFrame) == 0) {
             PARENT->ModifyAt453D40(16);
             velocityX = 18.0f;
             velocityY = 18.0f;
@@ -859,10 +859,10 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
     break;
 }
         case 0x338: {
-    if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
-        reinterpret_cast<signed short&>(field0D8) = 0;
+    if ((animationStage) == 0 && (animationFrame) == 0) {
+        field0D8 = 0;
         ResetStateAt40FBB0(0,0,0);
-        reinterpret_cast<signed short&>(field080) = 1;
+        field080 = 1;
         field07C = 0;
         velocityY = 0.0f;
         velocityX = 0.0f;
@@ -880,11 +880,11 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
     }
     if ((field07C) == 6) {
         field07C = 0;
-        ++reinterpret_cast<signed short&>(field080);
+        ++field080;
     }
     scaleX = (scaleX) + gFadeAt00659428;
     scaleY = (scaleY) + gFadeAt00659428;
-    if ((reinterpret_cast<signed short&>(animationStage)) > 1) {
+    if ((animationStage) > 1) {
         if ((color[0]) >= 20)
             color[0] -= 20;
         else {
@@ -893,17 +893,17 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
             break;
         }
     }
-    if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070)))
+    if (GetStateAt40FA30() == (field070))
         ResetAt45B830();
-    if ((reinterpret_cast<signed short&>(animationStage)) == 2 && (reinterpret_cast<signed short&>(animationFrame)) == 0)
+    if ((animationStage) == 2 && (animationFrame) == 0)
         PARENT->SpawnDirectedAt453A70(0x339, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), facing, 1);
     break;
 }
         case 0x339: {
-    if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
-        reinterpret_cast<signed short&>(field0D8) = 0;
+    if ((animationStage) == 0 && (animationFrame) == 0) {
+        field0D8 = 0;
         ResetStateAt40FBB0(0,0,0);
-        reinterpret_cast<signed short&>(field080) = 1;
+        field080 = 1;
         field07C = 0;
         velocityY = 0.0f;
         velocityX = 0.0f;
@@ -919,7 +919,7 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
     }
     scaleX = (scaleX) + gFadeAt00659428;
     scaleY = (scaleY) + gFadeAt00659428;
-    if ((reinterpret_cast<signed short&>(animationStage)) > 1) {
+    if ((animationStage) > 1) {
         if ((color[0]) >= 40)
             color[0] -= 40;
         else {
@@ -928,12 +928,12 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
             break;
         }
     }
-    if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070)))
+    if (GetStateAt40FA30() == (field070))
         ResetAt45B830();
     break;
 }
         case 0x33A: {
-    if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+    if ((animationStage) == 0 && (animationFrame) == 0) {
         ResetStateAt40FBB0(0,0,0);
         scaleX = 1.0f;
         scaleY = 1.0f;
@@ -941,12 +941,12 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         color[1] = 0xFF;
         color[2] = 0xFF;
         color[3] = 0xFF;
-        reinterpret_cast<signed short&>(field01A) = 0x4E2;
+        field01A = 0x4E2;
         rotationX = -75.0f;
     }
     scaleX = (scaleX) + gAddAt006583FC;
     scaleY = (scaleY) + gAddAt006583FC;
-    if ((reinterpret_cast<signed short&>(animationStage)) > 1) {
+    if ((animationStage) > 1) {
         if ((color[0]) > 20)
             color[0] -= 20;
         else {
@@ -954,12 +954,12 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
             break;
         }
     }
-    if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070)))
+    if (GetStateAt40FA30() == (field070))
         ResetAt45B830();
     break;
 }
         case 0x33B: {
-    if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+    if ((animationStage) == 0 && (animationFrame) == 0) {
         ResetStateAt40FBB0(0,0,0);
         scaleX = 1.0f;
         scaleY = 1.0f;
@@ -978,7 +978,7 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         ResetAt45B830();
         break;
     }
-    if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070)))
+    if (GetStateAt40FA30() == (field070))
         ResetAt45B830();
     break;
 }
@@ -989,13 +989,13 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
     }
     if (P16(0x60) != 0x2BE ||
             (P16(0x62) > 9 && P16(0x60) == 0x2BE)) {
-        if ((reinterpret_cast<signed short&>(field0D8)) == 0) {
-            reinterpret_cast<signed short&>(field0D8) = 1;
+        if ((field0D8) == 0) {
+            field0D8 = 1;
             break;
         }
     }
-    if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
-        reinterpret_cast<signed short&>(field0D8) = 0;
+    if ((animationStage) == 0 && (animationFrame) == 0) {
+        field0D8 = 0;
         ResetStateAt40FBB0(0,0,0);
         field07C = 0;
         scaleX = 1.0f;
@@ -1005,13 +1005,13 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         color[2] = 0xFF;
         color[3] = 0xFF;
     }
-    if ((reinterpret_cast<signed short&>(field0D8)) == 0) {
+    if ((field0D8) == 0) {
         if ((color[0]) <= 0xE1)
             color[0] += 30;
         else
             color[0] = 0xFF;
     }
-    if ((reinterpret_cast<signed short&>(field0D8)) == 1) {
+    if ((field0D8) == 1) {
         scaleX = static_cast<float>((scaleX) * gMulDoubleAt00659730);
         scaleY = (scaleY) + gAddAt006583FC;
         if ((color[0]) >= 10)
@@ -1021,7 +1021,7 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
             break;
         }
     }
-    if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070))) {
+    if (GetStateAt40FA30() == (field070)) {
         SetStateAt40FB40(1);
         break;
     }
@@ -1034,13 +1034,13 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
     }
     if (P16(0x60) != 0x2C1 ||
             (P16(0x62) > 9 && P16(0x60) == 0x2BE)) {
-        if ((reinterpret_cast<signed short&>(field0D8)) == 0) {
-            reinterpret_cast<signed short&>(field0D8) = 1;
+        if ((field0D8) == 0) {
+            field0D8 = 1;
             break;
         }
     }
-    if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
-        reinterpret_cast<signed short&>(field0D8) = 0;
+    if ((animationStage) == 0 && (animationFrame) == 0) {
+        field0D8 = 0;
         ResetStateAt40FBB0(0,0,0);
         field07C = 0;
         scaleX = 1.0f;
@@ -1050,13 +1050,13 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         color[2] = 0xFF;
         color[3] = 0xFF;
     }
-    if ((reinterpret_cast<signed short&>(field0D8)) == 0) {
+    if ((field0D8) == 0) {
         if ((color[0]) <= 0xE1)
             color[0] += 30;
         else
             color[0] = 0xFF;
     }
-    if ((reinterpret_cast<signed short&>(field0D8)) == 1) {
+    if ((field0D8) == 1) {
         scaleX = static_cast<float>((scaleX) * gMulDoubleAt00659730);
         scaleY = (scaleY) + gAddAt006583FC;
         if ((color[0]) >= 10)
@@ -1066,7 +1066,7 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
             break;
         }
     }
-    if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070))) {
+    if (GetStateAt40FA30() == (field070)) {
         SetStateAt40FB40(1);
         break;
     }
@@ -1077,36 +1077,36 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         x = *(&PF32(0x44)) + static_cast<float>((facing) * 140);
         y = PF32(0x48) + gStageOffsetAt006590AC;
     }
-    if (P16(0x60) != 0x2BE && (reinterpret_cast<signed short&>(animationStage)) < 7) {
+    if (P16(0x60) != 0x2BE && (animationStage) < 7) {
         SetStateAt40FB40(7);
         break;
     }
-    if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
-        reinterpret_cast<signed short&>(field080) = 1;
+    if ((animationStage) == 0 && (animationFrame) == 0) {
+        field080 = 1;
         field07C = 0;
-        if ((reinterpret_cast<signed short&>(field0D8)) != 1) {
+        if ((field0D8) != 1) {
             ResetStateAt40FBB0(0,0,0);
             scaleX = 1.5f;
             scaleY = 1.5f;
-            reinterpret_cast<signed short&>(field0D8) = 0;
+            field0D8 = 0;
             color[0] = 0xFF;
             color[1] = 0xFF;
             color[2] = 0xFF;
             color[3] = 0xFF;
-            reinterpret_cast<signed short&>(field080) = 10;
+            field080 = 10;
         }
     }
-    if ((reinterpret_cast<signed short&>(animationStage)) == 6)
+    if ((animationStage) == 6)
         scaleY = static_cast<float>(RandomAt455580(0,4) - 2)
                   * gScatterRateAt006578C0 + gScatterBaseAt006581E0;
-    if ((reinterpret_cast<signed short&>(animationStage)) == 7)
+    if ((animationStage) == 7)
         scaleY = (scaleY) * gShrinkAt00659094;
-    if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070)))
+    if (GetStateAt40FA30() == (field070))
         ResetAt45B830();
-    if ((reinterpret_cast<signed short&>(animationStage)) == 7 && (reinterpret_cast<signed short&>(animationFrame)) == 0 && (reinterpret_cast<signed short&>(field0D8)) < 10) {
+    if ((animationStage) == 7 && (animationFrame) == 0 && (field0D8) < 10) {
         SetStateAt40FB40(6);
         field07C = 0;
-        ++reinterpret_cast<signed short&>(field0D8);
+        ++field0D8;
     }
     break;
 }
@@ -1115,40 +1115,40 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         x = *(&PF32(0x44)) + static_cast<float>((facing) * 180);
         y = PF32(0x48) + gStageOffsetAt006590AC;
     }
-    if (P16(0x60) != 0x2C1 && (reinterpret_cast<signed short&>(animationStage)) < 17) {
+    if (P16(0x60) != 0x2C1 && (animationStage) < 17) {
         SetStateAt40FB40(17);
         break;
     }
-    if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+    if ((animationStage) == 0 && (animationFrame) == 0) {
         field07C = 0;
         ResetStateAt40FBB0(0,0,0);
         scaleX = 2.0f;
         scaleY = 1.5f;
-        reinterpret_cast<signed short&>(field0D8) = 0;
+        field0D8 = 0;
         color[0] = 0xFF;
         color[1] = 0xFF;
         color[2] = 0xFF;
         color[3] = 0xFF;
-        reinterpret_cast<signed short&>(field080) = 25;
+        field080 = 25;
     }
-    if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070)))
+    if (GetStateAt40FA30() == (field070))
         ResetAt45B830();
-    if ((reinterpret_cast<signed short&>(animationFrame)) == 0)
+    if ((animationFrame) == 0)
         field07C = 0;
-    if ((reinterpret_cast<signed short&>(animationStage)) == 13 && (reinterpret_cast<signed short&>(animationFrame)) == 0 && (reinterpret_cast<signed short&>(field0D8)) < 2) {
+    if ((animationStage) == 13 && (animationFrame) == 0 && (field0D8) < 2) {
         SetStateAt40FB40(6);
-        ++reinterpret_cast<signed short&>(field0D8);
+        ++field0D8;
     }
     break;
 }
         case 0x340: {
     if ((field07C) == 6) {
         field07C = 0;
-        reinterpret_cast<signed short&>(field080) = 1;
+        field080 = 1;
     }
-    if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+    if ((animationStage) == 0 && (animationFrame) == 0) {
         ResetStateAt40FBB0(0,0,0);
-        reinterpret_cast<signed short&>(field080) = 1;
+        field080 = 1;
         field07C = 0;
         velocityX = AbsFloatAt00412D90(
             *(&PF32(0x44)) + static_cast<float>(PS8(0x66)*90) - PARENT_TARGET_X
@@ -1166,7 +1166,7 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
     velocityY = (velocityY) - gMotionDecelAt00657480;
     x += static_cast<float>(facing) * (velocityX);
     y = *(&y) + *(&velocityY);
-    if ((reinterpret_cast<signed short&>(animationStage)) < 2) {
+    if ((animationStage) < 2) {
         rotationZ = (rotationZ) + gLiftAt00657CC0;
         if (*(&y) + *(&velocityY) <= gCompareAt0065782C) {
             PARENT->SpawnDirectedAt453A70(0x338, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), facing, 1);
@@ -1180,18 +1180,18 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
             break;
         }
     }
-    if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070)))
+    if (GetStateAt40FA30() == (field070))
         SetStateAt40FB40(1);
     break;
 }
         case 0x341: {
     if ((field07C) == 6) {
         field07C = 0;
-        reinterpret_cast<signed short&>(field080) = 1;
+        field080 = 1;
     }
-    if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+    if ((animationStage) == 0 && (animationFrame) == 0) {
         ResetStateAt40FBB0(0,0,0);
-        reinterpret_cast<signed short&>(field080) = 1;
+        field080 = 1;
         field07C = 0;
         velocityX = AbsFloatAt00412D90(
             *(&PF32(0x44)) + static_cast<float>(PS8(0x66)*90) - PARENT_TARGET_X
@@ -1209,7 +1209,7 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
     velocityY = (velocityY) - gMotionDecelAt00657480;
     x += static_cast<float>(facing) * (velocityX);
     y = *(&y) + *(&velocityY);
-    if ((reinterpret_cast<signed short&>(animationStage)) < 2) {
+    if ((animationStage) < 2) {
         rotationZ = (rotationZ) + gLiftAt00657CC0;
         if (*(&y) + *(&velocityY) <= gCompareAt0065782C) {
             PARENT->SpawnDirectedAt453A70(0x342, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), facing, 1);
@@ -1223,15 +1223,15 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
             break;
         }
     }
-    if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070)))
+    if (GetStateAt40FA30() == (field070))
         SetStateAt40FB40(1);
     break;
 }
         case 0x342: {
-    if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
-        reinterpret_cast<signed short&>(field0D8) = 0;
+    if ((animationStage) == 0 && (animationFrame) == 0) {
+        field0D8 = 0;
         ResetStateAt40FBB0(0,0,0);
-        reinterpret_cast<signed short&>(field080) = 1;
+        field080 = 1;
         field07C = 0;
         velocityY = 0.0f;
         velocityX = 0.0f;
@@ -1248,19 +1248,19 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
     }
     if ((field07C) == 6) {
         field07C = 0;
-        ++reinterpret_cast<signed short&>(field080);
+        ++field080;
     }
-    if ((reinterpret_cast<signed short&>(animationStage)) == 3 && (reinterpret_cast<signed short&>(animationFrame)) == 0)
+    if ((animationStage) == 3 && (animationFrame) == 0)
         PARENT->SpawnDirectedAt453A70(0x343, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), facing, 1);
-    if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070)))
+    if (GetStateAt40FA30() == (field070))
         ResetAt45B830();
     break;
 }
         case 0x343: {
-    if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
-        reinterpret_cast<signed short&>(field0D8) = 0;
+    if ((animationStage) == 0 && (animationFrame) == 0) {
+        field0D8 = 0;
         ResetStateAt40FBB0(0,0,0);
-        reinterpret_cast<signed short&>(field080) = 1;
+        field080 = 1;
         field07C = 0;
         velocityY = 0.0f;
         velocityX = 0.0f;
@@ -1276,7 +1276,7 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
     }
     scaleX = (scaleX) + gFadeAt0065825C;
     scaleY = (scaleY) + gFadeAt0065825C;
-    if ((reinterpret_cast<signed short&>(animationStage)) > -1) {
+    if ((animationStage) > -1) {
         if ((color[0]) >= 20)
             color[0] -= 20;
         else {
@@ -1285,12 +1285,12 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
             break;
         }
     }
-    if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070)))
+    if (GetStateAt40FA30() == (field070))
         ResetAt45B830();
     break;
 }
         case 0x344: {
-    if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+    if ((animationStage) == 0 && (animationFrame) == 0) {
         ResetStateAt40FBB0(0,0,0);
         scaleX = 1.0f;
         scaleY = 1.0f;
@@ -1298,12 +1298,12 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         color[1] = 0xFF;
         color[2] = 0xFF;
         color[3] = 0xFF;
-        reinterpret_cast<signed short&>(field01A) = 0x4E2;
+        field01A = 0x4E2;
         rotationX = -75.0f;
     }
     scaleX = (scaleX) + gAddAt006583FC;
     scaleY = (scaleY) + gAddAt006583FC;
-    if ((reinterpret_cast<signed short&>(animationStage)) > 1) {
+    if ((animationStage) > 1) {
         if ((color[0]) > 20)
             color[0] -= 20;
         else {
@@ -1311,12 +1311,12 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
             break;
         }
     }
-    if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070)))
+    if (GetStateAt40FA30() == (field070))
         ResetAt45B830();
     break;
 }
         case 0x345: {
-    if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+    if ((animationStage) == 0 && (animationFrame) == 0) {
         ResetStateAt40FBB0(0,0,0);
         scaleX = 1.0f;
         scaleY = 1.0f;
@@ -1324,10 +1324,10 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         color[1] = 0xFF;
         color[2] = 0xFF;
         color[3] = 0xFF;
-        reinterpret_cast<signed short&>(field0D8) = 0;
-        reinterpret_cast<signed short&>(field0DA) = 0;
+        field0D8 = 0;
+        field0DA = 0;
     }
-    if ((reinterpret_cast<signed short&>(animationStage)) > 5) {
+    if ((animationStage) > 5) {
         x += static_cast<float>(facing) * (velocityX);
         y = *(&y) + *(&velocityY);
         if ((x) > gBoundRightAt00659248 ||
@@ -1337,51 +1337,51 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
             ResetAt45B830();
             break;
         }
-        if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070)))
+        if (GetStateAt40FA30() == (field070))
             SetStateAt40FB40(6);
         break;
     }
-    if ((reinterpret_cast<signed short&>(animationStage)) == 1) {
+    if ((animationStage) == 1) {
         rotationZ = (rotationZ) + gGrowAt00657CBC;
-        if (P16(0xF12) == 1 && (reinterpret_cast<signed short&>(animationStage)) == 1 && P16(0xF12) == 1) {
+        if (P16(0xF12) == 1 && (animationStage) == 1 && P16(0xF12) == 1) {
             SetStateAt40FB40(2);
-            reinterpret_cast<signed short&>(field080) = 99;
+            field080 = 99;
             rotationZ = 0.0f;
             field07C = 0;
             break;
         }
     }
     if (P16(0xF12) == 2) {
-        if ((reinterpret_cast<signed short&>(animationStage)) < 6)
-            reinterpret_cast<signed short&>(animationStage) += 4;
-        reinterpret_cast<signed short&>(field0DA) = 25;
-        MotionAt40FB70(static_cast<float>(reinterpret_cast<signed short&>(field0D8)),
-                       static_cast<float>(reinterpret_cast<signed short&>(field0DA)));
+        if ((animationStage) < 6)
+            animationStage += 4;
+        field0DA = 25;
+        MotionAt40FB70(static_cast<float>(field0D8),
+                       static_cast<float>(field0DA));
     }
-    if ((reinterpret_cast<signed short&>(animationStage)) < 6 && P16(0xF12) < 2) {
-        reinterpret_cast<signed short&>(field0D8) = static_cast<short>(
+    if ((animationStage) < 6 && P16(0xF12) < 2) {
+        field0D8 = static_cast<short>(
             static_cast<float>(P16(0xF10)-180) + (field0C8));
-        if ((reinterpret_cast<signed short&>(field0D8)) > 180) reinterpret_cast<signed short&>(field0D8) -= 360;
-        if ((reinterpret_cast<signed short&>(field0D8)) < -180) reinterpret_cast<signed short&>(field0D8) += 360;
-        MotionAt40FB70(static_cast<float>(reinterpret_cast<signed short&>(field0D8)),
-                       static_cast<float>(reinterpret_cast<signed short&>(field0DA)));
+        if ((field0D8) > 180) field0D8 -= 360;
+        if ((field0D8) < -180) field0D8 += 360;
+        MotionAt40FB70(static_cast<float>(field0D8),
+                       static_cast<float>(field0DA));
         x = static_cast<int>(
             P16(0xF0C) + (facing)*(velocityX));
         y = static_cast<int>(
             P16(0xF0E) + (velocityY));
-        if ((reinterpret_cast<signed short&>(field0DA)) < 140) reinterpret_cast<signed short&>(field0DA) += 7;
-        if ((reinterpret_cast<signed short&>(field0DA)) > 140) reinterpret_cast<signed short&>(field0DA) = 140;
+        if ((field0DA) < 140) field0DA += 7;
+        if ((field0DA) > 140) field0DA = 140;
     }
-    if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070))) SetStateAt40FB40(6);
-    if ((reinterpret_cast<signed short&>(animationStage)) == 2 && (reinterpret_cast<signed short&>(animationFrame)) == 0) SetStateAt40FB40(1);
-    if ((reinterpret_cast<signed short&>(animationStage)) == 6 && (reinterpret_cast<signed short&>(animationFrame)) == 0 && P16(0xF12) == 1) {
+    if (GetStateAt40FA30() == (field070)) SetStateAt40FB40(6);
+    if ((animationStage) == 2 && (animationFrame) == 0) SetStateAt40FB40(1);
+    if ((animationStage) == 6 && (animationFrame) == 0 && P16(0xF12) == 1) {
         SetStateAt40FB40(2);
         field07C = 0;
     }
     break;
 }
         case 0x346: {
-    if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+    if ((animationStage) == 0 && (animationFrame) == 0) {
         ResetStateAt40FBB0(0,0,0);
         scaleX = 1.0f;
         scaleY = 1.0f;
@@ -1392,7 +1392,7 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         P16(0xF10) = 0;
         velocityX = 25.0f;
     }
-    if ((reinterpret_cast<signed short&>(animationStage)) < 2) {
+    if ((animationStage) < 2) {
         P16(0xF10) -= 3;
         P16(0xF0C) = static_cast<short>(x);
         P16(0xF0E) = static_cast<short>(y);
@@ -1401,18 +1401,18 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
             velocityX = 0.0f;
     }
     x += static_cast<float>(facing) * (velocityX);
-    if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070))) {
+    if (GetStateAt40FA30() == (field070)) {
         ResetAt45B830();
         P16(0xF12) = 0;
     }
-    if ((reinterpret_cast<signed short&>(animationStage)) == 1 && (reinterpret_cast<signed short&>(animationFrame)) == 0)
+    if ((animationStage) == 1 && (animationFrame) == 0)
         P16(0xF12) = 1;
-    if ((reinterpret_cast<signed short&>(animationStage)) == 2 && (reinterpret_cast<signed short&>(animationFrame)) == 0)
+    if ((animationStage) == 2 && (animationFrame) == 0)
         P16(0xF12) = 2;
     break;
 }
         case 0x347: {
-    if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+    if ((animationStage) == 0 && (animationFrame) == 0) {
         ResetStateAt40FBB0(0,0,0);
         scaleX = 1.0f;
         scaleY = 1.0f;
@@ -1420,10 +1420,10 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         color[1] = 0xFF;
         color[2] = 0xFF;
         color[3] = 0xFF;
-        reinterpret_cast<signed short&>(field0D8) = 0;
-        reinterpret_cast<signed short&>(field0DA) = 0;
+        field0D8 = 0;
+        field0DA = 0;
     }
-    if ((reinterpret_cast<signed short&>(animationStage)) > 5) {
+    if ((animationStage) > 5) {
         x += static_cast<float>(facing) * (velocityX);
         y = *(&y) + *(&velocityY);
         if ((x) > gBoundRightAt00659248 ||
@@ -1433,51 +1433,51 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
             ResetAt45B830();
             break;
         }
-        if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070)))
+        if (GetStateAt40FA30() == (field070))
             SetStateAt40FB40(6);
         break;
     }
-    if ((reinterpret_cast<signed short&>(animationStage)) == 1) {
+    if ((animationStage) == 1) {
         rotationZ = (rotationZ) + gGrowAt00657CBC;
-        if (P16(0xF12) == 1 && (reinterpret_cast<signed short&>(animationStage)) == 1 && P16(0xF12) == 1) {
+        if (P16(0xF12) == 1 && (animationStage) == 1 && P16(0xF12) == 1) {
             SetStateAt40FB40(2);
-            reinterpret_cast<signed short&>(field080) = 99;
+            field080 = 99;
             rotationZ = 0.0f;
             field07C = 0;
             break;
         }
     }
     if (P16(0xF12) == 2) {
-        if ((reinterpret_cast<signed short&>(animationStage)) < 6)
-            reinterpret_cast<signed short&>(animationStage) += 4;
-        reinterpret_cast<signed short&>(field0DA) = 25;
-        MotionAt40FB70(static_cast<float>(reinterpret_cast<signed short&>(field0D8)),
-                       static_cast<float>(reinterpret_cast<signed short&>(field0DA)));
+        if ((animationStage) < 6)
+            animationStage += 4;
+        field0DA = 25;
+        MotionAt40FB70(static_cast<float>(field0D8),
+                       static_cast<float>(field0DA));
     }
-    if ((reinterpret_cast<signed short&>(animationStage)) < 6 && P16(0xF12) < 2) {
-        reinterpret_cast<signed short&>(field0D8) = static_cast<short>(
+    if ((animationStage) < 6 && P16(0xF12) < 2) {
+        field0D8 = static_cast<short>(
             static_cast<float>(P16(0xF10)-180) + (field0C8));
-        if ((reinterpret_cast<signed short&>(field0D8)) > 180) reinterpret_cast<signed short&>(field0D8) -= 360;
-        if ((reinterpret_cast<signed short&>(field0D8)) < -180) reinterpret_cast<signed short&>(field0D8) += 360;
-        MotionAt40FB70(static_cast<float>(reinterpret_cast<signed short&>(field0D8)),
-                       static_cast<float>(reinterpret_cast<signed short&>(field0DA)));
+        if ((field0D8) > 180) field0D8 -= 360;
+        if ((field0D8) < -180) field0D8 += 360;
+        MotionAt40FB70(static_cast<float>(field0D8),
+                       static_cast<float>(field0DA));
         x = static_cast<int>(
             P16(0xF0C) + (facing)*(velocityX));
         y = static_cast<int>(
             P16(0xF0E) + (velocityY));
-        if ((reinterpret_cast<signed short&>(field0DA)) < 120) reinterpret_cast<signed short&>(field0DA) += 6;
-        if ((reinterpret_cast<signed short&>(field0DA)) > 120) reinterpret_cast<signed short&>(field0DA) = 120;
+        if ((field0DA) < 120) field0DA += 6;
+        if ((field0DA) > 120) field0DA = 120;
     }
-    if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070))) SetStateAt40FB40(6);
-    if ((reinterpret_cast<signed short&>(animationStage)) == 2 && (reinterpret_cast<signed short&>(animationFrame)) == 0) SetStateAt40FB40(1);
-    if ((reinterpret_cast<signed short&>(animationStage)) == 6 && (reinterpret_cast<signed short&>(animationFrame)) == 0 && P16(0xF12) == 1) {
+    if (GetStateAt40FA30() == (field070)) SetStateAt40FB40(6);
+    if ((animationStage) == 2 && (animationFrame) == 0) SetStateAt40FB40(1);
+    if ((animationStage) == 6 && (animationFrame) == 0 && P16(0xF12) == 1) {
         SetStateAt40FB40(2);
         field07C = 0;
     }
     break;
 }
         case 0x348: {
-    if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+    if ((animationStage) == 0 && (animationFrame) == 0) {
         ResetStateAt40FBB0(0,0,0);
         scaleX = 1.0f;
         scaleY = 1.0f;
@@ -1485,10 +1485,10 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         color[1] = 0xFF;
         color[2] = 0xFF;
         color[3] = 0xFF;
-        reinterpret_cast<signed short&>(field0D8) = 0;
-        reinterpret_cast<signed short&>(field0DA) = 0;
+        field0D8 = 0;
+        field0DA = 0;
     }
-    if ((reinterpret_cast<signed short&>(animationStage)) > 5) {
+    if ((animationStage) > 5) {
         x += static_cast<float>(facing) * (velocityX);
         y = *(&y) + *(&velocityY);
         if ((x) > gBoundRightAt00659248 ||
@@ -1498,51 +1498,51 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
             ResetAt45B830();
             break;
         }
-        if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070)))
+        if (GetStateAt40FA30() == (field070))
             SetStateAt40FB40(6);
         break;
     }
-    if ((reinterpret_cast<signed short&>(animationStage)) == 1) {
+    if ((animationStage) == 1) {
         rotationZ = (rotationZ) + gGrowAt00657CBC;
-        if (P16(0xF12) == 1 && (reinterpret_cast<signed short&>(animationStage)) == 1 && P16(0xF12) == 1) {
+        if (P16(0xF12) == 1 && (animationStage) == 1 && P16(0xF12) == 1) {
             SetStateAt40FB40(2);
-            reinterpret_cast<signed short&>(field080) = 99;
+            field080 = 99;
             rotationZ = 0.0f;
             field07C = 0;
             break;
         }
     }
     if (P16(0xF12) == 2) {
-        if ((reinterpret_cast<signed short&>(animationStage)) < 6)
-            reinterpret_cast<signed short&>(animationStage) += 4;
-        reinterpret_cast<signed short&>(field0DA) = 25;
-        MotionAt40FB70(static_cast<float>(-(reinterpret_cast<signed short&>(field0D8)) + 180),
-                       static_cast<float>(reinterpret_cast<signed short&>(field0DA)));
+        if ((animationStage) < 6)
+            animationStage += 4;
+        field0DA = 25;
+        MotionAt40FB70(static_cast<float>(-(field0D8) + 180),
+                       static_cast<float>(field0DA));
     }
-    if ((reinterpret_cast<signed short&>(animationStage)) < 6 && P16(0xF12) < 2) {
-        reinterpret_cast<signed short&>(field0D8) = static_cast<short>(
+    if ((animationStage) < 6 && P16(0xF12) < 2) {
+        field0D8 = static_cast<short>(
             static_cast<float>(P16(0xF10)-180) + (field0C8));
-        if ((reinterpret_cast<signed short&>(field0D8)) > 180) reinterpret_cast<signed short&>(field0D8) -= 360;
-        if ((reinterpret_cast<signed short&>(field0D8)) < -180) reinterpret_cast<signed short&>(field0D8) += 360;
-        MotionAt40FB70(static_cast<float>(-(reinterpret_cast<signed short&>(field0D8))),
-                       static_cast<float>(reinterpret_cast<signed short&>(field0DA)));
+        if ((field0D8) > 180) field0D8 -= 360;
+        if ((field0D8) < -180) field0D8 += 360;
+        MotionAt40FB70(static_cast<float>(-(field0D8)),
+                       static_cast<float>(field0DA));
         x = static_cast<int>(
             P16(0xF0C) + (facing)*(velocityX));
         y = static_cast<int>(
             P16(0xF0E) + (velocityY));
-        if ((reinterpret_cast<signed short&>(field0DA)) < 200) reinterpret_cast<signed short&>(field0DA) += 10;
-        if ((reinterpret_cast<signed short&>(field0DA)) > 200) reinterpret_cast<signed short&>(field0DA) = 200;
+        if ((field0DA) < 200) field0DA += 10;
+        if ((field0DA) > 200) field0DA = 200;
     }
-    if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070))) SetStateAt40FB40(6);
-    if ((reinterpret_cast<signed short&>(animationStage)) == 2 && (reinterpret_cast<signed short&>(animationFrame)) == 0) SetStateAt40FB40(1);
-    if ((reinterpret_cast<signed short&>(animationStage)) == 6 && (reinterpret_cast<signed short&>(animationFrame)) == 0 && P16(0xF12) == 1) {
+    if (GetStateAt40FA30() == (field070)) SetStateAt40FB40(6);
+    if ((animationStage) == 2 && (animationFrame) == 0) SetStateAt40FB40(1);
+    if ((animationStage) == 6 && (animationFrame) == 0 && P16(0xF12) == 1) {
         SetStateAt40FB40(2);
         field07C = 0;
     }
     break;
 }
         case 0x349: {
-    if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+    if ((animationStage) == 0 && (animationFrame) == 0) {
         ResetStateAt40FBB0(0,0,0);
         scaleX = 1.0f;
         scaleY = 1.0f;
@@ -1553,7 +1553,7 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         P16(0xF10) = 0;
         velocityX = 25.0f;
     }
-    if ((reinterpret_cast<signed short&>(animationStage)) < 2) {
+    if ((animationStage) < 2) {
         P16(0xF10) -= 3;
         P16(0xF0C) = static_cast<short>(x);
         P16(0xF0E) = static_cast<short>(y);
@@ -1562,18 +1562,18 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
             velocityX = 0.0f;
     }
     x += static_cast<float>(facing) * (velocityX);
-    if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070))) {
+    if (GetStateAt40FA30() == (field070)) {
         ResetAt45B830();
         P16(0xF12) = 0;
     }
-    if ((reinterpret_cast<signed short&>(animationStage)) == 1 && (reinterpret_cast<signed short&>(animationFrame)) == 0)
+    if ((animationStage) == 1 && (animationFrame) == 0)
         P16(0xF12) = 1;
-    if ((reinterpret_cast<signed short&>(animationStage)) == 2 && (reinterpret_cast<signed short&>(animationFrame)) == 0)
+    if ((animationStage) == 2 && (animationFrame) == 0)
         P16(0xF12) = 2;
     break;
 }
         case 0x34A: {
-    if (P16(0x60) > 0x45 && P16(0x60) < 0x96 && (reinterpret_cast<signed short&>(animationStage)) < 11) {
+    if (P16(0x60) > 0x45 && P16(0x60) < 0x96 && (animationStage) < 11) {
         ResetAt45B830();
         for (int iteration=0; iteration<8; ++iteration)
             PARENT->SpawnAt453A70(0x3E4, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
@@ -1585,9 +1585,9 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
     } else {
         if ((field07C) == 6) {
             field07C = 0;
-            reinterpret_cast<signed short&>(field080) = 1;
+            field080 = 1;
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+        if ((animationStage) == 0 && (animationFrame) == 0) {
             ResetStateAt40FBB0(0,0,0);
             field07C = 0;
             scaleX = 1.0f;
@@ -1601,7 +1601,7 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         }
         x += static_cast<float>(facing) * (velocityX);
         y = *(&y) + *(&velocityY);
-        if ((reinterpret_cast<signed short&>(animationStage)) == 0) {
+        if ((animationStage) == 0) {
             if ((color[0]) <= 0xEB)
                 color[0] += 20;
             else
@@ -1618,7 +1618,7 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
                 break;
             }
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) == 11) {
+        if ((animationStage) == 11) {
             scaleX = static_cast<float>((scaleX) * gMulDoubleAt00659730);
             scaleY = (scaleY) + gAddAt006583FC;
             if ((color[0]) >= 10)
@@ -1628,24 +1628,24 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
                 break;
             }
         }
-        if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070))) {
+        if (GetStateAt40FA30() == (field070)) {
             ResetAt45B830();
             break;
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) == 1 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+        if ((animationStage) == 1 && (animationFrame) == 0) {
             velocityX = 0.0f;
             velocityY = 0.0f;
             rotationZ = 0.0f;
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) == 6 && (reinterpret_cast<signed short&>(animationFrame)) == 0 && (reinterpret_cast<signed short&>(field0DC)) < 1) {
+        if ((animationStage) == 6 && (animationFrame) == 0 && (field0DC) < 1) {
             SetStateAt40FB40(2);
-            ++reinterpret_cast<signed short&>(field0DC);
+            ++field0DC;
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) == 10 && (reinterpret_cast<signed short&>(animationFrame)) == 0 && (reinterpret_cast<signed short&>(field0DA)) < 6) {
-            ++reinterpret_cast<signed short&>(field0DA);
+        if ((animationStage) == 10 && (animationFrame) == 0 && (field0DA) < 6) {
+            ++field0DA;
             SetStateAt40FB40(9);
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) == 9 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+        if ((animationStage) == 9 && (animationFrame) == 0) {
             PF32(0x314) = 1200.0f;
             PF32(0x318) = static_cast<float>(RandomAt455580(0,60));
             PARENT->SpawnMovedAt453A70(0x323,
@@ -1657,7 +1657,7 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
     break;
 }
         case 0x34B: {
-    if (P16(0x60) > 0x45 && P16(0x60) < 0x96 && (reinterpret_cast<signed short&>(animationStage)) < 11) {
+    if (P16(0x60) > 0x45 && P16(0x60) < 0x96 && (animationStage) < 11) {
         ResetAt45B830();
         for (int iteration=0; iteration<8; ++iteration)
             PARENT->SpawnAt453A70(0x3E4, reinterpret_cast<int&>(x), reinterpret_cast<int&>(y), 1, 1);
@@ -1669,9 +1669,9 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
     } else {
         if ((field07C) == 6) {
             field07C = 0;
-            reinterpret_cast<signed short&>(field080) = 1;
+            field080 = 1;
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+        if ((animationStage) == 0 && (animationFrame) == 0) {
             ResetStateAt40FBB0(0,0,0);
             field07C = 0;
             scaleX = 1.0f;
@@ -1684,7 +1684,7 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         }
         x += static_cast<float>(facing) * (velocityX);
         y = *(&y) + *(&velocityY);
-        if ((reinterpret_cast<signed short&>(animationStage)) == 0) {
+        if ((animationStage) == 0) {
             if ((color[0]) <= 0xEB)
                 color[0] += 20;
             else
@@ -1692,7 +1692,7 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
             rotationZ = (rotationZ) + gAddAt00659738;
             velocityY = (velocityY) - gGrowAt00657478;
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) == 11) {
+        if ((animationStage) == 11) {
             scaleX = static_cast<float>((scaleX) * gMulDoubleAt00659730);
             scaleY = (scaleY) + gAddAt006583FC;
             if ((color[0]) >= 10)
@@ -1702,24 +1702,24 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
                 break;
             }
         }
-        if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070))) {
+        if (GetStateAt40FA30() == (field070)) {
             ResetAt45B830();
             break;
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) == 1 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+        if ((animationStage) == 1 && (animationFrame) == 0) {
             velocityX = 0.0f;
             velocityY = 0.0f;
             rotationZ = 0.0f;
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) == 6 && (reinterpret_cast<signed short&>(animationFrame)) == 0 && (reinterpret_cast<signed short&>(field0DC)) < 0) {
+        if ((animationStage) == 6 && (animationFrame) == 0 && (field0DC) < 0) {
             SetStateAt40FB40(2);
-            ++reinterpret_cast<signed short&>(field0DC);
+            ++field0DC;
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) == 10 && (reinterpret_cast<signed short&>(animationFrame)) == 0 && (reinterpret_cast<signed short&>(field0DA)) < 6) {
-            ++reinterpret_cast<signed short&>(field0DA);
+        if ((animationStage) == 10 && (animationFrame) == 0 && (field0DA) < 6) {
+            ++field0DA;
             SetStateAt40FB40(9);
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) == 9 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+        if ((animationStage) == 9 && (animationFrame) == 0) {
             PF32(0x314) = 1200.0f;
             PF32(0x318) = static_cast<float>(RandomAt455580(0,15) - 60);
             PARENT->SpawnMovedAt453A70(0x324,
@@ -1731,7 +1731,7 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
     break;
 }
         case 0x34C: {
-    if (P16(0x60) > 0x45 && P16(0x60) < 0x96 && (reinterpret_cast<signed short&>(animationStage)) < 5) {
+    if (P16(0x60) > 0x45 && P16(0x60) < 0x96 && (animationStage) < 5) {
         ResetAt45B830();
         for (int iteration=0; iteration<8; ++iteration)
             PARENT->SpawnAt453A70(0x3E4,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),1,1);
@@ -1749,11 +1749,11 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
             y = PF32(0x48) + gParentYAt006590A8;
             if (P16(0x60) == 0x19A)
                 y = PF32(0x48) + gParentYExtraAt00658264;
-        } else if ((reinterpret_cast<signed short&>(animationStage)) < 5) {
+        } else if ((animationStage) < 5) {
             SetStateAt40FB40(5);
             break;
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+        if ((animationStage) == 0 && (animationFrame) == 0) {
             ResetStateAt40FBB0(0,0,0);
             field07C = 0;
             scaleX = 1.0f;
@@ -1762,9 +1762,9 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
             color[1] = 0xFF;
             color[2] = 0xFF;
             color[3] = 0xFF;
-            reinterpret_cast<signed short&>(field0DA) = 0;
+            field0DA = 0;
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) == 5) {
+        if ((animationStage) == 5) {
             scaleX = static_cast<float>((scaleX)*gMulDoubleAt00659730);
             scaleY = (scaleY) + gAddAt006583FC;
             if ((color[0]) >= 10)
@@ -1774,15 +1774,15 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
                 break;
             }
         }
-        if (GetStateAt40FA30() == (reinterpret_cast<signed short&>(field070))) {
+        if (GetStateAt40FA30() == (field070)) {
             ResetAt45B830();
             break;
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) == 4 && (reinterpret_cast<signed short&>(animationFrame)) == 0 && (reinterpret_cast<signed short&>(field0DA)) < 8) {
-            ++reinterpret_cast<signed short&>(field0DA);
+        if ((animationStage) == 4 && (animationFrame) == 0 && (field0DA) < 8) {
+            ++field0DA;
             SetStateAt40FB40(3);
         }
-        if ((reinterpret_cast<signed short&>(animationStage)) == 3 && (reinterpret_cast<signed short&>(animationFrame)) == 0) {
+        if ((animationStage) == 3 && (animationFrame) == 0) {
             if (P16(0x60) == 0x198) {
                 PF32(0x314) = 1000.0f;
                 PF32(0x318) = static_cast<float>(RandomAt455580(0,10) - 5);
@@ -1832,11 +1832,11 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
     } else {
         if ((field07C)==6) {
             field07C=0;
-            reinterpret_cast<signed short&>(field080)=1;
+            field080=1;
         }
-        if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        if ((animationStage)==0 && (animationFrame)==0) {
             ResetStateAt40FBB0(0,0,0);
-            reinterpret_cast<signed short&>(field080)=1;
+            field080=1;
             field07C=0;
             reinterpret_cast<int&>(velocityX)=reinterpret_cast<int&>(field0C8);
             reinterpret_cast<int&>(velocityY)=reinterpret_cast<int&>(field0CC);
@@ -1850,7 +1850,7 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         velocityY = (velocityY) - gSubAt00659090;
         x += static_cast<float>(facing)*(velocityX);
         y = *(&y) + *(&velocityY);
-        if ((reinterpret_cast<signed short&>(animationStage))<2) {
+        if ((animationStage)<2) {
             rotationZ = (rotationZ)+gLiftAt00657CC0;
             if (*(&y) + *(&velocityY) <= gCompareAt0065782C) {
                 PARENT->ModifyAt453D40(4);
@@ -1864,7 +1864,7 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
                 break;
             }
         }
-        if (GetStateAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+        if (GetStateAt40FA30()==(field070))
             SetStateAt40FB40(1);
     }
     break;
@@ -1882,9 +1882,9 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
     } else {
         if ((field07C)==6) {
             field07C=0;
-            reinterpret_cast<signed short&>(field080)=1;
+            field080=1;
         }
-        if ((reinterpret_cast<signed short&>(field0D8))>2) {
+        if ((field0D8)>2) {
             scaleX = static_cast<float>((scaleX)*gMulDoubleAt00659730);
             scaleY = (scaleY)+gAddAt006583FC;
             if ((color[0])>=10)
@@ -1894,12 +1894,12 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
                 break;
             }
         }
-        if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        if ((animationStage)==0 && (animationFrame)==0) {
             ResetStateAt40FBB0(0,0,0);
 
             velocityX=20.0f;
             velocityY=0.0f;
-            reinterpret_cast<signed short&>(field0D8)=0;
+            field0D8=0;
             scaleX=1.0f;
             scaleY=1.0f;
             color[0]=0xFF;
@@ -1912,9 +1912,9 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
             velocityX=2.0f;
         x += static_cast<float>(facing)*(velocityX);
         y = *(&y)+*(&velocityY);
-        if (GetStateAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
+        if (GetStateAt40FA30()==(field070)) {
             SetStateAt40FB40(1);
-            ++reinterpret_cast<signed short&>(field0D8);
+            ++field0D8;
         }
     }
     break;
@@ -1932,9 +1932,9 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
     } else {
         if ((field07C)==6) {
             field07C=0;
-            reinterpret_cast<signed short&>(field080)=1;
+            field080=1;
         }
-        if ((reinterpret_cast<signed short&>(field0D8))>1) {
+        if ((field0D8)>1) {
             scaleX = static_cast<float>((scaleX)*gMulDoubleAt00659730);
             scaleY = (scaleY)+gAddAt006583FC;
             if ((color[0])>=10)
@@ -1944,14 +1944,14 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
                 break;
             }
         }
-        if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        if ((animationStage)==0 && (animationFrame)==0) {
             ResetStateAt40FBB0(0,0,0);
 
             velocityX=20.0f;
             velocityY=0.0f;
-            reinterpret_cast<signed short&>(field0D8)=0;
+            field0D8=0;
             field07C=0;
-            reinterpret_cast<signed short&>(field080)=1;
+            field080=1;
             scaleX=1.0f;
             scaleY=1.0f;
             color[0]=0xFF;
@@ -1964,7 +1964,7 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
             velocityX=2.0f;
         x += static_cast<float>(facing)*(velocityX);
         y = *(&y)+*(&velocityY);
-        if (GetStateAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
+        if (GetStateAt40FA30()==(field070)) {
             ResetAt45B830();
         }
     }
@@ -1975,7 +1975,7 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         x = *(&PF32(0x44)) + static_cast<float>((facing)*260);
         y = PF32(0x48) + gParentYAt006590A0;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         ResetStateAt40FBB0(0,0,0);
         scaleX=1.0f;
         scaleY=1.0f;
@@ -1992,12 +1992,12 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         ResetAt45B830();
         break;
     }
-    if (GetStateAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetStateAt40FA30()==(field070))
         ResetAt45B830();
     break;
 }
         case 0x371: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         ResetStateAt40FBB0(0,0,0);
         scaleX=0.85f;
         scaleY=0.85f;
@@ -2005,11 +2005,11 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         color[1]=0xFF;
         color[2]=0xFF;
         color[3]=0xFF;
-        reinterpret_cast<signed short&>(field01A)=0x4E2;
+        field01A=0x4E2;
         rotationX=-65.0f;
     }
     rotationZ = (rotationZ)-gSubtractAt00659728;
-    if (GetStateAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetStateAt40FA30()==(field070))
         ResetAt45B830();
     break;
 }
@@ -2018,7 +2018,7 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         ResetAt45B830();
         break;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         ResetStateAt40FBB0(0,0,0);
         scaleX=1.0f;
         scaleY=1.0f;
@@ -2032,7 +2032,7 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
     velocityY = (velocityY)-gDropAt00658058;
     x += static_cast<float>(facing)*(velocityX);
     y = *(&y) + *(&velocityY);
-    if ((reinterpret_cast<signed short&>(animationStage))<2) {
+    if ((animationStage)<2) {
         rotationZ = (rotationZ)+gLiftAt00657CC0;
         if (*(&y) + *(&velocityY) <= gCompareAt0065782C) {
             PARENT->SpawnDirectedAt453A70(0x388,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),facing,0);
@@ -2047,7 +2047,7 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
             break;
         }
     }
-    if (GetStateAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetStateAt40FA30()==(field070))
         SetStateAt40FB40(1);
     break;
 }
@@ -2056,10 +2056,10 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         ResetAt45B830();
         break;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
-        reinterpret_cast<signed short&>(field0D8)=0;
+    if ((animationStage)==0 && (animationFrame)==0) {
+        field0D8=0;
         ResetStateAt40FBB0(0,0,0);
-        reinterpret_cast<signed short&>(field080)=1;
+        field080=1;
         field07C=0;
         velocityY=0.0f;
         velocityX=0.0f;
@@ -2077,11 +2077,11 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
     }
     if ((field07C)==6) {
         field07C=0;
-        ++reinterpret_cast<signed short&>(field080);
+        ++field080;
     }
     scaleX = (scaleX)+gAbsScaleAt00659724;
     scaleY = (scaleY)+gAbsScaleAt00659724;
-    if ((reinterpret_cast<signed short&>(animationStage))>1) {
+    if ((animationStage)>1) {
         if ((color[0])>=40)
             color[0]-=40;
         else {
@@ -2090,9 +2090,9 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
             break;
         }
     }
-    if (GetStateAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetStateAt40FA30()==(field070))
         ResetAt45B830();
-    if ((reinterpret_cast<signed short&>(animationStage))==2 && (reinterpret_cast<signed short&>(animationFrame))==0)
+    if ((animationStage)==2 && (animationFrame)==0)
         PARENT->SpawnDirectedAt453A70(0x386,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),facing,1);
     break;
 }
@@ -2101,10 +2101,10 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         ResetAt45B830();
         break;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
-        reinterpret_cast<signed short&>(field0D8)=0;
+    if ((animationStage)==0 && (animationFrame)==0) {
+        field0D8=0;
         ResetStateAt40FBB0(0,0,0);
-        reinterpret_cast<signed short&>(field080)=1;
+        field080=1;
         field07C=0;
         velocityY=0.0f;
         velocityX=0.0f;
@@ -2127,7 +2127,7 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         ResetAt45B830();
         break;
     }
-    if (GetStateAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetStateAt40FA30()==(field070))
         ResetAt45B830();
     break;
 }
@@ -2136,7 +2136,7 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         ResetAt45B830();
         break;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         ResetStateAt40FBB0(0,0,0);
         scaleX=0.75f;
         scaleY=0.75f;
@@ -2144,12 +2144,12 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         color[1]=0xFF;
         color[2]=0xFF;
         color[3]=0xFF;
-        reinterpret_cast<signed short&>(field01A)=0x4E2;
+        field01A=0x4E2;
         rotationX=-75.0f;
     }
     scaleX = (scaleX)+gFadeAt006583F8;
     scaleY = (scaleY)+gFadeAt006583F8;
-    if ((reinterpret_cast<signed short&>(animationStage))>1) {
+    if ((animationStage)>1) {
         if ((color[0])>20)
             color[0]-=20;
         else {
@@ -2157,7 +2157,7 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
             break;
         }
     }
-    if (GetStateAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetStateAt40FA30()==(field070))
         ResetAt45B830();
     break;
 }
@@ -2166,7 +2166,7 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         ResetAt45B830();
         break;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         ResetStateAt40FBB0(0,0,0);
         scaleX=1.0f;
         scaleY=1.0f;
@@ -2185,7 +2185,7 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         ResetAt45B830();
         break;
     }
-    if (GetStateAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetStateAt40FA30()==(field070))
         ResetAt45B830();
     break;
 }
@@ -2196,14 +2196,14 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
     }
     if ((field07C)==6) {
         field07C=0;
-        reinterpret_cast<signed short&>(field080)=1;
+        field080=1;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
-        reinterpret_cast<signed short&>(field0D8)=-30;
-        reinterpret_cast<signed short&>(field0DA)=150;
-        reinterpret_cast<signed short&>(field0DC)=0;
+    if ((animationStage)==0 && (animationFrame)==0) {
+        field0D8=-30;
+        field0DA=150;
+        field0DC=0;
         ResetStateAt40FBB0(0,0,0);
-        reinterpret_cast<signed short&>(field080)=1;
+        field080=1;
         field07C=0;
         scaleX=1.0f;
         scaleY=1.0f;
@@ -2212,22 +2212,22 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         color[2]=0xFF;
         color[3]=0xFF;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==4 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==4 && (animationFrame)==0) {
         PARENT->SpawnComputedAt453A70(0x371,reinterpret_cast<int&>(x),
                     (y)+gFloatAt00657850,facing,1);
         PARENT->ModifyAt453D40(2);
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==0) {
+    if ((animationStage)==0) {
         if ((color[0])<225)
             color[0]+=30;
         else
             color[0]=0xFF;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))<8 && (reinterpret_cast<signed short&>(field080))==0) {
-        SetStateAt40FB40((reinterpret_cast<signed short&>(animationStage))+4);
+    if ((animationStage)<8 && (field080)==0) {
+        SetStateAt40FB40((animationStage)+4);
         break;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))>7) {
+    if ((animationStage)>7) {
         scaleX=static_cast<float>((scaleX)*gMulDoubleAt00659730);
         scaleY=(scaleY)+gAddAt006583FC;
         if ((color[0])>=10)
@@ -2237,15 +2237,15 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
             break;
         }
     }
-    if (GetStateAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
+    if (GetStateAt40FA30()==(field070)) {
         SetStateAt40FB40(8);
         break;
     }
-    if ((reinterpret_cast<signed short&>(animationFrame))==0)
+    if ((animationFrame)==0)
         field07C=0;
-    if ((reinterpret_cast<signed short&>(animationStage))==8 && (reinterpret_cast<signed short&>(animationFrame))==0 && (reinterpret_cast<signed short&>(field0DC))<5) {
+    if ((animationStage)==8 && (animationFrame)==0 && (field0DC)<5) {
         SetStateAt40FB40(4);
-        ++reinterpret_cast<signed short&>(field0DC);
+        ++field0DC;
     }
     break;
 }
@@ -2254,9 +2254,9 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         ResetAt45B830();
         break;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         ResetStateAt40FBB0(0,0,0);
-        reinterpret_cast<signed short&>(field080)=1;
+        field080=1;
         field07C=0;
         scaleX=1.0f;
         scaleY=1.0f;
@@ -2264,43 +2264,43 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         color[1]=0xFF;
         color[2]=0xFF;
         color[3]=0xFF;
-        reinterpret_cast<signed short&>(field0D8)=10;
-        reinterpret_cast<signed short&>(field0DA)=0;
-        reinterpret_cast<signed short&>(field0DE)=0;
-        reinterpret_cast<signed short&>(field0DC)=0;
+        field0D8=10;
+        field0DA=0;
+        field0DE=0;
+        field0DC=0;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==1 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==1 && (animationFrame)==0) {
         PARENT->SpawnDirectedAt453A70(0x389,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),facing,1);
     }
-    if ((reinterpret_cast<signed short&>(animationStage))>0) {
-        reinterpret_cast<signed short&>(field0DA) = static_cast<short>(AngleAt00483300(
+    if ((animationStage)>0) {
+        field0DA = static_cast<short>(AngleAt00483300(
             *(&PARENT_TARGET_Y) - *(&y) + gCollisionAt00657888,
             (*(&PARENT_TARGET_X) - *(&x)) * (facing)) / gAngleUnitAt00657828);
-        if ((reinterpret_cast<signed short&>(field0DC))>(reinterpret_cast<signed short&>(field0DA))) {
-            if ((reinterpret_cast<signed short&>(field0DC))-(reinterpret_cast<signed short&>(field0DA))<=180) {
-                reinterpret_cast<signed short&>(field0DC)-=2;
-                if ((reinterpret_cast<signed short&>(field0DC))<-180) reinterpret_cast<signed short&>(field0DC)+=360;
+        if ((field0DC)>(field0DA)) {
+            if ((field0DC)-(field0DA)<=180) {
+                field0DC-=2;
+                if ((field0DC)<-180) field0DC+=360;
             } else {
-                reinterpret_cast<signed short&>(field0DC)+=2;
-                if ((reinterpret_cast<signed short&>(field0DC))>180) reinterpret_cast<signed short&>(field0DC)-=360;
+                field0DC+=2;
+                if ((field0DC)>180) field0DC-=360;
             }
         }
-        if ((reinterpret_cast<signed short&>(field0DC))<=(reinterpret_cast<signed short&>(field0DA))) {
-            if ((reinterpret_cast<signed short&>(field0DC))-(reinterpret_cast<signed short&>(field0DA))>=-180) {
-                reinterpret_cast<signed short&>(field0DC)+=2;
-                if ((reinterpret_cast<signed short&>(field0DC))>180) reinterpret_cast<signed short&>(field0DC)-=360;
+        if ((field0DC)<=(field0DA)) {
+            if ((field0DC)-(field0DA)>=-180) {
+                field0DC+=2;
+                if ((field0DC)>180) field0DC-=360;
             } else {
-                reinterpret_cast<signed short&>(field0DC)-=2;
-                if ((reinterpret_cast<signed short&>(field0DC))<-180) reinterpret_cast<signed short&>(field0DC)+=360;
+                field0DC-=2;
+                if ((field0DC)<-180) field0DC+=360;
             }
         }
     }
-    MotionAt40FB70(static_cast<float>(reinterpret_cast<signed short&>(field0DC)),4.0f);
+    MotionAt40FB70(static_cast<float>(field0DC),4.0f);
     x += static_cast<float>(facing)*(velocityX);
     y = *(&y) - *(&velocityY);
-    if (GetStateAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
-        if ((reinterpret_cast<signed short&>(field0D8))<gGlobalActorCountAt006714D0*5+10) {
-            ++reinterpret_cast<signed short&>(field0D8);
+    if (GetStateAt40FA30()==(field070)) {
+        if ((field0D8)<gGlobalActorCountAt006714D0*5+10) {
+            ++field0D8;
             SetStateAt40FB40(1);
             break;
         }
@@ -2314,7 +2314,7 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         ResetAt45B830();
         break;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         ResetStateAt40FBB0(0,0,0);
         field07C=0;
         scaleX=1.0f;
@@ -2325,11 +2325,11 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         color[3]=0xFF;
         velocityX=(field0C8)*gMulAt006590B4;
         velocityY=(field0CC)*gMulAt006590B4;
-        reinterpret_cast<signed short&>(field0D8)=static_cast<short>(RandomAt455580(-480,960));
+        field0D8=static_cast<short>(RandomAt455580(-480,960));
     }
     x += static_cast<float>(facing)*(velocityX);
     y = *(&y)+*(&velocityY);
-    if ((reinterpret_cast<signed short&>(animationStage))==0) {
+    if ((animationStage)==0) {
         if ((color[0])<=235)
             color[0]+=20;
         else
@@ -2337,7 +2337,7 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         rotationZ=(rotationZ)+gAddAt00659738;
         velocityY=(velocityY)-gDropAt00658058;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==12) {
+    if ((animationStage)==12) {
         scaleX=static_cast<float>((scaleX)*gMulDoubleAt00659730);
         scaleY=(scaleY)+gAddAt006583FC;
         if ((color[0])>=10)
@@ -2347,33 +2347,33 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
             break;
         }
     }
-    if (GetStateAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
+    if (GetStateAt40FA30()==(field070)) {
         ResetAt45B830();
         break;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==1 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==1 && (animationFrame)==0) {
         velocityX=0.0f;
         velocityY=0.0f;
         rotationZ=0.0f;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==6 && (reinterpret_cast<signed short&>(animationFrame))==0 && (reinterpret_cast<signed short&>(field0DC))<0) {
+    if ((animationStage)==6 && (animationFrame)==0 && (field0DC)<0) {
         SetStateAt40FB40(2);
-        ++reinterpret_cast<signed short&>(field0DC);
+        ++field0DC;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==8 && (reinterpret_cast<signed short&>(animationFrame))==0) {
-        PF32(0x314)=static_cast<float>(reinterpret_cast<signed short&>(field0D8));
+    if ((animationStage)==8 && (animationFrame)==0) {
+        PF32(0x314)=static_cast<float>(field0D8);
         PI32(0x318)=reinterpret_cast<int&>(x);
         PI32(0x31C)=reinterpret_cast<int&>(y);
         PARENT->SpawnDirectedAt453A70(0x38C,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),facing,1);
         PARENT->ModifyAt453D40(15);
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==10 && (reinterpret_cast<signed short&>(animationFrame))==0 && (reinterpret_cast<signed short&>(field0DA))<6) {
-        ++reinterpret_cast<signed short&>(field0DA);
+    if ((animationStage)==10 && (animationFrame)==0 && (field0DA)<6) {
+        ++field0DA;
         SetStateAt40FB40(9);
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==11 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==11 && (animationFrame)==0) {
         PARENT->SpawnMovedAt453A70(0x38D,
-            static_cast<float>((reinterpret_cast<signed short&>(field0D8))*(facing)) + (x),
+            static_cast<float>((field0D8)*(facing)) + (x),
             0,facing,1);
         PARENT->ModifyAt453D40(8);
     }
@@ -2384,7 +2384,7 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         ResetAt45B830();
         break;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         ResetStateAt40FBB0(0,0,0);
         scaleX = MagnitudeAt00428D20(
             *(&field0C8)* *(&field0C8) + *(&field0D0)* *(&field0D0))
@@ -2397,15 +2397,15 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         rotationZ = AngleRawAt00483300(reinterpret_cast<int&>(field0D0),reinterpret_cast<int&>(field0C8)) / gAngleUnitAt00657828;
     }
     scaleY=static_cast<float>((scaleY)*gMulDoubleAt00659730);
-    if (GetStateAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetStateAt40FA30()==(field070))
         ResetAt45B830();
     break;
 }
         case 0x38D: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
-        reinterpret_cast<signed short&>(field0D8)=0;
+    if ((animationStage)==0 && (animationFrame)==0) {
+        field0D8=0;
         ResetStateAt40FBB0(0,0,0);
-        reinterpret_cast<signed short&>(field080)=1;
+        field080=1;
         field07C=0;
         velocityY=0.0f;
         velocityX=0.0f;
@@ -2422,15 +2422,15 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
     }
     if ((field07C)==6) {
         field07C=0;
-        ++reinterpret_cast<signed short&>(field080);
+        ++field080;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==3 && (reinterpret_cast<signed short&>(animationFrame))==0)
+    if ((animationStage)==3 && (animationFrame)==0)
         PARENT->SpawnDirectedAt453A70(0x343,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),facing,1);
-    if ((reinterpret_cast<signed short&>(animationStage))<3) {
+    if ((animationStage)<3) {
         scaleX=(scaleX)+gFadeAt00659428;
         scaleY=(scaleY)+gFadeAt00659428;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==4) {
+    if ((animationStage)==4) {
         scaleX=(scaleX)*gSubAt00659090;
         if ((color[0])>=20) {
             color[0]-=20;
@@ -2442,10 +2442,10 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
             break;
         }
     }
-    if (GetStateAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetStateAt40FA30()==(field070))
         ResetAt45B830();
-    if ((reinterpret_cast<signed short&>(animationStage))==4 && (reinterpret_cast<signed short&>(animationFrame))==0 && (reinterpret_cast<signed short&>(field0D8))<5) {
-        ++reinterpret_cast<signed short&>(field0D8);
+    if ((animationStage)==4 && (animationFrame)==0 && (field0D8)<5) {
+        ++field0D8;
         SetStateAt40FB40(3);
     }
     break;
@@ -2455,10 +2455,10 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         ResetAt45B830();
         break;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
-        reinterpret_cast<signed short&>(field0D8)=0;
+    if ((animationStage)==0 && (animationFrame)==0) {
+        field0D8=0;
         ResetStateAt40FBB0(0,0,0);
-        reinterpret_cast<signed short&>(field080)=1;
+        field080=1;
         field07C=0;
         velocityY=0.0f;
         velocityX=0.0f;
@@ -2476,15 +2476,15 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
     }
     if ((field07C)==6) {
         field07C=0;
-        ++reinterpret_cast<signed short&>(field080);
+        ++field080;
     }
-    if (GetStateAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetStateAt40FA30()==(field070))
         ResetAt45B830();
     break;
 }
         case 0x3E3: {
     facing=1;
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         ResetStateAt40FBB0(0,0,0);
         scaleX=1.0f;
         scaleY=1.0f;
@@ -2494,20 +2494,20 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         color[3]=0xFF;
         velocityX=0.0f;
         velocityY=-1.0f;
-        reinterpret_cast<signed short&>(field0D8)=static_cast<short>(RandomAt455580(0,360)-180);
-        reinterpret_cast<signed short&>(field0DA)=15;
+        field0D8=static_cast<short>(RandomAt455580(0,360)-180);
+        field0DA=15;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==0) {
-        --reinterpret_cast<signed short&>(field0DA);
-        if ((reinterpret_cast<signed short&>(field0DA))<3) reinterpret_cast<signed short&>(field0DA)=3;
-        MotionAt40FB70(static_cast<float>(reinterpret_cast<signed short&>(field0D8)),
-                       static_cast<float>(reinterpret_cast<signed short&>(field0DA))*gSubAt00659090);
+    if ((animationStage)==0) {
+        --field0DA;
+        if ((field0DA)<3) field0DA=3;
+        MotionAt40FB70(static_cast<float>(field0D8),
+                       static_cast<float>(field0DA)*gSubAt00659090);
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==1) {
-        reinterpret_cast<signed short&>(field0D8)=static_cast<short>(AngleAt00483300(
+    if ((animationStage)==1) {
+        field0D8=static_cast<short>(AngleAt00483300(
             PARENT_TARGET_Y + *(&gCollisionAt00657888) - (y),
             *(&PARENT_TARGET_X)-*(&x)) / gAngleUnitAt00657828);
-        MotionAt40FB70(static_cast<float>(reinterpret_cast<signed short&>(field0D8)),20.0f);
+        MotionAt40FB70(static_cast<float>(field0D8),20.0f);
         if ((*(&x) - *(&PARENT_TARGET_X) < gStageContactAt0065786C) &&
             (*(&x) - *(&PARENT_TARGET_X) > gTouchMaxAt00659230) &&
             (*(&y) - *(&PARENT_TARGET_Y) < gParentYAt006590A8) &&
@@ -2523,13 +2523,13 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
     }
     x=*(&x)+*(&velocityX);
     y=*(&y)-*(&velocityY);
-    if (GetStateAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetStateAt40FA30()==(field070))
         SetStateAt40FB40(1);
     break;
 }
         case 0x3E4: {
     facing=1;
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         ResetStateAt40FBB0(0,0,0);
         scaleX=1.0f;
         scaleY=1.0f;
@@ -2539,20 +2539,20 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         color[3]=0xFF;
         velocityX=0.0f;
         velocityY=-1.0f;
-        reinterpret_cast<signed short&>(field0D8)=static_cast<short>(RandomAt455580(0,360)-180);
-        reinterpret_cast<signed short&>(field0DA)=15;
+        field0D8=static_cast<short>(RandomAt455580(0,360)-180);
+        field0DA=15;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==0) {
-        --reinterpret_cast<signed short&>(field0DA);
-        if ((reinterpret_cast<signed short&>(field0DA))<3) reinterpret_cast<signed short&>(field0DA)=3;
-        MotionAt40FB70(static_cast<float>(reinterpret_cast<signed short&>(field0D8)),
-                       static_cast<float>(reinterpret_cast<signed short&>(field0DA))*gSubAt00659090);
+    if ((animationStage)==0) {
+        --field0DA;
+        if ((field0DA)<3) field0DA=3;
+        MotionAt40FB70(static_cast<float>(field0D8),
+                       static_cast<float>(field0DA)*gSubAt00659090);
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==1) {
-        reinterpret_cast<signed short&>(field0D8)=static_cast<short>(AngleAt00483300(
+    if ((animationStage)==1) {
+        field0D8=static_cast<short>(AngleAt00483300(
             PARENT_TARGET_Y + *(&gCollisionAt00657888) - (y),
             *(&PARENT_TARGET_X)-*(&x)) / gAngleUnitAt00657828);
-        MotionAt40FB70(static_cast<float>(reinterpret_cast<signed short&>(field0D8)),20.0f);
+        MotionAt40FB70(static_cast<float>(field0D8),20.0f);
         if ((*(&x) - *(&PARENT_TARGET_X) < gStageContactAt0065786C) &&
             (*(&x) - *(&PARENT_TARGET_X) > gTouchMaxAt00659230) &&
             (*(&y) - *(&PARENT_TARGET_Y) < gParentYAt006590A8) &&
@@ -2585,15 +2585,15 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
     }
     x=*(&x)+*(&velocityX);
     y=*(&y)-*(&velocityY);
-    if (GetStateAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetStateAt40FA30()==(field070))
         SetStateAt40FB40(1);
     break;
 }
         case 0x3E5: {
     reinterpret_cast<int&>(x)=*reinterpret_cast<int*>(reinterpret_cast<char*>(PARENT)+0x44);
     reinterpret_cast<int&>(y)=0;
-    reinterpret_cast<signed short&>(field08A)=1;
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    field08A=1;
+    if ((animationStage)==0 && (animationFrame)==0) {
         ResetStateAt40FBB0(0,0,0);
         scaleX=3.0f;
         scaleY=3.0f;
@@ -2601,20 +2601,20 @@ void FighterSwitchF572_Boss004EBDA0::Advance() {
         color[1]=0xFF;
         color[2]=0xFF;
         color[3]=0xFF;
-        reinterpret_cast<signed short&>(field01A)=0x4E2;
+        field01A=0x4E2;
         reinterpret_cast<int&>(rotationY)=0;
         reinterpret_cast<int&>(rotationZ)=0;
         rotationX=-80.0f;
-        reinterpret_cast<signed short&>(field0D8)=P16(0x3A0);
+        field0D8=P16(0x3A0);
     }
     if (P16(0x3A0)<=0) {
         ResetAt45B830();
         break;
     }
-    scaleX=static_cast<float>(P16(0x3A0))/(reinterpret_cast<signed short&>(field0D8))*2.0f;
-    scaleY=static_cast<float>(P16(0x3A0))/(reinterpret_cast<signed short&>(field0D8))*2.0f;
+    scaleX=static_cast<float>(P16(0x3A0))/(field0D8)*2.0f;
+    scaleY=static_cast<float>(P16(0x3A0))/(field0D8)*2.0f;
     rotationZ=(rotationZ)+gCompareAt0065747C;
-    if (GetStateAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
+    if (GetStateAt40FA30()==(field070)) {
         SetStateAt40FB40(9);
         break;
     }

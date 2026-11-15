@@ -2,7 +2,7 @@
 // reflection, native conditional ground physics and aux-state exit.
 // This is an original interior case, not an accepted entire giant.
 case 0xD0: {
-    if (reinterpret_cast<signed short&>(animationStage)==0 && reinterpret_cast<signed short&>(animationFrame)==0) {
+    if (animationStage==0 && animationFrame==0) {
         facing =
             -facing;
         velocityX=-(velocityX);
@@ -16,7 +16,7 @@ case 0xD0: {
         ResetAt453E20();
         break;
     }
-    if (GetNativeActionAt40FA30()==reinterpret_cast<signed short&>(field070))
+    if (GetNativeActionAt40FA30()==field070)
         SetAuxActionAt40FB40(5);
     break;
 }

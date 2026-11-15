@@ -2,7 +2,7 @@
 // Advance(), including actual ten-projectile burst and optional guarded
 // stage-one shot. NOT independent game function or exact whole CODE credit.
 case 0x58: {
-    if (reinterpret_cast<signed short&>(animationStage)==0 && reinterpret_cast<signed short&>(animationFrame)==0) {
+    if (animationStage==0 && animationFrame==0) {
         velocityX = -(reinterpret_cast<float&>(field094));
         reinterpret_cast<int&>(velocityY) = reinterpret_cast<int&>(field098);
         field05C = 0.8f;
@@ -24,12 +24,12 @@ case 0x58: {
         }
         break;
     }
-    if (GetNativeActionAt40FA30()==reinterpret_cast<signed short&>(field070))
-        SetAuxActionAt40FB40(reinterpret_cast<signed short&>(animationStage)-1);
-    if (reinterpret_cast<signed short&>(animationStage)==1 && reinterpret_cast<signed short&>(animationFrame)==0) {
+    if (GetNativeActionAt40FA30()==field070)
+        SetAuxActionAt40FB40(animationStage-1);
+    if (animationStage==1 && animationFrame==0) {
 #if F614_STAGE1_SPAWN
-        if (reinterpret_cast<signed short&>(fieldF0C)==0) {
-            reinterpret_cast<signed short&>(fieldF0C)=1;
+        if (fieldF0C==0) {
+            fieldF0C=1;
             SpawnDirectedAt453A70(F614_PROJECTILE,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
                 facing,F614_SIDE);
         }

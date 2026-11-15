@@ -231,15 +231,15 @@
 
 
 case 0x19D: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) { field07C=1; ResetAt453E20(); }
-    if ((reinterpret_cast<signed short&>(animationStage))==6 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) { field07C=1; ResetAt453E20(); }
+    if ((animationStage)==6 && (animationFrame)==0) {
         field314=-30.0f; field318=8.0f;
         SpawnFloatXYAt453A70(0x32C,float(facing*37)+(x),
             (*(&y))+g_ReimuAirVolleyYAt00659098,reinterpret_cast<char&>(facing),1);
         PlaySoundAt453D40(1);
         StartAnimationAt46D000(200);
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) SetNativeActionAt40FAC0(0);
+    if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(0);
     break;
 }
 
@@ -293,13 +293,13 @@ case 0x1A1: {
         y=0.0f; field05C=0.0f; velocityY=0.0f;
         break;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         velocityX=(velocityX)*g_ProjectileFallAt006590B4;
         velocityY=(*(&velocityY))*g_ProjectileFallAt006590B4;
         field07C=1;
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) SetNativeActionAt40FAC0(9);
-    if ((reinterpret_cast<signed short&>(animationStage))==3 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(9);
+    if ((animationStage)==3 && (animationFrame)==0) {
         field314=30.0f; field318=8.0f;
         SpawnFloatXYAt453A70(0x32C,float(facing*12)+(x),
             (*(&y))+g_ReimuCommandBackYAt006590A8,reinterpret_cast<char&>(facing),1);

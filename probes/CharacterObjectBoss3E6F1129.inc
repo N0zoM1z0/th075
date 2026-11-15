@@ -2,8 +2,8 @@
 // genuine 479 original CODE B /105 x86, one switch interior of
 // the same still-NONEXACT original 81KB CharacterObject::Advance.
 case 0x3E6: {
-    if (reinterpret_cast<signed short&>(owner->action)!=0xD1 &&
-        reinterpret_cast<signed short&>(owner->action)!=0xD2 &&
+    if (owner->action!=0xD1 &&
+        owner->action!=0xD2 &&
         F1024_PHASE(this).stageAt62<2) {
         SetAuxActionAt0040FB40(2);
         return;
@@ -27,7 +27,7 @@ case 0x3E6: {
     rotationZ=(rotationZ)+g_F1051_ScaleCeilingAt0065747C;
     if (F1024_PHASE(this).stageAt62==2)
         color[0]=unsigned char(color[0]-12);
-    if (GetNativeActionAt0040FA30()==reinterpret_cast<signed short&>(field070))
+    if (GetNativeActionAt0040FA30()==field070)
         NativeParentExpiredAt0045B830();
     if (F1024_PHASE(this).stageAt62==2 && F1024_PHASE(this).frameAt64==0)
         SetAuxActionAt0040FB40(1);

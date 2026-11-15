@@ -5,6 +5,6 @@
 // and invokes real SetNativeActionAt40FAC0(0) only on equality.
 // This is one *interior* of still-NONEXACT 00543210, not callable CODE.
 default:
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(0);
     break;

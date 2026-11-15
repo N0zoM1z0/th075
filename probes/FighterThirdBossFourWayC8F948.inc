@@ -9,7 +9,7 @@
 case 0xC8: {
     field3AC=1;
     ConfigureStormAt454BC0(3,4,0xFF);
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         velocityX=0.0f;
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
     }
@@ -31,7 +31,7 @@ case 0xC8: {
         SetNativeActionAt40FAC0(0xCF);
         break;
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
+    if (GetNativeActionAt40FA30()==(field070)) {
         if (static_cast<int>(facing)*inputX>0 &&
             (reinterpret_cast<signed short&>(scriptCounterF00))<2) {
             SetAuxActionAt40FB40(4);
@@ -41,7 +41,7 @@ case 0xC8: {
         SetNativeActionAt40FAC0(0xCF);
         break;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==3 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==3 && (animationFrame)==0) {
         velocityX=14.5f;
         SpawnAt453C80(0x7D,
             float((facing)*80)+(x),

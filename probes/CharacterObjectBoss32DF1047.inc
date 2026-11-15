@@ -1,6 +1,6 @@
 // Original 0050CE97..0050CF7A: real action 0x32D (227B/50 x86).
 case 0x32D: {
-    if (reinterpret_cast<signed short&>(owner->action) == 0x12D) {
+    if (owner->action == 0x12D) {
         reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
         reinterpret_cast<unsigned int&>(y) = reinterpret_cast<unsigned int&>(owner->y);
     }
@@ -13,7 +13,7 @@ case 0x32D: {
         color[2] = 0xFF;
         color[3] = 0xFF;
     }
-    if (GetNativeActionAt0040FA30() == reinterpret_cast<signed short&>(field070))
+    if (GetNativeActionAt0040FA30() == field070)
         NativeParentExpiredAt0045B830();
     return;
 }

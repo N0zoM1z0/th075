@@ -1,7 +1,7 @@
 // Original Reimu 0045DD70 second-table recovery states 59..63.
 // Native boundaries and actor-specific policies are checked in the whole parent.
 case 0x59: {
-    if ((reinterpret_cast<signed short&>(animationStage))==3) {
+    if ((animationStage)==3) {
         rotationZ=(rotationZ)+g_ReimuRotationStepAt00657858;
         velocityY=velocityY-field05C;
         if (velocityY+y<=g_ThresholdAt0065782C) {
@@ -13,8 +13,8 @@ case 0x59: {
             break;
         }
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) SetAuxActionAt40FB40(3);
-    else if ((reinterpret_cast<signed short&>(animationStage))==3 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if (GetNativeActionAt40FA30()==(field070)) SetAuxActionAt40FB40(3);
+    else if ((animationStage)==3 && (animationFrame)==0) {
         velocityX=float(int(reinterpret_cast<signed short&>(scriptCounterF00)))*g_ReimuBounceXAt006590BC;
         velocityY=float(-int(reinterpret_cast<signed short&>(scriptCounterF02)))*g_ReimuBounceYAt00658044;
         field05C=0.7f;
@@ -70,7 +70,7 @@ case 0x61: {
             reinterpret_cast<unsigned int&>(inputC)>0 ||
             reinterpret_cast<unsigned int&>(inputD)>0) reinterpret_cast<signed short&>(scriptCounterF00)=2;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         for (int shot=0;shot<10;++shot)
             SpawnDirectedAt453A70(0x3E4,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),1,1);
         if ((reinterpret_cast<signed short&>(fieldEFA))>25) {
@@ -78,24 +78,24 @@ case 0x61: {
             SpawnDirectedAt453A70(0x3E3,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),1,1);
         }
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==3 || (reinterpret_cast<signed short&>(animationStage))==4) {
+    if ((animationStage)==3 || (animationStage)==4) {
         velocityY=velocityY-field05C;
         if (velocityY+y<g_ThresholdAt0065782C) {
             y=0.0f; ResetAt453E20(); SetAuxActionAt40FB40(5);
             break;
         }
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
+    if (GetNativeActionAt40FA30()==(field070)) {
         SetNativeActionAt40FAC0(0x62);
         if (reinterpret_cast<unsigned char&>(field3CF)==0) SetNativeActionAt40FAC0(0x63);
     } else {
         // Original 00460409 jumps over BOTH stage-specific updates.
-        if ((reinterpret_cast<signed short&>(animationStage))==3 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+        if ((animationStage)==3 && (animationFrame)==0) {
             velocityX=float(int(reinterpret_cast<signed short&>(scriptCounterF00)))*g_ReimuRecoveryScaleAt006590B8;
             velocityY=float(-int(reinterpret_cast<signed short&>(scriptCounterF02)))*g_ReimuRecoveryScaleAt006590B8;
             field05C=2.0f;
         }
-        if ((reinterpret_cast<signed short&>(animationStage))==4 && (reinterpret_cast<signed short&>(animationFrame))==0) SetAuxActionAt40FB40(3);
+        if ((animationStage)==4 && (animationFrame)==0) SetAuxActionAt40FB40(3);
     }
     break;
 }

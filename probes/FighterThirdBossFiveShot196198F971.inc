@@ -7,13 +7,13 @@
 // Neither case nor father is credited as a complete original game function.
 // F971 original 004AC040 native 0x196 is five real projectile calls.
 case 0x196: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
         ResetAt453E20();
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(0);
-    if ((reinterpret_cast<signed short&>(animationStage))==6 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==6 && (animationFrame)==0) {
         PrepareActionAt453D40(0);
         field314=0.0f;
         field318=20.0f;
@@ -43,13 +43,13 @@ case 0x196: {
 }
 // F971 original 004AC040 native 0x197 is five real projectile calls.
 case 0x197: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
         ResetAt453E20();
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(0);
-    if ((reinterpret_cast<signed short&>(animationStage))==5 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==5 && (animationFrame)==0) {
         PrepareActionAt453D40(0);
         field314=25.0f;
         field318=20.0f;
@@ -79,13 +79,13 @@ case 0x197: {
 }
 // F971 original 004AC040 native 0x198 is five real projectile calls.
 case 0x198: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
         ResetAt453E20();
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(2);
-    if ((reinterpret_cast<signed short&>(animationStage))==6 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==6 && (animationFrame)==0) {
         PrepareActionAt453D40(0);
         field314=0.0f;
         field318=20.0f;

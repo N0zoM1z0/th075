@@ -10,18 +10,18 @@
  // Whole 82KB fighter and saved-this EBP NONEXACT.
 // F1005 pinned Japanese TH075 original 004AC040 2E6.
 case 0x2E6: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         ResetAt453E20();
         field07C=0;
         field3AC=0;
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         reinterpret_cast<signed short&>(scriptCounterF02)=0;
-        reinterpret_cast<signed short&>(fieldF04)=0;
+        fieldF04=0;
         reinterpret_cast<signed short&>(fieldF06)=30;
         reinterpret_cast<signed short&>(fieldF08)=1;
         field05C=0.15f;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==6 || (reinterpret_cast<signed short&>(animationStage))==7) {
+    if ((animationStage)==6 || (animationStage)==7) {
         if ((color[0])>30)
             color[0]=(color[0])-30;
         else {
@@ -30,7 +30,7 @@ case 0x2E6: {
             break;
         }
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==8 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==8 && (animationFrame)==0) {
         velocityX=float(RandAt455580(0,100)-50);
         velocityY=float(RandAt455580(0,5)+20);
         if (reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44 >
@@ -39,13 +39,13 @@ case 0x2E6: {
         else
             facing=1;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==9) {
+    if ((animationStage)==9) {
         if ((color[0])<225)
             color[0]=(color[0])+30;
         else
             color[0]=255;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))>13 && (reinterpret_cast<signed short&>(animationStage))<19) {
+    if ((animationStage)>13 && (animationStage)<19) {
         if (y>g_ThresholdAt0065782C) {
             velocityY=velocityY-field05C;
             if (y+velocityY<=g_ThresholdAt0065782C) {
@@ -57,12 +57,12 @@ case 0x2E6: {
             }
         }
     }
-    if ((reinterpret_cast<signed short&>(animationStage))<8 && (reinterpret_cast<signed short&>(animationStage))>1)
+    if ((animationStage)<8 && (animationStage)>1)
         SpawnSevenFloatAt453B50(0x33E,
             float(RandAt455580(0,120))+(x)-g_F983_XOffsetAt00658264,
             ((*(&y))-g_F983_YOffsetAt00657CBC)+float(RandAt455580(0,90)),
             1,1,0,1);
-    if ((reinterpret_cast<signed short&>(animationStage))>10 && (reinterpret_cast<signed short&>(animationStage))<17 && (reinterpret_cast<signed short&>(scriptCounterF02))==0) {
+    if ((animationStage)>10 && (animationStage)<17 && (reinterpret_cast<signed short&>(scriptCounterF02))==0) {
         ++reinterpret_cast<signed short&>(scriptCounterF02);
         if (g_F1004_ModeAt006714D0==0) {
             for (int shot=0;shot<12;++shot) {
@@ -105,12 +105,12 @@ case 0x2E6: {
             }
         }
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
+    if (GetNativeActionAt40FA30()==(field070)) {
         SetNativeActionAt40FAC0(0);
-        reinterpret_cast<signed short&>(aiCardTimer)=static_cast<short>(
+        aiCardTimer=static_cast<short>(
             RandAt455580(60,120)-g_F1004_ModeAt006714D0*20);
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==6 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==6 && (animationFrame)==0) {
         PrepareActionAt453D40(2);
         SpawnSevenFloatAt453B50(0x338,
             reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44 -
@@ -145,22 +145,22 @@ case 0x2E6: {
         SetMotionStateAt40FBB0(0,0.0f,0);
         color[0]=255;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==8 && (reinterpret_cast<signed short&>(animationFrame))==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<4) {
+    if ((animationStage)==8 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<4) {
         SetAuxActionAt40FB40(6);
         ++reinterpret_cast<signed short&>(scriptCounterF00);
         break;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==9 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==9 && (animationFrame)==0) {
         velocityX=0.0f;
         velocityY=0.0f;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==11 && (reinterpret_cast<signed short&>(animationFrame))==0)
+    if ((animationStage)==11 && (animationFrame)==0)
         PrepareActionAt453D40(5);
-    if ((reinterpret_cast<signed short&>(animationStage))==17 && (reinterpret_cast<signed short&>(animationFrame))==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<10) {
+    if ((animationStage)==17 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<10) {
         SetAuxActionAt40FB40(15);
         ++reinterpret_cast<signed short&>(scriptCounterF00);
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==19 && (reinterpret_cast<signed short&>(animationFrame))==0)
+    if ((animationStage)==19 && (animationFrame)==0)
         SetAuxActionAt40FB40(17);
     break;
 }

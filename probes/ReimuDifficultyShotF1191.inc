@@ -1,10 +1,10 @@
 case 0x2F9: {
 #include "ReimuMeterInitF1190.inc"
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
+    if (GetNativeActionAt40FA30()==(field070)) {
         SetNativeActionAt40FAC0(0);
-        reinterpret_cast<signed short&>(aiCardTimer)=240-g_ReimuRepeatSettingAt006714D0*20;
+        aiCardTimer=240-g_ReimuRepeatSettingAt006714D0*20;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==7 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==7 && (animationFrame)==0) {
         if (g_ReimuRepeatSettingAt006714D0<2) {
             SpawnFloatXYAt453A70(0x395,float(facing*228)+(x),
                 (*(&y))+g_ReimuMeterShotYAt00659080,reinterpret_cast<char&>(facing),1);

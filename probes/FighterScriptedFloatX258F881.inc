@@ -3,15 +3,15 @@
 // Native narrow char parameter, StartAnimation46D000(FA), Prepare5.
 // Enclosing full fighter NONEXACT; no separate callable case credit.
 case 0x258: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         ResetAt453E20();
-        reinterpret_cast<signed short&>(field080)=1;
+        field080=1;
         field07C=1;
         field3AC=0;
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(0);
-    if ((reinterpret_cast<signed short&>(animationStage))==2 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==2 && (animationFrame)==0) {
         SpawnFloatXRawYAt453A70(0x340,
             float((facing)*80)+(x),
             reinterpret_cast<int&>(y),(facing),1);

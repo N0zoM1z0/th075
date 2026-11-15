@@ -7,22 +7,22 @@
 // Two actual native game motion(float,float,int) and full 901B afterRET tables.
 // Enclosing 46755B original fighter still NONEXACT, no split case CODE credit.
 case 0x2BD: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         field07C=0;
-        reinterpret_cast<signed short&>(field080)=1;
+        field080=1;
         ResetAt453E20();
     }
-    if ((reinterpret_cast<signed short&>(animationStage))>8) {
+    if ((animationStage)>8) {
         velocityX=(velocityX)-g_F884DoubleDropAt00657D00;
         if ((velocityX)<g_ThresholdAt0065782C)
             velocityX=0.0f;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==7) {
+    if ((animationStage)==7) {
         scaleX=(scaleX)+g_F865SustainScaleAt00658348;
         scaleY=(scaleY)-g_F884PhaseYAt006598B8;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==9) {
+    if ((animationStage)==9) {
         scaleX=(scaleX)-g_F865SustainScaleAt00658348;
         scaleY=(scaleY)+g_F884PhaseYAt006598B8;
     }
@@ -39,9 +39,9 @@ case 0x2BD: {
             return;
         }
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(0);
-    if ((reinterpret_cast<signed short&>(animationStage))==5 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==5 && (animationFrame)==0) {
         AnimatePushAt453E80(0x28);
         PrepareActionAt453D60(0x17);
         field36C=(field36C)-g_ContactProjectionAt00657888;
@@ -51,7 +51,7 @@ case 0x2BD: {
             (*(&y))+g_F884Stage5YAt00659470,
             (facing),1);
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==7 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==7 && (animationFrame)==0) {
         PrepareActionAt453D40(0xB);
         SetFloatMotionAt40FBB0(-200.0f,60.0f,0);
         scaleX=1.0f;
@@ -61,11 +61,11 @@ case 0x2BD: {
         reinterpret_cast<signed char&>(color[2])=-1;
         reinterpret_cast<signed char&>(color[3])=-1;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==10 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==10 && (animationFrame)==0) {
         scaleX=1.0f;
         scaleY=1.0f;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==8 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==8 && (animationFrame)==0) {
         SetFloatMotionAt40FBB0(100.0f,60.0f,0);
         scaleX=3.0f;
         scaleY=0.05f;

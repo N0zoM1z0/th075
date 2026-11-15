@@ -2,9 +2,9 @@
 // This is one native switch case in the still-NONEXACT whole Advance().
 // The F653_* parameters reflect the three distinct original action states.
 case F653_ACTION: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         if ((field3AC)==0) ResetAt453E20();
-        reinterpret_cast<signed short&>(field080)=1;
+        field080=1;
         field07C=0;
     }
     if ((field3AC)>0) {
@@ -14,13 +14,13 @@ case F653_ACTION: {
             field3AC=0;
         }
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
+    if (GetNativeActionAt40FA30()==(field070)) {
         SetNativeActionAt40FAC0(F653_NEXT_ACTION);
 #if F653_CLEAR_F00
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
 #endif
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==F653_PREPARE_FRAME && (reinterpret_cast<signed short&>(animationFrame))==0)
+    if ((animationStage)==F653_PREPARE_FRAME && (animationFrame)==0)
         PrepareActionAt453D60(F653_PREPARE_ANIM);
     break;
 }

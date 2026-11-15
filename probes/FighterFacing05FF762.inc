@@ -3,12 +3,12 @@
 // Original complete action 05F inside the 58,294-byte authored fighter.
 // Observed borrowed float X members in both actors; not new owner instances.
         case 0x5F: {
-            if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
+            if (GetNativeActionAt40FA30()==(field070)) {
                 SetNativeActionAt40FAC0(0);
                 if (inputY>0)
                     SetNativeActionAt40FAC0(1);
             }
-            if ((reinterpret_cast<signed short&>(animationStage))==(reinterpret_cast<signed short&>(field070))-1) {
+            if ((animationStage)==(field070)-1) {
                 if (reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44 >
                     reinterpret_cast<const FighterBorrowedXViewF752*>(opponent)->xAt44)
                     facing=-1;

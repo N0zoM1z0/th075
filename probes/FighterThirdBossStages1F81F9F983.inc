@@ -9,14 +9,14 @@
  // entire 82KB whole callable remains NONEXACT, not case exact.
 // F983 natural source probe for real original 004AC040 1F8
 case 0x1F8: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         ResetAt453E20();
         field07C=0;
         field3AC=0;
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         reinterpret_cast<signed short&>(scriptCounterF02)=0;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==6 || (reinterpret_cast<signed short&>(animationStage))==7) {
+    if ((animationStage)==6 || (animationStage)==7) {
         if ((color[0])>30)
             color[0]=(color[0])-30;
         else {
@@ -28,7 +28,7 @@ case 0x1F8: {
             break;
         }
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==9 || (reinterpret_cast<signed short&>(animationStage))==10) {
+    if ((animationStage)==9 || (animationStage)==10) {
         velocityY=velocityY-field05C;
         if ((color[0])<235)
             color[0]=(color[0])+20;
@@ -42,19 +42,19 @@ case 0x1F8: {
             break;
         }
     }
-    if ((reinterpret_cast<signed short&>(animationStage))<8 && (reinterpret_cast<signed short&>(animationStage))>1)
+    if ((animationStage)<8 && (animationStage)>1)
         SpawnSevenFloatAt453B50(0x33E,
             float(RandAt455580(0,120))+(x)-g_F983_XOffsetAt00658264,
             ((*(&y))-g_F983_YOffsetAt00657CBC)+float(RandAt455580(0,90)),
             1,1,0,1);
-    if ((reinterpret_cast<signed short&>(animationStage))==9 && (reinterpret_cast<signed short&>(animationFrame))==0 && (reinterpret_cast<signed short&>(scriptCounterF00))==0) {
+    if ((animationStage)==9 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))==0) {
         velocityX=0.0f;
         velocityY=0.0f;
         ++reinterpret_cast<signed short&>(scriptCounterF00);
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(0);
-    if ((reinterpret_cast<signed short&>(animationStage))==6 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==6 && (animationFrame)==0) {
         PrepareActionAt453D40(2);
         SpawnSevenFloatAt453B50(0x338,
             reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44-float((facing)*7),
@@ -83,25 +83,25 @@ case 0x1F8: {
         SetMotionStateAt40FBB0(0,0.0f,0);
         color[0]=255;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==8 && (reinterpret_cast<signed short&>(animationFrame))==0 && (reinterpret_cast<signed short&>(scriptCounterF02))<4) {
+    if ((animationStage)==8 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF02))<4) {
         SetAuxActionAt40FB40(6);
         ++reinterpret_cast<signed short&>(scriptCounterF02);
         break;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==11 && (reinterpret_cast<signed short&>(animationFrame))==0)
+    if ((animationStage)==11 && (animationFrame)==0)
         SetAuxActionAt40FB40(9);
     break;
 }
 // F983 natural source probe for real original 004AC040 1F9
 case 0x1F9: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         ResetAt453E20();
         field07C=0;
         field3AC=0;
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         reinterpret_cast<signed short&>(scriptCounterF02)=0;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==6 || (reinterpret_cast<signed short&>(animationStage))==7) {
+    if ((animationStage)==6 || (animationStage)==7) {
         if ((color[0])>30)
             color[0]=(color[0])-30;
         else {
@@ -113,7 +113,7 @@ case 0x1F9: {
             break;
         }
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==9 || (reinterpret_cast<signed short&>(animationStage))==10) {
+    if ((animationStage)==9 || (animationStage)==10) {
         velocityY=velocityY-field05C;
         if ((color[0])<235)
             color[0]=(color[0])+20;
@@ -127,19 +127,19 @@ case 0x1F9: {
             break;
         }
     }
-    if ((reinterpret_cast<signed short&>(animationStage))<8 && (reinterpret_cast<signed short&>(animationStage))>1)
+    if ((animationStage)<8 && (animationStage)>1)
         SpawnSevenFloatAt453B50(0x33E,
             float(RandAt455580(0,120))+(x)-g_F983_XOffsetAt00658264,
             ((*(&y))-g_F983_YOffsetAt00657CBC)+float(RandAt455580(0,90)),
             1,1,0,1);
-    if ((reinterpret_cast<signed short&>(animationStage))==9 && (reinterpret_cast<signed short&>(animationFrame))==0 && (reinterpret_cast<signed short&>(scriptCounterF00))==0) {
+    if ((animationStage)==9 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))==0) {
         velocityX=0.0f;
         velocityY=0.0f;
         ++reinterpret_cast<signed short&>(scriptCounterF00);
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(0);
-    if ((reinterpret_cast<signed short&>(animationStage))==6 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==6 && (animationFrame)==0) {
         PrepareActionAt453D40(2);
         SpawnSevenFloatAt453B50(0x338,
             reinterpret_cast<FighterProjectileXViewF917*>(this)->coordinateXAt44-float((facing)*7),
@@ -168,12 +168,12 @@ case 0x1F9: {
         SetMotionStateAt40FBB0(0,0.0f,0);
         color[0]=255;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==8 && (reinterpret_cast<signed short&>(animationFrame))==0 && (reinterpret_cast<signed short&>(scriptCounterF02))<4) {
+    if ((animationStage)==8 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF02))<4) {
         SetAuxActionAt40FB40(6);
         ++reinterpret_cast<signed short&>(scriptCounterF02);
         break;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==11 && (reinterpret_cast<signed short&>(animationFrame))==0)
+    if ((animationStage)==11 && (animationFrame)==0)
         SetAuxActionAt40FB40(9);
     break;
 }

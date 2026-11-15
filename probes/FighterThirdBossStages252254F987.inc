@@ -10,19 +10,19 @@
  // No internal exact credit, giant 82KB remains NONEXACT.
 // F987 pinned native Japanese fighter 004AC040 real action 0x252.
 case 0x252: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         --reinterpret_cast<unsigned char&>(field366);
         ResetAt453E20();
-        reinterpret_cast<signed short&>(field080)=1;
+        field080=1;
         field07C=0;
         field3AC=0;
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
     }
-    if ((reinterpret_cast<signed short&>(meterCooldown))==0 && field07C==1)
-        reinterpret_cast<signed short&>(meter)=1000;
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if ((meterCooldown)==0 && field07C==1)
+        meter=1000;
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(0);
-    if ((reinterpret_cast<signed short&>(animationStage))==6 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==6 && (animationFrame)==0) {
         SpawnMixedAt453C80(0x37,reinterpret_cast<int&>(x),
             (*(&y))+g_ContactProjectionAt00657888,
             facing,1);
@@ -33,19 +33,19 @@ case 0x252: {
 }
 // F987 pinned native Japanese fighter 004AC040 real action 0x253.
 case 0x253: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         --reinterpret_cast<unsigned char&>(field366);
         ResetAt453E20();
-        reinterpret_cast<signed short&>(field080)=1;
+        field080=1;
         field07C=0;
         field3AC=0;
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
     }
-    if ((reinterpret_cast<signed short&>(meterCooldown))==0 && field07C==1)
-        reinterpret_cast<signed short&>(meter)=1000;
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if ((meterCooldown)==0 && field07C==1)
+        meter=1000;
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(0);
-    if ((reinterpret_cast<signed short&>(animationStage))==6 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==6 && (animationFrame)==0) {
         SpawnMixedAt453C80(0x37,reinterpret_cast<int&>(x),
             (*(&y))+g_ContactProjectionAt00657888,
             facing,1);
@@ -56,17 +56,17 @@ case 0x253: {
 }
 // F987 pinned native Japanese fighter 004AC040 real action 0x254.
 case 0x254: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         --reinterpret_cast<unsigned char&>(field366);
         ResetAt453E20();
-        reinterpret_cast<signed short&>(field080)=1;
+        field080=1;
         field07C=0;
         field3AC=0;
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(0);
-    if ((reinterpret_cast<signed short&>(animationStage))==6 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==6 && (animationFrame)==0) {
         SpawnMixedAt453C80(0x37,reinterpret_cast<int&>(x),
             (*(&y))+g_ContactProjectionAt00657888,
             facing,1);

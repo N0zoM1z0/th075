@@ -9,7 +9,7 @@ case 0x352: {
         color[1]=0xFF;
         color[2]=0xFF;
         color[3]=0xFF;
-        reinterpret_cast<signed short&>(field0D8)=0;
+        field0D8=0;
     }
     scaleX=(scaleX)+g_F1051_ScaleCeilingAt0065747C;
     scaleY=(scaleY)+g_F1051_ScaleCeilingAt0065747C;
@@ -21,7 +21,7 @@ case 0x352: {
             return;
         }
     }
-    if (GetNativeActionAt0040FA30()==reinterpret_cast<signed short&>(field070))
+    if (GetNativeActionAt0040FA30()==field070)
         NativeParentExpiredAt0045B830();
     return;
 }

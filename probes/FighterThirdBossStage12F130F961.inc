@@ -5,10 +5,10 @@
  // not separate whole game functions; parent 82KB remains NONEXACT.
 // Genuine original 004AC040 12F: native 207B/59x86.
 case 0x12F: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         if ((field3AC)==0)
             ResetAt453E20();
-        reinterpret_cast<signed short&>(field080)=1;
+        field080=1;
         field07C=0;
     }
     if ((field3AC)>0) {
@@ -18,9 +18,9 @@ case 0x12F: {
             field3AC=0;
         }
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(2);
-    if ((reinterpret_cast<signed short&>(animationStage))==4 && (reinterpret_cast<signed short&>(animationFrame))==0)
+    if ((animationStage)==4 && (animationFrame)==0)
         PrepareActionAt453D60(0x1C);
     break;
 }
@@ -34,15 +34,15 @@ case 0x130: {
         velocityY=0.0f;
         break;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
-        reinterpret_cast<signed short&>(field080)=1;
+    if ((animationStage)==0 && (animationFrame)==0) {
+        field080=1;
         field07C=0;
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(9);
-    if ((reinterpret_cast<signed short&>(animationStage))==3 && (reinterpret_cast<signed short&>(animationFrame))==0)
+    if ((animationStage)==3 && (animationFrame)==0)
         PrepareActionAt453D60(0x1C);
-    if ((reinterpret_cast<signed short&>(animationStage))==3 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==3 && (animationFrame)==0) {
         SpawnSevenAt453B50(0x334,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
             facing,1,0,1);
     }

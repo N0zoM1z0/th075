@@ -8,10 +8,10 @@
 // The entire original 82KB fighter function remains NONEXACT.
 // Real original Japanese TH075 004AC040 0x188 372B/106-x86 source.
 case 0x188: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         if ((field3AC)==0)
             ResetAt453E20();
-        reinterpret_cast<signed short&>(field080)=1;
+        field080=1;
         field07C=0;
         velocityX=10.0f;
     }
@@ -31,12 +31,12 @@ case 0x188: {
             break;
         }
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(0);
-    if ((reinterpret_cast<signed short&>(animationStage))==6 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==6 && (animationFrame)==0) {
         // Actual original PE retains this inner stage 4 conditional,
         // despite the outer stage 6 test. Do not delete original branch.
-        if ((reinterpret_cast<signed short&>(animationStage))==4 && (reinterpret_cast<signed short&>(animationFrame))==0)
+        if ((animationStage)==4 && (animationFrame)==0)
             PrepareActionAt453D60(0x1C);
         velocityX=10.0f;
         velocityY=12.5f;
@@ -46,23 +46,23 @@ case 0x188: {
 }
 // Real original Japanese TH075 004AC040 0x189 214B/61-x86 source.
 case 0x189: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         if ((field3AC)==0)
             ResetAt453E20();
-        reinterpret_cast<signed short&>(field080)=1;
+        field080=1;
         field07C=0;
         velocityX=10.0f;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))>0) {
+    if ((animationStage)>0) {
         velocityX=(velocityX)-g_ApproachAt00658058;
         if ((velocityX)<g_ThresholdAt0065782C) {
             velocityX=0.0f;
             field3AC=0;
         }
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(2);
-    if ((reinterpret_cast<signed short&>(animationStage))==4 && (reinterpret_cast<signed short&>(animationFrame))==0)
+    if ((animationStage)==4 && (animationFrame)==0)
         PrepareActionAt453D60(0x1C);
     break;
 }

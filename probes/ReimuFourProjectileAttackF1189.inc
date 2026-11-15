@@ -1,5 +1,5 @@
 case R1189_ACTION: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
 #if R1189_AIR
         velocityX=(velocityX)*g_BounceScaleAt00657F74;
         velocityY=(*(&velocityY))*g_BounceScaleAt00657F74;
@@ -9,8 +9,8 @@ case R1189_ACTION: {
         ResetAt453E20();
 #endif
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) SetNativeActionAt40FAC0(R1189_NEXT_ACTION);
-    if ((reinterpret_cast<signed short&>(animationStage))==R1189_FIRE_STAGE && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(R1189_NEXT_ACTION);
+    if ((animationStage)==R1189_FIRE_STAGE && (animationFrame)==0) {
         field314=0.0f;
         field318=(*(&y))+R1189_Y_OFFSET;
         SpawnFloatXYAt453A70(R1189_EFFECT,float(facing*R1189_X_OFFSET)+(x),

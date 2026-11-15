@@ -4,9 +4,9 @@
 // Native behavioral branches and typed PE calls retained; whole giant NONEXACT.
         case 0x2DD: {
             ConfigureStormAt454BC0(3,4,0xFF0000);
-            if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0 && (reinterpret_cast<signed short&>(scriptCounterF00))==0) {
+            if ((animationStage)==0 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))==0) {
                 ResetAt453E20();
-                reinterpret_cast<signed short&>(field080)=1;
+                field080=1;
                 field07C=0;
                 reinterpret_cast<unsigned char&>(field3AC)=0;
                 PrepareActionAt453D40(11);
@@ -15,7 +15,7 @@
                 field05C=0.45f;
                 reinterpret_cast<signed short&>(scriptCounterF00)=1;
             }
-            if ((reinterpret_cast<signed short&>(animationStage))<9 && y>g_ThresholdAt0065782C && (reinterpret_cast<signed short&>(animationStage))>3) {
+            if ((animationStage)<9 && y>g_ThresholdAt0065782C && (animationStage)>3) {
                 velocityX=(velocityX)-g_NewDragAt006581E0;
                 velocityY=velocityY-field05C;
                 if ((velocityX)<g_StopThresholdAt00657480)
@@ -27,7 +27,7 @@
                     break;
                 }
             }
-            if ((reinterpret_cast<signed short&>(animationStage))<4) {
+            if ((animationStage)<4) {
                 SpawnFloatXYAt453A70(0x329,
                     float(facing*62)+(x),
                     (*(&y))+g_F714_ShotYAt00657868,
@@ -37,32 +37,32 @@
                     (*(&y))+g_F714_ShotYAt00657868,
                     facing,1);
             }
-            if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
+            if (GetNativeActionAt40FA30()==(field070)) {
                 SetNativeActionAt40FAC0(0);
-                reinterpret_cast<signed short&>(aiCardTimer)=static_cast<short>(RandomBoundaryAt455580(100,180)
+                aiCardTimer=static_cast<short>(RandomBoundaryAt455580(100,180)
                       -static_cast<int>(g_CloudOpponentAt006714D0)*30);
             }
-            if ((reinterpret_cast<signed short&>(animationFrame))==0)
+            if ((animationFrame)==0)
                 field07C=0;
-            if ((reinterpret_cast<signed short&>(animationStage))==4 && (reinterpret_cast<signed short&>(animationFrame))==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<4) {
+            if ((animationStage)==4 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<4) {
                 SetAuxActionAt40FB40(0);
                 ++reinterpret_cast<signed short&>(scriptCounterF00);
                 break;
             }
-            if ((reinterpret_cast<signed short&>(animationStage))==9 && (reinterpret_cast<signed short&>(animationFrame))==0)
+            if ((animationStage)==9 && (animationFrame)==0)
                 SetAuxActionAt40FB40(7);
             break;
         }
         case 0x2DE: {
             ConfigureStormAt454BC0(3,4,0xFF0000);
-            if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+            if ((animationStage)==0 && (animationFrame)==0) {
                 ResetAt453E20();
-                reinterpret_cast<signed short&>(field080)=99;
+                field080=99;
                 field07C=0;
                 reinterpret_cast<unsigned char&>(field3AC)=0;
                 reinterpret_cast<signed short&>(scriptCounterF00)=0;
             }
-            if ((reinterpret_cast<signed short&>(animationStage))<25 && y>g_ThresholdAt0065782C && (reinterpret_cast<signed short&>(animationStage))>14) {
+            if ((animationStage)<25 && y>g_ThresholdAt0065782C && (animationStage)>14) {
                 velocityX=(velocityX)-g_F718_FallingDragAt00659090;
                 velocityY=velocityY-field05C;
                 if ((velocityX)<g_F718_BounceMinAt00657CF8)
@@ -74,14 +74,14 @@
                     break;
                 }
             }
-            if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
+            if (GetNativeActionAt40FA30()==(field070)) {
                 SetNativeActionAt40FAC0(0);
-                reinterpret_cast<signed short&>(aiCardTimer)=static_cast<short>(RandomBoundaryAt455580(100,180)
+                aiCardTimer=static_cast<short>(RandomBoundaryAt455580(100,180)
                       -static_cast<int>(g_CloudOpponentAt006714D0)*30);
             }
-            if ((reinterpret_cast<signed short&>(animationFrame))==0)
+            if ((animationFrame)==0)
                 field07C=0;
-            if ((reinterpret_cast<signed short&>(animationStage))==7 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+            if ((animationStage)==7 && (animationFrame)==0) {
                 SpawnRawXYAt453C80(0x3C,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
                     facing,1);
                 PrepareActionAt453D40(11);
@@ -89,18 +89,18 @@
                 velocityX=20.0f;
                 field05C=0.8f;
             }
-            if ((reinterpret_cast<signed short&>(animationStage))>6 && (reinterpret_cast<signed short&>(animationStage))<16) {
+            if ((animationStage)>6 && (animationStage)<16) {
                 SpawnFloatXYAt453A70(0x329,
                     float(facing*62)+(x),
                     (*(&y))+g_F714_ShotYAt00657868,
                     facing,1);
             }
-            if ((reinterpret_cast<signed short&>(animationStage))==16 && (reinterpret_cast<signed short&>(animationFrame))==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<3) {
+            if ((animationStage)==16 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<3) {
                 SetAuxActionAt40FB40(12);
                 ++reinterpret_cast<signed short&>(scriptCounterF00);
                 break;
             }
-            if ((reinterpret_cast<signed short&>(animationStage))==25 && (reinterpret_cast<signed short&>(animationFrame))==0)
+            if ((animationStage)==25 && (animationFrame)==0)
                 SetAuxActionAt40FB40(23);
             break;
         }

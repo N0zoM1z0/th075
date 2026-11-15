@@ -1,15 +1,15 @@
 // F1113: genuine original TH075 Japanese action 0x384 inside ONE still
 // NONEXACT CharacterObject Advance. PE 0051AAFD..0051AFF0: 1267B/277 x86.
 case 0x384: {
-    if (reinterpret_cast<signed short&>(owner->field3A0)<=0) {
+    if (owner->field3A0<=0) {
         NativeParentExpiredAt0045B830();
         return;
     }
     if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
         SetNativeMotionAt0040FBB0(0,0.0f,0);
-        reinterpret_cast<signed short&>(field080)=1;
+        field080=1;
         field07C=0;
-        reinterpret_cast<signed short&>(field0D8)=0;
+        field0D8=0;
         scaleX=0.0f;
         scaleY=0.0f;
         color[0]=0xFF;
@@ -57,7 +57,7 @@ case 0x384: {
             return;
         }
     }
-    if (reinterpret_cast<signed short&>(owner->animationStage)==9 && F1024_PHASE(this).stageAt62<6) {
+    if (owner->animationStage==9 && F1024_PHASE(this).stageAt62<6) {
         SetAuxActionAt0040FB40(F1024_PHASE(this).stageAt62+5);
         F1037_MOTION(this).xMotion=float(facing) *
             (F1037_POSITION(PARENT_GRANDPARENT).xPosition-F1037_POSITION(this).xPosition)/g_F1113_DivisorAt0065988C;
@@ -67,7 +67,7 @@ case 0x384: {
     }
     F1037_POSITION(this).xPosition=float(facing)*F1037_MOTION(this).xMotion+F1037_POSITION(this).xPosition;
     F1037_POSITION(this).yPosition=F1037_POSITION(this).yPosition+F1037_MOTION(this).yMotion;
-    if (GetNativeActionAt0040FA30()==reinterpret_cast<signed short&>(field070)) {
+    if (GetNativeActionAt0040FA30()==field070) {
         SetAuxActionAt0040FB40(6);
         return;
     }

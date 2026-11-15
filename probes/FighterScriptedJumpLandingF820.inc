@@ -8,7 +8,7 @@
 // and stage3 animation counter. These are inner CASE bodies only;
 // the original enclosing giant fighter Advance() remains NONEXACT.
 case F628_CASE: {
-    if (reinterpret_cast<signed short&>(animationStage)==0 && reinterpret_cast<signed short&>(animationFrame)==0) {
+    if (animationStage==0 && animationFrame==0) {
         velocityX=F628_START_POS;
         velocityY=0.0f;
         field07C=0;
@@ -21,9 +21,9 @@ case F628_CASE: {
     }
     if (ContactAt454EE0() && field3BE)
         field490=(velocityX)*g_JumpReflectionAt006583E8;
-    if (GetNativeActionAt40FA30()==reinterpret_cast<signed short&>(field070))
+    if (GetNativeActionAt40FA30()==field070)
         SetNativeActionAt40FAC0(0);
-    if (reinterpret_cast<signed short&>(animationStage)==3 && reinterpret_cast<signed short&>(animationFrame)==0 && I16(F628_COUNTER)<F628_LIMIT) {
+    if (animationStage==3 && animationFrame==0 && I16(F628_COUNTER)<F628_LIMIT) {
         ++I16(F628_COUNTER);
         SetAuxActionAt40FB40(1);
     }

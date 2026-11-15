@@ -7,13 +7,13 @@
  // Ordinary VC7.1 parent emits all native mnemonic/width roles but
  // 67/71 GPR roles wrong. Still NONEXACT entire 82KB original.
 case 0x1A3: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
     }
     velocityY=velocityY-field05C;
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(9);
-    if ((reinterpret_cast<signed short&>(animationStage))==5 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==5 && (animationFrame)==0) {
         PrepareActionAt453D40(0);
         if (field39D==2) {
             for (int shot=0;shot<5;++shot) {
@@ -38,13 +38,13 @@ case 0x1A3: {
     break;
 }
 case 0x1A4: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
     }
     velocityY=velocityY-field05C;
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(9);
-    if ((reinterpret_cast<signed short&>(animationStage))==5 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==5 && (animationFrame)==0) {
         PrepareActionAt453D40(0);
         if (field39D==2) {
             for (int shot=0;shot<5;++shot) {

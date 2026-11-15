@@ -8,12 +8,12 @@
  // Original whole 82KB fighter and EBP temp owners still NONEXACT.
 // Native original Japanese TH075 fighter 004AC040 stage 0x194, 644B/168x86.
 case 0x194: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         reinterpret_cast<signed short&>(scriptCounterF02)=0;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))>4 && (reinterpret_cast<signed short&>(scriptCounterF00))<=0 && (reinterpret_cast<signed short&>(scriptCounterF02))<5) {
+    if ((animationStage)>4 && (reinterpret_cast<signed short&>(scriptCounterF00))<=0 && (reinterpret_cast<signed short&>(scriptCounterF02))<5) {
         PrepareActionAt453D40(0);
         StartAnimationAt46D000(0x28);
         field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*4-8);
@@ -36,12 +36,12 @@ case 0x194: {
     }
     --reinterpret_cast<signed short&>(scriptCounterF00);
     velocityY=velocityY-field05C;
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(9);
-    if ((reinterpret_cast<signed short&>(animationStage))==4 && (reinterpret_cast<signed short&>(animationFrame))==0)
+    if ((animationStage)==4 && (animationFrame)==0)
         SpawnDirectedAt453A70(0x335,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
             facing,1);
-    if ((reinterpret_cast<signed short&>(animationStage))==5 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==5 && (animationFrame)==0) {
         velocityX=-6.0f;
         velocityY=9.0f;
         field05C=0.7f;
@@ -50,12 +50,12 @@ case 0x194: {
 }
 // Native original Japanese TH075 fighter 004AC040 stage 0x195, 644B/168x86.
 case 0x195: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         reinterpret_cast<signed short&>(scriptCounterF02)=0;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))>4 && (reinterpret_cast<signed short&>(scriptCounterF00))<=0 && (reinterpret_cast<signed short&>(scriptCounterF02))<5) {
+    if ((animationStage)>4 && (reinterpret_cast<signed short&>(scriptCounterF00))<=0 && (reinterpret_cast<signed short&>(scriptCounterF02))<5) {
         PrepareActionAt453D40(0);
         StartAnimationAt46D000(0x28);
         field314=float((reinterpret_cast<signed short&>(scriptCounterF02))*4-45);
@@ -78,12 +78,12 @@ case 0x195: {
     }
     --reinterpret_cast<signed short&>(scriptCounterF00);
     velocityY=velocityY-field05C;
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(9);
-    if ((reinterpret_cast<signed short&>(animationStage))==4 && (reinterpret_cast<signed short&>(animationFrame))==0)
+    if ((animationStage)==4 && (animationFrame)==0)
         SpawnDirectedAt453A70(0x335,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
             facing,1);
-    if ((reinterpret_cast<signed short&>(animationStage))==5 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==5 && (animationFrame)==0) {
         velocityX=-6.0f;
         velocityY=9.0f;
         field05C=0.7f;

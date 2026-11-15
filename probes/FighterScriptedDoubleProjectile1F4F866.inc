@@ -2,9 +2,9 @@
 // Genuine native narrow fourth argument at 00453C80 makes MOV r8, not MOVSX r32.
 // Two physical stage4 projectile conditions; original whole giant still nonexact.
 case 0x1F4: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         ResetAt453E20();
-        reinterpret_cast<signed short&>(field080)=1;
+        field080=1;
         field07C=0;
         field3AC=0;
     }
@@ -22,12 +22,12 @@ case 0x1F4: {
             return;
         }
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(0);
-    if ((reinterpret_cast<signed short&>(animationStage))==4 && (reinterpret_cast<signed short&>(animationFrame))==0)
+    if ((animationStage)==4 && (animationFrame)==0)
         SpawnDirectedAt453A70(0x338,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
             (facing),1);
-    if ((reinterpret_cast<signed short&>(animationStage))==4 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==4 && (animationFrame)==0) {
         PrepareActionAt453D40(1);
         velocityX=8.0f;
         velocityY=9.5f;
@@ -35,7 +35,7 @@ case 0x1F4: {
         SpawnRawAt453C80(0x7F,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
             (facing),1);
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==0xD && (reinterpret_cast<signed short&>(animationFrame))==0)
+    if ((animationStage)==0xD && (animationFrame)==0)
         SetAuxActionAt40FB40(0xB);
     return;
 }

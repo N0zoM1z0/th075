@@ -6,7 +6,7 @@ case 0x35A: {
         scaleX=1.5f;
         scaleY=1.5f;
     }
-    if (GetNativeActionAt0040FA30()==reinterpret_cast<signed short&>(field070))
+    if (GetNativeActionAt0040FA30()==field070)
         NativeParentExpiredAt0045B830();
     return;
 }

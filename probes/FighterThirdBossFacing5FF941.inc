@@ -7,12 +7,12 @@
 // entire callable game giant and saved this EBP layout remain NONEXACT.
 // FighterBorrowedXViewF752 comes from the real F939 pair include.
         case 0x5F: {
-            if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
+            if (GetNativeActionAt40FA30()==(field070)) {
                 SetNativeActionAt40FAC0(0);
                 if (inputY>0)
                     SetNativeActionAt40FAC0(1);
             }
-            if ((reinterpret_cast<signed short&>(animationStage))==(reinterpret_cast<signed short&>(field070))-1) {
+            if ((animationStage)==(field070)-1) {
                 if (reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44 >
                     reinterpret_cast<const FighterBorrowedXViewF752*>(opponent)->xAt44)
                     facing=-1;

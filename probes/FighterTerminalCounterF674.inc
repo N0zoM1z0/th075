@@ -4,18 +4,18 @@
 // Its real source code naturally places the original far shared exit
 // beyond 2EF, restoring 2EF native 5-byte JMP; no artificial padding.
         case 0x31C: {
-            if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+            if ((animationStage)==0 && (animationFrame)==0) {
                 reinterpret_cast<signed short&>(scriptCounterF00)=0;
                 field07C=1;
                 ResetAt453E20();
             }
-            if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) SetNativeActionAt40FAC0(0);
-            if ((reinterpret_cast<signed short&>(animationStage))==15 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+            if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(0);
+            if ((animationStage)==15 && (animationFrame)==0) {
                 SubactionAt454A70(0);
                 SubactionAt452B30();
                 PrepareActionAt453D60(0x17);
             }
-            if ((reinterpret_cast<signed short&>(animationStage))==22 && (reinterpret_cast<signed short&>(animationFrame))==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<8) {
+            if ((animationStage)==22 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<8) {
                 ++reinterpret_cast<signed short&>(scriptCounterF00);
                 SetAuxActionAt40FB40(0x14);
                 reinterpret_cast<unsigned char&>(field3CF)=1;

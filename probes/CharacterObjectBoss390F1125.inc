@@ -1,17 +1,17 @@
 // F1125 original Japanese action 0x390 at 0051CB4A..0051CF28:
 // 990 native CODE B /212 x86 inside ONE still-NONEXACT 81KB boss.
 case 0x390: {
-    if (reinterpret_cast<signed short&>(owner->field3A0)<=0) {
+    if (owner->field3A0<=0) {
         NativeParentExpiredAt0045B830();
         return;
     }
     if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
         SetNativeMotionAt0040FBB0(0,0.0f,0);
-        reinterpret_cast<signed short&>(field080)=1;
+        field080=1;
         field07C=0;
-        reinterpret_cast<signed short&>(field0D8)=0;
+        field0D8=0;
         SetNativeAngleBitsAt0040FB70(reinterpret_cast<unsigned int&>(field0C8),
-            float(reinterpret_cast<signed short&>(field0D8))*g_F1057_SpeedScaleAt006590B4+g_F1085_LastYAt006592A4);
+            float(field0D8)*g_F1057_SpeedScaleAt006590B4+g_F1085_LastYAt006592A4);
         scaleX=0.1f;
         scaleY=0.1f;
         color[0]=0xFF;
@@ -21,10 +21,10 @@ case 0x390: {
         rotationZ=F1057_FloatAtan2At00483300(
             F1037_MOTION(this).yMotion,F1037_MOTION(this).xMotion)/g_F1057_AngleDivAt00657828;
     }
-    ++reinterpret_cast<signed short&>(field0D8);
+    ++field0D8;
     if (F1024_PHASE(this).stageAt62<2) {
         SetNativeAngleBitsAt0040FB70(reinterpret_cast<unsigned int&>(field0C8),
-            float(reinterpret_cast<signed short&>(field0D8))*g_F1057_SpeedScaleAt006590B4+g_F1085_LastYAt006592A4);
+            float(field0D8)*g_F1057_SpeedScaleAt006590B4+g_F1085_LastYAt006592A4);
         if (scaleX<g_F1051_ScaleCeilingAt0065747C) {
             scaleX=(scaleX)+g_F1057_SpeedScaleAt006590B4;
             scaleY=(scaleY)+g_F1057_SpeedScaleAt006590B4;
@@ -60,7 +60,7 @@ case 0x390: {
             return;
         }
     }
-    if (GetNativeActionAt0040FA30()==reinterpret_cast<signed short&>(field070))
+    if (GetNativeActionAt0040FA30()==field070)
         NativeParentExpiredAt0045B830();
     return;
 }

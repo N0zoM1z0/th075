@@ -2,12 +2,12 @@
 // 0051B89F..0051BB8B, 748 native CODE B /160 x86. One inner
 // state of the still-NONEXACT 81KB CharacterObject Advance.
 case 0x388: {
-    if (reinterpret_cast<signed short&>(owner->field3A0)<=0) {
+    if (owner->field3A0<=0) {
         NativeParentExpiredAt0045B830();
         return;
     }
     if (field07C==6) {
-        ++reinterpret_cast<signed short&>(field080);
+        ++field080;
         field07C=0;
     }
     if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
@@ -18,7 +18,7 @@ case 0x388: {
         color[1]=0xFF;
         color[2]=0xFF;
         color[3]=0xFF;
-        reinterpret_cast<signed short&>(field080)=1;
+        field080=1;
         field07C=0;
         F1037_MOTION(this).yMotion=22.5f;
         reinterpret_cast<F1051Grandparent*>(PARENT)->NativePrepareAt00453D40(3);
@@ -46,7 +46,7 @@ case 0x388: {
             return;
         }
     }
-    if (GetNativeActionAt0040FA30()==reinterpret_cast<signed short&>(field070))
+    if (GetNativeActionAt0040FA30()==field070)
         NativeParentExpiredAt0045B830();
     if (F1024_PHASE(this).stageAt62==2 && F1024_PHASE(this).frameAt64==0) {
         reinterpret_cast<F1051Grandparent*>(PARENT)->NativePrepareAt00453D40(4);

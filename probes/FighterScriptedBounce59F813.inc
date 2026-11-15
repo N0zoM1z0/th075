@@ -2,7 +2,7 @@
 // Actor-specific genuine signed stage 3 and auxiliary action 3.
 // Native game source interior; NOT an independently callable exact function.
         case 0x59: {
-            if ((reinterpret_cast<signed short&>(animationStage))==3) {
+            if ((animationStage)==3) {
                 rotationZ=(rotationZ)+g_F728_RandomOffsetYAt00657858;
                 velocityY=velocityY-field05C;
                 if (velocityY+y<=g_ThresholdAt0065782C) {
@@ -18,9 +18,9 @@
                     break;
                 }
             }
-            if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+            if (GetNativeActionAt40FA30()==(field070))
                 SetAuxActionAt40FB40(3);
-            else if ((reinterpret_cast<signed short&>(animationStage))==3 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+            else if ((animationStage)==3 && (animationFrame)==0) {
                 velocityX=static_cast<float>(static_cast<int>(reinterpret_cast<signed short&>(scriptCounterF00)))*g_F747_BounceXAt006590BC;
                 velocityY=static_cast<float>(-static_cast<int>(reinterpret_cast<signed short&>(scriptCounterF02)))*g_F747_BounceYAt00658044;
                 field05C=0.7f;

@@ -6,8 +6,8 @@
 // Shared C++ gameplay grammar, distinct native switch entries, never two
 // original independent callable functions (ONE nonexact 81KB parent).
 case F1065_ACTION: {
-    if (reinterpret_cast<signed short&>(owner->action)>0x45 &&
-        reinterpret_cast<signed short&>(owner->action)<0x96 &&
+    if (owner->action>0x45 &&
+        owner->action<0x96 &&
         F1024_PHASE(this).stageAt62<0x17) {
         NativeParentExpiredAt0045B830();
         for (int shot=0;shot<8;++shot) {
@@ -33,18 +33,18 @@ case F1065_ACTION: {
         color[1]=0xFF;
         color[2]=0xFF;
         color[3]=0xFF;
-        reinterpret_cast<signed short&>(field0D8)=0;
-        reinterpret_cast<signed short&>(field0DA)=0;
-        reinterpret_cast<signed short&>(field0DC)=0xAA;
-        reinterpret_cast<signed short&>(field080)=0;
+        field0D8=0;
+        field0DA=0;
+        field0DC=0xAA;
+        field080=0;
         field07C=0;
     }
     SetNativeTwoFloatsAt0040FB70(F1066_INITIAL_ANGLE,
-        float(reinterpret_cast<signed short&>(field0DC))*g_F1057_SpeedScaleAt006590B4);
-    reinterpret_cast<signed short&>(field0DC)=short(reinterpret_cast<signed short&>(field0DC)-6);
-    if (reinterpret_cast<signed short&>(field0DC)<20)
-        reinterpret_cast<signed short&>(field0DC)=20;
-    if (reinterpret_cast<signed short&>(field0D8)==0) {
+        float(field0DC)*g_F1057_SpeedScaleAt006590B4);
+    field0DC=short(field0DC-6);
+    if (field0DC<20)
+        field0DC=20;
+    if (field0D8==0) {
         if (scaleX<g_F1051_ScaleCeilingAt0065747C) {
             scaleX=(scaleX)+g_F1057_SpeedScaleAt006590B4;
             scaleY=(scaleY)+g_F1057_SpeedScaleAt006590B4;
@@ -54,31 +54,31 @@ case F1065_ACTION: {
             scaleY=1.0f;
             color[0]=0xFF;
         }
-        if (color[0]==0xFF && reinterpret_cast<signed short&>(field0D8)==0) {
-            ++reinterpret_cast<signed short&>(field0D8);
-            reinterpret_cast<signed short&>(field080)=10;
+        if (color[0]==0xFF && field0D8==0) {
+            ++field0D8;
+            field080=10;
         }
     }
     if ((field07C==6 || field07C==4) &&
-        reinterpret_cast<signed short&>(field080)>0)
+        field080>0)
         field07C=0;
     if (field07C!=0)
-        ++reinterpret_cast<signed short&>(field0D8);
+        ++field0D8;
     F1037_POSITION(this).xPosition=float(facing)*F1037_MOTION(this).xMotion + F1037_POSITION(this).xPosition;
     F1037_POSITION(this).yPosition=F1037_POSITION(this).yPosition-F1037_MOTION(this).yMotion;
-    if (reinterpret_cast<signed short&>(field080)==0 &&
-        F1024_PHASE(this).stageAt62<0x17 && reinterpret_cast<signed short&>(field0D8)>0) {
+    if (field080==0 &&
+        F1024_PHASE(this).stageAt62<0x17 && field0D8>0) {
         SetAuxActionAt0040FB40(0x17);
         return;
     }
-    if (GetNativeActionAt0040FA30()==reinterpret_cast<signed short&>(field070)) {
+    if (GetNativeActionAt0040FA30()==field070) {
         NativeParentExpiredAt0045B830();
         return;
     }
     if (F1024_PHASE(this).stageAt62==0x17 && F1024_PHASE(this).frameAt64==0 &&
-        reinterpret_cast<signed short&>(field0DA)<0) {
+        field0DA<0) {
         SetAuxActionAt0040FB40(1);
-        ++reinterpret_cast<signed short&>(field0DA);
+        ++field0DA;
     }
     return;
 }

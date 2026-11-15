@@ -11,11 +11,11 @@
  // GPR/mnemonic/width geometry). Whole fighter NONEXACT.
 // F1007 SHA-pinned Japanese original 004AC040 fighter case 2FA.
 case 0x2FA: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         ResetAt453E20();
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         reinterpret_cast<signed short&>(scriptCounterF02)=0;
-        reinterpret_cast<signed short&>(fieldF04)=0;
+        fieldF04=0;
         reinterpret_cast<signed short&>(fieldF06)=0;
         reinterpret_cast<signed short&>(fieldF08)=g_F1004_ModeAt006714D0+2;
     }
@@ -29,7 +29,7 @@ case 0x2FA: {
         }
     }
     ++reinterpret_cast<signed short&>(scriptCounterF00);
-    if ((reinterpret_cast<signed short&>(animationStage))>3 && (reinterpret_cast<signed short&>(animationStage))<11 && (reinterpret_cast<signed short&>(scriptCounterF00))>8) {
+    if ((animationStage)>3 && (animationStage)<11 && (reinterpret_cast<signed short&>(scriptCounterF00))>8) {
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         field314=-45.0f;
         SpawnWithFloatAt453A70(0x38E,reinterpret_cast<int&>(x),
@@ -37,12 +37,12 @@ case 0x2FA: {
             facing,1);
         PrepareActionAt453D40(12);
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
+    if (GetNativeActionAt40FA30()==(field070)) {
         SetNativeActionAt40FAC0(0);
-        reinterpret_cast<signed short&>(aiCardTimer)=static_cast<short>(
+        aiCardTimer=static_cast<short>(
             RandAt455580(60,120)-g_F1004_ModeAt006714D0*20);
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==2 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==2 && (animationFrame)==0) {
         velocityY=16.0f;
         field05C=0.5f;
         velocityX=float(RandAt455580(0,6)+12);
@@ -52,11 +52,11 @@ case 0x2FA: {
              (x)<g_ContactProjectionAt00657888))
             velocityX=-(velocityX);
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==11 && (reinterpret_cast<signed short&>(animationFrame))==0 && (reinterpret_cast<signed short&>(scriptCounterF02))<1) {
+    if ((animationStage)==11 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF02))<1) {
         ++reinterpret_cast<signed short&>(scriptCounterF02);
         SetAuxActionAt40FB40(4);
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==15 && (reinterpret_cast<signed short&>(animationFrame))==0)
+    if ((animationStage)==15 && (animationFrame)==0)
         SetAuxActionAt40FB40(13);
     break;
 }

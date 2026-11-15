@@ -9,14 +9,14 @@
  // native 5-byte near. Whole 82KB fighter still NONEXACT.
 // F1013 original Japanese final fighter state 0x31B.
 case 0x31B: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         field07C=1;
         ResetAt453E20();
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(0);
-    if ((reinterpret_cast<signed short&>(animationStage))==5 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==5 && (animationFrame)==0) {
         BeginStateAt454A70(0);
         RefreshStateAt452B30();
         PrepareActionAt453D60(0x17);
@@ -24,7 +24,7 @@ case 0x31B: {
             (*(&y))+g_ContactProjectionAt00657888,
             facing,1);
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==11 && (reinterpret_cast<signed short&>(animationFrame))==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<8) {
+    if ((animationStage)==11 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<8) {
         ++reinterpret_cast<signed short&>(scriptCounterF00);
         SetAuxActionAt40FB40(9);
     }
@@ -32,19 +32,19 @@ case 0x31B: {
 }
 // F1013 original Japanese final fighter state 0x31C.
 case 0x31C: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         field07C=1;
         ResetAt453E20();
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(0);
-    if ((reinterpret_cast<signed short&>(animationStage))==16 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==16 && (animationFrame)==0) {
         BeginStateAt454A70(0);
         RefreshStateAt452B30();
         PrepareActionAt453D60(0x17);
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==21 && (reinterpret_cast<signed short&>(animationFrame))==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<8) {
+    if ((animationStage)==21 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<8) {
         ++reinterpret_cast<signed short&>(scriptCounterF00);
         SetAuxActionAt40FB40(19);
         reinterpret_cast<unsigned char&>(field3CF)=1;

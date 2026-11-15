@@ -4,14 +4,14 @@
 // Real game-stage reset, motion, physical globals, and 6-shot gate.
 // Original complete fighter CODE remains NONEXACT; no fake locals.
         case 0x196: {
-            if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+            if ((animationStage)==0 && (animationFrame)==0) {
                 field07C=1;
                 ResetAt453E20();
                 reinterpret_cast<signed short&>(scriptCounterF00)=0;
             }
-            if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+            if (GetNativeActionAt40FA30()==(field070))
                 SetNativeActionAt40FAC0(0);
-            if ((reinterpret_cast<signed short&>(animationStage))==6 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+            if ((animationStage)==6 && (animationFrame)==0) {
                 PrepareActionAt453D40(2);
                 field314=0.0f;
                 SpawnFloatXYAt453A70(0x330,
@@ -20,8 +20,8 @@
                     facing,1);
                 StartAnimationAt46D000(100);
             }
-            if ((reinterpret_cast<signed short&>(animationStage))==7 && (reinterpret_cast<signed short&>(animationFrame))==0 && static_cast<unsigned int>(inputA)>0
-                    && (reinterpret_cast<signed short&>(scriptCounterF00))<6 && (reinterpret_cast<signed short&>(meter))>0) {
+            if ((animationStage)==7 && (animationFrame)==0 && static_cast<unsigned int>(inputA)>0
+                    && (reinterpret_cast<signed short&>(scriptCounterF00))<6 && (meter)>0) {
                 PrepareActionAt453D40(2);
                 field314=0.0f;
                 SpawnFloatXYAt453A70(0x330,
@@ -35,14 +35,14 @@
             break;
         }
         case 0x197: {
-            if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+            if ((animationStage)==0 && (animationFrame)==0) {
                 field07C=1;
                 ResetAt453E20();
                 reinterpret_cast<signed short&>(scriptCounterF00)=0;
             }
-            if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+            if (GetNativeActionAt40FA30()==(field070))
                 SetNativeActionAt40FAC0(0);
-            if ((reinterpret_cast<signed short&>(animationStage))==6 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+            if ((animationStage)==6 && (animationFrame)==0) {
                 PrepareActionAt453D40(2);
                 field314=30.0f;
                 SpawnFloatXYAt453A70(0x330,
@@ -51,8 +51,8 @@
                     facing,1);
                 StartAnimationAt46D000(100);
             }
-            if ((reinterpret_cast<signed short&>(animationStage))==7 && (reinterpret_cast<signed short&>(animationFrame))==0 && static_cast<unsigned int>(inputA)>0
-                    && (reinterpret_cast<signed short&>(scriptCounterF00))<6 && (reinterpret_cast<signed short&>(meter))>0) {
+            if ((animationStage)==7 && (animationFrame)==0 && static_cast<unsigned int>(inputA)>0
+                    && (reinterpret_cast<signed short&>(scriptCounterF00))<6 && (meter)>0) {
                 PrepareActionAt453D40(2);
                 field314=20.0f;
                 SpawnFloatXYAt453A70(0x330,
@@ -66,12 +66,12 @@
             break;
         }
         case 0x198: {
-            if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+            if ((animationStage)==0 && (animationFrame)==0) {
                 field07C=1;
                 ResetAt453E20();
                 reinterpret_cast<signed short&>(scriptCounterF00)=0;
             }
-            if ((reinterpret_cast<signed short&>(animationStage))==4 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+            if ((animationStage)==4 && (animationFrame)==0) {
                 PrepareActionAt453D40(1);
                 field314=60.0f;
                 StartAnimationAt46D000(250);
@@ -80,7 +80,7 @@
                     (*(&y))+g_F740_ShotY2At00659A18,
                     facing,1);
             }
-            if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+            if (GetNativeActionAt40FA30()==(field070))
                 SetNativeActionAt40FAC0(2);
             break;
         }

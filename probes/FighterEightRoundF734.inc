@@ -5,14 +5,14 @@
 // Actual stage/flags/8 volley projectiles and original member calls.
 // These interiors are NOT separate original game functions.
         case 0x190: {
-            if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+            if ((animationStage)==0 && (animationFrame)==0) {
                 field07C=1;
                 ResetAt453E20();
                 reinterpret_cast<signed short&>(scriptCounterF00)=0;
             }
             if (inputC==0)
                 reinterpret_cast<signed short&>(scriptCounterF00)=1;
-            if ((reinterpret_cast<signed short&>(animationStage))==5 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+            if ((animationStage)==5 && (animationFrame)==0) {
                 PrepareActionAt453D40(0);
                 field314=0.0f;
                 StartAnimationAt46D000(200);
@@ -23,19 +23,19 @@
                         facing,1);
                 }
             }
-            if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+            if (GetNativeActionAt40FA30()==(field070))
                 SetNativeActionAt40FAC0(0);
             break;
         }
         case 0x191: {
-            if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+            if ((animationStage)==0 && (animationFrame)==0) {
                 field07C=1;
                 ResetAt453E20();
                 reinterpret_cast<signed short&>(scriptCounterF00)=0;
             }
             if (inputC==0)
                 reinterpret_cast<signed short&>(scriptCounterF00)=1;
-            if ((reinterpret_cast<signed short&>(animationStage))==4 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+            if ((animationStage)==4 && (animationFrame)==0) {
                 PrepareActionAt453D40(0);
                 field314=20.0f;
                 StartAnimationAt46D000(200);
@@ -46,16 +46,16 @@
                         facing,1);
                 }
             }
-            if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+            if (GetNativeActionAt40FA30()==(field070))
                 SetNativeActionAt40FAC0(0);
             break;
         }
         case 0x192: {
-            if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+            if ((animationStage)==0 && (animationFrame)==0) {
                 field07C=1;
                 ResetAt453E20();
             }
-            if ((reinterpret_cast<signed short&>(animationStage))==4 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+            if ((animationStage)==4 && (animationFrame)==0) {
                 PrepareActionAt453D40(0);
                 field314=45.0f;
                 StartAnimationAt46D000(200);
@@ -66,7 +66,7 @@
                         facing,1);
                 }
             }
-            if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+            if (GetNativeActionAt40FA30()==(field070))
                 SetNativeActionAt40FAC0(2);
             break;
         }

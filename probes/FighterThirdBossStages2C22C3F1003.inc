@@ -9,22 +9,22 @@
  // partial 82KB VC7.1 father source; whole giant NONEXACT.
 // F1002 original Japanese 004AC040 action 2C0
 case 0x2C2: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         reinterpret_cast<signed short&>(scriptCounterF02)=0;
         field07C=0;
         ResetAt453E20();
-        reinterpret_cast<signed short&>(field080)=99;
+        field080=99;
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
+    if (GetNativeActionAt40FA30()==(field070)) {
         SetNativeActionAt40FAC0(0);
-        reinterpret_cast<signed short&>(fieldF12)=1;
+        fieldF12=1;
         SpawnSevenRawXFloatYAt453B50(0x332,reinterpret_cast<int&>(x),
             (*(&y))+g_ContactProjectionAt00657888,
             1,1,0,1);
         break;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==5 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==5 && (animationFrame)==0) {
         if ((reinterpret_cast<signed short&>(scriptCounterF02))<1) {
             ++reinterpret_cast<signed short&>(scriptCounterF02);
             SetAuxActionAt40FB40(3);
@@ -40,10 +40,10 @@ case 0x2C2: {
             (*(&y))+g_F972_YAt00659284,
             facing,1);
         SpawnSevenFloatAt453B50(0x330,640.0f,320.0f,1,2,0,1);
-        reinterpret_cast<signed short&>(fieldF10)=reinterpret_cast<signed short&>(meter);
-        reinterpret_cast<signed short&>(fieldF12)=1;
+        fieldF10=meter;
+        fieldF12=1;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==11 && (reinterpret_cast<signed short&>(animationFrame))==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<4) {
+    if ((animationStage)==11 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<4) {
         ++reinterpret_cast<signed short&>(scriptCounterF00);
         SetAuxActionAt40FB40(9);
     }
@@ -51,22 +51,22 @@ case 0x2C2: {
 }
 // F1002 original Japanese 004AC040 action 2C1
 case 0x2C3: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         reinterpret_cast<signed short&>(scriptCounterF02)=0;
         field07C=0;
         ResetAt453E20();
-        reinterpret_cast<signed short&>(field080)=99;
+        field080=99;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))>5)
-        reinterpret_cast<signed short&>(fieldF0C)=300;
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
+    if ((animationStage)>5)
+        fieldF0C=300;
+    if (GetNativeActionAt40FA30()==(field070)) {
         SetNativeActionAt40FAC0(0);
         SpawnSevenRawXFloatYAt453B50(0x32F,reinterpret_cast<int&>(x),
             (*(&y))+g_ContactProjectionAt00657888,
             1,1,0,1);
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==5 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==5 && (animationFrame)==0) {
         if ((reinterpret_cast<signed short&>(scriptCounterF02))<4) {
             ++reinterpret_cast<signed short&>(scriptCounterF02);
             SetAuxActionAt40FB40(3);
@@ -82,10 +82,10 @@ case 0x2C3: {
             (*(&y))+g_F972_YAt00659284,
             facing,1);
         SpawnSevenFloatAt453B50(0x32E,640.0f,320.0f,1,2,0,1);
-        reinterpret_cast<signed short&>(fieldF0C)=reinterpret_cast<signed short&>(meter);
-        reinterpret_cast<signed short&>(fieldF0E)=0;
+        fieldF0C=meter;
+        fieldF0E=0;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==11 && (reinterpret_cast<signed short&>(animationFrame))==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<4) {
+    if ((animationStage)==11 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<4) {
         ++reinterpret_cast<signed short&>(scriptCounterF00);
         SetAuxActionAt40FB40(9);
     }

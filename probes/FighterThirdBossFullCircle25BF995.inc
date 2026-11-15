@@ -8,14 +8,14 @@
 // F995 original Japanese game fighter 004AC040 action25B:
  // thirty-six native separate 0x327 projectile calls
 case 0x25B: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
         ResetAt453E20();
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         reinterpret_cast<signed short&>(scriptCounterF02)=0;
     }
     --reinterpret_cast<signed short&>(scriptCounterF00);
-    if ((reinterpret_cast<signed short&>(animationStage))>5 && (reinterpret_cast<signed short&>(scriptCounterF00))<=0 && (reinterpret_cast<signed short&>(scriptCounterF02))<1) {
+    if ((animationStage)>5 && (reinterpret_cast<signed short&>(scriptCounterF00))<=0 && (reinterpret_cast<signed short&>(scriptCounterF02))<1) {
         PrepareActionAt453D40(0);
         StartAnimationAt46D000(0xFA);
         field314=0.0f;
@@ -237,7 +237,7 @@ case 0x25B: {
         reinterpret_cast<signed short&>(scriptCounterF00)=2;
         ++reinterpret_cast<signed short&>(scriptCounterF02);
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(0);
     break;
 }

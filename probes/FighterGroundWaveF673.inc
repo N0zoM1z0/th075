@@ -3,7 +3,7 @@
 // no independent whole-function CODE credit, no artificial locals.
 // Source method types remain provisional native ABI probes.
         case 0x2BC: {
-            if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+            if ((animationStage)==0 && (animationFrame)==0) {
                 reinterpret_cast<signed short&>(scriptCounterF00)=0;
                 field07C=1;
                 ResetAt453E20();
@@ -14,24 +14,24 @@
                     (*(&y))+g_ContactProjectionAt00657888,
                     facing,1);
             }
-            if ((reinterpret_cast<signed short&>(animationStage))>3 && (reinterpret_cast<signed short&>(animationStage))<11) {
+            if ((animationStage)>3 && (animationStage)<11) {
                 velocityY=velocityY-g_FallDecelerationAt00659888;
                 if (velocityY<g_ThresholdAt0065782C) velocityY=0.0f;
             }
-            if ((reinterpret_cast<signed short&>(animationStage))>10 && (reinterpret_cast<signed short&>(animationStage))<14) {
+            if ((animationStage)>10 && (animationStage)<14) {
                 velocityY=velocityY-field05C;
                 if (y+velocityY<=g_ThresholdAt0065782C) {
                     SetAuxActionAt40FB40(0xE);
                     break;
                 }
             }
-            if ((reinterpret_cast<signed short&>(animationStage))==5 && (reinterpret_cast<signed short&>(animationFrame))==0) InitTrajectoryAt453E60(2.0f);
-            if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) SetNativeActionAt40FAC0(0);
-            if ((reinterpret_cast<signed short&>(animationStage))==4 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+            if ((animationStage)==5 && (animationFrame)==0) InitTrajectoryAt453E60(2.0f);
+            if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(0);
+            if ((animationStage)==4 && (animationFrame)==0) {
                 velocityY=15.0f;
                 field05C=0.85f;
             }
-            if ((reinterpret_cast<signed short&>(animationStage))==5 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+            if ((animationStage)==5 && (animationFrame)==0) {
                 SpawnDirectedAt453A70(0x326,reinterpret_cast<int&>(x),0,
                     facing,1);
                 SpawnDirectedAt453A70(0x33B,reinterpret_cast<int&>(x),0,
@@ -39,14 +39,14 @@
                 StartAnimationAt46D000(500);
                 PrepareActionAt453D40(8);
             }
-            if ((reinterpret_cast<signed short&>(animationStage))==8 && (reinterpret_cast<signed short&>(animationFrame))==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<7) {
+            if ((animationStage)==8 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<7) {
                 SetAuxActionAt40FB40(5);
                 ++reinterpret_cast<signed short&>(scriptCounterF00);
             }
-            if ((reinterpret_cast<signed short&>(animationStage))==11 && (reinterpret_cast<signed short&>(animationFrame))==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<9) {
+            if ((animationStage)==11 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<9) {
                 SetAuxActionAt40FB40(8);
                 ++reinterpret_cast<signed short&>(scriptCounterF00);
             }
-            if ((reinterpret_cast<signed short&>(animationStage))==14 && (reinterpret_cast<signed short&>(animationFrame))==0) SetAuxActionAt40FB40(12);
+            if ((animationStage)==14 && (animationFrame)==0) SetAuxActionAt40FB40(12);
             break;
         }

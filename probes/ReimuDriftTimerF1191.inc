@@ -18,21 +18,21 @@
 #undef R1191_LIFT_RANGE
 case 0x2E5: {
 #include "ReimuMeterInitF1190.inc"
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
+    if (GetNativeActionAt40FA30()==(field070)) {
         SetNativeActionAt40FAC0(0);
-        reinterpret_cast<signed short&>(aiCardTimer)=240-g_ReimuRepeatSettingAt006714D0*30;
+        aiCardTimer=240-g_ReimuRepeatSettingAt006714D0*30;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==8 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==8 && (animationFrame)==0) {
         SpawnFloatXAt453A70(0x38E,(*(&x))+g_ThresholdAt0065782C+g_ThresholdAt0065782C,
             reinterpret_cast<int&>(y),reinterpret_cast<char&>(facing),1);
         PlaySoundAt453D40(7);
-        reinterpret_cast<signed short&>(aiCardTimer)=180;
+        aiCardTimer=180;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==12 && (reinterpret_cast<signed short&>(animationFrame))==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<1) {
+    if ((animationStage)==12 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<1) {
         ++reinterpret_cast<signed short&>(scriptCounterF00);
         SetAuxActionAt40FB40(10);
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==14 && (reinterpret_cast<signed short&>(animationFrame))==0 && (reinterpret_cast<signed short&>(scriptCounterF02))<1) {
+    if ((animationStage)==14 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF02))<1) {
         ++reinterpret_cast<signed short&>(scriptCounterF02);
         SetAuxActionAt40FB40(12);
     }

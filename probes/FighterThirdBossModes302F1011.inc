@@ -11,19 +11,19 @@
  // Whole 82KB father remains NONEXACT.
 // F1011 pinned Japanese original 004AC040 game action302.
 case 0x302: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         ResetAt453E20();
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         reinterpret_cast<signed short&>(scriptCounterF02)=0;
-        reinterpret_cast<signed short&>(fieldF04)=0;
+        fieldF04=0;
         reinterpret_cast<signed short&>(fieldF08)=g_F1004_ModeAt006714D0+2;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))<13 && y>g_ThresholdAt0065782C) {
+    if ((animationStage)<13 && y>g_ThresholdAt0065782C) {
         velocityY=velocityY-field05C;
         if (velocityY<g_AnimationDeltaAt0065747C)
             velocityY=1.0f;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))>12 && y>g_ThresholdAt0065782C) {
+    if ((animationStage)>12 && y>g_ThresholdAt0065782C) {
         velocityY=velocityY-field05C;
         if (y+velocityY<=g_ThresholdAt0065782C) {
             y=0.0f;
@@ -31,16 +31,16 @@ case 0x302: {
             SetAuxActionAt40FB40(15);
         }
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
+    if (GetNativeActionAt40FA30()==(field070)) {
         SetNativeActionAt40FAC0(0);
-        reinterpret_cast<signed short&>(aiCardTimer)=static_cast<short>(
+        aiCardTimer=static_cast<short>(
             RandAt455580(0,60)+180-g_F1004_ModeAt006714D0*20);
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==2 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==2 && (animationFrame)==0) {
         velocityY=13.5f;
         field05C=0.5f;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==5 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==5 && (animationFrame)==0) {
         PrepareActionAt453D40(5);
         if (g_F1004_ModeAt006714D0==0) {
             for (int shot=0;shot<10;++shot) {

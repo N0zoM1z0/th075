@@ -4,7 +4,7 @@
 // This is an ORIGINAL INTERIOR only, NOT an independent exact function.
 case 0xC9: {
     ConfigureStormAt454BC0(3,4,0xFF);
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         velocityX=-15.0f;
         SpawnAt453C80(0x7D,
             reinterpret_cast<FighterBorrowedXViewF833*>(this)->xAt44-float((facing)*80),
@@ -19,7 +19,7 @@ case 0xC9: {
         velocityX=(velocityX)+g_AnimationDeltaAt0065747C;
         if ((velocityX)>g_ThresholdAt0065782C) velocityX=0.0f;
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(0);
     return;
 }

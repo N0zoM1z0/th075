@@ -10,7 +10,7 @@ case 0x353: {
         color[2]=0xFF;
         color[3]=0xFF;
     }
-    if (GetNativeActionAt0040FA30()==reinterpret_cast<signed short&>(field070))
+    if (GetNativeActionAt0040FA30()==field070)
         NativeParentExpiredAt0045B830();
     return;
 }

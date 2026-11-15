@@ -17,7 +17,7 @@ case F1055_CASE: {
         color[0] -= 20;
     else
         color[0] = 0;
-    if (GetNativeActionAt0040FA30()==reinterpret_cast<signed short&>(field070))
+    if (GetNativeActionAt0040FA30()==field070)
         NativeParentExpiredAt0045B830();
     return;
 }

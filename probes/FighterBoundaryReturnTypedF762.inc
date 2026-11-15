@@ -9,13 +9,13 @@
 // instead of native FCOMP [this+0x44]; NO byte-exact claim.
 // All native stack/branch/physical fields must be proven in whole parent.
         case F729_CASE: {
-            if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+            if ((animationStage)==0 && (animationFrame)==0) {
                 ResetAt453E20();
-                reinterpret_cast<signed short&>(field080)=1;
+                field080=1;
                 field07C=0;
                 reinterpret_cast<unsigned char&>(field3AC)=0;
             }
-            if ((reinterpret_cast<signed short&>(animationStage))<11 && y>g_ThresholdAt0065782C && (reinterpret_cast<signed short&>(animationStage))>2) {
+            if ((animationStage)<11 && y>g_ThresholdAt0065782C && (animationStage)>2) {
                 velocityX=-30.0f;
                 velocityY=velocityY-g_ApproachAt00658058;
                 if (y+velocityY<=g_ThresholdAt0065782C) {
@@ -25,13 +25,13 @@
                     break;
                 }
             }
-            if ((reinterpret_cast<signed short&>(animationStage))>10 && (reinterpret_cast<signed short&>(animationStage))<14 && !ContactAt454EE0()) {
+            if ((animationStage)>10 && (animationStage)<14 && !ContactAt454EE0()) {
                 if (facing==1)
                     x=(field2D8)+g_F699_SideOffsetAt00657874;
                 if (facing==-1)
                     x=(field2DC)-g_F699_SideOffsetAt00657874;
             }
-            if ((reinterpret_cast<signed short&>(animationStage))>8 && (reinterpret_cast<signed short&>(animationStage))<11
+            if ((animationStage)>8 && (animationStage)<11
                 && y>g_ThresholdAt0065782C) {
                 if ((ContactAt454EE0() && (((x)<g_F699_SideEdgeAt00657884
                         && facing==1)
@@ -46,7 +46,7 @@
                     break;
                 }
             }
-            if ((reinterpret_cast<signed short&>(animationStage))==14 || (reinterpret_cast<signed short&>(animationStage))==15) {
+            if ((animationStage)==14 || (animationStage)==15) {
                 if (field07C!=0 && field07C!=3 && field07C!=1) {
                     SetNativeActionAt40FAC0(0x1FA);
                     break;
@@ -59,14 +59,14 @@
                     break;
                 }
             }
-            if ((reinterpret_cast<signed short&>(animationStage))>15) {
+            if ((animationStage)>15) {
                 velocityX=(velocityX)-g_NewDragAt006581E0;
                 if ((velocityX)<g_ThresholdAt0065782C)
                     velocityX=0.0f;
             }
-            if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+            if (GetNativeActionAt40FA30()==(field070))
                 SetNativeActionAt40FAC0(0);
-            if ((reinterpret_cast<signed short&>(animationStage))==3 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+            if ((animationStage)==3 && (animationFrame)==0) {
                 PrepareActionAt453D40(5);
                 SpawnAt453C80(0x7D,
                     float(facing*80)+(x),
@@ -81,17 +81,17 @@
                     velocityY=8.0f;
                 field05C=0.8f;
             }
-            if ((reinterpret_cast<signed short&>(animationStage))==14 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+            if ((animationStage)==14 && (animationFrame)==0) {
                 PrepareActionAt453D40(6);
                 velocityX=F729_STAGE14_X;
                 velocityY=F729_STAGE14_Y;
             }
-            if ((reinterpret_cast<signed short&>(animationStage))==15 && (reinterpret_cast<signed short&>(animationFrame))==0)
+            if ((animationStage)==15 && (animationFrame)==0)
                 SpawnDirectedAt453A70(F729_STAGE15_SHOT,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
                     facing,1);
-            if ((reinterpret_cast<signed short&>(animationStage))==18 && (reinterpret_cast<signed short&>(animationFrame))==0 && (reinterpret_cast<signed short&>(scriptCounterF00))==0)
+            if ((animationStage)==18 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))==0)
                 SetAuxActionAt40FB40(19);
-            if ((reinterpret_cast<signed short&>(animationStage))==11 && (reinterpret_cast<signed short&>(animationFrame))==0)
+            if ((animationStage)==11 && (animationFrame)==0)
                 SetAuxActionAt40FB40(9);
             break;
         }

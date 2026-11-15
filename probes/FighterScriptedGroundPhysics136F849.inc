@@ -3,9 +3,9 @@
 // 15 real stage5 GPR operand negatives and two entire-parent JMP bytes.
 // Not byte exact or independently callable original CODE.
 case 0x136: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         if ((field3AC)==0) ResetAt453E20();
-        reinterpret_cast<signed short&>(field080)=1;
+        field080=1;
         field07C=0;
     }
     if ((field3AC)>0) {
@@ -15,14 +15,14 @@ case 0x136: {
             field3AC=0;
         }
     }
-    if ((reinterpret_cast<signed short&>(animationStage))>2 && (velocityX)>g_ThresholdAt0065782C) {
+    if ((animationStage)>2 && (velocityX)>g_ThresholdAt0065782C) {
         velocityX=(velocityX)-g_AnimationDeltaAt0065747C;
         if ((velocityX)<g_ThresholdAt0065782C)
             velocityX=0.0f;
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(0);
-    if ((reinterpret_cast<signed short&>(animationStage))==5 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==5 && (animationFrame)==0) {
         SpawnDirectedAt453A70(0x33A,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
             (facing),1);
         PrepareActionAt453D60(0x1D);

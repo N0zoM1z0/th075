@@ -3,7 +3,7 @@
 case 0x34B: {
     if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
         SetNativeMotionAt0040FBB0(0,0.0f,0);
-        reinterpret_cast<signed short&>(field080)=99;
+        field080=99;
         field07C=0;
         scaleX=1.0f;
         scaleY=1.0f;
@@ -11,7 +11,7 @@ case 0x34B: {
         color[1]=0xFF;
         color[2]=0xFF;
         color[3]=0xFF;
-        reinterpret_cast<signed short&>(field0D8)=0;
+        field0D8=0;
         F1037_MOTION(this).xMotion=0.0f;
         F1037_MOTION(this).yMotion=0.0f;
     }
@@ -22,7 +22,7 @@ case 0x34B: {
     }
     F1037_POSITION(this).xPosition=float(facing)*F1037_MOTION(this).xMotion+F1037_POSITION(this).xPosition;
     F1037_POSITION(this).yPosition=F1037_POSITION(this).yPosition-F1037_MOTION(this).yMotion;
-    if (GetNativeActionAt0040FA30()==reinterpret_cast<signed short&>(field070))
+    if (GetNativeActionAt0040FA30()==field070)
         NativeParentExpiredAt0045B830();
     if (F1024_PHASE(this).stageAt62==15 && F1024_PHASE(this).frameAt64==0)
         F1037_MOTION(this).yMotion=-40.0f;

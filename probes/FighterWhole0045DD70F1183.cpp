@@ -61,9 +61,9 @@ extern double g_RiseAt00658050;
 #define RAW reinterpret_cast<char*>(this)
 #define I16(off) *reinterpret_cast<signed short*>(RAW+(off))
 void FighterSwitchF598_Boss0045DD70::Advance() {
-    if (reinterpret_cast<signed short&>(field082) != 0 || reinterpret_cast<signed short&>(opponent->field3BA) != 0)
+    if (field082 != 0 || opponent->field3BA != 0)
         return;
-    switch (reinterpret_cast<signed short&>(action)) {
+    switch (action) {
         case 0x0:
             if ((field3AC) == 0) {
                 ResetAt453E20();
@@ -103,7 +103,7 @@ void FighterSwitchF598_Boss0045DD70::Advance() {
                     }
                 }
             }
-            if (GetNativeActionAt40FA30() == reinterpret_cast<signed short&>(field070))
+            if (GetNativeActionAt40FA30() == field070)
                 SetNativeActionAt40FAC0(2);
             break;
         case 0x2:
@@ -145,18 +145,18 @@ void FighterSwitchF598_Boss0045DD70::Advance() {
                     }
                 }
             }
-            if (GetNativeActionAt40FA30() == reinterpret_cast<signed short&>(field070))
+            if (GetNativeActionAt40FA30() == field070)
                 SetNativeActionAt40FAC0(0);
             break;
         case 0x4: velocityX = 4.5f; goto native_shared_getter;
         case 0x5: velocityX = -4.5f; goto native_shared_getter;
         case 0x6:
-            if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0 &&
+            if ((animationStage) == 0 && (animationFrame) == 0 &&
                     ((aiCommand) == 3 || (field3AC) > 0)) {
                 SetNativeActionAt40FAC0(0xCC);
                 return;
             }
-            if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (field3AC) == 0)
+            if ((animationStage) == 0 && (field3AC) == 0)
                 ResetAt453E20();
             if (y > g_ThresholdAt0065782C) {
                 velocityY = velocityY - field05C;
@@ -167,28 +167,28 @@ void FighterSwitchF598_Boss0045DD70::Advance() {
                     return;
                 }
             }
-            ++reinterpret_cast<signed short&>(animationFrame);
-            if ((reinterpret_cast<signed short&>(animationFrame)) >= (reinterpret_cast<signed short&>(field072))) {
-                reinterpret_cast<signed short&>(animationFrame) = 0;
-                ++reinterpret_cast<signed short&>(animationStage);
-                if ((reinterpret_cast<signed short&>(animationStage)) == 2) {
+            ++animationFrame;
+            if ((animationFrame) >= (field072)) {
+                animationFrame = 0;
+                ++animationStage;
+                if ((animationStage) == 2) {
                     velocityX = 0.0f;
                     velocityY = 12.5f;
                     field05C = 0.55f;
                     field3AC = 0;
                 }
-                if ((reinterpret_cast<signed short&>(animationStage)) >= (reinterpret_cast<signed short&>(field070)))
-                    reinterpret_cast<signed short&>(animationStage) -= 2;
+                if ((animationStage) >= (field070))
+                    animationStage -= 2;
                 BindAnimation();
             }
             break;
         case 0x7:
-            if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0 &&
+            if ((animationStage) == 0 && (animationFrame) == 0 &&
                     ((aiCommand) == 5 || (field3AC) > 0)) {
                 SetNativeActionAt40FAC0(0xCD);
                 return;
             }
-            if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (field3AC) == 0)
+            if ((animationStage) == 0 && (field3AC) == 0)
                 ResetAt453E20();
             if (y > g_ThresholdAt0065782C) {
                 velocityY = velocityY - field05C;
@@ -199,28 +199,28 @@ void FighterSwitchF598_Boss0045DD70::Advance() {
                     return;
                 }
             }
-            ++reinterpret_cast<signed short&>(animationFrame);
-            if ((reinterpret_cast<signed short&>(animationFrame)) >= (reinterpret_cast<signed short&>(field072))) {
-                reinterpret_cast<signed short&>(animationFrame) = 0;
-                ++reinterpret_cast<signed short&>(animationStage);
-                if ((reinterpret_cast<signed short&>(animationStage)) == 2) {
+            ++animationFrame;
+            if ((animationFrame) >= (field072)) {
+                animationFrame = 0;
+                ++animationStage;
+                if ((animationStage) == 2) {
                     velocityX = 4.0f;
                     velocityY = 12.5f;
                     field05C = 0.55f;
                     field3AC = 0;
                 }
-                if ((reinterpret_cast<signed short&>(animationStage)) >= (reinterpret_cast<signed short&>(field070)))
-                    reinterpret_cast<signed short&>(animationStage) -= 2;
+                if ((animationStage) >= (field070))
+                    animationStage -= 2;
                 BindAnimation();
             }
             break;
         case 0x8:
-            if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (reinterpret_cast<signed short&>(animationFrame)) == 0 &&
+            if ((animationStage) == 0 && (animationFrame) == 0 &&
                     ((aiCommand) == 4 || (field3AC) > 0)) {
                 SetNativeActionAt40FAC0(0xCE);
                 return;
             }
-            if ((reinterpret_cast<signed short&>(animationStage)) == 0 && (field3AC) == 0)
+            if ((animationStage) == 0 && (field3AC) == 0)
                 ResetAt453E20();
             if (y > g_ThresholdAt0065782C) {
                 velocityY = velocityY - field05C;
@@ -231,18 +231,18 @@ void FighterSwitchF598_Boss0045DD70::Advance() {
                     return;
                 }
             }
-            ++reinterpret_cast<signed short&>(animationFrame);
-            if ((reinterpret_cast<signed short&>(animationFrame)) >= (reinterpret_cast<signed short&>(field072))) {
-                reinterpret_cast<signed short&>(animationFrame) = 0;
-                ++reinterpret_cast<signed short&>(animationStage);
-                if ((reinterpret_cast<signed short&>(animationStage)) == 2) {
+            ++animationFrame;
+            if ((animationFrame) >= (field072)) {
+                animationFrame = 0;
+                ++animationStage;
+                if ((animationStage) == 2) {
                     velocityX = -4.0f;
                     velocityY = 12.5f;
                     field05C = 0.55f;
                     field3AC = 0;
                 }
-                if ((reinterpret_cast<signed short&>(animationStage)) >= (reinterpret_cast<signed short&>(field070)))
-                    reinterpret_cast<signed short&>(animationStage) -= 2;
+                if ((animationStage) >= (field070))
+                    animationStage -= 2;
                 BindAnimation();
             }
             break;
@@ -256,15 +256,15 @@ void FighterSwitchF598_Boss0045DD70::Advance() {
             ResetAt453E20();
             return;
         }
-        if (GetNativeActionAt40FA30() == reinterpret_cast<signed short&>(field070)) {
+        if (GetNativeActionAt40FA30() == field070) {
             SetAuxActionAt40FB40(0);
         }
         break;
         case 0xA:
-            if (reinterpret_cast<signed short&>(animationStage) == 0 && reinterpret_cast<signed short&>(animationFrame) == 0)
+            if (animationStage == 0 && animationFrame == 0)
                 PrepareActionAt453D60(30);
             ResetAt453E20();
-            if (GetNativeActionAt40FA30() == reinterpret_cast<signed short&>(field070)) {
+            if (GetNativeActionAt40FA30() == field070) {
                 if (inputY == 0)
                     SetNativeActionAt40FAC0(0);
                 else
@@ -319,13 +319,13 @@ void FighterSwitchF598_Boss0045DD70::Advance() {
 #define F605_LATE48 5
 #define F605_COUNTER 0xF00
 case 0x48: {
-    if (reinterpret_cast<signed short&>(animationStage)==0 && reinterpret_cast<signed short&>(animationFrame)==0) {
+    if (animationStage==0 && animationFrame==0) {
         velocityX = -(reinterpret_cast<float&>(field094));
         reinterpret_cast<int&>(velocityY) = reinterpret_cast<int&>(field098);
         field05C = 1.3f;
         field07C = 0;
     }
-    if (reinterpret_cast<signed short&>(animationStage)==F605_STAGE48 && velocityY < g_StopThresholdAt00657480) {
+    if (animationStage==F605_STAGE48 && velocityY < g_StopThresholdAt00657480) {
         SetAuxActionAt40FB40(F605_EARLY48);
         break;
     }
@@ -340,7 +340,7 @@ case 0x48: {
         PrepareActionAt453D60(0x16);
         break;
     }
-    if (GetNativeActionAt40FA30() == reinterpret_cast<signed short&>(field070))
+    if (GetNativeActionAt40FA30() == field070)
         SetAuxActionAt40FB40(F605_LATE48);
     break;
 }
@@ -642,7 +642,7 @@ case 0x48: {
 #include "ReimuResourceLoopsF1192.inc"
 #include "ReimuFinalEffectsF1192.inc"
         default:
-            if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) SetNativeActionAt40FAC0(0);
+            if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(0);
             break;
 #include "ReimuSharedGetterTailF1192.inc"
     }

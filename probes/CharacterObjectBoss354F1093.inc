@@ -1,8 +1,8 @@
 // F1093 authentic Japanese original 0x354 at 00514B35..00514FE8,
 // 1,203 original CODE B /251 x86 inside ONE nonexact 81KB Boss.
 case 0x354: {
-    if (reinterpret_cast<signed short&>(owner->action)>0x31 &&
-        reinterpret_cast<signed short&>(owner->action)<0x96 &&
+    if (owner->action>0x31 &&
+        owner->action<0x96 &&
         F1024_PHASE(this).stageAt62<0x17) {
         NativeParentExpiredAt0045B830();
         for (int shot=0;shot<8;++shot) {
@@ -26,16 +26,16 @@ case 0x354: {
         color[3]=0xFF;
         F1037_MOTION(this).xMotion=18.0f;
         F1037_MOTION(this).yMotion=0.0f;
-        reinterpret_cast<signed short&>(field0D8)=0;
-        reinterpret_cast<signed short&>(field0DA)=0;
-        reinterpret_cast<signed short&>(field080)=0;
+        field0D8=0;
+        field0DA=0;
+        field080=0;
         field07C=0;
     }
     F1037_MOTION(this).xMotion=F1037_MOTION(this).xMotion-g_F1093_XStepAt00658048;
     F1037_MOTION(this).yMotion=(*(&F1037_MOTION(this).yMotion))+g_F1062_ScaleStepAt006583F8;
     if (F1037_MOTION(this).xMotion<g_F1057_NudgeAt00657480)
         F1037_MOTION(this).xMotion=2.0f;
-    if (reinterpret_cast<signed short&>(field0D8)==0) {
+    if (field0D8==0) {
         if (scaleX<g_F1051_ScaleCeilingAt0065747C) {
             scaleX=(scaleX)+g_F1057_SpeedScaleAt006590B4;
             scaleY=(scaleY)+g_F1057_SpeedScaleAt006590B4;
@@ -45,36 +45,36 @@ case 0x354: {
             scaleY=1.0f;
             color[0]=0xFF;
         }
-        if (color[0]==0xFF && reinterpret_cast<signed short&>(field0D8)==0) {
-            ++reinterpret_cast<signed short&>(field0D8);
-            reinterpret_cast<signed short&>(field080)=5;
+        if (color[0]==0xFF && field0D8==0) {
+            ++field0D8;
+            field080=5;
         }
     }
     if (field07C==6) {
         field07C=0;
-        ++reinterpret_cast<signed short&>(field080);
+        ++field080;
     }
-    if (field07C==4 && reinterpret_cast<signed short&>(field080)>0)
+    if (field07C==4 && field080>0)
         field07C=0;
     if (field07C!=0) {
-        ++reinterpret_cast<signed short&>(field0D8);
-        reinterpret_cast<signed short&>(field080)=0;
+        ++field0D8;
+        field080=0;
     }
     F1037_POSITION(this).xPosition=float(facing)*F1037_MOTION(this).xMotion+F1037_POSITION(this).xPosition;
     F1037_POSITION(this).yPosition=F1037_POSITION(this).yPosition+F1037_MOTION(this).yMotion;
-    if (reinterpret_cast<signed short&>(field080)==0 && F1024_PHASE(this).stageAt62<0x17 &&
-        reinterpret_cast<signed short&>(field0D8)>0) {
+    if (field080==0 && F1024_PHASE(this).stageAt62<0x17 &&
+        field0D8>0) {
         SetAuxActionAt0040FB40(0x17);
         return;
     }
-    if (GetNativeActionAt0040FA30()==reinterpret_cast<signed short&>(field070)) {
+    if (GetNativeActionAt0040FA30()==field070) {
         NativeParentExpiredAt0045B830();
         return;
     }
     if (F1024_PHASE(this).stageAt62==0x17 && F1024_PHASE(this).frameAt64==0 &&
-        reinterpret_cast<signed short&>(field0DA)<0) {
+        field0DA<0) {
         SetAuxActionAt0040FB40(1);
-        ++reinterpret_cast<signed short&>(field0DA);
+        ++field0DA;
     }
     return;
 }

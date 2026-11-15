@@ -3,7 +3,7 @@
 // 104-instruction F602 trajectory; these remain original whole-fighter
 // internal case source, NOT independent/accepted exact game CODE.
 case 0x46: {
-    if (reinterpret_cast<signed short&>(animationStage) == 0 && reinterpret_cast<signed short&>(animationFrame) == 0) {
+    if (animationStage == 0 && animationFrame == 0) {
         velocityX = -(reinterpret_cast<float&>(field094));
         velocityY = *(&velocityY) + *(&reinterpret_cast<float&>(field098));
         if (velocityY < TRAJECTORY_LOWER_THRESHOLD)
@@ -15,13 +15,13 @@ case 0x46: {
     }
     // Native 131-instruction owners alone have this real one-shot
     // stage-one projectile branch (+0xF0C is the original flag).
-    if (reinterpret_cast<signed short&>(animationStage) == 1 && reinterpret_cast<signed short&>(animationFrame) == 0 && reinterpret_cast<signed short&>(fieldF0C) == 0) {
-        reinterpret_cast<signed short&>(fieldF0C) = 1;
+    if (animationStage == 1 && animationFrame == 0 && fieldF0C == 0) {
+        fieldF0C = 1;
         SpawnDirectedAt453A70(TRAJECTORY_SPAWN_KIND,
             reinterpret_cast<int&>(x), reinterpret_cast<int&>(y),
             facing, TRAJECTORY_SPAWN_SIDE);
     }
-    if (reinterpret_cast<signed short&>(animationStage) == TRAJECTORY_STAGE_THRESHOLD && velocityY < g_StopThresholdAt00657480) {
+    if (animationStage == TRAJECTORY_STAGE_THRESHOLD && velocityY < g_StopThresholdAt00657480) {
         SetAuxActionAt40FB40(TRAJECTORY_EARLY_STATE);
         break;
     }
@@ -36,7 +36,7 @@ case 0x46: {
         PrepareActionAt453D60(0x16);
         break;
     }
-    if (GetNativeActionAt40FA30() == reinterpret_cast<signed short&>(field070))
+    if (GetNativeActionAt40FA30() == field070)
         SetAuxActionAt40FB40(TRAJECTORY_LATE_STATE);
     break;
 }

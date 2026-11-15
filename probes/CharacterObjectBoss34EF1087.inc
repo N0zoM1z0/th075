@@ -10,33 +10,33 @@ case 0x34E: {
         color[1]=0xFF;
         color[2]=0xFF;
         color[3]=0xFF;
-        if (reinterpret_cast<signed short&>(field0D8)!=140)
-            reinterpret_cast<signed short&>(field0D8)=0;
+        if (field0D8!=140)
+            field0D8=0;
     }
     SetNativeTwoFloatsAt0040FB70(
-        float(reinterpret_cast<signed short&>(owner->fieldF0C))+
+        float(owner->fieldF0C)+
             g_F1085_ParentMultiplierAt0065989C*static_cast<const float&>(field0C8),
-        float(reinterpret_cast<signed short&>(field0D8)));
+        float(field0D8));
     F1037_POSITION(this).xPosition=F1037_MOTION(this).xMotion+F1037_POSITION(PARENT).xPosition;
     F1037_POSITION(this).yPosition=(*(&F1037_MOTION(this).yMotion))*g_F1085_ParentYMultiplierAt00657F74+
         F1037_POSITION(PARENT).yPosition+g_F1085_YOffsetAt0065835C;
-    if (reinterpret_cast<signed short&>(field0D8)<140)
-        reinterpret_cast<signed short&>(field0D8)=short(reinterpret_cast<signed short&>(field0D8)+5);
+    if (field0D8<140)
+        field0D8=short(field0D8+5);
     else
-        reinterpret_cast<signed short&>(field0D8)=140;
-    if ((reinterpret_cast<signed short&>(owner->opponent->health)<=0 ||
-        reinterpret_cast<signed short&>(owner->health)<=0 ||
-        reinterpret_cast<signed short&>(owner->field3A0)<=0) &&
+        field0D8=140;
+    if ((owner->opponent->health<=0 ||
+        owner->health<=0 ||
+        owner->field3A0<=0) &&
         F1024_PHASE(this).stageAt62<2)
         SetAuxActionAt0040FB40(2);
-    if (reinterpret_cast<signed short&>(owner->action)==0x2C1 &&
-        reinterpret_cast<signed short&>(owner->animationStage)==2 &&
+    if (owner->action==0x2C1 &&
+        owner->animationStage==2 &&
         F1024_PHASE(this).stageAt62<2)
         SetAuxActionAt0040FB40(2);
     if (F1024_PHASE(this).stageAt62==0) {
-        if ((reinterpret_cast<signed short&>(owner->action)==0x195 && reinterpret_cast<signed short&>(owner->animationStage)==4) ||
-            (reinterpret_cast<signed short&>(owner->action)==0x1F4 && reinterpret_cast<signed short&>(owner->animationStage)==14) ||
-            (reinterpret_cast<signed short&>(owner->action)==0x1F5 && reinterpret_cast<signed short&>(owner->animationStage)==14)) {
+        if ((owner->action==0x195 && owner->animationStage==4) ||
+            (owner->action==0x1F4 && owner->animationStage==14) ||
+            (owner->action==0x1F5 && owner->animationStage==14)) {
             for (int shot=0;shot<8;++shot) {
                 owner->field314=float(shot*45);
                 reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
@@ -56,13 +56,13 @@ case 0x34E: {
         }
     }
     if (F1024_PHASE(this).stageAt62==1 &&
-        reinterpret_cast<signed short&>(owner->action)==0x2C1 &&
-        reinterpret_cast<signed short&>(owner->animationStage)==3) {
+        owner->action==0x2C1 &&
+        owner->animationStage==3) {
         SetAuxActionAt0040FB40(0);
         reinterpret_cast<F1051Grandparent*>(PARENT)->NativePrepareAt00453D40(20);
         return;
     }
-    if (GetNativeActionAt0040FA30()==reinterpret_cast<signed short&>(field070)) {
+    if (GetNativeActionAt0040FA30()==field070) {
         NativeParentExpiredAt0045B830();
         return;
     }

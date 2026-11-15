@@ -2,11 +2,11 @@
 // These are switch-case interiors, not individually accepted callable CODE.
 case 0xC8: {
     ConfigureStormAt454BC0(3,4,0xFF);
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         velocityX=0.0f;
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
     }
-    if (y>g_ThresholdAt0065782C && (reinterpret_cast<signed short&>(animationStage))<7) {
+    if (y>g_ThresholdAt0065782C && (animationStage)<7) {
         velocityY=velocityY-g_F759_C8DecelAt006593E8;
         if (y+velocityY<=g_ThresholdAt0065782C) {
             y=0.0f;
@@ -15,7 +15,7 @@ case 0xC8: {
             break;
         }
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==7 && inputY<0) {
+    if ((animationStage)==7 && inputY<0) {
         if ((facing)*inputX>0) {
             SetNativeActionAt40FAC0(0xCD);
             break;
@@ -23,11 +23,11 @@ case 0xC8: {
         SetNativeActionAt40FAC0(0xCC);
         break;
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
+    if (GetNativeActionAt40FA30()==(field070)) {
         SetNativeActionAt40FAC0(0);
         break;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==4 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==4 && (animationFrame)==0) {
         velocityX=15.0f;
         velocityY=25.0f;
         field05C=2.5f;
@@ -42,11 +42,11 @@ case 0xC8: {
 }
 case 0xC9: {
     ConfigureStormAt454BC0(3,4,0xFF);
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         velocityX=0.0f;
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
     }
-    if (y>g_ThresholdAt0065782C && (reinterpret_cast<signed short&>(animationStage))<6) {
+    if (y>g_ThresholdAt0065782C && (animationStage)<6) {
         velocityY=velocityY-g_F759_C9DecelAt00658290;
         if (y+velocityY<=g_ThresholdAt0065782C) {
             y=0.0f;
@@ -55,11 +55,11 @@ case 0xC9: {
             break;
         }
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) {
+    if (GetNativeActionAt40FA30()==(field070)) {
         SetNativeActionAt40FAC0(0);
         break;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==3 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==3 && (animationFrame)==0) {
         velocityX=-25.0f;
         velocityY=40.0f;
         field05C=6.0f;
@@ -74,21 +74,21 @@ case 0xC9: {
 }
 case 0xCA: {
     ConfigureStormAt454BC0(3,4,0xFF);
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) ResetAt453E20();
-    if (y>g_ThresholdAt0065782C && (reinterpret_cast<signed short&>(animationStage))>5) {
+    if ((animationStage)==0 && (animationFrame)==0) ResetAt453E20();
+    if (y>g_ThresholdAt0065782C && (animationStage)>5) {
         velocityY=velocityY-field05C;
         if (velocityY+y<=g_ThresholdAt0065782C) {
             velocityX=0.0f;
             velocityY=0.0f;
             field05C=0.0f;
             y=0.0f;
-            reinterpret_cast<signed short&>(animationFrame)=0;
+            animationFrame=0;
             SetNativeActionAt40FAC0(0xA);
             break;
         }
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) SetNativeActionAt40FAC0(9);
-    if ((reinterpret_cast<signed short&>(animationStage))==4 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(9);
+    if ((animationStage)==4 && (animationFrame)==0) {
         velocityX=30.0f;
         velocityY=-4.0f;
         field05C=0.6f;
@@ -98,7 +98,7 @@ case 0xCA: {
             (*(&y))+g_ContactProjectionAt00657888,(facing),1);
         PrepareActionAt453D60(31);
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==6 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==6 && (animationFrame)==0) {
         velocityX=10.0f;
         velocityY=-4.0f;
     }
@@ -106,21 +106,21 @@ case 0xCA: {
 }
 case 0xCB: {
     ConfigureStormAt454BC0(3,4,0xFF);
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) ResetAt453E20();
-    if (y>g_ThresholdAt0065782C && (reinterpret_cast<signed short&>(animationStage))>4) {
+    if ((animationStage)==0 && (animationFrame)==0) ResetAt453E20();
+    if (y>g_ThresholdAt0065782C && (animationStage)>4) {
         velocityY=velocityY-field05C;
         if (velocityY+y<=g_ThresholdAt0065782C) {
             velocityX=0.0f;
             velocityY=0.0f;
             field05C=0.0f;
             y=0.0f;
-            reinterpret_cast<signed short&>(animationFrame)=0;
+            animationFrame=0;
             SetNativeActionAt40FAC0(0xA);
             break;
         }
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) SetNativeActionAt40FAC0(9);
-    if ((reinterpret_cast<signed short&>(animationStage))==3 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(9);
+    if ((animationStage)==3 && (animationFrame)==0) {
         velocityX=-30.0f;
         velocityY=2.0f;
         field05C=0.6f;
@@ -130,7 +130,7 @@ case 0xCB: {
             (*(&y))+g_ContactProjectionAt00657888,-(facing),1);
         PrepareActionAt453D60(31);
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==5 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==5 && (animationFrame)==0) {
         velocityX=-10.0f;
         velocityY=2.0f;
     }

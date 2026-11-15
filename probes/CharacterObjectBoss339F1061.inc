@@ -10,20 +10,20 @@ case 0x339: {
         color[1]=0xFF;
         color[2]=0xFF;
         color[3]=0xFF;
-        reinterpret_cast<signed short&>(field01A)=0x4E2;
+        field01A=0x4E2;
         rotationX=-30.0f;
         rotationY=float(int(facing) * -45);
-        reinterpret_cast<signed short&>(field0D8)=0;
+        field0D8=0;
     }
     scaleX =
         (g_F1061_CeilingAt006583FC -
-            float(reinterpret_cast<signed short&>(field0D8))*g_F1061_StepAt0065972C *
-            int(reinterpret_cast<signed short&>(field0D8)<10)) +
+            float(field0D8)*g_F1061_StepAt0065972C *
+            int(field0D8<10)) +
         g_F1061_OffsetAt00658354 + scaleX;
     scaleY =
         (g_F1061_CeilingAt006583FC -
-            float(reinterpret_cast<signed short&>(field0D8))*g_F1061_StepAt0065972C *
-            int(reinterpret_cast<signed short&>(field0D8)<10)) +
+            float(field0D8)*g_F1061_StepAt0065972C *
+            int(field0D8<10)) +
         g_F1061_OffsetAt00658354 + scaleY;
     if (F1024_PHASE(this).stageAt62>1) {
         if (color[0]>20)
@@ -33,7 +33,7 @@ case 0x339: {
             return;
         }
     }
-    if (GetNativeActionAt0040FA30()==reinterpret_cast<signed short&>(field070))
+    if (GetNativeActionAt0040FA30()==field070)
         NativeParentExpiredAt0045B830();
     return;
 }

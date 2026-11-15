@@ -1,5 +1,5 @@
 case R1191_ACTION: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1; reinterpret_cast<signed short&>(scriptCounterF00)=0; reinterpret_cast<signed short&>(scriptCounterF02)=0;
         ResetAt453E20();
     }
@@ -12,8 +12,8 @@ case R1191_ACTION: {
             break;
         }
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) SetAuxActionAt40FB40(R1191_AUX);
-    if ((reinterpret_cast<signed short&>(animationStage))==2 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if (GetNativeActionAt40FA30()==(field070)) SetAuxActionAt40FB40(R1191_AUX);
+    if ((animationStage)==2 && (animationFrame)==0) {
 #if R1191_REVERSE_X
         velocityX=g_ReimuReverseDriftAt0065907C-float(SelectRangeAt455580(0,3));
 #else

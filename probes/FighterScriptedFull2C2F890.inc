@@ -3,15 +3,15 @@
 // All x87 temporary values flow to actually emitted native projectiles.
 // Whole original fighter remains NONEXACT; internal state is NOT callable exact CODE.
 case 0x2C2: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         reinterpret_cast<signed short&>(scriptCounterF02)=0;
-        reinterpret_cast<signed short&>(fieldF04)=0;
+        fieldF04=0;
         field07C=0;
-        reinterpret_cast<signed short&>(field080)=1;
+        field080=1;
         ResetAt453E20();
     }
-    if ((reinterpret_cast<signed short&>(animationStage))>9) {
+    if ((animationStage)>9) {
         velocityY=velocityY-g_F890GravityAt006581E0;
         if (velocityY+y<=g_ThresholdAt0065782C) {
             y=0.0f;
@@ -20,7 +20,7 @@ case 0x2C2: {
             return;
         }
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==9 && (reinterpret_cast<signed short&>(scriptCounterF02))==0) {
+    if ((animationStage)==9 && (reinterpret_cast<signed short&>(scriptCounterF02))==0) {
         ++reinterpret_cast<signed short&>(scriptCounterF02);
         SpawnWithFloatAt453A70(0x34C,
             reinterpret_cast<int&>(x),
@@ -28,9 +28,9 @@ case 0x2C2: {
             (facing),1);
         PrepareActionAt453D40(0xE);
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetNativeActionAt40FA30()==(field070))
         SetAuxActionAt40FB40(0x10);
-    if ((reinterpret_cast<signed short&>(animationStage))<9 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)<9 && (animationFrame)==0) {
         SpawnWithFloatAt453A70(0x34B,
             reinterpret_cast<int&>(opponent->x),
             (opponent->y)+g_ContactProjectionAt00657888,
@@ -124,9 +124,9 @@ case 0x2C2: {
                 -((facing)),1);
         }
         ++reinterpret_cast<signed short&>(scriptCounterF00);
-        if ((reinterpret_cast<signed short&>(animationStage))==8 && (reinterpret_cast<signed short&>(animationFrame))==0 && (reinterpret_cast<signed short&>(fieldF04))==0) {
+        if ((animationStage)==8 && (animationFrame)==0 && (fieldF04)==0) {
             reinterpret_cast<signed short&>(scriptCounterF00)=1;
-            ++reinterpret_cast<signed short&>(fieldF04);
+            ++fieldF04;
             SetAuxActionAt40FB40(1);
             field314=0.0f;
             SpawnFloatXYAt453A70(0x34A,
@@ -139,7 +139,7 @@ case 0x2C2: {
                 -((facing)),1);
         }
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==9 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==9 && (animationFrame)==0) {
         SetFloatMotionAt40FBB0(0.0f,0.0f,0);
         reinterpret_cast<int&>(x)=reinterpret_cast<int&>(opponent->x);
         reinterpret_cast<int&>(y)=0;

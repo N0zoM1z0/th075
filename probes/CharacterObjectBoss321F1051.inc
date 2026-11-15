@@ -2,15 +2,15 @@
 // inside the nonexact 81KB original CharacterObject::Advance.
 // Parent +0xE4, target grandparent +0x2E8 are borrowed, not embedded owners.
 case 0x321: {
-    if (reinterpret_cast<signed short&>(owner->action) != 0x2BC) {
+    if (owner->action != 0x2BC) {
         NativeParentExpiredAt0045B830();
         return;
     }
     if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
         SetNativeMotionAt0040FBB0(0,0,0);
-        reinterpret_cast<signed short&>(field080)=1;
+        field080=1;
         field07C=0;
-        reinterpret_cast<signed short&>(field0D8)=0;
+        field0D8=0;
         scaleX=0.0f;
         scaleY=0.0f;
         color[0]=0xFF;
@@ -49,7 +49,7 @@ case 0x321: {
         reinterpret_cast<F1051Grandparent*>(PARENT)->InitTrajectoryAt00453E60(10.0f);
         return;
     }
-    if (reinterpret_cast<signed short&>(owner->animationStage)==9 && F1024_PHASE(this).stageAt62<6) {
+    if (owner->animationStage==9 && F1024_PHASE(this).stageAt62<6) {
         SetAuxActionAt0040FB40(F1024_PHASE(this).stageAt62+5);
         velocityX=
             float(facing) *
@@ -63,7 +63,7 @@ case 0x321: {
         F1037_POSITION(this).xPosition;
     F1037_POSITION(this).yPosition=F1037_POSITION(this).yPosition+
         F1037_MOTION(this).yMotion;
-    if (GetNativeActionAt0040FA30()==reinterpret_cast<signed short&>(field070)) {
+    if (GetNativeActionAt0040FA30()==field070) {
         SetAuxActionAt0040FB40(6);
         return;
     }

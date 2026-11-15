@@ -8,8 +8,8 @@ case 0x335: {
         NativeParentExpiredAt0045B830();
         return;
     }
-    if (reinterpret_cast<signed short&>(owner->action)>0x31 &&
-        reinterpret_cast<signed short&>(owner->action)<0x96 &&
+    if (owner->action>0x31 &&
+        owner->action<0x96 &&
         F1024_PHASE(this).stageAt62<7) {
         NativeParentExpiredAt0045B830();
         for (int shot=0;shot<4;++shot) {
@@ -29,7 +29,7 @@ case 0x335: {
     }
     if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
         SetNativeMotionAt0040FBB0(0,0,0);
-        reinterpret_cast<signed short&>(field080)=1;
+        field080=1;
         field07C=0;
         scaleX=1.0f;
         scaleY=1.0f;
@@ -42,7 +42,7 @@ case 0x335: {
     }
     F1037_POSITION(this).xPosition=float(facing)*F1037_MOTION(this).xMotion + F1037_POSITION(this).xPosition;
     F1037_POSITION(this).yPosition=F1037_POSITION(this).yPosition-F1037_MOTION(this).yMotion;
-    if (GetNativeActionAt0040FA30()==reinterpret_cast<signed short&>(field070))
+    if (GetNativeActionAt0040FA30()==field070)
         NativeParentExpiredAt0045B830();
     return;
 }

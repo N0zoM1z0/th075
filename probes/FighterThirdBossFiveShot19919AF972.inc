@@ -8,7 +8,7 @@
 // The entire original 82KB game fighter remains NONEXACT.
 // F972 original Japanese 004AC040 action 0x199, five real native shot calls.
 case 0x199: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         velocityX=(velocityX)*g_F972_GravityAt00657F74;
         velocityY=(velocityY)*g_F972_GravityAt00657F74;
         field07C=1;
@@ -19,9 +19,9 @@ case 0x199: {
         SetNativeActionAt40FAC0(0xA);
         break;
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(9);
-    if ((reinterpret_cast<signed short&>(animationStage))==5 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==5 && (animationFrame)==0) {
         PrepareActionAt453D40(0);
         field314=0.0f;
         field318=20.0f;
@@ -51,7 +51,7 @@ case 0x199: {
 }
 // F972 original Japanese 004AC040 action 0x19A, five real native shot calls.
 case 0x19A: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         velocityX=(velocityX)*g_F972_GravityAt00657F74;
         velocityY=(velocityY)*g_F972_GravityAt00657F74;
         field07C=1;
@@ -62,9 +62,9 @@ case 0x19A: {
         SetNativeActionAt40FAC0(0xA);
         break;
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(9);
-    if ((reinterpret_cast<signed short&>(animationStage))==5 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==5 && (animationFrame)==0) {
         PrepareActionAt453D40(0);
         field314=-20.0f;
         field318=20.0f;

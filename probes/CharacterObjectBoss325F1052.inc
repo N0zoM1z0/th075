@@ -1,8 +1,8 @@
 // F1052: native 0050B654..0050B821, action 0x325, 461 real CODE B /100 x86.
 // This is a case of the ONE original 81KB CharacterObject, still nonexact.
 case 0x325: {
-    if (reinterpret_cast<signed short&>(owner->action)>49 &&
-        reinterpret_cast<signed short&>(owner->action)<150 &&
+    if (owner->action>49 &&
+        owner->action<150 &&
         F1024_PHASE(this).stageAt62<2) {
         NativeParentExpiredAt0045B830();
         for (int shot=0;shot<3;++shot) {
@@ -24,11 +24,11 @@ case 0x325: {
         color[1]=0xFF;
         color[2]=0xFF;
         color[3]=0xFF;
-        reinterpret_cast<signed short&>(field080)=1;
+        field080=1;
         field07C=0;
         reinterpret_cast<F1051Grandparent*>(PARENT)->NativePrepareAt00453D40(0x17);
     }
-    if (GetNativeActionAt0040FA30()==reinterpret_cast<signed short&>(field070))
+    if (GetNativeActionAt0040FA30()==field070)
         NativeParentExpiredAt0045B830();
     return;
 }

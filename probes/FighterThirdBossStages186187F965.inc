@@ -8,39 +8,39 @@
 // This is only internal C++ of still NONEXACT 82KB original fighter.
 // Original Japanese 004AC040 handler 0x186, native 277B/84 x86.
 case 0x186: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         if ((field3AC)==0)
             ResetAt453E20();
-        reinterpret_cast<signed short&>(field080)=1;
+        field080=1;
         field07C=0;
         velocityX=10.0f;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))>0) {
+    if ((animationStage)>0) {
         velocityX=(velocityX)-g_ApproachAt00658058;
         if ((velocityX)<g_ThresholdAt0065782C) {
             velocityX=0.0f;
             field3AC=0;
         }
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(0);
-    if ((reinterpret_cast<signed short&>(animationStage))==4 && (reinterpret_cast<signed short&>(animationFrame))==0)
+    if ((animationStage)==4 && (animationFrame)==0)
         PrepareActionAt453D60(0x1C);
-    if ((reinterpret_cast<signed short&>(animationStage))==3 && (reinterpret_cast<signed short&>(animationFrame))==0)
+    if ((animationStage)==3 && (animationFrame)==0)
         SpawnSevenAt453B50(0x324,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
             facing,1,0,1);
     break;
 }
 // Original Japanese 004AC040 handler 0x187, native 429B/124 x86.
 case 0x187: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         if ((field3AC)==0)
             ResetAt453E20();
-        reinterpret_cast<signed short&>(field080)=2;
+        field080=2;
         field07C=0;
         velocityX=10.0f;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))<2) {
+    if ((animationStage)<2) {
         velocityX=(velocityX)-g_ApproachAt00658058;
         if ((velocityX)<g_ThresholdAt0065782C) {
             velocityX=0.0f;
@@ -56,18 +56,18 @@ case 0x187: {
             break;
         }
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(0);
-    if ((reinterpret_cast<signed short&>(animationStage))==2 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==2 && (animationFrame)==0) {
         velocityX=15.0f;
         velocityY=8.5f;
         field05C=0.6f;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==7 && (reinterpret_cast<signed short&>(animationFrame))==0)
+    if ((animationStage)==7 && (animationFrame)==0)
         PrepareActionAt453D60(0x1C);
-    if ((reinterpret_cast<signed short&>(animationStage))==8 && (reinterpret_cast<signed short&>(animationFrame))==0)
+    if ((animationStage)==8 && (animationFrame)==0)
         field07C=0;
-    if ((reinterpret_cast<signed short&>(animationStage))==14 && (reinterpret_cast<signed short&>(animationFrame))==0)
+    if ((animationStage)==14 && (animationFrame)==0)
         SetAuxActionAt40FB40(0xC);
     break;
 }

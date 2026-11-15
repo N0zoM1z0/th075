@@ -5,15 +5,15 @@ case 0x9E: {
     field368=(field368)+g_AnimationDeltaAt0065747C;
     if ((field368)>g_AnimationMaximumAt006583B4)
         field368=1000.0f;
-    if (reinterpret_cast<signed short&>(animationStage)==0 && reinterpret_cast<signed short&>(animationFrame)==0) {
+    if (animationStage==0 && animationFrame==0) {
 #if F637_EXTRA_FLAG && F637_EXTRA_BEFORE
-        reinterpret_cast<signed short&>(fieldF0A)=0;
+        fieldF0A=0;
 #endif
         velocityX=-6.0f;
         velocityY=8.0f;
         field05C=0.75f;
 #if F637_EXTRA_FLAG && !F637_EXTRA_BEFORE
-        reinterpret_cast<signed short&>(fieldF0A)=0;
+        fieldF0A=0;
 #endif
     }
     // Original 005D73C0 uses a STRICT above-ground comparison:
@@ -32,7 +32,7 @@ case 0x9E: {
             break;
         }
     }
-    if (GetNativeActionAt40FA30()==reinterpret_cast<signed short&>(field070))
+    if (GetNativeActionAt40FA30()==field070)
         SetNativeActionAt40FAC0(9);
     break;
 }

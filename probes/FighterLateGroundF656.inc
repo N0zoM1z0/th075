@@ -8,16 +8,16 @@
                 velocityY=0.0f;
                 break;
             }
-            if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
-                reinterpret_cast<signed short&>(field080)=1;
+            if ((animationStage)==0 && (animationFrame)==0) {
+                field080=1;
                 field07C=0;
             }
-            if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) SetNativeActionAt40FAC0(9);
-            if ((reinterpret_cast<signed short&>(animationStage))==3 && (reinterpret_cast<signed short&>(animationFrame))==0) PrepareActionAt453D60(0x1C);
-            if ((reinterpret_cast<signed short&>(animationStage))==5 && (reinterpret_cast<signed short&>(animationFrame))==0) {
-                reinterpret_cast<signed short&>(field080)=1;
+            if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(9);
+            if ((animationStage)==3 && (animationFrame)==0) PrepareActionAt453D60(0x1C);
+            if ((animationStage)==5 && (animationFrame)==0) {
+                field080=1;
                 field07C=0;
             }
-            if ((reinterpret_cast<signed short&>(animationStage))==6 && (reinterpret_cast<signed short&>(animationFrame))==0) PrepareActionAt453D60(0x1D);
+            if ((animationStage)==6 && (animationFrame)==0) PrepareActionAt453D60(0x1D);
             break;
         }

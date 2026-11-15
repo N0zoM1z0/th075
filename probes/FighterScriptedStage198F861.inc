@@ -2,14 +2,14 @@
 // True actor state2 and stage4, sprite351, signed facing*90 and Y global659460.
 // Complete original game interior, giant original still nonexact.
 case 0x198: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
-        reinterpret_cast<signed short&>(field080)=1;
+    if ((animationStage)==0 && (animationFrame)==0) {
+        field080=1;
         field07C=0;
         ResetAt453E20();
     }
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(2);
-    if ((reinterpret_cast<signed short&>(animationStage))==4 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==4 && (animationFrame)==0) {
         PrepareActionAt453D40(3);
         SpawnFloatXYAt453A70(0x351,
             float((facing)*90)+(x),

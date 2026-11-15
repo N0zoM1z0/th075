@@ -1,4 +1,4 @@
-    if ((reinterpret_cast<signed short&>(animationStage))==10 && (reinterpret_cast<signed short&>(animationFrame))==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<8) {
+    if ((animationStage)==10 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<8) {
         PlaySoundAt453D40(R1190_CYCLE_SOUND);
         field314=float(reinterpret_cast<signed short&>(scriptCounterF00));
         if ((reinterpret_cast<signed short&>(scriptCounterF02))==0) {

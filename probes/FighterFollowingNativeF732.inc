@@ -7,14 +7,14 @@
 // The actual EBP slot and register phase still mismatch; whole 58KB NONEXACT.
 // Original `FighterPrecedingStageGrammarF666.inc` retained as earlier evidence.
         case 0x1FA: {
-            if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+            if ((animationStage)==0 && (animationFrame)==0) {
                 velocityX=-5.0f;
                 velocityY=static_cast<float>((reinterpret_cast<signed short&>(scriptCounterF00))==1)*g_FloatMulAt00657874+g_FloatAddAt00657CBC;
                 field05C=-0.8f;
                 field07C=0;
                 field3AC=0;
             }
-            if (y>g_ThresholdAt0065782C && (reinterpret_cast<signed short&>(animationStage))<8) {
+            if (y>g_ThresholdAt0065782C && (animationStage)<8) {
                 velocityY=velocityY+field05C;
                 if (y+velocityY<=g_ThresholdAt0065782C) {
                     ResetAt453E20();
@@ -23,21 +23,21 @@
                     break;
                 }
             }
-            if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) SetNativeActionAt40FAC0(0);
-            if ((reinterpret_cast<signed short&>(animationStage))==8 && (reinterpret_cast<signed short&>(animationFrame))==0) SetAuxActionAt40FB40(6);
+            if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(0);
+            if ((animationStage)==8 && (animationFrame)==0) SetAuxActionAt40FB40(6);
             break;
         }
         case 0x1FB: {
-            if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+            if ((animationStage)==0 && (animationFrame)==0) {
                 ResetAt453E20();
-                reinterpret_cast<signed short&>(field080)=1;
+                field080=1;
                 field07C=0;
                 field3AC=0;
                 reinterpret_cast<signed short&>(scriptCounterF00)=0;
             }
-            if ((reinterpret_cast<signed short&>(animationStage))<8 && y>g_ThresholdAt0065782C && (reinterpret_cast<signed short&>(animationStage))>2)
+            if ((animationStage)<8 && y>g_ThresholdAt0065782C && (animationStage)>2)
                 velocityY=velocityY-g_RisingGravityAt0065747C;
-            if ((reinterpret_cast<signed short&>(animationStage))==10) {
+            if ((animationStage)==10) {
                 if (field07C!=0 && field07C!=3 && field07C!=1) {
                     SetNativeActionAt40FAC0(0x1FA);
                     break;
@@ -50,19 +50,19 @@
                     break;
                 }
             }
-            if ((reinterpret_cast<signed short&>(animationStage))>10) {
+            if ((animationStage)>10) {
                 velocityX=(velocityX)-g_RisingDragAt006581E0;
                 if ((velocityX)<g_ThresholdAt0065782C) velocityX=0.0f;
             }
-            if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) SetNativeActionAt40FAC0(0);
-            if ((reinterpret_cast<signed short&>(animationStage))==3 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+            if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(0);
+            if ((animationStage)==3 && (animationFrame)==0) {
                 SpawnRawXYAt453C80(0x3C,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
                     facing,1);
                 velocityY=22.0f;
                 field05C=0.7f;
             }
-            if ((reinterpret_cast<signed short&>(animationStage))==8 && (reinterpret_cast<signed short&>(animationFrame))==0) ResetAt453E20();
-            if ((reinterpret_cast<signed short&>(animationStage))==10 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+            if ((animationStage)==8 && (animationFrame)==0) ResetAt453E20();
+            if ((animationStage)==10 && (animationFrame)==0) {
                 if ((reinterpret_cast<signed short&>(scriptCounterF00))<1) {
                     SetAuxActionAt40FB40(8);
                     ++reinterpret_cast<signed short&>(scriptCounterF00);
@@ -71,18 +71,18 @@
                 velocityX=20.0f;
                 velocityY=-20.0f;
             }
-            if ((reinterpret_cast<signed short&>(animationStage))==11 && (reinterpret_cast<signed short&>(animationFrame))==0) SetAuxActionAt40FB40(9);
+            if ((animationStage)==11 && (animationFrame)==0) SetAuxActionAt40FB40(9);
             break;
         }
         case 0x1FE: {
-            if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+            if ((animationStage)==0 && (animationFrame)==0) {
                 ResetAt453E20();
-                reinterpret_cast<signed short&>(field080)=1;
+                field080=1;
                 field07C=0;
                 field3AC=0;
                 reinterpret_cast<signed short&>(scriptCounterF00)=0;
             }
-            if ((reinterpret_cast<signed short&>(animationStage))<18 && y>g_ThresholdAt0065782C && (reinterpret_cast<signed short&>(animationStage))>7) {
+            if ((animationStage)<18 && y>g_ThresholdAt0065782C && (animationStage)>7) {
                 velocityX=(velocityX)-g_ShotPositiveDragAt00659A10;
                 velocityY=velocityY-field05C;
                 if ((velocityX)<g_SpeedClampAt00657CF8) velocityX=3.0f;
@@ -93,8 +93,8 @@
                     break;
                 }
             }
-            if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) SetNativeActionAt40FAC0(0);
-            if ((reinterpret_cast<signed short&>(animationStage))==3 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+            if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(0);
+            if ((animationStage)==3 && (animationFrame)==0) {
                 SpawnRawXYAt453C80(0x3C,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
                         facing,1);
                 PrepareActionAt453D40(4);
@@ -104,24 +104,24 @@
                 SpawnDirectedAt453A70(0x33A,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
                         facing,1);
             }
-            if ((reinterpret_cast<signed short&>(animationStage))==8 && (reinterpret_cast<signed short&>(animationFrame))==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<0) {
+            if ((animationStage)==8 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<0) {
                 SetAuxActionAt40FB40(4);
                 ++reinterpret_cast<signed short&>(scriptCounterF00);
                 break;
             }
-            if ((reinterpret_cast<signed short&>(animationStage))==18 && (reinterpret_cast<signed short&>(animationFrame))==0)
+            if ((animationStage)==18 && (animationFrame)==0)
                 SetAuxActionAt40FB40(16);
             break;
         }
         case 0x1FF: {
-            if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+            if ((animationStage)==0 && (animationFrame)==0) {
                 ResetAt453E20();
-                reinterpret_cast<signed short&>(field080)=1;
+                field080=1;
                 field07C=0;
                 field3AC=0;
                 reinterpret_cast<signed short&>(scriptCounterF00)=0;
             }
-            if ((reinterpret_cast<signed short&>(animationStage))<22 && y>g_ThresholdAt0065782C && (reinterpret_cast<signed short&>(animationStage))>12) {
+            if ((animationStage)<22 && y>g_ThresholdAt0065782C && (animationStage)>12) {
                 velocityX=(velocityX)-g_ShotPositiveDragAt00659A10;
                 velocityY=velocityY-field05C;
                 if ((velocityX)<g_SpeedClampAt00657CF8) velocityX=3.0f;
@@ -132,8 +132,8 @@
                     break;
                 }
             }
-            if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070))) SetNativeActionAt40FAC0(0);
-            if ((reinterpret_cast<signed short&>(animationStage))==3 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+            if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(0);
+            if ((animationStage)==3 && (animationFrame)==0) {
                 PrepareActionAt453D40(4);
                 SpawnRawXYAt453C80(0x3C,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
                         facing,1);
@@ -143,12 +143,12 @@
                 SpawnDirectedAt453A70(0x33A,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
                         facing,1);
             }
-            if ((reinterpret_cast<signed short&>(animationStage))==12 && (reinterpret_cast<signed short&>(animationFrame))==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<0) {
+            if ((animationStage)==12 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<0) {
                 SetAuxActionAt40FB40(8);
                 ++reinterpret_cast<signed short&>(scriptCounterF00);
                 break;
             }
-            if ((reinterpret_cast<signed short&>(animationStage))==22 && (reinterpret_cast<signed short&>(animationFrame))==0)
+            if ((animationStage)==22 && (animationFrame)==0)
                 SetAuxActionAt40FB40(20);
             break;
         }

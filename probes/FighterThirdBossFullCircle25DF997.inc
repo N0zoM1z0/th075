@@ -7,18 +7,18 @@
  // Original full 82KB GAME callable remains NONEXACT.
 // F997 real original Japanese 004AC040 state25D full 360-degree 36 shots
 case 0x25D: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         reinterpret_cast<signed short&>(scriptCounterF02)=0;
         velocityX=(velocityX)*g_F972_GravityAt00657F74;
         velocityY=(velocityY)*g_F972_GravityAt00657F74;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))>4)
+    if ((animationStage)>4)
         velocityY=velocityY-field05C;
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(9);
-    if ((reinterpret_cast<signed short&>(animationStage))==4 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==4 && (animationFrame)==0) {
         velocityX=-3.0f;
         velocityY=9.0f;
         field05C=0.7f;

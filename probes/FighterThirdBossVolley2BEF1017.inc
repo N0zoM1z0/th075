@@ -11,26 +11,26 @@
  // and width roles, 125 wrong GPR roles. Whole 82KB NONEXACT.
 // F1017 real original fighter action 2BE.
 case 0x2BE: {
-    if ((reinterpret_cast<signed short&>(animationStage))==0 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==0 && (animationFrame)==0) {
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         field07C=0;
         ResetAt453E20();
-        reinterpret_cast<signed short&>(field080)=99;
+        field080=99;
     }
-    if (y>g_ThresholdAt0065782C && (reinterpret_cast<signed short&>(animationStage))>23) {
+    if (y>g_ThresholdAt0065782C && (animationStage)>23) {
         velocityY=velocityY-field05C;
-        if (y+velocityY<=g_ThresholdAt0065782C && (reinterpret_cast<signed short&>(animationStage))<34) {
+        if (y+velocityY<=g_ThresholdAt0065782C && (animationStage)<34) {
             SetAuxActionAt40FB40(34);
             ResetAt453E20();
             y=0.0f;
             break;
         }
     }
-    if ((reinterpret_cast<signed short&>(animationFrame))==0)
+    if ((animationFrame)==0)
         field07C=0;
-    if (GetNativeActionAt40FA30()==(reinterpret_cast<signed short&>(field070)))
+    if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(0);
-    if ((reinterpret_cast<signed short&>(animationStage))==4 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==4 && (animationFrame)==0) {
         ApplyAt453E80(40);
         PrepareActionAt453D60(0x17);
         field36C=(field36C)-g_ContactProjectionAt00657888;
@@ -39,14 +39,14 @@ case 0x2BE: {
             (*(&y))+g_F1017_StartYAt00658268,
             facing,1);
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==13 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==13 && (animationFrame)==0) {
         PrepareActionAt453D40(7);
         velocityX=0.5f;
         velocityY=1.0f;
         field05C=0.5f;
-        reinterpret_cast<signed short&>(field084)=10;
+        field084=10;
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==15 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==15 && (animationFrame)==0) {
         StartAnimationAt46D000(0xC);
         SpawnFloatXYAt453A70(0x321+(RandAt455580(0,100)>200),
             float((facing)*60)+(x),
@@ -58,7 +58,7 @@ case 0x2BE: {
             facing,1);
         PrepareActionAt453D40(7);
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==17 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==17 && (animationFrame)==0) {
         StartAnimationAt46D000(0xC);
         SpawnFloatXYAt453A70(0x321+(RandAt455580(0,100)>200),
             float((facing)*60)+(x),
@@ -70,7 +70,7 @@ case 0x2BE: {
             facing,1);
         PrepareActionAt453D40(7);
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==19 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==19 && (animationFrame)==0) {
         StartAnimationAt46D000(0xC);
         SpawnFloatXYAt453A70(0x321+(RandAt455580(0,100)>200),
             float((facing)*60)+(x),
@@ -82,7 +82,7 @@ case 0x2BE: {
             facing,1);
         PrepareActionAt453D40(7);
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==21 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==21 && (animationFrame)==0) {
         StartAnimationAt46D000(0xC);
         SpawnFloatXYAt453A70(0x321+(RandAt455580(0,100)>200),
             float((facing)*60)+(x),
@@ -94,7 +94,7 @@ case 0x2BE: {
             facing,1);
         PrepareActionAt453D40(7);
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==23 && (reinterpret_cast<signed short&>(animationFrame))==0) {
+    if ((animationStage)==23 && (animationFrame)==0) {
         StartAnimationAt46D000(0xC);
         SpawnFloatXYAt453A70(0x321+(RandAt455580(0,100)>200),
             float((facing)*60)+(x),
@@ -110,7 +110,7 @@ case 0x2BE: {
             SetAuxActionAt40FB40(15);
         }
     }
-    if ((reinterpret_cast<signed short&>(animationStage))==34 && (reinterpret_cast<signed short&>(animationFrame))==0)
+    if ((animationStage)==34 && (animationFrame)==0)
         SetAuxActionAt40FB40(32);
     break;
 }
