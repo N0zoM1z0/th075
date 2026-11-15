@@ -21,15 +21,18 @@ public:
 
 // Controller binding block embedded at Fighter+0x494. SetBindings copies 40
 // bytes at +4 and clears 28 bytes at +0x2C, so the block spans 0x48 bytes.
+// The 28-byte input state a fighter's bindings keep (the battle scene saves
+// a copy of each side's at +0xA4/+0xC0).
+struct InputState { unsigned long words[7]; };
+
 class InputBindingsF171 {
 public:
     void SetBindings(const void* source);
-    void Render();                        // slot 2 override for every fighter, 00453F70
 
     unsigned char unknown00[0x04];
     signed char device;           // +0x04 joystick index, -1 when absent
     unsigned char bindings[0x2C - 0x05];
-    unsigned char state[0x48 - 0x2C];
+    InputState state;             // +0x2C
 };
 
 // Fighter object shared by both players. Offsets up to 0xF0F are common to
@@ -224,7 +227,10 @@ public:
     TimelineDrawing438D00* field534;    // +0x534
     unsigned char fadeAlpha;            // +0x538
     unsigned char drawMode;             // +0x539
-    unsigned char unknown53A[0x6E4 - 0x53A];
+    signed char quoteLineCount;         // +0x53A lines in the win quote
+    char quoteLines[2][200];            // +0x53B win quote text, one line each
+    signed char quoteBadges[2];         // +0x6CB notice badge shown with each line
+    unsigned char unknown6CD[0x6E4 - 0x6CD];
     signed char sequencePhase;          // +0x6E4
     unsigned char unknown6E5[0x6E6 - 0x6E5];
     signed char noticeState;            // +0x6E6

@@ -1,3 +1,4 @@
+#include "BattleScene.hpp"
 #include "ProgressSelectionKeysF954.hpp"
 #include "ProgressPauseF174.hpp"
 #include "SelectionInput4388D0.hpp"
@@ -9,9 +10,6 @@ extern unsigned char g_RenderByte0067161C;
 
 #define PROGRESS_ARRAY(type, offset) reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + F954_PROGRESS_KEYS(this).fighterAt16AC4 * 0x17F0 + (offset))
 #define SELECTED_VALUE(offset) (*reinterpret_cast<int*>(reinterpret_cast<unsigned char*>(this) + F954_PROGRESS_KEYS(this).fighterAt16AC4 * 0x17F0 + (offset) + F954_PROGRESS_KEYS(this).difficultyAt16AC5 * 0x5FC))
-#define PLAYER(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char**>(reinterpret_cast<unsigned char*>(this) + 0x44)[i] + (offset)))
-#define CONTROL_PLAYER reinterpret_cast<FighterControlCallsF174*>(reinterpret_cast<unsigned char**>(reinterpret_cast<unsigned char*>(this) + 0x44)[i])
-#define BASE_PLAYER reinterpret_cast<Fighter*>(reinterpret_cast<unsigned char**>(reinterpret_cast<unsigned char*>(this) + 0x44)[i])
 #define HELD_BUTTON reinterpret_cast<int*>(reinterpret_cast<unsigned char*>(&g_HeldInputAt00671664) + i * 0x48 + 8)[j]
 
 unsigned int SelectedProgressF174::ReadSelectedWord268(signed char key)
@@ -44,7 +42,7 @@ int SelectedProgressF174::GetSelectedValue12()
     return SELECTED_VALUE(12);
 }
 
-void BattleInputF174::PollPauseShortcut()
+void BattleScene::PollPauseShortcut()
 {
     Input::PollKeyboard();
     Input::PollJoysticks();
@@ -73,17 +71,17 @@ void BattleInputF174::PollPauseShortcut()
     g_RenderByte0067161C = field0A0;
 }
 
-void BattleInputF174::UpdatePlayerEffects()
+void BattleScene::UpdatePlayerEffects()
 {
     int i;
     int j;
     for (i = 0; i < 2; i++) {
-        CONTROL_PLAYER->UpdateControls();
+        reinterpret_cast<FighterControlCallsF174*>(fighters[i])->UpdateControls();
         if (field018 != 1) {
-            PLAYER(int, 0x4E8) = 0;
-            PLAYER(int, 0x4EC) = 0;
-            PLAYER(int, 0x4F0) = 0;
-            BASE_PLAYER->ClearAuxiliaryWords();
+            fighters[i]->inputA = 0;
+            fighters[i]->inputB = 0;
+            fighters[i]->inputC = 0;
+            fighters[i]->ClearAuxiliaryWords();
             if (field018 == 13
                 || field018 == 11
                 || field018 == 10
@@ -92,26 +90,23 @@ void BattleInputF174::UpdatePlayerEffects()
                 || field018 == 0
                 || field018 == 5
                 || field018 == 7) {
-                PLAYER(int, 0x4F4) = 0;
-                PLAYER(int, 0x4DC) = 0;
-                PLAYER(int, 0x4E0) = 0;
-                CONTROL_PLAYER->PackDirectionBits();
-                PLAYER(unsigned char, 0x511) = 0;
+                reinterpret_cast<int&>(fighters[i]->inputD) = 0;
+                fighters[i]->inputX = 0;
+                fighters[i]->inputY = 0;
+                reinterpret_cast<FighterControlCallsF174*>(fighters[i])->PackDirectionBits();
+                fighters[i]->aiCommand = 0;
             }
-            if (PLAYER(unsigned char, 0x511) >= 10
-                || PLAYER(signed char, 0x2CD) != 0)
-                PLAYER(unsigned char, 0x511) = 0;
+            if (fighters[i]->aiCommand >= 10
+                || fighters[i]->field2CD != 0)
+                fighters[i]->aiCommand = 0;
         }
         for (j = 0; j < 5; j++) {
             if (HELD_BUTTON != 0)
-                field10C = 3600;
+                reinterpret_cast<int&>(field10C) = 3600;
         }
     }
 }
 
 #undef HELD_BUTTON
-#undef BASE_PLAYER
-#undef CONTROL_PLAYER
-#undef PLAYER
 #undef SELECTED_VALUE
 #undef PROGRESS_ARRAY

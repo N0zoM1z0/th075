@@ -1,3 +1,4 @@
+#include "BattleScene.hpp"
 #include "FighterRoundOutcomeBytesF992.hpp"
 #include "RoundEndHudF173.hpp"
 #include "CameraUpdate4126C0.hpp"
@@ -6,55 +7,55 @@
 #define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
 #define MODE_VALUES reinterpret_cast<int (*)[15]>(reinterpret_cast<unsigned char*>(this) + 0x16710)
 
-void RoundEndF173::EnterRoundEnd()
+void BattleScene::EnterRoundEnd()
 {
-    if (field044->health <= 0 || field048->health <= 0) {
-        field044->field3A0 = 0;
-        field048->field3A0 = 0;
-        field044->field39C = 0;
-        field048->field39C = 0;
+    if (fighters[0]->health <= 0 || fighters[1]->health <= 0) {
+        fighters[0]->field3A0 = 0;
+        fighters[1]->field3A0 = 0;
+        fighters[0]->field39C = 0;
+        fighters[1]->field39C = 0;
         field01A = 60;
-        if (field044->health <= 0) {
-            if (field048->health <= 0) {
-                field044->field39D = 1;
-                field048->field39D = 1;
-                field018 = 2;
-                F992_OUTCOME(field044).continuationAt3CF = 0;
-                F992_OUTCOME(field048).continuationAt3CF = 0;
-                F992_OUTCOME(field044).outcomeAt3CE.unsignedAt3CE = 1;
-                F992_OUTCOME(field048).outcomeAt3CE.unsignedAt3CE = 1;
-                field00C = 300;
+        if (fighters[0]->health <= 0) {
+            if (fighters[1]->health <= 0) {
+                fighters[0]->field39D = 1;
+                fighters[1]->field39D = 1;
+                reinterpret_cast<unsigned char&>(field018) = 2;
+                F992_OUTCOME(fighters[0]).continuationAt3CF = 0;
+                F992_OUTCOME(fighters[1]).continuationAt3CF = 0;
+                F992_OUTCOME(fighters[0]).outcomeAt3CE.unsignedAt3CE = 1;
+                F992_OUTCOME(fighters[1]).outcomeAt3CE.unsignedAt3CE = 1;
+                reinterpret_cast<int&>(field00C) = 300;
             } else {
-                field044->field39D--;
-                F992_OUTCOME(field044).continuationAt3CF = 0;
-                F992_OUTCOME(field044).outcomeAt3CE.unsignedAt3CE = 1;
-                F992_OUTCOME(field048).outcomeAt3CE.unsignedAt3CE = 0;
+                fighters[0]->field39D--;
+                F992_OUTCOME(fighters[0]).continuationAt3CF = 0;
+                F992_OUTCOME(fighters[0]).outcomeAt3CE.unsignedAt3CE = 1;
+                F992_OUTCOME(fighters[1]).outcomeAt3CE.unsignedAt3CE = 0;
                 field01A = 60;
-                if (field044->field39D != 0) {
-                    field044->recoverableHealth = 10000;
-                    field044->health = 10000;
-                    field018 = 2;
-                    field00C = 300;
+                if (fighters[0]->field39D != 0) {
+                    fighters[0]->recoverableHealth = 10000;
+                    fighters[0]->health = 10000;
+                    reinterpret_cast<unsigned char&>(field018) = 2;
+                    reinterpret_cast<int&>(field00C) = 300;
                 } else {
-                    field05D = 1;
-                    field018 = 3;
-                    field00C = 180;
+                    reinterpret_cast<unsigned char&>(field05D) = 1;
+                    reinterpret_cast<unsigned char&>(field018) = 3;
+                    reinterpret_cast<int&>(field00C) = 180;
                 }
             }
-        } else if (field048->health <= 0) {
-            field048->field39D--;
-            F992_OUTCOME(field048).continuationAt3CF = 0;
-            F992_OUTCOME(field044).outcomeAt3CE.unsignedAt3CE = 0;
-            F992_OUTCOME(field048).outcomeAt3CE.unsignedAt3CE = 1;
-            if (field048->field39D != 0) {
-                field048->recoverableHealth = 10000;
-                field048->health = 10000;
-                field018 = 2;
-                field00C = 300;
+        } else if (fighters[1]->health <= 0) {
+            fighters[1]->field39D--;
+            F992_OUTCOME(fighters[1]).continuationAt3CF = 0;
+            F992_OUTCOME(fighters[0]).outcomeAt3CE.unsignedAt3CE = 0;
+            F992_OUTCOME(fighters[1]).outcomeAt3CE.unsignedAt3CE = 1;
+            if (fighters[1]->field39D != 0) {
+                fighters[1]->recoverableHealth = 10000;
+                fighters[1]->health = 10000;
+                reinterpret_cast<unsigned char&>(field018) = 2;
+                reinterpret_cast<int&>(field00C) = 300;
             } else {
-                field05D = 0;
-                field018 = 3;
-                field00C = 180;
+                reinterpret_cast<unsigned char&>(field05D) = 0;
+                reinterpret_cast<unsigned char&>(field018) = 3;
+                reinterpret_cast<int&>(field00C) = 180;
             }
         }
     }

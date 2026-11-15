@@ -74,10 +74,6 @@ public:
     void ClearNoticeTransition();
 };
 
-class BattleHud {
-public:
-    void DrawSelectedNotice();
-};
 
 
 class AuxEffect {

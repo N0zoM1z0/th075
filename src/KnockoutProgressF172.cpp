@@ -33,82 +33,82 @@ void CardProgressF172::SetCardValue(signed char key, int value)
     CARD_ARRAY(int, 0x10)[key] = value;
 }
 
-void KnockoutResolutionF172::ResolveKnockout()
+void BattleScene::ResolveKnockout()
 {
-    if (field048->health <= 0) {
-        F992_OUTCOME(field044).outcomeAt3CE.unsignedAt3CE = 0;
-        F992_OUTCOME(field048).outcomeAt3CE.unsignedAt3CE = 1;
-        if (reinterpret_cast<int&>(field048->field3A4) > 0) {
+    if (fighters[1]->health <= 0) {
+        F992_OUTCOME(fighters[0]).outcomeAt3CE.unsignedAt3CE = 0;
+        F992_OUTCOME(fighters[1]).outcomeAt3CE.unsignedAt3CE = 1;
+        if (reinterpret_cast<int&>(fighters[1]->field3A4) > 0) {
             if (g_FrameClockMode == 1) {
-                if (field044->field464 != 0)
+                if (fighters[0]->field464 != 0)
                     CARD_RECORDS->MarkCardFlag(
-                        reinterpret_cast<signed char*>(field048->field384)[field048->field39D]);
+                        reinterpret_cast<signed char*>(fighters[1]->field384)[fighters[1]->field39D]);
                 CARD_RECORDS->IncrementCardCounter(
-                    reinterpret_cast<signed char*>(field048->field384)[field048->field39D]);
-                if (reinterpret_cast<int&>(field048->field3A4) > CARD_RECORDS->GetCardValue(
-                        reinterpret_cast<signed char*>(field048->field384)[field048->field39D])) {
+                    reinterpret_cast<signed char*>(fighters[1]->field384)[fighters[1]->field39D]);
+                if (reinterpret_cast<int&>(fighters[1]->field3A4) > CARD_RECORDS->GetCardValue(
+                        reinterpret_cast<signed char*>(fighters[1]->field384)[fighters[1]->field39D])) {
                     CARD_RECORDS->SetCardValue(
-                        reinterpret_cast<signed char*>(field048->field384)[field048->field39D],
-                        reinterpret_cast<int&>(field048->field3A4));
+                        reinterpret_cast<signed char*>(fighters[1]->field384)[fighters[1]->field39D],
+                        reinterpret_cast<int&>(fighters[1]->field3A4));
                 }
             }
-            g_KnockoutAccumulationAt0067160C += field048->field3A8;
-            reinterpret_cast<unsigned long&>(field044->score) = reinterpret_cast<unsigned long&>(field044->score) + reinterpret_cast<int&>(field048->field3A4);
-            if (reinterpret_cast<unsigned long&>(field044->score) > g_MaxCombatScore)
-                g_MaxCombatScore = reinterpret_cast<unsigned long&>(field044->score);
+            g_KnockoutAccumulationAt0067160C += fighters[1]->field3A8;
+            reinterpret_cast<unsigned long&>(fighters[0]->score) = reinterpret_cast<unsigned long&>(fighters[0]->score) + reinterpret_cast<int&>(fighters[1]->field3A4);
+            if (reinterpret_cast<unsigned long&>(fighters[0]->score) > g_MaxCombatScore)
+                g_MaxCombatScore = reinterpret_cast<unsigned long&>(fighters[0]->score);
             field06C = 120;
-            field068 = reinterpret_cast<int&>(field048->field3A4);
-            reinterpret_cast<int&>(field048->field3A4) = 0;
+            field068 = reinterpret_cast<int&>(fighters[1]->field3A4);
+            reinterpret_cast<int&>(fighters[1]->field3A4) = 0;
         }
-        if (field044->field3A0 > 0)
-            field044->field36C = 0.0f;
-        field044->field3A0 = 0;
-        field048->field3A0 = 0;
-        field044->field39C = 0;
-        field048->field39C = 0;
-        field048->field39D--;
-        F992_OUTCOME(field048).continuationAt3CF = 0;
-        field048->recoverableHealth = 0;
-        field044->field464 = 1;
-        if (field044->health <= 0)
-            field044->health = 1;
-        if (field048->field39D > 0) {
-            field018 = 9;
-            field00C = 147;
-            if (reinterpret_cast<signed char*>(field048->field32A + 1)[field048->field39D] == 0) {
-                field048->health = field048->healthLimits[field048->field39D];
-                field048->recoverableHealth = field048->healthLimits[field048->field39D];
-                reinterpret_cast<int&>(field048->field3A8) = 0;
+        if (fighters[0]->field3A0 > 0)
+            fighters[0]->field36C = 0.0f;
+        fighters[0]->field3A0 = 0;
+        fighters[1]->field3A0 = 0;
+        fighters[0]->field39C = 0;
+        fighters[1]->field39C = 0;
+        fighters[1]->field39D--;
+        F992_OUTCOME(fighters[1]).continuationAt3CF = 0;
+        fighters[1]->recoverableHealth = 0;
+        fighters[0]->field464 = 1;
+        if (fighters[0]->health <= 0)
+            fighters[0]->health = 1;
+        if (fighters[1]->field39D > 0) {
+            reinterpret_cast<unsigned char&>(field018) = 9;
+            reinterpret_cast<int&>(field00C) = 147;
+            if (reinterpret_cast<signed char*>(fighters[1]->field32A + 1)[fighters[1]->field39D] == 0) {
+                fighters[1]->health = fighters[1]->healthLimits[fighters[1]->field39D];
+                fighters[1]->recoverableHealth = fighters[1]->healthLimits[fighters[1]->field39D];
+                reinterpret_cast<int&>(fighters[1]->field3A8) = 0;
             }
         } else {
-            field018 = 11;
-            field00C = 180;
+            reinterpret_cast<unsigned char&>(field018) = 11;
+            reinterpret_cast<int&>(field00C) = 180;
             field01A = 60;
         }
-    } else if (field044->health <= 0) {
-        field048->recoverableHealth = field048->healthLimits[field048->field39D];
-        field044->field3A0 = 0;
-        field044->field39C = 0;
-        field044->field39D--;
-        F992_OUTCOME(field044).outcomeAt3CE.unsignedAt3CE = 1;
-        F992_OUTCOME(field048).outcomeAt3CE.unsignedAt3CE = 0;
-        F992_OUTCOME(field044).continuationAt3CF = 0;
-        field044->field464 = 0;
-        if (field044->field39D != 0) {
-            field044->recoverableHealth = 10000;
-            field044->health = 10000;
-            field018 = 10;
-            field00C = 300;
+    } else if (fighters[0]->health <= 0) {
+        fighters[1]->recoverableHealth = fighters[1]->healthLimits[fighters[1]->field39D];
+        fighters[0]->field3A0 = 0;
+        fighters[0]->field39C = 0;
+        fighters[0]->field39D--;
+        F992_OUTCOME(fighters[0]).outcomeAt3CE.unsignedAt3CE = 1;
+        F992_OUTCOME(fighters[1]).outcomeAt3CE.unsignedAt3CE = 0;
+        F992_OUTCOME(fighters[0]).continuationAt3CF = 0;
+        fighters[0]->field464 = 0;
+        if (fighters[0]->field39D != 0) {
+            fighters[0]->recoverableHealth = 10000;
+            fighters[0]->health = 10000;
+            reinterpret_cast<unsigned char&>(field018) = 10;
+            reinterpret_cast<int&>(field00C) = 300;
             field01A = 60;
         } else if (static_cast<signed char>(g_SequenceCounterAt00671622) > 0) {
             g_SequenceCounterAt00671622--;
-            field044->field39D = 2;
-            field018 = 10;
-            field00C = 300;
+            fighters[0]->field39D = 2;
+            reinterpret_cast<unsigned char&>(field018) = 10;
+            reinterpret_cast<int&>(field00C) = 300;
             field01A = 60;
         } else {
-            field018 = 11;
-            field00C = 180;
+            reinterpret_cast<unsigned char&>(field018) = 11;
+            reinterpret_cast<int&>(field00C) = 180;
             field01A = 60;
         }
     }

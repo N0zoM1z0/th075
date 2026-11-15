@@ -1,15 +1,13 @@
+#include "BattleScene.hpp"
 #include "FighterFadeBorrowedF986.hpp"
 #include "BattleRender43D9D0.hpp"
 
 #define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
-#define ACTOR(offset) FIELD(RenderActor43D9D0*, offset)
 #define ACTOR_FIELD(type, actor, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(FIELD(void*, actor)) + (offset)))
-#define STYLE field008
-#define LISTS(actor) ACTOR_FIELD(RenderLists43D9D0*, actor, 0x2EC)
-#define SEQUENCE(actor) ACTOR_FIELD(RenderSequence43D9D0*, actor, 0x480)
+#define STYLE reinterpret_cast<RenderStyle43D9D0*>(textures)
 #define AUX reinterpret_cast<RenderAux43D9D0*>(&g_CombatEffects)
 
-void BattleRender43D9D0::RenderFrame() {
+void BattleScene::Render() {
     if (field0A0 == 0 && field0A1 == 0) {
         CameraUpdate4126C0::Advance();
         if (field09C < 1.0f) {
@@ -38,43 +36,43 @@ void BattleRender43D9D0::RenderFrame() {
             g_DrawDispatcher->Slot4();
             STYLE->SetDepthMode(0);
             STYLE->SetDepthMode(3);
-            LISTS(0x44)->DispatchFourLists();
-            LISTS(0x48)->DispatchFourLists();
-            ACTOR(0x44)->DrawMirrored();
-            ACTOR(0x48)->DrawMirrored();
+            reinterpret_cast<RenderLists43D9D0*>(fighters[0]->field2EC)->DispatchFourLists();
+            reinterpret_cast<RenderLists43D9D0*>(fighters[1]->field2EC)->DispatchFourLists();
+            reinterpret_cast<RenderActor43D9D0*>(fighters[0])->DrawMirrored();
+            reinterpret_cast<RenderActor43D9D0*>(fighters[1])->DrawMirrored();
             STYLE->SetColorMultiplier(1.0f);
             g_DrawDispatcher->Slot3();
             STYLE->SetDepthMode(0);
             STYLE->SetDepthMode(3);
-            LISTS(0x44)->DispatchSelected(2);
-            LISTS(0x48)->DispatchSelected(2);
+            reinterpret_cast<RenderLists43D9D0*>(fighters[0]->field2EC)->DispatchSelected(2);
+            reinterpret_cast<RenderLists43D9D0*>(fighters[1]->field2EC)->DispatchSelected(2);
             STYLE->SetDepthMode(1);
             STYLE->SetDepthMode(2);
-            SEQUENCE(0x44)->RenderElements();
-            SEQUENCE(0x48)->RenderElements();
+            reinterpret_cast<RenderSequence43D9D0*>(fighters[0]->field480)->RenderElements();
+            reinterpret_cast<RenderSequence43D9D0*>(fighters[1]->field480)->RenderElements();
             AUX->DispatchSelected(0);
-            LISTS(0x44)->DispatchSelected(0);
-            LISTS(0x48)->DispatchSelected(0);
+            reinterpret_cast<RenderLists43D9D0*>(fighters[0]->field2EC)->DispatchSelected(0);
+            reinterpret_cast<RenderLists43D9D0*>(fighters[1]->field2EC)->DispatchSelected(0);
             if (g_RenderOrderAt0068C860 != 0) {
-                ACTOR(0x44)->DrawMain();
-                ACTOR(0x48)->DrawMain();
-                ACTOR(0x44)->DrawAuxiliary();
-                ACTOR(0x48)->DrawAuxiliary();
+                reinterpret_cast<RenderActor43D9D0*>(fighters[0])->DrawMain();
+                reinterpret_cast<RenderActor43D9D0*>(fighters[1])->DrawMain();
+                reinterpret_cast<RenderActor43D9D0*>(fighters[0])->DrawAuxiliary();
+                reinterpret_cast<RenderActor43D9D0*>(fighters[1])->DrawAuxiliary();
             } else {
-                ACTOR(0x48)->DrawMain();
-                ACTOR(0x44)->DrawMain();
-                ACTOR(0x48)->DrawAuxiliary();
-                ACTOR(0x44)->DrawAuxiliary();
+                reinterpret_cast<RenderActor43D9D0*>(fighters[1])->DrawMain();
+                reinterpret_cast<RenderActor43D9D0*>(fighters[0])->DrawMain();
+                reinterpret_cast<RenderActor43D9D0*>(fighters[1])->DrawAuxiliary();
+                reinterpret_cast<RenderActor43D9D0*>(fighters[0])->DrawAuxiliary();
             }
-            LISTS(0x44)->DispatchSelected(1);
-            LISTS(0x48)->DispatchSelected(1);
+            reinterpret_cast<RenderLists43D9D0*>(fighters[0]->field2EC)->DispatchSelected(1);
+            reinterpret_cast<RenderLists43D9D0*>(fighters[1]->field2EC)->DispatchSelected(1);
             AUX->DispatchSelected(1);
             STYLE->SetColorMultiplier(field09C);
             g_DrawDispatcher->Slot2();
             STYLE->SetColorMultiplier(1.0f);
             STYLE->SetDepthMode(0);
             if (g_RenderDamageFlashAt00671428)
-                DrawDamageFlash();
+                RenderDamageFlash();
         }
         Graphics::SetDrawTransform(1.0f, 0.0f, 0.0f);
         if (g_StateFadeAlpha > 0) {
@@ -85,30 +83,30 @@ void BattleRender43D9D0::RenderFrame() {
                 (static_cast<D3DCOLOR>(g_StateFadeAlpha) << 24) | g_StateResetCounter);
         }
         RenderHud();
-        LISTS(0x44)->DispatchSelected(3);
-        LISTS(0x48)->DispatchSelected(3);
-        if (F986_FADE(field044).fadeAlphaAt538 > 0)
-            ACTOR(0x44)->RenderFadeOverlay();
-        if (F986_FADE(field048).fadeAlphaAt538 > 0)
-            ACTOR(0x48)->RenderFadeOverlay();
-        RenderStatusEffects();
+        reinterpret_cast<RenderLists43D9D0*>(fighters[0]->field2EC)->DispatchSelected(3);
+        reinterpret_cast<RenderLists43D9D0*>(fighters[1]->field2EC)->DispatchSelected(3);
+        if (F986_FADE(fighters[0]).fadeAlphaAt538 > 0)
+            reinterpret_cast<RenderActor43D9D0*>(fighters[0])->RenderFadeOverlay();
+        if (F986_FADE(fighters[1]).fadeAlphaAt538 > 0)
+            reinterpret_cast<RenderActor43D9D0*>(fighters[1])->RenderFadeOverlay();
+        RenderStatus();
         if (field018 == 5) {
-            reinterpret_cast<BattleHud*>(this)->DrawSelectedNotice();
+            DrawSelectedNotice();
         } else if (field018 == 7) {
             if (ACTOR_FIELD(signed char, 0x44, 0x6E8) == 0) {
                 if (ACTOR_FIELD(signed char, 0x44, 0x6E7) >= 0)
-                    ACTOR(0x44)->RenderSideEffect();
+                    reinterpret_cast<RenderActor43D9D0*>(fighters[0])->RenderSideEffect();
                 if (ACTOR_FIELD(signed char, 0x48, 0x6E7) >= 0)
-                    ACTOR(0x48)->RenderSideEffect();
+                    reinterpret_cast<RenderActor43D9D0*>(fighters[1])->RenderSideEffect();
             } else {
                 if (ACTOR_FIELD(signed char, 0x48, 0x6E7) >= 0)
-                    ACTOR(0x48)->RenderSideEffect();
+                    reinterpret_cast<RenderActor43D9D0*>(fighters[1])->RenderSideEffect();
                 if (ACTOR_FIELD(signed char, 0x44, 0x6E7) >= 0)
-                    ACTOR(0x44)->RenderSideEffect();
+                    reinterpret_cast<RenderActor43D9D0*>(fighters[0])->RenderSideEffect();
             }
             if (ACTOR_FIELD(unsigned char, 0x44, 0x6EE))
                 g_TextRenderer->DrawBox();
-            ACTOR(0x44)->RenderStage(g_NoticeSelection);
+            reinterpret_cast<RenderActor43D9D0*>(fighters[0])->RenderStage(g_NoticeSelection);
         }
         if (field060 > 0)
             RenderOverlayTimeline();
@@ -129,9 +127,6 @@ void BattleRender43D9D0::RenderFrame() {
 }
 
 #undef AUX
-#undef SEQUENCE
-#undef LISTS
 #undef STYLE
 #undef ACTOR_FIELD
-#undef ACTOR
 #undef FIELD

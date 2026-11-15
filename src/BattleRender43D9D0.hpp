@@ -39,37 +39,6 @@ public:
     void RenderSideEffect();
     void RenderFadeOverlay();
 };
-class BattleRender43D9D0 {
-public:
-    void RenderFrame();
-    void RenderHud();
-    void DrawDamageFlash();
-    void RenderStatusEffects();
-    void RenderEndOverlay();
-    void RenderRoundBanner();
-    void RenderOverlayTimeline();
-public:
-    // Observed fields; meanings not yet known.
-    unsigned char unknown000[0x008 - 0x000];
-    RenderStyle43D9D0* field008;
-    unsigned char unknown00C[0x018 - 0x00C];
-    signed char field018;
-    unsigned char unknown019[0x020 - 0x019];
-    int field020;
-    int field024;
-    unsigned long field028;
-    unsigned char unknown02C[0x044 - 0x02C];
-    void* field044;
-    void* field048;
-    unsigned char unknown04C[0x060 - 0x04C];
-    int field060;
-    unsigned char unknown064[0x06C - 0x064];
-    int field06C;
-    unsigned char unknown070[0x09C - 0x070];
-    float field09C;
-    unsigned char field0A0;
-    unsigned char field0A1;
-};
 extern unsigned char g_FramePresentToggle;
 extern unsigned char g_StateFadeAlpha;
 extern int g_StateResetCounter;

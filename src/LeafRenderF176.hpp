@@ -1,15 +1,6 @@
 #pragma once
 
 // Call-only views; never instantiate or embed these partial owners.
-class HudNoticeF176 {
-public:
-    void SetNoticeState(unsigned char state);
-public:
-    // Observed fields; meanings not yet known.
-    unsigned char unknown000[0x060 - 0x000];
-    int field060;
-    unsigned char field064;
-};
 class AuxiliaryForwardersF176 {
 public:
     // The sixth incoming dword slot is not read; native RET24 still consumes it.

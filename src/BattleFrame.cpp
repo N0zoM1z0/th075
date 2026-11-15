@@ -5,44 +5,44 @@
 #define FIELD_AT(type, object, offset) (*reinterpret_cast<type *>(reinterpret_cast<unsigned char *>(object) + offset))
 #define PLAYER(offset) FIELD_AT(Fighter *, this, offset)
 #define EFFECTS(offset) FIELD_AT(FrameEffectOwner *, PLAYER(offset), 0x2EC)
-short BattleFrame::UpdateFrame()
+short BattleScene::Update()
 {
     PollPauseShortcut();
-    OnFrameStart();
-    if (!FIELD_AT(unsigned char, this, 0xA0) && !FIELD_AT(unsigned char, this, 0xA1)) {
-        ++FIELD_AT(int, this, 0x10);
-        if (g_FrameClockMode == 2 || g_FrameClockMode == 1) ++FIELD_AT(int, this, 0x14);
+    Render();
+    if (!field0A0 && !field0A1) {
+        ++reinterpret_cast<int&>(field010);
+        if (g_FrameClockMode == 2 || g_FrameClockMode == 1) ++field014;
         UpdatePlayerEffects();
         ApplySequence();
-        if (FIELD_AT(short, this, 0x1A) <= 0) {
-            PLAYER(0x44)->AdvanceGuardedState();
-            PLAYER(0x48)->AdvanceGuardedState();
-            if (FIELD_AT(signed char, this, 0x18) == 7) {
-                PLAYER(0x44)->AdvanceSequence();
-                PLAYER(0x44)->Advance();
-                PLAYER(0x48)->Advance();
+        if (field01A <= 0) {
+            fighters[0]->AdvanceGuardedState();
+            fighters[1]->AdvanceGuardedState();
+            if (field018 == 7) {
+                fighters[0]->AdvanceSequence();
+                fighters[0]->Advance();
+                fighters[1]->Advance();
                 EFFECTS(0x44)->AdvanceAll();
                 EFFECTS(0x48)->AdvanceAll();
                 ResolveBodySeparation();
             } else {
-                PLAYER(0x44)->Advance();
-                PLAYER(0x48)->Advance();
+                fighters[0]->Advance();
+                fighters[1]->Advance();
                 EFFECTS(0x44)->AdvanceAll();
                 EFFECTS(0x48)->AdvanceAll();
-                if (FIELD_AT(signed char, this, 0x18) != 4 && FIELD_AT(signed char, this, 0x18) != 9 && FIELD_AT(signed char, this, 0x18) != 0)
+                if (field018 != 4 && field018 != 9 && field018 != 0)
                     reinterpret_cast<BattleScene *>(this)->ResolveActiveCollisions();
                 ResolveBodySeparation();
                 if (g_CombatMode != 5) ResolveRoundEndMode();
             }
-            PLAYER(0x44)->AdvancePosition();
-            PLAYER(0x48)->AdvancePosition();
+            fighters[0]->AdvancePosition();
+            fighters[1]->AdvancePosition();
             UpdatePlayerCounters();
-            PLAYER(0x44)->AdvanceAuxiliary();
-            PLAYER(0x48)->AdvanceAuxiliary();
+            fighters[0]->AdvanceAuxiliary();
+            fighters[1]->AdvanceAuxiliary();
             reinterpret_cast<FrameAuxEffects *>(&g_CombatEffects)->AdvanceAndPrune();
             g_DrawDispatcher->Slot1();
         } else {
-            --FIELD_AT(short, this, 0x1A);
+            --field01A;
         }
         if (g_FramePresentToggle) Present();
         if (g_FramePresentEveryTick) g_FramePresentToggle = 1;
@@ -50,40 +50,40 @@ short BattleFrame::UpdateFrame()
         return AdvanceState();
     } else {
         HandlePauseMenu();
-        if (FIELD_AT(unsigned char, this, 0xA0)) {
-            if (FIELD_AT(unsigned char, this, 0xA1) < 128) FIELD_AT(unsigned char, this, 0xA1) += 5;
+        if (field0A0) {
+            if (field0A1 < 128) field0A1 += 5;
         } else {
-            if (FIELD_AT(unsigned char, this, 0xA1) > 0) FIELD_AT(unsigned char, this, 0xA1) -= 5;
+            if (field0A1 > 0) field0A1 -= 5;
         }
         if (g_FramePresentToggle) Present();
         if (g_FramePresentEveryTick) g_FramePresentToggle = 1;
         else g_FramePresentToggle = static_cast<int>(!g_FramePresentToggle);
-        if (!FIELD_AT(unsigned char, this, 0xA0) && !FIELD_AT(unsigned char, this, 0xA1)) {
-            FIELD_AT(FrameInputSnapshot, PLAYER(0x44), 0x4C0) = FIELD_AT(FrameInputSnapshot, this, 0xA4);
-            FIELD_AT(FrameInputSnapshot, PLAYER(0x48), 0x4C0) = FIELD_AT(FrameInputSnapshot, this, 0xC0);
+        if (!field0A0 && !field0A1) {
+            fighters[0]->inputBindings.state = inputSnapshots[0];
+            fighters[1]->inputBindings.state = inputSnapshots[1];
         }
         return 0;
     }
 }
 
-void BattleFrame::Present()
+void BattleScene::Present()
 {
     Graphics::Present();
 }
-void BattleFrame::ResolveRoundEndMode()
+void BattleScene::ResolveRoundEndMode()
 {
-    if (FIELD_AT(signed char, this, 0x18) != 1) return;
-    if (g_CombatMode == 3) ResolveSpecialRoundEnd();
-    else ResolveNormalRoundEnd();
+    if (field018 != 1) return;
+    if (g_CombatMode == 3) ResolveKnockout();
+    else EnterRoundEnd();
 }
-void BattleFrame::UpdatePlayerCounters()
+void BattleScene::UpdatePlayerCounters()
 {
-    PLAYER(0x44)->UpdateCounters();
-    PLAYER(0x48)->UpdateCounters();
-    PLAYER(0x44)->field3BA = PLAYER(0x44)->field3B8;
-    PLAYER(0x48)->field3BA = PLAYER(0x48)->field3B8;
-    if (PLAYER(0x44)->field3B8 > 0) --PLAYER(0x44)->field3B8;
-    if (PLAYER(0x48)->field3B8 > 0) --PLAYER(0x48)->field3B8;
+    fighters[0]->UpdateCounters();
+    fighters[1]->UpdateCounters();
+    fighters[0]->field3BA = fighters[0]->field3B8;
+    fighters[1]->field3BA = fighters[1]->field3B8;
+    if (fighters[0]->field3B8 > 0) --fighters[0]->field3B8;
+    if (fighters[1]->field3B8 > 0) --fighters[1]->field3B8;
 }
 void Fighter::AdvanceGuardedState()
 {
@@ -118,7 +118,7 @@ signed char Fighter::CheckHorizontalLimits()
 }
 void Fighter::ChooseFrameAction()
 {
-    if (FIELD_AT(unsigned long, frameInfo, 0x3C) & 0x100000) return;
+    if (frameInfo->flags & 0x100000) return;
     if (health <= 0) return;
     if (flashGauge > 0) {
         if (y > 0.0f) --flashGauge;

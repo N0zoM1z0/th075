@@ -1,3 +1,4 @@
+#include "BattleScene.hpp"
 #include "FighterNoticeBorrowedF960.hpp"
 #include "GameLeafHelpers.hpp"
 
@@ -23,17 +24,9 @@ u8 TextRasterizer::DecodeHexDigit(u8 value)
     return 0;
 }
 
-void BattleHud::DrawSelectedNotice()
+void BattleScene::DrawSelectedNotice()
 {
-    (*reinterpret_cast<Fighter **>(
-        reinterpret_cast<u8 *>(this) + 0x44 +
-        *(reinterpret_cast<signed char *>(this) + 0x5D) * 4))->DrawFacingSprite(
-        F960_BADGE(*reinterpret_cast<Fighter **>(
-                reinterpret_cast<u8 *>(this) + 0x44 +
-                *(reinterpret_cast<signed char *>(this) + 0x5D) * 4)).noticeAt6E7,
-        *reinterpret_cast<float *>(reinterpret_cast<u8 *>(this) + 0x90),
-        0,
-        -1);
+    fighters[field05D]->DrawFacingSprite(fighters[field05D]->noticeBadge, field090, 0, -1);
     g_TextRenderer->DrawBox();
 }
 

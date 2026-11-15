@@ -1,14 +1,13 @@
+#include "BattleScene.hpp"
 #include "BattleEndOverlay441910.hpp"
 
-#define LEFT(type, offset) (*reinterpret_cast<type*>(field044 + (offset)))
-#define RIGHT(type, offset) (*reinterpret_cast<type*>(field048 + (offset)))
-#define STYLE reinterpret_cast<RenderStyle43D9D0*>(field008)
-#define DRAWING reinterpret_cast<RenderDrawing5E68C0*>(field008)
-#define LEFT_DRAWING reinterpret_cast<RenderDrawing5E68C0*>(LEFT(void*, 0x534))
-#define RIGHT_DRAWING reinterpret_cast<RenderDrawing5E68C0*>(RIGHT(void*, 0x534))
+#define STYLE reinterpret_cast<RenderStyle43D9D0*>(textures)
+#define DRAWING reinterpret_cast<RenderDrawing5E68C0*>(textures)
+#define LEFT_DRAWING reinterpret_cast<RenderDrawing5E68C0*>(fighters[0]->field534)
+#define RIGHT_DRAWING reinterpret_cast<RenderDrawing5E68C0*>(fighters[1]->field534)
 #define QUAD reinterpret_cast<HudQuadOperations43E040*>(&packet)
 
-void BattleEndOverlay441910::RenderEndOverlay() {
+void BattleScene::RenderEndOverlay() {
     if (g_CombatMode == 5) {
         RenderModeFive();
     } else {
@@ -25,17 +24,17 @@ void BattleEndOverlay441910::RenderEndOverlay() {
             if (g_FrameClockMode != 2) {
                 SetRect(&rect, 0, 0, 256, 256);
                 packet.BuildQuadFromRect(&rect);
-                if (LEFT(signed char, 0x2CD) == 0 && RIGHT(signed char, 0x2CD) == 0) {
+                if (fighters[0]->field2CD == 0 && fighters[1]->field2CD == 0) {
                     QUAD->Translate(32.0f, 280.0f, 0.0f);
-                    LEFT_DRAWING->DrawQuad(LEFT(signed char, 0x532) - 1, &packet, &rect, 0xFFFFFFFF);
+                    LEFT_DRAWING->DrawQuad(fighters[0]->field532 - 1, &packet, &rect, 0xFFFFFFFF);
                     QUAD->Translate(320.0f, 0.0f, 0.0f);
-                    RIGHT_DRAWING->DrawQuad(RIGHT(signed char, 0x532) - 1, &packet, &rect, 0xFFFFFFFF);
-                } else if (LEFT(signed char, 0x2CD) != 0) {
+                    RIGHT_DRAWING->DrawQuad(fighters[1]->field532 - 1, &packet, &rect, 0xFFFFFFFF);
+                } else if (fighters[0]->field2CD != 0) {
                     QUAD->Translate(192.0f, 280.0f, 0.0f);
-                    RIGHT_DRAWING->DrawQuad(RIGHT(signed char, 0x532) - 1, &packet, &rect, 0xFFFFFFFF);
+                    RIGHT_DRAWING->DrawQuad(fighters[1]->field532 - 1, &packet, &rect, 0xFFFFFFFF);
                 } else {
                     QUAD->Translate(192.0f, 280.0f, 0.0f);
-                    LEFT_DRAWING->DrawQuad(LEFT(signed char, 0x532) - 1, &packet, &rect, 0xFFFFFFFF);
+                    LEFT_DRAWING->DrawQuad(fighters[0]->field532 - 1, &packet, &rect, 0xFFFFFFFF);
                 }
             }
             if (field018 == 12 && g_StateContinueCount > 0) {
@@ -48,18 +47,18 @@ void BattleEndOverlay441910::RenderEndOverlay() {
             }
             if (field018 != 5 &&
                 (field018 != 12 || g_StateContinueCount != 0)) {
-                SetRect(&rect, 384, (field118 != 0) * 32 + 128,
-                    512, (field118 != 0) * 32 + 160);
+                SetRect(&rect, 384, (reinterpret_cast<signed char&>(field118) != 0) * 32 + 128,
+                    512, (reinterpret_cast<signed char&>(field118) != 0) * 32 + 160);
                 packet.BuildQuad(256.0f, 140.0f, 384.0f, 172.0f);
                 DRAWING->DrawQuad(0, &packet, &rect, 0xFFFFFFFF);
             }
-            SetRect(&rect, 256, (field118 != 1) * 32 + 128,
-                384, (field118 != 1) * 32 + 160);
+            SetRect(&rect, 256, (reinterpret_cast<signed char&>(field118) != 1) * 32 + 128,
+                384, (reinterpret_cast<signed char&>(field118) != 1) * 32 + 160);
             packet.BuildQuad(256.0f, 170.0f, 384.0f, 202.0f);
             DRAWING->DrawQuad(0, &packet, &rect, 0xFFFFFFFF);
             if (g_FrameClockMode != 2 && g_EndOverlayFlagAt00671624 == 0 && field018 != 7) {
-                SetRect(&rect, 0, (field118 != 2) * 32 + 128,
-                    256, (field118 != 2) * 32 + 155);
+                SetRect(&rect, 0, (reinterpret_cast<signed char&>(field118) != 2) * 32 + 128,
+                    256, (reinterpret_cast<signed char&>(field118) != 2) * 32 + 155);
                 packet.BuildQuad(192.0f, 200.0f, 448.0f, 227.0f);
                 DRAWING->DrawQuad(0, &packet, &rect, 0xFFFFFFFF);
             }
@@ -73,5 +72,3 @@ void BattleEndOverlay441910::RenderEndOverlay() {
 #undef LEFT_DRAWING
 #undef DRAWING
 #undef STYLE
-#undef RIGHT
-#undef LEFT

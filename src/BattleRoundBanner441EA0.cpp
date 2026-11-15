@@ -1,8 +1,9 @@
+#include "BattleScene.hpp"
 #include "BattleRoundBanner441EA0.hpp"
 
-#define DRAWING reinterpret_cast<RenderDrawing5E68C0*>(field008)
+#define DRAWING reinterpret_cast<RenderDrawing5E68C0*>(textures)
 
-void BattleRoundBanner441EA0::RenderRoundBanner() {
+void BattleScene::RenderRoundBanner() {
     unsigned char opacity;
     RenderQuadPacket5E68C0 packet;
     opacity = 255;

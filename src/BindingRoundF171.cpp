@@ -14,7 +14,7 @@ void InputBindingsF171::SetBindings(const void* source)
         memset(&device, 0, 40);
         device = -1;
     }
-    memset(state, 0, 28);
+    memset(&state, 0, 28);
 }
 
 void Fighter::SetBindings(const void* source)

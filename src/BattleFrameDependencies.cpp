@@ -1,21 +1,18 @@
 #include "BattleScene.hpp"
 #include "BattleFrameDependencies.hpp"
 #include "BattleStatusFloatPairF1096.hpp"
-#include "StateOverlayFloatWindowF1106.hpp"
 #define FIELD(type, object, offset) (*reinterpret_cast<type *>(reinterpret_cast<unsigned char *>(object) + offset))
-#define PLAYER(offset) FIELD(Fighter *, this, offset)
-#define ACTOR(type, offset, field) FIELD(type, PLAYER(offset), field)
 #define COLLISION reinterpret_cast<BattleScene *>(this)
-void BattleFrame::ResolveBodySeparation()
+void BattleScene::ResolveBodySeparation()
 {
-    float vx1 = PLAYER(0x44)->velocityX;
-    float secondSpeed = PLAYER(0x48)->velocityX;
+    float vx1 = fighters[0]->velocityX;
+    float secondSpeed = fighters[1]->velocityX;
     float meanSpeed;
     signed char boundary[2];
     RECT firstBounds, bounds2;
     int separationDistance;
-    boundary[0] = PLAYER(0x44)->CheckHorizontalLimits();
-    boundary[1] = PLAYER(0x48)->CheckHorizontalLimits();
+    boundary[0] = fighters[0]->CheckHorizontalLimits();
+    boundary[1] = fighters[1]->CheckHorizontalLimits();
     if (g_RightBoundaryOwner == 0 && boundary[0] != -1) g_RightBoundaryOwner = -1;
     if (g_RightBoundaryOwner == 1 && boundary[1] != -1) g_RightBoundaryOwner = -1;
     if (g_LeftBoundaryOwner == 0 && boundary[0] != 1) g_LeftBoundaryOwner = -1;
@@ -24,57 +21,57 @@ void BattleFrame::ResolveBodySeparation()
     else if (boundary[1] == -1 && g_RightBoundaryOwner < 0) g_RightBoundaryOwner = 1;
     if (boundary[0] == 1 && g_LeftBoundaryOwner < 0) g_LeftBoundaryOwner = 0;
     else if (boundary[1] == 1 && g_LeftBoundaryOwner < 0) g_LeftBoundaryOwner = 1;
-    ACTOR(float, 0x44, 0x488) = 0.0f;
-    ACTOR(float, 0x48, 0x488) = 0.0f;
-    COLLISION->TransformBounds(&firstBounds, reinterpret_cast<const RECT *>(reinterpret_cast<unsigned char *>(ACTOR(void *, 0x44, 0x74)) + 0x44), reinterpret_cast<Actor *>(PLAYER(0x44)));
-    COLLISION->TransformBounds(&bounds2, reinterpret_cast<const RECT *>(reinterpret_cast<unsigned char *>(ACTOR(void *, 0x48, 0x74)) + 0x44), reinterpret_cast<Actor *>(PLAYER(0x48)));
+    fighters[0]->field488 = 0.0f;
+    fighters[1]->field488 = 0.0f;
+    COLLISION->TransformBounds(&firstBounds, reinterpret_cast<const RECT *>(reinterpret_cast<unsigned char *>(fighters[0]->frameInfo) + 0x44), reinterpret_cast<Actor *>(fighters[0]));
+    COLLISION->TransformBounds(&bounds2, reinterpret_cast<const RECT *>(reinterpret_cast<unsigned char *>(fighters[1]->frameInfo) + 0x44), reinterpret_cast<Actor *>(fighters[1]));
     if (COLLISION->TestOverlap(&firstBounds, &bounds2)) {
         if (boundary[0] == -1 && g_RightBoundaryOwner == 0) {
-            PLAYER(0x48)->x -= bounds2.right - firstBounds.left - 1;
-            if (ACTOR(signed char, 0x44, 0x66) * vx1 + ACTOR(signed char, 0x48, 0x66) * secondSpeed > 0.0f && ACTOR(signed char, 0x48, 0x66) * secondSpeed > 0.0f) {
-                ACTOR(float, 0x44, 0x488) = -PLAYER(0x44)->velocityX;
-                ACTOR(float, 0x48, 0x488) = -PLAYER(0x48)->velocityX;
+            fighters[1]->x -= bounds2.right - firstBounds.left - 1;
+            if (fighters[0]->facing * vx1 + fighters[1]->facing * secondSpeed > 0.0f && fighters[1]->facing * secondSpeed > 0.0f) {
+                fighters[0]->field488 = -fighters[0]->velocityX;
+                fighters[1]->field488 = -fighters[1]->velocityX;
             }
         } else if (boundary[1] == -1 && g_RightBoundaryOwner == 1) {
-            PLAYER(0x44)->x -= firstBounds.right - bounds2.left - 1;
-            if (ACTOR(signed char, 0x44, 0x66) * vx1 + ACTOR(signed char, 0x48, 0x66) * secondSpeed > 0.0f && ACTOR(signed char, 0x44, 0x66) * vx1 > 0.0f) {
-                ACTOR(float, 0x44, 0x488) = -PLAYER(0x44)->velocityX;
-                ACTOR(float, 0x48, 0x488) = -PLAYER(0x48)->velocityX;
+            fighters[0]->x -= firstBounds.right - bounds2.left - 1;
+            if (fighters[0]->facing * vx1 + fighters[1]->facing * secondSpeed > 0.0f && fighters[0]->facing * vx1 > 0.0f) {
+                fighters[0]->field488 = -fighters[0]->velocityX;
+                fighters[1]->field488 = -fighters[1]->velocityX;
             }
         } else if (boundary[1] == 1 && g_LeftBoundaryOwner == 1) {
-            PLAYER(0x44)->x += bounds2.right - firstBounds.left - 1;
-            if (ACTOR(signed char, 0x48, 0x66) * secondSpeed + ACTOR(signed char, 0x44, 0x66) * vx1 < 0.0f && ACTOR(signed char, 0x44, 0x66) * vx1 < 0.0f) {
-                ACTOR(float, 0x44, 0x488) = -PLAYER(0x44)->velocityX;
-                ACTOR(float, 0x48, 0x488) = -PLAYER(0x48)->velocityX;
+            fighters[0]->x += bounds2.right - firstBounds.left - 1;
+            if (fighters[1]->facing * secondSpeed + fighters[0]->facing * vx1 < 0.0f && fighters[0]->facing * vx1 < 0.0f) {
+                fighters[0]->field488 = -fighters[0]->velocityX;
+                fighters[1]->field488 = -fighters[1]->velocityX;
             }
         } else if (boundary[0] == 1 && g_LeftBoundaryOwner == 0) {
-            PLAYER(0x48)->x += firstBounds.right - bounds2.left - 1;
-            if (ACTOR(signed char, 0x44, 0x66) * vx1 + ACTOR(signed char, 0x48, 0x66) * secondSpeed < 0.0f && ACTOR(signed char, 0x48, 0x66) * secondSpeed < 0.0f) {
-                ACTOR(float, 0x44, 0x488) = -PLAYER(0x44)->velocityX;
-                ACTOR(float, 0x48, 0x488) = -PLAYER(0x48)->velocityX;
+            fighters[1]->x += firstBounds.right - bounds2.left - 1;
+            if (fighters[0]->facing * vx1 + fighters[1]->facing * secondSpeed < 0.0f && fighters[1]->facing * secondSpeed < 0.0f) {
+                fighters[0]->field488 = -fighters[0]->velocityX;
+                fighters[1]->field488 = -fighters[1]->velocityX;
             }
         } else if (firstBounds.left + firstBounds.right > bounds2.left + bounds2.right ||
                    (firstBounds.left + firstBounds.right == bounds2.left + bounds2.right && firstBounds.top + firstBounds.bottom < bounds2.top + bounds2.bottom)) {
-            if (PLAYER(0x44)->velocityX * ACTOR(signed char, 0x44, 0x66) <= PLAYER(0x48)->velocityX * ACTOR(signed char, 0x48, 0x66)) {
+            if (fighters[0]->velocityX * fighters[0]->facing <= fighters[1]->velocityX * fighters[1]->facing) {
                 separationDistance = bounds2.right - firstBounds.left - 1;
-                PLAYER(0x44)->x += separationDistance / 2.0f;
-                PLAYER(0x48)->x -= separationDistance / 2.0f;
-                meanSpeed = (ACTOR(signed char, 0x44, 0x66) * vx1 + ACTOR(signed char, 0x48, 0x66) * secondSpeed) / 2.0f;
-                vx1 = ACTOR(signed char, 0x44, 0x66) * meanSpeed;
-                secondSpeed = ACTOR(signed char, 0x48, 0x66) * meanSpeed;
-                ACTOR(float, 0x44, 0x488) = vx1 - PLAYER(0x44)->velocityX;
-                ACTOR(float, 0x48, 0x488) = secondSpeed - PLAYER(0x48)->velocityX;
+                fighters[0]->x += separationDistance / 2.0f;
+                fighters[1]->x -= separationDistance / 2.0f;
+                meanSpeed = (fighters[0]->facing * vx1 + fighters[1]->facing * secondSpeed) / 2.0f;
+                vx1 = fighters[0]->facing * meanSpeed;
+                secondSpeed = fighters[1]->facing * meanSpeed;
+                fighters[0]->field488 = vx1 - fighters[0]->velocityX;
+                fighters[1]->field488 = secondSpeed - fighters[1]->velocityX;
             }
         } else {
-            if (PLAYER(0x48)->velocityX * ACTOR(signed char, 0x48, 0x66) <= PLAYER(0x44)->velocityX * ACTOR(signed char, 0x44, 0x66)) {
+            if (fighters[1]->velocityX * fighters[1]->facing <= fighters[0]->velocityX * fighters[0]->facing) {
                 separationDistance = firstBounds.right - bounds2.left - 1;
-                PLAYER(0x44)->x -= separationDistance / 2.0f;
-                PLAYER(0x48)->x += separationDistance / 2.0f;
-                meanSpeed = (ACTOR(signed char, 0x44, 0x66) * vx1 + ACTOR(signed char, 0x48, 0x66) * secondSpeed) / 2.0f;
-                vx1 = ACTOR(signed char, 0x44, 0x66) * meanSpeed;
-                secondSpeed = ACTOR(signed char, 0x48, 0x66) * meanSpeed;
-                ACTOR(float, 0x44, 0x488) = vx1 - PLAYER(0x44)->velocityX;
-                ACTOR(float, 0x48, 0x488) = secondSpeed - PLAYER(0x48)->velocityX;
+                fighters[0]->x -= separationDistance / 2.0f;
+                fighters[1]->x += separationDistance / 2.0f;
+                meanSpeed = (fighters[0]->facing * vx1 + fighters[1]->facing * secondSpeed) / 2.0f;
+                vx1 = fighters[0]->facing * meanSpeed;
+                secondSpeed = fighters[1]->facing * meanSpeed;
+                fighters[0]->field488 = vx1 - fighters[0]->velocityX;
+                fighters[1]->field488 = secondSpeed - fighters[1]->velocityX;
             }
         }
     }
@@ -84,11 +81,11 @@ void BattleFrame::ResolveBodySeparation()
 #define SLOT(type, offset) reinterpret_cast<type *>(reinterpret_cast<unsigned char *>(this) + offset)[i]
 #define INDEXED_PLAYER SLOT(Fighter *, 0x44)
 #define TIMER_FIELD(offset) FIELD(short, INDEXED_PLAYER, offset)
-void StateFramePolicies::UpdateTransition()
+void BattleScene::UpdateTransition()
 {
     int i;
-    if (FIELD(float, this, 0x9C) > 0.33f && (ACTOR(short, 0x44, 0x3A0) > 0 || ACTOR(short, 0x48, 0x3A0) > 0))
-        FIELD(float, this, 0x9C) -= 0.02f;
+    if (field09C > 0.33f && (fighters[0]->field3A0 > 0 || fighters[1]->field3A0 > 0))
+        field09C -= 0.02f;
     for (i = 0; i < 2; ++i) {
         if (TIMER_FIELD(0x3A0) > 0) {
             if (TIMER_FIELD(0x3A2) < 80) {
@@ -120,56 +117,55 @@ void StateFramePolicies::UpdateTransition()
     }
 }
 
-#define OVERLAY_TIME FIELD(int, this, 0x60)
-#define VALUE(offset) *reinterpret_cast<float *>(reinterpret_cast<unsigned char *>(this) + offset)
-void StateFramePolicies::AdvanceOverlay()
+#define OVERLAY_TIME field060
+void BattleScene::AdvanceOverlay()
 {
     if (OVERLAY_TIME > 0) {
-        switch (FIELD(unsigned char, this, 0x64)) {
+        switch (field064) {
         case 0:
             if (OVERLAY_TIME >= 150) {
-                F1106_OVERLAY(this).at74 = 350.0f; F1106_OVERLAY(this).at70 = 430.0f; F1106_OVERLAY(this).at78 = 300.0f;
-                F1106_OVERLAY(this).at7C = -300.0f; F1106_OVERLAY(this).at80 = 0.0f; F1106_OVERLAY(this).at84 = 0.0f; F1106_OVERLAY(this).at88 = 0.0f;
+                field074 = 350.0f; field070 = 430.0f; field078 = 300.0f;
+                field07C = -300.0f; field080 = 0.0f; field084 = 0.0f; field088 = 0.0f;
             } else if (OVERLAY_TIME >= 140) {
-                F1106_OVERLAY(this).at74 -= 40.0f; F1106_OVERLAY(this).at70 -= 70.0f; F1106_OVERLAY(this).at78 -= 30.0f;
+                field074 -= 40.0f; field070 -= 70.0f; field078 -= 30.0f;
             } else if (OVERLAY_TIME >= 75) {
-                F1106_OVERLAY(this).at74 -= 0.3f; F1106_OVERLAY(this).at70 -= 0.3f; F1106_OVERLAY(this).at78 -= 0.3f;
-                F1106_OVERLAY(this).at80 += F1106_OVERLAY(this).at84; F1106_OVERLAY(this).at84 += 0.05f;
+                field074 -= 0.3f; field070 -= 0.3f; field078 -= 0.3f;
+                field080 += field084; field084 += 0.05f;
             } else if (OVERLAY_TIME >= 70) {
-                F1106_OVERLAY(this).at74 -= 0.3f; F1106_OVERLAY(this).at70 -= 0.3f; F1106_OVERLAY(this).at78 -= 0.3f;
-                F1106_OVERLAY(this).at7C += 30.0f; F1106_OVERLAY(this).at88 += 0.2f;
+                field074 -= 0.3f; field070 -= 0.3f; field078 -= 0.3f;
+                field07C += 30.0f; field088 += 0.2f;
             } else if (OVERLAY_TIME >= 65) {
-                F1106_OVERLAY(this).at74 -= 0.3f; F1106_OVERLAY(this).at70 -= 0.3f; F1106_OVERLAY(this).at78 -= 30.0f;
-                F1106_OVERLAY(this).at7C += 30.0f; F1106_OVERLAY(this).at88 += 0.15f;
+                field074 -= 0.3f; field070 -= 0.3f; field078 -= 30.0f;
+                field07C += 30.0f; field088 += 0.15f;
             } else if (OVERLAY_TIME >= 60) {
-                F1106_OVERLAY(this).at74 -= 0.3f; F1106_OVERLAY(this).at70 -= 0.3f; F1106_OVERLAY(this).at78 -= 30.0f;
-                F1106_OVERLAY(this).at7C += 0.5f; F1106_OVERLAY(this).at88 += 0.15f;
+                field074 -= 0.3f; field070 -= 0.3f; field078 -= 30.0f;
+                field07C += 0.5f; field088 += 0.15f;
             } else if (OVERLAY_TIME >= 10) {
-                F1106_OVERLAY(this).at74 -= 30.0f; F1106_OVERLAY(this).at70 -= 30.0f; F1106_OVERLAY(this).at78 -= 30.0f;
-                F1106_OVERLAY(this).at7C += 0.5f; F1106_OVERLAY(this).at88 += 0.15f;
+                field074 -= 30.0f; field070 -= 30.0f; field078 -= 30.0f;
+                field07C += 0.5f; field088 += 0.15f;
             } else if (OVERLAY_TIME > 0) {
-                F1106_OVERLAY(this).at74 -= 30.0f; F1106_OVERLAY(this).at70 -= 30.0f; F1106_OVERLAY(this).at78 -= 30.0f;
-                F1106_OVERLAY(this).at7C += 0.5f; F1106_OVERLAY(this).at7C += 200.0f;
+                field074 -= 30.0f; field070 -= 30.0f; field078 -= 30.0f;
+                field07C += 0.5f; field07C += 200.0f;
             }
             break;
         case 1:
             if (OVERLAY_TIME >= 150) {
-                F1106_OVERLAY(this).at74 = 350.0f; F1106_OVERLAY(this).at70 = 430.0f; F1106_OVERLAY(this).at78 = 300.0f;
-                F1106_OVERLAY(this).at7C = -300.0f; F1106_OVERLAY(this).at80 = 0.0f; F1106_OVERLAY(this).at84 = 0.0f; F1106_OVERLAY(this).at88 = 0.0f;
+                field074 = 350.0f; field070 = 430.0f; field078 = 300.0f;
+                field07C = -300.0f; field080 = 0.0f; field084 = 0.0f; field088 = 0.0f;
             } else if (OVERLAY_TIME >= 140) {
-                F1106_OVERLAY(this).at74 -= 40.0f; F1106_OVERLAY(this).at70 -= 70.0f; F1106_OVERLAY(this).at78 -= 30.0f;
+                field074 -= 40.0f; field070 -= 70.0f; field078 -= 30.0f;
             } else if (OVERLAY_TIME >= 75) {
-                F1106_OVERLAY(this).at74 -= 0.3f; F1106_OVERLAY(this).at70 -= 0.3f; F1106_OVERLAY(this).at78 -= 0.3f;
-                F1106_OVERLAY(this).at88 += 0.15f;
+                field074 -= 0.3f; field070 -= 0.3f; field078 -= 0.3f;
+                field088 += 0.15f;
             } else if (OVERLAY_TIME >= 70) {
-                F1106_OVERLAY(this).at74 -= 0.3f; F1106_OVERLAY(this).at70 -= 0.3f; F1106_OVERLAY(this).at78 -= 0.3f;
-                F1106_OVERLAY(this).at7C += 30.0f; F1106_OVERLAY(this).at88 += 0.15f;
+                field074 -= 0.3f; field070 -= 0.3f; field078 -= 0.3f;
+                field07C += 30.0f; field088 += 0.15f;
             } else if (OVERLAY_TIME >= 65) {
-                F1106_OVERLAY(this).at74 -= 0.3f; F1106_OVERLAY(this).at70 -= 0.3f; F1106_OVERLAY(this).at78 -= 30.0f;
-                F1106_OVERLAY(this).at7C += 30.0f; F1106_OVERLAY(this).at88 += 0.15f;
+                field074 -= 0.3f; field070 -= 0.3f; field078 -= 30.0f;
+                field07C += 30.0f; field088 += 0.15f;
             } else if (OVERLAY_TIME > 0) {
-                F1106_OVERLAY(this).at74 -= 30.0f; F1106_OVERLAY(this).at70 -= 30.0f; F1106_OVERLAY(this).at78 -= 30.0f;
-                F1106_OVERLAY(this).at88 += 0.15f;
+                field074 -= 30.0f; field070 -= 30.0f; field078 -= 30.0f;
+                field088 += 0.15f;
             }
             break;
         }

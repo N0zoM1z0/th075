@@ -1,3 +1,4 @@
+#include "BattleScene.hpp"
 // Complete original R065 1,958-CODE-byte battle input/replay dispatcher.
 // The separately owned 28-byte native 7-entry switch table is validated in
 // compare_size=1986 but earns zero additional authored CODE credit.
@@ -25,24 +26,7 @@ extern const float g_LevelZeroAt0065782C;
 class NativeKeyScannerF386 {public: unsigned char CheckKey(int);};
 extern NativeKeyScannerF386 g_KeyScannerAt00671638;
 extern void NativeActionAt00423C60(int);
-class BattleStateF385 {public:
-    void ApplySequence();
-    void OnCameraModeFive();
-public:
-    // Observed fields; meanings not yet known.
-    unsigned char unknown000[0x014 - 0x000];
-    int field014;
-    unsigned char unknown018[0x01C - 0x018];
-    unsigned char field01C;
-    unsigned char unknown01D[0x044 - 0x01D];
-    void* field044;
-    void* field048;
-    unsigned char unknown04C[0x110 - 0x04C];
-    int field110;
-};
-#define LEFT(T,o) (*reinterpret_cast<T*>(reinterpret_cast<unsigned char*>(field044)+(o)))
-#define RIGHT(T,o) (*reinterpret_cast<T*>(reinterpret_cast<unsigned char*>(field048)+(o)))
-void BattleStateF385::ApplySequence() {
+void BattleScene::ApplySequence() {
     if(g_BattleModeAt006714B4==5) {
         OnCameraModeFive();
     } else {
@@ -54,25 +38,25 @@ void BattleStateF385::ApplySequence() {
                     int command=*g_ReplayEventsAt006718E0.Peek();
                     g_ReplayEventsAt006718E0.Pop();
                     switch(command) {
-                    case 1: RIGHT(short,0x324)=1;break;
-                    case 2: LEFT(signed char,0x39D)=2;RIGHT(signed char,0x39D)=2;break;
+                    case 1: fighters[1]->health=1;break;
+                    case 2: fighters[0]->field39D=2;fighters[1]->field39D=2;break;
                     case 3:
-                        if(LEFT(signed char,0x39D)>1) --LEFT(signed char,0x39D);
-                        if(RIGHT(signed char,0x39D)>1) --RIGHT(signed char,0x39D);
+                        if(fighters[0]->field39D>1) --fighters[0]->field39D;
+                        if(fighters[1]->field39D>1) --fighters[1]->field39D;
                         break;
                     case 4: field01C=0;break;
                     case 5: field01C=1;break;
                     case 6:
-                        LEFT(float,0x36C)=LEFT(float,0x36C)+g_LevelStepAt00657850;
-                        RIGHT(float,0x36C)=RIGHT(float,0x36C)+g_LevelStepAt00657850;
-                        if(LEFT(float,0x36C)>g_LevelMaxAt00657B28) LEFT(float,0x36C)=900.0f;
-                        if(RIGHT(float,0x36C)>g_LevelMaxAt00657B28) RIGHT(float,0x36C)=900.0f;
+                        fighters[0]->field36C=(fighters[0]->field36C)+g_LevelStepAt00657850;
+                        fighters[1]->field36C=(fighters[1]->field36C)+g_LevelStepAt00657850;
+                        if((fighters[0]->field36C)>g_LevelMaxAt00657B28) fighters[0]->field36C=900.0f;
+                        if((fighters[1]->field36C)>g_LevelMaxAt00657B28) fighters[1]->field36C=900.0f;
                         break;
                     case 7:
-                        LEFT(float,0x36C)=LEFT(float,0x36C)-g_LevelStepAt00657850;
-                        RIGHT(float,0x36C)=RIGHT(float,0x36C)-g_LevelStepAt00657850;
-                        if(LEFT(float,0x36C)<g_LevelZeroAt0065782C) LEFT(float,0x36C)=0.0f;
-                        if(RIGHT(float,0x36C)<g_LevelZeroAt0065782C) RIGHT(float,0x36C)=0.0f;
+                        fighters[0]->field36C=(fighters[0]->field36C)-g_LevelStepAt00657850;
+                        fighters[1]->field36C=(fighters[1]->field36C)-g_LevelStepAt00657850;
+                        if((fighters[0]->field36C)<g_LevelZeroAt0065782C) fighters[0]->field36C=0.0f;
+                        if((fighters[1]->field36C)<g_LevelZeroAt0065782C) fighters[1]->field36C=0.0f;
                         break;
                     }
                     if(g_ReplayEventsAt006718E0.Count()<=0) break;
@@ -86,7 +70,7 @@ void BattleStateF385::ApplySequence() {
                         g_ReplayEventsAt006718E0.Append(&field014);
                         int action2=2;g_ReplayEventsAt006718E0.Append(&action2);
                     }
-                    LEFT(signed char,0x39D)=2;RIGHT(signed char,0x39D)=2;
+                    fighters[0]->field39D=2;fighters[1]->field39D=2;
                 }
                 if(g_KeyScannerAt00671638.CheckKey(0x3D)) {
                     if(field110==0) {
@@ -94,8 +78,8 @@ void BattleStateF385::ApplySequence() {
                             g_ReplayEventsAt006718E0.Append(&field014);
                             int action3=3;g_ReplayEventsAt006718E0.Append(&action3);
                         }
-                        if(LEFT(signed char,0x39D)>1) --LEFT(signed char,0x39D);
-                        if(RIGHT(signed char,0x39D)>1) --RIGHT(signed char,0x39D);
+                        if(fighters[0]->field39D>1) --fighters[0]->field39D;
+                        if(fighters[1]->field39D>1) --fighters[1]->field39D;
                     }
                     field110=field110+1;
                 }
@@ -118,20 +102,20 @@ void BattleStateF385::ApplySequence() {
                         g_ReplayEventsAt006718E0.Append(&field014);
                         int action6=6;g_ReplayEventsAt006718E0.Append(&action6);
                     }
-                    LEFT(float,0x36C)=LEFT(float,0x36C)+g_LevelStepAt00657850;
-                    RIGHT(float,0x36C)=RIGHT(float,0x36C)+g_LevelStepAt00657850;
-                    if(LEFT(float,0x36C)>g_LevelMaxAt00657B28) LEFT(float,0x36C)=900.0f;
-                    if(RIGHT(float,0x36C)>g_LevelMaxAt00657B28) RIGHT(float,0x36C)=900.0f;
+                    fighters[0]->field36C=(fighters[0]->field36C)+g_LevelStepAt00657850;
+                    fighters[1]->field36C=(fighters[1]->field36C)+g_LevelStepAt00657850;
+                    if((fighters[0]->field36C)>g_LevelMaxAt00657B28) fighters[0]->field36C=900.0f;
+                    if((fighters[1]->field36C)>g_LevelMaxAt00657B28) fighters[1]->field36C=900.0f;
                 }
                 if(g_KeyScannerAt00671638.CheckKey(0x41)) {
                     if(g_ReplayModeAt0066C238==1) {
                         g_ReplayEventsAt006718E0.Append(&field014);
                         int action7=7;g_ReplayEventsAt006718E0.Append(&action7);
                     }
-                    LEFT(float,0x36C)=LEFT(float,0x36C)-g_LevelStepAt00657850;
-                    RIGHT(float,0x36C)=RIGHT(float,0x36C)-g_LevelStepAt00657850;
-                    if(LEFT(float,0x36C)<g_LevelZeroAt0065782C) LEFT(float,0x36C)=0.0f;
-                    if(RIGHT(float,0x36C)<g_LevelZeroAt0065782C) RIGHT(float,0x36C)=0.0f;
+                    fighters[0]->field36C=(fighters[0]->field36C)-g_LevelStepAt00657850;
+                    fighters[1]->field36C=(fighters[1]->field36C)-g_LevelStepAt00657850;
+                    if((fighters[0]->field36C)<g_LevelZeroAt0065782C) fighters[0]->field36C=0.0f;
+                    if((fighters[1]->field36C)<g_LevelZeroAt0065782C) fighters[1]->field36C=0.0f;
                 }
             }
         }
@@ -150,5 +134,3 @@ void BattleStateF385::ApplySequence() {
         }
     }
 }
-#undef RIGHT
-#undef LEFT

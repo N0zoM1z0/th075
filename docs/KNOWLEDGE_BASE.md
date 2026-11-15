@@ -62,6 +62,16 @@ Several old labels were wrong: "Boss 0050A580" is Patchouli's object, and
 attributed one emit the same bytes, so check the vtable slot before naming
 a method.
 
+`BattleScene` (`src/BattleScene.hpp`, vtable 00658334: slot 0 the
+deleting destructor, 1 `Update` 0043B1B0, 2 `Render` 0043D9D0) owns the
+match. Its methods run from 0043AD10 to 00449310, interleaved with a few
+  helpers of the progress records and combo counters. Members: +0x08 the
+  texture manager, +0x0C frame timer, +0x18 match mode, +0x34 hit bounds,
+  +0x44 the two fighters, +0x4C digit atlas, +0x50 the two combo counters,
+  +0x58 the active counter, +0x5D/+0x5E winner and quote line, +0x60/+0x64
+  notice timer and state, +0x70–0x88 overlay values, +0xA4 each side's saved
+  input state, +0xDC–0xF3 per-side status values.
+
 ## Layout facts
 
 - The controller binding block is embedded at +0x494. `SetBindings` copies
@@ -69,6 +79,8 @@ a method.
   ends where `inputX` (+0x4DC) begins. Held input is at +0x4DC–0x4F4 (X, Y,
   ?, A, B, C, D) and a buffered copy at +0x4F8–0x50C. An attack press is
   `inputA == 1 || bufferedA > 0`.
+- +0x53A–0x6CC hold the win quote: the line count, two 200-byte lines from
+  +0x53B and a notice badge per line from +0x6CB.
 - `RecordRoundFields` (004574D0) fills arrays at 0x32A, 0x33E, 0x370 and
   0x384 (20 entries each) and at 0x3D0, 0x400 and 0x430 (12 each), and raises
   +0x39D to the highest index used. +0x39D is therefore not a selected card,

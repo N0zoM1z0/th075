@@ -25,24 +25,6 @@ class HudCombo43E040 { public: void Render(); public:
     short field00E;
     float field010;
 };
-class BattleHud43E040 { public: void RenderHud(); public:
-    // Observed fields; meanings not yet known.
-    unsigned char unknown000[0x008 - 0x000];
-    void* field008;
-    unsigned char unknown00C[0x018 - 0x00C];
-    signed char field018;
-    unsigned char unknown019[0x044 - 0x019];
-    Fighter* field044;            // the two fighters
-    Fighter* field048;
-    unsigned char unknown04C[0x050 - 0x04C];
-    void* field050;
-    void* field054;
-    unsigned char unknown058[0x08C - 0x058];
-    float field08C;
-    unsigned char unknown090[0x098 - 0x090];
-    unsigned char field098;
-    unsigned char field099;
-};
 void __cdecl DrawAtlasNumberAt00446B90(float, float, D3DCOLOR, int, signed char, int);
 extern unsigned char g_SequenceByteAt0066C239;
 extern unsigned char g_SequenceByteAt0066C23A;

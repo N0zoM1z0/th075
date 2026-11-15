@@ -3,7 +3,6 @@
 #include "BattleFrame.hpp"
 #include "BattleScene.hpp"
 // Partial interfaces, used only on existing receivers.
-class StateFramePolicies { public: void SetNotice(unsigned char state); void AdvanceOverlay(); void UpdateTransition(); };
 class StateTextSurface { public: void Configure(float x, float y, unsigned char mode); void Render(const char *text, unsigned char r, unsigned char g, unsigned char b, unsigned char size, signed char mode, bool append); };
 class StatePatternActor { public: void ChoosePattern(); };
 class StateReplay { public: void AppendRecord(); bool IsInputEmpty(); };

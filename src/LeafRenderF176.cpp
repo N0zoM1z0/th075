@@ -1,3 +1,4 @@
+#include "BattleScene.hpp"
 #include "LeafRenderF176.hpp"
 #include "BattleHud43E040.hpp"
 #include "FighterEffectPolicies.hpp"
@@ -9,7 +10,7 @@ void __cdecl DrawAtlasNumberDefaultAt00446B60(float x, float y, D3DCOLOR color,
     DrawAtlasNumberAt00446B90(x, y, color, number, style, 0);
 }
 
-void HudNoticeF176::SetNoticeState(unsigned char state)
+void BattleScene::SetNotice(unsigned char state)
 {
     field060 = 150;
     field064 = state;
