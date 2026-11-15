@@ -7,6 +7,8 @@ class YoumuGeneratedF224;
 // Slot overrides use the Fighter slot names; the rest are helpers.
 class YoumuFighter : public Fighter {
 public:
+    YoumuFighter();
+    virtual ~YoumuFighter();
     void ChooseAction();
     static int actionCountdown;
     void ChooseCardAction();

@@ -7,6 +7,8 @@ class MarisaGeneratedF223;
 // Slot overrides use the Fighter slot names; the rest are helpers.
 class MarisaFighter : public Fighter {
 public:
+    MarisaFighter();
+    virtual ~MarisaFighter();
     void ChooseAction();
     static int actionCountdown;
     void ChooseCardAction();

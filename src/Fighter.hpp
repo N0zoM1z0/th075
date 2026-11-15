@@ -83,7 +83,8 @@ public:
 
     // Fighter vtable slots 5-19. The base table (00658FE8) implements only
     // slots 6 and 8; the rest are _purecall and per character.
-    virtual void VirtualSlot5() = 0;      // 44-byte compiler function per character
+    Fighter();                            // 004567B0
+    virtual ~Fighter();                   // slot 5: each character's deleting destructor
     virtual void ResetRound();            // slot 6, base 00457010
     virtual void CreateOwnedObject(void** object) = 0;  // slot 7, typed per character
     virtual void ForwardBaseAction();     // slot 8, base 00451EB0
@@ -101,9 +102,9 @@ public:
 
     unsigned char unknown0A8[0x0AC - 0x0A8];
     void* field0AC;                     // +0x0AC
-    unsigned char unknown0B0[0x0E4 - 0x0B0];
-    void* field0E4;                     // +0x0E4
-    unsigned char unknown0E8[0x2CC - 0x0E8];
+    unsigned char unknown0B0[0x0C4 - 0x0B0];
+    char name[0x104];                   // +0x0C4 character name, set by each constructor
+    char tag[0x104];                    // +0x1C8 character tag, set by each constructor
     signed char field2CC;               // +0x2CC
     signed char field2CD;               // +0x2CD
     unsigned char unknown2CE[0x2D0 - 0x2CE];
@@ -183,7 +184,9 @@ public:
     unsigned char field465;             // +0x465
     unsigned char unknown466[0x468 - 0x466];
     ActionSequenceSlots sequenceSlots;  // +0x468 action sequences, indexed by action id
-    unsigned char unknown469[0x47C - 0x469];
+    unsigned char unknown469[0x478 - 0x469];
+    unsigned short field478;            // +0x478
+    unsigned char unknown47A[0x47C - 0x47A];
     int field47C;                       // +0x47C
     void* field480;                     // +0x480
     signed char field484;               // +0x484
@@ -241,7 +244,9 @@ public:
     unsigned char unknown6F9[0x6FA - 0x6F9];
     short field6FA;                     // +0x6FA
     short field6FC;                     // +0x6FC
-    unsigned char unknown6FE[0x713 - 0x6FE];
+    unsigned char unknown6FE[0x705 - 0x6FE];
+    unsigned char field705[10];         // +0x705 per-character settings written by the constructors
+    unsigned char unknown70F[0x713 - 0x70F];
     unsigned char field713;             // +0x713
     FighterScriptAccessorF410 script;   // +0x714 script reader object embedded in the fighter
     unsigned char unknown715[0xEF8 - 0x715];

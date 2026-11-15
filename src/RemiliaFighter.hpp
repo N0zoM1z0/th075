@@ -7,6 +7,8 @@ class RemiliaOwnedObjectF469;
 // Slot overrides use the Fighter slot names; the rest are helpers.
 class RemiliaFighter : public Fighter {
 public:
+    RemiliaFighter();
+    virtual ~RemiliaFighter();
     void ChooseAction();
     static int actionCountdown;
     void ChooseCardAction();

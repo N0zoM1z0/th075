@@ -7,6 +7,8 @@ class YuyukoOwnedObjectF469;
 // Slot overrides use the Fighter slot names; the rest are helpers.
 class YuyukoFighter : public Fighter {
 public:
+    YuyukoFighter();
+    virtual ~YuyukoFighter();
     void ChooseCardAction();
     static int cardCountdown;
     void DispatchActions();

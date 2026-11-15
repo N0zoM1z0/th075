@@ -7,6 +7,8 @@ class SakuyaOwnedObjectF469;
 // Slot overrides use the Fighter slot names; the rest are helpers.
 class SakuyaFighter : public Fighter {
 public:
+    SakuyaFighter();
+    virtual ~SakuyaFighter();
     void ChooseAction();
     static int actionCountdown;
     void ChooseCardAction();

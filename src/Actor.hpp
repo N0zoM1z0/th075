@@ -66,7 +66,8 @@ public:
     short animationStage;               // +0x062
     short animationFrame;               // +0x064
     signed char facing;                 // +0x066 +1 facing right, -1 facing left
-    unsigned char unknown067[0x070 - 0x067];
+    unsigned char unknown067[0x06C - 0x067];
+    float field06C;                     // +0x06C
     short field070;                     // +0x070
     short field072;                     // +0x072
     // +0x074..0x07B is the animation binding that slot 0 maintains: fighters

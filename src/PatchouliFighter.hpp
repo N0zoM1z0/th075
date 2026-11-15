@@ -7,6 +7,8 @@ class PatchouliOwnedObjectF469;
 // Slot overrides use the Fighter slot names; the rest are helpers.
 class PatchouliFighter : public Fighter {
 public:
+    PatchouliFighter();
+    virtual ~PatchouliFighter();
     void ChooseAction();
     void ChooseCardAction();
     static int cardCountdown;

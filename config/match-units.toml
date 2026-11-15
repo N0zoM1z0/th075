@@ -36575,18 +36575,18 @@ source = "src/MarisaInitF223.cpp"
 object = "build/matching/MarisaInitF223.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["MarisaFighter::Initialize"]
-symbol = "??0MarisaCtorF223@@QAE@XZ"
+symbol = "??0MarisaFighter@@QAE@XZ"
 target_address = 0x00492FB0
 size = 243
 [[units.marisa-fighter-initialize-00492fb0.relocations]]
 offset = 11
 type = "REL32"
-symbol = "??0BaseFighterCtorF223@@QAE@XZ"
+symbol = "??0Fighter@@QAE@XZ"
 target = 0x004567B0
 [[units.marisa-fighter-initialize-00492fb0.relocations]]
 offset = 20
 type = "DIR32"
-symbol = "??_7MarisaCtorF223@@6B@"
+symbol = "??_7MarisaFighter@@6B@"
 target = 0x006592B8
 [[units.marisa-fighter-initialize-00492fb0.relocations]]
 offset = 59
@@ -36655,13 +36655,13 @@ source = "src/YoumuInitF223.cpp"
 object = "build/matching/YoumuInitF223.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
 functions = ["YoumuFighter::Initialize"]
-symbol = "??0YoumuCtorF223@@QAE@XZ"
+symbol = "??0YoumuFighter@@QAE@XZ"
 target_address = 0x0052CEE0
 size = 314
 [[units.youmu-fighter-initialize-0052cee0.relocations]]
 offset = 6
 type = "DIR32"
-symbol = "__ehhandler$??0YoumuCtorF223@@QAE@XZ"
+symbol = "__ehhandler$??0YoumuFighter@@QAE@XZ"
 target = 0x006564C8
 [[units.youmu-fighter-initialize-0052cee0.relocations]]
 offset = 12
@@ -36676,12 +36676,12 @@ target = 0x00000000
 [[units.youmu-fighter-initialize-0052cee0.relocations]]
 offset = 32
 type = "REL32"
-symbol = "??0BaseFighterCtorF223@@QAE@XZ"
+symbol = "??0Fighter@@QAE@XZ"
 target = 0x004567B0
 [[units.youmu-fighter-initialize-0052cee0.relocations]]
 offset = 48
 type = "DIR32"
-symbol = "??_7YoumuCtorF223@@6B@"
+symbol = "??_7YoumuFighter@@6B@"
 target = 0x006598D0
 [[units.youmu-fighter-initialize-0052cee0.relocations]]
 offset = 62
@@ -44911,18 +44911,18 @@ source = "src/SakuyaInitF309.cpp"
 object = "build/matching/SakuyaInitF309.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["SakuyaFighter::Initialize"]
-symbol = "??0SakuyaCtorF309@@QAE@XZ"
+symbol = "??0SakuyaFighter@@QAE@XZ"
 target_address = 0x004C0820
 size = 243
 [[units.sakuya-fighter-initialize-004c0820.relocations]]
 offset = 11
 type = "REL32"
-symbol = "??0BaseFighterCtorF309@@QAE@XZ"
+symbol = "??0Fighter@@QAE@XZ"
 target = 0x004567B0
 [[units.sakuya-fighter-initialize-004c0820.relocations]]
 offset = 20
 type = "DIR32"
-symbol = "??_7SakuyaCtorF309@@6B@"
+symbol = "??_7SakuyaFighter@@6B@"
 target = 0x006594A8
 [[units.sakuya-fighter-initialize-004c0820.relocations]]
 offset = 59
@@ -44950,18 +44950,18 @@ source = "src/AliceInitF309.cpp"
 object = "build/matching/AliceInitF309.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["AliceFighter::Initialize"]
-symbol = "??0AliceCtorF309@@QAE@XZ"
+symbol = "??0AliceFighter@@QAE@XZ"
 target_address = 0x004E2C90
 size = 243
 [[units.alice-fighter-initialize-004e2c90.relocations]]
 offset = 11
 type = "REL32"
-symbol = "??0BaseFighterCtorF309@@QAE@XZ"
+symbol = "??0Fighter@@QAE@XZ"
 target = 0x004567B0
 [[units.alice-fighter-initialize-004e2c90.relocations]]
 offset = 20
 type = "DIR32"
-symbol = "??_7AliceCtorF309@@6B@"
+symbol = "??_7AliceFighter@@6B@"
 target = 0x00659608
 [[units.alice-fighter-initialize-004e2c90.relocations]]
 offset = 59
@@ -44989,18 +44989,18 @@ source = "src/PatchouliInitF309.cpp"
 object = "build/matching/PatchouliInitF309.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["PatchouliFighter::Initialize"]
-symbol = "??0PatchouliCtorF309@@QAE@XZ"
+symbol = "??0PatchouliFighter@@QAE@XZ"
 target_address = 0x005021C0
 size = 243
 [[units.patchouli-fighter-initialize-005021c0.relocations]]
 offset = 11
 type = "REL32"
-symbol = "??0BaseFighterCtorF309@@QAE@XZ"
+symbol = "??0Fighter@@QAE@XZ"
 target = 0x004567B0
 [[units.patchouli-fighter-initialize-005021c0.relocations]]
 offset = 20
 type = "DIR32"
-symbol = "??_7PatchouliCtorF309@@6B@"
+symbol = "??_7PatchouliFighter@@6B@"
 target = 0x00659768
 [[units.patchouli-fighter-initialize-005021c0.relocations]]
 offset = 59
@@ -45028,18 +45028,18 @@ source = "src/YukariInitF309.cpp"
 object = "build/matching/YukariInitF309.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["YukariFighter::Initialize"]
-symbol = "??0YukariCtorF309@@QAE@XZ"
+symbol = "??0YukariFighter@@QAE@XZ"
 target_address = 0x00597380
 size = 243
 [[units.yukari-fighter-initialize-00597380.relocations]]
 offset = 11
 type = "REL32"
-symbol = "??0BaseFighterCtorF309@@QAE@XZ"
+symbol = "??0Fighter@@QAE@XZ"
 target = 0x004567B0
 [[units.yukari-fighter-initialize-00597380.relocations]]
 offset = 20
 type = "DIR32"
-symbol = "??_7YukariCtorF309@@6B@"
+symbol = "??_7YukariFighter@@6B@"
 target = 0x00659CC0
 [[units.yukari-fighter-initialize-00597380.relocations]]
 offset = 59
@@ -45067,18 +45067,18 @@ source = "src/SuikaInitF309.cpp"
 object = "build/matching/SuikaInitF309.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["SuikaFighter::Initialize"]
-symbol = "??0SuikaCtorF309@@QAE@XZ"
+symbol = "??0SuikaFighter@@QAE@XZ"
 target_address = 0x005C0AB0
 size = 243
 [[units.suika-fighter-initialize-005c0ab0.relocations]]
 offset = 11
 type = "REL32"
-symbol = "??0BaseFighterCtorF309@@QAE@XZ"
+symbol = "??0Fighter@@QAE@XZ"
 target = 0x004567B0
 [[units.suika-fighter-initialize-005c0ab0.relocations]]
 offset = 20
 type = "DIR32"
-symbol = "??_7SuikaCtorF309@@6B@"
+symbol = "??_7SuikaFighter@@6B@"
 target = 0x00659E30
 [[units.suika-fighter-initialize-005c0ab0.relocations]]
 offset = 59
@@ -45106,18 +45106,18 @@ source = "src/ReimuInitF311.cpp"
 object = "build/matching/ReimuInitF311.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["ReimuFighter::Initialize"]
-symbol = "??0ReimuCtorF311@@QAE@XZ"
+symbol = "??0ReimuFighter@@QAE@XZ"
 target_address = 0x0046D080
 size = 218
 [[units.reimu-fighter-initialize-0046d080.relocations]]
 offset = 11
 type = "REL32"
-symbol = "??0BaseFighterCtorF311@@QAE@XZ"
+symbol = "??0Fighter@@QAE@XZ"
 target = 0x004567B0
 [[units.reimu-fighter-initialize-0046d080.relocations]]
 offset = 20
 type = "DIR32"
-symbol = "??_7ReimuCtorF311@@6B@"
+symbol = "??_7ReimuFighter@@6B@"
 target = 0x006590D8
 [[units.reimu-fighter-initialize-0046d080.relocations]]
 offset = 35
@@ -45145,18 +45145,18 @@ source = "src/MeilingInitF311.cpp"
 object = "build/matching/MeilingInitF311.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["MeilingFighter::Initialize"]
-symbol = "??0MeilingCtorF311@@QAE@XZ"
+symbol = "??0MeilingFighter@@QAE@XZ"
 target_address = 0x005E2090
 size = 218
 [[units.meiling-fighter-initialize-005e2090.relocations]]
 offset = 11
 type = "REL32"
-symbol = "??0BaseFighterCtorF311@@QAE@XZ"
+symbol = "??0Fighter@@QAE@XZ"
 target = 0x004567B0
 [[units.meiling-fighter-initialize-005e2090.relocations]]
 offset = 20
 type = "DIR32"
-symbol = "??_7MeilingCtorF311@@6B@"
+symbol = "??_7MeilingFighter@@6B@"
 target = 0x00659F50
 [[units.meiling-fighter-initialize-005e2090.relocations]]
 offset = 35
@@ -45184,18 +45184,18 @@ source = "src/RemiliaInitF311.cpp"
 object = "build/matching/RemiliaInitF311.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["RemiliaFighter::Initialize"]
-symbol = "??0RemiliaCtorF311@@QAE@XZ"
+symbol = "??0RemiliaFighter@@QAE@XZ"
 target_address = 0x00551980
 size = 277
 [[units.remilia-fighter-initialize-00551980.relocations]]
 offset = 11
 type = "REL32"
-symbol = "??0BaseFighterCtorF311@@QAE@XZ"
+symbol = "??0Fighter@@QAE@XZ"
 target = 0x004567B0
 [[units.remilia-fighter-initialize-00551980.relocations]]
 offset = 20
 type = "DIR32"
-symbol = "??_7RemiliaCtorF311@@6B@"
+symbol = "??_7RemiliaFighter@@6B@"
 target = 0x00659A40
 [[units.remilia-fighter-initialize-00551980.relocations]]
 offset = 93
@@ -45223,18 +45223,18 @@ source = "src/YuyukoInitF311.cpp"
 object = "build/matching/YuyukoInitF311.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["YuyukoFighter::Initialize"]
-symbol = "??0YuyukoCtorF311@@QAE@XZ"
+symbol = "??0YuyukoFighter@@QAE@XZ"
 target_address = 0x00574100
 size = 266
 [[units.yuyuko-fighter-initialize-00574100.relocations]]
 offset = 11
 type = "REL32"
-symbol = "??0BaseFighterCtorF311@@QAE@XZ"
+symbol = "??0Fighter@@QAE@XZ"
 target = 0x004567B0
 [[units.yuyuko-fighter-initialize-00574100.relocations]]
 offset = 20
 type = "DIR32"
-symbol = "??_7YuyukoCtorF311@@6B@"
+symbol = "??_7YuyukoFighter@@6B@"
 target = 0x00659B80
 [[units.yuyuko-fighter-initialize-00574100.relocations]]
 offset = 83

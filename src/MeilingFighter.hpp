@@ -7,6 +7,8 @@ class MeilingOwnedObjectF469;
 // Slot overrides use the Fighter slot names; the rest are helpers.
 class MeilingFighter : public Fighter {
 public:
+    MeilingFighter();
+    virtual ~MeilingFighter();
     void DispatchActions();
     void AdvanceAuxiliary();
     void SpawnTrackedEffect(short, float, float, signed char, signed char, unsigned char);

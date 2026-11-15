@@ -7,6 +7,8 @@ class SuikaOwnedObjectF469;
 // Slot overrides use the Fighter slot names; the rest are helpers.
 class SuikaFighter : public Fighter {
 public:
+    SuikaFighter();
+    virtual ~SuikaFighter();
     void ChooseCardAction();
     static int cardCountdown;
     void DispatchActions();

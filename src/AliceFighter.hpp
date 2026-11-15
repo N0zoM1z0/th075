@@ -7,6 +7,8 @@ class AliceGeneratedF227;
 // Slot overrides use the Fighter slot names; the rest are helpers.
 class AliceFighter : public Fighter {
 public:
+    AliceFighter();
+    virtual ~AliceFighter();
     void CreateOwnedObject(AliceGeneratedF227** output);
     void ForwardBaseAction();
     void RenderChain();
