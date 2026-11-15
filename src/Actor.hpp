@@ -24,6 +24,9 @@ struct FighterSequenceInfo {
 // is unknown, so these classes are only reached through the game's pointers.
 class Actor {
 public:
+    // Helpers every character calls at one shared address.
+    void ResetPrimaryCounters(short state);                         // 0040FAC0
+
     // Slots shared by fighter and object vtables. Advance is pure in the
     // base fighter table (00658FE8 slot 1 is _purecall); each class's
     // per-frame state machine overrides it.

@@ -8,26 +8,14 @@ class MarisaGeneratedF223;
 class MarisaFighter : public Fighter {
 public:
     void ChooseAction();
-    int ChooseIntegerRange(int lower, int upper);
     static int actionCountdown;
     void ChooseCardAction();
     static int cardCountdown;
     void DispatchActions();
-    void PackDirectionBits();
-    void ResetPrimaryCounters(short state);
-    void ClearAuxiliaryInput();
     void AdvanceAuxiliary();
     void SpawnTrackedEffect(short, float, float, signed char, signed char, unsigned char);
     void PollCommands();
-    signed char MatchInputPattern(const char*, signed char, signed char);
     void AdvanceSequence();
-    void SetNoticeMode(unsigned char mode);
-    void InitializeNotice(short notice);
-    unsigned char ProcessNotice();
-    void ConfigureNoticeText(unsigned char enabled);
-    void BeginNoticeTransition(unsigned char notice, unsigned char direction);
-    void ClearNoticeTransition();
-    void AdvanceNoticeLevels();
     void PlaySharedSound(short sound);
     void RenderChain();
     void CreateOwnedObject(MarisaGeneratedF223** output);

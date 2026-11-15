@@ -8,24 +8,12 @@ class MeilingOwnedObjectF469;
 class MeilingFighter : public Fighter {
 public:
     void DispatchActions();
-    void PackDirectionBits();
-    void ResetPrimaryCounters(short state);
-    void ClearAuxiliaryInput();
     void AdvanceAuxiliary();
     void SpawnTrackedEffect(short, float, float, signed char, signed char, unsigned char);
     void PollCommands();
-    signed char MatchInputPattern(const char*, signed char, signed char);
     void ConfigureStage();
-    void RecordRoundFields(signed char, short, signed char, signed char, signed char, int, int, int);
     void RenderStage(signed char);
     void AdvanceSequence();
-    void SetNoticeMode(unsigned char mode);
-    void InitializeNotice(short notice);
-    unsigned char ProcessNotice();
-    void ConfigureNoticeText(unsigned char enabled);
-    void BeginNoticeTransition(unsigned char notice, unsigned char direction);
-    void ClearNoticeTransition();
-    void AdvanceNoticeLevels();
     void ForwardBaseAction();
     void RenderChain();
     void NoOpSlot18();

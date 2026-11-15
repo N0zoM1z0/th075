@@ -35,6 +35,20 @@ public:
 // every character; character classes declare their own members from 0xF10.
 class Fighter : public Actor {
 public:
+    // Helpers every character calls at one shared address.
+    void ClearAuxiliaryInput();                                     // 00453A10
+    int ChooseIntegerRange(int lower, int upper);                   // 00455610
+    signed char MatchInputPattern(const char*, signed char, signed char);  // 00455800
+    void PackDirectionBits();                                       // 00455B30
+    void RecordRoundFields(signed char, short, signed char, signed char, signed char, int, int, int);  // 004574D0
+    void SetNoticeMode(unsigned char mode);                         // 0045CD50
+    void InitializeNotice(short notice);                            // 0045CDC0
+    unsigned char ProcessNotice();                                  // 0045CE10
+    void ConfigureNoticeText(unsigned char enabled);                // 0045D650
+    void BeginNoticeTransition(unsigned char notice, unsigned char direction);  // 0045D6A0
+    void ClearNoticeTransition();                                   // 0045D6F0
+    void AdvanceNoticeLevels();                                     // 0045D710
+
     // Fighter vtable slots 5-19. The base table (00658FE8) implements only
     // slots 6 and 8; the rest are _purecall and per character.
     virtual void VirtualSlot5() = 0;      // 44-byte compiler function per character

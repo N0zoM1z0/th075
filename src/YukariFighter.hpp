@@ -8,23 +8,11 @@ class YukariOwnedObjectF469;
 class YukariFighter : public Fighter {
 public:
     void ChooseCardAction();
-    int ChooseIntegerRange(int lower, int upper);
     static int cardCountdown;
     void DispatchActions();
-    void PackDirectionBits();
-    void ResetPrimaryCounters(short state);
-    void ClearAuxiliaryInput();
     void EnableTransform(float x, float y, float z);
     void PollCommands();
-    signed char MatchInputPattern(const char*, signed char, signed char);
     void AdvanceSequence();
-    void SetNoticeMode(unsigned char mode);
-    void InitializeNotice(short notice);
-    unsigned char ProcessNotice();
-    void ConfigureNoticeText(unsigned char enabled);
-    void BeginNoticeTransition(unsigned char notice, unsigned char direction);
-    void ClearNoticeTransition();
-    void AdvanceNoticeLevels();
     void ForwardBaseAction();
     void RenderChain();
     void NoOpSlot18();
