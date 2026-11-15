@@ -37,24 +37,44 @@ Done so far:
   The combat code uses `Actor`/`Fighter` pointers instead of the old
   `CombatActor`/`AnimationState` views, and most borrowed-window macros
   (`F999_VITAL`, `F1037_POSITION`, …) became members.
+- Classes with real layouts now cover the battle scene (`BattleScene`,
+  47 methods from constructor to render), the result, title and options
+  scenes, `SceneBase`, the combo counter, the music stream
+  (`AudioStream`), the text overlay's definitions (`TextOverlay`) and the
+  save data (`GameProgress` plus `ProgressDifficulty`, 27 methods).
 
 Next steps:
 
-1. Remaining raw offsets in `src/` (about 800 sites in 190 files). Most
-   belong to scenes that still need a class. `BattleScene`, `ResultScene`
-   and the shared `SceneBase` (`src/SceneBase.hpp`) show the pattern: every
-   scene vtable has three slots (deleting destructor, `Update`, `Render`),
-   the constructor and destructor name the scene, and the methods between
-   them in address order are mostly the scene's. Thirteen scenes are left
-   (title, options, character select, replay browser, name entry, music
-   room, opening, logo, loading, staff roll, battle end, result list, and
-   the result selection). Watch for stale ledger labels: the character
-   select scene's `Render` is listed as `BattleScene::RenderBackground`
-   though its source is `RenderBackgroundF179`.
+1. Remaining raw offsets and alias classes. `grep` for `FIELD(` and
+   `reinterpret_cast<...>(this) +` finds about 300 sites each in about 170
+   files, and 28 classes still pad from +0 with `unknown000[...]`. The
+   biggest groups:
+   - the character select scene (16 files; per-player blocks indexed with
+     `player * 28` and `[side]` that need a per-player struct);
+   - the texture manager (0040AD80–0040D870), whose methods are bound
+     under about 25 view classes; their vectors use different element types,
+     so unify the layout first;
+   - the music room, replay browser, name entry, staff roll, opening, logo,
+     loading, battle end and result-list scenes (small);
+   - the fighter constructor and destructor (`FighterInitF287`,
+     `FighterResourceReleaseF284`), whose embedded objects are listed in the
+     knowledge base with one open question;
+   - callers that still declare their own copies of `TextOverlay`, sound
+     bank, input mapping and other library methods (248 addresses are bound
+     under several class names; `relabel.py` makes renaming cheap).
 2. Rename the research parent classes to their character classes
    (`FighterSwitchF598_Boss0045DD70::Advance` is `ReimuFighter::Advance`).
 3. The giants' register debt: find the construct behind the anomalous
    joins described in GIANTS.md.
+
+Workflow for a class merge: write the header, convert the sources
+(`sceneize.py`, `scenefields.py`, `shellmerge.py`, `thisize.py`), check
+the objects with `objsig.py` against a baseline build, rename the ledger
+entries by address (`rename_addr.py`), run one grouped replay of
+`affected.py HEAD`, `relabel.py` the units whose symbols changed, replay
+those again. Watch for new members shadowed by parameters or locals, and
+keep parentheses where a macro expanded to a parenthesized dereference in
+x87 arithmetic.
 
 ## Tools
 

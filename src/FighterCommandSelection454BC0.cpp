@@ -11,10 +11,10 @@ void SpriteSequenceParametersF154::SetColorMask(unsigned int mask)
     field014 = mask;
 }
 
-void FighterCommandSelection454BC0::SetCommandSelection(
+void Fighter::SetCommandSelection(
     int selection, unsigned char mode, unsigned int mask)
 {
     field47C = selection;
-    field480->SetSamplingMode(mode);
-    field480->SetColorMask(mask);
+    reinterpret_cast<SpriteSequenceParametersF154*&>(field480)->SetSamplingMode(mode);
+    reinterpret_cast<SpriteSequenceParametersF154*&>(field480)->SetColorMask(mask);
 }

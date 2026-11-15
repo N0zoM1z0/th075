@@ -1,3 +1,4 @@
+#include "Fighter.hpp"
 #ifndef TH075_FIGHTER_COMMAND_SELECTION_454BC0_HPP
 #define TH075_FIGHTER_COMMAND_SELECTION_454BC0_HPP
 
@@ -15,14 +16,5 @@ public:
     unsigned int field014;
 };
 
-class FighterCommandSelection454BC0 {
-public:
-    void SetCommandSelection(int selection, unsigned char mode, unsigned int mask);
-public:
-    // Observed fields; meanings not yet known.
-    unsigned char unknown000[0x47C - 0x000];
-    int field47C;
-    SpriteSequenceParametersF154* field480;
-};
 
 #endif

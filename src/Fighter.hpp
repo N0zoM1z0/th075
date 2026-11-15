@@ -51,6 +51,8 @@ public:
     void LoadResources();                                           // 00456B60
     void LoadPattern();                                             // 00457660
     void SelectResourceParameters();                                // 00452B30
+    void SetCommandSelection(int selection, unsigned char mode, unsigned int mask);  // 00454BC0
+    void LoadStageResource();                                       // 004584D0
     void InitializeNotice(short notice);                            // 0045CDC0
     unsigned char ProcessAction();                                  // 0045CE10
     void ConfigureNoticeText(unsigned char enabled);                // 0045D650

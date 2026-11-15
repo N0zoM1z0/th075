@@ -1,3 +1,4 @@
+#include "Fighter.hpp"
 #include <windows.h>
 #include <stdio.h>
 #include <new>
@@ -16,26 +17,18 @@ typedef char AssertStageTex80F286[(sizeof(FighterStageTextureF286)==80)?1:-1];
 extern signed char g_CurrentStageAt0067161E;
 extern const char g_StageTextureFormatAt00658FC0[];
 extern const char g_StageArchiveAt00658FE0[];
-class FighterStageF286 {
-public:
-    void LoadStageResource();
-public:
-    // Observed fields; meanings not yet known.
-    unsigned char unknown000[0x700 - 0x000];
-    FighterStageTextureF286* field700;
-};
 #define FIELD(type,off) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this)+(off)))
-void FighterStageF286::LoadStageResource()
+void Fighter::LoadStageResource()
 {
     char filename[260];
     if (g_CurrentStageAt0067161E<=0) return;
     {
-        if (field700)
-            delete field700;
-        field700=new FighterStageTextureF286();
-        field700->AllocateSlots(FIELD(signed char,0x704+g_CurrentStageAt0067161E));
+        if (reinterpret_cast<FighterStageTextureF286*&>(stageDrawing))
+            delete reinterpret_cast<FighterStageTextureF286*&>(stageDrawing);
+        reinterpret_cast<FighterStageTextureF286*&>(stageDrawing)=new FighterStageTextureF286();
+        reinterpret_cast<FighterStageTextureF286*&>(stageDrawing)->AllocateSlots(FIELD(signed char,0x704+g_CurrentStageAt0067161E));
         sprintf(filename,g_StageTextureFormatAt00658FC0,reinterpret_cast<char*>(this)+0xC4,g_CurrentStageAt0067161E);
-        field700->LoadDefault(filename,g_StageArchiveAt00658FE0);
+        reinterpret_cast<FighterStageTextureF286*&>(stageDrawing)->LoadDefault(filename,g_StageArchiveAt00658FE0);
     }
 }
 #undef FIELD

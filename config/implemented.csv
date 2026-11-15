@@ -333,7 +333,7 @@ Fighter::SetNonnegativeWord
 Fighter::BeginFadeParameters
 SpriteSequenceParametersF154::SetSamplingMode
 SpriteSequenceParametersF154::SetColorMask
-FighterCommandSelection454BC0::SetCommandSelection
+Fighter::SetCommandSelection
 Fighter::SelectResourceParameters
 FighterAnimationReset453D80::BindAnimation
 GameProgress::IncrementSelectedWordCounter
@@ -487,7 +487,7 @@ BackgroundStage::AdvanceBG04aCycleAt0044D5E0
 BackgroundStage::AdvanceBG07aCycleAt004503E0
 BackgroundStage::AdvanceBG08aCycleAt00450BD0
 BackgroundStage::AdvanceBG05aReverseCycleAt0044E3A0
-Fighter::RenderTimedSprite
+TimedSpriteF181::RenderTimedSprite
 NameEntryScene::PollPlayerInput
 NameEntryScene::PollSharedInput
 TitleScene::Render
@@ -609,8 +609,8 @@ FontSurface::DecodePackedTextUnitAt0041C9D0
 FontSurface::ReleaseRasterResourcesAt0041C130
 Effects::LoadPatternCatalogAt005F71F0
 CharacterObject::CharacterObject
-Fighter::AdvanceNoticeLevelsAt0045D710
-BattleInput::PackDirectionBits
+Fighter::AdvanceNoticeLevels
+Fighter::PackDirectionBits
 StaticBattleResources::ReleaseOwnedEntriesAt005F6FF0
 SakuyaFighter::Initialize
 AliceFighter::Initialize

@@ -316,7 +316,7 @@ address,name,module,confidence,evidence
 0x00454A70,Fighter::BeginFadeParameters,FighterState,inferred,F152; complete canonical cold exact/saved-this scalar policy; original owner and field declarations unknown
 0x00410FA0,SpriteSequenceParametersF154::SetSamplingMode,SpriteSequence,inferred,F154; whole canonical cold exact/actual saved-this stores and call contracts; original names and full owners unknown
 0x00410FE0,SpriteSequenceParametersF154::SetColorMask,SpriteSequence,inferred,F154; whole canonical cold exact/actual saved-this stores and call contracts; original names and full owners unknown
-0x00454BC0,FighterCommandSelection454BC0::SetCommandSelection,FighterState,inferred,F154; whole canonical cold exact/actual saved-this stores and call contracts; original names and full owners unknown
+0x00454BC0,Fighter::SetCommandSelection,FighterState,inferred,F154; whole canonical cold exact/actual saved-this stores and call contracts; original names and full owners unknown
 0x00452B30,Fighter::SelectResourceParameters,FighterState,inferred,F155; whole canonical cold exact/observed saved-this and no-argument call contract; original names and complete owner unknown
 0x00453D80,FighterAnimationReset453D80::BindAnimation,FighterBase,inferred,F156; whole canonical cold exact/native slot0 and saved-this binding policy; original names/complete owners unknown
 0x00454D00,GameProgress::IncrementSelectedWordCounter,ProfileSelection,inferred,F158; complete canonical cold exact/signed indexed word-counter policy; original names/complete owner unknown
@@ -470,7 +470,7 @@ address,name,module,confidence,evidence
 0x004503E0,BackgroundStage::AdvanceBG07aCycleAt004503E0,BackgroundStage,inferred,F180; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x00450BD0,BackgroundStage::AdvanceBG08aCycleAt00450BD0,BackgroundStage,inferred,F180; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x0044E3A0,BackgroundStage::AdvanceBG05aReverseCycleAt0044E3A0,BackgroundStage,inferred,F180; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
-0x00451A00,Fighter::RenderTimedSprite,FighterState,inferred,F181; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x00451A00,TimedSpriteF181::RenderTimedSprite,FighterState,inferred,F181; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x0042AB90,NameEntryScene::PollPlayerInput,NameEntryScene,inferred,F182; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x0042BCD0,NameEntryScene::PollSharedInput,NameEntryScene,inferred,F182; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x0043A7A0,TitleScene::Render,TitleScene,inferred,F183; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
@@ -592,8 +592,8 @@ address,name,module,confidence,evidence
 0x0041C130,FontSurface::ReleaseRasterResourcesAt0041C130,FontSurface,inferred,"F293; entire native 119-byte game-specific routine, 4 real COFF relocations cold-exact; private owner identity not independently proven"
 0x005F71F0,Effects::LoadPatternCatalogAt005F71F0,Effects,inferred,F294; entire native 1722-byte effect pattern catalog archive loader with 582 authentic x86 instructions and all 91 physical COFF fields cold exact; original private subobject class names unproven
 0x0045B760,CharacterObject::CharacterObject,GameContextPolicy,inferred,"F300; entire native 203-byte polymorphic game default constructor, exact base/vtable relocation and 15 real original zero stores; private layout unproven"
-0x0045D710,Fighter::AdvanceNoticeLevelsAt0045D710,FighterState,inferred,"F301; complete 247-byte native fighter 0/1/2 notice-level state switch, authentic no-relocation thiscall, cold exact; original full class unproven"
-0x00455B30,BattleInput::PackDirectionBits,BattleInput,inferred,F303; complete 260-byte game-specific eight-direction/button packed input controller with two authentic COFF REL32 fields cold-exact; full private FighterState layout not inferred
+0x0045D710,Fighter::AdvanceNoticeLevels,FighterState,inferred,"F301; complete 247-byte native fighter 0/1/2 notice-level state switch, authentic no-relocation thiscall, cold exact; original full class unproven"
+0x00455B30,Fighter::PackDirectionBits,BattleInput,inferred,F303; complete 260-byte game-specific eight-direction/button packed input controller with two authentic COFF REL32 fields cold-exact; full private FighterState layout not inferred
 0x005F6FF0,StaticBattleResources::ReleaseOwnedEntriesAt005F6FF0,StaticResourcePolicy,inferred,"F304; full native 235-byte Effects resource destructor, native EH and two-list 20-byte array cleanup, 14 original physical relocation fields cold-exact; private class identities provisional"
 0x004C0820,SakuyaFighter::Initialize,SakuyaFighter,inferred,"F309; whole 243-byte native Sakuya resource-owning fighter constructor, real vtable and 6 relocations exact under pinned VC7.1; private class layout not asserted"
 0x004E2C90,AliceFighter::Initialize,AliceFighter,inferred,"F309; whole 243-byte native Alice resource-owning fighter constructor, real vtable and 6 relocations exact under pinned VC7.1; private class layout not asserted"

@@ -334,7 +334,7 @@ Fighter::SetNonnegativeWord,0x00453E80,function
 Fighter::BeginFadeParameters,0x00454A70,function
 SpriteSequenceParametersF154::SetSamplingMode,0x00410FA0,function
 SpriteSequenceParametersF154::SetColorMask,0x00410FE0,function
-FighterCommandSelection454BC0::SetCommandSelection,0x00454BC0,function
+Fighter::SetCommandSelection,0x00454BC0,function
 Fighter::SelectResourceParameters,0x00452B30,function
 FighterAnimationReset453D80::BindAnimation,0x00453D80,function
 GameProgress::IncrementSelectedWordCounter,0x00454D00,function
@@ -488,7 +488,7 @@ BackgroundStage::AdvanceBG04aCycleAt0044D5E0,0x0044D5E0,function
 BackgroundStage::AdvanceBG07aCycleAt004503E0,0x004503E0,function
 BackgroundStage::AdvanceBG08aCycleAt00450BD0,0x00450BD0,function
 BackgroundStage::AdvanceBG05aReverseCycleAt0044E3A0,0x0044E3A0,function
-Fighter::RenderTimedSprite,0x00451A00,function
+TimedSpriteF181::RenderTimedSprite,0x00451A00,function
 NameEntryScene::PollPlayerInput,0x0042AB90,function
 NameEntryScene::PollSharedInput,0x0042BCD0,function
 TitleScene::Render,0x0043A7A0,function
@@ -610,8 +610,8 @@ FontSurface::DecodePackedTextUnitAt0041C9D0,0x0041C9D0,function
 FontSurface::ReleaseRasterResourcesAt0041C130,0x0041C130,function
 Effects::LoadPatternCatalogAt005F71F0,0x005F71F0,function
 CharacterObject::CharacterObject,0x0045B760,function
-Fighter::AdvanceNoticeLevelsAt0045D710,0x0045D710,function
-BattleInput::PackDirectionBits,0x00455B30,function
+Fighter::AdvanceNoticeLevels,0x0045D710,function
+Fighter::PackDirectionBits,0x00455B30,function
 StaticBattleResources::ReleaseOwnedEntriesAt005F6FF0,0x005F6FF0,function
 SakuyaFighter::Initialize,0x004C0820,function
 AliceFighter::Initialize,0x004E2C90,function
