@@ -88,6 +88,31 @@ countdown, they are `actionCountdown` and `cardCountdown`. Overrides mangle as
 tell a correctly named override from a wrongly attributed one, so every
 override was checked against the vtable slot before renaming.
 
+Which giant is which (slot 1 of each table; several old labels were wrong,
+e.g. "Boss 0050A580" is Patchouli's object and 004AC040 is Sakuya's fighter):
+
+| Character | Fighter Advance | Object Advance |
+| --- | --- | --- |
+| Reimu | 0045DD70 | 00476A40 |
+| Marisa | 00486550 | 0049C8F0 |
+| Sakuya | 004AC040 | 004CA6E0 |
+| Alice | 004D7E70 | 004EBDA0 |
+| Patchouli | 004F7130 | 0050A580 |
+| Youmu | 005214B0 | 00536400 |
+| Remilia | 00543210 | 0055AC80 |
+| Yuyuko | 00564BE0 | 0057D580 |
+| Yukari | 0058AF60 | 005A1600 |
+| Suika | 005AEEC0 | 005C9CC0 |
+| Meiling | 005D73C0 | 005EB520 |
+
+`src/CharacterObject.hpp` (Actor plus +0xC8..0xE7, owner fighter at +0xE4)
+now carries the seven object research parents in `probes/`. Their
+conversion was proven by building each before and after and comparing every
+code section and relocation (`.analysis/layout-tools/objsig.py`): all seven
+are byte-identical. The x87 rule applies to statements too: `x = x + g`
+with a member `x` loads `g` first, so the original's field-first order needs
+`x = (x) + g` (three places in Youmu's 00536400).
+
 Pitfalls: a parameter named like a new member shadows it (`BindOpponent`
 compiled to `opponent = opponent`), and the replay caught it. VC7 `$L`/`$SG`
 counters change with source text, so the comparator no longer pins their

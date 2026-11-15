@@ -1,4 +1,6 @@
 #pragma once
+#include "CharacterObject.hpp"
+#include "YukariFighter.hpp"
 
 // Borrowed receiver interfaces. The exact 005A1560 constructor writes E4h
 // and installs vtable 00659DDC. No complete owner layout is asserted;
@@ -12,10 +14,10 @@ public:
     void SpawnTrackedEffectAt00453AC0(short, float, float, signed char, signed char, unsigned char);
 };
 
-class ObjectActor5A1600F1231 {
+class ObjectActor5A1600F1231 : public CharacterObject {
 public:
-    virtual void BindAnimationAt0045B880();
-    virtual void AdvanceAction();
+    void BindAnimation();
+    void Advance();
     short AdvanceNestedFrame();
     void ResetPrimaryCounters(short);
     void ResetSecondaryCounters(short);

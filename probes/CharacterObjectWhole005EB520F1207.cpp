@@ -7,1305 +7,1300 @@
 // Interfaces below are borrowed receiver views; do not instantiate owners.
 #include "ObjectAdvance5EB520F1207.hpp"
 
-#define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
-#define FLOAT(offset) *reinterpret_cast<float*>(reinterpret_cast<unsigned char*>(this) + (offset))
-#define OWNER(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(FIELD(void*, 0xE4)) + (offset)))
-#define OPPONENT(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(OWNER(void*, 0x2E8)) + (offset)))
-#define OWNER_FLOAT(offset) *reinterpret_cast<float*>(reinterpret_cast<unsigned char*>(FIELD(void*, 0xE4)) + (offset))
-#define OPPONENT_FLOAT(offset) *reinterpret_cast<float*>(reinterpret_cast<unsigned char*>(OWNER(void*, 0x2E8)) + (offset))
-#define OWNER_ACTOR reinterpret_cast<OwnerActor5EB520Draft*>(FIELD(void*, 0xE4))
+#define OPPONENT(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(owner->opponent) + (offset)))
+#define OWNER_ACTOR reinterpret_cast<OwnerActor5EB520Draft*>(owner)
 
 // The state labels and names describe observed behavior, not original identity.
-void ObjectActor5EB520Draft::AdvanceAction() {
-    if (OPPONENT(short, 0x3BA) != 0) return;
-    if (OWNER(short, 0x3BA) != 0 && FIELD(short, 0x8A) == 0) return;
-    if (FIELD(short, 0x82) != 0) {
-        --FIELD(short, 0x82);
+void ObjectActor5EB520Draft::Advance() {
+    if (owner->opponent->field3BA != 0) return;
+    if (owner->field3BA != 0 && field08A == 0) return;
+    if (field082 != 0) {
+        --field082;
         return;
     }
-    switch (FIELD(short, 0x60)) {
+    switch (action) {
     case 800:
-        if (OWNER(short, 0x60) > 49 && OWNER(short, 0x60) < 150 && FIELD(short, 0x62) < 8) {
+        if (owner->action > 49 && owner->action < 150 && animationStage < 8) {
             ClearField74();
-            OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            if (OWNER(short, 0xEFA) > 25) {
-                OWNER(short, 0xEFA) = 0;
-                OWNER_ACTOR->SpawnEffect(995, FLOAT(0x44), FLOAT(0x48), 1, 1);
+            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
+                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+                OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
             }
             return;
         }
         else {
-            if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+            if (animationStage == 0 && animationFrame == 0) {
                 EnableTransform(0.0f, 0.0f, 0.0f);
-                FIELD(short, 0x80) = 1;
-                FIELD(int, 0x7C) = 0;
-                FLOAT(0x1C) = 1.0f;
-                FLOAT(0x20) = 1.0f;
-                FIELD(unsigned char, 0x11) = 255;
-                FIELD(unsigned char, 0x12) = 255;
-                FIELD(unsigned char, 0x13) = 255;
-                FIELD(unsigned char, 0x14) = 255;
-                FIELD(short, 0xD8) = 10;
+                field080 = 1;
+                field07C = 0;
+                scaleX = 1.0f;
+                scaleY = 1.0f;
+                color[0] = 255;
+                color[1] = 255;
+                color[2] = 255;
+                color[3] = 255;
+                field0D8 = 10;
             }
-            if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+            if (AdvanceNestedFrame() == field070) ClearField74();
         }
         break;
     case 801:
-        if (FLOAT(0x44) > 1380.0f || FLOAT(0x44) < -100.0f) {
+        if (x > 1380.0f || x < -100.0f) {
             ClearField74();
             return;
         }
         else {
-            if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+            if (animationStage == 0 && animationFrame == 0) {
                 EnableTransform(0.0f, 0.0f, 0.0f);
-                FIELD(int, 0x7C) = 0;
-                FLOAT(0x1C) = 0.5f;
-                FLOAT(0x20) = 0.5f;
-                FIELD(unsigned char, 0x11) = 255;
-                FIELD(unsigned char, 0x12) = 255;
-                FIELD(unsigned char, 0x13) = 255;
-                FIELD(unsigned char, 0x14) = 255;
-                FLOAT(0x2C) = FIELD(signed char, 0x66) * 60;
-                FLOAT(0x30) = FLOAT(0xC8);
-                FLOAT(0x50) = 0.0f;
-                FLOAT(0x54) = 0.0f;
-                FIELD(short, 0xD8) = 15;
-                FIELD(int, 0x7C) = 0;
+                field07C = 0;
+                scaleX = 0.5f;
+                scaleY = 0.5f;
+                color[0] = 255;
+                color[1] = 255;
+                color[2] = 255;
+                color[3] = 255;
+                rotationY = facing * 60;
+                rotationZ = field0C8;
+                velocityX = 0.0f;
+                velocityY = 0.0f;
+                field0D8 = 15;
+                field07C = 0;
             }
-            FLOAT(0x30) += FIELD(short, 0xD8);
-            FIELD(short, 0xD8) = FIELD(short, 0xD8) - 1;
-            if (FIELD(short, 0xD8) < 1) FIELD(short, 0xD8) = 1;
-            FLOAT(0x1C) += 0.02f;
-            FLOAT(0x20) += 0.02f;
-            if (FIELD(short, 0x62) == 2) {
-                if (FIELD(unsigned char, 0x11) > 5) {
-                    FIELD(unsigned char, 0x11) -= 5;
-                    FIELD(unsigned char, 0x12) -= 5;
-                    FIELD(unsigned char, 0x13) -= 5;
+            rotationZ += field0D8;
+            field0D8 = field0D8 - 1;
+            if (field0D8 < 1) field0D8 = 1;
+            scaleX += 0.02f;
+            scaleY += 0.02f;
+            if (animationStage == 2) {
+                if (color[0] > 5) {
+                    color[0] -= 5;
+                    color[1] -= 5;
+                    color[2] -= 5;
                 }
                 else {
                     ClearField74();
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+            if (AdvanceNestedFrame() == field070) ClearField74();
         }
         break;
     case 802:
-        if (FLOAT(0x44) > 1380.0f || FLOAT(0x44) < -100.0f) {
+        if (x > 1380.0f || x < -100.0f) {
             ClearField74();
             return;
         }
         else {
-            if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+            if (animationStage == 0 && animationFrame == 0) {
                 EnableTransform(0.0f, 0.0f, 0.0f);
-                FIELD(int, 0x7C) = 0;
-                FLOAT(0x1C) = 0.5f;
-                FLOAT(0x20) = 0.5f;
-                FIELD(unsigned char, 0x11) = 255;
-                FIELD(unsigned char, 0x12) = 255;
-                FIELD(unsigned char, 0x13) = 255;
-                FIELD(unsigned char, 0x14) = 255;
-                FLOAT(0x2C) = FIELD(signed char, 0x66) * 70;
-                FLOAT(0x30) = RecordedRange(0, 359);
-                FLOAT(0x50) = 0.0f;
-                FLOAT(0x54) = 0.0f;
-                FIELD(int, 0x7C) = 0;
+                field07C = 0;
+                scaleX = 0.5f;
+                scaleY = 0.5f;
+                color[0] = 255;
+                color[1] = 255;
+                color[2] = 255;
+                color[3] = 255;
+                rotationY = facing * 70;
+                rotationZ = RecordedRange(0, 359);
+                velocityX = 0.0f;
+                velocityY = 0.0f;
+                field07C = 0;
             }
-            FLOAT(0x1C) += 0.03f;
-            FLOAT(0x20) += 0.03f;
-            if (FIELD(short, 0x62) == 1) {
-                if (FIELD(unsigned char, 0x11) > 5) {
-                    FIELD(unsigned char, 0x11) -= 5;
-                    FIELD(unsigned char, 0x12) -= 5;
-                    FIELD(unsigned char, 0x13) -= 5;
+            scaleX += 0.03f;
+            scaleY += 0.03f;
+            if (animationStage == 1) {
+                if (color[0] > 5) {
+                    color[0] -= 5;
+                    color[1] -= 5;
+                    color[2] -= 5;
                 }
                 else {
                     ClearField74();
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+            if (AdvanceNestedFrame() == field070) ClearField74();
         }
         break;
     case 803:
-        if (OWNER(short, 0x60) > 49 && OWNER(short, 0x60) < 150 && FIELD(short, 0x62) < 2) {
+        if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
             ClearField74();
-            OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-            if (OWNER(short, 0xEFA) > 25) {
-                OWNER(short, 0xEFA) = 0;
-                OWNER_ACTOR->SpawnEffect(995, FLOAT(0x44), FLOAT(0x48), 1, 1);
+            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+            OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+            if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
+                reinterpret_cast<short&>(owner->fieldEFA) = 0;
+                OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
             }
             return;
         }
         else {
-            if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+            if (animationStage == 0 && animationFrame == 0) {
                 EnableTransform(0.0f, 0.0f, 0.0f);
-                FIELD(short, 0x80) = 3;
-                FIELD(int, 0x7C) = 0;
-                FLOAT(0x1C) = 0.1f;
-                FLOAT(0x20) = 0.1f;
-                FIELD(unsigned char, 0x11) = 255;
-                FIELD(unsigned char, 0x12) = 0;
-                FIELD(unsigned char, 0x13) = 0;
-                FIELD(unsigned char, 0x14) = 255;
-                FIELD(short, 0xD8) = 0;
-                OWNER_FLOAT(0x314) = 0.0f;
-                OWNER_ACTOR->SpawnEffect(801, FLOAT(0x44), FLOAT(0x48), FIELD(signed char, 0x66), 1);
-                OWNER_FLOAT(0x314) = 180.0f;
-                OWNER_ACTOR->SpawnEffect(801, FLOAT(0x44), FLOAT(0x48), FIELD(signed char, 0x66), 1);
-                OWNER_ACTOR->SpawnEffect(802, FLOAT(0x44), FLOAT(0x48), FIELD(signed char, 0x66), 1);
+                field080 = 3;
+                field07C = 0;
+                scaleX = 0.1f;
+                scaleY = 0.1f;
+                color[0] = 255;
+                color[1] = 0;
+                color[2] = 0;
+                color[3] = 255;
+                field0D8 = 0;
+                owner->field314 = 0.0f;
+                OWNER_ACTOR->SpawnEffect(801, x, y, facing, 1);
+                owner->field314 = 180.0f;
+                OWNER_ACTOR->SpawnEffect(801, x, y, facing, 1);
+                OWNER_ACTOR->SpawnEffect(802, x, y, facing, 1);
             }
-            if (FIELD(short, 0x62) == 1) {
-                if (FLOAT(0x1C) < 1.0f) {
-                    FLOAT(0x1C) += 0.1f;
-                    FLOAT(0x20) += 0.1f;
+            if (animationStage == 1) {
+                if (scaleX < 1.0f) {
+                    scaleX += 0.1f;
+                    scaleY += 0.1f;
                 }
-                if (FIELD(unsigned char, 0x13) < 230) {
-                    FIELD(unsigned char, 0x13) += 25;
-                    FIELD(unsigned char, 0x12) += 25;
+                if (color[2] < 230) {
+                    color[2] += 25;
+                    color[1] += 25;
                 }
                 else {
-                    FIELD(unsigned char, 0x11) = 255;
-                    FIELD(unsigned char, 0x13) = 255;
-                    FIELD(unsigned char, 0x12) = 255;
+                    color[0] = 255;
+                    color[2] = 255;
+                    color[1] = 255;
                 }
             }
-            if (FIELD(short, 0x62) > 2) {
-                FLOAT(0x1C) += 0.3f;
-                FLOAT(0x20) += 0.3f;
-                if (FIELD(unsigned char, 0x11) >= 25) {
-                    FIELD(unsigned char, 0x11) -= 25;
-                    FIELD(unsigned char, 0x13) -= 25;
-                    FIELD(unsigned char, 0x12) -= 25;
+            if (animationStage > 2) {
+                scaleX += 0.3f;
+                scaleY += 0.3f;
+                if (color[0] >= 25) {
+                    color[0] -= 25;
+                    color[2] -= 25;
+                    color[1] -= 25;
                 }
                 else {
                     ClearField74();
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
-            if (FIELD(short, 0x62) == 3 && FIELD(short, 0x64) == 0 && OWNER(short, 0x60) == 600 && OWNER(short, 0x62) < 8) {
+            if (AdvanceNestedFrame() == field070) ClearField74();
+            if (animationStage == 3 && animationFrame == 0 && owner->action == 600 && owner->animationStage < 8) {
                 ResetSecondaryCounters(2);
-                ++FIELD(short, 0xD8);
-                FLOAT(0x1C) = 1.1f - RecordedRange(0, 20) * 0.01f;
-                FLOAT(0x20) = FLOAT(0x1C);
-                if (FIELD(short, 0xD8) > 4) {
-                    FIELD(short, 0xD8) = 0;
-                    FIELD(int, 0x7C) = 0;
+                ++field0D8;
+                scaleX = 1.1f - RecordedRange(0, 20) * 0.01f;
+                scaleY = scaleX;
+                if (field0D8 > 4) {
+                    field0D8 = 0;
+                    field07C = 0;
                 }
             }
         }
         break;
     case 804:
-        if (FIELD(int, 0x7C) == 5) {
+        if (field07C == 5) {
             ClearField74();
             return;
         }
         else {
-            if (OWNER(short, 0x60) > 49 && OWNER(short, 0x60) < 150 && FIELD(short, 0x62) < 2) {
+            if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
                 ClearField74();
-                OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-                if (OWNER(short, 0xEFA) > 25) {
-                    OWNER(short, 0xEFA) = 0;
-                    OWNER_ACTOR->SpawnEffect(995, FLOAT(0x44), FLOAT(0x48), 1, 1);
+                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
+                    reinterpret_cast<short&>(owner->fieldEFA) = 0;
+                    OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
                 }
                 return;
             }
             else {
-                if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+                if (animationStage == 0 && animationFrame == 0) {
                     EnableTransform(0.0f, 0.0f, 0.0f);
-                    FIELD(short, 0x80) = 10;
-                    FIELD(int, 0x7C) = 0;
-                    FLOAT(0x1C) = 1.0f;
-                    FLOAT(0x20) = 1.0f;
-                    FIELD(unsigned char, 0x11) = 255;
-                    FIELD(unsigned char, 0x12) = 255;
-                    FIELD(unsigned char, 0x13) = 255;
-                    FIELD(unsigned char, 0x14) = 255;
-                    FLOAT(0x50) = 15.0f;
-                    FLOAT(0x54) = 0.0f;
-                    FIELD(short, 0xD8) = 0;
-                    FIELD(short, 0xDA) = 0;
+                    field080 = 10;
+                    field07C = 0;
+                    scaleX = 1.0f;
+                    scaleY = 1.0f;
+                    color[0] = 255;
+                    color[1] = 255;
+                    color[2] = 255;
+                    color[3] = 255;
+                    velocityX = 15.0f;
+                    velocityY = 0.0f;
+                    field0D8 = 0;
+                    field0DA = 0;
                 }
-                if (FIELD(int, 0x7C) == 6) {
-                    FIELD(int, 0x7C) = 0;
-                    ++FIELD(short, 0x80);
+                if (field07C == 6) {
+                    field07C = 0;
+                    ++field080;
                 }
-                if (FIELD(int, 0x7C) == 4) {
-                    FIELD(int, 0x7C) = 0;
+                if (field07C == 4) {
+                    field07C = 0;
                 }
-                FLOAT(0x50) -= 0.4f;
-                if (FLOAT(0x50) <= 2.0f) FLOAT(0x50) = 2.0f;
-                if (FIELD(short, 0x62) > 1) {
-                    FLOAT(0x50) = 0.0f;
-                    FLOAT(0x54) = 0.0f;
-                    FLOAT(0x1C) += 0.3f;
-                    FLOAT(0x20) += 0.3f;
-                    if (FIELD(unsigned char, 0x11) >= 25) {
-                        FIELD(unsigned char, 0x11) -= 25;
-                        FIELD(unsigned char, 0x13) -= 25;
-                        FIELD(unsigned char, 0x12) -= 25;
+                velocityX -= 0.4f;
+                if (velocityX <= 2.0f) velocityX = 2.0f;
+                if (animationStage > 1) {
+                    velocityX = 0.0f;
+                    velocityY = 0.0f;
+                    scaleX += 0.3f;
+                    scaleY += 0.3f;
+                    if (color[0] >= 25) {
+                        color[0] -= 25;
+                        color[2] -= 25;
+                        color[1] -= 25;
                     }
                     else {
                         ClearField74();
                         return;
                     }
                 }
-                FLOAT(0x44) += FIELD(signed char, 0x66) * FLOAT(0x50);
-                FLOAT(0x48) += FLOAT(0x54);
-                if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
-                if (FIELD(short, 0x62) == 2 && FIELD(short, 0x64) == 0 && FIELD(short, 0x80) > 0 && FIELD(short, 0xDA) < 20) {
+                x += facing * velocityX;
+                y += velocityY;
+                if (AdvanceNestedFrame() == field070) ClearField74();
+                if (animationStage == 2 && animationFrame == 0 && field080 > 0 && field0DA < 20) {
                     ResetSecondaryCounters(1);
-                    ++FIELD(short, 0xD8);
-                    ++FIELD(short, 0xDA);
-                    if (FIELD(short, 0xD8) > 2) {
-                        OWNER_ACTOR->SpawnEffect(805, FLOAT(0x44), FLOAT(0x48), FIELD(signed char, 0x66), 1);
-                        FIELD(short, 0xD8) = 0;
+                    ++field0D8;
+                    ++field0DA;
+                    if (field0D8 > 2) {
+                        OWNER_ACTOR->SpawnEffect(805, x, y, facing, 1);
+                        field0D8 = 0;
                     }
-                    FLOAT(0x1C) = 1.1f - RecordedRange(0, 20) * 0.01f;
-                    FLOAT(0x20) = FLOAT(0x1C);
-                    if (FIELD(int, 0x7C) != 0) {
-                        FIELD(int, 0x7C) = 0;
-                        FIELD(short, 0x80) -= 3;
+                    scaleX = 1.1f - RecordedRange(0, 20) * 0.01f;
+                    scaleY = scaleX;
+                    if (field07C != 0) {
+                        field07C = 0;
+                        field080 -= 3;
                     }
                 }
             }
         }
         break;
     case 805:
-        if (FLOAT(0x44) > 1380.0f || FLOAT(0x44) < -100.0f) {
+        if (x > 1380.0f || x < -100.0f) {
             ClearField74();
             return;
         }
         else {
-            if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+            if (animationStage == 0 && animationFrame == 0) {
                 EnableTransform(0.0f, 0.0f, 0.0f);
-                FIELD(int, 0x7C) = 0;
-                FLOAT(0x1C) = 0.5f;
-                FLOAT(0x20) = 0.5f;
-                FIELD(unsigned char, 0x11) = 255;
-                FIELD(unsigned char, 0x12) = 255;
-                FIELD(unsigned char, 0x13) = 255;
-                FIELD(unsigned char, 0x14) = 255;
-                FLOAT(0x28) = RecordedRange(0, 359);
-                FLOAT(0x2C) = RecordedRange(0, 359);
-                FLOAT(0x30) = RecordedRange(0, 359);
-                FLOAT(0x50) = 0.0f;
-                FLOAT(0x54) = 0.0f;
-                FIELD(int, 0x7C) = 0;
+                field07C = 0;
+                scaleX = 0.5f;
+                scaleY = 0.5f;
+                color[0] = 255;
+                color[1] = 255;
+                color[2] = 255;
+                color[3] = 255;
+                rotationX = RecordedRange(0, 359);
+                rotationY = RecordedRange(0, 359);
+                rotationZ = RecordedRange(0, 359);
+                velocityX = 0.0f;
+                velocityY = 0.0f;
+                field07C = 0;
             }
-            FLOAT(0x1C) += 0.085f;
-            FLOAT(0x20) += 0.085f;
-            if (FIELD(short, 0x62) == 1) {
-                if (FIELD(unsigned char, 0x11) > 15) {
-                    FIELD(unsigned char, 0x11) -= 15;
-                    FIELD(unsigned char, 0x12) -= 15;
-                    FIELD(unsigned char, 0x13) -= 15;
+            scaleX += 0.085f;
+            scaleY += 0.085f;
+            if (animationStage == 1) {
+                if (color[0] > 15) {
+                    color[0] -= 15;
+                    color[1] -= 15;
+                    color[2] -= 15;
                 }
                 else {
                     ClearField74();
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+            if (AdvanceNestedFrame() == field070) ClearField74();
         }
         break;
     case 806:
-        if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+        if (animationStage == 0 && animationFrame == 0) {
             EnableTransform(0.0f, 0.0f, 0.0f);
-            FIELD(int, 0x7C) = 0;
-            FLOAT(0x1C) = 2.5f;
-            FLOAT(0x20) = 2.0f;
-            FIELD(unsigned char, 0x11) = 255;
-            FIELD(unsigned char, 0x12) = 255;
-            FIELD(unsigned char, 0x13) = 255;
-            FIELD(unsigned char, 0x14) = 255;
+            field07C = 0;
+            scaleX = 2.5f;
+            scaleY = 2.0f;
+            color[0] = 255;
+            color[1] = 255;
+            color[2] = 255;
+            color[3] = 255;
         }
-        if (OWNER(short, 0x60) == 700 && OWNER(short, 0x62) < 11) {
-            FLOAT(0x44) = OWNER_FLOAT(0x44);
-            FLOAT(0x48) = OWNER_FLOAT(0x48) + 100.0f;
+        if (owner->action == 700 && owner->animationStage < 11) {
+            x = owner->x;
+            y = owner->y + 100.0f;
         }
-        if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearField74();
         break;
     case 807:
-        if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0 && FIELD(short, 0xD8) == 0) {
+        if (animationStage == 0 && animationFrame == 0 && field0D8 == 0) {
             EnableTransform(0.0f, 0.0f, 0.0f);
-            FLOAT(0x1C) = 1.0f;
-            FLOAT(0x20) = 1.0f;
-            FIELD(unsigned char, 0x11) = 0;
-            FIELD(unsigned char, 0x12) = 0;
-            FIELD(unsigned char, 0x13) = 0;
-            FIELD(unsigned char, 0x14) = 255;
-            FLOAT(0x2C) = FIELD(signed char, 0x66) * 50;
-            FIELD(short, 0xD8) = 1;
+            scaleX = 1.0f;
+            scaleY = 1.0f;
+            color[0] = 0;
+            color[1] = 0;
+            color[2] = 0;
+            color[3] = 255;
+            rotationY = facing * 50;
+            field0D8 = 1;
         }
-        FLOAT(0x30) += 1.0f;
-        FLOAT(0x1C) -= 0.01f;
-        FLOAT(0x20) -= 0.01f;
-        if (FIELD(short, 0x62) == 1) {
-            if (FIELD(unsigned char, 0x11) < 248) {
-                FIELD(unsigned char, 0x11) += 7;
-                FIELD(unsigned char, 0x13) += 7;
-                FIELD(unsigned char, 0x12) += 7;
+        rotationZ += 1.0f;
+        scaleX -= 0.01f;
+        scaleY -= 0.01f;
+        if (animationStage == 1) {
+            if (color[0] < 248) {
+                color[0] += 7;
+                color[2] += 7;
+                color[1] += 7;
             }
             else {
-                FIELD(unsigned char, 0x11) = 255;
-                FIELD(unsigned char, 0x12) = 255;
-                FIELD(unsigned char, 0x13) = 255;
+                color[0] = 255;
+                color[1] = 255;
+                color[2] = 255;
             }
         }
-        if (FIELD(short, 0x62) > 1) {
-            if (FIELD(unsigned char, 0x11) > 10) {
-                FIELD(unsigned char, 0x11) -= 10;
-                FIELD(unsigned char, 0x13) -= 10;
-                FIELD(unsigned char, 0x12) -= 10;
+        if (animationStage > 1) {
+            if (color[0] > 10) {
+                color[0] -= 10;
+                color[2] -= 10;
+                color[1] -= 10;
             }
             else {
                 ClearField74();
                 return;
             }
         }
-        if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearField74();
         break;
     case 808:
-        if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0 && FIELD(short, 0xD8) == 0) {
+        if (animationStage == 0 && animationFrame == 0 && field0D8 == 0) {
             EnableTransform(0.0f, 0.0f, 0.0f);
-            FLOAT(0x1C) = 1.2f;
-            FLOAT(0x20) = 1.2f;
-            FIELD(unsigned char, 0x11) = 0;
-            FIELD(unsigned char, 0x12) = 0;
-            FIELD(unsigned char, 0x13) = 0;
-            FIELD(unsigned char, 0x14) = 255;
-            FLOAT(0x2C) = FIELD(signed char, 0x66) * 50;
-            FIELD(short, 0xD8) = 1;
+            scaleX = 1.2f;
+            scaleY = 1.2f;
+            color[0] = 0;
+            color[1] = 0;
+            color[2] = 0;
+            color[3] = 255;
+            rotationY = facing * 50;
+            field0D8 = 1;
         }
-        FLOAT(0x1C) -= 0.018f;
-        FLOAT(0x20) -= 0.018f;
-        if (FIELD(short, 0x62) == 1) {
-            if (FIELD(unsigned char, 0x11) < 248) {
-                FIELD(unsigned char, 0x11) += 7;
-                FIELD(unsigned char, 0x13) += 7;
-                FIELD(unsigned char, 0x12) += 7;
+        scaleX -= 0.018f;
+        scaleY -= 0.018f;
+        if (animationStage == 1) {
+            if (color[0] < 248) {
+                color[0] += 7;
+                color[2] += 7;
+                color[1] += 7;
             }
             else {
-                FIELD(unsigned char, 0x11) = 255;
-                FIELD(unsigned char, 0x12) = 255;
-                FIELD(unsigned char, 0x13) = 255;
+                color[0] = 255;
+                color[1] = 255;
+                color[2] = 255;
             }
         }
-        if (FIELD(short, 0x62) > 1) {
-            if (FIELD(unsigned char, 0x11) > 8) {
-                FIELD(unsigned char, 0x11) -= 8;
-                FIELD(unsigned char, 0x13) -= 8;
-                FIELD(unsigned char, 0x12) -= 8;
+        if (animationStage > 1) {
+            if (color[0] > 8) {
+                color[0] -= 8;
+                color[2] -= 8;
+                color[1] -= 8;
             }
             else {
                 ClearField74();
                 return;
             }
         }
-        if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearField74();
         break;
     case 809:
-        if (FLOAT(0x44) > 1580.0f || FLOAT(0x44) < -300.0f) {
+        if (x > 1580.0f || x < -300.0f) {
             ClearField74();
             return;
         }
         else {
-            if (OWNER(short, 0x60) != 702 && FIELD(short, 0x62) < 2) {
+            if (owner->action != 702 && animationStage < 2) {
                 ClearField74();
                 return;
             }
             else {
-                if (FIELD(short, 0x8A) > 0 && OWNER(short, 0x3B8) == 0) {
-                    FIELD(short, 0x8A) = 0;
+                if (field08A > 0 && owner->field3B8 == 0) {
+                    field08A = 0;
                 }
-                if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+                if (animationStage == 0 && animationFrame == 0) {
                     EnableTransform(0.0f, 0.0f, 0.0f);
-                    FLOAT(0x1C) = 0.1f;
-                    FLOAT(0x20) = 0.1f;
-                    FIELD(unsigned char, 0x11) = 0;
-                    FIELD(unsigned char, 0x12) = 0;
-                    FIELD(unsigned char, 0x13) = 0;
-                    FIELD(unsigned char, 0x14) = 255;
-                    FIELD(short, 0x80) = 20;
-                    FLOAT(0x50) = 0.0f;
-                    FLOAT(0x54) = 0.0f;
-                    FIELD(short, 0xD8) = 0;
+                    scaleX = 0.1f;
+                    scaleY = 0.1f;
+                    color[0] = 0;
+                    color[1] = 0;
+                    color[2] = 0;
+                    color[3] = 255;
+                    field080 = 20;
+                    velocityX = 0.0f;
+                    velocityY = 0.0f;
+                    field0D8 = 0;
                 }
-                if (FIELD(int, 0x7C) == 6) {
-                    FIELD(int, 0x7C) = 0;
-                    ++FIELD(short, 0x80);
+                if (field07C == 6) {
+                    field07C = 0;
+                    ++field080;
                 }
-                if (FIELD(short, 0x62) == 2 && FIELD(short, 0x64) == 0) {
-                    FIELD(int, 0x7C) = 0;
-                    ++FIELD(short, 0xD8);
-                    FLOAT(0x1C) = 1.0f - RecordedRange(0, 20) * 0.01f;
-                    FLOAT(0x20) = FLOAT(0x1C);
-                    if (FIELD(short, 0xD8) > 1) {
-                        OWNER_ACTOR->SpawnEffect(810, FLOAT(0x44), FLOAT(0x48), FIELD(signed char, 0x66), 1);
-                        FIELD(short, 0xD8) = 0;
+                if (animationStage == 2 && animationFrame == 0) {
+                    field07C = 0;
+                    ++field0D8;
+                    scaleX = 1.0f - RecordedRange(0, 20) * 0.01f;
+                    scaleY = scaleX;
+                    if (field0D8 > 1) {
+                        OWNER_ACTOR->SpawnEffect(810, x, y, facing, 1);
+                        field0D8 = 0;
                     }
                 }
-                if (FIELD(short, 0x62) == 1) {
-                    FLOAT(0x1C) += 0.03f;
-                    FLOAT(0x20) += 0.03f;
-                    if (FIELD(unsigned char, 0x11) < 235) {
-                        FIELD(unsigned char, 0x11) += 20;
-                        FIELD(unsigned char, 0x13) += 20;
-                        FIELD(unsigned char, 0x12) += 20;
+                if (animationStage == 1) {
+                    scaleX += 0.03f;
+                    scaleY += 0.03f;
+                    if (color[0] < 235) {
+                        color[0] += 20;
+                        color[2] += 20;
+                        color[1] += 20;
                     }
                     else {
-                        FIELD(unsigned char, 0x11) = 255;
-                        FIELD(unsigned char, 0x12) = 255;
-                        FIELD(unsigned char, 0x13) = 255;
+                        color[0] = 255;
+                        color[1] = 255;
+                        color[2] = 255;
                     }
-                    if (OWNER(short, 0x62) == 15) {
-                        FLOAT(0x1C) = 1.0f - RecordedRange(0, 20) * 0.01f;
-                        FLOAT(0x20) = FLOAT(0x1C);
+                    if (owner->animationStage == 15) {
+                        scaleX = 1.0f - RecordedRange(0, 20) * 0.01f;
+                        scaleY = scaleX;
                         ResetSecondaryCounters(2);
                     }
                 }
-                if (FIELD(short, 0x62) == 2) {
-                    FLOAT(0x50) -= 0.75f;
-                    if (FLOAT(0x50) < 10.0f) FLOAT(0x50) = 10.0f;
+                if (animationStage == 2) {
+                    velocityX -= 0.75f;
+                    if (velocityX < 10.0f) velocityX = 10.0f;
                 }
-                if (FIELD(short, 0x62) > 2) {
-                    if (FIELD(unsigned char, 0x11) > 10) {
-                        FLOAT(0x1C) *= 0.95f;
-                        FLOAT(0x20) = FLOAT(0x1C);
-                        FIELD(unsigned char, 0x11) -= 10;
-                        FIELD(unsigned char, 0x13) -= 10;
-                        FIELD(unsigned char, 0x12) -= 10;
+                if (animationStage > 2) {
+                    if (color[0] > 10) {
+                        scaleX *= 0.95f;
+                        scaleY = scaleX;
+                        color[0] -= 10;
+                        color[2] -= 10;
+                        color[1] -= 10;
                     }
                     else {
                         ClearField74();
                         return;
                     }
                 }
-                FLOAT(0x44) += FIELD(signed char, 0x66) * FLOAT(0x50);
-                FLOAT(0x48) += FLOAT(0x54);
-                if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
-                if (FIELD(short, 0x62) == 2 && FIELD(short, 0x64) == 0) {
-                    FLOAT(0x50) = 18.5f;
-                    FLOAT(0x1C) = 0.6f;
-                    FLOAT(0x20) = 0.6f;
+                x += facing * velocityX;
+                y += velocityY;
+                if (AdvanceNestedFrame() == field070) ClearField74();
+                if (animationStage == 2 && animationFrame == 0) {
+                    velocityX = 18.5f;
+                    scaleX = 0.6f;
+                    scaleY = 0.6f;
                 }
-                if (FIELD(short, 0x62) == 3 && FIELD(short, 0x64) == 0) {
+                if (animationStage == 3 && animationFrame == 0) {
                     ResetSecondaryCounters(2);
                 }
             }
         }
         break;
     case 810:
-        if (FLOAT(0x44) > 1380.0f || FLOAT(0x44) < -100.0f) {
+        if (x > 1380.0f || x < -100.0f) {
             ClearField74();
             return;
         }
         else {
-            if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+            if (animationStage == 0 && animationFrame == 0) {
                 EnableTransform(0.0f, 0.0f, 0.0f);
-                FIELD(int, 0x7C) = 0;
-                FLOAT(0x1C) = 0.5f;
-                FLOAT(0x20) = 0.5f;
-                FIELD(unsigned char, 0x11) = 255;
-                FIELD(unsigned char, 0x12) = 255;
-                FIELD(unsigned char, 0x13) = 255;
-                FIELD(unsigned char, 0x14) = 255;
-                FLOAT(0x28) = RecordedRange(0, 359);
-                FLOAT(0x2C) = RecordedRange(0, 359);
-                FLOAT(0x30) = RecordedRange(0, 359);
-                FLOAT(0x50) = 0.0f;
-                FLOAT(0x54) = 0.0f;
-                FIELD(int, 0x7C) = 0;
+                field07C = 0;
+                scaleX = 0.5f;
+                scaleY = 0.5f;
+                color[0] = 255;
+                color[1] = 255;
+                color[2] = 255;
+                color[3] = 255;
+                rotationX = RecordedRange(0, 359);
+                rotationY = RecordedRange(0, 359);
+                rotationZ = RecordedRange(0, 359);
+                velocityX = 0.0f;
+                velocityY = 0.0f;
+                field07C = 0;
             }
-            FLOAT(0x1C) += 0.065f;
-            FLOAT(0x20) += 0.065f;
-            if (FIELD(short, 0x62) == 1) {
-                if (FIELD(unsigned char, 0x11) > 10) {
-                    FIELD(unsigned char, 0x11) -= 10;
-                    FIELD(unsigned char, 0x12) -= 10;
-                    FIELD(unsigned char, 0x13) -= 10;
+            scaleX += 0.065f;
+            scaleY += 0.065f;
+            if (animationStage == 1) {
+                if (color[0] > 10) {
+                    color[0] -= 10;
+                    color[1] -= 10;
+                    color[2] -= 10;
                 }
                 else {
                     ClearField74();
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+            if (AdvanceNestedFrame() == field070) ClearField74();
         }
         break;
     case 811:
-        if (FIELD(int, 0x7C) == 5) {
+        if (field07C == 5) {
             ClearField74();
             return;
         }
         else {
-            if (OWNER(short, 0x60) > 49 && OWNER(short, 0x60) < 150 && FIELD(short, 0x62) < 2) {
+            if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
                 ClearField74();
-                if (OWNER(short, 0xEFA) > 25) {
-                    OWNER(short, 0xEFA) = 0;
-                    OWNER_ACTOR->SpawnEffect(995, FLOAT(0x44), FLOAT(0x48), 1, 1);
+                if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
+                    reinterpret_cast<short&>(owner->fieldEFA) = 0;
+                    OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
                 }
-                OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
+                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
                 return;
             }
             else {
-                if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+                if (animationStage == 0 && animationFrame == 0) {
                     EnableTransform(0.0f, 0.0f, 0.0f);
-                    FIELD(short, 0x80) = 1;
-                    FIELD(int, 0x7C) = 0;
-                    SetPolarVelocity(FLOAT(0xC8), FLOAT(0xCC));
-                    FIELD(short, 0xD8) = 0;
-                    FIELD(short, 0xDC) = 0;
-                    FLOAT(0x1C) = 1.0f;
-                    FLOAT(0x20) = 1.0f;
-                    FIELD(unsigned char, 0x11) = 255;
-                    FIELD(unsigned char, 0x12) = 255;
-                    FIELD(unsigned char, 0x13) = 255;
-                    FIELD(unsigned char, 0x14) = 255;
-                    FLOAT(0x30) = AngleAt00483300(FLOAT(0x54), FLOAT(0x50)) / 0.017453288659453392f;
+                    field080 = 1;
+                    field07C = 0;
+                    SetPolarVelocity(field0C8, field0CC);
+                    field0D8 = 0;
+                    field0DC = 0;
+                    scaleX = 1.0f;
+                    scaleY = 1.0f;
+                    color[0] = 255;
+                    color[1] = 255;
+                    color[2] = 255;
+                    color[3] = 255;
+                    rotationZ = AngleAt00483300(velocityY, velocityX) / 0.017453288659453392f;
                 }
-                if (FIELD(short, 0x62) < 3 && RecordedRange(0, 100) < 40) {
-                    OWNER_ACTOR->SpawnEffect(818, FLOAT(0x44) + 20.0f - RecordedRange(0, 40), FLOAT(0x48) + 20.0f - RecordedRange(0, 40), FIELD(signed char, 0x66), 1);
+                if (animationStage < 3 && RecordedRange(0, 100) < 40) {
+                    OWNER_ACTOR->SpawnEffect(818, x + 20.0f - RecordedRange(0, 40), y + 20.0f - RecordedRange(0, 40), facing, 1);
                 }
-                ++FIELD(short, 0xD8);
-                if (FIELD(short, 0x62) < 2) {
-                    SetPolarVelocity(FLOAT(0xC8), FLOAT(0xCC));
+                ++field0D8;
+                if (animationStage < 2) {
+                    SetPolarVelocity(field0C8, field0CC);
                 }
-                if ((FIELD(int, 0x7C) == 1 || FIELD(int, 0x7C) == 2 || FIELD(int, 0x7C) == 4 || FIELD(int, 0x7C) == 6) && FIELD(short, 0x62) == 1) {
+                if ((field07C == 1 || field07C == 2 || field07C == 4 || field07C == 6) && animationStage == 1) {
                     ResetSecondaryCounters(2);
                     return;
                 }
                 else {
-                    FLOAT(0x44) += FIELD(signed char, 0x66) * FLOAT(0x50);
-                    FLOAT(0x48) -= FLOAT(0x54);
-                    if (FLOAT(0x44) > 1380.0f || FLOAT(0x44) < -100.0f || FLOAT(0x48) > 640.0f || FLOAT(0x48) < -120.0f) {
+                    x += facing * velocityX;
+                    y -= velocityY;
+                    if (x > 1380.0f || x < -100.0f || y > 640.0f || y < -120.0f) {
                         ClearField74();
                         return;
                     }
                     else {
-                        if (FIELD(short, 0x62) == 2) {
-                            if (FIELD(unsigned char, 0x11) >= 60) {
-                                FIELD(unsigned char, 0x11) -= 60;
+                        if (animationStage == 2) {
+                            if (color[0] >= 60) {
+                                color[0] -= 60;
                             }
                             else {
-                                FIELD(unsigned char, 0x11) = 0;
+                                color[0] = 0;
                                 ClearField74();
                                 return;
                             }
                         }
-                        if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+                        if (AdvanceNestedFrame() == field070) ClearField74();
                     }
                 }
             }
         }
         break;
     case 812:
-        if (FIELD(int, 0x7C) == 5) {
+        if (field07C == 5) {
             ClearField74();
             return;
         }
         else {
-            if (OWNER(short, 0x60) > 49 && OWNER(short, 0x60) < 150 && FIELD(short, 0x62) < 2) {
+            if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
                 ClearField74();
-                if (OWNER(short, 0xEFA) > 25) {
-                    OWNER(short, 0xEFA) = 0;
-                    OWNER_ACTOR->SpawnEffect(995, FLOAT(0x44), FLOAT(0x48), 1, 1);
+                if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
+                    reinterpret_cast<short&>(owner->fieldEFA) = 0;
+                    OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
                 }
-                OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
+                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
                 return;
             }
             else {
-                if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+                if (animationStage == 0 && animationFrame == 0) {
                     EnableTransform(0.0f, 0.0f, 0.0f);
-                    FIELD(short, 0x80) = 1;
-                    FIELD(int, 0x7C) = 0;
-                    SetPolarVelocity(FLOAT(0xC8), FLOAT(0xCC));
-                    FIELD(short, 0xD8) = 0;
-                    FIELD(short, 0xDC) = 0;
-                    FLOAT(0x1C) = 1.0f;
-                    FLOAT(0x20) = 1.0f;
-                    FIELD(unsigned char, 0x11) = 255;
-                    FIELD(unsigned char, 0x12) = 255;
-                    FIELD(unsigned char, 0x13) = 255;
-                    FIELD(unsigned char, 0x14) = 255;
-                    FLOAT(0x30) = AngleAt00483300(FLOAT(0x54), FLOAT(0x50)) / 0.017453288659453392f;
+                    field080 = 1;
+                    field07C = 0;
+                    SetPolarVelocity(field0C8, field0CC);
+                    field0D8 = 0;
+                    field0DC = 0;
+                    scaleX = 1.0f;
+                    scaleY = 1.0f;
+                    color[0] = 255;
+                    color[1] = 255;
+                    color[2] = 255;
+                    color[3] = 255;
+                    rotationZ = AngleAt00483300(velocityY, velocityX) / 0.017453288659453392f;
                 }
-                if (FIELD(short, 0x62) < 3 && RecordedRange(0, 100) < 40) {
-                    OWNER_ACTOR->SpawnEffect(819, FLOAT(0x44) + 20.0f - RecordedRange(0, 40), FLOAT(0x48) + 20.0f - RecordedRange(0, 40), FIELD(signed char, 0x66), 1);
+                if (animationStage < 3 && RecordedRange(0, 100) < 40) {
+                    OWNER_ACTOR->SpawnEffect(819, x + 20.0f - RecordedRange(0, 40), y + 20.0f - RecordedRange(0, 40), facing, 1);
                 }
-                ++FIELD(short, 0xD8);
-                if (FIELD(short, 0x62) < 2) {
-                    SetPolarVelocity(FLOAT(0xC8), FLOAT(0xCC));
+                ++field0D8;
+                if (animationStage < 2) {
+                    SetPolarVelocity(field0C8, field0CC);
                 }
-                if ((FIELD(int, 0x7C) == 1 || FIELD(int, 0x7C) == 2 || FIELD(int, 0x7C) == 4 || FIELD(int, 0x7C) == 6) && FIELD(short, 0x62) == 1) {
+                if ((field07C == 1 || field07C == 2 || field07C == 4 || field07C == 6) && animationStage == 1) {
                     ResetSecondaryCounters(2);
                     return;
                 }
                 else {
-                    FLOAT(0x44) += FIELD(signed char, 0x66) * FLOAT(0x50);
-                    FLOAT(0x48) -= FLOAT(0x54);
-                    if (FLOAT(0x44) > 1380.0f || FLOAT(0x44) < -100.0f || FLOAT(0x48) > 640.0f || FLOAT(0x48) < -120.0f) {
+                    x += facing * velocityX;
+                    y -= velocityY;
+                    if (x > 1380.0f || x < -100.0f || y > 640.0f || y < -120.0f) {
                         ClearField74();
                         return;
                     }
                     else {
-                        if (FIELD(short, 0x62) == 2) {
-                            if (FIELD(unsigned char, 0x11) >= 60) {
-                                FIELD(unsigned char, 0x11) -= 60;
+                        if (animationStage == 2) {
+                            if (color[0] >= 60) {
+                                color[0] -= 60;
                             }
                             else {
-                                FIELD(unsigned char, 0x11) = 0;
+                                color[0] = 0;
                                 ClearField74();
                                 return;
                             }
                         }
-                        if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+                        if (AdvanceNestedFrame() == field070) ClearField74();
                     }
                 }
             }
         }
         break;
     case 813:
-        if (FIELD(int, 0x7C) == 5) {
+        if (field07C == 5) {
             ClearField74();
             return;
         }
         else {
-            if (OWNER(short, 0x60) > 49 && OWNER(short, 0x60) < 150 && FIELD(short, 0x62) < 2) {
+            if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
                 ClearField74();
-                if (OWNER(short, 0xEFA) > 25) {
-                    OWNER(short, 0xEFA) = 0;
-                    OWNER_ACTOR->SpawnEffect(995, FLOAT(0x44), FLOAT(0x48), 1, 1);
+                if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
+                    reinterpret_cast<short&>(owner->fieldEFA) = 0;
+                    OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
                 }
-                OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
+                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
                 return;
             }
             else {
-                if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+                if (animationStage == 0 && animationFrame == 0) {
                     EnableTransform(0.0f, 0.0f, 0.0f);
-                    FIELD(short, 0x80) = 1;
-                    FIELD(int, 0x7C) = 0;
-                    SetPolarVelocity(FLOAT(0xC8), FLOAT(0xCC));
-                    FIELD(short, 0xD8) = 0;
-                    FIELD(short, 0xDC) = 0;
-                    FLOAT(0x1C) = 1.0f;
-                    FLOAT(0x20) = 1.0f;
-                    FIELD(unsigned char, 0x11) = 255;
-                    FIELD(unsigned char, 0x12) = 255;
-                    FIELD(unsigned char, 0x13) = 255;
-                    FIELD(unsigned char, 0x14) = 255;
-                    FLOAT(0x30) = AngleAt00483300(FLOAT(0x54), FLOAT(0x50)) / 0.017453288659453392f;
+                    field080 = 1;
+                    field07C = 0;
+                    SetPolarVelocity(field0C8, field0CC);
+                    field0D8 = 0;
+                    field0DC = 0;
+                    scaleX = 1.0f;
+                    scaleY = 1.0f;
+                    color[0] = 255;
+                    color[1] = 255;
+                    color[2] = 255;
+                    color[3] = 255;
+                    rotationZ = AngleAt00483300(velocityY, velocityX) / 0.017453288659453392f;
                 }
-                if (FIELD(short, 0x62) < 3 && RecordedRange(0, 100) < 40) {
-                    OWNER_ACTOR->SpawnEffect(820, FLOAT(0x44) + 20.0f - RecordedRange(0, 40), FLOAT(0x48) + 20.0f - RecordedRange(0, 40), FIELD(signed char, 0x66), 1);
+                if (animationStage < 3 && RecordedRange(0, 100) < 40) {
+                    OWNER_ACTOR->SpawnEffect(820, x + 20.0f - RecordedRange(0, 40), y + 20.0f - RecordedRange(0, 40), facing, 1);
                 }
-                ++FIELD(short, 0xD8);
-                if (FIELD(short, 0x62) < 2) {
-                    SetPolarVelocity(FLOAT(0xC8), FLOAT(0xCC));
+                ++field0D8;
+                if (animationStage < 2) {
+                    SetPolarVelocity(field0C8, field0CC);
                 }
-                if ((FIELD(int, 0x7C) == 1 || FIELD(int, 0x7C) == 2 || FIELD(int, 0x7C) == 4 || FIELD(int, 0x7C) == 6) && FIELD(short, 0x62) == 1) {
+                if ((field07C == 1 || field07C == 2 || field07C == 4 || field07C == 6) && animationStage == 1) {
                     ResetSecondaryCounters(2);
                     return;
                 }
                 else {
-                    FLOAT(0x44) += FIELD(signed char, 0x66) * FLOAT(0x50);
-                    FLOAT(0x48) -= FLOAT(0x54);
-                    if (FLOAT(0x44) > 1380.0f || FLOAT(0x44) < -100.0f || FLOAT(0x48) > 640.0f || FLOAT(0x48) < -120.0f) {
+                    x += facing * velocityX;
+                    y -= velocityY;
+                    if (x > 1380.0f || x < -100.0f || y > 640.0f || y < -120.0f) {
                         ClearField74();
                         return;
                     }
                     else {
-                        if (FIELD(short, 0x62) == 2) {
-                            if (FIELD(unsigned char, 0x11) >= 60) {
-                                FIELD(unsigned char, 0x11) -= 60;
+                        if (animationStage == 2) {
+                            if (color[0] >= 60) {
+                                color[0] -= 60;
                             }
                             else {
-                                FIELD(unsigned char, 0x11) = 0;
+                                color[0] = 0;
                                 ClearField74();
                                 return;
                             }
                         }
-                        if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+                        if (AdvanceNestedFrame() == field070) ClearField74();
                     }
                 }
             }
         }
         break;
     case 814:
-        if (FIELD(int, 0x7C) == 5) {
+        if (field07C == 5) {
             ClearField74();
             return;
         }
         else {
-            if (OWNER(short, 0x60) > 49 && OWNER(short, 0x60) < 150 && FIELD(short, 0x62) < 2) {
+            if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
                 ClearField74();
-                if (OWNER(short, 0xEFA) > 25) {
-                    OWNER(short, 0xEFA) = 0;
-                    OWNER_ACTOR->SpawnEffect(995, FLOAT(0x44), FLOAT(0x48), 1, 1);
+                if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
+                    reinterpret_cast<short&>(owner->fieldEFA) = 0;
+                    OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
                 }
-                OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
+                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
                 return;
             }
             else {
-                if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+                if (animationStage == 0 && animationFrame == 0) {
                     EnableTransform(0.0f, 0.0f, 0.0f);
-                    FIELD(short, 0x80) = 1;
-                    FIELD(int, 0x7C) = 0;
-                    SetPolarVelocity(FLOAT(0xC8), FLOAT(0xCC));
-                    FIELD(short, 0xD8) = 0;
-                    FIELD(short, 0xDC) = 0;
-                    FLOAT(0x1C) = 1.0f;
-                    FLOAT(0x20) = 1.0f;
-                    FIELD(unsigned char, 0x11) = 255;
-                    FIELD(unsigned char, 0x12) = 255;
-                    FIELD(unsigned char, 0x13) = 255;
-                    FIELD(unsigned char, 0x14) = 255;
-                    FLOAT(0x30) = AngleAt00483300(FLOAT(0x54), FLOAT(0x50)) / 0.017453288659453392f;
+                    field080 = 1;
+                    field07C = 0;
+                    SetPolarVelocity(field0C8, field0CC);
+                    field0D8 = 0;
+                    field0DC = 0;
+                    scaleX = 1.0f;
+                    scaleY = 1.0f;
+                    color[0] = 255;
+                    color[1] = 255;
+                    color[2] = 255;
+                    color[3] = 255;
+                    rotationZ = AngleAt00483300(velocityY, velocityX) / 0.017453288659453392f;
                 }
-                if (FIELD(short, 0x62) < 3 && RecordedRange(0, 100) < 40) {
-                    OWNER_ACTOR->SpawnEffect(821, FLOAT(0x44) + 20.0f - RecordedRange(0, 40), FLOAT(0x48) + 20.0f - RecordedRange(0, 40), FIELD(signed char, 0x66), 1);
+                if (animationStage < 3 && RecordedRange(0, 100) < 40) {
+                    OWNER_ACTOR->SpawnEffect(821, x + 20.0f - RecordedRange(0, 40), y + 20.0f - RecordedRange(0, 40), facing, 1);
                 }
-                ++FIELD(short, 0xD8);
-                if (FIELD(short, 0x62) < 2) {
-                    SetPolarVelocity(FLOAT(0xC8), FLOAT(0xCC));
+                ++field0D8;
+                if (animationStage < 2) {
+                    SetPolarVelocity(field0C8, field0CC);
                 }
-                if ((FIELD(int, 0x7C) == 1 || FIELD(int, 0x7C) == 2 || FIELD(int, 0x7C) == 4 || FIELD(int, 0x7C) == 6) && FIELD(short, 0x62) == 1) {
+                if ((field07C == 1 || field07C == 2 || field07C == 4 || field07C == 6) && animationStage == 1) {
                     ResetSecondaryCounters(2);
                     return;
                 }
                 else {
-                    FLOAT(0x44) += FIELD(signed char, 0x66) * FLOAT(0x50);
-                    FLOAT(0x48) -= FLOAT(0x54);
-                    if (FLOAT(0x44) > 1380.0f || FLOAT(0x44) < -100.0f || FLOAT(0x48) > 640.0f || FLOAT(0x48) < -120.0f) {
+                    x += facing * velocityX;
+                    y -= velocityY;
+                    if (x > 1380.0f || x < -100.0f || y > 640.0f || y < -120.0f) {
                         ClearField74();
                         return;
                     }
                     else {
-                        if (FIELD(short, 0x62) == 2) {
-                            if (FIELD(unsigned char, 0x11) >= 60) {
-                                FIELD(unsigned char, 0x11) -= 60;
+                        if (animationStage == 2) {
+                            if (color[0] >= 60) {
+                                color[0] -= 60;
                             }
                             else {
-                                FIELD(unsigned char, 0x11) = 0;
+                                color[0] = 0;
                                 ClearField74();
                                 return;
                             }
                         }
-                        if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+                        if (AdvanceNestedFrame() == field070) ClearField74();
                     }
                 }
             }
         }
         break;
     case 815:
-        if (FIELD(int, 0x7C) == 5) {
+        if (field07C == 5) {
             ClearField74();
             return;
         }
         else {
-            if (OWNER(short, 0x60) > 49 && OWNER(short, 0x60) < 150 && FIELD(short, 0x62) < 2) {
+            if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
                 ClearField74();
-                if (OWNER(short, 0xEFA) > 25) {
-                    OWNER(short, 0xEFA) = 0;
-                    OWNER_ACTOR->SpawnEffect(995, FLOAT(0x44), FLOAT(0x48), 1, 1);
+                if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
+                    reinterpret_cast<short&>(owner->fieldEFA) = 0;
+                    OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
                 }
-                OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
+                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
                 return;
             }
             else {
-                if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+                if (animationStage == 0 && animationFrame == 0) {
                     EnableTransform(0.0f, 0.0f, 0.0f);
-                    FIELD(short, 0x80) = 1;
-                    FIELD(int, 0x7C) = 0;
-                    SetPolarVelocity(FLOAT(0xC8), FLOAT(0xCC));
-                    FIELD(short, 0xD8) = 0;
-                    FIELD(short, 0xDC) = 0;
-                    FLOAT(0x1C) = 1.0f;
-                    FLOAT(0x20) = 1.0f;
-                    FIELD(unsigned char, 0x11) = 255;
-                    FIELD(unsigned char, 0x12) = 255;
-                    FIELD(unsigned char, 0x13) = 255;
-                    FIELD(unsigned char, 0x14) = 255;
-                    FLOAT(0x30) = AngleAt00483300(FLOAT(0x54), FLOAT(0x50)) / 0.017453288659453392f;
+                    field080 = 1;
+                    field07C = 0;
+                    SetPolarVelocity(field0C8, field0CC);
+                    field0D8 = 0;
+                    field0DC = 0;
+                    scaleX = 1.0f;
+                    scaleY = 1.0f;
+                    color[0] = 255;
+                    color[1] = 255;
+                    color[2] = 255;
+                    color[3] = 255;
+                    rotationZ = AngleAt00483300(velocityY, velocityX) / 0.017453288659453392f;
                 }
-                if (FIELD(short, 0x62) < 3 && RecordedRange(0, 100) < 40) {
-                    OWNER_ACTOR->SpawnEffect(822, FLOAT(0x44) + 20.0f - RecordedRange(0, 40), FLOAT(0x48) + 20.0f - RecordedRange(0, 40), FIELD(signed char, 0x66), 1);
+                if (animationStage < 3 && RecordedRange(0, 100) < 40) {
+                    OWNER_ACTOR->SpawnEffect(822, x + 20.0f - RecordedRange(0, 40), y + 20.0f - RecordedRange(0, 40), facing, 1);
                 }
-                ++FIELD(short, 0xD8);
-                if (FIELD(short, 0x62) < 2) {
-                    SetPolarVelocity(FLOAT(0xC8), FLOAT(0xCC));
+                ++field0D8;
+                if (animationStage < 2) {
+                    SetPolarVelocity(field0C8, field0CC);
                 }
-                if ((FIELD(int, 0x7C) == 1 || FIELD(int, 0x7C) == 2 || FIELD(int, 0x7C) == 4 || FIELD(int, 0x7C) == 6) && FIELD(short, 0x62) == 1) {
+                if ((field07C == 1 || field07C == 2 || field07C == 4 || field07C == 6) && animationStage == 1) {
                     ResetSecondaryCounters(2);
                     return;
                 }
                 else {
-                    FLOAT(0x44) += FIELD(signed char, 0x66) * FLOAT(0x50);
-                    FLOAT(0x48) -= FLOAT(0x54);
-                    if (FLOAT(0x44) > 1380.0f || FLOAT(0x44) < -100.0f || FLOAT(0x48) > 640.0f || FLOAT(0x48) < -120.0f) {
+                    x += facing * velocityX;
+                    y -= velocityY;
+                    if (x > 1380.0f || x < -100.0f || y > 640.0f || y < -120.0f) {
                         ClearField74();
                         return;
                     }
                     else {
-                        if (FIELD(short, 0x62) == 2) {
-                            if (FIELD(unsigned char, 0x11) >= 60) {
-                                FIELD(unsigned char, 0x11) -= 60;
+                        if (animationStage == 2) {
+                            if (color[0] >= 60) {
+                                color[0] -= 60;
                             }
                             else {
-                                FIELD(unsigned char, 0x11) = 0;
+                                color[0] = 0;
                                 ClearField74();
                                 return;
                             }
                         }
-                        if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+                        if (AdvanceNestedFrame() == field070) ClearField74();
                     }
                 }
             }
         }
         break;
     case 816:
-        if (FIELD(int, 0x7C) == 5) {
+        if (field07C == 5) {
             ClearField74();
             return;
         }
         else {
-            if (OWNER(short, 0x60) > 49 && OWNER(short, 0x60) < 150 && FIELD(short, 0x62) < 2) {
+            if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
                 ClearField74();
-                if (OWNER(short, 0xEFA) > 25) {
-                    OWNER(short, 0xEFA) = 0;
-                    OWNER_ACTOR->SpawnEffect(995, FLOAT(0x44), FLOAT(0x48), 1, 1);
+                if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
+                    reinterpret_cast<short&>(owner->fieldEFA) = 0;
+                    OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
                 }
-                OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
+                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
                 return;
             }
             else {
-                if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+                if (animationStage == 0 && animationFrame == 0) {
                     EnableTransform(0.0f, 0.0f, 0.0f);
-                    FIELD(short, 0x80) = 1;
-                    FIELD(int, 0x7C) = 0;
-                    SetPolarVelocity(FLOAT(0xC8), FLOAT(0xCC));
-                    FIELD(short, 0xD8) = 0;
-                    FIELD(short, 0xDC) = 0;
-                    FLOAT(0x1C) = 1.0f;
-                    FLOAT(0x20) = 1.0f;
-                    FIELD(unsigned char, 0x11) = 255;
-                    FIELD(unsigned char, 0x12) = 255;
-                    FIELD(unsigned char, 0x13) = 255;
-                    FIELD(unsigned char, 0x14) = 255;
-                    FLOAT(0x30) = AngleAt00483300(FLOAT(0x54), FLOAT(0x50)) / 0.017453288659453392f;
+                    field080 = 1;
+                    field07C = 0;
+                    SetPolarVelocity(field0C8, field0CC);
+                    field0D8 = 0;
+                    field0DC = 0;
+                    scaleX = 1.0f;
+                    scaleY = 1.0f;
+                    color[0] = 255;
+                    color[1] = 255;
+                    color[2] = 255;
+                    color[3] = 255;
+                    rotationZ = AngleAt00483300(velocityY, velocityX) / 0.017453288659453392f;
                 }
-                if (FIELD(short, 0x62) < 3 && RecordedRange(0, 100) < 40) {
-                    OWNER_ACTOR->SpawnEffect(823, FLOAT(0x44) + 20.0f - RecordedRange(0, 40), FLOAT(0x48) + 20.0f - RecordedRange(0, 40), FIELD(signed char, 0x66), 1);
+                if (animationStage < 3 && RecordedRange(0, 100) < 40) {
+                    OWNER_ACTOR->SpawnEffect(823, x + 20.0f - RecordedRange(0, 40), y + 20.0f - RecordedRange(0, 40), facing, 1);
                 }
-                ++FIELD(short, 0xD8);
-                if (FIELD(short, 0x62) < 2) {
-                    SetPolarVelocity(FLOAT(0xC8), FLOAT(0xCC));
+                ++field0D8;
+                if (animationStage < 2) {
+                    SetPolarVelocity(field0C8, field0CC);
                 }
-                if ((FIELD(int, 0x7C) == 1 || FIELD(int, 0x7C) == 2 || FIELD(int, 0x7C) == 4 || FIELD(int, 0x7C) == 6) && FIELD(short, 0x62) == 1) {
+                if ((field07C == 1 || field07C == 2 || field07C == 4 || field07C == 6) && animationStage == 1) {
                     ResetSecondaryCounters(2);
                     return;
                 }
                 else {
-                    FLOAT(0x44) += FIELD(signed char, 0x66) * FLOAT(0x50);
-                    FLOAT(0x48) -= FLOAT(0x54);
-                    if (FLOAT(0x44) > 1380.0f || FLOAT(0x44) < -100.0f || FLOAT(0x48) > 640.0f || FLOAT(0x48) < -120.0f) {
+                    x += facing * velocityX;
+                    y -= velocityY;
+                    if (x > 1380.0f || x < -100.0f || y > 640.0f || y < -120.0f) {
                         ClearField74();
                         return;
                     }
                     else {
-                        if (FIELD(short, 0x62) == 2) {
-                            if (FIELD(unsigned char, 0x11) >= 60) {
-                                FIELD(unsigned char, 0x11) -= 60;
+                        if (animationStage == 2) {
+                            if (color[0] >= 60) {
+                                color[0] -= 60;
                             }
                             else {
-                                FIELD(unsigned char, 0x11) = 0;
+                                color[0] = 0;
                                 ClearField74();
                                 return;
                             }
                         }
-                        if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+                        if (AdvanceNestedFrame() == field070) ClearField74();
                     }
                 }
             }
         }
         break;
     case 817:
-        if (FIELD(int, 0x7C) == 5) {
+        if (field07C == 5) {
             ClearField74();
             return;
         }
         else {
-            if (OWNER(short, 0x60) > 49 && OWNER(short, 0x60) < 150 && FIELD(short, 0x62) < 2) {
+            if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
                 ClearField74();
-                if (OWNER(short, 0xEFA) > 25) {
-                    OWNER(short, 0xEFA) = 0;
-                    OWNER_ACTOR->SpawnEffect(995, FLOAT(0x44), FLOAT(0x48), 1, 1);
+                if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
+                    reinterpret_cast<short&>(owner->fieldEFA) = 0;
+                    OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
                 }
-                OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
+                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
                 return;
             }
             else {
-                if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+                if (animationStage == 0 && animationFrame == 0) {
                     EnableTransform(0.0f, 0.0f, 0.0f);
-                    FIELD(short, 0x80) = 1;
-                    FIELD(int, 0x7C) = 0;
-                    SetPolarVelocity(FLOAT(0xC8), FLOAT(0xCC));
-                    FIELD(short, 0xD8) = 0;
-                    FIELD(short, 0xDC) = 0;
-                    FLOAT(0x1C) = 1.0f;
-                    FLOAT(0x20) = 1.0f;
-                    FIELD(unsigned char, 0x11) = 255;
-                    FIELD(unsigned char, 0x12) = 255;
-                    FIELD(unsigned char, 0x13) = 255;
-                    FIELD(unsigned char, 0x14) = 255;
-                    FLOAT(0x30) = AngleAt00483300(FLOAT(0x54), FLOAT(0x50)) / 0.017453288659453392f;
+                    field080 = 1;
+                    field07C = 0;
+                    SetPolarVelocity(field0C8, field0CC);
+                    field0D8 = 0;
+                    field0DC = 0;
+                    scaleX = 1.0f;
+                    scaleY = 1.0f;
+                    color[0] = 255;
+                    color[1] = 255;
+                    color[2] = 255;
+                    color[3] = 255;
+                    rotationZ = AngleAt00483300(velocityY, velocityX) / 0.017453288659453392f;
                 }
-                if (FIELD(short, 0x62) < 3 && RecordedRange(0, 100) < 40) {
-                    OWNER_ACTOR->SpawnEffect(824, FLOAT(0x44) + 20.0f - RecordedRange(0, 40), FLOAT(0x48) + 20.0f - RecordedRange(0, 40), FIELD(signed char, 0x66), 1);
+                if (animationStage < 3 && RecordedRange(0, 100) < 40) {
+                    OWNER_ACTOR->SpawnEffect(824, x + 20.0f - RecordedRange(0, 40), y + 20.0f - RecordedRange(0, 40), facing, 1);
                 }
-                ++FIELD(short, 0xD8);
-                if (FIELD(short, 0x62) < 2) {
-                    SetPolarVelocity(FLOAT(0xC8), FLOAT(0xCC));
+                ++field0D8;
+                if (animationStage < 2) {
+                    SetPolarVelocity(field0C8, field0CC);
                 }
-                if ((FIELD(int, 0x7C) == 1 || FIELD(int, 0x7C) == 2 || FIELD(int, 0x7C) == 4 || FIELD(int, 0x7C) == 6) && FIELD(short, 0x62) == 1) {
+                if ((field07C == 1 || field07C == 2 || field07C == 4 || field07C == 6) && animationStage == 1) {
                     ResetSecondaryCounters(2);
                     return;
                 }
                 else {
-                    FLOAT(0x44) += FIELD(signed char, 0x66) * FLOAT(0x50);
-                    FLOAT(0x48) -= FLOAT(0x54);
-                    if (FLOAT(0x44) > 1380.0f || FLOAT(0x44) < -100.0f || FLOAT(0x48) > 640.0f || FLOAT(0x48) < -120.0f) {
+                    x += facing * velocityX;
+                    y -= velocityY;
+                    if (x > 1380.0f || x < -100.0f || y > 640.0f || y < -120.0f) {
                         ClearField74();
                         return;
                     }
                     else {
-                        if (FIELD(short, 0x62) == 2) {
-                            if (FIELD(unsigned char, 0x11) >= 60) {
-                                FIELD(unsigned char, 0x11) -= 60;
+                        if (animationStage == 2) {
+                            if (color[0] >= 60) {
+                                color[0] -= 60;
                             }
                             else {
-                                FIELD(unsigned char, 0x11) = 0;
+                                color[0] = 0;
                                 ClearField74();
                                 return;
                             }
                         }
-                        if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+                        if (AdvanceNestedFrame() == field070) ClearField74();
                     }
                 }
             }
         }
         break;
     case 818:
-        if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+        if (animationStage == 0 && animationFrame == 0) {
             EnableTransform(0.0f, 0.0f, 0.0f);
-            FIELD(short, 0x80) = 1;
-            FIELD(int, 0x7C) = 0;
-            FLOAT(0x1C) = 1.1f - RecordedRange(0, 20) * 0.01f;
-            FLOAT(0x20) = FLOAT(0x1C);
-            FIELD(unsigned char, 0x12) = 255;
-            FIELD(unsigned char, 0x13) = 255;
-            FIELD(unsigned char, 0x14) = 255;
-            FLOAT(0x30) = RecordedRange(0, 359);
-            FLOAT(0x50) = 0.0f;
-            FLOAT(0x54) = -2.0f;
+            field080 = 1;
+            field07C = 0;
+            scaleX = 1.1f - RecordedRange(0, 20) * 0.01f;
+            scaleY = scaleX;
+            color[1] = 255;
+            color[2] = 255;
+            color[3] = 255;
+            rotationZ = RecordedRange(0, 359);
+            velocityX = 0.0f;
+            velocityY = -2.0f;
         }
-        FLOAT(0x48) += FLOAT(0x54);
-        FLOAT(0x30) += 2.0f;
-        if (FIELD(short, 0x62) > 0) {
-            if (FLOAT(0x1C) > 0.05f) {
-                FLOAT(0x1C) -= 0.05f;
-                FLOAT(0x20) -= 0.05f;
+        y += velocityY;
+        rotationZ += 2.0f;
+        if (animationStage > 0) {
+            if (scaleX > 0.05f) {
+                scaleX -= 0.05f;
+                scaleY -= 0.05f;
             }
-            if (FIELD(unsigned char, 0x11) > 10) {
-                FIELD(unsigned char, 0x11) -= 10;
+            if (color[0] > 10) {
+                color[0] -= 10;
             }
             else {
                 ClearField74();
                 return;
             }
         }
-        if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearField74();
         break;
     case 819:
-        if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+        if (animationStage == 0 && animationFrame == 0) {
             EnableTransform(0.0f, 0.0f, 0.0f);
-            FIELD(short, 0x80) = 1;
-            FIELD(int, 0x7C) = 0;
-            FLOAT(0x1C) = 1.1f - RecordedRange(0, 20) * 0.01f;
-            FLOAT(0x20) = FLOAT(0x1C);
-            FIELD(unsigned char, 0x12) = 255;
-            FIELD(unsigned char, 0x13) = 255;
-            FIELD(unsigned char, 0x14) = 255;
-            FLOAT(0x30) = RecordedRange(0, 359);
-            FLOAT(0x50) = 0.0f;
-            FLOAT(0x54) = -2.0f;
+            field080 = 1;
+            field07C = 0;
+            scaleX = 1.1f - RecordedRange(0, 20) * 0.01f;
+            scaleY = scaleX;
+            color[1] = 255;
+            color[2] = 255;
+            color[3] = 255;
+            rotationZ = RecordedRange(0, 359);
+            velocityX = 0.0f;
+            velocityY = -2.0f;
         }
-        FLOAT(0x48) += FLOAT(0x54);
-        FLOAT(0x30) += 2.0f;
-        if (FIELD(short, 0x62) > 0) {
-            if (FLOAT(0x1C) > 0.05f) {
-                FLOAT(0x1C) -= 0.05f;
-                FLOAT(0x20) -= 0.05f;
+        y += velocityY;
+        rotationZ += 2.0f;
+        if (animationStage > 0) {
+            if (scaleX > 0.05f) {
+                scaleX -= 0.05f;
+                scaleY -= 0.05f;
             }
-            if (FIELD(unsigned char, 0x11) > 10) {
-                FIELD(unsigned char, 0x11) -= 10;
+            if (color[0] > 10) {
+                color[0] -= 10;
             }
             else {
                 ClearField74();
                 return;
             }
         }
-        if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearField74();
         break;
     case 820:
-        if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+        if (animationStage == 0 && animationFrame == 0) {
             EnableTransform(0.0f, 0.0f, 0.0f);
-            FIELD(short, 0x80) = 1;
-            FIELD(int, 0x7C) = 0;
-            FLOAT(0x1C) = 1.1f - RecordedRange(0, 20) * 0.01f;
-            FLOAT(0x20) = FLOAT(0x1C);
-            FIELD(unsigned char, 0x12) = 255;
-            FIELD(unsigned char, 0x13) = 255;
-            FIELD(unsigned char, 0x14) = 255;
-            FLOAT(0x30) = RecordedRange(0, 359);
-            FLOAT(0x50) = 0.0f;
-            FLOAT(0x54) = -2.0f;
+            field080 = 1;
+            field07C = 0;
+            scaleX = 1.1f - RecordedRange(0, 20) * 0.01f;
+            scaleY = scaleX;
+            color[1] = 255;
+            color[2] = 255;
+            color[3] = 255;
+            rotationZ = RecordedRange(0, 359);
+            velocityX = 0.0f;
+            velocityY = -2.0f;
         }
-        FLOAT(0x48) += FLOAT(0x54);
-        FLOAT(0x30) += 2.0f;
-        if (FIELD(short, 0x62) > 0) {
-            if (FLOAT(0x1C) > 0.05f) {
-                FLOAT(0x1C) -= 0.05f;
-                FLOAT(0x20) -= 0.05f;
+        y += velocityY;
+        rotationZ += 2.0f;
+        if (animationStage > 0) {
+            if (scaleX > 0.05f) {
+                scaleX -= 0.05f;
+                scaleY -= 0.05f;
             }
-            if (FIELD(unsigned char, 0x11) > 10) {
-                FIELD(unsigned char, 0x11) -= 10;
+            if (color[0] > 10) {
+                color[0] -= 10;
             }
             else {
                 ClearField74();
                 return;
             }
         }
-        if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearField74();
         break;
     case 821:
-        if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+        if (animationStage == 0 && animationFrame == 0) {
             EnableTransform(0.0f, 0.0f, 0.0f);
-            FIELD(short, 0x80) = 1;
-            FIELD(int, 0x7C) = 0;
-            FLOAT(0x1C) = 1.1f - RecordedRange(0, 20) * 0.01f;
-            FLOAT(0x20) = FLOAT(0x1C);
-            FIELD(unsigned char, 0x12) = 255;
-            FIELD(unsigned char, 0x13) = 255;
-            FIELD(unsigned char, 0x14) = 255;
-            FLOAT(0x30) = RecordedRange(0, 359);
-            FLOAT(0x50) = 0.0f;
-            FLOAT(0x54) = -2.0f;
+            field080 = 1;
+            field07C = 0;
+            scaleX = 1.1f - RecordedRange(0, 20) * 0.01f;
+            scaleY = scaleX;
+            color[1] = 255;
+            color[2] = 255;
+            color[3] = 255;
+            rotationZ = RecordedRange(0, 359);
+            velocityX = 0.0f;
+            velocityY = -2.0f;
         }
-        FLOAT(0x48) += FLOAT(0x54);
-        FLOAT(0x30) += 2.0f;
-        if (FIELD(short, 0x62) > 0) {
-            if (FLOAT(0x1C) > 0.05f) {
-                FLOAT(0x1C) -= 0.05f;
-                FLOAT(0x20) -= 0.05f;
+        y += velocityY;
+        rotationZ += 2.0f;
+        if (animationStage > 0) {
+            if (scaleX > 0.05f) {
+                scaleX -= 0.05f;
+                scaleY -= 0.05f;
             }
-            if (FIELD(unsigned char, 0x11) > 10) {
-                FIELD(unsigned char, 0x11) -= 10;
+            if (color[0] > 10) {
+                color[0] -= 10;
             }
             else {
                 ClearField74();
                 return;
             }
         }
-        if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearField74();
         break;
     case 822:
-        if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+        if (animationStage == 0 && animationFrame == 0) {
             EnableTransform(0.0f, 0.0f, 0.0f);
-            FIELD(short, 0x80) = 1;
-            FIELD(int, 0x7C) = 0;
-            FLOAT(0x1C) = 1.1f - RecordedRange(0, 20) * 0.01f;
-            FLOAT(0x20) = FLOAT(0x1C);
-            FIELD(unsigned char, 0x12) = 255;
-            FIELD(unsigned char, 0x13) = 255;
-            FIELD(unsigned char, 0x14) = 255;
-            FLOAT(0x30) = RecordedRange(0, 359);
-            FLOAT(0x50) = 0.0f;
-            FLOAT(0x54) = -2.0f;
+            field080 = 1;
+            field07C = 0;
+            scaleX = 1.1f - RecordedRange(0, 20) * 0.01f;
+            scaleY = scaleX;
+            color[1] = 255;
+            color[2] = 255;
+            color[3] = 255;
+            rotationZ = RecordedRange(0, 359);
+            velocityX = 0.0f;
+            velocityY = -2.0f;
         }
-        FLOAT(0x48) += FLOAT(0x54);
-        FLOAT(0x30) += 2.0f;
-        if (FIELD(short, 0x62) > 0) {
-            if (FLOAT(0x1C) > 0.05f) {
-                FLOAT(0x1C) -= 0.05f;
-                FLOAT(0x20) -= 0.05f;
+        y += velocityY;
+        rotationZ += 2.0f;
+        if (animationStage > 0) {
+            if (scaleX > 0.05f) {
+                scaleX -= 0.05f;
+                scaleY -= 0.05f;
             }
-            if (FIELD(unsigned char, 0x11) > 10) {
-                FIELD(unsigned char, 0x11) -= 10;
+            if (color[0] > 10) {
+                color[0] -= 10;
             }
             else {
                 ClearField74();
                 return;
             }
         }
-        if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearField74();
         break;
     case 823:
-        if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+        if (animationStage == 0 && animationFrame == 0) {
             EnableTransform(0.0f, 0.0f, 0.0f);
-            FIELD(short, 0x80) = 1;
-            FIELD(int, 0x7C) = 0;
-            FLOAT(0x1C) = 1.1f - RecordedRange(0, 20) * 0.01f;
-            FLOAT(0x20) = FLOAT(0x1C);
-            FIELD(unsigned char, 0x12) = 255;
-            FIELD(unsigned char, 0x13) = 255;
-            FIELD(unsigned char, 0x14) = 255;
-            FLOAT(0x30) = RecordedRange(0, 359);
-            FLOAT(0x50) = 0.0f;
-            FLOAT(0x54) = -2.0f;
+            field080 = 1;
+            field07C = 0;
+            scaleX = 1.1f - RecordedRange(0, 20) * 0.01f;
+            scaleY = scaleX;
+            color[1] = 255;
+            color[2] = 255;
+            color[3] = 255;
+            rotationZ = RecordedRange(0, 359);
+            velocityX = 0.0f;
+            velocityY = -2.0f;
         }
-        FLOAT(0x48) += FLOAT(0x54);
-        FLOAT(0x30) += 2.0f;
-        if (FIELD(short, 0x62) > 0) {
-            if (FLOAT(0x1C) > 0.05f) {
-                FLOAT(0x1C) -= 0.05f;
-                FLOAT(0x20) -= 0.05f;
+        y += velocityY;
+        rotationZ += 2.0f;
+        if (animationStage > 0) {
+            if (scaleX > 0.05f) {
+                scaleX -= 0.05f;
+                scaleY -= 0.05f;
             }
-            if (FIELD(unsigned char, 0x11) > 10) {
-                FIELD(unsigned char, 0x11) -= 10;
+            if (color[0] > 10) {
+                color[0] -= 10;
             }
             else {
                 ClearField74();
                 return;
             }
         }
-        if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearField74();
         break;
     case 824:
-        if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+        if (animationStage == 0 && animationFrame == 0) {
             EnableTransform(0.0f, 0.0f, 0.0f);
-            FIELD(short, 0x80) = 1;
-            FIELD(int, 0x7C) = 0;
-            FLOAT(0x1C) = 1.1f - RecordedRange(0, 20) * 0.01f;
-            FLOAT(0x20) = FLOAT(0x1C);
-            FIELD(unsigned char, 0x12) = 255;
-            FIELD(unsigned char, 0x13) = 255;
-            FIELD(unsigned char, 0x14) = 255;
-            FLOAT(0x30) = RecordedRange(0, 359);
-            FLOAT(0x50) = 0.0f;
-            FLOAT(0x54) = -2.0f;
+            field080 = 1;
+            field07C = 0;
+            scaleX = 1.1f - RecordedRange(0, 20) * 0.01f;
+            scaleY = scaleX;
+            color[1] = 255;
+            color[2] = 255;
+            color[3] = 255;
+            rotationZ = RecordedRange(0, 359);
+            velocityX = 0.0f;
+            velocityY = -2.0f;
         }
-        FLOAT(0x48) += FLOAT(0x54);
-        FLOAT(0x30) += 2.0f;
-        if (FIELD(short, 0x62) > 0) {
-            if (FLOAT(0x1C) > 0.05f) {
-                FLOAT(0x1C) -= 0.05f;
-                FLOAT(0x20) -= 0.05f;
+        y += velocityY;
+        rotationZ += 2.0f;
+        if (animationStage > 0) {
+            if (scaleX > 0.05f) {
+                scaleX -= 0.05f;
+                scaleY -= 0.05f;
             }
-            if (FIELD(unsigned char, 0x11) > 10) {
-                FIELD(unsigned char, 0x11) -= 10;
+            if (color[0] > 10) {
+                color[0] -= 10;
             }
             else {
                 ClearField74();
                 return;
             }
         }
-        if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearField74();
         break;
     case 825:
-        if (FIELD(int, 0x7C) == 5) {
+        if (field07C == 5) {
             ClearField74();
             return;
         }
         else {
-            if (OWNER(short, 0x60) > 49 && OWNER(short, 0x60) < 150 && FIELD(short, 0x62) < 26) {
+            if (owner->action > 49 && owner->action < 150 && animationStage < 26) {
                 ClearField74();
-                if (OWNER(short, 0xEFA) > 25) {
-                    OWNER(short, 0xEFA) = 0;
-                    OWNER_ACTOR->SpawnEffect(995, FLOAT(0x44), FLOAT(0x48), 1, 1);
+                if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
+                    reinterpret_cast<short&>(owner->fieldEFA) = 0;
+                    OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
                 }
-                OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
+                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
                 return;
             }
             else {
-                if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+                if (animationStage == 0 && animationFrame == 0) {
                     EnableTransform(0.0f, 0.0f, 0.0f);
-                    FIELD(short, 0x80) = 10;
-                    FIELD(int, 0x7C) = 0;
-                    FLOAT(0x1C) = 1.0f;
-                    FLOAT(0x20) = 1.0f;
-                    FIELD(unsigned char, 0x12) = 255;
-                    FIELD(unsigned char, 0x13) = 255;
-                    FIELD(unsigned char, 0x14) = 255;
-                    FIELD(short, 0xDA) = 2000;
-                    SetPolarVelocity(0.0f, FIELD(short, 0xDA) * 0.01f);
-                    FIELD(short, 0x80) = 5;
-                    FIELD(short, 0xD8) = 0;
+                    field080 = 10;
+                    field07C = 0;
+                    scaleX = 1.0f;
+                    scaleY = 1.0f;
+                    color[1] = 255;
+                    color[2] = 255;
+                    color[3] = 255;
+                    field0DA = 2000;
+                    SetPolarVelocity(0.0f, field0DA * 0.01f);
+                    field080 = 5;
+                    field0D8 = 0;
                 }
-                if (FIELD(int, 0x7C) == 6) {
-                    FIELD(int, 0x7C) = 0;
-                    ++FIELD(short, 0x80);
+                if (field07C == 6) {
+                    field07C = 0;
+                    ++field080;
                 }
-                if (FIELD(int, 0x7C) != 0) {
-                    if (FIELD(int, 0x7C) == 4) {
-                        FIELD(int, 0x7C) = 0;
+                if (field07C != 0) {
+                    if (field07C == 4) {
+                        field07C = 0;
                     }
                     else {
-                        FIELD(short, 0x80) = 0;
+                        field080 = 0;
                     }
                 }
-                if (FIELD(short, 0x80) == 0 && FIELD(short, 0x62) < 26) {
+                if (field080 == 0 && animationStage < 26) {
                     ResetSecondaryCounters(26);
                     return;
                 }
                 else {
-                    FIELD(short, 0xDA) -= 100;
-                    if (FIELD(short, 0xDA) < 300) FIELD(short, 0xDA) = 300;
-                    SetPolarVelocity(0.0f, FIELD(short, 0xDA) * 0.01f);
-                    FLOAT(0x44) += FIELD(signed char, 0x66) * FLOAT(0x50);
-                    FLOAT(0x48) += FLOAT(0x54);
-                    if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
-                    if (FIELD(short, 0x62) == 26 && FIELD(short, 0x64) == 0 && FIELD(short, 0xD8) < 2) {
-                        ++FIELD(short, 0xD8);
+                    field0DA -= 100;
+                    if (field0DA < 300) field0DA = 300;
+                    SetPolarVelocity(0.0f, field0DA * 0.01f);
+                    x += facing * velocityX;
+                    y += velocityY;
+                    if (AdvanceNestedFrame() == field070) ClearField74();
+                    if (animationStage == 26 && animationFrame == 0 && field0D8 < 2) {
+                        ++field0D8;
                         ResetSecondaryCounters(13);
                     }
                 }
@@ -1313,67 +1308,67 @@ void ObjectActor5EB520Draft::AdvanceAction() {
         }
         break;
     case 826:
-        if (FIELD(int, 0x7C) == 5) {
+        if (field07C == 5) {
             ClearField74();
             return;
         }
         else {
-            if (OWNER(short, 0x60) > 49 && OWNER(short, 0x60) < 150 && FIELD(short, 0x62) < 26) {
+            if (owner->action > 49 && owner->action < 150 && animationStage < 26) {
                 ClearField74();
-                if (OWNER(short, 0xEFA) > 25) {
-                    OWNER(short, 0xEFA) = 0;
-                    OWNER_ACTOR->SpawnEffect(995, FLOAT(0x44), FLOAT(0x48), 1, 1);
+                if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
+                    reinterpret_cast<short&>(owner->fieldEFA) = 0;
+                    OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
                 }
-                OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
+                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
                 return;
             }
             else {
-                if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+                if (animationStage == 0 && animationFrame == 0) {
                     EnableTransform(0.0f, 0.0f, 0.0f);
-                    FIELD(short, 0x80) = 1;
-                    FIELD(int, 0x7C) = 0;
-                    FLOAT(0x1C) = 1.0f;
-                    FLOAT(0x20) = 1.0f;
-                    FIELD(unsigned char, 0x12) = 255;
-                    FIELD(unsigned char, 0x13) = 255;
-                    FIELD(unsigned char, 0x14) = 255;
-                    FIELD(short, 0xDA) = 2000;
-                    SetPolarVelocity(0.0f, FIELD(short, 0xDA) * 0.01f);
-                    FIELD(short, 0x80) = 5;
-                    FIELD(short, 0xD8) = 0;
+                    field080 = 1;
+                    field07C = 0;
+                    scaleX = 1.0f;
+                    scaleY = 1.0f;
+                    color[1] = 255;
+                    color[2] = 255;
+                    color[3] = 255;
+                    field0DA = 2000;
+                    SetPolarVelocity(0.0f, field0DA * 0.01f);
+                    field080 = 5;
+                    field0D8 = 0;
                 }
-                if (FIELD(int, 0x7C) == 6) {
-                    FIELD(int, 0x7C) = 0;
-                    ++FIELD(short, 0x80);
+                if (field07C == 6) {
+                    field07C = 0;
+                    ++field080;
                 }
-                if (FIELD(int, 0x7C) != 0) {
-                    if (FIELD(int, 0x7C) == 4) {
-                        FIELD(int, 0x7C) = 0;
+                if (field07C != 0) {
+                    if (field07C == 4) {
+                        field07C = 0;
                     }
                     else {
-                        FIELD(short, 0x80) = 0;
+                        field080 = 0;
                     }
                 }
-                if (FIELD(short, 0x80) == 0 && FIELD(short, 0x62) < 26) {
+                if (field080 == 0 && animationStage < 26) {
                     ResetSecondaryCounters(26);
                     return;
                 }
                 else {
-                    FIELD(short, 0xDA) -= 100;
-                    if (FIELD(short, 0xDA) < 300) FIELD(short, 0xDA) = 300;
-                    SetPolarVelocity(0.0f, FIELD(short, 0xDA) * 0.01f);
-                    FLOAT(0x44) += FIELD(signed char, 0x66) * FLOAT(0x50);
-                    FLOAT(0x48) += FLOAT(0x54);
-                    if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
-                    if (FIELD(short, 0x62) == 26 && FIELD(short, 0x64) == 0 && FIELD(short, 0xD8) < 3) {
-                        ++FIELD(short, 0xD8);
+                    field0DA -= 100;
+                    if (field0DA < 300) field0DA = 300;
+                    SetPolarVelocity(0.0f, field0DA * 0.01f);
+                    x += facing * velocityX;
+                    y += velocityY;
+                    if (AdvanceNestedFrame() == field070) ClearField74();
+                    if (animationStage == 26 && animationFrame == 0 && field0D8 < 3) {
+                        ++field0D8;
                         ResetSecondaryCounters(13);
                     }
                 }
@@ -1381,67 +1376,67 @@ void ObjectActor5EB520Draft::AdvanceAction() {
         }
         break;
     case 827:
-        if (FIELD(int, 0x7C) == 5) {
+        if (field07C == 5) {
             ClearField74();
             return;
         }
         else {
-            if (OWNER(short, 0x60) > 49 && OWNER(short, 0x60) < 150 && FIELD(short, 0x62) < 26) {
+            if (owner->action > 49 && owner->action < 150 && animationStage < 26) {
                 ClearField74();
-                if (OWNER(short, 0xEFA) > 25) {
-                    OWNER(short, 0xEFA) = 0;
-                    OWNER_ACTOR->SpawnEffect(995, FLOAT(0x44), FLOAT(0x48), 1, 1);
+                if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
+                    reinterpret_cast<short&>(owner->fieldEFA) = 0;
+                    OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
                 }
-                OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
-                OWNER_ACTOR->SpawnEffect(996, FLOAT(0x44), FLOAT(0x48), 1, 1);
+                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
+                OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
                 return;
             }
             else {
-                if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+                if (animationStage == 0 && animationFrame == 0) {
                     EnableTransform(0.0f, 0.0f, 0.0f);
-                    FIELD(short, 0x80) = 1;
-                    FIELD(int, 0x7C) = 0;
-                    FLOAT(0x1C) = 1.0f;
-                    FLOAT(0x20) = 1.0f;
-                    FIELD(unsigned char, 0x12) = 255;
-                    FIELD(unsigned char, 0x13) = 255;
-                    FIELD(unsigned char, 0x14) = 255;
-                    FIELD(short, 0xDA) = 2000;
-                    SetPolarVelocity(-30.0f, FIELD(short, 0xDA) * 0.01f);
-                    FIELD(short, 0x80) = 5;
-                    FIELD(short, 0xD8) = 0;
+                    field080 = 1;
+                    field07C = 0;
+                    scaleX = 1.0f;
+                    scaleY = 1.0f;
+                    color[1] = 255;
+                    color[2] = 255;
+                    color[3] = 255;
+                    field0DA = 2000;
+                    SetPolarVelocity(-30.0f, field0DA * 0.01f);
+                    field080 = 5;
+                    field0D8 = 0;
                 }
-                if (FIELD(int, 0x7C) == 6) {
-                    FIELD(int, 0x7C) = 0;
-                    ++FIELD(short, 0x80);
+                if (field07C == 6) {
+                    field07C = 0;
+                    ++field080;
                 }
-                if (FIELD(int, 0x7C) != 0) {
-                    if (FIELD(int, 0x7C) == 4) {
-                        FIELD(int, 0x7C) = 0;
+                if (field07C != 0) {
+                    if (field07C == 4) {
+                        field07C = 0;
                     }
                     else {
-                        FIELD(short, 0x80) = 0;
+                        field080 = 0;
                     }
                 }
-                if (FIELD(short, 0x80) == 0 && FIELD(short, 0x62) < 26) {
+                if (field080 == 0 && animationStage < 26) {
                     ResetSecondaryCounters(26);
                     return;
                 }
                 else {
-                    FIELD(short, 0xDA) -= 100;
-                    if (FIELD(short, 0xDA) < 300) FIELD(short, 0xDA) = 300;
-                    SetPolarVelocity(-30.0f, FIELD(short, 0xDA) * 0.01f);
-                    FLOAT(0x44) += FIELD(signed char, 0x66) * FLOAT(0x50);
-                    FLOAT(0x48) += FLOAT(0x54);
-                    if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
-                    if (FIELD(short, 0x62) == 26 && FIELD(short, 0x64) == 0 && FIELD(short, 0xD8) < 3) {
-                        ++FIELD(short, 0xD8);
+                    field0DA -= 100;
+                    if (field0DA < 300) field0DA = 300;
+                    SetPolarVelocity(-30.0f, field0DA * 0.01f);
+                    x += facing * velocityX;
+                    y += velocityY;
+                    if (AdvanceNestedFrame() == field070) ClearField74();
+                    if (animationStage == 26 && animationFrame == 0 && field0D8 < 3) {
+                        ++field0D8;
                         ResetSecondaryCounters(13);
                     }
                 }
@@ -1449,1040 +1444,1040 @@ void ObjectActor5EB520Draft::AdvanceAction() {
         }
         break;
     case 828:
-        if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+        if (animationStage == 0 && animationFrame == 0) {
             EnableTransform(0.0f, 0.0f, 0.0f);
-            FIELD(int, 0x7C) = 0;
-            FLOAT(0x1C) = 0.5f;
-            FLOAT(0x20) = 0.5f;
-            FIELD(unsigned char, 0x11) = 255;
-            FIELD(unsigned char, 0x12) = 255;
-            FIELD(unsigned char, 0x13) = 255;
-            FIELD(unsigned char, 0x14) = 255;
-            FLOAT(0x28) = FIELD(signed char, 0x66) * -35;
-            FLOAT(0x2C) = 40.0f;
-            FLOAT(0x50) = 0.0f;
-            FLOAT(0x54) = 0.0f;
-            FIELD(int, 0x7C) = 0;
+            field07C = 0;
+            scaleX = 0.5f;
+            scaleY = 0.5f;
+            color[0] = 255;
+            color[1] = 255;
+            color[2] = 255;
+            color[3] = 255;
+            rotationX = facing * -35;
+            rotationY = 40.0f;
+            velocityX = 0.0f;
+            velocityY = 0.0f;
+            field07C = 0;
         }
-        FLOAT(0x1C) += 0.065f;
-        FLOAT(0x20) += 0.065f;
-        if (FIELD(short, 0x62) == 2) {
-            if (FIELD(unsigned char, 0x11) > 15) {
-                FIELD(unsigned char, 0x11) -= 15;
-                FIELD(unsigned char, 0x14) -= 15;
-                FIELD(unsigned char, 0x13) -= 15;
+        scaleX += 0.065f;
+        scaleY += 0.065f;
+        if (animationStage == 2) {
+            if (color[0] > 15) {
+                color[0] -= 15;
+                color[3] -= 15;
+                color[2] -= 15;
             }
             else {
                 ClearField74();
                 return;
             }
         }
-        if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearField74();
         break;
     case 829:
-        if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+        if (animationStage == 0 && animationFrame == 0) {
             EnableTransform(0.0f, 0.0f, 0.0f);
-            FIELD(int, 0x7C) = 0;
-            FLOAT(0x1C) = 0.5f;
-            FLOAT(0x20) = 0.5f;
-            FIELD(unsigned char, 0x11) = 255;
-            FIELD(unsigned char, 0x12) = 255;
-            FIELD(unsigned char, 0x13) = 255;
-            FIELD(unsigned char, 0x14) = 255;
-            FLOAT(0x28) = FIELD(signed char, 0x66) * -35;
-            FLOAT(0x2C) = 40.0f;
-            FLOAT(0x50) = 0.0f;
-            FLOAT(0x54) = 0.0f;
-            FIELD(int, 0x7C) = 0;
+            field07C = 0;
+            scaleX = 0.5f;
+            scaleY = 0.5f;
+            color[0] = 255;
+            color[1] = 255;
+            color[2] = 255;
+            color[3] = 255;
+            rotationX = facing * -35;
+            rotationY = 40.0f;
+            velocityX = 0.0f;
+            velocityY = 0.0f;
+            field07C = 0;
         }
-        FLOAT(0x1C) += 0.065f;
-        FLOAT(0x20) += 0.065f;
-        FLOAT(0x30) += 2.0f;
-        if (FIELD(short, 0x62) == 2) {
-            if (FIELD(unsigned char, 0x11) > 15) {
-                FIELD(unsigned char, 0x11) -= 15;
-                FIELD(unsigned char, 0x14) -= 15;
-                FIELD(unsigned char, 0x13) -= 15;
+        scaleX += 0.065f;
+        scaleY += 0.065f;
+        rotationZ += 2.0f;
+        if (animationStage == 2) {
+            if (color[0] > 15) {
+                color[0] -= 15;
+                color[3] -= 15;
+                color[2] -= 15;
             }
             else {
                 ClearField74();
                 return;
             }
         }
-        if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearField74();
         break;
     case 830:
-        if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+        if (animationStage == 0 && animationFrame == 0) {
             EnableTransform(0.0f, 0.0f, 0.0f);
-            FIELD(int, 0x7C) = 0;
-            FLOAT(0x1C) = 0.5f;
-            FLOAT(0x20) = 0.5f;
-            FIELD(unsigned char, 0x11) = 255;
-            FIELD(unsigned char, 0x12) = 255;
-            FIELD(unsigned char, 0x13) = 255;
-            FIELD(unsigned char, 0x14) = 255;
-            FLOAT(0x28) = FIELD(signed char, 0x66) * -35;
-            FLOAT(0x2C) = 40.0f;
-            FLOAT(0x50) = 0.0f;
-            FLOAT(0x54) = 0.0f;
-            FIELD(int, 0x7C) = 0;
+            field07C = 0;
+            scaleX = 0.5f;
+            scaleY = 0.5f;
+            color[0] = 255;
+            color[1] = 255;
+            color[2] = 255;
+            color[3] = 255;
+            rotationX = facing * -35;
+            rotationY = 40.0f;
+            velocityX = 0.0f;
+            velocityY = 0.0f;
+            field07C = 0;
         }
-        FLOAT(0x1C) += 0.2f;
-        FLOAT(0x20) += 0.2f;
-        if (FIELD(short, 0x62) == 2) {
-            if (FIELD(unsigned char, 0x11) > 20) {
-                FIELD(unsigned char, 0x11) -= 20;
-                FIELD(unsigned char, 0x14) -= 20;
-                FIELD(unsigned char, 0x13) -= 20;
+        scaleX += 0.2f;
+        scaleY += 0.2f;
+        if (animationStage == 2) {
+            if (color[0] > 20) {
+                color[0] -= 20;
+                color[3] -= 20;
+                color[2] -= 20;
             }
             else {
                 ClearField74();
                 return;
             }
         }
-        if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearField74();
         break;
     case 831:
-        if (FLOAT(0x44) > 1380.0f || FLOAT(0x44) < -100.0f) {
+        if (x > 1380.0f || x < -100.0f) {
             ClearField74();
             return;
         }
         else {
-            if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+            if (animationStage == 0 && animationFrame == 0) {
                 EnableTransform(0.0f, 0.0f, 0.0f);
-                FIELD(int, 0x7C) = 0;
-                FLOAT(0x1C) = 1.0f;
-                FLOAT(0x20) = 1.0f;
-                FIELD(unsigned char, 0x11) = 255;
-                FIELD(unsigned char, 0x12) = 255;
-                FIELD(unsigned char, 0x13) = 255;
-                FIELD(unsigned char, 0x14) = 255;
-                FLOAT(0x50) = 0.0f;
-                FLOAT(0x54) = 0.0f;
-                FIELD(short, 0xD8) = 10;
-                FIELD(int, 0x7C) = 0;
+                field07C = 0;
+                scaleX = 1.0f;
+                scaleY = 1.0f;
+                color[0] = 255;
+                color[1] = 255;
+                color[2] = 255;
+                color[3] = 255;
+                velocityX = 0.0f;
+                velocityY = 0.0f;
+                field0D8 = 10;
+                field07C = 0;
             }
-            FLOAT(0x1C) += FIELD(short, 0xD8) * 0.01f + 0.01f;
-            FLOAT(0x20) += FIELD(short, 0xD8) * 0.01f + 0.01f;
-            if (FIELD(short, 0xD8) > 0) --FIELD(short, 0xD8);
-            if (FIELD(short, 0x62) == 2) {
-                if (FIELD(unsigned char, 0x11) > 5) {
-                    FIELD(unsigned char, 0x11) -= 15;
-                    FIELD(unsigned char, 0x12) -= 15;
-                    FIELD(unsigned char, 0x14) -= 15;
+            scaleX += field0D8 * 0.01f + 0.01f;
+            scaleY += field0D8 * 0.01f + 0.01f;
+            if (field0D8 > 0) --field0D8;
+            if (animationStage == 2) {
+                if (color[0] > 5) {
+                    color[0] -= 15;
+                    color[1] -= 15;
+                    color[3] -= 15;
                 }
                 else {
                     ClearField74();
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
-            if (FIELD(short, 0x62) == 2 && FIELD(short, 0x64) == 0) {
-                OWNER_ACTOR->SpawnEffect(832, FLOAT(0x44), FLOAT(0x48), FIELD(signed char, 0x66), 1);
-                OWNER_ACTOR->SpawnEffect(833, FLOAT(0x44), FLOAT(0x48), FIELD(signed char, 0x66), 1);
-                OWNER_ACTOR->SpawnEffect(834, FLOAT(0x44), FLOAT(0x48), FIELD(signed char, 0x66), 1);
+            if (AdvanceNestedFrame() == field070) ClearField74();
+            if (animationStage == 2 && animationFrame == 0) {
+                OWNER_ACTOR->SpawnEffect(832, x, y, facing, 1);
+                OWNER_ACTOR->SpawnEffect(833, x, y, facing, 1);
+                OWNER_ACTOR->SpawnEffect(834, x, y, facing, 1);
             }
         }
         break;
     case 832:
-        if (FLOAT(0x44) > 1380.0f || FLOAT(0x44) < -100.0f) {
+        if (x > 1380.0f || x < -100.0f) {
             ClearField74();
             return;
         }
         else {
-            if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+            if (animationStage == 0 && animationFrame == 0) {
                 EnableTransform(0.0f, 0.0f, 0.0f);
-                FIELD(int, 0x7C) = 0;
-                FLOAT(0x1C) = 1.0f;
-                FLOAT(0x20) = 1.0f;
-                FIELD(unsigned char, 0x11) = 255;
-                FIELD(unsigned char, 0x12) = 255;
-                FIELD(unsigned char, 0x13) = 255;
-                FIELD(unsigned char, 0x14) = 255;
-                FLOAT(0x50) = 0.0f;
-                FLOAT(0x54) = 0.0f;
-                FIELD(short, 0x80) = 1;
-                FIELD(int, 0x7C) = 0;
+                field07C = 0;
+                scaleX = 1.0f;
+                scaleY = 1.0f;
+                color[0] = 255;
+                color[1] = 255;
+                color[2] = 255;
+                color[3] = 255;
+                velocityX = 0.0f;
+                velocityY = 0.0f;
+                field080 = 1;
+                field07C = 0;
             }
-            FLOAT(0x1C) *= 0.9f;
-            FLOAT(0x20) += 0.05f;
-            if (FIELD(int, 0x7C) == 6) {
-                ++FIELD(short, 0x80);
-                FIELD(int, 0x7C) = 0;
+            scaleX *= 0.9f;
+            scaleY += 0.05f;
+            if (field07C == 6) {
+                ++field080;
+                field07C = 0;
             }
-            if (FIELD(short, 0x62) == 2) {
-                if (FIELD(unsigned char, 0x11) > 5) {
-                    FIELD(unsigned char, 0x11) -= 15;
-                    FIELD(unsigned char, 0x12) -= 15;
-                    FIELD(unsigned char, 0x14) -= 15;
+            if (animationStage == 2) {
+                if (color[0] > 5) {
+                    color[0] -= 15;
+                    color[1] -= 15;
+                    color[3] -= 15;
                 }
                 else {
                     ClearField74();
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+            if (AdvanceNestedFrame() == field070) ClearField74();
         }
         break;
     case 833:
-        if (FLOAT(0x44) > 1380.0f || FLOAT(0x44) < -100.0f) {
+        if (x > 1380.0f || x < -100.0f) {
             ClearField74();
             return;
         }
         else {
-            if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+            if (animationStage == 0 && animationFrame == 0) {
                 EnableTransform(0.0f, 0.0f, 0.0f);
-                FIELD(int, 0x7C) = 0;
-                FLOAT(0x1C) = 1.0f;
-                FLOAT(0x20) = 1.0f;
-                FIELD(unsigned char, 0x11) = 255;
-                FIELD(unsigned char, 0x12) = 255;
-                FIELD(unsigned char, 0x13) = 255;
-                FIELD(unsigned char, 0x14) = 255;
-                FLOAT(0x50) = 0.0f;
-                FLOAT(0x54) = 0.0f;
-                FIELD(short, 0x80) = 1;
-                FIELD(int, 0x7C) = 0;
+                field07C = 0;
+                scaleX = 1.0f;
+                scaleY = 1.0f;
+                color[0] = 255;
+                color[1] = 255;
+                color[2] = 255;
+                color[3] = 255;
+                velocityX = 0.0f;
+                velocityY = 0.0f;
+                field080 = 1;
+                field07C = 0;
             }
-            FLOAT(0x20) += 0.05f;
-            if (FIELD(int, 0x7C) == 6) {
-                ++FIELD(short, 0x80);
-                FIELD(int, 0x7C) = 0;
+            scaleY += 0.05f;
+            if (field07C == 6) {
+                ++field080;
+                field07C = 0;
             }
-            if (FIELD(short, 0x62) == 2) {
-                if (FIELD(unsigned char, 0x11) > 5) {
-                    FIELD(unsigned char, 0x11) -= 15;
-                    FIELD(unsigned char, 0x12) -= 15;
-                    FIELD(unsigned char, 0x14) -= 15;
+            if (animationStage == 2) {
+                if (color[0] > 5) {
+                    color[0] -= 15;
+                    color[1] -= 15;
+                    color[3] -= 15;
                 }
                 else {
                     ClearField74();
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+            if (AdvanceNestedFrame() == field070) ClearField74();
         }
         break;
     case 834:
-        if (FLOAT(0x44) > 1380.0f || FLOAT(0x44) < -100.0f) {
+        if (x > 1380.0f || x < -100.0f) {
             ClearField74();
             return;
         }
         else {
-            if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+            if (animationStage == 0 && animationFrame == 0) {
                 EnableTransform(0.0f, 0.0f, 0.0f);
-                FIELD(int, 0x7C) = 0;
-                FLOAT(0x1C) = 1.0f;
-                FLOAT(0x20) = 1.0f;
-                FIELD(unsigned char, 0x11) = 255;
-                FIELD(unsigned char, 0x12) = 255;
-                FIELD(unsigned char, 0x13) = 255;
-                FIELD(unsigned char, 0x14) = 255;
-                FLOAT(0x50) = 0.0f;
-                FLOAT(0x54) = 0.0f;
-                FIELD(short, 0x80) = 1;
-                FIELD(int, 0x7C) = 0;
+                field07C = 0;
+                scaleX = 1.0f;
+                scaleY = 1.0f;
+                color[0] = 255;
+                color[1] = 255;
+                color[2] = 255;
+                color[3] = 255;
+                velocityX = 0.0f;
+                velocityY = 0.0f;
+                field080 = 1;
+                field07C = 0;
             }
-            FLOAT(0x1C) += 0.1f;
-            FLOAT(0x20) += 0.1f;
-            if (FIELD(short, 0x62) == 2) {
-                if (FIELD(unsigned char, 0x11) > 5) {
-                    FIELD(unsigned char, 0x11) -= 15;
-                    FIELD(unsigned char, 0x12) -= 15;
-                    FIELD(unsigned char, 0x14) -= 15;
+            scaleX += 0.1f;
+            scaleY += 0.1f;
+            if (animationStage == 2) {
+                if (color[0] > 5) {
+                    color[0] -= 15;
+                    color[1] -= 15;
+                    color[3] -= 15;
                 }
                 else {
                     ClearField74();
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+            if (AdvanceNestedFrame() == field070) ClearField74();
         }
         break;
     case 835:
-        if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+        if (animationStage == 0 && animationFrame == 0) {
             EnableTransform(0.0f, 0.0f, 0.0f);
-            FIELD(int, 0x7C) = 0;
-            FLOAT(0x1C) = 0.5f;
-            FLOAT(0x20) = 0.5f;
-            FIELD(unsigned char, 0x11) = 255;
-            FIELD(unsigned char, 0x12) = 255;
-            FIELD(unsigned char, 0x13) = 255;
-            FIELD(unsigned char, 0x14) = 255;
-            FLOAT(0x28) = FIELD(signed char, 0x66) * -80;
-            FLOAT(0x50) = 0.0f;
-            FLOAT(0x54) = 0.0f;
-            FIELD(short, 0xD8) = 10;
-            FIELD(int, 0x7C) = 0;
-            FIELD(short, 0x80) = 1;
+            field07C = 0;
+            scaleX = 0.5f;
+            scaleY = 0.5f;
+            color[0] = 255;
+            color[1] = 255;
+            color[2] = 255;
+            color[3] = 255;
+            rotationX = facing * -80;
+            velocityX = 0.0f;
+            velocityY = 0.0f;
+            field0D8 = 10;
+            field07C = 0;
+            field080 = 1;
         }
-        FLOAT(0x1C) += FIELD(short, 0xD8) * 0.03 + static_cast<double>(0.02f);
-        FLOAT(0x20) += FIELD(short, 0xD8) * 0.03 + static_cast<double>(0.02f);
-        if (FIELD(short, 0xD8) > 0) --FIELD(short, 0xD8);
-        if (FIELD(short, 0x62) == 21) {
-            if (FIELD(unsigned char, 0x11) > 15) {
-                FIELD(unsigned char, 0x11) -= 15;
-                FIELD(unsigned char, 0x14) -= 15;
+        scaleX += field0D8 * 0.03 + static_cast<double>(0.02f);
+        scaleY += field0D8 * 0.03 + static_cast<double>(0.02f);
+        if (field0D8 > 0) --field0D8;
+        if (animationStage == 21) {
+            if (color[0] > 15) {
+                color[0] -= 15;
+                color[3] -= 15;
             }
             else {
                 ClearField74();
                 return;
             }
         }
-        if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearField74();
         break;
     case 836:
-        if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+        if (animationStage == 0 && animationFrame == 0) {
             EnableTransform(0.0f, 0.0f, 0.0f);
-            FIELD(int, 0x7C) = 0;
-            FLOAT(0x1C) = 0.65f;
-            FLOAT(0x20) = 0.65f;
-            FIELD(unsigned char, 0x11) = 255;
-            FIELD(unsigned char, 0x12) = 255;
-            FIELD(unsigned char, 0x13) = 255;
-            FIELD(unsigned char, 0x14) = 255;
-            FLOAT(0x28) = FIELD(signed char, 0x66) * -80;
-            FLOAT(0x50) = 0.0f;
-            FLOAT(0x54) = 0.0f;
-            FIELD(short, 0xD8) = 10;
-            FIELD(int, 0x7C) = 0;
-            FIELD(short, 0x80) = 1;
+            field07C = 0;
+            scaleX = 0.65f;
+            scaleY = 0.65f;
+            color[0] = 255;
+            color[1] = 255;
+            color[2] = 255;
+            color[3] = 255;
+            rotationX = facing * -80;
+            velocityX = 0.0f;
+            velocityY = 0.0f;
+            field0D8 = 10;
+            field07C = 0;
+            field080 = 1;
         }
-        FLOAT(0x1C) += FIELD(short, 0xD8) * 0.03 + static_cast<double>(0.02f);
-        FLOAT(0x20) += FIELD(short, 0xD8) * 0.03 + static_cast<double>(0.02f);
-        if (FIELD(short, 0xD8) > 0) --FIELD(short, 0xD8);
-        if (FIELD(short, 0x62) == 21) {
-            if (FIELD(unsigned char, 0x11) > 15) {
-                FIELD(unsigned char, 0x11) -= 15;
-                FIELD(unsigned char, 0x14) -= 15;
+        scaleX += field0D8 * 0.03 + static_cast<double>(0.02f);
+        scaleY += field0D8 * 0.03 + static_cast<double>(0.02f);
+        if (field0D8 > 0) --field0D8;
+        if (animationStage == 21) {
+            if (color[0] > 15) {
+                color[0] -= 15;
+                color[3] -= 15;
             }
             else {
                 ClearField74();
                 return;
             }
         }
-        if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearField74();
         break;
     case 837:
-        if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+        if (animationStage == 0 && animationFrame == 0) {
             EnableTransform(0.0f, 0.0f, 0.0f);
-            FIELD(int, 0x7C) = 0;
-            FLOAT(0x1C) = 0.5f;
-            FLOAT(0x20) = 0.5f;
-            FIELD(unsigned char, 0x11) = 255;
-            FIELD(unsigned char, 0x12) = 255;
-            FIELD(unsigned char, 0x13) = 255;
-            FIELD(unsigned char, 0x14) = 255;
-            FLOAT(0x28) = FIELD(signed char, 0x66) * -60;
-            FLOAT(0x2C) = 35.0f;
-            FLOAT(0x50) = 0.0f;
-            FLOAT(0x54) = 0.0f;
-            FIELD(short, 0xD8) = 10;
-            FIELD(int, 0x7C) = 0;
+            field07C = 0;
+            scaleX = 0.5f;
+            scaleY = 0.5f;
+            color[0] = 255;
+            color[1] = 255;
+            color[2] = 255;
+            color[3] = 255;
+            rotationX = facing * -60;
+            rotationY = 35.0f;
+            velocityX = 0.0f;
+            velocityY = 0.0f;
+            field0D8 = 10;
+            field07C = 0;
         }
-        FLOAT(0x1C) += FIELD(short, 0xD8) * 0.05f + 0.05f;
-        FLOAT(0x20) += FIELD(short, 0xD8) * 0.05f + 0.05f;
-        if (FIELD(short, 0xD8) > 0) --FIELD(short, 0xD8);
-        if (FIELD(short, 0x62) == 20) {
-            if (FIELD(unsigned char, 0x11) > 15) {
-                FIELD(unsigned char, 0x11) -= 15;
-                FIELD(unsigned char, 0x14) -= 15;
-                FIELD(unsigned char, 0x13) -= 15;
+        scaleX += field0D8 * 0.05f + 0.05f;
+        scaleY += field0D8 * 0.05f + 0.05f;
+        if (field0D8 > 0) --field0D8;
+        if (animationStage == 20) {
+            if (color[0] > 15) {
+                color[0] -= 15;
+                color[3] -= 15;
+                color[2] -= 15;
             }
             else {
                 ClearField74();
                 return;
             }
         }
-        if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearField74();
         break;
     case 838:
-        if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+        if (animationStage == 0 && animationFrame == 0) {
             EnableTransform(0.0f, 0.0f, 0.0f);
-            FIELD(int, 0x7C) = 0;
-            FLOAT(0x1C) = 1.0f;
-            FLOAT(0x20) = 1.0f;
-            FIELD(unsigned char, 0x11) = 255;
-            FIELD(unsigned char, 0x12) = 255;
-            FIELD(unsigned char, 0x13) = 255;
-            FIELD(unsigned char, 0x14) = 255;
-            FLOAT(0x50) = 0.0f;
-            FLOAT(0x54) = 0.0f;
-            FIELD(int, 0x7C) = 0;
+            field07C = 0;
+            scaleX = 1.0f;
+            scaleY = 1.0f;
+            color[0] = 255;
+            color[1] = 255;
+            color[2] = 255;
+            color[3] = 255;
+            velocityX = 0.0f;
+            velocityY = 0.0f;
+            field07C = 0;
         }
-        FLOAT(0x1C) += 0.02f;
-        FLOAT(0x20) += 0.02f;
-        if (FIELD(short, 0x62) == 1) {
-            if (FIELD(unsigned char, 0x11) > 10) {
-                FIELD(unsigned char, 0x11) -= 10;
-                FIELD(unsigned char, 0x14) -= 10;
-                FIELD(unsigned char, 0x12) -= 10;
+        scaleX += 0.02f;
+        scaleY += 0.02f;
+        if (animationStage == 1) {
+            if (color[0] > 10) {
+                color[0] -= 10;
+                color[3] -= 10;
+                color[1] -= 10;
             }
             else {
                 ClearField74();
                 return;
             }
         }
-        if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearField74();
         break;
     case 839:
-        if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+        if (animationStage == 0 && animationFrame == 0) {
             EnableTransform(0.0f, 0.0f, 0.0f);
-            FIELD(int, 0x7C) = 0;
-            FLOAT(0x1C) = 1.0f;
-            FLOAT(0x20) = 1.0f;
-            FIELD(unsigned char, 0x11) = 255;
-            FIELD(unsigned char, 0x12) = 255;
-            FIELD(unsigned char, 0x13) = 255;
-            FIELD(unsigned char, 0x14) = 255;
-            FLOAT(0x50) = 0.0f;
-            FLOAT(0x54) = 0.0f;
-            FIELD(int, 0x7C) = 0;
+            field07C = 0;
+            scaleX = 1.0f;
+            scaleY = 1.0f;
+            color[0] = 255;
+            color[1] = 255;
+            color[2] = 255;
+            color[3] = 255;
+            velocityX = 0.0f;
+            velocityY = 0.0f;
+            field07C = 0;
         }
-        FLOAT(0x1C) += 0.05f;
-        FLOAT(0x20) += 0.05f;
-        if (FIELD(short, 0x62) == 1) {
-            if (FIELD(unsigned char, 0x11) > 10) {
-                FIELD(unsigned char, 0x11) -= 10;
-                FIELD(unsigned char, 0x14) -= 10;
-                FIELD(unsigned char, 0x12) -= 10;
+        scaleX += 0.05f;
+        scaleY += 0.05f;
+        if (animationStage == 1) {
+            if (color[0] > 10) {
+                color[0] -= 10;
+                color[3] -= 10;
+                color[1] -= 10;
             }
             else {
                 ClearField74();
                 return;
             }
         }
-        if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearField74();
         break;
     case 840:
-        if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+        if (animationStage == 0 && animationFrame == 0) {
             EnableTransform(0.0f, 0.0f, 0.0f);
-            FIELD(int, 0x7C) = 0;
-            FLOAT(0x1C) = 2.5f;
-            FLOAT(0x20) = 3.0f;
-            FIELD(unsigned char, 0x11) = 255;
-            FIELD(unsigned char, 0x12) = 255;
-            FIELD(unsigned char, 0x13) = 255;
-            FIELD(unsigned char, 0x14) = 255;
+            field07C = 0;
+            scaleX = 2.5f;
+            scaleY = 3.0f;
+            color[0] = 255;
+            color[1] = 255;
+            color[2] = 255;
+            color[3] = 255;
         }
-        if (OWNER(short, 0x60) == 701 && OWNER(short, 0x62) < 11) {
-            FLOAT(0x44) = OWNER_FLOAT(0x44);
-            FLOAT(0x48) = OWNER_FLOAT(0x48) + 100.0f;
+        if (owner->action == 701 && owner->animationStage < 11) {
+            x = owner->x;
+            y = owner->y + 100.0f;
         }
-        if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearField74();
         break;
     case 841:
-        if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0 && FIELD(short, 0xD8) == 0) {
+        if (animationStage == 0 && animationFrame == 0 && field0D8 == 0) {
             EnableTransform(0.0f, 0.0f, 0.0f);
-            FLOAT(0x1C) = 1.0f;
-            FLOAT(0x20) = 1.0f;
-            FIELD(unsigned char, 0x11) = 0;
-            FIELD(unsigned char, 0x12) = 0;
-            FIELD(unsigned char, 0x13) = 0;
-            FIELD(unsigned char, 0x14) = 255;
-            FLOAT(0x2C) = FIELD(signed char, 0x66) * 50;
-            FIELD(short, 0xD8) = 1;
+            scaleX = 1.0f;
+            scaleY = 1.0f;
+            color[0] = 0;
+            color[1] = 0;
+            color[2] = 0;
+            color[3] = 255;
+            rotationY = facing * 50;
+            field0D8 = 1;
         }
-        FLOAT(0x30) += 1.0f;
-        FLOAT(0x1C) -= 0.01f;
-        FLOAT(0x20) -= 0.01f;
-        if (FIELD(short, 0x62) == 1) {
-            if (FIELD(unsigned char, 0x11) < 248) {
-                FIELD(unsigned char, 0x11) += 7;
-                FIELD(unsigned char, 0x13) += 7;
-                FIELD(unsigned char, 0x12) += 7;
+        rotationZ += 1.0f;
+        scaleX -= 0.01f;
+        scaleY -= 0.01f;
+        if (animationStage == 1) {
+            if (color[0] < 248) {
+                color[0] += 7;
+                color[2] += 7;
+                color[1] += 7;
             }
             else {
-                FIELD(unsigned char, 0x11) = 255;
-                FIELD(unsigned char, 0x12) = 255;
-                FIELD(unsigned char, 0x13) = 255;
+                color[0] = 255;
+                color[1] = 255;
+                color[2] = 255;
             }
         }
-        if (FIELD(short, 0x62) > 1) {
-            if (FIELD(unsigned char, 0x11) > 10) {
-                FIELD(unsigned char, 0x11) -= 10;
-                FIELD(unsigned char, 0x13) -= 10;
-                FIELD(unsigned char, 0x12) -= 10;
+        if (animationStage > 1) {
+            if (color[0] > 10) {
+                color[0] -= 10;
+                color[2] -= 10;
+                color[1] -= 10;
             }
             else {
                 ClearField74();
                 return;
             }
         }
-        if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearField74();
         break;
     case 842:
-        if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0 && FIELD(short, 0xD8) == 0) {
+        if (animationStage == 0 && animationFrame == 0 && field0D8 == 0) {
             EnableTransform(0.0f, 0.0f, 0.0f);
-            FLOAT(0x1C) = 1.2f;
-            FLOAT(0x20) = 1.2f;
-            FIELD(unsigned char, 0x11) = 0;
-            FIELD(unsigned char, 0x12) = 0;
-            FIELD(unsigned char, 0x13) = 0;
-            FIELD(unsigned char, 0x14) = 255;
-            FLOAT(0x2C) = FIELD(signed char, 0x66) * 50;
-            FIELD(short, 0xD8) = 1;
+            scaleX = 1.2f;
+            scaleY = 1.2f;
+            color[0] = 0;
+            color[1] = 0;
+            color[2] = 0;
+            color[3] = 255;
+            rotationY = facing * 50;
+            field0D8 = 1;
         }
-        FLOAT(0x1C) -= 0.018f;
-        FLOAT(0x20) -= 0.018f;
-        if (FIELD(short, 0x62) == 1) {
-            if (FIELD(unsigned char, 0x11) < 248) {
-                FIELD(unsigned char, 0x11) += 7;
-                FIELD(unsigned char, 0x13) += 7;
-                FIELD(unsigned char, 0x12) += 7;
+        scaleX -= 0.018f;
+        scaleY -= 0.018f;
+        if (animationStage == 1) {
+            if (color[0] < 248) {
+                color[0] += 7;
+                color[2] += 7;
+                color[1] += 7;
             }
             else {
-                FIELD(unsigned char, 0x11) = 255;
-                FIELD(unsigned char, 0x12) = 255;
-                FIELD(unsigned char, 0x13) = 255;
+                color[0] = 255;
+                color[1] = 255;
+                color[2] = 255;
             }
         }
-        if (FIELD(short, 0x62) > 1) {
-            if (FIELD(unsigned char, 0x11) > 8) {
-                FIELD(unsigned char, 0x11) -= 8;
-                FIELD(unsigned char, 0x13) -= 8;
-                FIELD(unsigned char, 0x12) -= 8;
+        if (animationStage > 1) {
+            if (color[0] > 8) {
+                color[0] -= 8;
+                color[2] -= 8;
+                color[1] -= 8;
             }
             else {
                 ClearField74();
                 return;
             }
         }
-        if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearField74();
         break;
     case 843:
-        if (FLOAT(0x44) > 1580.0f || FLOAT(0x44) < -300.0f) {
+        if (x > 1580.0f || x < -300.0f) {
             ClearField74();
             return;
         }
         else {
-            if (FIELD(short, 0x8A) > 0 && OWNER(short, 0x3B8) == 0) {
-                FIELD(short, 0x8A) = 0;
+            if (field08A > 0 && owner->field3B8 == 0) {
+                field08A = 0;
             }
-            if (FIELD(short, 0x62) < 3 && OWNER(short, 0x60) != 703) {
+            if (animationStage < 3 && owner->action != 703) {
                 ClearField74();
                 return;
             }
             else {
-                if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+                if (animationStage == 0 && animationFrame == 0) {
                     EnableTransform(0.0f, 0.0f, 0.0f);
-                    FLOAT(0x1C) = 0.1f;
-                    FLOAT(0x20) = 0.1f;
-                    FIELD(unsigned char, 0x11) = 0;
-                    FIELD(unsigned char, 0x12) = 0;
-                    FIELD(unsigned char, 0x13) = 0;
-                    FIELD(unsigned char, 0x14) = 255;
-                    FIELD(short, 0x80) = 20;
-                    FLOAT(0x50) = 0.0f;
-                    FLOAT(0x54) = 0.0f;
-                    FIELD(short, 0xD8) = 0;
+                    scaleX = 0.1f;
+                    scaleY = 0.1f;
+                    color[0] = 0;
+                    color[1] = 0;
+                    color[2] = 0;
+                    color[3] = 255;
+                    field080 = 20;
+                    velocityX = 0.0f;
+                    velocityY = 0.0f;
+                    field0D8 = 0;
                 }
-                if (FIELD(short, 0x62) < 3) {
-                    FLOAT(0x30) = RecordedRange(0, 360);
+                if (animationStage < 3) {
+                    rotationZ = RecordedRange(0, 360);
                 }
-                if (FIELD(int, 0x7C) == 6) {
-                    FIELD(int, 0x7C) = 0;
-                    ++FIELD(short, 0x80);
+                if (field07C == 6) {
+                    field07C = 0;
+                    ++field080;
                 }
-                if (FIELD(short, 0x62) == 2 && FIELD(short, 0x64) == 0) {
-                    FIELD(int, 0x7C) = 0;
-                    FLOAT(0x1C) = 1.0f - RecordedRange(0, 10) * 0.01f;
-                    FLOAT(0x20) = FLOAT(0x1C);
+                if (animationStage == 2 && animationFrame == 0) {
+                    field07C = 0;
+                    scaleX = 1.0f - RecordedRange(0, 10) * 0.01f;
+                    scaleY = scaleX;
                 }
-                if (FIELD(short, 0x62) == 3 && FIELD(short, 0x64) == 0) {
-                    FIELD(int, 0x7C) = 0;
-                    FLOAT(0x1C) = 1.0f - RecordedRange(0, 20) * 0.01f;
-                    FLOAT(0x20) = FLOAT(0x1C);
-                    ++FIELD(short, 0xD8);
-                    if (FIELD(short, 0xD8) > 0) {
-                        OWNER_ACTOR->SpawnEffect(844, FLOAT(0x44), FLOAT(0x48), FIELD(signed char, 0x66), 1);
-                        FIELD(short, 0xD8) = 0;
+                if (animationStage == 3 && animationFrame == 0) {
+                    field07C = 0;
+                    scaleX = 1.0f - RecordedRange(0, 20) * 0.01f;
+                    scaleY = scaleX;
+                    ++field0D8;
+                    if (field0D8 > 0) {
+                        OWNER_ACTOR->SpawnEffect(844, x, y, facing, 1);
+                        field0D8 = 0;
                     }
                 }
-                if (FIELD(short, 0x62) == 1) {
-                    FLOAT(0x1C) += 0.03f;
-                    FLOAT(0x20) += 0.03f;
-                    if (FIELD(unsigned char, 0x11) < 235) {
-                        FIELD(unsigned char, 0x11) += 20;
-                        FIELD(unsigned char, 0x13) += 20;
-                        FIELD(unsigned char, 0x12) += 20;
+                if (animationStage == 1) {
+                    scaleX += 0.03f;
+                    scaleY += 0.03f;
+                    if (color[0] < 235) {
+                        color[0] += 20;
+                        color[2] += 20;
+                        color[1] += 20;
                     }
                     else {
-                        FIELD(unsigned char, 0x11) = 255;
-                        FIELD(unsigned char, 0x12) = 255;
-                        FIELD(unsigned char, 0x13) = 255;
+                        color[0] = 255;
+                        color[1] = 255;
+                        color[2] = 255;
                     }
                 }
-                if (FIELD(short, 0x62) < 3 && OWNER(short, 0x60) == 703) {
-                    FLOAT(0x44) = OWNER_FLOAT(0x44) + OWNER(signed char, 0x66) * 100;
-                    FLOAT(0x48) = OWNER_FLOAT(0x48) + 110.0f;
+                if (animationStage < 3 && owner->action == 703) {
+                    x = owner->x + owner->facing * 100;
+                    y = owner->y + 110.0f;
                 }
-                if (FIELD(short, 0x62) == 2 && OWNER(short, 0x60) == 703 && OWNER(short, 0x62) > 28) {
+                if (animationStage == 2 && owner->action == 703 && owner->animationStage > 28) {
                     ResetSecondaryCounters(3);
-                    FLOAT(0x50) = 20.0f;
-                    FLOAT(0x30) = 0.0f;
-                    FIELD(short, 0x80) = 20;
-                    FIELD(int, 0x7C) = 0;
+                    velocityX = 20.0f;
+                    rotationZ = 0.0f;
+                    field080 = 20;
+                    field07C = 0;
                 }
-                if (FIELD(short, 0x62) == 3) {
-                    OWNER_ACTOR->SpawnEffect(RecordedRange(0, 7) + 818, FLOAT(0x44) + 150.0f - RecordedRange(0, 300), FLOAT(0x48) + 150.0f - RecordedRange(0, 300), FIELD(signed char, 0x66), 1);
+                if (animationStage == 3) {
+                    OWNER_ACTOR->SpawnEffect(RecordedRange(0, 7) + 818, x + 150.0f - RecordedRange(0, 300), y + 150.0f - RecordedRange(0, 300), facing, 1);
                 }
-                if (FIELD(short, 0x62) > 3) {
-                    if (FIELD(unsigned char, 0x11) > 30) {
-                        FIELD(unsigned char, 0x11) -= 30;
-                        FIELD(unsigned char, 0x13) -= 30;
-                        FIELD(unsigned char, 0x12) -= 30;
+                if (animationStage > 3) {
+                    if (color[0] > 30) {
+                        color[0] -= 30;
+                        color[2] -= 30;
+                        color[1] -= 30;
                     }
                     else {
                         ClearField74();
                         return;
                     }
                 }
-                FLOAT(0x44) += FIELD(signed char, 0x66) * FLOAT(0x50);
-                FLOAT(0x48) += FLOAT(0x54);
-                if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
-                if (FIELD(short, 0x62) == 3 && FIELD(short, 0x64) == 0) {
+                x += facing * velocityX;
+                y += velocityY;
+                if (AdvanceNestedFrame() == field070) ClearField74();
+                if (animationStage == 3 && animationFrame == 0) {
                     ResetSecondaryCounters(2);
-                    FIELD(int, 0x7C) = 0;
+                    field07C = 0;
                 }
-                if (FIELD(short, 0x62) == 4 && FIELD(short, 0x64) == 0) {
+                if (animationStage == 4 && animationFrame == 0) {
                     ResetSecondaryCounters(3);
-                    FIELD(int, 0x7C) = 0;
+                    field07C = 0;
                 }
             }
         }
         break;
     case 844:
-        if (FLOAT(0x44) > 1380.0f || FLOAT(0x44) < -100.0f) {
+        if (x > 1380.0f || x < -100.0f) {
             ClearField74();
             return;
         }
         else {
-            if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+            if (animationStage == 0 && animationFrame == 0) {
                 EnableTransform(0.0f, 0.0f, 0.0f);
-                FIELD(int, 0x7C) = 0;
-                FLOAT(0x1C) = 0.5f;
-                FLOAT(0x20) = 0.5f;
-                FIELD(unsigned char, 0x11) = 255;
-                FIELD(unsigned char, 0x12) = 255;
-                FIELD(unsigned char, 0x13) = 255;
-                FIELD(unsigned char, 0x14) = 255;
-                FLOAT(0x28) = RecordedRange(0, 359);
-                FLOAT(0x2C) = RecordedRange(0, 359);
-                FLOAT(0x30) = RecordedRange(0, 359);
-                FLOAT(0x50) = 0.0f;
-                FLOAT(0x54) = 0.0f;
-                FIELD(int, 0x7C) = 0;
+                field07C = 0;
+                scaleX = 0.5f;
+                scaleY = 0.5f;
+                color[0] = 255;
+                color[1] = 255;
+                color[2] = 255;
+                color[3] = 255;
+                rotationX = RecordedRange(0, 359);
+                rotationY = RecordedRange(0, 359);
+                rotationZ = RecordedRange(0, 359);
+                velocityX = 0.0f;
+                velocityY = 0.0f;
+                field07C = 0;
             }
-            FLOAT(0x1C) += 0.085f;
-            FLOAT(0x20) += 0.085f;
-            if (FIELD(short, 0x62) == 1) {
-                if (FIELD(unsigned char, 0x11) > 12) {
-                    FIELD(unsigned char, 0x11) -= 12;
+            scaleX += 0.085f;
+            scaleY += 0.085f;
+            if (animationStage == 1) {
+                if (color[0] > 12) {
+                    color[0] -= 12;
                 }
                 else {
                     ClearField74();
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+            if (AdvanceNestedFrame() == field070) ClearField74();
         }
         break;
     case 845:
-        if ((OWNER(short, 0x60) == 508 || OWNER(short, 0x60) == 509) && OWNER_FLOAT(0x48) > 0.0f) {
-            FLOAT(0x44) = OWNER_FLOAT(0x44);
-            FLOAT(0x48) = OWNER_FLOAT(0x48);
+        if ((owner->action == 508 || owner->action == 509) && owner->y > 0.0f) {
+            x = owner->x;
+            y = owner->y;
         }
-        if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+        if (animationStage == 0 && animationFrame == 0) {
             EnableTransform(0.0f, 0.0f, 0.0f);
-            FLOAT(0x1C) = 1.0f;
-            FLOAT(0x20) = 1.0f;
-            FIELD(short, 0xD8) = 1;
+            scaleX = 1.0f;
+            scaleY = 1.0f;
+            field0D8 = 1;
         }
-        if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearField74();
         break;
     case 846:
-        if (OWNER(short, 0x60) == 305) {
-            FLOAT(0x44) = OWNER_FLOAT(0x44);
-            FLOAT(0x48) = OWNER_FLOAT(0x48);
+        if (owner->action == 305) {
+            x = owner->x;
+            y = owner->y;
         }
         else {
             ClearField74();
             return;
         }
-        if (OWNER(short, 0x82) == 0) {
-            if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+        if (owner->field082 == 0) {
+            if (AdvanceNestedFrame() == field070) ClearField74();
         }
         break;
     case 847:
-        if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+        if (animationStage == 0 && animationFrame == 0) {
             EnableTransform(0.0f, 0.0f, 0.0f);
-            FIELD(int, 0x7C) = 0;
-            FLOAT(0x1C) = 0.5f;
-            FLOAT(0x20) = 0.5f;
-            FIELD(unsigned char, 0x11) = 255;
-            FIELD(unsigned char, 0x12) = 255;
-            FIELD(unsigned char, 0x13) = 255;
-            FIELD(unsigned char, 0x14) = 255;
-            FLOAT(0x2C) = 60.0f;
-            FLOAT(0x50) = 0.0f;
-            FLOAT(0x54) = 0.0f;
-            FIELD(short, 0xD8) = 10;
-            FIELD(int, 0x7C) = 0;
+            field07C = 0;
+            scaleX = 0.5f;
+            scaleY = 0.5f;
+            color[0] = 255;
+            color[1] = 255;
+            color[2] = 255;
+            color[3] = 255;
+            rotationY = 60.0f;
+            velocityX = 0.0f;
+            velocityY = 0.0f;
+            field0D8 = 10;
+            field07C = 0;
         }
-        FLOAT(0x1C) += FIELD(short, 0xD8) * 0.02f + 0.02f;
-        FLOAT(0x20) += FIELD(short, 0xD8) * 0.02f + 0.02f;
-        if (FIELD(short, 0xD8) > 0) --FIELD(short, 0xD8);
-        if (FIELD(short, 0x62) == 4) {
-            if (FIELD(unsigned char, 0x11) > 15) {
-                FIELD(unsigned char, 0x11) -= 15;
-                FIELD(unsigned char, 0x14) -= 15;
-                FIELD(unsigned char, 0x13) -= 15;
+        scaleX += field0D8 * 0.02f + 0.02f;
+        scaleY += field0D8 * 0.02f + 0.02f;
+        if (field0D8 > 0) --field0D8;
+        if (animationStage == 4) {
+            if (color[0] > 15) {
+                color[0] -= 15;
+                color[3] -= 15;
+                color[2] -= 15;
             }
             else {
                 ClearField74();
                 return;
             }
         }
-        if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearField74();
         break;
     case 848:
-        if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+        if (animationStage == 0 && animationFrame == 0) {
             EnableTransform(0.0f, 0.0f, 0.0f);
-            FIELD(int, 0x7C) = 0;
-            FLOAT(0x1C) = 0.5f;
-            FLOAT(0x20) = 0.5f;
-            FIELD(unsigned char, 0x11) = 255;
-            FIELD(unsigned char, 0x12) = 255;
-            FIELD(unsigned char, 0x13) = 255;
-            FIELD(unsigned char, 0x14) = 255;
-            FLOAT(0x2C) = 60.0f;
-            FLOAT(0x50) = 0.0f;
-            FLOAT(0x54) = 0.0f;
-            FIELD(short, 0xD8) = 10;
-            FIELD(int, 0x7C) = 0;
+            field07C = 0;
+            scaleX = 0.5f;
+            scaleY = 0.5f;
+            color[0] = 255;
+            color[1] = 255;
+            color[2] = 255;
+            color[3] = 255;
+            rotationY = 60.0f;
+            velocityX = 0.0f;
+            velocityY = 0.0f;
+            field0D8 = 10;
+            field07C = 0;
         }
-        FLOAT(0x1C) += FIELD(short, 0xD8) * 0.05f + 0.05f;
-        FLOAT(0x20) += FIELD(short, 0xD8) * 0.05f + 0.05f;
-        if (FIELD(short, 0xD8) > 0) --FIELD(short, 0xD8);
-        if (FIELD(short, 0x62) == 20) {
-            if (FIELD(unsigned char, 0x11) > 15) {
-                FIELD(unsigned char, 0x11) -= 15;
-                FIELD(unsigned char, 0x14) -= 15;
-                FIELD(unsigned char, 0x13) -= 15;
+        scaleX += field0D8 * 0.05f + 0.05f;
+        scaleY += field0D8 * 0.05f + 0.05f;
+        if (field0D8 > 0) --field0D8;
+        if (animationStage == 20) {
+            if (color[0] > 15) {
+                color[0] -= 15;
+                color[3] -= 15;
+                color[2] -= 15;
             }
             else {
                 ClearField74();
                 return;
             }
         }
-        if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearField74();
         break;
     case 849:
-        if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+        if (animationStage == 0 && animationFrame == 0) {
             EnableTransform(0.0f, 0.0f, 0.0f);
-            FIELD(int, 0x7C) = 0;
-            FLOAT(0x1C) = 0.5f;
-            FLOAT(0x20) = 0.5f;
-            FIELD(unsigned char, 0x11) = 255;
-            FIELD(unsigned char, 0x12) = 255;
-            FIELD(unsigned char, 0x13) = 255;
-            FIELD(unsigned char, 0x14) = 255;
-            FLOAT(0x28) = FIELD(signed char, 0x66) * -30;
-            FLOAT(0x2C) = 60.0f;
-            FLOAT(0x50) = 0.0f;
-            FLOAT(0x54) = 0.0f;
-            FIELD(short, 0xD8) = 10;
-            FIELD(int, 0x7C) = 0;
+            field07C = 0;
+            scaleX = 0.5f;
+            scaleY = 0.5f;
+            color[0] = 255;
+            color[1] = 255;
+            color[2] = 255;
+            color[3] = 255;
+            rotationX = facing * -30;
+            rotationY = 60.0f;
+            velocityX = 0.0f;
+            velocityY = 0.0f;
+            field0D8 = 10;
+            field07C = 0;
         }
-        FLOAT(0x1C) += FIELD(short, 0xD8) * 0.05f + 0.05f;
-        FLOAT(0x20) += FIELD(short, 0xD8) * 0.05f + 0.05f;
-        if (FIELD(short, 0xD8) > 0) --FIELD(short, 0xD8);
-        if (FIELD(short, 0x62) == 20) {
-            if (FIELD(unsigned char, 0x11) > 15) {
-                FIELD(unsigned char, 0x11) -= 15;
-                FIELD(unsigned char, 0x14) -= 15;
-                FIELD(unsigned char, 0x13) -= 15;
+        scaleX += field0D8 * 0.05f + 0.05f;
+        scaleY += field0D8 * 0.05f + 0.05f;
+        if (field0D8 > 0) --field0D8;
+        if (animationStage == 20) {
+            if (color[0] > 15) {
+                color[0] -= 15;
+                color[3] -= 15;
+                color[2] -= 15;
             }
             else {
                 ClearField74();
                 return;
             }
         }
-        if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearField74();
         break;
     case 850:
-        if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+        if (animationStage == 0 && animationFrame == 0) {
             EnableTransform(0.0f, 0.0f, 0.0f);
-            FIELD(int, 0x7C) = 0;
-            FLOAT(0x1C) = 1.0f;
-            FLOAT(0x20) = 1.0f;
-            FIELD(unsigned char, 0x11) = 255;
-            FIELD(unsigned char, 0x12) = 255;
-            FIELD(unsigned char, 0x13) = 255;
-            FIELD(unsigned char, 0x14) = 255;
-            FLOAT(0x50) = 0.0f;
-            FLOAT(0x54) = 0.0f;
-            FIELD(short, 0xD8) = 10;
-            FIELD(int, 0x7C) = 0;
+            field07C = 0;
+            scaleX = 1.0f;
+            scaleY = 1.0f;
+            color[0] = 255;
+            color[1] = 255;
+            color[2] = 255;
+            color[3] = 255;
+            velocityX = 0.0f;
+            velocityY = 0.0f;
+            field0D8 = 10;
+            field07C = 0;
         }
-        FLOAT(0x1C) -= 0.02f;
-        FLOAT(0x20) -= 0.02f;
-        if (FIELD(short, 0x62) == 0) {
-            if (FIELD(unsigned char, 0x11) > 30) {
-                FIELD(unsigned char, 0x11) -= 30;
+        scaleX -= 0.02f;
+        scaleY -= 0.02f;
+        if (animationStage == 0) {
+            if (color[0] > 30) {
+                color[0] -= 30;
             }
             else {
                 ClearField74();
                 return;
             }
         }
-        if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearField74();
         break;
     case 990:
-        if (OWNER(short, 0xF2A) == 0 && FIELD(short, 0x62) < 2) {
+        if (static_cast<MeilingFighter*>(owner)->fieldF2A == 0 && animationStage < 2) {
             ResetSecondaryCounters(2);
             return;
         }
         else {
-            FLOAT(0x44) = OWNER_FLOAT(0x44);
-            FLOAT(0x48) = OWNER_FLOAT(0x48) + 100.0f;
-            FIELD(short, 0x8A) = 1;
-            if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+            x = owner->x;
+            y = owner->y + 100.0f;
+            field08A = 1;
+            if (animationStage == 0 && animationFrame == 0) {
                 EnableTransform(0.0f, 0.0f, 0.0f);
-                FLOAT(0x1C) = 2.0f;
-                FLOAT(0x20) = 2.0f;
-                FIELD(unsigned char, 0x11) = 0;
-                FIELD(unsigned char, 0x12) = 255;
-                FIELD(unsigned char, 0x13) = 255;
-                FIELD(unsigned char, 0x14) = 255;
+                scaleX = 2.0f;
+                scaleY = 2.0f;
+                color[0] = 0;
+                color[1] = 255;
+                color[2] = 255;
+                color[3] = 255;
             }
-            FLOAT(0x30) += 1.0f;
-            if (FIELD(short, 0x62) == 0) {
-                if (FIELD(unsigned char, 0x11) < 180) {
-                    FIELD(unsigned char, 0x11) += 25;
+            rotationZ += 1.0f;
+            if (animationStage == 0) {
+                if (color[0] < 180) {
+                    color[0] += 25;
                 }
                 else {
-                    FIELD(unsigned char, 0x11) = 180;
+                    color[0] = 180;
                 }
-                if (OWNER(short, 0xF2A) >= 120) {
+                if (static_cast<MeilingFighter*>(owner)->fieldF2A >= 120) {
                     ResetSecondaryCounters(1);
-                    FIELD(unsigned char, 0x11) = 180;
+                    color[0] = 180;
                     return;
                 }
             }
-            if (FIELD(short, 0x62) == 2) {
-                if (FIELD(unsigned char, 0x11) >= 30) {
-                    FIELD(unsigned char, 0x11) -= 30;
+            if (animationStage == 2) {
+                if (color[0] >= 30) {
+                    color[0] -= 30;
                 }
                 else {
-                    FIELD(unsigned char, 0x11) = 0;
+                    color[0] = 0;
                 }
-                if (FIELD(unsigned char, 0x11) == 0) {
+                if (color[0] == 0) {
                     ClearField74();
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == FIELD(short, 0x70)) {
+            if (AdvanceNestedFrame() == field070) {
                 ClearField74();
                 return;
             }
         }
         break;
     case 991:
-        if (OWNER(short, 0xF2A) == 0 && FIELD(short, 0x62) < 2) {
+        if (static_cast<MeilingFighter*>(owner)->fieldF2A == 0 && animationStage < 2) {
             ResetSecondaryCounters(2);
             return;
         }
         else {
-            FLOAT(0x44) = OWNER_FLOAT(0x44);
-            FLOAT(0x48) = OWNER_FLOAT(0x48) + 100.0f;
-            FIELD(short, 0x8A) = 1;
-            if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+            x = owner->x;
+            y = owner->y + 100.0f;
+            field08A = 1;
+            if (animationStage == 0 && animationFrame == 0) {
                 EnableTransform(0.0f, 0.0f, 0.0f);
-                FLOAT(0x1C) = 0.0f;
-                FLOAT(0x20) = 0.0f;
-                FIELD(unsigned char, 0x11) = 0;
-                FIELD(unsigned char, 0x12) = 255;
-                FIELD(unsigned char, 0x13) = 255;
-                FIELD(unsigned char, 0x14) = 255;
+                scaleX = 0.0f;
+                scaleY = 0.0f;
+                color[0] = 0;
+                color[1] = 255;
+                color[2] = 255;
+                color[3] = 255;
             }
-            FLOAT(0x1C) = OWNER(short, 0xF2A) / 45.0f;
-            FLOAT(0x20) = FLOAT(0x1C);
-            if (FIELD(short, 0x62) == 0) {
-                if (FIELD(unsigned char, 0x11) < 230) {
-                    FIELD(unsigned char, 0x11) += 25;
+            scaleX = static_cast<MeilingFighter*>(owner)->fieldF2A / 45.0f;
+            scaleY = scaleX;
+            if (animationStage == 0) {
+                if (color[0] < 230) {
+                    color[0] += 25;
                 }
                 else {
-                    FIELD(unsigned char, 0x11) = 255;
+                    color[0] = 255;
                 }
-                if (OWNER(short, 0xF2A) >= 120) {
+                if (static_cast<MeilingFighter*>(owner)->fieldF2A >= 120) {
                     ResetSecondaryCounters(1);
-                    FIELD(unsigned char, 0x11) = 255;
+                    color[0] = 255;
                     return;
                 }
             }
-            if (FIELD(short, 0x62) == 2) {
-                if (FIELD(unsigned char, 0x11) >= 10) {
-                    FIELD(unsigned char, 0x11) -= 10;
+            if (animationStage == 2) {
+                if (color[0] >= 10) {
+                    color[0] -= 10;
                 }
                 else {
-                    FIELD(unsigned char, 0x11) = 0;
+                    color[0] = 0;
                 }
-                if (FIELD(unsigned char, 0x11) == 0) {
+                if (color[0] == 0) {
                     ClearField74();
                     return;
                 }
             }
-            if (AdvanceNestedFrame() == FIELD(short, 0x70)) {
+            if (AdvanceNestedFrame() == field070) {
                 ClearField74();
                 return;
             }
         }
         break;
     case 994:
-        FLOAT(0x44) = OWNER_FLOAT(0x44);
-        FLOAT(0x48) = 1.0f;
-        FIELD(short, 0x8A) = 1;
-        if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+        x = owner->x;
+        y = 1.0f;
+        field08A = 1;
+        if (animationStage == 0 && animationFrame == 0) {
             EnableTransform(0.0f, 0.0f, 0.0f);
-            FLOAT(0x1C) = 3.0f;
-            FLOAT(0x20) = 3.0f;
-            FIELD(unsigned char, 0x11) = 255;
-            FIELD(unsigned char, 0x12) = 255;
-            FIELD(unsigned char, 0x13) = 255;
-            FIELD(unsigned char, 0x14) = 255;
-            FIELD(short, 0x1A) = 1250;
-            FLOAT(0x2C) = 0.0f;
-            FLOAT(0x30) = 0.0f;
-            FLOAT(0x28) = -80.0f;
-            FIELD(short, 0xD8) = OWNER(short, 0x3A0);
+            scaleX = 3.0f;
+            scaleY = 3.0f;
+            color[0] = 255;
+            color[1] = 255;
+            color[2] = 255;
+            color[3] = 255;
+            field01A = 1250;
+            rotationY = 0.0f;
+            rotationZ = 0.0f;
+            rotationX = -80.0f;
+            field0D8 = owner->field3A0;
         }
-        if (OWNER(short, 0x3A0) <= 0) {
+        if (owner->field3A0 <= 0) {
             ClearField74();
             return;
         }
         else {
-            FLOAT(0x1C) = static_cast<float>(OWNER(short, 0x3A0)) / FIELD(short, 0xD8) * 2 + 1.0f;
-            FLOAT(0x20) = static_cast<float>(OWNER(short, 0x3A0)) / FIELD(short, 0xD8) * 2 + 1.0f;
-            FLOAT(0x30) -= 1.0f;
-            if (AdvanceNestedFrame() == FIELD(short, 0x70)) {
+            scaleX = static_cast<float>(owner->field3A0) / field0D8 * 2 + 1.0f;
+            scaleY = static_cast<float>(owner->field3A0) / field0D8 * 2 + 1.0f;
+            rotationZ -= 1.0f;
+            if (AdvanceNestedFrame() == field070) {
                 ResetSecondaryCounters(1);
                 return;
             }
         }
         break;
     case 950:
-        if (OWNER(short, 0x60) != 700 && OWNER(short, 0x60) != 701 && OWNER(short, 0x60) != 706 && OWNER(short, 0x60) != 707) {
+        if (owner->action != 700 && owner->action != 701 && owner->action != 706 && owner->action != 707) {
             ClearField74();
             return;
         }
         else {
-            if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+            if (animationStage == 0 && animationFrame == 0) {
                 EnableTransform(0.0f, 0.0f, 0.0f);
-                FLOAT(0x1C) = 1.0f;
-                FLOAT(0x20) = 1.0f;
-                FIELD(unsigned char, 0x11) = 255;
-                FIELD(unsigned char, 0x12) = 255;
-                FIELD(unsigned char, 0x13) = 255;
-                FIELD(unsigned char, 0x14) = 255;
-                FIELD(int, 0x7C) = 0;
-                FIELD(short, 0x80) = 1;
-                FLOAT(0x54) = 15.0f;
+                scaleX = 1.0f;
+                scaleY = 1.0f;
+                color[0] = 255;
+                color[1] = 255;
+                color[2] = 255;
+                color[3] = 255;
+                field07C = 0;
+                field080 = 1;
+                velocityY = 15.0f;
             }
-            FLOAT(0x30) -= 35.0f;
-            FLOAT(0x48) += FLOAT(0x54);
-            if (FLOAT(0x48) > 1000.0f) {
+            rotationZ -= 35.0f;
+            y += velocityY;
+            if (y > 1000.0f) {
                 ClearField74();
                 return;
             }
             else {
-                if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+                if (AdvanceNestedFrame() == field070) ClearField74();
             }
         }
         break;
     case 951:
-        if (FIELD(short, 0x62) < 1) {
-            FLOAT(0x48) = OWNER_FLOAT(0x48);
+        if (animationStage < 1) {
+            y = owner->y;
         }
-        FLOAT(0x44) = OWNER_FLOAT(0x44);
-        OWNER(short, 0xF0C) = 1;
-        if (OWNER(short, 0x62) == 0 && ((OWNER(short, 0x60) >= 70 && OWNER(short, 0x60) <= 88 && OWNER(short, 0x60) != 76) || OWNER(short, 0x60) == 181 || OWNER(short, 0x60) == 180 || OWNER(short, 0x60) == 145)) {
+        x = owner->x;
+        owner->fieldF0C = 1;
+        if (owner->animationStage == 0 && ((owner->action >= 70 && owner->action <= 88 && owner->action != 76) || owner->action == 181 || owner->action == 180 || owner->action == 145)) {
             ClearField74();
-            OWNER(short, 0xF0C) = 0;
+            owner->fieldF0C = 0;
             return;
         }
         else {
-            if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+            if (animationStage == 0 && animationFrame == 0) {
                 EnableTransform(-45.0f, 45.0f, 0.0f);
-                FLOAT(0x1C) = 1.0f;
-                FLOAT(0x20) = 1.0f;
-                FIELD(unsigned char, 0x11) = 255;
-                FIELD(unsigned char, 0x12) = 255;
-                FIELD(unsigned char, 0x13) = 255;
-                FIELD(unsigned char, 0x14) = 255;
+                scaleX = 1.0f;
+                scaleY = 1.0f;
+                color[0] = 255;
+                color[1] = 255;
+                color[2] = 255;
+                color[3] = 255;
             }
-            if (FIELD(short, 0x62) == 0 && (OWNER(short, 0x60) == 96 || OWNER(short, 0x60) == 97) && OWNER(short, 0x62) == 5) {
+            if (animationStage == 0 && (owner->action == 96 || owner->action == 97) && owner->animationStage == 5) {
                 ResetSecondaryCounters(1);
-                FLOAT(0x30) = 0.0f;
+                rotationZ = 0.0f;
                 return;
             }
-            else if (FIELD(short, 0x62) == 5 && (OWNER(short, 0x60) == 95 || OWNER(short, 0x60) == 94 || OWNER(short, 0x60) == 93 || OWNER(short, 0x60) == 796 || OWNER(short, 0x60) == 771) && OWNER(short, 0x62) == 3) {
+            else if (animationStage == 5 && (owner->action == 95 || owner->action == 94 || owner->action == 93 || owner->action == 796 || owner->action == 771) && owner->animationStage == 3) {
                 ResetSecondaryCounters(6);
                 return;
             }
-            else if (FIELD(short, 0x62) == 7 && (OWNER(short, 0x60) == 95 || OWNER(short, 0x60) == 94 || OWNER(short, 0x60) == 93 || OWNER(short, 0x60) == 796) && OWNER(short, 0x62) == 11) {
+            else if (animationStage == 7 && (owner->action == 95 || owner->action == 94 || owner->action == 93 || owner->action == 796) && owner->animationStage == 11) {
                 ClearField74();
-                OWNER(short, 0xF0C) = 0;
+                owner->fieldF0C = 0;
                 return;
             }
             else {
-                if (FIELD(short, 0x62) == 7 && FIELD(short, 0x64) == 0 && OWNER(short, 0x60) != 771 && OWNER(short, 0x60) != 772) {
-                    FLOAT(0x54) = 15.0f;
-                    FLOAT(0x5C) = -1.0f;
+                if (animationStage == 7 && animationFrame == 0 && owner->action != 771 && owner->action != 772) {
+                    velocityY = 15.0f;
+                    field05C = -1.0f;
                 }
-                if (FIELD(short, 0x62) == 7 && OWNER(short, 0x60) != 772 && OWNER(short, 0x60) != 771) {
-                    FLOAT(0x54) += FLOAT(0x5C);
-                    FLOAT(0x48) += FLOAT(0x54);
+                if (animationStage == 7 && owner->action != 772 && owner->action != 771) {
+                    velocityY += field05C;
+                    y += velocityY;
                 }
-                if (FIELD(short, 0x62) == 7 && (OWNER(short, 0x60) == 772 || OWNER(short, 0x60) == 771)) {
-                    FLOAT(0x44) = OWNER_FLOAT(0x44) + FIELD(signed char, 0x66) * 120;
-                    FLOAT(0x48) = OWNER_FLOAT(0x48) + 100.0f;
+                if (animationStage == 7 && (owner->action == 772 || owner->action == 771)) {
+                    x = owner->x + facing * 120;
+                    y = owner->y + 100.0f;
                 }
-                if (FIELD(short, 0x62) == 0 || FIELD(short, 0x62) == 7) {
-                    FLOAT(0x30) -= 35.0f;
+                if (animationStage == 0 || animationStage == 7) {
+                    rotationZ -= 35.0f;
                 }
-                if (AdvanceNestedFrame() == FIELD(short, 0x70)) ClearField74();
+                if (AdvanceNestedFrame() == field070) ClearField74();
             }
         }
         break;
     case 995:
-        FIELD(signed char, 0x66) = 1;
-        if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+        facing = 1;
+        if (animationStage == 0 && animationFrame == 0) {
             EnableTransform(0.0f, 0.0f, 0.0f);
-            FLOAT(0x1C) = 1.0f;
-            FLOAT(0x20) = 1.0f;
-            FIELD(unsigned char, 0x11) = 255;
-            FIELD(unsigned char, 0x12) = 255;
-            FIELD(unsigned char, 0x13) = 255;
-            FIELD(unsigned char, 0x14) = 255;
-            FLOAT(0x50) = 0.0f;
-            FLOAT(0x54) = -1.0f;
-            FIELD(short, 0xD8) = RecordedRange(0, 360) - 180;
-            FIELD(short, 0xDA) = 15;
+            scaleX = 1.0f;
+            scaleY = 1.0f;
+            color[0] = 255;
+            color[1] = 255;
+            color[2] = 255;
+            color[3] = 255;
+            velocityX = 0.0f;
+            velocityY = -1.0f;
+            field0D8 = RecordedRange(0, 360) - 180;
+            field0DA = 15;
         }
-        if (FIELD(short, 0x62) == 0) {
-            --FIELD(short, 0xDA);
-            if (FIELD(short, 0xDA) < 3) FIELD(short, 0xDA) = 3;
-            SetPolarVelocity(FIELD(short, 0xD8), FIELD(short, 0xDA) * 0.8f);
+        if (animationStage == 0) {
+            --field0DA;
+            if (field0DA < 3) field0DA = 3;
+            SetPolarVelocity(field0D8, field0DA * 0.8f);
         }
-        if (FIELD(short, 0x62) == 1) {
-            FIELD(short, 0xD8) = static_cast<short>(AngleAt00483300(OPPONENT_FLOAT(0x48) + 100.0f - FLOAT(0x48), OPPONENT_FLOAT(0x44) - FLOAT(0x44)) / 0.017453288659453392f);
-            SetPolarVelocity(FIELD(short, 0xD8), 20.0f);
-            if (FLOAT(0x44) - OPPONENT_FLOAT(0x44) < 20.0f && FLOAT(0x44) - OPPONENT_FLOAT(0x44) > -20.0f && FLOAT(0x48) - OPPONENT_FLOAT(0x48) < 120.0f && FLOAT(0x48) - OPPONENT_FLOAT(0x48) > 80.0f) {
+        if (animationStage == 1) {
+            field0D8 = static_cast<short>(AngleAt00483300(owner->opponent->y + 100.0f - y, owner->opponent->x - x) / 0.017453288659453392f);
+            SetPolarVelocity(field0D8, 20.0f);
+            if (x - owner->opponent->x < 20.0f && x - owner->opponent->x > -20.0f && y - owner->opponent->y < 120.0f && y - owner->opponent->y > 80.0f) {
                 ClearField74();
-                if (OPPONENT(signed char, 0x366) < 2) {
-                    ++OPPONENT(signed char, 0x366);
+                if (owner->opponent->field366 < 2) {
+                    ++owner->opponent->field366;
                 }
                 else {
                     OPPONENT(int, 0x2D0) += 20000;
@@ -2491,145 +2486,145 @@ void ObjectActor5EB520Draft::AdvanceAction() {
                 return;
             }
         }
-        FLOAT(0x44) += FLOAT(0x50);
-        FLOAT(0x48) -= FLOAT(0x54);
-        if (AdvanceNestedFrame() == FIELD(short, 0x70)) {
+        x += velocityX;
+        y -= velocityY;
+        if (AdvanceNestedFrame() == field070) {
             ResetSecondaryCounters(1);
         }
         break;
     case 996:
-        FIELD(signed char, 0x66) = 1;
-        if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+        facing = 1;
+        if (animationStage == 0 && animationFrame == 0) {
             EnableTransform(0.0f, 0.0f, 0.0f);
-            FLOAT(0x1C) = 1.0f;
-            FLOAT(0x20) = 1.0f;
-            FIELD(unsigned char, 0x11) = 255;
-            FIELD(unsigned char, 0x12) = 255;
-            FIELD(unsigned char, 0x13) = 255;
-            FIELD(unsigned char, 0x14) = 255;
-            FLOAT(0x50) = 0.0f;
-            FLOAT(0x54) = -1.0f;
-            FIELD(short, 0xD8) = RecordedRange(0, 360) - 180;
-            FIELD(short, 0xDA) = 15;
+            scaleX = 1.0f;
+            scaleY = 1.0f;
+            color[0] = 255;
+            color[1] = 255;
+            color[2] = 255;
+            color[3] = 255;
+            velocityX = 0.0f;
+            velocityY = -1.0f;
+            field0D8 = RecordedRange(0, 360) - 180;
+            field0DA = 15;
         }
-        if (FIELD(short, 0x62) == 0) {
-            --FIELD(short, 0xDA);
-            if (FIELD(short, 0xDA) < 3) FIELD(short, 0xDA) = 3;
-            SetPolarVelocity(FIELD(short, 0xD8), FIELD(short, 0xDA) * 0.8f);
+        if (animationStage == 0) {
+            --field0DA;
+            if (field0DA < 3) field0DA = 3;
+            SetPolarVelocity(field0D8, field0DA * 0.8f);
         }
-        if (FIELD(short, 0x62) == 1) {
-            FIELD(short, 0xD8) = static_cast<short>(AngleAt00483300(OPPONENT_FLOAT(0x48) + 100.0f - FLOAT(0x48), OPPONENT_FLOAT(0x44) - FLOAT(0x44)) / 0.017453288659453392f);
-            SetPolarVelocity(FIELD(short, 0xD8), 20.0f);
-            if (FLOAT(0x44) - OPPONENT_FLOAT(0x44) < 20.0f && FLOAT(0x44) - OPPONENT_FLOAT(0x44) > -20.0f && FLOAT(0x48) - OPPONENT_FLOAT(0x48) < 120.0f && FLOAT(0x48) - OPPONENT_FLOAT(0x48) > 80.0f) {
-                ++OWNER(short, 0xEFA);
+        if (animationStage == 1) {
+            field0D8 = static_cast<short>(AngleAt00483300(owner->opponent->y + 100.0f - y, owner->opponent->x - x) / 0.017453288659453392f);
+            SetPolarVelocity(field0D8, 20.0f);
+            if (x - owner->opponent->x < 20.0f && x - owner->opponent->x > -20.0f && y - owner->opponent->y < 120.0f && y - owner->opponent->y > 80.0f) {
+                ++reinterpret_cast<short&>(owner->fieldEFA);
                 PlaySharedSound(46);
                 ClearField74();
-                if (OPPONENT(short, 0x3B6) > 0) {
-                    if (OPPONENT(short, 0x3B6) > 5) {
-                        OPPONENT(short, 0x3B6) -= 5;
+                if (owner->opponent->meterCooldown > 0) {
+                    if (owner->opponent->meterCooldown > 5) {
+                        owner->opponent->meterCooldown -= 5;
                     }
                     else {
-                        OPPONENT(short, 0x3B6) = 0;
-                        OPPONENT(short, 0x3B0) = 1000;
+                        owner->opponent->meterCooldown = 0;
+                        owner->opponent->meter = 1000;
                     }
                     return;
                 }
-                else if (OPPONENT(short, 0x3B0) < 990) {
-                    OPPONENT(short, 0x3B0) += 10;
+                else if (owner->opponent->meter < 990) {
+                    owner->opponent->meter += 10;
                 }
                 else {
-                    OPPONENT(short, 0x3B0) = 1000;
-                    if (OPPONENT(unsigned char, 0x39C) == 0) {
-                        if (OPPONENT_FLOAT(0x36C) < 998.9) {
-                            OPPONENT_FLOAT(0x36C) += 0.5f;
+                    owner->opponent->meter = 1000;
+                    if (owner->opponent->field39C == 0) {
+                        if (owner->opponent->field36C < 998.9) {
+                            owner->opponent->field36C += 0.5f;
                         }
                         else {
-                            OPPONENT_FLOAT(0x36C) = 900.0f;
+                            owner->opponent->field36C = 900.0f;
                         }
                     }
                 }
                 return;
             }
         }
-        FLOAT(0x44) += FLOAT(0x50);
-        FLOAT(0x48) -= FLOAT(0x54);
-        if (AdvanceNestedFrame() == FIELD(short, 0x70)) {
+        x += velocityX;
+        y -= velocityY;
+        if (AdvanceNestedFrame() == field070) {
             ResetSecondaryCounters(1);
         }
         break;
     case 997:
-        FLOAT(0x44) = OWNER_FLOAT(0x44);
-        FLOAT(0x48) = 0.0f;
-        FIELD(short, 0x8A) = 1;
-        if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+        x = owner->x;
+        y = 0.0f;
+        field08A = 1;
+        if (animationStage == 0 && animationFrame == 0) {
             EnableTransform(0.0f, 0.0f, 0.0f);
-            FLOAT(0x1C) = 3.0f;
-            FLOAT(0x20) = 3.0f;
-            FIELD(unsigned char, 0x11) = 255;
-            FIELD(unsigned char, 0x12) = 255;
-            FIELD(unsigned char, 0x13) = 255;
-            FIELD(unsigned char, 0x14) = 255;
-            FIELD(short, 0x1A) = 1250;
-            FLOAT(0x2C) = 0.0f;
-            FLOAT(0x30) = 0.0f;
-            FLOAT(0x28) = -80.0f;
-            FIELD(short, 0xD8) = OWNER(short, 0x3A0);
+            scaleX = 3.0f;
+            scaleY = 3.0f;
+            color[0] = 255;
+            color[1] = 255;
+            color[2] = 255;
+            color[3] = 255;
+            field01A = 1250;
+            rotationY = 0.0f;
+            rotationZ = 0.0f;
+            rotationX = -80.0f;
+            field0D8 = owner->field3A0;
         }
-        if (OWNER(short, 0x3A0) <= 0) {
+        if (owner->field3A0 <= 0) {
             ClearField74();
             return;
         }
         else {
-            FLOAT(0x1C) = static_cast<float>(OWNER(short, 0x3A0)) / FIELD(short, 0xD8) * 2;
-            FLOAT(0x20) = static_cast<float>(OWNER(short, 0x3A0)) / FIELD(short, 0xD8) * 2;
-            FLOAT(0x30) += 1.0f;
-            if (AdvanceNestedFrame() == FIELD(short, 0x70)) {
+            scaleX = static_cast<float>(owner->field3A0) / field0D8 * 2;
+            scaleY = static_cast<float>(owner->field3A0) / field0D8 * 2;
+            rotationZ += 1.0f;
+            if (AdvanceNestedFrame() == field070) {
                 ResetSecondaryCounters(10);
                 break;
             }
         }
         break;
     case 998:
-        FIELD(unsigned char, 0x66) = OWNER(unsigned char, 0x66);
-        if (FIELD(short, 0x62) == 0 && FIELD(short, 0x64) == 0) {
+        reinterpret_cast<unsigned char&>(facing) = reinterpret_cast<unsigned char&>(owner->facing);
+        if (animationStage == 0 && animationFrame == 0) {
             EnableTransform(0.0f, 0.0f, 0.0f);
-            FLOAT(0x1C) = 2.5f;
-            FLOAT(0x20) = 2.5f;
-            FIELD(unsigned char, 0x11) = 255;
-            FIELD(unsigned char, 0x12) = 255;
-            FIELD(unsigned char, 0x13) = 255;
-            FIELD(unsigned char, 0x14) = 255;
-            FLOAT(0x2C) = 50.0f;
-            FIELD(short, 0xD8) = 0;
+            scaleX = 2.5f;
+            scaleY = 2.5f;
+            color[0] = 255;
+            color[1] = 255;
+            color[2] = 255;
+            color[3] = 255;
+            rotationY = 50.0f;
+            field0D8 = 0;
         }
-        if (OWNER(short, 0x60) > 149 && OWNER(short, 0x60) < 154 && FIELD(short, 0xD8) == 0) {
-            FLOAT(0x44) = OWNER_FLOAT(0x44) + FIELD(signed char, 0x66) * 57;
-            FLOAT(0x48) = OWNER_FLOAT(0x48) + 94.0f;
+        if (owner->action > 149 && owner->action < 154 && field0D8 == 0) {
+            x = owner->x + facing * 57;
+            y = owner->y + 94.0f;
         }
-        if (OWNER(short, 0x60) > 153 && OWNER(short, 0x60) < 158 && FIELD(short, 0xD8) == 0) {
-            FLOAT(0x44) = OWNER_FLOAT(0x44) + FIELD(signed char, 0x66) * 57;
-            FLOAT(0x48) = OWNER_FLOAT(0x48) + 60.0f;
+        if (owner->action > 153 && owner->action < 158 && field0D8 == 0) {
+            x = owner->x + facing * 57;
+            y = owner->y + 60.0f;
         }
-        if (OWNER(short, 0x60) == 158 && FIELD(short, 0xD8) == 0) {
-            FLOAT(0x44) = OWNER_FLOAT(0x44) + FIELD(signed char, 0x66) * 57;
-            FLOAT(0x48) = OWNER_FLOAT(0x48) + 100.0f;
+        if (owner->action == 158 && field0D8 == 0) {
+            x = owner->x + facing * 57;
+            y = owner->y + 100.0f;
         }
-        if ((OWNER(short, 0x60) < 150 || OWNER(short, 0x60) > 158) && FIELD(short, 0xD8) == 0) {
-            FIELD(short, 0xD8) = 1;
-            OWNER(short, 0xF0A) = 0;
+        if ((owner->action < 150 || owner->action > 158) && field0D8 == 0) {
+            field0D8 = 1;
+            owner->fieldF0A = 0;
         }
-        FLOAT(0x30) -= 3.0f;
-        if (FIELD(short, 0xD8) > 0) {
-            if (FIELD(unsigned char, 0x11) > 30) {
-                FIELD(unsigned char, 0x11) -= 30;
+        rotationZ -= 3.0f;
+        if (field0D8 > 0) {
+            if (color[0] > 30) {
+                color[0] -= 30;
             }
             else {
-                FIELD(unsigned char, 0x11) = 0;
+                color[0] = 0;
                 ClearField74();
                 return;
             }
         }
-        if (AdvanceNestedFrame() == FIELD(short, 0x70)) {
+        if (AdvanceNestedFrame() == field070) {
             ResetSecondaryCounters(1);
         }
         break;
@@ -2640,9 +2635,4 @@ void ObjectActor5EB520Draft::AdvanceAction() {
 }
 
 #undef OWNER_ACTOR
-#undef OPPONENT_FLOAT
-#undef OWNER_FLOAT
 #undef OPPONENT
-#undef OWNER
-#undef FLOAT
-#undef FIELD

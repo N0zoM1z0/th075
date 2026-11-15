@@ -1,4 +1,6 @@
 #pragma once
+#include "CharacterObject.hpp"
+#include "SuikaFighter.hpp"
 
 // Borrowed receiver interfaces only. The exact 005C9C20 constructor installs
 // vtable 00659F14 and writes the owner pointer at E4h. These declarations do
@@ -11,10 +13,10 @@ public:
     void SetCameraShakeAt00453E60(float);
 };
 
-class ObjectActor5C9CC0F1216 {
+class ObjectActor5C9CC0F1216 : public CharacterObject {
 public:
-    virtual void BindAnimationAt0045B880();
-    virtual void AdvanceAction();
+    void BindAnimation();
+    void Advance();
     short AdvanceNestedFrame();
     void ResetPrimaryCounters(short);
     void ResetSecondaryCounters(short);

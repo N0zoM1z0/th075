@@ -1,4 +1,6 @@
 #pragma once
+#include "CharacterObject.hpp"
+#include "YoumuFighter.hpp"
 
 // Borrowed 16-byte history payload, independently consumed at 005365FF.
 // The coordinates retain their observed DWORD bit transport. Natural member
@@ -31,10 +33,10 @@ public:
 // Native vtable 006599D4, installed by the exact 00536360 constructor.
 // Only its first two virtual slots are exposed. All receiver interfaces here
 // are incomplete: never instantiate or embed them.
-class ObjectActor536400F1211 {
+class ObjectActor536400F1211 : public CharacterObject {
 public:
-    virtual void BindAnimationAt0045B880();
-    virtual void AdvanceAction();
+    void BindAnimation();
+    void Advance();
     short AdvanceNestedFrame();
     void ResetPrimaryCounters(short);
     void ResetSecondaryCounters(short);
