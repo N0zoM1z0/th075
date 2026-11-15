@@ -473,10 +473,10 @@ address,name,module,confidence,evidence
 0x00451A00,Fighter::RenderTimedSprite,FighterState,inferred,F181; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x0042AB90,NameEntryScene::PollPlayerInput,NameEntryScene,inferred,F182; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x0042BCD0,NameEntryScene::PollSharedInput,NameEntryScene,inferred,F182; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
-0x0043A7A0,TitleScene::RenderMenu,TitleScene,inferred,F183; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x0043A7A0,TitleScene::Render,TitleScene,inferred,F183; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x0043ABF0,TitleScene::PollMenuInput,TitleScene,inferred,F184; full cold replay exact; scene identity/layout not proved
 0x00429DC0,ReplayScene::PollInput,ReplayScene,inferred,F184; full cold replay exact; scene identity/layout not proved
-0x0043A270,TitleScene::Advance,TitleScene,inferred,F185; complete canonical cold exact; synthetic call-only scene/virtual slot views; original layout/name unknown
+0x0043A270,TitleScene::Update,TitleScene,inferred,F185; complete canonical cold exact; synthetic call-only scene/virtual slot views; original layout/name unknown
 0x00428F00,OptionsScene::AdvanceAt00428F00,OptionsScene,inferred,F186; complete 979-byte cold exact with seven-branch switch table; original name and scene object layout unproven
 0x00419450,GameConfig::SaveIni,GameConfig,inferred,F187; whole cold exact and config.ini import/literal validated; original name/owner layout unknown
 0x00429F00,OptionsScene::ApplySelectionAt00429F00,OptionsScene,inferred,F188; whole 591-byte cold exact including EH and 7-case switch; glyph layout/original owner unproven
@@ -487,7 +487,7 @@ address,name,module,confidence,evidence
 0x004192F0,GameConfig::LoadIni,GameConfig,inferred,F194; complete 339-byte Win32 settings read cold exact; original global-data ownership unknown
 0x00417430,GameGlobals::Release,GameGlobals,inferred,F195; full 358-byte global cleanup policy cold exact; original owner classes unknown
 0x0043AD10,BattleScene::BattleScene,BattleScene,inferred,F196; complete 922 native CODE cold exact with five-stage EH; original scene/container class identity remains provisional
-0x0043A020,TitleScene::Initialize,TitleScene,inferred,F197; complete two-state EH 435-byte title initializer cold exact; original nominal class and R108 base origin unknown
+0x0043A020,TitleScene::TitleScene,TitleScene,inferred,F197; complete two-state EH 435-byte title initializer cold exact; original nominal class and R108 base origin unknown
 0x0040AD80,TextureManager::Initialize,TextureManager,inferred,F198; whole natural source 177-byte cold exact with 12 fields; original C++ owner/container semantics provisional
 0x0040B1D0,TextureManager::AllocateUnformattedSlots,TextureManager,inferred,F198; whole natural source 128-byte cold exact with 8 fields; original C++ owner/container semantics provisional
 0x0040AE40,TextureManager::ReleaseResources,TextureManager,inferred,F199; complete 434-byte five-state EH cleanup cold exact; original owner/element types provisional
@@ -761,7 +761,7 @@ address,name,module,confidence,evidence
 0x0042B300,NameEntryScene::ReleaseResourcesAt0042B300,NameEntryScene,inferred,"F474; full 127-byte originally authored native scene resource derived virtual destructor, genuine own vtable and texture delete, 7 physical COFF refs, targeted 6/6 exact"
 0x0042E870,ResultScene::~ResultScene,ResultScene,inferred,"F474; full 127-byte originally authored native scene resource derived virtual destructor, genuine own vtable and texture delete, 7 physical COFF refs, targeted 6/6 exact"
 0x00438BA0,StaffRollScene::ReleaseResourcesAt00438BA0,StaffRollScene,inferred,"F474; full 127-byte originally authored native scene resource derived virtual destructor, genuine own vtable and texture delete, 7 physical COFF refs, targeted 6/6 exact"
-0x0043A1E0,TitleScene::ReleaseResourcesAt0043A1E0,TitleScene,inferred,"F474; full 142-byte originally authored native scene resource derived virtual destructor, genuine own vtable and texture delete, 8 physical COFF refs, targeted 6/6 exact"
+0x0043A1E0,TitleScene::~TitleScene,TitleScene,inferred,"F474; full 142-byte originally authored native scene resource derived virtual destructor, genuine own vtable and texture delete, 8 physical COFF refs, targeted 6/6 exact"
 0x00449DC0,BackgroundStage::DestroyBG00aAt00449DC0,BackgroundStage,inferred,"F479; complete original 28-byte native BG00a derived vtbl 0x00658434 and base dtor 00449D40, 2 physical PE refs, affected-only cold exact"
 0x0044A210,BackgroundStage::DestroyBG00bAt0044A210,BackgroundStage,inferred,"F479; complete original 28-byte native BG00b derived vtbl 0x006584A4 and base dtor 00449D40, 2 physical PE refs, affected-only cold exact"
 0x0044A500,BackgroundStage::DestroyBG00cAt0044A500,BackgroundStage,inferred,"F479; complete original 28-byte native BG00c derived vtbl 0x006584FC and base dtor 00449D40, 2 physical PE refs, affected-only cold exact"

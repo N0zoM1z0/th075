@@ -490,10 +490,10 @@ BackgroundStage::AdvanceBG05aReverseCycleAt0044E3A0
 Fighter::RenderTimedSprite
 NameEntryScene::PollPlayerInput
 NameEntryScene::PollSharedInput
-TitleScene::RenderMenu
+TitleScene::Render
 TitleScene::PollMenuInput
 ReplayScene::PollInput
-TitleScene::Advance
+TitleScene::Update
 OptionsScene::AdvanceAt00428F00
 GameConfig::SaveIni
 OptionsScene::ApplySelectionAt00429F00
@@ -504,7 +504,7 @@ GameGlobals::Initialize
 GameConfig::LoadIni
 GameGlobals::Release
 BattleScene::BattleScene
-TitleScene::Initialize
+TitleScene::TitleScene
 TextureManager::Initialize
 TextureManager::AllocateUnformattedSlots
 TextureManager::ReleaseResources
@@ -778,7 +778,7 @@ ReplayScene::ReleaseResourcesAt0042A2C0
 NameEntryScene::ReleaseResourcesAt0042B300
 ResultScene::~ResultScene
 StaffRollScene::ReleaseResourcesAt00438BA0
-TitleScene::ReleaseResourcesAt0043A1E0
+TitleScene::~TitleScene
 BackgroundStage::DestroyBG00aAt00449DC0
 BackgroundStage::DestroyBG00bAt0044A210
 BackgroundStage::DestroyBG00cAt0044A500

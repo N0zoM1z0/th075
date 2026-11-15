@@ -491,10 +491,10 @@ BackgroundStage::AdvanceBG05aReverseCycleAt0044E3A0,0x0044E3A0,function
 Fighter::RenderTimedSprite,0x00451A00,function
 NameEntryScene::PollPlayerInput,0x0042AB90,function
 NameEntryScene::PollSharedInput,0x0042BCD0,function
-TitleScene::RenderMenu,0x0043A7A0,function
+TitleScene::Render,0x0043A7A0,function
 TitleScene::PollMenuInput,0x0043ABF0,function
 ReplayScene::PollInput,0x00429DC0,function
-TitleScene::Advance,0x0043A270,function
+TitleScene::Update,0x0043A270,function
 OptionsScene::AdvanceAt00428F00,0x00428F00,function
 GameConfig::SaveIni,0x00419450,function
 OptionsScene::ApplySelectionAt00429F00,0x00429F00,function
@@ -505,7 +505,7 @@ GameGlobals::Initialize,0x00417210,function
 GameConfig::LoadIni,0x004192F0,function
 GameGlobals::Release,0x00417430,function
 BattleScene::BattleScene,0x0043AD10,function
-TitleScene::Initialize,0x0043A020,function
+TitleScene::TitleScene,0x0043A020,function
 TextureManager::Initialize,0x0040AD80,function
 TextureManager::AllocateUnformattedSlots,0x0040B1D0,function
 TextureManager::ReleaseResources,0x0040AE40,function
@@ -779,7 +779,7 @@ ReplayScene::ReleaseResourcesAt0042A2C0,0x0042A2C0,function
 NameEntryScene::ReleaseResourcesAt0042B300,0x0042B300,function
 ResultScene::~ResultScene,0x0042E870,function
 StaffRollScene::ReleaseResourcesAt00438BA0,0x00438BA0,function
-TitleScene::ReleaseResourcesAt0043A1E0,0x0043A1E0,function
+TitleScene::~TitleScene,0x0043A1E0,function
 BackgroundStage::DestroyBG00aAt00449DC0,0x00449DC0,function
 BackgroundStage::DestroyBG00bAt0044A210,0x0044A210,function
 BackgroundStage::DestroyBG00cAt0044A500,0x0044A500,function

@@ -1,4 +1,4 @@
-#include "TitleAdvanceF185.hpp"
+#include "TitleScene.hpp"
 #include "MenuInputF184.hpp"
 #include "SelectionInput4388D0.hpp"
 #include "GameLeafHelpers.hpp"
@@ -9,12 +9,6 @@
 #include <stdlib.h>
 
 // Only a slot-2 virtual call. The original owner and base layout are unknown.
-class TitleVirtualDrawF185 {
-public:
-    virtual void UnknownSlot0();
-    virtual void UnknownSlot1();
-    virtual void DrawMenuFrame();
-};
 namespace Graphics { void Present(); }
 namespace AudioControlF185 { void __cdecl ScheduleFade(long first, long second, unsigned char third, unsigned char fourth); }
 
@@ -24,21 +18,19 @@ extern signed char g_TitleRoundOptionAt006714AC[2];
 extern signed char g_TitleMiscOptionAt00671610[2];
 extern signed char g_TitleOtherOptionAt006714CC[2];
 
-#define FADE(i) (*reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char*>(this) + (i) + 0x24))
-#define MENU_INDEX field038
 #define SIDE_HELD(button, i) (*reinterpret_cast<int*>(reinterpret_cast<unsigned char*>(&g_HeldInputAt00671664) + (i) * 0x48 + (button) * 4))
 
-unsigned short TitleAdvanceF185::Advance()
+unsigned short TitleScene::Update()
 {
     int i;
-    reinterpret_cast<TitleMenuInputF184*>(this)->PollMenuInput();
-    reinterpret_cast<TitleVirtualDrawF185*>(this)->DrawMenuFrame();
+    PollMenuInput();
+    Render();
     Graphics::Present();
 
     for (i = 0; i < 2; ++i) {
         if (SIDE_HELD(2, i) == 1 && field00C < 57000U) {
             g_SelectActiveSideAt006714B8 = static_cast<signed char>(i);
-            switch (MENU_INDEX) {
+            switch (menuIndex) {
             case 0:
                 if (i == 0) {
                     g_SoundBank->Play(45);
@@ -88,41 +80,41 @@ unsigned short TitleAdvanceF185::Advance()
         }
 
         if (SIDE_HELD(3, i) == 1) {
-            if (MENU_INDEX == 9) {
+            if (menuIndex == 9) {
                 DestroyWindow(g_TitleWindowAt00671608);
                 return 2;
             }
             g_SoundBank->Play(40);
-            MENU_INDEX = 9;
+            menuIndex = 9;
         }
     }
     if (field01C == 1) {
-        if (MENU_INDEX == 9) {
+        if (menuIndex == 9) {
             DestroyWindow(g_TitleWindowAt00671608);
             return 2;
         }
         g_SoundBank->Play(40);
-        MENU_INDEX = 9;
+        menuIndex = 9;
     }
     if (field018 == 1) {
         g_SoundBank->Play(39);
-        MENU_INDEX++;
-        if (MENU_INDEX > 9)
-            MENU_INDEX = 0;
+        menuIndex++;
+        if (menuIndex > 9)
+            menuIndex = 0;
     } else if (field018 == -1) {
         g_SoundBank->Play(39);
-        MENU_INDEX--;
-        if (MENU_INDEX < 0)
-            MENU_INDEX = 9;
+        menuIndex--;
+        if (menuIndex < 0)
+            menuIndex = 9;
     }
     for (i = 0; i < 10; ++i) {
-        if (i != MENU_INDEX) {
-            if (FADE(i) > 10)
-                FADE(i) -= 10;
+        if (i != menuIndex) {
+            if (itemAlpha[i] > 10)
+                itemAlpha[i] -= 10;
             else
-                FADE(i) = 0;
+                itemAlpha[i] = 0;
         } else {
-            FADE(i) = field023;
+            itemAlpha[i] = field023;
         }
     }
     if (field020 < 255)
@@ -158,5 +150,3 @@ unsigned short TitleAdvanceF185::Advance()
 }
 
 #undef SIDE_HELD
-#undef MENU_INDEX
-#undef FADE

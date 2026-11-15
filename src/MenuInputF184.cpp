@@ -1,9 +1,10 @@
+#include "TitleScene.hpp"
 // Two independent call-only scene views; their full layouts are unknown.
 #include "MenuInputF184.hpp"
 #include "SelectionInput4388D0.hpp"
 
 
-void TitleMenuInputF184::PollMenuInput()
+void TitleScene::PollMenuInput()
 {
     field014 = 0;
     field018 = 0;

@@ -30792,8 +30792,8 @@ target = 0x006716AC
 source = "src/TitleMenuRenderF183.cpp"
 object = "build/matching/TitleMenuRenderF183.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["TitleScene::RenderMenu"]
-symbol = "?RenderMenu@TitleMenuRenderF183@@QAEXXZ"
+functions = ["TitleScene::Render"]
+symbol = "?Render@TitleScene@@UAEXXZ"
 target_address = 0x0043A7A0
 size = 1089
 [[units.title-render-menu-0043a7a0.relocations]]
@@ -30932,7 +30932,7 @@ source = "src/MenuInputF184.cpp"
 object = "build/matching/MenuInputF184.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
 functions = ["TitleScene::PollMenuInput"]
-symbol = "?PollMenuInput@TitleMenuInputF184@@QAEXXZ"
+symbol = "?PollMenuInput@TitleScene@@QAEXXZ"
 target_address = 0x0043ABF0
 size = 228
 [[units.title-poll-menu-input-0043abf0.relocations]]
@@ -31179,15 +31179,15 @@ target = 0x004018A0
 source = "src/TitleAdvanceF185.cpp"
 object = "build/matching/TitleAdvanceF185.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["TitleScene::Advance"]
-symbol = "?Advance@TitleAdvanceF185@@QAEGXZ"
+functions = ["TitleScene::Update"]
+symbol = "?Update@TitleScene@@UAEGXZ"
 target_address = 0x0043A270
 size = 1273
 compare_size = 1313
 [[units.title-scene-advance-0043a270.relocations]]
 offset = 14
 type = "REL32"
-symbol = "?PollMenuInput@TitleMenuInputF184@@QAEXXZ"
+symbol = "?PollMenuInput@TitleScene@@QAEXXZ"
 target = 0x0043ABF0
 [[units.title-scene-advance-0043a270.relocations]]
 offset = 30
@@ -33456,14 +33456,14 @@ target = 0x00000000
 source = "src/TitleConstructorF197.cpp"
 object = "build/matching/TitleConstructorF197.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
-functions = ["TitleScene::Initialize"]
-symbol = "??0TitleSceneF197@@QAE@XZ"
+functions = ["TitleScene::TitleScene"]
+symbol = "??0TitleScene@@QAE@XZ"
 target_address = 0x0043A020
 size = 435
 [[units.title-scene-initialize-0043a020.relocations]]
 offset = 6
 type = "DIR32"
-symbol = "__ehhandler$??0TitleSceneF197@@QAE@XZ"
+symbol = "__ehhandler$??0TitleScene@@QAE@XZ"
 target = 0x00655B23
 [[units.title-scene-initialize-0043a020.relocations]]
 offset = 12
@@ -33478,12 +33478,12 @@ target = 0x00000000
 [[units.title-scene-initialize-0043a020.relocations]]
 offset = 34
 type = "REL32"
-symbol = "??0SceneBaseF197@@QAE@XZ"
+symbol = "??0SceneBase@@QAE@XZ"
 target = 0x004251C0
 [[units.title-scene-initialize-0043a020.relocations]]
 offset = 50
 type = "DIR32"
-symbol = "??_7TitleSceneF197@@6B@"
+symbol = "??_7TitleScene@@6B@"
 target = 0x00658308
 [[units.title-scene-initialize-0043a020.relocations]]
 offset = 56
@@ -57518,14 +57518,14 @@ target = 0x00000000
 source = "src/SceneResourceDestructorsF474.cpp"
 object = "build/matching/SceneResourceDestructorsF474.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
-functions = ["TitleScene::ReleaseResourcesAt0043A1E0"]
-symbol = "??1TitleSceneReleaseF474@@UAE@XZ"
+functions = ["TitleScene::~TitleScene"]
+symbol = "??1TitleScene@@UAE@XZ"
 target_address = 0x0043A1E0
 size = 142
 [[units.title-scene-release-resource-0043a1e0.relocations]]
 offset = 6
 type = "DIR32"
-symbol = "__ehhandler$??1TitleSceneReleaseF474@@UAE@XZ"
+symbol = "__ehhandler$??1TitleScene@@UAE@XZ"
 target = 0x00655B35
 [[units.title-scene-release-resource-0043a1e0.relocations]]
 offset = 12
@@ -57540,7 +57540,7 @@ target = 0x00000000
 [[units.title-scene-release-resource-0043a1e0.relocations]]
 offset = 35
 type = "DIR32"
-symbol = "??_7TitleSceneReleaseF474@@6B@"
+symbol = "??_7TitleScene@@6B@"
 target = 0x00658308
 [[units.title-scene-release-resource-0043a1e0.relocations]]
 offset = 57
@@ -57555,7 +57555,7 @@ target = 0x00425460
 [[units.title-scene-release-resource-0043a1e0.relocations]]
 offset = 124
 type = "REL32"
-symbol = "??1NativeSceneBaseF474@@UAE@XZ"
+symbol = "??1SceneBase@@UAE@XZ"
 target = 0x00431F40
 [[units.title-scene-release-resource-0043a1e0.relocations]]
 offset = 134
