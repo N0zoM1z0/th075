@@ -21,10 +21,7 @@ extern float g_RenderCameraY;
 extern unsigned char g_RenderByte0067161C;
 extern unsigned char g_RenderByte0066C237;
 
-#define FRAME(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<char*>(frameInfo) + (offset)))
-#define POSE(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<char*>(FRAME(void*, 8)) + (offset)))
-#define POSE_FLOAT(offset) *reinterpret_cast<float*>(reinterpret_cast<char*>(FRAME(void*, 8)) + (offset))
-#define DRAWING reinterpret_cast<FighterDrawingF126*>(reinterpret_cast<void*&>(field004))
+#define DRAWING reinterpret_cast<FighterDrawingF126*>(drawing)
 #define HISTORY reinterpret_cast<FighterHistoryF126*>(field480)
 #define TRANSFORM(value) reinterpret_cast<SpriteTransform*>(&(value))
 
@@ -40,44 +37,44 @@ void Fighter::Render() {
     cameraY = g_RenderCameraY;
     if (field082 > 0 && reinterpret_cast<Fighter*>(this)->IsState50To149())
         cameraHorizontal += 2 - (field082 % 2) * 4;
-    DRAWING->GetTextureRect(FRAME(short, 6), &textureRect);
+    DRAWING->GetTextureRect(frameInfo->textureIndex, &textureRect);
     TRANSFORM(transformedQuad)->BuildQuadFromRect(&textureRect);
-    if (FRAME(void*, 8) != 0) {
-        switch (POSE(unsigned char, 0)) {
+    if (frameInfo->pose != 0) {
+        switch (frameInfo->pose->blendMode) {
         case 0: DRAWING->SetBlendMode(0); break;
         case 1: DRAWING->SetBlendMode(2); break;
         case 2: DRAWING->SetBlendMode(3); break;
         }
-        TRANSFORM(transformedQuad)->ScaleQuad(FRAME(short, 0), FRAME(short, 2), 0, POSE_FLOAT(12), POSE_FLOAT(16), POSE_FLOAT(20));
-        TRANSFORM(transformedQuad)->RotateQuad(FRAME(short, 0), FRAME(short, 2), 0, POSE_FLOAT(24), POSE_FLOAT(28), POSE_FLOAT(32));
+        TRANSFORM(transformedQuad)->ScaleQuad(frameInfo->originX, frameInfo->originY, 0, frameInfo->pose->scaleX, frameInfo->pose->scaleY, frameInfo->pose->scaleZ);
+        TRANSFORM(transformedQuad)->RotateQuad(frameInfo->originX, frameInfo->originY, 0, frameInfo->pose->rotationX, frameInfo->pose->rotationY, frameInfo->pose->rotationZ);
         TRANSFORM(transformedQuad)->ScaleQuad(0, 0, 0, facing, 1.0f, 1.0f);
-        drawColor = D3DCOLOR_ARGB(POSE(unsigned char, 1), POSE(unsigned char, 2), POSE(unsigned char, 3), POSE(unsigned char, 4));
-        spriteOffset.x = POSE(short, 6);
-        spriteOffset.y = POSE(short, 8);
-        spriteOffset.z = POSE(short, 10);
+        drawColor = D3DCOLOR_ARGB(frameInfo->pose->color[0], frameInfo->pose->color[1], frameInfo->pose->color[2], frameInfo->pose->color[3]);
+        spriteOffset.x = frameInfo->pose->offsetX;
+        spriteOffset.y = frameInfo->pose->offsetY;
+        spriteOffset.z = frameInfo->pose->offsetZ;
     } else {
         spriteOffset.x = 0.0f;
         spriteOffset.y = 0.0f;
         spriteOffset.z = 0.0f;
         DRAWING->SetBlendMode(0);
-        if (FRAME(unsigned char, 12) != 0)
+        if (frameInfo->field0C != 0)
             TRANSFORM(transformedQuad)->ScaleQuad(0, 0, 0, facing * 2, 2.0f, 2.0f);
         drawColor = 0xFFFFFFFF;
     }
     if (field040 != 0) {
         if (field010 & 0x80) DRAWING->SetPixelShaderMode(0);
-        TRANSFORM(transformedQuad)->ScaleQuad(facing * (FRAME(short, 0) + pivotX),
-            FRAME(short, 2) - pivotY, pivotZ, scaleX, scaleY, scaleZ);
-        TRANSFORM(transformedQuad)->RotateQuad(facing * (FRAME(short, 0) + pivotX),
-            FRAME(short, 2) - pivotY, pivotZ, rotationX, rotationY, facing * rotationZ);
+        TRANSFORM(transformedQuad)->ScaleQuad(facing * ((frameInfo->originX) + pivotX),
+            (frameInfo->originY) - pivotY, pivotZ, scaleX, scaleY, scaleZ);
+        TRANSFORM(transformedQuad)->RotateQuad(facing * ((frameInfo->originX) + pivotX),
+            (frameInfo->originY) - pivotY, pivotZ, rotationX, rotationY, facing * rotationZ);
         spriteOffset.x = field016;
         spriteOffset.y = field018;
         spriteOffset.z = field01A;
         drawColor = D3DCOLOR_ARGB(color[0], color[1], color[2], color[3]);
     }
-    TRANSFORM(transformedQuad)->TranslateQuad(x - facing * FRAME(short, 0), -y - FRAME(short, 2), 0);
+    TRANSFORM(transformedQuad)->TranslateQuad(x - facing * (frameInfo->originX), -y - (frameInfo->originY), 0);
     if (g_RenderByte0067161C == 0) {
-        HISTORY->AppendElement(FRAME(short, 6), x, y, transformedQuad, spriteOffset, drawColor, 1);
+        HISTORY->AppendElement(frameInfo->textureIndex, x, y, transformedQuad, spriteOffset, drawColor, 1);
         if (g_RenderByte0066C237 != 0 && field47C <= 0) {
             HISTORY->RemoveFrontIfPresent();
             HISTORY->RemoveFrontIfPresent();
@@ -85,15 +82,15 @@ void Fighter::Render() {
     }
     TRANSFORM(transformedQuad)->TranslateQuad(cameraHorizontal, cameraY + 420.0f, 0);
     if (spriteOffset.x != 0.0f || spriteOffset.y != 0.0f || spriteOffset.z != 0.0f)
-        DRAWING->DrawProjectedQuad(FRAME(short, 6), transformedQuad, &textureRect, spriteOffset.x, spriteOffset.y, spriteOffset.z, drawColor);
+        DRAWING->DrawProjectedQuad(frameInfo->textureIndex, transformedQuad, &textureRect, spriteOffset.x, spriteOffset.y, spriteOffset.z, drawColor);
     else
-        DRAWING->DrawQuad(FRAME(short, 6), transformedQuad, &textureRect, drawColor);
+        DRAWING->DrawQuad(frameInfo->textureIndex, transformedQuad, &textureRect, drawColor);
     if (field484 > 0) {
         DRAWING->SetBlendMode(2);
         if (spriteOffset.x != 0.0f || spriteOffset.y != 0.0f || spriteOffset.z != 0.0f)
-            DRAWING->DrawProjectedQuad(FRAME(short, 6), transformedQuad, &textureRect, spriteOffset.x, spriteOffset.y, spriteOffset.z, drawColor);
+            DRAWING->DrawProjectedQuad(frameInfo->textureIndex, transformedQuad, &textureRect, spriteOffset.x, spriteOffset.y, spriteOffset.z, drawColor);
         else
-            DRAWING->DrawQuad(FRAME(short, 6), transformedQuad, &textureRect, drawColor);
+            DRAWING->DrawQuad(frameInfo->textureIndex, transformedQuad, &textureRect, drawColor);
     }
     DRAWING->SetPixelShaderMode(-1);
 }
@@ -101,9 +98,6 @@ void Fighter::Render() {
 #undef TRANSFORM
 #undef HISTORY
 #undef DRAWING
-#undef POSE_FLOAT
-#undef POSE
-#undef FRAME
 
 // C sine entry and pointer-only drawing view; no private owner allocation.
 extern "C" double __cdecl sin(double);

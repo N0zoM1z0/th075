@@ -46,10 +46,10 @@ Next steps:
    all one object holding the two fighters at +0x44/+0x48), the battle
    scene and HUD shells (ten classes repeat `field044`/`field048`), and the
    result, title and menu scenes. Build each layout from all of its methods'
-   accesses and its constructor. The renderers at 0040FC70, 00410350 and
-   00410A00 are `CharacterObject::Render` and `Actor::RenderNode`/
-   `RenderMirroredNode` (vtable slots 2–4); +4 is a drawing pointer and +8
-   a frame-record pointer, not the `signed char` the layout declares.
+   accesses and its constructor. The battle scene's methods run from
+   0043AD10 to 00445A00 (vtable 00658334: slot 1 `BattleFrame::UpdateFrame`,
+   slot 2 `BattleRender43D9D0::RenderFrame`), interleaved with a few helpers
+   of the progress records and the combo counter.
 2. Rename the research parent classes to their character classes
    (`FighterSwitchF598_Boss0045DD70::Advance` is `ReimuFighter::Advance`).
 3. The giants' register debt: find the construct behind the anomalous

@@ -9,6 +9,7 @@ class CharacterObject : public Actor {
 public:
     CharacterObject();                  // 0045B760; object vtables have no destructor slot
     void ClearFrameInfo();              // 0045B830
+    void Render();                      // slot 2, 0040FC70
 
     ActionSequenceSlots* sequences;     // +0x0C4 the owner's sequence container (owner + 0x468)
     float field0C8;                     // +0x0C8

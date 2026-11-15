@@ -99,8 +99,9 @@ public:
     virtual void RenderNode();            // slot 3, 00410350
     virtual void RenderMirroredNode();    // slot 4, 00410A00
 
-    signed char field004;               // +0x004
-    unsigned char unknown005[0x010 - 0x005];
+    void* drawing;                      // +0x004 sprite drawing context, shared with the owner's objects
+    FighterFrameInfo* drawFrame;        // +0x008 frame record the node renderers draw
+    unsigned char unknown00C[0x010 - 0x00C];
     unsigned char field010;             // +0x010
     unsigned char color[4];             // +0x011 four colour channels, all 255 when opaque
     unsigned char unknown015[0x016 - 0x015];

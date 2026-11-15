@@ -7,7 +7,7 @@
 
 ReimuObject::ReimuObject(void* ownerFighter) {
     owner=static_cast<Fighter*>(ownerFighter);
-    reinterpret_cast<unsigned int&>(field004)=reinterpret_cast<unsigned int&>(static_cast<Fighter*>(ownerFighter)->field004);
+    drawing=static_cast<Fighter*>(ownerFighter)->drawing;
     sequences=&static_cast<Fighter*>(ownerFighter)->sequenceSlots;
     field0D8=0;
     field0DA=0;
@@ -18,7 +18,7 @@ ReimuObject::ReimuObject(void* ownerFighter) {
 
 MarisaObject::MarisaObject(void* ownerFighter) {
     owner=static_cast<Fighter*>(ownerFighter);
-    reinterpret_cast<unsigned int&>(field004)=reinterpret_cast<unsigned int&>(static_cast<Fighter*>(ownerFighter)->field004);
+    drawing=static_cast<Fighter*>(ownerFighter)->drawing;
     sequences=&static_cast<Fighter*>(ownerFighter)->sequenceSlots;
     field0D8=0;
     field0DA=0;
@@ -30,7 +30,7 @@ MarisaObject::MarisaObject(void* ownerFighter) {
 
 SakuyaObject::SakuyaObject(void* ownerFighter) {
     owner=static_cast<Fighter*>(ownerFighter);
-    reinterpret_cast<unsigned int&>(field004)=reinterpret_cast<unsigned int&>(static_cast<Fighter*>(ownerFighter)->field004);
+    drawing=static_cast<Fighter*>(ownerFighter)->drawing;
     sequences=&static_cast<Fighter*>(ownerFighter)->sequenceSlots;
     field0D8=0;
     field0DA=0;
@@ -42,7 +42,7 @@ SakuyaObject::SakuyaObject(void* ownerFighter) {
 
 AliceObject::AliceObject(void* ownerFighter) {
     owner=static_cast<Fighter*>(ownerFighter);
-    reinterpret_cast<unsigned int&>(field004)=reinterpret_cast<unsigned int&>(static_cast<Fighter*>(ownerFighter)->field004);
+    drawing=static_cast<Fighter*>(ownerFighter)->drawing;
     sequences=&static_cast<Fighter*>(ownerFighter)->sequenceSlots;
     field0D8=0;
     field0DA=0;
@@ -54,7 +54,7 @@ AliceObject::AliceObject(void* ownerFighter) {
 
 PatchouliObject::PatchouliObject(void* ownerFighter) {
     owner=static_cast<Fighter*>(ownerFighter);
-    reinterpret_cast<unsigned int&>(field004)=reinterpret_cast<unsigned int&>(static_cast<Fighter*>(ownerFighter)->field004);
+    drawing=static_cast<Fighter*>(ownerFighter)->drawing;
     sequences=&static_cast<Fighter*>(ownerFighter)->sequenceSlots;
     field0D8=0;
     field0DA=0;
@@ -66,7 +66,7 @@ PatchouliObject::PatchouliObject(void* ownerFighter) {
 
 YoumuObject::YoumuObject(void* ownerFighter) {
     owner=static_cast<Fighter*>(ownerFighter);
-    reinterpret_cast<unsigned int&>(field004)=reinterpret_cast<unsigned int&>(static_cast<Fighter*>(ownerFighter)->field004);
+    drawing=static_cast<Fighter*>(ownerFighter)->drawing;
     sequences=&static_cast<Fighter*>(ownerFighter)->sequenceSlots;
     field0D8=0;
     field0DA=0;
@@ -78,7 +78,7 @@ YoumuObject::YoumuObject(void* ownerFighter) {
 
 RemiliaObject::RemiliaObject(void* ownerFighter) {
     owner=static_cast<Fighter*>(ownerFighter);
-    reinterpret_cast<unsigned int&>(field004)=reinterpret_cast<unsigned int&>(static_cast<Fighter*>(ownerFighter)->field004);
+    drawing=static_cast<Fighter*>(ownerFighter)->drawing;
     sequences=&static_cast<Fighter*>(ownerFighter)->sequenceSlots;
     field0D8=0;
     field0DA=0;
@@ -90,7 +90,7 @@ RemiliaObject::RemiliaObject(void* ownerFighter) {
 
 YuyukoObject::YuyukoObject(void* ownerFighter) {
     owner=static_cast<Fighter*>(ownerFighter);
-    reinterpret_cast<unsigned int&>(field004)=reinterpret_cast<unsigned int&>(static_cast<Fighter*>(ownerFighter)->field004);
+    drawing=static_cast<Fighter*>(ownerFighter)->drawing;
     sequences=&static_cast<Fighter*>(ownerFighter)->sequenceSlots;
     field0D8=0;
     field0DA=0;
@@ -102,7 +102,7 @@ YuyukoObject::YuyukoObject(void* ownerFighter) {
 
 YukariObject::YukariObject(void* ownerFighter) {
     owner=static_cast<Fighter*>(ownerFighter);
-    reinterpret_cast<unsigned int&>(field004)=reinterpret_cast<unsigned int&>(static_cast<Fighter*>(ownerFighter)->field004);
+    drawing=static_cast<Fighter*>(ownerFighter)->drawing;
     sequences=&static_cast<Fighter*>(ownerFighter)->sequenceSlots;
     field0D8=0;
     field0DA=0;
@@ -114,7 +114,7 @@ YukariObject::YukariObject(void* ownerFighter) {
 
 SuikaObject::SuikaObject(void* ownerFighter) {
     owner=static_cast<Fighter*>(ownerFighter);
-    reinterpret_cast<unsigned int&>(field004)=reinterpret_cast<unsigned int&>(static_cast<Fighter*>(ownerFighter)->field004);
+    drawing=static_cast<Fighter*>(ownerFighter)->drawing;
     sequences=&static_cast<Fighter*>(ownerFighter)->sequenceSlots;
     field0D8=0;
     field0DA=0;
@@ -126,7 +126,7 @@ SuikaObject::SuikaObject(void* ownerFighter) {
 
 MeilingObject::MeilingObject(void* ownerFighter) {
     owner=static_cast<Fighter*>(ownerFighter);
-    reinterpret_cast<unsigned int&>(field004)=reinterpret_cast<unsigned int&>(static_cast<Fighter*>(ownerFighter)->field004);
+    drawing=static_cast<Fighter*>(ownerFighter)->drawing;
     sequences=&static_cast<Fighter*>(ownerFighter)->sequenceSlots;
     field0D8=0;
     field0DA=0;

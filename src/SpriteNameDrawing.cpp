@@ -1,10 +1,9 @@
+#include "CharacterObject.hpp"
 #include "SpriteDraw40CA80.hpp"
 #include "SpriteTransform.hpp"
 #include <mmsystem.h>
 
 // Pointer-only owner/frame/pose views; complete private layouts are unknown.
-class SpriteNodeCameraF129 { public: void Render(); };
-class SpriteNodeF129 { public: void Render(); };
 class NodeDrawingF129 {
 public:
     void GetTextureRect(int, RECT*);
@@ -15,14 +14,10 @@ public:
 };
 extern float g_NodeCameraX;
 extern float g_NodeCameraY;
-#define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<char*>(this) + (offset)))
-#define FLOAT(offset) *reinterpret_cast<float*>(reinterpret_cast<char*>(this) + (offset))
-#define FRAME(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<char*>(FIELD(void*, 8)) + (offset)))
-#define POSE(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<char*>(FRAME(void*, 8)) + (offset)))
-#define POSE_FLOAT(offset) *reinterpret_cast<float*>(reinterpret_cast<char*>(FRAME(void*, 8)) + (offset))
-#define DRAWING reinterpret_cast<NodeDrawingF129*>(FIELD(void*, 4))
+#define DRAWING reinterpret_cast<NodeDrawingF129*>(drawing)
 #define TRANSFORM(value) reinterpret_cast<SpriteTransform*>(&(value))
-void SpriteNodeCameraF129::Render() {
+// Object vtable slot 2: draw relative to the battle camera.
+void CharacterObject::Render() {
     RECT textureRect;
     D3DVECTOR spriteOffset;
     float cameraHorizontal;
@@ -31,108 +26,103 @@ void SpriteNodeCameraF129::Render() {
     SpriteQuad40CA80 transformedQuad;
     cameraHorizontal = g_NodeCameraX - 160.0f;
     cameraY = g_NodeCameraY;
-    DRAWING->GetTextureRect(FRAME(short, 6), &textureRect);
+    DRAWING->GetTextureRect(drawFrame->textureIndex, &textureRect);
     TRANSFORM(transformedQuad)->BuildQuadFromRect(&textureRect);
-    if (FRAME(void*, 8) != 0) {
-        switch (POSE(unsigned char, 0)) {
+    if (drawFrame->pose != 0) {
+        switch (drawFrame->pose->blendMode) {
         case 0: DRAWING->SetBlendMode(0); break;
         case 1: DRAWING->SetBlendMode(2); break;
         case 2: DRAWING->SetBlendMode(3); break;
         }
-        TRANSFORM(transformedQuad)->ScaleQuad(FRAME(short, 0), FRAME(short, 2), 0, POSE_FLOAT(12), POSE_FLOAT(16), POSE_FLOAT(20));
-        TRANSFORM(transformedQuad)->RotateQuad(FRAME(short, 0), FRAME(short, 2), 0, POSE_FLOAT(24), POSE_FLOAT(28), POSE_FLOAT(32));
-        TRANSFORM(transformedQuad)->ScaleQuad(0, 0, 0, FIELD(signed char, 0x66), 1.0f, 1.0f);
-        drawColor = D3DCOLOR_ARGB(POSE(unsigned char, 1), POSE(unsigned char, 2), POSE(unsigned char, 3), POSE(unsigned char, 4));
-        spriteOffset.x = POSE(short, 6);
-        spriteOffset.y = POSE(short, 8);
-        spriteOffset.z = POSE(short, 10);
+        TRANSFORM(transformedQuad)->ScaleQuad(drawFrame->originX, drawFrame->originY, 0, drawFrame->pose->scaleX, drawFrame->pose->scaleY, drawFrame->pose->scaleZ);
+        TRANSFORM(transformedQuad)->RotateQuad(drawFrame->originX, drawFrame->originY, 0, drawFrame->pose->rotationX, drawFrame->pose->rotationY, drawFrame->pose->rotationZ);
+        TRANSFORM(transformedQuad)->ScaleQuad(0, 0, 0, facing, 1.0f, 1.0f);
+        drawColor = D3DCOLOR_ARGB(drawFrame->pose->color[0], drawFrame->pose->color[1], drawFrame->pose->color[2], drawFrame->pose->color[3]);
+        spriteOffset.x = drawFrame->pose->offsetX;
+        spriteOffset.y = drawFrame->pose->offsetY;
+        spriteOffset.z = drawFrame->pose->offsetZ;
     } else {
         spriteOffset.x = 0.0f;
         spriteOffset.y = 0.0f;
         spriteOffset.z = 0.0f;
         DRAWING->SetBlendMode(0);
-        if (FRAME(unsigned char, 12) != 0)
-            TRANSFORM(transformedQuad)->ScaleQuad(0, 0, 0, FIELD(signed char, 0x66) * 2, 2.0f, 2.0f);
+        if (drawFrame->field0C != 0)
+            TRANSFORM(transformedQuad)->ScaleQuad(0, 0, 0, (facing) * 2, 2.0f, 2.0f);
         drawColor = 0xFFFFFFFF;
     }
-    if (FIELD(unsigned char, 0x40) != 0) {
-        if (FIELD(unsigned char, 0x10) & 0x80) DRAWING->SetPixelShaderMode(0);
-        TRANSFORM(transformedQuad)->ScaleQuad(FIELD(signed char, 0x66) * (FRAME(short, 0) + FLOAT(0x34)),
-            FRAME(short, 2) - FLOAT(0x38), FLOAT(0x3C), FLOAT(0x1C), FLOAT(0x20), FLOAT(0x24));
-        TRANSFORM(transformedQuad)->RotateQuad(FIELD(signed char, 0x66) * (FRAME(short, 0) + FLOAT(0x34)),
-            FRAME(short, 2) - FLOAT(0x38), FLOAT(0x3C), FLOAT(0x28), FLOAT(0x2C), FIELD(signed char, 0x66) * FLOAT(0x30));
-        spriteOffset.x = FIELD(short, 0x16);
-        spriteOffset.y = FIELD(short, 0x18);
-        spriteOffset.z = FIELD(short, 0x1A);
-        drawColor = D3DCOLOR_ARGB(FIELD(unsigned char, 0x11), FIELD(unsigned char, 0x12), FIELD(unsigned char, 0x13), FIELD(unsigned char, 0x14));
+    if (field040 != 0) {
+        if (field010 & 0x80) DRAWING->SetPixelShaderMode(0);
+        TRANSFORM(transformedQuad)->ScaleQuad((facing) * ((drawFrame->originX) + pivotX),
+            (drawFrame->originY) - pivotY, pivotZ, scaleX, scaleY, scaleZ);
+        TRANSFORM(transformedQuad)->RotateQuad((facing) * ((drawFrame->originX) + pivotX),
+            (drawFrame->originY) - pivotY, pivotZ, rotationX, rotationY, (facing) * rotationZ);
+        spriteOffset.x = field016;
+        spriteOffset.y = field018;
+        spriteOffset.z = field01A;
+        drawColor = D3DCOLOR_ARGB(color[0], color[1], color[2], color[3]);
     }
-    TRANSFORM(transformedQuad)->TranslateQuad(cameraHorizontal + FLOAT(0x44) - FIELD(signed char, 0x66) * FRAME(short, 0),
-        cameraY + 420.0f - FLOAT(0x48) - FRAME(short, 2), 0);
+    TRANSFORM(transformedQuad)->TranslateQuad(cameraHorizontal + x - (facing) * (drawFrame->originX),
+        cameraY + 420.0f - y - (drawFrame->originY), 0);
     if (spriteOffset.x != 0 || spriteOffset.y != 0 || spriteOffset.z != 0)
-        DRAWING->DrawProjectedQuad(FRAME(short, 6), transformedQuad, &textureRect,
-            cameraHorizontal + FLOAT(0x44) + spriteOffset.x, cameraY + 420.0f - FLOAT(0x48) + spriteOffset.y, spriteOffset.z, drawColor);
+        DRAWING->DrawProjectedQuad(drawFrame->textureIndex, transformedQuad, &textureRect,
+            cameraHorizontal + x + spriteOffset.x, cameraY + 420.0f - y + spriteOffset.y, spriteOffset.z, drawColor);
     else
-        DRAWING->DrawQuad(FRAME(short, 6), transformedQuad, &textureRect, drawColor);
+        DRAWING->DrawQuad(drawFrame->textureIndex, transformedQuad, &textureRect, drawColor);
     DRAWING->SetPixelShaderMode(-1);
 }
 
-void SpriteNodeF129::Render() {
+// Actor vtable slot 3.
+void Actor::RenderNode() {
     RECT textureRect;
     D3DVECTOR spriteOffset;
     DWORD drawColor;
     SpriteQuad40CA80 transformedQuad;
-    DRAWING->GetTextureRect(FRAME(short, 6), &textureRect);
+    DRAWING->GetTextureRect(drawFrame->textureIndex, &textureRect);
     TRANSFORM(transformedQuad)->BuildQuadFromRect(&textureRect);
-    if (FRAME(void*, 8) != 0) {
-        switch (POSE(unsigned char, 0)) {
+    if (drawFrame->pose != 0) {
+        switch (drawFrame->pose->blendMode) {
         case 0: DRAWING->SetBlendMode(0); break;
         case 1: DRAWING->SetBlendMode(2); break;
         case 2: DRAWING->SetBlendMode(3); break;
         }
-        TRANSFORM(transformedQuad)->ScaleQuad(FRAME(short, 0), FRAME(short, 2), 0, POSE_FLOAT(12), POSE_FLOAT(16), POSE_FLOAT(20));
-        TRANSFORM(transformedQuad)->RotateQuad(FRAME(short, 0), FRAME(short, 2), 0, POSE_FLOAT(24), POSE_FLOAT(28), POSE_FLOAT(32));
-        TRANSFORM(transformedQuad)->ScaleQuad(0, 0, 0, FIELD(signed char, 0x66), 1.0f, 1.0f);
-        drawColor = D3DCOLOR_ARGB(POSE(unsigned char, 1), POSE(unsigned char, 2), POSE(unsigned char, 3), POSE(unsigned char, 4));
-        spriteOffset.x = POSE(short, 6);
-        spriteOffset.y = POSE(short, 8);
-        spriteOffset.z = POSE(short, 10);
+        TRANSFORM(transformedQuad)->ScaleQuad(drawFrame->originX, drawFrame->originY, 0, drawFrame->pose->scaleX, drawFrame->pose->scaleY, drawFrame->pose->scaleZ);
+        TRANSFORM(transformedQuad)->RotateQuad(drawFrame->originX, drawFrame->originY, 0, drawFrame->pose->rotationX, drawFrame->pose->rotationY, drawFrame->pose->rotationZ);
+        TRANSFORM(transformedQuad)->ScaleQuad(0, 0, 0, facing, 1.0f, 1.0f);
+        drawColor = D3DCOLOR_ARGB(drawFrame->pose->color[0], drawFrame->pose->color[1], drawFrame->pose->color[2], drawFrame->pose->color[3]);
+        spriteOffset.x = drawFrame->pose->offsetX;
+        spriteOffset.y = drawFrame->pose->offsetY;
+        spriteOffset.z = drawFrame->pose->offsetZ;
     } else {
         spriteOffset.x = 0.0f;
         spriteOffset.y = 0.0f;
         spriteOffset.z = 0.0f;
         DRAWING->SetBlendMode(0);
-        if (FRAME(unsigned char, 12) != 0)
-            TRANSFORM(transformedQuad)->ScaleQuad(0, 0, 0, FIELD(signed char, 0x66) * 2, 2.0f, 2.0f);
+        if (drawFrame->field0C != 0)
+            TRANSFORM(transformedQuad)->ScaleQuad(0, 0, 0, (facing) * 2, 2.0f, 2.0f);
         drawColor = 0xFFFFFFFF;
     }
-    if (FIELD(unsigned char, 0x40) != 0) {
-        if (FIELD(unsigned char, 0x10) & 0x80) DRAWING->SetPixelShaderMode(0);
-        TRANSFORM(transformedQuad)->ScaleQuad(FIELD(signed char, 0x66) * (FRAME(short, 0) + FLOAT(0x34)),
-            FRAME(short, 2) - FLOAT(0x38), FLOAT(0x3C), FLOAT(0x1C), FLOAT(0x20), FLOAT(0x24));
-        TRANSFORM(transformedQuad)->RotateQuad(FIELD(signed char, 0x66) * (FRAME(short, 0) + FLOAT(0x34)),
-            FRAME(short, 2) - FLOAT(0x38), FLOAT(0x3C), FLOAT(0x28), FLOAT(0x2C), FIELD(signed char, 0x66) * FLOAT(0x30));
-        spriteOffset.x = FIELD(short, 0x16);
-        spriteOffset.y = FIELD(short, 0x18);
-        spriteOffset.z = FIELD(short, 0x1A);
-        drawColor = D3DCOLOR_ARGB(FIELD(unsigned char, 0x11), FIELD(unsigned char, 0x12), FIELD(unsigned char, 0x13), FIELD(unsigned char, 0x14));
+    if (field040 != 0) {
+        if (field010 & 0x80) DRAWING->SetPixelShaderMode(0);
+        TRANSFORM(transformedQuad)->ScaleQuad((facing) * ((drawFrame->originX) + pivotX),
+            (drawFrame->originY) - pivotY, pivotZ, scaleX, scaleY, scaleZ);
+        TRANSFORM(transformedQuad)->RotateQuad((facing) * ((drawFrame->originX) + pivotX),
+            (drawFrame->originY) - pivotY, pivotZ, rotationX, rotationY, (facing) * rotationZ);
+        spriteOffset.x = field016;
+        spriteOffset.y = field018;
+        spriteOffset.z = field01A;
+        drawColor = D3DCOLOR_ARGB(color[0], color[1], color[2], color[3]);
     }
-    TRANSFORM(transformedQuad)->TranslateQuad(FLOAT(0x44) - FIELD(signed char, 0x66) * FRAME(short, 0), FLOAT(0x48) - FRAME(short, 2), 0);
+    TRANSFORM(transformedQuad)->TranslateQuad(x - (facing) * (drawFrame->originX), y - (drawFrame->originY), 0);
     if (spriteOffset.x != 0 || spriteOffset.y != 0 || spriteOffset.z != 0)
-        DRAWING->DrawProjectedQuad(FRAME(short, 6), transformedQuad, &textureRect,
-            spriteOffset.x + FLOAT(0x44), spriteOffset.y + FLOAT(0x48), spriteOffset.z, drawColor);
+        DRAWING->DrawProjectedQuad(drawFrame->textureIndex, transformedQuad, &textureRect,
+            spriteOffset.x + x, spriteOffset.y + y, spriteOffset.z, drawColor);
     else
-        DRAWING->DrawQuad(FRAME(short, 6), transformedQuad, &textureRect, drawColor);
+        DRAWING->DrawQuad(drawFrame->textureIndex, transformedQuad, &textureRect, drawColor);
     DRAWING->SetPixelShaderMode(-1);
 }
 
 #undef DRAWING
-#undef POSE_FLOAT
-#undef POSE
-#undef FRAME
-#undef FLOAT
-#undef FIELD
 
-#define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<char*>(this) + (offset)))
 // Only pointer reads are exposed; the profile record and both owners are incomplete.
 #define SLOT_ADDRESS(offset) (reinterpret_cast<char*>((*reinterpret_cast<void**>(reinterpret_cast<unsigned char*>(this) + 0xC))) + (offset) + entry * 16)
 #define SLOT(type, offset) (*reinterpret_cast<type*>(SLOT_ADDRESS(offset)))

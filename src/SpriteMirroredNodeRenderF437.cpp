@@ -1,3 +1,4 @@
+#include "Actor.hpp"
 #include "SpriteDraw40CA80.hpp"
 #include "SpriteTransform.hpp"
 #include <windows.h>
@@ -58,20 +59,15 @@ struct NativeMirrorFrameF355 {
     RawQuadCarrierF355 transformed;
     float yOrigin;
 };
-class MirroredNodeF254 {public:void RenderMirroredNode();};
-#define RAW reinterpret_cast<unsigned char*>(this)
-#define FIELD(type,off) (*reinterpret_cast<type*>(RAW+(off)))
-#define FLOAT(offset) *reinterpret_cast<float*>(reinterpret_cast<unsigned char*>(this)+(offset))
-#define NODE_RAW reinterpret_cast<unsigned char*>(FIELD(void*,0x08))
-#define NODE(type,off) (*reinterpret_cast<type*>(NODE_RAW+(off)))
 #define TRANSFORM(q) reinterpret_cast<SpriteTransform*>(&(q))
-#define DRAWER (*reinterpret_cast<SpriteRenderDeviceF254**>(RAW+4))
+#define DRAWER reinterpret_cast<SpriteRenderDeviceF254*>(drawing)
 #define SCALE(q,x,y,z,sx,sy,sz) reinterpret_cast<RawSpriteScaleF254*>(&(q))->ScaleQuad(x,y,z,sx,sy,sz)
 #define SCALE_RAWZ(q,x,y,z,sx,sy,sz) reinterpret_cast<RawZSpriteScaleF381*>(&(q))->ScaleQuad(x,y,z,sx,sy,sz)
 #define SCALE_FLOAT(q,x,y,z,sx,sy,sz) reinterpret_cast<FloatSpriteScaleF254*>(&(q))->ScaleQuad(x,y,z,sx,sy,sz)
 #define ROTATE_FLOAT(q,x,y,z,sx,sy,sz) reinterpret_cast<FloatSpriteRotateF254*>(&(q))->RotateQuad(x,y,z,sx,sy,sz)
 #define ROTATE(q,x,y,z,sx,sy,sz) reinterpret_cast<RawSpriteRotateF254*>(&(q))->RotateQuad(x,y,z,sx,sy,sz)
-void MirroredNodeF254::RenderMirroredNode()
+// Actor vtable slot 4: the reflection drawn below an actor.
+void Actor::RenderMirroredNode()
 {
     NativeMirrorFrameF355 state;
     state.transformed.Construct();
@@ -85,36 +81,36 @@ void MirroredNodeF254::RenderMirroredNode()
 #define tint state.tint
     xShift = g_CameraXAt00671404 - g_CameraOffsetXAt00657834;
     yOrigin = g_CameraYAt006713C4;
-    DRAWER->GetTextureRect(NODE(short,6),&sourceRect);
+    DRAWER->GetTextureRect(drawFrame->textureIndex,&sourceRect);
     TRANSFORM(transformed)->BuildQuadFromRect(&sourceRect);
-    if (NODE(void*,8)) {
-        SCALE(transformed,static_cast<float>(NODE(short,0)),static_cast<float>(NODE(short,2)),0.0f,
-              *reinterpret_cast<DWORD*>(reinterpret_cast<unsigned char*>(NODE(void*,8))+0x0c),
-              *reinterpret_cast<DWORD*>(reinterpret_cast<unsigned char*>(NODE(void*,8))+0x10),
-              *reinterpret_cast<DWORD*>(reinterpret_cast<unsigned char*>(NODE(void*,8))+0x14));
-        ROTATE(transformed,static_cast<float>(NODE(short,0)),static_cast<float>(NODE(short,2)),0.0f,
-              *reinterpret_cast<DWORD*>(reinterpret_cast<unsigned char*>(NODE(void*,8))+0x18),
-              *reinterpret_cast<DWORD*>(reinterpret_cast<unsigned char*>(NODE(void*,8))+0x1c),
-              *reinterpret_cast<DWORD*>(reinterpret_cast<unsigned char*>(NODE(void*,8))+0x20));
-        SCALE_FLOAT(transformed,0.0f,0.0f,0.0f,static_cast<float>(FIELD(signed char,0x66)),0x3f800000,0x3f800000);
-    } else if (NODE(unsigned char,0x0c)) {
-        SCALE_FLOAT(transformed,0.0f,0.0f,0.0f,static_cast<float>(static_cast<int>(FIELD(signed char,0x66))<<1),0x40000000,0x40000000);
+    if (drawFrame->pose) {
+        SCALE(transformed,static_cast<float>(drawFrame->originX),static_cast<float>(drawFrame->originY),0.0f,
+              reinterpret_cast<DWORD&>(drawFrame->pose->scaleX),
+              reinterpret_cast<DWORD&>(drawFrame->pose->scaleY),
+              reinterpret_cast<DWORD&>(drawFrame->pose->scaleZ));
+        ROTATE(transformed,static_cast<float>(drawFrame->originX),static_cast<float>(drawFrame->originY),0.0f,
+              reinterpret_cast<DWORD&>(drawFrame->pose->rotationX),
+              reinterpret_cast<DWORD&>(drawFrame->pose->rotationY),
+              reinterpret_cast<DWORD&>(drawFrame->pose->rotationZ));
+        SCALE_FLOAT(transformed,0.0f,0.0f,0.0f,static_cast<float>(facing),0x3f800000,0x3f800000);
+    } else if (drawFrame->field0C) {
+        SCALE_FLOAT(transformed,0.0f,0.0f,0.0f,static_cast<float>(static_cast<int>(facing)<<1),0x40000000,0x40000000);
     }
-    if (FIELD(unsigned char,0x40)) {
-        SCALE_RAWZ(transformed,static_cast<float>(FIELD(signed char,0x66))*(static_cast<float>(NODE(short,0))+FIELD(float,0x34)),static_cast<float>(NODE(short,2))-FIELD(float,0x38),FIELD(DWORD,0x3c),FIELD(DWORD,0x1c),FIELD(DWORD,0x20),FIELD(DWORD,0x24));
-        ROTATE_FLOAT(transformed,static_cast<float>(FIELD(signed char,0x66))*(static_cast<float>(NODE(short,0))+FIELD(float,0x34)),static_cast<float>(NODE(short,2))-FIELD(float,0x38),FIELD(DWORD,0x3c),FIELD(DWORD,0x28),FIELD(DWORD,0x2c),
-               static_cast<float>(FIELD(signed char,0x66))*FIELD(float,0x30));
+    if (field040) {
+        SCALE_RAWZ(transformed,static_cast<float>(facing)*(static_cast<float>(drawFrame->originX)+(pivotX)),static_cast<float>(drawFrame->originY)-(pivotY),reinterpret_cast<DWORD&>(pivotZ),reinterpret_cast<DWORD&>(scaleX),reinterpret_cast<DWORD&>(scaleY),reinterpret_cast<DWORD&>(scaleZ));
+        ROTATE_FLOAT(transformed,static_cast<float>(facing)*(static_cast<float>(drawFrame->originX)+(pivotX)),static_cast<float>(drawFrame->originY)-(pivotY),reinterpret_cast<DWORD&>(pivotZ),reinterpret_cast<DWORD&>(rotationX),reinterpret_cast<DWORD&>(rotationY),
+               static_cast<float>(facing)*(rotationZ));
     }
-    TRANSFORM(transformed)->TranslateQuad(FLOAT(0x44)-FIELD(signed char,0x66)*NODE(short,0),
-                                         -FIELD(float,0x48)-static_cast<float>(NODE(short,2)),0.0f);
+    TRANSFORM(transformed)->TranslateQuad(x-(facing)*(drawFrame->originX),
+                                         -(y)-static_cast<float>(drawFrame->originY),0.0f);
     SpriteDispatchF254::Combine(&composed,&color,&transformed);
-    TRANSFORM(composed)->TranslateQuad(xShift,yOrigin+g_CameraOffsetYAt00657830+FIELD(float,0x6c),0.0f);
+    TRANSFORM(composed)->TranslateQuad(xShift,yOrigin+g_CameraOffsetYAt00657830+(field06C),0.0f);
     g_ActiveCameraAt00671424->CopyVector(tint);
     DRAWER->SetTextureFilter(2);
     if (tint[0] != g_ZeroAt0065782C || tint[1] != g_ZeroAt0065782C || tint[2] != g_ZeroAt0065782C) {
-        DRAWER->DrawTintedQuad(NODE(short,6),composed,&sourceRect,tint[0]+xShift,tint[1]+yOrigin,tint[2],color);
+        DRAWER->DrawTintedQuad(drawFrame->textureIndex,composed,&sourceRect,tint[0]+xShift,tint[1]+yOrigin,tint[2],color);
     } else {
-        DRAWER->DrawQuad(NODE(short,6),composed,&sourceRect,color);
+        DRAWER->DrawQuad(drawFrame->textureIndex,composed,&sourceRect,color);
     }
     DRAWER->SetTextureFilter(1);
 }
@@ -132,8 +128,3 @@ void MirroredNodeF254::RenderMirroredNode()
 #undef ROTATE_FLOAT
 #undef DRAWER
 #undef TRANSFORM
-#undef NODE
-#undef FLOAT
-#undef NODE_RAW
-#undef FIELD
-#undef RAW

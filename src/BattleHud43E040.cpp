@@ -1,8 +1,8 @@
 #include "BattleHud43E040.hpp"
 #include "BattleHudBorrowedViewsF1134.hpp"
 
-#define LEFT_DRAWING reinterpret_cast<RenderDrawing5E68C0*>(reinterpret_cast<void*&>(field044->field004))
-#define RIGHT_DRAWING reinterpret_cast<RenderDrawing5E68C0*>(reinterpret_cast<void*&>(field048->field004))
+#define LEFT_DRAWING reinterpret_cast<RenderDrawing5E68C0*>(field044->drawing)
+#define RIGHT_DRAWING reinterpret_cast<RenderDrawing5E68C0*>(field048->drawing)
 #define DRAWING reinterpret_cast<RenderDrawing5E68C0*>(field008)
 #define STYLE reinterpret_cast<RenderStyle43D9D0*>(field008)
 #define QUAD reinterpret_cast<HudQuadOperations43E040*>(&packet)

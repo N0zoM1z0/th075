@@ -311,8 +311,8 @@ EffectLayer0044AC60::Draw
 EffectLayer0044AF00::Draw
 EffectLayer0044CC20::Draw
 EffectLayer0044CEC0::Draw
-SpriteNodeCameraF129::Render
-SpriteNodeF129::Render
+CharacterObject::Render
+Actor::RenderNode
 NameEntryPlayerF129::Render
 NameEntrySharedF129::Render
 SelectionUpdateF130::Update
@@ -745,7 +745,7 @@ FighterScript::InitializeAt00420440
 StaticBattleResources::ConstructAndClearContainersAt005F6F60
 OptionsScene::ReleaseSceneTextureAndResourceAt00428E60
 NameEntryScene::InitializeAt0042B1F0
-SpriteScene::RenderMirroredNode
+Actor::RenderMirroredNode
 CharacterAux::RunAt00497070
 OptionsScene::InitializeAt00428D60
 LoadingScene::InitializeAt004251F0

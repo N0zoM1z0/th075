@@ -81,6 +81,12 @@ a method.
   per-character bytes right after the shared layout (Reimu, Suika and
   Meiling +0xFF4, Remilia +0xFD8, Patchouli and Yuyuko +0xFDC, Sakuya, Alice
   and Youmu +0xFE0, Marisa and Yukari +0xFFC).
+- +0x04 is the sprite drawing context (an object copies its owner's) and
+  +0x08 the frame record the node renderers draw; the object renderer
+  (0040FC70, `CharacterObject::Render`, object slot 2) and the shared
+  `Actor::RenderNode` (00410350) and `RenderMirroredNode` (00410A00, slots
+  3–4) read them. The frame record's pose (+0x08 of the frame) holds the
+  blend mode, ARGB colour, a 3D offset, scale and rotation.
 - +0xA8–0xC3 is a collision snapshot that `Actor::SaveCollisionFields`
   (00455500) copies each frame before hits are resolved: +0x7C, both record
   pointers, the action, x and y (as raw DWORDs) and the facing. Hit tests
