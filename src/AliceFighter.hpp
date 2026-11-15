@@ -9,6 +9,7 @@ class AliceFighter : public Fighter {
 public:
     AliceFighter();
     virtual ~AliceFighter();
+    void ConfigureStage();
     void CreateOwnedObject(AliceGeneratedF227** output);
     void ForwardBaseAction();
     void RenderChain();

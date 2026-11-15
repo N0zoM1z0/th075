@@ -9,6 +9,7 @@ class SuikaFighter : public Fighter {
 public:
     SuikaFighter();
     virtual ~SuikaFighter();
+    void ConfigureStage();
     void ChooseCardAction();
     static int cardCountdown;
     void DispatchActions();

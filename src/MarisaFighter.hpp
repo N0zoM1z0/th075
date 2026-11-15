@@ -9,6 +9,7 @@ class MarisaFighter : public Fighter {
 public:
     MarisaFighter();
     virtual ~MarisaFighter();
+    void ConfigureStage();
     void ChooseAction();
     static int actionCountdown;
     void ChooseCardAction();

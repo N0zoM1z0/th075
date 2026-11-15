@@ -9,6 +9,7 @@ class YuyukoFighter : public Fighter {
 public:
     YuyukoFighter();
     virtual ~YuyukoFighter();
+    void ConfigureStage();
     void ChooseCardAction();
     static int cardCountdown;
     void DispatchActions();

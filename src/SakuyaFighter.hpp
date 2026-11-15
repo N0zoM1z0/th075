@@ -9,6 +9,7 @@ class SakuyaFighter : public Fighter {
 public:
     SakuyaFighter();
     virtual ~SakuyaFighter();
+    void ConfigureStage();
     void ChooseAction();
     static int actionCountdown;
     void ChooseCardAction();

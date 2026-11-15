@@ -73,24 +73,14 @@ The 11 independently authored, formerly owner-blank copy/audio/sprite
 candidates have now all been accepted in F755–F780. Remaining origin-
 unknown candidates require independent attribution; an exact source-
 generated machine function does not itself prove authored ownership.
-Start with the live cohort in `docs/RE_HANDOFF.md`; historical experiments
-must not override current evidence. The current 81KB single-switch original
-`0050A580` has an 81,542B/17,435-x86 normal C++ parent but is NONEXACT:
-all 1,834 native direct branch targets, the original 0x3A0 frame and all
-5,717 EBP stack operands verified. Eight GPR-provisional cases still contain
-522 wrong GPR instruction positions and five wrong widths. F1149 resolved
-both 0x391 x87 load fields.
-Its one-parent verifier is `scripts/verify-characterobject-current-recovered-f1068.py`;
-never count partial switch states as whole-function exact. The F1020 normal 82KB
-original-shaped `probes/FighterWhole004AC040F1020.cpp` matches the
-original **CODE length/instruction count, 0x720 frame and saved-this
-slot**, but still has **12 wrong widths and 6,958 wrong GPR roles**.
-The 46KB F901 and 58KB F917 local native research parents remain
-nonexact too. F1025/F1026/F1028 certify their genuine *external PE
-destination addresses*, NOT original relocation offsets or full
-callable equality. F1155/F1157 accepted the complete ArchiveCatalog and BattleScene destructors;
-F1171 accepted complete WinMain (2,987 CODE + 60 owned DATA bytes/173 fields);
-current authored backlog is 22 giant functions, with no smaller originals pending.
+Start with the live cohort in `docs/RE_HANDOFF.md` and `docs/GIANTS.md`;
+historical experiments must not override current evidence. The 22 remaining
+authored functions are the slot-1 `Advance` methods of the 11 fighter and 11
+object vtables. Thirteen have complete but nonexact research parents in
+`probes/`; measure one with `scripts/repo-python scripts/measure-giant.py
+ADDRESS`. Never count partial switch states as whole-function exact. Matching
+branch destinations or external PE targets does not prove relocation offsets
+or byte equality.
 Never restart at obsolete F938 marker-only giant source. **Only cold-replay new/affected units**,
 never all units. Keep compiler builds serial. Remove obsolete outputs, duplicate
 evidence and historical archives; retain current source, canonical ledgers,

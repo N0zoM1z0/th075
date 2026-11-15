@@ -6,20 +6,16 @@
 > Older broad validation instructions apply only when their impact is relevant.
 
 
-Use the [current handoff](RE_HANDOFF.md) for live priorities, selected objects,
-compiler profiles and remaining debt. There are 22 independently authored
-nonexact giants and no independently authored smaller backlog. Thirteen giants
-have complete tracked research bodies; the other nine retain native/partial
-source evidence. Complete source is not complete exactness. Continue the
-selected current parent rather than historical marker-only or partial sources.
+Use the [current handoff](RE_HANDOFF.md) for live priorities and the
+[giants page](GIANTS.md) for the 22 remaining authored functions, all of them
+nonexact slot-1 `Advance` methods. Thirteen have complete research parents in
+`probes/`; complete source is not exactness. Measure a parent with
+`scripts/repo-python scripts/measure-giant.py ADDRESS`. Historical documents
+and tentative Ghidra labels remain leads, not evidence.
 
-The 81KB parent has all 1,834 native direct branches, original frame/stack slots
-and 391 x87 fields recovered; 522 GPR positions/five widths still differ.
-The original-length 82KB parent retains 6,958 GPR/twelve width differences.
-Current tracked 58KB/46KB parents supersede their selected F917/F901 historical
-baselines while preserving them. Whole external PE destination audits alone do
-not prove physical source relocation offsets, instruction widths or callable
-byte equality. Historical documents and tentative Ghidra labels remain leads.
+Write source against the shared classes (`Actor`, `Fighter`,
+`<Char>Fighter`, `CharacterObject`): name a member once in the layout instead
+of using raw offsets, and check a method's vtable slot before naming it.
 
 ## 1. Start safely
 
@@ -136,7 +132,7 @@ scripts/repo-python scripts/update-progress.py
 git diff --check
 git status --short --branch
 git add <reviewed-files>
-git commit -m 'gpt-web: <specific verified work>'
+git commit -m '<session prefix>: <specific verified work>'
 ```
 
 Cold-replay only new or affected units, including dependents of changed shared

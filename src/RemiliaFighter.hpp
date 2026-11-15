@@ -9,6 +9,7 @@ class RemiliaFighter : public Fighter {
 public:
     RemiliaFighter();
     virtual ~RemiliaFighter();
+    void ConfigureStage();
     void ChooseAction();
     static int actionCountdown;
     void ChooseCardAction();

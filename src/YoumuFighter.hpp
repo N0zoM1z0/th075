@@ -9,6 +9,7 @@ class YoumuFighter : public Fighter {
 public:
     YoumuFighter();
     virtual ~YoumuFighter();
+    void ConfigureStage();
     void ChooseAction();
     static int actionCountdown;
     void ChooseCardAction();

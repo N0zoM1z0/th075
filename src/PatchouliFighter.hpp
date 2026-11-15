@@ -9,6 +9,7 @@ class PatchouliFighter : public Fighter {
 public:
     PatchouliFighter();
     virtual ~PatchouliFighter();
+    void ConfigureStage();
     void ChooseAction();
     void ChooseCardAction();
     static int cardCountdown;
