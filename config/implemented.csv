@@ -334,7 +334,7 @@ Fighter::BeginFadeParameters
 SpriteSequenceParametersF154::SetSamplingMode
 SpriteSequenceParametersF154::SetColorMask
 FighterCommandSelection454BC0::SetCommandSelection
-FighterResourceParameters452B30::SelectResourceParameters
+Fighter::SelectResourceParameters
 FighterAnimationReset453D80::BindAnimation
 GameProgress::IncrementSelectedWordCounter
 ReimuFighter::ForwardBaseActionAt0046D2D0

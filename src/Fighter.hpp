@@ -50,6 +50,7 @@ public:
     void SetNoticeMode(unsigned char mode);                         // 0045CD50
     void LoadResources();                                           // 00456B60
     void LoadPattern();                                             // 00457660
+    void SelectResourceParameters();                                // 00452B30
     void InitializeNotice(short notice);                            // 0045CDC0
     unsigned char ProcessAction();                                  // 0045CE10
     void ConfigureNoticeText(unsigned char enabled);                // 0045D650

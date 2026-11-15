@@ -24598,8 +24598,8 @@ target = 0x00410FE0
 source = "src/FighterResourceParameters452B30.cpp"
 object = "build/matching/FighterResourceParameters452B30.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["FighterResourceParameters452B30::SelectResourceParameters"]
-symbol = "?SelectResourceParameters@FighterResourceParameters452B30@@QAEXXZ"
+functions = ["Fighter::SelectResourceParameters"]
+symbol = "?SelectResourceParameters@Fighter@@QAEXXZ"
 target_address = 0x00452B30
 size = 215
 [[units.fighter-resource-parameters-00452b30.relocations]]
