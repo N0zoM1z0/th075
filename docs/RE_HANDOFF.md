@@ -16,30 +16,39 @@ Do not use REA or replay the entire exact corpus.
 
 ## 0. Current work: readable layouts before new matching
 
-The user asked to clear readability debt before the 100% push. Done so far:
-obsolete probes/verifiers/notes removed, hash-freshness pins replaced by
-replay and target checks, and polymorphic [`Actor`](../src/Actor.hpp) and
-[`Fighter`](../src/Fighter.hpp) layouts with the PE vtable slots adopted by
-77 classes (all 233 affected units cold exact). `FIELD(` uses in `src/`
-fell from 14,292 to 3,043. Next, in order:
+The user asked to clear readability debt before the 100% push. Done:
+obsolete probes/verifiers/notes removed; hash-freshness pins replaced by
+replay and target checks; the real class structure recovered from the PE
+vtables and declared in source:
 
-1. Per-character fighter classes are done (`src/<Character>Fighter.hpp`).
-   Shared helpers still declared in each of them (`PackDirectionBits`,
-   notice helpers, `ResetPrimaryCounters`) are base `Fighter` methods; move
-   them once their single addresses are confirmed. The shared templates
-   (`CharacterAIPolicy<>`, `CharacterAICardPolicy<>`, the stage renderer)
-   and `CharacterSpecialFamily` still stand in for per-character code.
-2. Convert window and `FIELD` uses whose receiver is not `this` (HUD,
-   collision, knockout code holding fighter pointers) to typed `Fighter*`
-   access, then delete the remaining window headers.
-3. Give the `CharacterObject` effect class a layout on top of `Actor` (its
-   5-slot tables share slots 3–4) and convert the remaining `FIELD(` uses
-   and the giant research parents; the 22 giants are slot 1 overrides.
+- [`Actor`](../src/Actor.hpp) (vtable slots 0–4, fields 0x000–0x0A7),
+  [`Fighter`](../src/Fighter.hpp) (slots 5–19 with the virtual destructor
+  in slot 5, constructor 004567B0) and
+  [`CharacterObject`](../src/CharacterObject.hpp) (constructor 0045B760,
+  owner at +0xE4).
+- One class per character, `src/<Character>Fighter.hpp`, holding its
+  overrides under the slot names and its constructor; `<Character>Object`
+  classes for the object constructors.
+- All 13 complete giant research parents in `probes/` use these members
+  (each proven byte-identical before/after with
+  `.analysis/layout-tools/objsig.py`).
 
-Convert with named members only and cold-replay every unit whose source,
-header or manifest entry changed. The conversion tools are in
-`.analysis/layout-tools/` (`pipeline2.sh` rebuilds the conversion from
-commit c16d67ed; `affected.py REV` lists units to replay).
+`FIELD(` uses in `src/` fell from 14,292 to 894 (scene constructors, the
+stage-renderer template, dynamic or overlapping offsets). The 22 giants are
+the slot-1 `Advance` of the 11 fighter and 11 object vtables (table in the
+knowledge base). Next useful steps:
+
+1. Rename the research parents' classes to their character classes
+   (`FighterSwitchF598_Boss0045DD70` is `ReimuFighter::Advance`, …).
+2. Work the giants' remaining register-allocation debt; the knowledge base
+   records the VC7.1 x87 operand-order rule found during the conversion.
+3. Remaining `src/` raw offsets belong to scene/HUD classes with
+   constructors; convert them once their constructors are modelled.
+
+Cold-replay every unit whose source, header or manifest entry changed.
+Tools: `.analysis/layout-tools/` (`affected.py REV`, `replay_each.sh`,
+`rawize.py`/`objectize.py` for research parents, `objsig.py` to prove a
+rewrite byte-identical).
 
 ## 1. Original native PE and complete-function exactness
 
