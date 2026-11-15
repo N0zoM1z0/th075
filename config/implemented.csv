@@ -273,7 +273,7 @@ RemiliaFighter::PollCommands
 YuyukoFighter::PollCommands
 YukariFighter::PollCommands
 SuikaFighter::PollCommands
-SceneRenderer4292E0::Draw
+OptionsScene::Render
 ReplayBrowser42CA60::RenderList
 ReplayTextF125::DrawMetadataNumber
 ReplayTextF125::DrawNameGlyphs
@@ -492,11 +492,11 @@ NameEntryScene::PollPlayerInput
 NameEntryScene::PollSharedInput
 TitleScene::Render
 TitleScene::PollMenuInput
-ReplayScene::PollInput
+OptionsScene::PollInput
 TitleScene::Update
-OptionsScene::AdvanceAt00428F00
+OptionsScene::Update
 GameConfig::SaveIni
-OptionsScene::ApplySelectionAt00429F00
+OptionsScene::Apply
 Graphics::SetDefaultStates
 MusicRoomScene::RenderSelectedDetails
 SceneBase::ReleaseGameGlobalsAt00431F40
@@ -743,11 +743,11 @@ RasterResources::ReleaseAndResetAt0041BFD0
 CameraMotion::SnapAt00412CF0
 FighterScript::InitializeAt00420440
 StaticBattleResources::ConstructAndClearContainersAt005F6F60
-OptionsScene::ReleaseSceneTextureAndResourceAt00428E60
+OptionsScene::~OptionsScene
 NameEntryScene::InitializeAt0042B1F0
 Actor::RenderMirroredNode
 CharacterAux::RunAt00497070
-OptionsScene::InitializeAt00428D60
+OptionsScene::OptionsScene
 LoadingScene::InitializeAt004251F0
 LogoScene::InitializeAt00425490
 OpeningScene::InitializeAt004275D0

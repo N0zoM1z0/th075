@@ -274,7 +274,7 @@ RemiliaFighter::PollCommands,0x00556FA0,function
 YuyukoFighter::PollCommands,0x00579220,function
 YukariFighter::PollCommands,0x0059CDA0,function
 SuikaFighter::PollCommands,0x005C5980,function
-SceneRenderer4292E0::Draw,0x004292E0,function
+OptionsScene::Render,0x004292E0,function
 ReplayBrowser42CA60::RenderList,0x0042CA60,function
 ReplayTextF125::DrawMetadataNumber,0x0042D6E0,function
 ReplayTextF125::DrawNameGlyphs,0x0042D860,function
@@ -493,11 +493,11 @@ NameEntryScene::PollPlayerInput,0x0042AB90,function
 NameEntryScene::PollSharedInput,0x0042BCD0,function
 TitleScene::Render,0x0043A7A0,function
 TitleScene::PollMenuInput,0x0043ABF0,function
-ReplayScene::PollInput,0x00429DC0,function
+OptionsScene::PollInput,0x00429DC0,function
 TitleScene::Update,0x0043A270,function
-OptionsScene::AdvanceAt00428F00,0x00428F00,function
+OptionsScene::Update,0x00428F00,function
 GameConfig::SaveIni,0x00419450,function
-OptionsScene::ApplySelectionAt00429F00,0x00429F00,function
+OptionsScene::Apply,0x00429F00,function
 Graphics::SetDefaultStates,0x00401540,function
 MusicRoomScene::RenderSelectedDetails,0x00426A70,function
 SceneBase::ReleaseGameGlobalsAt00431F40,0x00431F40,function
@@ -744,11 +744,11 @@ RasterResources::ReleaseAndResetAt0041BFD0,0x0041BFD0,function
 CameraMotion::SnapAt00412CF0,0x00412CF0,function
 FighterScript::InitializeAt00420440,0x00420440,function
 StaticBattleResources::ConstructAndClearContainersAt005F6F60,0x005F6F60,function
-OptionsScene::ReleaseSceneTextureAndResourceAt00428E60,0x00428E60,function
+OptionsScene::~OptionsScene,0x00428E60,function
 NameEntryScene::InitializeAt0042B1F0,0x0042B1F0,function
 Actor::RenderMirroredNode,0x00410A00,function
 CharacterAux::RunAt00497070,0x00497070,function
-OptionsScene::InitializeAt00428D60,0x00428D60,function
+OptionsScene::OptionsScene,0x00428D60,function
 LoadingScene::InitializeAt004251F0,0x004251F0,function
 LogoScene::InitializeAt00425490,0x00425490,function
 OpeningScene::InitializeAt004275D0,0x004275D0,function

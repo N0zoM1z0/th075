@@ -1,3 +1,4 @@
+#include "OptionsScene.hpp"
 #include <windows.h>
 #include <d3d8.h>
 #include <stdio.h>
@@ -38,13 +39,8 @@ extern const char g_OptionsMessage5[];
 extern const char g_OptionsMessage6[];
 extern const char g_OptionsFontFamily[];
 
-class OptionsSelectF186 {
-public:
-    void Apply(unsigned char index);
-};
-#define TEXTURE (*reinterpret_cast<IDirect3DTexture8**>(reinterpret_cast<BYTE*>(this) + 12))
 
-void OptionsSelectF186::Apply(unsigned char index)
+void OptionsScene::Apply(unsigned char index)
 {
     char message[500];
     switch (static_cast<signed char>(index)) {
@@ -57,12 +53,11 @@ void OptionsSelectF186::Apply(unsigned char index)
     case 6: sprintf(message, g_OptionsMessage6); break;
     }
     D3DLOCKED_RECT lock;
-    if (TEXTURE->LockRect(0, &lock, 0, 0) == D3D_OK) {
+    if (canvas->LockRect(0, &lock, 0, 0) == D3D_OK) {
         GlyphSurfaceF188* glyph = new GlyphSurfaceF188(0);
         glyph->ConfigureFont(g_OptionsFontFamily, 16, 255, 255, 255);
         glyph->Rasterize(message, lock.pBits, 1024, 512, 560, 0, 10, 4, 40);
         delete glyph;
-        TEXTURE->UnlockRect(0);
+        canvas->UnlockRect(0);
     }
 }
-#undef TEXTURE

@@ -1,3 +1,4 @@
+#include "OptionsScene.hpp"
 #include "TitleScene.hpp"
 // Two independent call-only scene views; their full layouts are unknown.
 #include "MenuInputF184.hpp"
@@ -26,7 +27,7 @@ void TitleScene::PollMenuInput()
         field01C = 0;
 }
 
-void ReplayMenuInputF184::PollInput()
+void OptionsScene::PollInput()
 {
     Input::PollKeyboard();
     Input::PollJoysticks();

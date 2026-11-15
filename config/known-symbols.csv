@@ -256,7 +256,7 @@ address,name,module,confidence,evidence
 0x00579220,YuyukoFighter::PollCommands,CharacterInputPollingFamily,inferred,"F123; own whole cold exact / complete CPU-x87 joins, complete ordered string decisions and true input packets; original layouts and names provisional"
 0x0059CDA0,YukariFighter::PollCommands,CharacterInputPollingFamily,inferred,"F123; own whole cold exact / complete CPU-x87 joins, complete ordered string decisions and true input packets; original layouts and names provisional"
 0x005C5980,SuikaFighter::PollCommands,CharacterInputPollingFamily,inferred,"F123; own whole cold exact / complete CPU-x87 joins, complete ordered string decisions and true input packets; original layouts and names provisional"
-0x004292E0,SceneRenderer4292E0::Draw,SettingsReplayDrawing,inferred,"F124; own whole cold exact / complete CPU-x87 joins, full table/CPU-x87/SDK and true nested drawing packets; original layouts and names provisional"
+0x004292E0,OptionsScene::Render,SettingsReplayDrawing,inferred,"F124; own whole cold exact / complete CPU-x87 joins, full table/CPU-x87/SDK and true nested drawing packets; original layouts and names provisional"
 0x0042CA60,ReplayBrowser42CA60::RenderList,SettingsReplayDrawing,inferred,"F124; own whole cold exact / complete CPU-x87 joins, full table/CPU-x87/SDK and true nested drawing packets; original layouts and names provisional"
 0x0042D6E0,ReplayTextF125::DrawMetadataNumber,ReplayTextHelpers,inferred,"F125; own whole cold exact / complete CPU-x87 joins, complete glyph/number/prefix/automatic-cookie CPU-x87/SDK packets; original layouts and names provisional"
 0x0042D860,ReplayTextF125::DrawNameGlyphs,ReplayTextHelpers,inferred,"F125; own whole cold exact / complete CPU-x87 joins, complete glyph/number/prefix/automatic-cookie CPU-x87/SDK packets; original layouts and names provisional"
@@ -475,11 +475,11 @@ address,name,module,confidence,evidence
 0x0042BCD0,NameEntryScene::PollSharedInput,NameEntryScene,inferred,F182; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x0043A7A0,TitleScene::Render,TitleScene,inferred,F183; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x0043ABF0,TitleScene::PollMenuInput,TitleScene,inferred,F184; full cold replay exact; scene identity/layout not proved
-0x00429DC0,ReplayScene::PollInput,ReplayScene,inferred,F184; full cold replay exact; scene identity/layout not proved
+0x00429DC0,OptionsScene::PollInput,ReplayScene,inferred,F184; full cold replay exact; scene identity/layout not proved
 0x0043A270,TitleScene::Update,TitleScene,inferred,F185; complete canonical cold exact; synthetic call-only scene/virtual slot views; original layout/name unknown
-0x00428F00,OptionsScene::AdvanceAt00428F00,OptionsScene,inferred,F186; complete 979-byte cold exact with seven-branch switch table; original name and scene object layout unproven
+0x00428F00,OptionsScene::Update,OptionsScene,inferred,F186; complete 979-byte cold exact with seven-branch switch table; original name and scene object layout unproven
 0x00419450,GameConfig::SaveIni,GameConfig,inferred,F187; whole cold exact and config.ini import/literal validated; original name/owner layout unknown
-0x00429F00,OptionsScene::ApplySelectionAt00429F00,OptionsScene,inferred,F188; whole 591-byte cold exact including EH and 7-case switch; glyph layout/original owner unproven
+0x00429F00,OptionsScene::Apply,OptionsScene,inferred,F188; whole 591-byte cold exact including EH and 7-case switch; glyph layout/original owner unproven
 0x00401540,Graphics::SetDefaultStates,Graphics,inferred,F190; complete 604-byte graphics default-state function cold-exact; native names/SDK globals provisional
 0x00426A70,MusicRoomScene::RenderSelectedDetails,MusicRoomScene,inferred,F191; complete 860-byte two-texture music details renderer cold exact; glyph/scene class identities provisional
 0x00431F40,SceneBase::ReleaseGameGlobalsAt00431F40,SceneBase,inferred,F192; exact 31-byte destructor/2 fields; 004251C0 related constructor remains origin-unknown R108
@@ -726,11 +726,11 @@ address,name,module,confidence,evidence
 0x00412CF0,CameraMotion::SnapAt00412CF0,CameraMotion,inferred,"F429; full native 146 CODE, 23 physical original COFF refs, 1/1 affected exact; true borrowed owner layout"
 0x00420440,FighterScript::InitializeAt00420440,FighterScript,inferred,"F430; full native 130 CODE, 6 physical original COFF refs, 1/1 affected exact; true borrowed owner layout"
 0x005F6F60,StaticBattleResources::ConstructAndClearContainersAt005F6F60,StaticResourcePolicy,inferred,"F431; entire original 142-byte native static two-element effects resource constructor with genuine VC7.1 vector constructor/EH, 12 real COFF refs and local cold exact"
-0x00428E60,OptionsScene::ReleaseSceneTextureAndResourceAt00428E60,OptionsScene,inferred,"F432; complete native 154-byte R235 OptionsScene derived dtor; vtbl, texture delete, D3D Release and base virtual dtor with 7 physical original COFF refs; cold exact"
+0x00428E60,OptionsScene::~OptionsScene,OptionsScene,inferred,"F432; complete native 154-byte R235 OptionsScene derived dtor; vtbl, texture delete, D3D Release and base virtual dtor with 7 physical original COFF refs; cold exact"
 0x0042B1F0,NameEntryScene::InitializeAt0042B1F0,NameEntryScene,inferred,"F435; full R109 260-byte /GX derived scene ctor; 15 native COFF refs, original replay archive and independent record selection cold exact"
 0x00410A00,Actor::RenderMirroredNode,SpriteScene,inferred,"F437; independently authored complete 1268-byte original mirrored-node rendering boss, 324 original x86, 140-byte observed quad stack carriers and original x87 FSUBR, 26 COFF refs cold exact"
 0x00497070,CharacterAux::RunAt00497070,CharacterAux,inferred,"F440; full 1291-byte original Marisa projectile/particle chain render, physically observed 136-byte quad carrier and aligned radius, 273 native instructions, 31 real COFF fields and 1/1 cold exact"
-0x00428D60,OptionsScene::InitializeAt00428D60,OptionsScene,inferred,"F445; complete 251-byte /GX derived OptionsScene ctor with native option.dat resource, canvas and 14 real COFF refs, full cold exact"
+0x00428D60,OptionsScene::OptionsScene,OptionsScene,inferred,"F445; complete 251-byte /GX derived OptionsScene ctor with native option.dat resource, canvas and 14 real COFF refs, full cold exact"
 0x004251F0,LoadingScene::InitializeAt004251F0,LoadingScene,inferred,"F446; full 181-byte native /GX resource ctor with original data\system\load.dat archive, own native vtable, 12 COFF refs targeted cold exact"
 0x00425490,LogoScene::InitializeAt00425490,LogoScene,inferred,"F446; full 183-byte native /GX resource ctor with original data\system\logo.dat archive, own native vtable, 12 COFF refs targeted cold exact"
 0x004275D0,OpeningScene::InitializeAt004275D0,OpeningScene,inferred,"F446 complete original 219 byte VC7.1 /GX derived constructor, imported timeGetTime, 16 original physical COFF refs and targeted exact; full private scene layout unproved"

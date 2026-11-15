@@ -1,18 +1,8 @@
-#include "OptionsAdvanceF186.hpp"
+#include "OptionsScene.hpp"
 #include "MenuInputF184.hpp"
 #include "GameLeafHelpers.hpp"
 
 // Borrowed call-only views of external scene effects. Complete layouts unknown.
-class OptionsDrawF186 {
-public:
-    virtual void Unknown0();
-    virtual void Unknown1();
-    virtual void RenderOptions();
-};
-class OptionsSelectF186 {
-public:
-    void Apply(unsigned char option);
-};
 namespace Graphics { void Present(); }
 namespace AudioVolume4073B0 {
     void __cdecl SetSoundBankVolume(signed char);
@@ -30,27 +20,27 @@ extern signed char g_SoundVolumeAt006714B6;
 
 #define SOUND(value) g_SoundBank->Play(value)
 
-unsigned short OptionsAdvanceF186::Advance()
+unsigned short OptionsScene::Update()
 {
-    reinterpret_cast<ReplayMenuInputF184*>(this)->PollInput();
-    reinterpret_cast<OptionsDrawF186*>(this)->RenderOptions();
+    PollInput();
+    Render();
     Graphics::Present();
     if (field016 < 0) {
         SOUND(39);
-        field010--;
-        if (field010 < 0)
-            field010 = 6;
-        reinterpret_cast<OptionsSelectF186*>(this)->Apply(static_cast<unsigned char>(field010));
+        currentItem--;
+        if (currentItem < 0)
+            currentItem = 6;
+        Apply(static_cast<unsigned char>(currentItem));
     }
     if (field016 > 0) {
         SOUND(39);
-        field010++;
-        if (field010 > 6)
-            field010 = 0;
-        reinterpret_cast<OptionsSelectF186*>(this)->Apply(static_cast<unsigned char>(field010));
+        currentItem++;
+        if (currentItem > 6)
+            currentItem = 0;
+        Apply(static_cast<unsigned char>(currentItem));
     }
 
-    switch (field010) {
+    switch (currentItem) {
     case 0:
         if (field015 || field017) {
             SOUND(39);
@@ -94,11 +84,11 @@ unsigned short OptionsAdvanceF186::Advance()
             SOUND(45);
         break;
     case 5:
-        if (field012 == 0) {
+        if (pressedItem == 0) {
             SOUND(40);
-            field012 = 60;
+            pressedItem = 60;
         }
-        field012--;
+        pressedItem--;
         if (field015 > 0) {
             g_SoundVolumeAt006714B6 += 5;
             if (g_SoundVolumeAt006714B6 > 100) g_SoundVolumeAt006714B6 = 100;

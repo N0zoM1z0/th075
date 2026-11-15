@@ -1,13 +1,8 @@
+#include "OptionsScene.hpp"
 #include "SpriteDraw40CA80.hpp"
 #include "SpriteTransform.hpp"
 
 // Pointer-only entry views. Original identities and complete layouts unknown.
-class SceneRenderer4292E0 { public: void Draw(); public:
-    // Observed fields; meanings not yet known.
-    unsigned char unknown000[0x00C - 0x000];
-    IDirect3DTexture8* field00C;
-    short field010;
-};
 class ReplayBrowser42CA60 { public: void RenderList(); void DrawFilename(float, float, DWORD, const char*); void DrawNameGlyphs(float, float, DWORD, const signed char*); void DrawMetadataNumber(float, float, DWORD, int, int); public:
     // Observed fields; meanings not yet known.
     unsigned char unknown000[0x048 - 0x000];
@@ -26,13 +21,12 @@ extern signed char g_SettingsVolume006714B7;
 extern signed char g_SettingsVolume006714B6;
 
 #define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<char*>(this) + (offset)))
-#define DRAWING reinterpret_cast<TimelineDrawing438D00*>(FIELD(void*, 8))
-#define QUAD_DRAWING reinterpret_cast<SceneQuadDrawingF124*>(FIELD(void*, 8))
+#define DRAWING reinterpret_cast<TimelineDrawing438D00*>(textures)
+#define QUAD_DRAWING reinterpret_cast<SceneQuadDrawingF124*>(textures)
 #define TRANSFORM(value) reinterpret_cast<SpriteTransform*>(&(value))
 #define POSITIONS(value) reinterpret_cast<const float (*)[4]>(&(value))
-#define OPACITY (*reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char*>(this) + 0x14))
 
-void SceneRenderer4292E0::Draw() {
+void OptionsScene::Render() {
     if (Graphics::BeginFrameValueAt00402660()) {
         SpriteQuad40CA80 quadValue;
         RECT region;
@@ -50,11 +44,11 @@ void SceneRenderer4292E0::Draw() {
         SetRect(&region, 0, 0, 256, 224);
         TRANSFORM(quadValue)->BuildQuadFromRect(&region);
         TRANSFORM(quadValue)->TranslateQuad(144.0f, 64.0f, 0);
-        QUAD_DRAWING->DrawQuad(1, quadValue, &region, D3DCOLOR_ARGB(OPACITY, 255, 255, 255));
+        QUAD_DRAWING->DrawQuad(1, quadValue, &region, D3DCOLOR_ARGB(field014, 255, 255, 255));
         SetRect(&region, 0, 0, 256, 32);
         TRANSFORM(quadValue)->BuildQuadFromRect(&region);
         TRANSFORM(quadValue)->TranslateQuad(240.0f, 64.0f, 0);
-        QUAD_DRAWING->DrawQuad(2, quadValue, &region, D3DCOLOR_ARGB(OPACITY, 64, 64, 64));
+        QUAD_DRAWING->DrawQuad(2, quadValue, &region, D3DCOLOR_ARGB(field014, 64, 64, 64));
         switch (g_SettingsDifficulty) {
         case 0: SetRect(&region, 0, 0, 56, 32); break;
         case 1: SetRect(&region, 56, 0, 128, 32); break;
@@ -63,62 +57,61 @@ void SceneRenderer4292E0::Draw() {
         }
         TRANSFORM(quadValue)->BuildQuadFromRect(&region);
         TRANSFORM(quadValue)->TranslateQuad(240.0f, 64.0f, 0);
-        QUAD_DRAWING->DrawQuad(2, quadValue, &region, D3DCOLOR_ARGB(OPACITY, 255, 255, 255));
+        QUAD_DRAWING->DrawQuad(2, quadValue, &region, D3DCOLOR_ARGB(field014, 255, 255, 255));
         SetRect(&region, 0, g_SettingsByte00671604 * 32 + 32, 64, g_SettingsByte00671604 * 32 + 64);
         TRANSFORM(quadValue)->BuildQuad(0, 0, 64.0f, 32.0f);
         TRANSFORM(quadValue)->TranslateQuad(432.0f, 96.0f, 0);
-        QUAD_DRAWING->DrawQuad(2, quadValue, &region, D3DCOLOR_ARGB(OPACITY, 255, 255, 255));
+        QUAD_DRAWING->DrawQuad(2, quadValue, &region, D3DCOLOR_ARGB(field014, 255, 255, 255));
         SetRect(&region, 0, g_SettingsByte00671430 * 32 + 32, 64, g_SettingsByte00671430 * 32 + 64);
         TRANSFORM(quadValue)->BuildQuad(0, 0, 64.0f, 32.0f);
         TRANSFORM(quadValue)->TranslateQuad(432.0f, 128.0f, 0);
-        QUAD_DRAWING->DrawQuad(2, quadValue, &region, D3DCOLOR_ARGB(OPACITY, 255, 255, 255));
+        QUAD_DRAWING->DrawQuad(2, quadValue, &region, D3DCOLOR_ARGB(field014, 255, 255, 255));
         SetRect(&region, 0, (1 - g_SettingsByte00671428) * 32 + 32, 64, (1 - g_SettingsByte00671428) * 32 + 64);
         TRANSFORM(quadValue)->BuildQuad(0, 0, 64.0f, 32.0f);
         TRANSFORM(quadValue)->TranslateQuad(432.0f, 160.0f, 0);
-        QUAD_DRAWING->DrawQuad(2, quadValue, &region, D3DCOLOR_ARGB(OPACITY, 255, 255, 255));
+        QUAD_DRAWING->DrawQuad(2, quadValue, &region, D3DCOLOR_ARGB(field014, 255, 255, 255));
         SetRect(&region, 64, 52, 256, 72);
         TRANSFORM(quadValue)->BuildQuad(0, 20.0f, 192.0f, 40.0f);
         TRANSFORM(quadValue)->TranslateQuad(304.0f, 192.0f, 0);
-        QUAD_DRAWING->DrawQuad(2, quadValue, &region, D3DCOLOR_ARGB(OPACITY, 255, 255, 255));
+        QUAD_DRAWING->DrawQuad(2, quadValue, &region, D3DCOLOR_ARGB(field014, 255, 255, 255));
         SetRect(&region, 79, 109, 241, 115);
         TRANSFORM(quadValue)->BuildQuad(15.0f, 13.0f, 177.0f, 19.0f);
         TRANSFORM(quadValue)->TranslateQuad(304.0f, 192.0f, 0);
-        QUAD_DRAWING->DrawQuad(2, quadValue, &region, D3DCOLOR_ARGB(OPACITY, 255, 255, 255));
+        QUAD_DRAWING->DrawQuad(2, quadValue, &region, D3DCOLOR_ARGB(field014, 255, 255, 255));
         SetRect(&region, 79, 45, 241, 51);
         TRANSFORM(quadValue)->BuildQuad(15.0f, 13.0f, 177.0f, 19.0f);
         TRANSFORM(quadValue)->ScaleQuad(15.0f, 13.0f, 0, static_cast<float>(g_SettingsVolume006714B7) / 100.0f, 1.0f, 1.0f);
         TRANSFORM(quadValue)->TranslateQuad(304.0f, 192.0f, 0);
-        QUAD_DRAWING->DrawQuad(2, quadValue, &region, D3DCOLOR_ARGB(OPACITY, 255, 255, 255));
+        QUAD_DRAWING->DrawQuad(2, quadValue, &region, D3DCOLOR_ARGB(field014, 255, 255, 255));
         SetRect(&region, 79, 109, 241, 115);
         TRANSFORM(quadValue)->BuildQuad(15.0f, 45.0f, 177.0f, 51.0f);
         TRANSFORM(quadValue)->TranslateQuad(304.0f, 192.0f, 0);
-        QUAD_DRAWING->DrawQuad(2, quadValue, &region, D3DCOLOR_ARGB(OPACITY, 255, 255, 255));
+        QUAD_DRAWING->DrawQuad(2, quadValue, &region, D3DCOLOR_ARGB(field014, 255, 255, 255));
         SetRect(&region, 79, 77, 241, 83);
         TRANSFORM(quadValue)->BuildQuad(15.0f, 45.0f, 177.0f, 51.0f);
         TRANSFORM(quadValue)->ScaleQuad(15.0f, 45.0f, 0, static_cast<float>(g_SettingsVolume006714B6) / 100.0f, 1.0f, 1.0f);
         TRANSFORM(quadValue)->TranslateQuad(304.0f, 192.0f, 0);
-        QUAD_DRAWING->DrawQuad(2, quadValue, &region, D3DCOLOR_ARGB(OPACITY, 255, 255, 255));
+        QUAD_DRAWING->DrawQuad(2, quadValue, &region, D3DCOLOR_ARGB(field014, 255, 255, 255));
         SetRect(&region, 0, 96, 64, 128);
         TRANSFORM(quadValue)->BuildQuad(0, 0, 64.0f, 32.0f);
-        TRANSFORM(quadValue)->TranslateQuad(96.0f, static_cast<float>(field010 * 32 + 64), 0);
+        TRANSFORM(quadValue)->TranslateQuad(96.0f, static_cast<float>(currentItem * 32 + 64), 0);
         QUAD_DRAWING->DrawQuad(2, quadValue, &region, 0xFFFFFFFF);
         SetRect(&region, 0, 0, 500, 64);
         TRANSFORM(quadValue)->BuildQuadFromRect(&region);
         TRANSFORM(quadValue)->TranslateQuad(100.0f, 400.0f, 0);
-        Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, D3DCOLOR_ARGB(OPACITY, 0, 0, 0), field00C);
+        Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, D3DCOLOR_ARGB(field014, 0, 0, 0), canvas);
         TRANSFORM(quadValue)->TranslateQuad(1.0f, 1.0f, 0);
-        Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, D3DCOLOR_ARGB(OPACITY, 0, 0, 0), field00C);
+        Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, D3DCOLOR_ARGB(field014, 0, 0, 0), canvas);
         TRANSFORM(quadValue)->TranslateQuad(-1.0f, 1.0f, 0);
-        Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, D3DCOLOR_ARGB(OPACITY, 0, 0, 0), field00C);
+        Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, D3DCOLOR_ARGB(field014, 0, 0, 0), canvas);
         TRANSFORM(quadValue)->TranslateQuad(-1.0f, -1.0f, 0);
-        Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, D3DCOLOR_ARGB(OPACITY, 0, 0, 0), field00C);
+        Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, D3DCOLOR_ARGB(field014, 0, 0, 0), canvas);
         TRANSFORM(quadValue)->TranslateQuad(1.0f, -1.0f, 0);
-        Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, D3DCOLOR_ARGB(OPACITY, 255, 255, 255), field00C);
+        Graphics::DrawTexturedQuad(POSITIONS(quadValue), &region, D3DCOLOR_ARGB(field014, 255, 255, 255), canvas);
         Graphics::EndFrame();
     }
 }
 
-#undef OPACITY
 #undef POSITIONS
 #undef TRANSFORM
 #undef QUAD_DRAWING

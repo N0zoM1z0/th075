@@ -22568,8 +22568,8 @@ relocations = [
 source = "src/SettingsReplayDrawing.cpp"
 object = "build/matching/SettingsReplayDrawing.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["SceneRenderer4292E0::Draw"]
-symbol = "?Draw@SceneRenderer4292E0@@QAEXXZ"
+functions = ["OptionsScene::Render"]
+symbol = "?Render@OptionsScene@@UAEXXZ"
 target_address = 0x004292E0
 size = 2759
 compare_size = 2775
@@ -31035,8 +31035,8 @@ target = 0x00407170
 source = "src/MenuInputF184.cpp"
 object = "build/matching/MenuInputF184.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["ReplayScene::PollInput"]
-symbol = "?PollInput@ReplayMenuInputF184@@QAEXXZ"
+functions = ["OptionsScene::PollInput"]
+symbol = "?PollInput@OptionsScene@@QAEXXZ"
 target_address = 0x00429DC0
 size = 310
 [[units.replay-poll-input-00429dc0.relocations]]
@@ -31569,15 +31569,15 @@ target = 0x0043A405
 source = "src/OptionsAdvanceF186.cpp"
 object = "build/matching/OptionsAdvanceF186.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["OptionsScene::AdvanceAt00428F00"]
-symbol = "?Advance@OptionsAdvanceF186@@QAEGXZ"
+functions = ["OptionsScene::Update"]
+symbol = "?Update@OptionsScene@@UAEGXZ"
 target_address = 0x00428F00
 size = 951
 compare_size = 979
 [[units.options-scene-advance-00428f00.relocations]]
 offset = 13
 type = "REL32"
-symbol = "?PollInput@ReplayMenuInputF184@@QAEXXZ"
+symbol = "?PollInput@OptionsScene@@QAEXXZ"
 target = 0x00429DC0
 [[units.options-scene-advance-00428f00.relocations]]
 offset = 29
@@ -31597,7 +31597,7 @@ target = 0x004079C0
 [[units.options-scene-advance-00428f00.relocations]]
 offset = 106
 type = "REL32"
-symbol = "?Apply@OptionsSelectF186@@QAEXE@Z"
+symbol = "?Apply@OptionsScene@@QAEXE@Z"
 target = 0x00429F00
 [[units.options-scene-advance-00428f00.relocations]]
 offset = 125
@@ -31612,7 +31612,7 @@ target = 0x004079C0
 [[units.options-scene-advance-00428f00.relocations]]
 offset = 184
 type = "REL32"
-symbol = "?Apply@OptionsSelectF186@@QAEXE@Z"
+symbol = "?Apply@OptionsScene@@QAEXE@Z"
 target = 0x00429F00
 [[units.options-scene-advance-00428f00.relocations]]
 offset = 214
@@ -32073,15 +32073,15 @@ target = 0x00657138
 source = "src/OptionsSelectionF188.cpp"
 object = "build/matching/OptionsSelectionF188.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
-functions = ["OptionsScene::ApplySelectionAt00429F00"]
-symbol = "?Apply@OptionsSelectF186@@QAEXE@Z"
+functions = ["OptionsScene::Apply"]
+symbol = "?Apply@OptionsScene@@QAEXE@Z"
 target_address = 0x00429F00
 size = 563
 compare_size = 591
 [[units.options-select-apply-00429f00.relocations]]
 offset = 6
 type = "DIR32"
-symbol = "__ehhandler$?Apply@OptionsSelectF186@@QAEXE@Z"
+symbol = "__ehhandler$?Apply@OptionsScene@@QAEXE@Z"
 target = 0x006558BD
 [[units.options-select-apply-00429f00.relocations]]
 offset = 12
@@ -55414,14 +55414,14 @@ target = 0x00000000
 source = "src/OptionsSceneReleaseF432.cpp"
 object = "build/matching/OptionsSceneReleaseF432.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
-functions = ["OptionsScene::ReleaseSceneTextureAndResourceAt00428E60"]
-symbol = "??1OptionsSceneF432@@UAE@XZ"
+functions = ["OptionsScene::~OptionsScene"]
+symbol = "??1OptionsScene@@UAE@XZ"
 target_address = 0x00428E60
 size = 154
 [[units.options-scene-release-texture-resource-00428e60.relocations]]
 offset = 6
 type = "DIR32"
-symbol = "__ehhandler$??1OptionsSceneF432@@UAE@XZ"
+symbol = "__ehhandler$??1OptionsScene@@UAE@XZ"
 target = 0x006558A5
 [[units.options-scene-release-texture-resource-00428e60.relocations]]
 offset = 12
@@ -55436,7 +55436,7 @@ target = 0x00000000
 [[units.options-scene-release-texture-resource-00428e60.relocations]]
 offset = 35
 type = "DIR32"
-symbol = "??_7OptionsSceneF432@@6B@"
+symbol = "??_7OptionsScene@@6B@"
 target = 0x00657F38
 [[units.options-scene-release-texture-resource-00428e60.relocations]]
 offset = 82
@@ -55446,7 +55446,7 @@ target = 0x00425460
 [[units.options-scene-release-texture-resource-00428e60.relocations]]
 offset = 136
 type = "REL32"
-symbol = "??1OptionsBaseF432@@UAE@XZ"
+symbol = "??1SceneBase@@UAE@XZ"
 target = 0x00431F40
 [[units.options-scene-release-texture-resource-00428e60.relocations]]
 offset = 146
@@ -55849,14 +55849,14 @@ target = 0x0040C970
 source = "src/OptionsSceneInitializeF445.cpp"
 object = "build/matching/OptionsSceneInitializeF445.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
-functions = ["OptionsScene::InitializeAt00428D60"]
-symbol = "??0OptionsSceneInitF445@@QAE@XZ"
+functions = ["OptionsScene::OptionsScene"]
+symbol = "??0OptionsScene@@QAE@XZ"
 target_address = 0x00428D60
 size = 251
 [[units.options-scene-initialize-00428d60.relocations]]
 offset = 6
 type = "DIR32"
-symbol = "__ehhandler$??0OptionsSceneInitF445@@QAE@XZ"
+symbol = "__ehhandler$??0OptionsScene@@QAE@XZ"
 target = 0x00655893
 [[units.options-scene-initialize-00428d60.relocations]]
 offset = 12
@@ -55871,12 +55871,12 @@ target = 0x00000000
 [[units.options-scene-initialize-00428d60.relocations]]
 offset = 34
 type = "REL32"
-symbol = "??0OptionsBaseF445@@QAE@XZ"
+symbol = "??0SceneBase@@QAE@XZ"
 target = 0x004251C0
 [[units.options-scene-initialize-00428d60.relocations]]
 offset = 50
 type = "DIR32"
-symbol = "??_7OptionsSceneInitF445@@6B@"
+symbol = "??_7OptionsScene@@6B@"
 target = 0x00657F38
 [[units.options-scene-initialize-00428d60.relocations]]
 offset = 67
@@ -55916,7 +55916,7 @@ target = 0x00401C20
 [[units.options-scene-initialize-00428d60.relocations]]
 offset = 223
 type = "REL32"
-symbol = "?InitializeOptionIndex@OptionsSceneInitF445@@QAEXE@Z"
+symbol = "?Apply@OptionsScene@@QAEXE@Z"
 target = 0x00429F00
 [[units.options-scene-initialize-00428d60.relocations]]
 offset = 243
