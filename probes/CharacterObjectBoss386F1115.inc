@@ -6,15 +6,15 @@ case 0x386: {
         F1037_POSITION(this).xPosition<g_F1057_LeftBoundAt00659258 ||
         F1037_POSITION(this).yPosition>g_F1057_UpperBoundAt006583B4 ||
         F1037_POSITION(this).yPosition<g_F1057_LowerBoundAt00658374) {
-        NativeParentExpiredAt0045B830();
+        ClearFrameInfo();
         return;
     }
     if (owner->field3A0<=0) {
-        NativeParentExpiredAt0045B830();
+        ClearFrameInfo();
         return;
     }
     if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
-        SetNativeMotionAt0040FBB0(0,0.0f,0);
+        ResetTransform(0,0.0f,0);
         field080=1;
         field07C=0;
         field0D8=0;
@@ -37,13 +37,13 @@ case 0x386: {
             scaleX=1.0f;
             scaleY=1.0f;
             reinterpret_cast<F1051Grandparent*>(PARENT)->InitTrajectoryAt00453E60(5.0f);
-            SetAuxActionAt0040FB40(2);
+            ResetSecondaryCounter(2);
             return;
         }
     }
     F1037_POSITION(this).xPosition=float(facing)*F1037_MOTION(this).xMotion+F1037_POSITION(this).xPosition;
     F1037_POSITION(this).yPosition=F1037_POSITION(this).yPosition+F1037_MOTION(this).yMotion;
-    if (GetNativeActionAt0040FA30()==field070) {
+    if (AdvanceNestedFrame()==field070) {
         reinterpret_cast<F1051Grandparent*>(PARENT)->InitTrajectoryAt00453E60(10.0f);
         for (int shot=0;shot<12;++shot) {
             reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
@@ -52,10 +52,10 @@ case 0x386: {
                 float(RandomBoundaryAt00455580(0,320)),
                 facing,1);
         }
-        NativeParentExpiredAt0045B830();
+        ClearFrameInfo();
         return;
     }
     if (F1024_PHASE(this).stageAt62==2 && F1024_PHASE(this).frameAt64==0)
-        SetAuxActionAt0040FB40(1);
+        ResetSecondaryCounter(1);
     return;
 }

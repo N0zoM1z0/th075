@@ -2,7 +2,7 @@
 // 557 original CODE bytes/114 x86, in ONE NONEXACT 81KB game callable.
 case 0x385: {
     if (owner->field3A0<=0) {
-        NativeParentExpiredAt0045B830();
+        ClearFrameInfo();
         return;
     }
     if (field07C==6) {
@@ -10,7 +10,7 @@ case 0x385: {
         field07C=0;
     }
     if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
-        SetNativeMotionAt0040FBB0(0,0.0f,0);
+        ResetTransform(0,0.0f,0);
         field080=1;
         field07C=0;
         field0D8=0;
@@ -29,12 +29,12 @@ case 0x385: {
     }
     if (F1024_PHASE(this).stageAt62>2)
         scaleX=(scaleX)*g_F1114_FadeAt00659240;
-    if (GetNativeActionAt0040FA30()==field070)
-        NativeParentExpiredAt0045B830();
+    if (AdvanceNestedFrame()==field070)
+        ClearFrameInfo();
     if (F1024_PHASE(this).stageAt62==3 && F1024_PHASE(this).frameAt64==0) {
         if (field0D8<9) {
             ++field0D8;
-            SetAuxActionAt0040FB40(2);
+            ResetSecondaryCounter(2);
         } else {
             scaleX=1.8f;
             scaleY=1.0f;

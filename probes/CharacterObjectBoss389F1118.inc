@@ -6,15 +6,15 @@ case 0x389: {
         F1037_POSITION(this).xPosition<g_F1057_LeftBoundAt00659258 ||
         F1037_POSITION(this).yPosition>g_F1057_UpperBoundAt006583B4 ||
         F1037_POSITION(this).yPosition<g_F1057_LowerBoundAt00658374) {
-        NativeParentExpiredAt0045B830();
+        ClearFrameInfo();
         return;
     }
     if (field07C==5) {
-        NativeParentExpiredAt0045B830();
+        ClearFrameInfo();
         return;
     }
     if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
-        SetNativeMotionAt0040FBB0(0,0.0f,0);
+        ResetTransform(0,0.0f,0);
         field080=1;
         field07C=0;
         scaleX=1.0f;
@@ -26,12 +26,12 @@ case 0x389: {
         field0D8=short(RandomBoundaryAt00455580(0,300)+200);
         field0DA=short(RandomBoundaryAt00455580(0,50)+45);
         field0DC=short(RandomBoundaryAt00455580(0,15)+5);
-        SetNativeTwoFloatsAt0040FB70(
+        SetPolarVelocity(
             float(field0DA),
             float(field0D8)*g_F1057_SpeedScaleAt006590B4);
     }
     if (F1024_PHASE(this).stageAt62<=1) {
-        SetNativeTwoFloatsAt0040FB70(
+        SetPolarVelocity(
             float(field0DA),
             float(field0D8)*g_F1057_SpeedScaleAt006590B4);
         reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
@@ -51,7 +51,7 @@ case 0x389: {
     if (field07C!=0 && field07C!=6 && F1024_PHASE(this).stageAt62==1) {
         F1037_MOTION(this).xMotion=0.0f;
         F1037_MOTION(this).yMotion=0.0f;
-        SetAuxActionAt0040FB40(2);
+        ResetSecondaryCounter(2);
         scaleX=2.5f;
         scaleY=2.5f;
         return;
@@ -63,11 +63,11 @@ case 0x389: {
             color[0]-=25;
         else {
             color[0]=0;
-            NativeParentExpiredAt0045B830();
+            ClearFrameInfo();
             return;
         }
     }
-    if (GetNativeActionAt0040FA30()==field070)
-        NativeParentExpiredAt0045B830();
+    if (AdvanceNestedFrame()==field070)
+        ClearFrameInfo();
     return;
 }

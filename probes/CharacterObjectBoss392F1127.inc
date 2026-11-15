@@ -2,11 +2,11 @@
 // 0051D413..0051D4F1, 222 native CODE B /47 x86 in ONE 81KB boss.
 case 0x392: {
     if (owner->field3A0<=0) {
-        NativeParentExpiredAt0045B830();
+        ClearFrameInfo();
         return;
     }
     if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
-        SetNativeMotionAt0040FBB0(0,0.0f,0);
+        ResetTransform(0,0.0f,0);
         scaleX=1.0f;
         scaleY=1.0f;
         color[0]=0xFF;
@@ -16,7 +16,7 @@ case 0x392: {
         field080=1;
         field07C=0;
     }
-    if (GetNativeActionAt0040FA30()==field070)
-        NativeParentExpiredAt0045B830();
+    if (AdvanceNestedFrame()==field070)
+        ClearFrameInfo();
     return;
 }

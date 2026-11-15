@@ -150,7 +150,7 @@ void YukariFighter::DispatchActions()
         PackDirectionBits();
         if (y == 0.0f) {
             if (action > 299) {
-                EnableTransform(0.0f, 0.0f, 0.0f);
+                ResetTransform(0.0f, 0.0f, 0.0f);
                 ResetPrimaryCounters(595);
                 return;
             }
@@ -192,7 +192,7 @@ void YukariFighter::DispatchActions()
         ACTION_CHANGE_ALLOWED) {
         PackDirectionBits();
         ResetPrimaryCounters(703);
-        EnableTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         return;
     }
     if (meter > 0 &&
@@ -208,7 +208,7 @@ void YukariFighter::DispatchActions()
         ACTION_CHANGE_ALLOWED) {
         PackDirectionBits();
         ResetPrimaryCounters(704);
-        EnableTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         return;
     }
     if (meter > 0 &&
@@ -224,7 +224,7 @@ void YukariFighter::DispatchActions()
         ACTION_CHANGE_ALLOWED) {
         PackDirectionBits();
         ResetPrimaryCounters(705);
-        EnableTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         return;
     }
     if (meter > 0 &&
@@ -239,7 +239,7 @@ void YukariFighter::DispatchActions()
         ACTION_CHANGE_ALLOWED) {
         PackDirectionBits();
         ResetPrimaryCounters(706);
-        EnableTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         return;
     }
     if (meter > 0 &&
@@ -254,7 +254,7 @@ void YukariFighter::DispatchActions()
         ACTION_CHANGE_ALLOWED) {
         PackDirectionBits();
         ResetPrimaryCounters(700);
-        EnableTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         return;
     }
     if (meter > 0 &&
@@ -270,7 +270,7 @@ void YukariFighter::DispatchActions()
         ACTION_CHANGE_ALLOWED) {
         PackDirectionBits();
         ResetPrimaryCounters(701);
-        EnableTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         return;
     }
     if (meter > 0 &&
@@ -285,7 +285,7 @@ void YukariFighter::DispatchActions()
         ACTION_CHANGE_ALLOWED) {
         PackDirectionBits();
         ResetPrimaryCounters(702);
-        EnableTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         return;
     }
     if (meter > 0 &&
@@ -301,7 +301,7 @@ void YukariFighter::DispatchActions()
         PackDirectionBits();
         ResetPrimaryCounters(702);
         facing = -facing;
-        EnableTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         return;
     }
     if (aiCommand == 42 &&

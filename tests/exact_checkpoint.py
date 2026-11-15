@@ -62,7 +62,9 @@ def _historical_prefix(relative, size, sha):
     return _HISTORY[key]
 
 
-LABEL_COLUMNS = {"proposed_name", "signature", "notes"}  # provisional names may be improved later
+# Provisional names, and where the accepted source lives, may change later:
+# the cold replay, not the file name, is the evidence.
+LABEL_COLUMNS = {"proposed_name", "signature", "notes", "source_file"}
 
 
 def _same_but_labels(row, expected):

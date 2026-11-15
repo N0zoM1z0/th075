@@ -1,8 +1,5 @@
 #include "ObjectAdvance55AC80F1194.hpp"
 #include "GameLeafHelpers.hpp"
-#include "AnimationProgress40FA30.hpp"
-#include "ObjectMotion40FB70.hpp"
-#include "SpriteTransform40FBB0.hpp"
 #include "FighterEffectPolicies.hpp"
 #include "RecordedRange455580.hpp"
 #include "EffectServices.hpp"
@@ -43,7 +40,7 @@ case 800:
         field0D8 = 0;
         velocityX = 0.0f;
         velocityY = 0.0f;
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         field080 = 1;
         reinterpret_cast<unsigned int&>(field07C) = 0;
         scaleX = 1.0f;
@@ -54,14 +51,14 @@ case 800:
         color[3] = 255;
     }
     if (x > 1400.0f || x < -120.0f) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     rotationZ = rotationZ + 5.0f;
     x = facing * velocityX + x;
     y = y + velocityY;
     if (field080 == 0 && animationStage < 5) {
-        SELF_VIEW(AnimationState)->ResetSecondaryCounter(5);
+        ResetSecondaryCounter(5);
         scaleX = scaleX + 0.5f;
         scaleY = scaleY + 0.5f;
         return;
@@ -80,32 +77,32 @@ case 800:
                 scaleY = 2.5f;
             }
             if (owner->action == 400 && owner->animationStage > 4) {
-                SELF_VIEW(AnimationState)->ResetSecondaryCounter(field0D8 + 2);
+                ResetSecondaryCounter(field0D8 + 2);
                 field080 = field0D8 + 1;
                 velocityX = field0D8 * 4.0f + 12.0f;
                 return;
             }
             if (owner->action != 400)
-                SELF_VIEW(AnimationState)->ResetSecondaryCounter(5);
+                ResetSecondaryCounter(5);
         }
-        if (SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070)
-            SELF_VIEW(BattleEffect)->ClearField74();
+        if (AdvanceNestedFrame() == field070)
+            ClearFrameInfo();
         if (animationStage == 2 && animationFrame == 0) {
-            SELF_VIEW(AnimationState)->ResetSecondaryCounter(1);
+            ResetSecondaryCounter(1);
             field0D8++;
             if (field0D8 > 2) field0D8 = 2;
         }
         if (animationStage == 3 && animationFrame == 0) {
             reinterpret_cast<unsigned int&>(field07C) = 0;
-            SELF_VIEW(AnimationState)->ResetSecondaryCounter(2);
+            ResetSecondaryCounter(2);
         }
         if (animationStage == 4 && animationFrame == 0) {
             reinterpret_cast<unsigned int&>(field07C) = 0;
-            SELF_VIEW(AnimationState)->ResetSecondaryCounter(3);
+            ResetSecondaryCounter(3);
         }
         if (animationStage == 5 && animationFrame == 0) {
             reinterpret_cast<unsigned int&>(field07C) = 0;
-            SELF_VIEW(AnimationState)->ResetSecondaryCounter(4);
+            ResetSecondaryCounter(4);
         }
     }
     return;
@@ -114,7 +111,7 @@ case 800:
 case 801:
     if (animationStage == 0 && animationFrame == 0) {
         field0D8 = 0;
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         field080 = 0;
         reinterpret_cast<unsigned int&>(field07C) = 0;
         scaleX = 1.0f;
@@ -129,21 +126,21 @@ case 801:
     scaleY = scaleY + 0.3f;
     if (x > 1400.0f || x < -160.0f ||
         y > 1000.0f || y < -160.0f) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     if (color[0] > 15)
         color[0] = color[0] - 15;
     else
         color[0] = 0;
-    if (SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070)
-        SELF_VIEW(BattleEffect)->ClearField74();
+    if (AdvanceNestedFrame() == field070)
+        ClearFrameInfo();
     return;
 
 // Native0055B21F..0055B599 observation chunk; no standalone unit or credit.
 case 802: {
     if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
             reinterpret_cast<short&>(owner->fieldEFA) = 0;
             OWNER_VIEW(FighterEffectPoliciesF135)->SpawnBattleEffect(995, x, y, 1, 1);
@@ -154,7 +151,7 @@ case 802: {
     }
     if (animationStage == 0 && animationFrame == 0) {
         field0D8 = 0;
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         field080 = 1;
         reinterpret_cast<unsigned int&>(field07C) = 0;
         scaleX = 1.0f;
@@ -163,7 +160,7 @@ case 802: {
         color[1] = 255;
         color[2] = 255;
         color[3] = 255;
-        SELF_VIEW(ObjectMotion40FB70)->SetPolarVelocity(field0C8, field0CC);
+        SetPolarVelocity(field0C8, field0CC);
     }
     if (animationStage == 1 && animationFrame == 0 && owner->meter > 0) {
         OWNER_VIEW(FighterEffectPoliciesF135)->UpdateGaugeTimer(15);
@@ -174,12 +171,12 @@ case 802: {
     x = facing * velocityX + x;
     if (x > 1400.0f || x < -160.0f ||
         y > 1000.0f || y < -160.0f) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     if (animationStage < 2 &&
         (owner->action != 600 || (owner->action == 600 && owner->animationStage > 9))) {
-        SELF_VIEW(AnimationState)->ResetSecondaryCounter(2);
+        ResetSecondaryCounter(2);
         return;
     } else {
         if (animationStage == 2) {
@@ -187,15 +184,15 @@ case 802: {
                 color[0] = color[0] - 15;
             } else {
                 color[0] = 0;
-                SELF_VIEW(BattleEffect)->ClearField74();
+                ClearFrameInfo();
                 return;
             }
         }
-        if (SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070)
-            SELF_VIEW(BattleEffect)->ClearField74();
+        if (AdvanceNestedFrame() == field070)
+            ClearFrameInfo();
         if (animationStage == 2 && animationFrame == 0 && owner->action == 600 &&
             field0D8 < 3 && owner->meter > 0)
-            SELF_VIEW(AnimationState)->ResetSecondaryCounter(1);
+            ResetSecondaryCounter(1);
     }
     return;
 }
@@ -203,7 +200,7 @@ case 802: {
 // Native0055B599..0055B7B7 observation chunk; no standalone unit or credit.
 case 803: {
     if (owner->action > 49 && owner->action < 150 && field080 > 0) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
             reinterpret_cast<short&>(owner->fieldEFA) = 0;
             OWNER_VIEW(FighterEffectPoliciesF135)->SpawnBattleEffect(995, x, y, 1, 1);
@@ -213,7 +210,7 @@ case 803: {
         return;
     }
     if (animationStage == 0 && animationFrame == 0) {
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 255;
@@ -227,28 +224,28 @@ case 803: {
     x = facing * velocityX + x;
     if (x > 1400.0f || x < -160.0f ||
         y > 1000.0f || y < -160.0f) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     if (field080 == 0) {
         if (color[0] > 10)
             color[0] = color[0] - 10;
         else
-            SELF_VIEW(BattleEffect)->ClearField74();
+            ClearFrameInfo();
     }
-    if (SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070)
-        SELF_VIEW(AnimationState)->ResetSecondaryCounter(1);
+    if (AdvanceNestedFrame() == field070)
+        ResetSecondaryCounter(1);
     return;
 }
 
 // Native0055B7B7..0055BAAA observation chunk; no standalone unit or credit.
 case 804: {
     if (reinterpret_cast<unsigned int&>(field07C) == 5) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
             reinterpret_cast<short&>(owner->fieldEFA) = 0;
             OWNER_VIEW(FighterEffectPoliciesF135)->SpawnBattleEffect(995, x, y, 1, 1);
@@ -259,10 +256,10 @@ case 804: {
     }
     if (animationStage == 0 && animationFrame == 0) {
         field0DA = static_cast<short>(field0C8);
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         field080 = 1;
         reinterpret_cast<unsigned int&>(field07C) = 0;
-        SELF_VIEW(ObjectMotion40FB70)->SetPolarVelocity(
+        SetPolarVelocity(
             field0DA + 15 - SELF_VIEW(RecordedRange455580)->SelectRange(0, 30),
             SELF_VIEW(RecordedRange455580)->SelectRange(1600, 2400) * 0.01f);
         scaleX = 1.0f;
@@ -275,20 +272,20 @@ case 804: {
     }
     if ((reinterpret_cast<unsigned int&>(field07C) == 1 || reinterpret_cast<unsigned int&>(field07C) == 2 ||
          reinterpret_cast<unsigned int&>(field07C) == 4) && animationStage < 2) {
-        SELF_VIEW(AnimationState)->ResetSecondaryCounter(2);
+        ResetSecondaryCounter(2);
         return;
     }
     x = facing * velocityX + x;
     y = y - velocityY;
     if (x > 1400.0f || x < -160.0f ||
         y > 1000.0f || y < -160.0f) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     if (color[0] > 20 && animationStage == 2)
         color[0] = color[0] - 20;
-    if (SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070)
-        SELF_VIEW(BattleEffect)->ClearField74();
+    if (AdvanceNestedFrame() == field070)
+        ClearFrameInfo();
     return;
 }
 
@@ -296,7 +293,7 @@ case 804: {
 case 805:
     if (animationStage == 0 && animationFrame == 0) {
         reinterpret_cast<unsigned int&>(field07C) = 0;
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         scaleX = 0.5f;
         scaleY = 0.5f;
         color[0] = 255;
@@ -319,7 +316,7 @@ case 805:
     }
     if (reinterpret_cast<unsigned int&>(field07C) != 0) field080 = 0;
     if (animationStage == 1 && field080 == 0)
-        SELF_VIEW(AnimationState)->ResetSecondaryCounter(2);
+        ResetSecondaryCounter(2);
     if (animationStage == 0) {
         scaleX = scaleX + 0.2f;
         scaleY = scaleY + 0.2f;
@@ -328,12 +325,12 @@ case 805:
         if (color[0] > 20) {
             color[0] = color[0] - 20;
         } else {
-            SELF_VIEW(BattleEffect)->ClearField74();
+            ClearFrameInfo();
             return;
         }
     }
-    if (SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070)
-        SELF_VIEW(BattleEffect)->ClearField74();
+    if (AdvanceNestedFrame() == field070)
+        ClearFrameInfo();
     return;
 
 // Native0055BC84..0055BE29 observation chunk; no standalone unit or credit.
@@ -341,13 +338,13 @@ case 806:
     if (owner->action == 700 && animationStage < 19)
         x = owner->x;
     if (owner->action != 700 && animationStage < 19) {
-        SELF_VIEW(AnimationState)->ResetSecondaryCounter(19);
+        ResetSecondaryCounter(19);
         return;
     }
     if (animationStage == 0 && animationFrame == 0) {
         field080 = 12;
         reinterpret_cast<unsigned int&>(field07C) = 0;
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 255;
@@ -361,14 +358,14 @@ case 806:
         field0DA = 0;
         reinterpret_cast<unsigned int&>(field07C) = 0;
     }
-    if (SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+    if (AdvanceNestedFrame() == field070) {
+        ClearFrameInfo();
         return;
     }
     if (animationStage == 19 && animationFrame == 0 && field0D8 < 3) {
         field0D8++;
         reinterpret_cast<unsigned int&>(field07C) = 0;
-        SELF_VIEW(AnimationState)->ResetSecondaryCounter(9);
+        ResetSecondaryCounter(9);
     }
     return;
 
@@ -379,7 +376,7 @@ case 807:
         y = owner->y + 104.0f;
     }
     if (animationStage == 0 && animationFrame == 0) {
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         scaleX = 3.0f;
         scaleY = 3.0f;
         color[0] = 255;
@@ -391,14 +388,14 @@ case 807:
     scaleY = scaleY * 0.8f;
     if (animationStage > 1 && color[0] > 10)
         color[0] = color[0] - 10;
-    if (SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070)
-        SELF_VIEW(BattleEffect)->ClearField74();
+    if (AdvanceNestedFrame() == field070)
+        ClearFrameInfo();
     return;
 
 // Native0055BF3E..0055C03D observation chunk; no standalone unit or credit.
 case 808:
     if (animationStage == 0 && animationFrame == 0) {
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 255;
@@ -412,11 +409,11 @@ case 808:
     }
     x = facing * velocityX + x;
     if (x > 1800.0f || x < -680.0f) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
-    if (SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070) {
-        SELF_VIEW(AnimationState)->ResetSecondaryCounter(1);
+    if (AdvanceNestedFrame() == field070) {
+        ResetSecondaryCounter(1);
         reinterpret_cast<unsigned int&>(field07C) = 0;
     }
     return;
@@ -424,7 +421,7 @@ case 808:
 // Native0055C03D..0055C154 observation chunk; no standalone unit or credit.
 case 809:
     if (animationStage == 0 && animationFrame == 0) {
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 255;
@@ -441,11 +438,11 @@ case 809:
     if (color[0] > 10) {
         color[0] = color[0] - 10;
     } else {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
-    if (SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070)
-        SELF_VIEW(BattleEffect)->ClearField74();
+    if (AdvanceNestedFrame() == field070)
+        ClearFrameInfo();
     return;
 
 // Native0055C154..0055C2FE observation chunk; no standalone unit or credit.
@@ -453,13 +450,13 @@ case 810:
     if (owner->action == 705 && animationStage < 19)
         x = owner->x + 0.0f;
     if (owner->action != 705 && animationStage < 19) {
-        SELF_VIEW(AnimationState)->ResetSecondaryCounter(19);
+        ResetSecondaryCounter(19);
         return;
     }
     if (animationStage == 0 && animationFrame == 0) {
         field080 = 20;
         reinterpret_cast<unsigned int&>(field07C) = 0;
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         scaleX = 1.5f;
         scaleY = 1.25f;
         color[0] = 255;
@@ -473,21 +470,21 @@ case 810:
         field0DA = 0;
         reinterpret_cast<unsigned int&>(field07C) = 0;
     }
-    if (SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+    if (AdvanceNestedFrame() == field070) {
+        ClearFrameInfo();
         return;
     }
     if (animationStage == 19 && animationFrame == 0 && field0D8 < 6) {
         field0D8++;
         reinterpret_cast<unsigned int&>(field07C) = 0;
-        SELF_VIEW(AnimationState)->ResetSecondaryCounter(9);
+        ResetSecondaryCounter(9);
     }
     return;
 
 // Native0055C2FE..0055C3FD observation chunk; no standalone unit or credit.
 case 811:
     if (animationStage == 0 && animationFrame == 0) {
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 255;
@@ -501,11 +498,11 @@ case 811:
     }
     x = facing * velocityX + x;
     if (x > 1800.0f || x < -680.0f) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
-    if (SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070) {
-        SELF_VIEW(AnimationState)->ResetSecondaryCounter(1);
+    if (AdvanceNestedFrame() == field070) {
+        ResetSecondaryCounter(1);
         reinterpret_cast<unsigned int&>(field07C) = 0;
     }
     return;
@@ -513,7 +510,7 @@ case 811:
 // Native0055C3FD..0055C514 observation chunk; no standalone unit or credit.
 case 814:
     if (animationStage == 0 && animationFrame == 0) {
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 255;
@@ -530,21 +527,21 @@ case 814:
     if (color[0] > 10) {
         color[0] = color[0] - 10;
     } else {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
-    if (SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070)
-        SELF_VIEW(BattleEffect)->ClearField74();
+    if (AdvanceNestedFrame() == field070)
+        ClearFrameInfo();
     return;
 
 // Native0055C514..0055C7D8 observation chunk; no standalone unit or credit.
 case 816: {
     if (reinterpret_cast<unsigned int&>(field07C) == 5) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
             reinterpret_cast<short&>(owner->fieldEFA) = 0;
             OWNER_VIEW(FighterEffectPoliciesF135)->SpawnBattleEffect(995, x, y, 1, 1);
@@ -554,10 +551,10 @@ case 816: {
         return;
     }
     if (animationStage == 0 && animationFrame == 0) {
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         field080 = 1;
         reinterpret_cast<unsigned int&>(field07C) = 0;
-        SELF_VIEW(ObjectMotion40FB70)->SetPolarVelocity(
+        SetPolarVelocity(
             field0C8 + 15.0f - SELF_VIEW(RecordedRange455580)->SelectRange(0, 30), 25.0f);
         scaleX = 1.0f;
         scaleY = 1.0f;
@@ -569,20 +566,20 @@ case 816: {
     }
     if ((reinterpret_cast<unsigned int&>(field07C) == 1 || reinterpret_cast<unsigned int&>(field07C) == 2 ||
          reinterpret_cast<unsigned int&>(field07C) == 4) && animationStage < 2) {
-        SELF_VIEW(AnimationState)->ResetSecondaryCounter(2);
+        ResetSecondaryCounter(2);
         return;
     }
     x = facing * velocityX + x;
     y = y - velocityY;
     if (x > 1400.0f || x < -160.0f ||
         y > 1000.0f || y < -160.0f) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     if (color[0] > 20 && animationStage == 2)
         color[0] = color[0] - 20;
-    if (SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070)
-        SELF_VIEW(BattleEffect)->ClearField74();
+    if (AdvanceNestedFrame() == field070)
+        ClearFrameInfo();
     return;
 }
 
@@ -590,15 +587,15 @@ case 816: {
 case 817: {
     if (x > 1380.0f || x < -100.0f ||
         y > 1000.0f || y < -240.0f) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     if (reinterpret_cast<unsigned int&>(field07C) == 5) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     if (owner->action > 49 && owner->action < 150) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
             reinterpret_cast<short&>(owner->fieldEFA) = 0;
             OWNER_VIEW(FighterEffectPoliciesF135)->SpawnBattleEffect(995, x, y, 1, 1);
@@ -608,7 +605,7 @@ case 817: {
         return;
     }
     if (animationStage == 0 && animationFrame == 0) {
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         field080 = 1;
         reinterpret_cast<unsigned int&>(field07C) = 0;
         scaleX = 1.0f;
@@ -621,7 +618,7 @@ case 817: {
         field0DA = 0;
         field0DE = 0;
         field0DC = static_cast<short>(field0C8);
-        SELF_VIEW(ObjectMotion40FB70)->SetPolarVelocity(field0DC, field0D8 * 0.1f + 10.0f);
+        SetPolarVelocity(field0DC, field0D8 * 0.1f + 10.0f);
     }
     if (animationStage < 5) {
         field0DA = static_cast<short>(Unknown483300(
@@ -633,18 +630,18 @@ case 817: {
             field0DC = field0DC - 1;
         if (field0DC > 90) field0DC = 90;
         if (field0DC < -90) field0DC = -90;
-        SELF_VIEW(ObjectMotion40FB70)->SetPolarVelocity(field0DC, field0D8 * 0.15f + 7.0f);
+        SetPolarVelocity(field0DC, field0D8 * 0.15f + 7.0f);
     }
     field0D8 = field0D8 + 2;
     x = facing * velocityX + x;
     y = y - velocityY;
     if (x > 1400.0f || x < -160.0f ||
         y > 1000.0f || y < -160.0f) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     if (reinterpret_cast<unsigned int&>(field07C) != 0 && reinterpret_cast<unsigned int&>(field07C) != 6) {
-        SELF_VIEW(AnimationState)->ResetSecondaryCounter(5);
+        ResetSecondaryCounter(5);
         velocityX = 0.0f;
         velocityY = 0.0f;
         scaleX = 2.0f;
@@ -656,21 +653,21 @@ case 817: {
         if (color[0] >= 25) {
             color[0] = color[0] - 25;
         } else {
-            SELF_VIEW(BattleEffect)->ClearField74();
+            ClearFrameInfo();
             return;
         }
     }
-    if (SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070)
-        SELF_VIEW(BattleEffect)->ClearField74();
+    if (AdvanceNestedFrame() == field070)
+        ClearFrameInfo();
     if (animationStage == 5 && animationFrame == 0)
-        SELF_VIEW(AnimationState)->ResetSecondaryCounter(1);
+        ResetSecondaryCounter(1);
     return;
 }
 
 // Native0055CCD6..0055CDFD observation chunk; no standalone unit or credit.
 case 819:
     if (animationStage == 0 && animationFrame == 0) {
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 255;
@@ -687,11 +684,11 @@ case 819:
     if (color[0] > 10) {
         color[0] = color[0] - 10;
     } else {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
-    if (SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070)
-        SELF_VIEW(BattleEffect)->ClearField74();
+    if (AdvanceNestedFrame() == field070)
+        ClearFrameInfo();
     return;
 
 // Native0055CDFD..0055CEE8 observation chunk; no standalone unit or credit.
@@ -701,7 +698,7 @@ case 820:
         y = owner->y;
     }
     if (animationStage == 0 && animationFrame == 0) {
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 255;
@@ -709,18 +706,18 @@ case 820:
         color[2] = 255;
         color[3] = 255;
     }
-    if (owner->field082 == 0 && SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070)
-        SELF_VIEW(BattleEffect)->ClearField74();
+    if (owner->field082 == 0 && AdvanceNestedFrame() == field070)
+        ClearFrameInfo();
     return;
 
 // Native0055CEE8..0055D2B4 observation chunk; no standalone unit or credit.
 case 821: {
     if (reinterpret_cast<unsigned int&>(field07C) == 5) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
             reinterpret_cast<short&>(owner->fieldEFA) = 0;
             OWNER_VIEW(FighterEffectPoliciesF135)->SpawnBattleEffect(995, x, y, 1, 1);
@@ -733,7 +730,7 @@ case 821: {
         field0D8 = 0;
         field0DA = static_cast<short>(field0C8);
         field0DC = 0;
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         field080 = 6;
         reinterpret_cast<unsigned int&>(field07C) = 0;
         scaleX = 1.0f;
@@ -743,7 +740,7 @@ case 821: {
         color[2] = 255;
         color[3] = 255;
     }
-    SELF_VIEW(ObjectMotion40FB70)->SetPolarVelocity(field0DA, 25.0f);
+    SetPolarVelocity(field0DA, 25.0f);
     rotationZ = Unknown483300(velocityY, velocityX) / 0.01745328866f;
     if (reinterpret_cast<unsigned int&>(field07C) == 4 && field080 > 0)
         reinterpret_cast<unsigned int&>(field07C) = 0;
@@ -754,19 +751,19 @@ case 821: {
     y = y - velocityY;
     if (x > 1400.0f || x < -160.0f ||
         y > 1000.0f || y < -160.0f) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     if (reinterpret_cast<unsigned int&>(field07C) != 0) {
         if (color[0] > 20) {
             color[0] = color[0] - 20;
         } else {
-            SELF_VIEW(BattleEffect)->ClearField74();
+            ClearFrameInfo();
             return;
         }
     }
-    if (SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070)
-        SELF_VIEW(AnimationState)->ResetSecondaryCounter(4);
+    if (AdvanceNestedFrame() == field070)
+        ResetSecondaryCounter(4);
     if (animationStage == 4 && animationFrame == 0) {
         owner->field314 = field0DA;
         OWNER_VIEW(FighterEffectPoliciesF135)->SpawnBattleEffect(837, x, y, facing, 1);
@@ -785,11 +782,11 @@ case 822:
         y = owner->y;
     }
     if (owner->action != 502 || (owner->action == 502 && owner->animationStage > 15)) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     if (animationStage == 0 && animationFrame == 0) {
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 255;
@@ -797,8 +794,8 @@ case 822:
         color[2] = 255;
         color[3] = 255;
     }
-    if (owner->field082 == 0 && SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070)
-        SELF_VIEW(BattleEffect)->ClearField74();
+    if (owner->field082 == 0 && AdvanceNestedFrame() == field070)
+        ClearFrameInfo();
     return;
 
 // Native0055D3BF..0055D4CA observation chunk; no standalone unit or credit.
@@ -808,11 +805,11 @@ case 823:
         y = owner->y;
     }
     if (owner->action != 503 || (owner->action == 503 && owner->animationStage > 15)) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     if (animationStage == 0 && animationFrame == 0) {
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 255;
@@ -820,8 +817,8 @@ case 823:
         color[2] = 255;
         color[3] = 255;
     }
-    if (owner->field082 == 0 && SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070)
-        SELF_VIEW(BattleEffect)->ClearField74();
+    if (owner->field082 == 0 && AdvanceNestedFrame() == field070)
+        ClearFrameInfo();
     return;
 
 // Native0055D4CA..0055D5EF observation chunk; no standalone unit or credit.
@@ -831,11 +828,11 @@ case 824:
         y = owner->y;
     }
     if (owner->action != 504 || (owner->action == 504 && owner->animationStage > 15)) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     if (animationStage == 0 && animationFrame == 0) {
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 80.0f, 0.0f);
+        ResetTransform(0.0f, 80.0f, 0.0f);
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 255;
@@ -844,8 +841,8 @@ case 824:
         color[3] = 255;
         rotationZ = -(field0C8 + 15.0f);
     }
-    if (owner->field082 == 0 && SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070)
-        SELF_VIEW(BattleEffect)->ClearField74();
+    if (owner->field082 == 0 && AdvanceNestedFrame() == field070)
+        ClearFrameInfo();
     return;
 
 // Native0055D5EF..0055D6D4 observation chunk; no standalone unit or credit.
@@ -855,11 +852,11 @@ case 825:
         y = owner->y;
     }
     if (owner->action != 304) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     if (animationStage == 0 && animationFrame == 0) {
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 255;
@@ -867,8 +864,8 @@ case 825:
         color[2] = 255;
         color[3] = 255;
     }
-    if (owner->field082 == 0 && SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070)
-        SELF_VIEW(BattleEffect)->ClearField74();
+    if (owner->field082 == 0 && AdvanceNestedFrame() == field070)
+        ClearFrameInfo();
     return;
 
 // Native0055D6D4..0055D883 observation chunk; no standalone unit or credit.
@@ -883,12 +880,12 @@ case 826:
         if (color[0] > 30) {
             color[0] = color[0] - 30;
         } else {
-            SELF_VIEW(BattleEffect)->ClearField74();
+            ClearFrameInfo();
             return;
         }
     }
     if (animationStage == 0 && animationFrame == 0) {
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         scaleX = 1.0f;
         scaleY = 1.0f;
         if (owner->action == 511) {
@@ -901,8 +898,8 @@ case 826:
         color[2] = 255;
         color[3] = 255;
     }
-    if (owner->field082 == 0 && SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070)
-        SELF_VIEW(AnimationState)->ResetSecondaryCounter(0);
+    if (owner->field082 == 0 && AdvanceNestedFrame() == field070)
+        ResetSecondaryCounter(0);
     return;
 
 // Native0055D883..0055D9C5 observation chunk; no standalone unit or credit.
@@ -914,12 +911,12 @@ case 827:
         if (color[0] > 20) {
             color[0] = color[0] - 20;
         } else {
-            SELF_VIEW(BattleEffect)->ClearField74();
+            ClearFrameInfo();
             return;
         }
     }
     if (animationStage == 0 && animationFrame == 0) {
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 255;
@@ -927,8 +924,8 @@ case 827:
         color[2] = 255;
         color[3] = 255;
     }
-    if (SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070) {
-        SELF_VIEW(AnimationState)->ResetSecondaryCounter(0);
+    if (AdvanceNestedFrame() == field070) {
+        ResetSecondaryCounter(0);
         return;
     }
     return;
@@ -936,7 +933,7 @@ case 827:
 // Native0055D9C5..0055DAA5 observation chunk; no standalone unit or credit.
 case 828:
     if (animationStage == 0 && animationFrame == 0) {
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 255;
@@ -947,11 +944,11 @@ case 828:
     }
     x = facing * velocityX + x;
     if (x > 1640.0f || x < -360.0f) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
-    if (SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070) {
-        SELF_VIEW(AnimationState)->ResetSecondaryCounter(0);
+    if (AdvanceNestedFrame() == field070) {
+        ResetSecondaryCounter(0);
         return;
     }
     return;
@@ -959,7 +956,7 @@ case 828:
 // Native0055DAA5..0055DB85 observation chunk; no standalone unit or credit.
 case 829:
     if (animationStage == 0 && animationFrame == 0) {
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         scaleX = 2.0f;
         scaleY = 2.0f;
         color[0] = 255;
@@ -970,11 +967,11 @@ case 829:
     }
     x = facing * velocityX + x;
     if (x > 1640.0f || x < -360.0f) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
-    if (SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070) {
-        SELF_VIEW(AnimationState)->ResetSecondaryCounter(0);
+    if (AdvanceNestedFrame() == field070) {
+        ResetSecondaryCounter(0);
         return;
     }
     return;
@@ -983,11 +980,11 @@ case 829:
 case 830:
     if (owner->action == 310) x = owner->x;
     if (owner->action != 310) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     if (animationStage == 0 && animationFrame == 0) {
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 255;
@@ -995,8 +992,8 @@ case 830:
         color[2] = 255;
         color[3] = 255;
     }
-    if (owner->field082 == 0 && SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+    if (owner->field082 == 0 && AdvanceNestedFrame() == field070) {
+        ClearFrameInfo();
         return;
     }
     return;
@@ -1005,11 +1002,11 @@ case 830:
 case 831:
     if (owner->action == 309) x = owner->x;
     if (owner->action != 309) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     if (animationStage == 0 && animationFrame == 0) {
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 255;
@@ -1017,8 +1014,8 @@ case 831:
         color[2] = 255;
         color[3] = 255;
     }
-    if (SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+    if (AdvanceNestedFrame() == field070) {
+        ClearFrameInfo();
         return;
     }
     return;
@@ -1032,12 +1029,12 @@ case 832:
         if (color[0] > 20) {
             color[0] = color[0] - 20;
         } else {
-            SELF_VIEW(BattleEffect)->ClearField74();
+            ClearFrameInfo();
             return;
         }
     }
     if (animationStage == 0 && animationFrame == 0) {
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         scaleX = 2.0f;
         scaleY = 2.0f;
         color[0] = 255;
@@ -1045,8 +1042,8 @@ case 832:
         color[2] = 255;
         color[3] = 255;
     }
-    if (SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070) {
-        SELF_VIEW(AnimationState)->ResetSecondaryCounter(0);
+    if (AdvanceNestedFrame() == field070) {
+        ResetSecondaryCounter(0);
         return;
     }
     return;
@@ -1055,11 +1052,11 @@ case 832:
 case 833:
     if (owner->action == 307) x = owner->x;
     if (owner->action != 307) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     if (animationStage == 0 && animationFrame == 0) {
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 255;
@@ -1067,8 +1064,8 @@ case 833:
         color[2] = 255;
         color[3] = 255;
     }
-    if (owner->field082 == 0 && SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+    if (owner->field082 == 0 && AdvanceNestedFrame() == field070) {
+        ClearFrameInfo();
         return;
     }
     return;
@@ -1077,11 +1074,11 @@ case 833:
 case 834:
     if (owner->action == 307) x = owner->x;
     if (owner->action != 307) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     if (animationStage == 0 && animationFrame == 0) {
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 255;
@@ -1089,8 +1086,8 @@ case 834:
         color[2] = 255;
         color[3] = 255;
     }
-    if (owner->field082 == 0 && SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+    if (owner->field082 == 0 && AdvanceNestedFrame() == field070) {
+        ClearFrameInfo();
         return;
     }
     return;
@@ -1098,7 +1095,7 @@ case 834:
 // Native0055E00F..0055E158 observation chunk; no standalone unit or credit.
 case 835:
     if (animationStage == 0 && animationFrame == 0) {
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         field080 = 0;
         reinterpret_cast<unsigned int&>(field07C) = 0;
         scaleX = 1.0f;
@@ -1116,11 +1113,11 @@ case 835:
     if (reinterpret_cast<unsigned int&>(field07C) == 4) reinterpret_cast<unsigned int&>(field07C) = 0;
     if (x > 1400.0f || x < -160.0f ||
         y > 1000.0f || y < -160.0f) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
-    if (SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070)
-        SELF_VIEW(BattleEffect)->ClearField74();
+    if (AdvanceNestedFrame() == field070)
+        ClearFrameInfo();
     return;
 
 // Native0055E158..0055E250 observation chunk; no standalone unit or credit.
@@ -1129,11 +1126,11 @@ case 836:
         x = owner->x + facing * 55;
         y = owner->y + 86.0f;
     } else {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     if (animationStage == 0 && animationFrame == 0) {
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         scaleX = 1.5f;
         scaleY = 3.0f;
         color[0] = 255;
@@ -1142,8 +1139,8 @@ case 836:
         color[3] = 255;
         rotationZ = -120.0f;
     }
-    if (SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070) {
-        SELF_VIEW(AnimationState)->ResetSecondaryCounter(0);
+    if (AdvanceNestedFrame() == field070) {
+        ResetSecondaryCounter(0);
         return;
     }
     return;
@@ -1151,7 +1148,7 @@ case 836:
 // Native0055E250..0055E41C observation chunk; no standalone unit or credit.
 case 837:
     if (animationStage == 0 && animationFrame == 0) {
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         reinterpret_cast<unsigned int&>(field07C) = 0;
         scaleX = 0.5f;
         scaleY = 0.5f;
@@ -1176,22 +1173,22 @@ case 837:
             color[3] = color[3] - 20;
             color[2] = color[2] - 20;
         } else {
-            SELF_VIEW(BattleEffect)->ClearField74();
+            ClearFrameInfo();
             return;
         }
     }
-    if (SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070)
-        SELF_VIEW(BattleEffect)->ClearField74();
+    if (AdvanceNestedFrame() == field070)
+        ClearFrameInfo();
     return;
 
 // Native0055E41C..0055E813 observation chunk; no standalone unit or credit.
 case 838: {
     if (reinterpret_cast<unsigned int&>(field07C) == 5) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
             reinterpret_cast<short&>(owner->fieldEFA) = 0;
             OWNER_VIEW(FighterEffectPoliciesF135)->SpawnBattleEffect(995, x, y, 1, 1);
@@ -1204,7 +1201,7 @@ case 838: {
         field0D8 = 0;
         field0DA = static_cast<short>(field0C8);
         field0DC = 0;
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         field080 = 6;
         reinterpret_cast<unsigned int&>(field07C) = 0;
         scaleX = 1.0f;
@@ -1214,7 +1211,7 @@ case 838: {
         color[2] = 255;
         color[3] = 255;
     }
-    SELF_VIEW(ObjectMotion40FB70)->SetPolarVelocity(field0DA, 3.0f);
+    SetPolarVelocity(field0DA, 3.0f);
     rotationZ = Unknown483300(velocityY, velocityX) / 0.01745328866f;
     if (reinterpret_cast<unsigned int&>(field07C) == 4 && field080 > 0)
         reinterpret_cast<unsigned int&>(field07C) = 0;
@@ -1222,26 +1219,26 @@ case 838: {
     y = y - velocityY;
     if (x > 1400.0f || x < -160.0f ||
         y > 1000.0f || y < -160.0f) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     if (field080 == 0) {
         if (color[0] > 20) {
             color[0] = color[0] - 20;
         } else {
-            SELF_VIEW(BattleEffect)->ClearField74();
+            ClearFrameInfo();
             return;
         }
     }
-    if (SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070)
-        SELF_VIEW(AnimationState)->ResetSecondaryCounter(4);
+    if (AdvanceNestedFrame() == field070)
+        ResetSecondaryCounter(4);
     if (animationStage == 4 && animationFrame == 0) {
         owner->field314 = field0DA;
         OWNER_VIEW(FighterEffectPoliciesF135)->SpawnBattleEffect(837, x, y, facing, 1);
         if (reinterpret_cast<unsigned int&>(field07C) == 2)
             reinterpret_cast<unsigned int&>(field07C) = 0;
         else
-            SELF_VIEW(AnimationState)->ResetPrimaryCounters(821);
+            ResetPrimaryCounters(821);
     }
     if (animationStage == 9 && animationFrame == 0) {
         owner->field314 = field0DA;
@@ -1249,7 +1246,7 @@ case 838: {
         if (reinterpret_cast<unsigned int&>(field07C) == 2)
             reinterpret_cast<unsigned int&>(field07C) = 0;
         else
-            SELF_VIEW(AnimationState)->ResetPrimaryCounters(821);
+            ResetPrimaryCounters(821);
     }
     return;
 }
@@ -1257,11 +1254,11 @@ case 838: {
 // Native0055E813..0055EB1A observation chunk; no standalone unit or credit.
 case 839: {
     if (reinterpret_cast<unsigned int&>(field07C) == 5) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
             reinterpret_cast<short&>(owner->fieldEFA) = 0;
             OWNER_VIEW(FighterEffectPoliciesF135)->SpawnBattleEffect(995, x, y, 1, 1);
@@ -1272,7 +1269,7 @@ case 839: {
     }
     if (animationStage == 0 && animationFrame == 0) {
         field0D8 = 0;
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         field080 = 3;
         reinterpret_cast<unsigned int&>(field07C) = 0;
         scaleX = 1.0f;
@@ -1290,24 +1287,24 @@ case 839: {
     if (velocityX < -18.0f) velocityX = -18.0f;
     if (reinterpret_cast<unsigned int&>(field07C) == 4) reinterpret_cast<unsigned int&>(field07C) = 0;
     if (field080 == 0) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     x = facing * velocityX + x;
     y = y - velocityY;
     if (x > 1400.0f || x < -160.0f ||
         y > 1000.0f || y < -160.0f) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
-    if (SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070) {
+    if (AdvanceNestedFrame() == field070) {
         if (field0D8 < 7) {
-            SELF_VIEW(AnimationState)->ResetSecondaryCounter(1);
+            ResetSecondaryCounter(1);
             reinterpret_cast<unsigned int&>(field07C) = 0;
             field0D8++;
             return;
         } else {
-            SELF_VIEW(BattleEffect)->ClearField74();
+            ClearFrameInfo();
         }
     }
     return;
@@ -1329,9 +1326,9 @@ case 850:
         y = owner->y + 100.0f;
     }
     if ((owner->action < 150 || owner->action > 158) && animationStage == 0)
-        SELF_VIEW(AnimationState)->ResetSecondaryCounter(1);
+        ResetSecondaryCounter(1);
     if (animationStage == 0 && animationFrame == 0) {
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 255;
@@ -1339,18 +1336,18 @@ case 850:
         color[2] = 255;
         color[3] = 255;
     }
-    if (SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070)
-        SELF_VIEW(BattleEffect)->ClearField74();
+    if (AdvanceNestedFrame() == field070)
+        ClearFrameInfo();
     return;
 
 // Native0055ED0A..0055EF01 observation chunk; no standalone unit or credit.
 case 900:
     if (owner->field3A0 <= 0) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     if (animationStage == 0 && animationFrame == 0) {
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 255;
@@ -1359,7 +1356,7 @@ case 900:
         color[3] = 255;
         field080 = 1;
         reinterpret_cast<unsigned int&>(field07C) = 0;
-        SELF_VIEW(ObjectMotion40FB70)->SetPolarVelocity(field0C8, 40.0f);
+        SetPolarVelocity(field0C8, 40.0f);
         rotationZ = Unknown483300(velocityY, velocityX) / 0.01745328866f;
     }
     x = facing * velocityX + x;
@@ -1370,11 +1367,11 @@ case 900:
         y + 30.0f - SELF_VIEW(RecordedRange455580)->SelectRange(0, 60),
         facing, 1);
     if (x > 1800.0f || x < -680.0f) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
-    if (SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070) {
-        SELF_VIEW(AnimationState)->ResetSecondaryCounter(1);
+    if (AdvanceNestedFrame() == field070) {
+        ResetSecondaryCounter(1);
         reinterpret_cast<unsigned int&>(field07C) = 0;
     }
     return;
@@ -1382,11 +1379,11 @@ case 900:
 // Native0055EF01..0055F14D observation chunk; no standalone unit or credit.
 case 901:
     if (owner->field3A0 <= 0) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     if (animationStage == 0 && animationFrame == 0) {
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         scaleX = 0.0f;
         scaleY = 0.0f;
         color[0] = 255;
@@ -1396,7 +1393,7 @@ case 901:
         field0D8 = SELF_VIEW(RecordedRange455580)->SelectRange(0, 5);
         field080 = 1;
         reinterpret_cast<unsigned int&>(field07C) = 0;
-        SELF_VIEW(ObjectMotion40FB70)->SetPolarVelocity(
+        SetPolarVelocity(
             -field0C8 + 20.0f - SELF_VIEW(RecordedRange455580)->SelectRange(0, 40),
             SELF_VIEW(RecordedRange455580)->SelectRange(5, 10));
     }
@@ -1404,7 +1401,7 @@ case 901:
     y = y - velocityY;
     if (x > 1300.0f || x < -60.0f ||
         y > 960.0f || y < -160.0f) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     if (animationStage == 0) {
@@ -1412,7 +1409,7 @@ case 901:
             scaleX = scaleX + 0.1f;
             scaleY = scaleX;
         } else {
-            SELF_VIEW(AnimationState)->ResetSecondaryCounter(1);
+            ResetSecondaryCounter(1);
             return;
         }
     }
@@ -1420,18 +1417,18 @@ case 901:
         scaleX = scaleX * 0.9f;
         scaleY = scaleX;
     }
-    if (SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070)
-        SELF_VIEW(BattleEffect)->ClearField74();
+    if (AdvanceNestedFrame() == field070)
+        ClearFrameInfo();
     return;
 
 // Native0055F14D..0055F208 observation chunk; no standalone unit or credit.
 case 902:
     if (owner->field3A0 <= 0) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     if (animationStage == 0 && animationFrame == 0) {
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         scaleX = 4.0f;
         scaleY = 1.0f;
         color[0] = 255;
@@ -1442,18 +1439,18 @@ case 902:
     }
     // The actual multiplier is the complete eight-byte0.85 literal.
     scaleY = scaleY * 0.85;
-    if (SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070)
-        SELF_VIEW(BattleEffect)->ClearField74();
+    if (AdvanceNestedFrame() == field070)
+        ClearFrameInfo();
     return;
 
 // Native0055F208..0055F43A observation chunk; no standalone unit or credit.
 case 903:
     if (owner->field3A0 <= 0) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     if (animationStage == 0 && animationFrame == 0) {
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         scaleX = 0.0f;
         scaleY = 0.0f;
         color[0] = 255;
@@ -1463,7 +1460,7 @@ case 903:
         field0D8 = SELF_VIEW(RecordedRange455580)->SelectRange(0, 5);
         field080 = 1;
         reinterpret_cast<unsigned int&>(field07C) = 0;
-        SELF_VIEW(ObjectMotion40FB70)->SetPolarVelocity(
+        SetPolarVelocity(
             SELF_VIEW(RecordedRange455580)->SelectRange(0, 359),
             SELF_VIEW(RecordedRange455580)->SelectRange(5, 10));
     }
@@ -1471,7 +1468,7 @@ case 903:
     y = y - velocityY;
     if (x > 1300.0f || x < -60.0f ||
         y > 960.0f || y < -160.0f) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     if (animationStage == 0) {
@@ -1479,7 +1476,7 @@ case 903:
             scaleX = scaleX + 0.1f;
             scaleY = scaleX;
         } else {
-            SELF_VIEW(AnimationState)->ResetSecondaryCounter(1);
+            ResetSecondaryCounter(1);
             return;
         }
     }
@@ -1487,18 +1484,18 @@ case 903:
         scaleX = scaleX * 0.9f;
         scaleY = scaleX;
     }
-    if (SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070)
-        SELF_VIEW(BattleEffect)->ClearField74();
+    if (AdvanceNestedFrame() == field070)
+        ClearFrameInfo();
     return;
 
 // Native0055F43A..0055F631 observation chunk; no standalone unit or credit.
 case 904:
     if (owner->field3A0 <= 0) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     if (animationStage == 0 && animationFrame == 0) {
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 255;
@@ -1507,7 +1504,7 @@ case 904:
         color[3] = 255;
         field080 = 1;
         reinterpret_cast<unsigned int&>(field07C) = 0;
-        SELF_VIEW(ObjectMotion40FB70)->SetPolarVelocity(field0C8, 40.0f);
+        SetPolarVelocity(field0C8, 40.0f);
         rotationZ = Unknown483300(velocityY, velocityX) / 0.01745328866f;
     }
     x = facing * velocityX + x;
@@ -1518,11 +1515,11 @@ case 904:
         y + 30.0f - SELF_VIEW(RecordedRange455580)->SelectRange(0, 60),
         facing, 1);
     if (x > 1800.0f || x < -680.0f) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
-    if (SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070) {
-        SELF_VIEW(AnimationState)->ResetSecondaryCounter(1);
+    if (AdvanceNestedFrame() == field070) {
+        ResetSecondaryCounter(1);
         reinterpret_cast<unsigned int&>(field07C) = 0;
     }
     return;
@@ -1530,7 +1527,7 @@ case 904:
 // Native0055F631..0055F8F2 observation chunk; no standalone unit or credit.
 case 905:
     if (owner->field3A0 <= 0) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     if (owner->action == 751 && animationStage < 2) {
@@ -1538,7 +1535,7 @@ case 905:
         y = owner->y + 250.0f;
     }
     if (animationStage == 0 && animationFrame == 0) {
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         field080 = 1;
         scaleX = 0.0f;
         scaleY = 0.0f;
@@ -1562,18 +1559,18 @@ case 905:
     rotationZ = rotationZ + 2.0f;
     if (x > 1800.0f || x < -680.0f ||
         y > 1280.0f || y < -380.0f) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
-    if (SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070) {
-        SELF_VIEW(AnimationState)->ResetSecondaryCounter(2);
+    if (AdvanceNestedFrame() == field070) {
+        ResetSecondaryCounter(2);
         reinterpret_cast<unsigned int&>(field07C) = 0;
         return;
     }
     if (animationFrame == 0) reinterpret_cast<unsigned int&>(field07C) = 0;
     if (animationStage == 2 && animationFrame == 0) {
         OWNER_VIEW(FighterEffectPoliciesF135)->PlaySound(17);
-        SELF_VIEW(ObjectMotion40FB70)->SetPolarVelocity(Unknown483300(
+        SetPolarVelocity(Unknown483300(
             owner->opponent->y + 100.0f - y,
             (owner->opponent->x - x) * facing) / 0.01745328866f, 20.0f);
     }
@@ -1582,11 +1579,11 @@ case 905:
 // Native0055F8F2..0055FA76 observation chunk; no standalone unit or credit.
 case 906:
     if (owner->field3A0 <= 0) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     if (animationStage == 0 && animationFrame == 0) {
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         field080 = 1;
         scaleX = 0.0f;
         scaleY = 0.0f;
@@ -1610,17 +1607,17 @@ case 906:
     rotationZ = rotationZ + 2.0f;
     if (x > 1800.0f || x < -680.0f ||
         y > 1280.0f || y < -380.0f) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
-    if (SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070)
-        SELF_VIEW(BattleEffect)->ClearField74();
+    if (AdvanceNestedFrame() == field070)
+        ClearFrameInfo();
     return;
 
 // Native0055FA76..0055FD08 observation chunk; no standalone unit or credit.
 case 907:
     if (owner->field3A0 <= 0) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     if ((owner->action == 751 || owner->action == 753) && animationStage < 2) {
@@ -1629,11 +1626,11 @@ case 907:
     }
     if ((owner->action == 751 || owner->action == 753) &&
         owner->animationStage > 7 && animationStage < 2) {
-        SELF_VIEW(AnimationState)->ResetSecondaryCounter(2);
+        ResetSecondaryCounter(2);
         return;
     }
     if (animationStage == 0 && animationFrame == 0) {
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         scaleX = 0.0f;
         scaleY = 0.0f;
         color[0] = 255;
@@ -1655,8 +1652,8 @@ case 907:
         scaleX = scaleY * 0.85f;
         scaleY = scaleY * 0.85f;
     }
-    if (SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070) {
-        SELF_VIEW(AnimationState)->ResetSecondaryCounter(2);
+    if (AdvanceNestedFrame() == field070) {
+        ResetSecondaryCounter(2);
         reinterpret_cast<unsigned int&>(field07C) = 0;
         return;
     }
@@ -1665,14 +1662,14 @@ case 907:
         field0DA = SELF_VIEW(RecordedRange455580)->SelectRange(0, 40);
         scaleX = field0DA * 0.01f + 0.8f;
         scaleY = field0DA * 0.01f + 0.8f;
-        SELF_VIEW(AnimationState)->ResetSecondaryCounter(1);
+        ResetSecondaryCounter(1);
     }
     return;
 
 // Native0055FD08..0055FEFA observation chunk; no standalone unit or credit.
 case 908:
     if (owner->field3A0 <= 0) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     if (owner->action == 752 && animationStage < 2) {
@@ -1680,7 +1677,7 @@ case 908:
         y = 0.0f;
     }
     if (animationStage == 0 && animationFrame == 0) {
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         field080 = 1;
         scaleX = 0.0f;
         scaleY = 0.0f;
@@ -1709,21 +1706,21 @@ case 908:
     rotationZ = rotationZ + 2.0f;
     if (x > 1800.0f || x < -680.0f ||
         y > 1280.0f || y < -380.0f) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
-    if (SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070)
-        SELF_VIEW(BattleEffect)->ClearField74();
+    if (AdvanceNestedFrame() == field070)
+        ClearFrameInfo();
     return;
 
 // Native0055FEFA..0056001A observation chunk; no standalone unit or credit.
 case 909:
     if (owner->field3A0 <= 0) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     if (animationStage == 0 && animationFrame == 0) {
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 255;
@@ -1743,8 +1740,8 @@ case 909:
         scaleX = scaleX * 0.85f;
         scaleY = scaleY + 0.2f;
     }
-    if (SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070)
-        SELF_VIEW(BattleEffect)->ClearField74();
+    if (AdvanceNestedFrame() == field070)
+        ClearFrameInfo();
     return;
 
 // Native0056001A..00560140 observation chunk; no standalone unit or credit.
@@ -1754,7 +1751,7 @@ case 910:
         y = owner->y;
     }
     if (animationStage == 0 && animationFrame == 0) {
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 255;
@@ -1764,12 +1761,12 @@ case 910:
         field0DA = 0;
     }
     if (owner->field082 == 0) {
-        if (SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070)
-            SELF_VIEW(BattleEffect)->ClearField74();
+        if (AdvanceNestedFrame() == field070)
+            ClearFrameInfo();
         if (animationStage == 38 && animationFrame == 0 &&
             field0DA < (3 - g_StateRepeatLevelAt006714D0) * 2) {
             field0DA++;
-            SELF_VIEW(AnimationState)->ResetSecondaryCounter(37);
+            ResetSecondaryCounter(37);
         }
     }
     break;
@@ -1777,7 +1774,7 @@ case 910:
 // Native00560140..0056030A observation chunk; no standalone unit or credit.
 case 911:
     if (owner->field3A0 <= 0) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     if (owner->action == 752 && animationStage < 2) {
@@ -1785,7 +1782,7 @@ case 911:
         y = 0.0f;
     }
     if (animationStage == 0 && animationFrame == 0) {
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         field080 = 1;
         scaleX = 0.0f;
         scaleY = 0.0f;
@@ -1810,17 +1807,17 @@ case 911:
     rotationZ = rotationZ + 2.0f;
     if (x > 1800.0f || x < -680.0f ||
         y > 1280.0f || y < -380.0f) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
-    if (SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070)
-        SELF_VIEW(BattleEffect)->ClearField74();
+    if (AdvanceNestedFrame() == field070)
+        ClearFrameInfo();
     return;
 
 // Native0056030A..0056052B observation chunk; no standalone unit or credit.
 case 912:
     if (owner->field3A0 <= 0) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     if (animationStage == 0 && animationFrame == 0) {
@@ -1828,7 +1825,7 @@ case 912:
             0, g_StateRepeatLevelAt006714D0 * 3 + 40) - 20;
         velocityX = 0.0f;
         velocityY = 0.0f;
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         field080 = 1;
         reinterpret_cast<unsigned int&>(field07C) = 0;
         scaleX = 0.25f;
@@ -1837,7 +1834,7 @@ case 912:
         color[1] = 255;
         color[2] = 255;
         color[3] = 255;
-        SELF_VIEW(ObjectMotion40FB70)->SetPolarVelocity(static_cast<float>(field0D8), 30.0f);
+        SetPolarVelocity(static_cast<float>(field0D8), 30.0f);
         rotationZ = Unknown483300(velocityY, velocityX) / 0.01745328866f;
     }
     x = facing * velocityX + x;
@@ -1847,32 +1844,32 @@ case 912:
         velocityY = 0.0f;
         y = 0.0f;
         OWNER_VIEW(FighterShake453E60)->SetCameraShake(3.0f);
-        SELF_VIEW(AnimationState)->ResetPrimaryCounters(909);
+        ResetPrimaryCounters(909);
         rotationZ = 0.0f;
         color[0] = 0;
         OWNER_VIEW(FighterEffectPoliciesF135)->PlaySound(22);
         return;
     }
     if (x > 1400.0f || x < -120.0f) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
-    if (SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070)
-        SELF_VIEW(BattleEffect)->ClearField74();
+    if (AdvanceNestedFrame() == field070)
+        ClearFrameInfo();
     return;
 
 // Native0056052B..005606D8 observation chunk; no standalone unit or credit.
 case 913:
     if (owner->field3A0 <= 0) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     if (animationStage == 0 && animationFrame == 0) {
         field0DA = static_cast<short>(field0C8);
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         field080 = 1;
         reinterpret_cast<unsigned int&>(field07C) = 0;
-        SELF_VIEW(ObjectMotion40FB70)->SetPolarVelocity(static_cast<float>(field0DA), 18.0f);
+        SetPolarVelocity(static_cast<float>(field0DA), 18.0f);
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 255;
@@ -1884,27 +1881,27 @@ case 913:
     y = y - velocityY;
     if (x > 1400.0f || x < -160.0f ||
         y > 1000.0f || y < -160.0f) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     if (color[0] > 20 && animationStage == 2)
         color[0] = color[0] - 20;
-    if (SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070)
-        SELF_VIEW(BattleEffect)->ClearField74();
+    if (AdvanceNestedFrame() == field070)
+        ClearFrameInfo();
     return;
 
 // Native005606D8..005608E6 observation chunk; no standalone unit or credit.
 case 914:
     if (owner->field3A0 <= 0) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     if (animationStage == 0 && animationFrame == 0) {
         field0DA = static_cast<short>(field0C8);
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         field080 = 1;
         reinterpret_cast<unsigned int&>(field07C) = 0;
-        SELF_VIEW(ObjectMotion40FB70)->SetPolarVelocity(
+        SetPolarVelocity(
             static_cast<float>(field0DA + 10 - SELF_VIEW(RecordedRange455580)->SelectRange(0, 20)),
             static_cast<float>(SELF_VIEW(RecordedRange455580)->SelectRange(0, 9) + 6));
         scaleX = 1.0f;
@@ -1916,36 +1913,36 @@ case 914:
     }
     if ((reinterpret_cast<unsigned int&>(field07C) == 1 || reinterpret_cast<unsigned int&>(field07C) == 2 ||
          reinterpret_cast<unsigned int&>(field07C) == 4) && animationStage < 2) {
-        SELF_VIEW(AnimationState)->ResetSecondaryCounter(2);
+        ResetSecondaryCounter(2);
         return;
     }
     x = facing * velocityX + x;
     y = y - velocityY;
     if (x > 1400.0f || x < -160.0f ||
         y > 1000.0f || y < -160.0f) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     if (color[0] > 20 && animationStage == 2)
         color[0] = color[0] - 20;
-    if (SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070)
-        SELF_VIEW(BattleEffect)->ClearField74();
+    if (AdvanceNestedFrame() == field070)
+        ClearFrameInfo();
     return;
 
 // Native005608E6..00560F35 observation chunk; no standalone unit or credit.
 case 915:
     if (owner->field3A0 <= 0) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     if (animationStage == 0 && animationFrame == 0) {
         field0D8 = 0;
         field0DA = static_cast<short>(field0C8);
         field0DC = 0;
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         field080 = 1;
         reinterpret_cast<unsigned int&>(field07C) = 0;
-        SELF_VIEW(ObjectMotion40FB70)->SetPolarVelocity(static_cast<float>(field0DA), 7.0f);
+        SetPolarVelocity(static_cast<float>(field0DA), 7.0f);
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 255;
@@ -1958,7 +1955,7 @@ case 915:
     field0D8--;
     if (g_StateRepeatLevelAt006714D0 == 3 && ++field0DA > 180)
         field0DA = field0DA - 360;
-    SELF_VIEW(ObjectMotion40FB70)->SetPolarVelocity(static_cast<float>(field0DA), 7.0f);
+    SetPolarVelocity(static_cast<float>(field0DA), 7.0f);
     if (field0D8 <= 0) {
         owner->field314 = static_cast<float>(field0DA);
         OWNER_VIEW(FighterEffectPoliciesF135)->SpawnBattleEffect(
@@ -2011,29 +2008,29 @@ case 915:
     }
     if (x > 1400.0f || x < -160.0f ||
         y > 1000.0f || y < -160.0f) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     if (animationStage == 2) {
         if (color[0] > 20)
             color[0] = color[0] - 20;
         else {
-            SELF_VIEW(BattleEffect)->ClearField74();
+            ClearFrameInfo();
             return;
         }
     }
-    if (SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070)
-        SELF_VIEW(BattleEffect)->ClearField74();
+    if (AdvanceNestedFrame() == field070)
+        ClearFrameInfo();
     return;
 
 // Native00560F35..00561265 observation chunk; no standalone unit or credit.
 case 916:
     if (owner->field3A0 <= 0) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     if (animationStage == 0 && animationFrame == 0) {
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         field080 = 1;
         reinterpret_cast<unsigned int&>(field07C) = 0;
         scaleX = 3.0f;
@@ -2045,7 +2042,7 @@ case 916:
         field0D8 = 0;
         field0DA = static_cast<short>(
             SELF_VIEW(RecordedRange455580)->SelectRange(0, 40) + field0C8 - 20.0f);
-        SELF_VIEW(ObjectMotion40FB70)->SetPolarVelocity(
+        SetPolarVelocity(
             static_cast<float>(field0DA), field0D8 * 0.05f);
         rotationZ = Unknown483300(velocityY, velocityX) / 0.01745328866f;
         reinterpret_cast<unsigned int&>(field07C) = 0;
@@ -2060,7 +2057,7 @@ case 916:
         }
     }
     if (animationStage == 2 && reinterpret_cast<unsigned int&>(field07C) != 0) {
-        SELF_VIEW(AnimationState)->ResetSecondaryCounter(3);
+        ResetSecondaryCounter(3);
         velocityX = 0.0f;
         velocityY = 0.0f;
         return;
@@ -2071,18 +2068,18 @@ case 916:
     }
     if (x > 1380.0f || x < -100.0f ||
         y > 960.0f || y < -100.0f) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     if (animationStage == 2) {
         field0D8++;
         x = facing * velocityX + x;
         y = y - velocityY;
-        SELF_VIEW(ObjectMotion40FB70)->SetPolarVelocity(
+        SetPolarVelocity(
             static_cast<float>(field0DA), field0D8 * 0.05f);
     }
-    if (SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+    if (AdvanceNestedFrame() == field070) {
+        ClearFrameInfo();
         return;
     }
     break;
@@ -2091,7 +2088,7 @@ case 916:
 case 995:
     facing = 1;
     if (animationStage == 0 && animationFrame == 0) {
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 255;
@@ -2107,19 +2104,19 @@ case 995:
         field0DA--;
         if (field0DA < 3)
             field0DA = 3;
-        SELF_VIEW(ObjectMotion40FB70)->SetPolarVelocity(
+        SetPolarVelocity(
             static_cast<float>(field0D8), field0DA * 0.8f);
     }
     if (animationStage == 1) {
         field0D8 = static_cast<short>(Unknown483300(
             owner->opponent->y + 100.0f - y,
             owner->opponent->x - x) / 0.01745328866f);
-        SELF_VIEW(ObjectMotion40FB70)->SetPolarVelocity(static_cast<float>(field0D8), 20.0f);
+        SetPolarVelocity(static_cast<float>(field0D8), 20.0f);
         if (x - owner->opponent->x < 20.0f &&
             x - owner->opponent->x > -20.0f &&
             y - owner->opponent->y < 120.0f &&
             y - owner->opponent->y > 80.0f) {
-            SELF_VIEW(BattleEffect)->ClearField74();
+            ClearFrameInfo();
             if (owner->opponent->field366 < 2)
                 owner->opponent->field366++;
             else
@@ -2130,15 +2127,15 @@ case 995:
     }
     x = x + velocityX;
     y = y - velocityY;
-    if (SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070)
-        SELF_VIEW(AnimationState)->ResetSecondaryCounter(1);
+    if (AdvanceNestedFrame() == field070)
+        ResetSecondaryCounter(1);
     break;
 
 // Native00561591..005619F7 observation chunk; no standalone unit or credit.
 case 996:
     facing = 1;
     if (animationStage == 0 && animationFrame == 0) {
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 255;
@@ -2154,21 +2151,21 @@ case 996:
         field0DA--;
         if (field0DA < 3)
             field0DA = 3;
-        SELF_VIEW(ObjectMotion40FB70)->SetPolarVelocity(
+        SetPolarVelocity(
             static_cast<float>(field0D8), field0DA * 0.8f);
     }
     if (animationStage == 1) {
         field0D8 = static_cast<short>(Unknown483300(
             owner->opponent->y + 100.0f - y,
             owner->opponent->x - x) / 0.01745328866f);
-        SELF_VIEW(ObjectMotion40FB70)->SetPolarVelocity(static_cast<float>(field0D8), 20.0f);
+        SetPolarVelocity(static_cast<float>(field0D8), 20.0f);
         if (x - owner->opponent->x < 20.0f &&
             x - owner->opponent->x > -20.0f &&
             y - owner->opponent->y < 120.0f &&
             y - owner->opponent->y > 80.0f) {
             reinterpret_cast<short&>(owner->fieldEFA)++;
             SELF_VIEW(EffectSound45B860)->PlaySharedSound(46);
-            SELF_VIEW(BattleEffect)->ClearField74();
+            ClearFrameInfo();
             if (owner->opponent->meterCooldown > 0) {
                 if (owner->opponent->meterCooldown > 5)
                     owner->opponent->meterCooldown = owner->opponent->meterCooldown - 5;
@@ -2195,8 +2192,8 @@ case 996:
     }
     x = x + velocityX;
     y = y - velocityY;
-    if (SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070)
-        SELF_VIEW(AnimationState)->ResetSecondaryCounter(1);
+    if (AdvanceNestedFrame() == field070)
+        ResetSecondaryCounter(1);
     break;
 
 // Native005619F7..00561B83 observation chunk; no standalone unit or credit.
@@ -2205,7 +2202,7 @@ case 997:
     y = 0.0f;
     field08A = 1;
     if (animationStage == 0 && animationFrame == 0) {
-        SELF_VIEW(SpriteTransform40FBB0)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         scaleX = 3.0f;
         scaleY = 3.0f;
         color[0] = 255;
@@ -2219,20 +2216,20 @@ case 997:
         field0D8 = owner->field3A0;
     }
     if (owner->field3A0 <= 0) {
-        SELF_VIEW(BattleEffect)->ClearField74();
+        ClearFrameInfo();
         return;
     }
     scaleX = static_cast<float>(owner->field3A0) / field0D8 * 2.0f;
     scaleY = static_cast<float>(owner->field3A0) / field0D8 * 2.0f;
     rotationZ = rotationZ + 1.0f;
-    if (SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame() == field070) {
-        SELF_VIEW(AnimationState)->ResetSecondaryCounter(9);
+    if (AdvanceNestedFrame() == field070) {
+        ResetSecondaryCounter(9);
         return;
     }
     break;
 
     default:
-        SELF_VIEW(AnimationProgress40FA30)->AdvanceNestedFrame();
+        AdvanceNestedFrame();
         break;
     }
 }

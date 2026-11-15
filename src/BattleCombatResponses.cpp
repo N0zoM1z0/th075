@@ -29,7 +29,7 @@ bool BattleCombatResponses::ApplyHitResponse(CombatActor *attack, CombatActor *a
             if (FIELD(signed char, defender, 0x3BE) == 0)
                 FIELD(short, defender, 0x3B0) -= FRAME(short, attack, 0x10) / 4;
             if (FIELD(short, defender, 0x3B0) <= 0)
-                reinterpret_cast<BattleState *>(this)->StartHitSequence(reinterpret_cast<AnimationState *>(defender), 143);
+                reinterpret_cast<BattleState *>(this)->StartHitSequence(reinterpret_cast<Fighter *>(defender), 143);
             else
                 defender->ResetPrimaryCounters(FRAME(signed char, attack, 0x38) + 150);
             reinterpret_cast<BattleCombat *>(this)->SpawnMidpointEffect(50, FIELD(unsigned char, defender, 0x66));
@@ -39,7 +39,7 @@ bool BattleCombatResponses::ApplyHitResponse(CombatActor *attack, CombatActor *a
             FIELD(short, defender, 0x3B0) -= FRAME(short, attack, 0x10) / 2;
             if (FRAME(unsigned long, attack, 0x40) & 0x80000) FIELD(short, defender, 0x3B0) = 0;
             if (FIELD(short, defender, 0x3B0) <= 0)
-                reinterpret_cast<BattleState *>(this)->StartHitSequence(reinterpret_cast<AnimationState *>(defender), 143);
+                reinterpret_cast<BattleState *>(this)->StartHitSequence(reinterpret_cast<Fighter *>(defender), 143);
             else
                 defender->ResetPrimaryCounters(FRAME(signed char, attack, 0x38) + 150);
             reinterpret_cast<BattleCombat *>(this)->SpawnMidpointEffect(51, FIELD(unsigned char, defender, 0x66));
@@ -54,7 +54,7 @@ bool BattleCombatResponses::ApplyHitResponse(CombatActor *attack, CombatActor *a
             if (FIELD(signed char, defender, 0x3BE) == 0)
                 FIELD(short, defender, 0x3B0) -= FRAME(short, attack, 0x10) / 4;
             if (FIELD(short, defender, 0x3B0) <= 0)
-                reinterpret_cast<BattleState *>(this)->StartHitSequence(reinterpret_cast<AnimationState *>(defender), 144);
+                reinterpret_cast<BattleState *>(this)->StartHitSequence(reinterpret_cast<Fighter *>(defender), 144);
             else
                 defender->ResetPrimaryCounters(FRAME(signed char, attack, 0x38) + 154);
             reinterpret_cast<BattleCombat *>(this)->SpawnMidpointEffect(50, FIELD(unsigned char, defender, 0x66));
@@ -64,7 +64,7 @@ bool BattleCombatResponses::ApplyHitResponse(CombatActor *attack, CombatActor *a
             FIELD(short, defender, 0x3B0) -= FRAME(short, attack, 0x10) / 2;
             if (FRAME(unsigned long, attack, 0x40) & 0x80000) FIELD(short, defender, 0x3B0) = 0;
             if (FIELD(short, defender, 0x3B0) <= 0)
-                reinterpret_cast<BattleState *>(this)->StartHitSequence(reinterpret_cast<AnimationState *>(defender), 144);
+                reinterpret_cast<BattleState *>(this)->StartHitSequence(reinterpret_cast<Fighter *>(defender), 144);
             else
                 defender->ResetPrimaryCounters(FRAME(signed char, attack, 0x38) + 154);
             reinterpret_cast<BattleCombat *>(this)->SpawnMidpointEffect(51, FIELD(unsigned char, defender, 0x66));
@@ -79,7 +79,7 @@ bool BattleCombatResponses::ApplyHitResponse(CombatActor *attack, CombatActor *a
             FIELD(short, defender, 0x3B0) -= FRAME(short, attack, 0x10) / 4;
             reinterpret_cast<BattleCombat *>(this)->SpawnMidpointEffect(50, FIELD(unsigned char, defender, 0x66));
             if (FIELD(short, defender, 0x3B0) <= 0)
-                reinterpret_cast<BattleState *>(this)->StartHitSequence(reinterpret_cast<AnimationState *>(defender), 145);
+                reinterpret_cast<BattleState *>(this)->StartHitSequence(reinterpret_cast<Fighter *>(defender), 145);
             else
                 defender->ResetPrimaryCounters(158);
             break;
@@ -105,7 +105,7 @@ bool BattleCombatResponses::ApplyAttackHit(CombatActor *attack, CombatActor *att
         ComboRate(attacker) = 1.0f;
     }
     defender->ResetPrimaryCounters(140);
-    defender->ClearByte40();
+    defender->ClearTransformFlag();
     FIELD(int, attack, 0x7C) = 1;
     --ActionWordF1072(attack);
     TimerWordF1072(attack) = FRAME(short, attack, 0x1C);
@@ -121,10 +121,10 @@ bool BattleCombatResponses::ApplyAttackHit(CombatActor *attack, CombatActor *att
             Health(defender) = 0;
             if (FRAME(short, attack, 0x28)) {
                 defender->ResetPrimaryCounters(FRAME(short, attack, 0x28));
-                defender->ClearByte40();
+                defender->ClearTransformFlag();
             } else {
                 defender->ResetPrimaryCounters(70);
-                defender->ClearByte40();
+                defender->ClearTransformFlag();
             }
         }
     }
@@ -158,7 +158,7 @@ void BattleCombatResponses::ApplyGuardHit(CombatActor *attack, CombatActor *atta
         ComboRate(attacker) = 1.0f;
     }
     defender->ResetPrimaryCounters(140);
-    defender->ClearByte40();
+    defender->ClearTransformFlag();
     FIELD(int, attack, 0x7C) = 1;
     --ActionWordF1072(attack);
     TimerWordF1072(attack) = FRAME(short, attack, 0x1C);

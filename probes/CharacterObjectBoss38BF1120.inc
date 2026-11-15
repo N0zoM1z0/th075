@@ -5,11 +5,11 @@ case 0x38B: {
         F1037_POSITION(this).xPosition<g_F1057_LeftBoundAt00659258 ||
         F1037_POSITION(this).yPosition>g_F1057_UpperBoundAt006583B4 ||
         F1037_POSITION(this).yPosition<g_F1057_LowerBoundAt00658374) {
-        NativeParentExpiredAt0045B830();
+        ClearFrameInfo();
         return;
     }
     if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
-        SetNativeMotionAt0040FBB0(0,0.0f,0);
+        ResetTransform(0,0.0f,0);
         scaleX=0.1f;
         scaleY=0.1f;
         color[0]=0;
@@ -62,14 +62,14 @@ case 0x38B: {
     }
     F1037_POSITION(this).xPosition=float(facing)*F1037_MOTION(this).xMotion+F1037_POSITION(this).xPosition;
     if (field080==0 && F1024_PHASE(this).stageAt62<0x17 && field0D8>0) {
-        SetAuxActionAt0040FB40(0x17);
+        ResetSecondaryCounter(0x17);
         return;
     }
-    if (GetNativeActionAt0040FA30()==field070) {
-        NativeParentExpiredAt0045B830();
+    if (AdvanceNestedFrame()==field070) {
+        ClearFrameInfo();
         return;
     }
     if (F1024_PHASE(this).stageAt62==0x17 && F1024_PHASE(this).frameAt64==0)
-        SetAuxActionAt0040FB40(1);
+        ResetSecondaryCounter(1);
     return;
 }

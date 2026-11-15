@@ -5,13 +5,13 @@ case 0x3E6: {
     if (owner->action!=0xD1 &&
         owner->action!=0xD2 &&
         F1024_PHASE(this).stageAt62<2) {
-        SetAuxActionAt0040FB40(2);
+        ResetSecondaryCounter(2);
         return;
     }
     reinterpret_cast<unsigned int&>(x)=reinterpret_cast<unsigned int&>(owner->x);
     F1037_POSITION(this).yPosition=(*(&F1037_POSITION(PARENT).yPosition))+g_F1057_YOffsetAt00657888;
     if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
-        SetNativeMotionAt0040FBB0(0,0.0f,0);
+        ResetTransform(0,0.0f,0);
         scaleX=1.0f;
         scaleY=1.0f;
         color[0]=0xFF;
@@ -27,9 +27,9 @@ case 0x3E6: {
     rotationZ=(rotationZ)+g_F1051_ScaleCeilingAt0065747C;
     if (F1024_PHASE(this).stageAt62==2)
         color[0]=unsigned char(color[0]-12);
-    if (GetNativeActionAt0040FA30()==field070)
-        NativeParentExpiredAt0045B830();
+    if (AdvanceNestedFrame()==field070)
+        ClearFrameInfo();
     if (F1024_PHASE(this).stageAt62==2 && F1024_PHASE(this).frameAt64==0)
-        SetAuxActionAt0040FB40(1);
+        ResetSecondaryCounter(1);
     return;
 }

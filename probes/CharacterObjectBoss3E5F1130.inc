@@ -5,7 +5,7 @@ case 0x3E5: {
     F1037_POSITION(this).yPosition=0.0f;
     field08A=1;
     if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
-        SetNativeMotionAt0040FBB0(0,0.0f,0);
+        ResetTransform(0,0.0f,0);
         scaleX=3.0f;
         scaleY=3.0f;
         color[0]=0xFF;
@@ -19,14 +19,14 @@ case 0x3E5: {
         field0D8=owner->field3A0;
     }
     if (owner->field3A0<=0) {
-        NativeParentExpiredAt0045B830();
+        ClearFrameInfo();
         return;
     }
     scaleX=float(owner->field3A0)/field0D8*2.0f;
     scaleY=float(owner->field3A0)/field0D8*2.0f;
     rotationZ=(rotationZ)+g_F1051_ScaleCeilingAt0065747C;
-    if (GetNativeActionAt0040FA30()==field070) {
-        SetAuxActionAt0040FB40(10);
+    if (AdvanceNestedFrame()==field070) {
+        ResetSecondaryCounter(10);
         return;
     }
     return;

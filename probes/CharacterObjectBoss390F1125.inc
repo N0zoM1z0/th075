@@ -2,11 +2,11 @@
 // 990 native CODE B /212 x86 inside ONE still-NONEXACT 81KB boss.
 case 0x390: {
     if (owner->field3A0<=0) {
-        NativeParentExpiredAt0045B830();
+        ClearFrameInfo();
         return;
     }
     if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
-        SetNativeMotionAt0040FBB0(0,0.0f,0);
+        ResetTransform(0,0.0f,0);
         field080=1;
         field07C=0;
         field0D8=0;
@@ -31,7 +31,7 @@ case 0x390: {
         }
     }
     if (field07C!=0 && F1024_PHASE(this).stageAt62==1) {
-        SetAuxActionAt0040FB40(2);
+        ResetSecondaryCounter(2);
         scaleX=4.0f;
         scaleY=4.0f;
         F1037_MOTION(this).xMotion=0.0f;
@@ -44,7 +44,7 @@ case 0x390: {
         F1037_POSITION(this).xPosition<g_F1057_LeftBoundAt00659258 ||
         F1037_POSITION(this).yPosition>g_F1125_YUpperAt00657884 ||
         F1037_POSITION(this).yPosition<g_F1101_LeftAt0065924C) {
-        NativeParentExpiredAt0045B830();
+        ClearFrameInfo();
         return;
     }
     if (F1024_PHASE(this).stageAt62>1) {
@@ -56,11 +56,11 @@ case 0x390: {
             scaleY=(scaleY)*g_F1070_FadeScaleAt00659454;
         } else {
             color[0]=0;
-            NativeParentExpiredAt0045B830();
+            ClearFrameInfo();
             return;
         }
     }
-    if (GetNativeActionAt0040FA30()==field070)
-        NativeParentExpiredAt0045B830();
+    if (AdvanceNestedFrame()==field070)
+        ClearFrameInfo();
     return;
 }

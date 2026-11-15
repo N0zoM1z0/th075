@@ -5,10 +5,6 @@
 class CharacterAuxObject : public Actor {
 public:
     void Advance();
-    short AdvanceNestedFrame();
-    void ResetSecondaryCounters(short frame);
-    void SetPolarVelocity(float angle, float speed);
-    void EnableTransform(float x, float y, float z);
     int ChooseIntegerRange(int lower, int upper);
     void SpawnPeer(short effect, float x, float y, signed char facing, signed char layer);
     void ClearField8();

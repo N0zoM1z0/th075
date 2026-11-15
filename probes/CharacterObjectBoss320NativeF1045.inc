@@ -7,13 +7,13 @@ case 0x320: {
     if (owner->action != 0x2BC ||
         (owner->action == 0x2BC &&
          owner->animationStage > 12)) {
-        NativeParentExpiredAt0045B830();
+        ClearFrameInfo();
         return;
     }
     x = F1037_POSITION(PARENT).xPosition + float(facing * 66);
     if (F1024_PHASE(this).stageAt62 == 0 &&
         F1024_PHASE(this).frameAt64 == 0) {
-        SetNativeMotionAt0040FBB0(0,0,0);
+        ResetTransform(0,0,0);
         field080 = 1;
         field07C = 0;
         field0D8 = 0;
@@ -29,7 +29,7 @@ case 0x320: {
     velocityY = (velocityY) - g_F1044_GravityAt0065747C;
     if (velocityY < g_F1044_GroundAt0065782C)
         velocityY = 0.0f;
-    if (GetNativeActionAt0040FA30() == field070)
-        SetAuxActionAt0040FB40(1);
+    if (AdvanceNestedFrame() == field070)
+        ResetSecondaryCounter(1);
     return;
 }

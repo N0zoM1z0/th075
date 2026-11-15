@@ -2,11 +2,11 @@
 // Genuine gameplay inside ONE nonexact 81KB CharacterObject advance.
 case 0x323: {
     if (field07C==5) {
-        NativeParentExpiredAt0045B830();
+        ClearFrameInfo();
         return;
     }
     if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
-        SetNativeMotionAt0040FBB0(0,0,0);
+        ResetTransform(0,0,0);
         field080=1;
         field07C=0;
         field0D8=0;
@@ -37,7 +37,7 @@ case 0x323: {
         ++field080;
     }
     if (field07C!=0 && F1024_PHASE(this).stageAt62==1) {
-        SetAuxActionAt0040FB40(2);
+        ResetSecondaryCounter(2);
         scaleX=4.0f;
         scaleY=4.0f;
         F1037_MOTION(this).xMotion=0.0f;
@@ -50,7 +50,7 @@ case 0x323: {
         F1037_POSITION(this).xPosition<g_F1057_LeftBoundAt00659258 ||
         F1037_POSITION(this).yPosition>g_F1059_UpperBoundAt00657884 ||
         F1037_POSITION(this).yPosition<g_F1059_LowerBoundAt0065924C) {
-        NativeParentExpiredAt0045B830();
+        ClearFrameInfo();
         return;
     }
     if (F1024_PHASE(this).stageAt62>1) {
@@ -62,11 +62,11 @@ case 0x323: {
             scaleY=(scaleY)*g_F1070_FadeScaleAt00659454;
         } else {
             color[0]=0;
-            NativeParentExpiredAt0045B830();
+            ClearFrameInfo();
             return;
         }
     }
-    if (GetNativeActionAt0040FA30()==field070)
-        NativeParentExpiredAt0045B830();
+    if (AdvanceNestedFrame()==field070)
+        ClearFrameInfo();
     return;
 }

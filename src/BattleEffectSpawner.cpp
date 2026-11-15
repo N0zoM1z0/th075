@@ -9,7 +9,7 @@ void BattleEffectSpawnerF136::Spawn(short effect, float x, float y, signed char 
                                   unsigned char flagB, const float* parameters,
                                   const void* transform, unsigned char mode)
 {
-    SpawnedEffectF136* node;
+    Actor* node;
     field000->Acquire(&node);
     node->ResetPrimaryCounters(effect);
     NODE_FIELD(float, 0x44) = x;
@@ -27,7 +27,7 @@ void BattleEffectSpawnerF136::Spawn(short effect, float x, float y, signed char 
     NODE_FIELD(float, 0xA0) = 1.0f;
     NODE_FIELD(void*, 0xA4) = FACTORY_FIELD(void*, 0xA4);
     if (transform != 0) {
-        node->ResetNodeTransform(0, 0, 0);
+        node->ResetTransform(0, 0, 0);
         *reinterpret_cast<TransformRecordF136*>(reinterpret_cast<unsigned char*>(node) + 0x10) =
             *static_cast<const TransformRecordF136*>(transform);
     }

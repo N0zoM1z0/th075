@@ -20,9 +20,9 @@ void ObjectActor57D580F1237::Advance()
     }
     switch (action) {
 case 800:
-        if (field07C == 5) { ClearField74(); return; }
+        if (field07C == 5) { ClearFrameInfo(); return; }
         else if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
-            ClearField74();
+            ClearFrameInfo();
             if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                 reinterpret_cast<short&>(owner->fieldEFA) = 0;
                 OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
@@ -33,7 +33,7 @@ case 800:
         }
         else {
             if (animationStage == 0 && animationFrame == 0) {
-                EnableTransform(0.0f, 0.0f, 0.0f);
+                ResetTransform(0.0f, 0.0f, 0.0f);
                 field080 = 1;
                 field07C = 0;
                 SetPolarVelocity(field0C8, field0CC);
@@ -48,28 +48,28 @@ case 800:
             }
             ++field0D8;
             SetPolarVelocity(field0C8, field0D8 * 0.2f + field0CC);
-            if (field07C != 0 && animationStage == 1) { ResetSecondaryCounters(2); return; }
+            if (field07C != 0 && animationStage == 1) { ResetSecondaryCounter(2); return; }
             else {
                 x = facing * velocityX + x;
                 y -= velocityY;
                 if (x > 1380.0f || x < -100.0f || y > 640.0f || y < -120.0f) {
-                    ClearField74(); return;
+                    ClearFrameInfo(); return;
                 }
                 else {
                     if (animationStage > 1) {
                         if (color[0] >= 25) color[0] -= 25;
                         else color[0] = 0;
                     }
-                    if (AdvanceNestedFrame() == field070) ClearField74();
+                    if (AdvanceNestedFrame() == field070) ClearFrameInfo();
                 }
             }
         }
         break;
 
 case 801:
-        if (field07C == 5) { ClearField74(); return; }
+        if (field07C == 5) { ClearFrameInfo(); return; }
         else if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
-            ClearField74();
+            ClearFrameInfo();
             if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                 reinterpret_cast<short&>(owner->fieldEFA) = 0;
                 OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
@@ -80,7 +80,7 @@ case 801:
         }
         else {
             if (animationStage == 0 && animationFrame == 0) {
-                EnableTransform(0.0f, 0.0f, 0.0f);
+                ResetTransform(0.0f, 0.0f, 0.0f);
                 field080 = 1;
                 field07C = 0;
                 SetPolarVelocity(field0C8, field0CC);
@@ -95,28 +95,28 @@ case 801:
             }
             ++field0D8;
             SetPolarVelocity(field0C8, field0D8 * 0.2f + field0CC);
-            if (field07C != 0 && animationStage == 1) { ResetSecondaryCounters(2); return; }
+            if (field07C != 0 && animationStage == 1) { ResetSecondaryCounter(2); return; }
             else {
                 x = facing * velocityX + x;
                 y -= velocityY;
                 if (x > 1380.0f || x < -100.0f || y > 640.0f || y < -120.0f) {
-                    ClearField74(); return;
+                    ClearFrameInfo(); return;
                 }
                 else {
                     if (animationStage > 1) {
                         if (color[0] >= 25) color[0] -= 25;
                         else color[0] = 0;
                     }
-                    if (AdvanceNestedFrame() == field070) ClearField74();
+                    if (AdvanceNestedFrame() == field070) ClearFrameInfo();
                 }
             }
         }
         break;
 
 case 802:
-        if (field07C == 5) { ClearField74(); return; }
+        if (field07C == 5) { ClearFrameInfo(); return; }
         else if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
-            ClearField74();
+            ClearFrameInfo();
             if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                 reinterpret_cast<short&>(owner->fieldEFA) = 0;
                 OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
@@ -127,7 +127,7 @@ case 802:
         }
         else {
             if (animationStage == 0 && animationFrame == 0) {
-                EnableTransform(0.0f, 0.0f, 0.0f);
+                ResetTransform(0.0f, 0.0f, 0.0f);
                 field080 = 1;
                 field07C = 0;
                 SetPolarVelocity(field0C8, field0CC);
@@ -142,33 +142,33 @@ case 802:
             }
             ++field0D8;
             SetPolarVelocity(field0C8, field0D8 * 0.2f + field0CC);
-            if (field07C != 0 && animationStage == 1) { ResetSecondaryCounters(2); return; }
+            if (field07C != 0 && animationStage == 1) { ResetSecondaryCounter(2); return; }
             else {
                 x = facing * velocityX + x;
                 y -= velocityY;
                 if (x > 1380.0f || x < -100.0f || y > 640.0f || y < -120.0f) {
-                    ClearField74(); return;
+                    ClearFrameInfo(); return;
                 }
                 else {
                     if (animationStage > 1) {
                         if (color[0] >= 25) color[0] -= 25;
                         else color[0] = 0;
                     }
-                    if (AdvanceNestedFrame() == field070) ClearField74();
+                    if (AdvanceNestedFrame() == field070) ClearFrameInfo();
                 }
             }
         }
         break;
 
 case 803:
-        if (field07C == 5) { ClearField74(); return; }
+        if (field07C == 5) { ClearFrameInfo(); return; }
         if (x > 1380.0f || x < -100.0f || y > 640.0f || y < -120.0f) {
-            ClearField74(); return;
+            ClearFrameInfo(); return;
         }
         if ((owner->action != 700 || (owner->action == 700 && owner->animationStage > 9)) && animationStage < 2)
             field0D0 *= 0.9f;
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             field080 = 3;
             field07C = 0;
             SetPolarVelocity(field0C8, field0CC);
@@ -187,11 +187,11 @@ case 803:
         y -= velocityY;
         if (animationStage > 1) {
             if (color[0] >= 5) color[0] -= 5;
-            else { ClearField74(); return; }
+            else { ClearFrameInfo(); return; }
         }
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         if (animationStage == 2 && animationFrame == 0 && field0D8 < 50) {
-            ResetSecondaryCounters(1);
+            ResetSecondaryCounter(1);
             field07C = 0;
             ++field0D8;
         }
@@ -199,7 +199,7 @@ case 803:
 
 case 804:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 0.5f;
             scaleY = 0.5f;
             color[0] = 255;
@@ -212,8 +212,8 @@ case 804:
         }
         SetPolarVelocity(field0C8, field0CC);
         if (field0CC > 2.0f) field0CC -= 1.0f;
-        if (animationStage < 2 && field0CC == 2.0f) ResetSecondaryCounters(2);
-        if (field080 == 0) { ClearField74(); return; }
+        if (animationStage < 2 && field0CC == 2.0f) ResetSecondaryCounter(2);
+        if (field080 == 0) { ClearFrameInfo(); return; }
         else {
             x = facing * velocityX + x;
             y += velocityY;
@@ -224,10 +224,10 @@ case 804:
                 scaleX = field0DA * 0.01f + 0.5f;
                 scaleY = field0DA * 0.01f + 0.5f;
             }
-            if (AdvanceNestedFrame() == field070) ClearField74();
-            if (animationStage == 2 && animationFrame == 0) ResetSecondaryCounters(1);
+            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+            if (animationStage == 2 && animationFrame == 0) ResetSecondaryCounter(1);
             if (animationStage == 3 && animationFrame == 0 && field0D8 < 45) {
-                ResetSecondaryCounters(2);
+                ResetSecondaryCounter(2);
                 ++field0D8;
             }
         }
@@ -235,7 +235,7 @@ case 804:
 
 case 805:
         if (animationStage == 0 && animationFrame == 0 && field0D8 == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 0.8f;
             scaleY = 0.8f;
             color[0] = 255;
@@ -253,12 +253,12 @@ case 805:
         else color[0] = 0;
         scaleX *= 0.94f;
         scaleY *= 0.94f;
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
 case 806:
         if (animationStage == 0 && animationFrame == 0 && field0D8 == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 0.0f;
             scaleY = 0.0f;
             color[0] = 255;
@@ -288,7 +288,7 @@ case 806:
             scaleX += 0.8f;
             scaleY += 0.2f;
         }
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         if (animationStage == 2 && animationFrame == 0) OWNER_ACTOR->PlaySoundAt00453D40(7);
         break;
 
@@ -297,9 +297,9 @@ case 807:
             x = owner->x + facing * 3;
             y = owner->y + 110.0f;
         }
-        if (owner->action != 304) { ClearField74(); return; }
+        if (owner->action != 304) { ClearFrameInfo(); return; }
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.5f;
             scaleY = 1.5f;
             color[0] = 255;
@@ -307,12 +307,12 @@ case 807:
             color[2] = 255;
             color[3] = 255;
         }
-        if (owner->field082 == 0 && AdvanceNestedFrame() == field070) ClearField74();
+        if (owner->field082 == 0 && AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
 case 808:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -338,7 +338,7 @@ case 808:
             field07C = 0;
         }
         if (animationStage == 2 && field07C == 1) {
-            ResetSecondaryCounters(3);
+            ResetSecondaryCounter(3);
             UnknownAt0045B850(9);
             velocityX = 0.0f;
             velocityY = 0.0f;
@@ -357,13 +357,13 @@ case 808:
             scaleX = field0DA * 0.01f + 0.5f;
             scaleY = field0DA * 0.01f + 0.5f;
         }
-        if (AdvanceNestedFrame() == field070) ClearField74();
-        if (animationStage == 3 && animationFrame == 0) ResetSecondaryCounters(2);
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (animationStage == 3 && animationFrame == 0) ResetSecondaryCounter(2);
         break;
 
 case 809:
         if (animationStage == 0 && animationFrame == 0 && field0D8 == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 0.8f;
             scaleY = 0.8f;
             color[0] = 255;
@@ -381,12 +381,12 @@ case 809:
         else color[0] = 0;
         scaleX *= 0.94f;
         scaleY *= 0.94f;
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
 case 810:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             field07C = 0;
             scaleX = 1.0f;
             scaleY = 1.0f;
@@ -409,18 +409,18 @@ case 810:
         }
         if ((owner->opponent->health <= 0 || owner->field3A0 <= 0 || owner->health <= 0 || owner->fieldF0C == 0 ||
             (owner->action > 49 && owner->action < 150)) && animationStage < 15) {
-            ResetSecondaryCounters(animationStage + 14);
+            ResetSecondaryCounter(animationStage + 14);
             --owner->fieldF0C;
             if (owner->fieldF0C < 0) owner->fieldF0C = 0;
         }
         if (animationStage > 14) {
             if (color[0] > 10) color[0] -= 10;
-            else { ClearField74(); return; }
+            else { ClearFrameInfo(); return; }
         }
-        if (AdvanceNestedFrame() == field070) { ResetSecondaryCounters(15); return; }
+        if (AdvanceNestedFrame() == field070) { ResetSecondaryCounter(15); return; }
         if (animationStage == 15 && animationFrame == 0) {
             if (field0D8 - 1 < field0C8 * 2) {
-                ResetSecondaryCounters(1);
+                ResetSecondaryCounter(1);
                 ++field0D8;
             }
             else {
@@ -432,7 +432,7 @@ case 810:
 
 case 812:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 0.5f;
             scaleY = 0.5f;
             color[0] = 255;
@@ -461,7 +461,7 @@ case 812:
                         (owner->opponent->x - x) * facing) / g_F1211_AngleDivAt00657828;
                     OWNER_ACTOR->SpawnEffect(813, x, y, facing, 1);
                 }
-                ClearField74();
+                ClearFrameInfo();
                 return;
             }
         }
@@ -470,19 +470,19 @@ case 812:
             scaleX = field0DA * 0.01f + 0.5f;
             scaleY = field0DA * 0.01f + 0.5f;
         }
-        if (AdvanceNestedFrame() == field070) ClearField74();
-        if (animationStage == 2 && animationFrame == 0) ResetSecondaryCounters(1);
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (animationStage == 2 && animationFrame == 0) ResetSecondaryCounter(1);
         if (animationStage == 3 && animationFrame == 0 && field0D8 < 30) {
-            ResetSecondaryCounters(2);
+            ResetSecondaryCounter(2);
             ++field0D8;
         }
         break;
 
 
 case 813:
-        if (field07C == 5) { ClearField74(); return; }
+        if (field07C == 5) { ClearFrameInfo(); return; }
         else if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
-            ClearField74();
+            ClearFrameInfo();
             if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                 reinterpret_cast<short&>(owner->fieldEFA) = 0;
                 OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
@@ -493,7 +493,7 @@ case 813:
         }
         else {
             if (animationStage == 0 && animationFrame == 0) {
-                EnableTransform(0.0f, 0.0f, 0.0f);
+                ResetTransform(0.0f, 0.0f, 0.0f);
                 field080 = 1;
                 field07C = 0;
                 SetPolarVelocity(field0C8, field0CC);
@@ -508,19 +508,19 @@ case 813:
             }
             ++field0D8;
             SetPolarVelocity(field0C8, field0D8 * 0.1f + field0CC);
-            if (field07C != 0 && animationStage == 1) { ResetSecondaryCounters(2); return; }
+            if (field07C != 0 && animationStage == 1) { ResetSecondaryCounter(2); return; }
             else {
                 x = facing * velocityX + x;
                 y -= velocityY;
                 if (x > 1380.0f || x < -100.0f || y > 960.0f || y < -120.0f) {
-                    ClearField74(); return;
+                    ClearFrameInfo(); return;
                 }
                 else {
                     if (animationStage > 1) {
                         if (color[0] >= 25) color[0] -= 25;
                         else color[0] = 0;
                     }
-                    if (AdvanceNestedFrame() == field070) ClearField74();
+                    if (AdvanceNestedFrame() == field070) ClearFrameInfo();
                 }
             }
         }
@@ -531,9 +531,9 @@ case 814:
             x = owner->x + facing * 20;
             y = owner->y + 125.0f;
         }
-        if (owner->action != 307) { ClearField74(); return; }
+        if (owner->action != 307) { ClearFrameInfo(); return; }
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 2.0f;
             scaleY = 2.0f;
             color[0] = 255;
@@ -543,7 +543,7 @@ case 814:
             field01A = 1250;
             rotationX = 110.0f;
         }
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
 case 815:
@@ -551,9 +551,9 @@ case 815:
             x = owner->x;
             y = owner->y + 100.0f;
         }
-        if (owner->action != 301 && owner->action != 391) { ClearField74(); return; }
+        if (owner->action != 301 && owner->action != 391) { ClearFrameInfo(); return; }
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.5f;
             scaleY = 1.5f;
             color[0] = 255;
@@ -563,12 +563,12 @@ case 815:
             field01A = 1250;
             rotationX = 110.0f;
         }
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
 case 816:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 0.5f;
             scaleY = 0.5f;
             color[0] = 255;
@@ -597,7 +597,7 @@ case 816:
                         (owner->opponent->x - x) * facing) / g_F1211_AngleDivAt00657828;
                     OWNER_ACTOR->SpawnEffect(818, x, y, facing, 1);
                 }
-                ClearField74();
+                ClearFrameInfo();
                 return;
             }
         }
@@ -606,17 +606,17 @@ case 816:
             scaleX = field0DA * 0.01f + 0.5f;
             scaleY = field0DA * 0.01f + 0.5f;
         }
-        if (AdvanceNestedFrame() == field070) ClearField74();
-        if (animationStage == 2 && animationFrame == 0) ResetSecondaryCounters(1);
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (animationStage == 2 && animationFrame == 0) ResetSecondaryCounter(1);
         if (animationStage == 3 && animationFrame == 0 && field0D8 < 30) {
-            ResetSecondaryCounters(2);
+            ResetSecondaryCounter(2);
             ++field0D8;
         }
         break;
 
 case 817:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 0.5f;
             scaleY = 0.5f;
             color[0] = 255;
@@ -645,7 +645,7 @@ case 817:
                         (owner->opponent->x - x) * facing) / g_F1211_AngleDivAt00657828;
                     OWNER_ACTOR->SpawnEffect(819, x, y, facing, 1);
                 }
-                ClearField74();
+                ClearFrameInfo();
                 return;
             }
         }
@@ -654,10 +654,10 @@ case 817:
             scaleX = field0DA * 0.01f + 0.5f;
             scaleY = field0DA * 0.01f + 0.5f;
         }
-        if (AdvanceNestedFrame() == field070) ClearField74();
-        if (animationStage == 2 && animationFrame == 0) ResetSecondaryCounters(1);
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (animationStage == 2 && animationFrame == 0) ResetSecondaryCounter(1);
         if (animationStage == 3 && animationFrame == 0 && field0D8 < 30) {
-            ResetSecondaryCounters(2);
+            ResetSecondaryCounter(2);
             ++field0D8;
         }
         break;
@@ -665,9 +665,9 @@ case 817:
 
 
 case 818:
-        if (field07C == 5) { ClearField74(); return; }
+        if (field07C == 5) { ClearFrameInfo(); return; }
         else if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
-            ClearField74();
+            ClearFrameInfo();
             if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                 reinterpret_cast<short&>(owner->fieldEFA) = 0;
                 OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
@@ -678,7 +678,7 @@ case 818:
         }
         else {
             if (animationStage == 0 && animationFrame == 0) {
-                EnableTransform(0.0f, 0.0f, 0.0f);
+                ResetTransform(0.0f, 0.0f, 0.0f);
                 field080 = 1;
                 field07C = 0;
                 SetPolarVelocity(field0C8, field0CC);
@@ -693,28 +693,28 @@ case 818:
             }
             ++field0D8;
             SetPolarVelocity(field0C8, field0D8 * 0.1f + field0CC);
-            if (field07C != 0 && animationStage == 1) { ResetSecondaryCounters(2); return; }
+            if (field07C != 0 && animationStage == 1) { ResetSecondaryCounter(2); return; }
             else {
                 x = facing * velocityX + x;
                 y -= velocityY;
                 if (x > 1380.0f || x < -100.0f || y > 960.0f || y < -120.0f) {
-                    ClearField74(); return;
+                    ClearFrameInfo(); return;
                 }
                 else {
                     if (animationStage > 1) {
                         if (color[0] >= 25) color[0] -= 25;
                         else color[0] = 0;
                     }
-                    if (AdvanceNestedFrame() == field070) ClearField74();
+                    if (AdvanceNestedFrame() == field070) ClearFrameInfo();
                 }
             }
         }
         break;
 
 case 819:
-        if (field07C == 5) { ClearField74(); return; }
+        if (field07C == 5) { ClearFrameInfo(); return; }
         else if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
-            ClearField74();
+            ClearFrameInfo();
             if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                 reinterpret_cast<short&>(owner->fieldEFA) = 0;
                 OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
@@ -725,7 +725,7 @@ case 819:
         }
         else {
             if (animationStage == 0 && animationFrame == 0) {
-                EnableTransform(0.0f, 0.0f, 0.0f);
+                ResetTransform(0.0f, 0.0f, 0.0f);
                 field080 = 1;
                 field07C = 0;
                 SetPolarVelocity(field0C8, field0CC);
@@ -740,19 +740,19 @@ case 819:
             }
             ++field0D8;
             SetPolarVelocity(field0C8, field0D8 * 0.1f + field0CC);
-            if (field07C != 0 && animationStage == 1) { ResetSecondaryCounters(2); return; }
+            if (field07C != 0 && animationStage == 1) { ResetSecondaryCounter(2); return; }
             else {
                 x = facing * velocityX + x;
                 y -= velocityY;
                 if (x > 1380.0f || x < -100.0f || y > 960.0f || y < -120.0f) {
-                    ClearField74(); return;
+                    ClearFrameInfo(); return;
                 }
                 else {
                     if (animationStage > 1) {
                         if (color[0] >= 25) color[0] -= 25;
                         else color[0] = 0;
                     }
-                    if (AdvanceNestedFrame() == field070) ClearField74();
+                    if (AdvanceNestedFrame() == field070) ClearFrameInfo();
                 }
             }
         }
@@ -763,11 +763,11 @@ case 820:
             x = owner->x + facing * 146;
             y = owner->y + 80.0f;
         }
-        if (owner->action != 390) { ClearField74(); return; }
+        if (owner->action != 390) { ClearFrameInfo(); return; }
         OWNER_ACTOR->SpawnEffect(805, x - 10.0f + RecordedRange(0, 40),
             y - 10.0f + RecordedRange(0, 40), facing, 1);
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.5f;
             scaleY = 1.5f;
             color[0] = 255;
@@ -780,10 +780,10 @@ case 820:
             scaleX = field0DA * 0.01f + 1.5f;
             scaleY = field0DA * 0.01f + 1.5f;
         }
-        if (AdvanceNestedFrame() == field070) ClearField74();
-        if (animationStage == 2 && animationFrame == 0) ResetSecondaryCounters(1);
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (animationStage == 2 && animationFrame == 0) ResetSecondaryCounter(1);
         if (animationStage == 3 && animationFrame == 0 && field0D8 < 30) {
-            ResetSecondaryCounters(2);
+            ResetSecondaryCounter(2);
             ++field0D8;
         }
         break;
@@ -793,9 +793,9 @@ case 821:
             x = owner->x + facing * 20;
             y = owner->y + 100.0f;
         }
-        if (owner->action != 310 && owner->action != 392) { ClearField74(); return; }
+        if (owner->action != 310 && owner->action != 392) { ClearFrameInfo(); return; }
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 2.0f;
             scaleY = 2.0f;
             color[0] = 255;
@@ -805,7 +805,7 @@ case 821:
             field01A = 1250;
             rotationX = 140.0f;
         }
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
 
@@ -815,9 +815,9 @@ case 822:
             x = owner->x + facing * 105;
             y = owner->y + 145.0f;
         }
-        if (owner->action != 607 && owner->action != 609) { ClearField74(); return; }
+        if (owner->action != 607 && owner->action != 609) { ClearFrameInfo(); return; }
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 0.2f;
             scaleY = 0.2f;
             color[0] = 255;
@@ -848,7 +848,7 @@ case 822:
             scaleX *= 0.85f;
             scaleY = scaleX;
         }
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         if (animationStage == 1 && animationFrame == 0) {
             for (int burstIndex822 = 0; burstIndex822 < 5; ++burstIndex822) {
                 OWNER_ACTOR->PlaySoundAt00453D40(2);
@@ -867,9 +867,9 @@ case 823:
             x = owner->x + facing * 105;
             y = owner->y + 145.0f;
         }
-        if (owner->action != 607 && owner->action != 609) { ClearField74(); return; }
+        if (owner->action != 607 && owner->action != 609) { ClearFrameInfo(); return; }
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 0.0f;
             scaleY = 0.1f;
             color[0] = 255;
@@ -887,13 +887,13 @@ case 823:
             scaleX += 0.1f;
             scaleY *= 0.85f;
         }
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         if (animationStage == 2 && animationFrame == 0) scaleY += 3.0f;
         break;
 
 case 824:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -907,8 +907,8 @@ case 824:
         scaleX += 0.2f;
         scaleY += 0.2f;
         if (color[0] > 20) color[0] -= 20;
-        else { ClearField74(); return; }
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        else { ClearFrameInfo(); return; }
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
 
@@ -918,9 +918,9 @@ case 825:
             x = owner->x + facing * 105;
             y = owner->y + 145.0f;
         }
-        if (owner->action != 608 && owner->action != 610) { ClearField74(); return; }
+        if (owner->action != 608 && owner->action != 610) { ClearFrameInfo(); return; }
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 0.2f;
             scaleY = 0.2f;
             color[0] = 255;
@@ -951,7 +951,7 @@ case 825:
             scaleX *= 0.85f;
             scaleY = scaleX;
         }
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         if (animationStage == 1 && animationFrame == 0) {
             for (int burstIndex825 = 0; burstIndex825 < 5; ++burstIndex825) {
                 OWNER_ACTOR->PlaySoundAt00453D40(2);
@@ -981,9 +981,9 @@ case 826:
             x = owner->x + facing * 105;
             y = owner->y + 145.0f;
         }
-        if (owner->action != 608 && owner->action != 610) { ClearField74(); return; }
+        if (owner->action != 608 && owner->action != 610) { ClearFrameInfo(); return; }
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 0.0f;
             scaleY = 0.1f;
             color[0] = 255;
@@ -1001,7 +1001,7 @@ case 826:
             scaleX += 0.1f;
             scaleY *= 0.85f;
         }
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         if (animationStage == 2 && animationFrame == 0) scaleY += 3.0f;
         if (animationStage == 3 && animationFrame == 0) scaleY += 3.0f;
         if (animationStage == 4 && animationFrame == 0) scaleY += 3.0f;
@@ -1012,7 +1012,7 @@ case 826:
 
 case 827:
         if (animationStage == 0 && animationFrame == 0 && field0D8 == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 0.8f;
             scaleY = 0.8f;
             color[0] = 255;
@@ -1030,12 +1030,12 @@ case 827:
         else color[0] = 0;
         scaleX *= 0.94f;
         scaleY *= 0.94f;
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
 case 828:
         if (animationStage == 0 && animationFrame == 0 && field0D8 == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 0.8f;
             scaleY = 0.8f;
             color[0] = 255;
@@ -1053,12 +1053,12 @@ case 828:
         else color[0] = 0;
         scaleX *= 0.94f;
         scaleY *= 0.94f;
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
 case 829:
         if (animationStage == 0 && animationFrame == 0 && field0D8 == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 0.8f;
             scaleY = 0.8f;
             color[0] = 255;
@@ -1076,13 +1076,13 @@ case 829:
         else color[0] = 0;
         scaleX *= 0.94f;
         scaleY *= 0.94f;
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
 case 830:
-        if (field07C == 5) { ClearField74(); return; }
+        if (field07C == 5) { ClearFrameInfo(); return; }
         else if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
-            ClearField74();
+            ClearFrameInfo();
             if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                 reinterpret_cast<short&>(owner->fieldEFA) = 0;
                 OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
@@ -1093,7 +1093,7 @@ case 830:
         }
         else {
             if (animationStage == 0 && animationFrame == 0) {
-                EnableTransform(0.0f, 0.0f, 0.0f);
+                ResetTransform(0.0f, 0.0f, 0.0f);
                 field080 = 1;
                 field07C = 0;
                 SetPolarVelocity(field0C8, field0CC);
@@ -1109,19 +1109,19 @@ case 830:
             --field0D8;
             if (field0D8 < 0) field0D8 = 0;
             SetPolarVelocity(0.0f, field0D8 * field0CC * 0.01f);
-            if (field07C != 0 && animationStage == 1) { ResetSecondaryCounters(2); return; }
+            if (field07C != 0 && animationStage == 1) { ResetSecondaryCounter(2); return; }
             else {
                 x = facing * velocityX + x;
                 y -= velocityY;
                 if (x > 1380.0f || x < -100.0f || y > 640.0f || y < -120.0f) {
-                    ClearField74(); return;
+                    ClearFrameInfo(); return;
                 }
                 else {
                     if (animationStage > 1) {
                         if (color[0] >= 25) color[0] -= 25;
                         else color[0] = 0;
                     }
-                    if (AdvanceNestedFrame() == field070) ClearField74();
+                    if (AdvanceNestedFrame() == field070) ClearFrameInfo();
                 }
             }
         }
@@ -1129,7 +1129,7 @@ case 830:
 
 case 831:
         if (owner->action > 49 && owner->action < 150 && animationStage < 4) {
-            ClearField74();
+            ClearFrameInfo();
             OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
             OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
             OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
@@ -1140,7 +1140,7 @@ case 831:
             return;
         }
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             field07C = 0;
             field080 = 0;
             scaleX = 0.5f;
@@ -1159,7 +1159,7 @@ case 831:
             x = velocityX + field0CC;
             y = velocityY + field0D0;
             if ((owner->action == 611 || owner->action == 612 || owner->action == 613) && owner->animationStage == 0) {
-                ResetSecondaryCounters(3);
+                ResetSecondaryCounter(3);
                 velocityX = 0.0f;
                 velocityY = 0.0f;
                 return;
@@ -1172,10 +1172,10 @@ case 831:
             scaleX = field0DA * 0.01f + 0.5f;
             scaleY = field0DA * 0.01f + 0.5f;
         }
-        if (AdvanceNestedFrame() == field070) { ClearField74(); return; }
+        if (AdvanceNestedFrame() == field070) { ClearFrameInfo(); return; }
         if (animationStage == 2 && animationFrame == 0) {
             if (field0DC < 5) {
-                ResetSecondaryCounters(1);
+                ResetSecondaryCounter(1);
                 ++field0DC;
             }
             else field0DC = 0;
@@ -1183,24 +1183,24 @@ case 831:
         if (animationStage == 3 && animationFrame == 0) {
             if (field0DC < 15) {
                 ++field0DC;
-                ResetSecondaryCounters(2);
+                ResetSecondaryCounter(2);
                 return;
             }
-            else { ClearField74(); return; }
+            else { ClearFrameInfo(); return; }
         }
         break;
 
 
 
 case 832:
-        if (field07C == 5) { ClearField74(); return; }
+        if (field07C == 5) { ClearFrameInfo(); return; }
         if (x > 1380.0f || x < -100.0f || y > 640.0f || y < -120.0f) {
-            ClearField74(); return;
+            ClearFrameInfo(); return;
         }
         if ((owner->action != 704 || (owner->action == 704 && owner->animationStage > 9)) && animationStage < 2)
             field0D0 *= 0.9f;
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             field080 = 3;
             field07C = 0;
             SetPolarVelocity(field0C8, field0CC);
@@ -1219,25 +1219,25 @@ case 832:
         y -= velocityY;
         if (animationStage > 1) {
             if (color[0] >= 5) color[0] -= 5;
-            else { ClearField74(); return; }
+            else { ClearFrameInfo(); return; }
         }
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         if (animationStage == 2 && animationFrame == 0 && field0D8 < 50) {
-            ResetSecondaryCounters(1);
+            ResetSecondaryCounter(1);
             field07C = 0;
             ++field0D8;
         }
         break;
 
 case 833:
-        if (field07C == 5) { ClearField74(); return; }
+        if (field07C == 5) { ClearFrameInfo(); return; }
         if (x > 1380.0f || x < -100.0f || y > 640.0f || y < -120.0f) {
-            ClearField74(); return;
+            ClearFrameInfo(); return;
         }
         if ((owner->action != 704 || (owner->action == 704 && owner->animationStage > 9)) && animationStage < 2)
             field0D0 *= 0.75f;
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             field080 = 3;
             field07C = 0;
             SetPolarVelocity(field0C8, field0CC);
@@ -1256,20 +1256,20 @@ case 833:
         y -= velocityY;
         if (animationStage > 1) {
             if (color[0] >= 5) color[0] -= 5;
-            else { ClearField74(); return; }
+            else { ClearFrameInfo(); return; }
         }
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         if (animationStage == 2 && animationFrame == 0 && field0D8 < 50) {
-            ResetSecondaryCounters(1);
+            ResetSecondaryCounter(1);
             field07C = 0;
             ++field0D8;
         }
         break;
 
 case 834:
-        if (field07C == 5) { ClearField74(); return; }
+        if (field07C == 5) { ClearFrameInfo(); return; }
         else if (owner->action > 49 && owner->action < 150 && animationStage < 38) {
-            ClearField74();
+            ClearFrameInfo();
             if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                 reinterpret_cast<short&>(owner->fieldEFA) = 0;
                 OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
@@ -1280,7 +1280,7 @@ case 834:
         }
         else {
             if (animationStage == 0 && animationFrame == 0) {
-                EnableTransform(0.0f, 0.0f, 0.0f);
+                ResetTransform(0.0f, 0.0f, 0.0f);
                 field080 = 2;
                 field07C = 0;
                 SetPolarVelocity(field0C8, field0CC);
@@ -1297,7 +1297,7 @@ case 834:
             if (animationStage < 38) SetPolarVelocity(field0C8, field0D8 * 0.1f + field0CC);
             if (field07C == 4 && field080 > 0) field07C = 0;
             if (field07C != 0 && animationStage < 38) {
-                ResetSecondaryCounters(38);
+                ResetSecondaryCounter(38);
                 velocityX = 0.0f;
                 velocityY = 0.0f;
                 return;
@@ -1306,7 +1306,7 @@ case 834:
                 x = facing * velocityX + x;
                 y -= velocityY;
                 if (x > 1380.0f || x < -100.0f || y > 640.0f || y < -120.0f) {
-                    ClearField74(); return;
+                    ClearFrameInfo(); return;
                 }
                 else {
                     if (animationStage > 37) {
@@ -1315,18 +1315,18 @@ case 834:
                             scaleX *= 0.9f;
                             scaleY = scaleX;
                         }
-                        else { ClearField74(); return; }
+                        else { ClearFrameInfo(); return; }
                     }
-                    if (AdvanceNestedFrame() == field070) ClearField74();
+                    if (AdvanceNestedFrame() == field070) ClearFrameInfo();
                 }
             }
         }
-        if (animationStage == 38 && animationFrame == 0) ResetSecondaryCounters(21);
+        if (animationStage == 38 && animationFrame == 0) ResetSecondaryCounter(21);
         break;
 
 case 835:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.5f;
             scaleY = 1.5f;
             color[0] = 255;
@@ -1339,14 +1339,14 @@ case 835:
         }
         scaleX += 0.05f;
         scaleY += 0.05f;
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
 case 836:
-        if (owner->action > 49 && owner->action < 150 && animationStage < 3) ResetSecondaryCounters(3);
-        if (owner->action == 706 && owner->animationStage == 0 && animationStage < 3) ResetSecondaryCounters(3);
+        if (owner->action > 49 && owner->action < 150 && animationStage < 3) ResetSecondaryCounter(3);
+        if (owner->action == 706 && owner->animationStage == 0 && animationStage < 3) ResetSecondaryCounter(3);
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 0.0f;
             scaleY = 0.0f;
             color[0] = 255;
@@ -1381,13 +1381,13 @@ case 836:
             scaleX += 0.8f;
             scaleY += 0.1f;
         }
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         if (animationStage == 2 && animationFrame == 0) OWNER_ACTOR->PlaySoundAt00453D40(7);
         break;
 
 case 837:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 0.5f;
             scaleY = 0.5f;
             color[0] = 255;
@@ -1399,7 +1399,7 @@ case 837:
             field07C = 0;
         }
         SetPolarVelocity(field0C8, field0CC);
-        if (animationStage < 2 && field0CC == 2.0f) ResetSecondaryCounters(2);
+        if (animationStage < 2 && field0CC == 2.0f) ResetSecondaryCounter(2);
         x = facing * velocityX + x;
         y += velocityY;
         OWNER_ACTOR->SpawnEffect(805, x - 10.0f + RecordedRange(0, 20),
@@ -1409,16 +1409,16 @@ case 837:
             scaleX = field0DA * 0.01f + 0.5f;
             scaleY = field0DA * 0.01f + 0.5f;
         }
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         if (animationStage == 3 && animationFrame == 0 && field0D8 < 30) {
-            ResetSecondaryCounters(2);
+            ResetSecondaryCounter(2);
             ++field0D8;
         }
         break;
 
 case 838:
         if (owner->action > 49 && owner->action < 150 && animationStage < 4) {
-            ClearField74();
+            ClearFrameInfo();
             OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
             OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
             OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
@@ -1429,7 +1429,7 @@ case 838:
             return;
         }
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             field07C = 0;
             if (owner->action == 613) field080 = 1;
             else field080 = 0;
@@ -1450,7 +1450,7 @@ case 838:
             y = velocityY + field0D0;
             if ((field080 == 0 && owner->action != 611 && owner->action != 612) ||
                 ((owner->action == 611 || owner->action == 612 || owner->action == 613) && owner->animationStage == 0)) {
-                ResetSecondaryCounters(3);
+                ResetSecondaryCounter(3);
                 velocityX = 0.0f;
                 velocityY = 0.0f;
                 return;
@@ -1463,10 +1463,10 @@ case 838:
             scaleX = field0DA * 0.01f + 0.5f;
             scaleY = field0DA * 0.01f + 0.5f;
         }
-        if (AdvanceNestedFrame() == field070) { ClearField74(); return; }
+        if (AdvanceNestedFrame() == field070) { ClearFrameInfo(); return; }
         if (animationStage == 2 && animationFrame == 0) {
             if (field0DC < 5) {
-                ResetSecondaryCounters(1);
+                ResetSecondaryCounter(1);
                 ++field0DC;
             }
             else field0DC = 0;
@@ -1474,17 +1474,17 @@ case 838:
         if (animationStage == 3 && animationFrame == 0) {
             if (field0DC < 40) {
                 ++field0DC;
-                ResetSecondaryCounters(2);
+                ResetSecondaryCounter(2);
                 return;
             }
-            else { ClearField74(); return; }
+            else { ClearFrameInfo(); return; }
         }
         break;
 
 case 839:
-        if (field07C == 5) { ClearField74(); return; }
+        if (field07C == 5) { ClearFrameInfo(); return; }
         if (owner->action > 49 && owner->action < 150 && animationStage < 4) {
-            ClearField74();
+            ClearFrameInfo();
             OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
             OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
             OWNER_ACTOR->SpawnEffect(996, x, y, 1, 1);
@@ -1496,7 +1496,7 @@ case 839:
             return;
         }
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -1510,7 +1510,7 @@ case 839:
             field080 = 1;
             field07C = 0;
         }
-        if (field07C != 0) { ClearField74(); return; }
+        if (field07C != 0) { ClearFrameInfo(); return; }
         if (owner->opponent->y + 100.0f < y) velocityY -= 0.02f;
         if (owner->opponent->y + 100.0f >= y) velocityY += 0.02f;
         velocityX += 0.05f;
@@ -1531,10 +1531,10 @@ case 839:
         }
         if (AdvanceNestedFrame() == field070) {
             if (field0DC < 60 && field080 > 0) {
-                ResetSecondaryCounters(1);
+                ResetSecondaryCounter(1);
                 ++field0DC;
             }
-            else ClearField74();
+            else ClearFrameInfo();
         }
         break;
 
@@ -1543,7 +1543,7 @@ case 839:
 case 840:
         reinterpret_cast<unsigned char&>(facing) = reinterpret_cast<unsigned char&>(owner->facing);
         if (animationStage == 0 && animationFrame == 0 && field0D8 == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 0.8f;
             scaleY = 0.8f;
             color[0] = 255;
@@ -1561,7 +1561,7 @@ case 840:
         else color[0] = 0;
         scaleX *= 0.94f;
         scaleY *= 0.94f;
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
 
@@ -1574,9 +1574,9 @@ case 841:
             x = owner->x + facing * 20;
             y = owner->y + 40.0f;
         }
-        if (owner->action != 309) { ClearField74(); return; }
+        if (owner->action != 309) { ClearFrameInfo(); return; }
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 2.0f;
             scaleY = 2.0f;
             color[0] = 255;
@@ -1586,12 +1586,12 @@ case 841:
             field01A = 1250;
             rotationX = -70.0f;
         }
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
 case 842:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             field07C = 0;
             scaleX = 1.0f;
             scaleY = 1.0f;
@@ -1614,18 +1614,18 @@ case 842:
         }
         if ((owner->opponent->health <= 0 || owner->field3A0 <= 0 || owner->health <= 0 || owner->fieldF0C == 0 ||
             (owner->action > 49 && owner->action < 150)) && animationStage < 21) {
-            ResetSecondaryCounters(animationStage + 20);
+            ResetSecondaryCounter(animationStage + 20);
             --owner->fieldF0C;
             if (owner->fieldF0C < 0) owner->fieldF0C = 0;
         }
         if (animationStage > 20) {
             if (color[0] > 10) color[0] -= 10;
-            else { ClearField74(); return; }
+            else { ClearFrameInfo(); return; }
         }
-        if (AdvanceNestedFrame() == field070) { ResetSecondaryCounters(21); return; }
+        if (AdvanceNestedFrame() == field070) { ResetSecondaryCounter(21); return; }
         if (animationStage == 21 && animationFrame == 0) {
             if (field0D8 - 1 < field0C8 * 5.0f) {
-                ResetSecondaryCounters(1);
+                ResetSecondaryCounter(1);
                 ++field0D8;
             }
             else {
@@ -1637,7 +1637,7 @@ case 842:
 
 case 843:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -1664,7 +1664,7 @@ case 843:
         }
         if (animationStage == 2 && field07C == 1) {
             UnknownAt0045B850(14);
-            ResetSecondaryCounters(3);
+            ResetSecondaryCounter(3);
             velocityX = 0.0f;
             velocityY = 0.0f;
             owner->fieldF0C = 0;
@@ -1682,8 +1682,8 @@ case 843:
             scaleX = field0DA * 0.01f + 0.5f;
             scaleY = field0DA * 0.01f + 0.5f;
         }
-        if (AdvanceNestedFrame() == field070) ClearField74();
-        if (animationStage == 3 && animationFrame == 0) ResetSecondaryCounters(2);
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (animationStage == 3 && animationFrame == 0) ResetSecondaryCounter(2);
         break;
 
 case 844:
@@ -1691,9 +1691,9 @@ case 844:
             x = owner->x;
             y = owner->y;
         }
-        if (owner->action != 300) { ClearField74(); return; }
+        if (owner->action != 300) { ClearFrameInfo(); return; }
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -1701,7 +1701,7 @@ case 844:
             color[2] = 255;
             color[3] = 255;
         }
-        if (owner->field082 == 0 && AdvanceNestedFrame() == field070) ClearField74();
+        if (owner->field082 == 0 && AdvanceNestedFrame() == field070) ClearFrameInfo();
         return;
 
 case 845:
@@ -1709,9 +1709,9 @@ case 845:
             x = owner->x;
             y = owner->y;
         }
-        if (owner->action != 302 || (owner->action == 302 && owner->animationStage == 0)) { ClearField74(); return; }
+        if (owner->action != 302 || (owner->action == 302 && owner->animationStage == 0)) { ClearFrameInfo(); return; }
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -1719,7 +1719,7 @@ case 845:
             color[2] = 255;
             color[3] = 255;
         }
-        if (owner->field082 == 0 && AdvanceNestedFrame() == field070) ClearField74();
+        if (owner->field082 == 0 && AdvanceNestedFrame() == field070) ClearFrameInfo();
         return;
 
 
@@ -1728,9 +1728,9 @@ case 846:
             x = owner->x;
             y = owner->y;
         }
-        if (owner->action != 305) { ClearField74(); return; }
+        if (owner->action != 305) { ClearFrameInfo(); return; }
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -1738,7 +1738,7 @@ case 846:
             color[2] = 255;
             color[3] = 255;
         }
-        if (owner->field082 == 0 && AdvanceNestedFrame() == field070) ClearField74();
+        if (owner->field082 == 0 && AdvanceNestedFrame() == field070) ClearFrameInfo();
         return;
 
 case 847:
@@ -1746,9 +1746,9 @@ case 847:
             x = owner->x;
             y = owner->y;
         }
-        if ((owner->action != 303 && owner->action != 393)) { ClearField74(); return; }
+        if ((owner->action != 303 && owner->action != 393)) { ClearFrameInfo(); return; }
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -1756,7 +1756,7 @@ case 847:
             color[2] = 255;
             color[3] = 255;
         }
-        if (owner->field082 == 0 && AdvanceNestedFrame() == field070) ClearField74();
+        if (owner->field082 == 0 && AdvanceNestedFrame() == field070) ClearFrameInfo();
         return;
 
 
@@ -1775,11 +1775,11 @@ case 899:
             y = owner->y + 100.0f;
         }
         if ((owner->action < 150 || owner->action > 158) && animationStage == 0) {
-            ResetSecondaryCounters(1);
+            ResetSecondaryCounter(1);
             owner->fieldF0A = 0;
         }
         if (animationStage == 0 && animationFrame == 0 && field0D8 == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -1794,15 +1794,15 @@ case 899:
             if (color[0] > 30) color[0] -= 30;
             else color[0] = 0;
         }
-        if (AdvanceNestedFrame() == field070) ClearField74();
-        if (animationStage == 1 && animationFrame == 0) ResetSecondaryCounters(0);
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (animationStage == 1 && animationFrame == 0) ResetSecondaryCounter(0);
         return;
 
 case 900:
-        if (field07C == 5) { ClearField74(); return; }
-        if (x > 1380.0f || x < -100.0f || y > 640.0f || y < -120.0f) { ClearField74(); return; }
+        if (field07C == 5) { ClearFrameInfo(); return; }
+        if (x > 1380.0f || x < -100.0f || y > 640.0f || y < -120.0f) { ClearFrameInfo(); return; }
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             field080 = 3;
             field07C = 0;
             SetPolarVelocity(field0C8, field0CC);
@@ -1823,31 +1823,31 @@ case 900:
             if (field0CC < 1.0) {
                 field0CC = 1.0f;
                 field0D8 = 1;
-                ResetSecondaryCounters(2);
+                ResetSecondaryCounter(2);
             }
         }
         x = facing * velocityX + x;
         y -= velocityY;
         if (animationStage > 2) {
             if (color[0] >= 5) color[0] -= 5;
-            else { ClearField74(); return; }
+            else { ClearFrameInfo(); return; }
         }
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         if (animationStage == 2 && animationFrame == 0) {
             field07C = 0;
-            ResetSecondaryCounters(1);
+            ResetSecondaryCounter(1);
         }
         if (animationStage == 3 && animationFrame == 0 && field0D8 < g_F1212_DifficultyAt006714D0 * 2) {
-            ResetSecondaryCounters(2);
+            ResetSecondaryCounter(2);
             field07C = 0;
             ++field0D8;
         }
         break;
 
 case 902:
-        if (owner->field3A0 <= 0) { ClearField74(); return; }
+        if (owner->field3A0 <= 0) { ClearFrameInfo(); return; }
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 0.0f;
             scaleY = 0.0f;
             color[0] = 255;
@@ -1876,18 +1876,18 @@ case 902:
             scaleX += 0.4f;
             scaleY += 0.1f;
         }
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         if (animationStage == 2 && animationFrame == 0) OWNER_ACTOR->PlaySoundAt00453D40(7);
         if (animationStage == 3 && animationFrame == 0 && field0D8 < 0) {
-            ResetSecondaryCounters(2);
+            ResetSecondaryCounter(2);
             ++field0D8;
         }
         break;
 
 case 903:
-        if (owner->field3A0 <= 0) { ClearField74(); return; }
+        if (owner->field3A0 <= 0) { ClearFrameInfo(); return; }
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -1900,7 +1900,7 @@ case 903:
             field07C = 0;
         }
         SetPolarVelocity(field0C8, field0CC);
-        if (animationStage < 2 && field0CC == 2.0f) ResetSecondaryCounters(2);
+        if (animationStage < 2 && field0CC == 2.0f) ResetSecondaryCounter(2);
         x = facing * velocityX + x;
         y += velocityY;
         --field0DA;
@@ -1914,17 +1914,17 @@ case 903:
             scaleX = field0DA * 0.01f + 1.0f;
             scaleY = field0DA * 0.01f + 1.0f;
         }
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         if (animationStage == 3 && animationFrame == 0 && field0D8 < 30) {
-            ResetSecondaryCounters(2);
+            ResetSecondaryCounter(2);
             ++field0D8;
         }
         break;
 
 case 904:
-        if (owner->field3A0 <= 0) { ClearField74(); return; }
+        if (owner->field3A0 <= 0) { ClearFrameInfo(); return; }
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -1948,7 +1948,7 @@ case 904:
             if (y + velocityY <= 0.0f) {
                 velocityX = 0.0f;
                 velocityY = 0.0f;
-                ResetSecondaryCounters(3);
+                ResetSecondaryCounter(3);
             }
         }
         x = facing * velocityX + x;
@@ -1959,18 +1959,18 @@ case 904:
                 y - 10.0f + RecordedRange(0, 20), facing, 1);
             field0DC = 2;
         }
-        if (field07C != 0 && animationStage == 2) { ResetSecondaryCounters(3); return; }
+        if (field07C != 0 && animationStage == 2) { ResetSecondaryCounter(3); return; }
         if (animationFrame == 0) {
             field0DA = RecordedRange(0, 20);
             scaleX = field0DA * 0.02f + 0.9f;
             scaleY = field0DA * 0.02f + 0.9f;
         }
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         if (animationStage == 2 && animationFrame == 0 && field0D8 < 15) {
             ++field0D8;
-            ResetSecondaryCounters(1);
+            ResetSecondaryCounter(1);
         }
-        if (animationStage == 3 && animationFrame == 0) ResetSecondaryCounters(2);
+        if (animationStage == 3 && animationFrame == 0) ResetSecondaryCounter(2);
         break;
 
 
@@ -1978,9 +1978,9 @@ case 904:
 
 
 case 905:
-        if (owner->field3A0 <= 0) { ClearField74(); return; }
+        if (owner->field3A0 <= 0) { ClearFrameInfo(); return; }
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 0.5f;
             scaleY = 0.5f;
             color[0] = 0;
@@ -2001,10 +2001,10 @@ case 905:
                 OWNER_ACTOR->SpawnEffect(902, field0D8 * 240 + RecordedRange(0, 50),
                     0.0f, facing, 1);
         }
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         if (animationStage == 2 && animationFrame == 0 && field0D8 < 13) {
             ++field0D8;
-            ResetSecondaryCounters(1);
+            ResetSecondaryCounter(1);
         }
         break;
 
@@ -2013,9 +2013,9 @@ case 906:
             x = owner->x;
             y = owner->y;
         }
-        if (owner->action != 760 && owner->action != 761 && animationStage < 3) { ResetSecondaryCounters(3); return; }
+        if (owner->action != 760 && owner->action != 761 && animationStage < 3) { ResetSecondaryCounter(3); return; }
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 150.0f, 0.0f);
+            ResetTransform(0.0f, 150.0f, 0.0f);
             scaleX = 0.0f;
             scaleY = 0.05f;
             color[0] = 255;
@@ -2048,15 +2048,15 @@ case 906:
         }
         if (animationStage == 3) {
             if (color[0] > 25) color[0] -= 25;
-            else { ClearField74(); return; }
+            else { ClearFrameInfo(); return; }
         }
         if (animationStage == 2 && animationFrame == 0) {
-            ResetSecondaryCounters(2);
+            ResetSecondaryCounter(2);
             OWNER_ACTOR->SpawnEffect(907, x, y, 1, 0);
         }
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         if (animationStage == 2 && animationFrame == 0) owner->fieldF04 = 1;
-        if (animationStage == 3 && animationFrame == 0) ResetSecondaryCounters(2);
+        if (animationStage == 3 && animationFrame == 0) ResetSecondaryCounter(2);
         break;
 
 case 907:
@@ -2065,7 +2065,7 @@ case 907:
             y = owner->y;
         }
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 150.0f, 0.0f);
+            ResetTransform(0.0f, 150.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -2077,17 +2077,17 @@ case 907:
             scaleX += 0.01f;
             scaleY += 0.01f;
             if (color[0] > 25) color[0] -= 25;
-            else { ClearField74(); return; }
+            else { ClearFrameInfo(); return; }
         }
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
 case 908:
-        if (owner->field3A0 <= 0) { ClearField74(); return; }
+        if (owner->field3A0 <= 0) { ClearFrameInfo(); return; }
         if (animationStage == 0 && animationFrame == 0) {
             field0D8 = 0;
             field0DA = field0C8;
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             field080 = 256;
             field07C = 0;
             SetPolarVelocity(field0DA, field0D8 * 0.1f + 5.0f);
@@ -2106,21 +2106,21 @@ case 908:
         SetPolarVelocity(field0DA, field0D8 * 0.1f + 5.0f);
         x = facing * velocityX + x;
         y -= velocityY;
-        if (x > 1400.0f || x < -160.0f || y > 1000.0f || y < -160.0f) { ClearField74(); return; }
+        if (x > 1400.0f || x < -160.0f || y > 1000.0f || y < -160.0f) { ClearFrameInfo(); return; }
         if (color[0] > 20 && animationStage == 2) color[0] -= 20;
         if (AdvanceNestedFrame() == field070) {
-            ResetSecondaryCounters(1);
+            ResetSecondaryCounter(1);
             field07C = 0;
             return;
         }
         break;
 
 case 909:
-        if (owner->field3A0 <= 0) { ClearField74(); return; }
+        if (owner->field3A0 <= 0) { ClearFrameInfo(); return; }
         if (animationStage == 0 && animationFrame == 0) {
             field0D8 = 0;
             field0DA = field0C8;
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             field080 = 1;
             field07C = 0;
             SetPolarVelocity(field0C8, 1.0f);
@@ -2138,10 +2138,10 @@ case 909:
         x = facing * velocityX + x;
         y -= velocityY;
         rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
-        if (x > 1400.0f || x < -160.0f || y > 1000.0f || y < -160.0f) { ClearField74(); return; }
-        if (field07C != 0 && animationStage < 3) { ResetSecondaryCounters(3); return; }
+        if (x > 1400.0f || x < -160.0f || y > 1000.0f || y < -160.0f) { ClearFrameInfo(); return; }
+        if (field07C != 0 && animationStage < 3) { ResetSecondaryCounter(3); return; }
         if (color[0] > 20 && animationStage == 3) color[0] -= 20;
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         if (animationStage == 2 && animationFrame == 0) {
             field07C = 0;
             field0D8 = 0;
@@ -2151,9 +2151,9 @@ case 909:
         break;
 
 case 910:
-        if (owner->field3A0 <= 0) { ClearField74(); return; }
+        if (owner->field3A0 <= 0) { ClearFrameInfo(); return; }
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             rotationZ = field0CC;
             if (field0CC > 0.0f && field0CC < 180.0f)
                 scaleX = y / MathLookup::ReadPhaseTable(field0CC) / 256.0f * 1.1f;
@@ -2168,14 +2168,14 @@ case 910:
         if (animationStage == 1 && animationFrame == 5 && field0CC > 0.0f && field0CC < 180.0f)
             OWNER_ACTOR->SpawnEffect(911, MathLookup::ReadRatio(90.0f - field0CC) * y + 640.0f, 0.0f, 1, 1);
         scaleY *= 0.85;
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
 case 911:
-        if (owner->field3A0 <= 0) { ClearField74(); return; }
+        if (owner->field3A0 <= 0) { ClearFrameInfo(); return; }
         if (animationStage == 0 && animationFrame == 0) {
             field0D8 = 0;
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             field080 = 1;
             field07C = 0;
             velocityY = 0.0f;
@@ -2203,9 +2203,9 @@ case 911:
         if (animationStage == 4) {
             scaleX *= 0.85f;
             if (color[0] >= 15) color[0] -= 15;
-            else { color[0] = 0; ClearField74(); return; }
+            else { color[0] = 0; ClearFrameInfo(); return; }
         }
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
 
@@ -2216,9 +2216,9 @@ case 911:
 
 
 case 912:
-        if (owner->field3A0 <= 0) { ClearField74(); return; }
+        if (owner->field3A0 <= 0) { ClearFrameInfo(); return; }
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 0.25f;
             scaleY = 0.25f;
             color[0] = 255;
@@ -2232,15 +2232,15 @@ case 912:
         scaleY += 0.15f;
         if (animationStage > 1) {
             if (color[0] > 20) color[0] -= 20;
-            else { ClearField74(); return; }
+            else { ClearFrameInfo(); return; }
         }
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
 case 913:
-        if (owner->field3A0 <= 0) { ClearField74(); return; }
+        if (owner->field3A0 <= 0) { ClearFrameInfo(); return; }
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             rotationZ = field0CC;
             if (field0CC > 0.0f && field0CC < 180.0f)
                 scaleX = y / MathLookup::ReadPhaseTable(field0CC) / 256.0f * 1.1f;
@@ -2254,14 +2254,14 @@ case 913:
         if (animationStage == 1 && animationFrame == 5 && field0CC > 0.0f && field0CC < 180.0f)
             OWNER_ACTOR->SpawnEffect(914, MathLookup::ReadRatio(90.0f - field0CC) * y + 640.0f, 0.0f, 1, 1);
         scaleY *= 0.85;
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
 case 914:
-        if (owner->field3A0 <= 0) { ClearField74(); return; }
+        if (owner->field3A0 <= 0) { ClearFrameInfo(); return; }
         if (animationStage == 0 && animationFrame == 0) {
             field0D8 = 0;
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             field080 = 1;
             field07C = 0;
             velocityY = 0.0f;
@@ -2289,17 +2289,17 @@ case 914:
         if (animationStage == 4) {
             scaleX *= 0.85f;
             if (color[0] >= 15) color[0] -= 15;
-            else { color[0] = 0; ClearField74(); return; }
+            else { color[0] = 0; ClearFrameInfo(); return; }
         }
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
 
 
 case 915:
-        if (owner->field3A0 <= 0) { ClearField74(); return; }
+        if (owner->field3A0 <= 0) { ClearFrameInfo(); return; }
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 0.25f;
             scaleY = 0.25f;
             color[0] = 255;
@@ -2313,15 +2313,15 @@ case 915:
         scaleY += 0.15f;
         if (animationStage > 1) {
             if (color[0] > 20) color[0] -= 20;
-            else { ClearField74(); return; }
+            else { ClearFrameInfo(); return; }
         }
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
 case 916:
-        if (owner->field3A0 <= 0) { ClearField74(); return; }
+        if (owner->field3A0 <= 0) { ClearFrameInfo(); return; }
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             field080 = 1;
             field07C = 0;
             SetPolarVelocity(field0C8, field0CC);
@@ -2339,14 +2339,14 @@ case 916:
         rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
         x = facing * velocityX + x;
         y -= velocityY;
-        if (x > 1380.0f || x < -100.0f || y > 640.0f || y < -120.0f) { ClearField74(); return; }
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (x > 1380.0f || x < -100.0f || y > 640.0f || y < -120.0f) { ClearFrameInfo(); return; }
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
 case 917:
-        if (owner->field3A0 <= 0) { ClearField74(); return; }
+        if (owner->field3A0 <= 0) { ClearFrameInfo(); return; }
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             field080 = 1;
             field07C = 0;
             SetPolarVelocity(field0C8, field0CC);
@@ -2364,14 +2364,14 @@ case 917:
         rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
         x = facing * velocityX + x;
         y -= velocityY;
-        if (x > 1380.0f || x < -100.0f || y > 640.0f || y < -120.0f) { ClearField74(); return; }
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (x > 1380.0f || x < -100.0f || y > 640.0f || y < -120.0f) { ClearFrameInfo(); return; }
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
 case 918:
-        if (owner->field3A0 <= 0) { ClearField74(); return; }
+        if (owner->field3A0 <= 0) { ClearFrameInfo(); return; }
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             field080 = 1;
             field07C = 0;
             SetPolarVelocity(field0C8, field0CC);
@@ -2389,14 +2389,14 @@ case 918:
         rotationZ = AngleAt00483300(velocityY, velocityX) / g_F1211_AngleDivAt00657828;
         x = facing * velocityX + x;
         y -= velocityY;
-        if (x > 1380.0f || x < -100.0f || y > 640.0f || y < -120.0f) { ClearField74(); return; }
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (x > 1380.0f || x < -100.0f || y > 640.0f || y < -120.0f) { ClearFrameInfo(); return; }
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
 case 919:
-        if (owner->field3A0 <= 0) { ClearField74(); return; }
+        if (owner->field3A0 <= 0) { ClearFrameInfo(); return; }
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             field0D8 = 0;
             field0DA = 0;
             scaleX = 1.0f;
@@ -2415,7 +2415,7 @@ case 919:
                     1 - (RecordedRange(0, 100) < 50) * 2, 1);
                 field0D8 = 0;
             }
-            ResetSecondaryCounters(2);
+            ResetSecondaryCounter(2);
         }
         break;
 
@@ -2426,7 +2426,7 @@ case 919:
 case 995:
         facing = 1;
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -2447,7 +2447,7 @@ case 995:
             field0D8 = static_cast<short>(AngleAt00483300(owner->opponent->y + 100.0f - y, owner->opponent->x - x) / 0.017453288659453392f);
             SetPolarVelocity(field0D8, 20.0f);
             if (x - owner->opponent->x < 20.0f && x - owner->opponent->x > -20.0f && y - owner->opponent->y < 120.0f && y - owner->opponent->y > 80.0f) {
-                ClearField74();
+                ClearFrameInfo();
                 if (owner->opponent->field366 < 2) {
                     ++owner->opponent->field366;
                 }
@@ -2461,14 +2461,14 @@ case 995:
         x += velocityX;
         y -= velocityY;
         if (AdvanceNestedFrame() == field070) {
-            ResetSecondaryCounters(1);
+            ResetSecondaryCounter(1);
         }
         break;
 
 case 996:
         facing = 1;
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -2491,7 +2491,7 @@ case 996:
             if (x - owner->opponent->x < 20.0f && x - owner->opponent->x > -20.0f && y - owner->opponent->y < 120.0f && y - owner->opponent->y > 80.0f) {
                 ++reinterpret_cast<short&>(owner->fieldEFA);
                 PlaySharedSound(46);
-                ClearField74();
+                ClearFrameInfo();
                 if (owner->opponent->meterCooldown > 0) {
                     if (owner->opponent->meterCooldown > 5) {
                         owner->opponent->meterCooldown -= 5;
@@ -2522,7 +2522,7 @@ case 996:
         x += velocityX;
         y -= velocityY;
         if (AdvanceNestedFrame() == field070) {
-            ResetSecondaryCounters(1);
+            ResetSecondaryCounter(1);
         }
         break;
 
@@ -2531,7 +2531,7 @@ case 997:
         y = 0.0f;
         field08A = 1;
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 3.0f;
             scaleY = 3.0f;
             color[0] = 255;
@@ -2545,7 +2545,7 @@ case 997:
             field0D8 = owner->field3A0;
         }
         if (owner->field3A0 <= 0) {
-            ClearField74();
+            ClearFrameInfo();
             return;
         }
         else {
@@ -2553,7 +2553,7 @@ case 997:
             scaleY = static_cast<float>(owner->field3A0) / field0D8 * 2;
             rotationZ += 1.0f;
             if (AdvanceNestedFrame() == field070) {
-                ResetSecondaryCounters(9);
+                ResetSecondaryCounter(9);
                 break;
             }
         }

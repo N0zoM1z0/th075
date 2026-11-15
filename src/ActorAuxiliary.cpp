@@ -2,11 +2,8 @@
 #include "Fighter.hpp"
 #include "CharacterObject.hpp"
 #include "FighterAnimationPhaseBorrowedF1024.hpp"
-#include "AnimationProgress40FA30.hpp"
 #include "CharacterAuxAction.hpp"
 #include "CharacterAIPolicy.hpp"
-#include "ObjectMotion40FB70.hpp"
-#include "SpriteTransform40FBB0.hpp"
 
 class AuxiliaryActor4A80F0 : public CharacterObject {
 public:
@@ -22,8 +19,6 @@ extern int g_AI507B20Countdown;
 #define OWNER(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(owner) + (offset)))
 #define OWNER_FLOAT(offset) *reinterpret_cast<float*>(reinterpret_cast<unsigned char*>(owner) + (offset))
 #define OTHER_FLOAT(offset) *reinterpret_cast<float*>(reinterpret_cast<unsigned char*>(OWNER(void*, 0x2E8)) + (offset))
-#define RESET(n) reinterpret_cast<AnimationState*>(this)->ResetSecondaryCounter(n)
-#define POLAR(a, s) reinterpret_cast<ObjectMotion40FB70*>(this)->SetPolarVelocity(a, s)
 #define SPAWN(id, x, y, f, l) reinterpret_cast<EffectEmitterF120*>(owner)->Spawn(id, x, y, f, l)
 
 void AuxiliaryActor4A80F0::Update()
@@ -34,7 +29,7 @@ void AuxiliaryActor4A80F0::Update()
         field0DC = 0;
         field0DE = 0;
         field0E0 = 0;
-        reinterpret_cast<SpriteTransform40FBB0*>(this)->ResetNodeTransform(0.0f, 0.0f, 0.0f);
+        ResetTransform(0.0f, 0.0f, 0.0f);
         field080 = 1;
         field07C = 0;
         scaleX = 1.0f;
@@ -81,7 +76,7 @@ void AuxiliaryActor4A80F0::Update()
         field0DE = static_cast<short>(AngleAt00483300(
             OTHER_FLOAT(0x48) + 100.0f - y,
             (OTHER_FLOAT(0x44) - x) * facing) / 0.017453288659453392f);
-        RESET(2);
+        ResetSecondaryCounter(2);
         --OWNER(short, 0xF14);
         --OWNER(short, 0xF16);
     }
@@ -94,7 +89,7 @@ void AuxiliaryActor4A80F0::Update()
          (action == 830 && OWNER(short, 0xF16) == 3) ||
          (action == 829 && OWNER(short, 0xF16) == 2) ||
          (action == 828 && OWNER(short, 0xF16) == 1))) {
-        RESET(3);
+        ResetSecondaryCounter(3);
         --OWNER(short, 0xF16);
         velocityX = 0.0f;
         velocityY = 0.0f;
@@ -102,8 +97,8 @@ void AuxiliaryActor4A80F0::Update()
     if (OWNER(short, 0xF12) == 2) {
         SPAWN(836, x, y, 1, 0);
     }
-    if (OWNER(short, 0xF12) == 99 && animationStage < 7 && field0DC == 0) RESET(7);
-    if (OWNER(short, 0xF12) == 3 && animationStage < 2) RESET(2);
+    if (OWNER(short, 0xF12) == 99 && animationStage < 7 && field0DC == 0) ResetSecondaryCounter(7);
+    if (OWNER(short, 0xF12) == 3 && animationStage < 2) ResetSecondaryCounter(2);
     field0D8 = static_cast<short>((OWNER(short, 0xF10) - 180) + field0C8);
     if (field0D8 > 180) field0D8 -= 360;
     if (field0D8 < -180) field0D8 += 360;
@@ -112,44 +107,44 @@ void AuxiliaryActor4A80F0::Update()
     if (OWNER(signed char, 0x39D) == 1 && field0DA > 140) field0DA = 140;
     if (OWNER(short, 0xF12) == 6 && field0DA > 180) field0DA = 180;
     if (animationStage == 1) {
-        POLAR(field0D8, field0DA);
+        SetPolarVelocity(field0D8, field0DA);
         x = static_cast<int>(OWNER(short, 0xF0C) + facing * velocityX);
         y = static_cast<int>(OWNER(short, 0xF0E) + velocityY);
         field080 = 1;
         field07C = 0;
     }
     if (animationStage == 2 && OWNER(short, 0xF12) == 3 && field0DC == 0) {
-        POLAR(field0D8, field0DA);
+        SetPolarVelocity(field0D8, field0DA);
         x = static_cast<int>(OWNER(short, 0xF0C) + facing * velocityX);
         y = static_cast<int>(OWNER(short, 0xF0E) + velocityY);
         SPAWN(836, x, y, 1, 0);
-        if (field07C != 0 && field07C != 4 && field07C != 5 && field07C != 6) { RESET(7); return; }
+        if (field07C != 0 && field07C != 4 && field07C != 5 && field07C != 6) { ResetSecondaryCounter(7); return; }
         if (field07C == 4 || field07C == 5 || field07C == 6) {
             field080 = 1;
             field07C = 0;
         }
     }
     if (animationStage == 2 && field0DC > 0) {
-        POLAR(field0DE, field0DC * 0.5f + 5.0f);
+        SetPolarVelocity(field0DE, field0DC * 0.5f + 5.0f);
         ++field0DC;
         field0E0 = 1;
         x = facing * velocityX + x;
         y = y - velocityY;
         SPAWN(836, x, y, 1, 0);
-        if (field07C == 4 || (field07C != 0 && field07C != 4 && field07C != 5 && field07C != 6)) { RESET(7); return; }
+        if (field07C == 4 || (field07C != 0 && field07C != 4 && field07C != 5 && field07C != 6)) { ResetSecondaryCounter(7); return; }
         if (field07C == 5 || field07C == 6) {
             field080 = 1;
             field07C = 0;
         }
     }
     if (animationStage == 3) {
-        POLAR(field0D8, field0DA);
+        SetPolarVelocity(field0D8, field0DA);
         x = static_cast<int>(OWNER(short, 0xF0C) + facing * velocityX);
         y = static_cast<int>(OWNER(short, 0xF0E) + velocityY);
         OWNER_FLOAT(0x314) = action - 828;
         if (field0DC == 0) SPAWN(841, OWNER(signed char, 0x66) * 20 + x, y, OWNER(signed char, 0x66), 1);
         if (field0DC > 120 || field07C == 4 || (field07C != 0 && field07C != 4 && field07C != 5 && field07C != 6)) {
-            RESET(7);
+            ResetSecondaryCounter(7);
             field0DC = 0;
             return;
         }
@@ -158,28 +153,26 @@ void AuxiliaryActor4A80F0::Update()
     }
     if (animationStage == 4) {
         if (field0DC == 1) SPAWN(841, OWNER(signed char, 0x66) * 20 + x, y, OWNER(signed char, 0x66), 1);
-        if (field0DC > 120 || field07C == 4 || (field07C != 0 && field07C != 4 && field07C != 5 && field07C != 6)) { RESET(7); return; }
+        if (field0DC > 120 || field07C == 4 || (field07C != 0 && field07C != 4 && field07C != 5 && field07C != 6)) { ResetSecondaryCounter(7); return; }
         ++field0DC;
     }
     if (animationStage == 7) color[0] = color[0] - 25;
     if (OWNER(short, 0xF12) == 6) SPAWN(843, x, y, 1, 1);
-    if (reinterpret_cast<AnimationProgress40FA30*>(this)->AdvanceNestedFrame() == field070) {
-        reinterpret_cast<BattleEffect*>(this)->ClearField74();
+    if (AdvanceNestedFrame() == field070) {
+        ClearFrameInfo();
         if (field0DC == 0) --OWNER(short, 0xF14);
         if (field0E0 == 0) --OWNER(short, 0xF16);
     } else {
-        if (animationStage == 2 && animationFrame == 0) RESET(1);
-        if (animationStage == 3 && animationFrame == 0) RESET(2);
-        if (animationStage == 4 && animationFrame == 0) RESET(3);
-        if (animationStage == 5 && animationFrame == 0) RESET(4);
-        if (animationStage == 6 && animationFrame == 0) RESET(5);
-        if (animationStage == 7 && animationFrame == 0) RESET(6);
+        if (animationStage == 2 && animationFrame == 0) ResetSecondaryCounter(1);
+        if (animationStage == 3 && animationFrame == 0) ResetSecondaryCounter(2);
+        if (animationStage == 4 && animationFrame == 0) ResetSecondaryCounter(3);
+        if (animationStage == 5 && animationFrame == 0) ResetSecondaryCounter(4);
+        if (animationStage == 6 && animationFrame == 0) ResetSecondaryCounter(5);
+        if (animationStage == 7 && animationFrame == 0) ResetSecondaryCounter(6);
     }
 }
 
 #undef SPAWN
-#undef POLAR
-#undef RESET
 #undef OWNER
 #undef FIELD
 

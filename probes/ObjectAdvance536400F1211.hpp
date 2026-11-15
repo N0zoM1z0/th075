@@ -37,14 +37,7 @@ class ObjectActor536400F1211 : public CharacterObject {
 public:
     void BindAnimation();
     void Advance();
-    short AdvanceNestedFrame();
-    void ResetPrimaryCounters(short);
-    void ResetSecondaryCounters(short);
-    void ResetAnimationCountersAt0040FB00(short, short, short);
-    void SetPolarVelocity(float, float);
-    void EnableTransform(float, float, float);
     int RecordedRange(int, int);
-    void ClearField74();
     void PlaySharedSound(short);
 };
 

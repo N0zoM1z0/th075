@@ -4,7 +4,7 @@ case 0x325: {
     if (owner->action>49 &&
         owner->action<150 &&
         F1024_PHASE(this).stageAt62<2) {
-        NativeParentExpiredAt0045B830();
+        ClearFrameInfo();
         for (int shot=0;shot<3;++shot) {
             reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
                 0x3E4, reinterpret_cast<unsigned int&>(x), reinterpret_cast<unsigned int&>(y),1,1);
@@ -17,7 +17,7 @@ case 0x325: {
         return;
     }
     if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
-        SetNativeMotionAt0040FBB0(0,0,0);
+        ResetTransform(0,0,0);
         scaleX=1.0f;
         scaleY=1.0f;
         color[0]=0xFF;
@@ -28,7 +28,7 @@ case 0x325: {
         field07C=0;
         reinterpret_cast<F1051Grandparent*>(PARENT)->NativePrepareAt00453D40(0x17);
     }
-    if (GetNativeActionAt0040FA30()==field070)
-        NativeParentExpiredAt0045B830();
+    if (AdvanceNestedFrame()==field070)
+        ClearFrameInfo();
     return;
 }

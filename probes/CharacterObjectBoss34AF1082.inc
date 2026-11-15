@@ -5,7 +5,7 @@ case 0x34A: {
     y=0.0f;
     field08A=1;
     if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
-        SetNativeMotionAt0040FBB0(0,0.0f,0);
+        ResetTransform(0,0.0f,0);
         scaleX=2.5f;
         scaleY=2.5f;
         color[0]=0xFF;
@@ -25,7 +25,7 @@ case 0x34A: {
         if (owner->action!=0x2C0 ||
             (owner->animationStage==0x2C0 &&
              owner->animationStage>6)) {
-            SetAuxActionAt0040FB40(2);
+            ResetSecondaryCounter(2);
             return;
         }
     }
@@ -33,13 +33,13 @@ case 0x34A: {
         if (color[0]>15)
             color[0]-=15;
         else {
-            NativeParentExpiredAt0045B830();
+            ClearFrameInfo();
             return;
         }
     }
     rotationZ=(rotationZ)+g_F1051_ScaleCeilingAt0065747C;
-    if (GetNativeActionAt0040FA30()==field070) {
-        NativeParentExpiredAt0045B830();
+    if (AdvanceNestedFrame()==field070) {
+        ClearFrameInfo();
         return;
     }
     return;

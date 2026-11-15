@@ -2,11 +2,6 @@
 
 #include "MeilingFighter.hpp"
 #include "Fighter.hpp"
-// Declaration-only receiver views; never construct or embed these partial owners.
-class StageOpponent5E59C0 {
-public:
-    void ResetPrimaryCounters(short);
-};
 void __cdecl SetCameraOverrideAt00412CC0(unsigned char, float, float, float);
 void __cdecl SnapCameraAt00412CF0();
 

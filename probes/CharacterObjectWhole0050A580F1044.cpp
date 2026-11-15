@@ -7,7 +7,7 @@
 // Native original-shaped TH075 CharacterObject whole switch C++ candidate.
 // Original source/owner layout and the entire 81KB machine function remain NONEXACT;
 // all genuine case/default gameplay is sourced from independent original PE evidence.
-class FighterSwitchF569_Boss0050A580 : public CharacterObject { public: void Advance(); void NativeParentExpiredAt0045B830(); void NativeHitAt0045B860(short); void SetNativeMotionAt0040FBB0(float,float,float); short GetNativeActionAt0040FA30(); void SetAuxActionAt0040FB40(short); void SetNativeActionAt0040FAC0(short); void SetNativeTwoFloatsAt0040FB70(float,float); void SetNativeAngleBitsAt0040FB70(unsigned int,float); int RandomBoundaryAt00455580(int,int); };
+class FighterSwitchF569_Boss0050A580 : public CharacterObject { public: void Advance(); void NativeHitAt0045B860(short); void SetNativeAngleBitsAt0040FB70(unsigned int,float); int RandomBoundaryAt00455580(int,int); };
 // F1181: effect/sound IDs and layer/link/mode parameters use the native
 // low-word/low-byte contract witnessed by the independently exact callees.
 // Coordinate/angle DWORD overloads deliberately preserve the original raw
@@ -289,7 +289,7 @@ void FighterSwitchF569_Boss0050A580::Advance() {
 #include "CharacterObjectBoss3E4F1132.inc"
 #include "CharacterObjectBoss3E5F1130.inc"
 #include "CharacterObjectBoss3E6F1129.inc"
-        default: GetNativeActionAt0040FA30();
+        default: AdvanceNestedFrame();
     }
 }
 #undef PARENT_GRANDPARENT

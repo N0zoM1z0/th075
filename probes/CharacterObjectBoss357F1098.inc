@@ -4,7 +4,7 @@ case 0x357: {
     if (owner->action>0x31 &&
         owner->action<0x96 &&
         F1024_PHASE(this).stageAt62<0x17) {
-        SetAuxActionAt0040FB40(0x17);
+        ResetSecondaryCounter(0x17);
         return;
     }
     if (owner->action==0x189 && F1024_PHASE(this).stageAt62<0x17) {
@@ -13,7 +13,7 @@ case 0x357: {
         F1037_POSITION(this).yPosition=120.0f;
     }
     if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
-        SetNativeMotionAt0040FBB0(0,0.0f,0);
+        ResetTransform(0,0.0f,0);
         scaleX=0.1f;
         scaleY=0.1f;
         color[0]=0;
@@ -39,8 +39,8 @@ case 0x357: {
         }
     }
     if (owner->field082==0 &&
-        GetNativeActionAt0040FA30()==field070) {
-        NativeParentExpiredAt0045B830();
+        AdvanceNestedFrame()==field070) {
+        ClearFrameInfo();
         return;
     }
     return;

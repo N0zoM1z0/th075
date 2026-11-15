@@ -6,7 +6,7 @@ case 0x359: {
         field080=1;
         field07C=0;
     }
-    if (GetNativeActionAt0040FA30()==field070)
-        NativeParentExpiredAt0045B830();
+    if (AdvanceNestedFrame()==field070)
+        ClearFrameInfo();
     return;
 }

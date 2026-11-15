@@ -6,7 +6,7 @@
 case F1074_CASE: {
     if (owner->action>0x31 &&
         owner->action<0x96) {
-        NativeParentExpiredAt0045B830();
+        ClearFrameInfo();
         for (int shot=0;shot<10;++shot) {
             reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
                 0x3E4,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),1,1);
@@ -22,11 +22,11 @@ case F1074_CASE: {
         F1037_POSITION(this).xPosition<g_F1057_LeftBoundAt00659258 ||
         F1037_POSITION(this).yPosition>g_F1057_UpperBoundAt006583B4 ||
         F1037_POSITION(this).yPosition<g_F1057_LowerBoundAt00658374) {
-        NativeParentExpiredAt0045B830();
+        ClearFrameInfo();
         return;
     }
     if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
-        SetNativeMotionAt0040FBB0(0,0.0f,0);
+        ResetTransform(0,0.0f,0);
         scaleX=1.0f;
         scaleY=1.0f;
         color[0]=0xFF;
@@ -52,7 +52,7 @@ case F1074_CASE: {
         float(RandomBoundaryAt00455580(0,60))+F1037_POSITION(this).yPosition-g_F1068_ActionSpeedAt00657878,
         facing,0);
     if (field080==0) {
-        NativeParentExpiredAt0045B830();
+        ClearFrameInfo();
         reinterpret_cast<F1051Grandparent*>(PARENT)->InitTrajectoryAt00453E60(5.0f);
         reinterpret_cast<F1051Grandparent*>(PARENT)->NativePrepareAt00453D40(1);
 #define F1074_SPAWN_33A() \
@@ -74,7 +74,7 @@ case F1074_CASE: {
 #undef F1074_SPAWN_33A
         return;
     }
-    if (GetNativeActionAt0040FA30()==field070)
-        SetAuxActionAt0040FB40(1);
+    if (AdvanceNestedFrame()==field070)
+        ResetSecondaryCounter(1);
     return;
 }

@@ -9,7 +9,7 @@ case F1065_ACTION: {
     if (owner->action>0x45 &&
         owner->action<0x96 &&
         F1024_PHASE(this).stageAt62<0x17) {
-        NativeParentExpiredAt0045B830();
+        ClearFrameInfo();
         for (int shot=0;shot<8;++shot) {
             reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
                 0x3E4, reinterpret_cast<unsigned int&>(x), reinterpret_cast<unsigned int&>(y), 1, 1);
@@ -22,11 +22,11 @@ case F1065_ACTION: {
         return;
     }
     if (field07C==5) {
-        NativeParentExpiredAt0045B830();
+        ClearFrameInfo();
         return;
     }
     if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
-        SetNativeMotionAt0040FBB0(0,0,0);
+        ResetTransform(0,0,0);
         scaleX=0.1f;
         scaleY=0.1f;
         color[0]=0;
@@ -39,7 +39,7 @@ case F1065_ACTION: {
         field080=0;
         field07C=0;
     }
-    SetNativeTwoFloatsAt0040FB70(F1066_INITIAL_ANGLE,
+    SetPolarVelocity(F1066_INITIAL_ANGLE,
         float(field0DC)*g_F1057_SpeedScaleAt006590B4);
     field0DC=short(field0DC-6);
     if (field0DC<20)
@@ -68,16 +68,16 @@ case F1065_ACTION: {
     F1037_POSITION(this).yPosition=F1037_POSITION(this).yPosition-F1037_MOTION(this).yMotion;
     if (field080==0 &&
         F1024_PHASE(this).stageAt62<0x17 && field0D8>0) {
-        SetAuxActionAt0040FB40(0x17);
+        ResetSecondaryCounter(0x17);
         return;
     }
-    if (GetNativeActionAt0040FA30()==field070) {
-        NativeParentExpiredAt0045B830();
+    if (AdvanceNestedFrame()==field070) {
+        ClearFrameInfo();
         return;
     }
     if (F1024_PHASE(this).stageAt62==0x17 && F1024_PHASE(this).frameAt64==0 &&
         field0DA<0) {
-        SetAuxActionAt0040FB40(1);
+        ResetSecondaryCounter(1);
         ++field0DA;
     }
     return;

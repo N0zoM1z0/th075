@@ -42,10 +42,10 @@ Input::PollJoysticks,0x00403F40,function
 Input::EnumerateJoystickDevice,0x00404010,function
 Input::ConfigureJoystickAxis,0x00404120,function
 SpriteGeometry::SetFourDwords,0x0040DB10,function
-AnimationState::ResetPrimaryCounters,0x0040FAC0,function
-AnimationState::SetThreeCounters,0x0040FB00,function
-AnimationState::ResetSecondaryCounter,0x0040FB40,function
-AnimationState::ClearByte40,0x0040FC50,function
+Actor::ResetPrimaryCounters,0x0040FAC0,function
+Actor::SetThreeCounters,0x0040FB00,function
+Actor::ResetSecondaryCounter,0x0040FB40,function
+Actor::ClearTransformFlag,0x0040FC50,function
 SpriteScene::CopyVector,0x00411BB0,function
 SpriteScene::DispatchGlobalDraw,0x00411BE0,function
 TextRasterizer::DecodeHexDigit,0x0041CA80,function
@@ -53,7 +53,7 @@ SetClampedGameValue,0x00423C60,function
 BattleHud::DrawSelectedNotice,0x00440B00,function
 BattleState::StartHitSequence,0x00443FC0,function
 Fighter::IsGroundedStateWindow,0x00455010,function
-BattleEffect::ClearField74,0x0045B830,function
+CharacterObject::ClearFrameInfo,0x0045B830,function
 Fighter::InitializeNotice,0x0045CDC0,function
 Fighter::ConfigureNoticeText,0x0045D650,function
 Fighter::BeginNoticeTransition,0x0045D6A0,function
@@ -156,9 +156,9 @@ MeilingFighter::AdvanceAuxiliary,0x005E5500,function
 MeilingFighter::ConfigureStage,0x005E59C0,function
 MeilingFighter::RenderStage,0x005E68C0,function
 MeilingFighter::PollCommands,0x005E6F70,function
-AnimationProgress40FA30::AdvanceNestedFrame,0x0040FA30,function
-SpriteTransform40FBB0::ResetNodeTransform,0x0040FBB0,function
-ObjectMotion40FB70::SetPolarVelocity,0x0040FB70,function
+Actor::AdvanceNestedFrame,0x0040FA30,function
+Actor::ResetTransform,0x0040FBB0,function
+Actor::SetPolarVelocity,0x0040FB70,function
 RecordedRange455580::SelectRange,0x00455580,function
 EffectSound45B860::PlaySharedSound,0x0045B860,function
 FighterShake453E60::SetCameraShake,0x00453E60,function
@@ -374,7 +374,7 @@ SakuyaFighter::ResetRound,0x004C09A0,function
 Fighter::ResetRound,0x00457010,function
 Fighter::ClearAuxiliaryWordsAt00453A10,0x00453A10,function
 InputMapping::ClearHeldCounts,0x004071A0,function
-Fighter::SelectMovementAnimation,0x00451EB0,function
+Fighter::ForwardBaseAction,0x00451EB0,function
 BattleEffectManager::DeleteFourListsAt0045BA30,0x0045BA30,function
 FighterCommandQueues::InitializeAt0045B920,0x0045B920,function
 BattleEffectManager::DestroyOwnedEffectsAt0045B9B0,0x0045B9B0,function

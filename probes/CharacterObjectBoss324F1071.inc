@@ -2,13 +2,13 @@
 // B /278 x86. True stage-specific gameplay inside ONE nonexact 81KB Boss.
 case 0x324: {
     if (field07C==5) {
-        NativeParentExpiredAt0045B830();
+        ClearFrameInfo();
         return;
     }
     if (owner->action>0x31 &&
         owner->action<0x96 &&
         F1024_PHASE(this).stageAt62<2) {
-        NativeParentExpiredAt0045B830();
+        ClearFrameInfo();
         for (int shot=0;shot<3;++shot) {
             reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
                 0x3E4,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),1,1);
@@ -21,7 +21,7 @@ case 0x324: {
         return;
     }
     if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
-        SetNativeMotionAt0040FBB0(0,0.0f,0);
+        ResetTransform(0,0.0f,0);
         field080=1;
         field07C=0;
         field0D8=0;
@@ -46,7 +46,7 @@ case 0x324: {
         }
     }
     if (field07C!=0 && F1024_PHASE(this).stageAt62==1) {
-        SetAuxActionAt0040FB40(2);
+        ResetSecondaryCounter(2);
         scaleX=4.0f;
         scaleY=4.0f;
         F1037_MOTION(this).xMotion=0.0f;
@@ -54,7 +54,7 @@ case 0x324: {
         return;
     }
     if (F1037_POSITION(this).yPosition-F1037_MOTION(this).yMotion<=g_F1044_GroundAt0065782C) {
-        SetNativeActionAt0040FAC0(0x325);
+        ResetPrimaryCounters(0x325);
         F1037_POSITION(this).yPosition=0.0f;
         F1037_MOTION(this).xMotion=0.0f;
         F1037_MOTION(this).yMotion=0.0f;
@@ -66,7 +66,7 @@ case 0x324: {
         F1037_POSITION(this).xPosition<g_F1057_LeftBoundAt00659258 ||
         F1037_POSITION(this).yPosition>g_F1059_UpperBoundAt00657884 ||
         F1037_POSITION(this).yPosition<g_F1059_LowerBoundAt0065924C) {
-        NativeParentExpiredAt0045B830();
+        ClearFrameInfo();
         return;
     }
     if (F1024_PHASE(this).stageAt62>1) {
@@ -78,11 +78,11 @@ case 0x324: {
             scaleY=(scaleY)*g_F1070_FadeScaleAt00659454;
         } else {
             color[0]=0;
-            NativeParentExpiredAt0045B830();
+            ClearFrameInfo();
             return;
         }
     }
-    if (GetNativeActionAt0040FA30()==field070)
-        NativeParentExpiredAt0045B830();
+    if (AdvanceNestedFrame()==field070)
+        ClearFrameInfo();
     return;
 }

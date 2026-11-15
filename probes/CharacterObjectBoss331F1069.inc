@@ -29,13 +29,13 @@ case 0x331: {
     if ((owner->action<0x96 ||
          owner->action>0x9E) &&
         F1024_PHASE(this).stageAt62==0) {
-        SetAuxActionAt0040FB40(1);
+        ResetSecondaryCounter(1);
         owner->fieldF0A=0;
     }
     if (F1024_PHASE(this).stageAt62==0 &&
         F1024_PHASE(this).frameAt64==0 &&
         field0D8==0) {
-        SetNativeMotionAt0040FBB0(0,0.0f,0);
+        ResetTransform(0,0.0f,0);
         scaleX=1.0f;
         scaleY=1.0f;
         color[0]=0xFF;
@@ -52,9 +52,9 @@ case 0x331: {
         else
             color[0]=0;
     }
-    if (GetNativeActionAt0040FA30()==field070)
-        NativeParentExpiredAt0045B830();
+    if (AdvanceNestedFrame()==field070)
+        ClearFrameInfo();
     if (F1024_PHASE(this).stageAt62==1 && F1024_PHASE(this).frameAt64==0)
-        SetAuxActionAt0040FB40(0);
+        ResetSecondaryCounter(0);
     return;
 }

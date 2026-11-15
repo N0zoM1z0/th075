@@ -18,13 +18,7 @@ class ObjectActor57D580F1237 : public CharacterObject {
 public:
     void BindAnimation();
     void Advance();
-    short AdvanceNestedFrame();
-    void ResetPrimaryCounters(short);
-    void ResetSecondaryCounters(short);
-    void SetPolarVelocity(float, float);
-    void EnableTransform(float, float, float);
     int RecordedRange(int, int);
-    void ClearField74();
     void PlaySharedSound(short);
     // Native empty receiver call has RET 4; original parameter typedef unknown.
     void UnknownAt0045B850(int);

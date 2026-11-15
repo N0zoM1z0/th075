@@ -3,7 +3,7 @@
 // state of the still-NONEXACT 81KB CharacterObject Advance.
 case 0x388: {
     if (owner->field3A0<=0) {
-        NativeParentExpiredAt0045B830();
+        ClearFrameInfo();
         return;
     }
     if (field07C==6) {
@@ -11,7 +11,7 @@ case 0x388: {
         field07C=0;
     }
     if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
-        SetNativeMotionAt0040FBB0(0,60.0f,0);
+        ResetTransform(0,60.0f,0);
         scaleX=1.0f;
         scaleY=1.0f;
         color[0]=0xFF;
@@ -41,13 +41,13 @@ case 0x388: {
         if (F1037_POSITION(this).yPosition+F1037_MOTION(this).yMotion<=g_F1044_GroundAt0065782C ||
             (field07C!=0 && field07C!=6)) {
             F1037_MOTION(this).yMotion=0.0f;
-            SetAuxActionAt0040FB40(3);
+            ResetSecondaryCounter(3);
             reinterpret_cast<F1051Grandparent*>(PARENT)->NativePrepareAt00453D40(5);
             return;
         }
     }
-    if (GetNativeActionAt0040FA30()==field070)
-        NativeParentExpiredAt0045B830();
+    if (AdvanceNestedFrame()==field070)
+        ClearFrameInfo();
     if (F1024_PHASE(this).stageAt62==2 && F1024_PHASE(this).frameAt64==0) {
         reinterpret_cast<F1051Grandparent*>(PARENT)->NativePrepareAt00453D40(4);
         F1037_MOTION(this).xMotion=-10.0f;

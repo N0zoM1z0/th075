@@ -15,12 +15,7 @@ public:
     // virtual prefix, not a complete owner; never instantiate or embed it.
     void BindAnimation();
     void Advance();
-    short AdvanceNestedFrame();
-    void ResetSecondaryCounters(short);
-    void SetPolarVelocity(float, float);
-    void EnableTransform(float, float, float);
     int RecordedRange(int, int);
-    void ClearField74();
     void PlaySharedSound(short);
 };
 

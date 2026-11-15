@@ -2,7 +2,7 @@
 // bytes / 56 x86. True game behavior, NOT an independent callable.
 case 0x322: {
     if (field07C == 5) {
-        NativeParentExpiredAt0045B830();
+        ClearFrameInfo();
         return;
     }
     if (field07C == 6) {
@@ -10,7 +10,7 @@ case 0x322: {
         field080 = 1;
     }
     if (F1024_PHASE(this).stageAt62 == 0 && F1024_PHASE(this).frameAt64 == 0) {
-        SetNativeMotionAt0040FBB0(0,0,0);
+        ResetTransform(0,0,0);
         field080 = 1;
         field07C = 0;
         field0D8 = 0;
@@ -22,7 +22,7 @@ case 0x322: {
         color[3] = 0xFF;
         rotationZ = 15.0f;
     }
-    if (GetNativeActionAt0040FA30() == field070)
-        NativeParentExpiredAt0045B830();
+    if (AdvanceNestedFrame() == field070)
+        ClearFrameInfo();
     return;
 }

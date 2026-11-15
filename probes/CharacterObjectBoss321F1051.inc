@@ -3,11 +3,11 @@
 // Parent +0xE4, target grandparent +0x2E8 are borrowed, not embedded owners.
 case 0x321: {
     if (owner->action != 0x2BC) {
-        NativeParentExpiredAt0045B830();
+        ClearFrameInfo();
         return;
     }
     if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
-        SetNativeMotionAt0040FBB0(0,0,0);
+        ResetTransform(0,0,0);
         field080=1;
         field07C=0;
         field0D8=0;
@@ -34,7 +34,7 @@ case 0x321: {
         velocityY=0.0f;
         velocityX=0.0f;
         reinterpret_cast<F1051Grandparent*>(PARENT)->NativePrepareAt00453D40(0xB);
-        SetNativeActionAt0040FAC0(0x322);
+        ResetPrimaryCounters(0x322);
         reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
             0x347, reinterpret_cast<unsigned int&>(x), reinterpret_cast<unsigned int&>(y),
             facing, 1);
@@ -50,7 +50,7 @@ case 0x321: {
         return;
     }
     if (owner->animationStage==9 && F1024_PHASE(this).stageAt62<6) {
-        SetAuxActionAt0040FB40(F1024_PHASE(this).stageAt62+5);
+        ResetSecondaryCounter(F1024_PHASE(this).stageAt62+5);
         velocityX=
             float(facing) *
             (F1037_POSITION(PARENT_GRANDPARENT).xPosition-F1037_POSITION(this).xPosition) /
@@ -63,11 +63,11 @@ case 0x321: {
         F1037_POSITION(this).xPosition;
     F1037_POSITION(this).yPosition=F1037_POSITION(this).yPosition+
         F1037_MOTION(this).yMotion;
-    if (GetNativeActionAt0040FA30()==field070) {
-        SetAuxActionAt0040FB40(6);
+    if (AdvanceNestedFrame()==field070) {
+        ResetSecondaryCounter(6);
         return;
     }
     if (F1024_PHASE(this).stageAt62==6 && F1024_PHASE(this).frameAt64==0)
-        SetAuxActionAt0040FB40(1);
+        ResetSecondaryCounter(1);
     return;
 }

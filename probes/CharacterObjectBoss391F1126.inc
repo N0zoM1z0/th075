@@ -2,11 +2,11 @@
 // 1,259 native CODE B /277 x86 in one incomplete 81KB Boss.
 case 0x391: {
     if (owner->field3A0<=0) {
-        NativeParentExpiredAt0045B830();
+        ClearFrameInfo();
         return;
     }
     if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
-        SetNativeMotionAt0040FBB0(0,0.0f,0);
+        ResetTransform(0,0.0f,0);
         scaleX=0.0f;
         scaleY=0.0f;
         color[0]=0xFF;
@@ -62,7 +62,7 @@ case 0x391: {
     }
     if (field0DA==1) {
         if (F1037_POSITION(this).yPosition+F1037_MOTION(this).yMotion<=g_F1044_GroundAt0065782C) {
-            NativeParentExpiredAt0045B830();
+            ClearFrameInfo();
             reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
                 0x392,reinterpret_cast<unsigned int&>(x),0,
                 facing,1);
@@ -71,15 +71,15 @@ case 0x391: {
     }
     if (F1037_POSITION(this).xPosition>g_F1126_RightAt00659884 ||
         F1037_POSITION(this).xPosition<g_F1126_LeftAt006595E4) {
-        NativeParentExpiredAt0045B830();
+        ClearFrameInfo();
         return;
     }
     F1037_POSITION(this).yPosition=F1037_POSITION(this).yPosition+F1037_MOTION(this).yMotion;
     F1037_POSITION(this).xPosition=float(facing)*F1037_MOTION(this).xMotion+F1037_POSITION(this).xPosition;
-    if (GetNativeActionAt0040FA30()==field070)
-        NativeParentExpiredAt0045B830();
+    if (AdvanceNestedFrame()==field070)
+        ClearFrameInfo();
     if (F1024_PHASE(this).stageAt62==0x1F && F1024_PHASE(this).frameAt64==0) {
-        SetAuxActionAt0040FB40(1);
+        ResetSecondaryCounter(1);
         return;
     }
     return;

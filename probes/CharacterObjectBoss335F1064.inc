@@ -5,13 +5,13 @@ case 0x335: {
         F1037_POSITION(this).xPosition<g_F1057_LeftBoundAt00659258 ||
         F1037_POSITION(this).yPosition>g_F1057_UpperBoundAt006583B4 ||
         F1037_POSITION(this).yPosition<g_F1057_LowerBoundAt00658374) {
-        NativeParentExpiredAt0045B830();
+        ClearFrameInfo();
         return;
     }
     if (owner->action>0x31 &&
         owner->action<0x96 &&
         F1024_PHASE(this).stageAt62<7) {
-        NativeParentExpiredAt0045B830();
+        ClearFrameInfo();
         for (int shot=0;shot<4;++shot) {
             reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
                 0x3E4,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),1,1);
@@ -24,11 +24,11 @@ case 0x335: {
         return;
     }
     if (field07C==5) {
-        NativeParentExpiredAt0045B830();
+        ClearFrameInfo();
         return;
     }
     if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
-        SetNativeMotionAt0040FBB0(0,0,0);
+        ResetTransform(0,0,0);
         field080=1;
         field07C=0;
         scaleX=1.0f;
@@ -42,7 +42,7 @@ case 0x335: {
     }
     F1037_POSITION(this).xPosition=float(facing)*F1037_MOTION(this).xMotion + F1037_POSITION(this).xPosition;
     F1037_POSITION(this).yPosition=F1037_POSITION(this).yPosition-F1037_MOTION(this).yMotion;
-    if (GetNativeActionAt0040FA30()==field070)
-        NativeParentExpiredAt0045B830();
+    if (AdvanceNestedFrame()==field070)
+        ClearFrameInfo();
     return;
 }

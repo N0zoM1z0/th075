@@ -7,7 +7,7 @@ case F1108_CASE: {
     if (owner->action>0x31 &&
         owner->action<0x96 &&
         F1024_PHASE(this).stageAt62<2) {
-        NativeParentExpiredAt0045B830();
+        ClearFrameInfo();
         for (int shot=0;shot<2;++shot)
             reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
                 0x3E4,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),1,1);
@@ -20,7 +20,7 @@ case F1108_CASE: {
     }
     if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0 &&
         field0D8==0) {
-        SetNativeMotionAt0040FBB0(0,0.0f,0);
+        ResetTransform(0,0.0f,0);
         scaleX=1.0f;
         scaleY=1.0f;
         color[0]=0xFF;
@@ -47,15 +47,15 @@ case F1108_CASE: {
         F1037_POSITION(this).xPosition<g_F1076_LeftAt006595EC ||
         F1037_POSITION(this).yPosition>g_F1057_UpperBoundAt006583B4 ||
         F1037_POSITION(this).yPosition<g_F1076_LeftAt006595EC) {
-        NativeParentExpiredAt0045B830();
+        ClearFrameInfo();
         return;
     }
-    if (GetNativeActionAt0040FA30()==field070) {
+    if (AdvanceNestedFrame()==field070) {
         reinterpret_cast<unsigned int&>(owner->field314)=reinterpret_cast<unsigned int&>(field0C8);
         reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
             F1108_NEXT_ID,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),
             facing,1);
-        NativeParentExpiredAt0045B830();
+        ClearFrameInfo();
     }
     return;
 }

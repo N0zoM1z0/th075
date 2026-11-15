@@ -4,7 +4,7 @@
 case 0x355: {
     if (owner->action>0x45 &&
         owner->action<0x96) {
-        NativeParentExpiredAt0045B830();
+        ClearFrameInfo();
         for (int shot=0;shot<10;++shot) {
             reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
                 0x3E4,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),1,1);
@@ -17,7 +17,7 @@ case 0x355: {
         return;
     }
     if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
-        SetNativeMotionAt0040FBB0(0,0.0f,0);
+        ResetTransform(0,0.0f,0);
         scaleX=0.0f;
         scaleY=0.0f;
         color[0]=0xFF;
@@ -57,7 +57,7 @@ case 0x355: {
     if (field07C==4 && field080>0)
         field07C=0;
     if (field07C!=0 && F1024_PHASE(this).stageAt62<0x1F) {
-        SetAuxActionAt0040FB40(0x1F);
+        ResetSecondaryCounter(0x1F);
         F1037_MOTION(this).xMotion=0.0f;
         F1037_MOTION(this).yMotion=0.0f;
         field0DC=2;
@@ -69,12 +69,12 @@ case 0x355: {
     }
     F1037_POSITION(this).yPosition=F1037_POSITION(this).yPosition+F1037_MOTION(this).yMotion;
     F1037_POSITION(this).xPosition=float(facing)*F1037_MOTION(this).xMotion+F1037_POSITION(this).xPosition;
-    if (GetNativeActionAt0040FA30()==field070)
-        NativeParentExpiredAt0045B830();
+    if (AdvanceNestedFrame()==field070)
+        ClearFrameInfo();
     if (F1024_PHASE(this).stageAt62==0x1F && F1024_PHASE(this).frameAt64==0) {
         if (field0DA<6) {
             ++field0DA;
-            SetAuxActionAt0040FB40(1);
+            ResetSecondaryCounter(1);
             return;
         }
         F1037_MOTION(this).xMotion=0.0f;

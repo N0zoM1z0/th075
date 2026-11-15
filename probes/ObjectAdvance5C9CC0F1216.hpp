@@ -17,13 +17,7 @@ class ObjectActor5C9CC0F1216 : public CharacterObject {
 public:
     void BindAnimation();
     void Advance();
-    short AdvanceNestedFrame();
-    void ResetPrimaryCounters(short);
-    void ResetSecondaryCounters(short);
-    void SetPolarVelocity(float, float);
-    void EnableTransform(float, float, float);
     int RecordedRange(int, int);
-    void ClearField74();
     void PlaySharedSound(short);
     // Native 0045B850 is an empty receiver call with RET 4; the observed
     // callers pass integer constants. Its original typedef is unknown.

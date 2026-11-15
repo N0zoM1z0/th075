@@ -2,7 +2,7 @@
 // 1263 CODE B /273 x86 inside ONE nonexact original 81KB boss.
 case 0x350: {
     if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
-        SetNativeMotionAt0040FBB0(0,0.0f,0);
+        ResetTransform(0,0.0f,0);
         field07C=0;
         scaleX=1.0f;
         scaleY=1.0f;
@@ -13,7 +13,7 @@ case 0x350: {
         if (field0D8!=140)
             field0D8=0;
     }
-    SetNativeTwoFloatsAt0040FB70(
+    SetPolarVelocity(
         float(owner->fieldF0C)+
             g_F1085_ParentMultiplierAt0065989C*static_cast<const float&>(field0C8),
         float(field0D8));
@@ -28,11 +28,11 @@ case 0x350: {
         owner->health<=0 ||
         owner->field3A0<=0) &&
         F1024_PHASE(this).stageAt62<2)
-        SetAuxActionAt0040FB40(2);
+        ResetSecondaryCounter(2);
     if (owner->action==0x2C1 &&
         owner->animationStage==2 &&
         F1024_PHASE(this).stageAt62<2)
-        SetAuxActionAt0040FB40(2);
+        ResetSecondaryCounter(2);
     if (F1024_PHASE(this).stageAt62==0) {
         if ((owner->action==0x192 && owner->animationStage==4) ||
             (owner->action==0x260 && owner->animationStage==4) ||
@@ -44,7 +44,7 @@ case 0x350: {
                     0x364,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),
                     owner->facing,1);
             }
-            SetAuxActionAt0040FB40(2);
+            ResetSecondaryCounter(2);
             reinterpret_cast<F1051Grandparent*>(PARENT)->NativePrepareAt00453D40(4);
         }
     }
@@ -52,23 +52,23 @@ case 0x350: {
         if (color[0]>10)
             color[0]-=10;
         else {
-            NativeParentExpiredAt0045B830();
+            ClearFrameInfo();
             return;
         }
     }
     if (F1024_PHASE(this).stageAt62==1 &&
         owner->action==0x2C1 &&
         owner->animationStage==3) {
-        SetAuxActionAt0040FB40(0);
+        ResetSecondaryCounter(0);
         reinterpret_cast<F1051Grandparent*>(PARENT)->NativePrepareAt00453D40(20);
         return;
     }
-    if (GetNativeActionAt0040FA30()==field070) {
-        NativeParentExpiredAt0045B830();
+    if (AdvanceNestedFrame()==field070) {
+        ClearFrameInfo();
         return;
     }
     if (F1024_PHASE(this).stageAt62==2 && F1024_PHASE(this).frameAt64==0) {
-        SetAuxActionAt0040FB40(0);
+        ResetSecondaryCounter(0);
         owner->field36C=(owner->field36C)-g_F1085_LastYAt006592A4;
         reinterpret_cast<F1051Grandparent*>(PARENT)->NativePrepareAt00453D40(20);
     }

@@ -2,7 +2,7 @@
 // 402 native CODE B /91 x86 inside ONE NONEXACT 81KB parent.
 case 0x38E: {
     if (owner->field3A0<=0) {
-        NativeParentExpiredAt0045B830();
+        ClearFrameInfo();
         return;
     }
     if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
@@ -15,14 +15,14 @@ case 0x38E: {
             facing,1);
     if (F1037_POSITION(this).xPosition>g_F1101_RightAt00659424 ||
         F1037_POSITION(this).xPosition<g_F1101_LeftAt0065924C) {
-        NativeParentExpiredAt0045B830();
+        ClearFrameInfo();
         return;
     }
     F1037_POSITION(this).xPosition=float(facing)*F1037_MOTION(this).xMotion+F1037_POSITION(this).xPosition;
-    if (GetNativeActionAt0040FA30()==field070) {
+    if (AdvanceNestedFrame()==field070) {
         if (field0D8<int(g_F1113_DifficultyAt006714D0)*8+10) {
             ++field0D8;
-            SetAuxActionAt0040FB40(1);
+            ResetSecondaryCounter(1);
         }
     }
     return;

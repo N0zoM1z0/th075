@@ -22,7 +22,7 @@ void BattleCombat::ApplyHit(CombatActor *attack, CombatActor *attacker, CombatAc
         ComboDamage(attacker) = 0;
         ComboRate(attacker) = 1.0f;
     }
-    defender->ClearByte40();
+    defender->ClearTransformFlag();
     if (FIELD(float, defender, 0x48) > 0.0f || (FRAME(unsigned long, defender, 0x3C) & 4)) {
         if (FRAME(short, attack, 0x28))
             defender->ResetPrimaryCounters(FRAME(short, attack, 0x28));
@@ -83,10 +83,10 @@ void BattleCombat::ApplyHit(CombatActor *attack, CombatActor *attacker, CombatAc
             Health(defender) = 0;
             if (FRAME(short, attack, 0x28)) {
                 defender->ResetPrimaryCounters(FRAME(short, attack, 0x28));
-                defender->ClearByte40();
+                defender->ClearTransformFlag();
             } else {
                 defender->ResetPrimaryCounters(70);
-                defender->ClearByte40();
+                defender->ClearTransformFlag();
             }
         }
     }
@@ -172,10 +172,10 @@ bool BattleCombat::ApplyConditionalHit(CombatActor *attack, CombatActor *attacke
                 Health(defender) = 0;
                 if (FRAME(short, attack, 0x28)) {
                     defender->ResetPrimaryCounters(FRAME(short, attack, 0x28));
-                    defender->ClearByte40();
+                    defender->ClearTransformFlag();
                 } else {
                     defender->ResetPrimaryCounters(70);
-                    defender->ClearByte40();
+                    defender->ClearTransformFlag();
                 }
             }
         }

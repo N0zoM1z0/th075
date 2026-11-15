@@ -2,7 +2,7 @@
 // 349 CODE B /72 x86 in ONE still-NONEXACT 81KB parent.
 case 0x35C: {
     if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
-        SetNativeMotionAt0040FBB0(0,0.0f,0);
+        ResetTransform(0,0.0f,0);
         field080=99;
         field07C=0;
         scaleX=1.0f;
@@ -21,11 +21,11 @@ case 0x35C: {
         if (color[0]>15)
             color[0]-=10;
         else {
-            NativeParentExpiredAt0045B830();
+            ClearFrameInfo();
             return;
         }
     }
-    if (GetNativeActionAt0040FA30()==field070)
-        NativeParentExpiredAt0045B830();
+    if (AdvanceNestedFrame()==field070)
+        ClearFrameInfo();
     return;
 }

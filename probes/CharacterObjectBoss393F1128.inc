@@ -2,11 +2,11 @@
 // 0051D4F1..0051D70F: 542 native CODE B /110 x86, same NONEXACT boss.
 case 0x393: {
     if (owner->field3A0<=0) {
-        NativeParentExpiredAt0045B830();
+        ClearFrameInfo();
         return;
     }
     if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
-        SetNativeMotionAt0040FBB0(0,0.0f,0);
+        ResetTransform(0,0.0f,0);
         field0D8=0;
         field0DA=0;
         scaleX=1.0f;
@@ -18,7 +18,7 @@ case 0x393: {
         field080=1;
         field07C=0;
     }
-    if (GetNativeActionAt0040FA30()==field070) {
+    if (AdvanceNestedFrame()==field070) {
         if (field0D8<2-int(g_F1113_DifficultyAt006714D0))
             ++field0D8;
         else if (field0DA==0) {
@@ -32,7 +32,7 @@ case 0x393: {
             field0DA=0;
             field0D8=0;
         }
-        SetAuxActionAt0040FB40(1);
+        ResetSecondaryCounter(1);
     }
     return;
 }

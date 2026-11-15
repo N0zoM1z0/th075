@@ -3,7 +3,7 @@
 // This is an INNER state inside ONE nonexact original 81KB Boss.
 case 0x339: {
     if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
-        SetNativeMotionAt0040FBB0(0,0,0);
+        ResetTransform(0,0,0);
         scaleX=0.5f;
         scaleY=0.5f;
         color[0]=0xFF;
@@ -29,11 +29,11 @@ case 0x339: {
         if (color[0]>20)
             color[0]-=20;
         else {
-            NativeParentExpiredAt0045B830();
+            ClearFrameInfo();
             return;
         }
     }
-    if (GetNativeActionAt0040FA30()==field070)
-        NativeParentExpiredAt0045B830();
+    if (AdvanceNestedFrame()==field070)
+        ClearFrameInfo();
     return;
 }

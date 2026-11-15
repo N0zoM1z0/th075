@@ -6,7 +6,7 @@
 class CombatActor {
 public:
     void ResetPrimaryCounters(short state);
-    void ClearByte40();
+    void ClearTransformFlag();
     short CalculateDamage(CombatActor *attack);
     bool UpdateFacingFromOpponent();
 };

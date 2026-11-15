@@ -2,7 +2,7 @@
 // This is one INNER action in the ONE still-NONEXACT 81KB CharacterObject.
 case 0x33A: {
     if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
-        SetNativeMotionAt0040FBB0(0,0,0);
+        ResetTransform(0,0,0);
         field080=1;
         field07C=0;
         field0D8=short(RandomBoundaryAt00455580(0,13)+12);
@@ -17,7 +17,7 @@ case 0x33A: {
     --field0D8;
     if (field0D8<4)
         field0D8=4;
-    SetNativeTwoFloatsAt0040FB70(float(field0DA),float(field0D8));
+    SetPolarVelocity(float(field0DA),float(field0D8));
     rotationZ=F1057_FloatAtan2At00483300(
         F1037_MOTION(this).yMotion,F1037_MOTION(this).xMotion)/g_F1057_AngleDivAt00657828;
     F1037_POSITION(this).xPosition=float(facing)*F1037_MOTION(this).xMotion + F1037_POSITION(this).xPosition;
@@ -28,7 +28,7 @@ case 0x33A: {
         F1037_POSITION(this).xPosition<g_F1057_LeftBoundAt00659258 ||
         F1037_POSITION(this).yPosition>g_F1059_UpperBoundAt00657884 ||
         F1037_POSITION(this).yPosition<g_F1059_LowerBoundAt0065924C) {
-        NativeParentExpiredAt0045B830();
+        ClearFrameInfo();
         return;
     }
     if (F1024_PHASE(this).stageAt62>1) {
@@ -37,7 +37,7 @@ case 0x33A: {
         else
             color[0]=0;
     }
-    if (GetNativeActionAt0040FA30()==field070)
-        NativeParentExpiredAt0045B830();
+    if (AdvanceNestedFrame()==field070)
+        ClearFrameInfo();
     return;
 }

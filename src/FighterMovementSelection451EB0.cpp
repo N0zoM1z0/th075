@@ -2,7 +2,6 @@
 #include "GameLeafHelpers.hpp"
 #include "BattleCombat.hpp"
 
-#define RESET(state) reinterpret_cast<AnimationState*>(this)->ResetPrimaryCounters(state)
 #define UPDATE_FACING() reinterpret_cast<CombatActor*>(this)->UpdateFacingFromOpponent()
 
 void Fighter::ForwardBaseAction()
@@ -20,56 +19,56 @@ void Fighter::ForwardBaseAction()
             if (inputX == 0) {
                 if (reinterpret_cast<unsigned int&>(inputD) > 0) {
                     if (action != 204)
-                        RESET(204);
+                        ResetPrimaryCounters(204);
                 } else if (action != 6) {
-                    RESET(6);
+                    ResetPrimaryCounters(6);
                 }
             } else if (facing * inputX > 0) {
                 if (reinterpret_cast<unsigned int&>(inputD) > 0) {
                     if (action != 205)
-                        RESET(205);
+                        ResetPrimaryCounters(205);
                 } else if (action != 7) {
-                    RESET(7);
+                    ResetPrimaryCounters(7);
                 }
             } else if (facing * inputX < 0) {
                 if (reinterpret_cast<unsigned int&>(inputD) > 0) {
                     if (action != 206)
-                        RESET(206);
+                        ResetPrimaryCounters(206);
                 } else if (action != 8) {
-                    RESET(8);
+                    ResetPrimaryCounters(8);
                 }
             }
         } else {
             if (inputY > 0) {
                 if (action != 2 && action != 1) {
-                    RESET(1);
+                    ResetPrimaryCounters(1);
                 } else if (action != 1) {
-                    RESET(2);
+                    ResetPrimaryCounters(2);
                 }
             } else if (inputX != 0) {
                 UPDATE_FACING();
                 if (facing * inputX > 0) {
                     if (reinterpret_cast<unsigned int&>(inputD) > 0) {
                         if (action != 200)
-                            RESET(200);
+                            ResetPrimaryCounters(200);
                     } else if (action != 4) {
-                        RESET(4);
+                        ResetPrimaryCounters(4);
                     }
                 } else {
                     if (reinterpret_cast<unsigned int&>(inputD) > 0) {
                         if (action != 201)
-                            RESET(201);
+                            ResetPrimaryCounters(201);
                     } else if (action != 5) {
-                        RESET(5);
+                        ResetPrimaryCounters(5);
                     }
                 }
             } else {
                 if (action == 1 || action == 2) {
-                    RESET(3);
+                    ResetPrimaryCounters(3);
                 } else if (action != 0 &&
                            action != 3 &&
                            action != 10) {
-                    RESET(0);
+                    ResetPrimaryCounters(0);
                 }
             }
             UPDATE_FACING();
@@ -78,4 +77,3 @@ void Fighter::ForwardBaseAction()
 }
 
 #undef UPDATE_FACING
-#undef RESET

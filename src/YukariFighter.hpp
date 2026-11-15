@@ -13,7 +13,6 @@ public:
     void ChooseCardAction();
     static int cardCountdown;
     void DispatchActions();
-    void EnableTransform(float x, float y, float z);
     void PollCommands();
     void AdvanceSequence();
     void ForwardBaseAction();

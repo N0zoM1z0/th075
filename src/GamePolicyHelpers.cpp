@@ -71,12 +71,12 @@ void Fighter::InitializeNotice(short value)
     ConfigureNoticeText(1);
 }
 
-void BattleState::StartHitSequence(AnimationState *state, short value)
+void BattleState::StartHitSequence(Fighter *fighter, short value)
 {
-    *reinterpret_cast<short *>(reinterpret_cast<u8 *>(state) + 0x3B0) = 0;
-    *reinterpret_cast<short *>(reinterpret_cast<u8 *>(state) + 0x3B6) = 1000;
-    state->ResetPrimaryCounters(value);
-    state->ClearByte40();
-    SpawnMidpointEffect(0x35, *(reinterpret_cast<u8 *>(state) + 0x66));
+    fighter->meter = 0;
+    fighter->meterCooldown = 1000;
+    fighter->ResetPrimaryCounters(value);
+    fighter->ClearTransformFlag();
+    SpawnMidpointEffect(0x35, fighter->facing);
     g_SoundBank->Play(0x26);
 }

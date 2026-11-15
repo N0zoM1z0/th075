@@ -24,8 +24,14 @@ struct FighterSequenceInfo {
 // is unknown, so these classes are only reached through the game's pointers.
 class Actor {
 public:
-    // Helpers every character calls at one shared address.
+    // Helpers shared by every actor (src/Actor.cpp).
+    short AdvanceNestedFrame();                                     // 0040FA30
     void ResetPrimaryCounters(short state);                         // 0040FAC0
+    void SetThreeCounters(short action, short stage, short frame);  // 0040FB00
+    void ResetSecondaryCounter(short stage);                        // 0040FB40
+    void SetPolarVelocity(float angle, float speed);                // 0040FB70
+    void ResetTransform(float pivotX, float pivotY, float pivotZ);  // 0040FBB0
+    void ClearTransformFlag();                                      // 0040FC50
 
     // Slots shared by fighter and object vtables. Advance is pure in the
     // base fighter table (00658FE8 slot 1 is _purecall); each class's

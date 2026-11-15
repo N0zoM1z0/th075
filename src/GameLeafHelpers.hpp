@@ -62,20 +62,6 @@ private:
     u32 fourth_;
 };
 
-class AnimationState {
-public:
-    virtual void OnSecondaryCounterReset();
-    void ResetPrimaryCounters(short value);
-    void SetThreeCounters(short first, short second, short third);
-    void ResetSecondaryCounter(short value);
-    void ClearByte40();
-};
-
-class BattleEffect {
-public:
-    void ClearField74();
-};
-
 class FighterState : public Fighter {
 public:
     void DrawFacingSprite(short sprite, float position, int first, int second);
@@ -96,7 +82,7 @@ public:
 class BattleState {
 public:
     void SpawnMidpointEffect(int effect, u8 value);
-    void StartHitSequence(AnimationState *state, short value);
+    void StartHitSequence(Fighter *fighter, short value);
 };
 
 class AuxEffect {

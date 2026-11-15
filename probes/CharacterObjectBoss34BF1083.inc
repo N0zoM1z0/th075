@@ -2,7 +2,7 @@
 // Actual 0x34B animation/ground physics inside the ONE nonexact 81KB Boss.
 case 0x34B: {
     if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
-        SetNativeMotionAt0040FBB0(0,0.0f,0);
+        ResetTransform(0,0.0f,0);
         field080=99;
         field07C=0;
         scaleX=1.0f;
@@ -17,13 +17,13 @@ case 0x34B: {
     }
     scaleY=(scaleY)+g_F1057_SpeedScaleAt006590B4;
     if (F1037_POSITION(this).yPosition>g_F1083_YBoundAt00658E80) {
-        NativeParentExpiredAt0045B830();
+        ClearFrameInfo();
         return;
     }
     F1037_POSITION(this).xPosition=float(facing)*F1037_MOTION(this).xMotion+F1037_POSITION(this).xPosition;
     F1037_POSITION(this).yPosition=F1037_POSITION(this).yPosition-F1037_MOTION(this).yMotion;
-    if (GetNativeActionAt0040FA30()==field070)
-        NativeParentExpiredAt0045B830();
+    if (AdvanceNestedFrame()==field070)
+        ClearFrameInfo();
     if (F1024_PHASE(this).stageAt62==15 && F1024_PHASE(this).frameAt64==0)
         F1037_MOTION(this).yMotion=-40.0f;
     return;

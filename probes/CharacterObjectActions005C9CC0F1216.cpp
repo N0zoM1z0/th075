@@ -20,7 +20,7 @@ void ObjectActor5C9CC0F1216::Advance()
     switch (action) {
     case 800:
         if (owner->action != 301 && animationStage < 18)
-            ResetSecondaryCounters(18);
+            ResetSecondaryCounter(18);
         if (owner->action == 301) {
             x = owner->x + facing * 128;
             y = owner->y + 66.0f;
@@ -31,7 +31,7 @@ void ObjectActor5C9CC0F1216::Advance()
         }
         if (animationStage == 0 && animationFrame == 0) {
             field0D8 = 0;
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             field080 = 1;
             field07C = 0;
             scaleX = 1.0f;
@@ -42,12 +42,12 @@ void ObjectActor5C9CC0F1216::Advance()
             color[3] = 255;
             field080 = 1;
         }
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
     case 801:
         if (owner->action > 49 && owner->action < 150 && animationStage < 9) {
-            ClearField74();
+            ClearFrameInfo();
             if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                 reinterpret_cast<short&>(owner->fieldEFA) = 0;
                 OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
@@ -59,7 +59,7 @@ void ObjectActor5C9CC0F1216::Advance()
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 field0D8 = 1;
-                EnableTransform(0.0f, 0.0f, 0.0f);
+                ResetTransform(0.0f, 0.0f, 0.0f);
                 field080 = 1;
                 field07C = 0;
                 scaleX = 0.1f;
@@ -76,13 +76,13 @@ void ObjectActor5C9CC0F1216::Advance()
                 scaleX += 0.1f;
                 scaleY += 0.1f;
                 if (scaleX >= 0.5f) {
-                    ResetSecondaryCounters(animationStage + 4);
+                    ResetSecondaryCounter(animationStage + 4);
                     scaleX = 0.5f;
                     scaleY = 0.5f;
                 }
             }
             if (field080 == 0 && animationStage < 9) {
-                ResetSecondaryCounters(9);
+                ResetSecondaryCounter(9);
                 velocityX = -2.0f - RecordedRange(0, 4);
                 velocityY = RecordedRange(0, 6) + 8.0f;
             }
@@ -95,7 +95,7 @@ void ObjectActor5C9CC0F1216::Advance()
             if (animationStage > 8 && animationStage < 19) {
                 velocityY -= 0.8f;
                 if (y + velocityY <= 0.0f) {
-                    ResetSecondaryCounters(19);
+                    ResetSecondaryCounter(19);
                     velocityY = 0.0f;
                     velocityX = 0.0f;
                     return;
@@ -103,24 +103,24 @@ void ObjectActor5C9CC0F1216::Advance()
             }
             if (animationStage == 29) {
                 if (color[0] >= 20) color[0] -= 20;
-                else { ClearField74(); return; }
+                else { ClearFrameInfo(); return; }
             }
             if (x > 1480.0f || x < -200.0f) {
-                ClearField74();
+                ClearFrameInfo();
                 return;
             }
             else {
-                if (AdvanceNestedFrame() == field070) ClearField74();
-                if (animationStage == 5 && animationFrame == 0) ResetSecondaryCounters(1);
-                if (animationStage == 9 && animationFrame == 0) ResetSecondaryCounters(5);
-                if (animationStage == 19 && animationFrame == 0) ResetSecondaryCounters(17);
+                if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                if (animationStage == 5 && animationFrame == 0) ResetSecondaryCounter(1);
+                if (animationStage == 9 && animationFrame == 0) ResetSecondaryCounter(5);
+                if (animationStage == 19 && animationFrame == 0) ResetSecondaryCounter(17);
             }
         }
         break;
 
     case 802:
         if (owner->action > 49 && owner->action < 150 && animationStage < 16) {
-            ClearField74();
+            ClearFrameInfo();
             if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                 reinterpret_cast<short&>(owner->fieldEFA) = 0;
                 OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
@@ -132,7 +132,7 @@ void ObjectActor5C9CC0F1216::Advance()
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 field0D8 = 1;
-                EnableTransform(0.0f, 0.0f, 0.0f);
+                ResetTransform(0.0f, 0.0f, 0.0f);
                 field080 = 1;
                 field07C = 0;
                 scaleX = 0.1f;
@@ -154,20 +154,20 @@ void ObjectActor5C9CC0F1216::Advance()
                 }
                 velocityY -= 0.6f;
                 if (y + velocityY <= 0.0f) {
-                    ResetSecondaryCounters(6);
+                    ResetSecondaryCounter(6);
                     velocityX = 0.0f;
                     velocityY = 0.0f;
                 }
             }
             if (field080 == 0 && animationStage < 16) {
-                ResetSecondaryCounters(16);
+                ResetSecondaryCounter(16);
                 velocityX = -2.0f - RecordedRange(0, 4);
                 velocityY = RecordedRange(0, 6) + 8.0f;
             }
             if (animationStage > 15 && animationStage < 26) {
                 velocityY -= 0.8f;
                 if (y + velocityY <= 0.0f) {
-                    ResetSecondaryCounters(26);
+                    ResetSecondaryCounter(26);
                     velocityY = 0.0f;
                     velocityX = 0.0f;
                     return;
@@ -175,26 +175,26 @@ void ObjectActor5C9CC0F1216::Advance()
             }
             if (animationStage == 36) {
                 if (color[0] >= 20) color[0] -= 20;
-                else { ClearField74(); return; }
+                else { ClearFrameInfo(); return; }
             }
             if (x > 1480.0f || x < -200.0f) {
-                ClearField74();
+                ClearFrameInfo();
                 return;
             }
             else {
-                if (AdvanceNestedFrame() == field070) ClearField74();
-                if (animationStage == 6 && animationFrame == 0) ResetSecondaryCounters(4);
+                if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+                if (animationStage == 6 && animationFrame == 0) ResetSecondaryCounter(4);
                 if (animationStage == 8 && animationFrame == 0)
                     velocityX = RecordedRange(0, 3) + 5;
-                if (animationStage == 16 && animationFrame == 0) ResetSecondaryCounters(8);
-                if (animationStage == 26 && animationFrame == 0) ResetSecondaryCounters(24);
+                if (animationStage == 16 && animationFrame == 0) ResetSecondaryCounter(8);
+                if (animationStage == 26 && animationFrame == 0) ResetSecondaryCounter(24);
             }
         }
         break;
 
     case 803:
         if (owner->action > 49 && owner->action < 150) {
-            ClearField74();
+            ClearFrameInfo();
             if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                 reinterpret_cast<short&>(owner->fieldEFA) = 0;
                 OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
@@ -206,7 +206,7 @@ void ObjectActor5C9CC0F1216::Advance()
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 field0D8 = 0;
-                EnableTransform(0.0f, 0.0f, 0.0f);
+                ResetTransform(0.0f, 0.0f, 0.0f);
                 field080 = 1;
                 field07C = 0;
                 scaleX = 1.0f;
@@ -225,7 +225,7 @@ void ObjectActor5C9CC0F1216::Advance()
             velocityY -= 0.6f;
             OWNER_ACTOR->SpawnEffect(804, x, y, facing, 1);
             if (AdvanceNestedFrame() == field070) {
-                ClearField74();
+                ClearFrameInfo();
                 OWNER_ACTOR->PlaySoundAt00453D40(18);
                 OWNER_ACTOR->SetCameraShakeAt00453E60(5.0f);
                 for (int burstIndex803 = 0; burstIndex803 < 18; burstIndex803++) {
@@ -240,7 +240,7 @@ void ObjectActor5C9CC0F1216::Advance()
     case 804:
         if (animationStage == 0 && animationFrame == 0) {
             field0D8 = 0;
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             field080 = 1;
             field07C = 0;
             scaleX = 0.6f;
@@ -255,12 +255,12 @@ void ObjectActor5C9CC0F1216::Advance()
         y += velocityY;
         scaleX *= 0.85f;
         scaleY *= 0.85f;
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
     case 805:
         if (owner->action > 49 && owner->action < 150 && animationStage < 1) {
-            ClearField74();
+            ClearFrameInfo();
             if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                 reinterpret_cast<short&>(owner->fieldEFA) = 0;
                 OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
@@ -272,7 +272,7 @@ void ObjectActor5C9CC0F1216::Advance()
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 field0D8 = 0;
-                EnableTransform(0.0f, 0.0f, 0.0f);
+                ResetTransform(0.0f, 0.0f, 0.0f);
                 field080 = 2;
                 field07C = 0;
                 scaleX = 1.0f;
@@ -284,7 +284,7 @@ void ObjectActor5C9CC0F1216::Advance()
             }
             if (animationStage == 0 && animationFrame == 1) {
                 field0D8 = 0;
-                EnableTransform(0.0f, 0.0f, 0.0f);
+                ResetTransform(0.0f, 0.0f, 0.0f);
                 field080 = 1;
                 field07C = 0;
                 scaleX = 1.0f;
@@ -302,20 +302,20 @@ void ObjectActor5C9CC0F1216::Advance()
                 OWNER_ACTOR->SpawnEffect(806, x, y, facing, 1);
                 scaleX = RecordedRange(0, 4) * 0.1f + 0.8f;
                 reinterpret_cast<unsigned int&>(scaleY) = reinterpret_cast<unsigned int&>(scaleX);
-                if (field080 == 0) ResetSecondaryCounters(1);
+                if (field080 == 0) ResetSecondaryCounter(1);
             }
             if (animationStage == 1) {
                 scaleX *= 0.85f;
                 scaleY *= 0.85f;
             }
-            if (AdvanceNestedFrame() == field070) ClearField74();
+            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         }
         break;
 
     case 806:
         if (animationStage == 0 && animationFrame == 0) {
             field0D8 = 0;
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             field080 = 1;
             field07C = 0;
             scaleX = 0.75f;
@@ -332,13 +332,13 @@ void ObjectActor5C9CC0F1216::Advance()
             color[3] -= 15;
             color[2] -= 15;
         }
-        else { ClearField74(); return; }
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        else { ClearFrameInfo(); return; }
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
     case 807:
         if (owner->action > 49 && owner->action < 150) {
-            ClearField74();
+            ClearFrameInfo();
             if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                 reinterpret_cast<short&>(owner->fieldEFA) = 0;
                 OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
@@ -362,7 +362,7 @@ void ObjectActor5C9CC0F1216::Advance()
             }
             if (animationStage == 0 && animationFrame == 0) {
                 field0D8 = 0;
-                EnableTransform(0.0f, 0.0f, 0.0f);
+                ResetTransform(0.0f, 0.0f, 0.0f);
                 field080 = 1;
                 field07C = 0;
                 scaleX = 1.0f;
@@ -381,7 +381,7 @@ void ObjectActor5C9CC0F1216::Advance()
             velocityY -= 0.6f;
             OWNER_ACTOR->SpawnEffect(804, x, y, facing, 1);
             if (AdvanceNestedFrame() == field070) {
-                ClearField74();
+                ClearFrameInfo();
                 OWNER_ACTOR->PlaySoundAt00453D40(18);
                 OWNER_ACTOR->SetCameraShakeAt00453E60(5.0f);
                 for (int burstIndex807 = 0; burstIndex807 < 18; burstIndex807++) {
@@ -395,7 +395,7 @@ void ObjectActor5C9CC0F1216::Advance()
 
     case 808:
         if (owner->action > 49 && owner->action < 150) {
-            ClearField74();
+            ClearFrameInfo();
             if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                 reinterpret_cast<short&>(owner->fieldEFA) = 0;
                 OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
@@ -407,7 +407,7 @@ void ObjectActor5C9CC0F1216::Advance()
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 field0D8 = 0;
-                EnableTransform(0.0f, 0.0f, 0.0f);
+                ResetTransform(0.0f, 0.0f, 0.0f);
                 field080 = 1;
                 field07C = 0;
                 scaleX = 1.0f;
@@ -424,7 +424,7 @@ void ObjectActor5C9CC0F1216::Advance()
             velocityY -= 0.45f;
             OWNER_ACTOR->SpawnEffect(804, x, y, facing, 1);
             if (AdvanceNestedFrame() == field070) {
-                ClearField74();
+                ClearFrameInfo();
                 OWNER_ACTOR->PlaySoundAt00453D40(18);
                 OWNER_ACTOR->SetCameraShakeAt00453E60(5.0f);
                 for (int burstIndex808 = 0; burstIndex808 < 18; burstIndex808++) {
@@ -438,7 +438,7 @@ void ObjectActor5C9CC0F1216::Advance()
 
     case 809:
         if (owner->action > 49 && owner->action < 150 && animationStage < 2) {
-            ClearField74();
+            ClearFrameInfo();
             if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                 reinterpret_cast<short&>(owner->fieldEFA) = 0;
                 OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
@@ -449,7 +449,7 @@ void ObjectActor5C9CC0F1216::Advance()
         }
         else {
             if (animationStage == 0 && animationFrame == 0) {
-                EnableTransform(0.0f, 0.0f, 0.0f);
+                ResetTransform(0.0f, 0.0f, 0.0f);
                 field080 = 1;
                 field07C = 0;
                 scaleX = 2.0f;
@@ -459,13 +459,13 @@ void ObjectActor5C9CC0F1216::Advance()
                 color[2] = 255;
                 color[3] = 255;
             }
-            if (AdvanceNestedFrame() == field070) ClearField74();
+            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         }
         break;
 
     case 810:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 0.5f;
             scaleY = 0.5f;
             color[0] = 255;
@@ -486,14 +486,14 @@ void ObjectActor5C9CC0F1216::Advance()
                 color[2] -= 20;
                 color[3] -= 20;
             }
-            else { ClearField74(); return; }
+            else { ClearFrameInfo(); return; }
         }
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
     case 811:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             field0D8 = 0;
             scaleX = 2.0f;
             scaleY = 2.0f;
@@ -513,23 +513,23 @@ void ObjectActor5C9CC0F1216::Advance()
         x = facing * velocityX + x;
         y -= velocityY;
         if (x > 1480.0f || x < -200.0f) {
-            ClearField74();
+            ClearFrameInfo();
             return;
         }
         else {
             if (AdvanceNestedFrame() == field070) {
                 if (field0D8 < 6) {
-                    ResetSecondaryCounters(1);
+                    ResetSecondaryCounter(1);
                     ++field0D8;
                 }
-                else ClearField74();
+                else ClearFrameInfo();
             }
         }
         break;
 
     case 812:
         if (owner->action > 49 && owner->action < 150) {
-            ClearField74();
+            ClearFrameInfo();
             if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                 reinterpret_cast<short&>(owner->fieldEFA) = 0;
                 OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
@@ -540,7 +540,7 @@ void ObjectActor5C9CC0F1216::Advance()
         }
         else {
             if (animationStage == 0 && animationFrame == 0) {
-                EnableTransform(0.0f, 0.0f, 0.0f);
+                ResetTransform(0.0f, 0.0f, 0.0f);
                 scaleX = 0.5f;
                 scaleY = 0.5f;
                 color[0] = 255;
@@ -556,7 +556,7 @@ void ObjectActor5C9CC0F1216::Advance()
             SetPolarVelocity(field0C8, field0CC);
             if (field0CC > 2.0f) field0CC -= 1.0f;
             if (animationStage < 2 && field0CC == g_F1057_NudgeAt00657480)
-                ResetSecondaryCounters(2);
+                ResetSecondaryCounter(2);
             x = facing * velocityX + x;
             y += velocityY;
             --field0DC;
@@ -570,10 +570,10 @@ void ObjectActor5C9CC0F1216::Advance()
                 scaleX = field0DA * 0.01f + 0.5f;
                 scaleY = field0DA * 0.01f + 0.5f;
             }
-            if (AdvanceNestedFrame() == field070) ClearField74();
-            if (animationStage == 2 && animationFrame == 0) ResetSecondaryCounters(1);
+            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+            if (animationStage == 2 && animationFrame == 0) ResetSecondaryCounter(1);
             if (animationStage == 3 && animationFrame == 0 && field0D8 < 25) {
-                ResetSecondaryCounters(2);
+                ResetSecondaryCounter(2);
                 ++field0D8;
             }
         }
@@ -581,7 +581,7 @@ void ObjectActor5C9CC0F1216::Advance()
 
     case 813:
         if (animationStage == 0 && animationFrame == 0 && field0D8 == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 0.8f;
             scaleY = 0.8f;
             color[0] = 255;
@@ -599,13 +599,13 @@ void ObjectActor5C9CC0F1216::Advance()
         else color[0] = 0;
         scaleX *= 0.94f;
         scaleY *= 0.94f;
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
     case 814:
         if (animationStage == 0 && animationFrame == 0) {
             field0D8 = 0;
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             field080 = 1;
             field07C = 0;
             scaleX = 1.0f;
@@ -615,12 +615,12 @@ void ObjectActor5C9CC0F1216::Advance()
             color[2] = 255;
             color[3] = 255;
         }
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
     case 815:
         if (animationStage == 0 && animationFrame == 0 && field0D8 != 1) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 0.5f;
             scaleY = 0.5f;
             color[0] = 255;
@@ -634,12 +634,12 @@ void ObjectActor5C9CC0F1216::Advance()
         scaleX += 0.08f;
         scaleY += 0.08f;
         color[0] -= 7;
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
     case 816:
         if (animationStage == 0 && animationFrame == 0 && field0D8 != 1) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = RecordedRange(25, 75) * 0.01f;
             reinterpret_cast<unsigned int&>(scaleY) = reinterpret_cast<unsigned int&>(scaleX);
             color[0] = 255;
@@ -652,12 +652,12 @@ void ObjectActor5C9CC0F1216::Advance()
         color[0] -= 7;
         scaleX -= 0.01f;
         scaleY -= 0.01f;
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
     case 817:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = RecordedRange(75, 150) * 0.01f;
             reinterpret_cast<unsigned int&>(scaleY) = reinterpret_cast<unsigned int&>(scaleX);
             rotationZ = RecordedRange(0, 359);
@@ -677,7 +677,7 @@ void ObjectActor5C9CC0F1216::Advance()
                 OWNER_ACTOR->PlaySharedSoundAt00453D60(4);
                 field0D8 = static_cast<short>(x - owner->opponent->x);
                 field0DA = static_cast<short>(y - owner->opponent->y + 20.0f);
-                ResetSecondaryCounters(2);
+                ResetSecondaryCounter(2);
             }
         }
         if (animationStage == 2 && (owner->action == 700 || owner->action == 771)) {
@@ -725,7 +725,7 @@ void ObjectActor5C9CC0F1216::Advance()
                 x = owner->opponent->x + field0D8 * facing;
                 y = owner->opponent->y + (field0DA + 70);
                 if (owner->opponent->action == 97) {
-                    ResetSecondaryCounters(3);
+                    ResetSecondaryCounter(3);
                     velocityX = RecordedRange(0, 20) - 10;
                     velocityY = -RecordedRange(5, 20);
                     return;
@@ -737,14 +737,14 @@ void ObjectActor5C9CC0F1216::Advance()
             if (y + velocityY <= 0.0f && velocityY > 0.0f)
                 velocityY = -velocityY;
             if (color[0] > 5) color[0] -= 5;
-            else { ClearField74(); return; }
+            else { ClearFrameInfo(); return; }
         }
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
     case 818:
         if (animationStage == 0 && animationFrame == 0 && field0D8 != 1) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -758,12 +758,12 @@ void ObjectActor5C9CC0F1216::Advance()
         scaleX += 0.08f;
         scaleY += 0.08f;
         if (color[0] > 10) color[0] -= 10;
-        else { ClearField74(); return; }
-        if (AdvanceNestedFrame() == field070) ResetSecondaryCounters(1);
+        else { ClearFrameInfo(); return; }
+        if (AdvanceNestedFrame() == field070) ResetSecondaryCounter(1);
         break;
 
     case 819:
-        if (owner->action != 703) ClearField74();
+        if (owner->action != 703) ClearFrameInfo();
         if (owner->action == 703) {
             reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
             reinterpret_cast<unsigned int&>(y) = reinterpret_cast<unsigned int&>(owner->y);
@@ -771,7 +771,7 @@ void ObjectActor5C9CC0F1216::Advance()
         if (animationStage == 0 && animationFrame == 0) {
             field0D8 = 0;
             field0DA = 0;
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             field080 = 1;
             field07C = 0;
             scaleX = 1.0f;
@@ -791,14 +791,14 @@ void ObjectActor5C9CC0F1216::Advance()
         }
         if (field0D8 == 1 && field0DA > 90) {
             if (color[0] > 20) color[0] -= 20;
-            else { ClearField74(); return; }
+            else { ClearFrameInfo(); return; }
         }
-        if (AdvanceNestedFrame() == field070) ResetSecondaryCounters(1);
+        if (AdvanceNestedFrame() == field070) ResetSecondaryCounter(1);
         break;
 
     case 820:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = RecordedRange(100, 300) * 0.01f;
             reinterpret_cast<unsigned int&>(scaleY) = reinterpret_cast<unsigned int&>(scaleX);
             rotationZ = RecordedRange(0, 359);
@@ -818,7 +818,7 @@ void ObjectActor5C9CC0F1216::Advance()
                 OWNER_ACTOR->PlaySharedSoundAt00453D60(4);
                 field0D8 = static_cast<short>(x - owner->opponent->x);
                 field0DA = static_cast<short>(y - owner->opponent->y + 20.0f);
-                ResetSecondaryCounters(2);
+                ResetSecondaryCounter(2);
             }
         }
         if (animationStage == 2 && (owner->action == 720 || owner->action == 773)) {
@@ -866,7 +866,7 @@ void ObjectActor5C9CC0F1216::Advance()
                 x = owner->opponent->x + field0D8 * facing;
                 y = owner->opponent->y + (field0DA + 70);
                 if (owner->opponent->action == 89) {
-                    ResetSecondaryCounters(3);
+                    ResetSecondaryCounter(3);
                     velocityX = RecordedRange(0, 20) - 10;
                     velocityY = -RecordedRange(5, 20);
                     return;
@@ -878,13 +878,13 @@ void ObjectActor5C9CC0F1216::Advance()
             if (y + velocityY <= 0.0f && velocityY > 0.0f)
                 velocityY = -velocityY;
             if (color[0] > 5) color[0] -= 5;
-            else { ClearField74(); return; }
+            else { ClearFrameInfo(); return; }
         }
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
     case 821:
-        if (owner->action != 723) ClearField74();
+        if (owner->action != 723) ClearFrameInfo();
         if (owner->action == 723) {
             reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
             reinterpret_cast<unsigned int&>(y) = reinterpret_cast<unsigned int&>(owner->y);
@@ -892,7 +892,7 @@ void ObjectActor5C9CC0F1216::Advance()
         if (animationStage == 0 && animationFrame == 0) {
             field0D8 = 0;
             field0DA = 0;
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             field080 = 1;
             field07C = 0;
             scaleX = 1.0f;
@@ -912,16 +912,16 @@ void ObjectActor5C9CC0F1216::Advance()
         }
         if (field0D8 == 1 && field0DA > 90) {
             if (color[0] > 20) color[0] -= 20;
-            else { ClearField74(); return; }
+            else { ClearFrameInfo(); return; }
         }
-        if (AdvanceNestedFrame() == field070) ResetSecondaryCounters(1);
+        if (AdvanceNestedFrame() == field070) ResetSecondaryCounter(1);
         break;
 
     case 822:
         if (animationStage == 0 && animationFrame == 0) {
             field0D8 = 0;
             field0DA = 0;
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             field080 = 1;
             field07C = 0;
             scaleX = 1.0f - RecordedRange(0, 5) * 0.1f;
@@ -937,19 +937,19 @@ void ObjectActor5C9CC0F1216::Advance()
             if (color[0] > 10) color[0] -= 10;
             else {
                 color[0] = 0;
-                ClearField74();
+                ClearFrameInfo();
             }
         }
         velocityY -= 0.3f;
         y -= velocityY;
         x = facing * velocityX + x;
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
     case 823:
         facing = 1;
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f - RecordedRange(0, 5) * 0.1f;
             reinterpret_cast<unsigned int&>(scaleY) = reinterpret_cast<unsigned int&>(scaleX);
             color[0] = 255;
@@ -972,22 +972,22 @@ void ObjectActor5C9CC0F1216::Advance()
             SetPolarVelocity(field0D8, 20.0f);
             if (x - owner->x < 20.0f && x - owner->x > -20.0f &&
                 y - owner->y < 120.0f && y - owner->y > 80.0f) {
-                ClearField74();
+                ClearFrameInfo();
                 return;
             }
         }
         x += velocityX;
         y -= velocityY;
-        if (AdvanceNestedFrame() == field070) ResetSecondaryCounters(1);
+        if (AdvanceNestedFrame() == field070) ResetSecondaryCounter(1);
         break;
 
     case 824:
         if (field07C == 5) {
-            ClearField74();
+            ClearFrameInfo();
             return;
         }
         if (owner->action > 49 && owner->action < 150) {
-            ClearField74();
+            ClearFrameInfo();
             if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                 reinterpret_cast<short&>(owner->fieldEFA) = 0;
                 OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
@@ -1000,7 +1000,7 @@ void ObjectActor5C9CC0F1216::Advance()
             OWNER_ACTOR->SpawnEffect(806, x + 10.0f - RecordedRange(0, 20),
                 y + 10.0f - RecordedRange(0, 20), facing, 1);
             if (animationStage == 0 && animationFrame == 0) {
-                EnableTransform(0.0f, 0.0f, 0.0f);
+                ResetTransform(0.0f, 0.0f, 0.0f);
                 field080 = 1;
                 field07C = 0;
                 scaleX = 1.0f;
@@ -1022,7 +1022,7 @@ void ObjectActor5C9CC0F1216::Advance()
                 field080 = 1;
                 field07C = 0;
                 UnknownAt0045B850(1);
-                ResetSecondaryCounters(2);
+                ResetSecondaryCounter(2);
                 OWNER_ACTOR->SpawnEffect(827, x, y, facing, 1);
                 scaleX = 1.0f;
                 scaleY = 1.0f;
@@ -1037,13 +1037,13 @@ void ObjectActor5C9CC0F1216::Advance()
                     OWNER_ACTOR->SpawnEffect(827, x + 50.0f - RecordedRange(0, 100),
                         y + 50.0f - RecordedRange(0, 100), facing, 1);
                 if (x > 1380.0f || x < -100.0f || y > 960.0f || y < -100.0f) {
-                                ClearField74();
+                                ClearFrameInfo();
                                 return;
                             }
                             else {
                     x = facing * velocityX + x;
                     y -= velocityY;
-                    if (AdvanceNestedFrame() == field070) { ClearField74(); return; }
+                    if (AdvanceNestedFrame() == field070) { ClearFrameInfo(); return; }
                 }
             }
         }
@@ -1051,7 +1051,7 @@ void ObjectActor5C9CC0F1216::Advance()
 
     case 825:
         if (owner->action > 69 && owner->action < 150) {
-            ClearField74();
+            ClearFrameInfo();
             if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                 reinterpret_cast<short&>(owner->fieldEFA) = 0;
                 OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
@@ -1064,7 +1064,7 @@ void ObjectActor5C9CC0F1216::Advance()
             if (animationStage == 0 && animationFrame == 0) {
                 field0D8 = 0;
                 field0DA = 0;
-                EnableTransform(0.0f, 0.0f, 0.0f);
+                ResetTransform(0.0f, 0.0f, 0.0f);
                 scaleX = 1.0f;
                 scaleY = 1.0f;
                 color[0] = 255;
@@ -1080,7 +1080,7 @@ void ObjectActor5C9CC0F1216::Advance()
             rotationZ += 5.0f;
             if (animationStage < 2 && owner->animationStage == 0 &&
                 (owner->action == 408 || owner->action == 414)) {
-                ResetSecondaryCounters(2);
+                ResetSecondaryCounter(2);
                 velocityY = 0.0f;
                 velocityX = 0.0f;
                 return;
@@ -1104,7 +1104,7 @@ void ObjectActor5C9CC0F1216::Advance()
                     scaleX *= 0.85f;
                     scaleY *= 0.85f;
                 }
-                if (AdvanceNestedFrame() == field070) ClearField74();
+                if (AdvanceNestedFrame() == field070) ClearFrameInfo();
                 if (animationStage == 1 && animationFrame == 0) {
                     OWNER_ACTOR->PlaySoundAt00453D40(31);
                     velocityX = 0.0f;
@@ -1112,7 +1112,7 @@ void ObjectActor5C9CC0F1216::Advance()
                 }
                 if (animationStage == 2 && animationFrame == 0 && field0DA < 45) {
                     ++field0DA;
-                    ResetSecondaryCounters(1);
+                    ResetSecondaryCounter(1);
                 }
             }
         }
@@ -1120,7 +1120,7 @@ void ObjectActor5C9CC0F1216::Advance()
 
     case 826:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -1132,16 +1132,16 @@ void ObjectActor5C9CC0F1216::Advance()
         scaleY -= 0.05f;
         if (animationFrame > 5) color[0] -= 15;
         rotationZ += 10.0f;
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
     case 827:
         if (field07C == 5) {
-            ClearField74();
+            ClearFrameInfo();
             return;
         }
         if (owner->action > 49 && owner->action < 150) {
-            ClearField74();
+            ClearFrameInfo();
             if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                 reinterpret_cast<short&>(owner->fieldEFA) = 0;
                 OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
@@ -1152,7 +1152,7 @@ void ObjectActor5C9CC0F1216::Advance()
         }
         else {
             if (animationStage == 0 && animationFrame == 0) {
-                EnableTransform(0.0f, 0.0f, 0.0f);
+                ResetTransform(0.0f, 0.0f, 0.0f);
                 field080 = 1;
                 field07C = 0;
                 scaleX = 1.0f;
@@ -1165,18 +1165,18 @@ void ObjectActor5C9CC0F1216::Advance()
                 field080 = 1;
             }
             if (x > 1380.0f || x < -100.0f || y > 960.0f || y < -100.0f) {
-                ClearField74();
+                ClearFrameInfo();
                 return;
             }
             else {
-                if (AdvanceNestedFrame() == field070) { ClearField74(); return; }
+                if (AdvanceNestedFrame() == field070) { ClearFrameInfo(); return; }
             }
         }
         break;
 
     case 828:
         if (owner->action > 69 && owner->action < 150) {
-            ClearField74();
+            ClearFrameInfo();
             if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                 reinterpret_cast<short&>(owner->fieldEFA) = 0;
                 OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
@@ -1190,7 +1190,7 @@ void ObjectActor5C9CC0F1216::Advance()
             if (animationStage == 0 && animationFrame == 0) {
                 field0D8 = 0;
                 field0DA = 0;
-                EnableTransform(0.0f, 0.0f, 0.0f);
+                ResetTransform(0.0f, 0.0f, 0.0f);
                 scaleX = 1.0f;
                 scaleY = 1.0f;
                 color[0] = 255;
@@ -1205,7 +1205,7 @@ void ObjectActor5C9CC0F1216::Advance()
             y += velocityY;
             if (animationStage < 2 && owner->animationStage == 0 &&
                 (owner->action == 408 || owner->action == 414)) {
-                ResetSecondaryCounters(2);
+                ResetSecondaryCounter(2);
                 velocityY = 0.0f;
                 velocityX = 0.0f;
                 return;
@@ -1229,7 +1229,7 @@ void ObjectActor5C9CC0F1216::Advance()
                     scaleX *= 0.85f;
                     scaleY *= 0.85f;
                 }
-                if (AdvanceNestedFrame() == field070) ClearField74();
+                if (AdvanceNestedFrame() == field070) ClearFrameInfo();
                 if (animationStage == 1 && animationFrame == 0) {
                     OWNER_ACTOR->PlaySoundAt00453D40(31);
                     velocityX = 0.0f;
@@ -1237,7 +1237,7 @@ void ObjectActor5C9CC0F1216::Advance()
                 }
                 if (animationStage == 2 && animationFrame == 0 && field0DA < 45) {
                     ++field0DA;
-                    ResetSecondaryCounters(1);
+                    ResetSecondaryCounter(1);
                 }
             }
         }
@@ -1245,11 +1245,11 @@ void ObjectActor5C9CC0F1216::Advance()
 
     case 829:
         if (field07C == 5) {
-            ClearField74();
+            ClearFrameInfo();
             return;
         }
         if (owner->action > 49 && owner->action < 150) {
-            ClearField74();
+            ClearFrameInfo();
             if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                 reinterpret_cast<short&>(owner->fieldEFA) = 0;
                 OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
@@ -1260,7 +1260,7 @@ void ObjectActor5C9CC0F1216::Advance()
         }
         else {
             if (animationStage == 0 && animationFrame == 0) {
-                EnableTransform(0.0f, 0.0f, 0.0f);
+                ResetTransform(0.0f, 0.0f, 0.0f);
                 field080 = 1;
                 field07C = 0;
                 scaleX = 1.0f;
@@ -1287,7 +1287,7 @@ void ObjectActor5C9CC0F1216::Advance()
                 field080 = 1;
                 field07C = 0;
                 UnknownAt0045B850(1);
-                ClearField74();
+                ClearFrameInfo();
                 OWNER_ACTOR->SpawnEffect(830, x, y, facing, 1);
                 scaleX = 1.0f;
                 scaleY = 1.0f;
@@ -1296,13 +1296,13 @@ void ObjectActor5C9CC0F1216::Advance()
             }
             else {
                 if (x > 1380.0f || x < -100.0f || y > 960.0f || y < -100.0f) {
-                                ClearField74();
+                                ClearFrameInfo();
                                 return;
                             }
                             else {
                     x = facing * velocityX + x;
                     y += velocityY;
-                    if (AdvanceNestedFrame() == field070) { ClearField74(); return; }
+                    if (AdvanceNestedFrame() == field070) { ClearFrameInfo(); return; }
                 }
             }
         }
@@ -1310,11 +1310,11 @@ void ObjectActor5C9CC0F1216::Advance()
 
     case 830:
         if (field07C == 5) {
-            ClearField74();
+            ClearFrameInfo();
             return;
         }
         if (owner->action > 49 && owner->action < 150) {
-            ClearField74();
+            ClearFrameInfo();
             if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
                 reinterpret_cast<short&>(owner->fieldEFA) = 0;
                 OWNER_ACTOR->SpawnEffect(995, x, y, 1, 1);
@@ -1325,7 +1325,7 @@ void ObjectActor5C9CC0F1216::Advance()
         }
         else {
             if (animationStage == 0 && animationFrame == 0) {
-                EnableTransform(0.0f, 0.0f, 0.0f);
+                ResetTransform(0.0f, 0.0f, 0.0f);
                 field080 = 1;
                 field07C = 0;
                 scaleX = 1.0f;
@@ -1338,17 +1338,17 @@ void ObjectActor5C9CC0F1216::Advance()
                 field080 = 1;
             }
             if (x > 1380.0f || x < -100.0f || y > 960.0f || y < -100.0f) {
-                ClearField74();
+                ClearFrameInfo();
                 return;
             }
             else {
-                if (AdvanceNestedFrame() == field070) { ClearField74(); return; }
+                if (AdvanceNestedFrame() == field070) { ClearFrameInfo(); return; }
             }
         }
         break;
 
     case 831:
-        if (owner->action != 723) ClearField74();
+        if (owner->action != 723) ClearFrameInfo();
         if (owner->action == 723) {
             reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->opponent->x);
             y = owner->opponent->y + 100.0f;
@@ -1360,14 +1360,14 @@ void ObjectActor5C9CC0F1216::Advance()
         ++field0DA;
         if (field0DA > 90) {
             if (color[0] > 20) color[0] -= 20;
-            else { ClearField74(); return; }
+            else { ClearFrameInfo(); return; }
         }
-        if (AdvanceNestedFrame() == field070) ResetSecondaryCounters(1);
+        if (AdvanceNestedFrame() == field070) ResetSecondaryCounter(1);
         break;
 
     case 832:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -1385,14 +1385,14 @@ void ObjectActor5C9CC0F1216::Advance()
                 color[2] -= 20;
                 color[3] -= 20;
             }
-            else { ClearField74(); return; }
+            else { ClearFrameInfo(); return; }
         }
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
     case 833:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 0;
@@ -1412,9 +1412,9 @@ void ObjectActor5C9CC0F1216::Advance()
                 color[2] -= 20;
                 color[3] -= 20;
             }
-            else { ClearField74(); return; }
+            else { ClearFrameInfo(); return; }
         }
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         if (animationStage == 1 && animationFrame == 0) {
             color[0] = 255;
             for (int burstIndex833 = 0; burstIndex833 < 12; burstIndex833++) {
@@ -1428,7 +1428,7 @@ void ObjectActor5C9CC0F1216::Advance()
 
     case 834:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -1447,14 +1447,14 @@ void ObjectActor5C9CC0F1216::Advance()
                 color[2] -= 20;
                 color[3] -= 20;
             }
-            else { ClearField74(); return; }
+            else { ClearFrameInfo(); return; }
         }
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
     case 835:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 2.0f;
             scaleY = 2.0f;
             color[0] = 255;
@@ -1462,7 +1462,7 @@ void ObjectActor5C9CC0F1216::Advance()
             color[2] = 255;
             color[3] = 255;
         }
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
     case 850:
@@ -1480,11 +1480,11 @@ void ObjectActor5C9CC0F1216::Advance()
             y = owner->y + 100.0f;
         }
         if ((owner->action < 150 || owner->action > 158) && animationStage == 0) {
-            ResetSecondaryCounters(1);
+            ResetSecondaryCounter(1);
             reinterpret_cast<short&>(owner->fieldF06) = 0;
         }
         if (animationStage == 0 && animationFrame == 0 && field0D8 == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -1499,8 +1499,8 @@ void ObjectActor5C9CC0F1216::Advance()
             if (color[0] > 30) color[0] -= 30;
             else color[0] = 0;
         }
-        if (AdvanceNestedFrame() == field070) ClearField74();
-        if (animationStage == 1 && animationFrame == 0) ResetSecondaryCounters(0);
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+        if (animationStage == 1 && animationFrame == 0) ResetSecondaryCounter(0);
         break;
 
     case 900:
@@ -1514,14 +1514,14 @@ void ObjectActor5C9CC0F1216::Advance()
             velocityY -= 0.6f;
             if (velocityY + y <= 0.0f) {
                 y = 0.0f;
-                ResetSecondaryCounters(3);
+                ResetSecondaryCounter(3);
                 velocityX = 0.0f;
                 velocityY = 0.0f;
                 return;
             }
         }
         if (y > 960.0f) {
-            ClearField74();
+            ClearFrameInfo();
             return;
         }
         else {
@@ -1529,30 +1529,30 @@ void ObjectActor5C9CC0F1216::Advance()
             y += velocityY;
             if (AdvanceNestedFrame() == field070) {
                 ResetPrimaryCounters(0);
-                EnableTransform(0.0f, 0.0f, 0.0f);
+                ResetTransform(0.0f, 0.0f, 0.0f);
             }
-            if (animationStage == 3 && animationFrame == 0) ResetSecondaryCounters(1);
+            if (animationStage == 3 && animationFrame == 0) ResetSecondaryCounter(1);
             if (animationStage == 5 && animationFrame == 0) velocityY = 24.0f;
         }
         break;
 
     case 901:
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
     case 902:
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
     case 903:
         reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
         reinterpret_cast<unsigned int&>(y) = reinterpret_cast<unsigned int&>(owner->y);
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
     case 904:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = RecordedRange(0, 4) * 0.1f + 0.4f;
             reinterpret_cast<unsigned int&>(scaleY) = reinterpret_cast<unsigned int&>(scaleX);
             color[0] = 64;
@@ -1563,12 +1563,12 @@ void ObjectActor5C9CC0F1216::Advance()
         scaleX += 0.01f;
         scaleY += 0.01f;
         color[0] -= 1;
-        if (AdvanceNestedFrame() == field070) ClearField74();
+        if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         break;
 
     case 905:
         if (owner->field3A0 <= 0) {
-            ClearField74();
+            ClearFrameInfo();
             return;
         }
         else {
@@ -1576,7 +1576,7 @@ void ObjectActor5C9CC0F1216::Advance()
                 OWNER_ACTOR->SpawnEffect(904, x + 50.0f - RecordedRange(0, 100),
                     y + 50.0f - RecordedRange(0, 100), facing, 1);
             if (animationStage == 0 && animationFrame == 0) {
-                EnableTransform(0.0f, 0.0f, 0.0f);
+                ResetTransform(0.0f, 0.0f, 0.0f);
                 field080 = 1;
                 field07C = 0;
                 scaleX = 1.0f;
@@ -1684,22 +1684,22 @@ void ObjectActor5C9CC0F1216::Advance()
             if (AdvanceNestedFrame() == field070) {
                 if (owner->animationStage < 3) {
                     ++field0D8;
-                    ResetSecondaryCounters(1);
+                    ResetSecondaryCounter(1);
                     return;
                 }
-                else { ClearField74(); return; }
+                else { ClearFrameInfo(); return; }
             }
         }
         break;
 
     case 906:
         if (owner->field3A0 <= 0) {
-            ClearField74();
+            ClearFrameInfo();
             return;
         }
         else {
             if (animationStage == 0 && animationFrame == 0) {
-                EnableTransform(0.0f, 0.0f, 0.0f);
+                ResetTransform(0.0f, 0.0f, 0.0f);
                 field080 = 1;
                 field07C = 0;
                 scaleX = 6.0f;
@@ -1725,7 +1725,7 @@ void ObjectActor5C9CC0F1216::Advance()
                 else color[0] = 255;
             }
             if (animationStage == 1 && field07C != 0) {
-                ResetSecondaryCounters(2);
+                ResetSecondaryCounter(2);
                 return;
             }
             else {
@@ -1734,14 +1734,14 @@ void ObjectActor5C9CC0F1216::Advance()
                     scaleY *= 0.85f;
                 }
                 if (x > 1380.0f || x < -100.0f || y > 960.0f || y < -100.0f) {
-                                ClearField74();
+                                ClearFrameInfo();
                                 return;
                             }
                             else {
                     x = facing * velocityX + x;
                     y -= velocityY;
                     if (AdvanceNestedFrame() == field070) {
-                        ClearField74();
+                        ClearFrameInfo();
                         return;
                     }
                     else if (animationStage == 1 && animationFrame == 0) {
@@ -1758,12 +1758,12 @@ void ObjectActor5C9CC0F1216::Advance()
 
     case 907:
         if (owner->field3A0 <= 0) {
-            ClearField74();
+            ClearFrameInfo();
             return;
         }
         else {
             if (animationStage == 0 && animationFrame == 0) {
-                EnableTransform(0.0f, 0.0f, 0.0f);
+                ResetTransform(0.0f, 0.0f, 0.0f);
                 field080 = 1;
                 field07C = 0;
                 scaleX = 1.0f;
@@ -1781,25 +1781,25 @@ void ObjectActor5C9CC0F1216::Advance()
                 scaleY *= 0.85f;
             }
             if (x > 1380.0f || x < -100.0f || y > 960.0f || y < -100.0f) {
-                ClearField74();
+                ClearFrameInfo();
                 return;
             }
             else {
                 x = facing * velocityX + x;
                 y -= velocityY;
-                if (AdvanceNestedFrame() == field070) { ClearField74(); return; }
+                if (AdvanceNestedFrame() == field070) { ClearFrameInfo(); return; }
             }
         }
         break;
 
     case 910:
         if (owner->field3A0 <= 0) {
-            ClearField74();
+            ClearFrameInfo();
             return;
         }
         else {
             if (animationStage == 0 && animationFrame == 0) {
-                EnableTransform(0.0f, 0.0f, 0.0f);
+                ResetTransform(0.0f, 0.0f, 0.0f);
                 scaleX = 1.0f;
                 scaleY = 1.0f;
                 color[0] = 255;
@@ -1812,25 +1812,25 @@ void ObjectActor5C9CC0F1216::Advance()
                 y = owner->y + 35.0f;
             }
             if (owner->action != 761 || (owner->action == 761 && owner->animationStage > 12)) {
-                ClearField74();
+                ClearFrameInfo();
                 return;
             }
             else {
                 scaleY *= 0.9f;
                 scaleX += 0.1f;
-                if (AdvanceNestedFrame() == field070) ResetSecondaryCounters(4);
+                if (AdvanceNestedFrame() == field070) ResetSecondaryCounter(4);
             }
         }
         break;
 
     case 911:
         if (owner->field3A0 <= 0) {
-            ClearField74();
+            ClearFrameInfo();
             return;
         }
         else {
             if (animationStage == 0 && animationFrame == 0) {
-                        EnableTransform(0.0f, 0.0f, 0.0f);
+                        ResetTransform(0.0f, 0.0f, 0.0f);
                         scaleX = RecordedRange(75, 150) * 0.01f;
                         reinterpret_cast<unsigned int&>(scaleY) = reinterpret_cast<unsigned int&>(scaleX);
                         rotationZ = RecordedRange(0, 359);
@@ -1850,7 +1850,7 @@ void ObjectActor5C9CC0F1216::Advance()
                             OWNER_ACTOR->PlaySharedSoundAt00453D60(4);
                             field0D8 = static_cast<short>(x - static_cast<SuikaFighter*>(owner)->fieldF22);
                             field0DA = static_cast<short>(y - static_cast<SuikaFighter*>(owner)->fieldF24);
-                            ResetSecondaryCounters(2);
+                            ResetSecondaryCounter(2);
                         }
                     }
                     if (animationStage == 2 && owner->action == 774) {
@@ -1894,18 +1894,18 @@ void ObjectActor5C9CC0F1216::Advance()
                             x = owner->x + (field0D8 + 80) * facing;
                             y = owner->y + (field0DA + 135);
                         }
-                        if (owner->animationStage == 16) ResetSecondaryCounters(3);
+                        if (owner->animationStage == 16) ResetSecondaryCounter(3);
                     }
                     if (animationStage == 3) {
                         if (x > 1400.0f || x < -200.0f || y > 960.0f ||
                             (owner->action == 774 && owner->animationStage == 5)) {
-                            ClearField74();
+                            ClearFrameInfo();
                             return;
                         }
                         x = static_cast<SuikaFighter*>(owner)->fieldF22 + field0D8 * facing;
                         y = static_cast<SuikaFighter*>(owner)->fieldF24 + field0DA;
                         if (static_cast<SuikaFighter*>(owner)->fieldF24 <= 0) {
-                            ResetSecondaryCounters(4);
+                            ResetSecondaryCounter(4);
                             velocityX = RecordedRange(0, 20) - 10;
                             velocityY = -RecordedRange(5, 20);
                             return;
@@ -1916,22 +1916,22 @@ void ObjectActor5C9CC0F1216::Advance()
                         if (y + velocityY <= 0.0f && velocityY > 0.0f)
                             velocityY = -velocityY;
                         if (color[0] > 5) color[0] -= 5;
-                        else { ClearField74(); return; }
+                        else { ClearFrameInfo(); return; }
                     }
-                    if (AdvanceNestedFrame() == field070) ClearField74();
+                    if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         }
         break;
 
     case 912:
         if (owner->field3A0 <= 0) {
-            ClearField74();
+            ClearFrameInfo();
             return;
         }
         else {
             static_cast<SuikaFighter*>(owner)->fieldF22 = static_cast<short>(x);
             static_cast<SuikaFighter*>(owner)->fieldF24 = static_cast<short>(y);
             if (animationStage == 0 && animationFrame == 0) {
-                EnableTransform(0.0f, 0.0f, 0.0f);
+                ResetTransform(0.0f, 0.0f, 0.0f);
                 scaleX = 1.0f;
                 scaleY = 1.0f;
                 color[0] = 0;
@@ -1944,7 +1944,7 @@ void ObjectActor5C9CC0F1216::Advance()
             if (owner->action == 774 && owner->animationStage > 15 && animationStage == 0) {
                 x = owner->x + facing * 140;
                 y = owner->y + 35.0f;
-                ResetSecondaryCounters(1);
+                ResetSecondaryCounter(1);
                 field0DC = static_cast<short>(AngleAt00483300(
                     owner->opponent->y + 100.0f - y,
                     (owner->opponent->x - x) * facing) / g_F1211_AngleDivAt00657828);
@@ -1952,18 +1952,18 @@ void ObjectActor5C9CC0F1216::Advance()
             }
             if (animationStage == 1 && y < 0.0f) {
                 OWNER_ACTOR->PlaySoundAt00453D40(23);
-                ClearField74();
+                ClearFrameInfo();
                 return;
             }
             else {
                 if (x > 1700.0f || x < -500.0f || y > 1280.0f) {
-                    ClearField74();
+                    ClearFrameInfo();
                     return;
                 }
                 else {
                     x = facing * velocityX + x;
                     y -= velocityY;
-                    if (AdvanceNestedFrame() == field070) ResetSecondaryCounters(1);
+                    if (AdvanceNestedFrame() == field070) ResetSecondaryCounter(1);
                 }
             }
         }
@@ -1971,7 +1971,7 @@ void ObjectActor5C9CC0F1216::Advance()
 
     case 913:
         if (owner->field3A0 <= 0) {
-            ClearField74();
+            ClearFrameInfo();
             return;
         }
         else {
@@ -1979,7 +1979,7 @@ void ObjectActor5C9CC0F1216::Advance()
                 field0D8 = 0;
                 field0DA = 0;
                 field0DC = 0;
-                EnableTransform(0.0f, 0.0f, 0.0f);
+                ResetTransform(0.0f, 0.0f, 0.0f);
                 scaleX = 0.0f;
                 scaleY = 0.0f;
                 color[0] = 255;
@@ -2017,7 +2017,7 @@ void ObjectActor5C9CC0F1216::Advance()
                 scaleX *= 0.85f;
                 scaleY *= 0.85f;
             }
-            if (AdvanceNestedFrame() == field070) ClearField74();
+            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
             if (animationStage == 1 && animationFrame == 0) {
                 UnknownAt0045B850(31);
                 velocityX = 0.0f;
@@ -2026,21 +2026,21 @@ void ObjectActor5C9CC0F1216::Advance()
             if (animationStage == 3 && animationFrame == 0 &&
                 field0DA < g_F1212_DifficultyAt006714D0 + 2) {
                 ++field0DA;
-                ResetSecondaryCounters(2);
+                ResetSecondaryCounter(2);
             }
         }
         break;
 
     case 914:
         if (owner->field3A0 <= 0) {
-            ClearField74();
+            ClearFrameInfo();
             return;
         }
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 field0D8 = 0;
                 field0DA = 0;
-                EnableTransform(0.0f, 0.0f, 0.0f);
+                ResetTransform(0.0f, 0.0f, 0.0f);
                 scaleX = 1.0f;
                 scaleY = 1.0f;
                 color[0] = 255;
@@ -2054,23 +2054,23 @@ void ObjectActor5C9CC0F1216::Advance()
                 scaleX *= 0.85f;
                 scaleY *= 0.85f;
             }
-            if (AdvanceNestedFrame() == field070) ClearField74();
+            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
             if (animationStage == 3 && animationFrame == 0 &&
                 field0DA < g_F1212_DifficultyAt006714D0 + 2) {
                 ++field0DA;
-                ResetSecondaryCounters(2);
+                ResetSecondaryCounter(2);
             }
         }
         break;
 
     case 915:
         if (owner->field3A0 <= 0) {
-            ClearField74();
+            ClearFrameInfo();
             return;
         }
         else {
             if (animationStage == 0 && animationFrame == 0) {
-                EnableTransform(0.0f, 0.0f, 0.0f);
+                ResetTransform(0.0f, 0.0f, 0.0f);
                 field080 = 1;
                 field07C = 0;
                 scaleX = 1.0f;
@@ -2083,7 +2083,7 @@ void ObjectActor5C9CC0F1216::Advance()
                 velocityX = RecordedRange(0, 8) + 6;
             }
             if (x > 1180.0f || x < 100.0f) {
-                ClearField74();
+                ClearFrameInfo();
                 OWNER_ACTOR->SpawnEffect(913, x, y, facing, 0);
                 return;
             }
@@ -2094,7 +2094,7 @@ void ObjectActor5C9CC0F1216::Advance()
                 }
                 x = facing * velocityX + x;
                 if (AdvanceNestedFrame() == field070) {
-                    ClearField74();
+                    ClearFrameInfo();
                     OWNER_ACTOR->SpawnEffect(913, x, y, facing, 0);
                     return;
                 }
@@ -2104,12 +2104,12 @@ void ObjectActor5C9CC0F1216::Advance()
 
     case 916:
         if (owner->field3A0 <= 0) {
-            ClearField74();
+            ClearFrameInfo();
             return;
         }
         else {
             if (animationStage == 0 && animationFrame == 0) {
-                EnableTransform(0.0f, 0.0f, 0.0f);
+                ResetTransform(0.0f, 0.0f, 0.0f);
                 field080 = 1;
                 field07C = 0;
                 field0D8 = 0;
@@ -2125,7 +2125,7 @@ void ObjectActor5C9CC0F1216::Advance()
             x = facing * velocityX + x;
             y -= velocityY;
             if ((field07C != 0 || field0D0 <= 0.0f) && animationStage == 1) {
-                ResetSecondaryCounters(2);
+                ResetSecondaryCounter(2);
                 velocityX = 0.0f;
                 velocityY = 0.0f;
                 return;
@@ -2133,9 +2133,9 @@ void ObjectActor5C9CC0F1216::Advance()
             else {
                 if (animationStage > 1) {
                     if (color[0] > 20) color[0] -= 20;
-                    else { ClearField74(); return; }
+                    else { ClearFrameInfo(); return; }
                 }
-                if (AdvanceNestedFrame() == field070) ClearField74();
+                if (AdvanceNestedFrame() == field070) ClearFrameInfo();
                 if (animationStage == 2 && animationFrame == 0) {
                     velocityX = 0.0f;
                     velocityY = 0.0f;
@@ -2146,12 +2146,12 @@ void ObjectActor5C9CC0F1216::Advance()
 
     case 918:
         if (owner->field3A0 <= 0) {
-            ClearField74();
+            ClearFrameInfo();
             return;
         }
         else {
             if (animationStage == 0 && animationFrame == 0) {
-                EnableTransform(0.0f, 0.0f, 0.0f);
+                ResetTransform(0.0f, 0.0f, 0.0f);
                 field080 = 99;
                 scaleX = 0.0f;
                 scaleY = 0.0f;
@@ -2178,12 +2178,12 @@ void ObjectActor5C9CC0F1216::Advance()
             y -= velocityY;
             rotationZ += 1.0f;
             if (x > 1800.0f || x < -680.0f || y > 1280.0f || y < -380.0f) {
-                ClearField74();
+                ClearFrameInfo();
                 return;
             }
             else {
                 if (AdvanceNestedFrame() == field070) {
-                    ResetSecondaryCounters(3);
+                    ResetSecondaryCounter(3);
                     field07C = 0;
                     return;
                 }
@@ -2198,12 +2198,12 @@ void ObjectActor5C9CC0F1216::Advance()
 
     case 919:
         if (owner->field3A0 <= 0) {
-            ClearField74();
+            ClearFrameInfo();
             return;
         }
         else {
             if (animationStage == 0 && animationFrame == 0) {
-                EnableTransform(0.0f, 0.0f, 0.0f);
+                ResetTransform(0.0f, 0.0f, 0.0f);
                 field080 = 1;
                 field07C = 0;
                 scaleX = 3.0f;
@@ -2229,7 +2229,7 @@ void ObjectActor5C9CC0F1216::Advance()
                 SetPolarVelocity(field0C8, 20 - field0D8);
             }
             if (animationStage == 1 && field07C != 0) {
-                ResetSecondaryCounters(2);
+                ResetSecondaryCounter(2);
                 velocityX = 0.0f;
                 velocityY = 0.0f;
                 return;
@@ -2240,14 +2240,14 @@ void ObjectActor5C9CC0F1216::Advance()
                     scaleY *= 0.85f;
                 }
                 if (x > 1380.0f || x < -100.0f || y > 960.0f || y < -100.0f) {
-                                ClearField74();
+                                ClearFrameInfo();
                                 return;
                             }
                             else {
                     x = facing * velocityX + x;
                     y -= velocityY;
                     if (AdvanceNestedFrame() == field070) {
-                        ClearField74();
+                        ClearFrameInfo();
                         return;
                     }
                     else if (animationStage == 1 && animationFrame == 0) {
@@ -2261,7 +2261,7 @@ void ObjectActor5C9CC0F1216::Advance()
 
     case 920:
         if (owner->field3A0 <= 0) {
-            ClearField74();
+            ClearFrameInfo();
             return;
         }
         else {
@@ -2269,7 +2269,7 @@ void ObjectActor5C9CC0F1216::Advance()
                 field0D8 = 0;
                 field0DA = 0;
                 field0DC = 0;
-                EnableTransform(0.0f, 0.0f, 0.0f);
+                ResetTransform(0.0f, 0.0f, 0.0f);
                 scaleX = 0.0f;
                 scaleY = 0.0f;
                 color[0] = 255;
@@ -2297,26 +2297,26 @@ void ObjectActor5C9CC0F1216::Advance()
                 scaleX *= 0.85f;
                 scaleY *= 0.85f;
             }
-            if (AdvanceNestedFrame() == field070) ClearField74();
+            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
             if (animationStage == 1 && animationFrame == 0) {
                 UnknownAt0045B850(31);
                 velocityX = 0.0f;
                 velocityY = 0.0f;
             }
-            if (animationStage == 3 && animationFrame == 0) ResetSecondaryCounters(2);
+            if (animationStage == 3 && animationFrame == 0) ResetSecondaryCounter(2);
         }
         break;
 
     case 921:
         if (owner->field3A0 <= 0) {
-            ClearField74();
+            ClearFrameInfo();
             return;
         }
         else {
             if (animationStage == 0 && animationFrame == 0) {
                 field0D8 = 0;
                 field0DA = 0;
-                EnableTransform(0.0f, 0.0f, 0.0f);
+                ResetTransform(0.0f, 0.0f, 0.0f);
                 scaleX = 1.0f;
                 scaleY = 1.0f;
                 color[0] = 255;
@@ -2330,19 +2330,19 @@ void ObjectActor5C9CC0F1216::Advance()
                 scaleX *= 0.85f;
                 scaleY *= 0.85f;
             }
-            if (AdvanceNestedFrame() == field070) ClearField74();
-            if (animationStage == 3 && animationFrame == 0) ResetSecondaryCounters(2);
+            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
+            if (animationStage == 3 && animationFrame == 0) ResetSecondaryCounter(2);
         }
         break;
 
     case 922:
         if (owner->field3A0 <= 0) {
-            ClearField74();
+            ClearFrameInfo();
             return;
         }
         else {
             if (animationStage == 0 && animationFrame == 0) {
-                EnableTransform(0.0f, 0.0f, 0.0f);
+                ResetTransform(0.0f, 0.0f, 0.0f);
                 field080 = 1;
                 field07C = 0;
                 scaleX = 1.0f;
@@ -2353,18 +2353,18 @@ void ObjectActor5C9CC0F1216::Advance()
                 color[3] = 255;
                 rotationZ = RecordedRange(0, 359);
             }
-            if (AdvanceNestedFrame() == field070) ClearField74();
+            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         }
         break;
 
     case 923:
         if (owner->field3A0 <= 0) {
-            ClearField74();
+            ClearFrameInfo();
             return;
         }
         else {
             if (animationStage == 0 && animationFrame == 0) {
-                EnableTransform(0.0f, 0.0f, 0.0f);
+                ResetTransform(0.0f, 0.0f, 0.0f);
                 field080 = 1;
                 field07C = 0;
                 scaleX = 1.0f;
@@ -2381,7 +2381,7 @@ void ObjectActor5C9CC0F1216::Advance()
                 OWNER_ACTOR->SpawnEffect(922, x + 10.0f - RecordedRange(0, 20),
                     y + 10.0f - RecordedRange(0, 20), facing, 1);
             if (x > 1380.0f || x < -100.0f) {
-                ClearField74();
+                ClearFrameInfo();
                 return;
             }
             else {
@@ -2389,23 +2389,23 @@ void ObjectActor5C9CC0F1216::Advance()
                 x = facing * velocityX + x;
                 y -= velocityY;
                 if (y - velocityY <= 0.0f) {
-                    ClearField74();
+                    ClearFrameInfo();
                     OWNER_ACTOR->SpawnEffect(925, x, y, facing, 1);
                     OWNER_ACTOR->SpawnEffect(925, x, y, facing, 1);
                 }
-                if (AdvanceNestedFrame() == field070) ResetSecondaryCounters(1);
+                if (AdvanceNestedFrame() == field070) ResetSecondaryCounter(1);
             }
         }
         break;
 
     case 924:
         if (owner->field3A0 <= 0) {
-            ClearField74();
+            ClearFrameInfo();
             return;
         }
         else {
             if (animationStage == 0 && animationFrame == 0) {
-                EnableTransform(0.0f, 0.0f, 0.0f);
+                ResetTransform(0.0f, 0.0f, 0.0f);
                 field080 = 1;
                 field07C = 0;
                 scaleX = 1.0f;
@@ -2416,18 +2416,18 @@ void ObjectActor5C9CC0F1216::Advance()
                 color[3] = 255;
                 rotationZ = RecordedRange(0, 359);
             }
-            if (AdvanceNestedFrame() == field070) ClearField74();
+            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         }
         break;
 
     case 925:
         if (owner->field3A0 <= 0) {
-            ClearField74();
+            ClearFrameInfo();
             return;
         }
         else {
             if (animationStage == 0 && animationFrame == 0) {
-                EnableTransform(0.0f, 0.0f, 0.0f);
+                ResetTransform(0.0f, 0.0f, 0.0f);
                 field080 = 1;
                 field07C = 0;
                 scaleX = 1.0f;
@@ -2444,7 +2444,7 @@ void ObjectActor5C9CC0F1216::Advance()
                 OWNER_ACTOR->SpawnEffect(924, x + 5.0f - RecordedRange(0, 10),
                     y + 5.0f - RecordedRange(0, 10), facing, 1);
             if (x > 1380.0f || x < -100.0f) {
-                ClearField74();
+                ClearFrameInfo();
                 return;
             }
             else {
@@ -2452,23 +2452,23 @@ void ObjectActor5C9CC0F1216::Advance()
                 x = facing * velocityX + x;
                 y -= velocityY;
                 if (y - velocityY <= 0.0f) {
-                    ClearField74();
+                    ClearFrameInfo();
                     OWNER_ACTOR->SpawnEffect(927, x, y, facing, 1);
                     OWNER_ACTOR->SpawnEffect(927, x, y, facing, 1);
                 }
-                if (AdvanceNestedFrame() == field070) ResetSecondaryCounters(1);
+                if (AdvanceNestedFrame() == field070) ResetSecondaryCounter(1);
             }
         }
         break;
 
     case 926:
         if (owner->field3A0 <= 0) {
-            ClearField74();
+            ClearFrameInfo();
             return;
         }
         else {
             if (animationStage == 0 && animationFrame == 0) {
-                EnableTransform(0.0f, 0.0f, 0.0f);
+                ResetTransform(0.0f, 0.0f, 0.0f);
                 field080 = 1;
                 field07C = 0;
                 scaleX = 1.0f;
@@ -2479,18 +2479,18 @@ void ObjectActor5C9CC0F1216::Advance()
                 color[3] = 255;
                 rotationZ = RecordedRange(0, 359);
             }
-            if (AdvanceNestedFrame() == field070) ClearField74();
+            if (AdvanceNestedFrame() == field070) ClearFrameInfo();
         }
         break;
 
     case 927:
         if (owner->field3A0 <= 0) {
-            ClearField74();
+            ClearFrameInfo();
             return;
         }
         else {
             if (animationStage == 0 && animationFrame == 0) {
-                EnableTransform(0.0f, 0.0f, 0.0f);
+                ResetTransform(0.0f, 0.0f, 0.0f);
                 field080 = 1;
                 field07C = 0;
                 scaleX = 1.0f;
@@ -2506,7 +2506,7 @@ void ObjectActor5C9CC0F1216::Advance()
             if (animationFrame == 0)
                 OWNER_ACTOR->SpawnEffect(926, x, y, facing, 1);
             if (x > 1380.0f || x < -100.0f) {
-                ClearField74();
+                ClearFrameInfo();
                 return;
             }
             else {
@@ -2521,21 +2521,21 @@ void ObjectActor5C9CC0F1216::Advance()
                         ++field0D8;
                         return;
                     }
-                    ClearField74();
+                    ClearFrameInfo();
                 }
-                if (AdvanceNestedFrame() == field070) ResetSecondaryCounters(1);
+                if (AdvanceNestedFrame() == field070) ResetSecondaryCounter(1);
             }
         }
         break;
 
     case 928:
         if (owner->field3A0 <= 0) {
-            ClearField74();
+            ClearFrameInfo();
             return;
         }
         else {
             if (animationStage == 0 && animationFrame == 0) {
-                EnableTransform(0.0f, 0.0f, 0.0f);
+                ResetTransform(0.0f, 0.0f, 0.0f);
                 field080 = 99;
                 scaleX = 0.0f;
                 scaleY = 0.0f;
@@ -2562,12 +2562,12 @@ void ObjectActor5C9CC0F1216::Advance()
             y -= velocityY;
             rotationZ += 1.0f;
             if (x > 1800.0f || x < -680.0f || y > 1280.0f || y < -380.0f) {
-                ClearField74();
+                ClearFrameInfo();
                 return;
             }
             else {
                 if (AdvanceNestedFrame() == field070) {
-                    ResetSecondaryCounters(3);
+                    ResetSecondaryCounter(3);
                     field07C = 0;
                     return;
                 }
@@ -2582,12 +2582,12 @@ void ObjectActor5C9CC0F1216::Advance()
 
     case 929:
         if (owner->field3A0 <= 0) {
-            ClearField74();
+            ClearFrameInfo();
             return;
         }
         else {
             if (animationStage == 0 && animationFrame == 0) {
-                EnableTransform(0.0f, 0.0f, 0.0f);
+                ResetTransform(0.0f, 0.0f, 0.0f);
                 field080 = 99;
                 scaleX = 0.0f;
                 scaleY = 0.0f;
@@ -2614,12 +2614,12 @@ void ObjectActor5C9CC0F1216::Advance()
             y -= velocityY;
             rotationZ += 1.0f;
             if (x > 1800.0f || x < -680.0f || y > 1280.0f || y < -380.0f) {
-                ClearField74();
+                ClearFrameInfo();
                 return;
             }
             else {
                 if (AdvanceNestedFrame() == field070) {
-                    ResetSecondaryCounters(3);
+                    ResetSecondaryCounter(3);
                     field07C = 0;
                     return;
                 }
@@ -2635,7 +2635,7 @@ void ObjectActor5C9CC0F1216::Advance()
     case 995:
         facing = 1;
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -2656,7 +2656,7 @@ void ObjectActor5C9CC0F1216::Advance()
             field0D8 = static_cast<short>(AngleAt00483300(owner->opponent->y + 100.0f - y, owner->opponent->x - x) / 0.017453288659453392f);
             SetPolarVelocity(field0D8, 20.0f);
             if (x - owner->opponent->x < 20.0f && x - owner->opponent->x > -20.0f && y - owner->opponent->y < 120.0f && y - owner->opponent->y > 80.0f) {
-                ClearField74();
+                ClearFrameInfo();
                 if (owner->opponent->field366 < 2) {
                     ++owner->opponent->field366;
                 }
@@ -2670,14 +2670,14 @@ void ObjectActor5C9CC0F1216::Advance()
         x += velocityX;
         y -= velocityY;
         if (AdvanceNestedFrame() == field070) {
-            ResetSecondaryCounters(1);
+            ResetSecondaryCounter(1);
         }
         break;
 
     case 996:
         facing = 1;
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -2700,7 +2700,7 @@ void ObjectActor5C9CC0F1216::Advance()
             if (x - owner->opponent->x < 20.0f && x - owner->opponent->x > -20.0f && y - owner->opponent->y < 120.0f && y - owner->opponent->y > 80.0f) {
                 ++reinterpret_cast<short&>(owner->fieldEFA);
                 PlaySharedSound(46);
-                ClearField74();
+                ClearFrameInfo();
                 if (owner->opponent->meterCooldown > 0) {
                     if (owner->opponent->meterCooldown > 5) {
                         owner->opponent->meterCooldown -= 5;
@@ -2731,7 +2731,7 @@ void ObjectActor5C9CC0F1216::Advance()
         x += velocityX;
         y -= velocityY;
         if (AdvanceNestedFrame() == field070) {
-            ResetSecondaryCounters(1);
+            ResetSecondaryCounter(1);
         }
         break;
 
@@ -2740,7 +2740,7 @@ void ObjectActor5C9CC0F1216::Advance()
         y = 0.0f;
         field08A = 1;
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 3.0f;
             scaleY = 3.0f;
             color[0] = 255;
@@ -2754,7 +2754,7 @@ void ObjectActor5C9CC0F1216::Advance()
             field0D8 = owner->field3A0;
         }
         if (owner->field3A0 <= 0) {
-            ClearField74();
+            ClearFrameInfo();
             return;
         }
         else {
@@ -2762,7 +2762,7 @@ void ObjectActor5C9CC0F1216::Advance()
             scaleY = static_cast<float>(owner->field3A0) / field0D8 * 2;
             rotationZ += 1.0f;
             if (AdvanceNestedFrame() == field070) {
-                ResetSecondaryCounters(10);
+                ResetSecondaryCounter(10);
                 break;
             }
         }

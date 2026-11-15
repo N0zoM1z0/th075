@@ -16,13 +16,7 @@ class ObjectActor4CA6E0F1222 : public CharacterObject {
 public:
     void BindAnimation();
     void Advance();
-    short AdvanceNestedFrame();
-    void ResetPrimaryCounters(short);
-    void ResetSecondaryCounters(short);
-    void SetPolarVelocity(float, float);
-    void EnableTransform(float, float, float);
     int RecordedRange(int, int);
-    void ClearField74();
     void PlaySharedSound(short);
 };
 

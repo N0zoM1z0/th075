@@ -5,7 +5,7 @@ void CharacterAuxObject::Advance()
     switch (action) {
     case 1:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 0.5f;
             scaleY = 0.5f;
             color[0] = 255;
@@ -34,7 +34,7 @@ void CharacterAuxObject::Advance()
         break;
     case 2:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 0.5f;
             scaleY = 0.5f;
             color[0] = 255;
@@ -77,7 +77,7 @@ void CharacterAuxObject::Advance()
         break;
     case 3:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 0.5f;
             scaleY = 0.5f;
             color[0] = 255;
@@ -124,7 +124,7 @@ void CharacterAuxObject::Advance()
         break;
     case 5:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 4.0f;
             color[0] = 255;
@@ -167,7 +167,7 @@ void CharacterAuxObject::Advance()
         break;
     case 6:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 4.0f;
             color[0] = 255;
@@ -210,7 +210,7 @@ void CharacterAuxObject::Advance()
         break;
     case 7:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 4.0f;
             color[0] = 255;
@@ -253,7 +253,7 @@ void CharacterAuxObject::Advance()
         break;
     case 8:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 4.0f;
             color[0] = 255;
@@ -296,7 +296,7 @@ void CharacterAuxObject::Advance()
         break;
     case 13:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = ChooseIntegerRange(0, 10) * 0.1f + 3.0f;
             scaleY = scaleX;
             color[0] = 255;
@@ -322,7 +322,7 @@ void CharacterAuxObject::Advance()
         break;
     case 14:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 0.5f;
             scaleY = 0.5f;
             color[0] = 255;
@@ -366,7 +366,7 @@ void CharacterAuxObject::Advance()
         break;
     case 15:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 0.5f;
             scaleY = scaleX;
             color[0] = 255;
@@ -405,7 +405,7 @@ void CharacterAuxObject::Advance()
         break;
     case 50:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 0.25f;
             scaleY = 0.25f;
             color[0] = 255;
@@ -442,7 +442,7 @@ void CharacterAuxObject::Advance()
         break;
     case 51:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 0.25f;
             scaleY = 0.25f;
             color[0] = 255;
@@ -535,7 +535,7 @@ void CharacterAuxObject::Advance()
         break;
     case 55:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -579,7 +579,7 @@ void CharacterAuxObject::Advance()
         break;
     case 56:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -613,7 +613,7 @@ void CharacterAuxObject::Advance()
     case 57:
         if (animationStage == 0 && animationFrame == 0) {
             SetPolarVelocity(ChooseIntegerRange(0, 360), ChooseIntegerRange(5, 20));
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -640,7 +640,7 @@ void CharacterAuxObject::Advance()
         break;
     case 60:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 0.25f;
             scaleY = 0.25f;
             color[0] = 255;
@@ -668,7 +668,7 @@ void CharacterAuxObject::Advance()
         break;
     case 62:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -697,7 +697,7 @@ void CharacterAuxObject::Advance()
         break;
     case 63:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -734,7 +734,7 @@ void CharacterAuxObject::Advance()
         break;
     case 64:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -763,7 +763,7 @@ void CharacterAuxObject::Advance()
         break;
     case 65:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -801,7 +801,7 @@ void CharacterAuxObject::Advance()
     case 100:
         if (animationStage == 0 && animationFrame == 0) {
             SetPolarVelocity(rand(), rand() * 0.0005);
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.5f;
             scaleY = 1.5f;
             color[0] = 255;
@@ -825,7 +825,7 @@ void CharacterAuxObject::Advance()
         break;
     case 101:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 0.7f;
             scaleY = 0.7f;
             color[0] = 255;
@@ -850,7 +850,7 @@ void CharacterAuxObject::Advance()
         break;
     case 102:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -880,7 +880,7 @@ void CharacterAuxObject::Advance()
         break;
     case 103:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 0.7f;
             scaleY = 0.7f;
             color[0] = 255;
@@ -906,7 +906,7 @@ void CharacterAuxObject::Advance()
     case 104:
         if (animationStage == 0 && animationFrame == 0) {
             SetPolarVelocity(ChooseIntegerRange(0, 360), ChooseIntegerRange(5, 20));
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -935,7 +935,7 @@ void CharacterAuxObject::Advance()
     case 105:
         if (animationStage == 0 && animationFrame == 0) {
             SetPolarVelocity(ChooseIntegerRange(0, 360), ChooseIntegerRange(5, 20));
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -963,7 +963,7 @@ void CharacterAuxObject::Advance()
         break;
     case 106:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 0.25f;
             scaleY = 0.25f;
             color[0] = 255;
@@ -991,7 +991,7 @@ void CharacterAuxObject::Advance()
     case 107:
         if (animationStage == 0 && animationFrame == 0) {
             field078 = static_cast<short>(ChooseIntegerRange(50, 110));
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = field078 * 0.01f;
             scaleY = field078 * 0.01f;
             color[0] = 255;
@@ -1021,7 +1021,7 @@ void CharacterAuxObject::Advance()
         break;
     case 108:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 0.25f;
             scaleY = 0.25f;
             color[0] = 255;
@@ -1049,7 +1049,7 @@ void CharacterAuxObject::Advance()
         break;
     case 109:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 0.25f;
             scaleY = 0.25f;
             color[0] = 255;
@@ -1078,7 +1078,7 @@ void CharacterAuxObject::Advance()
     case 110:
         if (animationStage == 0 && animationFrame == 0) {
             field078 = static_cast<short>(ChooseIntegerRange(50, 110));
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -1108,7 +1108,7 @@ void CharacterAuxObject::Advance()
         break;
     case 111:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = ChooseIntegerRange(20, 100) * 0.01f;
             scaleY = scaleX;
             color[0] = 255;
@@ -1139,7 +1139,7 @@ void CharacterAuxObject::Advance()
         break;
     case 112:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 0.5f;
             scaleY = 0.5f;
             color[0] = 255;
@@ -1166,7 +1166,7 @@ void CharacterAuxObject::Advance()
         break;
     case 113:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 0.7f;
             scaleY = 0.7f;
             color[0] = 255;
@@ -1191,7 +1191,7 @@ void CharacterAuxObject::Advance()
         break;
     case 114:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = ChooseIntegerRange(50, 120) * 1.0f * 0.01f;
             scaleY = scaleX;
             color[0] = 255;
@@ -1221,7 +1221,7 @@ void CharacterAuxObject::Advance()
         break;
     case 115:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 2.0f;
             scaleY = 2.0f;
             color[0] = 0;
@@ -1241,7 +1241,7 @@ void CharacterAuxObject::Advance()
         break;
     case 116:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 2.0f;
             scaleY = 2.0f;
             color[0] = 0;
@@ -1275,7 +1275,7 @@ void CharacterAuxObject::Advance()
         break;
     case 117:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.2f;
             scaleY = 1.2f;
             color[0] = 255;
@@ -1295,7 +1295,7 @@ void CharacterAuxObject::Advance()
         break;
     case 118:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.4f;
             scaleY = 1.4f;
             color[0] = 255;
@@ -1315,7 +1315,7 @@ void CharacterAuxObject::Advance()
         break;
     case 119:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -1341,7 +1341,7 @@ void CharacterAuxObject::Advance()
         break;
     case 120:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -1367,7 +1367,7 @@ void CharacterAuxObject::Advance()
         break;
     case 121:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -1394,7 +1394,7 @@ void CharacterAuxObject::Advance()
     case 122:
         if (animationStage == 0 && animationFrame == 0) {
             SetPolarVelocity(ChooseIntegerRange(0, 360), ChooseIntegerRange(5, 20));
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -1421,7 +1421,7 @@ void CharacterAuxObject::Advance()
         break;
     case 123:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 3.5f;
             scaleY = 10.0f;
             color[0] = 255;
@@ -1445,13 +1445,13 @@ void CharacterAuxObject::Advance()
             if (color[2] > 10) color[2] -= 10;
         }
         if (AdvanceNestedFrame() == field070) {
-            ResetSecondaryCounters(1);
+            ResetSecondaryCounter(1);
             ++field074;
         }
         break;
     case 124:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 3.5f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -1475,13 +1475,13 @@ void CharacterAuxObject::Advance()
             if (color[2] > 10) color[2] -= 10;
         }
         if (AdvanceNestedFrame() == field070) {
-            ResetSecondaryCounters(1);
+            ResetSecondaryCounter(1);
             ++field074;
         }
         break;
     case 125:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 0.25f;
             scaleY = 0.25f;
             color[0] = 255;
@@ -1509,7 +1509,7 @@ void CharacterAuxObject::Advance()
         break;
     case 126:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -1521,7 +1521,7 @@ void CharacterAuxObject::Advance()
         break;
     case 127:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -1533,7 +1533,7 @@ void CharacterAuxObject::Advance()
         break;
     case 128:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -1545,7 +1545,7 @@ void CharacterAuxObject::Advance()
         break;
     case 129:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -1557,7 +1557,7 @@ void CharacterAuxObject::Advance()
         break;
     case 130:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.5f;
             scaleY = 1.5f;
             color[0] = 255;
@@ -1569,7 +1569,7 @@ void CharacterAuxObject::Advance()
         break;
     case 131:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -1595,7 +1595,7 @@ void CharacterAuxObject::Advance()
         break;
     case 132:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -1621,7 +1621,7 @@ void CharacterAuxObject::Advance()
         break;
     case 133:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -1648,7 +1648,7 @@ void CharacterAuxObject::Advance()
     case 134:
         if (animationStage == 0 && animationFrame == 0) {
             SetPolarVelocity(ChooseIntegerRange(0, 360), ChooseIntegerRange(5, 20));
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -1675,7 +1675,7 @@ void CharacterAuxObject::Advance()
         break;
     case 135:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 3.5f;
             scaleY = 10.0f;
             color[0] = 255;
@@ -1699,13 +1699,13 @@ void CharacterAuxObject::Advance()
             if (color[2] > 10) color[2] -= 10;
         }
         if (AdvanceNestedFrame() == field070) {
-            ResetSecondaryCounters(1);
+            ResetSecondaryCounter(1);
             ++field074;
         }
         break;
     case 136:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 3.5f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -1729,13 +1729,13 @@ void CharacterAuxObject::Advance()
             if (color[2] > 10) color[2] -= 10;
         }
         if (AdvanceNestedFrame() == field070) {
-            ResetSecondaryCounters(1);
+            ResetSecondaryCounter(1);
             ++field074;
         }
         break;
     case 137:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -1757,7 +1757,7 @@ void CharacterAuxObject::Advance()
         break;
     case 138:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -1785,7 +1785,7 @@ void CharacterAuxObject::Advance()
         break;
     case 139:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 2.0f;
             scaleY = 2.0f;
             color[0] = 255;
@@ -1811,7 +1811,7 @@ void CharacterAuxObject::Advance()
         break;
     case 140:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -1840,7 +1840,7 @@ void CharacterAuxObject::Advance()
         break;
     case 141:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -1865,7 +1865,7 @@ void CharacterAuxObject::Advance()
         break;
     case 142:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -1890,7 +1890,7 @@ void CharacterAuxObject::Advance()
         break;
     case 143:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -1920,7 +1920,7 @@ void CharacterAuxObject::Advance()
         break;
     case 144:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;
@@ -1950,7 +1950,7 @@ void CharacterAuxObject::Advance()
         break;
     case 145:
         if (animationStage == 0 && animationFrame == 0) {
-            EnableTransform(0.0f, 0.0f, 0.0f);
+            ResetTransform(0.0f, 0.0f, 0.0f);
             scaleX = 1.0f;
             scaleY = 1.0f;
             color[0] = 255;

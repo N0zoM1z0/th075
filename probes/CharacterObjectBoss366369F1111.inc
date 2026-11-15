@@ -7,13 +7,13 @@ case F1111_CASE: {
         F1037_POSITION(this).xPosition<g_F1057_LeftBoundAt00659258 ||
         F1037_POSITION(this).yPosition>g_F1057_UpperBoundAt006583B4 ||
         F1037_POSITION(this).yPosition<g_F1057_LowerBoundAt00658374) {
-        NativeParentExpiredAt0045B830();
+        ClearFrameInfo();
         return;
     }
     if (owner->action>0x31 &&
         owner->action<0x96 &&
         F1024_PHASE(this).stageAt62<2) {
-        NativeParentExpiredAt0045B830();
+        ClearFrameInfo();
         for (int shot=0;shot<2;++shot)
             reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
                 0x3E4,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),1,1);
@@ -25,11 +25,11 @@ case F1111_CASE: {
         return;
     }
     if (field07C==5) {
-        NativeParentExpiredAt0045B830();
+        ClearFrameInfo();
         return;
     }
     if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
-        SetNativeMotionAt0040FBB0(0,0.0f,0);
+        ResetTransform(0,0.0f,0);
         field080=1;
         field07C=0;
         scaleX=1.0f;
@@ -74,7 +74,7 @@ case F1111_CASE: {
         }
     }
     if (F1024_PHASE(this).stageAt62<=1) {
-        SetNativeTwoFloatsAt0040FB70(float(field0DC),
+        SetPolarVelocity(float(field0DC),
             float(field0D8)*g_F1110_NativeSpeedAt006578C0+g_F1110_NativeBaseAt00657CF8);
         reinterpret_cast<F1051Grandparent*>(PARENT)->SpawnObjectAt00453A70(
             F1111_NEXT_ACTION,reinterpret_cast<unsigned int&>(x),reinterpret_cast<unsigned int&>(y),
@@ -97,7 +97,7 @@ case F1111_CASE: {
         if (field080==0 || field07C!=4) {
             F1037_MOTION(this).xMotion=0.0f;
             F1037_MOTION(this).yMotion=0.0f;
-            SetAuxActionAt0040FB40(2);
+            ResetSecondaryCounter(2);
             scaleX=2.5f;
             scaleY=2.5f;
             return;
@@ -112,13 +112,13 @@ case F1111_CASE: {
             color[0]-=25;
         else {
             color[0]=0;
-            NativeParentExpiredAt0045B830();
+            ClearFrameInfo();
             return;
         }
     }
-    if (GetNativeActionAt0040FA30()==field070)
-        NativeParentExpiredAt0045B830();
+    if (AdvanceNestedFrame()==field070)
+        ClearFrameInfo();
     if (F1024_PHASE(this).stageAt62==2 && F1024_PHASE(this).frameAt64==0)
-        SetAuxActionAt0040FB40(1);
+        ResetSecondaryCounter(1);
     return;
 }

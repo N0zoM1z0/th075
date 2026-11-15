@@ -12,11 +12,11 @@ case 0x35D: {
             0.0f,facing,1);
         ++field0D8;
     }
-    if (GetNativeActionAt0040FA30()==field070) {
+    if (AdvanceNestedFrame()==field070) {
         if (field0D8<5)
-            SetAuxActionAt0040FB40(1);
+            ResetSecondaryCounter(1);
         else
-            NativeParentExpiredAt0045B830();
+            ClearFrameInfo();
     }
     return;
 }

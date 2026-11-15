@@ -2,7 +2,7 @@
 // 154 native CODE B /32 x86 inside ONE NONEXACT 81KB parent.
 case 0x38F: {
     if (owner->field3A0<=0) {
-        NativeParentExpiredAt0045B830();
+        ClearFrameInfo();
         return;
     }
     if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
@@ -10,7 +10,7 @@ case 0x38F: {
         field080=1;
         field07C=0;
     }
-    if (GetNativeActionAt0040FA30()==field070)
-        NativeParentExpiredAt0045B830();
+    if (AdvanceNestedFrame()==field070)
+        ClearFrameInfo();
     return;
 }

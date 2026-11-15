@@ -1,9 +1,9 @@
 address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x0040DB10,SpriteGeometry::SetFourDwordsAt0040DB10,SpriteGeometry::SetFourDwords,R104,sprite-geometry-set-four-dwords
-0x0040FAC0,AnimationState::ResetPrimaryCountersAt0040FAC0,AnimationState::ResetPrimaryCounters,R104,animation-reset-primary-counters
-0x0040FB00,AnimationState::SetThreeCountersAt0040FB00,AnimationState::SetThreeCounters,R104,animation-set-three-counters
-0x0040FB40,AnimationState::ResetSecondaryCounterAt0040FB40,AnimationState::ResetSecondaryCounter,R104,animation-reset-secondary-counter
-0x0040FC50,AnimationState::ClearByte40At0040FC50,AnimationState::ClearByte40,R104,animation-clear-byte40
+0x0040FAC0,Actor::ResetPrimaryCountersAt0040FAC0,Actor::ResetPrimaryCounters,R104,animation-reset-primary-counters
+0x0040FB00,Actor::SetThreeCountersAt0040FB00,Actor::SetThreeCounters,R104,animation-set-three-counters
+0x0040FB40,Actor::ResetSecondaryCounterAt0040FB40,Actor::ResetSecondaryCounter,R104,animation-reset-secondary-counter
+0x0040FC50,Actor::ClearTransformFlagAt0040FC50,Actor::ClearTransformFlag,R104,animation-clear-byte40
 0x00411BB0,SpriteScene::CopyVectorAtOffset12At00411BB0,SpriteScene::CopyVector,R104,sprite-scene-copy-vector
 0x00411BE0,SpriteScene::DispatchGlobalDrawAt00411BE0,SpriteScene::DispatchGlobalDraw,R104,sprite-scene-dispatch-global-draw
 0x0041CA80,TextRasterizer::ParseHexDigitAt0041CA80,TextRasterizer::DecodeHexDigit,R104,text-rasterizer-decode-hex-digit
@@ -11,7 +11,7 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x00440B00,BattleHud::DrawSelectedNoticeAt00440B00,BattleHud::DrawSelectedNotice,R104,battle-hud-draw-selected-notice
 0x00443FC0,BattleState::StartHitSequenceAt00443FC0,BattleState::StartHitSequence,R105,battle-state-start-hit-sequence
 0x00455010,FighterState::CheckGroundedStateWindowAt00455010,FighterState::IsGroundedStateWindow,R104,fighter-is-grounded-state-window
-0x0045B830,BattleEffect::ClearField74At0045B830,BattleEffect::ClearField74,R104,battle-effect-clear-field74
+0x0045B830,CharacterObject::ClearFrameInfoAt0045B830,CharacterObject::ClearFrameInfo,R104,battle-effect-clear-field74
 0x0045CDC0,FighterState::InitializeNoticeAt0045CDC0,FighterState::InitializeNotice,R105,fighter-initialize-notice
 0x0045D650,FighterState::ConfigureNoticeTextAt0045D650,FighterState::ConfigureNoticeText,R104,fighter-configure-notice-text
 0x0045D6A0,FighterState::BeginNoticeTransitionAt0045D6A0,FighterState::BeginNoticeTransition,R104,fighter-begin-notice-transition
@@ -101,9 +101,9 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x005E59C0,CharacterSpecial::AdvanceAt005E59C0,CharacterSpecial5E59C0::InitializeStage,R049,character-special-stage-005e59c0
 0x005E68C0,CharacterSpecial::RenderAt005E68C0,CharacterSpecial5E68C0::RenderStage,R049,character-special-render-005e68c0
 0x005E6F70,CharacterAux::RunAt005E6F70,CharacterInput5E6F70::PollCommands,R049,character-input-policy-005e6f70
-0x0040FA30,AnimationState::AdvanceNestedFrameAt0040FA30,AnimationProgress40FA30::AdvanceNestedFrame,R103,animation-progress-0040fa30
-0x0040FBB0,SpriteScene::ResetNodeTransform,SpriteTransform40FBB0::ResetNodeTransform,R036,sprite-transform-reset-0040fbb0
-0x0040FB70,GameObject::SetPolarVelocity [provisional role],ObjectMotion40FB70::SetPolarVelocity,R217,object-polar-velocity-0040fb70
+0x0040FA30,AnimationState::AdvanceNestedFrameAt0040FA30,Actor::AdvanceNestedFrame,R103,animation-progress-0040fa30
+0x0040FBB0,SpriteScene::ResetNodeTransform,Actor::ResetTransform,R036,sprite-transform-reset-0040fbb0
+0x0040FB70,GameObject::SetPolarVelocity [provisional role],Actor::SetPolarVelocity,R217,object-polar-velocity-0040fb70
 0x00455580,FighterState::SelectRecordedRandomRangeAt00455580,RecordedRange455580::SelectRange,R109,recorded-random-range-00455580
 0x0045B860,BattleEffect::PlaySharedSoundAt0045B860,EffectSound45B860::PlaySharedSound,R102,effect-shared-sound-0045b860
 0x00453E60,FighterState::SetCameraShakeAt00453E60,FighterShake453E60::SetCameraShake,R102,fighter-camera-shake-00453e60

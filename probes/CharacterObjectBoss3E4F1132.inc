@@ -3,7 +3,7 @@
 case 0x3E4: {
     facing=1;
     if (F1024_PHASE(this).stageAt62==0 && F1024_PHASE(this).frameAt64==0) {
-        SetNativeMotionAt0040FBB0(0,0.0f,0);
+        ResetTransform(0,0.0f,0);
         scaleX=1.0f;
         scaleY=1.0f;
         color[0]=0xFF;
@@ -19,7 +19,7 @@ case 0x3E4: {
         --field0DA;
         if (field0DA<3)
             field0DA=3;
-        SetNativeTwoFloatsAt0040FB70(float(field0D8),
+        SetPolarVelocity(float(field0D8),
             float(field0DA)*g_F1120_XBrakingAt00659090);
     }
     if (F1024_PHASE(this).stageAt62==1) {
@@ -27,14 +27,14 @@ case 0x3E4: {
             (*(&F1037_POSITION(PARENT_GRANDPARENT).yPosition))+g_F1057_YOffsetAt00657888-F1037_POSITION(this).yPosition,
             F1037_POSITION(PARENT_GRANDPARENT).xPosition-F1037_POSITION(this).xPosition) /
             g_F1057_AngleDivAt00657828);
-        SetNativeTwoFloatsAt0040FB70(float(field0D8),20.0f);
+        SetPolarVelocity(float(field0D8),20.0f);
         if (F1037_POSITION(this).xPosition-F1037_POSITION(PARENT_GRANDPARENT).xPosition<g_F1115_DistanceAt0065786C &&
             F1037_POSITION(this).xPosition-F1037_POSITION(PARENT_GRANDPARENT).xPosition>g_F1131_LeftHitAt00659230 &&
             F1037_POSITION(this).yPosition-F1037_POSITION(PARENT_GRANDPARENT).yPosition<g_F1131_TopHitAt006590A8 &&
             F1037_POSITION(this).yPosition-F1037_POSITION(PARENT_GRANDPARENT).yPosition>g_F1131_BottomHitAt00658268) {
             ++reinterpret_cast<signed short&>(owner->fieldEFA);
             NativeHitAt0045B860(0x2E);
-            NativeParentExpiredAt0045B830();
+            ClearFrameInfo();
             if (F980_GAUGE(PARENT_GRANDPARENT).cooldownAt3B6>0) {
                 if (F980_GAUGE(PARENT_GRANDPARENT).cooldownAt3B6>5)
                     F980_GAUGE(PARENT_GRANDPARENT).cooldownAt3B6=
@@ -65,7 +65,7 @@ case 0x3E4: {
     }
     F1037_POSITION(this).xPosition=F1037_POSITION(this).xPosition+F1037_MOTION(this).xMotion;
     F1037_POSITION(this).yPosition=F1037_POSITION(this).yPosition-F1037_MOTION(this).yMotion;
-    if (GetNativeActionAt0040FA30()==field070)
-        SetAuxActionAt0040FB40(1);
+    if (AdvanceNestedFrame()==field070)
+        ResetSecondaryCounter(1);
     return;
 }

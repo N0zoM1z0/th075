@@ -1,13 +1,9 @@
 #ifndef TH075_BATTLE_EFFECT_SPAWNER_F136_HPP
 #define TH075_BATTLE_EFFECT_SPAWNER_F136_HPP
+#include "Actor.hpp"
 
 // Pointer-only interfaces. Never construct or embed these private owners;
 // their complete layouts, original names and allocation sizes remain unknown.
-class SpawnedEffectF136 {
-public:
-    void ResetPrimaryCounters(short effect);
-    void ResetNodeTransform(float x, float y, float z);
-};
 
 // Only slot 7 is called. The uncalled prefix names describe slot positions,
 // not recovered original method meanings or usable call contracts.
@@ -20,12 +16,12 @@ public:
     virtual void UnknownSlot4();
     virtual void UnknownSlot5();
     virtual void UnknownSlot6();
-    virtual void Acquire(SpawnedEffectF136** output);
+    virtual void Acquire(Actor** output);
 };
 
 class EffectDequeF136 {
 public:
-    void PushBack(SpawnedEffectF136* const& effect);
+    void PushBack(Actor* const& effect);
 };
 
 class BattleEffectSpawnerF136 {
