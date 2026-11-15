@@ -54870,18 +54870,18 @@ source = "src/CharacterObjectConstructorsF422.cpp"
 object = "build/matching/CharacterObjectConstructorsF422.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["ReimuObject::InitializeAt004769B0"]
-symbol = "??0ReimuObjectF422@@QAE@PAX@Z"
+symbol = "??0ReimuObject@@QAE@PAX@Z"
 target_address = 0x004769B0
 size = 134
 [[units.reimu-object-initialize-004769b0.relocations]]
 offset = 11
 type = "REL32"
-symbol = "??0FighterObjectBaseF422@@QAE@XZ"
+symbol = "??0CharacterObject@@QAE@XZ"
 target = 0x0045B760
 [[units.reimu-object-initialize-004769b0.relocations]]
 offset = 20
 type = "DIR32"
-symbol = "??_7ReimuObjectF422@@6B@"
+symbol = "??_7ReimuObject@@6B@"
 target = 0x00659210
 
 
@@ -54890,18 +54890,18 @@ source = "src/CharacterObjectConstructorsF422.cpp"
 object = "build/matching/CharacterObjectConstructorsF422.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["MarisaObject::InitializeAt0049C850"]
-symbol = "??0MarisaObjectF422@@QAE@PAX@Z"
+symbol = "??0MarisaObject@@QAE@PAX@Z"
 target_address = 0x0049C850
 size = 146
 [[units.marisa-object-initialize-0049c850.relocations]]
 offset = 11
 type = "REL32"
-symbol = "??0FighterObjectBaseF422@@QAE@XZ"
+symbol = "??0CharacterObject@@QAE@XZ"
 target = 0x0045B760
 [[units.marisa-object-initialize-0049c850.relocations]]
 offset = 20
 type = "DIR32"
-symbol = "??_7MarisaObjectF422@@6B@"
+symbol = "??_7MarisaObject@@6B@"
 target = 0x006593D4
 
 
@@ -54910,18 +54910,18 @@ source = "src/CharacterObjectConstructorsF422.cpp"
 object = "build/matching/CharacterObjectConstructorsF422.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["SakuyaObject::InitializeAt004CA640"]
-symbol = "??0SakuyaObjectF422@@QAE@PAX@Z"
+symbol = "??0SakuyaObject@@QAE@PAX@Z"
 target_address = 0x004CA640
 size = 146
 [[units.sakuya-object-initialize-004ca640.relocations]]
 offset = 11
 type = "REL32"
-symbol = "??0FighterObjectBaseF422@@QAE@XZ"
+symbol = "??0CharacterObject@@QAE@XZ"
 target = 0x0045B760
 [[units.sakuya-object-initialize-004ca640.relocations]]
 offset = 20
 type = "DIR32"
-symbol = "??_7SakuyaObjectF422@@6B@"
+symbol = "??_7SakuyaObject@@6B@"
 target = 0x006595B8
 
 
@@ -54930,18 +54930,18 @@ source = "src/CharacterObjectConstructorsF422.cpp"
 object = "build/matching/CharacterObjectConstructorsF422.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["AliceObject::InitializeAt004EBD00"]
-symbol = "??0AliceObjectF422@@QAE@PAX@Z"
+symbol = "??0AliceObject@@QAE@PAX@Z"
 target_address = 0x004EBD00
 size = 146
 [[units.alice-object-initialize-004ebd00.relocations]]
 offset = 11
 type = "REL32"
-symbol = "??0FighterObjectBaseF422@@QAE@XZ"
+symbol = "??0CharacterObject@@QAE@XZ"
 target = 0x0045B760
 [[units.alice-object-initialize-004ebd00.relocations]]
 offset = 20
 type = "DIR32"
-symbol = "??_7AliceObjectF422@@6B@"
+symbol = "??_7AliceObject@@6B@"
 target = 0x0065970C
 
 
@@ -54950,18 +54950,18 @@ source = "src/CharacterObjectConstructorsF422.cpp"
 object = "build/matching/CharacterObjectConstructorsF422.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["PatchouliObject::InitializeAt0050A4E0"]
-symbol = "??0PatchouliObjectF422@@QAE@PAX@Z"
+symbol = "??0PatchouliObject@@QAE@PAX@Z"
 target_address = 0x0050A4E0
 size = 146
 [[units.patchouli-object-initialize-0050a4e0.relocations]]
 offset = 11
 type = "REL32"
-symbol = "??0FighterObjectBaseF422@@QAE@XZ"
+symbol = "??0CharacterObject@@QAE@XZ"
 target = 0x0045B760
 [[units.patchouli-object-initialize-0050a4e0.relocations]]
 offset = 20
 type = "DIR32"
-symbol = "??_7PatchouliObjectF422@@6B@"
+symbol = "??_7PatchouliObject@@6B@"
 target = 0x00659870
 
 
@@ -54970,18 +54970,18 @@ source = "src/CharacterObjectConstructorsF422.cpp"
 object = "build/matching/CharacterObjectConstructorsF422.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["YoumuObject::InitializeAt00536360"]
-symbol = "??0YoumuObjectF422@@QAE@PAX@Z"
+symbol = "??0YoumuObject@@QAE@PAX@Z"
 target_address = 0x00536360
 size = 146
 [[units.youmu-object-initialize-00536360.relocations]]
 offset = 11
 type = "REL32"
-symbol = "??0FighterObjectBaseF422@@QAE@XZ"
+symbol = "??0CharacterObject@@QAE@XZ"
 target = 0x0045B760
 [[units.youmu-object-initialize-00536360.relocations]]
 offset = 20
 type = "DIR32"
-symbol = "??_7YoumuObjectF422@@6B@"
+symbol = "??_7YoumuObject@@6B@"
 target = 0x006599D4
 
 
@@ -54990,18 +54990,18 @@ source = "src/CharacterObjectConstructorsF422.cpp"
 object = "build/matching/CharacterObjectConstructorsF422.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["RemiliaObject::InitializeAt0055ABE0"]
-symbol = "??0RemiliaObjectF422@@QAE@PAX@Z"
+symbol = "??0RemiliaObject@@QAE@PAX@Z"
 target_address = 0x0055ABE0
 size = 146
 [[units.remilia-object-initialize-0055abe0.relocations]]
 offset = 11
 type = "REL32"
-symbol = "??0FighterObjectBaseF422@@QAE@XZ"
+symbol = "??0CharacterObject@@QAE@XZ"
 target = 0x0045B760
 [[units.remilia-object-initialize-0055abe0.relocations]]
 offset = 20
 type = "DIR32"
-symbol = "??_7RemiliaObjectF422@@6B@"
+symbol = "??_7RemiliaObject@@6B@"
 target = 0x00659B34
 
 
@@ -55010,18 +55010,18 @@ source = "src/CharacterObjectConstructorsF422.cpp"
 object = "build/matching/CharacterObjectConstructorsF422.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["YuyukoObject::InitializeAt0057D4E0"]
-symbol = "??0YuyukoObjectF422@@QAE@PAX@Z"
+symbol = "??0YuyukoObject@@QAE@PAX@Z"
 target_address = 0x0057D4E0
 size = 146
 [[units.yuyuko-object-initialize-0057d4e0.relocations]]
 offset = 11
 type = "REL32"
-symbol = "??0FighterObjectBaseF422@@QAE@XZ"
+symbol = "??0CharacterObject@@QAE@XZ"
 target = 0x0045B760
 [[units.yuyuko-object-initialize-0057d4e0.relocations]]
 offset = 20
 type = "DIR32"
-symbol = "??_7YuyukoObjectF422@@6B@"
+symbol = "??_7YuyukoObject@@6B@"
 target = 0x00659C88
 
 
@@ -55030,18 +55030,18 @@ source = "src/CharacterObjectConstructorsF422.cpp"
 object = "build/matching/CharacterObjectConstructorsF422.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["YukariObject::InitializeAt005A1560"]
-symbol = "??0YukariObjectF422@@QAE@PAX@Z"
+symbol = "??0YukariObject@@QAE@PAX@Z"
 target_address = 0x005A1560
 size = 146
 [[units.yukari-object-initialize-005a1560.relocations]]
 offset = 11
 type = "REL32"
-symbol = "??0FighterObjectBaseF422@@QAE@XZ"
+symbol = "??0CharacterObject@@QAE@XZ"
 target = 0x0045B760
 [[units.yukari-object-initialize-005a1560.relocations]]
 offset = 20
 type = "DIR32"
-symbol = "??_7YukariObjectF422@@6B@"
+symbol = "??_7YukariObject@@6B@"
 target = 0x00659DDC
 
 
@@ -55050,18 +55050,18 @@ source = "src/CharacterObjectConstructorsF422.cpp"
 object = "build/matching/CharacterObjectConstructorsF422.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["SuikaObject::InitializeAt005C9C20"]
-symbol = "??0SuikaObjectF422@@QAE@PAX@Z"
+symbol = "??0SuikaObject@@QAE@PAX@Z"
 target_address = 0x005C9C20
 size = 146
 [[units.suika-object-initialize-005c9c20.relocations]]
 offset = 11
 type = "REL32"
-symbol = "??0FighterObjectBaseF422@@QAE@XZ"
+symbol = "??0CharacterObject@@QAE@XZ"
 target = 0x0045B760
 [[units.suika-object-initialize-005c9c20.relocations]]
 offset = 20
 type = "DIR32"
-symbol = "??_7SuikaObjectF422@@6B@"
+symbol = "??_7SuikaObject@@6B@"
 target = 0x00659F14
 
 
@@ -55070,18 +55070,18 @@ source = "src/CharacterObjectConstructorsF422.cpp"
 object = "build/matching/CharacterObjectConstructorsF422.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
 functions = ["MeilingObject::InitializeAt005EB490"]
-symbol = "??0MeilingObjectF422@@QAE@PAX@Z"
+symbol = "??0MeilingObject@@QAE@PAX@Z"
 target_address = 0x005EB490
 size = 134
 [[units.meiling-object-initialize-005eb490.relocations]]
 offset = 11
 type = "REL32"
-symbol = "??0FighterObjectBaseF422@@QAE@XZ"
+symbol = "??0CharacterObject@@QAE@XZ"
 target = 0x0045B760
 [[units.meiling-object-initialize-005eb490.relocations]]
 offset = 20
 type = "DIR32"
-symbol = "??_7MeilingObjectF422@@6B@"
+symbol = "??_7MeilingObject@@6B@"
 target = 0x0065A04C
 
 

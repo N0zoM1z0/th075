@@ -7,7 +7,10 @@
 // Advance, is that character's object state machine.
 class CharacterObject : public Actor {
 public:
-    unsigned char unknown0A8[0x0C8 - 0x0A8];
+    CharacterObject();                  // 0045B760; object vtables have no destructor slot
+
+    unsigned char unknown0A8[0x0C4 - 0x0A8];
+    ActionSequenceSlots* sequences;     // +0x0C4 the owner's sequence container (owner + 0x468)
     float field0C8;                     // +0x0C8
     float field0CC;                     // +0x0CC
     float field0D0;                     // +0x0D0
@@ -17,9 +20,22 @@ public:
     short field0DC;                     // +0x0DC
     short field0DE;                     // +0x0DE
     short field0E0;                     // +0x0E0
-    unsigned char unknown0E2[0x0E4 - 0x0E2];
+    short field0E2;                     // +0x0E2
     Fighter* owner;                     // +0x0E4 fighter that spawned the object
 };
+
+// Each character's object class; its constructor takes the owning fighter.
+class ReimuObject : public CharacterObject { public: ReimuObject(void* ownerFighter); };
+class MarisaObject : public CharacterObject { public: MarisaObject(void* ownerFighter); };
+class SakuyaObject : public CharacterObject { public: SakuyaObject(void* ownerFighter); };
+class AliceObject : public CharacterObject { public: AliceObject(void* ownerFighter); };
+class PatchouliObject : public CharacterObject { public: PatchouliObject(void* ownerFighter); };
+class YoumuObject : public CharacterObject { public: YoumuObject(void* ownerFighter); };
+class RemiliaObject : public CharacterObject { public: RemiliaObject(void* ownerFighter); };
+class YuyukoObject : public CharacterObject { public: YuyukoObject(void* ownerFighter); };
+class YukariObject : public CharacterObject { public: YukariObject(void* ownerFighter); };
+class SuikaObject : public CharacterObject { public: SuikaObject(void* ownerFighter); };
+class MeilingObject : public CharacterObject { public: MeilingObject(void* ownerFighter); };
 
 typedef char CharacterObjectLayoutCheck[(
     offsetof(CharacterObject, field0C8) == 0x0C8 &&

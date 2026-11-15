@@ -1,4 +1,4 @@
-#include "Actor.hpp"
+#include "CharacterObject.hpp"
 // R067 original complete 855-byte character-specific projectile controller.
 // Observed original projectile-owner positional arguments are passed by
 // their exact 32-bit float bits, avoiding unintended x87 conversions.
@@ -10,7 +10,7 @@ class CharacterFighterF379 {
 public:
     void SpawnProjectile(int,unsigned int,unsigned int,unsigned char,int);
 };
-class CharacterProjectileF379 : public Actor {
+class CharacterProjectileF379 : public CharacterObject {
 public:
     void Advance();
     void Destroy();
@@ -18,16 +18,6 @@ public:
     void SetPolarVelocity(float angle,float speed);
     void SetMode(int);
     short CheckCollision();
-public:
-    // Fields after the shared Actor layout.
-    unsigned char unknown0A8[0x0C8 - 0x0A8];
-    float field0C8;
-    float field0CC;
-    unsigned char unknown0D0[0x0DA - 0x0D0];
-    short field0DA;
-    short field0DC;
-    unsigned char unknown0DE[0x0E4 - 0x0DE];
-    void* field0E4;
 };
 extern float AngleAt00483300(unsigned int,unsigned int);
 extern const float g_PolarScaleAt00658044;
@@ -36,8 +26,8 @@ extern const float g_ProjectMinXAt006595EC;
 extern const float g_ProjectMaxXAt00659424;
 extern const float g_ProjectMaxYAt006583B4;
 extern const float g_ProjectScaleF379At00659454;
-#define OWNER (reinterpret_cast<CharacterFighterF379*>(field0E4))
-#define OWNER_FIELD(type,off) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(field0E4)+(off)))
+#define OWNER (reinterpret_cast<CharacterFighterF379*>(owner))
+#define OWNER_FIELD(type,off) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(owner)+(off)))
 void CharacterProjectileF379::Advance() {
     if (field07C==5) {
         Destroy();

@@ -1,6 +1,6 @@
 #include "PatchouliFighter.hpp"
 #include "Fighter.hpp"
-#include "Actor.hpp"
+#include "CharacterObject.hpp"
 #include "FighterAnimationPhaseBorrowedF1024.hpp"
 #include "AnimationProgress40FA30.hpp"
 #include "CharacterAuxAction.hpp"
@@ -8,21 +8,9 @@
 #include "ObjectMotion40FB70.hpp"
 #include "SpriteTransform40FBB0.hpp"
 
-class AuxiliaryActor4A80F0 : public Actor {
+class AuxiliaryActor4A80F0 : public CharacterObject {
 public:
     void Update();
-public:
-    // Fields after the shared Actor layout.
-    unsigned char unknown0A8[0x0C8 - 0x0A8];
-    float field0C8;
-    unsigned char unknown0CC[0x0D8 - 0x0CC];
-    short field0D8;
-    short field0DA;
-    short field0DC;
-    short field0DE;
-    short field0E0;
-    unsigned char unknown0E2[0x0E4 - 0x0E2];
-    void* field0E4;
 };
 class EffectEmitterF120 {
 public:
@@ -31,12 +19,12 @@ public:
 extern int g_AI507B20Countdown;
 
 #define FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(this) + (offset)))
-#define OWNER(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(field0E4) + (offset)))
-#define OWNER_FLOAT(offset) *reinterpret_cast<float*>(reinterpret_cast<unsigned char*>(field0E4) + (offset))
+#define OWNER(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<unsigned char*>(owner) + (offset)))
+#define OWNER_FLOAT(offset) *reinterpret_cast<float*>(reinterpret_cast<unsigned char*>(owner) + (offset))
 #define OTHER_FLOAT(offset) *reinterpret_cast<float*>(reinterpret_cast<unsigned char*>(OWNER(void*, 0x2E8)) + (offset))
 #define RESET(n) reinterpret_cast<AnimationState*>(this)->ResetSecondaryCounter(n)
 #define POLAR(a, s) reinterpret_cast<ObjectMotion40FB70*>(this)->SetPolarVelocity(a, s)
-#define SPAWN(id, x, y, f, l) reinterpret_cast<EffectEmitterF120*>(field0E4)->Spawn(id, x, y, f, l)
+#define SPAWN(id, x, y, f, l) reinterpret_cast<EffectEmitterF120*>(owner)->Spawn(id, x, y, f, l)
 
 void AuxiliaryActor4A80F0::Update()
 {
@@ -81,7 +69,7 @@ void AuxiliaryActor4A80F0::Update()
         OWNER(short, 0xF30) = static_cast<short>(y);
     }
     if ((OWNER(short, 0x60) == 709 || OWNER(short, 0x60) == 710) &&
-        F1024_PHASE(field0E4).stageAt62 == 5 && F1024_PHASE(field0E4).frameAt64 == 0 &&
+        F1024_PHASE(owner).stageAt62 == 5 && F1024_PHASE(owner).frameAt64 == 0 &&
         field0DC == 0 && animationStage == 1 &&
         ((action == 833 && OWNER(short, 0xF16) == 6) ||
          (action == 832 && OWNER(short, 0xF16) == 5) ||
@@ -98,7 +86,7 @@ void AuxiliaryActor4A80F0::Update()
         --OWNER(short, 0xF16);
     }
     if ((OWNER(short, 0x60) == 716 || OWNER(short, 0x60) == 717) &&
-        F1024_PHASE(field0E4).stageAt62 == 5 && F1024_PHASE(field0E4).frameAt64 == 0 &&
+        F1024_PHASE(owner).stageAt62 == 5 && F1024_PHASE(owner).frameAt64 == 0 &&
         (animationStage == 1 || animationStage == 2) &&
         ((action == 833 && OWNER(short, 0xF16) == 6) ||
          (action == 832 && OWNER(short, 0xF16) == 5) ||
