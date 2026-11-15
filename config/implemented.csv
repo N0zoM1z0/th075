@@ -223,11 +223,11 @@ SharedPcm406B80::Read
 SoundBank4073D0::LoadWaveDirectory
 SoundBank4073D0::LoadSerializedFile
 SoundBank4073D0::SaveSerializedFile
-AudioStreamRecord408110::OpenFile
-AudioStreamRecord408110::OpenArchiveEntry
-AudioStreamRecord408110::ReadLoopPointsFromFile
-AudioStreamRecord408110::ReadLoopPointsFromArchive
-AudioStreamRefill408BD0::Refill
+AudioStream::OpenFile
+AudioStream::OpenArchiveEntry
+AudioStream::ReadLoopPointsFromFile
+AudioStream::ReadLoopPointsFromArchive
+AudioStream::Refill
 AudioControl407CA0::ClearPlayback
 AudioControl407CA0::Start
 AudioControl407CA0::Stop
@@ -237,8 +237,8 @@ AudioControl407CA0::Worker
 AudioVolume4073B0::SetSoundBankVolume
 AudioVolume4073B0::SetStreamVolume
 SoundBankPlay4079C0::Play
-AudioRecordLifecycle409290::AudioRecordLifecycle409290
-AudioRecordLifecycle409290::~AudioRecordLifecycle409290
+AudioStream::AudioStream
+AudioStream::~AudioStream
 ReimuFighter::ConfigureStage
 MarisaFighter::ConfigureStage
 SakuyaFighter::ConfigureStage

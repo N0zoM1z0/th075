@@ -18824,8 +18824,8 @@ relocations = [
 source = "src/AudioRecord408110.cpp"
 object = "build/matching/AudioRecord408110.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["AudioStreamRecord408110::OpenFile"]
-symbol = "?OpenFile@AudioStreamRecord408110@@QAEXPBDK@Z"
+functions = ["AudioStream::OpenFile"]
+symbol = "?OpenFile@AudioStream@@QAEXPBDK@Z"
 target_address = 0x00408110
 size = 627
 compare_size = 627
@@ -18850,8 +18850,8 @@ relocations = [
 source = "src/AudioRecord408110.cpp"
 object = "build/matching/AudioRecord408110.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["AudioStreamRecord408110::OpenArchiveEntry"]
-symbol = "?OpenArchiveEntry@AudioStreamRecord408110@@QAEXPBDK0@Z"
+functions = ["AudioStream::OpenArchiveEntry"]
+symbol = "?OpenArchiveEntry@AudioStream@@QAEXPBDK0@Z"
 target_address = 0x00408390
 size = 727
 compare_size = 727
@@ -18886,8 +18886,8 @@ relocations = [
 source = "src/AudioRecord408110.cpp"
 object = "build/matching/AudioRecord408110.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["AudioStreamRecord408110::ReadLoopPointsFromFile"]
-symbol = "?ReadLoopPointsFromFile@AudioStreamRecord408110@@QAEXPBD@Z"
+functions = ["AudioStream::ReadLoopPointsFromFile"]
+symbol = "?ReadLoopPointsFromFile@AudioStream@@QAEXPBD@Z"
 target_address = 0x00408670
 size = 644
 compare_size = 644
@@ -18910,8 +18910,8 @@ relocations = [
 source = "src/AudioRecord408110.cpp"
 object = "build/matching/AudioRecord408110.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["AudioStreamRecord408110::ReadLoopPointsFromArchive"]
-symbol = "?ReadLoopPointsFromArchive@AudioStreamRecord408110@@QAEXPBD0@Z"
+functions = ["AudioStream::ReadLoopPointsFromArchive"]
+symbol = "?ReadLoopPointsFromArchive@AudioStream@@QAEXPBD0@Z"
 target_address = 0x00408900
 size = 713
 compare_size = 713
@@ -18938,8 +18938,8 @@ relocations = [
 source = "src/AudioRefill408BD0.cpp"
 object = "build/matching/AudioRefill408BD0.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["AudioStreamRefill408BD0::Refill"]
-symbol = "?Refill@AudioStreamRefill408BD0@@QAEXK@Z"
+functions = ["AudioStream::Refill"]
+symbol = "?Refill@AudioStream@@QAEXK@Z"
 target_address = 0x00408BD0
 size = 1724
 compare_size = 1724
@@ -18994,15 +18994,15 @@ relocations = [
   { offset = 0x7, type = "DIR32", symbol = "?audioQueueStorage@@3PAEA", target = 0x006713A0 },
   { offset = 0xC, type = "REL32", symbol = "?Size@AudioQueue407CA0@@QAEIXZ", target = 0x004094B0 },
   { offset = 0x19, type = "DIR32", symbol = "?audioQueueStorage@@3PAEA", target = 0x006713A0 },
-  { offset = 0x1E, type = "REL32", symbol = "?Front@AudioQueue407CA0@@QAEAAVAudioStreamRefill408BD0@@XZ", target = 0x004094D0 },
+  { offset = 0x1E, type = "REL32", symbol = "?Front@AudioQueue407CA0@@QAEAAVAudioStream@@XZ", target = 0x004094D0 },
   { offset = 0x2A, type = "DIR32", symbol = "?masterVolume@@3CA", target = 0x0066C214 },
   { offset = 0x33, type = "DIR32", symbol = "?audioQueueStorage@@3PAEA", target = 0x006713A0 },
-  { offset = 0x38, type = "REL32", symbol = "?Front@AudioQueue407CA0@@QAEAAVAudioStreamRefill408BD0@@XZ", target = 0x004094D0 },
+  { offset = 0x38, type = "REL32", symbol = "?Front@AudioQueue407CA0@@QAEAAVAudioStream@@XZ", target = 0x004094D0 },
   { offset = 0x55, type = "DIR32", symbol = "?audioQueueStorage@@3PAEA", target = 0x006713A0 },
-  { offset = 0x5A, type = "REL32", symbol = "?Front@AudioQueue407CA0@@QAEAAVAudioStreamRefill408BD0@@XZ", target = 0x004094D0 },
+  { offset = 0x5A, type = "REL32", symbol = "?Front@AudioQueue407CA0@@QAEAAVAudioStream@@XZ", target = 0x004094D0 },
   { offset = 0x66, type = "DIR32", symbol = "?masterVolume@@3CA", target = 0x0066C214 },
   { offset = 0x7E, type = "DIR32", symbol = "?audioQueueStorage@@3PAEA", target = 0x006713A0 },
-  { offset = 0x83, type = "REL32", symbol = "?Front@AudioQueue407CA0@@QAEAAVAudioStreamRefill408BD0@@XZ", target = 0x004094D0 },
+  { offset = 0x83, type = "REL32", symbol = "?Front@AudioQueue407CA0@@QAEAAVAudioStream@@XZ", target = 0x004094D0 },
   { offset = 0xA0, type = "DIR32", symbol = "?audioPlaying@@3EA", target = 0x0067138E },
 ]
 
@@ -19021,9 +19021,9 @@ relocations = [
   { offset = 0x13, type = "DIR32", symbol = "?audioQueueStorage@@3PAEA", target = 0x006713A0 },
   { offset = 0x18, type = "REL32", symbol = "?Size@AudioQueue407CA0@@QAEIXZ", target = 0x004094B0 },
   { offset = 0x21, type = "DIR32", symbol = "?audioQueueStorage@@3PAEA", target = 0x006713A0 },
-  { offset = 0x26, type = "REL32", symbol = "?Front@AudioQueue407CA0@@QAEAAVAudioStreamRefill408BD0@@XZ", target = 0x004094D0 },
+  { offset = 0x26, type = "REL32", symbol = "?Front@AudioQueue407CA0@@QAEAAVAudioStream@@XZ", target = 0x004094D0 },
   { offset = 0x30, type = "DIR32", symbol = "?audioQueueStorage@@3PAEA", target = 0x006713A0 },
-  { offset = 0x35, type = "REL32", symbol = "?Front@AudioQueue407CA0@@QAEAAVAudioStreamRefill408BD0@@XZ", target = 0x004094D0 },
+  { offset = 0x35, type = "REL32", symbol = "?Front@AudioQueue407CA0@@QAEAAVAudioStream@@XZ", target = 0x004094D0 },
   { offset = 0x4B, type = "DIR32", symbol = "?audioQueueStorage@@3PAEA", target = 0x006713A0 },
   { offset = 0x50, type = "REL32", symbol = "?PopFront@AudioQueue407CA0@@QAEXXZ", target = 0x00409520 },
 ]
@@ -19041,11 +19041,11 @@ relocations = [
   { offset = 0x7, type = "DIR32", symbol = "?audioQueueStorage@@3PAEA", target = 0x006713A0 },
   { offset = 0xC, type = "REL32", symbol = "?Size@AudioQueue407CA0@@QAEIXZ", target = 0x004094B0 },
   { offset = 0x15, type = "DIR32", symbol = "?audioQueueStorage@@3PAEA", target = 0x006713A0 },
-  { offset = 0x1A, type = "REL32", symbol = "?Front@AudioQueue407CA0@@QAEAAVAudioStreamRefill408BD0@@XZ", target = 0x004094D0 },
+  { offset = 0x1A, type = "REL32", symbol = "?Front@AudioQueue407CA0@@QAEAAVAudioStream@@XZ", target = 0x004094D0 },
   { offset = 0x26, type = "DIR32", symbol = "?masterVolume@@3CA", target = 0x0066C214 },
   { offset = 0x42, type = "DIR32", symbol = "?masterVolume@@3CA", target = 0x0066C214 },
   { offset = 0x5F, type = "DIR32", symbol = "?audioQueueStorage@@3PAEA", target = 0x006713A0 },
-  { offset = 0x64, type = "REL32", symbol = "?Front@AudioQueue407CA0@@QAEAAVAudioStreamRefill408BD0@@XZ", target = 0x004094D0 },
+  { offset = 0x64, type = "REL32", symbol = "?Front@AudioQueue407CA0@@QAEAAVAudioStream@@XZ", target = 0x004094D0 },
 ]
 
 [units."stream-control-schedulefade-00407e60"]
@@ -19062,15 +19062,15 @@ relocations = [
   { offset = 0x9, type = "REL32", symbol = "?Size@AudioQueue407CA0@@QAEIXZ", target = 0x004094B0 },
   { offset = 0x14, type = "DIR32", symbol = "?audioPlaying@@3EA", target = 0x0067138E },
   { offset = 0x1D, type = "DIR32", symbol = "?audioQueueStorage@@3PAEA", target = 0x006713A0 },
-  { offset = 0x22, type = "REL32", symbol = "?Front@AudioQueue407CA0@@QAEAAVAudioStreamRefill408BD0@@XZ", target = 0x004094D0 },
+  { offset = 0x22, type = "REL32", symbol = "?Front@AudioQueue407CA0@@QAEAAVAudioStream@@XZ", target = 0x004094D0 },
   { offset = 0x2C, type = "DIR32", symbol = "?audioQueueStorage@@3PAEA", target = 0x006713A0 },
-  { offset = 0x31, type = "REL32", symbol = "?Front@AudioQueue407CA0@@QAEAAVAudioStreamRefill408BD0@@XZ", target = 0x004094D0 },
+  { offset = 0x31, type = "REL32", symbol = "?Front@AudioQueue407CA0@@QAEAAVAudioStream@@XZ", target = 0x004094D0 },
   { offset = 0x3C, type = "DIR32", symbol = "?audioQueueStorage@@3PAEA", target = 0x006713A0 },
-  { offset = 0x41, type = "REL32", symbol = "?Front@AudioQueue407CA0@@QAEAAVAudioStreamRefill408BD0@@XZ", target = 0x004094D0 },
+  { offset = 0x41, type = "REL32", symbol = "?Front@AudioQueue407CA0@@QAEAAVAudioStream@@XZ", target = 0x004094D0 },
   { offset = 0x4C, type = "DIR32", symbol = "?audioQueueStorage@@3PAEA", target = 0x006713A0 },
-  { offset = 0x51, type = "REL32", symbol = "?Front@AudioQueue407CA0@@QAEAAVAudioStreamRefill408BD0@@XZ", target = 0x004094D0 },
+  { offset = 0x51, type = "REL32", symbol = "?Front@AudioQueue407CA0@@QAEAAVAudioStream@@XZ", target = 0x004094D0 },
   { offset = 0x5C, type = "DIR32", symbol = "?audioQueueStorage@@3PAEA", target = 0x006713A0 },
-  { offset = 0x61, type = "REL32", symbol = "?Front@AudioQueue407CA0@@QAEAAVAudioStreamRefill408BD0@@XZ", target = 0x004094D0 },
+  { offset = 0x61, type = "REL32", symbol = "?Front@AudioQueue407CA0@@QAEAAVAudioStream@@XZ", target = 0x004094D0 },
   { offset = 0x6D, type = "DIR32", symbol = "?audioFading@@3EA", target = 0x0067138F },
   { offset = 0x76, type = "DIR32", symbol = "?audioFading@@3EA", target = 0x0067138F },
   { offset = 0x84, type = "REL32", symbol = "?Start@AudioControl407CA0@@YAXXZ", target = 0x00407CC0 },
@@ -19093,10 +19093,10 @@ relocations = [
   { offset = 0x3F, type = "DIR32", symbol = "?audioQueueStorage@@3PAEA", target = 0x006713A0 },
   { offset = 0x44, type = "REL32", symbol = "?Size@AudioQueue407CA0@@QAEIXZ", target = 0x004094B0 },
   { offset = 0x51, type = "DIR32", symbol = "?audioQueueStorage@@3PAEA", target = 0x006713A0 },
-  { offset = 0x56, type = "REL32", symbol = "?Front@AudioQueue407CA0@@QAEAAVAudioStreamRefill408BD0@@XZ", target = 0x004094D0 },
+  { offset = 0x56, type = "REL32", symbol = "?Front@AudioQueue407CA0@@QAEAAVAudioStream@@XZ", target = 0x004094D0 },
   { offset = 0x64, type = "DIR32", symbol = "?audioQueueStorage@@3PAEA", target = 0x006713A0 },
-  { offset = 0x69, type = "REL32", symbol = "?Front@AudioQueue407CA0@@QAEAAVAudioStreamRefill408BD0@@XZ", target = 0x004094D0 },
-  { offset = 0x82, type = "REL32", symbol = "?Refill@AudioStreamRefill408BD0@@QAEXK@Z", target = 0x00408BD0 },
+  { offset = 0x69, type = "REL32", symbol = "?Front@AudioQueue407CA0@@QAEAAVAudioStream@@XZ", target = 0x004094D0 },
+  { offset = 0x82, type = "REL32", symbol = "?Refill@AudioStream@@QAEXK@Z", target = 0x00408BD0 },
   { offset = 0xA4, type = "DIR32", symbol = "?audioPlaying@@3EA", target = 0x0067138E },
   { offset = 0xAB, type = "DIR32", symbol = "?audioFading@@3EA", target = 0x0067138F },
   { offset = 0xB1, type = "REL32", symbol = "?Stop@AudioControl407CA0@@YAXXZ", target = 0x00407D70 },
@@ -19160,8 +19160,8 @@ relocations = [
 source = "src/AudioLifecycle4073B0.cpp"
 object = "build/matching/AudioLifecycle4073B0.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["AudioRecordLifecycle409290::AudioRecordLifecycle409290"]
-symbol = "??0AudioRecordLifecycle409290@@QAE@XZ"
+functions = ["AudioStream::AudioStream"]
+symbol = "??0AudioStream@@QAE@XZ"
 target_address = 0x00409290
 size = 83
 compare_size = 83
@@ -19172,8 +19172,8 @@ relocations = [
 source = "src/AudioLifecycle4073B0.cpp"
 object = "build/matching/AudioLifecycle4073B0.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
-functions = ["AudioRecordLifecycle409290::~AudioRecordLifecycle409290"]
-symbol = "??1AudioRecordLifecycle409290@@QAE@XZ"
+functions = ["AudioStream::~AudioStream"]
+symbol = "??1AudioStream@@QAE@XZ"
 target_address = 0x004092F0
 size = 87
 compare_size = 87

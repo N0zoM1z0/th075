@@ -168,11 +168,11 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x004073D0,SoundBank::LoadWaveDirectory,SoundBank4073D0::LoadWaveDirectory,R016,sound-bank-wave-directory-004073d0
 0x00407540,SoundBank::LoadSerializedFile,SoundBank4073D0::LoadSerializedFile,R016,sound-bank-file-load-00407540
 0x004077E0,SoundBank::SaveSerializedFile,SoundBank4073D0::SaveSerializedFile,R016,sound-bank-file-save-004077e0
-0x00408110,AudioStreamRecord::OpenFile,AudioStreamRecord408110::OpenFile,R017,audio-record-open-file-00408110
-0x00408390,AudioStreamRecord::OpenArchiveEntry,AudioStreamRecord408110::OpenArchiveEntry,R017,audio-record-open-archive-00408390
-0x00408670,AudioStreamRecord::ReadLoopPointsFromFile,AudioStreamRecord408110::ReadLoopPointsFromFile,R017,audio-record-loop-file-00408670
-0x00408900,AudioStreamRecord::ReadLoopPointsFromArchive,AudioStreamRecord408110::ReadLoopPointsFromArchive,R017,audio-record-loop-archive-00408900
-0x00408BD0,AudioStreamRecord::RefillBuffer,AudioStreamRefill408BD0::Refill,R017,audio-record-refill-00408bd0
+0x00408110,AudioStreamRecord::OpenFile,AudioStream::OpenFile,R017,audio-record-open-file-00408110
+0x00408390,AudioStreamRecord::OpenArchiveEntry,AudioStream::OpenArchiveEntry,R017,audio-record-open-archive-00408390
+0x00408670,AudioStreamRecord::ReadLoopPointsFromFile,AudioStream::ReadLoopPointsFromFile,R017,audio-record-loop-file-00408670
+0x00408900,AudioStreamRecord::ReadLoopPointsFromArchive,AudioStream::ReadLoopPointsFromArchive,R017,audio-record-loop-archive-00408900
+0x00408BD0,AudioStreamRecord::RefillBuffer,AudioStream::Refill,R017,audio-record-refill-00408bd0
 0x00407CA0,AudioStream::ClearPlayback,AudioControl407CA0::ClearPlayback,R016,stream-control-clearplayback-00407ca0
 0x00407CC0,AudioStream::Start,AudioControl407CA0::Start,R016,stream-control-start-00407cc0
 0x00407D70,AudioStream::Stop,AudioControl407CA0::Stop,R016,stream-control-stop-00407d70
@@ -182,8 +182,8 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x004073B0,SoundBank::SetVolume,AudioVolume4073B0::SetSoundBankVolume,R016,sound-bank-volume-004073b0
 0x004073C0,AudioStream::SetVolume,AudioVolume4073B0::SetStreamVolume,R016,stream-volume-004073c0
 0x004079C0,SoundBank::Play,SoundBankPlay4079C0::Play,R016,sound-bank-play-004079c0
-0x00409290,AudioStreamRecord::Initialize,AudioRecordLifecycle409290::AudioRecordLifecycle409290,R017,audio-record-ctor-00409290
-0x004092F0,AudioStreamRecord::ReleaseResources,AudioRecordLifecycle409290::~AudioRecordLifecycle409290,R017,audio-record-dtor-004092f0
+0x00409290,AudioStreamRecord::Initialize,AudioStream::AudioStream,R017,audio-record-ctor-00409290
+0x004092F0,AudioStreamRecord::ReleaseResources,AudioStream::~AudioStream,R017,audio-record-dtor-004092f0
 0x00470F00,CharacterSpecial::AdvanceAt00470F00,CharacterSpecial470F00::ConfigureStage,R049,character-special-stage-00470f00
 0x00497630,CharacterSpecial::AdvanceAt00497630,MarisaFighter::ConfigureStage,R049,character-special-stage-00497630
 0x004C5150,CharacterSpecial::AdvanceAt004C5150,SakuyaFighter::ConfigureStage,R049,character-special-stage-004c5150

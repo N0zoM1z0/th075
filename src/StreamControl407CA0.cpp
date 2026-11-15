@@ -1,17 +1,14 @@
+#include "AudioStream.hpp"
 #include <windows.h>
 #include <mmsystem.h>
 #include <dsound.h>
 
 // These interfaces are pointer-only views. Their complete owners are unknown;
 // never instantiate or embed them.
-class AudioStreamRefill408BD0 {
-public:
-    void Refill(DWORD);
-};
 class AudioQueue407CA0 {
 public:
     unsigned int Size();
-    AudioStreamRefill408BD0& Front();
+    AudioStream& Front();
     void PopFront();
     void Clear();
 };
@@ -22,10 +19,6 @@ extern BYTE audioPlaying;
 extern BYTE audioFading;
 extern HANDLE audioWorkerEvent;
 #define QUEUE reinterpret_cast<AudioQueue407CA0*>(audioQueueStorage)
-#define FRONT_FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<char*>(&QUEUE->Front()) + offset))
-#define FRONT_BUFFER FRONT_FIELD(IDirectSoundBuffer8*, 0)
-#define RECORD_FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<char*>(record) + offset))
-#define RECORD_BUFFER RECORD_FIELD(IDirectSoundBuffer8*, 0)
 
 namespace AudioControl407CA0 {
 void __cdecl ClearPlayback() {
@@ -34,41 +27,41 @@ void __cdecl ClearPlayback() {
     QUEUE->Clear();
 }
 void __cdecl Start() {
-    if (QUEUE->Size() > 0 && FRONT_BUFFER) {
+    if (QUEUE->Size() > 0 && QUEUE->Front().buffer) {
         if (masterVolume == 0)
-            FRONT_BUFFER->SetVolume(DSBVOLUME_MIN);
+            QUEUE->Front().buffer->SetVolume(DSBVOLUME_MIN);
         else
-            FRONT_BUFFER->SetVolume((masterVolume - 100) * 50);
-        FRONT_BUFFER->Play(0, 0, DSBPLAY_LOOPING);
+            QUEUE->Front().buffer->SetVolume((masterVolume - 100) * 50);
+        QUEUE->Front().buffer->Play(0, 0, DSBPLAY_LOOPING);
         audioPlaying = 1;
     }
 }
 void __cdecl Stop() {
     audioPlaying = 0;
     audioFading = 0;
-    if (QUEUE->Size() > 0 && FRONT_BUFFER) {
-        FRONT_BUFFER->Stop();
+    if (QUEUE->Size() > 0 && QUEUE->Front().buffer) {
+        QUEUE->Front().buffer->Stop();
         QUEUE->PopFront();
     }
 }
 void __cdecl ApplyVolumeOffset(LONG offset) {
-    if (QUEUE->Size() > 0 && FRONT_BUFFER) {
+    if (QUEUE->Size() > 0 && QUEUE->Front().buffer) {
         LONG volume = (masterVolume - 100) * 50 + offset;
         if (volume < DSBVOLUME_MIN || masterVolume == 0)
             volume = DSBVOLUME_MIN;
         if (volume > DSBVOLUME_MAX)
             volume = DSBVOLUME_MAX;
-        FRONT_BUFFER->SetVolume(volume);
+        QUEUE->Front().buffer->SetVolume(volume);
     }
 }
 void __cdecl ScheduleFade(LONG target, LONG step, BYTE stopAfter, BYTE startNext) {
     if (QUEUE->Size() > 0) {
         if (audioPlaying) {
-            if (FRONT_BUFFER) {
-                FRONT_FIELD(LONG, 48) = target;
-                FRONT_FIELD(LONG, 52) = step;
-                FRONT_FIELD(BYTE, 56) = stopAfter;
-                FRONT_FIELD(BYTE, 57) = startNext;
+            if (QUEUE->Front().buffer) {
+                QUEUE->Front().fadeLimit = target;
+                QUEUE->Front().fadeStep = step;
+                QUEUE->Front().field038 = stopAfter;
+                QUEUE->Front().field039 = startNext;
                 audioFading = 1;
             }
         } else {
@@ -86,47 +79,47 @@ DWORD WINAPI Worker(LPVOID) {
     while (1) {
         if (audioPlaying) {
             if (QUEUE->Size() > 0) {
-                if (FRONT_BUFFER) {
-                    AudioStreamRefill408BD0* record = &QUEUE->Front();
-                    if (RECORD_FIELD(DWORD, 8) > 0) {
+                if (QUEUE->Front().buffer) {
+                    AudioStream* record = &QUEUE->Front();
+                    if (record->bufferBytes > 0) {
                         record->Refill(0x20000);
-                        RECORD_BUFFER->GetStatus(&status);
+                        record->buffer->GetStatus(&status);
                         if ((status & DSBSTATUS_PLAYING) == 0) {
                             audioPlaying = 0;
                             audioFading = 0;
                             Stop();
                         }
                     } else {
-                        if (RECORD_FIELD(DWORD, 40)) {
-                            if (RECORD_FIELD(DWORD, 32) > 0) {
-                                RECORD_BUFFER->GetCurrentPosition(0, &position);
-                                if (position > RECORD_FIELD(DWORD, 32))
-                                    RECORD_BUFFER->SetCurrentPosition(position - RECORD_FIELD(DWORD, 36));
+                        if (record->loopEnabled) {
+                            if (record->loopEnd > 0) {
+                                record->buffer->GetCurrentPosition(0, &position);
+                                if (position > record->loopEnd)
+                                    record->buffer->SetCurrentPosition(position - record->loopLength);
                             }
                         } else {
-                            RECORD_BUFFER->GetStatus(&status);
+                            record->buffer->GetStatus(&status);
                             if ((status & DSBSTATUS_PLAYING) == 0)
                                 audioPlaying = 0;
                         }
                     }
                     if (audioFading) {
-                        if (RECORD_BUFFER)
-                            ApplyVolumeOffset(RECORD_FIELD(LONG, 44));
-                        RECORD_FIELD(LONG, 44) += RECORD_FIELD(LONG, 52) * 4;
-                        if (RECORD_FIELD(LONG, 52) < 0) {
-                            if (RECORD_FIELD(LONG, 44) < RECORD_FIELD(LONG, 48) ||
-                                RECORD_FIELD(LONG, 44) <= DSBVOLUME_MIN)
+                        if (record->buffer)
+                            ApplyVolumeOffset(record->volume);
+                        record->volume += record->fadeStep * 4;
+                        if (record->fadeStep < 0) {
+                            if (record->volume < record->fadeLimit ||
+                                record->volume <= DSBVOLUME_MIN)
                                 audioFading = 0;
                         } else {
-                            if (RECORD_FIELD(LONG, 44) < RECORD_FIELD(LONG, 48) ||
-                                RECORD_FIELD(LONG, 44) >= 0) {
-                                if (RECORD_FIELD(LONG, 44) >= 0)
-                                    RECORD_FIELD(LONG, 44) = 0;
+                            if (record->volume < record->fadeLimit ||
+                                record->volume >= 0) {
+                                if (record->volume >= 0)
+                                    record->volume = 0;
                                 audioFading = 0;
                             }
                         }
-                        if (!audioFading && RECORD_FIELD(BYTE, 56)) {
-                            if (RECORD_FIELD(BYTE, 57)) {
+                        if (!audioFading && record->field038) {
+                            if (record->field039) {
                                 Stop();
                                 Start();
                             } else {

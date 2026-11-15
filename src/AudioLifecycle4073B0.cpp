@@ -1,3 +1,4 @@
+#include "AudioStream.hpp"
 #include <windows.h>
 #include <mmsystem.h>
 #include <dsound.h>
@@ -34,30 +35,22 @@ void SoundBankPlay4079C0::Play(int index) {
     buffer->Play(0, 0, 0);
 }
 
-class AudioRecordLifecycle409290 {
-public:
-    AudioRecordLifecycle409290();
-    ~AudioRecordLifecycle409290();
-};
-#define RECORD_FIELD(type, offset) (*reinterpret_cast<type*>(reinterpret_cast<char*>(this) + offset))
-#define RECORD_BUFFER RECORD_FIELD(IDirectSoundBuffer8*, 0)
-#define RECORD_FILE RECORD_FIELD(HANDLE, 60)
-AudioRecordLifecycle409290::AudioRecordLifecycle409290() {
-    RECORD_BUFFER = 0;
-    RECORD_FIELD(DWORD, 32) = 0;
-    RECORD_FIELD(DWORD, 36) = 0;
-    RECORD_FIELD(DWORD, 40) = 0;
-    RECORD_FIELD(LONG, 44) = 0;
-    RECORD_FILE = 0;
-    RECORD_FIELD(DWORD, 8) = 0;
+AudioStream::AudioStream() {
+    buffer = 0;
+    loopEnd = 0;
+    loopLength = 0;
+    loopEnabled = 0;
+    volume = 0;
+    file = 0;
+    bufferBytes = 0;
 }
-AudioRecordLifecycle409290::~AudioRecordLifecycle409290() {
-    if (!RECORD_FIELD(BYTE, 58) && RECORD_FILE) {
-        CloseHandle(RECORD_FILE);
-        RECORD_FILE = 0;
+AudioStream::~AudioStream() {
+    if (!archiveMode && file) {
+        CloseHandle(file);
+        file = 0;
     }
-    if (RECORD_BUFFER) {
-        RECORD_BUFFER->Release();
-        RECORD_BUFFER = 0;
+    if (buffer) {
+        buffer->Release();
+        buffer = 0;
     }
 }

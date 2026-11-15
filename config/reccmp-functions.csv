@@ -224,11 +224,11 @@ SharedPcm406B80::Read,0x00406B80,function
 SoundBank4073D0::LoadWaveDirectory,0x004073D0,function
 SoundBank4073D0::LoadSerializedFile,0x00407540,function
 SoundBank4073D0::SaveSerializedFile,0x004077E0,function
-AudioStreamRecord408110::OpenFile,0x00408110,function
-AudioStreamRecord408110::OpenArchiveEntry,0x00408390,function
-AudioStreamRecord408110::ReadLoopPointsFromFile,0x00408670,function
-AudioStreamRecord408110::ReadLoopPointsFromArchive,0x00408900,function
-AudioStreamRefill408BD0::Refill,0x00408BD0,function
+AudioStream::OpenFile,0x00408110,function
+AudioStream::OpenArchiveEntry,0x00408390,function
+AudioStream::ReadLoopPointsFromFile,0x00408670,function
+AudioStream::ReadLoopPointsFromArchive,0x00408900,function
+AudioStream::Refill,0x00408BD0,function
 AudioControl407CA0::ClearPlayback,0x00407CA0,function
 AudioControl407CA0::Start,0x00407CC0,function
 AudioControl407CA0::Stop,0x00407D70,function
@@ -238,8 +238,8 @@ AudioControl407CA0::Worker,0x00407EF0,function
 AudioVolume4073B0::SetSoundBankVolume,0x004073B0,function
 AudioVolume4073B0::SetStreamVolume,0x004073C0,function
 SoundBankPlay4079C0::Play,0x004079C0,function
-AudioRecordLifecycle409290::AudioRecordLifecycle409290,0x00409290,function
-AudioRecordLifecycle409290::~AudioRecordLifecycle409290,0x004092F0,function
+AudioStream::AudioStream,0x00409290,function
+AudioStream::~AudioStream,0x004092F0,function
 ReimuFighter::ConfigureStage,0x00470F00,function
 MarisaFighter::ConfigureStage,0x00497630,function
 SakuyaFighter::ConfigureStage,0x004C5150,function
