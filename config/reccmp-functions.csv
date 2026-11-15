@@ -520,7 +520,7 @@ SpriteGeometry::InitializeRectangleFromRect,0x0040DB50,function
 GameGlobals::InitializeSound,0x004175A0,function
 ProgressRecords::RaiseSelectedValue,0x0041A1D0,function
 ProgressRecords::IncrementSelectedRecordCount,0x0041A270,function
-ProgressRecords::InitializeDefaults,0x00416640,function
+GameProgress::GameProgress,0x00416640,function
 ResourceLookup::FindByNameAt0041CF00,0x0041CF00,function
 DataArchive::SeekNamedEntryWithSize,0x0041D800,function
 ReplayRecords::BeginCapture,0x00413790,function
@@ -674,7 +674,7 @@ YuyukoFighter::SelectSpecialVariant,0x00577BC0,function
 YukariFighter::SelectSpecialVariant,0x0059B740,function
 SuikaFighter::SelectSpecialVariant,0x005C4320,function
 MeilingFighter::SelectSpecialVariant,0x005E5910,function
-ProgressRecords::InsertRankedScore,0x00416EE0,function
+ProgressDifficulty::InsertRankedScore,0x00416EE0,function
 BackgroundStage::LoadBG00a,0x00449AA0,function
 BackgroundStage::LoadBG00b,0x00449E10,function
 BackgroundStage::LoadBG00c,0x0044A230,function
@@ -719,8 +719,8 @@ AliceFighter::UpdateSpecialStateAt004E62A0,0x004E62A0,function
 ArchiveCatalog::BeginUseAt0041CE10,0x0041CE10,function
 CharacterAuxObject::ChooseIntegerRangeAt00410F00,0x00410F00,function
 CharacterAI::ChooseIntegerRangeAt00455610,0x00455610,function
-GameProgress::SetUnlockBitAt00416CE0,0x00416CE0,function
-GameProgress::TestUnlockBitAt00416DC0,0x00416DC0,function
+GameProgress::SetUnlockBit,0x00416CE0,function
+GameProgress::TestUnlockBit,0x00416DC0,function
 AuxEffectManager::DispatchSelectedListAt005F7D00,0x005F7D00,function
 ProfileSelection::LoadWorkingEightBytesAt00416E80,0x00416E80,function
 BattleLoader::LoadCharactersAt004176F0,0x004176F0,function
@@ -963,7 +963,7 @@ Record16F739::Record16F739,0x005F7F20,function
 NestedRecord116F741::NestedRecord116F741,0x004587E0,function
 NestedRecord116F741::~NestedRecord116F741,0x004588E0,function
 InputMappingF742::InputMappingF742,0x00406DB0,function
-GameProgressClearF745::ClearUnlockBit,0x00416D50,function
+GameProgress::ClearUnlockBit,0x00416D50,function
 BackgroundCountersF746::AdvanceBG05bCounters,0x0044E8D0,function
 CharacterAuxFrameF750::RefreshSelectedFrame,0x005FAC60,function
 AudioStreamClientF753::AudioStreamClientF753,0x004071C0,function

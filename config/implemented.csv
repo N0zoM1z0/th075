@@ -519,7 +519,7 @@ SpriteGeometry::InitializeRectangleFromRect
 GameGlobals::InitializeSound
 ProgressRecords::RaiseSelectedValue
 ProgressRecords::IncrementSelectedRecordCount
-ProgressRecords::InitializeDefaults
+GameProgress::GameProgress
 ResourceLookup::FindByNameAt0041CF00
 DataArchive::SeekNamedEntryWithSize
 ReplayRecords::BeginCapture
@@ -673,7 +673,7 @@ YuyukoFighter::SelectSpecialVariant
 YukariFighter::SelectSpecialVariant
 SuikaFighter::SelectSpecialVariant
 MeilingFighter::SelectSpecialVariant
-ProgressRecords::InsertRankedScore
+ProgressDifficulty::InsertRankedScore
 BackgroundStage::LoadBG00a
 BackgroundStage::LoadBG00b
 BackgroundStage::LoadBG00c
@@ -718,8 +718,8 @@ AliceFighter::UpdateSpecialStateAt004E62A0
 ArchiveCatalog::BeginUseAt0041CE10
 CharacterAuxObject::ChooseIntegerRangeAt00410F00
 CharacterAI::ChooseIntegerRangeAt00455610
-GameProgress::SetUnlockBitAt00416CE0
-GameProgress::TestUnlockBitAt00416DC0
+GameProgress::SetUnlockBit
+GameProgress::TestUnlockBit
 AuxEffectManager::DispatchSelectedListAt005F7D00
 ProfileSelection::LoadWorkingEightBytesAt00416E80
 BattleLoader::LoadCharactersAt004176F0
@@ -962,7 +962,7 @@ Record16F739::Record16F739
 NestedRecord116F741::NestedRecord116F741
 NestedRecord116F741::~NestedRecord116F741
 InputMappingF742::InputMappingF742
-GameProgressClearF745::ClearUnlockBit
+GameProgress::ClearUnlockBit
 BackgroundCountersF746::AdvanceBG05bCounters
 CharacterAuxFrameF750::RefreshSelectedFrame
 AudioStreamClientF753::AudioStreamClientF753

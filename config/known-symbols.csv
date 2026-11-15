@@ -502,7 +502,7 @@ address,name,module,confidence,evidence
 0x004175A0,GameGlobals::InitializeSound,GameGlobals,inferred,F212; exact 334-byte sound initialization with three-stage EH; original allocation class identities provisional
 0x0041A1D0,ProgressRecords::RaiseSelectedValue,ProgressRecords,inferred,F213; complete 109-byte natural source cold exact; original full record layout unproven
 0x0041A270,ProgressRecords::IncrementSelectedRecordCount,ProgressRecords,inferred,F213; complete 90-byte natural source cold exact; original full record layout unproven
-0x00416640,ProgressRecords::InitializeDefaults,ProgressRecords,inferred,F214; whole 910-byte nested record defaults cold exact with 34 physical relocations; original owner layout unknown
+0x00416640,GameProgress::GameProgress,ProgressRecords,inferred,F214; whole 910-byte nested record defaults cold exact with 34 physical relocations; original owner layout unknown
 0x0041CF00,ResourceLookup::FindByNameAt0041CF00,DataArchive,inferred,F217; whole 113-byte natural source cold exact with 9 real relocations; original registry/iterator classes provisional
 0x0041D800,DataArchive::SeekNamedEntryWithSize,DataArchive,inferred,F217; whole 180-byte natural source cold exact with 10 real relocations; original registry/iterator classes provisional
 0x00413790,ReplayRecords::BeginCapture,ReplayRecords,inferred,F218; complete 225-byte native policy cold exact with 9 fields; original owner/storage identity unproven
@@ -656,7 +656,7 @@ address,name,module,confidence,evidence
 0x0059B740,YukariFighter::SelectSpecialVariant,YukariFighter,inferred,"F374; independently exact native 130-byte Yukari action selector plus 40-byte switch table, 12 genuine physical COFF fields; no table CODE credit"
 0x005C4320,SuikaFighter::SelectSpecialVariant,SuikaFighter,inferred,"F374; independently exact native 130-byte Suika action selector plus 40-byte switch table, 12 genuine physical COFF fields; no table CODE credit"
 0x005E5910,MeilingFighter::SelectSpecialVariant,MeilingFighter,inferred,"F374; independently exact native 130-byte Meiling action selector plus 40-byte switch table, 12 genuine physical COFF fields; no table CODE credit"
-0x00416EE0,ProgressRecords::InsertRankedScore,ProgressRecords,inferred,"F375; complete 281-byte 10-slot ranking insertion with real 16-byte record, original time/localtime and two genuine COFF fields, cold exact"
+0x00416EE0,ProgressDifficulty::InsertRankedScore,ProgressRecords,inferred,"F375; complete 281-byte 10-slot ranking insertion with real 16-byte record, original time/localtime and two genuine COFF fields, cold exact"
 0x00449AA0,BackgroundStage::LoadBG00a,BackgroundStage,inferred,"F376; entire original 151-byte derived background stage a native EH constructor with 11 physical refs, cold exact; owner class borrowed"
 0x00449E10,BackgroundStage::LoadBG00b,BackgroundStage,inferred,"F376; entire original 161-byte derived background stage b native EH constructor with 11 physical refs, cold exact; owner class borrowed"
 0x0044A230,BackgroundStage::LoadBG00c,BackgroundStage,inferred,"F377; full native original 151-byte stage-specific /GX constructor, genuine EH and original pack material paths, 11 physical COFF refs single affected cohort cold exact; private class layout not established"
@@ -701,8 +701,8 @@ address,name,module,confidence,evidence
 0x0041CE10,ArchiveCatalog::BeginUseAt0041CE10,ArchiveCatalog,inferred,"F392; independently authored 56 original game CODE bytes and 7 physical refs cold exact, borrowed private class ABI"
 0x00410F00,CharacterAuxObject::ChooseIntegerRangeAt00410F00,CharacterAuxObject,inferred,"F393; independent 44-byte signed range-first random helper, one native rand REL32 and full 40 nonfield bytes cold exact, borrowed receiver ABI"
 0x00455610,CharacterAI::ChooseIntegerRangeAt00455610,CharacterAI,inferred,"F393; independent 44-byte signed range-first random helper, one native rand REL32 and full 40 nonfield bytes cold exact, borrowed receiver ABI"
-0x00416CE0,GameProgress::SetUnlockBitAt00416CE0,GameProgress,inferred,"F394; independent original complete 108-byte native signed progress bitset set, no external COFF refs, local cold exact; borrowed private owner"
-0x00416DC0,GameProgress::TestUnlockBitAt00416DC0,GameProgress,inferred,"F394; independent original complete 93-byte native signed progress bitset test, no external COFF refs, local cold exact; borrowed private owner"
+0x00416CE0,GameProgress::SetUnlockBit,GameProgress,inferred,"F394; independent original complete 108-byte native signed progress bitset set, no external COFF refs, local cold exact; borrowed private owner"
+0x00416DC0,GameProgress::TestUnlockBit,GameProgress,inferred,"F394; independent original complete 93-byte native signed progress bitset test, no external COFF refs, local cold exact; borrowed private owner"
 0x005F7D00,AuxEffectManager::DispatchSelectedListAt005F7D00,AuxEffectManager,inferred,"F395; complete R109 original 114-byte selected side auxiliary iterator dispatch, 5 real COFF call fields and virtual child dispatch cold exact"
 0x00416E80,ProfileSelection::LoadWorkingEightBytesAt00416E80,ProfileSelection,inferred,"F403; full R180 85-byte native eight-byte selected record restore, signed selection strides, authentic memcpy REL32 cold exact; private layout unknown"
 0x004176F0,BattleLoader::LoadCharactersAt004176F0,BattleLoader,inferred,"F407; full 3232 original authored CODE with 11 fighter constructors, original 64-byte jump data, 234 real COFF fields including 16 switch targets and 18 genuine +4 fighter offsets, targeted cold exact"
