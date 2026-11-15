@@ -134,6 +134,29 @@ so far is a surrounding `switch` case. `.analysis/layout-tools/gpr_debt.py`
 measures the debt directly against the PE (mnemonics, widths, GPR roles)
 without the per-parent audit directories.
 
+Joins follow one rule almost everywhere. `.analysis/layout-tools/anomalies.py`
+scans an original function for jump targets where the first free scratch
+load does not continue the fall-through cycle (ignoring the forced `ecx` of
+a `thiscall` and counting `ax`/`al` as `eax`). Across all 13 complete
+originals there are only a handful, and **they sit exactly where the
+recorded debt starts**: Alice's object 004F344C, Remilia's object 0055F711
+and Suika's object 005D2558 (also Yuyuko's object 00586A25 and Remilia's
+fighter 0054F906). They come in two shapes:
+
+- `if (animationStage < 3) { scaleX = … + g; scaleY = … + g; }` followed by
+  `if (animationStage == 4)` (Alice, Yuyuko);
+- `if (animationStage == 0 && animationFrame == 0) { …colours = 255…;
+  velocityX = 0; velocityY = 0; }` followed by `if (animationStage == 1)`
+  (Remilia, Suika).
+
+At these joins the original takes the state of the branch path; every
+reproduction with identical code continues the fall-through, including
+inside a `switch` case, as a one-pass `while`/`for` with `break`, with
+`else`, braces, `goto` or comma expressions. A `do { if (!c) break; … }
+while (0)` changes the cycle but adds instructions. The joins are not
+jump-table targets. Finding the construct that produces this state for
+identical code is the most promising lead for the giants.
+
 `reinterpret_cast<signed short&>(m)` on a `short` member is a no-op and
 emits identical code; 3,910 such casts left by the conversion were removed.
 
