@@ -104,12 +104,15 @@ env -u DISPLAY -u WAYLAND_DISPLAY WINEDLLOVERRIDES='winex11.drv,winewayland.drv,
 scripts/repo-python scripts/verify-effect-lifecycle-exact.py --receipt .analysis/replay/summary.json
 ```
 
-The second command verifies all24 whole code/data sections and46 fields,
-including both actual SafeSEH roots and actual source-local destinations.
-It checks the cold receipt against that object/source/profile. The three
-authored bodies earn237 code bytes; associated compiler/library/data sections
-receive no authored credit. Nine public checks guard the frozen plan and
-reject incomplete EH evidence even when the main function is unchanged.
+The second command links all 24 whole code/data sections and their 46
+relocation fields to the original, including both SafeSEH roots and the
+source-local destinations, and checks the cold receipt against the same
+object, current source and profile. The three authored bodies earn 237 code
+bytes; the compiler/library/data sections receive no authored credit.
+`config/effect-lifecycle-exact-sections.json` names each section by its
+symbol. Compiler labels such as `$L7106` renumber when an included header
+changes, and renamed classes change mangled names; relabel those entries by
+matching section, offset and relocation, then rerun both commands.
 
 Public invocation uses the same entry point:
 

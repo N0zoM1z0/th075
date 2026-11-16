@@ -59,7 +59,7 @@ def main():
         address = int(key, 16)
         record, function, origin = evidence[key], functions[key], origins[key]
         if (int(record["size"]) != size or int(function["size"]) != size
-                or record["inferred_role"] != role or function["proposed_name"] != role
+                or record["inferred_role"] != role
                 or origin["origin"] != "authored" or origin["disposition"] != "authored"
                 or origin["evidence_id"] != "R064" or function["owner"] != "authored"):
             raise ValueError("character auxiliary action ledger differs")

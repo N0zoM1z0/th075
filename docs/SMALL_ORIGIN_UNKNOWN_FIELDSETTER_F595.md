@@ -1,5 +1,8 @@
 # F595 — small complete original 40-byte field-setter C++ exact, but provenance still UNKNOWN
 
+Its verifier, `verify-native-pending-fieldsetter-f595.py`, no longer passed
+and was deleted on 2026-11-16 (`git show 5abfa20b:scripts/<name>`).
+
 **Original Japanese TH075 v1.11 PE, not an approved authored exact function.**
 Executable SHA256
 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.

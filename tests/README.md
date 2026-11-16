@@ -1,21 +1,22 @@
-# Validation scope
+# Tests
 
-Exact function acceptance uses the pinned target, tracking validation and cold
-replay of new or affected units. Keep per-function extents, relocations, compiler
-profiles and source hashes in the canonical manifests rather than duplicating
-them in Python tests. Do not add source-text assertions or allocation-failure,
-null-pointer, fault-injection or general robustness tests for reconstructed
-functions. Preserve failure branches that actually exist in the target.
+These tests cover shared tooling on its success and failure paths: COFF and
+relocation comparison (`test_function_workflow`, `test_coff_data`), the exact
+ledgers (`test_exact_checkpoint`), progress accounting (`test_status_goal`),
+the frontier ratchet (`test_check_frontier`), the repository Python, PDB and
+symbol-archive audits, and the libraries the origin verifiers share. They run
+in a few seconds without compiler builds:
 
-`scripts/repo-python scripts/ci.py` runs the shared exact-comparison, checkpoint
-and byte-accounting tests without compiler builds. Run it for changes to that
-infrastructure or its tests; it is not an extra gate for routine function
-acceptance or handoff.
+```bash
+scripts/repo-python -m unittest discover -s tests
+```
 
-Historical origin tests and `origin_probes/` remain evidence for ownership
-decisions. Run a relevant origin test only when changing its evidence or
-verifier. Do not run the full historical suite during routine reconstruction.
+Exact credit comes only from cold replay (`scripts/replay-exact-units.py`).
+Do not add a test per function, source-text or spelling assertions, or tests
+that pin a nonexact function's current bytes; `config/frontiers.toml` and
+`scripts/check-frontier.py` ratchet the giant research parents instead.
 
-The former F229–F251 per-function test files duplicated target hashes, physical
-relocation lists, accepted source hashes and source text. They were removed;
-their canonical manifests, accepted sources and reconstruction evidence remain.
+Origin decisions are checked by running their verifiers against the real
+evidence with `scripts/check-origins.py`. The per-verifier mutation tests
+were removed. `origin_probes/` holds probe sources that some verifiers
+compile.

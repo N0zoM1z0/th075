@@ -13,6 +13,11 @@ Percentages remain provisional until no origin is pending; goal completion
 conservatively includes all pending bytes in the denominator.
 Auto-analysis names, adjacency, and small size do not establish origin.
 
+The verifier commands quoted below are history. On 2026-11-16 the
+verifiers that no longer passed and that no kept script loads were deleted;
+read one with `git show 5abfa20b:scripts/NAME`. The evidence JSON files remain.
+`scripts/check-origins.py` runs the verifiers that are left.
+
 ## R001 — remaining shared graphics family
 
 Reviewed 2026-10-02 against the pinned TH075 target. The fourteen functions

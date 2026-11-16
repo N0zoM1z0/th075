@@ -2,13 +2,14 @@
 
 usage: scripts/repo-python scripts/measure-giant.py [ADDRESS ...]   (default: every parent)
 
-Each parent is cold-built from probes/ with its recorded flags, then its
+Each parent in config/frontiers.toml is cold-built with its recorded flags, then its
 slot-1 Advance is compared with the original instruction by instruction.
 Reports instruction counts, mnemonic and width differences, and positions
 whose register operands differ ("GPR debt"), with the first such position.
+scripts/check-frontier.py ratchets the same parents byte by byte.
 This is a diagnostic: exact credit still needs a complete replay unit.
 """
-import importlib.util, re, struct, subprocess, sys, tempfile
+import importlib.util, re, struct, subprocess, sys, tempfile, tomllib
 from pathlib import Path
 from capstone import Cs, CS_ARCH_X86, CS_MODE_32
 
@@ -16,25 +17,9 @@ ROOT = Path(__file__).resolve().parent.parent
 spec = importlib.util.spec_from_file_location('c', ROOT / 'scripts/compare-coff-function.py')
 c = importlib.util.module_from_spec(spec); spec.loader.exec_module(c)
 
-BASE = ['/Od', '/Ob0', '/Gy', '/GR-', '/GX-', '/GS', '/Zi', '/I', 'src', '/I', 'probes']
-# original address: (size, character, kind, research source, flags)
-PARENTS = {
-    0x0045DD70: (60999, 'Reimu', 'fighter', 'FighterWhole0045DD70F1183.cpp', BASE),
-    0x004AC040: (82796, 'Sakuya', 'fighter', 'FighterWhole004AC040F1020.cpp',
-                 [f if f != '/GX-' else '/GX' for f in BASE]),
-    0x005214B0: (46755, 'Youmu', 'fighter', 'FighterWhole005214B0F1040.cpp', BASE),
-    0x00543210: (58294, 'Remilia', 'fighter', 'FighterWhole00543210F1041.cpp', BASE),
-    0x004EBDA0: (33293, 'Alice', 'object', 'CharacterObjectActionsF572.cpp', BASE),
-    0x0050A580: (81539, 'Patchouli', 'object', 'CharacterObjectWhole0050A580F1044.cpp', BASE),
-    0x00536400: (39999, 'Youmu', 'object', 'CharacterObjectActions00536400F1211.cpp', BASE),
-    0x0055AC80: (28432, 'Remilia', 'object', 'CharacterObjectWhole0055AC80F1194.cpp', BASE),
-    0x0057D580: (43845, 'Yuyuko', 'object', 'CharacterObjectActions0057D580F1237.cpp', BASE),
-    0x005A1600: (43599, 'Yukari', 'object', 'CharacterObjectActions005A1600F1231.cpp', BASE),
-    0x005C9CC0: (43501, 'Suika', 'object', 'CharacterObjectActions005C9CC0F1216.cpp', BASE),
-    0x004CA6E0: (42511, 'Sakuya', 'object', 'CharacterObjectActions004CA6E0F1222.cpp', BASE),
-    0x005EB520: (34434, 'Meiling', 'object', 'CharacterObjectWhole005EB520F1207.cpp',
-                 [f for f in BASE if f not in ('/GS',)]),
-}
+# Parents and their recorded flags live in config/frontiers.toml.
+with (ROOT / 'config/frontiers.toml').open('rb') as stream:
+    PARENTS = {e['address']: e for e in tomllib.load(stream)['frontiers'].values()}
 REG = re.compile(r'\b(e?[abcd]x|[abcd][lh]|e?[sd]i)\b')
 
 
@@ -58,10 +43,11 @@ def advance_body(obj):
 
 
 def measure(addr):
-    size, char, kind, src, flags = PARENTS[addr]
+    e = PARENTS[addr]
+    size, char, kind = e['size'], e['character'], e['kind']
     with tempfile.TemporaryDirectory(dir=ROOT / 'build') as tmp:
         obj = Path(tmp) / 'parent.obj'
-        p = subprocess.run([str(ROOT / 'scripts/compile-probe.sh'), f'probes/{src}', str(obj), *flags],
+        p = subprocess.run([str(ROOT / 'scripts/compile-probe.sh'), e['source'], str(obj), *e['flags']],
                            cwd=ROOT, capture_output=True, text=True)
         if p.returncode or not obj.exists():
             return f'{addr:08X} {char} {kind}: BUILD FAILED\n{p.stdout[-800:]}{p.stderr[-800:]}'

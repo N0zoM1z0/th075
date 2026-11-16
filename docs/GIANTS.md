@@ -16,6 +16,16 @@ differences, and positions whose general-purpose registers differ ("GPR
 debt"), with the first such position. It is a diagnostic only. A giant
 becomes exact only through a complete replay unit in `config/match-units.toml`.
 
+`config/frontiers.toml` lists the parents (source, flags, symbol, original
+extent and its SHA-256) with the byte offsets that still differ after
+relocation fields are masked. After editing a parent, run
+
+    scripts/repo-python scripts/check-frontier.py [NAME ...]
+
+It fails if the body size changes or a byte that matched now differs.
+Record an improvement with `--update NAME` and commit the file with the
+source change.
+
 ## Complete research parents (measured 2026-11-15)
 
 All thirteen have the original instruction count, frame, stack slots, branch

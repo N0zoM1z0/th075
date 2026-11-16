@@ -157,10 +157,12 @@ behavior absent from the original.
 Acceptance needs target/tracking checks and cold replay of only new or affected
 units. Do not add per-function Python tests, duplicate native-byte or source-text
 assertions, or hard-coded progress counts; use the canonical manifests and replay.
-Run `scripts/ci.py` when changing exact-comparison, checkpoint, byte-accounting,
-or test infrastructure. Routine function acceptance and handoff do not require
-that suite or historical origin tests. Run an origin test only when its evidence
-or verifier changes. Documentation-only changes need `git diff --check`.
+Run `scripts/ci.py` and the unit tests (`scripts/repo-python -m unittest
+discover -s tests`, a few seconds) when changing exact-comparison, checkpoint,
+byte-accounting or other shared tooling. Run `scripts/check-origins.py NAME`
+when origin evidence or a verifier changes, and `scripts/check-frontier.py`
+after editing a giant research parent. Routine function acceptance and handoff
+need none of these. Documentation-only changes need `git diff --check`.
 
 ## Tools and working state
 

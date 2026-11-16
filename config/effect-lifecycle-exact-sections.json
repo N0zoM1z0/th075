@@ -19,11 +19,6 @@
     "effect-destroy-owned-effects-0045b9b0",
     "effect-bind-fighter-0045ba10"
   ],
-  "inputs": {
-    "src/EffectManagerLifetimeF161.cpp": "3fd83e3f5dc494d540c3fcb8314696e470b60009fd9583b030091923e2707e5a",
-    "src/EffectManagerLifetimeF161.hpp": "8ca19a2058469d8d7423d1a9b798640137e4005c674fcc04b1216c23ea3e4ef9",
-    "src/FighterVirtualActionsF159.hpp": "95419c0758a1176858c6e0c61f24ae4cc44160364b21e0ea32fc68c60dd2d73c"
-  },
   "origin_evidence": {
     "config/effect-owner-binding-origin-evidence.json": "f05fcecfb44b753f2061a0d04b3562941563922e1ddee7f92be525a444b1e0e2",
     "config/effect-manager-lifetime-origin-evidence.json": "116da4a1fc4c1bbc5547cb4d84b7dcfa414b579b0c3113b8d4f10b4d462e375e",
@@ -130,7 +125,7 @@
       "flags": 1615859744,
       "definitions": [
         {
-          "symbol": "$L5917",
+          "symbol": "$L7106",
           "offset": 0,
           "type": 32,
           "storage": 3
@@ -160,7 +155,7 @@
         {
           "offset": 23,
           "type": "DIR32",
-          "symbol": "$T5921",
+          "symbol": "$T7110",
           "addend": 0,
           "target": 6724700
         },
@@ -175,7 +170,7 @@
       "target_sha256": "c697779be14b6c03bb55488a1c4a7c5cdd94b434193594f2a9e259b6d8f1b722"
     },
     {
-      "symbol": "$T5921",
+      "symbol": "$T7110",
       "symbol_offset": 8,
       "address": 6724692,
       "size": 36,
@@ -184,13 +179,13 @@
       "flags": 1076891712,
       "definitions": [
         {
-          "symbol": "$T5921",
+          "symbol": "$T7110",
           "offset": 8,
           "type": 0,
           "storage": 3
         },
         {
-          "symbol": "$T5924",
+          "symbol": "$T7113",
           "offset": 0,
           "type": 0,
           "storage": 3
@@ -200,14 +195,14 @@
         {
           "offset": 4,
           "type": "DIR32",
-          "symbol": "$L5917",
+          "symbol": "$L7106",
           "addend": 0,
           "target": 6644640
         },
         {
           "offset": 16,
           "type": "DIR32",
-          "symbol": "$T5924",
+          "symbol": "$T7113",
           "addend": 0,
           "target": 6724692
         }
@@ -215,7 +210,7 @@
       "target_sha256": "ff0c9ef239329613358c11d3d35632e88e6848490df659cca76f0854ac9ace11"
     },
     {
-      "symbol": "?BindFighter@EffectManagerLifetimeF161@@QAEXPAVFighterBaseActionsF159@@@Z",
+      "symbol": "?BindFighter@EffectManagerLifetimeF161@@QAEXPAVFighter@@@Z",
       "symbol_offset": 0,
       "address": 4569616,
       "size": 21,
@@ -224,7 +219,7 @@
       "flags": 1615859744,
       "definitions": [
         {
-          "symbol": "?BindFighter@EffectManagerLifetimeF161@@QAEXPAVFighterBaseActionsF159@@@Z",
+          "symbol": "?BindFighter@EffectManagerLifetimeF161@@QAEXPAVFighter@@@Z",
           "offset": 0,
           "type": 32,
           "storage": 2
@@ -328,7 +323,7 @@
       "flags": 1615859744,
       "definitions": [
         {
-          "symbol": "$L5932",
+          "symbol": "$L7121",
           "offset": 0,
           "type": 32,
           "storage": 3
@@ -358,7 +353,7 @@
         {
           "offset": 23,
           "type": "DIR32",
-          "symbol": "$T5934",
+          "symbol": "$T7123",
           "addend": 0,
           "target": 6724736
         },
@@ -373,7 +368,7 @@
       "target_sha256": "c77a25dc1f124d58100d16e9f0129ed282b3de62140fa8adbe0faab49057e3a1"
     },
     {
-      "symbol": "$T5934",
+      "symbol": "$T7123",
       "symbol_offset": 8,
       "address": 6724728,
       "size": 36,
@@ -382,13 +377,13 @@
       "flags": 1076891712,
       "definitions": [
         {
-          "symbol": "$T5934",
+          "symbol": "$T7123",
           "offset": 8,
           "type": 0,
           "storage": 3
         },
         {
-          "symbol": "$T5936",
+          "symbol": "$T7125",
           "offset": 0,
           "type": 0,
           "storage": 3
@@ -398,14 +393,14 @@
         {
           "offset": 4,
           "type": "DIR32",
-          "symbol": "$L5932",
+          "symbol": "$L7121",
           "addend": 0,
           "target": 6644672
         },
         {
           "offset": 16,
           "type": "DIR32",
-          "symbol": "$T5936",
+          "symbol": "$T7125",
           "addend": 0,
           "target": 6724728
         }

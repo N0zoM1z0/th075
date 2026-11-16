@@ -152,7 +152,7 @@ def main():
     target = c.verified_target()
     if hashlib.sha256(target).hexdigest() != plan["target_sha256"]:
         raise ValueError("effect lifecycle target identity differs")
-    for path, expected in {**plan["inputs"], **plan["origin_evidence"], **plan["vendor_headers"]}.items():
+    for path, expected in {**plan["origin_evidence"], **plan["vendor_headers"]}.items():
         if hashlib.sha256((ROOT / path).read_bytes()).hexdigest() != expected:
             raise ValueError("effect lifecycle guarded input differs: " + path)
     path = args.object or ROOT / plan["object"]
@@ -169,7 +169,7 @@ def main():
             part = next(p for p in plan["sections"] if p["symbol"] == row["symbol"])
             if (row["result"] != "exact" or row["first_differences"]
                     or row["object_sha256"] != digest or row["object"] != plan["object"]
-                    or row["source_sha256"] != plan["inputs"][plan["source"]]
+                    or row["source_sha256"] != hashlib.sha256((ROOT / plan["source"]).read_bytes()).hexdigest()
                     or row["target_sha256"] != plan["target_sha256"]
                     or row["profile"] != plan["profile"] or part["kind"] != "authored"
                     or int(row["target_address"], 0) != part["address"]

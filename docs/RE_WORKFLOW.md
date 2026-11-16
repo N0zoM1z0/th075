@@ -10,7 +10,8 @@ Use the [current handoff](RE_HANDOFF.md) for live priorities and the
 [giants page](GIANTS.md) for the 22 remaining authored functions, all of them
 nonexact slot-1 `Advance` methods. Thirteen have complete research parents in
 `probes/`; complete source is not exactness. Measure a parent with
-`scripts/repo-python scripts/measure-giant.py ADDRESS`. Historical documents
+`scripts/repo-python scripts/measure-giant.py ADDRESS` and keep it from
+regressing with `scripts/check-frontier.py`. Historical documents
 and tentative Ghidra labels remain leads, not evidence.
 
 Write source against the shared classes (`Actor`, `Fighter`,
@@ -142,7 +143,9 @@ and whitespace checks without compiler builds.
 Run relevant tool tests explicitly when their implementation changes. Routine
 function acceptance and handoff need no additional suite; ordinary probes need
 only their direct comparison.
-Run a historical origin test only when its evidence or verifier is affected.
+Run `scripts/check-origins.py NAME` only when origin evidence or a verifier
+is affected, and `scripts/check-frontier.py` after editing a giant research
+parent.
 Do not add a Python test per accepted function or duplicate native bytes and
 source text in assertions; the canonical manifests and cold replay cover these.
 Do not add allocation-failure, null-pointer, fault-injection or general robustness

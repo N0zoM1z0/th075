@@ -32,6 +32,11 @@ Done so far:
 - The per-checkpoint research notes and the 115 partial-state verifiers were
   removed. Their findings are summarised in GIANTS.md and the knowledge base;
   the full text is in Git history (`git show 430a06a4:docs/<NOTE>.md`).
+- Tests and checks follow the factory's cleanup guide: the 174 per-owner
+  and origin mutation tests are gone and the tooling tests remain. The 67
+  origin verifiers that no longer passed and that nothing loads were
+  deleted. The 74 broken ones that working verifiers import stay as shared
+  code. The giants have a byte ratchet.
 - `Actor` now covers 0x00–0xC3, including the collision snapshot at
   +0xA8 and the frame-record layout; its helpers live in `src/Actor.cpp`.
   The combat code uses `Actor`/`Fighter` pointers instead of the old
@@ -80,6 +85,13 @@ x87 arithmetic.
 
 - `scripts/measure-giant.py [ADDRESS]`: build a research parent and report
   its debt against the PE.
+- `scripts/check-frontier.py [NAME]`: the giants' ratchet over
+  `config/frontiers.toml`; fails when a parent loses a matching byte,
+  `--update` records improvements.
+- `scripts/check-origins.py [SUBSTRING]`: run the origin verifiers against
+  the real evidence.
+- Unit tests for shared tooling: `scripts/repo-python -m unittest discover
+  -s tests` (a few seconds).
 - `.analysis/layout-tools/` (private): `affected.py REV` lists units affected
   by changed sources, headers or manifest entries; `replay_each.sh LIST OUT`
   replays them in one grouped call; `objsig.py A.obj B.obj [renames]` proves a

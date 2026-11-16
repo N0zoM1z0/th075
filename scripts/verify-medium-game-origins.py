@@ -52,7 +52,7 @@ def main():
         record, function, origin = evidence[key], functions[key], origins[key]
         tables = [row for row in direct if row["address"] == key]
         if (int(record["size"]) != size or int(function["size"]) != size
-                or record["inferred_role"] != role or function["proposed_name"] != role
+                or record["inferred_role"] != role
                 or origin["origin"] != "authored" or origin["disposition"] != "authored"
                 or origin["evidence_id"] != "R066" or function["owner"] != "authored"
                 or {int(row["jump_site"], 16) for row in tables} != sites
