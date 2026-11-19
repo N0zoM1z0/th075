@@ -10,7 +10,7 @@ void BattleScene::RenderOverlayTimeline() {
     RenderQuadPacket5E68C0 packet;
     STYLE->SetDepthMode(0);
     STYLE->SetBlendMode(0);
-    switch (reinterpret_cast<signed char&>(field064)) {
+    switch (field064) {
         RECT rect;
     case 0:
         SetRect(&rect, reinterpret_cast<int&>(field010) * 5, 0, reinterpret_cast<int&>(field010) * 5 + 640, 64);

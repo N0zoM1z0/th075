@@ -142,7 +142,7 @@ short BattleScene::AdvanceState()
                     if (fighters[1]->health > MAX_HEALTH) fighters[1]->health = MAX_HEALTH;
                 }
                 fighters[1]->cardGauge = 0.0f; fighters[1]->field36C = 900.0f;
-                fighters[1]->spirit = 1000; fighters[1]->spiritCooldown = 0; reinterpret_cast<signed char&>(fighters[0]->field39C) = 0;
+                fighters[1]->spirit = 1000; fighters[1]->spiritCooldown = 0; fighters[0]->field39C = 0;
             }
         }
         if (TIMER <= 20) { reinterpret_cast<signed char&>(fighters[0]->field3CE) = 0; reinterpret_cast<signed char&>(fighters[1]->field3CE) = 0; STATE = 1; }
@@ -181,7 +181,7 @@ short BattleScene::AdvanceState()
             g_StateResetCounter = 0;
             if (TIMER == 150) {
                 reinterpret_cast<int&>(fighters[1]->field3A4) = 0; reinterpret_cast<int&>(fighters[1]->field3A8) = 0;
-                fighters[1]->field3A0 = 0; reinterpret_cast<signed char&>(fighters[1]->field39C) = 0;
+                fighters[1]->field3A0 = 0; fighters[1]->field39C = 0;
                 for (resetPlayer = 0; resetPlayer < 2; ++resetPlayer) {
                     fighters[resetPlayer]->ResetRound();
                     reinterpret_cast<signed char&>(fighters[resetPlayer]->field3CE) = 1;
@@ -208,7 +208,7 @@ short BattleScene::AdvanceState()
         for (k = 0; k < 2; ++k) {
             if (fighters[k]->action < 50) {
                 fighters[k]->health = 10000; fighters[k]->recoverableHealth = 10000;
-                fighters[k]->cardGauge = 1000.0f; reinterpret_cast<signed char&>(fighters[k]->field39C) = 0; fighters[k]->field366 = 2;
+                fighters[k]->cardGauge = 1000.0f; fighters[k]->field39C = 0; fighters[k]->field366 = 2;
             }
         }
     }
@@ -217,7 +217,7 @@ short BattleScene::AdvanceState()
             if (fighters[j]->action < 50) {
                 fighters[j]->health = 10000; fighters[j]->recoverableHealth = 10000;
                 fighters[j]->field36C = static_cast<float>(fighters[1]->field52D * 100);
-                reinterpret_cast<signed char&>(fighters[j]->field39C) = 0; fighters[j]->field366 = 2;
+                fighters[j]->field39C = 0; fighters[j]->field366 = 2;
             }
         }
     }

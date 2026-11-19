@@ -91,7 +91,7 @@ void BattleScene::Render() {
         if (field018 == 5) {
             DrawSelectedNotice();
         } else if (field018 == 7) {
-            if ((reinterpret_cast<signed char&>(fighters[0]->noticeFirst)) == 0) {
+            if ((fighters[0]->noticeFirst) == 0) {
                 if ((fighters[0]->noticeBadge) >= 0)
                     reinterpret_cast<RenderActor43D9D0*>(fighters[0])->RenderSideEffect();
                 if ((fighters[1]->noticeBadge) >= 0)

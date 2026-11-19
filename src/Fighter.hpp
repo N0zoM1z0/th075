@@ -253,7 +253,7 @@ public:
     unsigned char unknown6E5[0x6E6 - 0x6E5];
     signed char noticeState;            // +0x6E6
     signed char noticeBadge;            // +0x6E7
-    unsigned char noticeFirst;          // +0x6E8
+    signed char noticeFirst;            // +0x6E8 signed notice gate
     unsigned char noticeColor;          // +0x6E9
     short noticeAxis;                   // +0x6EA
     short noticeExtent;                 // +0x6EC
