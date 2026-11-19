@@ -872,3 +872,21 @@ around float projection results assigned to short script counters. The full
 62,090-byte COFF body and all 1,824 relocation positions/types/addends/local
 targets remain identical. The frontier remains 6,311 GPR positions and five
 width differences; this is natural-source cleanup, not exact giant credit.
+
+The shared Fighter script words at `+0xF00/+0xF02` are signed `short`, not
+`unsigned short`: the native Reimu and third-boss state machines repeatedly
+compare them as signed values, increment/decrement them as signed counters,
+and consume their sign-extended values in trajectory reconstruction. The
+source now declares the actual signed type and replaces 813
+`reinterpret_cast<signed short&>` aliases across 140 source/include files with
+direct member access. A follow-up removes 29 redundant `static_cast<short>`
+wrappers from assignments to those now-correctly-typed fields.
+
+All four complete fighter `Advance` parents preserve their entire COFF bodies
+and relocation maps: Reimu 62,090 bytes / 1,824 relocations; Sakuya 83,922 /
+2,352; Youmu 47,655 / 1,491; Remilia 59,236 / 1,863. Relocation positions,
+types, addends and local targets are unchanged. Their existing frontiers also
+remain unchanged (6,311/5, 6,958/12, 2,736/5 and 1,741/3 GPR/width debt
+respectively); no giant exactness is claimed. The 12 affected exact units
+covering character action dispatch and all fighter reset-round entry points
+were cold-replayed selectively and passed 12/12.

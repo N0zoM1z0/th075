@@ -225,3 +225,12 @@ The active .analysis research contexts, layout-tools, Ghidra project, shared
 .tools installation, game-specific Wine prefix, original target and canonical
 config ledgers were preserved. See [STORAGE_HYGIENE.md](STORAGE_HYGIENE.md)
 before removing any further private research context.
+
+The common Fighter `scriptCounterF00/F02` fields at +0xF00/+0xF02 are now
+proper signed `short`s. 813 signed-short reinterpret-reference aliases across
+140 source/include files now use the actual members directly; 29 redundant
+short casts on assignments were also removed. Reimu/Sakuya/Youmu/Remilia full
+fighter `Advance` COFF bodies and relocation maps remain byte-identical
+(62,090/1,824; 83,922/2,352; 47,655/1,491; 59,236/1,863). The 12 affected
+exact reset/dispatch units replayed 12/12. All four giant frontiers are
+unchanged and remain nonexact.
