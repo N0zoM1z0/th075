@@ -11,7 +11,7 @@
                 ClearMotionFields();
                 field080=1;
                 field07C=0;
-                reinterpret_cast<unsigned char&>(field3AC)=0;
+                field3AC=0;
             }
             if (RecordedRange(0,100)<40 && (animationStage)>3 && (animationStage)<8) {
                 SpawnBattleEffect(0x330,
@@ -52,7 +52,7 @@
                 ClearMotionFields();
                 field080=1;
                 field07C=0;
-                reinterpret_cast<unsigned char&>(field3AC)=0;
+                field3AC=0;
             }
             if ((velocityX)>g_ThresholdAt0065782C) {
                 velocityX=(velocityX)-g_F728_PositiveDrag2At00658058;

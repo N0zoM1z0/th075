@@ -3,7 +3,7 @@
 // 252/253 include native +3B6/+7C guard; 254 does not. Incomplete whole GPR phase.
 case 0x253: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        --reinterpret_cast<unsigned char&>(field366);
+        --field366;
         ClearMotionFields();
         field080=1;
         field07C=0;

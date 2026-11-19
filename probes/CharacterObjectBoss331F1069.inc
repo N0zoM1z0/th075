@@ -2,7 +2,7 @@
 // 0050D53A..0050D88E, 852 original CODE B /185 actual x86 instructions.
 // Genuine gameplay inside ONE still nonexact 81KB original CharacterObject.
 case 0x331: {
-    reinterpret_cast<unsigned char&>(facing)=reinterpret_cast<unsigned char&>(owner->facing);
+    facing = owner->facing;
     if (owner->action>0x95 &&
         owner->action<0x9A &&
         animationStage==0) {

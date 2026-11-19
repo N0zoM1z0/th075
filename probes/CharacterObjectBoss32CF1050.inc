@@ -1,7 +1,7 @@
 // Pinned original native 0050CD7A..0050CE97, action 0x32C, 285B/63 x86.
 // This remains an INNER state in one nonexact 81KB CharacterObject function.
 case 0x32C: {
-    reinterpret_cast<unsigned char&>(facing) = reinterpret_cast<unsigned char&>(owner->facing);
+    facing = owner->facing;
     if (owner->action == 0x131) {
         reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
         reinterpret_cast<unsigned int&>(y) = reinterpret_cast<unsigned int&>(owner->y);

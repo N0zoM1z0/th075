@@ -8,7 +8,7 @@
                 ClearMotionFields();
                 field080=1;
                 field07C=0;
-                reinterpret_cast<unsigned char&>(field3AC)=0;
+                field3AC=0;
                 PlaySound(11);
                 velocityY=10.0f;
                 velocityX=30.0f;
@@ -59,7 +59,7 @@
                 ClearMotionFields();
                 field080=99;
                 field07C=0;
-                reinterpret_cast<unsigned char&>(field3AC)=0;
+                field3AC=0;
                 scriptCounterF00=0;
             }
             if ((animationStage)<25 && y>g_ThresholdAt0065782C && (animationStage)>14) {

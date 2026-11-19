@@ -11,7 +11,7 @@
 // F987 pinned native Japanese fighter 004AC040 real action 0x252.
 case 0x252: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        --reinterpret_cast<unsigned char&>(field366);
+        --field366;
         ClearMotionFields();
         field080=1;
         field07C=0;
@@ -34,7 +34,7 @@ case 0x252: {
 // F987 pinned native Japanese fighter 004AC040 real action 0x253.
 case 0x253: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        --reinterpret_cast<unsigned char&>(field366);
+        --field366;
         ClearMotionFields();
         field080=1;
         field07C=0;
@@ -57,7 +57,7 @@ case 0x253: {
 // F987 pinned native Japanese fighter 004AC040 real action 0x254.
 case 0x254: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        --reinterpret_cast<unsigned char&>(field366);
+        --field366;
         ClearMotionFields();
         field080=1;
         field07C=0;

@@ -13,7 +13,7 @@
                 ClearMotionFields();
                 field080=1;
                 field07C=0;
-                reinterpret_cast<unsigned char&>(field3AC)=0;
+                field3AC=0;
             }
             if ((animationStage)<11 && y>g_ThresholdAt0065782C && (animationStage)>2) {
                 velocityX=-30.0f;
