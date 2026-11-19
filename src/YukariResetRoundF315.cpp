@@ -22,9 +22,9 @@ void YukariFighter::ResetRound()
     fieldF0A=0;
     fieldF32=0;
     fieldF30=0;
-    reinterpret_cast<unsigned short&>(aiWaitTimer)=0;
-    reinterpret_cast<unsigned short&>(aiStep)=0;
-    reinterpret_cast<unsigned short&>(aiCardTimer)=0;
+    aiWaitTimer=0;
+    aiStep=0;
+    aiCardTimer=0;
     ResetBaseRound();
     sequenceTimer=0;
     fieldEFE=0;

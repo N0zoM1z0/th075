@@ -7,7 +7,7 @@ YuyukoFighter::YuyukoFighter()
     sequenceTimer=0;
     fieldEFE=0;
     fieldEFA=0;
-    reinterpret_cast<unsigned short&>(fieldF10)=0;
+    fieldF10=0;
     field713=1;
     strcpy(name,g_YuyukoNameAt00659B74);
     strcpy(tag,g_YuyukoTagAt00659B7C);

@@ -69,9 +69,9 @@ void SakuyaFighter::ResetRound()
     fieldF10 = 0;
     fieldF12 = 0;
     fieldF14 = 0;
-    reinterpret_cast<unsigned short&>(aiWaitTimer) = 0;
-    reinterpret_cast<unsigned short&>(aiStep) = 0;
-    reinterpret_cast<unsigned short&>(aiCardTimer) = 0;
+    aiWaitTimer = 0;
+    aiStep = 0;
+    aiCardTimer = 0;
     fieldF16 = 0;
     reinterpret_cast<Fighter*>(this)->Fighter::ResetRound();
 }

@@ -16,8 +16,8 @@ void PatchouliFighter::ResetRound()
     fieldF0E=0;
     fieldF0C=0;
     fieldF10=0;
-    reinterpret_cast<unsigned short&>(aiWaitTimer)=0;
-    reinterpret_cast<unsigned short&>(aiStep)=0;
-    reinterpret_cast<unsigned short&>(aiCardTimer)=0;
+    aiWaitTimer=0;
+    aiStep=0;
+    aiCardTimer=0;
     reinterpret_cast<Fighter*>(this)->Fighter::ResetRound();
 }

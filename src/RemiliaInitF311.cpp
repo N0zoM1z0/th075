@@ -6,8 +6,8 @@ RemiliaFighter::RemiliaFighter()
 {
     sequenceTimer=0;
     fieldEFE=0;
-    reinterpret_cast<unsigned short&>(field6FA)=0;
-    reinterpret_cast<unsigned short&>(field6FC)=0;
+    field6FA=0;
+    field6FC=0;
     field6F8=0;
     field713=1;
     strcpy(name,g_RemiliaNameAt00659A34);

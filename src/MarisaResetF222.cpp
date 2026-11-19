@@ -23,9 +23,9 @@ void MarisaFighter::ResetRound()
     fieldF14=0;
     fieldF16=0;
     fieldF18=0;
-    reinterpret_cast<unsigned short&>(aiWaitTimer)=0;
-    reinterpret_cast<unsigned short&>(aiStep)=0;
-    reinterpret_cast<unsigned short&>(aiCardTimer)=0;
+    aiWaitTimer=0;
+    aiStep=0;
+    aiCardTimer=0;
     fieldF1A=0;
     fieldF1C=0;
     fieldF1E=0;

@@ -18,9 +18,9 @@ void SuikaFighter::ResetRound()
     fieldF20=0;
     fieldF22=0;
     fieldF24=0;
-    reinterpret_cast<unsigned short&>(aiWaitTimer)=0;
-    reinterpret_cast<unsigned short&>(aiStep)=0;
-    reinterpret_cast<unsigned short&>(aiCardTimer)=0;
+    aiWaitTimer=0;
+    aiStep=0;
+    aiCardTimer=0;
     g_SuikaGlobalMarkerAt0066C23A=0xff;
     g_SuikaGlobalModeAt0066C239=0xff;
     ResetBaseRound();

@@ -13,8 +13,8 @@ void RemiliaFighter::ResetRound()
     fieldF06=0;
     fieldF08=0;
     fieldF0A=0;
-    reinterpret_cast<unsigned short&>(aiWaitTimer)=0;
-    reinterpret_cast<unsigned short&>(aiStep)=0;
-    reinterpret_cast<unsigned short&>(aiCardTimer)=0;
+    aiWaitTimer=0;
+    aiStep=0;
+    aiCardTimer=0;
     reinterpret_cast<Fighter*>(this)->Fighter::ResetRound();
 }

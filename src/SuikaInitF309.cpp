@@ -4,8 +4,8 @@ extern const char g_SuikaNameAt00659E24[];
 extern const char g_SuikaTagAt00659E2C[];
 SuikaFighter::SuikaFighter()
 {
-    reinterpret_cast<unsigned short&>(fieldF28)=0;
-    reinterpret_cast<unsigned short&>(fieldF2A)=0;
+    fieldF28=0;
+    fieldF2A=0;
     field713=1;
     strcpy(name,g_SuikaNameAt00659E24);
     strcpy(tag,g_SuikaTagAt00659E2C);
