@@ -39,7 +39,7 @@ case 0x389: {
             facing,1);
         scaleX=float(double(RecordedRange(0,4)-2)*
             g_F1057_RandomDoubleAt00658A20+g_F1057_RandomBaseAt00657D00);
-        reinterpret_cast<unsigned int&>(scaleY)=reinterpret_cast<unsigned int&>(scaleX);
+        scaleY=scaleX;
         // Native ordinal-101 JG skips the entire signed-speed decay:
         // only action stages <=1 decrement/clamp speed +0xD8.
         field0D8=short(field0D8-15);

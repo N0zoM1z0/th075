@@ -7,7 +7,7 @@ case 0x38E: {
     }
     if (animationStage==0 && animationFrame==0) {
         field0D8=0;
-        reinterpret_cast<unsigned int&>(velocityX)=reinterpret_cast<unsigned int&>(field0C8);
+        velocityX=field0C8;
     }
     if (animationStage==1 && animationFrame==0)
         owner->SpawnBattleEffect(

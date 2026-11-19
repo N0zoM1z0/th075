@@ -1,7 +1,7 @@
 // F1082: original Japanese 005129C1..00512BA7, 486 native CODE B/102 x86.
 // Real game action 0x34A inside ONE nonexact 81KB CharacterObject Advance.
 case 0x34A: {
-    reinterpret_cast<unsigned int&>(x)=reinterpret_cast<unsigned int&>(owner->x);
+    x = owner->x;
     y=0.0f;
     field08A=1;
     if (animationStage==0 && animationFrame==0) {

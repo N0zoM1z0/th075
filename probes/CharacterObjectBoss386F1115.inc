@@ -30,7 +30,7 @@ case 0x386: {
     if (animationStage==1) {
         scaleX=float(RecordedRange(0,4))*
             g_F1057_SpeedScaleAt006590B4+g_F1115_RandomDoubleAt006583B8;
-        reinterpret_cast<unsigned int&>(scaleY)=reinterpret_cast<unsigned int&>(scaleX);
+        scaleY=scaleX;
         if (F1115_AbsFloatAt00412D90(x-
             owner->opponent->x)<g_F1115_DistanceAt0065786C) {
             velocityX=0.0f;

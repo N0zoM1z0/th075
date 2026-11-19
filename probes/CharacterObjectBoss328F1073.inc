@@ -31,7 +31,7 @@ case 0x328: {
         color[2]=0xFF;
         color[3]=0xFF;
         SetPolarVelocity(field0C8,13.0f);
-        reinterpret_cast<unsigned int&>(rotationZ)=reinterpret_cast<unsigned int&>(field0C8);
+        rotationZ=field0C8;
         field0D8=0;
         field080=1;
         field07C=0;

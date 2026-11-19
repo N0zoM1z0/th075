@@ -3,8 +3,8 @@
 case 0x32E: {
     facing = owner->facing;
     if (owner->action == 0x131) {
-        reinterpret_cast<unsigned int&>(x) = reinterpret_cast<unsigned int&>(owner->x);
-        reinterpret_cast<unsigned int&>(y) = reinterpret_cast<unsigned int&>(owner->y);
+        x = owner->x;
+        y = owner->y;
     } else {
         ClearFrameInfo();
         return;

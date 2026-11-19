@@ -51,7 +51,7 @@ case F1108_CASE: {
         return;
     }
     if (AdvanceNestedFrame()==field070) {
-        reinterpret_cast<unsigned int&>(owner->field314)=reinterpret_cast<unsigned int&>(field0C8);
+        owner->field314=field0C8;
         owner->SpawnBattleEffect(
             F1108_NEXT_ID,x,y,
             facing,1);

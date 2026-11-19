@@ -8,7 +8,7 @@ case 0x3E6: {
         ResetSecondaryCounter(2);
         return;
     }
-    reinterpret_cast<unsigned int&>(x)=reinterpret_cast<unsigned int&>(owner->x);
+    x = owner->x;
     y=(*(&owner->y))+g_F1057_YOffsetAt00657888;
     if (animationStage==0 && animationFrame==0) {
         ResetTransform(0,0.0f,0);

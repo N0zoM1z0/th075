@@ -12,7 +12,7 @@ case 0x349: {
         color[3]=0xFF;
         field0D8=0;
     }
-    reinterpret_cast<unsigned int&>(x)=reinterpret_cast<unsigned int&>(owner->x);
+    x = owner->x;
     y=(*(&owner->y))+g_F1081_ParentYOffsetAt00658268;
     rotationZ=(rotationZ)-g_F1081_AngleStepAt00657874;
     if (animationStage==1) {

@@ -48,7 +48,7 @@ void AliceObject::AdvanceProjectileBehavior() {
             if(animationStage==2) {
                 // Parenthesized operand keeps the original x87 order (fld scaleX first).
                 scaleX=(scaleX)*g_ProjectScaleF379At00659454;
-                reinterpret_cast<unsigned int&>(scaleY)=reinterpret_cast<unsigned int&>(scaleX);
+                scaleY=scaleX;
             }
             if(x>g_ProjectMaxXAt00659424 || x<g_ProjectMinXAt006595EC || y>g_ProjectMaxYAt006583B4 || y<g_ProjectMinXAt006595EC)
                 ClearFrameInfo();

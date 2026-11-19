@@ -1,7 +1,7 @@
 // F1130: original Japanese 0x3E5 at 0051E01F..0051E215:
 // 502 native original CODE B /96 x86 inside ONE nonexact 81KB Boss.
 case 0x3E5: {
-    reinterpret_cast<unsigned int&>(x)=reinterpret_cast<unsigned int&>(owner->x);
+    x = owner->x;
     y=0.0f;
     field08A=1;
     if (animationStage==0 && animationFrame==0) {

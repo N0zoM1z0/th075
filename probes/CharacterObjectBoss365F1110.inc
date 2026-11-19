@@ -80,7 +80,7 @@ case 0x365: {
             facing,1);
         scaleX=float(double(RecordedRange(0,4)-2)*
             g_F1057_RandomDoubleAt00658A20+g_F1057_RandomBaseAt00657D00);
-        reinterpret_cast<unsigned int&>(scaleY)=reinterpret_cast<unsigned int&>(scaleX);
+        scaleY=scaleX;
     }
     field0D8=short(field0D8+2);
     if (animationStage>0 && field0DA<60) {
