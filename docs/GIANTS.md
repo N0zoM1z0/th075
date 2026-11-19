@@ -88,6 +88,14 @@ spawns, 22 sounds and 13 tracked spawns now bind to the real
 relocation offset/type and every nonrelocation instruction byte remained
 unchanged; 24 header-affected exact units cold-replayed.
 
+Remilia object `0055AC80` now defines `RemiliaObject::Advance` on its
+real class. Twenty-four random-range, 25 effect-spawn, seven sound and
+two shared-sound call sites now use typed C++ members instead of borrowed
+receiver aliases. The full 28,868-byte COFF body, all 696 relocation
+offsets/types and every nonrelocation byte remain unchanged. This does
+not resolve its 726 GPR-role and six instruction-width differences;
+all 24 affected exact units cold-replayed successfully.
+
 The Reimu fighter, Alice object and Meiling object research parents now
 directly define `ReimuFighter::Advance`, `AliceObject::Advance`, and
 `MeilingObject::Advance`, rather than artificial derived classes. Alice's 33,293-byte parent uses real `owner` and

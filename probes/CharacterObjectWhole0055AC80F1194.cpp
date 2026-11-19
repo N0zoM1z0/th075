@@ -1,4 +1,5 @@
-#include "ObjectAdvance55AC80F1194.hpp"
+#include "CharacterObject.hpp"
+#include "RemiliaFighter.hpp"
 #include "GameLeafHelpers.hpp"
 #include "FighterEffectPolicies.hpp"
 #include "RecordedRange455580.hpp"
@@ -12,15 +13,13 @@ float __cdecl Unknown483300(float first, float second);
 // Same observed signed-byte view used by the accepted response policy.
 extern signed char g_StateRepeatLevelAt006714D0;
 
-#define SELF_VIEW(type) reinterpret_cast<type*>(this)
-#define OWNER_VIEW(type) reinterpret_cast<type*>(owner)
 #undef PlaySound
 
 // F1194: continued from the preserved complete F167 normal C++ draft.
 // All 57 native state bodies/default are present. The complete callable remains
 // NONEXACT: 726 GPR positions and six CMP widths differ from the pinned PE.
 // Frame 0x19C, every EBP operand, native CFG and reference destinations agree.
-void ObjectAdvance55AC80F1194::Advance()
+void RemiliaObject::Advance()
 {
     if (owner->opponent->field3BA != 0) return;
     if (owner->field3BA != 0 && field08A == 0) return;
@@ -143,10 +142,10 @@ case 802: {
         ClearFrameInfo();
         if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
             reinterpret_cast<short&>(owner->fieldEFA) = 0;
-            OWNER_VIEW(FighterEffectPoliciesF135)->SpawnBattleEffect(995, x, y, 1, 1);
+            owner->SpawnBattleEffect(995, x, y, 1, 1);
         }
         for (int i802 = 0; i802 < 2; i802++)
-            OWNER_VIEW(FighterEffectPoliciesF135)->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
         return;
     }
     if (animationStage == 0 && animationFrame == 0) {
@@ -163,9 +162,9 @@ case 802: {
         SetPolarVelocity(field0C8, field0CC);
     }
     if (animationStage == 1 && animationFrame == 0 && owner->spirit > 0) {
-        OWNER_VIEW(FighterEffectPoliciesF135)->UpdateGaugeTimer(15);
-        OWNER_VIEW(FighterEffectPoliciesF135)->PlaySound(0);
-        OWNER_VIEW(FighterEffectPoliciesF135)->SpawnBattleEffect(803, x, y, facing, 1);
+        reinterpret_cast<FighterEffectPoliciesF135*>(owner)->UpdateGaugeTimer(15);
+        owner->PlaySound(0);
+        owner->SpawnBattleEffect(803, x, y, facing, 1);
     }
     y = y - velocityY;
     x = facing * velocityX + x;
@@ -203,10 +202,10 @@ case 803: {
         ClearFrameInfo();
         if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
             reinterpret_cast<short&>(owner->fieldEFA) = 0;
-            OWNER_VIEW(FighterEffectPoliciesF135)->SpawnBattleEffect(995, x, y, 1, 1);
+            owner->SpawnBattleEffect(995, x, y, 1, 1);
         }
         for (int i803 = 0; i803 < 2; i803++)
-            OWNER_VIEW(FighterEffectPoliciesF135)->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
         return;
     }
     if (animationStage == 0 && animationFrame == 0) {
@@ -248,10 +247,10 @@ case 804: {
         ClearFrameInfo();
         if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
             reinterpret_cast<short&>(owner->fieldEFA) = 0;
-            OWNER_VIEW(FighterEffectPoliciesF135)->SpawnBattleEffect(995, x, y, 1, 1);
+            owner->SpawnBattleEffect(995, x, y, 1, 1);
         }
         for (int i804 = 0; i804 < 2; i804++)
-            OWNER_VIEW(FighterEffectPoliciesF135)->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
         return;
     }
     if (animationStage == 0 && animationFrame == 0) {
@@ -260,8 +259,8 @@ case 804: {
         field080 = 1;
         reinterpret_cast<unsigned int&>(field07C) = 0;
         SetPolarVelocity(
-            field0DA + 15 - SELF_VIEW(RecordedRange455580)->SelectRange(0, 30),
-            SELF_VIEW(RecordedRange455580)->SelectRange(1600, 2400) * 0.01f);
+            field0DA + 15 - RecordedRange(0, 30),
+            RecordedRange(1600, 2400) * 0.01f);
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 255;
@@ -430,7 +429,7 @@ case 809:
         color[3] = 255;
         rotationX = facing * -35;
         rotationY = 70.0f;
-        rotationZ = SELF_VIEW(RecordedRange455580)->SelectRange(0, 359);
+        rotationZ = RecordedRange(0, 359);
     }
     scaleX = scaleX * 1.05f;
     scaleY = scaleY * 1.05f;
@@ -519,7 +518,7 @@ case 814:
         color[3] = 255;
         rotationX = facing * -30;
         rotationY = 70.0f;
-        rotationZ = SELF_VIEW(RecordedRange455580)->SelectRange(0, 359);
+        rotationZ = RecordedRange(0, 359);
     }
     scaleX = scaleX * 1.05f;
     scaleY = scaleY * 1.05f;
@@ -544,10 +543,10 @@ case 816: {
         ClearFrameInfo();
         if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
             reinterpret_cast<short&>(owner->fieldEFA) = 0;
-            OWNER_VIEW(FighterEffectPoliciesF135)->SpawnBattleEffect(995, x, y, 1, 1);
+            owner->SpawnBattleEffect(995, x, y, 1, 1);
         }
         for (int i816 = 0; i816 < 3; i816++)
-            OWNER_VIEW(FighterEffectPoliciesF135)->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
         return;
     }
     if (animationStage == 0 && animationFrame == 0) {
@@ -555,7 +554,7 @@ case 816: {
         field080 = 1;
         reinterpret_cast<unsigned int&>(field07C) = 0;
         SetPolarVelocity(
-            field0C8 + 15.0f - SELF_VIEW(RecordedRange455580)->SelectRange(0, 30), 25.0f);
+            field0C8 + 15.0f - RecordedRange(0, 30), 25.0f);
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 255;
@@ -598,10 +597,10 @@ case 817: {
         ClearFrameInfo();
         if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
             reinterpret_cast<short&>(owner->fieldEFA) = 0;
-            OWNER_VIEW(FighterEffectPoliciesF135)->SpawnBattleEffect(995, x, y, 1, 1);
+            owner->SpawnBattleEffect(995, x, y, 1, 1);
         }
         for (int i817 = 0; i817 < 5; i817++)
-            OWNER_VIEW(FighterEffectPoliciesF135)->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
         return;
     }
     if (animationStage == 0 && animationFrame == 0) {
@@ -676,7 +675,7 @@ case 819:
         color[3] = 255;
         rotationX = facing * 35;
         rotationY = 70.0f;
-        rotationZ = SELF_VIEW(RecordedRange455580)->SelectRange(0, 359);
+        rotationZ = RecordedRange(0, 359);
     }
     scaleX = scaleX * 1.05f;
     scaleY = scaleY * 1.05f;
@@ -720,10 +719,10 @@ case 821: {
         ClearFrameInfo();
         if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
             reinterpret_cast<short&>(owner->fieldEFA) = 0;
-            OWNER_VIEW(FighterEffectPoliciesF135)->SpawnBattleEffect(995, x, y, 1, 1);
+            owner->SpawnBattleEffect(995, x, y, 1, 1);
         }
         for (int i821 = 0; i821 < 10; i821++)
-            OWNER_VIEW(FighterEffectPoliciesF135)->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
         return;
     }
     if (animationStage == 0 && animationFrame == 0) {
@@ -766,11 +765,11 @@ case 821: {
         ResetSecondaryCounter(4);
     if (animationStage == 4 && animationFrame == 0) {
         owner->field314 = field0DA;
-        OWNER_VIEW(FighterEffectPoliciesF135)->SpawnBattleEffect(837, x, y, facing, 1);
+        owner->SpawnBattleEffect(837, x, y, facing, 1);
     }
     if (animationStage == 9 && animationFrame == 0) {
         owner->field314 = field0DA;
-        OWNER_VIEW(FighterEffectPoliciesF135)->SpawnBattleEffect(837, x, y, facing, 1);
+        owner->SpawnBattleEffect(837, x, y, facing, 1);
     }
     return;
 }
@@ -1100,7 +1099,7 @@ case 835:
         reinterpret_cast<unsigned int&>(field07C) = 0;
         scaleX = 1.0f;
         scaleY = 1.0f;
-        rotationZ = SELF_VIEW(RecordedRange455580)->SelectRange(0, 359);
+        rotationZ = RecordedRange(0, 359);
         color[0] = 255;
         color[1] = 255;
         color[2] = 255;
@@ -1191,10 +1190,10 @@ case 838: {
         ClearFrameInfo();
         if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
             reinterpret_cast<short&>(owner->fieldEFA) = 0;
-            OWNER_VIEW(FighterEffectPoliciesF135)->SpawnBattleEffect(995, x, y, 1, 1);
+            owner->SpawnBattleEffect(995, x, y, 1, 1);
         }
         for (int i838 = 0; i838 < 10; i838++)
-            OWNER_VIEW(FighterEffectPoliciesF135)->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
         return;
     }
     if (animationStage == 0 && animationFrame == 0) {
@@ -1234,7 +1233,7 @@ case 838: {
         ResetSecondaryCounter(4);
     if (animationStage == 4 && animationFrame == 0) {
         owner->field314 = field0DA;
-        OWNER_VIEW(FighterEffectPoliciesF135)->SpawnBattleEffect(837, x, y, facing, 1);
+        owner->SpawnBattleEffect(837, x, y, facing, 1);
         if (reinterpret_cast<unsigned int&>(field07C) == 2)
             reinterpret_cast<unsigned int&>(field07C) = 0;
         else
@@ -1242,7 +1241,7 @@ case 838: {
     }
     if (animationStage == 9 && animationFrame == 0) {
         owner->field314 = field0DA;
-        OWNER_VIEW(FighterEffectPoliciesF135)->SpawnBattleEffect(837, x, y, facing, 1);
+        owner->SpawnBattleEffect(837, x, y, facing, 1);
         if (reinterpret_cast<unsigned int&>(field07C) == 2)
             reinterpret_cast<unsigned int&>(field07C) = 0;
         else
@@ -1261,10 +1260,10 @@ case 839: {
         ClearFrameInfo();
         if (reinterpret_cast<short&>(owner->fieldEFA) > 25) {
             reinterpret_cast<short&>(owner->fieldEFA) = 0;
-            OWNER_VIEW(FighterEffectPoliciesF135)->SpawnBattleEffect(995, x, y, 1, 1);
+            owner->SpawnBattleEffect(995, x, y, 1, 1);
         }
         for (int i839 = 0; i839 < 10; i839++)
-            OWNER_VIEW(FighterEffectPoliciesF135)->SpawnBattleEffect(996, x, y, 1, 1);
+            owner->SpawnBattleEffect(996, x, y, 1, 1);
         return;
     }
     if (animationStage == 0 && animationFrame == 0) {
@@ -1282,7 +1281,7 @@ case 839: {
         velocityY = 0.0f;
     }
     if (animationStage == 1 && animationFrame == 0)
-        OWNER_VIEW(FighterEffectPoliciesF135)->SpawnBattleEffect(835, x, y, facing, 1);
+        owner->SpawnBattleEffect(835, x, y, facing, 1);
     velocityX = velocityX - 0.45f;
     if (velocityX < -18.0f) velocityX = -18.0f;
     if (reinterpret_cast<unsigned int&>(field07C) == 4) reinterpret_cast<unsigned int&>(field07C) = 0;
@@ -1362,9 +1361,9 @@ case 900:
     x = facing * velocityX + x;
     y = y - velocityY;
     owner->field314 = -field0C8;
-    OWNER_VIEW(FighterEffectPoliciesF135)->SpawnBattleEffect(901,
-        SELF_VIEW(RecordedRange455580)->SelectRange(0, 60) + x - 30.0f,
-        y + 30.0f - SELF_VIEW(RecordedRange455580)->SelectRange(0, 60),
+    owner->SpawnBattleEffect(901,
+        RecordedRange(0, 60) + x - 30.0f,
+        y + 30.0f - RecordedRange(0, 60),
         facing, 1);
     if (x > 1800.0f || x < -680.0f) {
         ClearFrameInfo();
@@ -1390,12 +1389,12 @@ case 901:
         color[1] = 255;
         color[2] = 255;
         color[3] = 255;
-        field0D8 = SELF_VIEW(RecordedRange455580)->SelectRange(0, 5);
+        field0D8 = RecordedRange(0, 5);
         field080 = 1;
         reinterpret_cast<unsigned int&>(field07C) = 0;
         SetPolarVelocity(
-            -field0C8 + 20.0f - SELF_VIEW(RecordedRange455580)->SelectRange(0, 40),
-            SELF_VIEW(RecordedRange455580)->SelectRange(5, 10));
+            -field0C8 + 20.0f - RecordedRange(0, 40),
+            RecordedRange(5, 10));
     }
     x = facing * velocityX + x;
     y = y - velocityY;
@@ -1457,12 +1456,12 @@ case 903:
         color[1] = 255;
         color[2] = 255;
         color[3] = 255;
-        field0D8 = SELF_VIEW(RecordedRange455580)->SelectRange(0, 5);
+        field0D8 = RecordedRange(0, 5);
         field080 = 1;
         reinterpret_cast<unsigned int&>(field07C) = 0;
         SetPolarVelocity(
-            SELF_VIEW(RecordedRange455580)->SelectRange(0, 359),
-            SELF_VIEW(RecordedRange455580)->SelectRange(5, 10));
+            RecordedRange(0, 359),
+            RecordedRange(5, 10));
     }
     x = facing * velocityX + x;
     y = y - velocityY;
@@ -1510,9 +1509,9 @@ case 904:
     x = facing * velocityX + x;
     y = y - velocityY;
     owner->field314 = -field0C8;
-    OWNER_VIEW(FighterEffectPoliciesF135)->SpawnBattleEffect(901,
-        SELF_VIEW(RecordedRange455580)->SelectRange(0, 60) + x - 30.0f,
-        y + 30.0f - SELF_VIEW(RecordedRange455580)->SelectRange(0, 60),
+    owner->SpawnBattleEffect(901,
+        RecordedRange(0, 60) + x - 30.0f,
+        y + 30.0f - RecordedRange(0, 60),
         facing, 1);
     if (x > 1800.0f || x < -680.0f) {
         ClearFrameInfo();
@@ -1569,7 +1568,7 @@ case 905:
     }
     if (animationFrame == 0) reinterpret_cast<unsigned int&>(field07C) = 0;
     if (animationStage == 2 && animationFrame == 0) {
-        OWNER_VIEW(FighterEffectPoliciesF135)->PlaySound(17);
+        owner->PlaySound(17);
         SetPolarVelocity(Unknown483300(
             owner->opponent->y + 100.0f - y,
             (owner->opponent->x - x) * facing) / 0.01745328866f, 20.0f);
@@ -1659,7 +1658,7 @@ case 907:
     }
     if (animationFrame == 0) reinterpret_cast<unsigned int&>(field07C) = 0;
     if (animationStage == 2 && animationFrame == 0) {
-        field0DA = SELF_VIEW(RecordedRange455580)->SelectRange(0, 40);
+        field0DA = RecordedRange(0, 40);
         scaleX = field0DA * 0.01f + 0.8f;
         scaleY = field0DA * 0.01f + 0.8f;
         ResetSecondaryCounter(1);
@@ -1821,7 +1820,7 @@ case 912:
         return;
     }
     if (animationStage == 0 && animationFrame == 0) {
-        field0D8 = -SELF_VIEW(RecordedRange455580)->SelectRange(
+        field0D8 = -RecordedRange(
             0, g_StateRepeatLevelAt006714D0 * 3 + 40) - 20;
         velocityX = 0.0f;
         velocityY = 0.0f;
@@ -1843,11 +1842,11 @@ case 912:
         velocityX = 0.0f;
         velocityY = 0.0f;
         y = 0.0f;
-        OWNER_VIEW(FighterShake453E60)->SetCameraShake(3.0f);
+        reinterpret_cast<FighterShake453E60*>(owner)->SetCameraShake(3.0f);
         ResetPrimaryCounters(909);
         rotationZ = 0.0f;
         color[0] = 0;
-        OWNER_VIEW(FighterEffectPoliciesF135)->PlaySound(22);
+        owner->PlaySound(22);
         return;
     }
     if (x > 1400.0f || x < -120.0f) {
@@ -1902,8 +1901,8 @@ case 914:
         field080 = 1;
         reinterpret_cast<unsigned int&>(field07C) = 0;
         SetPolarVelocity(
-            static_cast<float>(field0DA + 10 - SELF_VIEW(RecordedRange455580)->SelectRange(0, 20)),
-            static_cast<float>(SELF_VIEW(RecordedRange455580)->SelectRange(0, 9) + 6));
+            static_cast<float>(field0DA + 10 - RecordedRange(0, 20)),
+            static_cast<float>(RecordedRange(0, 9) + 6));
         scaleX = 1.0f;
         scaleY = 1.0f;
         color[0] = 255;
@@ -1958,13 +1957,13 @@ case 915:
     SetPolarVelocity(static_cast<float>(field0DA), 7.0f);
     if (field0D8 <= 0) {
         owner->field314 = static_cast<float>(field0DA);
-        OWNER_VIEW(FighterEffectPoliciesF135)->SpawnBattleEffect(
+        owner->SpawnBattleEffect(
             916, x, y, facing, 1);
         field0D8 = 10 - g_StateRepeatLevelAt006714D0;
     }
     if (g_StateRepeatLevelAt006714D0 > 0) {
         if (y > owner->field2E0 && field0DC < 1 && velocityY < 0.0f) {
-            OWNER_VIEW(FighterEffectPoliciesF135)->PlaySound(11);
+            owner->PlaySound(11);
             field0DA = -field0DA;
             field0DC++;
             reinterpret_cast<unsigned int&>(field07C) = 0;
@@ -1972,7 +1971,7 @@ case 915:
             field0CC = 4.0f;
         }
         if (y < 0.0f && field0DC < 1 && velocityY > 0.0f) {
-            OWNER_VIEW(FighterEffectPoliciesF135)->PlaySound(11);
+            owner->PlaySound(11);
             field0DA = -field0DA;
             field0DC++;
             reinterpret_cast<unsigned int&>(field07C) = 0;
@@ -1982,7 +1981,7 @@ case 915:
         if (x < owner->field2D8 && field0DC < 1 &&
             ((facing == -1 && velocityX > 0.0f) ||
              (facing == 1 && velocityX < 0.0f))) {
-            OWNER_VIEW(FighterEffectPoliciesF135)->PlaySound(11);
+            owner->PlaySound(11);
             if (field0DA > 0)
                 field0DA = 180 - field0DA;
             if (field0DA < 0)
@@ -1995,7 +1994,7 @@ case 915:
         if (x > owner->field2DC && field0DC < 1 &&
             ((facing == -1 && velocityX < 0.0f) ||
              (facing == 1 && velocityX > 0.0f))) {
-            OWNER_VIEW(FighterEffectPoliciesF135)->PlaySound(11);
+            owner->PlaySound(11);
             if (field0DA > 0)
                 field0DA = 180 - field0DA;
             if (field0DA < 0)
@@ -2041,7 +2040,7 @@ case 916:
         color[3] = 255;
         field0D8 = 0;
         field0DA = static_cast<short>(
-            SELF_VIEW(RecordedRange455580)->SelectRange(0, 40) + field0C8 - 20.0f);
+            RecordedRange(0, 40) + field0C8 - 20.0f);
         SetPolarVelocity(
             static_cast<float>(field0DA), field0D8 * 0.05f);
         rotationZ = Unknown483300(velocityY, velocityX) / 0.01745328866f;
@@ -2097,7 +2096,7 @@ case 995:
         color[3] = 255;
         velocityX = 0.0f;
         velocityY = -1.0f;
-        field0D8 = SELF_VIEW(RecordedRange455580)->SelectRange(0, 360) - 180;
+        field0D8 = RecordedRange(0, 360) - 180;
         field0DA = 15;
     }
     if (animationStage == 0) {
@@ -2121,7 +2120,7 @@ case 995:
                 owner->opponent->field366++;
             else
                 owner->opponent->score = owner->opponent->score + 20000;
-            SELF_VIEW(EffectSound45B860)->PlaySharedSound(46);
+            PlaySharedSound(46);
             return;
         }
     }
@@ -2144,7 +2143,7 @@ case 996:
         color[3] = 255;
         velocityX = 0.0f;
         velocityY = -1.0f;
-        field0D8 = SELF_VIEW(RecordedRange455580)->SelectRange(0, 360) - 180;
+        field0D8 = RecordedRange(0, 360) - 180;
         field0DA = 15;
     }
     if (animationStage == 0) {
@@ -2164,7 +2163,7 @@ case 996:
             y - owner->opponent->y < 120.0f &&
             y - owner->opponent->y > 80.0f) {
             reinterpret_cast<short&>(owner->fieldEFA)++;
-            SELF_VIEW(EffectSound45B860)->PlaySharedSound(46);
+            PlaySharedSound(46);
             ClearFrameInfo();
             if (owner->opponent->spiritCooldown > 0) {
                 if (owner->opponent->spiritCooldown > 5)
@@ -2233,6 +2232,3 @@ case 997:
         break;
     }
 }
-
-#undef OWNER_VIEW
-#undef SELF_VIEW

@@ -42,6 +42,12 @@ Done so far:
   accesses expressed through real named members. The 33,293-byte parent
   retained its 575-byte nonexact frontier and 133 GPR mismatches; all 24
   header-affected exact functions cold-replayed successfully.
+- Remilia object `Advance` (28,432 original CODE bytes) now belongs to
+  `RemiliaObject`, with its 24 recorded-range, 25 effect, seven sound and
+  two shared-sound calls expressed via real classes. Complete 28,868-byte
+  COFF body and all 696 relocation offsets/types remain unchanged, with
+  zero differences outside relocations; 24 impacted units cold-replayed.
+  The 726 GPR and six width mismatches still prevent giant exact credit.
 - Patchouli object `Advance` (81,539 bytes) now belongs to `PatchouliObject`.
   The 32 shared sound calls and seven camera-shake calls have typed receivers;
   its complete research byte frontier is unchanged (522 GPR, five width

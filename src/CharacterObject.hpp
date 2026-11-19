@@ -59,7 +59,13 @@ public:
     int RandomBoundaryAt00455580(int lower, int upper);
 };
 class YoumuObject : public CharacterObject { public: YoumuObject(void* ownerFighter); };
-class RemiliaObject : public CharacterObject { public: RemiliaObject(void* ownerFighter); };
+class RemiliaObject : public CharacterObject {
+public:
+    RemiliaObject(void* ownerFighter);
+    virtual void Advance();        // 0055AC80, nonexact complete research parent
+    int RecordedRange(int lower, int upper);
+    void PlaySharedSound(short sound);
+};
 class YuyukoObject : public CharacterObject {
 public:
     YuyukoObject(void* ownerFighter);
