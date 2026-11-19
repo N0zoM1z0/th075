@@ -27,7 +27,6 @@ public:
     void ApplyStateAt454A70(int);
     void EmitStateAt452B30();
     void InitTrajectoryAt453E60(float);
-    void ResetAt453E20();
     void PrepareActionAt453D60(int);
     void SetupCollisionAt454BC0(int,int,int);
     void SpawnRawAt453C80(int,int,int,char,int);

@@ -24,7 +24,7 @@
 #undef F653_CLEAR_F00
 case 0x12E: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        if ((field3AC)==0) ResetAt453E20();
+        if ((field3AC)==0) ClearMotionFields();
         field080=1;
         field07C=0;
     }
@@ -59,7 +59,7 @@ case 0x12E: {
 }
 case 0x12F: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        if ((field3AC)==0) ResetAt453E20();
+        if ((field3AC)==0) ClearMotionFields();
         field080=6;
         field07C=0;
     }
@@ -77,7 +77,7 @@ case 0x12F: {
 }
 case 0x130: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        if ((field3AC)==0) ResetAt453E20();
+        if ((field3AC)==0) ClearMotionFields();
         field080=1;
         field07C=0;
     }
@@ -167,7 +167,7 @@ case 0x133: {
 #undef F653_PREPARE_ANIM
 #undef F653_CLEAR_F00
 case 0x135: {
-    if ((animationStage)==0 && (animationFrame)==0) { ResetAt453E20(); reinterpret_cast<signed short&>(scriptCounterF00)=0; }
+    if ((animationStage)==0 && (animationFrame)==0) { ClearMotionFields(); reinterpret_cast<signed short&>(scriptCounterF00)=0; }
     if ((animationStage)>4 && y==g_ThresholdAt0065782C) {
         velocityX=(velocityX)-g_ReimuGroundDragAt00658350;
         if ((velocityX)<g_ThresholdAt0065782C) { velocityX=0.0f; field3AC=0; }
@@ -196,7 +196,7 @@ case 0x135: {
 }
 case 0x136: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field3AC=0; ResetAt453E20(); field080=1; field07C=0;
+        field3AC=0; ClearMotionFields(); field080=1; field07C=0;
     }
     if ((field3AC)>0) {
         velocityX=(velocityX)-g_JumpGroundCorrectionAt00658058;

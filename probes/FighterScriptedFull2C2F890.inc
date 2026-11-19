@@ -9,13 +9,13 @@ case 0x2C2: {
         fieldF04=0;
         field07C=0;
         field080=1;
-        ResetAt453E20();
+        ClearMotionFields();
     }
     if ((animationStage)>9) {
         velocityY=velocityY-g_F890GravityAt006581E0;
         if (velocityY+y<=g_ThresholdAt0065782C) {
             y=0.0f;
-            ResetAt453E20();
+            ClearMotionFields();
             SetNativeActionAt40FAC0(0x2C3);
             return;
         }

@@ -13,7 +13,7 @@
             if ((animationStage)>5) {
                 velocityY=velocityY-field05C;
                 if (y+velocityY<=g_ThresholdAt0065782C) {
-                    ResetAt453E20();
+                    ClearMotionFields();
                     y=0.0f;
                     SetNativeActionAt40FAC0(10);
                     break;
@@ -60,7 +60,7 @@
             if ((animationStage)>5) {
                 velocityY=velocityY-field05C;
                 if (y+velocityY<=g_ThresholdAt0065782C) {
-                    ResetAt453E20();
+                    ClearMotionFields();
                     y=0.0f;
                     SetNativeActionAt40FAC0(10);
                     break;

@@ -2,7 +2,7 @@ case R1191_ACTION: {
     if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
 #if !R1191_AIR
-        ResetAt453E20();
+        ClearMotionFields();
 #endif
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
     }

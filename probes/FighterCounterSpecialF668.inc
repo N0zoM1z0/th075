@@ -7,7 +7,7 @@
 case 0x252: {
             if ((animationStage)==0 && (animationFrame)==0) {
                 --field366;
-                ResetAt453E20();
+                ClearMotionFields();
                 field080=1;
                 field07C=0;
                 field3AC=0;
@@ -27,7 +27,7 @@ case 0x252: {
         case 0x253: {
             if ((animationStage)==0 && (animationFrame)==0) {
                 --field366;
-                ResetAt453E20();
+                ClearMotionFields();
                 field080=1;
                 field07C=0;
                 field3AC=0;
@@ -48,7 +48,7 @@ case 0x252: {
         case 0x254: {
             if ((animationStage)==0 && (animationFrame)==0) {
                 --field366;
-                ResetAt453E20();
+                ClearMotionFields();
                 field080=1;
                 field07C=0;
                 field3AC=0;

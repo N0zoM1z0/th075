@@ -3,7 +3,7 @@
 // Entire original fighter remains nonexact; this is no independent leaf.
 case 0x255: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        ResetAt453E20();
+        ClearMotionFields();
         field080=1;
         field07C=0;
         field3AC=0;

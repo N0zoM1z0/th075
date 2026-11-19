@@ -11,7 +11,7 @@
 // Original third-fighter native game action 135, candidate.
 case 0x135: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        if ((field3AC)==0) ResetAt453E20();
+        if ((field3AC)==0) ClearMotionFields();
         field080=1;
         field07C=0;
     }
@@ -26,7 +26,7 @@ case 0x135: {
         velocityY=velocityY-g_AnimationDeltaAt0065747C;
         if (y+velocityY<=g_ThresholdAt0065782C) {
             y=0.0f;
-            ResetAt453E20();
+            ClearMotionFields();
             SetAuxActionAt40FB40(5);
             SpawnAt453C80(0x80,
                 float((facing)*150)+(x),
@@ -53,7 +53,7 @@ case 0x135: {
 // Original third-fighter native game action 136, candidate.
 case 0x136: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        if ((field3AC)==0) ResetAt453E20();
+        if ((field3AC)==0) ClearMotionFields();
         field080=2;
         field07C=0;
     }
@@ -68,7 +68,7 @@ case 0x136: {
         velocityY=velocityY-field05C;
         if (y+velocityY<=g_ThresholdAt0065782C && (animationStage)<12) {
             y=0.0f;
-            ResetAt453E20();
+            ClearMotionFields();
             SetAuxActionAt40FB40(0xC);
             break;
         }

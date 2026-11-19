@@ -29,7 +29,7 @@ case 0x46: {
     if (velocityY + y <= g_ThresholdAt0065782C) {
         I16(CONTACT_STAGE_OFFSET) = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
         I16(CONTACT_STAGE_OFFSET + 2) = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
-        ResetAt453E20();
+        ClearMotionFields();
         y = 0.0f;
         SetNativeActionAt40FAC0(0x61);
         InitTrajectoryAt453E60(2.0f);

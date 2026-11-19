@@ -14,14 +14,14 @@ case 0x2BF: {
     if ((animationStage)==0 && (animationFrame)==0) {
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         field07C=0;
-        ResetAt453E20();
+        ClearMotionFields();
         field080=99;
     }
     if (y>g_ThresholdAt0065782C && (animationStage)>23) {
         velocityY=velocityY-field05C;
         if (y+velocityY<=g_ThresholdAt0065782C && (animationStage)<34) {
             SetAuxActionAt40FB40(34);
-            ResetAt453E20();
+            ClearMotionFields();
             y=0.0f;
             break;
         }

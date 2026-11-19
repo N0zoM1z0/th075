@@ -3,7 +3,7 @@
 // Native 65782C threshold and 658350 drop are both physical PE evidence.
 case 0x201: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        ResetAt453E20();
+        ClearMotionFields();
         field080=1;
         field07C=0;
         field3AC=0;

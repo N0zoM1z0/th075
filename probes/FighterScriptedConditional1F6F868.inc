@@ -4,7 +4,7 @@
 // Full original enclosing fighter NONEXACT; no split-case CODE credit.
 case 0x1F6: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        ResetAt453E20();
+        ClearMotionFields();
         field080=1;
         field07C=0;
         field3AC=0;
@@ -16,7 +16,7 @@ case 0x1F6: {
     }
     if ((animationStage)>7 && (animationStage)<0xB && (aiCommand)==0x14) {
         SetNativeActionAt40FAC0(0x1F7);
-        ResetAt453E20();
+        ClearMotionFields();
         NativeGameEffectAt455B30();
         return;
     }

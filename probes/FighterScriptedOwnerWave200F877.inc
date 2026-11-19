@@ -4,7 +4,7 @@
 // Whole original 46755B game function remains NONEXACT.
 case 0x200: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        ResetAt453E20();
+        ClearMotionFields();
         field080=0;
         field07C=0;
         field3AC=0;

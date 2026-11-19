@@ -28,7 +28,7 @@ case 0x9E: {
         if (y+velocityY<=g_ThresholdAt0065782C) {
             SetNativeActionAt40FAC0(0xA);
             y=0.0f;
-            ResetAt453E20();
+            ClearMotionFields();
             break;
         }
     }

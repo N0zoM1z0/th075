@@ -4,7 +4,7 @@
 // Full enclosing fighter still GPR and final JMP nonexact.
 case 0x1F5: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        ResetAt453E20();
+        ClearMotionFields();
         field080=1;
         field07C=0;
         field3AC=0;
@@ -17,7 +17,7 @@ case 0x1F5: {
     if (y>g_ThresholdAt0065782C) {
         velocityY=velocityY-field05C;
         if (y+velocityY<=g_ThresholdAt0065782C) {
-            ResetAt453E20();
+            ClearMotionFields();
             SetAuxActionAt40FB40(0x18);
             y=0.0f;
             return;

@@ -13,7 +13,7 @@
 // F1009 original Japanese TH075 004AC040 2FB
 case 0x2FB: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        ResetAt453E20();
+        ClearMotionFields();
         field07C=1;
         field3AC=0;
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
@@ -33,7 +33,7 @@ case 0x2FB: {
             color[0]=255;
         if (y+velocityY<=g_ThresholdAt0065782C) {
             color[0]=255;
-            ResetAt453E20();
+            ClearMotionFields();
             SetAuxActionAt40FB40(13);
             y=0.0f;
             break;

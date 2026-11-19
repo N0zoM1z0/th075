@@ -15,7 +15,7 @@ case 0x199: {
     }
     if (y+velocityY<=g_ThresholdAt0065782C) {
         y=0.0f;
-        ResetAt453E20();
+        ClearMotionFields();
         SetNativeActionAt40FAC0(0xA);
         break;
     }
@@ -58,7 +58,7 @@ case 0x19A: {
     }
     if (y+velocityY<=g_ThresholdAt0065782C) {
         y=0.0f;
-        ResetAt453E20();
+        ClearMotionFields();
         SetNativeActionAt40FAC0(0xA);
         break;
     }

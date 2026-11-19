@@ -11,7 +11,7 @@ case 0x2BD: {
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         field07C=0;
         field080=1;
-        ResetAt453E20();
+        ClearMotionFields();
     }
     if ((animationStage)>8) {
         velocityX=(velocityX)-g_F884DoubleDropAt00657D00;
@@ -34,7 +34,7 @@ case 0x2BD: {
                 (facing),1,0,1);
             PrepareActionAt453D40(0xD);
             SetNativeActionAt40FAC0(0x2C2);
-            ResetAt453E20();
+            ClearMotionFields();
             reinterpret_cast<int&>(x)=reinterpret_cast<int&>(opponent->x);
             return;
         }

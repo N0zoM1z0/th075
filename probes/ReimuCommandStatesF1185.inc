@@ -144,7 +144,7 @@ case 0xD0: {
     if (y+velocityY<=g_ThresholdAt0065782C) {
         SetNativeActionAt40FAC0(10);
         y=0.0f;
-        ResetAt453E20();
+        ClearMotionFields();
         break;
     }
     if (GetNativeActionAt40FA30()==(field070)) SetAuxActionAt40FB40(4);

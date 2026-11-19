@@ -7,7 +7,7 @@ case F617_CASE: {
         velocityY = velocityY - field05C;
         if (y+velocityY<=g_ThresholdAt0065782C) {
             y=0.0f;
-            ResetAt453E20();
+            ClearMotionFields();
             SetAuxActionAt40FB40(F617_THRESHOLD);
             break;
         }

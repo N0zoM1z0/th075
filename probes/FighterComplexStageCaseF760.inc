@@ -5,13 +5,13 @@ case F760_ACTION: {
         field088=2;
     }
     if ((animationStage)==0 && (field3AC)==0)
-        ResetAt453E20();
+        ClearMotionFields();
     if (y>g_ThresholdAt0065782C) {
         velocityY=velocityY-field05C;
         if (y+velocityY<=g_ThresholdAt0065782C) {
             SetNativeActionAt40FAC0(0xA);
             y=0.0f;
-            ResetAt453E20();
+            ClearMotionFields();
             break;
         }
     }

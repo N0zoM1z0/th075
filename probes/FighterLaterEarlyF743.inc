@@ -8,7 +8,7 @@
         case 0x19C: {
             if ((animationStage)==0 && (animationFrame)==0) {
                 field07C=1;
-                ResetAt453E20();
+                ClearMotionFields();
                 reinterpret_cast<signed short&>(scriptCounterF00)=0;
             }
             if (GetNativeActionAt40FA30()==(field070))
@@ -27,13 +27,13 @@
         case 0x19E: {
             if ((animationStage)==0 && (animationFrame)==0) {
                 field07C=1;
-                ResetAt453E20();
+                ClearMotionFields();
                 reinterpret_cast<signed short&>(scriptCounterF00)=0;
             }
             if (y>g_ThresholdAt0065782C) {
                 velocityY=velocityY-field05C;
                 if (y+velocityY<=g_ThresholdAt0065782C) {
-                    ResetAt453E20();
+                    ClearMotionFields();
                     y=0.0f;
                     SetNativeActionAt40FAC0(10);
                     break;

@@ -231,7 +231,7 @@
 
 
 case 0x19D: {
-    if ((animationStage)==0 && (animationFrame)==0) { field07C=1; ResetAt453E20(); }
+    if ((animationStage)==0 && (animationFrame)==0) { field07C=1; ClearMotionFields(); }
     if ((animationStage)==6 && (animationFrame)==0) {
         field314=-30.0f; field318=8.0f;
         SpawnFloatXYAt453A70(0x32C,float(facing*37)+(x),

@@ -8,7 +8,7 @@
 // transitions. Source is NONEXACT until entire original boss matches.
         case 0x2DB: {
             if ((animationStage)==0 && (animationFrame)==0) {
-                ResetAt453E20();
+                ClearMotionFields();
                 field080=1;
                 field07C=0;
                 reinterpret_cast<unsigned char&>(field3AC)=0;
@@ -18,7 +18,7 @@
                 velocityX=-30.0f;
                 velocityY=velocityY-g_JumpGroundCorrectionAt00658058;
                 if (y+velocityY<=g_ThresholdAt0065782C) {
-                    ResetAt453E20();
+                    ClearMotionFields();
                     SetNativeActionAt40FAC0(10);
                     y=0.0f;
                     break;
@@ -40,7 +40,7 @@
                     || (((field2DC)-g_F699_SideOffsetAt00657874)<=reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44
                         && facing==-1)) {
                     SetAuxActionAt40FB40(10);
-                    ResetAt453E20();
+                    ClearMotionFields();
                     break;
                 }
             }

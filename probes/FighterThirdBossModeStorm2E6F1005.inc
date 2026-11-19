@@ -11,7 +11,7 @@
 // F1005 pinned Japanese TH075 original 004AC040 2E6.
 case 0x2E6: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        ResetAt453E20();
+        ClearMotionFields();
         field07C=0;
         field3AC=0;
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
@@ -50,7 +50,7 @@ case 0x2E6: {
             velocityY=velocityY-field05C;
             if (y+velocityY<=g_ThresholdAt0065782C) {
                 color[0]=255;
-                ResetAt453E20();
+                ClearMotionFields();
                 SetAuxActionAt40FB40(19);
                 y=0.0f;
                 break;

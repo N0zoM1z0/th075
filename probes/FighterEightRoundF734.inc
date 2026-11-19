@@ -7,7 +7,7 @@
         case 0x190: {
             if ((animationStage)==0 && (animationFrame)==0) {
                 field07C=1;
-                ResetAt453E20();
+                ClearMotionFields();
                 reinterpret_cast<signed short&>(scriptCounterF00)=0;
             }
             if (inputC==0)
@@ -30,7 +30,7 @@
         case 0x191: {
             if ((animationStage)==0 && (animationFrame)==0) {
                 field07C=1;
-                ResetAt453E20();
+                ClearMotionFields();
                 reinterpret_cast<signed short&>(scriptCounterF00)=0;
             }
             if (inputC==0)
@@ -53,7 +53,7 @@
         case 0x192: {
             if ((animationStage)==0 && (animationFrame)==0) {
                 field07C=1;
-                ResetAt453E20();
+                ClearMotionFields();
             }
             if ((animationStage)==4 && (animationFrame)==0) {
                 PrepareActionAt453D40(0);

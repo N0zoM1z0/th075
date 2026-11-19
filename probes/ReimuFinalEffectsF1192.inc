@@ -1,7 +1,7 @@
 case 0x31B: {
     if ((animationStage)==0 && (animationFrame)==0) {
         reinterpret_cast<signed short&>(scriptCounterF00)=0; field07C=1;
-        ResetAt453E20();
+        ClearMotionFields();
     }
     if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(0);
     if ((animationStage)==5 && (animationFrame)==0) {
@@ -20,7 +20,7 @@ case 0x31B: {
 case 0x31C: {
     if ((animationStage)==0 && (animationFrame)==0) {
         reinterpret_cast<signed short&>(scriptCounterF00)=0; field07C=1;
-        ResetAt453E20();
+        ClearMotionFields();
     }
     if (GetNativeActionAt40FA30()==(field070)) {
         SetNativeActionAt40FAC0(0);

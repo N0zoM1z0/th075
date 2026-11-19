@@ -3,7 +3,7 @@
 // This is an inner case, whole 46755B fighter NONEXACT and uncredited.
 case 0x2DD: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        ResetAt453E20();
+        ClearMotionFields();
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         reinterpret_cast<signed short&>(scriptCounterF02)=0;
         fieldF04=0;

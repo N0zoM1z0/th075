@@ -5,7 +5,7 @@ case 0x190: {
     if ((animationStage)==0 && (animationFrame)==0) {
         field080=1;
         field07C=0;
-        ResetAt453E20();
+        ClearMotionFields();
     }
     if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(0);

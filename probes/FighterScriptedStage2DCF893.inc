@@ -4,7 +4,7 @@
 // Entire original 46,755B fighter still NONEXACT, not a callable inner case.
 case 0x2DC: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        ResetAt453E20();
+        ClearMotionFields();
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         reinterpret_cast<signed short&>(scriptCounterF02)=0;
         fieldF04=0;

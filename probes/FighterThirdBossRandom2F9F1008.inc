@@ -17,7 +17,7 @@ case 0x2F9: {
         fieldF04=static_cast<short>(RandAt455580(0,3));
         reinterpret_cast<signed short&>(fieldF06)=static_cast<short>(RandAt455580(0,100));
         field07C=0;
-        ResetAt453E20();
+        ClearMotionFields();
         field080=99;
     }
     if ((animationFrame)==0 && ((animationStage)==9 || (animationStage)==10)) {

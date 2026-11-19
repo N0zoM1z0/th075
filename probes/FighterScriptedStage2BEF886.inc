@@ -7,7 +7,7 @@ case 0x2BE: {
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         field07C=0;
         field080=6;
-        ResetAt453E20();
+        ClearMotionFields();
     }
     if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(0);

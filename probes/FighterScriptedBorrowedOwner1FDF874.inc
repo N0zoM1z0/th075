@@ -4,7 +4,7 @@
 // Original whole giant NONEXACT, no inner-case callable exact credit.
 case 0x1FD: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        ResetAt453E20();
+        ClearMotionFields();
         field080=0;
         field07C=0;
         field3AC=0;
@@ -15,7 +15,7 @@ case 0x1FD: {
             (*(&y))+g_F872Volley1FAYAt00659310,
             (facing),1);
         opponent->ResetPrimaryCounters(0x66);
-        reinterpret_cast<FighterBorrowedOwnerF874*>(opponent)->ResetAt453E20();
+        opponent->ClearMotionFields();
         opponent->x=float((facing)*80)+(x);
         SetNativeActionAt40FAC0(0x1FF);
         return;

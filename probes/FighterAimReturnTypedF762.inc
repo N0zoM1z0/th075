@@ -13,7 +13,7 @@
 // Original entire fighter NONEXACT.
         case 0x1F8: {
             if ((animationStage)==0 && (animationFrame)==0) {
-                ResetAt453E20();
+                ClearMotionFields();
                 field080=1;
                 field07C=0;
                 reinterpret_cast<unsigned char&>(field3AC)=0;
@@ -22,7 +22,7 @@
                 velocityX=-30.0f;
                 velocityY=velocityY-g_ApproachAt00658058;
                 if (y+velocityY<=g_ThresholdAt0065782C) {
-                    ResetAt453E20();
+                    ClearMotionFields();
                     SetAuxActionAt40FB40(15);
                     y=0.0f;
                     break;
@@ -45,7 +45,7 @@
                     || (((field2DC)-g_F699_SideOffsetAt00657874)<=reinterpret_cast<FighterBorrowedXViewF752*>(this)->xAt44
                         && facing==-1)) {
                     SetAuxActionAt40FB40(11);
-                    ResetAt453E20();
+                    ClearMotionFields();
                     break;
                 }
             }

@@ -199,6 +199,19 @@ shortened it a byte but introduced 838 newly differing positions. Neither
 is a valid improvement. Preserve case 837 and investigate how this join's
 register state was selected in the original compile.
 
+The shared 00453E20 motion clear is now the exact `Fighter::ClearMotionFields`
+leaf (51 native CODE bytes, using `velocityX`, `velocityY`, `field058`
+and `field05C`). Across Reimu/Sakuya/Youmu/Remilia fighter research
+parents, 410 source-level `ResetAt453E20` aliases became this inherited
+natural member call, covering 494 authentic compiled call relocations
+(105, 139, 115 and 135 respectively). All four pre/post COFF objects
+retain their original 62,090/83,922/47,655/59,236-byte sizes, their
+1,824/2,352/1,491/1,863 relocation offsets and types, and every
+nonrelocation byte. The four whole-function giant frontiers are still
+nonexact, with zero newly regressed bytes. Only the 132 directly
+header-affected exact units were cold-replayed (44/44 in each of three
+groups), all exact. No ASM, padding, fake locals or giant exact credit.
+
 The 0046D000 shared gauge-timer caller cleanup is also complete in the
 four full fighter research parents: 52 Reimu, 44 Sakuya, 14 Youmu, and
 28 Remilia compiled call sites (138 total) now use the inherited natural

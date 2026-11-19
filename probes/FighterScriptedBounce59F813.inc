@@ -8,7 +8,7 @@
                 if (velocityY+y<=g_ThresholdAt0065782C) {
                     reinterpret_cast<signed short&>(scriptCounterF00)=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
                     reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((*(&velocityY))*g_ContactProjectionAt00657888);
-                    ResetAt453E20();
+                    ClearMotionFields();
                     y=0.0f;
                     SetNativeActionAt40FAC0(0x61);
                     rotationZ=0.0f;

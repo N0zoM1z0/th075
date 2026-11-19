@@ -66,19 +66,19 @@ void ReimuFighter::Advance() {
     switch (action) {
         case 0x0:
             if ((field3AC) == 0) {
-                ResetAt453E20();
+                ClearMotionFields();
             } else {
                 if ((velocityX) > g_ThresholdAt0065782C) {
                     velocityX -= g_SubtractAt00657478;
                     if ((velocityX) < g_ThresholdAt0065782C) {
-                        ResetAt453E20();
+                        ClearMotionFields();
                         field3AC = 0;
                     }
                 }
                 if ((velocityX) < g_ThresholdAt0065782C) {
                     velocityX += g_RiseAt00658050;
                     if ((velocityX) > g_ThresholdAt0065782C) {
-                        ResetAt453E20();
+                        ClearMotionFields();
                         field3AC = 0;
                     }
                 }
@@ -86,19 +86,19 @@ void ReimuFighter::Advance() {
             goto native_shared_getter;
         case 0x1:
             if ((field3AC) == 0) {
-                ResetAt453E20();
+                ClearMotionFields();
             } else {
                 if ((velocityX) > g_ThresholdAt0065782C) {
                     velocityX -= g_SubtractAt00657478;
                     if ((velocityX) < g_ThresholdAt0065782C) {
-                        ResetAt453E20();
+                        ClearMotionFields();
                         field3AC = 0;
                     }
                 }
                 if ((velocityX) < g_ThresholdAt0065782C) {
                     velocityX += g_RiseAt00658050;
                     if ((velocityX) > g_ThresholdAt0065782C) {
-                        ResetAt453E20();
+                        ClearMotionFields();
                         field3AC = 0;
                     }
                 }
@@ -108,19 +108,19 @@ void ReimuFighter::Advance() {
             break;
         case 0x2:
             if ((field3AC) == 0) {
-                ResetAt453E20();
+                ClearMotionFields();
             } else {
                 if ((velocityX) > g_ThresholdAt0065782C) {
                     velocityX -= g_SubtractAt00657478;
                     if ((velocityX) < g_ThresholdAt0065782C) {
-                        ResetAt453E20();
+                        ClearMotionFields();
                         field3AC = 0;
                     }
                 }
                 if ((velocityX) < g_ThresholdAt0065782C) {
                     velocityX += g_RiseAt00658050;
                     if ((velocityX) > g_ThresholdAt0065782C) {
-                        ResetAt453E20();
+                        ClearMotionFields();
                         field3AC = 0;
                     }
                 }
@@ -128,19 +128,19 @@ void ReimuFighter::Advance() {
             goto native_shared_getter;
         case 0x3:
             if ((field3AC) == 0) {
-                ResetAt453E20();
+                ClearMotionFields();
             } else {
                 if ((velocityX) > g_ThresholdAt0065782C) {
                     velocityX -= g_SubtractAt00657478;
                     if ((velocityX) < g_ThresholdAt0065782C) {
-                        ResetAt453E20();
+                        ClearMotionFields();
                         field3AC = 0;
                     }
                 }
                 if ((velocityX) < g_ThresholdAt0065782C) {
                     velocityX += g_RiseAt00658050;
                     if ((velocityX) > g_ThresholdAt0065782C) {
-                        ResetAt453E20();
+                        ClearMotionFields();
                         field3AC = 0;
                     }
                 }
@@ -157,13 +157,13 @@ void ReimuFighter::Advance() {
                 return;
             }
             if ((animationStage) == 0 && (field3AC) == 0)
-                ResetAt453E20();
+                ClearMotionFields();
             if (y > g_ThresholdAt0065782C) {
                 velocityY = velocityY - field05C;
                 if (y + velocityY <= g_ThresholdAt0065782C) {
                     SetNativeActionAt40FAC0(10);
                     y = 0.0f;
-                    ResetAt453E20();
+                    ClearMotionFields();
                     return;
                 }
             }
@@ -189,13 +189,13 @@ void ReimuFighter::Advance() {
                 return;
             }
             if ((animationStage) == 0 && (field3AC) == 0)
-                ResetAt453E20();
+                ClearMotionFields();
             if (y > g_ThresholdAt0065782C) {
                 velocityY = velocityY - field05C;
                 if (y + velocityY <= g_ThresholdAt0065782C) {
                     SetNativeActionAt40FAC0(10);
                     y = 0.0f;
-                    ResetAt453E20();
+                    ClearMotionFields();
                     return;
                 }
             }
@@ -221,13 +221,13 @@ void ReimuFighter::Advance() {
                 return;
             }
             if ((animationStage) == 0 && (field3AC) == 0)
-                ResetAt453E20();
+                ClearMotionFields();
             if (y > g_ThresholdAt0065782C) {
                 velocityY = velocityY - field05C;
                 if (y + velocityY <= g_ThresholdAt0065782C) {
                     SetNativeActionAt40FAC0(10);
                     y = 0.0f;
-                    ResetAt453E20();
+                    ClearMotionFields();
                     return;
                 }
             }
@@ -253,7 +253,7 @@ void ReimuFighter::Advance() {
         if (y + velocityY <= g_ThresholdAt0065782C) {
             SetNativeActionAt40FAC0(10);
             y = 0.0f;
-            ResetAt453E20();
+            ClearMotionFields();
             return;
         }
         if (GetNativeActionAt40FA30() == field070) {
@@ -263,7 +263,7 @@ void ReimuFighter::Advance() {
         case 0xA:
             if (animationStage == 0 && animationFrame == 0)
                 PrepareActionAt453D60(30);
-            ResetAt453E20();
+            ClearMotionFields();
             if (GetNativeActionAt40FA30() == field070) {
                 if (inputY == 0)
                     SetNativeActionAt40FAC0(0);
@@ -332,7 +332,7 @@ case 0x48: {
     if (velocityY + y <= g_ThresholdAt0065782C) {
         scriptCounterF00 = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
         scriptCounterF02 = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
-        ResetAt453E20();
+        ClearMotionFields();
         y = 0.0f;
         SetNativeActionAt40FAC0(0x61);
         InitTrajectoryAt453E60(2.0f);

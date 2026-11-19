@@ -9,14 +9,14 @@
                 reinterpret_cast<signed short&>(scriptCounterF02)=0;
                 fieldF04=0;
                 field07C=1;
-                ResetAt453E20();
+                ClearMotionFields();
             }
             if (y>g_ThresholdAt0065782C) {
                 velocityY=velocityY-field05C;
                 if (y+velocityY<=g_ThresholdAt0065782C) {
                     SetAuxActionAt40FB40(11);
                     y=0.0f;
-                    ResetAt453E20();
+                    ClearMotionFields();
                     break;
                 }
             }

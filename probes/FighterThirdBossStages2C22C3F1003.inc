@@ -13,7 +13,7 @@ case 0x2C2: {
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         reinterpret_cast<signed short&>(scriptCounterF02)=0;
         field07C=0;
-        ResetAt453E20();
+        ClearMotionFields();
         field080=99;
     }
     if (GetNativeActionAt40FA30()==(field070)) {
@@ -55,7 +55,7 @@ case 0x2C3: {
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         reinterpret_cast<signed short&>(scriptCounterF02)=0;
         field07C=0;
-        ResetAt453E20();
+        ClearMotionFields();
         field080=99;
     }
     if ((animationStage)>5)

@@ -3,7 +3,7 @@
 // Complete father NONEXACT, no independent case exact CODE.
 case 0x1FA: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        ResetAt453E20();
+        ClearMotionFields();
         field080=1;
         field07C=0;
         field3AC=0;

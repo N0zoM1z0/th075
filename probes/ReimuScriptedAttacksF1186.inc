@@ -2,7 +2,7 @@
 // the single 0045DD70 owner remains incomplete and NONEXACT.
 case 0x186: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        if ((field3AC)==0) ResetAt453E20();
+        if ((field3AC)==0) ClearMotionFields();
         field080=1;
         field07C=0;
     }
@@ -49,7 +49,7 @@ case 0x187: {
 }
 case 0x188: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        if ((field3AC)==0) ResetAt453E20();
+        if ((field3AC)==0) ClearMotionFields();
         field07C=0;
         velocityX=8.0f;
     }
@@ -71,7 +71,7 @@ case 0x188: {
 }
 case 0x189: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        if ((field3AC)==0) ResetAt453E20();
+        if ((field3AC)==0) ClearMotionFields();
         field080=1; field07C=0;
         velocityX=12.0f; field3AC=0;
     }
@@ -128,7 +128,7 @@ case 0x189: {
 case 0x192: {
     if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
-        ResetAt453E20();
+        ClearMotionFields();
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
     }
     if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(2);

@@ -8,7 +8,7 @@
                 reinterpret_cast<signed short&>(scriptCounterF02)=0;
                 fieldF04=0;
                 field07C=1;
-                ResetAt453E20();
+                ClearMotionFields();
             }
             if ((animationStage)>3 && (animationStage)<11) {
                 velocityY=velocityY-g_CloudGravityAt0065785C;
@@ -95,7 +95,7 @@
                 reinterpret_cast<signed short&>(scriptCounterF02)=0;
                 fieldF04=0;
                 field07C=1;
-                ResetAt453E20();
+                ClearMotionFields();
             }
             if ((animationStage)>3 && (animationStage)<11) {
                 velocityY=velocityY-g_CloudGravityAt0065785C;

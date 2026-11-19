@@ -19,7 +19,7 @@ typedef char FighterBorrowedXViewSizeF752[(sizeof(FighterBorrowedXViewF752)==0x4
                 if (velocityY+y<=g_ThresholdAt0065782C) {
                     reinterpret_cast<signed short&>(scriptCounterF00)=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
                     reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((*(&velocityY))*g_ContactProjectionAt00657888);
-                    ResetAt453E20();
+                    ClearMotionFields();
                     y=0.0f;
                     SetNativeActionAt40FAC0(0x61);
                     rotationZ=0.0f;
@@ -44,7 +44,7 @@ typedef char FighterBorrowedXViewSizeF752[(sizeof(FighterBorrowedXViewF752)==0x4
                 velocityY=velocityY-field05C;
                 if (y+velocityY<=g_ThresholdAt0065782C) {
                     y=0.0f;
-                    ResetAt453E20();
+                    ClearMotionFields();
                     SetAuxActionAt40FB40(8);
                     break;
                 }
@@ -74,7 +74,7 @@ typedef char FighterBorrowedXViewSizeF752[(sizeof(FighterBorrowedXViewF752)==0x4
                 velocityY=velocityY-field05C;
                 if (y+velocityY<=g_ThresholdAt0065782C) {
                     y=0.0f;
-                    ResetAt453E20();
+                    ClearMotionFields();
                     SetAuxActionAt40FB40(8);
                     break;
                 }

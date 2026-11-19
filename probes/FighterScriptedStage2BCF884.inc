@@ -7,7 +7,7 @@ case 0x2BC: {
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         field07C=0;
         field080=1;
-        ResetAt453E20();
+        ClearMotionFields();
     }
     if ((animationStage)>8) {
         velocityX=(velocityX)-g_F884DoubleDropAt00657D00;

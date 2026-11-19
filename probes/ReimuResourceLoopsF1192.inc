@@ -1,7 +1,7 @@
 case 0x303: {
     if ((animationStage)==0 && (animationFrame)==0) {
         reinterpret_cast<signed short&>(scriptCounterF00)=0; field07C=1;
-        ResetAt453E20();
+        ClearMotionFields();
     }
     reinterpret_cast<int&>(field490)=0;
     reinterpret_cast<int&>(opponent->field490)=0;
@@ -24,7 +24,7 @@ case 0x303: {
         reinterpret_cast<int&>(field490)=0;
         reinterpret_cast<int&>(opponent->field490)=0;
     }
-    if ((animationStage)==13 && (animationFrame)==0) ResetAt453E20();
+    if ((animationStage)==13 && (animationFrame)==0) ClearMotionFields();
     if ((animationStage)==15 && (animationFrame)==0) {
         BeginFadeParametersAt454A70(0);
         SelectResourceParametersAt452B30();
@@ -73,7 +73,7 @@ case 0x303: {
 }
 case 0x304: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        field07C=1; ResetAt453E20(); reinterpret_cast<signed short&>(scriptCounterF00)=0;
+        field07C=1; ClearMotionFields(); reinterpret_cast<signed short&>(scriptCounterF00)=0;
     }
     if (opponent->health>0 && opponent->animationStage==2 &&
         opponent->field39D>0 && opponent->action==0x63) {

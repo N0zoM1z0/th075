@@ -12,7 +12,7 @@
                 reinterpret_cast<signed short&>(scriptCounterF02)=0;
                 fieldF04=0;
                 field07C=1;
-                ResetAt453E20();
+                ClearMotionFields();
             }
             if ((animationStage)==2) {
                 ++reinterpret_cast<signed short&>(scriptCounterF02);

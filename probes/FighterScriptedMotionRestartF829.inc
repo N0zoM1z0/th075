@@ -4,7 +4,7 @@
 // whole source TU that remains NONEXACT, not a callable leaf.
 case F645_CASE: {
     if (animationStage==0 && animationFrame==0) {
-        ResetAt453E20();
+        ClearMotionFields();
         velocityX=F645_START_POS;
         velocityY=12.5f;
         field05C=0.75f;
@@ -16,7 +16,7 @@ case F645_CASE: {
         if (y+velocityY<=g_ThresholdAt0065782C) {
             SetNativeActionAt40FAC0(0xA);
             y=0.0f;
-            ResetAt453E20();
+            ClearMotionFields();
             return;
         }
     }

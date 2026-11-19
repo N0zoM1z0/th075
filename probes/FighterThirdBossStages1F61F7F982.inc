@@ -19,7 +19,7 @@ case 0x1F6: {
     if ((animationStage)>3 && (animationStage)<6) {
         velocityY=velocityY-field05C;
         if (y+velocityY<=g_ThresholdAt0065782C) {
-            ResetAt453E20();
+            ClearMotionFields();
             SetAuxActionAt40FB40(6);
             y=0.0f;
             break;
@@ -81,7 +81,7 @@ case 0x1F7: {
     if ((animationStage)>3 && (animationStage)<6) {
         velocityY=velocityY-field05C;
         if (y+velocityY<=g_ThresholdAt0065782C) {
-            ResetAt453E20();
+            ClearMotionFields();
             SetAuxActionAt40FB40(6);
             y=0.0f;
             break;

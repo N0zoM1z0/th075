@@ -9,7 +9,7 @@ case 0x2DB: {
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         reinterpret_cast<signed short&>(scriptCounterF02)=0;
         fieldF04=0;
-        ResetAt453E20();
+        ClearMotionFields();
     }
     if ((animationStage)>1 && (animationStage)<10) {
         if (F892AbsAt00412D90(

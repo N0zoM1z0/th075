@@ -4,7 +4,7 @@
 // still has genuine nonrelocation mismatches; no standalone exact credit.
 case 0x189: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        if ((field3AC)==0) ResetAt453E20();
+        if ((field3AC)==0) ClearMotionFields();
         field080=1;
         field07C=0;
         velocityX=12.5f;

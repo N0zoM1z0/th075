@@ -13,7 +13,7 @@
                 velocityY=velocityY-field05C;
                 if (y+velocityY<=g_ThresholdAt0065782C) {
                     y=0.0f;
-                    ResetAt453E20();
+                    ClearMotionFields();
                     SetAuxActionAt40FB40(12);
                     break;
                 }
@@ -43,7 +43,7 @@
                 velocityY=velocityY-field05C;
                 if (y+velocityY<=g_ThresholdAt0065782C) {
                     y=0.0f;
-                    ResetAt453E20();
+                    ClearMotionFields();
                     SetAuxActionAt40FB40(9);
                     break;
                 }

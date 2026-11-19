@@ -42,12 +42,7 @@ extern float g_F748_SpeedScaleAt006590B8;
 extern float g_F728_RandomOffsetYAt00657858;
 extern float g_F747_BounceXAt006590BC;
 extern float g_F747_BounceYAt00658044;
-// The owner-collision clear function at 00453E20 still has a borrowed
-// receiver; action-state reset now uses Actor::ResetPrimaryCounters.
-class FighterBorrowedOwnerF874 {
-public:
-    void ResetAt453E20();
-};
+// Owner motion clearing now invokes the inherited Fighter method.
 // F1197 complete original-shaped 005214B0 parent, continued from F901/F1040.
 // Native stack, CFG and non-GPR operands agree; 2736 GPR positions and
 // five instruction widths remain NONEXACT. No whole CODE credit.
@@ -78,19 +73,19 @@ void YoumuFighter::Advance() {
     switch (action) {
         case 0x0:
             if ((field3AC) == 0) {
-                ResetAt453E20();
+                ClearMotionFields();
             } else {
                 if ((velocityX) > g_ThresholdAt0065782C) {
                     velocityX -= g_SubtractAt00657478;
                     if ((velocityX) < g_ThresholdAt0065782C) {
-                        ResetAt453E20();
+                        ClearMotionFields();
                         field3AC = 0;
                     }
                 }
                 if ((velocityX) < g_ThresholdAt0065782C) {
                     velocityX += g_RiseAt00658050;
                     if ((velocityX) > g_ThresholdAt0065782C) {
-                        ResetAt453E20();
+                        ClearMotionFields();
                         field3AC = 0;
                     }
                 }
@@ -98,19 +93,19 @@ void YoumuFighter::Advance() {
             goto native_script_shared_getter;
         case 0x1:
             if ((field3AC) == 0) {
-                ResetAt453E20();
+                ClearMotionFields();
             } else {
                 if ((velocityX) > g_ThresholdAt0065782C) {
                     velocityX -= g_SubtractAt00657478;
                     if ((velocityX) < g_ThresholdAt0065782C) {
-                        ResetAt453E20();
+                        ClearMotionFields();
                         field3AC = 0;
                     }
                 }
                 if ((velocityX) < g_ThresholdAt0065782C) {
                     velocityX += g_RiseAt00658050;
                     if ((velocityX) > g_ThresholdAt0065782C) {
-                        ResetAt453E20();
+                        ClearMotionFields();
                         field3AC = 0;
                     }
                 }
@@ -120,19 +115,19 @@ void YoumuFighter::Advance() {
             break;
         case 0x2:
             if ((field3AC) == 0) {
-                ResetAt453E20();
+                ClearMotionFields();
             } else {
                 if ((velocityX) > g_ThresholdAt0065782C) {
                     velocityX -= g_SubtractAt00657478;
                     if ((velocityX) < g_ThresholdAt0065782C) {
-                        ResetAt453E20();
+                        ClearMotionFields();
                         field3AC = 0;
                     }
                 }
                 if ((velocityX) < g_ThresholdAt0065782C) {
                     velocityX += g_RiseAt00658050;
                     if ((velocityX) > g_ThresholdAt0065782C) {
-                        ResetAt453E20();
+                        ClearMotionFields();
                         field3AC = 0;
                     }
                 }
@@ -140,19 +135,19 @@ void YoumuFighter::Advance() {
             goto native_script_shared_getter;
         case 0x3:
             if ((field3AC) == 0) {
-                ResetAt453E20();
+                ClearMotionFields();
             } else {
                 if ((velocityX) > g_ThresholdAt0065782C) {
                     velocityX -= g_SubtractAt00657478;
                     if ((velocityX) < g_ThresholdAt0065782C) {
-                        ResetAt453E20();
+                        ClearMotionFields();
                         field3AC = 0;
                     }
                 }
                 if ((velocityX) < g_ThresholdAt0065782C) {
                     velocityX += g_RiseAt00658050;
                     if ((velocityX) > g_ThresholdAt0065782C) {
-                        ResetAt453E20();
+                        ClearMotionFields();
                         field3AC = 0;
                     }
                 }
@@ -169,13 +164,13 @@ void YoumuFighter::Advance() {
                 return;
             }
             if (animationStage == 0 && (field3AC) == 0)
-                ResetAt453E20();
+                ClearMotionFields();
             if (animationStage > 2) {
                 velocityY = velocityY - field05C;
                 if (y + velocityY <= g_ThresholdAt0065782C) {
                     SetNativeActionAt40FAC0(10);
                     y = 0.0f;
-                    ResetAt453E20();
+                    ClearMotionFields();
                     return;
                 }
             }
@@ -197,13 +192,13 @@ void YoumuFighter::Advance() {
                 return;
             }
             if (animationStage == 0 && (field3AC) == 0)
-                ResetAt453E20();
+                ClearMotionFields();
             if (animationStage > 2) {
                 velocityY = velocityY - field05C;
                 if (y + velocityY <= g_ThresholdAt0065782C) {
                     SetNativeActionAt40FAC0(10);
                     y = 0.0f;
-                    ResetAt453E20();
+                    ClearMotionFields();
                     return;
                 }
             }
@@ -223,13 +218,13 @@ void YoumuFighter::Advance() {
                 return;
             }
             if (animationStage == 0 && (field3AC) == 0)
-                ResetAt453E20();
+                ClearMotionFields();
             if (animationStage > 2) {
                 velocityY = velocityY - field05C;
                 if (y + velocityY <= g_ThresholdAt0065782C) {
                     SetNativeActionAt40FAC0(10);
                     y = 0.0f;
-                    ResetAt453E20();
+                    ClearMotionFields();
                     return;
                 }
             }
@@ -249,7 +244,7 @@ void YoumuFighter::Advance() {
         if (y + velocityY <= g_ThresholdAt0065782C) {
             SetNativeActionAt40FAC0(10);
             y = 0.0f;
-            ResetAt453E20();
+            ClearMotionFields();
             return;
         }
         if (GetNativeActionAt40FA30() == field070) {
@@ -257,7 +252,7 @@ void YoumuFighter::Advance() {
         }
         break;
         case 0xA:
-            ResetAt453E20();
+            ClearMotionFields();
             if (GetNativeActionAt40FA30() == field070) {
                 if (inputY == 0)
                     SetNativeActionAt40FAC0(0);

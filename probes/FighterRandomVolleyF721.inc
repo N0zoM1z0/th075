@@ -8,7 +8,7 @@
                 reinterpret_cast<signed short&>(scriptCounterF00)=0;
                 reinterpret_cast<signed short&>(scriptCounterF02)=0;
                 field07C=1;
-                ResetAt453E20();
+                ClearMotionFields();
                 SpawnSevenAt453B50(0x38E,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
                     facing,1,0,1);
             }

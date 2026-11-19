@@ -6,7 +6,7 @@
             if ((animationStage)==0 && (animationFrame)==0) {
                 reinterpret_cast<signed short&>(scriptCounterF00)=0;
                 field07C=1;
-                ResetAt453E20();
+                ClearMotionFields();
                 field36C=(field36C)-g_ContactProjectionAt00657888;
                 InitTrajectoryAt453E80(40);
                 PrepareActionAt453D60(0x17);

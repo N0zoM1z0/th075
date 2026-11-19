@@ -27,7 +27,6 @@ public:
     void InitTrajectoryAt453E60(float);
     int RandomBoundaryAt455580(int,int);
     void InitTrajectoryAt453E80(int);
-    void ResetAt453E20();
     void PrepareActionAt453D60(int);
     void SubactionAt454A70(int);
     void ConfigureStormAt454BC0(int,int,int);

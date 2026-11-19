@@ -22,7 +22,7 @@ case 0x2EF: {
         reinterpret_cast<signed short&>(scriptCounterF02)=0;
         fieldF04=0;
         field07C=0;
-        ResetAt453E20();
+        ClearMotionFields();
         field080=99;
     }
     if (y>g_ThresholdAt0065782C && (animationStage)<22)
@@ -31,7 +31,7 @@ case 0x2EF: {
         velocityY=velocityY-field05C;
         if (y+velocityY<=g_ThresholdAt0065782C && (animationStage)<34) {
             SetAuxActionAt40FB40(34);
-            ResetAt453E20();
+            ClearMotionFields();
             y=0.0f;
             break;
         }
@@ -144,7 +144,7 @@ case 0x2F0: {
         reinterpret_cast<signed short&>(scriptCounterF02)=0;
         fieldF04=0;
         field07C=0;
-        ResetAt453E20();
+        ClearMotionFields();
         field080=99;
     }
     if (y>g_ThresholdAt0065782C && (animationStage)<22)
@@ -153,7 +153,7 @@ case 0x2F0: {
         velocityY=velocityY-field05C;
         if (y+velocityY<=g_ThresholdAt0065782C && (animationStage)<34) {
             SetAuxActionAt40FB40(34);
-            ResetAt453E20();
+            ClearMotionFields();
             y=0.0f;
             break;
         }

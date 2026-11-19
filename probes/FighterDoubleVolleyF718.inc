@@ -5,7 +5,7 @@
         case 0x2DD: {
             ConfigureStormAt454BC0(3,4,0xFF0000);
             if ((animationStage)==0 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))==0) {
-                ResetAt453E20();
+                ClearMotionFields();
                 field080=1;
                 field07C=0;
                 reinterpret_cast<unsigned char&>(field3AC)=0;
@@ -23,7 +23,7 @@
                 if (y+velocityY<=g_ThresholdAt0065782C) {
                     SetAuxActionAt40FB40(9);
                     y=0.0f;
-                    ResetAt453E20();
+                    ClearMotionFields();
                     break;
                 }
             }
@@ -56,7 +56,7 @@
         case 0x2DE: {
             ConfigureStormAt454BC0(3,4,0xFF0000);
             if ((animationStage)==0 && (animationFrame)==0) {
-                ResetAt453E20();
+                ClearMotionFields();
                 field080=99;
                 field07C=0;
                 reinterpret_cast<unsigned char&>(field3AC)=0;
@@ -70,7 +70,7 @@
                 if (y+velocityY<=g_ThresholdAt0065782C) {
                     SetAuxActionAt40FB40(25);
                     y=0.0f;
-                    ResetAt453E20();
+                    ClearMotionFields();
                     break;
                 }
             }

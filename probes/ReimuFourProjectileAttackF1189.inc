@@ -6,7 +6,7 @@ case R1189_ACTION: {
         field07C=1;
 #else
         field07C=1;
-        ResetAt453E20();
+        ClearMotionFields();
 #endif
     }
     if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(R1189_NEXT_ACTION);

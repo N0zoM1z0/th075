@@ -8,7 +8,7 @@
 // Full real float shot/motion/ground/action source, whole giant NONEXACT.
         case 0x1F4: {
             if ((animationStage)==0 && (animationFrame)==0) {
-                ResetAt453E20();
+                ClearMotionFields();
                 field080=1;
                 field07C=0;
                 reinterpret_cast<unsigned char&>(field3AC)=0;
@@ -29,7 +29,7 @@
             if (y>g_ThresholdAt0065782C) {
                 velocityY=velocityY-field05C;
                 if (y+velocityY<=g_ThresholdAt0065782C) {
-                    ResetAt453E20();
+                    ClearMotionFields();
                     SetAuxActionAt40FB40(12);
                     y=0.0f;
                     break;
@@ -49,7 +49,7 @@
         }
         case 0x1F5: {
             if ((animationStage)==0 && (animationFrame)==0) {
-                ResetAt453E20();
+                ClearMotionFields();
                 field080=1;
                 field07C=0;
                 reinterpret_cast<unsigned char&>(field3AC)=0;
@@ -70,7 +70,7 @@
             if (y>g_ThresholdAt0065782C) {
                 velocityY=velocityY-field05C;
                 if (y+velocityY<=g_ThresholdAt0065782C) {
-                    ResetAt453E20();
+                    ClearMotionFields();
                     SetAuxActionAt40FB40(12);
                     y=0.0f;
                     break;

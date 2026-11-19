@@ -1,14 +1,14 @@
 case R1191_ACTION: {
     if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1; reinterpret_cast<signed short&>(scriptCounterF00)=0; reinterpret_cast<signed short&>(scriptCounterF02)=0;
-        ResetAt453E20();
+        ClearMotionFields();
     }
     if (y>g_ThresholdAt0065782C) {
         velocityY=velocityY-field05C;
         if (y+velocityY<=g_ThresholdAt0065782C) {
             SetNativeActionAt40FAC0(10);
             y=0.0f;
-            ResetAt453E20();
+            ClearMotionFields();
             break;
         }
     }

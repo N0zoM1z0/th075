@@ -9,7 +9,7 @@
 case 0x196: {
     if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
-        ResetAt453E20();
+        ClearMotionFields();
     }
     if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(0);
@@ -45,7 +45,7 @@ case 0x196: {
 case 0x197: {
     if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
-        ResetAt453E20();
+        ClearMotionFields();
     }
     if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(0);
@@ -81,7 +81,7 @@ case 0x197: {
 case 0x198: {
     if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
-        ResetAt453E20();
+        ClearMotionFields();
     }
     if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(2);

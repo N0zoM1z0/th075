@@ -14,7 +14,7 @@ case 0x4C: {
         PrepareActionAt453D60(0x16);
         I16(F613_COUNTER) = static_cast<short>((velocityX) * g_ContactProjectionAt00657888);
         I16(F613_COUNTER+2) = static_cast<short>((velocityY) * g_ContactProjectionAt00657888);
-        ResetAt453E20();
+        ClearMotionFields();
         y = 0.0f;
         SetNativeActionAt40FAC0(0x61);
         rotationZ=0.0f;

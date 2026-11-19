@@ -8,7 +8,7 @@
 case 0xC9: {
     ConfigureStormAt454BC0(3,4,0xFF);
     if ((animationStage)==0 && (animationFrame)==0)
-        ResetAt453E20();
+        ClearMotionFields();
     if ((animationStage)==2 && (animationFrame)==0)
         velocityX=0.0f;
     if ((animationStage)==4 && (animationFrame)==0)

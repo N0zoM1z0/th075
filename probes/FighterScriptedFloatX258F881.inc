@@ -4,7 +4,7 @@
 // Enclosing full fighter NONEXACT; no separate callable case credit.
 case 0x258: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        ResetAt453E20();
+        ClearMotionFields();
         field080=1;
         field07C=1;
         field3AC=0;

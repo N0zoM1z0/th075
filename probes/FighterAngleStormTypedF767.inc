@@ -13,7 +13,7 @@ case 0x2F9: {
                 reinterpret_cast<signed short&>(scriptCounterF02)=0;
                 fieldF04=0;
                 field07C=1;
-                ResetAt453E20();
+                ClearMotionFields();
             }
             if ((animationStage)>1 && (animationStage)<20) {
                 if ((animationStage)>15 || (animationStage)<10) {
@@ -22,7 +22,7 @@ case 0x2F9: {
                 if (y+velocityY<=g_ThresholdAt0065782C) {
                     SetAuxActionAt40FB40(0x14);
                     y=0.0f;
-                    ResetAt453E20();
+                    ClearMotionFields();
                     break;
                 }
             }

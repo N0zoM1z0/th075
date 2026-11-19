@@ -1,7 +1,7 @@
 case 0x2DB: {
     if ((animationStage)==0 && (animationFrame)==0) {
         reinterpret_cast<signed short&>(scriptCounterF00)=0; reinterpret_cast<signed short&>(scriptCounterF02)=0; field07C=1;
-        if (y==g_ThresholdAt0065782C) ResetAt453E20();
+        if (y==g_ThresholdAt0065782C) ClearMotionFields();
         else {
             velocityX=(velocityX)*g_ReimuAirDragAt00658348;
             velocityY=(*(&velocityY))*g_ReimuAirDragAt00658348;
@@ -15,7 +15,7 @@ case 0x2DB: {
             velocityY=velocityY-field05C;
             if (y+velocityY<=g_ThresholdAt0065782C && (animationStage)<16) {
                 y=0.0f;
-                ResetAt453E20();
+                ClearMotionFields();
                 SetAuxActionAt40FB40(16);
                 break;
             }

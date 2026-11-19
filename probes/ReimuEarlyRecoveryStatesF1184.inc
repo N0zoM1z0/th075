@@ -7,7 +7,7 @@ case 0x59: {
         if (velocityY+y<=g_ThresholdAt0065782C) {
             reinterpret_cast<signed short&>(scriptCounterF00)=static_cast<short>((velocityX)*g_ContactProjectionAt00657888);
             reinterpret_cast<signed short&>(scriptCounterF02)=static_cast<short>((*(&velocityY))*g_ContactProjectionAt00657888);
-            ResetAt453E20(); y=0.0f; SetNativeActionAt40FAC0(0x61);
+            ClearMotionFields(); y=0.0f; SetNativeActionAt40FAC0(0x61);
             rotationZ=0.0f;
             InitTrajectoryAt453E60(2.0f); ResetMotionAt40FC50(); PrepareActionAt453D60(0x16);
             break;
@@ -81,7 +81,7 @@ case 0x61: {
     if ((animationStage)==3 || (animationStage)==4) {
         velocityY=velocityY-field05C;
         if (velocityY+y<g_ThresholdAt0065782C) {
-            y=0.0f; ResetAt453E20(); SetAuxActionAt40FB40(5);
+            y=0.0f; ClearMotionFields(); SetAuxActionAt40FB40(5);
             break;
         }
     }

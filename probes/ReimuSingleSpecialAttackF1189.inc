@@ -6,7 +6,7 @@ case R1189_ACTION: {
         field07C=1;
 #else
         field07C=1;
-        ResetAt453E20();
+        ClearMotionFields();
 #endif
     }
 #if R1189_AIR

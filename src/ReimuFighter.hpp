@@ -28,7 +28,6 @@ public:
     void SpawnFloatXAt453A70(int,float,int,char,int);
     int SelectRangeAt455580(int,int);
     void PlaySoundAt453D40(short);
-    void ResetAt453E20();
     void PrepareActionAt453D60(short);
     void SpawnAt453C80(int,float,float,char,int);
     void SpawnMixedAt453C80(int,int,float,char,int);

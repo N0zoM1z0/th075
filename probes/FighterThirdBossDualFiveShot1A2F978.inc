@@ -9,7 +9,7 @@
 case 0x1A2: {
     if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
-        ResetAt453E20();
+        ClearMotionFields();
     }
     if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(2);

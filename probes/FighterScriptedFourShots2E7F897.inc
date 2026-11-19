@@ -7,7 +7,7 @@ case F897_CASE: {
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         field07C=0;
         field080=0x63;
-        ResetAt453E20();
+        ClearMotionFields();
     }
     if ((animationStage)==3 && (animationFrame)<30) {
         ++reinterpret_cast<signed short&>(scriptCounterF02);

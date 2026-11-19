@@ -9,7 +9,7 @@
 case 0x25A: {
     if ((animationStage)==0 && (animationFrame)==0) {
         field07C=1;
-        ResetAt453E20();
+        ClearMotionFields();
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         reinterpret_cast<signed short&>(scriptCounterF02)=0;
     }

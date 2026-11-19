@@ -10,7 +10,7 @@
 case 0x186: {
     if ((animationStage)==0 && (animationFrame)==0) {
         if ((field3AC)==0)
-            ResetAt453E20();
+            ClearMotionFields();
         field080=1;
         field07C=0;
         velocityX=10.0f;
@@ -35,7 +35,7 @@ case 0x186: {
 case 0x187: {
     if ((animationStage)==0 && (animationFrame)==0) {
         if ((field3AC)==0)
-            ResetAt453E20();
+            ClearMotionFields();
         field080=2;
         field07C=0;
         velocityX=10.0f;
@@ -51,7 +51,7 @@ case 0x187: {
         velocityY=velocityY-field05C;
         if (y+velocityY<=g_ThresholdAt0065782C) {
             y=0.0f;
-            ResetAt453E20();
+            ClearMotionFields();
             SetAuxActionAt40FB40(0xE);
             break;
         }

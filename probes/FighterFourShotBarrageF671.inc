@@ -6,7 +6,7 @@
 case 0x258: {
             if ((animationStage)==0 && (animationFrame)==0) {
                 field07C=1;
-                ResetAt453E20();
+                ClearMotionFields();
             }
             if ((animationStage)==4 && (animationFrame)==0) {
                 UpdateGaugeTimer(100);

@@ -10,7 +10,7 @@
 // F1004 original Japanese 004AC040 2E5 native dual projectile cadence
 case 0x2E5: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        ResetAt453E20();
+        ClearMotionFields();
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         reinterpret_cast<signed short&>(scriptCounterF02)=0;
         fieldF04=0;

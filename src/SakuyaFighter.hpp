@@ -22,7 +22,6 @@ public:
     void ApplyAt453E80(short);
     void BeginStateAt454A70(unsigned char);
     void RefreshStateAt452B30();
-    void ResetAt453E20();
     void SetAngleAt40FB70(float,float);
     void SetAngleBitsAt40FB70(int,float);
     void PrepareActionAt453D60(short);

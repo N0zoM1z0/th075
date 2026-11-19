@@ -10,7 +10,7 @@ case 0xC8: {
         velocityY=velocityY-g_F759_C8DecelAt006593E8;
         if (y+velocityY<=g_ThresholdAt0065782C) {
             y=0.0f;
-            ResetAt453E20();
+            ClearMotionFields();
             SetAuxActionAt40FB40(7);
             break;
         }
@@ -50,7 +50,7 @@ case 0xC9: {
         velocityY=velocityY-g_F759_C9DecelAt00658290;
         if (y+velocityY<=g_ThresholdAt0065782C) {
             y=0.0f;
-            ResetAt453E20();
+            ClearMotionFields();
             SetAuxActionAt40FB40(6);
             break;
         }
@@ -74,7 +74,7 @@ case 0xC9: {
 }
 case 0xCA: {
     ConfigureStormAt454BC0(3,4,0xFF);
-    if ((animationStage)==0 && (animationFrame)==0) ResetAt453E20();
+    if ((animationStage)==0 && (animationFrame)==0) ClearMotionFields();
     if (y>g_ThresholdAt0065782C && (animationStage)>5) {
         velocityY=velocityY-field05C;
         if (velocityY+y<=g_ThresholdAt0065782C) {
@@ -106,7 +106,7 @@ case 0xCA: {
 }
 case 0xCB: {
     ConfigureStormAt454BC0(3,4,0xFF);
-    if ((animationStage)==0 && (animationFrame)==0) ResetAt453E20();
+    if ((animationStage)==0 && (animationFrame)==0) ClearMotionFields();
     if (y>g_ThresholdAt0065782C && (animationStage)>4) {
         velocityY=velocityY-field05C;
         if (velocityY+y<=g_ThresholdAt0065782C) {

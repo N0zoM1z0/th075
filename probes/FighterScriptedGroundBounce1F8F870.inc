@@ -4,7 +4,7 @@
 // Full original giant remains register and two-final-JMP NONEXACT.
 case 0x1F8: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        ResetAt453E20();
+        ClearMotionFields();
         field080=1;
         field07C=0;
         field3AC=0;
@@ -19,7 +19,7 @@ case 0x1F8: {
     if (y>g_ThresholdAt0065782C) {
         velocityY=velocityY-field05C;
         if (y+velocityY<=g_ThresholdAt0065782C) {
-            ResetAt453E20();
+            ClearMotionFields();
             SetAuxActionAt40FB40(0xF);
             y=0.0f;
             return;

@@ -11,7 +11,7 @@ case 0x2BF: {
         field07C=0;
         field080=0x63;
         field080=1;
-        ResetAt453E20();
+        ClearMotionFields();
     }
     if (GetNativeActionAt40FA30()==(field070))
         SetNativeActionAt40FAC0(0);

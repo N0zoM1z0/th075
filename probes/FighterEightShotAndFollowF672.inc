@@ -6,7 +6,7 @@
         case 0x259: {
             if ((animationStage)==0 && (animationFrame)==0) {
                 field07C=1;
-                ResetAt453E20();
+                ClearMotionFields();
             }
             if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(0);
             if ((animationStage)==5 && (animationFrame)==0) {
@@ -83,7 +83,7 @@
         case 0x25C: {
             if ((animationStage)==0 && (animationFrame)==0) {
                 field07C=1;
-                ResetAt453E20();
+                ClearMotionFields();
             }
             if ((animationStage)==5 && (animationFrame)==0) {
                 SpawnFloatXYAt453A70(0x332,
@@ -97,7 +97,7 @@
         case 0x25D: {
             if ((animationStage)==0 && (animationFrame)==0) {
                 field07C=1;
-                ResetAt453E20();
+                ClearMotionFields();
             }
             if ((animationStage)==5 && (animationFrame)==0) {
                 SpawnFloatXYAt453A70(0x333,

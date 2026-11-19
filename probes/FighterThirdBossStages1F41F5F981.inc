@@ -9,7 +9,7 @@
 // F981 true Japanese original 004AC040 action 0x1F4
 case 0x1F4: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        ResetAt453E20();
+        ClearMotionFields();
         field080=99;
         field07C=0;
         field3AC=0;
@@ -19,7 +19,7 @@ case 0x1F4: {
     if (y>g_ThresholdAt0065782C) {
         velocityY=velocityY-field05C;
         if (y+velocityY<=g_ThresholdAt0065782C) {
-            ResetAt453E20();
+            ClearMotionFields();
             SetAuxActionAt40FB40(0xC);
             y=0.0f;
             break;
@@ -77,7 +77,7 @@ case 0x1F4: {
 // F981 true Japanese original 004AC040 action 0x1F5
 case 0x1F5: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        ResetAt453E20();
+        ClearMotionFields();
         field080=99;
         field07C=0;
         field3AC=0;
@@ -87,7 +87,7 @@ case 0x1F5: {
     if (y>g_ThresholdAt0065782C) {
         velocityY=velocityY-field05C;
         if (y+velocityY<=g_ThresholdAt0065782C) {
-            ResetAt453E20();
+            ClearMotionFields();
             SetAuxActionAt40FB40(0xC);
             y=0.0f;
             break;

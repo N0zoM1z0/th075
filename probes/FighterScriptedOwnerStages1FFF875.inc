@@ -3,7 +3,7 @@
 // Enclosing 46755B whole fighter still not exact; no inner exact credit.
 case 0x1FF: {
     if ((animationStage)==0 && (animationFrame)==0) {
-        ResetAt453E20();
+        ClearMotionFields();
         field080=0;
         field07C=0;
         field3AC=0;

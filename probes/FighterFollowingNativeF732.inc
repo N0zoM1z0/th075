@@ -17,7 +17,7 @@
             if (y>g_ThresholdAt0065782C && (animationStage)<8) {
                 velocityY=velocityY+field05C;
                 if (y+velocityY<=g_ThresholdAt0065782C) {
-                    ResetAt453E20();
+                    ClearMotionFields();
                     SetAuxActionAt40FB40(8);
                     y=0.0f;
                     break;
@@ -29,7 +29,7 @@
         }
         case 0x1FB: {
             if ((animationStage)==0 && (animationFrame)==0) {
-                ResetAt453E20();
+                ClearMotionFields();
                 field080=1;
                 field07C=0;
                 field3AC=0;
@@ -61,7 +61,7 @@
                 velocityY=22.0f;
                 field05C=0.7f;
             }
-            if ((animationStage)==8 && (animationFrame)==0) ResetAt453E20();
+            if ((animationStage)==8 && (animationFrame)==0) ClearMotionFields();
             if ((animationStage)==10 && (animationFrame)==0) {
                 if ((reinterpret_cast<signed short&>(scriptCounterF00))<1) {
                     SetAuxActionAt40FB40(8);
@@ -76,7 +76,7 @@
         }
         case 0x1FE: {
             if ((animationStage)==0 && (animationFrame)==0) {
-                ResetAt453E20();
+                ClearMotionFields();
                 field080=1;
                 field07C=0;
                 field3AC=0;
@@ -89,7 +89,7 @@
                 if (y+velocityY<=g_ThresholdAt0065782C) {
                     SetAuxActionAt40FB40(18);
                     y=0.0f;
-                    ResetAt453E20();
+                    ClearMotionFields();
                     break;
                 }
             }
@@ -115,7 +115,7 @@
         }
         case 0x1FF: {
             if ((animationStage)==0 && (animationFrame)==0) {
-                ResetAt453E20();
+                ClearMotionFields();
                 field080=1;
                 field07C=0;
                 field3AC=0;
@@ -128,7 +128,7 @@
                 if (y+velocityY<=g_ThresholdAt0065782C) {
                     SetAuxActionAt40FB40(22);
                     y=0.0f;
-                    ResetAt453E20();
+                    ClearMotionFields();
                     break;
                 }
             }

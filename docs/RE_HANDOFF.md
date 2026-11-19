@@ -31,8 +31,12 @@ Done so far:
   `Fighter::ClearMotionFields`, using the actual four Actor motion
   members (`velocityX`, `velocityY`, `field058`, `field05C`) instead
   of an offset-only borrowed receiver. Complete leaf cold replay and
-  four directly related Fighter helpers passed 5/5; the four large
-  fighter `Advance` callers are to be migrated separately.
+  four directly related Fighter helpers passed 5/5. The four fighter
+  research giants now also call this inherited method, replacing 410
+  source references (494 actual compiled calls). Complete pre/post giant
+  COFF body comparisons preserve all nonrelocation bytes and all original
+  relocation offsets/types; their 132/132 affected exact units were
+  cold-replayed in three groups of 44 without a full cold replay.
 - Shared gauge timer `0046D000` is now `Fighter::UpdateGaugeTimer`,
   reflecting its real calls from Youmu, Patchouli and Remilia as well as
   Reimu. The original 126-byte function is cold-replay exact. Eighteen

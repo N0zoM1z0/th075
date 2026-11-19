@@ -6,7 +6,7 @@ case 0x2C1: {
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
         field07C=0;
         field080=1;
-        ResetAt453E20();
+        ClearMotionFields();
     }
     if ((animationStage)==1 && (animationFrame)==0) {
         AnimatePushAt453E80(0x28);

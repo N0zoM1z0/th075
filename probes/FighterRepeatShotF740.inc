@@ -6,7 +6,7 @@
         case 0x196: {
             if ((animationStage)==0 && (animationFrame)==0) {
                 field07C=1;
-                ResetAt453E20();
+                ClearMotionFields();
                 reinterpret_cast<signed short&>(scriptCounterF00)=0;
             }
             if (GetNativeActionAt40FA30()==(field070))
@@ -37,7 +37,7 @@
         case 0x197: {
             if ((animationStage)==0 && (animationFrame)==0) {
                 field07C=1;
-                ResetAt453E20();
+                ClearMotionFields();
                 reinterpret_cast<signed short&>(scriptCounterF00)=0;
             }
             if (GetNativeActionAt40FA30()==(field070))
@@ -68,7 +68,7 @@
         case 0x198: {
             if ((animationStage)==0 && (animationFrame)==0) {
                 field07C=1;
-                ResetAt453E20();
+                ClearMotionFields();
                 reinterpret_cast<signed short&>(scriptCounterF00)=0;
             }
             if ((animationStage)==4 && (animationFrame)==0) {

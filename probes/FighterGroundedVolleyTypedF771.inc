@@ -20,7 +20,7 @@
                 if (y+velocityY<=g_ThresholdAt0065782C) {
                     SetAuxActionAt40FB40(0x12);
                     y=0.0f;
-                    ResetAt453E20();
+                    ClearMotionFields();
                     break;
                 }
             }
