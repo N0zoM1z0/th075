@@ -26,8 +26,11 @@ Done so far:
   (not the score-tallying `ResultScene`). Its 1,803-byte selection update
   and 343-byte input poll share typed page, character, availability and
   input members. Both cold-replay exactly, along with the shared source's
-  selection animation (3/3 exact affected units). The constructor and
-  record-page builder still need consolidation with the new layout.
+  selection animation. Its constructor (366 B), destructor (229 B),
+  record page (721 B), counter page (664 B), and texture/character
+  resource loader (398 B) now use the same named layout and native
+  80-byte texture manager and 20-byte deque. The current shared-header
+  cohort cold-replays 8/8 exact units with all relocation targets.
 - The character-select scene now owns the exact C++ constructor, main
   `Advance`, reset and five choice/confirmation/option methods. Their shared
   layout covers the 28-byte per-player input records and named animation

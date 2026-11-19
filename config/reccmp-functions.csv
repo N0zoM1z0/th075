@@ -567,7 +567,7 @@ ReplayScene::DrawNumber,0x0042AE70,function
 ReplayScene::DrawSlotNumber,0x0042BFD0,function
 ResultScene::DrawCounter,0x004315F0,function
 CardList::EncodeCharacterFile,0x00431D60,function
-ResultScene::LoadSelectedCharacterResources,0x00430EE0,function
+ResultListScene::LoadSelectedCharacterResources,0x00430EE0,function
 MusicRoom::EncodeCatalogFileAt00427300,0x00427300,function
 MusicRoom::LoadCatalogAt00426DD0,0x00426DD0,function
 ReplayRecords::LoadRecord,0x00413AC0,function

@@ -40779,14 +40779,14 @@ target = 0x00640611
 source = "src/ResultResourceF256.cpp"
 object = "build/matching/ResultResourceF256.obj"
 profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
-functions = ["ResultScene::LoadSelectedCharacterResources"]
-symbol = "?LoadSelectedCharacterResources@ResultSceneResourceF256@@QAEXXZ"
+functions = ["ResultListScene::LoadSelectedCharacterResources"]
+symbol = "?LoadSelectedCharacterResources@ResultListScene@@QAEXXZ"
 target_address = 0x00430EE0
 size = 398
 [[units.result-scene-load-selected-character-resources-00430ee0.relocations]]
 offset = 6
 type = "DIR32"
-symbol = "__ehhandler$?LoadSelectedCharacterResources@ResultSceneResourceF256@@QAEXXZ"
+symbol = "__ehhandler$?LoadSelectedCharacterResources@ResultListScene@@QAEXXZ"
 target = 0x00655A53
 [[units.result-scene-load-selected-character-resources-00430ee0.relocations]]
 offset = 12
@@ -40806,7 +40806,7 @@ target = 0x0066FE30
 [[units.result-scene-load-selected-character-resources-00430ee0.relocations]]
 offset = 92
 type = "REL32"
-symbol = "??_GResultOldTextureF256@@QAEPAXI@Z"
+symbol = "??_GResultListTexture@@QAEPAXI@Z"
 target = 0x00425460
 [[units.result-scene-load-selected-character-resources-00430ee0.relocations]]
 offset = 129
@@ -40826,12 +40826,12 @@ target = 0x0064159D
 [[units.result-scene-load-selected-character-resources-00430ee0.relocations]]
 offset = 184
 type = "REL32"
-symbol = "??0ResultTextureManagerF256@@QAE@XZ"
+symbol = "??0ResultListTexture@@QAE@XZ"
 target = 0x0040AD80
 [[units.result-scene-load-selected-character-resources-00430ee0.relocations]]
 offset = 252
 type = "REL32"
-symbol = "?AllocateUnformattedSlots@ResultTextureManagerF256@@QAEXH@Z"
+symbol = "?AllocateSlots@ResultListTexture@@QAEXH@Z"
 target = 0x0040B1D0
 [[units.result-scene-load-selected-character-resources-00430ee0.relocations]]
 offset = 257
@@ -40841,7 +40841,7 @@ target = 0x0065809C
 [[units.result-scene-load-selected-character-resources-00430ee0.relocations]]
 offset = 275
 type = "REL32"
-symbol = "?LoadDefault@ResultTextureManagerF256@@QAEXPBD0@Z"
+symbol = "?Load@ResultListTexture@@QAEXPBD0@Z"
 target = 0x0040BB80
 [[units.result-scene-load-selected-character-resources-00430ee0.relocations]]
 offset = 298
@@ -40856,7 +40856,7 @@ target = 0x006714D8
 [[units.result-scene-load-selected-character-resources-00430ee0.relocations]]
 offset = 332
 type = "REL32"
-symbol = "?LoadEncodedCards@ResultSceneResourceF256@@QAEXPAXPBD@Z"
+symbol = "?LoadEncodedCards@ResultListScene@@QAEXPAXPBD@Z"
 target = 0x00431B60
 [[units.result-scene-load-selected-character-resources-00430ee0.relocations]]
 offset = 339
@@ -40871,7 +40871,7 @@ target = 0x006714D8
 [[units.result-scene-load-selected-character-resources-00430ee0.relocations]]
 offset = 372
 type = "REL32"
-symbol = "?LoadEncodedCards@ResultSceneResourceF256@@QAEXPAXPBD@Z"
+symbol = "?LoadEncodedCards@ResultListScene@@QAEXPAXPBD@Z"
 target = 0x00431B60
 [[units.result-scene-load-selected-character-resources-00430ee0.relocations]]
 offset = 382
@@ -41654,7 +41654,7 @@ target = 0x00419E10
 [[units.result-list-scene-initialize-0042f710.relocations]]
 offset = 330
 type = "REL32"
-symbol = "?LoadCharacterTextures@ResultListScene@@QAEXXZ"
+symbol = "?LoadSelectedCharacterResources@ResultListScene@@QAEXXZ"
 target = 0x00430EE0
 [[units.result-list-scene-initialize-0042f710.relocations]]
 offset = 338

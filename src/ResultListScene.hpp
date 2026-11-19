@@ -40,7 +40,7 @@ public:
     short UpdateSelection();           // 0042F970
     void PollInput();                  // 00430D80
     void LoadSelectedCharacterResources();
-    void LoadCharacterTextures();
+    void LoadEncodedCards(void* cards, const char* resourceName);
     void ClearEntries();
     void BuildRecordPage();
     void BuildCounterPage();

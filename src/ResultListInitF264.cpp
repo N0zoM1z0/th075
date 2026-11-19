@@ -24,6 +24,6 @@ ResultListScene::ResultListScene()
     (displayAlpha)=5;
     for (int index=0;index<10;++index)
         (selectableCharacter[index])=ResultRecordsF264::CheckSelection(static_cast<unsigned char>(index),1);
-    LoadCharacterTextures();
+    LoadSelectedCharacterResources();
     BuildCounterPage();
 }
