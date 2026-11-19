@@ -584,7 +584,7 @@ void AliceObject::Advance() {
             (owner->field318) = static_cast<float>(RecordedRange(0,10) - 5);
             owner->SpawnBattleEffect(0x320,
                    static_cast<float>((facing) * 10) + (x),
-                   y, reinterpret_cast<unsigned char&>(facing), 1);
+                   y, facing, 1);
             owner->PlaySound(6);
         }
     }
@@ -659,7 +659,7 @@ void AliceObject::Advance() {
             (owner->field318) = static_cast<float>(RecordedRange(0,15) - 45);
             owner->SpawnBattleEffect(0x321,
                    static_cast<float>((facing) * 10) + (x),
-                   y, reinterpret_cast<unsigned char&>(facing), 1);
+                   y, facing, 1);
             owner->PlaySound(6);
         }
     }
@@ -735,7 +735,7 @@ void AliceObject::Advance() {
             (owner->field318) = static_cast<float>(RecordedRange(0,10) - 5);
             owner->SpawnBattleEffect(0x322,
                    static_cast<float>((facing) * 10) + (x),
-                   y, reinterpret_cast<unsigned char&>(facing), 1);
+                   y, facing, 1);
             owner->PlaySound(6);
         }
     }
@@ -1611,7 +1611,7 @@ void AliceObject::Advance() {
             (owner->field318) = static_cast<float>(RecordedRange(0,60));
             owner->SpawnBattleEffect(0x323,
                    static_cast<float>((facing) * 10) + (x),
-                   y, reinterpret_cast<unsigned char&>(facing), 1);
+                   y, facing, 1);
             owner->PlaySound(6);
         }
     }
@@ -1685,7 +1685,7 @@ void AliceObject::Advance() {
             (owner->field318) = static_cast<float>(RecordedRange(0,15) - 60);
             owner->SpawnBattleEffect(0x324,
                    static_cast<float>((facing) * 10) + (x),
-                   y, reinterpret_cast<unsigned char&>(facing), 1);
+                   y, facing, 1);
             owner->PlaySound(6);
         }
     }
@@ -1749,7 +1749,7 @@ void AliceObject::Advance() {
                 (owner->field318) = static_cast<float>(RecordedRange(0,10) - 5);
                 owner->SpawnBattleEffect(0x322,
                     static_cast<float>((facing)*10) + (x),
-                    y, reinterpret_cast<unsigned char&>(facing),1);
+                    y, facing,1);
                 owner->PlaySound(6);
             }
             if ((owner->action) == 0x19A) {
@@ -1757,7 +1757,7 @@ void AliceObject::Advance() {
                 (owner->field318) = static_cast<float>(RecordedRange(0,10) + 30);
                 owner->SpawnBattleEffect(0x323,
                     static_cast<float>((facing)*10) + (x),
-                    y, reinterpret_cast<unsigned char&>(facing),1);
+                    y, facing,1);
                 owner->PlaySound(6);
             }
             if ((owner->action) == 0x19C) {
@@ -1765,7 +1765,7 @@ void AliceObject::Advance() {
                 (owner->field318) = static_cast<float>(RecordedRange(0,10) - 5);
                 owner->SpawnBattleEffect(0x324,
                     static_cast<float>((facing)*10) + (x),
-                    y, reinterpret_cast<unsigned char&>(facing),1);
+                    y, facing,1);
                 owner->PlaySound(6);
             }
             if ((owner->action) == 0x19D) {
@@ -1773,7 +1773,7 @@ void AliceObject::Advance() {
                 (owner->field318) = static_cast<float>(-RecordedRange(0,10) - 30);
                 owner->SpawnBattleEffect(0x325,
                     static_cast<float>((facing)*10) + (x),
-                    y, reinterpret_cast<unsigned char&>(facing),1);
+                    y, facing,1);
                 owner->PlaySound(6);
             }
         }

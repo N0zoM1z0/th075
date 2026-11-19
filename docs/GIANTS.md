@@ -419,6 +419,15 @@ not `reinterpret_cast<int&>` bit-punning. The complete VC7.1 COFF remains
 nonrelocation-byte differences. This is a source-semantic cleanup only;
 the 133-position GPR debt remains and the giant is still nonexact.
 
+Alice's complete object `Advance` now also passes its native signed-char
+`facing` member directly to the declared
+`Fighter::SpawnBattleEffect(short,float,float,signed char,signed char)`
+interface at all nine effect sites. The previous unsigned-char reference
+reinterpretations were redundant type punning: `Actor::facing` is already a
+`signed char`. The full 33,731-byte VC7.1 COFF retains all 682 relocation
+positions/types and every nonrelocation byte (0 differences); the
+33,293-byte giant frontier remains NONEXACT with 133 GPR-role differences.
+
 Alice object also recovers the actual `0040FB70` polar-velocity ABI
 and shared range/sound calls: 19 `Actor::SetPolarVelocity` (including
 three previously encoded as raw `int` float-bit transports), 15
