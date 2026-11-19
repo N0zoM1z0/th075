@@ -359,6 +359,12 @@ positive writes to unsigned `field00C` were removed from pause/KO/round-end
 transitions without changing its storage type. Twenty-two exact functions
 across seven translation units replayed 22/22, including the complete
 3,459-byte overlay timeline and 4,764-byte battle-state machine.
+The three `unsigned long&` aliases around signed `Fighter::score` were
+removed from knockout settlement, battle state transitions and pause/debug
+reset. Comparisons retain the native unsigned conversion against global score
+ceilings, and the score addition explicitly performs unsigned 32-bit
+arithmetic. Eight affected exact functions replayed 8/8, including the full
+4,824-byte `BattleScene::AdvanceState`.
 `Fighter::field3A4` (+0x3A4) and `field3A8` (+0x3A8) are now signed
 `int` countdown fields, matching decrement, negative-clamp and knockout
 settlement semantics. Sixteen signed-reference aliases were removed. Forty-

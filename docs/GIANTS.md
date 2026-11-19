@@ -1081,6 +1081,15 @@ KO and round-end transitions; the timer's unsigned storage is preserved. All
 22 exact functions across seven battle/scene translation units replayed
 22/22, including the 3,459-byte overlay timeline and 4,764-byte battle state
 machine. The four fighter giant bodies and relocation maps remain identical.
+The score word is stored as signed `int`, while the global score ceilings
+are unsigned 32-bit values. The three unsigned-reference aliases in the
+battle state machine and knockout settlement were redundant for comparisons
+because the usual arithmetic conversions already preserve the unsigned
+comparison; the settlement add now spells out the unsigned 32-bit sum before
+storing back to the signed score member. The continue/debug score reset is a
+normal direct member assignment. All eight exact functions across the three
+state/KO/pause translation units replayed 8/8, including the 4,824-byte
+`BattleScene::AdvanceState` and 1,150-byte knockout resolver.
 The shared Fighter card/knockout countdowns `field3A4` (+0x3A4) and
 `field3A8` (+0x3A8) are now signed `int` members. The native update subtracts
 from them, checks negative underflow and clamps to zero; knockout settlement
