@@ -296,6 +296,11 @@ scene's native `movsx` sequence-state tests. The two signed-reference views
 were removed. Both full character-sequence giants, the result update and all
 eleven fighter initializers retained complete COFF bytes and relocations;
 14 affected exact units replayed 14/14.
+`Fighter::field3CF` (+0x3CF) is now `unsigned char`, matching the F992
+continuation/status byte view. Seventeen signed/unsigned reference aliases
+across BattleStateMachine and nine fighter fragments were removed. All four
+complete Reimu/Sakuya/Youmu/Remilia fighter parents and relocation maps remain
+identical; the exact battle-state function replayed 1/1.
 `Fighter::noticeFirst` (+0x6E8) is now `signed char`, matching the native
 signed render test; its render and base-reset functions remain byte-identical.
 Four signed-byte views used only to store zero to the unsigned `field39C`
