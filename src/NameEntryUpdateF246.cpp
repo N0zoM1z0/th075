@@ -25,10 +25,10 @@ public:
     short field014;
     short field016;
     unsigned char unknown018[0x120 - 0x018];
-    unsigned char field120;
+    signed char field120;
 };
 #define SELECTION_CODE (static_cast<int>(field010)+static_cast<int>(field012)*26)
-#define INDEX_OFFSET (static_cast<int>(reinterpret_cast<signed char&>(field120))*16)
+#define INDEX_OFFSET (static_cast<int>(field120)*16)
 #define CHAR_FIELD(index) (*reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char*>(field00C)+0x55c+INDEX_OFFSET+(index)))
 #define LAST_CHAR (*reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char*>(field00C)+0x563+INDEX_OFFSET))
 unsigned short NameEntryUpdateF246::UpdatePlayer()
