@@ -141,6 +141,7 @@ YoumuFighter::ChooseCardAction,0x005349B0,function
 SakuyaFighter::ChooseCardAction,0x004C8CD0,function
 MarisaFighter::ChooseCardAction,0x0049B070,function
 MarisaFighter::AdvanceSequence,0x004A9050,function
+AngleAt00483300,0x00483300,function
 ReimuFighter::AdvanceSequence,0x00483350,function
 SakuyaFighter::AdvanceSequence,0x004D4EA0,function
 AliceFighter::AdvanceSequence,0x004F44D0,function
@@ -982,3 +983,5 @@ ArchiveCatalog::Release,0x0041CE50,function
 BattleScene::~BattleScene,0x0043B0B0,function
 GameApplication::RunAt00602A60,0x00602A60,function
 CharacterObject::NoOpAt0045B850,0x0045B850,function
+AbsFloatAt00412D90,0x00412D90,function
+MagnitudeAt00428D20,0x00428D20,function
