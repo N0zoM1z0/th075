@@ -227,7 +227,7 @@ void BattleScene::RenderHud() {
         } else {
             leftStateRow = 0;
             if (fighters[0]->spirit <= 250.0)
-                leftStateRow = (reinterpret_cast<unsigned short&>(fighters[0]->fieldEF8) % 20 < 10) * 9 + 18;
+                leftStateRow = (fighters[0]->fieldEF8 % 20 < 10) * 9 + 18;
             else if (fighters[0]->spirit <= 500.0)
                 leftStateRow = 18;
             else if (fighters[0]->spirit <= 750.0)
@@ -247,7 +247,7 @@ void BattleScene::RenderHud() {
         } else {
             rightBand = 0;
             if (fighters[1]->spirit <= 250.0)
-                rightBand = (reinterpret_cast<unsigned short&>(fighters[1]->fieldEF8) % 20 < 10) * 9 + 18;
+                rightBand = (fighters[1]->fieldEF8 % 20 < 10) * 9 + 18;
             else if (fighters[1]->spirit <= 500.0)
                 rightBand = 18;
             else if (fighters[1]->spirit <= 750.0)

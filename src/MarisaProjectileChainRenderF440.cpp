@@ -72,9 +72,9 @@ void MarisaFighter::RenderChain() {
             quad.fourth.z=g_MarisaParticleDepthAt006582E0*field1010/g_MarisaDepthDivisorAt00657480;
             reinterpret_cast<SpriteTransform*>(&quad)->RotateQuad(
               0.0f,0.0f,0.0f,
-              float(phaseA)+CameraSineAt0040D940(float(i*6)+float(reinterpret_cast<unsigned short&>(fieldEF8))/g_MarisaPhaseDivisorBAt0065788C)*g_MarisaPhaseMultiplierAt00657878,
-              float(phaseB+(facing)*90)+CameraCosineAt0040D900(float(i*7)+float(reinterpret_cast<unsigned short&>(fieldEF8))/g_MarisaPhaseDivisorAAt00659310)*g_MarisaPhaseMultiplierAt00657878,
-              float((reinterpret_cast<unsigned short&>(fieldEF8))*5+i*5));
+              float(phaseA)+CameraSineAt0040D940(float(i*6)+float(fieldEF8)/g_MarisaPhaseDivisorBAt0065788C)*g_MarisaPhaseMultiplierAt00657878,
+              float(phaseB+(facing)*90)+CameraCosineAt0040D900(float(i*7)+float(fieldEF8)/g_MarisaPhaseDivisorAAt00659310)*g_MarisaPhaseMultiplierAt00657878,
+              float((fieldEF8)*5+i*5));
             reinterpret_cast<SpriteTransform*>(&quad)->TranslateQuad(
               float((field1014)*angle)+(field1008),-(field100C),0.0f);
             reinterpret_cast<SpriteTransform*>(&quad)->TranslateQuad(xShift,yOrigin+g_MarisaCameraOffsetYAt00657830,0.0f);
