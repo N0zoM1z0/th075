@@ -36,7 +36,7 @@
                     break;
                 }
             }
-            if (GetNativeActionAt40FA30()==(field070)) {
+            if (AdvanceNestedFrame()==(field070)) {
                 SetNativeActionAt40FAC0(0);
                 aiCardTimer=RandomBoundaryAt455580(60,100)
                            -static_cast<int>(g_CloudOpponentAt006714D0)*20;

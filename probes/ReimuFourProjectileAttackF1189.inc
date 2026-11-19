@@ -9,7 +9,7 @@ case R1189_ACTION: {
         ClearMotionFields();
 #endif
     }
-    if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(R1189_NEXT_ACTION);
+    if (AdvanceNestedFrame()==(field070)) SetNativeActionAt40FAC0(R1189_NEXT_ACTION);
     if ((animationStage)==R1189_FIRE_STAGE && (animationFrame)==0) {
         field314=0.0f;
         field318=(*(&y))+R1189_Y_OFFSET;

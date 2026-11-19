@@ -212,6 +212,16 @@ nonexact, with zero newly regressed bytes. Only the 132 directly
 header-affected exact units were cold-replayed (44/44 in each of three
 groups), all exact. No ASM, padding, fake locals or giant exact credit.
 
+The shared Actor helper `0040FA30`, which advances an animation frame,
+is now called as inherited `Actor::AdvanceNestedFrame()` rather than the
+misleading `GetNativeActionAt40FA30` in all four fighter research giants.
+382 textual alias calls across 252 source files become 552 actual COFF call
+relocations (135 Reimu, 143 Sakuya, 135 Youmu, 139 Remilia). Pre/post
+whole-function COFF sizes, relocation offsets/types and nonrelocation
+bytes are unchanged. All 132 header-affected exact units cold replayed
+in three affected-only groups (44/44 each). The giant parents remain
+NONEXACT against original PE bytes.
+
 The 00453D60 shared sound endpoint is likewise now the natural
 `Fighter::PlaySharedSound(short)` inherited method: 147 textual aliases
 across 93 source files became 192 native calls (55 Reimu, 45 Sakuya,

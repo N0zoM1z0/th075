@@ -28,7 +28,7 @@ case 0x2C2: {
             (facing),1);
         PlaySound(0xE);
     }
-    if (GetNativeActionAt40FA30()==(field070))
+    if (AdvanceNestedFrame()==(field070))
         SetAuxActionAt40FB40(0x10);
     if ((animationStage)<9 && (animationFrame)==0) {
         SpawnWithFloatAt453A70(0x34B,

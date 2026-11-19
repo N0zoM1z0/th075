@@ -9,7 +9,7 @@
                 field07C=1;
                 ClearMotionFields();
             }
-            if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(0);
+            if (AdvanceNestedFrame()==(field070)) SetNativeActionAt40FAC0(0);
             if ((animationStage)==15 && (animationFrame)==0) {
                 SubactionAt454A70(0);
                 SubactionAt452B30();

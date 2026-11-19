@@ -7,7 +7,7 @@ case 0x303: {
     reinterpret_cast<int&>(opponent->field490)=0;
     if ((animationStage)<15 && y>g_ThresholdAt0065782C) velocityY=velocityY-field05C;
     if ((animationStage)>14) fieldF26=(fieldF26)+5;
-    if (GetNativeActionAt40FA30()==(field070)) {
+    if (AdvanceNestedFrame()==(field070)) {
         if ((reinterpret_cast<signed short&>(scriptCounterF00))<8) {
             ++reinterpret_cast<signed short&>(scriptCounterF00);
             SetAuxActionAt40FB40(15);
@@ -99,6 +99,6 @@ case 0x304: {
     }
     reinterpret_cast<int&>(field490)=0;
     reinterpret_cast<int&>(opponent->field490)=0;
-    if (GetNativeActionAt40FA30()==(field070)) SetAuxActionAt40FB40(1);
+    if (AdvanceNestedFrame()==(field070)) SetAuxActionAt40FB40(1);
     break;
 }

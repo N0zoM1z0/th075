@@ -14,7 +14,7 @@ case F653_ACTION: {
             field3AC=0;
         }
     }
-    if (GetNativeActionAt40FA30()==(field070)) {
+    if (AdvanceNestedFrame()==(field070)) {
         SetNativeActionAt40FAC0(F653_NEXT_ACTION);
 #if F653_CLEAR_F00
         reinterpret_cast<signed short&>(scriptCounterF00)=0;

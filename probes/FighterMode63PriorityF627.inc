@@ -60,7 +60,7 @@ case 0x63: {
             break;
         }
     }
-    if (GetNativeActionAt40FA30()==field070)
+    if (AdvanceNestedFrame()==field070)
         SetAuxActionAt40FB40(2);
     break;
 }

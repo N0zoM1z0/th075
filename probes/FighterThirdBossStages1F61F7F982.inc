@@ -32,7 +32,7 @@ case 0x1F6: {
             field07C=0;
         }
     }
-    if (GetNativeActionAt40FA30()==(field070))
+    if (AdvanceNestedFrame()==(field070))
         SetNativeActionAt40FAC0(0);
     if ((animationStage)==2 && (animationFrame)==0) {
         field314=15.0f;
@@ -94,7 +94,7 @@ case 0x1F7: {
             field07C=0;
         }
     }
-    if (GetNativeActionAt40FA30()==(field070))
+    if (AdvanceNestedFrame()==(field070))
         SetNativeActionAt40FAC0(0);
     if ((animationStage)==2 && (animationFrame)==0) {
         field314=15.0f;

@@ -137,7 +137,7 @@ void RemiliaFighter::Advance() {
                     }
                 }
             }
-            if (GetNativeActionAt40FA30() == field070)
+            if (AdvanceNestedFrame() == field070)
                 SetNativeActionAt40FAC0(2);
             break;
         case 0x2:
@@ -179,7 +179,7 @@ void RemiliaFighter::Advance() {
                     }
                 }
             }
-            if (GetNativeActionAt40FA30() == field070)
+            if (AdvanceNestedFrame() == field070)
                 SetNativeActionAt40FAC0(0);
             break;
         case 0x4: velocityX = 6.5f; goto native_shared_getter;
@@ -294,7 +294,7 @@ void RemiliaFighter::Advance() {
             ClearMotionFields();
             return;
         }
-        if (GetNativeActionAt40FA30() == field070) {
+        if (AdvanceNestedFrame() == field070) {
             SetAuxActionAt40FB40(1);
         }
         break;
@@ -302,7 +302,7 @@ void RemiliaFighter::Advance() {
             if (animationStage == 0 && animationFrame == 0)
                 PlaySharedSound(30);
             ClearMotionFields();
-            if (GetNativeActionAt40FA30() == field070) {
+            if (AdvanceNestedFrame() == field070) {
                 if (inputY == 0)
                     SetNativeActionAt40FAC0(3);
                 else
@@ -720,7 +720,7 @@ void RemiliaFighter::Advance() {
                 SpawnSevenAt453B50(0x334,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
                     facing,1,0,1);
             }
-            if (GetNativeActionAt40FA30()==(field070))
+            if (AdvanceNestedFrame()==(field070))
                 SetNativeActionAt40FAC0(0);
             if (animationStage==12 && animationFrame==0) {
                 SpawnFloatXYAt453A70(0x328,
@@ -763,7 +763,7 @@ void RemiliaFighter::Advance() {
                     break;
                 }
             }
-            if (GetNativeActionAt40FA30()==(field070))
+            if (AdvanceNestedFrame()==(field070))
                 SetNativeActionAt40FAC0(0);
             if (animationFrame==0)
                 field07C=0;
@@ -826,7 +826,7 @@ void RemiliaFighter::Advance() {
             }
             if (animationStage==5 && animationFrame==0)
                 InitTrajectoryAt453E60(5.0f);
-            if (GetNativeActionAt40FA30()==(field070))
+            if (AdvanceNestedFrame()==(field070))
                 SetNativeActionAt40FAC0(0);
             if (animationStage==4 && animationFrame==0) {
                 velocityY=15.0f;
@@ -871,7 +871,7 @@ void RemiliaFighter::Advance() {
                 SpawnSevenAt453B50(0x334,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
                     facing,1,0,1);
             }
-            if (GetNativeActionAt40FA30()==(field070))
+            if (AdvanceNestedFrame()==(field070))
                 SetNativeActionAt40FAC0(0);
             if (animationStage==12 && animationFrame==0) {
                 UpdateGaugeTimer(750);
@@ -916,7 +916,7 @@ void RemiliaFighter::Advance() {
                     break;
                 }
             }
-            if (GetNativeActionAt40FA30()==(field070))
+            if (AdvanceNestedFrame()==(field070))
                 SetNativeActionAt40FAC0(0);
             if (animationFrame==0)
                 field07C=0;

@@ -19,7 +19,7 @@
                 SetAuxActionAt40FB40(8);
                 velocityX=10.0f;
             }
-            if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(0);
+            if (AdvanceNestedFrame()==(field070)) SetNativeActionAt40FAC0(0);
             if ((animationStage)==5 && (animationFrame)==0) {
                 PlaySound(7);
                 SpawnRawXYAt453C80(0x3C,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
@@ -46,7 +46,7 @@
                 SetAuxActionAt40FB40(8);
                 velocityX=10.0f;
             }
-            if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(0);
+            if (AdvanceNestedFrame()==(field070)) SetNativeActionAt40FAC0(0);
             if ((animationStage)==5 && (animationFrame)==0) {
                 PlaySound(7);
                 SpawnRawXYAt453C80(0x3C,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),

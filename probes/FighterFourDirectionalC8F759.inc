@@ -23,7 +23,7 @@ case 0xC8: {
         SetNativeActionAt40FAC0(0xCC);
         break;
     }
-    if (GetNativeActionAt40FA30()==(field070)) {
+    if (AdvanceNestedFrame()==(field070)) {
         SetNativeActionAt40FAC0(0);
         break;
     }
@@ -55,7 +55,7 @@ case 0xC9: {
             break;
         }
     }
-    if (GetNativeActionAt40FA30()==(field070)) {
+    if (AdvanceNestedFrame()==(field070)) {
         SetNativeActionAt40FAC0(0);
         break;
     }
@@ -87,7 +87,7 @@ case 0xCA: {
             break;
         }
     }
-    if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(9);
+    if (AdvanceNestedFrame()==(field070)) SetNativeActionAt40FAC0(9);
     if ((animationStage)==4 && (animationFrame)==0) {
         velocityX=30.0f;
         velocityY=-4.0f;
@@ -119,7 +119,7 @@ case 0xCB: {
             break;
         }
     }
-    if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(9);
+    if (AdvanceNestedFrame()==(field070)) SetNativeActionAt40FAC0(9);
     if ((animationStage)==3 && (animationFrame)==0) {
         velocityX=-30.0f;
         velocityY=2.0f;

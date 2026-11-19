@@ -7,7 +7,7 @@ case 0x190: {
         field07C=0;
         ClearMotionFields();
     }
-    if (GetNativeActionAt40FA30()==(field070))
+    if (AdvanceNestedFrame()==(field070))
         SetNativeActionAt40FAC0(0);
     if ((animationStage)==3 && (animationFrame)==0) {
         field314=1.0f;

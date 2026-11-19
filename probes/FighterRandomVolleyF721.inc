@@ -12,7 +12,7 @@
                 SpawnSevenAt453B50(0x38E,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
                     facing,1,0,1);
             }
-            if (GetNativeActionAt40FA30()==(field070)) {
+            if (AdvanceNestedFrame()==(field070)) {
                 SetNativeActionAt40FAC0(0);
                 aiCardTimer=static_cast<short>(RandomBoundaryAt455580(60,80)
                    -static_cast<int>(g_CloudOpponentAt006714D0)*20);

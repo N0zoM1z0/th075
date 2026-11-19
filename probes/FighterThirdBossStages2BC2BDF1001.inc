@@ -19,7 +19,7 @@ case 0x2BC: {
         fieldF04=0;
         reinterpret_cast<signed short&>(fieldF06)=0;
     }
-    if (GetNativeActionAt40FA30()==(field070))
+    if (AdvanceNestedFrame()==(field070))
         SetNativeActionAt40FAC0(0);
     if ((animationStage)==3 && (animationFrame)==0) {
         ApplyAt453E80(0x28);
@@ -69,7 +69,7 @@ case 0x2BD: {
         fieldF04=0;
         reinterpret_cast<signed short&>(fieldF06)=0;
     }
-    if (GetNativeActionAt40FA30()==(field070))
+    if (AdvanceNestedFrame()==(field070))
         SetNativeActionAt40FAC0(0);
     if ((animationStage)==3 && (animationFrame)==0) {
         ApplyAt453E80(0x28);

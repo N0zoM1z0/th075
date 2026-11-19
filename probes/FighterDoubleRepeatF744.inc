@@ -24,7 +24,7 @@
                 velocityX=0.0f;
                 y=0.0f;
             }
-            if (GetNativeActionAt40FA30()==(field070))
+            if (AdvanceNestedFrame()==(field070))
                 SetNativeActionAt40FAC0(9);
             if ((animationStage)==4 && (animationFrame)==0) {
                 PlaySound(2);
@@ -71,7 +71,7 @@
                 velocityX=0.0f;
                 y=0.0f;
             }
-            if (GetNativeActionAt40FA30()==(field070))
+            if (AdvanceNestedFrame()==(field070))
                 SetNativeActionAt40FAC0(9);
             if ((animationStage)==4 && (animationFrame)==0) {
                 PlaySound(2);

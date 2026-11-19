@@ -27,6 +27,12 @@ Done so far:
   its real scene and record/deque members. Both whole native functions
   preserve all relocations; the 10-unit affected-only replay (including
   music-room rendering and lifecycle) was 10/10 exact across 8 objects.
+- The native shared Actor frame-advance helper at 0040FA30 is now
+  `Actor::AdvanceNestedFrame` throughout all four complete fighter giant
+  research parents: 382 source calls, 552 actual COFF relocations now
+  use the truthful inherited API. All four parent COFF bodies remain
+  byte-identical outside renamed relocations, and 132/132 affected exact
+  units cold replayed without a full repository replay.
 - The shared `00453D60` sound caller is now
   `Fighter::PlaySharedSound` across Reimu/Sakuya/Youmu/Remilia giant
   `Advance`: 192 native relocations restored from 147 alias source calls,

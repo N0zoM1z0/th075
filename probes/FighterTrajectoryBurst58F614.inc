@@ -24,7 +24,7 @@ case 0x58: {
         }
         break;
     }
-    if (GetNativeActionAt40FA30()==field070)
+    if (AdvanceNestedFrame()==field070)
         SetAuxActionAt40FB40(animationStage-1);
     if (animationStage==1 && animationFrame==0) {
 #if F614_STAGE1_SPAWN

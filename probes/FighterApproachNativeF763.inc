@@ -44,7 +44,7 @@
                     break;
                 }
             }
-            if (GetNativeActionAt40FA30()==(field070)) {
+            if (AdvanceNestedFrame()==(field070)) {
                 if ((reinterpret_cast<signed short&>(scriptCounterF00))<3-static_cast<int>(g_CloudOpponentAt006714D0)) {
                     ++reinterpret_cast<signed short&>(scriptCounterF00);
                     SetAuxActionAt40FB40(12);

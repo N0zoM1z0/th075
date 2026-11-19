@@ -39,7 +39,7 @@ case 0x2E5: {
             --reinterpret_cast<signed short&>(fieldF08);
         }
     }
-    if (GetNativeActionAt40FA30()==(field070)) {
+    if (AdvanceNestedFrame()==(field070)) {
         SetNativeActionAt40FAC0(0);
         aiCardTimer=static_cast<short>(
             RandAt455580(60,120)-g_F1004_ModeAt006714D0*20);

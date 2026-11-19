@@ -43,7 +43,7 @@
                 if ((velocityX)<g_ThresholdAt0065782C)
                     velocityX=0.0f;
             }
-            if (GetNativeActionAt40FA30()==(field070)) {
+            if (AdvanceNestedFrame()==(field070)) {
                 SetNativeActionAt40FAC0(0);
                 aiCardTimer=static_cast<short>(RandomBoundaryAt455580(100,180)
                     -static_cast<int>(g_CloudOpponentAt006714D0)*30);

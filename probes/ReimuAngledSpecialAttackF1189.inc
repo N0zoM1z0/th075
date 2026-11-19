@@ -10,7 +10,7 @@ case R1189_ACTION: {
 #endif
     }
 #if R1189_AIR
-    if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(9);
+    if (AdvanceNestedFrame()==(field070)) SetNativeActionAt40FAC0(9);
 #endif
     if ((animationStage)==R1189_FIRE_STAGE && (animationFrame)==0) {
 #include "ReimuSpecialVolleyF1189.inc"
@@ -18,7 +18,7 @@ case R1189_ACTION: {
         PlaySound(5);
     }
 #if !R1189_AIR
-    if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(0);
+    if (AdvanceNestedFrame()==(field070)) SetNativeActionAt40FAC0(0);
 #endif
     break;
 }

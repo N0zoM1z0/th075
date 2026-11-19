@@ -38,7 +38,7 @@ case 0x2EF: {
     }
     if ((animationFrame)==0)
         field07C=0;
-    if (GetNativeActionAt40FA30()==(field070)) {
+    if (AdvanceNestedFrame()==(field070)) {
         SetNativeActionAt40FAC0(0);
         aiCardTimer=static_cast<short>(RandAt455580(60,120));
     }
@@ -160,7 +160,7 @@ case 0x2F0: {
     }
     if ((animationFrame)==0)
         field07C=0;
-    if (GetNativeActionAt40FA30()==(field070)) {
+    if (AdvanceNestedFrame()==(field070)) {
         SetNativeActionAt40FAC0(0);
         aiCardTimer=static_cast<short>(RandAt455580(60,120));
     }

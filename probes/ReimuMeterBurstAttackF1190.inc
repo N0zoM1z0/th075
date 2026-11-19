@@ -12,7 +12,7 @@ case R1190_ACTION: {
         }
     }
 #endif
-    if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(0);
+    if (AdvanceNestedFrame()==(field070)) SetNativeActionAt40FAC0(0);
     if ((animationStage)==2 && (animationFrame)==0) {
         SetNonnegativeWordAt453E80(40);
         PlaySharedSound(0x17);

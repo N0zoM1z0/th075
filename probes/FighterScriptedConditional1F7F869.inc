@@ -19,7 +19,7 @@ case 0x1F7: {
         NativeGameEffectAt455B30();
         return;
     }
-    if (GetNativeActionAt40FA30()==(field070))
+    if (AdvanceNestedFrame()==(field070))
         SetNativeActionAt40FAC0(0);
     if ((animationStage)==3 && (animationFrame)==0) {
         SpawnDirectedAt453A70(0x337,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),

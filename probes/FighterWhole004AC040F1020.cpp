@@ -133,7 +133,7 @@ void SakuyaFighter::Advance() {
                     }
                 }
             }
-            if (GetNativeActionAt40FA30() == field070)
+            if (AdvanceNestedFrame() == field070)
                 SetNativeActionAt40FAC0(2);
             break;
         case 0x2:
@@ -175,7 +175,7 @@ void SakuyaFighter::Advance() {
                     }
                 }
             }
-            if (GetNativeActionAt40FA30() == field070)
+            if (AdvanceNestedFrame() == field070)
                 SetNativeActionAt40FAC0(0);
             break;
         case 0x4: velocityX = 6.0f; goto native_third_shared_getter;
@@ -290,7 +290,7 @@ void SakuyaFighter::Advance() {
             ClearMotionFields();
             return;
         }
-        if (GetNativeActionAt40FA30() == field070) {
+        if (AdvanceNestedFrame() == field070) {
             SetAuxActionAt40FB40(0);
         }
         break;
@@ -298,7 +298,7 @@ void SakuyaFighter::Advance() {
             if (animationStage == 0 && animationFrame == 0)
                 PlaySharedSound(30);
             ClearMotionFields();
-            if (GetNativeActionAt40FA30() == field070) {
+            if (AdvanceNestedFrame() == field070) {
                 if (inputY == 0)
                     SetNativeActionAt40FAC0(0);
                 else
@@ -683,7 +683,7 @@ void SakuyaFighter::Advance() {
 #include "FighterThirdBossFinal31B31CF1013.inc"
 
         default:
-            if (GetNativeActionAt40FA30()==(field070))
+            if (AdvanceNestedFrame()==(field070))
                 SetNativeActionAt40FAC0(0);
             break;
 #include "FighterThirdSharedGetter004AC040F1198.inc"

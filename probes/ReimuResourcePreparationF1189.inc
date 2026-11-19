@@ -7,7 +7,7 @@ case R1189_ACTION: {
 #if R1189_HAS_BONUS
     if ((spiritCooldown)==0 && field07C==1) spirit=1000;
 #endif
-    if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(0);
+    if (AdvanceNestedFrame()==(field070)) SetNativeActionAt40FAC0(0);
     if ((animationStage)==5 && (animationFrame)==0) {
         SpawnMixedAt453C80(0x37,reinterpret_cast<int&>(x),(*(&y))+g_ContactProjectionAt00657888,
             reinterpret_cast<char&>(facing),1);

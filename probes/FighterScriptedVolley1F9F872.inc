@@ -18,7 +18,7 @@ case 0x1F9: {
         SetNativeActionAt40FAC0(0x1FB);
         return;
     }
-    if (GetNativeActionAt40FA30()==(field070))
+    if (AdvanceNestedFrame()==(field070))
         SetNativeActionAt40FAC0(0);
     return;
 }

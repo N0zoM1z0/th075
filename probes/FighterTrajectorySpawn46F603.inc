@@ -36,7 +36,7 @@ case 0x46: {
         PlaySharedSound(0x16);
         break;
     }
-    if (GetNativeActionAt40FA30() == field070)
+    if (AdvanceNestedFrame() == field070)
         SetAuxActionAt40FB40(TRAJECTORY_LATE_STATE);
     break;
 }

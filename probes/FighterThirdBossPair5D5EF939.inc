@@ -18,7 +18,7 @@
                     break;
                 }
             }
-            if (GetNativeActionAt40FA30()==(field070)) {
+            if (AdvanceNestedFrame()==(field070)) {
                 SetNativeActionAt40FAC0(0);
                 if (inputY>0)
                     SetNativeActionAt40FAC0(1);
@@ -48,7 +48,7 @@
                     break;
                 }
             }
-            if (GetNativeActionAt40FA30()==(field070)) {
+            if (AdvanceNestedFrame()==(field070)) {
                 SetNativeActionAt40FAC0(0);
                 if (inputY>0)
                     SetNativeActionAt40FAC0(1);

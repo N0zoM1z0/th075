@@ -11,7 +11,7 @@ case R1187_ACTION: {
         y=0.0f; field05C=0.0f; velocityY=0.0f;
         break;
     }
-    if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(9);
+    if (AdvanceNestedFrame()==(field070)) SetNativeActionAt40FAC0(9);
 #include "ReimuThreeRandomShotsF1187.inc"
     break;
 }

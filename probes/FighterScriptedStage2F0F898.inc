@@ -38,7 +38,7 @@ case 0x2F0: {
             (*(&y))+g_ContactProjectionAt00657888,
             (facing),1);
     }
-    if (GetNativeActionAt40FA30()==(field070))
+    if (AdvanceNestedFrame()==(field070))
         SetNativeActionAt40FAC0(0);
     if ((animationStage)==7 && (animationFrame)==0) {
         PlaySound(0xA);

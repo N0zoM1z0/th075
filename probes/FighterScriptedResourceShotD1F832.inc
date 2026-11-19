@@ -15,7 +15,7 @@ case 0xD1: {
                 (y)+g_ContactProjectionAt00657888,
                 facing,1);
     }
-    if (GetNativeActionAt40FA30()==field070) {
+    if (AdvanceNestedFrame()==field070) {
         if (static_cast<unsigned int>(reinterpret_cast<int&>(inputD))>0)
             SetAuxActionAt40FB40(2);
         else

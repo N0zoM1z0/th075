@@ -7,7 +7,7 @@ case 0xCF: {
         velocityX=0.0f;
         field3AC=0;
     }
-    if (GetNativeActionAt40FA30()==field070) {
+    if (AdvanceNestedFrame()==field070) {
         SetNativeActionAt40FAC0(0);
         field3AC=0;
     }

@@ -16,7 +16,7 @@ case 0x25F: {
         reinterpret_cast<signed short&>(scriptCounterF02)=0;
     }
     --reinterpret_cast<signed short&>(scriptCounterF00);
-    if (GetNativeActionAt40FA30()==(field070))
+    if (AdvanceNestedFrame()==(field070))
         SetNativeActionAt40FAC0(0);
     if ((animationStage)==6 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<=0 && (reinterpret_cast<signed short&>(scriptCounterF02))<1) {
         PlaySound(0);
@@ -45,7 +45,7 @@ case 0x260: {
         reinterpret_cast<signed short&>(scriptCounterF02)=0;
     }
     --reinterpret_cast<signed short&>(scriptCounterF00);
-    if (GetNativeActionAt40FA30()==(field070))
+    if (AdvanceNestedFrame()==(field070))
         SetNativeActionAt40FAC0(0);
     if ((animationStage)==6 && (animationFrame)==0 && (reinterpret_cast<signed short&>(scriptCounterF00))<=0 && (reinterpret_cast<signed short&>(scriptCounterF02))<1) {
         PlaySound(0);

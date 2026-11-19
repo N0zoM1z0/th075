@@ -23,7 +23,7 @@
                     break;
                 }
             }
-            if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(0);
+            if (AdvanceNestedFrame()==(field070)) SetNativeActionAt40FAC0(0);
             if ((animationStage)==8 && (animationFrame)==0) SetAuxActionAt40FB40(6);
             break;
         }
@@ -54,7 +54,7 @@
                 velocityX=(velocityX)-g_RisingDragAt006581E0;
                 if ((velocityX)<g_ThresholdAt0065782C) velocityX=0.0f;
             }
-            if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(0);
+            if (AdvanceNestedFrame()==(field070)) SetNativeActionAt40FAC0(0);
             if ((animationStage)==3 && (animationFrame)==0) {
                 SpawnRawXYAt453C80(0x3C,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
                     facing,1);
@@ -93,7 +93,7 @@
                     break;
                 }
             }
-            if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(0);
+            if (AdvanceNestedFrame()==(field070)) SetNativeActionAt40FAC0(0);
             if ((animationStage)==3 && (animationFrame)==0) {
                 SpawnRawXYAt453C80(0x3C,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
                         facing,1);
@@ -132,7 +132,7 @@
                     break;
                 }
             }
-            if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(0);
+            if (AdvanceNestedFrame()==(field070)) SetNativeActionAt40FAC0(0);
             if ((animationStage)==3 && (animationFrame)==0) {
                 PlaySound(4);
                 SpawnRawXYAt453C80(0x3C,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),

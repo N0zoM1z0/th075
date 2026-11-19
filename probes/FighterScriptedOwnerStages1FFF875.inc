@@ -8,7 +8,7 @@ case 0x1FF: {
         field07C=0;
         field3AC=0;
     }
-    if (GetNativeActionAt40FA30()==(field070))
+    if (AdvanceNestedFrame()==(field070))
         SetNativeActionAt40FAC0(0);
     if ((animationStage)==1 && (animationFrame)==0) {
         opponent->ResetPrimaryCounters(0x64);

@@ -52,7 +52,7 @@ case 0x1F8: {
         velocityY=0.0f;
         ++reinterpret_cast<signed short&>(scriptCounterF00);
     }
-    if (GetNativeActionAt40FA30()==(field070))
+    if (AdvanceNestedFrame()==(field070))
         SetNativeActionAt40FAC0(0);
     if ((animationStage)==6 && (animationFrame)==0) {
         PlaySound(2);
@@ -137,7 +137,7 @@ case 0x1F9: {
         velocityY=0.0f;
         ++reinterpret_cast<signed short&>(scriptCounterF00);
     }
-    if (GetNativeActionAt40FA30()==(field070))
+    if (AdvanceNestedFrame()==(field070))
         SetNativeActionAt40FAC0(0);
     if ((animationStage)==6 && (animationFrame)==0) {
         PlaySound(2);

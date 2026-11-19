@@ -103,7 +103,7 @@ void ReimuFighter::Advance() {
                     }
                 }
             }
-            if (GetNativeActionAt40FA30() == field070)
+            if (AdvanceNestedFrame() == field070)
                 SetNativeActionAt40FAC0(2);
             break;
         case 0x2:
@@ -145,7 +145,7 @@ void ReimuFighter::Advance() {
                     }
                 }
             }
-            if (GetNativeActionAt40FA30() == field070)
+            if (AdvanceNestedFrame() == field070)
                 SetNativeActionAt40FAC0(0);
             break;
         case 0x4: velocityX = 4.5f; goto native_shared_getter;
@@ -256,7 +256,7 @@ void ReimuFighter::Advance() {
             ClearMotionFields();
             return;
         }
-        if (GetNativeActionAt40FA30() == field070) {
+        if (AdvanceNestedFrame() == field070) {
             SetAuxActionAt40FB40(0);
         }
         break;
@@ -264,7 +264,7 @@ void ReimuFighter::Advance() {
             if (animationStage == 0 && animationFrame == 0)
                 PlaySharedSound(30);
             ClearMotionFields();
-            if (GetNativeActionAt40FA30() == field070) {
+            if (AdvanceNestedFrame() == field070) {
                 if (inputY == 0)
                     SetNativeActionAt40FAC0(0);
                 else
@@ -339,7 +339,7 @@ case 0x48: {
         PlaySharedSound(0x16);
         break;
     }
-    if (GetNativeActionAt40FA30() == field070)
+    if (AdvanceNestedFrame() == field070)
         SetAuxActionAt40FB40(F605_LATE48);
     break;
 }
@@ -640,7 +640,7 @@ case 0x48: {
 #include "ReimuResourceLoopsF1192.inc"
 #include "ReimuFinalEffectsF1192.inc"
         default:
-            if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(0);
+            if (AdvanceNestedFrame()==(field070)) SetNativeActionAt40FAC0(0);
             break;
 #include "ReimuSharedGetterTailF1192.inc"
     }

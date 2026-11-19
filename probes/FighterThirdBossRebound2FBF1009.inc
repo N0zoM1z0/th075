@@ -49,7 +49,7 @@ case 0x2FB: {
         velocityY=0.0f;
         ++reinterpret_cast<signed short&>(scriptCounterF00);
     }
-    if (GetNativeActionAt40FA30()==(field070))
+    if (AdvanceNestedFrame()==(field070))
         SetNativeActionAt40FAC0(0x2F9);
     if ((animationStage)==6 && (animationFrame)==0) {
         PlaySound(2);

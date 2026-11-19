@@ -15,7 +15,7 @@ case R1188_ACTION: {
         velocityX=(velocityX)-g_ReimuRepeatDragAt00659090;
         if ((velocityX)<g_ThresholdAt0065782C) velocityX=0.0f;
     }
-    if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(0);
+    if (AdvanceNestedFrame()==(field070)) SetNativeActionAt40FAC0(0);
     if ((animationStage)==R1188_RETURN_STAGE && (animationFrame)==0) {
         x=float(facing*100)+(x);
         y=50.0f; velocityX=12.0f; velocityY=6.0f;

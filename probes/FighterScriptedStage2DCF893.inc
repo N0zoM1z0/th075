@@ -38,7 +38,7 @@ case 0x2DC: {
             return;
         }
     }
-    if (GetNativeActionAt40FA30()==(field070)) {
+    if (AdvanceNestedFrame()==(field070)) {
         SetNativeActionAt40FAC0(0);
         aiCardTimer=RandomBoundaryAt455580(0,30);
     }

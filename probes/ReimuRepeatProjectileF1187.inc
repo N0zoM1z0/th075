@@ -5,7 +5,7 @@ case R1187_ACTION: {
         ClearMotionFields();
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
     }
-    if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(2);
+    if (AdvanceNestedFrame()==(field070)) SetNativeActionAt40FAC0(2);
     if ((animationStage)==3 && (animationFrame)==0) {
         field314=40.0f; field318=10.0f;
         SpawnFloatXYAt453A70(R1187_EFFECT,(*(&x))+g_ThresholdAt0065782C,

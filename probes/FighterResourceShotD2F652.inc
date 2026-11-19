@@ -24,7 +24,7 @@ case 0xD2: {
     // The original applies this x87 drag every frame, even outside
     // the stage/frame-zero projectile initialization path.
     velocityY=velocityY-(field05C)*g_BounceScaleAt00657F74;
-    if (GetNativeActionAt40FA30()==field070) {
+    if (AdvanceNestedFrame()==field070) {
         if (static_cast<unsigned int>(reinterpret_cast<int&>(inputD))>0)
             SetAuxActionAt40FB40(2);
         else

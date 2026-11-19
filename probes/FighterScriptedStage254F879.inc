@@ -11,7 +11,7 @@ case 0x254: {
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
     }
 
-    if (GetNativeActionAt40FA30()==(field070))
+    if (AdvanceNestedFrame()==(field070))
         SetNativeActionAt40FAC0(0);
     if ((animationStage)==5 && (animationFrame)==0) {
         SpawnMixedAt453C80(0x37,reinterpret_cast<int&>(x),

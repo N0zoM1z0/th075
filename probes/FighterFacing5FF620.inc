@@ -2,7 +2,7 @@
 // giant Advance(), real per-owner action transitions and independent
 // x87 direction tests. Case body is NOT a separately accepted function.
 case 0x5F: {
-    if (GetNativeActionAt40FA30()==field070) {
+    if (AdvanceNestedFrame()==field070) {
         SetNativeActionAt40FAC0(F620_FIRST_ACTION);
         if (inputY>0)
             SetNativeActionAt40FAC0(F620_SECOND_ACTION);

@@ -9,7 +9,7 @@ case 0x258: {
         field07C=1;
         field3AC=0;
     }
-    if (GetNativeActionAt40FA30()==(field070))
+    if (AdvanceNestedFrame()==(field070))
         SetNativeActionAt40FAC0(0);
     if ((animationStage)==2 && (animationFrame)==0) {
         SpawnFloatXRawYAt453A70(0x340,

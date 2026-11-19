@@ -24,7 +24,7 @@ case 0x62: {
             I16(F622_COUNTER)=2;
     }
 #endif
-    if (GetNativeActionAt40FA30()==field070) {
+    if (AdvanceNestedFrame()==field070) {
         SetNativeActionAt40FAC0(0x5F);
         if (I16(F622_COUNTER)==1)
             SetNativeActionAt40FAC0(0x5D);

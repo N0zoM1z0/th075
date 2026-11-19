@@ -13,9 +13,9 @@ case R1191_ACTION: {
         y=0.0f; field05C=0.0f; velocityY=0.0f;
         break;
     }
-    if (GetNativeActionAt40FA30()==(field070)) SetAuxActionAt40FB40(9);
+    if (AdvanceNestedFrame()==(field070)) SetAuxActionAt40FB40(9);
 #else
-    if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(0);
+    if (AdvanceNestedFrame()==(field070)) SetNativeActionAt40FAC0(0);
 #endif
     if ((animationStage)==R1191_FIRST_STAGE && (animationFrame)==0) {
 #include "ReimuCounterShotF1191.inc"

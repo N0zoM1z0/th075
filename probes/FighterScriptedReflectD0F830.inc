@@ -18,7 +18,7 @@ case 0xD0: {
         ClearMotionFields();
         return;
     }
-    if (GetNativeActionAt40FA30()==field070)
+    if (AdvanceNestedFrame()==field070)
         SetAuxActionAt40FB40(5);
     return;
 }

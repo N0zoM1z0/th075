@@ -30,7 +30,7 @@ case 0xC8: {
             return;
         }
     }
-    if (GetNativeActionAt40FA30()==(field070)) {
+    if (AdvanceNestedFrame()==(field070)) {
         if ((facing)*inputX>0) {
             if ((reinterpret_cast<signed short&>(scriptCounterF00))<1) {
                 SetAuxActionAt40FB40(2);

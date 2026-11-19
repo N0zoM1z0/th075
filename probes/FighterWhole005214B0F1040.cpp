@@ -110,7 +110,7 @@ void YoumuFighter::Advance() {
                     }
                 }
             }
-            if (GetNativeActionAt40FA30() == field070)
+            if (AdvanceNestedFrame() == field070)
                 SetNativeActionAt40FAC0(2);
             break;
         case 0x2:
@@ -152,7 +152,7 @@ void YoumuFighter::Advance() {
                     }
                 }
             }
-            if (GetNativeActionAt40FA30() == field070)
+            if (AdvanceNestedFrame() == field070)
                 SetNativeActionAt40FAC0(0);
             break;
         case 0x4: velocityX = 3.0f; goto native_script_shared_getter;
@@ -176,7 +176,7 @@ void YoumuFighter::Advance() {
             }
             if (animationStage == 4 && velocityY < g_ExtraThresholdAt00657D14)
                 SetAuxActionAt40FB40(5);
-            if (GetNativeActionAt40FA30() == field070)
+            if (AdvanceNestedFrame() == field070)
                 SetAuxActionAt40FB40(11);
             if (animationStage == 3 && animationFrame == 0) {
                 velocityX = 0.0f;
@@ -202,7 +202,7 @@ void YoumuFighter::Advance() {
                     return;
                 }
             }
-            if (GetNativeActionAt40FA30() == field070)
+            if (AdvanceNestedFrame() == field070)
                 SetNativeActionAt40FAC0(9);
             if (animationStage == 3 && animationFrame == 0) {
                 velocityX = 5.5f;
@@ -228,7 +228,7 @@ void YoumuFighter::Advance() {
                     return;
                 }
             }
-            if (GetNativeActionAt40FA30() == field070)
+            if (AdvanceNestedFrame() == field070)
                 SetAuxActionAt40FB40(13);
             if (animationStage == 3 && animationFrame == 0) {
                 velocityX = -5.5f;
@@ -247,13 +247,13 @@ void YoumuFighter::Advance() {
             ClearMotionFields();
             return;
         }
-        if (GetNativeActionAt40FA30() == field070) {
+        if (AdvanceNestedFrame() == field070) {
             SetAuxActionAt40FB40(0);
         }
         break;
         case 0xA:
             ClearMotionFields();
-            if (GetNativeActionAt40FA30() == field070) {
+            if (AdvanceNestedFrame() == field070) {
                 if (inputY == 0)
                     SetNativeActionAt40FAC0(0);
                 else

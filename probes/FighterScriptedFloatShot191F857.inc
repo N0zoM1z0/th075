@@ -11,7 +11,7 @@ case 0x191: {
             (facing),1);
         PlaySound(0);
     }
-    if (GetNativeActionAt40FA30()==(field070))
+    if (AdvanceNestedFrame()==(field070))
         SetNativeActionAt40FAC0(0);
     return;
 }

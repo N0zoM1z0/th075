@@ -16,7 +16,7 @@ case 0x2C2: {
         ClearMotionFields();
         field080=99;
     }
-    if (GetNativeActionAt40FA30()==(field070)) {
+    if (AdvanceNestedFrame()==(field070)) {
         SetNativeActionAt40FAC0(0);
         fieldF12=1;
         SpawnSevenRawXFloatYAt453B50(0x332,reinterpret_cast<int&>(x),
@@ -60,7 +60,7 @@ case 0x2C3: {
     }
     if ((animationStage)>5)
         fieldF0C=300;
-    if (GetNativeActionAt40FA30()==(field070)) {
+    if (AdvanceNestedFrame()==(field070)) {
         SetNativeActionAt40FAC0(0);
         SpawnSevenRawXFloatYAt453B50(0x32F,reinterpret_cast<int&>(x),
             (*(&y))+g_ContactProjectionAt00657888,

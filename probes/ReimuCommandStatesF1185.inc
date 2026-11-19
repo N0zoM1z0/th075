@@ -20,7 +20,7 @@ case 0xC8: {
         SetNativeActionAt40FAC0(0xCF);
         break;
     }
-    if (GetNativeActionAt40FA30()==(field070)) {
+    if (AdvanceNestedFrame()==(field070)) {
         if ((facing)*inputX>0 && (reinterpret_cast<signed short&>(scriptCounterF00))<3) {
             SetAuxActionAt40FB40(5);
             ++reinterpret_cast<signed short&>(scriptCounterF00);
@@ -58,7 +58,7 @@ case 0xC9: {
             break;
         }
     }
-    if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(0);
+    if (AdvanceNestedFrame()==(field070)) SetNativeActionAt40FAC0(0);
     if ((animationStage)==5 && (animationFrame)==0) SetAuxActionAt40FB40((animationStage)-2);
     break;
 }
@@ -81,7 +81,7 @@ case 0xCA: {
             break;
         }
     }
-    if (GetNativeActionAt40FA30()==(field070)) SetAuxActionAt40FB40(9);
+    if (AdvanceNestedFrame()==(field070)) SetAuxActionAt40FB40(9);
     break;
 }
 case 0xCB: {
@@ -95,7 +95,7 @@ case 0xCB: {
             break;
         }
     }
-    if (GetNativeActionAt40FA30()==(field070)) SetAuxActionAt40FB40(8);
+    if (AdvanceNestedFrame()==(field070)) SetAuxActionAt40FB40(8);
     if ((animationStage)==1 && (animationFrame)==0) {
         velocityX=-9.0f; velocityY=5.0f; field05C=0.45f;
         SpawnMixedAt453C80(0x7D,reinterpret_cast<int&>(x),(*(&y))+g_ReimuCommandBackYAt006590A8,
@@ -147,6 +147,6 @@ case 0xD0: {
         ClearMotionFields();
         break;
     }
-    if (GetNativeActionAt40FA30()==(field070)) SetAuxActionAt40FB40(4);
+    if (AdvanceNestedFrame()==(field070)) SetAuxActionAt40FB40(4);
     break;
 }

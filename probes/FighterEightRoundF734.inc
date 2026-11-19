@@ -23,7 +23,7 @@
                         facing,1);
                 }
             }
-            if (GetNativeActionAt40FA30()==(field070))
+            if (AdvanceNestedFrame()==(field070))
                 SetNativeActionAt40FAC0(0);
             break;
         }
@@ -46,7 +46,7 @@
                         facing,1);
                 }
             }
-            if (GetNativeActionAt40FA30()==(field070))
+            if (AdvanceNestedFrame()==(field070))
                 SetNativeActionAt40FAC0(0);
             break;
         }
@@ -66,7 +66,7 @@
                         facing,1);
                 }
             }
-            if (GetNativeActionAt40FA30()==(field070))
+            if (AdvanceNestedFrame()==(field070))
                 SetNativeActionAt40FAC0(2);
             break;
         }

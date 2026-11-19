@@ -25,7 +25,7 @@ case 0x2EF: {
             (*(&y))+g_ReimuCommandBackYAt006590A8,reinterpret_cast<char&>(facing),1);
         aiCardTimer=120;
     }
-    if (GetNativeActionAt40FA30()==(field070)) {
+    if (AdvanceNestedFrame()==(field070)) {
         SetNativeActionAt40FAC0(0);
         aiCardTimer=SelectRangeAt455580(0,60)+120-g_ReimuRepeatSettingAt006714D0*40;
     }

@@ -19,7 +19,7 @@ case 0x12E: {
             field3AC=0;
         }
     }
-    if (GetNativeActionAt40FA30()==(field070))
+    if (AdvanceNestedFrame()==(field070))
         SetNativeActionAt40FAC0(2);
     if ((animationStage)==4 && (animationFrame)==0)
         PlaySharedSound(0x1D);

@@ -17,7 +17,7 @@ case 0x49: {
         PlaySharedSound(0x16);
         break;
     }
-    if (GetNativeActionAt40FA30()==field070)
+    if (AdvanceNestedFrame()==field070)
         SetAuxActionAt40FB40(animationStage-1);
     if (animationStage==1 && animationFrame==0) {
         // Actual 118-x86 native case has a once-only projectile branch

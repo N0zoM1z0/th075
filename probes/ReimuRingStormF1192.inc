@@ -42,7 +42,7 @@ case 0x2DB: {
         ++reinterpret_cast<signed short&>(scriptCounterF02);
         if ((reinterpret_cast<signed short&>(scriptCounterF02))>2) reinterpret_cast<signed short&>(scriptCounterF02)=0;
     }
-    if (GetNativeActionAt40FA30()==(field070)) {
+    if (AdvanceNestedFrame()==(field070)) {
         SetNativeActionAt40FAC0(0);
         aiCardTimer=300-g_ReimuRepeatSettingAt006714D0*20;
     }

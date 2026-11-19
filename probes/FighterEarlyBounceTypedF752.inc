@@ -29,7 +29,7 @@ typedef char FighterBorrowedXViewSizeF752[(sizeof(FighterBorrowedXViewF752)==0x4
                     break;
                 }
             }
-            if (GetNativeActionAt40FA30()==(field070))
+            if (AdvanceNestedFrame()==(field070))
                 SetAuxActionAt40FB40(2);
             else if ((animationStage)==2 && (animationFrame)==0) {
                 velocityX=static_cast<float>(static_cast<int>(reinterpret_cast<signed short&>(scriptCounterF00)))*g_F747_BounceXAt006590BC;
@@ -49,7 +49,7 @@ typedef char FighterBorrowedXViewSizeF752[(sizeof(FighterBorrowedXViewF752)==0x4
                     break;
                 }
             }
-            if (GetNativeActionAt40FA30()==(field070)) {
+            if (AdvanceNestedFrame()==(field070)) {
                 SetNativeActionAt40FAC0(0);
                 if (inputY>0)
                     SetNativeActionAt40FAC0(1);
@@ -79,7 +79,7 @@ typedef char FighterBorrowedXViewSizeF752[(sizeof(FighterBorrowedXViewF752)==0x4
                     break;
                 }
             }
-            if (GetNativeActionAt40FA30()==(field070)) {
+            if (AdvanceNestedFrame()==(field070)) {
                 SetNativeActionAt40FAC0(0);
                 if (inputY>0)
                     SetNativeActionAt40FAC0(1);

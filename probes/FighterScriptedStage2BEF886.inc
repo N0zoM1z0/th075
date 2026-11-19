@@ -9,7 +9,7 @@ case 0x2BE: {
         field080=6;
         ClearMotionFields();
     }
-    if (GetNativeActionAt40FA30()==(field070))
+    if (AdvanceNestedFrame()==(field070))
         SetNativeActionAt40FAC0(0);
     if ((animationFrame)==0)
         field07C=0;

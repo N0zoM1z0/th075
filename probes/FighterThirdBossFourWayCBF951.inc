@@ -26,7 +26,7 @@ case 0xCB: {
             break;
         }
     }
-    if (GetNativeActionAt40FA30()==(field070))
+    if (AdvanceNestedFrame()==(field070))
         SetNativeActionAt40FAC0(9);
     if ((animationStage)==3 && (animationFrame)==0) {
         velocityX=-11.0f;

@@ -38,7 +38,7 @@ case 0xCA: {
             break;
         }
     }
-    if (GetNativeActionAt40FA30()==(field070))
+    if (AdvanceNestedFrame()==(field070))
         SetNativeActionAt40FAC0(9);
     break;
 }

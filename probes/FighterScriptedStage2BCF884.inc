@@ -31,7 +31,7 @@ case 0x2BC: {
                 (facing),1,0,1);
         }
     }
-    if (GetNativeActionAt40FA30()==(field070))
+    if (AdvanceNestedFrame()==(field070))
         SetNativeActionAt40FAC0(0);
     if ((animationStage)==5 && (animationFrame)==0) {
         AnimatePushAt453E80(0x28);

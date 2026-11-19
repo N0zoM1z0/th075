@@ -25,7 +25,7 @@ case F642_CASE: {
     field490=(-I16(F642_COUNTER))*g_ProjectileFallAt006590B4;
     if (I16(F642_COUNTER)>0)
         I16(F642_COUNTER)=I16(F642_COUNTER)-10;
-    if (GetNativeActionAt40FA30()==field070)
+    if (AdvanceNestedFrame()==field070)
         SetNativeActionAt40FAC0(F642_NEXT_ACTION);
     break;
 }

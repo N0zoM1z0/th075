@@ -3,7 +3,7 @@
 // Whole 46755B original fighter NONEXACT; this is not an independent callable leaf.
 case 0x2C3: {
     ClearMotionFields();
-    if (GetNativeActionAt40FA30()==(field070)) {
+    if (AdvanceNestedFrame()==(field070)) {
         if (inputY==0)
             SetNativeActionAt40FAC0(0);
         else

@@ -10,7 +10,7 @@ case 0x2E5: {
     velocityX=(velocityX)-g_F893FloatFallAt00657478;
     if ((velocityX)<g_ThresholdAt0065782C)
         velocityX=0.0f;
-    if (GetNativeActionAt40FA30()==(field070)) {
+    if (AdvanceNestedFrame()==(field070)) {
         reinterpret_cast<signed short&>(scriptCounterF00)=RandomBoundaryAt455580(0,100);
         if (field07C==0) {
             SetNativeActionAt40FAC0(0);

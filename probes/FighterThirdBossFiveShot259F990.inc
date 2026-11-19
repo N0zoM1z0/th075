@@ -53,7 +53,7 @@ case 0x259: {
         }
         --reinterpret_cast<signed short&>(scriptCounterF00);
     }
-    if (GetNativeActionAt40FA30()==(field070))
+    if (AdvanceNestedFrame()==(field070))
         SetNativeActionAt40FAC0(0);
     break;
 }

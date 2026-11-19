@@ -28,7 +28,7 @@ case 0x19D: {
         ++reinterpret_cast<signed short&>(scriptCounterF02);
     }
     --reinterpret_cast<signed short&>(scriptCounterF00);
-    if (GetNativeActionAt40FA30()==(field070))
+    if (AdvanceNestedFrame()==(field070))
         SetNativeActionAt40FAC0(2);
     break;
 }
@@ -59,7 +59,7 @@ case 0x19E: {
         SetNativeActionAt40FAC0(0xA);
         break;
     }
-    if (GetNativeActionAt40FA30()==(field070))
+    if (AdvanceNestedFrame()==(field070))
         SetNativeActionAt40FAC0(9);
     if ((animationStage)==4 && (animationFrame)==0)
         SpawnDirectedAt453A70(0x335,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),
@@ -93,7 +93,7 @@ case 0x19F: {
         SetNativeActionAt40FAC0(0xA);
         break;
     }
-    if (GetNativeActionAt40FA30()==(field070))
+    if (AdvanceNestedFrame()==(field070))
         SetNativeActionAt40FAC0(9);
     if ((animationStage)==4 && (animationFrame)==0)
         SpawnDirectedAt453A70(0x335,reinterpret_cast<int&>(x),reinterpret_cast<int&>(y),

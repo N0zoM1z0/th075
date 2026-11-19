@@ -20,7 +20,7 @@ case 0x1F6: {
         NativeGameEffectAt455B30();
         return;
     }
-    if (GetNativeActionAt40FA30()==(field070))
+    if (AdvanceNestedFrame()==(field070))
         SetNativeActionAt40FAC0(0);
     if ((animationStage)==5 && (animationFrame)==0) {
         velocityX=14.0f;

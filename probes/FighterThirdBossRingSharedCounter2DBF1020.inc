@@ -94,7 +94,7 @@ case 0x2DB: {
             float(RandAt455580(0,120))+(x)-g_F983_XOffsetAt00658264,
             ((*(&y))-g_F983_YOffsetAt00657CBC)+float(RandAt455580(0,90)),
             1,1,0,1);
-    if (GetNativeActionAt40FA30()==(field070))
+    if (AdvanceNestedFrame()==(field070))
         SetNativeActionAt40FAC0(0);
     if ((animationStage)==6 && (animationFrame)==0) {
         PlaySound(2);

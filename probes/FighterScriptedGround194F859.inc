@@ -15,7 +15,7 @@ case 0x194: {
         velocityY=0.0f;
         return;
     }
-    if (GetNativeActionAt40FA30()==(field070))
+    if (AdvanceNestedFrame()==(field070))
         SetNativeActionAt40FAC0(9);
     if ((animationStage)==5 && (animationFrame)==0) {
         field314=2.0f;

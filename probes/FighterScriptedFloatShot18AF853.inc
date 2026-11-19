@@ -13,7 +13,7 @@ case 0x18A: {
         velocityX=0.0f;
         field3AC=0;
     }
-    if (GetNativeActionAt40FA30()==(field070))
+    if (AdvanceNestedFrame()==(field070))
         SetNativeActionAt40FAC0(0);
     if ((animationStage)==5 && (animationFrame)==0)
         SpawnFloatXYAt453A70(0x327,

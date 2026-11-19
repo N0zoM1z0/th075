@@ -13,7 +13,7 @@ case 0x25C: {
         reinterpret_cast<signed short&>(scriptCounterF02)=0;
     }
     --reinterpret_cast<signed short&>(scriptCounterF00);
-    if (GetNativeActionAt40FA30()==(field070))
+    if (AdvanceNestedFrame()==(field070))
         SetNativeActionAt40FAC0(0);
     if ((animationStage)==6 && (animationFrame)==0) {
         PlaySound(0);

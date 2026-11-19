@@ -23,7 +23,7 @@ case 0x1F5: {
             return;
         }
     }
-    if (GetNativeActionAt40FA30()==(field070))
+    if (AdvanceNestedFrame()==(field070))
         SetNativeActionAt40FAC0(0);
     if ((animationStage)==1 && (animationFrame)==0) {
         velocityX=9.5f;

@@ -26,7 +26,7 @@ case 0x19B: {
         ++reinterpret_cast<signed short&>(scriptCounterF02);
     }
     --reinterpret_cast<signed short&>(scriptCounterF00);
-    if (GetNativeActionAt40FA30()==(field070))
+    if (AdvanceNestedFrame()==(field070))
         SetNativeActionAt40FAC0(0);
     break;
 }
@@ -51,7 +51,7 @@ case 0x19C: {
         ++reinterpret_cast<signed short&>(scriptCounterF02);
     }
     --reinterpret_cast<signed short&>(scriptCounterF00);
-    if (GetNativeActionAt40FA30()==(field070))
+    if (AdvanceNestedFrame()==(field070))
         SetNativeActionAt40FAC0(0);
     break;
 }

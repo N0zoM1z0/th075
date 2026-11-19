@@ -21,7 +21,7 @@ case 0x33: {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
     }
-    if (GetNativeActionAt40FA30() == field070)
+    if (AdvanceNestedFrame() == field070)
         SetNativeActionAt40FAC0(0);
     break;
 }
@@ -42,7 +42,7 @@ case 0x34: {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
     }
-    if (GetNativeActionAt40FA30() == field070)
+    if (AdvanceNestedFrame() == field070)
         SetNativeActionAt40FAC0(0);
     break;
 }
@@ -64,7 +64,7 @@ case 0x35: {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
     }
-    if (GetNativeActionAt40FA30() == field070) {
+    if (AdvanceNestedFrame() == field070) {
         SetNativeActionAt40FAC0(0);
         I16(CONTACT_STAGE_OFFSET) = 0;
         break;
@@ -92,7 +92,7 @@ case 0x38: {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
     }
-    if (GetNativeActionAt40FA30() == field070)
+    if (AdvanceNestedFrame() == field070)
         SetNativeActionAt40FAC0(0);
     break;
 }
@@ -113,7 +113,7 @@ case 0x39: {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
     }
-    if (GetNativeActionAt40FA30() == field070)
+    if (AdvanceNestedFrame() == field070)
         SetNativeActionAt40FAC0(0);
     break;
 }
@@ -134,7 +134,7 @@ case 0x3A: {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
     }
-    if (GetNativeActionAt40FA30() == field070)
+    if (AdvanceNestedFrame() == field070)
         SetNativeActionAt40FAC0(0);
     break;
 }
@@ -156,7 +156,7 @@ case 0x3B: {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
     }
-    if (GetNativeActionAt40FA30() == field070) {
+    if (AdvanceNestedFrame() == field070) {
         SetNativeActionAt40FAC0(0);
         I16(CONTACT_STAGE_OFFSET) = 0;
         break;
@@ -184,7 +184,7 @@ case 0x3E: {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
     }
-    if (GetNativeActionAt40FA30() == field070)
+    if (AdvanceNestedFrame() == field070)
         SetNativeActionAt40FAC0(2);
     break;
 }
@@ -205,7 +205,7 @@ case 0x3F: {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
     }
-    if (GetNativeActionAt40FA30() == field070)
+    if (AdvanceNestedFrame() == field070)
         SetNativeActionAt40FAC0(2);
     break;
 }
@@ -226,7 +226,7 @@ case 0x40: {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
     }
-    if (GetNativeActionAt40FA30() == field070)
+    if (AdvanceNestedFrame() == field070)
         SetNativeActionAt40FAC0(2);
     break;
 }
@@ -248,7 +248,7 @@ case 0x41: {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
     }
-    if (GetNativeActionAt40FA30() == field070) {
+    if (AdvanceNestedFrame() == field070) {
         SetNativeActionAt40FAC0(0);
         I16(CONTACT_STAGE_OFFSET) = 0;
         break;

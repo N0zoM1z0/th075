@@ -33,7 +33,7 @@
                     break;
                 }
             }
-            if (GetNativeActionAt40FA30()==(field070)) {
+            if (AdvanceNestedFrame()==(field070)) {
                 SetNativeActionAt40FAC0(0x62);
                 if ((reinterpret_cast<unsigned char&>(field3CF))==0)
                     SetNativeActionAt40FAC0(0x63);
@@ -74,7 +74,7 @@
                     break;
                 }
             }
-            if (GetNativeActionAt40FA30()==(field070)) {
+            if (AdvanceNestedFrame()==(field070)) {
                 SetNativeActionAt40FAC0(0x62);
                 if ((reinterpret_cast<unsigned char&>(field3CF))==0)
                     SetNativeActionAt40FAC0(0x63);

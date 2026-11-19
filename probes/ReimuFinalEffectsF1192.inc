@@ -3,7 +3,7 @@ case 0x31B: {
         reinterpret_cast<signed short&>(scriptCounterF00)=0; field07C=1;
         ClearMotionFields();
     }
-    if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(0);
+    if (AdvanceNestedFrame()==(field070)) SetNativeActionAt40FAC0(0);
     if ((animationStage)==5 && (animationFrame)==0) {
         BeginFadeParametersAt454A70(0);
         SelectResourceParametersAt452B30();
@@ -22,7 +22,7 @@ case 0x31C: {
         reinterpret_cast<signed short&>(scriptCounterF00)=0; field07C=1;
         ClearMotionFields();
     }
-    if (GetNativeActionAt40FA30()==(field070)) {
+    if (AdvanceNestedFrame()==(field070)) {
         SetNativeActionAt40FAC0(0);
         if (*reinterpret_cast<signed char*>(RAW+field39D+0x370)==4) {
             fieldF26=0; aiCardTimer=0; field318=0.0f;

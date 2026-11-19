@@ -32,7 +32,7 @@ case 0x1F4: {
             field07C=0;
         }
     }
-    if (GetNativeActionAt40FA30()==(field070))
+    if (AdvanceNestedFrame()==(field070))
         SetNativeActionAt40FAC0(0);
     if ((animationStage)==7 && (animationFrame)==0) {
         velocityX=2.0f;
@@ -100,7 +100,7 @@ case 0x1F5: {
             field07C=0;
         }
     }
-    if (GetNativeActionAt40FA30()==(field070))
+    if (AdvanceNestedFrame()==(field070))
         SetNativeActionAt40FAC0(0);
     if ((animationStage)==7 && (animationFrame)==0) {
         velocityX=8.0f;

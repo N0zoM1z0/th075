@@ -45,7 +45,7 @@ case 0x2F9: {
                 float(RandAt455580(0,250)+((reinterpret_cast<signed short&>(fieldF06))>50)*250),
                 facing,1,0,1);
     }
-    if (GetNativeActionAt40FA30()==(field070)) {
+    if (AdvanceNestedFrame()==(field070)) {
         SetNativeActionAt40FAC0(0);
         aiCardTimer=static_cast<short>(180-g_F1004_ModeAt006714D0*20);
     }

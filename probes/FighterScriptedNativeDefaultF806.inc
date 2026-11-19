@@ -2,6 +2,6 @@
 // 32 complete original CODE bytes / ten x86 / two physical real PE CALLs.
 // This is NOT an independently callable/game-exact function.
         default:
-            if (GetNativeActionAt40FA30()==field070)
+            if (AdvanceNestedFrame()==field070)
                 SetNativeActionAt40FAC0(0);
             break;

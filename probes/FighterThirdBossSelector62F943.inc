@@ -3,7 +3,7 @@
 // Authored as a real internal state in a still NONEXACT 82KB
 // original fighter parent; not a standalone game function.
         case 0x62: {
-            if (GetNativeActionAt40FA30()==(field070)) {
+            if (AdvanceNestedFrame()==(field070)) {
                 SetNativeActionAt40FAC0(0x5F);
                 if ((reinterpret_cast<signed short&>(scriptCounterF00))==1)
                     SetNativeActionAt40FAC0(0x5D);

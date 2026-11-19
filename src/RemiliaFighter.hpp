@@ -30,7 +30,6 @@ public:
     void ConfigureStormAt454BC0(int,int,int);
     void SubactionAt452B30();
     void SpawnAt453C80(int,float,float,char,int);
-    short GetNativeActionAt40FA30();
     void SetNativeActionAt40FAC0(int);
     signed char ContactAt454EE0();
     void SetAuxActionAt40FB40(int);

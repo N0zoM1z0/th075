@@ -18,7 +18,7 @@ case 0x261: {
     }
     if ((animationStage)>4)
         velocityY=velocityY-field05C;
-    if (GetNativeActionAt40FA30()==(field070))
+    if (AdvanceNestedFrame()==(field070))
         SetNativeActionAt40FAC0(9);
     if ((animationStage)==4 && (animationFrame)==0) {
         velocityX=-3.0f;
@@ -46,7 +46,7 @@ case 0x262: {
     }
     if ((animationStage)>4)
         velocityY=velocityY-field05C;
-    if (GetNativeActionAt40FA30()==(field070))
+    if (AdvanceNestedFrame()==(field070))
         SetNativeActionAt40FAC0(9);
     if ((animationStage)==4 && (animationFrame)==0) {
         velocityX=-3.0f;

@@ -13,7 +13,7 @@ case 0x59: {
             break;
         }
     }
-    if (GetNativeActionAt40FA30()==(field070)) SetAuxActionAt40FB40(3);
+    if (AdvanceNestedFrame()==(field070)) SetAuxActionAt40FB40(3);
     else if ((animationStage)==3 && (animationFrame)==0) {
         velocityX=float(int(reinterpret_cast<signed short&>(scriptCounterF00)))*g_ReimuBounceXAt006590BC;
         velocityY=float(-int(reinterpret_cast<signed short&>(scriptCounterF02)))*g_ReimuBounceYAt00658044;
@@ -85,7 +85,7 @@ case 0x61: {
             break;
         }
     }
-    if (GetNativeActionAt40FA30()==(field070)) {
+    if (AdvanceNestedFrame()==(field070)) {
         SetNativeActionAt40FAC0(0x62);
         if (reinterpret_cast<unsigned char&>(field3CF)==0) SetNativeActionAt40FAC0(0x63);
     } else {

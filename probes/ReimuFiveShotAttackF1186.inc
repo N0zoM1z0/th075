@@ -6,7 +6,7 @@ case R1186_ACTION: {
         ClearMotionFields();
         reinterpret_cast<signed short&>(scriptCounterF00)=0;
     }
-    if (GetNativeActionAt40FA30()==(field070)) SetNativeActionAt40FAC0(0);
+    if (AdvanceNestedFrame()==(field070)) SetNativeActionAt40FAC0(0);
     if ((animationStage)==8 && (animationFrame)==0) {
 #include "ReimuFiveShotVolleyF1186.inc"
         PlaySound(0);

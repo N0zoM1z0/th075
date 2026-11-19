@@ -31,7 +31,7 @@ case 0x302: {
             SetAuxActionAt40FB40(15);
         }
     }
-    if (GetNativeActionAt40FA30()==(field070)) {
+    if (AdvanceNestedFrame()==(field070)) {
         SetNativeActionAt40FAC0(0);
         aiCardTimer=static_cast<short>(
             RandAt455580(0,60)+180-g_F1004_ModeAt006714D0*20);

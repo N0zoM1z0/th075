@@ -17,7 +17,7 @@ case 0x32: {
         field490 =
             static_cast<float>((velocityX) * g_ContactScaleAt006583E8);
     }
-    if (GetNativeActionAt40FA30() == field070)
+    if (AdvanceNestedFrame() == field070)
         SetNativeActionAt40FAC0(0);
     break;
 }

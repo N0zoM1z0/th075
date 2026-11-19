@@ -24,7 +24,7 @@ case 0x2E4: {
         if ((velocityX)<g_ThresholdAt0065782C)
             velocityX=0.0f;
     }
-    if (GetNativeActionAt40FA30()==(field070)) {
+    if (AdvanceNestedFrame()==(field070)) {
         SetNativeActionAt40FAC0(0);
         aiCardTimer=RandomBoundaryAt455580(30,60);
     }

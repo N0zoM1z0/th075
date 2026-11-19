@@ -19,7 +19,7 @@ case 0x199: {
         SetNativeActionAt40FAC0(0xA);
         break;
     }
-    if (GetNativeActionAt40FA30()==(field070))
+    if (AdvanceNestedFrame()==(field070))
         SetNativeActionAt40FAC0(9);
     if ((animationStage)==5 && (animationFrame)==0) {
         PlaySound(0);
@@ -62,7 +62,7 @@ case 0x19A: {
         SetNativeActionAt40FAC0(0xA);
         break;
     }
-    if (GetNativeActionAt40FA30()==(field070))
+    if (AdvanceNestedFrame()==(field070))
         SetNativeActionAt40FAC0(9);
     if ((animationStage)==5 && (animationFrame)==0) {
         PlaySound(0);

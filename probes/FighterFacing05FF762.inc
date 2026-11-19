@@ -3,7 +3,7 @@
 // Original complete action 05F inside the 58,294-byte authored fighter.
 // Observed borrowed float X members in both actors; not new owner instances.
         case 0x5F: {
-            if (GetNativeActionAt40FA30()==(field070)) {
+            if (AdvanceNestedFrame()==(field070)) {
                 SetNativeActionAt40FAC0(0);
                 if (inputY>0)
                     SetNativeActionAt40FAC0(1);
