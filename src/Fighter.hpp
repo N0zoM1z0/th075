@@ -263,7 +263,7 @@ public:
     short scriptBitMask;                // +0x6F2
     short scriptIndex;                  // +0x6F4
     short scriptStep;                   // +0x6F6
-    unsigned char field6F8;             // +0x6F8
+    signed char field6F8;               // +0x6F8 signed stage-render gate
     unsigned char unknown6F9[0x6FA - 0x6F9];
     short field6FA;                     // +0x6FA
     short field6FC;                     // +0x6FC

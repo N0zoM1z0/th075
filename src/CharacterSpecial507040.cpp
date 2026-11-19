@@ -29,7 +29,7 @@ void PatchouliFighter::RenderStage(signed char stage)
         SetRect(&region, 0, 0, 304, 80);
         TRANSFORM(quadValue)->BuildQuad(fieldF20, fieldF48, fieldF20 + 304.0f, fieldF48 + 80.0f);
         QUAD_DRAWING->DrawQuad(3, quadValue, &region, D3DCOLOR_ARGB(fieldFDF, 255, 255, 255));
-        if ((reinterpret_cast<signed char&>(field6F8)) == 1 && (fieldFDF) < 255 && (fieldEFE) == 0) {
+        if ((field6F8) == 1 && (fieldFDF) < 255 && (fieldEFE) == 0) {
             if ((fieldFDF) < 250) fieldFDF += 5;
             else fieldFDF = 255;
         }
