@@ -8,7 +8,7 @@ case F645_CASE: {
         velocityX=F645_START_POS;
         velocityY=12.5f;
         field05C=0.75f;
-        reinterpret_cast<int&>(rotationZ)=0;
+        rotationZ=0.0f;
         ClearTransformFlag();
     }
     if (y>g_ThresholdAt0065782C) {

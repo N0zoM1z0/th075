@@ -100,7 +100,7 @@ void BattleScene::UpdatePlayerEffects()
         }
         for (j = 0; j < 5; j++) {
             if (HELD_BUTTON != 0)
-                reinterpret_cast<int&>(field10C) = 3600;
+                field10C = 3600;
         }
     }
 }

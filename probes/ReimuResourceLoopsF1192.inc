@@ -3,8 +3,8 @@ case 0x303: {
         scriptCounterF00=0; field07C=1;
         ClearMotionFields();
     }
-    reinterpret_cast<int&>(field490)=0;
-    reinterpret_cast<int&>(opponent->field490)=0;
+    field490=0.0f;
+    opponent->field490=0.0f;
     if ((animationStage)<15 && y>g_ThresholdAt0065782C) velocityY=velocityY-field05C;
     if ((animationStage)>14) fieldF26=(fieldF26)+5;
     if (AdvanceNestedFrame()==(field070)) {
@@ -21,8 +21,8 @@ case 0x303: {
         velocityX=(g_ReimuArenaCenterAt00657884-x)/g_AngleShiftAt00657878*
             (facing);
         velocityY=12.0f; field05C=0.5f;
-        reinterpret_cast<int&>(field490)=0;
-        reinterpret_cast<int&>(opponent->field490)=0;
+        field490=0.0f;
+        opponent->field490=0.0f;
     }
     if ((animationStage)==13 && (animationFrame)==0) ClearMotionFields();
     if ((animationStage)==15 && (animationFrame)==0) {
@@ -97,8 +97,8 @@ case 0x304: {
         }
         scriptCounterF00=0;
     }
-    reinterpret_cast<int&>(field490)=0;
-    reinterpret_cast<int&>(opponent->field490)=0;
+    field490=0.0f;
+    opponent->field490=0.0f;
     if (AdvanceNestedFrame()==(field070)) ResetSecondaryCounter(1);
     break;
 }

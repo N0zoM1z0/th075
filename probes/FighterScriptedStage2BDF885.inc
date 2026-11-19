@@ -35,7 +35,7 @@ case 0x2BD: {
             PlaySound(0xD);
             ResetPrimaryCounters(0x2C2);
             ClearMotionFields();
-            reinterpret_cast<int&>(x)=reinterpret_cast<int&>(opponent->x);
+            x=opponent->x;
             return;
         }
     }
